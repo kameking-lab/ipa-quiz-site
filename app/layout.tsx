@@ -74,6 +74,13 @@ export default function RootLayout({
                   >
                     著作権・利用条件
                   </Link>
+                  {" "}／{" "}
+                  <Link
+                    href="/settings"
+                    className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                  >
+                    設定
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3">
                   <span className="hidden sm:inline">テーマ:</span>
