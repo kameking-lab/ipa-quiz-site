@@ -1,0 +1,10 @@
+export const LS_KEYS = {
+  history: "ipa-quiz:history:v1",
+  starred: "ipa-quiz:starred:v1",
+  premium: "ipa-quiz:premium:v1",
+  theme: "ipa-quiz:theme:v1",
+  aiUsage: "ipa-quiz:ai-usage:v1",
+  settings: "ipa-quiz:settings:v1",
+} as const;
+
+export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

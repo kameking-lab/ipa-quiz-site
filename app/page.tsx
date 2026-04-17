@@ -1,65 +1,138 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ALL_QUESTIONS } from "@/data/questions";
+import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
+import { Card, CardContent } from "@/components/ui/card";
+import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { HistoryStats } from "@/components/HistoryStats";
 
-export default function Home() {
+export default function HomePage() {
+  const total = ALL_QUESTIONS.length;
+  const years = getAvailableYears("ap");
+  const categories = getAvailableCategories("ap");
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
+      <section className="mb-8">
+        <div className="mb-2 flex items-center gap-2">
+          <Sparkles className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+          <span className="text-xs font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
+            AI ネイティブ過去問
+          </span>
+        </div>
+        <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+          IPA 過去問を、一番速く解ける場所。
+        </h1>
+        <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
+          ポチッと押すだけ。画面遷移ゼロ・ローディングゼロで解答と解説が同じ画面に出ます。
+          分からないところは AI コパイロットに無制限に質問できます。
+        </p>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs">
+          <Badge variant="success">応用情報 {total}問収録</Badge>
+          <Badge variant="outline">ゼロ遷移 UI</Badge>
+          <Badge variant="outline">AI コパイロット</Badge>
+          <Badge variant="outline">モバイル最適化</Badge>
+        </div>
+      </section>
+
+      <HistoryStats />
+
+      <h2 className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+        出題モード
+      </h2>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <ModeCard
+          href="/quiz?mode=random&exam=ap"
+          icon={<Shuffle className="h-5 w-5" />}
+          title="ランダム出題"
+          desc="全範囲からランダムに出題します。"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+        <ModeCard
+          href="/quiz?mode=unanswered&exam=ap"
+          icon={<CircleHelp className="h-5 w-5" />}
+          title="未回答モード"
+          desc="まだ解いていない問題だけを出題。"
+        />
+        <ModeCard
+          href="/quiz?mode=review&exam=ap"
+          icon={<BookmarkCheck className="h-5 w-5" />}
+          title="復習モード"
+          desc="間違えた問題と★付き問題だけ。"
+        />
+        <ModeCard
+          href="/modes/year"
+          icon={<CalendarDays className="h-5 w-5" />}
+          title="年度別"
+          desc="令和X年度春/秋 を選んで出題。"
+        />
+        <ModeCard
+          href="/modes/topic"
+          icon={<Tags className="h-5 w-5" />}
+          title="分野別"
+          desc="セキュリティ/ネットワーク等の分野別。"
+        />
+      </div>
+
+      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <Card>
+          <CardContent className="pt-5">
+            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              収録年度（応用情報）
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {years.map((y) => (
+                <Badge key={y} variant="outline">
+                  {y}年
+                </Badge>
+              ))}
+              {years.length === 0 && (
+                <span className="text-xs text-zinc-500">データ投入待ち</span>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-5">
+            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              収録分野
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {categories.slice(0, 8).map((c) => (
+                <Badge key={c} variant="outline">
+                  {c}
+                </Badge>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </main>
+  );
+}
+
+function ModeCard({
+  href,
+  icon,
+  title,
+  desc,
+}: {
+  href: string;
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
+    >
+      <div className="mb-1.5 flex items-center gap-2">
+        <span className="rounded-lg bg-sky-100 p-2 text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+          {icon}
+        </span>
+        <span className="text-base font-semibold">{title}</span>
+      </div>
+      <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">{desc}</p>
+    </Link>
   );
 }

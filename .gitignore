@@ -39,3 +39,12 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw IPA PDFs (fetched by scripts/fetch-ipa-pdfs.ts, not committed)
+/data/raw_pdfs/
+
+# local editor
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
