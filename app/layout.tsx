@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -17,7 +18,13 @@ export const metadata: Metadata = {
     "情報処理技術者試験(IPA)全区分の過去問を、AIコパイロット付きの最速UIで学習。応用情報・基本情報・高度試験まで対応予定。",
   applicationName: "IPA Quiz",
   manifest: "/manifest.webmanifest",
-  icons: { icon: "/favicon.ico" },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
+    ],
+    apple: "/icon-192.svg",
+  },
   openGraph: {
     title: "IPA Quiz - AIネイティブ過去問学習",
     description:
@@ -53,6 +60,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
+          <ServiceWorkerRegistration />
           <div className="flex min-h-[100dvh] flex-col">
             {children}
             <footer className="mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
