@@ -9,6 +9,7 @@ import { ExplanationCard } from "./ExplanationCard";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { PremiumUpsellDialog } from "@/components/PremiumUpsellDialog";
 import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
+import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles } from "lucide-react";
 
@@ -31,10 +32,16 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
+  const [showSwipeHint, setShowSwipeHint] = React.useState(false);
 
   React.useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setPremium(getPremiumFlag());
+    const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
+    if (!alreadyShown) {
+      setShowSwipeHint(true);
+      localStorage.setItem(LS_KEYS.swipeHintShown, "true");
+    }
   }, []);
 
   const question = questions[index];
@@ -203,9 +210,16 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
             )}
 
             {!revealed && (
-              <div className="mt-4 rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 dark:bg-zinc-900 dark:text-zinc-400">
-                キーボード: 1〜4 で選択 / R であとで復習
-              </div>
+              <>
+                <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 [@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
+                  キーボード: 1〜4 で選択 / R であとで復習
+                </div>
+                {showSwipeHint && (
+                  <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
+                    解答後、左スワイプで次の問題へ進めます
+                  </div>
+                )}
+              </>
             )}
           </div>
 
