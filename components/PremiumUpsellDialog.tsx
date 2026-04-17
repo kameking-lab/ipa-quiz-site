@@ -31,7 +31,7 @@ export function PremiumUpsellDialog({
             <Sparkles className="h-5 w-5" />
             <span className="text-sm font-semibold">本日の無料枠を使い切りました</span>
           </div>
-          <DialogTitle>プレミアムなら AI 質問は無制限</DialogTitle>
+          <DialogTitle>プレミアムなら AI 質問がたっぷり使える</DialogTitle>
           <DialogDescription>
             月300円（初期価格）で AI コパイロットの回数制限を撤廃、広告も非表示になります。
           </DialogDescription>
@@ -39,7 +39,7 @@ export function PremiumUpsellDialog({
         <ul className="space-y-2 text-sm">
           <li className="flex items-start gap-2">
             <Infinity className="mt-0.5 h-4 w-4 text-sky-600" />
-            <span>AI 質問 無制限（1分10回のソフトリミットのみ）</span>
+            <span>AI 質問たっぷり（1分10回・1日上限なし）</span>
           </li>
           <li className="flex items-start gap-2">
             <Zap className="mt-0.5 h-4 w-4 text-sky-600" />

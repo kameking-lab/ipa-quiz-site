@@ -25,7 +25,7 @@ export default function HomePage() {
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
           ポチッと押すだけ。画面遷移ゼロ・ローディングゼロで解答と解説が同じ画面に出ます。
-          分からないところは AI コパイロットに無制限に質問できます。
+          分からないところは AI コパイロットに毎日 30 回まで無料で質問できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="success">応用情報 {total}問収録</Badge>
