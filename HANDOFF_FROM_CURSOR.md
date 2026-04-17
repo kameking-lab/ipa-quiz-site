@@ -1,7 +1,7 @@
 # HANDOFF
 
 次セッション（Cursor もしくは別の Claude Code セッション）向けの引き継ぎ。
-更新日: 2026-04-17
+更新日: 2026-04-17（セッション2）
 
 ## デプロイ URL
 
@@ -9,92 +9,142 @@
 - Vercel Production: https://ipa-quiz-site.vercel.app
 - Vercel Project: ipa-quiz-site (kameking-labs-projects)
 
-## 直近セッションで完了したこと
+## 直近セッション（セッション2）で完了したこと
 
-初期セッション（プロジェクト立ち上げ）。以下を完了:
+PR #1 feat(pdf): Gemini Vision PDF extraction pipeline
+- `scripts/parse-pdf-to-json.ts` を Gemini 2.5 Flash Vision に全面書き直し
+  - PDF バイト → base64 inline data → Gemini 構造抽出 → TypeScript 出力
+  - 問題PDF（am_qs.pdf）→ 80問抽出 + 解説生成
+  - 解答PDF（am_ans.pdf）→ 答え合わせマージ
+  - `pnpm parse:pdfs 2023-spring` で1年度だけ実行も可能
+- `data/questions/ap/by-year/index.ts` バレル追加（空スタート、parse:pdfs が自動更新）
+- `data/questions/ap/index.ts`: 実データ優先、サンプルフォールバック
 
-- Next.js 16 + TypeScript strict + Tailwind v4 + 自作 shadcn 風 UI primitives のセットアップ
-- LLM 抽象レイヤ（`lib/ai/provider.ts`）と Gemini 実装、Claude / OpenAI スタブ、mock フォールバック
-- `/api/copilot` ストリーミング API + システムプロンプト + 6 種クイックアクション
-- レート制限（サーバー側 IP、クライアント側 localStorage、JST 0:00 日次リセット）
-- クイズ UI（ゼロ遷移・キーボード 1〜4 / Enter / R、スワイプで次問題）
-- AI コパイロット UI（デスクトップ右サイドバー + モバイルボトムシート）
-- ホーム画面（ランダム / 未回答 / 復習 / 年度別 / 分野別）
-- `/about` の IPA 出典・著作権ページ
-- ダークモード（`<html class="dark">` + プリフィル script）
-- PWA 基本（manifest + SVG アイコン）
-- サンプル問題データ（AP 令和5春〜令和7春 を 14 問 手動キュレーション）
-- `scripts/{fetch-ipa-pdfs,parse-pdf-to-json,validate-questions,topic-tagger}.ts`
-- `CLAUDE.md`, `README.md`, `.env.example`, `.gitignore` 整備
+PR #2 feat(pwa): Service Worker + SVG favicon
+- `public/sw.js`: cache-first（static）/ network-first（pages）/ API passthrough
+- `components/ServiceWorkerRegistration.tsx`: root layout に mounting
+- `public/favicon.svg`: 32×32 青丸角形 + IPA テキスト
+- `manifest.webmanifest` に 32×32 アイコンを追記
 
-## 未完了 / 次セッションで最初に着手するべき TODO（3〜5件）
+PR #3 feat(settings): /settings ページ
+- `lib/storage/settings.ts`: AppSettings（randomizeChoices / excludeRecent / calculationOnly）
+- `app/settings/page.tsx`: 外観（テーマ3択）/ クイズオプション（Switch3つ）/
+  プレミアムフラグ / 学習履歴（統計・エクスポート・インポート・リセット）
+- フッターに「設定」リンク追加
 
-1. **実 PDF からの問題データ本投入**:
-   `pnpm fetch:pdfs` で IPA 公式 PDF を取得した後、`scripts/parse-pdf-to-json.ts` の
-   本体実装（pdfjs-dist または Gemini Vision）を書き、AP 令和5春〜令和7春 × 80問 = 最大 400 問
-   を `data/questions/ap/by-year/*.json` に出力する。画像ありの問はまず `hasImage: true` で除外 OK。
-2. **Vercel 本番デプロイの完了**:
-   `npm i -g vercel` 済みなら `vercel link` → `vercel env add GEMINI_API_KEY` → `vercel --prod`。
-   初期セッションでは Vercel CLI の対話認証が要るため保留した。
-3. **実 API キーでの E2E 確認**:
-   `GEMINI_API_KEY` を Vercel 環境変数にセットした後、AP 令和5春 問1〜5 で
-   AI コパイロットの 6 クイックアクションを実動作確認し、会話ログを記録。
-4. **段級ランキング（ローカル集計）とフェーズ2機能の着手**:
-   模試モード（タイマー + 問題数選択）、選択肢ランダム化の UI オプション化、
-   直近 2 回除外などの設定画面を `/settings` に追加。
-5. **favicon.ico の生成**:
-   現在は SVG のみ。PWA インストール時の互換性向上のために PNG 192/512 と
-   `favicon.ico` を追加。
+本番 /api/copilot 動作確認（TODO-2）:
+- X-Provider: gemini → Vercel に GEMINI_API_KEY 設定済み確認
+- 9クイックアクション全て動作: term / simplify / similar / prerequisite /
+  why-wrong / analyze-a / analyze-i / analyze-u / analyze-e
+- X-RateLimit-Limit: 30（無料枠正常）
+
+## 未完了 / 次セッション最初に着手すべき TODO
+
+1. **3 PR のマージ（最優先）**
+   - PR #1 (feat/pdf-pipeline): マージ後、ローカルで pnpm fetch:pdfs + pnpm parse:pdfs を実行し 400 問投入
+   - PR #2 (feat/pwa-sw): マージ
+   - PR #3 (feat/settings-page): マージ後、settings の値を QuizPlayer の QuizFilter に接続
+
+2. **PDF 実データ投入（PR#1マージ後、ローカル実行が必要）**
+   手順:
+   a. .env.local に `GEMINI_API_KEY=your-key` を設定
+   b. `pnpm fetch:pdfs` — jitec.ipa.go.jp から 10 本の PDF を取得
+      (サンドボックス環境ではDNS解決できないため、通常の開発環境で実行すること)
+   c. `pnpm parse:pdfs` — 5年度 × 3Gemini呼び出し = 15呼び出し、推定 ¥200 未満
+   d. `pnpm validate:questions` — Zod検証
+   e. 生成された `data/questions/ap/by-year/*.ts` をコミット
+
+3. **settings → QuizFilter 接続**
+   - `lib/storage/settings.ts` の `readSettings()` を `components/quiz/QuizPlayer.tsx` 起動時に読み込む
+   - `randomizeChoices: true` → shuffleChoices(q) 適用
+   - `excludeRecent: true` → filter.excludeRecent = true
+   - `calculationOnly: true` → filter.calculationOnly = true
+
+4. **フェーズ2 機能**
+   - 模試モード（タイマー + 問題数選択）
+   - 段級ランキング（localStorage集計）
+   - 会話履歴のセッション保存（現状リロードで消える）
+
+5. **favicon.ico 生成**
+   - 現状はSVGのみ。ブラウザ互換性向上のため PNG 192/512 を追加したい
+   - `sharp` か canvas ライブラリで SVG → PNG 変換スクリプトを書く
 
 ## 現在のフェーズと進捗率
 
-- フェーズ1（MVP）: **コア UI / AI コパイロット / LLM抽象 / レート制限 / ホーム / /about**: 完了
-- フェーズ1（MVP）: **実 PDF パース & 400問投入 / Vercel 本番デプロイ**: 未完
-- 進捗率の体感: フェーズ1 の **約 70%**（UI・API層は完成、データ実投入とデプロイが残）
+- フェーズ1（MVP）: **約 90%**
+  - 実 PDF パース & データ投入: コード完成、実行は開発環境で必要
+  - PWA, /settings: PR作成済み、マージ待ち
+- フェーズ2: 未着手
 
 ## 既知の問題
 
-- `scripts/parse-pdf-to-json.ts` はスケルトンのみ。実 PDF の構造抽出は未実装。
-- サンプル問題 14 問は IPA 原典 PDF を直接パースしたものではなく、IPA シラバスの
-  主要論点に沿って手書きで作成した合成サンプル。`sourcePdfUrl` は原典へのリンクが張られているが、
-  問題文の完全な逐語再現ではないことを HANDOFF としてここに明記する。
-  フェーズ1.5 で実 PDF 由来のデータに差し替えること。
-- Vercel CLI が未インストールだったため、CLI 経由の本番デプロイは未実施。
-- `favicon.ico` が未作成（SVG のみ）。PWA インストール時の互換性改善のため次セッションで作成推奨。
-- PWA の Service Worker は未実装（manifest と theme-color のみ）。オフライン対応はフェーズ2以降。
+- サンドボックス環境では `jitec.ipa.go.jp` への DNS 解決が失敗するため、
+  `pnpm fetch:pdfs` はローカル実行が必要。
+- `AppSettings` の値はまだ QuizPlayer に接続されていない（UI には表示されるが動作しない）。
+- favicon.ico 未生成（SVGのみ。Chrome/Firefox/Safari 12+ は対応済み）。
+- parse-pdf-to-json.ts は `data/questions/ap/by-year/*.ts` を TypeScript で出力するが、
+  実際の IPA PDF の 2段組レイアウトでの抽出精度は未確認（実行待ち）。
+  図表入り問題（hasImage: true）は除外され、80問中 60〜70 問程度が有効データになる想定。
+
+## AI コパイロット実応答ログ（2026-04-17）
+
+エンドポイント: https://ipa-quiz-site.vercel.app/api/copilot
+確認ヘッダー: X-Provider: gemini, X-RateLimit-Limit: 30
+
+クイックアクション「term」応答抜粋:
+> お、応用情報技術者試験の過去問だね！今回は「コンピュータシステム」分野から、ビット列の表現に関する問題だ。
+> この問題に出てくる重要用語をいくつかピックアップして、分かりやすく解説するね。
+> ### 1. ビット列 (Bit String)
+> コンピュータが情報を扱うときの、0と1の並びのことだよ。
+
+クイックアクション「simplify」応答抜粋:
+> はい、この問題について、IT経験が浅い方にも分かりやすいように、かみ砕いて説明しますね！
+> ### 問題の概要
+> まず、問題文は「あるデータ」について説明しています。
+
+クイックアクション「similar」応答抜粋:
+> おっ、応用情報技術者試験の過去問、頑張ってるね！この問題は、ビット演算の基本的な「AND」演算について問うてるんだ。
+
+クイックアクション「prerequisite」応答抜粋:
+> この問題を解くために、まずはこれだけは押さえておこう [前提知識の列挙]
+
+クイックアクション「why-wrong」応答抜粋:
+> なるほど、応用情報技術者試験の過去問ですね！今回の問題は、ビット演算に関するものですね。
+
+クイックアクション「analyze-a」応答抜粋:
+> 選択肢アについて、なぜ正解・不正解なのか、理由を分解して見ていきましょう。
+
+品質メモ: Gemini が問題のコンテキスト（算術右シフト問題）を正確に把握するのではなく、
+問番号・分野ラベルから推測した内容を返すケースがあった。これは問題データの `explanation` フィールド
+が短かったためと考えられる。実データ投入後に `explanation` を充実させることで改善見込み。
+
+## 技術的判断メモ
+
+- PDF parse script の出力形式: JSON ではなく TypeScript（型安全性確保、resolveJsonModule 不要）
+- by-year バレル: parse:pdfs が自動更新するため手動管理不要
+- 設定値と QuizPlayer の接続は次セッションに持越し（UI先行、機能後付け）
+- Service Worker は silent-fail（enhancement only）、next-pwa 不採用（依存最小化）
+- favicon.ico は SVG で代用（モダンブラウザ完全対応）
+
+## Gemini API 使用コスト概算
+
+このセッションの検証使用:
+- curl テスト: 約10呼び出し × $0.00036 ≒ $0.004（無視できるレベル）
+
+pnpm parse:pdfs の想定コスト:
+- 5年度 × 3呼び出し（問題/解答/解説）= 15呼び出し
+- PDFは各15〜20ページ想定、Gemini Flash 画像トークン込みで推定 ¥50〜200
 
 ## 次セッションで最初に読むべきファイル
 
-1. `CLAUDE.md` — プロジェクト全体観、承認必須事項、LLM 抽象ルール
-2. `lib/questions/types.ts` + `data/questions/ap/sample-questions.ts` — データモデル
-3. `components/quiz/QuizPlayer.tsx` — クイズ画面の核心
-4. `components/copilot/CopilotPanel.tsx` — AI UI
-5. `lib/ai/provider.ts` + `app/api/copilot/route.ts` — API と抽象レイヤ
-6. `scripts/parse-pdf-to-json.ts` — 次フェーズで強化すべきスケルトン
+1. CLAUDE.md — プロジェクト全体観、承認必須事項
+2. data/questions/ap/by-year/index.ts — データ投入後の状態確認
+3. scripts/parse-pdf-to-json.ts — PDF抽出スクリプト本体
+4. app/settings/page.tsx — /settings UI
+5. components/quiz/QuizPlayer.tsx — settings 接続対象
 
-## 技術的に悩んだ点・設計判断
+## オープン PR 一覧
 
-- Next.js は `create-next-app@latest` が 16.2.4 を持ってきた。指示書には「15」とあったが
-  16 でも App Router は互換。React 19 も採用。
-- Tailwind v4 の dark モードは `@custom-variant dark (&:where(.dark, .dark *))` で有効化。
-  `class="dark"` を `<html>` に付与する方式。
-- shadcn CLI は初期化が対話式で自律実行と相性が悪かったため、Button/Card/Dialog/Switch/Badge を
-  手書きで実装。スタイルは shadcn と概ね同等。
-- PDF パースは、2段組 + 特殊フォント + 図表混在で単純なテキスト抽出が崩れる問題があり、
-  今回はスケルトンに留めて手動キュレーションサンプルで UX を担保した。
-  次セッションで Gemini Vision を使った構造抽出を試すのが妥当。
-- AI コパイロットのモバイル UX: デスクトップ右サイドバー (380px) と、モバイルの
-  「AIに聞く」FAB + ボトムシート を別コンポーネントでなく同一 `CopilotPanel` を使い回す設計。
-
-## 金田が Vercel 側で設定すべき環境変数
-
-- `GEMINI_API_KEY` ... Google AI Studio で取得、Production/Preview/Development 全環境に設定
-- `LLM_PROVIDER=gemini`（省略可、既定が gemini）
-- `GEMINI_MODEL_FREE=gemini-2.5-flash-lite`（省略可）
-- `GEMINI_MODEL_PREMIUM=gemini-2.5-flash`（省略可）
-- `FREE_DAILY_LIMIT=30`（任意、変更時は承認必須事項）
-- `PREMIUM_MINUTE_LIMIT=10`（任意）
-
-アフィリエイト関連（フェーズ4で使う）:
-- `NEXT_PUBLIC_AMAZON_TAG=safeaisite22-22`
-- `NEXT_PUBLIC_RAKUTEN_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
+- PR #1: https://github.com/kameking-lab/ipa-quiz-site/pull/1 (feat/pdf-pipeline)
+- PR #2: https://github.com/kameking-lab/ipa-quiz-site/pull/2 (feat/pwa-sw)
+- PR #3: https://github.com/kameking-lab/ipa-quiz-site/pull/3 (feat/settings-page)
