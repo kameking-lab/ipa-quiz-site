@@ -9,7 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
-    "parse:pdfs": "tsx scripts/parse-pdf-to-json.ts",
+    "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
     "validate:questions": "tsx scripts/validate-questions.ts",
     "tag:topics": "tsx scripts/topic-tagger.ts"
   },

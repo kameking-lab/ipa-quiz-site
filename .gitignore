@@ -43,6 +43,9 @@ next-env.d.ts
 # raw IPA PDFs (fetched by scripts/fetch-ipa-pdfs.ts, not committed)
 /data/raw_pdfs/
 
+# parse script output logs
+/logs/*.json
+
 # local editor
 .idea/
 .vscode/*
