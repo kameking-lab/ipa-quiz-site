@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
+import type { LLMProvider } from "@/lib/ai/provider";
 import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, QUICK_ACTIONS } from "@/lib/ai/prompts";
 import type { QuickActionId } from "@/lib/ai/prompts";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
@@ -44,7 +45,7 @@ export async function POST(req: Request) {
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
-      { status: 429 },
+      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
     );
   }
 
@@ -73,7 +74,18 @@ export async function POST(req: Request) {
     }
   }
 
-  const provider = await getProvider();
+  let provider: LLMProvider;
+  try {
+    provider = await getProvider();
+  } catch (_err) {
+    return NextResponse.json(
+      {
+        error: "provider_unavailable",
+        message: "AIサービスが一時的に利用できません。しばらく待ってから再試行してください。",
+      },
+      { status: 503, headers: { "X-Error-Type": "server_error" } },
+    );
+  }
   const model = resolveModel(payload.tier);
 
   const encoder = new TextEncoder();
