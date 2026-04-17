@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Sparkles, Send, Loader2, X, ChevronDown } from "lucide-react";
+import { Sparkles, Send, Loader2, X, ChevronDown, RefreshCw, WifiOff } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
@@ -46,8 +46,13 @@ export function CopilotPanel({
   const [input, setInput] = React.useState("");
   const [streaming, setStreaming] = React.useState(false);
   const [usage, setUsage] = React.useState(() => readAiUsage());
+  const [errorState, setErrorState] = React.useState<{
+    type: "server_error" | "network_error";
+    retryFn: () => void;
+  } | null>(null);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+  const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
 
   // Reset conversation when question changes
   React.useEffect(() => {
@@ -70,6 +75,9 @@ export function CopilotPanel({
         onRateLimitHit();
         return;
       }
+
+      setErrorState(null);
+      lastSendArgsRef.current = { text: trimmed, quickAction };
 
       const userMsg: Message = {
         role: "user",
@@ -114,10 +122,11 @@ export function CopilotPanel({
         }
 
         if (!res.ok || !res.body) {
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: "AI応答の取得に失敗しました。時間を空けて再試行してください。" },
-          ]);
+          const args = lastSendArgsRef.current;
+          setErrorState({
+            type: "server_error",
+            retryFn: () => args && send(args.text, args.quickAction),
+          });
           setStreaming(false);
           return;
         }
@@ -147,10 +156,11 @@ export function CopilotPanel({
             { role: "assistant", content: "(キャンセルされました)" },
           ]);
         } else {
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: `エラー: ${(err as Error).message}` },
-          ]);
+          const args = lastSendArgsRef.current;
+          setErrorState({
+            type: "network_error",
+            retryFn: () => args && send(args.text, args.quickAction),
+          });
         }
       } finally {
         setStreaming(false);
@@ -271,6 +281,41 @@ export function CopilotPanel({
           </div>
         )}
       </div>
+
+      {errorState && (
+        <div
+          className={cn(
+            "mx-3 mb-2 flex items-start gap-2 rounded-xl border px-3 py-2.5 text-xs",
+            errorState.type === "server_error"
+              ? "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200"
+              : "border-zinc-200 bg-zinc-50 text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400",
+          )}
+        >
+          {errorState.type === "server_error" ? (
+            <RefreshCw className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          ) : (
+            <WifiOff className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          )}
+          <div className="flex-1">
+            <span>
+              {errorState.type === "server_error"
+                ? "AIが一時的に応答できません。"
+                : "接続を確認してください。"}
+            </span>
+            {errorState.type === "server_error" && (
+              <button
+                onClick={() => {
+                  setErrorState(null);
+                  errorState.retryFn();
+                }}
+                className="ml-2 font-semibold underline hover:no-underline"
+              >
+                再試行
+              </button>
+            )}
+          </div>
+        </div>
+      )}
 
       <form
         onSubmit={(e) => {
