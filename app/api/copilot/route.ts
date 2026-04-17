@@ -41,7 +41,7 @@ export async function POST(req: Request) {
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
-        ? "本日の無料枠を使い切りました。プレミアムにアップグレードすると無制限になります。"
+        ? "本日の無料枠（30回）を使い切りました。プレミアムにアップグレードするとたっぷり使えます（1分10回・1日上限なし）。"
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },

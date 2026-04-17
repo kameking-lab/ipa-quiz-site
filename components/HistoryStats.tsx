@@ -51,7 +51,7 @@ export function HistoryStats() {
               <div className="text-[11px] text-zinc-500 dark:text-zinc-400">AI残</div>
               <div className="text-lg font-bold">
                 {premium
-                  ? "無制限"
+                  ? "上限なし"
                   : `${Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0)}/${FREE_DAILY_LIMIT_CLIENT}`}
               </div>
             </div>
