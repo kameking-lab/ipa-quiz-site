@@ -3,6 +3,12 @@
 次セッション（Cursor もしくは別の Claude Code セッション）向けの引き継ぎ。
 更新日: 2026-04-17
 
+## デプロイ URL
+
+- GitHub: https://github.com/kameking-lab/ipa-quiz-site
+- Vercel Production: https://ipa-quiz-site.vercel.app
+- Vercel Project: ipa-quiz-site (kameking-labs-projects)
+
 ## 直近セッションで完了したこと
 
 初期セッション（プロジェクト立ち上げ）。以下を完了:
