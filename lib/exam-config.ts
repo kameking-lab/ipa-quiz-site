@@ -6,6 +6,8 @@ export interface SessionConfig {
   expectedQuestions: number;
   label: string;
   categories: string[];
+  /** IP exam: files are qs.pdf/ans.pdf without session prefix */
+  noSessionPrefix?: boolean;
 }
 
 export interface ExamConfig {
@@ -14,8 +16,15 @@ export interface ExamConfig {
   urlSlug: string;
   level: "basic" | "advanced" | "specialist";
   sessions: SessionConfig[];
-  seasons: Array<"spring" | "autumn">;
+  seasons: Array<Season>;
   yearRange: { start: number; end: number };
+  /** 2009-2011 pre-reform period had different seasons for most specialist exams */
+  legacyYearRange?: { start: number; end: number };
+  legacySeasons?: Array<Season>;
+  /** CBT-format years (IP 2021+, FE/SG 2023+) */
+  cbtYearRange?: { start: number; end: number };
+  /** CBT sessions differ from regular (e.g. FE: kamoku-a/b instead of am) */
+  cbtSessions?: SessionConfig[];
 }
 
 // ------- Shared category lists -------
@@ -93,9 +102,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "ITパスポート試験",
     urlSlug: "ip",
     level: "basic",
-    sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "試験", categories: BASIC_CATEGORIES }],
-    seasons: [],
-    yearRange: { start: 2025, end: 2025 },
+    // IP files are always qs.pdf / ans.pdf — no session prefix in filename
+    sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 100, label: "試験",
+                 categories: BASIC_CATEGORIES, noSessionPrefix: true }],
+    seasons: ["spring", "autumn"],
+    yearRange: { start: 2009, end: 2020 },
+    cbtYearRange: { start: 2021, end: 2025 },
   },
   sg: {
     code: "sg",
@@ -106,7 +118,12 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am50(["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"]),
     ],
     seasons: ["spring", "autumn"],
-    yearRange: { start: 2019, end: 2022 },
+    yearRange: { start: 2016, end: 2019 },
+    cbtYearRange: { start: 2023, end: 2025 },
+    cbtSessions: [
+      { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 48, label: "科目A",
+        categories: ["情報セキュリティ", "リスクマネジメント", "情報セキュリティ管理", "情報セキュリティ対策", "セキュリティ技術", "法務・規程"] },
+    ],
   },
   fe: {
     code: "fe",
@@ -115,7 +132,13 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "basic",
     sessions: [am80(BASIC_CATEGORIES)],
     seasons: ["spring", "autumn"],
-    yearRange: { start: 2019, end: 2022 },
+    yearRange: { start: 2009, end: 2019 },
+    cbtYearRange: { start: 2023, end: 2025 },
+    cbtSessions: [
+      { session: "kamoku-a", urlSlug: "kamoku-a", expectedQuestions: 60, label: "科目A", categories: BASIC_CATEGORIES },
+      { session: "kamoku-b", urlSlug: "kamoku-b", expectedQuestions: 20, label: "科目B",
+        categories: ["アルゴリズムとプログラミング"] },
+    ],
   },
   ap: {
     code: "ap",
@@ -124,7 +147,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     level: "advanced",
     sessions: [am80(ADVANCED_CATEGORIES)],
     seasons: ["spring", "autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2009, end: 2025 },
   },
   st: {
     code: "st",
@@ -136,7 +159,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["ITストラテジスト専門", "情報戦略", "業務改革", "システム化計画", "プロジェクト推進"]),
     ],
     seasons: ["spring"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["autumn"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   sa: {
     code: "sa",
@@ -147,8 +172,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am1(),
       am2(["システムアーキテクチャ", "要件定義", "システム設計", "ソフトウェア設計", "品質管理"]),
     ],
-    seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    seasons: ["spring"],
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["autumn"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   pm: {
     code: "pm",
@@ -160,7 +187,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["プロジェクトマネジメント", "スコープ管理", "コスト管理", "スケジュール管理", "リスク管理", "品質管理", "EVM"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["spring"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   nw: {
     code: "nw",
@@ -171,8 +200,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am1(),
       am2(["ネットワーク設計", "TCP/IP", "プロトコル", "ネットワークセキュリティ", "ルーティング", "無線LAN"]),
     ],
-    seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    seasons: ["spring"],
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["autumn"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   db: {
     code: "db",
@@ -184,7 +215,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["データベース設計", "SQL", "正規化", "トランザクション", "障害回復", "データウェアハウス"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["spring"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   es: {
     code: "es",
@@ -195,8 +228,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am1(),
       am2(["組込みシステム", "リアルタイムOS", "ハードウェア設計", "IoT", "信頼性設計", "安全性設計"]),
     ],
-    seasons: ["spring"],
-    yearRange: { start: 2019, end: 2025 },
+    seasons: ["autumn"],
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["spring"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   sc: {
     code: "sc",
@@ -208,7 +243,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["情報セキュリティ", "暗号技術", "認証技術", "ネットワークセキュリティ", "セキュリティ管理", "インシデント対応", "法規"]),
     ],
     seasons: ["spring", "autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2009, end: 2025 },
   },
   sm: {
     code: "sm",
@@ -219,8 +254,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am1(),
       am2(["ITサービスマネジメント", "ITIL", "SLA", "インシデント管理", "問題管理", "変更管理", "キャパシティ管理"]),
     ],
-    seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    seasons: ["spring"],
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["autumn"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
   au: {
     code: "au",
@@ -232,7 +269,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["システム監査", "内部統制", "監査手続", "ITガバナンス", "リスク評価", "コンプライアンス"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2019, end: 2025 },
+    yearRange: { start: 2012, end: 2025 },
+    legacySeasons: ["spring"],
+    legacyYearRange: { start: 2009, end: 2011 },
   },
 };
 
@@ -243,10 +282,12 @@ export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as ExamCode[];
 export function buildPdfUrl(
   cfg: ExamConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: Season,
   sessionCfg: SessionConfig,
   type: "qs" | "ans",
 ): string {
+  // CBT exams have a different URL structure — return empty string as a safe fallback
+  if (season === "cbt") return "";
   const rr = String(year - 2018).padStart(2, "0");
   const sn = season === "spring" ? "1" : "2";
   const sc = season === "spring" ? "h" : "a";
@@ -259,10 +300,12 @@ export function buildPdfUrl(
 export function buildRawPdfPath(
   exam: ExamCode,
   year: number,
-  season: "spring" | "autumn",
+  season: Season,
   session: Session,
   type: "qs" | "ans",
+  noSessionPrefix = false,
 ): string {
+  if (noSessionPrefix) return `${exam}/${year}-${season}/${type}.pdf`;
   return `${exam}/${year}-${season}/${session}_${type}.pdf`;
 }
 
@@ -271,10 +314,10 @@ export function buildRawPdfPath(
 export function buildExtractionPrompt(
   cfg: ExamConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: "spring" | "autumn" | "cbt",
   sessionCfg: SessionConfig,
 ): string {
-  const seasonLabel = season === "spring" ? "春期" : "秋期";
+  const seasonLabel = season === "spring" ? "春期" : season === "autumn" ? "秋期" : "CBT";
   const categoryList = sessionCfg.categories
     .map((c, i) => `${i + 1}. ${c}`)
     .join("\n");
