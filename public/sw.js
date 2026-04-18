@@ -1,8 +1,10 @@
 // IPA Quiz Service Worker
 // Strategy: cache-first for static assets, network-first for pages, skip API routes.
+// CACHE_VERSION changes each time this file is installed, busting stale caches on deploy.
 
-const STATIC_CACHE = 'ipa-quiz-static-v1';
-const PAGE_CACHE = 'ipa-quiz-pages-v1';
+const CACHE_VERSION = 'v' + Date.now();
+const STATIC_CACHE = `ipa-quiz-static-${CACHE_VERSION}`;
+const PAGE_CACHE = `ipa-quiz-pages-${CACHE_VERSION}`;
 
 const PRECACHE_PAGES = ['/', '/about', '/modes/year', '/modes/topic'];
 
@@ -36,7 +38,7 @@ self.addEventListener('fetch', (event) => {
   // Only handle same-origin GET requests
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
 
-  // Skip API routes — always network
+  // /api/* — always network, never cache
   if (url.pathname.startsWith('/api/')) return;
 
   // Cache-first for Next.js static chunks (immutable content-hashed filenames)
