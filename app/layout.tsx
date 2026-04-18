@@ -9,15 +9,23 @@ import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistratio
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
+const BASE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://ipa-quiz-site.vercel.app");
+
 export const metadata: Metadata = {
   title: {
-    default: "IPA Quiz - AIネイティブ過去問学習",
+    default: "IPA Quiz — AIネイティブ過去問学習",
     template: "%s | IPA Quiz",
   },
   description:
-    "情報処理技術者試験(IPA)全区分の過去問を、AIコパイロット付きの最速UIで学習。応用情報・基本情報・高度試験まで対応予定。",
+    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
   applicationName: "IPA Quiz",
+  metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
+  alternates: {
+    canonical: "/",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
@@ -26,11 +34,18 @@ export const metadata: Metadata = {
     apple: "/icon-192.svg",
   },
   openGraph: {
-    title: "IPA Quiz - AIネイティブ過去問学習",
+    title: "IPA Quiz — AIネイティブ過去問学習",
     description:
-      "ゼロ遷移の四択クイズ + AIコパイロットで、IPA過去問を最速で解く学習プラットフォーム",
+      "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。β公開中・全機能無料。",
     type: "website",
     locale: "ja_JP",
+    siteName: "IPA Quiz",
+    url: BASE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IPA Quiz — AIネイティブ過去問学習",
+    description: "応用情報技術者試験の過去問400問をAIコパイロット付きで学習。β公開中・全機能無料。",
   },
 };
 
