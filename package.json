@@ -11,7 +11,9 @@
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
     "validate:questions": "tsx scripts/validate-questions.ts",
-    "tag:topics": "tsx scripts/topic-tagger.ts"
+    "tag:topics": "tsx scripts/topic-tagger.ts",
+    "fetch:pdfs:all": "tsx scripts/fetch-ipa-pdfs.ts --all",
+    "parse:pdfs:all": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts --all"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
