@@ -35,4 +35,4 @@ export function incrementAiUsage(): UsageData {
   return next;
 }
 
-export const FREE_DAILY_LIMIT_CLIENT = 30;
+export const FREE_DAILY_LIMIT_CLIENT = 50;

@@ -9,8 +9,25 @@ interface Bucket {
 const dayBuckets = new Map<string, Bucket>();
 const minuteBuckets = new Map<string, Bucket>();
 
-export const FREE_DAILY_LIMIT = Number(process.env.FREE_DAILY_LIMIT ?? 30);
-export const PREMIUM_MINUTE_LIMIT = Number(process.env.PREMIUM_MINUTE_LIMIT ?? 10);
+// Beta limits — applied to all users regardless of client-supplied tier
+export const BETA_DAILY_LIMIT = Number(process.env.BETA_DAILY_LIMIT ?? 50);
+export const BETA_MINUTE_LIMIT = Number(process.env.BETA_MINUTE_LIMIT ?? 15);
+
+// Client-side limit constant (kept in sync with BETA_DAILY_LIMIT for display)
+export const FREE_DAILY_LIMIT = BETA_DAILY_LIMIT;
+
+// Clean up expired buckets every 10 minutes to avoid memory growth in long-lived instances
+if (typeof setInterval !== "undefined") {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, b] of dayBuckets) {
+      if (b.resetAt <= now) dayBuckets.delete(key);
+    }
+    for (const [key, b] of minuteBuckets) {
+      if (b.resetAt <= now) minuteBuckets.delete(key);
+    }
+  }, 10 * 60 * 1000);
+}
 
 function nextJstMidnight(now: number): number {
   const jstOffsetMs = 9 * 60 * 60 * 1000;
@@ -39,47 +56,44 @@ export interface RateLimitResult {
   reason?: "daily" | "minute";
 }
 
-export function checkRateLimit(opts: {
-  ip: string;
-  tier: "free" | "premium";
-}): RateLimitResult {
-  const { ip, tier } = opts;
-  if (tier === "free") {
-    const b = tick(dayBuckets, `free:${ip}`, WINDOW_MS_DAY);
-    if (b.count >= FREE_DAILY_LIMIT) {
-      return {
-        ok: false,
-        remaining: 0,
-        limit: FREE_DAILY_LIMIT,
-        resetAt: b.resetAt,
-        reason: "daily",
-      };
-    }
-    b.count += 1;
-    return {
-      ok: true,
-      remaining: FREE_DAILY_LIMIT - b.count,
-      limit: FREE_DAILY_LIMIT,
-      resetAt: b.resetAt,
-    };
-  }
+/**
+ * Server-side rate limit check. Ignores client-supplied tier — all
+ * requests are subject to the same beta limits per IP address.
+ */
+export function checkRateLimit(opts: { ip: string }): RateLimitResult {
+  const { ip } = opts;
 
-  const b = tick(minuteBuckets, `prem:${ip}`, WINDOW_MS_MINUTE);
-  if (b.count >= PREMIUM_MINUTE_LIMIT) {
+  // Minute limit checked first (short-circuit on burst)
+  const mb = tick(minuteBuckets, `min:${ip}`, WINDOW_MS_MINUTE);
+  if (mb.count >= BETA_MINUTE_LIMIT) {
     return {
       ok: false,
       remaining: 0,
-      limit: PREMIUM_MINUTE_LIMIT,
-      resetAt: b.resetAt,
+      limit: BETA_MINUTE_LIMIT,
+      resetAt: mb.resetAt,
       reason: "minute",
     };
   }
-  b.count += 1;
+
+  // Daily limit
+  const db = tick(dayBuckets, `day:${ip}`, WINDOW_MS_DAY);
+  if (db.count >= BETA_DAILY_LIMIT) {
+    return {
+      ok: false,
+      remaining: 0,
+      limit: BETA_DAILY_LIMIT,
+      resetAt: db.resetAt,
+      reason: "daily",
+    };
+  }
+
+  mb.count += 1;
+  db.count += 1;
   return {
     ok: true,
-    remaining: PREMIUM_MINUTE_LIMIT - b.count,
-    limit: PREMIUM_MINUTE_LIMIT,
-    resetAt: b.resetAt,
+    remaining: BETA_DAILY_LIMIT - db.count,
+    limit: BETA_DAILY_LIMIT,
+    resetAt: db.resetAt,
   };
 }
 

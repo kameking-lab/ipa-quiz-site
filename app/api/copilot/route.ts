@@ -22,6 +22,8 @@ const BodySchema = z.object({
   selectedChoice: z.string().optional(),
   isCorrect: z.boolean().optional(),
   quickAction: z.string().optional(),
+  // tier is accepted from client but ignored server-side during beta —
+  // all users receive the same limits regardless of what they send.
   tier: z.enum(["free", "premium"]).default("free"),
 });
 
@@ -37,7 +39,7 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const rl = checkRateLimit({ ip, tier: payload.tier });
+  const rl = checkRateLimit({ ip });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
@@ -86,7 +88,10 @@ export async function POST(req: Request) {
       { status: 503, headers: { "X-Error-Type": "server_error" } },
     );
   }
-  const model = resolveModel(payload.tier);
+
+  // During beta all users get the free model — premium model is only
+  // unlocked once Stripe payments are implemented (Phase 4).
+  const model = resolveModel("free");
 
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
