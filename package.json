@@ -13,7 +13,12 @@
     "validate:questions": "tsx scripts/validate-questions.ts",
     "tag:topics": "tsx scripts/topic-tagger.ts",
     "fetch:pdfs:all": "tsx scripts/fetch-ipa-pdfs.ts --all",
-    "parse:pdfs:all": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts --all"
+    "parse:pdfs:all": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts --all",
+    "parse:dry-run": "tsx --env-file=.env.local scripts/parse-all.ts --dry-run",
+    "parse:all": "tsx --env-file=.env.local scripts/parse-all.ts",
+    "parse:all:a": "tsx --env-file=.env.local scripts/parse-all.ts --section=A",
+    "parse:all:b": "tsx --env-file=.env.local scripts/parse-all.ts --section=B",
+    "parse:all:c": "tsx --env-file=.env.local scripts/parse-all.ts --section=C"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
