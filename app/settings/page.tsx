@@ -192,18 +192,7 @@ export default function SettingsPage() {
           </div>
         </section>
 
-        {/* Premium */}
-        <section>
-          <SectionTitle>プレミアム（開発用）</SectionTitle>
-          <div className="rounded-xl border border-zinc-200 bg-white px-4 dark:border-zinc-800 dark:bg-zinc-900">
-            <SettingRow
-              label="プレミアムモード"
-              description="AIコパイロットたっぷり利用（1分10回・1日上限なし）/ 広告非表示（Stripe実装前の仮フラグ）"
-            >
-              <Switch checked={isPremium} onCheckedChange={togglePremium} />
-            </SettingRow>
-          </div>
-        </section>
+        {/* Premium section hidden during beta — code kept for Phase 4 */}
 
         {/* History */}
         <section>

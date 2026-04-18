@@ -63,8 +63,8 @@ export default function AboutPage() {
           信頼できる書籍で確認してください。
         </p>
         <p>
-          無料プランでは 1日 30回までの質問が可能です（JST 0:00 リセット）。プレミアムプランでは
-          AIコパイロットがたっぷり使えます（1分10回・1日上限なし）。より高品質なモデルも利用できます。
+          β公開期間中は全機能を無料でご利用いただけます。公平利用のため、AI コパイロットは
+          1日あたりの利用上限を設けています（JST 0:00 リセット）。
         </p>
       </section>
 
@@ -80,10 +80,27 @@ export default function AboutPage() {
         </p>
       </section>
 
+      <h2 className="mb-2 text-lg font-semibold">β版について</h2>
+      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p>
+          本サイトは現在ベータ版です。問題データ・機能は順次拡充予定です。
+          データは予告なく変更・削除される場合があります。
+        </p>
+      </section>
+
       <h2 className="mb-2 text-lg font-semibold">お問い合わせ</h2>
       <section className="space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          問題内容の誤りや運用に関するご指摘は、GitHub Issues からご連絡ください。
+          問題内容の誤りや運用に関するご指摘は、
+          <a
+            className="underline"
+            href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub Issues
+          </a>
+          からご連絡ください。
         </p>
       </section>
     </main>
