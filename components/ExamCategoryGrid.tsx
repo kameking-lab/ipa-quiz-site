@@ -3,28 +3,37 @@
 import * as React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import type { ExamCode } from "@/lib/questions/types";
 
-interface ExamCard {
-  id: string;
+interface ExamCardDef {
+  id: ExamCode;
   abbr: string;
   name: string;
   sub?: string;
-  questions?: number;
-  available: boolean;
 }
 
-const EXAM_CARDS: ExamCard[] = [
-  { id: "ip", abbr: "IP", name: "ITパスポート", available: false },
-  { id: "sg", abbr: "SG", name: "セキュリティ", sub: "マネジメント", available: false },
-  { id: "fe", abbr: "FE", name: "基本情報", sub: "技術者", available: false },
-  { id: "ap", abbr: "AP", name: "応用情報", sub: "技術者", questions: 400, available: true },
-  { id: "sc", abbr: "SC", name: "情報処理", sub: "安全確保支援士", available: false },
-  { id: "nw", abbr: "NW", name: "ネットワーク", sub: "スペシャリスト", available: false },
-  { id: "db", abbr: "DB", name: "データベース", sub: "スペシャリスト", available: false },
-  { id: "es", abbr: "ES", name: "エンベデッド", sub: "システム", available: false },
+const EXAM_CARDS: ExamCardDef[] = [
+  { id: "ip", abbr: "IP", name: "ITパスポート" },
+  { id: "sg", abbr: "SG", name: "セキュリティ", sub: "マネジメント" },
+  { id: "fe", abbr: "FE", name: "基本情報", sub: "技術者" },
+  { id: "ap", abbr: "AP", name: "応用情報", sub: "技術者" },
+  { id: "sc", abbr: "SC", name: "情報処理", sub: "安全確保支援士" },
+  { id: "nw", abbr: "NW", name: "ネットワーク", sub: "スペシャリスト" },
+  { id: "db", abbr: "DB", name: "データベース", sub: "スペシャリスト" },
+  { id: "es", abbr: "ES", name: "エンベデッド", sub: "システム" },
+  { id: "st", abbr: "ST", name: "ITストラテジスト" },
+  { id: "sa", abbr: "SA", name: "システム", sub: "アーキテクト" },
+  { id: "pm", abbr: "PM", name: "プロジェクト", sub: "マネージャ" },
+  { id: "sm", abbr: "SM", name: "ITサービス", sub: "マネージャ" },
+  { id: "au", abbr: "AU", name: "システム監査", sub: "技術者" },
 ];
 
-export function ExamCategoryGrid() {
+interface Props {
+  /** Question counts per exam code, computed server-side from QUESTIONS_BY_EXAM. */
+  questionCounts: Partial<Record<ExamCode, number>>;
+}
+
+export function ExamCategoryGrid({ questionCounts }: Props) {
   const [toast, setToast] = React.useState(false);
 
   const showToast = () => {
@@ -35,8 +44,10 @@ export function ExamCategoryGrid() {
   return (
     <>
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-        {EXAM_CARDS.map((exam) =>
-          exam.available ? (
+        {EXAM_CARDS.map((exam) => {
+          const count = questionCounts[exam.id] ?? 0;
+          const available = count > 0;
+          return available ? (
             <Link
               key={exam.id}
               href="#exam-modes"
@@ -58,11 +69,7 @@ export function ExamCategoryGrid() {
                   <p className="text-xs text-zinc-600 dark:text-zinc-400">{exam.sub}</p>
                 )}
               </div>
-              {exam.questions && (
-                <p className="text-[11px] text-sky-700 dark:text-sky-300">
-                  {exam.questions}問収録
-                </p>
-              )}
+              <p className="text-[11px] text-sky-700 dark:text-sky-300">{count}問収録</p>
             </Link>
           ) : (
             <button
@@ -87,8 +94,8 @@ export function ExamCategoryGrid() {
                 )}
               </div>
             </button>
-          ),
-        )}
+          );
+        })}
       </div>
 
       <div
