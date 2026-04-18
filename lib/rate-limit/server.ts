@@ -9,9 +9,14 @@ interface Bucket {
 const dayBuckets = new Map<string, Bucket>();
 const minuteBuckets = new Map<string, Bucket>();
 
+function parseLimit(raw: string | undefined, fallback: number): number {
+  const n = Number(raw ?? fallback);
+  return Number.isFinite(n) && n > 0 ? Math.floor(n) : fallback;
+}
+
 // Beta limits — applied to all users regardless of client-supplied tier
-export const BETA_DAILY_LIMIT = Number(process.env.BETA_DAILY_LIMIT ?? 50);
-export const BETA_MINUTE_LIMIT = Number(process.env.BETA_MINUTE_LIMIT ?? 15);
+export const BETA_DAILY_LIMIT = parseLimit(process.env.BETA_DAILY_LIMIT, 50);
+export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
 
 // Client-side limit constant (kept in sync with BETA_DAILY_LIMIT for display)
 export const FREE_DAILY_LIMIT = BETA_DAILY_LIMIT;
