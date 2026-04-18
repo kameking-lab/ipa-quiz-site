@@ -66,6 +66,9 @@ export default function RootLayout({
             <footer className="mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
                 <div className="text-center sm:text-left">
+                  <span className="mr-2 inline-block rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                    β公開中
+                  </span>
                   出典: IPA 情報処理技術者試験（
                   <a
                     href="https://www.ipa.go.jp/shiken/"
