@@ -55,3 +55,20 @@ body {
 .animate-in {
   animation-fill-mode: both;
 }
+
+/* Text selection */
+::selection {
+  background: #0ea5e9;
+  color: #fff;
+}
+
+.selectable-content {
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+button,
+[role="button"] {
+  user-select: none;
+  -webkit-user-select: none;
+}
