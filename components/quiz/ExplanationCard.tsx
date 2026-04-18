@@ -87,7 +87,7 @@ export function ExplanationCard({
         </button>
       )}
 
-      <div className="mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
+      <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
         {question.explanation.split("\n").map((line, i) => (
           <p key={i} className="mb-2 last:mb-0">
             {line}

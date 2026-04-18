@@ -254,7 +254,7 @@ export function CopilotPanel({
           <div
             key={i}
             className={cn(
-              "mb-3 rounded-xl px-3 py-2",
+              "selectable-content mb-3 rounded-xl px-3 py-2",
               m.role === "user"
                 ? "ml-6 bg-sky-50 text-sky-900 dark:bg-sky-950/40 dark:text-sky-100"
                 : "mr-2 bg-zinc-50 text-zinc-900 dark:bg-zinc-900 dark:text-zinc-100",
