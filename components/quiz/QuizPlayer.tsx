@@ -168,7 +168,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
 
       <div className="flex flex-1">
         <main
-          className="flex-1 px-3 pb-32 pt-4 sm:px-6 md:max-w-[calc(100%-380px)]"
+          className="flex-1 px-3 pb-32 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -224,7 +224,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
           </div>
 
           {revealed && (
-            <div className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-200 bg-white/95 p-3 backdrop-blur md:hidden dark:border-zinc-800 dark:bg-zinc-950/95">
+            <div className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-200 bg-white/95 p-3 backdrop-blur sm:hidden dark:border-zinc-800 dark:bg-zinc-950/95">
               <Button variant="primary" size="xl" onClick={goNext} className="w-full">
                 次の問題へ
               </Button>
@@ -232,7 +232,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
           )}
         </main>
 
-        <aside className="hidden w-[380px] shrink-0 border-l border-zinc-200 md:block dark:border-zinc-800">
+        <aside className="hidden shrink-0 border-l border-zinc-200 sm:block sm:w-[40%] lg:w-[380px] dark:border-zinc-800">
           <div className="sticky top-[52px] h-[calc(100dvh-52px)]">
             <CopilotPanel
               question={question}
@@ -263,7 +263,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
       />
 
       {copilotQuery === "open" && (
-        <div className="fixed bottom-24 right-4 z-30 hidden md:block">
+        <div className="fixed bottom-24 right-4 z-30 hidden sm:block">
           <div className="rounded-full bg-sky-600 px-3 py-1 text-xs text-white shadow">
             <Sparkles className="mr-1 inline h-3 w-3" />
             右パネルでAIが待機中
