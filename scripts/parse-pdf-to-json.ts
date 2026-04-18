@@ -477,7 +477,10 @@ async function main(): Promise<void> {
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: "gemini-2.5-flash",
-    generationConfig: { responseMimeType: "text/plain" },
+    generationConfig: {
+      responseMimeType: "text/plain",
+      maxOutputTokens: 65536,
+    },
   });
 
   let totalOk = 0;
@@ -523,8 +526,11 @@ async function main(): Promise<void> {
 
   if (failures.length > 0) {
     const logPath = join(LOGS_DIR, "parse-failures.json");
-    writeFileSync(logPath, JSON.stringify(failures, null, 2));
-    console.log(`\n[failures] ${failures.length} failure(s) → ${logPath}`);
+    const existing: ParseFailure[] = existsSync(logPath)
+      ? (() => { try { return JSON.parse(readFileSync(logPath, "utf-8")); } catch { return []; } })()
+      : [];
+    writeFileSync(logPath, JSON.stringify([...existing, ...failures], null, 2));
+    console.log(`\n[failures] ${failures.length} failure(s) appended → ${logPath}`);
   }
 
   console.log(`\n=== Done ===`);

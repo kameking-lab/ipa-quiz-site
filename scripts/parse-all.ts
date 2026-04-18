@@ -82,6 +82,7 @@ interface CliOptions {
   sections: Set<Section>;
   resume: boolean;
   modelTier: ModelTier;
+  examFilter: Set<string>;
 }
 
 function parseCliOptions(): CliOptions {
@@ -90,7 +91,8 @@ function parseCliOptions(): CliOptions {
   let yes = false;
   const sections = new Set<Section>();
   let resume = false;
-  let modelTier: ModelTier = "flash-lite";
+  let modelTier: ModelTier = "flash";
+  const examFilter = new Set<string>();
 
   for (const arg of argv) {
     if (arg === "--dry-run") dryRun = true;
@@ -104,6 +106,8 @@ function parseCliOptions(): CliOptions {
         if (["A", "B", "C"].includes(sec)) sections.add(sec);
         else console.warn(`Unknown section: "${s}". Valid: A, B, C`);
       }
+    } else if (arg.startsWith("--exam=")) {
+      for (const e of arg.slice(7).split(",")) examFilter.add(e.trim().toLowerCase());
     } else if (!arg.startsWith("-")) {
       // ignore positional args
     } else {
@@ -114,7 +118,7 @@ function parseCliOptions(): CliOptions {
   // Default: all sections
   if (sections.size === 0) ["A", "B", "C"].forEach((s) => sections.add(s as Section));
 
-  return { dryRun, yes, sections, resume, modelTier };
+  return { dryRun, yes, sections, resume, modelTier, examFilter };
 }
 
 // ─── Task builder ─────────────────────────────────────────────────────────────
@@ -128,9 +132,10 @@ function getSection(cfg: ExamConfig, sessionCfg: SessionConfig): Section | null 
   return null;
 }
 
-function buildTasks(sections: Set<Section>): Task[] {
+function buildTasks(sections: Set<Section>, examFilter: Set<string>): Task[] {
   const tasks: Task[] = [];
   for (const cfg of Object.values(EXAM_CONFIGS)) {
+    if (examFilter.size > 0 && !examFilter.has(cfg.code)) continue;
     // Regular sessions (am, am1, am2)
     for (const sessionCfg of cfg.sessions) {
       const section = getSection(cfg, sessionCfg);
@@ -338,6 +343,8 @@ async function extractAnswers(
   return parsed;
 }
 
+const EXPLANATION_CHUNK_SIZE = 20;
+
 async function generateExplanations(
   model: GeminiModel,
   task: Task,
@@ -346,39 +353,50 @@ async function generateExplanations(
   tracker: CostTracker,
   tier: ModelTier,
 ): Promise<Record<number, string>> {
-  const qList = rawQuestions
-    .filter((q) => !q.hasImage)
-    .map((q) => {
-      const ans = answers[String(q.qNumber)] ?? "?";
-      return `問${q.qNumber}. ${q.question}\nア:${q.choices.ア} イ:${q.choices.イ} ウ:${q.choices.ウ} エ:${q.choices.エ}\n正解: ${ans}`;
-    })
-    .join("\n\n");
+  const visible = rawQuestions.filter((q) => !q.hasImage);
+  const result: Record<number, string> = {};
 
-  const prompt = buildExplanationPrompt(task.cfg, task.sessionCfg, qList);
-  const result = await withRetry(
-    () => model.generateContent(prompt),
-    `generateExplanations ${taskKey(task)}`,
-  );
+  for (let i = 0; i < visible.length; i += EXPLANATION_CHUNK_SIZE) {
+    const chunk = visible.slice(i, i + EXPLANATION_CHUNK_SIZE);
+    const chunkNum = Math.floor(i / EXPLANATION_CHUNK_SIZE) + 1;
+    const totalChunks = Math.ceil(visible.length / EXPLANATION_CHUNK_SIZE);
+    console.log(`  [explanations] chunk ${chunkNum}/${totalChunks} (問${chunk[0].qNumber}–${chunk[chunk.length - 1].qNumber})`);
 
-  const { usageMetadata } = result.response;
-  tracker.record(
-    tier,
-    usageMetadata?.promptTokenCount ?? 30_000,
-    usageMetadata?.candidatesTokenCount ?? 6_000,
-    `explanations:${taskKey(task)}`,
-  );
+    const qList = chunk
+      .map((q) => {
+        const ans = answers[String(q.qNumber)] ?? "?";
+        return `問${q.qNumber}. ${q.question}\nア:${q.choices.ア} イ:${q.choices.イ} ウ:${q.choices.ウ} エ:${q.choices.エ}\n正解: ${ans}`;
+      })
+      .join("\n\n");
 
-  const parsed = extractJson<Record<string, string>>(result.response.text());
-  if (!parsed) {
-    console.warn(`  [explanations] parse failed, using placeholders`);
-    return Object.fromEntries(
-      rawQuestions.map((q) => [
-        q.qNumber,
-        `正解は${answers[String(q.qNumber)] ?? "不明"}です。AIコパイロットで詳しい解説を確認してください。`,
-      ]),
+    const prompt = buildExplanationPrompt(task.cfg, task.sessionCfg, qList);
+    const res = await withRetry(
+      () => model.generateContent(prompt),
+      `generateExplanations chunk${chunkNum} ${taskKey(task)}`,
     );
+
+    const { usageMetadata } = res.response;
+    tracker.record(
+      tier,
+      usageMetadata?.promptTokenCount ?? 8_000,
+      usageMetadata?.candidatesTokenCount ?? 4_000,
+      `explanations-c${chunkNum}:${taskKey(task)}`,
+    );
+
+    const parsed = extractJson<Record<string, string>>(res.response.text());
+    if (parsed) {
+      for (const [k, v] of Object.entries(parsed)) result[Number(k)] = v;
+    } else {
+      console.warn(`  [explanations] chunk ${chunkNum} parse failed, using placeholders`);
+      for (const q of chunk) {
+        result[q.qNumber] = `正解は${answers[String(q.qNumber)] ?? "不明"}です。AIコパイロットで詳しい解説を確認してください。`;
+      }
+    }
+
+    if (i + EXPLANATION_CHUNK_SIZE < visible.length) await delay(1500);
   }
-  return Object.fromEntries(Object.entries(parsed).map(([k, v]) => [Number(k), v]));
+
+  return result;
 }
 
 // ─── Question assembly ────────────────────────────────────────────────────────
@@ -491,7 +509,7 @@ async function processTask(
   task: Task,
   tracker: CostTracker,
   tier: ModelTier,
-): Promise<{ ok: number; failed: boolean }> {
+): Promise<{ ok: number; failed: boolean; errorMsg?: string }> {
   const seasonLabel = task.season === "spring" ? "春" : task.season === "autumn" ? "秋" : "CBT";
   const label = `[${task.section}] ${task.cfg.nameFull} ${task.year} ${seasonLabel} ${task.sessionCfg.label}`;
   console.log(`\n=== ${label} ===`);
@@ -524,7 +542,7 @@ async function processTask(
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error(`  [ERROR] ${msg}`);
-    return { ok: 0, failed: true };
+    return { ok: 0, failed: true, errorMsg: msg };
   }
 }
 
@@ -535,7 +553,7 @@ async function main(): Promise<void> {
   const modelName = opts.modelTier === "flash" ? "gemini-2.5-flash" : "gemini-2.5-flash-lite";
   const tracker = new CostTracker(`parse-all-${new Date().toISOString().slice(0, 10)}`);
 
-  const allTasks = buildTasks(opts.sections);
+  const allTasks = buildTasks(opts.sections, opts.examFilter);
   const done = opts.resume ? loadCheckpoint() : new Set<string>();
   const pendingTasks = opts.resume ? allTasks.filter((t) => !done.has(taskKey(t))) : allTasks;
 
@@ -551,6 +569,7 @@ async function main(): Promise<void> {
 
   console.log(`\n=== IPA 全試験パーサー ===`);
   console.log(`セクション : ${selectedSections}`);
+  if (opts.examFilter.size > 0) console.log(`試験フィルタ: ${[...opts.examFilter].join(", ")}`);
   console.log(`モデル     : ${modelName}`);
   console.log(`対象タスク : ${pendingTasks.length}件 (スキップ済: ${allTasks.length - pendingTasks.length}件)`);
   console.log(`推定コスト : ¥${Math.ceil(estJpy)}`);
@@ -592,7 +611,10 @@ async function main(): Promise<void> {
   const genAI = new GoogleGenerativeAI(apiKey);
   const model = genAI.getGenerativeModel({
     model: modelName,
-    generationConfig: { responseMimeType: "text/plain" },
+    generationConfig: {
+      responseMimeType: "text/plain",
+      maxOutputTokens: 65536,
+    },
   });
 
   let interrupted = false;
@@ -601,7 +623,15 @@ async function main(): Promise<void> {
     interrupted = true;
   });
 
-  const failures: Array<{ key: string; error: string; ts: string }> = [];
+  interface FailureRecord {
+    key: string;
+    errorType: "json-parse" | "api-error" | "pdf-missing" | "unknown";
+    errorMsg: string;
+    rawSnippet: string;
+    truncated: boolean;
+    ts: string;
+  }
+  const failures: FailureRecord[] = [];
   const startMs = Date.now();
   let processedCount = 0;
   const touchedExams = new Set<string>();
@@ -616,7 +646,17 @@ async function main(): Promise<void> {
       done.add(taskKey(task));
       touchedExams.add(task.cfg.code);
     } else {
-      failures.push({ key: taskKey(task), error: "see above", ts: new Date().toISOString() });
+      const msg = r.errorMsg ?? "unknown error";
+      const rawSnippet = msg.slice(0, 500);
+      const truncated = /JSON parse failed|切れ|truncat|unexpected end/i.test(msg);
+      const errorType: FailureRecord["errorType"] = msg.includes("JSON parse failed")
+        ? "json-parse"
+        : msg.includes("PDF")
+        ? "pdf-missing"
+        : msg.includes("429") || msg.includes("quota")
+        ? "api-error"
+        : "unknown";
+      failures.push({ key: taskKey(task), errorType, errorMsg: msg.slice(0, 500), rawSnippet, truncated, ts: new Date().toISOString() });
     }
 
     saveCheckpoint(done);
@@ -630,8 +670,11 @@ async function main(): Promise<void> {
   for (const examCode of touchedExams) regenerateBarrel(examCode);
 
   if (failures.length > 0) {
-    writeFileSync(FAILURES_PATH, JSON.stringify(failures, null, 2), "utf-8");
-    console.log(`\n[failures] ${failures.length}件 → ${FAILURES_PATH}`);
+    const existing: unknown[] = existsSync(FAILURES_PATH)
+      ? (() => { try { return JSON.parse(readFileSync(FAILURES_PATH, "utf-8")); } catch { return []; } })()
+      : [];
+    writeFileSync(FAILURES_PATH, JSON.stringify([...existing, ...failures], null, 2), "utf-8");
+    console.log(`\n[failures] ${failures.length}件 追記 → ${FAILURES_PATH}`);
   }
 
   tracker.printSummary();
