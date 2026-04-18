@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
+import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
 
 export const metadata: Metadata = {
   title: "IPA Quiz — AIネイティブ過去問学習",
@@ -47,7 +48,12 @@ export default function HomePage() {
       <HistoryStats />
 
       <h2 className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-        出題モード
+        試験区分を選んでください
+      </h2>
+      <ExamCategoryGrid />
+
+      <h2 id="exam-modes" className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+        出題モード <span className="text-xs font-normal text-zinc-500">（応用情報技術者）</span>
       </h2>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <ModeCard
