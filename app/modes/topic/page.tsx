@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ALL_QUESTIONS } from "@/data/questions";
+
+export const metadata: Metadata = {
+  title: "分野別出題 — 応用情報技術者試験",
+  description: "セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って応用情報の過去問を学習できます。",
+};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";

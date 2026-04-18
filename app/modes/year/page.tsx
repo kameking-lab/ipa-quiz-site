@@ -1,6 +1,12 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { ALL_QUESTIONS } from "@/data/questions";
+
+export const metadata: Metadata = {
+  title: "年度別出題 — 応用情報技術者試験",
+  description: "応用情報技術者試験の過去問を年度・季節ごとに選んで出題。令和5年度春期〜令和7年度春期の400問収録。",
+};
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { formatYearSeason } from "@/lib/utils";

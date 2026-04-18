@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
@@ -5,6 +6,13 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
+
+export const metadata: Metadata = {
+  title: "IPA Quiz — AIネイティブ過去問学習",
+  description:
+    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   const total = ALL_QUESTIONS.length;
