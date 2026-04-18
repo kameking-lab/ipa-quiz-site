@@ -23,7 +23,7 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import type { Question } from "@/lib/questions/types";
+import type { Question, Season } from "@/lib/questions/types";
 import {
   EXAM_CONFIGS,
   buildPdfUrl,
@@ -45,7 +45,7 @@ interface Task {
   cfg: ExamConfig;
   sessionCfg: SessionConfig;
   year: number;
-  season: "spring" | "autumn";
+  season: Season;
 }
 
 interface RawQuestion {
@@ -119,19 +119,49 @@ function parseCliOptions(): CliOptions {
 
 // ─── Task builder ─────────────────────────────────────────────────────────────
 
+const BASIC_AM_SESSIONS: string[] = ["am", "kamoku-a", "kamoku-b"];
+
+function getSection(cfg: ExamConfig, sessionCfg: SessionConfig): Section | null {
+  if (cfg.level === "basic" && BASIC_AM_SESSIONS.includes(sessionCfg.session)) return "A";
+  if (cfg.level === "specialist" && sessionCfg.session === "am1") return "B";
+  if (cfg.level === "specialist" && sessionCfg.session === "am2") return "C";
+  return null;
+}
+
 function buildTasks(sections: Set<Section>): Task[] {
   const tasks: Task[] = [];
   for (const cfg of Object.values(EXAM_CONFIGS)) {
+    // Regular sessions (am, am1, am2)
     for (const sessionCfg of cfg.sessions) {
-      let section: Section | null = null;
-      if (cfg.level === "basic" && sessionCfg.session === "am") section = "A";
-      else if (cfg.level === "specialist" && sessionCfg.session === "am1") section = "B";
-      else if (cfg.level === "specialist" && sessionCfg.session === "am2") section = "C";
+      const section = getSection(cfg, sessionCfg);
       if (!section || !sections.has(section)) continue;
 
+      // Main year range
       for (let year = cfg.yearRange.start; year <= cfg.yearRange.end; year++) {
         for (const season of cfg.seasons) {
           tasks.push({ section, cfg, sessionCfg, year, season });
+        }
+      }
+
+      // Legacy year range (2009-2011 pre-reform, different seasons)
+      if (cfg.legacyYearRange && cfg.legacySeasons) {
+        for (let year = cfg.legacyYearRange.start; year <= cfg.legacyYearRange.end; year++) {
+          for (const season of cfg.legacySeasons) {
+            tasks.push({ section, cfg, sessionCfg, year, season });
+          }
+        }
+      }
+    }
+
+    // CBT sessions (e.g. FE/SG kamoku-a/b for 2023+; IP reuses regular sessions)
+    if (cfg.cbtYearRange) {
+      const cbtSessions = cfg.cbtSessions ?? cfg.sessions;
+      for (const sessionCfg of cbtSessions) {
+        const section = getSection(cfg, sessionCfg);
+        if (!section || !sections.has(section)) continue;
+
+        for (let year = cfg.cbtYearRange.start; year <= cfg.cbtYearRange.end; year++) {
+          tasks.push({ section, cfg, sessionCfg, year, season: "cbt" });
         }
       }
     }
@@ -240,6 +270,7 @@ async function extractQuestions(
     task.season,
     task.sessionCfg.session,
     "qs",
+    task.sessionCfg.noSessionPrefix,
   );
   const pdfB64 = readFileSync(join(RAW_DIR, pdfPath)).toString("base64");
   const prompt = buildExtractionPrompt(task.cfg, task.year, task.season, task.sessionCfg);
@@ -280,6 +311,7 @@ async function extractAnswers(
     task.season,
     task.sessionCfg.session,
     "ans",
+    task.sessionCfg.noSessionPrefix,
   );
   const pdfB64 = readFileSync(join(RAW_DIR, pdfPath)).toString("base64");
   const prompt = buildAnswerExtractionPrompt(task.sessionCfg);
@@ -358,8 +390,8 @@ function buildQuestions(
   explanations: Record<number, string>,
 ): Question[] {
   const valid = ["ア", "イ", "ウ", "エ"] as const;
-  const sc = task.season === "spring" ? "h" : "a";
-  const seasonLabel = task.season === "spring" ? "春期" : "秋期";
+  const sc = task.season === "spring" ? "h" : task.season === "autumn" ? "a" : "cbt";
+  const seasonLabel = task.season === "spring" ? "春期" : task.season === "autumn" ? "秋期" : "CBT";
   const reiwa = task.year - 2018;
   const reiwaLabel = reiwa >= 1 ? `令和${reiwa}年度` : `${task.year}年度`;
 
@@ -370,7 +402,8 @@ function buildQuestions(
       return [];
     }
     const id = `${task.cfg.code}-${task.year}${sc}-${task.sessionCfg.session}-q${raw.qNumber}`;
-    const sourcePdfUrl = buildPdfUrl(task.cfg, task.year, task.season, task.sessionCfg, "qs");
+    const effSeason = task.season === "cbt" ? "spring" : task.season;
+    const sourcePdfUrl = buildPdfUrl(task.cfg, task.year, effSeason, task.sessionCfg, "qs");
     return [
       {
         id,
@@ -459,11 +492,13 @@ async function processTask(
   tracker: CostTracker,
   tier: ModelTier,
 ): Promise<{ ok: number; failed: boolean }> {
-  const label = `[${task.section}] ${task.cfg.nameFull} ${task.year} ${task.season === "spring" ? "春" : "秋"} ${task.sessionCfg.label}`;
+  const seasonLabel = task.season === "spring" ? "春" : task.season === "autumn" ? "秋" : "CBT";
+  const label = `[${task.section}] ${task.cfg.nameFull} ${task.year} ${seasonLabel} ${task.sessionCfg.label}`;
   console.log(`\n=== ${label} ===`);
 
-  const qsPdf = join(RAW_DIR, buildRawPdfPath(task.cfg.code, task.year, task.season, task.sessionCfg.session, "qs"));
-  const ansPdf = join(RAW_DIR, buildRawPdfPath(task.cfg.code, task.year, task.season, task.sessionCfg.session, "ans"));
+  const nsp = task.sessionCfg.noSessionPrefix;
+  const qsPdf = join(RAW_DIR, buildRawPdfPath(task.cfg.code, task.year, task.season, task.sessionCfg.session, "qs", nsp));
+  const ansPdf = join(RAW_DIR, buildRawPdfPath(task.cfg.code, task.year, task.season, task.sessionCfg.session, "ans", nsp));
 
   if (!existsSync(qsPdf) || !existsSync(ansPdf)) {
     const missing = [!existsSync(qsPdf) ? "qs" : null, !existsSync(ansPdf) ? "ans" : null]
@@ -524,8 +559,9 @@ async function main(): Promise<void> {
   if (opts.dryRun) {
     console.log(`\n[dry-run] 実際の実行はしません。対象タスク一覧:`);
     for (const t of pendingTasks) {
-      const qsExists = existsSync(join(RAW_DIR, buildRawPdfPath(t.cfg.code, t.year, t.season, t.sessionCfg.session, "qs")));
-      const ansExists = existsSync(join(RAW_DIR, buildRawPdfPath(t.cfg.code, t.year, t.season, t.sessionCfg.session, "ans")));
+      const nsp = t.sessionCfg.noSessionPrefix;
+      const qsExists = existsSync(join(RAW_DIR, buildRawPdfPath(t.cfg.code, t.year, t.season, t.sessionCfg.session, "qs", nsp)));
+      const ansExists = existsSync(join(RAW_DIR, buildRawPdfPath(t.cfg.code, t.year, t.season, t.sessionCfg.session, "ans", nsp)));
       const status = qsExists && ansExists ? "✓" : "✗ PDF未取得";
       console.log(`  [${t.section}] ${taskKey(t)}  ${status}`);
     }

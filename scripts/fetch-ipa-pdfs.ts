@@ -112,12 +112,16 @@ function buildTargets(
   filterSeason?: "spring" | "autumn",
 ): Array<{ url: string; savePath: string }> {
   const targets: Array<{ url: string; savePath: string }> = [];
-  const { yearRange, seasons, sessions } = cfg;
+  const { yearRange, sessions } = cfg;
 
   const years: number[] = [];
   for (let y = yearRange.start; y <= yearRange.end; y++) years.push(y);
 
-  const effectiveSeasons = filterSeason ? [filterSeason] : seasons;
+  // CBT seasons are in cbtYearRange; cfg.seasons contains only spring/autumn
+  const standardSeasons = cfg.seasons.filter(
+    (s): s is "spring" | "autumn" => s === "spring" || s === "autumn",
+  );
+  const effectiveSeasons = filterSeason ? [filterSeason] : standardSeasons;
 
   for (const year of years) {
     if (filterYear && year !== filterYear) continue;
@@ -125,11 +129,13 @@ function buildTargets(
       for (const sessionCfg of sessions) {
         targets.push({
           url: buildPdfUrl(cfg, year, season, sessionCfg, "qs"),
-          savePath: buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "qs"),
+          savePath: buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "qs",
+                                   sessionCfg.noSessionPrefix),
         });
         targets.push({
           url: buildPdfUrl(cfg, year, season, sessionCfg, "ans"),
-          savePath: buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "ans"),
+          savePath: buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "ans",
+                                   sessionCfg.noSessionPrefix),
         });
       }
     }

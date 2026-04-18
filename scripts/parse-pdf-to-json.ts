@@ -50,7 +50,7 @@ interface CliArgs {
   exams: ExamCode[];
   session?: Session;
   year?: number;
-  season?: "spring" | "autumn";
+  season?: import("@/lib/questions/types").Season;
   resume: boolean;
 }
 
@@ -59,7 +59,7 @@ function parseArgs(): CliArgs {
   let exams: ExamCode[] = [];
   let session: Session | undefined;
   let year: number | undefined;
-  let season: "spring" | "autumn" | undefined;
+  let season: import("@/lib/questions/types").Season | undefined;
   let resume = false;
 
   for (const arg of argv) {
@@ -97,7 +97,7 @@ function parseArgs(): CliArgs {
 interface Checkpoint {
   exam: ExamCode;
   year: number;
-  season: "spring" | "autumn";
+  season: import("@/lib/questions/types").Season;
   session: Session;
   questionCount: number;
   outputPath: string;
@@ -162,7 +162,7 @@ async function extractQuestions(
   cfg: ExamConfig,
   sessionCfg: SessionConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: import("@/lib/questions/types").Season,
 ): Promise<RawQuestion[]> {
   const qsPdfPath = buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "qs");
   console.log(`  [questions] Sending PDF to Gemini...`);
@@ -188,7 +188,7 @@ async function extractAnswers(
   cfg: ExamConfig,
   sessionCfg: SessionConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: import("@/lib/questions/types").Season,
 ): Promise<ParsedAnswers> {
   const ansPdfPath = buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "ans");
   console.log(`  [answers] Sending answer PDF to Gemini...`);
@@ -247,7 +247,7 @@ function buildQuestions(
   cfg: ExamConfig,
   sessionCfg: SessionConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: import("@/lib/questions/types").Season,
   rawQuestions: RawQuestion[],
   answers: ParsedAnswers,
   explanations: Record<number, string>,
@@ -302,7 +302,7 @@ function writeQuestionsFile(
   cfg: ExamConfig,
   sessionCfg: SessionConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: import("@/lib/questions/types").Season,
   questions: Question[],
 ): string {
   const outDir = join(DATA_DIR, cfg.code, "by-year");
@@ -403,7 +403,7 @@ async function processOne(
   cfg: ExamConfig,
   sessionCfg: SessionConfig,
   year: number,
-  season: "spring" | "autumn",
+  season: import("@/lib/questions/types").Season,
   resume: boolean,
 ): Promise<{ ok: number; skipped: number; failed: boolean }> {
   const label = `${cfg.nameFull} ${year} ${season} ${sessionCfg.label}`;
