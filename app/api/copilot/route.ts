@@ -10,7 +10,18 @@ import type { Question } from "@/lib/questions/types";
 export const runtime = "nodejs";
 
 const BodySchema = z.object({
-  question: z.custom<Question>((v) => typeof v === "object" && v !== null),
+  question: z.custom<Question>((v) => {
+    if (typeof v !== "object" || v === null) return false;
+    const q = v as Record<string, unknown>;
+    const choices = q.choices as Record<string, unknown> | null;
+    return (
+      typeof q.id === "string" && q.id.length > 0 &&
+      typeof q.question === "string" && q.question.length > 0 &&
+      typeof choices === "object" && choices !== null &&
+      typeof choices.ア === "string" &&
+      typeof q.answer === "string" && q.answer.length > 0
+    );
+  }),
   messages: z
     .array(
       z.object({
@@ -31,9 +42,9 @@ export async function POST(req: Request) {
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
-  } catch (err) {
+  } catch {
     return NextResponse.json(
-      { error: "Invalid request body", detail: String(err) },
+      { error: "invalid_request", message: "リクエストの形式が正しくありません。" },
       { status: 400 },
     );
   }
