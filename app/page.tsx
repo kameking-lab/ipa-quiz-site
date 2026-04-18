@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ALL_QUESTIONS } from "@/data/questions";
+import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
+import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
   title: "IPA Quiz — AIネイティブ過去問学習",
@@ -19,6 +20,12 @@ export default function HomePage() {
   const total = ALL_QUESTIONS.length;
   const years = getAvailableYears("ap");
   const categories = getAvailableCategories("ap");
+
+  const questionCounts = Object.fromEntries(
+    (Object.entries(QUESTIONS_BY_EXAM) as Array<[ExamCode, typeof ALL_QUESTIONS]>).map(
+      ([code, qs]) => [code, qs?.length ?? 0],
+    ),
+  ) as Partial<Record<ExamCode, number>>;
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
@@ -50,7 +57,7 @@ export default function HomePage() {
       <h2 className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
         試験区分を選んでください
       </h2>
-      <ExamCategoryGrid />
+      <ExamCategoryGrid questionCounts={questionCounts} />
 
       <h2 id="exam-modes" className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
         出題モード <span className="text-xs font-normal text-zinc-500">（応用情報技術者）</span>
