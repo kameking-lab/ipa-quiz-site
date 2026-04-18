@@ -1,123 +1,134 @@
 /**
- * IPA 応用情報技術者試験 過去問 PDF → TypeScript 問題データ変換スクリプト。
+ * IPA 過去問 PDF → TypeScript 問題データ変換スクリプト。
  *
  * 必要な環境変数:
  *   GEMINI_API_KEY  ... Google AI Studio で取得
  *
  * 使い方:
- *   1. pnpm tsx scripts/fetch-ipa-pdfs.ts   # PDFを data/raw_pdfs/ に取得
- *   2. pnpm tsx scripts/parse-pdf-to-json.ts # PDFを解析してデータ生成
+ *   pnpm parse:pdfs                     # AP のみ（デフォルト）
+ *   pnpm parse:pdfs --exam=fe           # FE のみ
+ *   pnpm parse:pdfs --exam=sc --session=am2
+ *   pnpm parse:pdfs --all               # 全試験区分
+ *   pnpm parse:pdfs --exam=ap --year=2023 --season=spring
+ *   pnpm parse:pdfs --exam=ap --resume  # 処理済みをスキップ
  *
  * 出力:
- *   data/questions/ap/by-year/{year}-{season}.ts  ... 各年度の問題データ
- *   data/questions/ap/by-year/index.ts             ... バレルファイル (自動生成)
- *   logs/parse-failures.json                        ... 失敗ログ
+ *   data/questions/{exam}/by-year/{year}-{season}-{session}.ts
+ *   data/questions/{exam}/by-year/index.ts  (バレルファイル、自動生成)
+ *   data/questions/{exam}/.checkpoints/{year}-{season}-{session}.json
+ *   logs/parse-failures.json
  *
  * コスト見積もり (Gemini 2.5 Flash):
- *   - 1年度あたり: 問題PDF解析×1 + 解答PDF解析×1 + 解説生成×1 = 3呼び出し
- *   - 5年度 × 3呼び出し = 15呼び出し
- *   - PDFページ数: 約16ページ/回 × 15 = 約240ページ処理
- *   - 推定コスト: 数十円〜百円程度
+ *   AP 1年度: 問題PDF解析+解答PDF解析+解説生成 = 3呼び出し ≒ 数十円
+ *   全試験区分: 最大 ¥1,000〜2,000
  */
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { Question } from "@/lib/questions/types";
+import type { ExamCode, Session } from "@/lib/questions/types";
+import {
+  EXAM_CONFIGS,
+  ALL_EXAM_CODES,
+  buildPdfUrl,
+  buildRawPdfPath,
+  buildExtractionPrompt,
+  buildAnswerExtractionPrompt,
+  buildExplanationPrompt,
+  type ExamConfig,
+  type SessionConfig,
+} from "@/lib/exam-config";
 
 const RAW_DIR = join(process.cwd(), "data", "raw_pdfs");
-const OUT_DIR = join(process.cwd(), "data", "questions", "ap", "by-year");
+const DATA_DIR = join(process.cwd(), "data", "questions");
 const LOGS_DIR = join(process.cwd(), "logs");
 
-interface YearConfig {
+// ------- CLI arg parsing -------
+
+interface CliArgs {
+  exams: ExamCode[];
+  session?: Session;
+  year?: number;
+  season?: "spring" | "autumn";
+  resume: boolean;
+}
+
+function parseArgs(): CliArgs {
+  const argv = process.argv.slice(2);
+  let exams: ExamCode[] = [];
+  let session: Session | undefined;
+  let year: number | undefined;
+  let season: "spring" | "autumn" | undefined;
+  let resume = false;
+
+  for (const arg of argv) {
+    if (arg === "--all") {
+      exams = ALL_EXAM_CODES.filter((e) => EXAM_CONFIGS[e].sessions.length > 0);
+    } else if (arg.startsWith("--exam=")) {
+      const code = arg.slice(7) as ExamCode;
+      if (!EXAM_CONFIGS[code]) {
+        console.error(`Unknown exam: ${code}. Valid: ${ALL_EXAM_CODES.join(", ")}`);
+        process.exitCode = 1;
+      } else {
+        exams.push(code);
+      }
+    } else if (arg.startsWith("--session=")) {
+      session = arg.slice(10) as Session;
+    } else if (arg.startsWith("--year=")) {
+      year = parseInt(arg.slice(7), 10);
+    } else if (arg === "--season=spring") {
+      season = "spring";
+    } else if (arg === "--season=autumn") {
+      season = "autumn";
+    } else if (arg === "--resume") {
+      resume = true;
+    } else {
+      console.warn(`Unknown arg: ${arg}`);
+    }
+  }
+
+  if (exams.length === 0) exams = ["ap"];
+  return { exams, session, year, season, resume };
+}
+
+// ------- Checkpoint helpers -------
+
+interface Checkpoint {
+  exam: ExamCode;
   year: number;
   season: "spring" | "autumn";
-  key: string;
-  qsPdfPath: string;
-  ansPdfPath: string;
-  sourcePdfUrl: string;
+  session: Session;
+  questionCount: number;
+  outputPath: string;
+  completedAt: string;
 }
 
-const YEAR_CONFIGS: YearConfig[] = [
-  {
-    year: 2023,
-    season: "spring",
-    key: "2023-spring",
-    qsPdfPath: "ap/2023-spring/am_qs.pdf",
-    ansPdfPath: "ap/2023-spring/am_ans.pdf",
-    sourcePdfUrl:
-      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_ap_am_qs.pdf",
-  },
-  {
-    year: 2023,
-    season: "autumn",
-    key: "2023-autumn",
-    qsPdfPath: "ap/2023-autumn/am_qs.pdf",
-    ansPdfPath: "ap/2023-autumn/am_ans.pdf",
-    sourcePdfUrl:
-      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_ap_am_qs.pdf",
-  },
-  {
-    year: 2024,
-    season: "spring",
-    key: "2024-spring",
-    qsPdfPath: "ap/2024-spring/am_qs.pdf",
-    ansPdfPath: "ap/2024-spring/am_ans.pdf",
-    sourcePdfUrl:
-      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_ap_am_qs.pdf",
-  },
-  {
-    year: 2024,
-    season: "autumn",
-    key: "2024-autumn",
-    qsPdfPath: "ap/2024-autumn/am_qs.pdf",
-    ansPdfPath: "ap/2024-autumn/am_ans.pdf",
-    sourcePdfUrl:
-      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_2/2024h06a_ap_am_qs.pdf",
-  },
-  {
-    year: 2025,
-    season: "spring",
-    key: "2025-spring",
-    qsPdfPath: "ap/2025-spring/am_qs.pdf",
-    ansPdfPath: "ap/2025-spring/am_ans.pdf",
-    sourcePdfUrl:
-      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_ap_am_qs.pdf",
-  },
-];
-
-interface RawQuestion {
-  qNumber: number;
-  question: string;
-  choices: { ア: string; イ: string; ウ: string; エ: string };
-  category: string;
-  hasImage: boolean;
+function checkpointPath(exam: ExamCode, year: number, season: string, session: Session): string {
+  return join(DATA_DIR, exam, ".checkpoints", `${year}-${season}-${session}.json`);
 }
 
-interface ParsedAnswer {
-  [qNumber: string]: string;
+function isCheckpointed(exam: ExamCode, year: number, season: string, session: Session): boolean {
+  return existsSync(checkpointPath(exam, year, season, session as Session));
 }
 
-interface ParseFailure {
-  year: number;
-  season: string;
-  stage: string;
-  error: string;
-  timestamp: string;
+function saveCheckpoint(cp: Checkpoint): void {
+  const dir = join(DATA_DIR, cp.exam, ".checkpoints");
+  mkdirSync(dir, { recursive: true });
+  writeFileSync(checkpointPath(cp.exam, cp.year, cp.season, cp.session), JSON.stringify(cp, null, 2));
 }
 
-const failures: ParseFailure[] = [];
+// ------- PDF helpers -------
 
-function pdfToBase64(filePath: string): string {
-  const abs = join(RAW_DIR, filePath);
+function pdfToBase64(relPath: string): string {
+  const abs = join(RAW_DIR, relPath);
   if (!existsSync(abs)) {
-    throw new Error(`PDF not found: ${abs}\nRun: pnpm tsx scripts/fetch-ipa-pdfs.ts`);
+    throw new Error(`PDF not found: ${abs}\nRun: pnpm fetch:pdfs --exam=<exam>`);
   }
   return readFileSync(abs).toString("base64");
 }
 
 function extractJson<T>(text: string): T | null {
-  // Gemini sometimes wraps JSON in ```json ... ``` or adds text around it
   const fenced = text.match(/```(?:json)?\s*([\s\S]+?)```/);
   const candidate = fenced ? fenced[1] : text;
   const arrMatch = candidate.match(/(\[[\s\S]*\])/);
@@ -130,53 +141,33 @@ function extractJson<T>(text: string): T | null {
   }
 }
 
+// ------- Gemini calls -------
+
+type GeminiModel = ReturnType<InstanceType<typeof GoogleGenerativeAI>["getGenerativeModel"]>;
+
+interface RawQuestion {
+  qNumber: number;
+  question: string;
+  choices: { ア: string; イ: string; ウ: string; エ: string };
+  category: string;
+  hasImage: boolean;
+}
+
+interface ParsedAnswers {
+  [qNumber: string]: string;
+}
+
 async function extractQuestions(
-  model: ReturnType<InstanceType<typeof GoogleGenerativeAI>["getGenerativeModel"]>,
-  cfg: YearConfig,
+  model: GeminiModel,
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  year: number,
+  season: "spring" | "autumn",
 ): Promise<RawQuestion[]> {
-  console.log(`  [questions] Sending question PDF to Gemini...`);
-  const pdfB64 = pdfToBase64(cfg.qsPdfPath);
-
-  const prompt = `This is the IPA (情報処理技術者試験) Applied Information Technology Engineer (応用情報技術者) morning exam (午前) question PDF for ${cfg.year} ${cfg.season === "spring" ? "spring (春期)" : "autumn (秋期)"}.
-
-Extract ALL 80 multiple-choice questions. Each question has:
-- 問番号 (question number): 問1 through 問80
-- 問題文 (question text)
-- 選択肢 labeled ア, イ, ウ, エ
-
-Return ONLY a valid JSON array (no markdown, no explanation text) with this structure:
-[
-  {
-    "qNumber": 1,
-    "question": "問題文の全文をここに",
-    "choices": {
-      "ア": "選択肢アの全文",
-      "イ": "選択肢イの全文",
-      "ウ": "選択肢ウの全文",
-      "エ": "選択肢エの全文"
-    },
-    "category": "基礎理論",
-    "hasImage": false
-  }
-]
-
-For category, use one of these values based on the question content:
-- 基礎理論 (logic, sets, automata, information theory, number systems)
-- アルゴリズムとプログラミング (algorithms, sorting, data structures, programming)
-- コンピュータシステム (CPU, memory, OS, hardware)
-- ネットワーク (TCP/IP, protocols, network design)
-- データベース (SQL, normalization, transactions, ER diagrams)
-- セキュリティ (cryptography, authentication, threats, countermeasures)
-- 開発技術 (software engineering, testing, UML, development processes)
-- プロジェクトマネジメント (PMBOK, EVM, scheduling, risk management)
-- サービスマネジメント (ITIL, SLA, incident management)
-- システム戦略 (IT strategy, BPR, architecture planning)
-- 経営戦略 (Porter's forces, BCG, balanced scorecard, M&A)
-- 企業と法務 (intellectual property, labor law, personal information protection, corporate governance)
-
-Set hasImage to true if the question references a diagram, figure, or table that cannot be fully expressed in text.
-
-Important: Extract questions exactly as written. Do not paraphrase or summarize.`;
+  const qsPdfPath = buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "qs");
+  console.log(`  [questions] Sending PDF to Gemini...`);
+  const pdfB64 = pdfToBase64(qsPdfPath);
+  const prompt = buildExtractionPrompt(cfg, year, season, sessionCfg);
 
   const result = await model.generateContent([
     { inlineData: { mimeType: "application/pdf", data: pdfB64 } },
@@ -185,34 +176,24 @@ Important: Extract questions exactly as written. Do not paraphrase or summarize.
 
   const text = result.response.text();
   const parsed = extractJson<RawQuestion[]>(text);
-
   if (!parsed || !Array.isArray(parsed)) {
-    throw new Error(`Failed to parse questions JSON. Raw response (first 500 chars):\n${text.slice(0, 500)}`);
+    throw new Error(`Failed to parse questions JSON.\n${text.slice(0, 500)}`);
   }
-
   console.log(`  [questions] Extracted ${parsed.length} questions`);
   return parsed;
 }
 
 async function extractAnswers(
-  model: ReturnType<InstanceType<typeof GoogleGenerativeAI>["getGenerativeModel"]>,
-  cfg: YearConfig,
-): Promise<ParsedAnswer> {
+  model: GeminiModel,
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  year: number,
+  season: "spring" | "autumn",
+): Promise<ParsedAnswers> {
+  const ansPdfPath = buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "ans");
   console.log(`  [answers] Sending answer PDF to Gemini...`);
-  const pdfB64 = pdfToBase64(cfg.ansPdfPath);
-
-  const prompt = `This is the answer sheet PDF for the IPA Applied Information Technology Engineer (応用情報技術者) morning exam (午前).
-
-Extract all 80 answers. Return ONLY a valid JSON object (no markdown) mapping question numbers to answers:
-{
-  "1": "ア",
-  "2": "イ",
-  "3": "ウ",
-  ...
-  "80": "エ"
-}
-
-Answers are one of: ア, イ, ウ, エ`;
+  const pdfB64 = pdfToBase64(ansPdfPath);
+  const prompt = buildAnswerExtractionPrompt(sessionCfg);
 
   const result = await model.generateContent([
     { inlineData: { mimeType: "application/pdf", data: pdfB64 } },
@@ -220,106 +201,83 @@ Answers are one of: ア, イ, ウ, エ`;
   ]);
 
   const text = result.response.text();
-  const parsed = extractJson<ParsedAnswer>(text);
-
+  const parsed = extractJson<ParsedAnswers>(text);
   if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
-    throw new Error(`Failed to parse answers JSON. Raw response (first 500 chars):\n${text.slice(0, 500)}`);
+    throw new Error(`Failed to parse answers JSON.\n${text.slice(0, 500)}`);
   }
-
-  const count = Object.keys(parsed).length;
-  console.log(`  [answers] Extracted ${count} answers`);
+  console.log(`  [answers] Extracted ${Object.keys(parsed).length} answers`);
   return parsed;
 }
 
 async function generateExplanations(
-  model: ReturnType<InstanceType<typeof GoogleGenerativeAI>["getGenerativeModel"]>,
-  questions: RawQuestion[],
-  answers: ParsedAnswer,
+  model: GeminiModel,
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  rawQuestions: RawQuestion[],
+  answers: ParsedAnswers,
 ): Promise<Record<number, string>> {
-  console.log(`  [explanations] Generating explanations for ${questions.length} questions...`);
-
-  const textOnlyQuestions = questions
+  console.log(`  [explanations] Generating for ${rawQuestions.length} questions...`);
+  const qList = rawQuestions
     .filter((q) => !q.hasImage)
-    .slice(0, 80);
-
-  const qList = textOnlyQuestions
     .map((q) => {
       const ans = answers[String(q.qNumber)] ?? "?";
-      return `問${q.qNumber}. ${q.question}
-ア:${q.choices.ア} イ:${q.choices.イ} ウ:${q.choices.ウ} エ:${q.choices.エ}
-正解: ${ans}`;
+      return `問${q.qNumber}. ${q.question}\nア:${q.choices.ア} イ:${q.choices.イ} ウ:${q.choices.ウ} エ:${q.choices.エ}\n正解: ${ans}`;
     })
     .join("\n\n");
 
-  const prompt = `以下はIPA応用情報技術者試験 午前問題です。各問について、正解の根拠を日本語で2〜3文で説明してください。
-
-回答形式: 問題番号をキー、説明文を値とするJSONオブジェクト (マークダウン不要、JSONのみ):
-{
-  "1": "問1の解説文",
-  "2": "問2の解説文",
-  ...
-}
-
-問題リスト:
-${qList}`;
-
-  const result = await model.generateContent(prompt);
+  const result = await model.generateContent(buildExplanationPrompt(cfg, sessionCfg, qList));
   const text = result.response.text();
   const parsed = extractJson<Record<string, string>>(text);
 
   if (!parsed) {
-    console.warn(`  [explanations] Warning: failed to parse explanation JSON, using placeholders`);
+    console.warn(`  [explanations] Parse failed, using placeholders`);
     const fallback: Record<number, string> = {};
-    for (const q of questions) {
-      fallback[q.qNumber] = `正解は${answers[String(q.qNumber)] ?? "不明"}です。AIコパイロットに詳しい解説を依頼してください。`;
+    for (const q of rawQuestions) {
+      fallback[q.qNumber] = `正解は${answers[String(q.qNumber)] ?? "不明"}です。AIコパイロットに解説を依頼してください。`;
     }
     return fallback;
   }
 
-  const result2: Record<number, string> = {};
-  for (const [k, v] of Object.entries(parsed)) {
-    result2[Number(k)] = v;
-  }
-  return result2;
+  return Object.fromEntries(Object.entries(parsed).map(([k, v]) => [Number(k), v]));
 }
 
-function buildSeasonLabel(season: "spring" | "autumn"): string {
-  return season === "spring" ? "春期" : "秋期";
-}
+// ------- Question assembly -------
 
 function buildQuestions(
-  cfg: YearConfig,
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  year: number,
+  season: "spring" | "autumn",
   rawQuestions: RawQuestion[],
-  answers: ParsedAnswer,
+  answers: ParsedAnswers,
   explanations: Record<number, string>,
 ): Question[] {
+  const seasonLabel = season === "spring" ? "春期" : "秋期";
+  const valid = ["ア", "イ", "ウ", "エ"] as const;
   const questions: Question[] = [];
 
   for (const raw of rawQuestions) {
-    const answerKey = answers[String(raw.qNumber)];
-    if (!answerKey) {
-      console.warn(`  [merge] No answer for 問${raw.qNumber}, skipping`);
+    const ansKey = answers[String(raw.qNumber)];
+    if (!ansKey || !valid.includes(ansKey as (typeof valid)[number])) {
+      console.warn(`  [merge] Skipping 問${raw.qNumber}: invalid answer "${ansKey}"`);
       continue;
     }
 
-    const validChoiceKeys = ["ア", "イ", "ウ", "エ"] as const;
-    if (!validChoiceKeys.includes(answerKey as (typeof validChoiceKeys)[number])) {
-      console.warn(`  [merge] Invalid answer key "${answerKey}" for 問${raw.qNumber}, skipping`);
-      continue;
-    }
-
-    const seasonLabel = buildSeasonLabel(cfg.season);
-    const id = `ap-${cfg.year}${cfg.season === "spring" ? "h" : "a"}-am-q${raw.qNumber}`;
+    const sc = season === "spring" ? "h" : "a";
+    const id = `${cfg.code}-${year}${sc}-${sessionCfg.session}-q${raw.qNumber}`;
+    const reiwa = year - 2018;
+    const reiwaLabel = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
+    const sourcePdfUrl = buildPdfUrl(cfg, year, season, sessionCfg, "qs");
     const explanation =
       explanations[raw.qNumber] ??
-      `正解は${answerKey}です。（出典: IPA応用情報技術者試験 令和${cfg.year - 2018}年度${seasonLabel} 午前 問${raw.qNumber}）`;
+      `正解は${ansKey}です。（出典: IPA ${cfg.nameFull} ${reiwaLabel}${seasonLabel} ${sessionCfg.label} 問${raw.qNumber}）`;
 
     questions.push({
       id,
-      exam: "ap",
-      session: "am",
-      year: cfg.year,
-      season: cfg.season,
+      exam: cfg.code,
+      session: sessionCfg.session,
+      year,
+      season,
       qNumber: raw.qNumber,
       type: "multiple-choice",
       category: raw.category || "技術要素",
@@ -327,10 +285,10 @@ function buildQuestions(
       difficulty: 3,
       question: raw.question,
       choices: raw.choices,
-      answer: answerKey as "ア" | "イ" | "ウ" | "エ",
+      answer: ansKey as "ア" | "イ" | "ウ" | "エ",
       explanation,
       hasImage: raw.hasImage,
-      sourcePdfUrl: cfg.sourcePdfUrl,
+      sourcePdfUrl,
       license: "IPA-public",
     });
   }
@@ -338,139 +296,182 @@ function buildQuestions(
   return questions;
 }
 
-function writeTypeScriptFile(cfg: YearConfig, questions: Question[]): void {
-  mkdirSync(OUT_DIR, { recursive: true });
+// ------- File output -------
 
-  const outPath = join(OUT_DIR, `${cfg.key}.ts`);
-  const varName = `AP_QUESTIONS_${cfg.year}_${cfg.season.toUpperCase()}`;
+function writeQuestionsFile(
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  year: number,
+  season: "spring" | "autumn",
+  questions: Question[],
+): string {
+  const outDir = join(DATA_DIR, cfg.code, "by-year");
+  mkdirSync(outDir, { recursive: true });
+
+  const key = `${year}-${season}-${sessionCfg.session}`;
+  const outPath = join(outDir, `${key}.ts`);
+  const varName = `${cfg.code.toUpperCase()}_QUESTIONS_${year}_${season.toUpperCase()}_${sessionCfg.session.toUpperCase().replace("-", "_")}`;
+  const seasonLabel = season === "spring" ? "春期" : "秋期";
 
   const ts = `// Auto-generated by scripts/parse-pdf-to-json.ts — do not edit manually.
-// Source: IPA 応用情報技術者試験 ${cfg.year}年度${buildSeasonLabel(cfg.season)} 午前
-// Questions: ${questions.length} (hasImage excluded if any)
+// Source: IPA ${cfg.nameFull} ${year}年度${seasonLabel} ${sessionCfg.label}
+// Questions: ${questions.length}
 import type { Question } from "@/lib/questions/types";
 
 export const ${varName}: Question[] = ${JSON.stringify(questions, null, 2)};
 `;
 
   writeFileSync(outPath, ts, "utf-8");
-  console.log(`  [output] Wrote ${questions.length} questions → ${outPath}`);
+  console.log(`  [output] ${questions.length} questions → ${outPath}`);
+  return outPath;
 }
 
-function regenerateBarrel(): void {
-  const existingKeys = YEAR_CONFIGS.map((c) => c.key).filter((key) =>
-    existsSync(join(OUT_DIR, `${key}.ts`)),
-  );
+function regenerateBarrel(examCode: ExamCode): void {
+  const outDir = join(DATA_DIR, examCode, "by-year");
+  if (!existsSync(outDir)) return;
 
-  if (existingKeys.length === 0) {
-    const barrel = `// Auto-generated barrel — no by-year data yet.
-// Run: pnpm parse:pdfs
-import type { Question } from "@/lib/questions/types";
-export const AP_BY_YEAR_QUESTIONS: Question[] = [];
-`;
-    writeFileSync(join(OUT_DIR, "index.ts"), barrel, "utf-8");
+  // Find all generated .ts files (excluding index.ts itself)
+  const files = (() => {
+    try {
+      const { readdirSync } = require("node:fs") as typeof import("node:fs");
+      return readdirSync(outDir)
+        .filter((f: string) => f.endsWith(".ts") && f !== "index.ts")
+        .sort();
+    } catch {
+      return [];
+    }
+  })();
+
+  if (files.length === 0) {
+    writeFileSync(
+      join(outDir, "index.ts"),
+      `// No data yet. Run: pnpm parse:pdfs --exam=${examCode}\nimport type { Question } from "@/lib/questions/types";\nexport const BY_YEAR_QUESTIONS: Question[] = [];\n`,
+    );
     return;
   }
 
-  const imports = existingKeys
-    .map((key) => {
-      const cfg = YEAR_CONFIGS.find((c) => c.key === key)!;
-      const varName = `AP_QUESTIONS_${cfg.year}_${cfg.season.toUpperCase()}`;
-      return `import { ${varName} } from "./${key}";`;
+  const imports = files
+    .map((f: string) => {
+      const base = f.replace(".ts", "");
+      // Extract variable name from the first export const line
+      const content = readFileSync(join(outDir, f), "utf-8");
+      const match = content.match(/^export const (\w+):/m);
+      return match ? `import { ${match[1]} } from "./${base}";` : null;
     })
+    .filter(Boolean)
     .join("\n");
 
-  const spread = existingKeys
-    .map((key) => {
-      const cfg = YEAR_CONFIGS.find((c) => c.key === key)!;
-      return `  ...AP_QUESTIONS_${cfg.year}_${cfg.season.toUpperCase()}`;
+  const spreads = files
+    .map((f: string) => {
+      const content = readFileSync(join(outDir, f), "utf-8");
+      const match = content.match(/^export const (\w+):/m);
+      return match ? `  ...${match[1]}` : null;
     })
+    .filter(Boolean)
     .join(",\n");
 
   const barrel = `// Auto-generated barrel — do not edit manually.
-// Run pnpm parse:pdfs to regenerate.
+// Run pnpm parse:pdfs --exam=${examCode} to regenerate.
 import type { Question } from "@/lib/questions/types";
 ${imports}
 
-export const AP_BY_YEAR_QUESTIONS: Question[] = [
-${spread},
+export const BY_YEAR_QUESTIONS: Question[] = [
+${spreads},
 ];
 `;
-  writeFileSync(join(OUT_DIR, "index.ts"), barrel, "utf-8");
-  console.log(`[barrel] Regenerated index.ts with ${existingKeys.length} year(s)`);
+
+  writeFileSync(join(outDir, "index.ts"), barrel, "utf-8");
+  console.log(`[barrel] ${examCode}/by-year/index.ts updated (${files.length} file(s))`);
 }
 
-async function processYear(
-  model: ReturnType<InstanceType<typeof GoogleGenerativeAI>["getGenerativeModel"]>,
-  cfg: YearConfig,
+// ------- Main processing loop -------
+
+interface ParseFailure {
+  exam: ExamCode;
+  year: number;
+  season: string;
+  session: Session;
+  stage: string;
+  error: string;
+  timestamp: string;
+}
+
+const failures: ParseFailure[] = [];
+
+async function processOne(
+  model: GeminiModel,
+  cfg: ExamConfig,
+  sessionCfg: SessionConfig,
+  year: number,
+  season: "spring" | "autumn",
+  resume: boolean,
 ): Promise<{ ok: number; skipped: number; failed: boolean }> {
-  const label = `${cfg.year} ${buildSeasonLabel(cfg.season)}`;
-  console.log(`\n=== Processing AP ${label} ===`);
+  const label = `${cfg.nameFull} ${year} ${season} ${sessionCfg.label}`;
+  console.log(`\n=== Processing ${label} ===`);
 
-  const qsPdfAbs = join(RAW_DIR, cfg.qsPdfPath);
-  const ansPdfAbs = join(RAW_DIR, cfg.ansPdfPath);
+  if (resume && isCheckpointed(cfg.code, year, season, sessionCfg.session)) {
+    console.log(`  [resume] Already processed, skipping.`);
+    return { ok: 0, skipped: 1, failed: false };
+  }
 
-  if (!existsSync(qsPdfAbs) || !existsSync(ansPdfAbs)) {
-    const missing = [
-      !existsSync(qsPdfAbs) ? cfg.qsPdfPath : null,
-      !existsSync(ansPdfAbs) ? cfg.ansPdfPath : null,
-    ]
+  const qsPdf = join(RAW_DIR, buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "qs"));
+  const ansPdf = join(RAW_DIR, buildRawPdfPath(cfg.code, year, season, sessionCfg.session, "ans"));
+
+  if (!existsSync(qsPdf) || !existsSync(ansPdf)) {
+    const missing = [!existsSync(qsPdf) ? "qs" : null, !existsSync(ansPdf) ? "ans" : null]
       .filter(Boolean)
       .join(", ");
-    console.warn(`  [skip] PDFs not found: ${missing}`);
-    console.warn(`  Run: pnpm tsx scripts/fetch-ipa-pdfs.ts`);
-    failures.push({
-      year: cfg.year,
-      season: cfg.season,
-      stage: "file-check",
-      error: `PDFs missing: ${missing}`,
-      timestamp: new Date().toISOString(),
-    });
+    console.warn(`  [skip] PDFs missing: ${missing}`);
+    console.warn(`  Run: pnpm fetch:pdfs --exam=${cfg.code}`);
+    failures.push({ exam: cfg.code, year, season, session: sessionCfg.session, stage: "file-check", error: `PDFs missing: ${missing}`, timestamp: new Date().toISOString() });
     return { ok: 0, skipped: 0, failed: true };
   }
 
   try {
-    const rawQuestions = await extractQuestions(model, cfg);
-    // Throttle to avoid rate limits
-    await new Promise((r) => setTimeout(r, 2000));
+    const rawQuestions = await extractQuestions(model, cfg, sessionCfg, year, season);
+    await delay(2000);
+    const answers = await extractAnswers(model, cfg, sessionCfg, year, season);
+    await delay(2000);
+    const explanations = await generateExplanations(model, cfg, sessionCfg, rawQuestions, answers);
+    await delay(1000);
 
-    const answers = await extractAnswers(model, cfg);
-    await new Promise((r) => setTimeout(r, 2000));
-
-    const explanations = await generateExplanations(model, rawQuestions, answers);
-    await new Promise((r) => setTimeout(r, 1000));
-
-    const questions = buildQuestions(cfg, rawQuestions, answers, explanations);
-    const withImage = rawQuestions.filter((q) => q.hasImage).length;
+    const questions = buildQuestions(cfg, sessionCfg, year, season, rawQuestions, answers, explanations);
     const skipped = rawQuestions.length - questions.length;
+    console.log(`  [summary] Built: ${questions.length}, Skipped: ${skipped}`);
 
-    console.log(`  [summary] Total: ${rawQuestions.length}, Built: ${questions.length}, HasImage: ${withImage}, Skipped: ${skipped}`);
-    writeTypeScriptFile(cfg, questions);
+    const outPath = writeQuestionsFile(cfg, sessionCfg, year, season, questions);
+    saveCheckpoint({
+      exam: cfg.code,
+      year,
+      season,
+      session: sessionCfg.session,
+      questionCount: questions.length,
+      outputPath: outPath,
+      completedAt: new Date().toISOString(),
+    });
 
     return { ok: questions.length, skipped, failed: false };
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     console.error(`  [ERROR] ${msg}`);
-    failures.push({
-      year: cfg.year,
-      season: cfg.season,
-      stage: "parse",
-      error: msg,
-      timestamp: new Date().toISOString(),
-    });
+    failures.push({ exam: cfg.code, year, season, session: sessionCfg.session, stage: "parse", error: msg, timestamp: new Date().toISOString() });
     return { ok: 0, skipped: 0, failed: true };
   }
 }
 
+const delay = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 async function main(): Promise<void> {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
-    console.error("ERROR: GEMINI_API_KEY is not set.");
-    console.error("Set it in .env.local or export GEMINI_API_KEY=your-key");
+    console.error("ERROR: GEMINI_API_KEY is not set. Add to .env.local or export.");
     process.exitCode = 1;
     return;
   }
 
-  mkdirSync(OUT_DIR, { recursive: true });
+  const { exams, session: filterSession, year: filterYear, season: filterSeason, resume } = parseArgs();
+  if (process.exitCode === 1) return;
+
   mkdirSync(LOGS_DIR, { recursive: true });
 
   const genAI = new GoogleGenerativeAI(apiKey);
@@ -483,34 +484,53 @@ async function main(): Promise<void> {
   let totalSkipped = 0;
   let totalFailed = 0;
 
-  const targetKeys = process.argv[2] ? [process.argv[2]] : YEAR_CONFIGS.map((c) => c.key);
-
-  for (const key of targetKeys) {
-    const cfg = YEAR_CONFIGS.find((c) => c.key === key);
-    if (!cfg) {
-      console.error(`Unknown year key: ${key}. Valid keys: ${YEAR_CONFIGS.map((c) => c.key).join(", ")}`);
+  for (const examCode of exams) {
+    const cfg = EXAM_CONFIGS[examCode];
+    if (cfg.sessions.length === 0) {
+      console.log(`[skip] ${cfg.nameFull} — no parseable sessions (CBT)`);
       continue;
     }
-    const r = await processYear(model, cfg);
-    totalOk += r.ok;
-    totalSkipped += r.skipped;
-    if (r.failed) totalFailed++;
-    // Throttle between years
-    await new Promise((r2) => setTimeout(r2, 3000));
-  }
 
-  regenerateBarrel();
+    const sessions = filterSession
+      ? cfg.sessions.filter((s) => s.session === filterSession)
+      : cfg.sessions;
+
+    if (sessions.length === 0) {
+      console.warn(`[skip] ${examCode}: session "${filterSession}" not found`);
+      continue;
+    }
+
+    const years: number[] = [];
+    for (let y = cfg.yearRange.start; y <= cfg.yearRange.end; y++) years.push(y);
+
+    const seasons = filterSeason ? [filterSeason] : cfg.seasons;
+
+    for (const year of years) {
+      if (filterYear && year !== filterYear) continue;
+      for (const season of seasons) {
+        for (const sessionCfg of sessions) {
+          const r = await processOne(model, cfg, sessionCfg, year, season, resume);
+          totalOk += r.ok;
+          totalSkipped += r.skipped;
+          if (r.failed) totalFailed++;
+          if (!r.failed && !r.skipped) await delay(3000);
+        }
+      }
+    }
+
+    regenerateBarrel(examCode);
+  }
 
   if (failures.length > 0) {
     const logPath = join(LOGS_DIR, "parse-failures.json");
-    writeFileSync(logPath, JSON.stringify(failures, null, 2), "utf-8");
-    console.log(`\n[failures] Logged ${failures.length} failure(s) → ${logPath}`);
+    writeFileSync(logPath, JSON.stringify(failures, null, 2));
+    console.log(`\n[failures] ${failures.length} failure(s) → ${logPath}`);
   }
 
   console.log(`\n=== Done ===`);
   console.log(`Questions built: ${totalOk}`);
-  console.log(`Skipped (hasImage/no-answer): ${totalSkipped}`);
-  console.log(`Years failed: ${totalFailed}`);
+  console.log(`Skipped: ${totalSkipped}`);
+  console.log(`Failed: ${totalFailed}`);
 
   if (totalFailed > 0) process.exitCode = 1;
 }
