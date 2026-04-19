@@ -288,6 +288,8 @@ export function CopilotPanel({
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto p-3"
+        aria-live="polite"
+        aria-label="AI コパイロットの応答"
       >
         {messages.length === 0 && (
           <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
