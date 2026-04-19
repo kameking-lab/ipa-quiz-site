@@ -1,0 +1,53 @@
+// Auto-generated barrel — do not edit manually.
+import type { Question } from "@/lib/questions/types";
+import { SA_QUESTIONS_2009_AUTUMN_AM1 } from "./2009-autumn-am1";
+import { SA_QUESTIONS_2009_AUTUMN_AM2 } from "./2009-autumn-am2";
+import { SA_QUESTIONS_2010_AUTUMN_AM1 } from "./2010-autumn-am1";
+import { SA_QUESTIONS_2010_AUTUMN_AM2 } from "./2010-autumn-am2";
+import { SA_QUESTIONS_2011_AUTUMN_AM1 } from "./2011-autumn-am1";
+import { SA_QUESTIONS_2011_AUTUMN_AM2 } from "./2011-autumn-am2";
+import { SA_QUESTIONS_2012_SPRING_AM1 } from "./2012-spring-am1";
+import { SA_QUESTIONS_2013_SPRING_AM1 } from "./2013-spring-am1";
+import { SA_QUESTIONS_2014_SPRING_AM1 } from "./2014-spring-am1";
+import { SA_QUESTIONS_2015_SPRING_AM1 } from "./2015-spring-am1";
+import { SA_QUESTIONS_2016_SPRING_AM1 } from "./2016-spring-am1";
+import { SA_QUESTIONS_2017_SPRING_AM1 } from "./2017-spring-am1";
+import { SA_QUESTIONS_2018_SPRING_AM1 } from "./2018-spring-am1";
+import { SA_QUESTIONS_2019_SPRING_AM1 } from "./2019-spring-am1";
+import { SA_QUESTIONS_2021_SPRING_AM1 } from "./2021-spring-am1";
+import { SA_QUESTIONS_2021_SPRING_AM2 } from "./2021-spring-am2";
+import { SA_QUESTIONS_2022_SPRING_AM1 } from "./2022-spring-am1";
+import { SA_QUESTIONS_2022_SPRING_AM2 } from "./2022-spring-am2";
+import { SA_QUESTIONS_2023_SPRING_AM1 } from "./2023-spring-am1";
+import { SA_QUESTIONS_2023_SPRING_AM2 } from "./2023-spring-am2";
+import { SA_QUESTIONS_2024_SPRING_AM1 } from "./2024-spring-am1";
+import { SA_QUESTIONS_2024_SPRING_AM2 } from "./2024-spring-am2";
+import { SA_QUESTIONS_2025_SPRING_AM1 } from "./2025-spring-am1";
+import { SA_QUESTIONS_2025_SPRING_AM2 } from "./2025-spring-am2";
+
+export const BY_YEAR_QUESTIONS: Question[] = [
+  ...SA_QUESTIONS_2009_AUTUMN_AM1,
+  ...SA_QUESTIONS_2009_AUTUMN_AM2,
+  ...SA_QUESTIONS_2010_AUTUMN_AM1,
+  ...SA_QUESTIONS_2010_AUTUMN_AM2,
+  ...SA_QUESTIONS_2011_AUTUMN_AM1,
+  ...SA_QUESTIONS_2011_AUTUMN_AM2,
+  ...SA_QUESTIONS_2012_SPRING_AM1,
+  ...SA_QUESTIONS_2013_SPRING_AM1,
+  ...SA_QUESTIONS_2014_SPRING_AM1,
+  ...SA_QUESTIONS_2015_SPRING_AM1,
+  ...SA_QUESTIONS_2016_SPRING_AM1,
+  ...SA_QUESTIONS_2017_SPRING_AM1,
+  ...SA_QUESTIONS_2018_SPRING_AM1,
+  ...SA_QUESTIONS_2019_SPRING_AM1,
+  ...SA_QUESTIONS_2021_SPRING_AM1,
+  ...SA_QUESTIONS_2021_SPRING_AM2,
+  ...SA_QUESTIONS_2022_SPRING_AM1,
+  ...SA_QUESTIONS_2022_SPRING_AM2,
+  ...SA_QUESTIONS_2023_SPRING_AM1,
+  ...SA_QUESTIONS_2023_SPRING_AM2,
+  ...SA_QUESTIONS_2024_SPRING_AM1,
+  ...SA_QUESTIONS_2024_SPRING_AM2,
+  ...SA_QUESTIONS_2025_SPRING_AM1,
+  ...SA_QUESTIONS_2025_SPRING_AM2,
+];
