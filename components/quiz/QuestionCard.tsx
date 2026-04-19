@@ -26,8 +26,8 @@ export function QuestionCard({
         ))}
         {question.isCalculation && <Badge variant="warn">計算</Badge>}
         {progress && (
-          <span className="ml-auto text-zinc-500 dark:text-zinc-400">
-            {progress.current + 1} / {progress.total}
+          <span className="ml-auto font-medium text-zinc-600 dark:text-zinc-300">
+            {progress.current + 1}問目 / {progress.total}問中
           </span>
         )}
       </div>
