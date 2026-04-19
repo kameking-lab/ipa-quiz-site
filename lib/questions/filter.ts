@@ -1,6 +1,11 @@
 import type { Question, QuizFilter } from "./types";
 import type { HistoryStore } from "@/lib/storage/history";
 
+function hasUnrenderableContent(q: Question): boolean {
+  const tableOrFigurePattern = /次の表|以下の表|下の表|次の図|以下の図|下の図|次の条件|以下の条件/;
+  return tableOrFigurePattern.test(q.question) && !q.hasImage;
+}
+
 export function isPlaceholderExplanation(q: Question): boolean {
   return /^正解は[アイウエ]です[。.]/.test(q.explanation) || q.explanation.trim() === "";
 }
@@ -37,6 +42,9 @@ export function filterQuestions(
     const recent = new Set(history.getRecentIds(2));
     pool = pool.filter((q) => !recent.has(q.id));
   }
+
+  // Exclude questions that reference tables/figures but have no image data
+  pool = pool.filter((q) => !hasUnrenderableContent(q));
 
   // Remove placeholder explanations if real explanations are available
   const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
