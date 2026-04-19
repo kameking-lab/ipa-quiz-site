@@ -53,6 +53,8 @@ export interface Question {
   sourcePdfUrl: string;
   license: "IPA-public";
   isCalculation?: boolean;
+  /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
+  needsReview?: boolean;
 }
 
 export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered";

@@ -78,6 +78,15 @@ interface QualityResult {
   warnings: string[];
 }
 
+const UNCERTAIN_PHRASES = [
+  /かもしれません/,
+  /と思われます/,
+  /でしょう[。．]/,
+  /不明です/,
+  /確認が必要/,
+  /^正解は[アイウエ]です[。．]/,
+];
+
 function computeQuality(q: Question): QualityResult {
   let score = 100;
   const warnings: string[] = [];
@@ -90,10 +99,22 @@ function computeQuality(q: Question): QualityResult {
     score -= 15;
     warnings.push("topicTags が空");
   }
-  if (q.explanation.trim().length < 50) {
+
+  const expLen = q.explanation.trim().length;
+  if (expLen < 30) {
+    score -= 30;
+    warnings.push(`explanation < 30文字 (${expLen}字) — 要確認`);
+  } else if (expLen < 50) {
     score -= 20;
-    warnings.push("explanation < 50文字");
+    warnings.push(`explanation < 50文字 (${expLen}字)`);
   }
+
+  const uncertainMatch = UNCERTAIN_PHRASES.find((re) => re.test(q.explanation));
+  if (uncertainMatch) {
+    score -= 15;
+    warnings.push(`不安言い回し検出: "${q.explanation.slice(0, 40)}…"`);
+  }
+
   if (q.hasImage && !q.imageUrls?.length) {
     score -= 10;
     warnings.push("hasImage=true だが imageUrls なし");
@@ -112,8 +133,11 @@ function computeQuality(q: Question): QualityResult {
     }
   }
   if (q.difficulty === 3 && q.topicTags.length === 0) {
-    // Default difficulty + no tags = likely auto-generated, gentle penalty
     score -= 5;
+  }
+  if (q.needsReview) {
+    score -= 20;
+    warnings.push("needsReview フラグあり（出題プール除外）");
   }
 
   return { score: Math.max(0, score), warnings };
@@ -269,10 +293,13 @@ ${examRows}
 |-------------|------|
 | 問題文 < 10文字 | −20 |
 | topicTags が空 | −15 |
+| 解説 < 30文字（要確認） | −30 |
 | 解説 < 50文字 | −20 |
+| 不安言い回し検出（～かもしれません等） | −15 |
 | hasImage=true で imageUrls なし | −10 |
 | multiple-choice に choices なし | −25 |
 | 選択肢に空文字あり | −10 |
+| needsReview フラグあり | −20 |
 
 ## エラー一覧 (最大50件)
 
