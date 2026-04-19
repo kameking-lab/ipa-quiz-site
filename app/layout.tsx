@@ -5,6 +5,7 @@ import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
+import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -76,7 +77,15 @@ export default function RootLayout({
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
           <ServiceWorkerRegistration />
+          <KeyboardShortcutsHelp />
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+          >
+            メインコンテンツへスキップ
+          </a>
           <div className="flex min-h-[100dvh] flex-col">
+            <span id="main-content" aria-hidden="true" />
             {children}
             <footer className="mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
