@@ -46,6 +46,9 @@ next-env.d.ts
 # parse script output logs
 /logs/*.json
 
+# email-list API file-based store (app/api/email-list)
+/.data/
+
 # local editor
 .idea/
 .vscode/*
