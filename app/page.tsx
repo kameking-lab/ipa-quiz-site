@@ -7,6 +7,7 @@ import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
+import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -37,11 +38,10 @@ export default function HomePage() {
           </span>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          IPA 過去問を、一番速く解ける場所。
+          IPA 過去問を、AI と一緒に。
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          ポチッと押すだけ。画面遷移ゼロ・ローディングゼロで解答と解説が同じ画面に出ます。
-          分からないところは AI コパイロットにいつでも質問できます。
+          解答・解説がゼロ遷移で表示。分からないところは AI コパイロットにその場で質問できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="success">β公開中・全機能無料</Badge>
@@ -50,6 +50,7 @@ export default function HomePage() {
           <Badge variant="outline">AI コパイロット</Badge>
           <Badge variant="outline">モバイル最適化</Badge>
         </div>
+        <HeroDemoAnimation />
         <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
           最新情報・アップデートは{" "}
           <a
