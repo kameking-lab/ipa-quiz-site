@@ -74,8 +74,11 @@ export function ExamCategoryGrid({ questionCounts }: Props) {
           ) : (
             <button
               key={exam.id}
-              onClick={showToast}
-              className="flex cursor-pointer flex-col gap-1.5 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 text-left opacity-60 transition hover:opacity-80 dark:border-zinc-800 dark:bg-zinc-900 sm:p-4"
+              type="button"
+              disabled
+              aria-disabled="true"
+              tabIndex={-1}
+              className="flex cursor-not-allowed flex-col gap-1.5 rounded-2xl border border-zinc-200 bg-zinc-50 p-3.5 text-left opacity-60 dark:border-zinc-800 dark:bg-zinc-900 sm:p-4"
             >
               <div className="flex items-start justify-between gap-1">
                 <span className="rounded-lg bg-zinc-400 px-2 py-0.5 text-sm font-bold text-white dark:bg-zinc-600">
