@@ -8,6 +8,7 @@ import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistratio
 import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
 import { StreakBadge } from "@/lib/streak/StreakBadge";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -81,6 +82,7 @@ export default function RootLayout({
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
           <StreakTracker />
+          <Analytics />
           <div className="pointer-events-none fixed right-3 top-3 z-40">
             <div className="pointer-events-auto">
               <StreakBadge />
