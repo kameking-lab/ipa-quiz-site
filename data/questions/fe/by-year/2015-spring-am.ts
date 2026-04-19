@@ -23,10 +23,11 @@ export const FE_QUESTIONS_2015_SPRING_AM: Question[] = [
       "エ": "論理和(OR)"
     },
     "answer": "ウ",
-    "explanation": 2,
+    "explanation": "解説未作成です。正解はウです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2015h-3_1/2015h-3h_fe_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "fe-2015h-am-q2",
@@ -47,10 +48,11 @@ export const FE_QUESTIONS_2015_SPRING_AM: Question[] = [
       "エ": "浮動小数点数の加算において、一方の数値の下位の桁が結果に反映されないことである。"
     },
     "answer": "ア",
-    "explanation": 1,
+    "explanation": "解説未作成です。正解はアです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2015h-3_1/2015h-3h_fe_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "fe-2015h-am-q3",
@@ -71,10 +73,11 @@ export const FE_QUESTIONS_2015_SPRING_AM: Question[] = [
       "エ": "1/19"
     },
     "answer": "エ",
-    "explanation": 3,
+    "explanation": "解説未作成です。正解はエです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2015h-3_1/2015h-3h_fe_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "fe-2015h-am-q4",

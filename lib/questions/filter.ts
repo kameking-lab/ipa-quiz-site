@@ -73,7 +73,7 @@ export function shuffle<T>(arr: T[]): T[] {
 export function shuffleChoices(q: Question): Question {
   if (!q.choices) return q;
   const keys: Array<"ア" | "イ" | "ウ" | "エ"> = ["ア", "イ", "ウ", "エ"];
-  const values = keys.map((k) => q.choices![k]);
+  const values = keys.map((k) => q.choices![k]!);
   shuffle(values);
   const newChoices: Record<"ア" | "イ" | "ウ" | "エ", string> = {
     ア: values[0],
@@ -82,7 +82,7 @@ export function shuffleChoices(q: Question): Question {
     エ: values[3],
   };
   const originalAnswerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const originalAnswerValue = q.choices[originalAnswerKey as "ア" | "イ" | "ウ" | "エ"];
+  const originalAnswerValue = q.choices[originalAnswerKey as "ア" | "イ" | "ウ" | "エ"]!;
   const newAnswerKey = keys[values.indexOf(originalAnswerValue)];
   return { ...q, choices: newChoices, answer: newAnswerKey };
 }

@@ -377,32 +377,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "提案依頼書について、次の記述中のa~cに入れる字句の適切な組合せはどれか。\nシステム開発に関わる提案依頼書は通常, a が、 b に対して, c ,調達条件などを提示する文書である。",
     "choices": {
-      "ア": {
-        "a": "情報システム部門",
-        "b": "ベンダ",
-        "c": "システム要件"
-      },
-      "イ": {
-        "a": "情報システム部門",
-        "b": "利用部門",
-        "c": "システム要件"
-      },
-      "ウ": {
-        "a": "ベンダ",
-        "b": "情報システム部門",
-        "c": "システム導入実績"
-      },
-      "エ": {
-        "a": "ベンダ",
-        "b": "利用部門",
-        "c": "システム導入実績"
-      }
+      "ア": "a: 情報システム部門　b: ベンダ　c: システム要件",
+      "イ": "a: 情報システム部門　b: 利用部門　c: システム要件",
+      "ウ": "a: ベンダ　b: 情報システム部門　c: システム導入実績",
+      "エ": "a: ベンダ　b: 利用部門　c: システム導入実績"
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問16）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q17",
@@ -1257,32 +1242,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "ホスティングによるアプリケーション運用サービスの SLA の項目に,サービスデスク,信頼性,データ管理があるとき、サービスレベルの具体的な指標a~cと SLAの項目の適切な組合せはどれか。\na 障害発生から修理完了までの平均時間\nb 問合せ受付業務の時間帯\nc バックアップ媒体の保管期間",
     "choices": {
-      "ア": {
-        "a": "サービスデスク",
-        "b": "信頼性",
-        "c": "データ管理"
-      },
-      "イ": {
-        "a": "サービスデスク",
-        "b": "データ管理",
-        "c": "信頼性"
-      },
-      "ウ": {
-        "a": "信頼性",
-        "b": "サービスデスク",
-        "c": "データ管理"
-      },
-      "エ": {
-        "a": "データ管理",
-        "b": "信頼性",
-        "c": "サービスデスク"
-      }
+      "ア": "a: サービスデスク　b: 信頼性　c: データ管理",
+      "イ": "a: サービスデスク　b: データ管理　c: 信頼性",
+      "ウ": "a: 信頼性　b: サービスデスク　c: データ管理",
+      "エ": "a: データ管理　b: 信頼性　c: サービスデスク"
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問52）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q53",
@@ -1297,28 +1267,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "50本のプログラム開発をA社又はB社に委託することにした。開発期間が短い会社と開発コストが低い会社の組合せはどれか。\n〔前提〕\n・A社 生産性:プログラム1本を2日で作成 コスト:4万円/日\n・B社 生産性:プログラム1本を3日で作成 コスト:3万円/日\n・プログラムは1本ずつ順に作成する。",
     "choices": {
-      "ア": {
-        "開発期間が短い": "A社",
-        "開発コストが低い": "A社"
-      },
-      "イ": {
-        "開発期間が短い": "A社",
-        "開発コストが低い": "B社"
-      },
-      "ウ": {
-        "開発期間が短い": "B社",
-        "開発コストが低い": "A社"
-      },
-      "エ": {
-        "開発期間が短い": "B社",
-        "開発コストが低い": "B社"
-      }
+      "ア": "開発期間が短い: A社　開発コストが低い: A社",
+      "イ": "開発期間が短い: A社　開発コストが低い: B社",
+      "ウ": "開発期間が短い: B社　開発コストが低い: A社",
+      "エ": "開発期間が短い: B社　開発コストが低い: B社"
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問53）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q54",
@@ -1453,28 +1412,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "ログイン機能をもつ Web サイトに対する、パスワードの盗聴と総当たり攻撃へのそれぞれの対策の組合せとして、最も適切なものはどれか。",
     "choices": {
-      "ア": {
-        "パスワードの盗聴": "暗号化された通信でパスワードを送信する。",
-        "総当たり攻撃": "シングルサインオンを利用する。"
-      },
-      "イ": {
-        "パスワードの盗聴": "暗号化された通信でパスワードを送信する。",
-        "総当たり攻撃": "パスワードの入力試行回数を制限する。"
-      },
-      "ウ": {
-        "パスワードの盗聴": "推測が難しい文字列をパスワードに設定する。",
-        "総当たり攻撃": "シングルサインオンを利用する。"
-      },
-      "エ": {
-        "パスワードの盗聴": "推測が難しい文字列をパスワードに設定する。",
-        "総当たり攻撃": "パスワードの入力試行回数を制限する。"
-      }
+      "ア": "パスワードの盗聴: 暗号化された通信でパスワードを送信する。　総当たり攻撃: シングルサインオンを利用する。",
+      "イ": "パスワードの盗聴: 暗号化された通信でパスワードを送信する。　総当たり攻撃: パスワードの入力試行回数を制限する。",
+      "ウ": "パスワードの盗聴: 推測が難しい文字列をパスワードに設定する。　総当たり攻撃: シングルサインオンを利用する。",
+      "エ": "パスワードの盗聴: 推測が難しい文字列をパスワードに設定する。　総当たり攻撃: パスワードの入力試行回数を制限する。"
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問59）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q60",
@@ -1513,32 +1461,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "ネットワークに関する次の記述中のa~cに入れる字句の適切な組合せはどれか。\n建物内などに設置される比較的狭いエリアのネットワークを a といい、地理的に離れた地点に設置されている b 間を結ぶネットワークを c という。一般に, a に接続する機器に設定する IP アドレスには、組織内などに閉じたネットワークであれば自由に使うことができる c が使われる。",
     "choices": {
-      "ア": {
-        "a": "LAN",
-        "b": "WAN",
-        "c": "グローバルIPアドレス"
-      },
-      "イ": {
-        "a": "LAN",
-        "b": "WAN",
-        "c": "プライベートIPアドレス"
-      },
-      "ウ": {
-        "a": "WAN",
-        "b": "LAN",
-        "c": "グローバルIPアドレス"
-      },
-      "エ": {
-        "a": "WAN",
-        "b": "LAN",
-        "c": "プライベートIPアドレス"
-      }
+      "ア": "a: LAN　b: WAN　c: グローバルIPアドレス",
+      "イ": "a: LAN　b: WAN　c: プライベートIPアドレス",
+      "ウ": "a: WAN　b: LAN　c: グローバルIPアドレス",
+      "エ": "a: WAN　b: LAN　c: プライベートIPアドレス"
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問61）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q62",
@@ -1793,28 +1726,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "ISMS の導入効果に関する次の記述中のa, bに入れる字句の適切な組合せはどれか。\nマネジメントプロセスを適用することによって、情報の機密性, b 及び可用性をバランス良く維持、改善し、 a を適切に管理しているという信頼を利害関係者に与える。",
     "choices": {
-      "ア": {
-        "a": "品質",
-        "b": "完全性"
-      },
-      "イ": {
-        "a": "品質",
-        "b": "妥当性"
-      },
-      "ウ": {
-        "a": "リスク",
-        "b": "完全性"
-      },
-      "エ": {
-        "a": "リスク",
-        "b": "妥当性"
-      }
+      "ア": "a: 品質　b: 完全性",
+      "イ": "a: 品質　b: 妥当性",
+      "ウ": "a: リスク　b: 完全性",
+      "エ": "a: リスク　b: 妥当性"
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問72）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q73",
@@ -2045,32 +1967,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "PC1のメールクライアントから PC2のメールクライアントの利用者宛ての電子メールを送信するとき、①~③で使われているプロトコルの組合せとして、適切なものはどれか。",
     "choices": {
-      "ア": {
-        "①": "POP3",
-        "②": "POP3",
-        "③": "SMTP"
-      },
-      "イ": {
-        "①": "POP3",
-        "②": "SMTP",
-        "③": "SMTP"
-      },
-      "ウ": {
-        "①": "SMTP",
-        "②": "POP3",
-        "③": "POP3"
-      },
-      "エ": {
-        "①": "SMTP",
-        "②": "SMTP",
-        "③": "POP3"
-      }
+      "ア": "①: POP3　②: POP3　③: SMTP",
+      "イ": "①: POP3　②: SMTP　③: SMTP",
+      "ウ": "①: SMTP　②: POP3　③: POP3",
+      "エ": "①: SMTP　②: SMTP　③: POP3"
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問82）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q83",
@@ -2157,28 +2064,17 @@ export const IP_QUESTIONS_2019_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "IoT 端末で用いられている LPWA (Low Power Wide Area) の特徴に関する次の記述中の a, b に入れる字句の適切な組合せはどれか。\nLPWA の技術を使った無線通信は、無線LANと比べると、通信速度は a 消費電力は b 。",
     "choices": {
-      "ア": {
-        "a": "速く",
-        "b": "少ない"
-      },
-      "イ": {
-        "a": "速く",
-        "b": "多い"
-      },
-      "ウ": {
-        "a": "遅く",
-        "b": "少ない"
-      },
-      "エ": {
-        "a": "遅く",
-        "b": "多い"
-      }
+      "ア": "a: 速く　b: 少ない",
+      "イ": "a: 速く　b: 多い",
+      "ウ": "a: 遅く　b: 少ない",
+      "エ": "a: 遅く　b: 多い"
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA ITパスポート試験 令和1年度春期 試験 問86）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2019h-am-q87",
