@@ -23,6 +23,7 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/faq`, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/about`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
