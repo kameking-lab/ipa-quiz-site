@@ -46,6 +46,9 @@ export function filterQuestions(
   // Exclude questions that reference tables/figures but have no image data
   pool = pool.filter((q) => !hasUnrenderableContent(q));
 
+  // Exclude questions flagged for review (low-quality explanations, etc.)
+  pool = pool.filter((q) => !q.needsReview);
+
   // Remove placeholder explanations if real explanations are available
   const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
   if (withReal.length > 0) pool = withReal;
