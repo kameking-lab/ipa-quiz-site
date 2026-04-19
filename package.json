@@ -18,7 +18,8 @@
     "parse:all": "tsx --env-file=.env.local scripts/parse-all.ts",
     "parse:all:a": "tsx --env-file=.env.local scripts/parse-all.ts --section=A",
     "parse:all:b": "tsx --env-file=.env.local scripts/parse-all.ts --section=B",
-    "parse:all:c": "tsx --env-file=.env.local scripts/parse-all.ts --section=C"
+    "parse:all:c": "tsx --env-file=.env.local scripts/parse-all.ts --section=C",
+    "parse:afternoon": "tsx --env-file=.env.local scripts/parse-afternoon/parse-ap-afternoon.ts"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
