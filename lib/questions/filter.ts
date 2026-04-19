@@ -6,6 +6,10 @@ function hasUnrenderableContent(q: Question): boolean {
   return tableOrFigurePattern.test(q.question) && !q.hasImage;
 }
 
+export function isPlaceholderExplanation(q: Question): boolean {
+  return /^正解は[アイウエ]です[。.]/.test(q.explanation) || q.explanation.trim() === "";
+}
+
 export function filterQuestions(
   all: Question[],
   filter: QuizFilter,
@@ -41,6 +45,10 @@ export function filterQuestions(
 
   // Exclude questions that reference tables/figures but have no image data
   pool = pool.filter((q) => !hasUnrenderableContent(q));
+
+  // Remove placeholder explanations if real explanations are available
+  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
+  if (withReal.length > 0) pool = withReal;
 
   if (filter.mode === "random") {
     shuffle(pool);
