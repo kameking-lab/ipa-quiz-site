@@ -3,11 +3,12 @@ import Link from "next/link";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp, Sparkles } from "lucide-react";
+import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
+import { SiteLogo } from "@/components/SiteLogo";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -31,11 +32,8 @@ export default function HomePage() {
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
       <section className="mb-8">
-        <div className="mb-2 flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-sky-600 dark:text-sky-400" />
-          <span className="text-xs font-semibold uppercase tracking-wide text-sky-700 dark:text-sky-300">
-            AI ネイティブ過去問
-          </span>
+        <div className="mb-3">
+          <SiteLogo />
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           IPA 過去問を、AI と一緒に。
