@@ -50,6 +50,27 @@ export default function HomePage() {
           <Badge variant="outline">AI コパイロット</Badge>
           <Badge variant="outline">モバイル最適化</Badge>
         </div>
+        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+          最新情報・アップデートは{" "}
+          <a
+            href="https://x.com/kakomon_ai_jp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-600 underline-offset-2 hover:underline dark:text-sky-400"
+          >
+            公式X (@kakomon_ai_jp)
+          </a>
+          {" "}と{" "}
+          <a
+            href="https://note.com/kakomon_ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-600 underline-offset-2 hover:underline dark:text-sky-400"
+          >
+            note
+          </a>
+          {" "}でお届けしています。
+        </p>
       </section>
 
       <HistoryStats />
