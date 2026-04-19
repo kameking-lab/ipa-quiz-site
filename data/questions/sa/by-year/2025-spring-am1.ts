@@ -23,10 +23,11 @@ export const SA_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "1,000"
     },
     "answer": "ア",
-    "explanation": 1,
+    "explanation": "解説未作成です。正解はアです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am1_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "sa-2025h-am1-q2",

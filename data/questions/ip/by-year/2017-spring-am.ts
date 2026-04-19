@@ -1049,28 +1049,17 @@ export const IP_QUESTIONS_2017_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "内部統制の構築に関して、次の記述中のa, bに入れる字句の適切な組合せはどれか。\n内部統制の構築には、a ,職務分掌,実施ルールの設定及びb が必要である。",
     "choices": {
-      "ア": {
-        "a": "業務のIT化",
-        "b": "業務効率の向上"
-      },
-      "イ": {
-        "a": "業務のIT化",
-        "b": "チェック体制の確立"
-      },
-      "ウ": {
-        "a": "業務プロセスの明確化",
-        "b": "業務効率の向上"
-      },
-      "エ": {
-        "a": "業務プロセスの明確化",
-        "b": "チェック体制の確立"
-      }
+      "ア": "a: 業務のIT化　b: 業務効率の向上",
+      "イ": "a: 業務のIT化　b: チェック体制の確立",
+      "ウ": "a: 業務プロセスの明確化　b: 業務効率の向上",
+      "エ": "a: 業務プロセスの明確化　b: チェック体制の確立"
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA ITパスポート試験 2017年度春期 試験 問44）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_1/2017h-1h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2017h-am-q45",
@@ -1157,28 +1146,17 @@ export const IP_QUESTIONS_2017_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "プロジェクトで実施する作業の順序設定に関して,次の記述中のa, bに入れる字句の適切な組合せはどれか。\n成果物を作成するための作業を、管理しやすい単位に a によって要素分解し、それらの順序関係を b によって表示する。",
     "choices": {
-      "ア": {
-        "a": "WBS",
-        "b": "アローダイアグラム"
-      },
-      "イ": {
-        "a": "WBS",
-        "b": "パレート図"
-      },
-      "ウ": {
-        "a": "ガントチャート",
-        "b": "アローダイアグラム"
-      },
-      "エ": {
-        "a": "ガントチャート",
-        "b": "パレート図"
-      }
+      "ア": "a: WBS　b: アローダイアグラム",
+      "イ": "a: WBS　b: パレート図",
+      "ウ": "a: ガントチャート　b: アローダイアグラム",
+      "エ": "a: ガントチャート　b: パレート図"
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA ITパスポート試験 2017年度春期 試験 問48）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_1/2017h-1h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2017h-am-q49",
@@ -2009,28 +1987,17 @@ export const IP_QUESTIONS_2017_SPRING_AM: Question[] = [
     "difficulty": 3,
     "question": "ISMSにおける情報セキュリティリスクの特定に関する記述において,a,bに入れる字句の適切な組合せはどれか。\nISMSの a における情報の機密性, b 及び可用性の喪失に伴うリスクを特定する。",
     "choices": {
-      "ア": {
-        "a": "適用範囲外",
-        "b": "完全性"
-      },
-      "イ": {
-        "a": "適用範囲外",
-        "b": "脆弱性"
-      },
-      "ウ": {
-        "a": "適用範囲内",
-        "b": "完全性"
-      },
-      "エ": {
-        "a": "適用範囲内",
-        "b": "脆弱性"
-      }
+      "ア": "a: 適用範囲外　b: 完全性",
+      "イ": "a: 適用範囲外　b: 脆弱性",
+      "ウ": "a: 適用範囲内　b: 完全性",
+      "エ": "a: 適用範囲内　b: 脆弱性"
     },
     "answer": "ウ",
     "explanation": "ISMSでは、情報セキュリティリスクを特定する際、まず「資産」を特定し、その資産に対する「機密性、完全性、可用性」の喪失がもたらすリスクを評価します。選択肢「ウ」が「a:資産, b:完全性」の組み合わせであると想定され、これが情報セキュリティの基本原則と合致するため適切です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_1/2017h-1h_ip_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "ip-2017h-am-q84",

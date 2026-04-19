@@ -208,7 +208,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
-                    text={question.choices![key]}
+                    text={question.choices![key]!}
                     revealed={revealed}
                     selected={selected === key}
                     correct={answerKey === key}

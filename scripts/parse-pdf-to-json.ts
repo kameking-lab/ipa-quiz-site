@@ -25,6 +25,7 @@
 
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
+import { z } from "zod";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { Question } from "@/lib/questions/types";
 import type { ExamCode, Session } from "@/lib/questions/types";
@@ -241,6 +242,32 @@ async function generateExplanations(
   return Object.fromEntries(Object.entries(parsed).map(([k, v]) => [Number(k), v]));
 }
 
+// ------- Zod schema for output validation -------
+
+const CHOICE_KEY = z.enum(["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"]);
+
+const QuestionSchema = z.object({
+  id: z.string().min(1),
+  exam: z.string().min(1),
+  session: z.string().min(1),
+  year: z.number().int().gte(2000).lte(2100),
+  season: z.enum(["spring", "autumn", "cbt"]),
+  qNumber: z.number().int().gte(1),
+  type: z.enum(["multiple-choice", "descriptive", "essay"]),
+  category: z.string().min(1),
+  topicTags: z.array(z.string()),
+  difficulty: z.number().int().gte(1).lte(5),
+  question: z.string().min(1),
+  choices: z.record(CHOICE_KEY, z.string()).optional(),
+  answer: z.union([CHOICE_KEY, z.array(CHOICE_KEY), z.string()]),
+  explanation: z.string().min(1),
+  hasImage: z.boolean(),
+  sourcePdfUrl: z.string().url(),
+  license: z.literal("IPA-public"),
+  isCalculation: z.boolean().optional(),
+  needsReview: z.boolean().optional(),
+});
+
 // ------- Question assembly -------
 
 function buildQuestions(
@@ -272,7 +299,7 @@ function buildQuestions(
       explanations[raw.qNumber] ??
       `正解は${ansKey}です。（出典: IPA ${cfg.nameFull} ${reiwaLabel}${seasonLabel} ${sessionCfg.label} 問${raw.qNumber}）`;
 
-    questions.push({
+    const candidate = {
       id,
       exam: cfg.code,
       session: sessionCfg.session,
@@ -290,7 +317,25 @@ function buildQuestions(
       hasImage: raw.hasImage,
       sourcePdfUrl,
       license: "IPA-public",
-    });
+    };
+
+    const parsed = QuestionSchema.safeParse(candidate);
+    if (!parsed.success) {
+      const issues = parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join(", ");
+      console.warn(`  [validate] Skipping 問${raw.qNumber} (${id}): ${issues}`);
+      failures.push({
+        exam: cfg.code,
+        year,
+        season,
+        session: sessionCfg.session,
+        stage: "validate",
+        error: `問${raw.qNumber}: ${issues}`,
+        timestamp: new Date().toISOString(),
+      });
+      continue;
+    }
+
+    questions.push(parsed.data as Question);
   }
 
   return questions;

@@ -23,10 +23,11 @@ export const DB_QUESTIONS_2016_AUTUMN_AM1: Question[] = [
       "エ": "1,000"
     },
     "answer": "ア",
-    "explanation": 1,
+    "explanation": "解説未作成です。正解はアです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2016h-2_2/2016h-2a_db_am1_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "db-2016a-am1-q2",

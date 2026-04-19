@@ -23,10 +23,11 @@ export const FE_QUESTIONS_2018_AUTUMN_AM: Question[] = [
       "エ": "73/512"
     },
     "answer": "エ",
-    "explanation": 6,
+    "explanation": "解説未作成です。正解はエです。AIコパイロットで詳しい解説を確認してください。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_fe_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "needsReview": true
   },
   {
     "id": "fe-2018a-am-q2",

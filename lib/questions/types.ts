@@ -29,7 +29,7 @@ export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
 export type QuestionType = "multiple-choice" | "descriptive" | "essay";
 
-export type ChoiceKey = "ア" | "イ" | "ウ" | "エ";
+export type ChoiceKey = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | "ク" | "コ";
 
 export interface Question {
   id: string;
@@ -43,7 +43,7 @@ export interface Question {
   topicTags: string[];
   difficulty: Difficulty;
   question: string;
-  choices?: Record<ChoiceKey, string>;
+  choices?: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey | ChoiceKey[] | string;
   explanation: string;
   modelAnswer?: string;
