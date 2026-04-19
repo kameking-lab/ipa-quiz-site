@@ -32,6 +32,22 @@ interface Props {
 
 const WRONG_ONLY: QuickActionId = "why-wrong";
 
+function usageCounterClass(remaining: number): string {
+  if (remaining === 0) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
+  if (remaining <= 1) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
+  if (remaining <= 5) return "bg-yellow-100 text-yellow-700 dark:bg-yellow-950/60 dark:text-yellow-300";
+  return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300";
+}
+
+function jstResetTime(): string {
+  const now = new Date();
+  const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+  const tomorrow = new Date(jst);
+  tomorrow.setUTCHours(24, 0, 0, 0);
+  const local = new Date(tomorrow.getTime() - 9 * 60 * 60 * 1000);
+  return local.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
 export function CopilotPanel({
   question,
   selectedChoice,
@@ -201,12 +217,31 @@ export function CopilotPanel({
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
           <span className="text-sm font-semibold">AI コパイロット</span>
-          {!premium && (
-            <span className="ml-2 rounded-full bg-zinc-100 px-2 py-0.5 text-[10px] text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300">
-              残り {Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0)}/
-              {FREE_DAILY_LIMIT_CLIENT} 回
-            </span>
-          )}
+          {!premium && (() => {
+            const remaining = Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0);
+            return (
+              <div className="group/usage relative ml-2">
+                <span
+                  className={cn(
+                    "cursor-default rounded-full px-2 py-0.5 text-[10px] font-medium",
+                    usageCounterClass(remaining),
+                  )}
+                >
+                  残り {remaining}/{FREE_DAILY_LIMIT_CLIENT} 回
+                </span>
+                <div className="invisible absolute left-0 top-full z-50 mt-1.5 w-56 rounded-xl border border-zinc-200 bg-white p-3 text-[11px] leading-relaxed text-zinc-600 shadow-lg group-hover/usage:visible dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
+                  <p className="mb-1 font-semibold text-zinc-800 dark:text-zinc-200">AI 利用回数について</p>
+                  <p>クイックアクションまたはテキスト送信のたびに 1 回消費します。</p>
+                  <p className="mt-1">毎日 JST 0:00（{jstResetTime()} ごろ）にリセットされます。</p>
+                  {remaining === 0 && (
+                    <p className="mt-1 font-semibold text-red-600 dark:text-red-400">
+                      本日の上限に達しました。
+                    </p>
+                  )}
+                </div>
+              </div>
+            );
+          })()}
         </div>
         <div className="flex items-center gap-1">
           {headerRight}
@@ -219,26 +254,35 @@ export function CopilotPanel({
       </div>
 
       <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
-        <div className="mb-2 text-xs text-zinc-500 dark:text-zinc-400">
-          クイックアクション
+        <div className="mb-2 flex items-center justify-between">
+          <span className="text-xs text-zinc-500 dark:text-zinc-400">クイックアクション</span>
+          {!premium && (
+            <span className="text-[10px] text-zinc-400 dark:text-zinc-500">各ボタンで AI 1 回消費</span>
+          )}
         </div>
-        <div className="flex flex-wrap gap-1.5">
-          {quickActionIds.map((id) => (
-            <button
-              key={id}
-              onClick={() => send("", id)}
-              disabled={streaming}
-              className={cn(
-                "rounded-full border px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
-                id === WRONG_ONLY
-                  ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
-                  : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
-              )}
-            >
-              {QUICK_ACTIONS[id].label}
-            </button>
-          ))}
-        </div>
+        {!premium && Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0) === 0 ? (
+          <p className="rounded-xl bg-red-50 px-3 py-2 text-xs text-red-700 dark:bg-red-950/30 dark:text-red-300">
+            本日の AI 利用上限（{FREE_DAILY_LIMIT_CLIENT} 回）に達しました。JST 0:00 にリセットされます。
+          </p>
+        ) : (
+          <div className="flex flex-wrap gap-1.5">
+            {quickActionIds.map((id) => (
+              <button
+                key={id}
+                onClick={() => send("", id)}
+                disabled={streaming}
+                className={cn(
+                  "rounded-full border px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
+                  id === WRONG_ONLY
+                    ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
+                    : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
+                )}
+              >
+                {QUICK_ACTIONS[id].label}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div
