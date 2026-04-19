@@ -38,7 +38,7 @@ export function ExplanationCard({
         "rounded-2xl border-2 p-4 sm:p-5",
         isCorrect
           ? "border-emerald-300 bg-emerald-50/60 dark:border-emerald-800 dark:bg-emerald-950/30"
-          : "border-red-300 bg-red-50/60 dark:border-red-800 dark:bg-red-950/30",
+          : "border-red-200 bg-red-50/30 dark:border-red-900/60 dark:bg-red-950/20",
       )}
     >
       <div className="mb-3 flex items-center justify-between">
@@ -46,14 +46,14 @@ export function ExplanationCard({
           {isCorrect ? (
             <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
           ) : (
-            <AlertCircle className="h-5 w-5 text-red-600 dark:text-red-300" />
+            <AlertCircle className="h-5 w-5 text-red-500 dark:text-red-400" />
           )}
           <span
             className={cn(
               "text-sm font-semibold",
               isCorrect
                 ? "text-emerald-800 dark:text-emerald-200"
-                : "text-red-800 dark:text-red-200",
+                : "text-red-700 dark:text-red-300",
             )}
           >
             {isCorrect ? "正解!" : "不正解"}
@@ -81,7 +81,7 @@ export function ExplanationCard({
       {!isCorrect && onAnalyzeWrong && (
         <button
           onClick={onAnalyzeWrong}
-          className="mb-3 flex w-full items-center justify-between rounded-xl border-2 border-red-400 bg-white px-4 py-3 text-left text-sm font-semibold text-red-700 transition hover:bg-red-50 dark:border-red-500 dark:bg-zinc-950 dark:text-red-200 dark:hover:bg-red-950/30"
+          className="mb-3 flex w-full items-center justify-between rounded-xl border border-zinc-300 bg-white px-4 py-3 text-left text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
         >
           <span className="flex items-center gap-2">
             <Sparkles className="h-4 w-4" />
@@ -119,7 +119,7 @@ export function ExplanationCard({
           variant="primary"
           size="lg"
           onClick={onNext}
-          className="sm:flex-1"
+          className="font-semibold shadow-md sm:flex-1"
         >
           次の問題へ
           <ArrowRight className="h-4 w-4" />
