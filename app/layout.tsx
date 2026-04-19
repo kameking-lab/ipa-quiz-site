@@ -119,6 +119,22 @@ export default function RootLayout({
                         {label}
                       </Link>
                     ))}
+                    <a
+                      href="https://x.com/kakomon_ai_jp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      X (@kakomon_ai_jp)
+                    </a>
+                    <a
+                      href="https://note.com/kakomon_ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      note
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
