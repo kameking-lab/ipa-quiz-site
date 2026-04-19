@@ -126,7 +126,10 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      <div className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400">
+      <div className="mt-3 space-y-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
+        <p>
+          ※ AI生成の解説は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
+        </p>
         <a
           href={question.sourcePdfUrl}
           target="_blank"
