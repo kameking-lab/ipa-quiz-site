@@ -33,9 +33,8 @@ interface Props {
 const WRONG_ONLY: QuickActionId = "why-wrong";
 
 function usageCounterClass(remaining: number): string {
-  if (remaining === 0) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
-  if (remaining <= 1) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
-  if (remaining <= 5) return "bg-yellow-100 text-yellow-700 dark:bg-yellow-950/60 dark:text-yellow-300";
+  if (remaining <= 3) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
+  if (remaining <= 10) return "bg-yellow-100 text-yellow-700 dark:bg-yellow-950/60 dark:text-yellow-300";
   return "bg-zinc-100 text-zinc-600 dark:bg-zinc-800 dark:text-zinc-300";
 }
 

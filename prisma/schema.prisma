@@ -1,0 +1,154 @@
+// Prisma schema for IPA Quiz Site
+//
+// 認証・決済・学習履歴を一元管理する DB スキーマ。
+// NextAuth.js v5 (JWT セッション) + Stripe テストモードと連動する。
+//
+// 本番 DB は未接続。マイグレーションは ./migrations/ に保存済みで、
+// DATABASE_URL が設定された環境で `prisma migrate deploy` により反映する。
+
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "rhel-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ---------------------------------------------------------------------------
+// User / Auth
+// ---------------------------------------------------------------------------
+
+enum Plan {
+  free
+  premium
+  team
+}
+
+model User {
+  id               String    @id @default(cuid())
+  email            String?   @unique
+  emailVerified    DateTime?
+  name             String?
+  image            String?
+  plan             Plan      @default(free)
+  stripeCustomerId String?   @unique
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+
+  accounts      Account[]
+  sessions      Session[]
+  subscriptions Subscription[]
+  studyRecords  StudyRecord[]
+  streak        Streak?
+
+  @@index([plan])
+}
+
+// NextAuth.js v5 — OAuth account link
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+}
+
+// NextAuth.js v5 — DB backed session (将来の switch 用に保持)
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+}
+
+// NextAuth.js v5 — Email Magic Link verification token
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ---------------------------------------------------------------------------
+// Stripe Subscription
+// ---------------------------------------------------------------------------
+
+enum SubscriptionStatus {
+  trialing
+  active
+  past_due
+  canceled
+  unpaid
+  incomplete
+  incomplete_expired
+  paused
+}
+
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String
+  stripeSubId          String             @unique
+  stripePriceId        String
+  status               SubscriptionStatus
+  plan                 Plan
+  currentPeriodEnd     DateTime?
+  cancelAtPeriodEnd    Boolean            @default(false)
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+}
+
+// ---------------------------------------------------------------------------
+// Study Records — クラウド同期用
+// ---------------------------------------------------------------------------
+
+model StudyRecord {
+  id          String   @id @default(cuid())
+  userId      String
+  questionId  String
+  correct     Boolean
+  answeredAt  DateTime @default(now())
+  timeSpentMs Int?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, answeredAt])
+  @@index([userId, questionId])
+}
+
+// ---------------------------------------------------------------------------
+// Streak — 連続学習日数
+// ---------------------------------------------------------------------------
+
+model Streak {
+  userId        String   @id
+  currentStreak Int      @default(0)
+  longestStreak Int      @default(0)
+  lastStudiedAt DateTime?
+  updatedAt     DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}

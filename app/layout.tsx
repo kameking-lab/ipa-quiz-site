@@ -6,6 +6,9 @@ import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provid
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
+import { StreakBadge } from "@/lib/streak/StreakBadge";
+import { StreakTracker } from "@/lib/streak/StreakTracker";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -78,6 +81,13 @@ export default function RootLayout({
         <ThemeProvider>
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
+          <StreakTracker />
+          <Analytics />
+          <div className="pointer-events-none fixed right-3 top-3 z-40">
+            <div className="pointer-events-auto">
+              <StreakBadge />
+            </div>
+          </div>
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"

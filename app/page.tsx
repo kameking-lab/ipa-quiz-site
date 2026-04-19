@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
+import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
@@ -71,6 +72,10 @@ export default function HomePage() {
           {" "}でお届けしています。
         </p>
       </section>
+
+      <div className="mb-3">
+        <StreakProfileCard />
+      </div>
 
       <HistoryStats />
 
