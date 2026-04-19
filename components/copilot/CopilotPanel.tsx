@@ -328,13 +328,13 @@ export function CopilotPanel({
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => {
-            if (e.key === "Enter" && (e.metaKey || e.ctrlKey)) {
+            if (e.key === "Enter" && !e.shiftKey) {
               e.preventDefault();
-              send(input);
+              if (!streaming) send(input);
             }
           }}
           rows={2}
-          placeholder="AIに質問…"
+          placeholder="AIに質問… (Enter 送信 / Shift+Enter 改行)"
           className="min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
         <Button
