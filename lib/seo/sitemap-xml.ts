@@ -1,4 +1,10 @@
 import { SITE_BASE_URL } from "./config";
+import {
+  getAvailableExams,
+  getQuestionsByExamStrict,
+  groupByCategory,
+  groupByYearSeason,
+} from "./exam-meta";
 import { questionPagePath } from "./question-url";
 import {
   SITEMAP_CHUNK_SIZE,
@@ -22,6 +28,33 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/operator`, changeFrequency: "yearly", priority: 0.2 },
 ];
+
+function getExamHubRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  for (const exam of getAvailableExams()) {
+    const questions = getQuestionsByExamStrict(exam);
+    entries.push({
+      url: `${SITE_BASE_URL}/${exam}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+    for (const g of groupByYearSeason(questions)) {
+      entries.push({
+        url: `${SITE_BASE_URL}/${exam}/${g.key}`,
+        changeFrequency: "yearly",
+        priority: 0.65,
+      });
+    }
+    for (const c of groupByCategory(questions)) {
+      entries.push({
+        url: `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(c.category)}`,
+        changeFrequency: "monthly",
+        priority: 0.65,
+      });
+    }
+  }
+  return entries;
+}
 
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -67,7 +100,10 @@ export function renderSitemapChunkXml(pageIndex: number): string {
 
   const base: UrlEntry[] =
     pageIndex === 0
-      ? STATIC_ROUTES.map((r) => ({ ...r, lastModified: now }))
+      ? [
+          ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
+          ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
+        ]
       : [];
 
   const items = [...base, ...questionEntries].map(renderUrl).join("\n");
