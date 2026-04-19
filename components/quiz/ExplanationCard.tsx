@@ -1,10 +1,11 @@
 "use client";
 
 import * as React from "react";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
+import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { getSafePdfUrl } from "@/lib/exam-config";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]/.test(explanation) || explanation.trim() === "";
@@ -131,12 +132,13 @@ export function ExplanationCard({
           ※ AI生成の解説は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
         </p>
         <a
-          href={question.sourcePdfUrl}
+          href={getSafePdfUrl(question.sourcePdfUrl)}
           target="_blank"
           rel="noopener noreferrer"
-          className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-200"
+          className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
         >
-          出典: IPA 公式 PDF
+          <FileText className="h-3 w-3 flex-shrink-0" />
+          IPA 公式資料で確認
         </a>
       </div>
     </div>
