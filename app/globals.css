@@ -13,11 +13,25 @@
 :root {
   --background: #fafafa;
   --foreground: #0b1220;
+
+  /* Brand colors */
+  --brand-primary: #0284c7;
+  --brand-primary-hover: #0369a1;
+  --brand-primary-light: #e0f2fe;
+  --brand-accent: #fbbf24;
+  --brand-text-on-primary: #ffffff;
 }
 
 .dark {
   --background: #09090b;
   --foreground: #f4f4f5;
+
+  /* Brand colors — dark */
+  --brand-primary: #0ea5e9;
+  --brand-primary-hover: #38bdf8;
+  --brand-primary-light: #0c4a6e;
+  --brand-accent: #fbbf24;
+  --brand-text-on-primary: #ffffff;
 }
 
 html,
