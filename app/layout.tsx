@@ -87,7 +87,7 @@ export default function RootLayout({
           <div className="flex min-h-[100dvh] flex-col">
             <span id="main-content" aria-hidden="true" />
             {children}
-            <footer className="mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
+            <footer className="pb-safe mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
                 <div className="text-center sm:text-left">
                   <div className="mb-1.5">
