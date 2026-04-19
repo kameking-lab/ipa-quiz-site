@@ -277,6 +277,18 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as ExamCode[];
 
+/** Fallback URL shown when a question has no specific PDF URL. */
+export const IPA_EXAM_INFO_URL = "https://www.ipa.go.jp/shiken/mondai-kaiotu/";
+
+/**
+ * Returns a valid IPA source URL for the given raw value.
+ * Falls back to the IPA exam materials page when the URL is absent or clearly a placeholder.
+ */
+export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
+  if (sourcePdfUrl && sourcePdfUrl.startsWith("https://")) return sourcePdfUrl;
+  return IPA_EXAM_INFO_URL;
+}
+
 // ------- URL builders -------
 
 export function buildPdfUrl(
