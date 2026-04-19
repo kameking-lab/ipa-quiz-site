@@ -6,6 +6,10 @@ import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+function isPlaceholderExplanation(explanation: string): boolean {
+  return /^正解は[アイウエ]です[。.]/.test(explanation) || explanation.trim() === "";
+}
+
 interface Props {
   question: Question;
   selected: string | undefined;
@@ -87,13 +91,19 @@ export function ExplanationCard({
         </button>
       )}
 
-      <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
-        {question.explanation.split("\n").map((line, i) => (
-          <p key={i} className="mb-2 last:mb-0">
-            {line}
-          </p>
-        ))}
-      </div>
+      {isPlaceholderExplanation(question.explanation) ? (
+        <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
+          解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+        </div>
+      ) : (
+        <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
+          {question.explanation.split("\n").map((line, i) => (
+            <p key={i} className="mb-2 last:mb-0">
+              {line}
+            </p>
+          ))}
+        </div>
+      )}
 
       <div className="flex flex-col gap-2 sm:flex-row">
         <Button

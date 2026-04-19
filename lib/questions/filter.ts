@@ -1,6 +1,10 @@
 import type { Question, QuizFilter } from "./types";
 import type { HistoryStore } from "@/lib/storage/history";
 
+export function isPlaceholderExplanation(q: Question): boolean {
+  return /^正解は[アイウエ]です[。.]/.test(q.explanation) || q.explanation.trim() === "";
+}
+
 export function filterQuestions(
   all: Question[],
   filter: QuizFilter,
@@ -33,6 +37,10 @@ export function filterQuestions(
     const recent = new Set(history.getRecentIds(2));
     pool = pool.filter((q) => !recent.has(q.id));
   }
+
+  // Remove placeholder explanations if real explanations are available
+  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
+  if (withReal.length > 0) pool = withReal;
 
   if (filter.mode === "random") {
     shuffle(pool);
