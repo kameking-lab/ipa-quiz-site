@@ -3,10 +3,17 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { findQuestionByRoute, type QuestionRouteParams } from "@/lib/seo/question-url";
 
-export const runtime = "edge";
 export const alt = "IPA Quiz 過去問解説";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// 12,000+ 問 × ビルド時 OG 画像生成は V8 の call stack を超えるため、
+// 親 page.tsx の generateStaticParams を空で上書きしてオンデマンド生成にする。
+// edge runtime は generateStaticParams と併用不可のため node 既定に委ねる。
+export const dynamicParams = true;
+export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
+  return [];
+}
 
 export default async function OgImage({
   params,
