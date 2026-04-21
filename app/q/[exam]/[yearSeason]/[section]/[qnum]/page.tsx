@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ChevronLeft, ChevronRight, ExternalLink, Sparkles } from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
@@ -48,7 +49,7 @@ function sessionLabel(session: string): string {
 }
 
 function questionTitle(q: Question): string {
-  return `${formatYearSeason(q.year, q.season)} ${examLabel(q.exam)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
+  return `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
 }
 
 function questionSnippet(q: Question, maxLen = 150): string {
@@ -140,8 +141,8 @@ export default async function QuestionPage({
       {
         "@type": "Quiz",
         "@id": `${pageUrlAbs}#quiz`,
-        name: `${formatYearSeason(q.year, q.season)} ${examLabel(q.exam)} ${sessionLabel(q.session)} 問${q.qNumber}`,
-        about: examLabel(q.exam),
+        name: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`,
+        about: examLabelAt(q.exam, q.year, q.season),
         educationalLevel: "professional",
         inLanguage: "ja",
         url: pageUrlAbs,
@@ -240,7 +241,7 @@ export default async function QuestionPage({
       <header className="mb-4">
         <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
           <Badge variant="outline">
-            {examLabel(q.exam)} {formatYearSeason(q.year, q.season)}
+            {examLabelAt(q.exam, q.year, q.season)} {formatYearSeason(q.year, q.season)}
           </Badge>
           <Badge variant="default">{sessionLabel(q.session)}</Badge>
           <Badge variant="default">問{q.qNumber}</Badge>
@@ -253,7 +254,7 @@ export default async function QuestionPage({
           {q.isCalculation && <Badge variant="warn">計算</Badge>}
         </div>
         <h1 className="text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          {formatYearSeason(q.year, q.season)} {examLabel(q.exam)} {sessionLabel(q.session)} 問{q.qNumber}
+          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)} {sessionLabel(q.session)} 問{q.qNumber}
           <span className="ml-2 text-base font-medium text-zinc-500 dark:text-zinc-400 sm:text-lg">
             {q.category}
           </span>
@@ -378,7 +379,7 @@ export default async function QuestionPage({
                   className="block rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
                 >
                   <div className="mb-1 text-xs text-zinc-500 dark:text-zinc-400">
-                    {examLabel(r.exam)} {formatYearSeason(r.year, r.season)}{" "}
+                    {examLabelAt(r.exam, r.year, r.season)} {formatYearSeason(r.year, r.season)}{" "}
                     {sessionLabel(r.session)} 問{r.qNumber}
                   </div>
                   <div className="line-clamp-2 text-sm text-zinc-800 dark:text-zinc-100">
