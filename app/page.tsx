@@ -44,7 +44,7 @@ export default function HomePage() {
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="success">β公開中・全機能無料</Badge>
-          <Badge variant="success">応用情報 {total}問収録</Badge>
+          <Badge variant="success">全13試験区分 合計{total.toLocaleString("ja-JP")}問収録</Badge>
           <Badge variant="outline">ゼロ遷移 UI</Badge>
           <Badge variant="outline">AI コパイロット</Badge>
           <Badge variant="outline">モバイル最適化</Badge>
