@@ -1,5 +1,17 @@
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { AP_QUESTIONS } from "./ap";
+import { IP_QUESTIONS } from "./ip";
+import { SG_QUESTIONS } from "./sg";
+import { FE_QUESTIONS } from "./fe";
+import { SC_QUESTIONS } from "./sc";
+import { NW_QUESTIONS } from "./nw";
+import { DB_QUESTIONS } from "./db";
+import { ST_QUESTIONS } from "./st";
+import { SA_QUESTIONS } from "./sa";
+import { PM_QUESTIONS } from "./pm";
+import { ES_QUESTIONS } from "./es";
+import { SM_QUESTIONS } from "./sm";
+import { AU_QUESTIONS } from "./au";
 
 // ─── How to add a new exam ───────────────────────────────────────────────────
 // 1. Run:  pnpm fetch:pdfs --exam=<code>
@@ -10,31 +22,20 @@ import { AP_QUESTIONS } from "./ap";
 // 5. Uncomment the matching loader in lib/questions/get-questions.ts
 // ────────────────────────────────────────────────────────────────────────────
 
-// import { FE_QUESTIONS } from "./fe";
-// import { SG_QUESTIONS } from "./sg";
-// import { SC_QUESTIONS } from "./sc";
-// import { NW_QUESTIONS } from "./nw";
-// import { DB_QUESTIONS } from "./db";
-// import { ST_QUESTIONS } from "./st";
-// import { SA_QUESTIONS } from "./sa";
-// import { PM_QUESTIONS } from "./pm";
-// import { ES_QUESTIONS } from "./es";
-// import { SM_QUESTIONS } from "./sm";
-// import { AU_QUESTIONS } from "./au";
-
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
-  // fe: FE_QUESTIONS,
-  // sg: SG_QUESTIONS,
-  // sc: SC_QUESTIONS,
-  // nw: NW_QUESTIONS,
-  // db: DB_QUESTIONS,
-  // st: ST_QUESTIONS,
-  // sa: SA_QUESTIONS,
-  // pm: PM_QUESTIONS,
-  // es: ES_QUESTIONS,
-  // sm: SM_QUESTIONS,
-  // au: AU_QUESTIONS,
+  ip: IP_QUESTIONS,
+  sg: SG_QUESTIONS,
+  fe: FE_QUESTIONS,
+  sc: SC_QUESTIONS,
+  nw: NW_QUESTIONS,
+  db: DB_QUESTIONS,
+  st: ST_QUESTIONS,
+  sa: SA_QUESTIONS,
+  pm: PM_QUESTIONS,
+  es: ES_QUESTIONS,
+  sm: SM_QUESTIONS,
+  au: AU_QUESTIONS,
 };
 
 export const ALL_QUESTIONS: Question[] = (
