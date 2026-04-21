@@ -31,8 +31,8 @@ export async function generateMetadata({
     return { title: "午後問題は未対応です", robots: { index: false } };
   }
   const label = examLabel(exam as ExamCode);
-  const title = `${label} 午後問題（AI採点ベータ）`;
-  const description = `${label}の午後記述式問題をAIが採点します。模範解答との比較・改善点・解答例を表示。AI採点は目安です。`;
+  const title = `【練習用】${label} 午後問題（AI採点ベータ）`;
+  const description = `【練習用オリジナル問題】${label}の午後記述式形式を模した練習問題をAIが採点します。実際の過去問ではありません。AI採点は目安です。`;
   return {
     title,
     description,
@@ -76,7 +76,7 @@ export default async function AfternoonIndexPage({
       <header className="mb-6 space-y-3">
         <div className="flex flex-wrap items-center gap-2">
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-            {examLabel(code)} 午後問題
+            【練習用オリジナル問題】{examLabel(code)} 午後問題
           </h1>
           <Badge variant="warn">AI採点ベータ</Badge>
         </div>

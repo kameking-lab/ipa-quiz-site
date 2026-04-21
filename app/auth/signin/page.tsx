@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { authConfig } from "@/lib/auth/config";
 import { redirect } from "next/navigation";
@@ -58,15 +59,19 @@ export default async function SignInPage({
 
       {providerIds.size === 0 && (
         <div className="rounded-md border border-zinc-200 bg-zinc-50 px-4 py-6 text-center text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-          認証プロバイダが未設定です。
+          ログイン機能は準備中です。近日公開予定。
           <br />
-          設定方法は <code className="text-xs">docs/AUTH_AND_BILLING_SETUP.md</code> を参照。
+          現在は未ログインでも全機能を無制限にご利用いただけます。
+          <br />
+          <Link href="/pricing" className="mt-3 inline-block underline">
+            プラン詳細を見る
+          </Link>
         </div>
       )}
 
       <p className="mt-8 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        続行すると <a href="/terms" className="underline">利用規約</a> と{" "}
-        <a href="/privacy" className="underline">プライバシーポリシー</a> に同意したものとみなされます。
+        続行すると <Link href="/terms" className="underline">利用規約</Link> と{" "}
+        <Link href="/privacy" className="underline">プライバシーポリシー</Link> に同意したものとみなされます。
       </p>
     </main>
   );

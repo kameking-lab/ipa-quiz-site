@@ -1,4 +1,4 @@
-import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/types";
+import type { ExamCode, QuizFilter, QuizMode, Season, Session } from "@/lib/questions/types";
 import { getPoolIds } from "@/lib/questions/pool-server";
 import { QuizClient } from "./QuizClient";
 
@@ -7,6 +7,7 @@ interface SearchParams {
   exam?: string;
   year?: string;
   season?: string;
+  session?: string;
   topic?: string;
   category?: string;
   calc?: string;
@@ -14,6 +15,7 @@ interface SearchParams {
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered"];
+const VALID_SESSIONS: Session[] = ["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b"];
 
 export default async function QuizPage({
   searchParams,
@@ -22,12 +24,16 @@ export default async function QuizPage({
 }) {
   const sp = await searchParams;
   const mode = (VALID_MODES.includes(sp.mode as QuizMode) ? sp.mode : "random") as QuizMode;
+  const session = VALID_SESSIONS.includes(sp.session as Session)
+    ? (sp.session as Session)
+    : undefined;
 
   const filter: QuizFilter = {
     mode,
     exam: (sp.exam as ExamCode | undefined) ?? "ap",
     year: sp.year ? Number(sp.year) : undefined,
     season: sp.season as Season | undefined,
+    session,
     topicTag: sp.topic,
     category: sp.category,
     calculationOnly: sp.calc === "1",
