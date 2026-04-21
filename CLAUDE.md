@@ -37,7 +37,7 @@ app/
   modes/year,topic       年度別・分野別一覧
   about/                 IPA出典・著作権
 components/
-  quiz/                  QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer / ClientQuizLoader
+  quiz/                  QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer (lazy-loads one question at a time via /api/questions/next)
   copilot/               CopilotPanel (+ モバイル ボトムシート)
   ui/                    Button / Card / Dialog / Switch / Badge / Markdown
   theme-provider.tsx     Light/Dark/System
