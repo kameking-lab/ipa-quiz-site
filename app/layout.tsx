@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | IPA Quiz",
   },
   description:
-    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+    "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
   applicationName: "IPA Quiz",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IPA Quiz — AIネイティブ過去問学習",
     description:
-      "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。β公開中・全機能無料。",
+      "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
     type: "website",
     locale: "ja_JP",
     siteName: "IPA Quiz",
@@ -48,8 +48,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@kakomon_ai_jp",
+    creator: "@kakomon_ai_jp",
     title: "IPA Quiz — AIネイティブ過去問学習",
-    description: "応用情報技術者試験の過去問400問をAIコパイロット付きで学習。β公開中・全機能無料。",
+    description:
+      "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
   },
 };
 
@@ -121,11 +124,15 @@ export default function RootLayout({
                       著作権・利用条件
                     </Link>
                   </div>
+                  <div className="mb-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
+                    本サービスはIPA公式ではない非公式のサービスです。試験名称はIPAの商標です。
+                  </div>
                   <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
                     {(
                       [
                         ["/terms", "利用規約"],
                         ["/privacy", "プライバシーポリシー"],
+                        ["/commerce", "特定商取引法に基づく表記"],
                         ["/operator", "運営者情報"],
                         ["/settings", "設定"],
                       ] as const

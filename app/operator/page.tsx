@@ -101,6 +101,30 @@ export default function OperatorPage() {
           をご確認ください。
         </p>
       </section>
+
+      <section className="mt-8 rounded-lg border border-amber-300 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950 dark:text-amber-100">
+        <h2 className="mb-2 text-base font-semibold">免責事項</h2>
+        <p className="mb-2">
+          本サービス「過去問AI（IPA Quiz）」は、独立行政法人情報処理推進機構（IPA）とは一切関係のない非公式のサービスです。
+          IPAが運営・監修するものではなく、IPAの公式見解を示すものでもありません。
+        </p>
+        <p className="mb-2">
+          「情報処理技術者試験」「応用情報技術者」「基本情報技術者」等の試験名称は、IPAの商標または登録商標です。
+          本サービスではこれらを試験区分の識別のためにのみ使用しています。
+        </p>
+        <p>
+          試験要項・申込・正式な情報は必ず
+          <a
+            href="https://www.ipa.go.jp/shiken/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline"
+          >
+            IPA公式サイト（ipa.go.jp/shiken）
+          </a>
+          をご確認ください。
+        </p>
+      </section>
     </main>
   );
 }

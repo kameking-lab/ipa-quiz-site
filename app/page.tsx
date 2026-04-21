@@ -85,8 +85,11 @@ export default function HomePage() {
       <ExamCategoryGrid questionCounts={questionCounts} />
 
       <h2 id="exam-modes" className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-        出題モード <span className="text-xs font-normal text-zinc-500">（応用情報技術者）</span>
+        試験区分を選択してください
       </h2>
+      <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+        上の一覧から試験区分を選ぶと、その試験専用の出題モード（ランダム／年度別／分野別）を表示します。以下は応用情報技術者のサンプルです。
+      </p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
         <ModeCard
           href="/quiz?mode=random&exam=ap"

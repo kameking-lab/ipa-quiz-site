@@ -177,14 +177,53 @@ export default async function ExamTopPage({
         </ul>
       </section>
 
-      <section aria-label="クイズを始める" className="mt-10">
-        <Link href={`/quiz?mode=random&exam=${exam}`} className="block">
-          <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
-            ランダム出題でクイズを始める
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </Link>
-      </section>
+      {(() => {
+        const hasAm1 = questions.some((q) => q.session === "am1");
+        const hasAm2 = questions.some((q) => q.session === "am2");
+        const isHighLevel = hasAm1 && hasAm2;
+
+        if (isHighLevel) {
+          return (
+            <section aria-label="クイズを始める" className="mt-10">
+              <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+                ランダム出題の範囲を選択
+              </h2>
+              <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+                高度試験は午前I（共通知識）と午前II（専門知識）に分かれます。
+                通常は午前II中心で学習しますが、午前I免除取得前は午前Iも対策推奨。
+              </p>
+              <div className="grid gap-2 sm:grid-cols-3">
+                <Link href={`/quiz?mode=random&exam=${exam}&session=am2`} className="block">
+                  <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
+                    午前II（推奨）
+                  </Button>
+                </Link>
+                <Link href={`/quiz?mode=random&exam=${exam}&session=am1`} className="block">
+                  <Button variant="outline" size="lg" className="w-full">
+                    午前I
+                  </Button>
+                </Link>
+                <Link href={`/quiz?mode=random&exam=${exam}`} className="block">
+                  <Button variant="outline" size="lg" className="w-full">
+                    午前I＋II（両方）
+                  </Button>
+                </Link>
+              </div>
+            </section>
+          );
+        }
+
+        return (
+          <section aria-label="クイズを始める" className="mt-10">
+            <Link href={`/quiz?mode=random&exam=${exam}`} className="block">
+              <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
+                ランダム出題でクイズを始める
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          </section>
+        );
+      })()}
     </main>
   );
 }

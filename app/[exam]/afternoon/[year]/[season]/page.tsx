@@ -47,8 +47,8 @@ export async function generateMetadata({
   const yearNum = Number(year);
   const label = formatYearSeason(yearNum, season);
   const histLabel = examLabelAt(exam as ExamCode, yearNum, season);
-  const title = `${label} ${histLabel} 午後問題（AI採点）`;
-  const description = `${label}に実施された${histLabel}午後試験の記述式問題をAIが採点します。`;
+  const title = `【練習用】${label} ${histLabel} 午後問題（AI採点ベータ）`;
+  const description = `【練習用オリジナル問題】${label}実施の${histLabel}午後試験を模した記述式問題をAIが採点します。実際の出題ではありません。`;
   return {
     title,
     description,
@@ -102,9 +102,22 @@ export default async function AfternoonPlayerPage({
 
       <header className="mb-4">
         <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          {label} {examLabelAt(code, yearNum, season)} 午後問題
+          【練習用オリジナル問題】{label} {examLabelAt(code, yearNum, season)} 午後問題
         </h1>
       </header>
+
+      <div
+        role="note"
+        className="mb-5 rounded-lg border border-amber-400 bg-amber-50 p-4 text-sm leading-relaxed text-amber-900 dark:border-amber-700 dark:bg-amber-950 dark:text-amber-100"
+      >
+        <p className="mb-1.5 font-semibold">⚠️ 練習用オリジナル問題です</p>
+        <p>
+          本ページの設問・題材・模範解答は、IPA試験本番の出題傾向を模して作成した
+          <strong>練習用オリジナル問題</strong>
+          であり、実際の試験で出題された問題ではありません。AI採点機能の動作確認用としてご活用ください。
+          本番形式の学習には、実際のIPA過去問（午前問題）をご利用ください。
+        </p>
+      </div>
 
       <AfternoonPlayer questions={questions} />
     </main>
