@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { ALL_QUESTIONS } from "@/data/questions";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { examLabelAt } from "@/lib/exam-naming/history";
+import { formatYearSeason } from "@/lib/utils";
 import { findQuestionByRoute, type QuestionRouteParams } from "@/lib/seo/question-url";
 
 export const alt = "IPA Quiz 過去問解説";
@@ -24,7 +25,7 @@ export default async function OgImage({
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
 
   const heading = q
-    ? `${formatYearSeason(q.year, q.season)} ${examLabel(q.exam)}`
+    ? `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)}`
     : "IPA Quiz";
   const subheading = q ? `問${q.qNumber} ${q.category}` : "過去問 AI 解説";
   const body = q

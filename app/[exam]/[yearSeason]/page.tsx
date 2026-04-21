@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ChevronRight } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
+import { examLabelAt } from "@/lib/exam-naming/history";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
@@ -53,8 +54,9 @@ export async function generateMetadata({
   const parsed = parseYearSeason(yearSeason);
   if (!parsed) return { title: "年度が見つかりません", robots: { index: false } };
   const label = formatYearSeason(parsed.year, parsed.season);
-  const title = `${label} ${examLabel(exam as ExamCode)} 過去問一覧`;
-  const description = `${label}に実施された${examLabel(exam as ExamCode)}試験の全問題を一覧で確認できます。AI解説付きで効率的に学習を進められます。`;
+  const histLabel = examLabelAt(exam as ExamCode, parsed.year, parsed.season);
+  const title = `${label} ${histLabel} 過去問一覧`;
+  const description = `${label}に実施された${histLabel}試験の全問題を一覧で確認できます。AI解説付きで効率的に学習を進められます。`;
   return {
     title,
     description,
@@ -89,6 +91,7 @@ export default async function ExamYearSeasonPage({
   if (pool.length === 0) notFound();
 
   const label = formatYearSeason(parsed.year, parsed.season);
+  const histLabel = examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
 
   // Group by session for display (am / pm / etc.)
@@ -103,7 +106,7 @@ export default async function ExamYearSeasonPage({
     "@graph": [
       {
         "@type": "CollectionPage",
-        name: `${label} ${examLabel(code)} 過去問一覧`,
+        name: `${label} ${histLabel} 過去問一覧`,
         url: absUrl,
         inLanguage: "ja",
       },
@@ -148,7 +151,7 @@ export default async function ExamYearSeasonPage({
 
       <header className="mb-6">
         <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-          {label} {examLabel(code)} 過去問一覧
+          {label} {histLabel} 過去問一覧
         </h1>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="outline">{pool.length}問</Badge>

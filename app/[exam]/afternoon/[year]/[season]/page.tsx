@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
+import { examLabelAt } from "@/lib/exam-naming/history";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import {
   getAfternoonByYearSeason,
@@ -45,8 +46,9 @@ export async function generateMetadata({
   }
   const yearNum = Number(year);
   const label = formatYearSeason(yearNum, season);
-  const title = `${label} ${examLabel(exam as ExamCode)} 午後問題（AI採点）`;
-  const description = `${label}に実施された${examLabel(exam as ExamCode)}午後試験の記述式問題をAIが採点します。`;
+  const histLabel = examLabelAt(exam as ExamCode, yearNum, season);
+  const title = `${label} ${histLabel} 午後問題（AI採点）`;
+  const description = `${label}に実施された${histLabel}午後試験の記述式問題をAIが採点します。`;
   return {
     title,
     description,
@@ -100,7 +102,7 @@ export default async function AfternoonPlayerPage({
 
       <header className="mb-4">
         <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          {label} {examLabel(code)} 午後問題
+          {label} {examLabelAt(code, yearNum, season)} 午後問題
         </h1>
       </header>
 
