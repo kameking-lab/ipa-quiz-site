@@ -25,7 +25,7 @@ export const FE_QUESTIONS_2024_CBT_KAMOKU_B: Question[] = [
       "カ": "z > y"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "この問題は、三つの異なる整数の中から最大値を見つけるプログラムの空欄を埋めるものです。maximum関数は、引数x, y, zを受け取り、その最大値を返します。まず、if文でxが最大値である条件を判定します。xがyよりも大きく、かつzよりも大きい場合、xが最大値となります。したがって、この条件を表すのは「x > y and x > z」です。これが正解のイです。他の選択肢は、xが最大値である条件を完全に網羅していなかったり、不必要な条件を含んでいたりするため誤りです。例えば、アの「x > y」だけでは、xがzよりも小さい可能性があり、xが最大値とは限りません。このように、論理積（and）を用いて複数の条件を組み合わせることで、より厳密な判定が可能になります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_fe_kamoku-b_qs.pdf",
     "license": "IPA-public"
@@ -49,7 +49,7 @@ export const FE_QUESTIONS_2024_CBT_KAMOKU_B: Question[] = [
       "エ": "result × 2 + int(binary の i文字目の文字)"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "正解はエです。この問題は、2進数文字列を10進数整数に変換するアルゴリズムを問うものです。2進数では、各桁の重みは左に行くほど2倍になります。例えば、2進数101は、右から順に1×2⁰ + 0×2¹ + 1×2² = 1 + 0 + 4 = 5となります。プログラムでは、forループで文字列を左から右へ処理しています。i番目の文字（1から始まる）を取り出し、それをint関数で整数値（0または1）に変換します。この整数値を、現在のresultに2を掛けたものに加算することで、次の桁の重みを考慮した計算を行います。したがって、result × 2 + int(binary の i文字目の文字)が正しい計算式となります。アとイは、桁の重みを考慮せずに単純加算しているため誤りです。ウは、桁の重みを考慮していますが、文字列の右端の文字から処理しており、プログラムのiが1からlengthまで増加するループ処理と整合しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_fe_kamoku-b_qs.pdf",
     "license": "IPA-public"
@@ -99,7 +99,7 @@ export const FE_QUESTIONS_2024_CBT_KAMOKU_B: Question[] = [
       "エ": "3回実行される"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "イは、最終的な結合処理のループにおける `work[k] ← data2[j]` の実行回数を問うています。関数 `merge({2, 3},{1, 4})` の場合、data1は{2, 3}でn1=2、data2は{1, 4}でn2=2です。最初のwhileループでは、data1[1] (2) > data2[1] (1)のため、work[1]に1が代入されjは2になります。次にdata1[1] (2) ≤ data2[2] (4)のため、work[2]に2が代入されiは2になります。さらにdata1[2] (3) ≤ data2[2] (4)のため、work[3]に3が代入されiは3になります。ここで最初のwhileループは終了します。iがn1を超えたため、次の`while (i ≤ n1)`ループは実行されません。最後に`while (j ≤ n2)`ループに入ります。jは2、n2は2なので条件を満たします。`work[k] ← data2[j]` が実行されwork[4]に4が代入されます。その後jは3、kは5となります。jがn2を超えたためこのループは1回実行され終了します。したがって、αの行は1回実行されます。アは最初のwhileループで処理が完了しないため間違いです。ウ、エは実行回数が実際と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_fe_kamoku-b_qs.pdf",
     "license": "IPA-public"
