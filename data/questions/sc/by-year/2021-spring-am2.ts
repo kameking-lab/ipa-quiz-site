@@ -23,7 +23,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "IPsec, SSL, TLS"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "DNS Memcached NTP は、リフレクタ攻撃に悪用されやすいサービスです。リフレクタ攻撃は、攻撃対象のシステムへ直接攻撃するのではなく、中継地点となる第三者のシステム（リフレクタ）に大量のパケットを送信させ、その応答パケットを攻撃対象へ集中させることで、攻撃対象のネットワーク帯域を圧迫し、サービス不能に陥らせる攻撃手法です。DNS (Domain Name System) は、ドメイン名をIPアドレスに変換するサービスで、DNS応答パケットはDNS質問パケットよりもサイズが大きくなる特性があり、悪用されやすいです。Memcached は、インメモリ分散キャッシュシステムで、UDPプロトコルで応答が返されるため、大量の応答パケットを生成させやすいです。NTP (Network Time Protocol) も、UDPで動作し、応答パケットを偽装して大量に送信させることでリフレクタ攻撃に悪用されることがあります。アのDKIM SPF DNSSECは、電子メールの認証やDNSのセキュリティ強化に使われ、リフレクタ攻撃に直接悪用されにくい技術です。ウのFTP L2TP Telnetは、古くからあるプロトコルで、リフレクタ攻撃の標的となることは少ないです。エのIPsec SSL TLSは、通信の暗号化や認証に用いられるプロトコルであり、リフレクタ攻撃に悪用されるサービスではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +47,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "有効期限が切れたディジタル証明書の更新処理の進捗状況を確認する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "PKI（公開鍵基盤）におけるOCSP（Online Certificate Status Protocol）の主な目的は、ディジタル証明書が有効であるか失効しているかという「失効情報」をリアルタイムで問い合わせることです。ディジタル証明書は、公開鍵が特定の個人や組織に属していることを認証局（CA）が保証する電子的な身分証明書ですが、秘密鍵の漏洩や証明書発行の誤りなどにより、信頼性を失い「失効」させられることがあります。OCSPは、この失効情報を迅速に確認することで、不正な証明書の使用を防ぎ、セキュアな通信を維持するために利用されます。選択肢アとエは証明書の再発行や更新の進捗確認であり、OCSPの機能ではありません。選択肢イは鍵交換の失敗時の認証状態確認という、OCSPの直接的な役割とは異なります。したがって、ディジタル証明書の失効情報を問い合わせることが、OCSPの正しい利用目的です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -71,7 +71,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "衝突発見困難性とは、ハッシュ値が一致する二つのメッセージの発見に要する計算量が大きいことによる、発見の困難性のことである。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "エが適切な記述です。ハッシュ関数における「衝突発見困難性」とは、同じハッシュ値を持つ異なる二つのメッセージのペアを見つけ出すことが計算量的に非常に困難である、という性質を指します。SHA-256のような安全なハッシュ関数では、この困難性はメッセージ長（ビット数）の二乗ではなく、2の（メッセージ長の半分）乗程度の計算量で発見される可能性があるとされています。アは計算量のオーダーが誤り、イは「元のメッセージの発見」ではなく「二つのメッセージの発見」が衝突発見困難性の定義であり、また計算量も誤りです。ウは「元のメッセージの発見」は「原像計算困難性」の定義であり、衝突発見困難性とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +95,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "サイズが大きい電子メールや大量の電子メールを攻撃対象に送り付ける。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "Smurf攻撃は、ICMP（Internet Control Message Protocol）というネットワークの通信経路を診断するためのプロトコルを悪用するDoS攻撃です。具体的には、攻撃者は偽装したIPアドレス（攻撃対象のもの）から、ブロードキャストアドレス（ネットワーク内の全端末に送信されるアドレス）宛にICMP Echo Request（pingのようなもの）を送信します。これにより、ネットワーク内の多数の端末が偽装されたIPアドレス（＝攻撃対象）に対してICMP Echo Reply（応答パケット）を大量に送信することになり、攻撃対象のネットワーク帯域を圧迫します。したがって、アが正解となります。イはSYNフラッド攻撃、ウはUDPフラッド攻撃、エはメールボム攻撃といった他のDoS攻撃の説明です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +119,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "無線LANのアクセスポイントを不正に設置し、チャネル間の干渉を発生させることによって、通信を妨害する攻撃"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "正解はアです。サイドチャネル攻撃は、暗号化装置などの情報システムが動作する際に生じる物理的な情報、例えば消費電力、処理時間、電磁波などを観測・分析することで、暗号鍵などの秘密情報を盗み出す攻撃手法です。イの攻撃は、平文と暗号文の関係から鍵を推測する「既知平文攻撃」と呼ばれ、サイドチャネル攻撃とは異なります。ウは、入力操作を直接盗み見る「ショルダーハッキング」であり、物理的な側面からの情報漏洩ですが、システム内部の秘密情報とは性質が異なります。エは、無線LANの通信を妨害する「DoS攻撃（サービス拒否攻撃）」の一種であり、サイドチャネル攻撃とは無関係です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +143,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "パケットフィルタリングを拡張した方式であり、過去に通過したパケットから通信セッションを認識し、受け付けたパケットを通信セッションの状態に照らし合わせて通過させるか遮断するかを判断する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "ステートフルパケットインスペクション方式のファイアウォールは、パケットフィルタリングという基本的な通信制御をさらに発展させたものです。パケットフィルタリングが個々のパケットの内容（送信元IPアドレス、宛先IPアドレス、ポート番号など）だけで通過・遮断を判断するのに対し、ステートフルパケットインスペクションでは、通信の「状態」を把握します。\n\n具体的には、過去に通過したパケットの情報から、現在受信したパケットが、どのような通信セッション（例えば、Webサイト閲覧のためのHTTP通信など）の一部であるかを認識します。そして、その通信セッションの正常な状態に照らし合わせて、現在のパケットが正規のものであるか、あるいは不正なものであるかを判断し、通過させるか遮断するかを決定します。これにより、より高度で柔軟なセキュリティを実現できます。\n\n選択肢アはリバースプロキシサーバの特徴、イはアプリケーションゲートウェイ（プロキシ型ファイアウォール）の特徴、ウはサーキットレベルゲートウェイの特徴を説明しており、ステートフルパケットインスペクションとは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +167,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "暗号化処理単位のブロック長よりも32ビット短くする。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "AES (Advanced Encryption Standard) は、現代の暗号化技術で広く使われている共通鍵暗号方式です。その安全性と性能は、鍵の長さによって大きく影響されます。NIST (National Institute of Standards and Technology、アメリカ国立標準技術研究所) は、AESの鍵長として、128ビット、192ビット、256ビットの3種類を標準として定めています。この複数ある鍵長から、用途やセキュリティ要求度に応じて適切なものを選択できるようになっています。\n\n選択肢イは、鍵長を256ビット未満で任意に指定するという点が誤りです。AESは厳密に定義された鍵長のみをサポートします。選択肢ウとエは、鍵長とブロック長の関係について述べていますが、AESの鍵長はブロック長（AESでは128ビット）とは独立したパラメータであり、ブロック長より長い、あるいは短いといった条件はありません。したがって、AESの鍵長の条件として正しいのはアです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -191,7 +191,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "セキュリティ製品の種別を識別するための識別子"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "製品に含まれる脆弱性を識別するための識別子である。CVEは、公開されている情報セキュリティ上の脆弱性（ソフトウェアやハードウェアの欠陥で、悪意のある第三者に悪用される可能性のあるもの）に一意の識別子を付与し、情報共有を容易にするための標準化された仕組みである。これにより、開発者やセキュリティ担当者は、特定の脆弱性に関する情報を迅速かつ正確に把握し、対策を講じることができる。\n\n選択肢アは、セキュリティ設定項目を識別するものであり、脆弱性そのものを指すCVEとは異なる。選択肢イは、Webサイト改ざんの証拠を識別するもので、CVEの役割ではない。選択肢エは、セキュリティ製品の種別を識別するもので、脆弱性とは無関係である。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +215,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "標的型サイバー攻撃などに関する情報を参加組織間で共有し,高度なサイバー攻撃対策につなげる取組"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "サイバー攻撃に関する情報を参加組織間で共有し、より高度な対策につなげる取り組みがJ-CSIPです。攻撃手法や手口といった具体的な情報を共有することで、各組織が未然防止や被害軽減に役立てることができます。アは情報セキュリティ監査の相互実施であり、J-CSIPの目的とは異なります。イはデータバックアップに特化しており、攻撃情報の共有とは直接関係ありません。ウはセキュリティ製品の有効性評価に限定され、J-CSIPのような包括的な情報共有を指すものではありません。したがって、標的型サイバー攻撃などの情報を共有し、対策強化につなげるエが最も適切です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +239,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "不正なサーバ証明書の発行を防ぐ。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "不正なサーバ証明書の発行を防ぐことがDNS CAAレコードのセキュリティ上の効果です。CAAレコードは、ドメイン名ごとに、どのような認証局（CA: Certification Authority）であればSSL/TLSサーバ証明書を発行できるかを指定するDNSレコードです。これにより、信頼されていないCAからの証明書発行を防ぎ、フィッシングサイトなどでの不正な証明書利用を抑制できます。アはSSL/TLS証明書の表示に関するもので、CAAレコードとは直接関係ありません。イはURL短縮サービスに関するもので、DNSとは無関係です。ウはメールサーバのスパムフィルタリングに関するもので、CAAレコードの機能ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +263,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "クラウドサービス利用組織の管理者が、組織の利用者が利用している全てのクラウドサービスの利用状況の可視化を行うことによって、許可を得ずにクラウドサービスを利用している者を特定できる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "CASB（Cloud Access Security Broker：クラウドサービスへのアクセスを仲介・管理するソフトウェア）は、組織が利用するクラウドサービスへのアクセスを可視化し、セキュリティポリシーを適用することで、シャドーIT（組織が把握していないクラウドサービスの利用）の検知や、データ漏洩防止などに貢献します。選択肢エは、CASBが組織の利用者が利用している全てのクラウドサービスの利用状況を可視化し、許可なく利用されているクラウドサービス（シャドーIT）を特定できるという、CASBの主要な効果を的確に示しています。選択肢アとイは、クラウドサービスプロバイダ側の対策であり、CASBとは直接関係ありません。選択肢ウは、脆弱性診断はCASBの機能ではなく、別のセキュリティ対策です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +287,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "攻撃: セッションハイジャック, 対策: 利用者ごとに固定のセッションIDを使用する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "正解はアです。SQLインジェクションは、入力値に不正なSQL文を混入させ、意図しないデータベース操作を行う攻撃です。対策として、SQL文の組立てに静的プレースホルダ（あらかじめSQL文の構造を決めておき、値だけを後から埋め込む方法）を使用することで、入力値がSQL文の一部として解釈されるのを防ぎます。イは、クロスサイトスクリプティング（XSS）という、悪意のあるスクリプトをWebサイトに埋め込み、閲覧者に実行させる攻撃に対する対策として不適切です。外部スタイルシートの取り込みを許可することは、XSSのリスクを高めます。ウは、クロスサイトリクエストフォージェリ（CSRF）という、ユーザーの意図しない操作を勝手に行わせる攻撃に対し、GETメソッドの使用はリクエスト内容がURLに露呈しやすく、CSRF攻撃を助長するため不適切です。エは、セッションハイジャックという、ユーザーのセッション情報（ログイン状態を維持するための情報）を盗み取り、なりすましを行う攻撃に対し、固定のセッションIDは予測されやすいため、適切ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -311,7 +311,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "マルウェアの感染や発病によって生じるデータの読込みの動作、書込みの動作,通信などを監視して、マルウェアを検出する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "マルウェアの検出手法であるビヘイビア法は、マルウェアの「振る舞い」を監視することで検出する手法です。選択肢エは、マルウェアが活動する際に生じるデータの読み書きや通信といった動作を監視し、異常な振る舞いがあればマルウェアと判断する、まさにビヘイビア法の説明です。アはシグネチャ法と呼ばれ、既知のマルウェアのコードパターンを照合します。イはデジタル署名による改ざん検知に近く、ウはファイルの完全性チェックであり、いずれもビヘイビア法とは異なります。したがって、エが正解です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -335,7 +335,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "ISP 管理下のネットワークに向けて ISP 管理外のネットワークから送信されるスパムメールを制限する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "ISPがOP25B（Outbound Port 25 Blocking）を導入する目的は、ISPのネットワークから外部へ送信されるスパムメールを制限することです。OP25Bは、ISPが自社の顧客（ISP管理下のネットワーク）から、SMTP（Simple Mail Transfer Protocol）の標準ポートである25番ポートを使ったメール送信を原則としてブロックする技術です。これにより、ISPのネットワークを利用したスパムメールの大量送信を防ぎます。選択肢イは、ISP管理外のネットワークに向けてISP管理下のネットワークから送信されるスパムメールを制限するという点で、この目的に合致しています。選択肢アとウは、ICMPパケットによるDDoS攻撃（分散型サービス拒否攻撃：多数のコンピューターから標的のサーバーに大量のアクセスを送りつけ、サービスを停止させる攻撃）に関するもので、OP25Bの直接的な目的ではありません。選択肢エは、ISP管理外のネットワークからISP管理下のネットワークへの送信を制限するものですが、OP25BはISP管理下のネットワークからの送信を対象とします。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +359,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "信頼性が高いサーバ証明書を有する Web サイトとの HTTPS 通信では、Webブラウザに鍵マークを表示する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "HSTS（HTTP Strict Transport Security）は、WebサイトがブラウザにHTTPS通信のみを強制させるための仕組みです。正解はアです。WebブラウザがHSTSを設定しているWebサイトにHTTPでアクセスした場合、一度目はHTTPで接続されますが、その際にサイトから「HTTPSでしかアクセスさせない」という指示（HSTSプリロードリストなど）を受け取ります。これにより、次回以降のアクセスでは、たとえユーザーが誤ってHTTPでURLを入力しても、ブラウザが自動的にHTTPSに切り替えて接続します。これにより、中間者攻撃（通信内容を盗聴・改ざんする攻撃）のリスクを低減できます。\n\n選択肢イはCSP（Content Security Policy）の説明であり、XSS（クロスサイトスクリプティング）などの攻撃を防ぐためのものです。選択肢ウはHTTPS通信におけるCookieの挙動に関する説明ですが、HSTSの直接的な説明ではありません。選択肢エは、ブラウザがHTTPS接続の際のサーバー証明書の信頼性を確認した際に表示するもので、HSTSの機能とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -383,7 +383,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "VDI サーバが、プロキシサーバとして VDI の画面転送プロトコルだけを中継する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "正解はイです。このシステムは、内部PCから直接インターネットにアクセスさせず、DMZ（非武装地帯：外部と内部の緩衝地帯）のVDI（仮想デスクトップインフラ：仮想環境でデスクトップを提供する技術）サーバを経由させることでセキュリティを高めるものです。インターネットからのマルウェア侵入や情報流出を防ぐには、VDIサーバと内部PC間の通信を画面転送プロトコルに限定することが重要です。これにより、インターネット上のWebサイトからVDIサーバ上の仮想マシンにマルウェアが直接侵入するリスクはありますが、その仮想マシンはインターネットに閉じた環境であるため、内部PCへの影響はありません。また、ファイル流出についても、仮想マシンから内部PCへのファイル転送を制限または禁止することで防げます。アはファイル転送を許可することになり、情報流出のリスクを高めます。ウとエは、VDIサーバがプロキシサーバとして機能することを前提としていますが、問題の目的はあくまでVDIサーバ経由でのWeb閲覧を制御することであり、プロキシ機能の有無よりも通信経路の限定が本質です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +407,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "WPA3"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "公衆無線LANなどでパスフレーズによる認証なしに端末とアクセスポイント間の無線通信を暗号化するのはEnhanced Openです。Enhanced OpenはRFC 8110で定義されており、Opportunistic Wireless Encryption (OWE) とも呼ばれます。これは、認証は行いませんが、通信内容を暗号化し、盗聴を防ぎます。FIDO2とWebAuthnは、Webサイトなどでのパスワードに代わる認証技術であり、通信の暗号化とは直接関係ありません。WPA3は認証と暗号化の両方を提供する規格ですが、パスフレーズなどでの認証を前提とする場合が多いです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +431,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "ロードバランサ、スイッチ、ルータなどの専用機器を使って、VLAN, ななどの仮想ネットワークを実現する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "NFVは、ルータやファイアウォールといった従来のネットワーク機器の機能を、汎用的なコンピュータ（サーバ）上で動作するソフトウェア（仮想マシン）として実現する技術です。これにより、ハードウェアの購入や設置にかかるコストを削減し、柔軟なネットワーク構築が可能になります。選択肢アはSDN（Software-Defined Networking）との関連を示唆していますが、NFVはSDNに依存するものではありません。選択肢イはOpenFlowに限定しており、NFVの汎用性を損ねます。選択肢エはVLANなどの仮想ネットワーク技術に言及していますが、NFVはより広範なネットワーク機能の仮想化を指します。したがって、ウがNFVの定義として最も適切です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +455,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "リンクアグリゲーション"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "スイッチングハブ同士を接続する際に、複数の物理的なポートを束ねて一つの高速な論理的なポートとして機能させる技術はリンクアグリゲーションです。これにより、帯域幅の拡大や冗長性の確保が可能になります。MIMEは電子メールの添付ファイル形式、MIMOは無線通信で複数アンテナを用いる技術、マルチパートは電子メールの複数の部分をまとめる形式であり、いずれもスイッチングハブのポートを束ねる技術とは異なります。したがって、正解はエです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"
@@ -479,7 +479,7 @@ export const SC_QUESTIONS_2021_SPRING_AM2: Question[] = [
       "エ": "デフォルトゲートウェイのアドレスとして使用される。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットで詳しい解説を確認してください。",
+    "explanation": "IPアドレス127.0.0.1は、ループバックアドレスと呼ばれる特別なアドレスで、ネットワークインターフェースカード（NIC）に割り当てられるものではなく、コンピュータ自身を指し示すために使用されます。したがって、単一のコンピュータ上で動作するプログラム同士が通信する際に、自身にパケットを送信するために利用されます。これは、ネットワークに接続されていなくても、プログラムが正しく動作しているかを確認する際などに役立ちます。\n\n選択肢アは、DHCP（Dynamic Host Configuration Protocol：IPアドレスなどを自動で割り当てる仕組み）が使えない場合に生成されるのは169.254.x.xのようなAPIPA（Automatic Private IP Addressing）アドレスであり、127.0.0.1とは異なります。選択肢イは、ブロードキャストアドレスはネットワーク内の全てのホストにパケットを送信するためのもので、通常はネットワークアドレスのホスト部がすべて1になったアドレス（例：192.168.1.255）が使用され、127.0.0.1ではありません。選択肢エのデフォルトゲートウェイは、外部ネットワークへ通信するための出口となるルーターのアドレスであり、通常はネットワーク内で実際に割り当てられたIPアドレスが使用されます。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sc_am2_qs.pdf",
     "license": "IPA-public"

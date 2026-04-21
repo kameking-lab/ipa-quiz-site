@@ -11,12 +11,12 @@
  *
  * 出力:
  *   data/questions/{exam}/by-year/{file}.ts  explanation / needsReview を更新
- *   logs/api-cost.json              累計コスト記録
+ *   logs/regen-cost.json            累計コスト記録（parse-pdfs の api-cost.json とは別ファイル）
  *   logs/regenerate-results.json    成否ログ
  *   logs/backup_*.ts                初回のみ元ファイルをコピー
  *
  * コスト: Gemini 2.5 Flash-Lite — $0.10/1M input, $0.40/1M output
- * 予算上限: $20 (logs/api-cost.json の累計が上限に達すると自動停止)
+ * 予算上限: $20 (logs/regen-cost.json の累計が上限に達すると自動停止)
  */
 
 import {
@@ -214,12 +214,26 @@ async function main(): Promise<void> {
       (opts.dryRun ? " [DRY RUN]" : ""),
   );
 
-  // コストログ読み込み
+  // コストログ読み込み (parse-pdfs の api-cost.json とは独立)
   mkdirSync(LOGS_DIR, { recursive: true });
-  const costFile = join(LOGS_DIR, "api-cost.json");
-  const costLog: CostLog = existsSync(costFile)
-    ? (JSON.parse(readFileSync(costFile, "utf8")) as CostLog)
-    : { totalUsd: 0, runs: [] };
+  const costFile = join(LOGS_DIR, "regen-cost.json");
+  const costLog: CostLog = (() => {
+    if (!existsSync(costFile)) return { totalUsd: 0, runs: [] };
+    try {
+      const raw = JSON.parse(readFileSync(costFile, "utf8")) as unknown;
+      if (
+        typeof raw === "object" &&
+        raw !== null &&
+        typeof (raw as CostLog).totalUsd === "number" &&
+        Array.isArray((raw as CostLog).runs)
+      ) {
+        return raw as CostLog;
+      }
+    } catch {
+      /* fall through to default */
+    }
+    return { totalUsd: 0, runs: [] };
+  })();
 
   if (costLog.totalUsd >= BUDGET_USD) {
     console.error(

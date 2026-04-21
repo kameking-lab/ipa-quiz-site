@@ -45,6 +45,8 @@ next-env.d.ts
 
 # parse script output logs
 /logs/*.json
+# regenerate-explanations backup copies of data files
+/logs/backup_*.ts
 
 # email-list API file-based store (app/api/email-list)
 /.data/
