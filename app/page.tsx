@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
 import { Card, CardContent } from "@/components/ui/card";
-import { Shuffle, CalendarDays, Tags, BookmarkCheck, CircleHelp } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
-import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
+import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
 import type { ExamCode } from "@/lib/questions/types";
@@ -79,49 +77,7 @@ export default function HomePage() {
 
       <HistoryStats />
 
-      <h2 className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-        試験区分を選んでください
-      </h2>
-      <ExamCategoryGrid questionCounts={questionCounts} />
-
-      <h2 id="exam-modes" className="mb-3 mt-8 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-        試験区分を選択してください
-      </h2>
-      <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
-        上の一覧から試験区分を選ぶと、その試験専用の出題モード（ランダム／年度別／分野別）を表示します。以下は応用情報技術者のサンプルです。
-      </p>
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <ModeCard
-          href="/quiz?mode=random&exam=ap"
-          icon={<Shuffle className="h-5 w-5" />}
-          title="ランダム出題"
-          desc="全範囲からランダムに出題します。"
-        />
-        <ModeCard
-          href="/quiz?mode=unanswered&exam=ap"
-          icon={<CircleHelp className="h-5 w-5" />}
-          title="未回答モード"
-          desc="まだ解いていない問題だけを出題。"
-        />
-        <ModeCard
-          href="/quiz?mode=review&exam=ap"
-          icon={<BookmarkCheck className="h-5 w-5" />}
-          title="復習モード"
-          desc="間違えた問題と★付き問題だけ。"
-        />
-        <ModeCard
-          href="/modes/year"
-          icon={<CalendarDays className="h-5 w-5" />}
-          title="年度別"
-          desc="令和X年度春/秋 を選んで出題。"
-        />
-        <ModeCard
-          href="/modes/topic"
-          icon={<Tags className="h-5 w-5" />}
-          title="分野別"
-          desc="セキュリティ/ネットワーク等の分野別。"
-        />
-      </div>
+      <HomeExamPicker questionCounts={questionCounts} />
 
       <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
         <Card>
@@ -160,29 +116,3 @@ export default function HomePage() {
   );
 }
 
-function ModeCard({
-  href,
-  icon,
-  title,
-  desc,
-}: {
-  href: string;
-  icon: React.ReactNode;
-  title: string;
-  desc: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
-    >
-      <div className="mb-1.5 flex items-center gap-2">
-        <span className="rounded-lg bg-sky-100 p-2 text-sky-700 dark:bg-sky-950 dark:text-sky-300">
-          {icon}
-        </span>
-        <span className="text-base font-semibold">{title}</span>
-      </div>
-      <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">{desc}</p>
-    </Link>
-  );
-}
