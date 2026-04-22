@@ -25,7 +25,7 @@ export default function CommercePage() {
       <section className="mb-6 rounded-lg border border-sky-300 bg-sky-50 p-4 text-sm leading-relaxed text-sky-900 dark:border-sky-800 dark:bg-sky-950 dark:text-sky-100">
         <p className="mb-1.5 font-semibold">現在、本サービスは無料β版として提供しています。</p>
         <p>
-          有料プラン（プレミアムプラン月額300円）の販売を開始する前に、本ページに販売事業者の情報を確定のうえ記載します。
+          有料プラン（プレミアムプラン月額980円）の販売を開始する前に、本ページに販売事業者の情報を確定のうえ記載します。
           現時点ではユーザーから料金をお預かりしていません。
         </p>
       </section>
@@ -67,14 +67,24 @@ export default function CommercePage() {
               </th>
               <td className="py-3 text-zinc-800 dark:text-zinc-200">
                 <a
-                  href="https://github.com/kameking-lab/ipa-quiz-site/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="mailto:kakomon.ai.jp@gmail.com"
                   className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
                 >
-                  GitHub Issues
+                  kakomon.ai.jp@gmail.com
                 </a>
-                （電話番号はご請求があった場合、遅滞なく開示します）
+                <br />
+                <span className="text-xs text-zinc-500 dark:text-zinc-400">
+                  または{" "}
+                  <a
+                    href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-200"
+                  >
+                    GitHub Issues
+                  </a>
+                  （電話番号はご請求があった場合、遅滞なく開示します）
+                </span>
               </td>
             </tr>
             <tr>
@@ -85,7 +95,7 @@ export default function CommercePage() {
                 <ul className="list-inside list-disc space-y-1">
                   <li>無料プラン: 0円（全機能・広告あり）</li>
                   <li>
-                    プレミアムプラン（予定）: 月額300円（税込）
+                    プレミアムプラン（予定）: 月額980円（税込）
                   </li>
                 </ul>
                 <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
