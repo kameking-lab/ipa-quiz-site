@@ -52,13 +52,21 @@ function questionTitle(q: Question): string {
   return `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
 }
 
-function questionSnippet(q: Question, maxLen = 150): string {
-  const head = q.question.replace(/\s+/g, " ").slice(0, maxLen);
+function truncate(s: string, n: number): string {
+  return s.length > n ? `${s.slice(0, n)}…` : s;
+}
+
+function questionSnippet(q: Question): string {
+  const examStr = examLabelAt(q.exam, q.year, q.season);
+  const ys = formatYearSeason(q.year, q.season);
+  const ss = sessionLabel(q.session);
+  const prefix = `【${examStr} ${ys} ${ss} 問${q.qNumber}・${q.category}】`;
+  const qPreview = truncate(q.question.replace(/\s+/g, " "), 60);
   const real = !isPlaceholderExplanation(q);
   const tail = real
-    ? q.explanation.replace(/\s+/g, " ").slice(0, 80)
-    : "AIコパイロットで詳細な解説を確認できます。";
-  return `${head}… ${tail}`.slice(0, 155);
+    ? `正解と解説を掲載。${truncate(q.explanation.replace(/\s+/g, " "), 40)}`
+    : "正解と AI コパイロットによる即時解説で理解を深められます。";
+  return truncate(`${prefix}${qPreview} ${tail}`, 155);
 }
 
 export async function generateMetadata({
