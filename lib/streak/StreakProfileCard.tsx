@@ -111,7 +111,7 @@ export function StreakProfileCard() {
         )}
         {!isActive && (
           <p className="mt-2 text-[11px] text-zinc-500 dark:text-zinc-400">
-            今日問題に答えると連続学習がスタートします。Duolingo 式で毎日コツコツ。
+            今日問題に答えると連続学習がスタートします。毎日コツコツ積み上げましょう。
           </p>
         )}
       </CardContent>
