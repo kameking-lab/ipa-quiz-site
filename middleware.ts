@@ -18,13 +18,30 @@ function timingSafeEqual(a: string, b: string): boolean {
   return result === 0;
 }
 
+// Vercel 環境変数に貼り付けた際の末尾改行/空白を吸収する。
+// atob は「バイナリ文字列」を返すため、UTF-8 を含むパスワードは TextDecoder で正しく復号する。
+function decodeBasicCredentials(header: string): { user: string; pass: string } | null {
+  const b64 = header.slice(6).trim();
+  let bytes: Uint8Array;
+  try {
+    const bin = atob(b64);
+    bytes = Uint8Array.from(bin, (c) => c.charCodeAt(0));
+  } catch {
+    return null;
+  }
+  const decoded = new TextDecoder("utf-8").decode(bytes);
+  const sepIdx = decoded.indexOf(":");
+  if (sepIdx < 0) return null;
+  return { user: decoded.slice(0, sepIdx), pass: decoded.slice(sepIdx + 1) };
+}
+
 export function middleware(req: NextRequest) {
-  const user = process.env.ADMIN_BASIC_USER;
-  const pass = process.env.ADMIN_BASIC_PASS;
+  const user = process.env.ADMIN_BASIC_USER?.trim();
+  const pass = process.env.ADMIN_BASIC_PASS?.trim();
 
   if (!user || !pass) {
     return new NextResponse(
-      "Admin auth is not configured. Set ADMIN_BASIC_USER and ADMIN_BASIC_PASS env vars.",
+      "Admin auth is not configured. Set ADMIN_BASIC_USER and ADMIN_BASIC_PASS env vars in Vercel (Project → Settings → Environment Variables).",
       { status: 503 },
     );
   }
@@ -32,19 +49,12 @@ export function middleware(req: NextRequest) {
   const auth = req.headers.get("authorization");
   if (!auth || !auth.toLowerCase().startsWith("basic ")) return unauthorized();
 
-  try {
-    const decoded = atob(auth.slice(6).trim());
-    const sepIdx = decoded.indexOf(":");
-    if (sepIdx < 0) return unauthorized();
-    const reqUser = decoded.slice(0, sepIdx);
-    const reqPass = decoded.slice(sepIdx + 1);
-    if (timingSafeEqual(reqUser, user) && timingSafeEqual(reqPass, pass)) {
-      return NextResponse.next();
-    }
-  } catch {
-    return unauthorized();
-  }
+  const creds = decodeBasicCredentials(auth);
+  if (!creds) return unauthorized();
 
+  if (timingSafeEqual(creds.user, user) && timingSafeEqual(creds.pass, pass)) {
+    return NextResponse.next();
+  }
   return unauthorized();
 }
 

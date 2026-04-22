@@ -39,7 +39,17 @@ STRIPE_PRICE_ID_TEAM=price_...      # 月30,000円
 
 # ===== 共通 =====
 NEXT_PUBLIC_SITE_URL=          # 任意。本番 URL。未設定時は VERCEL_URL 自動
+
+# ===== Admin Basic 認証（/admin/* を保護）=====
+ADMIN_BASIC_USER=              # 管理画面ユーザー名（例: admin）
+ADMIN_BASIC_PASS=              # 管理画面パスワード（長めのランダム文字列推奨）
 ```
+
+### Admin Basic 認証 補足
+
+- 未設定時は `/admin/*` へのアクセスが **503 Service Unavailable** になる（`/admin/team`, `/admin/stats` 共通）。
+- ブラウザが Basic 認証ダイアログを出さず 401 で弾かれ続ける場合、Vercel 環境変数の末尾改行/空白が原因であることが多い。middleware 側で `.trim()` 処理済み。
+- UTF-8 を含むパスワードも `TextDecoder` で復号するため、日本語パスワードも利用可。ただし管理用途ではASCII 20文字以上のランダム文字列を推奨。
 
 ---
 
