@@ -139,9 +139,14 @@ function PlanCard({ plan }: { plan: Plan }) {
             <Link href="/">ホームに戻る</Link>
           </Button>
         ) : (
-          <Button disabled variant={isPremium ? "primary" : "outline"} className="w-full">
-            近日公開
-          </Button>
+          <>
+            <Button disabled variant={isPremium ? "primary" : "outline"} className="w-full">
+              近日公開
+            </Button>
+            <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
+              {plan.id === "premium" ? "2026年5月公開予定" : "2026年6月公開予定"}
+            </p>
+          </>
         )}
       </CardContent>
     </Card>
