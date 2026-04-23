@@ -3,15 +3,19 @@
 import * as React from "react";
 import Link from "next/link";
 import { BookmarkCheck, CalendarDays, CircleHelp, Shuffle, Tags } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { ExamCategoryGrid } from "./ExamCategoryGrid";
 import { EXAM_LABELS } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
 interface Props {
   questionCounts: Partial<Record<ExamCode, number>>;
+  yearsByExam: Partial<Record<ExamCode, number[]>>;
+  categoriesByExam: Partial<Record<ExamCode, string[]>>;
 }
 
-export function HomeExamPicker({ questionCounts }: Props) {
+export function HomeExamPicker({ questionCounts, yearsByExam, categoriesByExam }: Props) {
   const [selected, setSelected] = React.useState<ExamCode | null>(null);
 
   const modesRef = React.useRef<HTMLDivElement | null>(null);
@@ -34,7 +38,11 @@ export function HomeExamPicker({ questionCounts }: Props) {
 
       <div ref={modesRef} className="scroll-mt-16">
         {selected ? (
-          <ExamModes exam={selected} />
+          <ExamModes
+            exam={selected}
+            years={yearsByExam[selected] ?? []}
+            categories={categoriesByExam[selected] ?? []}
+          />
         ) : (
           <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
             ↑ 試験区分を選ぶと、出題モードが表示されます
@@ -45,7 +53,15 @@ export function HomeExamPicker({ questionCounts }: Props) {
   );
 }
 
-function ExamModes({ exam }: { exam: ExamCode }) {
+function ExamModes({
+  exam,
+  years,
+  categories,
+}: {
+  exam: ExamCode;
+  years: number[];
+  categories: string[];
+}) {
   const label = EXAM_LABELS[exam] ?? exam.toUpperCase();
   return (
     <section aria-labelledby="exam-modes-heading" className="mt-8">
@@ -86,6 +102,43 @@ function ExamModes({ exam }: { exam: ExamCode }) {
           title="分野別"
           desc="セキュリティ/ネットワーク等の分野別。"
         />
+      </div>
+
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <Card>
+          <CardContent className="pt-5">
+            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              収録年度（{label}）
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {years.map((y) => (
+                <Badge key={y} variant="outline">
+                  {y}年
+                </Badge>
+              ))}
+              {years.length === 0 && (
+                <span className="text-xs text-zinc-500">データ投入待ち</span>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+        <Card>
+          <CardContent className="pt-5">
+            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+              収録分野（{label}）
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {categories.slice(0, 8).map((c) => (
+                <Badge key={c} variant="outline">
+                  {c}
+                </Badge>
+              ))}
+              {categories.length === 0 && (
+                <span className="text-xs text-zinc-500">データ投入待ち</span>
+              )}
+            </div>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
