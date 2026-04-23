@@ -19,7 +19,7 @@ export default function CommercePage() {
       </Button>
       <h1 className="mb-1 text-2xl font-bold">特定商取引法に基づく表記</h1>
       <p className="mb-8 text-sm text-zinc-500 dark:text-zinc-400">
-        最終更新: 2026年4月22日
+        最終更新: 2026年4月23日
       </p>
 
       <section className="mb-6 rounded-lg border border-sky-300 bg-sky-50 p-4 text-sm leading-relaxed text-sky-900 dark:border-sky-800 dark:bg-sky-950 dark:text-sky-100">
@@ -37,20 +37,14 @@ export default function CommercePage() {
               <th className="py-3 pr-4 text-left align-top font-medium text-zinc-600 dark:text-zinc-400 sm:w-40">
                 販売事業者
               </th>
-              <td className="py-3 text-zinc-800 dark:text-zinc-200">
-                過去問AI運営
-                <br />
-                <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                  （有料プラン開始前に正式な事業者名を追記予定）
-                </span>
-              </td>
+              <td className="py-3 text-zinc-800 dark:text-zinc-200">過去問AI</td>
             </tr>
             <tr>
               <th className="py-3 pr-4 text-left align-top font-medium text-zinc-600 dark:text-zinc-400">
                 運営責任者
               </th>
               <td className="py-3 text-zinc-800 dark:text-zinc-200">
-                後日記載
+                金田 義太（Kaneta Yoshita）
               </td>
             </tr>
             <tr>
@@ -58,33 +52,57 @@ export default function CommercePage() {
                 所在地
               </th>
               <td className="py-3 text-zinc-800 dark:text-zinc-200">
-                ご請求があった場合、遅滞なく開示します。
+                お問い合わせによりご開示します
+                <span className="ml-2 text-xs text-zinc-500 dark:text-zinc-400">（※1）</span>
               </td>
             </tr>
             <tr>
               <th className="py-3 pr-4 text-left align-top font-medium text-zinc-600 dark:text-zinc-400">
-                連絡先
+                電話番号
               </th>
               <td className="py-3 text-zinc-800 dark:text-zinc-200">
+                お問い合わせによりご開示します
+                <span className="ml-2 text-xs text-zinc-500 dark:text-zinc-400">（※1）</span>
+              </td>
+            </tr>
+            <tr>
+              <th className="py-3 pr-4 text-left align-top font-medium text-zinc-600 dark:text-zinc-400">
+                メールアドレス
+              </th>
+              <td className="py-3">
                 <a
                   href="mailto:kakomon.ai.jp@gmail.com"
                   className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
                 >
                   kakomon.ai.jp@gmail.com
                 </a>
-                <br />
-                <span className="text-xs text-zinc-500 dark:text-zinc-400">
-                  または{" "}
+              </td>
+            </tr>
+            <tr>
+              <th className="py-3 pr-4 text-left align-top font-medium text-zinc-600 dark:text-zinc-400">
+                お問い合わせ
+              </th>
+              <td className="py-3 space-y-1 text-zinc-800 dark:text-zinc-200">
+                <p>
+                  メール:{" "}
+                  <a
+                    href="mailto:kakomon.ai.jp@gmail.com"
+                    className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
+                  >
+                    kakomon.ai.jp@gmail.com
+                  </a>
+                </p>
+                <p>
+                  GitHub Issues:{" "}
                   <a
                     href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-200"
+                    className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
                   >
-                    GitHub Issues
+                    github.com/kameking-lab/ipa-quiz-site/issues
                   </a>
-                  （電話番号はご請求があった場合、遅滞なく開示します）
-                </span>
+                </p>
               </td>
             </tr>
             <tr>
@@ -164,6 +182,16 @@ export default function CommercePage() {
             </tr>
           </tbody>
         </table>
+      </section>
+
+      <section className="mb-6 space-y-2 rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-xs leading-relaxed text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
+        <p>
+          <span className="font-semibold">※1</span>{" "}
+          所在地および電話番号については、特定商取引法第11条の表示省略規定に基づき、お問い合わせにより速やかにご開示いたします。
+        </p>
+        <p>
+          現在は無料β版として運営中です。有料プラン開始時（2026年5月予定）に事業者登記情報を正式に追記します。
+        </p>
       </section>
 
       <section className="space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
