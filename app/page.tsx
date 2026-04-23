@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
-import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
@@ -19,14 +18,24 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const total = ALL_QUESTIONS.length;
-  const years = getAvailableYears("ap");
-  const categories = getAvailableCategories("ap");
 
   const questionCounts = Object.fromEntries(
     (Object.entries(QUESTIONS_BY_EXAM) as Array<[ExamCode, typeof ALL_QUESTIONS]>).map(
       ([code, qs]) => [code, qs?.length ?? 0],
     ),
   ) as Partial<Record<ExamCode, number>>;
+
+  const yearsByExam = Object.fromEntries(
+    (Object.entries(QUESTIONS_BY_EXAM) as Array<[ExamCode, typeof ALL_QUESTIONS]>)
+      .filter(([, qs]) => (qs?.length ?? 0) > 0)
+      .map(([code]) => [code, getAvailableYears(code)]),
+  ) as Partial<Record<ExamCode, number[]>>;
+
+  const categoriesByExam = Object.fromEntries(
+    (Object.entries(QUESTIONS_BY_EXAM) as Array<[ExamCode, typeof ALL_QUESTIONS]>)
+      .filter(([, qs]) => (qs?.length ?? 0) > 0)
+      .map(([code]) => [code, getAvailableCategories(code)]),
+  ) as Partial<Record<ExamCode, string[]>>;
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
@@ -77,41 +86,11 @@ export default function HomePage() {
 
       <HistoryStats />
 
-      <HomeExamPicker questionCounts={questionCounts} />
-
-      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
-        <Card>
-          <CardContent className="pt-5">
-            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-              収録年度（応用情報）
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {years.map((y) => (
-                <Badge key={y} variant="outline">
-                  {y}年
-                </Badge>
-              ))}
-              {years.length === 0 && (
-                <span className="text-xs text-zinc-500">データ投入待ち</span>
-              )}
-            </div>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardContent className="pt-5">
-            <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-              収録分野
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {categories.slice(0, 8).map((c) => (
-                <Badge key={c} variant="outline">
-                  {c}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
-      </div>
+      <HomeExamPicker
+        questionCounts={questionCounts}
+        yearsByExam={yearsByExam}
+        categoriesByExam={categoriesByExam}
+      />
     </main>
   );
 }
