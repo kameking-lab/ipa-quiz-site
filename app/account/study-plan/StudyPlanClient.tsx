@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import type { ExamCode } from "@/lib/questions/types";
@@ -25,19 +24,12 @@ const EXAM_OPTIONS: { code: ExamCode; label: string }[] = [
   { code: "au", label: "システム監査技術者" },
 ];
 
-interface HistoryEntry {
-  questionId: string;
-  exam: ExamCode;
-  category: string;
+// Matches the actual format written by lib/storage/history.ts createHistoryStore
+interface StoredEntry {
+  id: string;       // e.g. "ap-2023h-am-q1" — exam code is the first segment
+  selected: string;
   correct: boolean;
-  answeredAt: string;
-}
-
-interface WeakCategory {
-  category: string;
-  correct: number;
-  total: number;
-  accuracy: number;
+  at: number;
 }
 
 function daysUntil(dateStr: string): number {
@@ -54,14 +46,19 @@ export function StudyPlanClient() {
     daysLeft: number;
     targetPerDay: number;
     totalTarget: number;
-    weak: WeakCategory[];
+    examAnswered: number;
+    examAccuracy: number | null;
   } | null>(null);
-  const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [entries, setEntries] = useState<StoredEntry[]>([]);
 
   useEffect(() => {
     try {
       const raw = localStorage.getItem(LS_KEYS.history);
-      if (raw) setHistory(JSON.parse(raw) as HistoryEntry[]);
+      if (!raw) return;
+      // History is stored as { entries: StoredEntry[], starredIds: string[] }
+      const parsed = JSON.parse(raw) as { entries?: StoredEntry[] } | StoredEntry[];
+      const list = Array.isArray(parsed) ? parsed : (parsed.entries ?? []);
+      setEntries(list);
     } catch { /* ignore */ }
   }, []);
 
@@ -73,28 +70,22 @@ export function StudyPlanClient() {
     const days = daysUntil(examDate);
     if (days <= 0) return;
 
-    // 弱点カテゴリを履歴から計算
-    const examHistory = history.filter((h) => h.exam === exam);
-    const catMap = new Map<string, { correct: number; total: number }>();
-    for (const h of examHistory) {
-      const cur = catMap.get(h.category) ?? { correct: 0, total: 0 };
-      catMap.set(h.category, { correct: cur.correct + (h.correct ? 1 : 0), total: cur.total + 1 });
-    }
-    const weak: WeakCategory[] = Array.from(catMap.entries())
-      .map(([category, { correct, total }]) => ({
-        category,
-        correct,
-        total,
-        accuracy: total > 0 ? correct / total : 0,
-      }))
-      .filter((w) => w.accuracy < 0.7)
-      .sort((a, b) => a.accuracy - b.accuracy)
-      .slice(0, 5);
+    // Derive exam from question ID prefix (e.g. "ap-2023h-am-q1" → "ap")
+    const examEntries = entries.filter((e) => e.id.startsWith(`${exam}-`));
+    const uniqueAnswered = new Set(examEntries.map((e) => e.id)).size;
+    const correctCount = examEntries.filter((e) => e.correct).length;
+    const examAccuracy = examEntries.length > 0 ? correctCount / examEntries.length : null;
 
-    // 1日の目標問題数：試験規模を日数で割る（最低 10 問）
+    // Daily target: cover full exam scope twice over the available days (min 10)
     const targetPerDay = Math.max(10, Math.ceil(expectedQuestions * 2 / days));
 
-    setPlan({ daysLeft: days, targetPerDay, totalTarget: targetPerDay * days, weak });
+    setPlan({
+      daysLeft: days,
+      targetPerDay,
+      totalTarget: targetPerDay * days,
+      examAnswered: uniqueAnswered,
+      examAccuracy,
+    });
   }
 
   const today = new Date().toISOString().slice(0, 10);
@@ -153,51 +144,41 @@ export function StudyPlanClient() {
             <StatCard label="総目標問題数" value={plan.totalTarget.toLocaleString()} />
           </div>
 
-          {plan.weak.length > 0 && (
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-base">強化すべき分野 TOP 5</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  {plan.weak.map((w) => (
-                    <li key={w.category} className="flex items-center justify-between text-sm">
-                      <span className="text-zinc-700 dark:text-zinc-300">{w.category}</span>
-                      <div className="flex items-center gap-2">
-                        <div className="h-2 w-24 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700">
-                          <div
-                            className="h-full bg-rose-500 dark:bg-rose-400"
-                            style={{ width: `${w.accuracy * 100}%` }}
-                          />
-                        </div>
-                        <span className="w-10 text-right font-medium tabular-nums text-rose-600 dark:text-rose-400">
-                          {Math.round(w.accuracy * 100)}%
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </CardContent>
-            </Card>
-          )}
-
-          {plan.weak.length === 0 && (
-            <Card>
-              <CardContent className="py-4 text-center text-sm text-zinc-500 dark:text-zinc-400">
-                {history.filter((h) => h.exam === exam).length === 0
-                  ? "まだ学習履歴がありません。クイズをプレイして弱点分析を活用しましょう。"
-                  : "✅ 全分野の正答率が 70% 以上です。模擬試験で仕上げをしましょう。"}
-              </CardContent>
-            </Card>
-          )}
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-base">学習状況</CardTitle>
+            </CardHeader>
+            <CardContent>
+              {plan.examAnswered === 0 ? (
+                <p className="text-sm text-zinc-500 dark:text-zinc-400">
+                  まだこの試験の学習履歴がありません。クイズをプレイすると正答率が表示されます。
+                </p>
+              ) : (
+                <div className="space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-zinc-600 dark:text-zinc-400">解答済み（ユニーク）</span>
+                    <span className="font-medium">{plan.examAnswered}問</span>
+                  </div>
+                  {plan.examAccuracy !== null && (
+                    <div className="flex justify-between">
+                      <span className="text-zinc-600 dark:text-zinc-400">直近の正答率</span>
+                      <span className={`font-medium ${plan.examAccuracy >= 0.7 ? "text-emerald-600 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}>
+                        {Math.round(plan.examAccuracy * 100)}%
+                      </span>
+                    </div>
+                  )}
+                  <p className="pt-1 text-xs text-zinc-400 dark:text-zinc-500">
+                    分野別の弱点分析は今後のアップデートで追加予定です。
+                  </p>
+                </div>
+              )}
+            </CardContent>
+          </Card>
 
           <div className="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
             <p className="font-medium text-sky-800 dark:text-sky-300">今日からのプラン</p>
             <ol className="mt-2 list-decimal list-inside space-y-1 text-sky-700 dark:text-sky-400">
               <li>毎日 <strong>{plan.targetPerDay} 問</strong> を目標に解く</li>
-              {plan.weak.length > 0 && (
-                <li>弱点分野（{plan.weak[0]?.category}等）を重点的に</li>
-              )}
               <li>間違えた問題は復習モードで反復練習</li>
               <li>直前 2 週間は模擬試験モードで時間感覚をつかむ</li>
             </ol>
