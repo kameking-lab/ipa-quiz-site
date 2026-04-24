@@ -4,7 +4,7 @@ import { Check, Minus, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PLAN_ORDER, PLANS, formatPlanPrice, type Plan } from "@/lib/plans";
+import { PLAN_ORDER, PLANS, formatPlanPrice, formatAnnualPrice, type Plan } from "@/lib/plans";
 import { EmailSignupForm } from "./EmailSignupForm";
 
 export const metadata: Metadata = {
@@ -21,15 +21,15 @@ export default function PricingPage() {
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-16 pt-8 sm:px-6">
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
-          <Badge variant="success">近日公開</Badge>
+          <Badge variant="success">β 公開中</Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           料金プラン
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          β 公開中は全機能無料でお使いいただけます。正式公開時に以下のプランで提供予定です。
+          β 公開中（無料でご利用いただけます）。2026年5月正式公開予定。
           <br />
-          公開の際にお知らせを希望される方は、メールアドレスをご登録ください。
+          正式公開のお知らせをご希望の方は、メールアドレスをご登録ください。
         </p>
       </section>
 
@@ -107,12 +107,29 @@ function PlanCard({ plan }: { plan: Plan }) {
         </div>
       )}
       <CardHeader>
+        {isPremium && (
+          <div className="mb-2 flex justify-center">
+            <Badge variant="outline" className="border-sky-400 text-sky-700 dark:border-sky-500 dark:text-sky-400">
+              β版無料公開中
+            </Badge>
+          </div>
+        )}
         <div className="flex items-baseline gap-2">
           <CardTitle>{plan.name}</CardTitle>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">{plan.tagline}</span>
         </div>
-        <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-3xl font-bold tracking-tight">{formatPlanPrice(plan)}</span>
+        <div className="mt-3 space-y-1">
+          <div className="flex items-baseline gap-1">
+            <span className="text-3xl font-bold tracking-tight">{formatPlanPrice(plan)}</span>
+          </div>
+          {plan.unlimitedSeats && (
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">席数無制限</div>
+          )}
+          {formatAnnualPrice(plan) && (
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">
+              年払: {formatAnnualPrice(plan)}
+            </div>
+          )}
         </div>
         {isTeam && (
           <p className="mt-1 text-xs text-amber-600 dark:text-amber-400">2026年6月公開予定</p>
@@ -151,14 +168,19 @@ function PlanCard({ plan }: { plan: Plan }) {
           <Button asChild variant="outline" className="w-full">
             <Link href="/">ホームに戻る</Link>
           </Button>
-        ) : isTeam ? (
-          <Button asChild variant="outline" className="w-full">
-            <Link href="#notify">お問い合わせ</Link>
+        ) : plan.ctaHref ? (
+          <Button asChild variant={isPremium ? "primary" : "outline"} className="w-full">
+            <Link href={plan.ctaHref}>{plan.cta}</Link>
           </Button>
         ) : (
-          <Button disabled variant="primary" className="w-full">
-            近日公開
-          </Button>
+          <>
+            <Button disabled variant={isPremium ? "primary" : "outline"} className="w-full">
+              近日公開
+            </Button>
+            <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
+              {plan.id === "premium" ? "2026年5月公開予定" : "2026年6月公開予定"}
+            </p>
+          </>
         )}
       </CardContent>
     </Card>
@@ -214,6 +236,10 @@ function FeatureComparisonTable() {
     {
       label: "請求書払い",
       values: ["—", "—", "◎"],
+    },
+    {
+      label: "席数",
+      values: ["—", "1名", "無制限"],
     },
   ];
 

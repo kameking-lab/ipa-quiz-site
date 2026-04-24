@@ -46,7 +46,7 @@ export default function AdminTeamPage() {
           <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
             {TEAM_PLAN.name} プラン / {formatPlanPrice(TEAM_PLAN)}
             {" — "}
-            {team.memberCount} / {team.seatsTotal} 席利用中
+            {team.memberCount} 名 / 席数無制限
           </p>
         </div>
         <div className="text-xs text-zinc-500 dark:text-zinc-400">

@@ -11,7 +11,7 @@ import { PremiumUpsellDialog } from "@/components/PremiumUpsellDialog";
 import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles, Timer } from "lucide-react";
+import { ArrowLeft, Loader2, Sparkles, Timer } from "lucide-react";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -20,18 +20,27 @@ function formatElapsed(s: number) {
 }
 
 interface Props {
-  questions: Question[];
+  question: Question | null;
+  index: number;
+  total: number;
   mode: string;
   backHref?: string;
+  onNext: () => void;
 }
 
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
-export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
+export function QuizPlayer({
+  question,
+  index,
+  total,
+  mode,
+  backHref = "/",
+  onNext,
+}: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [premium, setPremium] = React.useState(false);
-  const [index, setIndex] = React.useState(0);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [upsellOpen, setUpsellOpen] = React.useState(false);
@@ -56,8 +65,6 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     return () => clearInterval(id);
   }, []);
 
-  const question = questions[index];
-
   React.useEffect(() => {
     if (!question) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -67,14 +74,21 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     setStarred(history.isStarred(question.id));
   }, [question, history]);
 
+  // When the session runs out of questions, send the user back with ?done=1.
+  React.useEffect(() => {
+    if (total > 0 && index >= total) {
+      router.push(`${backHref}?done=1`);
+    }
+  }, [index, total, router, backHref]);
+
   const goNext = React.useCallback(() => {
     setCopilotQuery(null);
-    if (index + 1 >= questions.length) {
+    if (index + 1 >= total) {
       router.push(`${backHref}?done=1`);
       return;
     }
-    setIndex(index + 1);
-  }, [index, questions.length, router, backHref]);
+    onNext();
+  }, [index, total, router, backHref, onNext]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -141,7 +155,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     touchStart.current = null;
   };
 
-  if (!question) {
+  if (total === 0) {
     return (
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="text-center">
@@ -152,6 +166,14 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
             <ArrowLeft className="h-4 w-4" /> モード選択に戻る
           </Button>
         </div>
+      </div>
+    );
+  }
+
+  if (!question) {
+    return (
+      <div className="flex flex-1 items-center justify-center p-8">
+        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
       </div>
     );
   }
@@ -185,7 +207,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         <div className="h-1 bg-zinc-100 dark:bg-zinc-800">
           <div
             className="h-full bg-sky-500 transition-all duration-300"
-            style={{ width: `${((index + 1) / questions.length) * 100}%` }}
+            style={{ width: `${((index + 1) / total) * 100}%` }}
           />
         </div>
       </header>
@@ -199,7 +221,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
           <div className="mx-auto max-w-2xl space-y-4">
             <QuestionCard
               question={question}
-              progress={{ current: index, total: questions.length }}
+              progress={{ current: index, total }}
             />
 
             <div className="space-y-2">

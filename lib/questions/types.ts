@@ -64,6 +64,7 @@ export interface QuizFilter {
   exam?: ExamCode;
   year?: number;
   season?: Season;
+  session?: Session;
   topicTag?: string;
   category?: string;
   calculationOnly?: boolean;

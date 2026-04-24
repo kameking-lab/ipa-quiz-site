@@ -26,7 +26,11 @@
     "parse:all:c": "tsx --env-file=.env.local scripts/parse-all.ts --section=C",
     "parse:afternoon": "tsx --env-file=.env.local scripts/parse-afternoon/parse-ap-afternoon.ts",
     "find:placeholders": "tsx scripts/find-placeholder-explanations.ts",
-    "regen:explanations": "tsx --env-file=.env.local scripts/regenerate-explanations.ts"
+    "regen:explanations": "tsx --env-file=.env.local scripts/regenerate-explanations.ts",
+    "verify:answers": "tsx --env-file=.env.local scripts/verify-answers-with-pdf.ts",
+    "apply:answer-corrections": "tsx scripts/apply-answer-corrections.ts",
+    "detect:mismatches": "tsx --env-file=.env.local scripts/detect-explanation-mismatch.ts",
+    "regen:verified": "tsx --env-file=.env.local scripts/regen-with-verification.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",
