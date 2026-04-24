@@ -107,7 +107,8 @@ export const PREMIUM_PLAN: Plan = {
     { label: "クラウド履歴同期", included: true },
     { label: "広告非表示", included: true },
   ],
-  cta: "Premium を試す",
+  cta: "使ってみる",
+  ctaHref: "/mock-exam",
   highlight: true,
 };
 
