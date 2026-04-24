@@ -6,6 +6,7 @@ export const LS_KEYS = {
   aiUsage: "ipa-quiz:ai-usage:v1",
   settings: "ipa-quiz:settings:v1",
   swipeHintShown: "ipa-quiz:swipe-hint-shown:v1",
+  chatSessions: "ipa-quiz:chat-sessions:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];
