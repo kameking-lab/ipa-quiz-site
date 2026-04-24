@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { BookOpen, RefreshCw, Trophy } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -48,6 +49,9 @@ export function StudyPlanClient() {
     totalTarget: number;
     examAnswered: number;
     examAccuracy: number | null;
+    phase1Days: number;
+    phase2Days: number;
+    phase3Days: number;
   } | null>(null);
   const [entries, setEntries] = useState<StoredEntry[]>([]);
 
@@ -79,12 +83,19 @@ export function StudyPlanClient() {
     // Daily target: cover full exam scope twice over the available days (min 10)
     const targetPerDay = Math.max(10, Math.ceil(expectedQuestions * 2 / days));
 
+    const phase1Days = Math.floor(days / 2);
+    const phase3Days = Math.min(14, Math.max(0, days - phase1Days));
+    const phase2Days = Math.max(0, days - phase1Days - 14);
+
     setPlan({
       daysLeft: days,
       targetPerDay,
       totalTarget: targetPerDay * days,
       examAnswered: uniqueAnswered,
       examAccuracy,
+      phase1Days,
+      phase2Days,
+      phase3Days,
     });
   }
 
@@ -175,14 +186,85 @@ export function StudyPlanClient() {
             </CardContent>
           </Card>
 
-          <div className="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
-            <p className="font-medium text-sky-800 dark:text-sky-300">今日からのプラン</p>
-            <ol className="mt-2 list-decimal list-inside space-y-1 text-sky-700 dark:text-sky-400">
-              <li>毎日 <strong>{plan.targetPerDay} 問</strong> を目標に解く</li>
-              <li>間違えた問題は復習モードで反復練習</li>
-              <li>直前 2 週間は模擬試験モードで時間感覚をつかむ</li>
-            </ol>
+          <div className="space-y-3">
+            <h2 className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">3段階学習プラン</h2>
+
+            {plan.phase1Days > 0 && (
+              <Card className="border-2 border-sky-300 dark:border-sky-700">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <BookOpen className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+                      フェーズ1：知識習得
+                    </CardTitle>
+                    <span className="rounded-md bg-sky-100 px-2 py-0.5 text-xs font-semibold text-sky-800 dark:bg-sky-900 dark:text-sky-200">
+                      {plan.phase1Days}日間
+                    </span>
+                  </div>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">残り日数の半分まで</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>毎日 {plan.targetPerDay} 問を目標に出題</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>苦手分野・カテゴリを発見する</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>解説をしっかり読み込む</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
+            {plan.phase2Days > 0 && (
+              <Card className="border-2 border-amber-300 dark:border-amber-700">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <RefreshCw className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+                      フェーズ2：復習
+                    </CardTitle>
+                    <span className="rounded-md bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800 dark:bg-amber-900 dark:text-amber-200">
+                      {plan.phase2Days}日間
+                    </span>
+                  </div>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">残り14日まで</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>間違えた問題を反復する</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>復習モードで弱点を克服</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>苦手カテゴリを重点的に攻略</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
+
+            {plan.phase3Days > 0 && (
+              <Card className="border-2 border-emerald-300 dark:border-emerald-700">
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between">
+                    <CardTitle className="flex items-center gap-2 text-base">
+                      <Trophy className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+                      フェーズ3：仕上げ
+                    </CardTitle>
+                    <span className="rounded-md bg-emerald-100 px-2 py-0.5 text-xs font-semibold text-emerald-800 dark:bg-emerald-900 dark:text-emerald-200">
+                      {plan.phase3Days}日間
+                    </span>
+                  </div>
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400">残り14日（直前期）</p>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-1 text-sm text-zinc-600 dark:text-zinc-400">
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>模擬試験モードで本番形式を反復</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>時間配分を体に染み込ませる</li>
+                    <li className="flex items-start gap-2"><span className="select-none text-xs">•</span>苦手分野の最終確認</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            )}
           </div>
+
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            ※ 詳細な週次スケジュール、分野別の弱点分析、達成マイルストーン演出などは順次アップデート予定です。
+          </p>
 
           <div className="flex gap-3">
             <Button asChild variant="primary" className="flex-1">

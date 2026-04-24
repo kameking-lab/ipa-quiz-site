@@ -50,7 +50,7 @@ export default function PricingPage() {
         </CardContent>
       </Card>
 
-      <Card>
+      <Card id="notify">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
             <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
@@ -81,18 +81,28 @@ export default function PricingPage() {
 
 function PlanCard({ plan }: { plan: Plan }) {
   const isPremium = plan.id === "premium";
+  const isTeam = plan.id === "team";
   return (
     <Card
       className={
         plan.highlight
           ? "relative border-sky-400 ring-2 ring-sky-400/40 dark:border-sky-500 dark:ring-sky-500/30"
-          : undefined
+          : isTeam
+            ? "relative"
+            : undefined
       }
     >
       {plan.highlight && (
         <div className="absolute -top-3 left-1/2 -translate-x-1/2">
           <Badge variant="success" className="shadow-sm">
             おすすめ
+          </Badge>
+        </div>
+      )}
+      {isTeam && (
+        <div className="absolute -top-3 right-4">
+          <Badge variant="warn" className="shadow-sm">
+            近日公開
           </Badge>
         </div>
       )}
@@ -121,6 +131,9 @@ function PlanCard({ plan }: { plan: Plan }) {
             </div>
           )}
         </div>
+        {isTeam && (
+          <p className="mt-1 text-xs text-amber-600 dark:text-amber-400">2026年6月公開予定</p>
+        )}
       </CardHeader>
       <CardContent>
         <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
