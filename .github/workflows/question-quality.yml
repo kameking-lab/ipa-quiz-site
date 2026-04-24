@@ -36,10 +36,8 @@ jobs:
         run: pnpm validate:questions
 
       - name: Detect explanation-answer mismatches (regex only)
-        run: pnpm detect:mismatches -- --regex-only
-        env:
-          # API キー不要（正規表現のみ）
-          SKIP_AI: "true"
+        # .env.local はCI環境に存在しないため tsx 直呼び（--env-file 不使用）
+        run: ./node_modules/.bin/tsx scripts/detect-explanation-mismatch.ts -- --regex-only
 
       - name: Check mismatch count
         run: |
