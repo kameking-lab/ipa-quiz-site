@@ -21,15 +21,15 @@ export default function PricingPage() {
     <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-16 pt-8 sm:px-6">
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
-          <Badge variant="success">近日公開</Badge>
+          <Badge variant="success">β 公開中</Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           料金プラン
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          β 公開中は全機能無料でお使いいただけます。正式公開時に以下のプランで提供予定です。
+          β 公開中（無料でご利用いただけます）。2026年5月正式公開予定。
           <br />
-          公開の際にお知らせを希望される方は、メールアドレスをご登録ください。
+          正式公開のお知らせをご希望の方は、メールアドレスをご登録ください。
         </p>
       </section>
 
@@ -97,6 +97,13 @@ function PlanCard({ plan }: { plan: Plan }) {
         </div>
       )}
       <CardHeader>
+        {isPremium && (
+          <div className="mb-2 flex justify-center">
+            <Badge variant="outline" className="border-sky-400 text-sky-700 dark:border-sky-500 dark:text-sky-400">
+              β版無料公開中
+            </Badge>
+          </div>
+        )}
         <div className="flex items-baseline gap-2">
           <CardTitle>{plan.name}</CardTitle>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">{plan.tagline}</span>
