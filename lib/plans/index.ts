@@ -26,12 +26,15 @@ export interface Plan {
   id: PlanId;
   name: string;
   tagline: string;
-  monthlyPriceJpy: number | { min: number; max: number };
+  monthlyPriceJpy: number;
+  annualPriceJpy?: number;
   billing: "free" | "monthly" | "enterprise";
+  unlimitedSeats?: boolean;
   description: string;
   limits: PlanLimits;
   features: PlanFeature[];
   cta: string;
+  ctaHref?: string;
   highlight?: boolean;
 }
 
@@ -112,10 +115,12 @@ export const TEAM_PLAN: Plan = {
   id: "team",
   name: "Team",
   tagline: "法人・研修担当者向け",
-  monthlyPriceJpy: { min: 30000, max: 100000 },
+  monthlyPriceJpy: 50000,
+  annualPriceJpy: 540000,
   billing: "enterprise",
+  unlimitedSeats: true,
   description:
-    "Premium の全機能に加え、法人ダッシュボードでメンバーの学習進捗・正答率・試験別進捗を一元管理できます。",
+    "Premium の全機能に加え、法人ダッシュボードでメンバーの学習進捗・正答率・試験別進捗を一元管理できます。席数無制限・請求書払い対応。",
   limits: {
     aiDailyRequests: 500,
     aiMinuteLimit: 20,
@@ -133,6 +138,7 @@ export const TEAM_PLAN: Plan = {
   },
   features: [
     { label: "Premium の全機能", included: true },
+    { label: "席数無制限", included: true },
     { label: "法人ダッシュボード", included: true },
     { label: "メンバー・部署管理", included: true },
     { label: "試験別進捗レポート", included: true },
@@ -141,6 +147,7 @@ export const TEAM_PLAN: Plan = {
     { label: "優先サポート", included: true },
   ],
   cta: "お問い合わせ",
+  ctaHref: "/contact/enterprise",
 };
 
 export const PLANS: Record<PlanId, Plan> = {
@@ -163,11 +170,13 @@ export function getPlan(id: PlanId): Plan {
 
 export function formatPlanPrice(plan: Plan): string {
   if (plan.monthlyPriceJpy === 0) return "無料";
-  if (typeof plan.monthlyPriceJpy === "number") {
-    return `¥${plan.monthlyPriceJpy.toLocaleString()} / 月`;
-  }
-  const { min, max } = plan.monthlyPriceJpy;
-  return `¥${min.toLocaleString()}〜¥${max.toLocaleString()} / 月`;
+  return `¥${plan.monthlyPriceJpy.toLocaleString()} / 月`;
+}
+
+export function formatAnnualPrice(plan: Plan): string | null {
+  if (!plan.annualPriceJpy) return null;
+  const monthly = Math.round(plan.annualPriceJpy / 12);
+  return `¥${plan.annualPriceJpy.toLocaleString()} / 年（¥${monthly.toLocaleString()}/月相当）`;
 }
 
 export function hasFeature(plan: PlanId, feature: keyof PlanLimits): boolean {
