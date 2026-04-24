@@ -259,8 +259,8 @@ async function main(): Promise<void> {
           }
 
           console.log(`  Extracting ${basename(relPath)}...`);
-          const extracted = await model
-            ? extractAnswersFromPdf(model, cfg, sessionCfg, year, season)
+          const extracted = model
+            ? await extractAnswersFromPdf(model, cfg, sessionCfg, year, season)
             : null;
 
           if (!extracted) continue;
