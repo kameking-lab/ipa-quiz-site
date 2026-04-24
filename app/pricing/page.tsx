@@ -4,7 +4,7 @@ import { Check, Minus, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PLAN_ORDER, PLANS, formatPlanPrice, type Plan } from "@/lib/plans";
+import { PLAN_ORDER, PLANS, formatPlanPrice, formatAnnualPrice, type Plan } from "@/lib/plans";
 import { EmailSignupForm } from "./EmailSignupForm";
 
 export const metadata: Metadata = {
@@ -101,8 +101,18 @@ function PlanCard({ plan }: { plan: Plan }) {
           <CardTitle>{plan.name}</CardTitle>
           <span className="text-xs text-zinc-500 dark:text-zinc-400">{plan.tagline}</span>
         </div>
-        <div className="mt-3 flex items-baseline gap-1">
-          <span className="text-3xl font-bold tracking-tight">{formatPlanPrice(plan)}</span>
+        <div className="mt-3 space-y-1">
+          <div className="flex items-baseline gap-1">
+            <span className="text-3xl font-bold tracking-tight">{formatPlanPrice(plan)}</span>
+          </div>
+          {plan.unlimitedSeats && (
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">席数無制限</div>
+          )}
+          {formatAnnualPrice(plan) && (
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">
+              年払: {formatAnnualPrice(plan)}
+            </div>
+          )}
         </div>
       </CardHeader>
       <CardContent>
@@ -137,6 +147,10 @@ function PlanCard({ plan }: { plan: Plan }) {
         {plan.id === "free" ? (
           <Button asChild variant="outline" className="w-full">
             <Link href="/">ホームに戻る</Link>
+          </Button>
+        ) : plan.ctaHref ? (
+          <Button asChild variant={isPremium ? "primary" : "outline"} className="w-full">
+            <Link href={plan.ctaHref}>{plan.cta}</Link>
           </Button>
         ) : (
           <Button disabled variant={isPremium ? "primary" : "outline"} className="w-full">
@@ -197,6 +211,10 @@ function FeatureComparisonTable() {
     {
       label: "請求書払い",
       values: ["—", "—", "◎"],
+    },
+    {
+      label: "席数",
+      values: ["—", "1名", "無制限"],
     },
   ];
 
