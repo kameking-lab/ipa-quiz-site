@@ -5,6 +5,7 @@ import { auth, isAuthConfigured } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { HistorySyncPanel } from "./HistorySyncPanel";
 import { BillingActions } from "./BillingActions";
+import { ChatHistoryPanel } from "./ChatHistoryPanel";
 
 export const metadata: Metadata = {
   title: "アカウント",
@@ -84,6 +85,11 @@ export default async function AccountPage({
             クラウド同期は未設定です（サーバー側のみ）。履歴はこのブラウザの localStorage に保存されています。
           </p>
         )}
+      </section>
+
+      <section className="mb-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
+        <h2 className="mb-3 text-sm font-semibold text-zinc-500 dark:text-zinc-400">AIコパイロット 会話履歴</h2>
+        <ChatHistoryPanel isLoggedIn={!!session?.user} />
       </section>
 
       <section className="rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
