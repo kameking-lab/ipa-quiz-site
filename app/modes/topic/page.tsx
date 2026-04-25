@@ -6,13 +6,28 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
+import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
 
-export const metadata: Metadata = {
-  title: "分野別出題",
-  description:
-    "セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って IPA 13試験区分の過去問を学習できます。",
-  alternates: { canonical: "/modes/topic" },
-};
+const DEFAULT_EXAM: ExamCode = "ap";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ exam?: string }>;
+}): Promise<Metadata> {
+  const { exam } = await searchParams;
+  const code: ExamCode = isExamCode(exam) ? exam : DEFAULT_EXAM;
+  const count = countByExam(code);
+  const title = `${examLabel(code)} 分野別出題`;
+  const description = examMetaDescription(code, count, "topic");
+  const canonical =
+    code === DEFAULT_EXAM ? "/modes/topic" : `/modes/topic?exam=${code}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+  };
+}
 
 const VALID_EXAMS: ExamCode[] = [
   "ip",
@@ -40,7 +55,7 @@ export default async function TopicModePage({
   searchParams: Promise<{ exam?: string }>;
 }) {
   const params = await searchParams;
-  const exam: ExamCode = isExamCode(params.exam) ? params.exam : "ap";
+  const exam: ExamCode = isExamCode(params.exam) ? params.exam : DEFAULT_EXAM;
   const label = examLabel(exam);
 
   const byCategory = new Map<string, { count: number; tags: Set<string> }>();

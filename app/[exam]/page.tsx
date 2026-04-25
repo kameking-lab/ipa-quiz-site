@@ -7,6 +7,7 @@ import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   EXAM_DESCRIPTIONS,
+  examMetaDescription,
   examTopDescription,
   examTopTitle,
   getAvailableExams,
@@ -41,7 +42,7 @@ export async function generateMetadata({
   const code = exam as ExamCode;
   const count = getQuestionsByExamStrict(code).length;
   const title = examTopTitle(code);
-  const description = examTopDescription(code, count);
+  const description = examMetaDescription(code, count);
   return {
     title,
     description,

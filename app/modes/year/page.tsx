@@ -6,13 +6,28 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
+import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
 
-export const metadata: Metadata = {
-  title: "年度別出題",
-  description:
-    "IPA 13試験区分の午前過去問を年度・季節ごとに選んで出題。AI コパイロット付きで解説まで一気通貫。",
-  alternates: { canonical: "/modes/year" },
-};
+const DEFAULT_EXAM: ExamCode = "ap";
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ exam?: string }>;
+}): Promise<Metadata> {
+  const { exam } = await searchParams;
+  const code: ExamCode = isExamCode(exam) ? exam : DEFAULT_EXAM;
+  const count = countByExam(code);
+  const title = `${examLabel(code)} 年度別出題`;
+  const description = examMetaDescription(code, count, "year");
+  const canonical =
+    code === DEFAULT_EXAM ? "/modes/year" : `/modes/year?exam=${code}`;
+  return {
+    title,
+    description,
+    alternates: { canonical },
+  };
+}
 
 const VALID_EXAMS: ExamCode[] = [
   "ip",
@@ -70,7 +85,7 @@ export default async function YearModePage({
   searchParams: Promise<{ exam?: string }>;
 }) {
   const params = await searchParams;
-  const exam: ExamCode = isExamCode(params.exam) ? params.exam : "ap";
+  const exam: ExamCode = isExamCode(params.exam) ? params.exam : DEFAULT_EXAM;
   const label = examLabel(exam);
 
   const groups = new Map<string, YearGroup>();

@@ -76,3 +76,42 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
   const base = EXAM_DESCRIPTIONS[exam] ?? "";
   return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
+
+const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+  ip: "ITパスポート試験",
+  sg: "情報セキュリティマネジメント試験",
+  fe: "基本情報技術者試験",
+  ap: "応用情報技術者試験",
+  st: "ITストラテジスト試験",
+  sa: "システムアーキテクト試験",
+  pm: "プロジェクトマネージャ試験",
+  nw: "ネットワークスペシャリスト試験",
+  db: "データベーススペシャリスト試験",
+  es: "エンベデッドシステムスペシャリスト試験",
+  sc: "情報処理安全確保支援士試験",
+  sm: "ITサービスマネージャ試験",
+  au: "システム監査技術者試験",
+};
+
+export function examFullName(exam: ExamCode): string {
+  return EXAM_FULL_NAMES[exam];
+}
+
+export function examMetaDescription(
+  exam: ExamCode,
+  questionCount: number,
+  mode?: "year" | "topic",
+): string {
+  const name = EXAM_FULL_NAMES[exam];
+  const modePart =
+    mode === "year"
+      ? "を年度別にAIコパイロットで解説"
+      : mode === "topic"
+        ? "を分野別にAIコパイロットで解説"
+        : "をAIコパイロットで解説";
+  return `${name}の過去問${modePart}。全${questionCount}問収録。`;
+}
+
+export function countByExam(exam: ExamCode): number {
+  return getQuestionsByExamStrict(exam).length;
+}
