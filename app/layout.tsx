@@ -4,9 +4,9 @@ import Link from "next/link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
+import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
-import { StreakBadge } from "@/lib/streak/StreakBadge";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
 import { Analytics } from "@vercel/analytics/next";
 
@@ -86,25 +86,21 @@ export default function RootLayout({
           <KeyboardShortcutsHelp />
           <StreakTracker />
           <Analytics />
-          <div className="pointer-events-none fixed right-3 top-3 z-40">
-            <div className="pointer-events-auto">
-              <StreakBadge />
-            </div>
-          </div>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
           >
             メインコンテンツへスキップ
           </a>
           <div className="flex min-h-[100dvh] flex-col">
+            <SiteHeader />
             <span id="main-content" aria-hidden="true" />
             {children}
-            <footer className="pb-safe mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
+            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-6 text-xs text-muted-foreground">
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
                 <div className="text-center sm:text-left">
                   <div className="mb-1.5">
-                    <span className="mr-2 inline-block rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                    <span className="mr-2 inline-block rounded bg-primary-soft px-1.5 py-0.5 text-[10px] font-semibold text-primary-soft-foreground">
                       β公開中
                     </span>
                     出典: IPA 情報処理技術者試験（
@@ -112,14 +108,14 @@ export default function RootLayout({
                       href="https://www.ipa.go.jp/shiken/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                      className="underline decoration-border hover:text-foreground"
                     >
                       ipa.go.jp
                     </a>
                     ） /{" "}
                     <Link
                       href="/about"
-                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                      className="underline decoration-border hover:text-foreground"
                     >
                       著作権・利用条件
                     </Link>
@@ -140,7 +136,7 @@ export default function RootLayout({
                       <Link
                         key={href}
                         href={href}
-                        className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                        className="underline decoration-border hover:text-foreground"
                       >
                         {label}
                       </Link>
@@ -149,7 +145,7 @@ export default function RootLayout({
                       href="https://x.com/kakomon_ai_jp"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                      className="underline decoration-border hover:text-foreground"
                     >
                       X (@kakomon_ai_jp)
                     </a>
@@ -157,7 +153,7 @@ export default function RootLayout({
                       href="https://note.com/kakomon_ai"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                      className="underline decoration-border hover:text-foreground"
                     >
                       note
                     </a>

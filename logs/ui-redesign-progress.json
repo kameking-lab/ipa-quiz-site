@@ -1,0 +1,67 @@
+{
+  "branch": "claude/priceless-golick-6883da",
+  "startedAt": "2026-04-25",
+  "designSystem": {
+    "approach": "Expand existing shadcn-style primitives with semantic tokens (no shadcn init / no next-themes / no Framer Motion this session)",
+    "primaryPalette": "indigo (#4f46e5 light / #818cf8 dark) with violet→fuchsia gradient accents",
+    "tokens": [
+      "background", "foreground", "card", "card-foreground",
+      "popover", "popover-foreground", "muted", "muted-foreground",
+      "accent", "accent-foreground", "primary", "primary-foreground",
+      "primary-hover", "primary-soft", "primary-soft-foreground",
+      "secondary", "secondary-foreground", "destructive",
+      "destructive-foreground", "success", "success-foreground",
+      "warning", "warning-foreground", "border", "input", "ring",
+      "radius (sm/md/lg/xl/2xl)", "shadow (sm/md/lg/xl)",
+      "animate-fade-in", "animate-fade-out", "animate-slide-up",
+      "animate-slide-down", "animate-scale-in", "animate-shimmer"
+    ],
+    "themeStrategy": "Existing custom ThemeProvider (.dark class) — kept, did not migrate to next-themes",
+    "animations": "Pure CSS keyframes via @theme inline. Framer Motion deferred (size cost vs '業界最速' goal)"
+  },
+  "sessions": [
+    {
+      "id": 1,
+      "date": "2026-04-25",
+      "completed": [
+        "Design tokens (indigo palette + shadcn semantic system) in app/globals.css",
+        "components.json for future shadcn-cli additions",
+        "Upgrade Button (added gradient/soft/link variants, xl size, icon-sm size)",
+        "Upgrade Card (added CardFooter, CardDescription)",
+        "Upgrade Badge (added primary/soft variants)",
+        "Upgrade Dialog (animations, semantic tokens)",
+        "New: components/ui/separator.tsx",
+        "New: components/ui/sheet.tsx (Sheet/SheetContent/SheetTrigger/SheetClose/SheetHeader/SheetTitle/SheetDescription)",
+        "Update SiteLogo to indigo→violet gradient",
+        "Update ThemeToggle to semantic tokens",
+        "Update layout.tsx footer to semantic tokens, removed fixed StreakBadge wrapper",
+        "New: components/SiteHeader.tsx — sticky glass header w/ desktop nav + mobile Sheet drawer + integrated StreakBadge",
+        "Redesign homepage (app/page.tsx): hero w/ gradient headline + spotlight bg, stats strip, 3 feature cards, exam categories section, mode cards (3-col), FAQ accordion w/ <details>"
+      ],
+      "verified": ["pnpm typecheck", "pnpm build (full SSG)"],
+      "lintResults": "No new lint errors in changed files (pre-existing errors in CopilotPanel/scripts/prisma left untouched)"
+    }
+  ],
+  "nextSessions": {
+    "session2": {
+      "scope": "Pricing page + Quiz page (problem reading + AI copilot panel polish) + AccountDashboard",
+      "newPrimitivesNeeded": ["Tabs (@radix-ui/react-tabs)", "Accordion (@radix-ui/react-accordion)", "DropdownMenu (@radix-ui/react-dropdown-menu)", "Toast (sonner or @radix-ui/react-toast)"]
+    },
+    "session3": {
+      "scope": "Quiz player UX (QuestionCard / ChoiceButton / ExplanationCard) + CopilotPanel redesign",
+      "considerations": ["Mobile bottom nav option", "Keyboard shortcuts hint UI"]
+    },
+    "session4": {
+      "scope": "Account dashboard (recharts integration) + admin/stats + 残り legal/info pages"
+    }
+  },
+  "deferred": {
+    "framerMotion": "Skipped — perceived speed via CSS transitions / 200-220ms cubic-bezier easing prioritized over JS animation lib",
+    "nextThemes": "Skipped — existing ThemeProvider works, replacing risks regressions",
+    "shadcnInit": "Skipped — existing components/ui/ already shadcn-style, init would overwrite",
+    "notoSansJP": "Skipped — Geist + Hiragino Kaku Gothic ProN fallback covers JA glyphs"
+  },
+  "knownIssues": [
+    "Some interior pages (quiz player, copilot panel, account, admin, auth) still use raw sky-* / zinc-* utilities — to be migrated in subsequent sessions"
+  ]
+}
