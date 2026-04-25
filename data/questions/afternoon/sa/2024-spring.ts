@@ -1,6 +1,7 @@
 // 編集者キュレーション。論述式は構成のポイント・採点基準を含む。
 // SA 午後II 練習用オリジナル問題（IPA過去問の形式を模して作成）。
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
+import { SA_2024_SPRING_Q1_INDUSTRIES } from "./2024-spring-industries";
 
 export const SA_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
   {
@@ -160,5 +161,6 @@ export const SA_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h05_1/2024h05h_sa_pm2_qs.pdf",
     license: "IPA-public",
     totalTimeMinutes: 120,
+    industryVariants: SA_2024_SPRING_Q1_INDUSTRIES,
   },
 ];
