@@ -13,7 +13,7 @@ import {
 import { AfternoonPlayer } from "@/components/afternoon/AfternoonPlayer";
 import { Badge } from "@/components/ui/badge";
 
-const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap", "st"];
+const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap", "st", "fe", "db", "nw"];
 
 interface RouteParams {
   exam: string;
