@@ -1,7 +1,15 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft, ChevronRight, ExternalLink, Sparkles } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ExternalLink,
+  Sparkles,
+  AlertTriangle,
+  ArrowRight,
+} from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -220,179 +228,283 @@ export default async function QuestionPage({
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={jsonLd} />
 
-      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-zinc-500 dark:text-zinc-400">
+      {/* Breadcrumb */}
+      <nav
+        aria-label="パンくずリスト"
+        className="mb-5 text-xs text-muted-foreground"
+      >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:underline">
+            <Link
+              href="/"
+              className="transition hover:text-foreground hover:underline"
+            >
               ホーム
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
           <li>
-            <Link href={examPath} className="hover:underline">
+            <Link
+              href={examPath}
+              className="transition hover:text-foreground hover:underline"
+            >
               {examLabel(q.exam)}
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
           <li>
-            <Link href={yearSeasonPath} className="hover:underline">
+            <Link
+              href={yearSeasonPath}
+              className="transition hover:text-foreground hover:underline"
+            >
               {formatYearSeason(q.year, q.season)}
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
+          <li aria-current="page" className="font-medium text-foreground">
             問{q.qNumber}
           </li>
         </ol>
       </nav>
 
-      <header className="mb-4">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
-          <Badge variant="outline">
-            {examLabelAt(q.exam, q.year, q.season)} {formatYearSeason(q.year, q.season)}
+      {/* Header */}
+      <header className="mb-6">
+        <div className="mb-3 flex flex-wrap items-center gap-1.5 text-xs">
+          <Badge variant="primary">
+            {examLabelAt(q.exam, q.year, q.season)}
           </Badge>
-          <Badge variant="default">{sessionLabel(q.session)}</Badge>
-          <Badge variant="default">問{q.qNumber}</Badge>
-          <Badge variant="default">{q.category}</Badge>
+          <Badge variant="soft">{formatYearSeason(q.year, q.season)}</Badge>
+          <Badge variant="outline">{sessionLabel(q.session)}</Badge>
+          <Badge variant="outline">問 {q.qNumber}</Badge>
+          {q.isCalculation && <Badge variant="warn">計算</Badge>}
+        </div>
+        <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
+          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)}{" "}
+          {sessionLabel(q.session)} 問{q.qNumber}
+        </h1>
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          <span className="text-sm font-medium text-muted-foreground">
+            {q.category}
+          </span>
           {q.topicTags.slice(0, 3).map((t) => (
-            <Badge key={t} variant="outline">
+            <Badge key={t} variant="outline" className="text-[10px]">
               #{t}
             </Badge>
           ))}
-          {q.isCalculation && <Badge variant="warn">計算</Badge>}
         </div>
-        <h1 className="text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)} {sessionLabel(q.session)} 問{q.qNumber}
-          <span className="ml-2 text-base font-medium text-zinc-500 dark:text-zinc-400 sm:text-lg">
-            {q.category}
-          </span>
-        </h1>
       </header>
 
-      <section aria-label="問題文" className="selectable-content rounded-2xl border border-zinc-200 bg-white p-5 text-base leading-relaxed text-zinc-900 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
+      {/* Question body */}
+      <section
+        aria-label="問題文"
+        className="selectable-content rounded-2xl border border-border bg-card p-6 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-7 sm:text-[17px]"
+      >
         {q.question.split("\n").map((line, i) => (
-          <p key={i} className="mb-2 last:mb-0">
+          <p key={i} className="mb-3 last:mb-0">
             {line}
           </p>
         ))}
       </section>
 
+      {/* Choices */}
       {q.choices && (
-        <section aria-label="選択肢" className="mt-4 space-y-2">
-          {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => (
-            <div
-              key={key}
-              className="flex items-start gap-3 rounded-2xl border-2 border-zinc-200 bg-white px-4 py-4 dark:border-zinc-700 dark:bg-zinc-900"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-sm font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200">
-                {key}
-              </span>
-              <span className="flex-1 pt-1 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100 sm:text-base">
-                {text}
-              </span>
-            </div>
-          ))}
+        <section
+          aria-label="選択肢"
+          className="mt-4 flex flex-col gap-2.5"
+        >
+          {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
+            const isAnswer = key === answerKey;
+            return (
+              <div
+                key={key}
+                data-answer={isAnswer || undefined}
+                className="group relative flex items-start gap-3 rounded-2xl border border-border bg-card px-4 py-3.5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:px-5 sm:py-4"
+              >
+                <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-soft text-base font-bold text-primary-soft-foreground transition group-hover:bg-primary group-hover:text-primary-foreground">
+                  {key}
+                </span>
+                <span className="flex-1 pt-1.5 text-sm leading-relaxed text-card-foreground sm:text-base">
+                  {text}
+                </span>
+              </div>
+            );
+          })}
         </section>
       )}
 
+      {/* Answer reveal */}
       <section aria-label="正解" className="mt-6">
         <AnswerReveal answer={String(answerKey)} answerText={answerText} />
       </section>
 
-      <section
-        aria-label="解説"
-        className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
-      >
-        <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">解説</h2>
-        {showRealExplanation ? (
-          <div className="selectable-content text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
-            {q.explanation.split("\n").map((line, i) => (
-              <p key={i} className="mb-2 last:mb-0">
-                {line}
+      {/* Explanation (collapsible) */}
+      <section aria-label="解説" className="mt-6">
+        <details
+          open
+          className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
+        >
+          <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 text-base font-bold text-card-foreground [&::-webkit-details-marker]:hidden sm:px-6">
+            <span className="flex items-center gap-2">
+              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
+                <Sparkles className="h-3.5 w-3.5" />
+              </span>
+              解説
+            </span>
+            <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition group-open:rotate-180" />
+          </summary>
+          <div className="border-t border-border px-5 pb-5 pt-4 sm:px-6">
+            {showRealExplanation ? (
+              <div className="selectable-content text-sm leading-[1.85] text-card-foreground sm:text-base">
+                {q.explanation.split("\n").map((line, i) => (
+                  <p key={i} className="mb-3 last:mb-0">
+                    {line}
+                  </p>
+                ))}
+              </div>
+            ) : (
+              <div className="flex items-start gap-2.5 rounded-xl border border-amber-200 bg-amber-50 p-3.5 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
+                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+                <span>
+                  解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+                </span>
+              </div>
+            )}
+            <div className="mt-5 flex flex-col gap-1.5 border-t border-border pt-3 text-[11px] leading-relaxed text-muted-foreground">
+              <p>
+                ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
               </p>
-            ))}
+              <a
+                href={q.sourcePdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-1 underline decoration-border underline-offset-2 transition hover:text-foreground"
+              >
+                出典: IPA 公式 PDF <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </div>
-        ) : (
-          <div className="rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
-            解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+        </details>
+      </section>
+
+      {/* AI Copilot CTA — gradient panel */}
+      <section
+        aria-label="AI コパイロット"
+        className="relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
+      >
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/15 blur-2xl"
+        />
+        <div className="relative flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-2.5 py-0.5 text-[11px] font-semibold text-primary-soft-foreground">
+              <Sparkles className="h-3 w-3" />
+              AI コパイロット
+            </div>
+            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+              この問題を AI と深掘りする
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              用語解説・選択肢分析・類題生成をその場で対話。クイズモードでは解答→解説がゼロ遷移。
+            </p>
           </div>
-        )}
-        <div className="mt-4 space-y-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
-          <p>
-            ※ AI生成の解説は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
-          </p>
-          <a
-            href={q.sourcePdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-200"
-          >
-            出典: IPA 公式 PDF <ExternalLink className="h-3 w-3" />
-          </a>
+          <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
+            <Link
+              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}`}
+            >
+              クイズモードで開く
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </section>
 
-      <section aria-label="AIコパイロット" className="mt-6">
-        <Link
-          href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}`}
-          className="block"
-        >
-          <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
-            <Sparkles className="h-4 w-4" />
-            AIに聞く（{formatYearSeason(q.year, q.season)} をクイズモードで開く）
-          </Button>
-        </Link>
-      </section>
-
-      <section aria-label="共有" className="mt-6">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      {/* Share */}
+      <section aria-label="共有" className="mt-8">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           共有
         </h2>
         <ShareButtons url={pageUrlAbs} title={title} />
       </section>
 
-      <nav aria-label="前後の問題" className="mt-8 grid grid-cols-2 gap-2">
+      {/* Prev / Next */}
+      <nav
+        aria-label="前後の問題"
+        className="mt-8 grid grid-cols-2 gap-2.5"
+      >
         {prev ? (
           <Link href={questionPagePath(prev)} className="block">
-            <Button variant="outline" size="lg" className="w-full">
+            <Button variant="outline" size="lg" className="w-full justify-start gap-2">
               <ChevronLeft className="h-4 w-4" />
-              問{prev.qNumber}
+              <span className="flex flex-col items-start leading-tight">
+                <span className="text-[10px] font-normal text-muted-foreground">
+                  前の問題
+                </span>
+                <span>問 {prev.qNumber}</span>
+              </span>
             </Button>
           </Link>
         ) : (
-          <span />
+          <span className="rounded-xl border border-dashed border-border px-4 py-3 text-center text-xs text-muted-foreground">
+            最初の問題
+          </span>
         )}
         {next ? (
           <Link href={questionPagePath(next)} className="block">
-            <Button variant="outline" size="lg" className="w-full">
-              問{next.qNumber}
+            <Button variant="outline" size="lg" className="w-full justify-end gap-2">
+              <span className="flex flex-col items-end leading-tight">
+                <span className="text-[10px] font-normal text-muted-foreground">
+                  次の問題
+                </span>
+                <span>問 {next.qNumber}</span>
+              </span>
               <ChevronRight className="h-4 w-4" />
             </Button>
           </Link>
         ) : (
-          <span />
+          <span className="rounded-xl border border-dashed border-border px-4 py-3 text-center text-xs text-muted-foreground">
+            最後の問題
+          </span>
         )}
       </nav>
 
+      {/* Related */}
       {related.length > 0 && (
-        <section aria-label="関連する問題" className="mt-10">
-          <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-            関連する問題（{q.category}）
-          </h2>
-          <ul className="space-y-2">
+        <section aria-label="関連する問題" className="mt-12">
+          <div className="mb-4 flex items-end justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold tracking-tight text-foreground">
+                関連する問題
+              </h2>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                {q.category} の他の問題
+              </p>
+            </div>
+          </div>
+          <ul className="flex flex-col gap-2">
             {related.map((r) => (
               <li key={r.id}>
                 <Link
                   href={questionPagePath(r)}
-                  className="block rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
+                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
-                  <div className="mb-1 text-xs text-zinc-500 dark:text-zinc-400">
-                    {examLabelAt(r.exam, r.year, r.season)} {formatYearSeason(r.year, r.season)}{" "}
-                    {sessionLabel(r.session)} 問{r.qNumber}
+                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Badge variant="outline" className="text-[10px]">
+                      {examLabelAt(r.exam, r.year, r.season)}
+                    </Badge>
+                    <span>
+                      {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                    </span>
                   </div>
-                  <div className="line-clamp-2 text-sm text-zinc-800 dark:text-zinc-100">
-                    {r.question.slice(0, 120)}
-                    {r.question.length > 120 ? "…" : ""}
+                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
+                    {r.question.slice(0, 140)}
+                    {r.question.length > 140 ? "…" : ""}
                   </div>
                 </Link>
               </li>
