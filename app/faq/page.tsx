@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
   title: "よくある質問（FAQ）— IPA Quizの使い方・料金・AI解説の精度",
@@ -68,7 +71,7 @@ const FAQS: FaqItem[] = [
       "はい。モバイル最優先で設計しており、片手操作で快適に学習できます。PWA としてホーム画面に追加でき、オフラインでの閲覧も一部サポートしています。ダークモードも標準対応。",
   },
   {
-    question: "過去問道場などの既存サイトとの違いは？",
+    question: "他の過去問サイトとの違いは？",
     answer:
       "① 画面遷移ゼロ・ローディングゼロの高速 UX、② 各問題に AI コパイロットが常駐し用語解説・誤答分析・類題生成などを無制限対話で提供、③ モバイル最優先デザイン、④ ダークモードと PWA の標準装備、が主な差別化点です。今後は午後記述・論文の AI 採点にも対応予定です。",
   },
@@ -116,65 +119,98 @@ export default function FaqPage() {
   };
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
-      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-zinc-500 dark:text-zinc-400">
-        <ol className="flex flex-wrap items-center gap-1.5">
-          <li>
-            <Link href="/" className="hover:underline">
-              ホーム
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
-            よくある質問
-          </li>
-        </ol>
-      </nav>
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
 
-      <header className="mb-8">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-          よくある質問（FAQ）
-        </h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-          IPA Quiz の使い方・料金・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします。
-        </p>
-      </header>
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <JsonLd data={jsonLd} />
 
-      <section aria-label="質問と回答" className="space-y-3">
-        {FAQS.map((f, i) => (
-          <details
-            key={i}
-            className="group rounded-2xl border border-zinc-200 bg-white p-4 transition-colors open:border-sky-300 open:bg-sky-50/40 dark:border-zinc-800 dark:bg-zinc-950 dark:open:border-sky-700 dark:open:bg-sky-950/20"
-          >
-            <summary className="flex cursor-pointer list-none items-start justify-between gap-3 text-left text-sm font-semibold text-zinc-900 dark:text-zinc-50 sm:text-base">
-              <span className="flex-1">Q. {f.question}</span>
-              <span
-                aria-hidden="true"
-                className="mt-0.5 select-none text-xs font-bold text-sky-600 transition-transform group-open:rotate-180 dark:text-sky-400"
-              >
-                ▼
-              </span>
-            </summary>
-            <div className="mt-3 border-t border-zinc-200 pt-3 text-sm leading-relaxed text-zinc-700 dark:border-zinc-800 dark:text-zinc-300">
-              {f.answer}
-            </div>
-          </details>
-        ))}
-      </section>
+        <nav
+          aria-label="パンくずリスト"
+          className="mb-4 text-xs text-muted-foreground"
+        >
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="hover:text-foreground hover:underline">
+                ホーム
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="text-foreground">
+              よくある質問
+            </li>
+          </ol>
+        </nav>
 
-      <section className="mt-10 text-sm text-zinc-600 dark:text-zinc-400">
-        <p>
-          ここに質問が見つからない場合は、
-          <Link
-            href="/operator"
-            className="text-sky-600 underline underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:hover:text-sky-300"
-          >
-            運営者情報
-          </Link>
-          のお問い合わせフォームからご連絡ください。
-        </p>
-      </section>
+        <header className="mb-10 animate-fade-in">
+          <Badge variant="soft" className="mb-4">
+            <HelpCircle className="h-3 w-3" />
+            FAQ
+          </Badge>
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+              よくある質問
+            </span>
+          </h1>
+          <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+            IPA Quiz の使い方・料金・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします。
+          </p>
+        </header>
+
+        <section aria-label="質問と回答" className="space-y-3">
+          {FAQS.map((f, i) => (
+            <details
+              key={i}
+              className="group rounded-2xl border border-border bg-card p-5 shadow-sm transition-all open:border-primary/40 open:shadow-md sm:p-6"
+            >
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-xs font-bold text-primary-soft-foreground">
+                    Q{String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-sm font-semibold leading-relaxed text-foreground sm:text-base">
+                    {f.question}
+                  </span>
+                </div>
+                <ChevronDown
+                  aria-hidden="true"
+                  className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 group-open:text-primary"
+                />
+              </summary>
+              <div className="mt-4 border-t border-border pt-4 pl-10 text-sm leading-relaxed text-muted-foreground">
+                {f.answer}
+              </div>
+            </details>
+          ))}
+        </section>
+
+        <section className="mt-10 rounded-2xl border border-border bg-card p-6 text-center shadow-sm sm:p-8">
+          <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+            <MessageCircle className="h-5 w-5" />
+          </div>
+          <h2 className="mb-1 text-base font-semibold text-foreground">
+            ここに質問が見つかりませんか？
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            運営者情報のお問い合わせ先からお気軽にご連絡ください。
+          </p>
+          <div className="flex flex-wrap justify-center gap-2">
+            <Button asChild variant="primary" size="md">
+              <Link href="/operator">運営者情報</Link>
+            </Button>
+            <Button asChild variant="outline" size="md">
+              <Link href="/about">サイトについて</Link>
+            </Button>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

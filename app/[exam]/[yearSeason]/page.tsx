@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -94,7 +94,6 @@ export default async function ExamYearSeasonPage({
   const histLabel = examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
 
-  // Group by session for display (am / pm / etc.)
   const sessionGroups = new Map<string, typeof pool>();
   for (const q of pool) {
     if (!sessionGroups.has(q.session)) sessionGroups.set(q.session, []);
@@ -127,86 +126,120 @@ export default async function ExamYearSeasonPage({
   };
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
-      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-zinc-500 dark:text-zinc-400">
-        <ol className="flex flex-wrap items-center gap-1.5">
-          <li>
-            <Link href="/" className="hover:underline">
-              ホーム
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li>
-            <Link href={`/${exam}`} className="hover:underline">
-              {examLabel(code)}
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
-            {label}
-          </li>
-        </ol>
-      </nav>
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
 
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-          {label} {histLabel} 過去問一覧
-        </h1>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <Badge variant="outline">{pool.length}問</Badge>
-        </div>
-      </header>
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <JsonLd data={jsonLd} />
 
-      <section aria-label="クイズを始める" className="mb-6">
-        <Link
-          href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}`}
-          className="block"
+        <nav
+          aria-label="パンくずリスト"
+          className="mb-4 text-xs text-muted-foreground"
         >
-          <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
-            この年度でクイズを始める
-            <ChevronRight className="h-4 w-4" />
-          </Button>
-        </Link>
-      </section>
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="hover:text-foreground hover:underline">
+                ホーム
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link
+                href={`/${exam}`}
+                className="hover:text-foreground hover:underline"
+              >
+                {examLabel(code)}
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="text-foreground">
+              {label}
+            </li>
+          </ol>
+        </nav>
 
-      {[...sessionGroups.entries()].map(([session, items]) => (
-        <section key={session} aria-label={session} className="mb-6">
-          <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-200">
-            {session.toUpperCase()}
-          </h2>
-          <ul className="space-y-2">
-            {items.map((q) => {
-              const isPlaceholder = isPlaceholderExplanation(q);
-              return (
-                <li key={q.id}>
-                  <Link
-                    href={questionPagePath(q)}
-                    className="flex items-start gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
-                  >
-                    <span className="flex h-6 w-10 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200">
-                      問{q.qNumber}
-                    </span>
-                    <span className="flex-1 space-y-1">
-                      <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                        <Badge variant="default">{q.category}</Badge>
-                        {q.isCalculation && <Badge variant="warn">計算</Badge>}
-                        {isPlaceholder && (
-                          <Badge variant="warn">解説準備中</Badge>
-                        )}
-                      </span>
-                      <span className="line-clamp-2 block text-sm text-zinc-800 dark:text-zinc-100">
-                        {q.question.slice(0, 140)}
-                        {q.question.length > 140 ? "…" : ""}
-                      </span>
-                    </span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <header className="mb-8 animate-fade-in">
+          <Badge variant="soft" className="mb-3">
+            <Sparkles className="h-3 w-3" />
+            {histLabel}
+          </Badge>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+              {label}
+            </span>{" "}
+            {histLabel}
+          </h1>
+          <p className="mt-3 text-sm text-muted-foreground">
+            過去問一覧 — AI 解説付きで効率的に学習を進められます。
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <Badge variant="outline">{pool.length} 問</Badge>
+          </div>
+        </header>
+
+        <section aria-label="クイズを始める" className="mb-8">
+          <Button
+            asChild
+            variant="gradient"
+            size="xl"
+            className="w-full font-semibold shadow-md hover:shadow-lg"
+          >
+            <Link
+              href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}`}
+            >
+              この年度でクイズを始める
+              <ChevronRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </section>
-      ))}
+
+        {[...sessionGroups.entries()].map(([session, items]) => (
+          <section key={session} aria-label={session} className="mb-8">
+            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
+              <span className="h-1 w-1 rounded-full bg-primary" />
+              {session.toUpperCase()}
+            </h2>
+            <ul className="space-y-2">
+              {items.map((q) => {
+                const isPlaceholder = isPlaceholderExplanation(q);
+                return (
+                  <li key={q.id}>
+                    <Link
+                      href={questionPagePath(q)}
+                      className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                    >
+                      <span className="flex h-8 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-xs font-bold text-primary-soft-foreground">
+                        問{q.qNumber}
+                      </span>
+                      <span className="flex-1 space-y-1.5 min-w-0">
+                        <span className="flex flex-wrap items-center gap-1.5 text-xs">
+                          <Badge variant="default">{q.category}</Badge>
+                          {q.isCalculation && <Badge variant="warn">計算</Badge>}
+                          {isPlaceholder && (
+                            <Badge variant="warn">解説準備中</Badge>
+                          )}
+                        </span>
+                        <span className="line-clamp-2 block text-sm leading-relaxed text-foreground">
+                          {q.question.slice(0, 140)}
+                          {q.question.length > 140 ? "…" : ""}
+                        </span>
+                      </span>
+                      <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </section>
+        ))}
+      </div>
     </main>
   );
 }

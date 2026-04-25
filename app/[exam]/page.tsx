@@ -17,7 +17,7 @@ import {
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ChevronRight } from "lucide-react";
+import { Calendar, ChevronRight, Sparkles, Tags } from "lucide-react";
 
 export const dynamicParams = false;
 
@@ -98,132 +98,174 @@ export default async function ExamTopPage({
     ],
   };
 
+  const hasAm1 = questions.some((q) => q.session === "am1");
+  const hasAm2 = questions.some((q) => q.session === "am2");
+  const isHighLevel = hasAm1 && hasAm2;
+
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
-      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-zinc-500 dark:text-zinc-400">
-        <ol className="flex flex-wrap items-center gap-1.5">
-          <li>
-            <Link href="/" className="hover:underline">
-              ホーム
-            </Link>
-          </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
+
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <JsonLd data={jsonLd} />
+
+        <nav
+          aria-label="パンくずリスト"
+          className="mb-4 text-xs text-muted-foreground"
+        >
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="hover:text-foreground hover:underline">
+                ホーム
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="text-foreground">
+              {examLabel(code)}
+            </li>
+          </ol>
+        </nav>
+
+        <header className="mb-8 animate-fade-in">
+          <Badge variant="soft" className="mb-3">
+            <Sparkles className="h-3 w-3" />
             {examLabel(code)}
-          </li>
-        </ol>
-      </nav>
+          </Badge>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+              {examLabel(code)}
+            </span>
+            {" "}過去問一覧
+          </h1>
+          <p className="mt-3 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+            {EXAM_DESCRIPTIONS[code]}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <Badge variant="outline">収録 {questions.length} 問</Badge>
+            <Badge variant="outline">{years.length} 期分</Badge>
+            <Badge variant="outline">{categories.length} 分野</Badge>
+          </div>
+        </header>
 
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-          {examLabel(code)} 過去問一覧
-        </h1>
-        <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-          {EXAM_DESCRIPTIONS[code]}
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <Badge variant="outline">収録 {questions.length} 問</Badge>
-          <Badge variant="outline">{years.length} 期分</Badge>
-          <Badge variant="outline">{categories.length} 分野</Badge>
-        </div>
-      </header>
-
-      <section aria-label="年度別" className="mb-8">
-        <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-          年度別に学習
-        </h2>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {years.map((g) => (
-            <li key={g.key}>
-              <Link
-                href={`/${exam}/${g.key}`}
-                className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white p-3 text-sm transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
-              >
-                <span className="font-medium text-zinc-900 dark:text-zinc-50">
-                  {g.label}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
-                  {g.count}問
-                  <ChevronRight className="h-4 w-4" />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section aria-label="分野別" className="mb-8">
-        <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-          分野別に学習
-        </h2>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {categories.map((c) => (
-            <li key={c.category}>
-              <Link
-                href={`/${exam}/topic/${encodeURIComponent(c.category)}`}
-                className="flex items-center justify-between rounded-xl border border-zinc-200 bg-white p-3 text-sm transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
-              >
-                <span className="font-medium text-zinc-900 dark:text-zinc-50">
-                  {c.category}
-                </span>
-                <span className="flex items-center gap-1 text-xs text-zinc-500 dark:text-zinc-400">
-                  {c.count}問
-                  <ChevronRight className="h-4 w-4" />
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {(() => {
-        const hasAm1 = questions.some((q) => q.session === "am1");
-        const hasAm2 = questions.some((q) => q.session === "am2");
-        const isHighLevel = hasAm1 && hasAm2;
-
-        if (isHighLevel) {
-          return (
-            <section aria-label="クイズを始める" className="mt-10">
-              <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+        {/* Random quiz CTA */}
+        <section aria-label="クイズを始める" className="mb-10">
+          {isHighLevel ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
+              <h2 className="mb-1 text-sm font-semibold text-foreground">
                 ランダム出題の範囲を選択
               </h2>
-              <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
-                高度試験は午前I（共通知識）と午前II（専門知識）に分かれます。
-                通常は午前II中心で学習しますが、午前I免除取得前は午前Iも対策推奨。
+              <p className="mb-4 text-xs text-muted-foreground">
+                高度試験は午前 I（共通知識）と午前 II（専門知識）に分かれます。
+                通常は午前 II 中心で学習しますが、午前 I 免除取得前は午前 I も対策推奨。
               </p>
               <div className="grid gap-2 sm:grid-cols-3">
-                <Link href={`/quiz?mode=random&exam=${exam}&session=am2`} className="block">
-                  <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
-                    午前II（推奨）
-                  </Button>
-                </Link>
-                <Link href={`/quiz?mode=random&exam=${exam}&session=am1`} className="block">
-                  <Button variant="outline" size="lg" className="w-full">
-                    午前I
-                  </Button>
-                </Link>
-                <Link href={`/quiz?mode=random&exam=${exam}`} className="block">
-                  <Button variant="outline" size="lg" className="w-full">
-                    午前I＋II（両方）
-                  </Button>
-                </Link>
+                <Button asChild variant="gradient" size="lg" className="font-semibold">
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
+                    午前 II（推奨）
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>
+                    午前 I
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/quiz?mode=random&exam=${exam}`}>午前 I＋II</Link>
+                </Button>
               </div>
-            </section>
-          );
-        }
-
-        return (
-          <section aria-label="クイズを始める" className="mt-10">
-            <Link href={`/quiz?mode=random&exam=${exam}`} className="block">
-              <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
+            </div>
+          ) : (
+            <Button
+              asChild
+              variant="gradient"
+              size="xl"
+              className="w-full font-semibold shadow-md hover:shadow-lg"
+            >
+              <Link href={`/quiz?mode=random&exam=${exam}`}>
                 ランダム出題でクイズを始める
                 <ChevronRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </section>
-        );
-      })()}
+              </Link>
+            </Button>
+          )}
+        </section>
+
+        {/* By year */}
+        <section aria-label="年度別" className="mb-10">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <Calendar className="h-5 w-5" />
+            </span>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">年度別に学習</h2>
+              <p className="text-xs text-muted-foreground">
+                実施年度ごとに問題を絞り込み
+              </p>
+            </div>
+          </div>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {years.map((g) => (
+              <li key={g.key}>
+                <Link
+                  href={`/${exam}/${g.key}`}
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <span className="font-medium text-foreground">
+                    {g.label}
+                  </span>
+                  <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
+                      {g.count}問
+                    </span>
+                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* By category */}
+        <section aria-label="分野別" className="mb-8">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <Tags className="h-5 w-5" />
+            </span>
+            <div>
+              <h2 className="text-lg font-semibold text-foreground">分野別に学習</h2>
+              <p className="text-xs text-muted-foreground">
+                テーマ別に弱点を強化
+              </p>
+            </div>
+          </div>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            {categories.map((c) => (
+              <li key={c.category}>
+                <Link
+                  href={`/${exam}/topic/${encodeURIComponent(c.category)}`}
+                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <span className="font-medium text-foreground">
+                    {c.category}
+                  </span>
+                  <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
+                      {c.count}問
+                    </span>
+                    <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      </div>
     </main>
   );
 }
