@@ -31,6 +31,7 @@
     "apply:answer-corrections": "tsx scripts/apply-answer-corrections.ts",
     "detect:mismatches": "tsx --env-file=.env.local scripts/detect-explanation-mismatch.ts",
     "regen:verified": "tsx --env-file=.env.local scripts/regen-with-verification.ts",
+    "refactor:by-file": "tsx scripts/refactor-by-file.ts",
     "e2e": "playwright test",
     "e2e:install": "playwright install --with-deps chromium"
   },
