@@ -9,7 +9,7 @@ import { getAfternoonYearSeasons, getAfternoonByYearSeason } from "@/lib/afterno
 import { Badge } from "@/components/ui/badge";
 import { AfternoonDisclaimer } from "@/components/afternoon/AfternoonDisclaimer";
 
-const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap", "st"];
+const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap", "st", "sc", "es", "pm"];
 
 interface RouteParams {
   exam: string;
