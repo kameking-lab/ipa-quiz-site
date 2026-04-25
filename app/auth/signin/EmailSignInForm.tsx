@@ -35,9 +35,9 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
 
   if (sent) {
     return (
-      <div className="rounded-md border border-sky-300 bg-sky-50 px-4 py-4 text-sm dark:border-sky-800 dark:bg-sky-950">
-        <p className="font-medium">メールを送信しました</p>
-        <p className="mt-1 text-zinc-600 dark:text-zinc-400">
+      <div className="rounded-xl border border-primary/30 bg-primary-soft px-4 py-4 text-sm text-primary-soft-foreground">
+        <p className="font-semibold">メールを送信しました</p>
+        <p className="mt-1 text-xs leading-relaxed opacity-90">
           {email} 宛のリンクからログインしてください。迷惑メールフォルダもご確認ください。
         </p>
       </div>
@@ -46,7 +46,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
 
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-2">
-      <label htmlFor="email" className="text-xs font-medium">
+      <label htmlFor="email" className="text-xs font-medium text-muted-foreground">
         メールアドレスでログイン（Magic Link）
       </label>
       <input
@@ -55,13 +55,19 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
         required
         autoComplete="email"
         placeholder="you@example.com"
-        className="h-11 rounded-md border border-zinc-300 bg-white px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900"
+        className="h-11 rounded-xl border border-input bg-background px-3.5 text-base text-foreground transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         disabled={loading}
       />
-      {error && <p className="text-xs text-red-600 dark:text-red-400">{error}</p>}
-      <Button type="submit" variant="primary" disabled={loading || !email} className="w-full">
+      {error && <p className="text-xs text-destructive">{error}</p>}
+      <Button
+        type="submit"
+        variant="gradient"
+        size="lg"
+        disabled={loading || !email}
+        className="w-full"
+      >
         {loading ? "送信中..." : "ログインリンクを送信"}
       </Button>
     </form>

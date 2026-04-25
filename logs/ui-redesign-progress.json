@@ -1,5 +1,5 @@
 {
-  "branch": "claude/priceless-golick-6883da",
+  "branch": "claude/practical-meninsky-5a5165",
   "startedAt": "2026-04-25",
   "designSystem": {
     "approach": "Expand existing shadcn-style primitives with semantic tokens (no shadcn init / no next-themes / no Framer Motion this session)",
@@ -40,28 +40,49 @@
       ],
       "verified": ["pnpm typecheck", "pnpm build (full SSG)"],
       "lintResults": "No new lint errors in changed files (pre-existing errors in CopilotPanel/scripts/prisma left untouched)"
+    },
+    {
+      "id": 2,
+      "date": "2026-04-25",
+      "scope": "Pricing page + Question page (/q/[exam]/[yearSeason]/[section]/[qnum]) + Signin page",
+      "completed": [
+        "Redesign app/pricing/page.tsx: hero w/ gradient headline + spotlight bg, 3-column plan cards (Free/Premium/Team), Premium card lifted w/ gradient top-bar + 'Popular' primary badge + lg:-mt-3, comparison table w/ zebra rows + sticky-feeling header, FAQ accordion w/ 6 entries, semantic tokens throughout (zinc-* / sky-* removed)",
+        "Update app/pricing/PremiumCheckoutButton.tsx: gradient variant w/ lg size, destructive token for error",
+        "Redesign app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx: cleaner badge pills row, larger question typography (17px / leading 1.85), hover-lift choice cards w/ animated alpha-letter pill, AnswerReveal kept, collapsible <details> explanation w/ Sparkles icon header + structured footer (AI注意書き + 出典 PDF link), gradient AI copilot CTA panel w/ blur-glow accent, prev/next w/ stacked label+number layout, related-questions cards w/ hover-lift",
+        "Redesign app/auth/signin/page.tsx: spotlight + grid hero bg, gradient headline, β-公開中 success badge, error w/ destructive token + AlertCircle, benefit pills row (3-col: Cloud / Sparkles / ShieldCheck), legal microcopy w/ underline-offset",
+        "Update app/auth/signin/SignInButtons.tsx: lg size + tighter gap-2.5",
+        "Update app/auth/signin/EmailSignInForm.tsx: rounded-xl input w/ focus-visible ring tokens, gradient submit button, primary-soft 送信完了 panel, destructive error text"
+      ],
+      "verified": ["pnpm typecheck (no new errors; pre-existing data/questions/ap/by-year/2024-spring.ts unterminated string error left untouched)"],
+      "deferredFromThisSession": [
+        "AccountDashboard (planned for session 2 originally but deprioritized — scoped to 3 pages here)",
+        "Tabs/Accordion/DropdownMenu/Toast primitives (not strictly required by these 3 pages — native <details> + outline-card pattern sufficed)"
+      ]
     }
   ],
   "nextSessions": {
-    "session2": {
-      "scope": "Pricing page + Quiz page (problem reading + AI copilot panel polish) + AccountDashboard",
-      "newPrimitivesNeeded": ["Tabs (@radix-ui/react-tabs)", "Accordion (@radix-ui/react-accordion)", "DropdownMenu (@radix-ui/react-dropdown-menu)", "Toast (sonner or @radix-ui/react-toast)"]
-    },
     "session3": {
       "scope": "Quiz player UX (QuestionCard / ChoiceButton / ExplanationCard) + CopilotPanel redesign",
-      "considerations": ["Mobile bottom nav option", "Keyboard shortcuts hint UI"]
+      "considerations": ["Mobile bottom nav option", "Keyboard shortcuts hint UI", "Streaming response animations"]
     },
     "session4": {
-      "scope": "Account dashboard (recharts integration) + admin/stats + 残り legal/info pages"
+      "scope": "Account dashboard (recharts integration) + admin/stats + 残り legal/info pages (about/contact/operator/privacy/terms/commerce/faq)"
+    },
+    "session5": {
+      "scope": "Email templates (verify-request / signout) + error pages (404/500) + onboarding flow"
     }
   },
   "deferred": {
     "framerMotion": "Skipped — perceived speed via CSS transitions / 200-220ms cubic-bezier easing prioritized over JS animation lib",
     "nextThemes": "Skipped — existing ThemeProvider works, replacing risks regressions",
     "shadcnInit": "Skipped — existing components/ui/ already shadcn-style, init would overwrite",
-    "notoSansJP": "Skipped — Geist + Hiragino Kaku Gothic ProN fallback covers JA glyphs"
+    "notoSansJP": "Skipped — Geist + Hiragino Kaku Gothic ProN fallback covers JA glyphs",
+    "tabsPrimitive": "Deferred — none of session 2 pages required tab UI; will add when first consumer appears",
+    "accordionPrimitive": "Deferred — native <details> sufficient for FAQ/explanation collapsibles; radix-accordion only if stateful animations needed"
   },
   "knownIssues": [
-    "Some interior pages (quiz player, copilot panel, account, admin, auth) still use raw sky-* / zinc-* utilities — to be migrated in subsequent sessions"
+    "Quiz player (app/quiz/), copilot panel (components/copilot/), account (app/account/), admin (app/admin/) still use raw sky-* / zinc-* utilities — to be migrated in subsequent sessions",
+    "Email forms (signup/verify-request) not yet migrated to semantic tokens",
+    "Pre-existing data file syntax error in data/questions/ap/by-year/2024-spring.ts unrelated to UI work"
   ]
 }

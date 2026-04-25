@@ -12,12 +12,13 @@ interface Props {
 export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub }: Props) {
   const redirectTo = callbackUrl || "/";
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2.5">
       {hasGoogle && (
         <Button
           type="button"
           variant="outline"
-          className="w-full gap-2"
+          size="lg"
+          className="w-full gap-3 font-semibold"
           onClick={() => signIn("google", { callbackUrl: redirectTo })}
         >
           <GoogleIcon /> Google でログイン
@@ -27,7 +28,8 @@ export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub }: Props) {
         <Button
           type="button"
           variant="outline"
-          className="w-full gap-2"
+          size="lg"
+          className="w-full gap-3 font-semibold"
           onClick={() => signIn("github", { callbackUrl: redirectTo })}
         >
           <GitHubIcon /> GitHub でログイン
