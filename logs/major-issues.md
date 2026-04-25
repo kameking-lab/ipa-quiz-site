@@ -8,6 +8,14 @@
 - 優先度: 中（戦略文書の整合性。コード優先度は低）
 - 検出ループ: Loop 1
 
+## M3. CLAUDE.md の AI コパイロット無料枠回数表記が現実装と不整合
+- 現状（実装）: 50回/日（`lib/rate-limit/server.ts:BETA_DAILY_LIMIT` 既定 50、`FREE_DAILY_LIMIT_CLIENT = 50`）
+- CLAUDE.md §9 / §12: 「1 日 30 回」「30,000 req/日」
+- 推奨: CLAUDE.md §9, §10, §12, §13 を 50回/日ベースに改訂
+- 工数: 30 分
+- 優先度: 中（戦略文書整合）
+- 検出ループ: Loop 2
+
 ## M2. メタ description の試験別動的化
 - 現状: ルート `description` は単一文字列。`[exam]/topic/[topicSlug]` だけ動的だが、`/modes/year` `/modes/topic` は応用情報限定文言。
 - 推奨: `[exam]` セグメントレベルで `generateMetadata` を実装し、各試験ごとの description を出す

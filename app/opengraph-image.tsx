@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "IPA Quiz — AIネイティブ過去問学習";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -57,6 +56,8 @@ export default function OgImage() {
         </div>
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             color: "#ffffff",
             fontSize: "60px",
             fontWeight: 800,
@@ -65,9 +66,8 @@ export default function OgImage() {
             letterSpacing: "-1px",
           }}
         >
-          IPA 過去問を、
-          <br />
-          AI と一緒に。
+          <span>IPA 過去問を、</span>
+          <span>AI と一緒に。</span>
         </div>
         <div
           style={{
