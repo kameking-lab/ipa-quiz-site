@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { BookmarkCheck, CalendarDays, CircleHelp, Shuffle, Tags } from "lucide-react";
+import { BookmarkCheck, CalendarDays, CircleHelp, FileEdit, Shuffle, Tags } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExamCategoryGrid } from "./ExamCategoryGrid";
@@ -13,9 +13,15 @@ interface Props {
   questionCounts: Partial<Record<ExamCode, number>>;
   yearsByExam: Partial<Record<ExamCode, number[]>>;
   categoriesByExam: Partial<Record<ExamCode, string[]>>;
+  afternoonCounts: Partial<Record<ExamCode, number>>;
 }
 
-export function HomeExamPicker({ questionCounts, yearsByExam, categoriesByExam }: Props) {
+export function HomeExamPicker({
+  questionCounts,
+  yearsByExam,
+  categoriesByExam,
+  afternoonCounts,
+}: Props) {
   const [selected, setSelected] = React.useState<ExamCode | null>(null);
 
   const modesRef = React.useRef<HTMLDivElement | null>(null);
@@ -42,6 +48,7 @@ export function HomeExamPicker({ questionCounts, yearsByExam, categoriesByExam }
             exam={selected}
             years={yearsByExam[selected] ?? []}
             categories={categoriesByExam[selected] ?? []}
+            afternoonCount={afternoonCounts[selected] ?? 0}
           />
         ) : (
           <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
@@ -57,10 +64,12 @@ function ExamModes({
   exam,
   years,
   categories,
+  afternoonCount,
 }: {
   exam: ExamCode;
   years: number[];
   categories: string[];
+  afternoonCount: number;
 }) {
   const label = EXAM_LABELS[exam] ?? exam.toUpperCase();
   return (
@@ -102,6 +111,14 @@ function ExamModes({
           title="分野別"
           desc="セキュリティ/ネットワーク等の分野別。"
         />
+        {afternoonCount > 0 && (
+          <ModeCard
+            href={`/${exam}/afternoon`}
+            icon={<FileEdit className="h-5 w-5" />}
+            title="午後 AI 採点 (β)"
+            desc={`記述・論述問題を AI が採点・添削。${afternoonCount}問収録。`}
+          />
+        )}
       </div>
 
       <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
+import { getAfternoonQuestions } from "@/lib/afternoon/load";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
@@ -38,6 +39,23 @@ export default function HomePage() {
       .filter(([, qs]) => (qs?.length ?? 0) > 0)
       .map(([code]) => [code, getAvailableCategories(code)]),
   ) as Partial<Record<ExamCode, string[]>>;
+
+  const AFTERNOON_EXAMS: ExamCode[] = [
+    "ap",
+    "st",
+    "fe",
+    "db",
+    "nw",
+    "sc",
+    "es",
+    "pm",
+    "sa",
+    "au",
+    "sm",
+  ];
+  const afternoonCounts = Object.fromEntries(
+    AFTERNOON_EXAMS.map((code) => [code, getAfternoonQuestions(code).length]),
+  ) as Partial<Record<ExamCode, number>>;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -121,6 +139,7 @@ export default function HomePage() {
         questionCounts={questionCounts}
         yearsByExam={yearsByExam}
         categoriesByExam={categoriesByExam}
+        afternoonCounts={afternoonCounts}
       />
     </main>
   );
