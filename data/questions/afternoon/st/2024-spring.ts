@@ -1,5 +1,6 @@
 // 編集者キュレーション。論述式は構成のポイント・採点基準を含む。
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
+import { ST_2024_SPRING_Q1_INDUSTRIES } from "./2024-spring-industries";
 
 export const ST_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
   {
@@ -144,5 +145,6 @@ A社を取り巻く事業環境は、複合的な変化に直面していた。�
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h05_1/2024h05h_st_pm2_qs.pdf",
     license: "IPA-public",
     totalTimeMinutes: 120,
+    industryVariants: ST_2024_SPRING_Q1_INDUSTRIES,
   },
 ];
