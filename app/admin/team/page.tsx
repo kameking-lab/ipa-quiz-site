@@ -38,7 +38,7 @@ export default function AdminTeamPage() {
         <div>
           <div className="mb-1 flex items-center gap-2">
             <Badge variant="outline">プロトタイプ</Badge>
-            <Badge variant="success">Team プラン</Badge>
+            <Badge variant="warn">Team プラン 2026年6月公開予定</Badge>
           </div>
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
             {team.teamName}

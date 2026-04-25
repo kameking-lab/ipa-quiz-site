@@ -142,9 +142,12 @@ export default function CaseStudiesPage() {
             <Link href="/contact/enterprise">お問い合わせ・資料請求</Link>
           </Button>
           <Button asChild variant="outline">
-            <Link href="/admin/team">ダッシュボードデモを見る</Link>
+            <Link href="/contact/enterprise#demo">ダッシュボードデモをリクエスト</Link>
           </Button>
         </div>
+        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+          ※ 法人ダッシュボード (`/admin/team`) は権限保護のため、デモアクセス用の認証情報を個別にお渡しします。
+        </p>
       </div>
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
