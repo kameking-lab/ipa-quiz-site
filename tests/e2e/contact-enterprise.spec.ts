@@ -37,7 +37,9 @@ test.describe("/contact/enterprise GET page", () => {
   test("loads form page with 200", async ({ page }) => {
     const res = await page.goto("/contact/enterprise");
     expect(res?.status()).toBe(200);
-    await expect(page.getByText("お問い合わせ")).toBeVisible();
+    await expect(
+      page.getByRole("heading", { name: "Team プランのお問い合わせ" }),
+    ).toBeVisible();
   });
 
   test("/contact/enterprise/thanks loads with 200", async ({ page }) => {
