@@ -5,11 +5,15 @@ import {
   ArrowLeft,
   Ban,
   Bot,
+  CreditCard,
   FileText,
   Gavel,
   Quote,
   RefreshCw,
+  Shield,
   Sparkles,
+  UserCheck,
+  UserMinus,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,7 +21,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "利用規約",
   description:
-    "IPA Quiz の利用規約。サービス概要・AI 生成コンテンツ・免責事項・禁止事項・出典・準拠法について。",
+    "過去問AI（IPA Quiz）の利用規約。サービス概要・AI 生成・免責・禁止事項・出典・準拠法・利用料金・解約・会員資格・年齢制限について。",
   alternates: { canonical: "/terms" },
 };
 
@@ -154,6 +158,134 @@ export default function TermsPage() {
             <p>
               運営は必要に応じて本規約を変更できるものとします。
               重要な変更は本サービス上でお知らせします。
+            </p>
+          </Section>
+
+          <Section
+            number="8"
+            icon={<CreditCard className="h-5 w-5" />}
+            title="利用料金"
+          >
+            <p>
+              本サービスには無料プランと有料のプレミアムプランがあります。
+              プレミアムプランの料金は<strong>月額 980 円（税込）</strong>で、
+              クレジットカードによる Stripe 決済（自動継続課金）に対応します。
+              申込日を基準日として、毎月同日に自動的に決済が行われます。
+            </p>
+            <p>
+              運営は将来、料金の改定（値上げ・値下げ）を行うことがあります。
+              <strong>値上げを行う場合は、効力発生日の 30 日前までに本サービス上で告知</strong>
+              します。告知後も本サービスを継続利用された場合、新料金に同意したものとみなします。
+              告知期間中に解約された場合、新料金は適用されません。
+            </p>
+            <p>
+              本規約のうち利用料金に関する条項について、消費者契約法第 10 条に違反し、
+              消費者の利益を一方的に害すると認められる部分は、その限りにおいて無効とします。
+            </p>
+            <p>
+              返金については
+              <Link
+                href="/commerce"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                特定商取引法に基づく表記
+              </Link>
+              {" "}を併せてご確認ください。
+            </p>
+          </Section>
+
+          <Section
+            number="9"
+            icon={<UserMinus className="h-5 w-5" />}
+            title="アカウント解約・データ削除"
+          >
+            <p>
+              プレミアムプランは、設定画面または運営宛のメール
+              （
+              <a
+                href="mailto:kakomon.ai.jp@gmail.com"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                kakomon.ai.jp@gmail.com
+              </a>
+              ）からいつでも解約できます。解約手続きが完了すると、
+              <strong>次回更新日以降の課金を停止</strong>
+              し、既にお支払い済みの期間（次回更新日まで）はプレミアム機能を継続してご利用いただけます。
+              既に課金済みの期間分について、日割り返金は行いません。
+            </p>
+            <p>
+              アカウント解約後、運営は学習履歴・対話ログ等のユーザーデータを
+              <strong>30 日間保持</strong>
+              した後に削除します。30 日以内であれば、運営に依頼することでアカウント・有料契約を再開できる場合があります。
+            </p>
+            <p>
+              30 日の保持期間を待たずに、データの<strong>即時削除</strong>を希望される場合は、
+              上記メールアドレスまでご連絡ください。本人確認のうえ、合理的な期間内に削除を実施します。
+              削除後は学習履歴・購入履歴等を復元できないため、ご注意ください。
+            </p>
+          </Section>
+
+          <Section
+            number="10"
+            icon={<UserCheck className="h-5 w-5" />}
+            title="会員資格"
+          >
+            <p>
+              本サービスは、無料プランとプレミアムプランの 2 種類のアカウントを提供します。
+              無料プランは登録なしでもご利用いただけます。プレミアムプランはユーザー登録および有効な決済手段の提供が必要です。
+            </p>
+            <p>
+              本サービスは<strong>個人での学習用途に限り</strong>ご利用いただけます。
+              アカウントを第三者に譲渡・貸与・共有する行為、企業内での共有アカウント運用、
+              および本サービスのコンテンツを商業目的・営利目的で再配布する行為は禁止します。
+            </p>
+            <p>
+              次のいずれかに該当する場合、運営は事前通知なく当該アカウントの利用停止・削除・プレミアム契約の解除を行うことができます。
+              この場合の返金は行いません。
+            </p>
+            <ul className="space-y-1.5">
+              {[
+                "本規約・関連規定（プライバシーポリシー等）に違反した場合",
+                "登録情報に虚偽・不正があると判明した場合",
+                "決済手段の有効性が確認できない、または支払いが滞った場合",
+                "第 4 条「禁止事項」に該当する行為が確認された場合",
+                "反社会的勢力に該当する、または関与していると判明した場合",
+                "その他、運営が会員として不適切と合理的に判断した場合",
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2">
+                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-primary" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
+          <Section
+            number="11"
+            icon={<Shield className="h-5 w-5" />}
+            title="年齢制限"
+          >
+            <p>
+              本サービスは年齢制限のあるサービスではありませんが、
+              <strong>18 歳未満の方が利用される場合は、必ず保護者の同意を得たうえでご利用ください。</strong>
+              特にプレミアムプランへの申込（決済を伴う行為）は、未成年者の場合、
+              民法第 5 条第 1 項に基づき法定代理人（保護者）の同意が必要です。
+            </p>
+            <p>
+              法定代理人の同意なく未成年者が締結したプレミアムプランの契約については、
+              民法第 5 条第 2 項に基づき<strong>取り消す</strong>ことができます。
+              取り消しのご連絡は{" "}
+              <a
+                href="mailto:kakomon.ai.jp@gmail.com"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                kakomon.ai.jp@gmail.com
+              </a>
+              {" "}までお願いします。本人確認・法定代理人確認のうえ、決済代金を返金します。
+            </p>
+            <p>
+              なお、保護者の同意があった旨を表示・申告して登録された場合、または小遣いとしてあらかじめ処分が許された財産の範囲で支払われた場合、
+              民法上の取消権が制限されることがあります。
             </p>
           </Section>
         </div>
