@@ -1,6 +1,7 @@
 // 編集者キュレーション。論述式は構成のポイント・採点基準を含む。
 // AU 午後II 練習用オリジナル問題（IPA過去問の形式を模して作成）。
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
+import { AU_2024_AUTUMN_Q1_INDUSTRIES } from "./2024-autumn-industries";
 
 export const AU_AFTERNOON_2024_AUTUMN: AfternoonQuestion[] = [
   {
@@ -161,5 +162,6 @@ C社のクラウドサービス利用は、過去5年間で急速に拡大して
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024a05_1/2024a05a_au_pm2_qs.pdf",
     license: "IPA-public",
     totalTimeMinutes: 120,
+    industryVariants: AU_2024_AUTUMN_Q1_INDUSTRIES,
   },
 ];
