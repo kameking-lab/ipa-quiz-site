@@ -22,6 +22,9 @@ const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
   "sc",
   "es",
   "pm",
+  "sa",
+  "au",
+  "sm",
 ];
 
 interface RouteParams {

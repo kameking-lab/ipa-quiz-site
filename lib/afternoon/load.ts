@@ -8,6 +8,9 @@ import { NW_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/nw";
 import { SC_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sc";
 import { ES_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/es";
 import { PM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/pm";
+import { SA_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sa";
+import { AU_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/au";
+import { SM_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/sm";
 
 const ALL: AfternoonQuestion[] = [
   ...AP_AFTERNOON_QUESTIONS,
@@ -18,6 +21,9 @@ const ALL: AfternoonQuestion[] = [
   ...SC_AFTERNOON_QUESTIONS,
   ...ES_AFTERNOON_QUESTIONS,
   ...PM_AFTERNOON_QUESTIONS,
+  ...SA_AFTERNOON_QUESTIONS,
+  ...AU_AFTERNOON_QUESTIONS,
+  ...SM_AFTERNOON_QUESTIONS,
 ];
 
 export function getAfternoonQuestions(exam: ExamCode): AfternoonQuestion[] {
