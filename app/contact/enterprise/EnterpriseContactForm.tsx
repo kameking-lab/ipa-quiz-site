@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
 type FormState = "idle" | "submitting" | "success" | "error";
@@ -27,6 +28,7 @@ const EXAM_OPTIONS = [
 ];
 
 export function EnterpriseContactForm() {
+  const router = useRouter();
   const [formState, setFormState] = useState<FormState>("idle");
   const [data, setData] = useState<FormData>({
     company: "",
@@ -46,17 +48,14 @@ export function EnterpriseContactForm() {
     e.preventDefault();
     setFormState("submitting");
     try {
-      const res = await fetch("/api/email-list", {
+      const res = await fetch("/api/contact/enterprise", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: data.email,
-          source: "enterprise-contact",
-          meta: data,
-        }),
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error("submit failed");
       setFormState("success");
+      router.push("/contact/enterprise/thanks");
     } catch {
       setFormState("error");
     }

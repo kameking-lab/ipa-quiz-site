@@ -26,16 +26,18 @@ function isPriceKey(s: unknown): s is PriceKey {
 }
 
 export async function POST(req: Request) {
+  // 認証を最優先で評価する（未ログインなら課金設定の有無に依らず 401）。
+  // Stripe / DB が未設定でも、認証情報の有無は副作用なく確認できる。
+  const session = await auth().catch(() => null);
+  if (!session?.user?.id || !session.user.email) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
   }
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({ error: "db_not_configured" }, { status: 503 });
-  }
-
-  const session = await auth();
-  if (!session?.user?.id || !session.user.email) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
   const body = (await req.json().catch(() => ({}))) as { plan?: unknown };
