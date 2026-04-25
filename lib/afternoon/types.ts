@@ -18,6 +18,32 @@ export type SubAnswerType =
   | "fill-blank"   // 穴埋め（短い語句）
   | "choice";      // 選択肢から選ぶ（午後でも稀に存在）
 
+/**
+ * 業種カテゴリID（午後II 論述式の業種別模範解答で使用）
+ *
+ * 受験生の業務経験で論述内容が変わるため、業種ごとの合格答案サンプルを提供する。
+ */
+export type IndustryId =
+  | "manufacturing"  // 製造業（MES、IoT工場、生産管理）
+  | "construction"   // 建設業（ICT施工、BIM/CIM、建設DX）
+  | "finance"        // 金融業（勘定系、フィンテック）
+  | "retail"         // 流通・小売（EC、POS、サプライチェーン）
+  | "telecom"        // 通信業（キャリア、ISP、5G）
+  | "public";        // 公共・自治体（行政DX、住民サービス）
+
+/** 業種別の論述バリアント（設問ア・イ・ウの3点セット） */
+export interface IndustryVariant {
+  industryId: IndustryId;
+  /** タブ表示用ラベル */
+  industryName: string;
+  /** 設問ア（事業／プロジェクト概要・前提）の論述例 */
+  essayA: string;
+  /** 設問イ（戦略・施策・本論）の論述例 */
+  essayI: string;
+  /** 設問ウ（評価・改善・学び）の論述例 */
+  essayU: string;
+}
+
 /** 1つの大問内のサブ設問 */
 export interface SubQuestion {
   /** "設問1", "(1)" など、PDF上の番号表記 */
@@ -67,6 +93,13 @@ export interface AfternoonQuestion {
   totalTimeMinutes?: number;
   /** 解説品質が低い・要確認のフラグ。出題プールから除外する用途。 */
   needsReview?: boolean;
+  /**
+   * 業種別の模範論述バリアント（essay型のみ）。
+   * subQuestions[].modelAnswer は「共通／汎用」論述として扱い、
+   * このフィールドが存在する場合は UI 上で業種タブを切り替えられるようにする。
+   * 設問ア・イ・ウの順で essayA / essayI / essayU に対応する。
+   */
+  industryVariants?: IndustryVariant[];
 }
 
 /** ユーザーが提出した解答（採点API入力） */
