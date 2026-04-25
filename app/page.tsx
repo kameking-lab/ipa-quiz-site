@@ -12,7 +12,7 @@ import type { ExamCode } from "@/lib/questions/types";
 export const metadata: Metadata = {
   title: "IPA Quiz — AIネイティブ過去問学習",
   description:
-    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+    "IPA 情報処理技術者試験 IP/SG/FE/AP/高度区分の 13 試験・12,000問超をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
   alternates: { canonical: "/" },
 };
 
