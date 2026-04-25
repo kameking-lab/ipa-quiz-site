@@ -9,6 +9,7 @@ import {
   Sparkles,
   AlertTriangle,
   ArrowRight,
+  BookOpenCheck,
 } from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
@@ -27,6 +28,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -314,22 +316,20 @@ export default async function QuestionPage({
 
       {/* Choices */}
       {q.choices && (
-        <section
-          aria-label="選択肢"
-          className="mt-4 flex flex-col gap-2.5"
-        >
+        <section aria-label="選択肢" className="mt-5 flex flex-col gap-3">
+          <h2 className="sr-only">選択肢</h2>
           {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
             const isAnswer = key === answerKey;
             return (
               <div
                 key={key}
                 data-answer={isAnswer || undefined}
-                className="group relative flex items-start gap-3 rounded-2xl border border-border bg-card px-4 py-3.5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md sm:px-5 sm:py-4"
+                className="group relative flex items-start gap-4 rounded-2xl border border-border bg-card px-4 py-5 shadow-sm transition duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md active:translate-y-0 sm:px-5"
               >
-                <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-soft text-base font-bold text-primary-soft-foreground transition group-hover:bg-primary group-hover:text-primary-foreground">
+                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-lg font-bold text-primary-soft-foreground transition group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground sm:h-11 sm:w-11">
                   {key}
                 </span>
-                <span className="flex-1 pt-1.5 text-sm leading-relaxed text-card-foreground sm:text-base">
+                <span className="flex-1 pt-1 text-[15px] leading-[1.7] text-card-foreground sm:text-base sm:leading-[1.75]">
                   {text}
                 </span>
               </div>
@@ -343,51 +343,56 @@ export default async function QuestionPage({
         <AnswerReveal answer={String(answerKey)} answerText={answerText} />
       </section>
 
-      {/* Explanation (collapsible) */}
-      <section aria-label="解説" className="mt-6">
-        <details
-          open
-          className="group overflow-hidden rounded-2xl border border-border bg-card shadow-sm"
-        >
-          <summary className="flex cursor-pointer items-center justify-between gap-4 px-5 py-4 text-base font-bold text-card-foreground [&::-webkit-details-marker]:hidden sm:px-6">
-            <span className="flex items-center gap-2">
-              <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
-                <Sparkles className="h-3.5 w-3.5" />
+      {/* Explanation — 3-layer structured */}
+      <section aria-label="解説" className="mt-8">
+        <details open className="group">
+          <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
+                <BookOpenCheck className="h-4 w-4" />
               </span>
-              解説
-            </span>
-            <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition group-open:rotate-180" />
-          </summary>
-          <div className="border-t border-border px-5 pb-5 pt-4 sm:px-6">
-            {showRealExplanation ? (
-              <div className="selectable-content text-sm leading-[1.85] text-card-foreground sm:text-base">
-                {q.explanation.split("\n").map((line, i) => (
-                  <p key={i} className="mb-3 last:mb-0">
-                    {line}
+              <div className="leading-tight">
+                <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                  解説
+                </h2>
+                {showRealExplanation && (
+                  <p className="text-[11px] text-muted-foreground">
+                    結論 → 詳細 → 補足 の 3 層構成
                   </p>
-                ))}
+                )}
               </div>
-            ) : (
-              <div className="flex items-start gap-2.5 rounded-xl border border-amber-200 bg-amber-50 p-3.5 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
-                <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-                <span>
-                  解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
-                </span>
-              </div>
-            )}
-            <div className="mt-5 flex flex-col gap-1.5 border-t border-border pt-3 text-[11px] leading-relaxed text-muted-foreground">
-              <p>
-                ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
-              </p>
-              <a
-                href={q.sourcePdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 underline decoration-border underline-offset-2 transition hover:text-foreground"
-              >
-                出典: IPA 公式 PDF <ExternalLink className="h-3 w-3" />
-              </a>
             </div>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition group-open:bg-muted">
+              <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
+              <span className="group-open:hidden">展開</span>
+              <span className="hidden group-open:inline">閉じる</span>
+            </span>
+          </summary>
+
+          {showRealExplanation ? (
+            <ExplanationLayers explanation={q.explanation} />
+          ) : (
+            <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
+              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+              <span>
+                解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+              </span>
+            </div>
+          )}
+
+          <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
+            <p>
+              ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
+            </p>
+            <a
+              href={q.sourcePdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+            >
+              出典: IPA 公式 PDF
+              <ExternalLink className="h-3 w-3" />
+            </a>
           </div>
         </details>
       </section>
@@ -433,43 +438,57 @@ export default async function QuestionPage({
         <ShareButtons url={pageUrlAbs} title={title} />
       </section>
 
-      {/* Prev / Next */}
+      {/* Prev / Next — desktop & tablet inline, mobile sticky */}
       <nav
         aria-label="前後の問題"
-        className="mt-8 grid grid-cols-2 gap-2.5"
+        className="mt-8 hidden grid-cols-2 gap-3 sm:grid"
       >
         {prev ? (
           <Link href={questionPagePath(prev)} className="block">
-            <Button variant="outline" size="lg" className="w-full justify-start gap-2">
-              <ChevronLeft className="h-4 w-4" />
-              <span className="flex flex-col items-start leading-tight">
-                <span className="text-[10px] font-normal text-muted-foreground">
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-auto w-full justify-start gap-3 py-3 text-left"
+            >
+              <ChevronLeft className="h-4 w-4 shrink-0" />
+              <span className="flex min-w-0 flex-col items-start leading-tight">
+                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   前の問題
                 </span>
-                <span>問 {prev.qNumber}</span>
+                <span className="truncate">問 {prev.qNumber}</span>
               </span>
             </Button>
           </Link>
         ) : (
-          <span className="rounded-xl border border-dashed border-border px-4 py-3 text-center text-xs text-muted-foreground">
-            最初の問題
+          <span className="flex flex-col items-start gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-left">
+            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+              前の問題
+            </span>
+            <span className="text-xs text-muted-foreground">最初の問題です</span>
           </span>
         )}
         {next ? (
           <Link href={questionPagePath(next)} className="block">
-            <Button variant="outline" size="lg" className="w-full justify-end gap-2">
-              <span className="flex flex-col items-end leading-tight">
-                <span className="text-[10px] font-normal text-muted-foreground">
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-auto w-full justify-end gap-3 py-3 text-right"
+            >
+              <span className="flex min-w-0 flex-col items-end leading-tight">
+                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   次の問題
                 </span>
-                <span>問 {next.qNumber}</span>
+                <span className="truncate">問 {next.qNumber}</span>
               </span>
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-4 w-4 shrink-0" />
             </Button>
           </Link>
         ) : (
-          <span className="rounded-xl border border-dashed border-border px-4 py-3 text-center text-xs text-muted-foreground">
-            最後の問題
+          <span className="flex flex-col items-end gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-right">
+            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+              次の問題
+            </span>
+            <span className="text-xs text-muted-foreground">最後の問題です</span>
           </span>
         )}
       </nav>
@@ -512,6 +531,42 @@ export default async function QuestionPage({
           </ul>
         </section>
       )}
+
+      {/* Spacer so sticky bottom nav doesn't cover the related list on mobile */}
+      <div aria-hidden="true" className="h-20 sm:hidden" />
+
+      {/* Mobile sticky bottom nav — prev/next */}
+      <nav
+        aria-label="前後の問題（モバイル）"
+        className="surface-glass fixed inset-x-0 bottom-0 z-30 border-t border-border px-3 pb-safe pt-2 sm:hidden"
+      >
+        <div className="grid grid-cols-2 gap-2">
+          {prev ? (
+            <Link href={questionPagePath(prev)} className="block">
+              <Button variant="outline" size="md" className="w-full">
+                <ChevronLeft className="h-4 w-4" />
+                <span className="text-xs">問 {prev.qNumber}</span>
+              </Button>
+            </Link>
+          ) : (
+            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
+              最初の問題
+            </span>
+          )}
+          {next ? (
+            <Link href={questionPagePath(next)} className="block">
+              <Button variant="primary" size="md" className="w-full">
+                <span className="text-xs">問 {next.qNumber}</span>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          ) : (
+            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
+              最後の問題
+            </span>
+          )}
+        </div>
+      </nav>
     </main>
   );
 }

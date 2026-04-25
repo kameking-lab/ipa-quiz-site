@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { CreditCard, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export function BillingActions() {
@@ -26,11 +27,23 @@ export function BillingActions() {
   }
 
   return (
-    <div className="flex flex-col items-end gap-1">
-      <Button variant="outline" onClick={openPortal} disabled={loading}>
+    <div className="flex w-full flex-col items-stretch gap-1.5 sm:items-end">
+      <Button
+        variant="outline"
+        size="lg"
+        onClick={openPortal}
+        disabled={loading}
+        className="w-full sm:w-auto"
+      >
+        <CreditCard className="h-4 w-4" />
         {loading ? "起動中..." : "プラン・支払い管理"}
       </Button>
-      {error && <span className="text-xs text-red-600 dark:text-red-400">{error}</span>}
+      {error && (
+        <span className="inline-flex items-center gap-1 text-xs text-destructive">
+          <AlertCircle className="h-3 w-3" />
+          {error}
+        </span>
+      )}
     </div>
   );
 }
