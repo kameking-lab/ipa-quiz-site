@@ -7,6 +7,8 @@ import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -37,8 +39,37 @@ export default function HomePage() {
       .map(([code]) => [code, getAvailableCategories(code)]),
   ) as Partial<Record<ExamCode, string[]>>;
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_BASE_URL}/#website`,
+        url: SITE_BASE_URL,
+        name: SITE_NAME,
+        inLanguage: "ja-JP",
+        description:
+          "IPA 情報処理技術者試験 13 区分・12,000 問超を AI コパイロット付きで学習できる無料の過去問サイト。",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${SITE_BASE_URL}/quiz?mode=random&exam={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "Organization",
+        "@id": `${SITE_BASE_URL}/#organization`,
+        name: SITE_NAME,
+        url: SITE_BASE_URL,
+        logo: `${SITE_BASE_URL}/icon-512.svg`,
+        sameAs: ["https://x.com/kakomon_ai_jp", "https://note.com/kakomon_ai"],
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
       <section className="mb-8">
         <div className="mb-3">
           <SiteLogo />
