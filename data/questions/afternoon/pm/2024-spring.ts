@@ -1,6 +1,7 @@
 // PM午後II（論述式）— 2024春相当の編集者キュレーション。
 // IPA過去問のテーマ傾向（プロジェクト計画／リスク管理／ステークホルダ調整）に沿わせている。
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
+import { PM_2024_SPRING_Q1_INDUSTRIES } from "./2024-spring-industries";
 
 export const PM_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
   {
@@ -154,5 +155,6 @@ export const PM_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/_index_mondai.html",
     license: "IPA-public",
     totalTimeMinutes: 120,
+    industryVariants: PM_2024_SPRING_Q1_INDUSTRIES,
   },
 ];
