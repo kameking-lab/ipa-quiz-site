@@ -2,7 +2,8 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { AlertTriangle, HomeIcon, RefreshCw } from "lucide-react";
+import { AlertTriangle, ExternalLink, HomeIcon, RefreshCw } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function ErrorPage({
   error,
@@ -16,50 +17,67 @@ export default function ErrorPage({
   }, [error]);
 
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col items-center justify-center px-4 py-20 text-center">
-      <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-amber-100 text-amber-600 dark:bg-amber-950/40 dark:text-amber-400">
-        <AlertTriangle className="h-7 w-7" />
-      </span>
-      <h1 className="mb-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-        エラーが発生しました
-      </h1>
-      <p className="mb-1 text-sm text-zinc-500 dark:text-zinc-400">
-        予期しない問題が起きました。もう一度お試しください。
-      </p>
-      {error.digest && (
-        <p className="mb-6 text-[11px] text-zinc-400 dark:text-zinc-600">
-          エラーID: {error.digest}
+    <main className="relative flex flex-1 items-center justify-center px-4 py-16">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
+
+      <div className="relative w-full max-w-md text-center">
+        <div className="overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-lg sm:p-8">
+          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-warning/15 text-warning">
+            <AlertTriangle className="h-7 w-7" />
+          </div>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground">
+            エラーが発生しました
+          </h1>
+          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+            予期しない問題が起きました。もう一度お試しください。
+          </p>
+          {error.digest && (
+            <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 font-mono text-[11px] text-muted-foreground">
+              <span className="text-foreground/70">エラーID:</span>
+              <span>{error.digest}</span>
+            </p>
+          )}
+
+          <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+            <Button
+              variant="primary"
+              size="lg"
+              className="flex-1"
+              onClick={reset}
+            >
+              <RefreshCw className="h-4 w-4" />
+              もう一度試す
+            </Button>
+            <Button asChild variant="outline" size="lg" className="flex-1">
+              <Link href="/">
+                <HomeIcon className="h-4 w-4" />
+                トップへ戻る
+              </Link>
+            </Button>
+          </div>
+        </div>
+
+        <p className="mt-6 text-xs text-muted-foreground">
+          問題が続く場合は{" "}
+          <a
+            href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+          >
+            GitHub Issues
+            <ExternalLink className="h-3 w-3" />
+          </a>
+          {" "}でご報告ください。
         </p>
-      )}
-      {!error.digest && <div className="mb-6" />}
-      <div className="flex flex-col gap-3 sm:flex-row">
-        <button
-          onClick={reset}
-          className="flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700"
-        >
-          <RefreshCw className="h-4 w-4" />
-          もう一度試す
-        </button>
-        <Link
-          href="/"
-          className="flex items-center gap-2 rounded-xl border border-zinc-300 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-700 transition hover:border-zinc-400 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300"
-        >
-          <HomeIcon className="h-4 w-4" />
-          トップへ戻る
-        </Link>
       </div>
-      <p className="mt-8 text-xs text-zinc-400 dark:text-zinc-600">
-        問題が続く場合は{" "}
-        <a
-          href="https://github.com/kameking-lab/ipa-quiz-site/issues"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline underline-offset-2 hover:text-zinc-600 dark:hover:text-zinc-400"
-        >
-          GitHub Issues
-        </a>{" "}
-        でご報告ください。
-      </p>
     </main>
   );
 }

@@ -2,20 +2,57 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { ArrowLeft, Download, Upload, RotateCcw, CheckCircle2, AlertCircle } from "lucide-react";
+import {
+  AlertCircle,
+  ArrowLeft,
+  CheckCircle2,
+  Download,
+  Monitor,
+  Moon,
+  Palette,
+  RotateCcw,
+  Settings as SettingsIcon,
+  Sliders,
+  Sun,
+  TrendingUp,
+  Upload,
+} from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
 import { createHistoryStore, getPremiumFlag, setPremiumFlag } from "@/lib/storage/history";
 
 type Theme = "light" | "dark" | "system";
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = [
+  { value: "light", label: "ライト", icon: <Sun className="h-4 w-4" /> },
+  { value: "system", label: "自動", icon: <Monitor className="h-4 w-4" /> },
+  { value: "dark", label: "ダーク", icon: <Moon className="h-4 w-4" /> },
+];
+
+function SectionTitle({
+  icon,
+  children,
+  description,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  description?: string;
+}) {
   return (
-    <h2 className="mb-3 text-sm font-semibold tracking-wide text-zinc-500 uppercase dark:text-zinc-400">
-      {children}
-    </h2>
+    <div className="mb-3 flex items-center gap-3">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+        {icon}
+      </span>
+      <div className="min-w-0">
+        <h2 className="text-base font-semibold text-foreground">{children}</h2>
+        {description && (
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -29,11 +66,11 @@ function SettingRow({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex items-center justify-between gap-4 py-3">
+    <div className="flex items-center justify-between gap-4 px-5 py-4">
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-zinc-900 dark:text-zinc-100">{label}</p>
+        <p className="text-sm font-medium text-foreground">{label}</p>
         {description && (
-          <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">{description}</p>
+          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
         )}
       </div>
       <div className="shrink-0">{children}</div>
@@ -48,7 +85,7 @@ export default function SettingsPage() {
     excludeRecent: false,
     calculationOnly: false,
   });
-  const [isPremium, setIsPremium] = useState(false);
+  const [, setIsPremium] = useState(false);
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -70,11 +107,6 @@ export default function SettingsPage() {
     const next = { ...settings, [key]: value };
     setSettings(next);
     writeSettings(next);
-  }
-
-  function togglePremium(on: boolean) {
-    setIsPremium(on);
-    setPremiumFlag(on);
   }
 
   function handleExport() {
@@ -115,186 +147,252 @@ export default function SettingsPage() {
     const store = createHistoryStore();
     store.reset();
     setStats({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
+    setPremiumFlag(false);
     showToast("ok", "履歴を削除しました");
   }
 
-  const THEME_OPTIONS: { value: Theme; label: string }[] = [
-    { value: "light", label: "ライト" },
-    { value: "system", label: "自動" },
-    { value: "dark", label: "ダーク" },
-  ];
-
   return (
-    <div className="mx-auto max-w-lg px-4 py-8">
-      {/* Header */}
-      <div className="mb-6 flex items-center gap-3">
-        <Link
-          href="/"
-          className="rounded-lg p-1.5 text-zinc-500 hover:bg-zinc-100 dark:hover:bg-zinc-800"
-          aria-label="ホームへ戻る"
-        >
-          <ArrowLeft className="h-5 w-5" />
-        </Link>
-        <h1 className="text-xl font-bold text-zinc-900 dark:text-zinc-50">設定</h1>
-      </div>
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
 
-      <div className="space-y-8">
-        {/* Appearance */}
-        <section>
-          <SectionTitle>外観</SectionTitle>
-          <div className="rounded-xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="px-4 py-3">
-              <p className="mb-2 text-sm font-medium text-zinc-900 dark:text-zinc-100">テーマ</p>
-              <div className="flex gap-2">
-                {THEME_OPTIONS.map(({ value, label }) => (
-                  <button
-                    key={value}
-                    onClick={() => setTheme(value)}
-                    className={`flex-1 rounded-lg py-2 text-sm font-medium transition-colors ${
-                      theme === value
-                        ? "bg-sky-600 text-white"
-                        : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
-                    }`}
-                  >
-                    {label}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+      <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <Button asChild variant="ghost" size="sm" className="mb-4">
+          <Link href="/">
+            <ArrowLeft className="h-4 w-4" />
+            戻る
+          </Link>
+        </Button>
 
-        {/* Quiz Options */}
-        <section>
-          <SectionTitle>クイズオプション</SectionTitle>
-          <div className="divide-y divide-zinc-100 rounded-xl border border-zinc-200 bg-white px-4 dark:divide-zinc-800 dark:border-zinc-800 dark:bg-zinc-900">
-            <SettingRow label="選択肢をランダム化" description="ア〜エの順番を毎回入れ替えます">
-              <Switch
-                checked={settings.randomizeChoices}
-                onCheckedChange={(v) => updateSetting("randomizeChoices", v)}
-              />
-            </SettingRow>
-            <SettingRow
-              label="直近2回を除外"
-              description="直近2回で正解した問題を出題から外します"
+        <header className="mb-8 animate-fade-in">
+          <Badge variant="soft" className="mb-3">
+            <SettingsIcon className="h-3 w-3" />
+            設定
+          </Badge>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            設定とプリファレンス
+          </h1>
+          <p className="mt-2 text-sm text-muted-foreground">
+            外観・クイズオプション・学習履歴の管理ができます。
+          </p>
+        </header>
+
+        <div className="space-y-6">
+          {/* Appearance */}
+          <section>
+            <SectionTitle
+              icon={<Palette className="h-5 w-5" />}
+              description="アプリ全体の表示テーマ"
             >
-              <Switch
-                checked={settings.excludeRecent}
-                onCheckedChange={(v) => updateSetting("excludeRecent", v)}
-              />
-            </SettingRow>
-            <SettingRow label="計算問題のみ" description="isCalculationフラグが付いた問題だけ出題">
-              <Switch
-                checked={settings.calculationOnly}
-                onCheckedChange={(v) => updateSetting("calculationOnly", v)}
-              />
-            </SettingRow>
-          </div>
-        </section>
-
-        {/* Premium section hidden during beta — code kept for Phase 4 */}
-
-        {/* History */}
-        <section>
-          <SectionTitle>学習履歴</SectionTitle>
-          <div className="rounded-xl border border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-900">
-            {/* Stats */}
-            <div className="grid grid-cols-3 divide-x divide-zinc-100 border-b border-zinc-100 dark:divide-zinc-800 dark:border-zinc-800">
-              <div className="py-4 text-center">
-                <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">{stats.total}</p>
-                <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">回答数</p>
-              </div>
-              <div className="py-4 text-center">
-                <p className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">
-                  {stats.uniqueAnswered}
-                </p>
-                <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">問題数</p>
-              </div>
-              <div className="py-4 text-center">
-                <p className="text-2xl font-bold text-sky-600 dark:text-sky-400">
-                  {stats.total > 0 ? Math.round(stats.accuracy * 100) : "--"}%
-                </p>
-                <p className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">正答率</p>
+              外観
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
+                テーマ
+              </p>
+              <div className="grid grid-cols-3 gap-2">
+                {THEME_OPTIONS.map(({ value, label, icon }) => {
+                  const active = theme === value;
+                  return (
+                    <button
+                      key={value}
+                      onClick={() => setTheme(value)}
+                      className={`flex flex-col items-center gap-1.5 rounded-xl border px-3 py-3 text-sm font-medium transition-all ${
+                        active
+                          ? "border-primary bg-primary text-primary-foreground shadow-sm"
+                          : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
+                      }`}
+                    >
+                      <span className={active ? "" : "text-muted-foreground"}>{icon}</span>
+                      {label}
+                    </button>
+                  );
+                })}
               </div>
             </div>
+          </section>
 
-            {/* Actions */}
-            <div className="flex flex-col gap-2 p-4 sm:flex-row">
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1 gap-2"
-                onClick={handleExport}
+          {/* Quiz Options */}
+          <section>
+            <SectionTitle
+              icon={<Sliders className="h-5 w-5" />}
+              description="出題ロジックのカスタマイズ"
+            >
+              クイズオプション
+            </SectionTitle>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
+              <SettingRow
+                label="選択肢をランダム化"
+                description="ア〜エの順番を毎回入れ替えます"
               >
-                <Download className="h-4 w-4" />
-                エクスポート
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1 gap-2"
-                onClick={() => fileInputRef.current?.click()}
+                <Switch
+                  checked={settings.randomizeChoices}
+                  onCheckedChange={(v) => updateSetting("randomizeChoices", v)}
+                />
+              </SettingRow>
+              <SettingRow
+                label="直近 2 回を除外"
+                description="直近 2 回で正解した問題を出題から外します"
               >
-                <Upload className="h-4 w-4" />
-                インポート
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="flex-1 gap-2 text-red-600 hover:border-red-300 hover:bg-red-50 dark:text-red-400 dark:hover:border-red-800 dark:hover:bg-red-950/30"
-                onClick={handleReset}
+                <Switch
+                  checked={settings.excludeRecent}
+                  onCheckedChange={(v) => updateSetting("excludeRecent", v)}
+                />
+              </SettingRow>
+              <SettingRow
+                label="計算問題のみ"
+                description="isCalculation フラグが付いた問題だけ出題"
               >
-                <RotateCcw className="h-4 w-4" />
-                リセット
-              </Button>
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".json"
-                className="hidden"
-                onChange={handleImport}
-              />
+                <Switch
+                  checked={settings.calculationOnly}
+                  onCheckedChange={(v) => updateSetting("calculationOnly", v)}
+                />
+              </SettingRow>
             </div>
-          </div>
-        </section>
+          </section>
 
-        {/* About */}
-        <section>
-          <SectionTitle>このアプリについて</SectionTitle>
-          <div className="rounded-xl border border-zinc-200 bg-white px-4 dark:border-zinc-800 dark:bg-zinc-900">
-            <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
-              <div className="flex items-center justify-between py-3">
-                <span className="text-sm text-zinc-700 dark:text-zinc-300">バージョン</span>
-                <span className="text-sm font-mono text-zinc-500 dark:text-zinc-400">0.1.0</span>
+          {/* History */}
+          <section>
+            <SectionTitle
+              icon={<TrendingUp className="h-5 w-5" />}
+              description="ブラウザに保存された履歴の管理"
+            >
+              学習履歴
+            </SectionTitle>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              {/* Stats */}
+              <div className="grid grid-cols-3 divide-x divide-border border-b border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
+                <Stat label="回答数" value={stats.total.toLocaleString("ja-JP")} />
+                <Stat label="問題数" value={stats.uniqueAnswered.toLocaleString("ja-JP")} />
+                <Stat
+                  label="正答率"
+                  value={
+                    stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"
+                  }
+                  highlight
+                />
               </div>
-              <div className="py-3">
-                <Link
-                  href="/about"
-                  className="text-sm text-sky-600 hover:underline dark:text-sky-400"
+
+              {/* Actions */}
+              <div className="grid gap-2 p-4 sm:grid-cols-3">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                  onClick={handleExport}
                 >
-                  著作権・利用条件
-                </Link>
+                  <Download className="h-4 w-4" />
+                  エクスポート
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2"
+                  onClick={() => fileInputRef.current?.click()}
+                >
+                  <Upload className="h-4 w-4" />
+                  インポート
+                </Button>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
+                  onClick={handleReset}
+                >
+                  <RotateCcw className="h-4 w-4" />
+                  リセット
+                </Button>
+                <input
+                  ref={fileInputRef}
+                  type="file"
+                  accept=".json"
+                  className="hidden"
+                  onChange={handleImport}
+                />
               </div>
             </div>
-          </div>
-        </section>
-      </div>
+          </section>
 
-      {/* Toast */}
-      {toast && (
-        <div
-          className={`fixed bottom-6 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2 text-sm font-medium text-white shadow-lg transition-all ${
-            toast.type === "ok" ? "bg-emerald-600" : "bg-red-600"
-          }`}
-        >
-          {toast.type === "ok" ? (
-            <CheckCircle2 className="h-4 w-4" />
-          ) : (
-            <AlertCircle className="h-4 w-4" />
-          )}
-          {toast.msg}
+          {/* About */}
+          <section>
+            <SectionTitle
+              icon={<SettingsIcon className="h-5 w-5" />}
+              description="バージョン・関連情報"
+            >
+              このアプリについて
+            </SectionTitle>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
+              <div className="flex items-center justify-between px-5 py-4">
+                <span className="text-sm text-muted-foreground">バージョン</span>
+                <span className="font-mono text-xs text-muted-foreground">0.1.0</span>
+              </div>
+              <Link
+                href="/about"
+                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+              >
+                <span className="text-foreground">著作権・利用条件</span>
+                <span className="text-primary">→</span>
+              </Link>
+              <Link
+                href="/privacy"
+                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+              >
+                <span className="text-foreground">プライバシーポリシー</span>
+                <span className="text-primary">→</span>
+              </Link>
+            </div>
+          </section>
         </div>
-      )}
+
+        {/* Toast */}
+        {toast && (
+          <div
+            role="status"
+            aria-live="polite"
+            className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
+              toast.type === "ok"
+                ? "bg-success"
+                : "bg-destructive"
+            }`}
+          >
+            {toast.type === "ok" ? (
+              <CheckCircle2 className="h-4 w-4" />
+            ) : (
+              <AlertCircle className="h-4 w-4" />
+            )}
+            {toast.msg}
+          </div>
+        )}
+      </div>
+    </main>
+  );
+}
+
+function Stat({
+  label,
+  value,
+  highlight,
+}: {
+  label: string;
+  value: string;
+  highlight?: boolean;
+}) {
+  return (
+    <div className="py-5 text-center">
+      <p
+        className={`text-2xl font-bold tracking-tight ${
+          highlight ? "text-primary" : "text-foreground"
+        }`}
+      >
+        {value}
+      </p>
+      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
     </div>
   );
 }
