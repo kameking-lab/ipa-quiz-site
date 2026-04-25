@@ -45,6 +45,11 @@ export function ReviewClient({ allQuestions }: ReviewClientProps) {
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
   const [done, setDone] = useState(false);
   const [initialized, setInitialized] = useState(false);
+  const [emptyMeta, setEmptyMeta] = useState<{
+    seenCount: number;
+    scheduledCount: number;
+    nextReviewDate: string | null;
+  }>({ seenCount: 0, scheduledCount: 0, nextReviewDate: null });
 
   // localStorage から読み込み
   useEffect(() => {
@@ -68,6 +73,17 @@ export function ReviewClient({ allQuestions }: ReviewClientProps) {
         const record = loaded[q.id];
         if (!record) return true; // 未登録は今日が復習日
         return record.nextReviewAt <= today;
+      });
+
+      // 空状態のための補助情報を計算（学習履歴の総数・スケジュール済み件数・次回復習日）
+      const futureDates = Object.values(loaded)
+        .map((r) => r.nextReviewAt)
+        .filter((d) => d > today)
+        .sort();
+      setEmptyMeta({
+        seenCount: seenIds.size,
+        scheduledCount: Object.keys(loaded).length,
+        nextReviewDate: futureDates[0] ?? null,
       });
 
       setDueQuestions(due.sort(() => Math.random() - 0.5));
@@ -123,15 +139,51 @@ export function ReviewClient({ allQuestions }: ReviewClientProps) {
   }
 
   if (dueQuestions.length === 0) {
+    const isFreshUser = emptyMeta.seenCount === 0;
+    const nextDateLabel = emptyMeta.nextReviewDate
+      ? new Date(emptyMeta.nextReviewDate).toLocaleDateString("ja-JP", {
+          month: "long",
+          day: "numeric",
+          weekday: "short",
+        })
+      : null;
+
     return (
       <div className="space-y-6">
         <Card>
           <CardContent className="py-10 text-center">
-            <div className="text-3xl">🎉</div>
-            <p className="mt-3 font-medium">今日の復習は完了です</p>
-            <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-              問題を解くと次回の復習スケジュールが自動で設定されます。
+            <div className="text-3xl">{isFreshUser ? "📚" : "🎉"}</div>
+            <p className="mt-3 font-medium">
+              {isFreshUser ? "復習キューはまだ空です" : "今日の復習は完了です"}
             </p>
+            <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+              {isFreshUser
+                ? "問題を解くと自動で復習スケジュールに追加されます。"
+                : "良いペースです。次回までゆっくり休みましょう。"}
+            </p>
+
+            {!isFreshUser && (
+              <div className="mt-6 grid grid-cols-2 gap-3 text-left">
+                <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900/50">
+                  <div className="text-xs text-zinc-500 dark:text-zinc-400">学習済み問題</div>
+                  <div className="mt-0.5 text-lg font-semibold tabular-nums">
+                    {emptyMeta.seenCount.toLocaleString()} 問
+                  </div>
+                </div>
+                <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 dark:border-zinc-800 dark:bg-zinc-900/50">
+                  <div className="text-xs text-zinc-500 dark:text-zinc-400">復習スケジュール済</div>
+                  <div className="mt-0.5 text-lg font-semibold tabular-nums">
+                    {emptyMeta.scheduledCount.toLocaleString()} 問
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {nextDateLabel && (
+              <p className="mt-4 text-xs text-zinc-500 dark:text-zinc-400">
+                次回復習予定: <span className="font-medium text-zinc-700 dark:text-zinc-300">{nextDateLabel}</span>
+              </p>
+            )}
           </CardContent>
         </Card>
 
@@ -143,9 +195,14 @@ export function ReviewClient({ allQuestions }: ReviewClientProps) {
           </p>
         </div>
 
-        <Button asChild variant="primary" className="w-full">
-          <Link href="/ap">問題を解いて復習キューを作成</Link>
-        </Button>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <Button asChild variant="primary" className="w-full">
+            <Link href="/ap">{isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
+          </Button>
+          <Button asChild variant="outline" className="w-full">
+            <Link href="/mock-exam">模試で実力チェック</Link>
+          </Button>
+        </div>
       </div>
     );
   }

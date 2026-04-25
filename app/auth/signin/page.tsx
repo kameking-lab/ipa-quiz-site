@@ -59,7 +59,7 @@ export default async function SignInPage({
 
       {providerIds.size === 0 && (
         <div className="rounded-md border border-zinc-200 bg-zinc-50 px-4 py-6 text-center text-sm text-zinc-600 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400">
-          ログイン機能は準備中です。近日公開予定。
+          ログイン機能は<strong className="text-zinc-900 dark:text-zinc-100">2026年5月公開予定</strong>です。
           <br />
           現在は未ログインでも全機能を無制限にご利用いただけます。
           <br />
