@@ -47,7 +47,8 @@ export function PremiumCheckoutButton({ label }: { label: string }) {
     <div>
       <Button
         type="button"
-        variant="primary"
+        variant="gradient"
+        size="lg"
         className="w-full"
         onClick={handleClick}
         disabled={loading}
@@ -55,7 +56,7 @@ export function PremiumCheckoutButton({ label }: { label: string }) {
         {loading ? "処理中..." : label}
       </Button>
       {error && (
-        <p className="mt-2 text-center text-xs text-rose-600 dark:text-rose-400">{error}</p>
+        <p className="mt-2 text-center text-xs text-destructive">{error}</p>
       )}
     </div>
   );

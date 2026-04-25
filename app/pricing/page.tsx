@@ -1,17 +1,33 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Check, Minus, Sparkles } from "lucide-react";
+import {
+  Check,
+  Minus,
+  Sparkles,
+  ArrowRight,
+  ChevronDown,
+  Crown,
+  Users,
+  Zap,
+  ShieldCheck,
+} from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PLAN_ORDER, PLANS, formatPlanPrice, formatAnnualPrice, type Plan } from "@/lib/plans";
+import {
+  PLAN_ORDER,
+  PLANS,
+  formatPlanPrice,
+  formatAnnualPrice,
+  type Plan,
+} from "@/lib/plans";
 import { EmailSignupForm } from "./EmailSignupForm";
 import { PremiumCheckoutButton } from "./PremiumCheckoutButton";
 
 export const metadata: Metadata = {
   title: "料金プラン",
   description:
-    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、詳細応答・類題生成・誤答分析が使えます。近日公開予定。",
+    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、詳細応答・類題生成・誤答分析が使えます。β公開中・全機能無料。",
   alternates: { canonical: "/pricing" },
 };
 
@@ -19,174 +35,293 @@ export default function PricingPage() {
   const plans = PLAN_ORDER.map((id) => PLANS[id]);
 
   return (
-    <main className="mx-auto w-full max-w-6xl flex-1 px-4 pb-16 pt-8 sm:px-6">
-      <section className="mb-8 text-center">
-        <div className="mb-3 flex justify-center">
-          <Badge variant="success">β 公開中</Badge>
+    <main className="flex-1">
+      {/* ============== HERO ============== */}
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-[360px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+        />
+        <div className="relative mx-auto w-full max-w-6xl px-4 pb-8 pt-10 sm:px-6 sm:pt-16">
+          <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
+            <Badge variant="success" className="mb-4">
+              β 公開中・全機能無料
+            </Badge>
+            <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
+              シンプルな
+              <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+                料金プラン
+              </span>
+            </h1>
+            <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+              β 公開中は全機能無料。本気で合格を狙うなら Premium、チーム研修なら Team。
+              いつでも解約できます。
+            </p>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
+              <span className="inline-flex items-center gap-1.5">
+                <ShieldCheck className="h-3.5 w-3.5 text-emerald-500" />
+                登録不要で開始
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Sparkles className="h-3.5 w-3.5 text-primary" />
+                Gemini 搭載
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Zap className="h-3.5 w-3.5 text-amber-500" />
+                ゼロ遷移 UI
+              </span>
+            </div>
+          </div>
         </div>
-        <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          料金プラン
-        </h1>
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          β 公開中（無料でご利用いただけます）。2026年5月正式公開予定。
-          <br />
-          正式公開のお知らせをご希望の方は、メールアドレスをご登録ください。
-        </p>
       </section>
 
-      <section className="mb-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {plans.map((plan) => (
-          <PlanCard key={plan.id} plan={plan} />
-        ))}
+      {/* ============== PRICING CARDS ============== */}
+      <section className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6">
+        <div className="grid gap-5 lg:grid-cols-3">
+          {plans.map((plan) => (
+            <PlanCard key={plan.id} plan={plan} />
+          ))}
+        </div>
       </section>
 
-      <Card className="mb-10">
-        <CardHeader>
-          <CardTitle className="text-base">機能比較</CardTitle>
-        </CardHeader>
-        <CardContent>
+      {/* ============== COMPARISON TABLE ============== */}
+      <section className="mx-auto w-full max-w-6xl px-4 pb-12 sm:px-6">
+        <div className="mx-auto mb-6 max-w-2xl text-center">
+          <Badge variant="soft" className="mb-3">
+            機能比較
+          </Badge>
+          <h2 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            プランごとの違いを一覧で
+          </h2>
+        </div>
+        <Card className="overflow-hidden">
           <div className="overflow-x-auto">
             <FeatureComparisonTable />
           </div>
-        </CardContent>
-      </Card>
+        </Card>
+      </section>
 
-      <Card id="notify">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-            公開通知を受け取る
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-            Premium / Team プランの正式公開時にメールでご連絡します。登録解除は通知メールから可能です。
-          </p>
-          <EmailSignupForm source="pricing" />
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            メールアドレスは公開通知以外の用途には使用しません。詳細は{" "}
-            <Link href="/privacy" className="underline hover:text-zinc-900 dark:hover:text-zinc-100">
-              プライバシーポリシー
-            </Link>
-            {" "}をご覧ください。
-          </p>
-        </CardContent>
-      </Card>
+      {/* ============== FAQ ============== */}
+      <section className="border-t border-border bg-muted/20">
+        <div className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6 sm:py-20">
+          <div className="mb-8 text-center">
+            <Badge variant="outline" className="mb-3">
+              FAQ
+            </Badge>
+            <h2 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              料金についてよくある質問
+            </h2>
+          </div>
+          <div className="flex flex-col gap-2">
+            <FaqItem
+              q="本当に無料で使えますか？"
+              a="はい。β 公開期間中は全機能を完全無料で開放しています。AI コパイロットも 1 日 50 回まで無料です。クレジットカード登録も不要です。"
+            />
+            <FaqItem
+              q="Premium はいつから有料になりますか？"
+              a="2026年5月の正式公開時に有料化を予定しています。それまでは β 版として無料でお使いいただけます。公開時期はメール通知でお知らせします。"
+            />
+            <FaqItem
+              q="支払い方法は？"
+              a="Premium はクレジットカード（Stripe 決済）に対応予定です。Team プランはクレジットカードに加えて請求書払い・銀行振込にも対応します。"
+            />
+            <FaqItem
+              q="いつでも解約できますか？"
+              a="はい、いつでも解約可能です。解約しても次回更新日まで Premium 機能を継続してお使いいただけます。日割り返金はありません。"
+            />
+            <FaqItem
+              q="無料プランにも広告は表示されますか？"
+              a="無料プランでは控えめな参考書アフィリエイト枠を本文と分離して表示します。Premium / Team では広告が完全に非表示になります。"
+            />
+            <FaqItem
+              q="Team プランの請求書払いに対応していますか？"
+              a="はい、Team プランは請求書払い・銀行振込・優先サポートに対応します。詳細はお問い合わせください。"
+            />
+          </div>
+        </div>
+      </section>
 
-      <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        β 公開中は全機能無料です。料金は予告なく変更される場合があります。
-      </p>
+      {/* ============== EMAIL SIGNUP ============== */}
+      <section className="mx-auto w-full max-w-3xl px-4 py-14 sm:px-6">
+        <Card id="notify" className="overflow-hidden">
+          <CardHeader>
+            <div className="flex items-center gap-2">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+                <Sparkles className="h-4 w-4" />
+              </span>
+              <CardTitle className="text-base">公開通知を受け取る</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="mb-4 text-sm leading-relaxed text-muted-foreground">
+              Premium / Team プランの正式公開時にメールでご連絡します。
+              登録解除は通知メールから可能です。
+            </p>
+            <EmailSignupForm source="pricing" />
+            <p className="mt-3 text-xs text-muted-foreground">
+              メールアドレスは公開通知以外の用途には使用しません。詳細は{" "}
+              <Link
+                href="/privacy"
+                className="underline decoration-border underline-offset-2 hover:text-foreground"
+              >
+                プライバシーポリシー
+              </Link>
+              {" "}をご覧ください。
+            </p>
+          </CardContent>
+        </Card>
+        <p className="mt-6 text-center text-xs text-muted-foreground">
+          β 公開中は全機能無料です。料金は予告なく変更される場合があります。
+        </p>
+      </section>
     </main>
   );
 }
 
 function PlanCard({ plan }: { plan: Plan }) {
+  const isFree = plan.id === "free";
   const isPremium = plan.id === "premium";
   const isTeam = plan.id === "team";
+
+  const icon = isFree ? (
+    <Zap className="h-5 w-5" />
+  ) : isPremium ? (
+    <Crown className="h-5 w-5" />
+  ) : (
+    <Users className="h-5 w-5" />
+  );
+
   return (
-    <Card
+    <div
       className={
         plan.highlight
-          ? "relative border-sky-400 ring-2 ring-sky-400/40 dark:border-sky-500 dark:ring-sky-500/30"
-          : isTeam
-            ? "relative"
-            : undefined
+          ? "relative flex flex-col overflow-hidden rounded-2xl border border-primary/40 bg-gradient-to-b from-primary-soft to-card p-6 shadow-lg ring-1 ring-primary/20 lg:-mt-3 lg:mb-3"
+          : "relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:shadow-md"
       }
     >
       {plan.highlight && (
-        <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-          <Badge variant="success" className="shadow-sm">
-            おすすめ
-          </Badge>
-        </div>
+        <div className="absolute -top-px left-0 right-0 h-1 bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500" />
       )}
-      {isTeam && (
-        <div className="absolute -top-3 right-4">
+
+      <div className="mb-5 flex items-start justify-between gap-3">
+        <div
+          className={
+            plan.highlight
+              ? "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm"
+              : "inline-flex h-10 w-10 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground"
+          }
+        >
+          {icon}
+        </div>
+        {plan.highlight && (
+          <Badge variant="primary" className="shadow-sm">
+            <Sparkles className="h-3 w-3" />
+            人気
+          </Badge>
+        )}
+        {isTeam && (
           <Badge variant="warn" className="shadow-sm">
             近日公開
           </Badge>
+        )}
+      </div>
+
+      <div className="mb-1 flex items-baseline gap-2">
+        <h3 className="text-xl font-bold tracking-tight text-foreground">{plan.name}</h3>
+      </div>
+      <p className="mb-5 text-xs text-muted-foreground">{plan.tagline}</p>
+
+      <div className="mb-5">
+        <div className="flex items-baseline gap-1">
+          <span className="text-4xl font-bold tracking-tight text-foreground">
+            {formatPlanPrice(plan)}
+          </span>
         </div>
-      )}
-      <CardHeader>
+        {plan.unlimitedSeats && (
+          <p className="mt-1 text-xs text-muted-foreground">席数無制限</p>
+        )}
+        {formatAnnualPrice(plan) && (
+          <p className="mt-1 text-xs text-muted-foreground">
+            年払: {formatAnnualPrice(plan)}
+          </p>
+        )}
         {isPremium && (
-          <div className="mb-2 flex justify-center">
-            <Badge variant="outline" className="border-sky-400 text-sky-700 dark:border-sky-500 dark:text-sky-400">
-              β版無料公開中
-            </Badge>
-          </div>
+          <p className="mt-1 text-xs font-medium text-primary">
+            β 期間中は無料でお試し可能
+          </p>
         )}
-        <div className="flex items-baseline gap-2">
-          <CardTitle>{plan.name}</CardTitle>
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">{plan.tagline}</span>
-        </div>
-        <div className="mt-3 space-y-1">
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl font-bold tracking-tight">{formatPlanPrice(plan)}</span>
-          </div>
-          {plan.unlimitedSeats && (
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">席数無制限</div>
-          )}
-          {formatAnnualPrice(plan) && (
-            <div className="text-xs text-zinc-500 dark:text-zinc-400">
-              年払: {formatAnnualPrice(plan)}
-            </div>
-          )}
-        </div>
         {isTeam && (
-          <p className="mt-1 text-xs text-amber-600 dark:text-amber-400">2026年6月公開予定</p>
+          <p className="mt-1 text-xs font-medium text-amber-600 dark:text-amber-400">
+            2026年6月公開予定
+          </p>
         )}
-      </CardHeader>
-      <CardContent>
-        <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          {plan.description}
-        </p>
-        <ul className="mb-5 space-y-2 text-sm">
-          {plan.features.map((f) => (
-            <li key={f.label} className="flex items-start gap-2">
-              {f.included ? (
-                <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-600 dark:text-emerald-400" />
-              ) : (
-                <Minus className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-300 dark:text-zinc-600" />
-              )}
-              <span
-                className={
-                  f.included
-                    ? "text-zinc-800 dark:text-zinc-200"
-                    : "text-zinc-400 line-through dark:text-zinc-600"
-                }
-              >
-                {f.label}
-                {f.detail && (
-                  <span className="ml-1 text-xs text-zinc-500 dark:text-zinc-400">
-                    ({f.detail})
-                  </span>
-                )}
+      </div>
+
+      <p className="mb-5 text-sm leading-relaxed text-muted-foreground">
+        {plan.description}
+      </p>
+
+      <ul className="mb-6 flex-1 space-y-2.5 text-sm">
+        {plan.features.map((f) => (
+          <li key={f.label} className="flex items-start gap-2.5">
+            {f.included ? (
+              <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                <Check className="h-3 w-3" strokeWidth={3} />
               </span>
-            </li>
-          ))}
-        </ul>
-        {plan.id === "free" ? (
-          <Button asChild variant="outline" className="w-full">
-            <Link href="/">ホームに戻る</Link>
+            ) : (
+              <span className="mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-muted text-muted-foreground">
+                <Minus className="h-3 w-3" />
+              </span>
+            )}
+            <span
+              className={
+                f.included
+                  ? "text-foreground"
+                  : "text-muted-foreground line-through"
+              }
+            >
+              {f.label}
+              {f.detail && (
+                <span className="ml-1 text-xs text-muted-foreground">
+                  ({f.detail})
+                </span>
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+
+      {isFree ? (
+        <Button asChild variant="outline" size="lg" className="w-full">
+          <Link href="/auth/signin">
+            ログインして始める
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
+      ) : isPremium ? (
+        <PremiumCheckoutButton label={plan.cta} />
+      ) : plan.ctaHref ? (
+        <Button asChild variant="outline" size="lg" className="w-full">
+          <Link href={plan.ctaHref}>
+            {plan.cta}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </Button>
+      ) : (
+        <>
+          <Button disabled variant="outline" size="lg" className="w-full">
+            近日公開
           </Button>
-        ) : isPremium ? (
-          <PremiumCheckoutButton label={plan.cta} />
-        ) : plan.ctaHref ? (
-          <Button asChild variant="outline" className="w-full">
-            <Link href={plan.ctaHref}>{plan.cta}</Link>
-          </Button>
-        ) : (
-          <>
-            <Button disabled variant="outline" className="w-full">
-              近日公開
-            </Button>
-            <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
-              {plan.id === "team" ? "2026年6月公開予定" : "近日公開予定"}
-            </p>
-          </>
-        )}
-      </CardContent>
-    </Card>
+          <p className="mt-2 text-center text-xs text-muted-foreground">
+            {isTeam ? "2026年6月公開予定" : "近日公開予定"}
+          </p>
+        </>
+      )}
+    </div>
   );
 }
 
@@ -242,32 +377,56 @@ function FeatureComparisonTable() {
     },
     {
       label: "席数",
-      values: ["—", "1名", "無制限"],
+      values: ["—", "1 名", "無制限"],
     },
   ];
 
   return (
-    <table className="w-full min-w-[560px] text-sm">
+    <table className="w-full min-w-[640px] text-sm">
       <thead>
-        <tr className="border-b border-zinc-200 text-left text-xs font-semibold dark:border-zinc-800">
-          <th className="py-2 pr-3 text-zinc-500 dark:text-zinc-400">機能</th>
-          <th className="py-2 pr-3">Free</th>
-          <th className="py-2 pr-3 text-sky-700 dark:text-sky-400">Premium</th>
-          <th className="py-2 pr-3">Team</th>
+        <tr className="border-b border-border bg-muted/30 text-left text-xs font-semibold">
+          <th className="px-5 py-3 text-muted-foreground">機能</th>
+          <th className="px-5 py-3 text-foreground">Free</th>
+          <th className="px-5 py-3 text-primary">
+            <span className="inline-flex items-center gap-1.5">
+              Premium
+              <Sparkles className="h-3 w-3" />
+            </span>
+          </th>
+          <th className="px-5 py-3 text-foreground">Team</th>
         </tr>
       </thead>
       <tbody>
-        {rows.map((row) => (
-          <tr key={row.label} className="border-b border-zinc-100 dark:border-zinc-900">
-            <td className="py-2 pr-3 text-zinc-600 dark:text-zinc-400">{row.label}</td>
-            <td className="py-2 pr-3">{row.values[0]}</td>
-            <td className="py-2 pr-3 font-medium text-sky-700 dark:text-sky-400">
-              {row.values[1]}
-            </td>
-            <td className="py-2 pr-3">{row.values[2]}</td>
+        {rows.map((row, i) => (
+          <tr
+            key={row.label}
+            className={
+              i % 2 === 0
+                ? "border-b border-border/60"
+                : "border-b border-border/60 bg-muted/20"
+            }
+          >
+            <td className="px-5 py-3 text-muted-foreground">{row.label}</td>
+            <td className="px-5 py-3 text-foreground">{row.values[0]}</td>
+            <td className="px-5 py-3 font-semibold text-primary">{row.values[1]}</td>
+            <td className="px-5 py-3 text-foreground">{row.values[2]}</td>
           </tr>
         ))}
       </tbody>
     </table>
+  );
+}
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  return (
+    <details className="group rounded-xl border border-border bg-card transition hover:border-primary/30">
+      <summary className="flex cursor-pointer items-center justify-between gap-4 px-4 py-3 text-sm font-medium text-foreground [&::-webkit-details-marker]:hidden">
+        {q}
+        <ChevronDown className="h-4 w-4 shrink-0 text-muted-foreground transition group-open:rotate-180" />
+      </summary>
+      <div className="px-4 pb-4 text-sm leading-relaxed text-muted-foreground">
+        {a}
+      </div>
+    </details>
   );
 }
