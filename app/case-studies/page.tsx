@@ -5,9 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "導入事例",
+  title: "活用イメージ（サンプル事例）",
   description:
-    "IPA Quiz Team プランの導入事例。IT 企業・金融機関・製造業での活用事例をご紹介。",
+    "IPA Quiz Team プランの活用イメージ。IT 企業・金融機関・製造業での想定活用シナリオを架空のサンプル事例としてご紹介します（実在企業の導入実績ではありません）。",
   alternates: { canonical: "/case-studies" },
 };
 
@@ -63,13 +63,14 @@ export default function CaseStudiesPage() {
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-8 sm:px-6">
       <section className="mb-10 text-center">
-        <Badge variant="outline" className="mb-3">導入事例</Badge>
+        <Badge variant="warn" className="mb-3">サンプル事例（架空）</Badge>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          IPA Quiz Team を活用した企業事例
+          IPA Quiz Team の活用イメージ
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          IT 企業・金融機関・製造業など、さまざまな業種で活用されています。
-          架空の事例をもとにした参考モデルです。
+          以下は IT 企業・金融機関・製造業での活用イメージを示す
+          <strong>架空のサンプル事例</strong>
+          です。実在企業の導入実績ではありません。実際の導入効果は環境により異なります。
         </p>
       </section>
 
