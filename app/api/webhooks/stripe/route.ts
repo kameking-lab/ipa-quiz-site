@@ -18,6 +18,7 @@ import type Stripe from "stripe";
 import { getStripe, isStripeConfigured } from "@/lib/stripe/client";
 import { planFromPriceId } from "@/lib/stripe/plans";
 import { prisma } from "@/lib/db/prisma";
+import { captureException } from "@/lib/monitoring/sentry";
 
 export const runtime = "nodejs";
 
@@ -73,21 +74,19 @@ function subscriptionIdFromInvoice(invoice: Stripe.Invoice): string | null {
 }
 
 export async function POST(req: Request) {
+  // 署名の有無は最優先で評価する（DB 未接続でも署名なしのリクエストは即 400 で弾く）。
+  const signature = req.headers.get("stripe-signature");
+  if (!signature) {
+    return NextResponse.json({ error: "missing_signature" }, { status: 400 });
+  }
+
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
-  }
-  if (!process.env.DATABASE_URL) {
-    return NextResponse.json({ error: "db_not_configured" }, { status: 503 });
   }
 
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!secret) {
     return NextResponse.json({ error: "webhook_secret_missing" }, { status: 503 });
-  }
-
-  const signature = req.headers.get("stripe-signature");
-  if (!signature) {
-    return NextResponse.json({ error: "missing_signature" }, { status: 400 });
   }
 
   const rawBody = await req.text();
@@ -99,6 +98,12 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("[stripe webhook] signature verification failed", err);
     return NextResponse.json({ error: "invalid_signature" }, { status: 400 });
+  }
+
+  // 署名検証は通過。DB 未接続なら永続化はスキップして 200 を返し、Stripe の Retry を回避する。
+  if (!process.env.DATABASE_URL) {
+    console.warn("[stripe webhook] DATABASE_URL not set — skipping persistence", event.type);
+    return NextResponse.json({ received: true, persisted: false });
   }
 
   try {
@@ -145,6 +150,10 @@ export async function POST(req: Request) {
     }
   } catch (err) {
     console.error("[stripe webhook] handler error", event.type, err);
+    await captureException(err, {
+      route: "/api/webhooks/stripe",
+      extra: { eventType: event.type, eventId: event.id },
+    });
     return NextResponse.json({ error: "handler_failed" }, { status: 500 });
   }
 

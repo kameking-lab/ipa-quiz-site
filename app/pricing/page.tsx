@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PLAN_ORDER, PLANS, formatPlanPrice, formatAnnualPrice, type Plan } from "@/lib/plans";
 import { EmailSignupForm } from "./EmailSignupForm";
+import { PremiumCheckoutButton } from "./PremiumCheckoutButton";
 
 export const metadata: Metadata = {
   title: "料金プラン",
@@ -168,17 +169,19 @@ function PlanCard({ plan }: { plan: Plan }) {
           <Button asChild variant="outline" className="w-full">
             <Link href="/">ホームに戻る</Link>
           </Button>
+        ) : isPremium ? (
+          <PremiumCheckoutButton label={plan.cta} />
         ) : plan.ctaHref ? (
-          <Button asChild variant={isPremium ? "primary" : "outline"} className="w-full">
+          <Button asChild variant="outline" className="w-full">
             <Link href={plan.ctaHref}>{plan.cta}</Link>
           </Button>
         ) : (
           <>
-            <Button disabled variant={isPremium ? "primary" : "outline"} className="w-full">
+            <Button disabled variant="outline" className="w-full">
               近日公開
             </Button>
             <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
-              {plan.id === "premium" ? "2026年5月公開予定" : "2026年6月公開予定"}
+              {plan.id === "team" ? "2026年6月公開予定" : "近日公開予定"}
             </p>
           </>
         )}
