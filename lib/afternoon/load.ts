@@ -1,8 +1,9 @@
 import type { ExamCode, Season } from "@/lib/questions/types";
 import type { AfternoonQuestion } from "./types";
 import { AP_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/ap";
+import { ST_AFTERNOON_QUESTIONS } from "@/data/questions/afternoon/st";
 
-const ALL: AfternoonQuestion[] = [...AP_AFTERNOON_QUESTIONS];
+const ALL: AfternoonQuestion[] = [...AP_AFTERNOON_QUESTIONS, ...ST_AFTERNOON_QUESTIONS];
 
 export function getAfternoonQuestions(exam: ExamCode): AfternoonQuestion[] {
   return ALL.filter((q) => q.exam === exam);

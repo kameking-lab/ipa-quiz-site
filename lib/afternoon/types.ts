@@ -14,6 +14,7 @@ export type AfternoonQuestionType = "descriptive" | "essay";
 export type SubAnswerType =
   | "short-text"   // 数十字程度の語句記述
   | "long-text"    // 100字程度以上の論述
+  | "essay-text"   // 2000-3000字の小論文（ST/PM/SA/AU/SM 午後II）
   | "fill-blank"   // 穴埋め（短い語句）
   | "choice";      // 選択肢から選ぶ（午後でも稀に存在）
 
@@ -27,12 +28,18 @@ export interface SubQuestion {
   type: SubAnswerType;
   /** 字数制限（上限）。fill-blank/choice は省略可 */
   maxLength?: number;
+  /** 字数下限（essay-text 等で使用） */
+  minLength?: number;
   /** 模範解答（IPA公表 or 編集者作成） */
   modelAnswer: string;
   /** 採点ルーブリック（採点観点）。AIに渡す */
   scoringRubric: string;
   /** 配点（任意。合計が大問の満点になることが望ましい） */
   points?: number;
+  /** 論述式の構成のポイント（章立て・論じる順序など）。essay-text で使用 */
+  compositionPoints?: string[];
+  /** 論述式の採点基準カテゴリ（例: 設問への適合性 / 論述の具体性 / 一貫性）。essay-text で使用 */
+  scoringCriteria?: { name: string; description: string }[];
 }
 
 /** 午後問題の大問1問 */

@@ -11,7 +11,7 @@ import {
 } from "@/lib/afternoon/load";
 import { AfternoonPlayer } from "@/components/afternoon/AfternoonPlayer";
 
-const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap"];
+const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = ["ap", "st"];
 
 interface RouteParams {
   exam: string;

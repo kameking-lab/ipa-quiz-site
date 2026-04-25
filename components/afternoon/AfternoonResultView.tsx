@@ -93,12 +93,27 @@ export function AfternoonResultView({ question, result }: Props) {
 
                 <div>
                   <p className="mb-1 text-xs font-semibold text-zinc-600 dark:text-zinc-300">
-                    IPA解答例
+                    {sub?.type === "essay-text" ? "模範解答（論述例）" : "IPA解答例"}
                   </p>
                   <p className="whitespace-pre-wrap rounded-md bg-zinc-50 p-2 text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
                     {sr.modelAnswer || sub?.modelAnswer || "（解答例なし）"}
                   </p>
                 </div>
+
+                {sub?.scoringCriteria && sub.scoringCriteria.length > 0 && (
+                  <details className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-xs dark:border-zinc-800 dark:bg-zinc-900/50">
+                    <summary className="cursor-pointer font-semibold text-zinc-700 dark:text-zinc-200">
+                      採点基準
+                    </summary>
+                    <ul className="ml-4 mt-2 list-disc space-y-1 text-zinc-700 dark:text-zinc-200">
+                      {sub.scoringCriteria.map((c, i) => (
+                        <li key={i}>
+                          <span className="font-medium">{c.name}</span>: {c.description}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
               </li>
             );
           })}

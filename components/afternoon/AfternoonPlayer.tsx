@@ -184,36 +184,60 @@ export function AfternoonPlayer({ questions }: Props) {
             {active.subQuestions.map((sub) => {
               const value = activeAnswers[sub.label] ?? "";
               const over = sub.maxLength ? value.length > sub.maxLength : false;
+              const under = sub.minLength ? value.length < sub.minLength : false;
+              const isEssay = sub.type === "essay-text";
+              const rows = isEssay ? 16 : sub.type === "long-text" ? 4 : 2;
               return (
                 <li key={sub.label} className="space-y-2">
                   <div className="flex items-baseline justify-between gap-2">
                     <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
                       {sub.label}
                     </p>
-                    {sub.maxLength && (
+                    {(sub.maxLength || sub.minLength) && (
                       <span
                         className={
                           "text-xs " +
-                          (over
+                          (over || under
                             ? "text-red-600 dark:text-red-400"
                             : "text-zinc-500 dark:text-zinc-400")
                         }
                       >
-                        {value.length} / {sub.maxLength} 字
+                        {value.length}
+                        {sub.minLength && sub.maxLength
+                          ? ` / ${sub.minLength}〜${sub.maxLength} 字`
+                          : sub.maxLength
+                            ? ` / ${sub.maxLength} 字`
+                            : sub.minLength
+                              ? ` / ${sub.minLength} 字以上`
+                              : ""}
                       </span>
                     )}
                   </div>
                   <p className="whitespace-pre-wrap text-sm text-zinc-700 dark:text-zinc-200">
                     {sub.prompt}
                   </p>
+
+                  {isEssay && sub.compositionPoints && sub.compositionPoints.length > 0 && (
+                    <details className="rounded-lg border border-zinc-200 bg-zinc-50 p-2 text-xs dark:border-zinc-800 dark:bg-zinc-900/50">
+                      <summary className="cursor-pointer font-semibold text-zinc-700 dark:text-zinc-200">
+                        構成のポイント（ヒント）
+                      </summary>
+                      <ul className="ml-4 mt-2 list-disc space-y-1 text-zinc-700 dark:text-zinc-200">
+                        {sub.compositionPoints.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
+
                   <textarea
                     value={value}
                     onChange={(e) => handleChange(sub.label, e.target.value)}
-                    rows={sub.type === "long-text" ? 4 : 2}
-                    placeholder="ここに解答を入力"
+                    rows={rows}
+                    placeholder={isEssay ? "論述（2,000〜3,000字）をここに入力" : "ここに解答を入力"}
                     className={
                       "w-full rounded-xl border px-3 py-2 text-sm leading-relaxed shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-zinc-900 dark:text-zinc-50 " +
-                      (over
+                      (over || under
                         ? "border-red-400 focus:ring-red-500"
                         : "border-zinc-300 dark:border-zinc-700")
                     }
