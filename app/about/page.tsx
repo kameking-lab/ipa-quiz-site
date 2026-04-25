@@ -114,15 +114,15 @@ export default function AboutPage() {
           <Section
             icon={<ShieldCheck className="h-5 w-5" />}
             title="プライバシー"
-            description="学習履歴はブラウザにのみ保存"
+            description="匿名利用も、ログインしてのクラウド同期も選べます"
           >
             <p>
-              学習履歴・回答履歴は、お使いのブラウザの localStorage にのみ保存され、
-              サーバーには送信されません。端末・ブラウザを変更すると履歴は引き継がれません。
+              登録不要で利用でき、匿名利用時は学習履歴・回答履歴がお使いのブラウザの localStorage にのみ保存されます。
+              ログインされた場合は、学習履歴をサーバーに同期して複数端末間で共有できます。
             </p>
             <p>
               AI コパイロット機能では、質問文と該当問題のコンテキストが Gemini API に送信されます。
-              個人を特定する情報は送信しません。詳細は{" "}
+              詳細なデータの取り扱いは{" "}
               <Link
                 href="/privacy"
                 className="font-medium text-primary underline-offset-4 hover:underline"

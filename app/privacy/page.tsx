@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
-    "IPA Quiz のプライバシーポリシー。学習履歴は localStorage のみ保存。AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。",
+    "IPA Quiz のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・決済情報・Cookie・データ削除方法について。",
   alternates: { canonical: "/privacy" },
 };
 
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月19日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月26日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -62,10 +62,27 @@ export default function PrivacyPage() {
             title="収集する情報"
           >
             <p>
-              本サービスはユーザーアカウントや個人情報の登録を必要としません。
-              学習履歴・回答履歴・設定はお使いのブラウザの localStorage にのみ保存されます。
-              これらのデータはサーバーに送信されることはありません。
+              本サービスは登録不要でご利用いただけます。匿名利用時は、学習履歴・回答履歴・
+              設定はお使いのブラウザの localStorage にのみ保存され、サーバーには送信されません。
               端末・ブラウザを変更すると履歴は引き継がれません。
+            </p>
+            <p>
+              任意でログイン（Google / GitHub / メールリンク）された場合は、認証プロバイダから
+              提供されるメールアドレス・表示名・プロフィール画像 URL を当社サーバーに保存します。
+              ログイン後は学習履歴・回答履歴を当社サーバーに同期し、複数端末間で共有できます
+              （詳細は{" "}
+              <Link
+                href="/account"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                アカウント設定
+              </Link>
+              {" "}より管理可能）。
+            </p>
+            <p>
+              プレミアムプラン等の有料機能をご利用の際は、決済情報を Stripe が直接処理します。
+              当社サーバーには Stripe 顧客 ID と契約状態のみを保存し、カード番号等の機密情報は
+              保持しません。公開通知メールリストへの登録時は、入力されたメールアドレスを保存します。
             </p>
           </Section>
 
@@ -133,6 +150,17 @@ export default function PrivacyPage() {
               </Link>
               {" "}からいつでも削除できます。
               ブラウザのキャッシュ・サイトデータをクリアすることでも削除されます。
+            </p>
+            <p>
+              サーバーに同期されたアカウント情報・学習履歴は、{" "}
+              <Link
+                href="/account"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                アカウント設定
+              </Link>
+              {" "}よりサインアウト・履歴削除が可能です。アカウント自体の削除をご希望の場合は、
+              GitHub Issues よりご連絡ください。
             </p>
           </Section>
 
