@@ -12,6 +12,10 @@ import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2, Sparkles, Timer } from "lucide-react";
+import { FireworksBurst } from "@/components/motivation/FireworksBurst";
+import { ComboCounter } from "@/components/motivation/ComboCounter";
+import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
+import { playPiroro } from "@/lib/motivation/sound";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -49,10 +53,14 @@ export function QuizPlayer({
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
   const [showSwipeHint, setShowSwipeHint] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
+  const [combo, setCombo] = React.useState(0);
+  const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
+  const motivationSettingsRef = React.useRef(readMotivationSettings());
 
   React.useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setPremium(getPremiumFlag());
+    motivationSettingsRef.current = readMotivationSettings();
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
     if (!alreadyShown) {
       setShowSwipeHint(true);
@@ -101,8 +109,21 @@ export function QuizPlayer({
       const correct = key === answerKey;
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
       setStats((s) => ({ answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) }));
+
+      const nextCombo = correct ? combo + 1 : 0;
+      setCombo(nextCombo);
+      if (correct) {
+        const level = comboLevel(nextCombo);
+        const reduceMotion = motivationSettingsRef.current.reduceMotion;
+        if (level !== "none" && !reduceMotion) {
+          setBurst({ level, nonce: Date.now() });
+          if (motivationSettingsRef.current.soundEnabled) {
+            playPiroro(level);
+          }
+        }
+      }
     },
-    [question, revealed, history],
+    [question, revealed, history, combo],
   );
 
   const toggleStar = React.useCallback(() => {
@@ -197,6 +218,7 @@ export function QuizPlayer({
           </Button>
           <div className="text-xs text-zinc-500 dark:text-zinc-400">モード: {mode}</div>
           <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+            <ComboCounter combo={combo} />
             <span className="flex items-center gap-1">
               <Timer className="h-3 w-3" />
               {formatElapsed(elapsed)}
@@ -318,6 +340,13 @@ export function QuizPlayer({
       )}
 
       <PremiumUpsellDialog open={upsellOpen} onClose={() => setUpsellOpen(false)} />
+
+      <FireworksBurst
+        active={burst !== null}
+        level={burst?.level ?? "small"}
+        onDone={() => setBurst(null)}
+        key={burst?.nonce ?? 0}
+      />
     </div>
   );
 }
