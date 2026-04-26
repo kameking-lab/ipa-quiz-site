@@ -131,6 +131,7 @@ export default function RootLayout({
                   <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
                     {(
                       [
+                        ["/blog", "ブログ"],
                         ["/terms", "利用規約"],
                         ["/privacy", "プライバシーポリシー"],
                         ["/commerce", "特定商取引法に基づく表記"],

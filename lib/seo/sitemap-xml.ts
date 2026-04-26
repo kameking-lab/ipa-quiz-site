@@ -1,3 +1,4 @@
+import { getAllBlogSummaries } from "@/data/blog";
 import { SITE_BASE_URL } from "./config";
 import {
   getAvailableExams,
@@ -23,6 +24,7 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/pricing`, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/mock-exam`, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/review`, changeFrequency: "weekly", priority: 0.5 },
@@ -34,6 +36,15 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/commerce`, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/operator`, changeFrequency: "yearly", priority: 0.2 },
 ];
+
+function getBlogRoutes(): UrlEntry[] {
+  return getAllBlogSummaries().map((p) => ({
+    url: `${SITE_BASE_URL}/blog/${p.slug}`,
+    lastModified: p.updatedAt ?? p.publishedAt,
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+}
 
 function getExamHubRoutes(): UrlEntry[] {
   const entries: UrlEntry[] = [];
@@ -109,6 +120,7 @@ export function renderSitemapChunkXml(pageIndex: number): string {
       ? [
           ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
           ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
+          ...getBlogRoutes(),
         ]
       : [];
 
