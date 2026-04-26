@@ -17,13 +17,21 @@ export function filterQuestions(
 ): Question[] {
   let pool = [...all];
 
-  if (filter.exam) pool = pool.filter((q) => q.exam === filter.exam);
+  if (filter.examGroup && filter.examGroup.length > 0) {
+    const set = new Set(filter.examGroup);
+    pool = pool.filter((q) => set.has(q.exam));
+  } else if (filter.exam) {
+    pool = pool.filter((q) => q.exam === filter.exam);
+  }
   if (filter.year) pool = pool.filter((q) => q.year === filter.year);
   if (filter.season) pool = pool.filter((q) => q.season === filter.season);
   if (filter.topicTag) {
     pool = pool.filter((q) => q.topicTags.includes(filter.topicTag!));
   }
-  if (filter.category) {
+  if (filter.categoryGroup && filter.categoryGroup.length > 0) {
+    const set = new Set(filter.categoryGroup);
+    pool = pool.filter((q) => set.has(q.category));
+  } else if (filter.category) {
     pool = pool.filter((q) => q.category === filter.category);
   }
   if (filter.calculationOnly) {

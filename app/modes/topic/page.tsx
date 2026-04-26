@@ -7,6 +7,10 @@ import { Button } from "@/components/ui/button";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
+import {
+  countApTopicGroups,
+  resolveApTopicGroup,
+} from "@/lib/questions/category-pool";
 
 const DEFAULT_EXAM: ExamCode = "ap";
 
@@ -58,16 +62,27 @@ export default async function TopicModePage({
   const exam: ExamCode = isExamCode(params.exam) ? params.exam : DEFAULT_EXAM;
   const label = examLabel(exam);
 
+  // AP は AP+FE+IP+SG を横断して分野プール（合計 4,980+問）。
+  const isApPool = exam === "ap";
+  const apGroups = isApPool ? countApTopicGroups(ALL_QUESTIONS) : [];
+
   const byCategory = new Map<string, { count: number; tags: Set<string> }>();
-  for (const q of ALL_QUESTIONS) {
-    if (q.exam !== exam) continue;
-    const entry = byCategory.get(q.category) ?? { count: 0, tags: new Set() };
-    entry.count += 1;
-    for (const t of q.topicTags) entry.tags.add(t);
-    byCategory.set(q.category, entry);
+  if (!isApPool) {
+    for (const q of ALL_QUESTIONS) {
+      if (q.exam !== exam) continue;
+      const entry = byCategory.get(q.category) ?? { count: 0, tags: new Set() };
+      entry.count += 1;
+      for (const t of q.topicTags) entry.tags.add(t);
+      byCategory.set(q.category, entry);
+    }
   }
-  const items = [...byCategory.entries()].sort((a, b) => b[1].count - a[1].count);
-  const total = items.reduce((acc, [, v]) => acc + v.count, 0);
+  const items = isApPool
+    ? []
+    : [...byCategory.entries()].sort((a, b) => b[1].count - a[1].count);
+  const total = isApPool
+    ? apGroups.reduce((s, g) => s + g.count, 0)
+    : items.reduce((acc, [, v]) => acc + v.count, 0);
+  const categoryCount = isApPool ? apGroups.length : items.length;
 
   return (
     <main className="relative flex-1">
@@ -99,15 +114,63 @@ export default async function TopicModePage({
             </span>
           </h1>
           <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って{label}の過去問を学習できます。
+            {isApPool
+              ? "応用情報の出題範囲を AP・FE・IP・SG から横断学習できます。同じ知識領域を異なる難度・出題形式で攻略。"
+              : `セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って${label}の過去問を学習できます。`}
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">{items.length} 分野</Badge>
+            <Badge variant="outline">{categoryCount} 分野</Badge>
             <Badge variant="outline">合計 {total.toLocaleString("ja-JP")} 問</Badge>
+            {isApPool && <Badge variant="soft">AP+FE+IP+SG 横断</Badge>}
           </div>
         </header>
 
-        {items.length === 0 ? (
+        {isApPool ? (
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {apGroups.map((g) => {
+              const resolved = resolveApTopicGroup(g.label);
+              const qs = new URLSearchParams({
+                mode: "topic",
+                examGroup: g.examGroup.join(","),
+                categoryGroup: (resolved?.categories ?? [g.label]).join(","),
+              });
+              return (
+                <Link
+                  key={g.label}
+                  href={`/quiz?${qs.toString()}`}
+                  className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="min-w-0 flex-1">
+                      <div className="mb-1.5 flex items-center gap-2">
+                        <span className="text-base font-semibold text-foreground">
+                          {g.label}
+                        </span>
+                        <span className="rounded-full bg-primary-soft px-2 py-0.5 text-[11px] font-bold text-primary-soft-foreground">
+                          {g.count.toLocaleString("ja-JP")}問
+                        </span>
+                      </div>
+                      <div className="mt-2 flex flex-wrap gap-1">
+                        {(Object.entries(g.byExam) as Array<[ExamCode, number]>)
+                          .sort((a, b) => b[1] - a[1])
+                          .map(([code, n]) => (
+                            <span
+                              key={code}
+                              className="inline-flex items-center rounded-md bg-muted px-1.5 py-0.5 text-[10px] font-medium text-muted-foreground"
+                            >
+                              {code.toUpperCase()} {n}
+                            </span>
+                          ))}
+                      </div>
+                    </div>
+                    <ArrowRight className="h-5 w-5 shrink-0 text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        ) : items.length === 0 ? (
           <div className="rounded-2xl border border-border bg-card p-6 text-center text-sm text-muted-foreground">
             {label}の分野別データはまだ収録されていません。
           </div>
