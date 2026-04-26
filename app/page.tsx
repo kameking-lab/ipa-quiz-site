@@ -160,6 +160,44 @@ export default function HomePage() {
         categoriesByExam={categoriesByExam}
         afternoonCounts={afternoonCounts}
       />
+
+      <section aria-labelledby="premium-features" className="mt-10">
+        <h2
+          id="premium-features"
+          className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300"
+        >
+          Premium 機能（β中は全ユーザー無料公開）
+        </h2>
+        <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+          <Link
+            href="/premium/heatmap"
+            className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
+          >
+            <div className="mb-1.5 text-base font-semibold">弱点ヒートマップ</div>
+            <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+              全試験区分×全分野の正答率を可視化。苦手分野を一目で特定。
+            </p>
+          </Link>
+          <Link
+            href="/premium/simulator"
+            className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
+          >
+            <div className="mb-1.5 text-base font-semibold">合格判定シミュレータ</div>
+            <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+              試験日と志望区分から合格確率と1日の目標問題数を算出。
+            </p>
+          </Link>
+          <Link
+            href="/premium/essay"
+            className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
+          >
+            <div className="mb-1.5 text-base font-semibold">AI 論述添削 (β)</div>
+            <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+              ST/SA/PM/SM/AU の午後II 論述を AI が観点別に採点・添削。
+            </p>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
