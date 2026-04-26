@@ -12,7 +12,10 @@ interface Props {
   correct: boolean;
   disabled: boolean;
   onClick: () => void;
+  shortcutIndex?: number;
 }
+
+const CHOICE_INDEX: Partial<Record<ChoiceKey, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
 
 export function ChoiceButton({
   choiceKey,
@@ -22,6 +25,7 @@ export function ChoiceButton({
   correct,
   disabled,
   onClick,
+  shortcutIndex,
 }: Props) {
   let state: "idle" | "selected" | "correct" | "wrong" | "revealed-correct" = "idle";
   if (revealed) {
@@ -31,16 +35,32 @@ export function ChoiceButton({
     state = "selected";
   }
 
+  const numberKey = shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
+  const baseLabel = `選択肢 ${choiceKey}: ${text}`;
+  const stateLabel = !revealed
+    ? `数字キー${numberKey}でも選択できます`
+    : state === "revealed-correct"
+      ? "（正解）"
+      : state === "wrong"
+        ? "（あなたが選んだ不正解）"
+        : "";
+  const ariaLabel = `${baseLabel} ${stateLabel}`.trim();
+
   return (
     <button
       onClick={onClick}
       disabled={disabled}
+      aria-label={ariaLabel}
+      aria-pressed={selected}
+      aria-keyshortcuts={!revealed ? String(numberKey) : undefined}
+      data-state={state}
       className={cn(
         "group relative w-full rounded-2xl border-2 px-4 py-4 text-left transition-colors",
         "flex items-start gap-3 sm:gap-4",
         "min-h-[64px]",
         "touch-manipulation",
         "disabled:cursor-default",
+        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-sky-300",
         !revealed &&
           !disabled &&
           "border-zinc-200 bg-white hover:border-sky-400 hover:bg-sky-50 active:bg-sky-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-sky-500 dark:hover:bg-zinc-800",
@@ -56,25 +76,29 @@ export function ChoiceButton({
       )}
     >
       <span
+        aria-hidden="true"
         className={cn(
           "flex h-8 w-8 shrink-0 items-center justify-center rounded-full text-sm font-bold",
           state === "revealed-correct"
-            ? "bg-emerald-600 text-white"
+            ? "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"
             : state === "wrong"
-              ? "bg-red-600 text-white"
+              ? "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
               : state === "selected"
-                ? "bg-sky-600 text-white"
-                : "bg-zinc-100 text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200",
+                ? "bg-sky-700 text-white dark:bg-sky-400 dark:text-sky-950"
+                : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50",
         )}
       >
         {choiceKey}
       </span>
       <span className="flex-1 pt-1 text-sm leading-relaxed sm:text-base">{text}</span>
       {state === "revealed-correct" && (
-        <Check className="h-5 w-5 shrink-0 text-emerald-600 dark:text-emerald-300" />
+        <Check
+          aria-hidden="true"
+          className="h-5 w-5 shrink-0 text-emerald-700 dark:text-emerald-300"
+        />
       )}
       {state === "wrong" && (
-        <X className="h-5 w-5 shrink-0 text-red-600 dark:text-red-300" />
+        <X aria-hidden="true" className="h-5 w-5 shrink-0 text-red-700 dark:text-red-300" />
       )}
     </button>
   );

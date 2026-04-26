@@ -168,10 +168,17 @@ export function QuizPlayer({
         e.preventDefault();
         toggleStar();
       }
+      if (e.key === "Escape") {
+        if (upsellOpen) {
+          setUpsellOpen(false);
+        } else if (copilotQuery) {
+          setCopilotQuery(null);
+        }
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar]);
+  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -223,23 +230,36 @@ export function QuizPlayer({
             variant="ghost"
             size="icon"
             onClick={() => router.push(backHref)}
-            aria-label="戻る"
+            aria-label="モード選択に戻る"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft aria-hidden="true" className="h-4 w-4" />
           </Button>
           <div className="text-xs text-zinc-500 dark:text-zinc-400">モード: {mode}</div>
           <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
             <ComboCounter combo={combo} />
-            <span className="flex items-center gap-1">
-              <Timer className="h-3 w-3" />
-              {formatElapsed(elapsed)}
+            <span
+              className="flex items-center gap-1"
+              aria-label={`経過時間 ${formatElapsed(elapsed)}`}
+            >
+              <Timer aria-hidden="true" className="h-3 w-3" />
+              <span aria-hidden="true">{formatElapsed(elapsed)}</span>
             </span>
-            <span>正答 {stats.correct}/{stats.answered}</span>
+            <span aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}`}>
+              <span aria-hidden="true">正答 {stats.correct}/{stats.answered}</span>
+            </span>
           </div>
         </div>
-        <div className="h-1 bg-zinc-100 dark:bg-zinc-800">
+        <div
+          role="progressbar"
+          aria-label="クイズ進捗"
+          aria-valuenow={index + 1}
+          aria-valuemin={1}
+          aria-valuemax={total}
+          aria-valuetext={`${index + 1}問目 / 全${total}問`}
+          className="h-1 bg-zinc-100 dark:bg-zinc-800"
+        >
           <div
-            className="h-full bg-sky-500 transition-all duration-300"
+            className="h-full bg-sky-600 motion-safe:transition-all motion-safe:duration-300 dark:bg-sky-400"
             style={{ width: `${((index + 1) / total) * 100}%` }}
           />
         </div>
@@ -257,9 +277,13 @@ export function QuizPlayer({
               progress={{ current: index, total }}
             />
 
-            <div className="space-y-2">
+            <div
+              role="group"
+              aria-label="選択肢（数字キー1〜4で選択可能）"
+              className="space-y-2"
+            >
               {question.choices &&
-                CHOICE_KEYS.map((key) => (
+                CHOICE_KEYS.map((key, idx) => (
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
@@ -269,8 +293,17 @@ export function QuizPlayer({
                     correct={answerKey === key}
                     disabled={revealed}
                     onClick={() => onSelect(key)}
+                    shortcutIndex={idx + 1}
                   />
                 ))}
+            </div>
+
+            <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+              {revealed
+                ? isCorrect
+                  ? `正解です。解説が表示されました。`
+                  : `不正解です。正解は ${answerKey} です。解説が表示されました。`
+                : ""}
             </div>
 
             {revealed && (

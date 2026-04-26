@@ -34,48 +34,59 @@ export function ExplanationCard({
 }: Props) {
   return (
     <div
+      role="region"
+      aria-label={isCorrect ? "正解の解説" : "不正解の解説"}
       className={cn(
-        "animate-in slide-in-from-bottom-4 duration-200",
+        "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
         "rounded-2xl border-2 p-4 sm:p-5",
         isCorrect
-          ? "border-emerald-300 bg-emerald-50/60 dark:border-emerald-800 dark:bg-emerald-950/30"
-          : "border-red-200 bg-red-50/30 dark:border-red-900/60 dark:bg-red-950/20",
+          ? "border-emerald-400 bg-emerald-50/60 dark:border-emerald-700 dark:bg-emerald-950/30"
+          : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
       )}
     >
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {isCorrect ? (
-            <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
+            <CheckCircle2
+              aria-hidden="true"
+              className="h-5 w-5 text-emerald-700 dark:text-emerald-300"
+            />
           ) : (
-            <AlertCircle className="h-5 w-5 text-red-500 dark:text-red-400" />
+            <AlertCircle
+              aria-hidden="true"
+              className="h-5 w-5 text-red-700 dark:text-red-300"
+            />
           )}
           <span
             className={cn(
               "text-sm font-semibold",
               isCorrect
-                ? "text-emerald-800 dark:text-emerald-200"
-                : "text-red-700 dark:text-red-300",
+                ? "text-emerald-900 dark:text-emerald-100"
+                : "text-red-800 dark:text-red-200",
             )}
           >
             {isCorrect ? "正解!" : "不正解"}
           </span>
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="text-xs text-zinc-700 dark:text-zinc-300">
             正解: {Array.isArray(question.answer) ? question.answer.join(", ") : question.answer}
             {selected ? ` / あなた: ${selected}` : ""}
           </span>
         </div>
         <button
           onClick={onToggleStar}
+          aria-pressed={starred}
+          aria-keyshortcuts="r"
           className={cn(
             "rounded-full p-2 transition-colors",
+            "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
             starred
-              ? "bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-300"
-              : "bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700",
+              ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
+              : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
           )}
-          aria-label={starred ? "復習から外す" : "あとで復習"}
+          aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
           title="R キーでも切替"
         >
-          <Star className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
+          <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
         </button>
       </div>
 

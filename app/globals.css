@@ -82,7 +82,8 @@
   --popover-foreground: #09090b;
 
   --muted: #f4f4f5;
-  --muted-foreground: #71717a;
+  /* zinc-600 — 7.2:1 against white (WCAG AAA for normal text) */
+  --muted-foreground: #52525b;
   --accent: #f4f4f5;
   --accent-foreground: #18181b;
 
@@ -130,7 +131,8 @@
   --popover-foreground: #fafafa;
 
   --muted: #1c1c20;
-  --muted-foreground: #a1a1aa;
+  /* zinc-300 — 8.5:1 against #09090b (WCAG AAA for normal text) */
+  --muted-foreground: #d4d4d8;
   --accent: #1c1c20;
   --accent-foreground: #fafafa;
 
@@ -181,9 +183,37 @@ body {
   border-color: var(--border);
 }
 
-/* Smooth focus ring across the app */
-:where(button, a, [role="button"], input, textarea, select):focus-visible {
-  outline: none;
+/* ---------------------------------------------------------------------------
+   Focus ring — WCAG 2.1 AAA fallback
+   Components that add Tailwind `focus-visible:ring-*` classes win on
+   specificity. Elements without explicit focus styles still get a visible
+   ring via this :where() rule (zero specificity).
+   --------------------------------------------------------------------------- */
+:where(button, a, [role="button"], [role="link"], input, textarea, select, summary, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* High-contrast / forced-colors mode */
+@media (forced-colors: active) {
+  :where(button, a, [role="button"], input, textarea, select, [tabindex]:not([tabindex="-1"])):focus-visible {
+    outline: 3px solid Highlight;
+    outline-offset: 2px;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Reduced motion — WCAG 2.3.3 / motion-safe utilities respect this
+   --------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* ---------------------------------------------------------------------------
