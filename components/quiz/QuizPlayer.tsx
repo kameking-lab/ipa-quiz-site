@@ -1,14 +1,19 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
-import { PremiumUpsellDialog } from "@/components/PremiumUpsellDialog";
 import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
+
+const PremiumUpsellDialog = dynamic(
+  () => import("@/components/PremiumUpsellDialog").then((m) => m.PremiumUpsellDialog),
+  { ssr: false },
+);
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
@@ -383,7 +388,9 @@ export function QuizPlayer({
         </div>
       )}
 
-      <PremiumUpsellDialog open={upsellOpen} onClose={() => setUpsellOpen(false)} />
+      {upsellOpen && (
+        <PremiumUpsellDialog open={upsellOpen} onClose={() => setUpsellOpen(false)} />
+      )}
 
       <FireworksBurst
         active={burst !== null}

@@ -15,7 +15,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PremiumGate } from "@/components/PremiumGate";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { createHistoryStore } from "@/lib/storage/history";
 import { aggregateByCategory, daysUntil } from "@/lib/learning/analytics";
 import { summarize as summarizeSrs } from "@/lib/learning/spaced-repetition";
@@ -23,23 +22,27 @@ import { LS_KEYS } from "@/lib/storage/keys";
 
 const DAY_MS = 86_400_000;
 
-export function TutorClient() {
+interface Props {
+  categoryById: Record<string, string>;
+}
+
+export function TutorClient({ categoryById }: Props) {
   return (
     <PremiumGate
       featureTitle="AI チューター月次レポート"
       featurePitch="毎月の演習量・分野別正答率の推移・SRS 定着度を AI が要約。次に注力すべき分野と試験直前のメッセージまで自動生成します。"
     >
-      <Inner />
+      <Inner categoryById={categoryById} />
     </PremiumGate>
   );
 }
 
-function Inner() {
+function Inner({ categoryById }: Props) {
   const [report, setReport] = React.useState<ReturnType<typeof buildReport> | null>(null);
 
   React.useEffect(() => {
-    setReport(buildReport());
-  }, []);
+    setReport(buildReport(categoryById));
+  }, [categoryById]);
 
   if (!report) {
     return <div className="h-64 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />;
@@ -171,13 +174,14 @@ function Stat({ label, value, highlight }: { label: string; value: string; highl
   );
 }
 
-function buildReport() {
+function buildReport(categoryById: Record<string, string>) {
   const history = createHistoryStore();
   const entries = history.getAllEntries();
   const stats = history.getStats();
-  const lookup = new Map(
-    ALL_QUESTIONS.map((q) => [q.id, { category: q.category }] as const),
-  );
+  const lookup = new Map<string, { category: string }>();
+  for (const [id, category] of Object.entries(categoryById)) {
+    lookup.set(id, { category });
+  }
   const categoryStats = aggregateByCategory(entries, lookup);
   const focusCategories = categoryStats
     .filter((s) => s.attempts >= 3 && s.accuracy < 0.6)

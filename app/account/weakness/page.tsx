@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { WeaknessHeatmapClient } from "./WeaknessHeatmapClient";
 
 export const metadata: Metadata = {
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function WeaknessPage() {
+  const categoryById: Record<string, string> = {};
+  for (const q of ALL_QUESTIONS) categoryById[q.id] = q.category;
+
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-10">
       <header className="mb-6">
@@ -19,7 +23,7 @@ export default function WeaknessPage() {
           全分野の正答率を可視化し、合格ライン（70%）までに必要な学習量を算出します。
         </p>
       </header>
-      <WeaknessHeatmapClient />
+      <WeaknessHeatmapClient categoryById={categoryById} />
     </main>
   );
 }

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { TutorClient } from "./TutorClient";
 
 export const metadata: Metadata = {
@@ -8,6 +9,9 @@ export const metadata: Metadata = {
 };
 
 export default function TutorPage() {
+  const categoryById: Record<string, string> = {};
+  for (const q of ALL_QUESTIONS) categoryById[q.id] = q.category;
+
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-10">
       <header className="mb-6">
@@ -19,7 +23,7 @@ export default function TutorPage() {
           あなたの学習履歴と SRS データを総合分析し、月次レポートと重点強化分野を提案します。
         </p>
       </header>
-      <TutorClient />
+      <TutorClient categoryById={categoryById} />
     </main>
   );
 }

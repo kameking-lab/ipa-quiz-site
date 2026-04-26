@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import {
   Sparkles,
   Send,
@@ -19,7 +20,16 @@ import {
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
-import { Markdown } from "@/components/ui/markdown";
+
+const Markdown = dynamic(
+  () => import("@/components/ui/markdown").then((m) => m.Markdown),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-4 w-24 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+    ),
+  },
+);
 import {
   Dialog,
   DialogContent,

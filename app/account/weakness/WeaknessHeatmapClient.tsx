@@ -13,41 +13,45 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { PremiumGate } from "@/components/PremiumGate";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { createHistoryStore } from "@/lib/storage/history";
 import { aggregateByCategory, estimateRequiredPractice } from "@/lib/learning/analytics";
 import type { CategoryStat } from "@/lib/learning/analytics";
 
 const TARGET = 0.7;
 
-export function WeaknessHeatmapClient() {
+interface Props {
+  categoryById: Record<string, string>;
+}
+
+export function WeaknessHeatmapClient({ categoryById }: Props) {
   return (
     <PremiumGate
       featureTitle="弱点ヒートマップ"
       featurePitch="あなたの学習データから「最も伸びしろのある分野」を学習科学に基づいて特定し、合格ラインまでの距離を1問単位で可視化します。"
     >
-      <Inner />
+      <Inner categoryById={categoryById} />
     </PremiumGate>
   );
 }
 
-function Inner() {
+function Inner({ categoryById }: Props) {
   const [stats, setStats] = React.useState<CategoryStat[] | null>(null);
   const [overall, setOverall] = React.useState({ accuracy: 0, attempts: 0, unique: 0 });
 
   React.useEffect(() => {
     const history = createHistoryStore();
     const data = history.getStats();
-    const lookup = new Map(
-      ALL_QUESTIONS.map((q) => [q.id, { category: q.category }] as const),
-    );
+    const lookup = new Map<string, { category: string }>();
+    for (const [id, category] of Object.entries(categoryById)) {
+      lookup.set(id, { category });
+    }
     setStats(aggregateByCategory(history.getAllEntries(), lookup));
     setOverall({
       accuracy: data.accuracy,
       attempts: data.total,
       unique: data.uniqueAnswered,
     });
-  }, []);
+  }, [categoryById]);
 
   if (!stats) {
     return <div className="h-64 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />;

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
 import {
   Activity,
   BarChart3,
@@ -16,8 +17,16 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { MOCK_TEAM } from "@/lib/team/mock-data";
 import { TEAM_PLAN, formatPlanPrice } from "@/lib/plans";
-import { ExamProgressChart } from "./ExamProgressChart";
 import { TeamCsvExport } from "./TeamCsvExport";
+
+const ExamProgressChart = dynamic(
+  () => import("./ExamProgressChart").then((m) => m.ExamProgressChart),
+  {
+    loading: () => (
+      <div className="h-72 w-full animate-pulse rounded-xl bg-zinc-100 dark:bg-zinc-900" />
+    ),
+  },
+);
 
 export const metadata: Metadata = {
   title: "法人ダッシュボード（プロトタイプ）",
