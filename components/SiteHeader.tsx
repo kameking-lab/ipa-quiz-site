@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, ArrowRight } from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
 import { ThemeToggle } from "./ThemeToggle";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 import { Button } from "./ui/button";
 import { ExamSelectorDialog } from "./ExamSelectorDialog";
 import { XFollowButton } from "./XFollowButton";
@@ -86,6 +87,9 @@ export function SiteHeader() {
           <StreakBadge className="hidden sm:inline-flex" />
           <XFollowButton size="sm" className="hidden sm:inline-flex" />
           <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+          <div className="hidden md:block">
             <ThemeToggle />
           </div>
           <ExamSelectorDialog
@@ -141,6 +145,10 @@ export function SiteHeader() {
                   }
                 />
                 <XFollowButton size="md" className="w-full justify-center" />
+                <div className="flex items-center justify-between rounded-lg border border-border p-3 text-sm">
+                  <span className="text-muted-foreground">言語</span>
+                  <LanguageSwitcher variant="inline" />
+                </div>
                 <div className="flex items-center justify-between rounded-lg border border-border p-3 text-sm">
                   <span className="text-muted-foreground">テーマ</span>
                   <ThemeToggle />

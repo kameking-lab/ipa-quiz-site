@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
+import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
@@ -96,6 +97,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
+          <I18nProvider>
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
           <StreakTracker />
@@ -184,6 +186,7 @@ export default function RootLayout({
               </div>
             </footer>
           </div>
+          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>

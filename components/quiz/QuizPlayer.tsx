@@ -7,6 +7,7 @@ import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
+import { GenerateSimilar } from "./GenerateSimilar";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
 
@@ -312,18 +313,21 @@ export function QuizPlayer({
             </div>
 
             {revealed && (
-              <ExplanationCard
-                question={question}
-                selected={selected}
-                isCorrect={isCorrect}
-                starred={starred}
-                onToggleStar={toggleStar}
-                onNext={goNext}
-                onAskAI={() => setCopilotQuery("open")}
-                onAnalyzeWrong={
-                  !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
-                }
-              />
+              <>
+                <ExplanationCard
+                  question={question}
+                  selected={selected}
+                  isCorrect={isCorrect}
+                  starred={starred}
+                  onToggleStar={toggleStar}
+                  onNext={goNext}
+                  onAskAI={() => setCopilotQuery("open")}
+                  onAnalyzeWrong={
+                    !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
+                  }
+                />
+                <GenerateSimilar baseQuestion={question} />
+              </>
             )}
 
             {!revealed && (

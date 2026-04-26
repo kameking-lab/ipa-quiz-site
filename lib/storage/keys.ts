@@ -22,6 +22,9 @@ export const LS_KEYS = {
   dailyChallenge: "ipa-quiz:daily-challenge:v1",
   dailyMissions: "ipa-quiz:daily-missions:v1",
   avatar: "ipa-quiz:avatar:v1",
+  audioBgm: "ipa-quiz:audio-bgm:v1",
+  audioBgmVolume: "ipa-quiz:audio-bgm-volume:v1",
+  language: "ipa-quiz:language:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];
