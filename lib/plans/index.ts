@@ -65,6 +65,7 @@ export const FREE_PLAN: Plan = {
     { label: "全試験区分の過去問", included: true },
     { label: "ゼロ遷移クイズ UI", included: true },
     { label: "AI コパイロット 1日50回", included: true },
+    { label: "AI 論述添削（午後II）", included: true, detail: "月3回まで" },
     { label: "学習履歴（ブラウザ保存）", included: true, detail: "localStorage" },
     { label: "マルチターン会話", included: false },
     { label: "誤答分析・学習プラン", included: false },
@@ -99,6 +100,7 @@ export const PREMIUM_PLAN: Plan = {
   features: [
     { label: "Free の全機能", included: true },
     { label: "AI コパイロット 1日500回", included: true, detail: "Gemini 2.5 Flash" },
+    { label: "AI 論述添削（午後II）", included: true, detail: "無制限" },
     { label: "詳細応答モード", included: true },
     { label: "マルチターン会話", included: true },
     { label: "類題自動生成", included: true },
@@ -138,6 +140,7 @@ export const TEAM_PLAN: Plan = {
   },
   features: [
     { label: "Premium の全機能", included: true },
+    { label: "AI 論述添削（午後II） 無制限", included: true },
     { label: "席数無制限", included: true },
     { label: "法人ダッシュボード", included: true },
     { label: "メンバー・部署管理", included: true },

@@ -27,7 +27,7 @@ import { PremiumCheckoutButton } from "./PremiumCheckoutButton";
 export const metadata: Metadata = {
   title: "料金プラン",
   description:
-    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、詳細応答・類題生成・誤答分析が使えます。β公開中・全機能無料。",
+    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、AI 論述添削 無制限、詳細応答・類題生成・誤答分析が使えます。β公開中・全機能無料。",
   alternates: { canonical: "/pricing" },
 };
 
@@ -330,6 +330,10 @@ function FeatureComparisonTable() {
     {
       label: "AI コパイロット / 日",
       values: ["50 回", "500 回", "500 回"],
+    },
+    {
+      label: "AI 論述添削（午後II）",
+      values: ["月3回", "無制限", "無制限"],
     },
     {
       label: "利用 AI モデル",
