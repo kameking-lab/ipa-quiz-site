@@ -96,3 +96,28 @@
 - 工数: 4-6 時間
 - 優先度: 低（β中は許容、本番 PWA install 機能訴求時に対応）
 - 検出ループ: Round 2 Loop 3
+
+## M2-14. recharts を dynamic() で lazy load
+- 現状: `app/admin/team/ExamProgressChart.tsx` で recharts 直接 import、admin user 以外も bundle に含む
+- 推奨: `dynamic(() => import("recharts").then(...))` で client-side 限定遅延 load
+- 工数: 1-2 時間
+- 検出ループ: Round 2 Loop 4
+
+## M2-15. SITEMAP_CHUNK_SIZE 拡張
+- 現状: `lib/seo/sitemap-pagination.ts:4` SITEMAP_CHUNK_SIZE=10000、Google 推奨は 50000
+- 推奨: 50000 へ拡張（chunk 数削減で sitemap index も簡素化）
+- 工数: 30 分
+- 検出ループ: Round 2 Loop 4
+
+## M2-16. CSP script-src SHA-256 化
+- 現状: theme bootstrap inline script のため `'unsafe-inline'` 許可
+- 推奨: SHA-256 ハッシュ化または nonce 化で XSS 軽減力強化
+- 工数: 2-3 時間
+- 優先度: 中（XSS リスク低だが defense-in-depth）
+- 検出ループ: Round 2 Loop 4
+
+## M2-17. Vercel Live preview を production CSP から除外
+- 現状: `next.config.ts` で connect-src/frame-src に `vercel.live` `pusher` を常時許可
+- 推奨: `process.env.VERCEL_ENV === "preview"` 時のみ許可
+- 工数: 30 分
+- 検出ループ: Round 2 Loop 4

@@ -130,8 +130,16 @@ export default function PrivacyPage() {
             title="Cookie・トラッキング"
           >
             <p>
-              本サービスは現在、行動トラッキング目的の Cookie や外部アナリティクスを使用していません。
-              テーマ設定などの機能のみ localStorage を使用します。
+              本サービスは、UX 改善のため <strong>Vercel Web Analytics</strong> を利用してページビューと匿名イベント（クイズ開始・回答送信・AI 利用回数等）を計測しています。
+              個人を特定する識別子は送信されず、Vercel Analytics は <strong>Cookie を使用しない</strong> プライバシー重視のアナリティクスです（IP ハッシュ化と国レベルの集計のみ）。
+            </p>
+            <p>
+              テーマ設定・学習履歴（匿名利用時）は localStorage を使用します。
+              ログイン後はクラウド同期が有効化され、第8項に記載の通り Neon Postgres に保存されます。
+            </p>
+            <p>
+              第三者 Cookie の発行はありません（Stripe Checkout への遷移時を除く）。
+              アナリティクスを無効化する場合は、ブラウザの DNT (Do Not Track) ヘッダ、もしくは uBlock Origin 等の拡張機能で `va.vercel-scripts.com` をブロックしてください。
             </p>
           </Section>
 

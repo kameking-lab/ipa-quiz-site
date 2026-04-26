@@ -132,6 +132,7 @@ export async function POST(req: Request) {
   return new Response(stream, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store, no-cache, must-revalidate",
       "X-RateLimit-Limit": String(rl.limit),
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),
