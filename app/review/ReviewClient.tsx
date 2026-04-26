@@ -33,11 +33,7 @@ function getTodayStr(): string {
   return new Date().toISOString().slice(0, 10);
 }
 
-interface ReviewClientProps {
-  allQuestions: Question[];
-}
-
-export function ReviewClient({ allQuestions }: ReviewClientProps) {
+export function ReviewClient() {
   const [store, setStore] = useState<ReviewStore>({});
   const [dueQuestions, setDueQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -51,47 +47,52 @@ export function ReviewClient({ allQuestions }: ReviewClientProps) {
     nextReviewDate: string | null;
   }>({ seenCount: 0, scheduledCount: 0, nextReviewDate: null });
 
-  // localStorage から読み込み
+  // 問題データとlocalStorageを同時にロード（クライアント専用）
   useEffect(() => {
-    try {
-      const raw = localStorage.getItem(REVIEW_KEY);
-      const loaded: ReviewStore = raw ? (JSON.parse(raw) as ReviewStore) : {};
-      setStore(loaded);
+    void (async () => {
+      try {
+        const { getAllQuestions } = await import("@/lib/questions/load");
+        const allQuestions = getAllQuestions();
 
-      // 今日が復習日の問題を抽出
-      const today = getTodayStr();
-      const historyRaw = localStorage.getItem(LS_KEYS.history);
-      const history: Array<{ questionId: string }> = historyRaw
-        ? (JSON.parse(historyRaw) as Array<{ questionId: string }>)
-        : [];
+        const raw = localStorage.getItem(REVIEW_KEY);
+        const loaded: ReviewStore = raw ? (JSON.parse(raw) as ReviewStore) : {};
+        setStore(loaded);
 
-      // 一度でも解いた問題のうち、今日が復習日のもの
-      const seenIds = new Set(history.map((h) => h.questionId));
-      const due = allQuestions.filter((q) => {
-        if (!seenIds.has(q.id)) return false;
-        if (q.type !== "multiple-choice" || q.hasImage || q.needsReview) return false;
-        const record = loaded[q.id];
-        if (!record) return true; // 未登録は今日が復習日
-        return record.nextReviewAt <= today;
-      });
+        // 今日が復習日の問題を抽出
+        const today = getTodayStr();
+        const historyRaw = localStorage.getItem(LS_KEYS.history);
+        const history: Array<{ questionId: string }> = historyRaw
+          ? (JSON.parse(historyRaw) as Array<{ questionId: string }>)
+          : [];
 
-      // 空状態のための補助情報を計算（学習履歴の総数・スケジュール済み件数・次回復習日）
-      const futureDates = Object.values(loaded)
-        .map((r) => r.nextReviewAt)
-        .filter((d) => d > today)
-        .sort();
-      setEmptyMeta({
-        seenCount: seenIds.size,
-        scheduledCount: Object.keys(loaded).length,
-        nextReviewDate: futureDates[0] ?? null,
-      });
+        // 一度でも解いた問題のうち、今日が復習日のもの
+        const seenIds = new Set(history.map((h) => h.questionId));
+        const due = allQuestions.filter((q) => {
+          if (!seenIds.has(q.id)) return false;
+          if (q.type !== "multiple-choice" || q.hasImage || q.needsReview) return false;
+          const record = loaded[q.id];
+          if (!record) return true; // 未登録は今日が復習日
+          return record.nextReviewAt <= today;
+        });
 
-      setDueQuestions(due.sort(() => Math.random() - 0.5));
-      setInitialized(true);
-    } catch {
-      setInitialized(true);
-    }
-  }, [allQuestions]);
+        // 空状態のための補助情報を計算（学習履歴の総数・スケジュール済み件数・次回復習日）
+        const futureDates = Object.values(loaded)
+          .map((r) => r.nextReviewAt)
+          .filter((d) => d > today)
+          .sort();
+        setEmptyMeta({
+          seenCount: seenIds.size,
+          scheduledCount: Object.keys(loaded).length,
+          nextReviewDate: futureDates[0] ?? null,
+        });
+
+        setDueQuestions(due.sort(() => Math.random() - 0.5));
+        setInitialized(true);
+      } catch {
+        setInitialized(true);
+      }
+    })();
+  }, []);
 
   const saveStore = useCallback((newStore: ReviewStore) => {
     setStore(newStore);

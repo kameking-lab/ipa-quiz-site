@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { getAllQuestions } from "@/lib/questions/load";
 import { ReviewClient } from "./ReviewClient";
 
 export const metadata: Metadata = {
@@ -9,8 +8,6 @@ export const metadata: Metadata = {
 };
 
 export default function ReviewPage() {
-  const allQuestions = getAllQuestions();
-
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-10">
       <div className="mb-6">
@@ -19,7 +16,7 @@ export default function ReviewPage() {
           エビングハウスの忘却曲線に基づいて、今日復習すべき問題を自動表示します。
         </p>
       </div>
-      <ReviewClient allQuestions={allQuestions} />
+      <ReviewClient />
     </main>
   );
 }
