@@ -9,6 +9,7 @@ import { ExplanationCard } from "./ExplanationCard";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { PremiumUpsellDialog } from "@/components/PremiumUpsellDialog";
 import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
+import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Loader2, Sparkles, Timer } from "lucide-react";
@@ -117,6 +118,7 @@ export function QuizPlayer({
         at: Date.now(),
       });
       recordStudyOnDate();
+      recordReview(question.id, correct);
       setStats((s) => ({ answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) }));
 
       const nextCombo = correct ? combo + 1 : 0;

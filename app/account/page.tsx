@@ -242,6 +242,71 @@ export default async function AccountPage({
         </CardContent>
       </Card>
 
+      {/* Learning science tools */}
+      <Card className="mb-6">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
+              <Sparkles className="h-3.5 w-3.5" />
+            </span>
+            学習科学ツール
+          </CardTitle>
+          <CardDescription>合格戦略を最適化する Premium 機能。</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <ul className="grid gap-2 sm:grid-cols-2">
+            <li>
+              <Link
+                href="/account/weakness"
+                className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
+              >
+                <span>
+                  <span className="font-medium">弱点ヒートマップ</span>
+                  <span className="ml-2 text-xs text-muted-foreground">分野別正答率</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/account/pass-simulator"
+                className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
+              >
+                <span>
+                  <span className="font-medium">合格判定シミュレータ</span>
+                  <span className="ml-2 text-xs text-muted-foreground">合格確率</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/account/tutor"
+                className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
+              >
+                <span>
+                  <span className="font-medium">AI チューター</span>
+                  <span className="ml-2 text-xs text-muted-foreground">月次レポート</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/ranking"
+                className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
+              >
+                <span>
+                  <span className="font-medium">全国模試ランキング</span>
+                  <span className="ml-2 text-xs text-muted-foreground">パーセンタイル</span>
+                </span>
+                <ArrowRight className="h-4 w-4 text-muted-foreground" />
+              </Link>
+            </li>
+          </ul>
+        </CardContent>
+      </Card>
+
       {/* History sync */}
       <Card className="mb-6">
         <CardHeader>

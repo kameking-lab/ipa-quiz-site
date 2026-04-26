@@ -81,7 +81,7 @@ export const PREMIUM_PLAN: Plan = {
   monthlyPriceJpy: 980,
   billing: "monthly",
   description:
-    "AI コパイロットが 1 日 500 回まで使える個人向けプラン。詳細解説・類題生成・学習プランで弱点を潰し切る。",
+    "弱点ヒートマップ・合格判定シミュレータ・AI チューターで合格戦略を最適化。AI コパイロットも 1 日 500 回まで利用可能。",
   limits: {
     aiDailyRequests: 500,
     aiMinuteLimit: 20,
@@ -99,6 +99,9 @@ export const PREMIUM_PLAN: Plan = {
   },
   features: [
     { label: "Free の全機能", included: true },
+    { label: "弱点ヒートマップ", included: true, detail: "分野別レーダー" },
+    { label: "合格判定シミュレータ", included: true, detail: "確率 + 推奨学習量" },
+    { label: "AI チューター月次レポート", included: true },
     { label: "AI コパイロット 1日500回", included: true, detail: "Gemini 2.5 Flash" },
     { label: "AI 論述添削（午後II）", included: true, detail: "無制限" },
     { label: "詳細応答モード", included: true },

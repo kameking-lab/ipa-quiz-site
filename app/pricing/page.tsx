@@ -328,6 +328,26 @@ function PlanCard({ plan }: { plan: Plan }) {
 function FeatureComparisonTable() {
   const rows: Array<{ label: string; values: [string, string, string] }> = [
     {
+      label: "弱点ヒートマップ",
+      values: ["—", "◎", "◎"],
+    },
+    {
+      label: "合格判定シミュレータ",
+      values: ["—", "◎", "◎"],
+    },
+    {
+      label: "AI チューター月次レポート",
+      values: ["—", "◎", "◎"],
+    },
+    {
+      label: "間隔反復学習 (SM-2)",
+      values: ["基本のみ", "最適化", "最適化"],
+    },
+    {
+      label: "全国模試ランキング",
+      values: ["閲覧のみ", "全機能", "全機能"],
+    },
+    {
       label: "AI コパイロット / 日",
       values: ["50 回", "500 回", "500 回"],
     },

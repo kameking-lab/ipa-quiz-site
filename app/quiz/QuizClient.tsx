@@ -5,6 +5,7 @@ import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import { startSession } from "@/lib/motivation/session";
+import { orderByPriority } from "@/lib/learning/spaced-repetition";
 import { Loader2 } from "lucide-react";
 
 const MAX_POOL = 80;
@@ -30,7 +31,9 @@ function deriveSessionPool(poolIds: string[], mode: QuizMode): string[] {
       ids = ids.filter((id) => !answered.has(id));
     }
   }
-  if (mode === "random" || mode === "review" || mode === "unanswered") {
+  if (mode === "review") {
+    ids = orderByPriority(ids);
+  } else if (mode === "random" || mode === "unanswered") {
     shuffleInPlace(ids);
   }
   return ids.slice(0, MAX_POOL);

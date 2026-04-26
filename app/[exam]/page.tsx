@@ -19,6 +19,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar, ChevronRight, Sparkles, Tags } from "lucide-react";
+import { BeginnerGuide } from "@/components/quiz/BeginnerGuide";
 
 export const dynamicParams = false;
 
@@ -154,6 +155,11 @@ export default async function ExamTopPage({
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
         </header>
+
+        {/* Beginner guide */}
+        <section aria-label="ここから始めよう" className="mb-8">
+          <BeginnerGuide exam={code} />
+        </section>
 
         {/* Random quiz CTA */}
         <section aria-label="クイズを始める" className="mb-10">

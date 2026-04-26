@@ -11,6 +11,10 @@ export const LS_KEYS = {
   studyDays: "ipa-quiz:study-days:v1",
   earnedBadges: "ipa-quiz:earned-badges:v1",
   premiumCoupon: "ipa-quiz:premium-coupon:v1",
+  spacedRepetition: "ipa-quiz:srs:v1",
+  examDate: "ipa-quiz:exam-date:v1",
+  mockScores: "ipa-quiz:mock-scores:v1",
+  rankingNickname: "ipa-quiz:ranking-nickname:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

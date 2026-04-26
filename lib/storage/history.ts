@@ -46,6 +46,7 @@ export interface HistoryStore {
   getWrongIds(): string[];
   getStarredIds(): string[];
   getRecentIds(n: number): string[];
+  getAllEntries(): HistoryEntry[];
   getStats(): {
     total: number;
     correct: number;
@@ -101,6 +102,9 @@ export function createHistoryStore(): HistoryStore {
         .reverse()
         .map((e) => e.id)
         .slice(0, n * 20);
+    },
+    getAllEntries() {
+      return [...snapshot().entries];
     },
     getStats() {
       const data = snapshot();
