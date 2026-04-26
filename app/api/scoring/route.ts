@@ -5,6 +5,7 @@ import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
+import { captureException } from "@/lib/monitoring/sentry";
 import type {
   AfternoonAnswer,
   AfternoonQuestion,
@@ -262,8 +263,13 @@ export async function POST(req: Request) {
           buf += chunk;
         }
       } catch (err) {
+        await captureException(err, {
+          route: "/api/scoring",
+          extra: { questionId: question.id, provider: provider.name, model },
+        });
         const fallback = buildMockScoring(question, payload.answers);
-        fallback.overallComment = `AI採点中にエラーが発生したため、簡易採点を表示しています: ${err instanceof Error ? err.message : String(err)}`;
+        fallback.overallComment =
+          "AI採点中にエラーが発生したため、簡易採点を表示しています。少し時間を置いて再度お試しください。";
         controller.enqueue(encoder.encode(JSON.stringify(fallback)));
         controller.close();
         return;

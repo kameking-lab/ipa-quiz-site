@@ -6,6 +6,7 @@ import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, QUICK_ACTIONS } from "@/li
 import type { QuickActionId } from "@/lib/ai/prompts";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
+import { captureException } from "@/lib/monitoring/sentry";
 
 export const runtime = "nodejs";
 
@@ -119,9 +120,13 @@ export async function POST(req: Request) {
         }
         controller.close();
       } catch (err) {
+        await captureException(err, {
+          route: "/api/copilot",
+          extra: { provider: provider.name, model },
+        });
         controller.enqueue(
           encoder.encode(
-            `\n\n[エラー] AI応答の取得に失敗しました: ${err instanceof Error ? err.message : String(err)}`,
+            "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。",
           ),
         );
         controller.close();
