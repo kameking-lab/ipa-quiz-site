@@ -29,6 +29,9 @@ function parseDsn(dsn: string): SentryDsn | null {
 }
 
 const DSN = process.env.SENTRY_DSN ? parseDsn(process.env.SENTRY_DSN) : null;
+if (process.env.SENTRY_DSN && !DSN) {
+  console.warn("[sentry] SENTRY_DSN is set but failed to parse — error capture is disabled");
+}
 const ENVIRONMENT = process.env.SENTRY_ENVIRONMENT ?? process.env.VERCEL_ENV ?? "development";
 const RELEASE = process.env.VERCEL_GIT_COMMIT_SHA ?? "dev";
 
