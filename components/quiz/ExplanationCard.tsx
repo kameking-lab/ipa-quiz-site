@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
+import Link from "next/link";
+import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
@@ -137,6 +138,22 @@ export function ExplanationCard({
           <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
+
+      {!isCorrect && (
+        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-3 dark:border-amber-900/40 dark:bg-amber-950/20">
+          <p className="mb-2 text-xs font-medium text-amber-800 dark:text-amber-200">
+            苦手分野を克服しませんか？
+          </p>
+          <Link
+            href="/modes/topic"
+            data-track="explanation-cta-topic"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-95"
+          >
+            <Tags className="h-3.5 w-3.5" />
+            分野別で集中対策
+          </Link>
+        </div>
+      )}
 
       <div className="mt-3 space-y-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
         <p>

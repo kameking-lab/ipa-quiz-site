@@ -3,30 +3,15 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
-import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
-import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
+import { StreakBadge } from "@/lib/streak/StreakBadge";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
-import { BadgeTracker } from "@/components/motivation/BadgeTracker";
-import { CouponTracker } from "@/components/motivation/CouponTracker";
-import { TrustBadge } from "@/components/TrustBadge";
-import { XFollowButton } from "@/components/XFollowButton";
 import { Analytics } from "@vercel/analytics/next";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-  preload: true,
-});
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-  preload: false,
-});
+const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
@@ -34,12 +19,12 @@ const BASE_URL =
 
 export const metadata: Metadata = {
   title: {
-    default: "過去問AI — AIネイティブ過去問学習",
-    template: "%s | 過去問AI",
+    default: "IPA Quiz — AIネイティブ過去問学習",
+    template: "%s | IPA Quiz",
   },
   description:
-    "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
-  applicationName: "過去問AI",
+    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+  applicationName: "IPA Quiz",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
   alternates: {
@@ -49,25 +34,22 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
-      { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
     ],
+    apple: "/icon-192.svg",
   },
   openGraph: {
-    title: "過去問AI — AIネイティブ過去問学習",
+    title: "IPA Quiz — AIネイティブ過去問学習",
     description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
+      "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。β公開中・全機能無料。",
     type: "website",
     locale: "ja_JP",
-    siteName: "過去問AI",
+    siteName: "IPA Quiz",
     url: BASE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    site: "@kakomon_ai_jp",
-    creator: "@kakomon_ai_jp",
-    title: "過去問AI — AIネイティブ過去問学習",
-    description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
+    title: "IPA Quiz — AIネイティブ過去問学習",
+    description: "応用情報技術者試験の過去問400問をAIコパイロット付きで学習。β公開中・全機能無料。",
   },
 };
 
@@ -97,96 +79,105 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
-          <I18nProvider>
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
           <StreakTracker />
-          <BadgeTracker />
-          <CouponTracker />
           <Analytics />
+          <div className="pointer-events-none fixed right-3 top-3 z-40">
+            <div className="pointer-events-auto">
+              <StreakBadge />
+            </div>
+          </div>
           <a
             href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-sky-600 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white focus:shadow-lg"
           >
             メインコンテンツへスキップ
           </a>
           <div className="flex min-h-[100dvh] flex-col">
-            <SiteHeader />
-            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
-              {children}
+            <span id="main-content" aria-hidden="true" />
+            {children}
+            {/* Global CTA banner */}
+            <div className="border-t border-sky-100 bg-sky-50 px-4 py-4 dark:border-sky-900/30 dark:bg-sky-950/20">
+              <div className="mx-auto flex max-w-3xl flex-col items-center gap-3 sm:flex-row sm:justify-between">
+                <p className="text-center text-sm font-medium text-sky-900 dark:text-sky-100 sm:text-left">
+                  AIコパイロット付き過去問演習 — 今すぐ無料で始められます
+                </p>
+                <a
+                  href="/quiz?mode=random&exam=ap"
+                  className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 active:scale-95 dark:bg-sky-500 dark:hover:bg-sky-600"
+                  data-track="footer-cta-banner"
+                >
+                  無料で過去問を解く
+                </a>
+              </div>
             </div>
-            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-6 text-xs text-muted-foreground">
-              <div className="mx-auto flex max-w-5xl flex-col gap-4">
-                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:justify-start">
-                  <TrustBadge tone="sky" label="IPA公式準拠" />
-                  <TrustBadge tone="emerald" label="日本国内運営" />
-                  <TrustBadge tone="amber" label="α公開中（無料）" />
-                </div>
-                <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-start">
-                  <div className="text-center sm:text-left">
-                    <div className="mb-1.5">
-                      出典: IPA 情報処理技術者試験（
-                      <a
-                        href="https://www.ipa.go.jp/shiken/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-border hover:text-foreground"
-                      >
-                        ipa.go.jp
-                      </a>
-                      ） /{" "}
+            <footer className="pb-safe mt-auto border-t border-zinc-200 bg-white/60 px-4 py-6 text-xs text-zinc-600 dark:border-zinc-800 dark:bg-zinc-950/60 dark:text-zinc-400">
+              <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
+                <div className="text-center sm:text-left">
+                  <div className="mb-1.5">
+                    <span className="mr-2 inline-block rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                      β公開中
+                    </span>
+                    出典: IPA 情報処理技術者試験（
+                    <a
+                      href="https://www.ipa.go.jp/shiken/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      ipa.go.jp
+                    </a>
+                    ） /{" "}
+                    <Link
+                      href="/about"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      著作権・利用条件
+                    </Link>
+                  </div>
+                  <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
+                    {(
+                      [
+                        ["/terms", "利用規約"],
+                        ["/privacy", "プライバシーポリシー"],
+                        ["/operator", "運営者情報"],
+                        ["/settings", "設定"],
+                      ] as const
+                    ).map(([href, label]) => (
                       <Link
-                        href="/about"
-                        className="underline decoration-border hover:text-foreground"
+                        key={href}
+                        href={href}
+                        className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
                       >
-                        著作権・利用条件
+                        {label}
                       </Link>
-                    </div>
-                    <div className="mb-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
-                      本サービスはIPA公式ではない非公式のサービスです。試験名称はIPAの商標です。
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
-                      {(
-                        [
-                          ["/blog", "ブログ"],
-                          ["/terms", "利用規約"],
-                          ["/privacy", "プライバシーポリシー"],
-                          ["/commerce", "特定商取引法に基づく表記"],
-                          ["/operator", "運営者情報"],
-                          ["/faq", "FAQ"],
-                          ["/settings", "設定"],
-                        ] as const
-                      ).map(([href, label]) => (
-                        <Link
-                          key={href}
-                          href={href}
-                          className="underline decoration-border hover:text-foreground"
-                        >
-                          {label}
-                        </Link>
-                      ))}
-                      <a
-                        href="https://note.com/kakomon_ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-border hover:text-foreground"
-                      >
-                        note
-                      </a>
-                    </div>
+                    ))}
+                    <a
+                      href="https://x.com/kakomon_ai_jp"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      X (@kakomon_ai_jp)
+                    </a>
+                    <a
+                      href="https://note.com/kakomon_ai"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline decoration-zinc-300 hover:text-zinc-900 dark:decoration-zinc-700 dark:hover:text-zinc-100"
+                    >
+                      note
+                    </a>
                   </div>
-                  <div className="flex flex-col items-center gap-3 sm:items-end">
-                    <XFollowButton />
-                    <div className="flex items-center gap-3">
-                      <span className="hidden sm:inline">テーマ:</span>
-                      <ThemeToggle />
-                    </div>
-                  </div>
+                </div>
+                <div className="flex items-center gap-3">
+                  <span className="hidden sm:inline">テーマ:</span>
+                  <ThemeToggle />
                 </div>
               </div>
             </footer>
           </div>
-          </I18nProvider>
         </ThemeProvider>
       </body>
     </html>
