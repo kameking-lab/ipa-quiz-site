@@ -65,6 +65,10 @@ async function notifyByResend(body: z.infer<typeof PayloadSchema>): Promise<void
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
     console.error("[enterprise-contact] Resend send failed", res.status, detail);
+    await captureException(new Error(`Resend send failed: ${res.status} ${detail}`), {
+      route: "/api/contact/enterprise",
+      extra: { status: res.status, to: NOTIFY_TO },
+    });
   }
 }
 

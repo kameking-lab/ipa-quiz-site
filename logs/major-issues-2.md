@@ -129,3 +129,39 @@
 - 工数: 30 分（プロンプト微調整 + 実機検証）
 - 優先度: 中（プロンプト変更は承認必須）
 - 検出ループ: Round 2 Loop 5
+
+## M2-19. 模試モードの時間警告 / 中途離脱 dialog
+- 現状: `app/mock-exam/MockExamClient.tsx` でタイマー実装あり、ただし
+  - 残時間 1 分以下で警告表示なし
+  - 戻るボタン / beforeunload 中途離脱の確認ダイアログなし
+  - Escape キーで途中終了の挙動が未定義
+- 影響: 模試の没入感・操作ミス時の喪失リスク
+- 工数: 4-6 時間
+- 優先度: 中（試験本番想定 UX）
+- 検出ループ: Round 2 Loop 6
+
+## M2-20. 広告コンポーネント実装
+- 現状: `components/ads/` 不在、CLAUDE.md 「無料プラン: 広告表示あり（本文と分離、控えめ）」と乖離
+- 推奨: AdSlot コンポーネント + `isPremium` フラグで条件レンダー、
+  本文と完全分離した位置（フッター / sidebar）配置
+- 工数: 8-12 時間（ASP 申請含む）
+- 優先度: 中（収益化の基盤、フェーズ4 までに実装）
+- 検出ループ: Round 2 Loop 6
+
+## M2-21. Unit test 整備
+- 現状: E2E (Playwright) 6 件のみ、unit test は zero
+- 対象: `lib/streak/core.ts` / `lib/rate-limit/server.ts` / `lib/questions/filter.ts` /
+  Stripe webhook 処理 / StudyRecord 同期ロジック など純粋関数
+- 推奨: Vitest 導入、覆率 50% を目標に段階実装
+- 工数: 16-24 時間（初期セットアップ + 主要ロジック）
+- 優先度: 中（リファクタ安全網）
+- 検出ループ: Round 2 Loop 6
+
+## M2-22. 法人フォーム ハニーポット / レート制限
+- 現状: `app/api/contact/enterprise/route.ts` は zod バリデーションのみ、
+  spam 対策（ハニーポットフィールド・Cloudflare Turnstile 等）なし
+  Resend 経由のため大量送信で月間クォータ消尽リスク
+- 推奨: ハニーポット隠しフィールド + IP 単位レート制限（1日 5 件等）
+- 工数: 2-4 時間
+- 優先度: 中（コスト防衛）
+- 検出ループ: Round 2 Loop 6
