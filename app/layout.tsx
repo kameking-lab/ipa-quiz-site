@@ -94,8 +94,9 @@ export default function RootLayout({
           </a>
           <div className="flex min-h-[100dvh] flex-col">
             <SiteHeader />
-            <span id="main-content" aria-hidden="true" />
-            {children}
+            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+              {children}
+            </div>
             <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-6 text-xs text-muted-foreground">
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
                 <div className="text-center sm:text-left">
