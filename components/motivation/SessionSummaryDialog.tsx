@@ -5,6 +5,8 @@ import { CheckCircle2, Clock, Share2, Sparkles, Target, X } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import type { SessionSummary } from "@/lib/motivation/session";
+import { SocialShare } from "@/components/motivation/SocialShare";
+import { buildOgImageUrl, buildSessionText } from "@/lib/motivation/share";
 
 interface Props {
   open: boolean;
@@ -33,6 +35,7 @@ function buildShareText(s: SessionSummary): string {
 
 export function SessionSummaryDialog({ open, summary, onClose }: Props) {
   const [copied, setCopied] = React.useState(false);
+  const [showShare, setShowShare] = React.useState(false);
 
   const handleShare = React.useCallback(async () => {
     if (!summary) return;
@@ -143,14 +146,42 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
               </div>
             </div>
 
+            <div>
+              <button
+                type="button"
+                onClick={() => setShowShare((v) => !v)}
+                className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-sky-700"
+              >
+                <Share2 className="h-4 w-4" />
+                {showShare ? "シェアパネルを閉じる" : "SNSにシェアする"}
+              </button>
+              {showShare && (
+                <div className="mt-3">
+                  <SocialShare
+                    text={buildSessionText({
+                      count: summary.total,
+                      accuracy: summary.accuracyPct,
+                    })}
+                    url={typeof window !== "undefined" ? window.location.origin : "https://ipa-quiz-site.vercel.app"}
+                    imageUrl={buildOgImageUrl({
+                      type: "session",
+                      title: `${summary.total}問完了 / 正答率${summary.accuracyPct}%`,
+                      count: summary.total,
+                      accuracy: summary.accuracyPct,
+                    })}
+                  />
+                </div>
+              )}
+            </div>
+
             <div className="flex flex-col gap-2 sm:flex-row">
               <Button
-                variant="primary"
+                variant="outline"
                 className="flex-1 gap-2"
                 onClick={handleShare}
               >
                 <Share2 className="h-4 w-4" />
-                {copied ? "コピーしました" : "シェアする"}
+                {copied ? "コピーしました" : "簡易共有"}
               </Button>
               <Button variant="outline" className="flex-1" onClick={onClose}>
                 ホームへ戻る
