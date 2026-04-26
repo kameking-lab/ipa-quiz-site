@@ -14,6 +14,8 @@ import {
   Download,
   Share2,
   Link,
+  Mic,
+  MicOff,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
@@ -26,7 +28,8 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { QUICK_ACTIONS, type QuickActionId } from "@/lib/ai/prompts";
+import { QUICK_ACTIONS, type QuickActionId, type LearnerProfile } from "@/lib/ai/prompts";
+import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
 import {
   FREE_DAILY_LIMIT_CLIENT,
   incrementAiUsage,
@@ -55,6 +58,28 @@ interface Props {
 }
 
 const WRONG_ONLY: QuickActionId = "why-wrong";
+
+interface SpeechRecognitionInstance {
+  lang: string;
+  continuous: boolean;
+  interimResults: boolean;
+  onresult: ((ev: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null;
+  onerror: ((ev: { error?: string }) => void) | null;
+  onend: (() => void) | null;
+  start(): void;
+  stop(): void;
+}
+
+interface WindowWithSpeech extends Window {
+  SpeechRecognition?: new () => SpeechRecognitionInstance;
+  webkitSpeechRecognition?: new () => SpeechRecognitionInstance;
+}
+
+function getSpeechRecognitionCtor(): (new () => SpeechRecognitionInstance) | null {
+  if (typeof window === "undefined") return null;
+  const w = window as WindowWithSpeech;
+  return w.SpeechRecognition ?? w.webkitSpeechRecognition ?? null;
+}
 
 function usageCounterClass(remaining: number): string {
   if (remaining <= 3) return "bg-red-100 text-red-700 dark:bg-red-950/60 dark:text-red-300";
@@ -135,9 +160,13 @@ export function CopilotPanel({
   const [shareOpen, setShareOpen] = React.useState(false);
   const [shareUrl, setShareUrl] = React.useState("");
   const [toast, setToast] = React.useState<string | null>(null);
-
+  const [profile, setProfile] = React.useState<LearnerProfile | undefined>(undefined);
+  const [voiceState, setVoiceState] = React.useState<
+    "idle" | "listening" | "unsupported" | "denied"
+  >("idle");
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+  const recognitionRef = React.useRef<SpeechRecognitionInstance | null>(null);
   const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
   const toastTimerRef = React.useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -149,6 +178,7 @@ export function CopilotPanel({
     toastTimerRef.current = setTimeout(() => setToast(null), 2200);
   }, []);
 
+  // Reset conversation when question changes; refresh profile snapshot
   React.useEffect(() => {
     setMessages([]);
     setInput("");
@@ -157,7 +187,26 @@ export function CopilotPanel({
     setCopiedAll(false);
     setShareOpen(false);
     setToast(null);
+    setProfile(buildLearnerProfileFromHistory());
   }, [question.id]);
+
+  // Detect Web Speech API availability once
+  React.useEffect(() => {
+    if (typeof window === "undefined") return;
+    const Ctor = getSpeechRecognitionCtor();
+    if (!Ctor) setVoiceState("unsupported");
+  }, []);
+
+  // Stop any active recognition on unmount
+  React.useEffect(() => {
+    return () => {
+      try {
+        recognitionRef.current?.stop();
+      } catch {
+        // ignore
+      }
+    };
+  }, []);
 
   React.useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
@@ -207,6 +256,7 @@ export function CopilotPanel({
             isCorrect,
             tier: premium ? "premium" : "free",
             quickAction,
+            learnerProfile: profile,
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
@@ -267,8 +317,67 @@ export function CopilotPanel({
         setStreaming(false);
       }
     },
-    [streaming, premium, usage.count, messages, question, selectedChoice, isCorrect, onRateLimitHit],
+    [
+      streaming,
+      premium,
+      usage.count,
+      messages,
+      question,
+      selectedChoice,
+      isCorrect,
+      onRateLimitHit,
+      profile,
+    ],
   );
+
+  const toggleVoice = React.useCallback(() => {
+    if (voiceState === "unsupported") return;
+    if (voiceState === "listening") {
+      try {
+        recognitionRef.current?.stop();
+      } catch {
+        // ignore
+      }
+      return;
+    }
+    const Ctor = getSpeechRecognitionCtor();
+    if (!Ctor) {
+      setVoiceState("unsupported");
+      return;
+    }
+    try {
+      const rec = new Ctor();
+      rec.lang = "ja-JP";
+      rec.continuous = false;
+      rec.interimResults = true;
+      rec.onresult = (ev) => {
+        let finalText = "";
+        for (let i = 0; i < ev.results.length; i++) {
+          const alt = ev.results[i][0];
+          if (alt) finalText += alt.transcript;
+        }
+        if (finalText.trim()) {
+          setInput((prev) => (prev ? `${prev} ${finalText}` : finalText));
+        }
+      };
+      rec.onerror = (ev) => {
+        if (ev.error === "not-allowed" || ev.error === "service-not-allowed") {
+          setVoiceState("denied");
+        } else {
+          setVoiceState("idle");
+        }
+      };
+      rec.onend = () => {
+        setVoiceState((s) => (s === "denied" || s === "unsupported" ? s : "idle"));
+        recognitionRef.current = null;
+      };
+      recognitionRef.current = rec;
+      rec.start();
+      setVoiceState("listening");
+    } catch {
+      setVoiceState("idle");
+    }
+  }, [voiceState]);
 
   const handleCopyMessage = React.useCallback(
     async (idx: number, content: string) => {
@@ -341,13 +450,17 @@ export function CopilotPanel({
 
   const quickActionIds: QuickActionId[] = [
     "term",
+    "simplify",
+    "detailed",
+    "example",
+    "mnemonic",
+    "similar",
+    "socratic",
+    "prerequisite",
     "analyze-a",
     "analyze-i",
     "analyze-u",
     "analyze-e",
-    "simplify",
-    "similar",
-    "prerequisite",
   ];
   if (isCorrect === false) quickActionIds.unshift(WRONG_ONLY);
 
@@ -366,7 +479,7 @@ export function CopilotPanel({
           {!premium && (() => {
             const remaining = Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0);
             return (
-              <div className="group/usage relative ml-2">
+              <div className="group/usage relative ml-2 flex items-center gap-1.5">
                 <span
                   className={cn(
                     "cursor-default rounded-full px-2 py-0.5 text-[10px] font-medium",
@@ -375,10 +488,13 @@ export function CopilotPanel({
                 >
                   残り {remaining}/{FREE_DAILY_LIMIT_CLIENT} 回
                 </span>
+                <span className="hidden text-[10px] text-zinc-500 dark:text-zinc-400 sm:inline">
+                  · JST 0:00 リセット
+                </span>
                 <div className="invisible absolute left-0 top-full z-50 mt-1.5 w-56 rounded-xl border border-zinc-200 bg-white p-3 text-[11px] leading-relaxed text-zinc-600 shadow-lg group-hover/usage:visible dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
                   <p className="mb-1 font-semibold text-zinc-800 dark:text-zinc-200">AI 利用回数について</p>
                   <p>クイックアクションまたはテキスト送信のたびに 1 回消費します。</p>
-                  <p className="mt-1">毎日 JST 0:00（{jstResetTime()} ごろ）にリセットされます。</p>
+                  <p className="mt-1">毎日 JST 0:00（端末時刻で{jstResetTime()} ごろ）にリセットされます。</p>
                   {remaining === 0 && (
                     <p className="mt-1 font-semibold text-red-600 dark:text-red-400">
                       本日の上限に達しました。
@@ -576,9 +692,46 @@ export function CopilotPanel({
             }
           }}
           rows={2}
-          placeholder="AIに質問… (Enter 送信 / Shift+Enter 改行)"
+          placeholder={
+            voiceState === "listening"
+              ? "話してください…"
+              : "AIに質問… (Enter 送信 / Shift+Enter 改行)"
+          }
           className="min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
         />
+        {voiceState !== "unsupported" && (
+          <Button
+            type="button"
+            variant={voiceState === "listening" ? "primary" : "ghost"}
+            size="icon"
+            onClick={toggleVoice}
+            disabled={streaming || voiceState === "denied"}
+            aria-label={
+              voiceState === "listening"
+                ? "音声入力を停止"
+                : voiceState === "denied"
+                  ? "マイクが拒否されました"
+                  : "音声入力を開始"
+            }
+            title={
+              voiceState === "denied"
+                ? "ブラウザのマイク権限を許可してください"
+                : voiceState === "listening"
+                  ? "停止"
+                  : "音声で質問"
+            }
+            className={cn(
+              voiceState === "listening" && "animate-pulse",
+              voiceState === "denied" && "opacity-50",
+            )}
+          >
+            {voiceState === "denied" ? (
+              <MicOff className="h-4 w-4" />
+            ) : (
+              <Mic className="h-4 w-4" />
+            )}
+          </Button>
+        )}
         <Button
           type="submit"
           variant="primary"

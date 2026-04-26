@@ -2,8 +2,13 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
-import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, QUICK_ACTIONS } from "@/lib/ai/prompts";
-import type { QuickActionId } from "@/lib/ai/prompts";
+import {
+  COPILOT_SYSTEM_PROMPT,
+  buildQuestionContext,
+  buildLearnerProfileContext,
+  QUICK_ACTIONS,
+} from "@/lib/ai/prompts";
+import type { QuickActionId, LearnerProfile } from "@/lib/ai/prompts";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
 import { captureException } from "@/lib/monitoring/sentry";
@@ -34,6 +39,14 @@ const BodySchema = z.object({
   selectedChoice: z.string().optional(),
   isCorrect: z.boolean().optional(),
   quickAction: z.string().optional(),
+  learnerProfile: z
+    .object({
+      totalAnswered: z.number().int().min(0).max(100000),
+      uniqueAnswered: z.number().int().min(0).max(100000),
+      accuracy: z.number().min(0).max(1),
+      weakCategories: z.array(z.string().max(60)).max(10),
+    })
+    .optional(),
   // tier is accepted from client but ignored server-side during beta —
   // all users receive the same limits regardless of what they send.
   tier: z.enum(["free", "premium"]).default("free"),
@@ -75,7 +88,16 @@ export async function POST(req: Request) {
     payload.isCorrect,
   );
 
-  const system = `${COPILOT_SYSTEM_PROMPT}\n\n---\n${questionContext}`;
+  const profileContext = payload.learnerProfile
+    ? buildLearnerProfileContext(payload.learnerProfile satisfies LearnerProfile)
+    : null;
+
+  const system = [
+    COPILOT_SYSTEM_PROMPT,
+    "---",
+    questionContext,
+    ...(profileContext ? ["---", profileContext] : []),
+  ].join("\n\n");
 
   const userMessages = [...payload.messages];
   if (quickPrompt) {
