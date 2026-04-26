@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics/events";
 
 const ERROR_MESSAGES: Record<string, string> = {
   stripe_not_configured: "決済サービスの準備中です。しばらく待ってからお試しください。",
@@ -26,6 +27,7 @@ export function PremiumCheckoutButton({ label }: { label: string }) {
   async function handleClick() {
     setLoading(true);
     setError(null);
+    trackEvent({ name: "checkout_started", plan: "premium", source: "pricing" });
     try {
       const res = await fetch("/api/stripe/checkout", {
         method: "POST",

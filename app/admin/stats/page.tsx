@@ -318,6 +318,11 @@ const EVENT_DOCS: Array<{ name: string; purpose: string; props: string }> = [
   { name: "email_signup", purpose: "メアド登録", props: "source, plan?" },
   { name: "streak_milestone", purpose: "ストリーク達成", props: "days" },
   { name: "exam_select", purpose: "試験区分選択", props: "exam" },
+  { name: "signin_started", purpose: "ログイン開始", props: "provider, source?" },
+  { name: "checkout_started", purpose: "Stripe Checkout 起動", props: "plan, source" },
+  { name: "checkout_completed", purpose: "決済完了 (success_url 着地)", props: "plan, sessionId?" },
+  { name: "checkout_canceled", purpose: "決済キャンセル", props: "plan?, source?" },
+  { name: "billing_portal_opened", purpose: "Customer Portal 起動", props: "plan" },
 ];
 
 const EXTERNAL_LINKS: Array<{ title: string; body: string; icon: React.ReactNode }> = [

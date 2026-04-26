@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics/events";
 
 export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
   const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
     setError(null);
     setLoading(true);
     try {
+      trackEvent({ name: "signin_started", provider: "email", source: callbackUrl });
       const res = await signIn("nodemailer", {
         email,
         callbackUrl: callbackUrl || "/",

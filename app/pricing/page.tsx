@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Suspense } from "react";
 import {
   Check,
   Minus,
@@ -23,6 +24,7 @@ import {
 } from "@/lib/plans";
 import { EmailSignupForm } from "./EmailSignupForm";
 import { PremiumCheckoutButton } from "./PremiumCheckoutButton";
+import { PricingViewTracker } from "./PricingViewTracker";
 
 export const metadata: Metadata = {
   title: "料金プラン",
@@ -36,6 +38,9 @@ export default function PricingPage() {
 
   return (
     <main className="flex-1">
+      <Suspense fallback={null}>
+        <PricingViewTracker />
+      </Suspense>
       {/* ============== HERO ============== */}
       <section className="relative overflow-hidden">
         <div

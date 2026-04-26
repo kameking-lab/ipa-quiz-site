@@ -3,14 +3,16 @@
 import { useState } from "react";
 import { CreditCard, AlertCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics/events";
 
-export function BillingActions() {
+export function BillingActions({ plan = "premium" }: { plan?: string } = {}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   async function openPortal() {
     setError(null);
     setLoading(true);
+    trackEvent({ name: "billing_portal_opened", plan });
     try {
       const res = await fetch("/api/stripe/portal", { method: "POST" });
       if (!res.ok) {

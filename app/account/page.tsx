@@ -108,6 +108,11 @@ export default async function AccountPage({
             <div className="font-semibold">決済を受け付けました</div>
             <div className="mt-0.5 text-xs text-emerald-800/90 dark:text-emerald-200/90">
               プラン反映まで数秒お待ちください（Webhook 処理後に反映）。
+              詳細は{" "}
+              <Link href="/account/billing" className="underline">
+                請求情報
+              </Link>
+              {" "}から確認できます。
             </div>
           </div>
         </div>
