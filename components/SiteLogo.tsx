@@ -15,7 +15,7 @@ export function SiteLogo({ className, iconOnly = false }: Props) {
       </span>
       {!iconOnly && (
         <span className="text-base font-bold tracking-tight text-foreground">
-          IPA Quiz
+          過去問AI
         </span>
       )}
     </span>

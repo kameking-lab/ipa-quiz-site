@@ -20,7 +20,7 @@ import { examLabel } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "アナリティクス（管理画面）",
-  description: "IPA Quiz の内部アナリティクスダッシュボード。Basic Auth 保護。",
+  description: "過去問AI の内部アナリティクスダッシュボード。Basic Auth 保護。",
   robots: { index: false, follow: false },
 };
 

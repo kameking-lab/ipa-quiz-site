@@ -54,7 +54,7 @@ Restricted Key と Webhook Signing Secret は **別物**。Webhook 用は別途�
 Premium プランの 2 種（月額・年額）の Price ID:
 
 1. <https://dashboard.stripe.com/products>（Live モード）
-2. `IPA Quiz Premium` をクリック
+2. `過去問AI Premium` をクリック
 3. `Pricing` セクションに月額 / 年額 2 つ表示される。それぞれの `price_...` をコピー
 
 Team プランも同様（公開後に必要）。

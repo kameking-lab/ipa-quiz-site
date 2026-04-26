@@ -8,14 +8,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "よくある質問（FAQ）— IPA Quizの使い方・料金・AI解説の精度",
+  title: "よくある質問（FAQ）— 過去問AIの使い方・料金・AI解説の精度",
   description:
-    "IPA Quizの対象試験・料金・AIコパイロットの精度・過去問の出典・プレミアムプラン・オフライン利用など、よくある質問にまとめてお答えします。",
+    "過去問AIの対象試験・料金・AIコパイロットの精度・過去問の出典・プレミアムプラン・オフライン利用など、よくある質問にまとめてお答えします。",
   alternates: { canonical: "/faq" },
   openGraph: {
-    title: "よくある質問（FAQ） | IPA Quiz",
+    title: "よくある質問（FAQ） | 過去問AI",
     description:
-      "IPA Quiz の利用方法・料金・AI解説・過去問の出典などのよくある質問と回答。",
+      "過去問AI の利用方法・料金・AI解説・過去問の出典などのよくある質問と回答。",
     url: "/faq",
     type: "website",
     siteName: SITE_NAME,
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "よくある質問（FAQ） | IPA Quiz",
+    title: "よくある質問（FAQ） | 過去問AI",
     description:
-      "IPA Quiz の利用方法・料金・AI解説・過去問の出典などのよくある質問と回答。",
+      "過去問AI の利用方法・料金・AI解説・過去問の出典などのよくある質問と回答。",
   },
 };
 
@@ -36,14 +36,14 @@ interface FaqItem {
 
 const FAQS: FaqItem[] = [
   {
-    question: "IPA Quiz はどの試験に対応していますか？",
+    question: "過去問AI はどの試験に対応していますか？",
     answer:
       "IPA（情報処理推進機構）が実施する全13区分（ITパスポート / 情報セキュリティマネジメント / 基本情報 / 応用情報 / ITストラテジスト / システムアーキテクト / プロジェクトマネージャ / ネットワーク / データベース / エンベデッド / 情報処理安全確保支援士 / ITサービスマネージャ / システム監査）の過去問を収録済みです。合計 12,000 問超を AI コパイロット付きで学習できます。",
   },
   {
     question: "利用料金は？ 無料ですか？",
     answer:
-      "β公開中は全機能を無料でお使いいただけます。無料プランは AI コパイロットが 1 日 50 回まで利用可能（JST 0:00 リセット）。将来的には月額 980 円のプレミアムプランで AI コパイロットを 1 日 500 回まで拡張する予定ですが、現在はまだ提供していません。",
+      "α公開中は全機能を無料でお使いいただけます。無料プランは AI コパイロットが 1 日 50 回まで利用可能（JST 0:00 リセット）。将来的には月額 980 円のプレミアムプランで AI コパイロットを 1 日 500 回まで拡張する予定ですが、現在はまだ提供していません。",
   },
   {
     question: "AI コパイロットの解説は信頼できますか？",
@@ -160,7 +160,7 @@ export default function FaqPage() {
             </span>
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            IPA Quiz の使い方・料金・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします。
+            過去問AI の使い方・料金・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします。
           </p>
         </header>
 

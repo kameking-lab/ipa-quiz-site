@@ -21,7 +21,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "利用規約",
   description:
-    "過去問AI（IPA Quiz）の利用規約。サービス概要・AI 生成・免責・禁止事項・出典・準拠法・利用料金・解約・会員資格・年齢制限について。",
+    "過去問AI（過去問AI）の利用規約。サービス概要・AI 生成・免責・禁止事項・出典・準拠法・利用料金・解約・会員資格・年齢制限について。",
   alternates: { canonical: "/terms" },
 };
 

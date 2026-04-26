@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "データ処理委託契約（DPA）",
   description:
-    "IPA Quiz の法人向けデータ処理委託契約 (Data Processing Agreement) のテンプレート。サブプロセッサー一覧、データ取扱条件、削除・返却ポリシー。",
+    "過去問AI の法人向けデータ処理委託契約 (Data Processing Agreement) のテンプレート。サブプロセッサー一覧、データ取扱条件、削除・返却ポリシー。",
   alternates: { canonical: "/legal/dpa" },
 };
 
@@ -63,7 +63,7 @@ export default function DpaPage() {
           データ処理委託契約 (DPA)
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          本ページは IPA Quiz が法人顧客との間で締結する{" "}
+          本ページは 過去問AI が法人顧客との間で締結する{" "}
           <strong>データ処理委託契約 (Data Processing Agreement)</strong> の標準雛形を
           公開するものです。Team プラン契約時には本テンプレートに基づき個別 DPA を締結します。
           PDF 版は法人パイロット申込後に別途お送りします（現在は HTML 版のみ公開）。
@@ -91,7 +91,7 @@ export default function DpaPage() {
             </li>
             <li>
               <strong>「データ処理者」</strong>とは貴社の指示に従って個人情報を処理する
-              IPA Quiz 運営者（以下「当社」）をいう。
+              過去問AI 運営者（以下「当社」）をいう。
             </li>
             <li>
               <strong>「サブプロセッサー」</strong>とは、当社が個人情報の処理を再委託する

@@ -23,7 +23,7 @@ function formatDuration(sec: number): string {
 
 function buildShareText(s: SessionSummary): string {
   const lines = [
-    "📚 IPA Quiz セッション完了",
+    "📚 過去問AI セッション完了",
     `${s.total}問 / 正答率 ${s.accuracyPct}% / ${formatDuration(s.durationSec)}`,
   ];
   if (s.byCategory.length > 0) {
@@ -49,7 +49,7 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
           })
         | null;
       if (nav?.share) {
-        await nav.share({ title: "IPA Quiz", text, url });
+        await nav.share({ title: "過去問AI", text, url });
         return;
       }
       if (nav?.clipboard) {

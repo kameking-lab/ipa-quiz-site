@@ -4,7 +4,7 @@ test.describe("/admin Basic Auth", () => {
   test("/admin/team without credentials returns 401", async ({ request }) => {
     const res = await request.get("/admin/team");
     expect(res.status()).toBe(401);
-    expect(res.headers()["www-authenticate"]).toMatch(/Basic realm="IPA Quiz Admin"/);
+    expect(res.headers()["www-authenticate"]).toMatch(/Basic realm="Kakomon AI Admin"/);
   });
 
   test("/admin/stats without credentials returns 401", async ({ request }) => {

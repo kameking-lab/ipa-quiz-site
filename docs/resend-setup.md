@@ -74,7 +74,7 @@ curl -sS --ssl-no-revoke -X POST \
 
 期待: `200 {"ok":true}`
 
-5 分以内に `kakomon.ai.jp@gmail.com` に件名「[IPA Quiz] 法人問い合わせ受信」のメールが届けば成功。
+5 分以内に `kakomon.ai.jp@gmail.com` に件名「[過去問AI] 法人問い合わせ受信」のメールが届けば成功。
 
 ## 6. トラブルシューティング
 

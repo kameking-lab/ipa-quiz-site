@@ -5,7 +5,7 @@ import { ArrowLeft } from "lucide-react";
 export const metadata = {
   title: "特定商取引法に基づく表記",
   description:
-    "過去問AI（IPA Quiz）に関する特定商取引法に基づく表記。販売事業者・連絡先・価格・支払方法・返品について。",
+    "過去問AI（過去問AI）に関する特定商取引法に基づく表記。販売事業者・連絡先・価格・支払方法・返品について。",
 };
 
 export default function CommercePage() {

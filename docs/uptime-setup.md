@@ -26,7 +26,7 @@
 | 項目 | 値 |
 |---|---|
 | Monitor Type | `Keyword` |
-| Friendly Name | `IPA Quiz - Home` |
+| Friendly Name | `過去問AI - Home` |
 | URL | `https://ipa-quiz-site.vercel.app/` |
 | Keyword Type | `exists` |
 | Keyword Value | `IPA` |
@@ -39,7 +39,7 @@
 | 項目 | 値 |
 |---|---|
 | Monitor Type | `HTTP(s)` |
-| Friendly Name | `IPA Quiz - /api/auth/session` |
+| Friendly Name | `過去問AI - /api/auth/session` |
 | URL | `https://ipa-quiz-site.vercel.app/api/auth/session` |
 | Monitoring Interval | `5 minutes` |
 | Expected Status Codes | `200` |
@@ -51,7 +51,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 | 項目 | 値 |
 |---|---|
 | Monitor Type | `HTTP(s)` |
-| Friendly Name | `IPA Quiz - /admin/team (auth gate)` |
+| Friendly Name | `過去問AI - /admin/team (auth gate)` |
 | URL | `https://ipa-quiz-site.vercel.app/admin/team` |
 | Monitoring Interval | `5 minutes` |
 | Custom HTTP Statuses | `401:up, 200:up, 5xx:down, 0:down` |
@@ -63,7 +63,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 | 項目 | 値 |
 |---|---|
 | Monitor Type | `Keyword` |
-| Friendly Name | `IPA Quiz - sitemap` |
+| Friendly Name | `過去問AI - sitemap` |
 | URL | `https://ipa-quiz-site.vercel.app/sitemap.xml` |
 | Keyword Type | `exists` |
 | Keyword Value | `<urlset` |
@@ -100,7 +100,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 
 | 項目 | 値 |
 |---|---|
-| Friendly Name | `IPA Quiz Status` |
+| Friendly Name | `過去問AI Status` |
 | Status Page Type | `Public` |
 | Custom Domain | `status.ipa-quiz.jp`（独自ドメインがあれば。なくても uptimerobot.com サブドメインで公開可） |
 | Monitors | 上記 4 つを全選択 |

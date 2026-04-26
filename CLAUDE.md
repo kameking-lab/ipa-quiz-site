@@ -1,4 +1,4 @@
-# IPA Quiz — Claude Code 向け指示書
+# 過去問AI — Claude Code 向け指示書
 
 本ファイルは Claude Code (Cursor 等) に対するプロジェクトコンテキストです。
 新しいセッションを開始する際は、まず本ファイルを読んでから作業を始めてください。

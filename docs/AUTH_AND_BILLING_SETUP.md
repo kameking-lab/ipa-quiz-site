@@ -85,7 +85,7 @@ AUTH_GOOGLE_SECRET=<Client Secret>
 
 1. GitHub → Settings → Developer settings → OAuth Apps → "New OAuth App"
 2. 入力:
-   - Application name: `IPA Quiz`
+   - Application name: `過去問AI`
    - Homepage URL: `https://ipa-quiz-site.vercel.app`
    - Authorization callback URL:
      - 本番: `https://ipa-quiz-site.vercel.app/api/auth/callback/github`
@@ -165,11 +165,11 @@ pnpm db:migrate:dev --name <migration_name>
 Stripe Dashboard → Product catalog → "Add product":
 
 - **PREMIUM 月980円**
-  - 名前: IPA Quiz Premium
+  - 名前: 過去問AI Premium
   - 料金: ¥980 / 月 / 定期支払い
   - 作成後の Price ID（`price_xxx`）を `STRIPE_PRICE_ID_PREMIUM` に設定
 - **TEAM 月30,000円**
-  - 名前: IPA Quiz Team
+  - 名前: 過去問AI Team
   - 料金: ¥30,000 / 月 / 定期支払い
   - Price ID を `STRIPE_PRICE_ID_TEAM` に設定
 

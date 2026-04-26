@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "このサイトについて・著作権",
   description:
-    "IPA Quiz は IPA 公開過去問を AI コパイロット付きで学習できるオープンな学習支援サイトです。出典・著作権・AI生成コンテンツ・プライバシー方針を掲載。",
+    "過去問AI は IPA 公開過去問を AI コパイロット付きで学習できるオープンな学習支援サイトです。出典・著作権・AI生成コンテンツ・プライバシー方針を掲載。",
   alternates: { canonical: "/about" },
 };
 
@@ -44,11 +44,11 @@ export default function AboutPage() {
         {/* Hero */}
         <header className="mb-10 animate-fade-in">
           <Badge variant="success" className="mb-4">
-            β 公開中・全機能無料
+            α公開中・全機能無料
           </Badge>
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              IPA Quiz
+              過去問AI
             </span>{" "}
             について
           </h1>
@@ -106,7 +106,7 @@ export default function AboutPage() {
               信頼できる書籍で確認してください。
             </p>
             <p>
-              β 公開期間中は全機能を無料でご利用いただけます。公平利用のため、AI コパイロットは
+              α公開期間中は全機能を無料でご利用いただけます。公平利用のため、AI コパイロットは
               1 日あたりの利用上限を設けています（JST 0:00 リセット）。
             </p>
           </Section>

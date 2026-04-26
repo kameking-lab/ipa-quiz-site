@@ -8,7 +8,7 @@ import { EnterpriseContactForm } from "./EnterpriseContactForm";
 export const metadata: Metadata = {
   title: "法人お問い合わせ",
   description:
-    "IPA Quiz Team プランの導入相談・資料請求はこちら。席数無制限・月額 ¥50,000 で全社員のIT資格取得を支援します。",
+    "過去問AI Team プランの導入相談・資料請求はこちら。席数無制限・月額 ¥50,000 で全社員のIT資格取得を支援します。",
   alternates: { canonical: "/contact/enterprise" },
 };
 

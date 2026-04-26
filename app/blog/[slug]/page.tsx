@@ -229,7 +229,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
       <section className="mt-10 text-xs text-zinc-500 dark:text-zinc-500">
         <p>
-          ※ 本記事は IPA Quiz が独自にまとめた学習ガイドです。試験要項の最新情報は必ず{" "}
+          ※ 本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず{" "}
           <a
             href="https://www.ipa.go.jp/shiken/"
             target="_blank"

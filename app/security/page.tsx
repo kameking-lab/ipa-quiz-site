@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "セキュリティ・コンプライアンス",
   description:
-    "IPA Quiz の法人向けセキュリティ統制・SOC2 Type1 取得計画・データ保護・SLA・SAML SSO 対応予定について。",
+    "過去問AI の法人向けセキュリティ統制・SOC2 Type1 取得計画・データ保護・SLA・SAML SSO 対応予定について。",
   alternates: { canonical: "/security" },
 };
 
@@ -150,7 +150,7 @@ export default function SecurityPage() {
           セキュリティ・コンプライアンス
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          IPA Quiz は法人での導入に耐えるセキュリティ統制を構築しています。本ページは現状の統制と
+          過去問AI は法人での導入に耐えるセキュリティ統制を構築しています。本ページは現状の統制と
           SOC2 Type1 取得に向けた計画を、稟議資料として参照可能な粒度で公開するものです。
           すべての記載は <span className="font-semibold text-zinc-800 dark:text-zinc-200">「現状」と「予定」を明確に区別</span>
           しており、未取得の認証を取得済みと誤認させる表記は行いません。
@@ -159,7 +159,7 @@ export default function SecurityPage() {
 
       <Card className="mb-8 border-amber-300 bg-amber-50/60 dark:border-amber-800 dark:bg-amber-950/30">
         <CardContent className="p-4 text-sm leading-relaxed text-amber-900 dark:text-amber-100">
-          <strong>重要 (Disclaimer):</strong> 現時点で IPA Quiz は SOC2 / ISO 27001 等の第三者認証を
+          <strong>重要 (Disclaimer):</strong> 現時点で 過去問AI は SOC2 / ISO 27001 等の第三者認証を
           <span className="font-semibold">未取得</span>です。下記タイムラインは取得計画であり、
           稟議の際は本ページを「取得計画ロードマップ」としてご参照ください。法人パイロット導入時には、
           別紙で個別のセキュリティ質問票（CAIQ / SIG-Lite 等）にも対応いたします。

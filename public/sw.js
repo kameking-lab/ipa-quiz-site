@@ -1,4 +1,4 @@
-// IPA Quiz Service Worker
+// 過去問AI Service Worker
 // Strategy: cache-first for static assets, network-first for pages, skip API routes.
 // CACHE_VERSION changes each time this file is installed, busting stale caches on deploy.
 

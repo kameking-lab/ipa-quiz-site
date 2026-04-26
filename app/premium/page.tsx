@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
-  title: "Premium 機能 — IPA Quiz",
+  title: "Premium 機能 — 過去問AI",
   description:
     "弱点ヒートマップ・合格判定シミュレータ・AI論述添削など、Premium会員が使える高度な学習支援機能。",
   alternates: { canonical: "/premium" },

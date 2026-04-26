@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "Enterprise SSO（SAML / SCIM）対応予定",
   description:
-    "IPA Quiz の SAML 2.0 SSO / SCIM 2.0 プロビジョニング対応予定。Okta / Azure AD / Google Workspace 連携を Phase 1 で実装予定。",
+    "過去問AI の SAML 2.0 SSO / SCIM 2.0 プロビジョニング対応予定。Okta / Azure AD / Google Workspace 連携を Phase 1 で実装予定。",
   alternates: { canonical: "/enterprise/sso" },
 };
 
@@ -37,7 +37,7 @@ const FEATURES = [
   {
     icon: Workflow,
     title: "属性マッピング",
-    desc: "IdP 属性 (department, manager, costCenter 等) を IPA Quiz 側の部署・グループに自動マッピング。",
+    desc: "IdP 属性 (department, manager, costCenter 等) を 過去問AI 側の部署・グループに自動マッピング。",
   },
 ];
 

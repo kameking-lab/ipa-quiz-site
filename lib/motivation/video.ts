@@ -78,7 +78,7 @@ function drawSlide(
   ctx.fillStyle = "#fff";
   ctx.font = `700 30px ${FONT_STACK}`;
   ctx.textBaseline = "middle";
-  ctx.fillText("IPA Quiz", brandX + 30, brandY + h / 2);
+  ctx.fillText("過去問AI", brandX + 30, brandY + h / 2);
 
   if (slide.badge) {
     ctx.fillStyle = "rgba(0,0,0,0.4)";

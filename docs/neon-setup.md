@@ -1,6 +1,6 @@
 # Neon Postgres セットアップ手順書
 
-IPA Quiz の本番 DB は Neon Postgres を想定する（NextAuth セッション永続化・Stripe Subscription / 学習履歴クラウド同期）。
+過去問AI の本番 DB は Neon Postgres を想定する（NextAuth セッション永続化・Stripe Subscription / 学習履歴クラウド同期）。
 
 DATABASE_URL が未設定でもアプリは動作するように `graceful degradation` を組み込んでいる:
 

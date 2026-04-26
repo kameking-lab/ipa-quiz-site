@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "IPA Quiz — AIネイティブ過去問学習";
+export const alt = "過去問AI — AIネイティブ過去問学習";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,7 +39,7 @@ export default function OgImage() {
               letterSpacing: "-0.5px",
             }}
           >
-            IPA Quiz
+            過去問AI
           </div>
           <div
             style={{
@@ -51,7 +51,7 @@ export default function OgImage() {
               fontWeight: 700,
             }}
           >
-            β公開中・全機能無料
+            α公開中・全機能無料
           </div>
         </div>
         <div

@@ -9,7 +9,7 @@ import { PilotForm } from "./PilotForm";
 export const metadata: Metadata = {
   title: "法人パイロット申込 — 無料3ヶ月",
   description:
-    "IPA Quiz の法人向け無料 3 ヶ月パイロット。最大 50 席まで、AI コパイロット無制限・全試験区分対応・法人ダッシュボード付き。",
+    "過去問AI の法人向け無料 3 ヶ月パイロット。最大 50 席まで、AI コパイロット無制限・全試験区分対応・法人ダッシュボード付き。",
   alternates: { canonical: "/enterprise/pilot" },
 };
 

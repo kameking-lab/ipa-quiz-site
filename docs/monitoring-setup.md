@@ -1,6 +1,6 @@
 # モニタリング セットアップ手順書
 
-IPA Quiz の本番モニタリングは以下 3 層で構成する:
+過去問AI の本番モニタリングは以下 3 層で構成する:
 
 1. **Sentry** — エラートラッキング（5xx 例外、フロント JS エラー）
 2. **UptimeRobot** — 主要エンドポイントの死活監視
@@ -44,7 +44,7 @@ Project → `Settings` → `Client Keys (DSN)` から `DSN` をコピー。
 
 | URL | 期待値 | 種類 |
 |---|---|---|
-| `https://ipa-quiz-site.vercel.app/` | HTTP 200 | Keyword "IPA Quiz" |
+| `https://ipa-quiz-site.vercel.app/` | HTTP 200 | Keyword "過去問AI" |
 | `https://ipa-quiz-site.vercel.app/api/auth/session` | HTTP 200 | JSON `{` |
 | `https://ipa-quiz-site.vercel.app/admin/team` | HTTP 401 | Status code |
 | `https://ipa-quiz-site.vercel.app/sitemap.xml` | HTTP 200 | Keyword `<urlset` |

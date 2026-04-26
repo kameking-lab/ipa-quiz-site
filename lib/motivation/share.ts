@@ -33,13 +33,13 @@ export function buildLineShareUrl(text: string, url: string): string {
 }
 
 export function buildSessionText(p: { count: number; accuracy: number }): string {
-  return `📚 IPA Quiz セッション完了！${p.count}問・正答率${p.accuracy}% #IPA過去問 #IPA_Quiz`;
+  return `📚 過去問AI セッション完了！${p.count}問・正答率${p.accuracy}% #IPA過去問 #IPA_Quiz`;
 }
 
 export function buildStreakText(p: { streak: number; count: number }): string {
-  return `🔥 IPA Quiz ${p.streak}日連続学習中！累計${p.count}問解きました #IPA過去問 #IPA_Quiz`;
+  return `🔥 過去問AI ${p.streak}日連続学習中！累計${p.count}問解きました #IPA過去問 #IPA_Quiz`;
 }
 
 export function buildBadgeText(p: { name: string; days: number }): string {
-  return `🏆 IPA Quiz「${p.name}」バッジ獲得！${p.days}日継続達成 #IPA過去問 #IPA_Quiz`;
+  return `🏆 過去問AI「${p.name}」バッジ獲得！${p.days}日継続達成 #IPA過去問 #IPA_Quiz`;
 }

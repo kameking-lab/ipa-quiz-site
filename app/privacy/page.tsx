@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
-    "IPA Quiz のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・決済情報・Cookie・データ削除方法について。",
+    "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・決済情報・Cookie・データ削除方法について。",
   alternates: { canonical: "/privacy" },
 };
 

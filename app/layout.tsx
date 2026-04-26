@@ -10,6 +10,8 @@ import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
 import { BadgeTracker } from "@/components/motivation/BadgeTracker";
 import { CouponTracker } from "@/components/motivation/CouponTracker";
+import { TrustBadge } from "@/components/TrustBadge";
+import { XFollowButton } from "@/components/XFollowButton";
 import { Analytics } from "@vercel/analytics/next";
 
 const geistSans = Geist({
@@ -31,12 +33,12 @@ const BASE_URL =
 
 export const metadata: Metadata = {
   title: {
-    default: "IPA Quiz — AIネイティブ過去問学習",
-    template: "%s | IPA Quiz",
+    default: "過去問AI — AIネイティブ過去問学習",
+    template: "%s | 過去問AI",
   },
   description:
-    "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
-  applicationName: "IPA Quiz",
+    "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
+  applicationName: "過去問AI",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
   alternates: {
@@ -46,25 +48,25 @@ export const metadata: Metadata = {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
+      { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
     ],
-    apple: "/icon-192.svg",
   },
   openGraph: {
-    title: "IPA Quiz — AIネイティブ過去問学習",
+    title: "過去問AI — AIネイティブ過去問学習",
     description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
+      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
     type: "website",
     locale: "ja_JP",
-    siteName: "IPA Quiz",
+    siteName: "過去問AI",
     url: BASE_URL,
   },
   twitter: {
     card: "summary_large_image",
     site: "@kakomon_ai_jp",
     creator: "@kakomon_ai_jp",
-    title: "IPA Quiz — AIネイティブ過去問学習",
+    title: "過去問AI — AIネイティブ過去問学習",
     description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
+      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料α公開中",
   },
 };
 
@@ -112,72 +114,72 @@ export default function RootLayout({
               {children}
             </div>
             <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-6 text-xs text-muted-foreground">
-              <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
-                <div className="text-center sm:text-left">
-                  <div className="mb-1.5">
-                    <span className="mr-2 inline-block rounded bg-primary-soft px-1.5 py-0.5 text-[10px] font-semibold text-primary-soft-foreground">
-                      β公開中
-                    </span>
-                    出典: IPA 情報処理技術者試験（
-                    <a
-                      href="https://www.ipa.go.jp/shiken/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-border hover:text-foreground"
-                    >
-                      ipa.go.jp
-                    </a>
-                    ） /{" "}
-                    <Link
-                      href="/about"
-                      className="underline decoration-border hover:text-foreground"
-                    >
-                      著作権・利用条件
-                    </Link>
-                  </div>
-                  <div className="mb-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
-                    本サービスはIPA公式ではない非公式のサービスです。試験名称はIPAの商標です。
-                  </div>
-                  <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
-                    {(
-                      [
-                        ["/blog", "ブログ"],
-                        ["/terms", "利用規約"],
-                        ["/privacy", "プライバシーポリシー"],
-                        ["/commerce", "特定商取引法に基づく表記"],
-                        ["/operator", "運営者情報"],
-                        ["/settings", "設定"],
-                      ] as const
-                    ).map(([href, label]) => (
-                      <Link
-                        key={href}
-                        href={href}
+              <div className="mx-auto flex max-w-5xl flex-col gap-4">
+                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:justify-start">
+                  <TrustBadge tone="sky" label="IPA公式準拠" />
+                  <TrustBadge tone="emerald" label="日本国内運営" />
+                  <TrustBadge tone="amber" label="α公開中（無料）" />
+                </div>
+                <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-start">
+                  <div className="text-center sm:text-left">
+                    <div className="mb-1.5">
+                      出典: IPA 情報処理技術者試験（
+                      <a
+                        href="https://www.ipa.go.jp/shiken/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="underline decoration-border hover:text-foreground"
                       >
-                        {label}
+                        ipa.go.jp
+                      </a>
+                      ） /{" "}
+                      <Link
+                        href="/about"
+                        className="underline decoration-border hover:text-foreground"
+                      >
+                        著作権・利用条件
                       </Link>
-                    ))}
-                    <a
-                      href="https://x.com/kakomon_ai_jp"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-border hover:text-foreground"
-                    >
-                      X (@kakomon_ai_jp)
-                    </a>
-                    <a
-                      href="https://note.com/kakomon_ai"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="underline decoration-border hover:text-foreground"
-                    >
-                      note
-                    </a>
+                    </div>
+                    <div className="mb-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
+                      本サービスはIPA公式ではない非公式のサービスです。試験名称はIPAの商標です。
+                    </div>
+                    <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
+                      {(
+                        [
+                          ["/blog", "ブログ"],
+                          ["/terms", "利用規約"],
+                          ["/privacy", "プライバシーポリシー"],
+                          ["/commerce", "特定商取引法に基づく表記"],
+                          ["/operator", "運営者情報"],
+                          ["/faq", "FAQ"],
+                          ["/settings", "設定"],
+                        ] as const
+                      ).map(([href, label]) => (
+                        <Link
+                          key={href}
+                          href={href}
+                          className="underline decoration-border hover:text-foreground"
+                        >
+                          {label}
+                        </Link>
+                      ))}
+                      <a
+                        href="https://note.com/kakomon_ai"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline decoration-border hover:text-foreground"
+                      >
+                        note
+                      </a>
+                    </div>
                   </div>
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className="hidden sm:inline">テーマ:</span>
-                  <ThemeToggle />
+                  <div className="flex flex-col items-center gap-3 sm:items-end">
+                    <XFollowButton />
+                    <div className="flex items-center gap-3">
+                      <span className="hidden sm:inline">テーマ:</span>
+                      <ThemeToggle />
+                    </div>
+                  </div>
                 </div>
               </div>
             </footer>

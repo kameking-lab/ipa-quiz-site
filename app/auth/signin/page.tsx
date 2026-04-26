@@ -15,7 +15,7 @@ import { EmailSignInForm } from "./EmailSignInForm";
 
 export const metadata: Metadata = {
   title: "ログイン",
-  description: "IPA Quiz にログインして学習履歴をクラウド同期。β 公開中・全機能無料。",
+  description: "過去問AI にログインして学習履歴をクラウド同期。α公開中・全機能無料。",
   robots: { index: false, follow: false },
 };
 
@@ -87,11 +87,11 @@ export default async function SignInPage({
         {/* Hero */}
         <div className="mb-8 text-center">
           <Badge variant="success" className="mb-4">
-            β 公開中・全機能無料
+            α公開中・全機能無料
           </Badge>
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              IPA Quiz
+              過去問AI
             </span>
             {" "}にログイン
           </h1>

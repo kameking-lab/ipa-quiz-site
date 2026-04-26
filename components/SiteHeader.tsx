@@ -8,6 +8,7 @@ import { SiteLogo } from "./SiteLogo";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "./ui/button";
 import { ExamSelectorDialog } from "./ExamSelectorDialog";
+import { XFollowButton } from "./XFollowButton";
 import {
   Sheet,
   SheetContent,
@@ -58,7 +59,7 @@ export function SiteHeader() {
           <Link
             href="/"
             className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
-            aria-label="IPA Quiz ホーム"
+            aria-label="過去問AI ホーム"
           >
             <SiteLogo />
           </Link>
@@ -83,6 +84,7 @@ export function SiteHeader() {
 
         <div className="flex items-center gap-2">
           <StreakBadge className="hidden sm:inline-flex" />
+          <XFollowButton size="sm" className="hidden sm:inline-flex" />
           <div className="hidden md:block">
             <ThemeToggle />
           </div>
@@ -138,6 +140,7 @@ export function SiteHeader() {
                     </Button>
                   }
                 />
+                <XFollowButton size="md" className="w-full justify-center" />
                 <div className="flex items-center justify-between rounded-lg border border-border p-3 text-sm">
                   <span className="text-muted-foreground">テーマ</span>
                   <ThemeToggle />

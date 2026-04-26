@@ -30,7 +30,7 @@ const TYPE_META: Record<
     gradient:
       "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
     emoji: "✨",
-    subtitle: "IPA Quiz",
+    subtitle: "過去問AI",
   },
 };
 
@@ -50,7 +50,7 @@ export async function GET(request: Request) {
   const type = url.searchParams.get("type") ?? "default";
   const meta = TYPE_META[type] ?? TYPE_META.default;
 
-  const title = safeText(url.searchParams.get("title"), "IPA Quiz");
+  const title = safeText(url.searchParams.get("title"), "過去問AI");
   const streak = safeNumber(url.searchParams.get("streak"), 0);
   const accuracy = safeNumber(url.searchParams.get("accuracy"), 0);
   const count = safeNumber(url.searchParams.get("count"), 0);
@@ -101,7 +101,7 @@ export async function GET(request: Request) {
               letterSpacing: "-0.5px",
             }}
           >
-            IPA Quiz
+            過去問AI
           </div>
           <div
             style={{

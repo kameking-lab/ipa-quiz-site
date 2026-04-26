@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const REALM = "IPA Quiz Admin";
+const REALM = "Kakomon AI Admin";
 
 function unauthorized(): NextResponse {
   return new NextResponse("Unauthorized", {

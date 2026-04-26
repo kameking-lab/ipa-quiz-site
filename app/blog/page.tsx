@@ -9,10 +9,10 @@ import { examLabel } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "IPA試験ブログ｜全13区分の合格戦略・勉強法・出題傾向",
   description:
-    "IPA情報処理技術者試験13区分の合格戦略・勉強法・直前対策・頻出論点を網羅。AI解説付きの過去問演習サイトIPA Quizが運営する学習ブログ。",
+    "IPA情報処理技術者試験13区分の合格戦略・勉強法・直前対策・頻出論点を網羅。AI解説付きの過去問演習サイト過去問AIが運営する学習ブログ。",
   alternates: { canonical: "/blog" },
   openGraph: {
-    title: "IPA試験ブログ | IPA Quiz",
+    title: "IPA試験ブログ | 過去問AI",
     description:
       "IPA情報処理技術者試験13区分の合格戦略・勉強法・出題傾向を網羅した学習ブログ。",
     url: "/blog",
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPA試験ブログ | IPA Quiz",
+    title: "IPA試験ブログ | 過去問AI",
     description: "IPA試験13区分の合格戦略・勉強法・出題傾向を網羅した学習ブログ。",
   },
 };
@@ -119,7 +119,7 @@ export default function BlogIndexPage() {
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-base">
           IPA 情報処理技術者試験 13 区分の合格戦略・勉強法・出題傾向・直前対策を網羅。
-          AI コパイロット付き過去問演習サイト IPA Quiz が運営する学習ブログです。
+          AI コパイロット付き過去問演習サイト 過去問AI が運営する学習ブログです。
           記事数は <strong>{posts.length} 本</strong> 公開中。
         </p>
       </header>
@@ -178,7 +178,7 @@ export default function BlogIndexPage() {
           過去問演習はこちら
         </h2>
         <p className="leading-relaxed">
-          記事を読み終わったら、IPA Quiz の AI コパイロット付き過去問で学習を始めましょう。
+          記事を読み終わったら、過去問AI の AI コパイロット付き過去問で学習を始めましょう。
           年度別・分野別・復習モードで効率的に演習できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2">

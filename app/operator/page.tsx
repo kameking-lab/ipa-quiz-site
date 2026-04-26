@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "運営者情報",
   description:
-    "過去問AI（IPA Quiz）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
+    "過去問AI（過去問AI）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
   alternates: { canonical: "/operator" },
 };
 
@@ -164,7 +164,7 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-foreground/90">
             <p>
-              本サービス「過去問AI（IPA Quiz）」は、独立行政法人情報処理推進機構（IPA）とは一切関係のない非公式のサービスです。
+              本サービス「過去問AI（過去問AI）」は、独立行政法人情報処理推進機構（IPA）とは一切関係のない非公式のサービスです。
               IPA が運営・監修するものではなく、IPA の公式見解を示すものでもありません。
             </p>
             <p>

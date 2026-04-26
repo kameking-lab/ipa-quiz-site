@@ -29,7 +29,7 @@ import { PricingViewTracker } from "./PricingViewTracker";
 export const metadata: Metadata = {
   title: "料金プラン",
   description:
-    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、AI 論述添削 無制限、詳細応答・類題生成・誤答分析が使えます。β公開中・全機能無料。",
+    "過去問AI の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、AI 論述添削 無制限、詳細応答・類題生成・誤答分析が使えます。α公開中・全機能無料。",
   alternates: { canonical: "/pricing" },
 };
 
@@ -54,7 +54,7 @@ export default function PricingPage() {
         <div className="relative mx-auto w-full max-w-6xl px-4 pb-8 pt-10 sm:px-6 sm:pt-16">
           <div className="mx-auto flex max-w-2xl flex-col items-center text-center">
             <Badge variant="success" className="mb-4">
-              β 公開中・全機能無料
+              α公開中・全機能無料
             </Badge>
             <h1 className="text-balance text-4xl font-bold leading-[1.1] tracking-tight text-foreground sm:text-5xl">
               シンプルな
@@ -63,7 +63,7 @@ export default function PricingPage() {
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-              β 公開中は全機能無料。本気で合格を狙うなら Premium、チーム研修なら Team。
+              α公開中は全機能無料。本気で合格を狙うなら Premium、チーム研修なら Team。
               いつでも解約できます。
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xs text-muted-foreground">
@@ -124,7 +124,7 @@ export default function PricingPage() {
           <div className="flex flex-col gap-2">
             <FaqItem
               q="本当に無料で使えますか？"
-              a="はい。β 公開期間中は全機能を完全無料で開放しています。AI コパイロットも 1 日 50 回まで無料です。クレジットカード登録も不要です。"
+              a="はい。α公開期間中は全機能を完全無料で開放しています。AI コパイロットも 1 日 50 回まで無料です。クレジットカード登録も不要です。"
             />
             <FaqItem
               q="Premium はいつから有料になりますか？"
@@ -180,7 +180,7 @@ export default function PricingPage() {
           </CardContent>
         </Card>
         <p className="mt-6 text-center text-xs text-muted-foreground">
-          β 公開中は全機能無料です。料金は予告なく変更される場合があります。
+          α公開中は全機能無料です。料金は予告なく変更される場合があります。
         </p>
       </section>
     </main>

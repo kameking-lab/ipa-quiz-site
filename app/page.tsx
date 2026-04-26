@@ -19,9 +19,9 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
-  title: "IPA Quiz — AIネイティブ過去問学習",
+  title: "過去問AI — AIネイティブ過去問学習",
   description:
-    "IPA 情報処理技術者試験 IP/SG/FE/AP/高度区分の 13 試験・12,000問超をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+    "IPA 情報処理技術者試験 IP/SG/FE/AP/高度区分の 13 試験・12,000問超をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。α公開中・全機能無料。",
   alternates: { canonical: "/" },
 };
 
@@ -108,7 +108,7 @@ export default function HomePage() {
           解答・解説がゼロ遷移で表示。分からないところは AI コパイロットにその場で質問できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <Badge variant="success">β公開中・全機能無料</Badge>
+          <Badge variant="success">α公開中・全機能無料</Badge>
           <Badge variant="success">全13試験区分 合計{total.toLocaleString("ja-JP")}問収録</Badge>
           <Badge variant="outline">ゼロ遷移 UI</Badge>
           <Badge variant="outline">AI コパイロット</Badge>
