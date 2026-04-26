@@ -4,6 +4,7 @@ import * as React from "react";
 import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
+import { startSession } from "@/lib/motivation/session";
 import { Loader2 } from "lucide-react";
 
 const MAX_POOL = 80;
@@ -63,6 +64,7 @@ export function QuizClient({
     setSessionIds(deriveSessionPool(poolIds, mode));
     setIndex(0);
     cache.current.clear();
+    startSession(mode);
   }, [poolIds, mode]);
 
   // Load current + prefetch next whenever index advances.

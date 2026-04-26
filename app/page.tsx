@@ -1,3 +1,4 @@
+import * as React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -7,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
+import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
@@ -90,6 +92,9 @@ export default function HomePage() {
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
       <JsonLd data={jsonLd} />
+      <React.Suspense fallback={null}>
+        <SessionSummaryGate />
+      </React.Suspense>
       <section className="mb-8">
         <div className="mb-3">
           <SiteLogo />

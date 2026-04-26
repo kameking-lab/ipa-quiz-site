@@ -16,6 +16,8 @@ import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
+import { recordSessionAnswer } from "@/lib/motivation/session";
+import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -108,6 +110,13 @@ export function QuizPlayer({
         : String(question.answer);
       const correct = key === answerKey;
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      recordSessionAnswer({
+        id: question.id,
+        correct,
+        category: question.category ?? "未分類",
+        at: Date.now(),
+      });
+      recordStudyOnDate();
       setStats((s) => ({ answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) }));
 
       const nextCombo = correct ? combo + 1 : 0;
