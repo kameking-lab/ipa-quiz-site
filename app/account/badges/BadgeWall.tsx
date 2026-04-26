@@ -8,6 +8,9 @@ import {
 } from "@/lib/motivation/badges";
 import { readStreak } from "@/lib/streak/storage";
 import { BadgeMedallion } from "@/components/motivation/BadgeMedallion";
+import { SocialShare } from "@/components/motivation/SocialShare";
+import { buildBadgeText, buildOgImageUrl } from "@/lib/motivation/share";
+import { Share2 } from "lucide-react";
 
 function formatDate(ts?: number): string | null {
   if (!ts) return null;
@@ -19,6 +22,7 @@ export function BadgeWall() {
   const [earned, setEarned] = React.useState<Set<number>>(new Set());
   const [earnedAt, setEarnedAt] = React.useState<Partial<Record<number, number>>>({});
   const [streak, setStreak] = React.useState({ current: 0, longest: 0 });
+  const [shareTarget, setShareTarget] = React.useState<number | null>(null);
 
   React.useEffect(() => {
     const s = readStreak();
@@ -52,24 +56,48 @@ export function BadgeWall() {
           return (
             <div
               key={t}
-              className={`flex items-center gap-4 rounded-2xl border p-4 ${
+              className={`flex flex-col gap-3 rounded-2xl border p-4 ${
                 isEarned
                   ? "border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950"
                   : "border-zinc-200 bg-zinc-50 dark:border-zinc-800 dark:bg-zinc-900/50"
               }`}
             >
-              <BadgeMedallion badge={def} earned={isEarned} size="md" />
-              <div className="min-w-0 flex-1">
-                <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-50">
-                  {def.name}
-                </h3>
-                <p className="mt-0.5 text-xs text-zinc-600 dark:text-zinc-400">
-                  {def.tagline}
-                </p>
-                <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
-                  {isEarned ? at ?? "獲得済み" : `あと${Math.max(0, def.threshold - streak.current)}日`}
-                </p>
+              <div className="flex items-center gap-4">
+                <BadgeMedallion badge={def} earned={isEarned} size="md" />
+                <div className="min-w-0 flex-1">
+                  <h3 className="text-sm font-bold text-zinc-900 dark:text-zinc-50">
+                    {def.name}
+                  </h3>
+                  <p className="mt-0.5 text-xs text-zinc-600 dark:text-zinc-400">
+                    {def.tagline}
+                  </p>
+                  <p className="mt-1 text-[11px] text-zinc-500 dark:text-zinc-400">
+                    {isEarned ? at ?? "獲得済み" : `あと${Math.max(0, def.threshold - streak.current)}日`}
+                  </p>
+                </div>
+                {isEarned && (
+                  <button
+                    type="button"
+                    onClick={() => setShareTarget(shareTarget === t ? null : t)}
+                    className="rounded-lg border border-zinc-200 p-1.5 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                    aria-label="シェアする"
+                  >
+                    <Share2 className="h-4 w-4" />
+                  </button>
+                )}
               </div>
+              {isEarned && shareTarget === t && (
+                <SocialShare
+                  text={buildBadgeText({ name: def.name, days: def.threshold })}
+                  url={typeof window !== "undefined" ? window.location.origin : "https://ipa-quiz-site.vercel.app"}
+                  imageUrl={buildOgImageUrl({
+                    type: "badge",
+                    title: def.name,
+                    badge: def.name,
+                    streak: def.threshold,
+                  })}
+                />
+              )}
             </div>
           );
         })}
