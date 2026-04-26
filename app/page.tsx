@@ -113,6 +113,12 @@ export default function HomePage() {
           <Badge variant="outline">ゼロ遷移 UI</Badge>
           <Badge variant="outline">AI コパイロット</Badge>
           <Badge variant="outline">モバイル最適化</Badge>
+          <Link href="/essay" className="inline-flex">
+            <Badge variant="primary">6 業種別 合格答案例つき</Badge>
+          </Link>
+          <Link href="/demo/afternoon" className="inline-flex">
+            <Badge variant="soft">高度試験 午後 AI 採点</Badge>
+          </Link>
         </div>
         <HeroDemoAnimation />
         <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
@@ -171,7 +177,41 @@ export default function HomePage() {
         afternoonCounts={afternoonCounts}
       />
 
-      <section aria-labelledby="premium-features" className="mt-10">
+      <section
+        aria-labelledby="advanced-essay-banner"
+        className="mt-10"
+      >
+        <Link
+          href="/essay"
+          className="group block rounded-2xl border-2 border-violet-300 bg-gradient-to-br from-violet-50 via-fuchsia-50 to-sky-50 p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-violet-800 dark:from-violet-950/40 dark:via-fuchsia-950/30 dark:to-sky-950/40"
+        >
+          <div className="flex flex-wrap items-start justify-between gap-3">
+            <div className="flex-1 min-w-0">
+              <h2
+                id="advanced-essay-banner"
+                className="mb-1 text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50"
+              >
+                高度試験 6 業種別 論述合格答案例
+              </h2>
+              <p className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-sm">
+                ST / SA / PM / SM / AU の午後 II 論述を、製造業 / 建設業 / 金融業 / 流通・小売 / 通信業 / 公共
+                の 6 業種別に合格答案例を収録。受験生の業務経験に合わせて選べます。
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5 text-[11px]">
+                <Badge variant="default">製造業</Badge>
+                <Badge variant="default">建設業</Badge>
+                <Badge variant="default">金融業</Badge>
+                <Badge variant="default">流通・小売</Badge>
+                <Badge variant="default">通信業</Badge>
+                <Badge variant="default">公共</Badge>
+              </div>
+            </div>
+            <Badge variant="primary" className="shrink-0">業種別 →</Badge>
+          </div>
+        </Link>
+      </section>
+
+      <section aria-labelledby="premium-features" className="mt-6">
         <h2
           id="premium-features"
           className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300"

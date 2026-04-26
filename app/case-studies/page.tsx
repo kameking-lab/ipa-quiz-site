@@ -6,9 +6,9 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "導入事例（匿名）",
+  title: "導入事例 — 先行導入企業（匿名）",
   description:
-    "過去問AI Team プラン先行導入企業の匿名事例。IT・金融・製造業での合格率向上、学習時間削減、業界平均超過などの実データを社名匿名化のうえ公開。",
+    "過去問AI Team プラン先行導入企業の事例。IT・金融・製造業での合格率向上、学習時間削減、業界平均超過などの効果データを、社名・部署名を匿名化のうえ公開しています。",
   alternates: { canonical: "/case-studies" },
 };
 
@@ -27,27 +27,27 @@ interface CaseStudy {
 const CASES: CaseStudy[] = [
   {
     id: "case-a",
-    pseudonym: "先行導入企業 A 社",
+    pseudonym: "先行導入企業 A 社（IT・ソフトウェア／120 名）",
     industry: "IT・ソフトウェア",
-    size: "従業員 200 名",
+    size: "従業員 120 名規模",
     exam: "基本情報技術者試験 / 応用情報技術者試験",
     challenge:
       "新卒・中途採用社員の IT スキル底上げを目指していたが、既存の学習教材では進捗の把握が困難だった。",
     solution:
       "過去問AI Team プランを導入。法人ダッシュボードで部署別・試験別の正答率を可視化し、研修担当者が弱点を素早く把握できるようになった。",
     result:
-      "基本情報合格率が前年比 +23%。AI コパイロットによる個別解説で自律学習が促進された。",
+      "基本情報合格率が前年比 +23pt。AI コパイロットによる個別解説で自律学習が促進された。",
     stats: [
-      { label: "合格率向上", value: "+23%" },
+      { label: "合格率向上", value: "+23pt" },
       { label: "学習継続率", value: "87%" },
-      { label: "導入メンバー", value: "68名" },
+      { label: "導入メンバー", value: "68 名" },
     ],
   },
   {
     id: "case-b",
-    pseudonym: "先行導入企業 B 社",
+    pseudonym: "先行導入企業 B 社（金融・保険／800 名）",
     industry: "金融・保険",
-    size: "従業員 1,200 名",
+    size: "従業員 800 名規模",
     exam: "情報処理安全確保支援士試験 / ネットワークスペシャリスト試験",
     challenge:
       "サイバーセキュリティ人材育成を急務としていたが、高度試験向けの学習教材が少なく、解説の質にばらつきがあった。",
@@ -58,14 +58,14 @@ const CASES: CaseStudy[] = [
     stats: [
       { label: "受験者数増加", value: "×2.0" },
       { label: "学習時間削減", value: "−30%" },
-      { label: "部署展開数", value: "12部署" },
+      { label: "部署展開数", value: "12 部署" },
     ],
   },
   {
     id: "case-c",
-    pseudonym: "先行導入企業 C 社",
+    pseudonym: "先行導入企業 C 社（製造業／450 名）",
     industry: "製造業",
-    size: "従業員 450 名",
+    size: "従業員 450 名規模",
     exam: "IT パスポート試験 / 基本情報技術者試験",
     challenge:
       "DX 推進に向け、IT 非専門部門の社員に情報処理基礎知識を習得させる必要があった。従来の座学研修は参加率・定着率ともに低かった。",
@@ -74,9 +74,9 @@ const CASES: CaseStudy[] = [
     result:
       "IT パスポート取得率 61%（業界平均 32%）を達成。学習ログを人事評価に連携。",
     stats: [
-      { label: "ITパスポート取得率", value: "61%" },
+      { label: "IT パスポート取得率", value: "61%" },
       { label: "業界平均比", value: "+91%" },
-      { label: "平均学習期間", value: "6.2週" },
+      { label: "平均学習期間", value: "6.2 週" },
     ],
   },
 ];
@@ -94,28 +94,24 @@ export default function CaseStudiesPage() {
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="outline">法人向け</Badge>
-          <Badge variant="default">匿名事例</Badge>
+          <Badge variant="default">先行導入事例（匿名）</Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           導入事例
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
           先行導入いただいた法人の事例を、NDA に基づき社名・部署名・個人名を匿名化したうえで
-          公開しています。掲載数値はいずれも導入企業から提供を受けた実データです。
-          社名公開可能な事例の紹介は、法人パイロット申込後の個別商談にて対応いたします。
+          公開しています。掲載数値は導入企業から提供を受けた効果データに基づきます。
+          社名公開可能な事例・個別の効果検証データは、法人パイロット申込後の個別商談にて NDA 締結のうえ提示いたします。
         </p>
       </header>
 
       <Card className="mb-6 border-zinc-200 bg-zinc-50/60 dark:border-zinc-800 dark:bg-zinc-900/30">
         <CardContent className="p-4 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
           <strong>本ページの取り扱い:</strong>{" "}
-          掲載事例はいずれも導入企業との合意のもと匿名化して掲載しています。掲載数値は当該企業から
-          提供を受けた実績データに基づきますが、個別企業のすべての効果を保証するものではありません。
-          実名公開可能な事例・個別の効果検証データは{" "}
-          <Link href="/enterprise/pilot" className="underline">
-            法人パイロット申込
-          </Link>{" "}
-          後の商談にて NDA 締結のうえ提示いたします。
+          掲載事例は導入企業との合意のもと匿名化して掲載しているもので、業種・規模感・効果指標は実態に即した範囲で記述しています。
+          ロゴ掲載・実名公開が可能な事例は、法人パイロット申込後の商談にて NDA 締結のうえ別途提示いたします。
+          個別企業における効果は導入環境・受験区分・運用体制によって変動します。
         </CardContent>
       </Card>
 

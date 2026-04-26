@@ -18,8 +18,25 @@ import {
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar, ChevronRight, Sparkles, Tags } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Calendar, ChevronRight, FileEdit, Sparkles, Tags } from "lucide-react";
 import { BeginnerGuide } from "@/components/quiz/BeginnerGuide";
+import { getAfternoonQuestions } from "@/lib/afternoon/load";
+import { getEssayQuestionsByExam } from "@/lib/essay/load";
+import type { EssayExamCode } from "@/lib/essay/load";
+
+const ADVANCED_EXAMS = new Set<ExamCode>([
+  "st",
+  "sa",
+  "pm",
+  "sm",
+  "au",
+  "sc",
+  "db",
+  "nw",
+  "es",
+]);
+const ESSAY_EXAMS = new Set<ExamCode>(["st", "sa", "pm", "sm", "au"]);
 
 export const dynamicParams = false;
 
@@ -104,6 +121,12 @@ export default async function ExamTopPage({
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = hasAm1 && hasAm2;
 
+  const isAdvanced = ADVANCED_EXAMS.has(code);
+  const afternoonCount = isAdvanced ? getAfternoonQuestions(code).length : 0;
+  const essayCount = ESSAY_EXAMS.has(code)
+    ? getEssayQuestionsByExam(code as EssayExamCode).length
+    : 0;
+
   return (
     <main className="relative flex-1">
       <div
@@ -160,6 +183,79 @@ export default async function ExamTopPage({
         <section aria-label="ここから始めよう" className="mb-8">
           <BeginnerGuide exam={code} />
         </section>
+
+        {isAdvanced && (afternoonCount > 0 || essayCount > 0) && (
+          <section
+            aria-labelledby="advanced-coverage-heading"
+            className="mb-8"
+          >
+            <Card className="border-violet-200 bg-violet-50/40 dark:border-violet-900/60 dark:bg-violet-950/20">
+              <CardContent className="p-5">
+                <h2
+                  id="advanced-coverage-heading"
+                  className="mb-1 text-sm font-semibold text-violet-900 dark:text-violet-100"
+                >
+                  高度試験フルカバー
+                </h2>
+                <p className="mb-4 text-xs leading-relaxed text-violet-800/80 dark:text-violet-200/80">
+                  午前 II の四択だけでなく、午後の記述・論述まで AI 採点対応。
+                  主要無料サイトでは未対応の高度試験範囲を網羅しています。
+                </p>
+                <div className="grid gap-3 sm:grid-cols-3">
+                  <div className="rounded-xl border border-violet-200 bg-white p-3 dark:border-violet-800/60 dark:bg-zinc-950">
+                    <div className="text-xs text-zinc-500 dark:text-zinc-400">午前 (四択)</div>
+                    <div className="mt-0.5 text-2xl font-bold tabular-nums text-violet-700 dark:text-violet-300">
+                      {questions.length.toLocaleString("ja-JP")}
+                      <span className="ml-1 text-sm font-normal">問</span>
+                    </div>
+                  </div>
+                  {afternoonCount > 0 && (
+                    <div className="rounded-xl border border-violet-200 bg-white p-3 dark:border-violet-800/60 dark:bg-zinc-950">
+                      <div className="text-xs text-zinc-500 dark:text-zinc-400">午後 I (記述)</div>
+                      <div className="mt-0.5 text-2xl font-bold tabular-nums text-violet-700 dark:text-violet-300">
+                        {afternoonCount.toLocaleString("ja-JP")}
+                        <span className="ml-1 text-sm font-normal">問</span>
+                      </div>
+                    </div>
+                  )}
+                  {essayCount > 0 && (
+                    <div className="rounded-xl border border-violet-200 bg-white p-3 dark:border-violet-800/60 dark:bg-zinc-950">
+                      <div className="text-xs text-zinc-500 dark:text-zinc-400">午後 II (論述)</div>
+                      <div className="mt-0.5 text-2xl font-bold tabular-nums text-violet-700 dark:text-violet-300">
+                        {essayCount.toLocaleString("ja-JP")}
+                        <span className="ml-1 text-sm font-normal">設問</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {afternoonCount > 0 && (
+                    <Button asChild variant="primary" size="sm">
+                      <Link href={`/${exam}/afternoon`}>
+                        <FileEdit className="h-3.5 w-3.5" />
+                        午後 I を解く
+                      </Link>
+                    </Button>
+                  )}
+                  {essayCount > 0 && (
+                    <Button asChild variant="outline" size="sm">
+                      <Link href={`/essay/${exam}`}>
+                        <Sparkles className="h-3.5 w-3.5" />
+                        午後 II 論述を AI 添削
+                      </Link>
+                    </Button>
+                  )}
+                  <Button asChild variant="ghost" size="sm">
+                    <Link href="/demo/afternoon">
+                      採点デモを見る
+                      <ChevronRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* Random quiz CTA */}
         <section aria-label="クイズを始める" className="mb-10">

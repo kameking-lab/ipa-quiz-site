@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Shield, Lock, Activity, FileSearch, Server, KeyRound, Users, AlertTriangle } from "lucide-react";
+import { ArrowLeft, Shield, Lock, Activity, FileSearch, Server, KeyRound, Users, AlertTriangle, Database, Clock, FileSpreadsheet } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -110,6 +110,20 @@ const CONTROLS: ControlItem[] = [
     planned: "Phase 2 で正式 SLA として契約書面に明記予定（クレジット還付方式）。",
   },
   {
+    title: "バックアップ・災害復旧 (DR)",
+    icon: Database,
+    current:
+      "Postgres は Point-in-Time Recovery で過去 24 時間の任意時点へ復旧可能。日次フルバックアップを 30 日間保持し、別リージョンへレプリケーション。RPO 目標 1 時間以内、RTO 目標 4 時間以内。",
+    planned: "Phase 2 で年 1 回の DR 演習（疑似障害シナリオ）を実施し、結果を法人管理者へ報告予定。",
+  },
+  {
+    title: "保持期間・データ削除",
+    icon: Clock,
+    current:
+      "契約終了時、ユーザーデータは 30 日以内に論理削除、90 日以内にバックアップを含めて物理削除。証跡は法人管理者へ削除完了報告書として送付。",
+    planned: "Phase 1 でデータ削除証明書（NIST SP 800-88 準拠）の自動発行を予定。",
+  },
+  {
     title: "シングルサインオン (SAML SSO)",
     icon: Users,
     current:
@@ -156,6 +170,86 @@ export default function SecurityPage() {
           しており、未取得の認証を取得済みと誤認させる表記は行いません。
         </p>
       </header>
+
+      <section className="mb-8">
+        <h2 className="mb-3 text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
+          法人向けコミットメント（一目で分かる）
+        </h2>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Shield className="h-5 w-5 text-sky-600 dark:text-sky-400" />
+                <CardTitle className="text-sm">SLA 99.9% 公開</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Team プラン月次稼働率 99.9% を SLO として公開。未達月はサービスクレジットを返金。
+              メンテ時間と除外条件は <Link href="/legal/sla" className="underline">/legal/sla</Link> 参照。
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <AlertTriangle className="h-5 w-5 text-amber-600 dark:text-amber-400" />
+                <CardTitle className="text-sm">インシデント対応</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              重大度 P1（情報漏洩・全停止）は 24 時間以内に法人管理者へ通知。
+              Runbook 文書化済み・年次訓練を Phase 1 で導入予定。
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Lock className="h-5 w-5 text-emerald-600 dark:text-emerald-400" />
+                <CardTitle className="text-sm">暗号化（保管 / 通信）</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              保管時 AES-256（Postgres / Neon）、通信時 TLS 1.2 以上強制（HSTS 有効）。
+              LLM 推論への通信も TLS のみ。
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <FileSearch className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                <CardTitle className="text-sm">監査ログ保管</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              管理者操作ログを現状 90 日保持、Phase 1 で 1 年・WORM ストレージへ。
+              法人管理者は CSV ダウンロード可能。
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <Database className="h-5 w-5 text-cyan-600 dark:text-cyan-400" />
+                <CardTitle className="text-sm">バックアップ / DR</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Postgres は PITR（Point-in-Time Recovery）24 時間遡及・日次フルバックアップ 30 日保持。
+              RPO ≤ 1 時間 / RTO ≤ 4 時間を目標値として運用。
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader className="pb-2">
+              <div className="flex items-center gap-2">
+                <FileSpreadsheet className="h-5 w-5 text-fuchsia-600 dark:text-fuchsia-400" />
+                <CardTitle className="text-sm">監査計画</CardTitle>
+              </div>
+            </CardHeader>
+            <CardContent className="text-xs leading-relaxed text-zinc-700 dark:text-zinc-300">
+              Phase 2（2026 Q4）で SOC2 Type1 取得、Phase 3 で Type2 / ISO 27001 準備開始。
+              年 1 回の外部ペネトレーションテスト計画あり。
+            </CardContent>
+          </Card>
+        </div>
+      </section>
 
       <Card className="mb-8 border-amber-300 bg-amber-50/60 dark:border-amber-800 dark:bg-amber-950/30">
         <CardContent className="p-4 text-sm leading-relaxed text-amber-900 dark:text-amber-100">
@@ -285,10 +379,19 @@ export default function SecurityPage() {
                 <Link href="/enterprise/pilot">無料 3ヶ月パイロットを申し込む</Link>
               </Button>
               <Button asChild variant="outline" size="sm">
+                <Link href="/legal/msa">MSA テンプレート</Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
                 <Link href="/legal/dpa">DPA を確認する</Link>
               </Button>
               <Button asChild variant="outline" size="sm">
+                <Link href="/legal/sla">SLA を確認する</Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
                 <Link href="/enterprise/sso">SSO 対応予定を見る</Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/trust">信頼性ポリシー</Link>
               </Button>
               <Button asChild variant="outline" size="sm">
                 <Link href="/case-studies">導入事例を見る</Link>
