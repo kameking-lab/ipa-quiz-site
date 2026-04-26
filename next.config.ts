@@ -5,10 +5,11 @@ const isDev = process.env.NODE_ENV === "development";
 const cspDirectives = [
   "default-src 'self'",
   // unsafe-inline required for theme bootstrap script in layout.tsx
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live`,
-  "style-src 'self' 'unsafe-inline'",
+  // cdn.jsdelivr.net required for Swagger UI on /api-docs
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net`,
+  "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "img-src 'self' data: blob: https://*.ipa.go.jp",
-  "font-src 'self'",
+  "font-src 'self' https://cdn.jsdelivr.net",
   // connect-src: Gemini API (server-side) + Vercel Live preview toolbar
   "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com",
   "frame-src https://vercel.live",
