@@ -61,3 +61,38 @@
 - 工数: 1-2 時間
 - 優先度: 中
 - 検出ループ: Round 2 Loop 2
+
+## M2-9. localStorage version migration
+- 現状: `lib/storage/keys.ts` に LS_KEYS あるが、schema 変更時の migration 処理なし
+- リスク: 古いユーザーが新型と互換性のない履歴データを保持
+- 推奨: `lib/storage/migrate.ts` を新規実装、version 番号と migrator chain
+- 工数: 2-3 時間
+- 検出ループ: Round 2 Loop 3
+
+## M2-10. Streak grace period
+- 現状: 連続記録は厳密な日次境界で判定、1 日でも欠ければリセット
+- 推奨: 1 日のグレース期間（連続記録復活）or「freeze」アイテムでオプション提供
+- 工数: 3-4 時間
+- 優先度: 中（Duolingo 式のリテンション強化）
+- 検出ループ: Round 2 Loop 3
+
+## M2-11. ChoiceButton role="radio" / aria-pressed
+- 現状: `<button>` で実装、role/aria-pressed 不足
+- 推奨: `role="radio"` + `aria-checked` で radio group セマンティクス、または `aria-pressed` で toggle
+- 工数: 1-2 時間
+- 優先度: 中（スクリーンリーダー UX）
+- 検出ループ: Round 2 Loop 3
+
+## M2-12. aria-live region 全体 re-render の抑制
+- 現状: `CopilotPanel.tsx` ストリーミング中、メッセージ追加で aria-live region 全体が re-render され、スクリーンリーダーが全文再読
+- 推奨: `aria-atomic="false"` を明示、または最後のメッセージのみ aria-live 領域へ
+- 工数: 1-2 時間
+- 優先度: 中
+- 検出ループ: Round 2 Loop 3
+
+## M2-13. PWA Service Worker offline 戦略
+- 現状: `manifest.webmanifest` 設定済、`<ServiceWorkerRegistration />` あるが workbox 等の cache 戦略不明
+- 推奨: cache-first for question data、network-first for AI API、stale-while-revalidate for assets
+- 工数: 4-6 時間
+- 優先度: 低（β中は許容、本番 PWA install 機能訴求時に対応）
+- 検出ループ: Round 2 Loop 3

@@ -659,6 +659,17 @@ export function CopilotMobileSheet({
   onRateLimitHit,
 }: Omit<Props, "className" | "onClose" | "headerRight">) {
   const [open, setOpen] = React.useState(false);
+
+  // Escape キーでシートを閉じる（キーボードユーザーの脱出経路）
+  React.useEffect(() => {
+    if (!open) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
   return (
     <>
       {!open && (
@@ -671,10 +682,16 @@ export function CopilotMobileSheet({
         </button>
       )}
       {open && (
-        <div className="fixed inset-0 z-50 sm:hidden">
+        <div
+          className="fixed inset-0 z-50 sm:hidden"
+          role="dialog"
+          aria-modal="true"
+          aria-label="AI コパイロット"
+        >
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setOpen(false)}
+            aria-hidden="true"
           />
           <div className="absolute inset-x-0 bottom-0 top-12 flex flex-col rounded-t-2xl bg-white shadow-2xl dark:bg-zinc-950">
             <button

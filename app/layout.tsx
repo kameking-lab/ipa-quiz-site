@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     template: "%s | IPA Quiz",
   },
   description:
-    "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
+    "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
   applicationName: "IPA Quiz",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "IPA Quiz — AIネイティブ過去問学習",
     description:
-      "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
+      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
     type: "website",
     locale: "ja_JP",
     siteName: "IPA Quiz",
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     creator: "@kakomon_ai_jp",
     title: "IPA Quiz — AIネイティブ過去問学習",
     description:
-      "IPA 13試験 12,162問。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
+      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。全機能無料β公開中",
   },
 };
 
