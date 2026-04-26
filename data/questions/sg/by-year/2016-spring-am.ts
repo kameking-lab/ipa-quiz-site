@@ -1151,7 +1151,7 @@ export const SG_QUESTIONS_2016_SPRING_AM: Question[] = [
       "エ": "契約の締結"
     },
     "answer": "イ",
-    "explanation": "正解はイです。（出典: IPA 情報セキュリティマネジメント試験 2016年度春期 午前 問48）",
+    "explanation": "情報システム調達におけるbの段階は、調達要求仕様を満たす可能性のある供給者候補に対して、提案依頼書（RFP: Request for Proposal）を発行し、その回答を募るプロセスです。RFPは、調達するシステムに求める機能、性能、納期、費用、サポート体制などの詳細な要件を提示し、供給者からの具体的な提案を引き出すための文書です。この提案内容を比較検討することで、最適な供給者を選定します。\n\nア: RFI（Request for Information）は、情報提供依頼書と呼ばれ、市場調査や潜在的な供給者の特定を目的とする初期段階の照会であり、具体的な提案を求める段階ではありません。\n\nウ: 供給者の選定は、RFPへの回答を評価し、最終的にどの供給者と契約するかを決定する、RFP発行後のプロセスです。\n\nエ: 契約の締結は、供給者選定の後に、両者間の合意に基づき正式な契約を成立させる最終段階です。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2016h-2_1/2016h-2h_sg_am_qs.pdf",
     "license": "IPA-public"

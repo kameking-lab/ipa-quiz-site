@@ -455,7 +455,7 @@ export const SC_QUESTIONS_2016_AUTUMN_AM2: Question[] = [
       "エ": "コネクション要求元からSYN、コネクション要求先からACK、コネクション要求元からSYN、コネクション要求先からACK、コネクション要求元からSYN、コネクション要求先からACKを送信する流れ図。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。（出典: IPA 情報処理安全確保支援士試験 2016年度秋期 午前II 問19）",
+    "explanation": "TCPの3ウェイハンドシェイクは、コネクション確立のために、コネクション要求元と要求先の間で3つのステップで確認信号をやり取りする仕組みです。具体的には、まず要求元がSYN（Synchronize Sequence Number）フラグを立てて接続開始を通知し、要求先はそれに応答してSYNとACK（Acknowledgment）フラグを両方立てたSYN+ACKを返します。最後に、要求元は要求先からのSYN+ACKに応答するACKを送信して、コネクションが確立されます。\n\n選択肢アは、この「SYN」「SYN+ACK」「ACK」という3つの確認信号のやり取りを正確に表しています。\n\n選択肢イとエは、ACKの後に再度SYNを送信する流れとなっており、これは3ウェイハンドシェイクの定義に合致しません。また、選択肢ウは、要求先がACKではなくSYNを返しており、これもコネクション確立のプロセスとして不正解です。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2016h-2_2/2016h-2a_sc_am2_qs.pdf",
     "license": "IPA-public"

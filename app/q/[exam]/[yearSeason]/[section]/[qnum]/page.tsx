@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
@@ -385,15 +386,26 @@ export default async function QuestionPage({
             <p>
               ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
             </p>
-            <a
-              href={q.sourcePdfUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
-            >
-              出典: IPA 公式 PDF
-              <ExternalLink className="h-3 w-3" />
-            </a>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <a
+                href={q.sourcePdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+              >
+                出典: IPA 問題 PDF
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+              >
+                IPA 公式解答 PDF
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </div>
         </details>
       </section>

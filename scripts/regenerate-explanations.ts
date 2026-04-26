@@ -93,8 +93,11 @@ function buildPrompt(q: PlaceholderEntry): string {
         .join("\n")
     : "(選択肢なし)";
   const answerStr = Array.isArray(q.answer) ? q.answer.join(", ") : q.answer;
+  const imageNote = q.hasImage
+    ? "\n【注意】この問題は図表を含みますが、図表を直接参照せず、選択肢の文言と問題文から判断できる範囲で解説してください。図表に依存する細部は触れない。"
+    : "";
 
-  return `あなたはIPA情報処理技術者試験の解説専門家です。以下の問題の解説を200〜350文字で作成してください。
+  return `あなたはIPA情報処理技術者試験の解説専門家です。以下の問題の解説を300〜500文字で作成してください。
 
 【試験区分】${q.exam.toUpperCase()} / ${q.session.toUpperCase()} / ${q.category}
 【問題】
@@ -103,15 +106,16 @@ ${q.question}
 【選択肢】
 ${choicesText}
 
-【正解】${answerStr}
+【正解】${answerStr}${imageNote}
 
 以下の要件を必ず守ること:
-- 正解の理由を具体的かつ明確に説明する
-- 誤りの選択肢についてもなぜ間違いかを簡潔に触れる
-- 専門用語には初学者向けの補足を入れる
-- 200〜350文字、日本語のみ
-- 「正解は○です」で始めない
-- マークダウン・記号・改行は使わない、プレーンテキストのみ`;
+- まず正解の根拠を具体的に説明する（仕組み・公式・定義を明記）
+- 続いて消去法として、提示された全ての誤り選択肢それぞれについて「なぜ誤りか」を1選択肢につき1文以上で具体的に分析する。形式例: 「アは○○なので不適切。イは△△であり□□と混同しやすいが正しくは…。」
+- 専門用語（例: ベイズの定理、事前確率、尤度、スプーフィング、TCO 等）が登場した場合は、初学者向けに10〜30文字で簡潔に定義を添える
+- 300〜500文字、日本語のみ
+- 「正解は○です」「答えは○です」で始めない（既に正解は表示されている）
+- マークダウン記号（**、#、- など）は使わない。改行は段落区切りに最大2回まで使用可
+- 「他選択肢が誤りの理由」というラベルや見出しは出力しない（自然な文章で消去法を含める）`;
 }
 
 // ─── ファイル内の解説を更新 ────────────────────────────────────────────────────
@@ -206,6 +210,26 @@ async function main(): Promise<void> {
         `画像問題をスキップ: ${imgCount} 件 (--include-images で含める)`,
       );
     }
+  }
+
+  // ─── 進捗 JSON で再開対応 ─────────────────────────────────────────────────────
+  const progressFile = join(LOGS_DIR, "regen-progress.json");
+  const processedIds = new Set<string>();
+  if (existsSync(progressFile)) {
+    try {
+      const raw = JSON.parse(readFileSync(progressFile, "utf8")) as {
+        processedIds?: string[];
+      };
+      for (const id of raw.processedIds ?? []) processedIds.add(id);
+      console.log(`再開: 既に ${processedIds.size} 件処理済み (regen-progress.json)`);
+    } catch {
+      /* fall through */
+    }
+  }
+  const beforeFilter = targets.length;
+  targets = targets.filter((q) => !processedIds.has(q.id));
+  if (beforeFilter !== targets.length) {
+    console.log(`処理済みスキップ: ${beforeFilter - targets.length} 件`);
   }
 
   console.log(
@@ -338,9 +362,21 @@ async function main(): Promise<void> {
           console.warn(`  ⚠ ${id} がファイル内で見つかりませんでした`);
         }
         content = updated;
+        processedIds.add(id);
       }
       writeFileSync(filePath, content, "utf8");
       console.log(`  📝 ${basename(filePath)} 更新 (${newExplanations.size} 件)`);
+
+      // 進捗 JSON 即時保存（再開対応）
+      writeFileSync(
+        progressFile,
+        JSON.stringify(
+          { updatedAt: new Date().toISOString(), processedIds: [...processedIds] },
+          null,
+          2,
+        ),
+        "utf8",
+      );
     }
   }
 

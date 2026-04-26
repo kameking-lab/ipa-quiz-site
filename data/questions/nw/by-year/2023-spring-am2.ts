@@ -119,7 +119,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "1,480"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。（出典: IPA ネットワークスペシャリスト試験 令和5年度春期 午前II 問5）",
+    "explanation": "IPv4ネットワークでTCPを使用する際、フラグメント化されずに送信できるデータの最大長は、MTU（Maximum Transmission Unit：最大転送単位）からIPヘッダとTCPヘッダの長さを差し引いた値となります。MTUは1,500オクテットです。TCPパケットはIPヘッダ（通常20オクテット）とTCPヘッダ（通常20オクテット）を含んでいます。したがって、フラグメント化されない最大データ長は、1,500 - 20（IPヘッダ）- 20（TCPヘッダ）= 1,460オクテットとなります。\n\nアの1,446オクテットは、TCPヘッダのオプションフィールドを考慮した場合などに相当する可能性がありますが、標準的なヘッダ長を前提とする問題では不適切です。イの1,456オクテットは、TCPのウィンドウサイズなどのフィールド長と混同しやすいですが、データ長とは直接関係ありません。エの1,480オクテットは、IPヘッダ長を無視した場合の値であり、フラグメント化を防ぐための計算としては誤りです。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +215,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "新IP ヘッダーから ESP 認証データまで"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。（出典: IPA ネットワークスペシャリスト試験 令和5年度春期 午前II 問9）",
+    "explanation": "ESP トンネルモードでは、元の IP パケット全体をカプセル化し、その上に新しい IP ヘッダーを付加します。暗号化の対象は、この新しい IP ヘッダー以外の、元の IP パケット（オリジナル IP ヘッダー、IPペイロード）と、ESP ヘッダー、ESP トレーラ、ESP 認証データを含む部分です。ただし、ESP 認証データは認証のために使用されるもので、暗号化の対象外となります。したがって、オリジナル IP ヘッダーから ESP トレーラまでの範囲が暗号化されます。\n\nアはESPヘッダーからESPトレーラまでとしていますが、オリジナルIPヘッダーとIPペイロードが含まれないため不適切です。イはTCPヘッダーからESP認証データまでとしていますが、IPsecではIPペイロード全体が保護対象であり、TCPヘッダーのみを対象とするわけではないため誤りです。エは新IPヘッダーからESP認証データまでとしていますが、トンネルモードでは新しいIPヘッダーは暗号化されず、元のIPパケットを保護するために使用されるため誤りです。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +263,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "④"
     },
     "answer": "ア",
-    "explanation": "正解はアです。（出典: IPA ネットワークスペシャリスト試験 令和5年度春期 午前II 問11）",
+    "explanation": "IEEE 802.1Qで定義されるVLANタグは、イーサネットフレームのヘッダ部分に挿入されます。具体的には、MACアドレスとEtherTypeフィールドの間に位置する、元のイーサネットフレームのタイプフィールド（EtherType）の代わりに挿入されるのが一般的です。このVLANタグは、フレームにVLAN識別子（VID）を付与し、ネットワーク機器がフレームをどのVLANに属するかを判断するために使用されます。\n\nアは①に該当し、VLANタグが挿入される位置として正しいです。\n\nイは②に該当し、これは通常、MACアドレスを格納する部分であり、VLANタグが挿入される場所ではありません。\n\nウは③に該当し、ここはEtherTypeフィールドやペイロードの開始部分であり、VLANタグの挿入位置とは異なります。\n\nエは④に該当し、これはイーサネットフレームのペイロード（データ部）であり、VLANタグはフレームの制御情報としてヘッダ部分に付与されます。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +359,7 @@ export const NW_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "IEEE 802.11n: 5 GHz帯, IEEE 802.11ac: 2.4 GHz帯, 5 GHz帯"
     },
     "answer": "エ",
-    "explanation": "正解はエです。（出典: IPA ネットワークスペシャリスト試験 令和5年度春期 午前II 問15）",
+    "explanation": "IEEE 802.11n は、2.4 GHz帯と5 GHz帯の両方で動作可能ですが、IEEE 802.11ac は5 GHz帯のみで動作するように規格化されています。したがって、両規格が使用できる周波数帯の組合せとして最も適切なのは、IEEE 802.11n が2.4 GHz帯と5 GHz帯、IEEE 802.11ac が5 GHz帯となるエです。\n\nアはIEEE 802.11ac が5 GHz帯のみという点を誤っており、イはIEEE 802.11ac が2.4 GHz帯でも動作するという誤解を生じさせるため不適切です。ウはIEEE 802.11n が2.4 GHz帯と5 GHz帯で利用できる事実を考慮しておらず、IEEE 802.11ac の使用帯域のみに限定しているため不十分です。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_nw_am2_qs.pdf",
     "license": "IPA-public"
