@@ -21,14 +21,51 @@ export const metadata: Metadata = {
 
 type SearchParams = { callbackUrl?: string; error?: string };
 
+const KNOWN_AUTH_ERRORS: Record<string, string> = {
+  OAuthSignin: "外部プロバイダへの接続に失敗しました。",
+  OAuthCallback: "外部プロバイダからの応答に問題がありました。",
+  OAuthCreateAccount: "アカウント作成に失敗しました。",
+  EmailCreateAccount: "アカウント作成に失敗しました。",
+  Callback: "ログイン処理に失敗しました。",
+  OAuthAccountNotLinked: "別のログイン方法で登録済みのメールアドレスです。同じ方法でログインしてください。",
+  EmailSignin: "メール送信に失敗しました。",
+  CredentialsSignin: "認証情報が正しくありません。",
+  SessionRequired: "ログインが必要です。",
+  AccessDenied: "アクセスが拒否されました。",
+  Verification: "認証リンクの有効期限が切れています。再度お試しください。",
+  Default: "ログインに失敗しました。",
+};
+
+/**
+ * Only allow same-origin relative paths as redirect targets to prevent open redirect.
+ * Reject protocol-relative URLs ("//evil.com"), absolute URLs ("https://evil.com"),
+ * and anything that doesn't start with a single "/".
+ */
+function safeCallbackUrl(raw: string | undefined): string {
+  if (!raw) return "/";
+  if (typeof raw !== "string") return "/";
+  if (!raw.startsWith("/")) return "/";
+  if (raw.startsWith("//")) return "/";
+  if (raw.startsWith("/\\")) return "/";
+  return raw;
+}
+
+function friendlyAuthError(code: string | undefined): string {
+  if (!code) return KNOWN_AUTH_ERRORS.Default;
+  return KNOWN_AUTH_ERRORS[code] ?? KNOWN_AUTH_ERRORS.Default;
+}
+
 export default async function SignInPage({
   searchParams,
 }: {
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
+  const callbackUrl = safeCallbackUrl(sp.callbackUrl);
   const session = await auth();
-  if (session?.user) redirect(sp.callbackUrl || "/");
+  if (session?.user) redirect(callbackUrl);
+
+  const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
 
   const providerIds = new Set(
     authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)),
@@ -66,13 +103,13 @@ export default async function SignInPage({
 
         {/* Card */}
         <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-7">
-          {sp.error && (
+          {errorMessage && (
             <div className="mb-4 flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
               <div>
                 <p className="font-semibold">ログインに失敗しました</p>
                 <p className="mt-0.5 text-xs opacity-90">
-                  ({sp.error}) 時間をおいて再度お試しください。
+                  {errorMessage} 時間をおいて再度お試しください。
                 </p>
               </div>
             </div>
@@ -81,7 +118,7 @@ export default async function SignInPage({
           {providerIds.size > 0 ? (
             <>
               <SignInButtons
-                callbackUrl={sp.callbackUrl}
+                callbackUrl={callbackUrl}
                 hasGoogle={providerIds.has("google")}
                 hasGitHub={providerIds.has("github")}
               />
@@ -93,7 +130,7 @@ export default async function SignInPage({
                     または
                     <span className="h-px flex-1 bg-border" />
                   </div>
-                  <EmailSignInForm callbackUrl={sp.callbackUrl} />
+                  <EmailSignInForm callbackUrl={callbackUrl} />
                 </>
               )}
             </>
