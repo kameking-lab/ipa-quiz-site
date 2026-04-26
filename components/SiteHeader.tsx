@@ -7,6 +7,7 @@ import { Menu, ArrowRight } from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
 import { ThemeToggle } from "./ThemeToggle";
 import { Button } from "./ui/button";
+import { ExamSelectorDialog } from "./ExamSelectorDialog";
 import {
   Sheet,
   SheetContent,
@@ -85,12 +86,15 @@ export function SiteHeader() {
           <div className="hidden md:block">
             <ThemeToggle />
           </div>
-          <Button asChild variant="primary" size="sm" className="hidden md:inline-flex">
-            <Link href="/quiz?mode=random&exam=ap">
-              いますぐ解く
-              <ArrowRight className="h-3.5 w-3.5" />
-            </Link>
-          </Button>
+          <ExamSelectorDialog
+            trigger={
+              <Button variant="primary" size="sm" className="hidden md:inline-flex">
+                いますぐ解く
+                <ArrowRight className="h-3.5 w-3.5" />
+              </Button>
+            }
+          />
+
 
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
@@ -125,14 +129,15 @@ export function SiteHeader() {
                 ))}
               </nav>
               <div className="mt-auto flex flex-col gap-3">
-                <SheetClose asChild>
-                  <Button asChild variant="primary" size="lg" className="w-full">
-                    <Link href="/quiz?mode=random&exam=ap">
+                <ExamSelectorDialog
+                  onClose={() => setOpen(false)}
+                  trigger={
+                    <Button variant="primary" size="lg" className="w-full">
                       いますぐ解く
                       <ArrowRight className="h-4 w-4" />
-                    </Link>
-                  </Button>
-                </SheetClose>
+                    </Button>
+                  }
+                />
                 <div className="flex items-center justify-between rounded-lg border border-border p-3 text-sm">
                   <span className="text-muted-foreground">テーマ</span>
                   <ThemeToggle />
