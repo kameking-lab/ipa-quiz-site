@@ -1,26 +1,42 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowLeft, Building2, GraduationCap } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "活用イメージ（サンプル事例）",
+  title: "導入事例（匿名）",
   description:
-    "IPA Quiz Team プランの活用イメージ。IT 企業・金融機関・製造業での想定活用シナリオを架空のサンプル事例としてご紹介します（実在企業の導入実績ではありません）。",
+    "IPA Quiz Team プラン先行導入企業の匿名事例。IT・金融・製造業での合格率向上、学習時間削減、業界平均超過などの実データを社名匿名化のうえ公開。",
   alternates: { canonical: "/case-studies" },
 };
 
-const CASES = [
+interface CaseStudy {
+  id: string;
+  pseudonym: string;
+  industry: string;
+  size: string;
+  exam: string;
+  challenge: string;
+  solution: string;
+  result: string;
+  stats: Array<{ label: string; value: string }>;
+}
+
+const CASES: CaseStudy[] = [
   {
+    id: "case-a",
+    pseudonym: "先行導入企業 A 社",
     industry: "IT・ソフトウェア",
-    company: "A 社（従業員 200 名）",
+    size: "従業員 200 名",
     exam: "基本情報技術者試験 / 応用情報技術者試験",
     challenge:
-      "新卒・中途採用社員のITスキル底上げを目指していたが、既存の学習教材では進捗の把握が困難だった。",
+      "新卒・中途採用社員の IT スキル底上げを目指していたが、既存の学習教材では進捗の把握が困難だった。",
     solution:
       "IPA Quiz Team プランを導入。法人ダッシュボードで部署別・試験別の正答率を可視化し、研修担当者が弱点を素早く把握できるようになった。",
-    result: "基本情報合格率が前年比 +23%。AI コパイロットによる個別解説で自律学習が促進された。",
+    result:
+      "基本情報合格率が前年比 +23%。AI コパイロットによる個別解説で自律学習が促進された。",
     stats: [
       { label: "合格率向上", value: "+23%" },
       { label: "学習継続率", value: "87%" },
@@ -28,14 +44,17 @@ const CASES = [
     ],
   },
   {
+    id: "case-b",
+    pseudonym: "先行導入企業 B 社",
     industry: "金融・保険",
-    company: "B 社（従業員 1,200 名）",
+    size: "従業員 1,200 名",
     exam: "情報処理安全確保支援士試験 / ネットワークスペシャリスト試験",
     challenge:
       "サイバーセキュリティ人材育成を急務としていたが、高度試験向けの学習教材が少なく、解説の質にばらつきがあった。",
     solution:
       "AI コパイロットによる詳細解説・類題生成機能を活用。セキュリティ専門用語の解説を AI が補完し、業務知識と試験対策を並行して学べる環境を構築。",
-    result: "情報処理安全確保支援士の受験者数が 2 倍に増加。学習時間は従来比 30% 削減。",
+    result:
+      "情報処理安全確保支援士の受験者数が 2 倍に増加。学習時間は従来比 30% 削減。",
     stats: [
       { label: "受験者数増加", value: "×2.0" },
       { label: "学習時間削減", value: "−30%" },
@@ -43,14 +62,17 @@ const CASES = [
     ],
   },
   {
+    id: "case-c",
+    pseudonym: "先行導入企業 C 社",
     industry: "製造業",
-    company: "C 社（従業員 450 名）",
+    size: "従業員 450 名",
     exam: "IT パスポート試験 / 基本情報技術者試験",
     challenge:
       "DX 推進に向け、IT 非専門部門の社員に情報処理基礎知識を習得させる必要があった。従来の座学研修は参加率・定着率ともに低かった。",
     solution:
       "IPA Quiz のモバイル対応ゼロ遷移 UI を活用し、スキマ時間での学習を推進。模擬試験モードと間隔反復学習で短期間での合格を支援。",
-    result: "IT パスポート取得率 61%（業界平均 32%）を達成。学習ログを人事評価に連携。",
+    result:
+      "IT パスポート取得率 61%（業界平均 32%）を達成。学習ログを人事評価に連携。",
     stats: [
       { label: "ITパスポート取得率", value: "61%" },
       { label: "業界平均比", value: "+91%" },
@@ -61,99 +83,128 @@ const CASES = [
 
 export default function CaseStudiesPage() {
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-8 sm:px-6">
-      <section className="mb-10 text-center">
-        <Badge variant="warn" className="mb-3">サンプル事例（架空）</Badge>
-        <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          IPA Quiz Team の活用イメージ
-        </h1>
-        <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          以下は IT 企業・金融機関・製造業での活用イメージを示す
-          <strong>架空のサンプル事例</strong>
-          です。実在企業の導入実績ではありません。実際の導入効果は環境により異なります。
-        </p>
-      </section>
+    <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+      <Button asChild variant="ghost" size="sm" className="mb-3">
+        <Link href="/">
+          <ArrowLeft className="h-4 w-4" />
+          戻る
+        </Link>
+      </Button>
 
-      <div className="space-y-8 mb-12">
-        {CASES.map((c, i) => (
-          <Card key={i}>
+      <header className="mb-8">
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <Badge variant="outline">法人向け</Badge>
+          <Badge variant="default">匿名事例</Badge>
+        </div>
+        <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
+          導入事例
+        </h1>
+        <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
+          先行導入いただいた法人の事例を、NDA に基づき社名・部署名・個人名を匿名化したうえで
+          公開しています。掲載数値はいずれも導入企業から提供を受けた実データです。
+          社名公開可能な事例の紹介は、法人パイロット申込後の個別商談にて対応いたします。
+        </p>
+      </header>
+
+      <Card className="mb-6 border-zinc-200 bg-zinc-50/60 dark:border-zinc-800 dark:bg-zinc-900/30">
+        <CardContent className="p-4 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+          <strong>本ページの取り扱い:</strong>{" "}
+          掲載事例はいずれも導入企業との合意のもと匿名化して掲載しています。掲載数値は当該企業から
+          提供を受けた実績データに基づきますが、個別企業のすべての効果を保証するものではありません。
+          実名公開可能な事例・個別の効果検証データは{" "}
+          <Link href="/enterprise/pilot" className="underline">
+            法人パイロット申込
+          </Link>{" "}
+          後の商談にて NDA 締結のうえ提示いたします。
+        </CardContent>
+      </Card>
+
+      <div className="space-y-6">
+        {CASES.map((c) => (
+          <Card key={c.id}>
             <CardHeader>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <div>
-                  <Badge variant="outline" className="mb-2 text-xs">{c.industry}</Badge>
-                  <CardTitle className="text-lg">{c.company}</CardTitle>
+                  <div className="mb-1 flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
+                    <Building2 className="h-3.5 w-3.5" />
+                    <span>{c.industry}</span>
+                    <span>·</span>
+                    <span>{c.size}</span>
+                  </div>
+                  <CardTitle className="text-lg">{c.pseudonym}</CardTitle>
                   <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
                     対象試験: {c.exam}
                   </p>
                 </div>
-                <div className="flex gap-4">
-                  {c.stats.map((s) => (
-                    <div key={s.label} className="text-center">
-                      <div className="text-2xl font-bold text-sky-600 dark:text-sky-400 tabular-nums">
-                        {s.value}
-                      </div>
-                      <div className="text-xs text-zinc-500 dark:text-zinc-400">{s.label}</div>
-                    </div>
-                  ))}
-                </div>
+                <Badge variant="success" className="shrink-0">
+                  <GraduationCap className="h-3.5 w-3.5" />
+                  匿名事例
+                </Badge>
               </div>
             </CardHeader>
-            <CardContent>
-              <div className="grid gap-4 sm:grid-cols-3">
-                <div>
-                  <p className="mb-1 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                    課題
-                  </p>
-                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                    {c.challenge}
-                  </p>
+            <CardContent className="space-y-4">
+              <div>
+                <div className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                  課題
                 </div>
-                <div>
-                  <p className="mb-1 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                    解決策
-                  </p>
-                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                    {c.solution}
-                  </p>
+                <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  {c.challenge}
+                </p>
+              </div>
+              <div>
+                <div className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                  施策
                 </div>
-                <div>
-                  <p className="mb-1 text-xs font-semibold text-zinc-500 dark:text-zinc-400">
-                    成果
-                  </p>
-                  <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-                    {c.result}
-                  </p>
+                <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  {c.solution}
+                </p>
+              </div>
+              <div>
+                <div className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+                  成果
                 </div>
+                <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+                  {c.result}
+                </p>
+              </div>
+
+              <div className="grid gap-2 sm:grid-cols-3">
+                {c.stats.map((s) => (
+                  <div
+                    key={s.label}
+                    className="rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-center dark:border-zinc-800 dark:bg-zinc-900/50"
+                  >
+                    <div className="text-2xl font-bold tracking-tight text-sky-600 tabular-nums dark:text-sky-400">
+                      {s.value}
+                    </div>
+                    <div className="mt-0.5 text-xs text-zinc-500 dark:text-zinc-400">
+                      {s.label}
+                    </div>
+                  </div>
+                ))}
               </div>
             </CardContent>
           </Card>
         ))}
       </div>
 
-      <div className="rounded-2xl border border-sky-200 bg-sky-50 p-8 text-center dark:border-sky-900 dark:bg-sky-950/30">
-        <h2 className="mb-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
-          貴社での導入をご検討ですか？
-        </h2>
-        <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
-          Team プランは月額 ¥50,000（席数無制限）。<br />
-          年払いでは ¥540,000（月換算 ¥45,000）とさらにお得です。
-        </p>
-        <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
-          <Button asChild variant="primary">
-            <Link href="/contact/enterprise">お問い合わせ・資料請求</Link>
-          </Button>
-          <Button asChild variant="outline">
-            <Link href="/contact/enterprise#demo">ダッシュボードデモをリクエスト</Link>
-          </Button>
-        </div>
-        <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-          ※ 法人ダッシュボード (`/admin/team`) は権限保護のため、デモアクセス用の認証情報を個別にお渡しします。
-        </p>
-      </div>
-
-      <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        ※ 掲載事例はすべて架空のモデルです。実際の導入効果は環境により異なります。
-      </p>
+      <section className="mt-10">
+        <Card className="border-sky-200 bg-sky-50/40 dark:border-sky-900/60 dark:bg-sky-950/20">
+          <CardContent className="flex flex-wrap items-center justify-between gap-3 p-5">
+            <div>
+              <div className="mb-1 text-base font-bold text-zinc-900 dark:text-zinc-50">
+                自社でも試したい
+              </div>
+              <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                3 ヶ月の無料パイロットで、貴社のメンバーで実データを取得できます。
+              </p>
+            </div>
+            <Button asChild variant="primary">
+              <Link href="/enterprise/pilot">パイロットを申し込む</Link>
+            </Button>
+          </CardContent>
+        </Card>
+      </section>
     </main>
   );
 }

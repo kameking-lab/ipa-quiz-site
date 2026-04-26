@@ -3,6 +3,8 @@ import {
   Activity,
   BarChart3,
   Building2,
+  Calendar,
+  CheckCircle2,
   Clock,
   Sparkles,
   Target,
@@ -15,6 +17,7 @@ import { Badge } from "@/components/ui/badge";
 import { MOCK_TEAM } from "@/lib/team/mock-data";
 import { TEAM_PLAN, formatPlanPrice } from "@/lib/plans";
 import { ExamProgressChart } from "./ExamProgressChart";
+import { TeamCsvExport } from "./TeamCsvExport";
 
 export const metadata: Metadata = {
   title: "法人ダッシュボード（プロトタイプ）",
@@ -79,8 +82,11 @@ export default function AdminTeamPage() {
             席利用中（{seatUtilization.toFixed(0)}%）
           </p>
         </div>
-        <div className="rounded-full border border-dashed border-border bg-muted/30 px-3 py-1.5 text-[11px] text-muted-foreground">
-          ※ 営業デモ用のモックデータ
+        <div className="flex flex-col items-end gap-2">
+          <div className="rounded-full border border-dashed border-border bg-muted/30 px-3 py-1.5 text-[11px] text-muted-foreground">
+            ※ 営業デモ用のモックデータ
+          </div>
+          <TeamCsvExport team={team} />
         </div>
       </header>
 
@@ -162,6 +168,110 @@ export default function AdminTeamPage() {
                     </td>
                     <td className="px-4 py-3 text-right">
                       <AccuracyPill accuracy={p.accuracy} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Exam pass status */}
+      <Card className="mb-6 overflow-hidden">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
+              <CheckCircle2 className="h-3.5 w-3.5" />
+            </span>
+            試験区分別 合格状況
+          </CardTitle>
+          <CardDescription>メンバーが自己申告した直近回の合否結果。</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[520px] text-sm">
+              <thead>
+                <tr className="border-b border-border bg-muted/30 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  <th className="px-4 py-3">試験</th>
+                  <th className="px-4 py-3 text-right">受験者</th>
+                  <th className="px-4 py-3 text-right">合格</th>
+                  <th className="px-4 py-3 text-right">合否待ち</th>
+                  <th className="px-4 py-3 text-right">合格率</th>
+                </tr>
+              </thead>
+              <tbody>
+                {team.examPassStatus.map((p, i) => (
+                  <tr
+                    key={p.exam}
+                    className={`border-b border-border transition hover:bg-muted/30 ${
+                      i % 2 === 0 ? "bg-card" : "bg-muted/10"
+                    }`}
+                  >
+                    <td className="px-4 py-3 font-medium">{p.label}</td>
+                    <td className="px-4 py-3 text-right tabular-nums">{p.examinees}名</td>
+                    <td className="px-4 py-3 text-right tabular-nums text-emerald-700 dark:text-emerald-400">
+                      {p.passed}名
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums text-muted-foreground">
+                      {p.pending}名
+                    </td>
+                    <td className="px-4 py-3 text-right">
+                      <AccuracyPill accuracy={p.passRate} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Monthly summary */}
+      <Card className="mb-6 overflow-hidden">
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2 text-base">
+            <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
+              <Calendar className="h-3.5 w-3.5" />
+            </span>
+            月次サマリ
+          </CardTitle>
+          <CardDescription>過去 4 ヶ月の利用推移。CSV エクスポートで月次レポートに転用できます。</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[600px] text-sm">
+              <thead>
+                <tr className="border-b border-border bg-muted/30 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                  <th className="px-4 py-3">月</th>
+                  <th className="px-4 py-3 text-right">新規</th>
+                  <th className="px-4 py-3 text-right">解答数</th>
+                  <th className="px-4 py-3 text-right">学習時間</th>
+                  <th className="px-4 py-3 text-right">平均正答率</th>
+                  <th className="px-4 py-3 text-right">合格者</th>
+                </tr>
+              </thead>
+              <tbody>
+                {team.monthlySummary.map((m, i) => (
+                  <tr
+                    key={m.yyyymm}
+                    className={`border-b border-border transition hover:bg-muted/30 ${
+                      i % 2 === 0 ? "bg-card" : "bg-muted/10"
+                    }`}
+                  >
+                    <td className="px-4 py-3 font-medium font-mono">{m.yyyymm}</td>
+                    <td className="px-4 py-3 text-right tabular-nums">+{m.newMembers}名</td>
+                    <td className="px-4 py-3 text-right font-mono tabular-nums">
+                      {m.totalAnswered.toLocaleString()}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums text-muted-foreground">
+                      {formatHours(m.totalStudyMinutes)}
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums">
+                      {m.avgAccuracy.toFixed(1)}%
+                    </td>
+                    <td className="px-4 py-3 text-right tabular-nums text-emerald-700 dark:text-emerald-400">
+                      {m.passedThisMonth}名
                     </td>
                   </tr>
                 ))}
