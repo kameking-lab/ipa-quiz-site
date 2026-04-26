@@ -2,7 +2,7 @@ import type { Question, QuizFilter } from "./types";
 import type { HistoryStore } from "@/lib/storage/history";
 
 function hasUnrenderableContent(q: Question): boolean {
-  const tableOrFigurePattern = /次の表|以下の表|下の表|次の図|以下の図|下の図|次の条件|以下の条件/;
+  const tableOrFigurePattern = /次の表|以下の表|下の表|表のように|表に示す|次の図|以下の図|下の図|図のように|図に示す|図中の|次の条件|以下の条件/;
   return tableOrFigurePattern.test(q.question) && !q.hasImage;
 }
 

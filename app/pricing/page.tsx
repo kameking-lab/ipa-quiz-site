@@ -382,18 +382,18 @@ function FeatureComparisonTable() {
   ];
 
   return (
-    <table className="w-full min-w-[640px] text-sm">
+    <table className="w-full min-w-[480px] text-xs sm:text-sm">
       <thead>
         <tr className="border-b border-border bg-muted/30 text-left text-xs font-semibold">
-          <th className="px-5 py-3 text-muted-foreground">機能</th>
-          <th className="px-5 py-3 text-foreground">Free</th>
-          <th className="px-5 py-3 text-primary">
+          <th className="px-3 py-3 text-muted-foreground sm:px-5">機能</th>
+          <th className="px-3 py-3 text-foreground sm:px-5">Free</th>
+          <th className="px-3 py-3 text-primary sm:px-5">
             <span className="inline-flex items-center gap-1.5">
               Premium
               <Sparkles className="h-3 w-3" />
             </span>
           </th>
-          <th className="px-5 py-3 text-foreground">Team</th>
+          <th className="px-3 py-3 text-foreground sm:px-5">Team</th>
         </tr>
       </thead>
       <tbody>
@@ -406,10 +406,10 @@ function FeatureComparisonTable() {
                 : "border-b border-border/60 bg-muted/20"
             }
           >
-            <td className="px-5 py-3 text-muted-foreground">{row.label}</td>
-            <td className="px-5 py-3 text-foreground">{row.values[0]}</td>
-            <td className="px-5 py-3 font-semibold text-primary">{row.values[1]}</td>
-            <td className="px-5 py-3 text-foreground">{row.values[2]}</td>
+            <td className="px-3 py-3 text-muted-foreground sm:px-5">{row.label}</td>
+            <td className="px-3 py-3 text-foreground sm:px-5">{row.values[0]}</td>
+            <td className="px-3 py-3 font-semibold text-primary sm:px-5">{row.values[1]}</td>
+            <td className="px-3 py-3 text-foreground sm:px-5">{row.values[2]}</td>
           </tr>
         ))}
       </tbody>

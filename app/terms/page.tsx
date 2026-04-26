@@ -71,6 +71,12 @@ export default function TermsPage() {
               現在ベータ版として提供しており、機能・データ・仕様は予告なく変更・中断・終了する場合があります。
               ベータ版の性質上、不具合や予期しない動作が発生する可能性があります。
             </p>
+            <p>
+              本規約における「運営」とは、本サービスを提供する個人事業主 金田 義太（Kaneta Yoshita）を指します。
+              事業者の所在地・連絡先など特定商取引法に基づく表記の詳細は{" "}
+              <Link href="/commerce" className="underline underline-offset-2">特定商取引法に基づく表記</Link>
+              {" "}をご参照ください。
+            </p>
           </Section>
 
           <Section
