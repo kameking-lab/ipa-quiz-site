@@ -51,10 +51,12 @@ export function QuizClient({
   poolIds,
   mode,
   backHref,
+  exam = "ap",
 }: {
   poolIds: string[];
   mode: QuizMode;
   backHref: string;
+  exam?: string;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -122,6 +124,7 @@ export function QuizClient({
       total={sessionIds.length}
       mode={mode}
       backHref={backHref}
+      exam={exam}
       onNext={handleNext}
     />
   );

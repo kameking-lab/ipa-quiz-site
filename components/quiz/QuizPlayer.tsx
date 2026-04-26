@@ -18,7 +18,8 @@ const PremiumUpsellDialog = dynamic(
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Loader2, Sparkles, Timer } from "lucide-react";
+import { ArrowLeft, Loader2, Sparkles, Timer, Share2, Check, Copy } from "lucide-react";
+import { examLabel } from "@/lib/utils";
 import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
@@ -38,6 +39,7 @@ interface Props {
   total: number;
   mode: string;
   backHref?: string;
+  exam?: string;
   onNext: () => void;
 }
 
@@ -49,6 +51,7 @@ export function QuizPlayer({
   total,
   mode,
   backHref = "/",
+  exam = "ap",
   onNext,
 }: Props) {
   const router = useRouter();
@@ -212,6 +215,25 @@ export function QuizPlayer({
           </Button>
         </div>
       </div>
+    );
+  }
+
+  if (!question && index >= total && total > 0) {
+    return (
+      <QuizCompleteScreen
+        stats={stats}
+        elapsed={elapsed}
+        exam={exam}
+        mode={mode}
+        onRetry={() => {
+          setStats({ answered: 0, correct: 0 });
+          setElapsed(0);
+          setSelected(undefined);
+          setRevealed(false);
+          router.push(backHref);
+        }}
+        onBack={() => router.push(backHref)}
+      />
     );
   }
 
@@ -402,6 +424,102 @@ export function QuizPlayer({
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
+    </div>
+  );
+}
+
+const QUIZ_ORIGIN =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : "https://ipa-quiz-site.vercel.app";
+
+function QuizCompleteScreen({
+  stats,
+  elapsed,
+  exam,
+  mode,
+  onRetry,
+  onBack,
+}: {
+  stats: { answered: number; correct: number };
+  elapsed: number;
+  exam: string;
+  mode: string;
+  onRetry: () => void;
+  onBack: () => void;
+}) {
+  const [copied, setCopied] = React.useState(false);
+  const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
+  const label = examLabel(exam);
+  const shareUrl = `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
+  const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
+  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch { /* ignore */ }
+  };
+
+  const emoji = accuracy >= 80 ? "🎉" : accuracy >= 60 ? "👍" : "💪";
+
+  const btnClass =
+    "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+
+  return (
+    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
+      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="mb-6 text-center">
+          <div className="mb-2 text-5xl">{emoji}</div>
+          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
+          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+            {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
+          </p>
+        </div>
+
+        <div className="mb-6 grid grid-cols-3 gap-3 text-center">
+          <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
+            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
+          </div>
+          <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
+            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">正解数</div>
+          </div>
+          <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
+            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
+          <div className="flex flex-wrap gap-2">
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
+              <Share2 className="h-4 w-4" /> X でシェア
+            </a>
+            <a href={lineUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
+              LINE
+            </a>
+            <button type="button" onClick={handleCopy} className={btnClass}>
+              {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
+              {copied ? "コピーしました" : "URLコピー"}
+            </button>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Button variant="primary" onClick={onRetry} className="w-full">
+            もう一度挑戦
+          </Button>
+          <Button variant="outline" onClick={onBack} className="w-full">
+            <ArrowLeft className="h-4 w-4" /> モード選択に戻る
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

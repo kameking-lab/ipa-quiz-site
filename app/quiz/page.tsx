@@ -59,5 +59,5 @@ export default async function QuizPage({
 
   const poolIds = await getPoolIds(filter);
 
-  return <QuizClient poolIds={poolIds} mode={mode} backHref="/" />;
+  return <QuizClient poolIds={poolIds} mode={mode} backHref="/" exam={sp.exam ?? "ap"} />;
 }
