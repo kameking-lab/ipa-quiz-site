@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { AlertTriangle, RefreshCw } from "lucide-react";
+import { captureException } from "@/lib/monitoring/sentry";
 
 export default function GlobalError({
   error,
@@ -12,6 +13,10 @@ export default function GlobalError({
 }) {
   React.useEffect(() => {
     console.error(error);
+    void captureException(error, {
+      route: "app/global-error.tsx",
+      extra: { digest: error.digest },
+    });
   }, [error]);
 
   return (

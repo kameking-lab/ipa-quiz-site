@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { AlertTriangle, ExternalLink, HomeIcon, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { captureException } from "@/lib/monitoring/sentry";
 
 export default function ErrorPage({
   error,
@@ -14,6 +15,10 @@ export default function ErrorPage({
 }) {
   React.useEffect(() => {
     console.error(error);
+    void captureException(error, {
+      route: "app/error.tsx",
+      extra: { digest: error.digest },
+    });
   }, [error]);
 
   return (

@@ -23,3 +23,41 @@
 - 工数: 4-8 時間（型定義 + マイグレーション + Markdown レンダラ更新）
 - 優先度: 中
 - 検出ループ: Round 2 Loop 1
+
+## M2-4. AI コパイロット応答の post-validation
+- 現状: `lib/ai/prompts.ts` に競合（過去問道場・スタディング等）言及禁止プロンプトはあるが、LLM 出力検証なし
+- 推奨: `app/api/copilot/route.ts` のストリーミング出力で禁止語句 regex フィルタ（accumulator → block on match）
+- 工数: 2-4 時間
+- 優先度: 中（プロンプト遵守率が高い場合は不要）
+- 検出ループ: Round 2 Loop 2
+
+## M2-5. NextAuth allowDangerousEmailAccountLinking 見直し
+- 現状: `lib/auth/config.ts` で Google/GitHub に true 設定
+- リスク: 同一 email を異なる provider で取れる場合、第一登録者を上書きする乗っ取りリスク
+- 推奨: false にして email verification を強制、もしくは linkAccount events で警告
+- 工数: 2-3 時間（移行影響テスト含む）
+- 優先度: 中（Premium 課金開始前に対応推奨）
+- 検出ループ: Round 2 Loop 2
+
+## M2-6. Magic Link メールテンプレート
+- 現状: NextAuth Nodemailer provider の default テンプレート
+- 推奨: ブランドカラー / from name / 署名をカスタム HTML テンプレートで上書き
+- 工数: 1-2 時間
+- 優先度: 低（UX 改善）
+- 検出ループ: Round 2 Loop 2
+
+## M2-7. User.plan を Subscription から derive する正規化
+- 現状: `User.plan` は webhook で書き込まれる派生値
+- リスク: webhook 失敗時に DB と Stripe が乖離
+- 推奨: `User.plan` を削除し、active Subscription から都度 derive、または Subscription の view を作成
+- 工数: 4-6 時間（マイグレーション含む）
+- 優先度: 中（Premium 課金開始前に対応推奨）
+- 検出ループ: Round 2 Loop 2
+
+## M2-8. Sentry context PII サニタイザ
+- 現状: `lib/monitoring/sentry.ts` の `captureException(err, ctx)` で `extra` を全送信
+- リスク: 呼び出し側が email/cardLast4 等を extra に詰めた場合、Sentry に PII 流出
+- 推奨: `extra` のキーを allowlist で絞る、または値を pattern マスク
+- 工数: 1-2 時間
+- 優先度: 中
+- 検出ループ: Round 2 Loop 2
