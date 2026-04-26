@@ -23,6 +23,11 @@ import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
 import { createHistoryStore, getPremiumFlag, setPremiumFlag } from "@/lib/storage/history";
+import {
+  readMotivationSettings,
+  writeMotivationSettings,
+  type MotivationSettings,
+} from "@/lib/motivation/combo";
 
 type Theme = "light" | "dark" | "system";
 
@@ -86,6 +91,10 @@ export default function SettingsPage() {
     calculationOnly: false,
   });
   const [, setIsPremium] = useState(false);
+  const [motivation, setMotivation] = useState<MotivationSettings>({
+    soundEnabled: true,
+    reduceMotion: false,
+  });
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -94,9 +103,19 @@ export default function SettingsPage() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSettings(readSettings());
     setIsPremium(getPremiumFlag());
+    setMotivation(readMotivationSettings());
     const store = createHistoryStore();
     setStats(store.getStats());
   }, []);
+
+  function updateMotivation<K extends keyof MotivationSettings>(
+    key: K,
+    value: MotivationSettings[K],
+  ) {
+    const next = { ...motivation, [key]: value };
+    setMotivation(next);
+    writeMotivationSettings(next);
+  }
 
   function showToast(type: "ok" | "err", msg: string) {
     setToast({ type, msg });
@@ -252,6 +271,36 @@ export default function SettingsPage() {
                 <Switch
                   checked={settings.calculationOnly}
                   onCheckedChange={(v) => updateSetting("calculationOnly", v)}
+                />
+              </SettingRow>
+            </div>
+          </section>
+
+          {/* Motivation */}
+          <section>
+            <SectionTitle
+              icon={<Sliders className="h-5 w-5" />}
+              description="正解時の演出と効果音"
+            >
+              演出と効果音
+            </SectionTitle>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
+              <SettingRow
+                label="正解音"
+                description="3連続以上で「ピロロロ」が鳴ります"
+              >
+                <Switch
+                  checked={motivation.soundEnabled}
+                  onCheckedChange={(v) => updateMotivation("soundEnabled", v)}
+                />
+              </SettingRow>
+              <SettingRow
+                label="アニメーションを抑える"
+                description="花火やパーティクルを無効化（軽量モード）"
+              >
+                <Switch
+                  checked={motivation.reduceMotion}
+                  onCheckedChange={(v) => updateMotivation("reduceMotion", v)}
                 />
               </SettingRow>
             </div>
