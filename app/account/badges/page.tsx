@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BadgeWall } from "./BadgeWall";
+import { StreakCouponCard } from "@/components/motivation/StreakCouponCard";
 
 export const metadata: Metadata = {
   title: "獲得バッジ",
@@ -25,6 +26,10 @@ export default function BadgesPage() {
       <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
         毎日コツコツの継続で獲得できるバッジ。Z世代の合格者は週末も忘れず連続維持。
       </p>
+
+      <div className="mb-6">
+        <StreakCouponCard variant="full" />
+      </div>
 
       <BadgeWall />
 

@@ -10,6 +10,7 @@ import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { BadgeStrip } from "@/components/motivation/BadgeStrip";
+import { StreakCouponCard } from "@/components/motivation/StreakCouponCard";
 import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
@@ -157,6 +158,10 @@ export default function HomePage() {
 
       <div className="mt-3">
         <BadgeStrip />
+      </div>
+
+      <div className="mt-3">
+        <StreakCouponCard variant="compact" />
       </div>
 
       <HomeExamPicker
