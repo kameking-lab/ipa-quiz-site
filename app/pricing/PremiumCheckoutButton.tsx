@@ -3,6 +3,22 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
+const ERROR_MESSAGES: Record<string, string> = {
+  stripe_not_configured: "決済サービスの準備中です。しばらく待ってからお試しください。",
+  db_not_configured: "サーバー側の準備中です。しばらく待ってからお試しください。",
+  price_not_configured: "価格設定の準備中です。少し時間を置いてください。",
+  invalid_plan: "プランの指定が正しくありません。",
+  user_not_found: "アカウント情報を取得できませんでした。再度ログインしてください。",
+  already_on_plan: "現在ご利用中のプランです。",
+  checkout_url_missing: "決済画面の作成に失敗しました。少し時間を置いて再度お試しください。",
+};
+
+function friendlyError(code: string | undefined, status: number): string {
+  if (code && ERROR_MESSAGES[code]) return ERROR_MESSAGES[code];
+  if (status >= 500) return "サーバーで問題が発生しました。少し時間を置いて再度お試しください。";
+  return "リクエスト処理中に問題が発生しました。少し時間を置いて再度お試しください。";
+}
+
 export function PremiumCheckoutButton({ label }: { label: string }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -25,7 +41,7 @@ export function PremiumCheckoutButton({ label }: { label: string }) {
 
       if (!res.ok) {
         const detail = (await res.json().catch(() => ({}))) as { error?: string };
-        setError(detail.error ?? `エラー (${res.status})`);
+        setError(friendlyError(detail.error, res.status));
         setLoading(false);
         return;
       }
