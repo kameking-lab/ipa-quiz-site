@@ -9,6 +9,7 @@ import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
+import { BadgeStrip } from "@/components/motivation/BadgeStrip";
 import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
@@ -152,6 +153,10 @@ export default function HomePage() {
             詳細を見る →
           </Link>
         </div>
+      </div>
+
+      <div className="mt-3">
+        <BadgeStrip />
       </div>
 
       <HomeExamPicker
