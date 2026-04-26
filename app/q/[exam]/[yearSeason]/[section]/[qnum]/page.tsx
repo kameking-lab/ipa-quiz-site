@@ -26,6 +26,7 @@ import {
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
+import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
@@ -436,6 +437,29 @@ export default async function QuestionPage({
           共有
         </h2>
         <ShareButtons url={pageUrlAbs} title={title} />
+      </section>
+
+      {/* Short-form video */}
+      <section aria-label="ショート動画" className="mt-6">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          ショート動画
+        </h2>
+        <QuestionVideoButton
+          examLabel={examLabelAt(q.exam, q.year, q.season)}
+          yearSeason={formatYearSeason(q.year, q.season)}
+          questionText={q.question}
+          answerText={
+            answerText
+              ? `${answerKey}：${answerText}`
+              : String(answerKey)
+          }
+          explanationSummary={
+            showRealExplanation
+              ? q.explanation
+              : "解説は準備中。クイズモードでAIに質問できます。"
+          }
+          filename={`ipa-quiz-${q.exam}-${q.year}${q.season}-q${q.qNumber}.webm`}
+        />
       </section>
 
       {/* Prev / Next — desktop & tablet inline, mobile sticky */}
