@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAvailableYears, getAvailableCategories } from "@/lib/questions/load";
 import { getAfternoonQuestions } from "@/lib/afternoon/load";
 import { Badge } from "@/components/ui/badge";
 import { HistoryStats } from "@/components/HistoryStats";
 import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
+import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 import { HomeExamPicker } from "@/components/HomeExamPicker";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
@@ -134,6 +136,18 @@ export default function HomePage() {
       </div>
 
       <HistoryStats />
+
+      <div className="mt-3">
+        <LearningHeatmap days={365} />
+        <div className="mt-1 text-right">
+          <Link
+            href="/account/heatmap"
+            className="text-xs text-sky-600 hover:underline dark:text-sky-400"
+          >
+            詳細を見る →
+          </Link>
+        </div>
+      </div>
 
       <HomeExamPicker
         questionCounts={questionCounts}
