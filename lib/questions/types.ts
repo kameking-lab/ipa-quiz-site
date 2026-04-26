@@ -62,11 +62,15 @@ export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered";
 export interface QuizFilter {
   mode: QuizMode;
   exam?: ExamCode;
+  /** 複数試験区分を横断して出題する場合に指定。examより優先される。 */
+  examGroup?: ExamCode[];
   year?: number;
   season?: Season;
   session?: Session;
   topicTag?: string;
   category?: string;
+  /** 複数カテゴリのいずれかにマッチさせる場合に指定。categoryより優先される。 */
+  categoryGroup?: string[];
   calculationOnly?: boolean;
   inOrder?: boolean;
   randomizeChoices?: boolean;

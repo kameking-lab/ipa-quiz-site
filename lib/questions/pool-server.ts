@@ -14,9 +14,17 @@ function hasUnrenderableContent(q: Question): boolean {
  * handles those after layering on history/excludeRecent filters.
  */
 async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
-  let pool = filter.exam
-    ? await getQuestionsForExam(filter.exam)
-    : await getAllQuestionsLazy();
+  let pool: Question[];
+  if (filter.examGroup && filter.examGroup.length > 0) {
+    const chunks = await Promise.all(
+      filter.examGroup.map((e) => getQuestionsForExam(e)),
+    );
+    pool = chunks.flat();
+  } else if (filter.exam) {
+    pool = await getQuestionsForExam(filter.exam);
+  } else {
+    pool = await getAllQuestionsLazy();
+  }
 
   if (filter.year) pool = pool.filter((q) => q.year === filter.year);
   if (filter.season) pool = pool.filter((q) => q.season === filter.season);
@@ -24,7 +32,12 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   if (filter.topicTag) {
     pool = pool.filter((q) => q.topicTags.includes(filter.topicTag!));
   }
-  if (filter.category) pool = pool.filter((q) => q.category === filter.category);
+  if (filter.categoryGroup && filter.categoryGroup.length > 0) {
+    const set = new Set(filter.categoryGroup);
+    pool = pool.filter((q) => set.has(q.category));
+  } else if (filter.category) {
+    pool = pool.filter((q) => q.category === filter.category);
+  }
   if (filter.calculationOnly) pool = pool.filter((q) => q.isCalculation === true);
 
   pool = pool.filter((q) => !hasUnrenderableContent(q));
