@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="ハル - 普通AIキャラ">
+  <defs>
+    <linearGradient id="haruBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#dbeafe"/>
+      <stop offset="100%" stop-color="#bfdbfe"/>
+    </linearGradient>
+    <radialGradient id="haruFace" cx="50%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#dbeafe"/>
+    </radialGradient>
+  </defs>
+  <circle cx="100" cy="100" r="98" fill="url(#haruBg)"/>
+  <ellipse cx="100" cy="92" rx="62" ry="68" fill="url(#haruFace)" stroke="#60a5fa" stroke-width="2"/>
+  <path d="M52 70 Q100 30 148 70 Q150 80 130 78 Q100 70 70 78 Q50 80 52 70 Z" fill="#3b82f6"/>
+  <path d="M52 70 Q60 100 70 78 Z" fill="#3b82f6"/>
+  <path d="M148 70 Q140 100 130 78 Z" fill="#3b82f6"/>
+  <circle cx="78" cy="100" r="11" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+  <circle cx="122" cy="100" r="11" fill="none" stroke="#1e3a8a" stroke-width="2.5"/>
+  <line x1="89" y1="100" x2="111" y2="100" stroke="#1e3a8a" stroke-width="2"/>
+  <circle cx="78" cy="100" r="4" fill="#1f2937"/>
+  <circle cx="122" cy="100" r="4" fill="#1f2937"/>
+  <circle cx="79" cy="98" r="1.4" fill="#fff"/>
+  <circle cx="123" cy="98" r="1.4" fill="#fff"/>
+  <path d="M88 124 Q100 130 112 124" stroke="#1e3a8a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <rect x="135" y="135" width="36" height="24" rx="3" fill="#0f172a" stroke="#1e3a8a" stroke-width="2"/>
+  <rect x="138" y="138" width="30" height="18" rx="1" fill="#38bdf8"/>
+  <text x="100" y="180" font-family="-apple-system,system-ui,sans-serif" font-size="16" font-weight="700" text-anchor="middle" fill="#1e3a8a">ハル</text>
+</svg>
