@@ -25,6 +25,8 @@ export const LS_KEYS = {
   audioBgm: "ipa-quiz:audio-bgm:v1",
   audioBgmVolume: "ipa-quiz:audio-bgm-volume:v1",
   language: "ipa-quiz:language:v1",
+  character: "ipa-quiz:character:v1",
+  characterEnabled: "ipa-quiz:character-enabled:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

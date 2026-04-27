@@ -18,6 +18,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { SocialProofBanner } from "@/components/SocialProof";
+import { CharacterGreeting } from "@/components/character/CharacterGreeting";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -147,6 +148,8 @@ export default function HomePage() {
       </section>
 
       <SocialProofBanner />
+
+      <CharacterGreeting />
 
       <div className="mb-3 mt-6">
         <StreakProfileCard />

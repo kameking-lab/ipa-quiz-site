@@ -9,6 +9,7 @@ import {
   QUICK_ACTIONS,
 } from "@/lib/ai/prompts";
 import type { QuickActionId, LearnerProfile } from "@/lib/ai/prompts";
+import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
 import { captureException } from "@/lib/monitoring/sentry";
@@ -47,6 +48,8 @@ const BodySchema = z.object({
       weakCategories: z.array(z.string().max(60)).max(10),
     })
     .optional(),
+  character: z.enum(["momo", "haru", "zan"]).optional(),
+  characterEnabled: z.boolean().optional(),
   // tier is accepted from client but ignored server-side during beta —
   // all users receive the same limits regardless of what they send.
   tier: z.enum(["free", "premium"]).default("free"),
@@ -92,8 +95,14 @@ export async function POST(req: Request) {
     ? buildLearnerProfileContext(payload.learnerProfile satisfies LearnerProfile)
     : null;
 
+  const characterPrompt =
+    payload.characterEnabled && payload.character && isCharacterId(payload.character)
+      ? CHARACTERS[payload.character].systemPrompt
+      : null;
+
   const system = [
     COPILOT_SYSTEM_PROMPT,
+    ...(characterPrompt ? [characterPrompt] : []),
     "---",
     questionContext,
     ...(profileContext ? ["---", profileContext] : []),

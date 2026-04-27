@@ -13,6 +13,7 @@ import {
   RotateCcw,
   Settings as SettingsIcon,
   Sliders,
+  Sparkles,
   Sun,
   TrendingUp,
   Upload,
@@ -22,6 +23,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
+import {
+  readCharacterState,
+  writeCharacterId,
+  writeCharacterEnabled,
+} from "@/lib/storage/character";
+import { CharacterSelector } from "@/components/character/CharacterSelector";
+import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore, getPremiumFlag, setPremiumFlag } from "@/lib/storage/history";
 import {
   readMotivationSettings,
@@ -96,6 +104,8 @@ export default function SettingsPage() {
     reduceMotion: false,
   });
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
+  const [characterId, setCharacterId] = useState<CharacterId>(DEFAULT_CHARACTER_ID);
+  const [characterEnabled, setCharacterEnabledState] = useState(true);
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -106,6 +116,9 @@ export default function SettingsPage() {
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();
     setStats(store.getStats());
+    const cs = readCharacterState();
+    setCharacterId(cs.id);
+    setCharacterEnabledState(cs.enabled);
   }, []);
 
   function updateMotivation<K extends keyof MotivationSettings>(
@@ -115,6 +128,16 @@ export default function SettingsPage() {
     const next = { ...motivation, [key]: value };
     setMotivation(next);
     writeMotivationSettings(next);
+  }
+
+  function handleCharacterChange(id: CharacterId) {
+    setCharacterId(id);
+    writeCharacterId(id);
+  }
+
+  function handleCharacterEnabledChange(on: boolean) {
+    setCharacterEnabledState(on);
+    writeCharacterEnabled(on);
   }
 
   function showToast(type: "ok" | "err", msg: string) {
@@ -233,6 +256,34 @@ export default function SettingsPage() {
                     </button>
                   );
                 })}
+              </div>
+            </div>
+          </section>
+
+          {/* AI Character */}
+          <section>
+            <SectionTitle
+              icon={<Sparkles className="h-5 w-5" />}
+              description="AI コパイロットの口調・キャラクター"
+            >
+              AI キャラクター
+            </SectionTitle>
+            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
+              <SettingRow
+                label="AI キャラクターを有効化"
+                description="OFF にすると従来のニュートラルな口調で応答します"
+              >
+                <Switch
+                  checked={characterEnabled}
+                  onCheckedChange={handleCharacterEnabledChange}
+                />
+              </SettingRow>
+              <div className="p-5">
+                <CharacterSelector
+                  value={characterId}
+                  onChange={handleCharacterChange}
+                  disabled={!characterEnabled}
+                />
               </div>
             </div>
           </section>

@@ -49,6 +49,7 @@ import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
 import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { readCharacterState } from "@/lib/storage/character";
 
 interface Message {
   role: "user" | "assistant";
@@ -256,6 +257,7 @@ export function CopilotPanel({
       abortRef.current = controller;
 
       try {
+        const characterState = readCharacterState();
         const res = await fetch("/api/copilot", {
           method: "POST",
           headers: { "content-type": "application/json" },
@@ -267,6 +269,8 @@ export function CopilotPanel({
             tier: premium ? "premium" : "free",
             quickAction,
             learnerProfile: profile,
+            character: characterState.id,
+            characterEnabled: characterState.enabled,
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
