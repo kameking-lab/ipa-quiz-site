@@ -19,6 +19,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { SocialProofBanner } from "@/components/SocialProof";
 import { CharacterGreeting } from "@/components/character/CharacterGreeting";
+import { Zap } from "lucide-react";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -151,6 +152,43 @@ export default function HomePage() {
 
       <CharacterGreeting />
 
+      <div className="mt-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+        <Link
+          href="/quiz/stream?exam=ap"
+          className="group relative overflow-hidden rounded-2xl border-2 border-sky-400 bg-gradient-to-br from-sky-50 via-violet-50 to-fuchsia-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-sky-600 dark:from-sky-950/40 dark:via-violet-950/40 dark:to-fuchsia-950/40"
+        >
+          <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-bold text-amber-900">
+            NEW
+          </span>
+          <div className="mb-1.5 flex items-center gap-2">
+            <span className="rounded-lg bg-sky-600 p-2 text-white shadow">
+              <Zap className="h-5 w-5" />
+            </span>
+            <span className="text-base font-semibold">ストリーム学習</span>
+          </div>
+          <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+            TikTok風・縦スワイプで止まらない学習。10問ごとにWordle風サマリでシェア。
+          </p>
+        </Link>
+        <Link
+          href="/diagnosis"
+          className="group relative overflow-hidden rounded-2xl border-2 border-violet-400 bg-gradient-to-br from-violet-50 to-fuchsia-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg dark:border-violet-600 dark:from-violet-950/40 dark:to-fuchsia-950/40"
+        >
+          <span className="absolute right-3 top-3 rounded-full bg-amber-400 px-2 py-0.5 text-[10px] font-bold text-amber-900">
+            NEW
+          </span>
+          <div className="mb-1.5 flex items-center gap-2">
+            <span className="rounded-lg bg-violet-600 p-2 text-white shadow">
+              <span className="text-lg leading-none">🧭</span>
+            </span>
+            <span className="text-base font-semibold">試験区分診断</span>
+          </div>
+          <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">
+            7問のアンケートで、13試験区分からあなたに最適な試験と学習プランを提案。
+          </p>
+        </Link>
+      </div>
+
       <div className="mb-3 mt-6">
         <StreakProfileCard />
       </div>
@@ -260,4 +298,3 @@ export default function HomePage() {
     </main>
   );
 }
-
