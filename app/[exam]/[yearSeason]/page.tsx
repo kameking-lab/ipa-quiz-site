@@ -17,6 +17,10 @@ import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import {
+  QuestionListWithFilter,
+  type SessionGroup,
+} from "./QuestionListWithFilter";
 
 export const dynamicParams = false;
 
@@ -94,11 +98,28 @@ export default async function ExamYearSeasonPage({
   const histLabel = examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
 
-  const sessionGroups = new Map<string, typeof pool>();
+  const sessionMap = new Map<string, typeof pool>();
   for (const q of pool) {
-    if (!sessionGroups.has(q.session)) sessionGroups.set(q.session, []);
-    sessionGroups.get(q.session)!.push(q);
+    if (!sessionMap.has(q.session)) sessionMap.set(q.session, []);
+    sessionMap.get(q.session)!.push(q);
   }
+  const sessionGroups: SessionGroup[] = [...sessionMap.entries()].map(
+    ([session, items]) => ({
+      session,
+      items: items.map((q) => ({
+        id: q.id,
+        qNumber: q.qNumber,
+        category: q.category,
+        isCalculation: !!q.isCalculation,
+        isPlaceholder: isPlaceholderExplanation(q),
+        questionPreview:
+          q.question.length > 140
+            ? `${q.question.slice(0, 140)}…`
+            : q.question,
+        href: questionPagePath(q),
+      })),
+    }),
+  );
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -200,45 +221,7 @@ export default async function ExamYearSeasonPage({
           </Button>
         </section>
 
-        {[...sessionGroups.entries()].map(([session, items]) => (
-          <section key={session} aria-label={session} className="mb-8">
-            <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
-              <span className="h-1 w-1 rounded-full bg-primary" />
-              {session.toUpperCase()}
-            </h2>
-            <ul className="space-y-2">
-              {items.map((q) => {
-                const isPlaceholder = isPlaceholderExplanation(q);
-                return (
-                  <li key={q.id}>
-                    <Link
-                      href={questionPagePath(q)}
-                      className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                    >
-                      <span className="flex h-8 w-12 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-xs font-bold text-primary-soft-foreground">
-                        問{q.qNumber}
-                      </span>
-                      <span className="flex-1 space-y-1.5 min-w-0">
-                        <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                          <Badge variant="default">{q.category}</Badge>
-                          {q.isCalculation && <Badge variant="warn">計算</Badge>}
-                          {isPlaceholder && (
-                            <Badge variant="warn">解説準備中</Badge>
-                          )}
-                        </span>
-                        <span className="line-clamp-2 block text-sm leading-relaxed text-foreground">
-                          {q.question.slice(0, 140)}
-                          {q.question.length > 140 ? "…" : ""}
-                        </span>
-                      </span>
-                      <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </section>
-        ))}
+        <QuestionListWithFilter groups={sessionGroups} />
       </div>
     </main>
   );
