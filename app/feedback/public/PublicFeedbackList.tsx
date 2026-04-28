@@ -27,6 +27,7 @@ export function PublicFeedbackList() {
     try {
       const raw = window.localStorage.getItem(LS_KEYS.publicFeedback);
       const list: PublicFeedbackEntry[] = raw ? JSON.parse(raw) : [];
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setItems(list);
     } catch {
       setItems([]);

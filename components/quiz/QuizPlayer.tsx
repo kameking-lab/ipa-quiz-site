@@ -44,6 +44,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
   React.useEffect(() => {
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
     if (!alreadyShown) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowSwipeHint(true);
       localStorage.setItem(LS_KEYS.swipeHintShown, "true");
     }
@@ -296,7 +297,6 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         question={question}
         selectedChoice={selected}
         isCorrect={revealed ? isCorrect : undefined}
-        premium={premium}
         onRateLimitHit={() => setUpsellOpen(true)}
         key={`mobile-${question.id}-${copilotQuery ?? ""}`}
       />

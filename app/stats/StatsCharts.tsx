@@ -46,7 +46,7 @@ export function StatsCharts({
               <YAxis tick={{ fontSize: 11 }} />
               <Tooltip
                 contentStyle={{ borderRadius: 8, border: "1px solid rgba(100,116,139,0.3)" }}
-                formatter={(v: number) => [`${v.toLocaleString()} 問`, "収録数"]}
+                formatter={(v) => [`${Number(v).toLocaleString()} 問`, "収録数"]}
               />
               <Bar dataKey="count" fill="#0284c7" radius={[6, 6, 0, 0]} />
             </BarChart>

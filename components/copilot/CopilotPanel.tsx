@@ -70,6 +70,7 @@ export function CopilotPanel({
   } | null>(null);
 
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFeedbackSubmittedState(readFeedbackSubmitted());
     const onStorage = () => setFeedbackSubmittedState(readFeedbackSubmitted());
     window.addEventListener("storage", onStorage);
@@ -82,9 +83,11 @@ export function CopilotPanel({
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
   const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
+  const sendRef = React.useRef<(text: string, quickAction?: QuickActionId) => void>(() => {});
 
   // Reset conversation when question changes
   React.useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMessages([]);
     setInput("");
     abortRef.current?.abort();
@@ -157,7 +160,7 @@ export function CopilotPanel({
           const args = lastSendArgsRef.current;
           setErrorState({
             type: "server_error",
-            retryFn: () => args && send(args.text, args.quickAction),
+            retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
           setStreaming(false);
           return;
@@ -191,7 +194,7 @@ export function CopilotPanel({
           const args = lastSendArgsRef.current;
           setErrorState({
             type: "network_error",
-            retryFn: () => args && send(args.text, args.quickAction),
+            retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
         }
       } finally {
@@ -210,6 +213,14 @@ export function CopilotPanel({
       onRateLimitHit,
     ],
   );
+
+  // Keep a ref to `send` so retryFn closures can call the latest version
+  // without triggering use-before-declared lint errors.
+  React.useEffect(() => {
+    sendRef.current = (text, quickAction) => {
+      void send(text, quickAction);
+    };
+  }, [send]);
 
   const quickActionIds: QuickActionId[] = [
     "term",
