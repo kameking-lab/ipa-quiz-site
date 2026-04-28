@@ -8,6 +8,7 @@ import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { FeedbackGateModal } from "@/components/FeedbackGateModal";
+import { QuestionCommentBox } from "./QuestionCommentBox";
 import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
@@ -83,7 +84,22 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         : String(question.answer);
       const correct = key === answerKey;
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
-      setStats((s) => ({ answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) }));
+      setStats((s) => {
+        const next = { answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) };
+        if (next.answered === 10) {
+          try {
+            const alreadyShown = localStorage.getItem(LS_KEYS.feedbackGateShown) === "true";
+            const alreadySubmitted = localStorage.getItem(LS_KEYS.feedbackSubmitted) === "true";
+            if (!alreadyShown && !alreadySubmitted) {
+              localStorage.setItem(LS_KEYS.feedbackGateShown, "true");
+              setUpsellOpen(true);
+            }
+          } catch {
+            // ignore
+          }
+        }
+        return next;
+      });
     },
     [question, revealed, history],
   );
@@ -216,18 +232,21 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
             </div>
 
             {revealed && (
-              <ExplanationCard
-                question={question}
-                selected={selected}
-                isCorrect={isCorrect}
-                starred={starred}
-                onToggleStar={toggleStar}
-                onNext={goNext}
-                onAskAI={() => setCopilotQuery("open")}
-                onAnalyzeWrong={
-                  !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
-                }
-              />
+              <>
+                <ExplanationCard
+                  question={question}
+                  selected={selected}
+                  isCorrect={isCorrect}
+                  starred={starred}
+                  onToggleStar={toggleStar}
+                  onNext={goNext}
+                  onAskAI={() => setCopilotQuery("open")}
+                  onAnalyzeWrong={
+                    !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
+                  }
+                />
+                <QuestionCommentBox questionId={question.id} />
+              </>
             )}
 
             {!revealed && (
