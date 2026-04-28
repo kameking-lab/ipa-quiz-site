@@ -7,7 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
-import { createHistoryStore, getPremiumFlag, setPremiumFlag } from "@/lib/storage/history";
+import { createHistoryStore } from "@/lib/storage/history";
 
 type Theme = "light" | "dark" | "system";
 
@@ -48,15 +48,12 @@ export default function SettingsPage() {
     excludeRecent: false,
     calculationOnly: false,
   });
-  const [isPremium, setIsPremium] = useState(false);
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setSettings(readSettings());
-    setIsPremium(getPremiumFlag());
     const store = createHistoryStore();
     setStats(store.getStats());
   }, []);
@@ -70,11 +67,6 @@ export default function SettingsPage() {
     const next = { ...settings, [key]: value };
     setSettings(next);
     writeSettings(next);
-  }
-
-  function togglePremium(on: boolean) {
-    setIsPremium(on);
-    setPremiumFlag(on);
   }
 
   function handleExport() {

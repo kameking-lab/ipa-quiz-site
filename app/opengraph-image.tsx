@@ -1,7 +1,7 @@
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "IPA Quiz — AIネイティブ過去問学習";
+export const alt = "過去問 AI — IPA 試験対策を、誰もが平等に。全機能無料";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,11 +40,11 @@ export default function OgImage() {
               letterSpacing: "-0.5px",
             }}
           >
-            IPA Quiz
+            過去問 AI
           </div>
           <div
             style={{
-              background: "#fbbf24",
+              background: "#10b981",
               borderRadius: "999px",
               padding: "6px 14px",
               color: "#fff",
@@ -52,7 +52,7 @@ export default function OgImage() {
               fontWeight: 700,
             }}
           >
-            β公開中・全機能無料
+            教育貢献プロジェクト・全機能無料
           </div>
         </div>
         <div
@@ -65,9 +65,9 @@ export default function OgImage() {
             letterSpacing: "-1px",
           }}
         >
-          IPA 過去問を、
+          IPA 試験対策を、
           <br />
-          AI と一緒に。
+          誰もが平等に。
         </div>
         <div
           style={{
@@ -77,7 +77,7 @@ export default function OgImage() {
             lineHeight: 1.5,
           }}
         >
-          解説ゼロ遷移 × AI コパイロット常駐 × 全試験対応
+          全 13 試験区分 × AI コパイロット × 全機能無料
         </div>
         <div
           style={{

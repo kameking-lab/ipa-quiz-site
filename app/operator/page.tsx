@@ -64,15 +64,23 @@ export default function OperatorPage() {
             </tr>
             <tr>
               <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                ステータス
+                プロジェクト形態
               </th>
-              <td className="py-3 text-zinc-800 dark:text-zinc-200">非営利ベータ版</td>
+              <td className="py-3 text-zinc-800 dark:text-zinc-200">
+                教育貢献プロジェクト（全機能無料・非営利）
+              </td>
             </tr>
             <tr>
               <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
                 お問い合わせ
               </th>
-              <td className="py-3">
+              <td className="py-3 space-x-3">
+                <Link
+                  href="/contact"
+                  className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
+                >
+                  お問い合わせフォーム
+                </Link>
                 <a
                   href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                   target="_blank"
@@ -89,16 +97,20 @@ export default function OperatorPage() {
 
       <section className="space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本サービスは非営利のベータ版として運営しています。
-          収益化（有料プラン等）を行う場合は事前にお知らせします。
+          本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
+          IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
         </p>
         <p>
           問題データはIPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
           詳細は
           <Link href="/about" className="underline">
-            著作権・利用条件
+            プロジェクトについて
           </Link>
-          をご確認ください。
+          をご確認ください。運営の透明性レポートは
+          <Link href="/transparency" className="underline">
+            /transparency
+          </Link>
+          で公開しています。
         </p>
       </section>
     </main>

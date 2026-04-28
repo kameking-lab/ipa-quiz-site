@@ -25,12 +25,12 @@ export default function TermsPage() {
         </p>
       </section>
 
-      <h2 className="mb-2 text-lg font-semibold">1. サービスの概要とベータ版について</h2>
+      <h2 className="mb-2 text-lg font-semibold">1. サービスの概要</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          本サービスは、情報処理技術者試験の過去問学習を支援するAIネイティブな学習支援サービスです。
-          現在ベータ版として提供しており、機能・データ・仕様は予告なく変更・中断・終了する場合があります。
-          ベータ版の性質上、不具合や予期しない動作が発生する可能性があります。
+          本サービスは、情報処理技術者試験の過去問学習を支援する教育貢献プロジェクトとして
+          全機能を無料で公開しています。機能・データ・仕様は改善のため予告なく変更する場合があります。
+          開発中の機能を含むため、不具合や予期しない動作が発生する可能性があります。
         </p>
       </section>
 
