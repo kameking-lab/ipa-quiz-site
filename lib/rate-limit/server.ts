@@ -14,9 +14,14 @@ function parseLimit(raw: string | undefined, fallback: number): number {
   return Number.isFinite(n) && n > 0 ? Math.floor(n) : fallback;
 }
 
-// Beta limits — applied to all users regardless of client-supplied tier
-export const BETA_DAILY_LIMIT = parseLimit(process.env.BETA_DAILY_LIMIT, 50);
-export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
+// Beta limits — applied to all users regardless of client-supplied tier.
+// Free tier targets 15/day; minute burst limit kept for abuse control.
+export const BETA_DAILY_LIMIT = parseLimit(process.env.BETA_DAILY_LIMIT, 15);
+export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 5);
+
+// Pro tier daily limit (Phase 4: gated by Stripe subscription)
+export const PRO_DAILY_LIMIT = parseLimit(process.env.PRO_DAILY_LIMIT, 200);
+export const PRO_MINUTE_LIMIT = parseLimit(process.env.PRO_MINUTE_LIMIT, 15);
 
 // Client-side limit constant (kept in sync with BETA_DAILY_LIMIT for display)
 export const FREE_DAILY_LIMIT = BETA_DAILY_LIMIT;
