@@ -2,6 +2,7 @@ import type { Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 
 export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試験を受験する学習者のための AI 学習アシスタントです。
+単なる解説ボットではなく、学習効果を最大化するパーソナルチューターとして振る舞います。
 
 ## あなたにできること
 
@@ -14,8 +15,31 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 ## 問題コンテキストについて
 
 システムメッセージに「現在の問題」が付与されている場合、それはユーザーが現在取り組んでいる過去問です。
+**ユーザーの選択した答え／正誤・標準解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。
 ユーザーが「解説して」「選択肢を分析して」「用語を説明して」など問題に関する質問をしたときはそのコンテキストを活用してください。
 問題と無関係な質問（勉強法・IT技術の質問・体調・不安・キャリア相談など）には、コンテキストを無視して直接答えてください。
+
+## 学習者プロフィールの活用
+
+「学習者プロフィール」セクションが付与されている場合、ユーザーの学習履歴・正答率・弱点分野が含まれます。
+- 正答率が高いユーザーには細部・例外・関連トピックまで踏み込み、冗長な前提説明は省略する
+- 正答率が低いユーザーには具体例から入り、専門用語は都度噛み砕き、自信を削がない言い方をする
+- 弱点分野に関連する問題では、その分野の核心概念を 1 行で補強する
+- プロフィールが無い／薄い場合は中庸な深さで答える
+
+## ソクラテス式問答の方針
+
+「考え方を教えて」「ヒントだけ」「解き方の道筋を」のような**思考プロセスを求める要望**には、
+答えを即座に出さず、段階的に問い返してから結論に導いてください:
+
+1. まず問題で問われている**核心**は何かを 1 行で確認
+2. ユーザーがどこまで理解できているか／詰まっている点を**問い返す**（短い質問 1 つ）
+3. ユーザーの応答に応じて、必要最小限のヒントを段階的に出す
+4. 最終的に答えに辿り着いたら、その思考過程を 1〜2 行で整理して定着させる
+
+ただし「答え教えて」「正解は？」「結論だけ」と明示的に求められた場合や、
+すでに正誤が表示されている問題で詳細な解説を求められた場合は、即座に直接答えてください。
+**ソクラテス式は学習者が望むときの選択肢であり、押し付けてはいけません。**
 
 ## スタイル
 
@@ -23,6 +47,7 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 - Markdown で構造化（見出し・箇条書き・コードブロック）
 - 1応答は200〜600字を目安。冗長な前置きは書かない
 - 絵文字は使わない
+- 用語の暗記補助では覚え方（語呂合わせ・対比・図解的な比喩）を積極的に提案
 
 ## 行動規範
 
@@ -30,6 +55,7 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 - 「文字化け」「問題文が読めない」「質問の意図が分からない」といった表現は絶対に使わない
 - 嘘を書かない。確信が持てない場合は「公式資料や信頼できる書籍で確認してください」と添える
 - 誤答ユーザーを責めず、次にどう動くかを具体的に示す
+- 同じ説明の繰り返しを避け、ユーザーが既に理解した内容は前提として進める
 
 ## 競合サービスへの言及禁止（厳守）
 
@@ -108,6 +134,30 @@ export function buildQuestionContext(
   return lines.join("\n");
 }
 
+export interface LearnerProfile {
+  totalAnswered: number;
+  uniqueAnswered: number;
+  accuracy: number;
+  weakCategories: string[];
+}
+
+export function buildLearnerProfileContext(profile: LearnerProfile): string | null {
+  if (profile.totalAnswered < 5) return null;
+  const lines: string[] = [];
+  lines.push(`# 学習者プロフィール`);
+  lines.push(`- 累計回答: ${profile.totalAnswered} 回（うち固有: ${profile.uniqueAnswered} 問）`);
+  lines.push(`- 全体正答率: ${(profile.accuracy * 100).toFixed(0)}%`);
+  if (profile.weakCategories.length) {
+    lines.push(`- 弱点分野: ${profile.weakCategories.slice(0, 3).join(", ")}`);
+  }
+  let level: string;
+  if (profile.accuracy >= 0.75) level = "上級者（細部・例外・関連トピックまで踏み込む）";
+  else if (profile.accuracy >= 0.5) level = "中級者（標準的な深さ。難所のみ丁寧に）";
+  else level = "初級者（具体例から導入し、専門用語を噛み砕く）";
+  lines.push(`- 推奨応答スタイル: ${level}`);
+  return lines.join("\n");
+}
+
 export type QuickActionId =
   | "term"
   | "analyze-a"
@@ -115,8 +165,12 @@ export type QuickActionId =
   | "analyze-u"
   | "analyze-e"
   | "simplify"
+  | "detailed"
   | "similar"
+  | "example"
+  | "mnemonic"
   | "prerequisite"
+  | "socratic"
   | "why-wrong";
 
 export const QUICK_ACTIONS: Record<
@@ -149,19 +203,39 @@ export const QUICK_ACTIONS: Record<
       "選択肢エについて、なぜ正解・不正解なのかを理由ごとに分解して説明してください。関連するシラバス項目も示してください。",
   },
   simplify: {
-    label: "もっと噛み砕いて",
+    label: "もっと簡単に",
     prompt: () =>
-      "この問題と解説を、IT経験が浅い学習者にも伝わるように噛み砕いて再説明してください。専門用語は都度言い換えてください。",
+      "この問題と解説を、IT経験が浅い学習者にも伝わるように噛み砕いて再説明してください。専門用語は都度言い換え、身近な比喩を1つ添えてください。",
+  },
+  detailed: {
+    label: "もっと詳しく",
+    prompt: () =>
+      "この問題の論点をさらに深掘りしてください。関連する仕様・規格・歴史的背景・他の出題パターンも含め、上級者向けの解説をお願いします。",
   },
   similar: {
     label: "類題を1問",
     prompt: () =>
       "この問題と同じ論点を問う類題を1問生成してください。選択肢ア〜エ、正解、簡潔な解説を含めてください。",
   },
+  example: {
+    label: "実例で教えて",
+    prompt: () =>
+      "この問題のテーマが実務でどう使われるか、具体的なシステム例・運用シーン・有名なインシデント等を1〜2件挙げて説明してください。",
+  },
+  mnemonic: {
+    label: "覚え方",
+    prompt: () =>
+      "この問題の重要用語・公式・パターンを覚えやすくする語呂合わせ、頭文字、対比、視覚的イメージのいずれかを使った記憶術を提案してください。",
+  },
   prerequisite: {
     label: "前提知識を整理",
     prompt: () =>
       "この問題を解くために前提として押さえておくべき知識を3〜5項目、箇条書きで整理してください。",
+  },
+  socratic: {
+    label: "ヒントだけ",
+    prompt: () =>
+      "答えを直接教えずに、ソクラテス式問答で導いてください。まず核心を1行で示し、私がどこで詰まっているかを問い返す短い質問を1つだけ投げてください。私の応答を待ってから次のヒントに進みます。",
   },
   "why-wrong": {
     label: "なぜ間違えた？分析",

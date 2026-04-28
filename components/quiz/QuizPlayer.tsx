@@ -1,18 +1,32 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
+import { GenerateSimilar } from "./GenerateSimilar";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
-import { FeedbackGateModal } from "@/components/FeedbackGateModal";
-import { QuestionCommentBox } from "./QuestionCommentBox";
 import { createHistoryStore } from "@/lib/storage/history";
+import { QuestionCommentBox } from "./QuestionCommentBox";
+
+const FeedbackGateModal = dynamic(
+  () => import("@/components/FeedbackGateModal").then((m) => m.FeedbackGateModal),
+  { ssr: false },
+);
+import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Sparkles, Timer } from "lucide-react";
+import { ArrowLeft, Loader2, Sparkles, Timer, Share2, Check, Copy } from "lucide-react";
+import { examLabel } from "@/lib/utils";
+import { FireworksBurst } from "@/components/motivation/FireworksBurst";
+import { ComboCounter } from "@/components/motivation/ComboCounter";
+import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
+import { playPiroro } from "@/lib/motivation/sound";
+import { recordSessionAnswer } from "@/lib/motivation/session";
+import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -21,17 +35,28 @@ function formatElapsed(s: number) {
 }
 
 interface Props {
-  questions: Question[];
+  question: Question | null;
+  index: number;
+  total: number;
   mode: string;
   backHref?: string;
+  exam?: string;
+  onNext: () => void;
 }
 
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
-export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
+export function QuizPlayer({
+  question,
+  index,
+  total,
+  mode,
+  backHref = "/",
+  exam = "ap",
+  onNext,
+}: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
-  const [index, setIndex] = React.useState(0);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [upsellOpen, setUpsellOpen] = React.useState(false);
@@ -40,11 +65,14 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
   const [showSwipeHint, setShowSwipeHint] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
+  const [combo, setCombo] = React.useState(0);
+  const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
+  const motivationSettingsRef = React.useRef(readMotivationSettings());
 
   React.useEffect(() => {
+    motivationSettingsRef.current = readMotivationSettings();
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
     if (!alreadyShown) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setShowSwipeHint(true);
       localStorage.setItem(LS_KEYS.swipeHintShown, "true");
     }
@@ -55,8 +83,6 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     return () => clearInterval(id);
   }, []);
 
-  const question = questions[index];
-
   React.useEffect(() => {
     if (!question) return;
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -66,14 +92,21 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     setStarred(history.isStarred(question.id));
   }, [question, history]);
 
+  // When the session runs out of questions, send the user back with ?done=1.
+  React.useEffect(() => {
+    if (total > 0 && index >= total) {
+      router.push(`${backHref}?done=1`);
+    }
+  }, [index, total, router, backHref]);
+
   const goNext = React.useCallback(() => {
     setCopilotQuery(null);
-    if (index + 1 >= questions.length) {
+    if (index + 1 >= total) {
       router.push(`${backHref}?done=1`);
       return;
     }
-    setIndex(index + 1);
-  }, [index, questions.length, router, backHref]);
+    onNext();
+  }, [index, total, router, backHref, onNext]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -85,6 +118,14 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         : String(question.answer);
       const correct = key === answerKey;
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      recordSessionAnswer({
+        id: question.id,
+        correct,
+        category: question.category ?? "未分類",
+        at: Date.now(),
+      });
+      recordStudyOnDate();
+      recordReview(question.id, correct);
       setStats((s) => {
         const next = { answered: s.answered + 1, correct: s.correct + (correct ? 1 : 0) };
         if (next.answered === 10) {
@@ -101,8 +142,21 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         }
         return next;
       });
+
+      const nextCombo = correct ? combo + 1 : 0;
+      setCombo(nextCombo);
+      if (correct) {
+        const level = comboLevel(nextCombo);
+        const reduceMotion = motivationSettingsRef.current.reduceMotion;
+        if (level !== "none" && !reduceMotion) {
+          setBurst({ level, nonce: Date.now() });
+          if (motivationSettingsRef.current.soundEnabled) {
+            playPiroro(level);
+          }
+        }
+      }
     },
-    [question, revealed, history],
+    [question, revealed, history, combo],
   );
 
   const toggleStar = React.useCallback(() => {
@@ -136,10 +190,17 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         e.preventDefault();
         toggleStar();
       }
+      if (e.key === "Escape") {
+        if (upsellOpen) {
+          setUpsellOpen(false);
+        } else if (copilotQuery) {
+          setCopilotQuery(null);
+        }
+      }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar]);
+  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -155,7 +216,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
     touchStart.current = null;
   };
 
-  if (!question) {
+  if (total === 0) {
     return (
       <div className="flex flex-1 items-center justify-center p-8">
         <div className="text-center">
@@ -166,6 +227,33 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
             <ArrowLeft className="h-4 w-4" /> モード選択に戻る
           </Button>
         </div>
+      </div>
+    );
+  }
+
+  if (!question && index >= total && total > 0) {
+    return (
+      <QuizCompleteScreen
+        stats={stats}
+        elapsed={elapsed}
+        exam={exam}
+        mode={mode}
+        onRetry={() => {
+          setStats({ answered: 0, correct: 0 });
+          setElapsed(0);
+          setSelected(undefined);
+          setRevealed(false);
+          router.push(backHref);
+        }}
+        onBack={() => router.push(backHref)}
+      />
+    );
+  }
+
+  if (!question) {
+    return (
+      <div className="flex flex-1 items-center justify-center p-8">
+        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
       </div>
     );
   }
@@ -183,23 +271,37 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
             variant="ghost"
             size="icon"
             onClick={() => router.push(backHref)}
-            aria-label="戻る"
+            aria-label="モード選択に戻る"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <ArrowLeft aria-hidden="true" className="h-4 w-4" />
           </Button>
           <div className="text-xs text-zinc-500 dark:text-zinc-400">モード: {mode}</div>
           <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
-            <span className="flex items-center gap-1">
-              <Timer className="h-3 w-3" />
-              {formatElapsed(elapsed)}
+            <ComboCounter combo={combo} />
+            <span
+              className="flex items-center gap-1"
+              aria-label={`経過時間 ${formatElapsed(elapsed)}`}
+            >
+              <Timer aria-hidden="true" className="h-3 w-3" />
+              <span aria-hidden="true">{formatElapsed(elapsed)}</span>
             </span>
-            <span>正答 {stats.correct}/{stats.answered}</span>
+            <span aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}`}>
+              <span aria-hidden="true">正答 {stats.correct}/{stats.answered}</span>
+            </span>
           </div>
         </div>
-        <div className="h-1 bg-zinc-100 dark:bg-zinc-800">
+        <div
+          role="progressbar"
+          aria-label="クイズ進捗"
+          aria-valuenow={index + 1}
+          aria-valuemin={1}
+          aria-valuemax={total}
+          aria-valuetext={`${index + 1}問目 / 全${total}問`}
+          className="h-1 bg-zinc-100 dark:bg-zinc-800"
+        >
           <div
-            className="h-full bg-sky-500 transition-all duration-300"
-            style={{ width: `${((index + 1) / questions.length) * 100}%` }}
+            className="h-full bg-sky-600 motion-safe:transition-all motion-safe:duration-300 dark:bg-sky-400"
+            style={{ width: `${((index + 1) / total) * 100}%` }}
           />
         </div>
       </header>
@@ -213,12 +315,16 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
           <div className="mx-auto max-w-2xl space-y-4">
             <QuestionCard
               question={question}
-              progress={{ current: index, total: questions.length }}
+              progress={{ current: index, total }}
             />
 
-            <div className="space-y-2">
+            <div
+              role="group"
+              aria-label="選択肢（数字キー1〜4で選択可能）"
+              className="space-y-2"
+            >
               {question.choices &&
-                CHOICE_KEYS.map((key) => (
+                CHOICE_KEYS.map((key, idx) => (
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
@@ -228,8 +334,17 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
                     correct={answerKey === key}
                     disabled={revealed}
                     onClick={() => onSelect(key)}
+                    shortcutIndex={idx + 1}
                   />
                 ))}
+            </div>
+
+            <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+              {revealed
+                ? isCorrect
+                  ? `正解です。解説が表示されました。`
+                  : `不正解です。正解は ${answerKey} です。解説が表示されました。`
+                : ""}
             </div>
 
             {revealed && (
@@ -246,6 +361,7 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
                     !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
                   }
                 />
+                <GenerateSimilar baseQuestion={question} />
                 <QuestionCommentBox questionId={question.id} />
               </>
             )}
@@ -310,11 +426,116 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         </div>
       )}
 
-      <FeedbackGateModal
-        open={upsellOpen}
-        onClose={() => setUpsellOpen(false)}
-        source="ai-limit"
+      {upsellOpen && (
+        <FeedbackGateModal
+          open={upsellOpen}
+          onClose={() => setUpsellOpen(false)}
+          source="ai-limit"
+        />
+      )}
+
+      <FireworksBurst
+        active={burst !== null}
+        level={burst?.level ?? "small"}
+        onDone={() => setBurst(null)}
+        key={burst?.nonce ?? 0}
       />
+    </div>
+  );
+}
+
+const QUIZ_ORIGIN =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : "https://ipa-quiz-site.vercel.app";
+
+function QuizCompleteScreen({
+  stats,
+  elapsed,
+  exam,
+  mode,
+  onRetry,
+  onBack,
+}: {
+  stats: { answered: number; correct: number };
+  elapsed: number;
+  exam: string;
+  mode: string;
+  onRetry: () => void;
+  onBack: () => void;
+}) {
+  const [copied, setCopied] = React.useState(false);
+  const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
+  const label = examLabel(exam);
+  const shareUrl = `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
+  const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
+  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
+  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
+
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(shareUrl);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch { /* ignore */ }
+  };
+
+  const emoji = accuracy >= 80 ? "🎉" : accuracy >= 60 ? "👍" : "💪";
+
+  const btnClass =
+    "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+
+  return (
+    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
+      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
+        <div className="mb-6 text-center">
+          <div className="mb-2 text-5xl">{emoji}</div>
+          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
+          <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
+            {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
+          </p>
+        </div>
+
+        <div className="mb-6 grid grid-cols-3 gap-3 text-center">
+          <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
+            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
+          </div>
+          <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
+            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">正解数</div>
+          </div>
+          <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
+            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
+          </div>
+        </div>
+
+        <div className="mb-6">
+          <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
+          <div className="flex flex-wrap gap-2">
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
+              <Share2 className="h-4 w-4" /> X でシェア
+            </a>
+            <a href={lineUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
+              LINE
+            </a>
+            <button type="button" onClick={handleCopy} className={btnClass}>
+              {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
+              {copied ? "コピーしました" : "URLコピー"}
+            </button>
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-2">
+          <Button variant="primary" onClick={onRetry} className="w-full">
+            もう一度挑戦
+          </Button>
+          <Button variant="outline" onClick={onBack} className="w-full">
+            <ArrowLeft className="h-4 w-4" /> モード選択に戻る
+          </Button>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,11 +1,12 @@
 "use client";
 
 import * as React from "react";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
+import Link from "next/link";
+import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { getSafePdfUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { ShareButtons } from "@/components/ShareButtons";
 
 function isPlaceholderExplanation(explanation: string): boolean {
@@ -35,48 +36,59 @@ export function ExplanationCard({
 }: Props) {
   return (
     <div
+      role="region"
+      aria-label={isCorrect ? "正解の解説" : "不正解の解説"}
       className={cn(
-        "animate-in slide-in-from-bottom-4 duration-200",
+        "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
         "rounded-2xl border-2 p-4 sm:p-5",
         isCorrect
-          ? "border-emerald-300 bg-emerald-50/60 dark:border-emerald-800 dark:bg-emerald-950/30"
-          : "border-red-200 bg-red-50/30 dark:border-red-900/60 dark:bg-red-950/20",
+          ? "border-emerald-400 bg-emerald-50/60 dark:border-emerald-700 dark:bg-emerald-950/30"
+          : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
       )}
     >
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2">
           {isCorrect ? (
-            <CheckCircle2 className="h-5 w-5 text-emerald-600 dark:text-emerald-300" />
+            <CheckCircle2
+              aria-hidden="true"
+              className="h-5 w-5 text-emerald-700 dark:text-emerald-300"
+            />
           ) : (
-            <AlertCircle className="h-5 w-5 text-red-500 dark:text-red-400" />
+            <AlertCircle
+              aria-hidden="true"
+              className="h-5 w-5 text-red-700 dark:text-red-300"
+            />
           )}
           <span
             className={cn(
               "text-sm font-semibold",
               isCorrect
-                ? "text-emerald-800 dark:text-emerald-200"
-                : "text-red-700 dark:text-red-300",
+                ? "text-emerald-900 dark:text-emerald-100"
+                : "text-red-800 dark:text-red-200",
             )}
           >
             {isCorrect ? "正解!" : "不正解"}
           </span>
-          <span className="text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="text-xs text-zinc-700 dark:text-zinc-300">
             正解: {Array.isArray(question.answer) ? question.answer.join(", ") : question.answer}
             {selected ? ` / あなた: ${selected}` : ""}
           </span>
         </div>
         <button
           onClick={onToggleStar}
+          aria-pressed={starred}
+          aria-keyshortcuts="r"
           className={cn(
             "rounded-full p-2 transition-colors",
+            "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
             starred
-              ? "bg-amber-100 text-amber-600 dark:bg-amber-900/40 dark:text-amber-300"
-              : "bg-zinc-100 text-zinc-500 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-400 dark:hover:bg-zinc-700",
+              ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
+              : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
           )}
-          aria-label={starred ? "復習から外す" : "あとで復習"}
+          aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
           title="R キーでも切替"
         >
-          <Star className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
+          <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
         </button>
       </div>
 
@@ -135,10 +147,26 @@ export function ExplanationCard({
           </p>
           <ShareButtons
             url={typeof window !== "undefined" ? window.location.href : "https://ipa-quiz-site.vercel.app/"}
-            text={`過去問 AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
+            text={`過去問AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
             hashtags={["過去問AI", "IPA試験"]}
             compact
           />
+        </div>
+      )}
+
+      {!isCorrect && (
+        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-3 dark:border-amber-900/40 dark:bg-amber-950/20">
+          <p className="mb-2 text-xs font-medium text-amber-800 dark:text-amber-200">
+            苦手分野を克服しませんか？
+          </p>
+          <Link
+            href="/modes/topic"
+            data-track="explanation-cta-topic"
+            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-95"
+          >
+            <Tags className="h-3.5 w-3.5" />
+            分野別で集中対策
+          </Link>
         </div>
       )}
 
@@ -146,15 +174,26 @@ export function ExplanationCard({
         <p>
           ※ AI生成の解説は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
         </p>
-        <a
-          href={getSafePdfUrl(question.sourcePdfUrl)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
-        >
-          <FileText className="h-3 w-3 flex-shrink-0" />
-          IPA 公式資料で確認
-        </a>
+        <div className="flex flex-wrap gap-1.5">
+          <a
+            href={getSafePdfUrl(question.sourcePdfUrl)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+          >
+            <FileText className="h-3 w-3 flex-shrink-0" />
+            問題PDF
+          </a>
+          <a
+            href={getOfficialAnswerPdfUrl(question.sourcePdfUrl)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+          >
+            <FileText className="h-3 w-3 flex-shrink-0" />
+            公式解答PDF
+          </a>
+        </div>
       </div>
     </div>
   );

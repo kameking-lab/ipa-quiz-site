@@ -289,6 +289,24 @@ export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
   return IPA_EXAM_INFO_URL;
 }
 
+/**
+ * Returns the IPA official answer PDF URL for a question.
+ * Derived from sourcePdfUrl by swapping "_qs.pdf" → "_ans.pdf" (the IPA naming convention).
+ * Falls back to the safe info page when derivation is impossible.
+ */
+export function getOfficialAnswerPdfUrl(
+  sourcePdfUrl: string | undefined,
+): string {
+  if (!sourcePdfUrl || !sourcePdfUrl.startsWith("https://")) {
+    return IPA_EXAM_INFO_URL;
+  }
+  if (sourcePdfUrl.endsWith("_qs.pdf")) {
+    return sourcePdfUrl.replace(/_qs\.pdf$/, "_ans.pdf");
+  }
+  // CBT or non-standard URLs: fall back to source link itself
+  return sourcePdfUrl;
+}
+
 // ------- URL builders -------
 
 export function buildPdfUrl(

@@ -1,9 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft, ChevronRight, ExternalLink, Sparkles } from "lucide-react";
+import {
+  ChevronLeft,
+  ChevronRight,
+  ChevronDown,
+  ExternalLink,
+  Sparkles,
+  AlertTriangle,
+  ArrowRight,
+  BookOpenCheck,
+} from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
@@ -17,8 +27,10 @@ import {
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
+import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -52,13 +64,21 @@ function questionTitle(q: Question): string {
   return `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
 }
 
-function questionSnippet(q: Question, maxLen = 150): string {
-  const head = q.question.replace(/\s+/g, " ").slice(0, maxLen);
+function truncate(s: string, n: number): string {
+  return s.length > n ? `${s.slice(0, n)}…` : s;
+}
+
+function questionSnippet(q: Question): string {
+  const examStr = examLabelAt(q.exam, q.year, q.season);
+  const ys = formatYearSeason(q.year, q.season);
+  const ss = sessionLabel(q.session);
+  const prefix = `【${examStr} ${ys} ${ss} 問${q.qNumber}・${q.category}】`;
+  const qPreview = truncate(q.question.replace(/\s+/g, " "), 60);
   const real = !isPlaceholderExplanation(q);
   const tail = real
-    ? q.explanation.replace(/\s+/g, " ").slice(0, 80)
-    : "AIコパイロットで詳細な解説を確認できます。";
-  return `${head}… ${tail}`.slice(0, 155);
+    ? `正解と解説を掲載。${truncate(q.explanation.replace(/\s+/g, " "), 40)}`
+    : "正解と AI コパイロットによる即時解説で理解を深められます。";
+  return truncate(`${prefix}${qPreview} ${tail}`, 155);
 }
 
 export async function generateMetadata({
@@ -227,179 +247,334 @@ export default async function QuestionPage({
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={jsonLd} />
 
-      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-zinc-500 dark:text-zinc-400">
+      {/* Breadcrumb */}
+      <nav
+        aria-label="パンくずリスト"
+        className="mb-5 text-xs text-muted-foreground"
+      >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:underline">
+            <Link
+              href="/"
+              className="transition hover:text-foreground hover:underline"
+            >
               ホーム
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
           <li>
-            <Link href={examPath} className="hover:underline">
+            <Link
+              href={examPath}
+              className="transition hover:text-foreground hover:underline"
+            >
               {examLabel(q.exam)}
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
           <li>
-            <Link href={yearSeasonPath} className="hover:underline">
+            <Link
+              href={yearSeasonPath}
+              className="transition hover:text-foreground hover:underline"
+            >
               {formatYearSeason(q.year, q.season)}
             </Link>
           </li>
-          <li aria-hidden="true">/</li>
-          <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
+          <li aria-hidden="true" className="text-border">
+            /
+          </li>
+          <li aria-current="page" className="font-medium text-foreground">
             問{q.qNumber}
           </li>
         </ol>
       </nav>
 
-      <header className="mb-4">
-        <div className="mb-3 flex flex-wrap items-center gap-2 text-xs">
-          <Badge variant="outline">
-            {examLabelAt(q.exam, q.year, q.season)} {formatYearSeason(q.year, q.season)}
+      {/* Header */}
+      <header className="mb-6">
+        <div className="mb-3 flex flex-wrap items-center gap-1.5 text-xs">
+          <Badge variant="primary">
+            {examLabelAt(q.exam, q.year, q.season)}
           </Badge>
-          <Badge variant="default">{sessionLabel(q.session)}</Badge>
-          <Badge variant="default">問{q.qNumber}</Badge>
-          <Badge variant="default">{q.category}</Badge>
+          <Badge variant="soft">{formatYearSeason(q.year, q.season)}</Badge>
+          <Badge variant="outline">{sessionLabel(q.session)}</Badge>
+          <Badge variant="outline">問 {q.qNumber}</Badge>
+          {q.isCalculation && <Badge variant="warn">計算</Badge>}
+        </div>
+        <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
+          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)}{" "}
+          {sessionLabel(q.session)} 問{q.qNumber}
+        </h1>
+        <div className="mt-2 flex flex-wrap items-center gap-1.5">
+          <span className="text-sm font-medium text-muted-foreground">
+            {q.category}
+          </span>
           {q.topicTags.slice(0, 3).map((t) => (
-            <Badge key={t} variant="outline">
+            <Badge key={t} variant="outline" className="text-[10px]">
               #{t}
             </Badge>
           ))}
-          {q.isCalculation && <Badge variant="warn">計算</Badge>}
         </div>
-        <h1 className="text-xl font-bold leading-snug text-zinc-900 dark:text-zinc-50 sm:text-2xl">
-          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)} {sessionLabel(q.session)} 問{q.qNumber}
-          <span className="ml-2 text-base font-medium text-zinc-500 dark:text-zinc-400 sm:text-lg">
-            {q.category}
-          </span>
-        </h1>
       </header>
 
-      <section aria-label="問題文" className="selectable-content rounded-2xl border border-zinc-200 bg-white p-5 text-base leading-relaxed text-zinc-900 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
+      {/* Question body */}
+      <section
+        aria-label="問題文"
+        className="selectable-content rounded-2xl border border-border bg-card p-6 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-7 sm:text-[17px]"
+      >
         {q.question.split("\n").map((line, i) => (
-          <p key={i} className="mb-2 last:mb-0">
+          <p key={i} className="mb-3 last:mb-0">
             {line}
           </p>
         ))}
       </section>
 
+      {/* Choices */}
       {q.choices && (
-        <section aria-label="選択肢" className="mt-4 space-y-2">
-          {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => (
-            <div
-              key={key}
-              className="flex items-start gap-3 rounded-2xl border-2 border-zinc-200 bg-white px-4 py-4 dark:border-zinc-700 dark:bg-zinc-900"
-            >
-              <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-sm font-bold text-zinc-700 dark:bg-zinc-800 dark:text-zinc-200">
-                {key}
-              </span>
-              <span className="flex-1 pt-1 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100 sm:text-base">
-                {text}
-              </span>
-            </div>
-          ))}
+        <section aria-label="選択肢" className="mt-5 flex flex-col gap-3">
+          <h2 className="sr-only">選択肢</h2>
+          {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
+            const isAnswer = key === answerKey;
+            return (
+              <div
+                key={key}
+                data-answer={isAnswer || undefined}
+                className="group relative flex items-start gap-4 rounded-2xl border border-border bg-card px-4 py-5 shadow-sm transition duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md active:translate-y-0 sm:px-5"
+              >
+                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-lg font-bold text-primary-soft-foreground transition group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground sm:h-11 sm:w-11">
+                  {key}
+                </span>
+                <span className="flex-1 pt-1 text-[15px] leading-[1.7] text-card-foreground sm:text-base sm:leading-[1.75]">
+                  {text}
+                </span>
+              </div>
+            );
+          })}
         </section>
       )}
 
+      {/* Answer reveal */}
       <section aria-label="正解" className="mt-6">
         <AnswerReveal answer={String(answerKey)} answerText={answerText} />
       </section>
 
+      {/* Explanation — 3-layer structured */}
+      <section aria-label="解説" className="mt-8">
+        <details open className="group">
+          <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+            <div className="flex items-center gap-2.5">
+              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
+                <BookOpenCheck className="h-4 w-4" />
+              </span>
+              <div className="leading-tight">
+                <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                  解説
+                </h2>
+                {showRealExplanation && (
+                  <p className="text-[11px] text-muted-foreground">
+                    結論 → 詳細 → 補足 の 3 層構成
+                  </p>
+                )}
+              </div>
+            </div>
+            <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition group-open:bg-muted">
+              <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
+              <span className="group-open:hidden">展開</span>
+              <span className="hidden group-open:inline">閉じる</span>
+            </span>
+          </summary>
+
+          {showRealExplanation ? (
+            <ExplanationLayers explanation={q.explanation} />
+          ) : (
+            <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
+              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+              <span>
+                解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+              </span>
+            </div>
+          )}
+
+          <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
+            <p>
+              ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1">
+              <a
+                href={q.sourcePdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+              >
+                出典: IPA 問題 PDF
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              <a
+                href={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
+              >
+                IPA 公式解答 PDF
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
+          </div>
+        </details>
+      </section>
+
+      {/* AI Copilot CTA — gradient panel */}
       <section
-        aria-label="解説"
-        className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-950"
+        aria-label="AI コパイロット"
+        className="relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
       >
-        <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">解説</h2>
-        {showRealExplanation ? (
-          <div className="selectable-content text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
-            {q.explanation.split("\n").map((line, i) => (
-              <p key={i} className="mb-2 last:mb-0">
-                {line}
-              </p>
-            ))}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/15 blur-2xl"
+        />
+        <div className="relative flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-2.5 py-0.5 text-[11px] font-semibold text-primary-soft-foreground">
+              <Sparkles className="h-3 w-3" />
+              AI コパイロット
+            </div>
+            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+              この問題を AI と深掘りする
+            </h2>
+            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
+              用語解説・選択肢分析・類題生成をその場で対話。クイズモードでは解答→解説がゼロ遷移。
+            </p>
           </div>
-        ) : (
-          <div className="rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
-            解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
-          </div>
-        )}
-        <div className="mt-4 space-y-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
-          <p>
-            ※ AI生成の解説は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
-          </p>
-          <a
-            href={q.sourcePdfUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 underline decoration-zinc-300 underline-offset-2 hover:text-zinc-700 dark:decoration-zinc-700 dark:hover:text-zinc-200"
-          >
-            出典: IPA 公式 PDF <ExternalLink className="h-3 w-3" />
-          </a>
+          <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
+            <Link
+              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}`}
+            >
+              クイズモードで開く
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </Button>
         </div>
       </section>
 
-      <section aria-label="AIコパイロット" className="mt-6">
-        <Link
-          href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}`}
-          className="block"
-        >
-          <Button variant="primary" size="lg" className="w-full font-semibold shadow-md">
-            <Sparkles className="h-4 w-4" />
-            AIに聞く（{formatYearSeason(q.year, q.season)} をクイズモードで開く）
-          </Button>
-        </Link>
-      </section>
-
-      <section aria-label="共有" className="mt-6">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+      {/* Share */}
+      <section aria-label="共有" className="mt-8">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           共有
         </h2>
         <ShareButtons url={pageUrlAbs} title={title} />
       </section>
 
-      <nav aria-label="前後の問題" className="mt-8 grid grid-cols-2 gap-2">
+      {/* Short-form video */}
+      <section aria-label="ショート動画" className="mt-6">
+        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          ショート動画
+        </h2>
+        <QuestionVideoButton
+          examLabel={examLabelAt(q.exam, q.year, q.season)}
+          yearSeason={formatYearSeason(q.year, q.season)}
+          questionText={q.question}
+          answerText={
+            answerText
+              ? `${answerKey}：${answerText}`
+              : String(answerKey)
+          }
+          explanationSummary={
+            showRealExplanation
+              ? q.explanation
+              : "解説は準備中。クイズモードでAIに質問できます。"
+          }
+          filename={`ipa-quiz-${q.exam}-${q.year}${q.season}-q${q.qNumber}.webm`}
+        />
+      </section>
+
+      {/* Prev / Next — desktop & tablet inline, mobile sticky */}
+      <nav
+        aria-label="前後の問題"
+        className="mt-8 hidden grid-cols-2 gap-3 sm:grid"
+      >
         {prev ? (
           <Link href={questionPagePath(prev)} className="block">
-            <Button variant="outline" size="lg" className="w-full">
-              <ChevronLeft className="h-4 w-4" />
-              問{prev.qNumber}
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-auto w-full justify-start gap-3 py-3 text-left"
+            >
+              <ChevronLeft className="h-4 w-4 shrink-0" />
+              <span className="flex min-w-0 flex-col items-start leading-tight">
+                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+                  前の問題
+                </span>
+                <span className="truncate">問 {prev.qNumber}</span>
+              </span>
             </Button>
           </Link>
         ) : (
-          <span />
+          <span className="flex flex-col items-start gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-left">
+            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+              前の問題
+            </span>
+            <span className="text-xs text-muted-foreground">最初の問題です</span>
+          </span>
         )}
         {next ? (
           <Link href={questionPagePath(next)} className="block">
-            <Button variant="outline" size="lg" className="w-full">
-              問{next.qNumber}
-              <ChevronRight className="h-4 w-4" />
+            <Button
+              variant="outline"
+              size="lg"
+              className="h-auto w-full justify-end gap-3 py-3 text-right"
+            >
+              <span className="flex min-w-0 flex-col items-end leading-tight">
+                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+                  次の問題
+                </span>
+                <span className="truncate">問 {next.qNumber}</span>
+              </span>
+              <ChevronRight className="h-4 w-4 shrink-0" />
             </Button>
           </Link>
         ) : (
-          <span />
+          <span className="flex flex-col items-end gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-right">
+            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
+              次の問題
+            </span>
+            <span className="text-xs text-muted-foreground">最後の問題です</span>
+          </span>
         )}
       </nav>
 
+      {/* Related */}
       {related.length > 0 && (
-        <section aria-label="関連する問題" className="mt-10">
-          <h2 className="mb-3 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-            関連する問題（{q.category}）
-          </h2>
-          <ul className="space-y-2">
+        <section aria-label="関連する問題" className="mt-12">
+          <div className="mb-4 flex items-end justify-between gap-3">
+            <div>
+              <h2 className="text-lg font-bold tracking-tight text-foreground">
+                関連する問題
+              </h2>
+              <p className="mt-0.5 text-xs text-muted-foreground">
+                {q.category} の他の問題
+              </p>
+            </div>
+          </div>
+          <ul className="flex flex-col gap-2">
             {related.map((r) => (
               <li key={r.id}>
                 <Link
                   href={questionPagePath(r)}
-                  className="block rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-500 dark:hover:bg-zinc-900"
+                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
-                  <div className="mb-1 text-xs text-zinc-500 dark:text-zinc-400">
-                    {examLabelAt(r.exam, r.year, r.season)} {formatYearSeason(r.year, r.season)}{" "}
-                    {sessionLabel(r.session)} 問{r.qNumber}
+                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Badge variant="outline" className="text-[10px]">
+                      {examLabelAt(r.exam, r.year, r.season)}
+                    </Badge>
+                    <span>
+                      {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                    </span>
                   </div>
-                  <div className="line-clamp-2 text-sm text-zinc-800 dark:text-zinc-100">
-                    {r.question.slice(0, 120)}
-                    {r.question.length > 120 ? "…" : ""}
+                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
+                    {r.question.slice(0, 140)}
+                    {r.question.length > 140 ? "…" : ""}
                   </div>
                 </Link>
               </li>
@@ -407,6 +582,42 @@ export default async function QuestionPage({
           </ul>
         </section>
       )}
+
+      {/* Spacer so sticky bottom nav doesn't cover the related list on mobile */}
+      <div aria-hidden="true" className="h-20 sm:hidden" />
+
+      {/* Mobile sticky bottom nav — prev/next */}
+      <nav
+        aria-label="前後の問題（モバイル）"
+        className="surface-glass fixed inset-x-0 bottom-0 z-30 border-t border-border px-3 pb-safe pt-2 sm:hidden"
+      >
+        <div className="grid grid-cols-2 gap-2">
+          {prev ? (
+            <Link href={questionPagePath(prev)} className="block">
+              <Button variant="outline" size="md" className="w-full">
+                <ChevronLeft className="h-4 w-4" />
+                <span className="text-xs">問 {prev.qNumber}</span>
+              </Button>
+            </Link>
+          ) : (
+            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
+              最初の問題
+            </span>
+          )}
+          {next ? (
+            <Link href={questionPagePath(next)} className="block">
+              <Button variant="primary" size="md" className="w-full">
+                <span className="text-xs">問 {next.qNumber}</span>
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+            </Link>
+          ) : (
+            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
+              最後の問題
+            </span>
+          )}
+        </div>
+      </nav>
     </main>
   );
 }

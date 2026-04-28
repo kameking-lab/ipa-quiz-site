@@ -14,8 +14,35 @@ export type AfternoonQuestionType = "descriptive" | "essay";
 export type SubAnswerType =
   | "short-text"   // 数十字程度の語句記述
   | "long-text"    // 100字程度以上の論述
+  | "essay-text"   // 2000-3000字の小論文（ST/PM/SA/AU/SM 午後II）
   | "fill-blank"   // 穴埋め（短い語句）
   | "choice";      // 選択肢から選ぶ（午後でも稀に存在）
+
+/**
+ * 業種カテゴリID（午後II 論述式の業種別模範解答で使用）
+ *
+ * 受験生の業務経験で論述内容が変わるため、業種ごとの合格答案サンプルを提供する。
+ */
+export type IndustryId =
+  | "manufacturing"  // 製造業（MES、IoT工場、生産管理）
+  | "construction"   // 建設業（ICT施工、BIM/CIM、建設DX）
+  | "finance"        // 金融業（勘定系、フィンテック）
+  | "retail"         // 流通・小売（EC、POS、サプライチェーン）
+  | "telecom"        // 通信業（キャリア、ISP、5G）
+  | "public";        // 公共・自治体（行政DX、住民サービス）
+
+/** 業種別の論述バリアント（設問ア・イ・ウの3点セット） */
+export interface IndustryVariant {
+  industryId: IndustryId;
+  /** タブ表示用ラベル */
+  industryName: string;
+  /** 設問ア（事業／プロジェクト概要・前提）の論述例 */
+  essayA: string;
+  /** 設問イ（戦略・施策・本論）の論述例 */
+  essayI: string;
+  /** 設問ウ（評価・改善・学び）の論述例 */
+  essayU: string;
+}
 
 /** 1つの大問内のサブ設問 */
 export interface SubQuestion {
@@ -27,12 +54,18 @@ export interface SubQuestion {
   type: SubAnswerType;
   /** 字数制限（上限）。fill-blank/choice は省略可 */
   maxLength?: number;
+  /** 字数下限（essay-text 等で使用） */
+  minLength?: number;
   /** 模範解答（IPA公表 or 編集者作成） */
   modelAnswer: string;
   /** 採点ルーブリック（採点観点）。AIに渡す */
   scoringRubric: string;
   /** 配点（任意。合計が大問の満点になることが望ましい） */
   points?: number;
+  /** 論述式の構成のポイント（章立て・論じる順序など）。essay-text で使用 */
+  compositionPoints?: string[];
+  /** 論述式の採点基準カテゴリ（例: 設問への適合性 / 論述の具体性 / 一貫性）。essay-text で使用 */
+  scoringCriteria?: { name: string; description: string }[];
 }
 
 /** 午後問題の大問1問 */
@@ -60,6 +93,13 @@ export interface AfternoonQuestion {
   totalTimeMinutes?: number;
   /** 解説品質が低い・要確認のフラグ。出題プールから除外する用途。 */
   needsReview?: boolean;
+  /**
+   * 業種別の模範論述バリアント（essay型のみ）。
+   * subQuestions[].modelAnswer は「共通／汎用」論述として扱い、
+   * このフィールドが存在する場合は UI 上で業種タブを切り替えられるようにする。
+   * 設問ア・イ・ウの順で essayA / essayI / essayU に対応する。
+   */
+  industryVariants?: IndustryVariant[];
 }
 
 /** ユーザーが提出した解答（採点API入力） */

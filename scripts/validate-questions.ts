@@ -54,10 +54,10 @@ const QuestionSchema = z.object({
   question: z.string().min(1),
   choices: z
     .object({
-      ア: z.string().min(1),
-      イ: z.string().min(1),
-      ウ: z.string().min(1),
-      エ: z.string().min(1),
+      ア: z.string(),
+      イ: z.string(),
+      ウ: z.string(),
+      エ: z.string(),
     })
     .optional(),
   answer: z.union([z.string().min(1), z.array(z.string().min(1))]),

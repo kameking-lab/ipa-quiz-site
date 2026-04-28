@@ -5,6 +5,7 @@ import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
+import { captureException } from "@/lib/monitoring/sentry";
 import type {
   AfternoonAnswer,
   AfternoonQuestion,
@@ -20,21 +21,28 @@ const BodySchema = z.object({
     .array(
       z.object({
         label: z.string().min(1).max(40),
-        text: z.string().max(2000),
+        text: z.string().max(4000),
       }),
     )
     .min(1)
     .max(20),
 });
 
-const SCORING_SYSTEM_PROMPT = `あなたはIPA応用情報技術者試験の午後記述式問題の採点者です。
+const SCORING_SYSTEM_PROMPT = `あなたはIPA情報処理技術者試験の午後問題（記述式・論述式）の採点者です。
 ユーザーの解答を、与えられたモデル解答と採点ルーブリックに基づき採点してください。
 
-採点基準:
+【記述式（short-text / long-text）の採点基準】
 - キーワードの一致だけでなく、論理的な文脈・因果関係も評価する
 - 字数制限を大幅超過した解答は減点する
 - 空欄・無関係な内容は0点とする
 - 部分点を細かく与える（0/30/60/80/100など）
+
+【論述式（essay-text）の採点基準】
+- 設問への適合性、論述の具体性、構成の一貫性、自身の関与の明示の4軸で評価する
+- 字数下限に達していない場合は明確に減点する
+- 抽象的な標語の繰り返し（「DX推進」「AI活用」など）が多い解答は減点する
+- 数値・固有名詞・具体的判断が織り込まれているかを重視する
+- scoringCriteria が与えられている場合は、各観点を踏まえて評価する
 
 必ず以下のJSON Schemaに従って、有効なJSONのみを返してください。前後の説明・コードフェンスは禁止です。
 
@@ -64,10 +72,23 @@ function buildUserPrompt(question: AfternoonQuestion, answers: AfternoonAnswer[]
     lines.push(`---`);
     lines.push(`■ ${sub.label}`);
     lines.push(`設問: ${sub.prompt}`);
-    if (sub.maxLength) lines.push(`字数制限: ${sub.maxLength}字`);
+    lines.push(`形式: ${sub.type}`);
+    if (sub.minLength && sub.maxLength) {
+      lines.push(`字数: ${sub.minLength}〜${sub.maxLength}字`);
+    } else if (sub.maxLength) {
+      lines.push(`字数制限: ${sub.maxLength}字`);
+    }
     lines.push(`配点: ${sub.points ?? 100}`);
     lines.push(`モデル解答: ${sub.modelAnswer}`);
     lines.push(`採点ルーブリック: ${sub.scoringRubric}`);
+    if (sub.compositionPoints && sub.compositionPoints.length > 0) {
+      lines.push(`構成のポイント: ${sub.compositionPoints.join(" / ")}`);
+    }
+    if (sub.scoringCriteria && sub.scoringCriteria.length > 0) {
+      lines.push(
+        `採点基準: ${sub.scoringCriteria.map((c) => `${c.name}（${c.description}）`).join(" / ")}`,
+      );
+    }
     lines.push(`ユーザー解答: ${userAnswer || "（無回答）"}`);
   }
   lines.push("---");
@@ -239,14 +260,19 @@ export async function POST(req: Request) {
           system: SCORING_SYSTEM_PROMPT,
           messages: [{ role: "user", content: userPrompt }],
           model,
-          maxTokens: 1500,
+          maxTokens: question.type === "essay" ? 4000 : 1500,
           temperature: 0.2,
         })) {
           buf += chunk;
         }
       } catch (err) {
+        await captureException(err, {
+          route: "/api/scoring",
+          extra: { questionId: question.id, provider: provider.name, model },
+        });
         const fallback = buildMockScoring(question, payload.answers);
-        fallback.overallComment = `AI採点中にエラーが発生したため、簡易採点を表示しています: ${err instanceof Error ? err.message : String(err)}`;
+        fallback.overallComment =
+          "AI採点中にエラーが発生したため、簡易採点を表示しています。少し時間を置いて再度お試しください。";
         controller.enqueue(encoder.encode(JSON.stringify(fallback)));
         controller.close();
         return;

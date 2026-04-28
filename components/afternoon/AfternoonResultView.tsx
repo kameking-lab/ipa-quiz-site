@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Award, CheckCircle2, AlertCircle, MessageCircle } from "lucide-react";
+import { Award, CheckCircle2, AlertCircle, MessageCircle, Briefcase } from "lucide-react";
 
-import type { AfternoonQuestion, AfternoonScoringResult } from "@/lib/afternoon/types";
+import type {
+  AfternoonQuestion,
+  AfternoonScoringResult,
+  IndustryId,
+} from "@/lib/afternoon/types";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -14,14 +18,33 @@ interface Props {
   result: AfternoonScoringResult;
 }
 
+type IndustryTab = "common" | IndustryId;
+
 function scoreBadge(score: number): "success" | "warn" | "danger" {
   if (score >= 70) return "success";
   if (score >= 40) return "warn";
   return "danger";
 }
 
+/** 設問ラベル（"設問ア" / "設問イ" / "設問ウ"）から industryVariant の essay フィールドを選ぶ */
+function pickIndustryEssay(
+  variant: { essayA: string; essayI: string; essayU: string },
+  label: string,
+): string {
+  if (label.includes("ア")) return variant.essayA;
+  if (label.includes("イ")) return variant.essayI;
+  if (label.includes("ウ")) return variant.essayU;
+  return "";
+}
+
 export function AfternoonResultView({ question, result }: Props) {
   const [showAiNote, setShowAiNote] = useState(false);
+  const [industryTab, setIndustryTab] = useState<IndustryTab>("common");
+
+  const variants = question.industryVariants ?? [];
+  const hasVariants = variants.length > 0;
+  const activeVariant =
+    industryTab === "common" ? null : variants.find((v) => v.industryId === industryTab) ?? null;
 
   return (
     <Card className="border-sky-200 dark:border-sky-900/50">
@@ -46,6 +69,57 @@ export function AfternoonResultView({ question, result }: Props) {
           <p className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/40 dark:bg-sky-900/20 dark:text-sky-100">
             {result.overallComment}
           </p>
+        )}
+
+        {hasVariants && (
+          <section
+            aria-label="業種別の模範論述"
+            className="rounded-xl border border-zinc-200 bg-zinc-50 p-3 dark:border-zinc-800 dark:bg-zinc-900/40"
+          >
+            <p className="mb-2 flex items-center gap-1.5 text-xs font-semibold text-zinc-700 dark:text-zinc-200">
+              <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
+              模範論述を業種で切り替える
+            </p>
+            <div role="tablist" aria-label="業種選択" className="flex flex-wrap gap-1.5">
+              <button
+                type="button"
+                role="tab"
+                aria-selected={industryTab === "common"}
+                onClick={() => setIndustryTab("common")}
+                className={
+                  "rounded-full border px-3 py-1 text-xs font-medium transition-colors " +
+                  (industryTab === "common"
+                    ? "border-sky-500 bg-sky-600 text-white"
+                    : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:bg-zinc-900")
+                }
+              >
+                共通（汎用）
+              </button>
+              {variants.map((v) => {
+                const selected = industryTab === v.industryId;
+                return (
+                  <button
+                    key={v.industryId}
+                    type="button"
+                    role="tab"
+                    aria-selected={selected}
+                    onClick={() => setIndustryTab(v.industryId)}
+                    className={
+                      "rounded-full border px-3 py-1 text-xs font-medium transition-colors " +
+                      (selected
+                        ? "border-sky-500 bg-sky-600 text-white"
+                        : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:bg-zinc-900")
+                    }
+                  >
+                    {v.industryName}
+                  </button>
+                );
+              })}
+            </div>
+            <p className="mt-2 text-[11px] leading-relaxed text-zinc-600 dark:text-zinc-400">
+              業種ごとに業界用語・KPI・ステークホルダ構成を変えた合格答案サンプルです。自身の業務経験に近い業種を選んでください。
+            </p>
+          </section>
         )}
 
         <ol className="space-y-4">
@@ -93,12 +167,36 @@ export function AfternoonResultView({ question, result }: Props) {
 
                 <div>
                   <p className="mb-1 text-xs font-semibold text-zinc-600 dark:text-zinc-300">
-                    IPA解答例
+                    {sub?.type === "essay-text"
+                      ? activeVariant
+                        ? `模範解答（${activeVariant.industryName} 版）`
+                        : "模範解答（論述例）"
+                      : "IPA解答例"}
                   </p>
                   <p className="whitespace-pre-wrap rounded-md bg-zinc-50 p-2 text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
-                    {sr.modelAnswer || sub?.modelAnswer || "（解答例なし）"}
+                    {(activeVariant && sub?.type === "essay-text"
+                      ? pickIndustryEssay(activeVariant, sr.label)
+                      : "") ||
+                      sr.modelAnswer ||
+                      sub?.modelAnswer ||
+                      "（解答例なし）"}
                   </p>
                 </div>
+
+                {sub?.scoringCriteria && sub.scoringCriteria.length > 0 && (
+                  <details className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-xs dark:border-zinc-800 dark:bg-zinc-900/50">
+                    <summary className="cursor-pointer font-semibold text-zinc-700 dark:text-zinc-200">
+                      採点基準
+                    </summary>
+                    <ul className="ml-4 mt-2 list-disc space-y-1 text-zinc-700 dark:text-zinc-200">
+                      {sub.scoringCriteria.map((c, i) => (
+                        <li key={i}>
+                          <span className="font-medium">{c.name}</span>: {c.description}
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                )}
               </li>
             );
           })}

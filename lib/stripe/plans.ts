@@ -3,10 +3,10 @@
 // 価格は Stripe ダッシュボードで定義済みの Price ID を環境変数経由で参照。
 // 本 PR ではテストモードでの課金検証用。
 //
-// 参考: フェーズ4 のプラン設計（CLAUDE.md §9 / lib/plans/index.ts）
-//   - FREE:    月0円  / 1日30回のAIコパイロット
-//   - PREMIUM: 月980円 / 無制限AI + 広告非表示
-//   - TEAM:    月30,000円 / 法人向け（20名まで）
+// 参考: lib/plans/index.ts
+//   - FREE: 月0円    / 1日15回のAIコパイロット
+//   - PRO:  月1,480円 / 1日200回 + 弱点克服・類題生成・論述添削
+//   - TEAM: 月2,980円/席（最低5席）/ 法人ダッシュボード
 
 import type { Plan } from "@prisma/client";
 
@@ -20,13 +20,13 @@ export interface PriceEntry {
 export const PRICE_CATALOG: Readonly<Record<"premium" | "team", PriceEntry>> = {
   premium: {
     plan: "premium",
-    amountJpy: 980,
+    amountJpy: 1480,
     priceIdEnv: "STRIPE_PRICE_ID_PREMIUM",
-    label: "PREMIUM",
+    label: "PRO",
   },
   team: {
     plan: "team",
-    amountJpy: 30000,
+    amountJpy: 2980,
     priceIdEnv: "STRIPE_PRICE_ID_TEAM",
     label: "TEAM",
   },

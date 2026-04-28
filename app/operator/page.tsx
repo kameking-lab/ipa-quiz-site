@@ -1,118 +1,212 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  AlertTriangle,
+  ArrowLeft,
+  ExternalLink,
+  MessageCircle,
+  Globe,
+  Info,
+  ScrollText,
+  TrendingUp,
+} from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "運営者情報",
+  description:
+    "過去問AI（過去問AI）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
+  alternates: { canonical: "/operator" },
 };
+
+interface InfoRow {
+  label: string;
+  value: React.ReactNode;
+}
+
+const INFO_ROWS: InfoRow[] = [
+  { label: "サービス名", value: "過去問AI" },
+  { label: "運営", value: "過去問AI運営" },
+  {
+    label: "公式X",
+    value: (
+      <a
+        href="https://x.com/kakomon_ai_jp"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+      >
+        @kakomon_ai_jp
+        <ExternalLink className="h-3 w-3" />
+      </a>
+    ),
+  },
+  {
+    label: "note",
+    value: (
+      <a
+        href="https://note.com/kakomon_ai"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+      >
+        note.com/kakomon_ai
+        <ExternalLink className="h-3 w-3" />
+      </a>
+    ),
+  },
+  {
+    label: "プロジェクト形態",
+    value: "教育貢献プロジェクト（全機能無料・非営利）",
+  },
+  {
+    label: "お問い合わせ",
+    value: (
+      <span className="inline-flex flex-wrap items-center gap-3">
+        <Link
+          href="/contact"
+          className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+        >
+          <MessageCircle className="h-3.5 w-3.5" />
+          お問い合わせフォーム
+        </Link>
+        <a
+          href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+        >
+          GitHub Issues
+          <ExternalLink className="h-3 w-3" />
+        </a>
+      </span>
+    ),
+  },
+];
 
 export default function OperatorPage() {
   return (
-    <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-12 pt-6 sm:px-6">
-      <Button asChild variant="ghost" size="sm" className="mb-3">
-        <Link href="/">
-          <ArrowLeft className="h-4 w-4" />
-          戻る
-        </Link>
-      </Button>
-      <h1 className="mb-8 text-2xl font-bold">運営者情報</h1>
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
 
-      <section className="mb-8">
-        <table className="w-full text-sm">
-          <tbody className="divide-y divide-zinc-200 dark:divide-zinc-800">
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400 w-32">
-                サービス名
-              </th>
-              <td className="py-3 text-zinc-800 dark:text-zinc-200">過去問AI</td>
-            </tr>
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                運営
-              </th>
-              <td className="py-3 text-zinc-800 dark:text-zinc-200">過去問AI運営</td>
-            </tr>
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                公式X
-              </th>
-              <td className="py-3">
-                <a
-                  href="https://x.com/kakomon_ai_jp"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
-                >
-                  @kakomon_ai_jp
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                note
-              </th>
-              <td className="py-3">
-                <a
-                  href="https://note.com/kakomon_ai"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
-                >
-                  note.com/kakomon_ai
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                プロジェクト形態
-              </th>
-              <td className="py-3 text-zinc-800 dark:text-zinc-200">
-                教育貢献プロジェクト（全機能無料・非営利）
-              </td>
-            </tr>
-            <tr>
-              <th className="py-3 pr-4 text-left font-medium text-zinc-600 dark:text-zinc-400">
-                お問い合わせ
-              </th>
-              <td className="py-3 space-x-3">
-                <Link
-                  href="/contact"
-                  className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
-                >
-                  お問い合わせフォーム
-                </Link>
-                <a
-                  href="https://github.com/kameking-lab/ipa-quiz-site/issues"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sky-600 underline decoration-sky-300 underline-offset-2 hover:text-sky-700 dark:text-sky-400 dark:decoration-sky-700 dark:hover:text-sky-300"
-                >
-                  GitHub Issues
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <Button asChild variant="ghost" size="sm" className="mb-4">
+          <Link href="/">
+            <ArrowLeft className="h-4 w-4" />
+            戻る
+          </Link>
+        </Button>
 
-      <section className="space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
-        <p>
-          本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
-          IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
-        </p>
-        <p>
-          問題データはIPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
-          詳細は
-          <Link href="/about" className="underline">
-            プロジェクトについて
-          </Link>
-          をご確認ください。運営の透明性レポートは
-          <Link href="/transparency" className="underline">
-            /transparency
-          </Link>
-          で公開しています。
-        </p>
-      </section>
+        <header className="mb-10 animate-fade-in">
+          <Badge variant="soft" className="mb-4">
+            <Info className="h-3 w-3" />
+            運営情報
+          </Badge>
+          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+            運営者情報
+          </h1>
+          <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+            本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
+            IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+          </p>
+        </header>
+
+        <section className="mb-6 overflow-hidden rounded-2xl border border-border bg-card shadow-sm sm:mb-8">
+          <div className="flex items-center gap-3 border-b border-border bg-muted/40 px-6 py-4">
+            <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <Globe className="h-4.5 w-4.5" />
+            </span>
+            <h2 className="text-base font-semibold text-foreground">基本情報</h2>
+          </div>
+          <dl className="divide-y divide-border">
+            {INFO_ROWS.map((row) => (
+              <div
+                key={row.label}
+                className="flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-center sm:gap-6"
+              >
+                <dt className="text-xs font-semibold uppercase tracking-wider text-muted-foreground sm:w-32 sm:shrink-0">
+                  {row.label}
+                </dt>
+                <dd className="text-sm text-foreground">{row.value}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section className="mb-6 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <TrendingUp className="h-5 w-5" />
+            </span>
+            <h2 className="text-lg font-semibold text-foreground">運営方針</h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
+              IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+            </p>
+            <p>
+              問題データは IPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
+              詳細は{" "}
+              <Link
+                href="/about"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                プロジェクトについて
+              </Link>
+              {" "}をご確認ください。運営の透明性レポートは{" "}
+              <Link
+                href="/transparency"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                /transparency
+              </Link>
+              {" "}で公開しています。
+            </p>
+          </div>
+        </section>
+
+        <section className="rounded-2xl border border-warning/40 bg-warning/5 p-6 shadow-sm sm:p-7 dark:border-warning/30 dark:bg-warning/10">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-warning/20 text-warning dark:bg-warning/15">
+              <AlertTriangle className="h-5 w-5" />
+            </span>
+            <h2 className="text-lg font-semibold text-foreground">免責事項</h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-foreground/90">
+            <p>
+              本サービス「過去問AI（過去問AI）」は、独立行政法人情報処理推進機構（IPA）とは一切関係のない非公式のサービスです。
+              IPA が運営・監修するものではなく、IPA の公式見解を示すものでもありません。
+            </p>
+            <p>
+              「情報処理技術者試験」「応用情報技術者」「基本情報技術者」等の試験名称は、IPA の商標または登録商標です。
+              本サービスではこれらを試験区分の識別のためにのみ使用しています。
+            </p>
+            <p className="flex flex-wrap items-center gap-1">
+              試験要項・申込・正式な情報は必ず
+              <a
+                href="https://www.ipa.go.jp/shiken/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+              >
+                <ScrollText className="h-3.5 w-3.5" />
+                IPA 公式サイト（ipa.go.jp/shiken）
+                <ExternalLink className="h-3 w-3" />
+              </a>
+              をご確認ください。
+            </p>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }

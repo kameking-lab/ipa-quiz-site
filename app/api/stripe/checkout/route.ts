@@ -8,6 +8,10 @@
 // - Stripe 未設定なら 503
 // - User に stripeCustomerId が無ければ新規作成して DB に保存
 // - ログイン中ユーザーが既に same plan なら 400 を返す（重複課金防止）
+// - Premium プランは初回 7 日間トライアル付きで作成する
+//   （既に解約済み等で再課金する場合 trial_period_days はそのまま付与する。
+//    Stripe 側で同一 customer の重複トライアル防止が必要な場合は
+//    trial_settings.end_behavior.missing_payment_method を "cancel" にする）
 
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
@@ -30,16 +34,18 @@ export async function POST(req: Request) {
   if (!PAID_MODE) {
     return NextResponse.json({ error: "paid_mode_disabled" }, { status: 404 });
   }
+  // 認証を最優先で評価する（未ログインなら課金設定の有無に依らず 401）。
+  // Stripe / DB が未設定でも、認証情報の有無は副作用なく確認できる。
+  const session = await auth().catch(() => null);
+  if (!session?.user?.id || !session.user.email) {
+    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
+  }
+
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
   }
   if (!process.env.DATABASE_URL) {
     return NextResponse.json({ error: "db_not_configured" }, { status: 503 });
-  }
-
-  const session = await auth();
-  if (!session?.user?.id || !session.user.email) {
-    return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
 
   const body = (await req.json().catch(() => ({}))) as { plan?: unknown };
@@ -76,17 +82,24 @@ export async function POST(req: Request) {
     });
   }
 
+  const trialDays = body.plan === "premium" ? 7 : undefined;
+
   const checkout = await stripe.checkout.sessions.create({
     mode: "subscription",
     customer: customerId,
     line_items: [{ price: priceId, quantity: 1 }],
-    success_url: `${APP_URL}/account?checkout=success`,
-    cancel_url: `${APP_URL}/account?checkout=canceled`,
+    success_url: `${APP_URL}/account/billing?checkout=success&session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `${APP_URL}/pricing?checkout=canceled`,
     allow_promotion_codes: true,
     subscription_data: {
       metadata: { userId: user.id, plan: PRICE_CATALOG[body.plan].plan },
+      ...(trialDays ? { trial_period_days: trialDays } : {}),
     },
-    metadata: { userId: user.id, plan: PRICE_CATALOG[body.plan].plan },
+    metadata: {
+      userId: user.id,
+      plan: PRICE_CATALOG[body.plan].plan,
+      ...(trialDays ? { trialDays: String(trialDays) } : {}),
+    },
   });
 
   if (!checkout.url) {

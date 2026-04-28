@@ -2,10 +2,17 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
-import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, QUICK_ACTIONS } from "@/lib/ai/prompts";
-import type { QuickActionId } from "@/lib/ai/prompts";
+import {
+  COPILOT_SYSTEM_PROMPT,
+  buildQuestionContext,
+  buildLearnerProfileContext,
+  QUICK_ACTIONS,
+} from "@/lib/ai/prompts";
+import type { QuickActionId, LearnerProfile } from "@/lib/ai/prompts";
+import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
+import { captureException } from "@/lib/monitoring/sentry";
 
 export const runtime = "nodejs";
 
@@ -33,6 +40,16 @@ const BodySchema = z.object({
   selectedChoice: z.string().optional(),
   isCorrect: z.boolean().optional(),
   quickAction: z.string().optional(),
+  learnerProfile: z
+    .object({
+      totalAnswered: z.number().int().min(0).max(100000),
+      uniqueAnswered: z.number().int().min(0).max(100000),
+      accuracy: z.number().min(0).max(1),
+      weakCategories: z.array(z.string().max(60)).max(10),
+    })
+    .optional(),
+  character: z.enum(["momo", "haru", "zan"]).optional(),
+  characterEnabled: z.boolean().optional(),
   // tier is accepted from client but ignored server-side during beta —
   // all users receive the same limits regardless of what they send.
   tier: z.enum(["free", "premium"]).default("free"),
@@ -77,7 +94,22 @@ export async function POST(req: Request) {
     payload.isCorrect,
   );
 
-  const system = `${COPILOT_SYSTEM_PROMPT}\n\n---\n${questionContext}`;
+  const profileContext = payload.learnerProfile
+    ? buildLearnerProfileContext(payload.learnerProfile satisfies LearnerProfile)
+    : null;
+
+  const characterPrompt =
+    payload.characterEnabled && payload.character && isCharacterId(payload.character)
+      ? CHARACTERS[payload.character].systemPrompt
+      : null;
+
+  const system = [
+    COPILOT_SYSTEM_PROMPT,
+    ...(characterPrompt ? [characterPrompt] : []),
+    "---",
+    questionContext,
+    ...(profileContext ? ["---", profileContext] : []),
+  ].join("\n\n");
 
   const userMessages = [...payload.messages];
   if (quickPrompt) {
@@ -122,9 +154,13 @@ export async function POST(req: Request) {
         }
         controller.close();
       } catch (err) {
+        await captureException(err, {
+          route: "/api/copilot",
+          extra: { provider: provider.name, model },
+        });
         controller.enqueue(
           encoder.encode(
-            `\n\n[エラー] AI応答の取得に失敗しました: ${err instanceof Error ? err.message : String(err)}`,
+            "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。",
           ),
         );
         controller.close();
@@ -135,6 +171,7 @@ export async function POST(req: Request) {
   return new Response(stream, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "no-store, no-cache, must-revalidate",
       "X-RateLimit-Limit": String(rl.limit),
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),

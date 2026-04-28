@@ -1,7 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
-export const alt = "過去問 AI — IPA 試験対策を、誰もが平等に。全機能無料";
+export const alt = "過去問AI — IPA 試験対策を、誰もが平等に。全機能無料";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -40,7 +39,7 @@ export default function OgImage() {
               letterSpacing: "-0.5px",
             }}
           >
-            過去問 AI
+            過去問AI
           </div>
           <div
             style={{
@@ -57,6 +56,8 @@ export default function OgImage() {
         </div>
         <div
           style={{
+            display: "flex",
+            flexDirection: "column",
             color: "#ffffff",
             fontSize: "60px",
             fontWeight: 800,
@@ -65,9 +66,8 @@ export default function OgImage() {
             letterSpacing: "-1px",
           }}
         >
-          IPA 試験対策を、
-          <br />
-          誰もが平等に。
+          <span>IPA 試験対策を、</span>
+          <span>誰もが平等に。</span>
         </div>
         <div
           style={{

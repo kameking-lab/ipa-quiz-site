@@ -4,7 +4,7 @@ import { examLabelAt } from "@/lib/exam-naming/history";
 import { formatYearSeason } from "@/lib/utils";
 import { findQuestionByRoute, type QuestionRouteParams } from "@/lib/seo/question-url";
 
-export const alt = "IPA Quiz 過去問解説";
+export const alt = "過去問AI 過去問解説";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -26,7 +26,7 @@ export default async function OgImage({
 
   const heading = q
     ? `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)}`
-    : "IPA Quiz";
+    : "過去問AI";
   const subheading = q ? `問${q.qNumber} ${q.category}` : "過去問 AI 解説";
   const body = q
     ? q.question.replace(/\s+/g, " ").slice(0, 110) +
@@ -67,7 +67,7 @@ export default async function OgImage({
               letterSpacing: "0.08em",
             }}
           >
-            IPA Quiz
+            過去問AI
           </div>
           <div
             style={{

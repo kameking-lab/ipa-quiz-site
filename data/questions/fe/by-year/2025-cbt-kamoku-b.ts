@@ -49,7 +49,7 @@ export const FE_QUESTIONS_2025_CBT_KAMOKU_B: Question[] = [
       "エ": "a: stackPos - 1, b: stackPos - 1"
     },
     "answer": "イ",
-    "explanation": "正解はイです。（出典: IPA 基本情報技術者試験 令和7年度CBT 科目B 問3）",
+    "explanation": "イが正解となるのは、スタックの概念と配列の添え字の扱い、そしてプログラムのロジックに基づいています。スタックは、後から入れたものが先に出てくるLIFO（Last In, First Out）構造を持ちます。配列 `stack` の要素番号は1から始まるという定義です。\n\n`push` 関数において、`stackPos` は次に値を格納する位置を示します。配列の領域外を参照しないためには、`stackPos` がスタックの要素数以下である場合に格納を試みる必要があります。`a` に `stackPos` を代入することで、現在の `stackPos` が指す位置（1から始まる配列で `stackPos` 番目の要素）に `inputData` が格納されます。その後 `stackPos` は1つ増え、次回の格納位置を示します。\n\n`pop` 関数では、`stackPos` は次に格納する位置を示しており、スタックから値を取り出す際には、その `stackPos` が示す位置の「一つ前」がスタックの最上部となります。したがって、`stackPos` を1つ減らすことで（`b: stackPos - 1`）、スタックから取り出すべき要素のインデックスを正しく指し示すことができます。取り出した要素には `undefined` を代入し、スタックの要素数を減らす `stackPos` を1つ減らす操作が適切です。\n\n選択肢アは、`pop` 関数で `stackPos` を `stackPos + 1` としているため、スタックの最上部ではなく、次の格納位置以降の要素を参照してしまい、誤りです。\n\n選択肢ウは、`push` 関数で `a` を `stackPos - 1` としていますが、`stackPos` は格納すべき位置を指しており、その位置に格納するのが正しいので不適切です。また、`pop` 関数で `stackPos` を `stackPos + 1` としている点も誤りです。\n\n選択肢エは、`push` 関数で `a` を `stackPos - 1` としている点が誤りであり、`pop` 関数での `b` の値も同様に誤りです。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_fe_kamoku-b_qs.pdf",
     "license": "IPA-public"

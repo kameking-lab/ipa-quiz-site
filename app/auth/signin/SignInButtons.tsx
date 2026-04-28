@@ -2,6 +2,7 @@
 
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
+import { trackEvent } from "@/lib/analytics/events";
 
 interface Props {
   callbackUrl?: string;
@@ -11,14 +12,21 @@ interface Props {
 
 export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub }: Props) {
   const redirectTo = callbackUrl || "/";
+
+  function start(provider: "google" | "github") {
+    trackEvent({ name: "signin_started", provider, source: redirectTo });
+    return signIn(provider, { callbackUrl: redirectTo });
+  }
+
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-2.5">
       {hasGoogle && (
         <Button
           type="button"
           variant="outline"
-          className="w-full gap-2"
-          onClick={() => signIn("google", { callbackUrl: redirectTo })}
+          size="lg"
+          className="w-full gap-3 font-semibold"
+          onClick={() => start("google")}
         >
           <GoogleIcon /> Google でログイン
         </Button>
@@ -27,8 +35,9 @@ export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub }: Props) {
         <Button
           type="button"
           variant="outline"
-          className="w-full gap-2"
-          onClick={() => signIn("github", { callbackUrl: redirectTo })}
+          size="lg"
+          className="w-full gap-3 font-semibold"
+          onClick={() => start("github")}
         >
           <GitHubIcon /> GitHub でログイン
         </Button>

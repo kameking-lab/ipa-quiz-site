@@ -239,7 +239,7 @@ export const NW_QUESTIONS_2022_SPRING_AM2: Question[] = [
       "エ": "データの最大長"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。（出典: IPA ネットワークスペシャリスト試験 令和4年度春期 午前II 問10）",
+    "explanation": "ウが正解です。IEEE 802.3イーサネットフレームにおける「タイプ」フィールドは、その後に続くデータ部分がどのプロトコル（例えばIPv4かIPv6か）でカプセル化されているかを示す識別子です。IPv4とIPv6は異なるネットワーク層プロトコルであるため、イーサネットフレームのタイプフィールドの値もそれぞれ異なります。\n\nアはSFD（Start Frame Delimiter）の値についてですが、SFDはフレームの開始位置を示すもので、IPv4とIPv6で値が変わることはありません。イはMACアドレスの長さについてですが、イーサネットのMACアドレスはIPv4、IPv6のいずれのパケットをカプセル化する場合でも、送信元と宛先の両方とも6バイト（48ビット）と固定長であり、変わりません。エはデータの最大長についてですが、イーサネットフレームのデータ部分（ペイロード）の最大長はMTU（Maximum Transmission Unit）として定義され、通常は1500バイトですが、これはIPv4でもIPv6でも基本的には同じであり、プロトコルによって直接的に最大長が変わるものではありません。",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_nw_am2_qs.pdf",
     "license": "IPA-public"

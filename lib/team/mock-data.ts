@@ -21,6 +21,24 @@ export interface ExamProgress {
   targetUsers: number;
 }
 
+export interface ExamPassStatus {
+  exam: ExamCode;
+  label: string;
+  examinees: number;
+  passed: number;
+  pending: number;
+  passRate: number;
+}
+
+export interface MonthlySummary {
+  yyyymm: string;
+  newMembers: number;
+  totalAnswered: number;
+  totalStudyMinutes: number;
+  avgAccuracy: number;
+  passedThisMonth: number;
+}
+
 export interface TeamMockData {
   teamName: string;
   plan: "team";
@@ -31,6 +49,8 @@ export interface TeamMockData {
   avgAccuracy: number;
   activeThisWeek: number;
   examProgress: ExamProgress[];
+  examPassStatus: ExamPassStatus[];
+  monthlySummary: MonthlySummary[];
   members: TeamMember[];
   departments: Array<{ name: string; memberCount: number; avgAccuracy: number }>;
 }
@@ -51,6 +71,20 @@ export const MOCK_TEAM: TeamMockData = {
     { exam: "ap", label: "応用情報", answered: 4980, accuracy: 61.2, targetUsers: 10 },
     { exam: "sc", label: "情報処理安全確保支援士", answered: 1420, accuracy: 58.9, targetUsers: 3 },
     { exam: "nw", label: "ネットワーク", answered: 780, accuracy: 54.2, targetUsers: 1 },
+  ],
+  examPassStatus: [
+    { exam: "ip", label: "ITパスポート", examinees: 8, passed: 6, pending: 2, passRate: 75.0 },
+    { exam: "sg", label: "情報セキュリティマネジメント", examinees: 6, passed: 4, pending: 2, passRate: 66.7 },
+    { exam: "fe", label: "基本情報", examinees: 14, passed: 7, pending: 7, passRate: 50.0 },
+    { exam: "ap", label: "応用情報", examinees: 10, passed: 3, pending: 7, passRate: 30.0 },
+    { exam: "sc", label: "情報処理安全確保支援士", examinees: 3, passed: 1, pending: 2, passRate: 33.3 },
+    { exam: "nw", label: "ネットワーク", examinees: 1, passed: 0, pending: 1, passRate: 0.0 },
+  ],
+  monthlySummary: [
+    { yyyymm: "2026-04", newMembers: 5, totalAnswered: 4820, totalStudyMinutes: 2640, avgAccuracy: 68.4, passedThisMonth: 2 },
+    { yyyymm: "2026-03", newMembers: 8, totalAnswered: 5910, totalStudyMinutes: 3120, avgAccuracy: 67.1, passedThisMonth: 3 },
+    { yyyymm: "2026-02", newMembers: 12, totalAnswered: 4380, totalStudyMinutes: 2280, avgAccuracy: 65.8, passedThisMonth: 0 },
+    { yyyymm: "2026-01", newMembers: 17, totalAnswered: 3310, totalStudyMinutes: 1800, avgAccuracy: 62.4, passedThisMonth: 0 },
   ],
   departments: [
     { name: "情報システム部", memberCount: 18, avgAccuracy: 71.2 },

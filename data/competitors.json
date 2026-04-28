@@ -1,0 +1,194 @@
+{
+  "lastReviewedAt": "2026-04-26",
+  "reviewer": "kakomon-ai 内部リサーチ",
+  "competitors": [
+    {
+      "id": "kakomon-dojo",
+      "name": "過去問道場",
+      "url": "https://www.fe-siken.com/",
+      "operatedBy": "個人運営（複数試験ネットワーク）",
+      "businessModel": "広告 + 書籍アフィリエイト",
+      "monthlyPrice": 0,
+      "knownStrengths": [
+        "10 年以上の人力解説と語呂合わせ",
+        "ITパスポート〜情報処理安全確保支援士まで横断ネットワーク",
+        "ランダム/年度別/分野別の出題機能が安定",
+        "学習履歴のブラウザバックアップ＆復元",
+        "段級ランキングのゲーミフィケーション"
+      ],
+      "knownWeaknesses": [
+        "PC 前提の 2000 年代後半 UI で、モバイル片手操作が苦しい",
+        "解説が静的（質問・対話できない）",
+        "高度試験は午前 II のみで午後はカバー外",
+        "試験ごとにドメインが分断され、午前 I の履歴が共有できない",
+        "ダークモード・PWA は未対応",
+        "広告がコンテンツ本文に近接表示される"
+      ],
+      "primaryTraffic": "Google オーガニック（Web）",
+      "exams": ["ip", "sg", "fe", "ap", "sc", "nw", "db", "st", "sa", "pm", "es", "sm", "au"],
+      "features": {
+        "morningQuiz": true,
+        "afternoonGrading": false,
+        "essayGrading": false,
+        "aiCopilot": false,
+        "darkMode": false,
+        "pwa": false,
+        "ranking": true,
+        "communityForum": false,
+        "publicApi": false,
+        "freeTier": true,
+        "premiumTier": false,
+        "mobileFirst": false
+      },
+      "differentiationVsUs": "AI コパイロット・午後 AI 採点・モバイル UX で勝負。十年積み上げた人力解説の量では真っ向勝負しない。"
+    },
+    {
+      "id": "udemy-itpass",
+      "name": "Udemy（IT 系資格コース）",
+      "url": "https://www.udemy.com/",
+      "operatedBy": "Udemy（米国上場 / 国内提携: ベネッセ）",
+      "businessModel": "コース単発買い切り + サブスク",
+      "monthlyPrice": 1800,
+      "knownStrengths": [
+        "動画講義の体系性（試験範囲を 10〜30 時間で網羅）",
+        "頻繁なセールで 1,000 円台から購入可能",
+        "Q&A 機能で講師に直接質問できる",
+        "字幕付きで通勤・通学の学習に強い"
+      ],
+      "knownWeaknesses": [
+        "問題演習は付属程度で過去問演習プラットフォームではない",
+        "動画は更新が遅く、CBT 化や法改正に追従できないコースが多い",
+        "AI 採点・模試機能はない",
+        "学習進捗・弱点分析は提供されない"
+      ],
+      "primaryTraffic": "セール時のメール / SNS 広告",
+      "exams": ["ip", "sg", "fe", "ap"],
+      "features": {
+        "morningQuiz": false,
+        "afternoonGrading": false,
+        "essayGrading": false,
+        "aiCopilot": false,
+        "darkMode": true,
+        "pwa": false,
+        "ranking": false,
+        "communityForum": true,
+        "publicApi": false,
+        "freeTier": false,
+        "premiumTier": true,
+        "mobileFirst": true
+      },
+      "differentiationVsUs": "我々は『動画ではなく問題演習＋AI対話』で動画学習を補完する位置取り。直接競合より、補完関係として導線を引く余地あり。"
+    },
+    {
+      "id": "studying-info",
+      "name": "スタディング（情報処理コース）",
+      "url": "https://studying.jp/",
+      "operatedBy": "KIYOラーニング株式会社（東証グロース）",
+      "businessModel": "サブスク（コース別年額）",
+      "monthlyPrice": 5000,
+      "knownStrengths": [
+        "スマホアプリでの学習導線が洗練されている",
+        "学習計画機能・AI による進捗管理",
+        "短時間動画 + 一問一答の組み合わせ",
+        "過去問の AI 解説（一部コース）"
+      ],
+      "knownWeaknesses": [
+        "対応試験は IP / SG / FE / AP に限定（高度試験は未対応）",
+        "コース料金が比較的高額（年 6 万円〜）",
+        "問題のカスタム選択（年度跨ぎなど）はやや弱い",
+        "オープンな API・第三者連携は提供されない"
+      ],
+      "primaryTraffic": "リスティング広告 + SEO",
+      "exams": ["ip", "sg", "fe", "ap"],
+      "features": {
+        "morningQuiz": true,
+        "afternoonGrading": false,
+        "essayGrading": false,
+        "aiCopilot": true,
+        "darkMode": false,
+        "pwa": true,
+        "ranking": false,
+        "communityForum": false,
+        "publicApi": false,
+        "freeTier": false,
+        "premiumTier": true,
+        "mobileFirst": true
+      },
+      "differentiationVsUs": "我々の月 300 円という超低単価で、スタディング年 6 万円層の不満（高い・高度試験未対応）を狙い撃ち。AI コパイロットで品質も拮抗させる。"
+    },
+    {
+      "id": "tac-ipa",
+      "name": "TAC（情報処理コース）",
+      "url": "https://www.tac-school.co.jp/",
+      "operatedBy": "TAC 株式会社（東証スタンダード）",
+      "businessModel": "対面・通信講座（買い切り）",
+      "monthlyPrice": 0,
+      "knownStrengths": [
+        "高度試験（PM/ST/AU 等）の論文添削に元採点者が対応",
+        "通学・Web 通信・DVD など複数の学習形態",
+        "教材の網羅性と最新法令対応",
+        "資格取得後のキャリア相談"
+      ],
+      "knownWeaknesses": [
+        "コース総額が 10 万〜30 万円超で高額",
+        "問題演習プラットフォームは付属で UX が硬い",
+        "デジタル教材は PDF 配布が中心、検索性が低い",
+        "API・外部連携・モバイル最適化はほぼない"
+      ],
+      "primaryTraffic": "資格情報誌 / 校舎前面看板 / SEO",
+      "exams": ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"],
+      "features": {
+        "morningQuiz": true,
+        "afternoonGrading": true,
+        "essayGrading": true,
+        "aiCopilot": false,
+        "darkMode": false,
+        "pwa": false,
+        "ranking": false,
+        "communityForum": true,
+        "publicApi": false,
+        "freeTier": false,
+        "premiumTier": true,
+        "mobileFirst": false
+      },
+      "differentiationVsUs": "TAC の論文添削枠（元採点者人力）と直接ぶつからず、AI 採点で『学習中の継続フィードバック』に特化。本番直前は TAC 添削 1 回、平日は AI 添削、という補完関係を打ち出せる。"
+    },
+    {
+      "id": "itec-ipa",
+      "name": "アイテック（iTEC）",
+      "url": "https://www.itec.co.jp/",
+      "operatedBy": "株式会社アイテック",
+      "businessModel": "書籍 + 通信講座 + 模擬試験",
+      "monthlyPrice": 0,
+      "knownStrengths": [
+        "高度試験の参考書（重点対策シリーズ）が業界標準",
+        "全国規模の模擬試験（午後対策の判定が信頼される）",
+        "論文添削・採点講評の蓄積",
+        "企業研修向け団体受講に強い"
+      ],
+      "knownWeaknesses": [
+        "書籍中心で UX を伴うオンライン学習は弱い",
+        "問題演習サイトは存在するが導線が古い",
+        "AI による自動採点・対話的解説は未提供",
+        "個人ユーザー向けデジタル定額モデルが薄い"
+      ],
+      "primaryTraffic": "書店 / 法人営業 / 試験案内",
+      "exams": ["ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"],
+      "features": {
+        "morningQuiz": true,
+        "afternoonGrading": true,
+        "essayGrading": true,
+        "aiCopilot": false,
+        "darkMode": false,
+        "pwa": false,
+        "ranking": false,
+        "communityForum": false,
+        "publicApi": false,
+        "freeTier": false,
+        "premiumTier": true,
+        "mobileFirst": false
+      },
+      "differentiationVsUs": "iTEC の重点対策本（紙）と AI コパイロット（動的解説）の補完関係を打ち出す。書籍を読みながら『この章を AI に聞いてみる』動線を構築できる。"
+    }
+  ]
+}

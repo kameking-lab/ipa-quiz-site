@@ -32,7 +32,7 @@ export async function GET() {
       email: session.user.email,
       plan: session.user.plan,
     },
-    entries: records.map((r) => ({
+    entries: records.map((r: { questionId: string; correct: boolean; answeredAt: Date; timeSpentMs: number | null }) => ({
       id: r.questionId,
       correct: r.correct,
       at: r.answeredAt.getTime(),

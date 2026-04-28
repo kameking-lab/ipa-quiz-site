@@ -1,6 +1,6 @@
 {
   "name": "ipa-quiz-site",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -26,7 +26,14 @@
     "parse:all:c": "tsx --env-file=.env.local scripts/parse-all.ts --section=C",
     "parse:afternoon": "tsx --env-file=.env.local scripts/parse-afternoon/parse-ap-afternoon.ts",
     "find:placeholders": "tsx scripts/find-placeholder-explanations.ts",
-    "regen:explanations": "tsx --env-file=.env.local scripts/regenerate-explanations.ts"
+    "regen:explanations": "tsx --env-file=.env.local scripts/regenerate-explanations.ts",
+    "verify:answers": "tsx --env-file=.env.local scripts/verify-answers-with-pdf.ts",
+    "apply:answer-corrections": "tsx scripts/apply-answer-corrections.ts",
+    "detect:mismatches": "tsx --env-file=.env.local scripts/detect-explanation-mismatch.ts",
+    "regen:verified": "tsx --env-file=.env.local scripts/regen-with-verification.ts",
+    "refactor:by-file": "tsx scripts/refactor-by-file.ts",
+    "e2e": "playwright test",
+    "e2e:install": "playwright install --with-deps chromium"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",
@@ -38,6 +45,7 @@
     "@vercel/analytics": "^2.0.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
     "lucide-react": "^1.8.0",
     "next": "16.2.4",
     "next-auth": "5.0.0-beta.31",
@@ -53,6 +61,7 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
+    "@playwright/test": "^1.49.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",

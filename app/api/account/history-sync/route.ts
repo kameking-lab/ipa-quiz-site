@@ -60,7 +60,7 @@ export async function POST(req: Request) {
       select: { questionId: true, answeredAt: true },
     });
     const existingSet = new Set(
-      existing.map((r) => `${r.questionId}\t${r.answeredAt.getTime()}`),
+      existing.map((r: { questionId: string; answeredAt: Date }) => `${r.questionId}\t${r.answeredAt.getTime()}`),
     );
 
     const toInsert = incoming
@@ -87,7 +87,7 @@ export async function POST(req: Request) {
     select: { questionId: true, correct: true, answeredAt: true },
   });
 
-  const entries = all.map((r) => ({
+  const entries = all.map((r: { questionId: string; correct: boolean; answeredAt: Date }) => ({
     id: r.questionId,
     correct: r.correct,
     at: r.answeredAt.getTime(),

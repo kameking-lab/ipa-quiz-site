@@ -18,6 +18,8 @@ import type Stripe from "stripe";
 import { getStripe, isStripeConfigured } from "@/lib/stripe/client";
 import { planFromPriceId } from "@/lib/stripe/plans";
 import { prisma } from "@/lib/db/prisma";
+import { captureException } from "@/lib/monitoring/sentry";
+import { logServerEvent } from "@/lib/analytics/server-events";
 
 export const runtime = "nodejs";
 
@@ -33,9 +35,14 @@ async function upsertSubscription(sub: Stripe.Subscription) {
   const priceId = sub.items.data[0]?.price.id;
   if (!priceId) return;
   const plan = planFromPriceId(priceId);
-  if (!plan) return;
+  if (!plan || plan === "free") return;
 
   const currentPeriodEnd = firstItemPeriodEnd(sub);
+
+  const existing = await prisma.subscription.findUnique({
+    where: { stripeSubId: sub.id },
+    select: { status: true, cancelAtPeriodEnd: true },
+  });
 
   await prisma.subscription.upsert({
     where: { stripeSubId: sub.id },
@@ -62,6 +69,41 @@ async function upsertSubscription(sub: Stripe.Subscription) {
     where: { id: userId },
     data: { plan: newUserPlan },
   });
+
+  // ファネル発火（CVR 追跡）
+  if (!existing) {
+    logServerEvent({
+      name: "subscription_started",
+      userId,
+      plan,
+      stripeSubId: sub.id,
+      trialing: sub.status === "trialing",
+    });
+    if (sub.status === "trialing" && sub.trial_end) {
+      const trialDays = Math.max(
+        1,
+        Math.round((sub.trial_end * 1000 - Date.now()) / (1000 * 60 * 60 * 24)),
+      );
+      logServerEvent({
+        name: "trial_started",
+        userId,
+        plan,
+        stripeSubId: sub.id,
+        trialDays,
+      });
+    }
+  } else if (
+    sub.cancel_at_period_end &&
+    !existing.cancelAtPeriodEnd
+  ) {
+    logServerEvent({
+      name: "subscription_canceled",
+      userId,
+      plan,
+      stripeSubId: sub.id,
+      cancelAtPeriodEnd: true,
+    });
+  }
 }
 
 function subscriptionIdFromInvoice(invoice: Stripe.Invoice): string | null {
@@ -73,21 +115,19 @@ function subscriptionIdFromInvoice(invoice: Stripe.Invoice): string | null {
 }
 
 export async function POST(req: Request) {
+  // 署名の有無は最優先で評価する（DB 未接続でも署名なしのリクエストは即 400 で弾く）。
+  const signature = req.headers.get("stripe-signature");
+  if (!signature) {
+    return NextResponse.json({ error: "missing_signature" }, { status: 400 });
+  }
+
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
-  }
-  if (!process.env.DATABASE_URL) {
-    return NextResponse.json({ error: "db_not_configured" }, { status: 503 });
   }
 
   const secret = process.env.STRIPE_WEBHOOK_SECRET;
   if (!secret) {
     return NextResponse.json({ error: "webhook_secret_missing" }, { status: 503 });
-  }
-
-  const signature = req.headers.get("stripe-signature");
-  if (!signature) {
-    return NextResponse.json({ error: "missing_signature" }, { status: 400 });
   }
 
   const rawBody = await req.text();
@@ -99,6 +139,12 @@ export async function POST(req: Request) {
   } catch (err) {
     console.error("[stripe webhook] signature verification failed", err);
     return NextResponse.json({ error: "invalid_signature" }, { status: 400 });
+  }
+
+  // 署名検証は通過。DB 未接続なら永続化はスキップして 200 を返し、Stripe の Retry を回避する。
+  if (!process.env.DATABASE_URL) {
+    console.warn("[stripe webhook] DATABASE_URL not set — skipping persistence", event.type);
+    return NextResponse.json({ received: true, persisted: false });
   }
 
   try {
@@ -118,6 +164,37 @@ export async function POST(req: Request) {
         if (subId) {
           const sub = await stripe.subscriptions.retrieve(subId);
           await upsertSubscription(sub);
+          const userId = sub.metadata?.userId as string | undefined;
+          if (userId) {
+            if (event.type === "invoice.paid") {
+              logServerEvent({
+                name: "payment_succeeded",
+                userId,
+                stripeSubId: sub.id,
+                amountJpy: invoice.amount_paid ?? undefined,
+              });
+              if (invoice.billing_reason === "subscription_cycle") {
+                const planForRenewal = planFromPriceId(
+                  sub.items.data[0]?.price.id ?? "",
+                );
+                if (planForRenewal && planForRenewal !== "free") {
+                  logServerEvent({
+                    name: "subscription_renewed",
+                    userId,
+                    plan: planForRenewal,
+                    stripeSubId: sub.id,
+                  });
+                }
+              }
+            } else {
+              logServerEvent({
+                name: "payment_failed",
+                userId,
+                stripeSubId: sub.id,
+                attempt: invoice.attempt_count ?? undefined,
+              });
+            }
+          }
         }
         break;
       }
@@ -136,6 +213,16 @@ export async function POST(req: Request) {
         const userId = sub.metadata?.userId as string | undefined;
         if (userId) {
           await prisma.user.update({ where: { id: userId }, data: { plan: "free" } });
+          const plan = planFromPriceId(sub.items.data[0]?.price.id ?? "");
+          if (plan && plan !== "free") {
+            logServerEvent({
+              name: "subscription_canceled",
+              userId,
+              plan,
+              stripeSubId: sub.id,
+              cancelAtPeriodEnd: false,
+            });
+          }
         }
         break;
       }
@@ -145,6 +232,10 @@ export async function POST(req: Request) {
     }
   } catch (err) {
     console.error("[stripe webhook] handler error", event.type, err);
+    await captureException(err, {
+      route: "/api/webhooks/stripe",
+      extra: { eventType: event.type, eventId: event.id },
+    });
     return NextResponse.json({ error: "handler_failed" }, { status: 500 });
   }
 
