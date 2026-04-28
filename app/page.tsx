@@ -10,6 +10,7 @@ import { StreakProfileCard } from "@/lib/streak/StreakProfileCard";
 import { ExamCategoryGrid } from "@/components/ExamCategoryGrid";
 import { HeroDemoAnimation } from "@/components/HeroDemoAnimation";
 import { SiteLogo } from "@/components/SiteLogo";
+import { ShareButtons } from "@/components/ShareButtons";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -156,6 +157,23 @@ export default function HomePage() {
           </CardContent>
         </Card>
       </div>
+
+      <Card className="mt-6 border-emerald-200 bg-emerald-50/40 dark:border-emerald-900/60 dark:bg-emerald-950/20">
+        <CardContent className="pt-5">
+          <h3 className="mb-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+            このプロジェクトをシェアして応援する
+          </h3>
+          <p className="mb-3 text-xs text-zinc-600 dark:text-zinc-400">
+            教育貢献プロジェクトとして全機能無料で運営しています。シェアが何よりの応援です。
+          </p>
+          <ShareButtons
+            url="https://ipa-quiz-site.vercel.app/"
+            text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」"
+            hashtags={["過去問AI", "IPA試験", "応用情報"]}
+            compact
+          />
+        </CardContent>
+      </Card>
     </main>
   );
 }

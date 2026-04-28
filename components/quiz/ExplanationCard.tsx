@@ -6,6 +6,7 @@ import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getSafePdfUrl } from "@/lib/exam-config";
+import { ShareButtons } from "@/components/ShareButtons";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]/.test(explanation) || explanation.trim() === "";
@@ -126,6 +127,20 @@ export function ExplanationCard({
           <ArrowRight className="h-4 w-4" />
         </Button>
       </div>
+
+      {isCorrect && (
+        <div className="mt-4 rounded-xl border border-emerald-200 bg-white/60 p-3 dark:border-emerald-900/40 dark:bg-zinc-950/40">
+          <p className="mb-2 text-[11px] font-semibold text-emerald-800 dark:text-emerald-200">
+            ✨ 正解おめでとうございます！教育貢献プロジェクトをシェアして仲間と学習しませんか？
+          </p>
+          <ShareButtons
+            url={typeof window !== "undefined" ? window.location.href : "https://ipa-quiz-site.vercel.app/"}
+            text={`過去問 AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
+            hashtags={["過去問AI", "IPA試験"]}
+            compact
+          />
+        </div>
+      )}
 
       <div className="mt-3 space-y-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
         <p>

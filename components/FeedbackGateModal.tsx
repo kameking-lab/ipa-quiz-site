@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Heart, MessageSquare, Send, Sparkles } from "lucide-react";
 import { setFeedbackSubmitted } from "@/lib/storage/rate-limit-client";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { ShareButtons } from "@/components/ShareButtons";
 
 const CHOICES = [
   { id: "great", label: "とても役に立った", icon: "🎉" },
@@ -124,6 +125,18 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
               <p className="text-xs leading-relaxed text-emerald-900/80 dark:text-emerald-100/80">
                 IPA 試験対策を、誰もが平等に学べる場へ。あなたの声がそのまま改善に反映されます。
               </p>
+            </div>
+
+            <div className="mt-3 rounded-xl border border-zinc-200 bg-zinc-50 p-3 dark:border-zinc-800 dark:bg-zinc-900">
+              <p className="mb-2 text-xs font-semibold text-zinc-700 dark:text-zinc-200">
+                よければ、学習仲間にもシェアしてください
+              </p>
+              <ShareButtons
+                url={typeof window !== "undefined" ? window.location.origin : "https://ipa-quiz-site.vercel.app/"}
+                text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を活用しています。"
+                hashtags={["過去問AI", "IPA試験"]}
+                compact
+              />
             </div>
 
             <div className="mt-3 flex justify-end">
