@@ -33,6 +33,22 @@ export default function AboutPage() {
         </p>
       </section>
 
+      <h2 className="mb-2 text-lg font-semibold">運営について</h2>
+      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p>
+          本プロジェクトは特定の法人・営利組織には属さず、
+          <strong>ボランティア有志により運営</strong>されています。
+          サーバー費用や AI 利用料を含む運営コストは、有志による持ち出しと、
+          一部の任意応援（<Link href="/support" className="underline">応援する</Link>）で賄っています。
+        </p>
+        <p>
+          運営の透明性レポート・直近の活動状況は{" "}
+          <Link className="underline" href="/transparency">/transparency</Link>{" "}
+          / <Link className="underline" href="/stats">/stats</Link>{" "}
+          で公開しています。
+        </p>
+      </section>
+
       <h2 className="mb-2 text-lg font-semibold">私たちが大切にしていること</h2>
       <section className="mb-8 grid gap-3 sm:grid-cols-2">
         {[

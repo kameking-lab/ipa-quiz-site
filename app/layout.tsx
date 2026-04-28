@@ -142,6 +142,7 @@ export default function RootLayout({
                   <TrustBadge tone="sky" label="IPA公式準拠" />
                   <TrustBadge tone="emerald" label="日本国内運営" />
                   <TrustBadge tone="amber" label="教育貢献プロジェクト（無料）" />
+                  <TrustBadge tone="rose" label="ボランティア有志運営" />
                 </div>
                 <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-start">
                   <div className="text-center sm:text-left">

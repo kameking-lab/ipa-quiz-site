@@ -27,7 +27,7 @@ interface InfoRow {
 
 const INFO_ROWS: InfoRow[] = [
   { label: "サービス名", value: "過去問AI" },
-  { label: "運営", value: "過去問AI運営" },
+  { label: "運営", value: "ボランティア有志（過去問AI 教育貢献プロジェクト）" },
   {
     label: "公式X",
     value: (
@@ -114,8 +114,8 @@ export default function OperatorPage() {
             運営者情報
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
-            IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+            本サービスは<strong>ボランティア有志により運営</strong>される教育貢献プロジェクトとして、
+            全機能無料で公開しています。IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
           </p>
         </header>
 
@@ -150,8 +150,9 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              本サービスは教育貢献プロジェクトとして全機能無料で運営しています。
-              IPA 試験対策を、誰もが平等に学べる場として公開することが目的です。
+              本サービスは<strong>ボランティア有志</strong>により運営される教育貢献プロジェクトです。
+              特定の法人・営利組織には属さず、全機能無料で公開しています。
+              IPA 試験対策を、誰もが平等に学べる場として提供することが目的です。
             </p>
             <p>
               問題データは IPA（独立行政法人情報処理推進機構）が公開する公式過去問を使用しています。
