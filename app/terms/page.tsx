@@ -7,6 +7,8 @@ import {
   Bot,
   FileText,
   Gavel,
+  HandHeart,
+  MessageSquare,
   Quote,
   RefreshCw,
   Sparkles,
@@ -49,7 +51,7 @@ export default function TermsPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             利用規約
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月19日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月29日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）をご利用いただく前に、本利用規約をよくお読みください。
             本サービスを利用することにより、本規約に同意したものとみなします。
@@ -161,6 +163,64 @@ export default function TermsPage() {
             <p>
               運営は必要に応じて本規約を変更できるものとします。
               重要な変更は本サービス上でお知らせします。
+            </p>
+          </Section>
+
+          <Section
+            number="8"
+            icon={<MessageSquare className="h-5 w-5" />}
+            title="フィードバックの位置付け"
+          >
+            <p>
+              利用者が本サービスの改善目的で運営に提供する感想・要望・誤り指摘・コメント等
+              （以下「フィードバック」）は、<strong>無償かつ任意の意見表明</strong>として扱われ、
+              運営との間に何らの対価関係・委託関係・労務提供関係も生じないものとします。
+            </p>
+            <p>
+              フィードバックの採否・反映時期は運営が単独で判断し、採用された場合でも
+              利用者に対する報酬・謝礼・クレジット表示等の義務は生じません。
+              フィードバックは個人情報を機械的にマスキングした上で、公開フィードバック一覧や
+              改善ログ等に転載される場合があります（{" "}
+              <Link href="/feedback/public" className="underline underline-offset-2">/feedback/public</Link>
+              ）。
+            </p>
+          </Section>
+
+          <Section
+            number="9"
+            icon={<Bot className="h-5 w-5" />}
+            title="AI 採点・記述添削の責任制限"
+          >
+            <p>
+              本サービスの AI 採点・記述添削・論文添削機能は、
+              生成 AI による<strong>参考情報の提示にとどまり、合否判定・点数保証・
+              本試験における正答性を一切保証しません</strong>。
+              実際の採点基準は IPA 公式の採点講評・公表される模範解答に従ってください。
+            </p>
+            <p>
+              AI 採点結果に基づく学習計画変更・出願判断・受験戦略等の意思決定は
+              利用者の自己責任で行うものとし、結果について運営は責任を負いません。
+              AI モデルの仕様変更により、同一答案でも採点結果が異なる場合があります。
+            </p>
+          </Section>
+
+          <Section
+            number="10"
+            icon={<HandHeart className="h-5 w-5" />}
+            title="サービスの位置付け（教育貢献・ボランティア運営）"
+          >
+            <p>
+              本サービスは IPA 試験対策の機会を誰もが平等に得られることを目的とした
+              <strong>教育貢献プロジェクト</strong>であり、現在は
+              <strong>ボランティア有志により無償で運営</strong>されています。
+              事業性・収益性・継続性について何らの保証もなく、利用者は予告なき機能変更・
+              一時停止・サービス終了の可能性を許容のうえご利用ください。
+            </p>
+            <p>
+              将来、運営継続のために一部機能を有償化（プレミアムプラン・法人プラン等）する
+              場合があります。その際は実施日の<strong>30 日以上前に本サービス上で告知</strong>し、
+              既存利用者が利用継続・解約・代替サービスへの移行を選択できる猶予期間を設けます。
+              ただし、無償公開部分の縮小・廃止それ自体について、運営は補償・代替提供の義務を負いません。
             </p>
           </Section>
 
