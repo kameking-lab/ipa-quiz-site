@@ -13,6 +13,7 @@ import { Heart, MessageSquare, Send, Sparkles } from "lucide-react";
 import { setFeedbackSubmitted } from "@/lib/storage/rate-limit-client";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { ShareButtons } from "@/components/ShareButtons";
+import { posthogCapture } from "@/lib/posthog";
 
 const CHOICES = [
   { id: "great", label: "とても役に立った", icon: "🎉" },
@@ -77,6 +78,11 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
     };
     appendToPublicFeedback(entry);
     setFeedbackSubmitted(true);
+    posthogCapture("feedback_submitted", {
+      choice,
+      source: source ?? null,
+      hasComment: entry.comment.length > 0,
+    });
     if (typeof window !== "undefined") {
       try {
         window.localStorage.setItem(LS_KEYS.feedbackGateShown, "true");

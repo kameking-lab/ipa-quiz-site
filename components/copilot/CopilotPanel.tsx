@@ -52,6 +52,7 @@ import { useChatSession } from "@/hooks/useChatSession";
 import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { readCharacterState } from "@/lib/storage/character";
+import { posthogCapture } from "@/lib/posthog";
 
 interface Message {
   role: "user" | "assistant";
@@ -275,6 +276,11 @@ export function CopilotPanel({
 
       try {
         const characterState = readCharacterState();
+        posthogCapture("ai_query_sent", {
+          questionId: question?.id,
+          exam: question?.exam,
+          quickAction: quickAction ?? null,
+        });
         const res = await fetch("/api/copilot", {
           method: "POST",
           headers: {

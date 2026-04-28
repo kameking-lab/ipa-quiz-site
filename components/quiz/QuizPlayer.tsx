@@ -27,6 +27,7 @@ import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { posthogCapture } from "@/lib/posthog";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -117,6 +118,11 @@ export function QuizPlayer({
         ? (question.answer[0] as string)
         : String(question.answer);
       const correct = key === answerKey;
+      posthogCapture("question_answered", {
+        questionId: question.id,
+        exam: question.exam,
+        correct,
+      });
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
       recordSessionAnswer({
         id: question.id,

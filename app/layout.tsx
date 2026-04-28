@@ -14,8 +14,10 @@ import { CouponTracker } from "@/components/motivation/CouponTracker";
 import { TrustBadge } from "@/components/TrustBadge";
 import { XFollowButton } from "@/components/XFollowButton";
 import { Analytics } from "@vercel/analytics/next";
+import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { WelcomeModal } from "@/components/WelcomeModal";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -109,6 +111,9 @@ export default function RootLayout({
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
           <I18nProvider>
+          <Suspense fallback={null}>
+            <PostHogProvider />
+          </Suspense>
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
           <StreakTracker />
