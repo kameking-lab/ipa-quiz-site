@@ -7,6 +7,7 @@ import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
 import { getStripe, isStripeConfigured } from "@/lib/stripe/client";
 import { prisma } from "@/lib/db/prisma";
+import { PAID_MODE } from "@/lib/paid-mode";
 
 export const runtime = "nodejs";
 
@@ -15,6 +16,9 @@ const APP_URL =
   (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://ipa-quiz-site.vercel.app");
 
 export async function POST() {
+  if (!PAID_MODE) {
+    return NextResponse.json({ error: "paid_mode_disabled" }, { status: 404 });
+  }
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
   }

@@ -4,7 +4,7 @@ import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import { COPILOT_SYSTEM_PROMPT, buildQuestionContext, QUICK_ACTIONS } from "@/lib/ai/prompts";
 import type { QuickActionId } from "@/lib/ai/prompts";
-import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
 
 export const runtime = "nodejs";
@@ -50,11 +50,14 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const rl = checkRateLimit({ ip });
+  const feedbackSubmitted = readFeedbackFlag(req);
+  const rl = checkRateLimit({ ip, feedbackSubmitted });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
-        ? "本日の利用上限に達しました。JST 0:00 にリセットされます。"
+        ? feedbackSubmitted
+          ? "本日の利用上限に達しました。JST 0:00 にリセットされます。"
+          : "AI コパイロットの初回無料枠（10 回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },

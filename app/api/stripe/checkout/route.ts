@@ -14,6 +14,7 @@ import { auth } from "@/lib/auth";
 import { getStripe, isStripeConfigured } from "@/lib/stripe/client";
 import { PRICE_CATALOG, getPriceId, type PriceKey } from "@/lib/stripe/plans";
 import { prisma } from "@/lib/db/prisma";
+import { PAID_MODE } from "@/lib/paid-mode";
 
 export const runtime = "nodejs";
 
@@ -26,6 +27,9 @@ function isPriceKey(s: unknown): s is PriceKey {
 }
 
 export async function POST(req: Request) {
+  if (!PAID_MODE) {
+    return NextResponse.json({ error: "paid_mode_disabled" }, { status: 404 });
+  }
   if (!isStripeConfigured()) {
     return NextResponse.json({ error: "stripe_not_configured" }, { status: 503 });
   }

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MOCK_TEAM } from "@/lib/team/mock-data";
 import { TEAM_PLAN, formatPlanPrice } from "@/lib/plans";
+import { PAID_MODE } from "@/lib/paid-mode";
 import { ExamProgressChart } from "./ExamProgressChart";
 
 export const metadata: Metadata = {
   title: "法人ダッシュボード（プロトタイプ）",
   description:
-    "法人向け Team プランのダッシュボードプロトタイプ。メンバー進捗・試験別解答数・正答率を一元可視化。",
+    "法人ダッシュボードプロトタイプ。メンバー進捗・試験別解答数・正答率を一元可視化。",
   robots: { index: false, follow: false },
 };
 
@@ -30,6 +32,9 @@ function lastLoginLabel(iso: string): string {
 }
 
 export default function AdminTeamPage() {
+  if (!PAID_MODE) {
+    notFound();
+  }
   const team = MOCK_TEAM;
 
   return (

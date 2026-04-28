@@ -9,8 +9,10 @@ import { cn } from "@/lib/utils";
 import { QUICK_ACTIONS, type QuickActionId } from "@/lib/ai/prompts";
 import {
   FREE_DAILY_LIMIT_CLIENT,
+  POST_FEEDBACK_DAILY_LIMIT_CLIENT,
   incrementAiUsage,
   readAiUsage,
+  readFeedbackSubmitted,
 } from "@/lib/storage/rate-limit-client";
 
 interface Message {
@@ -23,7 +25,8 @@ interface Props {
   question: Question;
   selectedChoice?: string;
   isCorrect?: boolean;
-  premium: boolean;
+  /** Retained for paid-mode revival; ignored in educational-contribution mode. */
+  premium?: boolean;
   onRateLimitHit: () => void;
   onClose?: () => void;
   headerRight?: React.ReactNode;
@@ -51,7 +54,6 @@ export function CopilotPanel({
   question,
   selectedChoice,
   isCorrect,
-  premium,
   onRateLimitHit,
   onClose,
   headerRight,
@@ -61,10 +63,22 @@ export function CopilotPanel({
   const [input, setInput] = React.useState("");
   const [streaming, setStreaming] = React.useState(false);
   const [usage, setUsage] = React.useState(() => readAiUsage());
+  const [feedbackSubmitted, setFeedbackSubmittedState] = React.useState(false);
   const [errorState, setErrorState] = React.useState<{
     type: "server_error" | "network_error";
     retryFn: () => void;
   } | null>(null);
+
+  React.useEffect(() => {
+    setFeedbackSubmittedState(readFeedbackSubmitted());
+    const onStorage = () => setFeedbackSubmittedState(readFeedbackSubmitted());
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
+
+  const dailyLimit = feedbackSubmitted
+    ? POST_FEEDBACK_DAILY_LIMIT_CLIENT
+    : FREE_DAILY_LIMIT_CLIENT;
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
   const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
@@ -86,7 +100,7 @@ export function CopilotPanel({
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
 
-      if (!premium && usage.count >= FREE_DAILY_LIMIT_CLIENT) {
+      if (usage.count >= dailyLimit) {
         onRateLimitHit();
         return;
       }
@@ -110,13 +124,16 @@ export function CopilotPanel({
       try {
         const res = await fetch("/api/copilot", {
           method: "POST",
-          headers: { "content-type": "application/json" },
+          headers: {
+            "content-type": "application/json",
+            ...(feedbackSubmitted ? { "x-feedback-submitted": "1" } : {}),
+          },
           signal: controller.signal,
           body: JSON.stringify({
             question,
             selectedChoice,
             isCorrect,
-            tier: premium ? "premium" : "free",
+            tier: "free",
             quickAction,
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
@@ -163,7 +180,7 @@ export function CopilotPanel({
           });
         }
 
-        if (!premium) setUsage(incrementAiUsage());
+        setUsage(incrementAiUsage());
       } catch (err) {
         if ((err as Error).name === "AbortError") {
           setMessages((prev) => [
@@ -183,8 +200,9 @@ export function CopilotPanel({
     },
     [
       streaming,
-      premium,
       usage.count,
+      dailyLimit,
+      feedbackSubmitted,
       messages,
       question,
       selectedChoice,
@@ -216,7 +234,11 @@ export function CopilotPanel({
         <div className="flex items-center gap-2">
           <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
           <span className="text-sm font-semibold">AI コパイロット</span>
-          {!premium && (() => {
+          {feedbackSubmitted ? (
+            <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
+              ほぼ無制限
+            </span>
+          ) : (() => {
             const remaining = Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0);
             return (
               <div className="group/usage relative ml-2">
@@ -228,13 +250,14 @@ export function CopilotPanel({
                 >
                   残り {remaining}/{FREE_DAILY_LIMIT_CLIENT} 回
                 </span>
-                <div className="invisible absolute left-0 top-full z-50 mt-1.5 w-56 rounded-xl border border-zinc-200 bg-white p-3 text-[11px] leading-relaxed text-zinc-600 shadow-lg group-hover/usage:visible dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
+                <div className="invisible absolute left-0 top-full z-50 mt-1.5 w-64 rounded-xl border border-zinc-200 bg-white p-3 text-[11px] leading-relaxed text-zinc-600 shadow-lg group-hover/usage:visible dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400">
                   <p className="mb-1 font-semibold text-zinc-800 dark:text-zinc-200">AI 利用回数について</p>
                   <p>クイックアクションまたはテキスト送信のたびに 1 回消費します。</p>
+                  <p className="mt-1">フィードバックを 1 度ご投稿いただくと、これ以降ほぼ無制限でお使いいただけます（教育貢献プロジェクト）。</p>
                   <p className="mt-1">毎日 JST 0:00（{jstResetTime()} ごろ）にリセットされます。</p>
                   {remaining === 0 && (
                     <p className="mt-1 font-semibold text-red-600 dark:text-red-400">
-                      本日の上限に達しました。
+                      初回無料枠を使い切りました。
                     </p>
                   )}
                 </div>
@@ -255,13 +278,14 @@ export function CopilotPanel({
       <div className="border-b border-zinc-200 p-3 dark:border-zinc-800">
         <div className="mb-2 flex items-center justify-between">
           <span className="text-xs text-zinc-500 dark:text-zinc-400">クイックアクション</span>
-          {!premium && (
+          {!feedbackSubmitted && (
             <span className="text-[10px] text-zinc-400 dark:text-zinc-500">各ボタンで AI 1 回消費</span>
           )}
         </div>
-        {!premium && Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0) === 0 ? (
-          <p className="rounded-xl bg-red-50 px-3 py-2 text-xs text-red-700 dark:bg-red-950/30 dark:text-red-300">
-            本日の AI 利用上限（{FREE_DAILY_LIMIT_CLIENT} 回）に達しました。JST 0:00 にリセットされます。
+        {!feedbackSubmitted && Math.max(FREE_DAILY_LIMIT_CLIENT - usage.count, 0) === 0 ? (
+          <p className="rounded-xl bg-sky-50 px-3 py-2 text-xs text-sky-700 dark:bg-sky-950/30 dark:text-sky-300">
+            初回無料枠（{FREE_DAILY_LIMIT_CLIENT} 回）を使い切りました。
+            フィードバックを 1 度ご投稿いただくと、以降ほぼ無制限でご利用いただけます。
           </p>
         ) : (
           <div className="flex flex-wrap gap-1.5">
@@ -404,7 +428,6 @@ export function CopilotMobileSheet({
   question,
   selectedChoice,
   isCorrect,
-  premium,
   onRateLimitHit,
 }: Omit<Props, "className" | "onClose" | "headerRight">) {
   const [open, setOpen] = React.useState(false);
@@ -437,7 +460,6 @@ export function CopilotMobileSheet({
               question={question}
               selectedChoice={selectedChoice}
               isCorrect={isCorrect}
-              premium={premium}
               onRateLimitHit={onRateLimitHit}
               onClose={() => setOpen(false)}
               className="rounded-t-2xl"

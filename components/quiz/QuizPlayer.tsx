@@ -7,8 +7,8 @@ import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
-import { PremiumUpsellDialog } from "@/components/PremiumUpsellDialog";
-import { createHistoryStore, getPremiumFlag } from "@/lib/storage/history";
+import { FeedbackGateModal } from "@/components/FeedbackGateModal";
+import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Sparkles, Timer } from "lucide-react";
@@ -30,7 +30,6 @@ const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
-  const [premium, setPremium] = React.useState(false);
   const [index, setIndex] = React.useState(0);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
@@ -42,8 +41,6 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
   const [elapsed, setElapsed] = React.useState(0);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setPremium(getPremiumFlag());
     const alreadyShown = localStorage.getItem(LS_KEYS.swipeHintShown) === "true";
     if (!alreadyShown) {
       setShowSwipeHint(true);
@@ -262,7 +259,6 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
               question={question}
               selectedChoice={selected}
               isCorrect={revealed ? isCorrect : undefined}
-              premium={premium}
               onRateLimitHit={() => setUpsellOpen(true)}
               headerRight={
                 copilotQuery === "why-wrong" ? (
@@ -295,7 +291,11 @@ export function QuizPlayer({ questions, mode, backHref = "/" }: Props) {
         </div>
       )}
 
-      <PremiumUpsellDialog open={upsellOpen} onClose={() => setUpsellOpen(false)} />
+      <FeedbackGateModal
+        open={upsellOpen}
+        onClose={() => setUpsellOpen(false)}
+        source="ai-limit"
+      />
     </div>
   );
 }

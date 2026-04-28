@@ -3,7 +3,7 @@ import { z } from "zod";
 
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
-import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import type {
   AfternoonAnswer,
@@ -182,11 +182,14 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const rl = checkRateLimit({ ip });
+  const feedbackSubmitted = readFeedbackFlag(req);
+  const rl = checkRateLimit({ ip, feedbackSubmitted });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
-        ? "本日の採点上限に達しました。JST 0:00 にリセットされます。"
+        ? feedbackSubmitted
+          ? "本日の採点上限に達しました。JST 0:00 にリセットされます。"
+          : "AI 採点の初回無料枠（10 回）を使い切りました。フィードバックをご投稿いただくと、これ以降ほぼ無制限でご利用いただけます。"
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },

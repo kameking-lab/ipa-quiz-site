@@ -4,50 +4,24 @@ import { redirect } from "next/navigation";
 import { auth, isAuthConfigured } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { HistorySyncPanel } from "./HistorySyncPanel";
-import { BillingActions } from "./BillingActions";
 
 export const metadata: Metadata = {
   title: "アカウント",
-  description: "プロフィールと現在のプラン。",
+  description: "プロフィールと利用状況。",
   robots: { index: false, follow: false },
 };
 
-const PLAN_LABELS: Record<"free" | "premium" | "team", string> = {
-  free: "FREE",
-  premium: "PREMIUM",
-  team: "TEAM",
-};
-
-type SearchParams = { checkout?: string };
-
-export default async function AccountPage({
-  searchParams,
-}: {
-  searchParams: Promise<SearchParams>;
-}) {
-  const sp = await searchParams;
+export default async function AccountPage() {
   const session = await auth();
   if (!session?.user) {
     redirect("/auth/signin?callbackUrl=/account");
   }
 
-  const plan = session.user.plan ?? "free";
   const dbReady = !!process.env.DATABASE_URL;
 
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-10">
       <h1 className="mb-6 text-2xl font-bold">アカウント</h1>
-
-      {sp.checkout === "success" && (
-        <div className="mb-6 rounded-md border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm dark:border-emerald-800 dark:bg-emerald-950">
-          決済を受け付けました。プラン反映まで数秒お待ちください（Webhook 処理後に反映）。
-        </div>
-      )}
-      {sp.checkout === "canceled" && (
-        <div className="mb-6 rounded-md border border-zinc-300 bg-zinc-50 px-4 py-3 text-sm dark:border-zinc-700 dark:bg-zinc-900">
-          決済はキャンセルされました。
-        </div>
-      )}
 
       <section className="mb-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
         <h2 className="mb-3 text-sm font-semibold text-zinc-500 dark:text-zinc-400">プロフィール</h2>
@@ -59,20 +33,17 @@ export default async function AccountPage({
         </dl>
       </section>
 
-      <section className="mb-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">
-        <h2 className="mb-3 text-sm font-semibold text-zinc-500 dark:text-zinc-400">現在のプラン</h2>
-        <div className="flex items-center justify-between gap-4">
-          <span className="inline-flex items-center rounded-md bg-sky-100 px-2.5 py-1 text-sm font-semibold text-sky-800 dark:bg-sky-950 dark:text-sky-200">
-            {PLAN_LABELS[plan]}
-          </span>
-          {plan === "free" ? (
-            <Button variant="primary" asChild>
-              <Link href="/pricing">アップグレード</Link>
-            </Button>
-          ) : (
-            <BillingActions />
-          )}
-        </div>
+      <section className="mb-6 rounded-xl border border-emerald-200 bg-emerald-50/40 p-5 dark:border-emerald-900/60 dark:bg-emerald-950/20">
+        <h2 className="mb-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+          教育貢献プロジェクト
+        </h2>
+        <p className="text-sm text-zinc-700 dark:text-zinc-300">
+          全機能を無料でご利用いただけます。AI コパイロットの利用方法や、応援のお願いについては{" "}
+          <Link href="/pricing" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
+            こちら
+          </Link>
+          。
+        </p>
       </section>
 
       <section className="mb-6 rounded-xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-900">

@@ -35,4 +35,31 @@ export function incrementAiUsage(): UsageData {
   return next;
 }
 
-export const FREE_DAILY_LIMIT_CLIENT = 50;
+/**
+ * Initial free quota before the feedback gate triggers.
+ * After feedback is submitted, the limit effectively becomes unlimited.
+ */
+export const FREE_DAILY_LIMIT_CLIENT = 10;
+export const POST_FEEDBACK_DAILY_LIMIT_CLIENT = 9999;
+
+export function readFeedbackSubmitted(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    return window.localStorage.getItem(LS_KEYS.feedbackSubmitted) === "true";
+  } catch {
+    return false;
+  }
+}
+
+export function setFeedbackSubmitted(value = true): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(LS_KEYS.feedbackSubmitted, value ? "true" : "false");
+  } catch {
+    // ignore
+  }
+}
+
+export function effectiveDailyLimit(): number {
+  return readFeedbackSubmitted() ? POST_FEEDBACK_DAILY_LIMIT_CLIENT : FREE_DAILY_LIMIT_CLIENT;
+}
