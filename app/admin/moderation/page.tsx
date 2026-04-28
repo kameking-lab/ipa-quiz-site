@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { maskPII } from "@/lib/feedback/pii-masker";
 
 export const metadata: Metadata = {
   title: "モデレーション管理（プロトタイプ）",
@@ -9,7 +10,35 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// モデレーション画面のマスキング動作確認用サンプル。
+// 実データ統合は DB 投入後に差し替え予定。
+const MASK_SAMPLES: Array<{ id: string; original: string }> = [
+  {
+    id: "sample-email",
+    original: "解説の誤字を見つけました。返信は yamada.taro@example.co.jp までお願いします。",
+  },
+  {
+    id: "sample-phone",
+    original: "緊急の場合は 090-1234-5678 か 03-1234-5678 にご連絡ください。フリーダイヤル 0120-123-456 もあります。",
+  },
+  {
+    id: "sample-name",
+    original: "山田 太郎さんが推薦してくれました。佐藤先生の解説とは違う気がします。",
+  },
+  {
+    id: "sample-mynumber",
+    original: "本人確認番号 123456789012 を間違えて送ってしまいました。1234-5678-9012 も同様です。",
+  },
+  {
+    id: "sample-mixed",
+    original:
+      "鈴木さんの携帯 08012345678 と taro@example.com に共有しました。マイナンバー 123412345678 も含めて削除をお願いします。",
+  },
+];
+
 export default function ModerationPage() {
+  const previews = MASK_SAMPLES.map((s) => ({ ...s, ...maskPII(s.original) }));
+
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-12 pt-8 sm:px-6">
       <div className="mb-6">
@@ -31,7 +60,7 @@ export default function ModerationPage() {
               FeedbackGateModal から投稿された声を確認します。
             </p>
             <ul className="mt-3 list-disc pl-5 text-xs text-zinc-500 dark:text-zinc-400">
-              <li>個人情報マスキング（メール・電話番号）</li>
+              <li>個人情報マスキング（メール・電話番号・氏名・マイナンバー）</li>
               <li>不適切表現フィルタ（後続フェーズで AI 分類を追加予定）</li>
               <li>公開／非公開／削除のトグル</li>
             </ul>
@@ -59,6 +88,51 @@ export default function ModerationPage() {
           </CardContent>
         </Card>
       </div>
+
+      <section className="mt-8">
+        <div className="mb-3 flex items-center justify-between">
+          <h2 className="text-lg font-semibold">PII マスキング動作確認</h2>
+          <Badge variant="outline">{previews.length} 件</Badge>
+        </div>
+        <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+          投稿時に <code>lib/feedback/pii-masker.ts</code>{" "}
+          の正規表現ルールが自動適用されます。下記は代表的な置換例です。
+        </p>
+        <div className="space-y-3">
+          {previews.map((p) => {
+            const totalHits = Object.values(p.hits).reduce((a, b) => a + b, 0);
+            return (
+              <Card key={p.id}>
+                <CardContent className="grid gap-3 pt-4 sm:grid-cols-2">
+                  <div>
+                    <div className="mb-1 text-[11px] font-semibold uppercase tracking-wide text-zinc-500">
+                      原文
+                    </div>
+                    <p className="rounded-lg border border-zinc-200 bg-zinc-50 p-2 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200">
+                      {p.original}
+                    </p>
+                  </div>
+                  <div>
+                    <div className="mb-1 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
+                      置換後
+                      {totalHits > 0 && (
+                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-normal text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300">
+                          {Object.entries(p.hits)
+                            .map(([k, v]) => `${k}×${v}`)
+                            .join(" / ")}
+                        </span>
+                      )}
+                    </div>
+                    <p className="rounded-lg border border-emerald-200 bg-emerald-50 p-2 text-xs text-emerald-900 dark:border-emerald-900/60 dark:bg-emerald-950/30 dark:text-emerald-100">
+                      {p.masked}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            );
+          })}
+        </div>
+      </section>
 
       <p className="mt-6 text-xs text-zinc-500 dark:text-zinc-400">
         ※ 実データへのアクセスは、API ログ・将来導入予定の DB テーブルを参照します。

@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 
 export const runtime = "nodejs";
 
@@ -67,11 +68,20 @@ export async function POST(req: Request) {
     );
   }
 
-  // Mask common personal-info patterns before logging
-  const safeBody = JSON.stringify(payload).replace(
-    /[\w.+-]+@[\w-]+\.[\w.-]+/g,
-    (m) => (payload.kind === "contact" ? m : "[メール]"),
-  );
+  // フィードバック / 問題コメントは公開ログに残るため PII を機械マスキングする。
+  // contact フォームは本人連絡が必要なので元のメールは保持する。
+  let maskedPayload: typeof payload = payload;
+  let maskHits: Record<string, number> = {};
+  if (payload.kind === "feedback") {
+    const result = maskPII(payload.comment ?? "");
+    maskedPayload = { ...payload, comment: result.masked };
+    maskHits = result.hits;
+  } else if (payload.kind === "question-comment") {
+    const result = maskPII(payload.comment);
+    maskedPayload = { ...payload, comment: result.masked };
+    maskHits = result.hits;
+  }
+  const safeBody = JSON.stringify(maskedPayload);
 
   // Centralized log line; downstream tooling (Datadog, etc.) can consume.
   console.log(
@@ -81,6 +91,7 @@ export async function POST(req: Request) {
       receivedAt: new Date().toISOString(),
       ipHash: hashIp(ip),
       payload: safeBody,
+      maskHits: totalHits(maskHits) > 0 ? maskHits : undefined,
     }),
   );
 
