@@ -13,9 +13,9 @@ import { SiteLogo } from "@/components/SiteLogo";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
-  title: "IPA Quiz — AIネイティブ過去問学習",
+  title: "IPA 試験対策を、誰もが平等に。全機能無料 — 過去問 AI",
   description:
-    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
+    "IPA 情報処理技術者試験 全 13 区分の過去問を、ゼロ遷移 UI と AI コパイロットで学べる教育貢献プロジェクト。全機能無料・登録不要・モバイル最適化。",
   alternates: { canonical: "/" },
 };
 
@@ -37,13 +37,16 @@ export default function HomePage() {
           <SiteLogo />
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
-          IPA 過去問を、AI と一緒に。
+          IPA 試験対策を、誰もが平等に。
+          <br />
+          <span className="text-sky-600 dark:text-sky-400">全機能無料</span>
         </h1>
         <p className="text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          解答・解説がゼロ遷移で表示。分からないところは AI コパイロットにその場で質問できます。
+          教育貢献プロジェクトとして、全 13 試験区分の過去問・全モード・AI コパイロット・午後 AI 採点を
+          無料で公開しています。登録不要、片手で快適に学べます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
-          <Badge variant="success">β公開中・全機能無料</Badge>
+          <Badge variant="success">教育貢献プロジェクト・全機能無料</Badge>
           <Badge variant="success">全13試験区分 合計{total.toLocaleString("ja-JP")}問収録</Badge>
           <Badge variant="outline">ゼロ遷移 UI</Badge>
           <Badge variant="outline">AI コパイロット</Badge>

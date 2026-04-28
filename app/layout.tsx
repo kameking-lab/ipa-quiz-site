@@ -19,12 +19,12 @@ const BASE_URL =
 
 export const metadata: Metadata = {
   title: {
-    default: "IPA Quiz — AIネイティブ過去問学習",
-    template: "%s | IPA Quiz",
+    default: "IPA 試験対策を、誰もが平等に。全機能無料 — 過去問 AI",
+    template: "%s | 過去問 AI",
   },
   description:
-    "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。ランダム・年度別・分野別・復習モード対応。β公開中・全機能無料。",
-  applicationName: "IPA Quiz",
+    "IPA 情報処理技術者試験 全 13 区分の過去問を、ゼロ遷移 UI と AI コパイロットで学べる教育貢献プロジェクト。全機能無料・登録不要・モバイル最適化。",
+  applicationName: "過去問 AI",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
   alternates: {
@@ -38,18 +38,18 @@ export const metadata: Metadata = {
     apple: "/icon-192.svg",
   },
   openGraph: {
-    title: "IPA Quiz — AIネイティブ過去問学習",
+    title: "IPA 試験対策を、誰もが平等に。全機能無料 — 過去問 AI",
     description:
-      "応用情報技術者試験の過去問400問をゼロ遷移UIとAIコパイロットで高速学習。β公開中・全機能無料。",
+      "全 13 区分の過去問を、ゼロ遷移 UI と AI コパイロットで学べる教育貢献プロジェクト。全機能無料。",
     type: "website",
     locale: "ja_JP",
-    siteName: "IPA Quiz",
+    siteName: "過去問 AI",
     url: BASE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "IPA Quiz — AIネイティブ過去問学習",
-    description: "応用情報技術者試験の過去問400問をAIコパイロット付きで学習。β公開中・全機能無料。",
+    title: "IPA 試験対策を、誰もが平等に。全機能無料 — 過去問 AI",
+    description: "全 13 区分の過去問を AI コパイロット付きで学習。教育貢献プロジェクトとして全機能無料。",
   },
 };
 
@@ -101,8 +101,8 @@ export default function RootLayout({
               <div className="mx-auto flex max-w-5xl flex-col items-center justify-between gap-3 sm:flex-row">
                 <div className="text-center sm:text-left">
                   <div className="mb-1.5">
-                    <span className="mr-2 inline-block rounded bg-sky-100 px-1.5 py-0.5 text-[10px] font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
-                      β公開中
+                    <span className="mr-2 inline-block rounded bg-emerald-100 px-1.5 py-0.5 text-[10px] font-semibold text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
+                      教育貢献プロジェクト
                     </span>
                     出典: IPA 情報処理技術者試験（
                     <a
@@ -124,8 +124,14 @@ export default function RootLayout({
                   <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
                     {(
                       [
+                        ["/about", "プロジェクトについて"],
+                        ["/support", "応援する"],
+                        ["/contact", "お問い合わせ"],
+                        ["/feedback/public", "フィードバック一覧"],
+                        ["/stats", "公開メトリクス"],
+                        ["/transparency", "運営の透明性"],
                         ["/terms", "利用規約"],
-                        ["/privacy", "プライバシーポリシー"],
+                        ["/privacy", "プライバシー"],
                         ["/operator", "運営者情報"],
                         ["/settings", "設定"],
                       ] as const
