@@ -135,9 +135,51 @@ export default async function QuestionPage({
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
   const title = questionTitle(q);
 
+  const questionEntity = {
+    "@type": "Question",
+    "@id": `${pageUrlAbs}#question`,
+    name: q.question.slice(0, 120),
+    text: q.question,
+    inLanguage: "ja",
+    ...(answerText
+      ? {
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: `${answerKey}: ${answerText}`,
+          },
+        }
+      : {
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: String(answerKey),
+          },
+        }),
+    ...(q.choices
+      ? {
+          suggestedAnswer: Object.entries(q.choices).map(([key, text]) => ({
+            "@type": "Answer",
+            text: `${key}: ${text}`,
+          })),
+        }
+      : {}),
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "QAPage",
+        "@id": `${pageUrlAbs}#qapage`,
+        url: pageUrlAbs,
+        inLanguage: "ja",
+        mainEntity: questionEntity,
+        isPartOf: {
+          "@type": "WebSite",
+          "@id": `${SITE_BASE_URL}#website`,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+      },
       {
         "@type": "Quiz",
         "@id": `${pageUrlAbs}#quiz`,
@@ -146,34 +188,7 @@ export default async function QuestionPage({
         educationalLevel: "professional",
         inLanguage: "ja",
         url: pageUrlAbs,
-        hasPart: {
-          "@type": "Question",
-          "@id": `${pageUrlAbs}#question`,
-          name: q.question.slice(0, 120),
-          text: q.question,
-          inLanguage: "ja",
-          ...(answerText
-            ? {
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: `${answerKey}: ${answerText}`,
-                },
-              }
-            : {
-                acceptedAnswer: {
-                  "@type": "Answer",
-                  text: String(answerKey),
-                },
-              }),
-          ...(q.choices
-            ? {
-                suggestedAnswer: Object.entries(q.choices).map(([key, text]) => ({
-                  "@type": "Answer",
-                  text: `${key}: ${text}`,
-                })),
-              }
-            : {}),
-        },
+        hasPart: questionEntity,
       },
       {
         "@type": "BreadcrumbList",
