@@ -55,7 +55,7 @@ export default function AdminTeamPage() {
           </p>
         </div>
         <div className="text-xs text-zinc-500 dark:text-zinc-400">
-          ※ 本ページは営業デモ用のモックデータです
+          ※ 本ページは PAID_MODE 復活時のプロトタイプ用モックデータです
         </div>
       </div>
 
