@@ -7,12 +7,20 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PAID_MODE } from "@/lib/paid-mode";
 
-export const metadata: Metadata = {
-  title: "導入事例 — 先行導入企業（匿名）",
-  description:
-    "過去問AI Team プラン先行導入企業の事例。IT・金融・製造業での合格率向上、学習時間削減、業界平均超過などの効果データを、社名・部署名を匿名化のうえ公開しています。",
-  alternates: { canonical: "/case-studies" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "導入事例 — 先行導入企業（匿名）",
+    description:
+      "過去問AI Team プラン先行導入企業の事例。IT・金融・製造業での合格率向上、学習時間削減、業界平均超過などの効果データを、社名・部署名を匿名化のうえ公開しています。",
+    alternates: { canonical: "/case-studies" },
+  };
+}
 
 interface CaseStudy {
   id: string;

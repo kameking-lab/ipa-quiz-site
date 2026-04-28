@@ -5,13 +5,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { RoiCalculator } from "@/components/enterprise/RoiCalculator";
+import { PAID_MODE } from "@/lib/paid-mode";
 
-export const metadata: Metadata = {
-  title: "法人プラン料金 — Team / Enterprise の機能比較と ROI",
-  description:
-    "過去問AI 法人プラン (Team / Enterprise) の機能比較表と、利用人数別 ROI を計算できるシミュレータ。20 名規模で年間 60 万円・合格率 +20pt を試算。",
-  alternates: { canonical: "/enterprise/pricing" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "法人プラン料金 — Team / Enterprise の機能比較と ROI",
+    description:
+      "過去問AI 法人プラン (Team / Enterprise) の機能比較表と、利用人数別 ROI を計算できるシミュレータ。20 名規模で年間 60 万円・合格率 +20pt を試算。",
+    alternates: { canonical: "/enterprise/pricing" },
+  };
+}
 
 interface PlanRow {
   feature: string;

@@ -7,12 +7,20 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PAID_MODE } from "@/lib/paid-mode";
 
-export const metadata: Metadata = {
-  title: "データ処理委託契約（DPA）",
-  description:
-    "過去問AI の法人向けデータ処理委託契約 (Data Processing Agreement) のテンプレート。サブプロセッサー一覧、データ取扱条件、削除・返却ポリシー。",
-  alternates: { canonical: "/legal/dpa" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "データ処理委託契約（DPA）",
+    description:
+      "過去問AI の法人向けデータ処理委託契約 (Data Processing Agreement) のテンプレート。サブプロセッサー一覧、データ取扱条件、削除・返却ポリシー。",
+    alternates: { canonical: "/legal/dpa" },
+  };
+}
 
 const SUBPROCESSORS = [
   {

@@ -7,12 +7,20 @@ import { TEAM_PLAN, formatPlanPrice, formatAnnualPrice } from "@/lib/plans";
 import { PAID_MODE } from "@/lib/paid-mode";
 import { EnterpriseContactForm } from "./EnterpriseContactForm";
 
-export const metadata: Metadata = {
-  title: "法人お問い合わせ",
-  description:
-    "過去問AI Team プランの導入相談・資料請求はこちら。席数無制限・月額 ¥50,000 で全社員のIT資格取得を支援します。",
-  alternates: { canonical: "/contact/enterprise" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "法人お問い合わせ",
+    description:
+      "過去問AI Team プランの導入相談・資料請求はこちら。席数無制限・月額 ¥50,000 で全社員のIT資格取得を支援します。",
+    alternates: { canonical: "/contact/enterprise" },
+  };
+}
 
 const FEATURES = [
   { icon: "🏢", title: "席数無制限", desc: "社員数を問わず一律料金。大規模展開も追加費用なし。" },

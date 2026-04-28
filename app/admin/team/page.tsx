@@ -30,12 +30,20 @@ const ExamProgressChart = dynamic(
   },
 );
 
-export const metadata: Metadata = {
-  title: "法人ダッシュボード（プロトタイプ）",
-  description:
-    "法人向け Team プランのダッシュボードプロトタイプ。メンバー進捗・試験別解答数・正答率を一元可視化。",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "法人ダッシュボード（プロトタイプ）",
+    description:
+      "法人向け Team プランのダッシュボードプロトタイプ。メンバー進捗・試験別解答数・正答率を一元可視化。",
+    robots: { index: false, follow: false },
+  };
+}
 
 function formatHours(minutes: number): string {
   const h = Math.floor(minutes / 60);

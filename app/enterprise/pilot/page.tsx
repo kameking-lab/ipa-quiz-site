@@ -8,12 +8,20 @@ import { Button } from "@/components/ui/button";
 import { PAID_MODE } from "@/lib/paid-mode";
 import { PilotForm } from "./PilotForm";
 
-export const metadata: Metadata = {
-  title: "法人パイロット申込 — 無料3ヶ月",
-  description:
-    "過去問AI の法人向け無料 3 ヶ月パイロット。最大 50 席まで、AI コパイロット無制限・全試験区分対応・法人ダッシュボード付き。",
-  alternates: { canonical: "/enterprise/pilot" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "法人パイロット申込 — 無料3ヶ月",
+    description:
+      "過去問AI の法人向け無料 3 ヶ月パイロット。最大 50 席まで、AI コパイロット無制限・全試験区分対応・法人ダッシュボード付き。",
+    alternates: { canonical: "/enterprise/pilot" },
+  };
+}
 
 const PILOT_INCLUDES = [
   { icon: Users, label: "最大 50 席まで無料", desc: "追加席は 1 席 980円/月の Team プラン料金で対応可能" },

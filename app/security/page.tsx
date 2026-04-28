@@ -7,12 +7,20 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { PAID_MODE } from "@/lib/paid-mode";
 
-export const metadata: Metadata = {
-  title: "セキュリティ・コンプライアンス",
-  description:
-    "過去問AI の法人向けセキュリティ統制・SOC2 Type1 取得計画・データ保護・SLA・SAML SSO 対応予定について。",
-  alternates: { canonical: "/security" },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  if (!PAID_MODE) {
+    return {
+      title: "過去問AI",
+      robots: { index: false, follow: false },
+    };
+  }
+  return {
+    title: "セキュリティ・コンプライアンス",
+    description:
+      "過去問AI の法人向けセキュリティ統制・SOC2 Type1 取得計画・データ保護・SLA・SAML SSO 対応予定について。",
+    alternates: { canonical: "/security" },
+  };
+}
 
 const SOC2_TIMELINE: Array<{ phase: string; period: string; status: "done" | "inprogress" | "planned"; items: string[] }> = [
   {
