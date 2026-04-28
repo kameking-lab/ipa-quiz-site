@@ -132,6 +132,25 @@ export default async function AccountPage({
         </div>
       )}
 
+      {/* Dashboard CTA */}
+      <Link
+        href="/account/dashboard"
+        className="mb-6 flex items-center gap-3 rounded-2xl border border-sky-200 bg-gradient-to-r from-sky-50 to-violet-50 p-4 transition hover:-translate-y-0.5 hover:shadow dark:border-sky-900 dark:from-sky-950/30 dark:to-violet-950/30"
+      >
+        <span className="text-2xl">📊</span>
+        <span className="flex-1">
+          <span className="block text-sm font-semibold text-sky-900 dark:text-sky-200">
+            学習ダッシュボード
+          </span>
+          <span className="block text-xs text-sky-700/80 dark:text-sky-300/80">
+            分野別レーダー・試験別合格確率・弱点TOP3を確認
+          </span>
+        </span>
+        <span className="rounded-full bg-sky-600 px-3 py-1 text-xs font-bold text-white">
+          NEW
+        </span>
+      </Link>
+
       {/* Hero */}
       <header className="mb-8">
         <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground shadow-sm">
