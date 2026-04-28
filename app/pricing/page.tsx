@@ -10,7 +10,7 @@ import { EmailSignupForm } from "./EmailSignupForm";
 export const metadata: Metadata = {
   title: "料金プラン",
   description:
-    "IPA Quiz の Free / Premium / Team プラン比較。Premium は月額980円で AI コパイロット 1日500回、詳細応答・類題生成・誤答分析が使えます。近日公開予定。",
+    "IPA Quiz の Free / Pro / Team プラン比較。Pro は月額1,480円で AI コパイロット 1日200回、弱点克服モード・類題生成・AI論述添削が無制限で使えます。Team は月額2,980円/席（最低5席）。",
   alternates: { canonical: "/pricing" },
 };
 
@@ -59,7 +59,7 @@ export default function PricingPage() {
         </CardHeader>
         <CardContent>
           <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-            Premium / Team プランの正式公開時にメールでご連絡します。登録解除は通知メールから可能です。
+            Pro / Team プランの正式公開時にメールでご連絡します。登録解除は通知メールから可能です。
           </p>
           <EmailSignupForm source="pricing" />
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
@@ -80,7 +80,7 @@ export default function PricingPage() {
 }
 
 function PlanCard({ plan }: { plan: Plan }) {
-  const isPremium = plan.id === "premium";
+  const isPro = plan.id === "premium";
   return (
     <Card
       className={
@@ -135,12 +135,17 @@ function PlanCard({ plan }: { plan: Plan }) {
           ))}
         </ul>
         {plan.id === "free" ? (
-          <Button asChild variant="primary" className="w-full transition-transform active:scale-95" data-track="pricing-cta-free">
+          <Button
+            asChild
+            variant="primary"
+            className="w-full transition-transform active:scale-95"
+            data-track="pricing-cta-free"
+          >
             <Link href="/quiz?mode=random&exam=ap">今すぐ無料で始める</Link>
           </Button>
-        ) : isPremium ? (
-          <Button disabled variant="primary" className="w-full" data-track="pricing-cta-premium">
-            月300円で無制限（近日公開）
+        ) : isPro ? (
+          <Button disabled variant="primary" className="w-full" data-track="pricing-cta-pro">
+            月1,480円で本気合格（近日公開）
           </Button>
         ) : (
           <Button disabled variant="outline" className="w-full" data-track="pricing-cta-team">
@@ -156,30 +161,42 @@ function FeatureComparisonTable() {
   const rows: Array<{ label: string; values: [string, string, string] }> = [
     {
       label: "AI コパイロット / 日",
-      values: ["50 回", "500 回", "500 回"],
+      values: ["15 回", "200 回", "200 回"],
     },
     {
       label: "利用 AI モデル",
-      values: ["Flash-Lite", "Flash", "Flash"],
+      values: ["Flash-Lite", "Flash-Lite + Flash boost", "Flash-Lite + Flash boost"],
     },
     {
       label: "応答モード",
       values: ["基本", "詳細", "詳細"],
     },
     {
-      label: "マルチターン会話",
+      label: "AI キャラクター",
+      values: ["ハル のみ", "モモ／ハル／ザン", "モモ／ハル／ザン"],
+    },
+    {
+      label: "弱点克服・成長加速モード",
       values: ["—", "◎", "◎"],
     },
     {
-      label: "類題自動生成",
-      values: ["—", "◎", "◎"],
-    },
-    {
-      label: "誤答パターン分析",
+      label: "類題自動生成・誤答分析",
       values: ["—", "◎", "◎"],
     },
     {
       label: "AI 学習プラン",
+      values: ["—", "◎", "◎"],
+    },
+    {
+      label: "AI 論述添削",
+      values: ["—", "無制限", "無制限"],
+    },
+    {
+      label: "学習ヒートマップ",
+      values: ["直近7日", "365日", "365日"],
+    },
+    {
+      label: "ダッシュボード＋レーダー",
       values: ["—", "◎", "◎"],
     },
     {
@@ -195,7 +212,7 @@ function FeatureComparisonTable() {
       values: ["—", "—", "◎"],
     },
     {
-      label: "メンバー・部署管理",
+      label: "席数管理・進捗レポート",
       values: ["—", "—", "◎"],
     },
     {
@@ -210,7 +227,7 @@ function FeatureComparisonTable() {
         <tr className="border-b border-zinc-200 text-left text-xs font-semibold dark:border-zinc-800">
           <th className="py-2 pr-3 text-zinc-500 dark:text-zinc-400">機能</th>
           <th className="py-2 pr-3">Free</th>
-          <th className="py-2 pr-3 text-sky-700 dark:text-sky-400">Premium</th>
+          <th className="py-2 pr-3 text-sky-700 dark:text-sky-400">Pro</th>
           <th className="py-2 pr-3">Team</th>
         </tr>
       </thead>

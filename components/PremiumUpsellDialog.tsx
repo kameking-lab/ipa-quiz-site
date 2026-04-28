@@ -28,7 +28,7 @@ export function PremiumUpsellDialog({
           </div>
           <DialogTitle>AI コパイロットを使い切りました</DialogTitle>
           <DialogDescription>
-            無料プランは AI コパイロット 1 日 50 回までご利用いただけます。
+            無料プランは AI コパイロット 1 日 15 回までご利用いただけます。
             JST 0:00 にリセットされます。
           </DialogDescription>
         </DialogHeader>
@@ -36,13 +36,13 @@ export function PremiumUpsellDialog({
         <div className="mt-2 rounded-xl border border-sky-200 bg-sky-50 p-3 text-sm dark:border-sky-900/60 dark:bg-sky-950/30">
           <div className="mb-1 flex items-center gap-2 font-semibold text-sky-800 dark:text-sky-200">
             <Sparkles className="h-4 w-4" />
-            Premium プラン（近日公開 / 月980円）
+            Pro プラン（近日公開 / 月1,480円）
           </div>
           <ul className="ml-5 list-disc space-y-0.5 text-xs text-sky-900/80 dark:text-sky-100/80">
-            <li>AI コパイロット 1 日 500 回</li>
-            <li>詳細応答・マルチターン会話・類題生成</li>
-            <li>誤答パターン分析・学習プラン作成</li>
-            <li>広告非表示・クラウド履歴同期</li>
+            <li>AI コパイロット 1 日 200 回（Flash-Lite + Flash boost）</li>
+            <li>弱点克服・成長加速モード／類題生成／誤答分析</li>
+            <li>AIキャラ「モモ／ハル／ザン」全種選択可</li>
+            <li>AI論述添削 無制限・広告非表示・クラウド同期</li>
           </ul>
         </div>
 
