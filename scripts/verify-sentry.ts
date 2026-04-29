@@ -74,6 +74,15 @@ async function verifyInBrowser(
     await page.goto(`${BASE_URL}/test/sentry`, { waitUntil: "networkidle", timeout: TIMEOUT_MS });
     result.pageLoaded = true;
 
+    // Dismiss any modal/dialog that may be blocking the UI (e.g. WelcomeModal)
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(500);
+    const closeBtn = page.locator('[aria-label="Close"], [data-radix-dialog-close], button:has-text("閉じる"), button:has-text("×")').first();
+    if (await closeBtn.isVisible().catch(() => false)) {
+      await closeBtn.click({ timeout: 2000 }).catch(() => {});
+      await page.waitForTimeout(300);
+    }
+
     // Click "captureMessage を送信する" (preferred over throw since throw may crash the page)
     await page.click("button:has-text('captureMessage')", { timeout: 8000 });
     result.buttonClicked = true;

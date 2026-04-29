@@ -7,7 +7,7 @@ const cspDirectives = [
   "default-src 'self'",
   // unsafe-inline required for theme bootstrap script in layout.tsx
   // cdn.jsdelivr.net required for Swagger UI on /api-docs
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net`,
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com`,
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "img-src 'self' data: blob: https://*.ipa.go.jp",
   "font-src 'self' https://cdn.jsdelivr.net",

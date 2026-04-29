@@ -76,6 +76,16 @@ async function verifyInBrowser(
     await page.goto(`${BASE_URL}/test/posthog`, { waitUntil: "networkidle", timeout: TIMEOUT_MS });
     result.pageLoaded = true;
 
+    // Dismiss any modal/dialog that may be blocking the UI (e.g. WelcomeModal)
+    await page.keyboard.press("Escape");
+    await page.waitForTimeout(500);
+    // Click close button if dialog is still open
+    const closeBtn = page.locator('[aria-label="Close"], [data-radix-dialog-close], button:has-text("閉じる"), button:has-text("×")').first();
+    if (await closeBtn.isVisible().catch(() => false)) {
+      await closeBtn.click({ timeout: 2000 }).catch(() => {});
+      await page.waitForTimeout(300);
+    }
+
     // Click the first event button (question_answered)
     await page.click("button:has-text('question_answered')", { timeout: 8000 });
     result.buttonClicked = true;
