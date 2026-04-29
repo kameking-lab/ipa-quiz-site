@@ -11,8 +11,8 @@ const cspDirectives = [
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "img-src 'self' data: blob: https://*.ipa.go.jp",
   "font-src 'self' https://cdn.jsdelivr.net",
-  // connect-src: Gemini API (server-side) + Vercel Live preview toolbar
-  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com",
+  // connect-src: Gemini API (server-side) + Vercel Live + PostHog + Sentry
+  "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io",
   "frame-src https://vercel.live",
   "frame-ancestors 'none'",
   "base-uri 'self'",
