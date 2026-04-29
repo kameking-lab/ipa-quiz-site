@@ -9,7 +9,8 @@
 import { chromium, firefox, webkit, type Browser, type BrowserContext, type ConsoleMessage, type Response, type Dialog } from "playwright";
 
 const BASE_URL = process.env.VERIFY_BASE_URL ?? "https://ipa-quiz-site.vercel.app";
-const SENTRY_INGEST_PATTERN = "ingest.us.sentry.io";
+// Sentry uses tunnelRoute "/monitoring" (same-domain proxy) — watch both
+const SENTRY_PATTERNS = ["ingest.us.sentry.io", "/monitoring"];
 const TIMEOUT_MS = 20_000;
 
 interface BrowserResult {
@@ -61,10 +62,10 @@ async function verifyInBrowser(
       }
     });
 
-    // Watch for Sentry network requests
+    // Watch for Sentry network requests (direct ingest or tunnelRoute /monitoring)
     page.on("response", async (res: Response) => {
       const url = res.url();
-      if (url.includes(SENTRY_INGEST_PATTERN)) {
+      if (SENTRY_PATTERNS.some((p) => url.includes(p))) {
         result.networkRequestMade = true;
         result.networkStatus = res.status();
       }
@@ -87,8 +88,8 @@ async function verifyInBrowser(
     await page.click("button:has-text('captureMessage')", { timeout: 8000 });
     result.buttonClicked = true;
 
-    // Wait for Sentry to flush
-    await page.waitForTimeout(4000);
+    // Wait for Sentry to flush (Sentry batches with a 5s default flush interval)
+    await page.waitForTimeout(7000);
 
   } catch (err) {
     result.error = String(err);
