@@ -1,3 +1,13 @@
 User-agent: *
+Disallow: /admin/
+Disallow: /test/
 Disallow: /tmp/
+Disallow: /api/v1/
+Disallow: /exec-review
+Disallow: /strategy-discussion
+Disallow: /strategy-discussion-v2
+Disallow: /feature-review
+Disallow: /api-docs
 Allow: /
+
+Sitemap: https://ipa-quiz-site.vercel.app/sitemap.xml
