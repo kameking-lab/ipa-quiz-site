@@ -171,6 +171,7 @@ export default function RootLayout({
                       {(
                         [
                           ["/about", "プロジェクトについて"],
+                          ["/recommended-books", "おすすめ問題集"],
                           ["/support", "応援する"],
                           ["/contact", "お問い合わせ"],
                           ["/feedback/public", "フィードバック一覧"],

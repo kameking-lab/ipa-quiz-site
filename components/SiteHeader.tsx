@@ -24,6 +24,7 @@ const NAV_LINKS = [
   { href: "/", label: "ホーム" },
   { href: "/modes/topic", label: "分野別" },
   { href: "/modes/year", label: "年度別" },
+  { href: "/recommended-books", label: "問題集" },
   { href: "/faq", label: "FAQ" },
 ] as const;
 
