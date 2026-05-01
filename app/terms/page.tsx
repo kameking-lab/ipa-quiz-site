@@ -8,6 +8,7 @@ import {
   FileText,
   Gavel,
   HandHeart,
+  Link2,
   MessageSquare,
   Quote,
   RefreshCw,
@@ -51,7 +52,7 @@ export default function TermsPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             利用規約
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月29日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年5月2日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）をご利用いただく前に、本利用規約をよくお読みください。
             本サービスを利用することにより、本規約に同意したものとみなします。
@@ -206,6 +207,33 @@ export default function TermsPage() {
 
           <Section
             number="10"
+            icon={<Link2 className="h-5 w-5" />}
+            title="アフィリエイトリンクについて"
+          >
+            <p>
+              本サービスの「
+              <Link
+                href="/recommended-books"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                おすすめ問題集
+              </Link>
+              」ページなど一部のページには、Amazonアソシエイト・楽天アフィリエイトなどのアフィリエイトリンクが含まれます。
+              ユーザーがこれらのリンクから商品を購入された場合、当サービス運営者に紹介料が支払われ、運営費の一部に充当されます。
+            </p>
+            <p>
+              紹介する書籍・商品はあくまで本サービス独自の編集判断に基づくものであり、
+              紹介料の有無によって推薦内容を歪めることはありません。
+              価格・在庫・最新版情報については、リンク先の販売ページの表示が最新です。
+            </p>
+            <p>
+              当サービスは Amazon.co.jp を宣伝しリンクすることによってサイトが紹介料を獲得できる手段を提供することを目的に設定された
+              アフィリエイトプログラムである、Amazonアソシエイト・プログラムの参加者です。
+            </p>
+          </Section>
+
+          <Section
+            number="11"
             icon={<HandHeart className="h-5 w-5" />}
             title="サービスの位置付け（教育貢献・ボランティア運営）"
           >

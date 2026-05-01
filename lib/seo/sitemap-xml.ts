@@ -20,10 +20,34 @@ interface UrlEntry {
   priority?: number;
 }
 
+const RECOMMENDED_BOOKS_EXAMS = [
+  "ip",
+  "sg",
+  "fe",
+  "ap",
+  "sc",
+  "nw",
+  "db",
+  "es",
+  "st",
+  "sa",
+  "pm",
+  "sm",
+  "au",
+] as const;
+
 const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/recommended-books`, changeFrequency: "monthly", priority: 0.7 },
+  ...RECOMMENDED_BOOKS_EXAMS.map(
+    (exam): UrlEntry => ({
+      url: `${SITE_BASE_URL}/recommended-books/${exam}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    }),
+  ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/mock-exam`, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/review`, changeFrequency: "weekly", priority: 0.5 },
