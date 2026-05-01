@@ -64,8 +64,6 @@ interface Props {
   question: Question;
   selectedChoice?: string;
   isCorrect?: boolean;
-  /** Retained for paid-mode revival; ignored in educational-contribution mode. */
-  premium?: boolean;
   onRateLimitHit: () => void;
   onClose?: () => void;
   headerRight?: React.ReactNode;

@@ -1,10 +1,9 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Copy, Crown, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ensureCouponForStreak, markRedeemed, type CouponState } from "@/lib/motivation/coupon";
+import { ensureCouponForStreak, type CouponState } from "@/lib/motivation/coupon";
 import { readStreak } from "@/lib/streak/storage";
 
 interface Props {
@@ -32,9 +31,9 @@ export function StreakCouponCard({ variant = "full" }: Props) {
         <div className="flex items-start gap-2">
           <Crown className="mt-0.5 h-4 w-4 text-amber-500" />
           <div>
-            <p className="font-semibold">プレミアム 1週間無料クーポン</p>
+            <p className="font-semibold">30日連続達成バッジ</p>
             <p className="mt-0.5 text-xs text-zinc-600 dark:text-zinc-400">
-              30日連続学習を達成するとクーポンが自動発行されます。最高連続: {longest}日
+              30日連続学習を達成するとバッジが付与されます。最高連続: {longest}日
             </p>
           </div>
         </div>
@@ -73,7 +72,7 @@ export function StreakCouponCard({ variant = "full" }: Props) {
               30日連続達成記念
             </p>
             <h3 className="text-base font-bold text-amber-950 dark:text-amber-50">
-              プレミアム 1週間 無料クーポン
+              30日連続達成バッジ
             </h3>
           </div>
           {coupon.redeemed && (
@@ -112,19 +111,9 @@ export function StreakCouponCard({ variant = "full" }: Props) {
           {" · "}30日達成のご褒美
         </p>
 
-        {!coupon.redeemed && (
-          <div className="mt-3 flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="outline" size="sm" className="flex-1">
-              <Link href="/pricing" onClick={() => markRedeemed()}>
-                プレミアムへ進む
-              </Link>
-            </Button>
-          </div>
-        )}
-
         {variant === "full" && (
           <p className="mt-3 text-[11px] text-zinc-600 dark:text-zinc-400">
-            ※ Stripe 連携は順次対応中。現状はコード表示のみ、決済時の自動適用は今後実装予定です。
+            本サービスはボランティア有志運営の教育貢献プロジェクトのため、本バッジは記念表示のみです。
           </p>
         )}
       </div>

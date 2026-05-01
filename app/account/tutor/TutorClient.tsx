@@ -14,7 +14,6 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { PremiumGate } from "@/components/PremiumGate";
 import { createHistoryStore } from "@/lib/storage/history";
 import { aggregateByCategory, daysUntil } from "@/lib/learning/analytics";
 import { summarize as summarizeSrs } from "@/lib/learning/spaced-repetition";
@@ -27,14 +26,7 @@ interface Props {
 }
 
 export function TutorClient({ categoryById }: Props) {
-  return (
-    <PremiumGate
-      featureTitle="AI チューター月次レポート"
-      featurePitch="毎月の演習量・分野別正答率の推移・SRS 定着度を AI が要約。次に注力すべき分野と試験直前のメッセージまで自動生成します。"
-    >
-      <Inner categoryById={categoryById} />
-    </PremiumGate>
-  );
+  return <Inner categoryById={categoryById} />;
 }
 
 function Inner({ categoryById }: Props) {

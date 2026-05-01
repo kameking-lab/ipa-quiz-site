@@ -41,8 +41,6 @@ export function incrementAiUsage(): UsageData {
  */
 export const FREE_DAILY_LIMIT_CLIENT = 10;
 export const POST_FEEDBACK_DAILY_LIMIT_CLIENT = 9999;
-// Retained for paid-mode revival; unused while PAID_MODE=false
-export const PRO_DAILY_LIMIT_CLIENT = 200;
 
 export function readFeedbackSubmitted(): boolean {
   if (typeof window === "undefined") return false;
