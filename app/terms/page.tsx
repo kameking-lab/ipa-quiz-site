@@ -179,10 +179,7 @@ export default function TermsPage() {
             <p>
               フィードバックの採否・反映時期は運営が単独で判断し、採用された場合でも
               利用者に対する報酬・謝礼・クレジット表示等の義務は生じません。
-              フィードバックは個人情報を機械的にマスキングした上で、公開フィードバック一覧や
-              改善ログ等に転載される場合があります（{" "}
-              <Link href="/feedback/public" className="underline underline-offset-2">/feedback/public</Link>
-              ）。
+              フィードバックは個人情報を機械的にマスキングした上で、改善ログ等に転載される場合があります。
             </p>
           </Section>
 

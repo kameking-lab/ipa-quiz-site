@@ -134,6 +134,37 @@ export function buildQuestionContext(
   return lines.join("\n");
 }
 
+export type ResponseLength = "short" | "medium" | "long";
+
+export const RESPONSE_LENGTH_LABEL: Record<ResponseLength, string> = {
+  short: "3行",
+  medium: "5行",
+  long: "10行",
+};
+
+export function buildResponseLengthDirective(length: ResponseLength): string {
+  switch (length) {
+    case "short":
+      return [
+        "## 応答の長さ（厳守）",
+        "今回の応答は **3行以内** で要点だけを述べてください。前置き・あいさつ・くどい補足は禁止。",
+        "Markdown の見出しは使わず、平文または短い箇条書き（3項目まで）で答えてください。",
+      ].join("\n");
+    case "medium":
+      return [
+        "## 応答の長さ（厳守）",
+        "今回の応答は **5行以内** にまとめてください。要点の説明＋必要なら 1 行の例示や注意点で十分です。",
+        "見出しは省略し、簡潔な平文または箇条書きで構成してください。",
+      ].join("\n");
+    case "long":
+      return [
+        "## 応答の長さ（目安）",
+        "今回の応答は **10行前後** で構造化して答えてください。",
+        "必要に応じて見出し・箇条書き・コードブロックを活用し、論点を整理して提示してください。",
+      ].join("\n");
+  }
+}
+
 export interface LearnerProfile {
   totalAnswered: number;
   uniqueAnswered: number;

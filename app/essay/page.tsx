@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, FileText, History } from "lucide-react";
+import { Sparkles, FileText, History, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,6 +17,17 @@ export const metadata: Metadata = {
 export default function EssayHomePage() {
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <div
+        role="note"
+        className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
+      >
+        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
+        <p>
+          <strong>本機能は AI（Gemini Flash-Lite）による参考評価です。</strong>
+          IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
+          学習の参考としてご活用ください。
+        </p>
+      </div>
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
           <Badge variant="success">

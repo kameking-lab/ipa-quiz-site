@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { maskPII } from "@/lib/feedback/pii-masker";
@@ -64,11 +63,6 @@ export default function ModerationPage() {
               <li>不適切表現フィルタ（後続フェーズで AI 分類を追加予定）</li>
               <li>公開／非公開／削除のトグル</li>
             </ul>
-            <p className="mt-3 text-xs">
-              <Link href="/feedback/public" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
-                公開ページを見る
-              </Link>
-            </p>
           </CardContent>
         </Card>
 

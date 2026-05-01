@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronLeft } from "lucide-react";
+import { AlertTriangle, ChevronLeft } from "lucide-react";
 
 import { findEssayQuestion, ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
@@ -57,6 +57,18 @@ export default async function EssayEditorPage({
           {question.title}
         </h1>
       </header>
+
+      <div
+        role="note"
+        className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
+      >
+        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
+        <p>
+          <strong>本機能は AI（Gemini Flash-Lite）による参考評価です。</strong>
+          IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
+          学習の参考としてご活用ください。
+        </p>
+      </div>
 
       <section className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 text-sm leading-relaxed text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/50 dark:text-zinc-300">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">

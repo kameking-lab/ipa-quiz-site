@@ -173,7 +173,6 @@ export default function RootLayout({
                           ["/about", "プロジェクトについて"],
                           ["/support", "応援する"],
                           ["/contact", "お問い合わせ"],
-                          ["/feedback/public", "フィードバック一覧"],
                           ["/stats", "公開メトリクス"],
                           ["/transparency", "運営の透明性"],
                           ["/blog", "ブログ"],

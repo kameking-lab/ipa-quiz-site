@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   Activity,
   BarChart3,
@@ -10,6 +11,7 @@ import {
   ListChecks,
   Lock,
   Sparkles,
+  TrendingUp,
 } from "lucide-react";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
@@ -69,6 +71,15 @@ export default function AdminStatsPage() {
             Vercel Analytics で DAU / WAU / MAU、ページビュー、カスタムイベントを追跡します。
             ここはコンテンツ収録と計測の概況サマリです。
           </p>
+          <div className="mt-4">
+            <Link
+              href="/admin/retention"
+              className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition-colors hover:bg-muted"
+            >
+              <TrendingUp className="h-3.5 w-3.5" />
+              翌週リテンションを見る
+            </Link>
+          </div>
         </div>
       </header>
 

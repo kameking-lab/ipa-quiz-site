@@ -195,18 +195,6 @@ export default async function AccountPage() {
             </li>
             <li>
               <Link
-                href="/account/pass-simulator"
-                className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
-              >
-                <span>
-                  <span className="font-medium">合格判定シミュレータ</span>
-                  <span className="ml-2 text-xs text-muted-foreground">合格確率</span>
-                </span>
-                <ArrowRight className="h-4 w-4 text-muted-foreground" />
-              </Link>
-            </li>
-            <li>
-              <Link
                 href="/account/tutor"
                 className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
               >

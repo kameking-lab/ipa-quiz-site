@@ -38,7 +38,14 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import { QUICK_ACTIONS, type QuickActionId, type LearnerProfile } from "@/lib/ai/prompts";
+import {
+  QUICK_ACTIONS,
+  RESPONSE_LENGTH_LABEL,
+  type QuickActionId,
+  type LearnerProfile,
+  type ResponseLength,
+} from "@/lib/ai/prompts";
+import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
 import {
   FREE_DAILY_LIMIT_CLIENT,
@@ -177,6 +184,7 @@ export function CopilotPanel({
   const [voiceState, setVoiceState] = React.useState<
     "idle" | "listening" | "unsupported" | "denied"
   >("idle");
+  const [responseLength, setResponseLength] = React.useState<ResponseLength>("medium");
 
   React.useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
@@ -221,7 +229,25 @@ export function CopilotPanel({
   React.useEffect(() => {
     if (typeof window === "undefined") return;
     const Ctor = getSpeechRecognitionCtor();
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (!Ctor) setVoiceState("unsupported");
+    try {
+      const stored = window.localStorage.getItem(LS_KEYS.copilotResponseLength);
+      if (stored === "short" || stored === "medium" || stored === "long") {
+        setResponseLength(stored);
+      }
+    } catch {
+      // ignore
+    }
+  }, []);
+
+  const handleLengthChange = React.useCallback((next: ResponseLength) => {
+    setResponseLength(next);
+    try {
+      window.localStorage.setItem(LS_KEYS.copilotResponseLength, next);
+    } catch {
+      // ignore
+    }
   }, []);
 
   // Stop any active recognition on unmount
@@ -295,6 +321,7 @@ export function CopilotPanel({
             learnerProfile: profile,
             character: characterState.id,
             characterEnabled: characterState.enabled,
+            responseLength,
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
@@ -366,6 +393,7 @@ export function CopilotPanel({
       isCorrect,
       onRateLimitHit,
       profile,
+      responseLength,
     ],
   );
 
@@ -595,6 +623,38 @@ export function CopilotPanel({
             <Button variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
               <X className="h-4 w-4" />
             </Button>
+          )}
+        </div>
+      </div>
+
+      {/* Response length toggle */}
+      <div className="border-b border-zinc-200 px-3 pt-2.5 pb-2 dark:border-zinc-800">
+        <div className="flex items-center gap-2">
+          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">回答の長さ</span>
+          <div
+            role="group"
+            aria-label="回答の長さ"
+            className="inline-flex overflow-hidden rounded-full border border-zinc-300 dark:border-zinc-700"
+          >
+            {(["short", "medium", "long"] as const).map((len) => (
+              <button
+                key={len}
+                type="button"
+                onClick={() => handleLengthChange(len)}
+                aria-pressed={responseLength === len}
+                className={cn(
+                  "px-2.5 py-0.5 text-[11px] font-medium transition-colors",
+                  responseLength === len
+                    ? "bg-sky-600 text-white"
+                    : "bg-white text-zinc-600 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800",
+                )}
+              >
+                {RESPONSE_LENGTH_LABEL[len]}
+              </button>
+            ))}
+          </div>
+          {responseLength === "short" && (
+            <span className="text-[10px] text-zinc-400 dark:text-zinc-500">30秒解説モード</span>
           )}
         </div>
       </div>

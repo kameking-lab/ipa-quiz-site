@@ -22,6 +22,32 @@ const EXAM_OPTIONS: { code: ExamCode; label: string; session: string; minutes: n
 
 type Phase = "setup" | "exam" | "result";
 
+const QUESTION_COUNT_PRESETS = [
+  { id: "full" as const, label: "全問", description: "本番と同じ問題数" },
+  { id: "half" as const, label: "半分", description: "標準の半分" },
+  { id: "20" as const, label: "20問", description: "短時間で要点演習" },
+  { id: "10" as const, label: "10問", description: "スキマ時間に最適" },
+];
+type QuestionCountId = (typeof QUESTION_COUNT_PRESETS)[number]["id"];
+
+function resolveQuestionCount(preset: QuestionCountId, full: number): number {
+  switch (preset) {
+    case "full":
+      return full;
+    case "half":
+      return Math.max(1, Math.ceil(full / 2));
+    case "20":
+      return Math.min(20, full);
+    case "10":
+      return Math.min(10, full);
+  }
+}
+
+function scaleMinutes(preset: QuestionCountId, fullMinutes: number, fullCount: number, count: number): number {
+  if (preset === "full") return fullMinutes;
+  return Math.max(5, Math.round((count / fullCount) * fullMinutes));
+}
+
 interface AnswerRecord {
   questionId: string;
   selectedAnswer: string;
@@ -54,6 +80,7 @@ export function MockExamClient({ initialExam, allQuestions }: MockExamClientProp
   const [selectedConfig, setSelectedConfig] = useState(
     EXAM_OPTIONS.find((o) => o.code === initialExam) ?? EXAM_OPTIONS[3]!,
   );
+  const [countPreset, setCountPreset] = useState<QuestionCountId>("full");
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<AnswerRecord[]>([]);
@@ -72,17 +99,20 @@ export function MockExamClient({ initialExam, allQuestions }: MockExamClientProp
         !q.needsReview &&
         !q.hasImage,
     );
-    const selected = shuffleArray(pool).slice(0, cfg.questionCount);
+    const targetCount = resolveQuestionCount(countPreset, cfg.questionCount);
+    const selected = shuffleArray(pool).slice(0, targetCount);
     if (selected.length === 0) return;
+
+    const minutes = scaleMinutes(countPreset, cfg.minutes, cfg.questionCount, selected.length);
 
     setQuestions(selected);
     setCurrentIndex(0);
     setAnswers([]);
     setSelectedAnswer(null);
-    setTimeLeft(cfg.minutes * 60);
+    setTimeLeft(minutes * 60);
     setTimeTaken(0);
     setPhase("exam");
-  }, [selectedConfig, allQuestions]);
+  }, [selectedConfig, allQuestions, countPreset]);
 
   // タイマー
   useEffect(() => {
@@ -156,6 +186,13 @@ export function MockExamClient({ initialExam, allQuestions }: MockExamClientProp
   }, [phase, answers, selectedConfig.code, questions]);
 
   if (phase === "setup") {
+    const targetCount = resolveQuestionCount(countPreset, selectedConfig.questionCount);
+    const targetMinutes = scaleMinutes(
+      countPreset,
+      selectedConfig.minutes,
+      selectedConfig.questionCount,
+      targetCount,
+    );
     return (
       <div className="space-y-6">
         <Card>
@@ -182,10 +219,54 @@ export function MockExamClient({ initialExam, allQuestions }: MockExamClientProp
           </CardContent>
         </Card>
 
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">問題数を選ぶ</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {QUESTION_COUNT_PRESETS.map((p) => {
+                const count = resolveQuestionCount(p.id, selectedConfig.questionCount);
+                const minutes = scaleMinutes(
+                  p.id,
+                  selectedConfig.minutes,
+                  selectedConfig.questionCount,
+                  count,
+                );
+                const isActive = countPreset === p.id;
+                return (
+                  <button
+                    key={p.id}
+                    type="button"
+                    onClick={() => setCountPreset(p.id)}
+                    className={`rounded-xl border px-3 py-3 text-left transition-colors ${
+                      isActive
+                        ? "border-sky-400 bg-sky-50 dark:border-sky-600 dark:bg-sky-950/40"
+                        : "border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600"
+                    }`}
+                    aria-pressed={isActive}
+                  >
+                    <div className="text-sm font-semibold">{p.label}</div>
+                    <div className="mt-0.5 text-[11px] text-zinc-500 dark:text-zinc-400">
+                      {count}問 / {minutes}分
+                    </div>
+                    <div className="mt-1 text-[10px] text-zinc-500 dark:text-zinc-500">
+                      {p.description}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+            <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
+              スキマ時間には10問・20問、本番想定なら全問を選んでください。
+            </p>
+          </CardContent>
+        </Card>
+
         <div className="rounded-xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950/30 dark:text-amber-300">
           <p className="font-medium">模擬試験の注意事項</p>
           <ul className="mt-1 list-disc list-inside space-y-1 text-amber-700 dark:text-amber-400">
-            <li>実際の試験と同じ問題数・制限時間で出題されます</li>
+            <li>選択した問題数（{targetCount}問）と制限時間（{targetMinutes}分）で出題されます</li>
             <li>途中中断すると回答は記録されません</li>
             <li>画像問題は除外されます</li>
           </ul>
@@ -196,7 +277,7 @@ export function MockExamClient({ initialExam, allQuestions }: MockExamClientProp
           onClick={startExam}
           className="w-full"
         >
-          模擬試験を開始
+          模擬試験を開始（{targetCount}問・{targetMinutes}分）
         </Button>
       </div>
     );

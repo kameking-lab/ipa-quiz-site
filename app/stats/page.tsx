@@ -154,8 +154,7 @@ export default async function StatsPage() {
       </Card>
 
       <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
-        透明性レポートは <Link href="/transparency" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">/transparency</Link>{" "}
-        / 利用者の声は <Link href="/feedback/public" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">/feedback/public</Link>。
+        透明性レポートは <Link href="/transparency" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">/transparency</Link>。
       </p>
     </main>
   );

@@ -6,9 +6,10 @@ import {
   COPILOT_SYSTEM_PROMPT,
   buildQuestionContext,
   buildLearnerProfileContext,
+  buildResponseLengthDirective,
   QUICK_ACTIONS,
 } from "@/lib/ai/prompts";
-import type { QuickActionId, LearnerProfile } from "@/lib/ai/prompts";
+import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
 import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import type { Question } from "@/lib/questions/types";
@@ -50,6 +51,7 @@ const BodySchema = z.object({
     .optional(),
   character: z.enum(["momo", "haru", "zan"]).optional(),
   characterEnabled: z.boolean().optional(),
+  responseLength: z.enum(["short", "medium", "long"]).optional(),
   // tier is accepted from client but ignored server-side during beta —
   // all users receive the same limits regardless of what they send.
   tier: z.enum(["free", "premium"]).default("free"),
@@ -103,9 +105,14 @@ export async function POST(req: Request) {
       ? CHARACTERS[payload.character].systemPrompt
       : null;
 
+  const responseLengthDirective = payload.responseLength
+    ? buildResponseLengthDirective(payload.responseLength satisfies ResponseLength)
+    : null;
+
   const system = [
     COPILOT_SYSTEM_PROMPT,
     ...(characterPrompt ? [characterPrompt] : []),
+    ...(responseLengthDirective ? [responseLengthDirective] : []),
     "---",
     questionContext,
     ...(profileContext ? ["---", profileContext] : []),
@@ -139,6 +146,13 @@ export async function POST(req: Request) {
   // unlocked once Stripe payments are implemented (Phase 4).
   const model = resolveModel("free");
 
+  const maxTokens =
+    payload.responseLength === "short"
+      ? 240
+      : payload.responseLength === "medium"
+        ? 480
+        : 800;
+
   const encoder = new TextEncoder();
   const stream = new ReadableStream({
     async start(controller) {
@@ -147,7 +161,7 @@ export async function POST(req: Request) {
           system,
           messages: userMessages,
           model,
-          maxTokens: 800,
+          maxTokens,
           temperature: 0.7,
         })) {
           controller.enqueue(encoder.encode(chunk));
