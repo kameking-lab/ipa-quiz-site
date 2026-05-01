@@ -147,10 +147,10 @@ export default async function SignInPage({
                 現在は未ログインでも全機能を無制限にご利用いただけます。
               </p>
               <Link
-                href="/pricing"
+                href="/about"
                 className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
               >
-                プラン詳細を見る →
+                プロジェクトについて →
               </Link>
             </div>
           )}

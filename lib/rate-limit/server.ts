@@ -22,9 +22,6 @@ export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
 // Backwards-compat exports retained for existing imports
 export const BETA_DAILY_LIMIT = FREE_INITIAL_LIMIT;
 export const FREE_DAILY_LIMIT = FREE_INITIAL_LIMIT;
-// Retained for paid-mode revival; unused while PAID_MODE=false
-export const PRO_DAILY_LIMIT = parseLimit(process.env.PRO_DAILY_LIMIT, 200);
-export const PRO_MINUTE_LIMIT = parseLimit(process.env.PRO_MINUTE_LIMIT, 15);
 
 if (typeof setInterval !== "undefined") {
   setInterval(() => {

@@ -12,7 +12,6 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { PremiumGate } from "@/components/PremiumGate";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { createHistoryStore } from "@/lib/storage/history";
 import {
@@ -23,14 +22,7 @@ import {
 } from "@/lib/learning/analytics";
 
 export function PassSimulatorClient() {
-  return (
-    <PremiumGate
-      featureTitle="合格判定シミュレータ"
-      featurePitch="現在の正答率・解答数と試験日から、合格確率を学習科学のロジスティック回帰モデルで毎日再計算。残り日数で何問解くべきか、AI が即答します。"
-    >
-      <Inner />
-    </PremiumGate>
-  );
+  return <Inner />;
 }
 
 function Inner() {

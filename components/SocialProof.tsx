@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { Star } from "lucide-react";
 
 const TOTAL_USERS = 15000;
@@ -68,9 +67,7 @@ export function SocialProofBanner() {
               ))}
               <span className="ml-1 text-sm font-bold text-zinc-800 dark:text-zinc-200">4.7</span>
             </div>
-            <Link href="/testimonials" className="text-xs text-sky-600 hover:underline dark:text-sky-400">
-              口コミを見る
-            </Link>
+            <div className="text-xs text-zinc-500 dark:text-zinc-400">利用者評価</div>
           </div>
         </div>
       </div>

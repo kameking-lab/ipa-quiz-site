@@ -189,10 +189,10 @@ export default function StudentPage() {
 
       <div className="text-center">
         <Link
-          href="/pricing"
+          href="/about"
           className="text-sm text-sky-600 underline-offset-2 hover:underline dark:text-sky-400"
         >
-          ← 全料金プランを見る
+          ← プロジェクトについて
         </Link>
       </div>
     </main>

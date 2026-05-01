@@ -12,7 +12,6 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { PremiumGate } from "@/components/PremiumGate";
 import { createHistoryStore } from "@/lib/storage/history";
 import { aggregateByCategory, estimateRequiredPractice } from "@/lib/learning/analytics";
 import type { CategoryStat } from "@/lib/learning/analytics";
@@ -24,14 +23,7 @@ interface Props {
 }
 
 export function WeaknessHeatmapClient({ categoryById }: Props) {
-  return (
-    <PremiumGate
-      featureTitle="弱点ヒートマップ"
-      featurePitch="あなたの学習データから「最も伸びしろのある分野」を学習科学に基づいて特定し、合格ラインまでの距離を1問単位で可視化します。"
-    >
-      <Inner categoryById={categoryById} />
-    </PremiumGate>
-  );
+  return <Inner categoryById={categoryById} />;
 }
 
 function Inner({ categoryById }: Props) {

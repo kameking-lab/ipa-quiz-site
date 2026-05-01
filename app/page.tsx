@@ -271,7 +271,7 @@ export default function HomePage() {
         </h2>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
           <Link
-            href="/premium/heatmap"
+            href="/account/weakness"
             className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
           >
             <div className="mb-1.5 text-base font-semibold">弱点ヒートマップ</div>
@@ -280,7 +280,7 @@ export default function HomePage() {
             </p>
           </Link>
           <Link
-            href="/premium/simulator"
+            href="/account/pass-simulator"
             className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
           >
             <div className="mb-1.5 text-base font-semibold">合格判定シミュレータ</div>
@@ -289,7 +289,7 @@ export default function HomePage() {
             </p>
           </Link>
           <Link
-            href="/premium/essay"
+            href="/account/essay-history"
             className="group block rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-violet-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-violet-700"
           >
             <div className="mb-1.5 text-base font-semibold">AI 論述添削 (β)</div>
