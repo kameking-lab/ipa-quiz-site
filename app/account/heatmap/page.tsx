@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, BarChart3 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
 
 export const metadata: Metadata = {
-  title: "学習カレンダー",
-  description: "過去365日の学習量をヒートマップで表示します。",
+  title: "学習カレンダー（準備中）",
+  description: "学習データを収集中です。",
   robots: { index: false, follow: false },
 };
 
@@ -23,19 +22,23 @@ export default function HeatmapPage() {
         学習カレンダー
       </h1>
       <p className="mb-6 text-sm text-zinc-600 dark:text-zinc-400">
-        過去365日のうち、学習した日が緑色で表示されます。毎日のコツコツが草に変わります。
+        過去365日の学習量をヒートマップで可視化する機能です。
       </p>
 
-      <LearningHeatmap days={365} showStats />
-
-      <div className="mt-6 rounded-2xl border border-zinc-200 bg-white p-5 text-sm dark:border-zinc-800 dark:bg-zinc-950">
-        <h2 className="mb-2 font-semibold">配色の目安</h2>
-        <ul className="space-y-1 text-xs text-zinc-600 dark:text-zinc-400">
-          <li>1〜4 問: 薄い緑</li>
-          <li>5〜14 問: 中緑</li>
-          <li>15〜29 問: 濃い緑</li>
-          <li>30 問以上: ダークグリーン（猛者の証）</li>
-        </ul>
+      <div className="rounded-2xl border-2 border-dashed border-zinc-300 bg-zinc-50/50 p-8 text-center dark:border-zinc-700 dark:bg-zinc-900/30">
+        <BarChart3 className="mx-auto mb-3 h-12 w-12 text-zinc-400 dark:text-zinc-600" />
+        <h2 className="mb-2 text-lg font-semibold text-zinc-700 dark:text-zinc-300">
+          データ収集中
+        </h2>
+        <p className="mx-auto max-w-md text-sm text-zinc-600 dark:text-zinc-400">
+          十分な学習履歴が貯まると、365日のヒートマップが表示されます。
+          まずは問題演習を続けて、データを育てていきましょう。
+        </p>
+        <div className="mt-5">
+          <Button asChild variant="primary" size="sm">
+            <Link href="/quiz?mode=random&exam=ap">いますぐ解く</Link>
+          </Button>
+        </div>
       </div>
     </main>
   );

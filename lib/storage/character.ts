@@ -12,7 +12,7 @@ export interface CharacterState {
 
 const DEFAULTS: CharacterState = {
   id: DEFAULT_CHARACTER_ID,
-  enabled: true,
+  enabled: false,
 };
 
 export function readCharacterState(): CharacterState {

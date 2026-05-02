@@ -143,7 +143,6 @@ export default function AboutPage() {
         {[
           ["/support", "応援する"],
           ["/contact", "お問い合わせ"],
-          ["/feedback/public", "公開フィードバック一覧"],
           ["/stats", "公開メトリクス"],
           ["/transparency", "運営の透明性レポート"],
           ["/operator", "運営者情報"],

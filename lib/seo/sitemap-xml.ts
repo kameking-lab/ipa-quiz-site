@@ -55,7 +55,6 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/support`, changeFrequency: "monthly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/contact`, changeFrequency: "monthly", priority: 0.4 },
-  { url: `${SITE_BASE_URL}/feedback/public`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/stats`, changeFrequency: "weekly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/transparency`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },

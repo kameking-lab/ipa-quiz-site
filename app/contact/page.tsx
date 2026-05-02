@@ -41,12 +41,6 @@ export default function ContactPage() {
                 /about
               </Link>
             </li>
-            <li>
-              ・利用者の声：
-              <Link href="/feedback/public" className="ml-1 underline hover:text-zinc-900 dark:hover:text-zinc-50">
-                公開フィードバック一覧
-              </Link>
-            </li>
           </ul>
         </CardContent>
       </Card>

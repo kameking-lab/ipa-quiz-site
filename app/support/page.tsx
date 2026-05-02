@@ -64,9 +64,6 @@ export default function SupportPage() {
             <Button asChild variant="primary">
               <Link href="/contact">お問い合わせフォーム</Link>
             </Button>
-            <Button asChild variant="outline">
-              <Link href="/feedback/public">公開フィードバック一覧を見る</Link>
-            </Button>
           </div>
         </CardContent>
       </Card>

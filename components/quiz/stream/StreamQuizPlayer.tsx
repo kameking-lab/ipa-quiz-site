@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { createHistoryStore } from "@/lib/storage/history";
 import { examLabel, formatYearSeason } from "@/lib/utils";
-import { ArrowLeft, ChevronUp, Check, X, Flame } from "lucide-react";
+import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
 
@@ -31,8 +31,14 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
   const [showFireworks, setShowFireworks] = React.useState(false);
   const [showSummary, setShowSummary] = React.useState(false);
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
+  const [reviewing, setReviewing] = React.useState(false);
 
   const question = questions[index];
+  const lastAnswer = answers[answers.length - 1];
+  const lastAnsweredQuestion = lastAnswer
+    ? questions.find((q) => q.id === lastAnswer.questionId) ?? null
+    : null;
+  const canReview = !reviewing && lastAnsweredQuestion !== null && lastAnsweredQuestion.id !== question?.id;
 
   const goNext = React.useCallback(() => {
     setTransitioning("out");
@@ -87,9 +93,10 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
 
   React.useEffect(() => {
     if (!revealed) return;
+    if (reviewing) return;
     const t = window.setTimeout(goNext, AUTO_ADVANCE_MS);
     return () => window.clearTimeout(t);
-  }, [revealed, goNext]);
+  }, [revealed, goNext, reviewing]);
 
   const touchStart = React.useRef<{ y: number; t: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -168,6 +175,17 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
           <span className="rounded-full bg-white/10 px-3 py-1 backdrop-blur">
             {index + 1} / {questions.length}
           </span>
+          {canReview && (
+            <button
+              type="button"
+              onClick={() => setReviewing(true)}
+              className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-zinc-200 backdrop-blur transition-colors hover:bg-white/20"
+              aria-label="直前に解いた問題に戻る"
+            >
+              <ChevronDown className="h-3 w-3" />
+              直前の問題
+            </button>
+          )}
           {combo >= 2 && (
             <span className="flex items-center gap-1 rounded-full bg-amber-500/30 px-3 py-1 text-amber-200 backdrop-blur">
               <Flame className="h-3 w-3" />
@@ -274,7 +292,130 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
         </button>
       )}
 
+      {reviewing && lastAnsweredQuestion && lastAnswer && (
+        <ReviewOverlay
+          question={lastAnsweredQuestion}
+          answer={lastAnswer}
+          onClose={() => setReviewing(false)}
+        />
+      )}
+
       {showFireworks && <ComboFireworks />}
+    </div>
+  );
+}
+
+function ReviewOverlay({
+  question,
+  answer,
+  onClose,
+}: {
+  question: Question;
+  answer: AnswerLog;
+  onClose: () => void;
+}) {
+  React.useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  const answerKey = Array.isArray(question.answer)
+    ? (question.answer[0] as string)
+    : String(question.answer);
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95 backdrop-blur"
+      role="dialog"
+      aria-modal="true"
+      aria-label="直前に解いた問題の復習"
+    >
+      <header className="flex items-center justify-between px-4 pt-4 pb-2">
+        <button
+          type="button"
+          onClick={onClose}
+          className="rounded-full bg-white/10 p-2 text-zinc-100 hover:bg-white/20"
+          aria-label="閉じる"
+        >
+          <ChevronUp className="h-4 w-4" />
+        </button>
+        <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-zinc-200">
+          直前の問題（復習）
+        </span>
+        <span className="w-9" aria-hidden="true" />
+      </header>
+
+      <div className="flex-1 overflow-y-auto px-5 pb-8">
+        <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
+          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+            {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+          </span>
+          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+            問{question.qNumber}
+          </span>
+          <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
+            {question.category}
+          </span>
+        </div>
+
+        <div className="mb-4 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed text-zinc-100 ring-1 ring-white/10">
+          {question.question.split("\n").map((line, i) => (
+            <p key={i} className="mb-2 last:mb-0">
+              {line}
+            </p>
+          ))}
+        </div>
+
+        <div className="mb-4 space-y-2">
+          {question.choices &&
+            CHOICE_KEYS.map((key) => {
+              const isCorrect = answerKey === key;
+              const isSelected = answer.selected === key;
+              let cls = "border-white/10 bg-white/5 text-zinc-300 opacity-70";
+              if (isCorrect) cls = "border-emerald-400 bg-emerald-500/20 text-emerald-50";
+              else if (isSelected) cls = "border-red-400 bg-red-500/20 text-red-50";
+              return (
+                <div
+                  key={key}
+                  className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug ${cls}`}
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
+                    {key}
+                  </span>
+                  <span className="flex-1 pt-0.5">{question.choices![key]}</span>
+                  {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-300" />}
+                  {isSelected && !isCorrect && (
+                    <X className="h-4 w-4 shrink-0 text-red-300" />
+                  )}
+                </div>
+              );
+            })}
+        </div>
+
+        <div className="rounded-2xl bg-white/5 p-4 text-sm text-zinc-100 ring-1 ring-white/10">
+          <div className="mb-2 flex items-center justify-between text-xs">
+            <span className="font-semibold text-emerald-300">正解: {answerKey}</span>
+            <span className={answer.correct ? "text-emerald-300" : "text-red-300"}>
+              あなたの回答: {answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
+            </span>
+          </div>
+          <div className="whitespace-pre-wrap leading-relaxed text-zinc-200">
+            {question.explanation || "解説は準備中です。"}
+          </div>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        onClick={onClose}
+        className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/90 to-transparent py-4 text-xs text-zinc-200 hover:text-white"
+      >
+        <ChevronUp className="h-4 w-4" />
+        現在の問題に戻る
+      </button>
     </div>
   );
 }
