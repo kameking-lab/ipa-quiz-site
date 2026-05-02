@@ -350,7 +350,7 @@ function BookCard({ book }: { book: RecommendedBook }) {
         {(amazonUrl || rakutenUrl) ? (
           <div className="flex flex-wrap gap-2">
             {amazonUrl && (
-              <Button asChild size="sm" variant="primary">
+              <Button asChild size="lg" variant="primary">
                 <a
                   href={amazonUrl}
                   target="_blank"
@@ -362,7 +362,7 @@ function BookCard({ book }: { book: RecommendedBook }) {
               </Button>
             )}
             {rakutenUrl && (
-              <Button asChild size="sm" variant="outline">
+              <Button asChild size="lg" variant="outline">
                 <a
                   href={rakutenUrl}
                   target="_blank"
