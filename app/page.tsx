@@ -150,6 +150,32 @@ export default function HomePage() {
         afternoonCounts={afternoonCounts}
       />
 
+      <section
+        aria-labelledby="recommended-books-banner"
+        className="mt-6 rounded-2xl border border-amber-200 bg-amber-50/60 p-5 dark:border-amber-900/60 dark:bg-amber-950/20"
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3
+              id="recommended-books-banner"
+              className="mb-1 text-sm font-semibold text-amber-800 dark:text-amber-200"
+            >
+              試験別のおすすめ問題集をAIが厳選
+            </h3>
+            <p className="text-xs leading-relaxed text-amber-900/80 dark:text-amber-100/80">
+              13区分すべての定番テキスト・問題集を、入門〜上級まで段階別にまとめました。
+              書籍と過去問AIの組み合わせで合格まで最短ルートに。
+            </p>
+          </div>
+          <Link
+            href="/recommended-books"
+            className="inline-flex shrink-0 items-center justify-center gap-1 rounded-lg bg-amber-600 px-4 py-2 text-xs font-semibold text-white transition hover:bg-amber-700 dark:bg-amber-700 dark:hover:bg-amber-600"
+          >
+            おすすめ問題集を見る →
+          </Link>
+        </div>
+      </section>
+
       <section className="mt-8 rounded-2xl border border-emerald-200 bg-emerald-50/40 p-5 dark:border-emerald-900/60 dark:bg-emerald-950/20">
         <h3 className="mb-2 text-sm font-semibold text-emerald-700 dark:text-emerald-300">
           このプロジェクトをシェアして応援する
