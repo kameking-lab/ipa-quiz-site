@@ -11,8 +11,6 @@ import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
 import { BadgeTracker } from "@/components/motivation/BadgeTracker";
 import { CouponTracker } from "@/components/motivation/CouponTracker";
-import { TrustBadge } from "@/components/TrustBadge";
-import { XFollowButton } from "@/components/XFollowButton";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
@@ -132,83 +130,99 @@ export default function RootLayout({
             <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
               {children}
             </div>
-            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-6 text-xs text-muted-foreground">
-              <div className="mx-auto flex max-w-5xl flex-col gap-4">
-                <div className="flex items-center gap-3">
-                  <span className="shrink-0 text-[11px] font-medium">📬 週1レポート</span>
-                  <EmailLeadCapture variant="footer" className="flex-1" />
-                </div>
-                <div className="flex flex-wrap items-center justify-center gap-1.5 sm:justify-start">
-                  <TrustBadge tone="sky" label="IPA公式準拠" />
-                  <TrustBadge tone="emerald" label="日本国内運営" />
-                  <TrustBadge tone="amber" label="教育貢献プロジェクト（無料）" />
-                  <TrustBadge tone="rose" label="ボランティア有志運営" />
-                </div>
-                <div className="flex flex-col items-center justify-between gap-3 sm:flex-row sm:items-start">
-                  <div className="text-center sm:text-left">
-                    <div className="mb-1.5">
-                      出典: IPA 情報処理技術者試験（
-                      <a
-                        href="https://www.ipa.go.jp/shiken/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-border hover:text-foreground"
-                      >
-                        ipa.go.jp
-                      </a>
-                      ） /{" "}
-                      <Link
-                        href="/about"
-                        className="underline decoration-border hover:text-foreground"
-                      >
-                        著作権・利用条件
-                      </Link>
-                    </div>
-                    <div className="mb-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
-                      本サービスはIPA公式ではない非公式のサービスです。試験名称はIPAの商標です。
-                    </div>
-                    <div className="flex flex-wrap justify-center gap-x-3 gap-y-1 sm:justify-start">
-                      {(
-                        [
-                          ["/about", "プロジェクトについて"],
-                          ["/recommended-books", "おすすめ問題集"],
-                          ["/support", "応援する"],
-                          ["/contact", "お問い合わせ"],
-                          ["/stats", "公開メトリクス"],
-                          ["/transparency", "運営の透明性"],
-                          ["/blog", "ブログ"],
-                          ["/terms", "利用規約"],
-                          ["/privacy", "プライバシー"],
-                          ["/operator", "運営者情報"],
-                          ["/faq", "FAQ"],
-                          ["/settings", "設定"],
-                        ] as const
-                      ).map(([href, label]) => (
-                        <Link
-                          key={href}
-                          href={href}
-                          className="underline decoration-border hover:text-foreground"
+            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
+              <div className="mx-auto max-w-5xl">
+                {/* 4-group nav grid */}
+                <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                  <div>
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      サービス
+                    </p>
+                    <ul className="space-y-2">
+                      <li><Link href="/faq" className="hover:text-foreground">FAQ</Link></li>
+                      <li><Link href="/contact" className="hover:text-foreground">お問い合わせ</Link></li>
+                      <li><Link href="/blog" className="hover:text-foreground">ブログ</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      プロジェクト
+                    </p>
+                    <ul className="space-y-2">
+                      <li><Link href="/about" className="hover:text-foreground">プロジェクトについて</Link></li>
+                      <li><Link href="/transparency" className="hover:text-foreground">透明性レポート</Link></li>
+                      <li><Link href="/operator" className="hover:text-foreground">運営者情報</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      法的
+                    </p>
+                    <ul className="space-y-2">
+                      <li><Link href="/terms" className="hover:text-foreground">利用規約</Link></li>
+                      <li><Link href="/privacy" className="hover:text-foreground">プライバシー</Link></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      その他
+                    </p>
+                    <ul className="space-y-2">
+                      <li>
+                        <a
+                          href="https://x.com/kakomon_ai_jp"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-foreground"
                         >
-                          {label}
-                        </Link>
-                      ))}
-                      <a
-                        href="https://note.com/kakomon_ai"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="underline decoration-border hover:text-foreground"
-                      >
-                        note
-                      </a>
+                          X フォロー
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://note.com/kakomon_ai"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-foreground"
+                        >
+                          note
+                        </a>
+                      </li>
+                      <li className="flex items-center gap-2">
+                        <span>テーマ</span>
+                        <ThemeToggle />
+                      </li>
+                    </ul>
+                    <div className="mt-3 space-y-1.5">
+                      <p className="text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                        週1レポート
+                      </p>
+                      <EmailLeadCapture variant="footer" />
                     </div>
                   </div>
-                  <div className="flex flex-col items-center gap-3 sm:items-end">
-                    <XFollowButton />
-                    <div className="flex items-center gap-3">
-                      <span className="hidden sm:inline">テーマ:</span>
-                      <ThemeToggle />
-                    </div>
-                  </div>
+                </div>
+
+                {/* IPA attribution (required) */}
+                <div className="mt-6 border-t border-border pt-4 text-center text-[11px] text-muted-foreground sm:text-left">
+                  出典: IPA 情報処理技術者試験（
+                  <a
+                    href="https://www.ipa.go.jp/shiken/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-border hover:text-foreground"
+                  >
+                    ipa.go.jp
+                  </a>
+                  ） /{" "}
+                  <Link
+                    href="/about"
+                    className="underline decoration-border hover:text-foreground"
+                  >
+                    著作権・利用条件
+                  </Link>
+                  <span className="ml-3 text-zinc-500 dark:text-zinc-500">
+                    本サービスは IPA 非公式の学習支援サービスです。
+                  </span>
                 </div>
               </div>
             </footer>
