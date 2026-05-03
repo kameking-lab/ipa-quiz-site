@@ -6,6 +6,7 @@ import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
 import { LearningCalendar } from "@/components/home/LearningCalendar";
 import { HomeAuxSection } from "@/components/home/HomeAuxSection";
+import { ContinueFromLast } from "@/components/ContinueFromLast";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import type { ExamCode } from "@/lib/questions/types";
@@ -90,6 +91,10 @@ export default function HomePage() {
           IPA試験対策の過去問をAI解説付きで完全無料公開。ボランティア有志による教育貢献プロジェクトです。
         </p>
         <HomeExamGrid questionCounts={questionCounts} />
+      </section>
+
+      <section className="mb-6" aria-label="続きから">
+        <ContinueFromLast />
       </section>
 
       <section className="mb-6">

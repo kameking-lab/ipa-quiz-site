@@ -11,6 +11,7 @@ import { GenerateSimilar } from "./GenerateSimilar";
 import { TtsControls } from "./TtsControls";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
+import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
 
 const FeedbackGateModal = dynamic(
@@ -124,12 +125,21 @@ export function QuizPlayer({
         exam: question.exam,
         correct,
       });
-      history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      const now = Date.now();
+      history.record({ id: question.id, selected: key, correct, at: now });
+      writeLastQuestion({
+        exam: question.exam,
+        year: question.year,
+        season: question.season,
+        session: question.session,
+        qNumber: question.qNumber,
+        answeredAt: now,
+      });
       recordSessionAnswer({
         id: question.id,
         correct,
         category: question.category ?? "未分類",
-        at: Date.now(),
+        at: now,
       });
       recordStudyOnDate();
       recordReview(question.id, correct);

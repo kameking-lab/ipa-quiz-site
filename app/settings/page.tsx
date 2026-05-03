@@ -35,6 +35,7 @@ import {
 import { CharacterSelector } from "@/components/character/CharacterSelector";
 import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore } from "@/lib/storage/history";
+import { clearLastQuestion } from "@/lib/storage/last-question";
 import {
   readMotivationSettings,
   writeMotivationSettings,
@@ -226,6 +227,7 @@ export default function SettingsPage() {
     if (!window.confirm("学習履歴をすべて削除しますか？この操作は取り消せません。")) return;
     const store = createHistoryStore();
     store.reset();
+    clearLastQuestion();
     setStats({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
     showToast("ok", "履歴を削除しました");
   }
