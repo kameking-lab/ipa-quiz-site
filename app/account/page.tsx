@@ -183,7 +183,7 @@ export default async function AccountPage() {
           <ul className="grid gap-2 sm:grid-cols-2">
             <li>
               <Link
-                href="/account/weakness"
+                href="/account/dashboard?tab=weakness"
                 className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
               >
                 <span>
@@ -195,7 +195,7 @@ export default async function AccountPage() {
             </li>
             <li>
               <Link
-                href="/account/tutor"
+                href="/account/dashboard?tab=tutor"
                 className="flex items-center justify-between rounded-xl border border-border bg-muted/30 p-3 text-sm transition-colors hover:bg-muted/60"
               >
                 <span>
