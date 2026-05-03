@@ -72,7 +72,7 @@ export default function TermsPage() {
               開発中の機能を含むため、不具合や予期しない動作が発生する可能性があります。
             </p>
             <p>
-              本規約における「運営」とは、本サービスを提供する個人運営チームを指します。
+              本規約における「運営」とは、本サービスを提供するボランティア有志による運営を指します。
               運営の透明性レポートは{" "}
               <Link href="/transparency" className="underline underline-offset-2">/transparency</Link>
               {" "}で公開しています。

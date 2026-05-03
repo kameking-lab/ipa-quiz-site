@@ -200,7 +200,7 @@ export default async function TransparencyPage() {
           <MetricCard label="総収録問題" value={total.toLocaleString("ja-JP")} sub="全試験区分合計" />
           <MetricCard label="試験区分" value="13 区分" sub="IP / SG / FE / AP / ほか" />
           <MetricCard label="利用料" value="¥0" sub="全機能無料" />
-          <MetricCard label="運営スタイル" value="個人 OSS" sub="教育貢献" />
+          <MetricCard label="運営スタイル" value="ボランティア有志による運営" sub="教育貢献" />
         </div>
         <Card>
           <CardHeader>
