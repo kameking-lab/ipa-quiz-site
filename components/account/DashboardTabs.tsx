@@ -76,7 +76,7 @@ export function DashboardTabs({ categoryById }: Props) {
             <TabsTrigger
               key={t.value}
               value={t.value}
-              className="min-h-[48px] whitespace-nowrap px-4 py-3 text-sm sm:flex-none"
+              className="h-12 min-h-12 shrink-0 whitespace-nowrap px-4 text-xs leading-none sm:text-sm"
             >
               {t.label}
             </TabsTrigger>

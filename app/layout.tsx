@@ -125,9 +125,9 @@ export default function RootLayout({
           >
             メインコンテンツへスキップ
           </a>
-          <div className="flex min-h-[100dvh] flex-col">
+          <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
             <SiteHeader />
-            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col outline-none">
+            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col overflow-x-clip outline-none">
               {children}
             </div>
             <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
