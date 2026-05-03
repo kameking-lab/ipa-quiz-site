@@ -1,7 +1,9 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
+import { ShareButtons } from "@/components/ShareButtons";
 
 export const metadata: Metadata = {
   title: "過去問 AI プロジェクトについて",
@@ -39,12 +41,12 @@ export default function AboutPage() {
           本プロジェクトは特定の法人・営利組織には属さず、
           <strong>ボランティア有志により運営</strong>されています。
           サーバー費用や AI 利用料を含む運営コストは、有志による持ち出しと、
-          一部の任意応援（<Link href="/support" className="underline">応援する</Link>）で賄っています。
+          一部の任意応援（<Link href="/about#support" className="underline">応援する</Link>）で賄っています。
         </p>
         <p>
           運営の透明性レポート・直近の活動状況は{" "}
           <Link className="underline" href="/transparency">/transparency</Link>{" "}
-          / <Link className="underline" href="/stats">/stats</Link>{" "}
+          / <Link className="underline" href="/transparency#metrics">公開メトリクス</Link>{" "}
           で公開しています。
         </p>
       </section>
@@ -141,9 +143,9 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">関連ページ</h2>
       <section className="mb-6 grid gap-2 sm:grid-cols-2">
         {[
-          ["/support", "応援する"],
+          ["/about#support", "応援する"],
           ["/contact", "お問い合わせ"],
-          ["/stats", "公開メトリクス"],
+          ["/transparency#metrics", "公開メトリクス"],
           ["/transparency", "運営の透明性レポート"],
           ["/operator", "運営者情報"],
         ].map(([href, label]) => (
@@ -155,6 +157,89 @@ export default function AboutPage() {
             {label}
           </Link>
         ))}
+      </section>
+
+      <h2 id="support" className="mb-4 mt-10 scroll-mt-20 text-lg font-semibold">
+        <Heart className="mr-2 inline-block h-5 w-5 text-rose-500" />
+        過去問 AI を応援する
+      </h2>
+      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+        全機能を無料で公開しているため、金銭的なご支援はお願いしていません。
+        かわりに、もっと届けたい人へつないでくださると、運営の励みになります。
+      </p>
+      <section className="mb-8 space-y-3">
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Share2 className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+              ① シェアする（一番うれしい応援）
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
+              SNS や勉強仲間にこのサイトの URL をシェアしてください。
+              学習中のスクリーンショットを X や Instagram に投稿いただけると、教育貢献プロジェクトの存在が広がります。
+            </p>
+            <ShareButtons
+              url="https://ipa-quiz-site.vercel.app/"
+              text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を応援しています。"
+              hashtags={["過去問AI", "IPA試験", "応用情報"]}
+            />
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <MessageSquare className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
+              ② フィードバックを送る
+            </CardTitle>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
+              使い心地・解説の誤り・改善要望をお寄せください。すべての投稿に目を通し、
+              プロジェクトに反映していきます。
+            </p>
+            <Button asChild variant="primary">
+              <Link href="/contact">お問い合わせフォーム</Link>
+            </Button>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <BookOpen className="h-4 w-4 text-amber-600 dark:text-amber-400" />
+              ③ 学習仲間を巻き込む
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
+              <li>所属する勉強会・社内チャットで紹介する</li>
+              <li>note・ブログ・YouTube などで取り上げる</li>
+              <li>学校・専門学校・社内研修の補助教材として活用する（無料・許諾不要）</li>
+            </ul>
+          </CardContent>
+        </Card>
+
+        <Card>
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-base">
+              <Users className="h-4 w-4 text-violet-600 dark:text-violet-400" />
+              ④ 教育機関・企業での活用
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-sm text-zinc-700 dark:text-zinc-300">
+              学校・専門学校・社内研修などでご活用いただく場合も、料金は一切かかりません。
+              活用事例の共有や、運用上のご相談がありましたら{" "}
+              <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
+                お問い合わせフォーム
+              </Link>
+              よりご連絡ください。
+            </p>
+          </CardContent>
+        </Card>
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">お問い合わせ</h2>

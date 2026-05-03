@@ -123,7 +123,7 @@ export default async function AccountPage() {
 
           <div className="w-full shrink-0 sm:w-auto">
             <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
-              <Link href="/support">
+              <Link href="/about#support">
                 <Heart className="h-4 w-4" />
                 応援する
                 <ArrowRight className="h-4 w-4" />

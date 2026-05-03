@@ -52,6 +52,19 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      // Consolidated account sub-pages → dashboard
+      { source: "/account/heatmap", destination: "/account/dashboard", permanent: true },
+      { source: "/account/badges", destination: "/account/dashboard", permanent: true },
+      { source: "/account/tutor", destination: "/account/dashboard", permanent: true },
+      { source: "/account/weakness", destination: "/account/dashboard", permanent: true },
+      // Account settings sub-pages → settings
+      { source: "/account/notifications", destination: "/settings", permanent: true },
+      { source: "/account/api-keys", destination: "/settings/api-keys", permanent: true },
+      // Merged pages (content absorbed into about / transparency)
+      { source: "/support", destination: "/about#support", permanent: true },
+      { source: "/stats", destination: "/transparency#metrics", permanent: true },
+      // Practice renamed
+      { source: "/practice/weakness", destination: "/quiz?mode=weakness", permanent: true },
     ];
   },
   compress: true,
