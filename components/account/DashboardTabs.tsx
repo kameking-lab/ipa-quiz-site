@@ -71,9 +71,13 @@ export function DashboardTabs({ categoryById }: Props) {
       </header>
 
       <Tabs value={tab} onValueChange={handleChange}>
-        <TabsList className="mb-6 flex w-full flex-wrap justify-start sm:flex-nowrap">
+        <TabsList className="mb-6 flex w-full flex-nowrap justify-start">
           {TABS.map((t) => (
-            <TabsTrigger key={t.value} value={t.value} className="flex-1 sm:flex-none">
+            <TabsTrigger
+              key={t.value}
+              value={t.value}
+              className="min-h-[48px] whitespace-nowrap px-4 py-3 text-sm sm:flex-none"
+            >
               {t.label}
             </TabsTrigger>
           ))}
