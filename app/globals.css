@@ -171,11 +171,12 @@ html {
   font-family: var(--font-sans);
   -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
   min-height: 100dvh;
-  overflow-x: hidden;
+  overflow-x: clip;
   font-feature-settings: "cv11", "ss01";
 }
 
