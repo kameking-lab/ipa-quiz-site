@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
+import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 
 export const metadata: Metadata = {
   title: "ストリーム学習 — TikTok風連続UI",
@@ -20,5 +21,10 @@ export default async function StreamQuizPage({
   searchParams: Promise<SearchParams>;
 }) {
   const sp = await searchParams;
-  return <StreamQuizLoader params={sp} />;
+  return (
+    <>
+      <QuizModeTabs active="stream" exam={sp.exam ?? "ap"} />
+      <StreamQuizLoader params={sp} />
+    </>
+  );
 }

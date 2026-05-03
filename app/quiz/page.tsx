@@ -1,6 +1,8 @@
 import type { ExamCode, QuizFilter, QuizMode, Season, Session } from "@/lib/questions/types";
 import { getPoolIds } from "@/lib/questions/pool-server";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
+import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 
 interface SearchParams {
   mode?: string;
@@ -16,7 +18,7 @@ interface SearchParams {
   order?: string;
 }
 
-const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered"];
+const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
 const VALID_SESSIONS: Session[] = ["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b"];
 
 export default async function QuizPage({
@@ -43,9 +45,10 @@ export default async function QuizPage({
         .filter(Boolean)
     : undefined;
 
+  const exam = (sp.exam as ExamCode | undefined) ?? "ap";
   const filter: QuizFilter = {
     mode,
-    exam: examGroup ? undefined : ((sp.exam as ExamCode | undefined) ?? "ap"),
+    exam: examGroup ? undefined : exam,
     examGroup,
     year: sp.year ? Number(sp.year) : undefined,
     season: sp.season as Season | undefined,
@@ -59,5 +62,23 @@ export default async function QuizPage({
 
   const poolIds = await getPoolIds(filter);
 
-  return <QuizClient poolIds={poolIds} mode={mode} backHref="/" exam={sp.exam ?? "ap"} />;
+  let categoryById: Record<string, string> | undefined;
+  if (mode === "weakness") {
+    const examQuestions = await getQuestionsForExam(exam);
+    categoryById = {};
+    for (const q of examQuestions) categoryById[q.id] = q.category;
+  }
+
+  return (
+    <>
+      <QuizModeTabs active={mode} exam={exam} />
+      <QuizClient
+        poolIds={poolIds}
+        mode={mode}
+        backHref="/"
+        exam={exam}
+        categoryById={categoryById}
+      />
+    </>
+  );
 }

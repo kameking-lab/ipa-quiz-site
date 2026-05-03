@@ -6,9 +6,12 @@ import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
 import { startSession } from "@/lib/motivation/session";
 import { orderByPriority } from "@/lib/learning/spaced-repetition";
+import { aggregateByCategory } from "@/lib/learning/analytics";
 import { Loader2 } from "lucide-react";
 
 const MAX_POOL = 80;
+const WEAKNESS_THRESHOLD = 0.6;
+const WEAKNESS_MIN_ATTEMPTS = 3;
 
 function shuffleInPlace<T>(arr: T[]): T[] {
   for (let i = arr.length - 1; i > 0; i--) {
@@ -18,7 +21,27 @@ function shuffleInPlace<T>(arr: T[]): T[] {
   return arr;
 }
 
-function deriveSessionPool(poolIds: string[], mode: QuizMode): string[] {
+function selectWeakCategories(
+  categoryById: Record<string, string>,
+): Set<string> | null {
+  const history = createHistoryStore();
+  const lookup = new Map<string, { category: string }>();
+  for (const [id, category] of Object.entries(categoryById)) {
+    lookup.set(id, { category });
+  }
+  const stats = aggregateByCategory(history.getAllEntries(), lookup);
+  const weak = stats
+    .filter((s) => s.attempts >= WEAKNESS_MIN_ATTEMPTS && s.accuracy < WEAKNESS_THRESHOLD)
+    .map((s) => s.category);
+  if (weak.length === 0) return null;
+  return new Set(weak);
+}
+
+function deriveSessionPool(
+  poolIds: string[],
+  mode: QuizMode,
+  categoryById?: Record<string, string>,
+): string[] {
   let ids = [...poolIds];
   if (mode === "review" || mode === "unanswered") {
     const history = createHistoryStore();
@@ -31,9 +54,19 @@ function deriveSessionPool(poolIds: string[], mode: QuizMode): string[] {
       ids = ids.filter((id) => !answered.has(id));
     }
   }
+  if (mode === "weakness" && categoryById) {
+    const weakSet = selectWeakCategories(categoryById);
+    if (weakSet) {
+      ids = ids.filter((id) => {
+        const cat = categoryById[id];
+        return cat ? weakSet.has(cat) : false;
+      });
+    }
+    // fallback: no weak categories detected → no filter, use random shuffle
+  }
   if (mode === "review") {
     ids = orderByPriority(ids);
-  } else if (mode === "random" || mode === "unanswered") {
+  } else if (mode === "random" || mode === "unanswered" || mode === "weakness") {
     shuffleInPlace(ids);
   }
   return ids.slice(0, MAX_POOL);
@@ -52,11 +85,13 @@ export function QuizClient({
   mode,
   backHref,
   exam = "ap",
+  categoryById,
 }: {
   poolIds: string[];
   mode: QuizMode;
   backHref: string;
   exam?: string;
+  categoryById?: Record<string, string>;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
@@ -66,11 +101,11 @@ export function QuizClient({
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
     // eslint-disable-next-line react-hooks/set-state-in-effect
-    setSessionIds(deriveSessionPool(poolIds, mode));
+    setSessionIds(deriveSessionPool(poolIds, mode, categoryById));
     setIndex(0);
     cache.current.clear();
     startSession(mode);
-  }, [poolIds, mode]);
+  }, [poolIds, mode, categoryById]);
 
   // Load current + prefetch next whenever index advances.
   React.useEffect(() => {
