@@ -138,42 +138,42 @@ export default function RootLayout({
                     <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       サービス
                     </p>
-                    <ul className="space-y-2">
-                      <li><Link href="/faq" className="hover:text-foreground">FAQ</Link></li>
-                      <li><Link href="/contact" className="hover:text-foreground">お問い合わせ</Link></li>
-                      <li><Link href="/blog" className="hover:text-foreground">ブログ</Link></li>
+                    <ul className="space-y-0">
+                      <li><Link href="/faq" className="block py-2 hover:text-foreground">FAQ</Link></li>
+                      <li><Link href="/contact" className="block py-2 hover:text-foreground">お問い合わせ</Link></li>
+                      <li><Link href="/blog" className="block py-2 hover:text-foreground">ブログ</Link></li>
                     </ul>
                   </div>
                   <div>
                     <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       プロジェクト
                     </p>
-                    <ul className="space-y-2">
-                      <li><Link href="/about" className="hover:text-foreground">プロジェクトについて</Link></li>
-                      <li><Link href="/transparency" className="hover:text-foreground">透明性レポート</Link></li>
-                      <li><Link href="/operator" className="hover:text-foreground">運営者情報</Link></li>
+                    <ul className="space-y-0">
+                      <li><Link href="/about" className="block py-2 hover:text-foreground">プロジェクトについて</Link></li>
+                      <li><Link href="/transparency" className="block py-2 hover:text-foreground">透明性レポート</Link></li>
+                      <li><Link href="/operator" className="block py-2 hover:text-foreground">運営者情報</Link></li>
                     </ul>
                   </div>
                   <div>
                     <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       法的
                     </p>
-                    <ul className="space-y-2">
-                      <li><Link href="/terms" className="hover:text-foreground">利用規約</Link></li>
-                      <li><Link href="/privacy" className="hover:text-foreground">プライバシー</Link></li>
+                    <ul className="space-y-0">
+                      <li><Link href="/terms" className="block py-2 hover:text-foreground">利用規約</Link></li>
+                      <li><Link href="/privacy" className="block py-2 hover:text-foreground">プライバシー</Link></li>
                     </ul>
                   </div>
                   <div>
                     <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       その他
                     </p>
-                    <ul className="space-y-2">
+                    <ul className="space-y-0">
                       <li>
                         <a
                           href="https://x.com/kakomon_ai_jp"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-foreground"
+                          className="block py-2 hover:text-foreground"
                         >
                           X フォロー
                         </a>
@@ -183,7 +183,7 @@ export default function RootLayout({
                           href="https://note.com/kakomon_ai"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-foreground"
+                          className="block py-2 hover:text-foreground"
                         >
                           note
                         </a>

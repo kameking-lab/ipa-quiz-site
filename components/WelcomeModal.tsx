@@ -106,7 +106,7 @@ export function WelcomeModal() {
               <button
                 type="button"
                 onClick={handleDismiss}
-                className="text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
+                className="min-h-[44px] w-full text-xs text-zinc-400 hover:text-zinc-600 dark:hover:text-zinc-300"
               >
                 あとで見る
               </button>
