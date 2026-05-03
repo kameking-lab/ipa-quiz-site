@@ -71,10 +71,19 @@ export function SiteHeader() {
               className="relative"
               onMouseEnter={() => setDropOpen(true)}
               onMouseLeave={() => setDropOpen(false)}
+              onBlur={(e) => {
+                if (!e.currentTarget.contains(e.relatedTarget as Node | null)) {
+                  setDropOpen(false);
+                }
+              }}
             >
               <button
+                onClick={() => setDropOpen((v) => !v)}
+                onKeyDown={(e) => {
+                  if (e.key === "Escape") setDropOpen(false);
+                }}
                 className={cn(
-                  "flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                  "flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                   isQuizActive
                     ? "text-foreground"
                     : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -83,15 +92,19 @@ export function SiteHeader() {
                 aria-expanded={dropOpen}
               >
                 問題を解く
-                <ChevronDown className="h-3.5 w-3.5" />
+                <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
               </button>
               {dropOpen && (
-                <div className="absolute left-0 top-full z-50 mt-1 w-48 rounded-xl border border-border bg-background py-1 shadow-lg">
+                <div
+                  role="menu"
+                  className="absolute left-0 top-full z-50 mt-1 w-48 rounded-xl border border-border bg-background py-1 shadow-lg"
+                >
                   {QUIZ_MODES.map((m) => (
                     <Link
                       key={m.href}
                       href={m.href}
-                      className="block px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted"
+                      role="menuitem"
+                      className="block rounded-md px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:outline-none"
                       onClick={() => setDropOpen(false)}
                     >
                       {m.label}
@@ -104,7 +117,7 @@ export function SiteHeader() {
             <Link
               href="/account/dashboard"
               className={cn(
-                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 isAccountActive
                   ? "text-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -116,7 +129,7 @@ export function SiteHeader() {
             <Link
               href="/recommended-books"
               className={cn(
-                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
                 isBooksActive
                   ? "text-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -132,10 +145,10 @@ export function SiteHeader() {
           <StreakBadge className="hidden sm:inline-flex" />
           <Link
             href="/settings"
-            className="hidden rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:inline-flex"
+            className="hidden rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background md:inline-flex"
             aria-label="設定"
           >
-            <Settings className="h-4 w-4" />
+            <Settings className="h-4 w-4" aria-hidden="true" />
           </Link>
 
           {/* Mobile menu */}

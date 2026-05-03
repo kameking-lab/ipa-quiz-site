@@ -269,7 +269,7 @@ export default function SettingsPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="inline-flex items-center gap-1 rounded-lg bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm hover:text-foreground"
+              className="inline-flex items-center gap-1 rounded-lg bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {s.icon}
               {s.label}
@@ -291,20 +291,23 @@ export default function SettingsPage() {
               <p className="mb-3 text-xs font-medium uppercase tracking-wider text-muted-foreground">
                 テーマ
               </p>
-              <div className="grid grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="テーマ選択">
                 {THEME_OPTIONS.map(({ value, label, icon }) => {
                   const active = theme === value;
                   return (
                     <button
                       key={value}
                       onClick={() => setTheme(value)}
-                      className={`flex flex-col items-center gap-1.5 rounded-xl border px-3 py-3 text-sm font-medium transition-all ${
+                      role="radio"
+                      aria-checked={active}
+                      aria-label={`テーマを${label}に切り替え`}
+                      className={`flex flex-col items-center gap-1.5 rounded-xl border px-3 py-3 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                         active
                           ? "border-primary bg-primary text-primary-foreground shadow-sm"
                           : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:text-foreground"
                       }`}
                     >
-                      <span className={active ? "" : "text-muted-foreground"}>{icon}</span>
+                      <span className={active ? "" : "text-muted-foreground"} aria-hidden="true">{icon}</span>
                       {label}
                     </button>
                   );
