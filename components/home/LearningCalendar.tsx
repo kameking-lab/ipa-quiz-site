@@ -3,6 +3,13 @@
 import * as React from "react";
 import Link from "next/link";
 import { ChevronRight, Flame } from "lucide-react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { createHistoryStore } from "@/lib/storage/history";
 import { jstDateString } from "@/lib/streak/core";
 import { readStreak } from "@/lib/streak/storage";
@@ -12,18 +19,21 @@ const DAY_COUNT = 30;
 interface DayCell {
   iso: string;
   label: string;
+  fullLabel: string;
   count: number;
   correct: number;
 }
 
-function buildLast30Days(): { iso: string; label: string }[] {
-  const out: { iso: string; label: string }[] = [];
+function buildLast30Days(): { iso: string; label: string; fullLabel: string }[] {
+  const out: { iso: string; label: string; fullLabel: string }[] = [];
   const today = new Date();
+  const weekdayJa = ["日", "月", "火", "水", "木", "金", "土"];
   for (let i = DAY_COUNT - 1; i >= 0; i--) {
     const d = new Date(today.getFullYear(), today.getMonth(), today.getDate() - i);
     const iso = jstDateString(d);
     const label = `${d.getMonth() + 1}/${d.getDate()}`;
-    out.push({ iso, label });
+    const fullLabel = `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日（${weekdayJa[d.getDay()]}）`;
+    out.push({ iso, label, fullLabel });
   }
   return out;
 }
@@ -50,6 +60,7 @@ export function LearningCalendar() {
   const [todayCount, setTodayCount] = React.useState(0);
   const [hydrated, setHydrated] = React.useState(false);
   const [hovered, setHovered] = React.useState<DayCell | null>(null);
+  const [selected, setSelected] = React.useState<DayCell | null>(null);
 
   React.useEffect(() => {
     const skeleton = buildLast30Days();
@@ -68,6 +79,7 @@ export function LearningCalendar() {
       return {
         iso: d.iso,
         label: d.label,
+        fullLabel: d.fullLabel,
         count: b?.count ?? 0,
         correct: b?.correct ?? 0,
       };
@@ -134,8 +146,8 @@ export function LearningCalendar() {
             d.count > 0 ? Math.round((d.correct / d.count) * 100) : null;
           const title =
             d.count === 0
-              ? `${d.label}: 学習なし`
-              : `${d.label}: ${d.count}問 / 正答率 ${accuracy}%`;
+              ? `${d.fullLabel}: 学習なし`
+              : `${d.fullLabel}: ${d.count}問 / 正答率 ${accuracy}%`;
           return (
             <button
               key={d.iso}
@@ -146,8 +158,8 @@ export function LearningCalendar() {
               onMouseLeave={() => setHovered(null)}
               onFocus={() => setHovered(d)}
               onBlur={() => setHovered(null)}
-              onClick={() => setHovered((cur) => (cur?.iso === d.iso ? null : d))}
-              className={`aspect-square rounded-sm transition hover:ring-2 hover:ring-sky-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 ${intensityClass(d.count)}`}
+              onClick={() => setSelected(d)}
+              className={`aspect-square rounded-sm transition hover:ring-2 hover:ring-sky-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950 ${intensityClass(d.count)}`}
             />
           );
         })}
@@ -167,6 +179,48 @@ export function LearningCalendar() {
           </span>
         )}
       </div>
+
+      <Dialog open={selected !== null} onOpenChange={(open) => !open && setSelected(null)}>
+        <DialogContent className="max-w-sm">
+          <DialogHeader>
+            <DialogTitle>{selected?.fullLabel}</DialogTitle>
+            <DialogDescription>学習サマリー</DialogDescription>
+          </DialogHeader>
+          {selected && (
+            <div className="space-y-3">
+              {selected.count === 0 ? (
+                <p className="text-sm text-zinc-600 dark:text-zinc-400">この日は学習記録がありません。</p>
+              ) : (
+                <>
+                  <div className="grid grid-cols-3 gap-2 rounded-xl border border-zinc-200 bg-zinc-50 p-3 text-center dark:border-zinc-800 dark:bg-zinc-900/50">
+                    <div>
+                      <p className="text-xl font-bold text-zinc-900 dark:text-zinc-50">{selected.count}</p>
+                      <p className="mt-0.5 text-[10px] text-zinc-500 dark:text-zinc-400">解答</p>
+                    </div>
+                    <div>
+                      <p className="text-xl font-bold text-emerald-600 dark:text-emerald-400">{selected.correct}</p>
+                      <p className="mt-0.5 text-[10px] text-zinc-500 dark:text-zinc-400">正解</p>
+                    </div>
+                    <div>
+                      <p className="text-xl font-bold text-sky-600 dark:text-sky-400">
+                        {Math.round((selected.correct / selected.count) * 100)}%
+                      </p>
+                      <p className="mt-0.5 text-[10px] text-zinc-500 dark:text-zinc-400">正答率</p>
+                    </div>
+                  </div>
+                  <p className="text-xs text-zinc-600 dark:text-zinc-400">
+                    {selected.label}は{selected.count}問解きました。間違えた問題は
+                    <Link href="/account/dashboard" className="text-sky-600 underline underline-offset-2 dark:text-sky-400">
+                      ダッシュボード
+                    </Link>
+                    から復習できます。
+                  </p>
+                </>
+              )}
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 }

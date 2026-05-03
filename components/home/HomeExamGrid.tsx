@@ -195,8 +195,8 @@ function ExamCard({
     >
       <Link
         href={`/${exam.id}`}
-        aria-label={`${exam.name}の詳細を開く`}
-        className="flex flex-col gap-1.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:rounded-lg"
+        aria-label={`${exam.name}の詳細を開く${level === "in-progress" ? `（解答中・${uniqueAnswered}問解答済み）` : level === "passing" ? "（合格圏）" : ""}`}
+        className="flex flex-col gap-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <div className="flex items-start justify-between gap-1">
           <span className="rounded-lg bg-sky-600 px-2 py-0.5 text-sm font-bold text-white">
@@ -223,7 +223,7 @@ function ExamCard({
       <Link
         href={`/quiz?mode=random&exam=${exam.id}`}
         aria-label={`${exam.name}をランダム出題で開始`}
-        className="absolute bottom-2 right-2 rounded-md bg-white/90 p-1.5 text-sky-700 shadow-sm ring-1 ring-sky-200 transition hover:bg-sky-600 hover:text-white dark:bg-zinc-900/90 dark:text-sky-300 dark:ring-sky-800 dark:hover:bg-sky-600 dark:hover:text-white"
+        className="absolute bottom-2 right-2 rounded-md bg-white/90 p-1.5 text-sky-700 shadow-sm ring-1 ring-sky-200 transition hover:bg-sky-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-zinc-900/90 dark:text-sky-300 dark:ring-sky-800 dark:hover:bg-sky-600 dark:hover:text-white"
       >
         <Shuffle className="h-3.5 w-3.5" aria-hidden="true" />
       </Link>
