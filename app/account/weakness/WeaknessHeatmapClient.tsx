@@ -49,11 +49,19 @@ function Inner({ categoryById }: Props) {
     return <div className="h-64 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />;
   }
 
-  if (stats.length === 0) {
+  if (stats.length === 0 || overall.attempts < 20) {
     return (
       <Card>
-        <CardContent className="pt-6 text-sm text-zinc-600 dark:text-zinc-400">
-          まだ十分なデータがありません。20 問以上回答するとヒートマップが表示されます。
+        <CardContent className="flex flex-col items-center gap-2 py-10 text-center">
+          <p className="text-sm font-semibold text-zinc-700 dark:text-zinc-300">データ収集中</p>
+          <p className="text-xs text-zinc-500 dark:text-zinc-400">
+            20 問以上回答するとヒートマップ・弱点分析が表示されます
+            {overall.attempts > 0 && (
+              <>
+                <br />（現在 {overall.attempts} 問）
+              </>
+            )}
+          </p>
         </CardContent>
       </Card>
     );
@@ -88,30 +96,32 @@ function Inner({ categoryById }: Props) {
         </CardContent>
       </Card>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">分野別レーダーチャート</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="h-80 w-full">
-            <ResponsiveContainer width="100%" height="100%">
-              <RadarChart data={chartData}>
-                <PolarGrid stroke="#cbd5e1" />
-                <PolarAngleAxis dataKey="category" tick={{ fontSize: 11 }} />
-                <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10 }} />
-                <Radar
-                  name="正答率(%)"
-                  dataKey="accuracy"
-                  stroke="#0284c7"
-                  fill="#0284c7"
-                  fillOpacity={0.3}
-                />
-                <Tooltip />
-              </RadarChart>
-            </ResponsiveContainer>
-          </div>
-        </CardContent>
-      </Card>
+      {chartData.length >= 3 && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="text-base">分野別レーダーチャート</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="h-80 w-full">
+              <ResponsiveContainer width="100%" height="100%">
+                <RadarChart data={chartData}>
+                  <PolarGrid stroke="#cbd5e1" />
+                  <PolarAngleAxis dataKey="category" tick={{ fontSize: 11 }} />
+                  <PolarRadiusAxis angle={90} domain={[0, 100]} tick={{ fontSize: 10 }} />
+                  <Radar
+                    name="正答率(%)"
+                    dataKey="accuracy"
+                    stroke="#0284c7"
+                    fill="#0284c7"
+                    fillOpacity={0.3}
+                  />
+                  <Tooltip />
+                </RadarChart>
+              </ResponsiveContainer>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       <div className="grid gap-4 md:grid-cols-2">
         <Card>

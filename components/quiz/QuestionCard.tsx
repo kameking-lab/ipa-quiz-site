@@ -32,12 +32,12 @@ export function QuestionCard({
           </span>
         )}
       </div>
-      <div className="selectable-content relative rounded-2xl border border-zinc-200 bg-white p-5 text-base leading-relaxed text-zinc-900 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
-        <div className="absolute right-3 top-3">
+      <div className="selectable-content rounded-2xl border border-zinc-200 bg-white p-5 text-base leading-relaxed text-zinc-900 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
+        <div className="mb-2 flex justify-end">
           <TTSButton text={question.question} label="読み上げ" />
         </div>
         {question.question.split("\n").map((line, i) => (
-          <p key={i} className="mb-2 pr-20 last:mb-0">
+          <p key={i} className="mb-2 last:mb-0">
             {line}
           </p>
         ))}
