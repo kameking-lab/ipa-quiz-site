@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-import { withSentryConfig } from "@sentry/nextjs";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -44,6 +43,17 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      // /quiz with no mode query → home (broken entry point)
+      {
+        source: "/quiz",
+        missing: [{ type: "query", key: "mode" }],
+        destination: "/",
+        permanent: true,
+      },
+    ];
+  },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,
@@ -91,10 +101,13 @@ const nextConfig: NextConfig = {
 
 // SENTRY_DSN が設定されている場合のみ withSentryConfig を適用してソースマップ
 // アップロード等を有効化。未設定時は素の nextConfig を返してビルドコストゼロ。
+// dynamic require を使って Sentry の native deps を DSN がない環境でロードしない。
 const hasSentryDsn = Boolean(process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN);
 
-export default hasSentryDsn
-  ? withSentryConfig(nextConfig, {
+// eslint-disable-next-line @typescript-eslint/no-require-imports
+const exported: NextConfig = hasSentryDsn
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  ? require("@sentry/nextjs").withSentryConfig(nextConfig, {
       org: process.env.SENTRY_ORG,
       project: process.env.SENTRY_PROJECT,
       silent: !process.env.CI,
@@ -103,3 +116,5 @@ export default hasSentryDsn
       disableLogger: true,
     })
   : nextConfig;
+
+export default exported;

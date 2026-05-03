@@ -3,12 +3,10 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, ArrowRight } from "lucide-react";
+import { Menu, Settings, ChevronDown } from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
-import { ThemeToggle } from "./ThemeToggle";
-import { Button } from "./ui/button";
-import { ExamSelectorDialog } from "./ExamSelectorDialog";
-import { XFollowButton } from "./XFollowButton";
+import { StreakBadge } from "@/lib/streak/StreakBadge";
+import { cn } from "@/lib/utils";
 import {
   Sheet,
   SheetContent,
@@ -17,21 +15,19 @@ import {
   SheetHeader,
   SheetTitle,
 } from "./ui/sheet";
-import { StreakBadge } from "@/lib/streak/StreakBadge";
-import { cn } from "@/lib/utils";
 
-const NAV_LINKS = [
-  { href: "/", label: "ホーム" },
-  { href: "/modes/topic", label: "分野別" },
-  { href: "/modes/year", label: "年度別" },
-  { href: "/recommended-books", label: "問題集" },
-  { href: "/faq", label: "FAQ" },
+const QUIZ_MODES = [
+  { href: "/quiz?mode=random&exam=ap", label: "通常クイズ" },
+  { href: "/quiz/stream", label: "ストリームモード" },
+  { href: "/quiz?mode=review&exam=ap", label: "復習モード" },
+  { href: "/mock-exam", label: "模試" },
 ] as const;
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const [dropOpen, setDropOpen] = React.useState(false);
 
   React.useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 4);
@@ -40,10 +36,10 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isActive = (href: string) => {
-    if (href === "/") return pathname === "/";
-    return pathname?.startsWith(href);
-  };
+  const isQuizActive =
+    pathname?.startsWith("/quiz") || pathname?.startsWith("/mock-exam");
+  const isAccountActive = pathname?.startsWith("/account");
+  const isBooksActive = pathname?.startsWith("/recommended-books");
 
   return (
     <header
@@ -55,7 +51,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-4">
           <Link
             href="/"
             className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -63,41 +59,85 @@ export function SiteHeader() {
           >
             <SiteLogo />
           </Link>
-          <nav className="hidden items-center gap-1 md:flex" aria-label="グローバルナビゲーション">
-            {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
+
+          {/* Desktop nav */}
+          <nav
+            className="hidden items-center gap-0.5 md:flex"
+            aria-label="グローバルナビゲーション"
+          >
+            {/* 問題を解く dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setDropOpen(true)}
+              onMouseLeave={() => setDropOpen(false)}
+            >
+              <button
                 className={cn(
-                  "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
-                  isActive(link.href)
+                  "flex items-center gap-1 rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                  isQuizActive
                     ? "text-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-muted",
+                    : "text-muted-foreground hover:bg-muted hover:text-foreground",
                 )}
-                aria-current={isActive(link.href) ? "page" : undefined}
+                aria-haspopup="true"
+                aria-expanded={dropOpen}
               >
-                {link.label}
-              </Link>
-            ))}
+                問題を解く
+                <ChevronDown className="h-3.5 w-3.5" />
+              </button>
+              {dropOpen && (
+                <div className="absolute left-0 top-full z-50 mt-1 w-48 rounded-xl border border-border bg-background py-1 shadow-lg">
+                  {QUIZ_MODES.map((m) => (
+                    <Link
+                      key={m.href}
+                      href={m.href}
+                      className="block px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted"
+                      onClick={() => setDropOpen(false)}
+                    >
+                      {m.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/account/dashboard"
+              className={cn(
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                isAccountActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+              aria-current={isAccountActive ? "page" : undefined}
+            >
+              学習進捗
+            </Link>
+            <Link
+              href="/recommended-books"
+              className={cn(
+                "rounded-md px-3 py-1.5 text-sm font-medium transition-colors",
+                isBooksActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+              aria-current={isBooksActive ? "page" : undefined}
+            >
+              推薦書籍
+            </Link>
           </nav>
         </div>
 
         <div className="flex items-center gap-2">
           <StreakBadge className="hidden sm:inline-flex" />
-          <XFollowButton size="sm" className="hidden sm:inline-flex" />
-          <div className="hidden md:block">
-            <ThemeToggle />
-          </div>
-          <ExamSelectorDialog
-            trigger={
-              <Button variant="primary" size="sm" className="hidden md:inline-flex">
-                いますぐ解く
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Button>
-            }
-          />
+          <Link
+            href="/settings"
+            className="hidden rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground md:inline-flex"
+            aria-label="設定"
+          >
+            <Settings className="h-4 w-4" />
+          </Link>
 
-
+          {/* Mobile menu */}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <button
@@ -107,44 +147,57 @@ export function SiteHeader() {
                 <Menu className="h-5 w-5" />
               </button>
             </SheetTrigger>
-            <SheetContent side="right" className="flex w-[80vw] max-w-sm flex-col gap-6">
+            <SheetContent
+              side="right"
+              className="flex w-[80vw] max-w-sm flex-col gap-6"
+            >
               <SheetHeader>
                 <SheetTitle className="flex items-center gap-2">
                   <SiteLogo />
                 </SheetTitle>
               </SheetHeader>
               <nav className="flex flex-col gap-1" aria-label="モバイルナビゲーション">
-                {NAV_LINKS.map((link) => (
-                  <SheetClose asChild key={link.href}>
+                <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                  問題を解く
+                </p>
+                {QUIZ_MODES.map((m) => (
+                  <SheetClose asChild key={m.href}>
                     <Link
-                      href={link.href}
-                      className={cn(
-                        "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                        isActive(link.href)
-                          ? "bg-primary-soft text-primary-soft-foreground"
-                          : "text-foreground hover:bg-muted",
-                      )}
+                      href={m.href}
+                      className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                     >
-                      {link.label}
+                      {m.label}
                     </Link>
                   </SheetClose>
                 ))}
+                <div className="my-2 border-t border-border" />
+                <SheetClose asChild>
+                  <Link
+                    href="/account/dashboard"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    学習進捗
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/recommended-books"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    推薦書籍
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/settings"
+                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    設定
+                  </Link>
+                </SheetClose>
               </nav>
-              <div className="mt-auto flex flex-col gap-3">
-                <ExamSelectorDialog
-                  onClose={() => setOpen(false)}
-                  trigger={
-                    <Button variant="primary" size="lg" className="w-full">
-                      いますぐ解く
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
-                  }
-                />
-                <XFollowButton size="md" className="w-full justify-center" />
-                <div className="flex items-center justify-between rounded-lg border border-border p-3 text-sm">
-                  <span className="text-muted-foreground">テーマ</span>
-                  <ThemeToggle />
-                </div>
+              <div className="mt-auto">
+                <StreakBadge className="w-full justify-center" />
               </div>
             </SheetContent>
           </Sheet>
