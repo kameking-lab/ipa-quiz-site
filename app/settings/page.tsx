@@ -5,8 +5,12 @@ import Link from "next/link";
 import {
   AlertCircle,
   ArrowLeft,
+  ArrowRight,
+  Bell,
+  CalendarClock,
   CheckCircle2,
   Download,
+  KeyRound,
   Monitor,
   Moon,
   Palette,
@@ -36,6 +40,8 @@ import {
   writeMotivationSettings,
   type MotivationSettings,
 } from "@/lib/motivation/combo";
+import { LS_KEYS } from "@/lib/storage/keys";
+import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
 
 type Theme = "light" | "dark" | "system";
 
@@ -45,25 +51,35 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
   { value: "dark", label: "ダーク", icon: <Moon className="h-4 w-4" /> },
 ];
 
+const SECTIONS = [
+  { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
+  { id: "character", label: "AIキャラ", icon: <Sparkles className="h-3.5 w-3.5" /> },
+  { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
+  { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
+  { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
+  { id: "history", label: "学習履歴管理", icon: <TrendingUp className="h-3.5 w-3.5" /> },
+  { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
+] as const;
+
 function SectionTitle({
   icon,
   children,
   description,
+  id,
 }: {
   icon: React.ReactNode;
   children: React.ReactNode;
   description?: string;
+  id?: string;
 }) {
   return (
-    <div className="mb-3 flex items-center gap-3">
+    <div className="mb-3 flex items-center gap-3" id={id}>
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
         {icon}
       </span>
       <div className="min-w-0">
         <h2 className="text-base font-semibold text-foreground">{children}</h2>
-        {description && (
-          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
-        )}
+        {description && <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
       </div>
     </div>
   );
@@ -82,13 +98,30 @@ function SettingRow({
     <div className="flex items-center justify-between gap-4 px-5 py-4">
       <div className="min-w-0 flex-1">
         <p className="text-sm font-medium text-foreground">{label}</p>
-        {description && (
-          <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>
-        )}
+        {description && <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
       </div>
       <div className="shrink-0">{children}</div>
     </div>
   );
+}
+
+function readExamDate(): string {
+  if (typeof window === "undefined") return "";
+  try {
+    return window.localStorage.getItem(LS_KEYS.examDate) ?? "";
+  } catch {
+    return "";
+  }
+}
+
+function writeExamDate(date: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    if (!date) window.localStorage.removeItem(LS_KEYS.examDate);
+    else window.localStorage.setItem(LS_KEYS.examDate, date);
+  } catch {
+    // ignore
+  }
 }
 
 export default function SettingsPage() {
@@ -105,6 +138,7 @@ export default function SettingsPage() {
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [characterId, setCharacterId] = useState<CharacterId>(DEFAULT_CHARACTER_ID);
   const [characterEnabled, setCharacterEnabledState] = useState(true);
+  const [examDate, setExamDate] = useState("");
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -117,6 +151,7 @@ export default function SettingsPage() {
     const cs = readCharacterState();
     setCharacterId(cs.id);
     setCharacterEnabledState(cs.enabled);
+    setExamDate(readExamDate());
   }, []);
 
   function updateMotivation<K extends keyof MotivationSettings>(
@@ -136,6 +171,11 @@ export default function SettingsPage() {
   function handleCharacterEnabledChange(on: boolean) {
     setCharacterEnabledState(on);
     writeCharacterEnabled(on);
+  }
+
+  function handleExamDateChange(value: string) {
+    setExamDate(value);
+    writeExamDate(value);
   }
 
   function showToast(type: "ok" | "err", msg: string) {
@@ -196,10 +236,6 @@ export default function SettingsPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-radial-spotlight"
       />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
 
       <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <Button asChild variant="ghost" size="sm" className="mb-4">
@@ -209,7 +245,7 @@ export default function SettingsPage() {
           </Link>
         </Button>
 
-        <header className="mb-8 animate-fade-in">
+        <header className="mb-6 animate-fade-in">
           <Badge variant="soft" className="mb-3">
             <SettingsIcon className="h-3 w-3" />
             設定
@@ -218,14 +254,32 @@ export default function SettingsPage() {
             設定とプリファレンス
           </h1>
           <p className="mt-2 text-sm text-muted-foreground">
-            外観・クイズオプション・学習履歴の管理ができます。
+            7 つのセクションで全機能を一元管理できます。
           </p>
         </header>
+
+        {/* Section nav (anchor links) */}
+        <nav
+          aria-label="セクション一覧"
+          className="mb-6 flex flex-wrap gap-1.5 rounded-2xl border border-border bg-muted/30 p-2"
+        >
+          {SECTIONS.map((s) => (
+            <a
+              key={s.id}
+              href={`#${s.id}`}
+              className="inline-flex items-center gap-1 rounded-lg bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm hover:text-foreground"
+            >
+              {s.icon}
+              {s.label}
+            </a>
+          ))}
+        </nav>
 
         <div className="space-y-6">
           {/* Appearance */}
           <section>
             <SectionTitle
+              id="appearance"
               icon={<Palette className="h-5 w-5" />}
               description="アプリ全体の表示テーマ"
             >
@@ -260,6 +314,7 @@ export default function SettingsPage() {
           {/* AI Character */}
           <section>
             <SectionTitle
+              id="character"
               icon={<Sparkles className="h-5 w-5" />}
               description="AI コパイロットの口調・キャラクター"
             >
@@ -285,11 +340,12 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* Quiz Options */}
+          {/* Quiz Options + Motivation */}
           <section>
             <SectionTitle
+              id="quiz-options"
               icon={<Sliders className="h-5 w-5" />}
-              description="出題ロジックのカスタマイズ"
+              description="出題ロジックと演出のカスタマイズ"
             >
               クイズオプション
             </SectionTitle>
@@ -321,21 +377,9 @@ export default function SettingsPage() {
                   onCheckedChange={(v) => updateSetting("calculationOnly", v)}
                 />
               </SettingRow>
-            </div>
-          </section>
-
-          {/* Motivation */}
-          <section>
-            <SectionTitle
-              icon={<Sliders className="h-5 w-5" />}
-              description="正解時の演出と効果音"
-            >
-              演出と効果音
-            </SectionTitle>
-            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="正解音"
-                description="3連続以上で「ピロロロ」が鳴ります"
+                description="3 連続以上で「ピロロロ」が鳴ります"
               >
                 <Switch
                   checked={motivation.soundEnabled}
@@ -354,36 +398,65 @@ export default function SettingsPage() {
             </div>
           </section>
 
+          {/* Notifications */}
+          <section>
+            <SectionTitle
+              id="notifications"
+              icon={<Bell className="h-5 w-5" />}
+              description="メール / プッシュ通知の管理"
+            >
+              通知設定
+            </SectionTitle>
+            <NotificationSettings />
+          </section>
+
+          {/* Exam Schedule */}
+          <section>
+            <SectionTitle
+              id="exam-schedule"
+              icon={<CalendarClock className="h-5 w-5" />}
+              description="次の試験日を登録するとカウントダウンが有効化"
+            >
+              試験予定
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <label className="mb-2 block text-sm font-medium" htmlFor="exam-date">
+                次の受験予定日
+              </label>
+              <input
+                id="exam-date"
+                type="date"
+                value={examDate}
+                onChange={(e) => handleExamDateChange(e.target.value)}
+                className="w-full rounded-xl border border-border bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              />
+              <p className="mt-2 text-xs text-muted-foreground">
+                ダッシュボードや AI チューターでこの日付までの残り日数が表示されます。
+              </p>
+            </div>
+          </section>
+
           {/* History */}
           <section>
             <SectionTitle
+              id="history"
               icon={<TrendingUp className="h-5 w-5" />}
               description="ブラウザに保存された履歴の管理"
             >
-              学習履歴
+              学習履歴管理
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              {/* Stats */}
               <div className="grid grid-cols-3 divide-x divide-border border-b border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
                 <Stat label="回答数" value={stats.total.toLocaleString("ja-JP")} />
                 <Stat label="問題数" value={stats.uniqueAnswered.toLocaleString("ja-JP")} />
                 <Stat
                   label="正答率"
-                  value={
-                    stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"
-                  }
+                  value={stats.total > 0 ? `${Math.round(stats.accuracy * 100)}%` : "--"}
                   highlight
                 />
               </div>
-
-              {/* Actions */}
               <div className="grid gap-2 p-4 sm:grid-cols-3">
-                <Button
-                  variant="outline"
-                  size="sm"
-                  className="gap-2"
-                  onClick={handleExport}
-                >
+                <Button variant="outline" size="sm" className="gap-2" onClick={handleExport}>
                   <Download className="h-4 w-4" />
                   エクスポート
                 </Button>
@@ -416,14 +489,31 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* About */}
+          {/* API Keys (link to sub-page) */}
           <section>
             <SectionTitle
-              icon={<SettingsIcon className="h-5 w-5" />}
-              description="バージョン・関連情報"
+              id="api-keys"
+              icon={<KeyRound className="h-5 w-5" />}
+              description="過去問AI Public API（β）のキーを発行・管理"
             >
-              このアプリについて
+              API キー管理
             </SectionTitle>
+            <Link
+              href="/settings/api-keys"
+              className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+            >
+              <div>
+                <p className="text-sm font-medium text-foreground">API キー管理ページを開く</p>
+                <p className="mt-0.5 text-xs text-muted-foreground">
+                  キーの発行・コピー・無効化が可能です
+                </p>
+              </div>
+              <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+            </Link>
+          </section>
+
+          {/* About / footer info */}
+          <section>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <div className="flex items-center justify-between px-5 py-4">
                 <span className="text-sm text-muted-foreground">バージョン</span>
@@ -447,15 +537,12 @@ export default function SettingsPage() {
           </section>
         </div>
 
-        {/* Toast */}
         {toast && (
           <div
             role="status"
             aria-live="polite"
             className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
-              toast.type === "ok"
-                ? "bg-success"
-                : "bg-destructive"
+              toast.type === "ok" ? "bg-success" : "bg-destructive"
             }`}
           >
             {toast.type === "ok" ? (

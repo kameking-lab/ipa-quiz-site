@@ -34,7 +34,7 @@ export default function ApiDocsPage() {
 
         <div className="mt-6 flex flex-wrap gap-2">
           <Button asChild variant="primary" size="sm">
-            <Link href="/account/api-keys">
+            <Link href="/settings/api-keys">
               <Key className="h-4 w-4" />
               API キーを取得
             </Link>
