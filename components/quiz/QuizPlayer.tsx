@@ -8,6 +8,7 @@ import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
+import { TtsControls } from "./TtsControls";
 import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { QuestionCommentBox } from "./QuestionCommentBox";
@@ -319,6 +320,7 @@ export function QuizPlayer({
           onTouchEnd={onTouchEnd}
         >
           <div className="mx-auto max-w-2xl space-y-4">
+            <TtsControls text={question.question} />
             <QuestionCard
               question={question}
               progress={{ current: index, total }}
