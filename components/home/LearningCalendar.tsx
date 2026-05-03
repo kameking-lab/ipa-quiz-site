@@ -128,7 +128,7 @@ export function LearningCalendar() {
         </div>
         <Link
           href="/account/dashboard"
-          className="inline-flex shrink-0 items-center gap-0.5 rounded-md px-2 py-1 text-[11px] font-medium text-sky-700 hover:bg-sky-50 dark:text-sky-300 dark:hover:bg-sky-950/40"
+          className="inline-flex min-h-[40px] shrink-0 items-center gap-0.5 rounded-md px-2 py-1 text-[11px] font-medium text-sky-700 hover:bg-sky-50 dark:text-sky-300 dark:hover:bg-sky-950/40"
         >
           詳細
           <ChevronRight className="h-3 w-3" aria-hidden="true" />
@@ -136,8 +136,7 @@ export function LearningCalendar() {
       </div>
 
       <div
-        className="grid gap-1"
-        style={{ gridTemplateColumns: "repeat(15, minmax(0, 1fr))" }}
+        className="grid gap-1 [grid-template-columns:repeat(10,minmax(0,1fr))] sm:[grid-template-columns:repeat(15,minmax(0,1fr))]"
         role="img"
         aria-label={`過去${DAY_COUNT}日間の学習量ヒートマップ`}
       >
