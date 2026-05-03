@@ -37,7 +37,7 @@ export function BadgeStrip() {
           </span>
         </h3>
         <Link
-          href="/account/badges"
+          href="/account/dashboard?tab=badges"
           className="text-xs text-sky-600 hover:underline dark:text-sky-400"
         >
           全て見る →

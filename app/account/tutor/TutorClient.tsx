@@ -141,7 +141,7 @@ function Inner({ categoryById }: Props) {
             ))}
           </ul>
           <Button asChild variant="outline" size="sm" className="mt-4">
-            <Link href="/account/weakness">弱点ヒートマップで詳細を見る</Link>
+            <Link href="/account/dashboard?tab=weakness">弱点ヒートマップで詳細を見る</Link>
           </Button>
         </CardContent>
       </Card>

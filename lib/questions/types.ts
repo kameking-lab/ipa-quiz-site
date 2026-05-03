@@ -57,7 +57,7 @@ export interface Question {
   needsReview?: boolean;
 }
 
-export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered";
+export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered" | "weakness";
 
 export interface QuizFilter {
   mode: QuizMode;
