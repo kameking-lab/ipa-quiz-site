@@ -1,26 +1,13 @@
-# 過去問AI
+# IPA Quiz
 
-情報処理技術者試験（IPA）の過去問を無料で学習できる、教育貢献プロジェクト。
-全機能無料・ボランティア有志運営。広告・課金なし。
+IPA 情報処理技術者試験（IP / SG / FE / AP / ST / SA / PM / NW / DB / ES / SC / SM / AU）
+全区分の公開過去問を無料で学べる、教育貢献型 AI ネイティブ学習プラットフォームです。
 
-- **13区分 12,162問** 収録（IP / SG / FE / AP / ST / SA / PM / NW / DB / ES / SC / SM / AU）
 - ゼロ遷移の四択クイズ UI（タップ→即座に色変化＋解説スライドイン）
 - AI コパイロット常駐（用語解説・選択肢分析・類題・誤答分析）
-- ダークモード・PWA 対応
+- 全試験区分を 1 アプリに統合
 
-## セットアップ
-
-```bash
-pnpm install
-cp .env.example .env.local
-# 全て空でも起動可（Mock LLM でフロント開発可）
-pnpm dev
-```
-
-開発サーバーは http://localhost:3000 で起動します。
-
-`GEMINI_API_KEY` が未設定でも、AI コパイロットは `lib/ai/providers/mock.ts` の
-モックレスポンスで動作します。クイズ UI・レート制限などをキーなしでフル確認できます。
+フェーズ 1（MVP）の対象は「応用情報技術者(AP) 午前」。以降、順次拡張予定。
 
 ## 技術スタック
 
@@ -30,86 +17,106 @@ pnpm dev
 - 学習履歴は `localStorage`（将来 Supabase に移行可能な抽象層）
 - pnpm / ESLint / Zod / tsx / react-markdown / lucide-react / radix-ui
 
+## セットアップ
+
+```bash
+pnpm install
+cp .env.example .env.local
+# GEMINI_API_KEY を入れるか、空のまま起動して mock フォールバックで開発
+pnpm dev
+```
+
+開発サーバは http://localhost:3000 で起動します。
+
+`GEMINI_API_KEY` が空でも、AI コパイロットは `lib/ai/providers/mock.ts` のモックレスポンスで動作します。クイズ UI・レート制限などの挙動はキーなしでフル確認できます。
+
 ## 環境変数
 
-`.env.example` を参照。主要な変数:
+| 変数 | 役割 | デフォルト |
+| --- | --- | --- |
+| `GEMINI_API_KEY` | Gemini API キー | （空でモック動作） |
+| `ANTHROPIC_API_KEY` | Anthropic API キー（スタブ用） | — |
+| `DATABASE_URL` | DB 接続文字列（フェーズ 2〜） | — |
+| `NEXTAUTH_SECRET` | NextAuth シークレット（フェーズ 2〜） | — |
+| `NEXTAUTH_URL` | アプリ公開 URL | — |
+| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog プロジェクト API キー | — |
+| `NEXT_PUBLIC_POSTHOG_HOST` | PostHog ホスト | `https://us.i.posthog.com` |
+| `NEXT_PUBLIC_SENTRY_DSN` | Sentry DSN | — |
+| `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG` | Amazon アソシエイト ID | — |
+| `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID` | 楽天アフィリエイト ID | — |
+| `ADMIN_BASIC_USER` | 管理画面 Basic 認証ユーザー | — |
+| `ADMIN_BASIC_PASS` | 管理画面 Basic 認証パスワード | — |
+| `SLACK_WEBHOOK_URL` | cron ジョブ通知用 Webhook | — |
+| `LLM_PROVIDER` | プロバイダ選択 | `gemini` |
+| `GEMINI_MODEL_FREE` | 無料ユーザー向けモデル | `gemini-2.5-flash-lite` |
+| `GEMINI_MODEL_PREMIUM` | プレミアム向けモデル | `gemini-2.5-flash` |
+| `FREE_DAILY_LIMIT` | 無料枠の 1 日回数 | `30` |
+| `PREMIUM_MINUTE_LIMIT` | プレミアムの 1 分ソフトリミット | `10` |
 
-| 変数 | 役割 |
-| --- | --- |
-| `GEMINI_API_KEY` | Gemini API キー（空でモック動作） |
-| `ANTHROPIC_API_KEY` | Anthropic API キー（スタブ用） |
-| `NEXT_PUBLIC_POSTHOG_KEY` | PostHog アナリティクス |
-| `NEXT_PUBLIC_SENTRY_DSN` | Sentry エラー監視 |
-| `ADMIN_BASIC_USER` / `ADMIN_BASIC_PASS` | 管理画面の Basic 認証 |
-| `SLACK_WEBHOOK_URL` | Cron 通知先 Slack Webhook |
+価格・回数・モデル変更は `CLAUDE.md` の「承認必須事項」扱いです。
 
 ## スクリプト
 
 ```bash
-pnpm typecheck        # TypeScript 型検査
-pnpm build            # 本番ビルド
-pnpm test             # ユニットテスト
-pnpm test:e2e:smoke   # E2E スモークテスト
+pnpm dev          # 開発サーバ起動
+pnpm build        # 本番ビルド
+pnpm typecheck    # TypeScript 型チェック
+pnpm lint         # ESLint
 
-pnpm validate:questions  # 問題データを zod で検証
-pnpm fetch:pdfs          # IPA 公式 PDF をダウンロード
-pnpm parse:pdfs          # PDF → JSON 変換
-pnpm tag:topics          # Gemini でトピックタグを自動付与
-pnpm find:placeholders   # 画像なし問題のプレースホルダ解説検出
-pnpm regen:explanations  # Gemini で解説を再生成
+pnpm fetch:pdfs         # IPA 公式 PDF をローカルへダウンロード
+pnpm parse:pdfs         # PDF → JSON 変換
+pnpm validate:questions # 問題データを zod で検証
+pnpm tag:topics         # Gemini でトピックタグを自動付与
 ```
 
-## デプロイ
-
-Vercel（GitHub `main` ブランチへの push で自動デプロイ）。
-
-環境変数は Vercel ダッシュボードまたは CLI で設定:
+## デプロイ（Vercel）
 
 ```bash
-vercel env add GEMINI_API_KEY
+npm i -g vercel
+vercel link                   # 初回のみ
+vercel env add GEMINI_API_KEY # production / preview / development で設定
+vercel                        # preview deploy
+vercel --prod                 # production deploy
 ```
 
 ## 監視
 
-- **PostHog**: ページビュー・クイズ回答イベント
-- **Sentry**: エラー・例外トラッキング
-- **ヘルスチェック**: `/api/health`
+| エンドポイント | 用途 |
+| --- | --- |
+| `/api/health` | ヘルスチェック（Vercel / UptimeRobot 監視用） |
+| PostHog | ページビュー・クイズ操作イベント |
+| Sentry | フロント/サーバーエラー収集 |
 
 ## ディレクトリ構造
 
 ```
 app/
-  api/copilot/          AI コパイロット ストリーミング API
-  api/health/           ヘルスチェック
-  [exam]/               試験区分トップ + 年度・分野・午後ページ
-  q/[exam]/[ys]/[s]/[q] 問題詳細ページ（SEO 用個別 URL）
-  admin/{stats}/        管理ダッシュボード（Basic 認証で保護）
-  modes/{year,topic}/   年度別・分野別一覧
-  about/ faq/ privacy/ terms/ operator/  静的ページ
+  api/copilot/        AI コパイロット ストリーミング API
+  api/health/         ヘルスチェック
+  (home) page.tsx     モード選択ホーム
+  quiz/               クイズプレイヤー
+  modes/year,topic    年度別・分野別一覧
+  about/              IPA出典・著作権ページ
 components/
-  quiz/                 QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer
-  afternoon/            AfternoonPlayer / AfternoonResultView
-  copilot/              CopilotPanel + モバイルボトムシート
-  ui/                   Button / Card / Dialog / Switch / Badge / Markdown
+  quiz/               QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer
+  copilot/            CopilotPanel + モバイルボトムシート
+  ui/                 Button / Card / Dialog / Switch / Badge / Markdown
 lib/
-  ai/                   provider.ts + providers/{gemini,claude,openai,mock}.ts
-  questions/            types / load / filter
-  storage/              localStorage 履歴・レート制限
-  rate-limit/           IP ベースのサーバー側レート制限
+  ai/                 provider.ts + providers/{gemini,claude,openai,mock}.ts
+  questions/          types / load / filter
+  storage/            localStorage 履歴・プレミアム・レート制限
+  rate-limit/         IP ベースのサーバー側レート制限
 data/
-  questions/{exam}/     全区分の問題データ（TS ファイル）
-scripts/                fetch / parse / validate / topic-tagger / regen
+  questions/ap/       AP 問題データ
+scripts/              fetch / parse / validate / topic-tagger
 ```
 
 ## ライセンス / 出典
 
-問題文・選択肢・模範解答は IPA 情報処理技術者試験の公開過去問を原典とし、
-各問に原典 PDF リンクを付与しています。
-IPA は過去問の使用について許諾不要・使用料不要と公式に明示しています。
-詳細は `/about` ページおよび IPA 公式の著作権ページを参照してください。
-
-解説本文・UI・タグ付け・AI 応答などは本サイト独自の著作物です。
+- 問題文・選択肢・模範解答は IPA 情報処理技術者試験の公開過去問を原典とし、各問に原典 PDF リンクを付与しています。
+- IPA は過去問の使用について許諾不要・使用料不要と公式に明示しています。詳細は `/about` ページを参照してください。
+- 解説本文・UI・タグ付け・AI 応答などは本サイト独自の著作物です。
 
 ## 貢献
 
-Issue / PR 歓迎です。
+現在は個人開発。Issue / PR は後日解放予定。

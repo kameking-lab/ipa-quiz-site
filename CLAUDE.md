@@ -1,25 +1,47 @@
-# 過去問AI — Claude Code 向け指示書
+# IPA Quiz — Claude Code 向け指示書
 
 本ファイルは Claude Code (Cursor 等) に対するプロジェクトコンテキストです。
 新しいセッションを開始する際は、まず本ファイルを読んでから作業を始めてください。
 
-## 1. プロジェクトビジョン・戦略
+## 0. プロジェクト戦略（最重要）
+
+### 教育貢献プロジェクト
+本プロジェクトは **教育貢献** を第一義とし、IPA 過去問を誰でも無料で学べる環境を提供する。
+収益化は教育価値を損なわない範囲に限定し、ユーザー獲得・学習継続率を最優先指標とする。
+
+### 課金モード
+`PAID_MODE=false`（デフォルト）。
+**Stripe 本実装・プレミアム課金の有効化はフェーズ 4 まで実施しない。**
+LocalStorage の `ipa-quiz:premium:v1` は開発検証用フラグであり、本番決済には紐づけない。
+
+### API コスト上限
+月間 API コストが **5 万円** に達した場合、新規 AI リクエストを自動停止し、Slack 通知を送る。
+この上限はユーザーの承認なしに変更してはならない。
+
+### 禁止事項
+以下は **いかなる理由があっても自律実行禁止**:
+- Stripe / 外部決済の本実装・有効化
+- Enterprise プラン・法人向け課金の導入
+- 既存の無料枠・価格設定の復旧（一度削除・変更した場合）
+- 上記 API コスト上限の引き上げ・無効化
+
+---
+
+## 1. プロジェクトビジョン
 
 IPA 情報処理技術者試験（IP / SG / FE / AP / ST / SA / PM / NW / DB / ES / SC / SM / AU）
 全区分の公開過去問を網羅する、AI ネイティブな過去問学習プラットフォーム。
 
-**現在の戦略: 教育貢献プロジェクト**
-- `PAID_MODE=false` — 全機能無料・課金なし・広告なし
-- API 利用料が月 5 万円を超えるまで課金モデルは復活させない
-- ボランティア有志運営。収益最大化より教育アクセス最大化を優先する
-
-差別化軸:
+競合「過去問道場」（siken.com 系ネットワーク）は人力解説で 10 年積み上げた歴史がある。
+同じ武器では勝たない。差別化は以下 3 軸:
 
 1. **(A) UX最速**: 午前四択クイズのインタラクションを業界最速にする。
    画面遷移ゼロ・ローディングゼロで、モバイル片手操作で完結する。
 2. **(B) AI コパイロット常駐**: 各問に AI が常駐し、用語解説・選択肢分析・類題生成・
-   誤答分析を無制限対話で提供する。静的解説では届かない体験密度を作る。
-3. **(C) 午後 AI 採点**: 午後記述／論文添削を AI で実現。
+   誤答分析を無制限対話で提供する。競合の静的解説では届かない体験密度を作る。
+3. **(C) 午後 AI 採点**: 午後記述／論文添削を AI で実現。競合が未着手の領域を押さえる。
+
+料金戦略はユーザー獲得最優先・持ち出し最小。月 300 円で広告収益モデルと予備校との間を切り崩す。
 
 ## 2. 技術スタック
 
@@ -33,51 +55,39 @@ IPA 情報処理技術者試験（IP / SG / FE / AP / ST / SA / PM / NW / DB / E
 
 ```
 app/
-  api/                       copilot / scoring / health / email-list
-  [exam]/                    試験区分トップ + 年度・分野・午後ページ
-  q/[exam]/[ys]/[s]/[q]      問題詳細ページ（SEO 用個別 URL）
-  admin/{stats}/             管理ダッシュボード（Basic 認証で保護）
-  modes/{year,topic}/        年度別・分野別一覧
-  about/ faq/ privacy/ terms/ operator/  静的ページ
-  sitemap.xml/ sitemap/[id]/ robots.ts opengraph-image.tsx
+  api/copilot/           AI コパイロット ストリーミング API
+  (home) page.tsx        モード選択ホーム
+  quiz/                  クイズプレイヤー
+  modes/year,topic       年度別・分野別一覧
+  about/                 IPA出典・著作権
 components/
-  quiz/                      QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer / ClientQuizLoader
-  afternoon/                 AfternoonPlayer / AfternoonResultView / AfternoonDisclaimer
-  copilot/                   CopilotPanel (+ モバイル ボトムシート)
-  seo/                       JsonLd / ShareButtons / AnswerReveal
-  ui/                        Button / Card / Dialog / Switch / Badge / Markdown
-  theme-provider.tsx ThemeToggle.tsx HistoryStats.tsx
-  KeyboardShortcutsHelp.tsx ServiceWorkerRegistration.tsx SiteLogo.tsx
-  HeroDemoAnimation.tsx ExamCategoryGrid.tsx
+  quiz/                  QuestionCard / ChoiceButton / ExplanationCard / QuizPlayer / ClientQuizLoader
+  copilot/               CopilotPanel (+ モバイル ボトムシート)
+  ui/                    Button / Card / Dialog / Switch / Badge / Markdown
+  theme-provider.tsx     Light/Dark/System
+  ThemeToggle.tsx
+  HistoryStats.tsx
+  PremiumUpsellDialog.tsx
 lib/
-  ai/                        provider.ts ← 必ずこの抽象経由で LLM を呼ぶ
-                             providers/{gemini,claude,openai,mock}.ts
-                             prompts.ts cost-tracker.ts
-  questions/                 types / load / filter / get-questions
-  afternoon/                 午後採点ロジック
-  exam-naming/history.ts     試験名称の歴史的変遷
-  exam-config.ts             試験区分ごとのメタ情報
-  storage/                   keys / history / rate-limit-client / settings
-  rate-limit/server.ts       IP ベースの in-memory レート制限
-  streak/                    Duolingo 式ストリーク
-  seo/                       sitemap / OGP / 構造化データ
-  analytics/events.ts        クライアント側イベント定義
-  utils.ts                   cn / examLabel / formatYearSeason
+  ai/
+    provider.ts          ← 必ずこの抽象経由で LLM を呼ぶ
+    providers/{gemini,claude,openai,mock}.ts
+    prompts.ts           システムプロンプト + クイックアクション定義
+  questions/             types / load / filter
+  storage/               keys / history / rate-limit-client
+  rate-limit/server.ts   IP ベースの in-memory レート制限
+  utils.ts               cn / examLabel / formatYearSeason
 data/
-  questions/{exam}/          試験区分ごとの問題データ（IP/SG/FE/AP/ST/SA/PM/NW/DB/ES/SC/SM/AU）
-  raw_pdfs/                  .gitignore 対象 / fetch:pdfs の出力先
+  questions/ap/          問題 TS データ（まず手動キュレーションサンプル）
+  raw_pdfs/              .gitignore 対象 / fetch:pdfs の出力先
 scripts/
-  fetch-ipa-pdfs.ts          IPA PDF クローラ
-  parse-pdf-to-json.ts       PDF → JSON（Gemini Vision）
-  parse-all.ts               一括パイプライン
-  parse-afternoon/           午後問題専用パーサ
-  validate-questions.ts      zod 検証
-  topic-tagger.ts            Gemini タグ付け
-  find-placeholder-explanations.ts  画像なし問題のプレースホルダ解説検出
-  regenerate-explanations.ts        Gemini で解説を再生成
+  fetch-ipa-pdfs.ts      IPA PDF クローラ
+  parse-pdf-to-json.ts   スケルトン (Gemini Vision 実装が次の強化ポイント)
+  validate-questions.ts  zod 検証
+  topic-tagger.ts        Gemini タグ付け (未書き込みのヒューリスティックのみ)
 public/
-  manifest.webmanifest       PWA マニフェスト
-  icon-192.svg / icon-512.svg / favicon.svg / sw.js
+  manifest.webmanifest   PWA マニフェスト
+  icon-192.svg / icon-512.svg
 ```
 
 ## 4. 問題データスキーマ
@@ -107,93 +117,77 @@ for await (const chunk of provider.streamChat({ system, messages, model, maxToke
 
 ## 6. フェーズ分割ロードマップ
 
-- **フェーズ1（完了：MVP）**: AP 午前 + クイズ UX + AI コパイロット + サーバー側レート制限
-- **フェーズ2（完了）**: 全 13 区分の午前／午前 I・II データ投入、年度別・分野別表示、模試モード、ストリーク、ダークモード/PWA
-- **フェーズ3（完了）**: AP 午後 AI 採点、3 層解説リファクタ、モバイル UX 細部調整、a11y 改善
-- **フェーズ4（教育貢献ピボット）**: 課金・認証削除。全機能無料化。PostHog/Sentry 監視導入
-- **フェーズ5（未着手）**: 論文添削（ST/PM/SA/AU/SM）、参考書アフィリエイト UI、ANZEN AI 相互送客バナー
+- **フェーズ1（完了済み：MVP）**: AP 午前 + クイズ UX + AI コパイロット + 無料 30 回/日 制限
+- **フェーズ2**: 全区分の午前／午前 I・II を網羅、模試モード、段級ランキング、会話履歴保存、CSV エクスポート
+- **フェーズ3**: 午後 AI 採点 (AP/DB/NW/SC/ES/PM/SM/AU)、topicTag ベースの全試験横断弱点マップ、学習プラン自動生成
+- **フェーズ4**: 論文添削 (ST/PM/SA/AU/SM)、Stripe 決済、参考書アフィリエイト実装、ANZEN AI 相互送客、`/api/admin/usage` 使用量ダッシュボード
 
-## 7. コーディング規約
+## 7. 実装ルール
 
+### コーディング規約
+- TypeScript strict モード必須。`any` 禁止。型推論できない箇所のみ明示型付け
 - ファイル命名: コンポーネントは PascalCase、ユーティリティは camelCase
 - `cn(...)` は `lib/utils.ts` の `twMerge(clsx())` を使う
 - 型は `export interface` 優先、簡単な union は `type`
-- `"use client"` 宣言は必要最小限に（サーバーコンポーネント優先）
+- `"use client"` 宣言は必要最小限に（サーバーコンポーネント優先 / App Router）
 - localStorage キーは必ず `lib/storage/keys.ts` の `LS_KEYS` 経由で参照
 - API ルートは `export const runtime = "nodejs"` 明示
 - クイズ UI は **ゼロ遷移** が最優先。解説を見るためにページ遷移しない
 
-## 8. テスト・CI
+### スタイリング
+- Tailwind CSS v4 のみ使用。インラインスタイルは原則禁止
+- コンポーネントは `components/ui/` の primitives を再利用し、新規 CSS ファイルを作らない
+- レスポンシブはモバイルファースト（`sm:` `md:` `lg:` の順）
 
+### テスト & CI
 ```bash
-pnpm typecheck        # TypeScript 型検査（必須）
-pnpm build            # 本番ビルド（必須）
-pnpm test             # ユニットテスト
-pnpm test:e2e:smoke   # E2E スモークテスト（Playwright）
+pnpm typecheck   # TypeScript 型チェック（エラーゼロが必須）
+pnpm build       # 本番ビルド（ビルドエラーは main マージ前に必ず解消）
+pnpm test        # ユニットテスト（存在する場合）
+pnpm lint        # ESLint（警告はゼロが望ましい）
 ```
+PR 作成前に上記 4 コマンドをすべてパスさせること。
 
-PR をマージする前に必ず `typecheck` と `build` が通ることを確認する。
-
-## 9. コミット規約
-
-Conventional Commits を使う:
-
-```
-feat: 新機能
-fix: バグ修正
-docs: ドキュメントのみの変更
-refactor: リファクタリング（機能変更なし）
-chore: ビルド・設定・スクリプト変更
-test: テストの追加・修正
-```
-
-スコープ例: `feat(quiz): ...`, `fix(copilot): ...`, `chore(data): ...`
-
-## 10. IPA 出典ルール
+## 8. IPA 出典ルール
 
 - 全ページのフッターに「出典: IPA 情報処理技術者試験」を明記する
 - 各問題には `sourcePdfUrl` を必ず保持し、解説末尾から原典 PDF へリンクする
 - `/about` ページで著作権・利用条件を明記
 - IPA は過去問の使用について許諾不要・使用料不要と公式に明示しているが、引用ルールは厳守
 
-## 11. レート制限設計
+## 9. 料金プラン & レート制限設計
 
-無料プラン（全ユーザー共通）:
+無料プラン（ユーザー獲得最優先）:
 - 全試験・全機能アクセス無制限
-- AI コパイロット: IP 単位で 1 日 50 回 / 1 分 15 回（`BETA_DAILY_LIMIT` / `BETA_MINUTE_LIMIT`）
+- AI コパイロット: 1 日 30 回（JST 0:00 リセット）
+- 広告表示あり（本文と分離、控えめ）
 - モデル: `gemini-2.5-flash-lite`
 
-課金・プレミアム判定は現在無効（`PAID_MODE=false`）。
-API 月 5 万円到達まで課金モデルは復活させない。
+プレミアム 月 300 円:
+- AI コパイロット 無制限（1 分 10 回ソフトリミット）
+- モデル: `gemini-2.5-flash`
+- 広告非表示
 
-## 12. 承認必須事項
+現状は `localStorage` の `ipa-quiz:premium:v1` フラグで暫定判定。
+Stripe 本実装はフェーズ4。
+
+## 10. 承認必須事項
 
 以下は「自律実行しないで、必ずユーザー確認を取る」こと:
 
-- 新規外部 API の導入（Gemini 以外の LLM、PostHog、Sentry、Slack 通知 等）
+- 新規外部 API の導入（Gemini 以外の LLM など）
 - LLM プロバイダ変更（Gemini → Claude 等）
 - デフォルトモデル変更（Flash-Lite → Flash 等）
-- レート制限値の変更（`BETA_DAILY_LIMIT=50` / `BETA_MINUTE_LIMIT=15` 既定）
+- 無料枠の日次回数変更（現状 30）
+- プレミアム価格の変更（現状 300 円/月）
 - DB スキーマの新規作成・変更
-- アフィリエイト ID の変更（ANZEN AI と共有）
-- 大規模 URL ルーティング再設計（既存の `/q/[exam]/...` SEO URL に影響するもの）
-- AI コパイロットのシステムプロンプト大幅変更（`lib/ai/prompts.ts`）
-- 「AI 競合言及禁止」ルールの緩和
-- フッターの IPA 出典表記の削除・改変
+- Stripe / 認証の本実装
+- アフィリエイト ID の変更
+- 大規模 URL ルーティング再設計
+- AI コパイロットのシステムプロンプト大幅変更
+- レート制限値の変更
 
-## 13. 触ってはいけないもの（削除済み・復旧禁止）
-
-以下は意図的に削除済みであり、復旧・再実装してはならない:
-
-- **Stripe 決済** — 教育貢献フェーズでは不要。API 月 5 万円超過後に別途設計する
-- **Enterprise プラン** — 削除済み。復旧禁止
-- **SAML / SCIM** — 削除済み。復旧禁止
-- **`/pricing` ページ** — 削除済み。復旧禁止
-- **`PremiumUpsellDialog`** — 削除済み（残存参照があれば削除すること）
-- **NextAuth / 認証フロー** — 削除済み（`lib/auth/` は参照しないこと）
-- **Prisma / DB 接続** — 削除済み（`lib/db/` は参照しないこと）
-
-## 14. 競合から学ぶ UX パターン集
+## 11. 競合（過去問道場）から学ぶ UX パターン集
 
 真似るべき:
 - 4モード（ランダム / 年度別 / 分野別 / 模試）
@@ -213,21 +207,22 @@ API 月 5 万円到達まで課金モデルは復活させない。
 6. 広告過多 → 参考書アフィリは控えめに UI 完全分離
 7. ダークモード・PWA なし → 両方標準装備
 
-## 15. コスト見積もり（Gemini Flash-Lite 前提）
+## 12. コスト見積もり（Gemini Flash-Lite 前提）
 
 - 平均 1 リクエスト あたり入力 1,200 token / 出力 600 token 想定
 - Gemini 2.5 Flash-Lite: $0.10 / 1M input, $0.40 / 1M output
 - 1 リクエストあたりコスト: $0.00012 + $0.00024 ≒ $0.00036 ≒ 0.055 円
-- 無料ユーザー 1 日 50 回 × 1,000 人 = 50,000 req/日 ≒ 月 2,750 円
+- 無料ユーザー 1 日 30 回 × 1,000 人 = 30,000 req/日 ≒ 月 1,650 円
 - 無料枠（1,000 req/日）活用で初期は実質 0 円運用が可能
+- プレミアム 300 円/月 / 1 人 → 仮に 1 人当たり 1,000 req/月 = コスト約 55 円 = 粗利率 約 80%
 
-## 16. よくあるタスクと手順
+## 13. よくあるタスクと手順
 
 ### 新しい試験区分を追加するとき
 
 1. `data/questions/{exam}/index.ts` を作成し `QUESTIONS_BY_EXAM` に登録
 2. `lib/utils.ts` の `EXAM_LABELS` は既に全区分あるので OK
-3. ホーム画面 (`app/page.tsx`) と `components/ExamCategoryGrid.tsx` を必要に応じて更新
+3. ホーム画面 (`app/page.tsx`) に試験切替 UI を追加（フェーズ2）
 
 ### AI プロンプトを調整するとき
 
@@ -237,13 +232,12 @@ API 月 5 万円到達まで課金モデルは復活させない。
 
 ### 問題データを追加するとき
 
-- `data/questions/{exam}/by-year/` に年度別 TS ファイルを追加
+- `data/questions/ap/` に年度別 TS ファイルを追加
 - `pnpm validate:questions` でスキーマ検証
-- 画像なし問題で解説が短すぎる場合は `pnpm find:placeholders` →
-  `pnpm regen:explanations` で AI 再生成
+- `hasImage: true` の問題は MVP では非表示推奨
 
-## 17. 姉妹プロジェクトと共有する構成
+## 14. 姉妹プロジェクトと共有する構成
 
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
 - アフィリエイト ID: `NEXT_PUBLIC_AMAZON_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
-- フェーズ5 で相互送客バナーを実装
+- フェーズ4 で相互送客バナーを実装
