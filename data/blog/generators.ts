@@ -1,5 +1,5 @@
 import type { ExamCode } from "@/lib/questions/types";
-import { EXAM_PROFILES, EXAM_CODES } from "./exam-data";
+import { EXAM_PROFILES } from "./exam-data";
 import type { BlogPost } from "./types";
 
 const PUBLISHED_BASE = new Date("2026-04-15T00:00:00.000Z").getTime();

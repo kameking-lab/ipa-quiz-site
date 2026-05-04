@@ -438,7 +438,6 @@ async function scenario6_books(ctx) {
     }
 
     // index ページに 13 試験区分カードがあるか
-    const indexHtml = await page.content();
     const examMentions = (
       await page.locator('text=/(IT パスポート|ITパスポート|応用情報|基本情報|情報セキュリティ|ストラテジスト|アーキテクト|プロジェクト|ネットワーク|データベース|エンベデッド|安全確保支援|サービスマネ|システム監査)/').count()
     );

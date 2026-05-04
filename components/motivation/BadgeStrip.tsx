@@ -5,7 +5,6 @@ import Link from "next/link";
 import {
   BADGES,
   BADGE_THRESHOLDS,
-  getEarnedBadges,
   nextBadge,
   syncBadgesWithStreak,
 } from "@/lib/motivation/badges";

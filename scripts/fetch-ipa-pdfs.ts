@@ -20,7 +20,6 @@ import {
   buildPdfUrl,
   buildRawPdfPath,
   type ExamConfig,
-  type SessionConfig,
 } from "@/lib/exam-config";
 import type { ExamCode } from "@/lib/questions/types";
 

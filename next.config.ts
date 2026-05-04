@@ -117,7 +117,6 @@ const nextConfig: NextConfig = {
 // dynamic require を使って Sentry の native deps を DSN がない環境でロードしない。
 const hasSentryDsn = Boolean(process.env.SENTRY_DSN || process.env.NEXT_PUBLIC_SENTRY_DSN);
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const exported: NextConfig = hasSentryDsn
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   ? require("@sentry/nextjs").withSentryConfig(nextConfig, {

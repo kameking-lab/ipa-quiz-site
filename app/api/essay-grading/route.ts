@@ -102,7 +102,7 @@ ${payload.essay}
   let provider: LLMProvider;
   try {
     provider = await getProvider();
-  } catch (_err) {
+  } catch {
     return NextResponse.json(
       {
         error: "provider_unavailable",
