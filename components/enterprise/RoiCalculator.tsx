@@ -70,6 +70,8 @@ export function RoiCalculator() {
             value={seats}
             onChange={(e) => setSeats(Number(e.target.value))}
             className="w-full"
+            aria-label="利用人数"
+            aria-valuetext={`${seats} 名`}
           />
           <div className="mt-1 text-right text-sm font-semibold text-zinc-800 dark:text-zinc-200">
             {seats} 名
@@ -89,6 +91,8 @@ export function RoiCalculator() {
               value={baseRate}
               onChange={(e) => setBaseRate(Number(e.target.value))}
               className="w-full"
+              aria-label="現状の合格率"
+              aria-valuetext={`${baseRate} パーセント`}
             />
             <div className="mt-1 text-right text-sm font-semibold text-zinc-800 dark:text-zinc-200">
               {baseRate}%
@@ -106,6 +110,8 @@ export function RoiCalculator() {
               value={lift}
               onChange={(e) => setLift(Number(e.target.value))}
               className="w-full"
+              aria-label="想定 合格率向上"
+              aria-valuetext={`${lift} ポイント`}
             />
             <div className="mt-1 text-right text-sm font-semibold text-zinc-800 dark:text-zinc-200">
               +{lift} pt
