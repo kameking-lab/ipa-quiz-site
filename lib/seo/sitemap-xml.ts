@@ -38,6 +38,7 @@ const RECOMMENDED_BOOKS_EXAMS = [
 
 const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
+  { url: `${SITE_BASE_URL}/quiz`, changeFrequency: "weekly", priority: 0.9 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/recommended-books`, changeFrequency: "monthly", priority: 0.7 },
@@ -50,6 +51,9 @@ const STATIC_ROUTES: UrlEntry[] = [
   ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/mock-exam`, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/essay`, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/ranking`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/review`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/faq`, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
@@ -57,6 +61,8 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/contact`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/stats`, changeFrequency: "weekly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/transparency`, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/demo/afternoon`, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/demo/essay-grading`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/operator`, changeFrequency: "yearly", priority: 0.2 },
