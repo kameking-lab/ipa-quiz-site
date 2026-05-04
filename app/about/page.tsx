@@ -128,6 +128,24 @@ export default function AboutPage() {
         </p>
       </section>
 
+      <h2 className="mb-2 text-lg font-semibold">料金について</h2>
+      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p>
+          IPA Quiz は IPA 情報処理技術者試験の学習機会を広げることを目的とした
+          <strong>教育貢献プロジェクト</strong>として運営されています。
+          現在、料金プランは設定しておらず、すべての機能を完全無料でご利用いただけます。
+        </p>
+        <p>
+          AI コパイロットの利用回数には公平利用のための日次上限を設けていますが、
+          試験区分・問題数・モード・履歴・出題機能など、学習に必要な機能はすべて無料で開放しています。
+          α 期間からのご利用者の方は、今後も継続して無料でお使いいただけます。
+        </p>
+        <p className="text-xs text-zinc-500 dark:text-zinc-400">
+          将来的に運営コストを賄うための仕組みを検討する可能性はありますが、
+          既存ユーザーの学習体験を損なう変更は行いません。
+        </p>
+      </section>
+
       <h2 className="mb-2 text-lg font-semibold">プライバシー</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
