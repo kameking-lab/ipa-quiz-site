@@ -1,6 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Markdown } from "@/components/ui/markdown";
 import { Badge } from "@/components/ui/badge";
 
@@ -72,8 +73,7 @@ export default function StrategyDiscussionV2Page() {
               key={c.name}
               className={`flex flex-col items-center gap-2 rounded-xl border p-4 ${c.accent}`}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={c.src}
                 alt={`${c.name} - ${c.label}`}
                 width={120}

@@ -57,6 +57,7 @@ export function StudentIdUpload() {
         </label>
       ) : (
         <div className="relative rounded-2xl border border-zinc-200 bg-white p-2 dark:border-zinc-700 dark:bg-zinc-900">
+          {/* eslint-disable-next-line @next/next/no-img-element -- blob URL from createObjectURL; next/image cannot handle it */}
           <img
             src={preview}
             alt="学生証プレビュー"
