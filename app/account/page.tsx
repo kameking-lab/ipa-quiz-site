@@ -71,9 +71,19 @@ export default async function AccountPage() {
 
       {/* Hero */}
       <header className="mb-8">
-        <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground shadow-sm">
-          <ShieldCheck className="h-3 w-3" />
-          アカウント
+        <div className="mb-3 flex flex-wrap items-center gap-2">
+          <div className="inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground shadow-sm">
+            <ShieldCheck className="h-3 w-3" />
+            アカウント
+          </div>
+          <Link
+            href="/referral"
+            className="inline-flex items-center gap-1.5 rounded-full border border-amber-200 bg-amber-50 px-2.5 py-1 text-[11px] font-semibold text-amber-800 shadow-sm transition hover:bg-amber-100 dark:border-amber-900/60 dark:bg-amber-950/40 dark:text-amber-200 dark:hover:bg-amber-900/40"
+            aria-label="友達招待で AI コパイロット利用回数 +30 回"
+          >
+            <span aria-hidden="true">🎁</span>
+            友達招待 AI+30回
+          </Link>
         </div>
         <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           ようこそ、{session.user.name ?? session.user.email?.split("@")[0] ?? "ゲスト"} さん
