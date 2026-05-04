@@ -133,6 +133,7 @@ export function NotificationSettings() {
             <input
               id="email"
               type="email"
+              autoComplete="email"
               value={prefs.email}
               onChange={(e) => update({ email: e.target.value })}
               placeholder="you@example.com"

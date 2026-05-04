@@ -127,6 +127,7 @@ export function ContactForm() {
         </label>
         <input
           id="contact-name"
+          autoComplete="name"
           value={name}
           onChange={(e) => setName(e.target.value.slice(0, 80))}
           maxLength={80}
@@ -145,6 +146,7 @@ export function ContactForm() {
         <input
           id="contact-email"
           type="email"
+          autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value.slice(0, 120))}
           maxLength={120}
