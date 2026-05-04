@@ -28,7 +28,6 @@ import type { Question } from "@/lib/questions/types";
 
 const LOGS_DIR = join(process.cwd(), "logs");
 const MODEL_NAME = "gemini-2.5-flash-lite";
-const BUDGET_USD_STEP3B = 0.5; // Step 3-B は 100件のみ
 const FULL_AI_BUDGET_USD = 36; // 全件 AI 判定コスト（要承認）
 
 // ─── 型定義 ───────────────────────────────────────────────────────────────────

@@ -58,7 +58,7 @@ async function probe(baseUrl: string, path: string, expected: 200 | 404): Promis
     });
     const actual = res.status;
     return { path, expected, actual, ok: actual === expected };
-  } catch (e) {
+  } catch {
     return {
       path,
       expected,

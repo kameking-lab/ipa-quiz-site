@@ -6,7 +6,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { EXAM_CONFIGS } from "@/lib/exam-config";
 import type { ExamCode } from "@/lib/questions/types";
 import type { Question } from "@/lib/questions/types";
 

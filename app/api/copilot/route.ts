@@ -132,7 +132,7 @@ export async function POST(req: Request) {
   let provider: LLMProvider;
   try {
     provider = await getProvider();
-  } catch (_err) {
+  } catch {
     return NextResponse.json(
       {
         error: "provider_unavailable",

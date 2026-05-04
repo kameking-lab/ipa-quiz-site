@@ -56,24 +56,17 @@ export function EssayEditor({ question }: Props) {
   const [isPremium, setIsPremium] = useState(false);
   const [remaining, setRemaining] = useState<number>(FREE_ESSAY_LIMIT_PER_MONTH);
 
-  // Hydrate draft + premium status from localStorage after mount.
-  // setState-in-effect lint suppressed: this is the standard pattern for SSR-safe
-  // localStorage hydration to avoid hydration mismatch errors.
+  // Hydrate draft + premium status from localStorage after mount (SSR-safe pattern).
   useEffect(() => {
     const draft = readEssayDraft(question.id);
     if (draft) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIndustry((draft.industry as Industry) ?? "it");
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setAnswers({ ア: draft.ア ?? "", イ: draft.イ ?? "", ウ: draft.ウ ?? "" });
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSavedAt(draft.updatedAt);
     }
     try {
       const premium = window.localStorage.getItem(LS_KEYS.premium) === "1";
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsPremium(premium);
-      // eslint-disable-next-line react-hooks/set-state-in-effect
       setRemaining(premium ? Infinity : essayUsageRemaining(false));
     } catch {
       // ignore
