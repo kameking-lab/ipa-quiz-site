@@ -201,3 +201,98 @@ Stripe 本実装はフェーズ4。
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
 - アフィリエイト ID: `NEXT_PUBLIC_AMAZON_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
 - フェーズ4 で相互送客バナーを実装
+
+## 15. 戦略原則（差別化軸の優先順位）
+
+意思決定が割れたとき、以下の優先順位で判断する:
+
+1. **教育機会の平準化 > 短期収益**: 機能の有料化判断はまずユーザー獲得を優先。月 300 円の有料化判断は CLAUDE.md「承認必須事項」に必ず照会
+2. **モバイル片手操作 > PC マルチカラム**: 全 UI はモバイル縦持ちでまず動くこと。PC は付属物
+3. **ゼロ遷移 > 完璧な情報設計**: 解説・コパイロット・類題は同一画面に重ねる。ページ遷移を入れる前に他の選択肢を 3 つ挙げる
+4. **AI 体験密度 > 静的解説の網羅性**: 競合の人力解説と同じ土俵で戦わない。AI でしかできない応答を主役にする
+5. **公開過去問の正確性 > UI 装飾**: 問題文・選択肢・解答は IPA 原典との一致を最優先。原典 PDF リンクを必ず保持
+
+## 16. 禁止事項（実装時の NG リスト）
+
+以下は明示的に禁止。レビューで見つけたら必ず指摘する:
+
+- **競合（過去問道場 / siken.com / kakomon.com 系）への言及** — UI / コピー / メタ / コミットメッセージ / Issue 全てで NG。比較訴求は「従来の学習サイト」等の総称で行う
+- **Google SDK / Anthropic SDK の `app/api/` 直接 import** — 必ず `lib/ai/provider.ts::getProvider()` 経由
+- **`localStorage` への直接アクセス** — 必ず `lib/storage/keys.ts::LS_KEYS` 経由でキー名を集約
+- **`process.env.*` のクライアントコンポーネントでの参照** — `NEXT_PUBLIC_*` 接頭辞のもの以外はサーバ側のみ
+- **問題文・選択肢の独自書き換え** — 原典 PDF と一致させる。誤字訂正であっても commit メッセージにその旨を残す
+- **`dangerouslySetInnerHTML` でのユーザー入力レンダリング** — 解説・コパイロット応答は `react-markdown` を使う
+- **画像の `<img>` 直書き** — `next/image` を使い `alt` を必ず付ける（装飾画像は `alt=""`）
+- **新規 npm パッケージ追加で重複機能を持ち込む** — 例: clsx 入りなのに classnames を追加しない
+- **`any` / `as any` / `// @ts-ignore`** — 必要なら `unknown` + 型ガード、または `// @ts-expect-error <理由>` で明示
+- **コミットメッセージに「Generated with Claude」等の出処タグを追加** — 不要（出力は人間がレビューする前提）
+
+## 17. 実装ルール（コード規約の補足）
+
+§7 のコーディング規約に加え、以下を厳守:
+
+### サーバ vs クライアント
+
+- **App Router のデフォルトはサーバコンポーネント**。`"use client"` はインタラクションが必要な末端のみ
+- データ取得は **サーバコンポーネント or Route Handler** で行い、クライアントには JSON ではなく完成済みの React ツリーを渡す
+- 巨大な問題データを `import` する箇所は SSG / 静的最適化が効くようサーバ側に閉じる
+
+### API ルート
+
+- `export const runtime = "nodejs"` を明示（`edge` 必須でない限り）
+- レート制限は `lib/rate-limit/server.ts` を経由
+- LLM 呼び出しは必ず `getProvider()` 経由で、ストリーミングは `provider.streamChat()`
+- Stripe / Prisma 等の重い依存は **handler 内で動的 import** してビルドサイズを抑える
+
+### スタイリング
+
+- Tailwind v4 + `cn()` (`twMerge(clsx(...))`) を使う
+- ダークモード対応は `dark:` プレフィックスで全コンポーネントに必須
+- カラーは `zinc` / `sky` を基調。アクセントは `sky-500` / `sky-600`
+- フォーカスリングは `focus-visible:ring-2 focus-visible:ring-sky-500` を必ず付与（a11y）
+
+### 型と検証
+
+- 外部入力（URL params / form data / fetch result）は **必ず Zod でパース**
+- 内部のドメイン型は `lib/questions/types.ts` の `Question` を正とする
+- `interface` は拡張前提のもの、`type` は閉じた union / intersection に使う
+
+### 国際化
+
+- 現状は **日本語のみ**。i18n ライブラリは入れない
+- ただし将来的な英語化を阻害しないよう、コピーは原則ハードコードを避け
+  メッセージモジュールに集約してよい（強制ではない）
+
+## 18. テスト・検証手順
+
+PR を出す前に **必ず** 以下を通すこと:
+
+```bash
+pnpm typecheck            # tsc --noEmit
+pnpm lint                 # ESLint
+pnpm build                # 本番ビルド (型・ルーティング・Server Component の最終確認)
+pnpm validate:questions   # データ追加時のみ
+```
+
+### 手動検証
+
+UI / 体験面の変更は **モバイル幅 (375px) と PC 幅 (1280px) の両方** をブラウザで確認:
+
+- ホーム → 試験選択 → クイズ開始 → 解答 → 解説スライドイン → 次問
+- AI コパイロット呼び出し → ストリーミング応答 → 連投時のレート制限
+- ダークモード切替で全画面が破綻しないこと
+- キーボードのみで全インタラクションが完結すること（Tab / Enter / Space / Esc）
+
+### データ品質チェック
+
+問題データを追加・改変したら:
+
+```bash
+pnpm validate:questions
+pnpm find:placeholders   # プレースホルダ解説が混入してないか
+```
+
+### 自動テスト
+
+現状ユニット / E2E テストは未整備。Phase4 で Playwright を導入予定。
+それまでは **本番マージ前に必ずプレビュー URL で手動確認** すること。
