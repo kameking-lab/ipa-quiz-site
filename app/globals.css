@@ -249,6 +249,32 @@ body {
   to { transform: translateY(0); opacity: 1; }
 }
 
+/* Hero AI demo — 5 秒ループでユーザー回答 → 正解ハイライト → AI バブルが流れる */
+@keyframes hero-ai-correct-pulse {
+  0%, 30%   { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  35%, 60%  { box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.35); }
+  100%      { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+@keyframes hero-ai-bubble-in {
+  0%, 50%   { opacity: 0; transform: translateY(8px); }
+  60%, 95%  { opacity: 1; transform: translateY(0); }
+  100%      { opacity: 0; transform: translateY(0); }
+}
+@keyframes hero-ai-caret-blink {
+  0%, 60%, 100% { opacity: 0; }
+  70%, 90%       { opacity: 1; }
+}
+.hero-ai-demo__correct {
+  animation: hero-ai-correct-pulse 5s ease-in-out infinite;
+}
+.hero-ai-demo__bubble {
+  animation: hero-ai-bubble-in 5s ease-in-out infinite;
+}
+.hero-ai-demo__caret {
+  display: inline-block;
+  animation: hero-ai-caret-blink 5s ease-in-out infinite;
+}
+
 .slide-in-from-bottom-4 {
   animation: slide-in-from-bottom 200ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
