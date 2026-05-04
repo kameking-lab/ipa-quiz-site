@@ -144,7 +144,7 @@ export default function SettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSettings(readSettings());
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();

@@ -16,19 +16,24 @@ interface Message {
 }
 
 export function useChatSession(question: Question, messages: Message[]) {
-  const sessionIdRef = React.useRef<string>(generateId());
-  const createdAtRef = React.useRef<string>(new Date().toISOString());
+  // Identity is read in render, so it must be state (not a ref).
+  // Reset on question change via the standard "compare prev prop" pattern.
+  const [session, setSession] = React.useState(() => ({
+    sessionId: generateId(),
+    createdAt: new Date().toISOString(),
+  }));
+  const [trackedQuestionId, setTrackedQuestionId] = React.useState(question.id);
 
-  React.useEffect(() => {
-    sessionIdRef.current = generateId();
-    createdAtRef.current = new Date().toISOString();
-  }, [question.id]);
+  if (trackedQuestionId !== question.id) {
+    setTrackedQuestionId(question.id);
+    setSession({ sessionId: generateId(), createdAt: new Date().toISOString() });
+  }
 
   React.useEffect(() => {
     if (messages.length === 0) return;
     const timer = setTimeout(() => {
-      const session: ChatSession = {
-        id: sessionIdRef.current,
+      const persisted: ChatSession = {
+        id: session.sessionId,
         questionId: question.id,
         examCode: question.exam,
         year: question.year,
@@ -42,16 +47,13 @@ export function useChatSession(question: Question, messages: Message[]) {
           quickAction: m.quickAction,
           createdAt: new Date().toISOString(),
         })),
-        createdAt: createdAtRef.current,
+        createdAt: session.createdAt,
         updatedAt: new Date().toISOString(),
       };
-      saveToLocalStorage(session);
+      saveToLocalStorage(persisted);
     }, 600);
     return () => clearTimeout(timer);
-  }, [messages, question]);
+  }, [messages, question, session]);
 
-  return {
-    sessionId: sessionIdRef.current,
-    createdAt: createdAtRef.current,
-  };
+  return session;
 }

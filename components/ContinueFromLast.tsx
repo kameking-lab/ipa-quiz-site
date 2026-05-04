@@ -37,7 +37,7 @@ export function ContinueFromLast() {
   const [last, setLast] = React.useState<LastQuestionState | null>(null);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setLast(readLastQuestion());
   }, []);
 

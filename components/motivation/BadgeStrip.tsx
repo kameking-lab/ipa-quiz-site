@@ -18,7 +18,7 @@ export function BadgeStrip() {
   React.useEffect(() => {
     const s = readStreak();
     const { state } = syncBadgesWithStreak(s.currentStreak, s.longestStreak);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setEarned(new Set(state.earned));
     setStreak({ current: s.currentStreak, longest: s.longestStreak });
   }, []);

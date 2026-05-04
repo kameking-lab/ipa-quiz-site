@@ -25,7 +25,7 @@ export function SessionSummaryGate() {
       router.replace(window.location.pathname, { scroll: false });
       return;
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSummary(summarizeSession(meta));
     setOpen(true);
   }, [searchParams, router]);

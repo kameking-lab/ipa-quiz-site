@@ -52,7 +52,7 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
   const [sending, setSending] = React.useState(false);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setComments(readAll().filter((c) => c.questionId === questionId));
   }, [questionId]);
 

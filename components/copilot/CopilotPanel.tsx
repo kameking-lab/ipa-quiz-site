@@ -187,7 +187,7 @@ export function CopilotPanel({
   const [responseLength, setResponseLength] = React.useState<ResponseLength>("medium");
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setFeedbackSubmittedState(readFeedbackSubmitted());
     const onStorage = () => setFeedbackSubmittedState(readFeedbackSubmitted());
     window.addEventListener("storage", onStorage);
@@ -214,7 +214,7 @@ export function CopilotPanel({
 
   // Reset conversation when question changes; refresh profile snapshot
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setMessages([]);
     setInput("");
     abortRef.current?.abort();
@@ -229,7 +229,7 @@ export function CopilotPanel({
   React.useEffect(() => {
     if (typeof window === "undefined") return;
     const Ctor = getSpeechRecognitionCtor();
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     if (!Ctor) setVoiceState("unsupported");
     try {
       const stored = window.localStorage.getItem(LS_KEYS.copilotResponseLength);

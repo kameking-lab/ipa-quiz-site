@@ -47,7 +47,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
     } catch {
       parsedEntries = { entries: [] };
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setByDate(syncHeatmapWithHistory(parsedEntries.entries));
   }, []);
 

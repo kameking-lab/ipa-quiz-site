@@ -43,7 +43,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } catch {
       // ignore
     }
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setThemeState(initial);
     const r = resolve(initial);
     setResolved(r);

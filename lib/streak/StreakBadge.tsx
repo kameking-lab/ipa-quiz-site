@@ -10,7 +10,7 @@ export function StreakBadge({ className }: { className?: string }) {
   const [state, setState] = React.useState<StreakState | null>(null);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setState(readStreak());
 
     const refresh = () => setState(readStreak());

@@ -20,7 +20,7 @@
  *   GEMINI_API_KEY  (.env.local または export)
  */
 
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { Question, Season } from "@/lib/questions/types";
@@ -470,9 +470,8 @@ function regenerateBarrel(examCode: string): void {
   if (!existsSync(outDir)) return;
   let files: string[] = [];
   try {
-    const { readdirSync } = require("node:fs") as typeof import("node:fs");
     files = readdirSync(outDir)
-      .filter((f: string) => f.endsWith(".ts") && f !== "index.ts")
+      .filter((f) => f.endsWith(".ts") && f !== "index.ts")
       .sort();
   } catch {
     return;

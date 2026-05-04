@@ -35,7 +35,7 @@ export function ExamProgressBar({ exam, totalQuestions }: Props) {
     const entries = loadEntries().filter((e) => e.id.startsWith(`${exam}-`));
     const uniqueIds = new Set(entries.map((e) => e.id));
     const correctEntries = entries.filter((e) => e.correct);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setProgress({
       answered: uniqueIds.size,
       correct: correctEntries.length,

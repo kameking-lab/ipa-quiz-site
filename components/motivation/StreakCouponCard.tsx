@@ -19,7 +19,7 @@ export function StreakCouponCard({ variant = "full" }: Props) {
   React.useEffect(() => {
     const s = readStreak();
     const { state } = ensureCouponForStreak(s.currentStreak, s.longestStreak);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setCoupon(state);
     setLongest(s.longestStreak);
   }, []);

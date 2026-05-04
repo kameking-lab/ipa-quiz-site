@@ -50,7 +50,7 @@ export function DashboardOverview() {
     const examTopProb = [...examProbs].sort((a, b) => b.passProbability - a.passProbability)[0];
     const exam = daysUntilNextExam();
     void categoryStats;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setData({
       totalAnswered: entries.length,
       studyMinutes: estimateStudyMinutes(entries.length),

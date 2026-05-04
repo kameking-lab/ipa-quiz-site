@@ -27,7 +27,7 @@ export function ContinueFromHistory() {
   const [hydrated, setHydrated] = React.useState(false);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setHydrated(true);
     const history = createHistoryStore();
     const entries = history.getAllEntries();

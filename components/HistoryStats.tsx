@@ -85,7 +85,7 @@ export function HistoryStats() {
     const raw = JSON.parse(h.exportJson()) as {
       entries: Array<{ id: string; correct: boolean }>;
     };
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setData({
       total: s.total,
       correct: s.correct,

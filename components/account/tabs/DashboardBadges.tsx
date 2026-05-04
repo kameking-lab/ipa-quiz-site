@@ -12,7 +12,7 @@ export function DashboardBadges() {
 
   React.useEffect(() => {
     const state = readXp();
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setXp(xpProgress(state.total));
     setTotalXp(state.total);
   }, []);

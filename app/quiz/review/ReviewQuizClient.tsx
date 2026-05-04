@@ -51,7 +51,7 @@ export function ReviewQuizClient() {
 
   React.useEffect(() => {
     const built = buildReviewPool();
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSessionIds(built.ids);
     setHadCards(built.hadCards);
     setIndex(0);

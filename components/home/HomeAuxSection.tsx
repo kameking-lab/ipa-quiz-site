@@ -27,7 +27,7 @@ export function HomeAuxSection() {
       const head = last.id.split("-")[0]?.toLowerCase();
       if (head && VALID_EXAM_IDS.has(head)) {
         const exam = head as ExamCode;
-        // eslint-disable-next-line react-hooks/set-state-in-effect
+         
         setResume({ exam, examLabel: EXAM_LABELS[exam] ?? exam.toUpperCase() });
       }
     }
