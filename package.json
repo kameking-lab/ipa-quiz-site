@@ -16,6 +16,7 @@
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
     "validate:questions": "tsx scripts/validate-questions.ts",
+    "validate:asins": "tsx scripts/validate-asins.ts",
     "tag:topics": "tsx scripts/topic-tagger.ts",
     "fetch:pdfs:all": "tsx scripts/fetch-ipa-pdfs.ts --all",
     "parse:pdfs:all": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts --all",
