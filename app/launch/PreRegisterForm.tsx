@@ -45,6 +45,8 @@ export function PreRegisterForm() {
     <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row">
       <input
         type="email"
+        autoComplete="email"
+        aria-label="メールアドレス"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
         placeholder="your@email.com"

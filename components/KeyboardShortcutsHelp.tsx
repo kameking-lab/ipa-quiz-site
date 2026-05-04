@@ -34,14 +34,14 @@ export function KeyboardShortcutsHelp() {
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
+      role="dialog"
+      aria-modal="true"
+      aria-label="キーボードショートカット一覧"
       onClick={() => setOpen(false)}
     >
       <div
         className="w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl dark:border-zinc-700 dark:bg-zinc-900"
         onClick={(e) => e.stopPropagation()}
-        role="dialog"
-        aria-modal="true"
-        aria-label="キーボードショートカット一覧"
       >
         <div className="mb-4 flex items-center justify-between">
           <div className="flex items-center gap-2">

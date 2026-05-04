@@ -70,6 +70,8 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
           <input
             type="email"
             required
+            autoComplete="email"
+            aria-label="メールアドレス"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="your@email.com"
@@ -112,6 +114,8 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
         <input
           type="email"
           required
+          autoComplete="email"
+          aria-label="メールアドレス"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           placeholder="your@email.com"
