@@ -1,20 +1,18 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("/pricing", () => {
-  test("Educational contribution copy is present", async ({ page }) => {
-    await page.goto("/pricing");
-    const html = await page.content();
-    // 教育貢献ピボット後は /pricing が無料化案内になっていること
-    expect(html).toContain("教育貢献プロジェクト");
-    expect(html).toContain("全機能を無料");
+// 教育貢献プロジェクト方針により /pricing は意図的に 404 を返す。
+// 詳細は lib/seo/expected-404.ts と smoke-routes.spec.ts を参照。
+test.describe("/pricing は意図的 404", () => {
+  test("/pricing は 404 を返す", async ({ request }) => {
+    const res = await request.get("/pricing");
+    expect(res.status()).toBe(404);
   });
 
-  test("No paid pricing strings", async ({ page }) => {
-    await page.goto("/pricing");
+  test("/about の料金についてセクションが教育貢献ピボットを伝えている", async ({ page }) => {
+    await page.goto("/about");
     const html = await page.content();
-    // 旧 ¥1,480 / ¥2,980 / 月額 980 等が表示されないこと
-    expect(html).not.toMatch(/¥1,480|¥2,980|¥980/);
-    expect(html).not.toContain("月額 980");
+    expect(html).toContain("教育貢献プロジェクト");
+    expect(html).toContain("料金プラン");
   });
 
   test("Sitemap returns 200", async ({ request }) => {
