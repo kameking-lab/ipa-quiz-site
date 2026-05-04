@@ -7,7 +7,22 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/api/", "/admin/", "/auth/", "/account/", "/chat/share"],
+        disallow: [
+          "/api/",
+          "/admin/",
+          "/auth/",
+          "/account/",
+          "/chat/share",
+          // 内部レビュー・一時公開ページは検索インデックス対象外
+          "/exec-review",
+          "/feature-review",
+          "/final-review",
+          "/final-review-v3",
+          "/strategy-discussion",
+          "/strategy-discussion-v2",
+          "/tmp/",
+          "/test/",
+        ],
       },
     ],
     sitemap: `${SITE_BASE_URL}/sitemap.xml`,
