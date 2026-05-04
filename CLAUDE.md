@@ -201,3 +201,81 @@ Stripe 本実装はフェーズ4。
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
 - アフィリエイト ID: `NEXT_PUBLIC_AMAZON_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
 - フェーズ4 で相互送客バナーを実装
+
+## 15. 戦略の根本ルール（必読）
+
+「過去問道場」は同じ土俵で戦っても勝てない。差別化は徹底して以下に集中させる:
+
+- **モバイル片手操作 First**: PC は二級市民。タップ範囲 44px 以上、片手親指圏内に
+  全コアアクションを置く。スクロールは縦のみ、横スワイプは復習スワイプのみ。
+- **ゼロ遷移・ゼロローディング**: 解説・コパイロット・次問は全て同一画面で出現。
+  `router.push` は試験/モード切替などのトップレベル遷移のみ。問題内では使わない。
+- **AI は無料で常駐**: 1 日 30 回（β中は 50 回）を消費せず読める「軽量解説」と、
+  会話形式の「深掘り」を分離。導線で AI をケチらない。
+- **競合言及は禁止**: マーケティング文・ヒーローコピー・SNS で「過去問道場」「siken」
+  などの固有名詞は出さない。比較は「他の過去問サイト」など一般化して書く。
+  （根拠: コミット 387609c）
+
+## 16. 禁止事項（やってはいけないこと）
+
+- `app/api/` 配下で `@google/generative-ai` / `@anthropic-ai/sdk` / `openai` を
+  直接 `import` する（必ず `lib/ai/provider.ts` 経由）
+- `localStorage` を `lib/storage/keys.ts::LS_KEYS` を介さず直接アクセスする
+- 競合サービス名（過去問道場 / siken など）をユーザー向け文言に書く
+- 「承認必須事項」(§10) を勝手に変更
+- `.env.local` / シークレットを `git add` する（`.gitignore` 済みだが要注意）
+- `data/questions/` 配下を AI 自動生成だけで埋める（必ずスクリプト経由＋
+  `pnpm validate:questions` で zod 検証）
+- 問題データから `sourcePdfUrl` を外す（出典遡及性は §8 のルール）
+- `--no-verify` で hooks をスキップ、`-c commit.gpgsign=false` で署名をスキップ
+- IPA 公式 PDF を `public/` 等の公開ディレクトリにコミット（`/data/raw_pdfs/` のみ）
+
+## 17. 実装ルール
+
+### コンポーネント設計
+- **サーバーコンポーネント優先**。`"use client"` は state/effect/event handler が
+  必要な葉っぱだけに付ける
+- データ取得は Server Component または `app/api/` の Route Handler で行う
+- クイズ問題データは `lib/questions/load.ts` の同期 API で取り出す（小さい・全部同梱）
+
+### スタイル
+- Tailwind ユーティリティを優先、`cn()` で動的クラス合成
+- カラーは `zinc` / `sky` / `emerald` / `rose` を基本パレットに
+- ダークモード対応必須（`dark:` プレフィックス）
+
+### LLM 呼び出し
+- ストリーミング既定。`provider.streamChat({ system, messages, model, maxTokens })`
+- 入力 token を抑えるため、長いコンテキストは要約してから渡す
+- 失敗時は UI 側でリトライボタンを出す（自動リトライしない）
+
+### レート制限
+- クライアント: `lib/storage/rate-limit-client.ts`（UX 向け早期判定）
+- サーバー: `lib/rate-limit/server.ts`（IP ベース、最終判定）
+- 値の変更は §10 承認必須
+
+### Route Handler
+- `export const runtime = "nodejs"` を明示（Edge runtime は不可）
+- `Request` のみを受け、`Response` を返す。Next 16 の規約に厳密に従う
+
+## 18. テスト・検証
+
+現状はユニットテストフレームワーク導入なし。差し替え時は以下を最低限通す:
+
+```bash
+pnpm typecheck            # tsc --noEmit / strict 違反なし
+pnpm lint                 # eslint / unused-vars 含めゼロ
+pnpm build                # 本番ビルド成功（型エラー検出含む）
+pnpm validate:questions   # 問題データ zod スキーマ全件 OK
+```
+
+UI 変更時:
+- `pnpm dev` で http://localhost:3000 を開いて golden path を実機確認
+  - ホーム → 試験選択 → モード選択 → 1 問解く → 解説確認 → コパイロット起動
+- モバイル幅（375px）と PC 幅（1280px）の両方
+- Light / Dark テーマ両方
+- キーボードのみで一通り操作できる（§4 a11y）
+
+PR 作成前必須:
+- `pnpm typecheck && pnpm build` を pass
+- 影響を受けるページを実ブラウザで確認（不可ならその旨明記）
+- 競合言及がない、UI 文言に過剰な煽りがないかセルフチェック
