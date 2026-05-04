@@ -1,9 +1,26 @@
 "use client";
 
 import * as React from "react";
-import { Flame, Sparkles, Trophy, X } from "lucide-react";
+import { Flame, Sparkles, Trophy, X, Share2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { StreakMilestone } from "./core";
+
+const SHARE_ENABLED_MILESTONES: ReadonlySet<number> = new Set([7, 30, 100]);
+const SITE_URL =
+  typeof window !== "undefined"
+    ? window.location.origin
+    : "https://ipa-quiz-site.vercel.app";
+
+function buildShareUrl(milestone: StreakMilestone): string {
+  const text =
+    milestone === 100
+      ? `IPA 過去問 AI で 100 日連続学習を達成しました🔥 #IPA過去問AI #100日チャレンジ`
+      : milestone === 30
+        ? `IPA 過去問 AI で 30 日連続学習を達成しました🔥 #IPA過去問AI`
+        : `IPA 過去問 AI で 1 週間連続学習を達成しました🔥 #IPA過去問AI`;
+  const url = `${SITE_URL}/og/streak/${milestone}`;
+  return `https://x.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+}
 
 const MESSAGES: Record<StreakMilestone, { title: string; body: string }> = {
   3: {
@@ -65,7 +82,7 @@ export function MilestoneToast({
               <Flame className={cn("h-6 w-6 text-orange-500")} aria-hidden="true" />
             )}
           </div>
-          <div>
+          <div className="flex-1">
             <div className="mb-0.5 flex items-center gap-1 text-xs font-semibold text-amber-700 dark:text-amber-200">
               <Sparkles className="h-3 w-3" aria-hidden="true" />
               <span>マイルストーン達成</span>
@@ -74,6 +91,17 @@ export function MilestoneToast({
               {msg.title}
             </div>
             <p className="mt-1 text-xs text-zinc-700 dark:text-zinc-300">{msg.body}</p>
+            {SHARE_ENABLED_MILESTONES.has(milestone) && (
+              <a
+                href={buildShareUrl(milestone)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1.5 rounded-full bg-zinc-900 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300"
+              >
+                <Share2 className="h-3 w-3" aria-hidden="true" />
+                X でシェアする
+              </a>
+            )}
           </div>
         </div>
       </div>
