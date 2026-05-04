@@ -8,6 +8,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
+import { AiQuotaIndicator } from "@/components/AiQuotaIndicator";
 import { StreakTracker } from "@/lib/streak/StreakTracker";
 import { BadgeTracker } from "@/components/motivation/BadgeTracker";
 import { CouponTracker } from "@/components/motivation/CouponTracker";
@@ -114,6 +115,7 @@ export default function RootLayout({
           </Suspense>
           <ServiceWorkerRegistration />
           <KeyboardShortcutsHelp />
+          <AiQuotaIndicator />
           <StreakTracker />
           <BadgeTracker />
           <CouponTracker />
