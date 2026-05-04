@@ -85,7 +85,7 @@ export function LearningCalendar() {
       };
     });
     const todayIso = jstDateString();
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setDays(cells);
     setCurrentStreak(readStreak().currentStreak);
     setTodayCount(byDay.get(todayIso)?.count ?? 0);

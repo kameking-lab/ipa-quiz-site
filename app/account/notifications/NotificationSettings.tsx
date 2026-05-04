@@ -24,7 +24,7 @@ export function NotificationSettings() {
   const [pushPermission, setPushPermission] = React.useState<NotificationPermission>("default");
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setPrefs(readNotificationPrefs());
     if (typeof window !== "undefined" && "Notification" in window && "serviceWorker" in navigator) {
       setPushSupported(true);

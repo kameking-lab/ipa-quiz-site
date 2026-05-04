@@ -100,7 +100,7 @@ export function QuizClient({
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSessionIds(deriveSessionPool(poolIds, mode, categoryById));
     setIndex(0);
     cache.current.clear();

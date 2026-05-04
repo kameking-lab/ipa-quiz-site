@@ -88,7 +88,7 @@ export function QuizPlayer({
 
   React.useEffect(() => {
     if (!question) return;
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSelected(undefined);
     setRevealed(false);
     setCopilotQuery(null);

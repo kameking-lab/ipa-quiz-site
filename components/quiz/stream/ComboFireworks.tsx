@@ -34,7 +34,7 @@ function buildParticles(): Particle[] {
 export function ComboFireworks() {
   const [particles, setParticles] = React.useState<Particle[]>([]);
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setParticles(buildParticles());
   }, []);
 

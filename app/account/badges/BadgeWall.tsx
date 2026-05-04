@@ -27,7 +27,7 @@ export function BadgeWall() {
   React.useEffect(() => {
     const s = readStreak();
     const { state } = syncBadgesWithStreak(s.currentStreak, s.longestStreak);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setEarned(new Set(state.earned));
     setEarnedAt(state.earnedAt);
     setStreak({ current: s.currentStreak, longest: s.longestStreak });

@@ -19,7 +19,7 @@ export function StreakProfileCard() {
   const [state, setState] = React.useState<StreakState | null>(null);
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setState(readStreak());
   }, []);
 

@@ -51,7 +51,7 @@ export function DashboardProgress() {
     const entries = loadHistoryEntries();
     const categoryStats = computeCategoryStats(entries, ALL_QUESTIONS);
     const examProbs = computeExamProbabilities(entries, ALL_QUESTIONS);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setData({
       totalAnswered: entries.length,
       correctCount: entries.filter((e) => e.correct).length,

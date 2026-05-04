@@ -39,7 +39,7 @@ export function QuestionVideoButton({
       typeof HTMLCanvasElement !== "undefined" &&
       typeof (HTMLCanvasElement.prototype as { captureStream?: () => unknown })
         .captureStream === "function";
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSupported(!!ok);
     return () => {
       if (previewUrl) URL.revokeObjectURL(previewUrl);

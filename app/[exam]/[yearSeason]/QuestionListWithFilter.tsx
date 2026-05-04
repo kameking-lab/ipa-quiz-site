@@ -54,7 +54,7 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
   const [filter, setFilter] = React.useState<Filter>("all");
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setSolved(readSolvedMap());
     setHydrated(true);
     const onStorage = (e: StorageEvent) => {

@@ -30,7 +30,7 @@ export function StreamQuizLoader({
     )
       .slice(0, 60)
       .map(shuffleChoices);
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setQuestions(pool);
   }, [params]);
 

@@ -59,7 +59,7 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
 
   React.useEffect(() => {
     if (!open) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+       
       setChoice(null);
       setComment("");
       setSubmitted(false);

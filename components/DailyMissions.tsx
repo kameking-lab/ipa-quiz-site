@@ -15,7 +15,7 @@ export function DailyMissions() {
   const [justClaimed, setJustClaimed] = React.useState<Record<string, number>>({});
 
   React.useEffect(() => {
-    // eslint-disable-next-line react-hooks/set-state-in-effect
+     
     setState(readMissions());
     const handler = () => setState(readMissions());
     window.addEventListener("storage", handler);
