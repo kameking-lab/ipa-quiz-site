@@ -13,6 +13,8 @@ export default function robots(): MetadataRoute.Robots {
           "/auth/",
           "/account/",
           "/chat/share",
+          // モックデータのみ表示する内部ダッシュボードは検索インデックス対象外
+          "/analytics",
           // 内部レビュー・一時公開ページは検索インデックス対象外
           "/exec-review",
           "/feature-review",
