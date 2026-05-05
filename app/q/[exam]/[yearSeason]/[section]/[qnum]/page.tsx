@@ -16,6 +16,10 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import {
+  formatLastUpdatedJa,
+  getLastUpdatedISO,
+} from "@/lib/questions/last-updated";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -172,6 +176,8 @@ export default async function QuestionPage({
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
   const title = questionTitle(q);
+  const lastUpdatedISO = getLastUpdatedISO(q);
+  const lastUpdatedJa = formatLastUpdatedJa(lastUpdatedISO);
 
   const questionEntity = {
     "@type": "Question",
@@ -293,6 +299,7 @@ export default async function QuestionPage({
         educationalLevel: "professional",
         inLanguage: "ja",
         url: pageUrlAbs,
+        dateModified: lastUpdatedISO,
         hasPart: questionEntity,
       },
       learningResource,
@@ -505,6 +512,12 @@ export default async function QuestionPage({
           <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
             <p>
               ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
+            </p>
+            <p>
+              最終更新:{" "}
+              <time dateTime={lastUpdatedISO} className="font-medium text-foreground">
+                {lastUpdatedJa}
+              </time>
             </p>
             <div className="flex flex-wrap gap-x-4 gap-y-1">
               <a

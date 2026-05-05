@@ -55,6 +55,8 @@ export interface Question {
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;
+  /** 解説の最終更新日 (ISO 8601: YYYY-MM-DD)。未設定時はビルド日へフォールバック。 */
+  lastUpdated?: string;
 }
 
 export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered" | "weakness";
