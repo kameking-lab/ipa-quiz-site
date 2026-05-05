@@ -27,7 +27,14 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: `${SITE_BASE_URL}/sitemap.xml`,
+    sitemap: [
+      `${SITE_BASE_URL}/sitemap.xml`,
+      `${SITE_BASE_URL}/sitemap/main.xml`,
+      `${SITE_BASE_URL}/sitemap/exams.xml`,
+      `${SITE_BASE_URL}/sitemap/topics.xml`,
+      `${SITE_BASE_URL}/sitemap/blog.xml`,
+      `${SITE_BASE_URL}/sitemap/books.xml`,
+    ],
     host: SITE_BASE_URL,
   };
 }

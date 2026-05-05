@@ -9,6 +9,7 @@ import type { Question } from "@/lib/questions/types";
 export const metadata: Metadata = {
   title: "デイリーチャレンジ",
   description: "毎日 5 問の出題に挑戦してXPを獲得しよう。",
+  alternates: { canonical: "/challenge" },
 };
 
 function isPlaceholderExplanation(q: Question): boolean {
