@@ -11,6 +11,7 @@ import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
@@ -28,6 +29,12 @@ export default function HomePage() {
   ) as Partial<Record<ExamCode, number>>;
 
   const totalQuestions = ALL_QUESTIONS.length;
+
+  const availableExamEntries = (
+    Object.entries(questionCounts) as Array<[ExamCode, number]>
+  )
+    .filter(([, count]) => count > 0)
+    .sort(([, a], [, b]) => b - a);
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -53,6 +60,18 @@ export default function HomePage() {
         url: SITE_BASE_URL,
         logo: `${SITE_BASE_URL}/icon-512.svg`,
         sameAs: ["https://x.com/kakomon_ai_jp", "https://note.com/kakomon_ai"],
+      },
+      {
+        "@type": "ItemList",
+        "@id": `${SITE_BASE_URL}/#exam-list`,
+        name: "IPA 情報処理技術者試験 区分一覧",
+        numberOfItems: availableExamEntries.length,
+        itemListElement: availableExamEntries.map(([code, count], idx) => ({
+          "@type": "ListItem",
+          position: idx + 1,
+          url: `${SITE_BASE_URL}/${code}`,
+          name: `${examLabel(code)}（${count.toLocaleString("ja-JP")}問）`,
+        })),
       },
     ],
   };

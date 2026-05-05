@@ -8,6 +8,7 @@ import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   EXAM_DESCRIPTIONS,
+  examFullName,
   examMetaDescription,
   examTopDescription,
   examTopTitle,
@@ -83,6 +84,7 @@ export default async function ExamTopPage({
   const posts = getBlogPostsByExam(code).slice(0, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
 
+  const credentialId = `${absUrl}#credential`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -93,7 +95,23 @@ export default async function ExamTopPage({
         description: examTopDescription(code, questions.length),
         url: absUrl,
         inLanguage: "ja",
-        about: examLabel(code),
+        about: { "@id": credentialId },
+      },
+      {
+        "@type": "EducationalOccupationalCredential",
+        "@id": credentialId,
+        name: examFullName(code),
+        credentialCategory: "Certification",
+        url: absUrl,
+        inLanguage: "ja",
+        description: EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の国家試験。`,
+        recognizedBy: {
+          "@type": "Organization",
+          name: "情報処理推進機構（IPA）",
+          url: "https://www.ipa.go.jp/",
+        },
+        educationalLevel: "professional",
+        competencyRequired: categories.map((c) => c.category).slice(0, 12),
       },
       {
         "@type": "BreadcrumbList",
