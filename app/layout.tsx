@@ -76,6 +76,12 @@ export const metadata: Metadata = {
       "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。",
     images: [`${BASE_URL}/opengraph-image`],
   },
+  verification: {
+    google: process.env.GOOGLE_SITE_VERIFICATION,
+    other: {
+      "msvalidate.01": process.env.BING_SITE_VERIFICATION ?? "",
+    },
+  },
 };
 
 export const viewport: Viewport = {
