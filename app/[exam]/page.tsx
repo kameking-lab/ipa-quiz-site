@@ -21,8 +21,11 @@ import {
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
+import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamProgressBar } from "@/components/exam/ExamProgressBar";
+import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
@@ -286,6 +289,12 @@ export default async function ExamTopPage({
           );
         })()}
 
+        {/* Study roadmap — month-by-month plan */}
+        <ExamRoadmap exam={code} />
+
+        {/* Official IPA resources — E-E-A-T */}
+        <ExamOfficialResources exam={code} />
+
         {/* Browse tabs */}
         <section aria-label="問題を探す" className="mb-8">
           <ExamBrowseTabs exam={code} years={years} categories={categories} />
@@ -345,6 +354,9 @@ export default async function ExamTopPage({
             </ul>
           </section>
         )}
+
+        {/* AI transparency for the exam page */}
+        <ExamAiTransparencyNote />
 
         {/* Related blog posts */}
         {posts.length > 0 && (
