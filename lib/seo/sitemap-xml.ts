@@ -14,6 +14,7 @@ import {
 } from "./sitemap-pagination";
 import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
+import { FEATURE_LANDING_PAGES } from "@/data/features";
 
 interface UrlEntry {
   url: string;
@@ -52,6 +53,14 @@ const STATIC_ROUTES: UrlEntry[] = [
       url: `${SITE_BASE_URL}/keywords/${p.slug}`,
       changeFrequency: "monthly",
       priority: 0.7,
+    }),
+  ),
+  { url: `${SITE_BASE_URL}/features`, changeFrequency: "monthly", priority: 0.8 },
+  ...FEATURE_LANDING_PAGES.map(
+    (p): UrlEntry => ({
+      url: `${SITE_BASE_URL}/features/${p.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.8,
     }),
   ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
