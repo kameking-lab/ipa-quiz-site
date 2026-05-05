@@ -72,7 +72,14 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
-    optimizePackageImports: ["lucide-react", "@radix-ui/react-dialog", "@radix-ui/react-switch", "@radix-ui/react-slot"],
+    optimizePackageImports: [
+      "lucide-react",
+      "@radix-ui/react-dialog",
+      "@radix-ui/react-switch",
+      "@radix-ui/react-slot",
+      "react-markdown",
+      "remark-gfm",
+    ],
   },
   images: {
     formats: ["image/avif", "image/webp"],
