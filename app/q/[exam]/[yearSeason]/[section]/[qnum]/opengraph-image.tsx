@@ -2,9 +2,10 @@ import { ImageResponse } from "next/og";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { formatYearSeason } from "@/lib/utils";
+import type { ChoiceKey } from "@/lib/questions/types";
 import { findQuestionByRoute, type QuestionRouteParams } from "@/lib/seo/question-url";
 
-export const alt = "過去問AI 過去問解説";
+export const alt = "過去問AI — IPA 試験 過去問 AI 解説";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -16,6 +17,8 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
   return [];
 }
 
+const SNIPPET_MAX = 50;
+
 export default async function OgImage({
   params,
 }: {
@@ -24,14 +27,21 @@ export default async function OgImage({
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
 
-  const heading = q
-    ? `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)}`
+  const examLine = q
+    ? `${examLabelAt(q.exam, q.year, q.season)}　${formatYearSeason(q.year, q.season)}`
     : "過去問AI";
-  const subheading = q ? `問${q.qNumber} ${q.category}` : "過去問 AI 解説";
-  const body = q
-    ? q.question.replace(/\s+/g, " ").slice(0, 110) +
-      (q.question.length > 110 ? "…" : "")
-    : "AI コパイロット付き過去問学習";
+  const qNumLabel = q ? `問${q.qNumber}` : "";
+  const category = q?.category ?? "過去問 AI 解説";
+  const rawQuestion = q?.question.replace(/\s+/g, " ") ?? "AI コパイロット付き過去問学習";
+  const snippet =
+    rawQuestion.length > SNIPPET_MAX
+      ? `${rawQuestion.slice(0, SNIPPET_MAX)}…`
+      : rawQuestion;
+  const answerKey = q
+    ? Array.isArray(q.answer)
+      ? (q.answer[0] as ChoiceKey)
+      : (q.answer as ChoiceKey | string)
+    : null;
 
   return new ImageResponse(
     (
@@ -43,28 +53,30 @@ export default async function OgImage({
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          padding: "70px 80px",
+          padding: "64px 80px",
           fontFamily: "sans-serif",
           color: "#ffffff",
+          position: "relative",
         }}
       >
+        {/* Logo + brand line */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "12px",
-            marginBottom: "28px",
+            gap: "14px",
+            marginBottom: "32px",
           }}
         >
           <div
             style={{
-              background: "rgba(255,255,255,0.2)",
-              borderRadius: "999px",
-              padding: "4px 14px",
-              color: "#e0f2fe",
-              fontSize: "18px",
-              fontWeight: 600,
-              letterSpacing: "0.08em",
+              background: "#ffffff",
+              borderRadius: "14px",
+              padding: "8px 18px",
+              color: "#0369a1",
+              fontSize: "28px",
+              fontWeight: 900,
+              letterSpacing: "-0.5px",
             }}
           >
             過去問AI
@@ -72,39 +84,67 @@ export default async function OgImage({
           <div
             style={{
               color: "#bae6fd",
-              fontSize: "18px",
+              fontSize: "20px",
+              fontWeight: 500,
             }}
           >
-            過去問 AI 解説
+            IPA 試験 過去問 AI 解説
           </div>
         </div>
 
+        {/* Exam + year/season */}
         <div
           style={{
-            color: "#bae6fd",
-            fontSize: "28px",
-            fontWeight: 500,
-            marginBottom: "8px",
+            color: "#e0f2fe",
+            fontSize: "30px",
+            fontWeight: 600,
+            marginBottom: "10px",
+            letterSpacing: "-0.5px",
           }}
         >
-          {heading}
-        </div>
-        <div
-          style={{
-            color: "#ffffff",
-            fontSize: "56px",
-            fontWeight: 800,
-            lineHeight: 1.1,
-            marginBottom: "28px",
-          }}
-        >
-          {subheading}
+          {examLine}
         </div>
 
+        {/* Question number + category */}
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            gap: "16px",
+            marginBottom: "24px",
+          }}
+        >
+          {qNumLabel && (
+            <div
+              style={{
+                background: "#fbbf24",
+                color: "#0c4a6e",
+                borderRadius: "10px",
+                padding: "6px 18px",
+                fontSize: "36px",
+                fontWeight: 900,
+                letterSpacing: "-0.5px",
+              }}
+            >
+              {qNumLabel}
+            </div>
+          )}
+          <div
+            style={{
+              color: "#ffffff",
+              fontSize: "36px",
+              fontWeight: 700,
+            }}
+          >
+            {category}
+          </div>
+        </div>
+
+        {/* Question snippet (~50 chars) */}
         <div
           style={{
             color: "#f1f5f9",
-            fontSize: "26px",
+            fontSize: "32px",
             fontWeight: 400,
             lineHeight: 1.5,
             maxWidth: "1040px",
@@ -114,19 +154,42 @@ export default async function OgImage({
             overflow: "hidden",
           }}
         >
-          {body}
+          {snippet}
         </div>
 
+        {/* Footer: answer hint + url */}
         <div
           style={{
             position: "absolute",
             bottom: "40px",
+            left: "80px",
             right: "80px",
-            color: "rgba(255,255,255,0.55)",
-            fontSize: "18px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-          ipa-quiz-site.vercel.app
+          {answerKey ? (
+            <div
+              style={{
+                color: "#bae6fd",
+                fontSize: "22px",
+                fontWeight: 600,
+              }}
+            >
+              正解と解説を AI と一緒に
+            </div>
+          ) : (
+            <div />
+          )}
+          <div
+            style={{
+              color: "rgba(255,255,255,0.55)",
+              fontSize: "18px",
+            }}
+          >
+            ipa-quiz-site.vercel.app
+          </div>
         </div>
       </div>
     ),
