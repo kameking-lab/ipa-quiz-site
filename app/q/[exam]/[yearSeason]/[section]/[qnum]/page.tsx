@@ -31,6 +31,10 @@ import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
+import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
+import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
+import { getCategoryTip } from "@/lib/seo/category-tips";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -184,6 +188,73 @@ export default async function QuestionPage({
       : {}),
   };
 
+  const tip = getCategoryTip(q.category);
+
+  const faqEntries = [
+    {
+      q: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} の正解は？`,
+      a: answerText
+        ? `正解は「${answerKey}: ${answerText}」です。`
+        : `正解は「${answerKey}」です。`,
+    },
+    {
+      q: `この問題はどの分野から出題されていますか？`,
+      a: `${examLabelAt(q.exam, q.year, q.season)} の「${q.category}」分野から出題されています。${
+        q.topicTags.length > 0
+          ? `関連キーワード: ${q.topicTags.slice(0, 5).join("・")}。`
+          : ""
+      }`,
+    },
+    {
+      q: `「${q.category}」分野を効率的に学ぶには？`,
+      a: tip.howToStudy,
+    },
+  ];
+  if (showRealExplanation) {
+    faqEntries.push({
+      q: `この問題の解説を要約すると？`,
+      a: truncate(q.explanation.replace(/\s+/g, " "), 200),
+    });
+  }
+
+  const learningResource = {
+    "@type": "LearningResource",
+    "@id": `${pageUrlAbs}#learning-resource`,
+    name: title,
+    inLanguage: "ja",
+    learningResourceType: "Practice problem",
+    educationalLevel: "Professional",
+    educationalUse: "Self-study",
+    teaches: q.category,
+    keywords: [
+      examLabel(q.exam),
+      examLabelAt(q.exam, q.year, q.season),
+      q.category,
+      ...q.topicTags,
+    ].join(", "),
+    isAccessibleForFree: true,
+    license: "https://www.ipa.go.jp/shiken/mondai-kaiotu.html",
+    creator: {
+      "@type": "Organization",
+      name: "情報処理推進機構 (IPA)",
+      url: "https://www.ipa.go.jp/",
+    },
+    publisher: {
+      "@type": "Organization",
+      "@id": `${SITE_BASE_URL}#organization`,
+    },
+  };
+
+  const faqPage = {
+    "@type": "FAQPage",
+    "@id": `${pageUrlAbs}#faq`,
+    mainEntity: faqEntries.map((entry) => ({
+      "@type": "Question",
+      name: entry.q,
+      acceptedAnswer: { "@type": "Answer", text: entry.a },
+    })),
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -210,6 +281,8 @@ export default async function QuestionPage({
         url: pageUrlAbs,
         hasPart: questionEntity,
       },
+      learningResource,
+      faqPage,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -308,14 +381,20 @@ export default async function QuestionPage({
           {sessionLabel(q.session)} 問{q.qNumber}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          <span className="text-sm font-medium text-muted-foreground">
+          <Link
+            href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
+            className="text-sm font-medium text-muted-foreground transition hover:text-primary hover:underline"
+          >
             {q.category}
-          </span>
+          </Link>
           {q.topicTags.slice(0, 3).map((t) => (
             <Badge key={t} variant="outline" className="text-[10px]">
               #{t}
             </Badge>
           ))}
+        </div>
+        <div className="mt-3">
+          <DifficultyMeter difficulty={q.difficulty} />
         </div>
       </header>
 
@@ -424,6 +503,16 @@ export default async function QuestionPage({
           </div>
         </details>
       </section>
+
+      {/* Category-level study guidance */}
+      <CategoryStudyTip
+        category={q.category}
+        exam={q.exam}
+        topicTags={q.topicTags}
+      />
+
+      {/* Inline book recommendation tied to the category */}
+      <InlineBookHint exam={q.exam} category={q.category} />
 
       {/* AI Copilot CTA — gradient panel */}
       <section
