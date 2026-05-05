@@ -3,6 +3,7 @@
 import { Badge } from "@/components/ui/badge";
 import type { Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { QuestionBody } from "./QuestionBody";
 import { TTSButton } from "./TTSButton";
 
 export function QuestionCard({
@@ -36,11 +37,7 @@ export function QuestionCard({
         <div className="mb-2 flex justify-end">
           <TTSButton text={question.question} label="読み上げ" />
         </div>
-        {question.question.split("\n").map((line, i) => (
-          <p key={i} className="mb-2 last:mb-0">
-            {line}
-          </p>
-        ))}
+        <QuestionBody text={question.question} />
       </div>
     </div>
   );
