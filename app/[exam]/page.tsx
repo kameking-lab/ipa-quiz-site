@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, ChevronRight, FileText, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, Sparkles, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import {
   EXAM_DESCRIPTIONS,
   examFullName,
@@ -208,6 +209,73 @@ export default async function ExamTopPage({
             </Button>
           )}
         </section>
+
+        {/* Stats: pass rate / study hours / topic trend */}
+        {(() => {
+          const stats = EXAM_STATS[code];
+          if (!stats) return null;
+          const topCategories = categories.slice(0, 3);
+          return (
+            <section aria-label="試験統計" className="mb-8">
+              <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-foreground">
+                <TrendingUp className="h-4 w-4 text-muted-foreground" />
+                試験統計と出題傾向
+              </h2>
+              <div className="grid gap-3 sm:grid-cols-3">
+                <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+                  <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <TrendingUp className="h-3 w-3" />
+                    合格率（直近）
+                  </div>
+                  <p className="text-2xl font-bold text-foreground">
+                    {stats.passRateRecent}
+                    <span className="ml-0.5 text-base font-medium text-muted-foreground">%</span>
+                  </p>
+                  <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+                    {stats.passRateTrend}
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+                  <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <Clock className="h-3 w-3" />
+                    学習時間の目安
+                  </div>
+                  <p className="text-2xl font-bold text-foreground">
+                    {stats.studyHoursLow}–{stats.studyHoursHigh}
+                    <span className="ml-0.5 text-base font-medium text-muted-foreground">時間</span>
+                  </p>
+                  <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
+                    IT 経験・前提資格に応じて変動。1 日 1-2 時間で 3-6 ヶ月が目安。
+                  </p>
+                </div>
+                <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+                  <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+                    <Sparkles className="h-3 w-3" />
+                    出題傾向
+                  </div>
+                  <p className="text-[13px] leading-relaxed text-foreground">
+                    {stats.topicTrend}
+                  </p>
+                  {topCategories.length > 0 && (
+                    <ul className="mt-2 flex flex-wrap gap-1">
+                      {topCategories.map((c) => (
+                        <li key={c.category}>
+                          <Badge variant="outline" className="text-[10px]">
+                            {c.category}
+                            <span className="ml-1 text-muted-foreground">{c.count}</span>
+                          </Badge>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+              <p className="mt-2 text-[10px] text-muted-foreground">
+                ※ 合格率はおおよそのレンジ。最新の確定値は IPA 公式統計をご確認ください。
+              </p>
+            </section>
+          );
+        })()}
 
         {/* Browse tabs */}
         <section aria-label="問題を探す" className="mb-8">
