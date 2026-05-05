@@ -7,15 +7,10 @@ import { I18nProvider } from "@/lib/i18n/I18nProvider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
-import { KeyboardShortcutsHelp } from "@/components/KeyboardShortcutsHelp";
-import { AiQuotaIndicator } from "@/components/AiQuotaIndicator";
-import { StreakTracker } from "@/lib/streak/StreakTracker";
-import { BadgeTracker } from "@/components/motivation/BadgeTracker";
-import { CouponTracker } from "@/components/motivation/CouponTracker";
+import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
 import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
-import { WelcomeModal } from "@/components/WelcomeModal";
 import { PostHogProvider } from "@/components/PostHogProvider";
 
 const geistSans = Geist({
@@ -106,6 +101,9 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+        <link rel="dns-prefetch" href="https://us.i.posthog.com" />
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
@@ -114,12 +112,7 @@ export default function RootLayout({
             <PostHogProvider />
           </Suspense>
           <ServiceWorkerRegistration />
-          <KeyboardShortcutsHelp />
-          <AiQuotaIndicator />
-          <StreakTracker />
-          <BadgeTracker />
-          <CouponTracker />
-          <WelcomeModal />
+          <DeferredLayoutWidgets />
           <Analytics />
           <a
             href="#main-content"
