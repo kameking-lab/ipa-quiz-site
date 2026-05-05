@@ -37,6 +37,7 @@ import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { getCategoryTip } from "@/lib/seo/category-tips";
+import { topicTagToSlug } from "@/lib/seo/topics";
 
 export const dynamicParams = true;
 export const revalidate = 86400;
@@ -155,6 +156,17 @@ export default async function QuestionPage({
   const related = ALL_QUESTIONS.filter(
     (x) => x.id !== q.id && x.exam === q.exam && x.category === q.category,
   ).slice(0, 5);
+
+  const tagSet = new Set(q.topicTags);
+  const crossExamByTopic =
+    q.topicTags.length > 0
+      ? ALL_QUESTIONS.filter(
+          (x) =>
+            x.id !== q.id &&
+            x.exam !== q.exam &&
+            x.topicTags.some((t) => tagSet.has(t)),
+        ).slice(0, 5)
+      : [];
 
   const pageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const examPath = `/${q.exam}`;
@@ -390,9 +402,13 @@ export default async function QuestionPage({
             {q.category}
           </Link>
           {q.topicTags.slice(0, 3).map((t) => (
-            <Badge key={t} variant="outline" className="text-[10px]">
+            <Link
+              key={t}
+              href={`/topics/${encodeURIComponent(topicTagToSlug(t))}`}
+              className="inline-flex items-center rounded-full border border-border bg-card px-2 py-0.5 text-[10px] text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+            >
               #{t}
-            </Badge>
+            </Link>
           ))}
         </div>
         <div className="mt-3">
@@ -690,6 +706,43 @@ export default async function QuestionPage({
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
                     <Badge variant="outline" className="text-[10px]">
+                      {examLabelAt(r.exam, r.year, r.season)}
+                    </Badge>
+                    <span>
+                      {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                    </span>
+                  </div>
+                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
+                    {r.question.slice(0, 140)}
+                    {r.question.length > 140 ? "…" : ""}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Cross-exam related — by shared topicTags */}
+      {crossExamByTopic.length > 0 && (
+        <section aria-label="他試験の同テーマ問題" className="mt-10">
+          <div className="mb-4">
+            <h2 className="text-lg font-bold tracking-tight text-foreground">
+              他試験の同テーマ問題
+            </h2>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              トピック「{q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問
+            </p>
+          </div>
+          <ul className="flex flex-col gap-2">
+            {crossExamByTopic.map((r) => (
+              <li key={r.id}>
+                <Link
+                  href={questionPagePath(r)}
+                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Badge variant="primary" className="text-[10px]">
                       {examLabelAt(r.exam, r.year, r.season)}
                     </Badge>
                     <span>
