@@ -456,6 +456,31 @@ export default async function QuestionPage({
             </Link>
           </Button>
         </div>
+        <div className="relative mt-4 border-t border-primary/15 pt-3">
+          <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+            AIに質問できる例
+          </p>
+          <ul aria-label="AIへの質問例" className="flex flex-wrap gap-1.5">
+            {[
+              "この選択肢の違いは？",
+              "用語をやさしく解説して",
+              `${q.category}の前提知識を整理して`,
+              "実例で教えて",
+              "類題を1問つくって",
+              "覚え方を教えて",
+            ].map((label) => (
+              <li key={label}>
+                <Link
+                  href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}#q${q.qNumber}`}
+                  className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-card px-2.5 py-1 text-xs text-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary-soft"
+                >
+                  <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
+                  {label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* Share */}
