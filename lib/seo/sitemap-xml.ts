@@ -43,14 +43,6 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/recommended-books`, changeFrequency: "monthly", priority: 0.7 },
-  ...RECOMMENDED_BOOKS_EXAMS.map(
-    (exam): UrlEntry => ({
-      url: `${SITE_BASE_URL}/recommended-books/${exam}`,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    }),
-  ),
   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/launch`, changeFrequency: "weekly", priority: 0.7 },
@@ -80,12 +72,18 @@ function getBlogRoutes(): UrlEntry[] {
   }));
 }
 
-function getTopicHubRoutes(): UrlEntry[] {
-  return getHubTopics(80, 4).map((t) => ({
-    url: `${SITE_BASE_URL}/topics/${encodeURIComponent(t.slug)}`,
-    changeFrequency: "weekly",
-    priority: 0.7,
-  }));
+function getBookRoutes(): UrlEntry[] {
+  const out: UrlEntry[] = [
+    { url: `${SITE_BASE_URL}/recommended-books`, changeFrequency: "monthly", priority: 0.7 },
+  ];
+  for (const exam of RECOMMENDED_BOOKS_EXAMS) {
+    out.push({
+      url: `${SITE_BASE_URL}/recommended-books/${exam}`,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+  return out;
 }
 
 function getExamHubRoutes(): UrlEntry[] {
@@ -115,6 +113,14 @@ function getExamHubRoutes(): UrlEntry[] {
   return entries;
 }
 
+function getTopicHubRoutes(): UrlEntry[] {
+  return getHubTopics(80, 4).map((t) => ({
+    url: `${SITE_BASE_URL}/topics/${encodeURIComponent(t.slug)}`,
+    changeFrequency: "weekly",
+    priority: 0.7,
+  }));
+}
+
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -129,14 +135,37 @@ function renderUrl(entry: UrlEntry): string {
   return `  <url>${parts.join("")}</url>`;
 }
 
+function renderUrlSet(entries: UrlEntry[]): string {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${entries.map(renderUrl).join("\n")}
+</urlset>
+`;
+}
+
+/**
+ * トップレベル sitemap index。
+ * カテゴリ別 sitemap (main/exams/topics/blog/books/questions chunks) を束ねる。
+ */
 export function renderSitemapIndexXml(): string {
-  const count = getSitemapChunkCount();
   const now = new Date().toISOString();
-  const items = Array.from(
-    { length: count },
-    (_, i) =>
-      `  <sitemap><loc>${SITE_BASE_URL}/sitemap/${i}.xml</loc><lastmod>${now}</lastmod></sitemap>`,
-  ).join("\n");
+  const entries: string[] = [
+    `${SITE_BASE_URL}/sitemap/main.xml`,
+    `${SITE_BASE_URL}/sitemap/exams.xml`,
+    `${SITE_BASE_URL}/sitemap/topics.xml`,
+    `${SITE_BASE_URL}/sitemap/blog.xml`,
+    `${SITE_BASE_URL}/sitemap/books.xml`,
+  ];
+  const chunkCount = getSitemapChunkCount();
+  for (let i = 0; i < chunkCount; i += 1) {
+    entries.push(`${SITE_BASE_URL}/sitemap/questions/${i}.xml`);
+  }
+  const items = entries
+    .map(
+      (loc) =>
+        `  <sitemap><loc>${xmlEscape(loc)}</loc><lastmod>${now}</lastmod></sitemap>`,
+    )
+    .join("\n");
   return `<?xml version="1.0" encoding="UTF-8"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${items}
@@ -144,6 +173,51 @@ ${items}
 `;
 }
 
+export function renderMainSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })));
+}
+
+export function renderExamsSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(getExamHubRoutes().map((r) => ({ ...r, lastModified: now })));
+}
+
+export function renderTopicsSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })));
+}
+
+export function renderBlogSitemapXml(): string {
+  return renderUrlSet(getBlogRoutes());
+}
+
+export function renderBooksSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(getBookRoutes().map((r) => ({ ...r, lastModified: now })));
+}
+
+export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
+  const now = new Date().toISOString();
+  const indexable = getIndexableQuestions();
+  const start = pageIndex * SITEMAP_CHUNK_SIZE;
+  const slice = indexable.slice(start, start + SITEMAP_CHUNK_SIZE);
+  return renderUrlSet(
+    slice.map((q) => ({
+      url: `${SITE_BASE_URL}${questionPagePath(q)}`,
+      lastModified: now,
+      changeFrequency: "yearly",
+      priority: 0.6,
+    })),
+  );
+}
+
+/**
+ * Backwards-compat: the legacy /sitemap/[id].xml route still serves a single
+ * combined chunk (static + exams + topics + blog + books on chunk 0, questions
+ * on every chunk). Kept so deployed crawlers transitioning to the new index
+ * structure continue to receive valid XML.
+ */
 export function renderSitemapChunkXml(pageIndex: number): string {
   const now = new Date().toISOString();
   const indexable = getIndexableQuestions();
@@ -163,14 +237,10 @@ export function renderSitemapChunkXml(pageIndex: number): string {
           ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
           ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })),
+          ...getBookRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getBlogRoutes(),
         ]
       : [];
 
-  const items = [...base, ...questionEntries].map(renderUrl).join("\n");
-  return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${items}
-</urlset>
-`;
+  return renderUrlSet([...base, ...questionEntries]);
 }
