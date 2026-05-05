@@ -13,6 +13,7 @@ import {
   getSitemapChunkCount,
 } from "./sitemap-pagination";
 import { getHubTopics } from "./topics";
+import { KEYWORD_PAGES } from "@/data/keywords";
 
 interface UrlEntry {
   url: string;
@@ -44,6 +45,15 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/glossary`, changeFrequency: "monthly", priority: 0.7 },
+  { url: `${SITE_BASE_URL}/keywords`, changeFrequency: "weekly", priority: 0.7 },
+  ...KEYWORD_PAGES.map(
+    (p): UrlEntry => ({
+      url: `${SITE_BASE_URL}/keywords/${p.slug}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }),
+  ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/launch`, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/api-docs`, changeFrequency: "monthly", priority: 0.5 },
