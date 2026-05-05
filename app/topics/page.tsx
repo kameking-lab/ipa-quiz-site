@@ -17,29 +17,36 @@ const OG_IMAGE = (() => {
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();
 
-export const metadata: Metadata = {
-  title: "トピック別過去問インデックス",
-  description:
-    "IPA 情報処理技術者試験の過去問をトピック（キーワード）軸で横断的に学習。試験区分をまたいで同じテーマの問題を一覧できます。",
-  alternates: { canonical: "/topics" },
-  openGraph: {
-    title: "トピック別過去問インデックス | 過去問AI",
+export function generateMetadata(): Metadata {
+  const all = getAllTopics();
+  const base: Metadata = {
+    title: "トピック別過去問インデックス",
     description:
-      "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
-    url: "/topics",
-    type: "website",
-    siteName: SITE_NAME,
-    locale: "ja_JP",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "トピック別インデックス" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "トピック別過去問インデックス | 過去問AI",
-    description:
-      "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
-    images: [OG_IMAGE],
-  },
-};
+      "IPA 情報処理技術者試験の過去問をトピック（キーワード）軸で横断的に学習。試験区分をまたいで同じテーマの問題を一覧できます。",
+    alternates: { canonical: "/topics" },
+    openGraph: {
+      title: "トピック別過去問インデックス | 過去問AI",
+      description:
+        "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
+      url: "/topics",
+      type: "website",
+      siteName: SITE_NAME,
+      locale: "ja_JP",
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "トピック別インデックス" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "トピック別過去問インデックス | 過去問AI",
+      description:
+        "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
+      images: [OG_IMAGE],
+    },
+  };
+  if (all.length === 0) {
+    base.robots = { index: false, follow: false };
+  }
+  return base;
+}
 
 export default function TopicsIndexPage() {
   const hubs = getHubTopics(80, 4);
