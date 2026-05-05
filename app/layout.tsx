@@ -144,6 +144,7 @@ export default function RootLayout({
                       <li><Link href="/faq" className="block py-2 hover:text-foreground">FAQ</Link></li>
                       <li><Link href="/contact" className="block py-2 hover:text-foreground">お問い合わせ</Link></li>
                       <li><Link href="/blog" className="block py-2 hover:text-foreground">ブログ</Link></li>
+                      <li><Link href="/sitemap" className="block py-2 hover:text-foreground">サイトマップ</Link></li>
                     </ul>
                   </div>
                   <div>
