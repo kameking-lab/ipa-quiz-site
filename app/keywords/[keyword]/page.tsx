@@ -30,6 +30,13 @@ export async function generateMetadata({
   const { keyword } = await params;
   const page = getKeywordPageBySlug(keyword);
   if (!page) return { title: "ページが見つかりません", robots: { index: false } };
+  const ogParams = new URLSearchParams({
+    type: "keyword",
+    title: page.title,
+    subtitle: "学習トピック特集",
+    body: page.description,
+  });
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
     title: page.title,
     description: page.description,
@@ -41,11 +48,13 @@ export async function generateMetadata({
       type: "article",
       siteName: SITE_NAME,
       locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: page.title }],
     },
     twitter: {
       card: "summary_large_image",
       title: page.title,
       description: page.description,
+      images: [ogImageUrl],
     },
   };
 }

@@ -8,6 +8,16 @@ import { GLOSSARY, GLOSSARY_CATEGORY_LABELS } from "@/data/glossary";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
+const OG_IMAGE = (() => {
+  const params = new URLSearchParams({
+    type: "glossary",
+    title: "IT 用語集",
+    subtitle: "情報処理技術者試験 頻出用語",
+    body: "30+ 用語を定義・関連トピック・出題傾向とともに整理。",
+  });
+  return `${SITE_BASE_URL}/api/og?${params.toString()}`;
+})();
+
 export const metadata: Metadata = {
   title: "IT 用語集 — 情報処理技術者試験で頻出のキーワード",
   description:
@@ -21,6 +31,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "IT 用語集" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "IT 用語集 | 過去問AI",
+    description:
+      "情報処理技術者試験で頻出する IT 用語の定義と関連トピックを掲載した用語集。",
+    images: [OG_IMAGE],
   },
 };
 

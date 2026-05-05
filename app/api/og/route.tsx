@@ -51,6 +51,26 @@ const TYPE_META: Record<string, TypeStyle> = {
     emoji: "📚",
     subtitle: "セッション完了",
   },
+  topic: {
+    gradient: "linear-gradient(135deg, #0e7490 0%, #14b8a6 50%, #84cc16 100%)",
+    emoji: "🏷️",
+    subtitle: "トピック別過去問",
+  },
+  glossary: {
+    gradient: "linear-gradient(135deg, #4338ca 0%, #6366f1 50%, #06b6d4 100%)",
+    emoji: "📖",
+    subtitle: "IT 用語集",
+  },
+  keyword: {
+    gradient: "linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #f59e0b 100%)",
+    emoji: "🔍",
+    subtitle: "学習トピック特集",
+  },
+  faq: {
+    gradient: "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #6366f1 100%)",
+    emoji: "💡",
+    subtitle: "よくある質問",
+  },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
     emoji: "✨",
@@ -97,7 +117,15 @@ export async function GET(request: Request) {
     if (count > 0) stats.push({ label: "収録問題", value: `${count.toLocaleString("en-US")}問` });
   }
 
-  const isContent = type === "blog" || type === "exam" || type === "question" || type === "books";
+  const isContent =
+    type === "blog" ||
+    type === "exam" ||
+    type === "question" ||
+    type === "books" ||
+    type === "topic" ||
+    type === "glossary" ||
+    type === "keyword" ||
+    type === "faq";
 
   return new ImageResponse(
     (
