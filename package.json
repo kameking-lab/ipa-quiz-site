@@ -35,7 +35,8 @@
     "refactor:by-file": "tsx scripts/refactor-by-file.ts",
     "e2e": "playwright test",
     "e2e:install": "playwright install --with-deps chromium",
-    "test:smoke": "node scripts/full-e2e-test.mjs"
+    "test:smoke": "node scripts/full-e2e-test.mjs",
+    "test:canonical": "playwright test tests/e2e/canonical.spec.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",

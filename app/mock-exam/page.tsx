@@ -7,6 +7,7 @@ import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 export const metadata: Metadata = {
   title: "模擬試験モード",
   description: "実際の試験と同じ問題数・制限時間で受験できる模擬試験モード。スコアと合格ライン判定付き。",
+  alternates: { canonical: "/mock-exam" },
   robots: { index: false, follow: false },
 };
 
