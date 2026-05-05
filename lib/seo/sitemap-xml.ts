@@ -12,6 +12,7 @@ import {
   getIndexableQuestions,
   getSitemapChunkCount,
 } from "./sitemap-pagination";
+import { getHubTopics } from "./topics";
 
 interface UrlEntry {
   url: string;
@@ -50,6 +51,7 @@ const STATIC_ROUTES: UrlEntry[] = [
       priority: 0.6,
     }),
   ),
+  { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/launch`, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/api-docs`, changeFrequency: "monthly", priority: 0.5 },
@@ -74,6 +76,14 @@ function getBlogRoutes(): UrlEntry[] {
     url: `${SITE_BASE_URL}/blog/${p.slug}`,
     lastModified: p.updatedAt ?? p.publishedAt,
     changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+}
+
+function getTopicHubRoutes(): UrlEntry[] {
+  return getHubTopics(80, 4).map((t) => ({
+    url: `${SITE_BASE_URL}/topics/${encodeURIComponent(t.slug)}`,
+    changeFrequency: "weekly",
     priority: 0.7,
   }));
 }
@@ -152,6 +162,7 @@ export function renderSitemapChunkXml(pageIndex: number): string {
       ? [
           ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
           ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
+          ...getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getBlogRoutes(),
         ]
       : [];
