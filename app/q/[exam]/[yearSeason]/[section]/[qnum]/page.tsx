@@ -35,6 +35,7 @@ import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
+import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
@@ -428,11 +429,7 @@ export default async function QuestionPage({
         aria-label="問題文"
         className="selectable-content rounded-2xl border border-border bg-card p-6 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-7 sm:text-[17px]"
       >
-        {q.question.split("\n").map((line, i) => (
-          <p key={i} className="mb-3 last:mb-0">
-            {line}
-          </p>
-        ))}
+        <QuestionBody text={q.question} />
       </section>
 
       {/* Choices */}
