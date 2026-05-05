@@ -31,9 +31,11 @@ import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
+import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
+import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { getCategoryTip } from "@/lib/seo/category-tips";
 
 export const dynamicParams = true;
@@ -475,6 +477,14 @@ export default async function QuestionPage({
               </span>
             </div>
           )}
+
+          {showRealExplanation && (
+            <div className="mt-4">
+              <QuestionFeedback questionId={q.id} />
+            </div>
+          )}
+
+          <AiTransparencyDisclaimer />
 
           <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
             <p>
