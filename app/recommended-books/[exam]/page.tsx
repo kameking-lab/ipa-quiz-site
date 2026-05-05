@@ -75,6 +75,13 @@ export async function generateMetadata({
   const label = EXAM_LABELS[code];
   const title = `【${label}】おすすめ問題集 | 過去問AI`;
   const description = `${label}試験の定番問題集・参考書をAIが厳選。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
+  const ogParams = new URLSearchParams({
+    type: "books",
+    title: `${label} おすすめ問題集`,
+    subtitle: `${label} の定番テキスト`,
+    body: description,
+  });
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
     title,
     description,
@@ -86,8 +93,9 @@ export async function generateMetadata({
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
   };
 }
 
