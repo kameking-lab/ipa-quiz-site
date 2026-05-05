@@ -199,14 +199,51 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <p className="mb-3 leading-relaxed">
             記事の内容を実戦で確認しましょう。AI コパイロット付きで分からない点はその場で解決できます。
           </p>
-          <Link
-            href={`/${post.exam}`}
-            className="inline-block rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
-          >
-            {examLabel(post.exam)} 過去問一覧へ →
-          </Link>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href={`/${post.exam}`}
+              className="inline-block rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
+            >
+              {examLabel(post.exam)} 過去問一覧へ →
+            </Link>
+            <Link
+              href={`/quiz?mode=random&exam=${post.exam}`}
+              className="inline-block rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
+            >
+              ランダム出題で開始
+            </Link>
+            <Link
+              href={`/recommended-books/${post.exam}`}
+              className="inline-block rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
+            >
+              おすすめ書籍
+            </Link>
+          </div>
         </section>
-      ) : null}
+      ) : (
+        <section className="mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
+          <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50">
+            過去問AI で各試験区分の対策を始める
+          </h2>
+          <p className="mb-3 leading-relaxed">
+            13 区分・12,000 問超を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+          </p>
+          <div className="flex flex-wrap gap-2">
+            <Link
+              href="/"
+              className="inline-block rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
+            >
+              試験区分を選ぶ →
+            </Link>
+            <Link
+              href="/blog"
+              className="inline-block rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
+            >
+              他のブログ記事を読む
+            </Link>
+          </div>
+        </section>
+      )}
 
       {related.length > 0 ? (
         <section
