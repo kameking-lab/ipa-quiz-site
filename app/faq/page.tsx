@@ -7,6 +7,16 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
+const FAQ_OG = (() => {
+  const params = new URLSearchParams({
+    type: "faq",
+    title: "よくある質問",
+    subtitle: "過去問AI の使い方",
+    body: "対象試験・AI 解説の精度・出典・履歴・PWA 対応など 49 問。",
+  });
+  return `${SITE_BASE_URL}/api/og?${params.toString()}`;
+})();
+
 export const metadata: Metadata = {
   title: "よくある質問（FAQ）— 過去問AIの使い方・AI解説の精度",
   description:
@@ -20,12 +30,14 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: FAQ_OG, width: 1200, height: 630, alt: "よくある質問" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "よくある質問（FAQ） | 過去問AI",
     description:
       "過去問AI の利用方法・AI解説・過去問の出典などのよくある質問と回答。教育貢献プロジェクトとして全機能無料。",
+    images: [FAQ_OG],
   },
 };
 

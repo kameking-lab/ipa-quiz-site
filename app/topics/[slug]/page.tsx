@@ -40,6 +40,14 @@ export async function generateMetadata({
   }
   const title = `${topic.tag} の過去問・AI解説 | 情報処理技術者試験`;
   const description = `IPA 情報処理技術者試験の過去問のうち「${topic.tag}」を扱うものを横断的に収録。${topic.count}問の問題と AI 解説を提供します。`;
+  const ogParams = new URLSearchParams({
+    type: "topic",
+    title: `#${topic.tag}`,
+    subtitle: "トピック別過去問",
+    body: description,
+    count: String(topic.count),
+  });
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   return {
     title,
     description,
@@ -51,8 +59,14 @@ export async function generateMetadata({
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImageUrl],
+    },
   };
 }
 
