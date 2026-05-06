@@ -40,7 +40,7 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
   const handleShare = React.useCallback(async () => {
     if (!summary) return;
     const text = buildShareText(summary);
-    const url = typeof window !== "undefined" ? window.location.origin : "https://ipa-quiz-site.vercel.app";
+    const url = typeof window !== "undefined" ? window.location.origin : "https://kakomon-ai.jp";
     try {
       const nav = (typeof navigator !== "undefined" ? navigator : null) as
         | (Navigator & {
@@ -162,7 +162,7 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
                       count: summary.total,
                       accuracy: summary.accuracyPct,
                     })}
-                    url={typeof window !== "undefined" ? window.location.origin : "https://ipa-quiz-site.vercel.app"}
+                    url={typeof window !== "undefined" ? window.location.origin : "https://kakomon-ai.jp"}
                     imageUrl={buildOgImageUrl({
                       type: "session",
                       title: `${summary.total}問完了 / 正答率${summary.accuracyPct}%`,

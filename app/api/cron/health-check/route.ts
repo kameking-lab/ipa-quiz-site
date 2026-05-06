@@ -39,7 +39,7 @@ const ALL_REQUIRED_200 = [
 function getBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
   if (process.env.VERCEL_URL) return `https://${process.env.VERCEL_URL}`;
-  return "https://ipa-quiz-site.vercel.app";
+  return "https://kakomon-ai.jp";
 }
 
 interface RouteResult {

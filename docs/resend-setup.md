@@ -9,7 +9,7 @@
 ## 0. 前提
 
 - 通知先メールアドレス: `kakomon.ai.jp@gmail.com`（`ENTERPRISE_CONTACT_TO` で上書き可能）
-- 送信元（From）: `no-reply@ipa-quiz-site.vercel.app`（`ENTERPRISE_CONTACT_FROM` で上書き可能）
+- 送信元（From）: `no-reply@kakomon-ai.jp`（`ENTERPRISE_CONTACT_FROM` で上書き可能）
 - 月 100 通までは Resend 無料枠で十分カバー可能
 
 ## 1. アカウント作成
@@ -23,7 +23,7 @@
 
 検証済みドメインから送ることでスパム判定を避けられる。Vercel ドメインのままでも動くが、独自ドメイン化したら必ず設定する。
 
-### Vercel ドメイン (`ipa-quiz-site.vercel.app`) を使い続ける場合
+### Vercel ドメイン (`kakomon-ai.jp`) を使い続ける場合
 
 ドメイン検証はスキップしてよい。Resend は `onboarding@resend.dev` をデフォルト From として使えるため、
 
@@ -69,7 +69,7 @@ Preview 環境にも同じ Key を入れておくと、PR 動作確認時にも�
 curl -sS --ssl-no-revoke -X POST \
   -H "Content-Type: application/json" \
   -d '{"name":"テスト","email":"test@example.com","company":"テスト株式会社","message":"動作確認テスト"}' \
-  https://ipa-quiz-site.vercel.app/api/contact/enterprise
+  https://kakomon-ai.jp/api/contact/enterprise
 ```
 
 期待: `200 {"ok":true}`

@@ -56,7 +56,7 @@ export function buildMarkdown(session: ChatSession, question: Question): string 
     }
   }
 
-  lines.push(`---`, ``, `*過去問AI - https://ipa-quiz-site.vercel.app*`);
+  lines.push(`---`, ``, `*過去問AI - https://kakomon-ai.jp*`);
 
   return lines.join("\n");
 }

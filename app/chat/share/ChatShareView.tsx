@@ -117,7 +117,7 @@ export function ChatShareView() {
       </div>
 
       <footer className="mt-8 text-center text-[11px] text-zinc-400 dark:text-zinc-600">
-        出典: IPA 情報処理技術者試験 ／ 過去問AI — https://ipa-quiz-site.vercel.app
+        出典: IPA 情報処理技術者試験 ／ 過去問AI — https://kakomon-ai.jp
       </footer>
     </main>
   );

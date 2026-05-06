@@ -1,7 +1,7 @@
 # 第7回 本格レビュー — 齋藤ナオ（温情ゼロ・実測のみ）
 
 レビュー実施日: 2026-04-26
-対象: https://ipa-quiz-site.vercel.app
+対象: https://kakomon-ai.jp
 レビュアー: 齋藤ナオ（Dispatch虚偽申告6回連続摘発の継続審査）
 
 ---

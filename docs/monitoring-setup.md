@@ -44,10 +44,10 @@ Project → `Settings` → `Client Keys (DSN)` から `DSN` をコピー。
 
 | URL | 期待値 | 種類 |
 |---|---|---|
-| `https://ipa-quiz-site.vercel.app/` | HTTP 200 | Keyword "過去問AI" |
-| `https://ipa-quiz-site.vercel.app/api/auth/session` | HTTP 200 | JSON `{` |
-| `https://ipa-quiz-site.vercel.app/admin/team` | HTTP 401 | Status code |
-| `https://ipa-quiz-site.vercel.app/sitemap.xml` | HTTP 200 | Keyword `<urlset` |
+| `https://kakomon-ai.jp/` | HTTP 200 | Keyword "過去問AI" |
+| `https://kakomon-ai.jp/api/auth/session` | HTTP 200 | JSON `{` |
+| `https://kakomon-ai.jp/admin/team` | HTTP 401 | Status code |
+| `https://kakomon-ai.jp/sitemap.xml` | HTTP 200 | Keyword `<urlset` |
 
 ### アラート通知
 
@@ -72,11 +72,11 @@ Vercel Dashboard → Project → Analytics タブで確認:
 
 ```bash
 curl -sS --ssl-no-revoke -o /dev/null -w "HTTP %{http_code}\n" \
-  https://ipa-quiz-site.vercel.app/api/auth/session
+  https://kakomon-ai.jp/api/auth/session
 # → HTTP 200
 
 curl -sS --ssl-no-revoke -o /dev/null -w "HTTP %{http_code}\n" \
-  https://ipa-quiz-site.vercel.app/admin/team
+  https://kakomon-ai.jp/admin/team
 # → HTTP 401
 ```
 

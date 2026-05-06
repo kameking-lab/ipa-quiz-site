@@ -2,7 +2,7 @@
 
 実施日: 2026-04-26
 レビュアー: 齋藤ナオ厳格モード
-対象: https://ipa-quiz-site.vercel.app（origin/main 32b364d 同期済み）
+対象: https://kakomon-ai.jp（origin/main 32b364d 同期済み）
 1巡目最終 NPS 予測: +27（baseline）
 
 ## サマリ

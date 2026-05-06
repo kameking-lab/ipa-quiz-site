@@ -465,7 +465,7 @@ export function QuizPlayer({
 const QUIZ_ORIGIN =
   typeof window !== "undefined"
     ? window.location.origin
-    : "https://ipa-quiz-site.vercel.app";
+    : "https://kakomon-ai.jp";
 
 function QuizCompleteScreen({
   stats,

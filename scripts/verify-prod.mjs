@@ -2,7 +2,7 @@
 // Run: node scripts/verify-prod.mjs
 import https from "node:https";
 
-const HOST = "ipa-quiz-site.vercel.app";
+const HOST = "kakomon-ai.jp";
 
 function req({ method, path, body, headers = {} }) {
   return new Promise((resolve, reject) => {
