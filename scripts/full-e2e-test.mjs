@@ -22,7 +22,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const ROOT = resolve(__dirname, "..");
 const LOGS_DIR = resolve(ROOT, "logs");
-const BASE_URL = process.env.E2E_BASE_URL ?? "https://ipa-quiz-site.vercel.app";
+const BASE_URL = process.env.E2E_BASE_URL ?? "https://kakomon-ai.jp";
 
 // playwright の解決: worktree 内に無ければ親リポジトリの node_modules を見にいく
 async function loadPlaywright() {

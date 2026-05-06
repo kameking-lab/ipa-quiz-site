@@ -27,7 +27,7 @@
 |---|---|
 | Monitor Type | `Keyword` |
 | Friendly Name | `過去問AI - Home` |
-| URL | `https://ipa-quiz-site.vercel.app/` |
+| URL | `https://kakomon-ai.jp/` |
 | Keyword Type | `exists` |
 | Keyword Value | `IPA` |
 | Monitoring Interval | `5 minutes` |
@@ -40,7 +40,7 @@
 |---|---|
 | Monitor Type | `HTTP(s)` |
 | Friendly Name | `過去問AI - /api/auth/session` |
-| URL | `https://ipa-quiz-site.vercel.app/api/auth/session` |
+| URL | `https://kakomon-ai.jp/api/auth/session` |
 | Monitoring Interval | `5 minutes` |
 | Expected Status Codes | `200` |
 
@@ -52,7 +52,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 |---|---|
 | Monitor Type | `HTTP(s)` |
 | Friendly Name | `過去問AI - /admin/team (auth gate)` |
-| URL | `https://ipa-quiz-site.vercel.app/admin/team` |
+| URL | `https://kakomon-ai.jp/admin/team` |
 | Monitoring Interval | `5 minutes` |
 | Custom HTTP Statuses | `401:up, 200:up, 5xx:down, 0:down` |
 
@@ -64,7 +64,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 |---|---|
 | Monitor Type | `Keyword` |
 | Friendly Name | `過去問AI - sitemap` |
-| URL | `https://ipa-quiz-site.vercel.app/sitemap.xml` |
+| URL | `https://kakomon-ai.jp/sitemap.xml` |
 | Keyword Type | `exists` |
 | Keyword Value | `<urlset` |
 | Monitoring Interval | `5 minutes` |
@@ -111,7 +111,7 @@ UptimeRobot の標準モニターは 200 系を `Up` とみなすため、`401` 
 
 1. UptimeRobot Dashboard で 4 モニターが全て **Up（緑）** になっていること
 2. 故意にダウン検出を試す（任意）:
-   - モニター 2 の URL を `https://ipa-quiz-site.vercel.app/api/auth/sessionXXXX` に一時的に変更
+   - モニター 2 の URL を `https://kakomon-ai.jp/api/auth/sessionXXXX` に一時的に変更
    - 10 分以内に Down メールが来ることを確認
    - URL を元に戻す → Up メールが来る
 

@@ -99,7 +99,7 @@ export default function StreakOgImage({ params }: { params: { days: string } }) 
             fontSize: "18px",
           }}
         >
-          ipa-quiz-site.vercel.app
+          kakomon-ai.jp
         </div>
       </div>
     ),

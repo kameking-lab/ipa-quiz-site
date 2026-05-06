@@ -13,7 +13,7 @@
 
 - Stripe アカウントは作成済み（Premium プランの Price も登録済み）
 - Live モードに切り替え済み（Dashboard 右上のトグルが `Live`）
-- Webhook Endpoint も Live 用に作成済み（`https://ipa-quiz-site.vercel.app/api/webhooks/stripe`）
+- Webhook Endpoint も Live 用に作成済み（`https://kakomon-ai.jp/api/webhooks/stripe`）
 
 未作成の場合は先に `docs/AUTH_AND_BILLING_SETUP.md` の Stripe 章を完了させること。
 
@@ -46,7 +46,7 @@
 Restricted Key と Webhook Signing Secret は **別物**。Webhook 用は別途必要。
 
 1. <https://dashboard.stripe.com/webhooks> （Live モード）
-2. 既存の `https://ipa-quiz-site.vercel.app/api/webhooks/stripe` をクリック
+2. 既存の `https://kakomon-ai.jp/api/webhooks/stripe` をクリック
 3. `Signing secret` の `Click to reveal` → `whsec_...` をコピー
 
 ## 3. Price ID の取得
@@ -82,13 +82,13 @@ Vercel Project → `Settings` → `Environment Variables` → `Production`:
 # (a) 未認証は 401（認証チェックが先に走る）
 curl -sS --ssl-no-revoke -X POST -H 'Content-Type: application/json' \
   -d '{"plan":"premium_monthly"}' \
-  https://ipa-quiz-site.vercel.app/api/stripe/checkout
+  https://kakomon-ai.jp/api/stripe/checkout
 # → 401 {"error":"unauthorized"}
 
 # (b) Webhook（署名なし）は 400
 curl -sS --ssl-no-revoke -X POST -H 'Content-Type: application/json' \
   -d '{}' \
-  https://ipa-quiz-site.vercel.app/api/webhooks/stripe
+  https://kakomon-ai.jp/api/webhooks/stripe
 # → 400 {"error":"missing_signature"}
 ```
 

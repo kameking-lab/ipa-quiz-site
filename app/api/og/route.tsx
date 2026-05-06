@@ -301,7 +301,7 @@ export async function GET(request: Request) {
           }}
         >
           <div>解説ゼロ遷移 × AI コパイロット常駐</div>
-          <div>ipa-quiz-site.vercel.app</div>
+          <div>kakomon-ai.jp</div>
         </div>
       </div>
     ),

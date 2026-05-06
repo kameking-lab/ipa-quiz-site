@@ -66,11 +66,11 @@ pnpm prisma studio
 ## 6. 確認 curl
 
 ```bash
-curl -sS --ssl-no-revoke -o - https://ipa-quiz-site.vercel.app/api/auth/session
+curl -sS --ssl-no-revoke -o - https://kakomon-ai.jp/api/auth/session
 # → 200 {} （AUTH_SECRET 未設定でも空セッションを返す graceful 動作）
 
 curl -sS --ssl-no-revoke -X POST -H 'Content-Type: application/json' -d '{}' \
-  https://ipa-quiz-site.vercel.app/api/stripe/checkout
+  https://kakomon-ai.jp/api/stripe/checkout
 # → 401 unauthorized （認証必須）
 ```
 

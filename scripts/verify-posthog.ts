@@ -3,13 +3,13 @@
  * Playwright で PostHog のイベント送信を検証するスクリプト
  * 使い方: tsx scripts/verify-posthog.ts
  * 環境変数:
- *   VERIFY_BASE_URL  対象 URL (デフォルト: https://ipa-quiz-site.vercel.app)
+ *   VERIFY_BASE_URL  対象 URL (デフォルト: https://kakomon-ai.jp)
  *   POSTHOG_API_KEY  PostHog Personal API Key (任意。設定時は API 経由でも確認)
  */
 
 import { chromium, firefox, webkit, type Browser, type BrowserContext, type ConsoleMessage, type Response, type Dialog } from "playwright";
 
-const BASE_URL = process.env.VERIFY_BASE_URL ?? "https://ipa-quiz-site.vercel.app";
+const BASE_URL = process.env.VERIFY_BASE_URL ?? "https://kakomon-ai.jp";
 const POSTHOG_HOST = "us.i.posthog.com";
 const POSTHOG_API_KEY = process.env.POSTHOG_API_KEY;
 const TIMEOUT_MS = 20_000;

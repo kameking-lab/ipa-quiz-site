@@ -116,7 +116,7 @@ function drawSlide(
   ctx.fillStyle = "rgba(255,255,255,0.7)";
   ctx.font = `500 24px ${FONT_STACK}`;
   ctx.textBaseline = "alphabetic";
-  ctx.fillText("ipa-quiz-site.vercel.app", 50, height - 50);
+  ctx.fillText("kakomon-ai.jp", 50, height - 50);
 }
 
 export interface RenderOptions {

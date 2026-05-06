@@ -88,7 +88,7 @@ export default function OgImage() {
             fontSize: "18px",
           }}
         >
-          ipa-quiz-site.vercel.app
+          kakomon-ai.jp
         </div>
       </div>
     ),

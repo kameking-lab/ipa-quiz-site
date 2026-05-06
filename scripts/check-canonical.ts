@@ -6,7 +6,7 @@
  * 使い方:
  *   tsx scripts/check-canonical.ts                    # localhost:3000
  *   tsx scripts/check-canonical.ts http://localhost:3000
- *   tsx scripts/check-canonical.ts https://ipa-quiz-site.vercel.app
+ *   tsx scripts/check-canonical.ts https://kakomon-ai.jp
  *
  * 事前に `pnpm dev` または `pnpm start` でサーバーを起動してください。
  */

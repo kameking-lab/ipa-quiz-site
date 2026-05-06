@@ -8,7 +8,7 @@ export interface ShareOgParams {
 }
 
 const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://ipa-quiz-site.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kakomon-ai.jp";
 
 export function buildOgImageUrl(params: ShareOgParams): string {
   const u = new URL(`${BASE_URL}/api/og`);

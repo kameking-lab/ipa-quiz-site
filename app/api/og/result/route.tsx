@@ -87,7 +87,7 @@ export async function GET(req: NextRequest) {
             fontSize: "20px",
           }}
         >
-          AIコパイロット付き過去問学習 — ipa-quiz-site.vercel.app
+          AIコパイロット付き過去問学習 — kakomon-ai.jp
         </div>
 
         <div

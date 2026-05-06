@@ -93,7 +93,7 @@ replaysOnErrorSampleRate: 0,
 
 ```bash
 curl -sS --ssl-no-revoke -o /dev/null -w "HTTP %{http_code}\n" \
-  https://ipa-quiz-site.vercel.app/api/_test/throw
+  https://kakomon-ai.jp/api/_test/throw
 # → 500 (test エンドポイント未実装の場合は 404)
 ```
 

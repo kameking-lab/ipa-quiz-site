@@ -9,7 +9,7 @@ const SHARE_ENABLED_MILESTONES: ReadonlySet<number> = new Set([7, 30, 100]);
 const SITE_URL =
   typeof window !== "undefined"
     ? window.location.origin
-    : "https://ipa-quiz-site.vercel.app";
+    : "https://kakomon-ai.jp";
 
 function buildShareUrl(milestone: StreakMilestone): string {
   const text =

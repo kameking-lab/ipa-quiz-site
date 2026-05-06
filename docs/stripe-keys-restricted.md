@@ -29,7 +29,7 @@
 Webhook 受信用の Signing Secret は別途必要:
 
 1. <https://dashboard.stripe.com/webhooks> → `Add endpoint`
-2. Endpoint URL: `https://ipa-quiz-site.vercel.app/api/webhooks/stripe`
+2. Endpoint URL: `https://kakomon-ai.jp/api/webhooks/stripe`
 3. Events:
    - `checkout.session.completed`
    - `customer.subscription.created`
@@ -62,10 +62,10 @@ Preview 環境向けにはテストモード鍵 (`rk_test_...`, `whsec_test_...`
 # 未認証 → 401
 curl -sS --ssl-no-revoke -o - -w "\nHTTP %{http_code}\n" \
   -X POST -H 'Content-Type: application/json' -d '{"plan":"premium"}' \
-  https://ipa-quiz-site.vercel.app/api/stripe/checkout
+  https://kakomon-ai.jp/api/stripe/checkout
 
 # 署名なし Webhook → 400
 curl -sS --ssl-no-revoke -o - -w "\nHTTP %{http_code}\n" \
   -X POST -H 'Content-Type: application/json' -d '{}' \
-  https://ipa-quiz-site.vercel.app/api/webhooks/stripe
+  https://kakomon-ai.jp/api/webhooks/stripe
 ```

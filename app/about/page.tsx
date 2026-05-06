@@ -199,7 +199,7 @@ export default function AboutPage() {
               学習中のスクリーンショットを X や Instagram に投稿いただけると、教育貢献プロジェクトの存在が広がります。
             </p>
             <ShareButtons
-              url="https://ipa-quiz-site.vercel.app/"
+              url="https://kakomon-ai.jp/"
               text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を応援しています。"
               hashtags={["過去問AI", "IPA試験", "応用情報"]}
             />
