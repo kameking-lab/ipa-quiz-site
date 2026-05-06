@@ -6,6 +6,13 @@ import { getAllBlogSummaries } from "@/data/blog";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
 
+const BLOG_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "blog",
+  title: "IPA試験ブログ",
+  subtitle: "全13区分の合格戦略・勉強法・出題傾向",
+  body: "IPA情報処理技術者試験13区分の合格戦略・勉強法・出題傾向を網羅した学習ブログ。",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: "IPA試験ブログ｜全13区分の合格戦略・勉強法・出題傾向",
   description:
@@ -15,15 +22,17 @@ export const metadata: Metadata = {
     title: "IPA試験ブログ | 過去問AI",
     description:
       "IPA情報処理技術者試験13区分の合格戦略・勉強法・出題傾向を網羅した学習ブログ。",
-    url: "/blog",
+    url: `${SITE_BASE_URL}/blog`,
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: BLOG_OG_IMAGE, width: 1200, height: 630, alt: "IPA試験ブログ | 過去問AI" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "IPA試験ブログ | 過去問AI",
     description: "IPA試験13区分の合格戦略・勉強法・出題傾向を網羅した学習ブログ。",
+    images: [BLOG_OG_IMAGE],
   },
 };
 

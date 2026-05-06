@@ -29,7 +29,8 @@ function buildIndex(): void {
   if (cachedAllTopics) return;
   const counts = new Map<string, number>();
   for (const q of ALL_QUESTIONS) {
-    for (const t of q.topicTags) {
+    const tags = q.topicTags.length > 0 ? q.topicTags : [q.category];
+    for (const t of tags) {
       const trimmed = t.trim();
       if (!trimmed) continue;
       counts.set(trimmed, (counts.get(trimmed) ?? 0) + 1);

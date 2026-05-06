@@ -73,7 +73,8 @@ export async function generateMetadata({
     return { title: "試験区分が見つかりません", robots: { index: false } };
   }
   const label = EXAM_LABELS[code];
-  const title = `【${label}】おすすめ問題集 | 過去問AI`;
+  const title = `【${label}】おすすめ問題集`;
+  const ogTitle = `${title} | 過去問AI`;
   const description = `${label}試験の定番問題集・参考書をAIが厳選。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
   const ogParams = new URLSearchParams({
     type: "books",
@@ -87,15 +88,15 @@ export async function generateMetadata({
     description,
     alternates: { canonical: `/recommended-books/${exam}` },
     openGraph: {
-      title,
+      title: ogTitle,
       description,
       url: `${SITE_BASE_URL}/recommended-books/${exam}`,
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
-      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: ogTitle }],
     },
-    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
+    twitter: { card: "summary_large_image", title: ogTitle, description, images: [ogImageUrl] },
   };
 }
 
