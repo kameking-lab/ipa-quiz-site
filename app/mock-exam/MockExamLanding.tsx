@@ -72,14 +72,6 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
     setHistory(getMockExamHistoryByExam(exam));
   };
 
-  if (!ready) {
-    return (
-      <div className="flex flex-1 items-center justify-center p-8">
-        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
-      </div>
-    );
-  }
-
   if (running && questions) {
     return (
       <MockExamRunner
@@ -93,7 +85,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
   const trend = history.slice(-10);
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
       <header className="mb-6">
         <div className="mb-2 flex items-center gap-2">
           <Timer className="h-5 w-5 text-sky-500" />
@@ -161,9 +153,15 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         </CardContent>
       </Card>
 
-      {history.length > 0 && (
+      {/* History area: reserve space to prevent CLS when localStorage history loads */}
+      <div className="mt-6 min-h-[140px]" aria-live="polite">
+      {!ready ? (
+        <div className="flex h-[140px] items-center justify-center" aria-hidden="true">
+          <Loader2 className="h-4 w-4 animate-spin text-zinc-400" />
+        </div>
+      ) : history.length > 0 ? (
         <>
-          <h2 className="mb-3 mt-6 text-sm font-semibold">過去の模試 ({history.length}回)</h2>
+          <h2 className="mb-3 text-sm font-semibold">過去の模試 ({history.length}回)</h2>
           {trend.length >= 2 && <ScoreTrend results={trend} pass={config.passThreshold} />}
           <Card className="mt-3">
             <CardContent className="pt-5">
@@ -208,7 +206,8 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
             </CardContent>
           </Card>
         </>
-      )}
+      ) : null}
+      </div>
 
       <p className="mt-6 text-[11px] text-zinc-500">
         収録: 全試験区分が利用可能ですが、上の試験区分が安定して動作します。
