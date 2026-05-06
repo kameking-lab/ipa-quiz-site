@@ -13,7 +13,7 @@
 ```bash
 # ===== NextAuth =====
 AUTH_SECRET=                   # 必須。openssl rand -base64 32 で生成
-AUTH_URL=                      # 本番のみ必須。ex: https://ipa-quiz-site.vercel.app
+AUTH_URL=                      # 本番のみ必須。ex: https://kakomon-ai.jp
 AUTH_TRUST_HOST=true           # Vercel では推奨
 
 # Google OAuth（任意、設定すれば有効化）
@@ -56,11 +56,11 @@ NEXT_PUBLIC_SITE_URL=          # 任意。本番 URL。未設定時は VERCEL_UR
    - Application type: Web application
    - Authorized JavaScript origins:
      - `http://localhost:3000`（開発）
-     - `https://ipa-quiz-site.vercel.app`（本番）
+     - `https://kakomon-ai.jp`（本番）
      - `https://*-kameking-lab.vercel.app`（Preview。Vercel CLI で調整）
    - Authorized redirect URIs:
      - `http://localhost:3000/api/auth/callback/google`
-     - `https://ipa-quiz-site.vercel.app/api/auth/callback/google`
+     - `https://kakomon-ai.jp/api/auth/callback/google`
 
 ### 2-2. 環境変数に入れる
 
@@ -76,9 +76,9 @@ AUTH_GOOGLE_SECRET=<Client Secret>
 1. GitHub → Settings → Developer settings → OAuth Apps → "New OAuth App"
 2. 入力:
    - Application name: `IPA Quiz`
-   - Homepage URL: `https://ipa-quiz-site.vercel.app`
+   - Homepage URL: `https://kakomon-ai.jp`
    - Authorization callback URL:
-     - 本番: `https://ipa-quiz-site.vercel.app/api/auth/callback/github`
+     - 本番: `https://kakomon-ai.jp/api/auth/callback/github`
      - 開発用には別アプリを作り `http://localhost:3000/api/auth/callback/github`
 3. Client ID / Client Secret を取得し環境変数へ
 
@@ -167,7 +167,7 @@ Stripe Dashboard → Product catalog → "Add product":
 
 **本番 (Vercel):**
 1. Stripe → Developers → Webhooks → Add endpoint
-2. URL: `https://ipa-quiz-site.vercel.app/api/webhooks/stripe`
+2. URL: `https://kakomon-ai.jp/api/webhooks/stripe`
 3. 以下のイベントを選択:
    - `checkout.session.completed`
    - `invoice.paid`

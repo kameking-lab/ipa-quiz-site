@@ -6,7 +6,7 @@
 ## デプロイ URL
 
 - GitHub: https://github.com/kameking-lab/ipa-quiz-site
-- Vercel Production: https://ipa-quiz-site.vercel.app
+- Vercel Production: https://kakomon-ai.jp
 - Vercel Project: ipa-quiz-site (kameking-labs-projects)
 
 ## 直近セッション（セッション2）で完了したこと
@@ -88,7 +88,7 @@ PR #3 feat(settings): /settings ページ
 
 ## AI コパイロット実応答ログ（2026-04-17）
 
-エンドポイント: https://ipa-quiz-site.vercel.app/api/copilot
+エンドポイント: https://kakomon-ai.jp/api/copilot
 確認ヘッダー: X-Provider: gemini, X-RateLimit-Limit: 30
 
 クイックアクション「term」応答抜粋:

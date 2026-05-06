@@ -13,9 +13,7 @@ import { Analytics } from "@vercel/analytics/next";
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://ipa-quiz-site.vercel.app");
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://kakomon-ai.jp";
 
 export const metadata: Metadata = {
   title: {
