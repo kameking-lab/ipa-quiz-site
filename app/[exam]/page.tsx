@@ -373,39 +373,64 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        {/* High-level exam: AI essay grading CTA */}
-        {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) && (
+        {/* High-level exam: AI essay / description grading CTA */}
+        {(["st", "sa", "pm", "sm", "au", "sc", "nw", "db", "es"] as ExamCode[]).includes(code) && (
           <section
-            aria-label="AI 論述添削"
+            aria-label="AI 午後問題対策"
             className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
           >
             <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
               <PenLine className="h-3 w-3" />
-              午後 II 論述対策
+              {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code)
+                ? "午後 II 論述対策"
+                : "午後 記述対策"}
             </div>
             <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
-              AI 論述添削で {examLabel(code)} の合否を分ける記述を鍛える
+              AI 論述添削で午後問題対策
             </h2>
-            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-              IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
-              業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <Button asChild variant="primary" size="sm">
-                <Link href={`/essay/${code}`}>
-                  {examLabel(code)} の論述添削へ
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </Button>
-              <Button asChild variant="outline" size="sm">
-                <Link href={`/essay/${code}#sample-answers`}>
-                  業種別 合格答案サンプル
-                </Link>
-              </Button>
-              <Button asChild variant="ghost" size="sm">
-                <Link href="/demo/essay-grading">採点デモを見る</Link>
-              </Button>
-            </div>
+            {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
+              <>
+                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+                  IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+                  業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <Button asChild variant="primary" size="sm">
+                    <Link href={`/essay/${code}`}>
+                      {examLabel(code)} の論述添削へ
+                      <ArrowRight className="h-3.5 w-3.5" />
+                    </Link>
+                  </Button>
+                  <Button asChild variant="outline" size="sm">
+                    <Link href={`/essay/${code}#sample-answers`}>
+                      業種別 合格答案サンプル
+                    </Link>
+                  </Button>
+                  <Button asChild variant="ghost" size="sm">
+                    <Link href="/demo/essay-grading">採点デモを見る</Link>
+                  </Button>
+                </div>
+              </>
+            ) : (
+              <>
+                <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+                  {examLabel(code)} 午後の記述・論述問題を AI が採点・フィードバック。
+                  根拠・論理展開・キーワードの網羅を軸に改善点を提示します。
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="inline-flex items-center gap-1.5 rounded-lg border border-violet-200 bg-violet-50 px-3 py-1.5 text-xs font-semibold text-violet-600 dark:border-violet-900/60 dark:bg-violet-950/40 dark:text-violet-300">
+                    <Sparkles className="h-3.5 w-3.5" />
+                    Coming Soon
+                  </span>
+                  <span className="text-xs text-muted-foreground">
+                    順次対応予定 — 通知を受け取るには
+                  </span>
+                  <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
+                    <Link href="/account/notifications">通知設定</Link>
+                  </Button>
+                </div>
+              </>
+            )}
           </section>
         )}
 
