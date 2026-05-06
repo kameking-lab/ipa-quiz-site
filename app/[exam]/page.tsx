@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, PenLine, Sparkles, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -363,6 +363,42 @@ export default async function ExamTopPage({
                 </li>
               ))}
             </ul>
+          </section>
+        )}
+
+        {/* High-level exam: AI essay grading CTA */}
+        {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) && (
+          <section
+            aria-label="AI 論述添削"
+            className="mb-8 overflow-hidden rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 shadow-sm dark:border-violet-900/40 dark:from-violet-950/40"
+          >
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-violet-100 px-2.5 py-0.5 text-[11px] font-semibold text-violet-700 dark:bg-violet-950 dark:text-violet-300">
+              <PenLine className="h-3 w-3" />
+              午後 II 論述対策
+            </div>
+            <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
+              AI 論述添削で {examLabel(code)} の合否を分ける記述を鍛える
+            </h2>
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+              業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Button asChild variant="primary" size="sm">
+                <Link href={`/essay/${code}`}>
+                  {examLabel(code)} の論述添削へ
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href={`/essay/${code}#sample-answers`}>
+                  業種別 合格答案サンプル
+                </Link>
+              </Button>
+              <Button asChild variant="ghost" size="sm">
+                <Link href="/demo/essay-grading">採点デモを見る</Link>
+              </Button>
+            </div>
           </section>
         )}
 
