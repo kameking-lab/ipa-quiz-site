@@ -37,7 +37,8 @@
     "e2e": "playwright test",
     "e2e:install": "playwright install --with-deps chromium",
     "test:smoke": "node scripts/full-e2e-test.mjs",
-    "test:canonical": "playwright test tests/e2e/canonical.spec.ts"
+    "test:canonical": "playwright test tests/e2e/canonical.spec.ts",
+    "check:canonical": "tsx scripts/check-canonical.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",
