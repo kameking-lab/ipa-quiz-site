@@ -114,6 +114,16 @@ export default async function RecommendedBooksExamPage({
   const intro = EXAM_INTROS[code];
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
 
+  const productOgUrl = (book: RecommendedBook) => {
+    const params = new URLSearchParams({
+      type: "books",
+      title: book.title,
+      subtitle: `${book.author} / ${book.publisher}`,
+      body: book.description.slice(0, 120),
+    });
+    return `${SITE_BASE_URL}/api/og?${params.toString()}`;
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -121,17 +131,29 @@ export default async function RecommendedBooksExamPage({
         "@type": "ItemList",
         name: `${label} おすすめ問題集`,
         url: absUrl,
-        itemListElement: books.map((book, index) => ({
-          "@type": "ListItem",
-          position: index + 1,
-          item: {
+        itemListElement: books.map((book, index) => {
+          const productUrl = isAsinFilled(book.asin)
+            ? buildAmazonUrl(book.asin)
+            : `${absUrl}#${book.id}`;
+          const product: Record<string, unknown> = {
             "@type": "Product",
+            "@id": `${absUrl}#${book.id}`,
             name: book.title,
             brand: { "@type": "Brand", name: book.publisher },
-            author: { "@type": "Person", name: book.author },
             description: book.description,
-          },
-        })),
+            image: productOgUrl(book),
+            url: productUrl,
+            category: `${label} 学習教材`,
+          };
+          if (book.author) {
+            product.author = { "@type": "Person", name: book.author };
+          }
+          return {
+            "@type": "ListItem",
+            position: index + 1,
+            item: product,
+          };
+        }),
       },
       {
         "@type": "BreadcrumbList",

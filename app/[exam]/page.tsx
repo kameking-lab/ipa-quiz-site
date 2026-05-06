@@ -21,11 +21,22 @@ import {
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
 import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
-import { ExamProgressBar } from "@/components/exam/ExamProgressBar";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
+
+// localStorage 依存のクライアント専用コンポーネント。
+// 初期ロードのバンドルから外して TBT を削減する目的で dynamic import する。
+const ExamProgressBar = dynamic(
+  () => import("@/components/exam/ExamProgressBar").then((m) => m.ExamProgressBar),
+  {
+    loading: () => (
+      <div className="h-24 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />
+    ),
+  },
+);
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
