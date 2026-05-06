@@ -12,7 +12,7 @@ import {
   readDailyChallenge,
 } from "@/lib/gamification/daily-challenge";
 import { awardXp, XP_REWARDS, xpProgress, readXp } from "@/lib/gamification/xp";
-import { unlockManual } from "@/lib/gamification/achievements";
+import { unlockManual as unlockAchievement } from "@/lib/gamification/achievements";
 import { createHistoryStore } from "@/lib/storage/history";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 
@@ -107,7 +107,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
       if (completion.consecutiveDays >= 7) unlocks.push("challenge-7");
       if (completion.consecutiveDays >= 30) unlocks.push("challenge-30");
       if (completion.perfectStreak >= 7) unlocks.push("challenge-perfect-7");
-      for (const id of unlocks) unlockManual(id);
+      for (const id of unlocks) unlockAchievement(id);
     }
     setFinal({
       ...completion,

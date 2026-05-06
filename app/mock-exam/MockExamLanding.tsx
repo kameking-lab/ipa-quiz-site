@@ -99,7 +99,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
           <Timer className="h-5 w-5 text-sky-500" />
           <Badge variant="outline">本番形式</Badge>
         </div>
-        <h1 className="text-2xl font-bold">模試モード</h1>
+        <h1 className="text-2xl font-bold">模試モード — 本番形式で実力チェック</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           本番と同じ問題数・時間配分で挑戦。終了後に合否判定と分野別分析を表示します。
         </p>
