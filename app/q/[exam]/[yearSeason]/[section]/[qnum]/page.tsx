@@ -445,6 +445,31 @@ export default async function QuestionPage({
         </div>
       </header>
 
+      {/* Figure-bearing notice — text-only fallback hint */}
+      {q.hasImage && (
+        <aside
+          aria-label="図表に関する注釈"
+          className="mb-3 flex items-start gap-2.5 rounded-xl border border-amber-300/70 bg-amber-50 p-3.5 text-[13px] leading-relaxed text-amber-900 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-100"
+        >
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+          <div className="space-y-1">
+            <p>
+              この問題には図表が含まれます。図表は権利上の都合で本サイトには
+              掲載していません。下のリンクから IPA 公式 PDF でご確認ください。
+            </p>
+            <a
+              href={q.sourcePdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-700 dark:hover:text-amber-200"
+            >
+              IPA 公式 PDF で図表を見る
+              <ExternalLink className="h-3 w-3" />
+            </a>
+          </div>
+        </aside>
+      )}
+
       {/* Question body */}
       <section
         aria-label="問題文"
