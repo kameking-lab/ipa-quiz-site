@@ -7,8 +7,9 @@ export interface ShareOgParams {
   badge?: string;
 }
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://kakomon-ai.jp";
+import { SITE_BASE_URL } from "@/lib/seo/config";
+
+const BASE_URL = SITE_BASE_URL;
 
 export function buildOgImageUrl(params: ShareOgParams): string {
   const u = new URL(`${BASE_URL}/api/og`);

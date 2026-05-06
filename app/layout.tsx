@@ -12,6 +12,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,9 +27,7 @@ const geistMono = Geist_Mono({
   preload: false,
 });
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://kakomon-ai.jp");
+const BASE_URL = SITE_BASE_URL;
 
 export const metadata: Metadata = {
   title: {

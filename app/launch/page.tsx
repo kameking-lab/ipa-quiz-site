@@ -5,10 +5,9 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { CountdownTimer } from "./CountdownTimer";
 import { PreRegisterForm } from "./PreRegisterForm";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 
-const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://kakomon-ai.jp");
+const BASE_URL = SITE_BASE_URL;
 
 export const metadata: Metadata = {
   title: "正式リリース — 2026年5月",
