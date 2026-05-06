@@ -72,14 +72,6 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
     setHistory(getMockExamHistoryByExam(exam));
   };
 
-  if (!ready) {
-    return (
-      <div className="flex flex-1 items-center justify-center p-8">
-        <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
-      </div>
-    );
-  }
-
   if (running && questions) {
     return (
       <MockExamRunner
@@ -93,7 +85,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
   const trend = history.slice(-10);
 
   return (
-    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6">
+    <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
       <header className="mb-6">
         <div className="mb-2 flex items-center gap-2">
           <Timer className="h-5 w-5 text-sky-500" />
@@ -161,54 +153,61 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         </CardContent>
       </Card>
 
-      {history.length > 0 && (
-        <>
-          <h2 className="mb-3 mt-6 text-sm font-semibold">過去の模試 ({history.length}回)</h2>
-          {trend.length >= 2 && <ScoreTrend results={trend} pass={config.passThreshold} />}
-          <Card className="mt-3">
-            <CardContent className="pt-5">
-              <ul className="divide-y divide-zinc-200 dark:divide-zinc-800">
-                {[...history].reverse().slice(0, 10).map((r) => (
-                  <li
-                    key={r.id}
-                    className="flex items-center justify-between py-2 text-sm"
-                  >
-                    <div>
-                      <div className="font-medium">
-                        {new Date(r.finishedAt).toLocaleString("ja-JP", {
-                          year: "numeric",
-                          month: "short",
-                          day: "numeric",
-                          hour: "2-digit",
-                          minute: "2-digit",
-                        })}
+      {/* Reserve space to prevent CLS when localStorage history loads after hydration */}
+      <div className="mt-6 min-h-[140px]" aria-live="polite">
+        {!ready ? (
+          <div className="flex h-[140px] items-center justify-center" aria-hidden="true">
+            <Loader2 className="h-4 w-4 animate-spin text-zinc-400" />
+          </div>
+        ) : history.length > 0 ? (
+          <>
+            <h2 className="mb-3 text-sm font-semibold">過去の模試 ({history.length}回)</h2>
+            {trend.length >= 2 && <ScoreTrend results={trend} pass={config.passThreshold} />}
+            <Card className="mt-3">
+              <CardContent className="pt-5">
+                <ul className="divide-y divide-zinc-200 dark:divide-zinc-800">
+                  {[...history].reverse().slice(0, 10).map((r) => (
+                    <li
+                      key={r.id}
+                      className="flex items-center justify-between py-2 text-sm"
+                    >
+                      <div>
+                        <div className="font-medium">
+                          {new Date(r.finishedAt).toLocaleString("ja-JP", {
+                            year: "numeric",
+                            month: "short",
+                            day: "numeric",
+                            hour: "2-digit",
+                            minute: "2-digit",
+                          })}
+                        </div>
+                        <div className="text-[11px] text-zinc-500">
+                          {r.correct}/{r.totalQuestions}問正解 ・{" "}
+                          {Math.round(r.timeUsedSec / 60)}分使用
+                        </div>
                       </div>
-                      <div className="text-[11px] text-zinc-500">
-                        {r.correct}/{r.totalQuestions}問正解 ・{" "}
-                        {Math.round(r.timeUsedSec / 60)}分使用
+                      <div className="text-right">
+                        <div
+                          className={`text-lg font-bold ${
+                            r.passed
+                              ? "text-emerald-600 dark:text-emerald-400"
+                              : "text-rose-600 dark:text-rose-400"
+                          }`}
+                        >
+                          {r.scorePct}%
+                        </div>
+                        <Badge variant={r.passed ? "success" : "danger"}>
+                          {r.passed ? "合格" : "不合格"}
+                        </Badge>
                       </div>
-                    </div>
-                    <div className="text-right">
-                      <div
-                        className={`text-lg font-bold ${
-                          r.passed
-                            ? "text-emerald-600 dark:text-emerald-400"
-                            : "text-rose-600 dark:text-rose-400"
-                        }`}
-                      >
-                        {r.scorePct}%
-                      </div>
-                      <Badge variant={r.passed ? "success" : "danger"}>
-                        {r.passed ? "合格" : "不合格"}
-                      </Badge>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
-        </>
-      )}
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </>
+        ) : null}
+      </div>
 
       <p className="mt-6 text-[11px] text-zinc-500">
         収録: 全試験区分が利用可能ですが、上の試験区分が安定して動作します。

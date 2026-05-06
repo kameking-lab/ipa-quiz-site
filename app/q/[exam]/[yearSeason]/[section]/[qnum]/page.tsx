@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   ChevronLeft,
   ChevronRight,
@@ -138,7 +138,22 @@ export default async function QuestionPage({
 }) {
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
-  if (!q) notFound();
+  if (!q) {
+    // Try season fallback: spring/autumn ↔ cbt for CBT-era exams (e.g. IP 2024-spring → 2024-cbt)
+    const seasonFallbacks: Record<string, string[]> = {
+      spring: ["cbt"],
+      autumn: ["cbt"],
+      cbt: ["spring", "autumn"],
+    };
+    const m = /^(\d{4})-(spring|autumn|cbt)$/.exec(p.yearSeason);
+    if (m) {
+      for (const altSeason of seasonFallbacks[m[2]] ?? []) {
+        const altQ = findQuestionByRoute(ALL_QUESTIONS, { ...p, yearSeason: `${m[1]}-${altSeason}` });
+        if (altQ) redirect(questionPagePath(altQ));
+      }
+    }
+    notFound();
+  }
 
   const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
   const answerText =

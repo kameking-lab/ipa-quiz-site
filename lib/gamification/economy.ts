@@ -19,7 +19,7 @@ const EMPTY_GOLD: GoldState = { balance: 0, earned: 0, spent: 0, updatedAt: 0 };
 function readXp(): XpState {
   if (typeof window === "undefined") return EMPTY_XP;
   try {
-    const raw = window.localStorage.getItem(LS_KEYS.xp);
+    const raw = window.localStorage.getItem(LS_KEYS.xpState);
     if (!raw) return EMPTY_XP;
     const parsed = JSON.parse(raw) as Partial<XpState>;
     return {
@@ -35,7 +35,7 @@ function readXp(): XpState {
 function writeXp(state: XpState): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(LS_KEYS.xp, JSON.stringify(state));
+    window.localStorage.setItem(LS_KEYS.xpState, JSON.stringify(state));
   } catch {
     // ignore
   }
