@@ -34,6 +34,8 @@ export const LS_KEYS = {
   copilotResponseLength: "ipa-quiz:copilot-response-length:v1",
   reviewSeen: "ipa-quiz:review-seen:v1",
   lastQuestion: "ipa-quiz:last-question:v1",
+  mockExam: "ipa-quiz:mock-exam:v1",
+  gold: "ipa-quiz:gold:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];
