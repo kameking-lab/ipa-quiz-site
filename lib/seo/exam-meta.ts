@@ -97,20 +97,20 @@ export function examFullName(exam: ExamCode): string {
   return EXAM_FULL_NAMES[exam];
 }
 
-const EXAM_META_HOOKS: Record<ExamCode, string> = {
-  ip: "IT基礎・経営・テクノロジ・マネジメントを横断する CBT 試験",
-  sg: "情報セキュリティマネジメントの実務に直結する組織・運用知識",
-  fe: "アルゴリズム・プログラミング・基礎理論の登竜門 (科目A/B)",
-  ap: "技術と管理の両輪。応用情報の午前・午後を網羅",
-  st: "経営戦略から逆算する IT 戦略立案の高度試験",
-  sa: "業務要件をシステム構造へ落とし込むアーキテクチャ設計",
-  pm: "QCD・ステークホルダー管理を含むプロジェクト統括",
-  nw: "TCP/IP・無線・セキュア通信まで実機運用レベルの設計力",
-  db: "正規化・トランザクション・チューニング等の DB 設計実務",
-  es: "リアルタイム制御・組込みアーキテクチャ・IoT 連携",
-  sc: "脆弱性・暗号・インシデント対応の登録セキュリティ専門職",
-  sm: "ITIL ベースのサービス運用・継続的改善・SLA 管理",
-  au: "ガバナンス・統制・監査計画から報告までの監査実務",
+const EXAM_SHORT_HOOKS: Record<ExamCode, string> = {
+  ip: "CBT通年試験対策に。",
+  sg: "CBT通年セキュリティ対策に。",
+  fe: "科目A・B両対策に。",
+  ap: "午前・午後両対策に。",
+  st: "ITストラテジスト対策に。",
+  sa: "システムアーキテクト対策に。",
+  pm: "プロジェクトマネージャ対策に。",
+  nw: "ネットワーク高度試験対策に。",
+  db: "データベース高度試験対策に。",
+  es: "組込みシステム高度試験対策に。",
+  sc: "登録セキュリティ専門職対策に。",
+  sm: "ITサービスマネージャ対策に。",
+  au: "システム監査技術者対策に。",
 };
 
 export function examMetaDescription(
@@ -119,14 +119,19 @@ export function examMetaDescription(
   mode?: "year" | "topic",
 ): string {
   const name = EXAM_FULL_NAMES[exam];
-  const hook = EXAM_META_HOOKS[exam] ?? "";
-  const modePart =
-    mode === "year"
-      ? "年度別に整理した過去問"
-      : mode === "topic"
-        ? "分野別に整理した過去問"
-        : "過去問";
-  return `${name}の${modePart}を${questionCount}問収録。${hook}を、選択肢ごとに AI コパイロットがその場で深掘り解説。教育貢献プロジェクトとして全機能無料公開中。`;
+  const questions = getQuestionsByExamStrict(exam);
+  const yearCount = groupByYearSeason(questions).length;
+  const categoryCount = groupByCategory(questions).length;
+  const countFmt = questionCount.toLocaleString("ja-JP");
+  const hook = EXAM_SHORT_HOOKS[exam] ?? "";
+
+  if (mode === "year") {
+    return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
+  }
+  if (mode === "topic") {
+    return `${name}の分野別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。${categoryCount}分野・${yearCount}期分を完全無料公開。会員登録不要。`;
+  }
+  return `${name}の過去問${countFmt}問をAIコパイロットで完全無料解説。${yearCount}期分・${categoryCount}分野を網羅。${hook}会員登録不要で即学習開始。`;
 }
 
 export function countByExam(exam: ExamCode): number {

@@ -1,7 +1,14 @@
 import type { MetadataRoute } from "next";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
 
 export default function robots(): MetadataRoute.Robots {
+  const chunkCount = getSitemapChunkCount();
+  const questionSitemaps = Array.from(
+    { length: chunkCount },
+    (_, i) => `${SITE_BASE_URL}/sitemap/questions/${i}.xml`,
+  );
+
   return {
     rules: [
       {
@@ -34,6 +41,7 @@ export default function robots(): MetadataRoute.Robots {
       `${SITE_BASE_URL}/sitemap/topics.xml`,
       `${SITE_BASE_URL}/sitemap/blog.xml`,
       `${SITE_BASE_URL}/sitemap/books.xml`,
+      ...questionSitemaps,
     ],
     host: SITE_BASE_URL,
   };

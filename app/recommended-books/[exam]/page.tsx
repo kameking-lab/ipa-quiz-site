@@ -144,9 +144,19 @@ export default async function RecommendedBooksExamPage({
             image: productOgUrl(book),
             url: productUrl,
             category: `${label} 学習教材`,
+            offers: {
+              "@type": "Offer",
+              availability: "https://schema.org/InStock",
+              url: productUrl,
+              priceCurrency: "JPY",
+              seller: { "@type": "Organization", name: "Amazon" },
+            },
           };
           if (book.author) {
             product.author = { "@type": "Person", name: book.author };
+          }
+          if (isAsinFilled(book.asin)) {
+            product.isbn = book.asin;
           }
           return {
             "@type": "ListItem",

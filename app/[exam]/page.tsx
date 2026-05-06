@@ -23,7 +23,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import dynamic from "next/dynamic";
 import { ExamAiTransparencyNote } from "@/components/exam/ExamAiTransparencyNote";
-import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
+const ExamBrowseTabs = dynamic(
+  () => import("@/components/exam/ExamBrowseTabs").then((m) => m.ExamBrowseTabs),
+  {
+    loading: () => (
+      <div className="h-48 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />
+    ),
+  },
+);
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
 
