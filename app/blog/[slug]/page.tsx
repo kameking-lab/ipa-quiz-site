@@ -66,6 +66,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
+  const articleOgParams = new URLSearchParams({
+    type: "blog",
+    title: post.title,
+    subtitle: post.exam ? `${examLabel(post.exam)} ブログ` : "ブログ",
+    body: post.description,
+  });
+  const articleImage = `${SITE_BASE_URL}/api/og?${articleOgParams.toString()}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -76,6 +83,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
         headline: post.title,
         description: post.description,
         url,
+        image: {
+          "@type": "ImageObject",
+          url: articleImage,
+          width: 1200,
+          height: 630,
+        },
         datePublished: post.publishedAt,
         dateModified: post.updatedAt ?? post.publishedAt,
         inLanguage: "ja",

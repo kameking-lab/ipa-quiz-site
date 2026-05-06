@@ -21,27 +21,29 @@ export function BlogMarkdown({
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
+          // ページ全体の <h1> はページ側に存在するため、Markdown 内の見出しは
+          // 1 段下げて出力（h1→h2, h2→h3 …）。重複 <h1> を回避するため。
           h1: ({ ...p }) => (
-            <h1
-              className="mt-8 mb-4 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl"
-              {...p}
-            />
-          ),
-          h2: ({ ...p }) => (
             <h2
               className="mt-10 mb-3 border-l-4 border-sky-500 pl-3 text-xl font-bold text-zinc-900 dark:text-zinc-50 sm:text-2xl"
               {...p}
             />
           ),
-          h3: ({ ...p }) => (
+          h2: ({ ...p }) => (
             <h3
-              className="mt-6 mb-2 text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+              className="mt-8 mb-2 text-lg font-semibold text-zinc-900 dark:text-zinc-50"
+              {...p}
+            />
+          ),
+          h3: ({ ...p }) => (
+            <h4
+              className="mt-6 mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50"
               {...p}
             />
           ),
           h4: ({ ...p }) => (
-            <h4
-              className="mt-4 mb-1.5 text-base font-semibold text-zinc-900 dark:text-zinc-50"
+            <h5
+              className="mt-4 mb-1.5 text-sm font-semibold text-zinc-900 dark:text-zinc-50"
               {...p}
             />
           ),

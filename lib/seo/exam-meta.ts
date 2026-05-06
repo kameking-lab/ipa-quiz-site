@@ -97,19 +97,36 @@ export function examFullName(exam: ExamCode): string {
   return EXAM_FULL_NAMES[exam];
 }
 
+const EXAM_META_HOOKS: Record<ExamCode, string> = {
+  ip: "IT基礎・経営・テクノロジ・マネジメントを横断する CBT 試験",
+  sg: "情報セキュリティマネジメントの実務に直結する組織・運用知識",
+  fe: "アルゴリズム・プログラミング・基礎理論の登竜門 (科目A/B)",
+  ap: "技術と管理の両輪。応用情報の午前・午後を網羅",
+  st: "経営戦略から逆算する IT 戦略立案の高度試験",
+  sa: "業務要件をシステム構造へ落とし込むアーキテクチャ設計",
+  pm: "QCD・ステークホルダー管理を含むプロジェクト統括",
+  nw: "TCP/IP・無線・セキュア通信まで実機運用レベルの設計力",
+  db: "正規化・トランザクション・チューニング等の DB 設計実務",
+  es: "リアルタイム制御・組込みアーキテクチャ・IoT 連携",
+  sc: "脆弱性・暗号・インシデント対応の登録セキュリティ専門職",
+  sm: "ITIL ベースのサービス運用・継続的改善・SLA 管理",
+  au: "ガバナンス・統制・監査計画から報告までの監査実務",
+};
+
 export function examMetaDescription(
   exam: ExamCode,
   questionCount: number,
   mode?: "year" | "topic",
 ): string {
   const name = EXAM_FULL_NAMES[exam];
+  const hook = EXAM_META_HOOKS[exam] ?? "";
   const modePart =
     mode === "year"
-      ? "を年度別にAIコパイロットで解説"
+      ? "年度別に整理した過去問"
       : mode === "topic"
-        ? "を分野別にAIコパイロットで解説"
-        : "をAIコパイロットで解説";
-  return `${name}の過去問${modePart}。全${questionCount}問収録。`;
+        ? "分野別に整理した過去問"
+        : "過去問";
+  return `${name}の${modePart}を${questionCount}問収録。${hook}を、選択肢ごとに AI コパイロットがその場で深掘り解説。教育貢献プロジェクトとして全機能無料公開中。`;
 }
 
 export function countByExam(exam: ExamCode): number {
