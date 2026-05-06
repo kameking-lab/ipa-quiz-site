@@ -97,12 +97,12 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         </p>
       </header>
 
-      <div className="mb-4 flex flex-wrap gap-2">
+      <div className="mb-4 flex flex-nowrap gap-2 overflow-x-auto pb-1">
         {AVAILABLE_EXAMS.map((e) => (
           <button
             key={e}
             onClick={() => setExam(e)}
-            className={`rounded-full px-3 py-1 text-xs font-medium transition ${
+            className={`h-8 flex-shrink-0 rounded-full px-3 text-xs font-medium transition ${
               exam === e
                 ? "bg-sky-600 text-white"
                 : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300"
@@ -113,9 +113,9 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         ))}
       </div>
 
-      <Card className="mb-4">
+      <Card className="mb-4 min-h-[200px]">
         <CardContent className="pt-5">
-          <h2 className="mb-3 text-base font-semibold">{config.label}</h2>
+          <h2 className="mb-3 line-clamp-2 text-base font-semibold">{config.label}</h2>
           <div className="grid grid-cols-3 gap-4 text-center">
             <Stat label="問題数" value={`${config.questions}問`} />
             <Stat label="制限時間" value={`${config.minutes}分`} />
@@ -154,9 +154,9 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
       </Card>
 
       {/* History area: reserve space to prevent CLS when localStorage history loads */}
-      <div className="mt-6 min-h-[140px]" aria-live="polite">
+      <div className="mt-6 min-h-[200px]" aria-live="polite">
       {!ready ? (
-        <div className="flex h-[140px] items-center justify-center" aria-hidden="true">
+        <div className="flex h-[200px] items-center justify-center" aria-hidden="true">
           <Loader2 className="h-4 w-4 animate-spin text-zinc-400" />
         </div>
       ) : history.length > 0 ? (

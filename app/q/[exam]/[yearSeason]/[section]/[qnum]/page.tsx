@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import {
   ChevronLeft,
   ChevronRight,
@@ -10,6 +10,7 @@ import {
   AlertTriangle,
   ArrowRight,
   BookOpenCheck,
+  Construction,
 } from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
@@ -158,7 +159,31 @@ export default async function QuestionPage({
   if (!q) {
     const fallback = findFallbackQuestion(p);
     if (fallback) redirect(questionPagePath(fallback));
-    notFound();
+    const examName = examLabel(p.exam as import("@/lib/questions/types").ExamCode);
+    return (
+      <main className="flex flex-1 items-center justify-center px-4 py-16">
+        <div className="w-full max-w-md text-center">
+          <div className="overflow-hidden rounded-2xl border border-border bg-card p-7 shadow-lg sm:p-8">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 dark:bg-amber-900/40">
+              <Construction className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+            </div>
+            <h1 className="text-lg font-bold text-foreground">この問題は準備中です</h1>
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              {examName}のこの問題データはまだ公開されていません。
+              ほかの問題でトレーニングを続けましょう。
+            </p>
+            <div className="mt-6 flex flex-col gap-2 sm:flex-row">
+              <Button asChild variant="primary" size="sm" className="flex-1">
+                <Link href={`/${p.exam}`}>{examName} トップへ</Link>
+              </Button>
+              <Button asChild variant="outline" size="sm" className="flex-1">
+                <Link href={`/quiz?mode=random&exam=${p.exam}`}>問題を解く</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </main>
+    );
   }
 
   const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
