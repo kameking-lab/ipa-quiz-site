@@ -12,7 +12,7 @@ export const runtime = "nodejs";
 
 const APP_URL =
   process.env.NEXT_PUBLIC_SITE_URL ??
-  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://ipa-quiz-site.vercel.app");
+  (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "https://kakomon-ai.jp");
 
 export async function POST() {
   if (!isStripeConfigured()) {

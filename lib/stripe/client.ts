@@ -17,7 +17,7 @@ export function getStripe(): Stripe {
   }
   cached = new Stripe(key, {
     typescript: true,
-    appInfo: { name: "ipa-quiz-site", url: "https://ipa-quiz-site.vercel.app" },
+    appInfo: { name: "kakomon-ai", url: "https://kakomon-ai.jp" },
   });
   return cached;
 }
