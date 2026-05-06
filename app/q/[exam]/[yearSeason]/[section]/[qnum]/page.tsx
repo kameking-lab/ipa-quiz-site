@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import {
   ChevronLeft,
   ChevronRight,
@@ -131,6 +131,23 @@ export async function generateMetadata({
   };
 }
 
+function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt)$/.exec(p.yearSeason);
+  if (!yearSeasonMatch) return undefined;
+  const year = Number(yearSeasonMatch[1]);
+  const qMatch = /^q(\d+)$/.exec(p.qnum);
+  if (!qMatch) return undefined;
+  const qNumber = Number(qMatch[1]);
+
+  return ALL_QUESTIONS.find(
+    (q) =>
+      q.exam === p.exam &&
+      q.year === year &&
+      q.session === p.section &&
+      q.qNumber === qNumber,
+  );
+}
+
 export default async function QuestionPage({
   params,
 }: {
@@ -138,7 +155,11 @@ export default async function QuestionPage({
 }) {
   const p = await params;
   const q = findQuestionByRoute(ALL_QUESTIONS, p);
-  if (!q) notFound();
+  if (!q) {
+    const fallback = findFallbackQuestion(p);
+    if (fallback) redirect(questionPagePath(fallback));
+    notFound();
+  }
 
   const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
   const answerText =
