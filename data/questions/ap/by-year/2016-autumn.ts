@@ -23,7 +23,7 @@ export const AP_QUESTIONS_2016_AUTUMN: Question[] = [
       "エ": "A Y"
     },
     "answer": "ウ",
-    "explanation": "データXは0x0F（下位4ビットが1）、YはF0（上位4ビットが1）。Aの下位4ビットを反転＝XORだが、選択肢はAND演算。A・Xは下位4ビットのみ保持（上位を0化）し、XOR X で下位4ビットを反転できる。正解はA・Xの形で下位4ビットを反転・上位を0にする演算。",
+    "explanation": "解説準備中です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_ap_am_qs.pdf",
     "license": "IPA-public"
