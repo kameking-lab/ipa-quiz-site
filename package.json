@@ -14,6 +14,7 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
+    "generate:ap": "tsx --env-file=.env.local scripts/generate-ap-all.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
     "validate:questions": "tsx scripts/validate-questions.ts",
     "validate:asins": "tsx scripts/validate-asins.ts",

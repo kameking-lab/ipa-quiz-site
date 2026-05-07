@@ -402,7 +402,13 @@ export default async function ExamTopPage({
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <Link href={`/essay/${code}#sample-answers`}>
+                    <Link
+                      href={
+                        code === "sc"
+                          ? `/essays/${code}`
+                          : `/essay/${code}#sample-answers`
+                      }
+                    >
                       業種別 合格答案サンプル
                     </Link>
                   </Button>
