@@ -258,7 +258,7 @@ const QuestionSchema = z.object({
   topicTags: z.array(z.string()),
   difficulty: z.number().int().gte(1).lte(5),
   question: z.string().min(1),
-  choices: z.record(CHOICE_KEY, z.string()).optional(),
+  choices: z.record(CHOICE_KEY, z.string().optional()).optional(),
   answer: z.union([CHOICE_KEY, z.array(CHOICE_KEY), z.string()]),
   explanation: z.string().min(1),
   hasImage: z.boolean(),
@@ -386,10 +386,12 @@ function regenerateBarrel(examCode: ExamCode): void {
     }
   })();
 
+  const exportName = `${examCode.toUpperCase()}_BY_YEAR_QUESTIONS`;
+
   if (files.length === 0) {
     writeFileSync(
       join(outDir, "index.ts"),
-      `// No data yet. Run: pnpm parse:pdfs --exam=${examCode}\nimport type { Question } from "@/lib/questions/types";\nexport const BY_YEAR_QUESTIONS: Question[] = [];\n`,
+      `// No data yet. Run: pnpm parse:pdfs --exam=${examCode}\nimport type { Question } from "@/lib/questions/types";\nexport const ${exportName}: Question[] = [];\n`,
     );
     return;
   }
@@ -419,7 +421,7 @@ function regenerateBarrel(examCode: ExamCode): void {
 import type { Question } from "@/lib/questions/types";
 ${imports}
 
-export const BY_YEAR_QUESTIONS: Question[] = [
+export const ${exportName}: Question[] = [
 ${spreads},
 ];
 `;
