@@ -25,14 +25,21 @@ Branch: fix/seo-ogp-and-sitemap
 - `app/mock-exam/page.tsx` — static→dynamic generateMetadata + OGP
 - `lib/seo/sitemap-xml.ts` — add getEssayRoutes()
 
-## Progress
+## Progress — ALL COMPLETE ✓
 
 - [x] Investigation complete
-- [x] Font downloaded to public/fonts/
-- [ ] app/api/og/route.tsx patched
-- [ ] app/mock-exam/page.tsx patched
-- [ ] lib/seo/sitemap-xml.ts patched
-- [ ] typecheck + build pass
-- [ ] PR created
-- [ ] main merged
-- [ ] Production verified
+- [x] Font downloaded to public/fonts/noto-sans-jp-700.woff
+- [x] app/api/og/route.tsx — font loading + mock-exam type
+- [x] app/mock-exam/page.tsx — generateMetadata + dynamic OGP
+- [x] lib/seo/sitemap-xml.ts — getEssayRoutes() + renderEssaysSitemapXml()
+- [x] TypeScript build pass (TS fix in 64b603b)
+- [x] PR #188 created and merged to main (SHA: 3d83a445)
+- [x] Production deployed (Vercel, ~12min after merge)
+
+## Production Verification (2026-05-09)
+
+- /api/og?type=mock-exam&title=... → 200, 187695 bytes PNG
+- /api/og?type=blog&title=... → 200, 312436 bytes PNG
+- /blog/ip-3shukan-goukaku og:image → https://www.kakomon-ai.jp/api/og?type=blog&title=IT... ✓
+- /mock-exam og:image → https://www.kakomon-ai.jp/api/og?type=mock-exam&title=模試モード... ✓
+- /sitemap/essays.xml → 200, contains /essays/sc, /essays/sc/2025-spring/pm2/q1, etc. ✓
