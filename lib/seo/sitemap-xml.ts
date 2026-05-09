@@ -145,24 +145,24 @@ function getTopicHubRoutes(): UrlEntry[] {
   }));
 }
 
-function getEssaysRoutes(): UrlEntry[] {
-  const out: UrlEntry[] = [];
-  for (const examCode of SC_ESSAY_EXAM_CODES) {
-    out.push({
-      url: `${SITE_BASE_URL}/essays/${examCode}`,
+function getEssayRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  for (const exam of SC_ESSAY_EXAM_CODES) {
+    entries.push({
+      url: `${SITE_BASE_URL}/essays/${exam}`,
       changeFrequency: "monthly",
       priority: 0.7,
     });
     for (const q of getSCpm2Questions()) {
       const { yearSeason, section, qnum } = questionToUrlParts(q);
-      out.push({
-        url: `${SITE_BASE_URL}/essays/${examCode}/${yearSeason}/${section}/${qnum}`,
+      entries.push({
+        url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
         changeFrequency: "monthly",
         priority: 0.65,
       });
     }
   }
-  return out;
+  return entries;
 }
 
 function xmlEscape(s: string): string {
@@ -259,7 +259,7 @@ export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
 
 export function renderEssaysSitemapXml(): string {
   const now = new Date().toISOString();
-  return renderUrlSet(getEssaysRoutes().map((r) => ({ ...r, lastModified: now })));
+  return renderUrlSet(getEssayRoutes().map((r) => ({ ...r, lastModified: now })));
 }
 
 /**

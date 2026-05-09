@@ -36,7 +36,7 @@ const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
 ### 修正方針
 - `GET` ハンドラ内で Google Fonts API (Noto Sans JP weight=700) を fetch してキャッシュ
 - `ImageResponse` オプションに `fonts: [...]` を渡す
-- `fontFamily: "Noto Sans JP, sans-serif"` に変更
+- `fontFamily: "'Noto Sans JP', sans-serif"` に変更
 
 ---
 
@@ -48,7 +48,7 @@ const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
   main / exams / topics / blog / books / questions チャンク のみ。
 
 ### 修正方針
-1. `lib/seo/sitemap-xml.ts` に `getEssaysRoutes()` と `renderEssaysSitemapXml()` を追加
+1. `lib/seo/sitemap-xml.ts` に `getEssayRoutes()` と `renderEssaysSitemapXml()` を追加
 2. `renderSitemapIndexXml()` に `essays.xml` を追加
 3. `app/sitemap/essays.xml/route.ts` を新規作成
 
@@ -66,7 +66,7 @@ const ogImageUrl = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
 
 | ファイル | 変更種別 |
 |---|---|
-| `app/api/og/route.tsx` | Noto Sans JP フォントロード追加・mock-exam type 追加 |
+| `app/api/og/route.tsx` | Noto Sans JP フォントロード追加・mock-exam/essay type 追加 |
 | `app/mock-exam/page.tsx` | generateMetadata 化・OGP 画像 URL 追加 |
-| `lib/seo/sitemap-xml.ts` | essays routes 関数追加・essays.xml を index に追加 |
+| `lib/seo/sitemap-xml.ts` | getEssayRoutes 関数追加・essays.xml を index に追加 |
 | `app/sitemap/essays.xml/route.ts` | 新規作成 |

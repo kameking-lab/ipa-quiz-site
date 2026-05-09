@@ -4,13 +4,19 @@ export const runtime = "edge";
 
 const SIZE = { width: 1200, height: 630 };
 
-// Noto Sans JP — loaded once per edge worker instance, cached in module scope
-let _fontData: ArrayBuffer | null = null;
+interface TypeStyle {
+  gradient: string;
+  emoji: string;
+  subtitle: string;
+}
 
-async function loadNotoSansJP(): Promise<ArrayBuffer | null> {
-  if (_fontData !== null) return _fontData;
+// Module-level cache for Noto Sans JP font buffers.
+// Each Vercel Edge worker instance caches across requests within the same isolate.
+let _fontBuffers: ArrayBuffer[] | undefined;
+
+async function loadJapaneseFonts(): Promise<ArrayBuffer[]> {
+  if (_fontBuffers !== undefined) return _fontBuffers;
   try {
-    // Fetch the CSS from Google Fonts with a modern UA to get woff2 format
     const css = await fetch(
       "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
       {
@@ -20,19 +26,26 @@ async function loadNotoSansJP(): Promise<ArrayBuffer | null> {
         },
       },
     ).then((r) => r.text());
-    const match = css.match(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/);
-    if (!match) return null;
-    _fontData = await fetch(match[1]).then((r) => r.arrayBuffer());
-    return _fontData;
-  } catch {
-    return null;
-  }
-}
 
-interface TypeStyle {
-  gradient: string;
-  emoji: string;
-  subtitle: string;
+    const urls = [
+      ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
+    ].map((m) => m[1]);
+
+    if (urls.length === 0) {
+      _fontBuffers = [];
+      return [];
+    }
+
+    // Fetch the first 4 subsets which cover Hiragana, Katakana, and CJK (Kanji)
+    const buffers = await Promise.all(
+      urls.slice(0, 4).map((url) => fetch(url).then((r) => r.arrayBuffer())),
+    );
+    _fontBuffers = buffers;
+    return buffers;
+  } catch {
+    _fontBuffers = [];
+    return [];
+  }
 }
 
 const TYPE_META: Record<string, TypeStyle> = {
@@ -97,7 +110,7 @@ const TYPE_META: Record<string, TypeStyle> = {
     subtitle: "よくある質問",
   },
   "mock-exam": {
-    gradient: "linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #06b6d4 100%)",
+    gradient: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%)",
     emoji: "📝",
     subtitle: "模試モード",
   },
@@ -164,10 +177,16 @@ export async function GET(request: Request) {
     type === "mock-exam" ||
     type === "essay";
 
-  const fontData = await loadNotoSansJP();
-  const fonts = fontData
-    ? [{ name: "Noto Sans JP", data: fontData, style: "normal" as const, weight: 700 as const }]
-    : [];
+  const fontBuffers = await loadJapaneseFonts();
+  const fontOptions =
+    fontBuffers.length > 0
+      ? fontBuffers.map((data) => ({
+          name: "Noto Sans JP",
+          data,
+          weight: 700 as const,
+          style: "normal" as const,
+        }))
+      : undefined;
 
   return new ImageResponse(
     (
@@ -179,7 +198,7 @@ export async function GET(request: Request) {
           display: "flex",
           flexDirection: "column",
           padding: "72px 80px",
-          fontFamily: "Noto Sans JP, sans-serif",
+          fontFamily: "'Noto Sans JP', sans-serif",
           color: "#fff",
         }}
       >
@@ -347,6 +366,6 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    { ...SIZE, fonts },
+    { ...SIZE, ...(fontOptions ? { fonts: fontOptions } : {}) },
   );
 }
