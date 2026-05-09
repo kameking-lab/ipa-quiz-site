@@ -1,4 +1,9 @@
 import { getAllBlogSummaries } from "@/data/blog";
+import {
+  SC_ESSAY_EXAM_CODES,
+  getSCpm2Questions,
+  questionToUrlParts,
+} from "@/lib/essays/load";
 import { SITE_BASE_URL } from "./config";
 import {
   getAvailableExams,
@@ -15,7 +20,6 @@ import {
 import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
-import { getSCpm2Questions, SC_ESSAY_EXAM_CODES, questionToUrlParts } from "@/lib/essays/load";
 
 interface UrlEntry {
   url: string;
@@ -154,7 +158,7 @@ function getEssayRoutes(): UrlEntry[] {
       entries.push({
         url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
         changeFrequency: "monthly",
-        priority: 0.6,
+        priority: 0.65,
       });
     }
   }
@@ -195,6 +199,7 @@ export function renderSitemapIndexXml(): string {
     `${SITE_BASE_URL}/sitemap/topics.xml`,
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
+    `${SITE_BASE_URL}/sitemap/essays.xml`,
   ];
   const chunkCount = getSitemapChunkCount();
   for (let i = 0; i < chunkCount; i += 1) {
@@ -215,10 +220,7 @@ ${items}
 
 export function renderMainSitemapXml(): string {
   const now = new Date().toISOString();
-  return renderUrlSet([
-    ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
-    ...getEssayRoutes().map((r) => ({ ...r, lastModified: now })),
-  ]);
+  return renderUrlSet(STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })));
 }
 
 export function renderExamsSitemapXml(): string {
@@ -253,6 +255,11 @@ export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
       priority: 0.6,
     })),
   );
+}
+
+export function renderEssaysSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(getEssayRoutes().map((r) => ({ ...r, lastModified: now })));
 }
 
 /**

@@ -114,6 +114,11 @@ const TYPE_META: Record<string, TypeStyle> = {
     emoji: "📝",
     subtitle: "模試モード",
   },
+  essay: {
+    gradient: "linear-gradient(135deg, #3b0764 0%, #7c3aed 50%, #ec4899 100%)",
+    emoji: "✍️",
+    subtitle: "業種別合格答案",
+  },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
     emoji: "✨",
@@ -169,7 +174,8 @@ export async function GET(request: Request) {
     type === "glossary" ||
     type === "keyword" ||
     type === "faq" ||
-    type === "mock-exam";
+    type === "mock-exam" ||
+    type === "essay";
 
   const fontBuffers = await loadJapaneseFonts();
   const fontOptions =
