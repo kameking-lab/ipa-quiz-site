@@ -15,6 +15,7 @@ import {
 import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
+import { getSCpm2Questions, SC_ESSAY_EXAM_CODES, questionToUrlParts } from "@/lib/essays/load";
 
 interface UrlEntry {
   url: string;
@@ -140,6 +141,26 @@ function getTopicHubRoutes(): UrlEntry[] {
   }));
 }
 
+function getEssayRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  for (const exam of SC_ESSAY_EXAM_CODES) {
+    entries.push({
+      url: `${SITE_BASE_URL}/essays/${exam}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+    for (const q of getSCpm2Questions()) {
+      const { yearSeason, section, qnum } = questionToUrlParts(q);
+      entries.push({
+        url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
+        changeFrequency: "monthly",
+        priority: 0.6,
+      });
+    }
+  }
+  return entries;
+}
+
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -194,7 +215,10 @@ ${items}
 
 export function renderMainSitemapXml(): string {
   const now = new Date().toISOString();
-  return renderUrlSet(STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })));
+  return renderUrlSet([
+    ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
+    ...getEssayRoutes().map((r) => ({ ...r, lastModified: now })),
+  ]);
 }
 
 export function renderExamsSitemapXml(): string {
