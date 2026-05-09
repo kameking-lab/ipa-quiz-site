@@ -4,6 +4,31 @@ export const runtime = "edge";
 
 const SIZE = { width: 1200, height: 630 };
 
+// Noto Sans JP — loaded once per edge worker instance, cached in module scope
+let _fontData: ArrayBuffer | null = null;
+
+async function loadNotoSansJP(): Promise<ArrayBuffer | null> {
+  if (_fontData !== null) return _fontData;
+  try {
+    // Fetch the CSS from Google Fonts with a modern UA to get woff2 format
+    const css = await fetch(
+      "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
+      {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        },
+      },
+    ).then((r) => r.text());
+    const match = css.match(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/);
+    if (!match) return null;
+    _fontData = await fetch(match[1]).then((r) => r.arrayBuffer());
+    return _fontData;
+  } catch {
+    return null;
+  }
+}
+
 interface TypeStyle {
   gradient: string;
   emoji: string;
@@ -71,6 +96,16 @@ const TYPE_META: Record<string, TypeStyle> = {
     emoji: "💡",
     subtitle: "よくある質問",
   },
+  "mock-exam": {
+    gradient: "linear-gradient(135deg, #134e4a 0%, #0d9488 50%, #06b6d4 100%)",
+    emoji: "📝",
+    subtitle: "模試モード",
+  },
+  essay: {
+    gradient: "linear-gradient(135deg, #3b0764 0%, #7c3aed 50%, #ec4899 100%)",
+    emoji: "✍️",
+    subtitle: "業種別合格答案",
+  },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
     emoji: "✨",
@@ -125,7 +160,14 @@ export async function GET(request: Request) {
     type === "topic" ||
     type === "glossary" ||
     type === "keyword" ||
-    type === "faq";
+    type === "faq" ||
+    type === "mock-exam" ||
+    type === "essay";
+
+  const fontData = await loadNotoSansJP();
+  const fonts = fontData
+    ? [{ name: "Noto Sans JP", data: fontData, style: "normal" as const, weight: 700 as const }]
+    : [];
 
   return new ImageResponse(
     (
@@ -137,7 +179,7 @@ export async function GET(request: Request) {
           display: "flex",
           flexDirection: "column",
           padding: "72px 80px",
-          fontFamily: "sans-serif",
+          fontFamily: "Noto Sans JP, sans-serif",
           color: "#fff",
         }}
       >
@@ -305,6 +347,6 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    { ...SIZE },
+    { ...SIZE, fonts },
   );
 }
