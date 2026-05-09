@@ -10,12 +10,23 @@ interface TypeStyle {
   subtitle: string;
 }
 
-// Module-level cache for Noto Sans JP font buffers.
+// Module-level cache for the Noto Sans JP font buffer.
 // Each Vercel Edge worker instance caches across requests within the same isolate.
-let _fontBuffers: ArrayBuffer[] | undefined;
+let _fontBuffer: ArrayBuffer | null | undefined;
 
-async function loadJapaneseFonts(): Promise<ArrayBuffer[]> {
-  if (_fontBuffers !== undefined) return _fontBuffers;
+async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
+  if (_fontBuffer !== undefined) return _fontBuffer;
+  // Try local copy first (public/fonts/noto-sans-jp-700.woff)
+  try {
+    const res = await fetch(`${origin}/fonts/noto-sans-jp-700.woff`);
+    if (res.ok) {
+      _fontBuffer = await res.arrayBuffer();
+      return _fontBuffer;
+    }
+  } catch {
+    // fall through to Google Fonts
+  }
+  // Fallback: fetch from Google Fonts CSS API (woff2, first 4 CJK subsets)
   try {
     const css = await fetch(
       "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
@@ -26,26 +37,18 @@ async function loadJapaneseFonts(): Promise<ArrayBuffer[]> {
         },
       },
     ).then((r) => r.text());
-
     const urls = [
       ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
     ].map((m) => m[1]);
-
-    if (urls.length === 0) {
-      _fontBuffers = [];
-      return [];
+    if (urls.length > 0) {
+      _fontBuffer = await fetch(urls[0]).then((r) => r.arrayBuffer());
+      return _fontBuffer;
     }
-
-    // Fetch the first 4 subsets which cover Hiragana, Katakana, and CJK (Kanji)
-    const buffers = await Promise.all(
-      urls.slice(0, 4).map((url) => fetch(url).then((r) => r.arrayBuffer())),
-    );
-    _fontBuffers = buffers;
-    return buffers;
   } catch {
-    _fontBuffers = [];
-    return [];
+    // give up
   }
+  _fontBuffer = null;
+  return null;
 }
 
 const TYPE_META: Record<string, TypeStyle> = {
@@ -171,16 +174,11 @@ export async function GET(request: Request) {
     type === "faq" ||
     type === "mock-exam";
 
-  const fontBuffers = await loadJapaneseFonts();
-  const fontOptions =
-    fontBuffers.length > 0
-      ? fontBuffers.map((data) => ({
-          name: "Noto Sans JP",
-          data,
-          weight: 700 as const,
-          style: "normal" as const,
-        }))
-      : undefined;
+  const origin = new URL(request.url).origin;
+  const fontBuffer = await loadJapaneseFont(origin);
+  const fontOptions = fontBuffer
+    ? [{ name: "Noto Sans JP", data: fontBuffer, weight: 700 as const, style: "normal" as const }]
+    : undefined;
 
   return new ImageResponse(
     (

@@ -278,6 +278,7 @@ export function renderSitemapChunkXml(pageIndex: number): string {
     pageIndex === 0
       ? [
           ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
+          ...getEssayRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getBookRoutes().map((r) => ({ ...r, lastModified: now })),
