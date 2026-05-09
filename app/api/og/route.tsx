@@ -20,13 +20,14 @@ async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
   try {
     const res = await fetch(`${origin}/fonts/noto-sans-jp-700.woff`);
     if (res.ok) {
-      _fontBuffer = await res.arrayBuffer();
-      return _fontBuffer;
+      const buf = await res.arrayBuffer();
+      _fontBuffer = buf;
+      return buf;
     }
   } catch {
     // fall through to Google Fonts
   }
-  // Fallback: fetch from Google Fonts CSS API (woff2, first 4 CJK subsets)
+  // Fallback: fetch from Google Fonts CSS API (woff2)
   try {
     const css = await fetch(
       "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
@@ -41,8 +42,9 @@ async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
       ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
     ].map((m) => m[1]);
     if (urls.length > 0) {
-      _fontBuffer = await fetch(urls[0]).then((r) => r.arrayBuffer());
-      return _fontBuffer;
+      const buf = await fetch(urls[0]).then((r) => r.arrayBuffer());
+      _fontBuffer = buf;
+      return buf;
     }
   } catch {
     // give up
