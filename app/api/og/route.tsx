@@ -10,6 +10,44 @@ interface TypeStyle {
   subtitle: string;
 }
 
+// Module-level cache for Noto Sans JP font buffers.
+// Each Vercel Edge worker instance caches across requests within the same isolate.
+let _fontBuffers: ArrayBuffer[] | undefined;
+
+async function loadJapaneseFonts(): Promise<ArrayBuffer[]> {
+  if (_fontBuffers !== undefined) return _fontBuffers;
+  try {
+    const css = await fetch(
+      "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@700&display=swap",
+      {
+        headers: {
+          "User-Agent":
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        },
+      },
+    ).then((r) => r.text());
+
+    const urls = [
+      ...css.matchAll(/url\((https:\/\/fonts\.gstatic\.com\/[^)]+\.woff2)\)/g),
+    ].map((m) => m[1]);
+
+    if (urls.length === 0) {
+      _fontBuffers = [];
+      return [];
+    }
+
+    // Fetch the first 4 subsets which cover Hiragana, Katakana, and CJK (Kanji)
+    const buffers = await Promise.all(
+      urls.slice(0, 4).map((url) => fetch(url).then((r) => r.arrayBuffer())),
+    );
+    _fontBuffers = buffers;
+    return buffers;
+  } catch {
+    _fontBuffers = [];
+    return [];
+  }
+}
+
 const TYPE_META: Record<string, TypeStyle> = {
   home: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
@@ -71,6 +109,11 @@ const TYPE_META: Record<string, TypeStyle> = {
     emoji: "💡",
     subtitle: "よくある質問",
   },
+  "mock-exam": {
+    gradient: "linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1d4ed8 100%)",
+    emoji: "📝",
+    subtitle: "模試モード",
+  },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
     emoji: "✨",
@@ -125,7 +168,19 @@ export async function GET(request: Request) {
     type === "topic" ||
     type === "glossary" ||
     type === "keyword" ||
-    type === "faq";
+    type === "faq" ||
+    type === "mock-exam";
+
+  const fontBuffers = await loadJapaneseFonts();
+  const fontOptions =
+    fontBuffers.length > 0
+      ? fontBuffers.map((data) => ({
+          name: "Noto Sans JP",
+          data,
+          weight: 700 as const,
+          style: "normal" as const,
+        }))
+      : undefined;
 
   return new ImageResponse(
     (
@@ -137,7 +192,7 @@ export async function GET(request: Request) {
           display: "flex",
           flexDirection: "column",
           padding: "72px 80px",
-          fontFamily: "sans-serif",
+          fontFamily: "'Noto Sans JP', sans-serif",
           color: "#fff",
         }}
       >
@@ -305,6 +360,6 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    { ...SIZE },
+    { ...SIZE, ...(fontOptions ? { fonts: fontOptions } : {}) },
   );
 }
