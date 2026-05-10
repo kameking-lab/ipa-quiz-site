@@ -1,4 +1,9 @@
 import { getAllBlogSummaries } from "@/data/blog";
+import {
+  SC_ESSAY_EXAM_CODES,
+  getSCpm2Questions,
+  questionToUrlParts,
+} from "@/lib/essays/load";
 import { SITE_BASE_URL } from "./config";
 import {
   getAvailableExams,
@@ -140,6 +145,26 @@ function getTopicHubRoutes(): UrlEntry[] {
   }));
 }
 
+function getEssayRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  for (const exam of SC_ESSAY_EXAM_CODES) {
+    entries.push({
+      url: `${SITE_BASE_URL}/essays/${exam}`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
+    for (const q of getSCpm2Questions()) {
+      const { yearSeason, section, qnum } = questionToUrlParts(q);
+      entries.push({
+        url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
+        changeFrequency: "monthly",
+        priority: 0.65,
+      });
+    }
+  }
+  return entries;
+}
+
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
@@ -174,6 +199,7 @@ export function renderSitemapIndexXml(): string {
     `${SITE_BASE_URL}/sitemap/topics.xml`,
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
+    `${SITE_BASE_URL}/sitemap/essays.xml`,
   ];
   const chunkCount = getSitemapChunkCount();
   for (let i = 0; i < chunkCount; i += 1) {
@@ -231,6 +257,11 @@ export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
   );
 }
 
+export function renderEssaysSitemapXml(): string {
+  const now = new Date().toISOString();
+  return renderUrlSet(getEssayRoutes().map((r) => ({ ...r, lastModified: now })));
+}
+
 /**
  * Backwards-compat: the legacy /sitemap/[id].xml route still serves a single
  * combined chunk (static + exams + topics + blog + books on chunk 0, questions
@@ -254,6 +285,7 @@ export function renderSitemapChunkXml(pageIndex: number): string {
     pageIndex === 0
       ? [
           ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
+          ...getEssayRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })),
           ...getBookRoutes().map((r) => ({ ...r, lastModified: now })),

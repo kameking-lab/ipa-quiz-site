@@ -97,20 +97,36 @@ export function examFullName(exam: ExamCode): string {
   return EXAM_FULL_NAMES[exam];
 }
 
+const EXAM_AUDIENCE_TEXTS: Record<ExamCode, string> = {
+  ip: "IT利活用を目指す就活生・社会人全般向け。",
+  sg: "企業内セキュリティ担当者・管理職向け。",
+  fe: "エンジニア志望の学生・新人IT職向け。",
+  ap: "エンジニア中堅層・難関突破を目指す方向け。",
+  sc: "登録セキュリティ専門職(RISS)を目指す方向け。",
+  nw: "ネットワーク設計・構築・運用の専門技術者向け。",
+  db: "データベース設計・運用の専門家を目指す方向け。",
+  st: "IT戦略を経営直結で策定する上位プロフェッショナル向け。",
+  sa: "情報システム全体の設計を担うアーキテクト向け。",
+  pm: "情報システム開発プロジェクトを統括するPM向け。",
+  es: "組込みシステム専門技術者を目指すエンジニア向け。",
+  sm: "ITサービス運用・マネジメントを担う担当者向け。",
+  au: "情報システムの信頼性・安全性を監査する内部監査人向け。",
+};
+
 const EXAM_SHORT_HOOKS: Record<ExamCode, string> = {
-  ip: "CBT通年試験対策に。",
-  sg: "CBT通年セキュリティ対策に。",
-  fe: "科目A・B両対策に。",
-  ap: "午前・午後両対策に。",
-  st: "ITストラテジスト対策に。",
-  sa: "システムアーキテクト対策に。",
-  pm: "プロジェクトマネージャ対策に。",
-  nw: "ネットワーク高度試験対策に。",
-  db: "データベース高度試験対策に。",
-  es: "組込みシステム高度試験対策に。",
-  sc: "登録セキュリティ専門職対策に。",
-  sm: "ITサービスマネージャ対策に。",
-  au: "システム監査技術者対策に。",
+  ip: "CBT通年試験対応、実問題ベースAI解説で短期合格を効率的にサポート。",
+  sg: "CBT通年対応、実問題AI解説でセキュリティ管理を効率的に学習。",
+  fe: "科目A・B両対応、プログラミング基礎からアルゴリズム・ハードウェアまでAI解説。",
+  ap: "午前80問・午後記述両対策、AIで弱点を即特定し効率合格。",
+  sc: "午前I・II〜午後記述まで高度試験全域対応、AIで実践力を強化。",
+  nw: "午前I・II〜午後まで高度試験全域対応、AIでネットワーク専門知識を強化。",
+  db: "午前I・II〜午後まで高度試験全域対応、AIでSQL・DB設計を解説。",
+  st: "午前I・II〜論文まで全域対応、AIでIT経営戦略を強化。",
+  sa: "午前I・II〜論文まで全域対応、AIでシステム設計の専門知識を強化。",
+  pm: "午前I・II〜論文まで全域対応、AIでPMの専門知識を強化。",
+  es: "午前I・II〜午後まで高度試験全域AI解説。",
+  sm: "午前I・II〜論文まで全域対応、AIでITSMの専門知識を強化。",
+  au: "午前I・II〜論文まで全域対応、AIでシステム監査の専門知識を強化。",
 };
 
 export function examMetaDescription(
@@ -124,6 +140,7 @@ export function examMetaDescription(
   const categoryCount = groupByCategory(questions).length;
   const countFmt = questionCount.toLocaleString("ja-JP");
   const hook = EXAM_SHORT_HOOKS[exam] ?? "";
+  const audience = EXAM_AUDIENCE_TEXTS[exam] ?? "";
 
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
@@ -131,7 +148,7 @@ export function examMetaDescription(
   if (mode === "topic") {
     return `${name}の分野別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。${categoryCount}分野・${yearCount}期分を完全無料公開。会員登録不要。`;
   }
-  return `${name}の過去問${countFmt}問をAIコパイロットで完全無料解説。${yearCount}期分・${categoryCount}分野を網羅。${hook}会員登録不要で即学習開始。`;
+  return `${name}の過去問${countFmt}問をAIコパイロットで完全無料解説。${yearCount}期分・${categoryCount}分野を完全網羅。${audience}${hook}会員登録不要で即学習開始。`;
 }
 
 export function countByExam(exam: ExamCode): number {
