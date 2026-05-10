@@ -1,0 +1,75 @@
+# Worktree Physical Directory Cleanup Log
+# Date: 2026-05-10 13:18 JST
+# Operator: Claude Code (claude/optimistic-lalande-2c302d)
+
+## Environment
+- Shell: Git Bash (via Claude Code Bash tool)
+- PowerShell used for deletion via powershell.exe -Command
+- PS version: Windows 5.1 series (Start-Job used, not ForEach-Object -Parallel)
+- Approach: 3-B (robocopy mirror + rmdir /s /q)
+
+## Hanging Jobs Status
+- PowerShell processes at start: 2 (PIDs 29484, 12588)
+- Could not Stop-Job directly (different PS session from Git Bash)
+- Previous Remove-Item job had partially completed: 67 → 18 dirs before this cleanup
+- Action: proceeded with remaining 18 dirs directly (15 stale + 2 valid)
+
+## Directory Count
+- Directories at start of this session: 18 total
+- Kept (git worktree list): 2
+  - optimistic-lalande-2c302d  → claude/optimistic-lalande-2c302d
+  - recursing-boyd-0255e7      → chore/worktree-cleanup-20260510
+- Stale to delete: 16 (including agitated-cori-ce581e deleted in test)
+- Directories after cleanup: 2
+
+## Exclusion List (confirmed from git worktree list)
+- optimistic-lalande-2c302d
+- recursing-boyd-0255e7
+
+## Deletion Method
+Problem encountered: Windows MAX_PATH (260 char) limit blocked Remove-Item and plain rmdir /s /q.
+Solution: robocopy mirror trick
+  1. Create empty temp directory
+  2. robocopy /MIR empty → target (empties the target, bypasses MAX_PATH)
+  3. cmd /c rmdir /s /q on now-empty target
+
+## Deleted Directories (16 total)
+1. agitated-cori-ce581e       — OK (test run, synchronous)
+2. awesome-bhabha-95b140      — OK
+3. dreamy-kapitsa-583718      — OK
+4. fervent-hermann-f4336e     — OK
+5. flamboyant-dirac-54e9ba    — OK
+6. funny-bell-8a82ff          — OK
+7. gracious-villani-08c684    — OK
+8. jovial-lalande-6dc56e      — OK
+9. kind-burnell-c3d1f6        — OK
+10. lucid-goldberg-6179a5     — OK
+11. naughty-newton-0eb9f6     — OK
+12. objective-wilbur-dbc2fa   — OK
+13. priceless-golick-6883da   — OK
+14. quizzical-banzai-d1c91d   — OK
+15. serene-black-5ea2df       — OK
+16. tender-moser-f0c243       — OK
+
+## Elapsed Time
+Parallel deletion (15 jobs): ~2 seconds
+
+## Failed Deletions
+None. All 16 stale directories deleted successfully.
+
+## git worktree list (final)
+C:/Users/kanet/ipa-quiz-site                                              a961690 [feat/ap-batch1]
+C:/Users/kanet/ipa-quiz-site/.claude/worktrees/optimistic-lalande-2c302d  a961690 [claude/optimistic-lalande-2c302d]
+C:/Users/kanet/ipa-quiz-site/.claude/worktrees/recursing-boyd-0255e7      7b0a2e2 [chore/worktree-cleanup-20260510]
+
+## git fsck result
+Only dangling objects found (124 total) — normal after branch/worktree deletion.
+No corruption, missing objects, or broken links detected.
+
+## git gc
+git gc --prune=now: exit 0 — dangling objects pruned.
+
+## Branch Safety
+- main branch: NOT touched
+- feat/ap-batch1: NOT touched
+- Only chore/worktree-cleanup-20260510 modified (this log file)
