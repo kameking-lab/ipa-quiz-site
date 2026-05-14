@@ -5,7 +5,7 @@
 // signed via the Node 20+ `crypto` module that ships with the runtime.
 //
 // Required env vars (set on Vercel / locally in .env.local):
-//   GSC_SITE_URL                — property URL (e.g. https://kakomon-ai.com/) or sc-domain:kakomon-ai.com
+//   GSC_SITE_URL                — property URL (e.g. https://www.kakomon-ai.jp/) or sc-domain:kakomon-ai.jp
 //   GSC_SERVICE_ACCOUNT_EMAIL   — client_email from service-account JSON
 //   GSC_SERVICE_ACCOUNT_KEY     — private_key (PEM, with literal \n or real newlines)
 //

@@ -154,6 +154,7 @@ export default function RootLayout({
                     </p>
                     <ul className="space-y-0">
                       <li><Link href="/about" className="block py-2 hover:text-foreground">プロジェクトについて</Link></li>
+                      <li><Link href="/stats" className="block py-2 hover:text-foreground">公開ダッシュボード</Link></li>
                       <li><Link href="/transparency" className="block py-2 hover:text-foreground">透明性レポート</Link></li>
                       <li><Link href="/operator" className="block py-2 hover:text-foreground">運営者情報</Link></li>
                     </ul>

@@ -62,7 +62,7 @@ const nextConfig: NextConfig = {
       { source: "/account/api-keys", destination: "/settings/api-keys", permanent: true },
       // Merged pages (content absorbed into about / transparency)
       { source: "/support", destination: "/about#support", permanent: true },
-      { source: "/stats", destination: "/transparency#metrics", permanent: true },
+      // /stats is now a first-class public dashboard (see app/stats/page.tsx)
       // Practice renamed
       { source: "/practice/weakness", destination: "/quiz?mode=weakness", permanent: true },
     ];

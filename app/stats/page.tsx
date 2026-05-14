@@ -313,7 +313,7 @@ export default async function StatsPage() {
               icon={<XLogo className="h-4 w-4" />}
               title="X でシェア"
               body="#過去問AI #kakomon_ai のタグでシェアしていただけると嬉しいです。"
-              href="https://x.com/intent/tweet?text=%23%E9%81%8E%E5%8E%BB%E5%95%8FAI%20%23kakomon_ai%20%E7%84%A1%E6%96%99%E3%81%A7%20IPA%20%E9%81%8E%E5%8E%BB%E5%95%8F%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%B5%E3%82%A4%E3%83%88&url=https%3A%2F%2Fkakomon-ai.com%2F"
+              href="https://x.com/intent/tweet?text=%23%E9%81%8E%E5%8E%BB%E5%95%8FAI%20%23kakomon_ai%20%E7%84%A1%E6%96%99%E3%81%A7%20IPA%20%E9%81%8E%E5%8E%BB%E5%95%8F%E3%82%92%E5%8B%89%E5%BC%B7%E3%81%A7%E3%81%8D%E3%82%8B%E3%82%B5%E3%82%A4%E3%83%88&url=https%3A%2F%2Fwww.kakomon-ai.jp%2F"
               external
             />
             <SupportLink

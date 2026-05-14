@@ -44,8 +44,9 @@ const RECOMMENDED_BOOKS_EXAMS = [
   "au",
 ] as const;
 
-// /quiz, /support, /stats are intentionally omitted: they 301 redirect to other
-// pages (see next.config.ts). Sitemap should expose canonical destinations only.
+// /quiz, /support are intentionally omitted: they 301 redirect to other pages
+// (see next.config.ts). Sitemap should expose canonical destinations only.
+// /stats is included below as a first-class public dashboard.
 const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
   { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
@@ -80,6 +81,7 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/contact`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/transparency`, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/stats`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/demo/afternoon`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/demo/essay-grading`, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },

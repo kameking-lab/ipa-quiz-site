@@ -2,7 +2,7 @@
 
 import * as React from "react";
 
-const SITE_URL = "https://kakomon-ai.com/stats";
+const SITE_URL = "https://www.kakomon-ai.jp/stats";
 
 export function StatsShareButtons({ impressions }: { impressions: number | null }) {
   const text = impressions
