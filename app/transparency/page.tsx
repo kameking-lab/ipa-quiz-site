@@ -34,19 +34,11 @@ interface MonthlySeries {
   aiCalls: number;
 }
 
-const DEMO_SERIES: MonthlySeries[] = [
-  { month: "2025-12", users: 480, aiCalls: 1420 },
-  { month: "2026-01", users: 1120, aiCalls: 5180 },
-  { month: "2026-02", users: 2340, aiCalls: 11250 },
-  { month: "2026-03", users: 4080, aiCalls: 19840 },
-  { month: "2026-04", users: 6520, aiCalls: 31700 },
-];
-
 async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
   const apiKey = process.env.POSTHOG_API_KEY;
   const projectId = process.env.POSTHOG_PROJECT_ID;
   const host = process.env.POSTHOG_HOST ?? "https://us.posthog.com";
-  if (!apiKey || !projectId) return DEMO_SERIES;
+  if (!apiKey || !projectId) return [];
 
   try {
     const url = `${host}/api/projects/${projectId}/insights/trend/?events=${encodeURIComponent(
@@ -59,21 +51,20 @@ async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
       headers: { Authorization: `Bearer ${apiKey}` },
       next: { revalidate: 300 },
     });
-    if (!res.ok) return DEMO_SERIES;
+    if (!res.ok) return [];
     const data = (await res.json()) as {
       result?: Array<{ data?: number[]; labels?: string[] }>;
     };
     const usersSeries = data.result?.[0]?.data ?? [];
     const aiSeries = data.result?.[1]?.data ?? [];
     const labels = data.result?.[0]?.labels ?? [];
-    const monthly: MonthlySeries[] = labels.map((label, i) => ({
+    return labels.map((label, i) => ({
       month: label,
       users: usersSeries[i] ?? 0,
       aiCalls: aiSeries[i] ?? 0,
     }));
-    return monthly.length > 0 ? monthly : DEMO_SERIES;
   } catch {
-    return DEMO_SERIES;
+    return [];
   }
 }
 
@@ -130,6 +121,12 @@ export default async function TransparencyPage() {
           月次で運営方針・コスト・意思決定を公開しています。
           利用者から運営が見える状態を保つことが、教育貢献プロジェクトとしての説明責任だと考えています。
         </p>
+        <Link
+          href="/stats"
+          className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition hover:bg-muted"
+        >
+          リアルタイム公開ダッシュボード /stats を見る →
+        </Link>
       </header>
 
       <Card className="mb-6">
@@ -207,7 +204,19 @@ export default async function TransparencyPage() {
             <CardTitle className="text-base">試験区分別の収録問題数・月次利用状況</CardTitle>
           </CardHeader>
           <CardContent>
-            <StatsCharts byExam={byExam} monthlySeries={monthlySeries} />
+            {monthlySeries.length > 0 ? (
+              <StatsCharts byExam={byExam} monthlySeries={monthlySeries} />
+            ) : (
+              <div className="space-y-3 text-sm text-zinc-600 dark:text-zinc-400">
+                <p>
+                  リアルタイムの月次利用状況は <Link href="/stats" className="underline hover:text-foreground">公開ダッシュボード /stats</Link> で見られます。
+                </p>
+                <p className="text-xs">
+                  ※ かつてサンプル数値を表示していましたが、誤解を招かないため撤去し、
+                  実データのみを表示する方針に切り替えました。
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
       </section>
