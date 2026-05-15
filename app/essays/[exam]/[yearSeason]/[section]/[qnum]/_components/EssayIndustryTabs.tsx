@@ -7,7 +7,10 @@ import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
 
 const INDUSTRY_ORDER: EssayIndustryId[] = [
   "it",
+  "manufacturing",
   "finance",
+  "retail",
+  "telecom",
   "construction",
   "healthcare",
   "public",

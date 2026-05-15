@@ -3,7 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Shield, FileText, AlertTriangle, ArrowRight } from "lucide-react";
 
-import { getSCpm2Questions, SC_ESSAY_EXAM_CODES, questionToUrlParts } from "@/lib/essays/load";
+import {
+  ESSAY_EXAM_CODES,
+  getEssayQuestionsByExam,
+  isEssayExamCode,
+  questionToUrlParts,
+} from "@/lib/essays/load";
 import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
 import { examLabel } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
@@ -20,18 +25,19 @@ export async function generateMetadata({
   params: Promise<RouteParams>;
 }): Promise<Metadata> {
   const { exam } = await params;
-  if (!SC_ESSAY_EXAM_CODES.includes(exam as "sc")) {
+  if (!isEssayExamCode(exam)) {
     return { title: "試験区分が見つかりません", robots: { index: false } };
   }
+  const label = examLabel(exam);
   return {
-    title: `${examLabel(exam)} 業種別合格答案サンプル | 情報処理安全確保支援士`,
-    description: `${examLabel(exam)}（SC）午後II の業種別合格答案サンプル。IT・金融・建設・医療・公共の5業種で、内部不正対策・クラウドセキュリティ・ゼロトラストの論述例を掲載。`,
+    title: `${label} 業種別合格答案サンプル | 午後II 論述`,
+    description: `${label} 午後II 論述問題の業種別合格答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`,
     alternates: { canonical: `/essays/${exam}` },
   };
 }
 
 export async function generateStaticParams() {
-  return SC_ESSAY_EXAM_CODES.map((exam) => ({ exam }));
+  return ESSAY_EXAM_CODES.map((exam) => ({ exam }));
 }
 
 export default async function EssayExamPage({
@@ -40,13 +46,21 @@ export default async function EssayExamPage({
   params: Promise<RouteParams>;
 }) {
   const { exam } = await params;
-  if (!SC_ESSAY_EXAM_CODES.includes(exam as "sc")) notFound();
+  if (!isEssayExamCode(exam)) notFound();
 
-  const questions = getSCpm2Questions();
-  const industries = Object.entries(ESSAY_INDUSTRY_LABELS) as [
-    keyof typeof ESSAY_INDUSTRY_LABELS,
-    string
-  ][];
+  const questions = getEssayQuestionsByExam(exam);
+  if (questions.length === 0) notFound();
+
+  const presentIndustryIds = new Set<string>();
+  for (const q of questions) {
+    for (const ind of q.industries) presentIndustryIds.add(ind.industryId);
+  }
+  const industries = (
+    Object.entries(ESSAY_INDUSTRY_LABELS) as [
+      keyof typeof ESSAY_INDUSTRY_LABELS,
+      string
+    ][]
+  ).filter(([id]) => presentIndustryIds.has(id));
 
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
@@ -86,7 +100,7 @@ export default async function EssayExamPage({
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {questions.map((q) => {
-          const { yearSeason, section, qnum } = questionToUrlParts(q);
+          const { yearSeason, section, qnum } = questionToUrlParts(q, exam);
           return (
             <Card key={q.id} className="flex flex-col">
               <CardHeader className="pb-2">
@@ -134,10 +148,10 @@ export default async function EssayExamPage({
         </ol>
         <div className="mt-4">
           <Link
-            href="/essay/sc"
+            href="/essay"
             className="text-xs text-sky-600 underline hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-200"
           >
-            → AI 論述添削（SC 午後 II）へ
+            → AI 論述添削（午後 II）へ
           </Link>
         </div>
       </section>

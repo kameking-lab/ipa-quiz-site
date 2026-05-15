@@ -1,7 +1,7 @@
 import { getAllBlogSummaries } from "@/data/blog";
 import {
-  SC_ESSAY_EXAM_CODES,
-  getSCpm2Questions,
+  ESSAY_EXAM_CODES,
+  getEssayQuestionsByExam,
   questionToUrlParts,
 } from "@/lib/essays/load";
 import { SITE_BASE_URL } from "./config";
@@ -149,14 +149,16 @@ function getTopicHubRoutes(): UrlEntry[] {
 
 function getEssayRoutes(): UrlEntry[] {
   const entries: UrlEntry[] = [];
-  for (const exam of SC_ESSAY_EXAM_CODES) {
+  for (const exam of ESSAY_EXAM_CODES) {
+    const questions = getEssayQuestionsByExam(exam);
+    if (questions.length === 0) continue;
     entries.push({
       url: `${SITE_BASE_URL}/essays/${exam}`,
       changeFrequency: "monthly",
       priority: 0.7,
     });
-    for (const q of getSCpm2Questions()) {
-      const { yearSeason, section, qnum } = questionToUrlParts(q);
+    for (const q of questions) {
+      const { yearSeason, section, qnum } = questionToUrlParts(q, exam);
       entries.push({
         url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
         changeFrequency: "monthly",

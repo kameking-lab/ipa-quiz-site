@@ -1,4 +1,12 @@
-export type EssayIndustryId = "it" | "finance" | "construction" | "healthcare" | "public";
+export type EssayIndustryId =
+  | "it"
+  | "finance"
+  | "construction"
+  | "healthcare"
+  | "public"
+  | "manufacturing"
+  | "retail"
+  | "telecom";
 
 export const ESSAY_INDUSTRY_LABELS: Record<EssayIndustryId, string> = {
   it: "IT・情報サービス業",
@@ -6,6 +14,9 @@ export const ESSAY_INDUSTRY_LABELS: Record<EssayIndustryId, string> = {
   construction: "建設業",
   healthcare: "医療・ヘルスケア",
   public: "公共・自治体",
+  manufacturing: "製造業",
+  retail: "流通・小売業",
+  telecom: "通信業",
 };
 
 export interface SCEssayAnswer {
