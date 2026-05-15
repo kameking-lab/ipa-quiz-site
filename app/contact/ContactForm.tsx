@@ -132,7 +132,7 @@ export function ContactForm() {
           onChange={(e) => setName(e.target.value.slice(0, 80))}
           maxLength={80}
           placeholder="山田 太郎"
-          className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
+          className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
 
@@ -151,7 +151,7 @@ export function ContactForm() {
           onChange={(e) => setEmail(e.target.value.slice(0, 120))}
           maxLength={120}
           placeholder="example@example.com"
-          className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
+          className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
 
@@ -170,7 +170,7 @@ export function ContactForm() {
           maxLength={4000}
           required
           placeholder="どんなことでもお気軽にどうぞ"
-          className="w-full resize-vertical rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
+          className="w-full resize-vertical rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
         <p className="mt-1 text-right text-[11px] text-zinc-400">{body.length} / 4000</p>
       </div>
