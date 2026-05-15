@@ -10,7 +10,7 @@ import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
 export const metadata: Metadata = {
-  title: "学習トピック特集記事一覧 | 過去問AI",
+  title: "学習トピック特集記事一覧",
   description:
     "情報処理技術者試験の頻出論点に特化したロングテール解説記事一覧。サブネット計算・EVM・論文構成・直前対策など、検索ニーズに応じた特集を集約。",
   alternates: { canonical: "/keywords" },

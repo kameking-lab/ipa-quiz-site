@@ -2,10 +2,22 @@ import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_PROFILES } from "./exam-data";
 import type { BlogPost } from "./types";
 
-const PUBLISHED_BASE = new Date("2026-04-15T00:00:00.000Z").getTime();
+const PUBLISHED_BASE = new Date("2026-01-01T00:00:00.000Z").getTime();
+const DAY_MS = 86_400_000;
+
+// Clamp to "today (UTC) at 00:00:00" so generated articles never advertise a
+// future datePublished. Google deprioritises (and sometimes suppresses) Article
+// schema entries whose datePublished/dateModified is in the future, since they
+// look like scheduled-but-unpublished posts.
+function todayUtcMidnightMs(): number {
+  const now = new Date();
+  return Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate());
+}
 
 function publishedAtFor(offsetDays: number): string {
-  return new Date(PUBLISHED_BASE + offsetDays * 86_400_000).toISOString();
+  const target = PUBLISHED_BASE + offsetDays * DAY_MS;
+  const clamped = Math.min(target, todayUtcMidnightMs());
+  return new Date(clamped).toISOString();
 }
 
 function toItalicList(items: string[]): string {

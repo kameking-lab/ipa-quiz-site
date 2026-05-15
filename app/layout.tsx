@@ -12,6 +12,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 
 const geistSans = Geist({
@@ -29,13 +30,20 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = SITE_BASE_URL;
 
+// Round the live total down to the nearest 1,000 so copy that says "X,000問超"
+// is always factually true. As of writing the floor is 15,000 (live ≈15,082).
+const APPROX_QUESTION_COUNT_LABEL = (
+  Math.floor(ALL_QUESTIONS.length / 1000) * 1000
+).toLocaleString("ja-JP");
+
+const ROOT_DESCRIPTION = `IPA 13試験 ${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。`;
+
 export const metadata: Metadata = {
   title: {
     default: "過去問AI — AIネイティブ過去問学習",
     template: "%s | 過去問AI",
   },
-  description:
-    "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。",
+  description: ROOT_DESCRIPTION,
   applicationName: "過去問AI",
   metadataBase: new URL(BASE_URL),
   manifest: "/manifest.webmanifest",
@@ -51,8 +59,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "過去問AI — AIネイティブ過去問学習",
-    description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。",
+    description: ROOT_DESCRIPTION,
     type: "website",
     locale: "ja_JP",
     siteName: "過去問AI",
@@ -71,8 +78,7 @@ export const metadata: Metadata = {
     site: "@kakomon_ai_jp",
     creator: "@kakomon_ai_jp",
     title: "過去問AI — AIネイティブ過去問学習",
-    description:
-      "IPA 13試験 12,000問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。",
+    description: ROOT_DESCRIPTION,
     images: [`${BASE_URL}/opengraph-image`],
   },
   verification: {

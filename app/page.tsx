@@ -14,11 +14,31 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
+// Round the live count down to the nearest 1,000 so SERP/social copy can say
+// "X,000問超" without ever overstating. Drives a single source of truth for
+// the home title/description, WebSite JSON-LD description, and ItemList counts.
+const APPROX_QUESTION_COUNT = Math.floor(ALL_QUESTIONS.length / 1000) * 1000;
+const APPROX_QUESTION_COUNT_LABEL = APPROX_QUESTION_COUNT.toLocaleString("ja-JP");
+
+const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
+const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分・${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。`;
+
 export const metadata: Metadata = {
-  title: "IPA過去問×AI、無料で全機能 — 過去問AI",
-  description:
-    "IPA 情報処理技術者試験 全 13 区分・12,000問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   alternates: { canonical: "/" },
+  // Override the root-layout openGraph/twitter so social shares of the
+  // landing page get the same keyword-rich title/description users see in
+  // SERPs, not the generic site-wide fallback.
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "/",
+  },
+  twitter: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
 };
 
 export default function HomePage() {
@@ -45,8 +65,7 @@ export default function HomePage() {
         url: SITE_BASE_URL,
         name: SITE_NAME,
         inLanguage: "ja-JP",
-        description:
-          "IPA 情報処理技術者試験 13 区分・12,000 問超を AI コパイロット付きで学習できる無料の過去問サイト。",
+        description: `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
         potentialAction: {
           "@type": "SearchAction",
           target: `${SITE_BASE_URL}/quiz?mode=random&exam={search_term_string}`,

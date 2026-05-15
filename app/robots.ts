@@ -1,14 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_BASE_URL } from "@/lib/seo/config";
-import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
 
 export default function robots(): MetadataRoute.Robots {
-  const chunkCount = getSitemapChunkCount();
-  const questionSitemaps = Array.from(
-    { length: chunkCount },
-    (_, i) => `${SITE_BASE_URL}/sitemap/questions/${i}.xml`,
-  );
-
   return {
     rules: [
       {
@@ -34,15 +27,11 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
     ],
-    sitemap: [
-      `${SITE_BASE_URL}/sitemap.xml`,
-      `${SITE_BASE_URL}/sitemap/main.xml`,
-      `${SITE_BASE_URL}/sitemap/exams.xml`,
-      `${SITE_BASE_URL}/sitemap/topics.xml`,
-      `${SITE_BASE_URL}/sitemap/blog.xml`,
-      `${SITE_BASE_URL}/sitemap/books.xml`,
-      ...questionSitemaps,
-    ],
+    // Point only at the sitemap index. The index references every category
+    // sitemap (main, exams, topics, blog, books, essays, questions/*) so
+    // crawlers discover them transitively. Listing each child here would
+    // double-submit URLs and was also forgetting /sitemap/essays.xml.
+    sitemap: `${SITE_BASE_URL}/sitemap.xml`,
     host: SITE_BASE_URL,
   };
 }

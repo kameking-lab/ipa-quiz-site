@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { ChatShareView } from "./ChatShareView";
 
 export const metadata: Metadata = {
-  title: "AIと一緒に解いたIPA過去問 | 過去問AI",
+  title: "AIと一緒に解いたIPA過去問",
   description: "過去問AIとの会話を共有しています。",
   robots: { index: false, follow: false },
 };

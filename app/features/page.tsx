@@ -8,7 +8,7 @@ import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
-  title: "機能特集 | 過去問AI",
+  title: "機能特集",
   description:
     "AI 解説・業種別論述事例・AI 論述添削など、過去問AI の差別化機能をまとめた特集ページ。",
   alternates: { canonical: "/features" },
