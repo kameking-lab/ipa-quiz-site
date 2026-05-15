@@ -172,13 +172,28 @@ export function ContactForm() {
           placeholder="どんなことでもお気軽にどうぞ"
           className="w-full resize-vertical rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
-        <p className="mt-1 text-right text-[11px] text-zinc-400">{body.length} / 4000</p>
+        <p
+          className={cn(
+            "mt-1 text-right text-xs tabular-nums",
+            body.length >= 3600
+              ? "font-medium text-rose-600 dark:text-rose-400"
+              : body.length >= 3200
+                ? "text-amber-600 dark:text-amber-400"
+                : "text-zinc-500 dark:text-zinc-400",
+          )}
+          aria-live={body.length >= 3600 ? "polite" : "off"}
+        >
+          {body.length.toLocaleString("ja-JP")} / 4,000
+        </p>
       </div>
 
       {error && (
-        <div className="flex items-center gap-2 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2 text-xs text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300">
-          <AlertCircle className="h-4 w-4" />
-          {error}
+        <div
+          role="alert"
+          className="flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2.5 text-sm font-medium text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300"
+        >
+          <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" aria-hidden="true" />
+          <span>{error}</span>
         </div>
       )}
 
