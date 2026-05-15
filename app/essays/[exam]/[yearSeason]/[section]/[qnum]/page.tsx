@@ -4,8 +4,9 @@ import { notFound } from "next/navigation";
 import { AlertTriangle, BookOpen, ChevronLeft, Shield } from "lucide-react";
 
 import {
-  SC_ESSAY_EXAM_CODES,
-  getSCpm2Questions,
+  ESSAY_EXAM_CODES,
+  getEssayQuestionsByExam,
+  isEssayExamCode,
   parseYearSeason,
 } from "@/lib/essays/load";
 import { examLabel } from "@/lib/utils";
@@ -20,7 +21,7 @@ interface RouteParams {
 }
 
 function resolveQuestion(params: RouteParams) {
-  if (!SC_ESSAY_EXAM_CODES.includes(params.exam as "sc")) return null;
+  if (!isEssayExamCode(params.exam)) return null;
   if (params.section !== "pm2") return null;
 
   const parsed = parseYearSeason(params.yearSeason);
@@ -30,7 +31,7 @@ function resolveQuestion(params: RouteParams) {
   if (!qNumMatch) return null;
   const qNumber = parseInt(qNumMatch[1], 10);
 
-  const question = getSCpm2Questions().find(
+  const question = getEssayQuestionsByExam(params.exam).find(
     (q) =>
       q.year === parsed.year &&
       q.season === parsed.season &&
@@ -41,8 +42,8 @@ function resolveQuestion(params: RouteParams) {
 
 export function generateStaticParams(): RouteParams[] {
   const out: RouteParams[] = [];
-  for (const exam of SC_ESSAY_EXAM_CODES) {
-    for (const q of getSCpm2Questions()) {
+  for (const exam of ESSAY_EXAM_CODES) {
+    for (const q of getEssayQuestionsByExam(exam)) {
       out.push({
         exam,
         yearSeason: `${q.year}-${q.season}`,
@@ -67,7 +68,7 @@ export async function generateMetadata({
   const seasonLabel = question.season === "spring" ? "春" : "秋";
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
   const title = `${question.theme} | ${examLabel(resolved.exam)} 午後II 業種別合格答案 ${question.year}年${seasonLabel}期`;
-  const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。IT・金融・建設・医療・公共の5業種の論述例（序論・本論・結論）を掲載。`;
+  const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
   return {
     title,
     description,
@@ -86,7 +87,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function SCpm2EssayPage({
+export default async function EssayPm2DetailPage({
   params,
 }: {
   params: Promise<RouteParams>;
@@ -163,7 +164,7 @@ export default async function SCpm2EssayPage({
           上記の答案例を参考に論述を書いたら、AI 添削で「適合度・論理性・具体性・業種事例」の4軸でフィードバックを受けましょう。
         </p>
         <Link
-          href="/essay/sc"
+          href="/essay"
           className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600"
         >
           AI 論述添削を試す →
