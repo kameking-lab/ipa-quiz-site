@@ -14,11 +14,26 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
+const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
+const HOME_DESCRIPTION =
+  "IPA 情報処理技術者試験 全 13 区分・12,000問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。";
+
 export const metadata: Metadata = {
-  title: "IPA過去問×AI、無料で全機能 — 過去問AI",
-  description:
-    "IPA 情報処理技術者試験 全 13 区分・12,000問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。",
+  title: HOME_TITLE,
+  description: HOME_DESCRIPTION,
   alternates: { canonical: "/" },
+  // Override the root-layout openGraph/twitter so social shares of the
+  // landing page get the same keyword-rich title/description users see in
+  // SERPs, not the generic site-wide fallback.
+  openGraph: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "/",
+  },
+  twitter: {
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+  },
 };
 
 export default function HomePage() {
