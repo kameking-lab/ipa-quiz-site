@@ -22,9 +22,5 @@ export default defineConfig({
         port: 3000,
         timeout: 120_000,
         reuseExistingServer: !process.env.CI,
-        env: {
-          ADMIN_BASIC_USER: "kaneta",
-          ADMIN_BASIC_PASS: "xK7mQ2wF9nR4pL8v",
-        },
       },
 });
