@@ -283,24 +283,25 @@ export function QuizPlayer({
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
       <header className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
-        <div className="flex items-center gap-2 px-3 py-2">
+        <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => router.push(backHref)}
             aria-label="モード選択に戻る"
+            className="hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
-            <ArrowLeft aria-hidden="true" className="h-4 w-4" />
+            <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
-          <div className="text-xs text-zinc-500 dark:text-zinc-400">モード: {mode}</div>
-          <div className="ml-auto flex items-center gap-3 text-xs text-zinc-500 dark:text-zinc-400">
+          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {mode}</div>
+          <div className="ml-auto flex items-center gap-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">
             <ComboCounter combo={combo} />
             <span
               className="flex items-center gap-1"
               aria-label={`経過時間 ${formatElapsed(elapsed)}`}
             >
-              <Timer aria-hidden="true" className="h-3 w-3" />
-              <span aria-hidden="true">{formatElapsed(elapsed)}</span>
+              <Timer aria-hidden="true" className="h-4 w-4" />
+              <span aria-hidden="true" className="tabular-nums">{formatElapsed(elapsed)}</span>
             </span>
             <span aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}`}>
               <span aria-hidden="true">正答 {stats.correct}/{stats.answered}</span>
