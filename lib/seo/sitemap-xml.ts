@@ -263,37 +263,3 @@ export function renderEssaysSitemapXml(): string {
   const now = new Date().toISOString();
   return renderUrlSet(getEssayRoutes().map((r) => ({ ...r, lastModified: now })));
 }
-
-/**
- * Backwards-compat: the legacy /sitemap/[id].xml route still serves a single
- * combined chunk (static + exams + topics + blog + books on chunk 0, questions
- * on every chunk). Kept so deployed crawlers transitioning to the new index
- * structure continue to receive valid XML.
- */
-export function renderSitemapChunkXml(pageIndex: number): string {
-  const now = new Date().toISOString();
-  const indexable = getIndexableQuestions();
-  const start = pageIndex * SITEMAP_CHUNK_SIZE;
-  const slice = indexable.slice(start, start + SITEMAP_CHUNK_SIZE);
-
-  const questionEntries: UrlEntry[] = slice.map((q) => ({
-    url: `${SITE_BASE_URL}${questionPagePath(q)}`,
-    lastModified: now,
-    changeFrequency: "yearly",
-    priority: 0.6,
-  }));
-
-  const base: UrlEntry[] =
-    pageIndex === 0
-      ? [
-          ...STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })),
-          ...getEssayRoutes().map((r) => ({ ...r, lastModified: now })),
-          ...getExamHubRoutes().map((r) => ({ ...r, lastModified: now })),
-          ...getTopicHubRoutes().map((r) => ({ ...r, lastModified: now })),
-          ...getBookRoutes().map((r) => ({ ...r, lastModified: now })),
-          ...getBlogRoutes(),
-        ]
-      : [];
-
-  return renderUrlSet([...base, ...questionEntries]);
-}
