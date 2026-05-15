@@ -1,0 +1,13 @@
+Repository: kameking-lab/ipa-quiz-site
+Default branch: main
+Visibility: PUBLIC
+isPrivate: false
+
+Implication:
+- 漏洩値はリポジトリ公開状態でハードコードされていたため、第三者から閲覧可能であった
+- ローテーションは必須、git 履歴上にも残る(履歴書き換え判断は history-rewrite-decision.md 参照)
+
+Source command:
+  gh repo view kameking-lab/ipa-quiz-site --json visibility,isPrivate,defaultBranchRef
+
+Captured: 2026-05-15 (security/rotate-basic-auth-v2 ブランチ作成時)

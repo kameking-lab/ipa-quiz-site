@@ -1,0 +1,29 @@
+Basic Auth protection scope — production HEAD request results
+Captured: 2026-05-15
+
+Endpoint                                 HTTP status   Notes
+https://www.kakomon-ai.jp/               200           Public, no auth (expected)
+https://www.kakomon-ai.jp/admin/         308           Redirect (likely to /admin/stats)
+https://www.kakomon-ai.jp/admin/stats    401           Basic realm="Kakomon AI Admin"
+
+Implications:
+- /admin/* は production で Basic Auth により保護されている
+- middleware.ts は process.env.ADMIN_BASIC_USER / ADMIN_BASIC_PASS を参照
+- Vercel 環境変数の旧値が現在も有効、ローテーション完了まで旧値は使用可能(漏洩済みだが invalidate 前)
+- ローテーション後は旧値で 401、新値で 200 に切り替わる
+
+Source commands:
+  curl -sI -o NUL -w "%{http_code}" https://www.kakomon-ai.jp/
+  curl -sI -o NUL -w "%{http_code}" https://www.kakomon-ai.jp/admin/
+  curl -sI -o NUL -w "%{http_code}" https://www.kakomon-ai.jp/admin/stats
+
+Leaked literal locations on origin/main HEAD 0145bb1 (verified by grep):
+- .github/workflows/e2e.yml:16
+- playwright.config.ts:27
+- tests/e2e/admin-auth.spec.ts:24
+
+Leaked literal locations on side branches (NOT on main, but in git history):
+- logs/status-snapshot-20260515-1759.md (commit 063ff84 on branch claude/peaceful-pascal-1b0265, not yet merged)
+- commits 2ea0d8b, af9f548 introduced the literal originally (already on main, history)
+
+Logs containing leaked literal on origin/main: NONE (grep verified)
