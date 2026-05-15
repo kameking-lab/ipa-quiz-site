@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Shield, FileText, AlertTriangle } from "lucide-react";
+import { Shield, FileText, AlertTriangle, ArrowRight } from "lucide-react";
 
 import { getSCpm2Questions, SC_ESSAY_EXAM_CODES, questionToUrlParts } from "@/lib/essays/load";
 import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
 import { examLabel } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 interface RouteParams {
@@ -109,12 +110,14 @@ export default async function EssayExamPage({
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={`/essays/${exam}/${yearSeason}/${section}/${qnum}`}
-                  className="inline-flex items-center justify-center rounded-lg bg-sky-600 px-3 py-1.5 text-xs font-semibold text-white hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-600"
-                >
-                  業種別答案を見る
-                </Link>
+                <Button asChild variant="primary" size="md" className="w-full">
+                  <Link
+                    href={`/essays/${exam}/${yearSeason}/${section}/${qnum}`}
+                  >
+                    業種別答案を見る
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                </Button>
               </CardContent>
             </Card>
           );
