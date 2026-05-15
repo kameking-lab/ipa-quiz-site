@@ -129,6 +129,38 @@ const EXAM_SHORT_HOOKS: Record<ExamCode, string> = {
   au: "午前I・II〜論文まで全域対応、AIでシステム監査の専門知識を強化。",
 };
 
+const EXAM_META_DESC_DIVERSE: Record<
+  ExamCode,
+  (c: string, y: number, k: number) => string
+> = {
+  ip: (c, y, k) =>
+    `職種・年齢を問わずITを活用するすべての社会人・就活生が対象のIT基礎国家試験。CBT通年受験に対応、${c}問・${y}期分・${k}分野を実問題AI解説で体系的に対策。合格率は比較的高く、ビジネス現場のIT活用力を証明できる。`,
+  sg: (c, y, k) =>
+    `組織のセキュリティ管理を担う担当者・管理職向けの国家試験、情報セキュリティマネジメント試験はCBT通年実施。${c}問・${y}期分・${k}分野をAI解説で完全習得。情報漏洩・不正アクセス・ランサムウェアへの組織的対応力を実問題で段階的に養成。`,
+  fe: (c, y, k) =>
+    `エンジニア志望の学生・新人IT職の第一歩、基本情報技術者試験はCBTで科目A・B別受験が可能。${c}問・${y}期分・${k}分野をAI解説で体系的に対策。アルゴリズム・プログラミング基礎からネットワーク・セキュリティまで幅広く段階的に習得。`,
+  ap: (c, y, k) =>
+    `高度試験への登竜門、応用情報技術者は午前80問＋午後記述の両軸でエンジニア中堅力を証明する。${c}問・${y}期分・${k}分野をAI解説で効率対策。テクノロジーから経営戦略・プロジェクト管理まで横断した幅広い実力を実問題で段階的にマスター。`,
+  sc: (c, y, k) =>
+    `唯一の登録制セキュリティ国家資格、情報処理安全確保支援士(RISS)は午前Ⅱ・午後記述で専門技術を問う。${c}問・${y}期分・${k}分野をAI解説で対策。サイバー攻撃への実践的防御力・脆弱性管理力とセキュリティ関連法規の知識を同時に育成。`,
+  nw: (c, y, k) =>
+    `ネットワーク設計・構築・運用を担う専門技術者の最高峰、ネットワークスペシャリストは午後記述で実践力を審査する。${c}問・${y}期分・${k}分野をAI解説で対策。CCNA/CCNP資格と連動した深いプロトコル・セキュリティの専門知識を実問題で習得。`,
+  db: (c, y, k) =>
+    `データモデリング・SQL・物理設計まで問うデータベーススペシャリストは、データ基盤を担う専門技術者の登竜門。${c}問・${y}期分・${k}分野をAI解説で対策。ER図・正規化から物理設計・パフォーマンスチューニングまで実務即戦力を体系的に養成。`,
+  st: (c, y, k) =>
+    `経営戦略に基づきIT投資を判断するCIO・DX推進リーダー向け、ITストラテジストは論述で構想力を審査する最高峰試験。${c}問・${y}期分・${k}分野をAI解説で対策。経営層に求められるIT投資判断力とビジネス変革の構想力を実問題で養成する。`,
+  sa: (c, y, k) =>
+    `情報システム全体の基本設計・非機能要件を統括するシステムアーキテクト試験は、論述で設計力を問う高度試験。${c}問・${y}期分・${k}分野をAI解説で対策。大規模システムのアーキテクチャ選択と性能・可用性トレードオフを判断する実力を育成。`,
+  pm: (c, y, k) =>
+    `コスト・スコープ・リスクを統括するプロジェクトマネージャ試験は、PMBOK連動の論述で実践管理力を審査。${c}問・${y}期分・${k}分野をAI解説で対策。IT開発プロジェクトを確実に完遂するコスト・品質・スコープ統合管理の専門マネジメント力を養成。`,
+  es: (c, y, k) =>
+    `組込みシステム・IoTデバイスの設計から評価まで担うエンベデッドシステムスペシャリストは、ハードウェア制御を問う専門試験。${c}問・${y}期分・${k}分野をAI解説で対策。組込み開発の要件定義・ハードウェア設計・実装から結合テストまで全域を習得。`,
+  sm: (c, y, k) =>
+    `SLA管理・変更管理・インシデント対応を担うITサービスマネージャ試験は、ITIL準拠の論述で運用マネジメント力を審査。${c}問・${y}期分・${k}分野をAI解説で対策。変化するビジネス要件に対応しながら安定したITサービスを継続する専門力を養成。`,
+  au: (c, y, k) =>
+    `内部統制・J-SOX・IT全般統制を評価するシステム監査技術者試験は、論述で監査人としての判断力を問う高度試験。${c}問・${y}期分・${k}分野をAI解説で対策。財務・情報システムのリスクベースドアプローチによる実務監査力を体系的に習得。`,
+};
+
 export function examMetaDescription(
   exam: ExamCode,
   questionCount: number,
@@ -139,8 +171,6 @@ export function examMetaDescription(
   const yearCount = groupByYearSeason(questions).length;
   const categoryCount = groupByCategory(questions).length;
   const countFmt = questionCount.toLocaleString("ja-JP");
-  const hook = EXAM_SHORT_HOOKS[exam] ?? "";
-  const audience = EXAM_AUDIENCE_TEXTS[exam] ?? "";
 
   if (mode === "year") {
     return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
@@ -148,7 +178,7 @@ export function examMetaDescription(
   if (mode === "topic") {
     return `${name}の分野別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。${categoryCount}分野・${yearCount}期分を完全無料公開。会員登録不要。`;
   }
-  return `${name}の過去問${countFmt}問をAIコパイロットで完全無料解説。${yearCount}期分・${categoryCount}分野を完全網羅。${audience}${hook}会員登録不要で即学習開始。`;
+  return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
 }
 
 export function countByExam(exam: ExamCode): number {
