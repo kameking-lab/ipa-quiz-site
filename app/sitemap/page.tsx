@@ -10,7 +10,7 @@ import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "サイトマップ | 過去問AI",
+  title: "サイトマップ",
   description:
     "過去問AIの全ページを階層構造で一覧表示。各試験区分・年度別・分野別問題ページ、ブログ記事、おすすめ書籍などへの直接リンクを提供します。",
   alternates: { canonical: "/sitemap" },

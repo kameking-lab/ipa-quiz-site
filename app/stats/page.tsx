@@ -39,7 +39,7 @@ import {
 import { StatsShareButtons } from "./ShareButtons";
 
 export const metadata: Metadata = {
-  title: "公開統計ダッシュボード — 過去問AI",
+  title: "公開統計ダッシュボード",
   description:
     "過去問AI の Google 検索表示回数・収録問題数・利用状況を公開しています。教育貢献プロジェクトの透明性レポート。",
   alternates: { canonical: "/stats" },
