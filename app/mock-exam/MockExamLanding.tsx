@@ -2,8 +2,14 @@
 
 import * as React from "react";
 import type { ExamCode } from "@/lib/questions/types";
-import { getMockConfig } from "@/lib/mock-exam/config";
+import { getMockConfig, MOCK_EXAM_CONFIGS } from "@/lib/mock-exam/config";
 import { getMockExamHistoryByExam } from "@/lib/mock-exam/storage";
+import {
+  clearActiveSession,
+  loadActiveSession,
+  type MockExamActiveSession,
+} from "@/lib/mock-exam/session";
+import type { SelectionMode } from "@/lib/mock-exam/selection";
 import type {
   MockExamFetchResponse,
   SlimMockQuestion,
@@ -15,15 +21,40 @@ import { examLabel } from "@/lib/utils";
 import { Loader2, Timer } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
-const AVAILABLE_EXAMS: ExamCode[] = ["ip", "fe", "ap", "sg"];
+const AVAILABLE_EXAMS: ExamCode[] = [
+  "ip",
+  "sg",
+  "fe",
+  "ap",
+  "sc",
+  "nw",
+  "db",
+  "es",
+  "st",
+  "sa",
+  "pm",
+  "sm",
+  "au",
+];
+
+const MODE_OPTIONS: { id: SelectionMode; label: string; hint: string }[] = [
+  { id: "balanced", label: "分野バランス", hint: "本番の分野構成比を維持" },
+  { id: "random", label: "完全ランダム", hint: "プールから無作為抽出" },
+];
 
 export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
-  const [exam, setExam] = React.useState<ExamCode>(
-    (examFromQuery as ExamCode) || "ap",
-  );
+  const initialExam = (
+    examFromQuery && examFromQuery in MOCK_EXAM_CONFIGS
+      ? (examFromQuery as ExamCode)
+      : "ap"
+  ) as ExamCode;
+  const [exam, setExam] = React.useState<ExamCode>(initialExam);
+  const [mode, setMode] = React.useState<SelectionMode>("balanced");
   const [questions, setQuestions] = React.useState<SlimMockQuestion[] | null>(
     null,
   );
+  const [resumeState, setResumeState] =
+    React.useState<MockExamActiveSession | null>(null);
   const [running, setRunning] = React.useState(false);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
@@ -31,19 +62,28 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
     ReturnType<typeof getMockExamHistoryByExam>
   >([]);
   const [ready, setReady] = React.useState(false);
+  const [savedSession, setSavedSession] =
+    React.useState<MockExamActiveSession | null>(null);
 
   React.useEffect(() => {
     setHistory(getMockExamHistoryByExam(exam));
     setReady(true);
   }, [exam]);
 
+  React.useEffect(() => {
+    setSavedSession(loadActiveSession());
+  }, [running]);
+
   const config = getMockConfig(exam);
 
   const startMock = async () => {
     setLoading(true);
     setError(null);
+    setResumeState(null);
     try {
-      const res = await fetch(`/api/mock-exam/${exam}`, { cache: "no-store" });
+      const res = await fetch(`/api/mock-exam/${exam}?mode=${mode}`, {
+        cache: "no-store",
+      });
       if (!res.ok) {
         const body = (await res.json().catch(() => null)) as
           | { message?: string }
@@ -56,6 +96,8 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         setError("問題が不足しています。");
         return;
       }
+      // Starting fresh: drop any previous saved session for any exam.
+      clearActiveSession();
       setQuestions(data.questions);
       setRunning(true);
     } catch {
@@ -65,10 +107,24 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
     }
   };
 
+  const resumeMock = (s: MockExamActiveSession) => {
+    setExam(s.exam);
+    setQuestions(s.questions);
+    setResumeState(s);
+    setRunning(true);
+  };
+
+  const discardSavedSession = () => {
+    clearActiveSession();
+    setSavedSession(null);
+  };
+
   const onFinish = () => {
     setRunning(false);
     setQuestions(null);
+    setResumeState(null);
     setHistory(getMockExamHistoryByExam(exam));
+    setSavedSession(null);
   };
 
   if (running && questions) {
@@ -77,6 +133,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         questions={questions}
         config={config}
         onFinish={onFinish}
+        resumeFrom={resumeState ?? undefined}
       />
     );
   }
@@ -95,6 +152,46 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
           本番と同じ問題数・時間配分で挑戦。終了後に合否判定と分野別分析を表示します。
         </p>
       </header>
+
+      {savedSession && (
+        <Card className="mb-4 border-amber-300 bg-amber-50/60 dark:border-amber-800 dark:bg-amber-950/30">
+          <CardContent className="pt-5">
+            <div className="mb-2 flex items-center gap-2">
+              <Badge variant="outline">中断中</Badge>
+              <span className="text-xs font-medium">
+                {getMockConfig(savedSession.exam).label}
+              </span>
+            </div>
+            <p className="text-xs text-zinc-700 dark:text-zinc-300">
+              {new Date(savedSession.startedAt).toLocaleString("ja-JP", {
+                month: "short",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+              })}
+              に開始した模試があります（
+              {savedSession.answers.filter((a) => a !== undefined).length}/
+              {savedSession.questions.length}問解答済）。
+            </p>
+            <div className="mt-3 flex gap-2">
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => resumeMock(savedSession)}
+              >
+                再開する
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={discardSavedSession}
+              >
+                破棄する
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      )}
 
       <div className="mb-4 flex flex-nowrap gap-2 overflow-x-auto pb-1">
         {AVAILABLE_EXAMS.map((e) => (
@@ -123,6 +220,36 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
               value={`${Math.round(config.passThreshold * 100)}%`}
             />
           </div>
+
+          <div className="mt-5">
+            <div className="mb-2 text-xs font-semibold text-zinc-500">
+              出題モード
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              {MODE_OPTIONS.map((o) => {
+                const active = mode === o.id;
+                return (
+                  <button
+                    key={o.id}
+                    type="button"
+                    aria-pressed={active}
+                    onClick={() => setMode(o.id)}
+                    className={`rounded-xl border px-3 py-2 text-left transition ${
+                      active
+                        ? "border-sky-400 bg-sky-50 dark:border-sky-600 dark:bg-sky-950/40"
+                        : "border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600"
+                    }`}
+                  >
+                    <div className="text-xs font-semibold">{o.label}</div>
+                    <div className="mt-0.5 text-[11px] text-zinc-500">
+                      {o.hint}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
           <div className="mt-5">
             <Button
               onClick={startMock}
@@ -146,7 +273,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
               </p>
             )}
             <p className="mt-2 text-center text-[11px] text-zinc-500">
-              開始後は中断できますが、再開はできません。集中できる環境で挑戦してください。
+              中断してもブラウザを閉じるまでは再開できます。タイマーは経過時間で継続します。
             </p>
           </div>
         </CardContent>
@@ -209,7 +336,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
       </div>
 
       <p className="mt-6 text-[11px] text-zinc-500">
-        収録: 全試験区分が利用可能ですが、上の試験区分が安定して動作します。
+        収録: 全13試験区分が利用可能です。問題数が少ない区分はプールから可能な範囲で抽出します。
       </p>
     </main>
   );

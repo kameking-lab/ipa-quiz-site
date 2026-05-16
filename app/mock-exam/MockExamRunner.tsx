@@ -9,6 +9,12 @@ import {
 } from "@/lib/mock-exam/storage";
 import type { MockExamConfig } from "@/lib/mock-exam/config";
 import type { SlimMockQuestion } from "@/lib/mock-exam/types";
+import {
+  clearActiveSession,
+  computeRemainingSec,
+  saveActiveSession,
+  type MockExamActiveSession,
+} from "@/lib/mock-exam/session";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -21,20 +27,42 @@ interface Props {
   questions: SlimMockQuestion[];
   config: MockExamConfig;
   onFinish: () => void;
+  resumeFrom?: MockExamActiveSession;
 }
 
 type Phase = "running" | "submitted";
 
-export function MockExamRunner({ questions, config, onFinish }: Props) {
+export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Props) {
   const totalSec = config.minutes * 60;
-  const [startedAt] = React.useState(() => Date.now());
-  const [remaining, setRemaining] = React.useState(totalSec);
-  const [index, setIndex] = React.useState(0);
-  const [answers, setAnswers] = React.useState<(ChoiceKey | undefined)[]>(
-    () => Array(questions.length).fill(undefined),
+  const [startedAt] = React.useState(() => resumeFrom?.startedAt ?? Date.now());
+  const [remaining, setRemaining] = React.useState(() =>
+    resumeFrom
+      ? computeRemainingSec({ ...resumeFrom, totalSec })
+      : totalSec,
+  );
+  const [index, setIndex] = React.useState(resumeFrom?.index ?? 0);
+  const [answers, setAnswers] = React.useState<(ChoiceKey | undefined)[]>(() =>
+    resumeFrom?.answers && resumeFrom.answers.length === questions.length
+      ? [...resumeFrom.answers]
+      : Array(questions.length).fill(undefined),
   );
   const [phase, setPhase] = React.useState<Phase>("running");
   const [result, setResult] = React.useState<MockExamResult | null>(null);
+
+  // Persist running state so a tab close / refresh can resume mid-exam.
+  React.useEffect(() => {
+    if (phase !== "running") return;
+    const snapshot: MockExamActiveSession = {
+      exam: config.exam,
+      startedAt,
+      savedAt: Date.now(),
+      totalSec,
+      questions,
+      answers,
+      index,
+    };
+    saveActiveSession(snapshot);
+  }, [answers, index, phase, config.exam, startedAt, totalSec, questions]);
 
   const submit = React.useCallback(
     (auto: boolean) => {
@@ -79,6 +107,7 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
         byCategory,
       };
       recordMockExam(r);
+      clearActiveSession();
 
       const xpGain = correct * 5 + (passed ? 200 : 50);
       const goldGain = passed ? 100 : 30;
@@ -140,6 +169,8 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
                   ? "text-amber-600 dark:text-amber-400"
                   : "text-zinc-900 dark:text-zinc-100"
             }`}
+            aria-live="off"
+            aria-label={`残り時間 ${m}分${s}秒`}
           >
             {m}:{s.toString().padStart(2, "0")}
           </div>
@@ -159,6 +190,7 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
               ? "border-rose-300 bg-rose-50 text-rose-800 dark:border-rose-800 dark:bg-rose-950/40 dark:text-rose-200"
               : "border-amber-300 bg-amber-50 text-amber-800 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-200"
           }`}
+          role="alert"
         >
           {danger
             ? "残り10分です。未回答の問題を埋めましょう。"
@@ -189,6 +221,7 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
                       next[index] = k;
                       setAnswers(next);
                     }}
+                    aria-pressed={selected}
                     className={`block w-full rounded-xl border px-4 py-3 text-left text-sm transition ${
                       selected
                         ? "border-sky-500 bg-sky-50 dark:border-sky-400 dark:bg-sky-950/40"
@@ -267,6 +300,7 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
+                  aria-label={`問${i + 1}へ移動${ans !== undefined ? "（解答済）" : ""}`}
                   className={`h-7 rounded text-[10px] font-medium ${
                     cur
                       ? "bg-sky-600 text-white"
