@@ -12,6 +12,7 @@ import {
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
 import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
 import { captureException } from "@/lib/monitoring/sentry";
 
@@ -80,6 +81,14 @@ export async function POST(req: Request) {
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
+      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
+    );
+  }
+
+  const ipRl = await checkIpRateLimit(req, "copilot");
+  if (!ipRl.ok) {
+    return NextResponse.json(
+      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt },
       { status: 429, headers: { "X-Error-Type": "rate_limited" } },
     );
   }
