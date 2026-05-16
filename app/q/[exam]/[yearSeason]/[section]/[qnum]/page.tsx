@@ -354,7 +354,7 @@ export default async function QuestionPage({
         ],
       },
       {
-        "@type": "Organization",
+        "@type": "EducationalOrganization",
         "@id": `${SITE_BASE_URL}#organization`,
         name: SITE_NAME,
         url: SITE_BASE_URL,

@@ -56,6 +56,7 @@ import {
   isAsinFilled,
 } from "@/data/recommended-books";
 import { getBlogPostsByExam } from "@/data/blog";
+import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 
 export const dynamicParams = false;
 
@@ -119,8 +120,45 @@ export default async function ExamTopPage({
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
   const posts = getBlogPostsByExam(code).slice(0, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
+  const roadmapSteps = EXAM_ROADMAP[code] ?? [];
 
   const credentialId = `${absUrl}#credential`;
+  const courseNode = {
+    "@type": "Course",
+    "@id": `${absUrl}#course`,
+    name: `${examFullName(code)} 過去問学習コース`,
+    description: examTopDescription(code, questions.length),
+    url: absUrl,
+    inLanguage: "ja",
+    isAccessibleForFree: true,
+    educationalLevel: "Professional",
+    teaches: categories.map((c) => c.category).slice(0, 12),
+    provider: {
+      "@type": "EducationalOrganization",
+      "@id": `${SITE_BASE_URL}#organization`,
+    },
+    hasCourseInstance: {
+      "@type": "CourseInstance",
+      courseMode: "online",
+      inLanguage: "ja",
+    },
+  };
+  const howToNode =
+    roadmapSteps.length > 0
+      ? {
+          "@type": "HowTo",
+          "@id": `${absUrl}#howto`,
+          name: `${examLabel(code)} 合格への学習ロードマップ`,
+          description: "試験本番から逆算した、月単位の進め方の目安",
+          inLanguage: "ja",
+          step: roadmapSteps.map((s, i) => ({
+            "@type": "HowToStep",
+            position: i + 1,
+            name: s.title,
+            text: s.body,
+          })),
+        }
+      : null;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -149,6 +187,8 @@ export default async function ExamTopPage({
         educationalLevel: "professional",
         competencyRequired: categories.map((c) => c.category).slice(0, 12),
       },
+      courseNode,
+      ...(howToNode ? [howToNode] : []),
       {
         "@type": "BreadcrumbList",
         itemListElement: [
