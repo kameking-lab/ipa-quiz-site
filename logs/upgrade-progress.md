@@ -46,3 +46,39 @@ Tokens: in=34404 out=38693 retries=12 cost=$0.1071 (~16.1円)
 - public: already 3065字 — skip
 
 Tokens: in=5986 out=6469 retries=1 cost=$0.0180 (~2.7円)
+
+## Run 2026-05-16T00:20:01.824Z — targets: sa
+
+### SA
+- manufacturing: FAILED (total 3996 > 3600)
+- construction: FAILED (total 4012 > 3600)
+- finance: FAILED (total 4919 > 3600)
+- retail: FAILED (total 4658 > 3600)
+- telecom: FAILED (total 4101 > 3600)
+- public: FAILED (total 4740 > 3600)
+
+Tokens: in=48179 out=61872 retries=18 cost=$0.1691 (~25.4円)
+
+## Run 2026-05-16T00:26:42.023Z — targets: sa
+
+### SA
+- manufacturing: 1939字 → 4474字 (U=37.1%, 1 attempts)
+- construction: 1922字 → 4003字 (U=39.0%, 1 attempts)
+- finance: 1852字 → 4411字 (U=32.5%, 2 attempts)
+- retail: 1806字 → 4305字 (U=31.8%, 1 attempts)
+- telecom: FAILED (total 5221 > 4500)
+- public: 1754字 → 4197字 (U=31.9%, 4 attempts)
+
+Tokens: in=25594 out=35340 retries=7 cost=$0.0960 (~14.4円)
+
+## Run 2026-05-16T00:30:18.119Z — targets: sa
+
+### SA
+- manufacturing: already 4474字 — skip
+- construction: already 4003字 — skip
+- finance: already 4411字 — skip
+- retail: already 4305字 — skip
+- telecom: 1842字 → 4513字 (U=33.1%, 1 attempts)
+- public: already 4197字 — skip
+
+Tokens: in=1910 out=2611 retries=0 cost=$0.0071 (~1.1円)

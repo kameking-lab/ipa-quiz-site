@@ -77,7 +77,7 @@ const EXAMS: Record<ExamId, ExamSpec> = {
 };
 
 const MIN_TOTAL = 2200;
-const MAX_TOTAL = 3600;
+const MAX_TOTAL = 5500;
 const MIN_U_RATIO = 0.25;
 const MAX_RETRIES = 4;
 const MODEL = "gemini-2.5-flash";
