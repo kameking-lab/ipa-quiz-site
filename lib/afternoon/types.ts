@@ -29,7 +29,9 @@ export type IndustryId =
   | "finance"        // 金融業（勘定系、フィンテック）
   | "retail"         // 流通・小売（EC、POS、サプライチェーン）
   | "telecom"        // 通信業（キャリア、ISP、5G）
-  | "public";        // 公共・自治体（行政DX、住民サービス）
+  | "public"         // 公共・自治体（行政DX、住民サービス）
+  | "it"             // IT・情報サービス業（SaaS、SI、クラウドベンダ）
+  | "healthcare";    // 医療・ヘルスケア（電子カルテ、地域医療連携、医療DX）
 
 /** 業種別の論述バリアント（設問ア・イ・ウの3点セット） */
 export interface IndustryVariant {
