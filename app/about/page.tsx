@@ -128,6 +128,38 @@ export default function AboutPage() {
         </p>
       </section>
 
+      <h2 className="mb-2 text-lg font-semibold">AI コンテンツ取扱方針・査読体制</h2>
+      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+        <p>
+          本サービスでは、次の 3 種類のコンテンツに生成 AI を活用しています。
+        </p>
+        <ul className="list-disc space-y-1 pl-5">
+          <li>
+            <strong>AI コパイロット（問題解説・質問応答）</strong>：
+            ユーザーの質問に応じてリアルタイムで AI が応答を生成します。
+            内容は自動審査を通過したうえで提供しますが、誤りが含まれる可能性があります。
+          </li>
+          <li>
+            <strong>業種別合格答案サンプル（essays）</strong>：
+            AI が生成した論述例を、運営者が確認・公開しています。
+            IPA 公式の合格答案ではなく、論述構成の参考用です。各ページにその旨を明示しています。
+          </li>
+          <li>
+            <strong>ブログ記事</strong>：
+            教育貢献プロジェクトとして運営者が作成・編集した記事です。
+            一部 AI 支援を利用した記事は記事内に明示します。
+          </li>
+        </ul>
+        <p>
+          <strong>誤情報の報告窓口：</strong>
+          解説・答案例に誤りを発見された場合は、
+          <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
+            お問い合わせフォーム
+          </Link>
+          よりご報告ください。運営者が確認次第、訂正または削除します。
+        </p>
+      </section>
+
       <h2 className="mb-2 text-lg font-semibold">料金について</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>

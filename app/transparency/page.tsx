@@ -70,6 +70,20 @@ async function fetchPostHogMetrics(): Promise<MonthlySeries[]> {
 
 const REPORTS = [
   {
+    month: "2026-05",
+    highlights: [
+      "AI 解説 disclaimer の視認性向上（ExplanationCard の文字サイズ拡大・枠線追加）",
+      "AI コパイロット応答末尾に責任分界注記を追加",
+      "/about に「AI コンテンツ取扱方針・査読体制」セクションを新設",
+      "/transparency に AI 利用範囲・責任分界セクションを追加（E-E-A-T 強化）",
+    ],
+    cost: "AI 利用費 集計中（月末公開予定）",
+    next: [
+      "PostHog 連携による /stats の実データ化",
+      "blog 記事の年次自動更新ロジック整備",
+    ],
+  },
+  {
     month: "2026-04",
     highlights: [
       "全機能無料化を完了し、課金システムを完全非表示化",
@@ -187,6 +201,41 @@ export default async function TransparencyPage() {
           </Card>
         ))}
       </div>
+
+      <section id="ai-policy" className="mt-10 scroll-mt-20">
+        <h2 className="mb-3 text-lg font-semibold">AI 利用範囲と責任分界</h2>
+        <Card>
+          <CardContent className="space-y-3 pt-4 text-sm text-zinc-700 dark:text-zinc-300">
+            <p>
+              過去問 AI では、コンテンツの種別ごとに AI 活用の範囲と確認体制を以下のとおり定めています。
+            </p>
+            <ul className="list-disc space-y-2 pl-5">
+              <li>
+                <strong>AI コパイロット（問題解説・質問応答）</strong>：
+                生成 AI がリアルタイムで応答します。自動的な安全審査を通過していますが、
+                誤りを含む可能性があります。各解説画面にその旨を明示しています。
+              </li>
+              <li>
+                <strong>業種別合格答案サンプル（essays）</strong>：
+                AI が生成した答案例を運営者が確認・公開しています。
+                IPA 公式の合格答案ではなく参考用途に限定し、各ページにその旨を表示しています。
+              </li>
+              <li>
+                <strong>ブログ記事</strong>：
+                運営者が作成・編集した記事です。AI 支援を利用した場合は記事内に明示します。
+              </li>
+            </ul>
+            <p>
+              誤情報を発見された場合は{" "}
+              <Link href="/contact" className="underline hover:text-foreground">
+                お問い合わせフォーム
+              </Link>
+              よりご報告ください。確認次第、訂正または削除します。
+              詳細は <Link href="/about" className="underline hover:text-foreground">/about</Link> の「AI コンテンツ取扱方針・査読体制」もご覧ください。
+            </p>
+          </CardContent>
+        </Card>
+      </section>
 
       <section id="metrics" className="mt-10 scroll-mt-20">
         <h2 className="mb-3 text-lg font-semibold">公開メトリクス</h2>
