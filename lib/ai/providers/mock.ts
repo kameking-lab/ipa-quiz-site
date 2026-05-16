@@ -69,6 +69,9 @@ export function createMockProvider(): LLMProvider {
       const reply = pickReply(params.messages);
       const chunks = reply.match(/.{1,24}/gs) ?? [reply];
       for (const chunk of chunks) {
+        if (params.signal?.aborted) {
+          throw new DOMException("Aborted", "AbortError");
+        }
         await new Promise((r) => setTimeout(r, 30));
         yield chunk;
       }
