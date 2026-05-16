@@ -172,7 +172,7 @@ export function CopilotPanel({
   const [usage, setUsage] = React.useState(() => readAiUsage());
   const [feedbackSubmitted, setFeedbackSubmittedState] = React.useState(false);
   const [errorState, setErrorState] = React.useState<{
-    type: "server_error" | "network_error";
+    type: "server_error" | "network_error" | "timeout";
     retryFn: () => void;
   } | null>(null);
   const [copiedIdx, setCopiedIdx] = React.useState<number | null>(null);
@@ -383,10 +383,25 @@ export function CopilotPanel({
           });
         }
 
+        // Server emits an in-stream sentinel like "[タイムアウト]" or "[エラー]"
+        // at the tail when the upstream provider fails or times out. Convert
+        // that into a typed error banner so the user gets retry affordance.
+        const isTimeout = acc.includes("[タイムアウト]");
+        const isServerError = acc.includes("[エラー] AI応答の取得に失敗");
+        if (isTimeout || isServerError) {
+          const args = lastSendArgsRef.current;
+          setErrorState({
+            type: isTimeout ? "timeout" : "server_error",
+            retryFn: () => args && sendRef.current(args.text, args.quickAction),
+          });
+        }
+
         posthogCapture("copilot_response_received", {
           questionId: question?.id,
           exam: question?.exam,
           response_length: acc.length,
+          had_timeout: isTimeout,
+          had_server_error: isServerError,
         });
         setUsage(incrementAiUsage());
       } catch (err) {
@@ -804,23 +819,25 @@ export function CopilotPanel({
           role="alert"
           className={cn(
             "mx-3 mb-2 flex items-start gap-2 rounded-xl border px-3 py-2.5 text-xs",
-            errorState.type === "server_error"
-              ? "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200"
-              : "border-zinc-200 bg-zinc-50 text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400",
+            errorState.type === "network_error"
+              ? "border-zinc-200 bg-zinc-50 text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+              : "border-amber-200 bg-amber-50 text-amber-800 dark:border-amber-900/60 dark:bg-amber-950/30 dark:text-amber-200",
           )}
         >
-          {errorState.type === "server_error" ? (
-            <RefreshCw className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-          ) : (
+          {errorState.type === "network_error" ? (
             <WifiOff className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+          ) : (
+            <RefreshCw className="mt-0.5 h-3.5 w-3.5 shrink-0" />
           )}
           <div className="flex-1">
             <span>
-              {errorState.type === "server_error"
-                ? "AIが一時的に応答できません。"
-                : "接続を確認してください。"}
+              {errorState.type === "timeout"
+                ? "AIの応答が遅延しました。再試行で改善することがあります。"
+                : errorState.type === "server_error"
+                  ? "AIが一時的に応答できません。"
+                  : "接続を確認してください。"}
             </span>
-            {errorState.type === "server_error" && (
+            {errorState.type !== "network_error" && (
               <button
                 onClick={() => {
                   setErrorState(null);

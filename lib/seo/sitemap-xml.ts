@@ -21,6 +21,19 @@ import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 
+// Last date questions/essays data was meaningfully updated (PR #221/#208)
+const CONTENT_LAST_UPDATED = "2026-05-16";
+// Last date mostly-static pages (about, transparency, etc.) were updated
+const STATIC_CONTENT_DATE = "2026-05-15";
+// Hub blog article slugs from PR #241 — receive elevated priority 0.8
+const HUB_BLOG_SLUGS = new Set([
+  "kakumon-gakushuu-science",
+  "ap-goukaku-go-koudo-senryaku",
+  "ipa-shiken-kumi-awase-senryaku",
+  "ipa-kyoutsuu-juyou-theme",
+  "ipa-sanko-mondaishu-2026",
+]);
+
 interface UrlEntry {
   url: string;
   lastModified?: string;
@@ -48,42 +61,44 @@ const RECOMMENDED_BOOKS_EXAMS = [
 // (see next.config.ts). Sitemap should expose canonical destinations only.
 // /stats is included below as a first-class public dashboard.
 const STATIC_ROUTES: UrlEntry[] = [
-  { url: SITE_BASE_URL, changeFrequency: "weekly", priority: 1 },
-  { url: `${SITE_BASE_URL}/modes/year`, changeFrequency: "monthly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/modes/topic`, changeFrequency: "monthly", priority: 0.8 },
+  { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
+  { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/modes/topic`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/glossary`, changeFrequency: "monthly", priority: 0.7 },
-  { url: `${SITE_BASE_URL}/keywords`, changeFrequency: "weekly", priority: 0.7 },
+  { url: `${SITE_BASE_URL}/glossary`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+  { url: `${SITE_BASE_URL}/keywords`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "weekly", priority: 0.7 },
   ...KEYWORD_PAGES.map(
     (p): UrlEntry => ({
       url: `${SITE_BASE_URL}/keywords/${p.slug}`,
+      lastModified: CONTENT_LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.7,
     }),
   ),
-  { url: `${SITE_BASE_URL}/features`, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/features`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   ...FEATURE_LANDING_PAGES.map(
     (p): UrlEntry => ({
       url: `${SITE_BASE_URL}/features/${p.slug}`,
+      lastModified: STATIC_CONTENT_DATE,
       changeFrequency: "monthly",
       priority: 0.8,
     }),
   ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/api-docs`, changeFrequency: "monthly", priority: 0.5 },
-  { url: `${SITE_BASE_URL}/mock-exam`, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/api-docs`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.5 },
+  { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/essay`, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/ranking`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/review`, changeFrequency: "weekly", priority: 0.5 },
-  { url: `${SITE_BASE_URL}/faq`, changeFrequency: "monthly", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/about`, changeFrequency: "monthly", priority: 0.5 },
-  { url: `${SITE_BASE_URL}/contact`, changeFrequency: "monthly", priority: 0.4 },
-  { url: `${SITE_BASE_URL}/transparency`, changeFrequency: "monthly", priority: 0.4 },
-  { url: `${SITE_BASE_URL}/stats`, changeFrequency: "daily", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/terms`, changeFrequency: "yearly", priority: 0.2 },
-  { url: `${SITE_BASE_URL}/privacy`, changeFrequency: "yearly", priority: 0.2 },
-  { url: `${SITE_BASE_URL}/operator`, changeFrequency: "yearly", priority: 0.2 },
+  { url: `${SITE_BASE_URL}/faq`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/about`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/contact`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/transparency`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/stats`, changeFrequency: "daily", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/terms`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.2 },
+  { url: `${SITE_BASE_URL}/privacy`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/operator`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.2 },
 ];
 
 function getBlogRoutes(): UrlEntry[] {
@@ -91,7 +106,7 @@ function getBlogRoutes(): UrlEntry[] {
     url: `${SITE_BASE_URL}/blog/${p.slug}`,
     lastModified: p.updatedAt ?? p.publishedAt,
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: HUB_BLOG_SLUGS.has(p.slug) ? 0.8 : 0.7,
   }));
 }
 
@@ -115,19 +130,22 @@ function getExamHubRoutes(): UrlEntry[] {
     const questions = getQuestionsByExamStrict(exam);
     entries.push({
       url: `${SITE_BASE_URL}/${exam}`,
-      changeFrequency: "monthly",
-      priority: 0.7,
+      lastModified: CONTENT_LAST_UPDATED,
+      changeFrequency: "weekly",
+      priority: 0.9,
     });
     for (const g of groupByYearSeason(questions)) {
       entries.push({
         url: `${SITE_BASE_URL}/${exam}/${g.key}`,
+        lastModified: CONTENT_LAST_UPDATED,
         changeFrequency: "yearly",
-        priority: 0.65,
+        priority: 0.6,
       });
     }
     for (const c of groupByCategory(questions)) {
       entries.push({
         url: `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(c.category)}`,
+        lastModified: CONTENT_LAST_UPDATED,
         changeFrequency: "monthly",
         priority: 0.65,
       });
@@ -151,15 +169,17 @@ function getEssayRoutes(): UrlEntry[] {
     if (questions.length === 0) continue;
     entries.push({
       url: `${SITE_BASE_URL}/essays/${exam}`,
-      changeFrequency: "monthly",
+      lastModified: CONTENT_LAST_UPDATED,
+      changeFrequency: "weekly",
       priority: 0.7,
     });
     for (const q of questions) {
       const { yearSeason, section, qnum } = questionToUrlParts(q, exam);
       entries.push({
         url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
+        lastModified: CONTENT_LAST_UPDATED,
         changeFrequency: "monthly",
-        priority: 0.65,
+        priority: 0.6,
       });
     }
   }
@@ -220,13 +240,18 @@ ${items}
 }
 
 export function renderMainSitemapXml(): string {
+  // STATIC_ROUTES entries already carry per-entry lastModified dates.
+  // Dynamic pages (/topics index, /stats, /challenge, /blog, /ranking, /review)
+  // that reflect live data get the current build timestamp as a fallback.
   const now = new Date().toISOString();
-  return renderUrlSet(STATIC_ROUTES.map((r) => ({ ...r, lastModified: now })));
+  return renderUrlSet(
+    STATIC_ROUTES.map((r) => ({ lastModified: now, ...r })),
+  );
 }
 
 export function renderExamsSitemapXml(): string {
-  const now = new Date().toISOString();
-  return renderUrlSet(getExamHubRoutes().map((r) => ({ ...r, lastModified: now })));
+  // Exam routes already carry per-entry lastModified from getExamHubRoutes().
+  return renderUrlSet(getExamHubRoutes());
 }
 
 export function renderTopicsSitemapXml(): string {
@@ -239,26 +264,24 @@ export function renderBlogSitemapXml(): string {
 }
 
 export function renderBooksSitemapXml(): string {
-  const now = new Date().toISOString();
-  return renderUrlSet(getBookRoutes().map((r) => ({ ...r, lastModified: now })));
+  return renderUrlSet(getBookRoutes().map((r) => ({ ...r, lastModified: CONTENT_LAST_UPDATED })));
 }
 
 export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
-  const now = new Date().toISOString();
   const indexable = getIndexableQuestions();
   const start = pageIndex * SITEMAP_CHUNK_SIZE;
   const slice = indexable.slice(start, start + SITEMAP_CHUNK_SIZE);
   return renderUrlSet(
     slice.map((q) => ({
       url: `${SITE_BASE_URL}${questionPagePath(q)}`,
-      lastModified: now,
+      lastModified: CONTENT_LAST_UPDATED,
       changeFrequency: "yearly",
-      priority: 0.6,
+      priority: 0.5,
     })),
   );
 }
 
 export function renderEssaysSitemapXml(): string {
-  const now = new Date().toISOString();
-  return renderUrlSet(getEssayRoutes().map((r) => ({ ...r, lastModified: now })));
+  // Essay routes already carry per-entry lastModified from getEssayRoutes().
+  return renderUrlSet(getEssayRoutes());
 }

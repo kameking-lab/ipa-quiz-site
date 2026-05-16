@@ -1,21 +1,21 @@
 === 問題データ統合監査レポート ===
-生成日時: 2026-05-16T08:36:50.451Z
+生成日時: 2026-05-16T16:56:48.853Z
 
 午前 (Question):              14402
 午後 (AfternoonQuestion AP): 3
 論述 (EssayQuestion):         12
 
-総検出数:           24184
+総検出数:           24111
 致命傷 critical:    0
-機会損失 opportunity: 2477
-警告 warning:       21707
+機会損失 opportunity: 2403
+警告 warning:       21708
 
 --- カテゴリ別 ---
   duplicate-body-cross: 21658
   missing-image-urls: 2147
-  placeholder-explanation: 320
+  placeholder-explanation: 246
   markup-question: 15
-  markup-explanation: 13
+  markup-explanation: 14
   choices-too-few: 10
   blank-choice: 10
   answer-out-of-range: 10
@@ -224,7 +224,7 @@
   [morning/ap] ap-2016a-am-q53 (missing-image-urls): hasImage=true だが imageUrls なし
   [morning/ap] ap-2016a-am-q69 (missing-image-urls): hasImage=true だが imageUrls なし
   [morning/ap] ap-2016a-am-q71 (missing-image-urls): hasImage=true だが imageUrls なし
-  ... 残り 2277 件は JSON 参照
+  ... 残り 2203 件は JSON 参照
 
 --- 警告 一覧 (先頭200件) ---
   [morning/ap] ap-2011h-am-q4 (markup-explanation): 解説: タグ未対応: identifier(3), letter(2), digit(1)
@@ -233,6 +233,7 @@
   [morning/ap] ap-2014h-am-q3 (markup-question): 問題文: タグ未対応: a(4), b(4), c(4)
   [morning/ap] ap-2014h-am-q3 (markup-explanation): 解説: タグ未対応: a(4), b(2)
   [morning/ap] ap-2017a-am-q2 (markup-question): 問題文: タグ未対応: a(4), b(4), c(4)
+  [morning/ap] ap-2017a-am-q2 (markup-explanation): 解説: タグ未対応: a(5), r0(1), b(2), r2(1), r1(3), c(2)
   [morning/ap] ap-2017h-am-q4 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
   [morning/ap] ap-2017h-am-q4 (markup-explanation): 解説: タグ未対応: letter(2), identifier(1), digit(1)
   [morning/ip] ip-2010h-am-q67 (markup-explanation): 解説: タグ未対応: b(2)
@@ -426,5 +427,4 @@
   [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が ap-2022h-am-q15 と完全一致（異年度／異試験）
   [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sc-2009a-am1-q6 と完全一致（異年度／異試験）
   [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sc-2014a-am1-q5 と完全一致（異年度／異試験）
-  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が nw-2009a-am1-q6 と完全一致（異年度／異試験）
-  ... 残り 21507 件は JSON 参照
+  ... 残り 21508 件は JSON 参照
