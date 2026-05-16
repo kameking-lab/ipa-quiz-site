@@ -20,7 +20,7 @@
  *   - レート制限: 各Gemini呼び出し後 2-3秒待機
  */
 
-import { existsSync, writeFileSync, readFileSync, mkdirSync } from "node:fs";
+import { existsSync, writeFileSync, readFileSync, mkdirSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { Question } from "@/lib/questions/types";
@@ -414,7 +414,6 @@ export const ${varName}: Question[] = ${JSON.stringify(questions, null, 2)};
 function regenerateBarrel(): void {
   const files = (() => {
     try {
-      const { readdirSync } = require("node:fs") as typeof import("node:fs");
       return readdirSync(DATA_DIR)
         .filter((f: string) => f.endsWith(".ts") && f !== "index.ts")
         .sort();
@@ -506,7 +505,7 @@ async function processOne(
 
     // 4. 解説生成 (20問バッチ、画像なしの問題のみ)
     const nonImageQs = rawQuestions.filter((q) => !q.hasImage);
-    let explanations: Explanations = {};
+    const explanations: Explanations = {};
     const BATCH = 20;
     for (let i = 0; i < nonImageQs.length; i += BATCH) {
       const batch = nonImageQs.slice(i, i + BATCH);
