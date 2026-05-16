@@ -623,7 +623,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "内部スキーマ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ANSI/SPARCの3層スキーマ構造では、データベースの記録媒体上の格納方法(物理データ構造・領域配置・索引構造など)を記述するのは内部スキーマであり、エが正解です。アの概念スキーマはDB全体の論理構造、イの外部スキーマは利用者ごとに切り出したビュー、ウのサブスキーマは外部スキーマと同義で利用者視点の部分集合であり、いずれも物理的な格納方法を直接定義する層ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -647,7 +647,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "GRANT 文で許可する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "RDBMSにおいて特定の利用者やロールに対し、SELECT・INSERT・UPDATE・DELETEといった表操作の権限を個別に付与する標準SQL文はGRANT文であり、UPDATE権限を渡すことで更新が可能になります。よってエが正解です。アのCONNECTはセッション接続の権限で表更新までは制御できず、イのCREATE ASSERTIONは表明制約、ウのCREATE TABLEの参照制約は外部キーなどデータ整合性のための制約で、いずれも更新権限の利用者単位の付与手段にはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -695,7 +695,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "テキストファイルやバイナリデータなど、格納するデータの形式に応じてリポジトリを使い分ける。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "データレイクは構造化・半構造化・非構造化を問わず大量データを生のまま保管し、スキーマは利用時(スキーマオンリード)で柔軟に定義する貯蔵方式が特徴でアが正解です。イはメタデータも合わせて格納するのが通例、ウは事前にスキーマを固めるデータウェアハウス(スキーマオンライト)の説明、エはリポジトリを使い分けると単一プールで生データを蓄えるデータレイクの利点が失われるため、いずれもデータレイクの特徴とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -719,7 +719,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ひとたびコミットすれば、その後どのような障害が起こっても状態の変更が保たれるという性質である。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ACID特性の「一貫性」は、トランザクション開始時にデータベースが満たしていた整合性制約(主キー一意性・参照整合性・業務ルール等)が、トランザクション終了時にも維持されている性質を指しアが正解です。イは独立性(Isolation)、ウは原子性(Atomicity)、エは永続性(Durability)の説明で、いずれもCの定義とは別のACID項目に属するため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -767,7 +767,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "マルチホーミング"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "マルチホーミングは、複数のISP回線(または異キャリア回線)を同時に接続し、片方が障害でも残りで通信を継続できるように冗長化した接続構成を指す用語でありエが正解です。アのIP-VPN・イのインターネットVPN・ウの広域イーサネットはいずれも特定の通信サービス形態の名称で、ISP回線の冗長化構成を表す用語ではなくマルチホーミングの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -815,7 +815,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "10.170.70.255"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サブネットマスク255.255.255.240は/28で、第4オクテットの上位4ビットがネットワーク部、下位4ビットがホスト部となります。IPアドレス10.170.70.19の第4オクテット19を2進で00010011とし、マスク240(=11110000)とANDをとると00010000=16が得られるため、ネットワークアドレスは10.170.70.16となりイが正解です。ア10.170.70.0は/24想定の誤り、ウ10.170.70.31は同サブネットのブロードキャスト、エ10.170.70.255はクラスCのブロードキャストで、いずれも正しいネットワークアドレスではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -839,7 +839,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "リバースプロキシ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "リバースプロキシは、インターネット側から見たWebサーバの代理応答役として前段に配置され、外部クライアントから受け取ったリクエストを背後のWebサーバに振り分けて中継するためエが正解です。アのDMZはネットワーク区画の概念、イのフォワードプロキシは社内クライアント側から外向きの中継、ウのプロキシARPは同じIPでARP代理応答する仕組みで、いずれも「外部からのリクエストを背後のWebサーバへ中継」というリバースプロキシの役割とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -863,7 +863,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ソフトウェアやハードウェアの脆弱性を検査するために作成されたプログラム"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "エクスプロイトコードは、ソフトウェアやハードウェアの脆弱性を実際に突いて任意コード実行・権限昇格・情報漏えいなどを引き起こすために作成された検証用または攻撃用のプログラムであり、脆弱性検査や攻撃ツールとして用いられるためエが正解です。アはデータ移行用エクスポート、イはディスク管理ソフト、ウはプロトタイピング開発手法の説明で、いずれもエクスプロイトコードの「脆弱性を実証/悪用するためのプログラム」という定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -887,7 +887,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "利用者が認証情報を忘れ,かつ, Web ブラウザに保存しているパスワード情報も使用できない場合でも、救済することによって、利用者は普段どおりにシステムを利用できる。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "リスクベース認証は、IPアドレス・端末・時刻・操作内容などからアクセスのリスクを評価し、普段と異なる環境からのアクセスや高リスク取引と判断した場合に追加の本人認証(秘密の質問・ワンタイムパスワード等)を求めて安全性を強化する仕組みでありウが正解です。アは一律方式、イは常時二要素強制、エは認証情報忘れに対する救済策で、いずれも「リスクに応じて認証強度を切り替える」という核心的特徴を欠いており該当しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -911,7 +911,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "利用者の誕生日や電話番号などの個人情報を言葉巧みに聞き出して、パスワードを類推する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "レインボー攻撃は、平文パスワードとそのハッシュ値の対応関係を還元関数とハッシュ関数のチェーン上に圧縮した「レインボーテーブル」を事前計算しておき、不正取得したハッシュ値からテーブルを逆引きして平文パスワードを高速復元する手法でありウが正解です。アはパスワードリスト攻撃、イはブルートフォース攻撃、エはソーシャルエンジニアリングの説明で、いずれも事前計算テーブルでハッシュを解読するレインボー攻撃の本質と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -935,7 +935,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "プログラムを実行する際に、プログラムファイルのハッシュ値と脅威情報を突き合わせることによって、マルウェアを発見する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ディジタルフォレンジックスは不正アクセスや情報漏えい等の事後に証拠を保全・解析する手続で、削除ファイルやログの復元を通じて痕跡を発見する作業は「検査」「分析」段階の典型例でありイが正解です。アのSIEMでのリアルタイム相関分析は検知運用、ウの暗号化送信は漏えい防止策、エの実行時ハッシュ突合せはマルウェア検知の話で、いずれも事後証拠保全と分析という法的証拠化を目的とするフォレンジックスの手順そのものではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -959,7 +959,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "公開鍵暗号方式によるディジタル署名を用いることによって、正当な DNS サーバからの応答であることをクライアントが検証できる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "DNSSECはDNS応答に対し公開鍵暗号方式によるディジタル署名(RRSIGなど)を付加し、署名と公開鍵チェーンを検証することで応答が正当な権威サーバから発信され改ざんされていないことをクライアント側で確認できるようにする仕組みでありエが正解です。アは送信元ポート番号ランダム化(DNS-0x20以前の対策)、イはオープンリゾルバ対策、ウは共通鍵による認証で鍵配送が困難な方式で、いずれもDNSSECが採る公開鍵署名方式とは異なる対策です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -983,7 +983,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "マルウェアに感染しているファイルを、マルウェアに感染していると判断する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "マルウェア対策でのフォールスネガティブは「本当はマルウェアに感染しているファイルを、感染していないと見逃してしまう」誤り、つまり検知漏れを指し、ウが正解です。アは正常ファイルを正しく判定する正例(真陰性)、イは正常ファイルを感染と誤検知するフォールスポジティブ、エは感染を正しく検知する真陽性であり、いずれもフォールスネガティブの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1031,7 +1031,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "不正な動作をする可能性があるプログラムを特別な領域で動作させることによって、他の領域に悪影響が及ぶのを防ぐ。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サンドボックスは、不正な動作をする可能性のあるプログラムを通常のシステム資源から隔離された専用領域で実行させ、ファイルシステム・レジストリ・ネットワーク等への副作用を局所化することで本体システムを保護する仕組みでありエが正解です。アはSIEM/ログ分析、イは入力サニタイズ、ウはリバースプロキシの説明で、いずれも実行隔離による被害局所化というサンドボックスの本質と異なる手法です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1055,7 +1055,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "利用者のPCから送信された URL"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "パケットフィルタリング型ファイアウォールは、IPヘッダの送信元・宛先IPアドレスとTCP/UDPヘッダの送信元・宛先ポート番号、プロトコル種別などをルールに照合し、通過の可否をパケット単位で判定するためイが正解です。アのPOSTデータ内容や、エのURLはアプリケーション層情報でWAFやアプリゲートウェイで扱う領域、ウのMACアドレスは同一L2セグメント内のみ意味を持つため、いずれも本問のパケットフィルタリングの判定材料とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1079,7 +1079,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ファイルへのマルウェア感染を監視し、検出する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "WAF(Web Application Firewall)はSQLインジェクションやクロスサイトスクリプティングなどWebアプリケーション特有の攻撃をHTTP/HTTPS通信から検知し、必要に応じてブロックすることで脆弱性を悪用された場合の被害を防ぐ装置・サービスでありアが正解です。イはMITB対策の挙動監視、ウはホストIDS的なログ監視、エはアンチウイルス相当の話で、いずれもWebアプリ層の攻撃を検知・阻止するというWAFの中核機能と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1103,7 +1103,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "プログラムが最も効率よくアクセスできるようにデータ構造を設計する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "データ中心分析・設計(DOA)は、情報資源であるデータの構造や関連を最も基礎的な不変要素と捉え、E-R図などで業務領域をモデル化したうえで、そのデータ構造を中心にアプリケーションや処理を組み立てる手法でありウが正解です。アは構造化分析、イはオブジェクト指向の利点に近い記述、エはアクセス効率主眼の物理設計の話で、いずれもDOAの「データ構造を起点に業務領域をモデル化する」という性質とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1127,7 +1127,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ハードディスクに RAID1 を採用して、MTBF で示される信頼性が向上するようにする。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "フェールセーフは故障時にシステムを安全側へ倒す設計思想で、交通管制システムが故障した際に交差点の信号機を赤(停止)に固定して衝突等の重大事故を防ぐ仕組みは典型例でありイが正解です。アはフールプルーフ(誤操作防止)、ウはフェールソフト/冗長化、エはRAID1による信頼性向上(フォールトトレランス)の説明で、いずれも故障時に安全状態へ落とすという設計概念ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1151,7 +1151,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "予防保守"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "JIS X 0161などで定義される保守区分のうち、OS等の動作環境の変化や法令改定など外部環境への対応のために行う保守は適応保守と呼ばれ、ウが正解です。アの完全化保守は性能向上・保守性向上などの改善、イの是正保守は障害発生後のバグ修正、エの予防保守は潜在不具合を発見・除去する事前対応で、いずれも環境変化への適合という適応保守の定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1199,7 +1199,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "使用されたテスト方法及び作業標準の適切性"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ソフトウェアライフサイクルプロセス(JIS X 0160)のシステム要求事項分析プロセスでは、要求事項評価の基準として「取得ニーズとの一貫性」が示されており、利害関係者ニーズと要求事項のひも付け・追跡可能性・実現可能性などを評価するためウが正解です。アのテスト網羅性は妥当性確認、イの追跡可能性は別個の評価項目、エのテスト方法・標準の適切性は検証プロセス側の基準で、いずれも要求事項評価の中心的基準ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1223,7 +1223,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "プロジェクトマネジメントの活動を遂行し、プロジェクトの全体計画に従ってプロジェクトの成果物の提示を支援するために使用する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "JIS Q 21500のプロセス群のうち「実行のプロセス群」は、計画されたプロジェクト作業を実際に遂行し、必要な調整を行いながら成果物を作り出して提示することを支援するプロセス群でありエが正解です。アは管理プロセス群、イは終結プロセス群、ウは立上げプロセス群の説明で、いずれも作業遂行と成果物提示支援を担う実行プロセス群の定義とは別の段階に該当します。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1295,7 +1295,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "インシデントの発生を記録し、関係する部署に状況を連絡する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ITサービスマネジメントの問題管理プロセスは、繰返し発生するインシデントの根本原因(未知のエラー)を特定し、暫定対応(回避策)に加えて恒久的解決策を策定・実装することを目的としますのでイが正解です。アはインシデント管理の暫定復旧、ウはサービス継続性管理の事前設計、エはインシデント管理のログ取得・連絡で、いずれも根本原因究明と恒久対応を担う問題管理のスコープとは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1319,7 +1319,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "同時に被災する可能性がほとんどない複数のデータセンタにシステムを分散して稼働させることによって、一部のデータセンタが被災しても顧客に対するサービスの深刻な停止を引き起こすことなく, IT サービスを即時に復旧させる。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ITIL 2011のIT サービス継続性管理における「段階的復旧(コールド・スタンバイ)」は、災害時のために遠隔地のデータセンタなどに機器を設置できる場所(電源・空調・床)だけを事前確保しておき、有事には機器搬入・OSセットアップ・データ復元を経て段階的にサービスを復旧する方式でありアが正解です。イはホット・スタンバイ、ウは相互援助、エはアクティブ-アクティブのデータセンタ分散で、いずれもコールド・スタンバイの段階的復旧の説明にはあたりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
