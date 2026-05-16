@@ -184,7 +184,7 @@ export default async function ExamTopPage({
           name: "情報処理推進機構（IPA）",
           url: "https://www.ipa.go.jp/",
         },
-        educationalLevel: "professional",
+        educationalLevel: "Professional",
         competencyRequired: categories.map((c) => c.category).slice(0, 12),
       },
       courseNode,

@@ -111,9 +111,8 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link rel="dns-prefetch" href="https://us.i.posthog.com" />
+        <link rel="preconnect" href="https://us.i.posthog.com" />
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
