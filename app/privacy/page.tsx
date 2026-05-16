@@ -129,16 +129,39 @@ export default function PrivacyPage() {
             title="Cookie・トラッキング"
           >
             <p>
-              本サービスは、UX 改善のため <strong>Vercel Web Analytics</strong> を利用してページビューと匿名イベント（クイズ開始・回答送信・AI 利用回数等）を計測しています。
-              個人を特定する識別子は送信されず、Vercel Analytics は <strong>Cookie を使用しない</strong> プライバシー重視のアナリティクスです（IP ハッシュ化と国レベルの集計のみ）。
+              本サービスは、UX 改善のため <strong>Vercel Web Analytics</strong> と <strong>PostHog</strong> を利用してページビューおよび匿名イベントを計測しています。
+              いずれも個人を特定する情報（氏名・メールアドレス・IPアドレス等）は収集・送信しません。
+            </p>
+            <p>
+              <strong>PostHog で計測するイベント種別</strong>（プロパティはメタ情報のみ）:
+              ページビュー・クイズ開始・問題回答・クイズ完了・AI コパイロット送受信・
+              ブログ閲覧・スクロール深度（50/75/100%）・論文問題閲覧・業種切替・
+              統計ページ閲覧・お問い合わせ送信・FAQ 展開・フィードバック送信・流入元 UTM 情報。
+              送信しない情報: 氏名・メールアドレス・IPアドレス・問題の解答内容・チャットのテキスト本文。
+            </p>
+            <p>
+              Vercel Analytics は <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ）。
+              PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
+              第三者 Cookie の発行はありません。
             </p>
             <p>
               テーマ設定・学習履歴（匿名利用時）は localStorage を使用します。
-              ログイン後はクラウド同期が有効化され、第8項に記載の通り Neon Postgres に保存されます。
             </p>
             <p>
-              第三者 Cookie の発行はありません。
-              アナリティクスを無効化する場合は、ブラウザの DNT (Do Not Track) ヘッダ、もしくは uBlock Origin 等の拡張機能で `va.vercel-scripts.com` をブロックしてください。
+              アナリティクスを無効化する場合は、uBlock Origin 等の拡張機能で{" "}
+              <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">va.vercel-scripts.com</code>{" "}
+              および{" "}
+              <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">us.i.posthog.com</code>{" "}
+              をブロックしてください。PostHog の詳細は{" "}
+              <a
+                href="https://posthog.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                PostHog プライバシーポリシー
+              </a>
+              をご参照ください。
             </p>
           </Section>
 
