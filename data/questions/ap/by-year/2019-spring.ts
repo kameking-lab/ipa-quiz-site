@@ -1343,7 +1343,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "15"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "6か月前の同一日まで復元可能とするため、当月を含む直近7か月分(例:10/31時点なら4月~10月)のフルバックアップが必要で7本、これに加え各月の差分バックアップが1本ずつ必要なため差分が同じく7本となり、最少で7+7=14本となりウが正解です。ア12本・イ13本は対象期間を直近6か月としたり差分本数を1本少なく見積もった結果、エ15本は対象期間を8か月とした過剰見積りであり、いずれも処理条件に沿った最少本数とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1367,7 +1367,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "受託者から納品された成果物に対して、監査人がユーザ受入テスト計画を策定していること"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ユーザ受入テストは納品物が委託者の要件定義に合致しているかを委託者自身が確認する活動であり、受託者からの納品物に対して委託者が要件定義に基づきテストを実施していることがシステム監査の要点でありウが正解です。アは受託者主体でテスト実施しているため受入テストとして不適切、イは計画書納品のみで実施が確認できず、エは監査人がテスト計画を策定する点で独立性が損なわれるため、いずれも受入テスト適切性の監査要点として誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1391,7 +1391,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "監査テーマに合わせて、監査チームを編成する手順"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "システム監査における監査手続は、設定した監査項目に関し十分かつ適切な監査証拠を入手するために実施する具体的な手順(質問・閲覧・突合・観察・再実施など)を指しウが正解です。アは監査計画の管理手順、イは監査報告書作成の手順、エは監査チーム編成の手順で、いずれも証拠入手という監査手続の中核目的と異なる別工程に該当するため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1415,7 +1415,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "システム監査人が、監査対象部門の改善実施状況を確認する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "システム監査人は監査対象部門から独立した立場で意見を述べる必要があり、改善計画の作成は監査対象部門自身が責任を持って行う活動です。監査人が改善計画を作成すると独立性・客観性を損ない自己監査となるため不適切でありウが正解です。アは経営者の判断によるリスク受容、イは自発的改善着手、エは改善実施状況の確認(フォローアップ)で、いずれもシステム監査基準に照らして不適切とは言えません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1439,7 +1439,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "取引先との打合せは、社員が業務を行っている執務室から分離された場所であって、かつ、機密性の高い情報資産が置かれていない場所で行っている。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "JIS Q 27002の物理的入退室管理では、入室者を識別・記録できる仕組みが求められます。共通暗証番号での入室は個人を特定したログが残らず、退職者発生時の鍵更新負担も大きいため指摘事項として記載すべき状況でありイが正解です。アは荷物の受渡し場所の物理分離、ウは外部視認の回避、エは打合せ場所の分離でいずれも適切な対策に該当し、指摘対象とはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1463,7 +1463,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "リスクを最小化するように支援する専門組織を設けることによって、組織全体のプロジェクトマネジメントの能力と品質の向上を図る。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "プログラムマネジメントは、互いに関連する複数のプロジェクト群(プログラム)を統括し、相互の連携・統合・相互作用を通じて単独プロジェクトでは得られない便益(ベネフィット)を実現することで組織全体の戦略目標達成を図る考え方でありアが正解です。イは詳細化、ウは技術選定の早期化、エはPMO設置による能力向上で、いずれもプログラムマネジメントの中心的考え方とは異なる別の取組みです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1487,7 +1487,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "財務管理ソリューション"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ワントゥワンマーケティングは個々の顧客の属性・嗜好・取引履歴を分析し、一人ひとりに最適化された施策を提供する考え方で、これを支えるのは顧客情報を一元管理し継続的関係を強化するCRM(Customer Relationship Management)ソリューションでありアが正解です。イのHRMは人的資源管理、ウのSCMはサプライチェーン管理、エの財務管理ソリューションは経理・会計領域で、いずれも顧客個別最適化マーケティングを直接支援するソリューションとはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1559,7 +1559,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ユースケース図"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ユースケース図は、システム外のアクター(利用者・外部システム)と業務上の機能(ユースケース)を線で関連付けて表現し、システムが扱う業務範囲(システムスコープ)を矩形で明示するため、利用者を含めた業務全体の範囲を把握する目的に最適でありエが正解です。アのアクティビティ図は処理フロー、イのオブジェクト図は実行時の特定状況、ウのクラス図は静的構造を示す図で、いずれもスコープ把握を主目的としたユースケース図とは表現対象が異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1583,7 +1583,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ベンダが提供するソフトウェアを,利用料金を支払うことによって一定期間の利用権を得て利用する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サブスクリプション方式は、ソフトウェアの所有権を取得するのではなく、月額・年額などの利用料金を支払うことで一定期間ソフトウェアを利用する権利を得る形態の調達方式でありエが正解です。アは永続ライセンス方式、イはパッケージ買切り、ウは自社開発の固定資産計上で、いずれも所有権あるいはイニシャルコスト中心の調達であり、期間契約で利用権を得るサブスクリプションの本質とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1607,7 +1607,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "収益性が高い事業分野での市場シェア"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "コアコンピタンスは、競合他社が容易に模倣できない自社固有の中核能力で、価値創出に直結し多様な市場で活用できる組織的スキルを指します。「競合他社よりも効率性が高い生産システム」は他社が真似しにくい能力に当てはまりイが正解です。アは事業ドメインの成長率という外部市場特性、ウは競合状況、エは市場シェアという結果指標で、いずれも自社が保有する中核能力そのものではなくコアコンピタンスの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1631,7 +1631,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "遵法"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "バランススコアカードは「財務」「顧客」「内部ビジネスプロセス」「学習と成長」の4視点で戦略を多面的に評価する手法で、設問の他3視点から残るのは「顧客」でありイが正解です。アのガバナンスやエの遵法は経営管理上の概念ではあっても4視点に含まれず、ウの自社の強みは戦略分析(SWOT)の用語で、いずれもBSCの正規の視点ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1655,7 +1655,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "形式知から新たに形式知を得ること"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "野中郁次郎のSECIモデルでは、知識変換を「共同化(暗黙知→暗黙知)」「表出化(暗黙知→形式知)」「連結化(形式知→形式知)」「内面化(形式知→暗黙知)」の4過程で表現します。表出化は暗黙知を言語化・形式化して共有可能な形式知に変換する過程でありイが正解です。アは共同化、ウは内面化、エは連結化で、いずれもSECIの別過程に該当するため表出化の定義としては誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1679,7 +1679,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ブランド向上を図るために、自社製品の革新性について Webに掲載した。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "オープンイノベーションは、自社単独でなく社外のアイデア・技術・組織を積極的に取り込み、また自社の技術を社外と共有することで革新を加速させる経営概念で、社外からアイデアを募集し新サービスを開発する取組みは典型例でありアが正解です。イ社内部門間連携やウ物流改善、エ自社情報の発信は、いずれも社内クローズドな施策や一方的な情報発信でありオープンイノベーションの中核要件である外部との双方向連携には該当しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1703,7 +1703,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "ディジタル空間に現実世界と同等な世界を、様々なセンサで収集したデータを用いて構築し、現実世界では実施できないようなシミュレーションを行うこと"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ディジタルツインは、IoTセンサ等で収集した現実世界のデータをもとに、ディジタル空間に対象設備・都市・人体などのリアルタイム複製モデルを構築し、現実では難しい大規模・破壊的なシミュレーションや予測を行う技術でありエが正解です。アは遠隔3Dプリンタ製作、イは正副二重化(冗長系)、ウはホームIoTとウェアラブルの説明で、いずれも現実とディジタルが連動する複製モデルというディジタルツインの本質とは異なる概念です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1727,7 +1727,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "部品の供給から製品の販売までの一連のプロセスの情報をリアルタイムで交換することによって、在庫の削減とリードタイムの短縮を実現する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "PDM(Product Data Management)は、図面・部品構成(BOM)・仕様書・改訂履歴など設計・開発段階で発生する情報を一元管理し、版管理や関連付けによって設計業務と開発業務の効率と品質を向上させる仕組みでありイが正解です。アはFA/FMS、ウはMRP、エはSCMの説明で、いずれも生産・調達領域の取組みであり、設計開発フェーズの製品データ統合管理を主眼とするPDMとは目的が異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1751,7 +1751,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "検索エンジンを運営する企業と契約し、自社の商品・サービスと関連したキーワードが検索に用いられた際に広告を表示する仕組み"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SEO(Search Engine Optimization)は、検索エンジンの自然検索結果一覧で自社サイトがより上位に表示されるよう、ページ構造・キーワード・内部外部リンク・コンテンツ品質などを継続的に見直す施策の総称でありウが正解です。アはレコメンドエンジン、イはアフィリエイトプログラム、エはリスティング広告(検索連動型広告)の説明で、いずれも自然検索順位を直接改善する取組みではなくSEOの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1775,7 +1775,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "連関図"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "パレート図は、現象の発生要因を件数の多い順に並べた棒グラフと、累積構成比の折れ線を重ね合わせて表示する図で、上位の少数要因が全体の大半を占めること(80:20の法則)を視覚的に示すのに最適でありイが正解です。アの特性要因図は要因の体系整理、ウのマトリックス図は二要素の関係表現、エの連関図は複雑な因果関係の表現で、いずれも頻度上位を明確化する図法ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1799,7 +1799,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "300"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "発注点は、発注してから納入までの調達期間中に消費される見込み量に、欠品リスクを抑える安全在庫を加えた在庫水準で定めます。本問では調達期間5日×1日あたり50個=250個の需要見込みに、安全在庫30個を足して 250+30=280個となりウが正解です。アの220は安全在庫を引いた値、イの250は安全在庫を加味しない値、エの300は調達期間や安全在庫の取り方を誤った結果で、いずれも発注点の定義と合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1871,7 +1871,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "本人の病歴、犯罪の経歴など不当な差別や不利益を生じさせるおそれのある情報"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "個人情報保護法における要配慮個人情報は、人種・信条・社会的身分・病歴・犯罪歴・犯罪被害情報など、取扱いを誤ると本人に対する不当な差別・偏見その他の不利益を生じさせるおそれがある特に慎重な扱いを要する個人情報を指しエが正解です。アは本人申告という任意手続では要配慮性は定まらず、イの免許証番号・カード番号は個人識別符号や個人データだが要配慮個人情報には該当せず、ウは一般的個人情報の説明で、いずれも法定の要配慮個人情報の例示とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1895,7 +1895,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "振込手数料を下請事業者が負担する旨を発注前に書面で合意したので、親事業者が負担した実費の範囲内で振込手数料を差し引いて下請代金を支払う。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "下請代金支払遅延等防止法では、親事業者は委託時に下請代金や仕様などを明記した書面(いわゆる3条書面)を交付する義務があり、仕様を未記載で発注したり後日口頭で確定通知する行為は明確に禁止されているためイが正解です。アは継続取引で共通事項の包括書面化を併用する運用、ウは協議による単価増額対応、エは事前書面合意済みの振込手数料の実費控除でいずれも適切に書面化・合意した上での対応であり禁止行為とは言えません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1919,7 +1919,7 @@ export const AP_QUESTIONS_2019_SPRING: Question[] = [
       "エ": "コストの低減"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "技術者倫理綱領では、技術者は職務遂行において会社の利益・個人の名誉・コスト低減などよりも優先して、公衆の安全・健康・福利を守る責務を負うとされており、ウが正解です。アの会社の利益・イの個人の名誉・エのコスト低減はいずれも組織や個人の便益にとどまり、公衆の生命や安全を脅かす場合には後退すべき価値で、技術者倫理上の最優先項目とは位置付けられません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2019h01_1/2019h01h_ap_am_qs.pdf",
     "license": "IPA-public"
