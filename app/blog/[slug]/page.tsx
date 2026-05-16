@@ -60,6 +60,26 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   };
 }
 
+function extractHowToSteps(body: string): Array<{ name: string; text: string }> {
+  const steps: Array<{ name: string; text: string }> = [];
+  const sections = body.split(/(?=^## )/m);
+  for (const section of sections) {
+    const match = section.match(/^## (ステップ\d+[：:].+)\n([\s\S]*)/);
+    if (!match) continue;
+    const name = match[1].trim();
+    const text = match[2]
+      .split("\n")
+      .filter((l) => !l.startsWith("#"))
+      .join(" ")
+      .replace(/\*\*/g, "")
+      .replace(/\s+/g, " ")
+      .trim()
+      .slice(0, 300);
+    if (text) steps.push({ name, text });
+  }
+  return steps;
+}
+
 export default async function BlogArticlePage({ params }: PageProps) {
   const { slug } = await params;
   const post = getBlogPostBySlug(slug);
@@ -75,63 +95,104 @@ export default async function BlogArticlePage({ params }: PageProps) {
   });
   const articleImage = `${SITE_BASE_URL}/api/og?${articleOgParams.toString()}`;
 
+  const howToSteps = slug.endsWith("-yoru-tokurensyu")
+    ? extractHowToSteps(post.body)
+    : [];
+
+  const graphNodes: object[] = [
+    {
+      "@type": "Article",
+      "@id": `${url}#article`,
+      headline: post.title,
+      description: post.description,
+      url,
+      image: {
+        "@type": "ImageObject",
+        url: articleImage,
+        width: 1200,
+        height: 630,
+      },
+      datePublished: post.publishedAt,
+      dateModified: post.updatedAt ?? post.publishedAt,
+      inLanguage: "ja",
+      keywords: post.tags.join(", "),
+      author: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_BASE_URL,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_BASE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_BASE_URL}/icon-512.svg`,
+        },
+      },
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": url,
+      },
+    },
+    {
+      "@type": "LearningResource",
+      "@id": `${url}#learning-resource`,
+      name: post.title,
+      description: post.description,
+      inLanguage: "ja",
+      learningResourceType: "Article",
+      educationalUse: "Self-study",
+      teaches: post.exam
+        ? `${examLabel(post.exam)} 試験対策`
+        : "IPA情報処理技術者試験対策",
+      keywords: post.tags.join(", "),
+      isAccessibleForFree: true,
+      publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        url: SITE_BASE_URL,
+      },
+    },
+    {
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: "ブログ",
+          item: `${SITE_BASE_URL}/blog`,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name: post.title,
+          item: url,
+        },
+      ],
+    },
+  ];
+
+  if (howToSteps.length > 0) {
+    graphNodes.push({
+      "@type": "HowTo",
+      "@id": `${url}#howto`,
+      name: post.title,
+      description: post.description,
+      inLanguage: "ja",
+      step: howToSteps.map((s, i) => ({
+        "@type": "HowToStep",
+        position: i + 1,
+        name: s.name,
+        text: s.text,
+      })),
+    });
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Article",
-        "@id": `${url}#article`,
-        headline: post.title,
-        description: post.description,
-        url,
-        image: {
-          "@type": "ImageObject",
-          url: articleImage,
-          width: 1200,
-          height: 630,
-        },
-        datePublished: post.publishedAt,
-        dateModified: post.updatedAt ?? post.publishedAt,
-        inLanguage: "ja",
-        keywords: post.tags.join(", "),
-        author: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-        },
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-          logo: {
-            "@type": "ImageObject",
-            url: `${SITE_BASE_URL}/icon-512.svg`,
-          },
-        },
-        mainEntityOfPage: {
-          "@type": "WebPage",
-          "@id": url,
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "ブログ",
-            item: `${SITE_BASE_URL}/blog`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: post.title,
-            item: url,
-          },
-        ],
-      },
-    ],
+    "@graph": graphNodes,
   };
 
   const formattedDate = post.publishedAt.slice(0, 10);

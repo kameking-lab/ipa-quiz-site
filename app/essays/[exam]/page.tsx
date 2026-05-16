@@ -11,6 +11,8 @@ import {
 } from "@/lib/essays/load";
 import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
 import { examLabel } from "@/lib/utils";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -62,8 +64,62 @@ export default async function EssayExamPage({
     ][]
   ).filter(([id]) => presentIndustryIds.has(id));
 
+  const label = examLabel(exam);
+  const pageUrl = `${SITE_BASE_URL}/essays/${exam}`;
+  const description = `${label} 午後II 論述問題の業種別合格答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": `${pageUrl}#collection`,
+        name: `${label} 業種別合格答案サンプル`,
+        description,
+        url: pageUrl,
+        inLanguage: "ja",
+        isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_BASE_URL },
+        numberOfItems: questions.length,
+      },
+      {
+        "@type": "LearningResource",
+        "@id": `${pageUrl}#learning-resource`,
+        name: `${label} 業種別合格答案サンプル`,
+        description,
+        inLanguage: "ja",
+        learningResourceType: "Sample response",
+        educationalUse: "Self-study",
+        teaches: `${label} 午後II 論述試験`,
+        isAccessibleForFree: true,
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+        creator: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: `${label} 業種別合格答案`,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
       <div
         role="note"
         className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
