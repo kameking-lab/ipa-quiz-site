@@ -16,7 +16,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
-    "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・決済情報・Cookie・データ削除方法について。",
+    "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。",
   alternates: { canonical: "/privacy" },
 };
 
@@ -80,9 +80,8 @@ export default function PrivacyPage() {
               {" "}より管理可能）。
             </p>
             <p>
-              プレミアムプラン等の有料機能をご利用の際は、決済情報を Stripe が直接処理します。
-              当社サーバーには Stripe 顧客 ID と契約状態のみを保存し、カード番号等の機密情報は
-              保持しません。公開通知メールリストへの登録時は、入力されたメールアドレスを保存します。
+              本サービスは教育貢献プロジェクトとして全機能を無料で提供しており、決済情報を取得・処理する機能はありません。
+              公開通知メールリストへの登録時は、入力されたメールアドレスを当社サーバーに保存します。
             </p>
           </Section>
 
@@ -138,7 +137,7 @@ export default function PrivacyPage() {
               ログイン後はクラウド同期が有効化され、第8項に記載の通り Neon Postgres に保存されます。
             </p>
             <p>
-              第三者 Cookie の発行はありません（Stripe Checkout への遷移時を除く）。
+              第三者 Cookie の発行はありません。
               アナリティクスを無効化する場合は、ブラウザの DNT (Do Not Track) ヘッダ、もしくは uBlock Origin 等の拡張機能で `va.vercel-scripts.com` をブロックしてください。
             </p>
           </Section>
