@@ -294,7 +294,7 @@ export function QuizPlayer({
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
-      <header className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
+      <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
             variant="ghost"
@@ -348,7 +348,7 @@ export function QuizPlayer({
             style={{ width: `${((index + 1) / total) * 100}%` }}
           />
         </div>
-      </header>
+      </div>
 
       <div className="flex flex-1">
         <main
@@ -434,7 +434,7 @@ export function QuizPlayer({
           )}
         </main>
 
-        <aside className="hidden shrink-0 border-l border-zinc-200 sm:block sm:w-[40%] lg:w-[380px] dark:border-zinc-800">
+        <aside aria-label="AI コパイロット" className="hidden shrink-0 border-l border-zinc-200 sm:block sm:w-[40%] lg:w-[380px] dark:border-zinc-800">
           <div className="sticky top-[52px] h-[calc(100dvh-52px)]">
             <CopilotPanel
               question={question}
@@ -534,7 +534,7 @@ function QuizCompleteScreen({
     <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
       <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
-          <div className="mb-2 text-5xl">{emoji}</div>
+          <div className="mb-2 text-5xl" aria-hidden="true">{emoji}</div>
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
@@ -559,10 +559,10 @@ function QuizCompleteScreen({
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
-            <a href={xUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
-              <Share2 className="h-4 w-4" /> X でシェア
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X（Twitter）で結果をシェア（新しいタブで開く）" className={btnClass}>
+              <Share2 className="h-4 w-4" aria-hidden="true" /> X でシェア
             </a>
-            <a href={lineUrl} target="_blank" rel="noopener noreferrer" className={btnClass}>
+            <a href={lineUrl} target="_blank" rel="noopener noreferrer" aria-label="LINEで結果をシェア（新しいタブで開く）" className={btnClass}>
               LINE
             </a>
             <button type="button" onClick={handleCopy} className={btnClass}>

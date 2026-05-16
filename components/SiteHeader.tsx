@@ -97,22 +97,22 @@ export function SiteHeader() {
                 <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
               </button>
               {dropOpen && (
-                <div
-                  role="menu"
-                  className="absolute left-0 top-full z-50 mt-1 w-48 rounded-xl border border-border bg-background py-1 shadow-lg"
+                <ul
+                  className="absolute left-0 top-full z-50 mt-1 w-48 list-none rounded-xl border border-border bg-background py-1 shadow-lg"
+                  aria-label="問題を解くメニュー"
                 >
                   {QUIZ_MODES.map((m) => (
-                    <Link
-                      key={m.href}
-                      href={m.href}
-                      role="menuitem"
-                      className="block rounded-md px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:outline-none"
-                      onClick={() => setDropOpen(false)}
-                    >
-                      {m.label}
-                    </Link>
+                    <li key={m.href}>
+                      <Link
+                        href={m.href}
+                        className="block rounded-md px-4 py-2 text-sm text-foreground transition-colors hover:bg-muted focus-visible:bg-muted focus-visible:outline-none"
+                        onClick={() => setDropOpen(false)}
+                      >
+                        {m.label}
+                      </Link>
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
             </div>
 

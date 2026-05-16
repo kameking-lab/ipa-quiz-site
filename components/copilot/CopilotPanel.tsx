@@ -612,18 +612,17 @@ export function CopilotPanel({
                 title="その他の操作"
                 className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                 aria-label="その他の操作"
-                aria-haspopup="menu"
                 aria-expanded={actionsOpen}
+                aria-controls="copilot-actions-popup"
               >
                 <MoreVertical className="h-4 w-4" />
               </button>
               {actionsOpen && (
                 <div
-                  role="menu"
                   className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
+                  aria-label="その他の操作"
                 >
                   <button
-                    role="menuitem"
                     onClick={() => {
                       setActionsOpen(false);
                       handleCopyAll();
@@ -638,7 +637,6 @@ export function CopilotPanel({
                     全体コピー
                   </button>
                   <button
-                    role="menuitem"
                     onClick={() => {
                       setActionsOpen(false);
                       handleOpenShare();
@@ -649,7 +647,6 @@ export function CopilotPanel({
                     共有
                   </button>
                   <button
-                    role="menuitem"
                     onClick={() => {
                       setActionsOpen(false);
                       handleDownloadMd();
@@ -796,9 +793,10 @@ export function CopilotPanel({
         )}
       </div>
 
-      {/* Error banner */}
+      {/* Error banner — role="alert" forces immediate SR announcement */}
       {errorState && (
         <div
+          role="alert"
           className={cn(
             "mx-3 mb-2 flex items-start gap-2 rounded-xl border px-3 py-2.5 text-xs",
             errorState.type === "server_error"
@@ -850,6 +848,7 @@ export function CopilotPanel({
             }
           }}
           rows={2}
+          aria-label="AIへの質問を入力（Enter で送信、Shift+Enter で改行）"
           placeholder={
             voiceState === "listening"
               ? "話してください…"
@@ -951,13 +950,20 @@ export function CopilotPanel({
         </DialogContent>
       </Dialog>
 
-      {/* Toast */}
-      {toast && (
-        <div className="fixed bottom-4 right-4 z-[200] flex items-center gap-2 rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white shadow-xl dark:bg-zinc-100 dark:text-zinc-900">
-          <Check className="h-4 w-4 shrink-0 text-emerald-400 dark:text-emerald-600" />
-          {toast}
-        </div>
-      )}
+      {/* Toast — role="status" ensures SR announcement on appearance */}
+      <div
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+        className="pointer-events-none fixed bottom-4 right-4 z-[200]"
+      >
+        {toast && (
+          <div className="flex items-center gap-2 rounded-xl bg-zinc-900 px-4 py-2.5 text-sm font-medium text-white shadow-xl dark:bg-zinc-100 dark:text-zinc-900">
+            <Check className="h-4 w-4 shrink-0 text-emerald-400 dark:text-emerald-600" aria-hidden="true" />
+            {toast}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

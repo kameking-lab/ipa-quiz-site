@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 interface TabsContextValue {
   value: string;
   setValue: (v: string) => void;
+  idPrefix: string;
 }
 
 const TabsContext = React.createContext<TabsContextValue | null>(null);
@@ -22,12 +23,16 @@ interface TabsProps {
   onValueChange?: (v: string) => void;
   className?: string;
   children: React.ReactNode;
+  id?: string;
 }
 
-export function Tabs({ value, defaultValue, onValueChange, className, children }: TabsProps) {
+let _tabsCounter = 0;
+
+export function Tabs({ value, defaultValue, onValueChange, className, children, id }: TabsProps) {
   const [internal, setInternal] = React.useState(defaultValue ?? "");
   const isControlled = value !== undefined;
   const current = isControlled ? value : internal;
+  const idPrefix = React.useRef(id ?? `tabs-${++_tabsCounter}`).current;
   const setValue = React.useCallback(
     (v: string) => {
       if (!isControlled) setInternal(v);
@@ -36,7 +41,7 @@ export function Tabs({ value, defaultValue, onValueChange, className, children }
     [isControlled, onValueChange],
   );
   return (
-    <TabsContext.Provider value={{ value: current, setValue }}>
+    <TabsContext.Provider value={{ value: current, setValue, idPrefix }}>
       <div className={className}>{children}</div>
     </TabsContext.Provider>
   );
@@ -63,11 +68,15 @@ interface TabsTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement>
 export function TabsTrigger({ value, className, children, ...rest }: TabsTriggerProps) {
   const ctx = useTabsContext();
   const active = ctx.value === value;
+  const triggerId = `${ctx.idPrefix}-tab-${value}`;
+  const panelId = `${ctx.idPrefix}-panel-${value}`;
   return (
     <button
       type="button"
       role="tab"
+      id={triggerId}
       aria-selected={active}
+      aria-controls={panelId}
       data-state={active ? "active" : "inactive"}
       onClick={() => ctx.setValue(value)}
       className={cn(
@@ -95,8 +104,16 @@ export function TabsContent({
 }) {
   const ctx = useTabsContext();
   if (ctx.value !== value) return null;
+  const panelId = `${ctx.idPrefix}-panel-${value}`;
+  const triggerId = `${ctx.idPrefix}-tab-${value}`;
   return (
-    <div role="tabpanel" className={className}>
+    <div
+      role="tabpanel"
+      id={panelId}
+      aria-labelledby={triggerId}
+      tabIndex={0}
+      className={cn("focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2", className)}
+    >
       {children}
     </div>
   );
