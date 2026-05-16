@@ -188,7 +188,7 @@ export default async function EssayPm2DetailPage({
       />
       <Link
         href={`/essays/${resolved.exam}`}
-        className="mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+        className="print:hidden mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
       >
         <ChevronLeft className="h-3 w-3" />
         {examLabel(resolved.exam)} 業種別合格答案
@@ -244,7 +244,7 @@ export default async function EssayPm2DetailPage({
         pdfUrl={question.pdfUrl}
       />
 
-      <div className="mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
+      <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
         <h2 className="mb-2 text-base font-bold">自分の答案を AI で採点してみる</h2>
         <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
           上記の答案例を参考に論述を書いたら、AI 添削で「適合度・論理性・具体性・業種事例」の4軸でフィードバックを受けましょう。
@@ -255,6 +255,12 @@ export default async function EssayPm2DetailPage({
         >
           AI 論述添削を試す →
         </Link>
+      </div>
+
+      {/* Print-only attribution */}
+      <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
+        <p>過去問AI（https://www.kakomon-ai.jp{canonical}）より印刷</p>
+        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/） IPA の過去問は IPA が著作権を保有し、非商用・教育目的での利用が認められています。</p>
       </div>
     </main>
   );

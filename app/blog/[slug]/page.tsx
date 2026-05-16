@@ -268,7 +268,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       </article>
 
       {post.exam ? (
-        <section className="mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
+        <section className="print:hidden mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50">
             {examLabel(post.exam)} の過去問で実戦演習する
           </h2>
@@ -297,7 +297,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </div>
         </section>
       ) : (
-        <section className="mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
+        <section className="print:hidden mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50">
             過去問AI で各試験区分の対策を始める
           </h2>
@@ -324,7 +324,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       {related.length > 0 ? (
         <section
           aria-label="関連記事"
-          className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+          className="print:hidden mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800"
         >
           <h2 className="mb-4 text-base font-bold text-zinc-900 dark:text-zinc-50 sm:text-lg">
             関連記事
@@ -363,6 +363,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
           で確認してください。
         </p>
       </section>
+
+      {/* Print-only attribution */}
+      <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
+        <p>過去問AI（https://www.kakomon-ai.jp/blog/{slug}）より印刷</p>
+        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/）</p>
+      </div>
     </main>
   );
 }

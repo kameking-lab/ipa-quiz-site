@@ -123,7 +123,9 @@ export default function RootLayout({
             <PostHogProvider />
           </Suspense>
           <ServiceWorkerRegistration />
-          <DeferredLayoutWidgets />
+          <div className="print:hidden">
+            <DeferredLayoutWidgets />
+          </div>
           <Analytics />
           <a
             href="#main-content"
@@ -132,14 +134,16 @@ export default function RootLayout({
             メインコンテンツへスキップ
           </a>
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
-            <SiteHeader />
+            <div className="print:hidden">
+              <SiteHeader />
+            </div>
             <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col overflow-x-clip outline-none">
               {children}
             </div>
             <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
-                {/* 4-group nav grid */}
-                <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
+                {/* 4-group nav grid — hidden in print */}
+                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-4">
                   <nav aria-labelledby="footer-nav-service">
                     <h3 id="footer-nav-service" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       サービス
