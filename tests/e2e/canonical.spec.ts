@@ -17,7 +17,6 @@ const CANONICAL_PAGES: [string, string][] = [
   ["/contact", "/contact"],
   ["/demo/afternoon", "/demo/afternoon"],
   ["/sitemap", "/sitemap"],
-  ["/launch", "/launch"],
   ["/student", "/student"],
   // ─── クイズ関連 ────────────────────────────────────────────────────────────
   ["/quiz/review", "/quiz/review"],

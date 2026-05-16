@@ -151,8 +151,6 @@ export async function POST(req: Request) {
     );
   }
 
-  // During beta all users get the free model — premium model is only
-  // unlocked once Stripe payments are implemented (Phase 4).
   const model = resolveModel("free");
 
   const maxTokens =
