@@ -1,0 +1,7 @@
+alive: comprehensive-bug-hunt
+branch: fix/comprehensive-bug-hunt
+started: 2026-05-17
+purpose: 3-perspective bug hunt (naive/malicious/a11y) covering bot-untouched zones
+  (/api/copilot/*, /app/q/*, /app/essays/*, middleware, data/)
+scope-exclusions: rich-results, site-scan-round2, metadata-polish, explanation-batch2,
+  search, mock-exam, learning-history (handled by parallel dispatch)
