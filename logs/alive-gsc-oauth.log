@@ -1,1 +1,14 @@
 2026-05-16T10:09:50+09:00
+
+=== Phase 5: Merge Complete ===
+PR: #203
+Branch: feat/gsc-oauth-refresh-token
+Merge SHA: ce043dccd48d3d5610533804e38770a81a0121a6
+main HEAD: ce043dccd48d3d5610533804e38770a81a0121a6
+Completed: 2026-05-16T10:12 JST
+
+Changed files:
+- lib/stats/gsc.ts: SA方式→OAuth Refresh Token方式へ書き換え (75 lines → 50 lines, -25 lines)
+- .env.example: GSC_SERVICE_ACCOUNT_EMAIL/KEY削除、GSC_OAUTH_CLIENT_ID/CLIENT_SECRET/REFRESH_TOKEN追加
+
+Next: Claude in Chrome側 Phase F にて Vercel Redeploy + /stats 動作確認
