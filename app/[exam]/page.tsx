@@ -33,6 +33,11 @@ const ExamBrowseTabs = dynamic(
 );
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
+import {
+  ExamDeepLead,
+  ExamMainTopics,
+  ExamRelatedExams,
+} from "@/components/exam/ExamDeepContent";
 
 // localStorage 依存のクライアント専用コンポーネント。
 // 初期ロードのバンドルから外して TBT を削減する目的で dynamic import する。
@@ -307,6 +312,12 @@ export default async function ExamTopPage({
           );
         })()}
 
+        {/* Exam characteristic lead text */}
+        <ExamDeepLead exam={code} />
+
+        {/* Main topics — exam-specific syllabus highlights */}
+        <ExamMainTopics exam={code} />
+
         {/* Study roadmap — month-by-month plan */}
         <ExamRoadmap exam={code} />
 
@@ -439,6 +450,9 @@ export default async function ExamTopPage({
             )}
           </section>
         )}
+
+        {/* Related exams — cross-link to neighboring exam categories */}
+        <ExamRelatedExams exam={code} />
 
         {/* AI transparency for the exam page */}
         <ExamAiTransparencyNote />
