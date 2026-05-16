@@ -36,7 +36,7 @@ export async function POST(req: Request) {
   const dueQuestions: Question[] = [];
   const futureDates: string[] = [];
 
-  for (const [id, record] of Object.entries(reviewStore)) {
+  for (const [, record] of Object.entries(reviewStore)) {
     if (record.nextReviewAt > today) futureDates.push(record.nextReviewAt);
   }
   futureDates.sort();

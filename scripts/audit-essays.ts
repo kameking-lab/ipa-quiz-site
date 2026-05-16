@@ -28,7 +28,7 @@
 import { readdirSync, existsSync, writeFileSync, mkdirSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { pathToFileURL } from "node:url";
-import type { IndustryVariant, IndustryId } from "@/lib/afternoon/types";
+import type { IndustryVariant } from "@/lib/afternoon/types";
 
 const CI_MODE = process.argv.includes("--ci");
 const ROOT = resolve(process.cwd());
