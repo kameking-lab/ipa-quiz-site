@@ -4,6 +4,9 @@ import financeEssay from "./finance";
 import constructionEssay from "./construction";
 import healthcareEssay from "./healthcare";
 import publicEssay from "./public";
+import manufacturingEssay from "./manufacturing";
+import retailEssay from "./retail";
+import telecomEssay from "./telecom";
 
 export const SC_2024_SPRING_PM2_Q1: SCpm2Question = {
   id: "sc-2024h-pm2-q1",
@@ -22,5 +25,14 @@ export const SC_2024_SPRING_PM2_Q1: SCpm2Question = {
 設問ウ：対策の結果と残存する課題、及び今後の改善計画を 600 字以内で述べよ。`,
   pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
   license: "IPA-public",
-  industries: [itEssay, financeEssay, constructionEssay, healthcareEssay, publicEssay],
+  industries: [
+    itEssay,
+    financeEssay,
+    constructionEssay,
+    healthcareEssay,
+    publicEssay,
+    manufacturingEssay,
+    retailEssay,
+    telecomEssay,
+  ],
 };
