@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AlertTriangle, BookOpen, ChevronLeft, Shield } from "lucide-react";
 
 import { ViewTracker } from "@/components/analytics/ViewTracker";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 import {
   ESSAY_EXAM_CODES,
@@ -12,6 +13,7 @@ import {
   parseYearSeason,
 } from "@/lib/essays/load";
 import { examLabel } from "@/lib/utils";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
 import EssayIndustryTabs from "./_components/EssayIndustryTabs";
 
@@ -99,9 +101,82 @@ export default async function EssayPm2DetailPage({
   if (!question) notFound();
 
   const seasonLabel = question.season === "spring" ? "春" : "秋";
+  const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
+  const pageUrl = `${SITE_BASE_URL}${canonical}`;
+  const examName = examLabel(resolved.exam);
+  const title = `${question.theme} | ${examName} 午後II 業種別合格答案 ${question.year}年${seasonLabel}期`;
+  const description = `${examName} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
+  const datePublished = `${question.year}-${question.season === "spring" ? "04" : "10"}-01`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `${pageUrl}#article`,
+        headline: title,
+        description,
+        url: pageUrl,
+        inLanguage: "ja",
+        datePublished,
+        dateModified: datePublished,
+        author: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: {
+            "@type": "ImageObject",
+            url: `${SITE_BASE_URL}/icon-512.svg`,
+          },
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": pageUrl },
+        about: `${examName} 午後II 問${question.qNumber} ${question.theme}`,
+      },
+      {
+        "@type": "LearningResource",
+        "@id": `${pageUrl}#learning-resource`,
+        name: title,
+        description,
+        inLanguage: "ja",
+        learningResourceType: "Sample response",
+        educationalUse: "Self-study",
+        teaches: `${examName} 午後II 論述試験 ${question.theme}`,
+        isAccessibleForFree: true,
+        publisher: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: `${examName} 業種別合格答案`,
+            item: `${SITE_BASE_URL}/essays/${resolved.exam}`,
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: `${question.year}年${seasonLabel}期 問${question.qNumber}`,
+            item: pageUrl,
+          },
+        ],
+      },
+    ],
+  };
 
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+      <JsonLd data={jsonLd} />
       <ViewTracker
         event="essay_viewed"
         props={{
