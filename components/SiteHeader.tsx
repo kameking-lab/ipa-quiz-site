@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, Settings, ChevronDown } from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
 import { StreakBadge } from "@/lib/streak/StreakBadge";
+import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import {
   Sheet,
@@ -22,6 +23,7 @@ const QUIZ_MODES = [
   { href: "/quiz?mode=review&exam=ap", label: "復習モード" },
   { href: "/mock-exam", label: "模試" },
   { href: "/quiz?mode=weakness&exam=ap", label: "弱点克服" },
+  { href: "/essays/sc", label: "論述例（SC）" },
 ] as const;
 
 export function SiteHeader() {
@@ -209,6 +211,10 @@ export function SiteHeader() {
                     設定
                   </Link>
                 </SheetClose>
+                <div className="mt-1 flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground">
+                  <span>テーマ切替</span>
+                  <ThemeToggle />
+                </div>
               </nav>
               <div className="mt-auto">
                 <StreakBadge className="w-full justify-center" />
