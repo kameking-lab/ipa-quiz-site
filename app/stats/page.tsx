@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   Activity,
   BarChart3,
@@ -27,6 +28,8 @@ import {
   fetchReferrerBreakdown,
 } from "@/lib/stats/posthog";
 import { examLabel } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildWebPageNode } from "@/lib/seo/structured-data";
 
 import {
   ContentByExamChart,
@@ -37,11 +40,35 @@ import {
 import { StatsShareButtons } from "./ShareButtons";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 
+const STATS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "default",
+  title: "公開統計ダッシュボード",
+  subtitle: "透明性レポート",
+  body: "検索表示回数・問題数・AI 利用状況をリアルタイム公開。教育貢献プロジェクトの運営状況をオープンに。",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: "公開統計ダッシュボード",
   description:
-    "過去問AI の Google 検索表示回数・収録問題数・利用状況を公開しています。教育貢献プロジェクトの透明性レポート。",
+    "過去問 AI の Google 検索表示回数・収録問題数・AI コパイロット利用状況を公開しています。教育貢献プロジェクトとして運営状況の透明性を重視しており、全データをオープンに公開中。",
   alternates: { canonical: "/stats" },
+  openGraph: {
+    title: "公開統計ダッシュボード | 過去問AI",
+    description:
+      "検索表示回数・収録問題数・AI 利用状況をリアルタイムで公開。教育貢献プロジェクトの運営状況をすべてオープンに。",
+    url: `${SITE_BASE_URL}/stats`,
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    images: [{ url: STATS_OG_URL, width: 1200, height: 630, alt: "公開統計ダッシュボード" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "公開統計ダッシュボード | 過去問AI",
+    description:
+      "検索表示回数・収録問題数・AI 利用状況をリアルタイムで公開。教育貢献プロジェクトの運営状況をすべてオープンに。",
+    images: [STATS_OG_URL],
+  },
 };
 
 export const revalidate = 1800; // 30 min
@@ -68,8 +95,20 @@ export default async function StatsPage() {
     .filter((r) => r.total > 0)
     .map((r) => ({ label: examLabel(r.exam), total: r.total, code: r.exam }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(
+        `${SITE_BASE_URL}/stats`,
+        "公開統計ダッシュボード — 過去問AI",
+        "過去問AI の Google 検索表示回数・収録問題数・利用状況を公開しています。教育貢献プロジェクトの透明性レポート。",
+      ),
+    ],
+  };
+
   return (
     <main className="relative mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+      <JsonLd data={jsonLd} />
       <ViewTracker event="stats_viewed" />
       {/* Hero */}
       <header className="mb-8">

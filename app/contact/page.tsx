@@ -3,12 +3,37 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactForm } from "./ContactForm";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+
+const CONTACT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "default",
+  title: "お問い合わせ",
+  subtitle: "教育貢献プロジェクト",
+  body: "改善要望・バグ報告・教育機関活用ご相談・メディア対応。すべての投稿に目を通します。",
+}).toString()}`;
 
 export const metadata: Metadata = {
   title: "お問い合わせ",
   description:
-    "改善要望・質問・教育機関での活用ご相談・企業活用・メディア対応など、過去問 AI へのお問い合わせフォーム。",
+    "改善要望・バグ報告・教育機関での活用ご相談・企業活用・メディア対応など、過去問 AI へのお問い合わせはこちらから。すべての投稿に目を通し、原則 3 営業日以内に返信します。",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "お問い合わせ | 過去問AI",
+    description:
+      "改善要望・バグ報告・教育機関活用ご相談・メディア対応。すべての投稿に目を通し、原則 3 営業日以内に返信します。",
+    url: `${SITE_BASE_URL}/contact`,
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    images: [{ url: CONTACT_OG_URL, width: 1200, height: 630, alt: "お問い合わせ" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "お問い合わせ | 過去問AI",
+    description:
+      "改善要望・バグ報告・教育機関活用ご相談・メディア対応。すべての投稿に目を通し、原則 3 営業日以内に返信します。",
+    images: [CONTACT_OG_URL],
+  },
 };
 
 export default function ContactPage() {

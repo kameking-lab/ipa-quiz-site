@@ -9,7 +9,7 @@ interface SearchParams {
 }
 
 const DESCRIPTION =
-  "本番と同じ問題数・時間配分で模試。合格判定・分野別分析・履歴グラフを提供。";
+  "IPA 情報処理技術者試験の本番形式で実力チェック。AP・FE・SC など全 13 区分対応、合格判定・分野別弱点分析・スコア履歴グラフ付き。登録不要・完全無料で今すぐ体験。";
 
 export async function generateMetadata({
   searchParams,

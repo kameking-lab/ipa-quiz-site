@@ -4,12 +4,14 @@ export interface AppSettings {
   randomizeChoices: boolean;
   excludeRecent: boolean;
   calculationOnly: boolean;
+  recordHistory: boolean;
 }
 
 const DEFAULTS: AppSettings = {
   randomizeChoices: false,
   excludeRecent: false,
   calculationOnly: false,
+  recordHistory: true,
 };
 
 export function readSettings(): AppSettings {
@@ -22,6 +24,7 @@ export function readSettings(): AppSettings {
       randomizeChoices: parsed.randomizeChoices ?? DEFAULTS.randomizeChoices,
       excludeRecent: parsed.excludeRecent ?? DEFAULTS.excludeRecent,
       calculationOnly: parsed.calculationOnly ?? DEFAULTS.calculationOnly,
+      recordHistory: parsed.recordHistory ?? DEFAULTS.recordHistory,
     };
   } catch {
     return { ...DEFAULTS };

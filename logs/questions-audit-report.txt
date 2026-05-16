@@ -1,19 +1,19 @@
 === 問題データ統合監査レポート ===
-生成日時: 2026-05-16T16:56:48.853Z
+生成日時: 2026-05-16T22:27:40.716Z
 
 午前 (Question):              14402
 午後 (AfternoonQuestion AP): 3
 論述 (EssayQuestion):         12
 
-総検出数:           24111
+総検出数:           23961
 致命傷 critical:    0
-機会損失 opportunity: 2403
+機会損失 opportunity: 2253
 警告 warning:       21708
 
 --- カテゴリ別 ---
   duplicate-body-cross: 21658
   missing-image-urls: 2147
-  placeholder-explanation: 246
+  placeholder-explanation: 96
   markup-question: 15
   markup-explanation: 14
   choices-too-few: 10
@@ -224,7 +224,7 @@
   [morning/ap] ap-2016a-am-q53 (missing-image-urls): hasImage=true だが imageUrls なし
   [morning/ap] ap-2016a-am-q69 (missing-image-urls): hasImage=true だが imageUrls なし
   [morning/ap] ap-2016a-am-q71 (missing-image-urls): hasImage=true だが imageUrls なし
-  ... 残り 2203 件は JSON 参照
+  ... 残り 2053 件は JSON 参照
 
 --- 警告 一覧 (先頭200件) ---
   [morning/ap] ap-2011h-am-q4 (markup-explanation): 解説: タグ未対応: identifier(3), letter(2), digit(1)
