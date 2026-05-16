@@ -20,7 +20,6 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { ALL_QUESTIONS } from "@/data/questions";
-import type { Question } from "@/lib/questions/types";
 
 const LOGS_DIR = join(process.cwd(), "logs");
 
