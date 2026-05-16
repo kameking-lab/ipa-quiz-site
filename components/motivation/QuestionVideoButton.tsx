@@ -3,11 +3,10 @@
 import * as React from "react";
 import { Download, Film, Loader2, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  buildSlidesForQuestion,
-  downloadBlob,
-  generateVideoBlob,
-} from "@/lib/motivation/video";
+
+// lib/motivation/video.ts holds the heavy Canvas + MediaRecorder pipeline
+// (~9KB gzipped). It is only needed once the user clicks "generate", so we
+// defer the import to keep the initial JS bundle on every /q/* page lean.
 
 interface Props {
   examLabel: string;
@@ -53,6 +52,8 @@ export function QuestionVideoButton({
     setError(null);
     setPreviewUrl(null);
     try {
+      const { buildSlidesForQuestion, downloadBlob, generateVideoBlob } =
+        await import("@/lib/motivation/video");
       const slides = buildSlidesForQuestion({
         examLabel,
         yearSeason,
