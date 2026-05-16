@@ -149,6 +149,7 @@ export const PM_QUESTIONS_2018_AUTUMN_AM1: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "pm-2018a-am1-q7",
     "exam": "pm",
     "session": "am1",
@@ -221,6 +222,7 @@ export const PM_QUESTIONS_2018_AUTUMN_AM1: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "pm-2018a-am1-q10",
     "exam": "pm",
     "session": "am1",
@@ -461,6 +463,7 @@ export const PM_QUESTIONS_2018_AUTUMN_AM1: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "pm-2018a-am1-q20",
     "exam": "pm",
     "session": "am1",

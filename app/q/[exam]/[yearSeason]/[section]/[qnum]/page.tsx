@@ -163,6 +163,10 @@ export default async function QuestionPage({
     // the 200-with-"準備中" shell as a near-duplicate of the homepage.
     notFound();
   }
+  // Questions flagged needsReview (e.g. image-only choices that the parser
+  // couldn't extract) are unanswerable in their current form. Hide them at
+  // the URL layer to match the quiz-pool exclusion in filter.ts.
+  if (q.needsReview) notFound();
 
   const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
   const answerText =

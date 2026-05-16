@@ -221,6 +221,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "es-2021a-am2-q10",
     "exam": "es",
     "session": "am2",
@@ -245,6 +246,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "es-2021a-am2-q11",
     "exam": "es",
     "session": "am2",
@@ -293,6 +295,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "es-2021a-am2-q13",
     "exam": "es",
     "session": "am2",

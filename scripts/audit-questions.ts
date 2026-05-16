@@ -125,11 +125,16 @@ const REQUIRED_MORNING_FIELDS: (keyof Question)[] = [
 const VALID_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
 
 function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
+  // 既に needsReview=true で出題プール／URL から除外済の問題は
+  // ユーザーが触れる経路がないため、致命度は warning に降格する。
+  const reviewKnown = q.needsReview === true;
+  const downgrade = (s: Severity): Severity => (reviewKnown && s === "critical" ? "warning" : s);
+
   // (a) 必須フィールド
   for (const k of REQUIRED_MORNING_FIELDS) {
     const v = q[k];
     if (v === undefined || v === null || (typeof v === "string" && v.trim() === "")) {
-      add(q, "morning", "critical", "missing-field", `必須フィールド欠落: ${String(k)}`);
+      add(q, "morning", downgrade("critical"), "missing-field", `必須フィールド欠落: ${String(k)}`);
     }
   }
 
@@ -143,12 +148,12 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
   // (c) 選択肢数 + (d) 正解番号の範囲
   if (q.type === "multiple-choice") {
     if (!q.choices) {
-      add(q, "morning", "critical", "missing-choices", "multiple-choice に choices なし");
+      add(q, "morning", downgrade("critical"), "missing-choices", "multiple-choice に choices なし");
     } else {
       const keys = Object.keys(q.choices) as ChoiceKey[];
       const filled = keys.filter((k) => (q.choices?.[k] ?? "").trim() !== "");
       if (filled.length < 2) {
-        add(q, "morning", "critical", "choices-too-few", `有効な選択肢が ${filled.length} 個しかない`);
+        add(q, "morning", downgrade("critical"), "choices-too-few", `有効な選択肢が ${filled.length} 個しかない`);
       }
       if (filled.length > 9) {
         add(q, "morning", "warning", "choices-too-many", `選択肢が ${filled.length} 個（想定外）`);
@@ -167,12 +172,12 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
       // (d) 正解
       const ans = Array.isArray(q.answer) ? q.answer[0] : q.answer;
       if (typeof ans !== "string") {
-        add(q, "morning", "critical", "answer-type", `answer 型不正: ${typeof ans}`);
+        add(q, "morning", downgrade("critical"), "answer-type", `answer 型不正: ${typeof ans}`);
       } else if (!filled.includes(ans as ChoiceKey)) {
         add(
           q,
           "morning",
-          "critical",
+          downgrade("critical"),
           "answer-out-of-range",
           `正解 "${ans}" が有効な選択肢に存在しない (有効: ${filled.join(",")})`,
         );
