@@ -30,6 +30,7 @@ import { playPiroro } from "@/lib/motivation/sound";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { posthogCapture } from "@/lib/posthog";
+import { readSettings } from "@/lib/storage/settings";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -138,7 +139,9 @@ export function QuizPlayer({
         correct,
       });
       const now = Date.now();
-      history.record({ id: question.id, selected: key, correct, at: now });
+      if (readSettings().recordHistory) {
+        history.record({ id: question.id, selected: key, correct, at: now });
+      }
       writeLastQuestion({
         exam: question.exam,
         year: question.year,
