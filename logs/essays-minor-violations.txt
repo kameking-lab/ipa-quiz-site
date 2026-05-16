@@ -1,0 +1,76 @@
+essays 軽微違反 集計 (baseline audit at HEAD c055448)
+================================================================
+
+総数: 39件
+全項目合格率: 81/120 (67.5%)
+項目別合格率:
+  (a) 字数≥2200          : 120/120 (100.0%)
+  (b) 設問ウ比率≥25%      : 117/120 (97.5%)
+  (c) 業種固有制度名≥3件 : 95/120 (79.2%)
+  (d) 推進課題パラグラフ≥2: 117/120 (97.5%)
+  (e) 定量効果≥2         : 120/120 (100.0%)
+  (f) キャラクター設定    : 109/120 (90.8%)
+  (g) プレースホルダ無し  : 120/120 (100.0%)
+
+----------------------------------------------------------------
+違反タイプ別
+
+(c) 業種固有制度名 ≥3件 (25件)
+  au/2023-autumn/it
+  au/2024-autumn/finance
+  au/2024-autumn/telecom
+  pm/2023-spring/it
+  pm/2024-spring/manufacturing
+  pm/2024-spring/finance
+  pm/2024-spring/retail
+  pm/2024-spring/telecom
+  pm/2024-spring/public
+  pm/2024-spring/it
+  pm/2025-spring/it
+  sa/2023-spring/it
+  sa/2024-spring/manufacturing
+  sm/2023-autumn/it
+  sm/2024-autumn/manufacturing
+  sm/2024-autumn/finance
+  sm/2024-autumn/retail
+  sm/2024-autumn/telecom
+  sm/2024-autumn/it
+  sm/2025-autumn/it
+  st/2023-spring/it
+  st/2024-spring/manufacturing
+  st/2024-spring/finance
+  st/2024-spring/telecom
+  st/2025-spring/it
+
+(f) キャラクター設定 (11件) — 主に healthcare の "T病院/N病院" 等で ORG_PATTERN/SIZE_PATTERN 不一致
+  au/2023-autumn/healthcare
+  au/2025-autumn/healthcare (also fails (d))
+  pm/2023-spring/healthcare
+  pm/2025-spring/healthcare
+  sa/2023-spring/healthcare
+  sa/2025-spring/healthcare
+  sm/2023-autumn/healthcare
+  sm/2024-autumn/retail (also fails (c))
+  sm/2025-autumn/healthcare
+  st/2023-spring/healthcare
+  st/2025-spring/healthcare
+
+(b) 設問ウ比率 ≥25% (3件)
+  au/2024-autumn/it
+  sm/2024-autumn/healthcare
+  sm/2024-autumn/it (also fails (c))
+
+(d) 推進課題パラグラフ ≥2 (3件)
+  au/2025-autumn/it
+  au/2025-autumn/healthcare (also fails (f))
+  sa/2024-spring/healthcare
+
+----------------------------------------------------------------
+修復難度別
+
+低難度 (1-2行加筆で済む): 25件 (c) 制度名追加2-3件
+低難度 (組織名+規模情報の挿入): 11件 (f)
+中難度 (essayU 段落追加 250-400字): 3件 (b)
+中難度 (課題段落の挿入): 3件 (d)
+
+重複違反: au/2025-autumn/healthcare (d+f), sm/2024-autumn/retail (c+f), sm/2024-autumn/it (b+c)
