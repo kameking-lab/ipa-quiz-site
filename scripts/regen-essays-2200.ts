@@ -8,7 +8,6 @@
  */
 
 import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync } from "node:fs";
-import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 type ExamId = "st" | "sa" | "pm" | "sm" | "au";

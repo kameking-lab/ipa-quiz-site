@@ -45,6 +45,7 @@ export default function GlobalError({
             <RefreshCw className="h-4 w-4" />
             再読み込み
           </button>
+          {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- global-error renders outside the Next.js app context (replaces <html>/<body>), so next/link cannot be used safely here */}
           <a
             href="/"
             className="flex items-center gap-2 rounded-xl border border-zinc-200 bg-white px-5 py-2.5 text-sm font-semibold text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200"
