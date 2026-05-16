@@ -367,6 +367,13 @@ export default async function QuestionPage({
   };
 
   return (
+    <>
+      {prev && (
+        <link rel="prev" href={`${SITE_BASE_URL}${questionPagePath(prev)}`} />
+      )}
+      {next && (
+        <link rel="next" href={`${SITE_BASE_URL}${questionPagePath(next)}`} />
+      )}
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={jsonLd} />
 
@@ -859,5 +866,6 @@ export default async function QuestionPage({
         </div>
       </nav>
     </main>
+    </>
   );
 }
