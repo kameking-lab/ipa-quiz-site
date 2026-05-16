@@ -3,9 +3,9 @@ import Link from "next/link";
 import {
   AlertTriangle,
   ArrowLeft,
+  Code,
   ExternalLink,
   MessageCircle,
-  Github,
   Globe,
   Info,
   ScrollText,
@@ -71,8 +71,8 @@ const INFO_ROWS: InfoRow[] = [
         rel="noopener noreferrer"
         className="inline-flex items-center gap-1 font-medium text-primary underline-offset-4 hover:underline"
       >
-        <Github className="h-3.5 w-3.5" />
-        @{OPERATOR_HANDLE}
+        <Code className="h-3.5 w-3.5" />
+        github.com/{OPERATOR_HANDLE}
         <ExternalLink className="h-3 w-3" />
       </a>
     ),
