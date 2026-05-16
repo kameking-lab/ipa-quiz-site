@@ -106,3 +106,15 @@ Tokens: in=11437 out=15052 retries=0 cost=$0.0411 (~6.2円)
 - public: 1956字 → 4773字 (U=39.5%, 1 attempts)
 
 Tokens: in=11758 out=15606 retries=0 cost=$0.0425 (~6.4円)
+
+## Run 2026-05-16T00:33:54.933Z — targets: au
+
+### AU
+- manufacturing: 2034字 → 4067字 (U=38.2%, 2 attempts)
+- construction: 1872字 → 4260字 (U=40.9%, 1 attempts)
+- finance: 1871字 → 4483字 (U=32.1%, 1 attempts)
+- retail: 1796字 → 4398字 (U=41.5%, 1 attempts)
+- telecom: 1771字 → 3939字 (U=37.6%, 1 attempts)
+- public: 1816字 → 4074字 (U=36.3%, 1 attempts)
+
+Tokens: in=13567 out=15276 retries=1 cost=$0.0423 (~6.3円)
