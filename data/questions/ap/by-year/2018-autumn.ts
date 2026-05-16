@@ -503,7 +503,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "複数のチップを単一のパッケージに封入してシステム化したデバイス"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SoC(System on a Chip)は、CPU・メモリ・I/Oなど従来は複数の独立LSIで構成していたコンピュータシステム全体を、1チップ上に集積したLSIを指しウが正解です。アはチップ上で動作するファームウェアの説明で物理デバイスの話ではなく、イは複数MCU(マイコン)を載せた基板でチップではなく、エはMCM(マルチチップモジュール)やSiPのように複数チップを1つのパッケージにまとめる技術で「単一ダイ上の集積」というSoCの本質と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -527,7 +527,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "内部メモリの物理アドレスを整然と配置する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "耐タンパ性とは、IC内部の信号やメモリ内容を物理的・電気的に解析・改ざんしようとする攻撃に抵抗する性質を指します。チップを開封・プロービングしようとすると配線が切断されメモリ内容が消失するなど、解析行為そのものを破壊で阻止する仕組みは耐タンパ性向上の代表手法でありウが正解です。アのESD強化は静電気破壊対策、イの検査用パッド残置はむしろ攻撃用の侵入口を残す悪手、エの整然配置はリバースエンジニアリングを容易にしてしまうため、いずれも耐タンパ性の向上にはつながりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -575,7 +575,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "パンくずリスト"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サイトのトップページから現在閲覧中ページまでの階層的経路を「ホーム > 製品 > カテゴリ」のように表示する補助ナビゲーションをパンくずリストと呼び、エが正解です。アのサイトマップはサイト全体の構造一覧、イのスクロールバーは画面内移動の操作部品、ウのナビゲーションバーは主要メニューへのリンクをまとめた領域であり、現在地までの経路をたどる目的でユーザに位置を示す手段としては不適切でいずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -599,7 +599,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "時間経過とともに生じる物の移動などの変化について、モデル化したものを物理法則などに当てはめて変化させる処理"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "レンダリングは、3次元モデルや仮想空間のデータからカメラ視点・光源・陰影などを計算し、最終的にディスプレイへ表示できる2D画像へ変換する処理を指しイが正解です。アは非言語情報認識(ジェスチャ・センサ入力)、ウはARで現実と仮想の座標系を一致させるレジストレーション、エは時間経過に伴う物理挙動を計算するシミュレーションの説明で、いずれもレンダリングとは異なる工程です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -647,7 +647,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "211"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "三つのキー値を同一の除数で割って同じ剰余となる条件は、各キーの差がすべて除数の倍数になることです。差を取ると 1168-571=597、1566-1168=398、1566-571=995。これらの最大公約数はユークリッド互除法で 597-398=199、398=199×2 より199となり、199はいずれの差も割り切るので599・398・995のすべてを199で割ると剰余0となりウが正解です。ア193・イ197・エ211はいずれの差も割り切れないため、三つのキー値の剰余が一致せず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -695,7 +695,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "メーカコードの値が NULL 以外の部品を検索する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "B+木インデックスはキー値が大小順に並ぶため、等値検索だけでなく範囲検索(BETWEENや≦≧)で連続したリーフを順次たどれる点が強みです。ウのメーカコード4001~4003の範囲検索はインデックスの強みを最大限に発揮できるため正解です。ア・イは「以外」「でもない」という否定条件で、対象行が大半を占めるためインデックススキャンより全表スキャンが選ばれやすく、エのNULL以外も大半の行が該当する上にB+木にはNULLが含まれないインデックスの場合も多く、いずれも改善効果は限定的です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -767,7 +767,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ルータ"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "スイッチングハブ(レイヤ2スイッチ)はMACアドレスを学習してフレームを宛先ポートだけに転送するL2機器で、これと同等機能かつ同じデータリンク層で動作する装置はブリッジでありイが正解です。アのゲートウェイは異なるプロトコル間を中継し階層が高く、ウのリピータは物理層で信号を増幅・整形するL1機器、エのルータはネットワーク層でIPに基づき経路選択するL3機器で、いずれもL2スイッチと同じ階層で動作する装置ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -791,7 +791,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "同一セグメント内の選択された複数のノードに対して、送信元が順番にデータを伝送する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ブロードキャストフレームは宛先MACアドレスにFF:FF:FF:FF:FF:FFを指定し、送信元が一度送出すれば同一セグメント内の全ノードへ届く一斉同報通信であり、アが正解です。イは順番に送るとあるためユニキャストを繰り返している話で一度の送信ではなく、ウ・エは選択された複数のノードに送るマルチキャストの説明で、ブロードキャストの「セグメント内全員に一斉送信」という定義から外れているためいずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -815,7 +815,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "10.16.32.118"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "10.16.32.64/26はサブネットマスク255.255.255.192、アドレス範囲は10.16.32.64~127の64個で、64がネットワークアドレス・127がブロードキャストアドレスのため割当可能なホストは65~126の62台です。末尾から降順で1番目=126、2番目=125…と1ずつ減らすので10番目は126-9=117となりウが正解です。アの54・イの55は別サブネットの値で範囲外、エの118は降順9番目に相当するため、設問の「10番目」の指定とは一致せず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -839,7 +839,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ルータやスイッチの機器内部で動作するソフトウェアを、オープンソースソフトウェア (OSS)で実現する方式"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "OpenFlowを使うSDNでは、フレームの転送を担うデータプレーン(スイッチ等の物理機器)と、転送ルールを決めるコントロールプレーン(コントローラソフト)を分離し、コントローラからネットワーク全体の機器を集中的に制御するアーキテクチャを採るためイが正解です。アは仮想スイッチで完結する仮想ネットワーク、ウはASN.1など形式言語によるプロトコル定義、エは機器内蔵ソフトのOSS化に関する説明で、いずれも制御プレーンを分離・集中する点が欠けているためSDNの本質を表していません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -863,7 +863,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "NISC"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サイバーセキュリティ基本法に基づき内閣官房に設置されたサイバーセキュリティの司令塔機関はNISC(内閣サイバーセキュリティセンター)であり、エが正解です。アのIPAは経済産業省所管の独立行政法人、イのJIPDECは民間の一般財団法人でプライバシーマーク等を運営、ウのJPCERT/CCは民間のCSIRTでインシデント対応に特化しており、いずれも内閣官房直轄の戦略本部機能を担う基本法上の機関ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -887,7 +887,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "素因数分解問題の困難性を利用している。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "楕円曲線暗号(ECC)は楕円曲線上の離散対数問題の困難性を安全性の根拠とする公開鍵暗号方式で、同じ強度を短い鍵長で実現できるためTLSや電子証明書のECDHE/ECDSA等で広く利用されておりウが正解です。アは共通鍵暗号AESの説明、イも共通鍵暗号としており公開鍵暗号である事実と矛盾、エの素因数分解はRSAの安全性の根拠であり楕円曲線とは別の数学問題でいずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -935,7 +935,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "再帰的な問合せを行う際のトランザクションIDを固定する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "キャッシュポイズニング攻撃はDNSキャッシュサーバに偽の応答を覚え込ませる手口で、外部からの再帰的問合せを受け付けるオープンリゾルバ状態が攻撃の窓口になります。対策として再帰問合せを内部ネットワークからの要求に限定する設定が有効でありイが正解です。アはコンテンツとキャッシュを兼ねさせて攻撃面を広げる悪手、ウのポート番号固定とエのトランザクションID固定はいずれも推測されやすくなり攻撃成功率を上げるため、再ランダム化こそが基本でありずれも対策にはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -959,7 +959,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "PCとWeb サーバ間の通信データを暗号化するとともに、利用者を認証することができるようになる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "TLSはPCと接続先サーバ(ここではDMZのWebサーバ)間の通信を暗号化するプロトコルで、クライアント証明書を使うクライアント認証付きTLSではサーバ側がPC利用者本人を証明書で識別できます。したがって暗号化はPC↔Webサーバ間で、利用者認証が成立しエが正解です。ア・イは暗号化区間をDBサーバまで延ばしている点でTLSの設定範囲と矛盾し、ウは利用者証明書でDBサーバの正当性が確認できるとする点が逆方向(サーバ証明書の役割)で、いずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -983,7 +983,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "許容量を超えた大きさのデータをWeb ページに入力することを禁止する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "クロスサイトスクリプティング(XSS)は、入力されたデータがWebページ出力時にHTMLタグやスクリプトとして解釈されることで攻撃者の任意のJavaScriptが実行される脆弱性です。対策の中心は出力時のエスケープ(<を&lt;に変換する等)であり、入力データがタグとして解釈されないようにする処理を施すウが正解です。アのSNMPは機器監視用、イのOSパッチはサーバ自体の脆弱性対策、エの入力長制限はバッファオーバフロー寄りの対策で、いずれもXSSの根本原因である出力時のエスケープ欠如を解消するものではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1007,7 +1007,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "正当な利用者のログインシーケンスを盗聴者が記録してサーバに送信する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ブルートフォース攻撃(総当たり攻撃)はパスワードに使い得るあらゆる文字組合せを順に試してログインを成功させようとする攻撃でありウが正解です。アはセッションハイジャック(Cookie窃取)、イはキーロガー、エはリプレイ攻撃の説明で、いずれもブルートフォースの「全パターンを試行する力ずく」という本質と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1031,7 +1031,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ホワイトボックス検査の一つであり、ソフトウェアの内部構造に注目し、ソースコードの構文をチェックすることによって脆弱性を見つける。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ファジング(fuzzing)はソフトウェアに対し大量かつ多様な、特に異常・境界値・形式不正などの入力を与え、クラッシュ・異常応答・メモリ破壊などを観察して脆弱性を発見する動的検査手法でありイが正解です。アは既知脆弱性の有無を確認するパッチ管理寄りの検査、ウはセキュリティアドバイザリの突合せ、エはソースコードの静的解析(ホワイトボックス)で、いずれも入力データを変化させて挙動を見るというファジングの本質と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1055,7 +1055,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ブロックチェーン"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "取引データのブロック同士をハッシュ値で連結し、複数ノードで分散保有・同期するこの分散台帳技術はブロックチェーンであり、改ざんがあれば連鎖するハッシュが不整合となるため完全性と可用性が高く維持されますのでエが正解です。アのMACは特定鍵による単一メッセージの完全性検証用、イのXML署名はXML文書への電子署名、ウのニューラルネットワークは機械学習モデルで、いずれも分散ノードでの台帳同期と耐改ざん性を実現する仕組みではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1103,7 +1103,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "論理合成して FPGA で動作させるハードウェア論理の記述に用いられる,ハードウェア記述言語"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SysML(Systems Modeling Language)はUMLの仕様を一部流用しつつ要求図・パラメトリック図など機能を拡張した、システム工学向けのグラフィカルなモデリング言語でありイが正解です。アはMathMLなど数式表記用XML、ウはSystemCのようなC/C++ベースの協調設計記述、エはVerilog HDLやVHDLといったハードウェア記述言語の説明で、いずれもUML派生のシステム設計言語というSysMLの位置づけと一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1127,7 +1127,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "Pipes and Filters"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "MVCはModel(業務ロジック・データ)・View(画面表示)・Controller(両者の制御)の3つに役割を分離し、画面変更が業務ロジックへ波及しにくくするアーキテクチャパターンでありウが正解です。アのBrokerは分散オブジェクト間の仲介、イのLayersは水平的な階層分割、エのPipes and Filtersはデータ処理を直列パイプで連結する構造で、いずれも「業務・画面・制御」の三分割を中心的特徴とするMVCとは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1151,7 +1151,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "フォールトトレランス"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "フールプルーフは、不慣れな利用者や誤った操作・不正な入力があっても致命的な誤動作を起こさず、入力チェック・確認ダイアログ・再入力誘導などで安全に処理を続行できるよう設計する考え方でありアが正解です。イのフェールセーフは故障時に安全側へ倒す原則、ウのフェールソフトは故障時に機能縮退で稼働を続ける設計、エのフォールトトレランスは故障があっても運用を維持できる冗長化設計で、いずれも「誤入力の防止と誘導」を主目的とするフールプルーフとは目的と方策が異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1175,7 +1175,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "分岐網羅"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ループ終了条件で≥と>を取り違えると、境界値(A=a)で1回多い/少ない繰返しが発生します。このような境界条件の誤りを検出するには、境界の値と境界±1の値を意図的にテストデータに含める限界値分析が最も有効でありアが正解です。イの条件網羅とエの分岐網羅は論理条件の組合せやTrue/False網羅に着目し境界値の刻みは扱わず、ウの同値分割は等価クラス代表値1つを選ぶ手法で境界の前後を直接突かないため、本誤りの検出能力では限界値分析に及びません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1199,7 +1199,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "毎日決めた時刻にチームメンバが集まって開発の状況を共有し、問題が拡大したり、状況が悪化したりするのを避ける。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "アジャイル開発のイテレーションは、短い開発サイクルで動くソフトウェアを継続的に顧客へ届け、要求とのズレや変化を早期にフィードバックして次サイクルへ反映することを目的としておりアが正解です。イのタスク可視化はカンバン、ウのドライバ・ナビゲータ交代はペアプロのローテーション、エの定時集合はデイリースクラム(朝会)で、いずれもイテレーションそのものの目的というよりは別のプラクティスや運用ルールでありそれぞれの説明としては適切でも本設問の答えではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
