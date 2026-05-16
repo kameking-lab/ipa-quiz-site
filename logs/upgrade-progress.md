@@ -94,3 +94,15 @@ Tokens: in=1910 out=2611 retries=0 cost=$0.0071 (~1.1円)
 - public: 1840字 → 4072字 (U=34.2%, 1 attempts)
 
 Tokens: in=11437 out=15052 retries=0 cost=$0.0411 (~6.2円)
+
+## Run 2026-05-16T00:32:18.817Z — targets: sm
+
+### SM
+- manufacturing: 1937字 → 3821字 (U=33.3%, 1 attempts)
+- construction: 1867字 → 4116字 (U=36.3%, 1 attempts)
+- finance: 1847字 → 4826字 (U=34.7%, 1 attempts)
+- retail: 1747字 → 3834字 (U=34.6%, 1 attempts)
+- telecom: 1801字 → 4368字 (U=38.1%, 1 attempts)
+- public: 1956字 → 4773字 (U=39.5%, 1 attempts)
+
+Tokens: in=11758 out=15606 retries=0 cost=$0.0425 (~6.4円)
