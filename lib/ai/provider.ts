@@ -11,6 +11,7 @@ export interface StreamChatParams {
   model?: string;
   maxTokens?: number;
   temperature?: number;
+  signal?: AbortSignal;
 }
 
 export interface LLMProvider {

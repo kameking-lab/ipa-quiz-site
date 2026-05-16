@@ -67,6 +67,7 @@ export function QuizPlayer({
   const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
   const [showSwipeHint, setShowSwipeHint] = React.useState(false);
+  const [showKeyboardHelp, setShowKeyboardHelp] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
@@ -218,9 +219,17 @@ export function QuizPlayer({
       if (e.key === "r" || e.key === "R") {
         e.preventDefault();
         toggleStar();
+        return;
+      }
+      if (e.key === "?") {
+        e.preventDefault();
+        setShowKeyboardHelp((v) => !v);
+        return;
       }
       if (e.key === "Escape") {
-        if (upsellOpen) {
+        if (showKeyboardHelp) {
+          setShowKeyboardHelp(false);
+        } else if (upsellOpen) {
           setUpsellOpen(false);
         } else if (copilotQuery) {
           setCopilotQuery(null);
@@ -229,7 +238,7 @@ export function QuizPlayer({
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery]);
+  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery, showKeyboardHelp]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -411,17 +420,18 @@ export function QuizPlayer({
               </>
             )}
 
-            {!revealed && (
-              <>
-                <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 [@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
-                  キーボード: 1〜4 で選択 / R であとで復習
-                </div>
-                {showSwipeHint && (
-                  <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
-                    解答後、左スワイプで次の問題へ進めます
-                  </div>
-                )}
-              </>
+            <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 [@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
+              {revealed
+                ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
+                : "キーボード: 1〜4 で選択 / R でスター / ? でヘルプ"}
+            </div>
+            {!revealed && showSwipeHint && (
+              <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">
+                解答後、左スワイプで次の問題へ進めます
+              </div>
+            )}
+            {showKeyboardHelp && (
+              <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
             )}
           </div>
 
@@ -485,6 +495,53 @@ export function QuizPlayer({
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
+    </div>
+  );
+}
+
+function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      role="dialog"
+      aria-label="キーボードショートカット一覧"
+      aria-modal="false"
+      className="mt-4 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900"
+    >
+      <div className="mb-3 flex items-center justify-between">
+        <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
+          キーボードショートカット
+        </span>
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="ショートカット一覧を閉じる"
+          className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+        >
+          ✕
+        </button>
+      </div>
+      <dl className="grid grid-cols-[auto_1fr] gap-x-3 gap-y-2 text-xs">
+        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          1 / 2 / 3 / 4
+        </dt>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">選択肢を選ぶ</dd>
+        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          Enter / →
+        </dt>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">次の問題へ（解答後）</dd>
+        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          R
+        </dt>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">スターをつける / 外す</dd>
+        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          Esc
+        </dt>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">ダイアログを閉じる</dd>
+        <dt className="rounded bg-zinc-100 px-1.5 py-0.5 font-mono font-medium text-zinc-700 dark:bg-zinc-800 dark:text-zinc-300">
+          ?
+        </dt>
+        <dd className="self-center text-zinc-600 dark:text-zinc-400">このヘルプを表示 / 非表示</dd>
+      </dl>
     </div>
   );
 }

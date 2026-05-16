@@ -35,6 +35,9 @@ export function createGeminiProvider(): LLMProvider {
       const chat = model.startChat({ history });
       const stream = await chat.sendMessageStream(last.content);
       for await (const chunk of stream.stream) {
+        if (params.signal?.aborted) {
+          throw new DOMException("Aborted", "AbortError");
+        }
         const text = chunk.text();
         if (text) yield text;
       }

@@ -153,14 +153,33 @@ export async function POST(req: Request) {
 
   const model = resolveModel("free");
 
+  // Aligned with the 200-400字 / 400-600字 character targets in prompts.ts.
+  // 1 Japanese char ≒ 1.5–2 Gemini tokens, so the budgets below give the model
+  // headroom without encouraging it to overshoot the structural target.
   const maxTokens =
     payload.responseLength === "short"
-      ? 240
+      ? 180
       : payload.responseLength === "medium"
-        ? 480
-        : 800;
+        ? 520
+        : 900;
+
+  // Cap upstream latency. If Gemini stalls we abort the underlying stream
+  // rather than holding the HTTP connection open forever.
+  const TIMEOUT_MS = 35_000;
+  const upstreamAbort = new AbortController();
+  const timeoutHandle = setTimeout(() => upstreamAbort.abort(), TIMEOUT_MS);
+
+  // Forward client disconnects to the provider so cancelled tabs don't keep
+  // burning tokens on the server side.
+  const clientSignal = req.signal;
+  const onClientAbort = () => upstreamAbort.abort();
+  if (clientSignal) {
+    if (clientSignal.aborted) upstreamAbort.abort();
+    else clientSignal.addEventListener("abort", onClientAbort, { once: true });
+  }
 
   const encoder = new TextEncoder();
+  let producedAnyChunk = false;
   const stream = new ReadableStream({
     async start(controller) {
       try {
@@ -170,22 +189,56 @@ export async function POST(req: Request) {
           model,
           maxTokens,
           temperature: 0.7,
+          signal: upstreamAbort.signal,
         })) {
+          producedAnyChunk = true;
           controller.enqueue(encoder.encode(chunk));
         }
         controller.close();
       } catch (err) {
-        await captureException(err, {
-          route: "/api/copilot",
-          extra: { provider: provider.name, model },
-        });
-        controller.enqueue(
-          encoder.encode(
-            "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。",
-          ),
-        );
-        controller.close();
+        const aborted =
+          (err as { name?: string } | null)?.name === "AbortError" ||
+          upstreamAbort.signal.aborted;
+        const timedOut = aborted && !clientSignal?.aborted;
+
+        // Client disconnect: nothing to write back, just close.
+        if (aborted && clientSignal?.aborted) {
+          try {
+            controller.close();
+          } catch {
+            // already closed
+          }
+          return;
+        }
+
+        if (!timedOut) {
+          await captureException(err, {
+            route: "/api/copilot",
+            extra: { provider: provider.name, model, producedAnyChunk },
+          });
+        }
+
+        const fallback = timedOut
+          ? producedAnyChunk
+            ? "\n\n[タイムアウト] AI応答が途中で止まりました。短めの設定で再試行するか、もう一度お試しください。"
+            : "\n\n[タイムアウト] AIの応答が間に合いませんでした。混雑時は再試行で改善することがあります。"
+          : "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。";
+
+        try {
+          controller.enqueue(encoder.encode(fallback));
+          controller.close();
+        } catch {
+          // controller may already be closed if the client disconnected mid-error
+        }
+      } finally {
+        clearTimeout(timeoutHandle);
+        clientSignal?.removeEventListener("abort", onClientAbort);
       }
+    },
+    cancel() {
+      // Reader (i.e. the HTTP client) cancelled. Stop the upstream too.
+      upstreamAbort.abort();
+      clearTimeout(timeoutHandle);
     },
   });
 
@@ -197,6 +250,7 @@ export async function POST(req: Request) {
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
+      "X-Timeout-Ms": String(TIMEOUT_MS),
     },
   });
 }
