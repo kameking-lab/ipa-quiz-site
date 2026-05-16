@@ -92,3 +92,23 @@ pnpm build                                # 本番ビルドパス
 ```
 
 すべてパスを確認済。
+
+## 本番反映確認 (Phase 6)
+
+PR #221 マージ済 (2026-05-16T08:40:03Z, merge commit `3e4552b`)。
+ローカル `main` も `origin/main` と一致を確認 (`3e4552b`)。
+
+CI 結果 (merge SHA `3e4552b6`):
+- Validate Question Data: success
+- TypeScript Typecheck: success
+- e2e: success
+
+本番 URL の 404 化検証は、本タスク完了時点で Vercel 本番デプロイが未トリガー状態。
+GitHub Deployments API 上、最新の Production 環境デプロイは `ce043dcc` (2026-05-16T01:20:43Z) で、
+それ以降にマージされた PR #216 〜 #221 すべてが本番未反映。これは本 PR 固有の問題ではなく
+Vercel 側のデプロイキュー／設定問題と推定される。
+
+本 PR の変更が本番に反映されれば、対象 10 URL は `notFound()` ガード経由で 404 を返し、
+次回サイトマップ再生成（`/sitemap.xml`）でもそれらの URL は除外される。
+コード変更とデータ修復は merge commit `3e4552b` 内で完結しているため、
+Vercel デプロイ完了次第、自動的に期待挙動に切り替わる。
