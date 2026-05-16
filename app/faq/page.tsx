@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ChevronDown, HelpCircle, MessageCircle } from "lucide-react";
+import { HelpCircle, MessageCircle } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -42,6 +42,7 @@ export const metadata: Metadata = {
 };
 
 import { FAQS, FAQ_CATEGORY_LABELS, type FaqItem } from "@/data/faq";
+import { FaqItem as FaqItemComponent } from "@/components/faq/FaqItem";
 
 export default function FaqPage() {
   const jsonLd = {
@@ -144,28 +145,13 @@ export default function FaqPage() {
                       runningIndex += 1;
                       const i = runningIndex;
                       return (
-                        <details
+                        <FaqItemComponent
                           key={`${cat}-${i}`}
-                          className="group rounded-2xl border border-border bg-card p-5 shadow-sm transition-all open:border-primary/40 open:shadow-md sm:p-6"
-                        >
-                          <summary className="flex cursor-pointer list-none items-start justify-between gap-4 text-left">
-                            <div className="flex items-start gap-3">
-                              <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary-soft text-xs font-bold text-primary-soft-foreground">
-                                Q{String(i).padStart(2, "0")}
-                              </span>
-                              <span className="text-sm font-semibold leading-relaxed text-foreground sm:text-base">
-                                {f.question}
-                              </span>
-                            </div>
-                            <ChevronDown
-                              aria-hidden="true"
-                              className="mt-1 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200 group-open:rotate-180 group-open:text-primary"
-                            />
-                          </summary>
-                          <div className="mt-4 border-t border-border pt-4 pl-10 text-sm leading-relaxed text-muted-foreground">
-                            {f.answer}
-                          </div>
-                        </details>
+                          index={i}
+                          category={cat}
+                          question={f.question}
+                          answer={f.answer}
+                        />
                       );
                     })}
                   </div>

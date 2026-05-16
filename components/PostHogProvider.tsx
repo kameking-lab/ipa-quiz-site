@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { POSTHOG_CONFIG, isPostHogConfigured, posthogCapture, setPostHogClient } from "@/lib/posthog";
 
@@ -42,11 +42,28 @@ export function PostHogProvider() {
 function PageViewTracker() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
+  const utmFiredRef = useRef(false);
 
   useEffect(() => {
     if (!isPostHogConfigured || !pathname) return;
     const url = searchParams?.toString() ? `${pathname}?${searchParams.toString()}` : pathname;
     posthogCapture("page_view", { path: url });
+
+    // UTM パラメータが存在する流入のみ一度だけ記録
+    if (!utmFiredRef.current && searchParams) {
+      const utmSource = searchParams.get("utm_source");
+      const utmMedium = searchParams.get("utm_medium");
+      const utmCampaign = searchParams.get("utm_campaign");
+      if (utmSource || utmMedium || utmCampaign) {
+        utmFiredRef.current = true;
+        posthogCapture("referrer_with_utm", {
+          utm_source: utmSource ?? null,
+          utm_medium: utmMedium ?? null,
+          utm_campaign: utmCampaign ?? null,
+          landing_path: pathname,
+        });
+      }
+    }
   }, [pathname, searchParams]);
 
   return null;
