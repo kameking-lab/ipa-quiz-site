@@ -1,0 +1,68 @@
+name: Essays Quality Check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/questions/afternoon/**"
+      - "scripts/audit-essays.ts"
+  pull_request:
+    branches: [main]
+    paths:
+      - "data/questions/afternoon/**"
+      - "scripts/audit-essays.ts"
+  workflow_dispatch:
+
+jobs:
+  audit-essays:
+    name: Audit Essay Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run essays quality audit
+        # 致命傷検出時は exit 1 でCIブロック。軽微違反は警告のみ (exit 0)。
+        # 致命傷条件: プレースホルダ検出 OR 字数<1,800 OR 制度名ゼロ OR 合格項目<4
+        run: ./node_modules/.bin/tsx scripts/audit-essays.ts --ci
+
+      - name: Check warning count and annotate PR
+        if: always()
+        run: |
+          REPORT="logs/essays-audit-report.txt"
+          if [ ! -f "$REPORT" ]; then
+            echo "::warning::essays-audit-report.txt が見つかりません"
+            exit 0
+          fi
+
+          WARN_COUNT=$(grep -c '^\s*\[WARN\]' "$REPORT" || echo 0)
+          CRITICAL_COUNT=$(grep -c '^\s*\[CRITICAL\]' "$REPORT" || echo 0)
+          TOTAL=$(grep '総論述バリアント数:' "$REPORT" | grep -oP '\d+' | head -1 || echo 0)
+
+          echo "::notice::Essays監査完了 — 総数: ${TOTAL}, 致命傷: ${CRITICAL_COUNT}, 軽微違反: ${WARN_COUNT}"
+
+          if [ "$WARN_COUNT" -gt "0" ]; then
+            echo "::warning::軽微違反 ${WARN_COUNT} 件を検出。別タスクで改善を検討してください。詳細は artifacts を参照。"
+          fi
+
+      - name: Upload audit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: essays-quality-report
+          path: logs/essays-audit-report.txt
+          if-no-files-found: ignore
+          retention-days: 30
