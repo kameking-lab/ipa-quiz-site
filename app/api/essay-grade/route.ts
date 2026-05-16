@@ -4,6 +4,7 @@ import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
+import { checkIpRateLimit } from "@/lib/rate-limit";
 import { findEssayQuestion } from "@/lib/essay/load";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import type {
@@ -282,6 +283,14 @@ export async function POST(req: Request) {
         : "少し速いようです。1分ほど待ってから再度お試しください。";
     return NextResponse.json(
       { error: "rate_limited", message, reason: rl.reason, resetAt: rl.resetAt },
+      { status: 429, headers: { "X-Error-Type": "rate_limited" } },
+    );
+  }
+
+  const ipRl = await checkIpRateLimit(req, "essay-grade");
+  if (!ipRl.ok) {
+    return NextResponse.json(
+      { error: "rate_limited", message: "リクエストが集中しています。しばらく待ってから再試行してください。", reason: ipRl.reason, resetAt: ipRl.resetAt },
       { status: 429, headers: { "X-Error-Type": "rate_limited" } },
     );
   }
