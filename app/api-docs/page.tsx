@@ -51,7 +51,7 @@ export default function ApiDocsPage() {
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <Stat label="エンドポイント" value="3" sub="exams / questions / grade" />
           <Stat label="認証" value="Bearer" sub="任意（無くても動作）" />
-          <Stat label="レート制限" value="50/日" sub="1 分 15 リクエスト" />
+          <Stat label="レート制限" value="10/日" sub="1 分 15 リクエスト" />
         </div>
       </header>
 
