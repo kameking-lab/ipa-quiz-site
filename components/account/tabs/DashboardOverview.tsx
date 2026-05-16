@@ -3,16 +3,15 @@
 import * as React from "react";
 import Link from "next/link";
 import { BookOpen, Clock, Flame, Target, TrendingUp, ArrowRight } from "lucide-react";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readStreak } from "@/lib/streak/storage";
 import { examLabel } from "@/lib/utils";
 import {
-  computeCategoryStats,
   computeExamProbabilities,
   daysUntilNextExam,
   estimateStudyMinutes,
   type ExamPassProbability,
+  type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
 import { LearningHeatmap } from "@/components/motivation/LearningHeatmap";
@@ -39,26 +38,43 @@ function loadHistoryEntries(): HistoryEntry[] {
   }
 }
 
+async function fetchQuestionMeta(ids: string[]): Promise<QuestionMeta[]> {
+  if (ids.length === 0) return [];
+  try {
+    const res = await fetch("/api/questions/meta", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids }),
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { meta: QuestionMeta[] };
+    return json.meta;
+  } catch {
+    return [];
+  }
+}
+
 export function DashboardOverview() {
   const [data, setData] = React.useState<OverviewData | null>(null);
 
   React.useEffect(() => {
     const entries = loadHistoryEntries();
     const streak = readStreak();
-    const categoryStats = computeCategoryStats(entries, ALL_QUESTIONS);
-    const examProbs = computeExamProbabilities(entries, ALL_QUESTIONS);
-    const examTopProb = [...examProbs].sort((a, b) => b.passProbability - a.passProbability)[0];
     const exam = daysUntilNextExam();
-    void categoryStats;
-     
-    setData({
-      totalAnswered: entries.length,
-      studyMinutes: estimateStudyMinutes(entries.length),
-      streak: streak.currentStreak,
-      longestStreak: streak.longestStreak,
-      daysToExam: exam.days,
-      examLabel: exam.label,
-      examTopProb,
+    const uniqueIds = [...new Set(entries.map((e) => e.id))];
+
+    void fetchQuestionMeta(uniqueIds).then((meta) => {
+      const examProbs = computeExamProbabilities(entries, meta);
+      const examTopProb = [...examProbs].sort((a, b) => b.passProbability - a.passProbability)[0];
+      setData({
+        totalAnswered: entries.length,
+        studyMinutes: estimateStudyMinutes(entries.length),
+        streak: streak.currentStreak,
+        longestStreak: streak.longestStreak,
+        daysToExam: exam.days,
+        examLabel: exam.label,
+        examTopProb,
+      });
     });
   }, []);
 

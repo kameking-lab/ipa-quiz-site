@@ -12,7 +12,6 @@ import {
   Tooltip,
 } from "recharts";
 import { ArrowRight } from "lucide-react";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { examLabel } from "@/lib/utils";
 import {
@@ -21,6 +20,7 @@ import {
   radarSlots,
   type CategoryStat,
   type ExamPassProbability,
+  type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
 
@@ -44,20 +44,39 @@ function loadHistoryEntries(): HistoryEntry[] {
   }
 }
 
+async function fetchQuestionMeta(ids: string[]): Promise<QuestionMeta[]> {
+  if (ids.length === 0) return [];
+  try {
+    const res = await fetch("/api/questions/meta", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ids }),
+    });
+    if (!res.ok) return [];
+    const json = (await res.json()) as { meta: QuestionMeta[] };
+    return json.meta;
+  } catch {
+    return [];
+  }
+}
+
 export function DashboardProgress() {
   const [data, setData] = React.useState<ProgressData | null>(null);
 
   React.useEffect(() => {
     const entries = loadHistoryEntries();
-    const categoryStats = computeCategoryStats(entries, ALL_QUESTIONS);
-    const examProbs = computeExamProbabilities(entries, ALL_QUESTIONS);
-     
-    setData({
-      totalAnswered: entries.length,
-      correctCount: entries.filter((e) => e.correct).length,
-      uniqueAnswered: new Set(entries.map((e) => e.id)).size,
-      categoryStats,
-      examProbs,
+    const uniqueIds = [...new Set(entries.map((e) => e.id))];
+
+    void fetchQuestionMeta(uniqueIds).then((meta) => {
+      const categoryStats = computeCategoryStats(entries, meta);
+      const examProbs = computeExamProbabilities(entries, meta);
+      setData({
+        totalAnswered: entries.length,
+        correctCount: entries.filter((e) => e.correct).length,
+        uniqueAnswered: uniqueIds.length,
+        categoryStats,
+        examProbs,
+      });
     });
   }, []);
 
