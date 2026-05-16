@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
@@ -203,6 +204,8 @@ export default async function QuestionPage({
             x.topicTags.some((t) => tagSet.has(t)),
         ).slice(0, 5)
       : [];
+
+  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 2);
 
   const pageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const examPath = `/${q.exam}`;
@@ -830,6 +833,34 @@ export default async function QuestionPage({
                     {r.question.slice(0, 140)}
                     {r.question.length > 140 ? "…" : ""}
                   </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {relatedBlogPosts.length > 0 && (
+        <section aria-label="この試験区分の学習ガイド" className="print:hidden mt-10">
+          <h2 className="mb-3 text-base font-bold tracking-tight text-foreground">
+            {examLabel(q.exam)} の学習ガイド
+          </h2>
+          <ul className="flex flex-col gap-2">
+            {relatedBlogPosts.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start justify-between gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <div className="min-w-0">
+                    <p className="text-sm font-medium text-foreground group-hover:text-primary">
+                      {p.title}
+                    </p>
+                    <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+                      {p.description}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
                 </Link>
               </li>
             ))}

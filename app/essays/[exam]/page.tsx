@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Shield, FileText, AlertTriangle, ArrowRight } from "lucide-react";
+import { Shield, FileText, AlertTriangle, ArrowRight, BookOpen } from "lucide-react";
+
+import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
 import {
   ESSAY_EXAM_CODES,
@@ -66,6 +68,7 @@ export default async function EssayExamPage({
 
   const label = examLabel(exam);
   const pageUrl = `${SITE_BASE_URL}/essays/${exam}`;
+  const relatedPosts = getRelatedBlogPosts(exam, 3);
   const description = `${label} 午後II 論述問題の業種別合格答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
 
   const jsonLd = {
@@ -211,6 +214,43 @@ export default async function EssayExamPage({
           </Link>
         </div>
       </section>
+
+      {relatedPosts.length > 0 && (
+        <section aria-label="関連学習ガイド" className="mt-8">
+          <h2 className="mb-3 flex items-center gap-2 text-base font-semibold text-zinc-800 dark:text-zinc-100">
+            <BookOpen className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+            {label} の学習ガイド
+          </h2>
+          <ul className="space-y-2">
+            {relatedPosts.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-sky-300/60 hover:shadow-md"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                      {p.title}
+                    </p>
+                    <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+                      {p.description}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-sky-600 dark:group-hover:text-sky-400" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-3 text-right">
+            <Link
+              href="/blog"
+              className="text-xs text-sky-600 hover:underline dark:text-sky-400"
+            >
+              学習ガイド一覧を見る →
+            </Link>
+          </div>
+        </section>
+      )}
     </main>
   );
 }
