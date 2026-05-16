@@ -9,6 +9,10 @@ const KeyboardShortcutsHelp = dynamic(
   () => import("@/components/KeyboardShortcutsHelp").then((m) => m.KeyboardShortcutsHelp),
   { ssr: false },
 );
+const FeedbackButton = dynamic(
+  () => import("@/components/FeedbackButton").then((m) => m.FeedbackButton),
+  { ssr: false },
+);
 const AiQuotaIndicator = dynamic(
   () => import("@/components/AiQuotaIndicator").then((m) => m.AiQuotaIndicator),
   { ssr: false },
@@ -61,6 +65,7 @@ export function DeferredLayoutWidgets() {
   return (
     <>
       <KeyboardShortcutsHelp />
+      <FeedbackButton />
       <AiQuotaIndicator />
       <StreakTracker />
       <BadgeTracker />
