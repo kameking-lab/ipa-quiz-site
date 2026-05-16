@@ -1,0 +1,141 @@
+refine/content-quality-polish — 最終報告
+================================================================
+
+【ブランチ・PR】
+ブランチ        : refine/content-quality-polish (削除済み / マージ後)
+PR              : #242 https://github.com/kameking-lab/ipa-quiz-site/pull/242
+PRタイトル      : refine(content): polish essays minor violations and recommended quality issues
+マージSHA       : 20941631b0db341565091b7260dcadd56c328639
+マージ日時      : 2026-05-16T13:26:04Z
+ベース          : cc2a8da (PR #238 merge of chore/seo-final-polish)
+main HEAD       : 20941631 (本PRマージ済み)
+
+【軽微違反 before / after】
+監査時点        : audit-essays.ts (scripts/audit-essays.ts) のスキャン結果
+本数            : 全120バリアント
+致命傷          : 0 → 0
+軽微違反        : 39 → 0
+全項目合格      : 81/120 (67.5%) → 120/120 (100.0%)
+
+7項目別合格率の推移
+  (a) 字数 ≥2200          : 100.0% → 100.0%
+  (b) 設問ウ比率 ≥25%      :  97.5% → 100.0%
+  (c) 業種固有制度名 ≥3件 :  79.2% → 100.0%
+  (d) 推進課題パラグラフ ≥2: 97.5% → 100.0%
+  (e) 定量効果 ≥2         : 100.0% → 100.0%
+  (f) キャラクター設定    :  90.8% → 100.0%
+  (g) プレースホルダ無し  : 100.0% → 100.0%
+
+【推奨課題対応一覧】
+logs/comprehensive-harsh-review-latest.md の推奨14件 (#009-#022) を精査。
+本Dispatchのスコープ (data/questions/afternoon/*-industries.ts 加筆 + logs/) で
+対応可能な品質系は0件であった。
+
+理由: 推奨14件はすべて以下の領域に存在し、領域分離原則のため別Dispatchで処理。
+  #009 Stripe残骸6箇所     → 別Dispatch (app/admin, app/analytics 等)
+  #010 essay-grading API   → 別Dispatch (app/api/essay-grading)
+  #011 stream系デッドコード → 別Dispatch (components/quiz/stream)
+  #012 トップレベルコンポデッド → 別Dispatch (components/*)
+  #013 i18n dead infra     → 別Dispatch (lib/i18n)
+  #014 lib デッドファイル  → 別Dispatch (lib/audio 等)
+  #015 disclaimer 11px     → 別Dispatch (components/quiz/ExplanationCard.tsx)
+  #016 transparency月次    → 別Dispatch (app/transparency/page.tsx)
+  #017 URLホスト不整合     → 別Dispatch (app/api-docs 等)
+  #018 blog年次更新        → 別Dispatch (data/blog/generators.ts)
+  #019 ホーム情報密度      → 別Dispatch (app/page.tsx)
+  #020 /stats 準備中       → 別Dispatch (app/stats/page.tsx)
+  #021 api-docs RL値検証   → 別Dispatch (app/api-docs/page.tsx)
+  #022 operator E-E-A-T    → 別Dispatch (app/operator, app/about)
+
+【加筆領域別の修復内容】
+バッチ1 (Phase 2a) - (f) キャラクター設定 11件
+  healthcare 9件 + retail 1件 + 重複(au/2025/healthcare の(d))1件
+  essayA冒頭400字以内に「病床数約X床/医師数約Y名/看護師数約Z名/職員数約W名」を追加挿入
+  retail (sm/2024)はessayA冒頭に「売上高約3,800億円/従業員数約12,000名/店舗数約1,200店」
+  +PCI DSS+改正個人情報保護法を追加。
+
+バッチ2 (Phase 2b) - (c) IT・情報サービス業 10件
+  ISMS認証(ISO27001) + プライバシーマーク + 個人情報保護法を業種コンテキストで追記
+  全essaysでクラウドサービス事業者としての内部統制整備を明示。
+
+バッチ3 (Phase 2c) - (c) 他業種 14件
+  finance        : 銀行法/金商法/犯罪収益移転防止法/FISC安全対策基準/PCI DSS/AML
+  telecom        : 改正電気通信事業法/通信の秘密/電波法/不正アクセス禁止法/プロバイダ責任制限法
+  manufacturing  : IATF16949/ISO9001/PL法(製造物責任法)/改正電子帳簿保存法/労働安全衛生法
+  retail         : HACCP/改正個人情報保護法/特定商取引法/景品表示法/PCI DSS
+  public         : 地方自治法/行政手続法/マイナンバー(番号法)/政府情報セキュリティ統一基準/行政DX
+
+バッチ4 (Phase 2d) - (b) 設問ウ比率 3件
+  au/2024 IT / sm/2024 healthcare / sm/2024 IT
+  essayUに総括段落を250-400字加筆。継続改善ロードマップ(継続演習・年次見直し等)。
+
+バッチ5 (Phase 2d) - (d) 推進課題パラグラフ 2件
+  au/2025 IT / sa/2024 healthcare
+  essayAにリスク識別・経営課題顕在化の段落を挿入。
+  (au/2025 healthcare の(d)は Phase 2a の(f)修正時に副次的に解消)
+
+【検証結果】
+pnpm typecheck        : PASS
+pnpm lint             : PASS
+pnpm build            : PASS (全essayルート生成成功)
+pnpm audit:essays     : PASS (致命傷0/軽微違反0/全項目合格120/120)
+CI/Validate Question Data    : success
+CI/TypeScript Typecheck      : success
+CI/Audit Essay Quality       : success (新規essays品質チェック)
+CI/e2e                       : failure (pre-existing infra issue。origin/main HEAD でも同様にfail。本PRとは無関係)
+Vercel デプロイ              : failure (build rate limit, account-level制約。コードレベルの問題ではない)
+
+【API コスト】
+Claude Maxプラン内完結。追加API課金なし (Gemini/外部API不使用)。
+
+【加筆ファイル一覧】(全11ファイル、最新コミットSHA順)
+data/questions/afternoon/au/2023-autumn-industries.ts (commit: 68ad387)
+data/questions/afternoon/au/2024-autumn-industries.ts (commit: c48c6d6 + 6a32ea5)
+data/questions/afternoon/au/2025-autumn-industries.ts (commit: 68ad387 + 6a32ea5)
+data/questions/afternoon/pm/2023-spring-industries.ts (commit: 68ad387)
+data/questions/afternoon/pm/2024-spring-industries.ts (commit: eea24f2 + c48c6d6)
+data/questions/afternoon/pm/2025-spring-industries.ts (commit: 68ad387)
+data/questions/afternoon/sa/2023-spring-industries.ts (commit: 68ad387)
+data/questions/afternoon/sa/2024-spring-industries.ts (commit: eea24f2 + c48c6d6 + 6a32ea5)
+data/questions/afternoon/sa/2025-spring-industries.ts (commit: 68ad387)
+data/questions/afternoon/sm/2023-autumn-industries.ts (commit: 68ad387)
+data/questions/afternoon/sm/2024-autumn-industries.ts (commit: 68ad387 + eea24f2 + c48c6d6 + 6a32ea5)
+data/questions/afternoon/sm/2025-autumn-industries.ts (commit: 68ad387)
+data/questions/afternoon/st/2023-spring-industries.ts (commit: 68ad387 + eea24f2)
+data/questions/afternoon/st/2024-spring-industries.ts (commit: c48c6d6)
+data/questions/afternoon/st/2025-spring-industries.ts (commit: 68ad387 + eea24f2)
+
+【3行抜粋(代表3ファイル)】
+AU 2023 healthcare essayA:
+  T病院は病床数約500床、医師数約180名、看護師数約540名、職員数約820名を擁し、
+  年間外来約42万人・入院延べ約18万人を取り扱う急性期病院で、地域医療支援病院の
+  認定を受けている。
+
+AU 2023 IT essayA:
+  BB社はISMS認証(ISO27001)およびプライバシーマークを継続維持し、個人情報保護法
+  に基づく内部統制を整備している。
+
+PM 2024 finance essayA:
+  銀行法・金商法・犯罪収益移転防止法に基づくAML対応、ならびにFISC安全対策基準
+  への継続準拠が経営要件として課されている。
+
+【作業ログ commit/push】
+c055448 chore: alive marker for content quality polish
+49bea24 docs(content-polish): record violations baseline and execution plan
+68ad387 refine(essays): add organizational size info to clear (f) character-setup violations
+eea24f2 refine(essays): add ISMS/ISO27001/プライバシーマーク to IT essays for (c) industry terms
+c48c6d6 refine(essays): add industry compliance terms for finance/telecom/manufacturing/retail/public
+6a32ea5 refine(essays): clear last 5 violations — (b) essayU ratio + (d) challenge paragraphs
+20941631 (merge commit on main)
+
+【停止条件チェック】
+軽微違反のうち15件以上が「修復困難・別タスク化推奨」 : 該当なし (全39件修復完了)
+既存essays字数を大幅超過(5,000字以上)するリスクが多発 : 該当なし (各essay字数増は元の8-15%程度)
+
+【本番反映状況】
+Vercel デプロイは Hobbyプラン daily build rate limit によりこのコミットでは完了せず。
+2024 essays は本番で 200 を返すが、ヘッダ X-Vercel-Cache: HIT, Age: 47s で
+前ビルドの静的キャッシュを配信中。次の手動 redeploy または日次リセット後に
+本PRの加筆内容が本番反映される。
+2023 essays URL (/essays/au/2023-autumn/pm2/q1 等) は sitemap 未登録 (404) で、
+sitemap生成ロジック上の挙動。今回の加筆作業とは無関係。
