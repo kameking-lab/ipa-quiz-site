@@ -3,6 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AlertTriangle, BookOpen, ChevronLeft, Shield } from "lucide-react";
 
+import { ViewTracker } from "@/components/analytics/ViewTracker";
+
 import {
   ESSAY_EXAM_CODES,
   getEssayQuestionsByExam,
@@ -100,6 +102,15 @@ export default async function EssayPm2DetailPage({
 
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+      <ViewTracker
+        event="essay_viewed"
+        props={{
+          exam: resolved.exam,
+          year: question.year,
+          season: question.season,
+          q_number: question.qNumber,
+        }}
+      />
       <Link
         href={`/essays/${resolved.exam}`}
         className="mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"

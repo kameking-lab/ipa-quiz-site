@@ -71,6 +71,7 @@ export function QuizPlayer({
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
+  const quizStartedFiredRef = React.useRef(false);
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
@@ -80,6 +81,17 @@ export function QuizPlayer({
       localStorage.setItem(LS_KEYS.swipeHintShown, "true");
     }
   }, []);
+
+  // 最初の問題がロードされた瞬間に quiz_started を一度だけ送信
+  React.useEffect(() => {
+    if (quizStartedFiredRef.current || !question) return;
+    quizStartedFiredRef.current = true;
+    posthogCapture("quiz_started", {
+      exam: question.exam,
+      mode,
+      total,
+    });
+  }, [question, mode, total]);
 
   React.useEffect(() => {
     const id = setInterval(() => setElapsed((e) => e + 1), 1000);
