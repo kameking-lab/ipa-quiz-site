@@ -23,7 +23,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "無相関のときは、相関係数が-1になる。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "相関係数は、2変量の直線的な関係の強さを-1から+1の範囲で示す指標です。全ての標本点が正の傾きをもつ直線上に並ぶ場合、変量間に完全な正の比例関係があり相関係数は+1になります。イは変量間の関係が線形なら±1に近づくため誤り、ウは非線形関係では相関係数の値は一意に定まらず必ずしも負ではないため誤り、エは無相関のときの相関係数は0であり-1ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +47,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "128"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "R0={0,3,6,9}、R1={1,4,7}、R2={2,5,8}を踏まえて各候補を導出します。「123」は<A>::=<A><R0>で末尾「3」がR0、残る「12」は<A>::=<B><R2>で末尾「2」がR2、最後の「1」は<B>::=<R1>でR1と展開でき導出可能です。イ「124」は末尾4がR1ですが<A>に<A><R1>規則がなく<C><R1>を要し<C>「12」の導出が成立しません。ウ「127」、エ「128」も同様に途中の非終端記号の展開に詰まり生成不可能です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -71,7 +71,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "0.95"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "可変長符号での平均符号長は、各文字の出現確率と符号長の積の総和で計算します。a:0.4×1、b:0.3×2、c:0.2×3、d:0.1×3を足すと0.4+0.6+0.6+0.3=1.9ビット/文字となります。元の固定長は2ビット/文字なので、変換後/変換前の比は1.9÷2=0.95でエが正解です。ア・イ・ウはそれぞれ符号長の取り違えや確率の重み付け誤りによる値で、いずれも上記の計算結果と合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +95,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "各符号位置が4バイトの固定長で表現される符号化形式である。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "UTF-8はUnicode符号位置を1～4バイト(規格上は最大6バイト)の可変長で符号化し、ASCII範囲(U+0000～U+007F)は1バイトでASCIIと完全互換になるためアが正解です。イはBMP外の文字を上位/下位サロゲートの2ワードで表す手法でUTF-16の説明、ウはASCII範囲の7ビットに変換するUTF-7やQuoted-printableの説明、エは全符号位置を4バイト固定で表すUTF-32の説明で、いずれもUTF-8とは別の方式のため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +119,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "幅優先探索"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "配列の添字1を根、左の子=2i、右の子=2i+1として2分木を表現すると、添字を1,2,3,4,…と先頭から順に走査することは、根→深さ1の左右ノード→深さ2の4ノード…と深さの浅い順に訪れる動きになります。これは幅優先探索(BFS)の訪問順そのものでエが正解です。ア(行きがけ順)・イ(帰りがけ順)・ウ(通りがけ順)はいずれも深さ優先探索の訪問順で、深さを先に潜るため添字順とは一致せず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +143,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "01100\n10100\n11011\n00101\n00110"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "5ノードの木は無向で連結、エッジ数がn-1=4本、閉路を持たないグラフです。隣接行列は対称で、上三角成分の1の個数がエッジ数に一致します。アは閉路1-2-3-4-5-1を含み非木、ウは行3にエッジが3本ありかつ閉路があり非木、エはエッジが多すぎて閉路が複数あるため非木です。イは対称で上三角の1が4個、ノード5への接続も維持され、4本のエッジで5ノードを連結しつつ閉路を作らないため木の条件を満たし正解です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +167,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "if n=0 then return 1 else return n× fact (n+1)"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "階乗の定義は0!=1、n!=n×(n-1)!です。再帰関数は基底ケースで0のとき1を返し、再帰ケースでn×fact(n-1)を呼ぶ必要があります。アは基底ケースが0を返すため任意のnでfact(n)=0となり階乗にならず誤り、イも基底0かつn+1への再帰で停止せず誤り、エは基底は1で正しいがn+1へ再帰するため減らず無限再帰となり誤りです。ウのみ基底1かつnを減らす再帰で正しく階乗を計算します。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +215,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "主記憶を複数の独立したグループに分けて、各グループに交互にアクセスすることによって、主記憶へのアクセスの高速化を図る。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "メモリインタリーブは、主記憶を複数の独立したバンク(モジュール)に分割し、連続するアドレスを別バンクへ交互に割り当てることで、複数のメモリアクセスをパイプライン的に重ねて並行処理し、見かけのアクセス速度を高める技法です。エが正解です。アはディスクキャッシュ、イはキャッシュメモリ、ウは前のアクセスが終わってから次に進む直列方式の説明で、いずれも並列化によるインタリーブの本質と異なり誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +239,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "バッテリ消費量が少なく、一つの基地局で広範囲をカバーできる無線通信技術であり、複数のセンサが同時につながるネットワークに適している。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "LPWA(Low Power Wide Area)はSigfox・LoRaWAN・NB-IoTなどに代表される無線通信規格群で、低消費電力でセンサーを電池駆動のまま長期間稼働させつつ、1基地局で数km～数十kmの広域をカバーし多数のIoT端末を同時収容できる特徴を持ちます。アはI2C等の有線シリアル通信、イはWiGig(60GHz帯)、ウはPLC(電力線通信)の説明で、いずれもLPWAの説明ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +263,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "r・x+(1-r) y"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ヒット時はキャッシュアクセス時間xだけかかり、ミス時(確率r)は主記憶アクセス時間yがかかります。平均アクセス時間=(1-r)×x+r×yとなり、イが正解です。ア・ウは容量比a/(a+b)で時間を加重平均しており、キャッシュとメモリの「容量」で時間を按分する誤った発想で実際のヒット率とは無関係なため誤りです。エはxにミス率r、yにヒット率(1-r)を掛けており、ヒット率とミス率を取り違えているため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +287,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "モノリシックカーネル"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ハイパバイザは、1台の物理ハードウェア上で複数のゲストOSを同時実行できるよう、CPU・メモリ・I/Oデバイスを仮想化して各仮想マシンに割り当てる制御ソフトウェアです。VMware ESXi、Xen、KVM、Hyper-Vなどが該当しウが正解です。アのシストリックアレイは特定演算向けの並列計算機構造、イのデスクトップグリッドは多数のPCを束ねる分散計算、エのモノリシックカーネルはOSカーネルの構成方式で、いずれも仮想化制御機能ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -311,7 +311,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "予防保守"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "MTBF(平均故障間隔)は故障しにくさ、MTTR(平均修復時間)は故障から復旧する速さの指標です。MTTRを短くするには故障発生後に原因を素早く特定して修復することが鍵になります。アのエラーログ取得機能は障害時の状況記録から原因究明を早めるためMTTR短縮に直結し正解です。イ・ウの誤り訂正や命令再試行は故障の顕在化自体を抑える機能のためMTBFを延ばす方向、エの予防保守も故障発生を未然に防ぐためMTBF側で、MTTR短縮には直接寄与しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -335,7 +335,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "60"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "1日54000件の20%がピーク1時間に集中するため、ピーク1時間のトランザクション数は54000×0.2=10800件です。1件あたりのCPU時間は、レコードアクセス100件×1ms=100ms と計算100msを合計し200ms。ピーク1時間の総CPU時間は10800×200ms=2,160,000ms=2160秒となります。1時間=3600秒に占める比率は2160÷3600=0.6=60%でエが正解です。ア・イ・ウは要素計算の取りこぼし・取り違えによる値です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +359,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "14"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "多重度1で到着順に実行するため処理タイムラインは次のとおりです。Aは時刻0に到着し0～5で実行、Bは時刻2に到着しAの終了を待って5～11で実行、Cは時刻3に到着しBの終了を待って11～14で実行されます。Cの到着が時刻3、終了が時刻14なので、ターンアラウンドタイムは14-3=11秒となりアが正解です。イ・ウ・エは待ち時間または処理時間の積算ミスによる値です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -383,7 +383,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "待ち状態"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "プリエンプションとは、より優先度の高いタスクの実行要求や時間切れ(タイムスライス満了)により、実行中タスクをCPUから強制的に降ろす制御です。降ろされたタスクは資源待ちには入らず、CPUが空けば即座に再開できる「実行可能状態(レディ状態)」に戻るためイが正解です。ア(休止状態)は明示的に停止された状態、ウ(終了状態)は処理完了、エ(待ち状態)はI/Oやセマフォ等の事象待ちで、いずれもプリエンプションの遷移先ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +407,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ページフォールト"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "スラッシングは、多重プログラミング度が高すぎたり主記憶不足のため、各プロセスが必要なページを保持できずページフォールトとページの追い出し(スワップ)が頻発し、CPUがほとんど実処理に進めなくなりスループットが急落する現象でアが正解です。イのスワップアウトはプロセス全体を二次記憶に退避する個別の動作、ウのフラグメンテーションは記憶領域の断片化、エのページフォールトはページ不在割込みそのもので、いずれもシステム能力急低下の現象名ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +431,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "タスクに優先順位を付けることによって、容易に実現することができる。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ラウンドロビン方式は、待ち行列の先頭タスクに一定のタイムスライス(時間量)を割り当て、使い切れば末尾に戻して次のタスクに切り替える方式です。応答時間が利用者間で均等化するため、対話的なタイムシェアリングシステムに適しておりウが正解です。アのリアルタイム制御は優先度ベースが適切、イはタイマ割込みが前提のためタイマ機能なしでは実現困難、エの優先度付けはラウンドロビンの本質と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +455,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "大規模なデータを分散処理するためのソフトウェアライブラリ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "Hadoopは大規模データを多数のサーバに分散して並列処理するためのオープンソースソフトウェア基盤で、分散ファイルシステムHDFSと分散処理フレームワークMapReduceを中核として構成されエが正解です。アはJBoss・WebLogic等のJava EEアプリケーションサーバ、イはApache HTTP Server等のWebサーバ、ウはOracle・PostgreSQL等のRDBMSの説明で、いずれもHadoopの主目的である大規模分散処理基盤とは別ジャンルです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -479,7 +479,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "メモリセルにフリップフロップを用いてデータを保存する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "DRAMはコンデンサ1個とトランジスタ1個でメモリセルを構成するため集積度が高く、SRAM(フリップフロップで4～6トランジスタ)と比べてビット当たりの単価が安く、大容量の主記憶用途に適しておりウが正解です。アのキャッシュ用途、イのリフレッシュ不要、エのフリップフロップ構成はいずれもSRAM側の特徴で、コンデンサで電荷を保持し定期的なリフレッシュを必要とするDRAMの説明とは逆になるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -527,7 +527,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "システムが一定時間異常であった場合、上位の管理プログラムを呼び出す。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ウォッチドッグタイマは、組込みシステムが正常動作中に定期的にタイマをクリア(キック)し続けることを前提とした監視機構です。設定時間内にクリアされない場合は、ソフトウェア暴走や無限ループでシステムが応答不能と判断し、リセットや安全停止を発動しますのでアが正解です。イ・ウは異常検出後の通知方法の話、エは管理プログラム呼び出しで、いずれも「クリアの不在で異常を検知する」というウォッチドッグの根本動作と一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -575,7 +575,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "平均的能力をもった人々に対して、標準的なアクセシビリティが達成できるようにする。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "JIS X 8341-1:2010は、高齢者や障害のある利用者を含む多様な人々の利用状況を踏まえ、できるだけ多くの個人のアクセシビリティ水準を改善することを目的とする共通指針でイが正解です。ア「全ての個人に等しい水準」は身体特性が多様なため目標として現実的でなく、ウ「人間工学規格より高い水準」を一律に求める規格ではなく、エ「平均的能力の人々に標準的水準」では本来支援すべき多様な利用者を取りこぼすため、いずれも趣旨と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -599,7 +599,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "TIFF"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SVG(Scalable Vector Graphics)は、W3Cが標準化したXMLベースのベクター画像形式で、矩形・円・直線・テキストなどを座標と属性で記述するため拡大縮小しても劣化せず、Webページの図形描画にHTML/CSS/JavaScriptと組み合わせて利用できるためウが正解です。アのOpenGLは3DグラフィックスAPI、イのPNGは可逆圧縮のラスタ画像、エのTIFFはタグ付きラスタ画像形式で、いずれもW3C仕様のXMLベクター画像ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -623,7 +623,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "データが格納されているディスク装置へのI/O 回数を減少させる。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ストアドプロシージャは、複数のSQL文や手続き型処理をDBMSサーバにあらかじめ登録しておき、クライアントは手続き名と引数だけを送って呼び出す仕組みです。個々のSQL文をクライアントから送らずに済むためネットワーク経由の通信量が大きく削減されアが正解です。イの実行計画数の削減は副次効果に過ぎず、ウのバッファ数削減やエのディスクI/O削減は本質的な利点ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -647,7 +647,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "冗長性が排除され、データの整合性を保ちやすくなる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "第3正規形は、第2正規形を満たした上で非キー属性間の推移的関数従属を排除した形で、データの重複(冗長性)を取り除き、更新・挿入・削除時の異常を防いでデータ整合性を保ちやすくする効果があり、エが正解です。アは画面様式を行に対応させる非正規化の話、イは正規化により表が分割され結合が必要になるため逆方向で誤り、ウのデッドロック回避はトランザクション制御の話で正規形の効果ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -671,7 +671,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "REFERENCES"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "関係代数の射影は重複行を除去する演算ですが、素のSELECT A, C FROM Tはタプルの重複を残すため、表Tから(a1,c1)・(a1,c2)・(a1,c1)・(a2,c2)・(a2,c2)の5行が返り重複が出ます。SELECT DISTINCTを使うと(a1,c1)(a1,c2)(a2,c2)の3行だけが残り射影結果と一致しイが正解です。ア(ALL)は重複を残し意味的に省略時と同等、ウ(ORDER BY)は並び替えのみで重複除去はせず、エ(REFERENCES)は外部キー制約の指定で射影とは無関係のため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -719,7 +719,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ニューラルネットワークや統計解析などの手法を使って、大量に蓄積されているデータから、特徴あるパターンを探し出す。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "データマイニングは、ニューラルネットワークや統計解析・機械学習・アソシエーション分析などの手法を用いて、大量に蓄積されたデータから人が気付きにくい特徴的なパターンや相関ルールを自動的に抽出する技術でエが正解です。アはデータウェアハウス、イはデータマート、ウはスライシング・ダイシング・ドリルダウンを行うOLAPの説明で、いずれもデータマイニングのような知識発見ではなくデータの蓄積や対話的集計が主目的の概念です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -743,7 +743,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "最長32オクテットのホスト識別子であり、ネットワーク上で一意である。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SSIDは無線LANで接続先アクセスポイント(AP)を識別するための最長32オクテット(英数字・記号で構成)のネットワーク識別子で、クライアントが接続先APを選択する際に使われますのでウが正解です。ア・イの48ビット識別子はMACアドレスやBSSIDの説明で識別範囲が異なり、エの「ホスト識別子で一意」はホスト名やUUIDの説明で、いずれもSSIDの定義とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -767,7 +767,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "5.8"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "実効転送速度は8Mbps×0.6=4.8Mbpsで、これは0.6Mバイト/秒に相当します。上り1Mバイトに1÷0.6≒1.67秒、下り2Mバイトに2÷0.6≒3.33秒、計5.0秒の通信時間がかかります。これにクライアントの処理0.4秒、サーバの処理0.4秒を足すと、合計約5.8秒となりエが正解です。ア・イ・ウは伝送効率の未適用や上下どちらかの転送時間の見落としによる過小値で、いずれも実際の応答時間より短いため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -791,7 +791,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "フレームとしては任意長のビットが直列に送出されるので、フレーム長がオクテットの整数倍である必要はない。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "CSMA/CDは衝突検出後にランダム時間待って再送するバックオフ方式を採るため、トラフィックが増えるほど衝突と再送が頻発し有効データ量(スループット)は急減しますのでアが正解です。イは送信開始後に他局が同時に送り始めれば衝突は必ず発生し得るため誤り、ウはハブを用いた共有メディアこそCSMA/CDが想定する典型構成のため誤り、エは標準ではオクテット境界でフレーム化されるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -815,7 +815,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "RARP"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ARP(Address Resolution Protocol)はIPv4ネットワーク上で、対象のIPアドレスに対応するMACアドレスをブロードキャスト要求と応答により解決するためのプロトコルでアが正解です。イのDHCPは端末へのIPアドレス自動割当て、ウのICMPは通信状態の通知や疎通確認、エのRARPはMACアドレスからIPアドレスを取得する逆方向のプロトコルで、いずれもIP→MAC解決には用いられません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -839,7 +839,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ネットワーク制御機能とデータ転送機能を論理的に分離し,コントローラと呼ばれるソフトウェアで,データ転送機能をもつネットワーク機器の集中制御を可能とするアーキテクチャ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SDN(Software-Defined Networking)は、従来ルータ・スイッチが内蔵していた制御機能(経路判断)とデータ転送機能を論理的に分離し、コントローラと呼ぶソフトウェアからフローテーブルを集中投入してネットワーク機器を制御するアーキテクチャでエが正解です。アはSNMPによる監視管理、イは従来型のルーティングプロトコルによる分散経路決定、ウは仮想化技術一般の説明で、いずれもSDN本来の集中制御の思想とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -863,7 +863,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "有効期限切れで失効したディジタル証明書は、所有者が新たなディジタル証明書を取得するまでの間,CRL に登録される。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "CRL(Certificate Revocation List)は、本来の有効期限内であっても鍵漏えいや所有者情報変更などで失効されたディジタル証明書のシリアル番号と失効日時の一覧を、認証局が定期的に発行するリストでイが正解です。アは失効リストに秘密鍵を載せることはなく、ウのリアルタイム反映はOCSPの説明で、エの「有効期限切れ証明書」は満了で自動的に効力を失うためCRLには登録されないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -887,7 +887,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ネットワークを流れるパケットから、侵入のパターンに合致するものを検出して、管理者への通知や、検出した内容の記録を行う。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SEOポイズニングは、検索エンジンの順位付けアルゴリズムを悪用するために大量の不正リンクや偽の人気を作り出し、悪意あるWebサイトを検索結果の上位に意図的に表示させる攻撃でアが正解です。イはアンチウイルス製品の脆弱性悪用、ウはウォードライビング、エはIDS(侵入検知システム)の動作の説明で、いずれもSEO(検索エンジン最適化)を悪用する手口とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -911,7 +911,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "複数のサーバやネットワーク機器のログを収集分析し、不審なアクセスを検知する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SIEMは、複数のサーバ・ネットワーク機器・セキュリティ製品が出力する膨大なログを一元的に収集して時系列で相関分析し、単独機器では気づけない不審なアクセスや攻撃の兆候を可視化・通知する仕組みでエが正解です。アはIPS/UTMの通信遮断、イはMIB分析による構成把握、ウはNetFlow/IPFIX分析に特化したツールの説明で、いずれもSIEMの主機能であるログ横断分析とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -935,7 +935,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "(M+n-1)! / (n! (M-1)!)"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "パスワード文字数n桁の各桁にM種類から重複可・順序区別で文字を選ぶため、設定可能なパスワード総数はM^n(Mのn乗)となりアが正解です。イ M!/(M-n)! は重複なし順列の数、ウ M!/(n!(M-n)!) は組合せ(順序無視)、エ (M+n-1)!/(n!(M-1)!) は重複組合せ(順序無視)の数式で、いずれも各桁を独立に選ぶパスワードの数え方とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -959,7 +959,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "利用者が Web サイトを閲覧したとき、利用者に気付かれないように、利用者のPCに不正プログラムを転送させる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ドライブバイダウンロード攻撃は、改ざんされたWebサイトを利用者が閲覧した瞬間に、ブラウザやプラグインの脆弱性を悪用して気付かれぬまま不正プログラムを利用者PCへ転送・実行させる攻撃でエが正解です。アはUSBオートランによる感染、イはランサムウェアによる暗号化と身代金要求、ウは無線LANのウォードライビングの説明で、いずれも閲覧そのものをトリガとする自動感染という特徴に当てはまりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -983,7 +983,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ディジタル署名に公開鍵暗号方式が使用されることはなく、共通鍵暗号方式が使用される。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "共通鍵暗号方式(対称鍵暗号)はAESやDES等に代表され、暗号化と復号で同一の鍵を共有して使用するためイが正解です。アはAESが共通鍵、RSAが公開鍵で組合せが逆、ウは秘匿用途の公開鍵暗号では暗号化に公開鍵・復号に秘密鍵を使うのが原則で説明が逆、エはディジタル署名はRSA等の公開鍵暗号で実現するのが標準のため、いずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1007,7 +1007,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "標的型サイバー攻撃を受けた組織や個人から提供された情報を分析し、社会や産業に重大な被害を及ぼしかねない標的型サイバー攻撃の把握,被害の分析,対策の早期着手の支援を行う。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サイバーレスキュー隊J-CRATはIPAが運営し、標的型サイバー攻撃を受けた組織・個人から提供された情報を分析し、社会・産業に重大な被害を及ぼしかねない攻撃の早期把握・被害分析・対策の早期着手支援を行う体制でエが正解です。アはNISCの政府機関向け監視、イはJ-CSIPの情報共有スキーム、ウはISOG-Jの活動の説明で、いずれもJ-CRATの役割ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1031,7 +1031,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "TLS"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SSH(Secure Shell)は、通信路の暗号化と公開鍵またはパスワードによる認証を組み合わせ、遠隔のコンピュータへ安全にログインしコマンド実行やファイル転送を行うためのプロトコルでウが正解です。アのL2TPはトンネリング機能のみで暗号は別途必要、イのRADIUSは認証情報の集中管理用、エのTLSは主にHTTPSなどトランスポート層保護用で、いずれもリモートログインのための独立プロトコルではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1055,7 +1055,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "利用者認証に IC カードを利用している業務システムにおいて、退職者のICカードは業務システム側で利用を停止して、他の利用者が使用できないようにする。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "耐タンパ性とはICチップへの物理的解析・改ざんに対する耐性のことです。読出し用プローブの取付けを検出した瞬間に内部メモリを自動消去する保護回路を組み込めば、悪意ある解析を阻止しチップ内の鍵や情報の漏えいを防げますのでウが正解です。ア(非接触認証)は利便性向上、イ(予備カード)は可用性確保、エ(退職者カード停止)はアカウント運用管理に関する話で、いずれも耐タンパ性そのものの対策ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1079,7 +1079,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ファイルのマルウェア感染を監視し検出する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "WAF(Web Application Firewall)は、HTTP/HTTPSのリクエスト・レスポンスを解析し、SQLインジェクションやクロスサイトスクリプティングなどWebアプリケーション層の攻撃を検知・遮断する専用防御製品でアが正解です。イはエンドポイントのブラウザ保護製品、ウはホスト型IDS/SSH監視、エはアンチウイルスの動作で、いずれもWebアプリ層特化の境界防御を担うWAFの説明ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1103,7 +1103,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "二つの機能 A, Bは必ず A, B の順番に実行され、しかも A で計算した結果をBで使うことがあるので、一つのモジュールにまとめた。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "モジュール強度(凝集度)は強い順に、機能的・情報的・連絡的・手順的・時間的・論理的・偶発的と分類されます。アは抽象データ型として「データ構造とそれを操作する機能を一体化し外部に隠す」情報的凝集に該当し最も強い部類でアが正解です。イは同時点に行うだけの時間的凝集、ウは引数で機能を切り替える論理的凝集、エは順序依存の手順的または連絡的凝集に相当し、いずれもアより弱い凝集です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1127,7 +1127,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ドライバは、引数を渡してテスト対象モジュールを呼び出す。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "スタブはテスト対象モジュールから呼び出される下位モジュールの代替、ドライバはテスト対象モジュールを呼び出す上位モジュールの代替です。エの「ドライバが引数を渡してテスト対象モジュールを呼び出す」はまさにドライバの役割そのものでエが正解です。ア・イのスタブの説明は呼び出し方向が逆で、ウのドライバ説明も「呼び出される側」としており方向が逆になっているため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1151,7 +1151,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "リファクタリング"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "リファクタリングは外部仕様を変えずに内部構造だけを改善する作業で、改修後も同じ動作を保証するための自動回帰テスト(ユニットテスト)が前提として整備されている必要がありエが正解です。アの日次ミーティング・イのふりかえり・ウのペアプログラミングは、コミュニケーションや知識共有・品質向上のためのプラクティスですが、回帰テストの整備を必須要件とはしないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1175,7 +1175,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "プロジェクトの成熟度に応じてソフトウェア開発の手順を定義したモデルである。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "CMMI(Capability Maturity Model Integration)はソフトウェア開発組織やプロジェクトのプロセス成熟度を5段階(初期/管理された/定義された/定量的に管理された/最適化された)で評価するための参照モデルでアが正解です。イはウォーターフォール等のプロセスモデル、ウは共通フレームの説明、エの「成熟度に応じて手順を定義」はCMMIの一面的な誤解で、本質はあくまで評価モデルです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1223,7 +1223,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "プロジェクト組織の編成"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "構成管理は、プログラム・ドキュメント・設定ファイルなど成果物の版(バージョン)と変更差分を追跡し、構成の整合性を統制する活動で、プログラムのバージョンは典型的な構成管理対象でありウが正解です。アの進捗状況はスケジュール管理、イのレビュー実施結果は品質管理、エのプロジェクト組織編成はプロジェクトマネジメントの範囲で、いずれも構成管理の直接的な管理対象ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1247,7 +1247,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "品質,リスク"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "EVM(Earned Value Management)は、計画値PV・出来高EV・実コストACの3指標を時系列で比較し、CV(コスト差異)・SV(スケジュール差異)などを算出する手法で、プロジェクトのコストとスケジュールの進捗を統合的に可視化しますのでアが正解です。イ・エの「リスク」、ウ・エの「品質」はそれぞれリスクマネジメント・品質マネジメントの対象であり、EVMが直接定量管理する対象ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1295,7 +1295,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "(利用者からの改良要求件数)÷(出荷後の経過月数)"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ソフトウェアの保守性は、不具合や改修要求への対応のしやすさ・速さで評価します。修正時間の合計を修正件数で割った「1件あたり平均修正時間」は、保守作業の効率を直接示す代表的指標でイが正解です。アは完成品質(誤り密度)、ウは移植性、エは利用者からの改良要求の発生頻度を測る指標で、いずれも保守作業そのものを定量化する指標ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1319,7 +1319,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "99.0"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サービス提供時間は1日14時間×30日=420時間です。可用性算出に含めるべき停止はサービス提供時間内の障害停止7時間のみで、サービス提供時間外に行った修復3時間と計画メンテナンス8時間は分母にも分子にも含めません。可用性=(420-7)÷420=413÷420≒0.9833、四捨五入して98.3%でウが正解です。ア・イ・エは分母にメンテ時間を含めるなどの計算誤りによる値です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1343,7 +1343,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "フルバックアップ方式に比べ、バックアップに要する時間が長い。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "差分バックアップは直近のフルバックアップ以降に変更されたデータを保存します。復旧時はまずフルバックアップで全体を復元し、その上に最新の差分バックアップを反映する2段階で復旧しますのでイが正解です。アは復旧に2段階必要なため復旧時間はむしろ長く、ウはフル+差分は通常組み合わせ運用する標準パターン、エは差分はフルより範囲が小さくバックアップ時間は短くなるため、いずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1367,7 +1367,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "屋根や壁面の断熱をおろそかにしない。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "伝熱負荷は屋根・壁・天井などの建物表面を介した熱の出入りに起因する冷房負荷で、建物の断熱性能を高めることで軽減できますのでエが正解です。アのPC電源管理は機器発熱(室内負荷)対策、イの隙間風対策は外気導入の影響を抑える外気負荷対策、ウの大窓回避は窓ガラスを通る日射負荷対策で、それぞれ別カテゴリの負荷軽減策となります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1391,7 +1391,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "遅れを取り戻すための要員の追加を,人事部長に要求する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "システム監査人は独立性と客観性を保つ立場であり、被監査部門への直接指示や改善活動への参加、人事への介入はその独立性を損ねます。フォローアップでは責任者に対し具体的な改善方策について助言する立場が適切でウが正解です。ア(対策の実施指示)・イ(改善活動参加)・エ(要員追加要求)は監査人の役割を越え評価対象側に取り込まれる行為となり不適切です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1415,7 +1415,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "テスト計画が策定された上でプログラムテストに着手されたことを確認するために、プログラムテスト計画書を閲覧する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "移行判定フェーズは、開発が完了したシステムを本番稼働させてよいかどうかを判断する最終工程です。品質が本番稼働の基準を満たすかの判断資料が揃っているかを、品質報告書を閲覧して確認する手続が適切でウが正解です。アの開発計画書とイのフィージビリティスタディは開発検討フェーズ、エのテスト計画書はプログラムテストフェーズで確認すべき書類で、移行判定で扱う対象ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1439,7 +1439,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "入庫及び出庫記録に対して、自動的に連番を付与していること"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "網羅性とは「漏れがない」ことを意味します。入出庫記録に自動的に連番(シーケンス番号)を付与する仕組みがあれば、欠番から記録漏れを検出できるため在庫データの網羅性を担保できますのでエが正解です。ア(自動選定)・ウ(自動発注)は業務処理の自動化、イ(適正在庫の承認)は正確性に関する統制で、いずれも記録の漏れ自体を直接検知する仕組みではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1463,7 +1463,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "データモデル"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "エンタープライズアーキテクチャでは、現状を表すAs-Isモデルと業務・情報システムが目指す理想を表すTo-Beモデルを描き、両者のギャップを段階的に解消する手順を取りますのでイが正解です。アのEA参照モデルは標準化された参照体系、ウのザックマンモデルは多面的観点でEAを整理する枠組み、エのデータモデルは情報体系の表現方法で、いずれも「理想像そのものを表すモデル」を直接指す用語ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1487,7 +1487,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "年間運用計画"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "システム管理基準(平成16年)では、組織全体の情報システムが目指す「あるべき姿」を明確化する計画を「全体最適化計画」と呼び、これに基づいて個別の情報化投資が方向付けされますのでウが正解です。アの開発計画は個別案件単位、イの事業継続計画(BCP)は災害時対応、エの年間運用計画は単年度の運用方針を扱うもので、いずれも組織全体の理想像を描く位置付けではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1511,7 +1511,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "自社環境で動く情報システムに格納されたデータとソフトウェアを、クラウドサービスを用いてバックアップすることによって、事業継続性を担保した。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "問題は「データから新たな知見を抽出し、付加価値として提供している事例」を問います。イは多数の自動車から集めた位置情報とブレーキ作動情報を蓄積・分析して急ブレーキ多発の危険地点を発見し運転者へ配信する、まさにデータから新知見を生み出し付加価値とする事例でイが正解です。ア(リソース調達短縮)・ウ(TCO削減)・エ(バックアップ)はクラウド利用の効果ですが、データ分析による知見創出ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1535,7 +1535,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "利害関係者のニーズの抽出"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "共通フレーム2013の要件定義プロセスでは、業務やシステムに関わる利害関係者(ステークホルダー)のニーズや要望を引き出し整理する活動が中心ですのでエが正解です。アのシステム化計画立案は企画プロセス、イのシステム方式設計とウのソフトウェア詳細設計は要件定義の後段(開発プロセス)で行う活動で、いずれも要件定義プロセスの本来の作業内容ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1559,7 +1559,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "ユーザ及びベンダのそれぞれの役割分担を、システムライフサイクルプロセスに応じて、あらかじめ詳細に決定しておくため"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "多段階契約は、開発工程ごとに個別契約を結ぶ方式で、前工程の遂行結果として後工程の見積前提条件に変更が生じた場合に、各工程の開始時に再度見積を行えることが採用目的でアが正解です。イはSLAの目的、ウは仮発注合意書(LOI)の目的、エは役割分担の事前定義に関する話で、それぞれ別の契約上の取り決めの目的であり、多段階契約の本来の狙いとは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1583,7 +1583,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "製品の企画、設計及び開発は行うが、半導体製造の工場は所有しない。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ファブレス企業は、製品の企画・回路設計・開発までは自社で行うが、製造工場(ファブ)を持たず生産は外部のファウンドリに委託する事業形態でエが正解です。アは委託製造を請け負うファウンドリ、イは自社設計・自社製造のIDMやODMの一形態、ウは設計から製造まで全て自社で持つIDM(垂直統合型半導体メーカ)の説明で、いずれもファブレスの定義ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1607,7 +1607,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "新規顧客訪問件数 - 新規顧客売上高"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "KGI(Key Goal Indicator)は最終目標の達成度を測る指標、KPI(Key Performance Indicator)はその達成に向けた中間プロセスの行動量を測る先行指標です。新規顧客獲得をゴールとすると、KGIには新規顧客売上高、KPIにはそのための日々の活動量である新規顧客訪問件数が対応しエが正解です。ア・イ・ウはKPIとKGIの上下関係が逆だったり、訪問件数と売上高の組合せが異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1631,7 +1631,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "生産,在庫,購買,販売,物流などの全ての情報をリアルタイムに交換することによって、サプライチェーン全体の効率を大幅に向上させる経営手法である。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "CRM(Customer Relationship Management)は、企業内の営業・サポート・マーケティングなどあらゆる顧客接点で得た情報を統合・共有し、サービス品質と顧客満足度を高めることで長期的な顧客ロイヤリティを最大化する経営手法でウが正解です。アはリテールサポート、イはERP(企業資源計画)、エはSCM(サプライチェーンマネジメント)の説明で、いずれも顧客接点情報の統合活用ではない別概念です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1655,7 +1655,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "輸出先国の国内標準及び国内法規の規制を受けることなく製品を輸出できる。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "WTO政府調達協定加盟国の政府機関は、技術仕様を可能な限り国際標準に基づいて記述することが定められているため、国際標準に適合した製品は政府調達で優位に立てるという実利上の利点が得られアが正解です。イ「技術的優位の保証」は規格適合と性能の優位は別、ウは特許のライセンスは無償とは限らずFRAND等で扱われる、エは輸出先国の国内法規制を完全に免れることはできないため、いずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1679,7 +1679,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "1,500"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "製品A 300個から在庫100を引いてA 200個を生産します。A 200個には部品b 200×2=400個が直接必要です。さらにA 200個には部品a 200×3=600個が必要で、a在庫100を引いてa 500個を生産します。a 1個にはb 1個が必要なため、aを介してb 500×1=500個が追加で必要です。総b所要=400+500=900個、b在庫300を引き正味所要は600個でイが正解です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1703,7 +1703,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "超音波センサ"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ジャイロセンサは角速度(回転速度)を検出するセンサで、機体の傾きや回転を計測しリアルタイムに姿勢制御へフィードバックすることで水平を保つ働きをしますのでイが正解です。アの気圧センサは高度推定、ウの地磁気センサは方位検出、エの超音波センサは障害物までの距離計測に主用途があり、いずれもドローンの姿勢を直接制御するための中核センサとはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1727,7 +1727,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "周りの環境から微小なエネルギーを収穫して、電力に変換する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "エッジコンピューティングは、IoT端末や利用者の近傍(エッジ)に計算リソースを配置し、現場側で一次処理を行うことで応答遅延を抑え、クラウドへ送るデータ量を絞ってネットワークトラフィックを最適化する技術でアが正解です。イはAIや機械学習の説明、ウはグリッドコンピューティングなどの分散処理一般、エはエナジーハーベスティングの説明で、いずれもエッジコンピューティングの定義ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1751,7 +1751,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "物流業務に加え、流通加工なども含めたアウトソーシングサービスを行い、また荷主企業の物流企画も代行する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "3PL(3rd Party Logistics)は、荷主企業に代わって物流の実行業務だけでなく、流通加工や在庫管理・物流企画・改善提案までを一括代行するアウトソーシングサービスでエが正解です。アはSCM(サプライチェーンマネジメント)、イはロジスティクス全社最適、ウはEMS(電子機器受託製造サービス)の説明で、いずれも物流業務に加え企画代行まで担う3PLとは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1775,7 +1775,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "複数の専門家へのアンケートの繰返しによる回答の収束によって将来を予測する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "デルファイ法は、複数の専門家へ匿名のアンケートを行い、回答を集計してフィードバックし、再度回答を求めることを繰り返して意見を収束させ、最終的に合意形成された将来予測を得る手法でエが正解です。アは先行指標分析、イは計量経済モデル法、ウはクロスインパクト分析や横断的データ比較の話で、いずれも繰返しアンケートで意見を収束させるというデルファイ法の特徴とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1799,7 +1799,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "72"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "高速の真の混雑確率は混雑0.4・空き0.6です。情報が順調となる確率は0.4×0.1+0.6×0.8=0.04+0.48=0.52、その内訳は混雑0.04・空き0.48となります。順調時に高速利用したときの期待時間は(0.04×100+0.48×50)÷0.52≒53.85分。情報が渋滞のときは一般道80分。総期待時間=0.52×53.85+0.48×80≒28.0+38.4=66.4分となりイが正解です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1823,7 +1823,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "パレート図"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "二つの変量(プログラムのステップ数とステップ当たりエラー数)の相関関係を視覚的に分析するには、X軸とY軸にそれぞれの値を取って点を打ち、点の散らばり方から相関の有無や強さを読み取る散布図が最適でイが正解です。アの系統図は目的-手段の階層展開、ウの特性要因図は原因の体系化、エのパレート図は問題項目の優先順位付け図で、いずれも2変量の相関分析には不向きです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1847,7 +1847,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "2,050"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "今年度の変動費率=(720+240)÷1600=0.6です。来年度の固定費=380+100+80+20=580百万円。目標営業利益240を満たす売上高Sは、S×(1-0.6)-580=240を解いて0.4S=820、S=2050百万円となりエが正解です。アは固定費増加額の取りこぼし、イは変動費率の誤り、ウは粗利率を変動費率と混同するなどの計算誤りで、いずれも上記の損益分岐式とは合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1871,7 +1871,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "請負の場合は発注元に帰属し、派遣の場合は派遣元に帰属する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "請負契約で開発したプログラムの著作権は、特約がなければ受託者である発注先(請負業者)に原始的に帰属します。一方で派遣契約では派遣社員は派遣先の指揮命令の下で業務を行うため、職務著作の規定により派遣先に帰属しますのでアが正解です。イ・ウ・エはいずれも帰属先の組合せが原則と異なっており、契約に定めがない場合の原始帰属としては誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1895,7 +1895,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "漏えいして不正に用いられるおそれがあると認められる場合に限り、本人の申請又は市区町村長の職権によってマイナンバーは変更できる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "マイナンバーは原則として一生変わらない番号ですが、漏えいして不正利用のおそれがあると認められる場合に限り、本人の申請または市区町村長の職権で番号変更が可能でエが正解です。アは利用範囲が社会保障・税・災害対策の3分野に限定され自由ではない、イは住民票がない国外居住者には付番されない、ウは指定主体は市区町村長で厚労省ではないため、いずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1919,7 +1919,7 @@ export const AP_QUESTIONS_2017_AUTUMN: Question[] = [
       "エ": "利用者によってネットワークからダウンロードされたデータ"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "製造物責任法(PL法)は「製造または加工された動産」を対象とするためソフトウェア単体やデータは原則として対象外ですが、ROM化して組込み機器に内蔵されハードウェアと一体化したソフトウェアは、機器に瑕疵があれば製造物として対象となりアが正解です。イのアプリケーションパッケージ、ウのインストール済みOS、エのダウンロード済みデータはいずれもソフト・データ単体で動産性が認められず、PL法の直接的対象外です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2017h-1_2/2017h-1a_ap_am_qs.pdf",
     "license": "IPA-public"
