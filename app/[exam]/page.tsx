@@ -6,6 +6,7 @@ import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, PenLine, Sparkles,
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_ID } from "@/lib/seo/structured-data";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import {
   EXAM_DESCRIPTIONS,
@@ -130,12 +131,22 @@ export default async function ExamTopPage({
     description: examTopDescription(code, questions.length),
     url: absUrl,
     inLanguage: "ja",
+    courseCode: code.toUpperCase(),
     isAccessibleForFree: true,
     educationalLevel: "Professional",
     teaches: categories.map((c) => c.category).slice(0, 12),
+    offers: [
+      {
+        "@type": "Offer",
+        price: 0,
+        priceCurrency: "JPY",
+        availability: "https://schema.org/InStock",
+        url: absUrl,
+      },
+    ],
     provider: {
       "@type": "EducationalOrganization",
-      "@id": `${SITE_BASE_URL}#organization`,
+      "@id": ORG_ID,
     },
     hasCourseInstance: {
       "@type": "CourseInstance",

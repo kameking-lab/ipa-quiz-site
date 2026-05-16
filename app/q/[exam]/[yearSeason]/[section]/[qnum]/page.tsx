@@ -24,6 +24,7 @@ import {
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import {
   findQuestionByRoute,
   questionPagePath,
@@ -280,7 +281,15 @@ export default async function QuestionPage({
     learningResourceType: "Practice problem",
     educationalLevel: "Professional",
     educationalUse: "Self-study",
+    audience: STUDENT_AUDIENCE,
     teaches: q.category,
+    educationalAlignment: [
+      {
+        "@type": "AlignmentObject",
+        alignmentType: "educationalSubject",
+        targetName: q.category,
+      },
+    ],
     keywords: [
       examLabel(q.exam),
       examLabelAt(q.exam, q.year, q.season),
@@ -296,7 +305,7 @@ export default async function QuestionPage({
     },
     publisher: {
       "@type": "Organization",
-      "@id": `${SITE_BASE_URL}#organization`,
+      "@id": ORG_ID,
     },
   };
 
@@ -321,7 +330,7 @@ export default async function QuestionPage({
         mainEntity: questionEntity,
         isPartOf: {
           "@type": "WebSite",
-          "@id": `${SITE_BASE_URL}#website`,
+          "@id": SITE_ID,
           name: SITE_NAME,
           url: SITE_BASE_URL,
         },
@@ -332,6 +341,13 @@ export default async function QuestionPage({
         name: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`,
         about: examLabelAt(q.exam, q.year, q.season),
         educationalLevel: "Professional",
+        educationalAlignment: [
+          {
+            "@type": "AlignmentObject",
+            alignmentType: "educationalSubject",
+            targetName: q.category,
+          },
+        ],
         inLanguage: "ja",
         url: pageUrlAbs,
         dateModified: lastUpdatedISO,
@@ -365,9 +381,10 @@ export default async function QuestionPage({
       },
       {
         "@type": "EducationalOrganization",
-        "@id": `${SITE_BASE_URL}#organization`,
+        "@id": ORG_ID,
         name: SITE_NAME,
         url: SITE_BASE_URL,
+        logo: SITE_LOGO_IMAGE,
       },
     ],
   };

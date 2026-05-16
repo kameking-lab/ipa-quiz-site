@@ -28,6 +28,8 @@ import {
   fetchReferrerBreakdown,
 } from "@/lib/stats/posthog";
 import { examLabel } from "@/lib/utils";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { buildWebPageNode } from "@/lib/seo/structured-data";
 
 import {
   ContentByExamChart,
@@ -93,8 +95,20 @@ export default async function StatsPage() {
     .filter((r) => r.total > 0)
     .map((r) => ({ label: examLabel(r.exam), total: r.total, code: r.exam }));
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(
+        `${SITE_BASE_URL}/stats`,
+        "公開統計ダッシュボード — 過去問AI",
+        "過去問AI の Google 検索表示回数・収録問題数・利用状況を公開しています。教育貢献プロジェクトの透明性レポート。",
+      ),
+    ],
+  };
+
   return (
     <main className="relative mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+      <JsonLd data={jsonLd} />
       <ViewTracker event="stats_viewed" />
       {/* Hero */}
       <header className="mb-8">

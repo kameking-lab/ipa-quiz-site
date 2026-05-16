@@ -12,7 +12,9 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { buildWebPageNode } from "@/lib/seo/structured-data";
 
 const PRIVACY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
@@ -21,10 +23,12 @@ const PRIVACY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   body: "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
 }).toString()}`;
 
+const PRIVACY_DESC =
+  "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。";
+
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
-  description:
-    "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。",
+  description: PRIVACY_DESC,
   alternates: { canonical: "/privacy" },
   openGraph: {
     title: "プライバシーポリシー | 過去問AI",
@@ -46,8 +50,15 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(`${SITE_BASE_URL}/privacy`, "プライバシーポリシー — 過去問AI", PRIVACY_DESC),
+    ],
+  };
   return (
     <main className="relative flex-1">
+      <JsonLd data={jsonLd} />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-radial-spotlight"
