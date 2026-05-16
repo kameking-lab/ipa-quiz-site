@@ -28,7 +28,7 @@ export async function generateMetadata({
   const page = getFeatureBySlug(slug);
   if (!page) return { title: "ページが見つかりません", robots: { index: false } };
   const ogParams = new URLSearchParams({
-    type: "keyword",
+    type: "feature",
     title: page.hero.headline,
     subtitle: page.hero.badge,
     body: page.hero.subhead,
