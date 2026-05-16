@@ -574,7 +574,7 @@ IT を活用するすべての社会人・学生向けの基礎資格。CBT 形�
 
 ご自身のキャリア方向に合わせて、最適な受験順序を計画しましょう。
 `,
-    relatedSlugs: ["ipa-shiken-gogo-vs-am", "ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mensetsu-katsu-yoho"],
+    relatedSlugs: ["ipa-shiken-gogo-vs-am", "ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mensetsu-katsu-yoho", "ipa-kyoutsuu-juyou-theme"],
   });
 
   general.push({
@@ -2851,7 +2851,7 @@ SNSや社内で「同じ試験を受ける人」を1人だけ見つけ、毎週�
 
 [試験区分を選んで演習を始める →](/)
 `,
-    relatedSlugs: ["ai-kakomon-gakushuu", "ipa-shiken-goukakuritsu-ranking", "ap-gogo-sentaku"],
+    relatedSlugs: ["ai-kakomon-gakushuu", "ipa-shiken-goukakuritsu-ranking", "ap-gogo-sentaku", "ipa-sanko-mondaishu-2026"],
   });
 
   general.push({
@@ -3040,7 +3040,7 @@ SC・NW・DBなど高度試験の資格保有者は、フリーランスマー�
 - NW・DB・ES：スペシャリスト転換の切り札
 - ST・PM・AU：上流工程・独立・副業への道が開ける
 `,
-    relatedSlugs: ["13-shikaku-osusume-jyun", "ipa-shiken-goukakuritsu-ranking", "gyoushu-betsu-it-shikaku"],
+    relatedSlugs: ["13-shikaku-osusume-jyun", "ipa-shiken-goukakuritsu-ranking", "gyoushu-betsu-it-shikaku", "ipa-shiken-kumi-awase-senryaku"],
   });
 
   general.push({
@@ -7767,7 +7767,7 @@ ER 設計・正規化・SQL 最適化を実践的に演習できる書籍が必�
       "kakomon-nannenbun",
       "ipa-shiken-zenkubun-hikaku",
       "ipa-shiken-ai-katsuyou-benkyouhou",
-      "kakumon-ai-vs-paper",
+      "kakomon-ai-vs-doujou",
       "ap-goukaku-go-koudo-senryaku",
     ],
   });
