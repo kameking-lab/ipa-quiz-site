@@ -100,7 +100,6 @@ export async function checkIpRateLimit(
 export const TRACKED_ENDPOINTS = [
   "copilot",
   "essay-grade",
-  "essay-grading",
   "generate-question",
   "scoring",
 ] as const;
