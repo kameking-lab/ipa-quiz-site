@@ -12,12 +12,37 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+
+const PRIVACY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "default",
+  title: "プライバシーポリシー",
+  subtitle: "データ保護方針",
+  body: "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+}).toString()}`;
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description:
     "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。",
   alternates: { canonical: "/privacy" },
+  openGraph: {
+    title: "プライバシーポリシー | 過去問AI",
+    description:
+      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+    url: `${SITE_BASE_URL}/privacy`,
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    images: [{ url: PRIVACY_OG_URL, width: 1200, height: 630, alt: "プライバシーポリシー" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "プライバシーポリシー | 過去問AI",
+    description:
+      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+    images: [PRIVACY_OG_URL],
+  },
 };
 
 export default function PrivacyPage() {
