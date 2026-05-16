@@ -73,6 +73,7 @@ export async function generateMetadata({
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
   const title = `${question.theme} | ${examLabel(resolved.exam)} 午後II 業種別合格答案 ${question.year}年${seasonLabel}期`;
   const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "essay", title: title.slice(0, 80) }).toString()}`;
   return {
     title,
     description,
@@ -82,11 +83,15 @@ export async function generateMetadata({
       description,
       url: canonical,
       type: "article",
+      siteName: SITE_NAME,
+      locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
+      images: [ogImageUrl],
     },
   };
 }
