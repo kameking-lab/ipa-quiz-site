@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Shuffle } from "lucide-react";
+import { Shuffle, Sparkles } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
 import type { ExamCode } from "@/lib/questions/types";
 
@@ -113,8 +113,41 @@ export function HomeExamGrid({ questionCounts }: Props) {
   const availableExams = EXAM_CARDS.filter((e) => (questionCounts[e.id] ?? 0) > 0);
   const comingSoonExams = EXAM_CARDS.filter((e) => (questionCounts[e.id] ?? 0) === 0);
 
+  const hasProgress = hydrated && Object.values(progress).some((p) => p && p.uniqueAnswered > 0);
+  const beginnerExams = availableExams.filter((e) => e.tier === "beginner");
+
   return (
     <>
+      {!hasProgress && beginnerExams.length > 0 && (
+        <div
+          className="mb-4 flex flex-col gap-2 rounded-2xl border border-emerald-300 bg-emerald-50/80 p-3 text-sm dark:border-emerald-800/60 dark:bg-emerald-950/30 sm:flex-row sm:items-center sm:justify-between sm:p-4"
+          role="region"
+          aria-label="初学者向けナビゲーション"
+        >
+          <div className="flex items-start gap-2 text-emerald-900 dark:text-emerald-100">
+            <Sparkles className="mt-0.5 h-4 w-4 flex-shrink-0" aria-hidden="true" />
+            <p className="leading-relaxed">
+              <span className="font-semibold">はじめての方</span> はまず
+              <span className="mx-1 font-bold">ITパスポート（IP）</span>または
+              <span className="mx-1 font-bold">セキュリティマネジメント（SG）</span>からどうぞ。
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2 sm:flex-shrink-0">
+            {beginnerExams.map((e) => (
+              <Link
+                key={e.id}
+                href={`/quiz?mode=random&exam=${e.id}`}
+                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400"
+                aria-label={`${e.name}をランダム出題で始める`}
+              >
+                <Shuffle className="h-3.5 w-3.5" aria-hidden="true" />
+                {e.abbr} を解いてみる
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
+
       {availableExams.length > 0 && (
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
           {availableExams.map((exam) => {
