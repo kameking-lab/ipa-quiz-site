@@ -1,0 +1,450 @@
+=== 問題データ統合監査レポート ===
+生成日時: 2026-05-16T08:31:27.088Z
+
+午前 (Question):              14402
+午後 (AfternoonQuestion AP): 3
+論述 (EssayQuestion):         12
+
+総検出数:           24184
+致命傷 critical:    20
+機会損失 opportunity: 2477
+警告 warning:       21687
+
+--- カテゴリ別 ---
+  duplicate-body-cross: 21658
+  missing-image-urls: 2147
+  placeholder-explanation: 320
+  markup-question: 15
+  markup-explanation: 13
+  choices-too-few: 10
+  blank-choice: 10
+  answer-out-of-range: 10
+  duplicate-body-same-exam: 1
+
+--- 致命傷 一覧 ---
+  [morning/fe] fe-2019h-am-q5 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/fe] fe-2019h-am-q5 (answer-out-of-range): 正解 "イ" が有効な選択肢に存在しない (有効: )
+  [morning/sc] sc-2009a-am1-q19 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/sc] sc-2009a-am1-q19 (answer-out-of-range): 正解 "エ" が有効な選択肢に存在しない (有効: )
+  [morning/nw] nw-2017h-am1-q16 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/nw] nw-2017h-am1-q16 (answer-out-of-range): 正解 "ア" が有効な選択肢に存在しない (有効: )
+  [morning/pm] pm-2018a-am1-q7 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/pm] pm-2018a-am1-q7 (answer-out-of-range): 正解 "ア" が有効な選択肢に存在しない (有効: )
+  [morning/pm] pm-2018a-am1-q10 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/pm] pm-2018a-am1-q10 (answer-out-of-range): 正解 "エ" が有効な選択肢に存在しない (有効: )
+  [morning/pm] pm-2018a-am1-q20 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/pm] pm-2018a-am1-q20 (answer-out-of-range): 正解 "イ" が有効な選択肢に存在しない (有効: )
+  [morning/es] es-2021a-am2-q10 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/es] es-2021a-am2-q10 (answer-out-of-range): 正解 "エ" が有効な選択肢に存在しない (有効: )
+  [morning/es] es-2021a-am2-q11 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/es] es-2021a-am2-q11 (answer-out-of-range): 正解 "ア" が有効な選択肢に存在しない (有効: )
+  [morning/es] es-2021a-am2-q13 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/es] es-2021a-am2-q13 (answer-out-of-range): 正解 "ウ" が有効な選択肢に存在しない (有効: )
+  [morning/sm] sm-2009a-am2-q10 (choices-too-few): 有効な選択肢が 0 個しかない
+  [morning/sm] sm-2009a-am2-q10 (answer-out-of-range): 正解 "ウ" が有効な選択肢に存在しない (有効: )
+
+--- 機会損失 一覧 (先頭200件) ---
+  [morning/ap] ap-2009a-am-q5 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q6 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q14 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q16 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q23 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q30 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q37 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q50 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q53 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009a-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q3 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q15 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q16 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q17 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q25 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q32 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q33 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q34 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q36 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q46 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q63 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q67 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q71 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q72 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2009h-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q7 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q17 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q32 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q34 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q74 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010a-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q2 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q4 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q5 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q6 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q10 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q12 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q13 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q18 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q25 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q29 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q32 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q33 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q35 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q47 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q48 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2010h-am-q78 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q8 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q12 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q61 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011a-am-q65 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q7 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q9 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q11 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q14 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q18 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q30 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q35 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q37 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q38 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q43 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q45 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q63 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q67 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2011h-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q2 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q15 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q16 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q22 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q26 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q28 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q35 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q41 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q43 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q59 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q69 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q73 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012a-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q5 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q6 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q12 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q15 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q20 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q22 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q26 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q35 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q57 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q66 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q68 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q71 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q74 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2012h-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q9 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q17 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q30 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q36 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q44 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q45 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q48 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q49 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q65 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q66 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q74 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013a-am-q78 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q3 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q5 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q8 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q9 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q16 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q17 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q20 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q24 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q45 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q56 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q57 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q62 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q72 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q75 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2013h-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q1 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q5 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q6 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q16 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q20 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q31 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q36 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q43 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q66 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014a-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q2 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q9 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q19 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q20 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q22 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q23 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q26 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q29 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q72 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2014h-am-q73 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q4 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q6 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q21 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q22 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q23 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q27 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q30 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q31 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q32 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q41 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q53 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q75 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q76 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015a-am-q77 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015h-am-q15 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015h-am-q22 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015h-am-q32 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015h-am-q47 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2015h-am-q51 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q3 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q4 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q17 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q19 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q23 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q29 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q30 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q52 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q53 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q69 (missing-image-urls): hasImage=true だが imageUrls なし
+  [morning/ap] ap-2016a-am-q71 (missing-image-urls): hasImage=true だが imageUrls なし
+  ... 残り 2277 件は JSON 参照
+
+--- 警告 一覧 (先頭200件) ---
+  [morning/ap] ap-2011h-am-q4 (markup-explanation): 解説: タグ未対応: identifier(3), letter(2), digit(1)
+  [morning/ap] ap-2012h-am-q3 (markup-question): 問題文: タグ未対応: dna(3)
+  [morning/ap] ap-2013a-am-q45 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/ap] ap-2014h-am-q3 (markup-question): 問題文: タグ未対応: a(4), b(4), c(4)
+  [morning/ap] ap-2014h-am-q3 (markup-explanation): 解説: タグ未対応: a(4), b(2)
+  [morning/ap] ap-2017a-am-q2 (markup-question): 問題文: タグ未対応: a(4), b(4), c(4)
+  [morning/ap] ap-2017h-am-q4 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/ap] ap-2017h-am-q4 (markup-explanation): 解説: タグ未対応: letter(2), identifier(1), digit(1)
+  [morning/ip] ip-2010h-am-q67 (markup-explanation): 解説: タグ未対応: b(2)
+  [morning/ip] ip-2014h-am-q99 (markup-explanation): 解説: タグ未対応: bos(1)
+  [morning/fe] fe-2010a-am-q53 (markup-explanation): 解説: ** マークアップが奇数個 (5)
+  [morning/sc] sc-2013a-am1-q16 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/sc] sc-2017h-am1-q2 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/sc] sc-2017h-am1-q2 (markup-explanation): 解説: タグ未対応: letter(2), digit(1)
+  [morning/nw] nw-2017h-am1-q2 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/db] db-2013a-am1-q16 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/db] db-2013a-am1-q16 (markup-explanation): 解説: ** マークアップが奇数個 (1)
+  [morning/st] st-2017h-am1-q2 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/st] st-2017h-am1-q2 (markup-explanation): 解説: タグ未対応: letter(2), identifier(2), digit(1)
+  [morning/sa] sa-2017h-am1-q2 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/pm] pm-2013a-am1-q16 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/pm] pm-2013a-am1-q16 (markup-explanation): 解説: ** マークアップが奇数個 (1)
+  [morning/es] es-2013a-am1-q16 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/es] es-2018a-am1-q4 (markup-explanation): 解説: タグ未対応: j(1)
+  [morning/es] es-2018a-am1-q13 (markup-explanation): 解説: タグ未対応: script(1)
+  [morning/sm] sm-2017h-am1-q2 (markup-question): 問題文: タグ未対応: digit(1), letter(1), identifier(1)
+  [morning/sm] sm-2017h-am1-q2 (markup-explanation): 解説: タグ未対応: letter(2), identifier(2), digit(2)
+  [morning/au] au-2013a-am1-q16 (markup-question): 問題文: ** マークアップが奇数個 (1)
+  [morning/ap] ap-2009a-am-q1 (duplicate-body-cross): 本文が sc-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q1 (duplicate-body-cross): 本文が nw-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q1 (duplicate-body-cross): 本文が st-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q1 (duplicate-body-cross): 本文が sa-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q1 (duplicate-body-cross): 本文が sm-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q1 (duplicate-body-cross): 本文が nw-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q1 (duplicate-body-cross): 本文が st-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q1 (duplicate-body-cross): 本文が sa-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q1 (duplicate-body-cross): 本文が sm-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q1 (duplicate-body-cross): 本文が st-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q1 (duplicate-body-cross): 本文が sa-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q1 (duplicate-body-cross): 本文が sm-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q1 (duplicate-body-cross): 本文が sa-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q1 (duplicate-body-cross): 本文が sm-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q1 (duplicate-body-cross): 本文が sm-2009a-am1-q1 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が ap-2025a-am-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が sc-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が nw-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が st-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が sa-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2025a-am-q4 (duplicate-body-cross): 本文が sc-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2025a-am-q4 (duplicate-body-cross): 本文が nw-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2025a-am-q4 (duplicate-body-cross): 本文が st-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2025a-am-q4 (duplicate-body-cross): 本文が sa-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2025a-am-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q2 (duplicate-body-cross): 本文が nw-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q2 (duplicate-body-cross): 本文が st-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q2 (duplicate-body-cross): 本文が sa-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q2 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q2 (duplicate-body-cross): 本文が st-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q2 (duplicate-body-cross): 本文が sa-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q2 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q2 (duplicate-body-cross): 本文が sa-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q2 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q2 (duplicate-body-cross): 本文が sm-2009a-am1-q2 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が ap-2011h-am-q10 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が sc-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が nw-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が st-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が sa-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q9 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2011h-am-q10 (duplicate-body-cross): 本文が sc-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2011h-am-q10 (duplicate-body-cross): 本文が nw-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2011h-am-q10 (duplicate-body-cross): 本文が st-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2011h-am-q10 (duplicate-body-cross): 本文が sa-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2011h-am-q10 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q4 (duplicate-body-cross): 本文が nw-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q4 (duplicate-body-cross): 本文が st-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q4 (duplicate-body-cross): 本文が sa-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q4 (duplicate-body-cross): 本文が st-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q4 (duplicate-body-cross): 本文が sa-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q4 (duplicate-body-cross): 本文が sa-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q4 (duplicate-body-cross): 本文が sm-2009a-am1-q4 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q10 (duplicate-body-cross): 本文が ap-2012h-am-q10 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が ap-2013a-am-q16 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が ap-2016h-am-q16 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が sc-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が sc-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が nw-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q15 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が ap-2016h-am-q16 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が sc-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が sc-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が nw-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2013a-am-q16 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が sc-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が sc-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が nw-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2016h-am-q16 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が sc-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が nw-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が nw-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2013a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が db-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/nw] nw-2009a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が st-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/db] db-2013a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q5 (duplicate-body-cross): 本文が sa-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/st] st-2009a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q5 (duplicate-body-cross): 本文が pm-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sa] sa-2009a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/pm] pm-2013a-am1-q5 (duplicate-body-cross): 本文が es-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/pm] pm-2013a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/pm] pm-2013a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/es] es-2013a-am1-q5 (duplicate-body-cross): 本文が sm-2009a-am1-q5 と完全一致（異年度／異試験）
+  [morning/es] es-2013a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sm] sm-2009a-am1-q5 (duplicate-body-cross): 本文が au-2013a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が ap-2014a-am-q14 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が ap-2022h-am-q15 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が sc-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が sc-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が nw-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が db-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が st-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が sa-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が pm-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が es-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が sm-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2009a-am-q17 (duplicate-body-cross): 本文が au-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が ap-2022h-am-q15 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sc-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sc-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が nw-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が db-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が st-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sa-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が pm-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が es-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が sm-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2014a-am-q14 (duplicate-body-cross): 本文が au-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が sc-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が sc-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が nw-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が db-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が st-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が sa-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が pm-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が es-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が sm-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/ap] ap-2022h-am-q15 (duplicate-body-cross): 本文が au-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q6 (duplicate-body-cross): 本文が sc-2014a-am1-q5 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q6 (duplicate-body-cross): 本文が nw-2009a-am1-q6 と完全一致（異年度／異試験）
+  [morning/sc] sc-2009a-am1-q6 (duplicate-body-cross): 本文が db-2014a-am1-q5 と完全一致（異年度／異試験）
+  ... 残り 21487 件は JSON 参照
