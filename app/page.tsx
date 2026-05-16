@@ -73,12 +73,19 @@ export default function HomePage() {
         },
       },
       {
-        "@type": "Organization",
+        "@type": "EducationalOrganization",
         "@id": `${SITE_BASE_URL}/#organization`,
         name: SITE_NAME,
         url: SITE_BASE_URL,
         logo: `${SITE_BASE_URL}/icon-512.svg`,
         sameAs: ["https://x.com/kakomon_ai_jp", "https://note.com/kakomon_ai"],
+        description:
+          "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "IPA 試験対策コース一覧",
+          url: SITE_BASE_URL,
+        },
       },
       {
         "@type": "ItemList",
