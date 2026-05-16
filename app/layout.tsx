@@ -145,13 +145,13 @@ export default function RootLayout({
                       サービス
                     </p>
                     <ul className="space-y-0">
-                      <li><Link href="/faq" className="block py-2 hover:text-foreground">FAQ</Link></li>
-                      <li><Link href="/features" className="block py-2 hover:text-foreground">機能特集</Link></li>
-                      <li><Link href="/glossary" className="block py-2 hover:text-foreground">用語集</Link></li>
-                      <li><Link href="/keywords" className="block py-2 hover:text-foreground">学習トピック</Link></li>
-                      <li><Link href="/contact" className="block py-2 hover:text-foreground">お問い合わせ</Link></li>
-                      <li><Link href="/blog" className="block py-2 hover:text-foreground">ブログ</Link></li>
-                      <li><Link href="/sitemap" className="block py-2 hover:text-foreground">サイトマップ</Link></li>
+                      <li><Link href="/faq" className="block py-2.5 hover:text-foreground">FAQ</Link></li>
+                      <li><Link href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
+                      <li><Link href="/glossary" className="block py-2.5 hover:text-foreground">用語集</Link></li>
+                      <li><Link href="/keywords" className="block py-2.5 hover:text-foreground">学習トピック</Link></li>
+                      <li><Link href="/contact" className="block py-2.5 hover:text-foreground">お問い合わせ</Link></li>
+                      <li><Link href="/blog" className="block py-2.5 hover:text-foreground">ブログ</Link></li>
+                      <li><Link href="/sitemap" className="block py-2.5 hover:text-foreground">サイトマップ</Link></li>
                     </ul>
                   </div>
                   <div>
@@ -159,10 +159,10 @@ export default function RootLayout({
                       プロジェクト
                     </p>
                     <ul className="space-y-0">
-                      <li><Link href="/about" className="block py-2 hover:text-foreground">プロジェクトについて</Link></li>
-                      <li><Link href="/stats" className="block py-2 hover:text-foreground">公開ダッシュボード</Link></li>
-                      <li><Link href="/transparency" className="block py-2 hover:text-foreground">透明性レポート</Link></li>
-                      <li><Link href="/operator" className="block py-2 hover:text-foreground">運営者情報</Link></li>
+                      <li><Link href="/about" className="block py-2.5 hover:text-foreground">プロジェクトについて</Link></li>
+                      <li><Link href="/stats" className="block py-2.5 hover:text-foreground">公開ダッシュボード</Link></li>
+                      <li><Link href="/transparency" className="block py-2.5 hover:text-foreground">透明性レポート</Link></li>
+                      <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報</Link></li>
                     </ul>
                   </div>
                   <div>
@@ -170,8 +170,8 @@ export default function RootLayout({
                       法的
                     </p>
                     <ul className="space-y-0">
-                      <li><Link href="/terms" className="block py-2 hover:text-foreground">利用規約</Link></li>
-                      <li><Link href="/privacy" className="block py-2 hover:text-foreground">プライバシー</Link></li>
+                      <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
+                      <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシー</Link></li>
                     </ul>
                   </div>
                   <div>
@@ -184,7 +184,7 @@ export default function RootLayout({
                           href="https://x.com/kakomon_ai_jp"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block py-2 hover:text-foreground"
+                          className="block py-2.5 hover:text-foreground"
                         >
                           X フォロー
                         </a>
@@ -194,7 +194,7 @@ export default function RootLayout({
                           href="https://note.com/kakomon_ai"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="block py-2 hover:text-foreground"
+                          className="block py-2.5 hover:text-foreground"
                         >
                           note
                         </a>

@@ -294,7 +294,7 @@ export function QuizPlayer({
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
           <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {mode}</div>
-          <div className="ml-auto flex items-center gap-3 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+          <div className="ml-auto flex items-center gap-2 text-sm font-medium text-zinc-700 sm:gap-3 dark:text-zinc-300">
             <ComboCounter combo={combo} />
             <span
               className="flex items-center gap-1"
@@ -303,8 +303,22 @@ export function QuizPlayer({
               <Timer aria-hidden="true" className="h-4 w-4" />
               <span aria-hidden="true" className="tabular-nums">{formatElapsed(elapsed)}</span>
             </span>
-            <span aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}`}>
-              <span aria-hidden="true">正答 {stats.correct}/{stats.answered}</span>
+            <span
+              aria-label={`正答 ${stats.correct} / 回答済み ${stats.answered}${
+                stats.answered > 0
+                  ? `（正答率 ${Math.round((stats.correct / stats.answered) * 100)}%）`
+                  : ""
+              }`}
+              className="tabular-nums"
+            >
+              <span aria-hidden="true">
+                正答 {stats.correct}/{stats.answered}
+                {stats.answered > 0 && (
+                  <span className="ml-1 text-xs text-zinc-500 dark:text-zinc-400">
+                    ({Math.round((stats.correct / stats.answered) * 100)}%)
+                  </span>
+                )}
+              </span>
             </span>
           </div>
         </div>

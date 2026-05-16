@@ -98,7 +98,8 @@ export function ContactForm() {
             <label
               key={c.id}
               className={cn(
-                "flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-xs transition-colors",
+                "flex min-h-[44px] cursor-pointer items-center gap-2 rounded-xl border px-3 py-2 text-xs transition-colors",
+                "focus-within:outline-none focus-within:ring-2 focus-within:ring-sky-500 focus-within:ring-offset-2 focus-within:ring-offset-background dark:focus-within:ring-sky-400",
                 category === c.id
                   ? "border-sky-400 bg-sky-50 dark:border-sky-500 dark:bg-sky-950/40"
                   : "border-zinc-200 bg-white hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:bg-zinc-800",

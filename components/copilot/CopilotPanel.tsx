@@ -17,6 +17,7 @@ import {
   Link,
   Mic,
   MicOff,
+  MoreVertical,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
@@ -176,6 +177,24 @@ export function CopilotPanel({
   } | null>(null);
   const [copiedIdx, setCopiedIdx] = React.useState<number | null>(null);
   const [copiedAll, setCopiedAll] = React.useState(false);
+  const [actionsOpen, setActionsOpen] = React.useState(false);
+  const actionsRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (!actionsOpen) return;
+    const onDocClick = (e: MouseEvent) => {
+      if (!actionsRef.current?.contains(e.target as Node)) setActionsOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActionsOpen(false);
+    };
+    document.addEventListener("mousedown", onDocClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDocClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [actionsOpen]);
   const [copiedShareUrl, setCopiedShareUrl] = React.useState(false);
   const [shareOpen, setShareOpen] = React.useState(false);
   const [shareUrl, setShareUrl] = React.useState("");
@@ -587,36 +606,62 @@ export function CopilotPanel({
         </div>
         <div className="flex items-center gap-1">
           {hasMessages && (
-            <>
+            <div ref={actionsRef} className="relative">
               <button
-                onClick={handleCopyAll}
-                title="全体コピー"
-                className="rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="全体コピー"
+                onClick={() => setActionsOpen((v) => !v)}
+                title="その他の操作"
+                className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                aria-label="その他の操作"
+                aria-haspopup="menu"
+                aria-expanded={actionsOpen}
               >
-                {copiedAll ? (
-                  <Check className="h-4 w-4 text-emerald-500" />
-                ) : (
-                  <Copy className="h-4 w-4" />
-                )}
+                <MoreVertical className="h-4 w-4" />
               </button>
-              <button
-                onClick={handleOpenShare}
-                title="共有"
-                className="rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="共有"
-              >
-                <Share2 className="h-4 w-4" />
-              </button>
-              <button
-                onClick={handleDownloadMd}
-                title="Markdownダウンロード"
-                className="rounded-lg p-1.5 text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
-                aria-label="Markdownダウンロード"
-              >
-                <Download className="h-4 w-4" />
-              </button>
-            </>
+              {actionsOpen && (
+                <div
+                  role="menu"
+                  className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
+                >
+                  <button
+                    role="menuitem"
+                    onClick={() => {
+                      setActionsOpen(false);
+                      handleCopyAll();
+                    }}
+                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                  >
+                    {copiedAll ? (
+                      <Check className="h-4 w-4 text-emerald-500" aria-hidden="true" />
+                    ) : (
+                      <Copy className="h-4 w-4" aria-hidden="true" />
+                    )}
+                    全体コピー
+                  </button>
+                  <button
+                    role="menuitem"
+                    onClick={() => {
+                      setActionsOpen(false);
+                      handleOpenShare();
+                    }}
+                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                  >
+                    <Share2 className="h-4 w-4" aria-hidden="true" />
+                    共有
+                  </button>
+                  <button
+                    role="menuitem"
+                    onClick={() => {
+                      setActionsOpen(false);
+                      handleDownloadMd();
+                    }}
+                    className="flex w-full min-h-[44px] items-center gap-2 px-3 py-2.5 text-left text-sm text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800"
+                  >
+                    <Download className="h-4 w-4" aria-hidden="true" />
+                    Markdown DL
+                  </button>
+                </div>
+              )}
+            </div>
           )}
           {headerRight}
           {onClose && (

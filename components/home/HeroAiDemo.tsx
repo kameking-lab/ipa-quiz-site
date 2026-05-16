@@ -8,8 +8,11 @@ export function HeroAiDemo() {
   return (
     <div
       aria-hidden="true"
-      className="hero-ai-demo my-4 overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-sky-50 to-violet-50 p-3 shadow-sm dark:border-zinc-800 dark:from-sky-950/30 dark:to-violet-950/20"
+      className="hero-ai-demo relative my-4 overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-sky-50 to-violet-50 p-3 shadow-sm dark:border-zinc-800 dark:from-sky-950/30 dark:to-violet-950/20"
     >
+      <span className="absolute right-2 top-2 rounded-full bg-zinc-900/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white dark:bg-zinc-100/90 dark:text-zinc-900">
+        サンプル
+      </span>
       <div className="flex items-center gap-2 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
         <span className="inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-rose-500" />
         AI 解説デモ

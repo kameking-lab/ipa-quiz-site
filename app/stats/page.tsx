@@ -21,12 +21,10 @@ import {
   fetchGsc30dTotals,
   fetchGscDailyTrend,
   fetchGscTopQueries,
-  isGscConfigured,
 } from "@/lib/stats/gsc";
 import {
   fetchFeatureBreakdown,
   fetchReferrerBreakdown,
-  isPosthogStatsConfigured,
 } from "@/lib/stats/posthog";
 import { examLabel } from "@/lib/utils";
 
@@ -49,9 +47,6 @@ export const revalidate = 1800; // 30 min
 
 export default async function StatsPage() {
   const counts = getContentCounts();
-
-  const gscConfigured = isGscConfigured();
-  const phConfigured = isPosthogStatsConfigured();
 
   const [totals, trendRaw, topQueriesRaw, featuresRaw, referrersRaw] = await Promise.all([
     fetchGsc30dTotals(),
@@ -149,12 +144,12 @@ export default async function StatsPage() {
       </Section>
 
       {/* Section 2: 90-day trend */}
-      <Section
-        icon={<LineChart className="h-3.5 w-3.5" />}
-        title="Google 検索表示の推移"
-        subtitle="直近 90 日間のインプレッション"
-      >
-        {trend.length > 0 ? (
+      {trend.length > 0 ? (
+        <Section
+          icon={<LineChart className="h-3.5 w-3.5" />}
+          title="Google 検索表示の推移"
+          subtitle="直近 90 日間のインプレッション"
+        >
           <Card>
             <CardHeader>
               <CardTitle className="text-base">90 日間の表示回数推移</CardTitle>
@@ -166,22 +161,16 @@ export default async function StatsPage() {
               <ImpressionsTrendChart trend={trend} />
             </CardContent>
           </Card>
-        ) : (
-          <PendingCard
-            configured={gscConfigured}
-            envVar="GSC_SERVICE_ACCOUNT_KEY"
-            label="Search Console の 90 日トレンド"
-          />
-        )}
-      </Section>
+        </Section>
+      ) : null}
 
       {/* Section 3: Top queries (privacy-preserved) */}
-      <Section
-        icon={<Search className="h-3.5 w-3.5" />}
-        title="検索キーワード TOP 10"
-        subtitle="どんなキーワードで見つけてもらっているか（プライバシー配慮のためレンジ表示）"
-      >
-        {topQueries.length > 0 ? (
+      {topQueries.length > 0 ? (
+        <Section
+          icon={<Search className="h-3.5 w-3.5" />}
+          title="検索キーワード TOP 10"
+          subtitle="どんなキーワードで見つけてもらっているか（プライバシー配慮のためレンジ表示）"
+        >
           <Card>
             <CardContent className="p-0">
               <div className="overflow-x-auto">
@@ -209,22 +198,16 @@ export default async function StatsPage() {
               </p>
             </CardContent>
           </Card>
-        ) : (
-          <PendingCard
-            configured={gscConfigured}
-            envVar="GSC_SERVICE_ACCOUNT_KEY"
-            label="検索キーワード TOP 10"
-          />
-        )}
-      </Section>
+        </Section>
+      ) : null}
 
       {/* Section 4: Feature usage */}
-      <Section
-        icon={<Activity className="h-3.5 w-3.5" />}
-        title="機能別アクセス比率"
-        subtitle="直近 30 日のページビューを機能別にバケット化"
-      >
-        {features.length > 0 ? (
+      {features.length > 0 ? (
+        <Section
+          icon={<Activity className="h-3.5 w-3.5" />}
+          title="機能別アクセス比率"
+          subtitle="直近 30 日のページビューを機能別にバケット化"
+        >
           <Card>
             <CardHeader>
               <CardTitle className="text-base">どの機能がよく使われているか</CardTitle>
@@ -244,22 +227,16 @@ export default async function StatsPage() {
               </div>
             </CardContent>
           </Card>
-        ) : (
-          <PendingCard
-            configured={phConfigured}
-            envVar="POSTHOG_API_KEY / POSTHOG_PROJECT_ID"
-            label="機能別アクセス比率"
-          />
-        )}
-      </Section>
+        </Section>
+      ) : null}
 
       {/* Section 5: Referrers */}
-      <Section
-        icon={<Megaphone className="h-3.5 w-3.5" />}
-        title="流入元の構成"
-        subtitle="どこからユーザーが来ているか"
-      >
-        {referrers.length > 0 ? (
+      {referrers.length > 0 ? (
+        <Section
+          icon={<Megaphone className="h-3.5 w-3.5" />}
+          title="流入元の構成"
+          subtitle="どこからユーザーが来ているか"
+        >
           <Card>
             <CardHeader>
               <CardTitle className="text-base">Search / Direct / Referrer / Social</CardTitle>
@@ -279,14 +256,8 @@ export default async function StatsPage() {
               </div>
             </CardContent>
           </Card>
-        ) : (
-          <PendingCard
-            configured={phConfigured}
-            envVar="POSTHOG_API_KEY / POSTHOG_PROJECT_ID"
-            label="流入元の構成"
-          />
-        )}
-      </Section>
+        </Section>
+      ) : null}
 
       {/* Section 6: Support / Engagement */}
       <Section
@@ -397,26 +368,6 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
       <div className="mt-1 text-2xl font-bold tracking-tight text-foreground">{value}</div>
       {sub && <div className="mt-1 text-[11px] text-muted-foreground">{sub}</div>}
     </div>
-  );
-}
-
-function PendingCard({
-  configured,
-  envVar,
-  label,
-}: {
-  configured: boolean;
-  envVar: string;
-  label: string;
-}) {
-  return (
-    <Card>
-      <CardContent className="p-5 text-sm text-muted-foreground">
-        {configured
-          ? `${label}: データ取得中です。数分後に再度ご確認ください。`
-          : `${label}: 連携準備中（環境変数 ${envVar} の設定後に自動表示されます）。`}
-      </CardContent>
-    </Card>
   );
 }
 
