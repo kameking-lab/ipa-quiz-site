@@ -594,19 +594,23 @@ export default async function QuestionPage({
       </section>
 
       {/* Category-level study guidance */}
-      <CategoryStudyTip
-        category={q.category}
-        exam={q.exam}
-        topicTags={q.topicTags}
-      />
+      <div className="print:hidden">
+        <CategoryStudyTip
+          category={q.category}
+          exam={q.exam}
+          topicTags={q.topicTags}
+        />
+      </div>
 
       {/* Inline book recommendation tied to the category */}
-      <InlineBookHint exam={q.exam} category={q.category} />
+      <div className="print:hidden">
+        <InlineBookHint exam={q.exam} category={q.category} />
+      </div>
 
       {/* AI Copilot CTA — gradient panel */}
       <section
         aria-label="AI コパイロット"
-        className="relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
+        className="print:hidden relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
       >
         <div
           aria-hidden="true"
@@ -662,7 +666,7 @@ export default async function QuestionPage({
       </section>
 
       {/* Share */}
-      <section aria-label="共有" className="mt-8">
+      <section aria-label="共有" className="print:hidden mt-8">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           共有
         </h2>
@@ -670,7 +674,7 @@ export default async function QuestionPage({
       </section>
 
       {/* Short-form video */}
-      <section aria-label="ショート動画" className="mt-6">
+      <section aria-label="ショート動画" className="print:hidden mt-6">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           ショート動画
         </h2>
@@ -695,7 +699,7 @@ export default async function QuestionPage({
       {/* Prev / Next — desktop & tablet inline, mobile sticky */}
       <nav
         aria-label="前後の問題"
-        className="mt-8 hidden grid-cols-2 gap-3 sm:grid"
+        className="print:hidden mt-8 hidden grid-cols-2 gap-3 sm:grid"
       >
         {prev ? (
           <Link href={questionPagePath(prev)} className="block">
@@ -749,7 +753,7 @@ export default async function QuestionPage({
 
       {/* Related */}
       {related.length > 0 && (
-        <section aria-label="関連する問題" className="mt-12">
+        <section aria-label="関連する問題" className="print:hidden mt-12">
           <div className="mb-4 flex items-end justify-between gap-3">
             <div>
               <h2 className="text-lg font-bold tracking-tight text-foreground">
@@ -788,7 +792,7 @@ export default async function QuestionPage({
 
       {/* Cross-exam related — by shared topicTags */}
       {crossExamByTopic.length > 0 && (
-        <section aria-label="他試験の同テーマ問題" className="mt-10">
+        <section aria-label="他試験の同テーマ問題" className="print:hidden mt-10">
           <div className="mb-4">
             <h2 className="text-lg font-bold tracking-tight text-foreground">
               他試験の同テーマ問題
@@ -823,13 +827,19 @@ export default async function QuestionPage({
         </section>
       )}
 
+      {/* Print-only attribution */}
+      <div className="print-only hidden mt-10 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
+        <p>過去問AI（https://www.kakomon-ai.jp{questionPagePath(q)}）より印刷</p>
+        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/） IPA の過去問は IPA が著作権を保有し、非商用・教育目的での利用が認められています。</p>
+      </div>
+
       {/* Spacer so sticky bottom nav doesn't cover the related list on mobile */}
-      <div aria-hidden="true" className="h-20 sm:hidden" />
+      <div aria-hidden="true" className="print:hidden h-20 sm:hidden" />
 
       {/* Mobile sticky bottom nav — prev/next */}
       <nav
         aria-label="前後の問題（モバイル）"
-        className="surface-glass fixed inset-x-0 bottom-0 z-30 border-t border-border px-3 pb-safe pt-2 sm:hidden"
+        className="print:hidden surface-glass fixed inset-x-0 bottom-0 z-30 border-t border-border px-3 pb-safe pt-2 sm:hidden"
       >
         <div className="grid grid-cols-2 gap-2">
           {prev ? (
