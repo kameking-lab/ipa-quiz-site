@@ -4,6 +4,7 @@ import { ExternalLink, Key, Terminal } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 import { SwaggerUiClient } from "./SwaggerUiClient";
 
 export const metadata: Metadata = {
@@ -51,7 +52,7 @@ export default function ApiDocsPage() {
         <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <Stat label="エンドポイント" value="3" sub="exams / questions / grade" />
           <Stat label="認証" value="Bearer" sub="任意（無くても動作）" />
-          <Stat label="レート制限" value="50/日" sub="1 分 15 リクエスト" />
+          <Stat label="レート制限" value="10/日" sub="1 分 15 リクエスト" />
         </div>
       </header>
 
@@ -61,11 +62,11 @@ export default function ApiDocsPage() {
           curl で疎通確認したい場合は次のコマンドが使えます（API キーなしでも動作）。
         </p>
         <pre className="mt-3 overflow-x-auto rounded-xl bg-muted/40 p-3 text-xs leading-relaxed">
-          <code>{`curl https://kakomon-ai.jp/api/v1/exams
+          <code>{`curl ${SITE_BASE_URL}/api/v1/exams
 
-curl "https://kakomon-ai.jp/api/v1/questions?exam=ap&limit=5"
+curl "${SITE_BASE_URL}/api/v1/questions?exam=ap&limit=5"
 
-curl -X POST https://kakomon-ai.jp/api/v1/grade \\
+curl -X POST ${SITE_BASE_URL}/api/v1/grade \\
   -H "Content-Type: application/json" \\
   -d '{"questionId":"ap-2024a-am-q1","answer":"ア"}'`}</code>
         </pre>

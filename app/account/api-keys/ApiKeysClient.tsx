@@ -14,6 +14,7 @@ import {
   readApiKeys,
 } from "@/lib/api-keys/storage";
 import type { ApiKey } from "@/lib/api-keys/types";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 
 export function ApiKeysClient() {
   const [keys, setKeys] = React.useState<ApiKey[]>([]);
@@ -188,7 +189,7 @@ export function ApiKeysClient() {
                     </div>
 
                     <pre className="mt-3 overflow-x-auto rounded-lg bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
-                      <code>{`curl https://kakomon-ai.jp/api/v1/exams \\
+                      <code>{`curl ${SITE_BASE_URL}/api/v1/exams \\
   -H "Authorization: Bearer ${revealed ? k.secret : "<your-key>"}"`}</code>
                     </pre>
                   </CardContent>

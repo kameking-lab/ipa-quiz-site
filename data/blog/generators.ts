@@ -5,6 +5,9 @@ import type { BlogPost } from "./types";
 const PUBLISHED_BASE = new Date("2026-01-01T00:00:00.000Z").getTime();
 const DAY_MS = 86_400_000;
 
+// Evaluated at build time so "【YYYY年最新】" titles roll forward with each deploy.
+const CURRENT_YEAR = new Date().getFullYear();
+
 // Clamp to "today (UTC) at 00:00:00" so generated articles never advertise a
 // future datePublished. Google deprioritises (and sometimes suppresses) Article
 // schema entries whose datePublished/dateModified is in the future, since they
@@ -29,7 +32,7 @@ function toItalicList(items: string[]): string {
 export function buildOverviewPost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
   const slug = `${exam}-goukaku-benkyouhou`;
-  const title = `${p.label} 合格までの勉強法・学習時間・出題傾向ガイド【2026年最新】`;
+  const title = `${p.label} 合格までの勉強法・学習時間・出題傾向ガイド【${CURRENT_YEAR}年最新】`;
   const description = `${p.label}の合格率・出題範囲・午前午後の傾向・推奨学習時間${p.studyHours}までを実務目線で整理。AI解説付き過去問学習の進め方も紹介。`;
 
   const body = `# ${p.label} 合格までの勉強法
@@ -2304,12 +2307,12 @@ IPA は 3〜5 年ごとにシラバスを改訂します。「古い問題はど
 
   general.push({
     slug: "ipa-shiken-goukakuritsu-ranking",
-    title: "IPA情報処理技術者試験 合格率ランキング【2026年最新】｜難易度の実態",
+    title: `IPA情報処理技術者試験 合格率ランキング【${CURRENT_YEAR}年最新】｜難易度の実態`,
     description:
       "ITパスポートから高度試験まで全13区分の合格率を一覧で比較。最も難しい試験・合格しやすい試験を客観データで解説し、受験戦略の立て方を紹介します。",
     tags: ["合格率", "難易度比較", "受験計画"],
     publishedAt: publishedAtFor(ext2Offset),
-    body: `# IPA情報処理技術者試験 合格率ランキング【2026年最新】
+    body: `# IPA情報処理技術者試験 合格率ランキング【${CURRENT_YEAR}年最新】
 
 IPA（情報処理推進機構）が実施する全13区分の合格率を、最新データをもとに比較します。どの試験が難しいか・受験順序をどう設計するかの参考にしてください。
 

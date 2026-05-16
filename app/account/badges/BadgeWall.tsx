@@ -89,7 +89,7 @@ export function BadgeWall() {
               {isEarned && shareTarget === t && (
                 <SocialShare
                   text={buildBadgeText({ name: def.name, days: def.threshold })}
-                  url={typeof window !== "undefined" ? window.location.origin : "https://kakomon-ai.jp"}
+                  url={typeof window !== "undefined" ? window.location.origin : "https://www.kakomon-ai.jp"}
                   imageUrl={buildOgImageUrl({
                     type: "badge",
                     title: def.name,
