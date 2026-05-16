@@ -511,6 +511,19 @@ function QuizCompleteScreen({
 }) {
   const [copied, setCopied] = React.useState(false);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
+
+  React.useEffect(() => {
+    posthogCapture("quiz_completed", {
+      exam,
+      mode,
+      total: stats.answered,
+      correct: stats.correct,
+      accuracy,
+      elapsed_seconds: elapsed,
+    });
+    // fire once on mount
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   const label = examLabel(exam);
   const shareUrl = `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
   const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;

@@ -35,6 +35,7 @@ import {
   ReferrerBreakdownChart,
 } from "./StatsCharts";
 import { StatsShareButtons } from "./ShareButtons";
+import { ViewTracker } from "@/components/analytics/ViewTracker";
 
 export const metadata: Metadata = {
   title: "公開統計ダッシュボード",
@@ -69,6 +70,7 @@ export default async function StatsPage() {
 
   return (
     <main className="relative mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+      <ViewTracker event="stats_viewed" />
       {/* Hero */}
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-1.5">

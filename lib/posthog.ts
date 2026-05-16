@@ -33,7 +33,12 @@ export type PostHogEventName =
   | "quiz_completed"
   | "faq_expanded"
   | "blog_viewed"
+  | "blog_article_scrolled"
   | "essay_viewed"
+  | "essay_industry_switched"
+  | "stats_viewed"
+  | "copilot_response_received"
+  | "contact_form_submitted"
   | "referrer_with_utm";
 
 export type PostHogEventProps = Record<string, string | number | boolean | null | undefined>;

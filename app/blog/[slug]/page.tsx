@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
+import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -200,6 +201,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <ViewTracker event="blog_viewed" props={{ slug, exam: post.exam ?? null }} />
+      <BlogScrollTracker slug={slug} exam={post.exam} />
       <JsonLd data={jsonLd} />
       <nav
         aria-label="パンくずリスト"

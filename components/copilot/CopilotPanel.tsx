@@ -383,6 +383,11 @@ export function CopilotPanel({
           });
         }
 
+        posthogCapture("copilot_response_received", {
+          questionId: question?.id,
+          exam: question?.exam,
+          response_length: acc.length,
+        });
         setUsage(incrementAiUsage());
       } catch (err) {
         if ((err as Error).name === "AbortError") {
