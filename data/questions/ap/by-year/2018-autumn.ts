@@ -23,7 +23,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "論理和"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "排他的論理和(XOR)は2入力が異なれば1、等しければ0を返す演算です。その相補演算(全入力で結果が反転する関係)は、2入力が等しければ1を返す等価演算(XNOR)であり、アが正解です。イの否定論理和(NOR)はXORの否定ではなく、両入力が0のときだけ1を返す演算で異なる関数です。ウの論理積(AND)、エの論理和(OR)もXORと真理値表が完全反転する関係には無く、XORと特定の入力組合せで一致してしまうため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +47,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "80"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "M/M/1モデルでは平均待ち時間 Tw = ρ・Ts/(1-ρ) で表されます(ρは利用率、Tsは平均サービス時間=T秒)。Tw ≥ T となる条件は ρ/(1-ρ) ≥ 1、すなわち ρ ≥ 0.5 で、利用率が50%以上のときに平均待ち時間がサービス時間Tに達しますのでイが正解です。アの33%や、ウの67%・エの80%は計算式に代入すると待ち時間がそれぞれT/2・2T・4Tとなり、「ちょうどT秒以上となる最小の利用率」という条件を満たす境界値ではないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +95,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "(abc)"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "BNFでは<パラメタ指定> ::= <パラメタ> | (<パラメタ指定>, <パラメタ>) と再帰的に定義されており、括弧形は内側に「<パラメタ指定>, <パラメタ>」の2要素をカンマ区切りで持つ形でしか展開できません。アの((abc, def), ghi) は外側=(<パラメタ指定>=(abc,def), <パラメタ>=ghi)、内側=(<パラメタ>=abc, <パラメタ>=def) と矛盾なく解析でき正解です。イ((abc, def))・ウ(abc, (def))・エ(abc) はいずれも括弧内が2要素になっていない、もしくは <パラメタ>(英字列のみ)を単独で括弧で囲んでいるため文法に合致せず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +119,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "連続した波を標本化と量子化によって0と1の数字で構成する符号に割り当てる。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ハフマン符号化は、各記号の出現確率が既知の前提のもとで頻出記号には短い符号、希少記号には長い符号を割り当て、平均符号長を理論限界(エントロピー)に近づける可変長符号化方式で、ウが該当します。アは0と1の連の長さを符号化するランレングス符号化、イは10進数を4ビット2進に対応させる二進化十進(BCD)符号、エは標本化と量子化で連続波形を離散符号に変換するPCM(パルス符号変調)の説明で、いずれも確率を用いて平均符号長を最小化する手法ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +143,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "葉の個数がnならば、葉以外の節点の個数はn-1である。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "葉以外の節点が必ず子を2つもち根から葉までの深さが等しい木は完全二分木と呼ばれます。深さdの完全二分木では葉の数=2^d、内部節点(葉以外)の数=2^d - 1 になるため、葉がn個なら内部節点はn-1個となりエが正解です。アは枝の個数=節点総数-1の関係になるためn=nは成り立たず誤り、イは葉の個数=2^nであって2n-1ではなく誤り、ウは節点総数=2^(d+1)-1 なのでdはlog₂((n+1)/2)で単純なlog₂nではなく誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +167,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "5,050"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "i,j がそれぞれ0~99の100通りずつあるので組合せ総数は10,000、うち対角線 i=j は100通りです。残り9,900通りは i>j と i<j に対称に分かれるため、i>j の要素数は 9,900÷2 = 4,950 となりイが正解です。アの4,851は対角線を含む下三角(i≥j)が10,000/2=5,050から100を引く誤計算、ウの4,999は10,000÷2−1の誤り、エの5,050は i≥j を含めた下三角の個数で、いずれも厳密な i>j の条件と一致しないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +215,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ハミング符号"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ハミング符号は冗長な検査ビットを規則的に配置することで、1ビット誤りなら訂正、2ビット誤りなら検出(SEC-DED)できる代表的な誤り制御方式でありエが正解です。アの奇数パリティは1ビット誤り検出のみで訂正不可、イの水平パリティもブロック単位の検出が中心で1ビット訂正には別途垂直パリティ等が必要、ウのチェックサムは合計値による検出方式で訂正能力を持たないため、いずれも2ビット検出+1ビット訂正を同時に満たす要件には不足し誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +239,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "リフレッシュ動作が必要な揮発性メモリ"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "相変化メモリ(PCM/PRAM)は、カルコゲナイド合金が結晶状態(低抵抗)と非結晶状態(高抵抗)とで電気抵抗が大きく変化する性質を利用してビットを保持する不揮発性メモリでありイが正解です。アはOTP-ROMやヒューズROMなど一度しか書けないメモリ、ウはフリップフロップで構成されるSRAM、エはコンデンサとリフレッシュを必要とするDRAMの説明で、いずれも相変化現象を用いた不揮発記憶という相変化メモリの本質的特徴を表していないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +263,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "利用者の要求に対して仮想ボリュームを提供し、物理ディスクは実際の使用量に応じて割り当てる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "シンプロビジョニングは、利用者には大容量の仮想ボリュームを見せておきながら、物理ディスクは実際の書込みに応じて少しずつ割り当てる仮想化技術で、初期投資と物理容量を抑える運用が可能になるためエが正解です。アはRAID1相当のミラーリング、イは単純なディスクのパーティション分割、ウはSAN(ストレージエリアネットワーク)の説明で、いずれも「論理容量と物理容量を分離して実使用量だけ割り当てる」というシンプロビジョニングの本質と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +287,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "利用者の要求に応じてリソースを動的に割り当てたり、不要になったリソースを回収して別の利用者のために移し替えたりする技術である。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ライブマイグレーションは、仮想サーバ上で稼働しているOSやアプリケーションを停止・再起動することなく、メモリやCPU状態を別の物理サーバへ転送して継続稼働させる技術で、ハードウェア保守や負荷分散時に無停止移行を可能にしますのでアが正解です。イは階層型ストレージ管理(HSM/階層化)、ウはマルチテナント型データベース、エはオートスケールやリソースプールに関する説明で、いずれも仮想サーバ自体を稼働状態のまま別物理機へ移すという中核要件に当てはまらず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +359,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "MTTRは、システムに発生した故障と故障の間隔の平均時間を示す。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "稼働率は MTBF/(MTBF+MTTR) で定義されるため、稼働率0.5を代入すると MTBF=MTTR となりアが正解です。イはMTTRの定義(復旧までの平均時間)の誤適用で本来はMTBFが故障間隔の平均、ウは「MTBFと稼働率の積」がMTTRになる根拠が無く稼働率の式と整合しない、エもMTBFの説明をMTTRに当てはめており用語が逆転しているため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -383,7 +383,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "30"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "タイムクウォンタムが十分小さいラウンドロビンはプロセッサ共有モデルとみなせ、同時実行中のジョブはCPUを均等に分け合います。A・B・C同時実行中はB・Cが1/3速度で進み、5分処理のAは経過15分(5×3)で終了します。以降はB・Cの2ジョブとなりB・Cは1/2速度で動作、Bの残作業はその間に5分(15分時点で5分分処理済)で残り5分、これに2倍を掛けて経過15分から+10分後の25分でBが終了するためウが正解です。ア15分はAの終了時刻、イ20分とエ30分はそれぞれA終了後の進捗計算を誤った結果で当てはまりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +407,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "タスクDが実行可能状態になった。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "プリエンプション方式では、実行中タスクより優先度の高いタスクが実行可能になった瞬間にCPUを奪取して切替えが起きます。タスクAはBより優先度が高いため、Aが実行可能状態になればBは即座にプリエンプトされ、アが正解です。イのBが待ち状態になるのはディスパッチの結果でありプリエンプションの契機ではなく、ウのCはBと同優先度のため奪取は発生せず、エのDはBより優先度が低いためいずれも実行中のBから強制的にCPUを奪う契機にはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +431,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "0.75"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ページアウトを伴わない割合をpとすると、平均処理時間は20p + 60(1-p) = 30 ms。この方程式を解くと 20p + 60 - 60p = 30 → 40p = 30 → p = 0.75 となり、エが正解です。アの0.25・イの0.33・ウの0.67はそれぞれ p と (1-p) を取り違えたり、方程式を 20(1-p)+60p=30 と立式する誤りで、設問の「ページアウトを伴わない」の確率にはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +455,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "プロファイラ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "プロファイラは、プログラムを実行しながら関数呼出し回数・各行や関数の実行時間・ホットスポットを統計的に記録し、性能改善の指針を与えるツールでありエが正解です。アのコンパイラはソースを実行可能形式に翻訳する役割、イのデバッガはブレークポイントや変数監視でバグ箇所を特定する役割、ウのパーサは構文解析を担う役割で、いずれも実行時統計を計測して性能ボトルネックを示すという目的にはそぐわず誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
