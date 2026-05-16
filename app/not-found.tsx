@@ -72,7 +72,7 @@ export default function NotFound() {
               {EXAM_LINKS.map(({ code, label }) => (
                 <Link
                   key={code}
-                  href={`/exam/${code}`}
+                  href={`/${code}`}
                   className="rounded-full border border-border bg-muted px-2.5 py-1 text-xs text-foreground/80 transition-colors hover:bg-primary/10 hover:text-primary"
                 >
                   {label}
