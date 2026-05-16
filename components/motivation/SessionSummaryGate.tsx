@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   clearSession,
@@ -8,7 +9,14 @@ import {
   summarizeSession,
   type SessionSummary,
 } from "@/lib/motivation/session";
-import { SessionSummaryDialog } from "./SessionSummaryDialog";
+
+// SessionSummaryDialog drags in radix Dialog + SocialShare + share util.
+// Only mount it once a session has actually been completed (?done=1) — the
+// other 99% of homepage visits avoid this chunk entirely.
+const SessionSummaryDialog = dynamic(
+  () => import("./SessionSummaryDialog").then((m) => m.SessionSummaryDialog),
+  { ssr: false },
+);
 
 export function SessionSummaryGate() {
   const router = useRouter();
@@ -25,7 +33,7 @@ export function SessionSummaryGate() {
       router.replace(window.location.pathname, { scroll: false });
       return;
     }
-     
+
     setSummary(summarizeSession(meta));
     setOpen(true);
   }, [searchParams, router]);
@@ -36,5 +44,6 @@ export function SessionSummaryGate() {
     router.replace(window.location.pathname, { scroll: false });
   }, [router]);
 
+  if (!open && !summary) return null;
   return <SessionSummaryDialog open={open} summary={summary} onClose={handleClose} />;
 }
