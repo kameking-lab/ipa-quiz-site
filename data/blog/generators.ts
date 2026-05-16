@@ -574,7 +574,7 @@ IT を活用するすべての社会人・学生向けの基礎資格。CBT 形�
 
 ご自身のキャリア方向に合わせて、最適な受験順序を計画しましょう。
 `,
-    relatedSlugs: ["ipa-shiken-gogo-vs-am", "ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mensetsu-katsu-yoho"],
+    relatedSlugs: ["ipa-shiken-gogo-vs-am", "ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mensetsu-katsu-yoho", "ipa-kyoutsuu-juyou-theme"],
   });
 
   general.push({
@@ -2851,7 +2851,7 @@ SNSや社内で「同じ試験を受ける人」を1人だけ見つけ、毎週�
 
 [試験区分を選んで演習を始める →](/)
 `,
-    relatedSlugs: ["ai-kakomon-gakushuu", "ipa-shiken-goukakuritsu-ranking", "ap-gogo-sentaku"],
+    relatedSlugs: ["ai-kakomon-gakushuu", "ipa-shiken-goukakuritsu-ranking", "ap-gogo-sentaku", "ipa-sanko-mondaishu-2026"],
   });
 
   general.push({
@@ -3040,7 +3040,7 @@ SC・NW・DBなど高度試験の資格保有者は、フリーランスマー�
 - NW・DB・ES：スペシャリスト転換の切り札
 - ST・PM・AU：上流工程・独立・副業への道が開ける
 `,
-    relatedSlugs: ["13-shikaku-osusume-jyun", "ipa-shiken-goukakuritsu-ranking", "gyoushu-betsu-it-shikaku"],
+    relatedSlugs: ["13-shikaku-osusume-jyun", "ipa-shiken-goukakuritsu-ranking", "gyoushu-betsu-it-shikaku", "ipa-shiken-kumi-awase-senryaku"],
   });
 
   general.push({
@@ -7296,6 +7296,8 @@ ST・SA・PM・SM・AU の管理系 5 区分では、2,000〜3,000 字の論文�
 3. 自分の実務経験を「論文化」する練習
 4. 序論・本論・結論のテンプレートを 3 パターン用意
 
+過去問AI では業種別の合格答案サンプルを公開しています。[プロジェクトマネージャ 業種別合格答案](/essays/pm)・[情報処理安全確保支援士 業種別合格答案](/essays/sc)・[システム監査技術者 業種別合格答案](/essays/au)・[ITストラテジスト 業種別合格答案](/essays/st)・[システムアーキテクト 業種別合格答案](/essays/sa) を参照し、業種に近い答案を読むところから始めましょう。
+
 [ITストラテジスト 過去問](/st)・[プロジェクトマネージャ 過去問](/pm)・[システム監査技術者 過去問](/au) の論述対策は、実務経験の棚卸しから始めましょう。
 
 ## よくある失敗パターン
@@ -7595,6 +7597,17 @@ TCP/IP の基礎知識は、[基本情報技術者 過去問](/fe) から [エ�
 
 [プロジェクトマネージャ 過去問](/pm) では、アジャイル・ハイブリッド開発のマネジメント実践まで問われます。[システムアーキテクト 過去問](/sa) では、開発手法の選択根拠をアーキテクチャ観点で説明する能力が求められます。
 
+## 論述系試験の対策リソース
+
+PM・ST・SA・SM・AU の高度試験は、午後II で 2,000〜3,000 字の論文を書く論述形式です。過去問AI では業種別の合格答案サンプルを公開しています。自分の業種に近い答案から論述構成を学ぶのが最短ルートです。
+
+- [プロジェクトマネージャ 業種別合格答案](/essays/pm)
+- [情報処理安全確保支援士 業種別合格答案](/essays/sc)
+- [ITストラテジスト 業種別合格答案](/essays/st)
+- [システムアーキテクト 業種別合格答案](/essays/sa)
+- [ITサービスマネージャ 業種別合格答案](/essays/sm)
+- [システム監査技術者 業種別合格答案](/essays/au)
+
 ## 横断学習の実践方法
 
 過去問AI では、複数の試験区分をまたいで共通テーマの問題を学習できます：
@@ -7754,7 +7767,7 @@ ER 設計・正規化・SQL 最適化を実践的に演習できる書籍が必�
       "kakomon-nannenbun",
       "ipa-shiken-zenkubun-hikaku",
       "ipa-shiken-ai-katsuyou-benkyouhou",
-      "kakumon-ai-vs-paper",
+      "kakomon-ai-vs-doujou",
       "ap-goukaku-go-koudo-senryaku",
     ],
   });

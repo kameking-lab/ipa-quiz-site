@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, BookOpen, ChevronLeft, Shield } from "lucide-react";
+import { AlertTriangle, ArrowRight, BookOpen, ChevronLeft, Shield } from "lucide-react";
+
+import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -109,6 +111,7 @@ export default async function EssayPm2DetailPage({
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
   const pageUrl = `${SITE_BASE_URL}${canonical}`;
   const examName = examLabel(resolved.exam);
+  const relatedPosts = getRelatedBlogPosts(resolved.exam, 2);
   const title = `${question.theme} | ${examName} 午後II 業種別合格答案 ${question.year}年${seasonLabel}期`;
   const description = `${examName} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
   const datePublished = `${question.year}-${question.season === "spring" ? "04" : "10"}-01`;
@@ -261,6 +264,35 @@ export default async function EssayPm2DetailPage({
           AI 論述添削を試す →
         </Link>
       </div>
+
+      {relatedPosts.length > 0 && (
+        <section aria-label="関連学習ガイド" className="print:hidden mt-8">
+          <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
+            <BookOpen className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+            {examName} の学習ガイド
+          </h2>
+          <ul className="space-y-2">
+            {relatedPosts.map((p) => (
+              <li key={p.slug}>
+                <Link
+                  href={`/blog/${p.slug}`}
+                  className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-sky-300/60 hover:shadow-md"
+                >
+                  <div className="min-w-0">
+                    <p className="font-medium text-foreground group-hover:text-sky-600 dark:group-hover:text-sky-400">
+                      {p.title}
+                    </p>
+                    <p className="mt-0.5 line-clamp-1 text-xs text-muted-foreground">
+                      {p.description}
+                    </p>
+                  </div>
+                  <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-sky-600 dark:group-hover:text-sky-400" />
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
