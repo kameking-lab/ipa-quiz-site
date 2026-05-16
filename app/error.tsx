@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { AlertTriangle, ExternalLink, HomeIcon, RefreshCw } from "lucide-react";
+import { AlertTriangle, ExternalLink, HomeIcon, MessageSquare, RefreshCw } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { captureException } from "@/lib/monitoring/sentry";
 
@@ -38,10 +38,11 @@ export default function ErrorPage({
             <AlertTriangle className="h-7 w-7" />
           </div>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground">
-            エラーが発生しました
+            予期しないエラーが発生しました
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            予期しない問題が起きました。もう一度お試しください。
+            一時的な問題が発生しました。再試行するか、
+            トップページから学習を再開してください。
           </p>
           {error.digest && (
             <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 font-mono text-[11px] text-muted-foreground">
@@ -69,19 +70,24 @@ export default function ErrorPage({
           </div>
         </div>
 
-        <p className="mt-6 text-xs text-muted-foreground">
-          問題が続く場合は{" "}
+        <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
+          <Link
+            href="/contact"
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+          >
+            <MessageSquare className="h-3.5 w-3.5" />
+            問題を報告する
+          </Link>
           <a
             href="https://github.com/kameking-lab/ipa-quiz-site/issues"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
           >
+            <ExternalLink className="h-3.5 w-3.5" />
             GitHub Issues
-            <ExternalLink className="h-3 w-3" />
           </a>
-          {" "}でご報告ください。
-        </p>
+        </div>
       </div>
     </main>
   );
