@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 
 import type { EssayIndustryId, SCEssayAnswer } from "@/lib/essays/types";
 import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
+import { posthogCapture } from "@/lib/posthog";
 
 const INDUSTRY_ORDER: EssayIndustryId[] = [
   "it",
@@ -51,7 +52,10 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
                 aria-selected={isActive}
                 aria-controls={`essay-panel-${id}`}
                 id={`essay-tab-${id}`}
-                onClick={() => setSelectedIndustry(id)}
+                onClick={() => {
+                  setSelectedIndustry(id);
+                  posthogCapture("essay_industry_switched", { industry: id });
+                }}
                 className={`rounded-full px-3 py-1 text-xs font-medium transition-colors ${
                   isActive
                     ? "bg-sky-600 text-white dark:bg-sky-500"

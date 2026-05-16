@@ -4,6 +4,7 @@ import * as React from "react";
 import { CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { posthogCapture } from "@/lib/posthog";
 
 const CATEGORIES = [
   { id: "improvement", label: "改善提案" },
@@ -53,6 +54,7 @@ export function ContactForm() {
         setError("送信に失敗しました。時間をおいて再度お試しください。");
         return;
       }
+      posthogCapture("contact_form_submitted", { category });
       setStatus("ok");
       setBody("");
     } catch {
