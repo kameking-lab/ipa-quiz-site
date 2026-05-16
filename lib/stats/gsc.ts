@@ -1,64 +1,37 @@
 // Google Search Console (Search Analytics) client.
 //
-// Uses a service-account JSON-Web-Token + OAuth2 token exchange against Google,
-// then hits the searchanalytics:query endpoint. No new npm dependency — JWT is
-// signed via the Node 20+ `crypto` module that ships with the runtime.
+// Uses OAuth 2.0 refresh token grant to obtain short-lived access tokens, then
+// hits the searchanalytics:query endpoint. No additional npm dependencies needed.
 //
 // Required env vars (set on Vercel / locally in .env.local):
-//   GSC_SITE_URL                — property URL (e.g. https://www.kakomon-ai.jp/) or sc-domain:kakomon-ai.jp
-//   GSC_SERVICE_ACCOUNT_EMAIL   — client_email from service-account JSON
-//   GSC_SERVICE_ACCOUNT_KEY     — private_key (PEM, with literal \n or real newlines)
+//   GSC_SITE_URL              — property URL (e.g. https://www.kakomon-ai.jp/) or sc-domain:kakomon-ai.jp
+//   GSC_OAUTH_CLIENT_ID       — OAuth 2.0 client ID from GCP console
+//   GSC_OAUTH_CLIENT_SECRET   — OAuth 2.0 client secret from GCP console
+//   GSC_OAUTH_REFRESH_TOKEN   — long-lived refresh token obtained via OAuth consent flow
 //
-// If any of the three is missing, every exported function returns null and the
+// If any of the four is missing, every exported function returns null and the
 // /stats page falls back to a "連携準備中" state.
 
-import crypto from "node:crypto";
-
 const TOKEN_URL = "https://oauth2.googleapis.com/token";
-const SCOPE = "https://www.googleapis.com/auth/webmasters.readonly";
 
 export interface GscConfig {
   siteUrl: string;
-  clientEmail: string;
-  privateKey: string;
+  clientId: string;
+  clientSecret: string;
+  refreshToken: string;
 }
 
 export function readGscConfig(): GscConfig | null {
   const siteUrl = process.env.GSC_SITE_URL;
-  const clientEmail = process.env.GSC_SERVICE_ACCOUNT_EMAIL;
-  const rawKey = process.env.GSC_SERVICE_ACCOUNT_KEY;
-  if (!siteUrl || !clientEmail || !rawKey) return null;
-  const privateKey = rawKey.includes("\\n") ? rawKey.replace(/\\n/g, "\n") : rawKey;
-  return { siteUrl, clientEmail, privateKey };
+  const clientId = process.env.GSC_OAUTH_CLIENT_ID;
+  const clientSecret = process.env.GSC_OAUTH_CLIENT_SECRET;
+  const refreshToken = process.env.GSC_OAUTH_REFRESH_TOKEN;
+  if (!siteUrl || !clientId || !clientSecret || !refreshToken) return null;
+  return { siteUrl, clientId, clientSecret, refreshToken };
 }
 
 export function isGscConfigured(): boolean {
   return readGscConfig() !== null;
-}
-
-function base64UrlEncode(buf: Buffer | string): string {
-  const b = typeof buf === "string" ? Buffer.from(buf) : buf;
-  return b.toString("base64").replace(/=+$/, "").replace(/\+/g, "-").replace(/\//g, "_");
-}
-
-function signJwt(cfg: GscConfig): string {
-  const header = { alg: "RS256", typ: "JWT" };
-  const now = Math.floor(Date.now() / 1000);
-  const payload = {
-    iss: cfg.clientEmail,
-    scope: SCOPE,
-    aud: TOKEN_URL,
-    iat: now,
-    exp: now + 3600,
-  };
-  const headerEnc = base64UrlEncode(JSON.stringify(header));
-  const payloadEnc = base64UrlEncode(JSON.stringify(payload));
-  const signingInput = `${headerEnc}.${payloadEnc}`;
-  const signer = crypto.createSign("RSA-SHA256");
-  signer.update(signingInput);
-  signer.end();
-  const sig = signer.sign(cfg.privateKey);
-  return `${signingInput}.${base64UrlEncode(sig)}`;
 }
 
 interface CachedToken {
@@ -72,10 +45,11 @@ async function getAccessToken(cfg: GscConfig): Promise<string | null> {
   if (cachedToken && cachedToken.expiresAt > now + 30_000) return cachedToken.token;
 
   try {
-    const assertion = signJwt(cfg);
     const body = new URLSearchParams({
-      grant_type: "urn:ietf:params:oauth:grant-type:jwt-bearer",
-      assertion,
+      grant_type: "refresh_token",
+      client_id: cfg.clientId,
+      client_secret: cfg.clientSecret,
+      refresh_token: cfg.refreshToken,
     });
     const res = await fetch(TOKEN_URL, {
       method: "POST",
@@ -88,7 +62,7 @@ async function getAccessToken(cfg: GscConfig): Promise<string | null> {
     if (!data.access_token) return null;
     cachedToken = {
       token: data.access_token,
-      expiresAt: now + (data.expires_in ?? 3600) * 1000,
+      expiresAt: now + ((data.expires_in ?? 3600) - 60) * 1000,
     };
     return data.access_token;
   } catch {
