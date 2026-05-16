@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   description:
     "AI による論述添削の品質を実際のサンプルでご確認いただけます。架空の受験生答案 (PM 午後II) に対する観点別スコア、採点根拠、改善箇所を詳細に提示。",
   alternates: { canonical: "/demo/essay-grading" },
+  robots: { index: false, follow: true },
 };
 
 const SAMPLE = {

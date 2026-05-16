@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "SC/ST/SA/PM/SM/AU の午後問題を AI が観点別に採点する流れを、ログイン不要のデモで体験できます。模範解答・採点コメント例・改善ポイントを提示。",
   alternates: { canonical: "/demo/afternoon" },
+  robots: { index: false, follow: true },
 };
 
 export default function AfternoonDemoPage() {
