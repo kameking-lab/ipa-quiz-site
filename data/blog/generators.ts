@@ -634,7 +634,7 @@ IPA 情報処理技術者試験は、多くの区分で「午前」と「午後�
 
 午前と午後の特性を理解し、戦略的に時間配分を行いましょう。
 `,
-    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-shakaijin-jikan-kakuho"],
+    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-keisan-mondai-kokuhuku"],
   });
 
   general.push({
@@ -703,7 +703,7 @@ IPA 情報処理技術者試験は、多くの区分で「午前」と「午後�
 
 時間がないのではなく、時間の使い方を変えるだけで合格に近づきます。
 `,
-    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-mensetsu-katsu-yoho"],
+    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-mensetsu-katsu-yoho", "syakaijin-asakatsu-benkyou"],
   });
 
   general.push({
@@ -992,7 +992,7 @@ CBT では次の対策が PBT より重要になります。
 
 CBT 化された試験は事前の操作慣れが鍵になります。
 `,
-    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-mensetsu-katsu-yoho"],
+    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "ipa-shiken-mensetsu-katsu-yoho", "ipa-zaitaku-remote-juken"],
   });
 
   general.push({
@@ -1165,7 +1165,7 @@ Day 4 の結果から、正答率が特に低い分野を 3 つ特定します�
 
 不合格は次回合格への伸びしろです。3 ヶ月で立て直しましょう。
 `,
-    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mokuhi-mondai-tukurikata"],
+    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-mokuhi-mondai-tukurikata", "shippai-pattern-7"],
   });
 
   general.push({
@@ -1338,7 +1338,7 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
 
 [ITパスポート](/ip)・[基本情報](/fe)・[応用情報](/ap) で、まずは 1 問だけタップしてみてください。
 `,
-    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho"],
+    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho", "ipa-shiken-pomodoro"],
   });
 
   general.push({
@@ -1431,7 +1431,7 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
 
 [FE 科目 B 演習](/fe) から始めましょう。
 `,
-    relatedSlugs: ["fe-kamoku-b-taisaku", "ap-gogo-sentaku", "kakomon-dake-goukaku"],
+    relatedSlugs: ["fe-kamoku-b-taisaku", "ap-gogo-sentaku", "kakomon-dake-goukaku", "fe-algorithm-nigate-kokufuku"],
   });
 
   general.push({
@@ -1594,7 +1594,7 @@ PM の主体性が問われるため、上長の指示を実行しただけの�
 
 [PM 論述添削へ](/essay/pm)・[業種別合格答案サンプル](/essay/pm#sample-answers)。
 `,
-    relatedSlugs: ["pm-goukaku-ronbun", "au-shiken-taisaku", "sm-itil-storytelling"],
+    relatedSlugs: ["pm-goukaku-ronbun", "au-shiken-taisaku", "sm-itil-storytelling", "koudo-ronjutsu-kakikata-kotsu"],
   });
 
   general.push({
@@ -1926,7 +1926,7 @@ YouTube を流し見して理解した気になる。手を動かさない。
 
 [過去問AI を試す](/)。
 `,
-    relatedSlugs: ["ai-coplilot-prompt-tips", "kakomon-dake-goukaku", "ipa-shiken-yoshu-vs-douju-jiritsu"],
+    relatedSlugs: ["ai-coplilot-prompt-tips", "kakomon-dake-goukaku", "ipa-shiken-yoshu-vs-douju-jiritsu", "kakomon-nankai-tokinaosu"],
   });
 
   general.push({
@@ -1980,7 +1980,7 @@ YouTube を流し見して理解した気になる。手を動かさない。
 
 健闘を祈ります。
 `,
-    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho"],
+    relatedSlugs: ["ipa-shiken-shakaijin-jikan-kakuho", "ipa-moushikomi-mynumber"],
   });
 
   general.push({
@@ -2387,7 +2387,7 @@ CBT形式で随時受験できる[ITパスポート](/ip)は、全試験中最�
 
 各試験の詳細対策は [ブログ一覧](/blog) から確認できます。
 `,
-    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "13-shikaku-osusume-jyun", "hatarakinagara-goukaku"],
+    relatedSlugs: ["ipa-shiken-zenkubun-hikaku", "13-shikaku-osusume-jyun", "hatarakinagara-goukaku", "sg-shiken-meritto-imi-aru"],
   });
 
   general.push({
@@ -2477,7 +2477,7 @@ IPA情報処理技術者試験は全13区分あり、「どの順番で取れば
 - 応用情報合格直後に高度試験を受けて免除を活用
 - 1区分ずつ集中が合格への最短距離
 `,
-    relatedSlugs: ["ipa-shiken-goukakuritsu-ranking", "ipa-shiken-zenkubun-hikaku", "shikaku-career-path"],
+    relatedSlugs: ["ipa-shiken-goukakuritsu-ranking", "ipa-shiken-zenkubun-hikaku", "shikaku-career-path", "it-shikaku-nendaibetsu-roadmap"],
   });
 
   general.push({
@@ -3361,7 +3361,7 @@ IPA疑似言語の配列は1始まりが多い。コードを読む最初に「�
 - 試験前に4分野を固定して迷いを排除
 - AIコパイロットで記述解答の質を高める
 `,
-    relatedSlugs: ["kakomon-dake-goukaku", "fe-kamoku-b-taisaku", "nw-hinshutu-pattern"],
+    relatedSlugs: ["kakomon-dake-goukaku", "fe-kamoku-b-taisaku", "nw-hinshutu-pattern", "ap-gogo-management-erabikata"],
   });
 
   general.push({
