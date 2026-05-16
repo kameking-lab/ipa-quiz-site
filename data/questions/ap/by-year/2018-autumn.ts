@@ -1223,7 +1223,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "プロジェクトの外部から要員を調達し、クリティカルパス上の作業に投入する。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "クラッシングは、追加コストを払ってでもクリティカルパス上の作業に資源を投入し工期短縮を図る技法で、外部から要員を増強してクリティカル作業を加速するエが正解です。アは作業順序の組替えで日程変更にあたり工期短縮の主目的ではなく、イの作業分割の並行化とウのファストトラッキング(後続作業の先行開始)はいずれも作業順序を変えて並行化する技法で、追加資源投入によるクラッシングとは性格が異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1247,7 +1247,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "作業の順序や相互関係をネットワーク図で示したもの"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "トレンドチャートは、横軸を時間、縦軸を進捗率や予算消費率としてプロットし、計画線(理想)と実績線を折れ線で対比して進捗と予算の傾向を可視化する手法でありウが正解です。アはRACIなどの責任分担表、イはガントチャート、エはアローダイアグラムやプレシデンスダイアグラムの説明で、いずれもトレンドチャートの「進捗と予算を時系列の折れ線で関連付ける」という本質と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1295,7 +1295,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "利用者数"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ファンクションポイント法は、外部入力・外部出力・外部照会・内部論理ファイル・外部インタフェースファイルといったユーザから見える機能数を数えてポイント化する手法で、画面数(外部入出力数)は調整前FPの算定に直接必要となる情報でありイが正解です。アの開発者数・エの利用者数は機能量の指標ではなく、ウのプログラムステップ数はLOC法(ステップ数法)の指標で、機能視点で規模を測るFP法の入力には用いないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1343,7 +1343,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "提供する IT サービス及びサービス目標を特定し、サービス提供者が顧客との間で合意文書を交わす。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サービスレベル管理(SLM)は、提供するITサービスとその目標値(可用性・応答時間など)を顧客と特定・合意し、SLAとして文書化して継続的に維持改善するプロセスでありエが正解です。アはITサービス財務管理、イは容量・キャパシティ管理、ウはサービス継続性管理(ITSCM)の活動で、いずれも目的・成果物が異なるためサービスレベル管理の活動としては不適切です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1367,7 +1367,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "時差がある分散拠点にサービスデスクを配置し、各サービスデスクが連携してサービスを提供することによって、24時間対応のサービスが提供できる。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "フォロー・ザ・サンは、時差のある複数拠点のサービスデスクを連携稼働させ、日中の拠点が順送りに対応することで結果として24時間のサポートを実現する組織構造でありエが正解です。アは集中型サービスデスク、イはローカル(分散)型、ウはバーチャル型(分散だが単一拠点に見せる)の説明で、いずれも時差を活用して連続稼働を実現するというフォロー・ザ・サンの中核要素を欠くため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1391,7 +1391,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "母集団とは、評価対象から結論を導き出すのに必要なデータ全体のうち、リスクが高いデータの集合である。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サンプリング(試査)における許容逸脱率とは、母集団に含まれていても監査人が許容できる内部統制からの逸脱の割合のことで、この値とリスク許容度を基にサンプル件数を統計的に決定するためアが正解です。イのサンプリングリスクは試査で結論を誤る固有のリスクで固有リスク×統制リスクではなく、ウの統計的サンプリングは確率に基づき抽出する手法で全件抽出は精査(全件監査)、エの母集団は評価対象全体でありリスクの高低で限定されないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1415,7 +1415,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ネットワークへのアクセスコントロールが有効に機能しているか。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ペネトレーションテストは、攻撃者の視点から実際にネットワークやシステムへの侵入を試み、アクセス制御の有効性や脆弱性の悪用可能性を実地検証する手法であり、ネットワークのアクセスコントロール有効性を確認するエが最も適合します。アの入退室管理は物理的セキュリティ、イのデータ入力監査は業務処理統制、ウのネットワーク負荷監視はキャパシティ管理寄りで、いずれも侵入試験で確認する典型的チェックポイントとは目的が異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1439,7 +1439,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "情報システム部門の積極的な協力が得られること"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "情報システムの可監査性とは、対象のコントロールが有効に機能しているかをシステム監査人が事後的に検証できるよう、ログ取得・アクセス記録・ジョブ証跡などを含めた監査可能な設計・運用が施されている性質を指しアが正解です。イは監査人の能力(プロフェッショナリズム)、ウは監査証拠の十分性と報告書の品質、エは部門協力体制の話で、いずれも「監査されやすい状態にあること」という可監査性の定義とは観点が異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1463,7 +1463,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ルーチン化された業務のコスト削減や処理効率向上を図る。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "IT投資ポートフォリオのトランザクションカテゴリは、受発注処理・経費精算など定型的業務処理の自動化・効率化を直接目的とした投資領域でありエが正解です。アの管理品質向上やレポーティング支援は情報カテゴリ、イの競争優位獲得は戦略カテゴリ、ウのアプリ共通基盤提供はインフラカテゴリで、それぞれの目的・効果が別カテゴリに割り振られるためトランザクションカテゴリの直接の目的としては誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1487,7 +1487,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "プロセスの機能を網羅的に表現するために、一つの要件に対して発生する事象を条件分岐の形式で記述する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "UMLはオブジェクト指向に基づき標準化された記述ルールを持ち、クラス図・シーケンス図・アクティビティ図など複数のダイアグラムで業務プロセスを多面的に表現できるためウが正解です。アはE-R図によるデータ中心アプローチ、イはDFD(データフローダイアグラム)、エはデシジョンテーブルの説明で、いずれもUMLの「複数の観点・標準ルールでオブジェクトモデリング」という性質とは異なる手法です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1511,7 +1511,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "事業継続計画は自社の資産の範囲で実施することを優先し、クラウドサービスを利用する範囲から除外する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "クラウドサービス利用は外部委託の側面が強く、自社の情報セキュリティポリシや社内規則とクラウド事業者が提供する管理レベル(暗号化・監査・ログ保持・所在地など)との間に差異がないかを確認し、必要に応じ補完統制を講じるのが要点でありイが正解です。アは個人情報を理由なく一律除外する硬直対応、ウは併行運用でない限り自社設備強化は不要、エは事業継続計画の対象範囲を狭めてしまう方針で、いずれも適切な留意点とは言えません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1535,7 +1535,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "注文受付から製品出荷までの日数を3日短縮とする。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "バランススコアカードの内部ビジネスプロセス視点は、社内の業務プロセスの効率や品質に関するKPIを定める観点で、受注から出荷までのリードタイム短縮はその典型でありエが正解です。アの売上高営業利益率は財務の視点、イの顧客クレーム件数は顧客の視点、ウの研修受講率は学習と成長の視点に該当し、いずれも内部ビジネスプロセスの視点のKPIとしては別観点に分類されるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1559,7 +1559,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "自動応答を実現するソフトウェア製品又はシステムの要件定義を行い、AIなどを利用した実現方式やインタフェース設計を行う。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "システム化構想立案は、経営戦略を踏まえ情報技術の動向や業務環境を調査・分析し、どのような情報技術を用いてどの業務をどう変革するかという方針を構想するフェーズでありアが正解です。イの品質要件定義、ウのシステム要件定義と要素割当、エの実現方式・インタフェース設計は、いずれも構想以降のシステム要件定義や方式設計の活動で、構想立案フェーズの活動としては前倒し過ぎ誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1607,7 +1607,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "複数の企業や組織にまたがる調達から販売までの業務プロセス全ての情報を統合的に管理することによって、コスト低減や納期短縮などを目的とする。"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SCM(Supply Chain Management)は、サプライヤから自社・販売・顧客まで複数企業・組織にまたがる調達~販売の業務プロセス全体の情報を統合管理し、リードタイム短縮や在庫圧縮を狙う手法でありエが正解です。アはCRM、イはSFA、ウはERPの目的に該当し、いずれも特定領域や自社内の統合管理であってサプライチェーン全体の最適化を直接目指すSCMの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1631,7 +1631,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "製品を、市場の魅力度と自社の強みの2軸を用いて、花形、金のなる木,問題児、負け犬という4象限のマトリックスに分類する。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ポーターのバリューチェーンは、企業活動を「購買物流・製造・出荷物流・販売とマーケティング・サービス」の5つの主活動と、「全般管理・人事労務管理・技術開発・調達活動」の4つの支援活動に分類して付加価値の源泉を分析するフレームワークでありイが正解です。アはファイブフォース、ウはアンゾフの成長マトリックス、エはPPM(プロダクトポートフォリオマネジメント)の説明で、いずれも別の戦略フレームワークでありバリューチェーン分類とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1655,7 +1655,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "モンテカルロ法"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "クラスタ分析法は、観測データの特徴量の類似度や距離を計算してデータを互いに近いもの同士の集団(クラスタ)へ分類し、その特徴をもとに集団間の差異要因を分析する多変量解析手法でありアが正解です。イの指数平滑法は時系列予測、ウのデルファイ法は専門家アンケートによる予測、エのモンテカルロ法は乱数を用いたシミュレーション手法で、いずれもデータを類似度で群分けするクラスタリングとは目的・原理が異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1679,7 +1679,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "複数の企業が自社の特許権をもち寄り、特許権を一括して管理する仕組み"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "パテントプールは、特定技術領域に関する複数企業の特許権を共同管理機関に集約し、まとめてライセンス提供することで利用者・特許権者双方の交渉コストを下げる仕組みでMPEG等の標準規格に伴って多用されておりエが正解です。アはデファクトスタンダード、イは著作権表示を伴うコピーレフト型ライセンス、ウは無償ライセンス特許の話で、いずれも特許権を集約・一括管理するパテントプールの仕組みそのものを説明していないため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1703,7 +1703,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "クラウドシステム上に常時収集されている機械の稼働情報を基に、機械の故障検知時に、保守員が故障部位を分析して特定する。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "IoTの4段階で「自律化」とは、機械やシステムが収集した状態情報をもとに、人手の介在なしに目標達成のために協調動作・自己最適化を行う最上位段階を指しウが正解です。アの遠隔操作は「制御」、イのデータ蓄積は「監視」、エの故障部位を保守員が分析・特定する運用は「監視+分析」までで自律的判断は含まれず、いずれも自律化の段階に達した事例とはいえません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1727,7 +1727,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "スマートフォンのカメラなどを通して、利用者の視界に有用な情報を重ね合わせ、現実世界での行動と認知を支援する技術である。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "チャットボットは、AIによる自然言語処理や対話シナリオを用いて、企業と顧客の双方向対話を商品提案・販売・アフターサービスにわたり自動応答で実現するシステムでありウが正解です。アはエスクローサービス、イは需要予測・キャパシティプランニング、エはAR(拡張現実)の説明で、いずれも顧客とのテキスト対話を自動化するというチャットボットの中核機能と異なるため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1775,7 +1775,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ビジネス価値を最大化させる IT サービス活用の促進"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "CIO(Chief Information Officer)は、経営戦略と整合した情報戦略を立案し、ITサービスとデータを活用してビジネス価値を最大化する役割を担う経営層のポジションでありエが正解です。アはCFOの財務戦略、イはCTOの研究開発、ウはCCO/CLOなどのコンプライアンス担当が主に担う役割で、いずれもCIOが経営から直接求められる中心的役割とは別の領域です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1799,7 +1799,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ワイブル分布"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "OC(Operating Characteristic)曲線は、横軸にロット不良率、縦軸にそのロットが抜取検査で合格する確率をとり、検査計画(抜取数や合格判定数)による合格率の挙動を可視化する曲線でありアが正解です。イのバスタブ曲線は故障率の経時変化、ウのポアソン分布は離散事象の発生確率分布、エのワイブル分布は寿命解析に用いられる連続分布で、いずれも抜取検査の合格率特性を直接表す曲線ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1847,7 +1847,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "5,600"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "変動費率をr、固定費をFとすると、売上7000で-200万、売上9000で+600万の損益から 7000−7000r−F=−200、9000−9000r−F=600 が立式できます。両式を整理して引き算すると 2000(1−r)=800 より r=0.6 つまり変動費率60%、固定費Fは3000万円となります。したがって売上8000万円のときの変動費は 8000×0.6=4800万円となりウが正解です。アの3200・イの4000・エの5600は、変動費率や固定費の置き方を誤った計算結果で正しい変動費とはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1871,7 +1871,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "著作物の保護期間は、著作者の生存期間,及び著作者の死後少なくとも50年間とし、それ以降、著作権は消滅するという考え方"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "クリエイティブ・コモンズ(CC)は、著作者があらかじめ表示・非営利・改変禁止・継承などの条件をライセンス記号で明示することで、許諾交渉を経ずに著作物の再利用を円滑にする枠組み、およびその運営団体を指しウが正解です。アは著作権法の図書館等の権利制限規定、イは著作物の定義、エは著作権保護期間に関する一般原則で、いずれもCCライセンスの「条件提示型の自由利用枠組み」という本質とは別の制度です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1895,7 +1895,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "プロバイダ責任制限法"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "営業や宣伝目的の電子メールの一方的送信(いわゆる迷惑メール)に対し、事前同意(オプトイン)や送信者情報明示などを義務付けて規制している法律は特定電子メール法(特定電子メールの送信の適正化等に関する法律)であり、イが正解です。アの電子消費者契約法は契約意思の不明確による錯誤救済、ウの不正競争防止法は営業秘密侵害や類似表示等の不正競争規制、エのプロバイダ責任制限法は発信者情報開示などプロバイダの責任範囲を定める法律で、迷惑メール規制の主体ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -1919,7 +1919,7 @@ export const AP_QUESTIONS_2018_AUTUMN: Question[] = [
       "エ": "ユーザの事情で下請予定の業務内容の一部が未定なので、その部分及び下請代金は別途取り決める。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "下請代金支払遅延等防止法では、親事業者は委託時に下請代金額を含む3条書面を直ちに交付することが義務付けられており、発注時点で下請代金が未定のまま委託する行為は禁止されているためイが正解です。アは経費を実費とする扱い自体は内容が明確であれば許容、ウは下請業者の事前承諾があれば電子メールでの発注も認められており、エは内容未定部分の追って取り決め自体は容認される(代金部分は確定が原則だが但し書きの例外あり)ため、いずれも本法で禁止されている代表行為とは言えません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2018h00_2/2018h00a_ap_am_qs.pdf",
     "license": "IPA-public"
