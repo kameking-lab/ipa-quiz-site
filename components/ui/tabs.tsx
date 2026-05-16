@@ -26,13 +26,12 @@ interface TabsProps {
   id?: string;
 }
 
-let _tabsCounter = 0;
-
 export function Tabs({ value, defaultValue, onValueChange, className, children, id }: TabsProps) {
   const [internal, setInternal] = React.useState(defaultValue ?? "");
   const isControlled = value !== undefined;
   const current = isControlled ? value : internal;
-  const idPrefix = React.useRef(id ?? `tabs-${++_tabsCounter}`).current;
+  const generatedId = React.useId();
+  const idPrefix = id ?? generatedId;
   const setValue = React.useCallback(
     (v: string) => {
       if (!isControlled) setInternal(v);

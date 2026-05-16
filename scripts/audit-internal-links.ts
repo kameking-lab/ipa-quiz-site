@@ -26,39 +26,6 @@ const EXAM_CODES = [
   "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
 ] as const;
 
-const STATIC_PAGES = new Set<string>([
-  "/",
-  "/about",
-  "/faq",
-  "/blog",
-  "/essays",
-  "/essay",
-  "/topics",
-  "/glossary",
-  "/keywords",
-  "/ranking",
-  "/stats",
-  "/contact",
-  "/recommended-books",
-  "/quiz",
-  "/modes",
-  "/practice",
-  "/challenge",
-  "/mock-exam",
-  "/settings",
-  "/account",
-  "/auth",
-  "/features",
-  "/transparency",
-  "/privacy",
-  "/terms",
-  "/referral",
-  "/student",
-  "/launch",
-  "/demo",
-  "/community",
-]);
-
 // Generic anchor patterns to flag
 const GENERIC_ANCHORS = [
   "こちら",
