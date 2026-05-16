@@ -36,22 +36,6 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
   const [phase, setPhase] = React.useState<Phase>("running");
   const [result, setResult] = React.useState<MockExamResult | null>(null);
 
-  React.useEffect(() => {
-    if (phase !== "running") return;
-    const id = setInterval(() => {
-      setRemaining((r) => {
-        if (r <= 1) {
-          clearInterval(id);
-          submit(true);
-          return 0;
-        }
-        return r - 1;
-      });
-    }, 1000);
-    return () => clearInterval(id);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase]);
-
   const submit = React.useCallback(
     (auto: boolean) => {
       const finishedAt = Date.now();
@@ -108,6 +92,22 @@ export function MockExamRunner({ questions, config, onFinish }: Props) {
     },
     [answers, questions, startedAt, config],
   );
+
+  React.useEffect(() => {
+    if (phase !== "running") return;
+    const id = setInterval(() => {
+      setRemaining((r) => {
+        if (r <= 1) {
+          clearInterval(id);
+          submit(true);
+          return 0;
+        }
+        return r - 1;
+      });
+    }, 1000);
+    return () => clearInterval(id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]);
 
   if (phase === "submitted" && result) {
     return <ResultView result={result} config={config} onClose={onFinish} />;
