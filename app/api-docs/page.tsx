@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   description:
     "過去問AI Public API（β）の OpenAPI 仕様。13 試験区分の問題データ・採点機能を JSON で提供します。",
   alternates: { canonical: "/api-docs" },
+  robots: { index: false, follow: true },
 };
 
 export default function ApiDocsPage() {
