@@ -12,7 +12,7 @@ const FAQ_OG = (() => {
     type: "faq",
     title: "よくある質問",
     subtitle: "過去問AI の使い方",
-    body: "対象試験・AI 解説の精度・出典・履歴・PWA 対応など 49 問。",
+    body: "対象試験・AI 解説・申込手続・各試験区分・学習方法など 79 問。",
   });
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();
@@ -20,7 +20,7 @@ const FAQ_OG = (() => {
 export const metadata: Metadata = {
   title: "よくある質問（FAQ）— 過去問AIの使い方・AI解説の精度",
   description:
-    "過去問AIの対象試験・AIコパイロットの精度・過去問の出典・オフライン利用など、よくある質問にまとめてお答えします。教育貢献プロジェクトとして全機能無料で公開しています。",
+    "過去問AIの対象試験・AIコパイロットの精度・受験申込手続・各試験区分の概要・学習方法など79問のよくある質問にまとめてお答えします。教育貢献プロジェクトとして全機能無料で公開しています。",
   alternates: { canonical: "/faq" },
   openGraph: {
     title: "よくある質問（FAQ） | 過去問AI",
