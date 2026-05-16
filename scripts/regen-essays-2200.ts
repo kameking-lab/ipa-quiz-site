@@ -77,9 +77,9 @@ const EXAMS: Record<ExamId, ExamSpec> = {
 };
 
 const MIN_TOTAL = 2200;
-const MAX_TOTAL = 2600;
+const MAX_TOTAL = 3600;
 const MIN_U_RATIO = 0.25;
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 4;
 const MODEL = "gemini-2.5-flash";
 
 const stripCount = (s: string) => s.replace(/\s+/g, "").length;
@@ -115,7 +115,7 @@ function parseIndustries(src: string): IndustryBlock[] {
   return blocks;
 }
 
-function buildPrompt(exam: ExamSpec, block: IndustryBlock): string {
+function buildPrompt(exam: ExamSpec, block: IndustryBlock, feedback?: string): string {
   return `あなたは情報処理技術者試験の論文添削指導の専門家です。以下の合格答案を、骨子・テーマ・登場組織設定を**完全に維持したまま**、字数のみ拡張して情報密度を高めた合格答案に書き直してください。
 
 # 試験区分
@@ -137,11 +137,14 @@ ${block.essayI}
 ## 設問ウ（現行 ${stripCount(block.essayU)}字）
 ${block.essayU}
 
-# 必達要件
-1. 全体字数（空白・改行除く）2,200字以上、2,500字目安。
-2. 設問ウは全体の25%以上の字数を確保する。
-3. 設問イまたは設問ウで、推進過程の「困難」と「対応」を最低2件、「一つ目」「二つ目」と明示して詳述する。
-4. 効果・成果は定量数値で2件以上明記する（例：「68%→74%」「年間2.4億円損失」）。
+# 必達要件（厳守）
+1. **全体字数（空白・改行除く）は2,400字以上3,100字以下**。
+2. 各設問の目標字数（空白除外）：
+   - 設問ア：450〜550字
+   - 設問イ：1,250〜1,500字
+   - 設問ウ：650〜850字（全体の25%以上を厳守）
+3. 推進過程の「困難」と「対応」を最低2件、「一つ目」「二つ目」と明示して設問イまたは設問ウで詳述する。
+4. 効果・成果は定量数値で2件以上明記する（例：「68%→74%」「年間2.4億円損失」「リードタイム82日→52日」）。
 5. ${block.industryName}業種固有の制度・法令・ガイドライン・規制名を3件以上、正式名称で本文に引用する（汎用的な「個人情報保護法」のみは不可）。
 6. 既存答案の以下を**変更しない**：
    - 登場組織の名称（A社/B社/C社/E社/F社/G社/H社/I社/J社 等）
@@ -149,8 +152,8 @@ ${block.essayU}
    - プロジェクト／戦略／インシデント／監査の主題
    - 結論部の評価点・改善点の方向性
 7. 既存の骨子・段落構造・論点順序を踏襲する。新規論点を追加するより、既存論点に背景・代替案検討・KPI設定・残課題などの厚みを加える。
-8. 設問アは350〜500字、設問イは1,300〜1,600字、設問ウは600〜800字を目安とする。
-9. 「、」「。」を含む自然な日本語論述。箇条書きは過度に増やさない（本文段落主体）。
+8. 「、」「。」を含む自然な日本語論述。箇条書きは過度に増やさない（本文段落主体）。
+9. **書き上げたら必ず各設問の字数を概算し、上限を超えていたら削って収めること**。
 
 # 出力形式
 **必ず**以下の純粋なJSONのみを返してください。前後にコードブロックや説明文を付けないこと。
@@ -160,7 +163,7 @@ ${block.essayU}
   "essayI": "設問イの本文文字列",
   "essayU": "設問ウの本文文字列"
 }
-`;
+${feedback ? `\n# 前回の試行が失敗した理由\n${feedback}\n上記を必ず改善して再生成すること。` : ""}`;
 }
 
 interface GeneratedEssay {
@@ -219,7 +222,13 @@ async function main(): Promise<void> {
   const ai = new GoogleGenerativeAI(apiKey);
   const model = ai.getGenerativeModel({
     model: MODEL,
-    generationConfig: { temperature: 0.6, maxOutputTokens: 8192, responseMimeType: "application/json" },
+    generationConfig: {
+      temperature: 0.55,
+      maxOutputTokens: 16384,
+      responseMimeType: "application/json",
+      // @ts-expect-error — thinkingConfig not yet in SDK types, but accepted by REST API
+      thinkingConfig: { thinkingBudget: 0 },
+    },
   });
 
   if (!existsSync("logs")) mkdirSync("logs");
@@ -241,27 +250,50 @@ async function main(): Promise<void> {
     const offsets: { rangeStart: number; rangeEnd: number; replacement: string }[] = [];
 
     for (const block of blocks) {
-      const before = stripCount(block.essayA) + stripCount(block.essayI) + stripCount(block.essayU);
+      const ca = stripCount(block.essayA), ci = stripCount(block.essayI), cu = stripCount(block.essayU);
+      const before = ca + ci + cu;
+      const beforeUR = before ? cu / before : 0;
+      if (before >= MIN_TOTAL && beforeUR >= MIN_U_RATIO && before <= MAX_TOTAL) {
+        console.log(`  - ${block.industryId} (already ${before}字, U=${(beforeUR * 100).toFixed(1)}%) — skip`);
+        appendFileSync(progressPath, `- ${block.industryId}: already ${before}字 — skip\n`);
+        continue;
+      }
       console.log(`  - ${block.industryId} (before ${before}字) ...`);
       let attempt = 0;
       let success: { gen: GeneratedEssay; v: ValidateResult } | null = null;
       let lastReason = "";
+      let feedback: string | undefined;
       while (attempt < MAX_RETRIES && !success) {
         attempt++;
         try {
-          const prompt = buildPrompt(exam, block);
+          const prompt = buildPrompt(exam, block, feedback);
           const resp = await model.generateContent(prompt);
-          const text = resp.response.text();
+          const cand = resp.response.candidates?.[0];
+          const finishReason = cand?.finishReason ?? "unknown";
+          let text = "";
+          try { text = resp.response.text(); } catch { text = ""; }
+          if (!text) {
+            const parts = cand?.content?.parts ?? [];
+            text = parts.map((p) => (typeof (p as { text?: string }).text === "string" ? (p as { text: string }).text : "")).join("");
+          }
           const usage = resp.response.usageMetadata;
           totalTokensIn += usage?.promptTokenCount ?? 0;
           totalTokensOut += usage?.candidatesTokenCount ?? 0;
-          const gen = extractJson(text);
-          const v = validate(gen);
-          if (v.ok) {
-            success = { gen, v };
-          } else {
-            lastReason = v.reason ?? "";
-            console.log(`    attempt ${attempt} fail: ${v.reason} (A:${v.countA} I:${v.countI} U:${v.countU} = ${v.total})`);
+          try {
+            const gen = extractJson(text);
+            const v = validate(gen);
+            if (v.ok) {
+              success = { gen, v };
+            } else {
+              lastReason = v.reason ?? "";
+              feedback = `字数違反：${v.reason}（A:${v.countA}字 I:${v.countI}字 U:${v.countU}字 = ${v.total}字）。各設問の上限を厳守し、超過時は冗長な箇所を削減せよ。`;
+              console.log(`    attempt ${attempt} fail: ${v.reason} (A:${v.countA} I:${v.countI} U:${v.countU} = ${v.total})`);
+              if (attempt < MAX_RETRIES) totalRetries++;
+            }
+          } catch (parseErr) {
+            lastReason = `parse: ${String(parseErr)} (finishReason=${finishReason}, textLen=${text.length})`;
+            feedback = `前回出力はJSONとして解釈できなかった（finishReason=${finishReason}）。出力上限に達した可能性が高い。各設問の字数を上限に近い形でなく中央値（ア:440 / イ:1350 / ウ:680）に揃えてJSONを完結させよ。`;
+            console.log(`    attempt ${attempt} ${lastReason}`);
             if (attempt < MAX_RETRIES) totalRetries++;
           }
         } catch (e) {
