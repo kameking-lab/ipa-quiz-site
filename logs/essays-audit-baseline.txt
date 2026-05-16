@@ -1,0 +1,193 @@
+
+> ipa-quiz-site@1.0.0 audit:essays C:\Users\kanet\projects\ipa-quiz-site\.claude\worktrees\elastic-nobel-be1a3c
+> tsx scripts/audit-essays.ts
+
+========================================
+Essays 品質監査レポート
+生成日時: 2026-05-16T13:01:57.817Z
+========================================
+
+総論述バリアント数: 120
+  致命傷 (CI ブロック): 0
+  軽微違反 (警告のみ): 39
+  全項目合格: 81
+
+────────────────────────────────────────
+7項目別 合格率:
+  (a) 字数≥2200: 120/120 (100.0%)
+  (b) 設問ウ比率≥25%: 117/120 (97.5%)
+  (c) 業種固有制度名≥3件: 95/120 (79.2%)
+  (d) 推進課題パラグラフ≥2: 117/120 (97.5%)
+  (e) 定量効果≥2: 120/120 (100.0%)
+  (f) キャラクター設定: 109/120 (90.8%)
+  (g) プレースホルダ無し: 120/120 (100.0%)
+
+────────────────────────────────────────
+【軽微違反一覧】（別タスク化推奨）
+  [WARN] au/2023-autumn/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] au/2023-autumn/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] au/2024-autumn/finance — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] au/2024-autumn/telecom — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] au/2024-autumn/it — 6/7合格 ((b) 設問ウ比率≥25%)
+  [WARN] au/2025-autumn/it — 6/7合格 ((d) 推進課題パラグラフ≥2)
+  [WARN] au/2025-autumn/healthcare — 5/7合格 ((d) 推進課題パラグラフ≥2, (f) キャラクター設定)
+  [WARN] pm/2023-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2023-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] pm/2024-spring/manufacturing — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2024-spring/finance — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2024-spring/retail — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2024-spring/telecom — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2024-spring/public — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2024-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2025-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] pm/2025-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] sa/2023-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sa/2023-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] sa/2024-spring/manufacturing — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sa/2024-spring/healthcare — 6/7合格 ((d) 推進課題パラグラフ≥2)
+  [WARN] sa/2025-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] sm/2023-autumn/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sm/2023-autumn/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] sm/2024-autumn/manufacturing — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sm/2024-autumn/finance — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sm/2024-autumn/retail — 5/7合格 ((c) 業種固有制度名≥3件, (f) キャラクター設定)
+  [WARN] sm/2024-autumn/telecom — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sm/2024-autumn/healthcare — 6/7合格 ((b) 設問ウ比率≥25%)
+  [WARN] sm/2024-autumn/it — 5/7合格 ((b) 設問ウ比率≥25%, (c) 業種固有制度名≥3件)
+  [WARN] sm/2025-autumn/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] sm/2025-autumn/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] st/2023-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] st/2023-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+  [WARN] st/2024-spring/manufacturing — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] st/2024-spring/finance — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] st/2024-spring/telecom — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] st/2025-spring/it — 6/7合格 ((c) 業種固有制度名≥3件)
+  [WARN] st/2025-spring/healthcare — 6/7合格 ((f) キャラクター設定)
+
+────────────────────────────────────────
+全バリアント スコア一覧:
+  ファイル                       業種         スコア  状態
+  au/2023-autumn                   製造業          7/7     PASS
+  au/2023-autumn                   建設業          7/7     PASS
+  au/2023-autumn                   金融業          7/7     PASS
+  au/2023-autumn                   流通・小売        7/7     PASS
+  au/2023-autumn                   通信業          7/7     PASS
+  au/2023-autumn                   公共・自治体       7/7     PASS
+  au/2023-autumn                   IT・情報サービス業   6/7     WARN
+  au/2023-autumn                   医療・ヘルスケア     6/7     WARN
+  au/2024-autumn                   製造業          7/7     PASS
+  au/2024-autumn                   建設業          7/7     PASS
+  au/2024-autumn                   金融業          6/7     WARN
+  au/2024-autumn                   流通・小売        7/7     PASS
+  au/2024-autumn                   通信業          6/7     WARN
+  au/2024-autumn                   公共・自治体       7/7     PASS
+  au/2024-autumn                   医療・ヘルスケア     7/7     PASS
+  au/2024-autumn                   IT・情報サービス業   6/7     WARN
+  au/2025-autumn                   製造業          7/7     PASS
+  au/2025-autumn                   建設業          7/7     PASS
+  au/2025-autumn                   金融業          7/7     PASS
+  au/2025-autumn                   流通・小売        7/7     PASS
+  au/2025-autumn                   通信業          7/7     PASS
+  au/2025-autumn                   公共・自治体       7/7     PASS
+  au/2025-autumn                   IT・情報サービス業   6/7     WARN
+  au/2025-autumn                   医療・ヘルスケア     5/7     WARN
+  pm/2023-spring                   製造業          7/7     PASS
+  pm/2023-spring                   建設業          7/7     PASS
+  pm/2023-spring                   金融業          7/7     PASS
+  pm/2023-spring                   流通・小売        7/7     PASS
+  pm/2023-spring                   通信業          7/7     PASS
+  pm/2023-spring                   公共・自治体       7/7     PASS
+  pm/2023-spring                   IT・情報サービス業   6/7     WARN
+  pm/2023-spring                   医療・ヘルスケア     6/7     WARN
+  pm/2024-spring                   製造業          6/7     WARN
+  pm/2024-spring                   建設業          7/7     PASS
+  pm/2024-spring                   金融業          6/7     WARN
+  pm/2024-spring                   流通・小売        6/7     WARN
+  pm/2024-spring                   通信業          6/7     WARN
+  pm/2024-spring                   公共・自治体       6/7     WARN
+  pm/2024-spring                   医療・ヘルスケア     7/7     PASS
+  pm/2024-spring                   IT・情報サービス業   6/7     WARN
+  pm/2025-spring                   製造業          7/7     PASS
+  pm/2025-spring                   建設業          7/7     PASS
+  pm/2025-spring                   金融業          7/7     PASS
+  pm/2025-spring                   流通・小売        7/7     PASS
+  pm/2025-spring                   通信業          7/7     PASS
+  pm/2025-spring                   公共・自治体       7/7     PASS
+  pm/2025-spring                   IT・情報サービス業   6/7     WARN
+  pm/2025-spring                   医療・ヘルスケア     6/7     WARN
+  sa/2023-spring                   製造業          7/7     PASS
+  sa/2023-spring                   建設業          7/7     PASS
+  sa/2023-spring                   金融業          7/7     PASS
+  sa/2023-spring                   流通・小売        7/7     PASS
+  sa/2023-spring                   通信業          7/7     PASS
+  sa/2023-spring                   公共・自治体       7/7     PASS
+  sa/2023-spring                   IT・情報サービス業   6/7     WARN
+  sa/2023-spring                   医療・ヘルスケア     6/7     WARN
+  sa/2024-spring                   製造業          6/7     WARN
+  sa/2024-spring                   建設業          7/7     PASS
+  sa/2024-spring                   金融業          7/7     PASS
+  sa/2024-spring                   流通・小売        7/7     PASS
+  sa/2024-spring                   通信業          7/7     PASS
+  sa/2024-spring                   公共・自治体       7/7     PASS
+  sa/2024-spring                   医療・ヘルスケア     6/7     WARN
+  sa/2024-spring                   IT・情報サービス業   7/7     PASS
+  sa/2025-spring                   製造業          7/7     PASS
+  sa/2025-spring                   建設業          7/7     PASS
+  sa/2025-spring                   金融業          7/7     PASS
+  sa/2025-spring                   流通・小売        7/7     PASS
+  sa/2025-spring                   通信業          7/7     PASS
+  sa/2025-spring                   公共・自治体       7/7     PASS
+  sa/2025-spring                   IT・情報サービス業   7/7     PASS
+  sa/2025-spring                   医療・ヘルスケア     6/7     WARN
+  sm/2023-autumn                   製造業          7/7     PASS
+  sm/2023-autumn                   建設業          7/7     PASS
+  sm/2023-autumn                   金融業          7/7     PASS
+  sm/2023-autumn                   流通・小売        7/7     PASS
+  sm/2023-autumn                   通信業          7/7     PASS
+  sm/2023-autumn                   公共・自治体       7/7     PASS
+  sm/2023-autumn                   IT・情報サービス業   6/7     WARN
+  sm/2023-autumn                   医療・ヘルスケア     6/7     WARN
+  sm/2024-autumn                   製造業          6/7     WARN
+  sm/2024-autumn                   建設業          7/7     PASS
+  sm/2024-autumn                   金融業          6/7     WARN
+  sm/2024-autumn                   流通・小売        5/7     WARN
+  sm/2024-autumn                   通信業          6/7     WARN
+  sm/2024-autumn                   公共・自治体       7/7     PASS
+  sm/2024-autumn                   医療・ヘルスケア     6/7     WARN
+  sm/2024-autumn                   IT・情報サービス業   5/7     WARN
+  sm/2025-autumn                   製造業          7/7     PASS
+  sm/2025-autumn                   建設業          7/7     PASS
+  sm/2025-autumn                   金融業          7/7     PASS
+  sm/2025-autumn                   流通・小売        7/7     PASS
+  sm/2025-autumn                   通信業          7/7     PASS
+  sm/2025-autumn                   公共・自治体       7/7     PASS
+  sm/2025-autumn                   IT・情報サービス業   6/7     WARN
+  sm/2025-autumn                   医療・ヘルスケア     6/7     WARN
+  st/2023-spring                   製造業          7/7     PASS
+  st/2023-spring                   建設業          7/7     PASS
+  st/2023-spring                   金融業          7/7     PASS
+  st/2023-spring                   流通・小売        7/7     PASS
+  st/2023-spring                   通信業          7/7     PASS
+  st/2023-spring                   公共・自治体       7/7     PASS
+  st/2023-spring                   IT・情報サービス業   6/7     WARN
+  st/2023-spring                   医療・ヘルスケア     6/7     WARN
+  st/2024-spring                   製造業          6/7     WARN
+  st/2024-spring                   建設業          7/7     PASS
+  st/2024-spring                   金融業          6/7     WARN
+  st/2024-spring                   流通・小売        7/7     PASS
+  st/2024-spring                   通信業          6/7     WARN
+  st/2024-spring                   公共・自治体       7/7     PASS
+  st/2024-spring                   医療・ヘルスケア     7/7     PASS
+  st/2024-spring                   IT・情報サービス業   7/7     PASS
+  st/2025-spring                   製造業          7/7     PASS
+  st/2025-spring                   建設業          7/7     PASS
+  st/2025-spring                   金融業          7/7     PASS
+  st/2025-spring                   流通・小売        7/7     PASS
+  st/2025-spring                   通信業          7/7     PASS
+  st/2025-spring                   公共・自治体       7/7     PASS
+  st/2025-spring                   IT・情報サービス業   6/7     WARN
+  st/2025-spring                   医療・ヘルスケア     6/7     WARN
+
+========================================
+
+→ logs/essays-audit-report.txt に保存しました
