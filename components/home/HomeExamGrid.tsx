@@ -217,12 +217,12 @@ function ExamCard({
   const tier = TIER_LABEL[exam.tier];
   return (
     <div
-      className={`group relative flex flex-col gap-1.5 rounded-2xl border-2 p-3.5 shadow-sm transition hover:-translate-y-0.5 hover:shadow sm:p-4 ${v.cardBorder} ${v.cardBg}`}
+      className={`group relative flex flex-col gap-1.5 rounded-2xl border-2 p-3.5 shadow-sm transition has-[a:hover]:shadow sm:p-4 ${v.cardBorder} ${v.cardBg}`}
     >
       <Link
         href={`/${exam.id}`}
         aria-label={`${exam.name}の詳細を開く${level === "in-progress" ? `（解答中・${uniqueAnswered}問解答済み・正答率${accuracy ?? "—"}%）` : level === "passing" ? "（合格圏）" : "（未挑戦）"}`}
-        className="flex flex-col gap-1.5 rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        className="flex flex-col gap-1.5 rounded-lg transition-transform motion-safe:hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <div className="flex items-start justify-between gap-1">
           <span className="rounded-lg bg-sky-600 px-2 py-0.5 text-sm font-bold text-white">
