@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   ExternalLink,
   MessageCircle,
+  Github,
   Globe,
   Info,
   ScrollText,
@@ -12,6 +13,8 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
   title: "運営者情報",
@@ -19,6 +22,9 @@ export const metadata: Metadata = {
     "過去問AI（過去問AI）の運営者情報・お問い合わせ先・免責事項。本サービスは IPA とは無関係の非公式サービスです。",
   alternates: { canonical: "/operator" },
 };
+
+const OPERATOR_HANDLE = "kameking-lab";
+const OPERATOR_GITHUB_URL = `https://github.com/${OPERATOR_HANDLE}`;
 
 interface InfoRow {
   label: string;
@@ -57,6 +63,21 @@ const INFO_ROWS: InfoRow[] = [
     ),
   },
   {
+    label: "GitHub",
+    value: (
+      <a
+        href={OPERATOR_GITHUB_URL}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 font-medium text-primary underline-offset-4 hover:underline"
+      >
+        <Github className="h-3.5 w-3.5" />
+        @{OPERATOR_HANDLE}
+        <ExternalLink className="h-3 w-3" />
+      </a>
+    ),
+  },
+  {
     label: "プロジェクト形態",
     value: "教育貢献プロジェクト（全機能無料・非営利）",
   },
@@ -86,8 +107,29 @@ const INFO_ROWS: InfoRow[] = [
 ];
 
 export default function OperatorPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: OPERATOR_HANDLE,
+    alternateName: "過去問AI 教育貢献プロジェクト 運営者",
+    url: `${SITE_BASE_URL}/operator`,
+    sameAs: [
+      OPERATOR_GITHUB_URL,
+      "https://x.com/kakomon_ai_jp",
+      "https://note.com/kakomon_ai",
+    ],
+    jobTitle: "個人開発者・教育貢献プロジェクト運営",
+    worksFor: {
+      "@type": "EducationalOrganization",
+      "@id": `${SITE_BASE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_BASE_URL,
+    },
+  };
+
   return (
     <main className="relative flex-1">
+      <JsonLd data={jsonLd} />
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 bg-radial-spotlight"
