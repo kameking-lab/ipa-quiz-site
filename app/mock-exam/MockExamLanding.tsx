@@ -34,7 +34,6 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
 
   React.useEffect(() => {
     setHistory(getMockExamHistoryByExam(exam));
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReady(true);
   }, [exam]);
 
