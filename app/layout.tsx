@@ -139,8 +139,23 @@ export default function RootLayout({
             </div>
             <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
-                {/* 4-group nav grid — hidden in print */}
-                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-4">
+                {/* 5-column nav grid — hidden in print */}
+                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-5">
+                  <nav aria-labelledby="footer-nav-exams">
+                    <h3 id="footer-nav-exams" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      試験区分
+                    </h3>
+                    <ul className="space-y-0">
+                      <li><Link href="/ip" className="block py-2.5 hover:text-foreground">IP ITパスポート</Link></li>
+                      <li><Link href="/sg" className="block py-2.5 hover:text-foreground">SG 情報セキュリティ</Link></li>
+                      <li><Link href="/fe" className="block py-2.5 hover:text-foreground">FE 基本情報</Link></li>
+                      <li><Link href="/ap" className="block py-2.5 hover:text-foreground">AP 応用情報</Link></li>
+                      <li><Link href="/nw" className="block py-2.5 hover:text-foreground">NW ネットワーク</Link></li>
+                      <li><Link href="/sc" className="block py-2.5 hover:text-foreground">SC セキュリティ</Link></li>
+                      <li><Link href="/db" className="block py-2.5 hover:text-foreground">DB データベース</Link></li>
+                      <li><Link href="/" className="block py-2.5 font-medium hover:text-foreground">全試験一覧 →</Link></li>
+                    </ul>
+                  </nav>
                   <nav aria-labelledby="footer-nav-service">
                     <h3 id="footer-nav-service" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       サービス
@@ -150,7 +165,6 @@ export default function RootLayout({
                       <li><Link href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
                       <li><Link href="/glossary" className="block py-2.5 hover:text-foreground">用語集</Link></li>
                       <li><Link href="/keywords" className="block py-2.5 hover:text-foreground">学習トピック</Link></li>
-                      <li><Link href="/contact" className="block py-2.5 hover:text-foreground">お問い合わせ</Link></li>
                       <li><Link href="/blog" className="block py-2.5 hover:text-foreground">ブログ</Link></li>
                       <li><Link href="/sitemap" className="block py-2.5 hover:text-foreground">サイトマップ</Link></li>
                     </ul>
@@ -164,20 +178,12 @@ export default function RootLayout({
                       <li><Link href="/stats" className="block py-2.5 hover:text-foreground">公開ダッシュボード</Link></li>
                       <li><Link href="/transparency" className="block py-2.5 hover:text-foreground">透明性レポート</Link></li>
                       <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報</Link></li>
+                      <li><Link href="/updates" className="block py-2.5 hover:text-foreground">更新履歴</Link></li>
                     </ul>
                   </nav>
-                  <nav aria-labelledby="footer-nav-legal">
-                    <h3 id="footer-nav-legal" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
-                      法的
-                    </h3>
-                    <ul className="space-y-0">
-                      <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
-                      <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシー</Link></li>
-                    </ul>
-                  </nav>
-                  <div>
-                    <h3 id="footer-nav-other" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
-                      その他
+                  <nav aria-labelledby="footer-nav-community">
+                    <h3 id="footer-nav-community" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      コミュニティ
                     </h3>
                     <ul className="space-y-0">
                       <li>
@@ -188,7 +194,7 @@ export default function RootLayout({
                           aria-label="X（Twitter）でフォロー（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
-                          X フォロー
+                          X @kakomon_ai_jp
                         </a>
                       </li>
                       <li>
@@ -202,17 +208,35 @@ export default function RootLayout({
                           note
                         </a>
                       </li>
-                      <li className="flex items-center gap-2">
-                        <span>テーマ</span>
-                        <ThemeToggle />
-                      </li>
+                      <li><Link href="/contact" className="block py-2.5 hover:text-foreground">誤情報を報告</Link></li>
+                      <li><Link href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
+                      <li><Link href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>
                     </ul>
-                    <div className="mt-3 space-y-1.5">
-                      <p className="text-[11px] font-semibold uppercase tracking-wide text-foreground">
-                        週1レポート
-                      </p>
-                      <EmailLeadCapture variant="footer" />
-                    </div>
+                  </nav>
+                  <nav aria-labelledby="footer-nav-legal">
+                    <h3 id="footer-nav-legal" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      法的情報
+                    </h3>
+                    <ul className="space-y-0">
+                      <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
+                      <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
+                      <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ利用方針</Link></li>
+                      <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">IPA著作権・出典</Link></li>
+                    </ul>
+                  </nav>
+                </div>
+
+                {/* Theme + email row */}
+                <div className="print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                  <div className="flex items-center gap-2 text-[11px]">
+                    <span className="text-muted-foreground">テーマ</span>
+                    <ThemeToggle />
+                  </div>
+                  <div className="space-y-1.5">
+                    <p className="text-[11px] font-semibold uppercase tracking-wide text-foreground">
+                      週1レポート
+                    </p>
+                    <EmailLeadCapture variant="footer" />
                   </div>
                 </div>
 
@@ -229,7 +253,7 @@ export default function RootLayout({
                   </a>
                   ） /{" "}
                   <Link
-                    href="/about"
+                    href="/license"
                     className="underline decoration-border hover:text-foreground"
                   >
                     著作権・利用条件
