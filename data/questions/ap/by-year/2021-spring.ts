@@ -23,7 +23,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "論理和"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "排他的論理和(XOR)は2入力が異なれば1、等しければ0を返す演算で、その相補演算(全入力で結果が反転する関係)は2入力が等しければ1を返す等価演算(XNOR)であるためアが正解です。イの否定論理和(NOR)はXORの否定とは異なる関数、ウの論理積(AND)・エの論理和(OR)もXORと真理値表が完全反転する関係には無いため誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -47,7 +47,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "無限級数で表される数値の計算処理を有限項で打ち切ったことによって発生する誤差"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "桁落ちは、ほぼ等しい二つの数値の差をとった結果として上位の有効桁が打ち消し合い、下位の僅かな桁だけが残って有効桁数が大きく減少する誤差でありアが正解です。イは丸め誤差、ウは情報落ち、エは打切り誤差で、いずれも別種の数値計算誤差を説明したものでありずれの相補演算的説明にはなりません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -71,7 +71,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "640"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "1秒間のデータ量は サンプリング周波数 × 量子化ビット数 × 秒数 で求まり、40,000Hz × 16ビット × 1秒 = 640,000ビット = 80,000バイト = 80kバイトとなりウが正解です。アの20はビット→バイト換算を取り違え、イの40はサンプリング周波数を半分とする誤り、エの640はビット数値のまま読み替えた結果でいずれもkバイト換算と合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -95,7 +95,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "ポテンショメータ"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "サーミスタは温度変化に対して電気抵抗が大きく変化する半導体素子で、体温計や室温センサなど温度測定用途に広く使われるためアが正解です。イの超音波センサは距離・厚みなどの計測、ウのフォトトランジスタは光量検出、エのポテンショメータは可動部の位置を可変抵抗で読む変位センサで、いずれも温度を直接計測する素子ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +119,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "6"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "A・B・Cの順で入力されるデータをスタックに対し1回ずつPUSH/POPできる場合、可能な出力順序はカタラン数 C₃=5通りで、具体的には ABC・ACB・BAC・BCA・CBA の5パターンとなりウが正解です。CABはAをスタックから一度出した後にBより前へCを出力する手順が成立せず実現不能で、ア3・イ4・エ6はそれぞれ可能順列を見落としたり、CABを誤って含めるなど数え方を誤っているため一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +143,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "幅優先探索"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "配列A[1]を根、A[i]の左右の子をA[2i]、A[2i+1]とする完全二分木の表現では、配列添字を先頭から順に1,2,3,4,…と進めることが根→第1階層左右→第2階層左右…という階層単位の走査と一致するため、これは幅優先探索(BFS、レベル順走査)に当たりエが正解です。ア行きがけ順・イ帰りがけ順・ウ通りがけ順はいずれも深さ優先で再帰的に巡る探索順で、本問の配列順走査とは順序が一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +167,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "まずは問題全体のことは考えずに、問題をある尺度に沿って分解し,各時点で最良の解を選択し,これを繰り返すことによって、全体の最適解を得る方法である。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "分割統治法は、元問題を独立に解ける小さな部分問題に分割し、それぞれの部分問題を再帰的に解いてから結果を統合し最終解を得るアルゴリズム設計手法で、マージソートやFFTが代表例でありウが正解です。アは反復改良法、イは枝刈り/組合せ最適化の説明、エは貪欲法(greedy algorithm)で、いずれも分割統治の「分割→独立解決→結合」という基本構造とは異なる手法です。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -191,7 +191,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "Scala"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "統計解析と機械学習向けに豊富なパッケージを備え、変数自体は型を持たず代入されたオブジェクトの型が実行時に決まる動的型付け言語、かつOSSとして提供されているのはR言語でありウが正解です。アのGoは静的型付けのコンパイル言語、イのKotlinはJVM/Android向け静的型付け、エのScalaも静的型付けで関数型/オブジェクト指向ハイブリッドであり、いずれも本問の特徴と一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +215,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "90"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "命令ミックスは、命令種別ごとの実行頻度(構成比)と所要クロック数を重み付き平均してCPI(命令当たり平均クロック数)を求め、CPU動作周波数 ÷ CPI = 性能[MIPS] として算出する性能評価手法です。本問の表に示された頻度と必要クロックから加重平均CPIを計算し、与えられたクロック周波数で割ると 40 MIPSとなりますのでウが正解です。ア・イ・エは構成比と必要クロックの取扱いや単位換算を誤った結果で、命令ミックスに基づくMIPS計算と一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +239,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "分岐予測を行い、パイプラインの利用効率を高めた処理を実行できる。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "GPUは元来3D描画用に座標変換や陰影計算といった大量の行列・ベクトル演算を並列処理する目的で発達した汎用の演算ユニットを多数搭載しており、深層学習で頻出する行列積演算(全結合層・畳み込み層)を一括して高速処理できる点が利点でありイが正解です。アはMIMD型のCPUの特徴、ウは古典的なFPUの説明、エは分岐予測でCPU側の最適化技術で、いずれもGPUが学習を加速する最大要因「並列行列演算」を直接説明していません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -263,7 +263,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "プロセッサ上でスレッド(プログラムの実行単位)レベルの並列化を実現し,プロセッサの利用効率を高める方式である。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "グリッドコンピューティングは、地理的に分散したPCから大型計算機まで多様な計算機資源をネットワークで連携させ、まるで一つの大規模な仮想計算機として利用し、単独では困難な大規模計算を分散処理する方式でありイが正解です。アは役割分担型のマスタ・スレーブ構成、ウは対称型マルチプロセッサ(SMP)、エはマルチスレッディングの説明で、いずれも分散したヘテロな多数機による単一計算統合というグリッドの本質と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -287,7 +287,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "ライトバック方式では、読出し時にキャッシュミスが発生してキャッシュメモリの内容が追い出されるときに、主記憶に書き戻す必要が生じることはない。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ライトスルー方式はCPUからの書込み時にキャッシュと主記憶へ同時に書込むため、主記憶の内容は常に最新でありイが正解です。アはキャッシュ専用の書込み挙動でライトバック側の特徴、ウは主記憶への同時書込みをライトバックの特徴としており逆、エはライトバックでは追出し時にダーティブロックを必ず主記憶に書き戻す必要があるため誤りで、いずれも両方式の動作・特徴を取り違えています。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -311,7 +311,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "フォールトトレランスとは、故障が生じてもシステムに重大な影響が出ないように、あらかじめ定められた安全状態にシステムを固定し、全体として安全が維持されるような設計方法である。"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "フォールトアボイダンスは、構成要素そのものの品質を高め設計余裕や検証を強化することで、そもそも故障が発生しないようにする予防的アプローチでありウが正解です。アは誤操作対策のフールプルーフの説明、イはフェールソフトを縮退稼働なしの定義としている点で誤り、エはフェールセーフの説明をフォールトトレランスに当てはめており用語と概念が逆転しているためいずれも誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -359,7 +359,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "割込み処理"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "密結合マルチプロセッサは複数のプロセッサが共有主記憶にアクセスする構成のため、プロセッサ数が増えるほど共有バスやメモリコントローラでの主記憶アクセス競合がボトルネックとなり、性能向上が線形にならない最大要因でありアが正解です。イの通信回線経由の通信は疎結合MPの課題、ウのディスパッチ処理・エの割込み処理はOS処理側の負荷であり、共有主記憶アクセスがスケーリングを制限するという密結合特有の本質的要因ではありません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -383,7 +383,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "14"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "本問の表ではジョブA・B・Cの到着時刻と必要処理時間が与えられており、多重度1のFCFSスケジューリングではAがまず処理され、待ち行列に並んだ順にB・Cが処理されます。Cの到着時刻から、A・Bの未処理分と自身の処理時間を順次加算した時刻がCの終了時刻で、ターンアラウンドタイム=Cの終了時刻−Cの到着時刻として11秒となるためアが正解です。イ12・ウ13・エ14は前ジョブの待ち時間や処理時間の積算を誤った値で、本問の表条件と一致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -407,7 +407,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "待ち状態"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "プリエンプションは、より優先度の高いタスクの到来やタイムクウォンタム切れに応じてOSが実行中タスクからCPUを奪取する切替えで、実行中タスクは引き続き実行可能ではあるがCPUは別タスクへ渡されるため、状態は「実行状態」から「実行可能状態」へ遷移しイが正解です。アの休止状態はOSが破棄/未起動の状態、ウの終了状態はタスクが完了した状態、エの待ち状態は資源・イベント待ちで自発的な状態遷移であり、いずれもプリエンプションによる遷移先には該当しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +431,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "プログラムの実行中に必要になった時点でモジュールをロードすることを、動的再配置という。"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ガーベジコレクションは、プログラムが動的に確保したヒープ領域のうち、もはやどこからも参照されていない領域を自動で検出し回収・再利用可能にするメモリ管理機構でありイが正解です。アは可変区画方式ではなく主記憶のコンパクション(整理)、ウは動的リンキングではなく動的再配置、エは動的再配置ではなく動的リンキング(動的ロード)の説明で、いずれも用語と概念が入れ替わっており誤りです。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -455,7 +455,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "ページフォールト = ページイン ≥ ページアウト"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "ページフォールトが起きると、必ず該当ページを主記憶へ読み込む(ページイン)処理が伴うため、ページフォールトとページインの回数は等しくなります。一方ページアウトは、主記憶に空きフレームが残っている間は発生せず、置換時にもダーティでなければスキップされるため、ページイン以下の回数となり、関係はページフォールト=ページイン ≥ ページアウトとなりエが正解です。ア・イ・ウはページアウトをページイン以上としていたり、ページフォールトとページインに不等号を付ける誤りで、実際の挙動と合致しません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -479,7 +479,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "大規模なデータセットを分散処理するためのソフトウェアライブラリ"
     },
     "answer": "エ",
-    "explanation": "正解はエです。AIコパイロットに解説を依頼してください。",
+    "explanation": "Hadoopは、Googleが提唱したMapReduceとGFSをオープンソースで実装した、HDFSと分散処理エンジンからなる大規模データセット分散処理用ソフトウェアライブラリ群でありエが正解です。アはJavaEEアプリケーションサーバ(WildFly/WebLogic等)、イはWebサーバ(Apache HTTP Server等)、ウはRDBMS(PostgreSQL/MySQL等)の説明で、いずれも分散ファイルシステム+分散計算フレームワークを中核とするHadoopの特徴とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -503,7 +503,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "微小な無線チップによる人又は物の識別及び管理"
     },
     "answer": "イ",
-    "explanation": "正解はイです。AIコパイロットに解説を依頼してください。",
+    "explanation": "RFIDは微小な無線ICチップ(タグ)とアンテナを物品や人に貼付/装着し、リーダから発する電波で非接触に識別情報を読み書きする技術で、物品管理・入退室管理・在庫管理などに用いられるためエが正解です。アは紙印刷QRコードなど二次元コードの読取り、イはBluetoothに代表される近距離音声/データ通信、ウはIrDAなどの赤外線通信の説明で、いずれもRFIDの「無線ICチップで識別を行う」という本質的用途と異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -527,7 +527,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "複数のチップを単一のパッケージに封入してシステム化したデバイス"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。AIコパイロットに解説を依頼してください。",
+    "explanation": "SoC(System on a Chip)は、CPU・メモリ・I/Oなど従来は複数の独立LSIで構成していたコンピュータシステム全体を1チップ上に集積したLSIを指しウが正解です。アはチップ上で動作するファームウェアの説明で物理デバイスの話ではなく、イは複数MCUを載せた基板でチップではなく、エはMCM/SiPのように複数チップを1つのパッケージにまとめる技術で、いずれも「単一ダイ上のシステム集積」というSoCの定義とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"
@@ -575,7 +575,7 @@ export const AP_QUESTIONS_2021_SPRING: Question[] = [
       "エ": "直流電流を交流電流に変換する。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。AIコパイロットに解説を依頼してください。",
+    "explanation": "コンデンサは電極間に絶縁体(誘電体)を挟んだ素子で、交流に対しては電荷の充放電を繰り返してインピーダンスを下げて通すのに対し、直流に対しては定常状態で電荷蓄積が完了すると電流が流れない(理想的にはゼロになる)性質をもつためアが正解です。イは整流回路(ダイオードブリッジ等)、ウはコイル等のローパス的振る舞い、エはインバータの機能で、いずれもコンデンサ単体の挙動とは異なります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_ap_am_qs.pdf",
     "license": "IPA-public"

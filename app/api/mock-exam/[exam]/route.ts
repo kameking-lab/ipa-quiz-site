@@ -3,7 +3,11 @@ import { NextResponse } from "next/server";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { filterQuestions, shuffleChoices } from "@/lib/questions/filter";
 import { getMockConfig } from "@/lib/mock-exam/config";
-import type { ExamCode } from "@/lib/questions/types";
+import {
+  selectMockExamQuestions,
+  type SelectionMode,
+} from "@/lib/mock-exam/selection";
+import type { ExamCode, Question } from "@/lib/questions/types";
 import type { SlimMockQuestion } from "@/lib/mock-exam/types";
 
 export const runtime = "nodejs";
@@ -12,7 +16,9 @@ const VALID_EXAMS: ReadonlySet<ExamCode> = new Set([
   "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
 ]);
 
-function toSlim(q: ReturnType<typeof shuffleChoices>): SlimMockQuestion {
+const VALID_MODES: ReadonlySet<SelectionMode> = new Set(["random", "balanced"]);
+
+function toSlim(q: Question): SlimMockQuestion {
   return {
     id: q.id,
     question: q.question,
@@ -23,18 +29,22 @@ function toSlim(q: ReturnType<typeof shuffleChoices>): SlimMockQuestion {
 }
 
 export async function GET(
-  _req: Request,
+  req: Request,
   ctx: { params: Promise<{ exam: string }> },
 ) {
   const { exam: examParam } = await ctx.params;
   if (!VALID_EXAMS.has(examParam as ExamCode)) {
-    return NextResponse.json(
-      { error: "invalid_exam" },
-      { status: 400 },
-    );
+    return NextResponse.json({ error: "invalid_exam" }, { status: 400 });
   }
   const exam = examParam as ExamCode;
   const config = getMockConfig(exam);
+
+  const url = new URL(req.url);
+  const modeParam = url.searchParams.get("mode");
+  const mode: SelectionMode =
+    modeParam && VALID_MODES.has(modeParam as SelectionMode)
+      ? (modeParam as SelectionMode)
+      : "balanced";
 
   const pool = filterQuestions(ALL_QUESTIONS, { mode: "random", exam });
   if (pool.length === 0) {
@@ -44,14 +54,20 @@ export async function GET(
     );
   }
 
-  const target = Math.min(config.questions, pool.length);
-  const selected = pool.slice(0, target).map(shuffleChoices).map(toSlim);
+  const picked = selectMockExamQuestions({
+    pool,
+    target: config.questions,
+    mode,
+  });
+  const selected = picked.map(shuffleChoices).map(toSlim);
 
   return NextResponse.json(
-    { exam, total: selected.length, questions: selected },
+    { exam, mode, total: selected.length, questions: selected },
     {
       headers: {
-        "Cache-Control": "public, s-maxage=3600, max-age=300",
+        // Per-request randomization — cache is fine for repeat-tab reloads
+        // but should not be shared across users for too long.
+        "Cache-Control": "private, max-age=0, must-revalidate",
       },
     },
   );

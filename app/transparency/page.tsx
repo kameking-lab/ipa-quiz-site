@@ -4,12 +4,39 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { StatsCharts } from "./StatsCharts";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { buildWebPageNode } from "@/lib/seo/structured-data";
+
+const TRANSPARENCY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "default",
+  title: "運営の透明性レポート",
+  subtitle: "月次更新",
+  body: "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献の証として。",
+}).toString()}`;
 
 export const metadata: Metadata = {
   title: "運営の透明性レポート",
   description:
-    "過去問 AI の運営方針・コスト・意思決定を月次で公開しています。教育貢献プロジェクトとしての透明性レポート。",
+    "過去問 AI の運営方針・API コスト・意思決定プロセスを月次で公開しています。収益構造・アフィリエイト方針・開発ロードマップなど、教育貢献プロジェクトとして運営のすべてをオープンに。",
   alternates: { canonical: "/transparency" },
+  openGraph: {
+    title: "運営の透明性レポート | 過去問AI",
+    description:
+      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+    url: `${SITE_BASE_URL}/transparency`,
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    images: [{ url: TRANSPARENCY_OG_URL, width: 1200, height: 630, alt: "運営の透明性レポート" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "運営の透明性レポート | 過去問AI",
+    description:
+      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+    images: [TRANSPARENCY_OG_URL],
+  },
 };
 
 const EXAM_LABEL: Record<string, string> = {
@@ -126,8 +153,20 @@ export default async function TransparencyPage() {
     .sort((a, b) => b.count - a.count);
   const monthlySeries = await fetchPostHogMetrics();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(
+        `${SITE_BASE_URL}/transparency`,
+        "運営の透明性レポート — 過去問AI",
+        "過去問 AI の運営方針・コスト・意思決定を��次で公開しています。教育貢献プロジェクトとしての透明性レポート。",
+      ),
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
       <header className="mb-6">
         <Badge variant="success">教育貢献プロジェクト</Badge>
         <h1 className="mt-2 text-2xl font-bold sm:text-3xl">運営の透明性レポート</h1>

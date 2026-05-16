@@ -109,6 +109,11 @@ const TYPE_META: Record<string, TypeStyle> = {
     emoji: "🔍",
     subtitle: "学習トピック特集",
   },
+  feature: {
+    gradient: "linear-gradient(135deg, #065f46 0%, #059669 50%, #34d399 100%)",
+    emoji: "⚡",
+    subtitle: "機能紹介",
+  },
   faq: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #6366f1 100%)",
     emoji: "💡",
@@ -178,6 +183,7 @@ export async function GET(request: Request) {
     type === "topic" ||
     type === "glossary" ||
     type === "keyword" ||
+    type === "feature" ||
     type === "faq" ||
     type === "mock-exam" ||
     type === "essay";
@@ -197,25 +203,26 @@ export async function GET(request: Request) {
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          padding: "72px 80px",
+          padding: "64px 80px",
           fontFamily: "'Noto Sans JP', sans-serif",
           color: "#fff",
         }}
       >
+        {/* Header: brand logo + type chip + free badge */}
         <div
           style={{
             display: "flex",
             alignItems: "center",
-            gap: "16px",
-            marginBottom: "30px",
+            gap: "14px",
+            marginBottom: "28px",
           }}
         >
           <div
             style={{
-              background: "rgba(255,255,255,0.22)",
-              borderRadius: "16px",
-              padding: "10px 20px",
-              fontSize: "26px",
+              background: "rgba(255,255,255,0.25)",
+              borderRadius: "14px",
+              padding: "10px 22px",
+              fontSize: "28px",
               fontWeight: 800,
               letterSpacing: "-0.5px",
             }}
@@ -224,29 +231,41 @@ export async function GET(request: Request) {
           </div>
           <div
             style={{
-              background: "rgba(0,0,0,0.25)",
+              background: "rgba(0,0,0,0.28)",
               borderRadius: "999px",
-              padding: "6px 14px",
-              fontSize: "16px",
+              padding: "6px 16px",
+              fontSize: "17px",
               fontWeight: 600,
             }}
           >
             {subtitle}
           </div>
+          <div
+            style={{
+              background: "rgba(255,255,255,0.18)",
+              borderRadius: "999px",
+              padding: "6px 16px",
+              fontSize: "17px",
+              fontWeight: 700,
+              marginLeft: "4px",
+            }}
+          >
+            全機能無料
+          </div>
         </div>
 
         {isContent ? (
           <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
-            <div style={{ fontSize: "120px", lineHeight: 1, marginBottom: "20px" }}>
+            <div style={{ fontSize: "88px", lineHeight: 1, marginBottom: "16px" }}>
               {meta.emoji}
             </div>
             <div
               style={{
-                fontSize: "60px",
+                fontSize: "62px",
                 fontWeight: 800,
                 lineHeight: 1.15,
                 letterSpacing: "-1px",
-                marginBottom: "16px",
+                marginBottom: "18px",
               }}
             >
               {title}
@@ -254,13 +273,13 @@ export async function GET(request: Request) {
             {body && (
               <div
                 style={{
-                  fontSize: "26px",
+                  fontSize: "28px",
                   fontWeight: 400,
-                  lineHeight: 1.5,
+                  lineHeight: 1.55,
                   maxWidth: "1040px",
-                  color: "rgba(255,255,255,0.92)",
+                  color: "rgba(255,255,255,0.95)",
                   display: "-webkit-box",
-                  WebkitLineClamp: 3,
+                  WebkitLineClamp: 2,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
                 }}
@@ -269,28 +288,28 @@ export async function GET(request: Request) {
               </div>
             )}
             {stats.length > 0 && (
-              <div style={{ display: "flex", gap: "20px", marginTop: "24px" }}>
+              <div style={{ display: "flex", gap: "20px", marginTop: "22px" }}>
                 {stats.map((s, i) => (
                   <div
                     key={i}
                     style={{
                       background: "rgba(0,0,0,0.30)",
                       borderRadius: "20px",
-                      padding: "14px 22px",
+                      padding: "14px 24px",
                       display: "flex",
                       flexDirection: "column",
                     }}
                   >
                     <div
                       style={{
-                        fontSize: "15px",
+                        fontSize: "16px",
                         fontWeight: 500,
-                        opacity: 0.85,
+                        opacity: 0.88,
                       }}
                     >
                       {s.label}
                     </div>
-                    <div style={{ fontSize: "36px", fontWeight: 800 }}>
+                    <div style={{ fontSize: "38px", fontWeight: 800 }}>
                       {s.value}
                     </div>
                   </div>
@@ -303,19 +322,19 @@ export async function GET(request: Request) {
             style={{
               display: "flex",
               alignItems: "center",
-              gap: "32px",
+              gap: "36px",
               flex: 1,
             }}
           >
-            <div style={{ fontSize: "180px", lineHeight: 1 }}>{meta.emoji}</div>
+            <div style={{ fontSize: "170px", lineHeight: 1 }}>{meta.emoji}</div>
             <div style={{ display: "flex", flexDirection: "column", flex: 1 }}>
               <div
                 style={{
-                  fontSize: "62px",
+                  fontSize: "64px",
                   fontWeight: 800,
                   lineHeight: 1.1,
                   letterSpacing: "-1px",
-                  marginBottom: "20px",
+                  marginBottom: "22px",
                 }}
               >
                 {title}
@@ -334,14 +353,14 @@ export async function GET(request: Request) {
                   >
                     <div
                       style={{
-                        fontSize: "16px",
+                        fontSize: "17px",
                         fontWeight: 500,
-                        opacity: 0.85,
+                        opacity: 0.88,
                       }}
                     >
                       {s.label}
                     </div>
-                    <div style={{ fontSize: "44px", fontWeight: 800 }}>
+                    <div style={{ fontSize: "46px", fontWeight: 800 }}>
                       {s.value}
                     </div>
                   </div>
@@ -356,13 +375,13 @@ export async function GET(request: Request) {
             display: "flex",
             justifyContent: "space-between",
             alignItems: "flex-end",
-            marginTop: "30px",
-            color: "rgba(255,255,255,0.85)",
-            fontSize: "20px",
+            marginTop: "28px",
+            color: "rgba(255,255,255,0.88)",
+            fontSize: "21px",
           }}
         >
-          <div>解説ゼロ遷移 × AI コパイロット常駐</div>
-          <div>kakomon-ai.jp</div>
+          <div>IPA 全 13 試験区分 × AI コパイロット常駐 × 登録不要</div>
+          <div style={{ fontWeight: 600 }}>kakomon-ai.jp</div>
         </div>
       </div>
     ),
