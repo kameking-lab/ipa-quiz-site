@@ -11,6 +11,7 @@ import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_ID, SITE_LOGO_IMAGE, buildOrgNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
@@ -61,26 +62,22 @@ export default function HomePage() {
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": `${SITE_BASE_URL}/#website`,
+        "@id": SITE_ID,
         url: SITE_BASE_URL,
         name: SITE_NAME,
         inLanguage: "ja-JP",
         description: `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
         potentialAction: {
           "@type": "SearchAction",
-          target: `${SITE_BASE_URL}/quiz?mode=random&exam={search_term_string}`,
-          "query-input": "required name=search_term_string",
+          target: {
+            "@type": "EntryPoint",
+            urlTemplate: `${SITE_BASE_URL}/quiz?mode=random&exam={exam_code}`,
+          },
+          "query-input": "required name=exam_code",
         },
       },
       {
-        "@type": "EducationalOrganization",
-        "@id": `${SITE_BASE_URL}/#organization`,
-        name: SITE_NAME,
-        url: SITE_BASE_URL,
-        logo: `${SITE_BASE_URL}/icon-512.svg`,
-        sameAs: ["https://x.com/kakomon_ai_jp", "https://note.com/kakomon_ai"],
-        description:
-          "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
+        ...buildOrgNode(),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
           name: "IPA 試験対策コース一覧",

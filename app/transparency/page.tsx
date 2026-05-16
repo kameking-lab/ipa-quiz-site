@@ -4,7 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { StatsCharts } from "./StatsCharts";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { buildWebPageNode } from "@/lib/seo/structured-data";
 
 const TRANSPARENCY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
@@ -151,8 +153,20 @@ export default async function TransparencyPage() {
     .sort((a, b) => b.count - a.count);
   const monthlySeries = await fetchPostHogMetrics();
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(
+        `${SITE_BASE_URL}/transparency`,
+        "運営の透明性レポート — 過去問AI",
+        "過去問 AI の運営方針・コスト・意思決定を��次で公開しています。教育貢献プロジェクトとしての透明性レポート。",
+      ),
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
       <header className="mb-6">
         <Badge variant="success">教育貢献プロジェクト</Badge>
         <h1 className="mt-2 text-2xl font-bold sm:text-3xl">運営の透明性レポート</h1>

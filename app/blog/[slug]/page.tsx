@@ -12,6 +12,7 @@ import {
   getRelatedPosts,
 } from "@/data/blog";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 
 export async function generateStaticParams() {
@@ -124,12 +125,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
       },
       publisher: {
         "@type": "Organization",
+        "@id": ORG_ID,
         name: SITE_NAME,
         url: SITE_BASE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: `${SITE_BASE_URL}/icon-512.svg`,
-        },
+        logo: SITE_LOGO_IMAGE,
       },
       mainEntityOfPage: {
         "@type": "WebPage",
@@ -143,7 +142,9 @@ export default async function BlogArticlePage({ params }: PageProps) {
       description: post.description,
       inLanguage: "ja",
       learningResourceType: "Article",
+      educationalLevel: "Professional",
       educationalUse: "Self-study",
+      audience: STUDENT_AUDIENCE,
       teaches: post.exam
         ? `${examLabel(post.exam)} 試験対策`
         : "IPA情報処理技術者試験対策",
@@ -151,6 +152,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
       isAccessibleForFree: true,
       publisher: {
         "@type": "Organization",
+        "@id": ORG_ID,
         name: SITE_NAME,
         url: SITE_BASE_URL,
       },
