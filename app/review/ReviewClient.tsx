@@ -47,46 +47,46 @@ export function ReviewClient() {
     nextReviewDate: string | null;
   }>({ seenCount: 0, scheduledCount: 0, nextReviewDate: null });
 
-  // 問題データとlocalStorageを同時にロード（クライアント専用）
+  // localStorageから復習データを収集し、サーバーAPIで本日の復習問題を取得
   useEffect(() => {
     void (async () => {
       try {
-        const { getAllQuestions } = await import("@/lib/questions/load");
-        const allQuestions = getAllQuestions();
-
         const raw = localStorage.getItem(REVIEW_KEY);
         const loaded: ReviewStore = raw ? (JSON.parse(raw) as ReviewStore) : {};
         setStore(loaded);
 
-        // 今日が復習日の問題を抽出
         const today = getTodayStr();
         const historyRaw = localStorage.getItem(LS_KEYS.history);
         const history: Array<{ questionId: string }> = historyRaw
           ? (JSON.parse(historyRaw) as Array<{ questionId: string }>)
           : [];
+        const historyIds = [...new Set(history.map((h) => h.questionId))];
 
-        // 一度でも解いた問題のうち、今日が復習日のもの
-        const seenIds = new Set(history.map((h) => h.questionId));
-        const due = allQuestions.filter((q) => {
-          if (!seenIds.has(q.id)) return false;
-          if (q.type !== "multiple-choice" || q.hasImage || q.needsReview) return false;
-          const record = loaded[q.id];
-          if (!record) return true; // 未登録は今日が復習日
-          return record.nextReviewAt <= today;
+        const reviewStore = Object.fromEntries(
+          Object.entries(loaded).map(([id, r]) => [id, { nextReviewAt: r.nextReviewAt }]),
+        );
+
+        const res = await fetch("/api/review/due", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ historyIds, reviewStore, today }),
         });
 
-        // 空状態のための補助情報を計算（学習履歴の総数・スケジュール済み件数・次回復習日）
-        const futureDates = Object.values(loaded)
-          .map((r) => r.nextReviewAt)
-          .filter((d) => d > today)
-          .sort();
-        setEmptyMeta({
-          seenCount: seenIds.size,
-          scheduledCount: Object.keys(loaded).length,
-          nextReviewDate: futureDates[0] ?? null,
-        });
+        if (res.ok) {
+          const data = (await res.json()) as {
+            questions: Question[];
+            seenCount: number;
+            scheduledCount: number;
+            nextReviewDate: string | null;
+          };
+          setDueQuestions(data.questions);
+          setEmptyMeta({
+            seenCount: data.seenCount,
+            scheduledCount: data.scheduledCount,
+            nextReviewDate: data.nextReviewDate,
+          });
+        }
 
-        setDueQuestions(due.sort(() => Math.random() - 0.5));
         setInitialized(true);
       } catch {
         setInitialized(true);

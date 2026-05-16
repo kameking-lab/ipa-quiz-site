@@ -1,5 +1,12 @@
-import type { ExamCode, Question } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import type { HistoryEntry } from "@/lib/storage/history";
+
+/** Minimal question metadata needed for analytics (avoids bundling full Question data). */
+export interface QuestionMeta {
+  id: string;
+  category: string;
+  exam: ExamCode;
+}
 
 export interface CategoryStat {
   category: string;
@@ -21,7 +28,7 @@ const PASS_SAMPLE = 60;
 
 export function computeCategoryStats(
   entries: HistoryEntry[],
-  questions: Question[],
+  questions: QuestionMeta[],
   examFilter?: ExamCode,
 ): CategoryStat[] {
   const qById = new Map(questions.map((q) => [q.id, q]));
@@ -63,7 +70,7 @@ export function topStrongCategories(stats: CategoryStat[], n = 3, minAnswered = 
 
 export function computeExamProbabilities(
   entries: HistoryEntry[],
-  questions: Question[],
+  questions: QuestionMeta[],
 ): ExamPassProbability[] {
   const qById = new Map(questions.map((q) => [q.id, q]));
   const acc = new Map<ExamCode, { answered: number; correct: number }>();

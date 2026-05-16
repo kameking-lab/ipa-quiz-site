@@ -2,37 +2,17 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ALL_QUESTIONS } from "@/data/questions";
-import type { ExamCode, Question } from "@/lib/questions/types";
-import { filterQuestions, shuffleChoices } from "@/lib/questions/filter";
-import { createHistoryStore } from "@/lib/storage/history";
+import type { Question } from "@/lib/questions/types";
+import { shuffleChoices } from "@/lib/questions/filter";
 import { StreamQuizPlayer } from "./StreamQuizPlayer";
 import { Loader2 } from "lucide-react";
 
-export function StreamQuizLoader({
-  params,
-}: {
-  params: { exam?: string; topic?: string; category?: string };
-}) {
+export function StreamQuizLoader({ pool }: { pool: Question[] }) {
   const [questions, setQuestions] = React.useState<Question[] | null>(null);
 
   React.useEffect(() => {
-    const history = createHistoryStore();
-    const pool = filterQuestions(
-      ALL_QUESTIONS,
-      {
-        mode: "random",
-        exam: (params.exam as ExamCode | undefined) ?? "ap",
-        topicTag: params.topic,
-        category: params.category,
-      },
-      history,
-    )
-      .slice(0, 60)
-      .map(shuffleChoices);
-     
-    setQuestions(pool);
-  }, [params]);
+    setQuestions(pool.map(shuffleChoices));
+  }, [pool]);
 
   if (!questions) {
     return (
