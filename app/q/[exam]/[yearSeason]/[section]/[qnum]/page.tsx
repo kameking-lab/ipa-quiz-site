@@ -325,7 +325,7 @@ export default async function QuestionPage({
         "@id": `${pageUrlAbs}#quiz`,
         name: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`,
         about: examLabelAt(q.exam, q.year, q.season),
-        educationalLevel: "professional",
+        educationalLevel: "Professional",
         inLanguage: "ja",
         url: pageUrlAbs,
         dateModified: lastUpdatedISO,
