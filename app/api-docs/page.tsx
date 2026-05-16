@@ -4,6 +4,7 @@ import { ExternalLink, Key, Terminal } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 import { SwaggerUiClient } from "./SwaggerUiClient";
 
 export const metadata: Metadata = {
@@ -61,11 +62,11 @@ export default function ApiDocsPage() {
           curl で疎通確認したい場合は次のコマンドが使えます（API キーなしでも動作）。
         </p>
         <pre className="mt-3 overflow-x-auto rounded-xl bg-muted/40 p-3 text-xs leading-relaxed">
-          <code>{`curl https://kakomon-ai.jp/api/v1/exams
+          <code>{`curl ${SITE_BASE_URL}/api/v1/exams
 
-curl "https://kakomon-ai.jp/api/v1/questions?exam=ap&limit=5"
+curl "${SITE_BASE_URL}/api/v1/questions?exam=ap&limit=5"
 
-curl -X POST https://kakomon-ai.jp/api/v1/grade \\
+curl -X POST ${SITE_BASE_URL}/api/v1/grade \\
   -H "Content-Type: application/json" \\
   -d '{"questionId":"ap-2024a-am-q1","answer":"ア"}'`}</code>
         </pre>

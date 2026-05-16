@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
 import { ShareButtons } from "@/components/ShareButtons";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 
 export const metadata: Metadata = {
   title: "過去問 AI プロジェクトについて",
@@ -231,7 +232,7 @@ export default function AboutPage() {
               学習中のスクリーンショットを X や Instagram に投稿いただけると、教育貢献プロジェクトの存在が広がります。
             </p>
             <ShareButtons
-              url="https://kakomon-ai.jp/"
+              url={`${SITE_BASE_URL}/`}
               text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を応援しています。"
               hashtags={["過去問AI", "IPA試験", "応用情報"]}
             />

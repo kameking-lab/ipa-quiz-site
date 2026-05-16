@@ -139,7 +139,7 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
                 よければ、学習仲間にもシェアしてください
               </p>
               <ShareButtons
-                url={typeof window !== "undefined" ? window.location.origin : "https://kakomon-ai.jp/"}
+                url={typeof window !== "undefined" ? window.location.origin : "https://www.kakomon-ai.jp/"}
                 text="IPA 試験対策が全機能無料で使える教育貢献プロジェクト「過去問 AI」を活用しています。"
                 hashtags={["過去問AI", "IPA試験"]}
                 compact

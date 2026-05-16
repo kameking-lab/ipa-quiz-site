@@ -39,7 +39,7 @@ export function StreamSummary({
   const shareUrl =
     typeof window !== "undefined"
       ? `${window.location.origin}/quiz/stream`
-      : "https://kakomon-ai.jp/quiz/stream";
+      : "https://www.kakomon-ai.jp/quiz/stream";
 
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
     shareText,

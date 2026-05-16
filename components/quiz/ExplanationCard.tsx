@@ -159,7 +159,7 @@ export function ExplanationCard({
             ✨ 正解おめでとうございます！教育貢献プロジェクトをシェアして仲間と学習しませんか？
           </p>
           <ShareButtons
-            url={typeof window !== "undefined" ? window.location.href : "https://kakomon-ai.jp/"}
+            url={typeof window !== "undefined" ? window.location.href : "https://www.kakomon-ai.jp/"}
             text={`過去問AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
             hashtags={["過去問AI", "IPA試験"]}
             compact

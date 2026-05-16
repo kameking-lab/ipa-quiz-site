@@ -492,7 +492,7 @@ export function QuizPlayer({
 const QUIZ_ORIGIN =
   typeof window !== "undefined"
     ? window.location.origin
-    : "https://kakomon-ai.jp";
+    : "https://www.kakomon-ai.jp";
 
 function QuizCompleteScreen({
   stats,

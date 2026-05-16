@@ -7,6 +7,7 @@ import { Sparkles, ExternalLink, AlertCircle } from "lucide-react";
 import { Markdown } from "@/components/ui/markdown";
 import { cn } from "@/lib/utils";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 import type { SharePayload } from "@/lib/chat/types";
 
 function decodePayload(encoded: string): SharePayload | null {
@@ -117,7 +118,7 @@ export function ChatShareView() {
       </div>
 
       <footer className="mt-8 text-center text-[11px] text-zinc-400 dark:text-zinc-600">
-        出典: IPA 情報処理技術者試験 ／ 過去問AI — https://kakomon-ai.jp
+        出典: IPA 情報処理技術者試験 ／ 過去問AI — {SITE_BASE_URL}
       </footer>
     </main>
   );

@@ -1,5 +1,6 @@
 import type { ChatSession } from "./types";
 import type { Question } from "@/lib/questions/types";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 
 export function buildMarkdown(session: ChatSession, question: Question): string {
@@ -56,7 +57,7 @@ export function buildMarkdown(session: ChatSession, question: Question): string 
     }
   }
 
-  lines.push(`---`, ``, `*過去問AI - https://kakomon-ai.jp*`);
+  lines.push(`---`, ``, `*過去問AI - ${SITE_BASE_URL}*`);
 
   return lines.join("\n");
 }
