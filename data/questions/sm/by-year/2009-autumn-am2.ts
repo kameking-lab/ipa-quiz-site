@@ -221,6 +221,7 @@ export const SM_QUESTIONS_2009_AUTUMN_AM2: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "sm-2009a-am2-q10",
     "exam": "sm",
     "session": "am2",

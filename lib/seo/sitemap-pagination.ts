@@ -8,8 +8,10 @@ export const SITEMAP_CHUNK_SIZE = 10000;
 // Search Console "Submitted URL marked 'noindex'" warnings and wastes crawl
 // budget. Today the placeholder set is empty, but keeping the filter here
 // means a future content regeneration that reintroduces them stays consistent.
+// needsReview questions 404 at /q/* (see app/q/.../page.tsx), so exclude them
+// here too — otherwise the sitemap advertises URLs that resolve to 404.
 export function getIndexableQuestions() {
-  return ALL_QUESTIONS.filter((q) => !isPlaceholderExplanation(q));
+  return ALL_QUESTIONS.filter((q) => !isPlaceholderExplanation(q) && !q.needsReview);
 }
 
 export function getSitemapChunkCount(): number {

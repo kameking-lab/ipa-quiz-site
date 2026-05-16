@@ -35,6 +35,12 @@ jobs:
       - name: Run question schema validation
         run: pnpm validate:questions
 
+      - name: Run data integrity audit (gates on critical findings)
+        # scripts/audit-questions.ts — fails (exit 1) on critical findings
+        # (missing fields, duplicate IDs, broken choices/answer). Already-
+        # gated needsReview questions are demoted to warning automatically.
+        run: ./node_modules/.bin/tsx scripts/audit-questions.ts --ci
+
       - name: Detect explanation-answer mismatches (regex only)
         # .env.local はCI環境に存在しないため tsx 直呼び（--env-file 不使用）
         run: ./node_modules/.bin/tsx scripts/detect-explanation-mismatch.ts -- --regex-only

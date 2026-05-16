@@ -101,6 +101,7 @@ export const FE_QUESTIONS_2019_SPRING_AM: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "fe-2019h-am-q5",
     "exam": "fe",
     "session": "am",

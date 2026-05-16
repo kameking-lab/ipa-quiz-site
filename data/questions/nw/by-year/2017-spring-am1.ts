@@ -365,6 +365,7 @@ export const NW_QUESTIONS_2017_SPRING_AM1: Question[] = [
     "license": "IPA-public"
   },
   {
+    "needsReview": true,
     "id": "nw-2017h-am1-q16",
     "exam": "nw",
     "session": "am1",
