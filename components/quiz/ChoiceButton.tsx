@@ -90,7 +90,7 @@ export function ChoiceButton({
       >
         {choiceKey}
       </span>
-      <span className="flex-1 pt-1 text-sm leading-relaxed sm:text-base">{text}</span>
+      <span className="flex-1 pt-1 text-base leading-relaxed">{text}</span>
       {state === "revealed-correct" && (
         <Check
           aria-hidden="true"
