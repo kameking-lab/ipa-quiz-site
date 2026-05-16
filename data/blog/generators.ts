@@ -216,7 +216,7 @@ ${p.afternoonStrategy}
     tags: ["直前対策", "勉強法", p.shortLabel],
     publishedAt: publishedAtFor(13 + idx),
     body,
-    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-yoru-tokurensyu`],
+    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-yoru-tokurensyu`, "ipa-cyokusen-1shukan"],
   };
 }
 
@@ -297,7 +297,7 @@ ${topic} は ${p.label} の中核論点であり、午前試験・午後試験�
     tags: ["頻出論点", "出題傾向", p.shortLabel],
     publishedAt: publishedAtFor(26 + idx),
     body,
-    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-jisseki-mondai-bunseki`],
+    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-jisseki-mondai-bunseki`, "kakomon-dake-goukaku"],
   };
 }
 
@@ -483,7 +483,7 @@ ${toItalicList(p.exampleSubjects)}
     tags: ["出題傾向", "戦略", p.shortLabel],
     publishedAt: publishedAtFor(52 + idx),
     body,
-    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-hinnshutsu-ronten-toppu10`],
+    relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-hinnshutsu-ronten-toppu10`, "ipa-shiken-data-driven-revision"],
   };
 }
 
@@ -1431,7 +1431,7 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
 
 [FE 科目 B 演習](/fe) から始めましょう。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["fe-kamoku-b-taisaku", "ap-gogo-sentaku", "kakomon-dake-goukaku"],
   });
 
   general.push({
@@ -1475,7 +1475,7 @@ NW は「動き」で理解する。輻輳・再送・ハンドシェイク・�
 
 [NW 過去問](/nw)・[論述添削（PM/SA 方面）](/essay) と組み合わせて鍛えましょう。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["nw-hinshutu-pattern", "nw-nanido-goukakuritsu-suii", "sc-incident-response-storytelling"],
   });
 
   general.push({
@@ -1514,7 +1514,7 @@ DB の午後 I・II では、ER 図 / 関係スキーマ / SQL チューニン�
 
 [DB 過去問](/db) で今日 1 問描いてみましょう。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["db-sql-taisaku", "sa-architecture-tradeoff", "ap-gogo-sentaku"],
   });
 
   general.push({
@@ -1552,7 +1552,7 @@ SC 午後事例は、サイバーインシデントを 1 本の物語として�
 
 物語読解の訓練は再現性が高く、午後 II の長文事例にも応用できます。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["sc-ronbun-taisaku", "sc-shikaku-merit", "nw-protocol-deep-understanding"],
   });
 
   general.push({
@@ -1594,7 +1594,7 @@ PM の主体性が問われるため、上長の指示を実行しただけの�
 
 [PM 論述添削へ](/essay/pm)・[業種別合格答案サンプル](/essay/pm#sample-answers)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["pm-goukaku-ronbun", "au-shiken-taisaku", "sm-itil-storytelling"],
   });
 
   general.push({
@@ -1640,7 +1640,7 @@ ST 論述で「現場目線が抜けない」ことが減点の最大要因。�
 
 経営層と同じ言葉で論述しましょう。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["st-senryaku-shikou", "sa-architecture-tradeoff", "ipa-koudo-9kubun-chigai"],
   });
 
   general.push({
@@ -1683,7 +1683,7 @@ SA 論述では「全部両立しました」型の答案は評価されませ�
 
 [SA 論述添削へ](/essay/sa)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["st-strategy-perspective", "db-er-design-practice", "ipa-koudo-9kubun-chigai"],
   });
 
   general.push({
@@ -1721,7 +1721,7 @@ SM 論述では ITIL 用語を散発的に並べるだけでは評価されま�
 
 [SM 論述添削へ](/essay/sm)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["au-audit-evidence-language", "pm-goukaku-ronbun", "ipa-koudo-9kubun-chigai"],
   });
 
   general.push({
@@ -1760,7 +1760,7 @@ AU 論述で最大の落とし穴は「設計者目線が混ざる」こと。�
 
 [AU 論述添削へ](/essay/au)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["au-shiken-taisaku", "sm-itil-storytelling", "sc-ronbun-taisaku"],
   });
 
   general.push({
@@ -1926,7 +1926,7 @@ YouTube を流し見して理解した気になる。手を動かさない。
 
 [過去問AI を試す](/)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["ai-coplilot-prompt-tips", "kakomon-dake-goukaku", "ipa-shiken-yoshu-vs-douju-jiritsu"],
   });
 
   general.push({
@@ -2081,7 +2081,7 @@ IPA 資格は実は企業によって評価がまちまち。事前に見分け�
 
 努力が無駄にならない職場を選びましょう。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["shikaku-career-path", "gyoushu-betsu-it-shikaku", "13-shikaku-osusume-jyun"],
   });
 
   general.push({
@@ -2138,7 +2138,7 @@ IPA 資格は実は企業によって評価がまちまち。事前に見分け�
 
 引き続きよろしくお願いします。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["ai-kakomon-gakushuu", "kakomon-ai-vs-doujou", "ipa-shiken-ai-katsuyou-benkyouhou"],
   });
 
   general.push({
@@ -2241,7 +2241,7 @@ IPA は 3〜5 年ごとにシラバスを改訂します。「古い問題はど
 
 [年度別モードを試す](/modes/year)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["ipa-saishin-doukou", "ipa-shiken-ai-katsuyou-benkyouhou", "kakomon-ai-roadmap-2026"],
   });
 
   general.push({
@@ -2295,7 +2295,7 @@ IPA は 3〜5 年ごとにシラバスを改訂します。「古い問題はど
 
 [ダッシュボードへ](/account/dashboard)。
 `,
-    relatedSlugs: [],
+    relatedSlugs: ["ipa-shiken-yoshu-vs-douju-jiritsu", "ipa-shiken-mokuhi-mondai-tukurikata", "ai-coplilot-prompt-tips"],
   });
 
   /* ========== 拡充ブロック2 (2026-07): 比較・キャリア・業種別・試験別深掘り ========== */
