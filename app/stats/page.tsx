@@ -113,8 +113,7 @@ export default async function StatsPage() {
               </>
             ) : (
               <>
-                Google Search Console の API 連携が完了次第、月間表示回数を本ページに自動表示します。
-                セットアップ手順: <code className="rounded bg-muted px-1.5 py-0.5 text-[11px]">logs/gsc-setup-guide.md</code>
+                Google Search Console との連携が完了次第、月間表示回数を本ページに自動表示します。
               </>
             )}
           </p>

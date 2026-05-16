@@ -13,6 +13,8 @@ export default function robots(): MetadataRoute.Robots {
           "/auth/",
           "/account/",
           "/chat/share",
+          // 開発者向け Public API β ドキュメントは検索インデックス対象外
+          "/api-docs",
           // 内部レビュー・一時公開ページは検索インデックス対象外
           "/final-review-v3",
           "/strategy-discussion-v2",
