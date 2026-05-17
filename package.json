@@ -18,6 +18,10 @@
     "db:migrate:deploy": "prisma migrate deploy",
     "db:studio": "prisma studio",
     "fetch:pdfs": "tsx scripts/fetch-ipa-pdfs.ts",
+    "audit:pdf-coverage": "tsx scripts/audit-pdf-coverage.ts",
+    "ingest:ipa": "tsx scripts/ingest-ipa-pdf.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
     "generate:ap": "tsx --env-file=.env.local scripts/generate-ap-all.ts",
     "parse:pdfs": "tsx --env-file=.env.local scripts/parse-pdf-to-json.ts",
     "validate:questions": "tsx scripts/validate-questions.ts",
@@ -81,9 +85,11 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "pdfjs-dist": "^5.7.284",
     "tailwindcss": "^4.3.0",
     "tsx": "^4.22.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.6"
   },
   "pnpm": {
     "overrides": {
