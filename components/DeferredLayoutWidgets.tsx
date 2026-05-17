@@ -9,6 +9,10 @@ const KeyboardShortcutsHelp = dynamic(
   () => import("@/components/KeyboardShortcutsHelp").then((m) => m.KeyboardShortcutsHelp),
   { ssr: false },
 );
+const FeedbackButton = dynamic(
+  () => import("@/components/FeedbackButton").then((m) => m.FeedbackButton),
+  { ssr: false },
+);
 const AiQuotaIndicator = dynamic(
   () => import("@/components/AiQuotaIndicator").then((m) => m.AiQuotaIndicator),
   { ssr: false },
@@ -27,6 +31,10 @@ const CouponTracker = dynamic(
 );
 const WelcomeModal = dynamic(
   () => import("@/components/WelcomeModal").then((m) => m.WelcomeModal),
+  { ssr: false },
+);
+const OfflineIndicator = dynamic(
+  () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
   { ssr: false },
 );
 
@@ -61,11 +69,13 @@ export function DeferredLayoutWidgets() {
   return (
     <>
       <KeyboardShortcutsHelp />
+      <FeedbackButton />
       <AiQuotaIndicator />
       <StreakTracker />
       <BadgeTracker />
       <CouponTracker />
       <WelcomeModal />
+      <OfflineIndicator />
     </>
   );
 }

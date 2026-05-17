@@ -332,10 +332,12 @@ export async function POST(req: Request) {
       buf += chunk;
     }
   } catch (err) {
+    // Log internal detail server-side only; never echo upstream error messages
+    // (which can include API keys, internal paths, env var names) to the client.
+    console.error("[essay-grade] provider error", err);
     const fallback = buildMockGrading(question, payload.industry, payload.answers);
-    fallback.overallAdvice = `AI 採点中にエラーが発生したため、簡易採点を表示しています: ${
-      err instanceof Error ? err.message : String(err)
-    }`;
+    fallback.overallAdvice =
+      "AI 採点が一時的に利用できなかったため、簡易採点を表示しています。時間を置いて再度お試しください。";
     return NextResponse.json(fallback, {
       headers: { "X-Provider": provider.name, "X-Error-Type": "provider_error" },
     });

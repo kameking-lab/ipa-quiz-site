@@ -47,7 +47,10 @@
     "audit:essays": "tsx scripts/audit-essays.ts",
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
     "audit:success-stories": "tsx scripts/audit-success-stories.ts",
-    "audit:success-stories:ci": "tsx scripts/audit-success-stories.ts --ci"
+    "audit:success-stories:ci": "tsx scripts/audit-success-stories.ts --ci",
+    "copilot:index": "tsx scripts/build-copilot-index.ts",
+    "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
+    "test": "vitest run"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.2",
@@ -78,14 +81,19 @@
   "devDependencies": {
     "@playwright/test": "^1.60.0",
     "@tailwindcss/postcss": "^4.3.0",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.2",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9",
     "eslint-config-next": "16.2.6",
+    "jsdom": "^26.1.0",
     "tailwindcss": "^4.3.0",
     "tsx": "^4.22.0",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^3.2.4"
   },
   "pnpm": {
     "overrides": {
