@@ -56,6 +56,7 @@ import {
   isAsinFilled,
 } from "@/data/recommended-books";
 import { getBlogPostsByExam } from "@/data/blog";
+import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 
 export const dynamicParams = false;
@@ -119,6 +120,7 @@ export default async function ExamTopPage({
   const categories = groupByCategory(questions);
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
   const posts = getBlogPostsByExam(code).slice(0, 3);
+  const successStories = getRelatedSuccessStoriesByExam(code, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
   const roadmapSteps = EXAM_ROADMAP[code] ?? [];
 
@@ -525,6 +527,52 @@ export default async function ExamTopPage({
                       </p>
                       <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
                         {p.description}
+                      </p>
+                    </div>
+                    <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Related success stories */}
+        {successStories.length > 0 && (
+          <section aria-label="合格体験記" className="mb-8">
+            <div className="mb-3 flex items-center justify-between">
+              <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
+                <FileText className="h-4 w-4 text-muted-foreground" />
+                {examLabel(code)} 合格体験記
+              </h2>
+              <Link
+                href={`/success-stories/${exam}`}
+                className="text-xs text-sky-600 hover:underline dark:text-sky-400"
+              >
+                すべて見る →
+              </Link>
+            </div>
+            <ul className="space-y-2">
+              {successStories.map((s) => (
+                <li key={s.slug}>
+                  <Link
+                    href={`/success-stories/${s.exam}/${s.slug}`}
+                    className="group flex items-start justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                  >
+                    <div className="min-w-0">
+                      <div className="mb-1 flex flex-wrap items-center gap-1.5 text-[11px] text-muted-foreground">
+                        <span className="rounded bg-muted px-1.5 py-0.5">
+                          {s.ageRange} / {s.occupation}
+                        </span>
+                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
+                          {s.studyMonths}か月 / {s.totalStudyHours}h
+                        </span>
+                      </div>
+                      <p className="font-medium text-foreground group-hover:text-primary">
+                        {s.title}
+                      </p>
+                      <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+                        {s.description}
                       </p>
                     </div>
                     <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
