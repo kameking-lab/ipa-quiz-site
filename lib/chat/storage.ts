@@ -1,6 +1,7 @@
+import { LS_KEYS } from "@/lib/storage/keys";
 import type { ChatSession } from "./types";
 
-const KEY = "ipa-quiz:chat-sessions:v1";
+const KEY = LS_KEYS.chatSessions;
 const MAX_SESSIONS = 50;
 
 function read(): ChatSession[] {
