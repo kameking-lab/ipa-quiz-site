@@ -46,13 +46,11 @@ import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { getCategoryTip } from "@/lib/seo/category-tips";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
-const SSG_MIN_YEAR = 2024;
-
 export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
-  return ALL_QUESTIONS.filter((q) => q.year >= SSG_MIN_YEAR).map((q) => ({
+  return ALL_QUESTIONS.filter((q) => !q.needsReview).map((q) => ({
     exam: q.exam,
     yearSeason: `${q.year}-${q.season}`,
     section: q.session,
