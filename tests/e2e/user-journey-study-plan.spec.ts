@@ -29,11 +29,11 @@ test.describe("study plan: HTTP & structure", () => {
     expect(res.status()).toBe(200);
   });
 
-  test("/study-plan has AI学習スケジュール作成 heading", async ({ page }) => {
+  test("/study-plan has 自動学習スケジュール作成 heading", async ({ page }) => {
     await page.goto("/study-plan");
     const h1 = page.getByRole("heading", { level: 1 });
     await expect(h1).toBeVisible();
-    await expect(h1).toContainText("AI 学習スケジュール作成");
+    await expect(h1).toContainText("自動学習スケジュール作成");
   });
 
   test("/study-plan shows new-plan creation section", async ({ page }) => {
