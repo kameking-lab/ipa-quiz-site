@@ -23,6 +23,7 @@ https://www.kakomon-ai.jp/student
 https://www.kakomon-ai.jp/referral
 https://www.kakomon-ai.jp/quiz/stream
 https://www.kakomon-ai.jp/mock-exam
+https://www.kakomon-ai.jp/success-stories
 https://www.kakomon-ai.jp/updates
 https://www.kakomon-ai.jp/license
 https://www.kakomon-ai.jp/community-guidelines
@@ -34,6 +35,8 @@ https://www.kakomon-ai.jp/contact
 https://www.kakomon-ai.jp/transparency
 https://www.kakomon-ai.jp/operator
 # /api-docs intentionally excluded — robots: noindex + robots.txt disallow
+# /success-stories detail pages (/success-stories/[exam]/[slug]) are
+# included via /sitemap/success-stories.xml — see lib/seo/sitemap-xml.ts.
 
 # ============================================================
 # 2) Feature landing pages (FEATURE_LANDING_PAGES)
@@ -71,13 +74,14 @@ https://www.kakomon-ai.jp/keywords/ai-copilot-how-to-use
 # ============================================================
 # Submission count summary
 # ============================================================
-# Newly-launched (category 1):    16  (excluding /api-docs)
+# Newly-launched (category 1):    17  (excluding /api-docs)
 # Feature landings (category 2):   3
 # Keyword pages (category 3):     10
-# TOTAL:                          29
+# TOTAL:                          30
 #
 # Combined with prior 4,136-URL batch (PR #238), the cumulative submission
-# coverage is approximately 4,165 unique URLs.
+# coverage is approximately 4,166 unique URLs (plus the success-stories
+# detail pages auto-discovered via /sitemap/success-stories.xml).
 #
 # Submission procedure:
 #   - Use POST /api/indexnow with INDEXNOW_ADMIN_TOKEN bearer.

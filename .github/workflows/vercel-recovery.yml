@@ -1,0 +1,147 @@
+name: Vercel Deployment Recovery
+
+on:
+  schedule:
+    # クォータリセット直後 (UTC 00:05 = JST 09:05)
+    - cron: "5 0 * * *"
+    # 日中モニタリング: 2時間ごと
+    - cron: "0 2,4,6,8,10,12,14,16,18,20,22 * * *"
+  # 手動トリガー
+  workflow_dispatch:
+    inputs:
+      force_redeploy:
+        description: "強制再デプロイ（SHA が一致していても実行）"
+        type: boolean
+        default: false
+      reason:
+        description: "実行理由（任意）"
+        type: string
+        default: "manual trigger"
+
+jobs:
+  check-and-recover:
+    name: Check Production & Auto-Recover
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Fetch latest deployment status
+        id: status
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          REPO="${{ github.repository }}"
+
+          # 本番 SHA
+          PROD_SHA=$(gh api repos/$REPO/deployments \
+            -q '[.[] | select(.environment=="Production")] | .[0].sha' 2>/dev/null || echo "")
+
+          # main 先端 SHA
+          MAIN_SHA=$(gh api repos/$REPO/commits/main -q '.sha' 2>/dev/null || echo "")
+
+          echo "prod_sha=$PROD_SHA" >> "$GITHUB_OUTPUT"
+          echo "main_sha=$MAIN_SHA" >> "$GITHUB_OUTPUT"
+
+          if [ "$PROD_SHA" = "$MAIN_SHA" ]; then
+            echo "up_to_date=true" >> "$GITHUB_OUTPUT"
+            echo "✅ Production is up to date: ${MAIN_SHA:0:8}"
+          else
+            echo "up_to_date=false" >> "$GITHUB_OUTPUT"
+            echo "⚠️ Production (${PROD_SHA:0:8}) is behind main (${MAIN_SHA:0:8})"
+          fi
+
+      - name: Skip if up to date (non-forced)
+        if: steps.status.outputs.up_to_date == 'true' && github.event.inputs.force_redeploy != 'true'
+        run: |
+          echo "✅ Nothing to do — production matches main. Exiting."
+
+      - name: Trigger Vercel redeploy via API
+        if: steps.status.outputs.up_to_date != 'true' || github.event.inputs.force_redeploy == 'true'
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_PROJECT_ID: prj_t0YGXuTY62TNajIJg2v6W68TciT1
+          MAIN_SHA: ${{ steps.status.outputs.main_sha }}
+        run: |
+          if [ -z "$VERCEL_TOKEN" ]; then
+            echo "⚠️ VERCEL_TOKEN not set. Falling back to empty-commit method."
+            exit 0
+          fi
+
+          echo "🚀 Triggering Vercel production deployment for SHA ${MAIN_SHA:0:8}..."
+
+          RESPONSE=$(curl -s -X POST \
+            "https://api.vercel.com/v13/deployments" \
+            -H "Authorization: Bearer $VERCEL_TOKEN" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "name": "ipa-quiz-site",
+              "project": "'"$VERCEL_PROJECT_ID"'",
+              "gitSource": {
+                "type": "github",
+                "repo": "kameking-lab/ipa-quiz-site",
+                "ref": "main",
+                "sha": "'"$MAIN_SHA"'"
+              },
+              "target": "production"
+            }')
+
+          DEPLOY_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('id',''))" 2>/dev/null || echo "")
+          DEPLOY_URL=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('url',''))" 2>/dev/null || echo "")
+
+          if [ -n "$DEPLOY_ID" ]; then
+            echo "✅ Deployment triggered: $DEPLOY_ID"
+            echo "🔗 URL: https://$DEPLOY_URL"
+          else
+            echo "❌ Vercel API error:"
+            echo "$RESPONSE"
+            exit 1
+          fi
+
+      - name: Fallback — push empty commit to trigger Vercel
+        if: >
+          (steps.status.outputs.up_to_date != 'true' || github.event.inputs.force_redeploy == 'true')
+          && env.VERCEL_TOKEN == ''
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -n "$VERCEL_TOKEN" ]; then
+            echo "VERCEL_TOKEN is set — Vercel API step already handled this."
+            exit 0
+          fi
+
+          echo "⚙️ No VERCEL_TOKEN — using empty-commit fallback."
+
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+          git clone "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git" /tmp/repo
+          cd /tmp/repo
+
+          git commit --allow-empty -m "chore(ci): trigger Vercel redeploy [skip ci]"
+          git push origin main
+
+          echo "✅ Empty commit pushed — Vercel will pick it up."
+
+      - name: Post summary
+        if: always()
+        env:
+          UP_TO_DATE: ${{ steps.status.outputs.up_to_date }}
+          PROD_SHA: ${{ steps.status.outputs.prod_sha }}
+          MAIN_SHA: ${{ steps.status.outputs.main_sha }}
+          REASON: ${{ github.event.inputs.reason || github.event_name }}
+        run: |
+          echo "## Vercel Recovery Summary" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 項目 | 値 |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|------|-----|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 実行トリガー | \`$REASON\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 本番 SHA | \`${PROD_SHA:0:8}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| main SHA | \`${MAIN_SHA:0:8}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| 一致 | $UP_TO_DATE |" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "管理画面: https://ipa-kentei.com/admin/deployment-status" >> "$GITHUB_STEP_SUMMARY"

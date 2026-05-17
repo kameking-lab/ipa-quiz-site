@@ -1,5 +1,9 @@
 import { getAllBlogSummaries } from "@/data/blog";
 import {
+  getAllSuccessStorySummaries,
+  getSuccessStoryExams,
+} from "@/data/success-stories";
+import {
   ESSAY_EXAM_CODES,
   getEssayQuestionsByExam,
   questionToUrlParts,
@@ -91,6 +95,7 @@ const STATIC_ROUTES: UrlEntry[] = [
     }),
   ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/success-stories`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
@@ -174,6 +179,27 @@ function getTopicHubRoutes(): UrlEntry[] {
   }));
 }
 
+function getSuccessStoryRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  for (const exam of getSuccessStoryExams()) {
+    entries.push({
+      url: `${SITE_BASE_URL}/success-stories/${exam}`,
+      lastModified: CONTENT_LAST_UPDATED,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+  for (const s of getAllSuccessStorySummaries()) {
+    entries.push({
+      url: `${SITE_BASE_URL}/success-stories/${s.exam}/${s.slug}`,
+      lastModified: s.updatedAt ?? s.publishedAt,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
+  }
+  return entries;
+}
+
 function getEssayRoutes(): UrlEntry[] {
   const entries: UrlEntry[] = [];
   for (const exam of ESSAY_EXAM_CODES) {
@@ -233,6 +259,7 @@ export function renderSitemapIndexXml(): string {
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
     `${SITE_BASE_URL}/sitemap/essays.xml`,
+    `${SITE_BASE_URL}/sitemap/success-stories.xml`,
   ];
   const chunkCount = getSitemapChunkCount();
   for (let i = 0; i < chunkCount; i += 1) {
@@ -296,4 +323,8 @@ export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
 export function renderEssaysSitemapXml(): string {
   // Essay routes already carry per-entry lastModified from getEssayRoutes().
   return renderUrlSet(getEssayRoutes());
+}
+
+export function renderSuccessStoriesSitemapXml(): string {
+  return renderUrlSet(getSuccessStoryRoutes());
 }

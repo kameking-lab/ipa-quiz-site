@@ -103,6 +103,7 @@ export default function HtmlSitemapPage() {
             { href: "/ranking", label: "ランキング" },
             { href: "/stats", label: "公開ダッシュボード" },
             { href: "/blog", label: "ブログ一覧" },
+            { href: "/success-stories", label: "合格体験記" },
             { href: "/recommended-books", label: "おすすめ書籍" },
             { href: "/student", label: "学割プラン" },
             { href: "/referral", label: "友達紹介" },

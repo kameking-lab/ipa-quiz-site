@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 
@@ -139,6 +140,7 @@ export default function RootLayout({
             メインコンテンツへスキップ
           </a>
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
+            <EmergencyBanner />
             <div className="print:hidden">
               <SiteHeader />
             </div>
@@ -229,6 +231,7 @@ export default function RootLayout({
                       <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
                       <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
                       <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ利用方針</Link></li>
+                      <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
                       <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">IPA著作権・出典</Link></li>
                     </ul>
                   </nav>

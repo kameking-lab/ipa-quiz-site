@@ -46,6 +46,8 @@
     "check:canonical": "tsx scripts/check-canonical.ts",
     "audit:essays": "tsx scripts/audit-essays.ts",
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
+    "audit:success-stories": "tsx scripts/audit-success-stories.ts",
+    "audit:success-stories:ci": "tsx scripts/audit-success-stories.ts --ci",
     "copilot:index": "tsx scripts/build-copilot-index.ts",
     "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
     "test": "vitest run"
