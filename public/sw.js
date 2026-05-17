@@ -5,9 +5,14 @@
 //   - network-first with cache fallback for everything else
 //   - /offline served as last-resort fallback for navigation requests
 //   - /api/* always bypasses the cache (auth + dynamic)
-// CACHE_VERSION changes each install so stale caches are evicted on deploy.
+// CACHE_VERSION is a fixed string — bump it manually when changing cache
+// strategy or precache list to invalidate stale caches on the next deploy.
+// Do NOT use Date.now() here: the service worker is re-evaluated on every
+// idle restart, which would produce a fresh cache name each time, orphan
+// previously-stored caches (activate fires only on install), and effectively
+// nullify the cache strategy while bloating client storage.
 
-const CACHE_VERSION = 'v' + Date.now();
+const CACHE_VERSION = 'v2';
 const STATIC_CACHE = `ipa-quiz-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ipa-quiz-pages-${CACHE_VERSION}`;
 const CONTENT_CACHE = `ipa-quiz-content-${CACHE_VERSION}`;
