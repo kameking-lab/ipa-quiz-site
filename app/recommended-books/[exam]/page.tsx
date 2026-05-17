@@ -389,31 +389,36 @@ function BookCard({ book }: { book: RecommendedBook }) {
           {book.recommendedFor}
         </p>
         {(amazonUrl || rakutenUrl) ? (
-          <div className="flex flex-wrap gap-2">
-            {amazonUrl && (
-              <Button asChild size="lg" variant="primary">
-                <a
-                  href={amazonUrl}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                >
-                  Amazonで見る
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </Button>
-            )}
-            {rakutenUrl && (
-              <Button asChild size="lg" variant="outline">
-                <a
-                  href={rakutenUrl}
-                  target="_blank"
-                  rel="noopener noreferrer sponsored"
-                >
-                  楽天で見る
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </Button>
-            )}
+          <div>
+            <p className="mb-1.5 text-[10px] text-zinc-400 dark:text-zinc-500">
+              PR（アフィリエイトリンク）
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {amazonUrl && (
+                <Button asChild size="lg" variant="primary">
+                  <a
+                    href={amazonUrl}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                  >
+                    Amazonで見る
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </Button>
+              )}
+              {rakutenUrl && (
+                <Button asChild size="lg" variant="outline">
+                  <a
+                    href={rakutenUrl}
+                    target="_blank"
+                    rel="noopener noreferrer sponsored"
+                  >
+                    楽天で見る
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </Button>
+              )}
+            </div>
           </div>
         ) : (
           <p className="text-xs text-zinc-400 dark:text-zinc-500">

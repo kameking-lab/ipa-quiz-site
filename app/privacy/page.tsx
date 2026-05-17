@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
+  AlertCircle,
   ArrowLeft,
   Cookie,
   Database,
   ExternalLink,
+  Globe,
   MessageCircle,
   HardDrive,
   ShieldCheck,
+  ShoppingBag,
   Trash2,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
@@ -84,7 +87,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年4月26日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年5月17日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -247,6 +250,69 @@ export default function PrivacyPage() {
                 <ExternalLink className="h-3 w-3" />
               </a>
               {" "}からご連絡ください。
+            </p>
+          </Section>
+
+          <Section
+            number="6"
+            icon={<AlertCircle className="h-5 w-5" />}
+            title="データ侵害発生時の対応方針"
+          >
+            <p>
+              個人情報の漏洩・滅失・毀損が発生し、個人の権利利益を害するおそれがある場合、当サイト運営者は速やかに本サイト上で告知するとともに、個人情報保護委員会への報告および本人への通知を、法令で定める範囲で行います。
+            </p>
+          </Section>
+
+          <Section
+            number="7"
+            icon={<Globe className="h-5 w-5" />}
+            title="International Users (GDPR / CCPA)"
+          >
+            <p>
+              This service is primarily intended for users in Japan and operates in accordance with the Japanese Act on the Protection of Personal Information (個人情報保護法).
+            </p>
+            <p>
+              <strong>EU / EEA residents (GDPR):</strong> If you are located in the European Economic Area, you may have rights under the General Data Protection Regulation, including the right to access, correct, or request deletion of your personal data. Because this service does not collect personal data without login and does not serve targeted advertising, most anonymous interactions fall outside the scope of GDPR data-subject rights. For any request, please contact us via{" "}
+              <a
+                href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
+              >
+                GitHub Issues
+                <ExternalLink className="h-3 w-3" />
+              </a>.
+            </p>
+            <p>
+              <strong>California residents (CCPA):</strong> California residents may have the right to know, delete, and opt out of the sale of personal information. This service does not sell personal data to third parties. For any inquiry, please use GitHub Issues above.
+            </p>
+          </Section>
+
+          <Section
+            number="8"
+            icon={<ShoppingBag className="h-5 w-5" />}
+            title="アフィリエイトリンクの使用について"
+          >
+            <p>
+              本サービスでは、参考書紹介ページ（
+              <Link
+                href="/recommended-books"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                /recommended-books
+              </Link>
+              ）および試験区分別ページ・クイズ解説ページの一部に、Amazon アソシエイト・楽天アフィリエイトのリンクを掲載しています。
+              これらのリンクを経由して商品をご購入いただいた場合、当サービスの運営費の一部として収益が発生することがあります。
+              アフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与しており、リンク近くに「PR」と明示しています。
+              アフィリエイト収入は教育コンテンツの維持・改善に充てており、紹介する書籍の選定はアフィリエイト報酬の有無に左右されません。
+              詳細は{" "}
+              <Link
+                href="/transparency#affiliate"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                透明性レポート
+              </Link>
+              {" "}をご覧ください。
             </p>
           </Section>
         </div>

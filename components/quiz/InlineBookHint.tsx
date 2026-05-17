@@ -73,6 +73,7 @@ export function InlineBookHint({
               rel="noopener noreferrer sponsored"
               className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground hover:underline"
             >
+              <span className="text-[9px] opacity-60">[PR]</span>
               Amazon で見る
               <ExternalLink className="h-3 w-3" />
             </a>
