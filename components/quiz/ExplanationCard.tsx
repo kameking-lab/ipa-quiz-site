@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { ShareButtons } from "@/components/ShareButtons";
+import { BookmarkButton } from "@/components/BookmarkButton";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]/.test(explanation) || explanation.trim() === "";
@@ -74,22 +75,25 @@ export function ExplanationCard({
             {selected ? ` / あなた: ${selected}` : ""}
           </span>
         </div>
-        <button
-          onClick={onToggleStar}
-          aria-pressed={starred}
-          aria-keyshortcuts="r"
-          className={cn(
-            "rounded-full p-2 transition-colors",
-            "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
-            starred
-              ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
-              : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
-          )}
-          aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
-          title="R キーでも切替"
-        >
-          <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
-        </button>
+        <div className="flex items-start gap-1.5">
+          <button
+            onClick={onToggleStar}
+            aria-pressed={starred}
+            aria-keyshortcuts="r"
+            className={cn(
+              "rounded-full p-2 transition-colors",
+              "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
+              starred
+                ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
+                : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
+            )}
+            aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
+            title="R キーでも切替"
+          >
+            <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
+          </button>
+          <BookmarkButton question={question} />
+        </div>
       </div>
 
       {!isCorrect && onAnalyzeWrong && (
