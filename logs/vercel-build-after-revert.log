@@ -1,0 +1,200 @@
+├ ○ /settings
+├ ○ /settings/api-keys
+├ ○ /sitemap
+├ ○ /sitemap.xml
+├ ○ /sitemap/blog.xml
+├ ○ /sitemap/books.xml
+├ ○ /sitemap/essays.xml
+├ ○ /sitemap/exams.xml
+├ ○ /sitemap/main.xml
+├ ● /sitemap/questions/[id]
+│ ├ /sitemap/questions/0.xml
+│ └ /sitemap/questions/1.xml
+├ ○ /sitemap/success-stories.xml
+├ ○ /sitemap/topics.xml
+├ ○ /stats                                                30m      1y
+├ ○ /strategy-discussion-v2
+├ ○ /student
+├ ○ /study-plan
+├ ƒ /study-plan/result/[id]
+├ ○ /success-stories
+├ ● /success-stories/[exam]
+│ ├ /success-stories/ip
+│ ├ /success-stories/sg
+│ ├ /success-stories/fe
+│ └ [+10 more paths]
+├ ● /success-stories/[exam]/[slug]
+│ ├ /success-stories/ip/ip-eigyo-25sai-3kagetu
+│ ├ /success-stories/ip/ip-shukatsu-22sai-2kagetu
+│ ├ /success-stories/ip/ip-shufu-38sai-itmiknk
+│ └ [+48 more paths]
+├ ○ /terms
+├ ○ /topics
+├ ● /topics/[slug]
+│ ├ /topics/コンピュータシステム
+│ ├ /topics/セキュリティ
+│ ├ /topics/ストラテジ
+│ └ [+68 more paths]
+├ ○ /transparency                                          5m      1y
+└ ○ /updates
+
+
+ƒ Proxy (Middleware)
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+
+[vc] PATH TO REGEXP PATH DIFF @ #712: {"path":"o:orgid.ingest.:region.sentry.io","currentRegExp":"/^o([^\\/#\\?]+?)\\.ingest(?:\\.([^\\/#\\?]+?))\\.sentry\\.io[\\/#\\?]?$/i","newRegExp":"/^o((?:(?!o)[^\\/#\\?])+?)\\.ingest(?:\\.((?:(?!\\.)[^\\/#\\?])+?))\\.sentry\\.io[\\/#\\?]?$/i"}
+[vc] PATH TO REGEXP PATH DIFF @ #712: {"path":"o:orgid.ingest.sentry.io","currentRegExp":"/^o([^\\/#\\?]+?)\\.ingest\\.sentry\\.io[\\/#\\?]?$/i","newRegExp":"/^o((?:(?!o)[^\\/#\\?])+?)\\.ingest\\.sentry\\.io[\\/#\\?]?$/i"}
+Traced Next.js server files in: 241.893ms
+Tracing entries due to missing build traces:
+[
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/[exam]/[yearSeason]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/[exam]/afternoon/[year]/[season]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/[exam]/afternoon/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/[exam]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/[exam]/topic/[topicSlug]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/_global-error/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/_not-found/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/about/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/account/dashboard/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/account/essay-history/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/account/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/account/study-plan/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/api-usage/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/competitors/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/deployment-status/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/errors/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/feedback/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/funnel/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/metrics/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/moderation/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/retention/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/admin/stats/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api-docs/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/auth/signin/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/auth/signout/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/auth/verify-request/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/blog/[slug]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/blog/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/bookmarks/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/challenge/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/chat/share/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/community-guidelines/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/contact/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/demo/afternoon/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/demo/essay-grading/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/essay/[exam]/[questionId]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/essay/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/essays/[exam]/[yearSeason]/[section]/[qnum]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/essays/[exam]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/faq/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/features/[slug]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/features/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/final-review-v3/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/glossary/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/keywords/[keyword]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/keywords/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/license/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/mock-exam/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/modes/topic/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/modes/year/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/my-progress/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/offline/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/og/streak/[days]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/operator/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/privacy/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/q/[exam]/[yearSeason]/[section]/[qnum]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/quiz/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/quiz/review/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/quiz/stream/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/ranking/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/recommended-books/[exam]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/recommended-books/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/referral/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/review/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/search/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/settings/api-keys/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/settings/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/stats/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/strategy-discussion-v2/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/student/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/study-plan/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/study-plan/result/[id]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/success-stories/[exam]/[slug]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/success-stories/[exam]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/success-stories/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/terms/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/topics/[slug]/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/topics/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/transparency/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/updates/page.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/account/history-export/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/account/history-sync/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/admin/api-usage/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/admin/deployment-status/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/admin/feedback/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/admin/funnel/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/admin/metrics/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/auth/[...nextauth]/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/contact/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/copilot/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/cron/health-check/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/email-list/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/email/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/essay-grade/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/feedback/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/generate-question/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/health/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/indexnow/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/mock-exam/[exam]/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/question-feedback/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/questions/meta/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/questions/next/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/review/due/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/scoring/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/search/questions/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/stats/answer-count/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/stats/content-count/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/stats/gsc/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/stats/posthog/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/v1/exams/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/v1/grade/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/v1/openapi/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/api/v1/questions/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/apple-icon/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/icon/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/indexnow-key.txt/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/og/streak/[days]/opengraph-image/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/opengraph-image/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/q/[exam]/[yearSeason]/[section]/[qnum]/opengraph-image/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/robots.txt/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/blog.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/books.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/essays.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/exams.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/main.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/questions/[id]/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/success-stories.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/topics.xml/route.js"
+]: 146.817ms
+Created all serverless functions in: 1.340s
+{
+  "status": "error",
+  "reason": "build_failed",
+  "message": "Unable to find lambda for route: /account/dashboard",
+  "next": [
+    {
+      "command": "vercel pull --yes",
+      "when": "Ensure project settings are present"
+    },
+    {
+      "command": "vercel build --yes",
+      "when": "re-run build"
+    }
+  ]
+}
+Error: Unable to find lambda for route: /account/dashboard
