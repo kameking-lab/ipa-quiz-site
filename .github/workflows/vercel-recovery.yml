@@ -65,6 +65,7 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           VERCEL_PROJECT_ID: prj_t0YGXuTY62TNajIJg2v6W68TciT1
           MAIN_SHA: ${{ steps.status.outputs.main_sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           if [ -z "$VERCEL_TOKEN" ]; then
             echo "⚠️ VERCEL_TOKEN not set. Falling back to empty-commit method."
@@ -73,21 +74,35 @@ jobs:
 
           echo "🚀 Triggering Vercel production deployment for SHA ${MAIN_SHA:0:8}..."
 
+          # Fetch GitHub repository numeric ID (required by Vercel gitSource.repoId)
+          REPO_ID=$(gh api repos/${{ github.repository }} --jq '.id')
+          echo "GitHub repo ID: $REPO_ID"
+
+          # Build JSON payload safely with jq to avoid shell quoting issues
+          PAYLOAD=$(jq -n \
+            --arg name "ipa-quiz-site" \
+            --arg project "$VERCEL_PROJECT_ID" \
+            --argjson repoId "$REPO_ID" \
+            --arg sha "$MAIN_SHA" \
+            '{
+              name: $name,
+              project: $project,
+              gitSource: {
+                type: "github",
+                org: "kameking-lab",
+                repo: "ipa-quiz-site",
+                repoId: $repoId,
+                ref: "main",
+                sha: $sha
+              },
+              target: "production"
+            }')
+
           RESPONSE=$(curl -s -X POST \
             "https://api.vercel.com/v13/deployments" \
             -H "Authorization: Bearer $VERCEL_TOKEN" \
             -H "Content-Type: application/json" \
-            -d '{
-              "name": "ipa-quiz-site",
-              "project": "'"$VERCEL_PROJECT_ID"'",
-              "gitSource": {
-                "type": "github",
-                "repo": "kameking-lab/ipa-quiz-site",
-                "ref": "main",
-                "sha": "'"$MAIN_SHA"'"
-              },
-              "target": "production"
-            }')
+            -d "$PAYLOAD")
 
           DEPLOY_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('id',''))" 2>/dev/null || echo "")
           DEPLOY_URL=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('url',''))" 2>/dev/null || echo "")
