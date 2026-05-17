@@ -131,6 +131,7 @@ export default function SettingsPage() {
     randomizeChoices: false,
     excludeRecent: false,
     calculationOnly: false,
+    recordHistory: true,
   });
   const [motivation, setMotivation] = useState<MotivationSettings>({
     soundEnabled: true,
@@ -451,7 +452,16 @@ export default function SettingsPage() {
               学習履歴管理
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-              <div className="grid grid-cols-3 divide-x divide-border border-b border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
+              <SettingRow
+                label="学習履歴を記録する"
+                description="OFF にすると回答を localStorage に保存しません（プライバシー重視の方向け）"
+              >
+                <Switch
+                  checked={settings.recordHistory}
+                  onCheckedChange={(v) => updateSetting("recordHistory", v)}
+                />
+              </SettingRow>
+              <div className="grid grid-cols-3 divide-x divide-border border-t border-border bg-gradient-to-br from-primary-soft/40 to-transparent">
                 <Stat label="回答数" value={stats.total.toLocaleString("ja-JP")} />
                 <Stat label="問題数" value={stats.uniqueAnswered.toLocaleString("ja-JP")} />
                 <Stat

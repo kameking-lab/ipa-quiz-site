@@ -1,12 +1,27 @@
 // 過去問AI Service Worker
-// Strategy: cache-first for static assets, network-first for pages, skip API routes.
-// CACHE_VERSION changes each time this file is installed, busting stale caches on deploy.
+// Strategies:
+//   - cache-first for immutable static chunks (/_next/static, fonts, icons)
+//   - stale-while-revalidate for content pages (/q/*, /essays/*, /blog/*)
+//   - network-first with cache fallback for everything else
+//   - /offline served as last-resort fallback for navigation requests
+//   - /api/* always bypasses the cache (auth + dynamic)
+// CACHE_VERSION changes each install so stale caches are evicted on deploy.
 
 const CACHE_VERSION = 'v' + Date.now();
 const STATIC_CACHE = `ipa-quiz-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ipa-quiz-pages-${CACHE_VERSION}`;
+const CONTENT_CACHE = `ipa-quiz-content-${CACHE_VERSION}`;
 
-const PRECACHE_PAGES = ['/', '/about', '/modes/year', '/modes/topic'];
+const OFFLINE_URL = '/offline';
+
+// Pages that need to be available the first time the user goes offline.
+const PRECACHE_PAGES = ['/', '/about', '/modes/year', '/modes/topic', OFFLINE_URL];
+
+const CONTENT_PATH_PREFIXES = ['/q/', '/essays/', '/blog/'];
+
+// Cap each cache to keep storage bounded on mobile.
+const MAX_CONTENT_ENTRIES = 100;
+const MAX_PAGE_ENTRIES = 50;
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -14,13 +29,22 @@ self.addEventListener('install', (event) => {
       caches.open(STATIC_CACHE),
       caches
         .open(PAGE_CACHE)
-        .then((cache) => cache.addAll(PRECACHE_PAGES).catch(() => {})),
+        .then((cache) =>
+          // Cache each page individually so a single 404 doesn't fail the whole install.
+          Promise.all(
+            PRECACHE_PAGES.map((url) =>
+              fetch(url, { credentials: 'same-origin' })
+                .then((res) => (res.ok ? cache.put(url, res) : null))
+                .catch(() => null),
+            ),
+          ),
+        ),
     ]).then(() => self.skipWaiting()),
   );
 });
 
 self.addEventListener('activate', (event) => {
-  const CURRENT = [STATIC_CACHE, PAGE_CACHE];
+  const CURRENT = [STATIC_CACHE, PAGE_CACHE, CONTENT_CACHE];
   event.waitUntil(
     caches
       .keys()
@@ -31,24 +55,72 @@ self.addEventListener('activate', (event) => {
   );
 });
 
+function isContentPath(pathname) {
+  return CONTENT_PATH_PREFIXES.some((prefix) => pathname.startsWith(prefix));
+}
+
+async function trimCache(cacheName, maxEntries) {
+  try {
+    const cache = await caches.open(cacheName);
+    const keys = await cache.keys();
+    if (keys.length <= maxEntries) return;
+    const remove = keys.slice(0, keys.length - maxEntries);
+    await Promise.all(remove.map((req) => cache.delete(req)));
+  } catch {
+    // best-effort
+  }
+}
+
+async function staleWhileRevalidate(request, cacheName, maxEntries) {
+  const cache = await caches.open(cacheName);
+  const cached = await cache.match(request);
+  const networkPromise = fetch(request)
+    .then((res) => {
+      if (res && res.ok) {
+        cache.put(request, res.clone()).then(() => trimCache(cacheName, maxEntries));
+      }
+      return res;
+    })
+    .catch(() => null);
+  return cached || (await networkPromise) || cache.match(OFFLINE_URL) || Response.error();
+}
+
+async function networkFirst(request, cacheName, maxEntries) {
+  const cache = await caches.open(cacheName);
+  try {
+    const res = await fetch(request);
+    if (res && res.ok) {
+      cache.put(request, res.clone()).then(() => trimCache(cacheName, maxEntries));
+    }
+    return res;
+  } catch {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    if (request.mode === 'navigate') {
+      const offline = await cache.match(OFFLINE_URL);
+      if (offline) return offline;
+    }
+    return Response.error();
+  }
+}
+
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   const url = new URL(request.url);
 
-  // Only handle same-origin GET requests
   if (request.method !== 'GET' || url.origin !== self.location.origin) return;
 
   // /api/* — always network, never cache
   if (url.pathname.startsWith('/api/')) return;
 
-  // Cache-first for Next.js static chunks (immutable content-hashed filenames)
-  if (url.pathname.startsWith('/_next/static/')) {
+  // Cache-first for Next.js immutable chunks
+  if (url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/fonts/')) {
     event.respondWith(
       caches.match(request).then(
         (cached) =>
           cached ??
           fetch(request).then((res) => {
-            if (res.ok) {
+            if (res && res.ok) {
               caches.open(STATIC_CACHE).then((c) => c.put(request, res.clone()));
             }
             return res;
@@ -58,17 +130,22 @@ self.addEventListener('fetch', (event) => {
     return;
   }
 
-  // Network-first with cache fallback for pages
-  event.respondWith(
-    fetch(request)
-      .then((res) => {
-        if (res.ok) {
-          caches.open(PAGE_CACHE).then((c) => c.put(request, res.clone()));
-        }
-        return res;
-      })
-      .catch(() => caches.match(request)),
-  );
+  // Content pages (questions, essays, blog) — stale-while-revalidate so repeat
+  // visits feel instant AND work offline once visited.
+  if (isContentPath(url.pathname)) {
+    event.respondWith(staleWhileRevalidate(request, CONTENT_CACHE, MAX_CONTENT_ENTRIES));
+    return;
+  }
+
+  // Everything else — network-first, fall back to cache, then /offline for navigations.
+  event.respondWith(networkFirst(request, PAGE_CACHE, MAX_PAGE_ENTRIES));
+});
+
+// Allow the page to trigger an immediate activation after a deploy.
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
 });
 
 // Push notifications: server pushes JSON {title, body, url, tag} payload.

@@ -4,18 +4,55 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
 import { ShareButtons } from "@/components/ShareButtons";
-import { SITE_BASE_URL } from "@/lib/seo/config";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { buildOrgNode, buildWebPageNode } from "@/lib/seo/structured-data";
+
+const PAGE_URL = `${SITE_BASE_URL}/about`;
+const PAGE_DESCRIPTION =
+  "過去問 AI プロジェクトは、IPA 情報処理技術者試験（全 13 区分）の対策を誰もが平等に学べる場として運営する教育貢献プロジェクトです。AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開しています。";
+
+const ABOUT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "home",
+  title: "過去問AIについて",
+  subtitle: "教育貢献プロジェクト",
+  body: "IPA 全 13 試験区分・AI コパイロット・模試・午後採点を含む全機能を無料公開。",
+}).toString()}`;
 
 export const metadata: Metadata = {
   title: "過去問 AI プロジェクトについて",
-  description:
-    "過去問 AI プロジェクトは、IPA 情報処理技術者試験の対策を、誰もが平等に学べる場として運営する教育貢献プロジェクトです。全機能を無料で公開しています。",
+  description: PAGE_DESCRIPTION,
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "過去問 AI プロジェクトについて",
+    description:
+      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+    url: `${SITE_BASE_URL}/about`,
+    type: "website",
+    siteName: "過去問AI",
+    locale: "ja_JP",
+    images: [{ url: ABOUT_OG_URL, width: 1200, height: 630, alt: "過去問 AI プロジェクトについて" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "過去問 AI プロジェクトについて",
+    description:
+      "IPA 全 13 区分の過去問・AI コパイロット・模試・午後 AI 採点を含む全機能を無料公開する教育貢献プロジェクト。",
+    images: [ABOUT_OG_URL],
+  },
 };
 
 export default function AboutPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      buildWebPageNode(PAGE_URL, `${SITE_NAME} について`, PAGE_DESCRIPTION),
+      buildOrgNode(),
+    ],
+  };
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-12 pt-6 sm:px-6">
+      <JsonLd data={jsonLd} />
       <Button asChild variant="ghost" size="sm" className="mb-3">
         <Link href="/">
           <ArrowLeft className="h-4 w-4" />
