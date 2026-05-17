@@ -60,6 +60,7 @@ jobs:
           echo "✅ Nothing to do — production matches main. Exiting."
 
       - name: Trigger Vercel redeploy via API
+        id: trigger_api
         if: steps.status.outputs.up_to_date != 'true' || github.event.inputs.force_redeploy == 'true'
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
@@ -69,6 +70,7 @@ jobs:
         run: |
           if [ -z "$VERCEL_TOKEN" ]; then
             echo "⚠️ VERCEL_TOKEN not set. Falling back to empty-commit method."
+            echo "needs_fallback=true" >> "$GITHUB_OUTPUT"
             exit 0
           fi
 
@@ -106,10 +108,14 @@ jobs:
 
           DEPLOY_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('id',''))" 2>/dev/null || echo "")
           DEPLOY_URL=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('url',''))" 2>/dev/null || echo "")
+          ERROR_CODE=$(echo "$RESPONSE" | python3 -c "import sys,json; d=json.load(sys.stdin); print(d.get('error',{}).get('code',''))" 2>/dev/null || echo "")
 
           if [ -n "$DEPLOY_ID" ]; then
             echo "✅ Deployment triggered: $DEPLOY_ID"
             echo "🔗 URL: https://$DEPLOY_URL"
+          elif [ "$ERROR_CODE" = "payment_required" ]; then
+            echo "⚠️ Vercel API daily deployment limit reached (payment_required). Falling back to empty-commit."
+            echo "needs_fallback=true" >> "$GITHUB_OUTPUT"
           else
             echo "❌ Vercel API error:"
             echo "$RESPONSE"
@@ -119,7 +125,7 @@ jobs:
       - name: Fallback — push empty commit to trigger Vercel
         if: >
           (steps.status.outputs.up_to_date != 'true' || github.event.inputs.force_redeploy == 'true')
-          && env.VERCEL_TOKEN == ''
+          && (env.VERCEL_TOKEN == '' || steps.trigger_api.outputs.needs_fallback == 'true')
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
