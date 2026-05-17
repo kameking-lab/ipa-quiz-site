@@ -309,6 +309,38 @@ export default async function TransparencyPage() {
         </Card>
       </section>
 
+      <section id="affiliate" className="mt-10 scroll-mt-20">
+        <h2 className="mb-3 text-lg font-semibold">アフィリエイトリンクの使用箇所</h2>
+        <Card>
+          <CardContent className="space-y-3 pt-4 text-sm text-zinc-700 dark:text-zinc-300">
+            <p>
+              本サービスでは以下のページに Amazon アソシエイト・楽天アフィリエイトのリンクを使用しています。
+              すべてのアフィリエイトリンクには <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">rel=&quot;sponsored&quot;</code> 属性を付与し、リンク近くに「PR」と明示しています。
+            </p>
+            <ul className="list-disc space-y-1.5 pl-5">
+              <li>
+                <strong>/recommended-books/[試験区分]</strong> — 書籍カードの「Amazonで見る」「楽天で見る」ボタン（Amazon アソシエイト <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">safeaisite22-22</code> / 楽天 <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">hb.afl.rakuten.co.jp</code> 経由）
+              </li>
+              <li>
+                <strong>/[試験区分]（試験区分別トップページ）</strong> — おすすめ参考書一覧の「Amazon →」ボタン（Amazon アソシエイト）
+              </li>
+              <li>
+                <strong>クイズ解説ページ内 InlineBookHint</strong> — 問題解説下部の参考書ヒント「Amazon で見る」リンク（Amazon アソシエイト）
+              </li>
+            </ul>
+            <p>
+              紹介する書籍の選定はアフィリエイト報酬の有無に関係なく、受験者にとっての学習効果を優先しています。
+              アフィリエイト収入は教育コンテンツの維持・改善に充てています。
+              詳細は{" "}
+              <Link href="/privacy#8" className="underline hover:text-foreground">
+                プライバシーポリシー Section 8
+              </Link>
+              {" "}もご覧ください。
+            </p>
+          </CardContent>
+        </Card>
+      </section>
+
       <p className="mt-8 text-center text-xs text-zinc-500 dark:text-zinc-400">
         運営者情報は <Link href="/operator" className="underline hover:text-zinc-700 dark:hover:text-zinc-300">/operator</Link>。
       </p>
