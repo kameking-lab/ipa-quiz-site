@@ -1,0 +1,25 @@
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/blog.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/books.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/essays.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/exams.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/main.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/questions/[id]/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/topics.xml/route.js"
+]: 135.407ms
+Created all serverless functions in: 401.185ms
+{
+  "status": "error",
+  "reason": "build_failed",
+  "message": "Unable to find lambda for route: /account/api-keys",
+  "next": [
+    {
+      "command": "vercel pull --yes",
+      "when": "Ensure project settings are present"
+    },
+    {
+      "command": "vercel build --yes",
+      "when": "re-run build"
+    }
+  ]
+}
+Error: Unable to find lambda for route: /account/api-keys

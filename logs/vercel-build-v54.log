@@ -1,0 +1,30 @@
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/opengraph-image/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/q/[exam]/[yearSeason]/[section]/[qnum]/opengraph-image/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/robots.txt/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/blog.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/books.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/essays.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/exams.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/main.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/questions/[id]/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/success-stories.xml/route.js",
+  "C:/Users/kanet/projects/ipa-quiz-site/.claude/worktrees/flamboyant-mclean-7ac69a/.next/server/app/sitemap/topics.xml/route.js"
+]: 147.124ms
+Created all serverless functions in: 488.928ms
+{
+  "status": "error",
+  "reason": "build_failed",
+  "message": "Unable to find lambda for route: /account/dashboard",
+  "next": [
+    {
+      "command": "vercel pull --yes",
+      "when": "Ensure project settings are present"
+    },
+    {
+      "command": "vercel build --yes",
+      "when": "re-run build"
+    }
+  ]
+}
+Error: Unable to find lambda for route: /account/dashboard
