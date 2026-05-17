@@ -60,6 +60,8 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Consolidated account sub-pages → dashboard
+      // (no query string in destination; tabs default to 'overview' and the dashboard's
+      // hashchange listener handles deep linking via #tab=...)
       { source: "/account/heatmap", destination: "/account/dashboard", permanent: true },
       { source: "/account/badges", destination: "/account/dashboard", permanent: true },
       { source: "/account/tutor", destination: "/account/dashboard", permanent: true },
