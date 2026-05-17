@@ -49,11 +49,19 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  appleWebApp: {
+    capable: true,
+    title: "過去問AI",
+    statusBarStyle: "default",
+  },
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
       { url: "/icon-192.svg", type: "image/svg+xml", sizes: "192x192" },
       { url: "/icon-512.svg", type: "image/svg+xml", sizes: "512x512" },
+    ],
+    apple: [
+      { url: "/icon-192.svg", sizes: "192x192", type: "image/svg+xml" },
     ],
   },
   openGraph: {

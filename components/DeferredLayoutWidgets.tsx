@@ -33,6 +33,10 @@ const WelcomeModal = dynamic(
   () => import("@/components/WelcomeModal").then((m) => m.WelcomeModal),
   { ssr: false },
 );
+const OfflineIndicator = dynamic(
+  () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
+  { ssr: false },
+);
 
 export function DeferredLayoutWidgets() {
   const [ready, setReady] = useState(false);
@@ -71,6 +75,7 @@ export function DeferredLayoutWidgets() {
       <BadgeTracker />
       <CouponTracker />
       <WelcomeModal />
+      <OfflineIndicator />
     </>
   );
 }
