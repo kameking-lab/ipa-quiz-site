@@ -6,8 +6,8 @@
 
 1. Vercel ダッシュボードで Personal Access Token を発行
    - https://vercel.com/account/tokens
-   - Name: `gh-actions-redeploy`
-   - Scope: `kameking-labs-projects` (Team)
+   - Name: `ipa-quiz-site-recovery-workflow`
+   - Scope: `kameking-lab's projects` (Team)
    - Expiration: 1 年程度推奨
    - Token 文字列をコピー
 
@@ -20,6 +20,7 @@
 
 3. 動作確認 (任意)
    - Actions タブ → "Vercel Deployment Recovery" → "Run workflow"
+   - Branch: `main` を選択した状態で実行
    - `force_redeploy: true` で実行
    - "Trigger Vercel redeploy via API" ステップが成功し、empty-commit fallback ではなく API 経路で動くことを確認
 
