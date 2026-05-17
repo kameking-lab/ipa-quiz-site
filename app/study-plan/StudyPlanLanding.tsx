@@ -34,7 +34,7 @@ export function StudyPlanLanding() {
           NEW
         </div>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          AI 学習スケジュール作成
+          自動学習スケジュール作成
         </h1>
         <p className="mt-2 text-sm text-muted-foreground sm:text-base">
           試験日まで残り何日？1日に何分とれる？それだけ答えれば、
