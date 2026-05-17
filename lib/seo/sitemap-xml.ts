@@ -60,8 +60,14 @@ const RECOMMENDED_BOOKS_EXAMS = [
 // /quiz, /support are intentionally omitted: they 301 redirect to other pages
 // (see next.config.ts). Sitemap should expose canonical destinations only.
 // /stats is included below as a first-class public dashboard.
+// /api-docs, /review, /my-progress, /bookmarks, /quiz/review, /chat/share,
+// /demo/*, /final-review-v3, /strategy-discussion-v2, /admin/*, /account/*,
+// /auth/*, /study-plan/result/[id], /offline are intentionally omitted because
+// they carry `robots: { index: false }` in their page metadata or are blocked
+// by robots.txt. Including them here would contradict crawler signals.
 const STATIC_ROUTES: UrlEntry[] = [
   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
+  { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/modes/topic`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
@@ -85,16 +91,22 @@ const STATIC_ROUTES: UrlEntry[] = [
     }),
   ),
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/api-docs`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/quiz/stream`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/study-plan`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.7 },
+  { url: `${SITE_BASE_URL}/student`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
+  { url: `${SITE_BASE_URL}/referral`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/ranking`, changeFrequency: "weekly", priority: 0.5 },
-  { url: `${SITE_BASE_URL}/review`, changeFrequency: "weekly", priority: 0.5 },
+  { url: `${SITE_BASE_URL}/sitemap`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/faq`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/about`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/contact`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/transparency`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${SITE_BASE_URL}/community-guidelines`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/updates`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
+  { url: `${SITE_BASE_URL}/license`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.3 },
   { url: `${SITE_BASE_URL}/stats`, changeFrequency: "daily", priority: 0.8 },
   { url: `${SITE_BASE_URL}/terms`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.2 },
   { url: `${SITE_BASE_URL}/privacy`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "yearly", priority: 0.4 },

@@ -1,0 +1,91 @@
+# IndexNow Submission — Second Batch (post-PR #238)
+#
+# Generated: 2026-05-17
+# Prior batch: 4,136 URLs (logs/indexnow-final-submit.md, 2026-05-16)
+#
+# Submission target: NEW URLs not in the prior 4,136-URL batch, plus URLs
+# whose canonical / sitemap status changed in this PR (SEO crawl optimization v2).
+#
+# Each line below is a fully-qualified URL ready to POST as the `urlList`
+# field of https://api.indexnow.org/IndexNow (or via /api/indexnow).
+#
+# Categories:
+#   1) Newly-launched public pages (added since PR #238)
+#   2) Feature landing pages (FEATURE_LANDING_PAGES)
+#   3) Keyword pages (KEYWORD_PAGES)
+
+# ============================================================
+# 1) Newly-launched public pages (added since 2026-04-30)
+# ============================================================
+https://www.kakomon-ai.jp/search
+https://www.kakomon-ai.jp/study-plan
+https://www.kakomon-ai.jp/student
+https://www.kakomon-ai.jp/referral
+https://www.kakomon-ai.jp/quiz/stream
+https://www.kakomon-ai.jp/mock-exam
+https://www.kakomon-ai.jp/updates
+https://www.kakomon-ai.jp/license
+https://www.kakomon-ai.jp/community-guidelines
+https://www.kakomon-ai.jp/sitemap
+https://www.kakomon-ai.jp/glossary
+https://www.kakomon-ai.jp/keywords
+https://www.kakomon-ai.jp/features
+https://www.kakomon-ai.jp/contact
+https://www.kakomon-ai.jp/transparency
+https://www.kakomon-ai.jp/operator
+# /api-docs intentionally excluded — robots: noindex + robots.txt disallow
+
+# ============================================================
+# 2) Feature landing pages (FEATURE_LANDING_PAGES)
+# ============================================================
+https://www.kakomon-ai.jp/features/ai-explanation
+https://www.kakomon-ai.jp/features/industry-essays
+https://www.kakomon-ai.jp/features/essay-grading
+
+# ============================================================
+# 3) Keyword pages (KEYWORD_PAGES)
+# ============================================================
+https://www.kakomon-ai.jp/keywords/ap-chokuzen-1week
+https://www.kakomon-ai.jp/keywords/fe-kamoku-b-pseudo-language
+https://www.kakomon-ai.jp/keywords/ip-1month-study-plan
+https://www.kakomon-ai.jp/keywords/sc-incident-response
+https://www.kakomon-ai.jp/keywords/nw-subnet-calculation
+https://www.kakomon-ai.jp/keywords/db-3nf-normalization
+https://www.kakomon-ai.jp/keywords/pm-evm-calculation
+https://www.kakomon-ai.jp/keywords/st-essay-structure-pattern
+https://www.kakomon-ai.jp/keywords/auditor-coso-cobit
+https://www.kakomon-ai.jp/keywords/ai-copilot-how-to-use
+
+# ============================================================
+# Pages removed from sitemap in THIS PR (NOT submitted to IndexNow)
+# ============================================================
+# /api-docs   — robots: noindex + robots.txt disallow (kept noindex; removed
+#               from sitemap to clear the contradictory crawler signal).
+# /review     — robots: noindex (was incorrectly listed in STATIC_ROUTES).
+# /bookmarks  — added robots: noindex via layout.tsx (personal data page).
+#
+# These three pages are NOT submitted to IndexNow because IndexNow's purpose
+# is to ask crawlers to INDEX a URL. For noindex pages, we let natural
+# recrawl pick up the change.
+
+# ============================================================
+# Submission count summary
+# ============================================================
+# Newly-launched (category 1):    16  (excluding /api-docs)
+# Feature landings (category 2):   3
+# Keyword pages (category 3):     10
+# TOTAL:                          29
+#
+# Combined with prior 4,136-URL batch (PR #238), the cumulative submission
+# coverage is approximately 4,165 unique URLs.
+#
+# Submission procedure:
+#   - Use POST /api/indexnow with INDEXNOW_ADMIN_TOKEN bearer.
+#   - The endpoint reads INDEXNOW_KEY from Vercel env and submits as the
+#     site's verified key file at /indexnow-key.txt.
+#   - Recommended batch size: 33 URLs in a single request.
+#
+# Verification (manual via GSC URL Inspection — daily quota ≈ 200):
+# Prioritize the top 10:
+#   /search, /study-plan, /mock-exam, /quiz/stream, /student,
+#   /referral, /updates, /community-guidelines, /sitemap, /features
