@@ -7,6 +7,7 @@ import {
   buildQuestionContext,
   buildLearnerProfileContext,
   buildResponseLengthDirective,
+  buildRAGDirective,
   QUICK_ACTIONS,
 } from "@/lib/ai/prompts";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
@@ -15,6 +16,12 @@ import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
 import { captureException } from "@/lib/monitoring/sentry";
+import { ragEnabled, ragMinScore, runRAG } from "@/lib/copilot/rag";
+import {
+  buildCitationFooter,
+  buildRAGContextBlock,
+} from "@/lib/copilot/citations";
+import type { RAGResult } from "@/lib/copilot/types";
 
 export const runtime = "nodejs";
 
@@ -118,13 +125,47 @@ export async function POST(req: Request) {
     ? buildResponseLengthDirective(payload.responseLength satisfies ResponseLength)
     : null;
 
+  // RAG 取得（COPILOT_RAG_ENABLED=false で完全 bypass）。
+  const lastUserMsg =
+    [...payload.messages].reverse().find((m) => m.role === "user")?.content ?? "";
+  let ragResult: RAGResult = { passages: [], topScore: 0, rerankerUsed: "none" };
+  let ragDirective: string | null = null;
+  let ragContextBlock = "";
+  let citationFooter = "";
+  let hasGrounding = false;
+
+  if (ragEnabled() && lastUserMsg) {
+    try {
+      ragResult = await runRAG({
+        userMessage: lastUserMsg,
+        question: payload.question,
+        quickAction,
+      });
+      const passesThreshold = ragResult.topScore >= ragMinScore();
+      if (ragResult.passages.length > 0 && passesThreshold) {
+        hasGrounding = true;
+        ragDirective = buildRAGDirective(ragResult.passages.length);
+        ragContextBlock = buildRAGContextBlock(ragResult.passages);
+        citationFooter = buildCitationFooter(ragResult.passages);
+      }
+    } catch (err) {
+      // RAG が落ちても既存挙動は維持する（fail-open）。
+      await captureException(err, {
+        route: "/api/copilot",
+        extra: { phase: "rag" },
+      });
+    }
+  }
+
   const system = [
     COPILOT_SYSTEM_PROMPT,
     ...(characterPrompt ? [characterPrompt] : []),
     ...(responseLengthDirective ? [responseLengthDirective] : []),
+    ...(ragDirective ? [ragDirective] : []),
     "---",
     questionContext,
     ...(profileContext ? ["---", profileContext] : []),
+    ...(ragContextBlock ? ["---", ragContextBlock] : []),
   ].join("\n\n");
 
   const userMessages = [...payload.messages];
@@ -194,6 +235,12 @@ export async function POST(req: Request) {
           producedAnyChunk = true;
           controller.enqueue(encoder.encode(chunk));
         }
+        // RAG 出典が確定している場合、末尾に出典フッターを付与する。
+        // モデル本文に [N] inline 引用が無い場合でも、検索された出典 URL を
+        // 返すことで「もっともらしい嘘の出典」を握り潰す。
+        if (hasGrounding && citationFooter) {
+          controller.enqueue(encoder.encode(citationFooter));
+        }
         controller.close();
       } catch (err) {
         const aborted =
@@ -251,6 +298,11 @@ export async function POST(req: Request) {
       "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
       "X-Timeout-Ms": String(TIMEOUT_MS),
+      "X-RAG-Enabled": ragEnabled() ? "1" : "0",
+      "X-RAG-Passages": String(ragResult.passages.length),
+      "X-RAG-Top-Score": ragResult.topScore.toFixed(3),
+      "X-RAG-Grounded": hasGrounding ? "1" : "0",
+      "X-RAG-Reranker": ragResult.rerankerUsed,
     },
   });
 }
