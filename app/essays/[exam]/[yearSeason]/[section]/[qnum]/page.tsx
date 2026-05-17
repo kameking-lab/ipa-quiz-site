@@ -26,6 +26,8 @@ interface RouteParams {
   qnum: string;
 }
 
+export const dynamicParams = false;
+
 function resolveQuestion(params: RouteParams) {
   if (!isEssayExamCode(params.exam)) return null;
   if (params.section !== "pm2") return null;
