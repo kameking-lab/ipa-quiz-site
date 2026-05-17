@@ -1,7 +1,12 @@
 # 障害時ロールバック手順書
 
 作成日: 2026-05-16
+更新日: 2026-05-17 (PR ops/disaster-recovery-rehearsal にて拡充版を作成)
 対象: 過去問AI (https://www.kakomon-ai.jp) のローンチ後障害対応
+
+> 本ファイルは PR #244 時点の初稿です。
+> 拡充版（シナリオ10件・kill switch 手順・post-incident テンプレート）は
+> logs/disaster-recovery-playbook.md を参照してください。
 
 本ファイルは障害発生時に本人が手動で実施する手順書。
 障害レベルに応じて「全体ロールバック」または「部分機能停止」を選択する。

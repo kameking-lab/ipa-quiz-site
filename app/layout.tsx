@@ -11,6 +11,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 
@@ -139,6 +140,7 @@ export default function RootLayout({
             メインコンテンツへスキップ
           </a>
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
+            <EmergencyBanner />
             <div className="print:hidden">
               <SiteHeader />
             </div>
