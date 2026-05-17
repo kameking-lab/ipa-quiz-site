@@ -249,6 +249,62 @@ export default function OperatorPage() {
             </p>
           </div>
         </section>
+
+        <section className="mt-6 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <ScrollText className="h-5 w-5" />
+            </span>
+            <h2 className="text-lg font-semibold text-foreground">
+              特定商取引法に基づく表記
+            </h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              本サービスは教育貢献プロジェクトとして<strong>全機能を無料で公開</strong>しており、
+              利用者との間に物品・役務の有償取引・通信販売・有償会員登録等は一切発生しません。
+              このため、特定商取引法第 11 条（通信販売についての広告）が要請する事項の表示義務には該当しません。
+            </p>
+            <p>
+              将来的に有償サービスを提供する場合は、本ページに特定商取引法に基づく表記を追加し、
+              事前に <Link href="/updates" className="font-medium text-primary underline-offset-4 hover:underline">更新履歴</Link> および
+              {" "}<Link href="/transparency" className="font-medium text-primary underline-offset-4 hover:underline">透明性レポート</Link> で告知します。
+              現時点で運営に関するお問い合わせは{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                お問い合わせフォーム
+              </Link>
+              {" "}よりお寄せください。
+            </p>
+          </div>
+        </section>
+
+        <section className="mt-6 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
+              <MessageCircle className="h-5 w-5" />
+            </span>
+            <h2 className="text-lg font-semibold text-foreground">
+              知的財産権・誤情報に関するご連絡
+            </h2>
+          </div>
+          <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+            <p>
+              掲載コンテンツ（解説文・AI 生成テキスト・画像等）について、著作権・商標権・その他の権利侵害のご指摘や、
+              事実と異なる記載のご報告は{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                お問い合わせフォーム
+              </Link>
+              {" "}よりお寄せください。
+              対象コンテンツの URL と問題点を併記いただけると、運営者が確認次第、訂正または削除します。
+            </p>
+          </div>
+        </section>
       </div>
     </main>
   );

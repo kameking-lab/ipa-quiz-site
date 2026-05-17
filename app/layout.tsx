@@ -231,6 +231,7 @@ export default function RootLayout({
                       <li><Link href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
                       <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
                       <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ利用方針</Link></li>
+                      <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
                       <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">IPA著作権・出典</Link></li>
                     </ul>
                   </nav>
