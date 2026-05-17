@@ -1,0 +1,100 @@
+import { getAllQuestions } from "@/lib/questions/load";
+import type { Question } from "@/lib/questions/types";
+import { GLOSSARY } from "@/data/glossary";
+import type { GlossaryTerm } from "@/data/glossary";
+import { examLabel, formatYearSeason } from "@/lib/utils";
+import type { CorpusDoc } from "./types";
+
+function buildQuestionDoc(q: Question): CorpusDoc {
+  // 検索対象文書は「問題文 + 選択肢 + 解説 + タグ + カテゴリ」を統合。
+  // カテゴリとタグは BM25 でやや弱くなりがちなので 2 回繰り返してフィールド重みを上げる。
+  const choiceText = q.choices
+    ? Object.entries(q.choices)
+        .map(([k, v]) => `${k}. ${v}`)
+        .join(" ")
+    : "";
+  const tagText = q.topicTags.join(" ");
+  const text = [
+    q.category,
+    q.category, // 重複: カテゴリの重みを 2 倍
+    tagText,
+    tagText, // 重複: タグの重みを 2 倍
+    q.question,
+    choiceText,
+    q.explanation,
+  ]
+    .filter(Boolean)
+    .join("\n");
+
+  return {
+    id: `q:${q.id}`,
+    kind: "question",
+    title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} / ${q.category}`,
+    url: `/quiz?id=${encodeURIComponent(q.id)}`,
+    text,
+    meta: {
+      exam: q.exam,
+      category: q.category,
+      topicTags: q.topicTags,
+      year: q.year,
+    },
+  };
+}
+
+function buildGlossaryDoc(t: GlossaryTerm): CorpusDoc {
+  const aliases = [t.term, t.english].filter(Boolean).join(" ");
+  const related = (t.relatedTopics ?? []).join(" ");
+  // 用語集は「タイトル＝用語名そのもの」の比重が一番大事。
+  // 用語名を 6 倍、英語表記を 3 倍重複させて BM25 上で title-field 相当の重みを与える。
+  const titleWeighted = [
+    t.term,
+    t.term,
+    t.term,
+    t.term,
+    t.term,
+    t.term,
+    t.english ?? "",
+    t.english ?? "",
+    t.english ?? "",
+  ]
+    .filter(Boolean)
+    .join(" ");
+  const text = [titleWeighted, aliases, t.short, t.detail, related]
+    .filter(Boolean)
+    .join("\n");
+
+  return {
+    id: `g:${t.term}`,
+    kind: "glossary",
+    title: `用語集: ${t.term}${t.english ? ` (${t.english})` : ""}`,
+    url: `/glossary#${encodeURIComponent(t.term)}`,
+    text,
+    meta: {
+      category: t.category,
+      topicTags: t.relatedTopics,
+    },
+  };
+}
+
+let CACHED_CORPUS: CorpusDoc[] | null = null;
+
+/** 全コーパスを返す。プロセス内でキャッシュされる。 */
+export function getCorpus(): CorpusDoc[] {
+  if (CACHED_CORPUS) return CACHED_CORPUS;
+  const docs: CorpusDoc[] = [];
+  for (const q of getAllQuestions()) {
+    // 解説が空 / placeholder のものは検索対象から外す
+    if (!q.explanation || q.explanation.trim().length < 20) continue;
+    docs.push(buildQuestionDoc(q));
+  }
+  for (const term of GLOSSARY) {
+    docs.push(buildGlossaryDoc(term));
+  }
+  CACHED_CORPUS = docs;
+  return docs;
+}
+
+/** テスト用: キャッシュをクリア */
+export function resetCorpusCache(): void {
+  CACHED_CORPUS = null;
+}

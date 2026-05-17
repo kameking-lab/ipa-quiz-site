@@ -203,6 +203,33 @@ export interface LearnerProfile {
   weakCategories: string[];
 }
 
+/**
+ * RAG パッセージ群があるときに COPILOT_SYSTEM_PROMPT に追記する
+ * 「出典のみ参照」ディレクティブ。passages が空の場合は null を返す。
+ *
+ * このディレクティブは「現在の問題」コンテキストと並行して機能する:
+ *  - 標準解説（問題に付随）は引き続き参照可能
+ *  - 加えて [1]..[N] でラベル付けされた追加出典が利用可能
+ *  - それ以外の一般知識は推測で語らない
+ *  - 本文中に [1] のような番号で必ず引用
+ *
+ * 末尾の出典フッターはモデルの出力ではなくサーバー側で決定的に付与するため、
+ * モデルは引用番号だけ正しく打てばよい。
+ */
+export function buildRAGDirective(passageCount: number): string | null {
+  if (passageCount <= 0) return null;
+  const nums = Array.from({ length: passageCount }, (_, i) => `[${i + 1}]`).join(" ");
+  return [
+    "## 出典の使い方（厳守）",
+    `直後に「参照可能な出典」として ${passageCount} 件のパッセージ ${nums} を提供します。`,
+    "回答に使う事実・定義・規格・数値・選択肢の正誤判定は、その出典に書かれている内容のみから根拠を引いてください。",
+    "出典に裏付けが無い情報を、自分の一般知識として断定的に語らないでください。",
+    "本文の該当箇所には必ず [1] [2] のように番号で引用してください（最低 1 回）。",
+    "サーバー側が末尾に出典一覧を自動付与するため、応答末尾に自分で「出典一覧」を書く必要はありません。",
+    "問題に付随する標準解説は引き続き参照してよいが、それ以外の知識は出典に限定してください。",
+  ].join("\n");
+}
+
 export function buildLearnerProfileContext(profile: LearnerProfile): string | null {
   if (profile.totalAnswered < 5) return null;
   const lines: string[] = [];
