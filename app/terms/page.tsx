@@ -245,6 +245,24 @@ export default function TermsPage() {
             </ol>
           </Section>
 
+          <Section
+            number="12"
+            icon={<AlertOctagon className="h-5 w-5" />}
+            title="知的財産権侵害の報告・誤情報の訂正"
+          >
+            <p>
+              掲載コンテンツについて、著作権・商標権・その他の権利侵害のご指摘、または事実と異なる記載のご報告は{" "}
+              <Link
+                href="/contact"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                お問い合わせフォーム
+              </Link>
+              {" "}よりお寄せください。対象コンテンツの URL と問題点を併せてお知らせいただけると、
+              運営者が確認次第、訂正または削除等の対応を行います。回答までにお時間を頂戴する場合があります。
+            </p>
+          </Section>
+
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
