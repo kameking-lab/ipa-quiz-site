@@ -94,6 +94,7 @@ const STATIC_ROUTES: UrlEntry[] = [
       priority: 0.8,
     }),
   ),
+  { url: `${SITE_BASE_URL}/why-kakomon-ai`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/success-stories`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
