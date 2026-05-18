@@ -13,6 +13,8 @@ export interface MockExamResult {
   passed: boolean;
   timeUsedSec: number;
   byCategory: Record<string, { total: number; correct: number }>;
+  questionTimings?: number[];
+  wrongQuestionIds?: string[];
 }
 
 interface MockExamStorage {
