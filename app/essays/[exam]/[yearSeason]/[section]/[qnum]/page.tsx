@@ -61,6 +61,8 @@ export function generateStaticParams(): RouteParams[] {
   return out;
 }
 
+export const dynamicParams = false;
+
 export async function generateMetadata({
   params,
 }: {
