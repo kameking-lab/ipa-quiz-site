@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -9,10 +9,14 @@ import {
   CheckCircle2,
   ChevronRight,
   Clock,
+  Flame,
+  Medal,
   Settings,
+  Star,
   Target,
   TrendingDown,
   Trash2,
+  Trophy,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +29,11 @@ import {
 } from "@/lib/dashboard/analytics";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
+import { readStreak } from "@/lib/streak/storage";
+import type { StreakState } from "@/lib/streak/core";
+import { getDailyProgress, readDailyGoalTarget, writeDailyGoalTarget, DEFAULT_DAILY_GOAL } from "@/lib/motivation/daily-goal";
+import { getEarnedBadges, BADGES, BADGE_THRESHOLDS } from "@/lib/motivation/badges";
+import { BadgeMedallion } from "@/components/motivation/BadgeMedallion";
 
 interface QuestionMeta {
   id: string;
@@ -95,14 +104,218 @@ function AccuracyBar({ accuracy, answered }: { accuracy: number; answered: numbe
   );
 }
 
+function StreakSection({ streak }: { streak: StreakState }) {
+  const atRisk = streak.currentStreak > 0 && !streak.todayCompleted;
+  return (
+    <section className="mb-6">
+      <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+        <Flame className="h-4 w-4 text-orange-500" />
+        学習ストリーク
+      </h2>
+      <div className="rounded-2xl border border-border bg-card shadow-sm">
+        <div className="grid grid-cols-2 divide-x divide-border">
+          <div className="flex flex-col items-center py-5">
+            <div className="flex items-center gap-1.5">
+              <Flame
+                className={`h-5 w-5 ${streak.todayCompleted ? "text-orange-500" : "text-zinc-400"}`}
+                aria-hidden="true"
+              />
+              <span className="text-3xl font-bold tabular-nums text-foreground">
+                {streak.currentStreak}
+              </span>
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">現在の連続日数</p>
+          </div>
+          <div className="flex flex-col items-center py-5">
+            <div className="flex items-center gap-1.5">
+              <Trophy className="h-5 w-5 text-amber-500" aria-hidden="true" />
+              <span className="text-3xl font-bold tabular-nums text-foreground">
+                {streak.longestStreak}
+              </span>
+            </div>
+            <p className="mt-1 text-xs text-muted-foreground">最長連続日数</p>
+          </div>
+        </div>
+        {atRisk && (
+          <div
+            role="alert"
+            className="flex items-center gap-2 rounded-b-2xl border-t border-orange-200 bg-orange-50 px-4 py-3 text-xs text-orange-800 dark:border-orange-900/60 dark:bg-orange-950/40 dark:text-orange-200"
+          >
+            <Flame className="h-3.5 w-3.5 shrink-0 text-orange-500" aria-hidden="true" />
+            今日1問解答するとストリークが継続します
+          </div>
+        )}
+        {streak.currentStreak > 0 && streak.todayCompleted && (
+          <div className="flex items-center gap-2 rounded-b-2xl border-t border-emerald-200 bg-emerald-50 px-4 py-3 text-xs text-emerald-800 dark:border-emerald-900/60 dark:bg-emerald-950/40 dark:text-emerald-200">
+            <CheckCircle2 className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
+            今日の学習済み — ストリーク継続中
+          </div>
+        )}
+      </div>
+    </section>
+  );
+}
+
+interface DailyGoalSectionProps {
+  count: number;
+  target: number;
+  pct: number;
+  completed: boolean;
+  onTargetChange: (n: number) => void;
+}
+
+function DailyGoalSection({ count, target, pct: pctVal, completed, onTargetChange }: DailyGoalSectionProps) {
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState(String(target));
+
+  const handleSave = () => {
+    const n = parseInt(draft, 10);
+    if (!Number.isNaN(n) && n >= 1 && n <= 100) {
+      onTargetChange(n);
+    }
+    setEditing(false);
+  };
+
+  return (
+    <section className="mb-6">
+      <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+        <Target className="h-4 w-4 text-primary" />
+        今日の目標
+      </h2>
+      <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-baseline gap-1">
+            <span className="text-2xl font-bold tabular-nums text-foreground">{count}</span>
+            <span className="text-sm text-muted-foreground">/ {target} 問</span>
+          </div>
+          {editing ? (
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min={1}
+                max={100}
+                value={draft}
+                onChange={(e) => setDraft(e.target.value)}
+                onKeyDown={(e) => { if (e.key === "Enter") handleSave(); if (e.key === "Escape") setEditing(false); }}
+                className="w-16 rounded-lg border border-border bg-background px-2 py-1 text-center text-sm tabular-nums text-foreground focus:outline-none focus:ring-2 focus:ring-primary/60"
+                aria-label="1日の目標問題数"
+                autoFocus
+              />
+              <Button size="sm" onClick={handleSave} className="h-7 px-2 text-xs">保存</Button>
+              <Button size="sm" variant="ghost" onClick={() => setEditing(false)} className="h-7 px-2 text-xs">取消</Button>
+            </div>
+          ) : (
+            <button
+              onClick={() => { setDraft(String(target)); setEditing(true); }}
+              className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+              type="button"
+            >
+              変更
+            </button>
+          )}
+        </div>
+        <div
+          className="h-2.5 w-full overflow-hidden rounded-full bg-border"
+          role="progressbar"
+          aria-valuenow={Math.min(count, target)}
+          aria-valuemin={0}
+          aria-valuemax={target}
+          aria-label={`今日の学習進捗: ${count}/${target}問`}
+        >
+          <div
+            className={`h-full rounded-full transition-all ${completed ? "bg-emerald-500" : "bg-primary"}`}
+            style={{ width: `${pctVal}%` }}
+          />
+        </div>
+        {completed && (
+          <p className="mt-2 text-xs font-medium text-emerald-600 dark:text-emerald-400">
+            今日の目標達成！お疲れ様でした
+          </p>
+        )}
+        {!completed && count > 0 && (
+          <p className="mt-2 text-xs text-muted-foreground">
+            残り {target - count} 問で目標達成
+          </p>
+        )}
+        {count === 0 && (
+          <p className="mt-2 text-xs text-muted-foreground">
+            今日はまだ解答していません
+          </p>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function BadgesSection({ earnedSet }: { earnedSet: Set<number> }) {
+  if (earnedSet.size === 0) return null;
+  return (
+    <section className="mb-6">
+      <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold text-foreground">
+        <Medal className="h-4 w-4 text-amber-500" />
+        獲得バッジ（連続学習）
+      </h2>
+      <div className="flex flex-wrap gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm">
+        {BADGE_THRESHOLDS.map((threshold) => {
+          const badge = BADGES[threshold];
+          const earned = earnedSet.has(threshold);
+          return (
+            <div key={threshold} className="flex flex-col items-center gap-2">
+              <BadgeMedallion badge={badge} earned={earned} size="sm" />
+              <div className="text-center">
+                <p className={`text-xs font-medium ${earned ? "text-foreground" : "text-muted-foreground"}`}>
+                  {badge.name}
+                </p>
+                <p className="text-[10px] text-muted-foreground">{badge.tagline}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  );
+}
+
+function MotivationNudge({ stats }: { stats: Stats }) {
+  if (stats.total < 10) return null;
+  const acc = stats.accuracy;
+
+  if (acc >= 0.6) {
+    if (acc >= 0.8) return null;
+    return (
+      <div className="mb-6 flex items-center gap-3 rounded-2xl border border-emerald-200 bg-emerald-50 p-4 text-sm dark:border-emerald-900/40 dark:bg-emerald-950/30">
+        <Star className="h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+        <p className="text-emerald-800 dark:text-emerald-200">
+          正答率 {Math.round(acc * 100)}% — 合格圏内です。このまま続けましょう！
+        </p>
+      </div>
+    );
+  }
+
+  const neededCorrect = Math.ceil((0.6 * stats.total - stats.correct) / 0.4);
+  if (neededCorrect <= 0) return null;
+
+  return (
+    <div className="mb-6 flex items-center gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm dark:border-amber-900/40 dark:bg-amber-950/30">
+      <Target className="h-4 w-4 shrink-0 text-amber-600 dark:text-amber-400" aria-hidden="true" />
+      <p className="text-amber-800 dark:text-amber-200">
+        合格圏（60%）まであと約 <strong>{neededCorrect} 問</strong> 連続正解が必要です
+      </p>
+    </div>
+  );
+}
+
 export function MyProgressClient({ questions }: Props) {
   const [stats, setStats] = useState<Stats | null>(null);
   const [examRows, setExamRows] = useState<ExamRow[]>([]);
   const [weakCats, setWeakCats] = useState<CategoryStat[]>([]);
   const [recent, setRecent] = useState<RecentEntry[]>([]);
   const [cleared, setCleared] = useState(false);
+  const [streak, setStreak] = useState<StreakState | null>(null);
+  const [dailyGoal, setDailyGoal] = useState<{ count: number; target: number; pct: number; completed: boolean } | null>(null);
+  const [earnedBadges, setEarnedBadges] = useState<Set<number>>(new Set());
 
-  useEffect(() => {
+  const loadData = useCallback(() => {
     const store = createHistoryStore();
     const s = store.getStats();
     setStats(s);
@@ -134,7 +347,21 @@ export function MyProgressClient({ questions }: Props) {
         };
       });
     setRecent(recentEntries);
+
+    setStreak(readStreak());
+    setDailyGoal(getDailyProgress());
+    const badges = getEarnedBadges();
+    setEarnedBadges(new Set(badges.earned));
   }, [questions]);
+
+  useEffect(() => {
+    loadData();
+  }, [loadData]);
+
+  const handleTargetChange = useCallback((n: number) => {
+    writeDailyGoalTarget(n);
+    setDailyGoal(getDailyProgress());
+  }, []);
 
   function handleClear() {
     if (!window.confirm("学習履歴をすべて削除しますか？この操作は取り消せません。")) return;
@@ -182,6 +409,20 @@ export function MyProgressClient({ questions }: Props) {
           </div>
         )}
 
+        {/* Streak */}
+        {streak && <StreakSection streak={streak} />}
+
+        {/* Daily goal */}
+        {dailyGoal && (
+          <DailyGoalSection
+            count={dailyGoal.count}
+            target={dailyGoal.target}
+            pct={dailyGoal.pct}
+            completed={dailyGoal.completed}
+            onTargetChange={handleTargetChange}
+          />
+        )}
+
         {/* Overall stats */}
         {stats !== null && (
           <section className="mb-6">
@@ -216,6 +457,9 @@ export function MyProgressClient({ questions }: Props) {
           </section>
         )}
 
+        {/* Motivation nudge */}
+        {stats && hasHistory && <MotivationNudge stats={stats} />}
+
         {/* Actions */}
         {hasHistory && (
           <section className="mb-6 flex flex-wrap gap-2">
@@ -246,6 +490,9 @@ export function MyProgressClient({ questions }: Props) {
             </Button>
           </section>
         )}
+
+        {/* Streak badges */}
+        <BadgesSection earnedSet={earnedBadges} />
 
         {/* Exam breakdown */}
         {examRows.length > 0 && (
