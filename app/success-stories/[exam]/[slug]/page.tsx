@@ -76,6 +76,8 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
   });
   const articleImage = `${SITE_BASE_URL}/api/og?${articleOgParams.toString()}`;
 
+  const personaName = `${story.persona.occupation}（${story.persona.ageRange}）`;
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -113,13 +115,70 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
           "@type": "WebPage",
           "@id": url,
         },
+        about: [
+          { "@id": `${url}#course` },
+          { "@id": `${url}#persona` },
+        ],
+        additionalProperty: {
+          "@type": "PropertyValue",
+          name: "contentGenerationMethod",
+          value: "AI-generated fictional persona based on typical exam candidate patterns. Not based on a real individual.",
+        },
       },
       {
         "@type": "Person",
         "@id": `${url}#persona`,
-        name: `${story.persona.occupation}（${story.persona.ageRange}）`,
+        name: personaName,
         description: story.persona.background,
         jobTitle: story.persona.occupation,
+        // Explicit fiction/AI-generated disclaimer per schema.org best practice
+        disambiguatingDescription:
+          "AI生成の架空ペルソナ。実在の人物ではありません。典型的な合格者像をもとに過去問AIが構成した学習ガイドです。",
+      },
+      {
+        "@type": "Review",
+        "@id": `${url}#review`,
+        itemReviewed: {
+          "@type": "Course",
+          "@id": `${url}#course`,
+        },
+        author: { "@id": `${url}#persona` },
+        reviewBody: story.description,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+          worstRating: "1",
+        },
+        datePublished: story.publishedAt,
+        inLanguage: "ja",
+      },
+      {
+        "@type": "Course",
+        "@id": `${url}#course`,
+        name: `${label} 試験対策 — AIコパイロット過去問演習`,
+        description: `${label}の公開過去問を網羅するAIネイティブ学習サービス。AIコパイロットが用語解説・誤答分析・類題生成を無制限で提供します。`,
+        url: `${SITE_BASE_URL}/${exam}`,
+        provider: {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        },
+        educationalCredentialAwarded: `IPA ${label}`,
+        hasCourseInstance: {
+          "@type": "CourseInstance",
+          courseMode: "Online",
+          inLanguage: "ja",
+          name: `${label} AIコパイロット付き過去問演習`,
+          courseWorkload: `PT${story.persona.totalStudyHours}H`,
+          offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "JPY",
+            availability: "https://schema.org/InStock",
+          },
+        },
+        teaches: story.keyTakeaways.join(" / "),
       },
       {
         "@type": "BreadcrumbList",
