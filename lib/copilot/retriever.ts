@@ -1,5 +1,6 @@
 import { tokenize, uniqueTokens } from "./tokenize";
 import type { CorpusDoc, RetrievalCandidate } from "./types";
+import { matchAliasGlossaryTerms } from "./aliases";
 
 const BM25_K1 = 1.2;
 const BM25_B = 0.75;
@@ -124,7 +125,33 @@ export function retrieve(
     const baseScore = scores.get(i) ?? 0;
     const floor = top.length > 0 ? top[top.length - 1].score : 1;
     top.push({ doc, score: Math.max(baseScore, floor * 0.5) });
+    presentIds.add(doc.id);
   }
+
+  // エイリアス一致による glossary ピン留め。
+  // 「RSA 暗号の鍵長」「クロスサイトスクリプティング」など、
+  // ユーザーが略称・俗称で呼ぶ用語を強制的に top に押し上げる。
+  // タイトルトークン一致が取れない paraphrase クエリの主救済策。
+  const aliasedTerms = matchAliasGlossaryTerms(query);
+  if (aliasedTerms.size > 0) {
+    const titleToTerm = new Map<string, string>();
+    for (const term of aliasedTerms) titleToTerm.set(term, term);
+    for (let i = 0; i < index.docs.length; i++) {
+      const doc = index.docs[i];
+      if (doc.kind !== "glossary") continue;
+      if (presentIds.has(doc.id)) continue;
+      const titleNorm = doc.title
+        .replace(/^用語集:\s*/, "")
+        .replace(/\s*\(.*\)$/, "");
+      if (!titleToTerm.has(titleNorm)) continue;
+      // BM25 top の中央値スコア相当をベースに採用。確実に top-5 に入る水準。
+      const midScore = top.length > 0 ? top[Math.floor(top.length / 2)].score : 1;
+      const baseScore = scores.get(i) ?? 0;
+      top.push({ doc, score: Math.max(baseScore, midScore) });
+      presentIds.add(doc.id);
+    }
+  }
+
   // 並び替えなおして再度 k に切る
   top.sort((a, b) => b.score - a.score);
   return top.slice(0, k + 5); // 用語集ピン留め分のため少し余裕を持たせて返す

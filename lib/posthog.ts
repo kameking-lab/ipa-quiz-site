@@ -38,6 +38,11 @@ export type PostHogEventName =
   | "essay_industry_switched"
   | "stats_viewed"
   | "copilot_response_received"
+  | "copilot_citation_clicked"
+  | "copilot_citation_detail_opened"
+  | "copilot_citation_full_opened"
+  | "copilot_related_question_clicked"
+  | "copilot_question_example_clicked"
   | "contact_form_submitted"
   | "referrer_with_utm";
 

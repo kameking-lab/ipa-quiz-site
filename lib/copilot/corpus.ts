@@ -4,6 +4,7 @@ import { GLOSSARY } from "@/data/glossary";
 import type { GlossaryTerm } from "@/data/glossary";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { CorpusDoc } from "./types";
+import { GLOSSARY_ALIASES } from "./aliases";
 
 function buildQuestionDoc(q: Question): CorpusDoc {
   // 検索対象文書は「問題文 + 選択肢 + 解説 + タグ + カテゴリ」を統合。
@@ -43,6 +44,7 @@ function buildQuestionDoc(q: Question): CorpusDoc {
 
 function buildGlossaryDoc(t: GlossaryTerm): CorpusDoc {
   const aliases = [t.term, t.english].filter(Boolean).join(" ");
+  const extraAliases = (GLOSSARY_ALIASES[t.term] ?? []).join(" ");
   const related = (t.relatedTopics ?? []).join(" ");
   // 用語集は「タイトル＝用語名そのもの」の比重が一番大事。
   // 用語名を 6 倍、英語表記を 3 倍重複させて BM25 上で title-field 相当の重みを与える。
@@ -59,7 +61,9 @@ function buildGlossaryDoc(t: GlossaryTerm): CorpusDoc {
   ]
     .filter(Boolean)
     .join(" ");
-  const text = [titleWeighted, aliases, t.short, t.detail, related]
+  // エイリアスは title-weight と短文の間に置く（中程度の重み）。
+  // 重複させすぎると BM25 的にスパムになるため 2 回まで。
+  const text = [titleWeighted, aliases, extraAliases, extraAliases, t.short, t.detail, related]
     .filter(Boolean)
     .join("\n");
 

@@ -42,10 +42,21 @@ import { cn } from "@/lib/utils";
 import {
   QUICK_ACTIONS,
   RESPONSE_LENGTH_LABEL,
+  INITIAL_QUESTION_EXAMPLES,
   type QuickActionId,
   type LearnerProfile,
   type ResponseLength,
 } from "@/lib/ai/prompts";
+import {
+  decodeCitationsHeader,
+  type CitationMeta,
+} from "@/lib/copilot/citation-meta";
+import {
+  decodeRelatedHeader,
+  type RelatedQuestion,
+} from "@/lib/copilot/related";
+import { CitationCards } from "@/components/copilot/CitationCards";
+import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildLearnerProfileFromHistory } from "@/lib/ai/learner-profile-client";
 import {
@@ -66,6 +77,17 @@ interface Message {
   role: "user" | "assistant";
   content: string;
   quickAction?: QuickActionId;
+  /** RAG citation メタ。X-RAG-Citations ヘッダから復号して保持する。 */
+  citations?: CitationMeta[];
+  /** 関連問題サジェスト。X-Related-Questions ヘッダから復号して保持する。 */
+  relatedQuestions?: RelatedQuestion[];
+}
+
+/** Markdown 表示時に決定的に付与される出典フッターを除外する。
+ * 構造化 citation カードに置き換えて表示するため、二重表示を避ける。 */
+const CITATION_FOOTER_RE = /\n\n---\n\*\*出典\*\*[\s\S]*$/;
+function stripCitationFooter(content: string): string {
+  return content.replace(CITATION_FOOTER_RE, "");
 }
 
 interface Props {
@@ -366,10 +388,26 @@ export function CopilotPanel({
           return;
         }
 
+        // 構造化 citation メタと関連問題は HTTP ヘッダで返ってくる。
+        // ヘッダは body 読み出し前に確定しているので、最初のメッセージ追加時に同梱しておく。
+        const citationHeaderValue = res.headers.get("X-RAG-Citations");
+        const relatedHeaderValue = res.headers.get("X-Related-Questions");
+        const citations = decodeCitationsHeader(citationHeaderValue);
+        const relatedQuestions = decodeRelatedHeader(relatedHeaderValue);
+
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
         let acc = "";
-        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "",
+            citations: citations.length > 0 ? citations : undefined,
+            relatedQuestions:
+              relatedQuestions.length > 0 ? relatedQuestions : undefined,
+          },
+        ]);
 
         while (true) {
           const { value, done } = await reader.read();
@@ -378,7 +416,13 @@ export function CopilotPanel({
           acc += chunk;
           setMessages((prev) => {
             const copy = [...prev];
-            copy[copy.length - 1] = { role: "assistant", content: acc };
+            const previous = copy[copy.length - 1];
+            copy[copy.length - 1] = {
+              role: "assistant",
+              content: acc,
+              citations: previous.citations,
+              relatedQuestions: previous.relatedQuestions,
+            };
             return copy;
           });
         }
@@ -763,8 +807,40 @@ export function CopilotPanel({
         aria-label="AI コパイロットの応答"
       >
         {messages.length === 0 && (
-          <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
-            問題文は既にAIに共有されています。分からないところを聞いたり、上のボタンでサッと深掘りできます。
+          <div className="space-y-2.5">
+            <div className="rounded-xl border border-dashed border-zinc-300 p-4 text-xs text-zinc-500 dark:border-zinc-700 dark:text-zinc-400">
+              問題文は既にAIに共有されています。分からないところを聞いたり、上のボタンでサッと深掘りできます。
+            </div>
+            <div className="rounded-xl border border-sky-200 bg-sky-50/50 p-3 dark:border-sky-900/50 dark:bg-sky-950/20">
+              <p className="mb-2 text-[11px] font-semibold text-sky-700 dark:text-sky-300">
+                こんな質問ができます
+              </p>
+              <ul
+                aria-label="質問例"
+                className="flex flex-wrap gap-1.5"
+              >
+                {INITIAL_QUESTION_EXAMPLES.map((ex) => (
+                  <li key={ex.label}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setInput(ex.prompt);
+                        posthogCapture("copilot_question_example_clicked", {
+                          label: ex.label,
+                          questionId: question?.id,
+                        });
+                      }}
+                      className="rounded-full border border-sky-300 bg-white px-2.5 py-1 text-xs text-sky-700 transition-colors hover:bg-sky-100 dark:border-sky-800 dark:bg-zinc-900 dark:text-sky-300 dark:hover:bg-sky-950/50"
+                    >
+                      {ex.label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2 text-[10px] text-zinc-500 dark:text-zinc-400">
+                ※ クリックで入力欄にプリセット。自由に編集して送信できます。
+              </p>
+            </div>
           </div>
         )}
         {messages.map((m, i) => (
@@ -792,7 +868,22 @@ export function CopilotPanel({
               </button>
             )}
             {m.role === "assistant" ? (
-              <Markdown>{m.content || "..."}</Markdown>
+              <>
+                <Markdown>
+                  {(m.citations && m.citations.length > 0
+                    ? stripCitationFooter(m.content)
+                    : m.content) || "..."}
+                </Markdown>
+                {m.citations && m.citations.length > 0 && (
+                  <CitationCards citations={m.citations} messageIndex={i} />
+                )}
+                {m.relatedQuestions && m.relatedQuestions.length > 0 && (
+                  <RelatedQuestionsSection
+                    items={m.relatedQuestions}
+                    messageIndex={i}
+                  />
+                )}
+              </>
             ) : (
               <div className="text-sm leading-relaxed">
                 {m.quickAction && (

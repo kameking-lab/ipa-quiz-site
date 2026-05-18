@@ -63,6 +63,28 @@ export const GROUND_TRUTH: GroundTruthEntry[] = [
   { query: "ACID の永続性 Durability", expectedIds: ["g:ACID"], tag: "concept" },
   { query: "OAuth 2.0 認可コードフロー", expectedIds: ["g:OAuth 2.0"], tag: "concept" },
 
+  // ── 追加: パラフレーズ・概念ロバスト性（10件）────────────────
+  // PR #290 後の拡張。既存の用語集 30 件に対するパラフレーズ／類義語クエリで、
+  // BM25 + char-bigram の頑強性を測る。expectedIds は実在する g: ID のみ。
+  { query: "トランザクションの一貫性とは", expectedIds: ["g:ACID"], tag: "concept" },
+  { query: "B+ ツリーのリーフノード構造", expectedIds: ["g:B木 / B+木"], tag: "concept" },
+  { query: "クラスレスアドレッシングの利点", expectedIds: ["g:CIDR"], tag: "concept" },
+  { query: "ドメイン名前解決の流れ", expectedIds: ["g:DNS"], tag: "concept" },
+  { query: "アーンドバリュー法のスケジュール差異", expectedIds: ["g:EVM"], tag: "concept" },
+  { query: "MD5 や SHA-256 の利用例", expectedIds: ["g:ハッシュ関数"], tag: "concept" },
+  { query: "リスクベース認証と二要素認証", expectedIds: ["g:OAuth 2.0"], tag: "concept" },
+  { query: "個人データ取扱いの本人同意", expectedIds: ["g:個人情報保護法"], tag: "concept" },
+  { query: "スプリントレトロスペクティブの目的", expectedIds: ["g:アジャイル"], tag: "concept" },
+  { query: "プログラム実行中の動的最適化", expectedIds: ["g:JIT (Just-In-Time)"], tag: "concept" },
+
+  // ── 追加: 雑談・モチベ系（5件・citation 期待なし）─────────
+  // false-positive 抑制を確認するためのバリエーション。
+  { query: "今日もよろしくお願いします", expectedIds: [], tag: "chitchat" },
+  { query: "難しくて挫けそうです", expectedIds: [], tag: "chitchat" },
+  { query: "次は何を勉強すればいい？", expectedIds: [], tag: "chitchat" },
+  { query: "AIってどんな仕組み？（雑談）", expectedIds: [], tag: "chitchat" },
+  { query: "もう一度説明してくれる？", expectedIds: [], tag: "chitchat" },
+
   // ── 雑談・モチベ系（10件・citation 期待なし）──────────────
   // expectedIds = [] は「retrieval が走ってもしきい値で抑制される」ことを期待
   { query: "勉強のやる気が出ません", expectedIds: [], tag: "chitchat" },
