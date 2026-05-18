@@ -50,6 +50,7 @@ const QuerySchema = z.object({
     .union([z.literal("true"), z.literal("false"), z.boolean()])
     .transform((v) => v === true || v === "true")
     .optional(),
+  sort: z.enum(["relevance", "year_desc", "category", "random"]).optional(),
   limit: z.coerce.number().int().min(1).max(60).optional(),
   offset: z.coerce.number().int().min(0).max(5000).optional(),
 });
@@ -98,11 +99,17 @@ export async function GET(req: Request) {
     difficulty: data.difficulty as Difficulty | undefined,
     hasImage: data.hasImage,
     calculationOnly: data.calculationOnly,
+    sort: data.sort,
     limit: data.limit,
     offset: data.offset,
   });
 
+  const cacheHeader =
+    data.sort === "random"
+      ? "no-store"
+      : "public, max-age=60, s-maxage=300";
+
   return NextResponse.json(result, {
-    headers: { "Cache-Control": "public, max-age=60, s-maxage=300" },
+    headers: { "Cache-Control": cacheHeader },
   });
 }
