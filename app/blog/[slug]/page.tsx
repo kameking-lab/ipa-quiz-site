@@ -19,6 +19,8 @@ export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
 }
 
+export const dynamicParams = false;
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
