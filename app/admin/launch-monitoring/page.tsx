@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { LiveMonitoringData } from "./LiveMonitoringData";
 
 export const metadata: Metadata = {
   title: "ローンチ監視ダッシュボード（管理画面）",
@@ -159,6 +160,8 @@ export default function AdminLaunchMonitoringPage() {
           初日の異常検知時は logs/launch-day-monitoring-checklist.md の対応手順を参照してください。
         </p>
       </header>
+
+      <LiveMonitoringData />
 
       <Card className="mb-8">
         <CardHeader>
