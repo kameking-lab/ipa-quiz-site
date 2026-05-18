@@ -202,3 +202,35 @@ export async function getApiUsageStats(): Promise<ApiUsageStats> {
     },
   };
 }
+
+/**
+ * Returns 24 hourly total call counts across all tracked endpoints.
+ * Index 0 = most recent hour, index 23 = 23 hours ago.
+ * Returns array of zeros when KV is not configured.
+ */
+export async function getApiCallsHourlySeries(): Promise<number[]> {
+  if (!KV_ENABLED) return Array(24).fill(0) as number[];
+
+  const now = Date.now();
+  const currentHrBucket = Math.floor(now / 3_600_000);
+
+  const commands: unknown[][] = [];
+  for (let i = 0; i < 24; i++) {
+    for (const endpoint of TRACKED_ENDPOINTS) {
+      commands.push(["GET", `rl:stats:${endpoint}:h:${currentHrBucket - i}`]);
+    }
+  }
+
+  const results = await kvPipeline(commands);
+  const series: number[] = [];
+
+  for (let i = 0; i < 24; i++) {
+    let hourTotal = 0;
+    for (let j = 0; j < TRACKED_ENDPOINTS.length; j++) {
+      hourTotal += Number(results[i * TRACKED_ENDPOINTS.length + j] ?? 0);
+    }
+    series.push(hourTotal);
+  }
+
+  return series;
+}
