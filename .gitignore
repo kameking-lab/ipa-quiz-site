@@ -46,6 +46,8 @@ next-env.d.ts
 
 # parse script output logs
 /logs/*.json
+# bot tracking files (exception to the above)
+!/logs/auto-improve-history.json
 # regenerate-explanations backup copies of data files
 /logs/backup_*.ts
 
