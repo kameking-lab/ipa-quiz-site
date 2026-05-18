@@ -6,6 +6,7 @@ import {
   Sparkles,
   Send,
   Loader2,
+  Square,
   X,
   ChevronDown,
   RefreshCw,
@@ -18,6 +19,7 @@ import {
   Mic,
   MicOff,
   MoreVertical,
+  Search,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
@@ -81,7 +83,33 @@ interface Message {
   citations?: CitationMeta[];
   /** 関連問題サジェスト。X-Related-Questions ヘッダから復号して保持する。 */
   relatedQuestions?: RelatedQuestion[];
+  /** ユーザが「停止」ボタンで途中停止したアシスタント応答であるかを示すフラグ。 */
+  stoppedByUser?: boolean;
 }
+
+/**
+ * Streaming phase used to drive the progress indicator shown above the
+ * input form. Phases progress monotonically per send():
+ *   idle → sending → searching → generating → streaming → idle
+ *
+ * - sending: request is in-flight, awaiting response headers.
+ * - searching: response headers arrived; reading first chunk (RAG / provider warmup).
+ * - generating: first chunk arrived but body is still very short.
+ * - streaming: body has visible content; cursor is shown at the tail.
+ */
+type StreamStatus =
+  | "idle"
+  | "sending"
+  | "searching"
+  | "generating"
+  | "streaming";
+
+const STREAM_STATUS_LABEL: Record<Exclude<StreamStatus, "idle">, string> = {
+  sending: "リクエスト送信中…",
+  searching: "出典を検索しています…",
+  generating: "回答を生成しています…",
+  streaming: "回答を生成中…",
+};
 
 /** Markdown 表示時に決定的に付与される出典フッターを除外する。
  * 構造化 citation カードに置き換えて表示するため、二重表示を避ける。 */
@@ -191,6 +219,7 @@ export function CopilotPanel({
   const [messages, setMessages] = React.useState<Message[]>([]);
   const [input, setInput] = React.useState("");
   const [streaming, setStreaming] = React.useState(false);
+  const [streamStatus, setStreamStatus] = React.useState<StreamStatus>("idle");
   const [usage, setUsage] = React.useState(() => readAiUsage());
   const [feedbackSubmitted, setFeedbackSubmittedState] = React.useState(false);
   const [errorState, setErrorState] = React.useState<{
@@ -240,6 +269,10 @@ export function CopilotPanel({
     : FREE_DAILY_LIMIT_CLIENT;
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const abortRef = React.useRef<AbortController | null>(null);
+  // Distinguishes a user-initiated stop (Stop button) from a system-side abort
+  // (question-change, unmount). Only user stops should annotate the partial
+  // message with a "(停止しました)" marker; system aborts should be silent.
+  const userStoppedRef = React.useRef(false);
   const recognitionRef = React.useRef<SpeechRecognitionInstance | null>(null);
   const lastSendArgsRef = React.useRef<{ text: string; quickAction?: QuickActionId } | null>(null);
   const sendRef = React.useRef<(text: string, quickAction?: QuickActionId) => void>(() => {});
@@ -255,10 +288,14 @@ export function CopilotPanel({
 
   // Reset conversation when question changes; refresh profile snapshot
   React.useEffect(() => {
-     
+
     setMessages([]);
     setInput("");
+    // Question-change abort is system-driven, not user-driven, so leave the
+    // userStoppedRef flag false to avoid annotating the discarded message.
+    userStoppedRef.current = false;
     abortRef.current?.abort();
+    setStreamStatus("idle");
     setCopiedIdx(null);
     setCopiedAll(false);
     setShareOpen(false);
@@ -335,6 +372,8 @@ export function CopilotPanel({
       setMessages(nextMessages);
       setInput("");
       setStreaming(true);
+      setStreamStatus("sending");
+      userStoppedRef.current = false;
 
       const controller = new AbortController();
       abortRef.current = controller;
@@ -375,6 +414,7 @@ export function CopilotPanel({
           ]);
           if (body.reason === "daily") onRateLimitHit();
           setStreaming(false);
+          setStreamStatus("idle");
           return;
         }
 
@@ -385,6 +425,7 @@ export function CopilotPanel({
             retryFn: () => args && sendRef.current(args.text, args.quickAction),
           });
           setStreaming(false);
+          setStreamStatus("idle");
           return;
         }
 
@@ -394,6 +435,16 @@ export function CopilotPanel({
         const relatedHeaderValue = res.headers.get("X-Related-Questions");
         const citations = decodeCitationsHeader(citationHeaderValue);
         const relatedQuestions = decodeRelatedHeader(relatedHeaderValue);
+
+        // Response headers landed: transition to "searching" so the user sees
+        // a more specific status while we wait for the provider's first token.
+        // Citation headers being present is a strong signal that RAG ran;
+        // otherwise we fall back to "generating" since the model is warming up.
+        setStreamStatus(
+          citations.length > 0 || relatedQuestions.length > 0
+            ? "searching"
+            : "generating",
+        );
 
         const reader = res.body.getReader();
         const decoder = new TextDecoder();
@@ -414,6 +465,10 @@ export function CopilotPanel({
           if (done) break;
           const chunk = decoder.decode(value, { stream: true });
           acc += chunk;
+          // First non-empty chunk flips us into "streaming" so the cursor
+          // takes over from the skeleton placeholder. React bails out if the
+          // value is unchanged, so this is safe to call on every chunk.
+          if (acc.length > 0) setStreamStatus("streaming");
           setMessages((prev) => {
             const copy = [...prev];
             const previous = copy[copy.length - 1];
@@ -450,10 +505,38 @@ export function CopilotPanel({
         setUsage(incrementAiUsage());
       } catch (err) {
         if ((err as Error).name === "AbortError") {
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: "(キャンセルされました)" },
-          ]);
+          // User-initiated stop: keep whatever was already streamed and mark
+          // the last assistant message so the UI can render a "(停止しました)"
+          // hint instead of dropping the partial response. If the assistant
+          // bubble was not yet pushed (aborted before headers landed) we fall
+          // back to the explicit cancellation message.
+          if (userStoppedRef.current) {
+            setMessages((prev) => {
+              const last = prev[prev.length - 1];
+              if (last && last.role === "assistant") {
+                const copy = [...prev];
+                copy[copy.length - 1] = { ...last, stoppedByUser: true };
+                return copy;
+              }
+              return [
+                ...prev,
+                {
+                  role: "assistant",
+                  content: "(停止しました)",
+                  stoppedByUser: true,
+                },
+              ];
+            });
+            posthogCapture("copilot_response_stopped", {
+              questionId: question?.id,
+              exam: question?.exam,
+            });
+          } else {
+            setMessages((prev) => [
+              ...prev,
+              { role: "assistant", content: "(キャンセルされました)" },
+            ]);
+          }
         } else {
           const args = lastSendArgsRef.current;
           setErrorState({
@@ -463,6 +546,8 @@ export function CopilotPanel({
         }
       } finally {
         setStreaming(false);
+        setStreamStatus("idle");
+        userStoppedRef.current = false;
       }
     },
     [
@@ -487,6 +572,12 @@ export function CopilotPanel({
       void send(text, quickAction);
     };
   }, [send]);
+
+  const handleStop = React.useCallback(() => {
+    if (!streaming) return;
+    userStoppedRef.current = true;
+    abortRef.current?.abort();
+  }, [streaming]);
 
   const toggleVoice = React.useCallback(() => {
     if (voiceState === "unsupported") return;
@@ -869,11 +960,42 @@ export function CopilotPanel({
             )}
             {m.role === "assistant" ? (
               <>
-                <Markdown>
-                  {(m.citations && m.citations.length > 0
-                    ? stripCitationFooter(m.content)
-                    : m.content) || "..."}
-                </Markdown>
+                {m.content.length === 0 ? (
+                  // First-chunk skeleton: three pulsing lines simulate the
+                  // shape of a typical 200-400字 answer so the layout doesn't
+                  // pop when the first token arrives.
+                  <div
+                    className="space-y-2 py-1"
+                    aria-label="回答を生成中"
+                    role="status"
+                  >
+                    <div className="h-3 w-11/12 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+                    <div className="h-3 w-10/12 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+                    <div className="h-3 w-7/12 animate-pulse rounded bg-zinc-200 dark:bg-zinc-800" />
+                  </div>
+                ) : (
+                  <Markdown>
+                    {m.citations && m.citations.length > 0
+                      ? stripCitationFooter(m.content)
+                      : m.content}
+                  </Markdown>
+                )}
+                {/* Typing cursor: only on the last assistant message while
+                    actively streaming. aria-hidden so SR users aren't told
+                    about a cursor that's just a visual affordance. */}
+                {streaming &&
+                  i === messages.length - 1 &&
+                  m.content.length > 0 && (
+                    <span
+                      aria-hidden="true"
+                      className="ml-0.5 inline-block h-3.5 w-1.5 translate-y-[2px] animate-pulse rounded-sm bg-sky-500 dark:bg-sky-400"
+                    />
+                  )}
+                {m.stoppedByUser && (
+                  <p className="mt-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
+                    （ここで停止しました）
+                  </p>
+                )}
                 {m.citations && m.citations.length > 0 && (
                   <CitationCards citations={m.citations} messageIndex={i} />
                 )}
@@ -896,10 +1018,22 @@ export function CopilotPanel({
             )}
           </div>
         ))}
-        {streaming && (
-          <div className="flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400">
-            <Loader2 className="h-3 w-3 animate-spin" />
-            生成中...
+        {streaming && streamStatus !== "idle" && streamStatus !== "streaming" && (
+          // Pre-stream phase indicator. While the assistant bubble is showing
+          // its skeleton, surface what the system is doing (searching docs,
+          // calling the model). Hidden during "streaming" because the typing
+          // cursor in the message bubble already conveys live progress.
+          <div
+            role="status"
+            aria-live="polite"
+            className="mt-1 flex items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400"
+          >
+            {streamStatus === "searching" ? (
+              <Search className="h-3 w-3 animate-pulse" aria-hidden="true" />
+            ) : (
+              <Loader2 className="h-3 w-3 animate-spin" aria-hidden="true" />
+            )}
+            <span>{STREAM_STATUS_LABEL[streamStatus]}</span>
           </div>
         )}
       </div>
@@ -1009,15 +1143,31 @@ export function CopilotPanel({
             )}
           </Button>
         )}
-        <Button
-          type="submit"
-          variant="primary"
-          size="icon"
-          disabled={streaming || !input.trim()}
-          aria-label="送信"
-        >
-          {streaming ? <Loader2 className="h-4 w-4 animate-spin" /> : <Send className="h-4 w-4" />}
-        </Button>
+        {streaming ? (
+          // While streaming, the primary action swaps to "Stop". The user can
+          // cancel a long answer without losing what's been streamed so far.
+          <Button
+            type="button"
+            variant="primary"
+            size="icon"
+            onClick={handleStop}
+            aria-label="生成を停止"
+            title="生成を停止"
+            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
+          >
+            <Square className="h-4 w-4 fill-current" />
+          </Button>
+        ) : (
+          <Button
+            type="submit"
+            variant="primary"
+            size="icon"
+            disabled={!input.trim()}
+            aria-label="送信"
+          >
+            <Send className="h-4 w-4" />
+          </Button>
+        )}
       </form>
 
       {/* Share modal */}
