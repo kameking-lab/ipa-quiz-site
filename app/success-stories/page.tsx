@@ -67,12 +67,17 @@ export default function SuccessStoriesIndexPage() {
         "@id": `${SITE_BASE_URL}/success-stories#collection`,
         name: "IPA試験 合格体験記",
         description:
-          "IPA情報処理技術者試験13区分の合格者リアル体験記コレクション。",
+          "IPA情報処理技術者試験13区分の合格者リアル体験記コレクション。各記事はAI生成の架空ペルソナによる学習ガイドです。",
         url: `${SITE_BASE_URL}/success-stories`,
         publisher: {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE_BASE_URL,
+        },
+        additionalProperty: {
+          "@type": "PropertyValue",
+          name: "contentGenerationMethod",
+          value: "AI-generated fictional personas based on typical exam candidate patterns. Not based on real individuals.",
         },
         hasPart: stories.slice(0, 20).map((s) => ({
           "@type": "Article",

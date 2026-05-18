@@ -74,12 +74,28 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
         "@type": "CollectionPage",
         "@id": `${url}#collection`,
         name: `${label} 合格体験記`,
-        description: `${label}合格者${stories.length}名のリアル体験記コレクション。`,
+        description: `${label}合格者${stories.length}名のリアル体験記コレクション。各記事はAI生成の架空ペルソナによる学習ガイドです。`,
         url,
         publisher: {
           "@type": "Organization",
           name: SITE_NAME,
           url: SITE_BASE_URL,
+        },
+        about: {
+          "@type": "Course",
+          name: `${label} 試験対策 — AIコパイロット過去問演習`,
+          url: `${SITE_BASE_URL}/${exam}`,
+          provider: {
+            "@type": "Organization",
+            name: SITE_NAME,
+            url: SITE_BASE_URL,
+          },
+          educationalCredentialAwarded: `IPA ${label}`,
+        },
+        additionalProperty: {
+          "@type": "PropertyValue",
+          name: "contentGenerationMethod",
+          value: "AI-generated fictional personas based on typical exam candidate patterns. Not based on real individuals.",
         },
         hasPart: stories.map((s) => ({
           "@type": "Article",
