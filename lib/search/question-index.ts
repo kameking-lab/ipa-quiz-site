@@ -13,6 +13,8 @@ import {
 } from "@/lib/questions/get-questions";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 
+export type SearchSort = "relevance" | "year_desc" | "category" | "random";
+
 export interface SearchQuery {
   q?: string;
   exam?: ExamCode;
@@ -24,6 +26,7 @@ export interface SearchQuery {
   difficulty?: Difficulty;
   hasImage?: boolean;
   calculationOnly?: boolean;
+  sort?: SearchSort;
   limit?: number;
   offset?: number;
 }
@@ -164,11 +167,31 @@ export async function searchQuestions(query: SearchQuery): Promise<SearchRespons
       (facets.difficulty[String(q.difficulty)] ?? 0) + 1;
   }
 
-  matched.sort((a, b) => {
-    if (b.score !== a.score) return b.score - a.score;
-    if (b.q.year !== a.q.year) return b.q.year - a.q.year;
-    return a.q.qNumber - b.q.qNumber;
-  });
+  const sort = query.sort ?? "relevance";
+  if (sort === "year_desc") {
+    matched.sort((a, b) => {
+      if (b.q.year !== a.q.year) return b.q.year - a.q.year;
+      return a.q.qNumber - b.q.qNumber;
+    });
+  } else if (sort === "category") {
+    matched.sort((a, b) => {
+      const cmp = a.q.category.localeCompare(b.q.category, "ja");
+      if (cmp !== 0) return cmp;
+      if (b.q.year !== a.q.year) return b.q.year - a.q.year;
+      return a.q.qNumber - b.q.qNumber;
+    });
+  } else if (sort === "random") {
+    for (let i = matched.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [matched[i], matched[j]] = [matched[j], matched[i]];
+    }
+  } else {
+    matched.sort((a, b) => {
+      if (b.score !== a.score) return b.score - a.score;
+      if (b.q.year !== a.q.year) return b.q.year - a.q.year;
+      return a.q.qNumber - b.q.qNumber;
+    });
+  }
 
   const total = matched.length;
   const sliced = matched.slice(offset, offset + limit);
