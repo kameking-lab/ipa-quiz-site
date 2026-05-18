@@ -1,0 +1,73 @@
+Launch Artifacts Quality Check Log
+Date: 2026-05-19
+Branch: chore/launch-artifacts-ready-to-copy
+Production host: https://www.kakomon-ai.jp/
+
+----------------------------------------------
+1. HTTP status verification (20 URLs)
+----------------------------------------------
+200  https://www.kakomon-ai.jp/
+200  https://www.kakomon-ai.jp/about
+200  https://www.kakomon-ai.jp/transparency
+200  https://www.kakomon-ai.jp/operator
+200  https://www.kakomon-ai.jp/license
+200  https://www.kakomon-ai.jp/essays/sc
+200  https://www.kakomon-ai.jp/stats
+200  https://www.kakomon-ai.jp/blog
+200  https://www.kakomon-ai.jp/ap
+200  https://www.kakomon-ai.jp/ip
+200  https://www.kakomon-ai.jp/sg
+200  https://www.kakomon-ai.jp/fe
+200  https://www.kakomon-ai.jp/sc
+200  https://www.kakomon-ai.jp/nw
+200  https://www.kakomon-ai.jp/db
+200  https://www.kakomon-ai.jp/pm
+200  https://www.kakomon-ai.jp/faq
+200  https://www.kakomon-ai.jp/community-guidelines
+200  https://www.kakomon-ai.jp/sitemap.xml
+200  https://www.kakomon-ai.jp/robots.txt
+
+Result: PASS (20/20 endpoints return 200)
+
+----------------------------------------------
+2. Content keyword check (key landing pages)
+----------------------------------------------
+/                "AI生成" residual: 0  edu-tone: 3  IPA-attr: 3
+/about           "AI生成" residual: 0  edu-tone: 3  IPA-attr: 3
+/transparency    "AI生成" residual: 0  edu-tone: 3  IPA-attr: 2
+/operator        "AI生成" residual: 0  edu-tone: 3  IPA-attr: 3
+/license         "AI生成" residual: 0  edu-tone: 3  IPA-attr: 3
+/essays/sc       "AI生成" residual: 0  edu-tone: 2  IPA-attr: 3
+/stats           "AI生成" residual: 0  edu-tone: 2  IPA-attr: 1
+
+Result: PASS (no "AI生成" residual; education tone and IPA attribution intact on all checked pages)
+
+----------------------------------------------
+3. Page titles (verified by curl)
+----------------------------------------------
+/                "IPA過去問×AI、無料で全機能 — 過去問AI"
+/about           "過去問 AI プロジェクトについて | 過去問AI"
+/transparency    "運営の透明性レポート | 過去問AI"
+/operator        "運営者情報 | 過去問AI"
+/license         "コンテンツ利用方針 | 過去問AI"
+/essays/sc       "情報処理安全確保支援士 業種別合格答案サンプル | 午後II 論述 | 過去問AI"
+/stats           "公開統計ダッシュボード | 過去問AI"
+
+Result: PASS (all titles use "過去問AI" branding, no debug/placeholder strings)
+
+----------------------------------------------
+4. Sitemap structure
+----------------------------------------------
+sitemap.xml is a sitemap index with 9 sub-sitemaps:
+  - /sitemap/main.xml
+  - /sitemap/exams.xml
+  - /sitemap/topics.xml
+  - /sitemap/blog.xml
+  - /sitemap/books.xml
+  - (and 4 more)
+
+Result: PASS (sitemap index structure is intact)
+
+----------------------------------------------
+Overall: Production pages READY for launch announcement.
+No abnormalities detected. No follow-up Dispatch required.
