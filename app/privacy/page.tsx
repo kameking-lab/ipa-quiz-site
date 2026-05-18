@@ -168,7 +168,7 @@ export default function PrivacyPage() {
             title="Cookie・トラッキング"
           >
             <p>
-              本サービスは、UX 改善のため <strong>Vercel Web Analytics</strong> と <strong>PostHog</strong> を利用してページビューおよび匿名イベントを計測しています。
+              本サービスは、UX 改善のため <strong>Vercel Web Analytics</strong>・<strong>Vercel Speed Insights</strong>・<strong>PostHog</strong> を利用してページビュー・Core Web Vitals・匿名イベントを計測しています。
               いずれも個人を特定する情報（氏名・メールアドレス・IPアドレス等）は収集・送信しません。
             </p>
             <p>
@@ -179,7 +179,7 @@ export default function PrivacyPage() {
               送信しない情報: 氏名・メールアドレス・IPアドレス・問題の解答内容・チャットのテキスト本文。
             </p>
             <p>
-              Vercel Analytics は <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ）。
+              Vercel Analytics・Speed Insights はいずれも <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ。Speed Insights は LCP・FID・CLS 等の Core Web Vitals を集計）。
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
               第三者 Cookie の発行はありません。
             </p>
@@ -188,9 +188,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               アナリティクスを無効化する場合は、uBlock Origin 等の拡張機能で{" "}
-              <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">va.vercel-scripts.com</code>{" "}
-              および{" "}
-              <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">us.i.posthog.com</code>{" "}
+              <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">va.vercel-scripts.com</code>・<code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">vitals.vercel-insights.com</code>・<code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">us.i.posthog.com</code>{" "}
               をブロックしてください。PostHog の詳細は{" "}
               <a
                 href="https://posthog.com/privacy"
