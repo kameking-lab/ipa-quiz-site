@@ -46,7 +46,7 @@ import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { getCategoryTip } from "@/lib/seo/category-tips";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
-export const dynamicParams = true;
+export const dynamicParams = false;
 export const revalidate = 86400;
 
 const SSG_MIN_YEAR = 2024;
