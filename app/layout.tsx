@@ -7,7 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
-import { Analytics } from "@vercel/analytics/next";
+import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyticsWithPrivacy";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
@@ -132,7 +132,7 @@ export default function RootLayout({
           <div className="print:hidden">
             <DeferredLayoutWidgets />
           </div>
-          <Analytics />
+          <VercelAnalyticsWithPrivacy />
           <a
             href="#main-content"
             className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
