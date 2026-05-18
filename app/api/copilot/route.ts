@@ -22,6 +22,14 @@ import {
   buildRAGContextBlock,
 } from "@/lib/copilot/citations";
 import type { RAGResult } from "@/lib/copilot/types";
+import {
+  buildCitationMetas,
+  encodeCitationsHeader,
+} from "@/lib/copilot/citation-meta";
+import {
+  encodeRelatedHeader,
+  findRelatedQuestions,
+} from "@/lib/copilot/related";
 
 export const runtime = "nodejs";
 
@@ -134,6 +142,9 @@ export async function POST(req: Request) {
   let citationFooter = "";
   let hasGrounding = false;
 
+  let citationsHeader = "";
+  let relatedHeader = "";
+
   if (ragEnabled() && lastUserMsg) {
     try {
       ragResult = await runRAG({
@@ -147,6 +158,32 @@ export async function POST(req: Request) {
         ragDirective = buildRAGDirective(ragResult.passages.length);
         ragContextBlock = buildRAGContextBlock(ragResult.passages);
         citationFooter = buildCitationFooter(ragResult.passages);
+
+        // 構造化 citation メタを HTTP ヘッダで返す。
+        // クライアントは X-RAG-Citations を読んでリッチカード UI を描画する。
+        const citationMetas = buildCitationMetas(ragResult.passages);
+        citationsHeader = encodeCitationsHeader(citationMetas);
+
+        // 関連問題サジェスト（citation に採用済みの doc は除外）。
+        try {
+          const excluded = new Set(ragResult.passages.map((p) => p.doc.id));
+          const related = findRelatedQuestions({
+            userMessage: lastUserMsg,
+            currentQuestionId: payload.question.id,
+            currentExam: payload.question.exam,
+            currentCategory: payload.question.category,
+            currentTopicTags: payload.question.topicTags,
+            excludeDocIds: excluded,
+            limit: 4,
+          });
+          relatedHeader = encodeRelatedHeader(related);
+        } catch (relErr) {
+          // related が失敗しても citation 自体は出す（fail-open）。
+          await captureException(relErr, {
+            route: "/api/copilot",
+            extra: { phase: "related" },
+          });
+        }
       }
     } catch (err) {
       // RAG が落ちても既存挙動は維持する（fail-open）。
@@ -303,6 +340,8 @@ export async function POST(req: Request) {
       "X-RAG-Top-Score": ragResult.topScore.toFixed(3),
       "X-RAG-Grounded": hasGrounding ? "1" : "0",
       "X-RAG-Reranker": ragResult.rerankerUsed,
+      ...(citationsHeader ? { "X-RAG-Citations": citationsHeader } : {}),
+      ...(relatedHeader ? { "X-Related-Questions": relatedHeader } : {}),
     },
   });
 }

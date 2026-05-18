@@ -247,6 +247,40 @@ export function buildLearnerProfileContext(profile: LearnerProfile): string | nu
   return lines.join("\n");
 }
 
+/**
+ * AI コパイロット初期表示用の質問例。
+ * 空状態で「何を聞けるか分からない」ユーザーへの導線として表示する。
+ * クリックで入力欄に挿入され、即座に送信せずユーザーが自由に編集できる。
+ *
+ * 質問例は問題コンテキストに依存しない一般的な文面のみ。
+ * 問題特化のクイックアクションは既に QUICK_ACTIONS で提供されている。
+ */
+export const INITIAL_QUESTION_EXAMPLES: ReadonlyArray<{
+  label: string;
+  prompt: string;
+}> = [
+  {
+    label: "用語をやさしく",
+    prompt: "この問題に出てくる用語を、IT 初学者にも分かるように噛み砕いて説明してください。",
+  },
+  {
+    label: "前提知識を整理",
+    prompt: "この問題を解くために必要な前提知識を、初学者向けに 3〜5 項目で整理してください。",
+  },
+  {
+    label: "実例で教えて",
+    prompt: "この問題のテーマが実務でどう使われているか、有名なシステム例やインシデント例を 1〜2 件挙げて説明してください。",
+  },
+  {
+    label: "覚え方のコツ",
+    prompt: "この問題で問われている用語や数値を覚えやすくする語呂合わせ・対比・イメージ法を提案してください。",
+  },
+  {
+    label: "同じ論点の類題",
+    prompt: "この問題と同じ論点を問う類題を 1 問作成してください。選択肢ア〜エ、正解、簡潔な解説まで含めてください。",
+  },
+];
+
 export type QuickActionId =
   | "term"
   | "analyze-a"
