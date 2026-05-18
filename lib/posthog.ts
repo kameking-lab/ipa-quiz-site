@@ -38,6 +38,7 @@ export type PostHogEventName =
   | "essay_industry_switched"
   | "stats_viewed"
   | "copilot_response_received"
+  | "copilot_response_stopped"
   | "copilot_citation_clicked"
   | "copilot_citation_detail_opened"
   | "copilot_citation_full_opened"
