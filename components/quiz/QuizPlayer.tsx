@@ -31,6 +31,8 @@ import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
+import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
+import { AchievementToast } from "@/components/motivation/AchievementToast";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -72,6 +74,7 @@ export function QuizPlayer({
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
+  const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
 
@@ -173,6 +176,15 @@ export function QuizPlayer({
             // ignore
           }
         }
+        const allStats = history.getStats();
+        const newlyUnlocked = evaluateAchievementsAfterAnswer(
+          allStats.total,
+          allStats.correct,
+          correct ? combo + 1 : 0,
+        );
+        if (newlyUnlocked.length > 0 && !pendingAchievement) {
+          setPendingAchievement(newlyUnlocked[0].id);
+        }
         return next;
       });
 
@@ -189,7 +201,7 @@ export function QuizPlayer({
         }
       }
     },
-    [question, revealed, history, combo],
+    [question, revealed, history, combo, pendingAchievement],
   );
 
   const toggleStar = React.useCallback(() => {
@@ -498,6 +510,13 @@ export function QuizPlayer({
         onDone={() => setBurst(null)}
         key={burst?.nonce ?? 0}
       />
+
+      {pendingAchievement && (
+        <AchievementToast
+          achievementId={pendingAchievement}
+          onClose={() => setPendingAchievement(null)}
+        />
+      )}
     </div>
   );
 }

@@ -39,6 +39,7 @@ export const LS_KEYS = {
   bookmarks: "ipa-quiz:bookmarks:v1",
   searchHistory: "ipa-quiz:search-history:v1",
   savedSearches: "ipa-quiz:saved-searches:v1",
+  dailyGoal: "ipa-quiz:daily-goal:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];
