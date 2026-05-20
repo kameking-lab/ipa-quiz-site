@@ -3,7 +3,7 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { MyProgressClient } from "./MyProgressClient";
 
 export const metadata: Metadata = {
-  title: "マイ進捗 | 過去問AI",
+  title: "マイ進捗",
   description:
     "回答履歴から正答率・試験区分別成績・苦手分野を確認。データはブラウザにのみ保存されます。",
   alternates: { canonical: "/my-progress" },
