@@ -1,0 +1,1590 @@
+{
+  "meta": {
+    "verifiedAt": "2026-05-20T08:32:30.927Z",
+    "baseUrl": "https://www.kakomon-ai.jp",
+    "tool": "Playwright chromium"
+  },
+  "pageObservations": {
+    "/": {
+      "url": "https://www.kakomon-ai.jp/",
+      "label": "Home",
+      "loadTimeMs": 7931,
+      "httpStatus": 200,
+      "title": "IPA過去問×AI、無料で全機能 — 過去問AI",
+      "metaDescription": "IPA 情報処理技術者試験 全 13 区分・14,000問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。",
+      "h1": "どの試験を受けますか?",
+      "allH1s": [
+        "どの試験を受けますか?"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://www.kakomon-ai.jp/#website",
+              "url": "https://www.kakomon-ai.jp",
+              "name": "過去問AI",
+              "inLanguage": "ja-JP",
+              "description": "IPA 情報処理技術者試験 13 区分・14,000 問超を AI コパイロット付きで学習できる無料の過去問サイト。",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.kakomon-ai.jp/quiz?mode=random&exam={exam_code}"
+                },
+                "query-input": "required name=exam_code"
+              }
+            },
+            {
+              "@type": "EducationalOrganization",
+              "@id": "https://www.kakomon-ai.jp/#organization",
+              "name": "過去問AI",
+              "url": "https://www.kakomon-ai.jp",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kakomon-ai.jp/icon-512.svg",
+                "width": 512,
+                "height": 512
+              },
+              "sameAs": [
+                "https://x.com/kakomon_ai_jp",
+                "https://note.com/kakomon_ai"
+              ],
+              "description": "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "IPA 試験対策コース一覧",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "ItemList",
+              "@id": "https://www.kakomon-ai.jp/#exam-list",
+              "name": "IPA 情報処理技術者試験 区分一覧",
+              "numberOfItems": 13,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://www.kakomon-ai.jp/ap",
+                  "name": "応用情報技術者（2,640問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://www.kakomon-ai.jp/ip",
+                  "name": "ITパスポート（2,398問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "url": "https://www.kakomon-ai.jp/fe",
+                  "name": "基本情報技術者（1,747問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "url": "https://www.kakomon-ai.jp/sc",
+                  "name": "情報処理安全確保支援士（1,735問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "url": "https://www.kakomon-ai.jp/nw",
+                  "name": "ネットワークスペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "url": "https://www.kakomon-ai.jp/db",
+                  "name": "データベーススペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 7,
+                  "url": "https://www.kakomon-ai.jp/st",
+                  "name": "ITストラテジスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 8,
+                  "url": "https://www.kakomon-ai.jp/sa",
+                  "name": "システムアーキテクト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 9,
+                  "url": "https://www.kakomon-ai.jp/pm",
+                  "name": "プロジェクトマネージャ（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 10,
+                  "url": "https://www.kakomon-ai.jp/es",
+                  "name": "エンベデッドシステムスペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 11,
+                  "url": "https://www.kakomon-ai.jp/sm",
+                  "name": "ITサービスマネージャ（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 12,
+                  "url": "https://www.kakomon-ai.jp/au",
+                  "name": "システム監査技術者（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 13,
+                  "url": "https://www.kakomon-ai.jp/sg",
+                  "name": "情報セキュリティマネジメント（442問）"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-01-home-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-01-home-mobile.png"
+    },
+    "/quiz": {
+      "url": "https://www.kakomon-ai.jp/quiz",
+      "label": "Quiz",
+      "loadTimeMs": 2452,
+      "httpStatus": 200,
+      "title": "IPA過去問×AI、無料で全機能 — 過去問AI",
+      "metaDescription": "IPA 情報処理技術者試験 全 13 区分・14,000問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。",
+      "h1": "どの試験を受けますか?",
+      "allH1s": [
+        "どの試験を受けますか?"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebSite",
+              "@id": "https://www.kakomon-ai.jp/#website",
+              "url": "https://www.kakomon-ai.jp",
+              "name": "過去問AI",
+              "inLanguage": "ja-JP",
+              "description": "IPA 情報処理技術者試験 13 区分・14,000 問超を AI コパイロット付きで学習できる無料の過去問サイト。",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.kakomon-ai.jp/quiz?mode=random&exam={exam_code}"
+                },
+                "query-input": "required name=exam_code"
+              }
+            },
+            {
+              "@type": "EducationalOrganization",
+              "@id": "https://www.kakomon-ai.jp/#organization",
+              "name": "過去問AI",
+              "url": "https://www.kakomon-ai.jp",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.kakomon-ai.jp/icon-512.svg",
+                "width": 512,
+                "height": 512
+              },
+              "sameAs": [
+                "https://x.com/kakomon_ai_jp",
+                "https://note.com/kakomon_ai"
+              ],
+              "description": "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
+              "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "IPA 試験対策コース一覧",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "ItemList",
+              "@id": "https://www.kakomon-ai.jp/#exam-list",
+              "name": "IPA 情報処理技術者試験 区分一覧",
+              "numberOfItems": 13,
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "url": "https://www.kakomon-ai.jp/ap",
+                  "name": "応用情報技術者（2,640問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "url": "https://www.kakomon-ai.jp/ip",
+                  "name": "ITパスポート（2,398問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "url": "https://www.kakomon-ai.jp/fe",
+                  "name": "基本情報技術者（1,747問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 4,
+                  "url": "https://www.kakomon-ai.jp/sc",
+                  "name": "情報処理安全確保支援士（1,735問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 5,
+                  "url": "https://www.kakomon-ai.jp/nw",
+                  "name": "ネットワークスペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 6,
+                  "url": "https://www.kakomon-ai.jp/db",
+                  "name": "データベーススペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 7,
+                  "url": "https://www.kakomon-ai.jp/st",
+                  "name": "ITストラテジスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 8,
+                  "url": "https://www.kakomon-ai.jp/sa",
+                  "name": "システムアーキテクト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 9,
+                  "url": "https://www.kakomon-ai.jp/pm",
+                  "name": "プロジェクトマネージャ（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 10,
+                  "url": "https://www.kakomon-ai.jp/es",
+                  "name": "エンベデッドシステムスペシャリスト（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 11,
+                  "url": "https://www.kakomon-ai.jp/sm",
+                  "name": "ITサービスマネージャ（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 12,
+                  "url": "https://www.kakomon-ai.jp/au",
+                  "name": "システム監査技術者（680問）"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 13,
+                  "url": "https://www.kakomon-ai.jp/sg",
+                  "name": "情報セキュリティマネジメント（442問）"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-02-quiz-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-02-quiz-mobile.png"
+    },
+    "/mock-exam": {
+      "url": "https://www.kakomon-ai.jp/mock-exam",
+      "label": "Mock Exam",
+      "loadTimeMs": 3431,
+      "httpStatus": 200,
+      "title": "模試モード — 本番形式・制限時間付き | 過去問AI",
+      "metaDescription": "IPA 情報処理技術者試験の本番形式で実力チェック。AP・FE・SC など全 13 区分対応、合格判定・分野別弱点分析・スコア履歴グラフ付き。登録不要・完全無料で今すぐ体験。",
+      "h1": "模試モード — 本番形式で実力チェック",
+      "allH1s": [
+        "模試モード — 本番形式で実力チェック"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@type": "LearningResource",
+          "name": "模試モード — 本番形式で実力チェック",
+          "description": "IPA情報処理技術者試験の本番と同じ問題数・時間配分で模試を体験。合格判定・分野別分析・スコア履歴グラフを提供します。",
+          "url": "https://www.kakomon-ai.jp/mock-exam",
+          "inLanguage": "ja",
+          "provider": {
+            "@type": "Organization",
+            "name": "過去問AI",
+            "url": "https://www.kakomon-ai.jp"
+          },
+          "educationalLevel": "intermediate",
+          "learningResourceType": "Quiz"
+        }
+      ],
+      "jsonLdTypes": [
+        "LearningResource"
+      ],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-03-mock-exam-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-03-mock-exam-mobile.png"
+    },
+    "/search": {
+      "url": "https://www.kakomon-ai.jp/search",
+      "label": "Search",
+      "loadTimeMs": 2761,
+      "httpStatus": 200,
+      "title": "問題検索 | 過去問AI",
+      "metaDescription": "14,000問超のIPA過去問をキーワード・試験区分・年度・分野・難度で横断検索。AI コパイロット付きで解説も即確認できます。",
+      "h1": "IPA過去問 横断検索",
+      "allH1s": [
+        "IPA過去問 横断検索"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-04-search-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-04-search-mobile.png"
+    },
+    "/success-stories": {
+      "url": "https://www.kakomon-ai.jp/success-stories",
+      "label": "Success Stories",
+      "loadTimeMs": 11491,
+      "httpStatus": 200,
+      "title": "IPA試験 合格体験記｜13区分の合格者ストーリー集 | 過去問AI",
+      "metaDescription": "IPA情報処理技術者試験13区分の合格者リアル体験記。営業・事務・エンジニア・主婦・学生など多様な職種・年齢の合格までの勉強法・つまずき・突破方法を生々しく紹介。",
+      "h1": "IPA試験 合格体験記",
+      "allH1s": [
+        "IPA試験 合格体験記"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              "@id": "https://www.kakomon-ai.jp/success-stories#collection",
+              "name": "IPA試験 合格体験記",
+              "description": "IPA情報処理技術者試験13区分の合格者リアル体験記コレクション。各記事はAI生成の架空ペルソナによる学習ガイドです。",
+              "url": "https://www.kakomon-ai.jp/success-stories",
+              "publisher": {
+                "@type": "Organization",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              },
+              "additionalProperty": {
+                "@type": "PropertyValue",
+                "name": "contentGenerationMethod",
+                "value": "AI-generated fictional personas based on typical exam candidate patterns. Not based on real individuals."
+              },
+              "hasPart": [
+                {
+                  "@type": "Article",
+                  "headline": "【ITパスポート合格体験記】営業から社内SEへ転職した31歳。IPは「通行手形」だった",
+                  "description": "社内SE（転職前は法人営業）（30代前半）がITパスポートに4か月・計100時間で合格した実体験。営業から社内SEへの転職面接で「現在のIT知識をどう証明するか」を毎回問われ、これに答える材料が欲し…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ip/ip-tenshoku-31sai-eigyo-syanai-se",
+                  "datePublished": "2026-02-21T00:00:00.000Z",
+                  "dateModified": "2026-02-21T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【ITパスポート合格体験記】育休復帰前の38歳・スキマ時間で合格。事務職復帰の追い風になった",
+                  "description": "総務事務（育休中）（30代後半）がITパスポートに6か月・計90時間で合格した実体験。育休復帰前に会社で基幹システムが刷新され、復帰後は事務側のレビュアーとして参加すると聞いた。基本用語…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ip/ip-shufu-38sai-itmiknk",
+                  "datePublished": "2026-02-17T00:00:00.000Z",
+                  "dateModified": "2026-02-17T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【ITパスポート合格体験記】就活前の大学3年生・2か月で合格。ガクチカに使えた話",
+                  "description": "文系大学3年生（経済学部）（20代前半）がITパスポートに2か月・計120時間で合格した実体験。就活でIT業界も視野に入れたいが文系のためアピール材料がない。資格より「2か月でやり切った学習プロセ…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ip/ip-shukatsu-22sai-2kagetu",
+                  "datePublished": "2026-02-14T00:00:00.000Z",
+                  "dateModified": "2026-02-14T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【ITパスポート合格体験記】営業職25歳・3か月で合格。商談でITコンプレックスを解消した話",
+                  "description": "SaaS法人営業（20代前半）がITパスポートに3か月・計120時間で合格した実体験。顧客のCTOやエンジニアとの商談でAPI・SLA・コンテナの用語が分からず会話が止まる。提案を主導す…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ip/ip-eigyo-25sai-3kagetu",
+                  "datePublished": "2026-02-10T00:00:00.000Z",
+                  "dateModified": "2026-02-10T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【情報セキュリティマネジメント合格体験記】法務41歳・契約書のセキュリティ条項を理解するためSG受験",
+                  "description": "法務（IT契約レビュー担当）（40代前半）が情報セキュリティマネジメントに6か月・計100時間で合格した実体験。システム開発契約・SaaS契約のセキュリティ条項を法務がレビューする際、技術前提が分からず判断に迷う…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/sg/sg-houmu-41sai-kontora-recho",
+                  "datePublished": "2026-02-09T00:00:00.000Z",
+                  "dateModified": "2026-02-09T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【情報セキュリティマネジメント合格体験記】社内SE27歳・情報漏洩インシデント直後にSGで体系化",
+                  "description": "社内SE（インフラ運用）（20代後半）が情報セキュリティマネジメントに3か月・計110時間で合格した実体験。自社で軽微な情報漏洩インシデントが発生し対応に追われた。再発防止策の議論に参加するなかで「我流の知識…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/sg/sg-shanai-se-27sai-jissen-tonyu",
+                  "datePublished": "2026-02-06T00:00:00.000Z",
+                  "dateModified": "2026-02-06T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【情報セキュリティマネジメント合格体験記】経理職34歳・内部統制プロジェクト参加で必要に迫られSG合格",
+                  "description": "経理（J-SOX対応担当）（30代前半）が情報セキュリティマネジメントに5か月・計130時間で合格した実体験。J-SOX内部統制プロジェクトでIT統制部分の窓口を任されたが、用語の8割が分からなかった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/sg/sg-keiri-34sai-naibutousei-fukugyo",
+                  "datePublished": "2026-02-03T00:00:00.000Z",
+                  "dateModified": "2026-02-03T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【基本情報技術者合格体験記】高校2年17歳・夏休み集中で基本情報合格",
+                  "description": "工業高校2年生（情報技術科）（10代後半）が基本情報技術者に2か月・計180時間で合格した実体験。高校在学中に基本情報を取って指定校推薦の判定材料にしたかった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/fe/fe-koukousei-17sai-shoukibo",
+                  "datePublished": "2026-02-02T00:00:00.000Z",
+                  "dateModified": "2026-02-02T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【情報セキュリティマネジメント合格体験記】人事部29歳・社内セキュリティ研修担当に抜擢されSGに合格",
+                  "description": "人事（社員教育担当）（20代後半）が情報セキュリティマネジメントに4か月・計140時間で合格した実体験。個人情報の取り扱い研修を人事が担当することになり、いきなり「セキュリティの基礎を教えてください」と任…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/sg/sg-jinjibu-29sai-shanai-sec",
+                  "datePublished": "2026-01-31T00:00:00.000Z",
+                  "dateModified": "2026-01-31T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【基本情報技術者合格体験記】社内SE33歳・IT資格ゼロのまま10年勤めた末の基本情報",
+                  "description": "社内SE（運用・ヘルプデスク）（30代前半）が基本情報技術者に5か月・計170時間で合格した実体験。後輩入社の基本情報合格に焦り、10年無資格で来た自分の立場が危ういと感じた…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/fe/fe-shanai-se-33sai-jissenrenketsu",
+                  "datePublished": "2026-01-30T00:00:00.000Z",
+                  "dateModified": "2026-01-30T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【基本情報技術者合格体験記】情報系大学2年・サマーインターン応募に合わせ取得",
+                  "description": "情報系大学2年生（20代前半）が基本情報技術者に3か月・計130時間で合格した実体験。サマーインターン応募で「基本情報を持っていると書類通過率が上がる」と先輩から聞いた…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/fe/fe-gakusei-21sai-summer-intern",
+                  "datePublished": "2026-01-27T00:00:00.000Z",
+                  "dateModified": "2026-01-27T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【基本情報技術者合格体験記】未経験から28歳でIT転職・基本情報で武器を作る",
+                  "description": "未経験エンジニア（受託開発）（20代後半）が基本情報技術者に6か月・計280時間で合格した実体験。未経験転職組として周囲との差を埋める必要があった。実務経験ゼロでも体系知識を持っていることを示したか…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/fe/fe-tenshoku-28sai-mikens-syokuba",
+                  "datePublished": "2026-01-24T00:00:00.000Z",
+                  "dateModified": "2026-01-24T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【応用情報技術者合格体験記】理系大学3年・院試との同時並行でAP合格",
+                  "description": "理系大学3年生（情報系）（20代前半）が応用情報技術者に4か月・計200時間で合格した実体験。院試対策と並行してAPを取り、就活時に基礎研究 + 体系知識の両方を示したかった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ap/ap-sukatsu-3nensei-shinrocha-shoumei",
+                  "datePublished": "2026-01-23T00:00:00.000Z",
+                  "dateModified": "2026-01-23T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【基本情報技術者合格体験記】新卒SE1年目・入社半年で基本情報合格。研修中の学習法",
+                  "description": "新卒SE（Web系SIer）（20代前半）が基本情報技術者に4か月・計200時間で合格した実体験。会社の新卒研修で「半年以内に基本情報を取れ」と指示されたが、研修で疲れて自習が進まなかった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/fe/fe-shinsotsu-23sai-1nenme",
+                  "datePublished": "2026-01-21T00:00:00.000Z",
+                  "dateModified": "2026-01-21T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【応用情報技術者合格体験記】ITコンサル転職35歳・APは「基礎力の名刺」だった",
+                  "description": "ITコンサルタント（戦略系）（30代前半）が応用情報技術者に4か月・計180時間で合格した実体験。戦略系コンサルでも顧客のIT組織と議論するためにAPの体系が必要だった。MBAでは届かない技術解像度…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ap/ap-tenshoku-itsenryaku-35sai",
+                  "datePublished": "2026-01-20T00:00:00.000Z",
+                  "dateModified": "2026-01-20T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【応用情報技術者合格体験記】育休復帰直後の32歳エンジニア・時短勤務でAP合格",
+                  "description": "Webエンジニア（時短勤務）（30代前半）が応用情報技術者に7か月・計200時間で合格した実体験。時短勤務で評価が下がる懸念があり、客観的なスキル証明が欲しかった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ap/ap-ikuji-fukki-32sai-jitan-goukaku",
+                  "datePublished": "2026-01-17T00:00:00.000Z",
+                  "dateModified": "2026-01-17T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【プロジェクトマネージャ合格体験記】育休復帰女性PM33歳・時短勤務でPM合格",
+                  "description": "プロジェクトマネージャ（時短勤務）（30代前半）がプロジェクトマネージャに9か月・計240時間で合格した実体験。時短勤務でPM職を続けるため、客観的な能力証明が必要だった…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/pm/pm-josei-pm-33sai-ikujifukki",
+                  "datePublished": "2026-01-16T00:00:00.000Z",
+                  "dateModified": "2026-01-16T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【ITストラテジスト合格体験記】情シス部長48歳・CIO候補としてST取得",
+                  "description": "情報システム部長（40代後半）がITストラテジストに12か月・計420時間で合格した実体験。CIO候補としての客観要件を満たす必要があった。社外取締役からも資格取得を推奨されていた…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/st/st-bushou-48sai-cio-jisedai",
+                  "datePublished": "2026-01-15T00:00:00.000Z",
+                  "dateModified": "2026-01-15T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【応用情報技術者合格体験記】管理職46歳・部下より遅れたくない一心でAP合格",
+                  "description": "IT部長（中堅製造業）（40代後半）が応用情報技術者に8か月・計320時間で合格した実体験。部下の若手が次々APを取り、自分が部長として無資格のままでは指示が空回りすると感じた…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/ap/ap-bushou-46sai-saikyo-fukugyo",
+                  "datePublished": "2026-01-14T00:00:00.000Z",
+                  "dateModified": "2026-01-14T00:00:00.000Z"
+                },
+                {
+                  "@type": "Article",
+                  "headline": "【システムアーキテクト合格体験記】PM保有40歳・現場と経営の橋渡しでSA追加取得",
+                  "description": "プロジェクトマネージャ（40代前半）がシステムアーキテクトに7か月・計260時間で合格した実体験。PMの計画力に技術設計の根拠力を加えたかった。経営層への説明で技術根拠を自分で持ちたい…という動機から、勉強法・つまずき・突破方法・合格後の変化までを生々しく振り返ります。",
+                  "url": "https://www.kakomon-ai.jp/success-stories/sa/sa-pm-doumonsei-40sai",
+                  "datePublished": "2026-01-14T00:00:00.000Z",
+                  "dateModified": "2026-01-14T00:00:00.000Z"
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "合格体験記",
+                  "item": "https://www.kakomon-ai.jp/success-stories"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-05-success-stories-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-05-success-stories-mobile.png"
+    },
+    "/study-plan": {
+      "url": "https://www.kakomon-ai.jp/study-plan",
+      "label": "Study Plan",
+      "loadTimeMs": 1621,
+      "httpStatus": 200,
+      "title": "自動学習スケジュール作成 | 過去問AI | 過去問AI",
+      "metaDescription": "試験日・現在の知識レベル・1日の学習可能時間を入力するだけで、IPA 13区分すべてに対応した個別最適の学習スケジュールを自動で生成します。",
+      "h1": "自動学習スケジュール作成",
+      "allH1s": [
+        "自動学習スケジュール作成"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-06-study-plan-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-06-study-plan-mobile.png"
+    },
+    "/my-progress": {
+      "url": "https://www.kakomon-ai.jp/my-progress",
+      "label": "My Progress",
+      "loadTimeMs": 2490,
+      "httpStatus": 200,
+      "title": "マイ進捗 | 過去問AI | 過去問AI",
+      "metaDescription": "回答履歴から正答率・試験区分別成績・苦手分野を確認。データはブラウザにのみ保存されます。",
+      "h1": "マイ進捗",
+      "allH1s": [
+        "マイ進捗"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-07-my-progress-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-07-my-progress-mobile.png"
+    },
+    "/bookmarks": {
+      "url": "https://www.kakomon-ai.jp/bookmarks",
+      "label": "Bookmarks",
+      "loadTimeMs": 1749,
+      "httpStatus": 200,
+      "title": "ブックマーク | 過去問AI | 過去問AI",
+      "metaDescription": "保存した問題をタグで整理し、後から復習できるブックマーク機能。データはブラウザにのみ保存されます。",
+      "h1": "ブックマーク(0件)",
+      "allH1s": [
+        "ブックマーク(0件)"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード",
+        "透明性レポート"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-08-bookmarks-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-08-bookmarks-mobile.png"
+    },
+    "/why-kakomon-ai": {
+      "url": "https://www.kakomon-ai.jp/why-kakomon-ai",
+      "label": "Why Kakomon AI",
+      "loadTimeMs": 4327,
+      "httpStatus": 200,
+      "title": "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較 | 過去問AI",
+      "metaDescription": "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット・午後 AI 採点・PWA 対応など、過去問AI 独自の差別化機能を、競合の良さも公平に紹介しながら整理します。",
+      "h1": "過去問AI を選ぶ理由",
+      "allH1s": [
+        "過去問AI を選ぶ理由"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "応用情報の過去問を試す",
+        "機能特集を見る",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較",
+              "description": "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット・午後 AI 採点・PWA 対応など、過去問AI 独自の差別化機能を、競合の良さも公平に紹介しながら整理します。",
+              "url": "https://www.kakomon-ai.jp/why-kakomon-ai",
+              "inLanguage": "ja",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "本当に無料で全機能使えますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい。教育貢献プロジェクトとして、AI コパイロット以外のすべての機能を無料で公開しています。AI コパイロットは API コスト管理のため 1 日 30 回までを無料枠としています。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "AI 解説の精度はどの程度信頼できますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google Gemini に IPA 公式問題・公式解答を入力に生成しているため、一般的には有用です。ただし稀に誤りを含む可能性があるため、各問題から IPA 公式 PDF へ 1 タップで遷移できる導線を用意しています。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "過去問道場との併用は可能ですか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "もちろん可能です。過去問の網羅性は過去問道場、AI による深掘り対話は過去問AI、というように使い分けている学習者も多くいます。本サイトは競合の代替ではなく補完を目的としています。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "将来的に有料化されますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "無料枠は維持する方針です。プレミアム（月 300 円相当）は AI コパイロットの無制限利用・広告非表示を予定していますが、本実装はフェーズ 4 以降の検討で、現時点では未着手です。"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "過去問AI を選ぶ理由",
+                  "item": "https://www.kakomon-ai.jp/why-kakomon-ai"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-09-why-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-09-why-mobile.png"
+    },
+    "/features": {
+      "url": "https://www.kakomon-ai.jp/features",
+      "label": "Features",
+      "loadTimeMs": 2096,
+      "httpStatus": 200,
+      "title": "機能特集 | 過去問AI",
+      "metaDescription": "AI 解説・業種別論述事例・AI 論述添削など、過去問AI の差別化機能をまとめた特集ページ。",
+      "h1": "過去問AI の差別化機能",
+      "allH1s": [
+        "過去問AI の差別化機能"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ",
+        "プロジェクトについて",
+        "公開ダッシュボード"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "CollectionPage",
+              "name": "機能特集",
+              "url": "https://www.kakomon-ai.jp/features",
+              "inLanguage": "ja"
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "機能特集",
+                  "item": "https://www.kakomon-ai.jp/features"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-10-features-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-10-features-mobile.png"
+    },
+    "/features/copilot": {
+      "url": "https://www.kakomon-ai.jp/features/copilot",
+      "label": "Features Copilot",
+      "loadTimeMs": 1723,
+      "httpStatus": 200,
+      "title": "AI コパイロット ── RAG 引用つき対話で過去問を深掘る | 過去問AI",
+      "metaDescription": "過去問AI の AI コパイロットは、Google Gemini に IPA 公式問題と解説を入力し、引用元つきで回答を生成。誤答分析・類題生成・用語解説をワンタップで呼び出せます。",
+      "h1": "AI コパイロットの仕組みと使い方",
+      "allH1s": [
+        "AI コパイロットの仕組みと使い方"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "機能特集",
+        "応用情報の問題で AI コパイロットを試す",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "AI コパイロット ── RAG 引用つき対話で過去問を深掘る",
+              "description": "過去問AI の AI コパイロットは、Google Gemini に IPA 公式問題と解説を入力し、引用元つきで回答を生成。誤答分析・類題生成・用語解説をワンタップで呼び出せます。",
+              "url": "https://www.kakomon-ai.jp/features/copilot",
+              "inLanguage": "ja",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "Service",
+              "name": "AI コパイロットの仕組みと使い方",
+              "description": "問題ごとに常駐する AI が、引用元つきで解説。クイックアクションで「選択肢を比較」「類題を 1 問」「中学生でも分かるように」を即実行。",
+              "provider": {
+                "@type": "Organization",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              },
+              "areaServed": "JP",
+              "serviceType": "中核機能"
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "コパイロットはどのモデルを使っていますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Google Gemini を使用しています。プロバイダは lib/ai/provider.ts の抽象レイヤ経由で実装されており、変更時は公開記録（更新履歴）に明示します。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "引用カードの情報はどこから来ていますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "IPA 公式問題・公式解答・サイト内用語集ページから抽出しています。各カードから一次情報へ 1 タップで遷移可能です。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "オフラインでも使えますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "コパイロットはオンライン API を呼び出すため、オフラインでは利用できません。問題演習自体は PWA のキャッシュ済み範囲で継続できます。"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "機能特集",
+                  "item": "https://www.kakomon-ai.jp/features"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "AI コパイロットの仕組みと使い方",
+                  "item": "https://www.kakomon-ai.jp/features/copilot"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-11-features-copilot-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-11-features-copilot-mobile.png"
+    },
+    "/features/mock-exam": {
+      "url": "https://www.kakomon-ai.jp/features/mock-exam",
+      "label": "Features Mock Exam",
+      "loadTimeMs": 1874,
+      "httpStatus": 200,
+      "title": "模試モード ── 本番想定の時間配分とスコア分析 | 過去問AI",
+      "metaDescription": "応用情報・基本情報・高度試験の午前を本番想定の制限時間で演習できる模試モード。終了後は分野別正答率・苦手分野ハイライト・復習動線が一画面で確認できます。",
+      "h1": "模試モードの使い方と結果分析",
+      "allH1s": [
+        "模試モードの使い方と結果分析"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "機能特集",
+        "模試モードを始める",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "模試モード ── 本番想定の時間配分とスコア分析",
+              "description": "応用情報・基本情報・高度試験の午前を本番想定の制限時間で演習できる模試モード。終了後は分野別正答率・苦手分野ハイライト・復習動線が一画面で確認できます。",
+              "url": "https://www.kakomon-ai.jp/features/mock-exam",
+              "inLanguage": "ja",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "Service",
+              "name": "模試モードの使い方と結果分析",
+              "description": "20 問・50 問・全 80 問を選び、本番と同じ時間で演習。終了後は分野別スコア・苦手分野・復習ルートが自動で提示。",
+              "provider": {
+                "@type": "Organization",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              },
+              "areaServed": "JP",
+              "serviceType": "本番想定演習"
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "模試は何種類ありますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "応用情報・基本情報のほか、高度試験の午前 II も対応しています。問題数は 20 問・50 問・全問から選択できます。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "途中で中断したら結果は失われますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "ローカル保存（localStorage）に進行状態を保存しているため、ブラウザを閉じても再開可能です。ログイン時はクラウド同期もサポート予定です。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "結果はどこで見返せますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "結果画面のリンクから、学習進捗ダッシュボードに自動保存されます。直近 10 回までの推移を比較できます。"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "機能特集",
+                  "item": "https://www.kakomon-ai.jp/features"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "模試モードの使い方と結果分析",
+                  "item": "https://www.kakomon-ai.jp/features/mock-exam"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-12-features-mock-exam-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-12-features-mock-exam-mobile.png"
+    },
+    "/features/study-plan": {
+      "url": "https://www.kakomon-ai.jp/features/study-plan",
+      "label": "Features Study Plan",
+      "loadTimeMs": 2341,
+      "httpStatus": 200,
+      "title": "学習計画 ── 受験日から逆算した週次タスク自動生成 | 過去問AI",
+      "metaDescription": "受験日と現在の学習レベルを入力すると、週次のタスクと進捗マイルストーンを自動生成する学習計画機能。過去問演習・参考書読み込み・模試の配分を AI が提案します。",
+      "h1": "学習計画の組み立て方",
+      "allH1s": [
+        "学習計画の組み立て方"
+      ],
+      "navItems": [
+        "過去問AI",
+        "学習進捗",
+        "推薦書籍",
+        "ホーム",
+        "機能特集",
+        "学習計画を作成する",
+        "IP ITパスポート",
+        "SG 情報セキュリティ",
+        "FE 基本情報",
+        "AP 応用情報",
+        "NW ネットワーク",
+        "SC セキュリティ",
+        "DB データベース",
+        "全試験一覧 →",
+        "FAQ",
+        "機能特集",
+        "用語集",
+        "学習トピック",
+        "ブログ",
+        "サイトマップ"
+      ],
+      "footerText": "試験区分IP ITパスポートSG 情報セキュリティFE 基本情報AP 応用情報NW ネットワークSC セキュリティDB データベース全試験一覧 →サービスFAQ機能特集用語集学習トピックブログサイトマッププロジェクトプロジェクトについて公開ダッシュボード透明性レポート運営者情報更新履歴コミュニティX @kakomon_ai_jpnote誤情報を報告フィードバックコミュニティガイドライン法的情報利用規約プライバシーポリシーコンテンツ利用方針運営者情報・特商法IPA著作権・出典テーマ週1レポート登録出典: IPA 情報処理技術者試験（ipa.go.jp） / 著作権・利用条件本サービスは IPA 非公式の学習支援サービスです。",
+      "footerHasEducation": false,
+      "copilotButtonExists": false,
+      "copilotButtonText": null,
+      "jsonLd": [
+        {
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "WebPage",
+              "name": "学習計画 ── 受験日から逆算した週次タスク自動生成",
+              "description": "受験日と現在の学習レベルを入力すると、週次のタスクと進捗マイルストーンを自動生成する学習計画機能。過去問演習・参考書読み込み・模試の配分を AI が提案します。",
+              "url": "https://www.kakomon-ai.jp/features/study-plan",
+              "inLanguage": "ja",
+              "isPartOf": {
+                "@type": "WebSite",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              }
+            },
+            {
+              "@type": "Service",
+              "name": "学習計画の組み立て方",
+              "description": "受験日と現状レベルから逆算した週次タスクを自動生成。隔週で進捗を見直し、足りない分野に演習時間を寄せていく。",
+              "provider": {
+                "@type": "Organization",
+                "name": "過去問AI",
+                "url": "https://www.kakomon-ai.jp"
+              },
+              "areaServed": "JP",
+              "serviceType": "計画支援"
+            },
+            {
+              "@type": "FAQPage",
+              "mainEntity": [
+                {
+                  "@type": "Question",
+                  "name": "学習計画は誰でも作れますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "はい。ログイン不要で、ブラウザの localStorage に保存されます。複数端末で同期したい場合はログインを推奨します。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "計画を途中で変更できますか？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "いつでも再生成可能です。週次レビューでタスクの達成率を入力すると、翌週以降のタスクが自動で再計算されます。"
+                  }
+                },
+                {
+                  "@type": "Question",
+                  "name": "計画通りに進まない場合は？",
+                  "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "達成率を正直に入力すれば、AI が現実的に到達可能な範囲で再配分します。完璧な遂行を求めるのではなく、継続を重視した設計です。"
+                  }
+                }
+              ]
+            },
+            {
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://www.kakomon-ai.jp"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "機能特集",
+                  "item": "https://www.kakomon-ai.jp/features"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "学習計画の組み立て方",
+                  "item": "https://www.kakomon-ai.jp/features/study-plan"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "jsonLdTypes": [],
+      "screenshotDesktop": "logs/verification-2026-05-19/a-13-features-study-plan-desktop.png",
+      "screenshotMobile": "logs/verification-2026-05-19/a-13-features-study-plan-mobile.png"
+    }
+  },
+  "features": {
+    "B1_copilot": {
+      "copilotPanelInitial": false,
+      "copilotBtnFound": true,
+      "copilotPanelAfterClick": true,
+      "quickPresets": [],
+      "streamingUIExists": false,
+      "stopButtonExists": false,
+      "inputExists": false,
+      "sendBtnExists": true,
+      "screenshotPath": "logs/verification-2026-05-19/b-01-copilot.png"
+    },
+    "B2_mockExam": {
+      "visibleExams": [
+        "IP",
+        "FE",
+        "AP",
+        "SC",
+        "ST",
+        "NW",
+        "DB"
+      ],
+      "examSelectorsFound": [],
+      "examCheckboxesFound": [],
+      "hasResultAnalysis": true,
+      "hasHistoryTracking": true,
+      "pageTextSnippet": "<!DOCTYPE html><html lang=\"ja\" class=\"geist_9c1fd2b9-module__We3PEq__variable geist_mono_c932d54b-module__LyTxPG__variable\" style=\"color-scheme: light;\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><link rel=\"stylesheet\" href=\"/_"
+    },
+    "B3_search": {
+      "sortModesFound": [],
+      "hasSearchHistory": true,
+      "hasHighlight": false,
+      "hasCTA": false
+    },
+    "B4_myProgress": {
+      "hasStreak": true,
+      "hasBadge": false,
+      "hasDailyGoal": true,
+      "hasLocalStorageNote": true
+    },
+    "B5_bookmarks": {
+      "hasCustomTags": true,
+      "hasEmptyState": true,
+      "pageSnippet": "<!DOCTYPE html><html lang=\"ja\" class=\"geist_9c1fd2b9-module__We3PEq__variable geist_mono_c932d54b-module__LyTxPG__variable\" style=\"color-scheme: light;\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit=cover\"><link rel=\"preload\" href=\"/_next/static/media/caa3a2e1cccd8315-s.p.09~u27dqhyhd6.woff2?dpl=dpl_GrN8APWZZfmtQ2bD3orwUgmx337o\" as=\"fo"
+    },
+    "B6_why": {
+      "hasDiffMessage": true,
+      "foundNgWords": []
+    },
+    "B7_successStories": {
+      "cardCount": 0,
+      "storyLinkCount": 77,
+      "hasAiDisclaimer": true,
+      "aiDisclaimerSnippet": "AI生成の架空ペルソナによる学習ガイドです。"
+    },
+    "B8_motivation": {
+      "hasStreakHome": true,
+      "hasDailyGoalHome": true
+    }
+  },
+  "structuredData": {
+    "/": [
+      {
+        "keys": [
+          "@context",
+          "@graph"
+        ]
+      }
+    ],
+    "/success-stories": [
+      {
+        "keys": [
+          "@context",
+          "@graph"
+        ]
+      }
+    ],
+    "/why-kakomon-ai": [
+      {
+        "keys": [
+          "@context",
+          "@graph"
+        ]
+      }
+    ],
+    "/blog": [
+      {
+        "keys": [
+          "@context",
+          "@graph"
+        ]
+      }
+    ],
+    "/essays": [],
+    "/q/[sample]": {
+      "url": "https://www.kakomon-ai.jp/q/ap/2017-autumn/am/q1",
+      "data": []
+    }
+  },
+  "seo": {
+    "robotsTxt": {
+      "status": 200,
+      "content": "User-Agent: *\nAllow: /\nDisallow: /api/\nDisallow: /admin/\nDisallow: /auth/\nDisallow: /account/\nDisallow: /chat/share\nDisallow: /api-docs\nDisallow: /final-review-v3\nDisallow: /strategy-discussion-v2\nDisallow: /demo/\n\nHost: https://www.kakomon-ai.jp\nSitemap: https://www.kakomon-ai.jp/sitemap.xml\n",
+      "hasStopClaudeNote": false,
+      "hasSitemapDirective": true,
+      "hasUserAgent": false
+    },
+    "sitemap": {
+      "mainStatus": 200,
+      "childSitemapUrls": [
+        "https://www.kakomon-ai.jp/sitemap/main.xml",
+        "https://www.kakomon-ai.jp/sitemap/exams.xml",
+        "https://www.kakomon-ai.jp/sitemap/topics.xml",
+        "https://www.kakomon-ai.jp/sitemap/blog.xml",
+        "https://www.kakomon-ai.jp/sitemap/books.xml",
+        "https://www.kakomon-ai.jp/sitemap/essays.xml",
+        "https://www.kakomon-ai.jp/sitemap/success-stories.xml",
+        "https://www.kakomon-ai.jp/sitemap/questions/0.xml",
+        "https://www.kakomon-ai.jp/sitemap/questions/1.xml"
+      ],
+      "childSitemapCounts": {
+        "https://www.kakomon-ai.jp/sitemap/main.xml": 52,
+        "https://www.kakomon-ai.jp/sitemap/exams.xml": 463,
+        "https://www.kakomon-ai.jp/sitemap/topics.xml": 71,
+        "https://www.kakomon-ai.jp/sitemap/blog.xml": 153,
+        "https://www.kakomon-ai.jp/sitemap/books.xml": 14,
+        "https://www.kakomon-ai.jp/sitemap/essays.xml": 24,
+        "https://www.kakomon-ai.jp/sitemap/success-stories.xml": 64,
+        "https://www.kakomon-ai.jp/sitemap/questions/0.xml": 10000,
+        "https://www.kakomon-ai.jp/sitemap/questions/1.xml": 2652
+      },
+      "totalUrlCount": 13493
+    },
+    "pwa": {
+      "manifestStatus": 200,
+      "manifest": {
+        "name": "過去問AI",
+        "shortName": "過去問AI",
+        "startUrl": "/",
+        "display": "standalone",
+        "iconCount": 3
+      },
+      "swStatus": 200
+    },
+    "analytics": {
+      "hasVercelInsights": false,
+      "hasPostHog": true,
+      "vercelInsightsSnippet": "not found"
+    }
+  },
+  "ngChecks": {
+    "ngWordsFound": {
+      "/": [],
+      "/why-kakomon-ai": [],
+      "/features": [],
+      "/mock-exam": [],
+      "/study-plan": []
+    },
+    "aiDisclaimers": {
+      "/success-stories": {
+        "hasDisclaimer": true,
+        "foundWords": [
+          "AI生成",
+          "架空"
+        ]
+      },
+      "/essays": {
+        "hasDisclaimer": false,
+        "foundWords": []
+      },
+      "/blog": {
+        "hasDisclaimer": true,
+        "foundWords": [
+          "参考"
+        ]
+      }
+    },
+    "affiliateDisclosure": {
+      "sponsoredLinksOnHome": 0,
+      "amazonTagInHtml": false
+    }
+  },
+  "handoffComparison": {
+    "claimedQuestions": 14417,
+    "actualQuestionsInSitemap": 12652,
+    "questionSitemapDetails": [
+      {
+        "url": "https://www.kakomon-ai.jp/sitemap/questions/0.xml",
+        "count": 10000
+      },
+      {
+        "url": "https://www.kakomon-ai.jp/sitemap/questions/1.xml",
+        "count": 2652
+      }
+    ],
+    "blogCount": 153,
+    "essayCount": 24,
+    "successStoriesCount": 64,
+    "hubPageStatuses": {
+      "/why-kakomon-ai": 200,
+      "/features": 200,
+      "/features/copilot": 200,
+      "/features/mock-exam": 200,
+      "/features/study-plan": 200
+    },
+    "adminLaunchMonitoringStatus": 401,
+    "adminExpected401": true
+  }
+}
