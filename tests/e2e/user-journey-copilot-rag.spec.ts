@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 // Uses a question with complete data (no needsReview flag)
-const QUESTION = "/q/ap/2009-spring/am/q1";
+const QUESTION = "/q/ap/2024-spring/am/q1";
 
 const VALID_BODY = JSON.stringify({
   question: {

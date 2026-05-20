@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-const QUESTION = "/q/ap/2009-spring/am/q1";
+const QUESTION = "/q/ap/2024-spring/am/q1";
 const BASE_URL = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3000";
 
 test.describe("bookmark page: HTTP & structure", () => {
