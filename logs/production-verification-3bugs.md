@@ -7,9 +7,13 @@
 PR #305 Vercel check: pass (Deployment has completed)
 main branch run 51a8b1b5: in_progress (E2E running, expected failure per pre-existing issue)
 
-## Note on curl verification
-Production curl blocked by Vercel Security Checkpoint (bot mitigation).
-Direct browser verification recommended. Code-level verification is authoritative.
+## curl verification results (production live)
+
+Bug 1 — /study-plan: <title>自動学習スケジュール作成 | 過去問AI</title> OK
+Bug 1 — /my-progress: <title>マイ進捗 | 過去問AI</title> OK
+Bug 1 — /bookmarks: <title>ブックマーク | 過去問AI</title> OK
+Bug 2 — /essays: HTTP 200, "本答案" and "AI 生成の参考例" found, application/ld+json present OK
+Bug 3 — /q/ap/2024-spring/am/q1: "@type":"Quiz" found in JSON-LD OK
 
 ## Bug 1 — Title duplication
 
