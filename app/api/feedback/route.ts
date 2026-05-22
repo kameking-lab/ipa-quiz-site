@@ -4,6 +4,7 @@ import path from "path";
 import fs from "fs";
 
 import { getClientIp } from "@/lib/rate-limit/server";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -40,9 +41,10 @@ const schema = z.object({
   comment: z.string().max(800).optional(),
   pageUrl: z.string().url().max(500),
   questionId: z.string().max(120).optional(),
+  turnstileToken: z.string().max(4096).optional(),
 });
 
-export type FeedbackEntry = z.infer<typeof schema> & {
+export type FeedbackEntry = Omit<z.infer<typeof schema>, "turnstileToken"> & {
   ts: string;
   ip: string;
 };
@@ -78,10 +80,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ ok: false, error: "invalid-body" }, { status: 400 });
   }
 
+  const verify = await verifyTurnstileToken(parsed.data.turnstileToken, ip);
+  if (!verify.ok) {
+    return NextResponse.json(
+      { ok: false, error: "turnstile-failed", codes: verify.errorCodes },
+      { status: 403 },
+    );
+  }
+
+  const { turnstileToken: _t, ...payload } = parsed.data;
+  void _t;
   const entry: FeedbackEntry = {
     ts: new Date().toISOString(),
     ip,
-    ...parsed.data,
+    ...payload,
   };
 
   appendToJsonl(entry);

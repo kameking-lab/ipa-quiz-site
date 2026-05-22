@@ -10,6 +10,9 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
+
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export type FeedbackCategory = "typo" | "wrong-answer" | "poor-explanation" | "other";
 
@@ -33,6 +36,7 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
   const [submitted, setSubmitted] = React.useState(false);
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const [turnstileToken, setTurnstileToken] = React.useState<string>("");
 
   React.useEffect(() => {
     if (!open) {
@@ -41,8 +45,16 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
       setSubmitted(false);
       setSubmitting(false);
       setError(null);
+      setTurnstileToken("");
     }
   }, [open]);
+
+  const turnstileRequired = Boolean(TURNSTILE_SITE_KEY);
+  const handleTurnstileToken = React.useCallback((t: string) => setTurnstileToken(t), []);
+  const handleTurnstileError = React.useCallback(
+    () => setError("人間認証に失敗しました。ページを再読み込みしてください。"),
+    [],
+  );
 
   const resolvedUrl =
     pageUrl ?? (typeof window !== "undefined" ? window.location.href : "");
@@ -60,12 +72,18 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
           comment: comment.trim().slice(0, 800) || undefined,
           pageUrl: resolvedUrl,
           questionId: questionId ?? undefined,
+          turnstileToken: turnstileToken || undefined,
         }),
         cache: "no-store",
         keepalive: true,
       });
       if (res.status === 429) {
         setError("送信が多すぎます。しばらく経ってからお試しください。");
+        setSubmitting(false);
+        return;
+      }
+      if (res.status === 403) {
+        setError("人間認証に失敗しました。再度ご確認ください。");
         setSubmitting(false);
         return;
       }
@@ -153,6 +171,14 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
               className="mt-3 w-full resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-rose-400 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
             />
 
+            {turnstileRequired && TURNSTILE_SITE_KEY && (
+              <TurnstileWidget
+                siteKey={TURNSTILE_SITE_KEY}
+                onToken={handleTurnstileToken}
+                onError={handleTurnstileError}
+              />
+            )}
+
             {error && (
               <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{error}</p>
             )}
@@ -170,7 +196,7 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
               <Button
                 variant="destructive"
                 onClick={() => void submit()}
-                disabled={!category || submitting}
+                disabled={!category || submitting || (turnstileRequired && !turnstileToken)}
                 className="sm:order-2"
               >
                 <Send className="h-4 w-4" />
