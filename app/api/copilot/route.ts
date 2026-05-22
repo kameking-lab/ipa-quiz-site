@@ -2,36 +2,18 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
-import {
-  COPILOT_SYSTEM_PROMPT,
-  buildQuestionContext,
-  buildLearnerProfileContext,
-  buildResponseLengthDirective,
-  buildRAGDirective,
-  QUICK_ACTIONS,
-} from "@/lib/ai/prompts";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { CHARACTERS, isCharacterId } from "@/lib/ai/characters";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
-import { captureException } from "@/lib/monitoring/sentry";
-import { ragEnabled, ragMinScore, runRAG } from "@/lib/copilot/rag";
-import {
-  buildCitationFooter,
-  buildRAGContextBlock,
-} from "@/lib/copilot/citations";
-import type { RAGResult } from "@/lib/copilot/types";
-import {
-  buildCitationMetas,
-  encodeCitationsHeader,
-} from "@/lib/copilot/citation-meta";
-import {
-  encodeRelatedHeader,
-  findRelatedQuestions,
-} from "@/lib/copilot/related";
+import { ragEnabled } from "@/lib/copilot/rag";
+import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
+import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
+import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 
 export const runtime = "nodejs";
+
+const STREAM_TIMEOUT_MS = 35_000;
 
 const BodySchema = z.object({
   question: z.custom<Question>((v) => {
@@ -86,7 +68,7 @@ export async function POST(req: Request) {
 
   const ip = getClientIp(req);
   const feedbackSubmitted = readFeedbackFlag(req);
-  const rl = checkRateLimit({ ip, feedbackSubmitted });
+  const rl = await checkRateLimit({ ip, feedbackSubmitted });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
@@ -109,112 +91,26 @@ export async function POST(req: Request) {
   }
 
   const quickAction = payload.quickAction as QuickActionId | undefined;
-  const quickPrompt =
-    quickAction && QUICK_ACTIONS[quickAction]
-      ? QUICK_ACTIONS[quickAction].prompt(payload.question)
-      : null;
 
-  const questionContext = buildQuestionContext(
-    payload.question,
-    payload.selectedChoice,
-    payload.isCorrect,
-  );
+  const rag = await runCopilotRAGPipeline({
+    question: payload.question,
+    messages: payload.messages,
+    quickAction,
+  });
 
-  const profileContext = payload.learnerProfile
-    ? buildLearnerProfileContext(payload.learnerProfile satisfies LearnerProfile)
-    : null;
-
-  const characterPrompt =
-    payload.characterEnabled && payload.character && isCharacterId(payload.character)
-      ? CHARACTERS[payload.character].systemPrompt
-      : null;
-
-  const responseLengthDirective = payload.responseLength
-    ? buildResponseLengthDirective(payload.responseLength satisfies ResponseLength)
-    : null;
-
-  // RAG 取得（COPILOT_RAG_ENABLED=false で完全 bypass）。
-  const lastUserMsg =
-    [...payload.messages].reverse().find((m) => m.role === "user")?.content ?? "";
-  let ragResult: RAGResult = { passages: [], topScore: 0, rerankerUsed: "none" };
-  let ragDirective: string | null = null;
-  let ragContextBlock = "";
-  let citationFooter = "";
-  let hasGrounding = false;
-
-  let citationsHeader = "";
-  let relatedHeader = "";
-
-  if (ragEnabled() && lastUserMsg) {
-    try {
-      ragResult = await runRAG({
-        userMessage: lastUserMsg,
-        question: payload.question,
-        quickAction,
-      });
-      const passesThreshold = ragResult.topScore >= ragMinScore();
-      if (ragResult.passages.length > 0 && passesThreshold) {
-        hasGrounding = true;
-        ragDirective = buildRAGDirective(ragResult.passages.length);
-        ragContextBlock = buildRAGContextBlock(ragResult.passages);
-        citationFooter = buildCitationFooter(ragResult.passages);
-
-        // 構造化 citation メタを HTTP ヘッダで返す。
-        // クライアントは X-RAG-Citations を読んでリッチカード UI を描画する。
-        const citationMetas = buildCitationMetas(ragResult.passages);
-        citationsHeader = encodeCitationsHeader(citationMetas);
-
-        // 関連問題サジェスト（citation に採用済みの doc は除外）。
-        try {
-          const excluded = new Set(ragResult.passages.map((p) => p.doc.id));
-          const related = findRelatedQuestions({
-            userMessage: lastUserMsg,
-            currentQuestionId: payload.question.id,
-            currentExam: payload.question.exam,
-            currentCategory: payload.question.category,
-            currentTopicTags: payload.question.topicTags,
-            excludeDocIds: excluded,
-            limit: 4,
-          });
-          relatedHeader = encodeRelatedHeader(related);
-        } catch (relErr) {
-          // related が失敗しても citation 自体は出す（fail-open）。
-          await captureException(relErr, {
-            route: "/api/copilot",
-            extra: { phase: "related" },
-          });
-        }
-      }
-    } catch (err) {
-      // RAG が落ちても既存挙動は維持する（fail-open）。
-      await captureException(err, {
-        route: "/api/copilot",
-        extra: { phase: "rag" },
-      });
-    }
-  }
-
-  const system = [
-    COPILOT_SYSTEM_PROMPT,
-    ...(characterPrompt ? [characterPrompt] : []),
-    ...(responseLengthDirective ? [responseLengthDirective] : []),
-    ...(ragDirective ? [ragDirective] : []),
-    "---",
-    questionContext,
-    ...(profileContext ? ["---", profileContext] : []),
-    ...(ragContextBlock ? ["---", ragContextBlock] : []),
-  ].join("\n\n");
-
-  const userMessages = [...payload.messages];
-  if (quickPrompt) {
-    const last = userMessages[userMessages.length - 1];
-    if (last.role === "user") {
-      userMessages[userMessages.length - 1] = {
-        role: "user",
-        content: `${quickPrompt}\n\n${last.content}`.trim(),
-      };
-    }
-  }
+  const { system, userMessages } = assembleCopilotPrompt({
+    question: payload.question,
+    messages: payload.messages,
+    selectedChoice: payload.selectedChoice,
+    isCorrect: payload.isCorrect,
+    quickAction,
+    learnerProfile: payload.learnerProfile as LearnerProfile | undefined,
+    character: payload.character,
+    characterEnabled: payload.characterEnabled,
+    responseLength: payload.responseLength as ResponseLength | undefined,
+    ragDirective: rag.ragDirective,
+    ragContextBlock: rag.ragContextBlock,
+  });
 
   let provider: LLMProvider;
   try {
@@ -241,89 +137,16 @@ export async function POST(req: Request) {
         ? 520
         : 900;
 
-  // Cap upstream latency. If Gemini stalls we abort the underlying stream
-  // rather than holding the HTTP connection open forever.
-  const TIMEOUT_MS = 35_000;
-  const upstreamAbort = new AbortController();
-  const timeoutHandle = setTimeout(() => upstreamAbort.abort(), TIMEOUT_MS);
-
-  // Forward client disconnects to the provider so cancelled tabs don't keep
-  // burning tokens on the server side.
-  const clientSignal = req.signal;
-  const onClientAbort = () => upstreamAbort.abort();
-  if (clientSignal) {
-    if (clientSignal.aborted) upstreamAbort.abort();
-    else clientSignal.addEventListener("abort", onClientAbort, { once: true });
-  }
-
-  const encoder = new TextEncoder();
-  let producedAnyChunk = false;
-  const stream = new ReadableStream({
-    async start(controller) {
-      try {
-        for await (const chunk of provider.streamChat({
-          system,
-          messages: userMessages,
-          model,
-          maxTokens,
-          temperature: 0.7,
-          signal: upstreamAbort.signal,
-        })) {
-          producedAnyChunk = true;
-          controller.enqueue(encoder.encode(chunk));
-        }
-        // RAG 出典が確定している場合、末尾に出典フッターを付与する。
-        // モデル本文に [N] inline 引用が無い場合でも、検索された出典 URL を
-        // 返すことで「もっともらしい嘘の出典」を握り潰す。
-        if (hasGrounding && citationFooter) {
-          controller.enqueue(encoder.encode(citationFooter));
-        }
-        controller.close();
-      } catch (err) {
-        const aborted =
-          (err as { name?: string } | null)?.name === "AbortError" ||
-          upstreamAbort.signal.aborted;
-        const timedOut = aborted && !clientSignal?.aborted;
-
-        // Client disconnect: nothing to write back, just close.
-        if (aborted && clientSignal?.aborted) {
-          try {
-            controller.close();
-          } catch {
-            // already closed
-          }
-          return;
-        }
-
-        if (!timedOut) {
-          await captureException(err, {
-            route: "/api/copilot",
-            extra: { provider: provider.name, model, producedAnyChunk },
-          });
-        }
-
-        const fallback = timedOut
-          ? producedAnyChunk
-            ? "\n\n[タイムアウト] AI応答が途中で止まりました。短めの設定で再試行するか、もう一度お試しください。"
-            : "\n\n[タイムアウト] AIの応答が間に合いませんでした。混雑時は再試行で改善することがあります。"
-          : "\n\n[エラー] AI応答の取得に失敗しました。少し時間を置いて再度お試しください。";
-
-        try {
-          controller.enqueue(encoder.encode(fallback));
-          controller.close();
-        } catch {
-          // controller may already be closed if the client disconnected mid-error
-        }
-      } finally {
-        clearTimeout(timeoutHandle);
-        clientSignal?.removeEventListener("abort", onClientAbort);
-      }
-    },
-    cancel() {
-      // Reader (i.e. the HTTP client) cancelled. Stop the upstream too.
-      upstreamAbort.abort();
-      clearTimeout(timeoutHandle);
-    },
+  const stream = createCopilotResponseStream({
+    provider,
+    system,
+    userMessages,
+    model,
+    maxTokens,
+    clientSignal: req.signal,
+    citationFooter: rag.citationFooter,
+    hasGrounding: rag.hasGrounding,
+    timeoutMs: STREAM_TIMEOUT_MS,
   });
 
   return new Response(stream, {
@@ -334,14 +157,14 @@ export async function POST(req: Request) {
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
-      "X-Timeout-Ms": String(TIMEOUT_MS),
+      "X-Timeout-Ms": String(STREAM_TIMEOUT_MS),
       "X-RAG-Enabled": ragEnabled() ? "1" : "0",
-      "X-RAG-Passages": String(ragResult.passages.length),
-      "X-RAG-Top-Score": ragResult.topScore.toFixed(3),
-      "X-RAG-Grounded": hasGrounding ? "1" : "0",
-      "X-RAG-Reranker": ragResult.rerankerUsed,
-      ...(citationsHeader ? { "X-RAG-Citations": citationsHeader } : {}),
-      ...(relatedHeader ? { "X-Related-Questions": relatedHeader } : {}),
+      "X-RAG-Passages": String(rag.ragResult.passages.length),
+      "X-RAG-Top-Score": rag.ragResult.topScore.toFixed(3),
+      "X-RAG-Grounded": rag.hasGrounding ? "1" : "0",
+      "X-RAG-Reranker": rag.ragResult.rerankerUsed,
+      ...(rag.citationsHeader ? { "X-RAG-Citations": rag.citationsHeader } : {}),
+      ...(rag.relatedHeader ? { "X-Related-Questions": rag.relatedHeader } : {}),
     },
   });
 }
