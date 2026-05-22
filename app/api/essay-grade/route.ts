@@ -275,7 +275,7 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const rl = checkRateLimit({ ip });
+  const rl = await checkRateLimit({ ip });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"

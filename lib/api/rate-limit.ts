@@ -5,11 +5,13 @@ import { checkRateLimit, getClientIp, type RateLimitResult } from "@/lib/rate-li
  * The bearer token (if any) is used as the rate-limit key so a user's own quota
  * is independent of the shared IP pool — useful behind a corporate NAT.
  */
-export function checkApiRateLimit(req: Request): RateLimitResult & { keyId: string } {
+export async function checkApiRateLimit(
+  req: Request,
+): Promise<RateLimitResult & { keyId: string }> {
   const auth = req.headers.get("authorization") ?? "";
   const m = auth.match(/^Bearer\s+(.+)$/i);
   const keyId = m && m[1].trim().length >= 12 ? `key:${m[1].trim().slice(0, 64)}` : `ip:${getClientIp(req)}`;
-  const result = checkRateLimit({ ip: keyId });
+  const result = await checkRateLimit({ ip: keyId });
   return { ...result, keyId };
 }
 

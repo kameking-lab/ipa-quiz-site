@@ -12,7 +12,7 @@ const BodySchema = z.object({
 });
 
 export async function POST(req: Request) {
-  const rl = checkApiRateLimit(req);
+  const rl = await checkApiRateLimit(req);
   if (!rl.ok) {
     return NextResponse.json(
       {
