@@ -7,7 +7,7 @@ import { examLabel } from "@/lib/utils";
 export const runtime = "nodejs";
 
 export async function GET(req: Request) {
-  const rl = checkApiRateLimit(req);
+  const rl = await checkApiRateLimit(req);
   if (!rl.ok) {
     return NextResponse.json(
       {

@@ -23,6 +23,11 @@ export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
 export const BETA_DAILY_LIMIT = FREE_INITIAL_LIMIT;
 export const FREE_DAILY_LIMIT = FREE_INITIAL_LIMIT;
 
+const KV_URL = process.env.KV_REST_API_URL?.replace(/\/$/, "");
+const KV_TOKEN = process.env.KV_REST_API_TOKEN;
+const USE_KV = Boolean(KV_URL && KV_TOKEN);
+const KV_TIMEOUT_MS = 1_500;
+
 if (typeof setInterval !== "undefined") {
   setInterval(() => {
     const now = Date.now();
@@ -42,16 +47,84 @@ function nextJstMidnight(now: number): number {
   return dayStart + WINDOW_MS_DAY - jstOffsetMs;
 }
 
-function tick(bucket: Map<string, Bucket>, key: string, windowMs: number): Bucket {
-  const now = Date.now();
-  const existing = bucket.get(key);
-  if (!existing || existing.resetAt <= now) {
-    const resetAt = windowMs === WINDOW_MS_DAY ? nextJstMidnight(now) : now + windowMs;
-    const fresh: Bucket = { count: 0, resetAt };
-    bucket.set(key, fresh);
-    return fresh;
+async function kvFetch<T>(path: string, method: "GET" | "POST" = "POST"): Promise<T | null> {
+  if (!USE_KV) return null;
+  try {
+    const res = await fetch(`${KV_URL}${path}`, {
+      method,
+      headers: { Authorization: `Bearer ${KV_TOKEN}` },
+      signal: AbortSignal.timeout(KV_TIMEOUT_MS),
+    });
+    if (!res.ok) return null;
+    return (await res.json()) as T;
+  } catch {
+    return null;
   }
-  return existing;
+}
+
+async function kvGet(key: string): Promise<string | null> {
+  const data = await kvFetch<{ result: string | null }>(`/get/${encodeURIComponent(key)}`, "GET");
+  return data?.result ?? null;
+}
+
+async function kvIncr(key: string): Promise<number | null> {
+  const data = await kvFetch<{ result: number }>(`/incr/${encodeURIComponent(key)}`);
+  return typeof data?.result === "number" ? data.result : null;
+}
+
+async function kvExpire(key: string, ttlSec: number): Promise<void> {
+  await kvFetch<{ result: number }>(`/expire/${encodeURIComponent(key)}/${ttlSec}`);
+}
+
+function memPeek(key: string, buckets: Map<string, Bucket>): number {
+  const now = Date.now();
+  const b = buckets.get(key);
+  if (!b || b.resetAt <= now) return 0;
+  return b.count;
+}
+
+function memConsume(
+  key: string,
+  buckets: Map<string, Bucket>,
+  resetAt: number,
+): void {
+  const now = Date.now();
+  const existing = buckets.get(key);
+  if (!existing || existing.resetAt <= now) {
+    buckets.set(key, { count: 1, resetAt });
+    return;
+  }
+  existing.count += 1;
+}
+
+async function peek(key: string, buckets: Map<string, Bucket>): Promise<number> {
+  if (USE_KV) {
+    const raw = await kvGet(key);
+    if (raw !== null) {
+      const n = Number(raw);
+      if (Number.isFinite(n)) return n;
+    }
+  }
+  return memPeek(key, buckets);
+}
+
+async function consume(
+  key: string,
+  buckets: Map<string, Bucket>,
+  ttlMs: number,
+  resetAt: number,
+): Promise<void> {
+  if (USE_KV) {
+    const newCount = await kvIncr(key);
+    if (newCount !== null) {
+      if (newCount === 1) {
+        const ttlSec = Math.max(1, Math.ceil(ttlMs / 1000));
+        await kvExpire(key, ttlSec);
+      }
+      return;
+    }
+  }
+  memConsume(key, buckets, resetAt);
 }
 
 export interface RateLimitResult {
@@ -73,40 +146,55 @@ export interface RateLimitOpts {
  * - First 10 requests/day per IP are free for everyone.
  * - Once the user submits feedback (client passes a header), daily limit jumps to 9999.
  * - Minute burst limit applies to all.
+ * - When KV_REST_API_URL/KV_REST_API_TOKEN are set, state is persisted in Upstash KV
+ *   so the limit holds across serverless instances. Falls back to per-instance in-memory
+ *   when KV is absent or unreachable.
  */
-export function checkRateLimit(opts: RateLimitOpts): RateLimitResult {
+export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResult> {
   const { ip, feedbackSubmitted } = opts;
   const dailyLimit = feedbackSubmitted ? POST_FEEDBACK_DAILY_LIMIT : FREE_INITIAL_LIMIT;
+  const now = Date.now();
+  const minResetAt = now + WINDOW_MS_MINUTE;
+  const dayResetAt = nextJstMidnight(now);
 
-  const mb = tick(minuteBuckets, `min:${ip}`, WINDOW_MS_MINUTE);
-  if (mb.count >= BETA_MINUTE_LIMIT) {
+  const minKey = `rl:min:${ip}`;
+  const dayKey = `rl:day:${ip}`;
+
+  const [minCount, dayCount] = await Promise.all([
+    peek(minKey, minuteBuckets),
+    peek(dayKey, dayBuckets),
+  ]);
+
+  if (minCount >= BETA_MINUTE_LIMIT) {
     return {
       ok: false,
       remaining: 0,
       limit: BETA_MINUTE_LIMIT,
-      resetAt: mb.resetAt,
+      resetAt: minResetAt,
       reason: "minute",
     };
   }
 
-  const db = tick(dayBuckets, `day:${ip}`, WINDOW_MS_DAY);
-  if (db.count >= dailyLimit) {
+  if (dayCount >= dailyLimit) {
     return {
       ok: false,
       remaining: 0,
       limit: dailyLimit,
-      resetAt: db.resetAt,
+      resetAt: dayResetAt,
       reason: "daily",
     };
   }
 
-  mb.count += 1;
-  db.count += 1;
+  await Promise.all([
+    consume(minKey, minuteBuckets, WINDOW_MS_MINUTE, minResetAt),
+    consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
+  ]);
+
   return {
     ok: true,
-    remaining: dailyLimit - db.count,
+    remaining: dailyLimit - dayCount - 1,
     limit: dailyLimit,
-    resetAt: db.resetAt,
+    resetAt: dayResetAt,
   };
 }
 

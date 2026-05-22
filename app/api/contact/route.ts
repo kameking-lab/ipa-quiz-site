@@ -60,7 +60,7 @@ export async function POST(req: Request) {
   const ip = getClientIp(req);
   // Reuse the same rate-limit bucket so abuse mitigations apply uniformly,
   // but never block feedback submissions outright (educational mission).
-  const rl = checkRateLimit({ ip, feedbackSubmitted: readFeedbackFlag(req) });
+  const rl = await checkRateLimit({ ip, feedbackSubmitted: readFeedbackFlag(req) });
   if (!rl.ok && rl.reason === "minute") {
     return NextResponse.json(
       { error: "rate_limited", message: "短時間に投稿が集中しています。1 分ほど待ってから再送信してください。" },
