@@ -105,7 +105,7 @@ export default async function AfternoonPlayerPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-foreground hover:underline">
+              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -113,7 +113,7 @@ export default async function AfternoonPlayerPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="hover:text-foreground hover:underline"
+                className="inline-block py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
@@ -122,7 +122,7 @@ export default async function AfternoonPlayerPage({
             <li>
               <Link
                 href={`/${exam}/afternoon`}
-                className="hover:text-foreground hover:underline"
+                className="inline-block py-1.5 hover:text-foreground hover:underline"
               >
                 午後問題
               </Link>

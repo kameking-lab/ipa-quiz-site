@@ -95,7 +95,7 @@ export default function FaqPage() {
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-foreground hover:underline">
+              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>

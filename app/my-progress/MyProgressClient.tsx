@@ -207,8 +207,9 @@ function DailyGoalSection({ count, target, pct: pctVal, completed, onTargetChang
           ) : (
             <button
               onClick={() => { setDraft(String(target)); setEditing(true); }}
-              className="text-xs text-muted-foreground underline underline-offset-2 hover:text-foreground"
+              className="inline-flex min-h-[32px] items-center rounded-md px-2 py-1 text-xs text-muted-foreground underline underline-offset-2 hover:bg-muted hover:text-foreground"
               type="button"
+              aria-label="1日の目標問題数を変更"
             >
               変更
             </button>

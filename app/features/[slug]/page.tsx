@@ -112,13 +112,13 @@ export default async function FeatureLandingPage({
       <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:text-foreground hover:underline">
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
               ホーム
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/features" className="hover:text-foreground hover:underline">
+            <Link href="/features" className="inline-block py-1.5 hover:text-foreground hover:underline">
               機能特集
             </Link>
           </li>

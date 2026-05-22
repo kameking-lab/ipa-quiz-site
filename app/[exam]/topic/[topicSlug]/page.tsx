@@ -124,7 +124,7 @@ export default async function ExamTopicPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="hover:text-foreground hover:underline">
+              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -132,7 +132,7 @@ export default async function ExamTopicPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="hover:text-foreground hover:underline"
+                className="inline-block py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>

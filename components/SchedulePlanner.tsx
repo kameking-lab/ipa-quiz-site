@@ -144,6 +144,7 @@ export function SchedulePlanner() {
             value={examDate}
             min={today}
             onChange={(e) => setExamDate(e.target.value)}
+            aria-label="試験日"
             className="h-12 w-full max-w-xs rounded-xl border border-border bg-background px-3 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             required
           />
