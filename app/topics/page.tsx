@@ -19,16 +19,18 @@ const OG_IMAGE = (() => {
 
 export function generateMetadata(): Metadata {
   const all = getAllTopics();
+  const description =
+    "IPA 情報処理技術者試験 13 区分の過去問をトピック（キーワード）軸で横断学習できるインデックス。試験区分をまたいで同じテーマの問題を一覧し、弱点分野を集中的に攻略できます。";
   const base: Metadata = {
     title: "トピック別過去問インデックス",
-    description:
-      "IPA 情報処理技術者試験の過去問をトピック（キーワード）軸で横断的に学習。試験区分をまたいで同じテーマの問題を一覧できます。",
+    description,
     alternates: { canonical: "/topics" },
+    robots: { index: true, follow: true },
     openGraph: {
-      title: "トピック別過去問インデックス | 過去問AI",
+      title: `トピック別過去問インデックス | ${SITE_NAME}`,
       description:
-        "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
-      url: "/topics",
+        "IPA 情報処理技術者試験をトピック軸で横断学習できるインデックスハブ。",
+      url: `${SITE_BASE_URL}/topics`,
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
@@ -36,9 +38,9 @@ export function generateMetadata(): Metadata {
     },
     twitter: {
       card: "summary_large_image",
-      title: "トピック別過去問インデックス | 過去問AI",
+      title: `トピック別過去問インデックス | ${SITE_NAME}`,
       description:
-        "IPA 情報処理技術者試験をトピック軸で横断的に学習できるインデックス。",
+        "IPA 情報処理技術者試験をトピック軸で横断学習できるインデックスハブ。",
       images: [OG_IMAGE],
     },
   };
