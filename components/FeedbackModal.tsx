@@ -37,6 +37,7 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
   const [submitting, setSubmitting] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
   const [turnstileToken, setTurnstileToken] = React.useState<string>("");
+  const firstCategoryRef = React.useRef<HTMLInputElement>(null);
 
   React.useEffect(() => {
     if (!open) {
@@ -60,7 +61,11 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
     pageUrl ?? (typeof window !== "undefined" ? window.location.href : "");
 
   const submit = async () => {
-    if (!category) return;
+    if (!category) {
+      setError("カテゴリを選択してください。");
+      firstCategoryRef.current?.focus();
+      return;
+    }
     setSubmitting(true);
     setError(null);
     try {
@@ -134,9 +139,14 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
               </DialogDescription>
             </DialogHeader>
 
-            <fieldset className="mt-3 space-y-2">
-              <legend className="sr-only">報告カテゴリ</legend>
-              {CATEGORIES.map((c) => (
+            <fieldset
+              className="mt-3 space-y-2"
+              aria-required="true"
+              aria-invalid={error && !category ? true : undefined}
+              aria-describedby={error && !category ? "feedback-error" : undefined}
+            >
+              <legend className="sr-only">報告カテゴリ（必須）</legend>
+              {CATEGORIES.map((c, idx) => (
                 <label
                   key={c.id}
                   className={
@@ -147,12 +157,14 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
                   }
                 >
                   <input
+                    ref={idx === 0 ? firstCategoryRef : undefined}
                     type="radio"
                     name="feedback-category"
                     value={c.id}
                     className="sr-only"
                     checked={category === c.id}
                     onChange={() => setCategory(c.id)}
+                    required
                   />
                   <span aria-hidden="true" className="text-base">
                     {c.emoji}
@@ -162,7 +174,11 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
               ))}
             </fieldset>
 
+            <label htmlFor="feedback-comment" className="sr-only">
+              詳細コメント（任意）
+            </label>
             <textarea
+              id="feedback-comment"
               value={comment}
               onChange={(e) => setComment(e.target.value.slice(0, 800))}
               rows={3}
@@ -180,7 +196,13 @@ export function FeedbackModal({ open, onClose, questionId, pageUrl }: Props) {
             )}
 
             {error && (
-              <p className="mt-1 text-xs text-rose-600 dark:text-rose-400">{error}</p>
+              <p
+                id="feedback-error"
+                role="alert"
+                className="mt-1 text-xs text-rose-600 dark:text-rose-400"
+              >
+                {error}
+              </p>
             )}
 
             {questionId && (

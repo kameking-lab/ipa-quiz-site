@@ -50,6 +50,7 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
   const [input, setInput] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
   const [sending, setSending] = React.useState(false);
+  const inputRef = React.useRef<HTMLTextAreaElement>(null);
 
   React.useEffect(() => {
      
@@ -62,10 +63,12 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
     if (!body) return;
     if (body.length > MAX_LEN) {
       setError(`${MAX_LEN} 字以内でお願いします`);
+      inputRef.current?.focus();
       return;
     }
     if (looksLikePersonalInfo(body)) {
       setError("個人情報（メール・電話番号など）が含まれている可能性があります。投稿を見直してください。");
+      inputRef.current?.focus();
       return;
     }
     setSending(true);
@@ -108,16 +111,27 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
         個人情報は投稿しないでください。
       </p>
 
+      <label htmlFor={`qcomment-${questionId}`} className="sr-only">
+        コメント本文
+      </label>
       <textarea
+        id={`qcomment-${questionId}`}
+        ref={inputRef}
         value={input}
         onChange={(e) => setInput(e.target.value.slice(0, MAX_LEN))}
         rows={3}
         maxLength={MAX_LEN}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `qcomment-error-${questionId}` : undefined}
         placeholder="例: 選択肢ウの解説に補足があります…"
         className="w-full resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
       />
       <div className="mt-2 flex items-center justify-between">
-        <span className={cn("text-[11px]", error ? "text-red-600 dark:text-red-400" : "text-zinc-400 dark:text-zinc-500")}>
+        <span
+          id={error ? `qcomment-error-${questionId}` : undefined}
+          role={error ? "alert" : undefined}
+          className={cn("text-[11px]", error ? "text-red-600 dark:text-red-400" : "text-zinc-400 dark:text-zinc-500")}
+        >
           {error ?? `${input.length} / ${MAX_LEN}`}
         </span>
         <button

@@ -230,10 +230,16 @@ export function AfternoonPlayer({ questions }: Props) {
                     </details>
                   )}
 
+                  <label htmlFor={`afternoon-${sub.label}`} className="sr-only">
+                    {sub.label} の解答
+                  </label>
                   <textarea
+                    id={`afternoon-${sub.label}`}
                     value={value}
                     onChange={(e) => handleChange(sub.label, e.target.value)}
                     rows={rows}
+                    aria-required="true"
+                    aria-invalid={over || under || undefined}
                     placeholder={isEssay ? "論述（2,000〜3,000字）をここに入力" : "ここに解答を入力"}
                     className={
                       "w-full rounded-xl border px-3 py-2 text-sm leading-relaxed shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-zinc-900 dark:text-zinc-50 " +
