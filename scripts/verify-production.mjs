@@ -6,7 +6,6 @@
 
 import { chromium } from '@playwright/test';
 import { writeFileSync, mkdirSync } from 'fs';
-import { join } from 'path';
 import https from 'https';
 import http from 'http';
 

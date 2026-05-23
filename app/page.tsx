@@ -11,7 +11,7 @@ import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID, SITE_ID, SITE_LOGO_IMAGE, buildOrgNode } from "@/lib/seo/structured-data";
+import { SITE_ID, buildOrgNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 

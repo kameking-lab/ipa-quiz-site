@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import {
   AlertTriangle,
   CheckCircle2,
@@ -174,13 +175,13 @@ export default async function DeploymentStatusPage() {
           <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">Vercel デプロイ状況</h1>
           <p className="mt-1 text-sm text-muted-foreground">最終取得: {formatTime(data.fetchedAt)}</p>
         </div>
-        <a
+        <Link
           href="/admin/deployment-status"
           className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-1.5 text-sm hover:bg-accent"
         >
           <RefreshCw className="h-3.5 w-3.5" />
           更新
-        </a>
+        </Link>
       </header>
 
       {/* Status Banner */}

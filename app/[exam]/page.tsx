@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, PenLine, Sparkles,
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID, SITE_ID } from "@/lib/seo/structured-data";
+import { ORG_ID } from "@/lib/seo/structured-data";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import {
   EXAM_DESCRIPTIONS,
