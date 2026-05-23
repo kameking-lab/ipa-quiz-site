@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { Button } from "@/components/ui/button";
@@ -10,10 +11,17 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const emailRef = React.useRef<HTMLInputElement>(null);
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!email || loading) return;
+    if (!email || loading) {
+      if (!email) {
+        setError("メールアドレスを入力してください。");
+        emailRef.current?.focus();
+      }
+      return;
+    }
     setError(null);
     setLoading(true);
     try {
@@ -53,8 +61,12 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
       </label>
       <input
         id="email"
+        ref={emailRef}
         type="email"
         required
+        aria-required="true"
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? "email-signin-error" : undefined}
         autoComplete="email"
         placeholder="you@example.com"
         className="h-11 rounded-xl border border-input bg-background px-3.5 text-base text-foreground transition placeholder:text-muted-foreground focus-visible:border-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
@@ -62,7 +74,11 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
         onChange={(e) => setEmail(e.target.value)}
         disabled={loading}
       />
-      {error && <p className="text-xs text-destructive">{error}</p>}
+      {error && (
+        <p id="email-signin-error" role="alert" className="text-xs text-destructive">
+          {error}
+        </p>
+      )}
       <Button
         type="submit"
         variant="gradient"

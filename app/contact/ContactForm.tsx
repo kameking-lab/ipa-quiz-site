@@ -24,16 +24,24 @@ export function ContactForm() {
   const [body, setBody] = React.useState("");
   const [status, setStatus] = React.useState<"idle" | "sending" | "ok" | "error">("idle");
   const [error, setError] = React.useState<string | null>(null);
+  const [invalidField, setInvalidField] = React.useState<"body" | "email" | null>(null);
+  const emailRef = React.useRef<HTMLInputElement>(null);
+  const bodyRef = React.useRef<HTMLTextAreaElement>(null);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    setInvalidField(null);
     if (body.trim().length < 5) {
       setError("お問い合わせ内容は 5 文字以上でお願いします。");
+      setInvalidField("body");
+      bodyRef.current?.focus();
       return;
     }
     if (email && !/^[\w.+-]+@[\w-]+\.[\w.-]+$/i.test(email)) {
       setError("メールアドレスの形式をご確認ください。");
+      setInvalidField("email");
+      emailRef.current?.focus();
       return;
     }
     setStatus("sending");
@@ -148,12 +156,15 @@ export function ContactForm() {
         </label>
         <input
           id="contact-email"
+          ref={emailRef}
           type="email"
           autoComplete="email"
           value={email}
           onChange={(e) => setEmail(e.target.value.slice(0, 120))}
           maxLength={120}
           placeholder="example@example.com"
+          aria-invalid={invalidField === "email" || undefined}
+          aria-describedby={invalidField === "email" ? "contact-error" : undefined}
           className="w-full rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
       </div>
@@ -167,11 +178,15 @@ export function ContactForm() {
         </label>
         <textarea
           id="contact-body"
+          ref={bodyRef}
           value={body}
           onChange={(e) => setBody(e.target.value.slice(0, 4000))}
           rows={6}
           maxLength={4000}
           required
+          aria-required="true"
+          aria-invalid={invalidField === "body" || undefined}
+          aria-describedby={invalidField === "body" ? "contact-error" : undefined}
           placeholder="どんなことでもお気軽にどうぞ"
           className="w-full resize-vertical rounded-xl border border-zinc-300 bg-white px-3 py-2.5 text-base placeholder:text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
         />
@@ -192,6 +207,7 @@ export function ContactForm() {
 
       {error && (
         <div
+          id="contact-error"
           role="alert"
           className="flex items-start gap-2 rounded-xl border border-rose-200 bg-rose-50 px-3 py-2.5 text-sm font-medium text-rose-700 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-300"
         >

@@ -70,6 +70,8 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
           <input
             type="email"
             required
+            aria-required="true"
+            aria-invalid={status === "error" || undefined}
             autoComplete="email"
             aria-label="メールアドレス"
             value={email}
@@ -114,6 +116,8 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
         <input
           type="email"
           required
+          aria-required="true"
+          aria-invalid={status === "error" || undefined}
           autoComplete="email"
           aria-label="メールアドレス"
           value={email}

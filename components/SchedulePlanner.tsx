@@ -145,11 +145,14 @@ export function SchedulePlanner() {
             min={today}
             onChange={(e) => setExamDate(e.target.value)}
             aria-label="試験日"
+            aria-required="true"
+            aria-invalid={examDateInvalid || undefined}
+            aria-describedby={examDateInvalid ? "exam-date-error" : undefined}
             className="h-12 w-full max-w-xs rounded-xl border border-border bg-background px-3 text-base focus:outline-none focus:ring-2 focus:ring-ring"
             required
           />
           {examDateInvalid && (
-            <p className="mt-2 text-xs text-destructive">
+            <p id="exam-date-error" role="alert" className="mt-2 text-xs text-destructive">
               試験日は明日以降を指定してください。
             </p>
           )}
