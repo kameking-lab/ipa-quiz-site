@@ -22,7 +22,7 @@ const APPROX_QUESTION_COUNT = Math.floor(ALL_QUESTIONS.length / 1000) * 1000;
 const APPROX_QUESTION_COUNT_LABEL = APPROX_QUESTION_COUNT.toLocaleString("ja-JP");
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
-const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分・${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる無料サイト。登録不要・モバイル最適化。`;
+const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の過去問 ${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる完全無料サイト。登録不要・広告控えめ・モバイル片手操作対応。年度別・分野別・模試・苦手復習の6モードで効率学習。`;
 
 export const metadata: Metadata = {
   title: HOME_TITLE,

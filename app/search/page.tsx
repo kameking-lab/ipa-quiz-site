@@ -8,7 +8,7 @@ import { SearchClient } from "@/components/search/SearchClient";
 export const metadata: Metadata = {
   title: "問題検索",
   description:
-    "14,000問超のIPA過去問をキーワード・試験区分・年度・分野・難度で横断検索。AI コパイロット付きで解説も即確認できます。",
+    "14,000問超の IPA 情報処理技術者試験 過去問をキーワード・試験区分・年度・分野・難度で横断検索。IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU の 13 区分すべてに対応し、ヒットした問題は AI コパイロット付きでそのまま解説まで確認できます。",
   alternates: { canonical: "/search" },
 };
 

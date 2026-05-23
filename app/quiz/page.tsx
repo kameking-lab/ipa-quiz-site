@@ -1,8 +1,17 @@
+import type { Metadata } from "next";
 import type { ExamCode, QuizFilter, QuizMode, Season, Session } from "@/lib/questions/types";
 import { getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
+
+export const metadata: Metadata = {
+  title: "クイズ — 過去問演習",
+  description:
+    "IPA 情報処理技術者試験 13区分の過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AI コパイロットが各選択肢の正誤理由をその場で解説します。",
+  alternates: { canonical: "/quiz" },
+  robots: { index: true, follow: true },
+};
 
 interface SearchParams {
   mode?: string;
