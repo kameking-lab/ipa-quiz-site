@@ -31,7 +31,7 @@ import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { readStreak } from "@/lib/streak/storage";
 import type { StreakState } from "@/lib/streak/core";
-import { getDailyProgress, readDailyGoalTarget, writeDailyGoalTarget, DEFAULT_DAILY_GOAL } from "@/lib/motivation/daily-goal";
+import { getDailyProgress, writeDailyGoalTarget } from "@/lib/motivation/daily-goal";
 import { getEarnedBadges, BADGES, BADGE_THRESHOLDS } from "@/lib/motivation/badges";
 import { BadgeMedallion } from "@/components/motivation/BadgeMedallion";
 

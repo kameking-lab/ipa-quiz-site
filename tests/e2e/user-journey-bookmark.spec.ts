@@ -1,7 +1,6 @@
 import { test, expect } from "@playwright/test";
 
 const QUESTION = "/q/ap/2024-spring/am/q1";
-const BASE_URL = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3000";
 
 test.describe("bookmark page: HTTP & structure", () => {
   test("GET /bookmarks returns 200", async ({ request }) => {
@@ -63,9 +62,11 @@ test.describe("bookmark: question page integration", () => {
     const bookmarkEl = page.locator(
       "[aria-label*='ブックマーク'], button:has-text('ブックマーク'), [title*='ブックマーク']",
     );
-    // Accept if found; some implementations show it after first answer
-    const count = await bookmarkEl.count();
-    // Just confirm the page loaded correctly with choices
+    // Accept if found; some implementations show it after first answer.
+    // The count() call is what we actually need to trigger the selector
+    // resolution — even if 0 matches, we just confirm the page loaded
+    // correctly with choices.
+    await bookmarkEl.count();
     const choices = page.locator("[aria-label='選択肢']");
     await expect(choices).toBeVisible();
   });
