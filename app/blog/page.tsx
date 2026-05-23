@@ -16,7 +16,7 @@ const BLOG_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
 export const metadata: Metadata = {
   title: "IPA試験ブログ｜全13区分の合格戦略・勉強法・出題傾向",
   description:
-    "IPA情報処理技術者試験13区分の合格戦略・勉強法・直前対策・頻出論点を網羅。AI解説付きの過去問演習サイト過去問AIが運営する学習ブログ。",
+    "IPA 情報処理技術者試験 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の合格戦略・勉強法・直前対策・頻出論点・出題傾向分析を網羅。AI 解説付きの過去問演習サイト過去問AI が運営する学習ブログで、初学者の最短合格ルートから高度試験の論述対策まで実務目線で解説します。",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "IPA試験ブログ | 過去問AI",

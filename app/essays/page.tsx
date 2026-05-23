@@ -13,7 +13,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 export const metadata: Metadata = {
   title: "業種別合格答案サンプル",
   description:
-    "IPA高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）午後II 論述問題の業種別合格答案サンプル集。AI生成の参考例として、論述構成の骨格づくりにご活用ください。",
+    "IPA 高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）午後 II 論述問題の業種別合格答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
   alternates: { canonical: "/essays" },
 };
 
