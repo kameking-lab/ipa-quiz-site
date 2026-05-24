@@ -130,6 +130,11 @@ interface Props {
 
 const WRONG_ONLY: QuickActionId = "why-wrong";
 
+// Number of quick actions shown by default before the "+他N個を見る" toggle.
+// Six matches the plan recommendation: enough headroom for the most-used
+// affordances without crowding the panel with the full 12-action list.
+const QUICK_ACTION_COLLAPSED_COUNT = 6;
+
 interface SpeechRecognitionInstance {
   lang: string;
   continuous: boolean;
@@ -228,6 +233,7 @@ export function CopilotPanel({
   } | null>(null);
   const [copiedIdx, setCopiedIdx] = React.useState<number | null>(null);
   const [copiedAll, setCopiedAll] = React.useState(false);
+  const [quickActionsExpanded, setQuickActionsExpanded] = React.useState(false);
   const [actionsOpen, setActionsOpen] = React.useState(false);
   const actionsRef = React.useRef<HTMLDivElement | null>(null);
 
@@ -712,6 +718,13 @@ export function CopilotPanel({
     "analyze-e",
   ];
   if (isCorrect === false) quickActionIds.unshift(WRONG_ONLY);
+  const visibleQuickActionIds = quickActionsExpanded
+    ? quickActionIds
+    : quickActionIds.slice(0, QUICK_ACTION_COLLAPSED_COUNT);
+  const hiddenQuickActionCount = Math.max(
+    quickActionIds.length - QUICK_ACTION_COLLAPSED_COUNT,
+    0,
+  );
 
   const hasMessages = messages.length > 0;
   const twitterUrl = shareUrl
@@ -870,23 +883,41 @@ export function CopilotPanel({
             フィードバックを 1 度ご投稿いただくと、以降ほぼ無制限でご利用いただけます。
           </p>
         ) : (
-          <div className="flex flex-wrap gap-1.5">
-            {quickActionIds.map((id) => (
+          <>
+            <div
+              id="copilot-quickactions-list"
+              className="flex flex-wrap gap-1.5"
+            >
+              {visibleQuickActionIds.map((id) => (
+                <button
+                  key={id}
+                  onClick={() => send("", id)}
+                  disabled={streaming}
+                  className={cn(
+                    "rounded-full border px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
+                    id === WRONG_ONLY
+                      ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
+                      : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
+                  )}
+                >
+                  {QUICK_ACTIONS[id].label}
+                </button>
+              ))}
+            </div>
+            {hiddenQuickActionCount > 0 && (
               <button
-                key={id}
-                onClick={() => send("", id)}
-                disabled={streaming}
-                className={cn(
-                  "rounded-full border px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
-                  id === WRONG_ONLY
-                    ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
-                    : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
-                )}
+                type="button"
+                onClick={() => setQuickActionsExpanded((v) => !v)}
+                aria-expanded={quickActionsExpanded}
+                aria-controls="copilot-quickactions-list"
+                className="mt-2 inline-flex items-center gap-1 rounded-full border border-zinc-300 bg-white px-2.5 py-1 text-[11px] font-medium text-zinc-600 hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
               >
-                {QUICK_ACTIONS[id].label}
+                {quickActionsExpanded
+                  ? "閉じる"
+                  : `+他 ${hiddenQuickActionCount} 個を見る`}
               </button>
-            ))}
-          </div>
+            )}
+          </>
         )}
       </div>
 
