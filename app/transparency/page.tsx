@@ -161,12 +161,37 @@ export default async function TransparencyPage() {
         "運営の透明性レポート — 過去問AI",
         "過去問 AI の運営方針・コスト・意思決定を��次で公開しています。教育貢献プロジェクトとしての透明性レポート。",
       ),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "運営の透明性レポート",
+            item: `${SITE_BASE_URL}/transparency`,
+          },
+        ],
+      },
     ],
   };
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-8 sm:px-6">
       <JsonLd data={jsonLd} />
+      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          <li>
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              ホーム
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-foreground">
+            運営の透明性レポート
+          </li>
+        </ol>
+      </nav>
       <header className="mb-6">
         <Badge variant="success">教育貢献プロジェクト</Badge>
         <h1 className="mt-2 text-2xl font-bold sm:text-3xl">運営の透明性レポート</h1>

@@ -40,21 +40,51 @@ export const metadata: Metadata = {
 };
 
 export default function RecommendedBooksIndexPage() {
-  const itemListJsonLd = {
+  const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "IPA試験別 おすすめ問題集",
-    itemListElement: EXAM_ORDER.map((exam, index) => ({
-      "@type": "ListItem",
-      position: index + 1,
-      name: `${EXAM_LABELS[exam]} おすすめ問題集`,
-      url: `${SITE_BASE_URL}/recommended-books/${exam}`,
-    })),
+    "@graph": [
+      {
+        "@type": "ItemList",
+        name: "IPA試験別 おすすめ問題集",
+        itemListElement: EXAM_ORDER.map((exam, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: `${EXAM_LABELS[exam]} おすすめ問題集`,
+          url: `${SITE_BASE_URL}/recommended-books/${exam}`,
+        })),
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "おすすめ問題集",
+            item: `${SITE_BASE_URL}/recommended-books`,
+          },
+        ],
+      },
+    ],
   };
 
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-12 pt-6 sm:px-6">
-      <JsonLd data={itemListJsonLd} />
+      <JsonLd data={jsonLd} />
+
+      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          <li>
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              ホーム
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-foreground">
+            おすすめ問題集
+          </li>
+        </ol>
+      </nav>
 
       <Button asChild variant="ghost" size="sm" className="mb-3">
         <Link href="/">

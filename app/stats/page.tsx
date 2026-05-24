@@ -103,6 +103,18 @@ export default async function StatsPage() {
         "公開統計ダッシュボード — 過去問AI",
         "過去問AI の Google 検索表示回数・収録問題数・利用状況を公開しています。教育貢献プロジェクトの透明性レポート。",
       ),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "公開統計",
+            item: `${SITE_BASE_URL}/stats`,
+          },
+        ],
+      },
     ],
   };
 
@@ -110,6 +122,19 @@ export default async function StatsPage() {
     <main className="relative mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
       <JsonLd data={jsonLd} />
       <ViewTracker event="stats_viewed" />
+      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          <li>
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              ホーム
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-foreground">
+            公開統計
+          </li>
+        </ol>
+      </nav>
       {/* Hero */}
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-1.5">
