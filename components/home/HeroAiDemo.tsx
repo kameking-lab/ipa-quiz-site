@@ -1,23 +1,35 @@
 "use client";
 
 import * as React from "react";
-import { readUserContext } from "@/lib/storage/user-context";
-import { readLastQuestion } from "@/lib/storage/last-question";
+import { LS_KEYS } from "@/lib/storage/keys";
 
 // 5 秒ループの AI 解説デモ。動画ではなく CSS アニメーションのみで実装するため
 // 転送量はマークアップ + tailwind 数 KB で <500KB を確実に下回る。
 // セミアクセシビリティ: prefers-reduced-motion を尊重して停止する。
-// 役割: 初訪問者の信用獲得用なので、再訪 (visitCount >= 1 かつ lastSolvedAt
-// が存在) では非表示にして再訪者の認知負荷を減らす (削除候補 #4)。
+// 役割: 初訪問者の信用獲得用なので、いずれかの問題に解答済み (= history.entries が
+// 1件でもある) なら非表示にして再訪者の認知負荷を減らす (削除候補 #4)。
+// Phase 5 PR #368 では visitCount + lastQuestion を使っていたが、StreamQuiz /
+// DailyChallenge / MockExam 経由の解答は writeLastQuestion を呼ばず、シグナル
+// として漏れがあったため、history.entries を直接見る方式に切替 (UX レビュー v2)。
+
+function hasAnyHistory(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const raw = window.localStorage.getItem(LS_KEYS.history);
+    if (!raw) return false;
+    const parsed = JSON.parse(raw) as { entries?: unknown };
+    return Array.isArray(parsed.entries) && parsed.entries.length > 0;
+  } catch {
+    return false;
+  }
+}
 
 export function HeroAiDemo() {
   const [mounted, setMounted] = React.useState(false);
   const [hide, setHide] = React.useState(false);
 
   React.useEffect(() => {
-    const ctx = readUserContext();
-    const last = readLastQuestion();
-    setHide(ctx.visitCount >= 1 && last !== null);
+    setHide(hasAnyHistory());
     setMounted(true);
   }, []);
 
