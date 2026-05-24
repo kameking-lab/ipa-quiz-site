@@ -7,6 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getAllSuccessStorySlugs,
   getRelatedSuccessStories,
+  getSimilarPersonaStories,
   getSuccessStoryBySlug,
 } from "@/data/success-stories";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -66,6 +67,7 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/success-stories/${exam}/${slug}`;
   const related = getRelatedSuccessStories(slug, 4);
+  const similarPersonas = getSimilarPersonaStories(slug, 4);
   const label = examLabel(exam);
 
   const articleOgParams = new URLSearchParams({
@@ -401,6 +403,46 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
                   </h3>
                   <p className="mt-1 line-clamp-2 text-xs text-zinc-600 dark:text-zinc-400">
                     {r.description}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      {similarPersonas.length > 0 ? (
+        <section
+          aria-label="あなたに似た人の体験記"
+          className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800"
+          style={{ minHeight: 280 }}
+        >
+          <h2 className="mb-4 text-base font-bold text-zinc-900 dark:text-zinc-50 sm:text-lg">
+            あなたに似た人の体験記
+          </h2>
+          <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {similarPersonas.map((m) => (
+              <li key={m.story.slug}>
+                <Link
+                  href={`/success-stories/${m.story.exam}/${m.story.slug}`}
+                  className="block h-full rounded-2xl border border-zinc-200 bg-white p-4 transition-colors hover:border-sky-300 hover:bg-sky-50/40 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700 dark:hover:bg-sky-950/20"
+                >
+                  <div className="mb-1.5 flex flex-wrap items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
+                    <span className="rounded bg-sky-100 px-1.5 py-0.5 font-semibold text-sky-700 dark:bg-sky-950 dark:text-sky-300">
+                      {examLabel(m.story.exam)}
+                    </span>
+                    <span className="rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-medium text-amber-800 dark:bg-amber-950/60 dark:text-amber-200">
+                      {m.reason}
+                    </span>
+                  </div>
+                  <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
+                    {m.story.title}
+                  </h3>
+                  <p className="mt-1 line-clamp-2 text-xs text-zinc-600 dark:text-zinc-400">
+                    {m.story.description}
+                  </p>
+                  <p className="mt-1.5 text-[11px] text-zinc-500 dark:text-zinc-500">
+                    {m.story.ageRange} / {m.story.occupation} / {m.story.studyMonths}か月
                   </p>
                 </Link>
               </li>
