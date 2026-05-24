@@ -271,11 +271,6 @@ export function SearchClient() {
 
   // Fetch results
   const fetchResults = useCallback(async (q: ActiveQuery) => {
-    if (!hasAnyFilter(q)) {
-      setResult(null);
-      setError(null);
-      return;
-    }
     abortRef.current?.abort();
     const ctrl = new AbortController();
     abortRef.current = ctrl;
@@ -390,7 +385,6 @@ export function SearchClient() {
     });
   }, []);
 
-  const filterActive = hasAnyFilter(query);
   const currentParamsStr = toParams(query).toString();
   const isCurrentSaved = savedSearches.some((s) => s.params === currentParamsStr);
   const tokens = useMemo(
@@ -433,37 +427,32 @@ export function SearchClient() {
         onDeleteSaved={deleteSavedSearch}
       />
 
-      {filterActive && (
-        <>
-          {/* Toolbar: save, recent filter, sort */}
-          <SearchToolbar
-            isCurrentSaved={isCurrentSaved}
-            onToggleSave={toggleSaveSearch}
-            recentOnly={recentOnly}
-            onToggleRecentOnly={() => setRecentOnly((v) => !v)}
-            hasRecentlyViewed={recentlyViewedIds.size > 0}
-            sort={query.sort}
-            onSortChange={(sort) => updateQuery({ sort })}
-            hasFacetForPractice={hasFacetForPractice}
-            practiceUrl={practiceUrl}
-            total={filteredHits?.total ?? 0}
-            loading={loading}
-          />
+      {/* Toolbar: save, recent filter, sort — always visible */}
+      <SearchToolbar
+        isCurrentSaved={isCurrentSaved}
+        onToggleSave={toggleSaveSearch}
+        recentOnly={recentOnly}
+        onToggleRecentOnly={() => setRecentOnly((v) => !v)}
+        hasRecentlyViewed={recentlyViewedIds.size > 0}
+        sort={query.sort}
+        onSortChange={(sort) => updateQuery({ sort })}
+        hasFacetForPractice={hasFacetForPractice}
+        practiceUrl={practiceUrl}
+        total={filteredHits?.total ?? 0}
+        loading={loading}
+      />
 
-          {/* Facet Panel */}
-          <FacetPanel
-            facets={result?.facets}
-            query={query}
-            onChange={updateQuery}
-          />
-        </>
-      )}
+      {/* Facet Panel — always visible so users can browse without typing */}
+      <FacetPanel
+        facets={result?.facets}
+        query={query}
+        onChange={updateQuery}
+      />
 
       <ResultsPanel
         loading={loading}
         error={error}
         result={filteredHits}
-        query={query}
         tokens={tokens}
       />
     </div>
@@ -582,7 +571,7 @@ function HistoryBar({
             )}
           >
             <History className="h-3 w-3" aria-hidden="true" />
-            検索履歴 ({history.length})
+            履歴 ({history.length}件)
           </button>
         )}
         {saved.length > 0 && (
@@ -698,7 +687,7 @@ function SearchToolbar({
         ) : (
           <BookmarkPlus className="h-3 w-3" aria-hidden="true" />
         )}
-        {isCurrentSaved ? "保存済み" : "保存"}
+        {isCurrentSaved ? "条件保存済み" : "この検索条件を保存"}
       </button>
 
       {/* Recently viewed filter */}
@@ -940,24 +929,10 @@ interface ResultsPanelProps {
   loading: boolean;
   error: string | null;
   result: SearchResponse | null;
-  query: ActiveQuery;
   tokens: string[];
 }
 
-function ResultsPanel({ loading, error, result, query, tokens }: ResultsPanelProps) {
-  const filterActive = hasAnyFilter(query);
-
-  if (!filterActive) {
-    return (
-      <section
-        aria-live="polite"
-        className="rounded-2xl border border-dashed border-border bg-card/50 p-6 text-center text-sm text-muted-foreground"
-      >
-        キーワードまたは絞り込み条件を指定すると、過去問が検索できます。
-      </section>
-    );
-  }
-
+function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
   if (error) {
     return (
       <section
