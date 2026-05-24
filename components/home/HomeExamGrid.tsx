@@ -261,7 +261,7 @@ function ExamCard({
         <Link
           href={`/quiz?mode=random&exam=${exam.id}`}
           aria-label={`${exam.name}をランダム出題で開始`}
-          className="absolute bottom-1.5 right-1.5 z-10 inline-flex min-h-[44px] items-center gap-1 whitespace-nowrap rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400"
+          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1 whitespace-nowrap rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400 min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:w-auto min-[480px]:justify-start"
         >
           <Shuffle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           今すぐ解く →
@@ -270,9 +270,10 @@ function ExamCard({
         <Link
           href={`/quiz?mode=random&exam=${exam.id}`}
           aria-label={`${exam.name}をランダム出題で開始`}
-          className="absolute bottom-1.5 right-1.5 z-10 flex h-11 w-11 items-center justify-center rounded-md bg-white/90 text-sky-700 shadow-sm ring-1 ring-sky-200 transition hover:bg-sky-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-zinc-900/90 dark:text-sky-300 dark:ring-sky-800 dark:hover:bg-sky-600 dark:hover:text-white"
+          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-md bg-white/90 px-3 py-2 text-xs font-semibold text-sky-700 shadow-sm ring-1 ring-sky-200 transition hover:bg-sky-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-zinc-900/90 dark:text-sky-300 dark:ring-sky-800 dark:hover:bg-sky-600 dark:hover:text-white min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:h-11 min-[480px]:w-11 min-[480px]:justify-center min-[480px]:gap-0 min-[480px]:px-0 min-[480px]:py-0 min-[480px]:text-transparent"
         >
-          <Shuffle className="h-4 w-4" aria-hidden="true" />
+          <Shuffle className="h-4 w-4 shrink-0" aria-hidden="true" />
+          <span className="min-[480px]:hidden">ランダムに解く →</span>
         </Link>
       )}
     </div>
