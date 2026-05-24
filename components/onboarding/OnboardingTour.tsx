@@ -94,11 +94,15 @@ export function OnboardingTour() {
   const [showAllExams, setShowAllExams] = React.useState(false);
 
   React.useEffect(() => {
+    // Read once at mount. The state is permanent in LocalStorage, so the
+    // modal can only appear during this single mount on the very first visit
+    // (or until the user completes / dismisses it). Opening synchronously
+    // here means the dialog is committed before the user has a chance to
+    // start scrolling, instead of popping up mid-scroll after a delay.
     const state = readOnboardingState();
     if (shouldShowTour(state)) {
       markFirstVisit();
-      const t = window.setTimeout(() => setOpen(true), 700);
-      return () => window.clearTimeout(t);
+      setOpen(true);
     }
   }, []);
 
@@ -297,6 +301,14 @@ export function OnboardingTour() {
                 高度試験を含む全13区分を表示
               </button>
             )}
+            {!selectedExam && (
+              <p
+                aria-live="polite"
+                className="text-xs text-amber-600 dark:text-amber-400"
+              >
+                受験予定の試験区分を選ぶと「次へ」が押せるようになります。
+              </p>
+            )}
           </div>
         )}
 
@@ -357,16 +369,37 @@ export function OnboardingTour() {
               </Button>
             )}
             {step < TOTAL_STEPS && (
-              <Button
-                variant="primary"
-                size="md"
-                onClick={() => setStep((s) => Math.min(TOTAL_STEPS, s + 1))}
-                disabled={!canAdvance}
-                aria-label="次のステップへ"
+              <span
+                className={
+                  canAdvance
+                    ? undefined
+                    : "inline-flex cursor-not-allowed rounded-xl ring-1 ring-dashed ring-border"
+                }
+                title={
+                  canAdvance
+                    ? undefined
+                    : step === 3
+                      ? "受験予定の試験区分を選んでください"
+                      : "選択肢から1つお選びください"
+                }
               >
-                次へ
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Button>
+                <Button
+                  variant="primary"
+                  size="md"
+                  onClick={() => setStep((s) => Math.min(TOTAL_STEPS, s + 1))}
+                  disabled={!canAdvance}
+                  aria-label={
+                    canAdvance
+                      ? "次のステップへ"
+                      : step === 3
+                        ? "次のステップへ進むには試験区分を選択してください"
+                        : "次のステップへ進むには選択肢を選んでください"
+                  }
+                >
+                  次へ
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Button>
+              </span>
             )}
             {step === TOTAL_STEPS && (
               <Button

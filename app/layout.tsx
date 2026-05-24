@@ -7,6 +7,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
+import { OnboardingTour } from "@/components/onboarding/OnboardingTour";
 import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyticsWithPrivacy";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
@@ -131,6 +132,7 @@ export default function RootLayout({
           <ServiceWorkerRegistration />
           <div className="print:hidden">
             <DeferredLayoutWidgets />
+            <OnboardingTour />
           </div>
           <VercelAnalyticsWithPrivacy />
           <a
