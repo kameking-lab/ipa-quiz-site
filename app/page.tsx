@@ -5,6 +5,10 @@ import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
+import {
+  HomeReturningHeader,
+  type RecommendationItem,
+} from "@/components/home/HomeReturningHeader";
 import { LearningCalendar } from "@/components/home/LearningCalendar";
 import { HomeAuxSection } from "@/components/home/HomeAuxSection";
 import { ContinueFromLast } from "@/components/ContinueFromLast";
@@ -58,6 +62,22 @@ export default function HomePage() {
     .filter(([, count]) => count > 0)
     .sort(([, a], [, b]) => b - a);
 
+  // Stable pool for the returning-user 'today's picks' carousel. The
+  // client component picks 5 per calendar date from this server-prepared
+  // list so we do not ship the full ALL_QUESTIONS payload to the bundle.
+  const recommendationPool: RecommendationItem[] = ALL_QUESTIONS
+    .filter((q) => !q.needsReview && q.choices && q.year >= 2020)
+    .slice(0, 200)
+    .map((q) => ({
+      id: q.id,
+      exam: q.exam,
+      year: q.year,
+      season: q.season,
+      session: q.session,
+      qNumber: q.qNumber,
+      category: q.category,
+    }));
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -110,6 +130,8 @@ export default function HomePage() {
       <div className="mb-6">
         <SiteLogo />
       </div>
+
+      <HomeReturningHeader recommendationPool={recommendationPool} />
 
       <section aria-labelledby="exam-picker-heading" className="mb-6">
         <h1
