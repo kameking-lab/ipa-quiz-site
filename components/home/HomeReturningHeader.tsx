@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles, Target } from "lucide-react";
 import { readUserContext, recordHomepageVisit } from "@/lib/storage/user-context";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
+import { readOnboardingState } from "@/lib/onboarding/state";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
@@ -57,11 +58,57 @@ function pickN<T>(arr: T[], n: number, seed: number): T[] {
   return a.slice(0, n);
 }
 
+type RecommendMode = "target" | "history";
+
+/**
+ * Build a 5-item recommendation list weighted ~70% target / ~30% history.
+ * With 5 picks that maps to 4 from target + 1 from history exam.
+ * Falls back gracefully when either pool is empty.
+ */
+function buildWeightedRecommendations(
+  pool: RecommendationItem[],
+  targetExam: ExamCode | null,
+  historyExam: ExamCode | null,
+  seed: number,
+): RecommendationItem[] {
+  const TOTAL = 5;
+  if (!targetExam && !historyExam) {
+    return pickN(pool, TOTAL, seed);
+  }
+  if (targetExam && historyExam && targetExam !== historyExam) {
+    const targetPool = pool.filter((r) => r.exam === targetExam);
+    const historyPool = pool.filter((r) => r.exam === historyExam);
+    const fromTarget = pickN(targetPool, 4, seed);
+    const fromHistory = pickN(historyPool, 1, seed ^ 0x9e3779b1);
+    const combined = [...fromTarget, ...fromHistory];
+    if (combined.length >= TOTAL) return combined.slice(0, TOTAL);
+    // Pad from the other pool first, then from the full pool, to stay relevant.
+    const seen = new Set(combined.map((r) => r.id));
+    const fillers = [
+      ...targetPool,
+      ...historyPool,
+      ...pool,
+    ].filter((r) => !seen.has(r.id));
+    return [...combined, ...pickN(fillers, TOTAL - combined.length, seed)].slice(0, TOTAL);
+  }
+  const primary = targetExam ?? historyExam!;
+  const primaryPool = pool.filter((r) => r.exam === primary);
+  if (primaryPool.length >= TOTAL) return pickN(primaryPool, TOTAL, seed);
+  // primaryPool too small: pad from broader pool.
+  const seen = new Set(primaryPool.map((r) => r.id));
+  const fillers = pool.filter((r) => !seen.has(r.id));
+  return [
+    ...primaryPool,
+    ...pickN(fillers, TOTAL - primaryPool.length, seed),
+  ].slice(0, TOTAL);
+}
+
 export function HomeReturningHeader({ recommendationPool }: Props) {
   const [mounted, setMounted] = React.useState(false);
   const [show, setShow] = React.useState(false);
   const [lastQuestion, setLastQuestion] = React.useState<LastQuestionState | null>(null);
-  const [recommendations, setRecommendations] = React.useState<RecommendationItem[]>([]);
+  const [targetExam, setTargetExam] = React.useState<ExamCode | null>(null);
+  const [mode, setMode] = React.useState<RecommendMode>("target");
 
   React.useEffect(() => {
     // Read the existing visit count BEFORE recording the new one so the
@@ -69,20 +116,28 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
     // 2nd load onward (post-merge with onboarding completion).
     const prior = readUserContext();
     const last = readLastQuestion();
+    const onboarding = readOnboardingState();
     recordHomepageVisit();
     setMounted(true);
 
     const isReturning = prior.visitCount >= 1 && last !== null;
     setShow(isReturning);
     setLastQuestion(last);
+    setTargetExam(onboarding.selectedExam ?? null);
+    setMode(onboarding.selectedExam ? "target" : "history");
+  }, []);
 
-    const exam = (last?.exam ?? "ap") as ExamCode;
-    const examPool = recommendationPool.filter((r) => r.exam === exam);
-    const pool = examPool.length >= 5 ? examPool : recommendationPool;
-    setRecommendations(pickN(pool, 5, dateSeed()));
-  }, [recommendationPool]);
+  const recommendations = React.useMemo(() => {
+    const historyExam = (lastQuestion?.exam ?? null) as ExamCode | null;
+    if (mode === "history") {
+      return buildWeightedRecommendations(recommendationPool, null, historyExam, dateSeed());
+    }
+    return buildWeightedRecommendations(recommendationPool, targetExam, historyExam, dateSeed());
+  }, [recommendationPool, targetExam, lastQuestion, mode]);
 
   if (!mounted || !show) return null;
+
+  const hasToggle = targetExam !== null && lastQuestion !== null && targetExam !== lastQuestion.exam;
 
   return (
     <section
@@ -92,6 +147,47 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
       <h2 id="returning-header" className="sr-only">
         おかえりなさい
       </h2>
+
+      {targetExam && (
+        <div className="mb-3 flex items-center justify-between gap-2">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
+            <Target className="h-3.5 w-3.5" aria-hidden="true" />
+            目標: {examLabel(targetExam)}
+          </span>
+          {hasToggle && (
+            <div
+              role="group"
+              aria-label="おすすめの基準を切り替え"
+              className="inline-flex rounded-full border border-border bg-card p-0.5 text-[11px] font-medium"
+            >
+              <button
+                type="button"
+                onClick={() => setMode("target")}
+                aria-pressed={mode === "target"}
+                className={
+                  mode === "target"
+                    ? "rounded-full bg-primary px-2.5 py-1 text-primary-foreground"
+                    : "rounded-full px-2.5 py-1 text-muted-foreground hover:text-foreground"
+                }
+              >
+                目標
+              </button>
+              <button
+                type="button"
+                onClick={() => setMode("history")}
+                aria-pressed={mode === "history"}
+                className={
+                  mode === "history"
+                    ? "rounded-full bg-primary px-2.5 py-1 text-primary-foreground"
+                    : "rounded-full px-2.5 py-1 text-muted-foreground hover:text-foreground"
+                }
+              >
+                履歴
+              </button>
+            </div>
+          )}
+        </div>
+      )}
 
       {lastQuestion && (
         <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-4 shadow-sm sm:p-5">
