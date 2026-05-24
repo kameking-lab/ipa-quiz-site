@@ -69,24 +69,6 @@ export async function GET(req: Request) {
   }
 
   const data = parsed.data;
-  const hasAnyFilter =
-    Boolean(data.q) ||
-    Boolean(data.exam) ||
-    data.year !== undefined ||
-    Boolean(data.season) ||
-    Boolean(data.session) ||
-    Boolean(data.category) ||
-    Boolean(data.topicTag) ||
-    data.difficulty !== undefined ||
-    data.hasImage !== undefined ||
-    data.calculationOnly === true;
-
-  if (!hasAnyFilter) {
-    return NextResponse.json(
-      { total: 0, hits: [], facets: { exam: {}, year: {}, season: {}, category: {}, difficulty: {} }, limit: 0, offset: 0 },
-      { headers: { "Cache-Control": "no-store" } },
-    );
-  }
 
   const result = await searchQuestions({
     q: data.q,
