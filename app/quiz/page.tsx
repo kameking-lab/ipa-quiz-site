@@ -25,6 +25,12 @@ interface SearchParams {
   categoryGroup?: string;
   calc?: string;
   order?: string;
+  /**
+   * Optional pool cap. /quickstart/[exam] sends `limit=3` for the
+   * '3問体験' flow; without this server-side slice the QuizPlayer's
+   * progress counter said '1問目 / 80問中' instead of '1問目 / 3問中'.
+   */
+  limit?: string;
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
@@ -69,7 +75,11 @@ export default async function QuizPage({
     inOrder: sp.order === "1",
   };
 
-  const poolIds = await getPoolIds(filter);
+  const fullPoolIds = await getPoolIds(filter);
+  // Honor the optional limit query (e.g. /quickstart 3問体験 sends limit=3).
+  // Cap at 200 so a malformed value cannot make the page hang.
+  const limit = sp.limit ? Math.max(1, Math.min(200, Number(sp.limit) || 0)) : 0;
+  const poolIds = limit > 0 ? fullPoolIds.slice(0, limit) : fullPoolIds;
 
   let categoryById: Record<string, string> | undefined;
   if (mode === "weakness") {
