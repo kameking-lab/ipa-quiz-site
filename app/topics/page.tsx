@@ -20,9 +20,9 @@ const OG_IMAGE = (() => {
 export function generateMetadata(): Metadata {
   const all = getAllTopics();
   const base: Metadata = {
-    title: "トピック別過去問インデックス",
+    title: "トピック別過去問インデックス｜過去問AI",
     description:
-      "IPA 情報処理技術者試験の過去問をトピック（キーワード）軸で横断的に学習。試験区分をまたいで同じテーマの問題を一覧できます。",
+      "IPA 情報処理技術者試験（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の過去問をトピック（キーワード）軸で横断的に学習。試験区分をまたいで同じテーマの問題を一覧でき、苦手分野の集中演習に最適です。",
     alternates: { canonical: "/topics" },
     openGraph: {
       title: "トピック別過去問インデックス | 過去問AI",
