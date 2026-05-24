@@ -427,11 +427,11 @@ export function SearchClient() {
         onDeleteSaved={deleteSavedSearch}
       />
 
-      {/* PC: facet panel sits in a sticky left rail (≈18rem) while the right */}
-      {/* column scrolls; mobile keeps the prior stacked layout so the chip */}
-      {/* row never competes with vertical real-estate. */}
-      <div className="md:grid md:grid-cols-[18rem_minmax(0,1fr)] md:gap-6">
-        <div className="md:sticky md:top-20 md:self-start md:max-h-[calc(100dvh-6rem)] md:overflow-y-auto md:pr-1">
+      {/* PC: facet panel sits in a left rail (≈18rem) while the right */}
+      {/* column carries toolbar + results; mobile keeps the prior stacked */}
+      {/* layout so the chip row never competes with vertical real-estate. */}
+      <div className="md:grid md:grid-cols-[18rem_minmax(0,1fr)] md:gap-6 md:items-start">
+        <div className="md:sticky md:top-4">
           <FacetPanel
             facets={result?.facets}
             query={query}
