@@ -3,7 +3,14 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Settings, ChevronDown } from "lucide-react";
+import {
+  Menu,
+  Settings,
+  ChevronDown,
+  Search,
+  Bookmark,
+  ClipboardList,
+} from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
 import { StreakBadge } from "@/lib/streak/StreakBadge";
 import { ThemeToggle } from "./ThemeToggle";
@@ -43,6 +50,9 @@ export function SiteHeader() {
     pathname?.startsWith("/quiz") || pathname?.startsWith("/mock-exam");
   const isAccountActive = pathname?.startsWith("/account");
   const isBooksActive = pathname?.startsWith("/recommended-books");
+  const isSearchActive = pathname?.startsWith("/search");
+  const isBookmarksActive = pathname?.startsWith("/bookmarks");
+  const isMockExamActive = pathname?.startsWith("/mock-exam");
 
   return (
     <header
@@ -116,6 +126,45 @@ export function SiteHeader() {
               )}
             </div>
 
+            <Link
+              href="/mock-exam"
+              className={cn(
+                "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                isMockExamActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+              aria-current={isMockExamActive ? "page" : undefined}
+            >
+              <ClipboardList className="h-4 w-4" aria-hidden="true" />
+              模試
+            </Link>
+            <Link
+              href="/search"
+              className={cn(
+                "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                isSearchActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+              aria-current={isSearchActive ? "page" : undefined}
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+              検索
+            </Link>
+            <Link
+              href="/bookmarks"
+              className={cn(
+                "flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
+                isBookmarksActive
+                  ? "text-foreground"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground",
+              )}
+              aria-current={isBookmarksActive ? "page" : undefined}
+            >
+              <Bookmark className="h-4 w-4" aria-hidden="true" />
+              ブックマーク
+            </Link>
             <Link
               href="/account/dashboard"
               className={cn(
