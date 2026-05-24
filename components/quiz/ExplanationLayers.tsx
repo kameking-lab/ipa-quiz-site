@@ -7,23 +7,45 @@ type Layer = {
   tone: "primary" | "neutral" | "muted";
 };
 
+/**
+ * Split a single paragraph into [結論, 詳細] when the paragraph carries 3
+ * or more sentences. Most IPA explanations arrive as a single paragraph,
+ * so without this fallback ~86% of /q/* pages emitted only LAYER 1 and
+ * the LAYER 2/3 <details open> shells were missing — bad for both SEO
+ * body thickness and the scannable-then-collapsible reading affordance.
+ *
+ * We do NOT synthesize content not in the source data — just re-shape
+ * the existing prose into the layer container.
+ */
+function splitSingleParagraphBySentence(para: string): string[] {
+  const matches = para.match(/[^。]+。/g);
+  if (!matches || matches.length < 3) return [para];
+  return [matches[0], matches.slice(1).join("")];
+}
+
 function splitLayers(explanation: string): Layer[] {
-  const paragraphs = explanation
+  let paragraphs = explanation
     .split(/\n{2,}/)
     .map((p) => p.trim())
     .filter(Boolean);
 
   if (paragraphs.length === 0) return [];
 
+  // Single paragraph + ≥3 sentences → reshape into 結論 + 詳細.
   if (paragraphs.length === 1) {
-    return [
-      {
-        label: "解説",
-        icon: <Lightbulb className="h-3.5 w-3.5" />,
-        body: paragraphs[0],
-        tone: "primary",
-      },
-    ];
+    const sentenceSplit = splitSingleParagraphBySentence(paragraphs[0]);
+    if (sentenceSplit.length === 2) {
+      paragraphs = sentenceSplit;
+    } else {
+      return [
+        {
+          label: "解説",
+          icon: <Lightbulb className="h-3.5 w-3.5" />,
+          body: paragraphs[0],
+          tone: "primary",
+        },
+      ];
+    }
   }
 
   if (paragraphs.length === 2) {
