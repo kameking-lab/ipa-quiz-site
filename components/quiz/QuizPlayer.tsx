@@ -9,7 +9,10 @@ import { ChoiceButton } from "./ChoiceButton";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
 import { TtsControls } from "./TtsControls";
-import { CopilotPanel, CopilotMobileSheet } from "@/components/copilot/CopilotPanel";
+import {
+  CopilotMobileSheet,
+  CopilotDesktopFloating,
+} from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
@@ -459,25 +462,22 @@ export function QuizPlayer({
           )}
         </main>
 
-        <aside aria-label="AI コパイロット" className="hidden shrink-0 border-l border-zinc-200 sm:block sm:w-[40%] lg:w-[380px] dark:border-zinc-800">
-          <div className="sticky top-[52px] h-[calc(100dvh-52px)]">
-            <CopilotPanel
-              question={question}
-              selectedChoice={selected}
-              isCorrect={revealed ? isCorrect : undefined}
-              onRateLimitHit={() => setUpsellOpen(true)}
-              headerRight={
-                copilotQuery === "why-wrong" ? (
-                  <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] text-red-700 dark:bg-red-900 dark:text-red-200">
-                    誤答分析待機
-                  </span>
-                ) : null
-              }
-              key={question.id + (copilotQuery ?? "")}
-            />
-          </div>
-        </aside>
       </div>
+
+      <CopilotDesktopFloating
+        question={question}
+        selectedChoice={selected}
+        isCorrect={revealed ? isCorrect : undefined}
+        onRateLimitHit={() => setUpsellOpen(true)}
+        headerRight={
+          copilotQuery === "why-wrong" ? (
+            <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] text-red-700 dark:bg-red-900 dark:text-red-200">
+              誤答分析待機
+            </span>
+          ) : null
+        }
+        key={`desktop-${question.id}-${copilotQuery ?? ""}`}
+      />
 
       <CopilotMobileSheet
         question={question}
@@ -491,7 +491,7 @@ export function QuizPlayer({
         <div className="fixed bottom-24 right-4 z-30 hidden sm:block">
           <div className="rounded-full bg-sky-600 px-3 py-1 text-xs text-white shadow">
             <Sparkles className="mr-1 inline h-3 w-3" />
-            右パネルでAIが待機中
+            右下のボタンからAIに質問できます
           </div>
         </div>
       )}

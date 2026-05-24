@@ -1332,3 +1332,89 @@ export function CopilotMobileSheet({
     </>
   );
 }
+
+/**
+ * PC variant of the AI copilot. Replaces the previous always-on right-rail
+ * sidebar with a floating action button at the lower-right and a right-
+ * docked slide-in panel — mirroring the mobile pattern so users keep the
+ * problem at full width while reading and only open AI when they need it.
+ */
+export function CopilotDesktopFloating({
+  question,
+  selectedChoice,
+  isCorrect,
+  onRateLimitHit,
+  headerRight,
+}: Omit<Props, "className" | "onClose">) {
+  const [open, setOpen] = React.useState(false);
+  const panelRef = React.useRef<HTMLDivElement | null>(null);
+
+  React.useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // When the panel opens, push focus into the first input (search box) so
+  // the keyboard user lands somewhere useful inside the dialog.
+  React.useEffect(() => {
+    if (!open) return;
+    const t = window.setTimeout(() => {
+      const target =
+        panelRef.current?.querySelector<HTMLElement>(
+          "input[type='search'], textarea, input, [tabindex='0']",
+        ) ?? panelRef.current;
+      target?.focus({ preventScroll: true });
+    }, 60);
+    return () => window.clearTimeout(t);
+  }, [open]);
+
+  return (
+    <>
+      {!open && (
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          aria-label="AI コパイロットを開く"
+          aria-expanded={open}
+          className="bottom-safe fixed right-6 z-40 hidden h-14 items-center gap-2 rounded-full bg-sky-600 pl-4 pr-5 text-sm font-semibold text-white shadow-xl transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
+        >
+          <Sparkles className="h-4 w-4" aria-hidden="true" />
+          AIに聞く
+        </button>
+      )}
+      {open && (
+        <div
+          className="fixed inset-0 z-50 hidden sm:block"
+          role="dialog"
+          aria-modal="true"
+          aria-label="AI コパイロット"
+        >
+          {/* Semi-transparent overlay so the underlying question stays readable. */}
+          <div
+            className="absolute inset-0 bg-zinc-900/30 backdrop-blur-[1px]"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
+          <div
+            ref={panelRef}
+            className="absolute inset-y-0 right-0 flex w-[min(420px,90vw)] flex-col bg-white shadow-2xl dark:bg-zinc-950"
+          >
+            <CopilotPanel
+              question={question}
+              selectedChoice={selectedChoice}
+              isCorrect={isCorrect}
+              onRateLimitHit={onRateLimitHit}
+              onClose={() => setOpen(false)}
+              headerRight={headerRight}
+              className="h-full"
+            />
+          </div>
+        </div>
+      )}
+    </>
+  );
+}
