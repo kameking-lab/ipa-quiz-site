@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Bookmark, Download, Upload, Trash2, X } from "lucide-react";
+import { Bookmark, Download, Upload, Trash2, X, ArrowRight } from "lucide-react";
 import {
   getAllBookmarks,
   clearAllBookmarks,
@@ -15,7 +15,21 @@ import {
 import { TagInput } from "@/components/TagInput";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { cn } from "@/lib/utils";
-import type { Question } from "@/lib/questions/types";
+import type { Question, Season, Session } from "@/lib/questions/types";
+
+/**
+ * BookmarkEntry stores only the display fields, not session ("am" / "am1" / etc).
+ * Parse it back out of the question id so we can build the canonical /q/* path.
+ * Falls back to "am" for any non-conforming id.
+ */
+function sessionFromId(id: string): Session {
+  const match = /^[a-z]+-\d{4}[a-z]-(am\d?|pm\d?)-q\d+$/.exec(id);
+  return (match?.[1] ?? "am") as Session;
+}
+
+function questionUrl(entry: BookmarkEntry): string {
+  return `/q/${entry.exam}/${entry.year}-${entry.season as Season}/${sessionFromId(entry.questionId)}/q${entry.qNumber}`;
+}
 
 export default function BookmarksPage() {
   const [bookmarks, setBookmarks] = React.useState<BookmarkEntry[]>([]);
@@ -259,6 +273,17 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
       </p>
 
       <TagInput tags={entry.tags} onChange={onTagsChange} />
+
+      <div className="mt-3 flex justify-end">
+        <Link
+          href={questionUrl(entry)}
+          className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-blue-500 dark:hover:bg-blue-400"
+          aria-label={`${examLabel(entry.exam)} ${formatYearSeason(entry.year, entry.season)} 問${entry.qNumber}を解く`}
+        >
+          この問題を解く
+          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+        </Link>
+      </div>
     </div>
   );
 }
