@@ -18,7 +18,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { examLabel } from "@/lib/utils";
-import { Loader2, Timer } from "lucide-react";
+import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
 const AVAILABLE_EXAMS: ExamCode[] = [
@@ -193,21 +193,12 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
         </Card>
       )}
 
-      <div className="mb-4 flex flex-nowrap gap-2 overflow-x-auto pb-1">
-        {AVAILABLE_EXAMS.map((e) => (
-          <button
-            key={e}
-            onClick={() => setExam(e)}
-            className={`h-8 flex-shrink-0 rounded-full px-3 text-xs font-medium transition ${
-              exam === e
-                ? "bg-sky-600 text-white"
-                : "bg-zinc-100 text-zinc-700 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300"
-            }`}
-          >
-            {examLabel(e)}
-          </button>
-        ))}
-      </div>
+      <ExamSelector
+        exams={AVAILABLE_EXAMS}
+        current={exam}
+        defaultExam="ap"
+        onSelect={setExam}
+      />
 
       <Card className="mb-4 min-h-[200px]">
         <CardContent className="pt-5">
@@ -249,6 +240,8 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
               })}
             </div>
           </div>
+
+          <ResultPreviewHint />
 
           <div className="mt-5">
             <Button
@@ -402,5 +395,112 @@ function ScoreTrend({
         </svg>
       </CardContent>
     </Card>
+  );
+}
+
+interface ExamSelectorProps {
+  exams: ExamCode[];
+  current: ExamCode;
+  defaultExam: ExamCode;
+  onSelect: (e: ExamCode) => void;
+}
+
+function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorProps) {
+  const [userPicked, setUserPicked] = React.useState(false);
+  const handle = (e: ExamCode) => {
+    setUserPicked(true);
+    onSelect(e);
+  };
+  const showingDefault = !userPicked && current === defaultExam;
+
+  return (
+    <div className="mb-4">
+      {/* Mobile: native select keeps the choice one-tap and avoids horizontal scroll. */}
+      <label className="block sm:hidden">
+        <span className="mb-1 block text-xs font-semibold text-zinc-600 dark:text-zinc-400">
+          試験区分を選択
+        </span>
+        <div className="relative">
+          <select
+            aria-label="模試の試験区分"
+            value={current}
+            onChange={(ev) => handle(ev.target.value as ExamCode)}
+            className="h-11 w-full appearance-none rounded-xl border border-zinc-300 bg-white pl-3 pr-9 text-sm text-zinc-900 focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500/30 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
+          >
+            {exams.map((e) => (
+              <option key={e} value={e}>
+                {examLabel(e)}
+                {e === defaultExam ? "（既定）" : ""}
+              </option>
+            ))}
+          </select>
+          <ChevronDown
+            className="pointer-events-none absolute right-3 top-1/2 h-4 w-4 -translate-y-1/2 text-zinc-500"
+            aria-hidden="true"
+          />
+        </div>
+        {showingDefault && (
+          <p className="mt-1 text-[11px] text-zinc-500">
+            既定の応用情報を表示中です。タップで変更できます。
+          </p>
+        )}
+      </label>
+
+      {/* PC: 13-card grid, no horizontal scroll. Active state shows whether */}
+      {/* it was user-picked vs the default fallback. */}
+      <div
+        role="radiogroup"
+        aria-label="模試の試験区分"
+        className="hidden grid-cols-3 gap-2 sm:grid lg:grid-cols-5"
+      >
+        {exams.map((e) => {
+          const active = current === e;
+          const isDefaultFallback = active && !userPicked && e === defaultExam;
+          return (
+            <button
+              key={e}
+              type="button"
+              role="radio"
+              aria-checked={active}
+              onClick={() => handle(e)}
+              className={
+                active
+                  ? "relative min-h-[44px] rounded-xl border-2 border-sky-500 bg-sky-50 px-2 py-2 text-xs font-semibold text-sky-900 shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-sky-950/40 dark:text-sky-100"
+                  : "min-h-[44px] rounded-xl border border-zinc-200 bg-white px-2 py-2 text-xs font-medium text-zinc-700 transition hover:border-sky-300 hover:bg-sky-50/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-sky-950/30"
+              }
+            >
+              {examLabel(e)}
+              {isDefaultFallback && (
+                <span className="absolute right-1 top-1 rounded bg-zinc-200 px-1 py-0.5 text-[9px] font-bold uppercase text-zinc-700 dark:bg-zinc-700 dark:text-zinc-200">
+                  既定
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+function ResultPreviewHint() {
+  return (
+    <div
+      className="mt-5 flex items-start gap-3 rounded-xl border border-sky-200 bg-sky-50/60 p-3 text-xs text-sky-900 dark:border-sky-900/60 dark:bg-sky-950/30 dark:text-sky-100"
+      aria-label="模試完了後に得られる結果分析の予告"
+    >
+      <BarChart3
+        className="mt-0.5 h-4 w-4 shrink-0 text-sky-500 dark:text-sky-400"
+        aria-hidden="true"
+      />
+      <div className="space-y-1.5">
+        <p className="font-semibold">模試後の結果分析でわかること</p>
+        <ul className="list-disc space-y-0.5 pl-4 leading-relaxed text-sky-800/90 dark:text-sky-200/90">
+          <li>合否判定（合格基準クリアか）</li>
+          <li>分野別正答率・弱点分野の可視化</li>
+          <li>過去の模試結果との成績推移グラフ</li>
+        </ul>
+      </div>
+    </div>
   );
 }
