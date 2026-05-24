@@ -29,10 +29,6 @@ const CouponTracker = dynamic(
   () => import("@/components/motivation/CouponTracker").then((m) => m.CouponTracker),
   { ssr: false },
 );
-const OnboardingTour = dynamic(
-  () => import("@/components/onboarding/OnboardingTour").then((m) => m.OnboardingTour),
-  { ssr: false },
-);
 const OfflineIndicator = dynamic(
   () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
   { ssr: false },
@@ -74,7 +70,6 @@ export function DeferredLayoutWidgets() {
       <StreakTracker />
       <BadgeTracker />
       <CouponTracker />
-      <OnboardingTour />
       <OfflineIndicator />
     </>
   );
