@@ -20,6 +20,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import {
+  Dialog,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { createHistoryStore } from "@/lib/storage/history";
 import {
   computeCategoryStats,
@@ -312,6 +318,8 @@ export function MyProgressClient({ questions }: Props) {
   const [weakCats, setWeakCats] = useState<CategoryStat[]>([]);
   const [recent, setRecent] = useState<RecentEntry[]>([]);
   const [cleared, setCleared] = useState(false);
+  const [confirmOpen, setConfirmOpen] = useState(false);
+  const [confirmText, setConfirmText] = useState("");
   const [streak, setStreak] = useState<StreakState | null>(null);
   const [dailyGoal, setDailyGoal] = useState<{ count: number; target: number; pct: number; completed: boolean } | null>(null);
   const [earnedBadges, setEarnedBadges] = useState<Set<number>>(new Set());
@@ -364,15 +372,24 @@ export function MyProgressClient({ questions }: Props) {
     setDailyGoal(getDailyProgress());
   }, []);
 
-  function handleClear() {
-    if (!window.confirm("学習履歴をすべて削除しますか？この操作は取り消せません。")) return;
+  function openClearDialog() {
+    setConfirmText("");
+    setConfirmOpen(true);
+  }
+
+  function handleClearConfirmed() {
     createHistoryStore().reset();
     setStats({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
     setExamRows([]);
     setWeakCats([]);
     setRecent([]);
     setCleared(true);
+    setConfirmOpen(false);
+    setConfirmText("");
   }
+
+  const CONFIRM_KEYWORD = "削除する";
+  const canConfirmDelete = confirmText.trim() === CONFIRM_KEYWORD;
 
   const hasHistory = (stats?.total ?? 0) > 0;
 
@@ -581,14 +598,17 @@ export function MyProgressClient({ questions }: Props) {
               </span>
               <ChevronRight className="h-4 w-4 text-muted-foreground" />
             </Link>
-            <button
-              onClick={handleClear}
-              className="flex w-full items-center gap-2 px-4 py-3 text-left text-sm text-destructive transition hover:bg-destructive/5"
-              aria-label="学習履歴を全件削除する"
-            >
-              <Trash2 className="h-4 w-4" />
-              履歴を削除（ブラウザから完全消去）
-            </button>
+            <div className="px-4 py-3">
+              <button
+                type="button"
+                onClick={openClearDialog}
+                className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-destructive px-4 py-2 text-sm font-semibold text-destructive-foreground shadow-sm transition hover:bg-destructive/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-destructive focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                aria-label="学習履歴を全件削除する"
+              >
+                <Trash2 className="h-4 w-4" aria-hidden="true" />
+                履歴を削除（ブラウザから完全消去）
+              </button>
+            </div>
           </div>
           <p className="text-xs text-muted-foreground">
             データはこの端末のブラウザ（localStorage）にのみ保存されており、
@@ -601,6 +621,78 @@ export function MyProgressClient({ questions }: Props) {
           </p>
         </section>
       </div>
+
+      <Dialog
+        open={confirmOpen}
+        onOpenChange={(v) => {
+          if (!v) {
+            setConfirmText("");
+          }
+          setConfirmOpen(v);
+        }}
+      >
+        <DialogContent className="max-w-md" aria-modal="true">
+          <DialogTitle className="flex items-center gap-2 text-lg text-destructive">
+            <Trash2 className="h-5 w-5" aria-hidden="true" />
+            学習履歴を削除しますか?
+          </DialogTitle>
+          <DialogDescription className="text-sm text-foreground">
+            この操作は取り消せません。学習履歴・ストリーク・正答率データが
+            すべて消えます。
+          </DialogDescription>
+          <div className="space-y-2">
+            <label
+              htmlFor="confirm-delete-input"
+              className="block text-xs text-muted-foreground"
+            >
+              削除を確認するには <strong className="text-foreground">「{CONFIRM_KEYWORD}」</strong> と入力してください
+            </label>
+            <input
+              id="confirm-delete-input"
+              type="text"
+              autoComplete="off"
+              value={confirmText}
+              onChange={(e) => setConfirmText(e.target.value)}
+              className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-destructive focus:outline-none focus:ring-2 focus:ring-destructive/30"
+              placeholder={CONFIRM_KEYWORD}
+              aria-describedby="confirm-delete-hint"
+            />
+            <p
+              id="confirm-delete-hint"
+              aria-live="polite"
+              className="text-[11px] text-muted-foreground"
+            >
+              入力欄に「{CONFIRM_KEYWORD}」と正確に入力すると、赤い削除ボタンが押せるようになります。
+            </p>
+          </div>
+          <div className="mt-2 flex flex-col-reverse gap-2 sm:flex-row sm:items-center sm:justify-end">
+            <Button
+              type="button"
+              variant="outline"
+              size="md"
+              onClick={() => {
+                setConfirmOpen(false);
+                setConfirmText("");
+              }}
+              className="sm:min-w-[140px]"
+            >
+              キャンセル
+            </Button>
+            <Button
+              type="button"
+              variant="primary"
+              size="sm"
+              onClick={handleClearConfirmed}
+              disabled={!canConfirmDelete}
+              aria-label="学習履歴を削除する"
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90 focus-visible:ring-destructive sm:min-w-[110px]"
+            >
+              <Trash2 className="h-3.5 w-3.5" aria-hidden="true" />
+              削除実行
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
     </main>
   );
 }
