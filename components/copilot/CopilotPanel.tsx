@@ -20,6 +20,8 @@ import {
   MicOff,
   MoreVertical,
   Search,
+  Pin,
+  PinOff,
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
@@ -74,6 +76,7 @@ import type { ChatSession, SharePayload } from "@/lib/chat/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { readCharacterState } from "@/lib/storage/character";
 import { posthogCapture } from "@/lib/posthog";
+import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
 
 interface Message {
   role: "user" | "assistant";
@@ -703,7 +706,9 @@ export function CopilotPanel({
     showToast("ダウンロードを開始しました");
   }, [question, messages, sessionId, createdAt, showToast]);
 
-  const quickActionIds: QuickActionId[] = [
+  const { pinned, isPinned, togglePin, canPinMore } = usePinnedQuickActions();
+
+  const baseQuickActionIds: QuickActionId[] = [
     "term",
     "simplify",
     "detailed",
@@ -717,7 +722,27 @@ export function CopilotPanel({
     "analyze-u",
     "analyze-e",
   ];
-  if (isCorrect === false) quickActionIds.unshift(WRONG_ONLY);
+  // Final order: pinned first (in pin order), then why-wrong if active and
+  // not already pinned, then the remaining base actions skipping anything
+  // already placed.
+  const quickActionIds: QuickActionId[] = [];
+  const seen = new Set<QuickActionId>();
+  for (const id of pinned) {
+    if (!seen.has(id)) {
+      quickActionIds.push(id);
+      seen.add(id);
+    }
+  }
+  if (isCorrect === false && !seen.has(WRONG_ONLY)) {
+    quickActionIds.push(WRONG_ONLY);
+    seen.add(WRONG_ONLY);
+  }
+  for (const id of baseQuickActionIds) {
+    if (!seen.has(id)) {
+      quickActionIds.push(id);
+      seen.add(id);
+    }
+  }
   const visibleQuickActionIds = quickActionsExpanded
     ? quickActionIds
     : quickActionIds.slice(0, QUICK_ACTION_COLLAPSED_COUNT);
@@ -888,21 +913,72 @@ export function CopilotPanel({
               id="copilot-quickactions-list"
               className="flex flex-wrap gap-1.5"
             >
-              {visibleQuickActionIds.map((id) => (
-                <button
-                  key={id}
-                  onClick={() => send("", id)}
-                  disabled={streaming}
-                  className={cn(
-                    "rounded-full border px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
-                    id === WRONG_ONLY
-                      ? "border-red-300 bg-red-50 text-red-700 hover:bg-red-100 dark:border-red-900/60 dark:bg-red-950/40 dark:text-red-200"
-                      : "border-zinc-300 bg-white text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800",
-                  )}
-                >
-                  {QUICK_ACTIONS[id].label}
-                </button>
-              ))}
+              {visibleQuickActionIds.map((id) => {
+                const isThisPinned = isPinned(id);
+                return (
+                  <div
+                    key={id}
+                    className={cn(
+                      "group/qa inline-flex items-stretch overflow-hidden rounded-full border transition-colors",
+                      id === WRONG_ONLY
+                        ? "border-red-300 bg-red-50 dark:border-red-900/60 dark:bg-red-950/40"
+                        : isThisPinned
+                          ? "border-sky-300 bg-sky-50/70 dark:border-sky-700 dark:bg-sky-950/40"
+                          : "border-zinc-300 bg-white dark:border-zinc-700 dark:bg-zinc-900",
+                    )}
+                  >
+                    <button
+                      type="button"
+                      onClick={() => send("", id)}
+                      disabled={streaming}
+                      className={cn(
+                        "px-2.5 py-1 text-xs transition-colors disabled:opacity-50",
+                        id === WRONG_ONLY
+                          ? "text-red-700 hover:bg-red-100 dark:text-red-200"
+                          : isThisPinned
+                            ? "text-sky-800 hover:bg-sky-100 dark:text-sky-100 dark:hover:bg-sky-900/40"
+                            : "text-zinc-700 hover:bg-zinc-100 dark:text-zinc-200 dark:hover:bg-zinc-800",
+                      )}
+                    >
+                      {QUICK_ACTIONS[id].label}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => togglePin(id)}
+                      aria-pressed={isThisPinned}
+                      aria-label={
+                        isThisPinned
+                          ? `${QUICK_ACTIONS[id].label} のピン留めを解除`
+                          : canPinMore
+                            ? `${QUICK_ACTIONS[id].label} をピン留め`
+                            : `ピン留め上限 (3) に達しています`
+                      }
+                      disabled={!isThisPinned && !canPinMore}
+                      title={
+                        isThisPinned
+                          ? "ピン留め解除"
+                          : canPinMore
+                            ? "ピン留め (最大 3 件)"
+                            : "ピン留め上限 (3) に達しています"
+                      }
+                      className={cn(
+                        "flex w-6 items-center justify-center border-l text-[10px] transition-colors disabled:opacity-30",
+                        id === WRONG_ONLY
+                          ? "border-red-300 text-red-500 hover:bg-red-100 dark:border-red-900/60 dark:text-red-300 dark:hover:bg-red-950/60"
+                          : isThisPinned
+                            ? "border-sky-300 text-sky-600 hover:bg-sky-100 dark:border-sky-700 dark:text-sky-200 dark:hover:bg-sky-900/40"
+                            : "border-zinc-300 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:border-zinc-700 dark:text-zinc-500 dark:hover:bg-zinc-800 dark:hover:text-zinc-300",
+                      )}
+                    >
+                      {isThisPinned ? (
+                        <Pin className="h-3 w-3 fill-current" aria-hidden="true" />
+                      ) : (
+                        <PinOff className="h-3 w-3" aria-hidden="true" />
+                      )}
+                    </button>
+                  </div>
+                );
+              })}
             </div>
             {hiddenQuickActionCount > 0 && (
               <button
