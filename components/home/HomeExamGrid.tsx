@@ -116,7 +116,7 @@ export function HomeExamGrid({ questionCounts }: Props) {
   return (
     <>
       {availableExams.length > 0 && (
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
           {availableExams.map((exam) => {
             const count = questionCounts[exam.id] ?? 0;
             const p = hydrated ? progress[exam.id] : undefined;
@@ -141,7 +141,7 @@ export function HomeExamGrid({ questionCounts }: Props) {
           <p className="mb-2 mt-4 text-xs font-medium text-zinc-400 dark:text-zinc-500">
             近日公開
           </p>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+          <div className="grid grid-cols-1 gap-3 min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4">
             {comingSoonExams.map((exam) => (
               <div
                 key={exam.id}
@@ -238,7 +238,7 @@ function ExamCard({
                 : v.label}
           </span>
         </div>
-        <div>
+        <div className="[word-break:keep-all]">
           <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
             {exam.name}
           </p>
@@ -261,9 +261,9 @@ function ExamCard({
         <Link
           href={`/quiz?mode=random&exam=${exam.id}`}
           aria-label={`${exam.name}をランダム出題で開始`}
-          className="absolute bottom-1.5 right-1.5 z-10 inline-flex min-h-[44px] items-center gap-1 rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400"
+          className="absolute bottom-1.5 right-1.5 z-10 inline-flex min-h-[44px] items-center gap-1 whitespace-nowrap rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400"
         >
-          <Shuffle className="h-3.5 w-3.5" aria-hidden="true" />
+          <Shuffle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           今すぐ解く →
         </Link>
       ) : (
