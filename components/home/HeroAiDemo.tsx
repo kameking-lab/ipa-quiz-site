@@ -1,10 +1,28 @@
+"use client";
+
 import * as React from "react";
+import { readUserContext } from "@/lib/storage/user-context";
+import { readLastQuestion } from "@/lib/storage/last-question";
 
 // 5 秒ループの AI 解説デモ。動画ではなく CSS アニメーションのみで実装するため
 // 転送量はマークアップ + tailwind 数 KB で <500KB を確実に下回る。
 // セミアクセシビリティ: prefers-reduced-motion を尊重して停止する。
+// 役割: 初訪問者の信用獲得用なので、再訪 (visitCount >= 1 かつ lastSolvedAt
+// が存在) では非表示にして再訪者の認知負荷を減らす (削除候補 #4)。
 
 export function HeroAiDemo() {
+  const [mounted, setMounted] = React.useState(false);
+  const [hide, setHide] = React.useState(false);
+
+  React.useEffect(() => {
+    const ctx = readUserContext();
+    const last = readLastQuestion();
+    setHide(ctx.visitCount >= 1 && last !== null);
+    setMounted(true);
+  }, []);
+
+  if (!mounted || hide) return null;
+
   return (
     <div
       aria-hidden="true"
