@@ -17,7 +17,12 @@ function extractQuestionId(pathname: string): string | undefined {
   return undefined;
 }
 
-const VISIBLE_PREFIXES = ["/q/", "/essays/", "/blog/"];
+// Limit the floating 'report' button to individual question pages so the
+// affordance only appears where the report form's context (questionId,
+// extracted below) makes sense. /essays/ and /blog/ were previously
+// included but produced context-mismatched reports per the post-overhaul
+// review (D-10).
+const VISIBLE_PREFIXES = ["/q/"];
 
 export function FeedbackButton() {
   const pathname = usePathname();
