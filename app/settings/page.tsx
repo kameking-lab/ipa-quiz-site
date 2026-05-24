@@ -36,6 +36,7 @@ import { CharacterSelector } from "@/components/character/CharacterSelector";
 import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore } from "@/lib/storage/history";
 import { clearLastQuestion } from "@/lib/storage/last-question";
+import { resetUserContext } from "@/lib/storage/user-context";
 import {
   readMotivationSettings,
   writeMotivationSettings,
@@ -231,6 +232,19 @@ export default function SettingsPage() {
     clearLastQuestion();
     setStats({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
     showToast("ok", "履歴を削除しました");
+  }
+
+  function handlePersonalContextReset() {
+    if (
+      !window.confirm(
+        "個人設定（訪問回数・続きから情報・おすすめ問題のシード）をリセットしますか？学習履歴は残ります。",
+      )
+    ) {
+      return;
+    }
+    resetUserContext();
+    clearLastQuestion();
+    showToast("ok", "個人設定をリセットしました");
   }
 
   return (
@@ -492,6 +506,16 @@ export default function SettingsPage() {
                 >
                   <RotateCcw className="h-4 w-4" />
                   リセット
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="gap-2"
+                  onClick={handlePersonalContextReset}
+                  title="訪問回数 / 続きから情報 / おすすめ問題のシードを初期化"
+                >
+                  <RotateCcw className="h-4 w-4" />
+                  個人設定をリセット
                 </Button>
                 <input
                   ref={fileInputRef}
