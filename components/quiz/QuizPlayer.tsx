@@ -24,7 +24,7 @@ const FeedbackGateModal = dynamic(
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Loader2, Sparkles, Timer, Share2, Check, Copy } from "lucide-react";
+import { ArrowLeft, Loader2, Timer, Share2, Check, Copy } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { FireworksBurst } from "@/components/motivation/FireworksBurst";
 import { ComboCounter } from "@/components/motivation/ComboCounter";
@@ -469,6 +469,7 @@ export function QuizPlayer({
         selectedChoice={selected}
         isCorrect={revealed ? isCorrect : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
+        defaultOpen={copilotQuery !== null}
         headerRight={
           copilotQuery === "why-wrong" ? (
             <span className="rounded-full bg-red-100 px-2 py-0.5 text-[10px] text-red-700 dark:bg-red-900 dark:text-red-200">
@@ -484,17 +485,10 @@ export function QuizPlayer({
         selectedChoice={selected}
         isCorrect={revealed ? isCorrect : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
+        defaultOpen={copilotQuery !== null}
         key={`mobile-${question.id}-${copilotQuery ?? ""}`}
       />
 
-      {copilotQuery === "open" && (
-        <div className="fixed bottom-24 right-4 z-30 hidden sm:block">
-          <div className="rounded-full bg-sky-600 px-3 py-1 text-xs text-white shadow">
-            <Sparkles className="mr-1 inline h-3 w-3" />
-            右下のボタンからAIに質問できます
-          </div>
-        </div>
-      )}
 
       {upsellOpen && (
         <FeedbackGateModal
