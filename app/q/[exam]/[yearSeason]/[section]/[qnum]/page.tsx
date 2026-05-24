@@ -454,14 +454,19 @@ export default async function QuestionPage({
 
       {/* Header */}
       <header className="mb-6">
-        <div className="mb-3 flex flex-wrap items-center gap-1.5 text-xs">
-          <Badge variant="primary">
-            {examLabelAt(q.exam, q.year, q.season)}
-          </Badge>
-          <Badge variant="soft">{formatYearSeason(q.year, q.season)}</Badge>
-          <Badge variant="outline">{sessionLabel(q.session)}</Badge>
-          <Badge variant="outline">問 {q.qNumber}</Badge>
-          {q.isCalculation && <Badge variant="warn">計算</Badge>}
+        <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
+          <div className="flex flex-wrap items-center gap-1.5 text-xs">
+            <Badge variant="primary">
+              {examLabelAt(q.exam, q.year, q.season)}
+            </Badge>
+            <Badge variant="soft">{formatYearSeason(q.year, q.season)}</Badge>
+            <Badge variant="outline">{sessionLabel(q.session)}</Badge>
+            <Badge variant="outline">問 {q.qNumber}</Badge>
+            {q.isCalculation && <Badge variant="warn">計算</Badge>}
+          </div>
+          <div className="print:hidden">
+            <ShareButtons url={pageUrlAbs} title={title} compact />
+          </div>
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)}{" "}
