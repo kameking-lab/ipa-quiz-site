@@ -339,8 +339,13 @@ export default async function QuestionPage({
         "@type": "Quiz",
         "@id": `${pageUrlAbs}#quiz`,
         name: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`,
-        about: examLabelAt(q.exam, q.year, q.season),
+        about: [
+          { "@type": "Thing", name: examLabelAt(q.exam, q.year, q.season) },
+          { "@type": "Thing", name: q.category },
+        ],
         educationalLevel: "Professional",
+        learningResourceType: "Quiz",
+        assesses: q.category,
         educationalAlignment: [
           {
             "@type": "AlignmentObject",
@@ -351,7 +356,9 @@ export default async function QuestionPage({
         inLanguage: "ja",
         url: pageUrlAbs,
         dateModified: lastUpdatedISO,
-        hasPart: questionEntity,
+        isAccessibleForFree: true,
+        audience: STUDENT_AUDIENCE,
+        hasPart: [questionEntity],
       },
       learningResource,
       faqPage,
