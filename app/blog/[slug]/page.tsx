@@ -6,6 +6,7 @@ import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
+import { QUESTIONS_BY_EXAM, ALL_QUESTIONS } from "@/data/questions";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -281,22 +282,26 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <p className="mb-3 leading-relaxed">
             記事の内容を実戦で確認しましょう。AI コパイロット付きで分からない点はその場で解決できます。
           </p>
-          <div className="flex flex-wrap gap-2">
-            <Link
-              href={`/${post.exam}`}
-              className="inline-block rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
-            >
-              {examLabel(post.exam)} 過去問一覧へ →
-            </Link>
+          <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/quiz?mode=random&exam=${post.exam}`}
-              className="inline-block rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
+              aria-label={`${examLabel(post.exam)} を無料で演習する（${(QUESTIONS_BY_EXAM[post.exam] ?? []).length}問）`}
+              className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              ランダム出題で開始
+              この試験を演習する（{(QUESTIONS_BY_EXAM[post.exam] ?? []).length.toLocaleString("ja-JP")}問）→
+            </Link>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+              <span aria-hidden="true">✓</span>無料・登録不要
+            </span>
+            <Link
+              href={`/${post.exam}`}
+              className="inline-flex min-h-[48px] items-center rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
+            >
+              {examLabel(post.exam)} 過去問一覧へ
             </Link>
             <Link
               href={`/recommended-books/${post.exam}`}
-              className="inline-block rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
+              className="inline-flex min-h-[48px] items-center rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
             >
               おすすめ書籍
             </Link>
@@ -308,18 +313,22 @@ export default async function BlogArticlePage({ params }: PageProps) {
             過去問AI で各試験区分の対策を始める
           </h2>
           <p className="mb-3 leading-relaxed">
-            13 区分・12,000 問超を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+            13 区分・{ALL_QUESTIONS.length.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
           </p>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <Link
               href="/"
-              className="inline-block rounded-full bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
+              aria-label="過去問演習を始める（13区分・無料登録不要）"
+              className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              試験区分を選ぶ →
+              過去問演習を始める →
             </Link>
+            <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
+              <span aria-hidden="true">✓</span>無料・登録不要
+            </span>
             <Link
               href="/blog"
-              className="inline-block rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
+              className="inline-flex min-h-[48px] items-center rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
             >
               他のブログ記事を読む
             </Link>
