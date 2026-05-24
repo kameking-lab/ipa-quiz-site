@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ContactForm } from "./ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 
 const CONTACT_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -37,8 +38,39 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "お問い合わせ",
+            item: `${SITE_BASE_URL}/contact`,
+          },
+        ],
+      },
+    ],
+  };
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
+      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          <li>
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              ホーム
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-foreground">
+            お問い合わせ
+          </li>
+        </ol>
+      </nav>
       <header className="mb-6">
         <Badge variant="success">教育貢献プロジェクト</Badge>
         <h1 className="mt-2 text-2xl font-bold sm:text-3xl">お問い合わせ</h1>

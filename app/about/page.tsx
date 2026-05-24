@@ -48,11 +48,31 @@ export default function AboutPage() {
     "@graph": [
       buildWebPageNode(PAGE_URL, `${SITE_NAME} について`, PAGE_DESCRIPTION),
       buildOrgNode(),
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          { "@type": "ListItem", position: 2, name: `${SITE_NAME} について`, item: PAGE_URL },
+        ],
+      },
     ],
   };
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-12 pt-6 sm:px-6">
       <JsonLd data={jsonLd} />
+      <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
+        <ol className="flex flex-wrap items-center gap-1.5">
+          <li>
+            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              ホーム
+            </Link>
+          </li>
+          <li aria-hidden="true">/</li>
+          <li aria-current="page" className="text-foreground">
+            {SITE_NAME} について
+          </li>
+        </ol>
+      </nav>
       <Button asChild variant="ghost" size="sm" className="mb-3">
         <Link href="/">
           <ArrowLeft className="h-4 w-4" />
