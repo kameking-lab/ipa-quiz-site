@@ -42,13 +42,15 @@ export function AiQuotaIndicator() {
       className="pointer-events-none fixed bottom-3 right-3 z-30"
       role="status"
       aria-live="polite"
-      aria-label={`AI 質問残り ${remaining} 回`}
+      aria-label={`今日のAI上限 ${snapshot.used} / ${snapshot.limit} 回`}
     >
       <div
         className={`pointer-events-auto inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-[11px] font-semibold shadow-sm backdrop-blur-sm ${palette}`}
       >
         <Sparkles className="h-3 w-3" aria-hidden="true" />
-        <span>AI 残{remaining}回</span>
+        <span>
+          今日のAI上限 {snapshot.used}/{snapshot.limit}回
+        </span>
       </div>
     </div>
   );
