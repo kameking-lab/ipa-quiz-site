@@ -10,6 +10,13 @@ import {
   Search,
   Bookmark,
   ClipboardList,
+  CalendarRange,
+  Trophy,
+  Sparkles,
+  HelpCircle,
+  FileText,
+  BookOpen,
+  LineChart,
 } from "lucide-react";
 import { SiteLogo } from "./SiteLogo";
 import { StreakBadge } from "@/lib/streak/StreakBadge";
@@ -221,46 +228,172 @@ export function SiteHeader() {
                   <SiteLogo />
                 </SheetTitle>
               </SheetHeader>
-              <nav className="flex flex-col gap-1" aria-label="モバイルナビゲーション">
+              <nav
+                className="flex flex-col gap-1 overflow-y-auto"
+                aria-label="モバイルナビゲーション"
+              >
                 <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
-                  問題を解く
+                  問題演習
                 </p>
                 {QUIZ_MODES.map((m) => (
                   <SheetClose asChild key={m.href}>
                     <Link
                       href={m.href}
-                      className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                      className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                     >
+                      <Sparkles
+                        className="h-4 w-4 text-muted-foreground"
+                        aria-hidden="true"
+                      />
                       {m.label}
                     </Link>
                   </SheetClose>
                 ))}
+                <SheetClose asChild>
+                  <Link
+                    href="/mock-exam"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <ClipboardList
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    模試
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/search"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <Search
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    検索
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/bookmarks"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <Bookmark
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    ブックマーク
+                  </Link>
+                </SheetClose>
+
                 <div className="my-2 border-t border-border" />
+                <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                  学習計画
+                </p>
                 <SheetClose asChild>
                   <Link
                     href="/account/dashboard"
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
+                    <LineChart
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
                     学習進捗
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
                   <Link
-                    href="/recommended-books"
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                    href="/study-plan"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
+                    <CalendarRange
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    学習計画
+                  </Link>
+                </SheetClose>
+
+                <div className="my-2 border-t border-border" />
+                <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
+                  サービス紹介
+                </p>
+                <SheetClose asChild>
+                  <Link
+                    href="/why-kakomon-ai"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <HelpCircle
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    過去問AIを選ぶ理由
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/features"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <Sparkles
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    機能特集
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/success-stories"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <Trophy
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    合格体験記
+                  </Link>
+                </SheetClose>
+                <SheetClose asChild>
+                  <Link
+                    href="/essays"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <FileText
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
+                    論述例
+                  </Link>
+                </SheetClose>
+
+                <div className="my-2 border-t border-border" />
+                <SheetClose asChild>
+                  <Link
+                    href="/recommended-books"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                  >
+                    <BookOpen
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
                     推薦書籍
                   </Link>
                 </SheetClose>
                 <SheetClose asChild>
                   <Link
                     href="/settings"
-                    className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+                    className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
+                    <Settings
+                      className="h-4 w-4 text-muted-foreground"
+                      aria-hidden="true"
+                    />
                     設定
                   </Link>
                 </SheetClose>
-                <div className="mt-1 flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground">
+                <div className="mt-1 flex min-h-[44px] items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-foreground">
                   <span>テーマ切替</span>
                   <ThemeToggle />
                 </div>
