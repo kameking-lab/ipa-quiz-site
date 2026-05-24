@@ -46,7 +46,8 @@ test.describe("search page: HTTP & structure", () => {
   test("/search filter panel appears after submitting a search term", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=SQL");
-    await page.waitForLoadState("networkidle");
+    // networkidle is unreliable on Next.js pages with streaming + analytics;
+    // tests use explicit element waits below instead.
     const filterSection = page.locator("[aria-label='絞り込み']");
     await expect(filterSection).toBeVisible({ timeout: 15000 });
   });
@@ -90,7 +91,8 @@ test.describe("search: keyword interaction", () => {
   test("submitting search triggers results section", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=SQL");
-    await page.waitForLoadState("networkidle");
+    // networkidle is unreliable on Next.js pages with streaming + analytics;
+    // tests use explicit element waits below instead.
     const resultsSection = page.locator("[aria-label='検索結果']");
     await expect(resultsSection).toBeVisible({ timeout: 15000 });
   });
@@ -98,7 +100,8 @@ test.describe("search: keyword interaction", () => {
   test("clear button appears after submitting search", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=TCP");
-    await page.waitForLoadState("networkidle");
+    // networkidle is unreliable on Next.js pages with streaming + analytics;
+    // tests use explicit element waits below instead.
     const clearBtn = page.locator("[aria-label='入力をクリア']");
     await expect(clearBtn).toBeVisible({ timeout: 15000 });
   });
@@ -106,7 +109,8 @@ test.describe("search: keyword interaction", () => {
   test("clicking clear button empties the search input", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=TCP");
-    await page.waitForLoadState("networkidle");
+    // networkidle is unreliable on Next.js pages with streaming + analytics;
+    // tests use explicit element waits below instead.
     const searchInput = page.locator("#search-input");
     const clearBtn = page.locator("[aria-label='入力をクリア']");
     await expect(clearBtn).toBeVisible({ timeout: 15000 });
