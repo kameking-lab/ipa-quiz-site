@@ -137,7 +137,7 @@ export function OnboardingTour() {
   const canAdvance =
     step === 1 ? true :
     step === 2 ? true :
-    step === 3 ? selectedExam !== null :
+    step === 3 ? true : // 試験区分は任意。後から /settings で変更可。
     step === 4 ? attribute !== null :
     false;
 
@@ -157,6 +157,16 @@ export function OnboardingTour() {
         aria-modal="true"
         aria-label="過去問AIの初回ガイド"
       >
+        {/* Prominent top-right skip — visible from step 1 so users who came */}
+        {/* in for the problem can opt out of the 4-step tour immediately. */}
+        <button
+          type="button"
+          onClick={handleSkip}
+          className="absolute right-12 top-3 z-10 inline-flex items-center gap-0.5 rounded-full px-2 py-1 text-xs font-medium text-muted-foreground hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          aria-label="ガイドをスキップして始める"
+        >
+          スキップ →
+        </button>
         {/* Progress indicator */}
         <div className="flex items-center gap-2" aria-hidden="true">
           {Array.from({ length: TOTAL_STEPS }).map((_, i) => (
@@ -304,9 +314,16 @@ export function OnboardingTour() {
             {!selectedExam && (
               <p
                 aria-live="polite"
-                className="text-xs text-amber-600 dark:text-amber-400"
+                className="text-xs text-muted-foreground"
               >
-                受験予定の試験区分を選ぶと「次へ」が押せるようになります。
+                試験区分は任意です。あとから <strong className="text-foreground">/settings</strong> で変更できます。
+                <button
+                  type="button"
+                  onClick={() => setStep((s) => Math.min(TOTAL_STEPS, s + 1))}
+                  className="ml-1 underline underline-offset-2 hover:text-foreground"
+                >
+                  あとで設定する →
+                </button>
               </p>
             )}
           </div>
