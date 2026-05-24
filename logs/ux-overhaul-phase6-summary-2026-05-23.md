@@ -13,8 +13,8 @@ UX レビュー第2弾で最大の取りこぼしと判定された SEO サイ�
 - タスク⑤ ダッシュボード予測合格率サンプルガード: PR #376 — merge SHA `02e8f89a3b5dd256f8a0399c2c25ead64202bda8` — `PROB_MIN_SAMPLE = 10` 以下は「計測中」+ 残り問題数バッジ表示、`enoughSample` 優先で代表試験区分を選ぶ
 - タスク⑥ HeroAiDemo の履歴判定刷新: PR #377 — merge SHA `5c30bc18951bc9476162491e874ec2af1ebe72cc` — visitCount + lastQuestion → `LS_KEYS.history.entries.length>0` で StreamQuiz / Daily / MockExam 経由の解答も確実に拾う
 - タスク⑦ ExplanationLayers の LAYER 2 確実描画: PR #378 — merge SHA `54a8a50e7fa3a486cbda91418fb5719f580d0e9d` — 単一段落 + 3 文以上は 「。」 区切りで 結論 + 詳細 にリシェイプ、12,464 件 (86%) の問題で LAYER 2 `<details open>` が DOM 出力
-- タスク⑧ AI 浮動ボタンと底タブの距離 ≥56px: PR #379 — merge SHA 待機中 (e2e green 後 self-merge 予定) — `.bottom-above-tabbar` を `72px` → `118px + max(safe-inset, 0.5rem)` に再計算、iPhone/Android どちらでも ≥56px 確保
-- タスク⑨ 本サマリ: PR 番号未割当 (本ドキュメント先行マージ予定)
+- タスク⑧ AI 浮動ボタンと底タブの距離 ≥56px: PR #379 — merge SHA `4d5976f7c7b972f1480832ec92726cd7a2f09ec1` — `.bottom-above-tabbar` を `72px` → `118px + max(safe-inset, 0.5rem)` に再計算、iPhone/Android どちらでも ≥56px 確保
+- タスク⑨ 本サマリ: PR #380 — merge SHA `55a6cf391cbff5ed50acd532667589a6da1acfc3`
 
 ## 2. レビュー第2弾 即着手 TOP5 達成状況
 
