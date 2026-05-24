@@ -66,6 +66,9 @@ const nextConfig: NextConfig = {
       { source: "/account/badges", destination: "/account/dashboard", permanent: true },
       { source: "/account/tutor", destination: "/account/dashboard", permanent: true },
       { source: "/account/weakness", destination: "/account/dashboard", permanent: true },
+      // /my-progress was a thinner second dashboard — folded into the full one.
+      // The 301 protects any existing bookmark / inbound link.
+      { source: "/my-progress", destination: "/account/dashboard", permanent: true },
       // Account settings sub-pages → settings
       { source: "/account/notifications", destination: "/settings", permanent: true },
       { source: "/account/api-keys", destination: "/settings/api-keys", permanent: true },

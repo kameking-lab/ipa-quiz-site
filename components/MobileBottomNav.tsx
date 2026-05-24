@@ -39,10 +39,12 @@ const TABS: TabItem[] = [
   { href: "/mock-exam", label: "模試", icon: ClipboardList, match: ["/mock-exam"] },
   { href: "/search", label: "検索", icon: Search, match: ["/search"] },
   {
-    href: "/my-progress",
+    href: "/account/dashboard",
     label: "進捗",
     icon: LineChart,
-    match: ["/my-progress", "/account"],
+    // /my-progress is permanently redirected to /account/dashboard; keep the
+    // prefix in match so a user mid-301 still sees the active state.
+    match: ["/account", "/my-progress"],
   },
 ];
 
