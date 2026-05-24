@@ -4,6 +4,7 @@ import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
+import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import { LearningCalendar } from "@/components/home/LearningCalendar";
 import { HomeAuxSection } from "@/components/home/HomeAuxSection";
 import { ContinueFromLast } from "@/components/ContinueFromLast";
@@ -138,6 +139,8 @@ export default function HomePage() {
         <TotalAnswerCounter />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
+
+      <HomeTopicGrid />
 
       <section className="mb-6" aria-label="続きから">
         <ContinueFromLast />
