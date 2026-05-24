@@ -4,11 +4,17 @@ import { ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SearchClient } from "@/components/search/SearchClient";
+import { ALL_QUESTIONS } from "@/data/questions";
+
+// Match the floor-to-thousand pattern used in app/layout.tsx and app/page.tsx
+// so every site-wide question-count claim renders from the same live source.
+const APPROX_QUESTION_COUNT_LABEL = (
+  Math.floor(ALL_QUESTIONS.length / 1000) * 1000
+).toLocaleString("ja-JP");
 
 export const metadata: Metadata = {
   title: "問題検索",
-  description:
-    "14,000問超の IPA 情報処理技術者試験 過去問をキーワード・試験区分・年度・分野・難度で横断検索。IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU の 13 区分すべてに対応し、ヒットした問題は AI コパイロット付きでそのまま解説まで確認できます。",
+  description: `${APPROX_QUESTION_COUNT_LABEL}問超の IPA 情報処理技術者試験 過去問をキーワード・試験区分・年度・分野・難度で横断検索。IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU の 13 区分すべてに対応し、ヒットした問題は AI コパイロット付きでそのまま解説まで確認できます。`,
   alternates: { canonical: "/search" },
 };
 
@@ -43,7 +49,7 @@ export default function SearchPage() {
             </span>
           </h1>
           <p className="mt-3 max-w-2xl text-pretty text-sm text-muted-foreground sm:text-base">
-            キーワードと試験区分・年度・分野・難度で 14,000 問超の過去問を一括検索。
+            キーワードと試験区分・年度・分野・難度で {APPROX_QUESTION_COUNT_LABEL} 問超の過去問を一括検索。
             ヒット件数は分野・年度ごとに即座に確認できます。
           </p>
         </header>
