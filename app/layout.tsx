@@ -14,8 +14,8 @@ import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
-import { ALL_QUESTIONS } from "@/data/questions";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/seo/question-count";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,12 +31,6 @@ const geistMono = Geist_Mono({
 });
 
 const BASE_URL = SITE_BASE_URL;
-
-// Round the live total down to the nearest 1,000 so copy that says "X,000問超"
-// is always factually true. As of writing the floor is 15,000 (live ≈15,082).
-const APPROX_QUESTION_COUNT_LABEL = (
-  Math.floor(ALL_QUESTIONS.length / 1000) * 1000
-).toLocaleString("ja-JP");
 
 const ROOT_DESCRIPTION = `IPA 13試験 ${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。`;
 

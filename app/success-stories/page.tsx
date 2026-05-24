@@ -3,6 +3,7 @@ import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SuccessStoriesFilterableList } from "@/components/success-stories/SuccessStoriesFilterableList";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/seo/question-count";
 import {
   getAllSuccessStorySummaries,
   getSuccessStoryCountByExam,
@@ -167,7 +168,7 @@ export default function SuccessStoriesIndexPage() {
           自分も合格体験を作る
         </h2>
         <p className="leading-relaxed">
-          体験記を読み終わったら、自分の挑戦を始めましょう。過去問AI は 13 区分・12,000 問超を AI コパイロット付きで学習できます。
+          体験記を読み終わったら、自分の挑戦を始めましょう。過去問AI は 13 区分・{APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できます。
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           <Link
