@@ -12,10 +12,10 @@
 - タスク③ 摩擦点 D-8 (AI 残量表示の中立化): PR #364 — merge SHA `b679ea6ed66c7b49cdc0578456040c5bbdb6a344` — 「AI 残 N 回」→「今日の AI 上限 N/M 回」
 - タスク④ 摩擦点 D-11 (タブレット 768 を PC レイアウト昇格): PR #365 — merge SHA `ddbea670da016e55ee8a07599fe1f8bf49462251` — Tailwind v4 `@theme` で `--breakpoint-md: 45rem` (768→720) に下げ、scrollbar inset で 767 になるブラウザでも確実に PC 化
 - タスク⑤ 摩擦点 D-13 / 削除候補 #5 (ダッシュボード AI チューター tab 削除): PR #366 — merge SHA `48bd8bba33c9705fd7cc9a59dce780478ccf7334` — 5→4 タブ、AI 動線を浮動ボタンに一本化
-- タスク⑥ 摩擦点 D-14 (`/bookmarks` カード CTA 明示化): PR #367 — merge SHA 待機中 (e2e green 後 self-merge)、初回 push で bookmark e2e の `networkidle` タイムアウト 検知、Next prefetch を `prefetch={false}` で抑止して修復
+- タスク⑥ 摩擦点 D-14 (`/bookmarks` カード CTA 明示化): PR #367 — merge SHA `1f68f02a93d7f270bfb9862e6d561ec3da39441f` — 初回 push で bookmark e2e の `networkidle` タイムアウト検知、Next prefetch を `prefetch={false}` で抑止して修復
 - タスク⑦ 削除候補 #4 (AI 解説デモを再訪時非表示): PR #368 — merge SHA `37110e27030352895f0f1901180ce35b61e63f5c` — `HeroAiDemo` を client 化、`HomeReturningHeader` と同じ「visitCount>=1 && lastQuestion!==null」で非表示
 - タスク⑧ モバイル試験区分カード文字割れ修正: PR #369 — merge SHA `382faf706c018c64d631053b4fd5a4b7055410ef` — 1 列レイアウト (<480px) + `whitespace-nowrap` + `[word-break:keep-all]` で「今すぐ解く」3 行化解消
-- タスク⑨ 本サマリ: PR 番号未割当 (本ドキュメント先行マージ予定)
+- タスク⑨ 本サマリ: PR #370 — merge SHA `994f0b9f0d17b733bcb4b322aad6b9259b0f41d0`
 
 ## 2. レビュー摩擦点 15 件の対応率
 
