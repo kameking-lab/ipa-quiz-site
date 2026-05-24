@@ -311,6 +311,19 @@ button,
   bottom: max(env(safe-area-inset-bottom), 1rem);
 }
 
+/* Floating buttons (e.g. mobile AI 'AIに聞く' pill) that need to clear the
+   fixed MobileBottomNav (~56-64px tall, hidden at md+). 72px provides the
+   tab height + a comfortable 1rem gap. md+ falls back to the standard
+   safe-inset since the bottom nav is hidden there. */
+.bottom-above-tabbar {
+  bottom: calc(max(env(safe-area-inset-bottom), 0px) + 72px);
+}
+@media (min-width: 768px) {
+  .bottom-above-tabbar {
+    bottom: max(env(safe-area-inset-bottom), 1rem);
+  }
+}
+
 /* ---------------------------------------------------------------------------
    Reusable surface utilities
    --------------------------------------------------------------------------- */
