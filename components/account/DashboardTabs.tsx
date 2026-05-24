@@ -6,14 +6,12 @@ import { DashboardOverview } from "./tabs/DashboardOverview";
 import { DashboardProgress } from "./tabs/DashboardProgress";
 import { DashboardWeakness } from "./tabs/DashboardWeakness";
 import { DashboardBadges } from "./tabs/DashboardBadges";
-import { DashboardTutor } from "./tabs/DashboardTutor";
 
 const TABS = [
   { value: "overview", label: "概要" },
   { value: "progress", label: "進捗" },
   { value: "weakness", label: "弱点" },
   { value: "badges", label: "バッジ・ストリーク" },
-  { value: "tutor", label: "AIチューター" },
 ] as const;
 
 type TabValue = (typeof TABS)[number]["value"];
@@ -66,7 +64,7 @@ export function DashboardTabs({ categoryById }: Props) {
           学習ダッシュボード
         </h1>
         <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          学習データを 5 つの観点で一望できます。
+          学習データを 4 つの観点で一望できます。
         </p>
       </header>
 
@@ -94,9 +92,6 @@ export function DashboardTabs({ categoryById }: Props) {
         </TabsContent>
         <TabsContent value="badges">
           <DashboardBadges />
-        </TabsContent>
-        <TabsContent value="tutor">
-          <DashboardTutor categoryById={categoryById} />
         </TabsContent>
       </Tabs>
     </main>
