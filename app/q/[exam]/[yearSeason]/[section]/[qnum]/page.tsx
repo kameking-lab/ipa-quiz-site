@@ -707,13 +707,9 @@ export default async function QuestionPage({
         </div>
       </section>
 
-      {/* Share */}
-      <section aria-label="共有" className="print:hidden mt-8">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          共有
-        </h2>
-        <ShareButtons url={pageUrlAbs} title={title} />
-      </section>
+      {/* Bottom share section removed: the question header already exposes */}
+      {/* a compact 𝕏 / LINE / Copy cluster (PR #338), so the duplicate */}
+      {/* full-text block at the page tail was visual noise. */}
 
       {/* Short-form video */}
       <section aria-label="ショート動画" className="print:hidden mt-6">
