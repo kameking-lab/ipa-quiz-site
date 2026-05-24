@@ -277,6 +277,7 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
       <div className="mt-3 flex justify-end">
         <Link
           href={questionUrl(entry)}
+          prefetch={false}
           className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-blue-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-blue-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-blue-500 dark:hover:bg-blue-400"
           aria-label={`${examLabel(entry.exam)} ${formatYearSeason(entry.year, entry.season)} 問${entry.qNumber}を解く`}
         >
