@@ -21,10 +21,23 @@ export interface ExamPassProbability {
   accuracy: number;
   passProbability: number;
   questionsToPassZone: number;
+  /**
+   * True once at least PROB_MIN_SAMPLE answers have been recorded for the
+   * exam. Below the threshold, consumers should hide the percentage and
+   * surface a "計測中" placeholder instead — see UX review v2 #3: n=1
+   * answer producing a 61% estimate is misleading either way.
+   */
+  enoughSample: boolean;
+  /** How many more answers are needed to cross PROB_MIN_SAMPLE. 0 once met. */
+  answersUntilSample: number;
 }
 
 const PASS_ACCURACY = 0.6;
 const PASS_SAMPLE = 60;
+
+/** Below this many answers, the predicted pass rate is hidden behind a
+ * "計測中" placeholder so a tiny sample doesn't read as a real estimate. */
+export const PROB_MIN_SAMPLE = 10;
 
 export function computeCategoryStats(
   entries: HistoryEntry[],
@@ -104,6 +117,8 @@ export function computeExamProbabilities(
       accuracy,
       passProbability,
       questionsToPassZone,
+      enoughSample: v.answered >= PROB_MIN_SAMPLE,
+      answersUntilSample: Math.max(0, PROB_MIN_SAMPLE - v.answered),
     };
   });
 }

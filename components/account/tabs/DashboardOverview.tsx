@@ -65,7 +65,14 @@ export function DashboardOverview() {
 
     void fetchQuestionMeta(uniqueIds).then((meta) => {
       const examProbs = computeExamProbabilities(entries, meta);
-      const examTopProb = [...examProbs].sort((a, b) => b.passProbability - a.passProbability)[0];
+      // Prefer exams that have crossed PROB_MIN_SAMPLE — a tiny-sample 61%
+      // outranking a meaningful 45% would surface a "計測中" placeholder
+      // even though the user has a real measurable exam.
+      const sortedProbs = [...examProbs].sort((a, b) => {
+        if (a.enoughSample !== b.enoughSample) return a.enoughSample ? -1 : 1;
+        return b.passProbability - a.passProbability;
+      });
+      const examTopProb = sortedProbs[0];
       setData({
         totalAnswered: entries.length,
         studyMinutes: estimateStudyMinutes(entries.length),
@@ -131,8 +138,18 @@ export function DashboardOverview() {
         <KpiCard
           icon={<TrendingUp className="h-4 w-4" />}
           label="予測合格率"
-          value={`${data.examTopProb?.passProbability ?? 0}%`}
-          sub={data.examTopProb ? examLabel(data.examTopProb.exam) : "—"}
+          value={
+            data.examTopProb && data.examTopProb.enoughSample
+              ? `${data.examTopProb.passProbability}%`
+              : "計測中"
+          }
+          sub={
+            !data.examTopProb
+              ? "—"
+              : data.examTopProb.enoughSample
+                ? examLabel(data.examTopProb.exam)
+                : `あと ${data.examTopProb.answersUntilSample} 問で計測開始`
+          }
           tone="emerald"
         />
       </section>

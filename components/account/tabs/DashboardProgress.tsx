@@ -162,7 +162,7 @@ export function DashboardProgress() {
             ))}
         </div>
         <p className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-          ※ 60%以上の正答率と60問以上のサンプルを「合格圏」目安として算出（参考値）。
+          ※ 10問未満は「—（計測中）」表示。60%以上の正答率と60問以上のサンプルを「合格圏」目安として算出（参考値）。
         </p>
       </section>
     </div>
@@ -187,6 +187,7 @@ function SummaryCard({ label, value, unit, accent }: { label: string; value: str
 
 function ExamRow({ prob }: { prob: ExamPassProbability }) {
   const inPassZone = prob.passProbability >= 60 && prob.answered >= 60;
+  const measuring = !prob.enoughSample;
   return (
     <Link
       href={`/quiz?mode=random&exam=${prob.exam}`}
@@ -196,28 +197,39 @@ function ExamRow({ prob }: { prob: ExamPassProbability }) {
         <div className="truncate text-sm font-semibold">{examLabel(prob.exam)}</div>
         <div className="flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
           <span>{prob.answered}問 解答済</span>
-          {prob.questionsToPassZone > 0 && (
+          {measuring && prob.answersUntilSample > 0 && (
+            <span className="text-zinc-600 dark:text-zinc-300">
+              あと{prob.answersUntilSample}問で計測開始
+            </span>
+          )}
+          {!measuring && prob.questionsToPassZone > 0 && (
             <span className="text-amber-600 dark:text-amber-400">
               あと{prob.questionsToPassZone}問で合格圏判定
             </span>
           )}
-          {inPassZone && <span className="text-emerald-600 dark:text-emerald-400">合格圏</span>}
+          {!measuring && inPassZone && (
+            <span className="text-emerald-600 dark:text-emerald-400">合格圏</span>
+          )}
         </div>
         <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-800">
           <div
             className={`h-full transition-all ${
-              prob.passProbability >= 70
-                ? "bg-emerald-500"
-                : prob.passProbability >= 40
-                  ? "bg-amber-500"
-                  : "bg-zinc-400"
+              measuring
+                ? "bg-zinc-300 dark:bg-zinc-700"
+                : prob.passProbability >= 70
+                  ? "bg-emerald-500"
+                  : prob.passProbability >= 40
+                    ? "bg-amber-500"
+                    : "bg-zinc-400"
             }`}
-            style={{ width: `${prob.passProbability}%` }}
+            style={{ width: measuring ? "0%" : `${prob.passProbability}%` }}
           />
         </div>
       </div>
       <div className="flex shrink-0 items-center gap-1 text-right">
-        <span className="text-base font-bold tabular-nums">{prob.passProbability}%</span>
+        <span className="text-base font-bold tabular-nums">
+          {measuring ? "—" : `${prob.passProbability}%`}
+        </span>
         <ArrowRight className="h-3.5 w-3.5 text-zinc-400 transition group-hover:translate-x-0.5 group-hover:text-sky-500" />
       </div>
     </Link>
