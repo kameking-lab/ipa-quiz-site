@@ -1350,8 +1350,9 @@ export function CopilotMobileSheet({
   selectedChoice,
   isCorrect,
   onRateLimitHit,
-}: Omit<Props, "className" | "onClose" | "headerRight">) {
-  const [open, setOpen] = React.useState(false);
+  defaultOpen = false,
+}: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
+  const [open, setOpen] = React.useState(defaultOpen);
 
   // Escape キーでシートを閉じる（キーボードユーザーの脱出経路）
   React.useEffect(() => {
@@ -1421,8 +1422,9 @@ export function CopilotDesktopFloating({
   isCorrect,
   onRateLimitHit,
   headerRight,
-}: Omit<Props, "className" | "onClose">) {
-  const [open, setOpen] = React.useState(false);
+  defaultOpen = false,
+}: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean }) {
+  const [open, setOpen] = React.useState(defaultOpen);
   const panelRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
