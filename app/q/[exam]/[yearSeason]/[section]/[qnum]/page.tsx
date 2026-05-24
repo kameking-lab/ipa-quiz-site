@@ -46,7 +46,14 @@ import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { getCategoryTip } from "@/lib/seo/category-tips";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
-export const dynamicParams = false;
+// SSG only the most recent years to keep build time tractable; let older
+// years render on-demand with ISR caching. dynamicParams=true is what lets
+// the route resolve unlisted params instead of returning 404 at the router
+// layer — the page handler then validates the params and falls back to
+// notFound() for genuinely bad URLs. See logs/sitemap-coverage-2026-05-23.md
+// for the SEO motivation: the sitemap advertises every indexable question
+// (~14k), but with dynamicParams=false anything before SSG_MIN_YEAR 404'd.
+export const dynamicParams = true;
 export const revalidate = 86400;
 
 const SSG_MIN_YEAR = 2024;
