@@ -427,11 +427,12 @@ export function MyProgressClient({ questions }: Props) {
           </div>
         )}
 
-        {/* Streak */}
-        {streak && <StreakSection streak={streak} />}
+        {/* Streak — hidden when there's no history yet so the empty page */}
+        {/* leads with the Next Action card instead of empty 0/0 cards. */}
+        {hasHistory && streak && <StreakSection streak={streak} />}
 
         {/* Daily goal */}
-        {dailyGoal && (
+        {hasHistory && dailyGoal && (
           <DailyGoalSection
             count={dailyGoal.count}
             target={dailyGoal.target}
@@ -442,7 +443,7 @@ export function MyProgressClient({ questions }: Props) {
         )}
 
         {/* Overall stats */}
-        {stats !== null && (
+        {hasHistory && stats !== null && (
           <section className="mb-6">
             <div className="grid grid-cols-3 gap-3">
               <div className="rounded-2xl border border-border bg-card p-4 text-center shadow-sm">
@@ -497,15 +498,36 @@ export function MyProgressClient({ questions }: Props) {
         )}
 
         {!hasHistory && !cleared && stats !== null && (
-          <section className="mb-6 rounded-2xl border border-border bg-card p-8 text-center shadow-sm">
-            <BookOpen className="mx-auto mb-3 h-10 w-10 text-muted-foreground/40" />
-            <p className="font-medium text-foreground">まだ履歴がありません</p>
-            <p className="mt-1 text-sm text-muted-foreground">
-              クイズを解くと自動で記録されます
-            </p>
-            <Button asChild className="mt-4">
-              <Link href="/">クイズを始める</Link>
-            </Button>
+          <section
+            aria-labelledby="next-action-heading"
+            className="mb-6 rounded-2xl border border-primary/30 bg-primary/[0.04] p-6 shadow-sm sm:p-8"
+          >
+            <div className="flex flex-col items-center gap-1 text-center">
+              <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Flame className="h-6 w-6" aria-hidden="true" />
+              </span>
+              <p
+                id="next-action-heading"
+                className="mt-2 text-lg font-bold tracking-tight text-foreground"
+              >
+                次の目標: 5 問解いて初日ストリーク獲得
+              </p>
+              <p className="mt-1 max-w-prose text-sm text-muted-foreground">
+                クイズを 5 問解くと、学習ストリーク・正答率・分野別の弱点が
+                ここに自動で表示されます。続けるほど、伸びがわかりやすくなります。
+              </p>
+            </div>
+            <div className="mt-5 flex flex-col items-center gap-2 sm:flex-row sm:justify-center">
+              <Button asChild size="md" className="w-full sm:w-auto sm:min-w-[200px]">
+                <Link href="/quiz?mode=random&exam=ap">
+                  <BookOpen className="h-4 w-4" aria-hidden="true" />
+                  問題を解く →
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="md" className="w-full sm:w-auto">
+                <Link href="/quickstart">3分体験から始める</Link>
+              </Button>
+            </div>
           </section>
         )}
 
