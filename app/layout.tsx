@@ -8,6 +8,7 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { DeferredLayoutWidgets } from "@/components/DeferredLayoutWidgets";
 import { OnboardingTour } from "@/components/onboarding/OnboardingTour";
+import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyticsWithPrivacy";
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
@@ -277,7 +278,12 @@ export default function RootLayout({
                 </div>
               </div>
             </footer>
+            {/* Spacer so content above the fixed mobile bottom nav stays */}
+            {/* visible on the smallest viewports; hidden once md+ exposes */}
+            {/* the top SiteHeader as the primary nav. */}
+            <div aria-hidden="true" className="h-14 md:hidden print:hidden" />
           </div>
+          <MobileBottomNav />
         </ThemeProvider>
       </body>
     </html>
