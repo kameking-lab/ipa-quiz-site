@@ -4,6 +4,7 @@ import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_LABELS } from "@/lib/utils";
 import { QUICKSTART_EXAMS } from "@/lib/onboarding";
 import { QuickstartAttributePicker } from "./QuickstartAttributePicker";
+import { QuickstartDisclosure } from "./QuickstartDisclosure";
 import type { ExamCode } from "@/lib/questions/types";
 
 const TITLE = "3分でわかる過去問AIの始め方 — 過去問AI";
@@ -49,7 +50,7 @@ export default function QuickstartPage() {
 
       <section
         aria-labelledby="quickstart-exams-heading"
-        className="mt-8 rounded-2xl border border-border bg-card p-5 sm:p-6"
+        className="mt-10 rounded-2xl border border-border bg-card p-5 sm:p-8"
       >
         <h2
           id="quickstart-exams-heading"
@@ -60,7 +61,7 @@ export default function QuickstartPage() {
         <p className="mt-1 text-xs text-muted-foreground">
           まずはここから。3分で AI 解説の手触りを確認できます。
         </p>
-        <ul className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {exams.map((e) => (
             <li key={e.code}>
               <Link
@@ -85,41 +86,24 @@ export default function QuickstartPage() {
         </ul>
       </section>
 
-      <section
-        aria-labelledby="attribute-heading"
-        className="mt-8 rounded-2xl border border-border bg-card p-5 sm:p-6"
+      <QuickstartDisclosure
+        summary="学習スタイル別の推奨ルートを表示"
+        helper="あなたに合うルート（初学者 / 経験者 / 直前期）を 4 ステップで提案します。"
       >
-        <h2
-          id="attribute-heading"
-          className="text-lg font-semibold text-foreground"
-        >
-          学習スタイル別の推奨ルート
-        </h2>
-        <p className="mt-1 text-xs text-muted-foreground">
-          あなたに合うルートを選ぶと、1日の進め方を 4 ステップに絞って提示します。
-        </p>
         <QuickstartAttributePicker
           examOptions={(Object.keys(EXAM_LABELS) as ExamCode[]).map((code) => ({
             code,
             label: EXAM_LABELS[code],
           }))}
         />
-      </section>
+      </QuickstartDisclosure>
 
-      <section
-        aria-labelledby="full-list-heading"
-        className="mt-8 rounded-2xl border border-border bg-card p-5 sm:p-6"
+      <QuickstartDisclosure
+        summary="全13区分を表示"
+        helper="高度試験を含む 13 区分すべて利用できます。"
+        emphasis="primary"
       >
-        <h2
-          id="full-list-heading"
-          className="text-lg font-semibold text-foreground"
-        >
-          試験区分から探す
-        </h2>
-        <p className="mt-1 text-xs text-muted-foreground">
-          高度試験を含む 13 区分すべて利用できます。
-        </p>
-        <ul className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
+        <ul className="mt-2 grid grid-cols-2 gap-2 sm:grid-cols-3 lg:grid-cols-4">
           {(Object.keys(EXAM_LABELS) as ExamCode[]).map((code) => {
             const count = (QUESTIONS_BY_EXAM[code] ?? []).length;
             return (
@@ -140,7 +124,7 @@ export default function QuickstartPage() {
             );
           })}
         </ul>
-      </section>
+      </QuickstartDisclosure>
 
       <p className="mt-8 text-center text-[11px] text-muted-foreground">
         出典: IPA 情報処理技術者試験 / 本サービスは IPA 非公式の学習支援サービスです。
