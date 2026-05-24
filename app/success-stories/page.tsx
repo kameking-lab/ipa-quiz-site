@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SuccessStoriesFilterableList } from "@/components/success-stories/SuccessStoriesFilterableList";
 import {
   getAllSuccessStorySummaries,
   getSuccessStoryCountByExam,
@@ -103,13 +104,6 @@ export default function SuccessStoriesIndexPage() {
     ],
   };
 
-  const grouped = new Map<string, typeof stories>();
-  for (const s of stories) {
-    const arr = grouped.get(s.exam) ?? [];
-    arr.push(s);
-    grouped.set(s.exam, arr);
-  }
-
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-6 sm:py-10">
       <JsonLd data={jsonLd} />
@@ -166,61 +160,7 @@ export default function SuccessStoriesIndexPage() {
         </div>
       </section>
 
-      <div className="space-y-12">
-        {EXAM_ORDER.map((examKey) => {
-          const items = grouped.get(examKey);
-          if (!items || items.length === 0) return null;
-          return (
-            <section key={examKey} aria-labelledby={`section-${examKey}`}>
-              <div className="mb-4 flex items-baseline justify-between">
-                <h2
-                  id={`section-${examKey}`}
-                  className="border-l-4 border-sky-500 pl-3 text-lg font-bold text-zinc-900 dark:text-zinc-50 sm:text-xl"
-                >
-                  {examLabel(examKey)}
-                  <span className="ml-2 text-xs font-normal text-zinc-500 dark:text-zinc-400">
-                    {items.length}本
-                  </span>
-                </h2>
-                <Link
-                  href={`/success-stories/${examKey}`}
-                  className="text-xs text-sky-700 hover:underline dark:text-sky-300"
-                >
-                  すべて見る →
-                </Link>
-              </div>
-              <ul className="space-y-3">
-                {items.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      href={`/success-stories/${s.exam}/${s.slug}`}
-                      className="block rounded-2xl border border-zinc-200 bg-white p-4 transition-colors hover:border-sky-300 hover:bg-sky-50/40 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700 dark:hover:bg-sky-950/20"
-                    >
-                      <div className="mb-1.5 flex flex-wrap items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
-                        <span className="rounded bg-zinc-100 px-1.5 py-0.5 dark:bg-zinc-800">
-                          {s.ageRange}
-                        </span>
-                        <span className="rounded bg-zinc-100 px-1.5 py-0.5 dark:bg-zinc-800">
-                          {s.occupation}
-                        </span>
-                        <span className="rounded bg-emerald-100 px-1.5 py-0.5 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300">
-                          {s.studyMonths}か月 / {s.totalStudyHours}h
-                        </span>
-                      </div>
-                      <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50 sm:text-base">
-                        {s.title}
-                      </h3>
-                      <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-sm">
-                        {s.description}
-                      </p>
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          );
-        })}
-      </div>
+      <SuccessStoriesFilterableList stories={stories} examOrder={EXAM_ORDER} />
 
       <section className="mt-12 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
         <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50">
