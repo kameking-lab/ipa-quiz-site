@@ -24,7 +24,7 @@ export default function SearchPage() {
         className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
       />
 
-      <div className="relative mx-auto w-full max-w-4xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+      <div className="relative mx-auto w-full max-w-4xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10 md:max-w-6xl">
         <Button asChild variant="ghost" size="sm" className="mb-4">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />

@@ -404,7 +404,7 @@ export function SearchClient() {
 
   return (
     <div className="space-y-4">
-      {/* Search Form */}
+      {/* Search Form (full-width on every viewport) */}
       <SearchForm
         inputText={inputText}
         query={query}
@@ -427,34 +427,41 @@ export function SearchClient() {
         onDeleteSaved={deleteSavedSearch}
       />
 
-      {/* Toolbar: save, recent filter, sort — always visible */}
-      <SearchToolbar
-        isCurrentSaved={isCurrentSaved}
-        onToggleSave={toggleSaveSearch}
-        recentOnly={recentOnly}
-        onToggleRecentOnly={() => setRecentOnly((v) => !v)}
-        hasRecentlyViewed={recentlyViewedIds.size > 0}
-        sort={query.sort}
-        onSortChange={(sort) => updateQuery({ sort })}
-        hasFacetForPractice={hasFacetForPractice}
-        practiceUrl={practiceUrl}
-        total={filteredHits?.total ?? 0}
-        loading={loading}
-      />
-
-      {/* Facet Panel — always visible so users can browse without typing */}
-      <FacetPanel
-        facets={result?.facets}
-        query={query}
-        onChange={updateQuery}
-      />
-
-      <ResultsPanel
-        loading={loading}
-        error={error}
-        result={filteredHits}
-        tokens={tokens}
-      />
+      {/* PC: facet panel sits in a sticky left rail (≈18rem) while the right */}
+      {/* column scrolls; mobile keeps the prior stacked layout so the chip */}
+      {/* row never competes with vertical real-estate. */}
+      <div className="md:grid md:grid-cols-[18rem_minmax(0,1fr)] md:gap-6">
+        <div className="md:sticky md:top-20 md:self-start md:max-h-[calc(100dvh-6rem)] md:overflow-y-auto md:pr-1">
+          <FacetPanel
+            facets={result?.facets}
+            query={query}
+            onChange={updateQuery}
+          />
+        </div>
+        <div className="mt-4 md:mt-0">
+          <SearchToolbar
+            isCurrentSaved={isCurrentSaved}
+            onToggleSave={toggleSaveSearch}
+            recentOnly={recentOnly}
+            onToggleRecentOnly={() => setRecentOnly((v) => !v)}
+            hasRecentlyViewed={recentlyViewedIds.size > 0}
+            sort={query.sort}
+            onSortChange={(sort) => updateQuery({ sort })}
+            hasFacetForPractice={hasFacetForPractice}
+            practiceUrl={practiceUrl}
+            total={filteredHits?.total ?? 0}
+            loading={loading}
+          />
+          <div className="mt-4">
+            <ResultsPanel
+              loading={loading}
+              error={error}
+              result={filteredHits}
+              tokens={tokens}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
