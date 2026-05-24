@@ -6,7 +6,8 @@ import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
-import { QUESTIONS_BY_EXAM, ALL_QUESTIONS } from "@/data/questions";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { TOTAL_QUESTIONS_LABEL } from "@/lib/seo/question-count";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -313,7 +314,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             過去問AI で各試験区分の対策を始める
           </h2>
           <p className="mb-3 leading-relaxed">
-            13 区分・{ALL_QUESTIONS.length.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+            13 区分・{TOTAL_QUESTIONS_LABEL} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link

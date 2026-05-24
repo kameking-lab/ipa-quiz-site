@@ -5,6 +5,7 @@ import { Hash, Tag } from "lucide-react";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/seo/question-count";
 import { getAllTopics, getHubTopics } from "@/lib/seo/topics";
 
 const OG_IMAGE = (() => {
@@ -12,7 +13,7 @@ const OG_IMAGE = (() => {
     type: "topic",
     title: "トピック別過去問インデックス",
     subtitle: "試験区分横断のキーワード集約",
-    body: "12,000+ 問題から共通テーマを抽出した横断検索ハブ。",
+    body: `${APPROX_QUESTION_COUNT_LABEL}問超 から共通テーマを抽出した横断検索ハブ。`,
   });
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();

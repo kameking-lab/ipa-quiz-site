@@ -17,14 +17,9 @@ import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { SITE_ID, buildOrgNode } from "@/lib/seo/structured-data";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/seo/question-count";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
-
-// Round the live count down to the nearest 1,000 so SERP/social copy can say
-// "X,000問超" without ever overstating. Drives a single source of truth for
-// the home title/description, WebSite JSON-LD description, and ItemList counts.
-const APPROX_QUESTION_COUNT = Math.floor(ALL_QUESTIONS.length / 1000) * 1000;
-const APPROX_QUESTION_COUNT_LABEL = APPROX_QUESTION_COUNT.toLocaleString("ja-JP");
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
 const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の過去問 ${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる完全無料サイト。登録不要・広告控えめ・モバイル片手操作対応。年度別・分野別・模試・苦手復習の6モードで効率学習。`;
