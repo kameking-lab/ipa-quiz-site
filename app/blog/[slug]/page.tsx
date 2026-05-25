@@ -12,9 +12,11 @@ import {
   getBlogPostBySlug,
   getRelatedPosts,
 } from "@/data/blog";
+import { getRelatedQuestionsForPost } from "@/lib/blog/related-questions";
+import { questionPagePath } from "@/lib/seo/question-url";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
-import { examLabel } from "@/lib/utils";
+import { examLabel, formatYearSeason } from "@/lib/utils";
 
 export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -92,6 +94,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
+  const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3);
   const articleOgParams = new URLSearchParams({
     type: "blog",
     title: post.title,
@@ -333,6 +336,40 @@ export default async function BlogArticlePage({ params }: PageProps) {
               他のブログ記事を読む
             </Link>
           </div>
+        </section>
+      )}
+
+      {relatedQuestions.length > 0 && (
+        <section
+          aria-label="この記事に関連する過去問"
+          className="print:hidden mt-10"
+        >
+          <h2 className="mb-3 text-base font-bold text-zinc-900 dark:text-zinc-50 sm:text-lg">
+            この記事に関連する過去問
+          </h2>
+          <ul className="space-y-2">
+            {relatedQuestions.map((rq) => (
+              <li key={rq.id}>
+                <Link
+                  href={questionPagePath(rq)}
+                  className="group block rounded-2xl border border-zinc-200 bg-white p-4 transition-colors hover:border-sky-300 hover:bg-sky-50/40 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700 dark:hover:bg-sky-950/20"
+                >
+                  <div className="mb-1 flex items-center gap-1.5 text-[11px] text-zinc-500 dark:text-zinc-400">
+                    <span className="rounded-full bg-zinc-100 px-2 py-0.5 font-medium dark:bg-zinc-800">
+                      {examLabel(rq.exam)}
+                    </span>
+                    <span>
+                      {formatYearSeason(rq.year, rq.season)} 問{rq.qNumber}・{rq.category}
+                    </span>
+                  </div>
+                  <p className="line-clamp-2 text-sm leading-relaxed text-zinc-800 group-hover:text-sky-700 dark:text-zinc-100 dark:group-hover:text-sky-300">
+                    {rq.question.slice(0, 120)}
+                    {rq.question.length > 120 ? "…" : ""}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
         </section>
       )}
 

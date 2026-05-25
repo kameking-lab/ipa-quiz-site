@@ -202,6 +202,19 @@ export default async function QuestionPage({
     (x) => x.id !== q.id && x.exam === q.exam && x.category === q.category,
   ).slice(0, 5);
 
+  // Same exam + same category but from OTHER years — one representative per
+  // year, newest first. Builds a year-spanning internal-link trail so each
+  // /q/* page seeds links into older years' equivalents (phase 7 task ②-2).
+  const otherYearsSameCategory = (() => {
+    const byYear = new Map<number, Question>();
+    for (const x of ALL_QUESTIONS) {
+      if (x.id === q.id || x.exam !== q.exam || x.category !== q.category) continue;
+      if (x.year === q.year || byYear.has(x.year)) continue;
+      byYear.set(x.year, x);
+    }
+    return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, 5);
+  })();
+
   const tagSet = new Set(q.topicTags);
   const crossExamByTopic =
     q.topicTags.length > 0
@@ -859,6 +872,43 @@ export default async function QuestionPage({
                     </Badge>
                     <span>
                       {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                    </span>
+                  </div>
+                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
+                    {r.question.slice(0, 140)}
+                    {r.question.length > 140 ? "…" : ""}
+                  </div>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Same exam + category across other years — year-spanning link trail */}
+      {otherYearsSameCategory.length > 0 && (
+        <section aria-label="他年度の同分野問題" className="print:hidden mt-10">
+          <div className="mb-4">
+            <h2 className="text-lg font-bold tracking-tight text-foreground">
+              他年度の「{q.category}」問題
+            </h2>
+            <p className="mt-0.5 text-xs text-muted-foreground">
+              {examLabel(q.exam)} の同じ分野を年度をまたいで演習する
+            </p>
+          </div>
+          <ul className="flex flex-col gap-2">
+            {otherYearsSameCategory.map((r) => (
+              <li key={r.id}>
+                <Link
+                  href={questionPagePath(r)}
+                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                    <Badge variant="outline" className="text-[10px]">
+                      {formatYearSeason(r.year, r.season)}
+                    </Badge>
+                    <span>
+                      {examLabelAt(r.exam, r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
