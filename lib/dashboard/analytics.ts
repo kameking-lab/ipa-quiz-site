@@ -1,5 +1,6 @@
 import type { ExamCode } from "@/lib/questions/types";
 import type { HistoryEntry } from "@/lib/storage/history";
+import { nextExamSitting } from "@/lib/constants/exam-schedule";
 
 /** Minimal question metadata needed for analytics (avoids bundling full Question data). */
 export interface QuestionMeta {
@@ -128,16 +129,9 @@ export function estimateStudyMinutes(totalEntries: number): number {
 }
 
 export function daysUntilNextExam(now: Date = new Date()): { date: Date; days: number; label: string } {
-  const year = now.getUTCFullYear();
-  const candidates: Array<{ date: Date; label: string }> = [];
-  candidates.push({ date: new Date(Date.UTC(year, 3, 21)), label: `${year}年 春期` });
-  candidates.push({ date: new Date(Date.UTC(year, 9, 14)), label: `${year}年 秋期` });
-  candidates.push({ date: new Date(Date.UTC(year + 1, 3, 21)), label: `${year + 1}年 春期` });
-
-  const future = candidates.filter((c) => c.date.getTime() > now.getTime());
-  const nearest = future[0];
-  const days = Math.ceil((nearest.date.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
-  return { date: nearest.date, days, label: nearest.label };
+  // Delegates to the shared exam-schedule master so the countdown rolls to the
+  // next sitting automatically and there is one place to update IPA dates.
+  return nextExamSitting(now);
 }
 
 export function radarSlots(stats: CategoryStat[], slots = 10): CategoryStat[] {
