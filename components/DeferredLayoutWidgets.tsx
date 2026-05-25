@@ -33,6 +33,10 @@ const OfflineIndicator = dynamic(
   () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
   { ssr: false },
 );
+const CloudSyncAutoSync = dynamic(
+  () => import("@/components/sync/CloudSyncAutoSync").then((m) => m.CloudSyncAutoSync),
+  { ssr: false },
+);
 
 export function DeferredLayoutWidgets() {
   const [ready, setReady] = useState(false);
@@ -71,6 +75,7 @@ export function DeferredLayoutWidgets() {
       <BadgeTracker />
       <CouponTracker />
       <OfflineIndicator />
+      <CloudSyncAutoSync />
     </>
   );
 }
