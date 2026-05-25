@@ -95,6 +95,44 @@ export function clearAllBookmarks(): void {
   writeRaw(EMPTY);
 }
 
+/**
+ * Merge the authoritative server set (from cloud sync) into LocalStorage.
+ * Union by questionId, last-write-wins on bookmarkedAt so a newer local edit
+ * is not clobbered by a stale server copy. Used by lib/sync/bookmark-sync.
+ */
+export function mergeServerBookmarks(
+  serverEntries: Array<{
+    questionId: string;
+    tags: string[];
+    questionSnippet?: string;
+    exam?: string;
+    year?: number;
+    season?: string;
+    qNumber?: number;
+    category?: string;
+    bookmarkedAt?: number;
+  }>,
+): void {
+  const data = readRaw();
+  for (const s of serverEntries) {
+    const existing = data.entries[s.questionId];
+    const serverAt = s.bookmarkedAt ?? 0;
+    if (existing && existing.bookmarkedAt >= serverAt) continue;
+    data.entries[s.questionId] = {
+      questionId: s.questionId,
+      tags: Array.isArray(s.tags) ? s.tags.slice(0, MAX_TAGS_PER_BOOKMARK) : [],
+      bookmarkedAt: serverAt || Date.now(),
+      questionSnippet: s.questionSnippet ?? existing?.questionSnippet ?? "",
+      exam: s.exam ?? existing?.exam ?? "",
+      year: s.year ?? existing?.year ?? 0,
+      season: s.season ?? existing?.season ?? "",
+      qNumber: s.qNumber ?? existing?.qNumber ?? 0,
+      category: s.category ?? existing?.category ?? "",
+    };
+  }
+  writeRaw(data);
+}
+
 export function exportBookmarks(): string {
   return JSON.stringify(readRaw(), null, 2);
 }

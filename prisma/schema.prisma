@@ -42,6 +42,9 @@ model User {
   subscriptions Subscription[]
   studyRecords  StudyRecord[]
   streak        Streak?
+  bookmarks     Bookmark[]
+  customTags    CustomTag[]
+  studyPlans    StudyPlan[]
 
   @@index([plan])
 }
@@ -151,4 +154,69 @@ model Streak {
   updatedAt     DateTime @updatedAt
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ---------------------------------------------------------------------------
+// Cloud sync — opt-in mirror of LocalStorage data so users keep their
+// bookmarks / custom tags / study plans across devices. LocalStorage stays
+// the source of truth for signed-out users; these tables only fill for
+// signed-in opt-in users. (CLAUDE.md §10 schema addition approved 2026-05-23.)
+// updatedAt drives last-write-wins; version is a monotonic etag for
+// optimistic concurrency / conflict detection across devices.
+// ---------------------------------------------------------------------------
+
+model Bookmark {
+  id              String   @id @default(cuid())
+  userId          String
+  questionId      String
+  // Inline free-text tags — mirrors lib/storage/bookmarks BookmarkEntry.tags.
+  tags            String[] @default([])
+  // Denormalised display fields so the list renders without the question dataset.
+  questionSnippet String   @default("")
+  exam            String   @default("")
+  year            Int      @default(0)
+  season          String   @default("")
+  qNumber         Int      @default(0)
+  category        String   @default("")
+  bookmarkedAt    DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+  version         Int      @default(1)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@index([userId, updatedAt])
+}
+
+model CustomTag {
+  id        String   @id @default(cuid())
+  userId    String
+  name      String
+  color     String   @default("zinc")
+  sortOrder Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  version   Int      @default(1)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, name])
+  @@index([userId, sortOrder])
+}
+
+model StudyPlan {
+  id        String   @id
+  userId    String
+  // Full plan object (input + summary + daily tasks) stored as JSON — the
+  // shape is rich (lib/study-plan/types StudyPlan) and read back verbatim.
+  payload   Json
+  // Per-plan task progress map (lib/study-plan StoredProgress.progress).
+  progress  Json?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  version   Int      @default(1)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, updatedAt])
 }
