@@ -1,12 +1,13 @@
 import type { ExamCode } from "@/lib/questions/types";
+import { CURRENT_YEAR } from "@/lib/constants/current-year";
 import { EXAM_PROFILES } from "./exam-data";
 import type { BlogPost } from "./types";
 
 const PUBLISHED_BASE = new Date("2026-01-01T00:00:00.000Z").getTime();
 const DAY_MS = 86_400_000;
 
-// Evaluated at build time so "【YYYY年最新】" titles roll forward with each deploy.
-const CURRENT_YEAR = new Date().getFullYear();
+// CURRENT_YEAR (shared, JST) is evaluated at build time so "【YYYY年最新】"
+// titles roll forward with each deploy.
 
 // Clamp to "today (UTC) at 00:00:00" so generated articles never advertise a
 // future datePublished. Google deprioritises (and sometimes suppresses) Article
