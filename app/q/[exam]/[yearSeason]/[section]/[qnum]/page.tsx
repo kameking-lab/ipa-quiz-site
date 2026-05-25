@@ -199,6 +199,12 @@ export default async function QuestionPage({
   const prev = idx > 0 ? sessionPool[idx - 1] : null;
   const next = idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null;
 
+  // Related-question link trails are computed here in the Server Component and
+  // rendered as plain <Link>s below, so they ship inside the prerendered HTML
+  // (SSG for recent years, ISR otherwise) and crawlers see the internal links.
+  // Do NOT move these lists into a "use client" island — that would hide the
+  // links behind hydration and forfeit the internal-link equity (C-4: ~29%
+  // index rate on /q/* pages).
   const related = ALL_QUESTIONS.filter(
     (x) => x.id !== q.id && x.exam === q.exam && x.category === q.category,
   ).slice(0, 5);
