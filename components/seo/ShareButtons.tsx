@@ -8,7 +8,8 @@ interface ShareButtonsProps {
   title: string;
   /**
    * When true, render a compact icon-only cluster suitable for placing in a
-   * page header. Tap targets stay at 44px to preserve the a11y baseline.
+   * page header. Tap targets are 36px — comfortably above the WCAG 2.5.8 (AA)
+   * 24px floor — so the header stays tight without an a11y regression.
    */
   compact?: boolean;
 }
@@ -43,13 +44,13 @@ export function ShareButtons({ url, title, compact = false }: ShareButtonsProps)
 
   if (compact) {
     const iconBtn =
-      "inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+      "inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
     return (
       <div
         role="group"
         aria-label="この問題を共有"
-        className="relative flex items-center gap-1.5"
+        className="relative flex items-center gap-1"
       >
         <a
           href={xIntent}

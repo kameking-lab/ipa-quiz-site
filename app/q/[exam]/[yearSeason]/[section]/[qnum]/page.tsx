@@ -384,7 +384,7 @@ export default async function QuestionPage({
       {/* Breadcrumb */}
       <nav
         aria-label="パンくずリスト"
-        className="mb-5 text-xs text-muted-foreground"
+        className="mb-4 text-xs text-muted-foreground"
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
@@ -427,8 +427,8 @@ export default async function QuestionPage({
       </nav>
 
       {/* Header */}
-      <header className="mb-6">
-        <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
+      <header className="mb-4">
+        <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
             <Badge variant="primary">
               {examLabelAt(q.exam, q.year, q.season)}
@@ -463,7 +463,7 @@ export default async function QuestionPage({
             </Link>
           ))}
         </div>
-        <div className="mt-3">
+        <div className="mt-2">
           <DifficultyMeter difficulty={q.difficulty} />
         </div>
       </header>
@@ -496,14 +496,14 @@ export default async function QuestionPage({
       {/* Question body */}
       <section
         aria-label="問題文"
-        className="selectable-content rounded-2xl border border-border bg-card p-6 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-7 sm:text-[17px]"
+        className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
       >
         <QuestionBody text={q.question} />
       </section>
 
       {/* Choices */}
       {q.choices && (
-        <section aria-label="選択肢" className="mt-5 flex flex-col gap-3">
+        <section aria-label="選択肢" className="mt-4 flex flex-col gap-2.5">
           <h2 className="sr-only">選択肢</h2>
           {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
             const isAnswer = key === answerKey;
@@ -526,7 +526,7 @@ export default async function QuestionPage({
       )}
 
       {/* Answer reveal */}
-      <section aria-label="正解" className="mt-6">
+      <section aria-label="正解" className="mt-5">
         <AnswerReveal answer={String(answerKey)} answerText={answerText} />
       </section>
 
