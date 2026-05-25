@@ -227,7 +227,7 @@ export default async function QuestionPage({
         ).slice(0, 5)
       : [];
 
-  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 2);
+  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
   const pageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const examPath = `/${q.exam}`;
