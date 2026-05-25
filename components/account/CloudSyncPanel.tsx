@@ -58,9 +58,27 @@ export function CloudSyncPanel() {
     <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
       <div className="space-y-3 p-4 text-sm text-muted-foreground">
         <p>
-          学習履歴・ブックマーク・カスタムタグ・学習計画をクラウドにバックアップし、
-          別の端末でも同じ状態で続けられます。同期は<strong className="text-foreground">任意</strong>です。
-          サインインしなくても全機能をそのままご利用いただけます。
+          機種変で履歴が消える心配を、クラウド同期で解決できます。学習履歴・ブックマーク・
+          カスタムタグ・学習計画をバックアップし、別の端末でも同じ状態で続けられます。
+        </p>
+        <ul className="space-y-1 text-xs">
+          <li className="flex items-start gap-1.5">
+            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
+            機種変・買い替えでもデータを引き継げる
+          </li>
+          <li className="flex items-start gap-1.5">
+            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
+            スマホ・PC など複数端末で同じ進捗
+          </li>
+          <li className="flex items-start gap-1.5">
+            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
+            履歴削除やブラウザ初期化に備えたバックアップ
+          </li>
+        </ul>
+        <p className="text-xs">
+          同期は<strong className="text-foreground">任意</strong>です。
+          <strong className="text-foreground">同期しない選択も完全に有効</strong>で、
+          サインインしなくてもこれまで通り全機能をご利用いただけます。
         </p>
 
         <ul className="flex flex-wrap gap-1.5">
