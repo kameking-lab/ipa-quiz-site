@@ -40,6 +40,8 @@ export const LS_KEYS = {
   searchHistory: "ipa-quiz:search-history:v1",
   savedSearches: "ipa-quiz:saved-searches:v1",
   dailyGoal: "ipa-quiz:daily-goal:v1",
+  customTags: "ipa-quiz:custom-tags:v1",
+  syncMeta: "ipa-quiz:sync-meta:v1",
 } as const;
 
 export type LSKey = (typeof LS_KEYS)[keyof typeof LS_KEYS];

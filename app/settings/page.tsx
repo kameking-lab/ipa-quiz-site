@@ -9,6 +9,7 @@ import {
   Bell,
   CalendarClock,
   CheckCircle2,
+  Cloud,
   Download,
   KeyRound,
   Monitor,
@@ -44,6 +45,7 @@ import {
 } from "@/lib/motivation/combo";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
+import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
 
 type Theme = "light" | "dark" | "system";
 
@@ -60,6 +62,7 @@ const SECTIONS = [
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
   { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
   { id: "history", label: "学習履歴管理", icon: <TrendingUp className="h-3.5 w-3.5" /> },
+  { id: "cloud-sync", label: "クラウド同期", icon: <Cloud className="h-3.5 w-3.5" /> },
   { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
 ] as const;
 
@@ -526,6 +529,18 @@ export default function SettingsPage() {
                 />
               </div>
             </div>
+          </section>
+
+          {/* Cloud sync (opt-in) */}
+          <section>
+            <SectionTitle
+              id="cloud-sync"
+              icon={<Cloud className="h-5 w-5" />}
+              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意・サインインが必要）"
+            >
+              クラウド同期
+            </SectionTitle>
+            <CloudSyncPanel />
           </section>
 
           {/* API Keys (link to sub-page) */}

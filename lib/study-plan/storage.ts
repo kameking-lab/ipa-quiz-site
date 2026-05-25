@@ -88,6 +88,63 @@ export function setTaskDone(
   return entry.progress;
 }
 
+/** A plan + its progress packaged for cloud sync. updatedAt = newest of the
+ * plan's createdAt and its progress.updatedAt (epoch ms). */
+export interface PlanSyncEntry {
+  id: string;
+  payload: StudyPlan;
+  progress: ProgressMap;
+  createdAt: number;
+  updatedAt: number;
+}
+
+export function getPlanSyncEntries(): PlanSyncEntry[] {
+  if (typeof window === "undefined") return [];
+  const allProgress = readAllProgress();
+  return listPlans().map((plan) => {
+    const created = Date.parse(plan.createdAt) || Date.now();
+    const progUpdated = Date.parse(allProgress[plan.id]?.updatedAt ?? "") || 0;
+    return {
+      id: plan.id,
+      payload: plan,
+      progress: allProgress[plan.id]?.progress ?? {},
+      createdAt: created,
+      updatedAt: Math.max(created, progUpdated),
+    };
+  });
+}
+
+/** Merge an authoritative server set of plans into LocalStorage (LWW). */
+export function mergeServerPlans(
+  serverEntries: Array<{ id: string; payload: StudyPlan; progress?: ProgressMap; updatedAt: number }>,
+): void {
+  if (typeof window === "undefined") return;
+  const localPlans = listPlans();
+  const localById = new Map(localPlans.map((p) => [p.id, p]));
+  const allProgress = readAllProgress();
+
+  for (const s of serverEntries) {
+    if (!s.payload || typeof s.payload !== "object") continue;
+    const localUpdated = Math.max(
+      Date.parse(localById.get(s.id)?.createdAt ?? "") || 0,
+      Date.parse(allProgress[s.id]?.updatedAt ?? "") || 0,
+    );
+    if (localById.has(s.id) && localUpdated >= s.updatedAt) continue;
+    localById.set(s.id, s.payload);
+    if (s.progress) {
+      allProgress[s.id] = {
+        planId: s.id,
+        progress: s.progress,
+        updatedAt: new Date(s.updatedAt).toISOString(),
+      };
+    }
+  }
+
+  const merged = [...localById.values()].slice(0, MAX_PLANS);
+  localStorage.setItem(PLANS_KEY, JSON.stringify(merged));
+  writeAllProgress(allProgress);
+}
+
 export function computeCompletionStats(
   plan: StudyPlan,
   progress: ProgressMap,
