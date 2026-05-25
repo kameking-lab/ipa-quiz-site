@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { FREE_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
 
 const PAGE_PATH = "/why-kakomon-ai";
 const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービス比較";
@@ -73,7 +74,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
   },
   {
     label: "料金",
-    kakomonAi: "無料で全機能。AI コパイロットは 1 日 30 回まで無料",
+    kakomonAi: `無料で全機能。AI コパイロットは初回 ${FREE_AI_DAILY_LIMIT} 回まで無料（フィードバック後ほぼ無制限）`,
     doujou: "基本無料（広告表示あり）",
     yobikou: "月数千円〜数万円の有料モデルが中心",
   },
@@ -133,7 +134,7 @@ const RESPECT_POINTS = [
 const FAQS = [
   {
     q: "本当に無料で全機能使えますか？",
-    a: "はい。教育貢献プロジェクトとして、AI コパイロット以外のすべての機能を無料で公開しています。AI コパイロットは API コスト管理のため 1 日 30 回までを無料枠としています。",
+    a: `はい。教育貢献プロジェクトとして、AI コパイロット以外のすべての機能を無料で公開しています。AI コパイロットは API コスト管理のため初回 ${FREE_AI_DAILY_LIMIT} 回までを無料枠とし、フィードバックを投稿いただくとその後はほぼ無制限でご利用いただけます。`,
   },
   {
     q: "AI 解説の精度はどの程度信頼できますか？",

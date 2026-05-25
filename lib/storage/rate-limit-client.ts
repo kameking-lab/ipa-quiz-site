@@ -1,4 +1,5 @@
 import { LS_KEYS } from "./keys";
+import { FREE_AI_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
 
 interface UsageData {
   date: string;
@@ -39,8 +40,8 @@ export function incrementAiUsage(): UsageData {
  * Initial free quota before the feedback gate triggers.
  * After feedback is submitted, the limit effectively becomes unlimited.
  */
-export const FREE_DAILY_LIMIT_CLIENT = 10;
-export const POST_FEEDBACK_DAILY_LIMIT_CLIENT = 9999;
+export const FREE_DAILY_LIMIT_CLIENT = FREE_AI_DAILY_LIMIT;
+export const POST_FEEDBACK_DAILY_LIMIT_CLIENT = POST_FEEDBACK_AI_DAILY_LIMIT;
 
 export function readFeedbackSubmitted(): boolean {
   if (typeof window === "undefined") return false;

@@ -8,6 +8,7 @@ import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { QUICKSTART_EXAMS } from "@/lib/onboarding";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
+import { AI_QUOTA_COPY } from "@/lib/constants/ai-quota";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { ArrowRight, Bot, BookOpen, Play } from "lucide-react";
 
@@ -287,7 +288,7 @@ export default async function QuickstartExamPage({ params }: PageProps) {
           </li>
         </ul>
         <p className="mt-3 text-[11px] text-muted-foreground">
-          コパイロットは無料プランで 1 日 30 回まで利用できます（JST 0:00 リセット）。
+          {AI_QUOTA_COPY}
         </p>
       </section>
 
