@@ -62,16 +62,31 @@ export async function POST(req: Request) {
             : (e.progress as Prisma.InputJsonValue),
         updatedAt: new Date(e.updatedAt),
       };
-      await prisma.studyPlan.upsert({
+      if (prevUpdated !== undefined) {
+        // Owned by this user (id was in existingMap) → safe to update.
+        await prisma.studyPlan.update({
+          where: { id: e.id },
+          data: { ...data, version: { increment: 1 } },
+        });
+        merged += 1;
+        continue;
+      }
+      // New to this user. The plan id is client-generated, so guard against an
+      // id that already belongs to ANOTHER user before creating (IDOR): an
+      // unscoped upsert on the PK would let one user overwrite another's plan.
+      const clash = await prisma.studyPlan.findUnique({
         where: { id: e.id },
-        create: {
+        select: { userId: true },
+      });
+      if (clash && clash.userId !== userId) continue; // not ours — skip
+      await prisma.studyPlan.create({
+        data: {
           id: e.id,
           userId,
           createdAt: new Date(e.createdAt ?? e.updatedAt),
           ...data,
           version: 1,
         },
-        update: { ...data, version: { increment: 1 } },
       });
       merged += 1;
     }
