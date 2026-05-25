@@ -573,39 +573,12 @@ export default async function QuestionPage({
             </div>
           )}
 
-          <AiTransparencyDisclaimer />
-
-          <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
-            <p>
-              ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
-            </p>
-            <p>
-              最終更新:{" "}
-              <time dateTime={lastUpdatedISO} className="font-medium text-foreground">
-                {lastUpdatedJa}
-              </time>
-            </p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <a
-                href={q.sourcePdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
-              >
-                出典: IPA 問題 PDF
-                <ExternalLink className="h-3 w-3" />
-              </a>
-              <a
-                href={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
-              >
-                IPA 公式解答 PDF
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
-          </div>
+          <AiTransparencyDisclaimer
+            lastUpdatedISO={lastUpdatedISO}
+            lastUpdatedJa={lastUpdatedJa}
+            sourcePdfUrl={q.sourcePdfUrl}
+            answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
+          />
         </details>
       </section>
 
