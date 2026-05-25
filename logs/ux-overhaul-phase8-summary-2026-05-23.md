@@ -12,7 +12,7 @@ UX 磨き込み・控えめ認証導線・データ移行・E2E/セキュリテ�
 - タスク③ 認証導線の控えめ化: PR #394 — merge SHA `14362dae1969dc0385a664722075f025c7ee2dc6` — home/quiz に勧誘バナー無しを確認、/settings にメリット3点 + 「同期しない選択も有効」
 - タスク④ データポータビリティ: PR #395 — merge SHA `04ca6eaee543bc48dc18b0be9772a3fea23f070c` — 既存 export/import 維持確認 + 移行ガイド
 - タスク⑤ 同期 E2E + ユニットテスト: PR #396 — merge SHA `306ad904337851daedc96e26f4afdd738ed32c9f` — unit 9件（merge/LWW/postSync）+ e2e 5シナリオ。unit 75→84
-- タスク⑥ セキュリティ監査 + IDOR 修正: PR #397 — merge SHA `MERGE_SHA_TASK6` — StudyPlan 同期の IDOR を検出・修正、認可/CSRF/PII/削除カスケード点検
+- タスク⑥ セキュリティ監査 + IDOR 修正: PR #397 — merge SHA `4d9c79c9b4adc3527b43c249c1889d28d8738141` — StudyPlan 同期の IDOR を検出・修正、認可/CSRF/PII/削除カスケード点検
 - タスク⑦ パフォーマンス監査: PR #398 — merge SHA `8bc0faf3b2cd253e8803e96db314ad778b2cc567` — 実データ規模で問題なし、report-only
 - タスク⑧ 本サマリ: PR 番号未割当（本ドキュメント先行マージ予定）
 
