@@ -77,6 +77,11 @@ const nextConfig: NextConfig = {
       // /stats is now a first-class public dashboard (see app/stats/page.tsx)
       // Practice renamed
       { source: "/practice/weakness", destination: "/quiz?mode=weakness", permanent: true },
+      // /quickstart consolidated into the home page (which already lists all 13
+      // exam categories). 301 the old entry points so inbound links/bookmarks
+      // land on the home hero's "try 3 questions" flow instead of 404ing.
+      { source: "/quickstart", destination: "/", permanent: true },
+      { source: "/quickstart/:exam", destination: "/", permanent: true },
     ];
   },
   compress: true,

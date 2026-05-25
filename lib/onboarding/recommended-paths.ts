@@ -14,8 +14,8 @@ export function getRecommendedPath(
       summary: "用語と概念から少しずつ。まずは易しい問題で慣れていきます。",
       steps: [
         {
-          href: `/quickstart/${exam}`,
-          label: "3分で過去問AI体験",
+          href: `/quiz?mode=random&exam=${exam}&limit=3`,
+          label: "3問だけ過去問AIを体験",
           description: "AIコパイロットが選択肢ごとに解説するスタイルに慣れる",
           estMin: 3,
         },

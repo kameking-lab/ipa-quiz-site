@@ -4,6 +4,7 @@ import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
+import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import {
   HomeReturningHeader,
@@ -159,6 +160,7 @@ export default function HomePage() {
         </p>
         <HeroAiDemo />
         <TotalAnswerCounter />
+        <HomeQuickTrialCta />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
 

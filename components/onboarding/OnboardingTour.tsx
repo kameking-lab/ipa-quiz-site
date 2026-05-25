@@ -131,7 +131,7 @@ export function OnboardingTour() {
     const exam = selectedExam ?? "ap";
     markTourCompleted();
     setOpen(false);
-    router.push(`/quickstart/${exam}`);
+    router.push(`/quiz?mode=random&exam=${exam}&limit=3`);
   };
 
   const canAdvance =
@@ -432,16 +432,6 @@ export function OnboardingTour() {
           </div>
         </div>
 
-        {step === TOTAL_STEPS && attribute && selectedExam && (
-          <p className="text-center text-[11px] text-muted-foreground">
-            <Link
-              href={`/quickstart/${selectedExam}`}
-              className="underline decoration-border hover:text-foreground"
-            >
-              スタートページを先に見る
-            </Link>
-          </p>
-        )}
       </DialogContent>
     </Dialog>
   );
