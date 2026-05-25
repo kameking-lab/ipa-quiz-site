@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { JsonLd } from "@/components/seo/JsonLd";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { QUICKSTART_EXAMS } from "@/lib/onboarding";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { ArrowRight, Bot, BookOpen, Play } from "lucide-react";
 
@@ -79,9 +82,61 @@ export default async function QuickstartExamPage({ params }: PageProps) {
   const label = EXAM_LABELS[examCode];
   const samples = pickRepresentativeQuestions(examCode);
   const totalCount = (QUESTIONS_BY_EXAM[examCode] ?? []).length;
+  const pageUrl = `${SITE_BASE_URL}/quickstart/${examCode}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "@id": `${pageUrl}#howto`,
+        name: `${label}の過去問演習を3分で始める手順`,
+        description: `${label}の代表問題でAIコパイロットの解説を試したあと、無料の本格演習に進む3ステップ。登録不要。`,
+        inLanguage: "ja",
+        totalTime: "PT3M",
+        step: [
+          {
+            "@type": "HowToStep",
+            position: 1,
+            name: "代表3問を解く",
+            text: "直近年度・分野バラエティから自動選定した3問を90秒目安で解きます。",
+            url: `${pageUrl}#step-1`,
+          },
+          {
+            "@type": "HowToStep",
+            position: 2,
+            name: "AI コパイロットの解説を読む",
+            text: "選択肢ごとに「なぜ違うか」まで解説。分からない用語はその場で質問できます。",
+            url: `${pageUrl}#step-2`,
+          },
+          {
+            "@type": "HowToStep",
+            position: 3,
+            name: "本格演習に進む",
+            text: "ランダム出題・分野別・年度別・模試の4モードから好きな進め方を選びます。",
+            url: `${pageUrl}#step-3`,
+          },
+        ],
+      },
+      {
+        "@type": "LearningResource",
+        "@id": `${pageUrl}#learning-resource`,
+        name: `${label}を3分で体験 — 過去問AI`,
+        inLanguage: "ja",
+        learningResourceType: "Interactive tutorial",
+        educationalLevel: "Professional",
+        educationalUse: "Self-study",
+        audience: STUDENT_AUDIENCE,
+        teaches: `${label} 試験対策`,
+        isAccessibleForFree: true,
+        publisher: { "@type": "Organization", "@id": ORG_ID, name: SITE_NAME, url: SITE_BASE_URL },
+      },
+    ],
+  };
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-10">
+      <JsonLd data={jsonLd} />
       <Breadcrumbs
         items={[
           { name: "ホーム", href: "/" },
@@ -116,7 +171,7 @@ export default async function QuickstartExamPage({ params }: PageProps) {
           3 ステップ
         </h2>
         <ol className="mt-3 space-y-3">
-          <li className="flex items-start gap-3">
+          <li id="step-1" className="flex items-start gap-3 scroll-mt-20">
             <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
               1
             </span>
@@ -127,7 +182,7 @@ export default async function QuickstartExamPage({ params }: PageProps) {
               </p>
             </div>
           </li>
-          <li className="flex items-start gap-3">
+          <li id="step-2" className="flex items-start gap-3 scroll-mt-20">
             <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
               2
             </span>
@@ -140,7 +195,7 @@ export default async function QuickstartExamPage({ params }: PageProps) {
               </p>
             </div>
           </li>
-          <li className="flex items-start gap-3">
+          <li id="step-3" className="flex items-start gap-3 scroll-mt-20">
             <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-xs font-bold text-primary">
               3
             </span>
