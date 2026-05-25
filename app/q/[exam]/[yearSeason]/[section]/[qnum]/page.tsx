@@ -24,7 +24,7 @@ import {
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID, SITE_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
+import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import {
   findQuestionByRoute,
   questionPagePath,
@@ -42,7 +42,6 @@ import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
-import { getCategoryTip } from "@/lib/seo/category-tips";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
 // SSG only the most recent years to keep build time tractable; let older
@@ -266,35 +265,6 @@ export default async function QuestionPage({
       : {}),
   };
 
-  const tip = getCategoryTip(q.category);
-
-  const faqEntries = [
-    {
-      q: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} の正解は？`,
-      a: answerText
-        ? `正解は「${answerKey}: ${answerText}」です。`
-        : `正解は「${answerKey}」です。`,
-    },
-    {
-      q: `この問題はどの分野から出題されていますか？`,
-      a: `${examLabelAt(q.exam, q.year, q.season)} の「${q.category}」分野から出題されています。${
-        q.topicTags.length > 0
-          ? `関連キーワード: ${q.topicTags.slice(0, 5).join("・")}。`
-          : ""
-      }`,
-    },
-    {
-      q: `「${q.category}」分野を効率的に学ぶには？`,
-      a: tip.howToStudy,
-    },
-  ];
-  if (showRealExplanation) {
-    faqEntries.push({
-      q: `この問題の解説を要約すると？`,
-      a: truncate(q.explanation.replace(/\s+/g, " "), 200),
-    });
-  }
-
   const learningResource = {
     "@type": "LearningResource",
     "@id": `${pageUrlAbs}#learning-resource`,
@@ -329,16 +299,6 @@ export default async function QuestionPage({
       "@type": "Organization",
       "@id": ORG_ID,
     },
-  };
-
-  const faqPage = {
-    "@type": "FAQPage",
-    "@id": `${pageUrlAbs}#faq`,
-    mainEntity: faqEntries.map((entry) => ({
-      "@type": "Question",
-      name: entry.q,
-      acceptedAnswer: { "@type": "Answer", text: entry.a },
-    })),
   };
 
   const jsonLd = {
@@ -383,7 +343,6 @@ export default async function QuestionPage({
         hasPart: [questionEntity],
       },
       learningResource,
-      faqPage,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -407,13 +366,6 @@ export default async function QuestionPage({
             item: pageUrlAbs,
           },
         ],
-      },
-      {
-        "@type": "EducationalOrganization",
-        "@id": ORG_ID,
-        name: SITE_NAME,
-        url: SITE_BASE_URL,
-        logo: SITE_LOGO_IMAGE,
       },
     ],
   };
