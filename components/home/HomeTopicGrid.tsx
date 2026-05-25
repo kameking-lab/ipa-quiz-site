@@ -1,3 +1,6 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
 import {
   Network,
@@ -8,6 +11,7 @@ import {
   Briefcase,
   Compass,
   ArrowRight,
+  ChevronDown,
 } from "lucide-react";
 
 interface TopicCardDef {
@@ -88,14 +92,31 @@ const TOPIC_CARDS: TopicCardDef[] = [
 ];
 
 export function HomeTopicGrid() {
+  // Collapsed by default to cut decision overload on the home page (13 exam
+  // cards already compete above). Session-only state — no persistence. The
+  // grid stays in the DOM (hidden attribute, not conditional render) so the
+  // cross-exam category links remain crawlable for SEO.
+  const [open, setOpen] = React.useState(false);
+
   return (
     <section aria-labelledby="topic-grid-heading" className="mb-6">
-      <h2
-        id="topic-grid-heading"
-        className="mb-2 text-lg font-bold tracking-tight text-foreground sm:text-xl"
-      >
-        分野で探す
+      <h2 className="text-lg font-bold tracking-tight text-foreground sm:text-xl">
+        <button
+          type="button"
+          id="topic-grid-heading"
+          aria-expanded={open}
+          aria-controls="topic-grid-panel"
+          onClick={() => setOpen((v) => !v)}
+          className="flex w-full items-center justify-between gap-2 rounded-lg py-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        >
+          分野で探す
+          <ChevronDown
+            className={`h-5 w-5 shrink-0 text-muted-foreground transition-transform ${open ? "rotate-180" : ""}`}
+            aria-hidden="true"
+          />
+        </button>
       </h2>
+      <div id="topic-grid-panel" hidden={!open} className="mt-3">
       <p className="mb-3 text-xs text-muted-foreground sm:text-sm">
         試験区分をまたいで「ネットワーク」「データベース」など分野ごとに
         横断演習できます。応用情報（AP）の問題が表示されます。
@@ -130,6 +151,7 @@ export function HomeTopicGrid() {
           );
         })}
       </ul>
+      </div>
     </section>
   );
 }
