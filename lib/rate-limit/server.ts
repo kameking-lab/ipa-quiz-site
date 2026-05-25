@@ -1,3 +1,5 @@
+import { FREE_AI_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
+
 const WINDOW_MS_DAY = 24 * 60 * 60 * 1000;
 const WINDOW_MS_MINUTE = 60 * 1000;
 
@@ -14,9 +16,10 @@ function parseLimit(raw: string | undefined, fallback: number): number {
   return Number.isFinite(n) && n > 0 ? Math.floor(n) : fallback;
 }
 
-// 教育貢献プロジェクト：初期 10 回までは誰でも無料、フィードバック投稿後は実質無制限
-export const FREE_INITIAL_LIMIT = parseLimit(process.env.FREE_INITIAL_LIMIT, 10);
-export const POST_FEEDBACK_DAILY_LIMIT = parseLimit(process.env.POST_FEEDBACK_DAILY_LIMIT, 9999);
+// 教育貢献プロジェクト：初期 FREE_AI_DAILY_LIMIT 回までは誰でも無料、
+// フィードバック投稿後は実質無制限。既定値は lib/constants/ai-quota.ts と共有。
+export const FREE_INITIAL_LIMIT = parseLimit(process.env.FREE_INITIAL_LIMIT, FREE_AI_DAILY_LIMIT);
+export const POST_FEEDBACK_DAILY_LIMIT = parseLimit(process.env.POST_FEEDBACK_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT);
 export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
 
 // Backwards-compat exports retained for existing imports
