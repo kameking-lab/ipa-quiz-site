@@ -19,6 +19,12 @@ import { join } from "node:path";
 import { getAllBlogPosts } from "@/data/blog/index";
 import { ESSAY_EXAM_CODES as ESSAYS_EXAM_CODES } from "@/lib/essays/load";
 import { ESSAY_EXAM_CODES as ESSAY_AI_EXAM_CODES } from "@/lib/essay/load";
+import { FEATURE_LANDING_PAGES } from "@/data/features";
+import { KEYWORD_PAGES } from "@/data/keywords";
+import {
+  getAllSuccessStorySummaries,
+  getSuccessStoryExams,
+} from "@/data/success-stories";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -162,6 +168,28 @@ function buildValidPaths(): Set<string> {
   for (const exam of EXAM_CODES) {
     paths.add(`/${exam}/afternoon`);
     paths.add(`/${exam}/afternoon/`);
+  }
+
+  // Feature landing pages /features/{slug} (dynamic [slug] route)
+  for (const f of FEATURE_LANDING_PAGES) {
+    paths.add(`/features/${f.slug}`);
+    paths.add(`/features/${f.slug}/`);
+  }
+
+  // Keyword pages /keywords/{slug}
+  for (const k of KEYWORD_PAGES) {
+    paths.add(`/keywords/${k.slug}`);
+    paths.add(`/keywords/${k.slug}/`);
+  }
+
+  // Success-story pages /success-stories/{exam} and /{exam}/{slug}
+  for (const exam of getSuccessStoryExams()) {
+    paths.add(`/success-stories/${exam}`);
+    paths.add(`/success-stories/${exam}/`);
+  }
+  for (const s of getAllSuccessStorySummaries()) {
+    paths.add(`/success-stories/${s.exam}/${s.slug}`);
+    paths.add(`/success-stories/${s.exam}/${s.slug}/`);
   }
 
   // Known dynamic-parameter routes that appear as links
