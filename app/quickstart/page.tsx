@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_LABELS } from "@/lib/utils";
 import { QUICKSTART_EXAMS } from "@/lib/onboarding";
@@ -34,6 +35,12 @@ export default function QuickstartPage() {
 
   return (
     <main className="mx-auto w-full max-w-5xl px-4 py-8 sm:py-10">
+      <Breadcrumbs
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "3分体験", href: "/quickstart" },
+        ]}
+      />
       <header className="space-y-3">
         <p className="text-xs font-semibold uppercase tracking-wide text-primary">
           3分で過去問AIを体験

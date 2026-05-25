@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "利用規約",
@@ -43,6 +44,13 @@ export default function TermsPage() {
             戻る
           </Link>
         </Button>
+
+        <Breadcrumbs
+          items={[
+            { name: "ホーム", href: "/" },
+            { name: "利用規約", href: "/terms" },
+          ]}
+        />
 
         <header className="mb-10 animate-fade-in">
           <Badge variant="soft" className="mb-4">

@@ -17,6 +17,7 @@ import type {
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { examLabel } from "@/lib/utils";
 import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
@@ -142,6 +143,12 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
+      <Breadcrumbs
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "模試モード", href: "/mock-exam" },
+        ]}
+      />
       <header className="mb-6">
         <div className="mb-2 flex items-center gap-2">
           <Timer className="h-5 w-5 text-sky-500" />

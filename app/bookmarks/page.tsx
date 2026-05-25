@@ -13,6 +13,7 @@ import {
   type BookmarkEntry,
 } from "@/lib/storage/bookmarks";
 import { TagInput } from "@/components/TagInput";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { cn } from "@/lib/utils";
 import type { Question, Season, Session } from "@/lib/questions/types";
@@ -101,6 +102,12 @@ export default function BookmarksPage() {
 
   return (
     <main className="container mx-auto max-w-2xl px-4 py-8">
+      <Breadcrumbs
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "ブックマーク", href: "/bookmarks" },
+        ]}
+      />
       {/* Header */}
       <div className="mb-6 flex items-center justify-between">
         <h1 className="flex items-center gap-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
