@@ -33,7 +33,6 @@ import {
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
-import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
@@ -733,29 +732,6 @@ export default async function QuestionPage({
       {/* Bottom share section removed: the question header already exposes */}
       {/* a compact 𝕏 / LINE / Copy cluster (PR #338), so the duplicate */}
       {/* full-text block at the page tail was visual noise. */}
-
-      {/* Short-form video */}
-      <section aria-label="ショート動画" className="print:hidden mt-6">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          ショート動画
-        </h2>
-        <QuestionVideoButton
-          examLabel={examLabelAt(q.exam, q.year, q.season)}
-          yearSeason={formatYearSeason(q.year, q.season)}
-          questionText={q.question}
-          answerText={
-            answerText
-              ? `${answerKey}：${answerText}`
-              : String(answerKey)
-          }
-          explanationSummary={
-            showRealExplanation
-              ? q.explanation
-              : "解説は準備中。クイズモードでAIに質問できます。"
-          }
-          filename={`ipa-quiz-${q.exam}-${q.year}${q.season}-q${q.qNumber}.webm`}
-        />
-      </section>
 
       {/* Prev / Next — desktop & tablet inline, mobile sticky */}
       <nav
