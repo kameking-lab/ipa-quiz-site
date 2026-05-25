@@ -9,6 +9,7 @@ import {
   Bell,
   CalendarClock,
   CheckCircle2,
+  Cloud,
   Download,
   KeyRound,
   Monitor,
@@ -524,6 +525,34 @@ export default function SettingsPage() {
                   className="hidden"
                   onChange={handleImport}
                 />
+              </div>
+            </div>
+          </section>
+
+          {/* Cloud sync (opt-in) */}
+          <section>
+            <SectionTitle
+              id="cloud-sync"
+              icon={<Cloud className="h-5 w-5" />}
+              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意・サインインが必要）"
+            >
+              クラウド同期
+            </SectionTitle>
+            <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
+              <div className="space-y-3 p-4 text-sm text-muted-foreground">
+                <p>
+                  学習履歴はお使いの端末のブラウザ（localStorage）にのみ保存されます。
+                  サインインすると学習履歴をクラウドにバックアップし、別の端末でも同じ履歴で続けられます。
+                  同期は<strong className="text-foreground">任意</strong>です。サインインしなくても全機能をそのままご利用いただけます。
+                </p>
+                <Link
+                  href="/account"
+                  className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary-hover"
+                >
+                  <Cloud className="h-4 w-4" aria-hidden="true" />
+                  クラウド同期を設定する
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
               </div>
             </div>
           </section>
