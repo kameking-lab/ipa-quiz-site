@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { buildWebPageNode } from "@/lib/seo/structured-data";
@@ -78,6 +79,13 @@ export default function PrivacyPage() {
             戻る
           </Link>
         </Button>
+
+        <Breadcrumbs
+          items={[
+            { name: "ホーム", href: "/" },
+            { name: "プライバシーポリシー", href: "/privacy" },
+          ]}
+        />
 
         <header className="mb-10 animate-fade-in">
           <Badge variant="soft" className="mb-4">

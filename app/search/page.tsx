@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, Search as SearchIcon } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SearchClient } from "@/components/search/SearchClient";
 import { ALL_QUESTIONS } from "@/data/questions";
 
@@ -37,6 +38,13 @@ export default function SearchPage() {
             戻る
           </Link>
         </Button>
+
+        <Breadcrumbs
+          items={[
+            { name: "ホーム", href: "/" },
+            { name: "問題検索", href: "/search" },
+          ]}
+        />
 
         <header className="mb-6 animate-fade-in">
           <Badge variant="soft" className="mb-3">

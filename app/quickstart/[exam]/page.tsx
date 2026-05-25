@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { QUICKSTART_EXAMS } from "@/lib/onboarding";
@@ -81,6 +82,13 @@ export default async function QuickstartExamPage({ params }: PageProps) {
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-10">
+      <Breadcrumbs
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "3分体験", href: "/quickstart" },
+          { name: label, href: `/quickstart/${examCode}` },
+        ]}
+      />
       <header className="space-y-2">
         <Link
           href="/quickstart"

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { CalendarDays, Sparkles, Trash2 } from "lucide-react";
 import { SchedulePlanner } from "@/components/SchedulePlanner";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { examLabel } from "@/lib/utils";
@@ -28,6 +29,12 @@ export function StudyPlanLanding() {
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
+      <Breadcrumbs
+        items={[
+          { name: "ホーム", href: "/" },
+          { name: "学習プラン", href: "/study-plan" },
+        ]}
+      />
       <header className="mb-8">
         <div className="mb-2 inline-flex items-center gap-2 rounded-full bg-primary-soft px-3 py-1 text-xs font-medium text-primary-soft-foreground">
           <Sparkles className="h-3.5 w-3.5" aria-hidden />
