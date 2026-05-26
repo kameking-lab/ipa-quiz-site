@@ -1,8 +1,6 @@
 import type { RecommendedPath, UserAttribute } from "./types";
 import type { ExamCode } from "@/lib/questions/types";
 
-export const QUICKSTART_EXAMS: ExamCode[] = ["ip", "fe", "ap", "sc"];
-
 export function getRecommendedPath(
   attribute: UserAttribute,
   exam: ExamCode,
