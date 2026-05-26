@@ -499,7 +499,7 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
             id="search-input"
             type="search"
             inputMode="search"
-            placeholder="例) TCP 輻輳制御、データベース正規化、SQL注入"
+            placeholder="例) TCP/IP、正規化、SQLインジェクション"
             className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12"
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
