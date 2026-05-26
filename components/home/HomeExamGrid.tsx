@@ -35,8 +35,10 @@ const EXAM_CARDS: ExamCardDef[] = [
 const TIER_LABEL: Record<DifficultyTier, { label: string; className: string }> = {
   beginner: {
     label: "初心者おすすめ",
+    // text-emerald-800 (not 700) so "初心者おすすめ" / "未挑戦" clear WCAG AA
+    // 4.5:1 on the emerald-100 chip (G-2). emerald-700 measured ~4.35:1.
     className:
-      "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300",
+      "bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300",
   },
   standard: {
     label: "定番",
@@ -261,7 +263,7 @@ function ExamCard({
         <Link
           href={`/quiz?mode=random&exam=${exam.id}`}
           aria-label={`${exam.name}をランダム出題で開始`}
-          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1 whitespace-nowrap rounded-full bg-emerald-600 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-500 dark:hover:bg-emerald-400 min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:w-auto min-[480px]:justify-start"
+          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1 whitespace-nowrap rounded-full bg-emerald-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-700 dark:hover:bg-emerald-600 min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:w-auto min-[480px]:justify-start"
         >
           <Shuffle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
           今すぐ解く →
