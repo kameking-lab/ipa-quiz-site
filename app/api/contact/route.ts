@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
+import { verifyTurnstileToken } from "@/lib/turnstile";
 
 export const runtime = "nodejs";
 
@@ -31,6 +32,7 @@ const ContactSchema = z.object({
   name: z.string().max(80).optional().default(""),
   email: z.string().max(120).optional().default(""),
   body: z.string().min(1).max(4000),
+  turnstileToken: z.string().max(4096).optional(),
 });
 
 const BodySchema = z.union([FeedbackSchema, QuestionCommentSchema, ContactSchema]);
@@ -58,6 +60,20 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
+
+  // Cloudflare Turnstile on the public contact form (phase 11 / A-2). Verify
+  // fails open when TURNSTILE_SECRET_KEY is unset (dev / CI / pre-activation),
+  // so behavior is unchanged until the keys are configured in production.
+  if (payload.kind === "contact") {
+    const verify = await verifyTurnstileToken(payload.turnstileToken, ip);
+    if (!verify.ok) {
+      return NextResponse.json(
+        { error: "turnstile_failed", message: "スパム判定により送信できませんでした。ページを再読み込みしてお試しください。" },
+        { status: 403 },
+      );
+    }
+  }
+
   // Reuse the same rate-limit bucket so abuse mitigations apply uniformly,
   // but never block feedback submissions outright (educational mission).
   const rl = await checkRateLimit({ ip, feedbackSubmitted: readFeedbackFlag(req) });

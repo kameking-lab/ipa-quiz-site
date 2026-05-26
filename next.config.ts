@@ -7,7 +7,8 @@ const cspDirectives = [
   // unsafe-inline required for theme bootstrap script in layout.tsx
   // cdn.jsdelivr.net required for Swagger UI on /api-docs
   // va.vercel-scripts.com: Vercel Analytics; vitals.vercel-insights.com: Speed Insights
-  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com`,
+  // challenges.cloudflare.com: Cloudflare Turnstile (contact-form spam protection)
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""} https://vercel.live https://cdn.jsdelivr.net https://us-assets.i.posthog.com https://va.vercel-scripts.com https://vitals.vercel-insights.com https://challenges.cloudflare.com`,
   "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
   "img-src 'self' data: blob: https://*.ipa.go.jp",
   "font-src 'self' https://cdn.jsdelivr.net",
@@ -19,7 +20,7 @@ const cspDirectives = [
   "object-src 'none'",
   // connect-src: Gemini API + Vercel Live + PostHog + Sentry + Vercel Analytics + Speed Insights
   "connect-src 'self' https://generativelanguage.googleapis.com https://vercel.live wss://ws-us3.pusher.com wss://ws-eu.pusher.com https://us.i.posthog.com https://us-assets.i.posthog.com https://o4511300167860224.ingest.us.sentry.io https://va.vercel-scripts.com https://vitals.vercel-insights.com",
-  "frame-src https://vercel.live",
+  "frame-src https://vercel.live https://challenges.cloudflare.com",
   "frame-ancestors 'none'",
   "base-uri 'self'",
   "form-action 'self'",
