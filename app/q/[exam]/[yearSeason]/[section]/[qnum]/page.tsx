@@ -33,7 +33,7 @@ import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ShareButtons } from "@/components/seo/ShareButtons";
+import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
@@ -287,7 +287,7 @@ export default async function QuestionPage({
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
           <div className="print:hidden">
-            <ShareButtons url={pageUrlAbs} title={title} compact />
+            <ShareButtons url={pageUrlAbs} text={title} compact />
           </div>
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">

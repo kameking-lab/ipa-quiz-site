@@ -7,7 +7,10 @@ interface Props {
   url: string;
   text: string;
   hashtags?: string[];
-  /** Compact mode hides labels and uses a single row of icon-only buttons. */
+  /**
+   * Compact mode renders an icon-only cluster (X / LINE / copy) suitable for a
+   * page header. Tap targets are 36px — above the WCAG 2.5.8 (AA) 24px floor.
+   */
   compact?: boolean;
 }
 
@@ -27,6 +30,12 @@ function buildFacebookUrl(url: string): string {
   return `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
 }
 
+/**
+ * Single canonical share-buttons component (previously duplicated as
+ * components/ShareButtons + components/seo/ShareButtons with divergent props and
+ * platform coverage). Full mode: X / LINE / Facebook / copy / native share.
+ * Compact mode: icon-only X / LINE / copy cluster for headers.
+ */
 export function ShareButtons({ url, text, hashtags, compact }: Props) {
   const [copied, setCopied] = React.useState(false);
 
@@ -49,7 +58,62 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
     }
   };
 
-  const items: Array<{ key: string; href?: string; onClick?: () => void; label: string; bg: string }> = [
+  if (compact) {
+    const iconBtn =
+      "inline-flex h-9 w-9 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+
+    return (
+      <div role="group" aria-label="この問題を共有" className="relative flex items-center gap-1">
+        <a
+          href={buildXUrl(url, text, hashtags)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={iconBtn}
+          aria-label="X (Twitter) で共有"
+        >
+          <span aria-hidden="true" className="text-sm font-bold leading-none">
+            𝕏
+          </span>
+        </a>
+        <a
+          href={buildLineUrl(url, text)}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={iconBtn}
+          aria-label="LINE で共有"
+        >
+          <span aria-hidden="true" className="text-[10px] font-bold leading-none tracking-tighter">
+            LINE
+          </span>
+        </a>
+        <button
+          type="button"
+          onClick={copy}
+          className={iconBtn}
+          aria-label={copied ? "リンクをコピーしました" : "リンクをコピー"}
+        >
+          {copied ? (
+            <Check className="h-4 w-4" aria-hidden="true" />
+          ) : (
+            <Copy className="h-4 w-4" aria-hidden="true" />
+          )}
+        </button>
+        <span
+          role="status"
+          aria-live="polite"
+          className={
+            copied
+              ? "pointer-events-none absolute -bottom-7 right-0 rounded-md bg-zinc-900 px-2 py-0.5 text-[11px] font-medium text-white shadow-md dark:bg-zinc-100 dark:text-zinc-900"
+              : "sr-only"
+          }
+        >
+          {copied ? "リンクをコピーしました" : ""}
+        </span>
+      </div>
+    );
+  }
+
+  const items: Array<{ key: string; href: string; label: string; bg: string }> = [
     {
       key: "x",
       href: buildXUrl(url, text, hashtags),
@@ -71,7 +135,7 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
   ];
 
   return (
-    <div className={compact ? "flex flex-wrap gap-1.5" : "flex flex-wrap gap-2"}>
+    <div className="flex flex-wrap gap-2">
       {items.map((it) => (
         <a
           key={it.key}
