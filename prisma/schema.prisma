@@ -134,7 +134,6 @@ model StudyRecord {
   questionId  String
   correct     Boolean
   answeredAt  DateTime @default(now())
-  timeSpentMs Int?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 

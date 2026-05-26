@@ -22,7 +22,7 @@ export async function GET() {
   const records = await prisma.studyRecord.findMany({
     where: { userId: session.user.id },
     orderBy: { answeredAt: "asc" },
-    select: { questionId: true, correct: true, answeredAt: true, timeSpentMs: true },
+    select: { questionId: true, correct: true, answeredAt: true },
   });
 
   const payload = {
@@ -32,11 +32,10 @@ export async function GET() {
       email: session.user.email,
       plan: session.user.plan,
     },
-    entries: records.map((r: { questionId: string; correct: boolean; answeredAt: Date; timeSpentMs: number | null }) => ({
+    entries: records.map((r: { questionId: string; correct: boolean; answeredAt: Date }) => ({
       id: r.questionId,
       correct: r.correct,
       at: r.answeredAt.getTime(),
-      timeSpentMs: r.timeSpentMs,
     })),
   };
 
