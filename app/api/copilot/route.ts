@@ -127,14 +127,15 @@ export async function POST(req: Request) {
 
   const model = resolveModel("free");
 
-  // Aligned with the 200-400字 / 400-600字 character targets in prompts.ts.
-  // 1 Japanese char ≒ 1.5–2 Gemini tokens, so the budgets below give the model
-  // headroom without encouraging it to overshoot the structural target.
+  // Hard ceiling per length, aligned with the 300字 / 600字 caps in prompts.ts
+  // (1 Japanese char ≒ 1.5–2 Gemini tokens). The budget is a backstop: it must
+  // be tight enough that a "5行" answer can't physically sprawl to 10+ lines
+  // (即修正⑤), but with enough headroom not to truncate a legitimate answer.
   const maxTokens =
     payload.responseLength === "short"
       ? 180
       : payload.responseLength === "medium"
-        ? 520
+        ? 440
         : 900;
 
   const stream = createCopilotResponseStream({
