@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Shield, FileText, AlertTriangle, ArrowRight, BookOpen } from "lucide-react";
+import { Shield, FileText, ArrowRight, BookOpen } from "lucide-react";
+
+import { AiContentNotice } from "@/components/AiContentNotice";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -37,6 +39,8 @@ export async function generateMetadata({
     title: `${label} 業種別合格答案サンプル | 午後II 論述`,
     description: `${label} 午後II 論述問題の業種別合格答案サンプル。製造業・建設業・金融業・流通業・通信業・公共など、業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`,
     alternates: { canonical: `/essays/${exam}` },
+    // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
+    robots: { index: false, follow: false },
   };
 }
 
@@ -123,20 +127,6 @@ export default async function EssayExamPage({
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
       <JsonLd data={jsonLd} />
-      <div
-        role="note"
-        className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
-      >
-        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
-        <p>
-          <strong>本答案は AI 生成の参考例です。</strong>
-          IPA 公式の合格答案ではなく、合格を保証するものではありません。
-          業種別シナリオ（医療・金融・公共など）は論述構成を学ぶための<strong>架空の事例</strong>であり、
-          それぞれの業界における専門的助言・実務指南を提供するものではありません。
-          論述構成・業種事例の参考としてご活用ください。
-        </p>
-      </div>
-
       <section className="mb-8">
         <div className="mb-3 flex items-center gap-2">
           <Shield className="h-6 w-6 text-sky-600 dark:text-sky-400" />
@@ -145,6 +135,11 @@ export default async function EssayExamPage({
             <span className="text-sky-600 dark:text-sky-400">業種別合格答案サンプル</span>
           </h1>
         </div>
+        <AiContentNotice
+          className="mb-4"
+          headline="⚠️ AI生成の参考答案（架空）"
+          body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
+        />
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           午後 II 論述問題を業種別の具体的シナリオで解説した参考答案です。
           自分の業務経験に近い業種を選んで、論述構成の骨格づくりにお役立てください。

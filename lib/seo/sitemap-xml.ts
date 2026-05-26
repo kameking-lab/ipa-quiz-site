@@ -96,7 +96,8 @@ const STATIC_ROUTES: UrlEntry[] = [
   ),
   { url: `${SITE_BASE_URL}/why-kakomon-ai`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/success-stories`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+  // /success-stories と /essays は AI 生成の架空コンテンツで noindex（致命傷③）。
+  // noindex ページを sitemap に載せるとクローラ signal が矛盾するため除外する。
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
@@ -259,8 +260,8 @@ export function renderSitemapIndexXml(): string {
     `${SITE_BASE_URL}/sitemap/topics.xml`,
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
-    `${SITE_BASE_URL}/sitemap/essays.xml`,
-    `${SITE_BASE_URL}/sitemap/success-stories.xml`,
+    // /sitemap/essays.xml と /sitemap/success-stories.xml は意図的に外す:
+    // 配下ページは noindex（致命傷③）であり、sitemap 掲載は矛盾シグナルになる。
   ];
   const chunkCount = getSitemapChunkCount();
   for (let i = 0; i < chunkCount; i += 1) {
