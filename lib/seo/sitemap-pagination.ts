@@ -6,8 +6,8 @@ export const SITEMAP_CHUNK_SIZE = 10000;
 // Only emit URLs we actually want indexed. The /q/* page sets robots: noindex
 // for placeholder explanations, so listing those URLs in the sitemap creates
 // Search Console "Submitted URL marked 'noindex'" warnings and wastes crawl
-// budget. Today the placeholder set is empty, but keeping the filter here
-// means a future content regeneration that reintroduces them stays consistent.
+// budget. As of 2026-05-26 ~1,742 questions carry placeholder explanations
+// (noindex), so this filter is load-bearing, not theoretical.
 // needsReview questions 404 at /q/* (see app/q/.../page.tsx), so exclude them
 // here too — otherwise the sitemap advertises URLs that resolve to 404.
 export function getIndexableQuestions() {
