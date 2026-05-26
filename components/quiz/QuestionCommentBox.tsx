@@ -104,11 +104,11 @@ export function QuestionCommentBox({ questionId }: { questionId: string }) {
     <section className="mt-6 rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
       <h3 className="mb-2 flex items-center gap-2 text-sm font-semibold text-zinc-800 dark:text-zinc-100">
         <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-        この問題へのコメント
+        補足解説・別解の共有
       </h3>
       <p className="mb-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-        誤りの指摘・補足解説・別解などをお寄せください。教育貢献プロジェクトとして全件目を通します。
-        個人情報は投稿しないでください。
+        補足解説や別解の共有用です。解説の誤りは各問題の解説ページにある「誤りを報告」ボタンからお知らせください。
+        教育貢献プロジェクトとして全件目を通します。個人情報は投稿しないでください。
       </p>
 
       <label htmlFor={`qcomment-${questionId}`} className="sr-only">
