@@ -5,6 +5,7 @@ import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { captureException } from "@/lib/monitoring/sentry";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 
 export const runtime = "nodejs";
 
@@ -112,6 +113,20 @@ ${choicesText}
     );
   }
 
+  // CLAUDE.md §0 hard cap: stop new real AI requests at ¥50,000/month.
+  if (provider.name !== "mock") {
+    const cap = await checkMonthlyCostCap();
+    if (!cap.allowed) {
+      return NextResponse.json(
+        {
+          error: "cost_capped",
+          message: "類題生成は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+        },
+        { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+      );
+    }
+  }
+
   const model = resolveModel("free");
 
   let raw = "";
@@ -124,6 +139,14 @@ ${choicesText}
       temperature: 0.85,
     })) {
       raw += chunk;
+    }
+    if (provider.name !== "mock") {
+      void recordAiCost({
+        tier: "flash-lite",
+        inputTokens: estimateTokens(SYSTEM_PROMPT.length + userPrompt.length),
+        outputTokens: estimateTokens(raw.length),
+        label: "generate-question",
+      });
     }
   } catch (err) {
     await captureException(err, {

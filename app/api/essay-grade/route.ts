@@ -5,6 +5,7 @@ import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { findEssayQuestion } from "@/lib/essay/load";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import type {
@@ -317,6 +318,18 @@ export async function POST(req: Request) {
     });
   }
 
+  // CLAUDE.md §0 hard cap: stop new real AI requests at ¥50,000/month.
+  const cap = await checkMonthlyCostCap();
+  if (!cap.allowed) {
+    return NextResponse.json(
+      {
+        error: "cost_capped",
+        message: "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+      },
+      { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+    );
+  }
+
   const userPrompt = buildUserPrompt(question, payload.industry, payload.answers);
   const model = resolveModel("free");
 
@@ -331,6 +344,12 @@ export async function POST(req: Request) {
     })) {
       buf += chunk;
     }
+    void recordAiCost({
+      tier: "flash-lite",
+      inputTokens: estimateTokens(ESSAY_SYSTEM_PROMPT.length + userPrompt.length),
+      outputTokens: estimateTokens(buf.length),
+      label: "essay-grade",
+    });
   } catch (err) {
     // Log internal detail server-side only; never echo upstream error messages
     // (which can include API keys, internal paths, env var names) to the client.

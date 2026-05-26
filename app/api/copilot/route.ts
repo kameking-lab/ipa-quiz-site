@@ -10,6 +10,7 @@ import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 
 export const runtime = "nodejs";
 
@@ -125,6 +126,22 @@ export async function POST(req: Request) {
     );
   }
 
+  // CLAUDE.md §0 hard cap: stop new real AI requests once the monthly spend
+  // reaches ¥50,000 (mock/dev path is free and never blocked).
+  if (provider.name !== "mock") {
+    const cap = await checkMonthlyCostCap();
+    if (!cap.allowed) {
+      return NextResponse.json(
+        {
+          error: "cost_capped",
+          message:
+            "AI 機能は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+        },
+        { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+      );
+    }
+  }
+
   const model = resolveModel("free");
 
   // Hard ceiling per length, aligned with the 300字 / 600字 caps in prompts.ts
@@ -138,6 +155,9 @@ export async function POST(req: Request) {
         ? 440
         : 900;
 
+  const isRealProvider = provider.name !== "mock";
+  const inputChars = system.length + userMessages.reduce((n, m) => n + m.content.length, 0);
+
   const stream = createCopilotResponseStream({
     provider,
     system,
@@ -148,6 +168,16 @@ export async function POST(req: Request) {
     citationFooter: rag.citationFooter,
     hasGrounding: rag.hasGrounding,
     timeoutMs: STREAM_TIMEOUT_MS,
+    onComplete: isRealProvider
+      ? (outputChars) => {
+          void recordAiCost({
+            tier: "flash-lite",
+            inputTokens: estimateTokens(inputChars),
+            outputTokens: estimateTokens(outputChars),
+            label: "copilot",
+          });
+        }
+      : undefined,
   });
 
   return new Response(stream, {
