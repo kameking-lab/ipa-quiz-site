@@ -29,11 +29,6 @@ export const ESSAY_EXAM_CODES: EssayExamCode[] = [
   "au",
 ];
 
-/** @deprecated Use ESSAY_EXAM_CODES. Retained for any inbound import. */
-export const SC_ESSAY_EXAM_CODES: EssayExamCode[] = ESSAY_EXAM_CODES;
-/** @deprecated Use EssayExamCode. */
-export type SCEssayExamCode = EssayExamCode;
-
 export function isEssayExamCode(value: string): value is EssayExamCode {
   return (ESSAY_EXAM_CODES as string[]).includes(value);
 }

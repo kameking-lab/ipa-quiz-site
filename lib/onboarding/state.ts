@@ -3,9 +3,10 @@ import type { ExamCode } from "@/lib/questions/types";
 
 export const ONBOARDING_LS_KEY = "kakomon-ai-onboarding-v1";
 
-// Dead key from the long-removed 2-step WelcomeModal. The tour is now opt-in
-// (never auto-shows), so there is nothing to "suppress" — this key is no longer
-// read or written. cleanupDeadOnboardingKeys() removes it from existing users.
+// Dead key from an earlier, removed 2-step welcome modal. The tour is now
+// opt-in (never auto-shows), so there is nothing to "suppress" — this key is no
+// longer read or written. cleanupDeadOnboardingKeys() removes it from existing
+// users.
 const DEAD_LEGACY_ONBOARDED_KEY = "ipa-quiz:onboarded:v1";
 
 const EMPTY: OnboardingState = {
@@ -89,10 +90,6 @@ export function setSelectedExam(exam: ExamCode): OnboardingState {
   const next: OnboardingState = { ...current, selectedExam: exam };
   writeOnboardingState(next);
   return next;
-}
-
-export function shouldShowTour(state: OnboardingState): boolean {
-  return state.completedTour === null && state.dismissedAt === null;
 }
 
 export function resetOnboardingForTesting(): void {
