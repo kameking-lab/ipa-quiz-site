@@ -8,7 +8,6 @@ import {
   ExternalLink,
   Globe,
   Lock,
-  MessageSquare,
   Rocket,
   Search,
   Send,
@@ -64,12 +63,6 @@ const INTERNAL_DASHBOARDS: InternalLink[] = [
     title: "デプロイ状況",
     description: "Vercel 本番デプロイ・PR 反映状態・ビルドクォータ監視。",
     icon: <Rocket className="h-5 w-5 text-amber-500" />,
-  },
-  {
-    href: "/admin/feedback",
-    title: "フィードバック受信箱",
-    description: "/api/feedback POST 経由のユーザー報告を一覧表示。",
-    icon: <MessageSquare className="h-5 w-5 text-rose-500" />,
   },
   {
     href: "/admin/errors",
@@ -274,7 +267,7 @@ export default function AdminLaunchMonitoringPage() {
               <strong>エラー確認:</strong> /admin/errors または Sentry でクリティカル 0 件
             </li>
             <li>
-              <strong>フィードバック確認:</strong> /admin/feedback で未対応 5 件以下
+              <strong>フィードバック確認:</strong> Slack（#feedback）で未対応 5 件以下
             </li>
             <li>
               <strong>Twitter 反応確認:</strong> @kakomon_ai_jp の RT・引用 RT・リプライ
