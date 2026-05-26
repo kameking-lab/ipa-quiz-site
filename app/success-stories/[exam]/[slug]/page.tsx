@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { AiContentNotice } from "@/components/AiContentNotice";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
@@ -39,6 +40,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title: story.title,
     description: story.description,
     alternates: { canonical: url },
+    // 致命傷③: AI生成の架空ペルソナによる体験記なので検索インデックス対象外。
+    robots: { index: false, follow: false },
     openGraph: {
       title: story.title,
       description: story.description,
@@ -282,6 +285,10 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
             </>
           ) : null}
         </p>
+        <AiContentNotice
+          className="mt-4"
+          body="この体験記は実在の人物・合格者への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習法・スケジュールは実証されたパターンに基づく参考情報としてご活用ください。"
+        />
       </header>
 
       <aside className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-4 text-xs leading-relaxed text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/40 dark:text-zinc-300 sm:text-sm">

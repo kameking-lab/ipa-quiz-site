@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, Shield } from "lucide-react";
 
+import { AiContentNotice } from "@/components/AiContentNotice";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essays/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -15,6 +16,8 @@ export const metadata: Metadata = {
   description:
     "IPA 高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）午後 II 論述問題の業種別合格答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
   alternates: { canonical: "/essays" },
+  // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
+  robots: { index: false, follow: false },
 };
 
 export default function EssaysIndexPage() {
@@ -77,20 +80,6 @@ export default function EssaysIndexPage() {
         </ol>
       </nav>
 
-      <div
-        role="note"
-        className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
-      >
-        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
-        <p>
-          <strong>本答案は AI 生成の参考例です。</strong>
-          IPA 公式の合格答案ではなく、合格を保証するものではありません。
-          業種別シナリオは論述構成を学ぶための<strong>架空の事例</strong>であり、
-          各業界の専門的助言・実務指南を提供するものではありません。
-          論述構成・業種事例の参考としてご活用ください。
-        </p>
-      </div>
-
       <section className="mb-8">
         <div className="mb-3 flex items-center gap-2">
           <Shield className="h-6 w-6 text-sky-600 dark:text-sky-400" />
@@ -104,6 +93,11 @@ export default function EssaysIndexPage() {
           業種別参考答案です。製造・金融・公共など自分の業務経験に近い業種を選んで、
           論述の骨格づくりにお役立てください。
         </p>
+        <AiContentNotice
+          className="mt-4"
+          headline="⚠️ AI生成の参考答案（架空）"
+          body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
+        />
       </section>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

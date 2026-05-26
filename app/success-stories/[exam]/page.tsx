@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { AiContentNotice } from "@/components/AiContentNotice";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getSuccessStoriesByExam,
@@ -40,6 +41,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     title,
     description,
     alternates: { canonical: url },
+    // 致命傷③: AI生成の架空ペルソナ集なので検索インデックス対象外。
+    robots: { index: false, follow: false },
     openGraph: {
       title,
       description,
@@ -160,6 +163,10 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
           {label}に合格した <strong>{stories.length} 名</strong> のリアル体験記。
           職種・年齢・学習期間が違う合格者のストーリーから、自分に合った戦略を見つけてください。
         </p>
+        <AiContentNotice
+          className="mt-4"
+          body="実在の合格者・人物への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習法・スケジュールは実証されたパターンに基づく参考情報としてご活用ください。"
+        />
       </header>
 
       <ul className="space-y-3">

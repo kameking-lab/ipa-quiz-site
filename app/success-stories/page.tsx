@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { AiContentNotice } from "@/components/AiContentNotice";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SuccessStoriesFilterableList } from "@/components/success-stories/SuccessStoriesFilterableList";
 import {
@@ -22,6 +23,8 @@ export const metadata: Metadata = {
   description:
     "IPA情報処理技術者試験13区分の合格者リアル体験記。営業・事務・エンジニア・主婦・学生など多様な職種・年齢の合格までの勉強法・つまずき・突破方法を生々しく紹介。",
   alternates: { canonical: "/success-stories" },
+  // 致命傷③: AI生成の架空ペルソナ集なので検索インデックス対象外にする。
+  robots: { index: false, follow: false },
   openGraph: {
     title: "IPA試験 合格体験記 | 過去問AI",
     description:
@@ -133,9 +136,10 @@ export default function SuccessStoriesIndexPage() {
           営業・事務・エンジニア・主婦・学生など多様な職種・年齢の合格までの勉強法・つまずき・突破方法を生々しく紹介します。
           現在 <strong>{stories.length} 本</strong> 公開中。
         </p>
-        <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">
-          ※ 本記事群は実在モデルへの取材ではなく、過去問AI が学習者の典型像をもとに構成した合格者ペルソナです。学習法・スケジュールは実証されたパターンに基づきます。
-        </p>
+        <AiContentNotice
+          className="mt-4"
+          body="実在の合格者・人物への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習法・スケジュールは実証されたパターンに基づく参考情報としてご活用ください。"
+        />
       </header>
 
       <section className="mb-8 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/40">

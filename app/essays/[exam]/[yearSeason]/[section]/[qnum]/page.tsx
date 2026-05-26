@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, ArrowRight, BookOpen, ChevronLeft, Shield } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronLeft, Shield } from "lucide-react";
+
+import { AiContentNotice } from "@/components/AiContentNotice";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -82,6 +84,8 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
+    // 致命傷③: AI生成の架空の参考答案なので検索インデックス対象外。
+    robots: { index: false, follow: false },
     openGraph: {
       title,
       description,
@@ -219,17 +223,11 @@ export default async function EssayPm2DetailPage({
         </h1>
       </header>
 
-      <div
-        role="note"
-        className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
-      >
-        <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
-        <p>
-          <strong>本答案は AI 生成の参考例です。</strong>
-          IPA 公式の合格答案ではなく、合格を保証するものではありません。
-          論述の骨格・業種事例の参考としてご活用ください。
-        </p>
-      </div>
+      <AiContentNotice
+        className="mb-6"
+        headline="⚠️ AI生成の参考答案（架空）"
+        body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
+      />
 
       <section className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
         <h2 className="mb-2 flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
