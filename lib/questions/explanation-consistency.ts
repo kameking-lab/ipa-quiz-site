@@ -19,10 +19,14 @@ const CHOICE_KEYS = "アイウエオカキクコ";
 // initial hits were such false positives, e.g. ip-2016a-am-q60). Keeping the
 // gate narrow is the point — it must not block legitimate content in CI.
 const DISPUTE_PATTERNS: RegExp[] = [
-  /正解とされて(い|お)ますが/,
+  // "(official answer) X とされていますが / とされておりますが …(but actually)"
+  /正解とされて(い|お|おり)ますが/,
   /正解とされるが/,
-  /正答とされて(い|お)ますが/,
+  /正答とされて(い|お|おり)ますが/,
+  /が正解とされている(が|ものの|けれど)/,
   /(問題文|正解)(の|が)(どちらかに|いずれかに)?誤りがある/,
+  // explicitly says our key diverges from the official one
+  /公式(の)?(答|解答|正解)(とは|と)(異な|違)/,
 ];
 
 export function detectAnswerDispute(q: Question): string | null {

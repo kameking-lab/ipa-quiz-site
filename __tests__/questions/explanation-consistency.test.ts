@@ -40,6 +40,23 @@ describe("detectAnswerDispute", () => {
     ).not.toBeNull();
   });
 
+  it("flags the おり variant and 'が正解とされているが' phrasing", () => {
+    expect(
+      detectAnswerDispute(q({ explanation: "エが正解とされておりますが、厳密には異なります。" })),
+    ).not.toBeNull();
+    expect(
+      detectAnswerDispute(q({ explanation: "エが正解とされているが、実際にはそうではない。" })),
+    ).not.toBeNull();
+  });
+
+  it("flags an explanation claiming the official answer is wrong", () => {
+    expect(
+      detectAnswerDispute(
+        q({ explanation: "消去法ではエだが、公式解答とは異なる見解もある。" }),
+      ),
+    ).not.toBeNull();
+  });
+
   it("does NOT flag a normal MC explanation that calls a wrong choice 誤り", () => {
     // This is the false-positive class that the broad pattern produced.
     expect(

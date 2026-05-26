@@ -43,6 +43,13 @@ jobs:
         # .env.local はCI環境に存在しないため tsx 直呼び（--env-file 不使用）
         run: ./node_modules/.bin/tsx scripts/detect-explanation-mismatch.ts -- --regex-only
 
+      - name: Audit explanations that dispute the official answer (gates on disputes)
+        # scripts/audit-explanation-vs-answer.ts exits 1 if any high-confidence
+        # "admits the official answer then argues against it" explanation exists
+        # (phase 11 / empirical review A-9). The vitest gate enforces the same in
+        # the e2e workflow; this is the data-change-scoped guard.
+        run: ./node_modules/.bin/tsx scripts/audit-explanation-vs-answer.ts
+
       - name: Check mismatch count
         run: |
           MISMATCHES=$(node -e "
