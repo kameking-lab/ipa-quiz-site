@@ -16,10 +16,13 @@ function parseLimit(raw: string | undefined, fallback: number): number {
   return Number.isFinite(n) && n > 0 ? Math.floor(n) : fallback;
 }
 
-// 教育貢献プロジェクト：初期 FREE_AI_DAILY_LIMIT 回までは誰でも無料、
-// フィードバック投稿後は実質無制限。既定値は lib/constants/ai-quota.ts と共有。
-export const FREE_INITIAL_LIMIT = parseLimit(process.env.FREE_INITIAL_LIMIT, FREE_AI_DAILY_LIMIT);
-export const POST_FEEDBACK_DAILY_LIMIT = parseLimit(process.env.POST_FEEDBACK_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT);
+// 日次上限は lib/constants/ai-quota.ts の定数を唯一の情報源とする。クライアント表示
+// (FREE_DAILY_LIMIT_CLIENT) も同じ定数を参照するため、サーバ enforcement と UI 表示が
+// 構造的に乖離しない (A-2 解消)。env 上書きは廃止：上限変更は CLAUDE.md §10 で
+// コードレビュー必須のため、env トグルではなく定数変更(=PR)に一本化する。
+export const FREE_INITIAL_LIMIT = FREE_AI_DAILY_LIMIT;
+export const POST_FEEDBACK_DAILY_LIMIT = POST_FEEDBACK_AI_DAILY_LIMIT;
+// 分次バーストはサーバ専用の保護(UI 非表示・表示との乖離なし)なので env 調整可のまま。
 export const BETA_MINUTE_LIMIT = parseLimit(process.env.BETA_MINUTE_LIMIT, 15);
 
 // Backwards-compat exports retained for existing imports
