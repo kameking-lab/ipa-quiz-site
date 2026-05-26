@@ -24,12 +24,12 @@ import {
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import {
   findQuestionByRoute,
   questionPagePath,
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
+import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
@@ -63,20 +63,6 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
     section: q.session,
     qnum: `q${q.qNumber}`,
   }));
-}
-
-function sessionLabel(session: string): string {
-  const map: Record<string, string> = {
-    am: "午前",
-    am1: "午前I",
-    am2: "午前II",
-    pm: "午後",
-    pm1: "午後I",
-    pm2: "午後II",
-    "kamoku-a": "科目A",
-    "kamoku-b": "科目B",
-  };
-  return map[session] ?? session.toUpperCase();
 }
 
 function questionTitle(q: Question): string {
@@ -242,139 +228,12 @@ export default async function QuestionPage({
   const lastUpdatedISO = getLastUpdatedISO(q);
   const lastUpdatedJa = formatLastUpdatedJa(lastUpdatedISO);
 
-  const questionEntity = {
-    "@type": "Question",
-    "@id": `${pageUrlAbs}#question`,
-    name: q.question.slice(0, 120),
-    text: q.question,
-    inLanguage: "ja",
-    ...(answerText
-      ? {
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: `${answerKey}: ${answerText}`,
-          },
-        }
-      : {
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: String(answerKey),
-          },
-        }),
-    ...(q.choices
-      ? {
-          suggestedAnswer: Object.entries(q.choices).map(([key, text]) => ({
-            "@type": "Answer",
-            text: `${key}: ${text}`,
-          })),
-        }
-      : {}),
-  };
-
-  const learningResource = {
-    "@type": "LearningResource",
-    "@id": `${pageUrlAbs}#learning-resource`,
-    name: title,
-    inLanguage: "ja",
-    learningResourceType: "Practice problem",
-    educationalLevel: "Professional",
-    educationalUse: "Self-study",
-    audience: STUDENT_AUDIENCE,
-    teaches: q.category,
-    educationalAlignment: [
-      {
-        "@type": "AlignmentObject",
-        alignmentType: "educationalSubject",
-        targetName: q.category,
-      },
-    ],
-    keywords: [
-      examLabel(q.exam),
-      examLabelAt(q.exam, q.year, q.season),
-      q.category,
-      ...q.topicTags,
-    ].join(", "),
-    isAccessibleForFree: true,
-    license: "https://www.ipa.go.jp/shiken/mondai-kaiotu.html",
-    creator: {
-      "@type": "Organization",
-      name: "情報処理推進機構 (IPA)",
-      url: "https://www.ipa.go.jp/",
-    },
-    publisher: {
-      "@type": "Organization",
-      "@id": ORG_ID,
-    },
-  };
-
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "QAPage",
-        "@id": `${pageUrlAbs}#qapage`,
-        url: pageUrlAbs,
-        inLanguage: "ja",
-        mainEntity: questionEntity,
-        isPartOf: {
-          "@type": "WebSite",
-          "@id": SITE_ID,
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-        },
-      },
-      {
-        "@type": "Quiz",
-        "@id": `${pageUrlAbs}#quiz`,
-        name: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`,
-        about: [
-          { "@type": "Thing", name: examLabelAt(q.exam, q.year, q.season) },
-          { "@type": "Thing", name: q.category },
-        ],
-        educationalLevel: "Professional",
-        learningResourceType: "Quiz",
-        assesses: q.category,
-        educationalAlignment: [
-          {
-            "@type": "AlignmentObject",
-            alignmentType: "educationalSubject",
-            targetName: q.category,
-          },
-        ],
-        inLanguage: "ja",
-        url: pageUrlAbs,
-        dateModified: lastUpdatedISO,
-        isAccessibleForFree: true,
-        audience: STUDENT_AUDIENCE,
-        hasPart: [questionEntity],
-      },
-      learningResource,
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: examLabel(q.exam),
-            item: `${SITE_BASE_URL}${examPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: formatYearSeason(q.year, q.season),
-            item: `${SITE_BASE_URL}${yearSeasonPath}`,
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            name: `問${q.qNumber}`,
-            item: pageUrlAbs,
-          },
-        ],
-      },
-    ],
-  };
+  const jsonLd = buildQuestionJsonLd({
+    question: q,
+    pageUrlAbs,
+    title,
+    lastUpdatedISO,
+  });
 
   return (
     <>
