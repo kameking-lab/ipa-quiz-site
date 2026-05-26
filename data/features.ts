@@ -2,6 +2,8 @@
  * 競合との差別化を狙った機能特集 LP。
  * 検索流入の多い差別化キーワードに対する受け皿。
  */
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
+
 export interface FeatureLandingPage {
   slug: string;
   title: string;
@@ -54,7 +56,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       {
         step: "01",
         title: "問題を選ぶ",
-        body: "全 13 試験区分・12,000 問超から、年度別 / 分野別 / トピック別に選択。",
+        body: `全 13 試験区分・${APPROX_QUESTION_COUNT_LABEL} 問超から、年度別 / 分野別 / トピック別に選択。`,
       },
       {
         step: "02",

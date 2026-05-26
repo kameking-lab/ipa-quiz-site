@@ -5,13 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SearchClient } from "@/components/search/SearchClient";
-import { ALL_QUESTIONS } from "@/data/questions";
-
-// Match the floor-to-thousand pattern used in app/layout.tsx and app/page.tsx
-// so every site-wide question-count claim renders from the same live source.
-const APPROX_QUESTION_COUNT_LABEL = (
-  Math.floor(ALL_QUESTIONS.length / 1000) * 1000
-).toLocaleString("ja-JP");
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
 export const metadata: Metadata = {
   title: "問題検索",
