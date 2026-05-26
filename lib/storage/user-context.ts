@@ -4,10 +4,13 @@
  * history stores — those remain the source of truth for their own
  * domains. This module only tracks visit recency.
  *
- * Key: kakomon-ai-user-context-v1
+ * Key: ipa-quiz:user-context:v1 (migrated from the legacy kakomon-ai-user-context-v1)
  */
 
-export const USER_CONTEXT_LS_KEY = "kakomon-ai-user-context-v1";
+import { migrateLegacyKey } from "@/lib/storage/migrate-key";
+
+export const USER_CONTEXT_LS_KEY = "ipa-quiz:user-context:v1";
+const LEGACY_USER_CONTEXT_LS_KEY = "kakomon-ai-user-context-v1";
 
 export interface UserContext {
   /** Number of homepage loads observed so far. */
@@ -28,6 +31,7 @@ function isBrowser(): boolean {
 export function readUserContext(): UserContext {
   if (!isBrowser()) return EMPTY;
   try {
+    migrateLegacyKey(LEGACY_USER_CONTEXT_LS_KEY, USER_CONTEXT_LS_KEY);
     const raw = window.localStorage.getItem(USER_CONTEXT_LS_KEY);
     if (!raw) return EMPTY;
     const parsed = JSON.parse(raw) as Partial<UserContext>;
