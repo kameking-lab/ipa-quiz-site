@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 
 const SITE_URL = "https://www.kakomon-ai.jp/stats";
