@@ -3,8 +3,14 @@
 import * as React from "react";
 import { CheckCircle2, AlertCircle, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { TurnstileWidget } from "@/components/TurnstileWidget";
 import { cn } from "@/lib/utils";
 import { posthogCapture } from "@/lib/posthog";
+
+// Inlined at build time. When unset (dev / CI / pre-activation) the widget is
+// not rendered and the server verification fails open, so the form behaves
+// exactly as before until Turnstile is configured in production.
+const TURNSTILE_SITE_KEY = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 const CATEGORIES = [
   { id: "improvement", label: "改善提案" },
@@ -25,6 +31,7 @@ export function ContactForm() {
   const [status, setStatus] = React.useState<"idle" | "sending" | "ok" | "error">("idle");
   const [error, setError] = React.useState<string | null>(null);
   const [invalidField, setInvalidField] = React.useState<"body" | "email" | null>(null);
+  const [turnstileToken, setTurnstileToken] = React.useState("");
   const emailRef = React.useRef<HTMLInputElement>(null);
   const bodyRef = React.useRef<HTMLTextAreaElement>(null);
 
@@ -44,6 +51,10 @@ export function ContactForm() {
       emailRef.current?.focus();
       return;
     }
+    if (TURNSTILE_SITE_KEY && !turnstileToken) {
+      setError("スパム対策の確認が完了していません。少し待ってから再度お試しください。");
+      return;
+    }
     setStatus("sending");
     try {
       const res = await fetch("/api/contact", {
@@ -55,6 +66,7 @@ export function ContactForm() {
           name: name.trim().slice(0, 80),
           email: email.trim().slice(0, 120),
           body: body.trim().slice(0, 4000),
+          turnstileToken: turnstileToken || undefined,
         }),
       });
       if (!res.ok) {
@@ -214,6 +226,14 @@ export function ContactForm() {
           <AlertCircle className="mt-0.5 h-4 w-4 flex-shrink-0" aria-hidden="true" />
           <span>{error}</span>
         </div>
+      )}
+
+      {TURNSTILE_SITE_KEY && (
+        <TurnstileWidget
+          siteKey={TURNSTILE_SITE_KEY}
+          onToken={setTurnstileToken}
+          onError={() => setTurnstileToken("")}
+        />
       )}
 
       <Button type="submit" variant="primary" disabled={status === "sending"} className="w-full sm:w-auto">
