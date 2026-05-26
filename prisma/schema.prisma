@@ -138,6 +138,10 @@ model StudyRecord {
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  // One answer per (user, question, timestamp). Makes history-sync's
+  // createMany({ skipDuplicates: true }) actually skip at the DB level — without
+  // this it was a no-op and concurrent syncs could duplicate history (phase 11).
+  @@unique([userId, questionId, answeredAt])
   @@index([userId, answeredAt])
   @@index([userId, questionId])
 }
