@@ -30,6 +30,7 @@ import {
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
+import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
@@ -63,30 +64,6 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
     section: q.session,
     qnum: `q${q.qNumber}`,
   }));
-}
-
-function questionTitle(q: Question): string {
-  return `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
-}
-
-function truncate(s: string, n: number): string {
-  return s.length > n ? `${s.slice(0, n)}…` : s;
-}
-
-function questionSnippet(q: Question): string {
-  const examStr = examLabelAt(q.exam, q.year, q.season);
-  const ys = formatYearSeason(q.year, q.season);
-  const ss = sessionLabel(q.session);
-  // Front-load the answer key: most "{exam} {year} 問{n} 答え/解説" searches
-  // want the answer immediately, which lifts SERP CTR for this template.
-  const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const prefix = `【${examStr} ${ys} ${ss} 問${q.qNumber}・${q.category}】正解は${answerKey}。`;
-  const qPreview = truncate(q.question.replace(/\s+/g, " "), 55);
-  const real = !isPlaceholderExplanation(q);
-  const tail = real
-    ? `${truncate(q.explanation.replace(/\s+/g, " "), 40)} AIが選択肢ごとに解説。`
-    : "AI コパイロットが選択肢ごとに即時解説します。";
-  return truncate(`${prefix}${qPreview} ${tail}`, 158);
 }
 
 export async function generateMetadata({
