@@ -43,6 +43,12 @@ const securityHeaders = [
   { key: "Cross-Origin-Opener-Policy", value: "same-origin" },
   { key: "Cross-Origin-Resource-Policy", value: "same-site" },
   { key: "Content-Security-Policy", value: cspDirectives },
+  // Override the default `Server` header so we don't advertise the platform
+  // (empirical review A-8: `Server: Vercel` leaked). NOTE: on Vercel the
+  // `Server` header is injected by the platform edge and MAY override this
+  // app-level value — this is best-effort and must be re-verified on the live
+  // deployment. Low impact (fingerprinting only).
+  { key: "Server", value: "kakomon-ai" },
 ];
 
 const longCacheImmutable = {
