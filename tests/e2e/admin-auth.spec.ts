@@ -6,6 +6,24 @@ import { test, expect } from "@playwright/test";
 const ACCEPTS = [401, 503] as const;
 
 test.describe("/admin Basic Auth", () => {
+  // Empirical review A-4/F-1 reported bare /admin "hanging" 10s+. At the HTTP
+  // layer the middleware answers immediately; assert bare /admin returns 401/503
+  // quickly (well under the reported 10s) and never times out.
+  test("bare /admin without credentials returns 401/503 fast (no infinite wait)", async ({
+    request,
+  }) => {
+    const started = Date.now();
+    const res = await request.get("/admin", { maxRedirects: 0, timeout: 8000 });
+    const elapsed = Date.now() - started;
+    expect(ACCEPTS).toContain(res.status());
+    expect(elapsed).toBeLessThan(5000);
+  });
+
+  test("bare /admin/ (trailing slash) without credentials returns 401/503", async ({ request }) => {
+    const res = await request.get("/admin/", { maxRedirects: 0, timeout: 8000 });
+    expect(ACCEPTS).toContain(res.status());
+  });
+
   test("/admin/stats without credentials returns 401", async ({ request }) => {
     const res = await request.get("/admin/stats");
     expect(ACCEPTS).toContain(res.status());

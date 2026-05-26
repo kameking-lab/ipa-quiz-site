@@ -58,6 +58,15 @@ export function middleware(req: NextRequest) {
   return unauthorized();
 }
 
+// Match the bare paths explicitly in addition to the wildcards so a request to
+// exactly `/admin` (or `/api/admin`) is always gated — a bare `/admin` that
+// slipped past the matcher would render the admin index unauthenticated.
+// The handler is fully synchronous (env read + constant-time compare): it
+// returns 401/503 immediately and never redirects, so /admin cannot "hang"
+// server-side. The browser's native Basic-auth credential dialog (triggered by
+// the 401 WWW-Authenticate header) is the intended human login UX; an automated
+// /headless navigation that cannot answer that dialog will appear to stall —
+// that is the dialog, not a server hang (empirical review A-4 / F-1).
 export const config = {
-  matcher: ["/admin/:path*", "/api/admin/:path*"],
+  matcher: ["/admin", "/admin/:path*", "/api/admin", "/api/admin/:path*"],
 };
