@@ -2,6 +2,7 @@
 
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+import { cleanupDeadOnboardingKeys } from "@/lib/onboarding/state";
 
 // Layout-level widgets that are not part of the LCP. Loaded on idle / after first paint
 // to keep the critical path lean and improve INP.
@@ -38,6 +39,8 @@ export function DeferredLayoutWidgets() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    // One-time cleanup of the dead legacy onboarding key (phase 11 / #9).
+    cleanupDeadOnboardingKeys();
     const ric =
       (typeof window !== "undefined" &&
         (window as Window & {
