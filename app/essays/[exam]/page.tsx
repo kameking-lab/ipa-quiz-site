@@ -137,7 +137,7 @@ export default async function EssayExamPage({
         </div>
         <AiContentNotice
           className="mb-4"
-          headline="⚠️ AI生成の参考答案（架空）"
+          headline="AI生成の参考答案（架空）"
           body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
         />
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
