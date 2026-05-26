@@ -1,13 +1,5 @@
 import { getAllBlogSummaries } from "@/data/blog";
-import {
-  getAllSuccessStorySummaries,
-  getSuccessStoryExams,
-} from "@/data/success-stories";
-import {
-  ESSAY_EXAM_CODES,
-  getEssayQuestionsByExam,
-  questionToUrlParts,
-} from "@/lib/essays/load";
+import { getLastUpdatedISO } from "@/lib/questions/last-updated";
 import { SITE_BASE_URL } from "./config";
 import {
   getAvailableExams,
@@ -25,10 +17,19 @@ import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 
-// Last date questions/essays data was meaningfully updated (PR #221/#208)
-const CONTENT_LAST_UPDATED = "2026-05-16";
-// Last date mostly-static pages (about, transparency, etc.) were updated
-const STATIC_CONTENT_DATE = "2026-05-15";
+// Build date (YYYY-MM-DD). Auto-advances every deploy, so genuinely static
+// pages no longer carry a hand-maintained literal that goes stale (E-5).
+const STATIC_CONTENT_DATE = new Date().toISOString().slice(0, 10);
+// Newest question last-updated date, computed from the data — auto-advances
+// when content is regenerated instead of being a fixed literal (E-5).
+const CONTENT_LAST_UPDATED = ((): string => {
+  let max = "";
+  for (const q of getIndexableQuestions()) {
+    const d = getLastUpdatedISO(q);
+    if (d > max) max = d;
+  }
+  return max || STATIC_CONTENT_DATE;
+})();
 // Hub blog article slugs from PR #241 — receive elevated priority 0.8
 const HUB_BLOG_SLUGS = new Set([
   "kakumon-gakushuu-science",
@@ -181,50 +182,10 @@ function getTopicHubRoutes(): UrlEntry[] {
   }));
 }
 
-function getSuccessStoryRoutes(): UrlEntry[] {
-  const entries: UrlEntry[] = [];
-  for (const exam of getSuccessStoryExams()) {
-    entries.push({
-      url: `${SITE_BASE_URL}/success-stories/${exam}`,
-      lastModified: CONTENT_LAST_UPDATED,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
-  }
-  for (const s of getAllSuccessStorySummaries()) {
-    entries.push({
-      url: `${SITE_BASE_URL}/success-stories/${s.exam}/${s.slug}`,
-      lastModified: s.updatedAt ?? s.publishedAt,
-      changeFrequency: "monthly",
-      priority: 0.6,
-    });
-  }
-  return entries;
-}
-
-function getEssayRoutes(): UrlEntry[] {
-  const entries: UrlEntry[] = [];
-  for (const exam of ESSAY_EXAM_CODES) {
-    const questions = getEssayQuestionsByExam(exam);
-    if (questions.length === 0) continue;
-    entries.push({
-      url: `${SITE_BASE_URL}/essays/${exam}`,
-      lastModified: CONTENT_LAST_UPDATED,
-      changeFrequency: "weekly",
-      priority: 0.7,
-    });
-    for (const q of questions) {
-      const { yearSeason, section, qnum } = questionToUrlParts(q, exam);
-      entries.push({
-        url: `${SITE_BASE_URL}/essays/${exam}/${yearSeason}/${section}/${qnum}`,
-        lastModified: CONTENT_LAST_UPDATED,
-        changeFrequency: "monthly",
-        priority: 0.6,
-      });
-    }
-  }
-  return entries;
-}
+// NOTE: /essays and /success-stories sitemaps were removed — those pages are
+// noindex (phase 10), so listing them contradicted the crawler signal. The
+// orphaned /sitemap/essays.xml and /sitemap/success-stories.xml routes are
+// deleted too (phase 11 / E-2).
 
 function xmlEscape(s: string): string {
   return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
@@ -315,18 +276,10 @@ export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
   return renderUrlSet(
     slice.map((q) => ({
       url: `${SITE_BASE_URL}${questionPagePath(q)}`,
-      lastModified: CONTENT_LAST_UPDATED,
+      lastModified: getLastUpdatedISO(q),
       changeFrequency: "yearly",
       priority: 0.5,
     })),
   );
 }
 
-export function renderEssaysSitemapXml(): string {
-  // Essay routes already carry per-entry lastModified from getEssayRoutes().
-  return renderUrlSet(getEssayRoutes());
-}
-
-export function renderSuccessStoriesSitemapXml(): string {
-  return renderUrlSet(getSuccessStoryRoutes());
-}
