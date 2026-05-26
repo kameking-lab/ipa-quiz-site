@@ -117,7 +117,7 @@ for await (const chunk of provider.streamChat({ system, messages, model, maxToke
 
 ## 6. フェーズ分割ロードマップ
 
-- **フェーズ1（完了済み：MVP）**: AP 午前 + クイズ UX + AI コパイロット + 無料 30 回/日 制限
+- **フェーズ1（完了済み：MVP）**: AP 午前 + クイズ UX + AI コパイロット + 無料枠制限（現行は初回 10 回/日・フィードバック後ほぼ無制限）
 - **フェーズ2**: 全区分の午前／午前 I・II を網羅、模試モード、段級ランキング、会話履歴保存、CSV エクスポート
 - **フェーズ3**: 午後 AI 採点 (AP/DB/NW/SC/ES/PM/SM/AU)、topicTag ベースの全試験横断弱点マップ、学習プラン自動生成
 - **フェーズ4**: 論文添削 (ST/PM/SA/AU/SM)、Stripe 決済、参考書アフィリエイト実装、ANZEN AI 相互送客、`/api/admin/usage` 使用量ダッシュボード
@@ -159,7 +159,7 @@ PR 作成前に上記 4 コマンドをすべてパスさせること。
 
 無料プラン（ユーザー獲得最優先）:
 - 全試験・全機能アクセス無制限
-- AI コパイロット: 1 日 30 回（JST 0:00 リセット）
+- AI コパイロット: 初回 10 回（JST 0:00 リセット）。フィードバック投稿後はほぼ無制限（フィードバック駆動モデル）。単一情報源は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT`
 - 広告表示あり（本文と分離、控えめ）
 - モデル: `gemini-2.5-flash-lite`
 
@@ -212,7 +212,7 @@ Stripe 本実装はフェーズ4。
 - 平均 1 リクエスト あたり入力 1,200 token / 出力 600 token 想定
 - Gemini 2.5 Flash-Lite: $0.10 / 1M input, $0.40 / 1M output
 - 1 リクエストあたりコスト: $0.00012 + $0.00024 ≒ $0.00036 ≒ 0.055 円
-- 無料ユーザー 1 日 30 回 × 1,000 人 = 30,000 req/日 ≒ 月 1,650 円
+- 無料ユーザー 初回 10 回/日 × 1,000 人 = 最大 10,000 req/日（フィードバック後は増加しうる）
 - 無料枠（1,000 req/日）活用で初期は実質 0 円運用が可能
 - プレミアム 300 円/月 / 1 人 → 仮に 1 人当たり 1,000 req/月 = コスト約 55 円 = 粗利率 約 80%
 
@@ -239,5 +239,5 @@ Stripe 本実装はフェーズ4。
 ## 14. 姉妹プロジェクトと共有する構成
 
 - ANZEN AI (safe-ai-site) と Vercel 環境・アフィリエイト枠を共有
-- アフィリエイト ID: `NEXT_PUBLIC_AMAZON_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
+- アフィリエイト ID（環境変数名はコードと一致させること）: `NEXT_PUBLIC_AMAZON_ASSOCIATE_TAG=safeaisite22-22`, `NEXT_PUBLIC_RAKUTEN_AFFILIATE_ID=5291f19d.a0fc3c16.5291f19e.b91d11f6`
 - フェーズ4 で相互送客バナーを実装
