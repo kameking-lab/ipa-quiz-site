@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { SuccessStoriesFilterableList } from "@/components/success-stories/SuccessStoriesFilterableList";
 import {
   getAllSuccessStorySummaries,
@@ -64,53 +63,9 @@ export default function SuccessStoriesIndexPage() {
   const stories = getAllSuccessStorySummaries();
   const counts = getSuccessStoryCountByExam();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": `${SITE_BASE_URL}/success-stories#collection`,
-        name: "IPA試験 合格体験記",
-        description:
-          "IPA情報処理技術者試験13区分の合格者リアル体験記コレクション。各記事はAI生成の架空ペルソナによる学習ガイドです。",
-        url: `${SITE_BASE_URL}/success-stories`,
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-        },
-        additionalProperty: {
-          "@type": "PropertyValue",
-          name: "contentGenerationMethod",
-          value: "AI-generated fictional personas based on typical exam candidate patterns. Not based on real individuals.",
-        },
-        hasPart: stories.slice(0, 20).map((s) => ({
-          "@type": "Article",
-          headline: s.title,
-          description: s.description,
-          url: `${SITE_BASE_URL}/success-stories/${s.exam}/${s.slug}`,
-          datePublished: s.publishedAt,
-          dateModified: s.updatedAt ?? s.publishedAt,
-        })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "合格体験記",
-            item: `${SITE_BASE_URL}/success-stories`,
-          },
-        ],
-      },
-    ],
-  };
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
       <nav
         aria-label="パンくずリスト"
         className="mb-4 text-xs text-zinc-500 dark:text-zinc-400"

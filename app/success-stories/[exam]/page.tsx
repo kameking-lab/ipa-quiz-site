@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
-import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getSuccessStoriesByExam,
   getSuccessStoryExams,
@@ -68,70 +67,10 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
   if (stories.length === 0) notFound();
 
   const label = examLabel(exam);
-  const url = `${SITE_BASE_URL}/success-stories/${exam}`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": `${url}#collection`,
-        name: `${label} 合格体験記`,
-        description: `${label}合格者${stories.length}名のリアル体験記コレクション。各記事はAI生成の架空ペルソナによる学習ガイドです。`,
-        url,
-        publisher: {
-          "@type": "Organization",
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-        },
-        about: {
-          "@type": "Course",
-          name: `${label} 試験対策 — AIコパイロット過去問演習`,
-          url: `${SITE_BASE_URL}/${exam}`,
-          provider: {
-            "@type": "Organization",
-            name: SITE_NAME,
-            url: SITE_BASE_URL,
-          },
-          educationalCredentialAwarded: `IPA ${label}`,
-        },
-        additionalProperty: {
-          "@type": "PropertyValue",
-          name: "contentGenerationMethod",
-          value: "AI-generated fictional personas based on typical exam candidate patterns. Not based on real individuals.",
-        },
-        hasPart: stories.map((s) => ({
-          "@type": "Article",
-          headline: s.title,
-          description: s.description,
-          url: `${SITE_BASE_URL}/success-stories/${s.exam}/${s.slug}`,
-          datePublished: s.publishedAt,
-        })),
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "合格体験記",
-            item: `${SITE_BASE_URL}/success-stories`,
-          },
-          {
-            "@type": "ListItem",
-            position: 3,
-            name: label,
-            item: url,
-          },
-        ],
-      },
-    ],
-  };
 
   return (
     <main className="mx-auto w-full max-w-4xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
       <nav
         aria-label="パンくずリスト"
         className="mb-4 text-xs text-zinc-500 dark:text-zinc-400"
