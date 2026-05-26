@@ -225,7 +225,7 @@ export default async function EssayPm2DetailPage({
 
       <AiContentNotice
         className="mb-6"
-        headline="⚠️ AI生成の参考答案（架空）"
+        headline="AI生成の参考答案（架空）"
         body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
       />
 

@@ -20,7 +20,7 @@ interface AiContentNoticeProps {
  * "fictional" status is unmissable. Place it directly under the page <h1>.
  */
 export function AiContentNotice({
-  headline = "⚠️ AI生成の参考コンテンツ（架空）",
+  headline = "AI生成の参考コンテンツ（架空）",
   body,
   className,
 }: AiContentNoticeProps) {
