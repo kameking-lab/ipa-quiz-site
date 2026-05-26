@@ -27,6 +27,7 @@ import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
+import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
 import {
   readCharacterState,
@@ -131,6 +132,11 @@ function writeExamDate(date: string): void {
 
 export default function SettingsPage() {
   const { theme, setTheme } = useTheme();
+  const { getRadioProps: getThemeRadioProps } = useRovingRadioGroup(
+    THEME_OPTIONS.map((o) => o.value),
+    theme,
+    setTheme,
+  );
   const [settings, setSettings] = useState<AppSettings>({
     randomizeChoices: false,
     excludeRecent: false,
@@ -310,7 +316,7 @@ export default function SettingsPage() {
                 テーマ
               </p>
               <div className="grid grid-cols-3 gap-2" role="radiogroup" aria-label="テーマ選択">
-                {THEME_OPTIONS.map(({ value, label, icon }) => {
+                {THEME_OPTIONS.map(({ value, label, icon }, index) => {
                   const active = theme === value;
                   return (
                     <button
@@ -319,6 +325,7 @@ export default function SettingsPage() {
                       role="radio"
                       aria-checked={active}
                       aria-label={`テーマを${label}に切り替え`}
+                      {...getThemeRadioProps(index)}
                       className={`flex flex-col items-center gap-1.5 rounded-xl border px-3 py-3 text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
                         active
                           ? "border-primary bg-primary text-primary-foreground shadow-sm"

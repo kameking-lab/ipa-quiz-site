@@ -20,6 +20,7 @@ import {
   setSelectedExam,
 } from "@/lib/onboarding";
 import type { UserAttribute } from "@/lib/onboarding";
+import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { ArrowRight, ArrowLeft, GraduationCap } from "lucide-react";
 
 /**
@@ -105,6 +106,17 @@ export function OnboardingTour() {
     ? (Object.keys(EXAM_LABELS) as ExamCode[])
     : POPULAR_EXAMS;
 
+  const { getRadioProps: getExamRadioProps } = useRovingRadioGroup(
+    examsToShow,
+    selectedExam,
+    handleSelectExam,
+  );
+  const { getRadioProps: getStyleRadioProps } = useRovingRadioGroup(
+    ATTRIBUTE_OPTIONS.map((o) => o.value),
+    attribute,
+    handleSelectAttribute,
+  );
+
   return (
     <Dialog
       open={open}
@@ -146,7 +158,7 @@ export function OnboardingTour() {
               aria-label="試験区分"
               className="grid grid-cols-1 gap-2 sm:grid-cols-2"
             >
-              {examsToShow.map((code) => {
+              {examsToShow.map((code, index) => {
                 const diff = EXAM_DIFFICULTY[code] ?? { level: 3, label: "中級" };
                 const isSelected = selectedExam === code;
                 return (
@@ -156,6 +168,7 @@ export function OnboardingTour() {
                     role="radio"
                     aria-checked={isSelected}
                     onClick={() => handleSelectExam(code)}
+                    {...getExamRadioProps(index)}
                     className={`relative rounded-xl border px-3 py-2.5 text-left transition-colors min-h-[64px] ${
                       isSelected
                         ? "border-primary bg-primary/5 ring-1 ring-primary"
@@ -207,7 +220,7 @@ export function OnboardingTour() {
               あなたに合った導線をご案内します（任意・後から変更可）。
             </DialogDescription>
             <div role="radiogroup" aria-label="学習スタイル" className="space-y-2">
-              {ATTRIBUTE_OPTIONS.map((opt) => {
+              {ATTRIBUTE_OPTIONS.map((opt, index) => {
                 const isSelected = attribute === opt.value;
                 return (
                   <button
@@ -216,6 +229,7 @@ export function OnboardingTour() {
                     role="radio"
                     aria-checked={isSelected}
                     onClick={() => handleSelectAttribute(opt.value)}
+                    {...getStyleRadioProps(index)}
                     className={`w-full rounded-xl border px-3 py-3 text-left transition-colors min-h-[64px] ${
                       isSelected
                         ? "border-primary bg-primary/5 ring-1 ring-primary"

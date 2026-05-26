@@ -19,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { examLabel } from "@/lib/utils";
+import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
@@ -419,6 +420,7 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
     onSelect(e);
   };
   const showingDefault = !userPicked && current === defaultExam;
+  const { getRadioProps } = useRovingRadioGroup(exams, current, handle);
 
   return (
     <div className="mb-4">
@@ -460,7 +462,7 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
         aria-label="模試の試験区分"
         className="hidden grid-cols-3 gap-2 sm:grid lg:grid-cols-5"
       >
-        {exams.map((e) => {
+        {exams.map((e, index) => {
           const active = current === e;
           const isDefaultFallback = active && !userPicked && e === defaultExam;
           return (
@@ -470,6 +472,7 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
               role="radio"
               aria-checked={active}
               onClick={() => handle(e)}
+              {...getRadioProps(index)}
               className={
                 active
                   ? "relative min-h-[44px] rounded-xl border-2 border-sky-500 bg-sky-50 px-2 py-2 text-xs font-semibold text-sky-900 shadow-sm transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-sky-950/40 dark:text-sky-100"

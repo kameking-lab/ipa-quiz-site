@@ -4,6 +4,7 @@ import * as React from "react";
 import { Check } from "lucide-react";
 import { CHARACTERS, CHARACTER_ORDER, type CharacterId } from "@/lib/ai/characters";
 import { CharacterAvatar } from "./CharacterAvatar";
+import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -13,13 +14,14 @@ interface Props {
 }
 
 export function CharacterSelector({ value, onChange, disabled }: Props) {
+  const { getRadioProps } = useRovingRadioGroup(CHARACTER_ORDER, value, onChange);
   return (
     <div
       role="radiogroup"
       aria-label="AI キャラクター選択"
       className={cn("grid grid-cols-1 gap-2 sm:grid-cols-3", disabled && "opacity-50")}
     >
-      {CHARACTER_ORDER.map((id) => {
+      {CHARACTER_ORDER.map((id, index) => {
         const c = CHARACTERS[id];
         const selected = value === id;
         return (
@@ -30,6 +32,7 @@ export function CharacterSelector({ value, onChange, disabled }: Props) {
             aria-checked={selected}
             disabled={disabled}
             onClick={() => onChange(id)}
+            {...getRadioProps(index)}
             className={cn(
               "relative flex flex-col items-center gap-2 rounded-xl border bg-white p-3 text-center transition-colors disabled:cursor-not-allowed dark:bg-zinc-900",
               selected
