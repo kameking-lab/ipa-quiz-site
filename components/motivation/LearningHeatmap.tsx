@@ -13,8 +13,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Calendar } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const CELL_BASE =
-  "h-3 w-3 rounded-[3px] sm:h-3.5 sm:w-3.5 transition-colors";
+// 24px (h-6 w-6) interactive cells meet the WCAG 2.5.8 minimum tap target
+// (empirical review A-5/G-3: the dashboard heatmap was 12–14px). The card's
+// overflow-x-auto wrapper lets the wider year grid scroll on mobile. No sm:
+// variant so the legend swatch override (h-2.5 w-2.5) fully wins at every width.
+const CELL_BASE = "h-6 w-6 rounded-[3px] transition-colors";
 
 const LEVEL_COLOR: Record<0 | 1 | 2 | 3 | 4, string> = {
   0: "bg-zinc-100 dark:bg-zinc-800",
