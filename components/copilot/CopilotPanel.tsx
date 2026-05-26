@@ -866,10 +866,10 @@ export function CopilotPanel({
       {/* Response length toggle */}
       <div className="border-b border-zinc-200 px-3 pt-2.5 pb-2 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">回答の長さ</span>
+          <span className="text-[11px] text-zinc-500 dark:text-zinc-400">回答の長さ（目安）</span>
           <div
             role="group"
-            aria-label="回答の長さ"
+            aria-label="回答の長さ（目安）"
             className="inline-flex overflow-hidden rounded-full border border-zinc-300 dark:border-zinc-700"
           >
             {(["short", "medium", "long"] as const).map((len) => (
