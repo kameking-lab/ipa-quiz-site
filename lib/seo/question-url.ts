@@ -36,18 +36,43 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   };
 }
 
+function routeKey(
+  exam: string,
+  year: number,
+  season: string,
+  session: string,
+  qNumber: number,
+): string {
+  return `${exam}/${year}-${season}/${session}/q${qNumber}`;
+}
+
+// O(1) route lookup. The /q/* page resolves the question twice per request
+// (generateMetadata + the page body); on an ISR cache-miss that was two linear
+// scans of ~14k questions. Index once per pool (keyed by array identity, so the
+// stable module-level ALL_QUESTIONS array builds the map a single time and
+// reuses it across requests) and look up by key thereafter. See
+// logs/ttfb-optimization-2026-05-23.md.
+const routeIndexByPool = new WeakMap<Question[], Map<string, Question>>();
+
+function getRouteIndex(pool: Question[]): Map<string, Question> {
+  let index = routeIndexByPool.get(pool);
+  if (!index) {
+    index = new Map();
+    for (const q of pool) {
+      index.set(routeKey(q.exam, q.year, q.season, q.session, q.qNumber), q);
+    }
+    routeIndexByPool.set(pool, index);
+  }
+  return index;
+}
+
 export function findQuestionByRoute(
   pool: Question[],
   params: QuestionRouteParams,
 ): Question | undefined {
   const parsed = parseQuestionRoute(params);
   if (!parsed) return undefined;
-  return pool.find(
-    (q) =>
-      q.exam === parsed.exam &&
-      q.year === parsed.year &&
-      q.season === parsed.season &&
-      q.session === parsed.session &&
-      q.qNumber === parsed.qNumber,
+  return getRouteIndex(pool).get(
+    routeKey(parsed.exam, parsed.year, parsed.season, parsed.session, parsed.qNumber),
   );
 }

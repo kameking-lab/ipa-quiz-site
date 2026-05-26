@@ -12,7 +12,7 @@ import {
   BookOpenCheck,
 } from "lucide-react";
 
-import { ALL_QUESTIONS } from "@/data/questions";
+import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -151,13 +151,19 @@ export default async function QuestionPage({
       : undefined;
   const showRealExplanation = !isPlaceholderExplanation(q);
 
-  const sessionPool = ALL_QUESTIONS.filter(
-    (x) =>
-      x.exam === q.exam &&
-      x.year === q.year &&
-      x.season === q.season &&
-      x.session === q.session,
-  ).sort((a, b) => a.qNumber - b.qNumber);
+  // Same-exam lists iterate the pre-grouped exam pool (~hundreds–few-thousand)
+  // instead of re-scanning all ~14k questions per render. Results are identical
+  // — every filter below already required x.exam === q.exam. (perf: TTFB)
+  const examPool = QUESTIONS_BY_EXAM[q.exam] ?? [];
+
+  const sessionPool = examPool
+    .filter(
+      (x) =>
+        x.year === q.year &&
+        x.season === q.season &&
+        x.session === q.session,
+    )
+    .sort((a, b) => a.qNumber - b.qNumber);
   const idx = sessionPool.findIndex((x) => x.id === q.id);
   const prev = idx > 0 ? sessionPool[idx - 1] : null;
   const next = idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null;
@@ -168,17 +174,17 @@ export default async function QuestionPage({
   // Do NOT move these lists into a "use client" island — that would hide the
   // links behind hydration and forfeit the internal-link equity (C-4: ~29%
   // index rate on /q/* pages).
-  const related = ALL_QUESTIONS.filter(
-    (x) => x.id !== q.id && x.exam === q.exam && x.category === q.category,
-  ).slice(0, 5);
+  const related = examPool
+    .filter((x) => x.id !== q.id && x.category === q.category)
+    .slice(0, 5);
 
   // Same exam + same category but from OTHER years — one representative per
   // year, newest first. Builds a year-spanning internal-link trail so each
   // /q/* page seeds links into older years' equivalents (phase 7 task ②-2).
   const otherYearsSameCategory = (() => {
     const byYear = new Map<number, Question>();
-    for (const x of ALL_QUESTIONS) {
-      if (x.id === q.id || x.exam !== q.exam || x.category !== q.category) continue;
+    for (const x of examPool) {
+      if (x.id === q.id || x.category !== q.category) continue;
       if (x.year === q.year || byYear.has(x.year)) continue;
       byYear.set(x.year, x);
     }
