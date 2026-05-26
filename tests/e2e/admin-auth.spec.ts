@@ -19,8 +19,12 @@ test.describe("/admin Basic Auth", () => {
     expect(elapsed).toBeLessThan(5000);
   });
 
-  test("bare /admin/ (trailing slash) without credentials returns 401/503", async ({ request }) => {
-    const res = await request.get("/admin/", { maxRedirects: 0, timeout: 8000 });
+  test("bare /admin/ (trailing slash) resolves to 401/503 (308 normalize, no hang)", async ({
+    request,
+  }) => {
+    // /admin/ 308-redirects to /admin (trailing-slash normalization); following it
+    // must land on the Basic-auth gate, not hang.
+    const res = await request.get("/admin/", { timeout: 8000 });
     expect(ACCEPTS).toContain(res.status());
   });
 
