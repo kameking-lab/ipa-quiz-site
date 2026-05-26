@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
@@ -21,12 +21,11 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { SITE_ID, buildOrgNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
-
-// Round the live count down to the nearest 1,000 so SERP/social copy can say
-// "X,000問超" without ever overstating. Drives a single source of truth for
-// the home title/description, WebSite JSON-LD description, and ItemList counts.
-const APPROX_QUESTION_COUNT = Math.floor(ALL_QUESTIONS.length / 1000) * 1000;
-const APPROX_QUESTION_COUNT_LABEL = APPROX_QUESTION_COUNT.toLocaleString("ja-JP");
+import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
+import {
+  APPROX_QUESTION_COUNT_LABEL,
+  TOTAL_QUESTIONS_PUBLISHED,
+} from "@/lib/constants/question-counts";
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
 const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の過去問 ${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる完全無料サイト。登録不要・広告控えめ・モバイル片手操作対応。年度別・分野別・模試・苦手復習の6モードで効率学習。`;
@@ -50,13 +49,10 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
-  const questionCounts = Object.fromEntries(
-    (Object.entries(QUESTIONS_BY_EXAM) as Array<[ExamCode, typeof ALL_QUESTIONS]>).map(
-      ([code, qs]) => [code, qs?.length ?? 0],
-    ),
-  ) as Partial<Record<ExamCode, number>>;
+  const questionCounts = EXAM_QUESTION_COUNTS;
 
-  const totalQuestions = ALL_QUESTIONS.length;
+  // Published (answerable/indexable) total — the only count shown to users.
+  const totalQuestions = TOTAL_QUESTIONS_PUBLISHED;
 
   const availableExamEntries = (
     Object.entries(questionCounts) as Array<[ExamCode, number]>

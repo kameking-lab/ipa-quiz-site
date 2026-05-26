@@ -6,13 +6,14 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { getAllTopics, getHubTopics } from "@/lib/seo/topics";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
 const OG_IMAGE = (() => {
   const params = new URLSearchParams({
     type: "topic",
     title: "トピック別過去問インデックス",
     subtitle: "試験区分横断のキーワード集約",
-    body: "12,000+ 問題から共通テーマを抽出した横断検索ハブ。",
+    body: `${APPROX_QUESTION_COUNT_LABEL}+ 問題から共通テーマを抽出した横断検索ハブ。`,
   });
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();
