@@ -13,6 +13,7 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import type { Question } from "@/lib/questions/types";
+import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
@@ -218,6 +219,18 @@ function validate(questions: Question[]): ValidationResult {
         console.error(`[FAIL] ${q.id}: answer must be ア/イ/ウ/エ, got "${ans}"`);
         continue;
       }
+    }
+
+    // Explanation must not contradict its own answer key (phase 11 / F-1).
+    // High-confidence "admits the official answer then disputes it" phrasings
+    // are a hard failure so they cannot ship.
+    const dispute = detectAnswerDispute(q);
+    if (dispute) {
+      fail++;
+      byExam[examKey].fail++;
+      issues.push({ id: q.id, level: "error", message: `解説が公式正解と矛盾: ${dispute}` });
+      console.error(`[FAIL] ${q.id}: ${dispute}`);
+      continue;
     }
 
     // Quality checks (warnings, not failures)
