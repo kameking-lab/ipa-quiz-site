@@ -14,6 +14,12 @@ export interface CopilotStreamInput {
   hasGrounding: boolean;
   /** Cap upstream latency (ms). Defaults to 35_000. */
   timeoutMs?: number;
+  /**
+   * Called once after the stream settles with the number of output characters
+   * produced (excludes the citation footer / fallback text). Used for cost
+   * accounting; must not throw.
+   */
+  onComplete?: (outputChars: number) => void;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -36,6 +42,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
     citationFooter,
     hasGrounding,
     timeoutMs = DEFAULT_TIMEOUT_MS,
+    onComplete,
   } = input;
 
   const upstreamAbort = new AbortController();
@@ -49,6 +56,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
 
   const encoder = new TextEncoder();
   let producedAnyChunk = false;
+  let producedChars = 0;
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -62,6 +70,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           signal: upstreamAbort.signal,
         })) {
           producedAnyChunk = true;
+          producedChars += chunk.length;
           controller.enqueue(encoder.encode(chunk));
         }
         if (hasGrounding && citationFooter) {
@@ -105,6 +114,13 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
       } finally {
         clearTimeout(timeoutHandle);
         clientSignal?.removeEventListener("abort", onClientAbort);
+        // Report whatever was produced (incl. partial on timeout) for cost
+        // accounting. Wrapped so a faulty callback never breaks the stream.
+        try {
+          onComplete?.(producedChars);
+        } catch {
+          // ignore
+        }
       }
     },
     cancel() {

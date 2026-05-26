@@ -43,6 +43,15 @@ function calcCost(
   return { usd, jpy: usd * USD_TO_JPY };
 }
 
+/**
+ * Standalone JPY cost for a single call. Single source of truth for the
+ * pricing table so the live cost cap (lib/ai/cost-guard) and the offline
+ * batch tracker (scripts/parse-all) never diverge.
+ */
+export function costJpy(tier: ModelTier, inputTokens: number, outputTokens: number): number {
+  return calcCost(tier, inputTokens, outputTokens).jpy;
+}
+
 export class CostTracker {
   private session: CostSession;
 
