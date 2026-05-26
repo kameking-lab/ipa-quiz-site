@@ -1,7 +1,9 @@
 import type { OnboardingState, UserAttribute } from "./types";
 import type { ExamCode } from "@/lib/questions/types";
+import { migrateLegacyKey } from "@/lib/storage/migrate-key";
 
-export const ONBOARDING_LS_KEY = "kakomon-ai-onboarding-v1";
+export const ONBOARDING_LS_KEY = "ipa-quiz:onboarding:v1";
+const LEGACY_ONBOARDING_LS_KEY = "kakomon-ai-onboarding-v1";
 
 // Dead key from an earlier, removed 2-step welcome modal. The tour is now
 // opt-in (never auto-shows), so there is nothing to "suppress" — this key is no
@@ -24,10 +26,11 @@ function isBrowser(): boolean {
 export function readOnboardingState(): OnboardingState {
   if (!isBrowser()) return EMPTY;
   try {
+    // Rename the legacy kakomon-ai key onto the ipa-quiz convention. This only
+    // writes when the legacy key actually exists (real data), so it does NOT
+    // reintroduce the "empty key for brand-new visitors" bug we removed earlier.
+    migrateLegacyKey(LEGACY_ONBOARDING_LS_KEY, ONBOARDING_LS_KEY);
     const raw = window.localStorage.getItem(ONBOARDING_LS_KEY);
-    // Pure read — never write on read. (The old legacy-key migration wrote the
-    // onboarding key on first load, which is why an empty key appeared even for
-    // brand-new visitors. Removed.)
     if (!raw) return EMPTY;
     const parsed = JSON.parse(raw) as Partial<OnboardingState>;
     return { ...EMPTY, ...parsed };

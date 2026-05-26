@@ -2,8 +2,10 @@
 
 import * as React from "react";
 import type { QuickActionId } from "@/lib/ai/prompts";
+import { migrateLegacyKey } from "@/lib/storage/migrate-key";
 
-const PINNED_ACTIONS_LS_KEY = "kakomon-ai-copilot-pinned-actions-v1";
+const PINNED_ACTIONS_LS_KEY = "ipa-quiz:copilot-pinned-actions:v1";
+const LEGACY_PINNED_ACTIONS_LS_KEY = "kakomon-ai-copilot-pinned-actions-v1";
 
 /** Maximum quick actions a user may pin. Caps at half of the default-visible
  * 6 so non-pinned actions can never be fully crowded out. */
@@ -16,6 +18,7 @@ function isBrowser(): boolean {
 function read(): QuickActionId[] {
   if (!isBrowser()) return [];
   try {
+    migrateLegacyKey(LEGACY_PINNED_ACTIONS_LS_KEY, PINNED_ACTIONS_LS_KEY);
     const raw = window.localStorage.getItem(PINNED_ACTIONS_LS_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
