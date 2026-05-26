@@ -11,7 +11,11 @@ export default function robots(): MetadataRoute.Robots {
           "/api/",
           "/admin/",
           "/auth/",
-          "/account/",
+          // /account/* is intentionally crawlable but noindex (see
+          // app/account/layout.tsx). The header "学習進捗" link points at
+          // /account/dashboard, so Disallow-ing it here contradicted the
+          // site's own internal navigation (review C-3). noindex keeps the
+          // pages out of the index without blocking the crawl path.
           "/chat/share",
           // 開発者向け Public API β ドキュメントは検索インデックス対象外
           "/api-docs",
