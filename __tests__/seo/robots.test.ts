@@ -24,4 +24,8 @@ describe("robots()", () => {
   it("advertises the sitemap index", () => {
     expect(robots().sitemap).toMatch(/\/sitemap\.xml$/);
   });
+
+  it("emits no non-standard Host directive (deprecated 2018)", () => {
+    expect(robots().host).toBeUndefined();
+  });
 });
