@@ -3,9 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Shield } from "lucide-react";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
-import { JsonLd } from "@/components/seo/JsonLd";
 import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essays/load";
-import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,42 +25,9 @@ export default function EssaysIndexPage() {
     count: getEssayQuestionsByExam(exam).length,
   }));
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "CollectionPage",
-        "@id": `${SITE_BASE_URL}/essays#collection`,
-        name: "業種別合格答案サンプル",
-        description:
-          "IPA高度情報処理技術者試験 午後II 論述問題の業種別合格答案サンプル集。AI生成の参考例。",
-        url: `${SITE_BASE_URL}/essays`,
-        inLanguage: "ja",
-        isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_BASE_URL },
-        additionalProperty: {
-          "@type": "PropertyValue",
-          name: "contentGenerationMethod",
-          value: "AI-generated sample answers for educational reference. Not official IPA passing answers.",
-        },
-      },
-      {
-        "@type": "BreadcrumbList",
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
-          {
-            "@type": "ListItem",
-            position: 2,
-            name: "業種別合格答案サンプル",
-            item: `${SITE_BASE_URL}/essays`,
-          },
-        ],
-      },
-    ],
-  };
 
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
-      <JsonLd data={jsonLd} />
       <nav
         aria-label="パンくずリスト"
         className="mb-4 text-xs text-zinc-500 dark:text-zinc-400"
