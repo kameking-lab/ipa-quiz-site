@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
+import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
 import { TtsControls } from "./TtsControls";
@@ -114,6 +115,16 @@ export function QuizPlayer({
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
   }, [question, history]);
+
+  // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
+  // commits via ChoiceButton's native activation). Called unconditionally before
+  // the early returns below to respect the rules of hooks.
+  const choiceRoving = useQuizChoiceRoving(
+    CHOICE_KEYS.length,
+    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    revealed,
+    question?.id ?? "",
+  );
 
   // When the session runs out of questions, send the user back with ?done=1.
   React.useEffect(() => {
@@ -391,8 +402,8 @@ export function QuizPlayer({
             />
 
             <div
-              role="group"
-              aria-label="選択肢（数字キー1〜4で選択可能）"
+              role="radiogroup"
+              aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
               className="space-y-2"
             >
               {question.choices &&
@@ -407,6 +418,7 @@ export function QuizPlayer({
                     disabled={revealed}
                     onClick={() => onSelect(key)}
                     shortcutIndex={idx + 1}
+                    {...choiceRoving.getRadioProps(idx)}
                   />
                 ))}
             </div>

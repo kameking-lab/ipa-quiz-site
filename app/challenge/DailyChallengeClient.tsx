@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Sparkles, Trophy, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
+import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { Button } from "@/components/ui/button";
 import {
   ensureChallengeForToday,
@@ -65,6 +66,15 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
   const current = questions[index];
   const total = questions.length;
+
+  // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
+  // commits). Unconditional, before the early returns, per the rules of hooks.
+  const choiceRoving = useQuizChoiceRoving(
+    CHOICE_KEYS.length,
+    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    revealed,
+    current?.id ?? "",
+  );
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -232,7 +242,11 @@ export function DailyChallengeClient({ questions, date }: Props) {
         <p className="text-sm leading-relaxed sm:text-base">{current.question}</p>
       </div>
 
-      <div className="space-y-2">
+      <div
+        role="radiogroup"
+        aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+        className="space-y-2"
+      >
         {CHOICE_KEYS.map((k, i) => {
           const text = choices[k];
           if (!text) return null;
@@ -247,6 +261,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
               disabled={revealed}
               onClick={() => onSelect(k)}
               shortcutIndex={i + 1}
+              {...choiceRoving.getRadioProps(i)}
             />
           );
         })}

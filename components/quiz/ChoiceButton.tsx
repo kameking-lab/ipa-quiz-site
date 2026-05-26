@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Check, X } from "lucide-react";
 import type { ChoiceKey } from "@/lib/questions/types";
@@ -13,20 +14,29 @@ interface Props {
   disabled: boolean;
   onClick: () => void;
   shortcutIndex?: number;
+  /** Roving-tabindex value from useQuizChoiceRoving (single Tab stop). */
+  tabIndex?: number;
+  /** Arrow-key roving handler from useQuizChoiceRoving. */
+  onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
 }
 
 const CHOICE_INDEX: Partial<Record<ChoiceKey, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
 
-export function ChoiceButton({
-  choiceKey,
-  text,
-  revealed,
-  selected,
-  correct,
-  disabled,
-  onClick,
-  shortcutIndex,
-}: Props) {
+export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
+  {
+    choiceKey,
+    text,
+    revealed,
+    selected,
+    correct,
+    disabled,
+    onClick,
+    shortcutIndex,
+    tabIndex,
+    onKeyDown,
+  },
+  ref,
+) {
   let state: "idle" | "selected" | "correct" | "wrong" | "revealed-correct" = "idle";
   if (revealed) {
     if (correct) state = "revealed-correct";
@@ -48,10 +58,16 @@ export function ChoiceButton({
 
   return (
     <button
+      ref={ref}
+      type="button"
+      role="radio"
       onClick={onClick}
+      onKeyDown={onKeyDown}
+      tabIndex={tabIndex}
       disabled={disabled}
       aria-label={ariaLabel}
-      aria-pressed={selected}
+      aria-checked={selected}
+      aria-disabled={disabled}
       aria-keyshortcuts={!revealed ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
@@ -102,4 +118,4 @@ export function ChoiceButton({
       )}
     </button>
   );
-}
+});
