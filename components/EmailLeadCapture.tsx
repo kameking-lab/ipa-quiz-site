@@ -62,7 +62,7 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
     return (
       <div className={cn("relative w-full min-w-0", className)}>
         {toast && (
-          <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-emerald-600 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-emerald-700 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
             {toast}
           </div>
         )}
@@ -95,7 +95,7 @@ export function EmailLeadCapture({ variant = "home", className }: Props) {
   return (
     <div className={cn("relative rounded-2xl border border-sky-200 bg-sky-50 p-5 dark:border-sky-900/50 dark:bg-sky-950/20", className)}>
       {toast && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-emerald-600 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-emerald-700 px-4 py-1.5 text-xs font-medium text-white shadow-lg">
           {toast}
         </div>
       )}
