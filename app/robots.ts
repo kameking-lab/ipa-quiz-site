@@ -28,10 +28,13 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     // Point only at the sitemap index. The index references every category
-    // sitemap (main, exams, topics, blog, books, essays, questions/*) so
-    // crawlers discover them transitively. Listing each child here would
-    // double-submit URLs and was also forgetting /sitemap/essays.xml.
+    // sitemap (main, exams, topics, blog, books, questions/*) so crawlers
+    // discover them transitively. Listing each child here would double-submit
+    // URLs. (essays/success-stories child sitemaps are intentionally excluded
+    // from the index — those pages are noindex.)
     sitemap: `${SITE_BASE_URL}/sitemap.xml`,
-    host: SITE_BASE_URL,
+    // NOTE: no `host` directive. It was a non-standard Yandex-only field,
+    // unsupported by Google and deprecated by Yandex in 2018 (C-3). Emitting it
+    // is noise; the canonical host is already conveyed via rel=canonical.
   };
 }
