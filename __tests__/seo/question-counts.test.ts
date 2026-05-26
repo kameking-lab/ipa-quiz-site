@@ -34,11 +34,14 @@ describe("question-counts single source of truth", () => {
     );
   });
 
-  it("per-exam counts sum to the raw total (no missing exam)", () => {
+  it("per-exam counts sum exactly to the published headline total", () => {
+    // F-6: breakdowns must reconcile to the headline. Both derive from the
+    // indexable set, so the sum is the published total — never the raw length.
     const sum = Object.values(EXAM_QUESTION_COUNTS).reduce(
       (acc, n) => acc + (n ?? 0),
       0,
     );
-    expect(sum).toBe(TOTAL_QUESTIONS_RAW);
+    expect(sum).toBe(TOTAL_QUESTIONS_PUBLISHED);
+    expect(sum).toBeLessThan(TOTAL_QUESTIONS_RAW);
   });
 });
