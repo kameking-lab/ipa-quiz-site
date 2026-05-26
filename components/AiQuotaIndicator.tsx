@@ -3,11 +3,17 @@
 import * as React from "react";
 import { Sparkles } from "lucide-react";
 import { readAiUsage, effectiveDailyLimit } from "@/lib/storage/rate-limit-client";
+import { subscribeCopilotOpen, isCopilotOpen } from "@/lib/copilot/visibility";
 
 const POLL_INTERVAL_MS = 15_000;
 
 export function AiQuotaIndicator() {
   const [snapshot, setSnapshot] = React.useState<{ used: number; limit: number } | null>(null);
+  const copilotOpen = React.useSyncExternalStore(
+    subscribeCopilotOpen,
+    isCopilotOpen,
+    () => false,
+  );
 
   React.useEffect(() => {
     const update = () => {
@@ -25,6 +31,9 @@ export function AiQuotaIndicator() {
     };
   }, []);
 
+  // Only surface the quota while the AI copilot is actually open — a fixed
+  // badge on every page is noise for the many users who never touch the AI.
+  if (!copilotOpen) return null;
   if (!snapshot) return null;
   const remaining = Math.max(0, snapshot.limit - snapshot.used);
   // フィードバック送信後は実質無制限になるため、桁が大きい時は隠す

@@ -35,7 +35,6 @@ const QUIZ_MODES = [
   { href: "/quiz?mode=random&exam=ap", label: "通常クイズ" },
   { href: "/quiz/stream", label: "ストリームモード" },
   { href: "/quiz?mode=review&exam=ap", label: "復習モード" },
-  { href: "/mock-exam", label: "模試" },
   { href: "/quiz?mode=weakness&exam=ap", label: "弱点克服" },
   { href: "/essays/sc", label: "論述例（SC）" },
 ] as const;

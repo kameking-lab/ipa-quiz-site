@@ -4,6 +4,8 @@ import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
 import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
+import { HomeHeroLede } from "@/components/home/HomeHeroLede";
+import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import {
   HomeReturningHeader,
@@ -133,32 +135,11 @@ export default function HomePage() {
 
       <HomeReturningHeader recommendationPool={recommendationPool} />
 
-      <section aria-labelledby="exam-picker-heading" className="mb-6">
-        <h1
-          id="exam-picker-heading"
-          className="mb-3 text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl"
-        >
-          どの試験を受けますか?
-        </h1>
-        <ul
-          aria-label="サービスの特徴"
-          className="mb-3 flex flex-wrap gap-x-3 gap-y-1.5 text-xs sm:text-sm"
-        >
-          <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-            <span aria-hidden="true">✓</span>全機能無料
-          </li>
-          <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-            <span aria-hidden="true">✓</span>会員登録不要
-          </li>
-          <li className="inline-flex items-center gap-1 rounded-full bg-emerald-50 px-2.5 py-1 font-medium text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300">
-            <span aria-hidden="true">✓</span>13区分 {totalQuestions.toLocaleString("ja-JP")}問
-          </li>
-        </ul>
-        <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          IPA試験対策の過去問をAI解説付きで完全無料公開。ボランティア有志による教育貢献プロジェクトです。
-        </p>
+      <section aria-label="試験を選んで学習を始める" className="mb-6">
+        <HomeHeroLede totalQuestions={totalQuestions} />
         <HeroAiDemo />
         <TotalAnswerCounter />
+        <HomeQuickTrialCta />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
 

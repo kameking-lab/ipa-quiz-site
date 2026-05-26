@@ -26,9 +26,9 @@ interface SearchParams {
   calc?: string;
   order?: string;
   /**
-   * Optional pool cap. /quickstart/[exam] sends `limit=3` for the
-   * '3問体験' flow; without this server-side slice the QuizPlayer's
-   * progress counter said '1問目 / 80問中' instead of '1問目 / 3問中'.
+   * Optional pool cap. The home "3問だけ試す" CTA and the onboarding tour send
+   * `limit=3` for the '3問体験' flow; without this server-side slice the
+   * QuizPlayer's progress counter said '1問目 / 80問中' instead of '1問目 / 3問中'.
    */
   limit?: string;
 }
@@ -76,7 +76,7 @@ export default async function QuizPage({
   };
 
   const fullPoolIds = await getPoolIds(filter);
-  // Honor the optional limit query (e.g. /quickstart 3問体験 sends limit=3).
+  // Honor the optional limit query (the home 3問体験 CTA sends limit=3).
   // Cap at 200 so a malformed value cannot make the page hang.
   const limit = sp.limit ? Math.max(1, Math.min(200, Number(sp.limit) || 0)) : 0;
   const poolIds = limit > 0 ? fullPoolIds.slice(0, limit) : fullPoolIds;

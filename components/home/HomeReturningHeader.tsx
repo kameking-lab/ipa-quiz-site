@@ -2,10 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen, Sparkles, Target } from "lucide-react";
+import { ArrowRight, BookOpen, Flame, Sparkles, Target } from "lucide-react";
 import { readUserContext, recordHomepageVisit } from "@/lib/storage/user-context";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
 import { readOnboardingState } from "@/lib/onboarding/state";
+import { createHistoryStore } from "@/lib/storage/history";
+import { readStreak } from "@/lib/streak";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
@@ -109,6 +111,8 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
   const [lastQuestion, setLastQuestion] = React.useState<LastQuestionState | null>(null);
   const [targetExam, setTargetExam] = React.useState<ExamCode | null>(null);
   const [mode, setMode] = React.useState<RecommendMode>("target");
+  const [accuracy, setAccuracy] = React.useState<{ pct: number; total: number } | null>(null);
+  const [streak, setStreak] = React.useState(0);
 
   React.useEffect(() => {
     // Read the existing visit count BEFORE recording the new one so the
@@ -125,6 +129,14 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
     setLastQuestion(last);
     setTargetExam(onboarding.selectedExam ?? null);
     setMode(onboarding.selectedExam ? "target" : "history");
+
+    const stats = createHistoryStore().getStats();
+    setAccuracy(
+      stats.total > 0
+        ? { pct: Math.round(stats.accuracy * 100), total: stats.total }
+        : null,
+    );
+    setStreak(readStreak().currentStreak);
   }, []);
 
   const recommendations = React.useMemo(() => {
@@ -144,10 +156,6 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
       aria-labelledby="returning-header"
       className="mb-6 motion-safe:transition-opacity motion-safe:duration-200 motion-safe:animate-in motion-safe:fade-in"
     >
-      <h2 id="returning-header" className="sr-only">
-        おかえりなさい
-      </h2>
-
       {targetExam && (
         <div className="mb-3 flex items-center justify-between gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary">
@@ -190,35 +198,50 @@ export function HomeReturningHeader({ recommendationPool }: Props) {
       )}
 
       {lastQuestion && (
-        <div className="rounded-2xl border border-primary/30 bg-primary/[0.04] p-4 shadow-sm sm:p-5">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="min-w-0">
-              <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
-                続きから
-              </p>
-              <p className="mt-0.5 text-sm font-semibold text-foreground sm:text-base">
-                {formatYearSeason(lastQuestion.year, lastQuestion.season)}{" "}
-                {examLabel(lastQuestion.exam)} 問 {lastQuestion.qNumber}
-              </p>
-              <p className="text-xs text-muted-foreground">
-                最後に解いた問題から再開できます
-              </p>
+        <div className="rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/[0.08] via-primary/[0.04] to-card p-5 shadow-sm sm:p-6">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-primary">
+            続きから
+          </p>
+          <h1
+            id="returning-header"
+            className="mt-1 text-xl font-bold tracking-tight text-foreground sm:text-2xl"
+          >
+            続きから解く
+          </h1>
+          <p className="mt-1 text-sm font-medium text-foreground">
+            {formatYearSeason(lastQuestion.year, lastQuestion.season)}{" "}
+            {examLabel(lastQuestion.exam)} 問 {lastQuestion.qNumber}
+          </p>
+          {(accuracy || streak > 0) && (
+            <div className="mt-3 flex flex-wrap items-center gap-2 text-xs">
+              {accuracy && (
+                <span className="inline-flex items-center gap-1 rounded-full bg-card px-2.5 py-1 font-medium text-muted-foreground ring-1 ring-border">
+                  正答率 <span className="text-foreground">{accuracy.pct}%</span>
+                  <span className="text-muted-foreground/70">（{accuracy.total}問）</span>
+                </span>
+              )}
+              {streak > 0 && (
+                <span className="inline-flex items-center gap-1 rounded-full bg-amber-50 px-2.5 py-1 font-medium text-amber-700 ring-1 ring-amber-200 dark:bg-amber-950/40 dark:text-amber-300 dark:ring-amber-900/60">
+                  <Flame className="h-3.5 w-3.5" aria-hidden="true" />
+                  {streak}日連続
+                </span>
+              )}
             </div>
-            <Link
-              href={questionPagePath({
-                exam: lastQuestion.exam,
-                year: lastQuestion.year,
-                season: lastQuestion.season,
-                session: lastQuestion.session,
-                qNumber: lastQuestion.qNumber,
-              })}
-              className="inline-flex min-h-[44px] items-center gap-1.5 self-start rounded-full bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:self-auto"
-            >
-              <BookOpen className="h-4 w-4" aria-hidden="true" />
-              前回の続きを解く
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
+          )}
+          <Link
+            href={questionPagePath({
+              exam: lastQuestion.exam,
+              year: lastQuestion.year,
+              season: lastQuestion.season,
+              session: lastQuestion.session,
+              qNumber: lastQuestion.qNumber,
+            })}
+            className="mt-4 inline-flex min-h-[48px] w-full items-center justify-center gap-1.5 rounded-full bg-primary px-5 py-3 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
+          >
+            <BookOpen className="h-4 w-4" aria-hidden="true" />
+            前回の続きを解く
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       )}
 

@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
+import { setCopilotPanelOpen } from "@/lib/copilot/visibility";
 
 const Markdown = dynamic(
   () => import("@/components/ui/markdown").then((m) => m.Markdown),
@@ -1364,6 +1365,14 @@ export function CopilotMobileSheet({
     return () => window.removeEventListener("keydown", handler);
   }, [open]);
 
+  // Mirror the open state into the shared signal so the global AI quota
+  // badge only shows while a copilot panel is actually open.
+  React.useEffect(() => {
+    if (!open) return;
+    setCopilotPanelOpen(true);
+    return () => setCopilotPanelOpen(false);
+  }, [open]);
+
   return (
     <>
       {!open && (
@@ -1448,6 +1457,14 @@ export function CopilotDesktopFloating({
       target?.focus({ preventScroll: true });
     }, 60);
     return () => window.clearTimeout(t);
+  }, [open]);
+
+  // Mirror the open state into the shared signal so the global AI quota
+  // badge only shows while a copilot panel is actually open.
+  React.useEffect(() => {
+    if (!open) return;
+    setCopilotPanelOpen(true);
+    return () => setCopilotPanelOpen(false);
   }, [open]);
 
   return (

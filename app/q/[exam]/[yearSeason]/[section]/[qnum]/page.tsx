@@ -24,7 +24,7 @@ import {
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID, SITE_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
+import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import {
   findQuestionByRoute,
   questionPagePath,
@@ -33,7 +33,6 @@ import {
 import { AnswerReveal } from "@/components/seo/AnswerReveal";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/seo/ShareButtons";
-import { QuestionVideoButton } from "@/components/motivation/QuestionVideoButton";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
@@ -43,7 +42,6 @@ import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
-import { getCategoryTip } from "@/lib/seo/category-tips";
 import { topicTagToSlug } from "@/lib/seo/topics";
 
 // SSG only the most recent years to keep build time tractable; let older
@@ -201,6 +199,12 @@ export default async function QuestionPage({
   const prev = idx > 0 ? sessionPool[idx - 1] : null;
   const next = idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null;
 
+  // Related-question link trails are computed here in the Server Component and
+  // rendered as plain <Link>s below, so they ship inside the prerendered HTML
+  // (SSG for recent years, ISR otherwise) and crawlers see the internal links.
+  // Do NOT move these lists into a "use client" island — that would hide the
+  // links behind hydration and forfeit the internal-link equity (C-4: ~29%
+  // index rate on /q/* pages).
   const related = ALL_QUESTIONS.filter(
     (x) => x.id !== q.id && x.exam === q.exam && x.category === q.category,
   ).slice(0, 5);
@@ -229,7 +233,7 @@ export default async function QuestionPage({
         ).slice(0, 5)
       : [];
 
-  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 2);
+  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
   const pageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const examPath = `/${q.exam}`;
@@ -267,35 +271,6 @@ export default async function QuestionPage({
       : {}),
   };
 
-  const tip = getCategoryTip(q.category);
-
-  const faqEntries = [
-    {
-      q: `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} の正解は？`,
-      a: answerText
-        ? `正解は「${answerKey}: ${answerText}」です。`
-        : `正解は「${answerKey}」です。`,
-    },
-    {
-      q: `この問題はどの分野から出題されていますか？`,
-      a: `${examLabelAt(q.exam, q.year, q.season)} の「${q.category}」分野から出題されています。${
-        q.topicTags.length > 0
-          ? `関連キーワード: ${q.topicTags.slice(0, 5).join("・")}。`
-          : ""
-      }`,
-    },
-    {
-      q: `「${q.category}」分野を効率的に学ぶには？`,
-      a: tip.howToStudy,
-    },
-  ];
-  if (showRealExplanation) {
-    faqEntries.push({
-      q: `この問題の解説を要約すると？`,
-      a: truncate(q.explanation.replace(/\s+/g, " "), 200),
-    });
-  }
-
   const learningResource = {
     "@type": "LearningResource",
     "@id": `${pageUrlAbs}#learning-resource`,
@@ -330,16 +305,6 @@ export default async function QuestionPage({
       "@type": "Organization",
       "@id": ORG_ID,
     },
-  };
-
-  const faqPage = {
-    "@type": "FAQPage",
-    "@id": `${pageUrlAbs}#faq`,
-    mainEntity: faqEntries.map((entry) => ({
-      "@type": "Question",
-      name: entry.q,
-      acceptedAnswer: { "@type": "Answer", text: entry.a },
-    })),
   };
 
   const jsonLd = {
@@ -384,7 +349,6 @@ export default async function QuestionPage({
         hasPart: [questionEntity],
       },
       learningResource,
-      faqPage,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -409,13 +373,6 @@ export default async function QuestionPage({
           },
         ],
       },
-      {
-        "@type": "EducationalOrganization",
-        "@id": ORG_ID,
-        name: SITE_NAME,
-        url: SITE_BASE_URL,
-        logo: SITE_LOGO_IMAGE,
-      },
     ],
   };
 
@@ -433,7 +390,7 @@ export default async function QuestionPage({
       {/* Breadcrumb */}
       <nav
         aria-label="パンくずリスト"
-        className="mb-5 text-xs text-muted-foreground"
+        className="mb-4 text-xs text-muted-foreground"
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
@@ -476,8 +433,8 @@ export default async function QuestionPage({
       </nav>
 
       {/* Header */}
-      <header className="mb-6">
-        <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
+      <header className="mb-4">
+        <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
             <Badge variant="primary">
               {examLabelAt(q.exam, q.year, q.season)}
@@ -512,7 +469,7 @@ export default async function QuestionPage({
             </Link>
           ))}
         </div>
-        <div className="mt-3">
+        <div className="mt-2">
           <DifficultyMeter difficulty={q.difficulty} />
         </div>
       </header>
@@ -545,14 +502,14 @@ export default async function QuestionPage({
       {/* Question body */}
       <section
         aria-label="問題文"
-        className="selectable-content rounded-2xl border border-border bg-card p-6 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-7 sm:text-[17px]"
+        className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
       >
         <QuestionBody text={q.question} />
       </section>
 
       {/* Choices */}
       {q.choices && (
-        <section aria-label="選択肢" className="mt-5 flex flex-col gap-3">
+        <section aria-label="選択肢" className="mt-4 flex flex-col gap-2.5">
           <h2 className="sr-only">選択肢</h2>
           {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
             const isAnswer = key === answerKey;
@@ -575,7 +532,7 @@ export default async function QuestionPage({
       )}
 
       {/* Answer reveal */}
-      <section aria-label="正解" className="mt-6">
+      <section aria-label="正解" className="mt-5">
         <AnswerReveal answer={String(answerKey)} answerText={answerText} />
       </section>
 
@@ -622,39 +579,12 @@ export default async function QuestionPage({
             </div>
           )}
 
-          <AiTransparencyDisclaimer />
-
-          <div className="mt-4 flex flex-col gap-1.5 rounded-xl border border-dashed border-border bg-muted/30 p-3 text-[11px] leading-relaxed text-muted-foreground">
-            <p>
-              ※ AI 生成の解説は誤りを含む可能性があります。重要な判断は IPA 公式資料でご確認ください。
-            </p>
-            <p>
-              最終更新:{" "}
-              <time dateTime={lastUpdatedISO} className="font-medium text-foreground">
-                {lastUpdatedJa}
-              </time>
-            </p>
-            <div className="flex flex-wrap gap-x-4 gap-y-1">
-              <a
-                href={q.sourcePdfUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
-              >
-                出典: IPA 問題 PDF
-                <ExternalLink className="h-3 w-3" />
-              </a>
-              <a
-                href={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
-              >
-                IPA 公式解答 PDF
-                <ExternalLink className="h-3 w-3" />
-              </a>
-            </div>
-          </div>
+          <AiTransparencyDisclaimer
+            lastUpdatedISO={lastUpdatedISO}
+            lastUpdatedJa={lastUpdatedJa}
+            sourcePdfUrl={q.sourcePdfUrl}
+            answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
+          />
         </details>
       </section>
 
@@ -733,29 +663,6 @@ export default async function QuestionPage({
       {/* Bottom share section removed: the question header already exposes */}
       {/* a compact 𝕏 / LINE / Copy cluster (PR #338), so the duplicate */}
       {/* full-text block at the page tail was visual noise. */}
-
-      {/* Short-form video */}
-      <section aria-label="ショート動画" className="print:hidden mt-6">
-        <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-          ショート動画
-        </h2>
-        <QuestionVideoButton
-          examLabel={examLabelAt(q.exam, q.year, q.season)}
-          yearSeason={formatYearSeason(q.year, q.season)}
-          questionText={q.question}
-          answerText={
-            answerText
-              ? `${answerKey}：${answerText}`
-              : String(answerKey)
-          }
-          explanationSummary={
-            showRealExplanation
-              ? q.explanation
-              : "解説は準備中。クイズモードでAIに質問できます。"
-          }
-          filename={`ipa-quiz-${q.exam}-${q.year}${q.season}-q${q.qNumber}.webm`}
-        />
-      </section>
 
       {/* Prev / Next — desktop & tablet inline, mobile sticky */}
       <nav

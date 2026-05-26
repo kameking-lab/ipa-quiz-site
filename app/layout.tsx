@@ -221,7 +221,6 @@ export default function RootLayout({
                           note
                         </a>
                       </li>
-                      <li><Link href="/contact" className="block py-2.5 hover:text-foreground">誤情報を報告</Link></li>
                       <li><Link href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
                       <li><Link href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>
                     </ul>
