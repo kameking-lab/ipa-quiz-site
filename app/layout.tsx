@@ -121,6 +121,14 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
+          {/* Skip link first in the DOM so a single Tab reaches it before any
+              header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
+          <a
+            href="#main-content"
+            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
+          >
+            メインコンテンツへスキップ
+          </a>
           <Suspense fallback={null}>
             <PostHogProvider />
           </Suspense>
@@ -130,12 +138,6 @@ export default function RootLayout({
             <OnboardingTour />
           </div>
           <VercelAnalyticsWithPrivacy />
-          <a
-            href="#main-content"
-            className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-xl focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-primary-foreground focus:shadow-lg"
-          >
-            メインコンテンツへスキップ
-          </a>
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
             <EmergencyBanner />
             <div className="print:hidden">
