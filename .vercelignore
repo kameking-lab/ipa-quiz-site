@@ -1,0 +1,27 @@
+# Files excluded from the Vercel deployment build context. None of these are
+# imported by app/lib/components/data or read at runtime (verified phase 12),
+# and `next build`'s type-check uses glob includes, so absent files are simply
+# skipped — excluding the .ts/.tsx test+script files also trims what Vercel's
+# type-check has to process. CI (GitHub Actions) keeps the full checkout, so
+# tests/lint/e2e run there unchanged.
+#
+# NOTE: logs/ is intentionally NOT excluded — app/final-review-v3 and
+# app/strategy-discussion-v2 read logs/*.md at build time (verified: removing
+# logs/ breaks the build).
+
+# Tests (run in CI, never on the Vercel build)
+__tests__/
+tests/
+
+# Dev / ops scripts (run locally, never during `next build`)
+scripts/
+
+# Internal docs (markdown; not imported by the app)
+docs/
+
+# Local / editor / capture artifacts
+.vscode/
+.idea/
+screenshots/
+.playwright-mcp/
+playwright-report/
