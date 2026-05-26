@@ -158,7 +158,7 @@ export function LearningCalendar() {
               onFocus={() => setHovered(d)}
               onBlur={() => setHovered(null)}
               onClick={() => setSelected(d)}
-              className={`aspect-square rounded-sm transition hover:ring-2 hover:ring-sky-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950 ${intensityClass(d.count)}`}
+              className={`aspect-square min-h-[24px] min-w-[24px] rounded-sm transition hover:ring-2 hover:ring-sky-400 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-400 focus-visible:ring-offset-1 focus-visible:ring-offset-white dark:focus-visible:ring-offset-zinc-950 ${intensityClass(d.count)}`}
             />
           );
         })}
