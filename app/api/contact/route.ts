@@ -3,6 +3,7 @@ import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 import { verifyTurnstileToken } from "@/lib/turnstile";
+import { sendSlackMessage } from "@/lib/notify/slack";
 
 export const runtime = "nodejs";
 
@@ -17,6 +18,16 @@ const QuestionCommentSchema = z.object({
   kind: z.literal("question-comment"),
   questionId: z.string().min(1).max(120),
   comment: z.string().min(1).max(1500),
+});
+
+// Per-question 役立った/分かりにくい/誤り報告 rating from QuestionFeedback.
+// Folded in here (was the separate /api/question-feedback endpoint) so there is
+// a single inbound ingress for all user signals.
+const QuestionRatingSchema = z.object({
+  kind: z.literal("question-rating"),
+  questionId: z.string().min(1).max(120),
+  rating: z.enum(["helpful", "unclear", "report"]),
+  comment: z.string().max(800).optional().default(""),
 });
 
 const ContactSchema = z.object({
@@ -35,7 +46,12 @@ const ContactSchema = z.object({
   turnstileToken: z.string().max(4096).optional(),
 });
 
-const BodySchema = z.union([FeedbackSchema, QuestionCommentSchema, ContactSchema]);
+const BodySchema = z.union([
+  FeedbackSchema,
+  QuestionCommentSchema,
+  QuestionRatingSchema,
+  ContactSchema,
+]);
 
 /**
  * POST /api/contact
@@ -96,6 +112,10 @@ export async function POST(req: Request) {
     const result = maskPII(payload.comment);
     maskedPayload = { ...payload, comment: result.masked };
     maskHits = result.hits;
+  } else if (payload.kind === "question-rating") {
+    const result = maskPII(payload.comment ?? "");
+    maskedPayload = { ...payload, comment: result.masked };
+    maskHits = result.hits;
   }
   const safeBody = JSON.stringify(maskedPayload);
 
@@ -132,7 +152,26 @@ export async function POST(req: Request) {
     }
   }
 
+  // Forward to Slack so inbound signals reach the team (the old admin/feedback
+  // dashboard read a file nothing wrote to and was always empty). Best-effort:
+  // failure never blocks the user's submission.
+  void sendSlackMessage(buildSlackText(maskedPayload, hashIp(ip)));
+
   return NextResponse.json({ ok: true });
+}
+
+function buildSlackText(payload: z.infer<typeof BodySchema>, ipHash: string): string {
+  const head = `[過去問AI] ${payload.kind} 受信 (${ipHash})`;
+  switch (payload.kind) {
+    case "feedback":
+      return `${head}\n選択: ${payload.choice}${payload.source ? ` / ${payload.source}` : ""}\n${payload.comment || "(コメントなし)"}`;
+    case "question-comment":
+      return `${head}\n問題: ${payload.questionId}\n${payload.comment}`;
+    case "question-rating":
+      return `${head}\n問題: ${payload.questionId} / 評価: ${payload.rating}\n${payload.comment || "(コメントなし)"}`;
+    case "contact":
+      return `${head}\n種別: ${payload.category}\nお名前: ${payload.name || "(未記入)"} / メール: ${payload.email || "(未記入)"}\n${payload.body}`;
+  }
 }
 
 function hashIp(ip: string): string {

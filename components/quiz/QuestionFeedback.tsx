@@ -72,10 +72,11 @@ export function QuestionFeedback({ questionId }: { questionId: string }) {
   async function send(rating: Rating, optionalComment?: string): Promise<void> {
     setBusy(true);
     try {
-      await fetch("/api/question-feedback", {
+      await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify({
+          kind: "question-rating",
           questionId,
           rating,
           comment: optionalComment?.trim() ? optionalComment.trim() : undefined,
