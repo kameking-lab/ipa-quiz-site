@@ -178,7 +178,7 @@ Stripe 本実装はフェーズ4。
 - 新規外部 API の導入（Gemini 以外の LLM など）
 - LLM プロバイダ変更（Gemini → Claude 等）
 - デフォルトモデル変更（Flash-Lite → Flash 等）
-- 無料枠の日次回数変更（現状 30）
+- 無料枠の日次回数変更（現状 10。単一情報源は `lib/constants/ai-quota.ts` の `FREE_AI_DAILY_LIMIT`）
 - プレミアム価格の変更（現状 300 円/月）
 - DB スキーマの新規作成・変更
 - Stripe / 認証の本実装

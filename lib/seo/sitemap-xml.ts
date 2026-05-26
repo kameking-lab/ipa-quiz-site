@@ -66,7 +66,7 @@ const RECOMMENDED_BOOKS_EXAMS = [
 // (see next.config.ts). Sitemap should expose canonical destinations only.
 // /stats is included below as a first-class public dashboard.
 // /api-docs, /review, /my-progress, /bookmarks, /quiz/review, /chat/share,
-// /demo/*, /final-review-v3, /strategy-discussion-v2, /admin/*, /account/*,
+// /demo/*, /admin/*, /account/*,
 // /auth/*, /study-plan/result/[id], /offline are intentionally omitted because
 // they carry `robots: { index: false }` in their page metadata or are blocked
 // by robots.txt. Including them here would contradict crawler signals.

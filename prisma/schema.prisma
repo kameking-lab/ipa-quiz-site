@@ -3,8 +3,8 @@
 // 認証・決済・学習履歴を一元管理する DB スキーマ。
 // NextAuth.js v5 (JWT セッション) + Stripe テストモードと連動する。
 //
-// 本番 DB は未接続。マイグレーションは ./migrations/ に保存済みで、
-// DATABASE_URL が設定された環境で `prisma migrate deploy` により反映する。
+// 本番 DB は Neon (ap-southeast-1) に接続済み。全マイグレーションは ./migrations/ の
+// とおり `prisma migrate deploy` で本番反映済み（2026-05 時点で schema は up to date）。
 
 generator client {
   provider      = "prisma-client-js"
