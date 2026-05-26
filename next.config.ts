@@ -82,6 +82,11 @@ const nextConfig: NextConfig = {
       // land on the home hero's "try 3 questions" flow instead of 404ing.
       { source: "/quickstart", destination: "/", permanent: true },
       { source: "/quickstart/:exam", destination: "/", permanent: true },
+      // /feedback never existed as a page and was 404ing (empirical review A-1:
+      // a stale "誤りを報告" link GET /feedback). Error reports belong in the
+      // unified contact form; redirect so any stale link/bookmark lands there
+      // instead of a 404.
+      { source: "/feedback", destination: "/contact?type=error", permanent: true },
     ];
   },
   compress: true,
