@@ -1,5 +1,6 @@
 import type { ExamCode } from "@/lib/questions/types";
 import { CURRENT_YEAR } from "@/lib/constants/current-year";
+import { AI_QUOTA_COPY_SHORT } from "@/lib/constants/ai-quota";
 import { EXAM_PROFILES } from "./exam-data";
 import type { BlogPost } from "./types";
 
@@ -4351,7 +4352,7 @@ AIコパイロットにより、解説に対して何度でも追加質問でき
 
 ### 過去問AI の特徴
 
-- **無料プラン**：全試験・全機能・AIコパイロット1日30回
+- **無料プラン**：全試験・全機能・AIコパイロット（${AI_QUOTA_COPY_SHORT}）
 - **プレミアム（月300円）**：AIコパイロット無制限・広告非表示
 - 月300円は参考書1冊の1/10以下のコスト
 
@@ -4383,7 +4384,7 @@ AIコパイロットにより、解説に対して何度でも追加質問でき
 - AIサービスの強みは「対話的な解説」「モバイルUX」「弱点可視化」
 - 従来型の強みは「豊富な蓄積データ」「安定した解説品質」
 - どちらかを選ぶより組み合わせが最も効率的
-- 過去問AI は無料プランでもAIコパイロット30回/日が使える
+- 過去問AI は無料プランでも AIコパイロットが使える（${AI_QUOTA_COPY_SHORT}）
 
 [今すぐ過去問AI を試す（無料）→](/quiz?mode=random)
 `,
