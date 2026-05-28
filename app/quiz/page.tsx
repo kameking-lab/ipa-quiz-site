@@ -5,12 +5,25 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 
+// /quiz is the interactive quiz player (app shell), not an SEO landing.
+// next.config.ts 308-redirects bare /quiz to "/" (no `mode` query), so the
+// previous `canonical:/quiz` + `index:true` pair was self-defeating: Google
+// resolved the declared canonical, followed the 308 to "/", and consolidated
+// every /quiz?mode=… page's signals into the homepage anyway — while `index:
+// true` was dead (Google cannot index a URL that 308s). The /q/* static pages
+// are the indexable surface for question content; this player URL is for
+// human/agent navigation only.
+//
+// Honest signals now: noindex (do not try to index this URL) + follow (let
+// link equity flow out to the real content) + canonical:"/" (match the 308
+// destination so signals consolidate where they actually land, instead of
+// pointing Google at a URL that redirects away).
 export const metadata: Metadata = {
   title: "クイズ — 過去問演習",
   description:
     "IPA 情報処理技術者試験 13区分の過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AI コパイロットが各選択肢の正誤理由をその場で解説します。",
-  alternates: { canonical: "/quiz" },
-  robots: { index: true, follow: true },
+  alternates: { canonical: "/" },
+  robots: { index: false, follow: true },
 };
 
 interface SearchParams {
