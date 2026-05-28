@@ -67,7 +67,7 @@ test.describe("bookmark: question page integration", () => {
     // resolution — even if 0 matches, we just confirm the page loaded
     // correctly with choices.
     await bookmarkEl.count();
-    const choices = page.locator("[aria-label='選択肢']");
+    const choices = page.locator("[aria-label='選択肢と解答']");
     await expect(choices).toBeVisible();
   });
 });

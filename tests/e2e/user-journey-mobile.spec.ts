@@ -18,7 +18,7 @@ test.describe("user journey: mobile viewport (375x667)", () => {
 
   test("quiz question /q/ap/2024-spring/am/q1 choices visible on mobile", async ({ page }) => {
     await page.goto("/q/ap/2024-spring/am/q1");
-    const choicesSection = page.locator("[aria-label='選択肢']");
+    const choicesSection = page.locator("[aria-label='選択肢と解答']");
     await expect(choicesSection).toBeVisible();
     expect(await hasNoHorizontalOverflow(page)).toBe(true);
   });
