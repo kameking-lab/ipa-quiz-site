@@ -10,6 +10,18 @@ const baseURL = process.env.E2E_BASE_URL ?? "http://127.0.0.1:3000";
 // still clear the key in a beforeEach.
 const baseOrigin = new URL(baseURL).origin;
 
+// Admin Basic-Auth creds for the local webServer so the suite exercises the
+// *configured* path (401 unauth / 200 valid), not the degenerate unconfigured
+// path (503) that the previous test tolerated. Exposed to the test runner too
+// (E2E_ADMIN_*) so the admin spec can build a valid Authorization header. Only
+// meaningful when we own the server — when E2E_BASE_URL points at a remote
+// deploy we cannot set its env, so the admin spec gates its strict assertions
+// on the absence of E2E_BASE_URL (phase 14 / 致命傷②).
+const E2E_ADMIN_USER = "e2e-admin";
+const E2E_ADMIN_PASS = "e2e-secret-パス";
+process.env.E2E_ADMIN_USER = E2E_ADMIN_USER;
+process.env.E2E_ADMIN_PASS = E2E_ADMIN_PASS;
+
 export default defineConfig({
   testDir: "./tests/e2e",
   timeout: 30_000,
@@ -41,5 +53,9 @@ export default defineConfig({
         port: 3000,
         timeout: 120_000,
         reuseExistingServer: !process.env.CI,
+        env: {
+          ADMIN_BASIC_USER: E2E_ADMIN_USER,
+          ADMIN_BASIC_PASS: E2E_ADMIN_PASS,
+        },
       },
 });
