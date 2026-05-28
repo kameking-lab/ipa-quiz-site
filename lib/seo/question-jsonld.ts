@@ -1,8 +1,21 @@
 import { examLabelAt } from "@/lib/exam-naming/history";
-import type { ChoiceKey, Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+
+/**
+ * Approximate publish date (ISO `YYYY-MM-DD`) for an exam session, used for the
+ * Q&A `Question.datePublished`/`dateCreated`. IPA spring exams run mid-April and
+ * autumn exams mid-October; CBT divisions (IP/SG) run year-round, so we anchor
+ * those to the exam year. A valid in-year date is what Google Q&A needs — exact
+ * sitting dates per question are not tracked.
+ */
+function examPublishDateISO(year: number, season: Season): string {
+  const monthDay =
+    season === "autumn" ? "10-21" : season === "spring" ? "04-21" : "04-01";
+  return `${year}-${monthDay}`;
+}
 
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string): string {
@@ -61,21 +74,57 @@ export function buildQuestionJsonLd({
       )
     : [];
 
+  // Q&A authorship: IPA authored the question; this site authored the answer
+  // (explanation). Full inline Organization objects (not @id refs) so Google's
+  // per-page Q&A validation resolves them without the homepage Organization node.
+  const ipaAuthor = {
+    "@type": "Organization",
+    name: "情報処理推進機構 (IPA)",
+    url: "https://www.ipa.go.jp/",
+  };
+  const siteAuthor = {
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_BASE_URL,
+  };
+  const questionDateISO = examPublishDateISO(q.year, q.season);
+
+  // The accepted answer links to the in-page explanation anchor (#explanation).
+  const acceptedAnswer = {
+    "@type": "Answer",
+    text: answerText ? `${answerKey}: ${answerText}` : String(answerKey),
+    inLanguage: "ja",
+    url: `${pageUrlAbs}#explanation`,
+    author: siteAuthor,
+    datePublished: lastUpdatedISO,
+    upvoteCount: 0,
+  };
+
   const questionEntity = {
     "@type": "Question",
     "@id": `${pageUrlAbs}#question`,
     name: q.question.slice(0, 120),
     text: q.question,
     inLanguage: "ja",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: answerText ? `${answerKey}: ${answerText}` : String(answerKey),
-    },
+    // Required by Google Q&A (the missing field was the critical error): total
+    // answers = the correct one + the distractor choices.
+    answerCount: 1 + otherChoices.length,
+    author: ipaAuthor,
+    datePublished: questionDateISO,
+    dateCreated: questionDateISO,
+    upvoteCount: 0,
+    url: pageUrlAbs,
+    acceptedAnswer,
     ...(otherChoices.length > 0
       ? {
           suggestedAnswer: otherChoices.map(([key, text]) => ({
             "@type": "Answer",
             text: `${key}: ${text}`,
+            inLanguage: "ja",
+            url: pageUrlAbs,
+            author: siteAuthor,
+            datePublished: lastUpdatedISO,
+            upvoteCount: 0,
           })),
         }
       : {}),
