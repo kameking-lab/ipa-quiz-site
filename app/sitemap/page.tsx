@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog";
-import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -35,7 +35,7 @@ const EXAM_ORDER: ExamCode[] = [
 export default function HtmlSitemapPage() {
   const examEntries = EXAM_ORDER.map((code) => ({
     code,
-    count: QUESTIONS_BY_EXAM[code]?.length ?? 0,
+    count: getExamQuestionCount(code),
   })).filter((e) => e.count > 0);
 
   const blogPosts = getAllBlogSlugs()

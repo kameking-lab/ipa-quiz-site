@@ -3,6 +3,9 @@ import { join } from "node:path";
 
 import { describe, expect, it } from "vitest";
 
+import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+
 // Question totals must come from lib/constants/question-counts.ts, never as
 // literals. These raw/stale values caused the drift the empirical reviews
 // flagged: the 3-way home/meta drift (12,652 / 14,402 / 14,082) and the
@@ -54,5 +57,42 @@ describe("no hardcoded question-count literals", () => {
       }
     }
     expect(offenders).toEqual([]);
+  });
+});
+
+// The literal scan above cannot catch the *other* way these counts drifted:
+// reading the raw dataset length dynamically (QUESTIONS_BY_EXAM[exam].length /
+// ALL_QUESTIONS.length) instead of the indexable SSOT. That rendered IP=2,398
+// (raw) vs 2,381 (SSOT) — no literal, so the scan stayed green. Guard the
+// user-facing count-advertising pages at the source level (file-scoped, so the
+// legitimate raw-length uses in app/admin/stats etc. are unaffected).
+//
+// Scope note: app/stats and app/transparency intentionally surface a *broader*
+// "総収録問題 = 午前+午後+論文" collection metric via getContentCounts(); whether
+// its morning component should switch to the indexable SSOT is a separate
+// product decision tracked in logs/blog-ip-question-count-stale-2026-05-28.md,
+// so those pages are deliberately NOT asserted here.
+describe("count-advertising pages derive counts from the SSOT, not the raw dataset", () => {
+  const PAGES = [
+    join("app", "blog", "[slug]", "page.tsx"),
+    join("app", "sitemap", "page.tsx"),
+  ];
+
+  for (const page of PAGES) {
+    const src = readFileSync(page, "utf8");
+    it(`${page} does not read the raw dataset (QUESTIONS_BY_EXAM / ALL_QUESTIONS)`, () => {
+      expect(src).not.toMatch(/QUESTIONS_BY_EXAM/);
+      expect(src).not.toMatch(/ALL_QUESTIONS/);
+    });
+    it(`${page} uses the SSOT count helper`, () => {
+      expect(src).toMatch(/getExamQuestionCount|TOTAL_QUESTIONS_PUBLISHED/);
+    });
+  }
+
+  it("the indexable SSOT count genuinely differs from the raw length (so raw would overstate)", () => {
+    // If these were ever equal the bug would be invisible; lock that IP's
+    // indexable count is strictly below its raw module length (the 17 placeholder
+    // /needsReview questions that are noindex/404 and must not be advertised).
+    expect(getExamQuestionCount("ip")).toBeLessThan((QUESTIONS_BY_EXAM.ip ?? []).length);
   });
 });

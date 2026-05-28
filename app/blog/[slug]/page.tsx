@@ -6,7 +6,8 @@ import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { BlogScrollTracker } from "@/components/blog/BlogScrollTracker";
-import { QUESTIONS_BY_EXAM, ALL_QUESTIONS } from "@/data/questions";
+import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
+import { TOTAL_QUESTIONS_PUBLISHED } from "@/lib/constants/question-counts";
 import {
   getAllBlogSlugs,
   getBlogPostBySlug,
@@ -288,10 +289,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/quiz?mode=random&exam=${post.exam}`}
-              aria-label={`${examLabel(post.exam)} を無料で演習する（${(QUESTIONS_BY_EXAM[post.exam] ?? []).length}問）`}
+              aria-label={`${examLabel(post.exam)} を無料で演習する（${getExamQuestionCount(post.exam)}問）`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              この試験を演習する（{(QUESTIONS_BY_EXAM[post.exam] ?? []).length.toLocaleString("ja-JP")}問）→
+              この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
               <span aria-hidden="true">✓</span>無料・登録不要
@@ -316,7 +317,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             過去問AI で各試験区分の対策を始める
           </h2>
           <p className="mb-3 leading-relaxed">
-            13 区分・{ALL_QUESTIONS.length.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
+            13 区分・{TOTAL_QUESTIONS_PUBLISHED.toLocaleString("ja-JP")} 問を AI コパイロット付きで学習できます。受験予定の試験区分から始めましょう。
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
