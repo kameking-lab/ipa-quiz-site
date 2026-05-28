@@ -71,6 +71,86 @@ describe("buildQuestionJsonLd", () => {
   });
 });
 
+// Google Q&A rich-result compliance — the critical error (missing answerCount)
+// plus the recommended-field warnings (author / datePublished / upvoteCount /
+// url) on the Question and every Answer (phase 14 / 致命傷⑥).
+describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
+  type Answer = {
+    "@type": "Answer";
+    text: string;
+    url?: string;
+    author?: { "@type": string; name: string; url: string };
+    datePublished?: string;
+    upvoteCount?: number;
+  };
+  type QuestionNode = {
+    answerCount?: number;
+    author?: { "@type": string; name: string; url: string };
+    datePublished?: string;
+    dateCreated?: string;
+    upvoteCount?: number;
+    url?: string;
+    acceptedAnswer: Answer;
+    suggestedAnswer?: Answer[];
+  };
+
+  const question = () =>
+    (build()["@graph"][0] as { mainEntity: QuestionNode }).mainEntity;
+
+  it("sets the required answerCount = correct + distractors", () => {
+    expect(question().answerCount).toBe(4); // 1 accepted + 3 suggested
+  });
+
+  it("answerCount is 1 when the question has only the correct choice", () => {
+    const single: Question = { ...baseQuestion, choices: { ウ: "選択肢C" } };
+    const q = (build(single)["@graph"][0] as { mainEntity: QuestionNode }).mainEntity;
+    expect(q.answerCount).toBe(1);
+    expect(q.suggestedAnswer).toBeUndefined();
+  });
+
+  it("the Question carries every recommended field (clears the warnings)", () => {
+    const q = question();
+    expect(q.author).toMatchObject({ "@type": "Organization", name: "情報処理推進機構 (IPA)" });
+    expect(q.upvoteCount).toBe(0);
+    expect(q.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1");
+    // datePublished/dateCreated are valid ISO dates anchored to the exam year.
+    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}$/);
+    expect(q.dateCreated).toBe(q.datePublished);
+  });
+
+  it("the accepted answer carries author/date/upvote and links to #explanation", () => {
+    const a = question().acceptedAnswer;
+    expect(a.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1#explanation");
+    expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
+    expect(a.datePublished).toBe("2026-05-23");
+    expect(a.upvoteCount).toBe(0);
+  });
+
+  it("every suggested answer also carries the recommended fields", () => {
+    const suggested = question().suggestedAnswer ?? [];
+    expect(suggested).toHaveLength(3);
+    for (const a of suggested) {
+      expect(typeof a.url).toBe("string");
+      expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
+      expect(a.datePublished).toBe("2026-05-23");
+      expect(a.upvoteCount).toBe(0);
+    }
+  });
+
+  it("no Question/Answer recommended field is left undefined (zero-warning guard)", () => {
+    const q = question();
+    const required = (a: Answer) =>
+      [a.text, a.url, a.author, a.datePublished, a.upvoteCount].every(
+        (v) => v !== undefined && v !== null,
+      );
+    expect(required(q.acceptedAnswer)).toBe(true);
+    for (const a of q.suggestedAnswer ?? []) expect(required(a)).toBe(true);
+    for (const v of [q.answerCount, q.author, q.datePublished, q.dateCreated, q.upvoteCount, q.url]) {
+      expect(v).not.toBeUndefined();
+    }
+  });
+});
+
 describe("sessionLabel", () => {
   it("maps known sessions to Japanese labels", () => {
     expect(sessionLabel("am")).toBe("午前");
