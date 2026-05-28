@@ -31,7 +31,7 @@ import {
 } from "@/lib/seo/question-url";
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
-import { AnswerReveal } from "@/components/seo/AnswerReveal";
+import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
@@ -349,37 +349,30 @@ export default async function QuestionPage({
         <QuestionBody text={q.question} />
       </section>
 
-      {/* Choices */}
+      {/* Choices + solve-in-place. The choice text ships in the prerendered
+          HTML via ChoiceButton (crawlable / readable with JS off); hydration
+          adds the grading interaction so a search visitor can answer right here
+          instead of hopping to /quiz (致命傷⑤). */}
       {q.choices && (
-        <section aria-label="選択肢" className="mt-4 flex flex-col gap-2.5">
+        <section aria-label="選択肢と解答" className="mt-4">
           <h2 className="sr-only">選択肢</h2>
-          {(Object.entries(q.choices) as [ChoiceKey, string][]).map(([key, text]) => {
-            const isAnswer = key === answerKey;
-            return (
-              <div
-                key={key}
-                data-answer={isAnswer || undefined}
-                className="group relative flex items-start gap-4 rounded-2xl border border-border bg-card px-4 py-5 shadow-sm transition duration-150 ease-out hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-md active:translate-y-0 sm:px-5"
-              >
-                <span className="mt-0.5 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-lg font-bold text-primary-soft-foreground transition group-hover:scale-105 group-hover:bg-primary group-hover:text-primary-foreground sm:h-11 sm:w-11">
-                  {key}
-                </span>
-                <span className="flex-1 pt-1 text-[15px] leading-[1.7] text-card-foreground sm:text-base sm:leading-[1.75]">
-                  {text}
-                </span>
-              </div>
-            );
-          })}
+          <QuestionAnswerCard
+            questionId={q.id}
+            choices={q.choices}
+            answerKey={answerKey as ChoiceKey}
+            answerText={answerText}
+            exam={q.exam}
+            year={q.year}
+            season={q.season}
+            session={q.session}
+            qNumber={q.qNumber}
+            nextHref={next ? questionPagePath(next) : undefined}
+          />
         </section>
       )}
 
-      {/* Answer reveal */}
-      <section aria-label="正解" className="mt-5">
-        <AnswerReveal answer={String(answerKey)} answerText={answerText} />
-      </section>
-
       {/* Explanation — 3-layer structured */}
-      <section aria-label="解説" className="mt-8">
+      <section id="explanation" aria-label="解説" className="mt-8" style={{ scrollMarginTop: "1rem" }}>
         <details open className="group">
           <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div className="flex items-center gap-2.5">

@@ -56,7 +56,9 @@ test.describe("user journey: quiz page content", () => {
 
   test("question page has choices section with ア イ ウ エ", async ({ page }) => {
     await page.goto(QUESTION);
-    const choicesSection = page.locator("[aria-label='選択肢']");
+    // 致命傷⑤: choices are now an interactive solve-in-place radiogroup; the
+    // section is labelled 「選択肢と解答」 and the choice keys render in it.
+    const choicesSection = page.locator("[aria-label='選択肢と解答']");
     await expect(choicesSection).toBeVisible();
     const text = await choicesSection.textContent();
     expect(text).toMatch(/ア/);
@@ -65,9 +67,11 @@ test.describe("user journey: quiz page content", () => {
     expect(text).toMatch(/エ/);
   });
 
-  test("question page has answer and explanation sections", async ({ page }) => {
+  test("question page has the inline answer and explanation sections", async ({ page }) => {
     await page.goto(QUESTION);
-    await expect(page.locator("[aria-label='正解']")).toBeVisible();
+    // The standalone 「正解」 reveal section was folded into the interactive
+    // 「選択肢と解答」 card (answering reveals correct/incorrect in place).
+    await expect(page.locator("[aria-label='選択肢と解答']")).toBeVisible();
     await expect(page.locator("[aria-label='解説']")).toBeVisible();
   });
 
