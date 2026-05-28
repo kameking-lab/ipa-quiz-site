@@ -133,9 +133,17 @@ export default function HomePage() {
 
       <section aria-label="試験を選んで学習を始める" className="mb-6">
         <HomeHeroLede totalQuestions={totalQuestions} />
+        {/* CTA sits directly under the (SSR-stable) lede so its on-screen
+            position never moves. HeroAiDemo and TotalAnswerCounter render null
+            during SSR and pop in only after hydration / an async fetch; placing
+            them ABOVE the CTA shoved it down ~200-290px post-load, so a real
+            mouse/agent click computed on the first-paint position landed on the
+            shifted-in content instead of the link (empirical review F-2). They
+            now mount below the CTA, where their pop-in shifts only the exam
+            grid. */}
+        <HomeQuickTrialCta />
         <HeroAiDemo />
         <TotalAnswerCounter />
-        <HomeQuickTrialCta />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
 
