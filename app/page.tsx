@@ -28,7 +28,11 @@ import {
 } from "@/lib/constants/question-counts";
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
-const HOME_DESCRIPTION = `IPA 情報処理技術者試験 全 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の過去問 ${APPROX_QUESTION_COUNT_LABEL}問超を AI コパイロット付きで学べる完全無料サイト。登録不要・広告控えめ・モバイル片手操作対応。年度別・分野別・模試・苦手復習の6モードで効率学習。`;
+// Snippet-optimised: front-load the value prop + count and drop the 13-code list
+// （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
+// pushed Google toward synthesising a worse snippet from the page body. Kept
+// under the ~150 full-width-char budget. (empirical review 致命傷⑦)
+const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の過去問を AI 解説付きで完全無料公開。ITパスポート・基本情報・応用情報から高度試験まで ${APPROX_QUESTION_COUNT_LABEL}問超を収録し、年度別・分野別・模試・苦手復習の6モードと学習履歴で効率学習。登録不要、スマホ片手で。`;
 
 export const metadata: Metadata = {
   title: HOME_TITLE,
