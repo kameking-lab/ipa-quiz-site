@@ -38,6 +38,13 @@ export function HeroAiDemo() {
   return (
     <div
       aria-hidden="true"
+      // data-nosnippet: this is an illustrative demo, not page content. Googlebot
+      // executes JS and renders this widget, and aria-hidden does NOT exclude
+      // text from search snippets — so without data-nosnippet Google was pulling
+      // 「サンプル. AI 解説デモ. Q: 公開鍵暗号…」 into the homepage SERP snippet
+      // (empirical review 致命傷⑦). data-nosnippet is the Google-sanctioned way to
+      // keep an element visible to users but out of the snippet.
+      data-nosnippet
       className="hero-ai-demo relative my-4 overflow-hidden rounded-2xl border border-zinc-200 bg-gradient-to-br from-sky-50 to-violet-50 p-3 shadow-sm dark:border-zinc-800 dark:from-sky-950/30 dark:to-violet-950/20"
     >
       <span className="absolute right-2 top-2 rounded-full bg-zinc-900/80 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider text-white dark:bg-zinc-100/90 dark:text-zinc-900">
