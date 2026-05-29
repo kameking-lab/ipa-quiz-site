@@ -38,7 +38,11 @@ export function StatsCharts({
         <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
           試験区分別 収録問題数
         </h3>
-        <div className="h-[280px] w-full">
+        <div
+          className="h-[280px] w-full"
+          role="img"
+          aria-label="試験区分別の収録問題数を示す棒グラフ"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={byExam} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(100,116,139,0.15)" />
@@ -58,7 +62,11 @@ export function StatsCharts({
         <h3 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
           月次利用状況（モック）
         </h3>
-        <div className="h-[260px] w-full">
+        <div
+          className="h-[260px] w-full"
+          role="img"
+          aria-label="月次のユニーク利用者数とAI呼び出し回数の推移を示す折れ線グラフ"
+        >
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={monthlySeries} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="rgba(100,116,139,0.15)" />
