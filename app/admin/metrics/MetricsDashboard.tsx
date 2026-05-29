@@ -204,6 +204,7 @@ function RangeTabs({
           <div className="ml-2 flex items-center gap-1 text-xs">
             <input
               type="date"
+              aria-label="集計開始日"
               value={from}
               onChange={(e) => onFrom(e.target.value)}
               className="rounded border border-zinc-300 bg-white px-2 py-1 dark:border-zinc-700 dark:bg-zinc-900"
@@ -211,6 +212,7 @@ function RangeTabs({
             <span className="text-zinc-500">〜</span>
             <input
               type="date"
+              aria-label="集計終了日"
               value={to}
               onChange={(e) => onTo(e.target.value)}
               className="rounded border border-zinc-300 bg-white px-2 py-1 dark:border-zinc-700 dark:bg-zinc-900"
