@@ -45,11 +45,25 @@ export function FireworksBurst({ active, level, onDone }: Props) {
     [count, radius, palette, level],
   );
 
+  // Hold onDone in a ref so the auto-clear timer depends only on `active` and
+  // `duration`, not on onDone's identity. The parent (QuizPlayer) re-renders
+  // every second via its elapsed-time interval and passes a fresh inline
+  // onDone={() => setBurst(null)} each tick. Keying the effect on onDone
+  // restarted the timer every ~1000ms; the "big" burst timer (0.95s*1000+100 =
+  // 1050ms) is longer than that interval, so it was reset before firing and
+  // never cleared the burst — leaving a perpetual invisible overlay and a
+  // self-resetting timer for the rest of the session (same stale-closure class
+  // as the AchievementToast auto-dismiss fix).
+  const onDoneRef = React.useRef(onDone);
+  React.useEffect(() => {
+    onDoneRef.current = onDone;
+  });
+
   React.useEffect(() => {
     if (!active) return;
-    const t = window.setTimeout(onDone, duration * 1000 + 100);
+    const t = window.setTimeout(() => onDoneRef.current(), duration * 1000 + 100);
     return () => window.clearTimeout(t);
-  }, [active, duration, onDone]);
+  }, [active, duration]);
 
   return (
     <AnimatePresence>
