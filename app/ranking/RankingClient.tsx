@@ -136,7 +136,11 @@ export function RankingClient() {
           <CardTitle className="text-base">スコア分布</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-72 w-full">
+          <div
+            className="h-72 w-full"
+            role="img"
+            aria-label="模試の得点率分布を示す棒グラフ"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={chartData}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" />
