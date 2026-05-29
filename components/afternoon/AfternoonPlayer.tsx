@@ -195,6 +195,7 @@ export function AfternoonPlayer({ questions }: Props) {
                     </p>
                     {(sub.maxLength || sub.minLength) && (
                       <span
+                        id={`afternoon-${sub.label}-count`}
                         className={
                           "text-xs " +
                           (over || under
@@ -240,6 +241,11 @@ export function AfternoonPlayer({ questions }: Props) {
                     rows={rows}
                     aria-required="true"
                     aria-invalid={over || under || undefined}
+                    aria-describedby={
+                      sub.maxLength || sub.minLength
+                        ? `afternoon-${sub.label}-count`
+                        : undefined
+                    }
                     placeholder={isEssay ? "論述（2,000〜3,000字）をここに入力" : "ここに解答を入力"}
                     className={
                       "w-full rounded-xl border px-3 py-2 text-sm leading-relaxed shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-zinc-900 dark:text-zinc-50 " +
