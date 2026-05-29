@@ -252,3 +252,43 @@
 - 次セッションへ: フォームコントロールのアクセシブルネーム観点は **完全に一巡 done**。残候補は
   (a)tabsプリミティブの矢印キー対応(日中判断)、(b)パフォーマンス(bundle/ISR/N+1)観点の精査、
   (c)エラー説明/空状態の充実(aria-describedby のエラー文言拡充)、(d)これまでの SKIP 再評価。
+
+## セッション7 2026-05-30 07:30 JST（ステータスメッセージ live region + stale-closure 横展開の lib/app 監査）
+- done: 【実バグ=A11y欠落 WCAG 4.1.3】`EmailLeadCapture`（ホームのメール登録フォーム＝ユーザー獲得の中核導線）の
+  送信結果トースト（成功/重複/失敗）が role/aria-live を一切持たず、かつ `{toast && <div>}` の条件付き
+  マウント（live region が後から DOM 挿入される＝読み上げが不確実な anti-pattern）だったため、SR 利用者は
+  登録の成否を全くフィードバックされなかった。home/footer 両 variant のトーストを **常設の
+  `role="status" aria-live="polite"` live region** 化し、文言のみを出し入れする方式（codebase 既定の
+  `ShareButtons.tsx:101-111` と同一の gold-standard パターン）に統一。視覚表示・レイアウトは不変。
+  / コミット `8ac8960` / 検証: typecheck=0・lint(err0, 既存 ux-audit 警告1のみ)・vitest 223緑(222+新規1)・
+  build 全緑。新規 `__tests__/components/EmailLeadCapture.test.tsx`（fetch を error 応答に stub し送信、
+  結果文言が role="status"/aria-live="polite" の live region に反映されることを検証）を追加し、
+  **修正前は `getByRole("status")` が見つからず落ちる**ことを git stash で実測（崩れたら落ちる検証）。
+- SKIP(横展開確認 done・追加バグなし): stale-closure タイマー同型バグ（S1 AchievementToast / S4 FireworksBurst）の
+  **lib/ と app/ への監査拡張**。S5 は `components/` のみ grep していたため `lib/streak/MilestoneToast.tsx` を
+  見落としていた（S5 の「MilestoneToast は存在せず」は誤り＝**訂正**）。MilestoneToast は
+  `useEffect(()=>{const t=setTimeout(onClose,8000);...},[onClose])` の同型形だが、親 `StreakTracker` は
+  `toast` state 変化時のみ再レンダー（QuizPlayer のような経過時間 setInterval(1秒) の毎秒 setState を持たない）
+  ため、表示中に onClose 参照が変わらず **タイマーは実際には発火する＝現状実害なし（latent のみ）**。
+  lib/streak の StreakBadge(60s interval, callback非依存)・app/ の各 setTimeout/setInterval も
+  全て callback非依存 or 関数updaterで安全。→ 同型「実害ある」バグの残存ゼロを確認。
+  ※ MilestoneToast は過去2回実害化したクラスと同型のため、日中に防御的 ref 化を検討する候補として記録。
+- SKIP(低/無害・日中候補): コピーボタンのコピー完了通知。`ReferralClient`/`QuizPlayer`(結果URLコピー)/
+  `StreamSummary`/`SessionSummaryDialog`/`SocialShare`/`StreakCouponCard` はボタン自身のラベルを
+  「コピー」→「コピーしました」に切替える方式で、SR への明示的アナウンスは無い（一方 `ShareButtons` は
+  専用 sr-only live region で通知＝gold-standard）。ただしユーザーが直前に押した当該ボタン上の視覚変化で
+  確認でき実害は限定的。6箇所への横展開は範囲が広く夜間は安全側で SKIP。日中に ShareButtons パターンへ統一を検討。
+- SKIP(実害なし・既に成熟): 他のステータスメッセージ／aria-invalid フォーム監査。`ContactForm`(email/body)・
+  `SchedulePlanner`(試験日)・`QuestionCommentBox`・`EmailSignInForm` は全て `aria-describedby`＋role="alert"
+  で誤り文言を関連付け済。`app/settings/page.tsx` のトーストも role="status"/aria-live 保有。
+  カスタムダイアログ（KeyboardShortcutsHelp・QuizPlayer の KeyboardShortcutHelp[inline 非modalで aria-modal=false 適切]・
+  FeedbackGateModal[radix DialogContent]）も Escape/aria-modal/ラベルを適切に処理。raw `<img>` 2件とも alt 保有。
+  → EmailLeadCapture が唯一の「role 完全欠落」outlier だった（上記で修復）。
+
+## セッション7 まとめ
+- 実改善1件（EmailLeadCapture: 送信結果を SR 通知＝WCAG 4.1.3 status messages 欠落の修復・テスト1件付き `8ac8960`）
+  + SKIP3件（stale-closure lib/app 横展開監査=MilestoneToast 訂正・latent のみ / コピーボタン通知=日中候補 / 他フォーム&ダイアログ監査=成熟）。
+- テーマ: 「ステータスメッセージ（成功/失敗の動的通知）の SR 可視性」観点でアプリを一巡。
+  唯一 role 完全欠落だった EmailLeadCapture を gold-standard（ShareButtons の常設 live region）に統一。
+- 次セッションへ: 残候補は (a)tabsプリミティブ矢印キー(日中)、(b)コピーボタン通知の統一(日中)、
+  (c)MilestoneToast 防御的 ref 化(日中)、(d)パフォーマンス(bundle/ISR/N+1)観点の精査、(e)これまでの SKIP 再評価4周目。

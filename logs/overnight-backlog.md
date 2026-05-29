@@ -4,6 +4,14 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション7):** P0 全件 done/SKIP。P1 1〜3周目進行。
+> S7: ステータスメッセージ(動的成功/失敗通知)の SR 可視性を一巡。EmailLeadCapture の送信結果トーストが
+> role/aria-live 完全欠落だったのを ShareButtons の常設 live region パターンへ統一(WCAG 4.1.3, `8ac8960`)。
+> stale-closure タイマー監査を lib/・app/ へ拡張(S5 は components/ のみで MilestoneToast 見落とし=訂正)。
+> MilestoneToast は同型だが親が毎秒再レンダーせず latent のみ(実害なし)。
+> **日中対応候補が蓄積: (a)tabs 矢印キー (b)コピーボタンの SR 通知統一 (c)MilestoneToast 防御的 ref 化。**
+> **次は: パフォーマンス(bundle/ISR/N+1)観点、または SKIP 再評価4周目。**
+>
 > **状態 (2026-05-30 セッション6):** P0 全件 done/SKIP。P1 1〜2周目完了。
 > 一巡 done: 領域1(ホーム)・領域2(/q SEO/OG)・領域3〜8(quiz/challenge/search/mock-exam/account/blog の A11y/SEO)・
 > 領域9(エラー/404)。app 配下 OG 画像欠落は一掃済。stale-closure タイマー同型バグ全て修復(S1/S4)。
