@@ -285,7 +285,10 @@ function SubPromptEditor({
       <CardHeader>
         <div className="flex items-center justify-between gap-2">
           <CardTitle className="text-base">設問{subKey}</CardTitle>
-          <span className={`text-sm font-medium tabular-nums ${status.color}`}>
+          <span
+            id={`essay-${subKey}-count`}
+            className={`text-sm font-medium tabular-nums ${status.color}`}
+          >
             {len} / {targetChars} 字目安
           </span>
         </div>
@@ -298,6 +301,8 @@ function SubPromptEditor({
           value={value}
           onChange={(e) => onChange(e.target.value)}
           rows={subKey === "イ" ? 14 : 10}
+          aria-label={`設問${subKey}の論述`}
+          aria-describedby={`essay-${subKey}-count`}
           placeholder={`設問${subKey}の論述（${minChars}〜${maxChars}字）...`}
           className="w-full resize-y rounded-xl border border-zinc-300 bg-white p-3 font-mono text-sm leading-relaxed dark:border-zinc-700 dark:bg-zinc-950"
         />
