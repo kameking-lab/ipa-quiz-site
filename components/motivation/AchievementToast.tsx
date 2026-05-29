@@ -5,6 +5,9 @@ import { X, Trophy } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ACHIEVEMENTS, TIER_META } from "@/lib/gamification/achievements";
 
+/** Auto-dismiss after this long unless the pointer is hovering the toast. */
+const AUTO_DISMISS_MS = 5000;
+
 interface Props {
   achievementId: string;
   onClose: () => void;
@@ -12,11 +15,14 @@ interface Props {
 
 export function AchievementToast({ achievementId, onClose }: Props) {
   const achievement = ACHIEVEMENTS.find((a) => a.id === achievementId);
+  // Pause the auto-dismiss while hovered/focused so users can read or click ×.
+  const [paused, setPaused] = React.useState(false);
 
   React.useEffect(() => {
-    const t = window.setTimeout(onClose, 6000);
+    if (paused) return;
+    const t = window.setTimeout(onClose, AUTO_DISMISS_MS);
     return () => window.clearTimeout(t);
-  }, [onClose]);
+  }, [onClose, paused]);
 
   if (!achievement) return null;
 
@@ -26,7 +32,19 @@ export function AchievementToast({ achievementId, onClose }: Props) {
     <div
       role="status"
       aria-live="polite"
-      className="fixed inset-x-4 bottom-4 z-[70] mx-auto max-w-sm"
+      data-testid="achievement-toast"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocus={() => setPaused(true)}
+      onBlur={() => setPaused(false)}
+      // Top-center, below the sticky quiz header. 致命傷⑧: the previous
+      // bottom-center placement (bottom-4, z-70) sat over the mobile fixed
+      // 「次の問題へ」 CTA bar and the answer action icons (AIに聞く/星/ブックマーク/
+      // 共有) and the desktop floating copilot — all anchored to the bottom —
+      // blocking interaction. Anchoring to the top keeps it clear of every
+      // bottom control while staying visible and auto-dismissing.
+      className="fixed inset-x-4 top-[4.5rem] z-[70] mx-auto max-w-sm"
+      style={{ animation: "slide-down 220ms cubic-bezier(0.2, 0.8, 0.2, 1)" }}
     >
       <div className="relative overflow-hidden rounded-2xl border border-amber-200 bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 p-4 shadow-xl dark:border-amber-900/60 dark:from-amber-950/70 dark:via-yellow-950/60 dark:to-orange-950/70">
         <button
