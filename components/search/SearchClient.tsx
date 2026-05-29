@@ -977,7 +977,15 @@ function ResultsPanel({ loading, error, result, tokens }: ResultsPanelProps) {
   }
 
   return (
-    <section aria-label="検索結果" aria-live="polite" className="space-y-3">
+    <section aria-label="検索結果" className="space-y-3">
+      {/* Announce only the concise result count to screen readers. The previous
+          implementation made the whole <section> (including the <ul> of up to
+          ~20 hits) a live region, so each debounced keystroke re-read every
+          result item — a verbose anti-pattern. A dedicated sr-only status keeps
+          the count announcement without re-reading the entire list. */}
+      <p role="status" aria-live="polite" className="sr-only">
+        {result.total.toLocaleString("ja-JP")} 件の検索結果が見つかりました。
+      </p>
       <div className="flex items-baseline justify-between gap-2">
         <h2 className="text-sm font-semibold text-foreground">
           検索結果
