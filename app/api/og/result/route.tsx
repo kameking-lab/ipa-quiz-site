@@ -69,13 +69,14 @@ export async function GET(req: NextRequest) {
 
         <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "28px" }}>
           <div style={{ color: barColor, fontSize: "100px", fontWeight: 900, lineHeight: 1 }}>
-            {pct}%
+            {`${pct}%`}
           </div>
           <div style={{ color: "#bae6fd", fontSize: "28px", fontWeight: 400 }}>正答率</div>
         </div>
 
+        {/* satori は複数子ノードを持つ非 flex div を拒否するため単一文字列にする */}
         <div style={{ color: "#e0f2fe", fontSize: "24px", marginBottom: "32px" }}>
-          {correct} 問正解 / {total} 問中
+          {`${correct} 問正解 / ${total} 問中`}
         </div>
 
         <div
@@ -103,6 +104,15 @@ export async function GET(req: NextRequest) {
         </div>
       </div>
     ),
-    { width: 1200, height: 630 },
+    {
+      width: 1200,
+      height: 630,
+      // 結果シェア画像もクエリ文字列（accuracy/total/correct/exam）で内容が
+      // 一意に定まる決定的レスポンス。既定の max-age=0 だと SNS シェア時に
+      // 毎回再レンダーされ低速・高コストなため、長期 immutable キャッシュを明示。
+      headers: {
+        "Cache-Control": "public, immutable, no-transform, max-age=31536000",
+      },
+    },
   );
 }
