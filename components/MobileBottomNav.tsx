@@ -25,6 +25,7 @@ import {
   SheetTitle,
 } from "./ui/sheet";
 import { cn } from "@/lib/utils";
+import { isLearningFocusRoute } from "@/lib/navigation/learning-focus";
 
 interface TabItem {
   href: string;
@@ -83,6 +84,11 @@ function isActive(pathname: string | null, tab: TabItem): boolean {
 export function MobileBottomNav() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = React.useState(false);
+
+  // Hide the bottom tab bar inside focused learning flows (/quiz*, /q/*): those
+  // render their own fixed bottom-0 CTA bar that this nav would overlap and
+  // whose taps it would intercept on mobile (致命傷⑨). Hooks above run first.
+  if (isLearningFocusRoute(pathname)) return null;
 
   return (
     <>
