@@ -52,3 +52,34 @@
 ## セッション1 まとめ
 - 実改善2件(P0-④ JSON-LD TZ / P0-③ トースト自動消滅バグ修復=実バグ発見) + 検証SKIP4件。
 - 次セッションへ: P1 領域2「問題ページ /q」から再開(領域1/9 は一巡 done)。
+
+## セッション2 2026-05-30 05:54 JST（P1 領域2「問題ページ /q」スイープ）
+- done: /q の死蔵 `opengraph-image.tsx` 削除 — generateMetadata が openGraph.images に
+  `/api/og?type=question` を明示指定しており、ビルド成果物の og:image は全 /q ページで
+  `/api/og` を指す。file-based の `opengraph-image.tsx` は上書きされ HTML から一切参照されない
+  死蔵ルート(かつ日本語フォント未読込で潜在的に豆腐化リスク)。/ コミット `2f2f4cf`
+  / 検証: typecheck/lint(err0)/test 205緑/build 全緑。ビルド後 .next を実測し当該ルート消滅・
+  q1.html の og:image は `/api/og` のまま不変、HTML が opengraph-image を参照する件数=0 を確認。
+- done: 年度別一覧 `/[exam]/[yearSeason]` に OG 画像付与 — `summary_large_image` を宣言しつつ
+  openGraph.images も twitter.images も無く、SNS で画像なしカードだった(兄弟 /[exam] は画像あり)。
+  `/api/og?type=exam` パターンで付与。/ コミット `b2f09ef`
+  / 検証: 全緑。ビルド後 `ap/2024-autumn.html` を実測し og:image・twitter:image が `/api/og?type=exam` を指すことを確認。
+- done: 分野別一覧 `/[exam]/topic/[topicSlug]` に OG 画像付与 — 同じ画像欠落バグ。
+  `/api/og?type=topic` で付与。/ コミット `14ae850`
+  / 検証: 全緑。ビルド後 topic ページ HTML を実測し og:image=`/api/og?type=topic&…` を確認。
+- done: 共有/比較ページ2件に OG 画像付与 — `/og/streak/[days]`(連続学習共有専用ページ・影響大)に
+  `/api/og?type=streak&streak={日数}`、`/why-kakomon-ai`(比較ページ)に `/api/og?type=feature`。
+  / コミット `9be109b` / 検証: 全緑。why-kakomon-ai.html を実測し og:image=`/api/og?type=feature`。
+  streak は動的ルートのため本番ビルドを localhost 起動し /og/streak/7 を curl、
+  og:image=`/api/og?type=streak&…&streak=7` を実測。
+- SKIP(実害なし/範囲外): `/[exam]/afternoon` 系2ページは twitter card 自体を宣言しておらず
+  「画像欠落の壊れたカード」ではない(metadata は title/desc/canonical のみ)。OG 追加は機能追加で
+  あり、かつ「練習用オリジナル問題」の低優先ページのため夜間は SKIP。
+- SKIP(実害なし): /q 本体ページの `crossExamByTopic` は ALL_QUESTIONS(~14k) を毎レンダー走査するが
+  ISR(revalidate=86400)でキャッシュされ TTFB 実害なし。same-exam リストは既に examPool 最適化済。
+
+## セッション2 まとめ
+- 実改善4件(OG 画像系: 死蔵ルート削除1 + 画像欠落カード修復3=計4ページ4区分) + SKIP2件。
+- app 配下の `summary_large_image` without image 一掃完了(残ゼロを grep 実測)。
+- 次セッションへ: P1 領域2「/q」のうち SEO/OG は一巡。次は領域2の A11y/パフォーマンス観点、
+  または領域3「クイズ /quiz」へ。
