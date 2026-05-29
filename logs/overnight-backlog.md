@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション8):** P0 全件 done/SKIP。P1 進行中。
+> S8: 「indexable ページからの内部リンク切れ(404)」観点を一巡。①/topics 索引のロングテール3件
+> (`a0e0f16`) ②試験ハブ「通知設定」/account/notifications→/settings (`98d2cc9`)
+> ③/glossary(54)・/keywords(16) の relatedTopics 計70件の存在しない /topics リンク→topicLinkHref()で
+> /search フォールバック (`cff75d9`)。計74件規模の 404 内部リンクを解消。Explore で残存ゼロ確認。
+> **次は: パフォーマンス(bundle/ISR/N+1)観点、または SKIP 再評価4周目。日中候補: tabs矢印キー/コピー通知統一/MilestoneToast ref化。**
+>
 > **状態 (2026-05-30 セッション7):** P0 全件 done/SKIP。P1 1〜3周目進行。
 > S7: ステータスメッセージ(動的成功/失敗通知)の SR 可視性を一巡。EmailLeadCapture の送信結果トーストが
 > role/aria-live 完全欠落だったのを ShareButtons の常設 live region パターンへ統一(WCAG 4.1.3, `8ac8960`)。

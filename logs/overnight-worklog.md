@@ -292,3 +292,44 @@
   唯一 role 完全欠落だった EmailLeadCapture を gold-standard（ShareButtons の常設 live region）に統一。
 - 次セッションへ: 残候補は (a)tabsプリミティブ矢印キー(日中)、(b)コピーボタン通知の統一(日中)、
   (c)MilestoneToast 防御的 ref 化(日中)、(d)パフォーマンス(bundle/ISR/N+1)観点の精査、(e)これまでの SKIP 再評価4周目。
+
+## セッション8 2026-05-30 07:40 JST（内部リンク切れ＝indexable ページからの 404 リンク一掃）
+- done: 【実バグ=SEO 内部リンク切れ】トピック索引 `/topics` の「その他のトピック」節が
+  getAllTopics()（全74）をリンクするが、`/topics/[slug]` の generateStaticParams は
+  getHubTopics(80,4)（count>=4 のハブ71のみ）+ dynamicParams=false だったため、ロングテール3件
+  （事業継続マネジメント/変更管理/問題管理）が索引からリンクされているのに 404 を返していた。
+  静的生成を getAllTopics() に揃えて索引のリンク先=生成セットを一致。dynamicParams=false は維持
+  （実在しないスラッグは従来どおりハード404）。/ コミット `a0e0f16`
+  / 検証: typecheck0/lint0/test224緑/build緑。.next 実測で74件全 prerender・旧404の3件が実コンテンツ
+  付き HTML 出力を確認。回帰テスト `__tests__/seo/topics-static-params.test.ts`（generateStaticParams が
+  getAllTopics 全件網羅。修正前は3件欠落で落ちることを git stash で実測）。
+- done: 【実バグ=リンク切れ】試験ハブ `app/[exam]/page.tsx` の午後AI採点「Coming Soon」節の
+  「通知設定」リンクが `/account/notifications`（page.tsx 不在＝404。NotificationSettings は /settings に描画）
+  を指していた。実在する `/settings#notifications`（id="notifications" アンカー）へ修正。/ コミット `98d2cc9`
+  / 検証: typecheck0/lint0/test226緑/build緑。.next 実測で db/es/nw 等の高度試験ハブが /settings#notifications を
+  リンク・旧 /account/notifications がビルド成果物から消失を確認。回帰ガード
+  `__tests__/navigation/no-dead-internal-links.test.ts`（page.tsx 不在ルートへ app からリンクしないこと。修正前は落ちる）。
+- done: 【実バグ=SEO 内部リンク切れ・最大規模70件】`/glossary`(54/66) と `/keywords/[keyword]`(16/29) が
+  編集データ relatedTopics タグを `/topics/{slug}` へ直リンクしていたが、これらタグの多くはどの問題にも
+  未付与で getAllTopics() に不在 → dynamicParams=false の /topics/[slug] で 404。共通ヘルパ
+  `topicLinkHref()`（lib/seo/topics.ts）を新設し、ハブが在るタグは /topics、無いタグは /search?q={tag}
+  （実在ルート・当該語の検索）へフォールバックさせて 404 を解消。ハブ在りタグの挙動・見た目は不変。
+  / コミット `cff75d9` / 検証: typecheck0/lint0/test229緑/build緑。.next 実測で glossary.html の
+  /topics/XSS・/topics/OWASP が /search?q= へ、keywords/ai-copilot の /topics/AI が /search?q=AI へ移行を確認。
+  回帰テスト `__tests__/seo/topic-link-href.test.ts`（curated relatedTopics が /topics へリンクするなら必ず
+  実在＝404ゼロ。helper を /topics 固定に壊すと3件落ちることを実測）。
+- SKIP(実害なし・code clarity のみ): `app/api/admin/deployment-status/route.ts` 等の
+  `dynamic="force-dynamic"` + `revalidate=0` 併記。force-dynamic が優先され revalidate は無視されるため
+  ランタイム影響ゼロ。過大修正の罠回避で SKIP。
+- SKIP(残存ゼロ・監査 done): components/ 配下の静的内部リンク全数監査（Explore）— 上記以外の
+  dead link は発見されず。/q ページの /topics リンクは問題の topicTags 由来で getAllTopics に必ず存在＝安全。
+
+## セッション8 まとめ
+- 実改善3件（すべて indexable ページからの 404 内部リンク切れ。計 70+4=74 件規模のリンク切れを解消）+ SKIP2件。
+  1. /topics 索引のロングテール3件の 404 リンク（`a0e0f16`）
+  2. 試験ハブの「通知設定」/account/notifications→/settings（`98d2cc9`）
+  3. /glossary・/keywords の relatedTopics 70件の存在しない /topics リンク→/search フォールバック（`cff75d9`）
+- テーマ: 「indexable ページからの内部リンク切れ（404）」観点でアプリを一巡。クロールバジェット浪費・UX 不良の実害を解消。
+- 次セッションへ: 内部リンク切れ観点は一巡 done（残存ゼロを Explore で確認）。残候補は
+  (a)tabsプリミティブ矢印キー(日中)、(b)コピーボタン通知統一(日中)、(c)MilestoneToast 防御的 ref 化(日中)、
+  (d)パフォーマンス(bundle/ISR/N+1)観点、(e)SKIP 再評価4周目。
