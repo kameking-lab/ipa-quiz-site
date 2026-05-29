@@ -92,6 +92,30 @@ export function DailyChallengeClient({ questions, date }: Props) {
     [current, revealed, history],
   );
 
+  // Number-key (1–4) selection — the ChoiceButton/radiogroup advertise
+  // aria-keyshortcuts「数字キーN でも選択できます」, so the keys must actually work
+  // (致命傷⑩: the label lied here — /quiz・/q already had this handler, /challenge
+  // did not). N maps to CHOICE_KEYS[N-1] (matching shortcutIndex={i+1}); only
+  // fires if that choice is rendered. Ignored while typing in a field.
+  React.useEffect(() => {
+    if (revealed || !current) return;
+    const handler = (e: KeyboardEvent) => {
+      if (e.target instanceof HTMLElement) {
+        const tag = e.target.tagName;
+        if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
+      }
+      const i = ["1", "2", "3", "4"].indexOf(e.key);
+      if (i < 0) return;
+      const key = CHOICE_KEYS[i];
+      if (current.choices?.[key]) {
+        e.preventDefault();
+        onSelect(key);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, [revealed, current, onSelect]);
+
   const onNext = React.useCallback(() => {
     if (index + 1 < total) {
       setIndex((i) => i + 1);
