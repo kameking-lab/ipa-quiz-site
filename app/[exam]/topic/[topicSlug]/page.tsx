@@ -47,6 +47,11 @@ export async function generateMetadata({
   const category = decodeURIComponent(topicSlug);
   const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
   const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "topic",
+    title: category,
+    subtitle: `${examLabel(exam as ExamCode)} 分野別`,
+  }).toString()}`;
   return {
     title,
     description,
@@ -58,8 +63,9 @@ export async function generateMetadata({
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
   };
 }
 
