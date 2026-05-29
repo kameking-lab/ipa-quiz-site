@@ -101,3 +101,42 @@ describe("QuestionAnswerCard — solve in place", () => {
     expect(screen.getByText("正解！")).toBeTruthy();
   });
 });
+
+// Number-key 1–4 selection must actually work — the ChoiceButton advertises it
+// via aria-keyshortcuts/「数字キーN でも選択できます」 (致命傷⑩).
+describe("QuestionAnswerCard — number-key selection", () => {
+  it("number key 1 selects the first choice (ア)", () => {
+    render(<QuestionAnswerCard {...baseProps} />);
+    fireEvent.keyDown(window, { key: "1" });
+    const entries = createHistoryStore().getAllEntries();
+    expect(entries).toHaveLength(1);
+    expect(entries[0].selected).toBe("ア");
+  });
+
+  it("number key 2 selects the second choice (イ) — the correct one here", () => {
+    render(<QuestionAnswerCard {...baseProps} />);
+    fireEvent.keyDown(window, { key: "2" });
+    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(createHistoryStore().getAllEntries()[0].selected).toBe("イ");
+  });
+
+  it("ignores number keys while typing in an input field", () => {
+    render(
+      <>
+        <input data-testid="field" />
+        <QuestionAnswerCard {...baseProps} />
+      </>,
+    );
+    fireEvent.keyDown(screen.getByTestId("field"), { key: "1" });
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+  });
+
+  it("does not re-select once revealed (number key is inert after answering)", () => {
+    render(<QuestionAnswerCard {...baseProps} />);
+    fireEvent.keyDown(window, { key: "1" }); // selects ア, reveals
+    fireEvent.keyDown(window, { key: "2" }); // must be ignored
+    const entries = createHistoryStore().getAllEntries();
+    expect(entries).toHaveLength(1);
+    expect(entries[0].selected).toBe("ア");
+  });
+});
