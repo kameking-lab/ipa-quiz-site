@@ -8,7 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { topicTagToSlug } from "@/lib/seo/topics";
+import { topicLinkHref } from "@/lib/seo/topics";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
@@ -157,7 +157,7 @@ export default async function KeywordPage({
           {page.relatedTopics.map((t) => (
             <li key={t}>
               <Link
-                href={`/topics/${encodeURIComponent(topicTagToSlug(t))}`}
+                href={topicLinkHref(t)}
                 className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-1 text-xs text-muted-foreground transition hover:border-primary/40 hover:text-primary"
               >
                 #{t}

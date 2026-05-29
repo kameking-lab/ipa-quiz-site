@@ -72,3 +72,17 @@ export function findTopicByAnySlug(slug: string): TopicSummary | undefined {
     (t) => t.slug === target || t.tag === topicSlugToTag(target),
   );
 }
+
+/**
+ * トピックタグのリンク先 URL を返す。
+ * 専用ハブページ（/topics/{slug}）が存在するタグはそこへ、存在しないタグ
+ * （用語集・特集記事の編集タグで、どの問題にも付与されていないもの）は
+ * 検索へフォールバックする。/topics/[slug] は dynamicParams=false のため、
+ * 実在しないタグへのリンクは 404 になる。これを防ぐためのヘルパ。
+ */
+export function topicLinkHref(tag: string): string {
+  const slug = topicTagToSlug(tag);
+  return findTopicByAnySlug(slug)
+    ? `/topics/${encodeURIComponent(slug)}`
+    : `/search?q=${encodeURIComponent(tag)}`;
+}
