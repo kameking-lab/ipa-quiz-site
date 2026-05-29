@@ -12,6 +12,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { questionPagePath } from "@/lib/seo/question-url";
 import {
   findTopicByAnySlug,
+  getAllTopics,
   getHubTopics,
   getQuestionsByTopic,
 } from "@/lib/seo/topics";
@@ -24,7 +25,11 @@ interface RouteParams {
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  return getHubTopics(80, 4).map((t) => ({ slug: t.slug }));
+  // トピック索引ページ (/topics) は「その他のトピック」節で getAllTopics() の
+  // 全トピックをリンクするため、ロングテール (count<4) も含めて全件を静的生成し、
+  // 索引からのリンク先が 404 にならないようにする。dynamicParams=false のままなので
+  // 実在しないスラッグは従来どおりハード 404 を返す。
+  return getAllTopics().map((t) => ({ slug: t.slug }));
 }
 
 export async function generateMetadata({
