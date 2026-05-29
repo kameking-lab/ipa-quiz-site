@@ -126,3 +126,33 @@
 - 領域3〜8 を A11y/SEO 観点で一巡。コードは総じて成熟・高品質。明確な実害は /challenge の1件のみ。
 - 次セッションへ: 領域3〜8 は一巡 done。残候補は (a)/search aria-live 過剰通知(日中判断)、
   (b)パフォーマンス観点（不要 "use client" 削減・bundle）の精査、(c)2周目で前回 SKIP の再評価。
+
+## セッション4 2026-05-30 06:43 JST（2周目: 前回SKIP再評価 + パフォーマンス）
+- done: 【前回SKIP再評価→実改善】領域5「/search」結果リストの冗長 aria-live 読み上げを是正。
+  `ResultsPanel` の成功時 `<section aria-label="検索結果" aria-live="polite">` が結果 `<ul>`(最大~20件)
+  全体を包んでおり、デバウンス入力ごとに全ヒット項目を SR が再読する anti-pattern だった
+  （セッション3で「日中判断候補」としてSKIPしていた件）。section から aria-live を外し、件数のみを
+  伝える sr-only `role="status" aria-live="polite"` 領域へ置換。件数通知は維持しつつ全項目の再読を解消。
+  ローディング/0件分岐の短文 live はそのまま（適切）。/ コミット `235c07f`
+  / 検証: typecheck=0・lint(err0, 既存ux-audit警告1のみ)・vitest 208緑・build 全緑。
+  本番ビルドへ Playwright `user-journey-search.spec.ts` を実行し全14件緑。新規回帰テスト
+  「結果コンテナが live region でない／件数 status が存在する」を追加（aria-live 復活＝崩れたら落ちる）。
+- SKIP(実害なし・既に成熟): パフォーマンス観点「不要 "use client" 削減」— Explore で leaf 系を中心に走査も、
+  "use client" 付きファイルは概ね hooks/イベント/framer-motion/ブラウザAPI を実使用しており死蔵ディレクティブ
+  なし。純粋プレゼンテーション系（AiContentNotice 等多数）は既に server component として正しく実装済。
+  唯一の境界候補 VercelAnalyticsWithPrivacy も third-party client wrapper の境界マーカーで適切。撤去対象ゼロ。
+- done: 【実バグ修復】`FireworksBurst` の自動クリアタイマーが毎秒リセットされ発火しない不具合。
+  親 QuizPlayer が経過時間 `setInterval(1秒)` で毎秒再レンダーし `onDone={() => setBurst(null)}` を
+  inline で渡すため、effect 依存 `[active, duration, onDone]` の onDone 参照が毎秒変化→タイマー張り直し。
+  「big」バースト(0.95s*1000+100=1050ms)は 1000ms 間隔より長く発火前に reset され続け、burst 状態が
+  解除されず不可視オーバーレイ＋自走タイマーがセッション中残留（セッション1の AchievementToast と
+  同じ stale-closure クラス＝同一修正パターン）。onDone を ref 化し依存を `[active, duration]` に限定。
+  / コミット `f60ce8f` / 検証: typecheck=0・lint(err0)・vitest 211緑(208+新規3)・build 全緑。
+  新規 `__tests__/components/FireworksBurst.test.tsx`（fake timer、再レンダーでタイマー不リセット）を追加し、
+  **修正前は当該回帰テストが「got 0 times」で落ちる**ことを実測（崩れたら落ちる検証）。
+
+## セッション4 まとめ
+- 実改善2件（/search 冗長 aria-live 是正=前回SKIP再評価 / FireworksBurst 自走タイマー実バグ修復）+ SKIP1件（"use client"）。
+- セッション1で見つけた stale-closure タイマーの同型バグが FireworksBurst にも潜んでいたのを発見・修復。
+- 次セッションへ: 2周目継続。残候補は (c)他の SKIP 再評価、stale-closure 同型パターンの他コンポーネント横展開確認
+  （MilestoneToast は親 StreakTracker が高頻度再レンダーしないか要確認）、bundle/ISR 観点の精査。
