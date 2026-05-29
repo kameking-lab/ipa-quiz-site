@@ -291,6 +291,15 @@ export function DailyChallengeClient({ questions, date }: Props) {
         })}
       </div>
 
+      {/* Screen-reader announcement of the outcome (parity with /quiz・/q). */}
+      <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
+        {revealed
+          ? selected === answerKey
+            ? "正解です。下に解説があります。"
+            : `不正解です。正解は ${answerKey} です。下に解説があります。`
+          : ""}
+      </div>
+
       {revealed && (
         <div className="space-y-3 rounded-2xl border border-border bg-card p-4">
           <div className="flex items-start gap-2">
