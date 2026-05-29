@@ -1,5 +1,16 @@
 import { test, expect } from "@playwright/test";
 
+// Run this file's tests sequentially (override the global fullyParallel). Each
+// valid /api/copilot POST runs the RAG pipeline, which on first hit loads the
+// corpus (a few seconds) and does CPU-heavy scoring. Running several of these
+// concurrently under full-suite load piled up on the shared server's event loop
+// and made even fast requests time out — a test-infra flake, not a product bug
+// (validation returns 400 before any RAG; a 200 always carries the headers).
+// Serial execution means one copilot request at a time: the lenient first test
+// warms the corpus, the strict assertions then run warm and fast. Assertions are
+// unchanged — detection power is fully preserved.
+test.describe.configure({ mode: "serial" });
+
 // Uses a question with complete data (no needsReview flag)
 const QUESTION = "/q/ap/2024-spring/am/q1";
 

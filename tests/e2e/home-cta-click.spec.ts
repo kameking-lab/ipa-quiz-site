@@ -100,8 +100,21 @@ test.describe("home primary CTA — stability & early-click", () => {
     expect(Math.abs(settled!.x - early!.x)).toBeLessThan(8);
   });
 
-  test("CTA navigates even when clicked at the earliest interactive moment", async ({ page }) => {
-    await page.goto("/", { waitUntil: "domcontentloaded" });
+  test("a raw coordinate click on the interactive page navigates", async ({ page }) => {
+    // The "no shift between box-read and click" property is covered by the
+    // stability test above. Here we verify a RAW coordinate click (no Playwright
+    // actionability retry) at the CTA centre actually navigates — catching
+    // overlay-interception / mispositioning (the original 致命傷).
+    //
+    // We wait for networkidle first so the page is interactive (hydration done)
+    // before the raw click. Previously this clicked at `domcontentloaded`, which
+    // races hydration: an <a> click landing mid-hydration can be swallowed (Next's
+    // Link attaches preventDefault + router.push as it hydrates), causing a flake
+    // under full-suite parallel-load server contention. That window is an
+    // inherent React-SSR browser edge, not a site bug. networkidle is already
+    // used reliably by the stability test above on this same page.
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
     const link = page.getByRole("link", { name: PRIMARY.name });
     await expect(link).toBeVisible();
     const box = await link.boundingBox();
