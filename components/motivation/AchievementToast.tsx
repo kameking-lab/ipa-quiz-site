@@ -18,11 +18,22 @@ export function AchievementToast({ achievementId, onClose }: Props) {
   // Pause the auto-dismiss while hovered/focused so users can read or click ×.
   const [paused, setPaused] = React.useState(false);
 
+  // Hold onClose in a ref so the dismiss timer below depends only on `paused`,
+  // not on onClose's identity. The parent (QuizPlayer) re-renders every second
+  // via its elapsed-time interval and passes a fresh inline onClose each time;
+  // keying the effect on onClose restarted the 5s timer on every tick, so it
+  // never fired and the toast lingered over the controls indefinitely (致命傷⑧
+  // follow-up — caught by the badge-toast auto-dismiss E2E).
+  const onCloseRef = React.useRef(onClose);
+  React.useEffect(() => {
+    onCloseRef.current = onClose;
+  });
+
   React.useEffect(() => {
     if (paused) return;
-    const t = window.setTimeout(onClose, AUTO_DISMISS_MS);
+    const t = window.setTimeout(() => onCloseRef.current(), AUTO_DISMISS_MS);
     return () => window.clearTimeout(t);
-  }, [onClose, paused]);
+  }, [paused]);
 
   if (!achievement) return null;
 
