@@ -4,6 +4,15 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション9):** P0 全件 done/SKIP。P1 進行中。
+> S9: 「SNS シェア時の OG 画像の到達性・速度・健全性」を一巡。①robots.txt `Disallow:/api/` が og:image
+> 生成 `/api/og` を巻き込み遮断→`Allow:/api/og` で SNS スクレイパに解禁 (`6d86a70`・全28ページ波及)
+> ②`/api/og` に long immutable キャッシュ付与（毎回再レンダー解消, `215a541`）
+> ③`/api/og/result` の satori 多子 div 500 レンダー失敗を修復＋キャッシュ (`45f0e77`・現状未参照ルート)。
+> sitemap×orphan 監査=クリーン(SKIP)、exam meta desc 長さ=content編集回避(SKIP・日中候補)。
+> **次は: パフォーマンス(bundle/ISR/N+1)観点、SKIP再評価4周目。日中候補蓄積: tabs矢印キー/コピー通知統一/**
+> **MilestoneToast ref化/exam meta desc 短縮/api-og-result 未参照なら削除検討。**
+>
 > **状態 (2026-05-30 セッション8):** P0 全件 done/SKIP。P1 進行中。
 > S8: 「indexable ページからの内部リンク切れ(404)」観点を一巡。①/topics 索引のロングテール3件
 > (`a0e0f16`) ②試験ハブ「通知設定」/account/notifications→/settings (`98d2cc9`)

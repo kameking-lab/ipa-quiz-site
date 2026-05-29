@@ -333,3 +333,50 @@
 - 次セッションへ: 内部リンク切れ観点は一巡 done（残存ゼロを Explore で確認）。残候補は
   (a)tabsプリミティブ矢印キー(日中)、(b)コピーボタン通知統一(日中)、(c)MilestoneToast 防御的 ref 化(日中)、
   (d)パフォーマンス(bundle/ISR/N+1)観点、(e)SKIP 再評価4周目。
+
+## セッション9 2026-05-30 08:11 JST（robots.txt × SNS og:image / sitemap・orphan 監査）
+- done: 【実バグ=SNS シェア画像がサイト全体で欠落】`app/robots.ts` の `Disallow: /api/` が、
+  全28ページ種別の og:image が指す画像生成エンドポイント `/api/og`(/result) まで巻き込んで遮断していた。
+  robots.txt を尊重する Twitterbot / facebookexternalhit / LinkedInBot / Slackbot 等の SNS スクレイパは
+  og:image を取得できず、X/Facebook/LinkedIn/Slack 等での共有時にカード画像が出ない状態だった
+  （Twitter 公式も「robots.txt で画像 URL を許可せよ」と明記）。longest-match で勝つ `Allow: /api/og` を
+  併記して許可（`/api/` 配下の他エンドポイントは Disallow 維持）。/ コミット `6d86a70`
+  / 検証: typecheck0/lint0(既存ux-audit警告1のみ)/test230緑(+新規1)/build緑。本番ビルドを localhost 起動し
+  `curl /robots.txt` で `Allow: /api/og` が `Disallow: /api/` より前・longest-match 成立を実測、
+  `/api/og?type=exam` が 200 image/png を返すこと、`ap.html` の og:image が絶対URL
+  `https://www.kakomon-ai.jp/api/og?...`（metadataBase 解決済）で当該エンドポイントを指すことを実測。
+  回帰テスト `__tests__/seo/robots.test.ts`（allow に /api/og 在・経路長で Allow が Disallow に勝つ。
+  Allow を外すと落ちる）。
+- SKIP(実害なし・監査 done): sitemap × orphan/noindex 整合監査。`lib/seo/sitemap-xml.ts` の STATIC_ROUTES
+  全33ルートが page.tsx 実在かつ indexable を確認（/topics の `index:false` は `all.length===0` の防御分岐のみで
+  74トピック在の本番では index:true）。sitemap 未掲載の top-level ページ（api-docs/offline/review/account/
+  bookmarks/essays/success-stories/settings/quiz/admin）は全て `robots:{index:false}` or 301 で正しく除外＝orphan ゼロ。
+  topics sitemap は getHubTopics(71) で getAllTopics(74) の部分集合＝404 emit なし。robots Disallow と sitemap URL の衝突なし。
+- SKIP(過大修正の罠・content編集回避): 試験ハブ `EXAM_META_DESC_DIVERSE` の meta description が全角120字超で
+  日本語 SERP で末尾切れの可能性。ただし冒頭に試験名＋訴求が入る意図的な多様性マーケコピーであり「壊れ」ではない。
+  夜間にコピーを短縮編集するのは overreach。日中に判断する候補として記録。
+- done: 【perf=og:image 毎回再レンダー】`/api/og` が既定で `cache-control: max-age=0, must-revalidate` を
+  返しており、SNS スクレイパ／Google 画像取得のたびにフォント取得＋satori 再レンダーが走り高コスト・低速
+  （スクレイパのタイムアウト要因）だった。OG 画像はクエリ文字列で内容が一意に定まる決定的レスポンスのため、
+  Next の file-based opengraph-image と同じ `public, immutable, no-transform, max-age=31536000` を明示。
+  / コミット `215a541` / 検証: typecheck0/lint0/test230緑/build緑。本番ビルド localhost で修正前
+  `max-age=0, must-revalidate` → 修正後 `public, immutable, max-age=31536000` を `curl -I` で実測、
+  画像が 200 image/png を返し続けることを確認。robots 許可（6d86a70）と相補的。
+- done: 【実バグ=結果シェア OG が 500 でレンダー不能】`/api/og/result` が複数子ノードを持つ非 flex の
+  `<div>`（`{pct}%`・`{correct} 問正解 / {total} 問中`）を含み、satori が「display:flex を持たない多子 div」を
+  拒否して 500（failed to pipe response）で画像生成に失敗していた。該当2箇所を単一文字列の子へ collapse して
+  修復＋ long immutable キャッシュ付与。/ コミット `45f0e77` / 検証: typecheck0/lint0/test230緑/build緑。
+  本番ビルド localhost で修正前は satori エラーで 500（サーバログ実測）→ 修正後 200 image/png（192KB）を返し、
+  Read ツールでレンダー画像（IPA Quiz/AP バッジ・「80% 正答率」・「16 問正解 / 20 問中」・ブランド表記）が
+  正しいことを目視確認。※当該ルートは現状ソース未参照（share.ts は /api/og 使用）＝壊れた公開ルートの非破壊是正。
+  日中候補: 未参照なら削除も検討可（夜間は非破壊側＝機能化に倒した）。
+
+## セッション9 まとめ
+- 実改善3件（すべて OG/SNS シェア表面）+ SKIP2件（sitemap orphan 監査=クリーン / exam meta desc 長さ=content編集回避）。
+  1. robots.txt: `Allow: /api/og` 明示で SNS スクレイパの og:image 取得を解禁（`6d86a70`・全28ページ種別に波及）
+  2. /api/og: long immutable キャッシュ付与で再レンダーコスト削減（`215a541`）
+  3. /api/og/result: satori 多子 div 500 バグ修復＋キャッシュ（`45f0e77`・現状未参照ルートの非破壊是正）
+- テーマ: 「SNS シェア時の OG 画像の到達性・速度・健全性」をまとめて是正。robots 解禁→キャッシュ→壊れた result 修復の3段。
+- 次セッションへ: OG/SNS 表面は一巡 done。残候補は (a)tabs矢印キー(日中)、(b)コピー通知統一(日中)、
+  (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)/api/og/result 未参照なら削除検討(日中)、
+  (f)パフォーマンス(bundle/ISR/N+1)観点の精査、(g)SKIP 再評価4周目。
