@@ -298,6 +298,7 @@ export function AfternoonGradingDemo() {
               setShowResult(false);
             }}
             rows={8}
+            aria-label="解答を入力"
             placeholder="ここに記述・論述を入力（任意の長さで OK）..."
             className="w-full rounded-xl border border-zinc-200 bg-white p-3 text-sm leading-relaxed text-zinc-900 placeholder:text-zinc-400 focus:border-sky-400 focus:outline-none focus:ring-1 focus:ring-sky-300 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-100"
           />
