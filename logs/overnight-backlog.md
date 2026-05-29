@@ -4,6 +4,16 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション10):** P0 全件 done/SKIP。P1 進行中。
+> S10: 「indexable ページのデータ可視化チャートの代替テキスト(WCAG 1.1.1)」を全 public チャートページで一巡。
+> recharts チャートが role/aria-label を持たず SR 利用者が図の意味を得られなかった問題を是正。
+> ①/stats 4チャート(`09885d4`) ②/transparency 2チャート(`969e533`) ③/ranking スコア分布(`b581146`)に
+> `role="img"`+説明ラベルを付与(additive・視覚不変・各テスト付き)。
+> perf(ISR/N+1)観点は Explore 提案が全て no-op(home=既static / modes/*=searchParams で dynamic 強制)と実測判定し SKIP。
+> ranking の label 未関連付け指摘は wrap label の暗黙関連付け成立で false positive(SKIP)。
+> **次は: /account チャート(DashboardProgress/WeaknessHeatmap)の role=img 横展開(noindex・日中候補)、または SKIP再評価。**
+> **日中候補蓄積: tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc 短縮/api-og-result 未参照なら削除。**
+>
 > **状態 (2026-05-30 セッション9):** P0 全件 done/SKIP。P1 進行中。
 > S9: 「SNS シェア時の OG 画像の到達性・速度・健全性」を一巡。①robots.txt `Disallow:/api/` が og:image
 > 生成 `/api/og` を巻き込み遮断→`Allow:/api/og` で SNS スクレイパに解禁 (`6d86a70`・全28ページ波及)

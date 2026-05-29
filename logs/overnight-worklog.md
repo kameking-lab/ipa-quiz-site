@@ -380,3 +380,49 @@
 - 次セッションへ: OG/SNS 表面は一巡 done。残候補は (a)tabs矢印キー(日中)、(b)コピー通知統一(日中)、
   (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)/api/og/result 未参照なら削除検討(日中)、
   (f)パフォーマンス(bundle/ISR/N+1)観点の精査、(g)SKIP 再評価4周目。
+
+## セッション10 2026-05-30 08:32 JST（データ可視化チャートの代替テキスト = WCAG 1.1.1 一巡）
+- SKIP(no-op/実害なし): パフォーマンス(ISR/N+1)観点。Explore が `app/page.tsx`・`/modes/topic`・`/modes/year`
+  に `export const revalidate` 追加を提案したが**いずれも無効**と実測判定。①home(`app/page.tsx`)は
+  searchParams/cookies/headers いずれも未使用＝既に完全 static prerender 済(ALL_QUESTIONS フィルタはビルド時
+  1回のみ)。revalidate 追加はむしろ不要な定期再生成を招くため逆効果。②/modes/topic・/modes/year は
+  どちらも `searchParams`(exam切替) を読む＝Next.js が dynamic レンダリングを強制するため revalidate は
+  no-op。ALL_QUESTIONS スキャンは O(14k)・数ms で top-traffic ページでもないため実害なし(理論先行)。
+  → perf 観点は撤去/最適化対象ゼロ。
+- done: 【実バグ=A11y欠落 WCAG 1.1.1】`/stats`(indexable) の recharts チャート4種(ContentByExam 棒/
+  Impressions 折れ線/Feature 円/Referrer 円)が role/aria-label を持たず、SR 利用者は SVG 内の軸ラベル断片
+  しか読めず図の意味を得られなかった。特に「試験区分別収録数」「90日表示回数推移」は本文に代替表現が無く
+  図が唯一の表現。各ラッパ div に `role="img"`+説明ラベルを付与(AT が単一の名前付き画像として扱う・
+  視覚/レイアウト不変・additive)。/ コミット `09885d4` / 検証: typecheck0/lint(err0)/test234緑(+新規4)/
+  build緑。`.next/server/app/stats.html` に role="img"・aria-label 出力を実測。新規 `StatsCharts.test.tsx`
+  (recharts を no-op mock し ResizeObserver 回避、getByRole("img",{name}) で4種検証)は role 除去で4件落ちる
+  ことを git stash で実測(崩れたら落ちる検証)。
+- done: 【同テーマ横展開】`/transparency`(indexable) の収録問題数(棒)・月次利用状況(折れ線)2チャートも
+  同じ role/aria-label 欠落。本文に代替表現なし。各ラッパ div に付与。/ コミット `969e533`
+  / 検証: typecheck0/lint(err0)/test236緑(+新規2)/build緑。新規 `TransparencyStatsCharts.test.tsx` は
+  git stash で2件落ちることを実測。※当該チャートは `monthlySeries.length>0` でのみ描画され PostHog metrics は
+  env-gated のためローカルビルド成果物には出ず(env 不可触)、コンポーネント単体テストで検証(同 role=img 方式は
+  stats.html で実測済)。
+- done: 【同テーマ横展開】`/ranking`(indexable) の得点率分布 BarChart も role/aria-label 欠落。分布データは
+  図でしか提示されない。ラッパ div に付与。/ コミット `b581146` / 検証: typecheck0/lint(err0)/test237緑(+新規1)/
+  build緑。`.next/server/app/ranking.html` に aria-label 出力を実測(無条件描画)。新規 `RankingClientChart.test.tsx`
+  は git stash で落ちることを実測。
+- SKIP(false positive): Explore が `RankingClient` の表示名 input/対象試験 select を「label が htmlFor 無しで
+  未関連付け」と指摘したが**誤り**。両 `<label>` は control を**wrap**しており暗黙の関連付け(implicit label
+  association)が成立=アクセシブルネームを持つ。S5 worklog も「RankingClient(wrap label) は関連付け済」と
+  記録済(line 198-200)。修正不要。
+- SKIP(noindex・テスト足場が重い・日中候補): `/account` 配下のチャート(`DashboardProgress`・
+  `WeaknessHeatmapClient`)も同型の role=img 欠落だが、noindex かつ auth-gated で SEO impact ゼロ、
+  コンポーネントが account コンテキスト/多数の localStorage hooks に依存しテスト足場が重い。今セッションの
+  「public indexable チャート」テーマは /stats・/transparency・/ranking の3ページで完了。残りは別セッションで。
+
+## セッション10 まとめ
+- 実改善3件(すべて WCAG 1.1.1 = データ可視化チャートの代替テキスト欠落の修復、各テスト付き)+ SKIP3件
+  (perf=no-op実測 / ranking label=false positive / account charts=noindex・日中候補)。
+  1. /stats 4チャートに role=img+aria-label(`09885d4`)
+  2. /transparency 2チャートに role=img+aria-label(`969e533`)
+  3. /ranking スコア分布チャートに role=img+aria-label(`b581146`)
+- テーマ: 「indexable ページのデータ可視化チャートの代替テキスト(WCAG 1.1.1)」を全 public チャートページで一巡完了。
+- 次セッションへ: public チャート a11y は一巡 done。残候補は (a)/account チャート(DashboardProgress/
+  WeaknessHeatmap)の role=img 横展開、(b)tabs矢印キー(日中)、(c)コピー通知統一(日中)、(d)MilestoneToast ref化(日中)、
+  (e)exam meta desc 短縮(日中)、(f)SKIP 再評価。
