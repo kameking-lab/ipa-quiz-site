@@ -499,7 +499,7 @@ export default async function ExamTopPage({
                     順次対応予定 — 通知を受け取るには
                   </span>
                   <Button asChild variant="ghost" size="sm" className="h-7 px-2 text-xs">
-                    <Link href="/account/notifications">通知設定</Link>
+                    <Link href="/settings#notifications">通知設定</Link>
                   </Button>
                 </div>
               </>
