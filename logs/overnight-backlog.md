@@ -4,10 +4,11 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
-> **状態 (2026-05-30 セッション2):** P0 全件 done/SKIP。P1 スイープ中。
-> 一巡 done: 領域1(ホーム)・領域9(エラー/404)・領域2(問題ページ /q)の SEO/OG 観点。
-> セッション2で app 配下の OG 画像欠落(`summary_large_image` without image)を一掃。
-> **次は領域2の A11y/パフォーマンス観点、または領域3「クイズ /quiz」から。**
+> **状態 (2026-05-30 セッション3):** P0 全件 done/SKIP。P1 1周目ほぼ完了。
+> 一巡 done: 領域1(ホーム)・領域2(/q SEO/OG)・領域3〜8(quiz/challenge/search/mock-exam/account/blog の A11y/SEO)・
+> 領域9(エラー/404)。app 配下 OG 画像欠落は一掃済。/challenge の SR 通知欠落を修復(セッション3)。
+> **次は 2周目: (a)/search 結果の aria-live 過剰通知(日中判断候補)、(b)パフォーマンス観点
+> (不要 "use client"・bundle・ISR)、(c)前回 SKIP の再評価から。**
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P0（フェーズ14 残・既知の致命傷候補）— ✅ 全件 done/SKIP

@@ -96,3 +96,33 @@
 - 本セッションはツール出力チャネルが激しくバースト/バッファ化し効率が著しく低下。**コード変更は無し**（行う必要がなかった）。
 - 既存の未コミット M(snapshot/bat) は本セッションと無関係。ルート直下の不正名一時ファイル(tmp_snapdiff)は削除済。
 - 次セッションへ: 領域4 は完了扱い。backlog の次の P1（A11y/パフォーマンス・/quiz 改善 等）へ進むこと。
+
+## セッション3 2026-05-30 06:34 JST（P1 領域3〜8 A11y/SEO スイープ）
+- done: 領域4「/challenge」A11y — デイリーチャレンジに解答結果の SR 通知を追加（実バグ=A11y欠落）。
+  `/quiz`(QuizPlayer)・`/q`(QuestionAnswerCard) には正誤を伝える `role="status" aria-live="polite"`
+  の sr-only 領域があるが `DailyChallengeClient` には無く、SR 利用者は解答後に正解/不正解を聞けなかった
+  （視覚的バナー「正解！」「不正解（正解は X）」のみ・aria-live 外）。同一パターンの sr-only live 領域を
+  追加。/ コミット `c0ac6cf` / 検証: typecheck=0・lint(err0, 既存ux-audit警告1のみ)・test 208緑(205+新規3)・
+  build 全緑。新規テスト `__tests__/components/DailyChallengeClient.test.tsx`（正解/不正解/未解答の3ケース）が
+  **修正前は status role 不在で3件とも落ちる**ことを git stash で実測（崩れたら落ちる検証）。
+- SKIP(実害なし・既に充足): 領域5「/search」SEO/metadata — title/description/canonical 網羅、
+  `role="search"`・label・facet の aria-pressed・sort の sr-only label・結果 ul の listitem 等 A11y 良好。
+- SKIP(夜間は安全側・要日中判断): 領域5「/search」検索結果コンテナの aria-live 過剰通知 — 成功時の
+  `<section aria-label="検索結果" aria-live="polite">`(SearchClient.tsx:980) が **結果 ul 全体**を包むため、
+  キー入力デバウンス毎に最大~20件のスニペットを SR が読み上げる anti-pattern の懸念。ただし修正（count のみ
+  live 化等）は通知消失の回帰リスクがあり、E2E での実測検証も困難。理論先行で実害確定に至らないため夜間は
+  SKIP。**日中/人間レビューで対応を判断する候補**として記録（loading/empty 分岐の短文 live は適切）。
+- SKIP(実害なし): 領域6「/mock-exam」MockExamRunner — タイマー集計(prevIndexRef)・再開(resumeFrom)・
+  提出 confirm・回答状況グリッド aria-label・結果ビューの progressbar/aria-label 群すべて妥当。
+  選択肢は単一選択だが aria-pressed トグルボタンで実装（radiogroup でないが許容範囲）。
+- SKIP(実害なし・既に充足): 領域7「/account」robots — `app/account/layout.tsx` が `robots:{index:false}` を
+  宣言し子ルート（badges/notifications/tutor/weakness/api-keys）も継承（Next.js metadata マージで robots 保持）。
+- SKIP(実害なし・既に充足): 領域8「/blog」「/blog/[slug]」SEO — metadata 網羅・OG画像(/api/og?type=blog)・
+  JSON-LD(@graph: Article/LearningResource/BreadcrumbList、howto は条件付き)・パンくず・関連記事/関連過去問・
+  print 用出典すべて完備。外部リンクは全て rel="noopener noreferrer"（全 .tsx を grep 実測、漏れゼロ）。
+
+## セッション3 まとめ
+- 実改善1件（/challenge A11f SR通知欠落=実バグ修復、テスト3件付き）+ 監査 SKIP 6件（領域5,6,7,8）。
+- 領域3〜8 を A11y/SEO 観点で一巡。コードは総じて成熟・高品質。明確な実害は /challenge の1件のみ。
+- 次セッションへ: 領域3〜8 は一巡 done。残候補は (a)/search aria-live 過剰通知(日中判断)、
+  (b)パフォーマンス観点（不要 "use client" 削減・bundle）の精査、(c)2周目で前回 SKIP の再評価。
