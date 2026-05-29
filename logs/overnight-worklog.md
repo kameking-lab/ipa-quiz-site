@@ -215,3 +215,40 @@
 - 次セッションへ: 「裸のフォームコントロール/誤 ARIA」観点は主要画面を一巡。残候補は
   (a)tabsプリミティブの矢印キー対応(日中)、(b)他コンポーネントの aria-describedby/エラー説明の拡充、
   (c)パフォーマンス(bundle/ISR)観点の精査、(d)これまでの SKIP の再評価3周目。
+
+## セッション6 2026-05-30 07:17 JST（placeholder-only 入力欄のアクセシブルネーム一掃 = S5 の残り）
+- done: 【実バグ=ラベル欠落】`FeedbackGateModal` のコメント textarea が placeholder のみで
+  アクセシブルネームを持たず、SR 利用者は用途を把握できなかった（placeholder はラベル代替に
+  ならない / WCAG 4.1.2）。`aria-label` を付与。フィードバック駆動の無料枠解放フロー(§9 中核 UI)。
+  / コミット `67da928` / 検証: typecheck=0・lint(err0, 既存ux-audit警告1のみ)・vitest 219緑(218+新規1)・
+  build 全緑。新規 `__tests__/components/FeedbackGateModal.test.tsx`（getByLabelText で textarea 取得）を
+  追加し、**aria-label を外すと落ちる**ことを git stash で実測（崩れたら落ちる検証）。
+- done: 【実バグ=ラベル欠落】`AfternoonGradingDemo`（/demo/afternoon 午後AI採点デモ）の解答 textarea が
+  placeholder のみでアクセシブルネーム不在だった（EssayEditor 等は対応済なのにデモは欠落）。`aria-label="解答を入力"`
+  を付与。C軸差別化の体験デモ。/ コミット `a4d62a3` / 検証: typecheck=0・lint(err0)・vitest 220緑(+新規1)・
+  build 全緑。新規 `__tests__/components/AfternoonGradingDemo.test.tsx` を追加し、**git stash で落ちる**ことを実測。
+- done: 【実バグ=ラベル欠落】`MetricsDashboard`（/admin/metrics）のカスタム期間ピッカーの2つの date input
+  （開始/終了）がアクセシブルネーム不在で、SR 利用者はどちらの日付か判別できなかった（WCAG 4.1.2）。
+  `aria-label="集計開始日"/"集計終了日"` を付与。/ コミット `195dc49` / 検証: typecheck=0・lint(err0)・
+  vitest 222緑(+新規2)・build 全緑。新規 `__tests__/components/MetricsDashboard.test.tsx`（`buildMockMetrics`
+  で range="custom" の initial を構築、マウント時 fetch は vi.stubGlobal で永久pending化して無害化、
+  getByLabelText で2 input を取得）を追加し、**git stash で2件とも落ちる**ことを実測。
+  ※ 当初「admin は低impact・テスト足場が重い」と判断したが、既存 `lib/admin/metrics/mock-data.ts` の
+  `buildMockMetrics` で軽量にテスト可能と判明したため実施。
+- SKIP(実害なし・既に充足): components/ の placeholder 付き input/textarea を全件監査（10ファイル）。
+  QuestionFeedback(label htmlFor)・QuestionCommentBox(sr-only label htmlFor)・CopilotPanel(aria-label 多数)・
+  EmailLeadCapture(aria-label)・TagInput(aria-label)・SearchClient/EssayEditor/AfternoonPlayer は対応済。
+  欠落は上記3件のみで全て修復。→ placeholder-only な裸入力欄の残存ゼロを実測確認。
+- SKIP(実害なし・既に安全): 外部リンク `target="_blank"` を全 .tsx で grep 監査。全箇所が
+  `rel="noopener noreferrer"`（または noreferrer 単独=noopener を包含、affiliate は +sponsored）を持ち、
+  reverse tabnabbing 等のリスクなし。修正対象ゼロ。
+
+## セッション6 まとめ
+- 実改善3件（A11y: フォームコントロールのアクセシブルネーム欠落の最終一掃）+ SKIP2件（入力欄全件監査/外部リンク監査）。
+  1. FeedbackGateModal: コメント textarea に aria-label（`67da928`）
+  2. AfternoonGradingDemo: 解答 textarea に aria-label（`a4d62a3`）
+  3. MetricsDashboard: カスタム期間 date input 2件に aria-label（`195dc49`）
+- S5 で始めた「裸のフォームコントロール一掃」をアプリ全体で完了（placeholder-only / 未関連付け の残存ゼロを実測）。
+- 次セッションへ: フォームコントロールのアクセシブルネーム観点は **完全に一巡 done**。残候補は
+  (a)tabsプリミティブの矢印キー対応(日中判断)、(b)パフォーマンス(bundle/ISR/N+1)観点の精査、
+  (c)エラー説明/空状態の充実(aria-describedby のエラー文言拡充)、(d)これまでの SKIP 再評価。
