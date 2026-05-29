@@ -17,6 +17,19 @@ function examPublishDateISO(year: number, season: Season): string {
   return `${year}-${monthDay}`;
 }
 
+/**
+ * Qualify a date-only ISO string (`YYYY-MM-DD`) with the JST timezone so it
+ * becomes a full ISO 8601 datetime (`YYYY-MM-DDT00:00:00+09:00`). Google's Q&A
+ * rich-result validation emits recommendation warnings for bare dates on
+ * `datePublished` / `dateCreated` / `dateModified`; a timezone-qualified
+ * datetime clears them. The exam/update dates are Japan-local, so +09:00 is the
+ * correct anchor. Inputs that already carry a time component pass through
+ * unchanged.
+ */
+function toJstDateTimeISO(iso: string): string {
+  return /^\d{4}-\d{2}-\d{2}$/.test(iso) ? `${iso}T00:00:00+09:00` : iso;
+}
+
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string): string {
   const map: Record<string, string> = {
@@ -87,7 +100,8 @@ export function buildQuestionJsonLd({
     name: SITE_NAME,
     url: SITE_BASE_URL,
   };
-  const questionDateISO = examPublishDateISO(q.year, q.season);
+  const questionDateISO = toJstDateTimeISO(examPublishDateISO(q.year, q.season));
+  const lastUpdatedDateTimeISO = toJstDateTimeISO(lastUpdatedISO);
 
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswer = {
@@ -96,7 +110,7 @@ export function buildQuestionJsonLd({
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
-    datePublished: lastUpdatedISO,
+    datePublished: lastUpdatedDateTimeISO,
     upvoteCount: 0,
   };
 
@@ -123,7 +137,7 @@ export function buildQuestionJsonLd({
             inLanguage: "ja",
             url: pageUrlAbs,
             author: siteAuthor,
-            datePublished: lastUpdatedISO,
+            datePublished: lastUpdatedDateTimeISO,
             upvoteCount: 0,
           })),
         }
@@ -174,7 +188,7 @@ export function buildQuestionJsonLd({
         "@id": `${pageUrlAbs}#qapage`,
         url: pageUrlAbs,
         inLanguage: "ja",
-        dateModified: lastUpdatedISO,
+        dateModified: lastUpdatedDateTimeISO,
         mainEntity: questionEntity,
         isPartOf: {
           "@type": "WebSite",

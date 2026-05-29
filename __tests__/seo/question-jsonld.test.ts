@@ -65,9 +65,9 @@ describe("buildQuestionJsonLd", () => {
     expect(qapage.mainEntity.suggestedAnswer).toBeUndefined();
   });
 
-  it("carries dateModified on the QAPage node", () => {
+  it("carries a timezone-qualified dateModified on the QAPage node", () => {
     const qapage = build()["@graph"][0] as { dateModified: string };
-    expect(qapage.dateModified).toBe("2026-05-23");
+    expect(qapage.dateModified).toBe("2026-05-23T00:00:00+09:00");
   });
 });
 
@@ -113,8 +113,9 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     expect(q.author).toMatchObject({ "@type": "Organization", name: "情報処理推進機構 (IPA)" });
     expect(q.upvoteCount).toBe(0);
     expect(q.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1");
-    // datePublished/dateCreated are valid ISO dates anchored to the exam year.
-    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}$/);
+    // datePublished/dateCreated are timezone-qualified ISO 8601 datetimes
+    // anchored to the exam year (clears Google's "no timezone" warnings).
+    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}T00:00:00\+09:00$/);
     expect(q.dateCreated).toBe(q.datePublished);
   });
 
@@ -122,7 +123,7 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     const a = question().acceptedAnswer;
     expect(a.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1#explanation");
     expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-    expect(a.datePublished).toBe("2026-05-23");
+    expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
     expect(a.upvoteCount).toBe(0);
   });
 
@@ -132,7 +133,7 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     for (const a of suggested) {
       expect(typeof a.url).toBe("string");
       expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-      expect(a.datePublished).toBe("2026-05-23");
+      expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
       expect(a.upvoteCount).toBe(0);
     }
   });
