@@ -156,3 +156,62 @@
 - セッション1で見つけた stale-closure タイマーの同型バグが FireworksBurst にも潜んでいたのを発見・修復。
 - 次セッションへ: 2周目継続。残候補は (c)他の SKIP 再評価、stale-closure 同型パターンの他コンポーネント横展開確認
   （MilestoneToast は親 StreakTracker が高頻度再レンダーしないか要確認）、bundle/ISR 観点の精査。
+
+## セッション5 2026-05-30 07:00 JST（午後採点プレイヤー A11y + stale-closure 横展開確認）
+- SKIP(横展開確認 done・追加バグなし): stale-closure タイマー同型パターンの他コンポーネント精査。
+  components/ 配下の setTimeout/setInterval を全件 grep。コールバック prop に依存する自動消滅 effect は
+  AchievementToast(S1修復)・FireworksBurst(S4修復)の2件のみで、いずれも修復済。CopilotPanel の
+  toast は `toastTimerRef`(ref)で正しく実装。コピー系 setTimeout(copied リセット)はコールバック非依存で安全。
+  CouponTracker/BadgeTracker の setInterval(30s)はコールバック非依存。AfternoonPlayer/QuizPlayer の
+  経過時間 setInterval は updater 関数のみで安全。MilestoneToast は存在せず（worklog の推測は的外れ）。
+  → stale-closure 同型バグの残存ゼロを実測確認。横展開 done。
+- done: 【実バグ=A11y欠落】午後 AI 採点フォーム `AfternoonPlayer` の解答 textarea が字数制限違反時に
+  `aria-invalid` を立てるのみで理由を説明せず、SR 利用者は字数制限の存在も現在文字数も知れなかった
+  （WCAG 3.3.1 Error Identification 不足）。字数カウンタ span に `id` を付与し、制限のある設問の textarea から
+  `aria-describedby` で参照（制限なし設問には付与しない）。/ コミット `7c01068`
+  / 検証: typecheck=0・lint(err0, 既存ux-audit警告1のみ)・vitest 213緑(211+新規2)・build 全緑。
+  新規 `__tests__/components/AfternoonPlayer.test.tsx`（aria-describedby が存在/idref が実在/制限なし設問は付与なし）
+  を追加し、**aria-describedby 行を外すと当該テストが落ちる**ことを実測（崩れたら落ちる検証）。
+  ※ AfternoonPlayer は午後AI採点(C軸差別化)の中核プレイヤー（`/[exam]/afternoon/[year]/[season]`）。
+- done: 【実バグ=ARIA誤用】`AfternoonResultView` の業種別模範論述セレクタが
+  `role="tablist"`/`role="tab"`/`aria-selected` を使うが、矢印キーのローピング tabindex も
+  `aria-controls` も `tabpanel` も無く、WAI-ARIA タブパターンの暗黙契約を満たさないまま「タブ」を
+  名乗っていた。codebase 既定のセグメント UI 慣用（mock-exam / 成功事例フィルタ等の `aria-pressed`
+  トグルボタン）に統一し `role="group"` + `aria-pressed` へ是正。見た目・クリック挙動は不変。
+  / コミット `92da152` / 検証: typecheck=0・lint(err0)・vitest 215緑(213+新規2)・build 全緑。
+  新規 `__tests__/components/AfternoonResultView.test.tsx`（tab ロール不在/aria-pressed 初期状態/
+  クリックで pressed と模範論述が切替）を追加し、**修正前は2件とも落ちる**ことを git stash で実測。
+- done: 【実バグ=ラベル欠落】`EssayEditor` の論述 textarea（設問ア/イ/ウ）が CardTitle「設問X」と
+  プログラム的に紐づかず、アクセシブルネームを一切持たない裸のコントロールだった（SR 利用者は
+  どの設問の入力欄か聞けない＝WCAG 4.1.2/3.3.2 違反）。`aria-label="設問Xの論述"` を付与し、
+  字数目安 span に id を付けて `aria-describedby` で参照。/ コミット `0dbd063`
+  / 検証: typecheck=0・lint(err0)・vitest 216緑(215+新規1)・build 全緑。新規
+  `__tests__/components/EssayEditor.test.tsx`（3 textarea が aria-label を持ち describedby idref が実在）を
+  追加し、**修正前は落ちる**ことを git stash で実測。※ EssayEditor は論文添削(C軸/フェーズ4)の中核。
+- done: 【実バグ=ラベル未関連付け】`StudyPlanClient`（/account/study-plan 学習プラン生成）の
+  「受験する試験」`<select>` と「試験日」`<input type="date">` が、可視ラベルテキストは持つが
+  `htmlFor` で関連付いておらず（label が wrap も htmlFor もしていない）、アクセシブルネーム不在だった
+  （WCAG 1.3.1/4.1.2）。codebase 既定の `label[htmlFor]` + `control[id]` 方式で関連付け。
+  / コミット `174fa2f` / 検証: typecheck=0・lint(err0)・vitest 218緑(216+新規2)・build 全緑。
+  新規 `__tests__/components/StudyPlanClient.test.tsx`（getByLabelText で select/date を取得）を追加し、
+  **修正前は2件とも落ちる**ことを git stash で実測。
+- SKIP(他 select は適切): `<select>` 全6箇所を grep 監査。SearchClient(sr-only label+htmlFor)・
+  NotificationSettings(htmlFor)・MockExamLanding(aria-label+wrap)・RankingClient(wrap label) は
+  関連付け済。StudyPlanの2件のみ欠落していた（上記で修復）。
+- SKIP(daytime候補・実害は限定的): `components/ui/tabs.tsx` の tab プリミティブは `aria-controls`+
+  `role="tabpanel"`+`aria-labelledby` を持つ正当な実装だが、矢印キーのローピング tabindex 操作が未実装
+  （WAI-ARIA APG 推奨）。各 tab は button でフォーカス可能・Tab キーで移動でき activate も動くため
+  実害は限定的。アプリ横断で使われるため挙動変更は影響範囲が広く、夜間は安全側で SKIP。日中に矢印キー
+  対応を検討する候補。
+
+## セッション5 まとめ
+- 実改善4件（A11y）+ SKIP3件（横展開確認/他select適切/tabsプリミティブ）。
+  1. AfternoonPlayer: 字数制限を aria-describedby で SR 伝達（`7c01068`）
+  2. AfternoonResultView: 壊れた tab パターン→aria-pressed トグルに是正（`92da152`）
+  3. EssayEditor: 論述 textarea にアクセシブルネーム付与（`0dbd063`）
+  4. StudyPlanClient: select/date のラベル関連付け（`174fa2f`）
+- テーマ: フォームコントロールのアクセシブルネーム/ラベル欠落の一掃（午後採点・論文添削=C軸中核 + 学習プラン）。
+  stale-closure 同型バグの横展開確認も完了（残存ゼロ）。
+- 次セッションへ: 「裸のフォームコントロール/誤 ARIA」観点は主要画面を一巡。残候補は
+  (a)tabsプリミティブの矢印キー対応(日中)、(b)他コンポーネントの aria-describedby/エラー説明の拡充、
+  (c)パフォーマンス(bundle/ISR)観点の精査、(d)これまでの SKIP の再評価3周目。
