@@ -61,6 +61,11 @@ export async function generateMetadata({
   const histLabel = examLabelAt(exam as ExamCode, parsed.year, parsed.season);
   const title = `${label} ${histLabel} 過去問一覧`;
   const description = `${label}に実施された${histLabel}試験の全問題を一覧で確認できます。AI解説付きで効率的に学習を進められます。`;
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "exam",
+    title: `${label} ${histLabel}`,
+    subtitle: "過去問一覧",
+  }).toString()}`;
   return {
     title,
     description,
@@ -72,8 +77,9 @@ export async function generateMetadata({
       type: "website",
       siteName: SITE_NAME,
       locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
     },
-    twitter: { card: "summary_large_image", title, description },
+    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
   };
 }
 
