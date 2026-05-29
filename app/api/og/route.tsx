@@ -385,6 +385,19 @@ export async function GET(request: Request) {
         </div>
       </div>
     ),
-    { ...SIZE, ...(fontOptions ? { fonts: fontOptions } : {}) },
+    {
+      ...SIZE,
+      ...(fontOptions ? { fonts: fontOptions } : {}),
+      // OG 画像はクエリ文字列で内容が一意に定まる決定的レスポンス（問題数や
+      // streak 等の動的値も URL に含まれるため別キャッシュキーになる）。
+      // 既定は max-age=0, must-revalidate で毎回フォント取得＋satori 再レンダー
+      // していたため、SNS スクレイパ／Google 画像取得のたびに高コスト・低速で
+      // スクレイパのタイムアウト要因にもなっていた。Next の file-based
+      // opengraph-image と同じ長期 immutable キャッシュを明示し CDN/ブラウザに
+      // キャッシュさせる。
+      headers: {
+        "Cache-Control": "public, immutable, no-transform, max-age=31536000",
+      },
+    },
   );
 }
