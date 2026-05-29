@@ -13,6 +13,12 @@ const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービ
 const PAGE_DESCRIPTION =
   "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット・午後 AI 採点・PWA 対応など、過去問AI 独自の差別化機能を、競合の良さも公平に紹介しながら整理します。";
 
+const OG_IMAGE_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "feature",
+  title: "過去問AI を選ぶ理由",
+  subtitle: "サービス比較",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
@@ -24,11 +30,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: PAGE_TITLE }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_URL],
   },
 };
 
