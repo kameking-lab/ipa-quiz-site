@@ -1,3 +1,11 @@
+> **更新 (2026-05-31 セッション68):** P0 全て done/SKIP。P1 進行中。**フォームコントロール命名の取りこぼし実改善1件 + Switch配線回帰固定 + a11y再点検5レンズclean**。
+> S68: ベースライン全緑(typecheck0/lint0err/test 1239・183files/build緑)= S67 と一致。S67 doctrine「取りこぼし全数 grep」を別 a11y クラスへ適用。
+> ①**実改善(WCAG 4.1.2 取りこぼし)**: <input>/<select>/<textarea> 全 grep→**EssayEditor 業種選択 select(169)が唯一の裸コントロール**(label/aria-label/aria-labelledby/id 全て無し・同コンポの論述 textarea 群は命名済なのに漏れ)。CardTitle と同文言 `aria-label="業種を選択"` 付与+既存テストに getByLabelText 検証追加(RTL 実 a11y ツリー), `4b89c20`。test 1242→1243。
+> ②**回帰固定(test-only)**: /settings の7 Switch はインライン aria-label 無し・SettingRow の cloneElement(aria-labelledby)注入だけで命名=配線が外れると全無名化するがガード無し→source-read で配線契約固定, `d2599bb`。test 1239→1242。
+> ③**clean(回帰再点検・コード無変更)5レンズ**: target=_blank rel(全 noopener/noreferrer=実害ゼロ)・img alt(全3箇所 alt 実在)・Label-in-Name(S29: blog CTA 等は記述的スーパーセット=推奨/保存トグルは aria-pressed 状態トグル=borderline SKIP)・Radix Switch 命名(S31: 全10箇所命名済)・フォーム命名スイープ(EssayEditor 以外は label/aria-label/htmlFor/hidden で全命名済)。
+> **★教訓: S67 の「取りこぼし全数 grep」doctrine は a11y 属性クラスを跨いで有効。機械突合可能クラス(scope[S67完了]/role=img/htmlFor→id/idref/Switch命名/フォーム命名[S68完了]/target rel/img alt)は概ねスイープ尽くした。残る夜間安全枠は枯渇に近い。実改善は日中候補(挙動変更+E2E)に依存。**
+> **次候補: Label-in-Name(S29 状態トグルは据え置き=機械突合困難・低収穫)。日中候補(不変): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。**
+
 > **更新 (2026-05-31 セッション67):** P0 全て done/SKIP。P1 進行中。**th-scope(S28)回帰再点検で『取りこぼし』実改善1件**。
 > S67: ベースライン全緑(typecheck0/test 1237・183files)。th-scope(S28)を新規再混入だけでなく『過去スイープの取りこぼし』視点で `<th` 全 grep→公開ページ `/stats`・`/demo/essay-grading` の列見出しが scope 欠落のまま残存と判明(S28 は why-kakomon-ai 等のみ付与)。各3列に `scope="col"` 付与+回帰テスト2件(列見出し数 pin・mutation 1fail 実測・SSG HTML に scope×3 出力を grep 実測), `5d960ac`。test 1237→1239。**公開表 scope スイープ完了**(残無 scope=admin/* のみ=auth/prod 503=SKIP)。続けて chart role=img(S10-S15)を全数再点検→公開チャート6図(stats×4/transparency×2)+weakness/ranking 全て role=img+aria-label 保持=新規再混入ゼロ・clean。
 > **★教訓: 過去 a11y クラスの『回帰再点検』は新規再混入チェックに加え『過去スイープの取りこぼし』も拾える=clean でなく実改善が出る。scope/role/aria-label/htmlFor は機械突合可能なので全数 grep し直す価値あり。**

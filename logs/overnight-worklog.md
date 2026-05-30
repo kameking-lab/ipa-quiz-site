@@ -2128,3 +2128,46 @@ clean(回帰再点検・コード無変更): chart role=img(S10-S15)
 
 clean(追加・回帰再点検): scroll-margin(S32)
 - ページ内アンカー(`href="#..."`)は全2件のみ: `app/layout.tsx` の `#main-content`(skip-link, 対象は `tabIndex={-1}` の main 領域=先頭のため scroll offset 不要・標準パターン)と `app/student/page.tsx` の `#apply`(対象 Card に `scroll-mt-20` 付与済)。両アンカーとも対象が適切に処理済=新規再混入・取りこぼしゼロ。S32 doctrine 維持。
+
+## セッション68 (2026-05-31) — フォームコントロールのアクセシブルネーム取りこぼし1件実改善 + Switch配線回帰固定 + a11y再点検4レンズclean
+
+開始 00:30 JST(<09:00 で改善可)。ベースライン全緑実測(typecheck0/lint0err/test 1239・183files/build緑)= S67 と一致。
+S67 教訓「過去 a11y クラスを『取りこぼし』視点で全数 grep し直すと clean でなく実改善が出る」を別クラスへ適用。
+
+done(回帰固定・test-only): /settings Switch のアクセシブルネーム配線を source-read ガード / d2599bb / __tests__/a11y/settings-switch-accessible-name.test.ts(3 it)
+- settings ページの7個の Radix <Switch> はインライン aria-label を持たず、SettingRow が可視ラベル <p id={labelId}> を
+  cloneElement で aria-labelledby に注入することだけでアクセシブルネームを得る(WCAG 4.1.2)。この配線が外れると全 Switch が
+  無名化するが、NotificationSettings(インライン aria-label)と違いガードが無かった。配線契約(useId→p id→cloneElement の aria-labelledby
+  注入+各 Switch にインライン aria-label= が無いこと)を source-read で固定。`"aria-labelledby": labelId`→`"data-broken"` mutation で
+  cloneElement 検査が1 fail を実測→復元(byte-exact, git diff空)。test 1239→1242。
+
+done(実改善・WCAG 4.1.2 取りこぼし): 論述エディタ業種選択 select にアクセシブルネーム付与 / 4b89c20 / components/essay/EssayEditor.tsx + __tests__/components/EssayEditor.test.tsx
+- フォームコントロール(<input>/<select>/<textarea>)を全 grep し「label も aria-label も aria-labelledby も id(htmlFor先)も無い裸の
+  コントロール」を機械列挙→**EssayEditor の業種選択 <select>(169)が唯一の取りこぼし**。同コンポーネントの論述 textarea 群は既に
+  aria-label 付与済(EssayEditor.test.tsx の docstring が「CardTitle と紐づかない裸コントロール」を明記)なのに、業種 select だけ同じ
+  a11y クラスで漏れていた。CardTitle「業種を選択」はCardHeader にあり select と未関連。同文言 aria-label="業種を選択" を付与
+  (Label-in-Name 整合)。既存テストに getByLabelText("業種を選択")→SELECT 検証を追加(RTL で実 a11y ツリー検証)。aria-label 除去
+  mutation で新 it が1 fail を実測→復元。test 1242→1243。typecheck0/lint0err/build 全緑。
+
+clean(回帰再点検・コード無変更): 5レンズ全て実害ゼロ
+1. **target="_blank" rel(セキュリティ/best practice)**: 公開リンク全数 grep→大半 rel="noopener noreferrer"。rel="noreferrer" のみの3件
+   (api-docs/admin competitors/essay)も noreferrer が noopener を内包+現代ブラウザの target=_blank 既定 noopener で実害ゼロ。
+2. **img alt(WCAG 1.1.1)**: <img>/<Image> 全3箇所(SocialShare/account avatar/StudentIdUpload preview)とも alt 実在。clean。
+3. **Label-in-Name(S29・WCAG 2.5.3)**: 可視テキスト+aria-label 併存の interactive 要素を spot-check。blog CTA 等は aria-label が
+   可視テキストを接頭辞に含む記述的スーパーセット(推奨パターン=適合)。SearchClient 保存トグル(可視「条件保存済み」/aria-label
+   「検索条件の保存を解除」)と practice CTA は aria-pressed 付き状態トグルの意図的設計=borderline で SKIP(夜間安全側)。新規再混入ゼロ。
+4. **Radix Switch 命名(S31・WCAG 4.1.2)**: <Switch> 全10箇所=NotificationSettings 3件(インライン aria-label)+settings 7件
+   (SettingRow の aria-labelledby)で全て命名済。新規無名 Switch ゼロ(本セッションで配線を回帰固定=上記)。
+5. **フォームコントロール命名スイープ(WCAG 4.1.2)**: <input>/<select>/<textarea> 全数→EssayEditor select 1件のみ取りこぼし(上記で実改善)。
+   他は全て wrapping <label>(RankingClient/ApiKeysClient/SearchClient checkbox)or aria-label(metrics/mock-exam/CopilotPanel/
+   FeedbackGateModal/AfternoonGradingDemo/TTSButton/SchedulePlanner)or htmlFor→id(S66 検証済: contact/study-plan/auth/student-id-file/
+   exam-date/search-input/sort-select)or hidden=display:none(settings file input=a11yツリー外, トリガーボタンが命名)。
+
+### 次セッションへ
+- **★教訓: S67 の「取りこぼし全数 grep」doctrine は a11y 属性クラスを跨いで有効。フォームコントロール命名で1件(EssayEditor select)実改善が出た。
+  機械突合可能クラス(scope[S67完了]/role=img[S66-67 clean]/htmlFor→id[S66 clean]/idref[S66 clean]/Switch命名[S68 clean]/フォーム命名[S68完了]/
+  target rel[S68 clean]/img alt[S68 clean])は概ねスイープ尽くした。**
+- 残る回帰再点検候補(機械突合が難しく spot-check 寄り・低収穫見込み): Label-in-Name(S29 状態トグル borderline=据え置き)。
+- 日中候補(不変・挙動変更+E2E 必須で夜間 SKIP): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・
+  MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
+- 実改善は引き続き日中候補(挙動変更)に依存。夜間の安全枠は a11y 取りこぼし全数 grep が枯渇に近づいた。
