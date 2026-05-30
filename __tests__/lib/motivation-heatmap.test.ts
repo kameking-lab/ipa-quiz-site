@@ -8,8 +8,10 @@ import {
   totalAnswered,
   recordStudyOnDate,
   getHeatmapMap,
+  syncHeatmapWithHistory,
 } from "@/lib/motivation/heatmap";
 import { jstDateString } from "@/lib/streak/core";
+import { LS_KEYS } from "@/lib/storage/keys";
 import type { HistoryEntry } from "@/lib/storage/history";
 
 // heatmap.ts は学習ヒートマップ（日別回答数）の集計純関数群。強度バケット・連続日範囲・
@@ -91,6 +93,49 @@ describe("空状態の絶対参照純度（共有 EMPTY 破壊 footgun の回帰
     window.localStorage.clear();
     // 修正前（read が共有 EMPTY を浅コピー）だと byDate が汚染されたまま残る
     expect(getHeatmapMap()).toEqual({});
+  });
+});
+
+describe("syncHeatmapWithHistory — エントリ数キャッシュゲート", () => {
+  const base = Date.UTC(2024, 9, 21, 3, 0, 0); // 2024-10-21 JST
+  // 既存キャッシュとは絶対に一致しないセンチネル日（rebuild では生成され得ない）。
+  const SENTINEL = { "2099-01-01": 42 };
+
+  function seed(byDate: Record<string, number>, lastEntryCount: number): void {
+    window.localStorage.setItem(
+      LS_KEYS.studyDays,
+      JSON.stringify({ byDate, lastSeenAt: 0, lastEntryCount }),
+    );
+  }
+
+  it("空キャッシュからは履歴を再集計して返す", () => {
+    const entries = [entry(base), entry(base + 60_000)];
+    expect(syncHeatmapWithHistory(entries)).toEqual(
+      rebuildHeatmapFromHistory(entries),
+    );
+  });
+
+  it("件数一致かつ非空キャッシュなら再集計せず保存済みマップを返す（短絡）", () => {
+    seed(SENTINEL, 2);
+    // 長さ2だが rebuild すれば SENTINEL とは別物になる入力。短絡なら stale を返す。
+    const out = syncHeatmapWithHistory([entry(base), entry(base + 60_000)]);
+    expect(out).toEqual(SENTINEL);
+  });
+
+  it("件数が変われば短絡せず再集計する", () => {
+    seed(SENTINEL, 5); // 保存件数5 ≠ 入力2
+    const entries = [entry(base), entry(base + 60_000)];
+    const out = syncHeatmapWithHistory(entries);
+    expect(out).toEqual(rebuildHeatmapFromHistory(entries));
+    expect(out).not.toHaveProperty("2099-01-01");
+  });
+
+  it("件数一致でもキャッシュが空なら再集計する（byDate 非空ガード）", () => {
+    seed({}, 2);
+    const entries = [entry(base), entry(base + 60_000)];
+    const out = syncHeatmapWithHistory(entries);
+    expect(out).toEqual(rebuildHeatmapFromHistory(entries));
+    expect(Object.keys(out).length).toBeGreaterThan(0);
   });
 });
 
