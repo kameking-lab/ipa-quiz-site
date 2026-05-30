@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション42):** P0 全件 done/SKIP。P1 進行中。
+> S42: S41 handoff の「`{...EMPTY}`/`{...DEFAULTS}` spread 系 共有EMPTY footgun 残候補」を全数監査＝**全7ファイル SAFE 確定**（daily-challenge/user-context/onboarding/settings/notifications/character/missions＝nested mutable 在でも in-place mutating caller 不在 or primitive-only＝footgun テーマ完全枯渇・再監査不要）。続けて未テスト中核純関数の契約固定3件＝**回帰固定3モジュール**（missions/tokenize/essay-rate-limit・計27 it・test602→629）。実改善0件（source 無変更）。
+> ①`lib/gamification/missions.ts`(dailySeededIds 日次決定的6→3抽出・monotonic max・claim 閾値ゲート＝XP報酬を左右, `1e74854`+型修正`8fce2f6`) ②`lib/copilot/tokenize.ts`(CJK bigram/ASCII lowercase/stopword/dedup＝検索・copilot 関連度中核, `8fce2f6`) ③`lib/storage/essay-rate-limit.ts`(premium→Infinity/無料3回/0床/JST月跨ぎリセット＝C軸無料枠ゲート, `9307c4b`)。
+> **★反省＝gate 規律: missions テスト初回 commit で `pnpm typecheck` を回し損ね型エラー(seed の Partial<Record> 全キー必須)を混入→次 commit で raw JSON 型へ是正。vitest/next build は __tests__ を型チェックしないため、テスト追加でも commit 前に typecheck 単独実行を厳守。**
+> **教訓: 共有EMPTY footgun は全クラス SAFE 確定で再監査不要。missions/tokenize/essay-rate-limit は回帰固定済。残る未テスト純関数候補＝sitemap-xml(XMLレンダ/チャンク)・retriever/reranker(RAG integration が一部カバー)。**
+> **次は: 夜間の安全な実害バグは S1-S42 で深く枯渇。残候補は上記未テスト純関数 or 日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。**
+>
 > **状態 (2026-05-30 セッション41):** P0 全件 done/SKIP。P1 進行中。
 > S41: 前半は S40 handoff の最後の1件(daily-goal)＋新規未テスト純関数2件を契約固定＝回帰固定3（daily-goal/examLabelAt/summarizeSession・計31 it）。後半で**共有EMPTY破壊 footgun の sweep 未完を発見＝実改善2件**。
 > ①`lib/motivation/daily-goal.ts`(getDailyProgress: pct クランプ/completed境界/本日以外除外, `8dd7b5d`) ②`lib/exam-naming/history.ts`(examLabelAt: 出題当時の試験名・期の順序春<秋で同年内改名 NW/AP, `293c6cd`・SEO中核) ③`lib/motivation/session.ts`(summarizeSession: おすすめ数閾値<60→+5/[60,90)→+3/>=90→+10・クランプ[10,50], `3981de4`)。

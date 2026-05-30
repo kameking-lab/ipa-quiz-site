@@ -1406,3 +1406,22 @@
 - テーマ後半（重要な発見）: badges の監査中に**共有EMPTY破壊 footgun の sweep が未完だった**ことを発見。S37 が「全7ファイル完了」と宣言したが、`{...EMPTY}`(浅コピー)経由で nested mutable を共有するクラスは badges/heatmap が漏れていた（S36 SAFE 群誤分類・S40 latent 放置）。両者を emptyState() でハードニング。
 - 教訓（重複監査防止）: **daily-goal/examLabelAt/summarizeSession は回帰固定済（再監査不要）。** badges/heatmap の共有EMPTY footgun はハードニング済。**残る `{...EMPTY}`/`{...DEFAULTS}` 系で要検証＝daily-challenge(`{...EMPTY,...parsed}`)/onboarding/state/user-context(同型 merge)・combo/character/settings/notifications(DEFAULTS は primitive-only の可能性大＝おそらく SAFE)。** read() の空経路が nested mutable(array/object)を共有し、かつ mutating caller(push/代入)があるかを次セッションで確認すべし。
 - 次セッターへ: 「過去が SAFE/latent と分類した同型 footgun の再検証」(S33 角度の発展)が有効と再確認。上記残候補の空経路を確認 → 同型なら emptyState() ハードニング（最小diff・絶対参照純度テスト付き）。なければ SAFE を確定記録。
+
+## セッション42 2026-05-30 17:13 JST（S41 handoff の共有EMPTY footgun 残候補を全数 SAFE 確定 → 未テスト中核純関数の契約固定3件）
+- 冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test 602/build緑（HEAD `f2ae399`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない。
+- SKIP(全数監査=SAFE 確定・S41 handoff 消化): 残る `{...EMPTY}`/`{...DEFAULTS}` spread 系の共有EMPTY footgun 再検証。
+  ①`lib/gamification/daily-challenge.ts`(`{...EMPTY,...parsed}`・nested mutable questionIds/answers 在)＝**read() の空経路が EMPTY を参照返しするが、ensureChallengeForToday/completeChallenge は全て新規オブジェクト構築（answers=param/map・push 無し）、消費者 DailyChallengeClient も `.filter`/`.length` のみで in-place mutation ゼロ＝SAFE**。
+  ②`lib/storage/user-context.ts`・③`lib/onboarding/state.ts`＝EMPTY/DEFAULTS が **primitive-only**（null/number/string のみ・nested mutable 不在）＝SAFE。
+  ④`lib/storage/settings.ts`⑤`lib/storage/notifications.ts`⑥`lib/storage/character.ts`＝同じく primitive-only。notifications は空経路で DEFAULT_PREFS を参照返しするが消費者 NotificationSettings.update が `{...current,...patch}` で新規構築＝in-place mutation 無し＝SAFE。
+  ⑦`lib/gamification/missions.ts`＝nested mutable(missions/progress/claimed)在だが **EMPTY 参照返しは catch 経路のみ**＋全 caller(setMissionProgress/incrementMission/claimMission)が spread で新規構築＝SAFE。
+  → **共有EMPTY破壊 footgun は全クラス枯渇を確定**（S34-S41 で concrete 5件修復＋latent/誤分類 2件ハードニング＝計7+badges/heatmap、残りは全て SAFE で再監査不要）。コード無変更（過大修正の罠回避）。
+- done【回帰固定＝S41 で SAFE 再確認した missions の純関数を契約固定】`lib/gamification/missions.ts`。dailySeededIds(DJB2+Xorshift32 で 6→3 を日次決定的抽出・日替わり再シード)・setMissionProgress の monotonic max・incrementMission の累積・**claimMission の閾値ゲート(target 未満は不可・冪等)＝XP 報酬付与を左右**を固定。read-only 監査で実バグ無し。/ コミット `1e74854`（+ 型修正 `8fce2f6`）/ `__tests__/lib/missions.test.ts`(9件)。**修正前は monotonic max を overwrite に壊すと当該テストが落ちる**ことを実測。
+  ※ 初回コミット時に typecheck を**回し損ねて型エラー(seed の Partial<Record<MissionId,_>> が全キー必須)を commit してしまい**、次コミットで seed を raw JSON 型へ修正。**教訓: vitest(esbuild)/next build は __tests__ を型チェックしないため、テスト追加時も commit 前に `pnpm typecheck` を必ず単独実行する**（[[overnight-gate-discipline]] と同種の落とし穴）。
+- done【回帰固定＝検索/copilot 関連度の中核】`lib/copilot/tokenize.ts`(tokenize/uniqueTokens・search question-index/retriever/reranker が使用)。CJK char-bigram・1文字CJK破棄・ASCII lowercase+2文字以上・stopword 除外(英/和)・記号区切り・ASCII優先順・version トークン(v2.5)保持・dedup を exact-match で固定。read-only 監査で実バグ無し(BMP 外CJKは非対応だが試験文に不在＝実害なし)。/ コミット `8fce2f6` / `__tests__/copilot/tokenize.test.ts`(11件)。exact-array 比較ゆえ tokenizer の挙動変更は即落ちる。
+- done【回帰固定＝C軸/フェーズ4 の無料枠ゲート】`lib/storage/essay-rate-limit.ts`(論述添削 月次レート制限)。premium→Infinity バイパス・無料枠3回・1回ごと減算・上限超過で0床(負値化しない)・JST 月跨ぎで count リセット・当月内は据え置きを固定。read-only 監査で実バグ無し。/ コミット `9307c4b` / `__tests__/lib/essay-rate-limit.test.ts`(7件)。
+
+## セッション42 まとめ
+- 実改善0件（source 無変更）+ SKIP1件（共有EMPTY footgun 残候補7ファイルを全数 SAFE 確定＝S41 handoff 完全消化）+ 回帰固定3モジュール（missions/tokenize/essay-rate-limit＝計27 it 追加: test602→629・108→111 files）。全ゲート全緑（typecheck0/lint0err/test629/build緑・HEAD `9307c4b`）。
+- テーマ: S41 が残した「`{...EMPTY}`/`{...DEFAULTS}` spread 系 footgun の残候補」を全数 read-only 監査し、**全クラスで「in-place mutating caller 不在」を確認＝SAFE 確定**（共有EMPTY footgun テーマは完全枯渇）。続けて S34-S41 の「未テスト中核純関数の契約固定」を3件（ミッション報酬ゲート/検索トークナイザ/論述レート制限）に拡張。
+- 教訓（重複監査防止）: **共有EMPTY footgun は daily-challenge/user-context/onboarding/settings/notifications/character/missions すべて SAFE 確定（再監査不要）。missions/tokenize/essay-rate-limit は回帰固定済（再監査不要）。** テスト追加時も commit 前に `pnpm typecheck` 単独実行を厳守（今回 1 commit で型エラー混入→次 commit で是正した反省）。
+- 次セッターへ: 夜間の安全な実害バグは S1-S42 で深く枯渇。残る未テスト純関数候補＝`lib/seo/sitemap-xml.ts`(XML レンダ/チャンク)・`lib/copilot/retriever.ts`/`reranker.ts`(スコアリング・但し RAG integration テストが一部カバー)。日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。
