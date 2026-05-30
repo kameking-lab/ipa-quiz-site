@@ -1204,3 +1204,29 @@
 - テーマ: **過去セッション（S7）が「役割属性の有無」だけ確認して見落とした同型バグを掘り起こす**角度が有効と判明。条件付きマウント live region は EmailLeadCapture（S7修正済）と settings（本修正）の2箇所で、同一コンポーネント内の `{state && <region>}` は本修正で残存ゼロ。
 - 教訓（次セッションの重複監査防止）: **`role="status"`/`aria-live="polite"` は「常設して中身だけ差替」が gold-standard。同一コンポーネント内の条件付きマウント（`{x && (…role=status…)}`）は残存ゼロ（再監査不要）。`role="alert"` はマウント時アナウンスが正で条件付きマウントOK。focus-visible 除去・OG dims・api-runtime・select-onChange の4クラスは構造的にクリーン。** 残る debatable クラス＝親が条件付きレンダーする toast/indicator（AchievementToast 等）は別ファイル境界・成熟扱いで日中候補に据え置き。
 - 次セッターへ: 夜間の安全な実害バグは S1-S33 で深く枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出/apple-touch-icon PNG 生成/twitter:image:alt 付与/AchievementToast・indicator の常設 region 化）。「過去セッションが属性有無だけ見て見落とした同型」を掘る角度は有効＝次も「S5/S13 で aria-pressed 化したタブの可視フォーカス」等の二次監査が候補。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E＝日中向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。
+
+## セッション34 2026-05-30 14:42 JST（lib 純関数の未テスト領域を回帰固定 → 履歴 reset の実害バグを発掘・修復）
+- done: 表示ヘルパー `examLabel`/`seasonLabel`/`formatYearSeason`（`lib/utils.ts`）の文字列契約を回帰テストで固定。
+  問題カード・年度別/分野別一覧などほぼ全画面の見出し描画に使う純関数だが直接のユニットテストが無く、
+  区分名の崩れ・元号換算ミス・未知シーズンの欠落を検知できなかった。既知/未知区分・各シーズン・
+  令和元年境界(2018/2019)を固定。/ コミット `605a40e` / `__tests__/lib/utils-labels.test.ts`(8件) /
+  typecheck0・lint0err・test・build を**単独実測**で全緑。
+- done: 【実害バグ修復】`lib/storage/history.ts` の `reset()` が初回解答を消し残す共有 `EMPTY` 汚染を是正。
+  `readRaw()` がストレージ空時に **共有 const `EMPTY` を参照で返し**、`record()` の `entries.push()` が
+  その `EMPTY` を破壊的に汚染 → `reset()` の `writeRaw(EMPTY)` が汚染済み（=最初に解いた問題を含む）参照を
+  書き戻すため、「履歴をリセット」しても初回解答が残る実害。`emptyData()` ファクトリ化で常に新規オブジェクトを
+  返すよう修正。/ コミット `01961e6`（source）+ `d7efca6`/`5b24975`（回帰テスト追加分。下記反省参照） /
+  回帰テスト `__tests__/storage/history-store.test.ts`(13件: 2000件上限・getWrongIds最新正誤・getStats・
+  star トグル・破損JSON回復・export↔import 往復・**reset 完全消去**)。`01961e6` 後に test327・typecheck0・
+  lint0err・build を単独実測で全緑。**修正前は reset テストが落ちる**ことを実測（崩れたら落ちる検証）。
+- 反省（重要・次セッション必読）: 途中 2 度、ゲート(test)と `git commit/push` を**同一の並列ツールバッチ**に
+  入れたため、test が fail していたのに commit が走り、壊れたコミット `5b24975`（存在しない API 前提で全数 fail）と
+  `d7efca6`（メッセージは「全緑化」だが reset テストが落ちていた）を push してしまった。`01961e6` で fix-forward 復旧。
+  **教訓: ゲート(typecheck/lint/test/build)は commit の前に必ず単独実行し、緑を目視してから別呼び出しで commit する。
+  並列バッチに commit を混ぜない。** memory `overnight-gate-discipline.md` にも記録。
+- 環境メモ: overnight-integration は**保護なし**（`gh api .protected=false`・rulesets 空）＝直接 push 可。
+  作業中 tool 出力チャネルが断続遅延・並列 Bash バッチは「兄弟1つの非ゼロ終了で全兄弟 cancel」される挙動あり
+  （grep no-match / 存在しないファイル参照を混ぜない）。詰まる時は 1 コマンドずつ逐次実行で回避。
+  テスト基盤は **Vitest**（`import { ... } from "vitest"`・`@/` alias・globals・jsdom、`vitest.setup.ts`）。
+  lib/storage/history.ts の API は store パターン（`createHistoryStore()` → `record({id,selected,correct,at})`/
+  `getAllEntries`/`getWrongIds`/`getStats`/`toggleStar`/`reset`/`exportJson`/`importJson:boolean`）。
