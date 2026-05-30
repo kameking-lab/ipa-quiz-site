@@ -66,6 +66,25 @@ describe("searchQuestions — トークンマッチング", () => {
     expect(res.total).toBe(0);
     expect(res.hits).toEqual([]);
   });
+
+  it("複数トークンは AND 条件（全語を含む問題のみ・語追加で件数は必ず縮む）", async () => {
+    // scoreQuestion はいずれかのトークンが本文・タグ双方で 0 ヒットなら
+    // 即 score 0 で除外する（question-index.ts: 全語必須＝AND）。これは
+    // 検索 UI で複数語を入れたときの絞り込み挙動そのものだが未カバーだった。
+    // AND を OR（どれか1語でヒット）に弱めると件数は union へ膨らむため、
+    // 「2語の total <= 各単語の total」かつ「片方より厳密に縮む」で固定する。
+    const a = "ネットワーク";
+    const b = "セキュリティ";
+    const ta = (await searchQuestions({ exam: "ap", q: a })).total;
+    const tb = (await searchQuestions({ exam: "ap", q: b })).total;
+    const tab = (await searchQuestions({ exam: "ap", q: `${a} ${b}` })).total;
+    expect(ta).toBeGreaterThan(0);
+    expect(tb).toBeGreaterThan(0);
+    expect(tab).toBeGreaterThan(0); // 両語を含む問題が実在（非空虚）
+    expect(tab).toBeLessThanOrEqual(ta); // AND は単語検索を超えて広がらない
+    expect(tab).toBeLessThanOrEqual(tb);
+    expect(tab).toBeLessThan(ta); // 第2語が実際に絞り込む（語の無視/OR化を検出）
+  });
 });
 
 describe("searchQuestions — facet フィルタ", () => {
