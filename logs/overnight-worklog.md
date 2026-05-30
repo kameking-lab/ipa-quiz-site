@@ -2106,3 +2106,22 @@ P0 全 done/SKIP。P1 進行中。**新角度=管理オブザーバビリティ�
   残る安全角度は「過去修復クラスの回帰再点検」(本セッション4レンズ=clean 記録で次回の重複監査を防止)のみ。実改善は日中候補(挙動変更+E2E)に依存。
 - 回帰再点検で次に確認可能な過去クラス: scroll-margin(S32)/th-scope(S28)/Label-in-Name(S29)/chart role=img(S10-S15)/Radix Switch 命名(S31) の新規再混入有無。いずれも機械 grep で clean 記録可。
 - 日中候補(不変): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
+
+## セッション67 (2026-05-31) — th-scope(S28)回帰再点検で公開表の取りこぼし実改善1件 + chart role=img(S10-S15)clean
+
+開始 00:21 JST(<09:00 で改善可)。ベースライン全緑実測(typecheck0/test 1237・183files)= S66 と一致。
+
+done: 公開データテーブルの列見出し scope="col" 付与(実改善) / 5d960ac / __tests__/components/PublicStatsTableScope.test.tsx
+- **th-scope(S28)の回帰再点検中に「新規再混入」でなく「S28 スイープの取りこぼし」を2件発見**。`<th` を全 grep し scope 有無を機械突合→公開ページの `/stats`(人気検索ワード表3列)と `/demo/essay-grading`(採点ルーブリック表3列)の列見出しが scope 欠落のまま残存。S28 で why-kakomon-ai/recommended-books/Markdown/blog/QuestionBody には付与済みだったが、この2表が漏れていた(WCAG 1.3.1 / H63: SR がデータセルと列見出しを関連付け不能)。
+- 修正: 各3列に `scope="col"` 付与(最小diff・単一軸の列見出し表のため row scope は不要)。
+- 検証: 新テスト2件で列見出し数(各3)を pin。demo 表の scope を1つ sed 除去→1 fail を実測(崩れたら落ちる)→git checkout で復元・再付与。build 後 `.next/server/app/demo/essay-grading.html` に `scope="col"`×3 が出力されることを grep 実測(SSG HTML 实测)。typecheck0/lint0err/test 1237→1239/build 全緑。
+- **公開表の scope スイープはこれで完了**(残る無 scope は admin/* のみ=auth 配下・prod 503・SEO/公開 a11y 価値ほぼゼロ+多数ファイル=過大修正の罠回避で SKIP)。
+
+clean(回帰再点検・コード無変更): chart role=img(S10-S15)
+- 公開チャート SVG を全数確認→`app/stats/StatsCharts.tsx`(4図)・`app/transparency/StatsCharts.tsx`(2図)・`app/account/weakness/WeaknessHeatmapClient.tsx`(レーダー)・`app/ranking/RankingClient.tsx`(分布棒)は全て `role="img"` + 記述的 `aria-label` を保持。新規チャートの role/label 欠落=新規再混入ゼロ。S10-S15 doctrine 維持。
+
+### 次セッションへ
+- **★教訓: th-scope(S28)の「回帰再点検」は新規再混入チェックだけでなく『過去スイープの取りこぼし』も拾える=clean 確定でなく実改善が出た。他の過去 a11y クラスも『取りこぼし』視点で全数 grep し直す価値あり(scope/role/aria-label/htmlFor は機械突合可能)。**
+- 残る回帰再点検候補(未実施): scroll-margin(S32)/Label-in-Name(S29)/Radix Switch 命名(S31) の新規再混入+取りこぼし。Label-in-Name は機械突合が難しい(可視テキスト⊂aria-label の判定)ため spot-check 寄り。
+- admin/* テーブル scope: 意図的 SKIP(auth 配下・prod 503・公開 a11y 価値ほぼゼロ)。a11y 観点で直すなら日中まとめて。
+- 日中候補(不変): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
