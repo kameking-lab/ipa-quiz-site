@@ -2355,3 +2355,26 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - **WCAG 4.1.3 status-message クラスはほぼ消化**: 成功カード差し替え4件(本セッション done)＋既済(EmailLeadCapture/QuestionFeedback/FeedbackGateModal/AfternoonPlayer/CloudSyncAutoSync は全て role=status 保持)。残=`app/review/ReviewClient.tsx`(`done` 採点結果画面=大きなビュー変更でフォーカス移動が本筋=日中候補SKIP)・`app/auth/verify-request/page.tsx`(静的ページ本文=ナビゲーション時 SR が通常読み上げ=対象外)。
 - 次の夜間安全角度＝同じ「過去が日中と早合点した取りこぼし」を別 a11y クラスで掘る(S67/S68/S77 doctrine)。per-name gap(回帰固定)は S76 で打ち止め。
 - 日中候補（不変）: pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化（latent のみ=実害なし）・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
+
+---
+
+## セッション78（2026-05-31 03:25〜 JST）— WCAG 4.1.3 別クラス「コピー成功通知」取りこぼし 実改善6件
+
+ベースライン全緑実測(typecheck0/lint0err[1 warning は未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外]/test 1507・199files/build 緑 2510 SSG)。S77 doctrine「過去が一部だけ直して取りこぼした a11y クラスを掘る」を**コピー成功通知**に展開。コピーボタンは成功時に文言が「コピー」→「コピー済/コピーしました」へトグルするだけで、**ボタンの accessible name 変更は SR に自動告知されない**＝成功が伝わらない(WCAG 4.1.3 Status Messages)。compact ShareButtons は sr-only polite live region 済なのに full モード/兄弟コンポが漏れ。全件 sr-only `role="status" aria-live="polite"` 追加のみ=視覚/レイアウト/フォーカス無変更。各 RTL it・span 除去 mutation で fail 実測→revert。
+
+- [2026-05-31 03:27] done: HistorySyncPanel 同期結果メッセージを live region 化 — 成功カード=status/polite・エラー=alert / `fdd3fe0` / RTL 3 it・mutation 2 fail 実測
+- [2026-05-31 03:34] done: ShareButtons full モードのコピー成功を live region 化(compact は既済) / `91adf6e` / RTL 2 it・mutation 1 fail 実測
+- [2026-05-31 03:37] done: SocialShare+ReferralClient のコピー成功を live region 化 / `c7f628e` / RTL 2 it・mutation 2 fail 実測
+- [2026-05-31 03:40] done: ApiKeysClient のキーコピー成功を共有 live region 1個で告知(per-id) / `93fd6d0` / RTL 1 it・mutation 1 fail 実測
+- [2026-05-31 03:43] done: StreamSummary+StreakCouponCard のコピー成功を live region 化 / `9214735` / RTL 2 it・mutation 2 fail 実測
+- [2026-05-31 03:46] done: QuizCompleteScreen 結果URLコピーを live region 化(test 用に export 追加=実行時無変更) / `9e66d86` / RTL 1 it・mutation 1 fail 実測
+
+test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/test 1518/build 緑)。
+
+★教訓: **コピー通知の a11y は「ボタン文言トグルのみ＝accessible name 変更で SR 無告知」という独立した取りこぼしクラス。** 発掘法=`copied|setCopied|コピー(しました|済|完了)` grep × 近傍に `role="status"`/`aria-live`/`showToast`(共有トースト) が無いものを per-file 確認。**共有 role=status トーストを持つコンポは既に covered**(CopilotPanel :1332・/settings :613)＝grep で showToast も併せて見ること(誤検出防止)。
+
+### 次セッションへ
+- **コピー通知 a11y クラスは打ち止め**(本セッションで残り6件 done、covered 済=CopilotPanel/settings/ShareButtons compact/QuizPlayer回答中:429 を確認)。
+- **ReviewClient/DailyChallengeClient 完了ビュー**は『大ビュー全体 replace』のため aria-live を貼ると SR が結果カード全文を読み上げる **verbose anti-pattern**(S61 SearchClient 教訓)＝focus 移動が本筋＝**日中SKIP** を再確認。夜間は触らない。
+- 次の夜間安全角度＝同じ「状態変化が文言トグルのみで告知漏れ」クラスを**別状態**(保存/削除/お気に入り(ブックマーク)トグル/表示・非表示切替の aria-pressed/aria-expanded 有無)で grep、or 過去 SAFE/latent footgun 再検証(S33/S41)。
+- 日中候補（不変）: ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
