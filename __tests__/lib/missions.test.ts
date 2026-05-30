@@ -7,12 +7,12 @@ import {
   incrementMission,
   claimMission,
   type MissionId,
-  type MissionProgress,
 } from "@/lib/gamification/missions";
 
 const ALL_IDS = Object.keys(MISSIONS) as MissionId[];
 
-function seed(rec: Partial<MissionProgress>): void {
+// localStorage holds arbitrary serialized JSON, so seed with the raw shape.
+function seed(rec: Record<string, unknown>): void {
   window.localStorage.setItem(LS_KEYS.dailyMissions, JSON.stringify(rec));
 }
 
