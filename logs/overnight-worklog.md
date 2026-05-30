@@ -2565,3 +2565,33 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **copilot RAG 層(retriever rerank/pin 3経路・deterministicRerank ブースト全枝・llmRerank パース全枝)は本セッションで主要分岐を消化。** runRAG(rag.ts) 本体は async + corpus/provider 依存で getCachedIndex シングルトン mock 要=日中向き。reranker の glossaryTitleMatchRatio は deterministic 経由で間接カバー済。
 - **Explore 実バグ探索は mock-exam/analytics/study-plan/afternoon で concrete user-visible bug 無しを確定(codebase は genuinely well-tested)。** 残る夜間安全角度は薄い: 未走査の純関数寄りモジュールの per-branch(候補が枯渇に近い)か、過去 SAFE/latent footgun 再検証(S33/S41)。
 - 日中候補(不変・S85まで継続): EssayEditor totalScore 命名/表示・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・retriever JSDoc 文言修正(低優先)。
+
+---
+
+### セッション91（2026-05-31 07:37〜07:56 JST・自律ループ）
+ベースライン全緑実測: typecheck0 / lint0err(警告1=untracked scripts/ux-audit-screenshots.mjs・非対象) / test 1584・212files / build 2510 SSG = S90 と一致。
+
+**結論: 新角度を開拓し実改善4件＝「user-visible 手書きデータセットのデータ整合性 invariant」を回帰固定。test 1584→1603(+19・212→214files)。source 無変更。**
+
+★方法論的発見（S1-S90 の盲点）:
+S1-S90 の探索は「lib 純関数の per-name カバレッジgap / a11y / footgun 再検証」に集中していたが、**user-visible な手書きデータ const（achievements/badges/quick-actions 等）のデータ整合性 invariant は behavior テストでも per-name 突合でも捕捉されない盲点**だった。型（string/number/Record<K>）は「キー存在」は保証しても「id 重複なし・内部フィールドとキーの一致・文字列非空・数値非負」は保証しない。これらは S64 の data/ レジストリ sweep（slug一意/round-trip/no-404）と同型だが lib/ 側は未スイープだった。
+
+- done【新角度・回帰固定】`lib/utils.ts::cn`（`0962146`・新規 `__tests__/lib/utils-cn.test.ts`）。§7 が全コンポーネントに義務付ける唯一のクラス名結合プリミティブ（twMerge(clsx())）だが直接テスト皆無（utils-labels.test は examLabel/seasonLabel/formatYearSeason のみ）。二層契約を pin: twMerge 衝突解決（後勝ち `cn("p-2","p-4")→"p-4"`）/ clsx 条件付き・配列・オブジェクト・falsy 除外。**素の clsx 化 mutation で衝突解決2件 fail を実測**（load-bearing は twMerge 層）。7 it。
+- done【回帰固定】`lib/gamification/achievements.ts::ACHIEVEMENTS/TIER_META`（`32db0ee`・既存 achievements.test へ追記）。50件超の手書き badge データ。unlock() は `ACHIEVEMENTS.find(x=>x.id===id)`＋unlocked id dedup のため **id 重複は2件目を到達不能化（型では防げない）**。id 全件ユニーク / id・name・description 非空 / tier→TIER_META 解決 / xp・gold 非負整数 / TIER_META 全5段位非空を固定。id 重複+負xp 注入 mutation で2件 fail 実測。5 it。
+- done【回帰固定】`lib/motivation/badges.ts::BADGES`（`1db80f5`・既存 motivation-badges.test へ追記）。Record<BadgeThreshold> 型は全キー存在を保証するが **各エントリ内部 threshold とキーの一致は保証しない**（key 3 が threshold:7 を持つ typo）。nextBadge は BADGES[next] を返し UI は .threshold/.name/.emoji を読む。全閾値で BADGES[t].threshold===t / 4文字列フィールド非空 / キー集合=BADGE_THRESHOLDS を固定。BADGES[7].threshold 改変 mutation で2件 fail 実測。3 it。
+- done【回帰固定】`lib/ai/prompts.ts::QUICK_ACTIONS/INITIAL_QUESTION_EXAMPLES`（`26bb66e`・新規 `__tests__/ai/quick-actions-data.test.ts`）。コパイロットのワンタップ送信ボタン copy（§13）。CopilotPanel は label 表示＋prompt(q) 戻り値をそのまま LLM へ送るため **空文字 prompt は空メッセージ送信＝無駄 API + 無言ボタン（型では空文字を弾けない）**。全13アクションの label 非空 / prompt(q) が throw せず非空 / INITIAL_QUESTION_EXAMPLES の label/prompt 非空＋label 重複なしを固定。term prompt 空文字化 mutation で1件 fail 実測。4 it。
+
+clean（コード無変更・検証済 SKIP）:
+- retriever.ts:87 `retrieve()` JSDoc「上位 k 件」は実際 k+5 返却だが、両 consumer（rag.ts rerankers が topN 自前 limit / related.ts が limit へ自前 slice）が over-fetch を意図的に活用＝**実害ゼロ。S90 の SKIP を再確認**（インラインコメント :157 で意図明記済）。
+- aliases.ts `matchAliasGlossaryTerms` の短ASCII alias（"IP"/"EV"等）substring マッチ（"description"→"TCP/IP" 誤ピン）は **既に aliases.test:49 で docstring 通りの意図的挙動として pin 済**＝gap でない。
+- exam-schedule.ts/category-pool.ts は JST 境界・cross-exam union 含め既存テストが網羅＝データ invariant 追加は vacuous（型 Record<Tier>/union/全区分>0 で潰れる）。
+- feature-flags.ts getFeatureFlags/isAiCopilotEnabled は consumer ゼロ＝dead code SKIP（S58/S65/S70 一致）。
+
+☆教訓:
+- **新角度＝「user-visible 手書きデータ const のデータ整合性」**。型が保証しないのは①id/キーの一意性②内部フィールドとキーの一致③文字列非空④数値の非負/整数。発掘法＝`grep -oE '^export const [A-Z_]+'`（UPPER_CASE データ const）× テスト未参照。behavior テストや per-name gap とは別レイヤなので S1-S90 で漏れていた。
+- vacuous 回避: Record<LiteralUnion> のキー存在/union 値域/全区分>0 は型 or 現データで vacuous。**non-vacuous なのは「型で表現できない制約」のみ**（id重複・key↔field一致・空文字・負値）。
+
+### 次セッターへ
+- **本角度の残候補（同クラス・未確認）**: `lib/essay/types.ts::INDUSTRY_LABELS`・`lib/essays/types.ts::ESSAY_INDUSTRY_LABELS`（業種ラベル Record・キー網羅/非空が non-vacuous か要確認）・`data/` 配下の残データ（S63-S64 で大半 sweep 済だが UPPER_CASE const 視点では未確認の可能性）。`AI_QUOTA_COPY`/`SITE_NAME`/`STUDENT_AUDIENCE` 等は単一文字列定数で invariant 薄＝低価値 SKIP 見込み。
+- 従来角度（per-name gap / a11y / footgun 再検証）は S1-S90 で深く枯渇。
+- 日中候補(不変・挙動変更+E2E 必須): EssayEditor totalScore・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
