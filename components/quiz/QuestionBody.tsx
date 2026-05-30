@@ -95,6 +95,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                   {b.header.map((h, hi) => (
                     <th
                       key={hi}
+                      scope="col"
                       className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold"
                     >
                       {h}
