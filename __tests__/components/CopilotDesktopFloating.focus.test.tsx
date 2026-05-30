@@ -7,7 +7,10 @@ vi.mock("next/navigation", () => ({
   usePathname: () => "/quiz",
 }));
 
-import { CopilotDesktopFloating } from "@/components/copilot/CopilotPanel";
+import {
+  CopilotDesktopFloating,
+  CopilotMobileSheet,
+} from "@/components/copilot/CopilotPanel";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -60,6 +63,29 @@ describe("CopilotDesktopFloating — 閉じたらトリガーへフォーカス�
       const fab = document.querySelector<HTMLButtonElement>(
         'button[aria-label="AI コパイロットを開く"]',
       );
+      expect(fab).not.toBeNull();
+      expect(document.activeElement).toBe(fab);
+    });
+  });
+});
+
+// モバイル版ボトムシートも同様に、閉じたらトリガーへフォーカスを戻す。
+describe("CopilotMobileSheet — 閉じたらトリガーへフォーカス復帰", () => {
+  it("Escape で閉じると『AIに聞く』トリガーへフォーカスが戻る", async () => {
+    const { getByText } = render(
+      <CopilotMobileSheet
+        question={question}
+        selectedChoice="イ"
+        isCorrect
+        onRateLimitHit={() => {}}
+        defaultOpen
+      />,
+    );
+
+    fireEvent.keyDown(window, { key: "Escape" });
+
+    await waitFor(() => {
+      const fab = getByText("AIに聞く").closest("button");
       expect(fab).not.toBeNull();
       expect(document.activeElement).toBe(fab);
     });

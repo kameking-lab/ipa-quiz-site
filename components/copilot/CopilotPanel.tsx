@@ -1354,6 +1354,8 @@ export function CopilotMobileSheet({
   defaultOpen = false,
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
+  const fabRef = React.useRef<HTMLButtonElement | null>(null);
+  const prevOpenRef = React.useRef(open);
 
   // Escape キーでシートを閉じる（キーボードユーザーの脱出経路）
   React.useEffect(() => {
@@ -1363,6 +1365,15 @@ export function CopilotMobileSheet({
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
+  }, [open]);
+
+  // シートを閉じたらトリガー(FAB)へフォーカスを戻す。シート内の入力を操作した
+  // キーボード利用者が、閉じた後に document.body へ取り残されるのを防ぐ。
+  React.useEffect(() => {
+    if (prevOpenRef.current && !open) {
+      fabRef.current?.focus({ preventScroll: true });
+    }
+    prevOpenRef.current = open;
   }, [open]);
 
   // Mirror the open state into the shared signal so the global AI quota
@@ -1377,6 +1388,7 @@ export function CopilotMobileSheet({
     <>
       {!open && (
         <button
+          ref={fabRef}
           onClick={() => setOpen(true)}
           className="bottom-above-tabbar fixed right-4 z-40 flex items-center gap-2 rounded-full bg-sky-600 px-5 py-3 text-sm font-semibold text-white shadow-xl hover:bg-sky-700 sm:hidden"
         >
