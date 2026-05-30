@@ -140,6 +140,8 @@ export function HistorySyncPanel() {
       </div>
       {result && (
         <div
+          role="status"
+          aria-live="polite"
           className="flex items-start gap-2 rounded-xl border border-emerald-300/60 bg-emerald-50 p-3 text-xs text-emerald-900 dark:border-emerald-700/50 dark:bg-emerald-950/40 dark:text-emerald-100"
           style={{ animation: "scale-in 200ms cubic-bezier(0.2, 0.8, 0.2, 1)" }}
         >
@@ -151,7 +153,10 @@ export function HistorySyncPanel() {
         </div>
       )}
       {error && (
-        <div className="flex items-start gap-2 rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive">
+        <div
+          role="alert"
+          className="flex items-start gap-2 rounded-xl border border-destructive/40 bg-destructive/10 p-3 text-xs text-destructive"
+        >
           <AlertCircle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
           <span>{error}</span>
         </div>
