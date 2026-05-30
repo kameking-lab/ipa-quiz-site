@@ -2023,3 +2023,16 @@ handoff: S59 が挙げた「残 fetch 系」のうち sync/*・stats/gsc・stats
 - 3サイクル目 不発(着手対象なし): `metrics/posthog.ts`は pure helper 無(fetch のみ44行)、`deployment-status.ts`の getVercelQuota 等は Date.now()+fetch tangled で1語 export 不可(抽出=refactor 禁止)→SKIP。**admin ダッシュボードの「1語 export 可能な private pure helper」脈は buildAlerts/buildFunnelSteps で枯渇。**
 - **重要教訓(本セッションで再踏): source の一時 mutation も worklog 追記も PowerShell Set-Content は厳禁(UTF-8日本語 mojibake/-Raw 全置換は content loss を招く=worklog を749ins/1991del に破壊→git checkout で復旧)。mutation の退避は cp(byte-exact)、置換は sed -i、worklog 追記は bash heredoc(>>)のみ。**
 - 次セッションへ: 安全な未テスト純関数は admin 脈含め枯渇に近い。残るは日中候補のみ(ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export)。
+
+## セッション63 (2026-05-30 23:14 JST起動)  Explore 全lib再走査 → 残1本(posthog)を fail-soft 契約で回帰固定
+- 着手前確認: HEAD=ce86168(S62)。S60-S62 handoff「安全な未テスト純関数は枯渇に近い」を Explore で**全150 lib モジュール再走査して検証**。
+- Explore 報告の候補3本を prior session と突合: ①`constants/current-year`=S59 で既 done(Explore の grep 漏れ)②`admin/feature-flags`=消費ゼロ(app/components/lib 全 grep で参照なし)=dead code 確定・S58 SKIP 踏襲 ③`lib/posthog.ts`=10+ コンポーネントが消費する**真の未テスト純関数**(Explore は trivial getter/setter のみと過小評価していた)。
+- done `lib/posthog.ts` 回帰固定 / commit `005254d` / `__tests__/lib/posthog.test.ts`(9 it)。**実改善0件(source 無変更)**。
+  - 契約: posthogCapture の fail-soft(未初期化→静かに no-op / client.capture() の throw を try/catch で握りつぶす=「analytics は決して例外で UI を壊さない」)・name/props 素通し(undefined props も透過)・getter/setter ラウンドトリップ・isPostHogConfigured/POSTHOG_CONFIG.host の env ゲート+US既定 `??` フォールバック。
+  - client は setPostHogClient 注入でテストするため SDK/fetch mock 不要(S59 slack/turnstile と同型の fail-soft pin)。env consts は current-year と同じ vi.resetModules+stubEnv+動的 import。
+  - **罠**: host 既定は `?? `(null/undefined のみ fallback)なので、未設定の検証は vi.stubEnv(key, "") では不可(空文字は `??` を通過しない)→`vi.stubEnv(key, undefined)`(vitest が真に delete)で表現。typecheck も緑。
+  - 検証: sed -i で①`!posthogClient`→`posthogClient`(ガード反転)②既定ホスト URL 改変 の2 mutation→計3件 fail 実測→git checkout 復旧。全緑ゲート(typecheck0/lint0err/test 1144→1153/build)。
+### 次セッションへ
+- posthog は回帰固定済(再監査不要)。**教訓: handoff の「枯渇」宣言は Explore 全走査で1本(posthog)取りこぼしを発見=10+消費・未テスト・SDK不要の純粋 fail-soft 契約。Explore が trivial と過小評価した posthogCapture の throw-swallow が load-bearing だった。「消費の有無 × 未テスト × fail-soft 契約の有無」で再篩いすると拾える(S58 の learner-profile/api-keys 発見と同型)。**
+- 残る未テスト lib は全て真に blocked: fetch-only(deployment-status/metrics-posthog/cost-guard/monitoring-sentry/rate-limit)・SDK(ai/providers/gemini)・auth/db(config/index/prisma)・AudioContext(motivation/sound)・server-only(questions/pool-server・search/question-index)・barrel(onboarding/streak/sync index)・type-only。feature-flags=dead code(消費ゼロ)で SKIP 確定。
+- 残る有効角度(S60-S62 から不変): ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。日中候補(ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export)は据え置き。
