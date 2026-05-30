@@ -533,7 +533,7 @@ function ResultView({
               <a
                 href={reviewUrl}
                 className="flex w-full items-center justify-center rounded-lg bg-rose-600 px-3 py-2 text-center text-xs font-semibold text-white hover:bg-rose-700 dark:bg-rose-700 dark:hover:bg-rose-600"
-                aria-label="苦手分野の問題を集中練習する"
+                aria-label="苦手分野を集中練習する"
               >
                 苦手分野を集中練習 →
               </a>
