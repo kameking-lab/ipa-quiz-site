@@ -89,7 +89,7 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
     <div>
       {hydrated && answered > 0 && (
         <div
-          role="tablist"
+          role="group"
           aria-label="解答状況フィルター"
           className="mb-5 flex flex-wrap items-center gap-2"
         >
@@ -220,8 +220,8 @@ function FilterButton({
 }) {
   return (
     <button
-      role="tab"
-      aria-selected={active}
+      type="button"
+      aria-pressed={active}
       onClick={onClick}
       className={cn(
         "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors",
