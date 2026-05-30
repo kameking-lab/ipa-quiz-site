@@ -4,6 +4,7 @@ import {
   generateStudyPlan,
   isWeekend,
   listDates,
+  todayLocalDate,
 } from "@/lib/study-plan/generator";
 import type { StudyPlanInput } from "@/lib/study-plan/types";
 
@@ -56,6 +57,25 @@ describe("isWeekend", () => {
     expect(isWeekend("2024-01-08")).toBe(false); // Monday
     expect(isWeekend("2024-01-10")).toBe(false); // Wednesday
     expect(isWeekend("2024-01-12")).toBe(false); // Friday
+  });
+});
+
+describe("todayLocalDate", () => {
+  afterEach(() => {
+    vi.useRealTimers();
+  });
+
+  it("ローカル暦日を formatLocalDate 経由で YYYY-MM-DD で返す", () => {
+    vi.useFakeTimers();
+    // ローカル時刻文字列で固定＝学習プランの「今日」起点が TZ 安定に決まる。
+    vi.setSystemTime(new Date("2024-03-07T09:30:00"));
+    expect(todayLocalDate()).toBe("2024-03-07");
+  });
+
+  it("月初・年初の境界もゼロ埋めされる", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2025-01-01T00:00:01"));
+    expect(todayLocalDate()).toBe("2025-01-01");
   });
 });
 
