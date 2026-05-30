@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション40):** P0 全件 done/SKIP。P1 進行中。
+> S40: S34-S39 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（combo/heatmap/recommended-paths/questions-load・計29 it・test532→561）。実改善0件＝4モジュールとも監査で実バグ無し確定。
+> ①`lib/motivation/combo.ts`(comboLevel 閾値 none<3/small/big>=5・設定read/write, `2adff00`) ②`lib/motivation/heatmap.ts`(intensityLevel バケット境界/generateDayRange 連続N日/集計合計, `0d4cffb`・read() byDate 共有footgun は studyDays の clear 不在で latent=SAFE) ③`lib/onboarding/recommended-paths.ts`(getRecommendedPath 3属性分岐・exam href補間・未知→last-minute fallback, `f9bb080`) ④`lib/questions/load.ts`(getAvailableYears 降順/Categories・TopicTags 昇順/exam絞り部分集合・実データ不変条件, `37cc0ed`)。
+> **★特記: `getAvailableTopicTags()` は現状空配列**＝14,402問中 topicTags 付与が0件（topic-tagger 未書込み・CLAUDE.md フェーズ通り）。/topics は別ソース(seo/topics.ts)使用で実害なし。タグ付与（データ作業）は夜間対象外＝SKIP。
+> **教訓: combo/heatmap/recommended-paths/questions-load は回帰固定済（再監査不要）。残る未テスト純関数候補＝`lib/motivation/daily-goal.ts`(getDailyProgress: pct クランプ/completed・read+getHeatmapMap連携)が S39 handoff の最後の1件。**
+>
 > **状態 (2026-05-30 セッション39):** P0 全件 done/SKIP。P1 進行中。
 > S39: S34-S38 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（share/questions-filter/questions-last-updated/metrics-range・計36 it・test496→532）。実改善(source変更)0件＝4モジュールとも監査で実バグ無し確定。
 > ①`lib/motivation/share.ts`(SNS シェアURL/本文・数値0とundefined区別, `bd56735`) ②`lib/questions/filter.ts`(**全モード出題プールの門番14k問**・examGroup優先/表図条件×画像なし除外/プレースホルダフォールバック/shuffleChoices answer追従, `a548537`) ③`lib/questions/last-updated.ts`(/q更新日+JSON-LD dateModified, `71be271`) ④`lib/admin/metrics/range.ts`(集計期間+前期間比較窓の日付演算・off-by-one ガード, `92bc306`)。
