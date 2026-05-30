@@ -254,7 +254,14 @@ function Section1Summary({ data }: { data: MetricsResponse }) {
           <CardTitle className="text-base">日次推移</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-72 w-full">
+          {/* 日次推移の時系列は近接する表/KPI に代替表現が無く、この折れ線が唯一の表現。
+              SR 利用者向けに role=img + 説明ラベルを付与（WCAG 1.1.1・additive）。
+              機能別バー(Section2)・流入元円(Section4)は直下に同データの表があるため付与しない。 */}
+          <div
+            className="h-72 w-full"
+            role="img"
+            aria-label="DAU と解答数の日次推移グラフ"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={s.series} margin={{ top: 12, right: 16, left: 0, bottom: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgb(161 161 170 / 0.25)" />

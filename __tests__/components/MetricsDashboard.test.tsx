@@ -47,3 +47,22 @@ describe("MetricsDashboard — カスタム期間 date input のアクセシブ�
     expect(input.getAttribute("type")).toBe("date");
   });
 });
+
+// 日次推移の折れ線グラフは近接する表/KPI に時系列の代替表現が無く図が唯一の表現。
+// SR 利用者向けに role="img" + 説明ラベルを付与する（WCAG 1.1.1）。
+// （role を外すと getByRole("img", { name }) が見つからず落ちる＝崩れたら落ちる検証）
+describe("MetricsDashboard — 日次推移チャートの代替テキスト", () => {
+  it("日次推移チャートが role=img と説明ラベルを持つ", () => {
+    const initial = buildMockMetrics({
+      range: "7d",
+      from: "2026-05-24",
+      to: "2026-05-30",
+      label: "7日",
+      comparedFrom: "2026-05-17",
+      comparedTo: "2026-05-23",
+    });
+    render(<MetricsDashboard initial={initial} />);
+    const chart = screen.getByRole("img", { name: "DAU と解答数の日次推移グラフ" });
+    expect(chart).toBeTruthy();
+  });
+});
