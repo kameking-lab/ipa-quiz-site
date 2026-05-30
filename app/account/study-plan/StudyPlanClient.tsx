@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { daysUntil } from "@/lib/learning/analytics";
 import type { ExamCode } from "@/lib/questions/types";
 
 const EXAM_OPTIONS: { code: ExamCode; label: string }[] = [
@@ -31,13 +32,6 @@ interface StoredEntry {
   selected: string;
   correct: boolean;
   at: number;
-}
-
-function daysUntil(dateStr: string): number {
-  const target = new Date(dateStr);
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return Math.ceil((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 }
 
 export function StudyPlanClient() {
