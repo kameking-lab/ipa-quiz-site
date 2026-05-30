@@ -1844,3 +1844,29 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   それ以外は types/server-only(prisma/auth/db)/外部API fetch(stats/gsc,posthog・sync/*-sync)で marginal。
 - 状態の安全な実害バグ・未テスト純関数とも S1-S54 で深く掃かれた。次は上記残り候補 or S33/S41 角度の
   「過去 SAFE/latent 再分類→footgun 再検証」「同型 a11y 再点検」。日中候補群は不変。
+## セッション55 (2026-05-30 20:49 JST) — 未テスト lib モジュール4本を回帰固定（テスト未 import 機械列挙の継続）
+### 結果: 実改善0件（source 無変更）/ 回帰固定4モジュール（test 944→975・+31 it・146→149 files）。全ゲート緑。
+- 冒頭ベースライン: typecheck0/lint0err（既存 ux-audit script 警告1のみ・未追跡）。HEAD `42d65d0`(S54)。
+- S54 handoff の「テストから一切 import されていない lib モジュールの機械列挙」を継続。`find lib -name '*.ts'`→
+  `grep -rqF "lib/<path>" __tests__` で未 import を抽出し、純関数/データ不変条件を持つものを characterization。
+- done `lib/chat/storage.ts`（AI会話履歴[フェーズ2]の LS 永続層）= saveToLocalStorage の**同id置換+先頭挿入+
+  最大50件(最古退避)**・read の破損JSONフォールバック・load/delete の id一致挙動を pin。
+  / コミット `07a85dd` / `__tests__/chat/storage.test.ts`(11件)。dedup filter 除去 + 50→100 cap の mutation で落ちることを実測。
+- done `lib/analytics/events.ts::trackEvent`（CVR ファネル計測の client 入口）= **name を切り出し残りを track 第2引数へ転送**・
+  転送先に name 非混入・SSR no-op・track throw 黙殺を pin（@vercel/analytics を vi.mock）。
+  / コミット `12df247` / `__tests__/analytics/events.test.ts`(5件)。event 全体(name 混入)転送への mutation で3件落ちを実測。
+- done `lib/ai/characters.ts`（AI バディ定義 SSOT）= **getCharacter の有効id→該当/null・undefined・不正→DEFAULT(haru)
+  フォールバック門番**・isCharacterId 受理拒否・CHARACTER_ORDER とキー一致/id整合のデータ不変条件を pin。
+  / コミット `d763fd8` / `__tests__/ai/characters.test.ts`(9件)。fallback の isCharacterId guard 除去 mutation で落ちることを実測。
+- done `lib/questions/get-questions.ts`（試験別遅延ローダ）= getQuestionsForExam の試験フィルタ/未登録コード空配列・
+  getRegisteredExamCodes の13区分・**getAllQuestionsLazy の平坦化**・**全件数=per-exam合計の保存則**を pin。
+  / コミット `a3a30a2` / `__tests__/questions/get-questions.test.ts`(6件)。flat() 除去 mutation で2件落ちを実測。
+### 次セッションへ
+- chat/storage・analytics/events・ai/characters・get-questions は回帰固定済（再監査不要）。
+- 残る未 import lib（純関数寄り・夜間安全）候補: `lib/study-plan/constants.ts`(PHASE_RATIOS sum=1.0/REQUIRED_HOURS 全
+  ExamCode 網羅・LEVEL_* Record キー一致のデータ不変条件・価値中)・`lib/copilot/pinned-actions.ts`(React hook=要 RTL)・
+  `lib/streak/storage.ts`(core 薄ラッパ・S36 で SAFE 監査済)・`lib/onboarding/index.ts`/`lib/streak/index.ts`(re-export barrel)。
+- それ以外の未 import は外部API(stats/gsc・posthog・notify/slack・turnstile)・provider 実装(ai/providers/*)・
+  server-only(questions/pool-server・search/question-index private)・auth/db で夜間 marginal or 要 mock。
+- **教訓:** 「test 未 import lib の機械列挙」は basename 一致判定(S47-S53)より漏れが少なく、まだ純関数寄り候補が
+  数本残る。次も同手法で constants のデータ不変条件 → barrel の re-export 健全性の順で消化が安全。
