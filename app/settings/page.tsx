@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId, cloneElement, isValidElement } from "react";
 import Link from "next/link";
 import {
   AlertCircle,
@@ -100,13 +100,21 @@ function SettingRow({
   description?: string;
   children: React.ReactNode;
 }) {
+  // Radix <Switch> renders a bare <button role="switch"> with no text content,
+  // so without this the control has no accessible name (WCAG 4.1.2). Associate
+  // the visible label with the control via aria-labelledby (name stays in sync).
+  const labelId = useId();
   return (
     <div className="flex items-center justify-between gap-4 px-5 py-4">
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-foreground">{label}</p>
+        <p id={labelId} className="text-sm font-medium text-foreground">{label}</p>
         {description && <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
       </div>
-      <div className="shrink-0">{children}</div>
+      <div className="shrink-0">
+        {isValidElement<{ "aria-labelledby"?: string }>(children)
+          ? cloneElement(children, { "aria-labelledby": labelId })
+          : children}
+      </div>
     </div>
   );
 }
