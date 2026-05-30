@@ -1630,3 +1630,43 @@ Explore で lib/ 全体を再走査し、未テストで実害寄りの契約を
   `lib/sync/*`(study-plan-sync 等の sync ラッパ)・`lib/search/question-index.ts`(private・export 追加要で日中向き)・
   `lib/exam-config.ts` の buildExtractionPrompt 系(プロンプト文字列・固定値テスト・価値中)・`lib/essays/load.ts`(薄いラッパ)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション49 (2026-05-30 19:21 JST) — S47-S48 の lib/ 再走査角度を継続・未テスト中核純関数4件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定4モジュール（test 816→855・128→132 files）。全ゲート全緑。
+冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test 816・128files/build 全緑/HEAD `0743cc2`(S48)。
+S47-S48 の「Explore で lib/ を再走査→未テスト中核純関数を発掘して契約固定」角度を継続。
+Explore は「NO test coverage」判定が不正確な箇所が多く（question-meta/url/exam-meta 等は既テスト）、grep で実在を1件ずつ検証してから着手。
+全件 read-only 監査で実バグ無し＝characterization。期待値は型/合成入力から導出し source 変更ゼロ。各テストは mutation→revert で「崩れたら落ちる」を実測。
+
+- done `lib/copilot/aliases.ts`（RAG リトリーバルの glossary doc ピン留め用語マッチ）。matchAliasGlossaryTerms：
+  **照合対象はエイリアスのみで term キー名そのものは見ない**（bare "XSS" は term キーでエイリアス不在→不一致）・
+  大文字小文字無視（双方 toLowerCase）・docstring 通りの substring 照合（語境界を見ず "description" が "IP"→TCP/IP に一致）・
+  複数 term 同時マッチ・同一 term の別名複数一致でも term は1回（Set+break）を pin。/ コミット `9c0e085` /
+  `__tests__/copilot/aliases.test.ts`(9件)。**`alias.toLowerCase()` を外すと大文字小文字無視テストが落ちる**ことを実測(revert済)。
+  ※初回 commit 前に「RSA と XSS」を multi-term 期待にしたが bare "XSS" はエイリアス非存在のためテスト側を修正（別名 "クロスサイトスクリプティング" へ）＝関数の正しい契約を反映。
+- done `lib/chat/export-markdown.ts`（AI コパイロット会話の Markdown エクスポート＝フェーズ2 履歴保存/エクスポート）。
+  buildMarkdown：見出し(試験名/年度季節/問番号)・出典行・問題/選択肢(choices 有無で出し分け)/正解(文字列 vs 配列は『・』連結)/
+  解説・会話ログの role 別ラベル(user→**ユーザー**/assistant→**過去問AI**)・サイト URL フッターを pin。
+  downloadMarkdown の Blob/DOM 副作用は対象外。/ コミット `94ea1c0` / `__tests__/chat/export-markdown.test.ts`(8件)。
+  **`answer.join("・")` を `join("/")` にすると配列正解テストが落ちる**ことを実測(revert済)。
+- done `lib/motivation/coupon.ts`（30日連続学習マイルストーンのプレミアム1週間無料クーポン発行・ゲーミフィケーション）。
+  ensureCouponForStreak：**peak=max(current,longest)>=30 の発行ゲート**・既発行があれば再発行しない冪等性・
+  コード書式 STREAK30-[32進サブセット8文字]・read のプレフィックス不正/破損JSON fail-soft null・markRedeemed/clearCoupon/
+  describeCoupon を pin。**source 三項(`==="streak-30"?"streak-30":"streak-30"` 常に streak-30＝S35 が SKIP 済の dead-branch)は
+  現挙動として固定し直さない**(過大修正の罠回避)。/ コミット `88bb1f8` / `__tests__/storage/coupon.test.ts`(11件)。
+  **発行ゲート `peak<30` を `peak<0` にすると未達ユーザーへ誤発行しテストが落ちる**ことを実測(revert済)。
+- done `lib/storage/essay-history.ts`（午後論文添削 C軸 の採点履歴リスト+下書き永続化）。履歴=**新着先頭・最大50件(最古退避)**・
+  非配列/破損JSON の空配列フォールバック・下書きは **questionId 単位で分離**(DRAFT_PREFIX+id)・clearEssayDraft は対象 id のみ消す・
+  破損下書きは null を pin。/ コミット `0059d8f` / `__tests__/storage/essay-history.test.ts`(11件)。
+  **`.slice(0,MAX_ENTRIES)` を `.slice(0,100)` にすると 50件上限テストが落ちる**ことを実測(revert済)。
+
+### 次セッションへ
+- aliases/export-markdown/coupon/essay-history は回帰固定済（再監査不要）。
+- **教訓1: Explore の「NO test coverage」判定は不正確（同名 test file が別関数を見ているケース多数）。着手前に必ず `grep -rl "lib/<path>\"" __tests__/` で import 実在を1件ずつ確認すること。**
+- **教訓2: aliases は term キー名でなくエイリアス値のみを照合する（bare 略称キーはマッチしない）。テスト期待を組む時に注意。**
+- まだ未テストで残る純関数候補: `lib/sync/client.ts::postSync` の未カバー枝（HTTP 500 等の generic !ok→`{error,"HTTP NNN"}`・
+  json.entries が非配列のとき local entries にフォールバック・merged/total の `??0` 既定）＝merge.test.ts に追記可（401/503/200/throw は既済）。
+  `lib/storage/{settings,notifications,user-context,character,last-question}.ts`(defaults マージ・型検証＝低分岐だが SSOT)・
+  `lib/copilot/rag-pipeline.ts`(async orchestration・mock 要・夜間は慎重に)・`lib/exam-config.ts` の buildExtractionPrompt 系(固定値・価値中)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
