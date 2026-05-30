@@ -1338,3 +1338,25 @@
 - テーマ: S36 が backlog 送りした latent footgun 3件を handoff 通り batch で防御ファクトリ化（concrete 実害は無いが既知クラスの一掃＝S34-S36 の共有EMPTY footgun 系を**全7ファイル完了**）。続けて seo の未テスト純関数の契約を固定。
 - 教訓（重複監査防止）: **共有EMPTY footgun は history/achievements/bookmarks/srs/mock-exam-storage/mock-scores/custom-tags の7ファイルすべて emptyState()/emptyData() ファクトリ化済（残存ゼロ・再監査不要）。** exam-meta grouping・getCategoryTip は回帰固定済。related-content/structured-data/sitemap-pagination は低logic で固定不要と判断。
 - 次セッターへ: 夜間の安全な実害バグは S1-S37 で深く枯渇。残候補=S35 の未テスト純関数（seo の question-url[既テスト]以外、exam-content/exam-resources は静的データ）の更なる契約固定 or 日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。新規実害バグは「過去セッションが属性有無だけ見て見落とした同型」(S33 の角度)を掘るのが有効。
+
+## セッション38 2026-05-30 16:05 JST（未テスト中核純関数の契約固定スイープ + PII マスカの over-mask 発見）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test **448 passed**(92 files)/build緑（HEAD `ff66914`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>`）。
+- 方針: S34-S37 で確立した「未テストの中核純関数を read-only 監査→実バグ発掘 or 契約を回帰固定（source 無変更）」角度を継続。Explore で未テスト純関数を棚卸し、価値順に4件処理。
+- done【回帰固定＋過大修正の罠回避で SKIP した実バグを記録】`lib/feedback/pii-masker.ts`（contact API でユーザー本文を公開ログ/モデレーション画面へ流す前の PII スクラバ・プライバシー中核）の契約を固定。
+  email/電話/12桁マイナンバー/明確な氏名/passthrough/mixed/totalHits の正しい挙動を回帰固定（14件→実際は15 it）。/ コミット `e6a3532` / `__tests__/lib/pii-masker.test.ts`。
+  **★実バグ発見（但し over-mask＝プライバシー安全側のため夜間は source 無変更で SKIP・日中候補）**: name-honorific ルール `[一-鿿゠-ヿ]…(?:様|氏|…)` が
+  **一般語「仕様」「同様」「模様」を「名前」と誤判定してマスク**する。IPA 試験文脈で「仕様/同様」は頻出＝正当なフィードバック本文が `[削除済み]` で破損（"問題の仕様が"→"問題の[削除済み]が"）。
+  ただし(a)これは over-mask で**プライバシー的には安全側**（漏洩ではない）、(b)正規表現を狭めると実在姓+様（例「林様」）を取りこぼす privacy 後退の危険＝要人手判断。よって夜間は直さず characterization テストで現挙動を固定し**日中候補として記録**。
+- done【回帰固定】`lib/dashboard/analytics.ts`（/account ダッシュボードの習熟度・合格可能性%・弱点/得意分野）。
+  合格可能性の係数（75%×満点標本→72・100%でも95にクランプ・0標本→0）・PROB_MIN_SAMPLE 閾値・分野集計の正答率/件数降順・弱点昇順/得意降順とタイブレーク・radar パディング/切詰めを固定。read-only 監査で実バグ無し（全 division/clamp ガード済）。/ コミット `7b0442b` / `__tests__/lib/dashboard-analytics.test.ts`(16件)。
+- done【回帰固定】`lib/learning/analytics.ts`（学習プラン分析・合格可能性/必要演習量/1日目標）。
+  ロジスティック係数（acc0.6×満点信頼→0.5・<10試行ダンプ）・必要演習量50問/ポイント・達成後100上限・1日目標[5,80]クランプ・uniqueAnswered の Set 重複排除を固定（daysUntil は別ファイルで既テスト）。実バグ無し。/ コミット `297802c` / `__tests__/lib/learning-analytics.test.ts`(10件)。
+- done【回帰固定】`lib/questions/category-pool.ts`（/modes/topic で AP/FE/IP/SG 横断の分野別出題母数・14k問超が通る）。
+  **Explore が「session ホワイトリストが CBT セッションを取りこぼす疑い」と HIGH を出したが、実データ分布（am7118/am1 4800/am2 2375/kamoku-a 102/kamoku-b 7/pm系）を grep 実測し棄却**＝am/am1/am2/kamoku-a の午前知識のみ通し pm/kamoku-b を意図的除外で正しい（実バグ無し）。session 白リスト・MC限定・試験横断同義カテゴリ合算+byExam内訳・count>0/降順・ラベル解決の重複排除/未知→null を固定。/ コミット `26ea5ae` / `__tests__/lib/category-pool.test.ts`(7件)。
+
+## セッション38 まとめ
+- 実改善0件（source 無変更）+ 回帰固定4モジュール（pii-masker/dashboard-analytics/learning-analytics/category-pool＝計48 it 追加: test448→496）+ **実バグ1件を発見し日中候補として記録**（pii-masker の 仕様/同様 over-mask）。各ゲート全緑（typecheck0/lint0err/test496/build緑）。
+- テーマ: S34-S37 の「未テスト中核純関数の契約固定」角度を継続。プライバシー中核(pii)・ユーザー向け数値(合格可能性/必要演習量)・横断プール母数(14k問)という**実害が出れば気付きにくい純関数**に「崩れたら落ちる検証」を敷設。
+- 教訓（重複監査防止）: **pii-masker/dashboard-analytics/learning-analytics/category-pool は回帰固定済（再監査不要）。** dashboard-analytics・learning-analytics・category-pool・pii-masker の privacy 中核（email/phone/mynumber）は read-only 監査で実バグ無し確定。`lib/search/question-index.ts` の tokenize/makeSnippet/scoreQuestion は server-only かつ private（テストには export 追加=source 変更が要るため夜間は見送り＝日中候補）。
+- ★次セッター必読の新・日中候補: **pii-masker の name-honorific over-mask**（仕様/同様/模様 を誤マスク）。プライバシー安全側だがフィードバック本文破損。修正は denylist 追加 or 正規表現を「姓らしさ」へ寄せる等の人手判断が必要（実在姓+様の取りこぼし回避が肝）。
+- 次セッターへ: 夜間の安全な実害バグは S1-S38 で深く枯渇。残候補=さらなる未テスト純関数（search-index は export 追加要・日中／seo question-url 既テスト／exam-content・exam-resources は静的データ）or 日中候補群（pii over-mask[新規・上記]/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。

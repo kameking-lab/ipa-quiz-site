@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション38):** P0 全件 done/SKIP。P1 進行中。
+> S38: S34-S37 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（pii-masker/dashboard-analytics/learning-analytics/category-pool・計48 it・test448→496）。実改善(source変更)0件＝監査で実バグ無し確定。
+> ①`lib/feedback/pii-masker.ts`(PII スクラバ・contact API 中核, `e6a3532`) ②`lib/dashboard/analytics.ts`(/account 合格可能性%・弱点分野, `7b0442b`) ③`lib/learning/analytics.ts`(学習プラン・必要演習量, `297802c`) ④`lib/questions/category-pool.ts`(AP横断分野プール母数14k問・Explore の session取りこぼし疑いを実データ grep で棄却, `26ea5ae`)。
+> **★新・日中候補（要人手判断）: pii-masker の name-honorific over-mask**＝正規表現 `…(?:様|氏|…)` が一般語「仕様/同様/模様」を誤マスクしフィードバック本文を破損（"問題の仕様が"→"問題の[削除済み]が"）。**プライバシー安全側（over-mask＝漏洩でない）**だが正当本文が壊れる。修正は denylist 追加 or 「姓らしさ」判定へ寄せる等＝**実在姓+様（例「林様」）の取りこぼし回避が肝で夜間は SKIP**。characterization テストで現挙動を固定済（修正時に気付く）。
+> **教訓: pii-masker/dashboard-analytics/learning-analytics/category-pool は回帰固定済（再監査不要）。search-index(tokenize/makeSnippet/scoreQuestion) は server-only かつ private＝テストに export 追加=source 変更要で日中向き。**
+>
 > **状態 (2026-05-30 セッション36):** P0 全件 done/SKIP。P1 進行中。
 > S36: S34/S35 の「未テスト純関数の契約固定」を継続中に、**S34 が history.ts で1件直した shared-mutable-EMPTY footgun がコードベースに体系的に潜在**していると発見＝**実改善5件**。
 > 回帰固定2: ①`study-plan/generator`(listDates/formatLocalDate/isWeekend/generateStudyPlan 不変条件, `1b577ee`・14件) ②`gamification/economy`(levelForXp 閾値/xpToNext クランプ/gold台帳, `7976290`・14件)。
