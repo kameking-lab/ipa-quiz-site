@@ -145,3 +145,68 @@ describe("questionToUrlParts", () => {
     });
   });
 });
+
+// no-404 ラウンドトリップ: 一覧ページ (app/essays/[exam]/page.tsx) は
+// questionToUrlParts でリンクを組み立て、詳細ページ
+// (app/essays/[exam]/[yearSeason]/[section]/[qnum]/page.tsx, dynamicParams=false)
+// は parseYearSeason と qnum 正規表現 /^q(\d+)$/ でパースして resolveQuestion で
+// 元の問題を引き当てる。個別関数は上でピン済みだが、両者を繋ぐ「一覧リンクが
+// 詳細の静的生成パラメータに必ず解決する（=404 を出さない）」契約は未固定だった。
+// この正規表現は詳細ページにインライン複製されているため、ここで同じ式を持ち、
+// ライブコーパス全件で往復が壊れないことを保証する。
+describe("essays index→detail URL round-trip (no dead internal links)", () => {
+  // 詳細ページ resolveQuestion 内の qnum パーサと同一の式。
+  const QNUM_RE = /^q(\d+)$/;
+
+  it("every SC question's link parts parse back to the same question", () => {
+    const dead: string[] = [];
+    for (const q of getSCpm2Questions()) {
+      const parts = questionToUrlParts(q, "sc");
+
+      // section は詳細ページが "pm2" 固定で照合する。
+      if (parts.section !== "pm2") {
+        dead.push(`${q.id}: section=${parts.section}`);
+        continue;
+      }
+
+      const parsed = parseYearSeason(parts.yearSeason);
+      if (!parsed) {
+        dead.push(`${q.id}: yearSeason 解析不能 (${parts.yearSeason})`);
+        continue;
+      }
+
+      const m = parts.qnum.match(QNUM_RE);
+      if (!m) {
+        dead.push(`${q.id}: qnum 解析不能 (${parts.qnum})`);
+        continue;
+      }
+      const qNumber = parseInt(m[1], 10);
+
+      // 詳細ページと同じ解決ロジック（year+season+qNumber 一致）で引き当てる。
+      const resolved = getEssayQuestionByYearSeason(
+        "sc",
+        parsed.year,
+        parsed.season,
+        qNumber,
+      );
+      if (resolved?.id !== q.id) {
+        dead.push(`${q.id}: 往復先=${resolved?.id ?? "なし"}`);
+      }
+    }
+    expect(dead).toEqual([]);
+  });
+
+  it("link parts equal the detail page's generateStaticParams shape", () => {
+    // 詳細ページ generateStaticParams は `${q.year}-${q.season}` / `q${q.qNumber}`
+    // をインラインで組む。questionToUrlParts がその形と一致しなければ
+    // dynamicParams=false 下で一覧リンクが 404 になる。
+    for (const q of getSCpm2Questions()) {
+      expect(questionToUrlParts(q, "sc")).toEqual({
+        exam: "sc",
+        yearSeason: `${q.year}-${q.season}`,
+        section: "pm2",
+        qnum: `q${q.qNumber}`,
+      });
+    }
+  });
+});
