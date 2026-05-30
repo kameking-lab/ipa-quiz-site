@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション33):** P0 全件 done/SKIP。P1 進行中。
+> S33: 新角度「**過去セッションが属性の有無だけ見て見落とした同型バグ**」を開拓＝**実改善1件**。`/settings` 保存トーストの `role="status"`/`aria-live="polite"` live region が `{toast && (…)}` で**条件付きマウント**され、region 自体が文言と同時 DOM 挿入される anti-pattern（SR が変化を捕捉できず保存完了/失敗が無通知）。**S7 が EmailLeadCapture に対し修正済の完全同型**だが、S7 監査は「role=status 保有」のみ確認し条件付きマウントを見落とし SKIP していた。region を常設し中身だけ出し入れ（`97b166a`・gold-standard ShareButtons 慣用）。source-read 回帰テストで index 順を検証（stash で落ちる実測）。
+> SKIP(全数監査=実害ゼロ): conditionally-mounted polite status（修正後 grep 残存ゼロ・`role=alert` はマウント時アナウンスが正で対象外）/focus-visible 除去（全て ring/border 代替併記）/OG 画像 dims（全32ページ width/height/alt 一貫）/api-route runtime（未宣言ゼロ）/select-onChange WCAG 3.2.2（全て state 更新のみ）。
+> **教訓: `role=status`/`aria-live=polite` は常設して中身だけ差替が gold-standard。同一コンポーネント内の `{x && (…role=status…)}` 条件付きマウントは残存ゼロ（再監査不要）。`role=alert` の条件付きマウントは正。focus-visible/OG dims/api-runtime/select-onChange の4クラスは構造的クリーン。**
+> **次は: 夜間の安全な実害バグは S1-S33 で深く枯渇。残は日中候補のみ。「過去セッションが属性有無だけ見て見落とした同型」を掘る二次監査は有効＝次は S5/S13 で aria-pressed 化したセグメント UI の可視フォーカス等が候補。debatable な toast/indicator（AchievementToast 等・親が条件付きレンダー）の常設 region 化は日中候補。**
+>
 > **状態 (2026-05-30 セッション32):** P0 全件 done/SKIP。P1 進行中。
 > S32: 新角度「**ページ内アンカー跳躍/scrollIntoView が persistent sticky header(h-14=56px) 下に隠れる（scroll-margin 欠落/不足）**」を開拓＝**実改善4件**。SiteHeader は常時表示 sticky(hide-on-scroll 無し)のため、scroll-margin の無いアンカー跳躍先は header 下に着地する。`href="#"` 全4＋`scrollIntoView({block:start})` 全1を全数監査:
 > ①`/settings` セクションナビ8リンクの跳躍先 SectionTitle に scroll-mt-20（`659a569`・専用ナビで高頻度）②`/student` 学割申請アンカー（`f2399f9`）③`/q` 解説アンカー＝`scrollMarginTop:"1rem"`(16px<56px)→scroll-mt-20＋inline style 撤去（`2e3df3c`・中核 indexable）④`EssayEditor` 採点結果 scrollIntoView（`6254ff1`・論文添削C軸）。全て `.next` 実測 or source-read 回帰テスト。
