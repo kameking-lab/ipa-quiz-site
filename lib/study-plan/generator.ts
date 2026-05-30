@@ -53,6 +53,10 @@ export function isWeekend(isoDate: string): boolean {
   return d === 0 || d === 6;
 }
 
+function isSaturday(isoDate: string): boolean {
+  return new Date(`${isoDate}T00:00:00`).getDay() === 6;
+}
+
 /** Determine the phase for `dayIndex` out of `totalDays`. */
 function phaseFor(dayIndex: number, totalDays: number): StudyPhase {
   if (totalDays <= 0) return "late";
@@ -130,7 +134,6 @@ function pickCategoryByPhase(
 
 interface BuildTasksArgs {
   date: string;
-  dayIndex: number;
   phase: StudyPhase;
   budget: number;
   exam: string;
@@ -143,7 +146,7 @@ interface BuildTasksArgs {
  * Tasks are ordered so the user can stop early without losing the high-value items.
  */
 function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
-  const { date, dayIndex, phase, budget, exam, category, examDate } = args;
+  const { date, phase, budget, exam, category, examDate } = args;
   if (budget < 5) return [];
 
   const tasks: TaskItem[] = [];
@@ -257,11 +260,13 @@ function buildDayTasks(args: BuildTasksArgs): TaskItem[] {
     remaining -= MINUTES_PER_ESSAY;
   }
 
-  // Weekly mini-mock on weekends in middle phase
+  // Weekly mini-mock on Saturdays in the middle phase — once a week, always on a
+  // weekend, regardless of which weekday the plan starts on. (The previous
+  // `dayIndex % 7 === 0` guard landed on the same weekday as day 0, so the mock
+  // only ever appeared when the plan happened to start on a weekend.)
   if (
     phase === "middle" &&
-    isWeekend(date) &&
-    dayIndex % 7 === 0 &&
+    isSaturday(date) &&
     remaining >= MINUTES_PER_MOCK_SMALL
   ) {
     tasks.push(
@@ -314,7 +319,6 @@ export function generateStudyPlan(input: StudyPlanInput): StudyPlan {
     );
     const tasks = buildDayTasks({
       date,
-      dayIndex,
       phase,
       budget,
       exam: input.exam,

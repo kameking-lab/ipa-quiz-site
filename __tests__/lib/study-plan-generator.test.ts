@@ -148,6 +148,31 @@ describe("generateStudyPlan", () => {
     }
   });
 
+  it("emits the weekly mini-mock on middle-phase Saturdays even when the plan starts on a weekday", () => {
+    // Regression: the mock used to be gated on `dayIndex % 7 === 0`, which lands
+    // on the SAME weekday as day 0. Starting on a weekday (2024-01-01 is a Monday)
+    // meant the "週末ミニ模試" never appeared at all. It must now key off the
+    // calendar (Saturday), independent of the start weekday.
+    const plan = planAt("2024-01-01T12:00:00", {
+      ...baseInput,
+      exam: "ip", // no essay task, so the weekend budget can reach the mock
+      examDate: "2024-03-15",
+      weekendMinutes: 400,
+    });
+
+    const mockDays = plan.daily.filter((d) =>
+      d.tasks.some((t) => t.title === "週末ミニ模試（20問）"),
+    );
+
+    // The feature is reachable for a Monday-start plan (was 0 before the fix).
+    expect(mockDays.length).toBeGreaterThan(0);
+    // Every weekly mini-mock falls on a Saturday during the middle phase.
+    for (const day of mockDays) {
+      expect(day.phase).toBe("middle");
+      expect(new Date(`${day.date}T00:00:00`).getDay()).toBe(6); // Saturday
+    }
+  });
+
   it("scales required hours down for higher knowledge levels", () => {
     const beginner = planAt("2024-01-01T12:00:00", {
       ...baseInput,
