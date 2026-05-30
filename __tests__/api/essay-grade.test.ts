@@ -176,4 +176,57 @@ describe("POST /api/essay-grade", () => {
     expect(byKey["イ"].score).toBe(25); // len 100 < minChars(800)*0.5
     expect(byKey["ウ"].score).toBe(70);
   });
+
+  it("mock grading: 中間長(50点)・字数超過(55点)分岐と rank C 境界(avg>=30)", async () => {
+    const res = await POST(
+      makeReq(
+        {
+          questionId: "au-2024a-pm2-q1",
+          industry: "manufacturing",
+          answers: {
+            ア: "あ".repeat(400), // 300(=600*0.5) <= 400 < 600 → 50
+            イ: "い".repeat(2100), // > 1600*1.3=2080 → 55
+            ウ: "う".repeat(200), // < 600*0.5=300 → 25
+          },
+        },
+        "10.1.0.8",
+      ),
+    );
+    expect(res.status).toBe(200);
+    const parsed = await res.json();
+
+    const byKey: Record<string, { score: number }> = Object.fromEntries(
+      parsed.subResults.map((s: { key: string; score: number }) => [s.key, s]),
+    );
+    expect(byKey["ア"].score).toBe(50); // len<minChars
+    expect(byKey["イ"].score).toBe(55); // len>maxChars*1.3
+    expect(byKey["ウ"].score).toBe(25);
+    // scores [50,55,25] → avg round(130/3)=43 → C(>=30)
+    expect(parsed.passProbability).toBe(43);
+    expect(parsed.rank).toBe("C");
+  });
+
+  it("mock grading: 全設問が字数大幅不足なら各25点・avg25で rank fail(<30)", async () => {
+    const res = await POST(
+      makeReq(
+        {
+          questionId: "au-2024a-pm2-q1",
+          industry: "manufacturing",
+          answers: {
+            ア: "あ".repeat(200), // < 300 → 25
+            イ: "い".repeat(200), // < 400 → 25
+            ウ: "う".repeat(200), // < 300 → 25
+          },
+        },
+        "10.1.0.9",
+      ),
+    );
+    expect(res.status).toBe(200);
+    const parsed = await res.json();
+    expect(parsed.passProbability).toBe(25);
+    expect(parsed.rank).toBe("fail"); // avg 25 < 30
+    for (const sub of parsed.subResults) {
+      expect(sub.score).toBe(25);
+    }
+  });
 });
