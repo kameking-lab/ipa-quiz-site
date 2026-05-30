@@ -2518,3 +2518,18 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **date/index 実バグ角度(S86)は本セッションの Explore 機械監査で gamification/motivation/streak/study-plan/analytics 全 clean 確定**=S86 の study-plan 週末ミニ模試が唯一の実バグだった。次に同角度を回すなら未走査領域(grading/午後採点・mock-exam 構成・heatmap 集計の境界)に限定。
 - 残る夜間安全角度: 未カバーのユーザー可視枝(UI が公開する sort/filter/mode の分岐で test 未到達のもの)を per-branch で探す、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
 - 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション88 (2026-05-31 06:53〜 JST)
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 212files・1568 / build 2510 SSG・exit0)。S87 handoff「未カバーのユーザー可視枝を per-branch で探す」を継続。**/account 弱点ダッシュボードの analytics 純関数で、ちょうど閾値/床を踏んでいなかった境界枝2件を回帰固定**。実改善0・source 無変更。test 1568→1570(+2 it)。
+
+- done: `__tests__/lib/dashboard-analytics.test.ts` 弱点/得意分野フィルタの minAnswered 包含境界を回帰固定 / `30a5bd3` / +1 it。**`topWeakCategories`/`topStrongCategories` の `s.answered >= minAnswered`(既定3)は /account の優先強化分野ランキング対象を決めるが、既存テストは answered=2(除外)と 5/9/10(包含)のみで、ちょうど閾値の answered===3 を踏んでいなかった。** `>=`→`>` 退行で「3問だけ答えた分野」がランキングから静かに脱落する(ユーザー可視)。answered=3 の境界分野が topWeak/topStrong 双方に包含されることを固定。`>=`→`>` mutation で1 fail 実測→cp 復元。
+- done: `__tests__/lib/learning-analytics.test.ts` 必要演習量のプール枯渇境界(remaining床0)を回帰固定 / `17c98b0` / +1 it。**`estimateRequiredPractice` の `Math.max(0, examPoolSize - uniqueAnswered)` は弱点表示の「必要演習量」を出すが、既存テストは remaining=10/800 のみで uniqueAnswered>examPoolSize(大区分で実問題数が既定800超)を踏んでいなかった。** 床が外れると questionsNeeded が負(「−50問」)になりユーザー可視で壊れる。`estimateRequiredPractice(0.8, 850)`→{0,0} の床を固定。`Math.max(0,…)`除去 mutation で1 fail 実測→cp 復元。
+
+### 監査済・本セッションで枯渇再確認(コード無変更)
+- lib/questions/filter.ts(全モード/品質フィルタ/shuffle/shuffleChoices)・lib/mock-exam/selection.ts(Hamilton配分/境界)・lib/motivation/heatmap.ts(intensityLevel 全閾値/syncキャッシュゲート/EMPTY破壊ガード)・lib/streak/core.ts(applyStudyDay/decayIfLapsed/milestone 全境界)・lib/gamification/{xp,economy,missions}.ts(レベル曲線/spendGold境界/mission閾値ゲート)は per-branch で精査し**全枝カバー済=未カバー枝なし**を確認。
+- SKIP(日中向き): Explore が報告した `components/essay/EssayEditor.tsx:126` の `totalScore` が実は3設問の平均(命名と実体の乖離)。表示挙動の変更=E2E必須=夜間SKIP。
+
+### 次セッションへ
+- **analytics 境界枝は本セッションで消化。filter/selection/heatmap/streak/gamification は per-branch 精査で全枝カバー確認=この近傍の未カバー枝は枯渇。**
+- 残る夜間安全角度: 未走査領域(grading/午後採点・mock-exam config 以外の構成・copilot retriever の境界)の per-branch、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
+- 日中候補(不変): EssayEditor totalScore 命名/表示・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
