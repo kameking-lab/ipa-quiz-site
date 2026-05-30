@@ -582,7 +582,7 @@ const QUIZ_ORIGIN =
     ? window.location.origin
     : "https://www.kakomon-ai.jp";
 
-function QuizCompleteScreen({
+export function QuizCompleteScreen({
   stats,
   elapsed,
   exam,
@@ -671,6 +671,11 @@ function QuizCompleteScreen({
               {copied ? "コピーしました" : "URLコピー"}
             </button>
           </div>
+          {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
+              polite live region で告知する。 */}
+          <span role="status" aria-live="polite" className="sr-only">
+            {copied ? "結果 URL をコピーしました" : ""}
+          </span>
         </div>
 
         <div className="flex flex-col gap-2">
