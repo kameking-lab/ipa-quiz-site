@@ -126,6 +126,16 @@ export function AfternoonPlayer({ questions }: Props) {
   const error = errors[active.id];
   const isSubmitting = submitting === active.id;
 
+  // 採点は数秒かかる AI 呼び出しで、進行中は送信ボタンが disabled(=a11y ツリーから消える)
+  // ため、その間「採点中…」の文言はスクリーンリーダーに届かず、完了後に下へ挿入される
+  // 結果ビューも通知されない。常設の live region で進行/完了を読み上げる(WCAG 4.1.3)。
+  // エラーは既に role="alert"(下部)で通知済みのためここでは扱わない。
+  const gradingStatusMessage = isSubmitting
+    ? "採点中です。完了までしばらくお待ちください。"
+    : result
+      ? "採点が完了しました。下に採点結果が表示されています。"
+      : "";
+
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm dark:border-zinc-800 dark:bg-zinc-950">
@@ -289,6 +299,10 @@ export function AfternoonPlayer({ questions }: Props) {
           </div>
         </CardContent>
       </Card>
+
+      <p role="status" aria-live="polite" className="sr-only">
+        {gradingStatusMessage}
+      </p>
 
       {result && <AfternoonResultView question={active} result={result} />}
     </div>

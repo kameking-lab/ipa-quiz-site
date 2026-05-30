@@ -1,5 +1,5 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { render, screen, cleanup, fireEvent, waitFor } from "@testing-library/react";
 
 import { AfternoonPlayer } from "@/components/afternoon/AfternoonPlayer";
 import type { AfternoonQuestion } from "@/lib/afternoon/types";
@@ -43,6 +43,10 @@ beforeEach(() => {
   cleanup();
 });
 
+afterEach(() => {
+  vi.unstubAllGlobals();
+});
+
 // 字数制限つき設問の textarea は aria-invalid だけでなく、なぜ無効かを
 // スクリーンリーダーが説明できるよう、字数カウンタを aria-describedby で参照する。
 describe("AfternoonPlayer — 字数制限の aria-describedby 連携", () => {
@@ -64,5 +68,28 @@ describe("AfternoonPlayer — 字数制限の aria-describedby 連携", () => {
 
     const textarea = screen.getByLabelText("設問2 の解答");
     expect(textarea.getAttribute("aria-describedby")).toBeNull();
+  });
+});
+
+// 採点(数秒の AI 呼び出し)中は送信ボタンが disabled で a11y ツリーから消えるため、
+// 進行状況を常設 live region でスクリーンリーダーに通知する(WCAG 4.1.3 status messages)。
+describe("AfternoonPlayer — 採点進行状況の live region 通知", () => {
+  it("初期は通知が空で、採点中は role=status が進行を読み上げる", async () => {
+    // fetch を保留させ、isSubmitting=true の状態を維持する
+    const pending = new Promise<never>(() => {});
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(() => pending),
+    );
+
+    render(<AfternoonPlayer questions={[makeQuestion()]} />);
+
+    const status = screen.getByRole("status");
+    // 採点前は無通知（常設だが空）
+    expect(status.textContent).toBe("");
+
+    fireEvent.click(screen.getByRole("button", { name: /採点する/ }));
+
+    await waitFor(() => expect(status).toHaveTextContent("採点中"));
   });
 });
