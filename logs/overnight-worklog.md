@@ -426,3 +426,34 @@
 - 次セッションへ: public チャート a11y は一巡 done。残候補は (a)/account チャート(DashboardProgress/
   WeaknessHeatmap)の role=img 横展開、(b)tabs矢印キー(日中)、(c)コピー通知統一(日中)、(d)MilestoneToast ref化(日中)、
   (e)exam meta desc 短縮(日中)、(f)SKIP 再評価。
+
+## セッション11 2026-05-30 08:53 JST（/account チャートの代替テキスト = WCAG 1.1.1 横展開・完了）
+- done: 【実バグ=A11y欠落 WCAG 1.1.1】`/account` ダッシュボード `DashboardProgress` の「分野別習熟度」
+  レーダーチャートが role/aria-label を持たず、SR 利用者は図の意味を得られなかった。当チャートの
+  カテゴリ正答率は本文に代替表現が無く図が唯一の表現。ラッパ div に `role="img"`+説明ラベルを付与
+  (additive・視覚/レイアウト不変)。/ コミット `e9d3710` / 検証: typecheck0・lint(err0, 既存ux-audit警告1のみ)・
+  test238緑(+新規1)・build緑。新規 `DashboardProgress.test.tsx`(recharts no-op mock、空履歴で findByRole img)
+  は **role 除去で落ちる**ことを git stash で実測(崩れたら落ちる検証)。
+- done: 【同テーマ横展開】`/account/weakness` `WeaknessHeatmapClient` の分野別レーダーチャートも同じ
+  role/aria-label 欠落。ラッパ div に付与し「下部の一覧でも確認できる」旨も明示(本ページは図の下に全分野
+  正答率の text 代替が在る)。/ コミット `16bb265` / 検証: 全緑(test239)。新規 `WeaknessHeatmapClient.test.tsx`
+  (3分野21回答の履歴を localStorage に投入しチャート描画→findByRole img)は git stash で落ちることを実測。
+- done: 【同テーマ横展開】`/account/tutor` `TutorClient` の「直近30日の演習量」バーチャートも欠落。
+  演習量推移は図でしか提示されない。ラッパ div に付与。/ コミット `8832c8a` / 検証: 全緑(test240)。
+  新規 `TutorClient.test.tsx`(6回答の履歴で totalAttempts>=5 を満たしレポート描画→findByRole img)は
+  git stash で落ちることを実測。
+- SKIP(低価値・内部運用ツール・日中候補): `/admin/funnel`(FunnelCharts)・`/admin/metrics`(MetricsDashboard)の
+  recharts チャートも role=img 欠落だが、admin は auth-gated・noindex の**運用者専用内部ダッシュボード**で
+  公開 SR 利用者への影響は実質ゼロ。テスト足場も重い(metrics は mount 時 fetch)。公開面の WCAG 1.1.1 チャート
+  alt-text テーマは public(S10)+account(S11)で**完全一巡 done**。admin は優先度低のため日中候補として記録。
+
+## セッション11 まとめ
+- 実改善3件(すべて WCAG 1.1.1 = /account データ可視化チャートの代替テキスト欠落、各テスト付き)+ SKIP1件(admin=内部運用ツール)。
+  1. DashboardProgress 習熟度レーダーに role=img(`e9d3710`)
+  2. WeaknessHeatmapClient 分野別レーダーに role=img(`16bb265`)
+  3. TutorClient 演習量バーに role=img(`8832c8a`)
+- テーマ: 「データ可視化チャートの代替テキスト(WCAG 1.1.1)」を public(S10)に続き **/account(noindex)でも一巡完了**。
+  公開・認証両面の主要チャートを網羅。残るは admin 内部ダッシュボードのみ(低価値・SKIP)。
+- 次セッションへ: チャート alt-text 観点は public+account 完了 done。残候補は (a)tabs矢印キー(日中)、
+  (b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、
+  (e)admin チャート role=img(低優先)、(f)これまでの SKIP 再評価5周目。新観点の開拓も検討。

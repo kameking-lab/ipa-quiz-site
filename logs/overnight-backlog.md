@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション11):** P0 全件 done/SKIP。P1 進行中。
+> S11: 「データ可視化チャートの代替テキスト(WCAG 1.1.1)」を /account(noindex) チャートへ横展開し完了。
+> ①DashboardProgress 習熟度レーダー(`e9d3710`) ②WeaknessHeatmapClient 分野別レーダー(`16bb265`)
+> ③TutorClient 演習量バー(`8832c8a`)に role=img+aria-label を付与(additive・各テスト付き)。
+> admin(funnel/metrics)チャートは内部運用ツール・低価値で SKIP。**チャート alt-text は public(S10)+account(S11)で完全一巡 done。**
+> **次は: tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc 短縮(いずれも日中候補)、admin チャート(低優先)、SKIP 再評価、新観点の開拓。**
+>
 > **状態 (2026-05-30 セッション10):** P0 全件 done/SKIP。P1 進行中。
 > S10: 「indexable ページのデータ可視化チャートの代替テキスト(WCAG 1.1.1)」を全 public チャートページで一巡。
 > recharts チャートが role/aria-label を持たず SR 利用者が図の意味を得られなかった問題を是正。
