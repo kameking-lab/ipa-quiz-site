@@ -1,6 +1,13 @@
 import { describe, it, expect } from "vitest";
 import { tokenize, uniqueTokens } from "@/lib/copilot/tokenize";
-import { buildIndex, retrieve, scoreBM25, maxQueryIdf } from "@/lib/copilot/retriever";
+import {
+  buildIndex,
+  retrieve,
+  scoreBM25,
+  maxQueryIdf,
+  getCachedIndex,
+  resetIndexCache,
+} from "@/lib/copilot/retriever";
 import type { CorpusDoc } from "@/lib/copilot/types";
 
 function doc(id: string, text: string, extras: Partial<CorpusDoc> = {}): CorpusDoc {
@@ -138,5 +145,42 @@ describe("maxQueryIdf", () => {
     const rareIdf = maxQueryIdf(idx, "rare");
     const commonIdf = maxQueryIdf(idx, "ubiquitous");
     expect(rareIdf).toBeGreaterThan(commonIdf);
+  });
+});
+
+describe("getCachedIndex / resetIndexCache", () => {
+  // RAG リトリーバはプロセス内シングルトンの転置インデックスを lazy build する。
+  // 「初回だけ getDocs を呼んで以降は同一参照を返す」「reset で再構築させる」契約が
+  // 崩れると、毎リクエストでコーパス再構築(コスト)か、更新が反映されない不具合になる。
+  function corpusDocs(): CorpusDoc[] {
+    return [doc("c1", "rare ubiquitous"), doc("c2", "common ubiquitous")];
+  }
+
+  it("初回は getDocs を1回だけ呼んで構築し、以降はキャッシュした同一参照を返す", () => {
+    resetIndexCache();
+    let calls = 0;
+    const getDocs = () => {
+      calls += 1;
+      return corpusDocs();
+    };
+    const first = getCachedIndex(getDocs);
+    const second = getCachedIndex(getDocs);
+    expect(second).toBe(first); // 同一参照
+    expect(calls).toBe(1); // getDocs は2回目で呼ばれない
+    expect(first.docs).toHaveLength(2);
+  });
+
+  it("resetIndexCache 後は getDocs を再度呼んで作り直す（新しい参照）", () => {
+    resetIndexCache();
+    let calls = 0;
+    const getDocs = () => {
+      calls += 1;
+      return corpusDocs();
+    };
+    const before = getCachedIndex(getDocs);
+    resetIndexCache();
+    const after = getCachedIndex(getDocs);
+    expect(after).not.toBe(before); // reset で別インスタンス
+    expect(calls).toBe(2); // 再構築のため再度 getDocs
   });
 });
