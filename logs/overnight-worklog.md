@@ -1549,3 +1549,43 @@ search-index(private・export 追加要)のみが「日中向き」として残�
 - 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S46 で深く枯渇。残るのは search-index(private・export 追加=source 変更で日中向き)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
 - 新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。
+
+---
+## セッション47 (2026-05-30 18:42 JST) — Explore で発掘した未テスト中核純関数3件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定3モジュール（test 730→763・121→124 files）。全ゲート全緑。
+冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test 730（HEAD `b0caf1f`）。
+S46 が「未テスト純関数は search-index のみ残」としていたが、**Explore で lib/ を再走査し
+未テストの中核純関数を新規に3件発掘**（過去 handoff の枯渇宣言は探索範囲の漏れ）。全件 read-only 監査で
+実バグ無し＝characterization。期待値はライブデータ/合成入力から導出（ハードコード無し）し source 変更ゼロ。
+
+- done `lib/stats/content-count.ts`(getContentCounts＝/stats ページ・/api/stats/content-count が表示する
+  午前+午後+論文の総数集計)。保存則(total=morning+afternoon+essay)・per-exam分割の総和が top-level 総数に一致
+  (QUESTIONS_BY_EXAM が ALL_QUESTIONS を正確に分割する独立クロスチェック)・row.total=各列和・total降順ソート・
+  publishedExams=total>0 行数・exam重複なしを pin。型はshapeのみ保証し値はデータ編集で静かにドリフトしうる。
+  / コミット `49b720c` / `__tests__/stats/content-count.test.ts`(8件)。**ソート comparator 反転で descending
+  テストが落ち、per-exam afternoon を全件化する mutation で総和一致テストが落ちる**ことを実測(revert 済)。
+  ※ 既存 `__tests__/seo/no-hardcoded-counts.test.ts` はリテラル/SSOT 観点で getContentCounts の値不変条件は非対象（非重複を確認）。
+- done `lib/exam-config.ts`(getSafePdfUrl/getOfficialAnswerPdfUrl/buildPdfUrl/buildRawPdfPath＝/q 解説末尾の
+  IPA出典リンク[§8]を生成する user-facing 純関数 + PDF クロール/パース用パス)。IPA命名規則を符号化:
+  `_qs.pdf`→`_ans.pdf` 末尾スワップ(アンカー$付き・interior は不変)・https以外/絶対placeholderは IPA_EXAM_INFO_URL
+  フォールバック・buildPdfUrl の year-2018 オフセット padStart(2)・春h秋a の季節記号・sn 1/2・cbt→""・
+  buildRawPdfPath の noSessionPrefix(IP例外)を全分岐固定。崩れるとユーザーを 404/誤PDF へ誘導。
+  / コミット `63b9ad8` / `__tests__/lib/exam-config-pdf-url.test.ts`(13件)。**スワップを no-op 化すると swap テスト、
+  季節記号 h/a 反転で spring/autumn URL テストが落ちる**ことを実測(revert 済)。
+- done `lib/afternoon/load.ts`(getAfternoonQuestions/getAfternoonByYearSeason/getAfternoonYearSeasons/
+  findAfternoonQuestion＝午後AI採点ルート[C軸]のアクセサ)。getAfternoonYearSeasons は
+  /[exam]/afternoon/[year]/[season] の generateStaticParams を駆動し prerender 対象を決める。試験フィルタ・
+  qNumber非減少・year降順/season昇順ソート・年度季節の重複排除と corpus 被覆一致・findAfternoonQuestion の
+  参照同一性/未知id→undefined を pin。/ コミット `25866a5` / `__tests__/afternoon/load.test.ts`(12件)。
+  **year comparator を昇順反転すると「年降順」「最新が先頭」の2テストが落ちる**ことを実測(revert 済)。
+  ※ 各(試験,年,季)は1問ずつで全 index が新しい年を先頭に置く（source順=ソート順）ため、ソート「除去」は
+    実データで検出不能・「反転」のみ検出可。dedup も 1q/pair で非発火だが union被覆一致で iteration 健全性は固定。
+
+### 次セッターへ
+- content-count/exam-config(PDF URL)/afternoon-load は回帰固定済（再監査不要）。
+- **教訓: 過去の「未テスト純関数は枯渇」宣言は Explore の探索範囲漏れがあり得る＝定期的に lib/ 全体を再走査する価値あり。**
+  まだ未テストで残る候補: `lib/stats` 他のアクセサ・`lib/essays/load.ts`(getAfternoonQuestions ラッパ・薄い)・
+  `lib/exam-config.ts` の buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt(プロンプト
+  文字列・固定値テストの価値は中)・search-index(private・export 追加要で日中向き)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。

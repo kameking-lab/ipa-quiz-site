@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション47):** P0 全件 done/SKIP。P1 進行中。
+> S47: S46 が「未テスト純関数は search-index のみ残」としたが、**Explore で lib/ を再走査し未テスト中核純関数を新規3件発掘**（過去の枯渇宣言は探索範囲の漏れ）＝**回帰固定3モジュール**（content-count/exam-config-pdf-url/afternoon-load・計33 it・test 730→763・121→124 files）。実改善0件（source 無変更）。全件「崩れたら落ちる」を mutation→revert で実測。
+> ①`lib/stats/content-count.ts`(getContentCounts＝/stats・/api/stats/content-count の午前+午後+論文総数集計。保存則・per-exam分割が ALL_QUESTIONS を正確に分割する独立クロスチェック・total降順ソート・publishedExams閾値, `49b720c`) ②`lib/exam-config.ts`(getSafePdfUrl/getOfficialAnswerPdfUrl/buildPdfUrl/buildRawPdfPath＝/q 出典リンク[§8]の IPA命名規則: `_qs.pdf`→`_ans.pdf` 末尾スワップ・https以外フォールバック・year-2018 オフセット・春h秋a 季節記号・noSessionPrefix IP例外, `63b9ad8`) ③`lib/afternoon/load.ts`(午後AI採点[C軸]アクセサ。getAfternoonYearSeasons は generateStaticParams を駆動＝prerender対象決定。試験フィルタ・year降順/season昇順ソート・corpus被覆一致・参照同一性, `25866a5`)。
+> **★教訓: 過去の「未テスト純関数は枯渇」宣言は Explore の探索範囲漏れがあり得る＝定期的に lib/ 全体を再走査する価値あり。** content-count/exam-config(PDF URL)/afternoon-load は回帰固定済（再監査不要）。残る未テスト候補＝exam-config の buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt(プロンプト文字列・固定値テストの価値は中)・essays/load(薄いラッパ)・search-index(private・export 追加要で日中向き)。
+> **次は: 夜間の安全な実害バグは S1-S47 で深く枯渇。日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）のみ。新規夜間タスクは lib/ 再走査での未テスト純関数発掘 or 「過去が属性有無だけ見て見落とした同型 a11y」(S33 角度)。**
+>
 > **状態 (2026-05-30 セッション44):** P0 全件 done/SKIP。P1 進行中。
 > S44: S43 handoff の残・未テスト純関数候補を消化＝**回帰固定3モジュール**（prompt-assembly/corpus/exam-data・計30 it・test 675→705）。実改善0件（source 無変更）。全件「崩れたら落ちる」を mutation→revert で実測。
 > ①`lib/copilot/prompt-assembly.ts`(assembleCopilotPrompt＝AIコパイロット B軸 の system+user メッセージ組み立て。セクション順序 COPILOT→character→length→ragDirective→問題コンテキスト→profile→ragContextBlock・条件付き挿入の門番[characterEnabled かつ有効id のみ/profile は回答5件以上/rag は null/空で除外]・クイックアクションの先頭付与[最後が user のときのみ]・入力 messages 非破壊, `cc27d2e`) ②`lib/copilot/corpus.ts`(getCorpus＝RAG コーパス組み立て。BM25 フィールド重み[カテゴリ×2/用語名×6/英語×3]・解説20字未満除外フィルタ・doc形状[q:/g:プレフィックス・URL]・プロセス内キャッシュ同一性, `6b8e1e8`) ③`lib/seo/{exam-stats,exam-resources,exam-content}.ts`(全試験ハブ /[exam] が描画する静的データの**値**不変条件＝型では守れない: 学習時間 low<=high・合格率 NN-NN・ロードマップ monthsBefore 厳密降順/非負・公式リンク IPA https・relatedExams 自己参照/重複なし+実在コード=S8 内部リンク健全性, `97ffc91`)。
