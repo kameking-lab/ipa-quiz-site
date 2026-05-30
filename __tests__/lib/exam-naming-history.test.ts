@@ -1,5 +1,6 @@
 import { describe, it, expect } from "vitest";
 import { examLabelAt, getExamNameHistory } from "@/lib/exam-naming/history";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { EXAM_LABELS } from "@/lib/utils";
 
 // exam-naming/history.ts は、問題が出題された「当時」の試験正式名称を返す純関数。
@@ -59,5 +60,28 @@ describe("getExamNameHistory", () => {
     ]);
     // from は昇順（古い順）
     expect(h[0].from.year).toBeLessThan(h[2].from.year);
+  });
+
+  // EXAM_NAME_HISTORY は Record<ExamCode, ExamNameEntry[]> 型でキー網羅と各値の型は
+  // 守れるが、examLabelAt の検索ループ（from 以降の「最後にマッチした」エントリを採用）が
+  // 正しく機能する前提＝**各区分のエントリが from 昇順に並んでいること**は型で表現できない。
+  // 既存テストは SC の昇順しか pin していなかったが、改名 2 世代以上を持つ
+  // ap/st/sa/nw/db/es/sc/sm すべてが同じ前提に依存する。並び替え（typo / コピペ）で
+  // 旧名と新名が入れ替わると、当時名称が全問題ページ（タイトル・パンくず・OGP・JSON-LD）で
+  // 史実と食い違う。canonical ALL_EXAM_CODES 全 13 区分で昇順と非空ラベルを固定する。
+  it("全区分のエントリが from 昇順（春<秋）かつラベル非空", () => {
+    const rank = (e: { from: { year: number; season: "spring" | "autumn" } }) =>
+      e.from.year * 2 + (e.from.season === "spring" ? 0 : 1);
+    for (const exam of ALL_EXAM_CODES) {
+      const h = getExamNameHistory(exam);
+      expect(h.length).toBeGreaterThan(0);
+      for (let i = 0; i < h.length; i++) {
+        expect(h[i].label.length).toBeGreaterThan(0);
+        if (i > 0) {
+          // strictly ascending: 後のエントリほど新しい改名であること。
+          expect(rank(h[i])).toBeGreaterThan(rank(h[i - 1]));
+        }
+      }
+    }
   });
 });
