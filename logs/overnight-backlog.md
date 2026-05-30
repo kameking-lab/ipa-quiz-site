@@ -1,4 +1,13 @@
-# 夜間自律改善 バックログ（優先度順）
+﻿# 夜間自律改善 バックログ（優先度順）
+
+> **状態(2026-05-30 セッション61):** P0 全件 done/SKIP。P1 進行中。
+> S61: S60 handoff の角度③（a11y 条件付きマウント live region の S33 同型再検証）+ 未テスト純関数の枯渇再確認。**実改善0・回帰固定0・コード無変更**（ベースライン全緑実測のみ）。
+> ①`app/contact/ContactForm.tsx:220` エラー領域 `role=alert` 条件付きマウント＝**S33 doctrine「alert の条件付きマウントは正」で SKIP**（Explore の「バグ」報告は doctrine に照らし誤検出）。
+> ②`components/search/SearchClient.tsx:986` は既に常設 sr-only `role=status` で件数告知（gold-standard・コメントで verbose anti-pattern 回避を明記）＝:997 の loading span の aria-live は冗長で SKIP。S33「残存ゼロ」を再確認。
+> ③未テスト純関数は `lib/**` 未 import 機械列挙で残り全て要 mock/dead/server-only＝S57-S60 で打ち止め再確認・新規ゼロ。
+> **★日中候補（S61 特定）: `ContactForm.tsx:86-110` 送信成功カードにライブリージョン/フォーカス移動が無く SR に成功が告知されない。修正＝成功見出しへ focus 移動（挙動変更・E2E 必須）＝夜間 SKIP。**
+> **次は: 夜間の安全な実害バグ・未テスト純関数とも S1-S61 で深く枯渇。残は日中候補のみ。角度②（過去 SAFE/latent footgun の別モジュール再検証）は続行可だが収穫逓減。**
+>
 
 > **状態(2026-05-30 セッション60):** P0 全件 done/SKIP。P1 進行中。
 > S60: S59 handoff の「残 fetch 系」を同手法(vi.stubGlobal/stubEnv)で**回帰固定3本**(実改善0・source 無変更)。

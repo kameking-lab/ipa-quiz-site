@@ -1996,3 +1996,16 @@ done: stats/posthog の回帰固定 / 9a78cb5 / __tests__/stats/posthog.test.ts�
 ★教訓3: stats/gsc・posthog は Date.now を transform に含まず(期間は SQL 文字列側)決定的＝fetch mock だけで安全に固定できる良候補だった。deployment-status は逆に Date.now 依存+価値ある計算が inline(未 export)＝夜間は brittle で見送り(launch-monitoring の buildAlerts も要 export=日中向き)。
 
 handoff: S59 が挙げた「残 fetch 系」のうち sync/*・stats/gsc・stats/posthog は消化。残 = deployment-status(Date.now 依存・要 export で日中向き)・launch-monitoring/data(buildAlerts 要 export=日中向き)・monitoring/sentry(SDK ラッパ)。真の要 mock = sound(AudioContext)/gemini(SDK)/auth/db で夜間不向き。次セッションは ②過去 SAFE/latent footgun 再検証(S33/S41)・③属性有無で見落とした同型 a11y(S33)が残された有効角度。
+
+## セッション61 2026-05-30 22:35 JST（P1・角度③ a11y ライブリージョン再監査 + 未テスト純関数の枯渇再確認）
+- 着手前確認: HEAD=29b5e74（S60 done）。ベースライン全緑を実測（バックグラウンドで typecheck/lint/test/build 全 exit=0・GATE END 22:35:08）。
+- 本セッションは S60 handoff が指す残り有効角度 ②/③ を監査。**実改善0件・回帰固定0件（安全に固定できる対象が見つからず）**。コード無変更。
+- 監査①（角度③ a11y・条件付きマウント polite/alert の S33 同型再検証）:
+  - `app/contact/ContactForm.tsx:220` のエラー領域は `role="alert"` の条件付きマウント。**S33 doctrine「role=alert の条件付きマウントは正（挿入時アナウンス）」に合致＝SKIP(実害なし)**。Explore はこれを「バグ」と報告したが doctrine に照らすと誤検出。
+  - `components/search/SearchClient.tsx:986` は既に**常設 sr-only `role=status`/`aria-live=polite`** で検索件数を告知（コメントで「リスト全体を live にすると毎キーストロークで全件読み上げ＝verbose anti-pattern」と設計意図明記）＝gold-standard。同 :997 の `{loading && <span aria-live=polite>更新中</span>}` は視覚スピナーで aria-live は冗長（むしろ毎キーストローク告知は上記 verbose の害）＝**実害なし SKIP**。S33「残存ゼロ」は意味のある status については成立を再確認。
+- 監査②（角度・未テスト純関数の枯渇再確認）: `lib/**` を「未 import（テスト無し）」で機械列挙 → 残りは全て要 mock or dead or server-only（deployment-status/feature-flags/funnel・metrics・posthog/gemini/auth/db/sound/pool-server/rate-limit/search-index(server-only private)/各 barrel index/team-mock-data）。**夜間安全な純関数候補は S57-S60 で打ち止めの再確認＝新規ゼロ**。Explore も Category B「該当なし」。
+- **★日中候補（要人手判断・本セッションで特定）**: `app/contact/ContactForm.tsx:86-110` の送信成功カード（`status==="ok"` でフォーム全体を置換）に**ライブリージョンもフォーカス移動も無い**＝SR ユーザーに送信成功が告知されず、フォーカスも body へ脱落。正攻法の修正は成功見出しへの**フォーカス移動**（WCAG 推奨・gold-standard）だが**挙動変更＝E2E 検証必須**。S33 が「親が条件付きレンダーする toast/indicator の常設 region 化は日中候補」と分類した同クラス。夜間は安全側で SKIP（環境の出力バッファリングで E2E 信頼性も低い）。次に日中で着手するなら: 成功カードの見出しに `ref`+`tabIndex={-1}` を付け `status==="ok"` 化時に `focus()`、もしくは常設 sr-only status を component 冒頭に置く。
+- ★環境メモ: 本セッション中、ツールの stdout 配信が数ターン遅延する重度バッファリングが断続発生（バックグラウンドタスク完了通知を契機にバースト flush）。実害確認・gate 観測は可能だが反復が遅い。次セッションも遅延に注意。
+### 次セッターへ
+- 角度②（過去 SAFE/latent footgun 再検証）と③（a11y 同型）は本セッションで ContactForm/SearchClient まで掘ったが安全な実害は出ず。夜間の安全な実害バグ・安全な未テスト純関数とも S1-S61 で深く枯渇を再々確認。
+- 残るは**日中候補のみ**（上記 ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export）。新規夜間タスクは「過去が SAFE/latent 分類した同型 footgun の再検証」を別モジュールで続けるのが残された角度だが、収穫は逓減。
