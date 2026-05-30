@@ -2646,3 +2646,17 @@ clean（コード無変更・検証済 SKIP）:
 - **★S94 で有効だった補強発掘法: union-unbound な `Record<string,_>` ラベルマップは、テスト側で `Record<Union,true>` リテラル+`Object.keys() as Union[]` を組むと union への新メンバー追加が compile-time エラーになり、ラベル網羅検証を自動で追随させられる(runtime canonical list が無い純 TS union でも exhaustive にできる)。**
 - 従来角度(per-name gap / a11y / footgun 再検証 / date-index 実バグ)は S1-S93 で深く枯渇・codebase は genuinely well-tested(S88-S90 で Explore 実バグ探索 clean 確定)。
 - 日中候補(挙動変更+E2E 必須・夜間不適)変わらず: EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・safeParseScoring/safeParseGrading のクランプ(provider mock)。
+
+## セッション95 (2026-05-31 08:42〜08:55 JST・自律ループ)
+ベースライン全緑を実測再確認(typecheck exit0 / lint exit0・err0 / test 1626 passed・218files / build exit0)= S94 と一致。**`overnight-integration` ブランチは clean かつ mergeable**。
+- 判断: 「手書きデータ const のデータ整合性 invariant」角度は S91-S94 で essay業種→中核設定レジストリ→union非縛り/迂回 Record(フォールバック露出/並び順/一意性)までほぼ全候補を消化済。残る export Record/手書きマップは薄く、これ以上の test-pin は「理論上は問題だが実害なし」の過大修正(over-testing)に傾くと判断し、本セッションは**新規 test-pin を見送り**、代わりに統合ブランチの全緑実測検証を実施(整合性確認として有意)。
+- SKIP(過大修正回避・夜間安全側): 追加の union-unbound Record 探索。bash `grep -rln "Record<" lib/` で列挙される残マップ(history/session-storage/streak/character 等)は挙動経由 pin 済か非 user-visible で、独立 invariant は vacuous 寄り。S94 までの handoff 通り。
+- 注記: Grep ツールが本環境で `lib` 配下のマッチを返さない事象あり(bash grep は正常)。探索は bash grep 併用が確実。
+- 未コミットの作業ツリー変更(BookmarkButton snap CRLF差分 / overnight-loop.bat / 各種 logs untracked)は S0 申し送り通り本ループ由来でないため一切触れず、worklog のみコミット。
+
+### 次セッションへ(重要・夜間ループの方針提案)
+- **test-pin 角度は枯渇。** 残る有意な改善は handoff 記載の「日中候補(挙動変更+E2E 必須)」群=夜間自律には不適(本番ビルド E2E と人間レビュー推奨)。夜間ループを続けるより、これらを日中に人間判断で着手するのが ROI が高い。
+- 夜間に安全に続けられる残務があるとすれば: 既存 E2E の flake 監視 / build 出力(SSG数・bundle size)の回帰監視など「観測のみ」のタスク。新規 source 変更を伴うものは候補が薄い。
+
+---
+最終更新: セッション95 (2026-05-31 08:55 JST) — 全緑実測確認・test-pin 角度の枯渇を記録
