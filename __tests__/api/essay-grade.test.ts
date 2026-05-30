@@ -109,4 +109,71 @@ describe("POST /api/essay-grade", () => {
       expect(typeof sub.axes.industryFit).toBe("number");
     }
   });
+
+  // mock 採点（GEMINI_API_KEY 未設定時のフォールバック）の得点ロジックは
+  // ユーザーに見える rank / passProbability / レーダーチャート4軸を決めるが、
+  // 既存テストは型・範囲しか見ておらず分岐が未固定だった。実挙動を回帰固定する。
+  // au-2024a-pm2-q1 の字数目安: ア[600-800], イ[800-1600], ウ[600-1200]。
+  it("mock grading: 全設問が字数レンジ内なら各70点・rank A・4軸オフセット(0/-5/-10/-15)", async () => {
+    const res = await POST(
+      makeReq(
+        {
+          questionId: "au-2024a-pm2-q1",
+          industry: "manufacturing",
+          answers: {
+            ア: "あ".repeat(700), // ∈[600,800] → 70
+            イ: "い".repeat(1000), // ∈[800,1600] → 70
+            ウ: "う".repeat(800), // ∈[600,1200] → 70
+          },
+        },
+        "10.1.0.6",
+      ),
+    );
+    expect(res.status).toBe(200);
+    const parsed = await res.json();
+
+    expect(parsed.rank).toBe("A"); // avg 70 はちょうど A 境界(>=70)
+    expect(parsed.passProbability).toBe(70); // round(mean([70,70,70]))
+
+    const expectedLen: Record<string, number> = { ア: 700, イ: 1000, ウ: 800 };
+    for (const sub of parsed.subResults) {
+      expect(sub.score).toBe(70);
+      // axes は score から固定オフセットで導出（レーダーチャート表示）
+      expect(sub.axes.relevance).toBe(70);
+      expect(sub.axes.logic).toBe(65);
+      expect(sub.axes.concreteness).toBe(60);
+      expect(sub.axes.industryFit).toBe(55);
+      expect(sub.charCount).toBe(expectedLen[sub.key]);
+    }
+  });
+
+  it("mock grading: 字数不足設問は25点に落ち、混在で rank B 境界(avg>=50)", async () => {
+    const res = await POST(
+      makeReq(
+        {
+          questionId: "au-2024a-pm2-q1",
+          industry: "manufacturing",
+          answers: {
+            ア: "あ".repeat(700), // ∈[600,800] → 70
+            イ: "い".repeat(100), // < 800*0.5=400 → 25
+            ウ: "う".repeat(700), // ∈[600,1200] → 70
+          },
+        },
+        "10.1.0.7",
+      ),
+    );
+    expect(res.status).toBe(200);
+    const parsed = await res.json();
+
+    // scores [70,25,70] → avg round(55)=55 → B(>=50)。50 境界が C に退行しないことを固定。
+    expect(parsed.passProbability).toBe(55);
+    expect(parsed.rank).toBe("B");
+
+    const byKey: Record<string, { score: number }> = Object.fromEntries(
+      parsed.subResults.map((s: { key: string; score: number }) => [s.key, s]),
+    );
+    expect(byKey["ア"].score).toBe(70);
+    expect(byKey["イ"].score).toBe(25); // len 100 < minChars(800)*0.5
+    expect(byKey["ウ"].score).toBe(70);
+  });
 });
