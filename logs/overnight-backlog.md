@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション20):** P0 全件 done/SKIP。P1 進行中。
+> S20: P1新観点⑤「モーダル閉時のフォーカス復帰」を全数監査。**focus-in したのに復帰しない半実装 defect を2件修復**=
+> Copilot デスクトップ `CopilotDesktopFloating`(`133682d`)+モバイルシート `CopilotMobileSheet`(`1da513a`)。
+> 開く際にパネルへフォーカスを移すのに閉じる際に FAB へ戻さず、キーボード利用者が body に取り残されていた(WCAG 2.4.3)。
+> `fabRef`+`prevOpenRef` で閉じ遷移を検知し復帰(各テスト付き・stash で落ちることを実測)。
+> SKIP: ⑤残り=radix Dialog 系は自動処理クリーン/KeyboardShortcutsHelp・ReviewOverlay 等は focus-in 無し=契約破れ無し
+> (focus-trap 新設は overreach)。⑥ sitemap lastmod=E-5 で自動前進化済=成熟。① サーバー日付=blog は固定編集日付+`<time>`/
+> 他は client 端末TZ=クリーン。**⑤⑥①観点を一巡 done。**
+> **次は: P1新観点で残るは ③`<time dateTime>`(機能追加寄り=慎重に実害判定)。夜間の安全な実害バグは S1-S20 で枯渇傾向。**
+> **日中候補(tabs矢印キー/コピー通知統一/MilestoneToast 防御的ref化)or 未踏観点の開拓を検討。**
+>
 > **状態 (2026-05-30 セッション19):** P0 全件 done/SKIP。P1 進行中。
 > S19: S18起案の P1新観点を3クラス着手。**①日付TZ表示で実バグ1件を発見・修復**=
 > `ReviewClient` の getTodayStr/getNextReviewDate が UTC日付で復習の期日境界が JST 09:00 に切替わり、

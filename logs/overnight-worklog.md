@@ -792,3 +792,37 @@
 - 次セッションへ: 日付TZ表示観点の残りは StudyPlanClient min(実害僅少SKIP)のみ=ほぼ一巡。未着手の S18新観点は
   ③`<time dateTime>`(機能追加寄り・慎重に) ⑤フォーカストラップ/復帰 ⑥sitemap lastmod 妥当性。
   日中候補(tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮)は据え置き。
+
+## セッション20 2026-05-30 11:09 JST（P1 新観点⑤ フォーカス復帰 — モーダル閉時のフォーカス管理）
+- done: 【実バグ=a11y/WCAG 2.4.3】デスクトップ版 AI コパイロット `CopilotDesktopFloating` が
+  開く際にパネル内へフォーカスを移す(L1450-1460 既存)のに、閉じる際にトリガー(FAB)へ戻していなかった。
+  Escape/オーバーレイ/内部の閉じるで閉じるとキーボード利用者が document.body に取り残される
+  (focus-in 契約の片割れ欠落=半実装の defect)。`fabRef`+`prevOpenRef` を追加し閉じ遷移を検知して
+  `fab.focus({preventScroll})` を戻す。/ コミット `133682d`
+  / 検証: typecheck0/lint(err0)/test272緑/build緑。新規 `__tests__/components/CopilotDesktopFloating.focus.test.tsx`
+  (defaultOpen→Escape→FAB が activeElement)。**修正前は git stash で落ちることを実測**。
+- done: 【実バグ=a11y】モバイル版 `CopilotMobileSheet` も同型。focus-in は無いが、シート内入力を
+  操作したキーボード利用者が閉じた後 body に取り残される。同じ最小 fix(fabRef+復帰 effect)を適用し
+  デスクトップ版と挙動統一。/ コミット `1da513a` / 検証: typecheck0/lint(err0)/test273緑/build緑。
+  上記テストにモバイル版 describe を追加(getByText("AIに聞く")→Escape→FAB 復帰)。**stash で落ちることを実測**。
+- SKIP(実害なし/overreach): ⑤ フォーカス復帰 残りの全数監査結果。
+  ・radix Dialog 利用(FeedbackGateModal/OnboardingTour/SessionSummaryDialog/ui/dialog 系)= focus trap/復帰を
+    自動処理=クリーン。
+  ・`KeyboardShortcutsHelp`(「?」キーで開く global help)/`ReviewOverlay`(StreamQuizPlayer)/モバイルシートの
+    オーバーレイ自体 = いずれも**開く際に focus-in していない**ため「壊れた契約」ではない。focus-trap+focus-in を
+    新設するのは機能追加(overreach)=夜間は SKIP。Copilot 2件のみが「focus-in したのに復帰しない」半実装 defect だった。
+- SKIP(成熟・E-5 で対処済): ⑥ sitemap lastmod 妥当性。`lib/seo/sitemap-xml.ts` は `STATIC_CONTENT_DATE`(deploy毎に
+  自動前進)/`CONTENT_LAST_UPDATED`(問題データ最終更新から算出)を既に使用し、固定リテラルの陳腐化は解消済
+  (コメント E-5 明記)。blog は `publishedAt/updatedAt` のデータ値。固定値の陳腐化なし=変更不要。
+- SKIP(クリーン): ① サーバー描画のユーザー向け日付の TZ 表示。blog 記事(`app/blog/[slug]/page.tsx`)は
+  `post.publishedAt.slice(0,10)` で**固定の編集日付**を表示し `<time dateTime>` も適切(new Date() の TZ 変換なし)=クリーン。
+  その他の可視日付(ranking/review/bookmarks/essay-history/tutor 等)は全て "use client" でローカルストレージ由来=
+  端末TZ(日本ユーザー=JST)で安全(backlog① の注記通り)。S19 の復習期日 JST 化で実害分は対処済。
+
+## セッション20 まとめ
+- 実改善2件(Copilot デスクトップ/モバイルのフォーカス復帰=WCAG 2.4.3 半実装 defect・各テスト付き `133682d`/`1da513a`)
+  + 監査SKIP3件(⑤残り=overreach回避 / ⑥sitemap lastmod=E-5成熟 / ①サーバー日付=クリーン)。
+- テーマ: P1新観点⑤「モーダル閉時のフォーカス復帰」を全数監査。focus-in したのに復帰しない半実装 defect は
+  Copilot 2件のみ=両方修復。他は radix 自動処理 or focus-in 無し(契約破れ無し)で完了。⑤⑥①観点を一巡 done。
+- 次セッションへ: P1新観点で残るは ③`<time dateTime>`(機能追加寄り=慎重に実害判定)。夜間の安全な実害バグは
+  S1-S20 でほぼ枯渇。日中候補(tabs矢印キー/コピー通知統一/MilestoneToast 防御的ref化)or 未踏観点の開拓を検討。
