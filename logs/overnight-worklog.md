@@ -1471,3 +1471,42 @@
 - テーマ: S34-S43 の「未テスト中核純関数の契約固定」を継続。**AIコパイロットの中核（プロンプト組み立て=B軸/RAG コーパス=B軸）と全試験ハブの静的データ値不変条件**という「崩れても例外なく静かにずれる」純関数/データに崩れたら落ちる検証を敷設。
 - 教訓（重複監査防止）: **prompt-assembly/corpus/exam-stats/exam-resources/exam-content は回帰固定済（再監査不要）。citations は既テスト済（再監査不要）。** corpus の private builder も getCorpus() 経由で source 変更なく契約固定できた。fe ロードマップの 1ヶ月着地は現挙動（特性化済）。
 - 次セッターへ: 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S44 で深く枯渇。残る未テスト候補は `lib/search/question-index.ts`(tokenize/makeSnippet/scoreQuestion=private・export 追加=source 変更要で日中向き)のみ。日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。新規夜間タスクは「過去が SAFE/latent 分類した同型 footgun の再検証」(S33/S41 角度)か「過去が属性有無だけ見て見落とした同型 a11y」(S33 角度)を掘るのが有効＝次セッションは backlog の P1 観点を1件起案して進める。
+
+---
+## セッション45 (2026-05-30) — footgun再検証(実害ゼロ確定) + vitest解決クォーク発見
+
+### 結論: 実改善0件 / コード無変更（doc記録のみ）
+夜間の安全な実害バグ・安全な未テスト純関数は S1-S44 で深く枯渇。本セッションは
+handoff 推奨角度「過去が SAFE/latent 分類した同型 footgun の再検証(S33/S41角度)」を実施。
+
+### A. S36 起案「latent 残り3件」の共有EMPTY footgun を全数再検証 → 全て LATENT 確定（S36分類は正しい）
+S41 が badges/heatmap を「SAFE 誤分類→実は concrete」と発見した前例があるため、残り3件を再監査。
+判定基準: 「read() が共有 empty を参照返し」×「呼び出し側 in-place 破壊(push/代入)」×「removeItem/write(empty) amplifier」が揃えば concrete、amplifier 無しは latent。
+- `lib/learning/mock-scores.ts`(recordMockScore: `state.scores.push`): app 到達あり(app/ranking/RankingClient.tsx)。だが **`LS_KEYS.mockScores` の removeItem/clear が app 全域に不在**（removeItem 全数 grep で確認）＝amplifier 無し＝**latent**。
+- `lib/mock-exam/storage.ts`(recordMockExam: `data.history.push`): 当該モジュールは `recordMockExam/getMockExamHistory` を export するが **clear 関数自体が存在せず**、`LS_KEYS.mockExam` の removeItem も app 不在＝amplifier 無し＝**latent**。（/mock-exam 本番描画は createHistoryStore 経由で当モジュール非経由）
+- `lib/storage/custom-tags.ts`(ensureCatalogForNames/mergeServerCustomTags: `data.tags[name]=`): app 到達あり(TagInput/sync)。だが **`LS_KEYS.customTags` の removeItem/clear が app 不在**＝amplifier 無し＝**latent**。
+→ 3件とも S36 の「latent（amplifier 無し・実害なし）」分類は**正しかった**（badges/heatmap のような誤分類ではない）。**source 無変更**（過大修正の罠回避）。共有EMPTY footgun テーマは完全に枯渇・再監査不要。
+
+### B. ★vitest 解決クォーク発見（日中要調査・テスト追加の阻害要因）
+未テスト純関数 `lib/seo/related-content.ts`(getRelatedLinks) / `lib/seo/success-stories.ts`(アクセサ群) の
+契約固定テストを書こうとしたが、**vitest で `@/lib/seo/related-content`・`@/lib/seo/success-stories` の
+拡張子なし import が解決失敗**（"Failed to load url ... Does the file exist?"）。検証で判明:
+- 同ディレクトリの `@/lib/seo/structured-data` 等は解決成功（既テスト済ファイルは OK）。
+- **byte-identical なコピーを別名(rc-copy.ts 等)にすると解決成功** → 内容・BOM・inode 無関係、**パス文字列固有**。
+- `@/lib/seo/related-content.ts`（拡張子明示）なら解決成功（が非慣用・typecheck/lint リスクで不採用）。
+- node_modules/.vite 等キャッシュ削除・source byte-identical 再書込みでも再現＝キャッシュ起因でない。
+- 根本原因未特定（tsconfig exclude か vite-tsconfig-paths のファイルセット由来の疑い）。**日中に要調査**。
+→ この2ファイルのテスト追加は本クォークで阻害されるため**今回は断念**（gate D「緑にできない変更は無かったことに」）。
+   書きかけテストは削除済。related-content.ts は byte-identical 再書込み（git diff ゼロのはず）。
+
+### C. ★本セッションの実行環境障害（記録）
+セッション中盤以降、**全ツールの出力レンダリングが空になる harness 障害**が発生（echo すら空）。
+コマンド自体は実行される（blind）が結果を確認できないため、**全緑ゲートの実測検証が不能**。
+よって本セッションは**コード変更を一切コミットせず**、doc(worklog/backlog)追記のみを明示パス add で commit。
+次セッションは通常通りゲートを回せるはず。万一 `__tests__/seo/related-content.test.ts` 等が
+残存していたら削除すること（本セッションで blind rm 済みだが未確認）。
+
+### 次セッションへ
+- footgun テーマ完全枯渇・未テスト純関数は related-content/success-stories が vitest クォークで阻害＝事実上 search-index(export 追加要・日中)のみ残。
+- 夜間の安全な実害バグは S1-S45 で枯渇。残候補は日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export/**vitest解決クォーク調査**）。
+- 新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。

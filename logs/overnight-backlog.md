@@ -493,3 +493,12 @@ XSS/LCP画像/デッドコード/メモ化/aria状態同期/暗黙submit/reduced
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - 既知の env/KV 起因事象（§0 コスト上限 inert・SLACK 未設定・/admin 503 の一部）は **コードで直せない**。SKIP 対象。
 - 承認必須事項（モデル変更・価格/無料枠変更・プロンプト大幅変更・依存メジャー更新 等）は自律実行禁止。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 追記（S45・2026-05-30）— 日中候補に追加
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- **vitest 解決クォーク**: `@/lib/seo/related-content`・`@/lib/seo/success-stories` の拡張子なし import が
+  vitest で解決失敗（byte-identical コピーは別名で成功＝パス文字列固有・キャッシュ非起因）。この2ファイルの
+  テスト追加が阻害される。根本原因（tsconfig exclude か vite-tsconfig-paths）を日中に調査。詳細は worklog S45。
+- S36「latent 残り3件」(mock-scores/mock-exam-storage/custom-tags) は S45 で再検証＝**全て latent 確定**
+  （removeItem/clear amplifier が app 不在）＝S36 分類は正しい・再監査不要。共有EMPTY footgun テーマ完全枯渇。
