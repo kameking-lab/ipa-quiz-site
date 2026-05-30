@@ -1,6 +1,11 @@
 import { describe, it, expect, beforeEach } from "vitest";
 
-import { createHistoryStore, type HistoryEntry } from "@/lib/storage/history";
+import {
+  createHistoryStore,
+  getPremiumFlag,
+  setPremiumFlag,
+  type HistoryEntry,
+} from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 
 beforeEach(() => {
@@ -126,5 +131,38 @@ describe("createHistoryStore — export / import / reset", () => {
     store.reset();
     expect(store.getAllEntries()).toEqual([]);
     expect(store.getStarredIds()).toEqual([]);
+  });
+});
+
+describe("getPremiumFlag / setPremiumFlag — プレミアム判定フラグの LS 往復", () => {
+  it("未設定時は false を返す（既定は無料）", () => {
+    expect(getPremiumFlag()).toBe(false);
+  });
+
+  it("setPremiumFlag(true) → getPremiumFlag() が true で往復する", () => {
+    setPremiumFlag(true);
+    expect(getPremiumFlag()).toBe(true);
+  });
+
+  it("setPremiumFlag(false) → getPremiumFlag() が false で往復する", () => {
+    setPremiumFlag(true);
+    setPremiumFlag(false);
+    expect(getPremiumFlag()).toBe(false);
+  });
+
+  it('保存値は厳密に "1"/"0" のセンチネル（true→"1"・false→"0"）', () => {
+    setPremiumFlag(true);
+    expect(localStorage.getItem(LS_KEYS.premium)).toBe("1");
+    setPremiumFlag(false);
+    expect(localStorage.getItem(LS_KEYS.premium)).toBe("0");
+  });
+
+  it('"1" 以外の値（"true" など truthy 文字列）は false 扱い＝厳密一致のみプレミアム', () => {
+    localStorage.setItem(LS_KEYS.premium, "true");
+    expect(getPremiumFlag()).toBe(false);
+    localStorage.setItem(LS_KEYS.premium, "0");
+    expect(getPremiumFlag()).toBe(false);
+    localStorage.setItem(LS_KEYS.premium, "1");
+    expect(getPremiumFlag()).toBe(true);
   });
 });
