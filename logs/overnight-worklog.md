@@ -755,3 +755,40 @@
 - Explore 2回(数値破綻5件 / effect・async4件 計9件の提案)を**全て自己精査で棄却**=過大修正の罠を実地で回避。コード無変更。
 - ベースライン全緑(typecheck0/lint0err/test267/build緑)を冒頭実測。S15-S17 の枯渇判定を独立観点で再確認。
 - 次セッションへ: backlog 末尾に新 P1観点を追記済(下記参照)。
+
+## セッション19 2026-05-30 11:00 JST（S18起案 P1新観点①日付TZ表示を全数監査 → 復習の期日境界に実バグ発見・修復 / ②soft404・④CLS img も全数監査=実害ゼロ）
+- 冒頭ベースライン: test 267 passed(exit0)を実測(現 HEAD `0630101`)。
+- done: 【実バグ=JST境界 off-by-one・S18新観点① 日付TZ表示】`app/review/ReviewClient.tsx` の
+  `getTodayStr`/`getNextReviewDate` が `new Date().toISOString().slice(0,10)`=**素のUTC日付**を使っており、
+  復習の「期日」判定境界が **JST 09:00** で切り替わっていた(streak/daily-challenge は `jstDateString` で
+  JST 0:00 境界=**不一致**)。そのため JST 00:00〜09:00 の間は **本日が期日の復習が翌 09:00 まで表示されない**
+  off-by-one(朝学習者に実害)。両ヘルパを既存の単一情報源 `lib/streak/core.ts::jstDateString` へ委譲し
+  JST暦日へ統一(now 引数を受け付け export=決定論テスト可能化)。サーバ `/api/review/due` はクライアント供給の
+  `today` 文字列比較のみ(`nextReviewAt > today`)で**挙動不変**・既存ストアの旧UTC日付も JST today 比較で
+  自己回復(09:00→0:00 に早まるのみ=非回帰)。/ コミット `215f934`
+  / 検証: typecheck0/lint0err(既存ux-audit警告1のみ)/test271緑(267+新規4)/build完走。
+  新規 `__tests__/components/ReviewClient.dates.test.tsx`(now注入で JST早朝0:30/日中12:00 を検証)。
+  **崩れたら落ちる検証=実測**: 旧UTC実装に差し戻すと2件落ちる(「expected '2026-05-30' to be '2026-05-31'」
+  「expected '2026-05-31' to be '2026-06-01'」)ことを実機で確認後、JST実装へ復元。
+- SKIP(実害僅少・S17記録を再確認): `StudyPlanClient.tsx:96` の `today=new Date().toISOString().slice(0,10)`(UTC)は
+  `<input type=date>` の `min` のみに使用。JST 00:00〜09:00 に min=JST前日となるが、プラン生成は JST `daysUntil` で
+  `days<=0` guard 済→前日選択でも非生成=無害。S17 の SKIP 判断を踏襲(過大修正の罠回避・夜間は安全側)。
+- SKIP(全数監査=実害ゼロ・S18新観点② soft404): 全 dynamic route segment を監査。indexable な動的ルートは
+  全て `dynamicParams=false`(ハード404) or 実行時 `notFound()`(success-stories/essays/essay/[questionId] 等は
+  invalid param で notFound 実測確認)で保護。tool/share ページ(`study-plan/result/[id]`=robots noindex、
+  `og/streak/[days]`=画像route)は非indexable。中間 path segment(essay/[exam]・essays/.../[section]・
+  [exam]/afternoon/[year]・q/[exam] 等)は **page.tsx 不在**→ハード404。**200フォールバックで invalid param を
+  描画する indexable ルートは存在せず=soft404 実害ゼロ**。
+- SKIP(全数監査=実害ゼロ・S18新観点④ CLS img): raw `<img>` は全 .tsx で2件のみ。`SocialShare.tsx`(/account/badges
+  =noindex)は `width={1200} height={630}` 明示でアスペクト比保持=CLS無し。`StudentIdUpload.tsx`(noindex auth・
+  ユーザアップロードのdataURL preview)は `max-h-56 object-contain` で高さ制約・操作後preview=初期描画CLS無し。
+  indexable コンテンツ画像は next/Image(intrinsic 寸法)で寸法未指定なし。→ raw-img CLS 実害ゼロ。
+
+## セッション19 まとめ
+- 実改善1件(復習の期日境界 JST 暦日統一=S18新観点①で発見した実バグ、テスト4件付き `215f934`)+ SKIP3件
+  (StudyPlanClient min=実害僅少/soft404 全数監査=実害ゼロ/raw-img CLS 全数監査=実害ゼロ)。
+- S18起案の P1新観点を3クラス着手: ①日付TZ表示で**実バグ1件発見・修復**(S16-S17 のJST境界テーマが
+  「表示用日付/期日境界」にも残存していた=横展開漏れを補完)、②soft404・④CLS img は全数監査で実害ゼロを確定(記録)。
+- 次セッションへ: 日付TZ表示観点の残りは StudyPlanClient min(実害僅少SKIP)のみ=ほぼ一巡。未着手の S18新観点は
+  ③`<time dateTime>`(機能追加寄り・慎重に) ⑤フォーカストラップ/復帰 ⑥sitemap lastmod 妥当性。
+  日中候補(tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮)は据え置き。

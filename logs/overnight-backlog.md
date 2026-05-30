@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション19):** P0 全件 done/SKIP。P1 進行中。
+> S19: S18起案の P1新観点を3クラス着手。**①日付TZ表示で実バグ1件を発見・修復**=
+> `ReviewClient` の getTodayStr/getNextReviewDate が UTC日付で復習の期日境界が JST 09:00 に切替わり、
+> JST 00:00〜09:00 は本日が期日の復習が隠れていた off-by-one。`jstDateString` へ委譲し JST 0:00 境界へ統一(`215f934`、テスト4件)。
+> S16-S17 の JST境界テーマが「表示用日付/期日境界」にも残存していた横展開漏れを補完。
+> ②soft404=全 dynamic route を全数監査し indexable は全て dynamicParams=false/notFound 保護・中間segmentはpage不在ハード404・
+> tool/shareはnoindex=**実害ゼロ**。④CLS img=raw img 2件とも非indexable(寸法明示 or 高さ制約preview)=**実害ゼロ**。
+> SKIP: StudyPlanClient input min(UTC日付だが days<=0 guard で無害=S17踏襲)。
+> **次は: 未着手の S18新観点 ③`<time dateTime>`(機能追加寄り慎重に)・⑤フォーカストラップ/復帰・⑥sitemap lastmod 妥当性を**
+> **全数監査するか、日中候補(d)MilestoneToast 防御的ref化(同型 S1/S4 で2回実害化・予防)を慎重実施。**
+>
 > **状態 (2026-05-30 セッション18):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは枯渇を再確認。
 > S18: 独立した新観点2クラスを全数監査=**実害バグゼロを確定**(コード無変更)。
 > ①数値表示破綻(>100%/NaN/0除算/配列境界/split): Explore提案5件を全て自己精査で棄却。
