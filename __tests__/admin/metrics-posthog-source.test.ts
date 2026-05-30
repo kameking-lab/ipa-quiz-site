@@ -1,4 +1,4 @@
-import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import { it, expect, beforeEach, afterEach, vi } from "vitest";
 import { fetchMetrics } from "@/lib/admin/metrics/posthog";
 import { resolveRange } from "@/lib/admin/metrics/range";
 
