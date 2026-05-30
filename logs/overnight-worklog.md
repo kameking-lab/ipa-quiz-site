@@ -1670,3 +1670,35 @@ Explore は「NO test coverage」判定が不正確な箇所が多く（question
   `lib/storage/{settings,notifications,user-context,character,last-question}.ts`(defaults マージ・型検証＝低分岐だが SSOT)・
   `lib/copilot/rag-pipeline.ts`(async orchestration・mock 要・夜間は慎重に)・`lib/exam-config.ts` の buildExtractionPrompt 系(固定値・価値中)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション50 (2026-05-30 19:38 JST) — S49 handoff の `lib/storage/{settings,notifications,user-context,character,last-question}` SSOT 5件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定5モジュール（test 855→883・132→137 files）。全ゲート全緑。
+冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/HEAD `23f6124`(S49)。
+S49 handoff が名指しした「defaults マージ・型検証＝低分岐だが SSOT」のストレージ純関数5件を、`grep -rl 'lib/<path>"' __tests__/` で
+既存 import を1件ずつ確認した上で着手（settings/notifications/character は専用テスト皆無、last-question は component test が
+happy-path のみ・user-context は migrate-key.test が移行/既定のみ＝検証分岐は未カバー）。全件 read-only 監査で実バグ無し＝characterization。
+各テストは source mutation→`git checkout --` revert で「崩れたら落ちる」を実測。全ゲート（typecheck/lint/test/build）緑を batch でコミット前に確認。
+
+- done `lib/storage/settings.ts`（出題オプション SSOT）。readSettings の欠落フィールド既定補完・**recordHistory のみ既定 true
+  (履歴記録はオプトアウト)**・既定オブジェクトのコピー返却・往復を pin。/ コミット `4a36290` / `__tests__/storage/settings.test.ts`(6件)。
+  **DEFAULTS.recordHistory を false に反転すると「未保存なら true」等4件が落ちる**ことを実測(revert済)。
+- done `lib/storage/notifications.ts`（通知設定 SSOT）。readNotificationPrefs の `{...DEFAULT_PREFS,...parsed}` マージ・
+  **streakReminder/weeklyDigest=true(オプトアウト)・reminderHour=21(JST)**・往復を pin。/ コミット `db36107` / `notifications.test.ts`(5件)。
+  **reminderHour 既定 21→0 で3件落ち**を実測。※read は no-raw/error で DEFAULT_PREFS を参照返しだが全 primitive＝S41 で SAFE 確定済（footgun でない）。
+- done `lib/storage/character.ts`（AIキャラ設定）。readCharacterState の **id を isCharacterId 検証(未知→既定 haru)**・
+  **enabled は文字列 "true" のみ真(null→既定 false・"1"/"false"→false)**・id/enabled の別キー独立保存を pin。/ コミット `e409656` / `character.test.ts`(7件)。
+  **`rawEnabled==="true"` を `!==""` に緩めると「"true" 以外は false」テストが落ちる**ことを実測。
+- done `lib/storage/last-question.ts`（継続再開ポインタ）。readLastQuestion の **6 フィールド全型一致バリデーション(1つでも欠落/型違いなら null)**・
+  破損 JSON fail-soft・write/clear 往復を pin。/ コミット `762fff4` / `last-question.test.ts`(6件)。
+  **qNumber の型チェックを `false` に無効化すると「数値欠落なら null」テストが落ちる**ことを実測。
+- done `lib/storage/user-context.ts`（訪問履歴・パーソナライズ用）。recordHomepageVisit の **visitCount 単調増加・lastVisitAt ISO stamp・
+  書込み後状態の返却**・resetUserContext の既定復帰を pin（移行/既定マージは既存 migrate-key.test 担当＝重複回避）。/ コミット `7cbec45` / `user-context.test.ts`(4件)。
+  **`cur.visitCount+1` を `cur.visitCount` にすると増分系3件が落ちる**ことを実測。
+
+### 次セッションへ
+- settings/notifications/character/last-question/user-context は回帰固定済（再監査不要）。**S49 handoff の storage SSOT 5件は本セッションで全消化。**
+- ★lint が稀に exit 3221225477(Windows STATUS_ACCESS_VIOLATION=segfault)で落ちることがある＝**lint クラッシュは lint エラーでなく再実行で通る**（本セッションで1回遭遇・即再実行で 0 errors）。次セッターは慌てず再実行のこと。
+- まだ未テストで残る純関数候補: `lib/sync/client.ts::postSync` の未カバー枝（generic HTTP 500→`{error,"HTTP NNN"}`・json.entries 非配列→local fallback・merged/total `??0`）＝merge.test.ts に追記可。
+  `lib/exam-config.ts` の buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt(プロンプト文字列・固定値・価値中)・`lib/essays/load.ts`(薄いラッパ)・`lib/copilot/rag-pipeline.ts`(async・mock 要・夜間慎重に)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
