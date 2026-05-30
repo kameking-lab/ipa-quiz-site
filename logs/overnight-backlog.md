@@ -1,5 +1,14 @@
 # 夜間自律改善 バックログ（優先度順）
 
+> **状態(2026-05-30 セッション60):** P0 全件 done/SKIP。P1 進行中。
+> S60: S59 handoff の「残 fetch 系」を同手法(vi.stubGlobal/stubEnv)で**回帰固定3本**(実改善0・source 無変更)。
+> ①sync/* 同期ラッパ(syncBookmarks/syncCustomTags/syncStudyPlans)=endpoint routing + merge-on-ok ゲート(非okで非マージ)+study-plan の payload 非object 除外, `8126169`。
+> ②stats/gsc=readGscConfig の 4 env ゲート(1欠落→null=/stats 連携準備中)+四捨五入/空日付除外/日付昇順/roundBucket プライバシーラベル, `8e8f0d5`。
+> ③stats/posthog=apiKey+projectId ゲート+機能/参照元バケット分類+pct小数1桁+降順+総数0→[]+results欠落/非ok→null, `9a78cb5`。test 1096→1125(+29 it・164→167 files)。各 mutation→cp 復元で実測。
+> **★教訓: (1) source mutation 検証は sed -i か Edit を使え。PowerShell Set-Content は UTF-8 日本語を mojibake 化し esbuild parse error(「no tests」)を誘発＝厳禁。バックアップ/復元は cp(byte-exact)。 (2) sync ラッパの merge-on-ok ゲートは postSync が非ok時にローカル entries を echo するため除去しても behavior 検出不能＝load-bearing は endpoint routing と ok-path merge。 (3) stats/gsc・posthog は Date.now を transform に含まず決定的＝fetch mock だけで安全。**
+> 残 fetch 系 = deployment-status(Date.now 依存+価値ある計算が inline 未export＝brittle・日中向き)・launch-monitoring/data(buildAlerts 要 export=日中向き)・monitoring/sentry(SDK)。真の要 mock = sound(AudioContext)/gemini(SDK)/auth/db。
+> **次は: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。fetch+LS/env mock で安全に固定できる純関数寄りモジュールは S57-S60 で概ね打ち止め。**
+>
 > **状態(2026-05-30 セッション59):** P0 全件 done/SKIP。P1 進行中。
 > S59: S58 が「要 mock=夜間 SKIP」と仕分けた未テスト群を**回避策で再検証し4本を回帰固定**（実改善0・source 無変更）。
 > ①`a11y/use-quiz-choice-roving`（hook→sibling と同じ render/fireEvent で mock 不要・フォーカス専用ロービング契約, `3f2ac28`）

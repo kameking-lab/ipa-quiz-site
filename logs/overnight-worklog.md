@@ -1984,3 +1984,15 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   `lib/posthog`・`lib/admin/metrics/posthog`・`lib/admin/launch-monitoring/data`（buildAlerts は pure だが未 export＝export 追加要で日中向き）。
   **真の要 mock 残**: motivation/sound（AudioContext）・ai/providers/gemini（SDK）・auth/*・db/prisma。**barrel**: onboarding/streak/sync index（SKIP）。
 - 次の有効角度（不変）: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)、④上記 sync/* の fetch+LS mock 固定。
+
+## セッション60 (2026-05-30) — S59 handoff の「残 fetch 系」を同手法(vi.stubGlobal/stubEnv)で回帰固定3本
+
+done: sync/* 同期ラッパの回帰固定 / 8126169 / __tests__/sync/wrappers.test.ts。postSync は merge.test.ts で網羅済だが syncBookmarks/syncCustomTags/syncStudyPlans は未テストだった。fetch を vi.stubGlobal で mock し実 LocalStorage 経由で「正しい /api/account/* へ POST」「ok 応答時のみサーバ集合をマージ」「study-plan は payload 非object を除外」を pin。endpoint 文字列改変 / merge 呼出し除去の mutation で実測。test 1096→1103
+done: stats/gsc の回帰固定 / 8e8f0d5 / __tests__/stats/gsc.test.ts。readGscConfig は GSC 4 env 全揃いのみ config 返却(1つ欠落→null=/stats 連携準備中)・fetchGsc30dTotals 四捨五入/空行0・fetchGscDailyTrend 空日付除外+日付昇順・fetchGscTopQueries の roundBucket プライバシーラベル(1桁/数十回/…/10万回以上)を pin。設定ゲート1条件除去/バケット閾値改変/ソート反転で実測。test 1103→1115
+done: stats/posthog の回帰固定 / 9a78cb5 / __tests__/stats/posthog.test.ts。isPosthogStatsConfigured は apiKey+projectId 双方必須・機能バケット分類(クイズ/午後問題/論文添削/模試/ブログ/ランキング/用語集/その他)+空パス除外+pct小数1桁+降順+総数0→[]・参照元バケット(Direct/Search/Social/Referrer)・results欠落/非ok→null を pin。設定ゲート/空パス除外/参照元分類/ソートの mutation で実測。test 1115→1125
+
+★教訓1: PowerShell の Set-Content は既定 encoding で UTF-8 日本語文字列を mojibake 化し esbuild parse error を誘発(「no tests」になる)。source への mutation 検証は sed -i(byte 保持)か Edit ツールを使うこと。Set-Content は厳禁。バックアップ/復元は cp(byte-exact)で行う。
+★教訓2: sync ラッパの merge-on-ok ゲートは「データ安全」契約に見えるが、postSync は非ok 時にローカル entries をそのまま echo するため merge(local) は冪等で無害＝ゲート除去は behavior 上検出不能。load-bearing な契約は endpoint routing と ok-path merge の2つ。検証はそこへ当てる。
+★教訓3: stats/gsc・posthog は Date.now を transform に含まず(期間は SQL 文字列側)決定的＝fetch mock だけで安全に固定できる良候補だった。deployment-status は逆に Date.now 依存+価値ある計算が inline(未 export)＝夜間は brittle で見送り(launch-monitoring の buildAlerts も要 export=日中向き)。
+
+handoff: S59 が挙げた「残 fetch 系」のうち sync/*・stats/gsc・stats/posthog は消化。残 = deployment-status(Date.now 依存・要 export で日中向き)・launch-monitoring/data(buildAlerts 要 export=日中向き)・monitoring/sentry(SDK ラッパ)。真の要 mock = sound(AudioContext)/gemini(SDK)/auth/db で夜間不向き。次セッションは ②過去 SAFE/latent footgun 再検証(S33/S41)・③属性有無で見落とした同型 a11y(S33)が残された有効角度。
