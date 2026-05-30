@@ -1733,3 +1733,13 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   `lib/sync/{study-plan,bookmark,custom-tag}-sync.ts`(薄い orchestration＝pure部分の getPlanSyncEntries/mergeServerPlans 等は S48 で既テスト・wrapper は fetch+localStorage mock 要)・
   `lib/stats/{gsc,posthog}.ts`(外部API fetch・mock 要・純関数でない)。**夜間の安全な実害バグ・安全な未テスト純関数とも S1-S51 で深く枯渇。**
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション52 (2026-05-30 20:0x JST) — 中断: ツール出力チャネル不全
+- 症状: Bash / PowerShell / Read のすべてで stdout/ファイル内容が空で返る(echo の単純文字列すら表示されない)。
+  典型的に `git status` 等は実行されるが結果を観測できない。プローブ7回以上すべて空。
+- 影響: 全緑ゲート(typecheck/lint/test/build)と実測検証を「観測」できないため、コード変更は安全に検証不能。
+  夜間規律「検証できない変更は無かったことにする」に従い、本セッションではコード変更を一切行わない(commitなし)。
+- 確認できた事実(出力が一時的に見えた範囲): HEAD=8393513(セッション51), origin あり(push可), 作業ツリーは
+  BookmarkButton.snap と overnight-loop.bat の既存未コミット差分のみ(本セッション起因の変更なし)。
+- 次セッションへの申し送り: 出力チャネルが回復しているか `echo OK` で最初に確認すること。
+  回復していれば backlog 最優先(未テスト純関数の契約固定が直近の流れ)から通常どおり再開。
