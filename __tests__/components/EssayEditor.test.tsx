@@ -49,4 +49,12 @@ describe("EssayEditor — 論述 textarea のアクセシブルネーム", () =>
       expect(document.getElementById(describedby as string)).not.toBeNull();
     }
   });
+
+  // 業種選択 <select> も CardTitle「業種を選択」とは紐づかない裸のコントロールで、
+  // textarea 群と違い aria-label が抜けていた（同じ a11y クラスの取りこぼし）。
+  it("業種選択 select がアクセシブルネームを持つ", () => {
+    render(<EssayEditor question={makeQuestion()} />);
+    const select = screen.getByLabelText("業種を選択");
+    expect(select.tagName).toBe("SELECT");
+  });
 });
