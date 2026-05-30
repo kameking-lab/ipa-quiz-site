@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi, afterEach } from "vitest";
 import {
   BADGE_THRESHOLDS,
+  BADGES,
   syncBadgesWithStreak,
   nextBadge,
   getEarnedBadges,
@@ -82,5 +83,36 @@ describe("空状態の絶対参照純度（共有 EMPTY 破壊 footgun の回帰
 
   it("BADGE_THRESHOLDS は昇順の正準集合", () => {
     expect([...BADGE_THRESHOLDS]).toEqual([3, 7, 30, 100, 365]);
+  });
+});
+
+// BADGES は閾値をキーにした presentation データ。Record<BadgeThreshold> 型は全キーの
+// 存在は保証するが、各エントリ内部の threshold フィールドがそのキーと一致すること
+// （key 3 のバッジが誤って threshold:7 を持たない）や name/emoji 等の非空は型では
+// 保証できない。nextBadge は BADGES[next] を返し UI は .threshold/.name/.emoji を読む
+// ため、キーと中身の食い違いは「次の目標」表示の取り違えになる。データ不変条件を固定。
+describe("BADGES データ不変条件", () => {
+  it("全 BADGE_THRESHOLDS にエントリがあり、内部 threshold がキーと一致する", () => {
+    for (const t of BADGE_THRESHOLDS) {
+      expect(BADGES[t]).toBeDefined();
+      expect(BADGES[t].threshold).toBe(t);
+    }
+  });
+
+  it("name / tagline / emoji / gradient は全件非空文字列", () => {
+    for (const t of BADGE_THRESHOLDS) {
+      const b = BADGES[t];
+      expect(b.name.length).toBeGreaterThan(0);
+      expect(b.tagline.length).toBeGreaterThan(0);
+      expect(b.emoji.length).toBeGreaterThan(0);
+      expect(b.gradient.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("BADGES のキーは BADGE_THRESHOLDS と過不足なく一致する", () => {
+    const keys = Object.keys(BADGES)
+      .map(Number)
+      .sort((a, b) => a - b);
+    expect(keys).toEqual([...BADGE_THRESHOLDS]);
   });
 });
