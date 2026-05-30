@@ -1311,3 +1311,30 @@
 - 教訓（次セッションの重複監査防止）: **「read() が共有 EMPTY を参照返し」かつ「呼び出し側がその場破壊」かつ「write(EMPTY)/キー削除の amplifier」が揃うと concrete 実害**（achievements/bookmarks/srs で実証）。
   amplifier 無し＝latent（mock-exam/storage・mock-scores・custom-tags＝backlog）。読取り側が新規オブジェクト構築なら SAFE。修正は全て emptyState() ファクトリ化＝最小 diff・挙動不変・各回帰テスト付き。
 - 次セッターへ: 上記 latent 3件の防御的ファクトリ化（1サイクル batch）が最有力。その後は S35 の残り未テスト純関数候補（success-stories/related-content・seo/* ヘルパ群）の契約固定、または日中候補。
+
+## セッション37 2026-05-30 15:53 JST（S36 handoff の latent footgun 3件を防御ハードニング → seo 純関数の契約固定2件）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test **369→** build緑（HEAD `a08c6f8`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>`）。
+- done【防御ハードニング＝S36 handoff の最有力タスク】残存 latent な共有EMPTY破壊 footgun 3件をファクトリ化。
+  `lib/mock-exam/storage.ts`(recordMockExam: data.history.push)・`lib/learning/mock-scores.ts`(recordMockScore: state.scores.push)・
+  `lib/storage/custom-tags.ts`(ensureCatalogForNames/mergeServerCustomTags: data.tags[name]=) の read()/readRaw() が空ストレージ時に
+  module-level 共有 const EMPTY を参照返しし、呼び出し側がその場破壊するクラス（S34 history・S36 achievements/bookmarks/srs と同型）。
+  本3件は write(EMPTY) 等の amplifier 無し＝現状 latent だが既知 footgun。emptyState()/emptyData() ファクトリ化で常に新規オブジェクト返却に是正。
+  / コミット `057be2b` / 各モジュール従来テスト皆無→契約(追記順/50件上限/exam絞り込み/last-write-wins/冪等)+「絶対参照純度」回帰を新規固定(14件)。
+  clear→mutate→clear で空読みが汚染を漏らさないことを検証。**修正前は source stash で当該回帰が5件落ちる（汚染がテスト間で波及）ことを実測**。
+  typecheck0/lint0err/test423→437/build緑を単独実測。
+- done【回帰固定】`lib/seo/exam-meta.ts` の年度別/分野別グルーピング純関数。groupByYearSeason/groupByCategory/examTopTitle/
+  examTopDescription/examFullName は試験ハブ・年度別・分野別ページの見出し/メタ記述を駆動するがテスト皆無。year-season 集計・件数・key/label 整合、
+  年降順→同年内 season localeCompare 並び(2024-autumn→2024-spring→2023-spring)、category count 降順、空配列、埋め込み文字列を固定(8件)。
+  read-only 監査で実バグ無し（autumn-before-spring 並びは newest-first として偶然 chronological に整合）＝source 無変更。
+  / コミット `b989507` / typecheck0/lint0err/test437→445。
+- done【回帰固定】`lib/seo/category-tips.ts::getCategoryTip` のフォールバック契約。/q が whatMatters/howToStudy/relatedKeywords を
+  無条件参照するため未知 category でも完全形オブジェクトを返す必要（undefined 返却は /q 描画クラッシュ）。既知取得・非空フォールバック・
+  同一参照を固定(3件)。source 無変更。/ コミット `d7ab156` / typecheck0/lint0err/test445→448。
+- SKIP(実害なし・低logic): `lib/success-stories/related-content.ts`(data 委譲の slice ラッパ)・`lib/seo/structured-data.ts`(静的ノードビルダ)・
+  `lib/seo/sitemap-pagination.ts`(Math.max(1,…) ガードは data 依存で単体不可)＝契約固定の価値薄く SKIP。
+
+## セッション37 まとめ
+- 実改善1（防御ハードニング3ファイル batch=S36 handoff 最有力）+ 回帰固定2（exam-meta grouping / getCategoryTip）。test423→448（+25件）。
+- テーマ: S36 が backlog 送りした latent footgun 3件を handoff 通り batch で防御ファクトリ化（concrete 実害は無いが既知クラスの一掃＝S34-S36 の共有EMPTY footgun 系を**全7ファイル完了**）。続けて seo の未テスト純関数の契約を固定。
+- 教訓（重複監査防止）: **共有EMPTY footgun は history/achievements/bookmarks/srs/mock-exam-storage/mock-scores/custom-tags の7ファイルすべて emptyState()/emptyData() ファクトリ化済（残存ゼロ・再監査不要）。** exam-meta grouping・getCategoryTip は回帰固定済。related-content/structured-data/sitemap-pagination は低logic で固定不要と判断。
+- 次セッターへ: 夜間の安全な実害バグは S1-S37 で深く枯渇。残候補=S35 の未テスト純関数（seo の question-url[既テスト]以外、exam-content/exam-resources は静的データ）の更なる契約固定 or 日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。新規実害バグは「過去セッションが属性有無だけ見て見落とした同型」(S33 の角度)を掘るのが有効。
