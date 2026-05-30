@@ -8,6 +8,7 @@ import {
   getBlogPostsByExam,
   getRelatedPosts,
 } from "@/data/blog";
+import { getAvailableExams } from "@/lib/seo/exam-meta";
 
 // Characterization tests for the blog post registry (data/blog/index.ts),
 // consumed by the /blog routes: getAllBlogSlugs feeds generateStaticParams,
@@ -164,6 +165,24 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
     for (const p of ALL) {
       for (const m of p.body.matchAll(linkRe)) {
         if (!slugSet.has(m[1])) dead.push(`${p.slug} -> /blog/${m[1]}`);
+      }
+    }
+    expect(dead).toEqual([]);
+  });
+
+  it("every in-body /<exam> hub link points to an available exam", () => {
+    // The biggest internal-link namespace in bodies is the exam hub `](/ap)`,
+    // `](/sc)` etc. /[exam] is dynamicParams=false + notFound(), so a code not
+    // in getAvailableExams() renders a link that 404s. Exam codes are the only
+    // two-letter top-level route segment editors link to (the sole other
+    // two-char route, /og, is an image endpoint), so a two-letter body link is
+    // an exam-hub link and must resolve.
+    const exams = new Set<string>(getAvailableExams());
+    const examLinkRe = /\]\(\/([a-z]{2})\)/g;
+    const dead: string[] = [];
+    for (const p of ALL) {
+      for (const m of p.body.matchAll(examLinkRe)) {
+        if (!exams.has(m[1])) dead.push(`${p.slug} -> /${m[1]}`);
       }
     }
     expect(dead).toEqual([]);
