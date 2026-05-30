@@ -87,6 +87,39 @@ describe("POST /api/scoring", () => {
     }
   });
 
+  // mock 採点（GEMINI_API_KEY 未設定時のフォールバック）の得点ロジックは
+  // ユーザーに見える totalScore と各設問スコアを決めるが、既存テストは型・範囲しか
+  // 見ておらず分岐が未固定だった。長さ→点数の4分岐(0/20/40/70)と平均を回帰固定する。
+  // ap-2024h-pm-q1 の設問: 設問1/2/4=maxLength40, 設問3=maxLength50。
+  it("mock scoring: 長さ別の得点分岐(0/20/40/70)と単純平均を回帰固定", async () => {
+    const res = await POST(
+      makeReq(
+        {
+          questionId: "ap-2024h-pm-q1",
+          answers: [
+            { label: "設問1", text: "" }, // len 0 → 0
+            { label: "設問2", text: "ab" }, // len 2 (<5) → 20
+            { label: "設問3", text: "あ".repeat(80) }, // 80 > 50*1.5=75 → 40
+            { label: "設問4", text: "あ".repeat(20) }, // レンジ内 → 70
+          ],
+        },
+        "10.0.0.6",
+      ),
+    );
+    expect(res.status).toBe(200);
+    const parsed = JSON.parse(await res.text());
+
+    const byLabel: Record<string, number> = Object.fromEntries(
+      parsed.subResults.map((s: { label: string; score: number }) => [s.label, s.score]),
+    );
+    expect(byLabel["設問1"]).toBe(0);
+    expect(byLabel["設問2"]).toBe(20); // len<5
+    expect(byLabel["設問3"]).toBe(40); // len>maxLength*1.5
+    expect(byLabel["設問4"]).toBe(70);
+    // totalScore は単純平均 round((0+20+40+70)/4)=round(32.5)=33（配点重み付けではない現挙動）
+    expect(parsed.totalScore).toBe(33);
+  });
+
   it("rejects answers array exceeding 20 sub-answers", async () => {
     const tooMany = Array.from({ length: 25 }, (_, i) => ({
       label: `設問${i + 1}`,
