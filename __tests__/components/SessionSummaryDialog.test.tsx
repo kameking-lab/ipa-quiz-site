@@ -35,3 +35,13 @@ describe("SessionSummaryDialog — シェア開閉ボタンの aria-expanded", (
     expect(opened.getAttribute("aria-expanded")).toBe("true");
   });
 });
+
+// DialogContent は DialogTitle が無いとダイアログにアクセシブルネームが付かず
+// （radix が警告）、SR 利用者が何のダイアログか分からない（WCAG 4.1.2 / 2.4.6）。
+// 可視見出し「お疲れさまでした」を DialogTitle として配線する。
+describe("SessionSummaryDialog — ダイアログのアクセシブルネーム", () => {
+  it("role='dialog' が見出しテキストでアクセシブルネームを持つ", () => {
+    render(<SessionSummaryDialog open summary={makeSummary()} onClose={vi.fn()} />);
+    expect(screen.getByRole("dialog", { name: "お疲れさまでした" })).toBeTruthy();
+  });
+});
