@@ -2533,3 +2533,18 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **analytics 境界枝は本セッションで消化。filter/selection/heatmap/streak/gamification は per-branch 精査で全枝カバー確認=この近傍の未カバー枝は枯渇。**
 - 残る夜間安全角度: 未走査領域(grading/午後採点・mock-exam config 以外の構成・copilot retriever の境界)の per-branch、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
 - 日中候補(不変): EssayEditor totalScore 命名/表示・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション89 (2026-05-31 07:1x JST) — 午後/論述 mock 採点の得点ロジック回帰固定3件
+ベースライン全緑実測(typecheck0 / lint0err[警告=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 212files・1570 / build 2510 SSG・exit0)。S88 handoff「未走査領域(grading/午後採点)の per-branch」を実施。**GEMINI_API_KEY 未設定時のフォールバック mock 採点(/api/essay-grade・/api/scoring)の得点ロジックが、ユーザー可視の rank/passProbability/レーダーチャート4軸/totalScore を決めるのに、既存テストは型・範囲しか見ておらず全分岐が未固定だった**ことを発見し回帰固定。実改善0・source 無変更。test 1570→1575(+5 it)。
+
+- done: `__tests__/api/essay-grade.test.ts` essay mock 採点の得点分岐(字数→点数/4軸オフセット/rank境界) / `9802f89`+`59313fd` / +4 it。au-2024a-pm2-q1(ア[600-800],イ[800-1600],ウ[600-1200])で各設問を狙った点数に着地。`9802f89`=全レンジ内→各70点・avg70でちょうど rank A 境界・axes=score-{0,5,10,15}(レーダーチャート)/混在で avg55=rank B 境界(>=50)・字数不足→25点。`59313fd`=残分岐完全被覆=中間長(len<minChars→50)・字数超過(len>maxChars*1.3→55)・rank C(avg>=30)/fail(<30)。axes offset を score-3 へ/rank境界 70→80・30→20/maxChars*1.3→*1.1 の mutation で各 fail 実測→cp 復元。
+- done: `__tests__/api/scoring.test.ts` 午後 mock 採点の長さ別得点分岐(0/20/40/70)と単純平均 / `5c7ddeb` / +1 it。ap-2024h-pm-q1(4設問・maxLength40/40/50/40)で空/2字/maxLength*1.5超/レンジ内を狙い各分岐(0/20/40/70)と totalScore=round((0+20+40+70)/4)=33 を固定。len<5→<2/maxLength*1.5→*2 の mutation で fail 実測→cp 復元。
+
+### SKIP(監査済・実害ゼロ/夜間不適)
+- SKIP(設計判断・behavior変更): buildMockScoring/buildMockGrading の totalScore は単純平均。`lib/afternoon/types.ts:131` の docコメントは「配点で重み付け平均」と記すが、**mock も AI 経路(safeParseScoring は LLM の totalScore をそのまま採用)も重み付けを強制しておらず、重み付けは未配線の docアスピレーション**。mock スコア自体が字数ベースの粗い近似で、それを points で重み付けする価値は薄く、変更は behavior 変更+E2E 必須+IPA 採点意味論の判断=過大修正の罠。現挙動(単純平均)を回帰固定する側に倒した。
+- SKIP(夜間不適・provider mock 重い): /api/scoring の `safeParseScoring`(AI 経路で LLM 出力をパース・score を [0,100] にクランプ)は完全未テストだが、テストには getProvider を mock して生テキストを流す必要があり(既存テストに前例なし)、resetModules+動的 import で夜間はリスク高=日中向き。
+
+### 次セッションへ
+- **grading/午後採点 mock の得点分岐は本セッションで essay/scoring 両方とも完全被覆。** AI 経路の safeParse 系(scoring/essay-grade とも)は provider mock 要=日中向き。
+- 残る夜間安全角度: 未走査領域(mock-exam の result/合否計算・copilot retriever の topN/score 閾値境界)の per-branch、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
+- 日中候補(不変): safeParseScoring/safeParseGrading のクランプ(provider mock)・EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
