@@ -2595,3 +2595,21 @@ clean（コード無変更・検証済 SKIP）:
 - **本角度の残候補（同クラス・未確認）**: `lib/essay/types.ts::INDUSTRY_LABELS`・`lib/essays/types.ts::ESSAY_INDUSTRY_LABELS`（業種ラベル Record・キー網羅/非空が non-vacuous か要確認）・`data/` 配下の残データ（S63-S64 で大半 sweep 済だが UPPER_CASE const 視点では未確認の可能性）。`AI_QUOTA_COPY`/`SITE_NAME`/`STUDENT_AUDIENCE` 等は単一文字列定数で invariant 薄＝低価値 SKIP 見込み。
 - 従来角度（per-name gap / a11y / footgun 再検証）は S1-S90 で深く枯渇。
 - 日中候補(不変・挙動変更+E2E 必須): EssayEditor totalScore・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション92 (2026-05-31 07:57〜08:2x JST・自律ループ)
+ベースライン全緑実測(typecheck0 / lint0err[警告=untracked scripts/ux-audit-screenshots.mjs・非対象] / test 1603・214files / build 2510 SSG exit0)= S91 と一致。S91 handoff「本クラス残=essay/essays types の INDUSTRY_LABELS(Record・要確認)程度で薄い」を起点に、**essay 業種ドメイン(S1-S91 でほぼ未走査)に S91「手書きデータ const のデータ整合性 invariant」角度を集中適用し実改善4件**。test 1603→1613(+10 it・214→216files)。source 無変更。
+
+- done【新規回帰固定】`__tests__/lib/industry-labels.test.ts`(`d7db9ff`・新規)。INDUSTRY_LABELS(lib/essay/types)と ESSAY_INDUSTRY_LABELS(lib/essays/types)は業種選択select・業種タブ・essay-grade LLMプロンプト・結果/履歴見出しで描画される user-visible 手書き Record だが直接テスト皆無。`Record<Industry,string>` 型はキー網羅を保証するが**値の非空・一意は保証しない**(空ラベル=空オプション/空タブ/途切れた`【受験生の業種】`プロンプト、重複ラベル=区別不能な業種)。両マップで非空+一意を固定。空文字化+重複化 mutation で各 fail 実測→revert。+4 it。
+- done【新規回帰固定】`__tests__/essays/industry-corpus-integrity.test.ts`(`fbf4361`・新規)。getEssayQuestionsByExam の afternoon アダプタは `v.industryId as EssayIndustryId`(load.ts:38)で**型チェックを迂回**。IndustryId(afternoon/types)と EssayIndustryId(essays/types)は現状一致する平行 union だが片方だけ編集でズレると無効idが流れ ESSAY_INDUSTRY_LABELS[id] が undefined を返す。全6区分(sc/st/sa/pm/sm/au)コーパスを走査し ①industryId が必ずラベルに解決(タブ文言 undefined 防止)②industryName 非空(4箇所で直接描画)③1問内 industryId 一意(getIndustryEssay の find引き重複=dead エントリ防止)を固定。無効id/空名/重複id の3 mutation で各 fail 実測→revert。+4 it。**★retail の industryName は data 上 "流通・小売" だが ESSAY_INDUSTRY_LABELS.retail="流通・小売業" で意図的に乖離→industryName===label の strict 等値は契約でない(empirical 確認で過大修正回避)。**
+- done【回帰固定】同ファイルへ追記(`cc2b131`)。模範解答3段(intro/body/conclusion)は EssayIndustryTabs:95,104,113 で直接描画(charCount もこの3段から計算)。型は string を保証するが非空は保証しないため半端データが空の本論を出荷しないよう全6区分で固定。アダプタの body マッピング空文字化 mutation で fail 実測→revert。+1 it。
+- done【回帰固定】同ファイルへ追記(`1ff9a4f`)。load.test.ts は SC の question id 一意性のみ固定し st/sa/pm/sm/au の afternoon 由来コーパスが未カバーだった。findEssayQuestion は find(q=>q.id===id) で引き詳細ルートは dynamicParams のため id 重複は2件目を到達不能化。全6区分で question id 一意性を固定。アダプタの id 定数化 mutation で fail 実測→revert(afternoon 由来も1区分に複数essay問題が存在することを実証)。+1 it。
+
+### SKIP(監査済・実害ゼロ/重複)
+- SKIP(behavior 経由で既 pin・vacuous): `lib/constants/exam-schedule.ts::EXAM_SITTINGS` は名指しで test 未参照だが、exam-schedule.test.ts が nextExamSitting の days を month/day 由来の具体値で固定済(day:21→22 で days assertion が壊れる)=データは挙動経由で実質 pin。独立 data invariant は vacuous=S91 の自己判断と一致で SKIP。
+- 確認済(対象外): INDUSTRY_OPTIONS は components/essay/EssayEditor.tsx 内の非export ローカル(React 依存)=clean な lib テスト対象外。
+
+### 次セッションへ
+- **S91 角度(手書きデータ const のデータ整合性)は essay 業種ドメインを本セッションで集中消化(label非空一意/industryId解決/industryName非空/模範解答非空/question id一意・全6区分)。** 同クラスの残候補は薄い。
+- **★新たに有効と判明した発掘法: 「型チェックを迂回する `as` キャスト」(load.ts:38 の industryId)は平行 union の同期を load-bearing にする隠れ footgun。`grep -rn "as [A-Z][A-Za-z]*" lib/` で他のキャスト箇所を洗い、平行定義のドリフトを runtime invariant で固定する角度が次に有効かもしれない。**
+- 従来角度(per-name gap / a11y / footgun 再検証 / date-index 実バグ)は S1-S91 で深く枯渇。codebase は genuinely well-tested(S88-S90 で Explore 実バグ探索 clean 確定)。
+- 日中候補(不変): EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
