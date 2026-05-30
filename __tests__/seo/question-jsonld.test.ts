@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
-import type { Question } from "@/lib/questions/types";
+import type { Question, Session } from "@/lib/questions/types";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -161,5 +161,34 @@ describe("sessionLabel", () => {
 
   it("falls back to upper-cased input for unknown sessions", () => {
     expect(sessionLabel("xyz")).toBe("XYZ");
+  });
+
+  // The label map is typed Record<string,string> and takes `session: string`,
+  // so it is NOT bound to the Session union — a dropped/typo'd key or a newly
+  // added union member silently falls through to the raw-code fallback
+  // (`session.toUpperCase()`), leaking "AM2" instead of "午前II" into the
+  // question-page breadcrumb and Q&A JSON-LD (SEO-visible). The exhaustive
+  // Record<Session,true> below is a compile-time guard: adding a Session member
+  // without listing it here is a typecheck error, forcing the label coverage
+  // check to follow. (Same class as EXAM_LABELS, S93.)
+  it("maps every Session union member to a real label, never the raw-code fallback", () => {
+    const SESSION_PRESENCE: Record<Session, true> = {
+      am: true,
+      am1: true,
+      am2: true,
+      pm: true,
+      pm1: true,
+      pm2: true,
+      "kamoku-a": true,
+      "kamoku-b": true,
+    };
+    const ALL_SESSIONS = Object.keys(SESSION_PRESENCE) as Session[];
+    for (const s of ALL_SESSIONS) {
+      const label = sessionLabel(s);
+      expect(label.length).toBeGreaterThan(0);
+      // A label resolved from the map is the Japanese name; the fallback would
+      // be the upper-cased raw code. They must differ for every union member.
+      expect(label).not.toBe(s.toUpperCase());
+    }
   });
 });
