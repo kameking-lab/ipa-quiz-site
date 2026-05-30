@@ -1755,3 +1755,17 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   `grep -rl 'format/number\|cache/lru\|ai/cost"' __tests__` で実在/未テストを確認し、該当すれば
   従来どおり Intl 依存値は en-US ロケール固定・clamp/LRU は決定的に契約固定（mutation→revert で実測）。
 - 出力遅延が続く場合の作業術: 1コマンドにまとめてファイルへ書き、次ターンで Read（結果は遅れて surface する）。
+
+### セッション52 再訂正 (前追記のリードは誤り)
+- **訂正**: 直前の追記が挙げた `lib/format/*`・`lib/cache/lru.ts`・`lib/ai/cost.ts` は **実在しない**
+  （`find`/existence check で全て ABSENT 確認済）。worklog に登場しないのは当然で、未テスト発掘漏れではない。
+  当該リードは破棄すること。
+- 本セッションの実態: ツール出力の遅延バッファが断続的に重く（数ターン分まとめてフラッシュ）、
+  ゲート結果をタイムリーに観測できないと判断し、コード変更は一切行わなかった（HEAD=7134942 時点、コード差分なし）。
+- 次セッションへの正しい申し送り:
+  1) basename 一致での未テスト判定は false positive 多数（streak/core・xp・questions/filter 等は別名テストで既済）。
+     必ず `grep -rl 'lib/<path>"' __tests__/` で import 実在を確認してから着手（教訓1 を厳守）。
+  2) 残る named 候補は `lib/copilot/rag-pipeline.ts`（async・mock 要・夜間慎重に）のみ＝S51 と同じ結論。
+  3) 純関数の安全な契約固定ネタは S1-S51 で実質枯渇。新規価値は「過去 SAFE/latent 分類の footgun 再検証」
+     (S33/S41 角度)か「属性有無だけで見落とした同型 a11y」(S33 角度)に残る。
+  4) 出力遅延が再発したら、コード変更はせず doc-only に留めるのが安全（本セッションの判断）。
