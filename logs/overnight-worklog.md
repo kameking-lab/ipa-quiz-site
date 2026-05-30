@@ -2378,3 +2378,21 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **ReviewClient/DailyChallengeClient 完了ビュー**は『大ビュー全体 replace』のため aria-live を貼ると SR が結果カード全文を読み上げる **verbose anti-pattern**(S61 SearchClient 教訓)＝focus 移動が本筋＝**日中SKIP** を再確認。夜間は触らない。
 - 次の夜間安全角度＝同じ「状態変化が文言トグルのみで告知漏れ」クラスを**別状態**(保存/削除/お気に入り(ブックマーク)トグル/表示・非表示切替の aria-pressed/aria-expanded 有無)で grep、or 過去 SAFE/latent footgun 再検証(S33/S41)。
 - 日中候補（不変）: ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション79（2026-05-31 03:50〜 JST）— aria-expanded 取りこぼし2件 + DialogTitle 欠落1件 実改善3件
+
+ベースライン全緑実測(typecheck0/lint0err[1 warning=未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外]/test 1518・205files/build 緑)。S78 handoff「状態変化が文言トグルのみで告知漏れクラスを別状態(表示・非表示切替の aria-expanded 有無)で grep」を実施。Explore で disclosure トグル(button が boolean state をトグルし隣接 inline 領域を開閉)を全 .tsx 走査→aria-expanded 欠落の真の取りこぼし2件+別クラス(DialogTitle 欠落)1件を実改善。実改善3件・test 1518→1521(+3 it)。
+
+- [03:57] done: 論述エディタ EssayEditor のヒント開閉ボタンに `aria-expanded={showHint}` 付与(WCAG 4.1.2) / `8e59bfb` / `__tests__/components/EssayEditor.test.tsx`(+1 it)。showHint がヒント領域(modelOutline)を開閉する inline disclosure だが aria-expanded 無し。RTL で false→true 同期を pin。sed で属性削除 mutation→1 fail 実測→cp revert。挙動/視覚/フォーカス無変更。
+- [04:01] done: セッション完了 SessionSummaryDialog のシェア開閉ボタンに `aria-expanded={showShare}` 付与(WCAG 4.1.2) / `f859e42` / `__tests__/components/SessionSummaryDialog.test.tsx`(新規・+1 it)。showShare が SocialShare パネルを開閉する inline disclosure。RTL で false→true 同期を pin。mutation 1 fail 実測→revert。
+- [04:05] done: 同 SessionSummaryDialog に DialogTitle を配線しダイアログのアクセシブルネームを付与(WCAG 4.1.2/2.4.6) / `67d84d1` / 同テストに +1 it。**cycle2 のテスト作成中に radix 警告「DialogContent requires a DialogTitle」を実測発見**。DialogContent 全6利用のうち本コンポのみ DialogTitle 欠落(他5=CitationCards/CopilotPanel/FeedbackGateModal/LearningCalendar/OnboardingTour は配線済)の取りこぼし。可視見出し h2「お疲れさまでした」を DialogTitle へ置換+`leading-8` で text-2xl 既定行高を維持し視覚不変。RTL で role=dialog がアクセシブルネームを持つことを pin。h2 へ戻す mutation→1 fail 実測→revert。最終ゲート全緑(typecheck0/lint0err/test 1521/build 緑)。
+
+### SKIP(実害なし/借用パターン・夜間安全側)
+- SKIP: StreakCouponCard クーポンコード「表示」ボタン(`components/motivation/StreakCouponCard.tsx:101`) — `setRevealed(true)` の一方向 reveal でボタン自体が消える(トグルで閉じられない)ため aria-expanded が意味的に不適合。disclosure でなく content-swap。
+- SKIP: ApiKeysClient キー「表示/隠す」ボタン(`app/account/api-keys/ApiKeysClient.tsx:166`) — ボタン文言が表示↔隠すで変化する=accessible name が状態を伝える(WAI-ARIA「show/hide password」推奨パターン2)。content-swap(同一 code 要素内でマスク↔実値)であり破綻なし。
+- 既に aria-expanded 保持(再報告不要): MockExamRunner/CopilotPanel/AfternoonResultView(showAiNote)/SearchClient/MobileBottomNav/HomeTopicGrid/SiteHeader/TTSButton(showRate)。Explore が AfternoonResultView と TTSButton を「欠落」と誤報したが実測で配線済を確認。
+
+### 次セッションへ
+- **aria-expanded disclosure クラスはほぼ消化**(EssayEditor/SessionSummaryDialog done、TTSButton/AfternoonResultView/HomeTopicGrid/SiteHeader/MobileBottomNav/CopilotPanel 済、StreakCoupon/ApiKeys は借用パターンで SKIP)。
+- **DialogTitle 欠落は本セッションで全 DialogContent 走査完了=残ゼロ**(6/6 配線済に)。radix「Missing Description」warning は description が任意のため WCAG 非必須=SKIP。
+- 次の夜間安全角度=S78 handoff の残: 別状態(保存/削除/ブックマークの aria-pressed 有無=BookmarkButton 等は既済)or 過去 SAFE/latent footgun 再検証(S33/S41)。日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
