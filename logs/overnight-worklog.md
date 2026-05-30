@@ -2464,3 +2464,23 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **実バグ角度の教訓(再確認)**: 「未テストの cross-module round-trip を実データで特性化する過程で実害(死リンク)が浮上」。S80(Markdownテーブル)に続き本セッションでも有効。index 側が generateStaticParams と別ソース(ハードコード定数 or 別フィルタ)を使う箇所は死リンクの温床 — 同パターンを他ルートでも探す価値あり(今回 essays index=ESSAY_EXAM_CODES定数 と /q=プレースホルダ含む の2例で発火)。
 - 次の夜間安全角度: 他の index-vs-staticParams 別ソース箇所の探索(例: keyword/glossary/recommended-books の一覧→詳細)、or 過去 SAFE/latent footgun 再検証(S33/S41)。
 - 日中候補(不向き): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション84（2026-05-31 05:38〜 JST）— index-vs-staticParams 別ソース死リンク監査: recommended-books 回帰固定1件 + 同クラス全数SKIP記録
+
+ベースライン全緑実測(typecheck0 / lint0err[1 warning=未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外] / test 1562→1565 / build 2510SSG compiled successfully)。S83 handoff「他の index-vs-staticParams 別ソース箇所の探索(keyword/glossary/recommended-books の一覧→詳細)」を実施。全動的ルート(`git ls-files 'app/**/page.tsx' | grep '\['`)の index→detail を機械監査し、唯一ガード不在の脆弱箇所 recommended-books を回帰固定。**実改善0・source 無変更。test 1565(+3 it)。**
+
+- done: `__tests__/seo/recommended-books-static-params.test.ts` 索引↔静的生成セット不一致による死リンク回帰固定 / `8e81161` / 新規3 it。**/recommended-books 索引は EXAM_ORDER(全13区分のハードコード配列, app/recommended-books/page.tsx:12)を無条件に /recommended-books/{exam} へリンクするが、詳細 /recommended-books/[exam] は dynamicParams=false かつ別管理のハードコード配列 EXAM_CODES(同[exam]/page.tsx:25)を generateStaticParams で返す。2本の配列が片側だけ編集されて食い違うと索引リンクが静的生成から漏れ 404 化する(他ルートは単一ソース由来だがここだけ二重ハードコード)。** 単一情報源 ALL_EXAM_CODES(lib/exam-config.ts, EXAM_CONFIGS の13キー)を正に、詳細の generateStaticParams が①全canonical区分を生成②canonical外コードを生成しない③重複なし を固定。EXAM_CODES から "au" を sed 除去する mutation で missing=['au'] と1 fail 実測→cp 復元。本番 build で /recommended-books/[exam] が ip/sg/fe… 全13生成を実測。
+
+### SKIP(監査済・実害ゼロ記録)— no-404 doctrine は単一ソース化/ガード済で堅牢
+- SKIP(safe・単一ソース): /topics/[slug] — 索引(/topics)・glossary・keywords・/q・hub の全リンク元が getAllTopics() 由来 or topicLinkHref(t)(実在しないタグは /search へフォールバック=lib/seo/topics.ts:87)。generateStaticParams も getAllTopics()。死リンク構造不能。
+- SKIP(safe・単一ソース): /keywords/[keyword]・/blog/[slug]・/features/[slug] — index と detail generateStaticParams が同一レジストリ(KEYWORD_PAGES/getAllBlogPosts/FEATURES)由来。S81-S82 で本文/cross-link も pin 済。
+- SKIP(safe・ガード済): /success-stories/[exam]・[exam]/[slug] — index は `c===0` skip、related/similarPersonas は SUCCESS_STORIES レジストリの story オブジェクト(slug は getAllSuccessStorySlugs に必ず含む)由来。S83 で CTA(blog/essays)も pin 済。
+- SKIP(safe・ランタイム動的): /essay/[exam]/[questionId] — generateStaticParams も dynamicParams=false も無し=オンデマンドSSR。404 はランタイム notFound のみで静的リンク切れ概念なし。
+- SKIP(safe・同一strictソース): hub /[exam] の ExamBrowseTabs 分野タブ → /[exam]/topic/[category] — hub の categories は groupByCategory(getQuestionsByExamStrict(code))(app/[exam]/page.tsx:119-121)、topic route の generateStaticParams も groupByCategory(getQuestionsByExamStrict(exam))(同[topicSlug]/page.tsx:30)=完全同一構築。S83 が /q(プレースホルダ含む全描画)側だけを examTopicPageExists で修正済。
+- SKIP(latent・実害ゼロ): ExamRelatedExams → /[exam](components/exam/ExamDeepContent.tsx:107, EXAM_DEEP_CONTENT[*].relatedExams) と keywords.exams → /[exam]。既存 exam-data-invariants.test.ts:95 は relatedExams を EXAM_STATS キー(全13 ExamCode)で照合するが、/[exam] の実生成源は getAvailableExams()(問題数>0)。**現状13区分すべて問題ありで両集合一致=実害ゼロ**。getAvailableExams への厳格化は S82 が keywords で「夜間 overreach 回避」と明示 SKIP した同型=本セッションも SKIP。問題0件区分が将来できた時に再検討。
+
+### 次セッションへ
+- **no-404 / index-vs-staticParams 別ソースクラスは本セッションで全数監査完了。** 唯一の真の脆弱箇所(recommended-books 二重ハードコード)を pin。残りは単一ソース由来/ガード済/latent(relatedExams・keywords.exams → /[exam] は全区分非空の間は実害ゼロ)。**問題0件の試験区分が出現したら relatedExams/keywords の getAvailableExams 厳格化 + recommended-books も実害化するため要再検討(現状は全13非空で全クラス安全)。**
+- a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)・cross-link no-404(S81-S84)は枯渇確認継続。
+- 次の夜間安全角度: 過去 SAFE/latent footgun 再検証(S33/S41)、or arrow-const export スイープ再点検。実改善は日中候補(挙動変更+E2E)に依存。
+- 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
