@@ -1781,7 +1781,7 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
 - 本セッションは出力遅延が重く gate を実測観測できないと判断し、上記の着手は次回送り（コード変更なし）。
 
 ### セッション52 done (出力遅延が落ち着き1サイクル完遂)
-- **done: `lib/success-stories/related-content.ts` の getRelatedSuccessStoriesByExam 回帰固定** / commit `6e3b3f4`
+- **done: `lib/success-stories/related-content.ts` の getRelatedSuccessStoriesByExam 回帰固定** / commit `6780033`
   - grep 検証で __tests__ 未 import の唯一の真・未テスト純関数と確認(basename 一致の誤検出群は除外済)。
   - 契約: limit 上限(既定3)・試験フィルタ・newest-first prefix・上限超過で無パディング・limit 0/該当なし→[]。
   - oracle に既テストのデータ層 getSuccessStoriesByExam を使い、`.slice(0, limit)` と一致比較(persona 増加に頑健)。

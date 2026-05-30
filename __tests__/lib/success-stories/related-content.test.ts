@@ -3,10 +3,10 @@ import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-co
 import { getSuccessStoriesByExam } from "@/data/success-stories";
 import type { ExamCode } from "@/lib/questions/types";
 
-// `ap` carries the most success stories (8 at time of writing), so it exercises
-// the limit cap meaningfully; `nw` carries few (2), exercising the "fewer than
-// limit" path. The expectations are derived from getSuccessStoriesByExam so the
-// test stays correct as the persona corpus grows.
+// `ap` carries more stories than the default limit (5 at time of writing), so
+// it exercises the limit cap meaningfully; expectations are derived from
+// getSuccessStoriesByExam so the test stays correct as the persona corpus grows.
+// `nw` is used with an over-large limit to exercise the "fewer than limit" path.
 const MANY_EXAM: ExamCode = "ap";
 const FEW_EXAM: ExamCode = "nw";
 
