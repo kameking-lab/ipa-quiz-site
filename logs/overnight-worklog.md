@@ -1137,3 +1137,19 @@
 - テーマ: 観点㉔（Label in Name）を全数監査。**確認できた実害は「可視テキストが aria-label に連続部分文字列として含まれない」6件**＝gold-standard（可視テキストを先頭に含む）へ統一。共通パターン: ①aria-label が可視テキストとは別の言い回し（CTA系）②"（Twitter）で結果を" 等が割り込んで分断（シェア系）。
 - 教訓（次セッションの重複監査防止）: **Label in Name は「可視テキストが accessible name の連続部分文字列か」で判定**。icon-only ボタン（可視テキスト無し）・role="group/section" コンテナ・aria-label が可視テキストを既に含む（note/LINE）は対象外。確認できた6件は修復済＝**残存ゼロ**（再監査不要）。㉕autocomplete・㉖inputmode は構造的に充足/moot。
 - 次セッターへ: S28起案の残り観点は ㉒（table caption/colspan・※th scope は S28 で一巡・caption 欠落は機能追加寄りで実害判定を慎重に）㉓（lang 部分指定＝おそらく実害ゼロ・確認のみ）。夜間の安全な実害バグは S1-S29 で深く枯渇。日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）は据え置き。
+
+## セッション30 2026-05-30 13:56 JST（S28起案の残り㉒㉓を全数監査＝実害ゼロ確定 + 新角度3つ＝clickable-div/href#/aria-hidden/icon-only-button を全数監査＝実害ゼロ。コード無変更）
+- 冒頭ベースライン: HEAD `2d2f174`（S29 docs）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。
+- SKIP(全数監査=実害ゼロ・観点㉒ table colspan/rowspan): 全 tsx を grep＝`colspan`/`rowspan`/`colSpan`/`rowSpan` の**出現ゼロ**。複雑な見出し結合を持つ表が**構造的に存在しない**ため「colspan/rowspan で見出し関連付けが壊れる」実害は**発生不能＝moot**。`<caption>` 欠落は WCAG H39（advisory・failure ではない）＋機能追加寄り＝backlog 既定どおり overreach の罠として SKIP（content table は S28 で th scope 修復済）。
+- SKIP(全数監査=実害ゼロ・観点㉓ lang 部分指定): `lang=` は `app/layout.tsx`(`<html lang="ja">`) と `app/global-error.tsx`(同) の2箇所のみ＝**ルート html の言語宣言のみ**。本文中の英略語/コード（IPA 用語）は日本語読みが正で部分 lang 切替は実用上不要（標準実務）。per-element lang を要する箇所は**不在**＝実害ゼロ（S28 起案の予測どおり）。
+- SKIP(全数監査=実害ゼロ・新角度 clickable 非interactive 要素 WCAG 2.1.1): `<div|span|li|tr|td onClick>` を multiline grep＝該当は `KeyboardShortcutsHelp`(modal backdrop) と `CopilotPanel`(overlay backdrop ×2) の**3件のみで全て「背景クリックで閉じる」dismiss パターン**。いずれも閉じる手段としてキーボード経路（Escape／close ボタン／FAB トグル＝S20 で focus-restore 済）が併存するため、背景 div の onClick は補助操作＝**キーボード利用者が排除されない**＝実害ゼロ（背景 div への role/tabindex 付与は overreach）。
+- SKIP(全数監査=実害ゼロ・新角度 href="#"/空 href スクロール跳躍): 全 tsx を grep＝`href="#"`/`href=""` の**出現ゼロ**。意図せぬページ最上部スクロール跳躍を起こすアンカーは**不在**＝実害ゼロ。
+- SKIP(全数監査=実害ゼロ・新角度 aria-hidden on focusable WCAG 4.1.2): `aria-hidden` 全箇所を確認＝**全て装飾アイコン（lucide）/絵文字 span への付与**で、interactive/focusable 要素への aria-hidden（SR から消える trap）は**ゼロ**。gold-standard（ラベル付きコントロール内の装飾アイコンを aria-hidden）どおり＝実害ゼロ。
+- SKIP(全数監査=実害ゼロ・新角度 icon-only ボタンのアクセシブルネーム欠落 WCAG 4.1.2): X/Trash2/Plus/Menu/Chevron 等のアイコンを含む button/link を全数 grep し前後 context を読取り＝アクセシブルネーム欠落の裸 icon ボタンは**不在**。例: bookmarks「全て削除」(Trash2+可視「全て削除」)/api-keys「削除」(Trash2+可視「削除」)/bookmarks 除去ボタン(X+`aria-label="ブックマークから外す"`)＝全て可視テキスト or aria-label を保有。S6/S29 の「裸フォームコントロール/icon-only 一掃」記録を独立再確認 done＝残存ゼロ。
+- 結論: S28起案の残り2観点（㉒㉓）は**構造的に moot/zero-impact を確定**（再監査不要）。さらに独立した新角度4クラス（clickable-div/href#/aria-hidden/icon-only-button）も全数監査で**実害ゼロ**を確定。安全な実害バグは S1-S30 で深く枯渇＝**過大修正の罠を回避しコード無変更**（worklog/backlog 記録のみ）。
+
+## セッション30 まとめ
+- 実改善0件（コード無変更）+ 全数監査SKIP6クラス（㉒colspan/rowspan=構造的不在 / ㉓lang=ルートのみ / clickable-div=背景dismissのみ / href#=不在 / aria-hidden=装飾のみ / icon-only-button=全てラベル保有）すべて**実害ゼロを確定し記録**。
+- テーマ: S28起案の最後の未踏観点㉒㉓を消化＋独立した新角度4クラスを開拓。いずれも構造上 or gold-standard 遵守により被害不能と実測判定。**S1-S30 で a11y/SEO/perf/logic の安全な実害バグは網羅的に枯渇を再々確認。**
+- 教訓（次セッションの重複監査防止）: **colspan/rowspan は本リポに存在しない（複雑表なし）／lang はルート `<html lang="ja">` のみで部分切替不要／clickable な非interactive要素は全て背景dismiss（キーボード経路併存）／aria-hidden は装飾のみ／icon-only ボタンは全てラベル保有。これら5クラスは構造的にクリーン（再監査不要）。** ㉒caption は H39 advisory＝overreach の罠で SKIP 確定。
+- 次セッションへ: 夜間の安全な実害バグは S1-S30 で深く枯渇。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮/reduced-motion 共有フック `usePrefersReducedMotion` 抽出/EmailSignInForm・SchedulePlanner live化）。新観点を起案する場合は粒度が細かく実害判定が難しい領域（色コントラスト=要レンダリング/フォーカス順序=要E2E）に入るため、夜間より日中レビュー向き。次セッションは backlog 既起案の未踏観点が尽きていれば「本日分完了」記録 or 日中候補の最も自己完結・低リスクなものの慎重実施を検討。

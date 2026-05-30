@@ -4,6 +4,11 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション30):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S30 で網羅的に枯渇を再々確認。
+> S30: S28起案の残り㉒㉓を全数監査で消化＝**実害ゼロ確定**（㉒colspan/rowspan は本リポに**出現ゼロ**＝複雑表なし＝moot／㉓lang はルート `<html lang="ja">` のみで部分切替不要）。さらに独立した新角度4クラス（clickable非interactive要素/href#/aria-hidden on focusable/icon-only ボタンのアクセシブルネーム）を全数監査＝**全クラス実害ゼロ**（clickable-div は背景dismissのみでキーボード経路併存／href#=不在／aria-hidden=装飾のみ／icon-only=全てラベル保有）。**コード無変更**（過大修正の罠回避）。
+> **教訓: colspan/rowspan 不在・lang ルートのみ・clickable非interactive=背景dismissのみ・aria-hidden=装飾のみ・icon-only ボタン=全てラベル保有＝5クラス構造的にクリーン（再監査不要）。㉒caption は H39 advisory＝SKIP 確定。**
+> **次は: 夜間の安全な実害バグは S1-S30 で深く枯渇。backlog 既起案の未踏観点は尽きた。日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）据え置き。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E領域＝日中レビュー向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション29):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S29 で網羅的に枯渇を再々確認。
 > S29: S28起案の観点㉔（**Label in Name / WCAG 2.5.3 Level A**）を全数監査＝**実改善6件**（音声操作ユーザーが可視ラベル発話で起動できるよう是正）。
 > ①ホーム試験カードのランダム出題CTA（`9489858`）②ブログ記事末尾CTA（`54d1fc2`・indexable）③フッターXリンク（`14a40fb`・全ページ）④bookmarks「この問題を解く」（`1f99f13`）⑤模試「苦手分野を集中練習」（`79f32e2`）⑥結果シェアボタン QuizPlayer/MockExamRunner（`41573c4`）。
