@@ -6,6 +6,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { jstDateString } from "@/lib/streak/core";
 import type { Question } from "@/lib/questions/types";
 
 const REVIEW_KEY = "ipa-quiz:review:v1";
@@ -22,15 +23,16 @@ interface ReviewRecord {
 
 type ReviewStore = Record<string, ReviewRecord>;
 
-function getNextReviewDate(level: number): string {
+// 復習スケジュールは JST 暦日基準で扱う（streak / daily-challenge と境界を揃える）。
+// toISOString の素の UTC 日付だと JST 00:00〜09:00 の間は「本日が期日」の復習が
+// 翌 09:00 まで表示されない off-by-one が起きるため、jstDateString を単一情報源にする。
+export function getNextReviewDate(level: number, now: Date = new Date()): string {
   const days = INTERVALS[Math.min(level, INTERVALS.length - 1)] ?? 120;
-  const d = new Date();
-  d.setDate(d.getDate() + days);
-  return d.toISOString().slice(0, 10);
+  return jstDateString(new Date(now.getTime() + days * 24 * 60 * 60 * 1000));
 }
 
-function getTodayStr(): string {
-  return new Date().toISOString().slice(0, 10);
+export function getTodayStr(now: Date = new Date()): string {
+  return jstDateString(now);
 }
 
 export function ReviewClient() {
