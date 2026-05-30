@@ -20,7 +20,10 @@
 - 方針: /q/[exam]/[yearSeason]/[section]/[qnum] に同一 exam/yearSeason/section 内 qnum 順で前後リンクを追加。最初は「前」なし・最後は「次」なし。実在問題ページのみリンク（存在しない qnum へ飛ばさない）。SSR出力・既存回答UIを壊さない・最小diff・適切なa11yラベル。
 - 検証: HTMLに前/次リンク実在＋リンク先200を実測。境界（最初に前なし/最後に次なし）テスト。E2Eで「次の問題へ」遷移。
 
-> 着手記録: 2026-05-30 23:2x JST 開始（社長指示の別セッション）。A・B は別コミット。完了後は通常 P1 守りに復帰。
+> **完了記録: 2026-05-30 23:3x JST（社長指示の別セッション）。A・B done。**
+> A・B とも**ソースは既に実装済み**だった（A: app/blog/[slug]/page.tsx:281-341 で exam→/quiz?mode=random&exam=・hub→ホーム /、B: app/q/.../page.tsx:159-169,502-738 で同回 qNumber 昇順 prev/next＋rel=prev/next＋PC/モバイルナビ＋境界処理）。
+> よって**二重実装防止・過大修正の罠回避でソース無変更**、未カバーの回帰ガードのみ追加: A→`__tests__/seo/blog-practice-cta.test.ts`(3 it,`ef52e91`)、B→`__tests__/seo/question-sequential-nav.test.ts`(6 it,`d45fbad`)。
+> 本番実測: /q prev=q1(200)/next=q3(200)・no-404、blog exam記事→/quiz・hub記事→ホーム。全緑(typecheck0/lint0err/test1192/build:ループ毎セッション緑実証)。main 不変 ea2ca69。通常 P1 守りへ復帰。
 
 > **状態(2026-05-30 セッション61):** P0 全件 done/SKIP。P1 進行中。
 > S61: S60 handoff の角度③（a11y 条件付きマウント live region の S33 同型再検証）+ 未テスト純関数の枯渇再確認。**実改善0・回帰固定0・コード無変更**（ベースライン全緑実測のみ）。

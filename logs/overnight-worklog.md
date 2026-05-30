@@ -2048,3 +2048,14 @@ handoff: S59 が挙げた「残 fetch 系」のうち sync/*・stats/gsc・stats
 - data/ の posthog/blog-index/success-stories(generators+index)は回帰固定済(再監査不要)。
 - 残る lib/ 未テストは全て真に blocked(S63 前半の Explore 全走査で確認: fetch-only/SDK/auth-db/AudioContext/server-only/barrel/type-only)。feature-flags=dead code(消費ゼロ)SKIP 確定。
 - 角度②/③(SAFE/latent footgun 再検証・同型 a11y)は S33-S62 で深く枯渇。日中候補(ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export)は据え置き。
+
+## 社長指示セッション（別プロセス）2026-05-30 23:2x JST — P0-追加A/B 内部リンク2件
+- 結論: **改善A・B はいずれも既にソース実装済み**（実測調査の指摘は不完全な計測に基づいていた）。**二重実装防止・過大修正の罠回避の観点からソースは変更せず**、未カバーだった回帰ガードのみ追加。
+- 改善A（ブログ→演習CTA）: `app/blog/[slug]/page.tsx:281-341` で実装済。exam 付き記事は `/quiz?mode=random&exam=${post.exam}`（直接演習）、exam 無し記事はホーム `/`（汎用入口・当て推量で区分に飛ばさない）＝タスク仕様どおり。
+  - 既存 `__tests__/seo/blog-cta-label-in-name.test.ts` は aria-label のみ検証。**両分岐の存在＋リンク先実在**が未ガード→ `__tests__/seo/blog-practice-cta.test.ts`(3 it) を追加。全 blog post の exam が実在試験コード(ALL_EXAM_CODES)であることをデータ不変条件で固定（/quiz?exam=・/{exam} が 404 にならない）。/ コミット `ef52e91`
+- 改善B（/q 前後リンク）: `app/q/.../page.tsx:159-169,223-228,502-555,707-738` で実装済。同一 exam/year/season/session を qNumber 昇順、prev/next 境界処理、rel=prev/next、可視ナビ（PC/モバイル sticky）、a11y ラベル、実在 URL のみ。
+  - 既存 `question-url.test.ts` は round-trip のみ。**境界の正しさ（最初に前なし・最後に次なし）と前後リンクの no-404** が未ガード→ `__tests__/seo/question-sequential-nav.test.ts`(6 it) を追加。実データで prev/next の round-trip 解決＋境界＋隣接 qNumber を検証、ページ構造も source-read ガード。/ コミット `d45fbad`
+- 本番実測（リンク先 200・no-404）: /q/ap/2017-autumn/am/q2 → rel=prev=q1(200)・rel=next=q3(200)、「前の問題/次の問題」表示あり。ブログ exam 記事 → /quiz CTA、hub 記事 → ホーム CTA。
+- 全緑ゲート: typecheck0 / lint0err(既存 ux-audit 警告1のみ) / test 1153→1192(+9: B6+A3) / build は夜間ループが同ブランチで毎セッション緑実証（.next ロック競合のため別プロセス build はスキップ。両変更は __tests__ のみ＝build 直交、tsc --noEmit は通過）。
+- 衝突回避: 各コミット前 git pull --ff-only、commit/push は別呼び出し（gate と分離＝gate規律順守）、targeted add で夜間ループの未コミット物(success-stories-index.test.ts 等)・CRLF差分・未追跡 logs/scripts を巻き込まず。force push なし。
+- main 不変 ea2ca69 維持。完了後は通常 P1 守りへ復帰可。
