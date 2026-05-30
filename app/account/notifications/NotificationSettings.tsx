@@ -245,6 +245,8 @@ export function NotificationSettings() {
 
       {status.kind !== "idle" && (
         <div
+          role="status"
+          aria-live="polite"
           className={
             "flex items-start gap-2 rounded-xl border p-3 text-sm " +
             (status.kind === "error"
