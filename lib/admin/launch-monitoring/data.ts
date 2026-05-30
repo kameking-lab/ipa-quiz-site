@@ -181,7 +181,7 @@ async function fetchVercelAnalytics(): Promise<VercelAnalyticsSummary> {
 
 // ─── Alert detection ──────────────────────────────────────────────────────────
 
-function buildAlerts(
+export function buildAlerts(
   traffic: Traffic24h,
   apiUsage: ApiUsageSummary,
   gsc: GscSummary,
