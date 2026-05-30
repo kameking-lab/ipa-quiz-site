@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 
 import { FEATURE_LANDING_PAGES, getFeatureBySlug } from "@/data/features";
+import { getKeywordPageBySlug } from "@/data/keywords";
+import { getBlogPostBySlug } from "@/data/blog";
 
 // Characterization tests for data/features.ts — the differentiation feature
 // landing pages. FEATURE_LANDING_PAGES.map(p => ({ slug: p.slug })) feeds
@@ -33,6 +35,35 @@ describe("FEATURE_LANDING_PAGES registry", () => {
         expect(link.href.startsWith("/")).toBe(true);
       }
     }
+  });
+
+  // The CTA + related links cross into dynamicParams=false dynamic routes
+  // (/features/[slug], /keywords/[keyword], /blog/[slug]). A typo'd slug there
+  // resolves to startsWith("/") yet 404s on a page whose entire purpose is to
+  // capture and forward inbound search traffic — the same dead-internal-link
+  // class pinned for blog/success-story cross-links. Static single-segment
+  // routes (/glossary, /transparency, /essay, ...) are namespace-ambiguous and
+  // are not enumerated here; only the three slug namespaces where a dangling
+  // slug is a *guaranteed* 404 are checked.
+  it("every /features, /keywords, /blog cross-link resolves to a real page (no 404)", () => {
+    const dead: string[] = [];
+    for (const page of FEATURE_LANDING_PAGES) {
+      const hrefs = [
+        page.primaryCta.href,
+        ...page.relatedLinks.map((l) => l.href),
+      ];
+      for (const href of hrefs) {
+        let m: RegExpMatchArray | null;
+        if ((m = href.match(/^\/features\/([^/?#]+)$/))) {
+          if (!getFeatureBySlug(m[1])) dead.push(`${page.slug}: ${href}`);
+        } else if ((m = href.match(/^\/keywords\/([^/?#]+)$/))) {
+          if (!getKeywordPageBySlug(m[1])) dead.push(`${page.slug}: ${href}`);
+        } else if ((m = href.match(/^\/blog\/([^/?#]+)$/))) {
+          if (!getBlogPostBySlug(m[1])) dead.push(`${page.slug}: ${href}`);
+        }
+      }
+    }
+    expect(dead).toEqual([]);
   });
 });
 
