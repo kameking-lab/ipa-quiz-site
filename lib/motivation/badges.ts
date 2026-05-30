@@ -54,13 +54,18 @@ interface StoredBadges {
   earnedAt: Partial<Record<BadgeThreshold, number>>;
 }
 
-const EMPTY: StoredBadges = { earned: [], earnedAt: {} };
+// 空状態は必ずファクトリで新規生成する。module-level の共有定数を `{...EMPTY}` で
+// 浅くコピーすると earned/earnedAt 配列・オブジェクトが共有され、syncBadgesWithStreak
+// の `stored.earned.push(...)` が共有状態を破壊する footgun になる（S34/S36/S37 と同型）。
+function emptyState(): StoredBadges {
+  return { earned: [], earnedAt: {} };
+}
 
 function read(): StoredBadges {
-  if (typeof window === "undefined") return { ...EMPTY };
+  if (typeof window === "undefined") return emptyState();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.earnedBadges);
-    if (!raw) return { ...EMPTY };
+    if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as Partial<StoredBadges>;
     return {
       earned: Array.isArray(parsed.earned)
@@ -74,7 +79,7 @@ function read(): StoredBadges {
           : {},
     };
   } catch {
-    return { ...EMPTY };
+    return emptyState();
   }
 }
 
