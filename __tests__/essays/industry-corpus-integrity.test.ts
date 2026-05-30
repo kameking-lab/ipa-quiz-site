@@ -68,6 +68,17 @@ describe("essay industry corpus integrity (all exam codes)", () => {
     }
   });
 
+  // load.test.ts は SC の question id 一意性のみ固定しているが、st/sa/pm/sm/au の
+  // afternoon 由来コーパスは未カバー。findEssayQuestion は `.find(q=>q.id===id)`(:83)で
+  // 引き、詳細ルートは dynamicParams のため、id 重複は2件目を到達不能(誤コンテンツ/404)に
+  // する。全6区分で question id の一意性を固定する。
+  it("has unique question ids within each exam's essay corpus", () => {
+    for (const exam of ESSAY_EXAM_CODES) {
+      const ids = getEssayQuestionsByExam(exam).map((q) => q.id);
+      expect(new Set(ids).size, exam).toBe(ids.length);
+    }
+  });
+
   // 模範解答（合格答案例）の三段（序論/本論/結論）はそのままユーザーへ描画される
   // (EssayIndustryTabs:95,104,113)。型は `string` を保証するが非空は保証しないため、
   // 半端に作成されたデータが空の「本論」セクション(charCount 0)を出荷しないよう固定。
