@@ -1435,6 +1435,8 @@ export function CopilotDesktopFloating({
 }: Omit<Props, "className" | "onClose"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
   const panelRef = React.useRef<HTMLDivElement | null>(null);
+  const fabRef = React.useRef<HTMLButtonElement | null>(null);
+  const prevOpenRef = React.useRef(open);
 
   React.useEffect(() => {
     if (!open) return;
@@ -1443,6 +1445,16 @@ export function CopilotDesktopFloating({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  // Restore focus to the trigger when the panel closes. The open effect below
+  // pushes focus into the panel; without this, closing (Escape / overlay /
+  // 内部の閉じる) would strand keyboard users at the document body.
+  React.useEffect(() => {
+    if (prevOpenRef.current && !open) {
+      fabRef.current?.focus({ preventScroll: true });
+    }
+    prevOpenRef.current = open;
   }, [open]);
 
   // When the panel opens, push focus into the first input (search box) so
@@ -1471,6 +1483,7 @@ export function CopilotDesktopFloating({
     <>
       {!open && (
         <button
+          ref={fabRef}
           type="button"
           onClick={() => setOpen(true)}
           aria-label="AI コパイロットを開く"
