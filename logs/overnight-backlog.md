@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション28):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S28 で網羅的に枯渇を再々確認。
+> S28: S26起案の観点⑰⑱を全数監査（⑰デッドコード=component143/95export＋lib全export を網羅 grep で未参照ゼロ確定／⑱メモ化=SearchClient 精査で参照不安定の体感被害なし＝両者**実害ゼロ**）。
+> 新観点「**データテーブルの th scope（WCAG 1.3.1 / H63）**」を開拓し**実改善4件**：①`/why-kakomon-ai`比較表（2軸・行見出しが裸td）を列scope=col+行scope=row化（`45644c7`）②`/recommended-books`書籍表（同型2軸）同様修復（`cf184b9`）③`QuestionBody`パイプ表の列見出しに scope=col（`2546b88`・/q中核）④`Markdown`/`BlogMarkdown`本文表に scope=col（`1877cc5`・AI解説/ブログ）。すべて `.next` 実測で scope 出力を確認。
+> SKIP(実害ゼロ): simple単一ヘッダ表（stats ranking/demo/admin）は SR 自動推論で実害限定的＝夜間SKIP（admin は noindex 低優先）。
+> **教訓: th scope 観点は一巡 done。indexable な実害（2軸 row-header 欠落×2 + content table レンダラ×2）は4件修復済（再監査不要）。simple表は SKIP 確定。デッドコードは exhaustive 監査でゼロ。**
+> **次は: 夜間の安全な実害バグは S1-S28 で深く枯渇。下記「P1 新観点（S28 起案）」から1つ選び全数監査するか、日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション27):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S27 で網羅的に枯渇を再々確認。
 > S27: S26起案の観点⑲⑳㉑を全数監査。**実改善3件**＝⑲`CopilotPanel` の dangling aria-controls（"copilot-actions-popup" を指すが
 > 対象 div に id 欠落＝隣接 quickActions は対で正・非対称バグ）を id 付与で解消（`94eb20f`・WCAG 1.3.1）。㉑**framer-motion の JS 駆動
@@ -366,6 +373,31 @@ XSS/LCP画像 を網羅一巡。**まだ全数監査していない観点**:
   メディアクエリを見ているか未走査）。前庭障害ユーザーへの実害。
 注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
 各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 新観点（S28 起案・未踏。次セッション以降で全数監査せよ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S1-S28 で a11y名/aria-live/チャートalt/タブ/aria-current/OG/robots/dead-link/canonical/sitemap/stale-timer/JST境界/
+keydown修飾/数値破綻/effect-async/focus-restore/localStorage-guard/time-element/regex-lastIndex/array-mutation/
+cleanup-leak/index-key-bleed/非ユニークkey/JSON-LD数値/空配列ゼロ状態/toLocaleString-locale/id衝突/form-Enter/高頻度リスナー/
+XSS/LCP画像/デッドコード/メモ化/aria状態同期/暗黙submit/reduced-motion/**table-th-scope** を網羅一巡。**まだ全数監査していない観点**:
+
+- **㉒`<th>` 以外の table セマンティクス**: 複雑な data table に `<caption>`（表の説明）があるか、`colspan`/`rowspan` を
+  持つ表で見出し関連付けが壊れていないか。※ S28 で th scope は一巡＝**simple単一ヘッダ表への scope 追加は SR 自動推論で
+  実害なし＝SKIP 済**。caption 欠落も「壊れ」ではなく機能追加寄り＝実害判定を慎重に（overreach の罠）。
+- **㉓`lang` 属性の部分指定**: 日本語ページ内の英略語/コードが多いが、`<html lang="ja">` のみで部分的な lang 切替が
+  必要な箇所は実用上ほぼ無い（IPA 用語は日本語読みが正）＝**おそらく実害ゼロ**。確認のみ。
+- **㉔`aria-label` と可視テキストの不一致（WCAG 2.5.3 Label in Name）**: アイコン+テキストのボタンで aria-label が
+  可視ラベルを**含まない**と音声操作ユーザーが起動できない。S1-S27 でアクセシブルネーム欠落は一掃したが「可視ラベルと
+  aria-label の包含関係」は未走査。実害＝音声コントロール非対応。
+- **㉕`<input>` の autocomplete 属性**: メール/名前等の入力欄に適切な `autocomplete`（email/name 等）が付くか
+  （WCAG 1.3.5 Identify Input Purpose・モバイル入力支援）。EmailLeadCapture/ContactForm/EmailSignInForm 等。
+  実害＝モバイルでの自動補完が効かず入力負荷増（ただし「壊れ」ではないため実害判定を慎重に）。
+- **㉖number/tel 入力の inputmode**: 数値入力（年度フィルタ等）に `inputMode="numeric"` があるか（モバイルで数字
+  キーパッドが出るか）。実害＝モバイル UX（CLAUDE.md のモバイル片手操作最優先に直結）。
+注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
+各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
+**特に㉔（Label in Name）と㉖（inputmode モバイル）は実害が出やすい候補。**
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## メモ

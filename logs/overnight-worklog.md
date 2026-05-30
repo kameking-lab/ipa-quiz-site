@@ -1094,3 +1094,23 @@
 - 次セッションへ: S26 起案の残り観点は ⑰（デッドコード/未参照 export スイープ）⑱（useMemo/useCallback 依存の参照不安定＝**実測体感被害が
   ある場合のみ**）。日中候補が蓄積（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮/
   EmailSignInForm・SchedulePlanner live化/**reduced-motion 共有フック抽出**）。夜間の安全な実害バグは S1-S27 で深く枯渇。
+
+## セッション28 2026-05-30 13:02 JST（観点⑰⑱の全数監査=実害ゼロ → 新観点「データテーブルの th scope」を開拓し indexable な実害4件を修復）
+- 冒頭ベースライン: HEAD `a4bdaf3`。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。test 280→最終288緑。
+- SKIP(全数監査=実害ゼロ・観点⑰ デッドコード/未参照 export): Explore で **コンポーネント143ファイル・95 export を全数監査**＝import 0件のものゼロ（MockExamClient 同型の superseded 実装は他に無い）。さらに **lib 配下の全 export をスクリプトで網羅 grep**（app/components/lib 内の外部参照件数を算出）＝未参照 export ゼロ。S26 で MockExamClient を削除済＝現状クリーン。framer-motion 利用は FireworksBurst/ComboCounter の2点のみ（grep 再確認＝S27 の主張を独立検証）で両方 reduced-motion 対処済（観点㉑再監査不要）。
+- SKIP(実害ゼロ・観点⑱ useMemo/useCallback 参照不安定): 最も interactive で jank が出やすい `SearchClient`（hooks 16箇所）を精査＝`fetchResults` は空deps で安定・debounce effect は `inputText===query.q` ガードあり・`filteredHits` の `recentlyViewedIds` は mount 1回ロードの安定 Set・`updateQuery` の query 依存は正当。体感被害のある参照不安定は不在。理論上の再計算は規約上 SKIP（過大修正の罠）。
+- done: 【実バグ=A11y WCAG 1.3.1・新観点】`/why-kakomon-ai` 比較表（indexable・差別化の中核アセット）の列見出し4つに `scope="col"`、各行の観点ラベルを裸の `<td>` から `<th scope="row">` へ是正。「観点×サービス」の2軸テーブルなのに**行見出しのセマンティクスが皆無**で、SR がデータセルと観点軸を関連付けできなかった。`text-left` で左寄せ維持・`font-medium` が th 既定の太字を上書き＝視覚不変。/ コミット `45644c7` / 検証: typecheck0/lint0err/test282緑(+2)/build緑。**`.next/server/app/why-kakomon-ai.html` を実測**し scope="col"×4・scope="row"×7（7行）を確認。新規 `WhyKakomonAiTable.test.tsx`（source-read で scope 整合・裸td回帰ガード）。
+- done: 【実バグ=A11y WCAG 1.3.1・同型横展開】`/recommended-books/[exam]` 「書籍の使い分け」表（indexable・書籍×属性の2軸）の列見出し3つに `scope="col"`、各行の書籍タイトルを裸の `<td>` から `<th scope="row">` へ是正（行を識別するエンティティが見出しセマンティクス皆無だった）。/ コミット `cf184b9` / 検証: 全緑(test284)。**`recommended-books/ap.html` を実測**し scope=col×3・scope=row×7。新規 `RecommendedBooksTable.test.tsx`。
+- done: 【実バグ=A11y WCAG 1.3.1・中核学習コンテンツ】`QuestionBody` が IPA 問題本文のパイプテーブルを `<table>` 化する際、列見出しの `<th>` が scope 欠落。/q は indexable な中核コンテンツで密なデータ表を含むため、レンダラ層で `scope="col"` を付与（パイプテーブルは列見出しのみ＝常に正・additive）。/ コミット `2546b88` / 検証: 全緑(test285)。**`.next/server/app/q/pm/2025-autumn/am1/q29.html` を実測**し問題表 th に scope="col" 出力を確認。新規 `QuestionBody.test.tsx`（render で getAllByRole("columnheader") が全て scope="col"）。
+- done: 【実バグ=A11y WCAG 1.3.1・本文テーブル横展開】`Markdown`(AI解説) と `BlogMarkdown`(ブログ記事・indexable) の react-markdown(remark-gfm) テーブル列見出し `<th>` に `scope="col"` を付与（GFM テーブルは列見出しのみ＝常に正）。/ コミット `1877cc5` / 検証: 全緑(test287→288)。**`.next/server/app/blog/db-sql-taisaku.html` 等を実測**し本文テーブル th に scope="col" 出力を確認。新規 `MarkdownTableScope.test.tsx`（両レンダラを render し columnheader が scope="col"）。
+- SKIP(実害ゼロ・simple単一ヘッダ表): `/stats` 検索キーワード ranking 表（#/キーワード/表示回数）・`/demo/essay-grading`・admin 各表は**単一ヘッダ行の単純表**で、行を識別する第1列が見出し相当でない（# 順位等）。SR は単純表の列見出しを自動推論するため scope="col" は best-practice だが**実害は限定的**＝夜間は安全側で SKIP（admin は noindex/内部運用で低優先）。content table（問題/解説/ブログ＝密で可変）のみ実害ありと判定し修復。
+
+## セッション28 まとめ
+- 実改善4件（すべて A11y WCAG 1.3.1 データテーブルの th scope 欠落）+ 全数監査SKIP2観点（⑰デッドコード/⑱メモ化=実害ゼロ）+ simple表 SKIP。
+  1. why-kakomon-ai 比較表: 列 scope=col + 行 scope=row（`45644c7`）
+  2. recommended-books 書籍表: 列 scope=col + 行 scope=row（`cf184b9`）
+  3. QuestionBody パイプ表: 列 scope=col（`2546b88`・/q 中核コンテンツ）
+  4. Markdown/BlogMarkdown 本文表: 列 scope=col（`1877cc5`・AI解説/ブログ）
+- テーマ: 新観点「データテーブルの th scope（WCAG 1.3.1 / H63）」を開拓。**2軸テーブルで行見出しが裸 td だった2件＝真の実害**、content table レンダラ2件＝密な表で scope が効くため修復。simple単一ヘッダ UI 表は SR 自動推論で実害限定的＝SKIP。
+- 教訓（次セッションの重複監査防止）: **th scope 観点は一巡。indexable な実害（2軸 row-header 欠落 / content table レンダラ）は4件すべて修復済（再監査不要）。残る simple 表（stats/demo/admin）は SR 自動推論で実害なし＝SKIP 確定。** デッドコード（component/lib export）は exhaustive 監査でゼロ確定。framer-motion は2点のみで reduced-motion 対処済。
+- 次セッションへ: 夜間の安全な実害バグは S1-S28 で網羅的に枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/EmailSignInForm・SchedulePlanner live化/reduced-motion 共有フック抽出）。新観点を起案する場合は下記 backlog「P1 新観点（S28 起案）」を参照。
