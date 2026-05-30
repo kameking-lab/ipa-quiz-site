@@ -2432,3 +2432,21 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)は枯渇継続。arrow-const export スイープも全テスト済を本セッションで確認。
 - 次の夜間安全角度: 他データセット(glossary/keywords/topics の cross-link)に同 no-404 doctrine 横展開、or 過去 SAFE/latent footgun 再検証(S33/S41)。
 - 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション82（2026-05-31 05:08 JST）: no-404 doctrine をナビ/機能LP横展開 回帰固定3件
+
+ベースライン全緑実測(typecheck0/lint0err[1 warning=未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外]/test 1549・208files/build緑2510SSG)。S81 handoff「他データセット/ナビの cross-link に no-404 doctrine 横展開」を実施。グローバルナビ(SiteHeader/footer/MobileBottomNav)と機能LP(data/features.ts)の内部リンク実在性が未固定だったクラスを発掘し回帰固定3件。**実改善0・source 無変更。test 1549→1555(+6 it・208→210 files)。**
+
+- done: `__tests__/data/features.test.ts` 機能LPの /features・/keywords・/blog cross-link実在性 / `b926d25` / +1 it。data/features.ts の primaryCta/relatedLinks は dynamicParams=false の動的ルートへ越境するが、既存テストは href の startsWith("/") のみ検証し typo slug の404を検出できなかった。3 namespace(getFeatureBySlug/getKeywordPageBySlug/getBlogPostBySlug)で実在照合。実データ実測で全hrefがdead=0確認後にピン。/blog/<slug> typo 注入で1 fail 実測→revert(UTF8-no-BOM writer 必須・Set-Contentは日本語ファイルをBOM付きで壊しtransform error)。
+- done: `__tests__/navigation/site-header-links-resolve.test.ts` グローバルヘッダ静的内部リンク実在性 / `239820e` / 新規2 it。既存 no-dead-internal-links.test は /account/notifications 専用ガードで一般化されてなかった。app/ 実ルートツリーを route group((...))・並列ルート(@)透過で走査し動的[..]ルートを除外、SiteHeader の全静的 href="/..." が実在ルートに解決すること(dead=0)を固定。**バグ注意: root page は relative(APP_DIR,file)="page.tsx" で先頭セパレータ無し→ dirname(file) で算出すべき。** /why-kakomon-ai typo 注入で1 fail 実測→revert。
+- done: `__tests__/navigation/footer-bottomnav-links-resolve.test.ts` フッタ(app/layout.tsx)＋MobileBottomNav 静的内部リンク実在性 / `42fae52` / 新規3 it。フッタは試験ハブ(/ip…/db)を含むため静的ルート＋動的[exam](getAvailableExams)を解決先に許容。MobileBottomNav は config の href:"..." 形式のため href="..."(JSX)と両形式を抽出。両ナビとも dead=0 固定。footer /glossary + bottomnav /why-kakomon-ai typo 注入で各1 fail 実測→revert。
+
+### SKIP(監査済・実害ゼロ記録)
+- SKIP(実害なし・latent): `__tests__/data/keywords.test.ts` は `exams` を `ALL_EXAM_CODES`(静的全13)で照合するが、`/[exam]` ルートは `getAvailableExams()`(問題数>0のみ)で検証する。問題0件の試験区分があれば keyword の exams がテストを通過しても /[exam] で404になる潜在ギャップ。**現状13区分すべて問題ありで両集合は一致=実害ゼロ**。ピンを getAvailableExams() に厳格化すれば理論上は正確だが、夜間は overreach 回避でSKIP。問題0件区分が将来できた時に再検討。
+- SKIP(実害なし): app/page.tsx(ホーム)は静的 href="/..." を持たず(全て component/template リンク)、本doctrineの対象外。data/faq.ts の "/account/settings" 等はprose内文字列でLinkレンダリングされず(react-markdown autolink無し)404リスク無し。
+
+### 次セッションへ
+- **no-404 internal-link doctrine はグローバルナビ(header/footer/bottomnav)＋editor data(features/keywords/glossary/blog/success-stories)で主要面を消化**。残る個別ページ(about/essays各ページ等)の本文内リンクは per-page 列挙が脆く価値薄=日中向き。
+- a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)・cross-link no-404(S81-S82)は枯渇確認継続。
+- 次の夜間安全角度: 過去 SAFE/latent footgun 再検証(S33/S41)、or arrow-const export スイープ再点検、or keywords.test の getAvailableExams 厳格化(上記SKIPを実害化する区分が出たら)。
+- 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
