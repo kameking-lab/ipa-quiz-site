@@ -153,4 +153,19 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
     ).map((p) => p.slug);
     expect(selfRefs).toEqual([]);
   });
+
+  it("every in-body /blog/<slug> cross-link resolves to an existing post", () => {
+    // Bodies carry hand-authored markdown cross-links like `](/blog/foo-bar)`.
+    // A typo'd slug renders a 200-looking link that 404s on click — a dead
+    // internal link that erodes crawl/UX. The /[exam] practice CTA is pinned
+    // per generator, but body-to-body /blog/ links had no guard.
+    const linkRe = /\]\(\/blog\/([a-z0-9-]+)\)/g;
+    const dead: string[] = [];
+    for (const p of ALL) {
+      for (const m of p.body.matchAll(linkRe)) {
+        if (!slugSet.has(m[1])) dead.push(`${p.slug} -> /blog/${m[1]}`);
+      }
+    }
+    expect(dead).toEqual([]);
+  });
 });
