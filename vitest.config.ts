@@ -17,6 +17,9 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "."),
+      // `server-only` is a Next.js build-time token with no resolvable module on
+      // disk; stub it so server-only modules can be exercised at runtime in tests.
+      "server-only": path.resolve(__dirname, "test-stubs/server-only.ts"),
     },
   },
 });
