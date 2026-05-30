@@ -1589,3 +1589,44 @@ S46 が「未テスト純関数は search-index のみ残」としていたが�
   `lib/exam-config.ts` の buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt(プロンプト
   文字列・固定値テストの価値は中)・search-index(private・export 追加要で日中向き)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション48 (2026-05-30 19:01 JST) — S47 の lib/ 再走査角度を継続・未テスト中核純関数4件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定4モジュール（test 763→816・124→128 files）。全ゲート全緑。
+冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/HEAD `0cb71af`(S47)。
+S47 の「Explore で lib/ を再走査→未テスト中核純関数を発掘して契約固定」角度を継続。
+Explore で lib/ 全体を再走査し、未テストで実害寄りの契約を持つ純関数モジュールを新規4件発掘。
+全件 read-only 監査で実バグ無し＝characterization。期待値は型/合成入力から導出し source 変更ゼロ。
+全ゲート（typecheck/lint/test/build）緑を各コミット前に確認。各テストは mutation→revert で「崩れたら落ちる」を実測。
+
+- done `lib/study-plan/storage.ts`（学習プラン保存＋クラウド同期の中核）。listPlans の createdAt 降順/破損JSON
+  フォールバック・savePlan の同id置換＋MAX_PLANS=20 で最古(createdAt)退避・setTaskDone の done/undone トグル・
+  getPlanSyncEntries の updatedAt=max(created,progress)・**mergeServerPlans の LWW**(local>=server で local維持/
+  server新で上書き/未存在追加/非object payload skip)・computeCompletionStats の percent丸め＋0件で NaN でなく0 を pin。
+  / コミット `5df86dd` / `__tests__/study-plan/storage.test.ts`(19件)。**LWW 比較 `>=` を `<` に反転すると
+  mergeServerPlans 2件が落ちる**ことを実測(revert 済)。
+- done `lib/seo/indexnow.ts`（IndexNow クロール通知）。getIndexNowKey の正規表現検証(8-128字/英数+ハイフン/
+  大文字可/trim/範囲外・不正文字は null)・pingIndexNow の fail-soft(キー無→no-key/空URL→empty で fetch 不実行・
+  成功時 host/key/keyLocation/urlList を POST・urlList 10000件上限・fetch throw 時 {ok:false,reason:message}) を pin。
+  vi.stubEnv/stubGlobal でenv・fetch を制御。/ コミット `6f8439a` / `__tests__/seo/indexnow.test.ts`(13件)。
+  **キー長下限を 8→1 に緩めると「8字未満を拒否」テストが落ちる**ことを実測(revert 済)。
+- done `lib/onboarding/state.ts`（オンボーディング状態アクセサ）。readOnboardingState の EMPTY フォールバック
+  (空/破損JSON)＋部分状態 {...EMPTY,...parsed} マージ＋legacy kakomon-ai キー移行・**markFirstVisit の冪等性**
+  (firstVisitAt 既存なら非上書き)・markTourCompleted/Dismissed の firstVisitAt バックフィル/既存保持・
+  setAttribute/setSelectedExam の他フィールド保持・cleanupDeadOnboardingKeys の死蔵キー削除を pin。
+  / コミット `8c2a7cf` / `__tests__/onboarding/state.test.ts`(13件)。**冪等ガード `if(current.firstVisitAt) return`
+  を除去すると idempotent テストが落ちる**ことを実測(revert 済)。backlog S42 が footgun SAFE 確定済の merge。
+- done `lib/ai/cost-tracker.ts`（§0 コスト上限ガードと同じ価格表の単一情報源 costJpy）。価格表
+  (flash-lite $0.10/$0.40・flash $0.30/$2.50 per 1M ×150円)・ゼロで0・線形スケール・出力>入力・flash>flash-lite・
+  CostTracker.estimate=costJpy 一致かつ非記録(callCount不変)・record の totalJpy/totalUsd/callCount 累積を pin。
+  filesystem 依存 save()/printSummary は対象外(純計算/インメモリ集計のみ)。/ コミット `3cc1250` /
+  `__tests__/ai/cost-tracker.test.ts`(8件)。**USD_TO_JPY を 150→100 にすると価格表テストが落ちる**ことを実測(revert 済)。
+
+### 次セッションへ
+- study-plan/storage・seo/indexnow・onboarding/state・ai/cost-tracker は回帰固定済（再監査不要）。
+- **教訓: S47 の lib/ 再走査角度は依然有効＝未テスト中核純関数がまだ4件見つかった（cloud-sync の LWW・
+  価格表・オンボーディング冪等など実害寄りの契約を含む）。定期的な lib/ 全体再走査の価値を再確認。**
+- まだ未テストで残る候補: `lib/copilot/rag-pipeline.ts`(async orchestration・mock 要・夜間は慎重に)・
+  `lib/sync/*`(study-plan-sync 等の sync ラッパ)・`lib/search/question-index.ts`(private・export 追加要で日中向き)・
+  `lib/exam-config.ts` の buildExtractionPrompt 系(プロンプト文字列・固定値テスト・価値中)・`lib/essays/load.ts`(薄いラッパ)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
