@@ -4,6 +4,18 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション54):** P0 全件 done/SKIP。P1 進行中。
+> S54: backlog の「未テスト純関数枯渇」宣言を疑い、`grep -rq "$mod\"" __tests__/` で**テストから一切 import
+> されていない lib モジュール**を機械的に列挙→未テストが残存（S47-S53 の探索範囲漏れ）。安全な
+> characterization テスト**4本**追加（mock-exam/session computeRemainingSec=savedAt でなく startedAt 基準・
+> copilot/streaming createCopilotResponseStream=フッター付与/onComplete 文字数/エラーフォールバック・
+> mock-exam/config getMockConfig+データ不変条件・api/rate-limit checkApiRateLimit キー導出+ヘッダ）。
+> 全て source 無変更・mutation で落ちることを実測。test 920→944（+24 it・141→145 files）。コミット
+> `7d8767b`/`6501081`/`28a8761`/`7fd53bf`。
+> **次の探索手法: 「import 実在判定の未 import lib 列挙」が S47-S53 の basename 一致判定より漏れが少ない。**
+> 残り未テスト純関数候補: analytics/events(trackEvent)・study-plan/constants(PHASE_RATIOS sum=1.0 等)・
+> streak/storage・chat/storage。それ以外は types/server-only/外部API fetch で marginal。
+>
 > **状態 (2026-05-30 セッション51):** P0 全件 done/SKIP。P1 進行中。
 > S51: S50 handoff が名指しした「残る未テスト純関数候補」3件を消化＝**回帰固定3モジュール**（sync/client postSync 未カバー枝・essays/load・exam-config prompt builder・計23 it・test 883→906・137→139 files）。実改善0件（source 無変更）。全件 source mutation→revert で「崩れたら落ちる」を実測。
 > ①`lib/sync/client.ts::postSync` の未カバー4分岐（既存 merge.test.ts は 401/503/200/throw のみ）＝generic HTTP 失敗(非401/503)→`{error,"HTTP NNN"}`・200 body の entries 非配列→入力 entries フォールバック・merged/total の `?? 0` 既定・非Error throw→`"network"` 文言, `57fbdbf`。HTTP文言改変/`?? 99`/`Array.isArray`除去/`err.message`直参照 mutation で実測。

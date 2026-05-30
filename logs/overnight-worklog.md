@@ -1811,3 +1811,36 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
 - 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S53 で深く枯渇。新規夜間タスクは:
   ①「過去が SAFE/latent 分類した同型 footgun の再検証」(S33/S41 角度) ②「属性有無だけ見て見落とした同型 a11y」(S33 角度)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション54 (2026-05-30 20:33 JST 起動)  — 未テストの lib 純関数/インフラ関数を回帰固定（4サイクル）
+### 論点: backlog の「lib/ で未テストの純関数」探索を grep（import 実在判定）で再走査し、
+### S47-S53 が拾い切れていなかった「テストファイルから一切 import されていない lib モジュール」を発見、
+### 安全な characterization テスト4本を追加（source 無変更）。test 920→944（+24 it・141→145 files）。全ゲート緑。
+- 探索: `for f in lib/**.ts; grep -rq "$mod\"" __tests__/` で未 import の lib 49ファイルを列挙。
+  うち types/server-only/外部API を除き、純関数・テスト容易なインフラ関数4本を選定。
+- done `lib/mock-exam/session.ts::computeRemainingSec`（模試タイマー残り秒）/ commit `7d8767b` /
+  `__tests__/mock-exam/session.test.ts`(5 it)。**最重要契約: 経過は savedAt でなく startedAt 基準**
+  （タブを閉じてもタイマー止まらない=実試験挙動）・clamp[>=0]・floor。Date.now を vi.spyOn で固定。
+  **startedAt→savedAt mutation で4件落ちる**ことを実測(revert 済)。
+- done `lib/copilot/streaming.ts::createCopilotResponseStream`（/api/copilot 本文ストリーム・B軸出力経路）
+  / commit `6501081` / `__tests__/copilot/streaming.test.ts`(7 it)。mock provider(async generator)で
+  チャンク素通し・成功時のみ RAG 引用フッター付与(hasGrounding && footer)・hasGrounding=false/空 footer は非付与・
+  onComplete はフッター除外文字数で1回・エラー時[エラー]フォールバック文+captureException(vi.mock)を pin。
+  **フッターゲート `hasGrounding && citationFooter`→`citationFooter` mutation で1件落ちる**ことを実測。
+  ※ timeout/client-abort 経路は timer/AbortController 依存でフレーキー化を避け対象外（決定的な部分のみ固定）。
+- done `lib/mock-exam/config.ts::getMockConfig` + MOCK_EXAM_CONFIGS / commit `28a8761` /
+  `__tests__/mock-exam/config.test.ts`(5 it)。未知区分→ap フォールバック・exam フィールド=キー一致(コピペズレ)・
+  questions/minutes 正・passThreshold (0,1]・label 非空・基準値(ap 80問/150分,ip 100問/120分,全区分 0.6)を pin。
+  **フォールバック先 ap→ip mutation で1件落ちる**ことを実測。
+- done `lib/api/rate-limit.ts::checkApiRateLimit` + buildRateLimitHeaders / commit `7fd53bf` /
+  `__tests__/api/rate-limit-key.test.ts`(7 it)。Bearer トークン(trim 後12文字以上)→key:<先頭64文字>・
+  短/無→ip フォールバック・64文字切詰・結果展開+keyId 併返・X-RateLimit-* 文字列整形を pin。
+  rate-limit/server を vi.mock し純粋なキー導出を分離。**長さ閾値 `>=12`→`>=0` mutation で2件落ちる**ことを実測。
+### 次セッションへ
+- **重要な気付き: S47-S53 の「lib/ 全走査で未テスト純関数は枯渇」宣言は探索範囲漏れ。**
+  「テストから import されていない lib モジュール」を grep で機械的に列挙すると未テストが残っていた。
+  本セッション後の残り未テスト lib（純関数寄り）候補: `lib/analytics/events.ts::trackEvent`(SSR guard+never throw・@vercel/analytics mock)、
+  `lib/study-plan/constants.ts`(PHASE_RATIOS sum=1.0 等データ不変条件)、`lib/streak/storage.ts`/`lib/chat/storage.ts`(localStorage 系)。
+  それ以外は types/server-only(prisma/auth/db)/外部API fetch(stats/gsc,posthog・sync/*-sync)で marginal。
+- 状態の安全な実害バグ・未テスト純関数とも S1-S54 で深く掃かれた。次は上記残り候補 or S33/S41 角度の
+  「過去 SAFE/latent 再分類→footgun 再検証」「同型 a11y 再点検」。日中候補群は不変。
