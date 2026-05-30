@@ -136,6 +136,40 @@ describe("searchQuestions — ソート不変条件", () => {
     expect(rnd.total).toBe(rel.total);
     expect(rnd.hits.length).toBe(rel.hits.length);
   });
+
+  it("category は分野（ja ロケール）昇順・同分野内は year 降順→qNumber 昇順タイブレーク", async () => {
+    // sort="category" は検索 UI の並び順 select（SearchClient の sort-select）と
+    // API の zod enum 双方が公開する実ユーザー経路だが、これまで relevance/
+    // year_desc/random のみ固定され category 枝（question-index.ts の
+    // localeCompare(_, _, "ja") + year/qNumber タイブレーク）は未カバーだった。
+    // q="稼働率" は AP で十数件・複数分野にまたがり 1 ページ（limit<=60）に
+    // 全件収まるため、分野をまたぐ並びが必ず観測でき非空虚に固定できる
+    // （空クエリだと降順時に最大分野だけで 1 ページが埋まり vacuous になる）。
+    const res = await searchQuestions({
+      exam: "ap",
+      q: "稼働率",
+      sort: "category",
+      limit: 60,
+    });
+    expect(res.total).toBeLessThanOrEqual(60); // 全件が 1 ページに収まる前提
+    expect(new Set(res.hits.map((h) => h.category)).size).toBeGreaterThan(1); // 複数分野で非空虚
+    expect(res.hits.length).toBeGreaterThan(1);
+    for (let i = 1; i < res.hits.length; i++) {
+      const prev = res.hits[i - 1];
+      const cur = res.hits[i];
+      const cmp = prev.category.localeCompare(cur.category, "ja");
+      // 分野は ja ロケール昇順で非減少
+      expect(cmp).toBeLessThanOrEqual(0);
+      if (cmp === 0) {
+        // 同分野内は year 降順（非増加）
+        expect(prev.year).toBeGreaterThanOrEqual(cur.year);
+        // 同分野・同 year は qNumber 昇順（非減少）
+        if (prev.year === cur.year) {
+          expect(prev.qNumber).toBeLessThanOrEqual(cur.qNumber);
+        }
+      }
+    }
+  });
 });
 
 describe("searchQuestions — snippet", () => {
