@@ -606,22 +606,29 @@ export default function SettingsPage() {
           </section>
         </div>
 
-        {toast && (
-          <div
-            role="status"
-            aria-live="polite"
-            className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
-              toast.type === "ok" ? "bg-success" : "bg-destructive"
-            }`}
-          >
-            {toast.type === "ok" ? (
-              <CheckCircle2 className="h-4 w-4" />
-            ) : (
-              <AlertCircle className="h-4 w-4" />
-            )}
-            {toast.msg}
-          </div>
-        )}
+        {/* 常設の live region。toast 真値時のみ region を描画する条件付きマウントだと、
+            live region 自体が文言と同時に DOM 挿入され、SR が変化を捕捉できず読み上げが
+            不確実になる。region を常設し中身だけ出し入れして確実に通知する（WCAG 4.1.3）。 */}
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
+        >
+          {toast && (
+            <div
+              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
+                toast.type === "ok" ? "bg-success" : "bg-destructive"
+              }`}
+            >
+              {toast.type === "ok" ? (
+                <CheckCircle2 className="h-4 w-4" />
+              ) : (
+                <AlertCircle className="h-4 w-4" />
+              )}
+              {toast.msg}
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );
