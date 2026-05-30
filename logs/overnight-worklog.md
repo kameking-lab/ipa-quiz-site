@@ -2501,3 +2501,20 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - SKIP(実害なし/設計意図): `lib/gamification/daily-challenge.ts::completeChallenge` の `alreadyCompleted` 分岐が correctCount/total を新回答から・perfect/streak を保存値から返す「不整合」を Explore が報告したが調査の結果 SKIP。①once-per-day の冪等性(再完了で streak/XP を稼げない)は**意図された設計**で保存値返却が正。②通常の「本日完了済み」表示は consumer(`DailyChallengeClient.tsx:47-64` useEffect)が保存 answers から再計算+保存 perfect で**完全に整合**。③`completeChallenge` の当該分岐は「未完了状態でロード→5問回答→その間に別タブで完了」の二タブ競合でのみ到達し、しかも `if (!completion.alreadyCompleted)` ガード(:129)で XP/streak 加算はスキップ=整合性無傷。残るのは競合時の表示微差のみ=実害ほぼゼロ。夜間は安全側で据置。
 
 - SKIP(実害なし/latent footgun): `lib/questions/filter.ts::shuffleChoices`(:81-95) が複数正解(answer が配列)の問題で先頭要素のみ remap し string で返す=後続正解を失う、と Explore が報告。調査結果 SKIP。`data/questions/` 全体で `answer:\s*\[`(配列正解)は**0件**=実データに複数正解問題が存在せず実害ゼロ。型は `ChoiceKey | ChoiceKey[] | string` で配列を許容し `Array.isArray` 分岐も存在するが、4択(ア/イ/ウ/エ)シャッフルは標準午前単一正解用で、そもそも複数正解(通常>4択・別UI)の経路ではない。複数正解 remap を実装すると data 不在の未テスト挙動を新規追加=過大修正の罠。配列正解データが将来追加される場合のみ要再検討(grading 側も多くが単一正解前提)。S73 で shuffle は単一正解の決定的置換として既に回帰固定済(`7a555ca`)。
+
+---
+## セッション87 (2026-05-31 06:34〜 JST)
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 212files・1566 / build SSG・exit0)。S86 handoff「純関数の実バグ(日付×index)」を継続→**date/streak ロジックは Explore 機械監査(gamification/motivation/streak/study-plan/dashboard/learning analytics 全走査)で clean 確定・新規実バグなし**。代わりに**未カバーだったユーザー可視の検索ランキング枝2件を回帰固定**。実改善0・source 無変更。test 1566→1568(+2 it)。
+
+- done: `__tests__/search/question-index.test.ts` 検索 category ソートの分野昇順+タイブレーク回帰固定 / `1a3f2f6` / +1 it。**`sort="category"` は検索 UI の並び順 select(SearchClient `sort-select` :721)と API zod enum(route.ts:53)双方が公開する実ユーザー経路だが、既存テストは relevance/year_desc/random のみで category 枝(question-index.ts:176-182 `localeCompare(_,_,"ja")`+year降順→qNumber昇順)が完全に未カバーだった。** `q="稼働率"`(AP 12件・5分野・1ページ内に全件収まる)で分野をまたぐ並びを非空虚に固定。**★vacuous 罠: 空クエリだと降順 mutation 時に最大分野(>60問)だけで1ページが埋まり cmp 常時0=mutation すり抜け→小 total の複数分野クエリで全件を観測可能にした。** 比較器を `b.localeCompare(a)` へ反転する mutation で `expected 1 to be <= 0` fail を実測→revert。
+- done: `__tests__/search/question-index.test.ts` 複数トークン検索の AND 絞り込み回帰固定 / `20ee2f4` / +1 it。**scoreQuestion(question-index.ts:100)はいずれかのトークンが本文・タグ双方で0ヒットなら即 `return 0` で除外=全語必須(AND)。検索 UI で複数語入力時の絞り込みそのものだが、空クエリ/未ヒット語のみ固定され AND 経路は未カバーだった。** 「ネットワーク」(151)「セキュリティ」(161)で 2語 total(28)<=各単語 total かつ第2語が厳密に絞る(28<151)を固定。`return 0`→`continue`(OR化)mutation で total が union(284)へ膨らみ `expected 284 to be <= 151` fail を実測→revert。
+
+### SKIP(監査済・実害ゼロ記録)
+- SKIP(防御的・実害なし): `lib/gamification/daily-challenge.ts:147-151` の `perfectStreak` 増分が yesterday の `current.perfect` を確認しない、と Explore が報告→トレースの結果 **non-bug**。`perfectStreak` は imperfect 完了で必ず0に落ちる(:151 `else 0`)ため `current.perfectStreak>0 ⟺ 前回 perfect` が成立、欠落している `&& current.perfect` は全到達状態で出力を変えない純防御。追加は過大修正の罠=SKIP。completeChallenge の streak は既存5 it(初日/延長/gap reset/imperfect zeroing/冪等)で全カバー済。
+- SKIP(既 pin 済・cosmetic): `lib/search/question-index.ts::makeSnippet`(:88) が省略記号で SNIPPET_LEN=160 を最大162字に超える、と Explore が報告→既存テスト(question-index.test.ts:142-145「+省略記号2字以内」`<=162`)が**既に許容挙動として明示 pin 済**。in-app 検索プレビュー用でSEO meta非経由・レイアウト破綻なし=実害ゼロ。SKIP。
+
+### 次セッションへ
+- **検索ランキング(clamp/facets/relevance/year_desc/category/random/snippet/AND-tokens)は本セッションで主要枝を消化。** lib/learning/analytics・lib/dashboard/analytics・lib/copilot/retriever は全 export が既テスト済(per-name 突合で確認)=この近傍の未カバー枝は枯渇。
+- **date/index 実バグ角度(S86)は本セッションの Explore 機械監査で gamification/motivation/streak/study-plan/analytics 全 clean 確定**=S86 の study-plan 週末ミニ模試が唯一の実バグだった。次に同角度を回すなら未走査領域(grading/午後採点・mock-exam 構成・heatmap 集計の境界)に限定。
+- 残る夜間安全角度: 未カバーのユーザー可視枝(UI が公開する sort/filter/mode の分岐で test 未到達のもの)を per-branch で探す、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
+- 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
