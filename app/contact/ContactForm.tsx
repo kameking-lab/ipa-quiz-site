@@ -85,7 +85,11 @@ export function ContactForm() {
 
   if (status === "ok") {
     return (
-      <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm dark:border-emerald-900/60 dark:bg-emerald-950/30">
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-2xl border border-emerald-200 bg-emerald-50 p-5 text-sm dark:border-emerald-900/60 dark:bg-emerald-950/30"
+      >
         <div className="mb-2 flex items-center gap-2 text-emerald-700 dark:text-emerald-300">
           <CheckCircle2 className="h-5 w-5" />
           <span className="font-semibold">お問い合わせを受け付けました</span>
