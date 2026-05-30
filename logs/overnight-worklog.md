@@ -1769,3 +1769,13 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   3) 純関数の安全な契約固定ネタは S1-S51 で実質枯渇。新規価値は「過去 SAFE/latent 分類の footgun 再検証」
      (S33/S41 角度)か「属性有無だけで見落とした同型 a11y」(S33 角度)に残る。
   4) 出力遅延が再発したら、コード変更はせず doc-only に留めるのが安全（本セッションの判断）。
+
+### セッション52 確定リード (grep 検証済の唯一の真・未テスト候補)
+- 候補群を `grep -rl 'lib/<path>"' __tests__/` で実検証した結果（basename 一致でなく import 実在で判定）:
+  - 既テスト(誤検出): seo/sitemap-pagination(3)・utils(4)・seo/exam-meta(2)・blog/related-content(1)・
+    blog/related-questions(1)・copilot/related(1)・questions/last-updated(1)。← これらは着手不要。
+  - **真の未テスト: `lib/success-stories/related-content.ts`（__tests__ からの import 0件）** ＝次セッションの第一候補。
+- 次セッションは出力チャネルが正常なら、このファイルを read→純関数を特定→従来手順で契約固定
+  （mutation→`git checkout --` revert で「崩れたら落ちる」を実測、commit 前に typecheck 単独実行）。
+  success-stories は noindex だが related-content は推薦ロジックの純関数で固定価値あり。
+- 本セッションは出力遅延が重く gate を実測観測できないと判断し、上記の着手は次回送り（コード変更なし）。
