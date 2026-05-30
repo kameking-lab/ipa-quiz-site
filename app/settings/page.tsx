@@ -79,7 +79,7 @@ function SectionTitle({
   id?: string;
 }) {
   return (
-    <div className="mb-3 flex items-center gap-3" id={id}>
+    <div className="mb-3 flex scroll-mt-20 items-center gap-3" id={id}>
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
         {icon}
       </span>
