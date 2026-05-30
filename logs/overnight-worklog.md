@@ -926,3 +926,48 @@
 - 実改善0件（コード無変更）+ 全数監査SKIP3観点（useEffect cleanup leak / index-key state-bleed / 非ユニーク key）すべて**実害ゼロを確定し記録**。
 - 並行 Explore の HIGH 指摘2件（CopilotPanel の listener 積層 / copiedIdx チェック誤表示）はいずれも **React ライフサイクル/append-only 誤認の false positive** と実読で棄却。過大修正の罠を回避しコード無変更（worklog/backlog 記録のみ）。
 - 夜間の安全な実害バグは S1-S23 で網羅的に枯渇を再々確認。残は日中候補 or さらに未踏な観点（backlog S23 起案）。
+
+## セッション24 2026-05-30 12:01 JST（S23起案の未踏観点⑦⑨⑪を全数監査 → 非同期送信ボタンの SR 無通知=WCAG 4.1.3 を2件修復 / ⑦⑪=実害ゼロ）
+- 冒頭ベースライン全緑実測: test **274 passed**(61 files)（現 HEAD `da65602`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）は本ループ無関係＝コミットに巻き込まない。
+- done: 【実バグ=A11y WCAG 4.1.3・観点⑨】午後 AI 採点プレイヤー `AfternoonPlayer`（C軸差別化の中核）の
+  採点ボタンが **数秒かかる AI 採点中に `disabled`（=a11y ツリーから消える）**ため、ボタン上の「採点中…」文言が
+  SR に届かず、完了後に下へ挿入される `AfternoonResultView`（結果ビュー）も live region 外で**無通知**だった。
+  常設の `role="status" aria-live="polite"` sr-only 領域を追加し、採点中／採点完了を読み上げる（エラーは既存の
+  role="alert" で通知済み・視覚/挙動は不変）。S7(EmailLeadCapture) と同型の status-messages 欠落クラス。
+  / コミット `9fb91a8` / 検証: typecheck0/lint0err（既存 ux-audit 警告1のみ）/test **275緑**(+1)/build完走。
+  新規テスト（fetch を保留 stub し採点中状態を維持→role=status が「採点中」を読み上げ。初期は空通知）を追加し、
+  **修正を git stash で外すと「Unable to find role=status」で落ちる**ことを実測（崩れたら落ちる検証）。
+- done: 【実バグ=A11y WCAG 4.1.3・観点⑨横展開】`FeedbackGateModal`（フィードバック駆動の無料枠解放＝§9 中核フロー）は
+  radix Dialog で送信後にフォームを成功ビュー（無料枠解放の案内）へ差し替えるが、**radix は開いた時点の DialogTitle
+  しか読み上げず内容差し替えを再アナウンスしない**ため、送信成功が SR に届かなかった。DialogContent 直下に**常設の**
+  `role="status" aria-live="polite"` sr-only 領域を追加（条件付きマウントの live region は S7 で「不確実」と判明済のため
+  常設方式を採用）し送信中／送信完了を通知。視覚/挙動は不変。/ コミット `8b2ef84`
+  / 検証: typecheck0/lint0err/test **276緑**(+1)/build完走。新規テスト（ラジオ選択→送信→成功ビューの ShareButtons も
+  status を持つため全 status のうち固有文言「受け付けました」を含むものを確認）を追加し、**stash で外すと初期 role=status
+  不在で落ちる**ことを実測。
+- SKIP(実害ゼロ・観点⑦ JSON-LD 数値/列挙の妥当性): Explore で全 ld+json 出力を全数監査。`numberOfItems`/
+  `itemListElement.length`/`position`/`@type`/`inLanguage`/`educationalLevel` 等は**全て描画件数と一致＋schema.org 準拠**で
+  **数値・列挙の不整合（mismatch）はゼロ**。home ItemList は `numberOfItems` を持つが `recommended-books`(一覧/[exam]) の
+  2 ItemList は**任意フィールド `numberOfItems` を欠く**のみ（mismatch ではなく未設定＝バリデータ警告も出ない）。
+  追加は機能追加寄り＝**過大修正の罠回避で SKIP**（日中に整合目的で付与検討可）。
+- SKIP(実害ゼロ・観点⑪ 空配列/ゼロ状態): public indexable 全ページ（home/q/[exam]/[yearSeason]/topic/topics/search/blog/
+  glossary/keywords/ranking/stats/transparency）の空配列・0件・単一要素描画を全数監査。**全て `length>0` ガード / 明示的
+  empty-state 文言 / `notFound()` / optional-chain で保護済**。`undefined` 直描画・NaN/Infinity 表示・壊れた範囲文言は不在。
+  （日本語は単複変化なしのため "0問"/"1問" も文法的に正）。実害ゼロ。
+- SKIP(夜間は安全側・観点⑨ 残り＝過大修正/restructure 回避): 同型 status-messages 候補2件を監査も夜間は見送り。
+  ①`EmailSignInForm`（/auth/signin・noindex）= error は role="alert" 済だが成功は早期 return の新規 div（live 化には
+  early-return の restructure が必要＝最小 diff を超える）＋auth は noindex。②`SchedulePlanner`（公開オンボーディング）=
+  「生成中…」中も disabled だが学習プラン生成は client 側の高速計算（AfternoonPlayer の数秒 AI 呼び出しほどの滞留がない）。
+  いずれも実害が中核2件より低く、最小 diff で gold-standard を満たしにくいため**日中候補として記録し SKIP**。
+
+## セッション24 まとめ
+- 実改善2件（WCAG 4.1.3 status messages 欠落＝非同期送信の SR 無通知、各テスト付き・stash で落ちることを実測）
+  1. AfternoonPlayer: 採点中/完了を常設 live region で通知（`9fb91a8`・C軸 午後採点の中核プレイヤー）
+  2. FeedbackGateModal: 送信完了（無料枠解放）を常設 live region で通知（`8b2ef84`・§9 中核フロー）
+  + 全数監査SKIP（⑦JSON-LD 数値/列挙＝mismatch ゼロ・任意 numberOfItems のみ未設定 / ⑪空配列・ゼロ状態＝全ガード済）
+  + 観点⑨残り2件（EmailSignInForm/SchedulePlanner）は日中候補として記録し SKIP。
+- テーマ: S23 起案の未踏観点⑦⑨⑪を全数監査。実害は観点⑨（disabled な送信ボタンが a11y ツリーから消え進行/完了が
+  SR 無通知）で中核2フローに残存＝S7 で確立した「常設 live region」パターンで修復。⑦⑪は実害ゼロを確定し記録。
+- 次セッションへ: 観点⑦⑪は一巡 done（実害ゼロ）。観点⑨は中核2件 done・残2件は日中候補。残る S23 起案は
+  ⑧canonical/og:url 末尾スラッシュ整合 / ⑩toLocaleString locale 未指定の整形整合。日中候補（tabs矢印キー/
+  コピー通知統一/MilestoneToast ref化/exam meta desc 短縮/EmailSignInForm・SchedulePlanner の live 化）は据え置き。

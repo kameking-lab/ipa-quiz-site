@@ -4,6 +4,19 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション24):** P0 全件 done/SKIP。P1 進行中。
+> S24: S23起案の未踏観点⑦⑨⑪を全数監査。**実バグ2件修復**＝観点⑨「非同期送信ボタンが `disabled` で a11y ツリーから
+> 消え、進行/完了が SR に無通知（WCAG 4.1.3 status messages）」を中核2フローで是正＝S7(EmailLeadCapture) と同型クラス:
+> ①`AfternoonPlayer`（C軸 午後AI採点の中核）採点中/完了を常設 role=status live region で通知（`9fb91a8`）
+> ②`FeedbackGateModal`（§9 無料枠解放フロー・radix は内容差替を再アナウンスしない）送信完了を常設 live region で通知（`8b2ef84`）。
+> SKIP(実害ゼロ): ⑦JSON-LD 数値/列挙＝全て描画件数一致＋schema.org 準拠で **mismatch ゼロ**（recommended-books の任意
+> `numberOfItems` 未設定のみ＝警告も出ず追加は機能追加＝過大修正の罠回避）。⑪空配列/ゼロ状態＝public indexable 全ページ
+> 全てガード済（length>0/empty-state/notFound/optional-chain・undefined 直描画や NaN 表示なし）。
+> SKIP(日中候補): ⑨残り＝`EmailSignInForm`(noindex・成功 div の live 化に early-return restructure 必要)/`SchedulePlanner`
+> (生成は client 高速計算で滞留小)。最小 diff で gold-standard を満たしにくく実害も中核2件より低いため夜間は見送り。
+> **次は: ⑦⑪一巡 done(実害ゼロ)。⑨中核2件 done。残る S23 起案は ⑧canonical/og:url 末尾スラッシュ整合・⑩toLocaleString**
+> **locale 整合。日中候補(tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/EmailSignInForm・SchedulePlanner live化)。**
+>
 > **状態 (2026-05-30 セッション23):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは枯渇を再々確認。
 > S23: S22起案の未踏3観点を全数監査＝**全観点で実害ゼロを確定（コード無変更）**。
 > ①useEffect cleanup leak（addEventListener 全21 .tsx）＝全て同一参照＋cleanup 完備で leak 不在。
