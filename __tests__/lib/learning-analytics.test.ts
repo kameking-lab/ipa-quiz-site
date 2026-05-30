@@ -89,6 +89,16 @@ describe("estimateRequiredPractice", () => {
     expect(estimateRequiredPractice(0.9, 0).questionsNeeded).toBe(100);
   });
 
+  it("floors remaining at 0 when more unique questions answered than the assumed pool", () => {
+    // 既存テストは remaining=10 と 800 のみで、プール枯渇(uniqueAnswered>examPoolSize)を
+    // 踏んでいなかった。大区分で実問題数が既定 examPoolSize(800)を超えると到達する枝。
+    // `Math.max(0, …)` の床が外れると questionsNeeded が負(「−50問」)になりユーザー可視で壊れる。
+    expect(estimateRequiredPractice(0.8, 850)).toEqual({
+      questionsNeeded: 0,
+      hoursNeeded: 0,
+    });
+  });
+
   it("scales by 50 questions per accuracy point below target", () => {
     // gap 0.2 → 0.2 * 100 * 50 = 1000
     expect(estimateRequiredPractice(0.5, 100)).toEqual({
