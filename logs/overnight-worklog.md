@@ -1170,3 +1170,22 @@
 - テーマ: 新角度「**Radix プリミティブのアクセシブルネーム**」を開拓。Switch は中身のない `<button role="switch">` をレンダーするため視覚専用ラベル（SettingRow の隣接 `<p>`）では命名されない盲点だった。`useId`+`cloneElement` で可視ラベルを `aria-labelledby` 関連付け＝最小 diff で7スイッチ一括是正。
 - 教訓（次セッションの重複監査防止）: **Radix Switch は aria-label/aria-labelledby が無いと無名（隣接 `<p>` は関連付かない）。本リポの Radix 利用は Switch（=本修復で命名）/Dialog・Sheet（DialogTitle で命名）/Slot のみ＝裸の無名 interactive プリミティブの残存ゼロ（再監査不要）。radiogroup 全7箇所は aria-label 保有済。viewport は zoom 抑制なし・ネスト interactive 不在＝両クラス構造的クリーン。**
 - 次セッターへ: 夜間の安全な実害バグは S1-S31 で深く枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E領域＝日中レビュー向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。
+
+## セッション32 2026-05-30 14:15 JST（新角度「ページ内アンカー跳躍が persistent sticky header 下に隠れる(scroll-margin 欠落/不足)」を開拓 → 実害4件を全数修復）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err(既存 ux-audit 警告1のみ)/test **298 passed**(72 files)/build緑（HEAD `25c3a8d`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。
+- **新角度の発見**: SiteHeader は `sticky top-0 z-40`・`h-14`(=56px)で**スクロール中も常時表示**（hide-on-scroll 無し・scrolled は shadow/bg styling のみ）。ページ内アンカー(`href="#id"`)跳躍 or `scrollIntoView({block:"start"})` で要素が viewport 最上端(y=0)へ着地すると、**見出しが 56px の header 下に隠れる**。codebase 既定の是正は `scroll-mt-20`(80px=header 56px+余白)。`href="#"` 全4箇所＋`scrollIntoView` 全1箇所を全数監査し、scroll-margin 欠落/不足の**実害4件**を修復。
+- done: 【実バグ=アンカー跳躍が隠れる】`/settings` のセクション内ナビ（`href="#appearance"` 等**8リンク**の専用ナビ）が跳躍する各セクション見出し(`SectionTitle` の id 付き div)に scroll-margin 無し→8セクション全てが header 下に隠れて着地。`scroll-mt-20` を付与。/ コミット `659a569` / 検証: typecheck0/lint0err/test300緑(+2)/build緑。**`.next/server/app/settings.html` 実測**で8 id 全て(`appearance`〜`api-keys`)が `scroll-mt-20 ... id="..."` 出力を確認。新規 `__tests__/a11y/settings-anchor-scroll-margin.test.ts`（scroll-mt-20 正規表現＋8 id 実在ガード・revert で落ちる）。
+- done: 【実バグ=同型】`/student` の「学割を申請する」(`href="#apply"`)が跳躍する申請フォーム Card に scroll-margin 無し。`scroll-mt-20` 付与。/ コミット `f2399f9` / 検証: 全緑(test301)。**`.next/server/app/student.html` 実測**で `... mb-10 scroll-mt-20" id="apply"` を確認。新規 `student-anchor-scroll-margin.test.ts`。
+- done: 【実バグ=同型・中核 indexable】`/q` の「解説を読む」(QuestionAnswerCard の `href="#explanation"`)が跳躍する解説 section の scroll-margin が **`scrollMarginTop:"1rem"`(16px)で header(56px)未満**→「解説」見出しが header 下に隠れる。`scroll-mt-20` へ是正＋インライン style 撤去（CLAUDE.md「インライン style 原則禁止」準拠）。/ コミット `2e3df3c` / 検証: 全緑(test303)。**`.next/server/app/q/pm/2025-autumn/am1/q29.html` 実測**で `class="mt-8 scroll-mt-20"`・inline scrollMarginTop=0件。新規 `q-explanation-scroll-margin.test.ts`（不十分な 1rem 残存ガード含む）。
+- done: 【実バグ=同型・論文添削C軸】`EssayEditor` が採点完了後 `#essay-result` へ `scrollIntoView({block:"start"})`（`scrollIntoView` も CSS `scroll-margin-top` を尊重）するが scroll-margin 無し→採点結果の先頭が header 下に隠れる。`scroll-mt-20` 付与。/ コミット `6254ff1` / 検証: typecheck0/lint0err/test304緑/build緑。新規 `essay-result-scroll-margin.test.ts`。
+- 結論: `href="#"`/`scrollIntoView({block:start})` の全数監査完了。**全 in-page 跳躍ターゲットに scroll-mt-20 が在ることを grep 実測**（about/transparency/admin-metrics は既存で scroll-mt-20 保有＝S15以前から正・再監査不要／`#main-content` skip link は main ラッパへ着地＝header を意図的にスキップする設計で scroll-margin 不要）。`DashboardTabs` の `location.hash` はタブ選択用でスクロール非伴＝対象外。
+
+## セッション32 まとめ
+- 実改善4件（すべて新角度「ページ内アンカー跳躍/scrollIntoView が persistent sticky header(h-14=56px) 下に隠れる」＝scroll-margin 欠落/不足）。
+  1. /settings セクションナビ8リンクの跳躍先（`659a569`・専用ナビで高頻度）
+  2. /student 学割申請アンカー（`f2399f9`）
+  3. /q 解説アンカー（`2e3df3c`・中核 indexable・1rem→scroll-mt-20＋inline style 撤去）
+  4. EssayEditor 採点結果 scrollIntoView（`6254ff1`・論文添削C軸）
+- テーマ: 31セッション見落としの新角度を開拓。**SiteHeader が常時表示の sticky(56px) のため、scroll-margin の無い/不足するアンカー跳躍先は header 下に隠れる**。codebase は一部ページ(about/transparency/admin)で既に scroll-mt-20 を使っていたが、settings/student/q/essay の4箇所で欠落/不足していた。全数監査で残存ゼロを実測。
+- 教訓（次セッションの重複監査防止）: **SiteHeader は h-14(56px)・常時表示 sticky で hide-on-scroll 無し。ページ内アンカー(`href="#"`)/`scrollIntoView({block:start})` の跳躍先は `scroll-mt-20` 必須。本リポの全跳躍ターゲットは本修復で scroll-mt-20 保有済（再監査不要）。`#main-content` skip link のみ例外（header 意図的スキップで margin 不要）。**
+- 次セッターへ: 夜間の安全な実害バグは S1-S32 で深く枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）。**apple-touch-icon が SVG（iOS は PNG のみサポート＝home 追加時にアイコン非表示）＝要 PNG アセット生成のため夜間 SKIP・日中候補として記録**。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E領域＝日中レビュー向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。

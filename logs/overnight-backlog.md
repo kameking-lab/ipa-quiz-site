@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション32):** P0 全件 done/SKIP。P1 進行中。
+> S32: 新角度「**ページ内アンカー跳躍/scrollIntoView が persistent sticky header(h-14=56px) 下に隠れる（scroll-margin 欠落/不足）**」を開拓＝**実改善4件**。SiteHeader は常時表示 sticky(hide-on-scroll 無し)のため、scroll-margin の無いアンカー跳躍先は header 下に着地する。`href="#"` 全4＋`scrollIntoView({block:start})` 全1を全数監査:
+> ①`/settings` セクションナビ8リンクの跳躍先 SectionTitle に scroll-mt-20（`659a569`・専用ナビで高頻度）②`/student` 学割申請アンカー（`f2399f9`）③`/q` 解説アンカー＝`scrollMarginTop:"1rem"`(16px<56px)→scroll-mt-20＋inline style 撤去（`2e3df3c`・中核 indexable）④`EssayEditor` 採点結果 scrollIntoView（`6254ff1`・論文添削C軸）。全て `.next` 実測 or source-read 回帰テスト。
+> **教訓: SiteHeader は h-14(56px)常時表示 sticky。in-page 跳躍先は scroll-mt-20 必須。全跳躍ターゲットは本修復で保有済（about/transparency/admin は既存・`#main-content` skip link は header 意図スキップで例外）＝残存ゼロ（再監査不要）。**
+> **次は: 夜間の安全な実害バグは S1-S32 で深く枯渇。残は日中候補のみ（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）。新発見の日中候補: apple-touch-icon が SVG（iOS は PNG のみ＝home 追加時アイコン非表示）＝要 PNG 生成で夜間 SKIP。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション31):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S31 で網羅的に枯渇を再々確認。
 > S31: 新角度「**Radix プリミティブのアクセシブルネーム**」を開拓＝**実改善1件**。Radix `<Switch>` は中身のない `<button role="switch">` をレンダーするため視覚専用ラベル（SettingRow の隣接 `<p>`）では命名されず、**設定トグル10件が WCAG 4.1.2 Level A 違反**（30セッション盲点）。`/settings` は `SettingRow` を `useId`+`cloneElement` で `aria-labelledby` 関連付け（7件・名前は可視テキスト同期）、`NotificationSettings` は `aria-label`（3件）で是正（`ebecece`）。`.next` HTML で aria-labelledby↔`<p id>` 実測＋回帰テスト。
 > SKIP(全数監査=実害ゼロ): viewport zoom（maximum-scale/user-scalable 不在）/ネスト interactive 要素（a-in-a/button-in-button 不在・Button asChild は Slot 委譲で正）/radiogroup 命名（全7箇所 aria-label 保有）。
