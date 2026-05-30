@@ -1,6 +1,7 @@
 import { describe, it, expect } from "vitest";
 
-import { examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
+import { EXAM_LABELS, examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
 /**
  * 表示ヘルパーの文字列契約を固定する回帰テスト。
@@ -18,6 +19,24 @@ describe("examLabel", () => {
 
   it("未知の区分 ID は大文字化してフォールバックする", () => {
     expect(examLabel("xyz")).toBe("XYZ");
+  });
+
+  // EXAM_LABELS は Record<string,string> 型で、ExamCode union でキーが縛られていない。
+  // そのため全 13 区分のラベルが揃っている保証が型に無く、手書き編集で 1 区分でも
+  // 落とす/キー名を typo すると、examLabel はその区分でフォールバック（大文字の生コード
+  // "NW" 等）を返し、出題区分セレクタ・パンくず・見出しなど全画面で日本語名でなく
+  // 生コードが露出する。canonical な ALL_EXAM_CODES に対し全区分が非空ラベルを持ち、
+  // フォールバックでない（=日本語名が解決される）ことを回帰固定する。
+  it("全 ExamCode が非空ラベルを持ち、生コードのフォールバックに落ちない", () => {
+    for (const code of ALL_EXAM_CODES) {
+      const label = EXAM_LABELS[code];
+      expect(label, `${code} のラベル`).toBeDefined();
+      expect(label.trim().length, `${code} のラベル非空`).toBeGreaterThan(0);
+      // フォールバック(code.toUpperCase())ではなく実ラベルが解決される
+      expect(examLabel(code), `${code} はフォールバックに落ちない`).not.toBe(
+        code.toUpperCase(),
+      );
+    }
   });
 });
 
