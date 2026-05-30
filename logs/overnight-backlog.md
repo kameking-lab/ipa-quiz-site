@@ -1,14 +1,16 @@
 # 夜間自律改善 バックログ（優先度順）
 
-> **状態(2026-05-30 セッション55):** P0 全件 done/SKIP。P1 進行中。
-> S55: S54 の「テスト未 import lib の機械列挙」を継続し**回帰固定4モジュール**（chat/storage=同id置換+先頭挿入+
-> 最大50件、analytics/events=trackEvent の name切出し転送+SSR no-op+throw黙殺[vi.mock]、ai/characters=getCharacter
-> 門番のDEFAULT(haru)フォールバック+データ不変条件、questions/get-questions=遅延ローダの試験フィルタ+平坦化+
-> 件数保存則）。実改善0件（source 無変更）。test 944→975（+31 it・146→149 files）。各 mutation→revert で落ちることを実測。
-> コミット `07a85dd`/`12df247`/`d763fd8`/`a3a30a2`。
-> **次は:** 残る未 import 純関数寄り候補＝`lib/study-plan/constants.ts`(PHASE_RATIOS sum=1.0/REQUIRED_HOURS 全 ExamCode
-> 網羅/LEVEL_* Record キー一致・価値中)・barrel re-export 健全性(`lib/onboarding/index.ts`等)。それ以外は外部API/provider
-> 実装/server-only/auth-db で夜間 marginal or 要 mock。手法は basename 一致判定より漏れが少ないので継続有効。
+> **状態(2026-05-30 セッション56):** P0 全件 done/SKIP。P1 進行中。
+> S56: S55 handoff が名指しした「残る未 import 純関数寄り候補」を消化し**回帰固定4モジュール**（study-plan/constants=
+> REQUIRED_HOURS 全13 ExamCode 網羅+PHASE_RATIOS sum=1.0+LEVEL_* Record キー一致と単調減少、streak/storage=read()
+> の不正 blob coercion+recordStudyToday の read→apply→write 往復とマイルストーン通知、essay/load=論文C軸アクセサの
+> 並び順 pairwise 不変条件+完全分割、api/openapi=公開 OpenAPI 3.1 の $ref/タグ参照整合）。実改善0件（source 無変更）。
+> test 975→1012（+37 it・150→153 files）。各 mutation→revert で落ちることを実測。
+> コミット `06ab3f0`/`f7e5b9d`/`e72f4bd`/`e2e267c`。barrel re-export(onboarding/streak index)は consume 済で typecheck
+> 保証＝SKIP 確定（過大修正の罠回避）。
+> **次は:** S54-S56 で「test 未 import 純関数寄り lib」は概ね打ち止め。次の有効角度＝①`lib/ai/providers/mock.ts`(決定的
+> stub＝mock 不要で夜間安全・streamChat の chunk 分割契約を pin 可)、②過去 SAFE/latent 分類の同型 footgun 再検証(S33/
+> S41)、③属性有無で見落とした同型 a11y(S33)。残未 import は外部API/provider 実装/server-only/auth-db/React hook で要 mock。
 更新ルール: 着手前に必ず worklog で done/SKIP を確認（二重実装防止）。1所見=1コミット。
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。

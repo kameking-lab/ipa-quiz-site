@@ -1870,3 +1870,40 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   server-only(questions/pool-server・search/question-index private)・auth/db で夜間 marginal or 要 mock。
 - **教訓:** 「test 未 import lib の機械列挙」は basename 一致判定(S47-S53)より漏れが少なく、まだ純関数寄り候補が
   数本残る。次も同手法で constants のデータ不変条件 → barrel の re-export 健全性の順で消化が安全。
+
+## セッション56 2026-05-30 21:01 JST（P1: test 未 import lib の機械列挙を継続）
+- S55 handoff が名指しした「残る未 import 純関数寄り候補」を消化＝**回帰固定4モジュール**（study-plan/constants・
+  streak/storage・essay/load・api/openapi・計37 it・test 975→1012・150→153 files）。実改善0件（source 無変更）。
+  全件 source mutation→revert で「崩れたら落ちる」を実測。
+- done `lib/study-plan/constants.ts`（学習プラン基盤定数 SSOT。generateStudyPlan の所要時間=REQUIRED_HOURS×
+  LEVEL_MULTIPLIERS と段階分割を駆動）= **REQUIRED_HOURS 全13 ExamCode 網羅+正整数+難易度順**・**PHASE_RATIOS
+  sum=1.0+front-load(early>middle>late)**・**LEVEL_* Record の全 KnowledgeLevel キー一致+multiplier 単調減少
+  [beginner=1.0 baseline]**・minute 予算の順序を pin。/ コミット `06ab3f0` / `__tests__/study-plan/constants.test.ts`(8件)。
+  mutation(middle 0.3→0.35 / foundation 0.75→1.05)で3件落ちを実測。
+- done `lib/streak/storage.ts`（連続学習 LS 永続層。core[S35 既テスト]の薄ラッパだが read() の検証/coercion は
+  storage 層固有）= **read() の不正 blob coercion(string→0・非配列→[]・milestonesReached 非数値除去)**・readStreak の
+  decayIfLapsed 連携・**recordStudyToday の read→apply→write 往復+到達マイルストーン通知+冪等+lapse 後1復帰**・
+  resetStreak の EMPTY 書戻しを pin。日付は jstDateString で now 相対に決定的算出。/ コミット `f7e5b9d` /
+  `__tests__/streak/storage.test.ts`(12件)。mutation(filter 型反転 / justReachedMilestone→null)で2件落ちを実測。
+- done `lib/essay/load.ts`（論文添削 C軸 ST/SA/PM/SM/AU アクセサ。※sc コーパスの lib/essays/load.ts[S51]とは別）=
+  **ESSAY_EXAM_CODES とコーパス試験コード集合の双方向一致**・getEssayQuestionsByExam の試験フィルタ+**並び順
+  (year降順→season昇順→qNumber昇順)を pairwise 不変条件で固定(データ追加に頑健)**・全コード完全分割・
+  getAllEssayQuestions のコピー返却(呼び出し側 mutation 非破壊)・findEssayQuestion の id一致/未知→undefined を pin。
+  / コミット `e72f4bd` / `__tests__/essay/load.test.ts`(10件)。mutation(year sort 反転 / コピー返却除去)で2件落ちを実測。
+- done `lib/api/openapi.ts::buildOpenApiSpec`（/api/v1/openapi の公開 OpenAPI 3.1 仕様ビルダ）= baseUrl の
+  servers/contact 補間・3エンドポイント存在(/exams get・/questions get・/grade post)・exam enum の13区分網羅・
+  認証/匿名両許可に加え、**$ref とタグの参照整合(再帰走査で未定義スキーマ/未宣言タグへの dangling 参照ゼロ)**を pin。
+  スキーマ改名で壊れる無効仕様を捕捉。/ コミット `e2e267c` / `__tests__/api/openapi.test.ts`(7件)。
+  mutation(server url v1→v2 / $ref Exam→ExamTypo)で各々落ちを実測。
+- SKIP(実害なし): `lib/onboarding/index.ts` の barrel re-export 健全性テスト＝barrel は OnboardingTour.tsx が既に
+  consume しており typecheck/build が re-export 解決を保証済＝テスト追加は冗長(過大修正の罠回避)。streak/index も同型。
+### 次セッションへ
+- study-plan/constants・streak/storage・essay/load・api/openapi は回帰固定済（再監査不要）。S55 handoff の純関数寄り
+  候補は本セッションで打ち止め（残 barrel は SKIP 確定）。
+- 残る未 import lib は外部API(stats/gsc・posthog・notify/slack・turnstile)・provider 実装(ai/providers/{gemini,claude,
+  openai,mock})・server-only(questions/pool-server・search/question-index=private で export 追加要)・auth/db・
+  React hook(copilot/pinned-actions・a11y/use-quiz-choice-roving=要 RTL)で夜間 marginal or 要 mock。
+- **教訓:** 「test 未 import lib の機械列挙」(S54-S56)は純関数寄り候補を概ね消化。次の有効角度は ①ai/providers/mock
+  (純粋な決定的 stub＝mock 不要で夜間安全・streamChat の chunk 分割契約を pin 可)の検討、②過去が SAFE/latent 分類した
+  同型 footgun の再検証(S33/S41 角度)、③属性有無だけ見て見落とした同型 a11y(S33 角度)。日中候補群(pii over-mask/
+  tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export)は据え置き。
