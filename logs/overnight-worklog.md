@@ -2548,3 +2548,20 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **grading/午後採点 mock の得点分岐は本セッションで essay/scoring 両方とも完全被覆。** AI 経路の safeParse 系(scoring/essay-grade とも)は provider mock 要=日中向き。
 - 残る夜間安全角度: 未走査領域(mock-exam の result/合否計算・copilot retriever の topN/score 閾値境界)の per-branch、or 過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補に依存。
 - 日中候補(不変): safeParseScoring/safeParseGrading のクランプ(provider mock)・EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション90 (2026-05-31 07:2x JST) — copilot RAG リランカー/リトリーバの未カバー枝を回帰固定3件 + 実バグ探索clean確定
+ベースライン全緑実測(typecheck0 / lint0err[警告=untracked `scripts/ux-audit-screenshots.mjs` 未使用変数・本セッション無関係] / test 212files・1575 / build 2510 SSG・exit0)。S89 handoff「未走査領域(copilot retriever の topN/score 閾値境界)の per-branch」を実施。**併走で Explore に「pure function の user/SEO-visible real bug を trace 限定」探索を投げたが mock-exam選定/analytics/study-plan/afternoon/session時間 すべて comprehensive test 済で concrete bug 無し=clean 確定**。実改善0・source 無変更。test 1575→1584(+9 it)。
+
+- done: `__tests__/copilot/retriever.test.ts` RAGリトリーバ glossary 救済3経路の未カバー枝 / `04fb83f` / +3 it。retrieve() の rerank は BM25 で取れない用語解説 doc を①タイトル完全一致(既済)②タイトル過半数一致(ratio>=0.5 弱採用)③エイリアス完全一致 の3経路で救済するが、②③が未固定だった。②③が崩れると略称/言い換えクエリで用語解説が候補から消える(コパイロット RAG の主救済策)。ratio<0.9 / alias無効化 mutation で各1 fail 実測→revert。
+- done: `__tests__/copilot/reranker.test.ts` deterministicRerank 未カバー枝3件 / `84e3ba1` / +3 it。①タグ重複ブースト min(overlap,4) 頭打ち ②glossary タイトル部分一致(ratio=0.5)でも 3x(docコメント実測固定)③長text(>4000字)密度ペナルティ×0.92。いずれも引用 passage 順位=ユーザー可視。clamp除去 / ratio>=1ゲート / ペナルティ無効化 mutation で各1 fail 実測→revert。
+- done: `__tests__/copilot/reranker.test.ts` llmRerank 未カバー枝3件 / `d108c9b` / +3 it。①候補空→provider非呼出で即[](spy実測)②topN超の番号列を topN件で打ち切る(break)③範囲外/重複番号を読み飛ばす。LLMに渡る passage 集合=ユーザー可視。break無効化 / 範囲・重複ガード除去 mutation で各1 fail 実測→revert。
+
+### SKIP(監査済み・実害ゼロ記録)
+- SKIP(docコメント不一致・実害なし): `lib/copilot/retriever.ts:157` の `return top.slice(0, k+5)` が JSDoc(:87「上位 k 件を返す」)と不一致。Explore が HIGH confidence で報告したが**インラインコメント(:157)が「用語集ピン留め分の余裕」と意図を明記済の設計通りの挙動**で、JSDoc 文言だけがやや誤解を招く=機能バグでない。docstring 微修正は低価値+過大修正の罠回避で SKIP。
+- SKIP(score差のみ/presence不変): retriever.ts:126 `top.length>0 ? ... : 1` の empty-top floor 分岐は単一glossaryコーパスで `:1`→`:0` mutation しても全テスト緑=presence(doc出現)に影響せず score 値のみ変わる=単一docでは順位も不変=user非可視。score断定は vacuous/brittle(worklog既出の戒め)で固定価値薄=SKIP。
+- SKIP(component/E2E領域・夜間外): mock-exam の result/合否計算は `app/mock-exam/MockExamRunner.tsx`(コンポーネント)に存在し純関数でない=RTL/E2E 必要=日中向き。lib/mock-exam/selection.ts は S88 で per-branch 全枝カバー確認済。
+
+### 次セッションへ
+- **copilot RAG 層(retriever rerank/pin 3経路・deterministicRerank ブースト全枝・llmRerank パース全枝)は本セッションで主要分岐を消化。** runRAG(rag.ts) 本体は async + corpus/provider 依存で getCachedIndex シングルトン mock 要=日中向き。reranker の glossaryTitleMatchRatio は deterministic 経由で間接カバー済。
+- **Explore 実バグ探索は mock-exam/analytics/study-plan/afternoon で concrete user-visible bug 無しを確定(codebase は genuinely well-tested)。** 残る夜間安全角度は薄い: 未走査の純関数寄りモジュールの per-branch(候補が枯渇に近い)か、過去 SAFE/latent footgun 再検証(S33/S41)。
+- 日中候補(不変・S85まで継続): EssayEditor totalScore 命名/表示・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・retriever JSDoc 文言修正(低優先)。
