@@ -2659,4 +2659,16 @@ clean（コード無変更・検証済 SKIP）:
 - 夜間に安全に続けられる残務があるとすれば: 既存 E2E の flake 監視 / build 出力(SSG数・bundle size)の回帰監視など「観測のみ」のタスク。新規 source 変更を伴うものは候補が薄い。
 
 ---
-最終更新: セッション95 (2026-05-31 08:55 JST) — 全緑実測確認・test-pin 角度の枯渇を記録
+
+## セッション96 (2026-05-31 08:45〜08:50 JST・自律ループ／夜間窓の最終セッション)
+夜間窓の締切(09:00 JST)直前に起動。全緑を実測再確認(typecheck exit0 / test 1626 passed・217files = S95 と完全一致)。HEAD=`fbdcfe4`(S95)・`overnight-integration` は clean かつ source 無変更(作業ツリーの差分は S0 申し送りの非対象ファイルのみ=BookmarkButton snap CRLF / overnight-loop.bat / 各種 untracked logs・scripts/ux-audit-screenshots.mjs。一切触れず)。
+- 判断: S95 が結論づけた通り「test-pin 角度は枯渇」かつ残務は日中候補(挙動変更+E2E+人間レビュー必須)のみ。締切まで残り約15分で、build(2510 SSG)を含む全緑ゲートを完走・実測検証できる新規 source 変更は安全に着手不可。**過大修正(over-testing)を避け、新規変更を見送り、統合ブランチの全緑実測のみ実施。**
+- 結論: **夜間自律ループは本セッションで自然終了。** overnight-integration は green・clean・mergeable のまま 09:00 を迎える。次の有意な改善は日中に人間判断で(下記 handoff)。
+
+### 次セッション/日中へ(handoff・S94/S95 から不変)
+- test-pin 角度は枯渇。codebase は genuinely well-tested(S88-S90 で Explore 実バグ探索 clean 確定・S91-S94 で手書きデータ const invariant も消化)。
+- 日中候補(挙動変更+E2E 必須・夜間不適): EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・safeParseScoring/safeParseGrading のクランプ(provider mock)。
+- 夜間に安全な残務は「観測のみ」(既存E2E flake 監視 / build SSG数・bundle size 回帰監視)。新規 source 変更を伴う夜間安全枠は薄い。
+
+---
+最終更新: セッション96 (2026-05-31 08:50 JST) — 夜間窓最終セッション。全緑実測(test1626/217files)・test-pin角度枯渇により夜間ループ自然終了を記録
