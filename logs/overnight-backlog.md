@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション43):** P0 全件 done/SKIP。P1 進行中。
+> S43: S34-S42 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（sitemap-xml/copilot-visibility/citation-meta/structured-data・計46 it・test 629→675）。実改善0件（source 無変更）。全件「崩れたら落ちる」を source mutation→revert で実測。
+> ①`lib/seo/sitemap-xml.ts`(renderSitemapIndexXml/renderMainSitemapXml/renderBooksSitemapXml/チャンク境界＝noindex(essays/success-stories)・301(/quiz,/support)除外のクローラシグナル契約 + 全indexable質問のチャンク間重複/欠落ゼロ分割, `424eb5f`) ②`lib/copilot/visibility.ts`(setCopilotPanelOpen/isCopilotOpen/subscribe＝desktop/mobile 2variant の count セマンティクス + Math.max(0,…)クランプで stray close が負に desync しない, `8d905a5`) ③`lib/copilot/citation-meta.ts`(buildCitationMetas/encode/decodeCitationsHeader＝base64(JSON(UTF-8))往復で日本語タイトルを ASCII-only HTTPヘッダで無損失運搬するクロスランタイム契約 + snippet空白圧縮/320字切詰め/ordinal連番, `131833e`) ④`lib/seo/structured-data.ts`(buildOrgNode/buildWebPageNode/SITE_ID/ORG_ID＝@graph ノード連結で publisher→ORG_ID・isPartOf→SITE_ID の @id 参照整合, `ee8d533`)。
+> **教訓: sitemap-xml/copilot-visibility/citation-meta/structured-data は回帰固定済（再監査不要）。related.ts(sharesTopicOrCategory/topicRelevanceMultiplier)・reranker/retriever は既テスト済。残る未テスト純関数候補＝seo/exam-content・exam-resources・exam-stats(定数Record)・copilot/corpus(buildCorpus)・prompt-assembly・citations(markdown footer)。**
+> **次は: 夜間の安全な実害バグは S1-S43 で深く枯渇。残候補は上記未テスト純関数 or 日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。**
+>
 > **状態 (2026-05-30 セッション42):** P0 全件 done/SKIP。P1 進行中。
 > S42: S41 handoff の「`{...EMPTY}`/`{...DEFAULTS}` spread 系 共有EMPTY footgun 残候補」を全数監査＝**全7ファイル SAFE 確定**（daily-challenge/user-context/onboarding/settings/notifications/character/missions＝nested mutable 在でも in-place mutating caller 不在 or primitive-only＝footgun テーマ完全枯渇・再監査不要）。続けて未テスト中核純関数の契約固定3件＝**回帰固定3モジュール**（missions/tokenize/essay-rate-limit・計27 it・test602→629）。実改善0件（source 無変更）。
 > ①`lib/gamification/missions.ts`(dailySeededIds 日次決定的6→3抽出・monotonic max・claim 閾値ゲート＝XP報酬を左右, `1e74854`+型修正`8fce2f6`) ②`lib/copilot/tokenize.ts`(CJK bigram/ASCII lowercase/stopword/dedup＝検索・copilot 関連度中核, `8fce2f6`) ③`lib/storage/essay-rate-limit.ts`(premium→Infinity/無料3回/0床/JST月跨ぎリセット＝C軸無料枠ゲート, `9307c4b`)。

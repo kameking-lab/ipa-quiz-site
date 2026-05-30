@@ -1425,3 +1425,32 @@
 - テーマ: S41 が残した「`{...EMPTY}`/`{...DEFAULTS}` spread 系 footgun の残候補」を全数 read-only 監査し、**全クラスで「in-place mutating caller 不在」を確認＝SAFE 確定**（共有EMPTY footgun テーマは完全枯渇）。続けて S34-S41 の「未テスト中核純関数の契約固定」を3件（ミッション報酬ゲート/検索トークナイザ/論述レート制限）に拡張。
 - 教訓（重複監査防止）: **共有EMPTY footgun は daily-challenge/user-context/onboarding/settings/notifications/character/missions すべて SAFE 確定（再監査不要）。missions/tokenize/essay-rate-limit は回帰固定済（再監査不要）。** テスト追加時も commit 前に `pnpm typecheck` 単独実行を厳守（今回 1 commit で型エラー混入→次 commit で是正した反省）。
 - 次セッターへ: 夜間の安全な実害バグは S1-S42 で深く枯渇。残る未テスト純関数候補＝`lib/seo/sitemap-xml.ts`(XML レンダ/チャンク)・`lib/copilot/retriever.ts`/`reranker.ts`(スコアリング・但し RAG integration テストが一部カバー)。日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。
+
+## セッション43 2026-05-30 17:30 JST（未テスト中核純関数の契約固定・継続）
+- done: sitemap XML レンダラの契約を回帰固定（`424eb5f`）。`renderSitemapIndexXml`/`renderMainSitemapXml`/
+  `renderBooksSitemapXml`/質問チャンクのページネーション境界が未テストだった。特に SEO 上重要な
+  「noindex(essays/success-stories)・301(/quiz,/support)ルートを sitemap から意図的に除外する」
+  クローラシグナル契約と、全 indexable 質問がチャンク間で重複・欠落なく分割される不変条件を pin。
+  検証: 27 it 緑・**index に essays.xml を注入すると除外テストが落ちる**ことを実測（source revert 済）。test 629→656。
+- done: コパイロット表示シグナルの count/clamp 契約を回帰固定（`8d905a5`）。`setCopilotPanelOpen`/`isCopilotOpen`/
+  `subscribeCopilotOpen` は desktop/mobile 2 variant と AI クォータバッジを context/LS 無しで橋渡しする singleton。
+  「2 variant 同時マウント時の count セマンティクス」「Math.max(0,…) クランプで stray close が count を負に
+  desync させない」不変条件を pin。検証: 5 it 緑・**クランプを外すと3件落ちる**ことを実測。test 656→661。
+- done: citation メタ変換とヘッダ往復の契約を回帰固定（`131833e`）。`buildCitationMetas`/`encodeCitationsHeader`/
+  `decodeCitationsHeader`。最重要は citation ヘッダの base64(JSON(UTF-8)) 往復＝日本語タイトルを ASCII-only な
+  HTTP ヘッダで無損失に運ぶクロスランタイム契約（node encode → ブラウザ atob decode）。加えて snippet の
+  空白圧縮・320字+省略記号の切り詰め（境界320は無加工）・ordinal の1始まり連番。検証: 8 it 緑・
+  **SNIPPET_MAX_LEN を 5000 に変えると truncation テストが落ちる**ことを実測。test 661→669。
+- done: JSON-LD 構造化データ共有ノードの @graph 連結契約を回帰固定（`ee8d533`）。`buildOrgNode`/`buildWebPageNode`/
+  `SITE_ID`/`ORG_ID`。最重要は @graph のノード連結＝WebPage の publisher が ORG_ID、isPartOf が SITE_ID を
+  「正確に」参照する不変条件（@id 参照ズレは Rich Results のエンティティグラフを静かに壊す）。検証: 6 it 緑・
+  **publisher 参照を SITE_ID に取り違えると当該テストが落ちる**ことを実測。test 669→675。
+- SKIP(既テスト済): `lib/copilot/related.ts` の `sharesTopicOrCategory`/`topicRelevanceMultiplier` は
+  既存 `__tests__/copilot/related-topic.test.ts` でカバー済（重複実装回避）。reranker/retriever も既テスト済。
+
+## セッション43 まとめ
+- 実改善0件（source 無変更）+ 回帰固定4モジュール（sitemap-xml/copilot-visibility/citation-meta/structured-data・計46 it・test 629→675）。
+- 全件「崩れたら落ちる」を source mutation→revert で実測。全緑ゲート（typecheck0/lint err0/test675/build）通過。
+- テーマ: S34-S42 の「未テスト中核純関数の契約固定」を継続。S42 handoff の sitemap-xml(XMLレンダ/チャンク)を消化。
+- 次セッションへ: 残る未テスト純関数候補＝seo/exam-content・exam-resources・exam-stats(定数 Record)・copilot/corpus(buildCorpus)・
+  prompt-assembly・citations(markdown footer)。日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）は据え置き。
