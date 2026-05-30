@@ -24,6 +24,21 @@ describe("getQuestionsForExam", () => {
     const qs = await getQuestionsForExam("xx" as ExamCode);
     expect(qs).toEqual([]);
   });
+
+  // EXAM_LOADERS は `key: () => import("@/data/questions/{key}")` の手書きマップで、
+  // キーは Partial<Record<ExamCode>> 型で検証されるが **キーと import 先モジュールの
+  // 対応は型で守れない**（コピペで loader sm が別区分の問題を import しても通る）。
+  // その場合 getQuestionsForExam(code) が他区分の問題を静かに返し、クイズ母集団が
+  // 区分を取り違える実害になる。ap 単体は上で pin 済だが、全登録区分について
+  // 「ロードされた全問の exam がキーと一致」を回帰固定する。
+  it("全登録区分でロードされた問題は exam フィールドがキーと一致する", async () => {
+    for (const code of getRegisteredExamCodes()) {
+      const qs = await getQuestionsForExam(code);
+      expect(qs.length, `${code} は非空`).toBeGreaterThan(0);
+      const mismatched = qs.filter((q) => q.exam !== code).map((q) => q.id);
+      expect(mismatched, `${code} ローダが返した他区分の問題`).toEqual([]);
+    }
+  });
 });
 
 describe("getRegisteredExamCodes", () => {
