@@ -231,6 +231,9 @@ export function QuizPlayer({
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
       }
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+R reloads, Ctrl/Cmd+1–4
+      // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
         const i = ["1", "2", "3", "4"].indexOf(e.key);
         if (i >= 0) {
