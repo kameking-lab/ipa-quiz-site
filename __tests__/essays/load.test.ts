@@ -209,4 +209,18 @@ describe("essays index→detail URL round-trip (no dead internal links)", () => 
       });
     }
   });
+
+  // /essays インデックス (app/essays/page.tsx) は ESSAY_EXAM_CODES 全件を
+  // 無条件に `/essays/{exam}` へリンクするが、詳細インデックス
+  // (app/essays/[exam]/page.tsx) は questions.length===0 のとき notFound() する。
+  // したがって「問題が 1 件もない試験区分」が ESSAY_EXAM_CODES に入ると、
+  // インデックスから 404 への死リンク（かつ "0問" カード）が生まれる。
+  // 現状は 6 区分すべてに答案があり latent だが、将来データ未整備の区分が
+  // 追加された際に死リンクを出す前にここで気付けるよう固定する。
+  it("every ESSAY_EXAM_CODES entry has at least one question (index links never 404)", () => {
+    const empty = ESSAY_EXAM_CODES.filter(
+      (exam) => getEssayQuestionsByExam(exam).length === 0,
+    );
+    expect(empty).toEqual([]);
+  });
 });
