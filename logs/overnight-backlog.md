@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション17):** P0 全件 done/SKIP。P1 進行中。
+> S17: 冒頭で S16 の daysUntil コミット(`ff9f1df`)を含む HEAD の `pnpm build` 緑を再確認(コード変更不要)。
+> S16 で lib/learning `daysUntil` を直した「JST境界 off-by-one カウントダウン」テーマを残り2箇所へ横展開し完了:
+> ①`StudyPlanClient` のローカル daysUntil(UTC深夜 vs 端末ローカル深夜+Math.ceil)を lib版(JST)へ委譲(`920c235`)
+> ②`nextExamSitting`「次回試験まで N 日」(ホーム HomeAuxSection・account KPI)を JST暦日ベースへ是正(`8201f0a`)。
+> ②は JST 00:00〜09:00 に+1、かつ試験当日 JST 09:00以降は次回開催へ繰り上がる重い実害を含んでいた。
+> 全域 grep でカウントダウン系 off-by-one の残存ゼロを実測(study-plan/generator・SchedulePlanner は端末ローカルTZで
+> 内部一貫=バグなし)。SKIP: StudyPlanClient の input min が UTC日付(実害僅少・日中候補)。
+> **次は: (a)StudyPlanClient min の JST化(日中)、(b)tabs.tsx 矢印キー(日中・影響大)、(c)コピー通知統一(日中)、**
+> **(d)MilestoneToast ref化(日中)、(e)exam meta desc 短縮(日中)。夜間の安全な実害バグは S1-S17 で網羅一巡し枯渇傾向=新観点の開拓 or 日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション15):** P0 全件 done/SKIP。P1 進行中。
 > S15: 多数の新観点を監査(ほぼ全てクリーン)。実改善は admin `/admin/metrics` Section1 日次推移 LineChart に
 > role=img+代替テキストを付与(`1732868`)=チャート alt-text(WCAG 1.1.1)を public(S10)+account(S11)+admin(S15)で

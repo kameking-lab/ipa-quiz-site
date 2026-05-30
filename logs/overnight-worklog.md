@@ -681,4 +681,47 @@
   影響範囲は overnight-integration のみ(main は凍結・本デプロイは main のみ)。次セッションは
   チャネル健全時に `pnpm build` を1回流して緑を再確認すれば足りる(コード変更不要の見込み)。
 - 注: `app/account/study-plan/StudyPlanClient.tsx:36` のローカル実装 `daysUntil`(端末TZの `setHours`)は
-  別件・今回対象外。日中に lib 版へ寄せるか検討(夜間は範囲外)。
+  別件・今回対象外。日中に lib 版へ寄せるか検討(夜間は範囲外)。→ **S17 で実装(下記)**。
+
+## セッション17 2026-05-30 10:29 JST（JST境界 off-by-one カウントダウンの残り2箇所を一掃=テーマ完了）
+- done(冒頭): S16 申し送りの `pnpm build` 緑再確認 — daysUntil コミット(`ff9f1df`)を含む HEAD で
+  typecheck=0 / lint=0 err(既存 ux-audit 警告1のみ) / test **261緑** / build 完走を実測。コード変更不要を確認。
+- done: 【実バグ=JST境界 off-by-one・S16の予告分】`app/account/study-plan/StudyPlanClient.tsx` のローカル
+  `daysUntil` を削除し、検証済みの `lib/learning/analytics` の `daysUntil`(JST暦日ベース・now注入可)へ委譲。
+  旧ローカル実装は target を `new Date(dateStr)`=**UTC深夜**・today を `setHours(0,0,0,0)`=**端末ローカル深夜**で
+  比較し `Math.ceil` していたため、**JST端末でも** JST 00:00〜09:00 に「残り日数」が常に1多く出ていた
+  (例: あと20日→「あと21日」)。lib版へ委譲して解消(DRY=単一JST情報源)。/ コミット `920c235`
+  / 検証: typecheck0/lint0/test263緑(+新規2)/build緑。新規 `StudyPlanClient.test.tsx` に JST境界の2ケースを追加
+  (`vi.setSystemTime` を JST早朝窓に固定: ①当日=プラン非生成 ②20日後=「20日」表示)。**旧実装に差し戻すと
+  どの端末TZでも2件落ちる**ことを git stash で実測(旧は「21日」/当日も「1日」でプラン生成)。
+  ※当該窓では旧実装は端末TZに依らず +1 になる(target=UTC深夜・today=ローカル深夜の差が常に正)ことを設計で担保。
+- done: 【実バグ=JST境界 off-by-one・同テーマ横展開・ホーム高トラフィック】`lib/constants/exam-schedule.ts`
+  `nextExamSitting()` の「次回試験まで N 日」カウントダウンも同型。試験日(`Date.UTC`=00:00Z)と生の now を
+  `Math.ceil` で比較していたため、JST 00:00〜09:00 に N+1 表示、**さらに試験当日の JST 09:00 以降は残り日数が
+  次回開催へ繰り上がる**(当日昼に「あと176日」級)最悪ケースを含んでいた。用途: `HomeAuxSection`(ホーム
+  「次回試験まで」)・`DashboardOverview`(account KPI)。JST暦日ベース(`+9h→ymd→00:00Z` で today を正規化、
+  候補を `>= todayJstMs` で選抜、`Math.round`)に是正。当日=0日・翌日に繰り上がる挙動へ統一。/ コミット `8201f0a`
+  / 検証: typecheck0/lint0/test267緑(+新規4)/build緑。新規 `__tests__/lib/exam-schedule.test.ts`(now を Date 注入=
+  完全決定論・端末TZ非依存)。**旧実装に差し戻すと2件落ちる**ことを git stash で実測
+  (「expected 6 to be 5」「expected 1 to be 0」)。
+- SKIP(実害ほぼなし・過大修正の罠): `StudyPlanClient` の `<input type=date>` の `min={today}` が
+  `new Date().toISOString().slice(0,10)`=**UTC日付**。JST 00:00〜09:00 に min=JST前日となり JST前日も選択可だが、
+  選択しても daysUntil(JST)=0→`days<=0` guard でプラン非生成=無害。9時間窓・min境界のみのエッジで実害僅少。
+  日中に JST日付へ寄せる候補として記録(夜間は安全側で SKIP)。
+- SKIP(クリーン・監査 done): JST境界 off-by-one の全域スイープ。`Math.(ceil|round|floor)(...getTime())` /
+  `/86400000` / `setHours(0` を全 .ts/.tsx で grep。`lib/study-plan/generator.ts`(`daysBetween`/`listDates`/
+  `todayLocalDate`)と `components/SchedulePlanner.tsx`(`todayLocalDate` で min と guard を統一)は**全て端末ローカル
+  TZ で内部一貫**＋`Math.round`=off-by-one なし(JST端末=本番で正)。`lib/admin/metrics/range.ts` は同一基準同士の
+  diff で一貫。`SchedulePlanner.defaultExamDate`(setMonth+3→toISOString)はTZで1日ずれ得るが**編集可能な既定値の
+  提案**で実害なし。→ カウントダウン系の off-by-one は lib/learning daysUntil(S16)+StudyPlanClient(S17)+
+  nextExamSitting(S17)で**全面一掃完了**。残存ゼロを grep 実測。
+
+## セッション17 まとめ
+- 実改善2件(JST境界 off-by-one カウントダウンの残り2箇所、各テスト付き)+ 冒頭で S16 build 緑再確認 + SKIP2件。
+  1. StudyPlanClient: ローカル daysUntil を lib版(JST)へ委譲(`920c235`・/account 学習プラン残り日数)
+  2. nextExamSitting: 次回試験カウントダウンを JST暦日ベースへ是正(`8201f0a`・ホーム高トラフィック+account KPI)
+- テーマ: S16 で lib/learning daysUntil を修正した「JST境界 off-by-one」を、同型の残り2箇所へ横展開し**テーマ完了**。
+  特に nextExamSitting は試験当日にカウントダウンが次回へ繰り上がる重い実害を含んでいた(ホーム表示)。
+- 次セッションへ: JST境界カウントダウン観点は完了 done(残存ゼロ grep 実測)。残候補は (a)StudyPlanClient min の
+  JST化(日中・実害僅少)、(b)tabs.tsx 矢印キー(日中・影響大)、(c)コピー通知統一(日中)、(d)MilestoneToast ref化(日中)、
+  (e)exam meta desc 短縮(日中)。**夜間に安全な実害バグは S1-S17 で網羅一巡し枯渇傾向**。新観点の開拓 or 日中候補の慎重実施を検討。
