@@ -150,6 +150,7 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
               <button
                 type="button"
                 onClick={() => setShowShare((v) => !v)}
+                aria-expanded={showShare}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-sky-700"
               >
                 <Share2 className="h-4 w-4" />
