@@ -273,16 +273,16 @@ export default function WhyKakomonAiPage() {
           <table className="w-full min-w-[640px] text-xs">
             <thead className="bg-muted/40">
               <tr>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">観点</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-primary">過去問AI</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">過去問道場系</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">予備校・通信講座</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">観点</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-primary">過去問AI</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">過去問道場系</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">予備校・通信講座</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {COMPARISON_ROWS.map((row) => (
                 <tr key={row.label}>
-                  <td className="px-3 py-3 align-top font-medium text-foreground">{row.label}</td>
+                  <th scope="row" className="px-3 py-3 text-left align-top font-medium text-foreground">{row.label}</th>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.kakomonAi}</td>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.doujou}</td>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.yobikou}</td>
