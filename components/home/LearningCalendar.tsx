@@ -137,7 +137,7 @@ export function LearningCalendar() {
 
       <div
         className="grid gap-1 [grid-template-columns:repeat(10,minmax(0,1fr))] sm:[grid-template-columns:repeat(15,minmax(0,1fr))]"
-        role="img"
+        role="group"
         aria-label={`過去${DAY_COUNT}日間の学習量ヒートマップ`}
       >
         {days.map((d) => {
