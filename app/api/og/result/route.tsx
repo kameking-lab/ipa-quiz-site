@@ -3,14 +3,22 @@ import type { NextRequest } from "next/server";
 
 export const runtime = "edge";
 
+// クエリは外部（SNS スクレイパ / 任意の URL）から来るため、空文字や非数値でも
+// "NaN%" を描画しないよう /api/og と同じく安全に数値化する。`?? "0"` は null しか
+// 捕捉できず `?accuracy=`（空）や `?accuracy=abc` で NaN が漏れる半端なガードだった。
+function safeNumber(s: string | null, fallback = 0): number {
+  if (!s) return fallback;
+  const n = Number(s);
+  return Number.isFinite(n) ? n : fallback;
+}
+
 export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
-  const accuracy = searchParams.get("accuracy") ?? "0";
-  const total = searchParams.get("total") ?? "0";
-  const correct = searchParams.get("correct") ?? "0";
+  const pct = safeNumber(searchParams.get("accuracy"), 0);
+  const total = safeNumber(searchParams.get("total"), 0);
+  const correct = safeNumber(searchParams.get("correct"), 0);
   const exam = searchParams.get("exam") ?? "IPA Quiz";
 
-  const pct = parseInt(accuracy, 10);
   const barColor = pct >= 80 ? "#10b981" : pct >= 60 ? "#f59e0b" : "#ef4444";
 
   return new ImageResponse(
