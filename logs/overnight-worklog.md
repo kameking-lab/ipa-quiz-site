@@ -1510,3 +1510,42 @@ S41 が badges/heatmap を「SAFE 誤分類→実は concrete」と発見した�
 - footgun テーマ完全枯渇・未テスト純関数は related-content/success-stories が vitest クォークで阻害＝事実上 search-index(export 追加要・日中)のみ残。
 - 夜間の安全な実害バグは S1-S45 で枯渇。残候補は日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export/**vitest解決クォーク調査**）。
 - 新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。
+
+---
+## セッション46 (2026-05-30 18:26 JST) — S45「vitest解決クォーク」を phantom と断定 + 関連リンク純関数3件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定3モジュール（test 705→730・118→121 files）。全ゲート全緑。
+
+### ★最重要: S45「vitest 解決クォーク」は存在しない（blind harness 由来の誤記録）
+S45 は「`@/lib/seo/related-content`・`@/lib/seo/success-stories` の拡張子なし import が vitest で解決失敗」と
+記録し backlog「日中候補」に登録したが、**これらのパスにファイルが存在しない**（`lib/seo/` 配下に
+related-content/success-stories は無い・実測）。S45 は中盤以降「全ツール出力が空になる harness 障害(blind)」下に
+あり、**存在しないパスを import して `Failed to load url` を得ていただけ**。実体は:
+- `lib/blog/related-content.ts`（getRelatedBlogPosts）
+- `data/success-stories/index.ts`（アクセサ群）/ `lib/success-stories/related-content.ts`
+- `lib/blog/related-questions.ts`（getRelatedQuestionsForPost）
+いずれも `@/...` で**正常に解決**することを本セッションの3テストで実証（全緑）。→ **vitest 解決クォークは backlog から削除**。
+search-index(private・export 追加要)のみが「日中向き」として残るのは事実。
+
+### 回帰固定3モジュール（read-only 監査で実バグ無し＝characterization・全件 mutation→revert で「崩れたら落ちる」実測）
+- done `lib/blog/related-content.ts`(getRelatedBlogPosts＝/q・/[exam] が描画する関連ブログ)。試験一致(score5)>ハブ(score1)の
+  ティア precedence・同点 publishedAt 降順・fieldTags 重複でティア内浮上・toSummary 投影(body非含有)・score0除外を pin。
+  / コミット `15324b7` / `__tests__/lib/blog-related-content.test.ts`(8件)。**sort 方向を反転すると newest-first テストが落ちる**実測。
+- done `data/success-stories/index.ts`(合格体験記アクセサ群＝/success-stories indexable)。getRelatedSuccessStories(同一試験優先→
+  他試験補完・自己除外・dedup・limit)・getSimilarPersonaStories(2パス照合・reason付与・自己除外・上限4)・getSuccessStoriesByExam
+  (試験一致/newest-first/summary)・件数合計一致・exams dedup を pin。/ コミット `6c6a465` / `__tests__/lib/success-stories-accessors.test.ts`(10件)。
+  **同一試験 precedence の filter を反転すると当該テストが落ちる**実測。
+- done `lib/blog/related-questions.ts`(getRelatedQuestionsForPost＝ブログ→/q 内部リンク網・SSG 安定性が要件)。exam未指定→空・
+  リンク可能問題のみ(同一試験/choices有/needsReview除外/プレースホルダ解説除外)・スコア整列(カテゴリ+2/topicTag+1)・
+  同点 year降順→qNumber昇順・同一入力同一出力を pin。/ コミット `dec304b` / `__tests__/lib/blog-related-questions.test.ts`(7件)。
+  **year tiebreak を反転すると year降順 head テストが落ちる**実測。
+  ※【テスト設計の教訓】当初 top-50 slice の pairwise 比較で year 反転を**検出できなかった**（ap 最新年 2025 が ≥50問あり
+  slice 全体が同一年に収まり year 分岐が走らないため）。**プールから maxYear/minQ を独立算出して head を照合**する形に強化し検出可能に。
+  characterization テストは「関数の出力で正解を決める」と盲点が出る＝独立に期待値を構築せよ。
+
+### 次セッターへ
+- **S45 の「vitest解決クォーク」は phantom と断定済＝再調査不要**（backlog の当該項目は削除）。related-content/success-stories/
+  related-questions は回帰固定済（再監査不要）。
+- 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S46 で深く枯渇。残るのは search-index(private・export 追加=source 変更で日中向き)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+- 新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。

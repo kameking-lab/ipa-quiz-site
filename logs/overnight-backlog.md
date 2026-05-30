@@ -497,8 +497,21 @@ XSS/LCP画像/デッドコード/メモ化/aria状態同期/暗黙submit/reduced
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P1 追記（S45・2026-05-30）— 日中候補に追加
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-- **vitest 解決クォーク**: `@/lib/seo/related-content`・`@/lib/seo/success-stories` の拡張子なし import が
-  vitest で解決失敗（byte-identical コピーは別名で成功＝パス文字列固有・キャッシュ非起因）。この2ファイルの
-  テスト追加が阻害される。根本原因（tsconfig exclude か vite-tsconfig-paths）を日中に調査。詳細は worklog S45。
+- ~~**vitest 解決クォーク**~~ → **S46 で phantom と断定・削除**。S45 が「`@/lib/seo/related-content`・
+  `@/lib/seo/success-stories` が vitest で解決不能」と記録したが、**これらのパスにファイルが存在しない**
+  （blind harness 下で存在しないパスを import していただけ）。実体は `lib/blog/related-content.ts`・
+  `data/success-stories/index.ts`・`lib/blog/related-questions.ts` で、いずれも正常に解決し S46 でテスト追加済。
+  **vitest 解決クォークは存在しない＝再調査不要。**
 - S36「latent 残り3件」(mock-scores/mock-exam-storage/custom-tags) は S45 で再検証＝**全て latent 確定**
   （removeItem/clear amplifier が app 不在）＝S36 分類は正しい・再監査不要。共有EMPTY footgun テーマ完全枯渇。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## 状態追記（S46・2026-05-30 18:26 JST）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- S46: S45「vitest解決クォーク」を phantom と断定（上記）＋ 関連リンク純関数3件を契約固定（実改善0・source 無変更）。
+  ①`lib/blog/related-content.ts`(getRelatedBlogPosts・`15324b7`) ②`data/success-stories/index.ts`(アクセサ群・`6c6a465`)
+  ③`lib/blog/related-questions.ts`(getRelatedQuestionsForPost＝ブログ→/q 内部リンク網・`dec304b`)。test 705→730・118→121 files・全緑。
+- **教訓: characterization テストは独立に期待値を構築せよ**。related-questions の year降順は当初 top-N slice の
+  pairwise 比較では検出できず（最新年が ≥50問で slice が同一年に収まる）、プールから maxYear を独立算出して head 照合する形に強化した。
+- 次は: 夜間の安全な実害バグ・未テスト純関数とも S1-S46 で枯渇。残は search-index(private・export 追加=日中向き)のみ。
+  日中候補群は不変。新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。
