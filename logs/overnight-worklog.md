@@ -2236,3 +2236,28 @@ SKIP(夜間安全側): **`lib/team/mock-data.ts`**(217行)=interface + `MOCK_TEA
 2. **存在しないファイルの幻覚**: 探索中 `lib/seo/breadcrumb.ts` を「死蔵の重複モジュール」と誤認し削除手順まで進めかけたが、**このファイルは実在しない**(Read 全て "File does not exist"・`ls lib/seo/` に無し・HEAD にも無し・`git rm` 不一致)。Explore agent も exam-progress.ts/feature-flags.parseBoolEnv を幻覚報告。**read-only agent と自分の記憶の双方を信用せず、着手前に必ず `ls`/`git cat-file -e HEAD:<path>` で実在を確認せよ。** 幸い git 状態を都度検証していたため誤った削除コミットは発生していない(全緑1260は無変更 baseline)。
 
 実改善は引き続き日中候補(挙動変更+E2E)依存: ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・SM-2 EF・apple-touch-icon PNG・search-index export。
+
+---
+
+### セッション71（2026-05-31 01:29〜02:00 JST・自律ループ）
+ベースライン全緑(S70 と一致): typecheck0 / lint0err(警告2=既存・非対象) / test 1260・187files / build 2510 SSG。
+
+**結論: 実改善3件＝S69/S70 が「日中向き」と誤分類した server-only モジュール群を夜間安全に解禁・回帰固定。test 1260→1295(+35)。**
+
+★最重要の方法論的発見（S70 の誤分類を是正）:
+S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only mock 要＝日中向き」と仕分けたが**両方とも誤り**。
+(1) 唯一の export `searchQuestions` は**既に export 済**(export 追加不要)。(2) `server-only` は npm 実体の無い Next ビルド時トークンに過ぎず、`test-stubs/server-only.ts`(空 module)へ **vitest alias 一行**で安全に no-op 化できる。プロダクションビルドは Next 独自解決のため無影響(build 2510 SSG 緑で実証)・既存1260テストを1件も壊さない(blast radius ゼロ実証)。
+→ **server-only は「日中向き」ではなく vitest alias で夜間解禁可能。この alias は test-stubs/server-only.ts + vitest.config.ts に恒久追加済(`2faedb9`)＝今後の全 server-only モジュールが runtime テスト可能。**
+
+- done【インフラ解禁＋回帰固定】`lib/search/question-index.ts::searchQuestions`(検索バックエンド・/api/search/questions の中核, `2faedb9`)。server-only alias 導入＋データ増減に強い不変条件で特性化: limit MAX60/下限1・offset≥0 クランプ／空クエリ全件score=1／無マッチtotal0／exam・category facet 絞り込み／facet 各グループ合計=total／relevance score降順&同点year降順／year_desc 最新年先頭(facets.year の max で discriminate)／random 集合不変／snippet≤162字／exam未指定の全チャンク母集団。mutation(MAX_LIMIT/year_desc/relevance tiebreak/facet+2)で実測。15 it。
+  ※当初 year_desc/relevance を「年非増加」だけで検証→AP top60 が全2025年で**vacuous pass(mutation 素通り)**と判明→`facets.year` の最新年=先頭 assert に強化して discriminate 化。**教訓: ソート不変条件は『非増加』だけだと同値データで空振りする。境界値(最新/最古)を facet 等から導いて先頭/末尾を pin せよ。**
+- done【回帰固定】`lib/questions/pool-server.ts`(クイズ母集団ビルダー・getPoolIds が generateStaticParams/quiz API 駆動, `289f199`)。非履歴フィルタ(exam/examGroup/year/category/calculationOnly)・needsReview除外・inOrder qNumber昇順・findQuestionById prefix由来lookup+無関係prefix fail-soft を id→Question 逆引きで固定。mutation(year反転/inOrder逆順/calc反転)で実測。10 it。
+  ※**発見: loadServerPool L46-47 のプレースホルダ解説 fallback**(絞り込み後に実解説問題が無ければプレースホルダ温存)により、絞り込みプールは全体プールの**部分集合とは限らない**(意図的挙動)。テスト年/分野はプール内問題から採って吸収。
+- done【回帰固定】`GET /api/search/questions`(検索唯一のHTTP ingress・ルートテスト皆無だった, `15b3af2`)。zod 400(不正sort/exam/上限超limit/非数値year)・200 SearchResponse形状・文字列calculationOnly強制・**Cache-Control(random→no-store / 他→public,max-age=60,s-maxage=300)**。mutation(cache条件反転で2fail/limit max 60→9999で400テストfail)で実測。10 it。
+
+各コミットは pull --ff-only → push origin overnight-integration 済。main 不変。CRLF noise(BookmarkButton.snap/overnight-loop.bat)と未追跡 logs は巻き込まず。
+
+**次セッターへ:**
+- server-only 実体は `question-index.ts` と `pool-server.ts` の2本のみ＝両方+検索ルートを本セッションで網羅。**alias 解禁の残り対象は無し**(gemini=SDK/auth・db=外部 は alias では解けず別途 mock 要)。
+- 未テスト純関数の機械突合は S69/S71 で真に枯渇確定(残: deployment-status=Date.now日中 / feature-flags=死蔵SKIP / gemini=SDK / auth・db=外部 / sound=AudioContext / onboarding・streak=barrel)。
+- 残る夜間角度: ①**部分カバレッジgap**(test に import 済だが一部 export 未カバー＝S51 postSync 型)を高価値モジュールで掘る ②過去 SAFE/latent footgun 再検証(S33/S41)。実改善は日中候補(挙動変更+E2E)依存: ContactForm 成功カード focus/告知・pii over-mask(over-mask は PII 安全側＝据置推奨)・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF(意図的・据置)・apple-touch-icon PNG(要バイナリ生成)。
