@@ -2303,3 +2303,21 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - per-name gap 残候補（状態層・未確認）: `lib/mock-exam/session.ts`(save/load/clearActiveSession・session.test 有=要確認)・`lib/gamification/achievements.ts`(evaluateAi/unlockManual・achievements.test 有=要確認)・`lib/motivation/badges.ts`(BADGES)・`lib/motivation/heatmap.ts`(syncHeatmapWithHistory・motivation-heatmap.test 有=要確認)・`lib/questions/category-pool.ts`(AP_TOPIC_GROUPS)・`lib/storage/history.ts`(getPremiumFlag/setPremiumFlag)。いずれも「テストファイルは在るが当該 export 未参照」型を per-name 突合で要確認。
 - 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
 - 実改善は引き続き日中候補に依存。夜間安全枠（未テスト純関数 + a11y 取りこぼし全数grep + per-name 部分カバレッジgap）は per-name gap の状態層がまだ数件残る。
+
+---
+
+## セッション75（夜間自律ループ）2026-05-31 02:40〜 JST
+
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 195files・1371 / build 緑)。前セッション「次セッションへ」が名指しした per-name 部分カバレッジgap（状態層）を機械突合で確認→全て真に未カバーと判明し回帰固定。**4件 done・実改善0・source 無変更。test 1371→1494（+123 it・195→196 files）。**
+
+- done: `data/blog/generators.ts` 区分別生成器5本 — `1786682` / `__tests__/data/blog-generators.test.ts`(104 it 新規)。buildOverviewPost/buildLastMonthPost/buildFrequentTopicsPost/buildPracticePost/buildAnalysisPost は per-name 未カバー（blog-index.test は組立後 index 不変条件のみ）。13区分×5生成器で slug 形/exam 整合/本文 `](/${exam})` ハブCTA(404防止)/publishedAt の ISO往復・非未来・系列単調増加/exam前置 relatedSlug の同区分 round-trip(no-404) を固定。mutation 2種(slug suffix 改変・relatedSlug typo)で26 fail 実測→revert。
+- done: `lib/mock-exam/session.ts` save/load/clearActiveSession — `119ec34` / `__tests__/mock-exam/session.test.ts`(+9 it)。既存は computeRemainingSec のみ。往復全フィールド保持・savedAt の Date.now 上書き・壊れJSON/空questions/非数値startedAt の fail-soft null・6時間TTL 境界(ちょうど=有効/+1ms=期限切れ+キー掃除)・clear 除去。mutation 3種で4 fail 実測→revert。
+- done: `lib/gamification/achievements.ts` evaluateAi/unlockManual — `255c54c` / `__tests__/lib/achievements.test.ts`(+6 it)。他 evaluate* は既テスト。evaluateAi=ai-first 必発+ai-50/ai-200 閾値+XP/Gold+冪等、unlockManual=既知id解除・未知id no-op([]・幻解除なし)・既解除の再付与なし。mutation 2種で3 fail 実測→revert。
+- done: `lib/motivation/heatmap.ts` syncHeatmapWithHistory — `3477398` / `__tests__/lib/motivation-heatmap.test.ts`(+4 it)。他集計純関数は既テスト。空キャッシュ→再集計・件数一致かつ非空→短絡(stale 返却・センチネル日で再集計と区別)・件数差異→再集計・件数一致でも byDate 空なら再集計(非空ガード)。mutation 2種(ガード除去・比較反転)で fail 実測→revert。
+
+★教訓: 前セッションが「テストファイル在るが当該 export 未参照=要確認」と残した per-name gap は、機械突合(`grep -oE '^export (function|async function) NAME'` × `grep -rl '\bNAME\b' __tests__/`)で4件とも真に未カバーと確定。`export function` のみに絞った全 lib/data スイープ(420関数)で残る未カバー関数候補も列挙済(下記)。short-circuit/キャッシュ短絡層は「stale を返す入力」を作って再集計と区別すると load-bearing を pin できる。
+
+### 次セッションへ
+- per-name gap 残候補（未確認・関数のみ全スイープ済）: `lib/storage/history.ts`(getPremiumFlag/setPremiumFlag・LS往復・夜間安全)・`data/blog/generators.ts`(buildGeneralPosts・index で大半カバー＝低価値)・`lib/motivation/sound.ts`(playPiroro=AudioContext要mock日中)・`lib/chat/export-markdown.ts`(downloadMarkdown=DOM副作用日中)・`lib/admin/*`(deployment-status/launch-monitoring=Date.now/fetch日中・feature-flags=dead SKIP確定)・`lib/ai/providers/gemini.ts`(SDK)・streak/*.tsx(React日中)。**夜間安全な残=getPremiumFlag/setPremiumFlag が筆頭。** const(BADGES/AP_TOPIC_GROUPS/ACHIEVEMENTS等)はデータ列挙で価値薄。
+- 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
+- 実改善は引き続き日中候補に依存。夜間安全枠は per-name gap がほぼ消化（残=getPremiumFlag/setPremiumFlag 等わずか）。
