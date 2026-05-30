@@ -63,7 +63,11 @@ export function getHubTopics(maxCount: number = 30, minQuestions: number = 4): T
 
 export function getQuestionsByTopic(tag: string): Question[] {
   buildIndex();
-  return TOPIC_TO_QUESTIONS.get(tag.trim()) ?? [];
+  // キャッシュ内部配列の参照をそのまま返すと、呼び出し側の .sort() などの
+  // 破壊的操作が共有キャッシュを汚染する（長寿命サーバでリクエスト跨ぎの順序破壊）。
+  // 浅いコピーを返してキャッシュを不変に保つ（要素 Question は共有のままで安全）。
+  const list = TOPIC_TO_QUESTIONS.get(tag.trim());
+  return list ? [...list] : [];
 }
 
 export function findTopicByAnySlug(slug: string): TopicSummary | undefined {
