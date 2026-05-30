@@ -2171,3 +2171,41 @@ clean(回帰再点検・コード無変更): 5レンズ全て実害ゼロ
 - 日中候補(不変・挙動変更+E2E 必須で夜間 SKIP): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・
   MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
 - 実改善は引き続き日中候補(挙動変更)に依存。夜間の安全枠は a11y 取りこぼし全数 grep が枯渇に近づいた。
+
+---
+
+## セッション69（2026-05-31 00:44〜 JST・自律ループ）
+
+ベースライン全緑実測: typecheck0 / lint0err(警告2は未追跡 scripts/ux-audit-screenshots.mjs=非対象) / test 1243・185files / build 緑(2510 SSG)。
+
+着手前の前提崩し: Explore で「未テスト純関数は全て tested/blocked」と報告されたが、**Explore の dir-prefix 判定が2件誤り**だったと実証。
+`grep -rl "<path>" __tests__/` で個別検証したところ、**消費されているのに top-level path を import するテストが皆無の純関数寄りモジュールが2本残存**。
+両者とも観測性/セキュリティ infra で、slack/turnstile(S59)・cost-guard と同型の fetch+env mock で安全に固定可能。
+
+done: **回帰固定2本(実改善0・source 無変更)**。
+1. **`lib/monitoring/sentry.ts::captureException` + `isSentryConfigured`** (`ef5a76e`)。サーバー 5xx 収集の fail-soft ブリッジ。
+   唯一の import 元 copilot/streaming はモックで差し替えるため実装は未カバーだった。DSN は import 時解析のため resetModules+stubEnv で
+   都度再 import。契約: ①観測フロア=DSN 有無に関係なく console.error 常時 ②env-gate=DSN 未設定/解析不能→isSentryConfigured false・
+   fetch 不実行 ③有効 DSN→`https://{host}/api/{projectId}/store/` へ X-Sentry-Auth(sentry_key) 付き POST・body の exception value/type と
+   transaction が入力を反映 ④fetch reject も非 Error 入力(string/null)も throw しない。POST URL の mutation(`/store/`→`/storeMUT/`)で1件 fail を実測→revert。test 1243→1248(5 it)。
+2. **`lib/rate-limit.ts`(IP アンチアビューズゲート + /admin/api-usage 集計)** (`d46ca71`)。全 LLM API ルート(copilot/essay-grade/
+   generate-question/scoring)が使う §9 セキュリティ infra。top-level `@/lib/rate-limit` を import するテスト皆無で未カバーだった
+   (`/server` と `storage/essay-rate-limit` は別物で既テスト)。KV は import 時読みのため同じく resetModules+stubEnv、Upstash pipeline を
+   モック fetch で position 駆動。契約: ①KV 未設定→checkIpRateLimit fail-OPEN({ok:true})・fetch 不実行、stats enabled:false 全ゼロ
+   ②KV 有効→分/時/日 INCR を IP_LIMITS(10/100/500) にこの優先順で判定・超過時 reset 境界返却 ③KV 失敗(非ok/throw)も fail-OPEN(可用性優先)
+   ④getApiUsageStats=24時間バケット集計+COST_JPY_PER_REQUEST(§12 SSOT 0.055)でコスト算出+top-IP sorted set マージ、
+   getApiCallsHourlySeries=時間別合算。minute 上限・cost 定数の mutation で3件 fail を実測→revert。test 1248→1260(12 it)。
+
+SKIP(夜間安全側): **`lib/team/mock-data.ts`**(217行)=interface + `MOCK_TEAM` データ const のみ・**exported function 無し**・
+リポ全域で参照ゼロ(app/components/lib/tests いずれも未 import)。Phase 4 team プランの未配線スキャフォールド。
+①logic 不在でテスト価値が薄い ②計画機能のスキャフォールド削除は所有者意図の判断=日中向き(superseded 実装の S26 MockExamClient 削除とは異なり現行置換が無い)→**削除も固定もせず SKIP**。
+
+### 次セッションへ
+- **★教訓: Explore の「未テスト純関数枯渇」報告は dir-prefix 一致で2件取りこぼした(sentry/rate-limit.ts)。最終確認は機械的に
+  `find lib -name '*.ts'` × `grep -rl "lib/<path>" __tests__/` の個別突合で行え(本セッションで実施)。**
+- **機械突合スイープ結果(確定): top-level lib/ で未テストの残りは全て真に枯渇** — deployment-status(Date.now brittle=日中)/
+  feature-flags(dead SKIP)/gemini(SDK)/auth・db(外部)/sound(AudioContext)/onboarding・streak index(barrel=typecheck 保証 SKIP)/
+  pool-server・question-index(server-only/export 追加要=日中)/team/mock-data(上記 SKIP)。**夜間安全な characterization 候補は本セッションで打ち止め。**
+- 日中候補(不変・挙動変更+E2E 必須): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・
+  MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
+- 実改善は引き続き日中候補に依存。夜間の安全枠(未テスト純関数 + a11y 取りこぼし全数 grep)はともに枯渇確定。
