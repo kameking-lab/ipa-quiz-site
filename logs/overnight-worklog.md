@@ -2217,3 +2217,22 @@ SKIP(夜間安全側): **`lib/team/mock-data.ts`**(217行)=interface + `MOCK_TEA
 - 起動手順「09:00 以降なら何も改善せず終了処理のみ」に従い、改善着手なし。
 - git: overnight-integration は up to date (HEAD d6f2299)、作業ツリー clean。
 - 本日分完了。overnight-integration は main に未マージのまま。朝のレビュー後に統合判断すること。
+
+【訂正】上記セッション70エントリは時刻誤読(09:51と誤認、実際は01:05 JST)による誤記。
+夜間ループは継続中(終了は09:00 JST)。セッション70は通常どおり改善サイクルを実施する。以下に正規の記録を続ける。
+
+### セッション70 正規記録（2026-05-31 01:05〜01:25 JST・自律ループ）
+ベースライン全緑実測: typecheck0 / lint0err(警告2=metrics-posthog-source.test 未使用describe・ux-audit-screenshots.mjs/いずれも既存・非対象) / test 1260・187files / build 2510 SSG 緑。
+
+**結論: 本セッションは実コード変更ゼロ（夜間安全枠の枯渇を再々確認）。**
+
+経緯と所見:
+- 未テスト純関数の機械突合スイープ(`find lib`×`grep -rl __tests__/`)を実施。結果は S69 と完全一致: top-level lib/ 未テストは deployment-status(Date.now日中)/feature-flags(死蔵)/gemini(SDK)/auth・db(外部)/sound(AudioContext)/onboarding・streak(barrel)/pool-server・question-index(server-only日中) のみ=真に枯渇。
+- clean(コード無変更・実コード確認済): `lib/admin/feature-flags.ts` の parseBoolEnv は `KILL_*!=="true"`=「未設定/空→default ON、'true'でKILL」のキルスイッチ意味論として**正しい**(Explore agent の『ロジックバグ』報告は誤り)。参照ゼロ=死蔵(S58/S65 一致)で SKIP 継続。
+- `lib/search/question-index.ts`: server-only + 未export純粋ヘルパ(tokenize/scoreQuestion/makeSnippet)・唯一の export searchQuestions は async=テストは export 追加+server-only mock 要=日中向き(S69 一致)。
+
+★重大な自戒（次セッション必読）:
+1. **時刻の誤読**: 冒頭 currentDate(2026-05-31) から時刻を 09:51 と推測し、誤って「ループ終了・本日分完了」doc を commit/push(`66b5110`)。直後の `(Get-Date)` 実測で実際は 01:05 JST と判明し訂正。**時刻は必ず `(Get-Date)` の実出力を読め。**
+2. **存在しないファイルの幻覚**: 探索中 `lib/seo/breadcrumb.ts` を「死蔵の重複モジュール」と誤認し削除手順まで進めかけたが、**このファイルは実在しない**(Read 全て "File does not exist"・`ls lib/seo/` に無し・HEAD にも無し・`git rm` 不一致)。Explore agent も exam-progress.ts/feature-flags.parseBoolEnv を幻覚報告。**read-only agent と自分の記憶の双方を信用せず、着手前に必ず `ls`/`git cat-file -e HEAD:<path>` で実在を確認せよ。** 幸い git 状態を都度検証していたため誤った削除コミットは発生していない(全緑1260は無変更 baseline)。
+
+実改善は引き続き日中候補(挙動変更+E2E)依存: ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・SM-2 EF・apple-touch-icon PNG・search-index export。
