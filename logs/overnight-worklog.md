@@ -2613,3 +2613,20 @@ clean（コード無変更・検証済 SKIP）:
 - **★新たに有効と判明した発掘法: 「型チェックを迂回する `as` キャスト」(load.ts:38 の industryId)は平行 union の同期を load-bearing にする隠れ footgun。`grep -rn "as [A-Z][A-Za-z]*" lib/` で他のキャスト箇所を洗い、平行定義のドリフトを runtime invariant で固定する角度が次に有効かもしれない。**
 - 従来角度(per-name gap / a11y / footgun 再検証 / date-index 実バグ)は S1-S91 で深く枯渇。codebase は genuinely well-tested(S88-S90 で Explore 実バグ探索 clean 確定)。
 - 日中候補(不変): EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション93 (2026-05-31 08:1x〜08:2x JST・自律ループ)
+ベースライン全緑実測(typecheck0 / lint0err[警告=untracked scripts/ux-audit-screenshots.mjs・非対象] / test 1613・216files / build 2510 SSG exit0)= S92 と一致。S92 handoff の新発掘法「型チェックを迂回する `as` キャスト（特に `Object.keys(X) as Y[]` 派生のレジストリ）の平行定義ドリフトを runtime invariant で固定」を起点に、**手書きデータ const のデータ整合性 invariant 角度を中核設定レジストリ群へ拡張し回帰固定4件**。test 1613→1623(+10 it・216→218files)。source 無変更。
+
+- done【新規回帰固定】`__tests__/lib/exam-config-integrity.test.ts`(`0064bae`・新規)。EXAM_CONFIGS(全区分中核設定・PDF出典URL/学習プラン想定問題数/クロール年範囲/分野別スケジュールを駆動)は `Record<ExamCode,ExamConfig>` 型でキー網羅は守るが**型で表現できない不変条件**(冗長な code フィールドとキーの一致=コピペで code 直し忘れ drift・urlSlug/nameFull/label 非空=urlSlug は PDF URL 構成要素・expectedQuestions 正値=StudyPlanClient の1日目標計算・sessions/categories/seasons 非空=SchedulePlanner の分野取りこぼし・yearRange start<=end=parse-all/fetch-ipa-pdfs のループ空回り)は人手編集で静かに壊れうる。ALL_EXAM_CODES(=Object.keys as ExamCode[])とキー集合の一致も pin。ap.code 不一致/空 urlSlug/yearRange start>end の3 mutation で各 fail 実測→revert。+5 it。
+- done【既存テスト拡張】`__tests__/questions/get-questions.test.ts`(`38e187c`)。EXAM_LOADERS は `key:()=>import("@/data/questions/{key}")` の手書きマップで、キーは Partial<Record<ExamCode>> 型で検証されるが**キーと import 先モジュールの対応は型で守れない**(コピペで loader が別区分の問題を import しても通り getQuestionsForExam(code) が他区分の問題を静かに返す=クイズ母集団の区分取り違え)。ap 単体は既存で pin 済だったが全13登録区分について「ロードされた全問の exam がキーと一致」を固定。sm ローダを ap import に差し替える mutation で他区分2640問の流入を検出→revert。+1 it。
+- done【既存テスト拡張】`__tests__/lib/missions.test.ts`(`5790df9`)。MISSIONS(デイリーミッション定義)は Record<MissionId,MissionDef> 型でキー網羅のみ保証。ミッションカードは title/description/icon を直接描画・target は進捗バー/受取ゲート・xpReward は付与XP を駆動するが、冗長な id とキーの一致(コピペ drift)・文字列非空・target 正の整数・xpReward 非負の整数は型で守れない。id 不一致/空 title/target 0 の mutation で3件 fail 実測→revert。+3 it。
+- done【既存テスト拡張】`__tests__/lib/utils-labels.test.ts`(`7497a55`)。EXAM_LABELS は **Record<string,string> 型で ExamCode union にキーが縛られていない**ため全13区分のラベルが揃う保証が型に無い。1区分でも落とす/キー typo すると examLabel は大文字の生コード("NW"等)へフォールバックし、出題区分セレクタ・パンくず・見出しなど全画面で日本語名でなく生コードが露出。canonical な ALL_EXAM_CODES に対し全区分が非空ラベルを持ちフォールバックに落ちないことを固定。nw ラベル削除 mutation で fail 実測→revert。+1 it。
+
+### SKIP(監査済み・実害ゼロ/既カバー)
+- SKIP(既カバー): CHARACTERS(characters.test で id===key 済)・QUICK_ACTIONS(S91 quick-actions-data.test)・INDUSTRY_LABELS/ESSAY_INDUSTRY_LABELS(S92 industry-labels.test)・TIER_META/ACHIEVEMENTS(S91 achievements.test)・BADGES(S91 motivation-badges.test)・EXAM_DEEP_CONTENT/EXAM_OFFICIAL_LINKS/EXAM_ROADMAP/EXAM_STATS(seo/exam-data-invariants.test)・REQUIRED_HOURS/LEVEL_*(S56 study-plan/constants.test)・MOCK_EXAM_CONFIGS(mock-exam/config.test で exam===code 済)。本角度で未カバーの中核 Record はほぼ消化。
+
+### 次セッションへ
+- **S91-S93 で「手書きデータ const のデータ整合性 invariant」角度は essay業種(S92)→中核設定レジストリ群(EXAM_CONFIGS/EXAM_LOADERS/MISSIONS/EXAM_LABELS, S93)とほぼ全 export Record を消化。** 残りの export Record は seo/study-plan/gamification とも既カバー。同クラスの残候補は薄い。
+- **★S93 で有効だった発掘法: 「Record<string,_> や Partial<Record<Union>> など、リテラル union でキーが縛られていない/迂回されている手書きマップ」は型が網羅を保証しないので canonical な union リスト(ALL_EXAM_CODES 等)と突合して欠落/フォールバック露出を pin できる。** `grep -rnE "Record<string|as [A-Z][A-Za-z]+\[\]" lib/` で次に洗える。EXAM_QUESTION_COUNTS(Partial・IIFE導出)/GLOSSARY_ALIASES(Record<string,string[]>)は未確認だが前者は導出ロジック・後者は aliases.test で意図的挙動 pin 済の可能性。
+- 従来角度(per-name gap / a11y / footgun 再検証 / date-index 実バグ)は S1-S92 で深く枯渇(codebase は genuinely well-tested・S88-S90 で Explore 実バグ探索 clean 確認)。
+- 日中候補(挙動変更+E2E 必須・夜間不適)変わらず: EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・safeParseScoring/safeParseGrading のクランプ(provider mock)。
