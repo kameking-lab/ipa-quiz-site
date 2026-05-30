@@ -705,3 +705,6 @@ XSS/LCP画像/デッドコード/メモ化/aria状態同期/暗黙submit/reduced
   pairwise 比較では検出できず（最新年が ≥50問で slice が同一年に収まる）、プールから maxYear を独立算出して head 照合する形に強化した。
 - 次は: 夜間の安全な実害バグ・未テスト純関数とも S1-S46 で枯渇。残は search-index(private・export 追加=日中向き)のみ。
   日中候補群は不変。新規夜間タスクは S33角度(属性有無で見落とした同型 a11y)の二次監査が残る有効角度。
+
+---
+**更新 (2026-05-31 セッション83):** no-404 doctrine を essays namespace に横展開し、index↔detail 双方向の round-trip を回帰固定2件(`36f7de3` 一覧→詳細URL往復, `c21f8de` /essays インデックス死リンク latent pin)。**その過程で実バグを発見・修正(`c52b1d6`): /q がプレースホルダ問題(noindex)もレンダリングし分野見出し+CategoryStudyTip から /[exam]/topic/[category] へリンクするが、topic ルートは strict プール空で notFound() するため、プレースホルダ問題唯一の分野(実例 ap-2013a-am-q75「品質管理」)が死リンク404になっていた。** 判定源 `examTopicPageExists` を exam-meta に新設し /q の両リンクを strict プール非空時のみ出力に。本番ビルド+curl で q75 リンク2→0・正常問題2本維持・topic自体404 を実測検証。次の安全角度: **index 側が generateStaticParams と別ソースを使う箇所は死リンク温床** — 他ルート(keyword/glossary/recommended-books の一覧→詳細)でも同パターンを探索 or 過去 SAFE/latent footgun 再検証(S33/S41)。

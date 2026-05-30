@@ -2450,3 +2450,17 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)・cross-link no-404(S81-S82)は枯渇確認継続。
 - 次の夜間安全角度: 過去 SAFE/latent footgun 再検証(S33/S41)、or arrow-const export スイープ再点検、or keywords.test の getAvailableExams 厳格化(上記SKIPを実害化する区分が出たら)。
 - 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション83（2026-05-31 05:10 JST）— essays no-404 round-trip 2件 + 実バグ修正1件（分野→topic 死リンク404）
+
+ベースライン全緑実測(typecheck0/lint0err[1 warning=未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外]/test 1555・210files/build 2510SSG)。S82 handoff「no-404 doctrine の横展開 or 過去footgun再検証」を受け、essays namespace の未カバー round-trip を消化し、その過程で /q の実バグ(死リンク404)を発見・修正。**test 1555→1562(+7 it)。最初の2件は source 無変更、3件目は実改善。**
+
+- done: `__tests__/essays/load.test.ts` 一覧→詳細 URL の no-404 round-trip / `36f7de3` / +2 it。questionToUrlParts と parseYearSeason は個別テスト済だが、両者を繋ぐ「一覧リンクの URL parts が詳細(dynamicParams=false)の解決パス(parseYearSeason + qnum 正規表現 /^q(\d+)$/)で必ず元の問題に解決=404を出さない」契約は未固定。qnum 正規表現は詳細ページにインライン複製のためテストに同式を持ちライブコーパス全件で往復をピン。yearSeason順序入替・qnum書式変更の2 mutation で fail 実測→revert。
+- done: `__tests__/essays/load.test.ts` /essays インデックス死リンク回帰固定 / `c21f8de` / +1 it。/essays は ESSAY_EXAM_CODES 全件を無条件に /essays/{exam} へリンクするが、/essays/[exam] は questions.length===0 で notFound()。問題ゼロ区分が ESSAY_EXAM_CODES に入ると死リンク化。現状6区分すべて答案ありで latent だが、全区分非空の不変条件をピン。非sc区分を空返す mutation で fail→revert。
+- **done(実バグ修正)**: プレースホルダ問題唯一の分野への死リンク(404)を解消 / `c52b1d6` / `__tests__/seo/exam-topic-link-resolvability.test.ts`(新規4 it) + page/component/exam-meta。**/q は needsReview 以外の全問題(プレースホルダ解説の noindex 問題含む)をレンダリングし分野見出し+CategoryStudyTip CTA から /[exam]/topic/[category] へリンクしていたが、topic ルートは dynamicParams=false かつ strict プール(needsReview/プレースホルダ除外)空で notFound()。プレースホルダ問題にしか存在しない分野=死リンク404。** 実例: ap-2013a-am-q75「品質管理」は AP 唯一の同分野問題で `正解はアです。…`形のプレースホルダ解説→strict除外→/ap/topic/品質管理 が404。判定源 `examTopicPageExists(exam,category)` を exam-meta に新設、strict プールに同分野問題が無ければ /q はリンクを張らずプレーンテキスト表示(見出し・CategoryStudyTip 両方/分野名自体は残しUX不変)。**本番ビルド+next start curl 実測: q75 の /ap/topic/ リンク 2→0(分野テキスト残存)・正常問題は2本維持・/ap/topic/品質管理 自体404 を確認。** examTopicPageExists を always-true にする mutation で新テスト3件 fail→revert。
+
+### 次セッションへ
+- **no-404 doctrine は questions/topics/blog/success-stories/features/nav/essays(index↔detail両方向)で主要namespace消化。a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)は枯渇確認継続。**
+- **実バグ角度の教訓(再確認)**: 「未テストの cross-module round-trip を実データで特性化する過程で実害(死リンク)が浮上」。S80(Markdownテーブル)に続き本セッションでも有効。index 側が generateStaticParams と別ソース(ハードコード定数 or 別フィルタ)を使う箇所は死リンクの温床 — 同パターンを他ルートでも探す価値あり(今回 essays index=ESSAY_EXAM_CODES定数 と /q=プレースホルダ含む の2例で発火)。
+- 次の夜間安全角度: 他の index-vs-staticParams 別ソース箇所の探索(例: keyword/glossary/recommended-books の一覧→詳細)、or 過去 SAFE/latent footgun 再検証(S33/S41)。
+- 日中候補(不向き): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
