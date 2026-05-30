@@ -93,6 +93,18 @@ describe("topWeakCategories / topStrongCategories", () => {
     expect(weak.map((s) => s.category)).not.toContain("少数");
   });
 
+  it("includes a category sitting exactly on minAnswered (>= 境界 / 既定3)", () => {
+    // 既存テストは answered=2(除外) と 5/9/10(包含) のみで、ちょうど閾値の
+    // answered===minAnswered(3) を踏んでいなかった。フィルタが `>=`→`>` に退行すると
+    // 3問だけ答えた分野が弱点/得意ランキングから静かに脱落する（/account 弱点表示の実害）。
+    const boundary: CategoryStat[] = [
+      { category: "境界", answered: 3, correct: 0, accuracy: 0 },
+      { category: "充分", answered: 10, correct: 6, accuracy: 0.6 },
+    ];
+    expect(topWeakCategories(boundary, 3).map((s) => s.category)).toContain("境界");
+    expect(topStrongCategories(boundary, 3).map((s) => s.category)).toContain("境界");
+  });
+
   it("breaks accuracy ties by larger answered count", () => {
     const tied: CategoryStat[] = [
       { category: "A", answered: 5, correct: 3, accuracy: 0.6 },
