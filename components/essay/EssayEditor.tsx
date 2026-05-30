@@ -247,7 +247,7 @@ export function EssayEditor({ question }: Props) {
       </Card>
 
       {result && (
-        <div id="essay-result">
+        <div id="essay-result" className="scroll-mt-20">
           <EssayResultView result={result} question={question} />
         </div>
       )}
