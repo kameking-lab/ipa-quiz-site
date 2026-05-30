@@ -108,7 +108,7 @@ export default function StudentPage() {
       </section>
 
       {/* Apply form */}
-      <Card id="apply" className="mb-10">
+      <Card id="apply" className="mb-10 scroll-mt-20">
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
             <GraduationCap className="h-4 w-4 text-sky-600 dark:text-sky-400" />
