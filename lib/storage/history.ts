@@ -12,20 +12,24 @@ export interface HistoryData {
   starredIds: string[];
 }
 
-const EMPTY: HistoryData = { entries: [], starredIds: [] };
+// 必ず新しいオブジェクトを返す。共有 const を返すと record() の push() などで
+// 破壊的に汚染され、reset() が汚染済み参照を書き戻して履歴が完全に消えない。
+function emptyData(): HistoryData {
+  return { entries: [], starredIds: [] };
+}
 
 function readRaw(): HistoryData {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyData();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.history);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyData();
     const parsed = JSON.parse(raw) as HistoryData;
     return {
       entries: Array.isArray(parsed.entries) ? parsed.entries : [],
       starredIds: Array.isArray(parsed.starredIds) ? parsed.starredIds : [],
     };
   } catch {
-    return EMPTY;
+    return emptyData();
   }
 }
 
@@ -119,7 +123,7 @@ export function createHistoryStore(): HistoryStore {
       };
     },
     reset() {
-      writeRaw(EMPTY);
+      writeRaw(emptyData());
     },
     exportJson() {
       return JSON.stringify(snapshot());
