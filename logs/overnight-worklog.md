@@ -1919,3 +1919,36 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
 - **lib/ai 層（providers/mock・claude・openai・provider.getProvider/resolveModel・prompts の context/RAG builder）の未テスト純関数は本セッションで打ち止め＝回帰固定済（再監査不要）。** 残る lib/ai 未テストは gemini.ts(@google/generative-ai SDK 要 mock＝夜間 marginal)・prompts の buildLearnerProfileContext(assembleCopilotPrompt 経由で間接カバー済)。
 - 残る有効角度（S56 から不変）: ②過去 SAFE/latent 分類の同型 footgun 再検証(S33/S41 角度) ③属性有無で見落とした同型 a11y(S33 角度)。test 未 import 純関数の機械列挙(S54-S57)は lib/ai 消化で概ね打ち止め＝残は外部API/SDK/server-only/React hook で要 mock。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション58 (2026-05-30 21:36 JST起動)  S57 handoff「test 未 import lib の機械列挙」を継続＝消費されている未テスト純関数寄りモジュールを回帰固定
+### 結果（進行中）
+- 冒頭ベースライン: typecheck0/lint0err（既存 ux-audit script 警告のみ・未追跡）/test 1052/build 全緑。HEAD `d03ae64`(S57)。
+- 手法: `find lib -name '*.ts'` → `grep -rqF` で test 未 import の lib を機械列挙。消費の有無（app/components 参照）を確認し、
+  純関数寄り＋実消費されているものを優先（dead code はテストせず SKIP）。
+- SKIP(dead code): `lib/admin/feature-flags.ts`（getFeatureFlags/isAiCopilotEnabled の災害復旧キルスイッチ＝env 読取り純関数だが
+  **app/components/lib のどこからも未参照**＝KILL_* 環境変数が実際にはルートに配線されていない）。テスト追加は未配線コードの
+  挙動固定で価値薄。配線（503 ガード追加）は挙動変更＝承認寄りで夜間 SKIP。worklog 記録のみ。
+- done `lib/api-keys/storage.ts`（/account/api-keys のキー管理 LS 永続層・ApiKeysClient.tsx が消費）。readApiKeys の fail-soft
+  バリデーション（破損JSON/非配列/secret 欠落エントリ除外）・appendApiKey の**先頭挿入+MAX_KEYS=5 で最古退避**・deleteApiKey の
+  id一致のみ除去・generateApiKey の **name trim/60字切詰め/空→"Untitled key"**・prefix(`kk_live_[0-9a-f]{4}`)/secret(prefix始まり)/
+  id(`kid_`)形式を pin。コミット `b3fc496` / `__tests__/api-keys/storage.test.ts`(11件)。
+  **`.slice(0, MAX_KEYS)`→`.slice(0,100)` と secret フィルタ除去の mutation で2件落ちることを実測（revert 済）**。test 1052→1063。
+- done `lib/ai/learner-profile-client.ts`（CopilotPanel が消費・B軸プロファイル門番）。buildLearnerProfileFromHistory の
+  **回答5件未満→undefined（profile 非注入の閾値門番）**・5件ちょうど境界・total/uniqueAnswered/accuracy が getStats と整合・
+  **weakCategories 常に空配列**（docstring 準拠のクライアント軽量化）・破損JSON fail-soft を pin。コミット `095fc82` /
+  `__tests__/ai/learner-profile-client.test.ts`(6件)。`stats.total < 5`→`< 0` mutation で3件落ちを実測。test 1063→1069。
+- done `lib/copilot/pinned-actions.ts`（CopilotPanel のクイックアクション ピン留めフック・renderHook で characterization）。
+  togglePin のトグル・**MAX_PINNED_ACTIONS=3 超過の no-op**（非ピンをデフォルト表示から締め出さない上限）・上限到達後も解除可・
+  canPinMore/isPinned 導出・マウント時 LS 読込で不正値（非文字列）除外を pin。コミット `2c9064f` /
+  `__tests__/copilot/pinned-actions.test.ts`(6件)。`>= MAX_PINNED_ACTIONS`→`>= 99` mutation で1件落ちを実測。test 1069→1075。
+### 次セッションへ
+- api-keys/storage・learner-profile-client・pinned-actions は回帰固定済（再監査不要）。
+- **教訓: S57 が「lib/ai 消化で test 未 import 機械列挙は概ね打ち止め」としたが、消費されているのに未テストの純関数寄りモジュールが
+  まだ3本残っていた（api-keys/storage・learner-profile-client・pinned-actions）。「消費の有無 × 未テスト」で篩い直すと拾える。**
+- 残る未 import lib を消費有無で再仕分け済＝**dead code は SKIP**: feature-flags（キルスイッチだが未配線＝KILL_* 環境変数がルートに
+  繋がっていない・配線は挙動変更で承認寄り）/current-year/team/mock-data は app/components から未参照。**外部API/fetch**:
+  deployment-status・sync/*（fetch+LS mock 要）・launch-monitoring/data・stats/*・notify/slack・turnstile・posthog。
+  **server-only**: search/question-index（`import "server-only"`・private 内部関数）/questions/pool-server。**hook/Web Audio/auth/db**:
+  use-quiz-choice-roving（hook）・motivation/sound（AudioContext）・auth/*・db/prisma。**barrel**: onboarding/streak/sync index（consume 済で SKIP）。
+- 次の有効角度（S56-S57 から不変）: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。
+  日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）は据え置き。

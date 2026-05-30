@@ -1,5 +1,18 @@
 # 夜間自律改善 バックログ（優先度順）
 
+> **状態(2026-05-30 セッション58):** P0 全件 done/SKIP。P1 進行中。
+> S58: S57 が「test 未 import 機械列挙は lib/ai 消化で打ち止め」としたのを疑い、**「消費の有無 × 未テスト」で篩い直す**と
+> 消費済みなのに未テストの純関数寄りモジュールが3本残存＝**回帰固定3モジュール**（api-keys/storage・learner-profile-client・
+> copilot/pinned-actions）。実改善0件（source 無変更）。test 1052→1075（+23 it・157→160 files）。各 mutation→revert で実測。
+> ①`api-keys/storage`（/account/api-keys の LS 層）=readApiKeys fail-soft（破損/非配列/secret欠落除外）+appendApiKey 先頭挿入
+> +MAX_KEYS=5 最古退避+deleteApiKey id一致+generateApiKey name trim/60字/空→"Untitled key"・形式, `b3fc496`。
+> ②`learner-profile-client`（CopilotPanel 消費・B軸門番）=回答5件未満→undefined の閾値門番+getStats 整合+weakCategories 常に
+> 空配列, `095fc82`。③`copilot/pinned-actions`（ピン留めフック・renderHook）=MAX_PINNED_ACTIONS=3 超過 no-op+トグル+LS 永続化, `2c9064f`。
+> **SKIP(dead code): feature-flags（災害復旧キルスイッチだが KILL_* 環境変数が未配線＝app/components から未参照・配線は挙動変更で承認寄り）/
+> current-year/team/mock-data も未参照。** 残未 import は外部API/fetch・server-only・hook/AudioContext/auth/db・barrel に限定。
+> **次は:** ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。test 機械列挙は「消費×未テスト」で
+> 拾い切ったため、純関数寄りの安全候補は枯渇に近い（残は要 mock）。
+>
 > **状態(2026-05-30 セッション57):** P0 全件 done/SKIP。P1 進行中。
 > S57: S56 handoff 角度①を起点に **lib/ai 層の未テスト純関数を一括契約固定＝回帰固定4モジュール**
 > （providers/mock=pickReply 分岐優先順位+24字無損失チャンク+事前abort で AbortError、providers/{claude,openai}=
