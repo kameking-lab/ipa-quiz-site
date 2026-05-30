@@ -15,6 +15,15 @@ const PIPE_TABLE_TEXT = `次の表を参照せよ。
 HTTP | 80 | Web
 SSH | 22 | 遠隔操作`;
 
+// 標準的な Markdown テーブル(前後パイプ付き)。PDF 由来の問題本文に多く、
+// 実データでも 15 ファイル・65 区切り行がこの形式。区切り行が認識されないと
+// 表全体が平文段落 (<p>|---|---|</p>) に化けて描画される回帰になる。
+const PIPED_TABLE_TEXT = `次の表を参照せよ。
+| プロトコル | ポート | 用途 |
+|---|---|---|
+| HTTP | 80 | Web |
+| SSH | 22 | 遠隔操作 |`;
+
 describe("QuestionBody — パイプテーブルの列見出し scope", () => {
   it("列見出しの <th> が scope=\"col\" を持つ", () => {
     render(<QuestionBody text={PIPE_TABLE_TEXT} />);
@@ -23,5 +32,20 @@ describe("QuestionBody — パイプテーブルの列見出し scope", () => {
     for (const th of headers) {
       expect(th.getAttribute("scope")).toBe("col");
     }
+  });
+});
+
+describe("QuestionBody — 前後パイプ付き標準 Markdown テーブル", () => {
+  it("|---|---| 区切りでも <table> として描画しセルを保持する", () => {
+    render(<QuestionBody text={PIPED_TABLE_TEXT} />);
+    // 区切り行が認識され table が 1 つだけ生成される
+    expect(screen.getAllByRole("table")).toHaveLength(1);
+    const headers = screen.getAllByRole("columnheader");
+    expect(headers.map((th) => th.textContent)).toEqual(["プロトコル", "ポート", "用途"]);
+    // データセルは前後パイプを除去しトリムされている
+    expect(screen.getByRole("cell", { name: "HTTP" })).toBeTruthy();
+    expect(screen.getByRole("cell", { name: "遠隔操作" })).toBeTruthy();
+    // 区切り記号がそのまま平文として残っていない
+    expect(screen.queryByText("|---|---|")).toBeNull();
   });
 });

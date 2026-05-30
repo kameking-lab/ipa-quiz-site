@@ -78,10 +78,25 @@ describe("parseQuestionBlocks — パイプテーブル変換", () => {
     ]);
   });
 
-  it("前後パイプ付き区切り(|---|---|)は区切りと認識されない（現挙動の限界を固定）", () => {
-    // TABLE_SEPARATOR_RE は先頭/末尾パイプを許容しないため、この区切りでは
-    // テーブル化されず全行が段落になる。緩めるなら意図的変更（このテストが警告）。
-    const text = ["項目 | 値", "|---|---|", "A | 1"].join("\n");
+  it("前後パイプ付きの標準 Markdown テーブル(|---|---|)もテーブル化する", () => {
+    // 標準的な Markdown は区切り・ヘッダ・データ行とも前後にパイプを付ける。
+    // PDF 由来の問題本文に多く、ここが認識されないと表が平文段落に化ける。
+    const text = ["| 項目 | 値 |", "|---|---|", "| A | 1 |"].join("\n");
+    expect(parseQuestionBlocks(text)).toEqual([
+      { kind: "table", header: ["項目", "値"], rows: [["A", "1"]] },
+    ]);
+  });
+
+  it("前後パイプ + アラインメントコロン(| :--- | ---: |)もテーブル化する", () => {
+    const text = ["| 左 | 右 |", "| :--- | ---: |", "| a | b |"].join("\n");
+    const blocks = parseQuestionBlocks(text);
+    expect(blocks).toHaveLength(1);
+    expect(blocks[0].kind).toBe("table");
+  });
+
+  it("単一列の区切り(| --- |)はテーブル化しない（2列以上が必要）", () => {
+    // 前後パイプを許容しても、列が 1 つだけの区切りはテーブルにしない。
+    const text = ["見出し", "| --- |", "本文"].join("\n");
     const blocks = parseQuestionBlocks(text);
     expect(blocks.every((b) => b.kind === "p")).toBe(true);
   });
