@@ -1,5 +1,16 @@
 # 夜間自律改善 バックログ（優先度順）
 
+> **状態(2026-05-30 セッション59):** P0 全件 done/SKIP。P1 進行中。
+> S59: S58 が「要 mock=夜間 SKIP」と仕分けた未テスト群を**回避策で再検証し4本を回帰固定**（実改善0・source 無変更）。
+> ①`a11y/use-quiz-choice-roving`（hook→sibling と同じ render/fireEvent で mock 不要・フォーカス専用ロービング契約, `3f2ac28`）
+> ②`constants/current-year`（**S58「未参照=dead code」は誤り**＝data/blog/generators が消費・フェイククロックで JST ロールオーバー契約を pin, `3b8a58e`）
+> ③`turnstile`（cost-guard.test の vi.stubGlobal/stubEnv で fetch mock・fail-open/error-codes セキュリティ契約, `759dd06`）
+> ④`notify/slack`（同上・fail-soft/{text} 本文契約, `d9409eb`）。test 1075→1096（+21 it・160→164 files）。各 mutation→revert で実測。
+> **★教訓: (1) React hook は sibling 慣用で mock 不要。(2) 単純 fetch 純関数は vi.stubGlobal/stubEnv で安全に固定可（早期 return 分岐+verdict
+> マッピングだけでも価値高）。(3) 「未参照」判定は data/ content/ scripts/ も含めて grep せよ。** 残 fetch 系（同手法で可）= sync/*（fetch+LS 両 mock）・
+> deployment-status・stats/posthog/gsc・launch-monitoring(buildAlerts は要 export)。真の要 mock = sound(AudioContext)/gemini(SDK)/auth/db。
+> **次は: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)、④sync/* の fetch+LS mock 固定。**
+>
 > **状態(2026-05-30 セッション58):** P0 全件 done/SKIP。P1 進行中。
 > S58: S57 が「test 未 import 機械列挙は lib/ai 消化で打ち止め」としたのを疑い、**「消費の有無 × 未テスト」で篩い直す**と
 > 消費済みなのに未テストの純関数寄りモジュールが3本残存＝**回帰固定3モジュール**（api-keys/storage・learner-profile-client・

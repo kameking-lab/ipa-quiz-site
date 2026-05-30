@@ -1952,3 +1952,35 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   use-quiz-choice-roving（hook）・motivation/sound（AudioContext）・auth/*・db/prisma。**barrel**: onboarding/streak/sync index（consume 済で SKIP）。
 - 次の有効角度（S56-S57 から不変）: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。
   日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）は据え置き。
+
+## セッション59 2026-05-30 21:48 JST（P1・「mock要で先送り」とされた未テストを回避策で消化）
+- 着手前確認: HEAD=752d0ac（S58 done）。全緑ベースライン（test 1075）から開始。S58 が「残未 import は外部API/fetch・hook・
+  dead code で要 mock or SKIP」と仕分けたリストを**再検証**し、夜間でも安全に固定できる4本を発見・回帰固定。実改善0件（source 無変更）。
+- done `lib/a11y/use-quiz-choice-roving.ts`（クイズ選択肢の roving-tabindex フック・3プレイヤー+ChoiceButton が消費・S58 が「hook=要 mock」と
+  分類）。**sibling の use-roving-radio.test.tsx と同じ render/fireEvent ハーネスで mock 不要に**特性化。フォーカス専用契約（矢印は
+  焦点のみ移動し選択を確定しない／selectedIndex が roved tab stop を上書き／端で循環+Home/End／disabled で不活性／resetKey 変更で
+  先頭リセット）。コミット `3f2ac28` / `__tests__/a11y/use-quiz-choice-roving.test.tsx`(6件)。tabStop 優先順位 + 循環演算の mutation で2件落ち実測。test 1075→1081。
+- done `lib/constants/current-year.ts`（ブログ「【YYYY年最新】」タイトルのビルド時年 SSOT）。**★S58 が「current-year は未参照=dead code」と
+  記録したのは誤り**＝`data/blog/generators.ts` が CURRENT_YEAR を多数消費（合格率ランキング/AIトレンド記事タイトル等）。フェイククロック+
+  動的 import で評価時刻を制御し、**JST(UTC+9) ロールオーバー契約**（UTC でなく JST 新年で年が繰り上がる・早期に繰り上がらない）と
+  CURRENT_REIWA=CURRENT_YEAR-2018（令和1=2019）を pin。コミット `3b8a58e` / `__tests__/constants/current-year.test.ts`(5件)。
+  +9h オフセット除去 + -2018 改変の mutation で3件落ち実測。test 1081→1086。**JST 境界は S16/S17/S19 で実バグ多発のテーマ＝回帰固定の価値高。**
+- done `lib/turnstile.ts`（公開フォーム API の Cloudflare Turnstile CAPTCHA 検証・S58 が「fetch=要 mock」と分類）。**cost-guard.test.ts の
+  vi.stubGlobal("fetch")+vi.stubEnv 慣用で mock 化**。セキュリティ契約: シークレット未設定で **fail-open**（API 呼ばず skipped:true）/
+  トークン欠落→missing-input-response/成功は siteverify へ secret/response/remoteip POST/success:false の error-codes 伝播/
+  HTTP 非OK→http-error/throw→network-error。コミット `759dd06` / `__tests__/lib/turnstile.test.ts`(6件)。fail-open 反転 + error-code 改変の mutation で2件落ち実測。test 1086→1092。
+- done `lib/notify/slack.ts`（ユーザー信号をチームへ転送する共有 Slack Webhook 送信・同上 fetch mock）。契約: 決して throw しない/bool 返却/
+  {text} JSON POST/URL 未設定で fetch せず console.error+false/非2xx→false/throw→false。コミット `d9409eb` / `__tests__/lib/slack-notify.test.ts`(4件)。
+  res.ok 無視 + 本文キー改変の mutation で4件落ち実測（**{text} は cost-guard の slack 検証とも共有契約のため同時に検知**）。test 1092→1096。
+### 次セッションへ
+- 4モジュール（use-quiz-choice-roving・current-year・turnstile・notify/slack）は回帰固定済（再監査不要）。
+- **★教訓1: S58 の「要 mock=夜間 SKIP」仕分けは過大に保守的だった**。(a) React hook は sibling と同じ render/fireEvent で mock 不要、
+  (b) 単純な fetch ベース純関数（fail-open/fail-soft+本文契約）は cost-guard.test の vi.stubGlobal/stubEnv 慣用で安全に固定可。
+  **fetch を呼ぶ前の early-return 分岐（no-secret/no-url）と verdict マッピングだけでもセキュリティ契約として価値が高い。**
+- **★教訓2: 「未参照=dead code」の判定は grep 範囲に注意**。current-year は `app components lib` だけ見ると未参照だが `data/` が消費。
+  削除前は必ず `data/ content/ scripts/` も含めて全拡張子で grep（S58 の dead-code 列挙の current-year は誤り＝削除しなくて正解だった）。
+- 残る未テスト fetch 系（同手法で固定可・次の候補）: `lib/sync/{bookmark,custom-tag,study-plan}-sync`（fetch+localStorage 両 mock 要＝
+  やや重いが可能）・`lib/admin/deployment-status`（GitHub/Vercel API・多エンドポイントで重い）・`lib/stats/{gsc,posthog}`・`lib/admin/funnel/posthog`・
+  `lib/posthog`・`lib/admin/metrics/posthog`・`lib/admin/launch-monitoring/data`（buildAlerts は pure だが未 export＝export 追加要で日中向き）。
+  **真の要 mock 残**: motivation/sound（AudioContext）・ai/providers/gemini（SDK）・auth/*・db/prisma。**barrel**: onboarding/streak/sync index（SKIP）。
+- 次の有効角度（不変）: ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)、④上記 sync/* の fetch+LS mock 固定。
