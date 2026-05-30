@@ -372,7 +372,7 @@ export default async function QuestionPage({
       )}
 
       {/* Explanation — 3-layer structured */}
-      <section id="explanation" aria-label="解説" className="mt-8" style={{ scrollMarginTop: "1rem" }}>
+      <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
         <details open className="group">
           <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div className="flex items-center gap-2.5">
