@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション35):** P0 全件 done/SKIP。P1 進行中。
+> S35: S34 の「**未テストの lib 純関数を監査→実害発掘 or 契約を回帰固定**」角度を継続。リテンション/ゲーミフィケーション中核の純関数群（streak/xp/srs/heatmap/daily-goal/combo/coupon/missions/daily-challenge/filter/mock-exam-selection）を**read-only 全数精査＝明確な実害バグは無し（コード成熟）**。テスト皆無の最重要4モジュールの契約を回帰固定（source 無変更・S34 と同型の安全 infra）: ①`streak/core`(JST境界/連続/中断/マイルストーン, `f69b47d`・15件) ②`xp`(二次曲線×二分探索逆関数・全100段で逆関数一致, `45ff964`・10件) ③`mock-exam/selection`(Hamilton最大剰余配分・shuffle非依存の決定的座席配分, `990d8fe`・6件) ④`daily-challenge`(連続日/perfect連続/完了済み冪等, `af22cf3`・11件)。test327→369。
+> SKIP(日中候補): `spaced-repetition::applyGrade` が失敗時に EF 非更新（正準SM-2は全grade更新だが doc は「適応版」明記＝意図的の可能性・挙動変更につき夜間SKIP）/`coupon::read` の `source` 無意味三項（実害ゼロの dead-branch・cleanup候補）。
+> **教訓: streak/xp/mock-exam-selection/daily-challenge は回帰固定済（再監査不要）。combo/daily-goal/heatmap/missions/filter は監査で実害ゼロ確定。残る未テスト純関数候補＝study-plan/generator・gamification/economy・gamification/achievements・success-stories/related-content・seo/*ヘルパ（次セッションの固定候補）。**
+> **次は: 夜間の安全な実害バグは S1-S35 で深く枯渇。夜間継続は S34/S35 の「未テスト純関数の契約固定」が最安全・高価値＝上記残候補を1つずつ固定。a11y/SEO 新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E＝日中向き。**
+>
 > **状態 (2026-05-30 セッション33):** P0 全件 done/SKIP。P1 進行中。
 > S33: 新角度「**過去セッションが属性の有無だけ見て見落とした同型バグ**」を開拓＝**実改善1件**。`/settings` 保存トーストの `role="status"`/`aria-live="polite"` live region が `{toast && (…)}` で**条件付きマウント**され、region 自体が文言と同時 DOM 挿入される anti-pattern（SR が変化を捕捉できず保存完了/失敗が無通知）。**S7 が EmailLeadCapture に対し修正済の完全同型**だが、S7 監査は「role=status 保有」のみ確認し条件付きマウントを見落とし SKIP していた。region を常設し中身だけ出し入れ（`97b166a`・gold-standard ShareButtons 慣用）。source-read 回帰テストで index 順を検証（stash で落ちる実測）。
 > SKIP(全数監査=実害ゼロ): conditionally-mounted polite status（修正後 grep 残存ゼロ・`role=alert` はマウント時アナウンスが正で対象外）/focus-visible 除去（全て ring/border 代替併記）/OG 画像 dims（全32ページ width/height/alt 一貫）/api-route runtime（未宣言ゼロ）/select-onChange WCAG 3.2.2（全て state 更新のみ）。

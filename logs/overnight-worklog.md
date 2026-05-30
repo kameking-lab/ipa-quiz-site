@@ -1230,3 +1230,39 @@
   テスト基盤は **Vitest**（`import { ... } from "vitest"`・`@/` alias・globals・jsdom、`vitest.setup.ts`）。
   lib/storage/history.ts の API は store パターン（`createHistoryStore()` → `record({id,selected,correct,at})`/
   `getAllEntries`/`getWrongIds`/`getStats`/`toggleStar`/`reset`/`exportJson`/`importJson:boolean`）。
+
+## セッション35 2026-05-30 15:17 JST（S34継続：未テストの中核純関数を read-only 監査→実バグ無し→契約を回帰固定4件）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡ファイル）/test **327 passed**(79 files)/build緑（HEAD `72f7155`）。
+  git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。
+- 方針: S1-S33 で a11y/SEO/perf の安全な実害バグは深く枯渇。S34 が拓いた「**未テストの lib 純関数を監査し実害バグ発掘 or 契約を回帰固定**」角度を継続。
+  リテンション/ゲーミフィケーション中核の純関数群（streak/xp/srs/heatmap/daily-goal/combo/coupon/missions/daily-challenge/filter/mock-exam-selection）を
+  **read-only で全数精査**＝**明確な実害バグは発見されず**（コードは総じて正しい）。ただし主要モジュールがユニットテスト皆無で「崩れたら落ちる検証」が不在のため、
+  最も回帰リスクの高い4モジュールの契約を回帰テストで固定（S34 の `test(utils)`/`test(history)` と同型の安全な infra 改善・source 無変更）。
+- done: 【回帰固定】`lib/streak/core.ts`（§11 連続学習/段級＝リテンション中核）の純関数群を固定。
+  applyStudyDay/decayIfLapsed/jstDateString/nextMilestone/justReachedMilestone の JST 0:00 境界・連続/同日冪等/中断リセット・longest保持・
+  マイルストーン一度きり契約を網羅。/ コミット `f69b47d` / `__tests__/lib/streak-core.test.ts`(15件) / typecheck0・lint0err・test342・build を単独実測で全緑。
+- done: 【回帰固定】`lib/gamification/xp.ts` レベリング曲線（二次曲線×二分探索逆関数）。
+  既知アンカー点・単調増加・**全100段で levelFromXp(totalXpForLevel(L))===L**・レベル境界/中間/最大の進捗(0..1)・MAX飽和。
+  / コミット `45ff964` / `__tests__/lib/xp-curve.test.ts`(10件) / typecheck0・test352 を単独実測で緑（test-only＝build は Next が __tests__ 無視で直交、cycle1 で確認済）。
+- done: 【回帰固定】`lib/mock-exam/selection.ts` 模試出題の層化サンプリング（Hamilton 最大剰余法）。
+  空プール・プール≤target 全件・random は target件重複なし・**balanced の剰余配分が決定的(A2/B1/C1)**・合計常に target でプール部分集合（shuffle 非依存の不変条件）。
+  / コミット `990d8fe` / `__tests__/lib/mock-exam-selection.test.ts`(6件) / typecheck0・test358 を単独実測で緑。
+- done: 【回帰固定】`lib/gamification/daily-challenge.ts`（最も分岐の多い日付ロジック）。
+  seededRandom/pickDeterministic の決定性、ensureChallenge の pending生成と同日不変、completeChallenge の翌日継続(+1)/中断リセット(1)/
+  非完璧で perfectStreak=0/完了済み再挑戦は既存値保持+保存不変（冪等）。/ コミット `af22cf3` / `__tests__/lib/daily-challenge.test.ts`(11件) / typecheck0・test369 を単独実測で緑。
+- SKIP(実害判定が debatable・日中候補): `lib/learning/spaced-repetition.ts::applyGrade` は doc/コメントで「SM-2 を適用」と Wikipedia を引用するが、
+  **失敗時(grade<3)に EF を更新しない**（正準 SM-2 は全 grade で EF 更新）。失敗カードの EF が下がらず再学習後の間隔が想定より早く伸びる潜在差異だが、
+  コメントは「binary signal + ease quality を受ける適応版」と明記＝意図的設計の可能性が高く、復習スケジューリングの挙動変更＝「崩れたら落ちる」E2E も無いため夜間は SKIP。
+  現状の挙動は本セッションでは固定せず（変更含みのため）。**日中に SM-2 準拠へ寄せるか design intent を確認する候補**として記録。
+- SKIP(過大修正の罠): `lib/motivation/coupon.ts::read` の `source: parsed.source === "streak-30" ? "streak-30" : "streak-30"` は無意味な三項（常に "streak-30"）だが
+  実害ゼロ＝挙動不変。cosmetic な dead-branch 除去は夜間 overreach で SKIP（日中の cleanup 候補）。
+- 監査して実害ゼロを確認した純関数（再監査不要）: streak/core・xp・mock-exam/selection・daily-challenge（上記で固定）+ motivation/combo(comboLevel)・
+  motivation/daily-goal(getDailyProgress の pct/completed)・motivation/heatmap(generateDayRange の JST連続日・intensityLevel・total*)・
+  gamification/missions(claim/increment ガード)・questions/filter(Fisher-Yates shuffle・filterQuestions の各絞り込み)。いずれも境界条件・ガード適切。
+
+## セッション35 まとめ
+- 実改善0件（source 無変更）+ 回帰テスト固定4モジュール（streak/xp/mock-exam-selection/daily-challenge＝計42件追加: test327→369）+ SKIP2件（SM-2 EF＝日中候補/coupon dead-branch＝cleanup候補）。
+- テーマ: S34 の「未テスト lib 純関数」角度を継続。**明確な実害バグは発見されず＝コードは成熟**。リテンション中核の純関数群に「崩れたら落ちる検証」を敷設（将来の曲線係数/日付境界/Hamilton配分の崩れを CI が捕捉）。
+- 教訓（次セッションの重複監査防止）: **streak/core・xp・mock-exam/selection・daily-challenge は回帰テスト固定済（再監査不要）。combo/daily-goal/heatmap/missions/filter は read-only 監査で実害ゼロ確定。** 残る未テストの純関数候補: study-plan/generator・gamification/economy・gamification/achievements・success-stories/related-content・seo/* ヘルパ群（次セッションの固定候補）。
+- 次セッターへ: 夜間の安全な実害バグは S1-S35 で深く枯渇。残は**日中候補**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出/apple-touch-icon PNG/SM-2 EF 準拠/coupon dead-branch cleanup）。
+  夜間継続なら S34/S35 の「未テスト純関数の契約固定」が最も安全・高価値＝上記「残る未テスト候補」を1つずつ固定するのが推奨。
