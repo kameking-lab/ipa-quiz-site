@@ -29,6 +29,7 @@ import {
   questionPagePath,
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
+import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
@@ -155,6 +156,14 @@ export default async function QuestionPage({
   // instead of re-scanning all ~14k questions per render. Results are identical
   // — every filter below already required x.exam === q.exam. (perf: TTFB)
   const examPool = QUESTIONS_BY_EXAM[q.exam] ?? [];
+
+  // 分野見出しリンクは /[exam]/topic/[category] へ張るが、そのページは
+  // dynamicParams=false かつ strict プール(=needsReview とプレースホルダ解説を
+  // 除外)が空なら notFound() する。本問が「その分野で唯一の問題」かつ
+  // プレースホルダ/needsReview の場合、リンク先は 404 になる（例:
+  // ap-2013a-am-q75 の「品質管理」）。strict プールに同分野の問題が一つも
+  // 無ければリンクを張らずプレーンテキスト表示にして死リンクを防ぐ。
+  const topicPageExists = examTopicPageExists(q.exam, q.category);
 
   const sessionPool = examPool
     .filter(
@@ -295,12 +304,18 @@ export default async function QuestionPage({
           {sessionLabel(q.session)} 問{q.qNumber}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          <Link
-            href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
-            className="text-sm font-medium text-muted-foreground transition hover:text-primary hover:underline"
-          >
-            {q.category}
-          </Link>
+          {topicPageExists ? (
+            <Link
+              href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
+              className="text-sm font-medium text-muted-foreground transition hover:text-primary hover:underline"
+            >
+              {q.category}
+            </Link>
+          ) : (
+            <span className="text-sm font-medium text-muted-foreground">
+              {q.category}
+            </span>
+          )}
           {q.topicTags.slice(0, 3).map((t) => (
             <Link
               key={t}
@@ -429,6 +444,7 @@ export default async function QuestionPage({
           category={q.category}
           exam={q.exam}
           topicTags={q.topicTags}
+          hasTopicPage={topicPageExists}
         />
       </div>
 
