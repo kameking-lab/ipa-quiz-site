@@ -111,6 +111,12 @@ export function StreakCouponCard({ variant = "full" }: Props) {
           {" · "}30日達成のご褒美
         </p>
 
+        {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
+            polite live region で告知する。 */}
+        <span role="status" aria-live="polite" className="sr-only">
+          {copied ? "クーポンコードをコピーしました" : ""}
+        </span>
+
         {variant === "full" && (
           <p className="mt-3 text-[11px] text-zinc-600 dark:text-zinc-400">
             本サービスはボランティア有志運営の教育貢献プロジェクトのため、本バッジは記念表示のみです。

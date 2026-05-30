@@ -100,6 +100,11 @@ export function StreamSummary({
         >
           {copied ? "コピーしました ✓" : "テキストをコピー"}
         </button>
+        {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
+            polite live region で告知する。 */}
+        <span role="status" aria-live="polite" className="sr-only">
+          {copied ? "テキストをコピーしました" : ""}
+        </span>
 
         <div className="grid grid-cols-2 gap-3">
           <Link
