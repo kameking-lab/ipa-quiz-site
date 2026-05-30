@@ -1360,3 +1360,17 @@
 - 教訓（重複監査防止）: **pii-masker/dashboard-analytics/learning-analytics/category-pool は回帰固定済（再監査不要）。** dashboard-analytics・learning-analytics・category-pool・pii-masker の privacy 中核（email/phone/mynumber）は read-only 監査で実バグ無し確定。`lib/search/question-index.ts` の tokenize/makeSnippet/scoreQuestion は server-only かつ private（テストには export 追加=source 変更が要るため夜間は見送り＝日中候補）。
 - ★次セッター必読の新・日中候補: **pii-masker の name-honorific over-mask**（仕様/同様/模様 を誤マスク）。プライバシー安全側だがフィードバック本文破損。修正は denylist 追加 or 正規表現を「姓らしさ」へ寄せる等の人手判断が必要（実在姓+様の取りこぼし回避が肝）。
 - 次セッターへ: 夜間の安全な実害バグは S1-S38 で深く枯渇。残候補=さらなる未テスト純関数（search-index は export 追加要・日中／seo question-url 既テスト／exam-content・exam-resources は静的データ）or 日中候補群（pii over-mask[新規・上記]/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。
+
+## セッション39 2026-05-30 16:24 JST（S34-S38 継続：未テスト中核純関数の契約固定スイープ 4件）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test **496 passed**(96 files)/build緑（HEAD `4f03ce4`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>`）。
+- 方針: S34-S38 の「未テスト中核純関数を read-only 監査→実バグ発掘 or 契約を回帰固定（source 無変更）」角度を継続。Explore で未テスト純関数を棚卸し、価値順に4件処理。いずれも read-only 監査で実バグ無し＝characterization で現挙動を固定。
+- done【回帰固定】`lib/motivation/share.ts`（ストリーク/セッション/バッジの SNS シェア導線・X/LINE/OG画像URL）。type 必須付与・任意パラメータの選択的付与・**数値0とundefinedの区別**（streak=0 を欠落させない）・badge のエンコード・改行連結のエンコード・3種共有本文の確定文言を固定。/ コミット `bd56735` / `__tests__/lib/motivation-share.test.ts`(9件)。
+- done【回帰固定】`lib/questions/filter.ts`（**全クイズモードの出題プールを決める中核**・14k問が通る）。examGroup>exam・categoryGroup>category 優先／year/season/topicTag/calculationOnly の AND／復習=誤答∪スター(履歴なし非絞り込み)／未回答=回答済み除外／excludeRecent／**表/図/条件を含む画像なし問題の除外**(hasUnrenderableContent)／needsReview 除外／**プレースホルダ解説フォールバック**(実解説があれば落とすが全プレースホルダなら残す)／inOrder=qNumber昇順／shuffleChoices が answer を正解選択肢内容に追従(Math.random 固定で決定化)を固定。read-only 監査で実バグ無し。/ コミット `a548537` / `__tests__/lib/questions-filter.test.ts`(14件)。
+- done【回帰固定】`lib/questions/last-updated.ts`（/q 可視更新日 + JSON-LD dateModified）。getLastUpdatedISO のフォールバック(未設定→DEFAULT_LAST_UPDATED)・formatLastUpdatedJa の和暦整形(先頭ゼロ除去/非ISO素通し)を固定。/ コミット `71be271` / `__tests__/lib/questions-last-updated.test.ts`(4件)。
+- done【回帰固定】`lib/admin/metrics/range.ts`（/admin/metrics の集計期間 + 前期間比較窓の日付演算）。now 注入で today/7d/30d/mtd/custom の from-to、**比較窓が対象期間の直前に隣接する同日数窓**(off-by-one ガード・実際に手計算で導出を検証)、custom の from>to 正規化と不正日付フォールバック、rangeSpanDays/dateSeries の両端含む展開を固定。read-only 監査で実バグ無し(注入 now で決定的)。/ コミット `92bc306` / `__tests__/lib/metrics-range.test.ts`(9件)。
+
+## セッション39 まとめ
+- 実改善0件（source 無変更）+ 回帰固定4モジュール（share/questions-filter/questions-last-updated/metrics-range＝計36 it 追加: test496→**532**）。全ゲート全緑（typecheck0/lint0err/test532・100files/build緑）。実バグ発見なし（4モジュールとも監査で実バグ無し確定）。
+- テーマ: S34-S38 の「未テスト中核純関数の契約固定」角度を継続。**ユーザー向け共有導線(share)・全モード出題プール(filter=14k問の門番)・SEO更新日・admin期間演算**という「崩れても気付きにくい純関数」に崩れたら落ちる検証を敷設。
+- 教訓（重複監査防止）: **share/questions-filter/questions-last-updated/metrics-range は回帰固定済（再監査不要）。** filter の hasUnrenderableContent(表/図/条件×画像なし除外)・プレースホルダフォールバック・shuffleChoices の answer 追従は契約固定済。
+- 次セッターへ: 夜間の安全な実害バグは S1-S39 で深く枯渇。残る未テスト純関数候補＝`lib/motivation/combo.ts`(comboLevel 閾値)・`lib/motivation/heatmap.ts`(intensityLevel/generateDayRange)・`lib/onboarding/recommended-paths.ts`(getRecommendedPath)・`lib/questions/load.ts`(getAvailableYears/Categories/TopicTags)・`lib/motivation/daily-goal.ts`(getDailyProgress)。日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG）。

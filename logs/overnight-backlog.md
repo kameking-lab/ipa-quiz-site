@@ -4,6 +4,11 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション39):** P0 全件 done/SKIP。P1 進行中。
+> S39: S34-S38 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（share/questions-filter/questions-last-updated/metrics-range・計36 it・test496→532）。実改善(source変更)0件＝4モジュールとも監査で実バグ無し確定。
+> ①`lib/motivation/share.ts`(SNS シェアURL/本文・数値0とundefined区別, `bd56735`) ②`lib/questions/filter.ts`(**全モード出題プールの門番14k問**・examGroup優先/表図条件×画像なし除外/プレースホルダフォールバック/shuffleChoices answer追従, `a548537`) ③`lib/questions/last-updated.ts`(/q更新日+JSON-LD dateModified, `71be271`) ④`lib/admin/metrics/range.ts`(集計期間+前期間比較窓の日付演算・off-by-one ガード, `92bc306`)。
+> **教訓: share/questions-filter/questions-last-updated/metrics-range は回帰固定済（再監査不要）。残る未テスト純関数候補＝motivation/combo(comboLevel)・motivation/heatmap(intensityLevel/generateDayRange)・onboarding/recommended-paths・questions/load(getAvailableYears等)・motivation/daily-goal。**
+>
 > **状態 (2026-05-30 セッション38):** P0 全件 done/SKIP。P1 進行中。
 > S38: S34-S37 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（pii-masker/dashboard-analytics/learning-analytics/category-pool・計48 it・test448→496）。実改善(source変更)0件＝監査で実バグ無し確定。
 > ①`lib/feedback/pii-masker.ts`(PII スクラバ・contact API 中核, `e6a3532`) ②`lib/dashboard/analytics.ts`(/account 合格可能性%・弱点分野, `7b0442b`) ③`lib/learning/analytics.ts`(学習プラン・必要演習量, `297802c`) ④`lib/questions/category-pool.ts`(AP横断分野プール母数14k問・Explore の session取りこぼし疑いを実データ grep で棄却, `26ea5ae`)。
