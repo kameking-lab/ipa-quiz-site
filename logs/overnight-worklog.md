@@ -2271,3 +2271,14 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - ★教訓: 「部分カバレッジgap」(モジュールは import 済だが一部 export のみ被覆)は機械列挙で発掘可＝`grep -oE 'export (function|const) NAME'` × `grep -rl '\bNAME\b' __tests__/` の per-name 突合。S71 が示した角度は有効で本セッション5件収穫。round-trip ペアは片側のみテスト済が多い(encode/parse/slug→tag)。
 - ★教訓: vacuous pass 検知は「閾値分岐がデータで踏まれるか」を実データダンプで確認せよ(getAvailableは全区分>0で vacuous、countByExam は strict<raw で非vacuous)。同値で潰れる不等号は厳密不等号 or 独立クロスチェックへ。
 - 次候補(部分カバレッジgap 残): `lib/dashboard/analytics.ts::daysUntilNextExam`・`lib/study-plan/generator.ts::todayLocalDate`(Date 依存=注意)・`lib/copilot/retriever.ts::getCachedIndex`(キャッシュ同一性)・`lib/questions/filter.ts::shuffle`(seed/非破壊)。per-name 突合の残リストは worklog S72 機械列挙参照。日中候補(不変): ContactForm 成功カード focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+### セッション73（2026-05-31 02:12〜02:20 JST・自律ループ）
+ベースライン全緑(typecheck0/lint0err[警告1=untracked scripts/ux-audit-screenshots.mjs・非対象]/test1325・193files/build2510 SSG)= S72 と一致。
+**結論: S72 が次候補に挙げた「部分カバレッジgap」per-name 残リストを4件処理（実改善0・source 無変更）。test 1325→1336（+11 it・193files 据置=既存テストファイルへ追記）。**
+
+- done: `lib/questions/filter.ts::shuffle` 直接契約を回帰固定(`7a555ca`)。filterQuestions(random)/shuffleChoices が依存する Fisher-Yates だが直接テスト無し。①同一配列を破壊的に並べ替えて参照を返す(コピーしない) ②要素の過不足ゼロ(集合保存) ③Math.random=0 で決定的置換[a,b,c,d]→[b,c,d,a] ④Math.random≈1 で自己交換=不変 ⑤空/単一は no-op。ループ境界 mutation(`i>0`→`i>1`)で1件 fail を実測。
+- done: `lib/copilot/retriever.ts::getCachedIndex`+`resetIndexCache` を回帰固定(`6e51a66`)。resetIndexCache は他テストの setup でのみ使われ、getCachedIndex のキャッシュ契約は未カバー。①初回のみ getDocs を呼び以降は同一参照を返す ②reset 後は getDocs 再呼び出しで別インスタンス再構築。cache early-return 除去 mutation(`if(CACHED_INDEX)`→`if(false)`)で1件 fail を実測。
+- done: `lib/study-plan/generator.ts::todayLocalDate` を回帰固定(`2a900aa`)。formatLocalDate/listDates/isWeekend は既テスト済だが generateStudyPlan の「今日」起点 todayLocalDate は未カバー。フェイククロックでローカル暦日 YYYY-MM-DD・月初/年初ゼロ埋めを pin。`new Date()`→`new Date(0)` mutation で5件 fail(自2件+generateStudyPlan 派生3件)を実測。
+- done: `lib/dashboard/analytics.ts::daysUntilNextExam` を回帰固定(`976f262`)。/account「次の試験まで N 日」を駆動するが直接未カバー。共有マスター nextExamSitting への委譲の同一性(toEqual)+既知日付の暦日11日/ラベルを pin。委譲先 now 差し替え mutation で2件 fail を実測。
+- ★教訓: S72 の per-name 突合 doctrine(`export (function|const) NAME` × `grep -rl '\bNAME\b' __tests__/`)は引き続き有効で本セッション4件収穫。①「同名 test file が別 export だけ見る」パターンが多い(filter→shuffle未/generator→today未/analytics→days未/retriever→getCachedIndex未)。②delegation wrapper も toEqual で委譲先と一致 pin すれば mutation で捕捉可。③process 内シングルトンは「初回 getDocs 1回・参照同一・reset で再構築」の3点で契約化できる。
+- 次候補(部分カバレッジgap 残): S72 機械列挙リストはほぼ消化。残る角度=①過去 SAFE/latent footgun 再検証(S33/S41) ②各 module の未カバー export の per-name 再スイープ(新規 export 追加時に再走査)。日中候補(不変): ContactForm 成功カード focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
