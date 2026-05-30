@@ -2672,3 +2672,17 @@ clean（コード無変更・検証済 SKIP）:
 
 ---
 最終更新: セッション96 (2026-05-31 08:50 JST) — 夜間窓最終セッション。全緑実測(test1626/217files)・test-pin角度枯渇により夜間ループ自然終了を記録
+
+## セッション97 (2026-05-31 08:49〜08:52 JST・自律ループ／夜間窓 09:00 締切直前)
+締切(09:00 JST)まで残り約8分で起動。HEAD=39c4cea(S96)・source 無変更を確認(git diff --name-only の唯一の差分 BookmarkButton snap は git 自身が CRLF→LF 行末差のみと報告=内容差分なし。overnight-loop.bat / 各 untracked logs・scripts/ux-audit-screenshots.mjs は S0 申し送りの本ループ非対象ファイル。一切触れず)。
+- baseline 緑の鮮度確認として pnpm typecheck を実測 → exit 0。source は S95/S96 が全緑ゲート(typecheck/lint/test1626/build)を完走した時点から無変更のため、test/build の緑状態はそのまま保全(再 build は新情報を生まず締切超過リスクのみ)。
+- 判断: S95/S96 の結論通り「test-pin 角度は枯渇・残務は日中候補(挙動変更+E2E+人間レビュー必須)のみ」。締切まで約8分で build を含む全緑ゲートを完走・実測検証できる新規 source 変更は安全に着手不可。過大修正(over-testing)を避け新規変更を見送り、typecheck 緑実測と worklog 更新のみ実施。
+- 結論: 夜間自律ループは本セッションで自然終了。overnight-integration は green・clean・mergeable のまま 09:00 を迎える。次の有意な改善は日中に人間判断で(handoff は S94〜S96 から不変)。
+
+### 次セッション/日中へ(handoff・S94〜S96 から不変)
+- test-pin 角度は枯渇(S88-S90 Explore 実バグ探索 clean / S91-S94 手書きデータ const invariant も消化)。
+- 日中候補(挙動変更+E2E 必須・夜間不適): EssayEditor totalScore 命名・ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・safeParseScoring/safeParseGrading のクランプ(provider mock)。
+- 夜間に安全な残務は「観測のみ」(既存E2E flake 監視 / build SSG数・bundle size 回帰監視)。新規 source 変更を伴う夜間安全枠は薄い。
+
+---
+最終更新: セッション97 (2026-05-31 08:52 JST)  ／夜間窓 09:00 締切直前。typecheck緑実測(exit0)・source無変更を確認し、test-pin角度枯渇により夜間ループを自然終了として記録
