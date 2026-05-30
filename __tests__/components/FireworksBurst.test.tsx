@@ -26,6 +26,38 @@ describe("FireworksBurst — auto-clear lifecycle", () => {
     expect(onDone).toHaveBeenCalledTimes(1);
   });
 
+  // framer-motion の animate は JS 駆動で、CSS の prefers-reduced-motion 抑制では
+  // 止まらない。reduce 指定の前庭障害ユーザーには全画面パーティクル爆発が再生されて
+  // しまうため、matchMedia=reduce のときは装飾バーストを描画しないこと(WCAG 2.3.3)。
+  it("does not render the burst visual when prefers-reduced-motion is set", () => {
+    const original = window.matchMedia;
+    window.matchMedia = vi.fn().mockImplementation((q: string) => ({
+      matches: q.includes("reduce"),
+      media: q,
+      addEventListener: vi.fn(),
+      removeEventListener: vi.fn(),
+      addListener: vi.fn(),
+      removeListener: vi.fn(),
+      dispatchEvent: vi.fn(),
+      onchange: null,
+    })) as unknown as typeof window.matchMedia;
+    try {
+      const onDone = vi.fn();
+      const { container } = render(
+        <FireworksBurst active level="big" onDone={onDone} />,
+      );
+      // 装飾オーバーレイ(fixed inset-0 のバースト)が DOM に出ないこと。
+      expect(container.querySelector(".fixed.inset-0")).toBeNull();
+      // それでも auto-clear タイマーは走り、親の burst state は解除される。
+      act(() => {
+        vi.advanceTimersByTime(BIG_CLEAR_MS);
+      });
+      expect(onDone).toHaveBeenCalledTimes(1);
+    } finally {
+      window.matchMedia = original;
+    }
+  });
+
   it("does not start a timer while inactive", () => {
     const onDone = vi.fn();
     render(<FireworksBurst active={false} level="big" onDone={onDone} />);
