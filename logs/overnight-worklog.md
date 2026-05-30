@@ -1702,3 +1702,34 @@ happy-path のみ・user-context は migrate-key.test が移行/既定のみ＝�
 - まだ未テストで残る純関数候補: `lib/sync/client.ts::postSync` の未カバー枝（generic HTTP 500→`{error,"HTTP NNN"}`・json.entries 非配列→local fallback・merged/total `??0`）＝merge.test.ts に追記可。
   `lib/exam-config.ts` の buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt(プロンプト文字列・固定値・価値中)・`lib/essays/load.ts`(薄いラッパ)・`lib/copilot/rag-pipeline.ts`(async・mock 要・夜間慎重に)。
 - 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
+
+## セッション51 (2026-05-30 19:49 JST) — S50 handoff が名指しした残り未テスト純関数3件を契約固定
+
+### 結論: 実改善0件（source 無変更）+ 回帰固定3モジュール（test 883→906・137→139 files）。全ゲート全緑。
+冒頭ベースライン: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test 883・137files/build 全緑/HEAD `1130eac`(S50)。
+S50 handoff が名指しした「残る未テスト純関数候補」3件を消化。全件 read-only 監査で実バグ無し＝characterization。
+期待値は型/合成入力/ライブデータから導出し source 変更ゼロ。各テストは source mutation→`git checkout -- / mv .bak` revert で「崩れたら落ちる」を実測。全ゲート緑をコミット前に確認。
+
+- done `lib/sync/client.ts::postSync` の未カバー4分岐（既存 merge.test.ts は 401/503/200/throw のみ網羅）。
+  generic HTTP 失敗(非401/503)→`{error,"HTTP NNN"}`・200 body の `entries` 非配列→入力 entries フォールバック(`Array.isArray` ガード)・
+  `merged`/`total` の `?? 0` 既定・非Error throw 時の `"network"` 文言を pin。/ コミット `57fbdbf` / merge.test.ts に4 it 追加。
+  **HTTP文言改変/`?? 99`/`Array.isArray`ガード除去/`err.message`直参照 の各 mutation で対応テストが落ちる**ことを実測(revert済)。
+- done `lib/essays/load.ts`（論述=午後II/論文 C軸 コンテンツのアクセサ・全くの未テスト）。決定的純関数13件:
+  isEssayExamCode の6コード許容/それ以外拒否(大文字含む)・SC コーパス非空/id重複なし/全業種保持・find系の id一致/未知→undefined・
+  getEssayQuestionByYearSeason の **year+season+qNumber 三条件AND**・getIndustryEssay の industryId一致/不在→undefined・
+  parseYearSeason の **前後アンカー+季節限定正規表現**・questionToUrlParts のセグメント生成。期待値はライブSCデータから導出。
+  / コミット `5078d6f` / `__tests__/essays/load.test.ts`(13件)。**正規表現 `$` 除去+winter追加 / 三条件AND の qNumber+season 除去 /
+  section `"pm2"→"pm1"` の各 mutation で対応テストが落ちる**ことを実測(revert済)。※非sc分岐(afternoonToEssayQuestion アダプタ+sort)は
+  現状データ依存で値が脆いため非対象（決定的純関数のみ固定）。
+- done `lib/exam-config.ts` の prompt builder 3件（buildExtractionPrompt/buildAnswerExtractionPrompt/buildExplanationPrompt＝
+  parse-pdf-to-json が LLM に渡す抽出/解説指示文・未テスト）。合成 ExamConfig/SessionConfig で補間契約: 試験名/年度/label/設問数の補間・
+  **季節ラベル(spring→春期/autumn→秋期/cbt→CBT)**・**カテゴリの1始まり改行連結**・JSON-only 指示・解説プロンプトへの qList 末尾付与。
+  / コミット `bbb72ba` / `__tests__/lib/exam-config-prompts.test.ts`(6件)。**春期/秋期スワップ / カテゴリ採番0始まり化 /
+  「JSONのみ」→「マークダウンで」の各 mutation で対応テストが落ちる**ことを実測(revert済)。
+
+### 次セッションへ
+- postSync(全分岐)/essays-load/exam-config(prompt builder)は回帰固定済（再監査不要）。**S50 handoff の名指し候補は rag-pipeline を除き全消化。**
+- 残る未テスト純関数候補は marginal 化: `lib/copilot/rag-pipeline.ts`(async orchestration・mock 要・夜間は慎重に＝唯一の handoff 残)・
+  `lib/sync/{study-plan,bookmark,custom-tag}-sync.ts`(薄い orchestration＝pure部分の getPlanSyncEntries/mergeServerPlans 等は S48 で既テスト・wrapper は fetch+localStorage mock 要)・
+  `lib/stats/{gsc,posthog}.ts`(外部API fetch・mock 要・純関数でない)。**夜間の安全な実害バグ・安全な未テスト純関数とも S1-S51 で深く枯渇。**
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
