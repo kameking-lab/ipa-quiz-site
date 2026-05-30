@@ -20,20 +20,27 @@ export interface BookmarksData {
   entries: Record<string, BookmarkEntry>;
 }
 
-const EMPTY: BookmarksData = { entries: {} };
+// Factory (not a shared const): callers mutate the returned object in place
+// (toggleBookmark/mergeServerBookmarks assign to data.entries[id], delete keys),
+// so a shared empty constant would be permanently corrupted on the empty-storage
+// path — and clearAllBookmarks() would then write that corrupted object back,
+// leaving phantom bookmarks. Same footgun fixed in history.ts / achievements.ts.
+function emptyData(): BookmarksData {
+  return { entries: {} };
+}
 
 function readRaw(): BookmarksData {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyData();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.bookmarks);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyData();
     const parsed = JSON.parse(raw) as BookmarksData;
     return {
       entries:
         parsed.entries && typeof parsed.entries === "object" ? parsed.entries : {},
     };
   } catch {
-    return EMPTY;
+    return emptyData();
   }
 }
 
@@ -92,7 +99,7 @@ export function getAllBookmarks(): BookmarkEntry[] {
 }
 
 export function clearAllBookmarks(): void {
-  writeRaw(EMPTY);
+  writeRaw(emptyData());
 }
 
 /**

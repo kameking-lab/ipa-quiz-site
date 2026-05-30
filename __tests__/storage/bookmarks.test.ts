@@ -8,6 +8,7 @@ import {
   clearAllBookmarks,
   exportBookmarks,
   importBookmarks,
+  mergeServerBookmarks,
   MAX_TAGS_PER_BOOKMARK,
 } from "@/lib/storage/bookmarks";
 import type { Question } from "@/lib/questions/types";
@@ -164,5 +165,44 @@ describe("exportBookmarks / importBookmarks", () => {
 
   it("returns false when entries field is missing", () => {
     expect(importBookmarks('{"foo":"bar"}')).toBe(false);
+  });
+});
+
+describe("mergeServerBookmarks", () => {
+  it("adds server entries and keeps newer local edits (last-write-wins)", () => {
+    vi.useFakeTimers();
+    vi.setSystemTime(new Date("2023-06-01T00:00:00Z"));
+    toggleBookmark(makeQuestion("ap-2023s-am-q1"));
+    vi.useRealTimers();
+    const localAt = getBookmark("ap-2023s-am-q1")!.bookmarkedAt;
+
+    mergeServerBookmarks([
+      // Stale server copy of an entry the user edited more recently → ignored.
+      { questionId: "ap-2023s-am-q1", tags: ["stale"], bookmarkedAt: localAt - 1000 },
+      // New server-only entry → added.
+      { questionId: "ap-2023s-am-q2", tags: ["server"], bookmarkedAt: localAt + 1000 },
+    ]);
+
+    expect(getBookmark("ap-2023s-am-q1")!.tags).toEqual([]);
+    expect(getBookmark("ap-2023s-am-q2")!.tags).toEqual(["server"]);
+  });
+});
+
+// The store reads from a module-level empty object on the "no stored key" path.
+// If that object is shared by reference and callers mutate it in place, it gets
+// permanently corrupted — and clearAllBookmarks() then writes the corrupted copy
+// back. These tests use localStorage.clear() (key fully absent) to exercise that
+// path, unlike the suite-wide beforeEach which writes an empty object.
+describe("shared-empty footgun (first-session regression)", () => {
+  it("clear-all truly empties even when the first bookmark was added on absent storage", () => {
+    window.localStorage.clear(); // brand-new user: bookmarks key does not exist
+    toggleBookmark(makeQuestion("ap-2023s-am-q1")); // empty-path write
+    toggleBookmark(makeQuestion("ap-2023s-am-q2", { qNumber: 2 }));
+    expect(getAllBookmarks()).toHaveLength(2);
+
+    clearAllBookmarks();
+    // Buggy version writes the corrupted shared empty back → first bookmark survives.
+    expect(getAllBookmarks()).toEqual([]);
+    expect(isBookmarked("ap-2023s-am-q1")).toBe(false);
   });
 });
