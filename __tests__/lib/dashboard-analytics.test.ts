@@ -6,11 +6,13 @@ import {
   topStrongCategories,
   computeExamProbabilities,
   estimateStudyMinutes,
+  daysUntilNextExam,
   radarSlots,
   PROB_MIN_SAMPLE,
   type QuestionMeta,
   type CategoryStat,
 } from "@/lib/dashboard/analytics";
+import { nextExamSitting } from "@/lib/constants/exam-schedule";
 
 // /account ダッシュボードの習熟度・合格可能性・弱点/得意分野を駆動する純関数群。
 // ユーザーに見える数値（合格可能性%・弱点分野）を出すがテスト皆無だったため、
@@ -186,5 +188,21 @@ describe("radarSlots", () => {
     ];
     const slots = radarSlots(stats, 2);
     expect(slots.map((s) => s.category)).toEqual(["B", "C"]);
+  });
+});
+
+describe("daysUntilNextExam", () => {
+  // /account ダッシュボードの「次の試験まで N 日」カウントダウン。
+  // 共有マスター nextExamSitting への委譲が契約で、独自計算に差し替わると
+  // exam-schedule の JST 暦日ロジックと乖離する。委譲の同一性を pin する。
+  it("引数の now を nextExamSitting にそのまま委譲し同じ結果を返す", () => {
+    const now = new Date("2026-04-10T03:00:00Z"); // JST 2026-04-10 12:00
+    expect(daysUntilNextExam(now)).toEqual(nextExamSitting(now));
+  });
+
+  it("既知日付で春期(4/21)まで暦日 11 日・ラベルを返す", () => {
+    const r = daysUntilNextExam(new Date("2026-04-10T03:00:00Z"));
+    expect(r.days).toBe(11);
+    expect(r.label).toBe("2026年 春期");
   });
 });
