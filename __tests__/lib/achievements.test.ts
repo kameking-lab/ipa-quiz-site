@@ -3,8 +3,10 @@ import {
   evaluateAchievementsAfterAnswer,
   evaluateAchievementsAfterMock,
   evaluateAchievementsAfterStreak,
+  evaluateAi,
   getUnlocked,
   isUnlocked,
+  unlockManual,
 } from "@/lib/gamification/achievements";
 import { getGold, getXp } from "@/lib/gamification/economy";
 import type { MockExamResult } from "@/lib/mock-exam/storage";
@@ -161,6 +163,53 @@ describe("evaluateAchievementsAfterMock", () => {
     expect(ids(evaluateAchievementsAfterMock(mockResult({ passed: true })))).not.toContain(
       "mock-pass-3",
     );
+  });
+});
+
+describe("evaluateAi", () => {
+  it("always unlocks ai-first on any AI usage (even the first call)", () => {
+    expect(ids(evaluateAi(1))).toContain("ai-first");
+  });
+
+  it("unlocks ai-50 / ai-200 only at their thresholds", () => {
+    const at50 = ids(evaluateAi(50));
+    expect(at50).toEqual(expect.arrayContaining(["ai-first", "ai-50"]));
+    expect(at50).not.toContain("ai-200");
+    window.localStorage.clear();
+    const below = ids(evaluateAi(49));
+    expect(below).toContain("ai-first");
+    expect(below).not.toContain("ai-50");
+    window.localStorage.clear();
+    expect(ids(evaluateAi(200))).toContain("ai-200");
+  });
+
+  it("awards ai-first XP and gold and is idempotent on re-evaluation", () => {
+    evaluateAi(1); // ai-first: xp 30, gold 20
+    expect(getXp().total).toBe(30);
+    expect(getGold().balance).toBe(20);
+    // Re-evaluating with the same count unlocks nothing new (no double award).
+    expect(evaluateAi(1)).toEqual([]);
+    expect(getXp().total).toBe(30);
+  });
+});
+
+describe("unlockManual", () => {
+  it("unlocks a known achievement by id and persists it", () => {
+    const r = ids(unlockManual("share-result"));
+    expect(r).toEqual(["share-result"]);
+    expect(isUnlocked("share-result")).toBe(true);
+  });
+
+  it("is a no-op for an unknown id (no phantom unlock, returns [])", () => {
+    expect(unlockManual("no-such-achievement")).toEqual([]);
+    expect(isUnlocked("no-such-achievement")).toBe(false);
+  });
+
+  it("does not re-unlock or re-award an already unlocked id", () => {
+    unlockManual("share-result"); // xp 30, gold 20
+    expect(getXp().total).toBe(30);
+    expect(unlockManual("share-result")).toEqual([]);
+    expect(getXp().total).toBe(30);
   });
 });
 
