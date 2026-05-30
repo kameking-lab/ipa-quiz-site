@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション41):** P0 全件 done/SKIP。P1 進行中。
+> S41: 前半は S40 handoff の最後の1件(daily-goal)＋新規未テスト純関数2件を契約固定＝回帰固定3（daily-goal/examLabelAt/summarizeSession・計31 it）。後半で**共有EMPTY破壊 footgun の sweep 未完を発見＝実改善2件**。
+> ①`lib/motivation/daily-goal.ts`(getDailyProgress: pct クランプ/completed境界/本日以外除外, `8dd7b5d`) ②`lib/exam-naming/history.ts`(examLabelAt: 出題当時の試験名・期の順序春<秋で同年内改名 NW/AP, `293c6cd`・SEO中核) ③`lib/motivation/session.ts`(summarizeSession: おすすめ数閾値<60→+5/[60,90)→+3/>=90→+10・クランプ[10,50], `3981de4`)。
+> **★実改善2件＝共有EMPTY footgun の SAFE/latent 誤分類**: ④`lib/motivation/badges.ts`(read が `{...EMPTY}` 浅コピーで earned 配列共有→syncBadgesWithStreak の push が破壊。**S36 SAFE 群に誤列挙**されていた, `48c13dc`) ⑤`lib/motivation/heatmap.ts`(同型・byDate 共有→recordStudyOnDate が破壊。**S40 が latent 放置**した件, `440f1d0`)。両者 emptyState() ファクトリ化（挙動不変）+絶対参照純度テスト。test532→**602**。
+> **教訓: S37 の「共有EMPTY footgun 全7ファイル完了」宣言は不完全＝`{...EMPTY}` 浅コピーで nested mutable(array/object)を共有するクラス(badges/heatmap)が漏れていた。残る要検証＝daily-challenge(`{...EMPTY,...parsed}`)/onboarding/state/user-context(同型 merge の空経路)。combo/character/settings/notifications は DEFAULTS が primitive-only でおそらく SAFE。次セッションは read() の空経路が nested mutable を共有し mutating caller があるかを確認し、同型なら emptyState() ハードニング。**
+> **次は: 未テスト純関数候補は daily-goal で S39/S40 handoff 分を消化済。残る上記 footgun 再検証(S33 角度の発展＝過去 SAFE/latent 誤分類の掘り起こしが有効)、または日中候補群(pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG)。**
+>
 > **状態 (2026-05-30 セッション40):** P0 全件 done/SKIP。P1 進行中。
 > S40: S34-S39 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（combo/heatmap/recommended-paths/questions-load・計29 it・test532→561）。実改善0件＝4モジュールとも監査で実バグ無し確定。
 > ①`lib/motivation/combo.ts`(comboLevel 閾値 none<3/small/big>=5・設定read/write, `2adff00`) ②`lib/motivation/heatmap.ts`(intensityLevel バケット境界/generateDayRange 連続N日/集計合計, `0d4cffb`・read() byDate 共有footgun は studyDays の clear 不在で latent=SAFE) ③`lib/onboarding/recommended-paths.ts`(getRecommendedPath 3属性分岐・exam href補間・未知→last-minute fallback, `f9bb080`) ④`lib/questions/load.ts`(getAvailableYears 降順/Categories・TopicTags 昇順/exam絞り部分集合・実データ不変条件, `37cc0ed`)。
