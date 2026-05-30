@@ -2282,3 +2282,24 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - done: `lib/dashboard/analytics.ts::daysUntilNextExam` を回帰固定(`976f262`)。/account「次の試験まで N 日」を駆動するが直接未カバー。共有マスター nextExamSitting への委譲の同一性(toEqual)+既知日付の暦日11日/ラベルを pin。委譲先 now 差し替え mutation で2件 fail を実測。
 - ★教訓: S72 の per-name 突合 doctrine(`export (function|const) NAME` × `grep -rl '\bNAME\b' __tests__/`)は引き続き有効で本セッション4件収穫。①「同名 test file が別 export だけ見る」パターンが多い(filter→shuffle未/generator→today未/analytics→days未/retriever→getCachedIndex未)。②delegation wrapper も toEqual で委譲先と一致 pin すれば mutation で捕捉可。③process 内シングルトンは「初回 getDocs 1回・参照同一・reset で再構築」の3点で契約化できる。
 - 次候補(部分カバレッジgap 残): S72 機械列挙リストはほぼ消化。残る角度=①過去 SAFE/latent footgun 再検証(S33/S41) ②各 module の未カバー export の per-name 再スイープ(新規 export 追加時に再走査)。日中候補(不変): ContactForm 成功カード focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+---
+
+### セッション74（2026-05-31 02:23〜02:40 JST・自律ループ）
+ベースライン全緑実測: typecheck0 / lint0err（警告=untracked scripts/ux-audit-screenshots.mjs・非対象）/ test1342（193files）/ build2510 SSG = S73 と一致。
+**結論: S72/S73 の per-name 部分カバレッジgap doctrine を gamification/motivation/storage の localStorage・sessionStorage 状態層へ適用し実改善4件（test-only・source 無変更）。test 1342→1371（+29・195files）。**
+
+- done: `lib/gamification/daily-challenge.ts::dateSeed`+`DAILY_CHALLENGE_SIZE` を回帰固定（`27ac744`）。daily-challenge.test は他 export を網羅するが、app/challenge/page が日替わり出題の種に使う dateSeed(FNV-1a 32bit)と SIZE は直接未カバー。決定性・golden値(basis2166136261/prime16777619/>>>0マスク)・空文字=offset basis・符号なし32bit・隣接日で別種をピン。`>>> 0`除去 mutation で2件 fail を実測。
+- done: `lib/storage/rate-limit-client.ts` の挙動契約（§9 client AI クォータゲート）を回帰固定（`d9510f0`・新規 `__tests__/rate-limit/quota-client-behavior.test.ts`）。quota-sync.test は client/server/定数の上限一致のみを固定しており、readAiUsage の JST日跨ぎリセット/fail-soft・incrementAiUsage 永続化・feedback フラグ往復・effectiveDailyLimit のフィードバックゲートは未カバーだった。フェイククロックでピン。上限値は ai-quota.ts 定数を参照し SSOT 二重化を回避。reset除去+ternary反転 mutation で4件 fail を実測。
+- done: `lib/gamification/xp.ts` の XP ステート層(readXp/awardXp/resetXp/XP_REWARDS)を回帰固定（`47632e6`・新規 `__tests__/lib/xp-state.test.ts`）。xp-curve.test は曲線純関数のみ。readXp の JST「今日分」リセット・total負値/非有限クランプ・fail-soft、awardXp の累積/レベルアップ判定/小数floor・負値無視をピン。levelUp判定除去 と readXp リセット除去 mutation でそれぞれ1件 fail を実測。**発見: awardXp の sameDay ternary は readXp が earnedToday を正規化済のため冗長（mutation 素通り）→ 日次リセットの load-bearing は readXp 側にあり、そちらを独立 pin した。**
+- done: `lib/motivation/session.ts` の sessionStorage 往復層を回帰固定（`024d0a6`・既存 motivation-session.test へ追記）。summarizeSession 純関数のみ既カバー。start/record/read/clear と readMeta の fail-soft(startedAt非数値→null・mode非文字列→unknown・answers非配列→[]・壊れJSON→null)をピン。startedAt ガード除去+answers 配列ガード除去 mutation で2件 fail を実測。
+
+☆教訓:
+- per-name 部分カバレッジgap doctrine（`export (function|const) NAME` ×`grep -rl '\bNAME\b' __tests__/`）は localStorage/sessionStorage 状態層へも有効。本セッション4件収穫。共通パターン=「曲線/集計の純関数は tested だが、その周りの状態 read/write/JST日跨ぎリセット/fail-soft が未カバー」。
+- **冗長ガードに注意**: 同じ正規化が read 側と write 側で二重にあると write 側 mutation が素通る（xp.awardXp）。load-bearing な方（read 側）を特定して独立に discriminate せよ。
+- 状態層 pin は ①SSR/未保存デフォルト ②同日往復 ③JST日跨ぎリセット ④破損 fail-soft ⑤クランプ/正規化 の5観点でほぼ尽くせる。
+
+### 次セッションへ
+- per-name gap 残候補（状態層・未確認）: `lib/mock-exam/session.ts`(save/load/clearActiveSession・session.test 有=要確認)・`lib/gamification/achievements.ts`(evaluateAi/unlockManual・achievements.test 有=要確認)・`lib/motivation/badges.ts`(BADGES)・`lib/motivation/heatmap.ts`(syncHeatmapWithHistory・motivation-heatmap.test 有=要確認)・`lib/questions/category-pool.ts`(AP_TOPIC_GROUPS)・`lib/storage/history.ts`(getPremiumFlag/setPremiumFlag)。いずれも「テストファイルは在るが当該 export 未参照」型を per-name 突合で要確認。
+- 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
+- 実改善は引き続き日中候補に依存。夜間安全枠（未テスト純関数 + a11y 取りこぼし全数grep + per-name 部分カバレッジgap）は per-name gap の状態層がまだ数件残る。
