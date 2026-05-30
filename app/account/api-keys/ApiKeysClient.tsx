@@ -204,6 +204,12 @@ export function ApiKeysClient() {
         ※ β 版のため、キーはブラウザ localStorage に保存されます。端末を切り替える際は再発行してください。
         将来的にはアカウント連携（Google/GitHub ログイン）でクラウド保存に対応予定です。
       </p>
+
+      {/* コピー成功はボタン文言が「コピー済」へ変わるだけでは SR に告知され
+          ない(WCAG 4.1.3)。polite live region で告知する。 */}
+      <span role="status" aria-live="polite" className="sr-only">
+        {copiedId ? "API キーをコピーしました" : ""}
+      </span>
     </main>
   );
 }
