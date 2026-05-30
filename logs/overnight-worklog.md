@@ -971,3 +971,28 @@
 - 次セッションへ: 観点⑦⑪は一巡 done（実害ゼロ）。観点⑨は中核2件 done・残2件は日中候補。残る S23 起案は
   ⑧canonical/og:url 末尾スラッシュ整合 / ⑩toLocaleString locale 未指定の整形整合。日中候補（tabs矢印キー/
   コピー通知統一/MilestoneToast ref化/exam meta desc 短縮/EmailSignInForm・SchedulePlanner の live 化）は据え置き。
+
+## セッション25 2026-05-30 12:30 JST（S23起案の残り観点⑧⑩ + 新観点「id 衝突」を全数監査 → 全観点=実害ゼロ。コード無変更）
+- 冒頭ベースライン全緑実測: test **276 passed**(61 files)（現 HEAD `619c2db`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）は本ループ無関係＝コミットに巻き込まない。
+- SKIP(全数監査=実害ゼロ・観点⑩ `toLocaleString` の locale 整合): 全 .tsx/.ts の `toLocaleString`/`toLocaleDateString`/`toLocaleTimeString` を全数監査。
+  ①**SSR'd client component で bare `toLocaleString()`（locale 無指定）が数値を初回描画する箇所**＝`EssayIndustryTabs:86`(charCount≈2,000-3,000字)・`RankingClient:129`(totalCount≈6,545、合成定数 reduce で localStorage 非依存＝初回描画)・各 stats/transparency の exam counts 等。
+    → **node 既定 locale(Vercel=en-US) と ブラウザ ja-JP はいずれもこの桁(千〜万)でカンマ区切りが同一**＝SSR/CSR で出力文字列が一致＝**hydration mismatch も視覚差も発生不能**。
+  ②**bare な日付/時刻 `toLocaleString()`**（典型的な hydration mismatch 源）＝`QuestionCommentBox:156` は comments が `useState([])`＋`useEffect` で**post-mount に localStorage から投入**＝SSR 時は空＝描画されず、クライアントのみで描画（ユーザー自身の端末 TZ＝正）。SSR で bare 日付を描画する箇所は**不在**（EssayEditor/TutorClient 等は `"ja-JP"` 明示済）。
+  ③recharts の `formatter` 内 bare `toLocaleString()`（StatsCharts 等）は**クライアント tooltip のみ実行**＝SSR 経路に乗らず mismatch 不能。
+  → 観点⑩は **実害ゼロ**。bare 呼び出しは「ja-JP 明示」というプロジェクト規約からの軽微な不統一（latent consistency）だが、対象の桁では出力が ja-JP と完全一致するため**現状の視覚/hydration 被害はゼロ**＝過大修正の罠回避で SKIP（日中に規約統一目的での正規化は検討可）。S22 の「桁区切りも整合」記録を locale 観点で裏取り完了。
+- SKIP(全数監査=実害ゼロ・観点⑧ canonical/og:url の末尾スラッシュ整合): `next.config.ts` に `trailingSlash` 設定なし＝Next 既定 `false`（served URL は末尾スラッシュ無し）。
+  全 page.tsx の `alternates.canonical` / `openGraph.url` を全数確認＝**全て絶対パス（or `SITE_BASE_URL`/metadataBase 絶対化）・末尾スラッシュ無し・クエリ無し**で canonical と og:url のパスが一致。
+  動的ルート（`/${exam}/${yearSeason}` 等）も同パターン。`/[exam]/topic/[topicSlug]` の canonical が route param でなく `encodeURIComponent(category)` を使うのは**S15 確認済の意図的な重複正規化**（dedup）＝「壊れ」ではない。
+  → trailing-slash / クエリ起因の自己参照ズレは**構造上発生しない**＝実害ゼロ。観点⑧一巡 done。
+- SKIP(全数監査=実害ゼロ・新観点「同一ページ内の `id` 衝突」): 直近セッションで多数追加した `aria-describedby`/`htmlFor`/`id` の関連付けが、同一ページに複数描画される要素で id 重複→idref 曖昧化していないかを監査。
+  components/ の静的 `id="..."`（literal）は全て**シングルトン要素**（home 各セクション見出し/search-input/sort-select/achievement-toast/essay-result 等＝1ページ1描画）。
+  `.map` 内で生成する id は全て**ユニークなテンプレートキー**（EssayEditor=`essay-${subKey}-count`(設問キー)、AfternoonPlayer=`afternoon-${sub.label}`/`-count`(小問ラベル)、AfternoonResultView=`ai-note-${question.id}`）＝1ページ内で衝突しない。
+  → 重複 id による htmlFor/aria-describedby の誤ターゲットは**不在**＝実害ゼロ。
+- 結論: 夜間の安全な実害バグは S1-S25 で網羅的に枯渇。残る S23 起案観点（⑧⑩）も実害ゼロを確定。**過大修正の罠を回避しコード無変更**（worklog/backlog 記録のみ）。
+
+## セッション25 まとめ
+- 実改善0件（コード無変更）+ 全数監査SKIP3観点（⑩ toLocaleString locale 整合 / ⑧ canonical・og:url 末尾スラッシュ整合 / 新観点 id 衝突）すべて**実害ゼロを確定し記録**。
+- テーマ: S23 起案の最後の未踏観点⑧⑩を全数監査で消化＋新観点「id 衝突」を開拓。いずれも構造上 or 桁/locale 一致により被害不能と実測判定。
+- 教訓（次セッションの重複監査防止）: **bare `toLocaleString()` は対象の桁（千〜万）では en-US≡ja-JP でカンマ一致＝視覚/hydration 被害ゼロ**。日付の bare 描画は SSR 経路に存在しない（post-mount or locale 明示済）。canonical/og:url は trailingSlash=false＋絶対パス統一で構造的に整合。
+- 次セッションへ: S23 起案観点（⑦⑧⑨⑩⑪）は全て一巡 done（⑨中核2件修復・他は実害ゼロ）。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化=latent予防/exam meta desc 短縮/EmailSignInForm・SchedulePlanner の live 化）。
+  夜間の安全な実害バグは深く枯渇。次セッションは下記 backlog「P1 新観点（S25 起案）」から1つ選び全数監査するか、日中候補の慎重実施を検討。

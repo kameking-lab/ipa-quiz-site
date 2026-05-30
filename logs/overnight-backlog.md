@@ -4,6 +4,15 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション25):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S25 で網羅的に枯渇を再々確認。
+> S25: S23起案の最後の未踏観点⑧⑩＋新観点「id 衝突」を全数監査＝**全観点で実害ゼロを確定（コード無変更）**。
+> ⑩`toLocaleString` locale 整合＝SSR'd の bare `toLocaleString()`（charCount/totalCount≈6,545/exam counts 等）は **node 既定 en-US ≡ ブラウザ ja-JP** で
+> 当該桁（千〜万）のカンマ区切りが一致＝**hydration/視覚 mismatch 不能**。bare 日付描画は SSR 経路に不在（QuestionCommentBox は post-mount 投入・他は locale 明示済）。recharts formatter は client tooltip のみ。
+> ⑧canonical/og:url 末尾スラッシュ整合＝`trailingSlash:false`（既定）＋全 canonical/og:url が絶対パス・末尾スラッシュ無し・クエリ無しで**構造上ズレ不能**（topic の category 正規化は S15 確認済の意図的 dedup）。
+> id 衝突＝静的 id は全シングルトン要素、`.map` 内 id は全てユニークなテンプレートキー（subKey/sub.label/question.id）＝同一ページ重複なし。
+> **教訓: bare `toLocaleString()` は千〜万の桁では en-US≡ja-JP でカンマ一致＝被害ゼロ（locale 正規化は日中の規約統一目的のみ）。canonical は trailingSlash=false＋絶対パスで構造的整合。**
+> **次は: S23起案観点（⑦⑧⑨⑩⑪）は全て一巡 done。残は日中候補のみ。下記「P1 新観点（S25 起案）」から1つ選び全数監査するか、日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション24):** P0 全件 done/SKIP。P1 進行中。
 > S24: S23起案の未踏観点⑦⑨⑪を全数監査。**実バグ2件修復**＝観点⑨「非同期送信ボタンが `disabled` で a11y ツリーから
 > 消え、進行/完了が SR に無通知（WCAG 4.1.3 status messages）」を中核2フローで是正＝S7(EmailLeadCapture) と同型クラス:
@@ -290,6 +299,26 @@ array-mutation/cleanup-leak/index-key-bleed/非ユニークkey を網羅一巡�
   （hydration mismatch は S22 で別途確認済だが「数値整形」観点では未走査）。
 - **⑪空配列/単一要素時の文言の単複・ゼロ状態**: 「N 問」「N 件」等がゼロ/1件で不自然にならないか、空リストの
   empty-state UI と next-action があるか（領域横断で indexable ページ優先）。
+注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
+各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 新観点（S25 起案・未踏。次セッション以降で全数監査せよ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S1-S25 で a11y名/aria-live/チャートalt/タブ/aria-current/OG/robots/dead-link/canonical(末尾スラッシュ)/sitemap/stale-timer/
+JST境界/keydown修飾/数値破綻/effect-async/focus-restore/localStorage-guard/time-element/regex-lastIndex/array-mutation/
+cleanup-leak/index-key-bleed/非ユニークkey/JSON-LD数値/空配列ゼロ状態/toLocaleString-locale/id衝突 を網羅一巡。**まだ全数監査していない観点**:
+
+- **⑫`<form>` の暗黙送信・Enter キー挙動**: 単一 input の form で Enter が予期せぬ送信/リロードを起こさないか、
+  検索/コメント等の `onSubmit` が `preventDefault` を持つか（実害＝Enter でページ遷移/状態喪失）。
+- **⑬`scroll`/`resize`/`mousemove` 等の高頻度リスナーの未スロットル**: passive 指定や rAF/throttle 無しで
+  メインスレッドを圧迫しないか（実害＝モバイルでのスクロールジャンク。S23 で leak は確認済だが「頻度」観点は未走査）。
+- **⑭`dangerouslySetInnerHTML` / `react-markdown` の sanitize**: ユーザー入力（コメント/フィードバック）や
+  外部由来文字列が unsanitized で innerHTML に流れていないか（実害＝XSS。S13 で JSON-LD XSS は確認済だが本文描画は未走査）。
+- **⑮`Image`/`<img>` の `loading`/`fetchpriority` 整合**: above-the-fold の LCP 画像が `loading="lazy"` で
+  遅延されていないか、逆に below が eager で帯域を食っていないか（実害＝LCP 悪化。CLS=④は S19 で確認済）。
+- **⑯`localStorage` の JSON.parse 結果の型ガード**: 破損 or 旧スキーマの値を読んで `undefined.foo` で落ちないか
+  （実害＝永続データ破損時の白画面。S21 で書き込み try/catch は確認済だが「読み取り後の形状」は未走査）。
 注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
 各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
 
