@@ -1,5 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import {
+  ACHIEVEMENTS,
+  TIER_META,
   evaluateAchievementsAfterAnswer,
   evaluateAchievementsAfterMock,
   evaluateAchievementsAfterStreak,
@@ -219,5 +221,50 @@ describe("getUnlocked", () => {
     evaluateAchievementsAfterStreak(2);
     const all = getUnlocked().map((u) => u.id);
     expect(all).toEqual(expect.arrayContaining(["study-first", "streak-2"]));
+  });
+});
+
+// ACHIEVEMENTS は 50 件超を手書きした user-visible ゲーミフィケーション データ。
+// unlock() は `ACHIEVEMENTS.find((x) => x.id === id)` で id 引きし、unlocked セットも
+// id で dedup するため、id 重複は2件目を到達不能な dead エントリ化させる(型では防げない)。
+// バッジ UI は TIER_META[a.tier] で色/絵文字を引くため tier 不整合は描画崩れになる。
+// 文字列の空・xp/gold の負値も TypeScript の型(string/number)では弾けない。
+// これらデータ不変条件は behavior テストでは捕捉できないので個別に固定する。
+describe("ACHIEVEMENTS データ不変条件", () => {
+  it("id は全件ユニーク(重複は unlock の find で dead エントリ化)", () => {
+    const ids = ACHIEVEMENTS.map((a) => a.id);
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("id / name / description は非空文字列", () => {
+    for (const a of ACHIEVEMENTS) {
+      expect(a.id.length).toBeGreaterThan(0);
+      expect(a.name.length).toBeGreaterThan(0);
+      expect(a.description.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("各 tier は TIER_META に解決できる(バッジ描画の色/絵文字引き)", () => {
+    for (const a of ACHIEVEMENTS) {
+      expect(TIER_META[a.tier]).toBeDefined();
+    }
+  });
+
+  it("xp / gold は非負の整数(unlock 時に加算されるため負値・小数は不正)", () => {
+    for (const a of ACHIEVEMENTS) {
+      expect(Number.isInteger(a.xp)).toBe(true);
+      expect(a.xp).toBeGreaterThanOrEqual(0);
+      expect(Number.isInteger(a.gold)).toBe(true);
+      expect(a.gold).toBeGreaterThanOrEqual(0);
+    }
+  });
+
+  it("TIER_META は 5 段位すべてに非空の label/color/emoji を持つ", () => {
+    for (const tier of ["bronze", "silver", "gold", "platinum", "diamond"] as const) {
+      const meta = TIER_META[tier];
+      expect(meta.label.length).toBeGreaterThan(0);
+      expect(meta.color.length).toBeGreaterThan(0);
+      expect(meta.emoji.length).toBeGreaterThan(0);
+    }
   });
 });
