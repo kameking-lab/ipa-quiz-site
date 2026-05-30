@@ -126,3 +126,31 @@ describe("getRelatedPosts", () => {
     );
   });
 });
+
+describe("explicit relatedSlugs integrity (no dead internal-link intent)", () => {
+  // getRelatedPosts silently *drops* any relatedSlugs entry that does not
+  // resolve to an existing post, so a typo'd or stale explicit relation never
+  // surfaces as a test failure — it just quietly removes a curated internal
+  // link (an SEO/UX loss). Per-generator round-trips were pinned for the
+  // exam-keyed generators, but the cross-generator slug space (which
+  // buildGeneralPosts references) had no global guard. Pin it here: every
+  // explicit relation must resolve to another real post.
+  const slugSet = new Set(getAllBlogSlugs());
+
+  it("every relatedSlugs entry resolves to an existing post", () => {
+    const dangling: string[] = [];
+    for (const p of ALL) {
+      for (const s of p.relatedSlugs ?? []) {
+        if (!slugSet.has(s)) dangling.push(`${p.slug} -> ${s}`);
+      }
+    }
+    expect(dangling).toEqual([]);
+  });
+
+  it("no post lists itself as a related post", () => {
+    const selfRefs = ALL.filter((p) =>
+      (p.relatedSlugs ?? []).includes(p.slug),
+    ).map((p) => p.slug);
+    expect(selfRefs).toEqual([]);
+  });
+});
