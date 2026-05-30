@@ -80,6 +80,40 @@ describe("deterministicRerank", () => {
     const result = deterministicRerank(candidates, {}, 2, "ACID 特性");
     expect(result[0].doc.id).toBe("g:ACID");
   });
+
+  it("タグ重複ブーストは最大4件で頭打ちになる(min(overlap,4))", () => {
+    // a は ctx タグと4件、b は6件すべて重複。クランプにより両者とも +20%(×1.2)で同点。
+    const ctxTags = ["t1", "t2", "t3", "t4", "t5", "t6"];
+    const candidates = [
+      cand("a", 10, { meta: { topicTags: ["t1", "t2", "t3", "t4"] } }),
+      cand("b", 10, { meta: { topicTags: ctxTags } }),
+    ];
+    const result = deterministicRerank(candidates, { currentTopicTags: ctxTags }, 2);
+    const byId = Object.fromEntries(result.map((r) => [r.doc.id, r.rerankScore]));
+    expect(byId.a).toBeCloseTo(12); // 10 * (1 + min(4,4)*0.05) = 12
+    expect(byId.b).toBeCloseTo(byId.a); // 6件でも min(6,4)=4 で頭打ち=同点
+  });
+
+  it("glossary タイトル部分一致(ratio=0.5)でも 3x ブーストする", () => {
+    // titleNorm="alpha beta"(2トークン)、query="alpha"→hit 1/2=0.5。
+    // 10 * 1.5 * (1 + 4*0.5) = 45 で、ブースト無しの question(30)を上回る。
+    const candidates = [
+      cand("g:partial", 10, { kind: "glossary", title: "用語集: alpha beta" }),
+      cand("q:foo", 30),
+    ];
+    const result = deterministicRerank(candidates, {}, 2, "alpha");
+    expect(result[0].doc.id).toBe("g:partial");
+  });
+
+  it("極端に長い text(>4000字)は密度ペナルティ(×0.92)で順位を下げる", () => {
+    // long: 10*0.92=9.2 < short: 9.5。ペナルティが無いと long(10)が先頭になる。
+    const candidates = [
+      cand("long", 10, { text: "a".repeat(4001) }),
+      cand("short", 9.5, { text: "abc" }),
+    ];
+    const result = deterministicRerank(candidates, {}, 2);
+    expect(result[0].doc.id).toBe("short");
+  });
 });
 
 describe("buildRetrievalQuery", () => {
