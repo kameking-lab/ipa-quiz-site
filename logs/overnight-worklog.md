@@ -2125,3 +2125,6 @@ clean(回帰再点検・コード無変更): chart role=img(S10-S15)
 - 残る回帰再点検候補(未実施): scroll-margin(S32)/Label-in-Name(S29)/Radix Switch 命名(S31) の新規再混入+取りこぼし。Label-in-Name は機械突合が難しい(可視テキスト⊂aria-label の判定)ため spot-check 寄り。
 - admin/* テーブル scope: 意図的 SKIP(auth 配下・prod 503・公開 a11y 価値ほぼゼロ)。a11y 観点で直すなら日中まとめて。
 - 日中候補(不変): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
+
+clean(追加・回帰再点検): scroll-margin(S32)
+- ページ内アンカー(`href="#..."`)は全2件のみ: `app/layout.tsx` の `#main-content`(skip-link, 対象は `tabIndex={-1}` の main 領域=先頭のため scroll offset 不要・標準パターン)と `app/student/page.tsx` の `#apply`(対象 Card に `scroll-mt-20` 付与済)。両アンカーとも対象が適切に処理済=新規再混入・取りこぼしゼロ。S32 doctrine 維持。
