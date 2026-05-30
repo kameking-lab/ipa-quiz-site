@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション21):** P0 全件 done/SKIP。P1 進行中。
+> S21: 新観点「共有データのインプレース破壊」を開拓・全数監査。**実バグ1件修復**=
+> `lib/seo/topics.ts::getQuestionsByTopic()` が内部キャッシュ配列の参照を漏らし、呼び出し側 /topics/[slug] が
+> 返り値に直接 `.sort()` して長寿命サーバで順序破壊する footgun を、getter のコピー返却で解消(`5b8e592`・テスト付)。
+> 現状は単一決定 sort で可視被害ゼロだが getter-leaks-mutable-state の典型=将来 consumer で静かに破綻。
+> 周辺4観点を全数監査=**実害ゼロ**: ①.sort/.reverse/.splice 全域(topics 以外は全て事前コピー=SAFE)
+> ②localStorage/sessionStorage 書き込み(全 try/catch ガード済) ③`<time dateTime>`(全5箇所 valid ISO=観点③一巡done)
+> ④stateful regex lastIndex(defect 不在) ⑤bare `.sort()` 数値字句順(全て文字列/ISO=正)。
+> **次は: 夜間の安全な実害バグは深く枯渇。日中候補(tabs矢印キー/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮)or**
+> **さらなる未踏観点(prop配列のレンダー内変異/Number()×route paramのNaN伝播/hydration mismatch)の開拓を検討。**
+>
 > **状態 (2026-05-30 セッション20):** P0 全件 done/SKIP。P1 進行中。
 > S20: P1新観点⑤「モーダル閉時のフォーカス復帰」を全数監査。**focus-in したのに復帰しない半実装 defect を2件修復**=
 > Copilot デスクトップ `CopilotDesktopFloating`(`133682d`)+モバイルシート `CopilotMobileSheet`(`1da513a`)。

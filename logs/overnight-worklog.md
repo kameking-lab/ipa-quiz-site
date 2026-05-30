@@ -826,3 +826,40 @@
   Copilot 2件のみ=両方修復。他は radix 自動処理 or focus-in 無し(契約破れ無し)で完了。⑤⑥①観点を一巡 done。
 - 次セッションへ: P1新観点で残るは ③`<time dateTime>`(機能追加寄り=慎重に実害判定)。夜間の安全な実害バグは
   S1-S20 でほぼ枯渇。日中候補(tabs矢印キー/コピー通知統一/MilestoneToast 防御的ref化)or 未踏観点の開拓を検討。
+
+## セッション21 2026-05-30 11:21 JST（新観点「共有データのインプレース破壊」を開拓 → 実バグ1件修復 + 周辺4観点を全数監査=実害ゼロ）
+- 冒頭ベースライン全緑実測: typecheck=0 / lint=0 err（既存 ux-audit-screenshots.mjs の警告1件のみ=未追跡・本ループ無関係）/
+  test **273 passed**(61 files) / build 完走（現 HEAD `f2d30e0`）。
+- done: 【実バグ=共有キャッシュのインプレース破壊 footgun】`lib/seo/topics.ts::getQuestionsByTopic()` が
+  内部キャッシュ `TOPIC_TO_QUESTIONS` の配列**参照をそのまま返却**しており、唯一の呼び出し側
+  `app/topics/[slug]/page.tsx:88` が返り値へ直接 `.sort()`（破壊的）を適用していた。長寿命サーバ/ビルドで
+  リクエストを跨いで共有キャッシュの順序が破壊される。現状は単一かつ決定的 sort のため**可視被害ゼロ**だが、
+  将来の任意 consumer が原データ順を前提にすると静かに破綻する getter-leaks-mutable-state の典型。
+  getter で浅いコピー（`[...list]`）を返しキャッシュを不変化（要素 Question は共有のまま安全）。コミット `5b8e592`
+  / 検証: typecheck0/lint0err/test **274緑**(+1)/build完走（/topics/* は SSG で全 prerender 確認）。
+  新テスト `__tests__/seo/topics-static-params.test.ts` に「返り値を reverse() で破壊しても2回目の呼び出しが
+  汚染されない」ケースを追加。**崩れたら落ちる検証=実測**: 修正を git stash で外すと当該テストが
+  「expected reversed ids to equal snapshot」で1件落ちることを確認後、fix を復元。
+- SKIP(全数監査=実害ゼロ): **インプレース破壊 `.sort()/.reverse()/.splice()` の app/components/lib/data 全域スイープ**。
+  Explore + 自己精査で上記 topics.ts:88 の1件のみが共有データ破壊。他は全て安全パターン
+  （`[...arr].sort()` / `arr.filter().sort()`（filter が新配列）/ `[...new Set()]` / `Object.values().sort()` /
+  ローカル構築配列）。`lib/questions/filter.ts:67`(pool=`[...all]`)・`pool-server.ts:50`(`[...pool]`)・
+  `dashboard/analytics.ts`(`[...stats]`)・ranking/mock-exam の `[...x].reverse()` 等は全て事前コピー済=SAFE。
+- SKIP(全数監査=実害ゼロ): **localStorage/sessionStorage の書き込み未ガード（Safari Private/QuotaExceeded で throw→crash）**。
+  `lib/storage/` 13モジュール + lib/ 各種 + components の `setItem/removeItem/clear` を全数確認、**全て try/catch でガード済**
+  （多くに「ignore quota / private mode」コメント有）。render 経路の裸書き込みも無し。既存の防御的実装が完成。
+- SKIP(全数監査=実害ゼロ): **`<time dateTime>` の値妥当性（S18新観点③）**。全5箇所（blog×2 / success-stories×2 /
+  AiTransparencyDisclaimer）とも `dateTime` は valid ISO8601、可視テキストと日付一致、`toLocaleDateString` 等の
+  非ISO混入なし。**壊れた `<time>` は不在**=機能追加（新規 `<time>` 付与）は overreach のため見送り。観点③一巡 done。
+- SKIP(全数監査=実害ゼロ): **stateful regex（`/g`・`/y` flag）の lastIndex 持ち越し**。`/g` 付き再利用 regex を
+  `.test()/.exec()` で複数回消費する箇所を全域監査。module-level `ASCII_WORD_RE`(tokenize.ts) は `.match()` 消費=
+  lastIndex 非依存で SAFE、scripts の `.exec()` ループは関数内ローカル literal で毎回新規=SAFE。defect 不在。
+- SKIP(全数監査=実害ゼロ): **bare `.sort()`（比較関数なし）の数値字句順バグ**（`[1,2,10]→[1,10,2]`）。
+  裸 `.sort()` は全て文字列配列（category/topicTags/tags/trim 済答え/ISO日付）で字句順が正。
+  `api/review/due/route.ts:42` の `futureDates.sort()` は ISO 日付文字列=字句順=暦順で正。数値 bare sort は不在。
+- 次セッションへ: 「共有データのインプレース破壊」観点は一巡 done（残存ゼロを実測）。S1-S21 で a11y名/aria-live/
+  チャートalt/タブ/aria-current/OG/robots/dead-link/canonical/sitemap/stale-timer/JST境界/keydown修飾/数値破綻/
+  effect-async/focus-restore/localStorage-guard/time-element/regex-lastIndex/array-mutation を網羅一巡。
+  **夜間の安全な実害バグは深く枯渇**。残は日中候補（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/
+  exam meta desc 短縮）か、さらなる未踏観点（例: prop配列のレンダー内変異 / Number()×route param の NaN伝播 / 
+  hydration mismatch）の開拓を検討。
