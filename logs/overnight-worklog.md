@@ -1907,3 +1907,15 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   (純粋な決定的 stub＝mock 不要で夜間安全・streamChat の chunk 分割契約を pin 可)の検討、②過去が SAFE/latent 分類した
   同型 footgun の再検証(S33/S41 角度)、③属性有無だけ見て見落とした同型 a11y(S33 角度)。日中候補群(pii over-mask/
   tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export)は据え置き。
+
+## セッション57 (2026-05-30 21:16 JST起動)  ◆S56 handoff角度①「lib/ai/providers/mock 決定的スタブ」を起点に lib/ai 層の未テスト純関数を一括契約固定
+### 結果: 実改善0件（source 無変更）＝回帰固定4モジュール（mock-provider・stub-providers・get-provider・prompts-context・計40 it・test 1012→1052・153→157 files）。全ゲート緑。
+- 冒頭ベースライン: typecheck0/lint0err（既存 ux-audit script 警告のみ・未追跡）、HEAD `4101ef9`(S56)。S56 handoff の「次の有効角度①lib/ai/providers/mock(決定的 stub＝mock 不要で夜間安全)」を起点に、lib/ai 層で test 未 import の純関数を `grep -rl` で実検証しながら一括消化。全件 source mutation→`git checkout --` revert で「崩れたら落ちる」を実測。
+- done `lib/ai/providers/mock.ts`（GEMINI_API_KEY 未設定時のフォールバック決定的スタブ）/ commit `7440e9d` / `__tests__/ai/mock-provider.test.ts`(15 it)。pickReply のクイックアクション分岐（whyWrong/similar/term/default の**優先順位**・最終 user メッセージ基準・toLowerCase・空配列→default）と streamChat の**24字チャンク無損失分割**（dotAll で改行保持）・**事前 abort 済みシグナルで yield 前に AbortError 送出**を pin。mutation(チャンク24→48 / term分岐→default)で各落ちを実測。
+- done `lib/ai/providers/{claude,openai}.ts`（Gemini 乗り換え用スタブ・§10 でプロバイダ変更は承認必須）/ commit `70c1b7b` / `__tests__/ai/stub-providers.test.ts`(4 it)。streamChat が**黙って空を返さず明示的に throw する契約**（throw を外すと後続の unreachable な `yield ""` に落ちて空応答素通り）と name を pin。mutation(claude throw 除去→silently resolve)で落ちを実測。
+- done `lib/ai/provider.ts::getProvider/resolveModel`（LLM 抽象レイヤ入口・§5）/ commit `cd53c7c` / `__tests__/ai/get-provider.test.ts`(11 it)。**§5: GEMINI_API_KEY 未設定→mock フォールバック**（キーなしで UI/E2E 成立）・preferred 優先・LLM_PROVIDER 尊重・claude/openai 分岐・未知 id→mock 最終分岐、**resolveModel の既定モデル文字列(free=flash-lite/premium=flash)**＝§9/§10 で変更が承認必須＝静かな既定変更を検知。env を beforeEach/afterEach で snapshot/restore。mutation(free既定→flash / no-key fallback 無効化)で落ちを実測（後者は依存 API テストも巻き込み連鎖failで契約の重要性を確認）。
+- done `lib/ai/prompts.ts::buildQuestionContext/buildRAGDirective`（AIコパイロット B軸 へ渡る問題コンテキスト/RAG 出典ディレクティブ）/ commit `47ec0d2` / `__tests__/ai/prompts-context.test.ts`(10 it)。buildQuestionContext=セクション順序・空 topicTags/選択肢の出し分け（**空文字選択肢は除外**）・answer の配列/スカラ整形・採点状態(正解/不正解/未採点)、buildRAGDirective=passageCount<=0 で null・件数埋め込み・[1]..[N] 番号列。※**罠: ディレクティブ本文に例示 `[1] [2]` が常に含まれるため、1件検証は全体 not.toContain でなく nums 行「N 件のパッセージ … を提供します」で観測する**。mutation(RAG gate <=0→<0 / 選択肢キーラベル変更)で落ちを実測。
+### 次セッションへ
+- **lib/ai 層（providers/mock・claude・openai・provider.getProvider/resolveModel・prompts の context/RAG builder）の未テスト純関数は本セッションで打ち止め＝回帰固定済（再監査不要）。** 残る lib/ai 未テストは gemini.ts(@google/generative-ai SDK 要 mock＝夜間 marginal)・prompts の buildLearnerProfileContext(assembleCopilotPrompt 経由で間接カバー済)。
+- 残る有効角度（S56 から不変）: ②過去 SAFE/latent 分類の同型 footgun 再検証(S33/S41 角度) ③属性有無で見落とした同型 a11y(S33 角度)。test 未 import 純関数の機械列挙(S54-S57)は lib/ai 消化で概ね打ち止め＝残は外部API/SDK/server-only/React hook で要 mock。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。

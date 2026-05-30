@@ -1,5 +1,16 @@
 # 夜間自律改善 バックログ（優先度順）
 
+> **状態(2026-05-30 セッション57):** P0 全件 done/SKIP。P1 進行中。
+> S57: S56 handoff 角度①を起点に **lib/ai 層の未テスト純関数を一括契約固定＝回帰固定4モジュール**
+> （providers/mock=pickReply 分岐優先順位+24字無損失チャンク+事前abort で AbortError、providers/{claude,openai}=
+> 黙って空を返さず throw する stub 契約、provider.getProvider/resolveModel=§5 no-key→mock フォールバック+§9/§10 既定
+> モデル文字列 flash-lite/flash の承認必須ピン、prompts.buildQuestionContext/buildRAGDirective=セクション/空文字選択肢
+> 除外/answer 整形/採点状態・passageCount<=0→null+[1]..[N]番号列）。実改善0件（source 無変更）。test 1012→1052
+> （+40 it・153→157 files）。各 mutation→revert で落ちを実測。コミット `7440e9d`/`70c1b7b`/`cd53c7c`/`47ec0d2`。
+> **lib/ai 層の未テスト純関数は打ち止め（再監査不要）。残は gemini.ts(SDK要mock)・buildLearnerProfileContext(間接カバー済)。**
+> **次は:** ②過去 SAFE/latent 同型 footgun 再検証(S33/S41)、③属性有無で見落とした同型 a11y(S33)。test 未 import 純関数の
+> 機械列挙(S54-S57)は lib/ai 消化で概ね打ち止め＝残は外部API/SDK/server-only/React hook で要 mock。
+>
 > **状態(2026-05-30 セッション56):** P0 全件 done/SKIP。P1 進行中。
 > S56: S55 handoff が名指しした「残る未 import 純関数寄り候補」を消化し**回帰固定4モジュール**（study-plan/constants=
 > REQUIRED_HOURS 全13 ExamCode 網羅+PHASE_RATIOS sum=1.0+LEVEL_* Record キー一致と単調減少、streak/storage=read()
