@@ -2409,3 +2409,26 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - **a11y 属性クラス(aria-pressed/expanded/label/scope/role 等)は S66-S80 で完全に枯渇確認。lib/ 未テスト関数も SDK/AudioContext/dead/Date.now-brittle のみ。** 残る夜間安全角度＝**部分カバレッジgap の非 lib/ 横展開**(tsx 内 named export helper・本セッションで parseQuestionBlocks を発掘=同様の漏れが他にもあり得る `git ls-files 'components/**/*.tsx'`×`export function`)。components .tsx helper の未カバーは現状 parseQuestionBlocks のみだった(generateMetadata 除く)。
 - **実バグ角度の教訓: 純パーサを特性化する過程で『現挙動の限界』を実データ突合すると実バグが浮上する**(parseQuestionBlocks の前後パイプ非対応=65行が崩れて描画)。次も「未テスト純関数の特性化→実データで限界を実測→実害あれば修正」の二段構えが有効。
 - 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+## セッション81（2026-05-31 04:35〜 JST）: no-404 内部リンク整合性スイープ 回帰固定4件
+
+ベースライン全緑実測(typecheck0/lint0err[1 warning=未追跡 scripts/ux-audit-screenshots.mjs・自分の変更外]/test 1543・208files/build緑 exit0)。S80 handoff「a11y属性クラス・lib未テスト関数は枯渇確認」を受け、未踏 P1 観点(②soft404/⑦JSON-LD数値/⑭XSS/㉕autocomplete/㉖inputmode)を監査→いずれも実害ゼロ確認。代わりに**未カバーだった「no-404 内部リンク整合性」クラス**を発掘し、tsx スクリプトで実データ突合(全て現状 dead=0)してから回帰固定4件。**実改善0・source 無変更。test 1543→1549(+6 it)。**
+
+- done: `__tests__/data/blog-index.test.ts` 全記事 relatedSlugs グローバル round-trip + 自己参照なし / `22c10ee` / +2 it。getRelatedPosts は解決不能 relatedSlugs を黙って捨てるため typo が検出されない(S75 は exam別generatorのみ固定・buildGeneralPosts含む横断空間は未ガード)。153記事 dangling=0 を pin。ダングリング注入1件+自己参照注入1件で fail 実測→revert。
+- done: `__tests__/data/blog-index.test.ts` 本文 /blog/<slug> 内部リンク実在性 / `ae1e902` / +1 it。本文に手書き `](/blog/foo)` が40本・typo は 200に見えてクリックで404。40リンク dead=0 を pin。死リンク注入で fail 実測→revert。
+- done: `__tests__/data/success-stories-index.test.ts` 体験記CTA relatedBlogSlug→/blog + relatedEssayExam→/essays 実在性 / `28cfd6e` / +2 it。generator test は persona passthrough のみ固定・解決可否未検証。relatedBlogSlug の blog 実在照合と relatedEssayExam を /essays ルート実述語(isEssayExamCode かつ essay問題非空)で照合。ダングリング slug+essay非対応exam(ip)注入で各1 fail 実測→revert。
+- done: `__tests__/data/blog-index.test.ts` 本文 /<exam> ハブリンク有効性 / `6d01364` / +1 it。最大の内部リンク名前空間(387本)。/[exam] は dynamicParams=false なので無効コードは404。2文字トップレベルルートは exam のみ(他は/og画像EP=本文非リンク)を確認しロバストに pin。無効コード xx 注入で fail 実測→revert。typecheck で `new Set<string>` 明示が必要だった(getAvailableExams は ExamCode[])。
+
+### SKIP(監査済・実害ゼロ記録)
+- SKIP(実害なし): ②soft404 — 全動的ルート(/[exam]系・/blog/[slug]・/essays等)は `dynamicParams=false`+`notFound()` で無効paramは自動404。soft404汚染なし。
+- SKIP(実害なし): ⑦JSON-LD数値 — app/page ItemList numberOfItems は配列length一致・question-jsonld の answerCount=1+otherChoices・BreadcrumbList position 連番とも整合(既テスト済)。配列answer(multi-answer)はデータに0件=理論のみ。
+- SKIP(実害なし): ⑭XSS — react-markdown は rehype-raw 不使用でHTMLエスケープ既定。dangerouslySetInnerHTML は THEME script定数+JSON-LD(S13済)のみ。BlogMarkdown は外部リンクに target=_blank rel=noopener noreferrer 配線済(gold)。ui/markdown は target未付与=同タブ遷移でtabnabbing無し。
+- SKIP(実害なし): ㉕autocomplete — email/name 入力(ContactForm/EmailSignInForm/EmailLeadCapture/NotificationSettings)は全て autoComplete 配線済。
+- SKIP(実害なし): ㉖inputmode — type="number"/"tel" は存在せず数値入力は全て type="range"(slider)/type="date"(native picker)。SearchClient は inputMode="search" 済。
+- SKIP(ロバスト性): 本文 exam-style リンクの3文字版や /essays・/essay・/features 等の本文リンクは namespace 曖昧性(/og 等)や複数ルート述語の差異があり、ピンが脆くなるため未固定。実データ実測では全て dead=0 を確認済。
+
+### 次セッションへ
+- **no-404 内部リンク整合性クラスは主要namespace(blog relatedSlugs/blog本文/blog→exam/success-story CTA)を消化**。残りは namespace 曖昧で脆い(/essay vs /essays・/features・/account)ため要慎重判定=日中向き。
+- a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)は枯渇継続。arrow-const export スイープも全テスト済を本セッションで確認。
+- 次の夜間安全角度: 他データセット(glossary/keywords/topics の cross-link)に同 no-404 doctrine 横展開、or 過去 SAFE/latent footgun 再検証(S33/S41)。
+- 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
