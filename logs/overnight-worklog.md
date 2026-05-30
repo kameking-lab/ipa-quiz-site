@@ -2080,3 +2080,29 @@ P0 全 done/SKIP。P1 進行中。**新角度=管理オブザーバビリティ�
 - done `lib/admin/funnel/posthog.ts::fetchFunnelData/isFunnelConfigured` = `0275240` / `__tests__/admin/funnel-fetch.test.ts`(4 it)。buildFunnelSteps のみ既存テスト・orchestrator+env ゲートは未カバー。①認証欠落→configured:false・空・fetch未呼び出し ②認証あり→3ファネル固定名(クイズ/論文/ブログ)+range_days エコー+カウント解析 ③HogQL 行パーサ([event,count]写像・数値強制・空名スキップ) ④probe失敗→count0でも configured:true。mutation(未設定branch configured:true化)で fail 実測。※toHaveProperty("") は vitest が空パスを解析できず TypeError ＝ Object.keys().not.toContain("") を使え(教訓)。
 - 全緑: typecheck0/lint0err(残warnは未追跡 ux-audit-screenshots.mjs のみ)/test1237/build緑。各 source mutation→`git checkout --` revert で実測。main 不変。
 - **★教訓: scripts/ は import 時トップレベル実行で夜間 SKIP 確定(S64 の次region 候補を打ち止め)。残る安全角度=lib/admin/* の残(deployment-status=Date.now多用でbrittle日中向き/launch-monitoring/data=buildAlerts要export/feature-flags=dead code SKIP確定)。admin オーケストレータ層の env ゲート固定は本セッションで概ね消化。**
+
+## セッション66 (2026-05-31 00:1x JST) — 回帰再点検4レンズ(全て実害ゼロ)・夜間安全タスク枯渇の再確認
+- 着手前確認: HEAD=baf4036(S65)。冒頭ベースライン再実測=全緑: typecheck err0 / test **1237 passed (183 files)**(S65 と一致)。
+  作業ツリーの未追跡物(logs/*.md, scripts/ux-audit-screenshots.mjs, CRLF差分の BookmarkButton snap, overnight-loop.bat)はコミットに巻き込まない。
+- **characterization 角度の枯渇を機械+Explore で二重確認(実改善0・コード無変更)**:
+  - `find lib -name '*.ts'` × `__tests__`/`tests` import 突合で未テスト lib を機械列挙 → 残り10本は全て真に blocked:
+    deployment-status(Date.now+fetch=日中向き)/feature-flags(dead code・消費ゼロ=SKIP確定)/ai/providers/gemini(SDK)/auth/index・db/prisma(auth-db)/
+    motivation/sound(AudioContext)/onboarding/index・streak/index(barrel)/questions/pool-server・search/question-index(server-only)。
+  - Explore(medium)も「consumed×untested×pure な安全候補=0件」と独立に確認。S57-S65 の枯渇宣言を再々確認=新規ゼロ。
+- **回帰再点検4レンズ(過去修復クラスが S33-S65 や日中作業で再混入していないか機械監査)=全て実害ゼロ・記録のみ**:
+  1. **live-region 条件付きマウント(S33 テーマ)**: `&&` 直後の role=status/alert/aria-live を全 .tsx grep。検出8件は全て `role="alert"` の条件付きマウント
+     (ContactForm:220/EmailSignInForm:77/MockExamRunner:228/AfternoonPlayer:273/CopilotPanel:1151/SchedulePlanner:195)=**S33 doctrine「alert の条件付きマウントは正」**で合致。
+     唯一の polite=SearchClient:997 loading span は S61 記録どおり常設 sr-only role=status(:986)と冗長で **SKIP 済**。**polite 条件付きマウントの新規再混入ゼロ**。
+  2. **label htmlFor→id 関連付け**: 全 htmlFor(14箇所)を同一ファイル内 id と突合 → 静的(contact-*/study-plan-*/email/hour/student-id-file/exam-date/search-input/sort-select)・
+     動的(afternoon-${sub.label}/qcomment-${id}/feedback-${id})とも全て対の id 実在。**壊れた関連付けゼロ**。
+  3. **dangling aria-controls/describedby/labelledby idref(S27 テーマ)**: 静的ターゲットを実測検証 — MockExamRunner(result-categories:469/result-time:549/result-wrong:590/wrong-list:605)・
+     HomeTopicGrid(topic-grid-panel:119)・AfternoonResultView(ai-note-${id}:241)・EssayEditor(essay-${subKey}-count:289)とも実在。CopilotPanel 2件は CopilotPanel.aria.test.tsx で回帰ガード済。**dangling ゼロ**。
+  4. **numeric input の inputMode(S29 ㉖)**: type="number"/type="tel" のテキスト入力は **コードに存在せず**(あるのは type="date"=ネイティブピッカー=inputMode 不要 と SearchClient の inputMode="search" のみ)。S29「数値キーパッド入力は不在=実害ゼロ」が依然成立。
+- **日中候補の据え置き再確認**: ContactForm:86-110 送信成功カード(status==="ok" でフォーム全体を置換)に live-region/フォーカス移動なし(S61 特定)。
+  成功カードは条件付きマウントのため正しい修正は「常設 region への restructure」or「成功見出しへの focus() 移動」=**挙動変更+E2E 必須=夜間 SKIP を堅持**(env 出力バッファリングで E2E 信頼性低・S61 と同判断)。
+- 全緑: source 無変更のため lint/build は S65 の緑を継承(typecheck/test は本セッションで再実測=緑)。main 不変 ea2ca69。
+### 次セッションへ
+- **★教訓: 夜間安全タスクは真に枯渇。S57-S65 の「未テスト純関数」も S1-S33 の a11y 実害も S66 の回帰再点検4レンズも全てクリーン確定。**
+  残る安全角度は「過去修復クラスの回帰再点検」(本セッション4レンズ=clean 記録で次回の重複監査を防止)のみ。実改善は日中候補(挙動変更+E2E)に依存。
+- 回帰再点検で次に確認可能な過去クラス: scroll-margin(S32)/th-scope(S28)/Label-in-Name(S29)/chart role=img(S10-S15)/Radix Switch 命名(S31) の新規再混入有無。いずれも機械 grep で clean 記録可。
+- 日中候補(不変): ContactForm 成功カード focus/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export。
