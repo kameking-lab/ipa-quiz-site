@@ -2321,3 +2321,18 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - per-name gap 残候補（未確認・関数のみ全スイープ済）: `lib/storage/history.ts`(getPremiumFlag/setPremiumFlag・LS往復・夜間安全)・`data/blog/generators.ts`(buildGeneralPosts・index で大半カバー＝低価値)・`lib/motivation/sound.ts`(playPiroro=AudioContext要mock日中)・`lib/chat/export-markdown.ts`(downloadMarkdown=DOM副作用日中)・`lib/admin/*`(deployment-status/launch-monitoring=Date.now/fetch日中・feature-flags=dead SKIP確定)・`lib/ai/providers/gemini.ts`(SDK)・streak/*.tsx(React日中)。**夜間安全な残=getPremiumFlag/setPremiumFlag が筆頭。** const(BADGES/AP_TOPIC_GROUPS/ACHIEVEMENTS等)はデータ列挙で価値薄。
 - 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
 - 実改善は引き続き日中候補に依存。夜間安全枠は per-name gap がほぼ消化（残=getPremiumFlag/setPremiumFlag 等わずか）。
+
+---
+
+## セッション76（夜間自律ループ）2026-05-31 02:57〜 JST
+
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 196files・1494 / build 緑)。S75 が「夜間安全な per-name gap 残の筆頭」と名指しした `lib/storage/history.ts` の `getPremiumFlag/setPremiumFlag` を回帰固定。**1件 done・実改善0・source 無変更。test 1494→1499（+5 it・196 files 据置=既存 history-store.test.ts へ追記）。**
+
+- done: `lib/storage/history.ts` getPremiumFlag/setPremiumFlag — `91ceeac` / `__tests__/storage/history-store.test.ts`(+5 it)。既存 history-store.test は createHistoryStore を厚く被覆するが同モジュールのプレミアム判定フラグ2関数は per-name 未カバーだった。`LS_KEYS.premium`("ipa-quiz:premium:v1") に対し true→"1"/false→"0" の往復・既定 false・**"1" 厳密一致のみ true（"true" 等 truthy 文字列・"0" は false 扱い）** を固定。mutation 2種(`=== "1"`→`!== "1"` で4 fail、`on ? "1" : "0"`→反転で3 fail)を実測→cp で revert。
+
+★教訓: createHistoryStore のような厚く被覆されたモジュールでも、同ファイルの独立した小 export(getPremiumFlag/setPremiumFlag)は per-name gap として漏れる。`grep -rl getPremiumFlag __tests__/` で import 元ゼロを確認してから着手。premium フラグは §0 で「開発検証用・本番決済非連動」と明記されており LS 往復の純関数=夜間安全。
+
+### 次セッションへ
+- **夜間安全な per-name gap は本セッションで打ち止め確定。** S75 列挙の残候補は全て日中向き: `data/blog/generators.ts::buildGeneralPosts`(index で大半カバー=低価値)・`lib/motivation/sound.ts::playPiroro`(AudioContext mock)・`lib/chat/export-markdown.ts::downloadMarkdown`(DOM副作用)・`lib/admin/*`(Date.now/fetch・feature-flags=dead SKIP)・`lib/ai/providers/gemini.ts`(SDK)・streak/*.tsx(React)。const(BADGES 等)はデータ列挙で価値薄。
+- 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
+- 実改善は日中候補に依存。次セッションの夜間安全角度＝過去 SAFE/latent footgun の別モジュール再検証(S33/S41)か a11y 回帰再点検(S66-S68)の取りこぼし掘り直し。新規 export 追加時の per-name 再スイープも有効。
