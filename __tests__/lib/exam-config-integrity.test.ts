@@ -63,6 +63,32 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
     }
   });
 
+  it("各 exam の session / urlSlug は重複しない（section ルート衝突防止）", () => {
+    // 問題ページの URL は /[exam]/[year-season]/[section] で、section は
+    // SessionConfig.urlSlug 由来。同一 exam の sessions（および cbtSessions）内で
+    // urlSlug が重複すると generateStaticParams が同一パラメータを生成し、片方の
+    // session のページが静的生成から漏れて到達不能（404）になる。session 値の重複も
+    // 同様にどちらかの設定を dead エントリ化する。型 SessionConfig[] は重複を防げない
+    // ため、各 exam 内で urlSlug / session の一意性を回帰固定する（コピペ drift 防止）。
+    const checkUnique = (
+      code: ExamCode,
+      arr: SessionConfig[] | undefined,
+      tag: string,
+    ) => {
+      if (!arr) return;
+      const slugs = arr.map((s) => s.urlSlug);
+      expect(new Set(slugs).size, `${code}/${tag} urlSlug 一意`).toBe(slugs.length);
+      const sessions = arr.map((s) => s.session);
+      expect(new Set(sessions).size, `${code}/${tag} session 一意`).toBe(
+        sessions.length,
+      );
+    };
+    for (const [code, cfg] of ENTRIES) {
+      checkUnique(code, cfg.sessions, "sessions");
+      checkUnique(code, cfg.cbtSessions, "cbtSessions");
+    }
+  });
+
   it("年範囲 start <= end（regular / legacy / cbt すべて）", () => {
     for (const [code, cfg] of ENTRIES) {
       expect(cfg.yearRange.start, `${code} yearRange`).toBeLessThanOrEqual(
