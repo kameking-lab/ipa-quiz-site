@@ -1114,3 +1114,26 @@
 - テーマ: 新観点「データテーブルの th scope（WCAG 1.3.1 / H63）」を開拓。**2軸テーブルで行見出しが裸 td だった2件＝真の実害**、content table レンダラ2件＝密な表で scope が効くため修復。simple単一ヘッダ UI 表は SR 自動推論で実害限定的＝SKIP。
 - 教訓（次セッションの重複監査防止）: **th scope 観点は一巡。indexable な実害（2軸 row-header 欠落 / content table レンダラ）は4件すべて修復済（再監査不要）。残る simple 表（stats/demo/admin）は SR 自動推論で実害なし＝SKIP 確定。** デッドコード（component/lib export）は exhaustive 監査でゼロ確定。framer-motion は2点のみで reduced-motion 対処済。
 - 次セッションへ: 夜間の安全な実害バグは S1-S28 で網羅的に枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/EmailSignInForm・SchedulePlanner live化/reduced-motion 共有フック抽出）。新観点を起案する場合は下記 backlog「P1 新観点（S28 起案）」を参照。
+## セッション29 2026-05-30 13:34 JST（S28起案の観点㉔ Label in Name を全数監査 → 確認できた実害6件を修復・㉕㉖は実害ゼロ確定）
+- 冒頭ベースライン全緑実測: test **287 passed**(67 files)（現 HEAD `05cd81b`）。typecheck0/lint0err(既存 ux-audit 警告1のみ)/build緑。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。
+- SKIP(実害ゼロ・観点㉖ inputmode): tsx 全体に `type="number"`/`type="tel"` の数値入力が**存在しない**（grep 実測）。唯一の inputMode は SearchClient の `inputMode="search"`（適切）。数値キーパッドを要する入力欄が無いため**観点㉖は moot＝実害ゼロ**（年度フィルタ等は select/ボタンで実装）。
+- SKIP(実害ゼロ・観点㉕ autocomplete): email/name 入力欄を全数確認＝NotificationSettings/EmailSignInForm/EmailLeadCapture×2/ContactForm(name+email) は**全て `autoComplete="email"`/`"name"` を保有**。未充足の個人情報入力欄ゼロ＝実害ゼロ。
+- done: 【実バグ=A11y WCAG 2.5.3 Label in Name・観点㉔】ホーム試験カードのランダム出題 CTA の aria-label が可視テキスト「今すぐ解く」「ランダムに解く」を含まず（`{exam}をランダム出題で開始`）、音声操作ユーザーが可視ラベルを発話してもコントロールを起動できなかった（Level A）。codebase 既定の gold-standard（blog CTA「過去問演習を始める（13区分…）」＝可視テキストを先頭に含む）に倣い是正。/ コミット `9489858` / 検証: typecheck0/lint0err/test288緑/build緑。**`.next/server/app/index.html` 実測**で `aria-label="今すぐ解く（ITパスポート・ランダム出題）"`/`"ランダムに解く（応用情報）"` を確認・旧パターン残存ゼロ。新規 render テスト `HomeExamGrid.labelInName.test.tsx`（全 CTA の aria-label が可視テキストを含む。git stash で2件落ちることを実測）。
+- done: 【同型・観点㉔】ブログ記事末尾 CTA `app/blog/[slug]/page.tsx`（indexable）の「この試験を演習する（N問）→」が aria-label `{exam}を無料で演習する（N問）`＝可視テキスト「この試験を演習する」を欠く。可視テキストを先頭に含む形へ是正。/ コミット `54d1fc2` / 検証: 全緑(test289)。**`.next/server/app/blog/ap-*.html` 実測**で `aria-label="この試験を演習する（応用情報技術者・1136問・無料）"` を確認・旧 "を無料で演習する" 残存ゼロ。新規 source-read テスト `blog-cta-label-in-name.test.ts`。
+- done: 【同型・観点㉔】全ページ共通フッターの X リンク `app/layout.tsx`（可視「X @kakomon_ai_jp」）が aria-label "X（Twitter）でフォロー…"＝可視ハンドルを欠く。可視テキストを先頭に含む形へ是正（note リンクは "note を読む…" で既に充足）。/ コミット `14a40fb` / 検証: 全緑(test291)。**`index.html` 実測**で `aria-label="X @kakomon_ai_jp をフォロー（新しいタブで開く）"`。新規 `footer-social-label-in-name.test.ts`。
+- done: 【同型・観点㉔】ブックマーク `app/bookmarks/page.tsx` の「この問題を解く」リンクが aria-label `{exam} {年度} 問Nを解く`＝可視テキストを欠く。可視テキストを先頭に含み問題特定情報を括弧内へ。/ コミット `1f99f13` / 検証: 全緑(test293)。client component のため `.next` HTML には現れず（JS chunk）＝source-read 回帰テスト＋緑ビルドで検証。
+- done: 【同型・観点㉔】模試結果 `app/mock-exam/MockExamRunner.tsx` の「苦手分野を集中練習 →」が aria-label「苦手分野**の問題を**集中練習する」＝可視テキストが**連続部分文字列にならない**（"の問題を" が割り込む）。aria-label を「苦手分野を集中練習する」に是正。/ コミット `79f32e2` / 検証: 全緑。新規 `label-in-name-misc.test.ts`（bookmarks+mock-exam）。
+- done: 【同型・観点㉔=シェアボタン一掃】クイズ結果 `QuizPlayer.tsx`「X でシェア」(aria "X（Twitter）で結果をシェア…") と 模試結果 `MockExamRunner.tsx`「結果をシェア」(aria "結果をXでシェア") が、いずれも可視テキストが**連続部分文字列にならない**（途中に語が割り込む）Label-in-Name 違反。可視テキストを先頭に含む形へ是正。/ コミット `41573c4` / 検証: 全緑(test295)。`label-in-name-misc.test.ts` にシェア2件の回帰ガードを追加（git stash で2件落ちることを実測）。LINE リンク（"LINEで結果を…"=LINE 含む）・BadgeWall アイコンボタン（可視テキスト無し＝icon-only で対象外）は充足。
+- SKIP(実害ゼロ・誤検出): `HomeReturningHeader:168` の `aria-label="おすすめの基準を切り替え"` は `role="group"` **コンテナ div**（interactive control でない）＝Label-in-Name 対象外。内部の切替ボタンは aria-pressed+可視テキストで適切。並行 Explore が候補に挙げたが false positive。
+
+## セッション29 まとめ
+- 実改善6件（すべて A11y WCAG 2.5.3 Label in Name・Level A＝音声操作ユーザーが可視ラベル発話で起動できるよう是正）+ 全数監査SKIP2観点（㉕autocomplete充足/㉖inputmode=数値入力不在で moot）。
+  1. HomeExamGrid ランダム出題 CTA（`9489858`・ホーム高トラフィック）
+  2. blog 記事末尾 CTA（`54d1fc2`・indexable）
+  3. layout フッター X リンク（`14a40fb`・全ページ）
+  4. bookmarks「この問題を解く」（`1f99f13`）
+  5. MockExamRunner「苦手分野を集中練習」（`79f32e2`）
+  6. 結果シェアボタン QuizPlayer/MockExamRunner（`41573c4`）
+- テーマ: 観点㉔（Label in Name）を全数監査。**確認できた実害は「可視テキストが aria-label に連続部分文字列として含まれない」6件**＝gold-standard（可視テキストを先頭に含む）へ統一。共通パターン: ①aria-label が可視テキストとは別の言い回し（CTA系）②"（Twitter）で結果を" 等が割り込んで分断（シェア系）。
+- 教訓（次セッションの重複監査防止）: **Label in Name は「可視テキストが accessible name の連続部分文字列か」で判定**。icon-only ボタン（可視テキスト無し）・role="group/section" コンテナ・aria-label が可視テキストを既に含む（note/LINE）は対象外。確認できた6件は修復済＝**残存ゼロ**（再監査不要）。㉕autocomplete・㉖inputmode は構造的に充足/moot。
+- 次セッターへ: S28起案の残り観点は ㉒（table caption/colspan・※th scope は S28 で一巡・caption 欠落は機能追加寄りで実害判定を慎重に）㉓（lang 部分指定＝おそらく実害ゼロ・確認のみ）。夜間の安全な実害バグは S1-S29 で深く枯渇。日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）は据え置き。

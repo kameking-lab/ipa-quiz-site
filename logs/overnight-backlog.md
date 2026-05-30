@@ -4,6 +4,14 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション29):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S29 で網羅的に枯渇を再々確認。
+> S29: S28起案の観点㉔（**Label in Name / WCAG 2.5.3 Level A**）を全数監査＝**実改善6件**（音声操作ユーザーが可視ラベル発話で起動できるよう是正）。
+> ①ホーム試験カードのランダム出題CTA（`9489858`）②ブログ記事末尾CTA（`54d1fc2`・indexable）③フッターXリンク（`14a40fb`・全ページ）④bookmarks「この問題を解く」（`1f99f13`）⑤模試「苦手分野を集中練習」（`79f32e2`）⑥結果シェアボタン QuizPlayer/MockExamRunner（`41573c4`）。
+> 共通パターン: aria-label が可視テキストを**連続部分文字列として含まない**（別の言い回し or "（Twitter）で結果を" 等が割り込んで分断）。gold-standard（可視テキストを先頭に含む）へ統一。`.next` 実測 or source-read 回帰テストで検証。
+> SKIP(実害ゼロ): ㉕autocomplete＝email/name 入力欄は全て autoComplete 保有／㉖inputmode＝数値入力(type=number/tel)が**そもそも不在**で moot／HomeReturningHeader の aria-label は role="group" コンテナ＝対象外(Explore 誤検出)。
+> **教訓: Label in Name は「可視テキストが accessible name の連続部分文字列か」で判定。icon-only/コンテナ landmark/既に包含(note/LINE)は対象外。確認できた実害6件は修復済＝残存ゼロ(再監査不要)。**
+> **次は: S28起案の残り㉒(table caption/colspan=機能追加寄り・実害判定慎重に)㉓(lang部分指定=おそらく実害ゼロ・確認のみ)。夜間の安全な実害バグは深く枯渇。日中候補据え置き。**
+>
 > **状態 (2026-05-30 セッション28):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S28 で網羅的に枯渇を再々確認。
 > S28: S26起案の観点⑰⑱を全数監査（⑰デッドコード=component143/95export＋lib全export を網羅 grep で未参照ゼロ確定／⑱メモ化=SearchClient 精査で参照不安定の体感被害なし＝両者**実害ゼロ**）。
 > 新観点「**データテーブルの th scope（WCAG 1.3.1 / H63）**」を開拓し**実改善4件**：①`/why-kakomon-ai`比較表（2軸・行見出しが裸td）を列scope=col+行scope=row化（`45644c7`）②`/recommended-books`書籍表（同型2軸）同様修復（`cf184b9`）③`QuestionBody`パイプ表の列見出しに scope=col（`2546b88`・/q中核）④`Markdown`/`BlogMarkdown`本文表に scope=col（`1877cc5`・AI解説/ブログ）。すべて `.next` 実測で scope 出力を確認。
