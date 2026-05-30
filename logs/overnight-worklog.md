@@ -1153,3 +1153,20 @@
 - テーマ: S28起案の最後の未踏観点㉒㉓を消化＋独立した新角度4クラスを開拓。いずれも構造上 or gold-standard 遵守により被害不能と実測判定。**S1-S30 で a11y/SEO/perf/logic の安全な実害バグは網羅的に枯渇を再々確認。**
 - 教訓（次セッションの重複監査防止）: **colspan/rowspan は本リポに存在しない（複雑表なし）／lang はルート `<html lang="ja">` のみで部分切替不要／clickable な非interactive要素は全て背景dismiss（キーボード経路併存）／aria-hidden は装飾のみ／icon-only ボタンは全てラベル保有。これら5クラスは構造的にクリーン（再監査不要）。** ㉒caption は H39 advisory＝overreach の罠で SKIP 確定。
 - 次セッションへ: 夜間の安全な実害バグは S1-S30 で深く枯渇。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮/reduced-motion 共有フック `usePrefersReducedMotion` 抽出/EmailSignInForm・SchedulePlanner live化）。新観点を起案する場合は粒度が細かく実害判定が難しい領域（色コントラスト=要レンダリング/フォーカス順序=要E2E）に入るため、夜間より日中レビュー向き。次セッションは backlog 既起案の未踏観点が尽きていれば「本日分完了」記録 or 日中候補の最も自己完結・低リスクなものの慎重実施を検討。
+
+## セッション31 2026-05-30 14:01 JST（新角度「Radix プリミティブのアクセシブルネーム」を開拓 → 設定トグル(Switch)10件の WCAG 4.1.2 違反を修復）
+- 冒頭ベースライン: HEAD `aea0e1e`（S30 docs）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。test 295→最終298緑。
+- SKIP(全数監査=実害ゼロ・新角度 viewport zoom WCAG 1.4.4): `app/layout.tsx` の `viewport` は `width:device-width/initialScale:1/viewportFit:cover` のみ＝`maximum-scale`/`user-scalable=no` **不在**でズーム抑制なし＝実害ゼロ。
+- SKIP(全数監査=実害ゼロ・新角度 ネスト interactive 要素 HTML validity/hydration): Explore で全 .tsx を監査＝`<a>`内`<a>`/`<button>`内`<button>`/Link 内 button のネストは**ゼロ**。`<Button asChild>`（Slot で子に委譲）パターンは全て正しく単一要素にデリゲート＝hydration error 不能。
+- done: 【実バグ=A11y WCAG 4.1.2 Name/Role/Value・Level A・新角度】**Radix `<Switch>` は中身のない `<button role="switch">` をレンダーする**ため、可視ラベルを隣接配置するだけではアクセシブルネームが付かず、SR 利用者は全トグルの用途を把握できなかった（30セッション見落とし＝radix+SettingRow の視覚専用ラベルが盲点）。
+  ①`/settings`：page-local `SettingRow` を `useId`+`cloneElement` で拡張し、可視ラベル `<p>` に id を付与→子コントロールへ `aria-labelledby` を注入（**7スイッチ**を一括是正：AIキャラ有効化/選択肢ランダム化/直近2回除外/計算問題のみ/正解音/アニメ抑制/学習履歴記録。名前は可視テキストと同期＝Label-in-Name も満たす）。
+  ②`/settings#notifications`（`NotificationSettings`・SettingRow 非使用の独自構造）：**3スイッチ**（メール通知/学習継続リマインダー/週次ダイジェスト）に `aria-label` 付与。
+  / コミット `ebecece` / 検証: typecheck0/lint0err（既存 ux-audit 警告1のみ）/test **298緑**(+新規3)/build緑。
+  **崩れたら落ちる検証**=①`.next/server/app/settings.html` を実測し各 `role="switch"` の `aria-labelledby` が対応する `<p id>`（例 `_R_ce…`↔選択肢をランダム化 / `_R_14e…`↔正解音 / `_R_cq…`↔学習履歴を記録する）を指すことを確認。②新規 `__tests__/components/NotificationSettings.test.tsx`（getByRole("switch",{name}) で3件）を追加し、**aria-label を1件外すと当該テストが落ちる**ことを sed で実測。
+- SKIP(全数監査=実害ゼロ・隣接クラス): 他の Radix プリミティブ＝Dialog/Sheet（DialogTitle で命名・S7 監査済）+Slot のみで、**裸の無名 interactive プリミティブは Switch のみ**＝本修復で class クローズ。`role="radiogroup"` 全7箇所（CharacterSelector/OnboardingTour×2/MockExamLanding/QuestionAnswerCard/QuizPlayer/DailyChallengeClient/settings テーマ）は**全て aria-label 保有**＋radio オプションは可視テキスト＝命名クリーン。
+
+## セッション31 まとめ
+- 実改善1件（Radix Switch 10件のアクセシブルネーム欠落＝WCAG 4.1.2 Level A・新角度で30セッション見落としを発見・修復 `ebecece`）+ 全数監査SKIP3クラス（viewport zoom/ネスト interactive/radiogroup 命名＝すべて実害ゼロ）。
+- テーマ: 新角度「**Radix プリミティブのアクセシブルネーム**」を開拓。Switch は中身のない `<button role="switch">` をレンダーするため視覚専用ラベル（SettingRow の隣接 `<p>`）では命名されない盲点だった。`useId`+`cloneElement` で可視ラベルを `aria-labelledby` 関連付け＝最小 diff で7スイッチ一括是正。
+- 教訓（次セッションの重複監査防止）: **Radix Switch は aria-label/aria-labelledby が無いと無名（隣接 `<p>` は関連付かない）。本リポの Radix 利用は Switch（=本修復で命名）/Dialog・Sheet（DialogTitle で命名）/Slot のみ＝裸の無名 interactive プリミティブの残存ゼロ（再監査不要）。radiogroup 全7箇所は aria-label 保有済。viewport は zoom 抑制なし・ネスト interactive 不在＝両クラス構造的クリーン。**
+- 次セッターへ: 夜間の安全な実害バグは S1-S31 で深く枯渇。残は**日中候補のみ**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E領域＝日中レビュー向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。

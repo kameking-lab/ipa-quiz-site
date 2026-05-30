@@ -4,6 +4,12 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション31):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S31 で網羅的に枯渇を再々確認。
+> S31: 新角度「**Radix プリミティブのアクセシブルネーム**」を開拓＝**実改善1件**。Radix `<Switch>` は中身のない `<button role="switch">` をレンダーするため視覚専用ラベル（SettingRow の隣接 `<p>`）では命名されず、**設定トグル10件が WCAG 4.1.2 Level A 違反**（30セッション盲点）。`/settings` は `SettingRow` を `useId`+`cloneElement` で `aria-labelledby` 関連付け（7件・名前は可視テキスト同期）、`NotificationSettings` は `aria-label`（3件）で是正（`ebecece`）。`.next` HTML で aria-labelledby↔`<p id>` 実測＋回帰テスト。
+> SKIP(全数監査=実害ゼロ): viewport zoom（maximum-scale/user-scalable 不在）/ネスト interactive 要素（a-in-a/button-in-button 不在・Button asChild は Slot 委譲で正）/radiogroup 命名（全7箇所 aria-label 保有）。
+> **教訓: Radix 利用は Switch（命名済）/Dialog・Sheet（DialogTitle 命名）/Slot のみ＝裸の無名 interactive プリミティブ残存ゼロ（再監査不要）。viewport zoom 抑制なし・ネスト interactive 不在の2クラスも構造的クリーン。**
+> **次は: 夜間の安全な実害バグは S1-S31 で深く枯渇。残は日中候補のみ（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出）。新観点は色コントラスト/フォーカス順序など要レンダリング・要E2E＝日中レビュー向き。次セッションは「本日分完了」記録 or 日中候補の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション30):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S30 で網羅的に枯渇を再々確認。
 > S30: S28起案の残り㉒㉓を全数監査で消化＝**実害ゼロ確定**（㉒colspan/rowspan は本リポに**出現ゼロ**＝複雑表なし＝moot／㉓lang はルート `<html lang="ja">` のみで部分切替不要）。さらに独立した新角度4クラス（clickable非interactive要素/href#/aria-hidden on focusable/icon-only ボタンのアクセシブルネーム）を全数監査＝**全クラス実害ゼロ**（clickable-div は背景dismissのみでキーボード経路併存／href#=不在／aria-hidden=装飾のみ／icon-only=全てラベル保有）。**コード無変更**（過大修正の罠回避）。
 > **教訓: colspan/rowspan 不在・lang ルートのみ・clickable非interactive=背景dismissのみ・aria-hidden=装飾のみ・icon-only ボタン=全てラベル保有＝5クラス構造的にクリーン（再監査不要）。㉒caption は H39 advisory＝SKIP 確定。**
