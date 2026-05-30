@@ -1,3 +1,8 @@
+> **更新 (2026-05-30 セッション64):** P0 全て done/SKIP。P1 進行中。**data/ スイープ完了**。
+> S64: S63 handoff の「次の grep スコープ拡張先=data/」を全消化→**回帰固定5本**(実改善0・source 無変更, test 1192→1218)。①`data/recommended-books.ts`=アフィリ URL 生成(?tag=/hb.afl ラップ)+プレースホルダゲート+全 exam 網羅(env stub で両分岐), `8ef122c`。②`data/features.ts`=特集 LP の slug 一意性/round-trip/未知→undefined/FAQPage faqs 非空/内部 href, `587c286`。③`data/keywords.ts`=キーワード LP の SSG 不変条件+**exams[]→/<exam> CTA の no-404(ALL_EXAM_CODES 突合)**, `2005f73`。④`data/faq.ts`=FAQPage JSON-LD の question/answer 非空+question 一意+category ラベル存在, `85f9c22`。⑤`data/glossary.ts`=DefinedTermSet+五十音ソート/グループ不変条件(reading/term/short 非空+term 一意), `a612375`。各 mutation で fail 実測。
+> **★data/ レジストリの共通契約: slug 一意性+round-trip+未知→undefined+構造化データ/リンク先 no-404。データ値が内部リンク先になる箇所(keywords.exams→/<exam>)は ALL_EXAM_CODES 突合で 404 機械防止(P0 ブログ CTA pin と同型)。**
+> **次の未スイープ region=`scripts/`**(CI/クローラ系・fetch/fs/env 依存多く夜間安全な純関数は限定見込み)。lib/ 残りは全て真に blocked。data/ types.ts の toSummary は低価値で SKIP。
+
 > **更新 (2026-05-30 セッション63):** P0 全て done/SKIP。P1 進行中。
 > S63: **新角度発見=data/ は S1-S62 の Explore スイープ(全て lib/ スコープ)の盲点だった**。data/ に未テスト純関数寄り4本残存→**回帰固定4本**(実改善0・source 無変更, test 1144→1189)。
 > ①`lib/posthog.ts`=posthogCapture の fail-soft(未初期化→no-op/capture throw 握りつぶし)+env ゲート, `005254d`。②`data/blog/index.ts`=slug 一意性/サマリ降順/getRelatedPosts の limit/自己除外/関連性/explicit 優先(副産物: limit=0 off-by-one を latent pin・修正せず), `9bd7bc0`。③`data/success-stories/generators.ts`=buildSuccessStory 写像/テンプレ/publishedAt 未来 clamp(合成 offset で発火), `9f3fc51`。④`data/success-stories/index.ts`=レジストリ+2パス getSimilarPersonaStories(バケツをテスト側再実装で union 関連性検証), `ba11559`。各 mutation を sed で revert 実測。
