@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション15):** P0 全件 done/SKIP。P1 進行中。
+> S15: 多数の新観点を監査(ほぼ全てクリーン)。実改善は admin `/admin/metrics` Section1 日次推移 LineChart に
+> role=img+代替テキストを付与(`1732868`)=チャート alt-text(WCAG 1.1.1)を public(S10)+account(S11)+admin(S15)で
+> **全面完了**。S11 が admin を日中候補 SKIP していたが足場(S6)解決済のため実施、近接表のある冗長チャートには
+> 付与しない判断。監査クリーン: 見出し階層/画像alt/prefers-reduced-motion(globals.css に包括ルール在)/
+> aria-current(SiteHeader 上位は両立・ドロップダウン等は視覚 active も無く不一致無し=機能追加回避)/非同期UX。
+> **canonical 監査は Explore の HIGH 指摘が全て誤読**(modes/topic の ap→/modes/topic は正しい重複正規化、
+> quiz/stream/mock-exam の base canonical 固定は意図的、相対 og:url は metadataBase で絶対化)=変更は SEO 有害で回避。
+> **夜間に安全な実害バグは S1-S15 で網羅一巡し枯渇。** 次は (a)tabs.tsx 矢印キー/コピー通知統一/MilestoneToast ref化/
+> exam meta desc 短縮(いずれも日中候補)、(b)未踏の機能ロジック観点(クイズ採点/履歴の境界条件)の開拓を検討。
+>
 > **状態 (2026-05-30 セッション14):** P0 全件 done/SKIP。P1 進行中。
 > S14: 新観点「global keydown が修飾キーを無視しブラウザ/OSショートカットを奪う」を開拓・一巡。
 > 3つのクイズプレイヤーの keydown ハンドラが Ctrl/Cmd/Alt を無視しており、Ctrl/Cmd+1-4(タブ切替)が

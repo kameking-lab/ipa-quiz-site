@@ -585,3 +585,48 @@
 - 次セッションへ: keydown 修飾キー観点 done。残候補は (a)tabs.tsx 矢印キー(日中・影響大)、(b)コピー通知統一(日中)、
   (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)admin チャート role=img(低優先)、
   (f)SKIP 再評価・新観点の開拓。夜間に安全な実害バグは枯渇傾向(lib ロジックは Hamilton 法選抜含め高品質)。
+
+## セッション15 2026-05-30 09:51 JST（多数の新観点を監査=ほぼクリーン / admin チャート alt-text 最後の1件を是正）
+- done: 【実バグ=A11y欠落 WCAG 1.1.1】`/admin/metrics` `MetricsDashboard` Section1 の日次推移 LineChart
+  (DAU/解答数)が role/aria-label を持たず、近接する表・KPI にも時系列の代替表現が無いため SR 利用者は
+  図の意味を得られなかった。ラッパ div に `role="img"`+説明ラベル「DAU と解答数の日次推移グラフ」を付与
+  (additive・視覚/挙動不変)。S10/S11 で public/account チャートに適用した同パターンの admin 横展開。
+  ※S11 は admin を「低価値・テスト足場が重い」で日中候補に SKIP していたが、足場(buildMockMetrics+fetch stub)は
+  S6 で既に解決済のため実施。Section2 機能別バー・Section4 流入元円は**直下に同データの表があり**冗長なので
+  付与しない(意図的に1チャートのみ)。FunnelCharts/FunnelDashboard のバーも text/表backed のため対象外。
+  / コミット `1732868` / 検証: typecheck0・lint(err0, 既存ux-audit警告1のみ)・test255緑(+新規1)・build緑。
+  既存 `MetricsDashboard.test.tsx`(fetch永久pending stub)に role=img 検証を追加し、**role を外すと
+  getByRole("img",{name}) が見つからず落ちる**ことを実測(Edit で属性除去→1件fail→復元の手順で確認)。
+  → これでチャート alt-text(WCAG 1.1.1)は public(S10)+account(S11)+admin(S15)で**全面完了**。残る admin の
+  table/text-backed チャートは冗長表現があるため role=img 不要(過大修正の罠回避)。
+- SKIP(クリーン): 見出し階層(WCAG 1.3.1/SEO)を indexable 全主要ページで監査(Explore)。home/exam/yearSeason/
+  faq/blog/topics/keywords/search/features/about/success-stories/contact/privacy すべて h1 単一・レベル飛びなし。
+- SKIP(クリーン): 画像 alt 監査。問題画像・raw img・next/image すべて意味のある alt 保有。唯一 /account の
+  avatar が name 不在時に "avatar" フォールバック(noindex・auth-gated・エッジケースで実害僅少)=SKIP。
+- SKIP(クリーン・既に成熟): prefers-reduced-motion(WCAG 2.3.3)。`globals.css:222-231` に包括的な
+  `@media (prefers-reduced-motion: reduce)` ブロックが在り全 CSS animation/transition を抑制。無限ループ
+  animation(hero-ai-demo 系・shimmer)も同ルールで停止。framer-motion(FireworksBurst/ComboCounter)は単発で
+  ループ無し。HeroAiDemo は明示コメントで reduced-motion 尊重を記録。撤去/追加対象ゼロ。
+- SKIP(実害なし=機能追加に相当): aria-current(WCAG 4.1.2)。`SiteHeader` 上位リンク5件は**視覚 active +
+  aria-current 両方**を保有(正)。ドロップダウン項目/モバイルシート項目は**視覚 active も aria-current も
+  両方無い**=視覚/プログラムの不一致(=実害)は存在しない。aria-current のみ追加は機能追加で夜間 overreach。
+  `MobileBottomNav`/`QuizModeTabs`/`AfternoonPlayer` は aria-current 済。→ 不一致バグ残存ゼロ。
+- SKIP(false positive・変更は SEO 有害): canonical URL 監査(Explore が modes/topic・modes/year で「collision」、
+  quiz/stream・mock-exam で「hardcoded canonical」を HIGH で指摘も**全て誤読**)。①modes/topic は
+  `code===DEFAULT_EXAM(ap)?"/modes/topic":"?exam={code}"` で、ap(=default・無paramと同一内容)を `/modes/topic` へ
+  集約=**正しい重複コンテンツ正規化**(collision ではない)、別試験は self-canonical=正。②quiz/stream・mock-exam の
+  base canonical 固定は**インタラクティブ tool ページの param 変種を無限 index させない意図的設計**=正。
+  ③相対 openGraph.url は root layout の `metadataBase` で絶対化される(Next.js 仕様)=正。→ 変更すれば逆に
+  SEO を害するため**直さない**。canonical 戦略は健全。
+- SKIP(低/marginal): /account 非同期 UX(Explore)。①ApiKeysClient コピーボタンに連打 disabled ガード無し
+  (clipboard は冪等・"コピー済" flicker のみ・noindex)②NotificationSettings sendTestEmail に finally 無し
+  (各分岐で status 設定済・catch も処理・実バグでない)。どちらも実害 marginal=SKIP。
+
+## セッション15 まとめ
+- 実改善1件(admin 日次推移チャートに role=img=チャート alt-text テーマの最後の1件を是正、テスト付き `1732868`)
+  + SKIP多数(見出し階層/画像alt/reduced-motion/aria-current/canonical/非同期UX=ほぼ全てクリーン or false positive)。
+- 多数の新観点を監査した結果、コードは総じて極めて成熟。canonical の「collision」指摘は誤読(正しい正規化)で
+  変更は有害と判断し回避(過大修正の罠を実地で回避)。チャート alt-text は public+account+admin で全面完了。
+- 次セッションへ: 残候補は (a)tabs.tsx 矢印キー(日中・影響大)、(b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、
+  (d)exam meta desc 短縮(日中)。**夜間に安全な実害バグは枯渇(S1-S15 で a11y/SEO/OG/リンク/keydown/チャート/
+  非同期UX を網羅一巡)。** 次は (e)未踏の機能ロジック観点(クイズ採点/履歴の境界条件)か (f)日中候補の慎重実施を検討。
