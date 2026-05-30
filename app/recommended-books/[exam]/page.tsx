@@ -252,9 +252,9 @@ export default async function RecommendedBooksExamPage({
           <table className="w-full text-xs">
             <thead>
               <tr className="border-b border-zinc-200 text-left dark:border-zinc-800">
-                <th className="py-2 pr-3 font-semibold">タイトル</th>
-                <th className="py-2 pr-3 font-semibold">難度</th>
-                <th className="py-2 font-semibold">こんな人におすすめ</th>
+                <th scope="col" className="py-2 pr-3 font-semibold">タイトル</th>
+                <th scope="col" className="py-2 pr-3 font-semibold">難度</th>
+                <th scope="col" className="py-2 font-semibold">こんな人におすすめ</th>
               </tr>
             </thead>
             <tbody>
@@ -263,7 +263,7 @@ export default async function RecommendedBooksExamPage({
                   key={book.id}
                   className="border-b border-zinc-100 last:border-0 dark:border-zinc-900"
                 >
-                  <td className="py-2 pr-3 font-medium">{book.title}</td>
+                  <th scope="row" className="py-2 pr-3 text-left font-medium">{book.title}</th>
                   <td className="py-2 pr-3">
                     <Badge
                       variant={
