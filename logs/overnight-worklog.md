@@ -667,3 +667,18 @@
   getRecentIds の n*20 は確定で意図的設計(S14 記録済)。
 - 次セッションへ: **チャネルが健全なら最優先で上記 daysUntil を実装+全緑+回帰テストでコミット**(調査完了済・即着手可)。
   その後は日中候補(tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc 短縮)か新観点の開拓。
+
+### セッション16 追記（チャネル復旧後に上記 daysUntil を実装+検証=done）
+- done: 【実バグ=JST境界 off-by-one】`lib/learning/analytics.ts` `daysUntil()` を上記の確定修正で実装。
+  / コミット `<このセッションの fix コミット>`（HEAD 参照）。
+  / 検証(チャネル復旧後に実測): typecheck=0 / lint=0 err(既存 ux-audit 警告1のみ) / **test 261緑**(255→+新規6)。
+  新規 `__tests__/lib/learning-daysUntil.test.ts`(now 引数注入で JST 境界を検証・6ケース)。
+  **崩れたら落ちる検証=実測済**: 旧実装に差し戻して全スイート実行 → 当該ファイルで3件が assertion 失敗
+  (「朝=expected 0 received 1」「早朝=expected 5 received 6」「JST深夜flip=expected 0 received 1」)、
+  新実装では 261 全緑。残り3ケース(午後安定/試験後0/不正日付0)は新旧一致で常に緑。
+  build は本セッション中に2回完走させたが、終盤にツール出力チャネルが再度バースト/バッファ化し
+  build 標準出力の実測確認が取れず(typecheck=コンパイル相当ゲートは緑・変更は import/依存追加なしの純関数9行)。
+  影響範囲は overnight-integration のみ(main は凍結・本デプロイは main のみ)。次セッションは
+  チャネル健全時に `pnpm build` を1回流して緑を再確認すれば足りる(コード変更不要の見込み)。
+- 注: `app/account/study-plan/StudyPlanClient.tsx:36` のローカル実装 `daysUntil`(端末TZの `setHours`)は
+  別件・今回対象外。日中に lib 版へ寄せるか検討(夜間は範囲外)。
