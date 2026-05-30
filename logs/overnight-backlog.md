@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション13):** P0 全件 done/SKIP。P1 進行中。
+> S13: S5(AfternoonResultView)で確立した「不完全タブ契約→aria-pressed トグル」の決定を同型の残り2箇所へ
+> 横展開し完了。①EssayIndustryTabs(/essays 業種別模範答案セレクタ・論文添削C軸, `6e4fb97`)
+> ②QuestionListWithFilter(年度別一覧 /[exam]/[yearSeason] の解答状況フィルター・indexable, `8170b44`)。
+> どちらも role=tablist/tab/aria-selected を使うが aria-controls/tabpanel/矢印キーを持たない不完全タブ→
+> role=group + aria-pressed に統一(見た目・挙動不変・各テスト付き)。残る role="tab" は正当な共有 primitive
+> tabs.tsx のみ(矢印キーのみ未対応=S5 で日中候補に SKIP 済)。aria-selected の orphan ゼロを grep 実測。
+> 多クラス監査(dangling idref/form button type/positive tabIndex/skip link/main landmark/JSON-LD XSS/essays SEO)は全クリーン。
+> **次は: tabs.tsx 矢印キー(日中・影響大)、コピー通知統一/MilestoneToast ref化/exam meta desc 短縮(日中)、**
+> **admin チャート role=img(低優先)、SKIP 再評価・新観点の開拓。夜間に安全な実害バグは枯渇傾向。**
+>
 > **状態 (2026-05-30 セッション12):** P0 全件 done/SKIP。P1 進行中。
 > S12: 新観点「コンテナ要素の ARIA ロール/命名の妥当性」を開拓・一巡。recharts(非interactive SVG)の
 > role=img は正だが、interactive 子を持つ/role 無しで命名する2パターンは実害。①ホーム LearningCalendar の

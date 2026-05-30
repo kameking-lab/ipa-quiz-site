@@ -497,3 +497,52 @@
 - 次セッションへ: ARIA ロール/命名観点は一巡 done。残候補は (a)tabs矢印キー(日中)、(b)コピー通知統一(日中)、
   (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)admin チャート role=img(低優先)、
   (f)dangling idref の app 全域スイープ(本セッションは mock-exam のみ確認)、(g)SKIP 再評価。
+
+## セッション13 2026-05-30 09:17 JST（壊れた tab 契約 → aria-pressed トグル横展開 + 多クラス監査=クリーン）
+- SKIP(クリーン・監査 done): dangling idref の app 全域スイープ(S12 で予告)。components/app の
+  `aria-labelledby`/`aria-describedby` を全数 grep し、参照先 id の実在を確認。静的(footer-nav-*/
+  offline-*-heading/learning-calendar-heading/topic-grid-heading/returning-header/attribute-filter-heading/
+  existing-plans/new-plan/email-signin-error/contact-error/exam-date-error)・動的(section-${examKey}/
+  week-${i}/essay-tab-${id}/essay-panel-${id}/qcomment-error-${questionId}/afternoon-${sub.label}-count/
+  essay-${subKey}-count/tabs.tsx triggerId/result-categories/time/wrong)すべて実在 idref を指す。dangling ゼロ。
+  EssayIndustryTabs は tabpanel が industries 全件・tab が INDUSTRY_ORDER 全件で型(EssayIndustryId=8値)
+  と一致するため dangling 不可。
+- SKIP(クリーン): 多クラスの read-only 監査をまとめて実施し実害バグの残存ゼロを確認 —
+  ①form 内 `<button>`/`<Button>` の type 欠落(accidental submit)= 全7 form を精査、非 submit ボタンは
+  全て type="button" 明示済(Button primitive は type 既定を持たないが各使用箇所で明示)。
+  ②positive tabIndex(キーボード順の anti-pattern)= grep 残存ゼロ。
+  ③skip-to-content リンク(WCAG 2.4.1)= layout に `#main-content` スキップリンク + `<div id="main-content" tabIndex=-1>` 既設。
+  ④`<main>` ランドマーク欠落 = 全 page.tsx を精査、page 直書きが無い8ページも子 client component(DashboardTabs/
+  QuizPlayer/StreamQuizPlayer/ReviewQuizClient/MockExamLanding/StudyPlanLanding/ScheduleResultClient/ChatShareView)で
+  `<main>` を描画＝全ページに main 在。
+  ⑤JSON-LD の XSS エスケープ = `JsonLd.tsx` は `</` ブレイクアウト対策に `<`→`<` 置換済(正)。
+  ⑥essays 配下の SEO/OG = 全て robots index:false(noindex)で公開 SEO 対象外(詳細ページは OG 画像も保有)。
+- done: 【実バグ=ARIA 契約違反 WCAG/4.1.2】`EssayIndustryTabs`(/essays 論述問題ページ・論文添削C軸)の業種別
+  模範答案セレクタが role=tablist/tab/aria-selected/aria-controls/tabpanel を使うが、矢印キーのローピング
+  tabindex を持たず WAI-ARIA タブパターンの暗黙契約(矢印ナビ)を満たさない不完全タブだった。**同一UI概念の
+  姉妹コンポーネント `AfternoonResultView`(午後採点の業種別模範論述セレクタ)は S5 で既に role=group +
+  aria-pressed トグルへ是正済**(`92da152`・テストにも明記)。codebase 既定のセグメント UI 慣用に統一。
+  見た目・クリック挙動は不変。/ コミット `6e4fb97` / 検証: typecheck0/lint(err0)/test245緑(+新規2)/build緑。
+  新規 `EssayIndustryTabs.test.tsx`(tab/tablist ロール不在・aria-pressed 初期状態・クリックで pressed と
+  模範答案が切替)は **role=tab に戻すと2件とも落ちる**ことを git stash で実測(崩れたら落ちる検証)。
+- done: 【同テーマ横展開・実バグ=ARIA 契約違反】`QuestionListWithFilter`(年度別一覧 /[exam]/[yearSeason]・
+  **indexable**)の解答状況フィルター(全て/未解答のみ/不正解のみ)も role=tablist/tab/aria-selected を使うが
+  aria-controls/tabpanel/矢印キーを持たない「フィルタトグル」だった。同じく role=group + aria-pressed へ統一。
+  / コミット `8170b44` / 検証: typecheck0/lint(err0)/test247緑(+新規2)/build緑(2510 static pages)。
+  新規 `QuestionListWithFilter.test.tsx`(localStorage 履歴を投入し answered>0 でフィルタ描画→tab ロール不在・
+  aria-pressed トグル・切替)は **git stash で2件とも落ちる**ことを実測。
+- → 残る role="tab" は `components/ui/tabs.tsx`(aria-controls+tabpanel+aria-labelledby 完備の正当なタブ
+  primitive・矢印キーのみ未対応)のみ。S5 で「app 横断使用・実害限定的」として日中候補に SKIP 済で踏襲。
+  aria-selected の残存も tabs.tsx の1件(正当使用)のみ＝orphan ゼロを grep 実測。
+
+## セッション13 まとめ
+- 実改善2件(壊れた tab 契約→aria-pressed トグルの横展開、各テスト付き)+ SKIP多数(dangling idref/form button type/
+  positive tabIndex/skip link/main landmark/JSON-LD XSS/essays SEO=全てクリーン)。
+  1. EssayIndustryTabs: 業種セレクタ role=tab→aria-pressed(`6e4fb97`・/essays 論文添削C軸)
+  2. QuestionListWithFilter: 解答状況フィルター role=tab→aria-pressed(`8170b44`・indexable 年度別一覧)
+- テーマ: S5(AfternoonResultView)で確立した「不完全タブ契約→aria-pressed トグル」の決定を、同型の残り2箇所へ
+  横展開し完了。role="tab" は正当な共有 primitive(tabs.tsx)のみ残存=方針一貫。
+- 次セッションへ: 壊れた tab 契約の横展開 done。残候補は (a)tabs.tsx 矢印キー(日中・app 横断で影響大)、
+  (b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、
+  (e)admin チャート role=img(低優先)、(f)これまでの SKIP 再評価・新観点の開拓。コードは総じて高品質で
+  夜間に安全な実害バグは枯渇傾向。
