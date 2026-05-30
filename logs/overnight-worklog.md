@@ -1790,3 +1790,24 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
 - これで S51 handoff 系の「lib/ 再走査で未テスト純関数」角度は **named 候補が完全に枯渇**(残るは rag-pipeline=async/mock 要のみ)。
 - 本セッションの教訓: 非対話セッションの tool 出力は重い遅延バッファで「空」に見えることがある＝故障ではない。
   実行はされているので、検証は「1コマンドに集約→ファイル出力→次ターンで Read」が安全。exit code を信頼する。
+
+## セッション53 (2026-05-31 20:29 JST)  — S51/S52 handoff の最後の named 候補 rag-pipeline を契約固定
+### 結論: 実改善0件（source 無変更）／ 回帰固定1モジュール（test 913→920・141 files）。全ゲート緑。
+- 出力チャネルは正常（S52 で問題だった遅延バッファは解消＝`echo OK`/gate 出力ともタイムリーに観測可）。
+- done `lib/copilot/rag-pipeline.ts::runCopilotRAGPipeline`（AIコパイロット B軸 の retrieval→grounding 判定→
+  引用ヘッダ/関連問題ヘッダ組み立てを束ねる async オーケストレータ・S47-S52 で唯一残っていた named 未テスト候補）。
+  **mock を使わず rag.test.ts と同型の「実コーパス + 環境変数ゲート」方式**で実挙動を固定（7 it）:
+  ①`ragEnabled()`=false(COPILOT_RAG_ENABLED=false)→retrieval せず EMPTY ②user メッセージ無し(assistant のみ)→EMPTY
+  ③messages 空→EMPTY ④末尾 user 空文字→EMPTY ⑤末尾 user 優先(先頭明確クエリ+末尾空→EMPTY)
+  ⑥`topScore < ragMinScore()`(COPILOT_RAG_MIN_SCORE=999999)→ragResult 保持しつつ grounding しない(directive null/footer 空)
+  ⑦閾値通過(min=0)→grounding 出力一式(directive 非null/contextBlock/citationFooter 非空/citationsHeader が ASCII-only)。
+  / コミット `4d51ee5` / `__tests__/copilot/rag-pipeline.test.ts`(7 it)。
+  **閾値ゲート `topScore >= ragMinScore()` を `<=` に mutation すると ⑥⑦ の2件が落ちる**ことを実測→`git checkout --` revert。
+  ※ragMinScore はパイプライン側のゲートのみで runRAG の passages には影響しない＝⑥⑦は同じ passages・ゲート判定のみ差分。
+### 次セッションへ
+- rag-pipeline は回帰固定済（再監査不要）。**これで S47-S52 の「lib/ 再走査で未テスト純関数発掘→契約固定」角度は
+  named 候補が完全に枯渇**（rag-pipeline まで消化済）。残るのは外部API fetch ラッパ(lib/sync/*-sync・lib/stats/{gsc,posthog})
+  ＝純関数でなく fetch+localStorage mock 要で夜間 marginal。
+- 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S53 で深く枯渇。新規夜間タスクは:
+  ①「過去が SAFE/latent 分類した同型 footgun の再検証」(S33/S41 角度) ②「属性有無だけ見て見落とした同型 a11y」(S33 角度)。
+- 日中候補群は不変（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export）。
