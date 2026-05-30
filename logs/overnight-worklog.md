@@ -863,3 +863,41 @@
   **夜間の安全な実害バグは深く枯渇**。残は日中候補（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/
   exam meta desc 短縮）か、さらなる未踏観点（例: prop配列のレンダー内変異 / Number()×route param の NaN伝播 / 
   hydration mismatch）の開拓を検討。
+
+## セッション22 2026-05-30 11:36 JST（S21起案の未踏3観点を全数監査 → 公開OGルートの半端ガード1件修復 + 2観点=実害ゼロ）
+- 冒頭ベースライン全緑実測: typecheck=0 / lint=0err（既存 ux-audit-screenshots.mjs 警告1のみ=本ループ無関係）/
+  test **274 passed**(61 files) / build緑（現 HEAD `11f8215`）。
+- done: 【実バグ=半端ガードで公開OG画像に "NaN%" 描画】`app/api/og/result/route.tsx` が
+  accuracy/total/correct を `parseInt(searchParams.get(x) ?? "0", 10)` で解釈していた。`?? "0"` は **null しか
+  捕捉できず**、`?accuracy=`（空文字）や `?accuracy=abc`（非数値）では NaN が漏れ、公開エンドポイント（SNS
+  スクレイパ/任意URL が到達可能）の OG 画像に **"NaN%" / "NaN 問正解 / NaN 問中"** が描画される。S20 で修復した
+  「focus-in したのに復帰しない」と同型の **half-implemented guard** クラス。兄弟ルート `/api/og` が既に持つ
+  `safeNumber`(null/空/非数値→fallback) に統一し、不正入力時 0 を描画。正常入力の表示は不変。/ コミット `739109f`
+  / 検証: typecheck0/lint0err/build緑。**实測**=本番ビルドを localhost:3123 起動し
+  `?accuracy=abc&correct=xyz&total=` が **"0%" / "0 問正解 / 0 問中"** を、`?accuracy=80&correct=16&total=20` が
+  **"80%(緑) / 16 問正解 / 20 問中"** を 200 image/png で描画することを PNG 目視で確認。修正前の
+  `parseInt('abc')`=NaN / `parseInt('')`=NaN を node で実測（崩れたら NaN% が出る＝実測差分）。
+  ※当該ルートは現状ソース未参照（S9 記録）だが公開到達可能な決定的エンドポイントの非破壊ハードニング。
+  日中候補（未参照なら削除検討）は据え置き。
+- SKIP(全数監査=実害ゼロ・S21起案 未踏観点「Number()×route param の NaN伝播」): 動的route/searchParam の
+  Number/parseInt/parseFloat 全17箇所を監査。indexable 動的ルートは regex検証＋dynamicParams=false/notFound、
+  数値searchParam は `Math.max/min`+`||0`/`Number.isFinite`/値比較フォールバックで全てガード済。唯一の漏れが
+  上記 og/result（修復）。`NotificationSettings.tsx:186` の `Number(e.target.value)` は **`<select>`(option値 0..23
+  固定)由来=NaN不能**＝false positive。`referral` の localStorage 由来は `?? "0"` で実害僅少。
+- SKIP(全数監査=実害ゼロ・未踏観点「hydration mismatch」): client component の初期レンダー経路で
+  localStorage/Date/Math.random/window を読んで DOM 出力する箇所を全数監査。全て `typeof window` ガード /
+  useEffect 内 / mounted フラグ / null-return ゲートで緩和済。SSR 初期HTMLと client 初期描画の不一致を起こす
+  裸の読取りは**不在**。`MockExamRunner:44` の Math.random は state 初期化用で DOM 非描画＝不一致なし。
+- SKIP(全数監査=実害ゼロ・未踏観点「reduce無初期値/Math.max空配列/裸 array index」): `.reduce(` 全25箇所は
+  **全て初期値あり**。`Math.max(...arr)`/`Math.min(...arr)` 3箇所は length チェック or `,1` フォールバック付き。
+  `arr[0]`/destructure→property は全て length ガード or optional-chain。empty-array 起因の throw/Infinity 描画は不在。
+  唯一 `lib/admin/metrics/mock-data.ts:53` の `series.reduce(...)/series.length` が series 空時 Infinity だが
+  `resolveRange`(from>to を swap)で空配列不能・admin/noindex・mock データ＝理論のみ＝SKIP（過大修正の罠回避）。
+
+## セッション22 まとめ
+- 実改善1件（公開OGルート `/api/og/result` の半端ガード→safeNumber 統一で "NaN%" 描画を防止 `739109f`・PNG实測）
+  + 全数監査SKIP3観点（NaN伝播 / hydration mismatch / reduce無初期値・空配列）すべて**実害ゼロを確定し記録**。
+- テーマ: S21起案の未踏3観点を全数監査。実害は og/result の half-implemented guard 1件のみ（S20 focus-restore と同型クラス）。
+- 次セッションへ: 上記3観点は一巡 done（残存ゼロを実測）。夜間の安全な実害バグは S1-S22 で網羅的に枯渇。
+  残は日中候補（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc 短縮/og-result 未参照なら削除）
+  or さらに未踏な観点（例: prop の readonly 違反 / useEffect cleanup の依存漏れ / メモ化キーの参照不安定）の開拓を検討。

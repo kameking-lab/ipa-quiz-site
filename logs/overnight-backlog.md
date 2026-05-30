@@ -4,6 +4,16 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション22):** P0 全件 done/SKIP。P1 進行中。
+> S22: S21起案の未踏3観点を全数監査。**実バグ1件修復**=`app/api/og/result/route.tsx` の数値クエリ解釈が
+> `parseInt(get() ?? "0")` で **null しか捕捉しない half-implemented guard**（`?accuracy=`空 / `=abc`非数値 で NaN漏れ）
+> →公開OG画像に "NaN%" 描画。兄弟 `/api/og` の `safeNumber` に統一し不正入力時0描画（`739109f`・PNG实測）。S20 focus-restore と同型の半端実装クラス。
+> SKIP(全数監査=実害ゼロ): ①Number()×route param NaN伝播=全17箇所ガード済（og/result のみ漏れ→修復、NotificationSettings の Number(select値)は false positive）
+> ②hydration mismatch=初期レンダー経路の裸 localStorage/Date/random/window 読取り不在（全て guard/effect/mounted で緩和）
+> ③reduce無初期値/Math.max空配列/裸 array index=全て初期値・length ガード・optional-chain 付き（admin mock-data の Infinity は resolveRange で空不能=理論のみ）。
+> **次は: 3観点とも一巡 done。夜間の安全な実害バグは S1-S22 で網羅的に枯渇。日中候補 or さらに未踏な観点**
+> **（prop の readonly 違反 / useEffect cleanup 依存漏れ / メモ化キーの参照不安定 等）の開拓を検討。**
+>
 > **状態 (2026-05-30 セッション21):** P0 全件 done/SKIP。P1 進行中。
 > S21: 新観点「共有データのインプレース破壊」を開拓・全数監査。**実バグ1件修復**=
 > `lib/seo/topics.ts::getQuestionsByTopic()` が内部キャッシュ配列の参照を漏らし、呼び出し側 /topics/[slug] が
