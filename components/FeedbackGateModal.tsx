@@ -111,6 +111,16 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
       <DialogContent>
+        {/* radix Dialog は開いた時点の DialogTitle しか読み上げず、送信後にフォームを
+            成功ビューへ差し替えても再アナウンスしない。常設の live region で送信中・
+            送信完了(無料枠解放)を SR へ通知する(WCAG 4.1.3 status messages)。 */}
+        <p role="status" aria-live="polite" className="sr-only">
+          {submitting
+            ? "送信しています。少々お待ちください。"
+            : submitted
+              ? "フィードバックを受け付けました。AI コパイロットが実質無制限になりました。"
+              : ""}
+        </p>
         {submitted ? (
           <>
             <DialogHeader>
