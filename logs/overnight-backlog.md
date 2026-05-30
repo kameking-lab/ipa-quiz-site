@@ -1,4 +1,26 @@
+> **更新 (2026-05-30 セッション63):** P0 全て done/SKIP。P1 進行中。
+> S63: **新角度発見=data/ は S1-S62 の Explore スイープ(全て lib/ スコープ)の盲点だった**。data/ に未テスト純関数寄り4本残存→**回帰固定4本**(実改善0・source 無変更, test 1144→1189)。
+> ①`lib/posthog.ts`=posthogCapture の fail-soft(未初期化→no-op/capture throw 握りつぶし)+env ゲート, `005254d`。②`data/blog/index.ts`=slug 一意性/サマリ降順/getRelatedPosts の limit/自己除外/関連性/explicit 優先(副産物: limit=0 off-by-one を latent pin・修正せず), `9bd7bc0`。③`data/success-stories/generators.ts`=buildSuccessStory 写像/テンプレ/publishedAt 未来 clamp(合成 offset で発火), `9f3fc51`。④`data/success-stories/index.ts`=レジストリ+2パス getSimilarPersonaStories(バケツをテスト側再実装で union 関連性検証), `ba11559`。各 mutation を sed で revert 実測。
+> **次の grep スコープ拡張先(data/ 続き)**: `data/features.ts`(getFeatureBySlug)・`data/recommended-books.ts`(buildAmazonUrl/Rakuten/isAsinFilled 等=アフィリ URL 書式 pin は read-only で安全, ID 変更は §10/§14 承認要)。`scripts/` も未スイープ。lib/ 残りは全て真に blocked(fetch/SDK/auth-db/AudioContext/server-only/barrel/type-only)、feature-flags=dead code SKIP 確定。
+
 ﻿# 夜間自律改善 バックログ（優先度順）
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P0-追加（社長指示・最優先 / 2026-05-30 夜 追加）— 内部リンク2件
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+実測調査で「コード側 SEO/UX はほぼ天井」だが、確実に効く内部リンク追加が2件残ると判明（S8 の 404 リンク74件修正と同種・副作用小）。**実在URLのみリンク（404を作らない）が最重要制約。当て推量で特定ページへ飛ばさない＝機械的に決まるものだけ。**
+
+### P0-追加-A: ブログ記事 → 演習への導線CTA追加
+- 実測根拠: ブログ記事3本すべてが演習ページ（/quiz・/q）への直接リンク0本。試験紹介ページまでしか読者を運べていない取りこぼし。
+- 方針: 各記事の対象試験区分（post.exam 等の既存メタ）から機械的にCTAのリンク先を決定。記事末尾に「この内容を問題で解く」CTAを1つ追加。対象区分が無い/曖昧なら汎用の「問題を解く」入口（ホーム主要CTA or /search）へ。新規ルート作成禁止・実在ルートのみ・SSRでHTML出力（クローラブル）。既存レイアウト踏襲・最小diff。
+- 検証: 代表記事HTMLにCTAリンク実在＋リンク先200を実測。CTA存在＋href実在をテスト追加。404を作らない。
+
+### P0-追加-B: 問題ページ /q に「前の問題・次の問題」順次リンク追加
+- 実測根拠: 同回の順次リンクが薄い（同回リンク2件のみ）。同一試験回を問番号順に辿れる一本道が無い。
+- 方針: /q/[exam]/[yearSeason]/[section]/[qnum] に同一 exam/yearSeason/section 内 qnum 順で前後リンクを追加。最初は「前」なし・最後は「次」なし。実在問題ページのみリンク（存在しない qnum へ飛ばさない）。SSR出力・既存回答UIを壊さない・最小diff・適切なa11yラベル。
+- 検証: HTMLに前/次リンク実在＋リンク先200を実測。境界（最初に前なし/最後に次なし）テスト。E2Eで「次の問題へ」遷移。
+
+> 着手記録: 2026-05-30 23:2x JST 開始（社長指示の別セッション）。A・B は別コミット。完了後は通常 P1 守りに復帰。
 
 > **状態(2026-05-30 セッション61):** P0 全件 done/SKIP。P1 進行中。
 > S61: S60 handoff の角度③（a11y 条件付きマウント live region の S33 同型再検証）+ 未テスト純関数の枯渇再確認。**実改善0・回帰固定0・コード無変更**（ベースライン全緑実測のみ）。
