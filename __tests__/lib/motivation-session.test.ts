@@ -1,5 +1,13 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
-import { summarizeSession, type SessionMeta, type SessionAnswer } from "@/lib/motivation/session";
+import {
+  summarizeSession,
+  startSession,
+  recordSessionAnswer,
+  readSession,
+  clearSession,
+  type SessionMeta,
+  type SessionAnswer,
+} from "@/lib/motivation/session";
 
 // session.ts の summarizeSession は1セッション終了時のサマリ（正答率・所要時間・
 // 分野別内訳・「明日のおすすめ問題数」）を出す純関数。正答率の四捨五入・分野集計の
@@ -111,5 +119,63 @@ describe("summarizeSession — recommendedTomorrow（閾値分岐とクランプ
 
   it("空セッションは baseline=10 として +5 → 15", () => {
     expect(summarizeSession(meta([])).recommendedTomorrow).toBe(15);
+  });
+});
+
+// 上の summarizeSession は純関数だが、sessionStorage 往復層
+// (startSession/recordSessionAnswer/readSession/clearSession) は未カバーだった。
+// 1学習セッションの開始〜回答追記〜読み出し〜破棄と、壊れた保存値の fail-soft を固定する。
+describe("session ストレージ往復", () => {
+  beforeEach(() => {
+    window.sessionStorage.clear();
+  });
+
+  it("startSession は mode と開始時刻を持つ空セッションを書き、readSession が反映する", () => {
+    startSession("review");
+    expect(readSession()).toEqual({ startedAt: NOW, mode: "review", answers: [] });
+  });
+
+  it("recordSessionAnswer は回答を順に追記する", () => {
+    startSession("random");
+    recordSessionAnswer(ans(true));
+    recordSessionAnswer(ans(false));
+    const s = readSession();
+    expect(s?.answers).toHaveLength(2);
+    expect(s?.answers.map((a) => a.correct)).toEqual([true, false]);
+  });
+
+  it("セッション未開始でも recordSessionAnswer は mode=unknown で暗黙開始する", () => {
+    recordSessionAnswer(ans(true));
+    const s = readSession();
+    expect(s?.mode).toBe("unknown");
+    expect(s?.answers).toHaveLength(1);
+  });
+
+  it("readSession は未保存なら null", () => {
+    expect(readSession()).toBeNull();
+  });
+
+  it("startedAt が数値でない保存値は null に倒す", () => {
+    window.sessionStorage.setItem("ipa-quiz:session:current:v1", JSON.stringify({ mode: "x" }));
+    expect(readSession()).toBeNull();
+  });
+
+  it("mode 非文字列は unknown・answers 非配列は空配列に正規化する", () => {
+    window.sessionStorage.setItem(
+      "ipa-quiz:session:current:v1",
+      JSON.stringify({ startedAt: NOW, mode: 42, answers: "nope" }),
+    );
+    expect(readSession()).toEqual({ startedAt: NOW, mode: "unknown", answers: [] });
+  });
+
+  it("壊れた JSON は null に fail-soft する", () => {
+    window.sessionStorage.setItem("ipa-quiz:session:current:v1", "{broken");
+    expect(readSession()).toBeNull();
+  });
+
+  it("clearSession は保存セッションを破棄する", () => {
+    startSession("random");
+    clearSession();
+    expect(readSession()).toBeNull();
   });
 });
