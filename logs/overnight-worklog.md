@@ -546,3 +546,42 @@
   (b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、
   (e)admin チャート role=img(低優先)、(f)これまでの SKIP 再評価・新観点の開拓。コードは総じて高品質で
   夜間に安全な実害バグは枯渇傾向。
+
+## セッション14 2026-05-30 09:33 JST（新観点: クイズ keydown ハンドラが修飾キーを無視しブラウザ/OSショートカットを奪う）
+- SKIP(過大修正の罠・実害なし=意図的設計): `lib/storage/history.ts` の `getRecentIds(n)` が
+  `slice(-n*20)...slice(0,n*20)` で **n*20** 件返す件を精査(Explore が「n件返すべきバグ」と指摘)。
+  だが `*20` は両所に**意図的**に書かれ、2呼び出し元が依存: ①filter.ts の「直近2回除外」(CLAUDE.md§11)は
+  「直近2ラウンド(≒20問/ラウンド)」を除外する設計=n*20 が正 ②OfflineHome は getRecentIds(20)で
+  重複entryをdedupして**20ユニーク**を得るため過剰fetchが必要。n件に変えると両機能が壊れる。
+  最終 `.slice(0,n*20)` は冗長(no-op)だが無害。テストも intent を固定せず=仕様。→ 直さない(SKIP)。
+- SKIP(理論のみ・実害なし): `shuffleChoices` の配列answer(`answer[0]`のみremap)/重複choice text(indexOf先頭一致)。
+  data/questions/ を全grep し **配列answerの問題=0件**・4択で重複textも実質なし。現状実害ゼロ=SKIP。
+- done: 【実バグ=UX/操作性 axis-A】`/q`(SEOランディングの解答プレイヤー)`QuestionAnswerCard` の数字キー選択が
+  修飾キーを無視しており、**Ctrl/Cmd+1〜4(ブラウザのタブ切替)** が e.key="1".."4" に一致 → preventDefault+
+  選択肢選択に化け、タブ切替を奪っていた。修飾キー(meta/ctrl/alt)時は早期return(Shiftはガードせず=他プレイヤーの
+  "?"ヘルプ等に影響なし)。素の数字キーは維持。/ コミット `78e501d` / 検証: typecheck0/lint0/test248緑(+新規1)/
+  build緑。新規テストは Ctrl+1・Cmd+2 で履歴非増・素の1で増を検証し、**git stash で落ちる**ことを実測。
+- done: 【同テーマ横展開・実バグ】`/quiz` プレイヤー `QuizPlayer` の global keydown も同型。さらに
+  **Ctrl/Cmd+R(再読込)** が `e.key==="r"`(スター切替)に一致して preventDefault され**再読込を奪う**最悪ケースを含む。
+  同じ修飾キーガードを付与。/ コミット `a982ac0` / 検証: typecheck0/lint0/test252緑(+新規3)/build緑。
+  新規 `QuizPlayer.keyboard.test`(next/navigation mock)は Ctrl+R/Cmd+R でスター不変・Ctrl+1で未選択・素のrで切替を
+  検証し **git stash で3件落ちる**ことを実測(※2イベント相殺の落とし穴を回避し単一イベントで検証=テスト自体も修正)。
+- done: 【同テーマ横展開・実バグ】ストリーム連続出題 `StreamQuizPlayer` の数字キーも同型(Ctrl/Cmd+1-4 奪取)。
+  同じ修飾キーガードを付与し、3プレイヤー全ての修飾キー奪取を解消。/ コミット `1315006`
+  / 検証: typecheck0/lint0/test254緑(+新規2)/build緑。新規テストは Ctrl+1/Cmd+2 で履歴非増・素の1で増を検証し
+  **git stash で落ちる**ことを実測。
+- SKIP(クリーン): 他の keydown ハンドラ全数監査(grep)。SiteHeader/CopilotPanel(×3)/Streamの内側ダイアログ=
+  Escape のみ(preventDefaultなし・修飾と無関係で無害)。KeyboardShortcutsHelp は "?"(Shift+/)+Escape のみで
+  ブラウザショートカットでない=無害。修飾キー奪取バグは上記3プレイヤーのみ=残存ゼロを確認。
+
+## セッション14 まとめ
+- 実改善3件(クイズ keydown ハンドラの修飾キー奪取バグ、各テスト付き)+ SKIP3件(getRecentIds=意図的設計/
+  shuffleChoices=理論のみ/他keydown監査=クリーン)。
+  1. QuestionAnswerCard: /q の数字キーが Ctrl/Cmd+1-4 を奪うのを防止(`78e501d`)
+  2. QuizPlayer: /quiz の数字キー/r が Ctrl+R 再読込・Ctrl+1-4 を奪うのを防止(`a982ac0`)
+  3. StreamQuizPlayer: 連続出題の数字キーが Ctrl/Cmd+1-4 を奪うのを防止(`1315006`)
+- 新観点「global keydown が修飾キーを無視しブラウザ/OSショートカット(Ctrl+R再読込・Ctrl+1-4タブ切替)を奪う」を
+  開拓・一巡。3プレイヤーに同型の修飾キーガードを横展開し完了。Escape/"?" 系ハンドラは無害と確認(残存ゼロ)。
+- 次セッションへ: keydown 修飾キー観点 done。残候補は (a)tabs.tsx 矢印キー(日中・影響大)、(b)コピー通知統一(日中)、
+  (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)admin チャート role=img(低優先)、
+  (f)SKIP 再評価・新観点の開拓。夜間に安全な実害バグは枯渇傾向(lib ロジックは Hamilton 法選抜含め高品質)。

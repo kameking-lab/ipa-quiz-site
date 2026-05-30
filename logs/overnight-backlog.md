@@ -4,6 +4,18 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション14):** P0 全件 done/SKIP。P1 進行中。
+> S14: 新観点「global keydown が修飾キーを無視しブラウザ/OSショートカットを奪う」を開拓・一巡。
+> 3つのクイズプレイヤーの keydown ハンドラが Ctrl/Cmd/Alt を無視しており、Ctrl/Cmd+1-4(タブ切替)が
+> 数字キー選択に、QuizPlayer では Ctrl/Cmd+R(再読込)がスター切替(r)に化けて preventDefault され
+> ブラウザ/OS ショートカットを奪っていた。修飾キー時は早期 return するガードを横展開:
+> ①QuestionAnswerCard(/q SEOランディング, `78e501d`) ②QuizPlayer(/quiz, `a982ac0`) ③StreamQuizPlayer(連続出題, `1315006`)。
+> Shift はガードせず("?"ヘルプ等を維持)。各テスト付き(git stash で落ちることを実測)。
+> getRecentIds(n*20) は意図的設計(直近2ラウンド除外/OfflineHome 20ユニーク)=SKIP、shuffleChoices 配列answer/重複textは
+> 現状データに不在=理論のみ SKIP、他 keydown(Escape/"?")は無害=クリーン。
+> **次は: tabs.tsx 矢印キー(日中・影響大)、コピー通知統一/MilestoneToast ref化/exam meta desc 短縮(日中)、**
+> **admin チャート role=img(低優先)、SKIP 再評価・新観点の開拓。夜間に安全な実害バグは枯渇傾向。**
+>
 > **状態 (2026-05-30 セッション13):** P0 全件 done/SKIP。P1 進行中。
 > S13: S5(AfternoonResultView)で確立した「不完全タブ契約→aria-pressed トグル」の決定を同型の残り2箇所へ
 > 横展開し完了。①EssayIndustryTabs(/essays 業種別模範答案セレクタ・論文添削C軸, `6e4fb97`)
