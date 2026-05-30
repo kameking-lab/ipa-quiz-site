@@ -28,4 +28,27 @@ describe("Label in Name (WCAG 2.5.3) — bookmarks / mock-exam", () => {
     // 旧・可視テキストを連続して含まない aria-label が残っていないこと
     expect(source).not.toContain('aria-label="苦手分野の問題を集中練習する"');
   });
+
+  it("模試結果のシェアリンクの aria-label が可視テキスト「結果をシェア」を含む", () => {
+    const source = readFileSync(
+      join(process.cwd(), "app/mock-exam/MockExamRunner.tsx"),
+      "utf8",
+    );
+    expect(source).toContain("結果をシェア");
+    // aria-label が可視テキストを連続部分文字列として含む（"Xで" の割り込みを排除）
+    expect(source).toMatch(/aria-label="結果をシェア（/);
+    expect(source).not.toContain('aria-label="結果をXでシェア"');
+  });
+
+  it("クイズ結果の X シェアリンクの aria-label が可視テキスト「X でシェア」を含む", () => {
+    const source = readFileSync(
+      join(process.cwd(), "components/quiz/QuizPlayer.tsx"),
+      "utf8",
+    );
+    expect(source).toContain("X でシェア");
+    // aria-label が可視テキスト「X でシェア」を連続部分文字列として含む
+    expect(source).toContain('aria-label="X でシェア（');
+    // 旧・"（Twitter）で結果を" が割り込んだ aria-label が残っていないこと
+    expect(source).not.toContain('aria-label="X（Twitter）で結果をシェア');
+  });
 });

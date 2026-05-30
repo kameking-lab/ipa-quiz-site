@@ -660,7 +660,7 @@ function QuizCompleteScreen({
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
-            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X（Twitter）で結果をシェア（新しいタブで開く）" className={btnClass}>
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X でシェア（結果・新しいタブで開く）" className={btnClass}>
               <Share2 className="h-4 w-4" aria-hidden="true" /> X でシェア
             </a>
             <a href={lineUrl} target="_blank" rel="noopener noreferrer" aria-label="LINEで結果をシェア（新しいタブで開く）" className={btnClass}>
