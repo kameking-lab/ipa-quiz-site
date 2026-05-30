@@ -4,6 +4,13 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション44):** P0 全件 done/SKIP。P1 進行中。
+> S44: S43 handoff の残・未テスト純関数候補を消化＝**回帰固定3モジュール**（prompt-assembly/corpus/exam-data・計30 it・test 675→705）。実改善0件（source 無変更）。全件「崩れたら落ちる」を mutation→revert で実測。
+> ①`lib/copilot/prompt-assembly.ts`(assembleCopilotPrompt＝AIコパイロット B軸 の system+user メッセージ組み立て。セクション順序 COPILOT→character→length→ragDirective→問題コンテキスト→profile→ragContextBlock・条件付き挿入の門番[characterEnabled かつ有効id のみ/profile は回答5件以上/rag は null/空で除外]・クイックアクションの先頭付与[最後が user のときのみ]・入力 messages 非破壊, `cc27d2e`) ②`lib/copilot/corpus.ts`(getCorpus＝RAG コーパス組み立て。BM25 フィールド重み[カテゴリ×2/用語名×6/英語×3]・解説20字未満除外フィルタ・doc形状[q:/g:プレフィックス・URL]・プロセス内キャッシュ同一性, `6b8e1e8`) ③`lib/seo/{exam-stats,exam-resources,exam-content}.ts`(全試験ハブ /[exam] が描画する静的データの**値**不変条件＝型では守れない: 学習時間 low<=high・合格率 NN-NN・ロードマップ monthsBefore 厳密降順/非負・公式リンク IPA https・relatedExams 自己参照/重複なし+実在コード=S8 内部リンク健全性, `97ffc91`)。
+> **★S43 handoff の `citations(markdown footer)` は既テスト済**（`__tests__/copilot/citations.test.ts` が buildCitationFooter/buildRAGContextBlock/responseHasInlineCitation を網羅）＝候補から除外（再監査不要）。
+> **教訓: prompt-assembly/corpus/exam-stats/exam-resources/exam-content は回帰固定済（再監査不要）。fe ロードマップは 0 でなく 1ヶ月前着地が現挙動（特性化済）。未テスト純関数候補は枯渇＝残るは search-index(tokenize/makeSnippet/scoreQuestion=private・export 追加要で日中向き) のみ。**
+> **次は: 夜間の安全な実害バグ・安全な未テスト純関数とも S1-S44 で深く枯渇。残候補は日中候補群（pii over-mask/tabs矢印キー/コピー通知統一/MilestoneToast ref化/SM-2 EF/apple-touch-icon PNG/search-index export 追加）のみ。新規夜間タスクは「過去が SAFE/latent 分類した同型 footgun の再検証」(S33/S41 角度)か「過去が属性有無だけ見て見落とした同型 a11y」(S33 角度)を掘るのが有効。**
+>
 > **状態 (2026-05-30 セッション43):** P0 全件 done/SKIP。P1 進行中。
 > S43: S34-S42 の「未テスト中核純関数の契約固定」を継続＝**回帰固定4モジュール**（sitemap-xml/copilot-visibility/citation-meta/structured-data・計46 it・test 629→675）。実改善0件（source 無変更）。全件「崩れたら落ちる」を source mutation→revert で実測。
 > ①`lib/seo/sitemap-xml.ts`(renderSitemapIndexXml/renderMainSitemapXml/renderBooksSitemapXml/チャンク境界＝noindex(essays/success-stories)・301(/quiz,/support)除外のクローラシグナル契約 + 全indexable質問のチャンク間重複/欠落ゼロ分割, `424eb5f`) ②`lib/copilot/visibility.ts`(setCopilotPanelOpen/isCopilotOpen/subscribe＝desktop/mobile 2variant の count セマンティクス + Math.max(0,…)クランプで stray close が負に desync しない, `8d905a5`) ③`lib/copilot/citation-meta.ts`(buildCitationMetas/encode/decodeCitationsHeader＝base64(JSON(UTF-8))往復で日本語タイトルを ASCII-only HTTPヘッダで無損失運搬するクロスランタイム契約 + snippet空白圧縮/320字切詰め/ordinal連番, `131833e`) ④`lib/seo/structured-data.ts`(buildOrgNode/buildWebPageNode/SITE_ID/ORG_ID＝@graph ノード連結で publisher→ORG_ID・isPartOf→SITE_ID の @id 参照整合, `ee8d533`)。
