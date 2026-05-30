@@ -4,6 +4,20 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション18):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは枯渇を再確認。
+> S18: 独立した新観点2クラスを全数監査=**実害バグゼロを確定**(コード無変更)。
+> ①数値表示破綻(>100%/NaN/0除算/配列境界/split): Explore提案5件を全て自己精査で棄却。
+>   StudyPlan 0除算=days<=0 guard済 / essay split=context:string必須+静的データ / MetricsDashboard pct>100%=
+>   fetchMetrics は常に mock 返却(PostHog未実装)で入力は常に0..1 + admin noindex / XFF空先頭=Vercel整形済で到達不能&逆に厳格化 /
+>   ユーザー向け正答率は全て0除算ガード済。桁区切りも整合(大=toLocaleString/小=素)。
+> ②effect・async正しさ(stale deps/fetch race/派生state/リスナー漏れ): Explore提案4件を全て棄却。
+>   SearchClient履歴=result/query同時更新で整合(eslint-disable意図的) / CopilotPanel send=useCallback deps に
+>   dailyLimit/feedbackSubmitted 含む+sendRef追従 / CloudSyncPanel=OAuthは全画面リダイレクトで再マウント /
+>   DashboardOverview=React18でunmount後setStateはno-op・別マウントは別state。重複id/idrefも衝突なし。
+> → S15-S17 の枯渇判定を独立観点で再確認。**過大修正の罠を回避しコード無変更**(worklog/backlog記録のみ)。
+> **次は: 下記「P1新観点(S18起案)」から1つ選び全数監査するか、日中候補のうち最も自己完結・低リスクな**
+> **(d)MilestoneToast 防御的ref化(同型が S1/S4 で2回実害化・予防目的)を慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション17):** P0 全件 done/SKIP。P1 進行中。
 > S17: 冒頭で S16 の daysUntil コミット(`ff9f1df`)を含む HEAD の `pnpm build` 緑を再確認(コード変更不要)。
 > S16 で lib/learning `daysUntil` を直した「JST境界 off-by-one カウントダウン」テーマを残り2箇所へ横展開し完了:
@@ -171,6 +185,25 @@ P0 完了後に着手。**1所見 = 1コミット**。下記の「領域」を�
 - 1セッションで領域1〜2個ぶんを点検し、実害ある所見を1件ずつコミット。
 - 「理論上の指摘・実害なし」は SKIP（worklog 記録）。
 - 観点が出尽くした領域は worklog に「領域X 一巡 done」と記録し次の領域へ。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 新観点（S18 起案・未踏。次セッション以降で全数監査せよ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S1-S18 で a11y名/aria-live/チャートalt/タブ/aria-current/OG/robots/dead-link/canonical/sitemap/
+stale-timer/JST境界/keydown修飾/数値破綻/effect-async を網羅一巡。**まだ全数監査していない観点**:
+
+- **①ユーザー向け日付の TZ 表示**: countdown(残り日数)は JST 是正済だが、**表示用の日付文字列**
+  (`toLocaleDateString`/`new Date(...).toISOString().slice(0,10)` 等)が JST 00:00〜09:00 に前日表示しないか。
+  特に server component で render される日付。client は端末TZ(JS人=JST)で概ね安全だが要確認。
+- **②soft 404**: 既知の無効動的ルートが HTTP 404 を返すか(`notFound()` 経由)、それとも 200 でフォールバック
+  描画していないか。SEO 実害(soft 404 は index 汚染)。`.next` 成果物 or localhost の status を curl 実測で。
+- **③`<time dateTime>` セマンティクス**: 日付テキストに `<time>` 要素が使われているか(SEO/a11y の軽微改善・
+  ただし「壊れ」でなければ機能追加=overreach の可能性。実害判定を慎重に)。
+- **④画像の width/height 明示(CLS)**: raw `<img>`/next `<Image>` で寸法未指定がレイアウトシフトを起こさないか。
+- **⑤フォーカストラップ/復帰**: モーダル(FeedbackGateModal/Dialog 系)を閉じた後にフォーカスがトリガーへ戻るか。
+- **⑥sitemap lastmod の妥当性**: lastmod が実コンテンツ更新を反映するか・固定値で陳腐化していないか。
+注意: 上記はいずれも「壊れ(実害)」が確認できた場合のみ最小 diff で修正。理論のみは SKIP(過大修正の罠)。
+夜間は枯渇傾向のため、各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**(次セッションの重複監査を防ぐ)。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## メモ

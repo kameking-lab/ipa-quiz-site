@@ -725,3 +725,33 @@
 - 次セッションへ: JST境界カウントダウン観点は完了 done(残存ゼロ grep 実測)。残候補は (a)StudyPlanClient min の
   JST化(日中・実害僅少)、(b)tabs.tsx 矢印キー(日中・影響大)、(c)コピー通知統一(日中)、(d)MilestoneToast ref化(日中)、
   (e)exam meta desc 短縮(日中)。**夜間に安全な実害バグは S1-S17 で網羅一巡し枯渇傾向**。新観点の開拓 or 日中候補の慎重実施を検討。
+
+## セッション18 2026-05-30 10:45 JST（新観点を2クラス開拓し全数監査=実害バグゼロを確認・コード無変更）
+- 冒頭ベースライン全緑実測: typecheck=0 / lint=0 err(既存 ux-audit-screenshots.mjs 警告1のみ=未追跡・本ループ無関係) /
+  test **267 passed**(59 files) / build 完走(コード無変更の現 HEAD `0630101`)。
+- **新観点① 表示の数値破綻(>100% / NaN / 0除算 / 配列境界 / 文字列 split)** を全数監査 → **実害バグなし**:
+  - Explore 提案5件を自己精査で全て false-positive/no-実害と確定:
+    1. `StudyPlanClient.tsx:78` の `expectedQuestions*2/days` 0除算→Infinity説 = **誤り**。直前 `:69 if (days<=0) return;` で days>=1 が保証済。
+    2. essay `page.tsx:167` `question.context.split("\n")[0]` が null で 500 説 = **誤り**。`lib/essays/types.ts:40 context:string`(必須)+静的TSデータ(API非経由)で TS strict が null を排除。
+    3. `MetricsDashboard.tsx:39 pct()` が >100%/NaN を出す説 = **no-実害**。`fetchMetrics`(`lib/admin/metrics/posthog.ts:40-51`)は実装上**常に `buildMockMetrics` を返す**(PostHog 実連携は未実装)。mock の share/passRate は 0除算ガード済(`sessionsSum===0?0`/`first===0?0`)・ctr は 0.03〜0.10 bound。pct への入力は常に 0..1 で >1/NaN は到達不能。かつ admin は noindex/auth-gated/運用者専用。
+    4. `lib/rate-limit/server.ts:209` XFF 先頭空セグメント説 = **理論のみ**。Vercel は XFF を整形済で渡すため空先頭は本番到達せず。仮に空でも key="" は別クライアントを統合=**より厳格**(quota 突破にはならない=agent の主張は逆)。dead-letter。
+    5. ユーザー向け正答率表示(`QuizPlayer.tsx:362/371` `:601 answered>0?`、`StreamSummary.tsx:35 length||1`、`ExamProgressBar.tsx:52 >0?`、`HomeExamGrid.tsx:126 total>0?`、`LearningCalendar.tsx:145 count>0?`)は**全て 0除算ガード済**=NaN/Infinity 表示不能。
+  - 数値表示の桁区切り整合も確認: 大きい累計(`HomeHeroLede`/`ExamProgressBar`/`SearchClient`/`Dashboard*`)は `toLocaleString("ja-JP")`、
+    小さい区分別/日別カウント(<1000)は素の数値=用途妥当で不整合なし。`formatElapsed`(QuizPlayer:41)は 60分超で "61:01" 表記だがストップウォッチとして正常(実害なし)。
+- **新観点② React effect/async-fetch の正しさ(stale deps / fetch race / 派生stateの非同期 / リスナー解放漏れ)** を全数監査 → **実害バグなし**:
+  - Explore 提案4件を自己精査で全て false-positive/no-実害と確定:
+    1. `SearchClient.tsx:320-333` 検索履歴保存 effect deps=[result] が query stale 説 = **誤り**。result は query から派生し**同一レンダーで同時更新**されるため effect closure の query は result と整合。`eslint-disable` は意図的(result 変化時のみ・それを生んだ query で保存)=正。
+    2. `CopilotPanel.tsx:269-275` storage event で `feedbackSubmitted` 更新も `send` が stale 説 = **誤り**。`send` は useCallback で deps に `dailyLimit`/`feedbackSubmitted` を**含む**(:566-567)。state 変化→再生成され `sendRef.current` も effect(:580-584)で追従。stale closure 無し。
+    3. `CloudSyncPanel.tsx:35-42` auth fetch が OAuth 後に再実行されない説 = **誤り**。NextAuth OAuth は**全画面リダイレクト**で /settings 復帰時にコンポーネント再マウント→effect 再実行→auth 正常解決。
+    4. `DashboardOverview.tsx:60-86` fetchQuestionMeta に abort/unmount ガード無しで stale 上書き説 = **no-実害**。React 18+ で unmount 後 setState は no-op(警告撤廃済・leak なし)。別マウントは別 state を持つため表示データの相互汚染は起きない。
+  - 検証クラスの追加監査もクリーン: 重複 `id` 属性(components の静的 id は単一インスタンス・衝突なし)、aria-describedby idref(S5/S6 追加分の衝突なし)。
+- → **結論**: 本セッションで新たに開拓した2観点(数値表示破綻 / effect・async 正しさ)+ 既存クラス(重複id/桁区切り)を全数監査したが、
+  **安全に夜間修正すべき実害バグはゼロ**。S15-S17 の「枯渇」判定を独立した新観点で**再確認**。過大修正の罠を避けコード変更は行わない(本コミットは worklog/backlog の記録のみ)。
+- 申し送り(次セッション): 残る実装候補は依然すべて**日中判断向き**(tabs矢印キー=影響大 / コピー通知統一=広域 / MilestoneToast ref化=latentのみ / exam meta desc 短縮=content編集 / StudyPlanClient input min の JST化=実害僅少)。
+  夜間の安全枠では新規実害バグの産出は困難。次セッションは backlog の新 P1観点(下記)から1つ選び全数監査するか、上記日中候補のうち最も自己完結・低リスクな(d)MilestoneToast 防御的 ref 化を「将来回帰の予防」目的で慎重実施(同型が過去2回=S1/S4 で実害化した実績あり)を検討。
+
+## セッション18 まとめ
+- 実改善0件(全数監査の結果、安全に夜間修正すべき実害バグはゼロと確定)+ 新観点2クラス+既存2クラスを監査(全て false-positive/no-実害)。
+- Explore 2回(数値破綻5件 / effect・async4件 計9件の提案)を**全て自己精査で棄却**=過大修正の罠を実地で回避。コード無変更。
+- ベースライン全緑(typecheck0/lint0err/test267/build緑)を冒頭実測。S15-S17 の枯渇判定を独立観点で再確認。
+- 次セッションへ: backlog 末尾に新 P1観点を追記済(下記参照)。
