@@ -13,13 +13,18 @@ interface StoredMap {
   lastEntryCount: number;
 }
 
-const EMPTY: StoredMap = { byDate: {}, lastSeenAt: 0, lastEntryCount: 0 };
+// 空状態は必ずファクトリで新規生成する。共有定数を `{...EMPTY}` で浅くコピーすると
+// 入れ子の byDate オブジェクトが共有され、recordStudyOnDate の `stored.byDate[date]=`
+// が共有状態を破壊する footgun になる（S34/S36/S37/badges と同型）。
+function emptyState(): StoredMap {
+  return { byDate: {}, lastSeenAt: 0, lastEntryCount: 0 };
+}
 
 function read(): StoredMap {
-  if (typeof window === "undefined") return { ...EMPTY };
+  if (typeof window === "undefined") return emptyState();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.studyDays);
-    if (!raw) return { ...EMPTY };
+    if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as Partial<StoredMap>;
     return {
       byDate:
@@ -31,7 +36,7 @@ function read(): StoredMap {
         typeof parsed.lastEntryCount === "number" ? parsed.lastEntryCount : 0,
     };
   } catch {
-    return { ...EMPTY };
+    return emptyState();
   }
 }
 

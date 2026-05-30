@@ -6,6 +6,8 @@ import {
   intensityLevel,
   totalStudyDays,
   totalAnswered,
+  recordStudyOnDate,
+  getHeatmapMap,
 } from "@/lib/motivation/heatmap";
 import { jstDateString } from "@/lib/streak/core";
 import type { HistoryEntry } from "@/lib/storage/history";
@@ -77,6 +79,18 @@ describe("intensityLevel", () => {
     expect(intensityLevel(29)).toBe(3);
     expect(intensityLevel(30)).toBe(4);
     expect(intensityLevel(100)).toBe(4);
+  });
+});
+
+describe("空状態の絶対参照純度（共有 EMPTY 破壊 footgun の回帰ガード）", () => {
+  it("空ストレージで recordStudyOnDate→破壊した後、キー消失後の空読みが汚染されない", () => {
+    // 空ストレージで記録 → read() の空経路が共有 EMPTY.byDate を返すと
+    // recordStudyOnDate の `stored.byDate[date]=` が共有定数を破壊する余地がある。
+    recordStudyOnDate("2024-10-21");
+    // studyDays キーが消える経路（外部クリア等）をシミュレート
+    window.localStorage.clear();
+    // 修正前（read が共有 EMPTY を浅コピー）だと byDate が汚染されたまま残る
+    expect(getHeatmapMap()).toEqual({});
   });
 });
 
