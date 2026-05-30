@@ -20,6 +20,38 @@ beforeEach(() => {
   window.localStorage.clear();
 });
 
+// MISSIONS は Record<MissionId,MissionDef> 型でキー網羅とフィールド型は守られるが、
+// 型で表現できない以下の不変条件は手書き編集で静かに壊れうる。ミッションカードは
+// title/description/icon を直接描画し、target は進捗バー/受取ゲート、xpReward は
+// 付与XP を駆動する。冗長な id フィールドとキーの一致（コピペ drift）・文字列非空・
+// target 正値（0 だと即達成/ゼロ除算的挙動）・xpReward 非負を回帰固定する。
+describe("MISSIONS のデータ整合性", () => {
+  it("各エントリの id フィールドはキーと一致する（コピペ drift 防止）", () => {
+    for (const [key, def] of Object.entries(MISSIONS)) {
+      expect(def.id, `key=${key} の id`).toBe(key);
+    }
+  });
+
+  it("title / description / icon は非空", () => {
+    for (const id of ALL_IDS) {
+      const m = MISSIONS[id];
+      expect(m.title.trim().length, `${id} title`).toBeGreaterThan(0);
+      expect(m.description.trim().length, `${id} description`).toBeGreaterThan(0);
+      expect(m.icon.trim().length, `${id} icon`).toBeGreaterThan(0);
+    }
+  });
+
+  it("target は正・xpReward は非負の整数", () => {
+    for (const id of ALL_IDS) {
+      const m = MISSIONS[id];
+      expect(m.target, `${id} target`).toBeGreaterThan(0);
+      expect(Number.isInteger(m.target), `${id} target 整数`).toBe(true);
+      expect(m.xpReward, `${id} xpReward`).toBeGreaterThanOrEqual(0);
+      expect(Number.isInteger(m.xpReward), `${id} xpReward 整数`).toBe(true);
+    }
+  });
+});
+
 describe("readMissions — fresh day", () => {
   it("seeds exactly 3 distinct valid missions with empty progress/claimed", () => {
     const state = readMissions("2024-04-01");
