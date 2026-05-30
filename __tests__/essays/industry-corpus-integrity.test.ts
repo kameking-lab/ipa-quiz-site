@@ -67,4 +67,23 @@ describe("essay industry corpus integrity (all exam codes)", () => {
       }
     }
   });
+
+  // 模範解答（合格答案例）の三段（序論/本論/結論）はそのままユーザーへ描画される
+  // (EssayIndustryTabs:95,104,113)。型は `string` を保証するが非空は保証しないため、
+  // 半端に作成されたデータが空の「本論」セクション(charCount 0)を出荷しないよう固定。
+  it("every model-answer section (intro/body/conclusion) is a non-empty string", () => {
+    for (const { exam, qId, ind } of allAnswers) {
+      for (const [section, text] of [
+        ["intro", ind.intro],
+        ["body", ind.body],
+        ["conclusion", ind.conclusion],
+      ] as const) {
+        expect(typeof text, `${exam}/${qId} ${section}`).toBe("string");
+        expect(
+          text.trim().length,
+          `${exam}/${qId} industryId=${ind.industryId} ${section}`,
+        ).toBeGreaterThan(0);
+      }
+    }
+  });
 });
