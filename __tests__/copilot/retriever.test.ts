@@ -126,6 +126,85 @@ describe("BM25 retriever", () => {
     const ids = results.map((r) => r.doc.id);
     expect(ids).toContain("g:暗号化");
   });
+
+  // retrieve() の rerank/ピン留めには、BM25 では取れない glossary doc を救済する
+  // 3 系統がある: ①タイトルトークン完全一致(既存テスト) ②タイトルトークン過半数一致
+  // (弱採用) ③エイリアス完全一致。②③が崩れると paraphrase/略称クエリで用語解説が
+  // 候補から消える(コパイロット RAG の主救済策)ため、各分岐を回帰固定する。
+  it("glossary pin: 過半数タイトル一致(ratio>=0.5)の glossary を弱採用する", () => {
+    const docs: CorpusDoc[] = [
+      doc("q:a", "foo bar baz long irrelevant question body text here", {
+        kind: "question",
+      }),
+      doc("q:b", "foo bar baz another unrelated question explanation", {
+        kind: "question",
+      }),
+      {
+        id: "g:partial",
+        kind: "glossary",
+        // titleNorm = "alpha beta gamma" → 3 トークン
+        title: "用語集: alpha beta gamma",
+        url: "/glossary#x",
+        // BM25 ではクエリと一致させない(text にクエリ語を入れない)
+        text: "zzz unrelated body",
+        meta: {},
+      },
+    ];
+    const idx = buildIndex(docs);
+    // クエリは alpha/beta の 2 トークンを供給 → hit 2/3 ≒ 0.667 >= 0.5 で弱採用。
+    // gamma を欠くため title 完全一致ではない(②の経路)。
+    const results = retrieve(idx, "alpha beta", 2);
+    expect(results.map((r) => r.doc.id)).toContain("g:partial");
+  });
+
+  it("glossary pin: 過半数未満(ratio<0.5)の glossary は採用しない", () => {
+    const docs: CorpusDoc[] = [
+      doc("q:a", "foo bar baz long irrelevant question body text here", {
+        kind: "question",
+      }),
+      doc("q:b", "foo bar baz another unrelated question explanation", {
+        kind: "question",
+      }),
+      {
+        id: "g:partial",
+        kind: "glossary",
+        title: "用語集: alpha beta gamma",
+        url: "/glossary#x",
+        text: "zzz unrelated body",
+        meta: {},
+      },
+    ];
+    const idx = buildIndex(docs);
+    // alpha 1 トークンのみ → hit 1/3 ≒ 0.333 < 0.5 で不採用。
+    const results = retrieve(idx, "alpha", 2);
+    expect(results.map((r) => r.doc.id)).not.toContain("g:partial");
+  });
+
+  it("glossary pin: エイリアス完全一致で BM25・タイトルとも非一致の用語をピン留めする", () => {
+    const docs: CorpusDoc[] = [
+      doc("q:a", "encryption key management overview question body", {
+        kind: "question",
+      }),
+      doc("q:b", "another encryption key topic explanation text", {
+        kind: "question",
+      }),
+      {
+        id: "g:pubkey",
+        kind: "glossary",
+        // titleNorm = "公開鍵暗号"。クエリ "RSA encryption key" には
+        // タイトルトークン(公開/開鍵/鍵暗/暗号)が 1 つも含まれない。
+        title: "用語集: 公開鍵暗号",
+        url: "/glossary#pubkey",
+        // BM25 でも一致しない(text にクエリ語なし)
+        text: "公開鍵暗号方式の説明",
+        meta: {},
+      },
+    ];
+    const idx = buildIndex(docs);
+    // "RSA" は GLOSSARY_ALIASES["公開鍵暗号"] のエイリアス → 用語 "公開鍵暗号" を強制ピン。
+    const results = retrieve(idx, "RSA encryption key", 2);
+    expect(results.map((r) => r.doc.id)).toContain("g:pubkey");
+  });
 });
 
 describe("maxQueryIdf", () => {
