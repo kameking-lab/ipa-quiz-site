@@ -4,6 +4,14 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション36):** P0 全件 done/SKIP。P1 進行中。
+> S36: S34/S35 の「未テスト純関数の契約固定」を継続中に、**S34 が history.ts で1件直した shared-mutable-EMPTY footgun がコードベースに体系的に潜在**していると発見＝**実改善5件**。
+> 回帰固定2: ①`study-plan/generator`(listDates/formatLocalDate/isWeekend/generateStudyPlan 不変条件, `1b577ee`・14件) ②`gamification/economy`(levelForXp 閾値/xpToNext クランプ/gold台帳, `7976290`・14件)。
+> 実バグ修復3（read() が空ストレージ時に共有 const EMPTY を**参照返し**＋呼び出し側が**その場破壊**＋**write(EMPTY)/clearAll の amplifier**で concrete 実害）: ③`achievements`(unlock push/評価++ で EMPTY 汚染→実績誤判定・XP誤付与, `1e9569e`) ④`bookmarks`(toggle/merge 破壊＋clearAllBookmarks が EMPTY 書戻し→新規ユーザー初セッションで「全て削除」が初回ブクマを消し残す, `778872e`) ⑤`spaced-repetition`(recordReview 破壊＋resetSrs が EMPTY 書戻し→初回復習分が reset で残る・SM-2 ロジックは不変, `c058f58`)。各回帰テスト付き・source revert で落ちることを実測。test369→423。
+> **次セッション最有力（防御的ハードニング・1サイクルで batch 可）**: 同型 footgun の**latent 残り3件**を emptyState() ファクトリ化（economy と同じ最小 diff）。**concrete amplifier(write(EMPTY)/キー削除)が無く実害は出ていないが**同クラス: ①`lib/mock-exam/storage.ts`(recordMockExam: `data.history.push`) ②`lib/learning/mock-scores.ts`(recordMockScore: `state.scores.push`) ③`lib/storage/custom-tags.ts`(ensureCatalogForNames/mergeServerCustomTags: `data.tags[name]=`)。
+> **教訓: 「read() が共有 EMPTY を参照返し」×「呼び出し側その場破壊(push/代入/++)」×「write(EMPTY)/キー削除 amplifier」が揃うと concrete 実害。amplifier 無し＝latent。読取り側が新規オブジェクト構築なら SAFE（economy/onboarding/heatmap/streak-storage/user-context/daily-challenge/xp/missions/badges/sync は再監査不要）。修正は全て emptyState() ファクトリ化＝最小 diff・挙動不変。**
+> **その後: S35 の残り未テスト純関数（success-stories/related-content・seo/* ヘルパ）の契約固定、または日中候補（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出/SM-2 EF 準拠/apple-touch-icon PNG）。**
+>
 > **状態 (2026-05-30 セッション35):** P0 全件 done/SKIP。P1 進行中。
 > S35: S34 の「**未テストの lib 純関数を監査→実害発掘 or 契約を回帰固定**」角度を継続。リテンション/ゲーミフィケーション中核の純関数群（streak/xp/srs/heatmap/daily-goal/combo/coupon/missions/daily-challenge/filter/mock-exam-selection）を**read-only 全数精査＝明確な実害バグは無し（コード成熟）**。テスト皆無の最重要4モジュールの契約を回帰固定（source 無変更・S34 と同型の安全 infra）: ①`streak/core`(JST境界/連続/中断/マイルストーン, `f69b47d`・15件) ②`xp`(二次曲線×二分探索逆関数・全100段で逆関数一致, `45ff964`・10件) ③`mock-exam/selection`(Hamilton最大剰余配分・shuffle非依存の決定的座席配分, `990d8fe`・6件) ④`daily-challenge`(連続日/perfect連続/完了済み冪等, `af22cf3`・11件)。test327→369。
 > SKIP(日中候補): `spaced-repetition::applyGrade` が失敗時に EF 非更新（正準SM-2は全grade更新だが doc は「適応版」明記＝意図的の可能性・挙動変更につき夜間SKIP）/`coupon::read` の `source` 無意味三項（実害ゼロの dead-branch・cleanup候補）。

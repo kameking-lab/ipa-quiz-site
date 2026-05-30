@@ -1266,3 +1266,48 @@
 - 教訓（次セッションの重複監査防止）: **streak/core・xp・mock-exam/selection・daily-challenge は回帰テスト固定済（再監査不要）。combo/daily-goal/heatmap/missions/filter は read-only 監査で実害ゼロ確定。** 残る未テストの純関数候補: study-plan/generator・gamification/economy・gamification/achievements・success-stories/related-content・seo/* ヘルパ群（次セッションの固定候補）。
 - 次セッターへ: 夜間の安全な実害バグは S1-S35 で深く枯渇。残は**日中候補**（tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc短縮/reduced-motion 共有フック抽出/apple-touch-icon PNG/SM-2 EF 準拠/coupon dead-branch cleanup）。
   夜間継続なら S34/S35 の「未テスト純関数の契約固定」が最も安全・高価値＝上記「残る未テスト候補」を1つずつ固定するのが推奨。
+
+## セッション36 2026-05-30 15:28 JST（S35継続：未テスト純関数の契約固定 → 同型「共有EMPTY破壊」footgun を3件発掘・修復）
+- 冒頭ベースライン全緑実測: typecheck0/lint0err（既存 ux-audit 警告1のみ・未追跡）/test **369 passed**(83 files)/build緑（HEAD `5953bd2`）。
+  git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>` で限定）。
+- done【回帰固定】`lib/study-plan/generator.ts` の純関数契約を固定（/account 学習プラン生成・S35 候補）。
+  listDates(両端含む範囲/閏年・月跨ぎ/逆順・不正→空)・formatLocalDate(ゼロ詰め)・isWeekend(土日/平日)・
+  generateStudyPlan(試験当日除外・空/過去日・フェーズ early→middle→late 単調・task key 一意・平日/週末予算・
+  level による必要時間スケール) を網羅(14件)。/ コミット `1b577ee` / typecheck0・lint0err・test383・build を単独実測で全緑。source 無変更。
+- done【回帰固定】`lib/gamification/economy.ts`（XPレベリング閾値・ゴールド台帳・S35 候補）。
+  levelForXp(閾値境界で正確昇格・単調・16段飽和)・xpToNext(帯内進捗・pct[0,1]クランプ・最大超でも0除算なし)・
+  addXp/addGold/spendGold(balance/earned/spent 独立・残高超過拒否で状態不変・ちょうど0まで使用可・非正は no-op) 14件。
+  / コミット `7976290` / typecheck0・lint0err・test397 を単独実測で緑。source 無変更（readXp/readGold は新規オブジェクト構築で footgun 無し＝SAFE と確認）。
+- done【実バグ修復＝S34 history.ts と同型 footgun】`lib/gamification/achievements.ts`。read() が空ストレージ時に
+  module-level 共有 const EMPTY を**参照で返し**、unlock()(data.unlocked.push)・evaluateAfterAnswer(data.bestStreakCorrect=)・
+  evaluateAfterMock(consecutivePassedMocks++) が**その場破壊**するため EMPTY が恒久汚染→空ストレージからの read が
+  「解除済み実績」「非ゼロ連続合格数」を返し実績誤判定・XP/ゴールド誤付与。emptyState() ファクトリ化で是正。
+  / コミット `1e9569e` / 回帰テスト14件(閾値ラダー/正答率ゲート/連続/冪等/XP・ゴールド付与)。
+  **修正前は同一テスト内の localStorage.clear() を跨いで EMPTY 汚染が残り4件落ちる**ことを実測（崩れたら落ちる検証）。test397→411。
+- done【実バグ修復＝同型 footgun・concrete 実害】`lib/storage/bookmarks.ts`。readRaw() が共有 EMPTY を参照で返し
+  toggleBookmark/mergeServerBookmarks が data.entries[id] 代入/delete で破壊、かつ **clearAllBookmarks() が writeRaw(EMPTY) と
+  汚染済み定数を書き戻す**ため、**新規ユーザーが初セッションで最初のブックマーク(=空ストレージ経路でEMPTY汚染)後に
+  「全て削除」を押すとその初回ブックマークだけ消えずに残る**実害（bookmarks ページに「全て削除」UI 在＝S30 記録）。
+  emptyData() ファクトリ化 + clearAll を新規空オブジェクト書込みに是正。/ コミット `778872e` / 回帰テスト(空経路追加→全削除で完全に空)
+  + 未テストの mergeServerBookmarks(last-write-wins) も固定。**source revert で当該回帰が [ap-q1] 残存で落ちる**ことを実測。test411→413。
+- done【実バグ修復＝同型 footgun・concrete 実害】`lib/learning/spaced-repetition.ts`。read() が共有 EMPTY を参照で返し
+  recordReview が state.cards[id]= で破壊、かつ **resetSrs() が write(EMPTY)** と汚染済み定数を書き戻すため、
+  **初セッションで最初の復習後に SRS リセットしても初回カードが残る**実害。emptyState() ファクトリ化 + resetSrs を新規空書込みに是正。
+  SM-2 採点ロジック(applyGrade)は不変（S35 が day-time 候補とした EF 挙動には**触れない**）。/ コミット `c058f58`
+  / 回帰テスト10件(SM-2 間隔/EF・grade マッピング・due/priority・reset footgun)。**source revert で reset 回帰が q1 残存で落ちる**ことを実測。test413→423。
+- SKIP(latent のみ・concrete amplifier 不在＝夜間は安全側): 同型 footgun の残り3ファイル。Explore + 自己精査で
+  **read() が共有 EMPTY を参照返し＋呼び出し側がその場破壊**するのは計7ファイル(history[S34]/achievements/bookmarks/srs[修復済] +
+  下記3)。残り3は **write(EMPTY) 等の amplifier も localStorage キー削除トリガも無い**ため、初回 push 後に localStorage が
+  即座に populate され実害は出ない（汚染は module EMPTY に残るが、キーが再び不在になる経路が app に無い）＝latent。
+  ①`lib/mock-exam/storage.ts`(recordMockExam: data.history.push) ②`lib/learning/mock-scores.ts`(recordMockScore: state.scores.push)
+  ③`lib/storage/custom-tags.ts`(ensureCatalogForNames/mergeServerCustomTags: data.tags[name]=)。
+  **次セッション候補（防御的ハードニング・1サイクルで batch 可）**: 3件とも emptyState() ファクトリ化（economy と同じ最小 diff）。
+  読取り側が新規オブジェクト構築の SAFE 群（economy/onboarding/heatmap/streak-storage/user-context/daily-challenge/xp/missions/badges/sync）は再監査不要。
+
+## セッション36 まとめ
+- 実改善5件（回帰固定2: study-plan/economy + 実バグ修復3: achievements/bookmarks/srs＝全て S34 history.ts と同型「共有EMPTY破壊」footgun）。test369→423（+54件）。
+- テーマ: S34/S35 の「未テスト純関数の契約固定」角度を継続中に、**S34 が history.ts で1件直した shared-mutable-EMPTY footgun がコードベースに体系的に潜在**していることを発見。
+  read() が空ストレージ時に共有 const を参照返しし、呼び出し側がその場破壊（push/代入/++）するクラス。**concrete 実害（reset/clearAll が汚染定数を書き戻す）を持つ3件を修復**、latent 3件は backlog 送り。
+- 教訓（次セッションの重複監査防止）: **「read() が共有 EMPTY を参照返し」かつ「呼び出し側がその場破壊」かつ「write(EMPTY)/キー削除の amplifier」が揃うと concrete 実害**（achievements/bookmarks/srs で実証）。
+  amplifier 無し＝latent（mock-exam/storage・mock-scores・custom-tags＝backlog）。読取り側が新規オブジェクト構築なら SAFE。修正は全て emptyState() ファクトリ化＝最小 diff・挙動不変・各回帰テスト付き。
+- 次セッターへ: 上記 latent 3件の防御的ファクトリ化（1サイクル batch）が最有力。その後は S35 の残り未テスト純関数候補（success-stories/related-content・seo/* ヘルパ群）の契約固定、または日中候補。
