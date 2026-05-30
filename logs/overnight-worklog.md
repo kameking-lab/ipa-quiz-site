@@ -2337,3 +2337,21 @@ S69/S70 は `lib/search/question-index.ts` を「export 追加＋server-only moc
 - 日中候補（不変・挙動変更+E2E 必要で夜間SKIP）: ContactForm 成功カードfocus・pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
 - 実改善は日中候補に依存。次セッションの夜間安全角度＝過去 SAFE/latent footgun の別モジュール再検証(S33/S41)か a11y 回帰再点検(S66-S68)の取りこぼし掘り直し。新規 export 追加時の per-name 再スイープも有効。
 - clean(コード無変更): scroll-margin(S32) 回帰再点検＝in-page アンカー(`href="#..."`)は app/components 全3箇所のみ(#apply・#explanation・#main-content)。`#apply`(student:111)/`#explanation`(q page:375)とも `scroll-mt-20` 保持、`#main-content`(layout:146)は skip-link 先で margin 不要＝取りこぼし/再混入ゼロ。次回 scroll-margin 再監査不要。
+
+---
+
+## セッション77（夜間自律ループ）2026-05-31 03:05〜 JST
+
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 196files・1499 / build 緑 2510 SSG)。S76 が次角度に挙げた「a11y 回帰再点検(S66-S68) 取りこぼし掘り直し」を実施→**WCAG 4.1.3(Status Messages)の取りこぼしクラスを発見し実改善4件**。送信成功時にフォーム全体が成功カードへ差し替わる(=フォーカス先が unmount される)パターンで、成功カードに role/aria-live が無く SR 利用者に成功が一切告知されない箇所が4つ残存。S61 が「ContactForm 成功カードは focus 移動=日中候補」と分類していたが、**focus 移動でなく role="status"+aria-live="polite" の属性付与(挙動/視覚/フォーカス無変更)で十分=S68 の aria-label 追加と同じ夜間安全クラス**と判明。EmailLeadCapture(別セッション既済)が同型の gold-standard。**4件 done・実改善4・test 1499→1507(+8 it・196→200 files)。**
+
+- done: `app/contact/ContactForm.tsx` 送信成功カード — `40b6223` / `__tests__/components/ContactForm.test.tsx`(新規2 it)。`status==="ok"` で form→成功カードに差し替わる div に `role="status"` `aria-live="polite"` 付与。mutation(両属性除去)で findByRole("status") 落ち実測→cp revert。
+- done: `app/auth/signin/EmailSignInForm.tsx` Magic Link 送信成功カード — `a186c7d` / `__tests__/components/EmailSignInForm.test.tsx`(新規2 it・next-auth/react と analytics/events を vi.mock)。`sent` で「メールを送信しました」カードに同属性付与。mutation 実測。
+- done: `app/student/StudentIdUpload.tsx` 学割申請完了カード — `5bfa77e` / `__tests__/components/StudentIdUpload.test.tsx`(新規2 it・jsdom 欠落の URL.createObjectURL を補填)。`submitted` で「申請を受け付けました」カードに同属性付与。mutation 実測。
+- done: `app/account/notifications/NotificationSettings.tsx` 結果メッセージブロック — `e48f132` / 既存 `NotificationSettings.test.tsx`(+2 it=計5)。`status.kind!=="idle"` の条件付きマウント結果ブロック(loading/success/error)に同属性付与。テストメール送信成功(fetch mock)で告知を実測・mutation 実測。
+
+★教訓: **WCAG 4.1.3 の「フォーム→成功カード全差し替え」パターンは role="status"+aria-live の属性付与だけで夜間安全に解消可(focus 移動=日中とは別の、より小さい正しい修正)。** 過去セッションが「focus 移動が必要=日中候補」と早合点していた取りこぼしクラス。発掘法=成功文言(受け付け/送信しました/完了しました 等)を grep し `role="(status|alert)"` を持たない条件付きマウント div を per-file 確認。S67 の「a11y 回帰再点検は取りこぼしで実改善が出る」doctrine の好例。
+
+### 次セッションへ
+- **WCAG 4.1.3 status-message クラスはほぼ消化**: 成功カード差し替え4件(本セッション done)＋既済(EmailLeadCapture/QuestionFeedback/FeedbackGateModal/AfternoonPlayer/CloudSyncAutoSync は全て role=status 保持)。残=`app/review/ReviewClient.tsx`(`done` 採点結果画面=大きなビュー変更でフォーカス移動が本筋=日中候補SKIP)・`app/auth/verify-request/page.tsx`(静的ページ本文=ナビゲーション時 SR が通常読み上げ=対象外)。
+- 次の夜間安全角度＝同じ「過去が日中と早合点した取りこぼし」を別 a11y クラスで掘る(S67/S68/S77 doctrine)。per-name gap(回帰固定)は S76 で打ち止め。
+- 日中候補（不変）: pii over-mask（PII安全側=据置推奨）・tabs矢印キー・MilestoneToast ref化（latent のみ=実害なし）・SM-2 EF（意図的据置）・apple-touch-icon PNG（要バイナリ生成）。
