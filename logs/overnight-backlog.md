@@ -4,6 +4,16 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション12):** P0 全件 done/SKIP。P1 進行中。
+> S12: 新観点「コンテナ要素の ARIA ロール/命名の妥当性」を開拓・一巡。recharts(非interactive SVG)の
+> role=img は正だが、interactive 子を持つ/role 無しで命名する2パターンは実害。①ホーム LearningCalendar の
+> ヒートマップが role=img で focusable button 30個を隠していたのを role=group に是正(`c1de599`・高トラフィック)
+> ②/account LearningHeatmap のコンテナが role 無し div への aria-label(命名禁止で無視)→ role=group 付与(`6713bf0`)。
+> MockExamRunner の時間タイルは可視ラベルで冗長=実害なし(SKIP)。多クラス監査(アイコンボタン/入力欄モバイル属性/
+> ゼロ除算/JSON.parse未ガード/リスナー解放漏れ)は全てクリーン。同型残存ゼロを grep 実測。
+> **次は: dangling idref の app 全域スイープ(S12 は mock-exam のみ確認)、tabs矢印キー/コピー通知統一/**
+> **MilestoneToast ref化/exam meta desc 短縮(日中)、admin チャート(低優先)、SKIP 再評価。**
+>
 > **状態 (2026-05-30 セッション11):** P0 全件 done/SKIP。P1 進行中。
 > S11: 「データ可視化チャートの代替テキスト(WCAG 1.1.1)」を /account(noindex) チャートへ横展開し完了。
 > ①DashboardProgress 習熟度レーダー(`e9d3710`) ②WeaknessHeatmapClient 分野別レーダー(`16bb265`)

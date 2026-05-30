@@ -457,3 +457,43 @@
 - 次セッションへ: チャート alt-text 観点は public+account 完了 done。残候補は (a)tabs矢印キー(日中)、
   (b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、
   (e)admin チャート role=img(低優先)、(f)これまでの SKIP 再評価5周目。新観点の開拓も検討。
+
+## セッション12 2026-05-30 09:15 JST（新観点: コンテナ要素の ARIA ロール/命名の是正）
+- 監査(クリーン/SKIP): 既存の成熟領域を多クラス監査し実害バグの残存ゼロを確認 —
+  ①アイコンのみボタンのアクセシブルネーム欠落(Explore 全数走査=残存ゼロ・全て aria-label/sr-only/可視テキスト保有)
+  ②入力欄のモバイル属性(type=email/autoComplete 等は主要メール/連絡フォームで充足)
+  ③パーセンテージのゼロ除算(QuizPlayer/StreamSummary 等は answered>0 や `|| 1` でガード済)
+  ④localStorage JSON.parse の未ガード(lib/components/app 全件 try/catch 済)
+  ⑤addEventListener のクリーンアップ漏れ(components 全件 return で removeEventListener)。
+  → いずれも修正対象なし。11セッション分の蓄積でコードは総じて高品質。
+- done: 【実バグ=ARIA 契約違反 WCAG/4.1.2】ホーム(最高トラフィック)`LearningCalendar` の学習量ヒートマップ
+  コンテナが `role="img"` で、内部に各日の aria-label を持つ **focusable `<button>` 30個**を含んでいた。
+  img ロールは子孫を presentational として支援技術のブラウズモードから隠すため、各日の詳細
+  (日付・問題数・正答率)が SR 利用者に届かなかった。recharts チャート(非interactive SVG)の
+  role=img とは別ケース。interactive 子を持つコンテナに正しい `role="group"` へ是正(要約ラベルは
+  グループ名として保持)。/ コミット `c1de599` / 検証: typecheck0/lint(err0)/test242緑(+新規2)/build緑。
+  新規 `LearningCalendar.test.tsx`(role=group 検証 + img でない退行ガード + 各日 button が公開される)は
+  **role=img に戻すと2件とも落ちる**ことを実測(jsdom/aria-query でも img 下では button が隠れることを確認=実害裏付け)。
+- done: 【実バグ=無効 ARIA / 方向付け欠落】`/account` ダッシュボード `LearningHeatmap` のコンテナ `<div>` が
+  `aria-label="過去365日の学習ヒートマップ"` を持つが **role が無かった**。ARIA 仕様では role を持たない
+  generic 要素は命名禁止(Naming Prohibited)で aria-label が多くの AT に無視され、ヒートマップの要約名が
+  SR 利用者に届かなかった(子セルは aria-label 付き button で正しく公開済)。`role="group"` を付与し命名を
+  有効化。/ コミット `6713bf0` / 検証: typecheck0/lint(err0)/test243緑(+新規1)/build緑。新規
+  `LearningHeatmap.test.tsx`(findByRole group)は **role を外すと落ちる**ことを実測。
+- SKIP(実害なし・冗長): `MockExamRunner` の時間配分タイル3つ(558/564/570行)も role 無し div への aria-label
+  だが、内側の可視テキスト(「42秒」等)+ 直下の可視ラベル(「平均/問」「最長（問X）」「合計時間」)で情報が
+  完全に伝わるため、aria-label が無視されても実害なし。過大修正の罠回避で SKIP。
+- SKIP(クリーン): 同型「role の無い要素への aria-label / 誤 role」横展開監査。components/app の
+  `<div|span|ul|ol|p ... aria-label>` を全数 grep。AfternoonResultView/ShareButtons/OnboardingTour/
+  QuizPlayer/settings は適切な role(group/radiogroup/region) 保有。`<ul aria-labelledby>` 系の idref
+  (result-categories/result-time/result-wrong)は全て実在(dangling なし)。修正は上記2件のみで残存ゼロ。
+
+## セッション12 まとめ
+- 実改善2件(コンテナ要素の ARIA ロール/命名の是正、各テスト付き)+ SKIP多数(多クラス監査=クリーン)。
+  1. LearningCalendar: ヒートマップ role=img→group(interactive 子を隠す違反の是正、`c1de599`・ホーム=高トラフィック)
+  2. LearningHeatmap: コンテナに role=group 付与(命名禁止 generic への aria-label を有効化、`6713bf0`・/account)
+- 新観点「コンテナ要素の ARIA ロール/命名の妥当性」を開拓・一巡。recharts の role=img(非interactive=正)とは
+  区別し、interactive 子を持つ/role 無しで命名する2パターンの実害を是正。同型の残存ゼロを grep 実測。
+- 次セッションへ: ARIA ロール/命名観点は一巡 done。残候補は (a)tabs矢印キー(日中)、(b)コピー通知統一(日中)、
+  (c)MilestoneToast ref化(日中)、(d)exam meta desc 短縮(日中)、(e)admin チャート role=img(低優先)、
+  (f)dangling idref の app 全域スイープ(本セッションは mock-exam のみ確認)、(g)SKIP 再評価。
