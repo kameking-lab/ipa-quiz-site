@@ -901,3 +901,28 @@
 - 次セッションへ: 上記3観点は一巡 done（残存ゼロを実測）。夜間の安全な実害バグは S1-S22 で網羅的に枯渇。
   残は日中候補（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc 短縮/og-result 未参照なら削除）
   or さらに未踏な観点（例: prop の readonly 違反 / useEffect cleanup の依存漏れ / メモ化キーの参照不安定）の開拓を検討。
+
+## セッション23 2026-05-30 11:53 JST（S22起案の未踏3観点を全数監査 → 全観点=実害ゼロ。コード無変更）
+- 冒頭ベースライン全緑実測: test **274 passed**(61 files)（現 HEAD `af1e17f`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）は本ループ無関係＝コミットに巻き込まない。
+- SKIP(全数監査=実害ゼロ・観点「useEffect cleanup の依存漏れ / listener leak」): addEventListener を持つ .tsx 全21ファイルを監査。
+  各 effect の add/remove が同一参照か・cleanup return の有無を全数確認。**全て同一参照＋cleanup 完備＝leak 不在**。
+  ※ 並行 Explore が `CopilotPanel.tsx:244-258`/`1453-1460` を「dep が true→false で early-return しcleanupを飛ばし listener が積層」と
+  HIGH 指摘したが**React のライフサイクル誤認＝false positive**。React は依存変化時、新 effect 本体の実行**前に必ず前回 effect の
+  cleanup を走らせる**ため、true→false 遷移では前回(true時に張った)cleanup が listener を除去し、新本体が early-return するだけ＝leak 不能。
+  コードを実読し確認（前回 cleanup が remove する→新本体は add しない）。修正不要。
+- SKIP(全数監査=実害ゼロ・観点「index-key × 位置依存 state の state-bleed」): `CopilotPanel.tsx:1045` の `messages.map((m,i)=> key={i})` ＋
+  `copiedIdx`(コピー確認チェックの位置 state) を並行 Explore が「新着で index がシフトしチェックが誤メッセージに出る」と指摘も**false positive**。
+  `setMessages` 全7箇所を実読＝**append-only**（`[]`クリア / `prev=>[...prev,x]`追記 / `nextMessages=[...messages,user]`）で**既存 index は不変**＝
+  チャットは末尾追記のみ。コピー2秒窓中に既存メッセージの index がずれる経路は存在せず（クリア時は当該ボタン非描画＝無害）＝state-bleed 不能。
+  他の index-key .map は全て静的・非並べ替え・内部 state 無しの読み取り専用リスト（feedback/tips/採点基準等）＝無害。
+- SKIP(全数監査=実害ゼロ・観点「非ユニーク React key の reconciliation バグ」): .tsx 全域の `key={...}` を監査。動的リストの key は
+  全て安定ユニーク値（`q.id`/`slug`/`href`/`exam.id`/category 等）。index key は静的リスト限定。`ComboCounter key={combo}`/
+  `ComboBurst` 系は AnimatePresence の**意図的 remount-for-animation**＝正。衝突しうる非ユニーク key は不在。
+- 次セッションへ: 上記3観点（cleanup leak / index-key state-bleed / 非ユニーク key）は一巡 done＝実害ゼロを実測記録。
+  **教訓: effect cleanup leak の「early-return で cleanup を飛ばす」系指摘は React が前回 cleanup を先行実行するため大半が false positive。
+  チャット等 append-only リストの index-key は既存 index 不変で state-bleed しない。** 次セッションは下記 backlog の S23 起案の未踏観点を検討。
+
+## セッション23 まとめ
+- 実改善0件（コード無変更）+ 全数監査SKIP3観点（useEffect cleanup leak / index-key state-bleed / 非ユニーク key）すべて**実害ゼロを確定し記録**。
+- 並行 Explore の HIGH 指摘2件（CopilotPanel の listener 積層 / copiedIdx チェック誤表示）はいずれも **React ライフサイクル/append-only 誤認の false positive** と実読で棄却。過大修正の罠を回避しコード無変更（worklog/backlog 記録のみ）。
+- 夜間の安全な実害バグは S1-S23 で網羅的に枯渇を再々確認。残は日中候補 or さらに未踏な観点（backlog S23 起案）。

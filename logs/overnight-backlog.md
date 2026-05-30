@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション23):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは枯渇を再々確認。
+> S23: S22起案の未踏3観点を全数監査＝**全観点で実害ゼロを確定（コード無変更）**。
+> ①useEffect cleanup leak（addEventListener 全21 .tsx）＝全て同一参照＋cleanup 完備で leak 不在。
+> ②index-key × 位置依存 state の state-bleed（CopilotPanel messages/copiedIdx）＝append-only で既存 index 不変＝bleed 不能。
+> ③非ユニーク React key の reconciliation バグ＝動的リスト key は全て安定ユニーク、index key は静的リスト限定、ComboCounter は意図的 remount。
+> **重要な教訓（次セッションの重複監査・誤修正を防ぐ）**: 並行 Explore が CopilotPanel に2件 HIGH を出したが両方 **false positive**——
+> (a)「dep が true→false で early-return し cleanup を飛ばし listener 積層」は **React が依存変化時に新 effect 本体の前に必ず前回 cleanup を実行する**ため leak 不能、
+> (b)「新着メッセージで index シフトしコピーチェックが誤表示」は **append-only リストでは既存 index が不変**のため発生不能。
+> → effect-cleanup / index-key 系の「理論上 leak/bleed」指摘は実読で大半が棄却される。実害が実測できない限り SKIP（過大修正の罠）。
+> **次は: 下記「P1新観点（S23 起案）」から1つ選び全数監査するか、日中候補（tabs矢印キー/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮）の慎重実施を検討。**
+>
 > **状態 (2026-05-30 セッション22):** P0 全件 done/SKIP。P1 進行中。
 > S22: S21起案の未踏3観点を全数監査。**実バグ1件修復**=`app/api/og/result/route.tsx` の数値クエリ解釈が
 > `parseInt(get() ?? "0")` で **null しか捕捉しない half-implemented guard**（`?accuracy=`空 / `=abc`非数値 で NaN漏れ）
@@ -247,6 +258,27 @@ stale-timer/JST境界/keydown修飾/数値破綻/effect-async を網羅一巡。
 - **⑥sitemap lastmod の妥当性**: lastmod が実コンテンツ更新を反映するか・固定値で陳腐化していないか。
 注意: 上記はいずれも「壊れ(実害)」が確認できた場合のみ最小 diff で修正。理論のみは SKIP(過大修正の罠)。
 夜間は枯渇傾向のため、各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**(次セッションの重複監査を防ぐ)。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 新観点（S23 起案・未踏。次セッション以降で全数監査せよ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S1-S23 で a11y名/aria-live/チャートalt/タブ/aria-current/OG/robots/dead-link/canonical/sitemap/stale-timer/
+JST境界/keydown修飾/数値破綻/effect-async/focus-restore/localStorage-guard/time-element/regex-lastIndex/
+array-mutation/cleanup-leak/index-key-bleed/非ユニークkey を網羅一巡。**まだ全数監査していない観点**:
+
+- **⑦JSON-LD の数値/列挙の妥当性**: 構造化データ（Quiz/Question/Article/BreadcrumbList/ItemList 等）の
+  `position`/`numberOfItems`/`itemListElement.length` が実描画件数と一致するか、列挙値（@type/inLanguage 等）が
+  schema.org 準拠か。`.next` 成果物 or localhost の JSON-LD を抽出して実測（理論でなく出力値で判定）。
+- **⑧canonical/og:url の絶対URL・末尾スラッシュ整合**: 動的ルートの canonical が trailing-slash / クエリ有無で
+  自己参照とズレないか（重複正規化の崩れ）。※S15 で base canonical 固定は意図的と確認済＝その判断を尊重し「壊れ」のみ拾う。
+- **⑨`disabled`/`aria-disabled` ボタンのキーボード到達性**: 送信ボタン等が `disabled` で読み上げから消える vs
+  `aria-disabled` で理由を伝えるか。送信中スピナーの aria-busy 有無（実害＝SR が完了/失敗を把握できるか）。
+- **⑩数値の桁区切り・単位の i18n 整合**: `toLocaleString` の locale 未指定で SSR/CSR 不一致 or 環境差が出ないか
+  （hydration mismatch は S22 で別途確認済だが「数値整形」観点では未走査）。
+- **⑪空配列/単一要素時の文言の単複・ゼロ状態**: 「N 問」「N 件」等がゼロ/1件で不自然にならないか、空リストの
+  empty-state UI と next-action があるか（領域横断で indexable ページ優先）。
+注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
+各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## メモ
