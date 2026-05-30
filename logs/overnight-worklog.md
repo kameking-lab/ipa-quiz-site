@@ -1779,3 +1779,14 @@ S50 handoff が名指しした「残る未テスト純関数候補」3件を消�
   （mutation→`git checkout --` revert で「崩れたら落ちる」を実測、commit 前に typecheck 単独実行）。
   success-stories は noindex だが related-content は推薦ロジックの純関数で固定価値あり。
 - 本セッションは出力遅延が重く gate を実測観測できないと判断し、上記の着手は次回送り（コード変更なし）。
+
+### セッション52 done (出力遅延が落ち着き1サイクル完遂)
+- **done: `lib/success-stories/related-content.ts` の getRelatedSuccessStoriesByExam 回帰固定** / commit `6e3b3f4`
+  - grep 検証で __tests__ 未 import の唯一の真・未テスト純関数と確認(basename 一致の誤検出群は除外済)。
+  - 契約: limit 上限(既定3)・試験フィルタ・newest-first prefix・上限超過で無パディング・limit 0/該当なし→[]。
+  - oracle に既テストのデータ層 getSuccessStoriesByExam を使い、`.slice(0, limit)` と一致比較(persona 増加に頑健)。
+  - 検証: 新テスト 7 it 全緑 → `.slice(0, limit)`→`.slice(0, limit+1)` mutation で 3 件失敗を実測 → `git checkout --` revert。
+  - 全緑ゲート: typecheck=0 / lint=0 / test=0(906→**913** it, +7) / build=0。source 無変更(テスト追加のみ)。
+- これで S51 handoff 系の「lib/ 再走査で未テスト純関数」角度は **named 候補が完全に枯渇**(残るは rag-pipeline=async/mock 要のみ)。
+- 本セッションの教訓: 非対話セッションの tool 出力は重い遅延バッファで「空」に見えることがある＝故障ではない。
+  実行はされているので、検証は「1コマンドに集約→ファイル出力→次ターンで Read」が安全。exit code を信頼する。
