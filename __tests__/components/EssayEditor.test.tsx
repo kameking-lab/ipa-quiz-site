@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, cleanup } from "@testing-library/react";
+import { render, screen, cleanup, fireEvent } from "@testing-library/react";
 
 import { EssayEditor } from "@/components/essay/EssayEditor";
 import type { EssayQuestion } from "@/lib/essay/types";
@@ -56,5 +56,24 @@ describe("EssayEditor — 論述 textarea のアクセシブルネーム", () =>
     render(<EssayEditor question={makeQuestion()} />);
     const select = screen.getByLabelText("業種を選択");
     expect(select.tagName).toBe("SELECT");
+  });
+});
+
+// ヒントの表示/非表示ボタンはコンテンツ領域を開閉する disclosure だが、
+// aria-expanded が無く SR 利用者に開閉状態がプログラム的に伝わらなかった（WCAG 4.1.2）。
+describe("EssayEditor — ヒント開閉ボタンの aria-expanded", () => {
+  it("初期状態は aria-expanded='false'、クリックで 'true' に同期しヒントが表示される", () => {
+    render(<EssayEditor question={makeQuestion()} />);
+
+    const toggles = screen.getAllByRole("button", { name: "論述要素のヒントを表示" });
+    expect(toggles.length).toBeGreaterThan(0);
+    for (const btn of toggles) {
+      expect(btn.getAttribute("aria-expanded")).toBe("false");
+    }
+
+    fireEvent.click(toggles[0]);
+
+    const opened = screen.getByRole("button", { name: "ヒントを隠す" });
+    expect(opened.getAttribute("aria-expanded")).toBe("true");
   });
 });

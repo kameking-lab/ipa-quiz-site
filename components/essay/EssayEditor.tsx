@@ -311,6 +311,7 @@ function SubPromptEditor({
           <button
             type="button"
             onClick={() => setShowHint((v) => !v)}
+            aria-expanded={showHint}
             className="text-sky-600 hover:underline dark:text-sky-400"
           >
             {showHint ? "ヒントを隠す" : "論述要素のヒントを表示"}
