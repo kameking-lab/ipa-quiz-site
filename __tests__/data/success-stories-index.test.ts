@@ -11,6 +11,8 @@ import {
   getSuccessStoryCountByExam,
   getSuccessStoryExams,
 } from "@/data/success-stories";
+import { getAllBlogSlugs } from "@/data/blog";
+import { getEssayQuestionsByExam, isEssayExamCode } from "@/lib/essays/load";
 
 // Characterization tests for the success-story registry + persona matcher
 // (consumed by the /success-stories routes). The matcher runs purely on static
@@ -178,5 +180,34 @@ describe("aggregation: getSuccessStoryExams / getSuccessStoryCountByExam", () =>
       expect(n).toBe(ALL.filter((s) => s.exam === exam).length);
     }
     expect(sum).toBe(ALL.length);
+  });
+});
+
+describe("cross-link integrity (no dead CTA on the story page)", () => {
+  // The story page renders explicit CTAs from these fields. The generator test
+  // pins they pass through from the persona, but nothing asserts they resolve —
+  // a typo'd relatedBlogSlug or an essay-incapable relatedEssayExam renders a
+  // 200-looking <Link> that 404s on click (both target routes use
+  // dynamicParams=false / notFound()).
+  it("every relatedBlogSlug resolves to an existing blog post", () => {
+    const blogSlugs = new Set(getAllBlogSlugs());
+    const dead = ALL.filter(
+      (s) => s.relatedBlogSlug != null && !blogSlugs.has(s.relatedBlogSlug),
+    ).map((s) => `${s.slug} -> /blog/${s.relatedBlogSlug}`);
+    expect(dead).toEqual([]);
+  });
+
+  it("every relatedEssayExam links to an essay route that actually exists", () => {
+    // /essays/[exam] requires isEssayExamCode AND a non-empty essay set —
+    // mirror that exact predicate so a story can't point at an essay-less exam.
+    const dead = ALL.filter(
+      (s) =>
+        s.relatedEssayExam != null &&
+        !(
+          isEssayExamCode(s.relatedEssayExam) &&
+          getEssayQuestionsByExam(s.relatedEssayExam).length > 0
+        ),
+    ).map((s) => `${s.slug} -> /essays/${s.relatedEssayExam}`);
+    expect(dead).toEqual([]);
   });
 });
