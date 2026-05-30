@@ -2484,3 +2484,20 @@ test 1507→1518・199→205files。最終ゲート全緑(typecheck0/lint0err/te
 - a11y属性(S66-S80)・lib/data 未テスト関数(SDK/AudioContext/dead/Date.now-brittle のみ残)・per-name gap(S76打止)・cross-link no-404(S81-S84)は枯渇確認継続。
 - 次の夜間安全角度: 過去 SAFE/latent footgun 再検証(S33/S41)、or arrow-const export スイープ再点検。実改善は日中候補(挙動変更+E2E)に依存。
 - 日中候補(不変): ReviewClient/DailyChallenge 完了ビュー focus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+---
+## セッション86 (2026-05-31 06:1x JST)
+ベースライン全緑実測(typecheck0 / lint0err[警告1=untracked `scripts/ux-audit-screenshots.mjs` の未使用変数・本セッション無関係] / test 212files・1565 / build 2510 SSG・exit0)。死リンク(404)監査は Explore 機械走査で全動的ルート単一ソース由来=新規バグなし確定(topics sitemap=getHubTopics⊆getAllTopics は S85 既監査)。角度を「純関数の実バグ」へ転換。
+
+- done: `lib/study-plan/generator.ts` 週末ミニ模試の発火条件バグ修正 / `a427261` / `__tests__/lib/study-plan-generator.test.ts`(+1 it, test 1565→1566)。
+  - **実バグ**: 中盤フェーズの週次ミニ模試が `isWeekend(date) && dayIndex % 7 === 0` でゲート。studyDates は連続暦日なので `dayIndex % 7 === 0` は常に day0(=開始日/今日)と同一曜日に落ちる。よって**プランを週末に開始した場合のみ発火し、平日開始では一度も生成されない**(利用者の大半が平日生成=機能が事実上デッド・S70 のテーブルバグと同型「機能が静かに壊れている」)。さらに発火しても開始曜日固定(土曜開始なら土曜のみ・日曜は永遠に出ない)。
+  - 修正: 開始曜日非依存の `isSaturday(date)`(週1回・必ず週末)へ。意図(コメント"Weekly mini-mock on weekends")を最も忠実に満たす最小修正。両weekend日にすると週2回=「weekly」に反するため土曜固定。未使用化した `dayIndex` の buildDayTasks 受け渡し(interface/destructure/呼出)も除去。
+  - 検証: 月曜開始(2024-01-01・ip・weekendMinutes400・examDate2024-03-15)プランで「週末ミニ模試（20問）」が中盤フェーズの土曜のみに出る(修正前=0件)ことを回帰固定。mutation `isSaturday`→`isWeekend` で日曜分(getDay0)混入し落ちることを実測→revert。全緑(typecheck0/lint0err/test1566/build2510 exit0)。
+
+### 次セッションへ
+- **新角度が有効**: 死リンク/a11y/per-name characterization は枯渇だが「純関数の実バグ(誤った境界/曜日/日付/dedup/ソート)」はまだ収穫あり。Explore に「pure function の real bug、theoretical でなく user-visible/SEO-visible に限定、trace して報告」と指示すると有効。今回の study-plan generator のように『日付×index の結合で start-day 依存になっている』類は他にもありうる(gamification/motivation/streak の日付ロジック要再点検)。
+- 日中候補(不変・S85まで継続): ContactForm 成功カードfocus・pii over-mask・tabs矢印キー・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG。
+
+- SKIP(実害なし/設計意図): `lib/gamification/daily-challenge.ts::completeChallenge` の `alreadyCompleted` 分岐が correctCount/total を新回答から・perfect/streak を保存値から返す「不整合」を Explore が報告したが調査の結果 SKIP。①once-per-day の冪等性(再完了で streak/XP を稼げない)は**意図された設計**で保存値返却が正。②通常の「本日完了済み」表示は consumer(`DailyChallengeClient.tsx:47-64` useEffect)が保存 answers から再計算+保存 perfect で**完全に整合**。③`completeChallenge` の当該分岐は「未完了状態でロード→5問回答→その間に別タブで完了」の二タブ競合でのみ到達し、しかも `if (!completion.alreadyCompleted)` ガード(:129)で XP/streak 加算はスキップ=整合性無傷。残るのは競合時の表示微差のみ=実害ほぼゼロ。夜間は安全側で据置。
+
+- SKIP(実害なし/latent footgun): `lib/questions/filter.ts::shuffleChoices`(:81-95) が複数正解(answer が配列)の問題で先頭要素のみ remap し string で返す=後続正解を失う、と Explore が報告。調査結果 SKIP。`data/questions/` 全体で `answer:\s*\[`(配列正解)は**0件**=実データに複数正解問題が存在せず実害ゼロ。型は `ChoiceKey | ChoiceKey[] | string` で配列を許容し `Array.isArray` 分岐も存在するが、4択(ア/イ/ウ/エ)シャッフルは標準午前単一正解用で、そもそも複数正解(通常>4択・別UI)の経路ではない。複数正解 remap を実装すると data 不在の未テスト挙動を新規追加=過大修正の罠。配列正解データが将来追加される場合のみ要再検討(grading 側も多くが単一正解前提)。S73 で shuffle は単一正解の決定的置換として既に回帰固定済(`7a555ca`)。
