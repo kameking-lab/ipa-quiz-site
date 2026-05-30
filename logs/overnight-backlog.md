@@ -4,6 +4,14 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション26):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S26 で網羅的に枯渇を再々確認。
+> S26: S25起案の未踏観点⑫〜⑯を**全数監査で完全消化**。**実改善1件**＝観点⑯の唯一の所見=死蔵 `app/mock-exam/MockExamClient.tsx`(423行)を削除(`0a7a8c7`)。
+> /mock-exam は MockExamLanding→MockExamRunner(createHistoryStore 正API)で描画され当該旧実装は**どこからも未参照**(exhaustive grep)。
+> 内包バグ: `LS_KEYS.history` を `as object[]` 誤解し spread→正準は `{entries,starredIds}` object のため既存履歴で throw(catch握り潰し)or 履歴ゼロで配列汚染。未参照=実害ゼロだが latent footgun を dead-code として除去(route 健全性不変を実測)。
+> SKIP(全数監査=実害ゼロ): ⑫form-Enter=全 form 7箇所 onSubmit が preventDefault 済(+TagInput Enter も)/⑬高頻度リスナー=scroll は passive+trivial・他は低頻度/⑭XSS=dangerouslySetInnerHTML 2箇所は固定script+escape済JSON-LD、react-markdown(v10) は raw HTML 既定無効/⑮LCP画像=テキスト/SVG主体で raster LCP 不在・avatar は below-fold lazy 正。
+> **教訓: react-markdown raw HTML 無効・raster LCP 不在・全 form preventDefault・scroll passive＝XSS/LCP/jank/Enter-reload の4クラスは構造的クリーン(再監査不要)。**
+> **次は: S23/S25 起案の全観点(⑦〜⑯)消化済。下記「P1 新観点(S26 起案)」から1つ選び全数監査するか、デッドコード(未参照 component/export)の慎重スイープ(MockExamClient 同型の superseded 実装が他に無いか)を検討。日中候補は据え置き。**
+>
 > **状態 (2026-05-30 セッション25):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S25 で網羅的に枯渇を再々確認。
 > S25: S23起案の最後の未踏観点⑧⑩＋新観点「id 衝突」を全数監査＝**全観点で実害ゼロを確定（コード無変更）**。
 > ⑩`toLocaleString` locale 整合＝SSR'd の bare `toLocaleString()`（charCount/totalCount≈6,545/exam counts 等）は **node 既定 en-US ≡ ブラウザ ja-JP** で
@@ -319,6 +327,32 @@ cleanup-leak/index-key-bleed/非ユニークkey/JSON-LD数値/空配列ゼロ状
   遅延されていないか、逆に below が eager で帯域を食っていないか（実害＝LCP 悪化。CLS=④は S19 で確認済）。
 - **⑯`localStorage` の JSON.parse 結果の型ガード**: 破損 or 旧スキーマの値を読んで `undefined.foo` で落ちないか
   （実害＝永続データ破損時の白画面。S21 で書き込み try/catch は確認済だが「読み取り後の形状」は未走査）。
+注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
+各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P1 新観点（S26 起案・未踏。次セッション以降で全数監査せよ）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+S1-S26 で a11y名/aria-live/チャートalt/タブ/aria-current/OG/robots/dead-link/canonical/sitemap/stale-timer/JST境界/
+keydown修飾/数値破綻/effect-async/focus-restore/localStorage-guard(読書両方)/time-element/regex-lastIndex/array-mutation/
+cleanup-leak/index-key-bleed/非ユニークkey/JSON-LD数値/空配列ゼロ状態/toLocaleString-locale/id衝突/form-Enter/高頻度リスナー/
+XSS/LCP画像 を網羅一巡。**まだ全数監査していない観点**:
+
+- **⑰デッドコード/未参照 component・export のスイープ**: S26 で死蔵 `MockExamClient` を発見・削除した実績あり。
+  同型の **superseded 旧実装**（page から未 import だが残存）や未使用 export が他に無いか。判定は「exhaustive grep で
+  `app/components/lib` 内 import 0件＋（あれば）置換した現行実装の存在」を**高信頼で**確認できる場合のみ削除（dynamic import/
+  barrel re-export/string 参照の見落としに注意）。確証が持てなければ SKIP（夜間の削除は高信頼のみ）。
+- **⑱`useMemo`/`useCallback` の依存配列の参照不安定**: deps に毎レンダー新生成される object/array/inline 関数を入れて
+  メモ化が無効化（=毎回再計算）していないか。実害＝重い計算の無駄な再実行 or 子の不要再レンダー。S22 で「メモ化キーの
+  参照不安定」を候補に挙げたが未走査。**ただし実測可能な体感被害がある場合のみ**（理論上の再計算は SKIP＝過大修正の罠）。
+- **⑲`aria-expanded`/`aria-controls` の状態同期**: 開閉する disclosure/dropdown/accordion/メニューで `aria-expanded` が
+  実際の開閉 state と同期しているか（開いているのに false のまま等）。SR 利用者に開閉状態が誤伝達される実害。
+- **⑳`<button>` の `type` 属性欠落による暗黙 submit**: `<form>` 内の `<button>` が `type="button"` を持たず既定 `type="submit"`
+  になり、意図せず form 送信を誘発しないか（⑫の form-Enter とは別系統＝クリック経路）。S13 で「form button type」を
+  クリーンと記録済だが**新規追加分の再確認**＝最小監査。
+- **㉑`prefers-reduced-motion` 未対応のアニメーション**: framer-motion/CSS transition の中で reduced-motion を無視して
+  動く要素が残っていないか（S15 で globals.css に包括ルール在を確認済だが、JS駆動アニメ＝framer の個別 `animate` が
+  メディアクエリを見ているか未走査）。前庭障害ユーザーへの実害。
 注意: いずれも「壊れ(実害)」が実測できた場合のみ最小 diff で修正。理論のみは SKIP（過大修正の罠）。
 各観点とも**全数監査して『実害ゼロ』を記録するだけでも有効な成果**（次セッションの重複監査を防ぐ）。
 

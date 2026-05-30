@@ -996,3 +996,47 @@
 - 教訓（次セッションの重複監査防止）: **bare `toLocaleString()` は対象の桁（千〜万）では en-US≡ja-JP でカンマ一致＝視覚/hydration 被害ゼロ**。日付の bare 描画は SSR 経路に存在しない（post-mount or locale 明示済）。canonical/og:url は trailingSlash=false＋絶対パス統一で構造的に整合。
 - 次セッションへ: S23 起案観点（⑦⑧⑨⑩⑪）は全て一巡 done（⑨中核2件修復・他は実害ゼロ）。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化=latent予防/exam meta desc 短縮/EmailSignInForm・SchedulePlanner の live 化）。
   夜間の安全な実害バグは深く枯渇。次セッションは下記 backlog「P1 新観点（S25 起案）」から1つ選び全数監査するか、日中候補の慎重実施を検討。
+
+## セッション26 2026-05-30 12:33 JST（S25起案の未踏観点⑫〜⑯を全数監査 → 死蔵 MockExamClient(履歴破壊バグ内包)を削除 / ⑫⑬⑭⑮=実害ゼロ）
+- 冒頭ベースライン全緑実測: test **276 passed**(61 files)（現 HEAD `1d315e5`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）は本ループ無関係＝コミットに巻き込まない。
+- done: 【デッドコード削除＝潜在バグ内包・観点⑯】`app/mock-exam/MockExamClient.tsx`（423行）を削除。
+  `/mock-exam` は `page.tsx`→`MockExamLanding`→`MockExamRunner`（`createHistoryStore()` 正API使用）で描画されており、
+  旧実装 `MockExamClient` は**どのページ/コンポーネントからも import されない死蔵コード**（exhaustive grep で
+  `app/components/lib` 内 import 0件、参照は logs/docs の md のみ。git log: 最終更新 2026-05-22 `5be26ca` で
+  現行 MockExamLanding=2026-05-26 `6a99357` に置換済）。当該死蔵ファイルは観点⑯の唯一の所見＝
+  `LS_KEYS.history` を `as object[]`（配列）と誤解し `JSON.parse(...) ?? "[]"` → `[...history, ...newEntries]` で
+  spread していたが、正準の history 形式は `{entries:[], starredIds:[]}` **オブジェクト**（`lib/storage/history.ts`）。
+  既存履歴があると非iterable object の spread が throw→`catch{}` で握り潰し（=mock結果が記録欠落）、履歴ゼロ時は
+  history キーを**配列形式で汚染**（次回 `readRaw()` が `.entries` 不在→EMPTY 返却）する潜在バグを内包。さらに entry 形状も
+  `{questionId,answeredAt,source}` で正準 `{id,selected,correct,at}` と不一致。未参照のため**実害は出ていない**が、
+  将来の誤用と保守負荷・footgun を断つため削除（dead-code removal はバックログ既定の有効改善）。/ コミット `0a7a8c7`
+  / 検証: typecheck0/lint0err（既存 ux-audit 警告1のみ）/test **276緑**（不変＝当該死蔵に依存テスト無し）/build緑。
+  **崩れたら落ちる検証**=削除後 grep で `app/components/lib` 内 `MockExamClient` 参照0件を実測、`.next/server/app/mock-exam/page.js`
+  が存在し /mock-exam ルートが MockExamLanding で正常ビルドされ続けることを実測（route 健全性不変）。
+- SKIP(全数監査=実害ゼロ・観点⑫ form 暗黙送信/Enter 挙動): 全 `<form>` 7箇所（EmailSignInForm/ApiKeysClient/SearchClient/
+  SchedulePlanner/EmailLeadCapture×2/ContactForm/CopilotPanel）の onSubmit ハンドラが**全て `e.preventDefault()` を呼ぶ**＝
+  Enter による full page reload/状態喪失は発生不能。非 form の Enter ハンドラ（TagInput=Enter/`,` で `preventDefault()`+addTag）も
+  ガード済。裸 input の reload リスクは構造上不在＝実害ゼロ。
+- SKIP(全数監査=実害ゼロ・観点⑬ 高頻度リスナーの未スロットル): scroll/resize/mousemove/touch/wheel リスナーを全数監査。
+  scroll 系（SiteHeader=boolean toggle / BlogScrollTracker=閾値で計3回のみ発火）は全て `{passive:true}`＋trivial work。
+  他は focus/online-offline/storage/keydown/matchMedia 等の**低頻度 or 自明ハンドラ**。毎発火で expensive synchronous 処理を
+  する未スロットルの jank リスクは**不在**＝実害ゼロ。
+- SKIP(全数監査=実害ゼロ・観点⑭ XSS/unsanitized HTML): `dangerouslySetInnerHTML` 全2箇所＝①ブートストラップ用の固定スクリプト
+  ②JSON.stringify 済 JSON-LD（エスケープ済）＝いずれも開発者制御で安全。`react-markdown`(v10) は**raw HTML passthrough を
+  既定で無効**（`rehype-raw` 未使用）＝AI出力/ユーザーコメントが executable HTML として DOM に到達する経路は**不在**＝XSS 実害ゼロ。
+- SKIP(全数監査=実害ゼロ・観点⑮ LCP 画像の loading 整合): 本サイトは**テキスト/SVGアイコン主体**で above-the-fold の
+  ラスタ hero 画像が**存在しない**。実画像は ①OG生成(next/og=サーバ生成・ページ内非描画) ②ユーザーavatar(64px・below-fold・lazy正)
+  ③アップロードプレビュー/シェアダイアログ(ユーザー操作後のみ・raw img)＝**LCP を律速するラスタ画像が皆無**。
+  「above-fold が lazy / below が eager」の mismatch は**ゼロ**＝観点⑮の実害は構造上不能。
+
+## セッション26 まとめ
+- 実改善1件（死蔵 MockExamClient 削除＝履歴破壊の潜在バグ＋423行の保守負荷を除去 `0a7a8c7`・route 健全性不変を実測）
+  + 全数監査SKIP4観点（⑫form-Enter / ⑬高頻度リスナー / ⑭XSS / ⑮LCP画像）すべて**実害ゼロを確定し記録**。
+- テーマ: S25 起案の未踏観点⑫〜⑯を**全数監査で完全消化**。実害所見は観点⑯の死蔵 MockExamClient 1件のみ（未参照＝
+  ユーザー被害は出ていないが latent footgun＝dead-code として安全に除去）。XSS/LCP/高頻度リスナー/form-Enter は構造的に被害不能。
+- 教訓（次セッションの重複監査防止）: 本サイトは **react-markdown raw HTML 無効・テキスト/SVG主体で raster LCP 不在・
+  全 form が preventDefault・scroll リスナーは passive+trivial**＝XSS/LCP/jank/Enter-reload の4クラスは構造的にクリーン（再監査不要）。
+- 次セッションへ: S25 起案観点（⑫〜⑯）は全て一巡 done（⑯=死蔵削除・他⑫⑬⑭⑮=実害ゼロ）。**S23/S25 起案を含む全観点が消化済**。
+  夜間の安全な実害バグは S1-S26 で網羅的に枯渇。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/
+  exam meta desc短縮/EmailSignInForm・SchedulePlanner live化）。次セッションは下記 backlog「P1 新観点（S26 起案）」から1つ選び全数監査するか、
+  **デッドコード（未参照 component/export）の慎重スイープ**（MockExamClient と同型の superseded 実装が他に無いか）を検討。
