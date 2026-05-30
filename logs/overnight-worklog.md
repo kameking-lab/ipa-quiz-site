@@ -2009,3 +2009,17 @@ handoff: S59 が挙げた「残 fetch 系」のうち sync/*・stats/gsc・stats
 ### 次セッターへ
 - 角度②（過去 SAFE/latent footgun 再検証）と③（a11y 同型）は本セッションで ContactForm/SearchClient まで掘ったが安全な実害は出ず。夜間の安全な実害バグ・安全な未テスト純関数とも S1-S61 で深く枯渇を再々確認。
 - 残るは**日中候補のみ**（上記 ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export）。新規夜間タスクは「過去が SAFE/latent 分類した同型 footgun の再検証」を別モジュールで続けるのが残された角度だが、収穫は逓減。
+
+## セッション62 (2026-05-30 23:0x JST)   — 2サイクル done
+- 開始確認: S52/S53 handoff の lib/format・lib/cache・lib/ai/cost.ts は**いずれも実在せず**(cost は cost-guard/tracker のみ=既 done)→死リード確定。
+- done① `lib/admin/launch-monitoring/data.ts::buildAlerts` 回帰固定 / commit `861d535` / `__tests__/admin/launch-monitoring-alerts.test.ts`(13 it)。
+  - 4ルール: ①costJpy24h>=500(§0 コスト上限連動・warning)②totalLast1h>=200(spike・warning)③posthogConfigured && pct!==null && pct<20(info)④三源未設定(info)。境界値(499・199・20・null guard・posthog guard)+複合発火を pin。
+  - source 変更は `function buildAlerts`→`export function buildAlerts` の1語のみ(挙動不変)。test 1125→1138。
+  - 検証: sed で `>=500`→`>=400` mutation→499境界テスト fail を実測→sed revert。全緑ゲート。
+- done② `lib/admin/funnel/posthog.ts::buildFunnelSteps` 回帰固定 / commit `bb32212` / `__tests__/admin/funnel-steps.test.ts`(6 it)。
+  - drop_pct: 先頭=null・欠損イベント=count 0・prev=0 のゼロ除算ガード=null・小数1桁丸め(toFixed)・逆転時の負値。
+  - source 変更は `export function` 1語のみ(挙動不変)。test 1138→1144(169 files)。
+  - 検証: sed で `prevCount > 0` ガード除去 mutation→ゼロ除算系2件 fail を実測→cp revert。全緑ゲート。
+- 3サイクル目 不発(着手対象なし): `metrics/posthog.ts`は pure helper 無(fetch のみ44行)、`deployment-status.ts`の getVercelQuota 等は Date.now()+fetch tangled で1語 export 不可(抽出=refactor 禁止)→SKIP。**admin ダッシュボードの「1語 export 可能な private pure helper」脈は buildAlerts/buildFunnelSteps で枯渇。**
+- **重要教訓(本セッションで再踏): source の一時 mutation も worklog 追記も PowerShell Set-Content は厳禁(UTF-8日本語 mojibake/-Raw 全置換は content loss を招く=worklog を749ins/1991del に破壊→git checkout で復旧)。mutation の退避は cp(byte-exact)、置換は sed -i、worklog 追記は bash heredoc(>>)のみ。**
+- 次セッションへ: 安全な未テスト純関数は admin 脈含め枯渇に近い。残るは日中候補のみ(ContactForm 成功カードのフォーカス/告知・pii over-mask・tabs矢印キー・コピー通知統一・MilestoneToast ref化・SM-2 EF・apple-touch-icon PNG・search-index export)。
