@@ -630,3 +630,40 @@
 - 次セッションへ: 残候補は (a)tabs.tsx 矢印キー(日中・影響大)、(b)コピー通知統一(日中)、(c)MilestoneToast ref化(日中)、
   (d)exam meta desc 短縮(日中)。**夜間に安全な実害バグは枯渇(S1-S15 で a11y/SEO/OG/リンク/keydown/チャート/
   非同期UX を網羅一巡)。** 次は (e)未踏の機能ロジック観点(クイズ採点/履歴の境界条件)か (f)日中候補の慎重実施を検討。
+
+## セッション16 2026-05-30 10:11 JST（新観点=機能ロジックの境界条件を監査 / ツール出力チャネル不調でコミット見送り）
+- 状況: 本セッションは途中から **ツール出力チャネルが激しくバッファ化**(Bash/PowerShell/Read/Grep が
+  軒並み空応答。短い `echo "...$(...)..."` のみ稀にフラッシュ、`pnpm` 等の長い出力は不可)。セッション3と同症状。
+  → 全緑ゲート(typecheck/lint/test/build)と実測検証が観測不能のため、**コード変更はコミットせず見送り**(安全側)。
+  着手していた修正は `git checkout -- lib/learning/analytics.ts` で破棄済(作業ツリーのトラッキング差分=0 を probe で実測確認)。
+- 着手前に取れた実測(チャネル健全時): typecheck=0(PASS) / lint=0 err(既存 ux-audit 警告1のみ)。
+- **【次セッションで実装+検証してほしい確定バグ・調査済み】** `lib/learning/analytics.ts:107-111` `daysUntil()` の
+  JST境界 off-by-one:
+  - 現状: `new Date(targetIso).getTime()` は date-only 文字列("2024-01-15"等)を **UTC深夜**として解釈し、生の `now` と
+    `Math.ceil((target-now)/86_400_000)` で比較。→ JST 00:00〜09:00 の時間帯は残り日数が **常に1多い**。
+    例: 試験当日朝(JST 00:30)に `daysUntil("試験日")` が 0 でなく 1 を返す。
+  - 影響(実害): `app/account/tutor/TutorClient.tsx:198` → `buildExamMessage(daysLeft)` (同 286-297行)。
+    試験当日の朝に「本日が試験日です」ではなく「試験まであと1日…」を表示。試験直前期の文言が1フェーズずれる。
+    `app/account/study-plan/StudyPlanClient.tsx:36` の別実装 `daysUntil` は `today.setHours(0,0,0,0)`(端末ローカルTZ)
+    で算出=本番(JST端末/Vercel)依存。こちらは別件・今回の対象外(lib版のみ修正対象)。
+  - 確定した修正(codebase 既定の JST idiom = streak/core.ts `jstDateString`・daily-challenge.ts `jstChallengeDate`
+    と同型: `+9h → toISOString().slice(0,10)`、両端を `T00:00:00Z` で parse して整数日 diff):
+    ```ts
+    export function daysUntil(targetIso: string, now = Date.now()): number {
+      const targetDay = Date.parse(`${targetIso.slice(0, 10)}T00:00:00Z`);
+      if (!Number.isFinite(targetDay)) return 0;
+      const todayJst = new Date(now + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+      const todayDay = Date.parse(`${todayJst}T00:00:00Z`);
+      return Math.max(0, Math.round((targetDay - todayDay) / 86_400_000));
+    }
+    ```
+    検算: 試験当日朝(JST 00:30=UTC前日15:30)→ todayJst=試験日と一致 → 0(正)。午後の通常ケース(あと5日)も維持。
+  - 回帰テスト(新規 `__tests__/lib/learning-daysUntil.test.ts` 等)で「JST 00:30 の now で試験当日=0」「JST 08:00 で
+    あと5日(旧実装は6で落ちる)」を `now` 引数注入で検証(`daysUntil` は第2引数 now を受けるので fake time 不要)。
+    **旧実装に戻すと落ちる**ことを実測すること(崩れたら落ちる検証)。
+  - 注意: `lib/learning/analytics.ts` には既存の専用テストファイルが無い(grep 済)。新規作成でよい。
+- 監査クリーン(Explore + 自己精査): history/filter/streak/scoring の他の境界条件は実害バグなし。
+  MockExamRunner:413 `timings.indexOf(maxTimeSec)` は `nonZeroTimings.length>0` でガード済(latent のみ)。
+  getRecentIds の n*20 は確定で意図的設計(S14 記録済)。
+- 次セッションへ: **チャネルが健全なら最優先で上記 daysUntil を実装+全緑+回帰テストでコミット**(調査完了済・即着手可)。
+  その後は日中候補(tabs矢印キー/コピー通知統一/MilestoneToast ref化/exam meta desc 短縮)か新観点の開拓。
