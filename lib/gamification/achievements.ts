@@ -97,17 +97,23 @@ interface AchievementStorage {
   consecutivePassedMocks: number;
 }
 
-const EMPTY: AchievementStorage = {
-  unlocked: [],
-  bestStreakCorrect: 0,
-  consecutivePassedMocks: 0,
-};
+// Factory (not a shared const): callers mutate the returned object in place
+// (unlock pushes to .unlocked, evaluate* bump .bestStreakCorrect /
+// .consecutivePassedMocks), so a shared constant would be permanently
+// corrupted on the empty-storage path. Same footgun fixed in history.ts.
+function emptyState(): AchievementStorage {
+  return {
+    unlocked: [],
+    bestStreakCorrect: 0,
+    consecutivePassedMocks: 0,
+  };
+}
 
 function read(): AchievementStorage {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyState();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.achievements);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as Partial<AchievementStorage>;
     return {
       unlocked: Array.isArray(parsed.unlocked) ? parsed.unlocked : [],
@@ -121,7 +127,7 @@ function read(): AchievementStorage {
           : 0,
     };
   } catch {
-    return EMPTY;
+    return emptyState();
   }
 }
 
