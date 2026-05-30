@@ -4,6 +4,7 @@ import type { HistoryStore } from "@/lib/storage/history";
 import {
   filterQuestions,
   isPlaceholderExplanation,
+  shuffle,
   shuffleChoices,
 } from "@/lib/questions/filter";
 
@@ -182,6 +183,45 @@ describe("filterQuestions — 品質フィルタ", () => {
     const all = [q({ id: "c", qNumber: 3 }), q({ id: "a", qNumber: 1 }), q({ id: "b", qNumber: 2 })];
     const out = filterQuestions(all, { mode: "year", inOrder: true });
     expect(out.map((x) => x.id)).toEqual(["a", "b", "c"]);
+  });
+});
+
+describe("shuffle", () => {
+  // shuffle はランダム出題（mode:"random"）と選択肢ランダム化（shuffleChoices）の
+  // 両方を駆動する Fisher-Yates。要素の保存（過不足ゼロ）と「同一配列を破壊的に並べ替えて
+  // その参照を返す」契約が崩れると、出題プールから問題が消える/重複する実害になる。
+
+  it("入力配列を破壊的に並べ替え、同一の配列参照を返す（コピーしない）", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    const arr = [1, 2, 3, 4];
+    const out = shuffle(arr);
+    expect(out).toBe(arr); // 同一参照
+  });
+
+  it("要素を保存する（集合として過不足ゼロ・重複や欠落を作らない）", () => {
+    vi.spyOn(Math, "random").mockReturnValue(0.42);
+    const arr = ["a", "b", "c", "d", "e"];
+    const out = shuffle([...arr]);
+    expect([...out].sort()).toEqual([...arr].sort());
+    expect(out).toHaveLength(arr.length);
+  });
+
+  it("Math.random=0 では各 j=0 となり決定的な置換になる", () => {
+    // j = floor(0 * (i+1)) = 0。i=n-1..1 で arr[i]↔arr[0] を順に交換する。
+    // [a,b,c,d] → [b,c,d,a]（この並びが崩れたら swap ロジックの回帰）。
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    expect(shuffle(["a", "b", "c", "d"])).toEqual(["b", "c", "d", "a"]);
+  });
+
+  it("Math.random≈1 では各 j=i となり交換が自己交換（並びは不変）", () => {
+    // j = floor(0.999*(i+1)) = i。arr[i]↔arr[i] は no-op。
+    vi.spyOn(Math, "random").mockReturnValue(0.999999);
+    expect(shuffle(["a", "b", "c", "d"])).toEqual(["a", "b", "c", "d"]);
+  });
+
+  it("空配列・単一要素はそのまま（ループ実行ゼロ）", () => {
+    expect(shuffle([])).toEqual([]);
+    expect(shuffle(["only"])).toEqual(["only"]);
   });
 });
 
