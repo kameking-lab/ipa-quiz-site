@@ -182,4 +182,33 @@ describe("llmRerank", () => {
     const result = await llmRerank("Q", candidates, 2, broken, {});
     expect(result.length).toBe(2);
   });
+
+  it("候補が空なら provider を呼ばず即 [] を返す", async () => {
+    let called = false;
+    const provider: LLMProvider = {
+      name: "spy",
+      async *streamChat() {
+        called = true;
+      },
+    };
+    const result = await llmRerank("Q", [], 3, provider, {});
+    expect(result).toEqual([]);
+    expect(called).toBe(false);
+  });
+
+  it("LLM が topN を超える番号を返しても topN 件で打ち切る", async () => {
+    const candidates = [cand("a", 10), cand("b", 8), cand("c", 6)];
+    const provider = makeMockProvider("2,0,1");
+    // topN=2 → "2,0,1" の先頭2件(2,0)で break
+    const result = await llmRerank("Q", candidates, 2, provider, {});
+    expect(result.map((r) => r.doc.id)).toEqual(["c", "a"]);
+  });
+
+  it("範囲外・重複の番号は読み飛ばす", async () => {
+    const candidates = [cand("a", 10), cand("b", 8), cand("c", 6)];
+    // "5"=範囲外(>=3)で skip、"1"=b 採用、2つ目の "1"=重複で skip、"0"=a 採用
+    const provider = makeMockProvider("5,1,1,0");
+    const result = await llmRerank("Q", candidates, 3, provider, {});
+    expect(result.map((r) => r.doc.id)).toEqual(["b", "a"]);
+  });
 });
