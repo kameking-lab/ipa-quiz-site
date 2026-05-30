@@ -4,6 +4,8 @@ import {
   jstChallengeDate,
   seededRandom,
   pickDeterministic,
+  dateSeed,
+  DAILY_CHALLENGE_SIZE,
   ensureChallengeForToday,
   completeChallenge,
   readDailyChallenge,
@@ -51,6 +53,52 @@ describe("deterministic picking", () => {
   it("pickDeterministic varies by seed", () => {
     const items = Array.from({ length: 20 }, (_, i) => `q${i}`);
     expect(pickDeterministic(items, 5, 1)).not.toEqual(pickDeterministic(items, 5, 2));
+  });
+});
+
+describe("dateSeed", () => {
+  // dateSeed is the FNV-1a 32-bit hash that maps a JST date string to the
+  // numeric seed feeding pickDeterministic in app/challenge/page.tsx. Its
+  // contract: deterministic per date, well-distributed across dates, and a
+  // valid unsigned 32-bit integer. Golden values pin the FNV basis/prime/mask
+  // so a change to any of them is caught.
+  it("is deterministic for the same date string", () => {
+    expect(dateSeed("2024-04-10")).toBe(dateSeed("2024-04-10"));
+  });
+
+  it("produces the canonical FNV-1a 32-bit hash (golden values)", () => {
+    // Pins basis (2166136261), prime (16777619) and the >>> 0 unsigned mask.
+    expect(dateSeed("2024-04-10")).toBe(2222371158);
+    expect(dateSeed("2024-04-11")).toBe(2239148777);
+  });
+
+  it("returns the FNV offset basis for an empty string (loop never runs)", () => {
+    expect(dateSeed("")).toBe(2166136261);
+  });
+
+  it("returns an unsigned 32-bit integer", () => {
+    for (const d of ["2024-01-01", "2024-12-31", "2025-06-15", ""]) {
+      const v = dateSeed(d);
+      expect(Number.isInteger(v)).toBe(true);
+      expect(v).toBeGreaterThanOrEqual(0);
+      expect(v).toBeLessThan(2 ** 32);
+    }
+  });
+
+  it("yields distinct seeds for adjacent days so the daily pick rotates", () => {
+    expect(dateSeed("2024-04-10")).not.toBe(dateSeed("2024-04-11"));
+  });
+});
+
+describe("DAILY_CHALLENGE_SIZE", () => {
+  it("drives the per-day pick count (stable for a date, varies across dates)", () => {
+    const pool = Array.from({ length: 30 }, (_, i) => `q${i}`);
+    const picksDay1 = pickDeterministic(pool, DAILY_CHALLENGE_SIZE, dateSeed("2024-04-10"));
+    const picksDay1Again = pickDeterministic(pool, DAILY_CHALLENGE_SIZE, dateSeed("2024-04-10"));
+    const picksDay2 = pickDeterministic(pool, DAILY_CHALLENGE_SIZE, dateSeed("2024-04-11"));
+    expect(picksDay1).toHaveLength(DAILY_CHALLENGE_SIZE);
+    expect(picksDay1).toEqual(picksDay1Again);
+    expect(picksDay1).not.toEqual(picksDay2);
   });
 });
 
