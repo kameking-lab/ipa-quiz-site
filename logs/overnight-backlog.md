@@ -4,6 +4,17 @@
 P0 をすべて done/SKIP にしてから P1 へ。P1 は「領域 × 観点」をローテーションしてまんべんなく回す。
 判断に迷う/実害が無い指摘は直さず worklog に SKIP として記録（過大修正の罠を避ける）。
 
+> **状態 (2026-05-30 セッション27):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S27 で網羅的に枯渇を再々確認。
+> S27: S26起案の観点⑲⑳㉑を全数監査。**実改善3件**＝⑲`CopilotPanel` の dangling aria-controls（"copilot-actions-popup" を指すが
+> 対象 div に id 欠落＝隣接 quickActions は対で正・非対称バグ）を id 付与で解消（`94eb20f`・WCAG 1.3.1）。㉑**framer-motion の JS 駆動
+> アニメは globals.css の prefers-reduced-motion 抑制を素通りする**（CSS animation/transition しか効かない）大発見＝`FireworksBurst`
+> （全画面パーティクル爆発, `272290c`）+`ComboCounter`（連続バッジ spring 入場, `03bf2eb`）に matchMedia ゲートを追加（WCAG 2.3.3）。
+> SKIP(全数監査=実害ゼロ): ⑳`<Button>` primitive は type 既定なしだが form 内 button は全て明示 type＝暗黙 submit リスクなし。
+> **教訓: framer-motion(`motion.*`)は CSS reduced-motion を尊重しない＝個別 matchMedia ゲート必須。本リポの framer 利用は
+> FireworksBurst/ComboCounter の2点のみで両方対処済（再監査不要）。aria-controls dangling は CopilotPanel 1件のみで解消。**
+> **次は: S26起案の残り観点 ⑰（デッドコード/未参照 export スイープ・高信頼のみ削除）⑱（useMemo/useCallback 依存の参照不安定＝実測体感被害が
+> ある場合のみ・理論は SKIP）。日中候補（reduced-motion 共有フック抽出 `usePrefersReducedMotion` を追加）。日中候補据え置き。**
+>
 > **状態 (2026-05-30 セッション26):** P0 全件 done/SKIP。P1 進行中・夜間の安全実害バグは S1-S26 で網羅的に枯渇を再々確認。
 > S26: S25起案の未踏観点⑫〜⑯を**全数監査で完全消化**。**実改善1件**＝観点⑯の唯一の所見=死蔵 `app/mock-exam/MockExamClient.tsx`(423行)を削除(`0a7a8c7`)。
 > /mock-exam は MockExamLanding→MockExamRunner(createHistoryStore 正API)で描画され当該旧実装は**どこからも未参照**(exhaustive grep)。

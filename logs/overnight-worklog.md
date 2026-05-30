@@ -1040,3 +1040,57 @@
   夜間の安全な実害バグは S1-S26 で網羅的に枯渇。残は**日中候補のみ**（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/
   exam meta desc短縮/EmailSignInForm・SchedulePlanner live化）。次セッションは下記 backlog「P1 新観点（S26 起案）」から1つ選び全数監査するか、
   **デッドコード（未参照 component/export）の慎重スイープ**（MockExamClient と同型の superseded 実装が他に無いか）を検討。
+
+## セッション27 2026-05-30 12:44 JST（S26起案の観点⑲ aria-expanded/aria-controls 状態同期を全数監査 → CopilotPanel の dangling aria-controls を修復）
+- 冒頭ベースライン全緑実測: test **276 passed**(61 files)（現 HEAD `010ad43`）。git status の M（BookmarkButton.snap CRLF / overnight-loop.bat）+ 未追跡 logs/scripts は本ループ無関係＝コミットに巻き込まない（`git add <対象のみ>`）。
+- done: 【実バグ=A11y WCAG 1.3.1・観点⑲】`CopilotPanel` の「その他の操作」ボタンが
+  `aria-controls="copilot-actions-popup"` を宣言するが、対象ポップアップ `<div>` に **`id` が付与されておらず
+  参照が解決できない dangling idref** だった（隣接の quickActions トグルは `aria-controls="copilot-quickactions-list"`
+  ↔ `id="copilot-quickactions-list"` で正しく対になっており、actions 側だけ id 欠落＝非対称の実バグ）。SR 利用者に
+  開閉対象の関係性が壊れて伝わる。ポップアップ div に `id="copilot-actions-popup"` を付与して解決（additive・視覚/挙動不変）。
+  / コミット `94eb20f` / 検証: typecheck0/lint0err（既存 ux-audit 警告1のみ）/test **277緑**(+1)/build緑。
+  新規 `__tests__/components/CopilotPanel.aria.test.tsx`（CopilotPanel.tsx 内の**全 aria-controls が同ファイル内 id で
+  解決すること**の参照整合性ガード）を追加し、**修正を git stash で外すと当該テストが落ちる**ことを実測（崩れたら落ちる検証）。
+  ※ ポップアップは `actionsOpen` 時のみ描画＝隣接 quickActions と同じ render-when-relevant 慣用。完全な常設化（`hidden` トグル）は
+  CopilotPanel の restructure になるため夜間は最小 diff（参照解決＝開時に有効）に留めた。
+- SKIP(全数監査=実害ゼロ・観点⑲ 残り): 他の aria-expanded/aria-controls 全箇所は状態同期・参照整合とも正常。
+  ①`HomeTopicGrid`＝panel を `hidden={!open}` で**常設**＋aria-controls 対の id 在＝gold standard。
+  ②`SiteHeader`「問題を解く」dropdown＝aria-expanded={dropOpen} が click/Escape/blur/hover の全経路で state 追従（aria-controls 無し・aria-haspopup で代替）。
+  ③`MobileBottomNav` メニュー＝aria-expanded={menuOpen} が Sheet open と同期。④`SearchClient`(showHistory/showSaved)・`TTSButton`(showRate)＝aria-expanded のみで state 追従・aria-controls 無し。
+  ⑤`AfternoonResultView`＝aria-controls=`ai-note-${id}` の対象は `showAiNote && (...)` で開時に描画＝aria-expanded と整合（render-when-open 慣用）。
+  → 「aria-expanded が実 state とズレる」「aria-controls が常時 dangling」系の defect は CopilotPanel の1件のみ＝修復済。残存ゼロを実測確認。
+- SKIP(全数監査=実害ゼロ・観点⑳ form 内 button の暗黙 submit): 全 `<form>` 7箇所（ApiKeysClient/EmailSignInForm/
+  ContactForm/SchedulePlanner/EmailLeadCapture/SearchClient/CopilotPanel）の内側 button を全数確認。`<Button>` primitive
+  （`components/ui/button.tsx`）は type を既定付与しないが、**form 内の全 `<button>`/`<Button>` が明示 type を持つ**
+  （submit は意図的 submit・他は全て `type="button"`）。意図せぬ form 送信を招く type 欠落は**ゼロ**＝実害ゼロ。S13 の
+  「form button type クリーン」記録を新規追加分まで含め再確認 done。
+- done: 【実バグ=A11y WCAG 2.3.3・観点㉑】`FireworksBurst`（5連続正解時の全画面パーティクル爆発）が
+  `prefers-reduced-motion: reduce` を無視して再生されていた。**framer-motion の `animate` は JS(WAAPI)駆動で、
+  globals.css の `@media (prefers-reduced-motion) { animation-duration/transition-duration }` 抑制では止まらない**
+  （CSS の animation-* しか効かない）。前庭障害ユーザーに 28粒子が160px 飛散＋3.5倍スケールのグローが直撃していた。
+  matchMedia を直接読む最小フックで判定し reduce 時は装飾バーストを非描画（auto-clear タイマーは維持＝親 burst state は
+  従来どおり解除）。/ コミット `272290c` / 検証: typecheck0/lint0err/test **278緑**(+1)/build緑。新規テスト
+  （matchMedia=reduce stub で装飾オーバーレイ非描画＋onDone は発火）を追加し、**git stash で外すと落ちる**ことを実測。
+- done: 【実バグ=A11y WCAG 2.3.3・観点㉑横展開】`ComboCounter`（連続正解バッジ）も同型。framer の spring 入場アニメ
+  （scale/opacity/y）が reduce を無視。reduce 時は同一スタイルの静的 div で即時表示し情報（コンボ数）は保持しつつ動きだけ抑制。
+  / コミット `03bf2eb` / 検証: typecheck0/lint0err/test **280緑**(+2)/build緑。新規テスト2件（reduce で入場 inline style 無し＋
+  通常時は有り）を追加し、**git stash で reduce テストが落ちる**ことを実測。
+  ※ matchMedia フックが FireworksBurst/ComboCounter に重複（各12行・自己完結）。夜間は再touch回避で各々inline＝**日中に共有
+  フック `usePrefersReducedMotion` への抽出が候補**として記録。
+- 結論: framer-motion 利用は**この2コンポーネントのみ**（grep 実測）で両方修復＝観点㉑（JS駆動アニメの reduced-motion 無視）は
+  一巡 done。CSS 駆動アニメ（HeroAiDemo 等）は globals.css 包括ルールで既に抑制済（S15 確認）。
+
+## セッション27 まとめ
+- 実改善3件（A11y）+ 全数監査SKIP1観点（⑳ form-button-type＝実害ゼロ）。
+  1. CopilotPanel: dangling aria-controls 解消＝WCAG 1.3.1（`94eb20f`・観点⑲）
+  2. FireworksBurst: reduced-motion で装飾バースト抑制＝WCAG 2.3.3（`272290c`・観点㉑）
+  3. ComboCounter: reduced-motion で静的表示＝WCAG 2.3.3（`03bf2eb`・観点㉑横展開）
+- テーマ: S26 起案の観点⑲（aria 状態同期）⑳（暗黙 submit）㉑（reduced-motion）を全数監査。実害は⑲で1件・㉑で2件（同型）。
+  **重要な発見: framer-motion の JS 駆動アニメは globals.css の prefers-reduced-motion 抑制を素通りする**（CSS animation/transition
+  しか効かない）。framer 利用は FireworksBurst/ComboCounter の2点のみで両方修復＝観点㉑は構造的に一巡 done。
+- 教訓（次セッションの重複監査防止）: **framer-motion(`motion.*` の `animate`/`initial`)は CSS の reduced-motion を尊重しない**
+  ＝個別に matchMedia/useReducedMotion ゲートが必要。本リポの framer 利用は2点のみで対処済（再監査不要）。`<Button>` primitive は
+  type 既定なしだが form 内は全て明示 type＝暗黙 submit リスクなし。aria-controls の dangling idref は CopilotPanel の1件のみで解消。
+- 次セッションへ: S26 起案の残り観点は ⑰（デッドコード/未参照 export スイープ）⑱（useMemo/useCallback 依存の参照不安定＝**実測体感被害が
+  ある場合のみ**）。日中候補が蓄積（tabs矢印キー=影響大/コピー通知統一/MilestoneToast 防御的ref化/exam meta desc短縮/
+  EmailSignInForm・SchedulePlanner live化/**reduced-motion 共有フック抽出**）。夜間の安全な実害バグは S1-S27 で深く枯渇。
