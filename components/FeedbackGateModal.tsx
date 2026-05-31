@@ -111,6 +111,16 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
   return (
     <Dialog open={open} onOpenChange={(v) => !v && onClose()}>
       <DialogContent>
+        {/* radix Dialog は開いた時点の DialogTitle しか読み上げず、送信後にフォームを
+            成功ビューへ差し替えても再アナウンスしない。常設の live region で送信中・
+            送信完了(無料枠解放)を SR へ通知する(WCAG 4.1.3 status messages)。 */}
+        <p role="status" aria-live="polite" className="sr-only">
+          {submitting
+            ? "送信しています。少々お待ちください。"
+            : submitted
+              ? "フィードバックを受け付けました。AI コパイロットが実質無制限になりました。"
+              : ""}
+        </p>
         {submitted ? (
           <>
             <DialogHeader>
@@ -198,6 +208,7 @@ export function FeedbackGateModal({ open, onClose, source }: Props) {
               onChange={(e) => setComment(e.target.value.slice(0, 1000))}
               rows={3}
               maxLength={1000}
+              aria-label="ご意見・改善要望（任意・1000 字以内）"
               placeholder="ご意見・改善要望（任意・1000 字以内）"
               className="mt-3 w-full resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600"
             />

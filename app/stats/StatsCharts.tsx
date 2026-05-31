@@ -25,7 +25,11 @@ const REFERRER_PALETTE = ["#0ea5e9", "#22c55e", "#a855f7", "#94a3b8"];
 
 export function ImpressionsTrendChart({ trend }: { trend: GscDailyPoint[] }) {
   return (
-    <div className="h-[280px] w-full">
+    <div
+      className="h-[280px] w-full"
+      role="img"
+      aria-label="直近90日間のGoogle検索表示回数の推移を示す折れ線グラフ"
+    >
       <ResponsiveContainer width="100%" height="100%">
         <AreaChart data={trend} margin={{ top: 8, right: 12, left: 0, bottom: 8 }}>
           <defs>
@@ -60,7 +64,11 @@ export function ContentByExamChart({
   rows: Array<{ label: string; total: number }>;
 }) {
   return (
-    <div className="h-[300px] w-full">
+    <div
+      className="h-[300px] w-full"
+      role="img"
+      aria-label="試験区分別の収録問題数を示す棒グラフ"
+    >
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={rows} margin={{ top: 8, right: 12, left: 0, bottom: 40 }}>
           <CartesianGrid strokeDasharray="3 3" stroke="rgba(100,116,139,0.15)" />
@@ -79,7 +87,11 @@ export function ContentByExamChart({
 
 export function FeatureBreakdownChart({ rows }: { rows: FeatureBreakdownRow[] }) {
   return (
-    <div className="h-[260px] w-full">
+    <div
+      className="h-[260px] w-full"
+      role="img"
+      aria-label="機能別アクセス比率を示す円グラフ"
+    >
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie
@@ -107,7 +119,11 @@ export function FeatureBreakdownChart({ rows }: { rows: FeatureBreakdownRow[] })
 
 export function ReferrerBreakdownChart({ rows }: { rows: ReferrerRow[] }) {
   return (
-    <div className="h-[260px] w-full">
+    <div
+      className="h-[260px] w-full"
+      role="img"
+      aria-label="流入元の構成比を示す円グラフ"
+    >
       <ResponsiveContainer width="100%" height="100%">
         <PieChart>
           <Pie

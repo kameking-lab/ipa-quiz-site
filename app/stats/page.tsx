@@ -242,9 +242,9 @@ export default async function StatsPage() {
                 <table className="w-full min-w-[420px] text-sm">
                   <thead>
                     <tr className="border-b border-border bg-muted/30 text-left text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                      <th className="px-5 py-3">#</th>
-                      <th className="px-5 py-3">検索キーワード</th>
-                      <th className="px-5 py-3">表示回数（30日）</th>
+                      <th scope="col" className="px-5 py-3">#</th>
+                      <th scope="col" className="px-5 py-3">検索キーワード</th>
+                      <th scope="col" className="px-5 py-3">表示回数（30日）</th>
                     </tr>
                   </thead>
                   <tbody>

@@ -231,6 +231,9 @@ export function QuizPlayer({
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
       }
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+R reloads, Ctrl/Cmd+1–4
+      // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
         const i = ["1", "2", "3", "4"].indexOf(e.key);
         if (i >= 0) {
@@ -579,7 +582,7 @@ const QUIZ_ORIGIN =
     ? window.location.origin
     : "https://www.kakomon-ai.jp";
 
-function QuizCompleteScreen({
+export function QuizCompleteScreen({
   stats,
   elapsed,
   exam,
@@ -657,7 +660,7 @@ function QuizCompleteScreen({
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
-            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X（Twitter）で結果をシェア（新しいタブで開く）" className={btnClass}>
+            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X でシェア（結果・新しいタブで開く）" className={btnClass}>
               <Share2 className="h-4 w-4" aria-hidden="true" /> X でシェア
             </a>
             <a href={lineUrl} target="_blank" rel="noopener noreferrer" aria-label="LINEで結果をシェア（新しいタブで開く）" className={btnClass}>
@@ -668,6 +671,11 @@ function QuizCompleteScreen({
               {copied ? "コピーしました" : "URLコピー"}
             </button>
           </div>
+          {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
+              polite live region で告知する。 */}
+          <span role="status" aria-live="polite" className="sr-only">
+            {copied ? "結果 URL をコピーしました" : ""}
+          </span>
         </div>
 
         <div className="flex flex-col gap-2">

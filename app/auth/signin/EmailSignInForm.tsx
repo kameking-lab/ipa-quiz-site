@@ -45,7 +45,11 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
 
   if (sent) {
     return (
-      <div className="rounded-xl border border-primary/30 bg-primary-soft px-4 py-4 text-sm text-primary-soft-foreground">
+      <div
+        role="status"
+        aria-live="polite"
+        className="rounded-xl border border-primary/30 bg-primary-soft px-4 py-4 text-sm text-primary-soft-foreground"
+      >
         <p className="font-semibold">メールを送信しました</p>
         <p className="mt-1 text-xs leading-relaxed opacity-90">
           {email} 宛のリンクからログインしてください。迷惑メールフォルダもご確認ください。

@@ -19,17 +19,19 @@ interface CatalogData {
   tags: Record<string, CustomTagMeta>;
 }
 
-const EMPTY: CatalogData = { tags: {} };
+function emptyData(): CatalogData {
+  return { tags: {} };
+}
 
 function readRaw(): CatalogData {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyData();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.customTags);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyData();
     const parsed = JSON.parse(raw) as CatalogData;
     return { tags: parsed.tags && typeof parsed.tags === "object" ? parsed.tags : {} };
   } catch {
-    return EMPTY;
+    return emptyData();
   }
 }
 

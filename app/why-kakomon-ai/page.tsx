@@ -13,6 +13,12 @@ const PAGE_TITLE = "過去問AI を選ぶ理由 ── IPA 試験対策サービ
 const PAGE_DESCRIPTION =
   "IPA 情報処理技術者試験の過去問対策サービスを比較。AI コパイロット・午後 AI 採点・PWA 対応など、過去問AI 独自の差別化機能を、競合の良さも公平に紹介しながら整理します。";
 
+const OG_IMAGE_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "feature",
+  title: "過去問AI を選ぶ理由",
+  subtitle: "サービス比較",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: PAGE_TITLE,
   description: PAGE_DESCRIPTION,
@@ -24,11 +30,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: OG_IMAGE_URL, width: 1200, height: 630, alt: PAGE_TITLE }],
   },
   twitter: {
     card: "summary_large_image",
     title: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
+    images: [OG_IMAGE_URL],
   },
 };
 
@@ -265,16 +273,16 @@ export default function WhyKakomonAiPage() {
           <table className="w-full min-w-[640px] text-xs">
             <thead className="bg-muted/40">
               <tr>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">観点</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-primary">過去問AI</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">過去問道場系</th>
-                <th className="px-3 py-2.5 text-left font-semibold text-foreground">予備校・通信講座</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">観点</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-primary">過去問AI</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">過去問道場系</th>
+                <th scope="col" className="px-3 py-2.5 text-left font-semibold text-foreground">予備校・通信講座</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-border">
               {COMPARISON_ROWS.map((row) => (
                 <tr key={row.label}>
-                  <td className="px-3 py-3 align-top font-medium text-foreground">{row.label}</td>
+                  <th scope="row" className="px-3 py-3 text-left align-top font-medium text-foreground">{row.label}</th>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.kakomonAi}</td>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.doujou}</td>
                   <td className="px-3 py-3 align-top text-muted-foreground">{row.yobikou}</td>

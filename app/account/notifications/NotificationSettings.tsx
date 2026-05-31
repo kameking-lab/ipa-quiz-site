@@ -147,6 +147,7 @@ export function NotificationSettings() {
               <p className="text-xs text-muted-foreground">下の設定に応じてメールを送信します</p>
             </div>
             <Switch
+              aria-label="メール通知を有効化"
               checked={prefs.emailEnabled}
               onCheckedChange={(checked) => update({ emailEnabled: checked })}
             />
@@ -158,6 +159,7 @@ export function NotificationSettings() {
               <p className="text-xs text-muted-foreground">毎日設定時刻に学習を促します</p>
             </div>
             <Switch
+              aria-label="学習継続リマインダー"
               checked={prefs.streakReminder}
               onCheckedChange={(checked) => update({ streakReminder: checked })}
               disabled={!prefs.emailEnabled}
@@ -170,6 +172,7 @@ export function NotificationSettings() {
               <p className="text-xs text-muted-foreground">毎週日曜日に学習サマリーをお届け</p>
             </div>
             <Switch
+              aria-label="週次ダイジェスト"
               checked={prefs.weeklyDigest}
               onCheckedChange={(checked) => update({ weeklyDigest: checked })}
               disabled={!prefs.emailEnabled}
@@ -242,6 +245,8 @@ export function NotificationSettings() {
 
       {status.kind !== "idle" && (
         <div
+          role="status"
+          aria-live="polite"
           className={
             "flex items-start gap-2 rounded-xl border p-3 text-sm " +
             (status.kind === "error"

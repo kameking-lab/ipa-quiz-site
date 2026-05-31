@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
+import { SITE_BASE_URL } from "@/lib/seo/config";
+
 const ALLOWED_DAYS = new Set(["7", "30", "100"]);
 
 interface PageProps {
@@ -13,11 +15,20 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const safeDays = ALLOWED_DAYS.has(days) ? days : "7";
   const title = `${safeDays}日連続学習達成 — 過去問AI`;
   const description = `IPA 過去問 AI で ${safeDays} 日連続学習を達成しました。あなたも一緒に始めませんか?`;
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "streak",
+    title: `${safeDays}日連続学習達成`,
+    streak: safeDays,
+  }).toString()}`;
   return {
     title,
     description,
-    openGraph: { title, description },
-    twitter: { card: "summary_large_image", title, description },
+    openGraph: {
+      title,
+      description,
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
   };
 }
 

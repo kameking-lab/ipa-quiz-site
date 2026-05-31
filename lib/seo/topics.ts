@@ -63,7 +63,11 @@ export function getHubTopics(maxCount: number = 30, minQuestions: number = 4): T
 
 export function getQuestionsByTopic(tag: string): Question[] {
   buildIndex();
-  return TOPIC_TO_QUESTIONS.get(tag.trim()) ?? [];
+  // キャッシュ内部配列の参照をそのまま返すと、呼び出し側の .sort() などの
+  // 破壊的操作が共有キャッシュを汚染する（長寿命サーバでリクエスト跨ぎの順序破壊）。
+  // 浅いコピーを返してキャッシュを不変に保つ（要素 Question は共有のままで安全）。
+  const list = TOPIC_TO_QUESTIONS.get(tag.trim());
+  return list ? [...list] : [];
 }
 
 export function findTopicByAnySlug(slug: string): TopicSummary | undefined {
@@ -71,4 +75,18 @@ export function findTopicByAnySlug(slug: string): TopicSummary | undefined {
   return getAllTopics().find(
     (t) => t.slug === target || t.tag === topicSlugToTag(target),
   );
+}
+
+/**
+ * トピックタグのリンク先 URL を返す。
+ * 専用ハブページ（/topics/{slug}）が存在するタグはそこへ、存在しないタグ
+ * （用語集・特集記事の編集タグで、どの問題にも付与されていないもの）は
+ * 検索へフォールバックする。/topics/[slug] は dynamicParams=false のため、
+ * 実在しないタグへのリンクは 404 になる。これを防ぐためのヘルパ。
+ */
+export function topicLinkHref(tag: string): string {
+  const slug = topicTagToSlug(tag);
+  return findTopicByAnySlug(slug)
+    ? `/topics/${encodeURIComponent(slug)}`
+    : `/search?q=${encodeURIComponent(tag)}`;
 }

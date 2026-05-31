@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { buildQuestionJsonLd, sessionLabel } from "@/lib/seo/question-jsonld";
-import type { Question } from "@/lib/questions/types";
+import type { Question, Session } from "@/lib/questions/types";
 
 const baseQuestion: Question = {
   id: "ap-2024s-am-q1",
@@ -65,9 +65,9 @@ describe("buildQuestionJsonLd", () => {
     expect(qapage.mainEntity.suggestedAnswer).toBeUndefined();
   });
 
-  it("carries dateModified on the QAPage node", () => {
+  it("carries a timezone-qualified dateModified on the QAPage node", () => {
     const qapage = build()["@graph"][0] as { dateModified: string };
-    expect(qapage.dateModified).toBe("2026-05-23");
+    expect(qapage.dateModified).toBe("2026-05-23T00:00:00+09:00");
   });
 });
 
@@ -113,8 +113,9 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     expect(q.author).toMatchObject({ "@type": "Organization", name: "情報処理推進機構 (IPA)" });
     expect(q.upvoteCount).toBe(0);
     expect(q.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1");
-    // datePublished/dateCreated are valid ISO dates anchored to the exam year.
-    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}$/);
+    // datePublished/dateCreated are timezone-qualified ISO 8601 datetimes
+    // anchored to the exam year (clears Google's "no timezone" warnings).
+    expect(q.datePublished).toMatch(/^2024-\d{2}-\d{2}T00:00:00\+09:00$/);
     expect(q.dateCreated).toBe(q.datePublished);
   });
 
@@ -122,7 +123,7 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     const a = question().acceptedAnswer;
     expect(a.url).toBe("https://www.kakomon-ai.jp/q/ap/2024-spring/am/q1#explanation");
     expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-    expect(a.datePublished).toBe("2026-05-23");
+    expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
     expect(a.upvoteCount).toBe(0);
   });
 
@@ -132,7 +133,7 @@ describe("buildQuestionJsonLd — Q&A rich-result compliance", () => {
     for (const a of suggested) {
       expect(typeof a.url).toBe("string");
       expect(a.author).toMatchObject({ "@type": "Organization", name: "過去問AI" });
-      expect(a.datePublished).toBe("2026-05-23");
+      expect(a.datePublished).toBe("2026-05-23T00:00:00+09:00");
       expect(a.upvoteCount).toBe(0);
     }
   });
@@ -160,5 +161,34 @@ describe("sessionLabel", () => {
 
   it("falls back to upper-cased input for unknown sessions", () => {
     expect(sessionLabel("xyz")).toBe("XYZ");
+  });
+
+  // The label map is typed Record<string,string> and takes `session: string`,
+  // so it is NOT bound to the Session union — a dropped/typo'd key or a newly
+  // added union member silently falls through to the raw-code fallback
+  // (`session.toUpperCase()`), leaking "AM2" instead of "午前II" into the
+  // question-page breadcrumb and Q&A JSON-LD (SEO-visible). The exhaustive
+  // Record<Session,true> below is a compile-time guard: adding a Session member
+  // without listing it here is a typecheck error, forcing the label coverage
+  // check to follow. (Same class as EXAM_LABELS, S93.)
+  it("maps every Session union member to a real label, never the raw-code fallback", () => {
+    const SESSION_PRESENCE: Record<Session, true> = {
+      am: true,
+      am1: true,
+      am2: true,
+      pm: true,
+      pm1: true,
+      pm2: true,
+      "kamoku-a": true,
+      "kamoku-b": true,
+    };
+    const ALL_SESSIONS = Object.keys(SESSION_PRESENCE) as Session[];
+    for (const s of ALL_SESSIONS) {
+      const label = sessionLabel(s);
+      expect(label.length).toBeGreaterThan(0);
+      // A label resolved from the map is the Japanese name; the fallback would
+      // be the upper-cased raw code. They must differ for every union member.
+      expect(label).not.toBe(s.toUpperCase());
+    }
   });
 });

@@ -4,9 +4,21 @@ import { test, expect } from "@playwright/test";
 const ESSAY_EXAM = "/essays/sc";
 const ESSAY_QUESTION = "/essays/sc/2025-spring/pm2/q1";
 
-// Industry tab IDs as rendered: essay-tab-{industryId}
-// Order from EssayIndustryTabs: it, manufacturing, finance, retail, telecom, construction, healthcare, public
-const INDUSTRY_TABS = ["it", "manufacturing", "finance", "retail", "telecom", "construction", "healthcare", "public"];
+// EssayIndustryTabs renders the industry selector as a role="group"
+// (aria-label "業種選択") of aria-pressed toggle buttons labelled by industry
+// name, in this order. The matching answer is a <section hidden> with a
+// "<industry>の合格答案例" heading. (Was a role=tablist/aria-selected/tabpanel
+// pattern before the a11y fix in 6e4fb97 — these specs assert the new pattern.)
+const INDUSTRY_LABELS = [
+  "IT・情報サービス業",
+  "製造業",
+  "金融業",
+  "流通・小売業",
+  "通信業",
+  "建設業",
+  "医療・ヘルスケア",
+  "公共・自治体",
+];
 
 test.describe("user journey: essays HTTP status", () => {
   test("essays exam index /essays/sc returns 200", async ({ request }) => {
@@ -32,44 +44,65 @@ test.describe("user journey: essays HTTP status", () => {
   });
 });
 
-test.describe("user journey: essays industry tab UI", () => {
-  test("essay question page has industry tablist", async ({ page }) => {
+test.describe("user journey: essays industry selector UI", () => {
+  test("essay question page has the industry selector group", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const tablist = page.getByRole("tablist");
-    await expect(tablist).toBeVisible();
+    const group = page.getByRole("group", { name: "業種選択" });
+    await expect(group).toBeVisible();
   });
 
-  test("essay question page has all 8 industry tabs", async ({ page }) => {
+  test("essay question page has all 8 industry buttons", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    for (const id of INDUSTRY_TABS) {
-      const tab = page.locator(`[id="essay-tab-${id}"]`);
-      await expect(tab).toBeVisible();
+    const group = page.getByRole("group", { name: "業種選択" });
+    await expect(group.getByRole("button")).toHaveCount(8);
+    for (const label of INDUSTRY_LABELS) {
+      await expect(
+        group.getByRole("button", { name: label, exact: true }),
+      ).toBeVisible();
     }
   });
 
-  test("first industry tab (it) is selected by default", async ({ page }) => {
+  test("first industry button (IT) is pressed by default", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const firstTab = page.locator('[id="essay-tab-it"]');
-    await expect(firstTab).toHaveAttribute("aria-selected", "true");
+    const group = page.getByRole("group", { name: "業種選択" });
+    await expect(
+      group.getByRole("button", { name: "IT・情報サービス業", exact: true }),
+    ).toHaveAttribute("aria-pressed", "true");
+    await expect(
+      group.getByRole("button", { name: "製造業", exact: true }),
+    ).toHaveAttribute("aria-pressed", "false");
   });
 
-  test("clicking manufacturing tab selects it and deselects it", async ({ page }) => {
+  test("clicking 製造業 presses it and unpresses IT", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const mfgTab = page.locator('[id="essay-tab-manufacturing"]');
-    await mfgTab.click();
-    await expect(mfgTab).toHaveAttribute("aria-selected", "true");
-    const itTab = page.locator('[id="essay-tab-it"]');
-    await expect(itTab).toHaveAttribute("aria-selected", "false");
+    const group = page.getByRole("group", { name: "業種選択" });
+    const mfg = group.getByRole("button", { name: "製造業", exact: true });
+    const it = group.getByRole("button", {
+      name: "IT・情報サービス業",
+      exact: true,
+    });
+    await mfg.click();
+    await expect(mfg).toHaveAttribute("aria-pressed", "true");
+    await expect(it).toHaveAttribute("aria-pressed", "false");
   });
 
-  test("switching tabs changes the visible essay panel", async ({ page }) => {
+  test("switching industry changes the visible answer panel", async ({ page }) => {
     await page.goto(ESSAY_QUESTION);
-    const itPanel = page.locator('[id="essay-panel-it"]');
-    const mfgPanel = page.locator('[id="essay-panel-manufacturing"]');
-    // Initially it panel is shown
-    await expect(itPanel).toBeVisible();
-    // Click manufacturing tab
-    await page.locator('[id="essay-tab-manufacturing"]').click();
-    await expect(mfgPanel).toBeVisible();
+    const group = page.getByRole("group", { name: "業種選択" });
+    const itHeading = page.getByRole("heading", {
+      name: "IT・情報サービス業の合格答案例",
+      exact: true,
+    });
+    const mfgHeading = page.getByRole("heading", {
+      name: "製造業の合格答案例",
+      exact: true,
+    });
+    // IT answer is shown initially; the manufacturing answer is hidden.
+    await expect(itHeading).toBeVisible();
+    await expect(mfgHeading).toBeHidden();
+    // Switch to manufacturing → its answer panel becomes visible, IT hides.
+    await group.getByRole("button", { name: "製造業", exact: true }).click();
+    await expect(mfgHeading).toBeVisible();
+    await expect(itHeading).toBeHidden();
   });
 });

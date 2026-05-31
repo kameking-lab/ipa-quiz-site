@@ -42,6 +42,16 @@ export function getQuestionsByExamStrict(exam: ExamCode): Question[] {
   );
 }
 
+/**
+ * /[exam]/topic/[category] ページが実在するか（= strict プールに同分野の
+ * 問題が 1 件以上あるか）。topic ルートは dynamicParams=false かつ pool 空で
+ * notFound() するため、空分野へのリンクは 404 になる。問題詳細ページが分野
+ * リンクを張ってよいかの単一の判定源。
+ */
+export function examTopicPageExists(exam: ExamCode, category: string): boolean {
+  return getQuestionsByExamStrict(exam).some((q) => q.category === category);
+}
+
 export interface YearSeasonGroup {
   year: number;
   season: Question["season"];

@@ -80,6 +80,40 @@ describe("deterministicRerank", () => {
     const result = deterministicRerank(candidates, {}, 2, "ACID 特性");
     expect(result[0].doc.id).toBe("g:ACID");
   });
+
+  it("タグ重複ブーストは最大4件で頭打ちになる(min(overlap,4))", () => {
+    // a は ctx タグと4件、b は6件すべて重複。クランプにより両者とも +20%(×1.2)で同点。
+    const ctxTags = ["t1", "t2", "t3", "t4", "t5", "t6"];
+    const candidates = [
+      cand("a", 10, { meta: { topicTags: ["t1", "t2", "t3", "t4"] } }),
+      cand("b", 10, { meta: { topicTags: ctxTags } }),
+    ];
+    const result = deterministicRerank(candidates, { currentTopicTags: ctxTags }, 2);
+    const byId = Object.fromEntries(result.map((r) => [r.doc.id, r.rerankScore]));
+    expect(byId.a).toBeCloseTo(12); // 10 * (1 + min(4,4)*0.05) = 12
+    expect(byId.b).toBeCloseTo(byId.a); // 6件でも min(6,4)=4 で頭打ち=同点
+  });
+
+  it("glossary タイトル部分一致(ratio=0.5)でも 3x ブーストする", () => {
+    // titleNorm="alpha beta"(2トークン)、query="alpha"→hit 1/2=0.5。
+    // 10 * 1.5 * (1 + 4*0.5) = 45 で、ブースト無しの question(30)を上回る。
+    const candidates = [
+      cand("g:partial", 10, { kind: "glossary", title: "用語集: alpha beta" }),
+      cand("q:foo", 30),
+    ];
+    const result = deterministicRerank(candidates, {}, 2, "alpha");
+    expect(result[0].doc.id).toBe("g:partial");
+  });
+
+  it("極端に長い text(>4000字)は密度ペナルティ(×0.92)で順位を下げる", () => {
+    // long: 10*0.92=9.2 < short: 9.5。ペナルティが無いと long(10)が先頭になる。
+    const candidates = [
+      cand("long", 10, { text: "a".repeat(4001) }),
+      cand("short", 9.5, { text: "abc" }),
+    ];
+    const result = deterministicRerank(candidates, {}, 2);
+    expect(result[0].doc.id).toBe("short");
+  });
 });
 
 describe("buildRetrievalQuery", () => {
@@ -147,5 +181,34 @@ describe("llmRerank", () => {
     };
     const result = await llmRerank("Q", candidates, 2, broken, {});
     expect(result.length).toBe(2);
+  });
+
+  it("候補が空なら provider を呼ばず即 [] を返す", async () => {
+    let called = false;
+    const provider: LLMProvider = {
+      name: "spy",
+      async *streamChat() {
+        called = true;
+      },
+    };
+    const result = await llmRerank("Q", [], 3, provider, {});
+    expect(result).toEqual([]);
+    expect(called).toBe(false);
+  });
+
+  it("LLM が topN を超える番号を返しても topN 件で打ち切る", async () => {
+    const candidates = [cand("a", 10), cand("b", 8), cand("c", 6)];
+    const provider = makeMockProvider("2,0,1");
+    // topN=2 → "2,0,1" の先頭2件(2,0)で break
+    const result = await llmRerank("Q", candidates, 2, provider, {});
+    expect(result.map((r) => r.doc.id)).toEqual(["c", "a"]);
+  });
+
+  it("範囲外・重複の番号は読み飛ばす", async () => {
+    const candidates = [cand("a", 10), cand("b", 8), cand("c", 6)];
+    // "5"=範囲外(>=3)で skip、"1"=b 採用、2つ目の "1"=重複で skip、"0"=a 採用
+    const provider = makeMockProvider("5,1,1,0");
+    const result = await llmRerank("Q", candidates, 3, provider, {});
+    expect(result.map((r) => r.doc.id)).toEqual(["b", "a"]);
   });
 });

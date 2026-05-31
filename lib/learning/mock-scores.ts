@@ -13,17 +13,19 @@ interface MockScoreState {
   scores: MockScore[];
 }
 
-const EMPTY: MockScoreState = { scores: [] };
+function emptyState(): MockScoreState {
+  return { scores: [] };
+}
 
 function read(): MockScoreState {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyState();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.mockScores);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as MockScoreState;
     return { scores: Array.isArray(parsed.scores) ? parsed.scores : [] };
   } catch {
-    return EMPTY;
+    return emptyState();
   }
 }
 

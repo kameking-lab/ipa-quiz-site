@@ -6,7 +6,13 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: "*",
-        allow: "/",
+        // /api/og(/result) は全ページの og:image 生成エンドポイント。
+        // Disallow: /api/ だけだと Twitterbot / facebookexternalhit /
+        // LinkedInBot 等の SNS スクレイパが robots.txt を尊重して og:image を
+        // 取得できず、SNS シェア時のカード画像がサイト全体で欠落する。
+        // より長く一致する Allow を置き全 SNS の longest-match 規則で許可する
+        // （/api/ 配下の他エンドポイントは引き続き Disallow のまま）。
+        allow: ["/", "/api/og"],
         disallow: [
           "/api/",
           "/admin/",

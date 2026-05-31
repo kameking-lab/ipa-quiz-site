@@ -9,10 +9,17 @@ export function CategoryStudyTip({
   category,
   exam,
   topicTags,
+  hasTopicPage = true,
 }: {
   category: string;
   exam: ExamCode;
   topicTags: string[];
+  /**
+   * /[exam]/topic/[category] が実在するか。strict プールが空の分野では topic
+   * ページが notFound() するため、「もっと解く」CTA を出すと死リンクになる。
+   * 呼び出し側で算出済みの値を渡す（単一の判定源）。
+   */
+  hasTopicPage?: boolean;
 }) {
   const tip = getCategoryTip(category);
   const keywords = Array.from(
@@ -68,13 +75,15 @@ export function CategoryStudyTip({
         )}
       </dl>
 
-      <Link
-        href={categoryHref}
-        className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
-      >
-        この分野の問題をもっと解く
-        <ArrowRight className="h-3.5 w-3.5" />
-      </Link>
+      {hasTopicPage && (
+        <Link
+          href={categoryHref}
+          className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary hover:underline"
+        >
+          この分野の問題をもっと解く
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      )}
     </section>
   );
 }

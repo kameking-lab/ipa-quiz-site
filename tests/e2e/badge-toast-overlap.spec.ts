@@ -54,6 +54,22 @@ test.describe("badge toast / post-answer controls", () => {
     expect(t.y + t.height).toBeLessThan(c.y); // toast ends above the CTA bar
   });
 
+  test("auto-dismisses after ~5s with no interaction (does not linger over controls)", async ({
+    page,
+  }) => {
+    await answerFirst(page);
+    const toast = page.getByTestId("achievement-toast");
+    await expect(toast).toBeVisible();
+    // Must NOT dismiss prematurely: still present well inside the 5s window.
+    // (The pointer rests on the answered choice, not the top-anchored toast, so
+    // the hover-pause path is not engaged.)
+    await page.waitForTimeout(3000);
+    await expect(toast, "toast must stay visible during its 5s window").toBeVisible();
+    // …and the AUTO_DISMISS_MS=5000 timer must actually fire, removing it so it
+    // never keeps covering the post-answer area indefinitely (致命傷⑧ follow-up).
+    await expect(toast, "toast must auto-dismiss after ~5s").toBeHidden({ timeout: 6000 });
+  });
+
   test("a cited action icon (復習) stays clickable after the badge unlocks", async ({ page }) => {
     await answerFirst(page);
     await expect(page.getByTestId("achievement-toast")).toBeVisible();

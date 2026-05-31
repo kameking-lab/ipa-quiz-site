@@ -105,9 +105,15 @@ export function estimateRequiredPractice(
 }
 
 export function daysUntil(targetIso: string, now = Date.now()): number {
-  const target = new Date(targetIso).getTime();
-  if (!Number.isFinite(target)) return 0;
-  return Math.max(0, Math.ceil((target - now) / 86_400_000));
+  const targetDay = Date.parse(`${targetIso.slice(0, 10)}T00:00:00Z`);
+  if (!Number.isFinite(targetDay)) return 0;
+  // Count whole calendar days in JST so the countdown flips at JST midnight.
+  // Parsing a date-only string with `new Date()` yields UTC midnight, which made
+  // the count one too high between JST 00:00 and 09:00 (e.g. exam-day morning showed
+  // "あと1日" instead of "本日が試験日"). Normalize "today" to its JST date first.
+  const todayJst = new Date(now + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const todayDay = Date.parse(`${todayJst}T00:00:00Z`);
+  return Math.max(0, Math.round((targetDay - todayDay) / 86_400_000));
 }
 
 /**

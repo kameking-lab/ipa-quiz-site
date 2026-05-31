@@ -90,7 +90,7 @@ async function fetchEventCounts(
   return counts;
 }
 
-function buildFunnelSteps(
+export function buildFunnelSteps(
   stepDefs: Array<{ event: string; label: string }>,
   counts: Record<string, number>,
 ): FunnelStep[] {

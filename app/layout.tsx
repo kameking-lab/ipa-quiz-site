@@ -200,7 +200,7 @@ export default function RootLayout({
                           href="https://x.com/kakomon_ai_jp"
                           target="_blank"
                           rel="noopener noreferrer"
-                          aria-label="X（Twitter）でフォロー（新しいタブで開く）"
+                          aria-label="X @kakomon_ai_jp をフォロー（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
                           X @kakomon_ai_jp

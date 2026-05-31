@@ -13,7 +13,10 @@ type Block =
   | { kind: "p"; text: string }
   | { kind: "table"; header: string[]; rows: string[][] };
 
-const TABLE_SEPARATOR_RE = /^\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+$/;
+// 区切り行 (`---|---` や `| :--- | ---: |`)。標準的な Markdown テーブルは
+// 前後にパイプを付ける (`|---|---|`) ため、先頭/末尾の任意パイプも許容する。
+// これが無いと PDF 由来の前後パイプ付きテーブルが平文段落に化けて描画される。
+const TABLE_SEPARATOR_RE = /^\s*\|?\s*:?-{2,}:?\s*(\|\s*:?-{2,}:?\s*)+\|?\s*$/;
 
 function splitCells(line: string): string[] {
   // Trim leading/trailing pipe so "| a | b |" -> ["a", "b"].
@@ -95,6 +98,7 @@ export function QuestionBody({ text }: { text: string }): ReactElement {
                   {b.header.map((h, hi) => (
                     <th
                       key={hi}
+                      scope="col"
                       className="border border-border bg-muted/50 px-3 py-2 text-left font-semibold"
                     >
                       {h}

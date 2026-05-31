@@ -41,17 +41,14 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
         <p className="mb-2 text-xs font-medium text-zinc-500 dark:text-zinc-400">
           業種を選択してください
         </p>
-        <div role="tablist" className="flex flex-wrap gap-2">
+        <div role="group" aria-label="業種選択" className="flex flex-wrap gap-2">
           {orderedIndustries.map((id) => {
             const isActive = selectedIndustry === id;
             return (
               <button
                 key={id}
                 type="button"
-                role="tab"
-                aria-selected={isActive}
-                aria-controls={`essay-panel-${id}`}
-                id={`essay-tab-${id}`}
+                aria-pressed={isActive}
                 onClick={() => {
                   setSelectedIndustry(id);
                   posthogCapture("essay_industry_switched", { industry: id });
@@ -78,9 +75,6 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
         return (
           <section
             key={essay.industryId}
-            id={`essay-panel-${essay.industryId}`}
-            role="tabpanel"
-            aria-labelledby={`essay-tab-${essay.industryId}`}
             hidden={!isActive}
             className="space-y-4"
           >

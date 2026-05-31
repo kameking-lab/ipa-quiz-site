@@ -97,6 +97,19 @@ test.describe("search: keyword interaction", () => {
     await expect(resultsSection).toBeVisible({ timeout: 15000 });
   });
 
+  test("results list is not a verbose live region; count is announced concisely", async ({ page }) => {
+    await suppressWelcomeModal(page);
+    await page.goto("/search?q=SQL");
+    const resultsSection = page.locator("[aria-label='検索結果']");
+    await expect(resultsSection).toBeVisible({ timeout: 15000 });
+    // The results container must NOT be a live region — otherwise every
+    // debounced keystroke re-reads all ~20 hits to screen readers.
+    await expect(resultsSection).not.toHaveAttribute("aria-live", "polite");
+    // A concise count status (sr-only) carries the announcement instead.
+    const countStatus = resultsSection.locator("[role='status']");
+    await expect(countStatus).toHaveText(/件の検索結果が見つかりました。/);
+  });
+
   test("clear button appears after submitting search", async ({ page }) => {
     await suppressWelcomeModal(page);
     await page.goto("/search?q=TCP");

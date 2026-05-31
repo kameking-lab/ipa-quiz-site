@@ -111,6 +111,12 @@ export function ReferralClient() {
         </Button>
       </div>
 
+      {/* コピー成功はボタン文言が変わるだけでは SR に告知されない(WCAG 4.1.3)。
+          polite live region で告知する。 */}
+      <span role="status" aria-live="polite" className="sr-only">
+        {copied ? "紹介 URL をコピーしました" : ""}
+      </span>
+
       {/* Count */}
       <div className="flex items-center gap-3 rounded-2xl border border-zinc-200 bg-white px-5 py-4 dark:border-zinc-800 dark:bg-zinc-900/40">
         <span className="rounded-lg bg-sky-100 p-2 text-sky-700 dark:bg-sky-900/40 dark:text-sky-300">

@@ -353,9 +353,9 @@ export default function EssayGradingDemoPage() {
               <table className="w-full min-w-[480px] text-sm">
                 <thead>
                   <tr className="border-b border-zinc-200 text-left text-xs font-semibold text-zinc-500 dark:border-zinc-800 dark:text-zinc-400">
-                    <th className="px-4 py-2.5">観点</th>
-                    <th className="px-4 py-2.5">採点基準</th>
-                    <th className="px-4 py-2.5 text-right">配点</th>
+                    <th scope="col" className="px-4 py-2.5">観点</th>
+                    <th scope="col" className="px-4 py-2.5">採点基準</th>
+                    <th scope="col" className="px-4 py-2.5 text-right">配点</th>
                   </tr>
                 </thead>
                 <tbody>

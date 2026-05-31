@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { CheckCircle2, Clock, Share2, Sparkles, Target, X } from "lucide-react";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import type { SessionSummary } from "@/lib/motivation/session";
 import { SocialShare } from "@/components/motivation/SocialShare";
@@ -88,7 +88,9 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
               <Sparkles className="h-3 w-3" />
               セッション完了
             </div>
-            <h2 className="text-2xl font-bold tracking-tight">お疲れさまでした</h2>
+            <DialogTitle className="text-2xl font-bold leading-8 tracking-tight">
+              お疲れさまでした
+            </DialogTitle>
             <p className="mt-1 text-sm opacity-90">{passLine}</p>
           </div>
 
@@ -150,6 +152,7 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
               <button
                 type="button"
                 onClick={() => setShowShare((v) => !v)}
+                aria-expanded={showShare}
                 className="flex w-full items-center justify-center gap-2 rounded-xl bg-sky-600 px-4 py-2.5 text-sm font-semibold text-white shadow hover:bg-sky-700"
               >
                 <Share2 className="h-4 w-4" />

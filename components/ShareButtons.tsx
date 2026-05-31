@@ -174,6 +174,11 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
           シェア…
         </button>
       )}
+      {/* コピー成功はボタン文言が変わるだけでは SR に告知されない(WCAG 4.1.3)。
+          compact モードと同様に polite live region で告知する。 */}
+      <span role="status" aria-live="polite" className="sr-only">
+        {copied ? "URL をコピーしました" : ""}
+      </span>
     </div>
   );
 }

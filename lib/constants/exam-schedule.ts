@@ -37,9 +37,20 @@ export function nextExamSitting(now: Date = new Date()): {
   days: number;
   label: string;
 } {
-  const year = now.getUTCFullYear();
+  const DAY_MS = 24 * 60 * 60 * 1000;
+  // Count the countdown in JST calendar days so it flips at JST midnight (not
+  // UTC) and an exam still reads "0 日" all through its own sitting day in Japan.
+  // Comparing the raw instant with Math.ceil made the count one too high between
+  // JST 00:00 and 09:00 (e.g. exam-day morning showed "あと1日"), and after JST
+  // 09:00 on the sitting day it even rolled to the next sitting. Sitting dates
+  // are authored as JST calendar dates and Date.UTC(...) pins them to 00:00Z of
+  // that date, matching todayJstMs below.
+  const jstYmd = new Date(now.getTime() + 9 * 60 * 60 * 1000).toISOString().slice(0, 10);
+  const todayJstMs = Date.parse(`${jstYmd}T00:00:00Z`);
+  const year = Number(jstYmd.slice(0, 4));
+
   const candidates: Array<{ date: Date; label: string }> = [];
-  for (const yr of [year, year + 1]) {
+  for (const yr of [year - 1, year, year + 1]) {
     for (const s of EXAM_SITTINGS) {
       candidates.push({
         date: new Date(Date.UTC(yr, s.month, s.day)),
@@ -48,7 +59,9 @@ export function nextExamSitting(now: Date = new Date()): {
     }
   }
   candidates.sort((a, b) => a.date.getTime() - b.date.getTime());
-  const nearest = candidates.find((c) => c.date.getTime() > now.getTime()) ?? candidates[0];
-  const days = Math.ceil((nearest.date.getTime() - now.getTime()) / (24 * 60 * 60 * 1000));
+  const nearest =
+    candidates.find((c) => c.date.getTime() >= todayJstMs) ??
+    candidates[candidates.length - 1];
+  const days = Math.max(0, Math.round((nearest.date.getTime() - todayJstMs) / DAY_MS));
   return { date: nearest.date, days, label: nearest.label };
 }

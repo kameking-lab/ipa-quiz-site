@@ -130,4 +130,47 @@ describe("postSync status mapping", () => {
     const { status } = await postSync("/api/account/bookmark-sync", []);
     expect(status.state).toBe("error");
   });
+
+  it("maps a generic non-401/503 HTTP failure to error with the status code", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockResolvedValue({ status: 500, ok: false }));
+    const local = [{ questionId: "local-1" }];
+    const { status, entries } = await postSync("/api/account/bookmark-sync", local);
+    expect(status).toEqual({ state: "error", message: "HTTP 500" });
+    // The local batch is echoed back unchanged so the caller keeps its data.
+    expect(entries).toBe(local);
+  });
+
+  it("falls back to local entries when the 200 body has a non-array entries field", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        status: 200,
+        ok: true,
+        json: async () => ({ entries: "not-an-array", merged: 2, total: 3 }),
+      }),
+    );
+    const local = [{ questionId: "local-1" }, { questionId: "local-2" }];
+    const { status, entries } = await postSync("/api/account/bookmark-sync", local);
+    expect(status).toEqual({ state: "ok", merged: 2, total: 3 });
+    expect(entries).toBe(local);
+  });
+
+  it("defaults merged/total to 0 when the 200 body omits them", async () => {
+    vi.stubGlobal(
+      "fetch",
+      vi.fn().mockResolvedValue({
+        status: 200,
+        ok: true,
+        json: async () => ({ entries: [] }),
+      }),
+    );
+    const { status } = await postSync("/api/account/bookmark-sync", []);
+    expect(status).toEqual({ state: "ok", merged: 0, total: 0 });
+  });
+
+  it("uses the 'network' message when a non-Error value is thrown", async () => {
+    vi.stubGlobal("fetch", vi.fn().mockRejectedValue("offline"));
+    const { status } = await postSync("/api/account/bookmark-sync", []);
+    expect(status).toEqual({ state: "error", message: "network" });
+  });
 });

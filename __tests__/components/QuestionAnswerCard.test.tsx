@@ -131,6 +131,17 @@ describe("QuestionAnswerCard — number-key selection", () => {
     expect(createHistoryStore().getAllEntries()).toHaveLength(0);
   });
 
+  it("ignores Ctrl/Cmd+number so browser tab-switch shortcuts are not hijacked", () => {
+    render(<QuestionAnswerCard {...baseProps} />);
+    // Ctrl+1 / Cmd+1 normally switch browser tabs — must not select a choice.
+    fireEvent.keyDown(window, { key: "1", ctrlKey: true });
+    fireEvent.keyDown(window, { key: "2", metaKey: true });
+    expect(createHistoryStore().getAllEntries()).toHaveLength(0);
+    // a plain number key still works (the feature is preserved)
+    fireEvent.keyDown(window, { key: "1" });
+    expect(createHistoryStore().getAllEntries()).toHaveLength(1);
+  });
+
   it("does not re-select once revealed (number key is inert after answering)", () => {
     render(<QuestionAnswerCard {...baseProps} />);
     fireEvent.keyDown(window, { key: "1" }); // selects ア, reveals

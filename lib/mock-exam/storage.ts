@@ -21,19 +21,21 @@ interface MockExamStorage {
   history: MockExamResult[];
 }
 
-const EMPTY: MockExamStorage = { history: [] };
+function emptyData(): MockExamStorage {
+  return { history: [] };
+}
 
 function read(): MockExamStorage {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyData();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.mockExam);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyData();
     const parsed = JSON.parse(raw) as MockExamStorage;
     return {
       history: Array.isArray(parsed.history) ? parsed.history : [],
     };
   } catch {
-    return EMPTY;
+    return emptyData();
   }
 }
 

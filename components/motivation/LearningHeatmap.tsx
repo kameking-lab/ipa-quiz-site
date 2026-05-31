@@ -111,7 +111,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
           )}
         </div>
 
-        <div className="overflow-x-auto pb-1" aria-label="過去365日の学習ヒートマップ">
+        <div className="overflow-x-auto pb-1" role="group" aria-label="過去365日の学習ヒートマップ">
           <div className="inline-flex gap-[3px]">
             {weeks.map((week, wi) => (
               <div key={wi} className="flex flex-col gap-[3px]">

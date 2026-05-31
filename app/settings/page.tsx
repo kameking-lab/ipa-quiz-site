@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useId, cloneElement, isValidElement } from "react";
 import Link from "next/link";
 import {
   AlertCircle,
@@ -79,7 +79,7 @@ function SectionTitle({
   id?: string;
 }) {
   return (
-    <div className="mb-3 flex items-center gap-3" id={id}>
+    <div className="mb-3 flex scroll-mt-20 items-center gap-3" id={id}>
       <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
         {icon}
       </span>
@@ -100,13 +100,21 @@ function SettingRow({
   description?: string;
   children: React.ReactNode;
 }) {
+  // Radix <Switch> renders a bare <button role="switch"> with no text content,
+  // so without this the control has no accessible name (WCAG 4.1.2). Associate
+  // the visible label with the control via aria-labelledby (name stays in sync).
+  const labelId = useId();
   return (
     <div className="flex items-center justify-between gap-4 px-5 py-4">
       <div className="min-w-0 flex-1">
-        <p className="text-sm font-medium text-foreground">{label}</p>
+        <p id={labelId} className="text-sm font-medium text-foreground">{label}</p>
         {description && <p className="mt-0.5 text-xs text-muted-foreground">{description}</p>}
       </div>
-      <div className="shrink-0">{children}</div>
+      <div className="shrink-0">
+        {isValidElement<{ "aria-labelledby"?: string }>(children)
+          ? cloneElement(children, { "aria-labelledby": labelId })
+          : children}
+      </div>
     </div>
   );
 }
@@ -598,22 +606,29 @@ export default function SettingsPage() {
           </section>
         </div>
 
-        {toast && (
-          <div
-            role="status"
-            aria-live="polite"
-            className={`fixed bottom-6 left-1/2 z-50 flex -translate-x-1/2 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
-              toast.type === "ok" ? "bg-success" : "bg-destructive"
-            }`}
-          >
-            {toast.type === "ok" ? (
-              <CheckCircle2 className="h-4 w-4" />
-            ) : (
-              <AlertCircle className="h-4 w-4" />
-            )}
-            {toast.msg}
-          </div>
-        )}
+        {/* 常設の live region。toast 真値時のみ region を描画する条件付きマウントだと、
+            live region 自体が文言と同時に DOM 挿入され、SR が変化を捕捉できず読み上げが
+            不確実になる。region を常設し中身だけ出し入れして確実に通知する（WCAG 4.1.3）。 */}
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
+        >
+          {toast && (
+            <div
+              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
+                toast.type === "ok" ? "bg-success" : "bg-destructive"
+              }`}
+            >
+              {toast.type === "ok" ? (
+                <CheckCircle2 className="h-4 w-4" />
+              ) : (
+                <AlertCircle className="h-4 w-4" />
+              )}
+              {toast.msg}
+            </div>
+          )}
+        </div>
       </div>
     </main>
   );

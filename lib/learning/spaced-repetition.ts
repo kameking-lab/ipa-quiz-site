@@ -18,18 +18,26 @@ export interface SrsState {
   cards: Record<string, SrsCard>;
 }
 
-const EMPTY: SrsState = { cards: {} };
 const DAY_MS = 86_400_000;
 
+// Factory (not a shared const): recordReview mutates the returned object in
+// place (state.cards[id] = ...), so a shared empty constant would be
+// permanently corrupted on the empty-storage path — and resetSrs() would then
+// write that corrupted copy back, failing to clear. Same footgun fixed in
+// history.ts / achievements.ts / bookmarks.ts.
+function emptyState(): SrsState {
+  return { cards: {} };
+}
+
 function read(): SrsState {
-  if (typeof window === "undefined") return EMPTY;
+  if (typeof window === "undefined") return emptyState();
   try {
     const raw = window.localStorage.getItem(LS_KEYS.spacedRepetition);
-    if (!raw) return EMPTY;
+    if (!raw) return emptyState();
     const parsed = JSON.parse(raw) as SrsState;
     return { cards: parsed.cards && typeof parsed.cards === "object" ? parsed.cards : {} };
   } catch {
-    return EMPTY;
+    return emptyState();
   }
 }
 
@@ -129,7 +137,7 @@ export function orderByPriority(ids: string[], now = Date.now()): string[] {
 }
 
 export function resetSrs(): void {
-  write(EMPTY);
+  write(emptyState());
 }
 
 export interface SrsSummary {

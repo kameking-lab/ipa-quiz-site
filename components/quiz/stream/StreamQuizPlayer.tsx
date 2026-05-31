@@ -117,6 +117,8 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
       }
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
         const i = ["1", "2", "3", "4"].indexOf(e.key);
         if (i >= 0) {

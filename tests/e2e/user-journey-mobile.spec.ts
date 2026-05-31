@@ -23,10 +23,10 @@ test.describe("user journey: mobile viewport (375x667)", () => {
     expect(await hasNoHorizontalOverflow(page)).toBe(true);
   });
 
-  test("essay page /essays/sc/2025-spring/pm2/q1 industry tabs visible on mobile", async ({ page }) => {
+  test("essay page /essays/sc/2025-spring/pm2/q1 industry selector visible on mobile", async ({ page }) => {
     await page.goto("/essays/sc/2025-spring/pm2/q1");
-    const tablist = page.getByRole("tablist");
-    await expect(tablist).toBeVisible();
+    const group = page.getByRole("group", { name: "業種選択" });
+    await expect(group).toBeVisible();
     expect(await hasNoHorizontalOverflow(page)).toBe(true);
   });
 

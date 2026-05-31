@@ -82,7 +82,11 @@ function Inner({ categoryById }: Props) {
             <CardTitle className="text-base">直近30日の演習量</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="h-48 w-full">
+            <div
+              className="h-48 w-full"
+              role="img"
+              aria-label="直近30日間に解いた問題数の推移を示す棒グラフ"
+            >
               <ResponsiveContainer width="100%" height="100%">
                 <BarChart data={report.weeklyBuckets}>
                   <CartesianGrid strokeDasharray="3 3" stroke="#cbd5e1" />

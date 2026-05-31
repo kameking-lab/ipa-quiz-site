@@ -91,11 +91,10 @@ export function AfternoonResultView({ question, result }: Props) {
               <Briefcase className="h-3.5 w-3.5" aria-hidden="true" />
               模範論述を業種で切り替える
             </p>
-            <div role="tablist" aria-label="業種選択" className="flex flex-wrap gap-1.5">
+            <div role="group" aria-label="業種選択" className="flex flex-wrap gap-1.5">
               <button
                 type="button"
-                role="tab"
-                aria-selected={industryTab === "common"}
+                aria-pressed={industryTab === "common"}
                 onClick={() => setIndustryTab("common")}
                 className={
                   "rounded-full border px-3 py-1 text-xs font-medium transition-colors " +
@@ -112,8 +111,7 @@ export function AfternoonResultView({ question, result }: Props) {
                   <button
                     key={v.industryId}
                     type="button"
-                    role="tab"
-                    aria-selected={selected}
+                    aria-pressed={selected}
                     onClick={() => setIndustryTab(v.industryId)}
                     className={
                       "rounded-full border px-3 py-1 text-xs font-medium transition-colors " +

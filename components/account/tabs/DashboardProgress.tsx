@@ -95,7 +95,11 @@ export function DashboardProgress() {
           <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
             分野別習熟度（直近10分野）
           </h2>
-          <div className="h-72">
+          <div
+            className="h-72"
+            role="img"
+            aria-label="分野別習熟度を示すレーダーチャート（直近10分野の正答率）"
+          >
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart
                 data={radarSlots(data.categoryStats).map((s) => ({

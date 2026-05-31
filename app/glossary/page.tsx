@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { GLOSSARY, GLOSSARY_CATEGORY_LABELS } from "@/data/glossary";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { topicTagToSlug } from "@/lib/seo/topics";
+import { topicLinkHref } from "@/lib/seo/topics";
 
 const OG_IMAGE = (() => {
   const params = new URLSearchParams({
@@ -145,7 +145,7 @@ export default function GlossaryPage() {
                       {t.relatedTopics.map((r) => (
                         <Link
                           key={r}
-                          href={`/topics/${encodeURIComponent(topicTagToSlug(r))}`}
+                          href={topicLinkHref(r)}
                           className="inline-flex items-center rounded-full border border-border bg-background px-2 py-0.5 text-[10px] text-muted-foreground transition hover:border-primary/40 hover:text-primary"
                         >
                           #{r}

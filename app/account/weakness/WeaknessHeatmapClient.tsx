@@ -102,7 +102,11 @@ function Inner({ categoryById }: Props) {
             <CardTitle className="text-base">分野別レーダーチャート</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="h-80 w-full">
+            <div
+              className="h-80 w-full"
+              role="img"
+              aria-label="分野別の正答率を示すレーダーチャート（各分野の正答率は下部の一覧でも確認できます）"
+            >
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart data={chartData}>
                   <PolarGrid stroke="#cbd5e1" />

@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { daysUntil } from "@/lib/learning/analytics";
 import type { ExamCode } from "@/lib/questions/types";
 
 const EXAM_OPTIONS: { code: ExamCode; label: string }[] = [
@@ -31,13 +32,6 @@ interface StoredEntry {
   selected: string;
   correct: boolean;
   at: number;
-}
-
-function daysUntil(dateStr: string): number {
-  const target = new Date(dateStr);
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return Math.ceil((target.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
 }
 
 export function StudyPlanClient() {
@@ -109,10 +103,14 @@ export function StudyPlanClient() {
         </CardHeader>
         <CardContent className="space-y-4">
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label
+              htmlFor="study-plan-exam"
+              className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            >
               受験する試験
             </label>
             <select
+              id="study-plan-exam"
               value={exam}
               onChange={(e) => { setExam(e.target.value as ExamCode); setPlan(null); }}
               className="w-full rounded-lg border border-zinc-300 bg-white px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-100"
@@ -124,10 +122,14 @@ export function StudyPlanClient() {
           </div>
 
           <div>
-            <label className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300">
+            <label
+              htmlFor="study-plan-date"
+              className="mb-1.5 block text-sm font-medium text-zinc-700 dark:text-zinc-300"
+            >
               試験日
             </label>
             <input
+              id="study-plan-date"
               type="date"
               value={examDate}
               min={today}

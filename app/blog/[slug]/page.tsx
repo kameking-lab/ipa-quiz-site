@@ -289,7 +289,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={`/quiz?mode=random&exam=${post.exam}`}
-              aria-label={`${examLabel(post.exam)} を無料で演習する（${getExamQuestionCount(post.exam)}問）`}
+              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問・無料）`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）→

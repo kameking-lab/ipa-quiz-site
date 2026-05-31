@@ -115,6 +115,8 @@ export function QuestionAnswerCard({
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
       }
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       const i = ["1", "2", "3", "4"].indexOf(e.key);
       if (i >= 0 && i < keys.length) {
         e.preventDefault();
