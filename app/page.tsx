@@ -6,6 +6,7 @@ import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
 import { HomeHeroLede } from "@/components/home/HomeHeroLede";
 import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
+import { HomeFlagshipEssay } from "@/components/home/HomeFlagshipEssay";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import {
   HomeReturningHeader,
@@ -150,6 +151,8 @@ export default function HomePage() {
         <TotalAnswerCounter />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
+
+      <HomeFlagshipEssay />
 
       <HomeTopicGrid />
 
