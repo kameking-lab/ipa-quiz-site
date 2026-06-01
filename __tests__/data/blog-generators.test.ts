@@ -262,6 +262,11 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).toContain("/blog/fe-kamoku-b-taisaku");
     expect(body).not.toContain("/essay");
     expect(body).toContain("## よくある質問");
+    // IPA official (henkou/2022/20220425.html): from 2023年4月 the 午前/午後 split was
+    // abolished and replaced by 科目A/科目B (CBT 通年). Legacy searchers still query
+    // "基本情報 午後" — pin the transition clarification so it can't silently drop.
+    expect(body).toContain("2023年4月から「午前・午後」という区分は廃止");
+    expect(body).toContain("旧 午後 → 現 **科目B**");
   });
 
   // AP 合格点/ボーダー longtail article (新設). 「応用情報 何点で合格/合算?/
