@@ -120,6 +120,26 @@ describe("blog template generators — flagship 午後論述AI採点(/essay) CTA
   }
 });
 
+describe("blog template generators — 土台 科目B pillar funnel gated to FE", () => {
+  // lastMonth / practice 午後 sections deep-link the 科目B 完全対策 pillar, but
+  // ONLY for FE — because FE's 午後 IS 科目B (アルゴリズム・擬似言語). Emitting
+  // it for any other exam would be off-topic. Guard the exact gate.
+  const PILLAR_LINK = "](/blog/fe-kamoku-b-taisaku)";
+  const FUNNELING = [
+    { name: "lastMonth", build: buildLastMonthPost },
+    { name: "practice", build: buildPracticePost },
+  ] as const;
+
+  for (const g of FUNNELING) {
+    for (const exam of EXAMS) {
+      const shouldHave = exam === "fe";
+      it(`${g.name}(${exam}) ${shouldHave ? "links" : "does NOT link"} to the 科目B pillar`, () => {
+        expect(g.build(exam, 0).body.includes(PILLAR_LINK)).toBe(shouldHave);
+      });
+    }
+  }
+});
+
 describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 404)", () => {
   for (const exam of EXAMS) {
     it(`${exam}: every exam-prefixed relatedSlug resolves to a sibling generator's slug`, () => {

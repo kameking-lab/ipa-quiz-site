@@ -167,6 +167,11 @@ export function buildLastMonthPost(exam: ExamCode, idx: number): BlogPost {
   const flagshipEssayCta = ESSAY_FLAGSHIP_EXAMS.has(exam)
     ? `\n\n直前期に書いた論述答案は、提出する前に [午後論述 AI 採点](/essay) へ通すと、論理性・具体性・題意適合の評価軸ごとに弱点が返ってきます。残り日数で重点的に直すべき箇所を絞り込めます（AI 採点は参考評価）。`
     : "";
+  // FE のみ、午後＝科目B（アルゴリズム・擬似言語）なので土台ピラーへ送客。
+  const kamokuBCta =
+    exam === "fe"
+      ? `\n\n基本情報の午後は科目B（アルゴリズムと擬似言語）が中心です。トレースの型が固まっていなければ、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で読み方を最短で整理してから本番演習に入ると伸びます。`
+      : "";
 
   const body = `# ${p.label} 直前1ヶ月で合格点に乗せる詰め込み学習法
 
@@ -206,7 +211,7 @@ ${p.afternoonStrategy}
 - 設問 1 と設問 2 のどちらで点を落としたか
 - 用語の読み違い・条件の見落としはどこか
 
-これを残り 14 日間、3 回分繰り返すだけで時間配分の感覚が劇的に良くなります。${flagshipEssayCta}
+これを残り 14 日間、3 回分繰り返すだけで時間配分の感覚が劇的に良くなります。${flagshipEssayCta}${kamokuBCta}
 
 ## 第4週：仕上げと体調管理
 
@@ -351,6 +356,11 @@ export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
   const flagshipEssayCta = ESSAY_FLAGSHIP_EXAMS.has(exam)
     ? `\n\n論述の答案まで書けるようになったら、[午後論述 AI 採点](/essay) で論理性・具体性・題意適合の観点ごとに採点させると、自分では気づきにくい構成の穴が見えてきます（AI 採点は参考評価）。`
     : "";
+  // FE のみ、午後＝科目B（アルゴリズム・擬似言語）なので土台ピラーへ送客。
+  const kamokuBCta =
+    exam === "fe"
+      ? `\n\n基本情報の午後は科目B（アルゴリズムと擬似言語）が中心です。トレースで詰まるなら、[基本情報 科目B 完全対策](/blog/fe-kamoku-b-taisaku) で擬似言語の読み方を体系的に押さえておくと、過去問演習の効率が上がります。`
+      : "";
 
   const body = `# ${p.label} 過去問の解き方完全ガイド
 
@@ -390,7 +400,7 @@ ${p.label} の頻出論点は、表現を変えて何度も出題されます。
 
 ${p.afternoonStrategy}
 
-午前で身につけた知識を午後の長文問題で使えるようにするには、各論点の「実務的な使われ方」を意識する必要があります。AI コパイロットに「${p.exampleSubjects[0]} の実務での具体例を 3 つ」と依頼すれば、知識を実務文脈に紐付けられます。${flagshipEssayCta}
+午前で身につけた知識を午後の長文問題で使えるようにするには、各論点の「実務的な使われ方」を意識する必要があります。AI コパイロットに「${p.exampleSubjects[0]} の実務での具体例を 3 つ」と依頼すれば、知識を実務文脈に紐付けられます。${flagshipEssayCta}${kamokuBCta}
 
 ## よくある失敗パターン
 
