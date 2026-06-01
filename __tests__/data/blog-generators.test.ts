@@ -447,6 +447,21 @@ describe("blog 午前I免除 post — exemption window facts are correct (2年�
     expect(body).toContain("2028 年秋（10月）以降：免除期間終了");
     expect(body).not.toContain("2028 年春（4月）以降：免除期間終了");
   });
+
+  // IPA official (about/koudo_menjo.html): 午前I免除 has THREE qualifying routes —
+  // (1) AP 合格, (2) いずれかの高度試験・支援士に合格, (3) 高度・支援士の午前I で
+  // 基準点以上 (午前I通過). The article originally explained only route 1, leaving the
+  // other two routes (and the 午前I通過者番号 application path) absent site-wide. Pin
+  // all three routes + the application numbers so the 条件 coverage can't silently drop.
+  it("covers all three IPA exemption routes (AP合格 / 高度合格 / 午前I通過) and the application numbers", () => {
+    const post = getBlogPostBySlug("ap-goukaku-go-koudo-senryaku");
+    const body = post!.body;
+    expect(body).toContain("3つの条件");
+    expect(body).toContain("午前I通過者");
+    expect(body).toContain("午前I通過者番号");
+    expect(body).toContain("合格証書番号");
+    expect(body).toContain("基準点（100点満点中60点）以上");
+  });
 });
 
 // 高度試験の春期/秋期 区分グルーピング (IPA official, 令和7年度春期 r07haru_exam.html
