@@ -142,4 +142,12 @@
   - 実装: `data/blog/generators.ts` に新記事 `koudo-ronjutsu-jiko-saiten`(longtail2Offset+11)を新設。「なぜ自己採点が難しいか→IPA出題趣旨・採点講評から読み取れる評価観点(適合度/論理/具体性/再現性)→自己採点チェックリスト→旗艦 `/essay` のAI採点で第三者視点を補う→自己採点→AI採点→書き直しループ」のオリジナル構成。relatedSlugs=[書き方hub, pm-essay-shudai-pickup, ipa-koudo-9kubun-chigai]。書き方 hub の relatedSlugs に本記事を inbound 追加し**相互リンクのクラスタ化**。
   - 誇大回避: 「IPA は採点基準を非公開」と明記し、出題趣旨・採点講評から読み取れる**傾向**として提示。実データを持つ論文5区分(ST/SA/PM/SM/AU)のみ言及。旗艦リンクは indexable な `/essay`（noindex の /essays ではない）。「AI採点は参考評価」明記。
   - 検証: 全ゲート緑（typecheck0 / lint0err / test1658 / build OK）。本番ビルド `blog/koudo-ronjutsu-jiko-saiten.html`(118KB)実在、`href="/essay"`＋オリジナル句（「自己採点チェックリスト」「書いた後に良し悪しを判断できない」）出力。outbound 4リンク全て prerendered(200)＝新規404ゼロ。hub `koudo-ronjutsu-kakikata-kotsu.html` に inbound `href="/blog/koudo-ronjutsu-jiko-saiten"` 出力を実測。
-  - **発見した将来改善（未着手・小）**: 書き方 hub `koudo-ronjutsu-kakikata-kotsu` 本文の採点リンクは `/essays`(noindex) を指す（session3由来）。indexable な `/essay` へ寄せる余地あり（誇大なし・1行）。次セッション候補。
+  - **発見した将来改善（未着手・小）**: 書き方 hub `koudo-ronjutsu-kakikata-kotsu` 本文の採点リンクは `/essays`(noindex) を指す（session3由来）。indexable な `/essay` へ寄せる余地あり（誇大なし・1行）。→ cycle3 で対応。
+- done: [P1-5/旗艦] **論述hubの「AI採点」リンクを noindex `/essays` から indexable 旗艦 `/essay` へ修正**。SHA `1d2af50`。
+  - 監査: `koudo-ronjutsu-kakikata-kotsu` 本文の「午後II論述のAI採点」アンカーが `/essays`(listing, **robots index:false** を実測確認)を指し、旗艦への内部リンク equity が noindex ページへ流出していた。`/essay` は robots 無指定＝indexable（実測）。アンカー文言＋4軸「適合度・論理性・具体性・業種事例」は /essay の文言そのもの、かつ /essay は全5区分対応＝この cross-exam hub の自然な送客先。session4 の旗艦選択(/essay)と整合。
+  - 修正: line 6844 の `](/essays)` → `](/essay)`（テキストも「午後論述 AI 採点」に統一）。`blog-generators.test.ts` の FLAGSHIP_LINK 規約(=`](/essay)`、/essays plural は noindex)とも一致。当該テストは overview post のみ走査のため general post の本変更に影響なし（全緑）。
+  - 検証: 全ゲート緑（typecheck0 / lint0err / test1658 / build OK）。本番ビルド `blog/koudo-ronjutsu-kakikata-kotsu.html` に `href="/essay"` 出力・bare `href="/essays"` **0件**を実測（noindex listing への送客を解消）。
+- 申し送り（セッション7まとめ）:
+  - **旗艦=午後論述AI採点(/essay) の funnel を「最大クロール面」と「採点intent」へ拡張**: (1)/q/* 問題ページ(~12,653件・最大面)の論述5区分に gated 旗艦カード `c785e6a`、(2)「論述の自己採点」新規記事を新設し旗艦へ funnel＋書き方hubと相互リンク `62bd68e`、(3)書き方hubのAI採点リンクを noindex /essays→indexable /essay へ是正 `1d2af50`。
+  - **誇大回避の一貫**: 区分ゲートは lib/essay/load.ts `ESSAY_EXAM_CODES`(st/sa/pm/sm/au)単一情報源、AP/FEモックには出さない、「AI採点は参考評価」「採点基準は非公開」を明記。旗艦リンクは indexable /essay に統一（noindex /essays と区別）。
+  - **次の最優先候補**: P1-5残り(論文5区分の個別essay記事 pm-goukaku-ronbun/st-senryaku-shikou 等が deep link `/essays/<exam>`(これも noindex・実測) を指す点。exam固有UX vs crawl equity のトレードオフ＝1記事ずつ慎重に。/essay へ寄せるか /essays/<exam> を indexable 化するかは設計判断寄り→backlog/HD候補) / P2-2(競合薄ブログ強化) / P1-7続き(科目B問題ページのコパイロット quick-action UI＝要慎重監査) / P0-1残り(dev痕跡410)。
