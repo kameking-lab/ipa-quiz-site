@@ -32,6 +32,19 @@ export const GONE_PATHS: readonly string[] = [
   "/legal/dpa",
   "/legal/msa",
   "/legal/sla",
+  // 旧 開発・社内レビュー用スキャフォールド（非公開・後継なし）。git 履歴上 削除済みで
+  // 現在は 404。後継が無いので 301 先も無く、二度と復活しない開発痕跡なので 410 を返し
+  // クローラに「もう辿らなくてよい」と明示する（404 はリトライされうるが 410 は恒久削除）。
+  "/exec-review",
+  "/feature-review",
+  "/final-review",
+  "/final-review-v3",
+  "/scoring-test",
+  "/strategy-discussion",
+  "/strategy-discussion-v2",
+  "/test/posthog",
+  "/test/sentry",
+  "/tmp/round7-review",
 ];
 
 const GONE_SET = new Set<string>(GONE_PATHS);
@@ -146,5 +159,16 @@ export const config = {
     "/legal/dpa",
     "/legal/msa",
     "/legal/sla",
+    // 旧 開発・社内レビュー用スキャフォールド（削除済み・410）
+    "/exec-review",
+    "/feature-review",
+    "/final-review",
+    "/final-review-v3",
+    "/scoring-test",
+    "/strategy-discussion",
+    "/strategy-discussion-v2",
+    "/test/posthog",
+    "/test/sentry",
+    "/tmp/round7-review",
   ],
 };
