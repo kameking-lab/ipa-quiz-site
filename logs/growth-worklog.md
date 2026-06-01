@@ -237,3 +237,29 @@
   - **FAQPage機構の戦略記事カバレッジをほぼ完了**: (1)勉強法overview**全13区分**を1テンプレ編集で一括FAQPage化＋回帰ガード `6202e19`、(2)高可視ロングテール朝活 `90ab87a`、(3)高可視roadmap(present-state限定) `8e4dc3b`。これで**戦略的高オーソリティ/高可視記事のFAQ化は概ね完了**(overview13・論文5区分・科目Bクラスタ4・rirekisho・nendaibetsu-roadmap・朝活・roadmap)。
   - **一貫した誇大回避**: 全Q&Aで本文既存の数値/事実のみ引用、本文に無い数値・未実装capabilityは出さない。roadmapはFAQを present-state(無料/課金/対応区分/AI回数)に限定し未実装の午後採点全面展開(HD-4)に触れない。AI回数はSSOT `AI_QUOTA_COPY_SHORT` 参照で30回誇張を排除。
   - **次の最優先候補**: FAQはほぼ飽和(残りは pomodoro 等の学習テク系ロングテール=戦略価値低)。次は **角度を変える**: P2-3(内部リンク網/orphan価値ページへの導線)、P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査・broad)、P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。学習テク系ロングテール(pomodoro/その他習慣化)へのFAQ展開は「やれること」だが saturation 配慮で優先度低。
+
+## セッション12（growth ループ）2026-06-02 JST
+- 監査(read-only): FAQ飽和を踏まえ角度変更。既存 `scripts/audit-internal-links.ts` を実走し**実測ベース**で着手先を特定(憶測排除)。success-stories クラスタは全 `robots:index:false,follow:false`(AIペルソナ)でSEO equity無し→対象外。
+- done: [P2-3/内部リンク] **孤立blog2記事(inbound 0)を親ハブから内部リンクしde-orphan**。SHA `8ac2a50`。
+  - 監査: 監査スクリプトで inbound 0 の orphan 2件検出= `goukakusha-shukan-review`(週次レビュー)・`shaiin-bunkatsu-plan-3pattern`(細切れ学習計画3パターン)。両者の自然な親= `ipa-shiken-shakaijin-jikan-kakuho`(社会人の時間確保・indexable・多数inbound)で、両 orphan は親へ outbound 済だが親からの inbound が無かった。
+  - 修正: 親ハブ本文(失敗パターン節直後)に文脈リンク1段落を additive 追加。**本文リンクは getRelatedPosts の limit=3 カットオフ対象外**=確実にレンダ(relatedSlugs末尾追加だと非表示リスク有のため本文リンクを選択)。
+  - 検証: 監査再実行で orphan 0(WARNING 0・body links 555→557)、本番ビルド hub HTMLに両 orphan の `href="/blog/..."` 各1出力、両ターゲット prerendered(200)。全ゲート緑(typecheck0/lint0err/test1668/build OK)。
+- done: [tooling/P2-3支援] **内部リンク監査の誤検知(FATAL5件)を解消**。SHA `cdc515c`。
+  - 監査: audit-internal-links の buildValidPaths が `/[exam]/topic/[category]`(dynamicParams=false+notFound・静的param=groupByCategory由来)を含まず、本文の percent-encoded topic 深リンク(アルゴリズムプール等)5件を実在200にもかかわらず dead-link 誤検知。**ループ自身のP2-3ツールが信頼不能**(real dead-link を埋もれさせる実害)。
+  - 修正: blog-index.test の topic 解決と**同一source of truth**(getAvailableExams×groupByCategory(getQuestionsByExamStrict))で valid set に topic path を追加。
+  - 検証: 再実行で FATAL 5→0・WARNING 0(誤検知のみ消え、stale/誤encode の topic 深リンク検知力は維持)。スクリプトは app/test 未import で実行時影響なし。全ゲート緑(test1668)。**監査が信頼可能に**。
+- done: [P2-4/収益] **旗艦論述funnelの区分別サンプル一覧 /essays/[exam] に午後対策本アフィリを追加**。SHA `2f75565`。
+  - 監査: 旗艦 /essay・/essays・/essays/[exam] は**書籍アフィリ皆無**(/qページや/transparencyには既存)。P2-4「午後対策本へ自然送客」直撃。essay区分=sc/st/sa/pm/sm/au。
+  - 実装: 「活用方法」直後に既存 `InlineBookHint`(data/recommended-books+env既存タグ流用)を `category="午後"` で配置。各区分の「専門知識＋午後問題」重点対策本を正確推薦。/qページ既存パターン踏襲で押し売りにせず additive。
+  - 誇大/事実性回避: `category="午後"`は全6区分(SC午後=記述含む)で正確な午後本を拾い**SCを論文区分と誤framingしない**(session3/8のSC HD懸念を増幅せず)。ASIN未設定でも書誌+/recommended-books/[exam]内部リンクは描画、affiliateは rel="sponsored"・[PR]表示。
+  - 検証: 本番ビルド /essays/{pm,sc,st}.html に「この分野を体系的に学べる参考書」＋重点対策本＋rel="noopener noreferrer sponsored"＋href="/recommended-books/<exam>" 実測。全ゲート緑(test1668)。新規404なし。
+- done: [P2-4/収益] **旗艦funnel最深部=答案詳細ページにも午後対策本アフィリを追加**。SHA `bb5a241`。
+  - 監査: /essays/[exam]/[yearSeason]/pm2/[qnum](高intent・答案読了直後)も書籍アフィリ皆無。「自分の答案を AI で採点してみる」CTA直後が自然な学習導線位置。
+  - 実装: 同CTA直後に `InlineBookHint category="午後"` を `print:hidden` で配置。型: resolveQuestion 内 isEssayExamCode 検証済だが local を narrow しないため明示ガード追加で resolved.exam を EssayExamCode に narrow(any不使用)。
+  - 検証: 本番ビルド /essays/pm/2023-spring/pm2/q1.html に書誌+rel="sponsored"+href="/recommended-books/pm"+既存採点CTA を実測。全ゲート緑(test1668)。
+- done: [test/P2-4ガード] **essay各区分に午後タグ書籍が在ることを回帰ガード**。SHA `4239af8`。
+  - cycle3/4のアフィリは `category="午後"`で午後タグ書籍を拾うため、essay区分から午後本が消える/付替わると旗艦funnel上で非午後本(教科書等)に黙ってフォールバックする data契約リスク。`recommended-books.test.ts` に「各 ESSAY_EXAM_CODE に午後タグ書籍≥1・non-vacuous」を pin。test1668→1669。全ゲート緑。
+- 申し送り（セッション12まとめ）:
+  - **角度変更=実測ベースのP2-3/P2-4**: (1)監査スクリプト実走で orphan 2件を de-orphan `8ac2a50`、(2)監査自身の誤検知(topic route 5件)を是正しループのツールを信頼可能に `cdc515c`、(3)(4)旗艦論述funnel(区分別一覧＋答案詳細)に午後対策本アフィリ新設 `2f75565`/`bb5a241`、(5)その data契約の回帰ガード `4239af8`。
+  - **誇大/事実性の一貫**: アフィリは `category="午後"`で全6区分(SC記述含む)正確、SCを論文と誤framingしない。affiliate hygiene(rel="sponsored"・[PR]・env既存タグ・env無編集)。旗艦露出原則(header/home/footer/q-page＝session4/7)に essay funnel の収益面を追加。
+  - **次の最優先候補**: P2-4続き(旗艦indexableハブ /essay 自体は5区分横断で書籍1冊選定が難しい＝設計判断寄り・/essayへのアフィリは保留 or 区分横断「論述対策の定番書」リスト化を要検討) / P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査・broad) / P2-3続き(監査が信頼可能になったので今後の dead-link/orphan 検知に活用) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。

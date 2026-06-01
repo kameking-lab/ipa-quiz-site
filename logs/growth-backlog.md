@@ -72,11 +72,15 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **[done セッション11]** FAQPage を戦略/高可視記事へほぼ全面展開: 勉強法overview**全13区分**を `buildOverviewPost` テンプレ1編集で一括FAQPage化＋回帰ガード `6202e19`、高可視ロングテール朝活 `syakaijin-asakatsu-benkyou` `90ab87a`、高可視roadmap `kakomon-ai-roadmap-2026`(present-state限定・未実装午後採点に触れず) `8e4dc3b`。it-shikaku-nendaibetsu-roadmap は既にFAQ保有(対象外)を確認。**戦略的高オーソリティ記事のFAQ化は概ね完了**。
   - **残り（低優先・saturation配慮）**: pomodoro 等の学習テクニック系ロングテールへのFAQ展開は「やれること」だが戦略価値低＝優先度を下げる。**注意**: sc-ronbun-taisaku は SC午後のframe事実性がHD未決（session3 SKIP）でFAQ化も保留、ap-gogo-sentaku は AP午後モック=HD-4、roadmap系で未実装capabilityをFAQで現状事実化しない（誇大回避）。誇大回避: 数値・形式は本文既存記述と一致させ、AI回数はSSOT `AI_QUOTA_COPY_SHORT` を参照。
 - P2-3: 内部リンク網の強化（午後採点・科目B・ロードマップ間のハブ&スポーク）。orphan化している価値ページに導線を足す。
+  - **[done セッション12]** `scripts/audit-internal-links.ts` 実走で inbound 0 の orphan 2件(goukakusha-shukan-review/shaiin-bunkatsu-plan-3pattern)を親ハブ ipa-shiken-shakaijin-jikan-kakuho 本文から内部リンク `8ac2a50`(再実行で orphan 0)。監査自身の topic route 誤検知(FATAL5)も是正 `cdc515c`(=今後の dead-link/orphan 検知が信頼可能)。
+  - **残り**: 監査は indexable blog の orphan は解消済(0件)。非blog の価値ページ orphan は監査対象外＝必要なら手動監査。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 収益導線（控えめに）
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - P2-4: 午後対策の高単価講座/対策本へのアフィリ導線を、午後採点まわり・午後ブログの**学習導線の自然な位置**に設置（既存 data/recommended-books.ts のAmazon/楽天実装流用。タグは env 既存値。env編集はしない）。押し売りUIにしない。
+  - **[done セッション12]** 旗艦論述funnelの essay 面(従来アフィリ皆無)に InlineBookHint(category="午後")を設置: 区分別サンプル一覧 /essays/[exam] `2f75565`、答案詳細 /essays/[exam]/.../[qnum] `bb5a241`、data契約の回帰ガード `4239af8`。全6区分(sc/st/sa/pm/sm/au)で正確な午後本・SC論文 誤framing回避・rel="sponsored"・env無編集。
+  - **残り**: 旗艦 indexable ハブ /essay 自体への書籍導線は5区分横断で1冊選定が難しい＝「論述対策の定番書」区分横断リスト化 or 保留(設計判断寄り)。午後/論述ブログ本文への書籍リンクは未着手(blogに書籍コンポーネント無し＝markdownリンク or 新コンポーネント要)。
 - P2-5: フリーミアム課金UI（午後AI採点の詳細版/回数無制限を有料境界）は「作るが既定では未有効化/控えめ」。実際の価格・課金有効化は human-decisions へ（勝手に有効化しない）。今は埋もれているので課金の壁で流入を減らさない。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
