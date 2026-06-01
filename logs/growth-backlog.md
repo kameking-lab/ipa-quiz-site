@@ -44,7 +44,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
     - cycle2 SHA `062ef04`: pm-goukaku-ronbun に /essays/pm 採点送客を新設。
     - cycle3 SHA `cd742dc`: st-senryaku-shikou→/essays/st、au-shiken-taisaku→/essays/au、横断ハブ koudo-ronjutsu-kakikata-kotsu→/essays を新設。
     - 補足: ブログ本文の全内部リンクを .next 成果物と突合→残存404ゼロを確認。
-  - **SKIP**: sc-ronbun-taisaku への /essays/sc 送客は見送り（SC午後の形式 framing の事実性に懸念・安全側）。事実確認は人間。
+  - **SKIP→HD-6 セッション17で事実誤り確定**: sc-ronbun-taisaku への /essays/sc 送客は見送り。さらに同記事のSC午後「論文(論述)」framing 自体が **IPA公式で事実誤りと確定**（SC午後=記述式・論文試験は非存在・論文区分はST/SA/PM/SM/AUのみ）。全面リライト or 削除は情報設計＋編集判断＝`growth-human-decisions.md` HD-6 へ。
   - **残り（未着手）**: ap-gogo-sentaku / ap-gogo-bunkei-sentaku / ipa-shiken-gogo-vs-am は AP午後＝モックデータのため旗艦採点CTAは HD-4 待ち（誇大回避）。AIコパイロット導線は既にあり。
   - **[done セッション7]** /q/* 問題ページ(最大クロール面)の論述5区分に gated 旗艦 /essay 導線 `c785e6a`。「論述の自己採点」新規記事 `62bd68e`。書き方hub `koudo-ronjutsu-kakikata-kotsu` のAI採点リンクを noindex /essays→indexable /essay 是正 `1d2af50`。
   - **[SKIP→HD-5 セッション8]** 論文5区分の個別essay記事(pm-goukaku-ronbun/st-senryaku-shikou/sa-architecture-tradeoff/sm-itil-storytelling/au-audit-evidence-language)本文の採点intent深リンクが `/essays/<exam>` を指すが、**/essays/[exam] は robots index:false かつ follow:false（noindex,nofollow・実測）**。equity観点では indexable `/essay` 寄せが筋だが exam固有サンプルのUX価値とのトレードオフ＝設計判断。自律実装せず **HD-5** に集約（旗艦露出は header/home/footer/q-page で確保済）。「業種別合格答案」intent深リンクは /essays/[exam] が正しい行先で変更不要。
