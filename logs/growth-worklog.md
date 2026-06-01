@@ -191,3 +191,29 @@
   - **FAQPage機構(session8)を戦略記事へ展開**: 土台=科目B中核ピラー `fe-kamoku-b-taisaku` `2922a80`、旗艦=PM論文 `pm-goukaku-ronbun` `0db0f07` にオリジナル4Q&AずつのFAQ節を追加しFAQPage自動出力＋質問intentの意味整合を強化。旗艦記事はQ4で /essay へfunnel。
   - **/q メタテンプレ(P2-1)はSKIP**: lib/seo/question-meta.ts は phase10レビュー済(158字hard cap・CTA温存・answer suppression意図的・専用テスト有)で実害なし。修正は理論のみ＝過大修正の罠回避。
   - **次の最優先候補**: P2-2継続(FAQ未設置の戦略記事＝fe-kamoku-b-pseudo-language[土台]・st-senryaku-shikou/sc-ronbun-taisaku[旗艦論述,ただしSCはHD未決のframe注意]・ap-gogo-sentaku[AP午後はモックHD-4]・勉強法overview群はFAQ節無いものに4Q&A) / P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。
+
+## セッション10（growth ループ）2026-06-02 JST
+- done: [P2-2/土台] **科目B擬似言語記事 fe-kamoku-b-pseudo-language に「よくある質問」節を追加しFAQPage化**。SHA `fbdc913`。
+  - 監査: 科目Bクラスタの技術ピラー(擬似言語読解3ステップ)だが `## よくある質問` 節が無くsession8のFAQPage機構(lib/blog/faq.ts extractFaq)の対象外だった。「擬似言語 言語経験/読めない/苦手/トレース表/演習どこ」は科目B読者の質問intent。session9のtaisaku/PMと同パターン。
+  - 実装: オリジナル4Q&A（Q1=特定言語経験は不要・IPA独自記法のトレース力／Q2=3ステップを機械的に・毎日1問8週間／Q3=本番もトレース表を書く方が速く正確／Q4=/fe/topicアルゴリズムプールで演習＋AIコパイロット行番号別追跡）を `## まとめ` 直前に additive 挿入。本文他箇所・relatedSlugs・UI不変。extractFaq が4ペア抽出→FAQPage自動出力。taisakuのQ&Aと重複しない擬似言語読解intentに限定。
+  - 誇大回避: 数値(毎日1問週7問8週間)は本文既存記述と一致。/fe/topicアルゴリズムプールは午前(科目A)分野で擬似言語そのものではない点を踏まえ「トレース力の土台」と正確表現(worklog既知の区別を踏襲)。AI回数は明記せず。「最新はIPA公式で確認」明記。
+  - 検証: 全ゲート緑（typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1667 / build OK）。本番ビルド `blog/fe-kamoku-b-pseudo-language.html` に `"@type":"FAQPage"`×1＋`"@type":"Question"`×4＋実問文「特定のプログラミング言語の知識は必要ですか」出力。JSON-LD acceptedAnswer はmarkdownリンク剥離済(Q4=「基本情報技術者 アルゴリズム分野の過去問」plain・`](`leak 0)、生markdownはNextのRSC flightペイロード内のみ(taisakuと同一・既存回帰テストpin済)。回帰は corpus-wide blog-faq-jsonld が自動カバー。
+- done: [P2-2/旗艦] **ST論文記事 st-senryaku-shikou に「よくある質問」節を追加しFAQPage化＋/essay funnel**。SHA `4225b0c`。
+  - 監査: ITストラテジスト(ESSAY_EXAM_CODES論文区分・旗艦中核intent)だがFAQ節無し。「午後II 形式/実務経験/PM・SAとの違い/自己採点」は論文受験者の質問intent。本文の既存採点CTAは noindex `/essays/st`(HD-5)。
+  - 実装: オリジナル4Q&A（Q1=ア〜ウ3部構成・経営課題からの逆算／Q2=肩書き不要・経営視点で具体化＋フレームワーク／Q3=ST/PM/SAの視点差・PM記事へ内部リンク／Q4=自己採点困難→旗艦採点）。Q4の**新規**リンクは indexable `/essay`(noindex `/essays/st` へ送る既存CTAは不変=HD-5)。
+  - 誇大回避: 字数/合格率など**本文に無い数値は出さず**形式の枠組みのみ記述。「IPA公式で確認」「採点基準は非公開」「AI採点は参考評価」明記。
+  - 検証: 全ゲート緑（test1667 / build OK）。`blog/st-senryaku-shikou.html` に FAQPage×1＋Question×4＋実問文「午後IIはどんな形式ですか」、Q4が実DOMで `<a href="/essay">午後論述 AI 採点</a>`、JSON-LD answer `](`leak 0、既存 `/essays/st` CTA健在(1)を実測。
+- done: [P2-2/旗艦] **AU論文記事 au-shiken-taisaku に「よくある質問」節を追加しFAQPage化＋/essay funnel**。SHA `7d73f63`。
+  - 監査: システム監査技術者(ESSAY_EXAM_CODES論文区分)だがFAQ節無し。本文に字数(ア600-800/イ1600前後/ウ600-800)・合格率13〜16%・4段階構成あり=正確に引用可能。
+  - 実装: オリジナル4Q&A（Q1=字数構成／Q2=監査経験は有利だが必須でない・監査人3視点／Q3=合格率13〜16%・4段階／Q4=自己採点困難→旗艦採点）。Q4新規リンクは indexable `/essay`(既存 `/essays/au` 不変=HD-5)。
+  - 誇大回避: 字数・合格率・4段階構成は本文既存記述と一致。「IPA公式で確認」「採点基準は非公開」「AI採点は参考評価」明記。
+  - 検証: 全ゲート緑（test1667 / build OK）。`blog/au-shiken-taisaku.html` に FAQPage×1＋Question×4＋実問文「午後IIはどんな字数構成ですか」、Q4 `<a href="/essay">`、leak 0、既存 `/essays/au` 健在(1)を実測。
+- done: [P2-2/旗艦] **SA/SM論文記事に「よくある質問」節を追加しFAQPage化＋/essay funnel（論文5区分FAQ完了）**。SHA `652b878`。
+  - 監査: sa-architecture-tradeoff(システムアーキテクト)・sm-itil-storytelling(ITサービスマネージャ)ともFAQ節無し。両記事とも本文に字数/合格率の記載なし=それらは出さない。既存採点CTAは noindex `/essays/{sa,sm}`(HD-5)。
+  - 実装: SA=オリジナル4Q&A（Q1=万能解でなくトレードオフ言語化／Q2=テンプレ＋数値／Q3=SA/ST/PM視点差・ST記事へ内部リンク／Q4=旗艦採点）。SM=4Q&A（Q1=ITIL暗記でなく物語＋4段骨格／Q2=用語を物語に乗せる／Q3=改善前後の数値/MTTR例／Q4=旗艦採点）。各Q4新規リンクは indexable `/essay`(既存 `/essays/{sa,sm}` 不変=HD-5)。両記事は同パターン・同ファイルで論文5区分FAQ完成のため1コミットに集約。
+  - 誇大回避: トレードオフテンプレ・99.95%例・ITIL骨格・MTTR例は本文既存記述と一致。字数/合格率は本文に無いため記述せず。「採点基準は非公開」「AI採点は参考評価」明記。
+  - 検証: 全ゲート緑（test1667 / build OK）。`blog/{sa-architecture-tradeoff,sm-itil-storytelling}.html` 各 FAQPage×1＋Question×4＋Q4 `<a href="/essay">`×1＋leak 0、実問文（SA「午後IIでは何が評価されますか」/SM「ITIL用語はどう論述に使えばよいですか」）出力を実測。
+- 申し送り（セッション10まとめ）:
+  - **FAQPage機構(session8)を戦略記事へ大幅展開＝論文5区分FAQ完成**: 土台=科目B擬似言語 `fbdc913`、旗艦=ST `4225b0c`・AU `7d73f63`・SA/SM `652b878`。これで**論文5区分(PM[session9]/ST/AU/SA/SM)すべてがFAQPage化＋Q4で旗艦 indexable /essay へ funnel**。質問intentの意味整合＋旗艦送客を同時達成。
+  - **一貫した誇大回避**: 各記事とも本文既存の数値(字数/合格率/フレームワーク/数値例)のみ引用、本文に無い数値は出さない。「IPA採点基準は非公開」「AI採点は参考評価」「最新はIPA公式で確認」を明記。FAQ Q4の旗艦リンクは indexable `/essay`、既存の noindex `/essays/<exam>` 採点CTAは**HD-5判断待ちのため一切変更しない**(equity原則 session4/7/8/9踏襲)。回帰は corpus-wide `blog-faq-jsonld.test.ts` が自動カバー(FAQ節→>0ペア・markdown剥離・non-vacuous≥20)。
+  - **次の最優先候補**: P2-2継続(FAQ未設置の戦略記事＝勉強法overview群でFAQ節無いもの・it-shikaku-nendaibetsu-roadmap等の高可視ブログに4Q&A。ただしSC=HD未決frame・ap-gogo=AP午後モックHD-4はFAQ化も保留) / P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。
