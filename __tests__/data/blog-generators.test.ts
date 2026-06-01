@@ -298,3 +298,23 @@ describe("blog 午前I免除 post — 高度試験 spring/autumn grouping is cor
     expect(body).not.toContain("秋期の SC・NW・DB・ES");
   });
 });
+
+// SC(情報処理安全確保支援士)午後 (IPA official, kubun/sc.html): 2023年4月の改定で
+// 午後I・午後II が 1 つの「午後試験」へ統合された＝150分・記述式・出題4問/解答2問。
+// sc-shikaku-merit once described the abolished pre-2023 structure
+// (「午前I・午前II・午後I・午後II の 4 部構成」「午後I：90分で2問選択」
+// 「午後II：120分で1問選択」). exam-data の SC profile は既に単一午後・記述で正。
+// Pin the unified 午後 so the abolished 午後I/午後II split can't silently regress.
+describe("blog SC merit post — 午後 structure is the unified 記述式 test (post-2023)", () => {
+  it("sc-shikaku-merit describes 午前I・午前II・午後 の 3部構成, not the old 4部構成", () => {
+    const post = getBlogPostBySlug("sc-shikaku-merit");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("午前 I・午前 II・午後（記述式）の 3 部構成");
+    expect(body).toContain("午後：150 分で 4 問中 2 問選択（記述式）");
+    // The abolished pre-2023 split must be gone from this SC-specific article.
+    expect(body).not.toContain("午前 I・午前 II・午後 I・午後 II の 4 部構成");
+    expect(body).not.toContain("午後 I：90 分で 2 問選択");
+    expect(body).not.toContain("午後 II：120 分で 1 問選択");
+  });
+});
