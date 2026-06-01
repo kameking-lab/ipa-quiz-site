@@ -513,3 +513,22 @@
   - **誇大回避**: AP午後採点=モック(HD-4)のため **funnel先は /ap ハブ＋AP午後記事＋AIコパイロットのみで旗艦 /essay には送らない**(body の /essay は site-wide footer×1のみ=記事本文は旗艦に送らず)。合格基準(100点満点/基準点60点/各区分別判定/多段階選抜=午前未達なら午後不採点)・形式(午前150分80問四択/午後150分11問中5問記述・情報セキュリティ必答)はIPA公式 kubun/ap.html(WebFetch)＋採点方式資料/案内書(WebSearch裏取り)で確認。
   - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1768→1769/build OK)。本番ビルド `blog/ap-goukaku-ten-border.html` 実在、SSR本文に 100点満点/基準点60点/午前・午後ともに60点以上/多段階選抜方式/午後試験は採点されず不合格/素点方式 出力・`href="/ap"`×5＋AP午後記事リンク funnel・**body に /essay 不在**(footer×1のみ)・FAQPage JSON-LD を実測。outbound 3関連記事＋/ap 全prerendered(200)＝新規404ゼロ。ap-gogo-sentaku に inbound(×1)。blog.xml sitemap収録。audit FATAL0/WARNING0。回帰pin(100点満点/基準点60点/午前・午後ともに60点以上/多段階選抜方式/午後不採点/素点方式/(/ap)/ap-gogo-sentaku funnel/`/essay`非送客/FAQ)。
   - **所見**: 「合格点/採点の仕組み」angle は FE-IRT(混同の核=IRT)＋AP(混同の核=合算誤解/多段階選抜)の2記事で主要intentを消化。高度試験の各基準点(各60点)は AP と同型(素点・各区分60点)で **混同の分かりにくさが弱く thin リスク**＝横展開せず打ち止め(session27の「1記事に絞る/様子見」を尊重)。次は P2-4(設計判断)/別angleの新規longtail探索 or HD解消待ち。
+
+## セッション29（growth ループ）2026-06-02 JST
+- 監査(read-only): 新規記事の saturation を避けつつ価値を出す角度として **「既にランク済みの記事に、IPA公式の情報ギャップを additive で埋める」** マイクロ角度を採用(新規competingページを作らない=cannibalization回避)。internal-link監査=161posts/FATAL0/WARNING0。
+- done: [P1-2周辺/旗艦周辺] **午前I免除の3条件(AP合格以外のルート)を高度試験戦略記事に追記**。SHA `9c554ca`。
+  - 監査: `ap-goukaku-go-koudo-senryaku`(「午前I免除の正しい使い方」記事・既に午前I免除keywordをカバー)は午前I免除を **AP合格ルートのみ** で説明。IPA公式(about/koudo_menjo.html WebFetch裏取り)の残り2ルート=(2)いずれかの高度試験・支援士に合格 (3)高度・支援士の午前Iで基準点(60点)以上=午前I通過 が **サイト全体で不在**(grep: 免除言及は全てAP合格path)。「午前1 免除 条件」情報intentの実ギャップ。
+  - 実装: 「## 午前I免除は3通りある(AP合格以外のルート)」節を additive 挿入。3条件＋有効期間2年＋申請に必要な番号(条件1・2=合格証書番号 / 条件3=午前I通過者番号)をIPA公式どおり整理。既存ランク済み記事へのadditive=新規competingページ無し=cannibalization回避。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1769→1770/build OK)。本番ビルド `blog/ap-goukaku-go-koudo-senryaku.html` SSRに「3つの条件」「午前I通過者番号」「合格証書番号」「基準点(100点満点中60点)以上」出力を実測。回帰pin(3条件+申請番号)を `blog-generators.test.ts` の既存 免除 describe に追加。新規内部リンク無し(外部IPA linkのみ)=新規404ゼロ。
+- done: [P1-6/土台] **FE合格点記事に「午前・午後→科目A/B(2023年4月)」移行の読み替えを追記**。SHA `587921a`。
+  - 監査: `fe-goukaku-ten-irt`(科目A/B/IRT/CBTを詳説)は、これが旧「午前・午後」を **廃止して置き換わった事実**(2023年4月・通年CBT)に未言及(サイト全体でも passing 1行のみ)。「基本情報 午後」で検索する旧制度searcherが「午後=今の科目B」と読み替えられない実ギャップ。
+  - 実装: 「## 「午前・午後」はもう無い(2023年4月から科目A・科目B)」節を additive 挿入。旧午前→科目A(90分60問四択)/旧午後→科目B(100分20問・擬似言語一本化・旧言語選択C/Java/表計算は廃止)の読み替え。IPA公式 henkou/2022/20220425.html(WebSearch裏取り)。
+  - 検証: 全ゲート緑(test1770/build OK)。本番ビルド `blog/fe-goukaku-ten-irt.html` SSRに「2023年4月から「午前・午後」という区分は廃止」「擬似言語に一本化」「午後＝今の科目B」出力を実測。移行文言の回帰pinを既存テストに追加。形式数値は本文既存(科目A 90分60問/科目B 100分20問)と一致(誇大回避)。
+- done: [P2-3/内部リンク] **合格点クラスタ(FE-IRT↔AP-素点)を相互内部リンク化**。SHA `49dcde1`。
+  - 監査: `fe-goukaku-ten-irt`(IRT)と `ap-goukaku-ten-border`(素点)は互いの採点方式を本文で比較しつつ、相手記事へのリンクが無くプレーンテキスト言及のみ(AP記事は「## 基本情報(IRT)とは採点方式が違う」節を持つのに未リンク/FE記事はAP未言及)。「基本情報↔応用情報 合格点比較」の実intentに対する cross-link gap。
+  - 実装: 相互内部リンク(AP→FE は IRT比較節末に1文/FE→AP は FAQに新規Q&A「応用情報の合格点も同じ仕組みですか?」)。saturationではなく試験区分の異なる新規2記事(session27/28)を比較intentで接続。
+  - 検証: 全ゲート緑(test1770/build OK)。本番ビルド両HTMLに相互 `href` 出力・両target prerendered(200)を実測。audit body links 600→602/FATAL0/WARNING0。両方向の回帰pin追加。
+- 申し送り（セッション29まとめ）:
+  - **新角度=「ランク済み記事へのIPA公式情報ギャップの additive 補完」**: 新規記事 saturation を避けつつ、(1)午前I免除の3条件(AP以外の2ルートがサイト全体で不在) `9c554ca`、(2)FE午前/午後→科目A/B移行(旧制度searcher向け読み替え) `587921a` を既存ランク済み記事に additive 挿入(competingページ無し=cannibalization回避)。+(3)合格点クラスタの相互リンク化 `49dcde1`。全てIPA公式裏取り・最小diff・誇大回避・回帰pin・新規404ゼロ。
+  - **SKIP記録**: `lib/seo/category-tips.ts`=分野別汎用学習ポイントで hard error 無し(OWASPはversion無し・形式数値/称号claim無し)→理論のみSKIP。`data/community/{questions,stories}.ts`=どのlive routeにもimportされず(session2で /community/* は410化)=orphan data・SEO価値ゼロ→SKIP。SG(情報セキュリティマネジメント)の2023形式変更は確証不足(SG現行形式の正確な内訳が未裏取り・SG記事は メリット記事のみで明確な午前/午後誤記なし)→安全側でSKIP(不確実な事実でfixを捏造しない)。
+  - **次の最優先候補**: (a)同マイクロ角度の継続=他のランク済み記事のIPA公式情報ギャップ(ただし主要な形式/制度ギャップはFE午前午後・SC午後統合[既出sc-shikaku-merit]・免除3条件で概ね消化、残りは thin 寄り)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄=SKIP寄り)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7 は人間待ち継続。
