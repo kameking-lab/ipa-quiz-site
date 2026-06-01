@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, BookOpen, ChevronRight, Clock, FileText, PenLine, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, BookOpen, ChevronRight, Clock, Code2, FileText, PenLine, Sparkles, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -500,6 +500,42 @@ export default async function ExamTopPage({
                 </div>
               </>
             )}
+          </section>
+        )}
+
+        {/* 土台＝基本情報 科目B（アルゴリズム・擬似言語）対策。FE ハブにのみ表示し、
+            旗艦の「AI 午後問題対策」(高度試験) と対称の通年・即金の入口を作る。
+            リンク先は土台ピラー /blog/fe-kamoku-b-taisaku（indexable）と
+            アルゴリズム分野別プール（実演習・AIコパイロット）の 2 つ。 */}
+        {code === "fe" && (
+          <section
+            aria-label="科目B（アルゴリズム・擬似言語）対策"
+            className="mb-8 overflow-hidden rounded-2xl border border-indigo-200/70 bg-gradient-to-br from-indigo-50 via-card to-card p-5 shadow-sm dark:border-indigo-900/40 dark:from-indigo-950/40"
+          >
+            <div className="mb-3 inline-flex items-center gap-1.5 rounded-full bg-indigo-100 px-2.5 py-0.5 text-[11px] font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+              <Code2 className="h-3 w-3" />
+              科目B（アルゴリズム）対策
+            </div>
+            <h2 className="mb-1.5 text-base font-bold tracking-tight text-foreground sm:text-lg">
+              科目B（擬似言語）を AI と体系的に攻略
+            </h2>
+            <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
+              基本情報の合否は科目B＝擬似言語のトレース力で決まります。読み方の型から
+              整理し、AI コパイロットに「1 行ずつトレースして」と聞きながら解けます。
+            </p>
+            <div className="flex flex-wrap gap-2">
+              <Button asChild variant="primary" size="sm">
+                <Link href="/blog/fe-kamoku-b-taisaku">
+                  科目B 完全対策を読む
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="sm">
+                <Link href="/fe/topic/アルゴリズムとプログラミング">
+                  アルゴリズム問題で演習
+                </Link>
+              </Button>
+            </div>
           </section>
         )}
 
