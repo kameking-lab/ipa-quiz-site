@@ -52,3 +52,21 @@ describe("getKeywordPageBySlug", () => {
     expect(getKeywordPageBySlug("")).toBeUndefined();
   });
 });
+
+// SC(情報処理安全確保支援士)午後は 2023年4月改定で午後I・午後IIが単一の午後(記述式)へ
+// 統合済(IPA 公式 kubun/sc.html)。sc-incident-response は /keywords/sc-incident-response
+// (indexable・sitemap収録)の title/description/body に廃止済みの「午後 II」を使っていた。
+// session20(sc-shikaku-merit)/cycle3(SCロードマップ)と同じ事実の取り残し。
+// 統合後の「午後」フレーミングを pin し、廃止構造への regression を防ぐ。
+describe("KEYWORD_PAGES — SC 午後 framing は2023統合後（午後Iの/IIの別建てにしない）", () => {
+  it("sc-incident-response は廃止済み 午後 II を使わない", () => {
+    const page = getKeywordPageBySlug("sc-incident-response");
+    expect(page).toBeDefined();
+    expect(page!.title).not.toContain("午後 II");
+    expect(page!.description).not.toContain("午後 II");
+    const fullBody = page!.body.join("\n");
+    expect(fullBody).not.toContain("午後 II");
+    // 統合後の「午後」フレーミングが残っている（non-vacuous）。
+    expect(page!.title.includes("午後") || fullBody.includes("午後")).toBe(true);
+  });
+});
