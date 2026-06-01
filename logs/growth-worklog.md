@@ -446,3 +446,23 @@
   - **旗艦/土台のプレイ面・ホーム面・ハブ面への露出を「対称化」**: 事実性監査枯渇・本文funnel飽和の後の新角度として、旗艦は露出済だが**土台=科目Bが手薄**な面を3つ埋めた。(1)クイズ完了画面に旗艦/essay導線(論述区分・単発・反復回避) `a7feb30`、(2)ホームに土台=科目Bカード新設(旗艦HomeFlagshipEssayとの非対称解消) `28c59f6`、(3)/fe ハブに土台=科目Bセクション新設(高度試験の旗艦午後CTAとの非対称解消) `fd57c79`。全て既存gated/ピラーを reuse・誇大回避(ESSAY_EXAM_CODES/科目B=FE擬似言語限定)・回帰pin・新規404ゼロ。
   - **所見**: 旗艦(午後論述)は header/home/footer/q/keyword/quiz完了 に展開済。土台(科目B)は home/q/keyword/fe-hub＋科目Bクラスタ＋FE午後ハブ に展開済＝**主要な高オーソリティ/高eyeball面で旗艦・土台が対称に露出**。残る土台未配線面は header QUIZ_MODES(client nav・SSR非対象)程度。
   - **次の最優先候補**: (a)P2-4続き(旗艦/essay 横断書籍リスト=設計判断・保留寄り)、(b)新規keyword/blogページ(科目B別longtail「科目B 何点」「科目B 時間配分」等＝オリジナル生成・saturation注意)、(c)P0-1残り(dev痕跡410=低優先・404のままで害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度変更 HD-7 は人間待ち継続。露出の対称化は概ね達成＝次は新規コンテンツ角度かHD解消待ち。
+
+## セッション25（growth ループ）2026-06-02 JST
+- 監査(read-only): session24起案の「新規コンテンツ角度」を実行。**funnel/FAQ/事実性は飽和**だが、**新規キーワードを狙う新規ページ追加は saturation(=既存ページへの過剰内部リンク)とは別物**で戦略(土台=科目B/P1-4 不安系longtail)が明示的に endorse。新角度=**「時間配分/時間切れ」悩み系ロングテール**が既存記事で各1節しか触れられず専用ページ不在と実測判明(科目B: taisaku理由2・wakaranai タイプC のみ／AP午後: 選択戦略3記事は在試験time未扱い／論文午後II: koudo-ronjutsu-kakikata-kotsu が既にtime節+FAQ保有=対象外でSKIP)。internal-link監査=FATAL0/WARNING0。
+- done: [P1-6/土台] **科目B「時間が足りない/時間切れ」専用の新規オリジナル記事を新設**。SHA `946f619`。
+  - 監査: 中核ピラー taisaku「理由2:時間が足りなくなる」・wakaranai「タイプC:時間内に解き終わらない」が各1節で時間問題に触れるが、**100分20問の在試験時間配分(配分設計/撤退判断/読解速度/見直し/本番前の時間練習)を扱う専用ページが不在**だった。「科目B 時間配分/時間が足りない/時間切れ」は通年の強い悩み系longtail。
+  - 実装: `data/blog/generators.ts` buildGeneralPosts に `fe-kamoku-b-jikan-haibun`(offset longtail2Offset+12)を新設。軽問で貯金→重問は上限8分で撤退/1分で方針立たねば後回し/見直し10分確保/トレース高速化(設問箇所だけ・差分だけ・パターン反射)/タイマー通し練習 のオリジナル構成。relatedSlugs=cluster3(taisaku/wakaranai/algorithm-nigate)へoutbound funnel。wakaranai タイプC節から inbound body link を追加。アルゴリズム分野別プール `/fe/topic/...` とAIコパイロットへ演習送客。FAQ4Q&Aで FAQPage 自動出力。
+  - 誇大回避: 100分/600点(1000点満点)は IPA公式・既存 taisaku 記述と一致(session17の100分是正を踏襲・90分/4.5分は不在)。午前MC algorithm分野=科目B擬似言語そのものではない区別を維持。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1760→1761/build OK)。本番ビルド `blog/fe-kamoku-b-jikan-haibun.html`(129KB)実在、SSR本文マーカー7・FAQPage JSON-LD・outbound `href="/blog/fe-kamoku-b-taisaku"`＋encoded topic pool・inbound from wakaranai を実測。blog.xml sitemap に slug 収録(discoverable)。internal-link監査=156posts/FATAL0/WARNING0(新規404ゼロ)。回帰pin `blog-generators.test.ts`(100分/600点/funnel links/FAQ節・90分4.5不在)。
+- done: [P1-7/土台] **科目B完全対策ピラーの「時間が足りない」節→時間配分専用記事へ hub→spoke body link**。SHA `36036ea`。
+  - 監査: 中核ピラー taisaku「理由2:時間が足りなくなる」節は問題を提示するが解決先リンクが無かった。relatedSlugs rail は limit3 で siblings に埋もれ表示されないため body link で確実化。
+  - 実装: 理由2節末に `[科目Bで時間が足りない人へ](/blog/fe-kamoku-b-jikan-haibun)` を1文 additive。検証: 本番ビルド `blog/fe-kamoku-b-taisaku.html` SSR に `href="/blog/fe-kamoku-b-jikan-haibun"` 出力。全ゲート緑(test1761)。audit FATAL0/WARNING0。
+- done: [P1-4/旗艦周辺] **応用情報 午後「時間が足りない/時間配分」専用の新規オリジナル記事を新設**。SHA `abab608`。
+  - 監査: 既存AP午後記事(ap-gogo-sentaku/bunkei-sentaku/management-erabikata)は全て「選択戦略」で、**150分5問の在試験時間配分を扱う記事が不在**だった。「応用情報 午後 時間配分/時間が足りない」は最大区分APの高volume悩み系longtail。backlog P1-4「応用情報 午後」不安系オリジナル記事に該当。
+  - 実装: `ap-gogo-jikan-haibun`(offset longtail2Offset+13)を新設。1問30分基準/解く順を最初に決める/1問35分撤退/見直し15分/選択の本番判断/長文は設問先読み・必要箇所だけ/記述は部分点・空欄作らない/タイマー通し練習 のオリジナル構成。relatedSlugs=AP午後cluster3。ap-gogo-sentaku「固定化戦略」節から inbound body link。
+  - **誇大回避(重要)**: AP午後採点=モック(HD-4)のため **funnel先は /ap ハブ＋AIコパイロットのみで旗艦 /essay には送らない**(AP午後をAI採点できると誤認させない)。150分5問・60点(100点満点)は既存 ap-gogo-sentaku 記述と一致。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1761→1762/build OK)。本番ビルド `blog/ap-gogo-jikan-haibun.html`(127KB)実在、SSRマーカー7・FAQPage・`href="/ap"` funnel・**body に /essay 不在**(HTMLの`href="/essay"`×1は site-wide footer のみ＝記事本文は旗艦に送らず)・inbound from ap-gogo-sentaku・blog.xml sitemap収録を実測。audit=157posts/FATAL0/WARNING0。回帰pin(150分/60点/(/ap)/`/essay`不在/FAQ)。
+- 申し送り（セッション25まとめ）:
+  - **新角度=「時間配分/時間切れ」悩み系ロングテールの専用記事化**: funnel/FAQ/事実性飽和後の有効な新角度として、既存記事で各1節しか扱われていなかった在試験time-management intent を専用ページに切り出し。(1)土台=科目B `fe-kamoku-b-jikan-haibun` `946f619`＋(2)ピラーからの hub→spoke `36036ea`、(3)旗艦周辺=AP午後 `ap-gogo-jikan-haibun` `abab608`。各々 cluster へ inbound/outbound 配線・FAQPage化・誇大回避(科目B=100分600点/AP=/essay非送客)・回帰pin・新規404ゼロ・sitemap収録。
+  - **saturation との切り分け**: 新規キーワードを狙う**新規ページ追加**は saturation(既存ページへの過剰内部リンク)とは別＝戦略が endorse。各記事は intent が完全分離(科目B擬似言語time vs AP午後長文time)でcannibalizationなし。論文午後II time は既存 hub が time節+FAQ保有のため意図的にSKIP(重複回避)。
+  - **次の最優先候補(新角度の継続余地)**: 「時間配分」横展開の残り＝他の高度試験午後の在試験time(NW午後/DB午後=記述・モック非依存の study strategy・/nw/dbハブへfunnel可)は起案可だがvolumeは AP/科目B より低い。別intentのlongtail(「科目B 部分点ある?」「応用情報 午後 何分前 着席」等の細粒度Q)はFAQ追記で足りる(新規ページ化は thin リスク)。それ以外は従来通り P2-4(設計判断)/P0-1残り(dev痕跡410=実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度変更 HD-7 は人間待ち継続。
