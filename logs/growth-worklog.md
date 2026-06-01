@@ -466,3 +466,20 @@
   - **新角度=「時間配分/時間切れ」悩み系ロングテールの専用記事化**: funnel/FAQ/事実性飽和後の有効な新角度として、既存記事で各1節しか扱われていなかった在試験time-management intent を専用ページに切り出し。(1)土台=科目B `fe-kamoku-b-jikan-haibun` `946f619`＋(2)ピラーからの hub→spoke `36036ea`、(3)旗艦周辺=AP午後 `ap-gogo-jikan-haibun` `abab608`。各々 cluster へ inbound/outbound 配線・FAQPage化・誇大回避(科目B=100分600点/AP=/essay非送客)・回帰pin・新規404ゼロ・sitemap収録。
   - **saturation との切り分け**: 新規キーワードを狙う**新規ページ追加**は saturation(既存ページへの過剰内部リンク)とは別＝戦略が endorse。各記事は intent が完全分離(科目B擬似言語time vs AP午後長文time)でcannibalizationなし。論文午後II time は既存 hub が time節+FAQ保有のため意図的にSKIP(重複回避)。
   - **次の最優先候補(新角度の継続余地)**: 「時間配分」横展開の残り＝他の高度試験午後の在試験time(NW午後/DB午後=記述・モック非依存の study strategy・/nw/dbハブへfunnel可)は起案可だがvolumeは AP/科目B より低い。別intentのlongtail(「科目B 部分点ある?」「応用情報 午後 何分前 着席」等の細粒度Q)はFAQ追記で足りる(新規ページ化は thin リスク)。それ以外は従来通り P2-4(設計判断)/P0-1残り(dev痕跡410=実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度変更 HD-7 は人間待ち継続。
+
+## セッション26（growth ループ）2026-06-02 JST
+- 監査(read-only): session17-22 の事実性監査角度を**非essay区分(記述式)の試験形式表記**へ展開。`data/blog/generators.ts` を「NW/DB/ES午後を論述/論文と誤記していないか」「非論文区分に旗艦/essay funnelを誤って張っていないか」で走査。NW(ネットワークスペシャリスト)記事に hard error を実測。IPA公式(shiken/kubun/nw.html WebFetch)で午後I=記述式90分3問中2問・午後II=記述式120分2問中1問を裏取り。コードSSOT(`lib/essay/load.ts` ESSAY_EXAM_CODES が nw 除外・`lib/essays/load.ts` が NW/DB/ES=技術記述問題のみと明記)とも整合＝内部矛盾だった。
+- done: [P2-2/事実性] **NW午後IIの「論述」誤記をIPA公式どおり記述式へ是正**。SHA `b4b956e`。
+  - 監査: `nw-hinshutu-pattern` が本文「午後IIは論述です」、学習ロードマップ表「午後II論文（1本書いてAI添削）」と記載。NW午後I・IIはともに記述式で論述式(小論文)は非存在(IPA公式)。論述/論文区分はST/SA/PM/SM/AUのみ。
+  - 修正: 「午後I・午後IIはいずれも記述式で…（論述式の小論文は課されません）」へ、表行を「午後IIの記述（過去問を通しで解いてAIに解説を依頼）」へ。回帰テスト `blog-generators.test.ts` に「NW post — 午後 is 記述式, not 論述」describe を新設し 記述式存在＋`/午後.{0,4}論述|論文/` 不在を pin。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test→緑/build OK)。本番ビルド `blog/nw-hinshutu-pattern.html` に「いずれも記述式」「午後IIの記述」出力・本文の午後論述/論文**0件**を実測(HTMLに残る午後II論述は related-post link=sc-ronbun-taisaku=HD-6人間待ち分のみ)。
+- done: [P2-2/旗艦ゲート規律] **NW記事の off-strategy 旗艦/essay funnel を撤去**。SHA `76a52d8`。
+  - 監査: `nw-protocol-deep-understanding` の結びが「[論述添削（PM/SA 方面）](/essay) と組み合わせて」と非論文区分NWのページから旗艦/essayへ送客。session23/24で確立した「旗艦/essay funnelは ESSAY_EXAM_CODES にゲート(誇大回避)」規律に反するoff-topic funnel(NWはessay区分でない)。
+  - 修正: NW過去問＋AIコパイロットで午後I・IIの記述理解に落とす導線へ是正。回帰テストで両NW記事(protocol/hinshutu)に旗艦/essay hub link `](/essay)` が無いことを pin。検証: 全ゲート緑/本番ビルドで記事本文の `](/essay)` 不在(残る`href="/essay"`×1=site-wide footerのみ)を実測。
+- done: [P2-2/事実性] **合格率ランキング記事の「高度=午後II論述」一般化を是正**。SHA `592fd0c`。
+  - 監査: `ipa-shiken-goukakuritsu-ranking`(高可視 合格率記事) が高度試験を一律「特に午後IIの論述が合格率を押し下げる」とフラット断定。NW/DB/ES/SC午後は記述式で論述でない＝同一error class。SCは2023年から午後統合(午後I/II廃止)。
+  - 修正: 「午後の記述・論述が…」へ緩和し「記述式（NW・DB・ES・SC）と論述式（ST・SA・PM・SM・AU）で対策は異なる」を明示・SC統合を括弧注記。隣接L2480「論述試験の採点基準が厳しい」は元から論述試験にscope済で不変。回帰pinで一律論述表記不在＋区分整理を固定。検証: 全ゲート緑(full suite 1765 pass)・SSR実測。
+- 申し送り（セッション26まとめ）:
+  - **事実性監査の新角度=「非essay区分(記述式NW/DB/ES/SC)の午後を論述/論文と誤記/誤funnelしていないか」**: これまでの事実性監査(称号/制度/形式数値)とは別軸で、**記述式区分を論述式と取り違える error class** を generators.ts 全体で掃いた。NWに3面(本文断定/ロードマップ表/旗艦funnel)で集中していた。DB/ESには同種誤記なし(クリーン)・SCは sc-ronbun-taisaku が同種だが**HD-6人間待ち**(SC午後frameの全面リライト/削除は編集判断)で不変。
+  - **旗艦/essayゲート規律はテンプレ生成だけでなく手書き記事(general.push)にも適用必要**: テンプレ(overview/lastMonth/practice)は ESSAY_FLAGSHIP_EXAMS でゲート済・テスト有だが、手書きNW記事に ungated /essay が残っていた。今回 NW2記事に no-/essay 回帰pinを追加。他の手書き非essay記事の /essay は全数grep済=NW以外は適正scope(論述/論文/ST-AU明示)を確認。
+  - **次の最優先候補**: (a)P1-4新角度「時間配分」横展開の NW午後/DB午後 専用記事(モック非依存・/nw/dbハブfunnel・今回NW午後形式facts=90分3問中2問/120分2問中1問をIPA裏取り済で即書ける)＝ただしvolumeはAP/科目B比で低く1記事に絞る。(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)。(c)P0-1残りdev痕跡410(実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7 は人間待ち継続。
