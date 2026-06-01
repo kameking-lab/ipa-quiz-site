@@ -241,6 +241,28 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).not.toContain("/essay");
     expect(body).toContain("## よくある質問");
   });
+
+  // FE 合格点/IRT 採点の仕組み longtail article (新設). 高ボリュームの混同
+  // キーワード(「基本情報 何点で合格」「科目B 何点」「IRT」)向け。IPA公式
+  // (kubun/fe.html + 採点方式PDF): 科目A 90分/60問/四肢択一, 科目B 100分/20問,
+  // 評価点1000点満点/基準点600点/IRT/両科目で基準点が必要/CBT通年。誇大回避:
+  // IRTは正答率≠得点で換算式非公開のため、特定の正答率→得点を断定しない。
+  // 土台ピラー /blog/fe-kamoku-b-taisaku へ funnel。FE は essay 区分でないので
+  // 旗艦 /essay には送らない。
+  it("fe-goukaku-ten-irt: correct scoring facts, IRT framing, 土台 funnel, no /essay", () => {
+    const post = getBlogPostBySlug("fe-goukaku-ten-irt");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("600点");
+    expect(body).toContain("1000点満点");
+    expect(body).toContain("IRT");
+    // both subjects must independently meet the reference point
+    expect(body).toContain("科目A・科目Bともに600点以上");
+    // 土台 pillar funnel; FE is not an essay exam → never the flagship grader
+    expect(body).toContain("/blog/fe-kamoku-b-taisaku");
+    expect(body).not.toContain("/essay");
+    expect(body).toContain("## よくある質問");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
