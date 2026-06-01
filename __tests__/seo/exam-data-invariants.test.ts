@@ -129,4 +129,14 @@ describe("EXAM_DEEP_CONTENT の値不変条件", () => {
     const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
     expect(sc).toContain("年 2 回（春・秋）実施");
   });
+
+  // SC 合格後に登録できる国家資格の正式名称は「情報処理安全確保支援士（登録セキスペ）」
+  // (IPA 公式 kubun/sc.html)。RISS = Registered Information Security Specialist の英語名。
+  // 「登録情報セキュリティスペシャリスト」は IPA が用いない逆翻訳で不正確
+  // (session21 で faq.ts の同種誤称号を是正済)。/sc ハブの leadParagraph 称号を pin。
+  it("sc の leadParagraph は正式名称（情報処理安全確保支援士・登録セキスペ）を使う", () => {
+    const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
+    expect(sc).toContain("情報処理安全確保支援士（登録セキスペ、英語名 RISS）");
+    expect(sc).not.toContain("登録情報セキュリティスペシャリスト");
+  });
 });

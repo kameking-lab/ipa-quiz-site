@@ -343,3 +343,17 @@ describe("blog SC merit post — 午後 structure is the unified 記述式 test 
     expect(body).not.toContain("「SC 午後I・II 問題演習」");
   });
 });
+
+// SC 合格後に登録できる国家資格の正式名称は「情報処理安全確保支援士（登録セキスペ）」
+// (IPA 公式 kubun/sc.html)。RISS = Registered Information Security Specialist (英語名)。
+// 「登録情報セキュリティスペシャリスト」は IPA が用いない英語の逆翻訳で不正確
+// (session21 で faq.ts の同種誤称号を是正済)。career path 記事の称号誤りを pin。
+describe("blog SC career post — 登録資格の正式名称 (情報処理安全確保支援士/登録セキスペ)", () => {
+  it("shikaku-career-path uses 情報処理安全確保支援士, not the inaccurate 登録情報セキュリティスペシャリスト", () => {
+    const post = getBlogPostBySlug("shikaku-career-path");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("「情報処理安全確保支援士（登録セキスペ）」として登録可能");
+    expect(body).not.toContain("登録情報セキュリティスペシャリスト");
+  });
+});
