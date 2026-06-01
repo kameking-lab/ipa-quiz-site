@@ -269,6 +269,8 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).toContain("旧 午後 → 現 **科目B**");
     // 合格点 cluster cross-link: FE(IRT) ↔ AP(素点) comparison intent
     expect(body).toContain("/blog/ap-goukaku-ten-border");
+    // 合格点 cluster cross-link: FE(IRT/科目A・B) ↔ IP(IRT/分野別足切り) comparison intent
+    expect(body).toContain("/blog/ip-goukaku-ten-bunyabetsu");
   });
 
   // AP 合格点/ボーダー longtail article (新設). 「応用情報 何点で合格/合算?/
