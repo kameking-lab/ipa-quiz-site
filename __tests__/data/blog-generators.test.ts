@@ -328,6 +328,18 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     // 合格点 cluster cross-link: IP(IRT/分野別) ↔ FE(IRT/科目A・B) comparison intent
     expect(body).toContain("/blog/fe-goukaku-ten-irt");
   });
+
+  // IPA official (iパス評価方法 range.html): scored questions are ストラテジ32 /
+  // マネジメント18 / テクノロジ42 → テクノロジ系が最多。ip-3shukan-goukaku once
+  // claimed "配点はストラテジ系が最多" which is factually wrong (ストラテジ is ~35%
+  // but not the largest). Pin the correction so the false superlative can't regress.
+  it("ip-3shukan-goukaku: ストラテジは最多と誤記しない (テクノロジ系が最多)", () => {
+    const post = getBlogPostBySlug("ip-3shukan-goukaku");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).not.toContain("ストラテジ系が最多");
+    expect(body).toContain("テクノロジ系が最多");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
