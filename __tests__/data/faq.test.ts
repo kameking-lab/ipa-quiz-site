@@ -66,6 +66,16 @@ describe("FAQS registry — FAQPage structured-data invariants", () => {
     }
   });
 
+  // IPA 公式: IP は午前/午後の区分が無い単一 CBT（100問）、FE・SG は 2023 年から
+  // 午前→科目A に再編済。旧「IP・SG・FE の午前」は IP に存在しない区分を当てはめ、
+  // FE・SG の廃止済み「午前」を使う誤り。多肢選択式中心という正しい括りに是正したので、
+  // 「IP・SG・FE の午前」が FAQPage JSON-LD に silently regress しないよう pin。
+  it("does not describe IP/SG/FE with the abolished/nonexistent 午前 区分", () => {
+    for (const f of FAQS) {
+      expect(f.answer).not.toContain("IP・SG・FE の午前");
+    }
+  });
+
   // IPA 公式: FE は 科目A=60問/90分・科目B=20問/100分。旧「科目 A（多肢選択 90 問）」は
   // 90分との取り違えによる誤り (SSOT exam-data は 60問/90分 で正)。
   it("FE 科目A は 60 問（90 問の取り違えを禁止）", () => {
