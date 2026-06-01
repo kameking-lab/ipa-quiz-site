@@ -75,6 +75,19 @@ describe("EXAM_ROADMAP の値不変条件", () => {
       }
     }
   });
+
+  // SC(情報処理安全確保支援士)午後は 2023年4月改定で午後I・午後IIが単一の午後(記述式)に
+  // 統合済(IPA 公式 kubun/sc.html・exam-data SC profile・SC leadParagraph も単一午後)。
+  // SC ロードマップは廃止済みの「午後 I」「午後 II」ステップを持たない。
+  // (NW/DB/ES は午後I・IIが現存するため対象外＝SC のみの契約)。session20の sc-shikaku-merit
+  // 同種是正と整合。/sc ハブ(indexable)に step.title が描画されるため誤構造の露出を防ぐ。
+  it("sc ロードマップは統合後の午後（記述式）で、廃止済み 午後I/午後II を持たない", () => {
+    const titles = EXAM_ROADMAP.sc.map((s) => s.title);
+    expect(titles.some((t) => t.includes("午後 I") || t.includes("午後I"))).toBe(false);
+    expect(titles.some((t) => t.includes("午後 II") || t.includes("午後II"))).toBe(false);
+    // 統合後の午後記述ステップが存在する（non-vacuous）。
+    expect(titles.some((t) => t.includes("午後 記述"))).toBe(true);
+  });
 });
 
 describe("EXAM_DEEP_CONTENT の値不変条件", () => {

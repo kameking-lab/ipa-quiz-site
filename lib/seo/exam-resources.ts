@@ -168,8 +168,8 @@ export const EXAM_ROADMAP: Record<ExamCode, RoadmapStep[]> = {
   sc: [
     { monthsBefore: 4, title: "セキュリティ全体像", body: "脅威・脆弱性・対策技術の体系を整理。" },
     { monthsBefore: 3, title: "午前 II 演習", body: "暗号・認証・脆弱性管理を反復。" },
-    { monthsBefore: 2, title: "午後 I 記述", body: "インシデント対応・脆弱性診断のシナリオ問題に慣れる。" },
-    { monthsBefore: 1, title: "午後 II 長文", body: "システム構築 / 運用での具体的な対策設計の長文問題に取組む。" },
+    { monthsBefore: 2, title: "午後 記述演習（基礎）", body: "インシデント対応・脆弱性診断のシナリオ問題に慣れる。" },
+    { monthsBefore: 1, title: "午後 記述演習（実践）", body: "システム構築 / 運用での具体的な対策設計の長文記述問題に取組む。" },
     { monthsBefore: 0, title: "総仕上げ", body: "最新の脅威動向（OWASP Top 10 など）と直近年度を確認。" },
   ],
   sm: [
