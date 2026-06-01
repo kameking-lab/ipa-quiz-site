@@ -35,7 +35,14 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P1-4: 不安系キーワード向けの入口ページ/ブログ（**オリジナル生成**・クローラブルSSR）:
   「応用情報 午後 自己採点」「応用情報 午後 部分点」「セキスペ(情報処理安全確保支援士) 午後 採点」等。
   既存ブログ生成パターン（data/blog）を踏襲し、IPA問題文の長文転載はせず、自サイトのAI採点導線へ内部リンク。
-- P1-5: 既存の午後/論述ブログの芽を強化（slug: ap-gogo-sentaku / ap-gogo-bunkei-sentaku / ipa-shiken-gogo-vs-am）。AI採点導線を追記。
+- P1-5: 既存の午後/論述ブログの芽を強化。AI採点導線を追記。
+  - **[done セッション3]** 論述ブログ群を旗艦=午後AI採点へ漏れなく funnel 化:
+    - cycle1 SHA `f863c75`: 壊れた単数形 `/essay/<exam>`(404)→`/essays/<exam>`(200) を9箇所修正（pm/st/sa/sm/au）＋ data/blog 走査の回帰ガード追加。
+    - cycle2 SHA `062ef04`: pm-goukaku-ronbun に /essays/pm 採点送客を新設。
+    - cycle3 SHA `cd742dc`: st-senryaku-shikou→/essays/st、au-shiken-taisaku→/essays/au、横断ハブ koudo-ronjutsu-kakikata-kotsu→/essays を新設。
+    - 補足: ブログ本文の全内部リンクを .next 成果物と突合→残存404ゼロを確認。
+  - **SKIP**: sc-ronbun-taisaku への /essays/sc 送客は見送り（SC午後の形式 framing の事実性に懸念・安全側）。事実確認は人間。
+  - **残り（未着手）**: ap-gogo-sentaku / ap-gogo-bunkei-sentaku / ipa-shiken-gogo-vs-am は AP午後＝モックデータのため旗艦採点CTAは HD-4 待ち（誇大回避）。AIコパイロット導線は既にあり。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P1 — 土台: 基本情報 科目B（アルゴリズム・擬似言語）AI個別指導
