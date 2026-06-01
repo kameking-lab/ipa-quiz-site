@@ -2,6 +2,50 @@ import { NextRequest, NextResponse } from "next/server";
 
 const REALM = "Kakomon AI Admin";
 
+// 恒久的に削除され「後継ページが存在しない」ルート群。301 で寄せる先が無いので
+// 410 Gone を返し、クローラに「もう辿らなくてよい」と明示してクロール資産を回復する。
+// （後継があるものは next.config.ts の redirects() 側で 301 する。）
+// 全て git 履歴上 削除済みの page.tsx で、現在は実体が無く 404 になっている。
+// マッチャは config.matcher 側に同じパスを列挙する必要がある（gone-paths-in-matcher
+// の回帰テストで両者の同期をガードしている）。
+export const GONE_PATHS: readonly string[] = [
+  "/commerce", // 旧 特定商取引法表記（全機能無料化で不要）
+  "/pricing", // 旧 料金表
+  "/premium", // 旧 プレミアム LP
+  "/premium/essay",
+  "/premium/heatmap",
+  "/premium/simulator",
+  "/enterprise/pilot", // 旧 法人向け
+  "/enterprise/pricing",
+  "/enterprise/sso",
+  "/contact/enterprise",
+  "/contact/enterprise/thanks",
+  "/security", // 旧 B2B セキュリティ(SOC2/SAML) LP
+  "/case-studies", // 旧 法人導入事例
+  "/podcast",
+  "/launch", // 旧 ローンチ告知
+  "/diagnosis", // 旧 試験区分診断（後継なし）
+  "/account/pass-simulator", // 旧 合格シミュレータ
+  "/feedback/public",
+  "/community/questions",
+  "/community/stories",
+  "/legal/dpa",
+  "/legal/msa",
+  "/legal/sla",
+];
+
+const GONE_SET = new Set<string>(GONE_PATHS);
+
+function gone(): NextResponse {
+  return new NextResponse(
+    "410 Gone — このページは恒久的に削除されました。",
+    {
+      status: 410,
+      headers: { "Content-Type": "text/plain; charset=utf-8" },
+    },
+  );
+}
+
 function unauthorized(): NextResponse {
   return new NextResponse("Unauthorized", {
     status: 401,
@@ -36,6 +80,9 @@ function decodeBasicCredentials(header: string): { user: string; pass: string } 
 }
 
 export function middleware(req: NextRequest) {
+  // 削除済みルートは admin 認証より前に 410 を返す（admin パスとは重複しない）。
+  if (GONE_SET.has(req.nextUrl.pathname)) return gone();
+
   const user = process.env.ADMIN_BASIC_USER?.trim();
   const pass = process.env.ADMIN_BASIC_PASS?.trim();
 
@@ -67,6 +114,37 @@ export function middleware(req: NextRequest) {
 // the 401 WWW-Authenticate header) is the intended human login UX; an automated
 // /headless navigation that cannot answer that dialog will appear to stall —
 // that is the dialog, not a server hang (empirical review A-4 / F-1).
+// matcher は静的解析されるため literal で列挙する。admin パスに加えて GONE_PATHS の
+// 各パスを正確に同じ文字列で並べる（gone-paths-in-matcher テストが両者の同期をガード）。
 export const config = {
-  matcher: ["/admin", "/admin/:path*", "/api/admin", "/api/admin/:path*"],
+  matcher: [
+    "/admin",
+    "/admin/:path*",
+    "/api/admin",
+    "/api/admin/:path*",
+    // --- GONE_PATHS（410 Gone・後継なし削除ページ）---
+    "/commerce",
+    "/pricing",
+    "/premium",
+    "/premium/essay",
+    "/premium/heatmap",
+    "/premium/simulator",
+    "/enterprise/pilot",
+    "/enterprise/pricing",
+    "/enterprise/sso",
+    "/contact/enterprise",
+    "/contact/enterprise/thanks",
+    "/security",
+    "/case-studies",
+    "/podcast",
+    "/launch",
+    "/diagnosis",
+    "/account/pass-simulator",
+    "/feedback/public",
+    "/community/questions",
+    "/community/stories",
+    "/legal/dpa",
+    "/legal/msa",
+    "/legal/sla",
+  ],
 };

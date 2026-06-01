@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import { NextRequest } from "next/server";
-import { middleware } from "@/middleware";
+import { middleware, config, GONE_PATHS } from "@/middleware";
 
 /**
  * Admin Basic-Auth middleware — branch coverage that distinguishes the two
@@ -93,5 +93,59 @@ describe("admin middleware — configured", () => {
     process.env.ADMIN_BASIC_PASS = `${REAL_PASS}\n`;
     const res = middleware(req({ authorization: basic(REAL_USER, REAL_PASS) }));
     expect(res.status).toBe(200);
+  });
+});
+
+/**
+ * 410 Gone — 後継ページの無い削除済みルートはクローラに「もう辿らなくてよい」と
+ * 明示するため 410 を返す。301（後継あり）は next.config.ts の redirects() 側。
+ * ここでガードするのは「削除ページが本当に 410 を返す」「admin 認証を壊さない」
+ * 「matcher と GONE_PATHS が同期している（片方追加し忘れると 410 にならない/admin
+ * 認証へ漏れる）」の 3 点。
+ */
+describe("gone middleware — 410 for retired routes (no successor)", () => {
+  function goneReq(path: string, headers: Record<string, string> = {}): NextRequest {
+    return new NextRequest(`https://www.kakomon-ai.jp${path}`, { headers });
+  }
+
+  it("returns 410 for every GONE_PATHS entry, regardless of admin env config", () => {
+    // admin env を意図的に外しても 410（admin 認証より前で分岐する）。
+    delete process.env.ADMIN_BASIC_USER;
+    delete process.env.ADMIN_BASIC_PASS;
+    for (const path of GONE_PATHS) {
+      const res = middleware(goneReq(path));
+      expect(res.status, `${path} should be 410 Gone`).toBe(410);
+    }
+  });
+
+  it("does NOT 410 a live path that merely shares a prefix with a gone path", () => {
+    // /premium は gone だが /premium-foo や /community は exact 一致しない。
+    process.env.ADMIN_BASIC_USER = REAL_USER;
+    process.env.ADMIN_BASIC_PASS = REAL_PASS;
+    // exact 一致しないパスはそもそも matcher に載らない＝middleware を通らないが、
+    // 仮に通っても 410 にしてはならない（admin パスではないので next 相当）。
+    expect(middleware(goneReq("/premium-foo")).status).not.toBe(410);
+    expect(middleware(goneReq("/community")).status).not.toBe(410);
+  });
+
+  it("admin auth still works alongside the gone branch", () => {
+    process.env.ADMIN_BASIC_USER = REAL_USER;
+    process.env.ADMIN_BASIC_PASS = REAL_PASS;
+    expect(middleware(req()).status).toBe(401);
+    expect(middleware(req({ authorization: basic(REAL_USER, REAL_PASS) })).status).toBe(200);
+  });
+
+  it("config.matcher contains every GONE_PATHS entry (sync guard)", () => {
+    const matcher = config.matcher as string[];
+    for (const path of GONE_PATHS) {
+      expect(matcher, `${path} missing from config.matcher`).toContain(path);
+    }
+  });
+
+  it("no GONE_PATHS entry collides with the admin matcher", () => {
+    for (const path of GONE_PATHS) {
+      expect(path.startsWith("/admin"), `${path} must not shadow admin`).toBe(false);
+      expect(path.startsWith("/api/admin")).toBe(false);
+    }
   });
 });
