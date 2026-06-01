@@ -29,6 +29,12 @@ function toItalicList(items: string[]): string {
   return items.map((s) => `- ${s}`).join("\n");
 }
 
+// 旗艦=午後論述 AI 採点 (/essay) が実データを持つ論文区分。
+// 単一情報源は lib/essay/load.ts の ESSAY_EXAM_CODES（重い essay データの
+// import を避けるため値だけをここに複製。drift したら誇大導線になるので注意）。
+// これ以外（ap/sc/nw/db/es 等）は午後がモック/記述式で旗艦採点を出さない。
+const ESSAY_FLAGSHIP_EXAMS = new Set<ExamCode>(["st", "sa", "pm", "sm", "au"]);
+
 /* ========== 1. 試験概要 + 合格戦略（13本） ========== */
 
 export function buildOverviewPost(exam: ExamCode, idx: number): BlogPost {
@@ -36,6 +42,12 @@ export function buildOverviewPost(exam: ExamCode, idx: number): BlogPost {
   const slug = `${exam}-goukaku-benkyouhou`;
   const title = `${p.label} 合格までの勉強法・学習時間・出題傾向ガイド【${CURRENT_YEAR}年最新】`;
   const description = `${p.label}の合格率・出題範囲・午前午後の傾向・推奨学習時間${p.studyHours}までを実務目線で整理。AI解説付き過去問学習の進め方も紹介。`;
+
+  // 論文区分のみ、午後論述パートから旗艦=午後論述 AI 採点へ自然送客（実データの
+  // ある st/sa/pm/sm/au 限定。それ以外は誇大になるため出さない）。
+  const flagshipEssayCta = ESSAY_FLAGSHIP_EXAMS.has(exam)
+    ? `\n\n書いた論述答案は [午後論述 AI 採点](/essay) に通すと、論理性・具体性・題意適合といった評価軸ごとに点数と弱点が返ってきます。${p.label}のような論述中心区分では、独学で不足しがちな第三者視点の採点を補えます（AI 採点は参考評価）。`
+    : "";
 
   const body = `# ${p.label} 合格までの勉強法
 
@@ -76,7 +88,7 @@ ${p.afternoonStrategy}
 3. AI コパイロットに「採点基準と差分を提示して」と依頼する
 4. 差分の多かった用語を単語帳化して直前期に回す
 
-特に高度区分では、論述構成（章立て）の設計力が合否を分けます。同じ知識量でも、構成の良し悪しで評価が大きく変わるため、論文系の試験では最低でも 5 本の答案を書いてから本番に臨みたいところです。
+特に高度区分では、論述構成（章立て）の設計力が合否を分けます。同じ知識量でも、構成の良し悪しで評価が大きく変わるため、論文系の試験では最低でも 5 本の答案を書いてから本番に臨みたいところです。${flagshipEssayCta}
 
 ## 推奨学習スケジュール
 
