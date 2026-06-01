@@ -51,6 +51,7 @@ describe("next.config redirects", () => {
     const redirects = await nextConfig.redirects!();
     const expected: Record<string, string> = {
       "/testimonials": "/success-stories",
+      "/trust": "/why-kakomon-ai",
       "/account/audio": "/settings",
       "/account/avatar": "/settings",
       "/account/billing": "/settings",

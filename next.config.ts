@@ -105,6 +105,9 @@ const nextConfig: NextConfig = {
       // richer /success-stories (「IPA試験 合格体験記｜13区分の合格者ストーリー集」).
       // 301 protects inbound links / crawl equity for the 合格体験記 intent.
       { source: "/testimonials", destination: "/success-stories", permanent: true },
+      // /trust (旧「信頼性ポリシー — なぜ過去問AIが選ばれるのか」) は同インテントの
+      // /why-kakomon-ai（「過去問AI を選ぶ理由」）に統合済。301 で誘導する。
+      { source: "/trust", destination: "/why-kakomon-ai", permanent: true },
     ];
   },
   compress: true,
