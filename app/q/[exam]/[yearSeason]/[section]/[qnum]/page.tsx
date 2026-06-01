@@ -41,6 +41,7 @@ import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
+import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
@@ -457,6 +458,11 @@ export default async function QuestionPage({
       {/* 旗艦＝午後II論述AI採点への導線（論述区分 ST/SA/PM/SM/AU のみ自己ゲート） */}
       <div className="print:hidden">
         <AfternoonEssayHint exam={q.exam} />
+      </div>
+
+      {/* 土台＝基本情報 科目B（擬似言語）完全対策への導線（FE科目Bのみ自己ゲート） */}
+      <div className="print:hidden">
+        <KamokuBStudyHint exam={q.exam} session={q.session} />
       </div>
 
       {/* AI Copilot CTA — gradient panel */}
