@@ -287,6 +287,18 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
     expect(body).not.toMatch(/午後.{0,4}論述/);
     expect(body).not.toMatch(/午後.{0,4}論文/);
   });
+
+  // NW is excluded from ESSAY_EXAM_CODES, so NW articles must not carry the
+  // flagship 午後論述AI採点 hub CTA (bare "](/essay)"). nw-protocol-deep-
+  // understanding once closed with "[論述添削（PM/SA 方面）](/essay)" — an ungated
+  // off-topic funnel on a 記述式 exam page. Pin its absence on both NW articles.
+  it("NW articles do not carry the flagship /essay hub CTA", () => {
+    for (const slug of ["nw-protocol-deep-understanding", "nw-hinshutu-pattern"]) {
+      const post = getBlogPostBySlug(slug);
+      expect(post, slug).toBeDefined();
+      expect(post!.body.includes("](/essay)"), slug).toBe(false);
+    }
+  });
 });
 
 // 応用情報(AP) exam-day schedule in ipa-shiken-moushikomi-nagare: 午前/午後 are

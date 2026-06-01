@@ -1542,7 +1542,7 @@ VRRP / HSRP / STP の切替を、状態遷移図で押さえる。事例で「�
 
 NW は「動き」で理解する。輻輳・再送・ハンドシェイク・ルーティング・冗長化の 5 視点で、抽象を具体に落とせれば午後で 70% は安定して取れます。
 
-[NW 過去問](/nw)・[論述添削（PM/SA 方面）](/essay) と組み合わせて鍛えましょう。
+[NW 過去問](/nw) を開き、つまずいたプロトコルや設計の論点はその場で AI コパイロットに「動きを時系列で図示して」と聞きながら、午後I・午後IIの記述で得点できる理解に落とし込みましょう。
 `,
     relatedSlugs: ["nw-hinshutu-pattern", "nw-nanido-goukakuritsu-suii", "sc-incident-response-storytelling"],
   });
