@@ -60,7 +60,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **[一部done セッション5]** 科目Bブログ群の funnel整流: 中核ピラーtaisaku↔兄弟2記事を相互内部リンク化 `1c50eb0`、アルゴリズム記事＆ピラーの演習CTAを汎用/feから**アルゴリズム分野別プール** `/fe/topic/アルゴリズムとプログラミング`(200・クイズ/AIコパイロット導線)へ深リンク `3a1859a`/`35bf8a9`。本文 topic 深リンク解決性の回帰ガード新設。
   - **残り（未着手・要慎重監査）**: 問題詳細ページ(/q/...)やクイズ上で科目B/アルゴリズム問題に対しコパイロット quick-action（擬似言語トレース等）を一目で出す UI 導線。共有UIの変更で範囲広め→read-only監査を厚めに。誇大回避: 午前MC「アルゴリズムとプログラミング」分野は擬似言語そのものではない点に注意。
   - **[done セッション16]** /q FE科目B設問に土台ピラー gated hint `KamokuBStudyHint` `eb42014`(session で厳密ゲート=実データの科目B擬似言語のみ・午前MC algorithm分野と混同回避)＋FE午後ハブ /fe/afternoon に pillar link `aeb85b1`(FE限定)。旗艦 AfternoonEssayHint(session7)と対称の土台funnelを2面に配線。回帰テストでゲートdrift検知。
-  - **新角度（セッション16起案・未着手）**: quiz player の解説カード(ExplanationLayers/QuestionCard 等の interactive 0遷移フロー)に /q と同じ旗艦(論文5区分)/土台(FE科目B) gated hint を出すか検討。/q は静的設問ページ・quiz は実プレイ面で eyeball が多い。**ただし共有UI=broad・§10承認寄り＝read-only監査を厚めに**。P1-7本丸(下記)と統合検討。
+  - **新角度（セッション16起案）**: quiz player の実プレイ面に旗艦/土台 hint を出すか検討。→ **[done セッション24]** 最大エンゲージメントの単発タイミング=クイズ完了画面(QuizCompleteScreen)に旗艦/essay導線を追加 `a7feb30`(解説カードは毎問反復=スパムのため不採用・完了画面のみ)。土台(科目B)はMC QuizPlayerを通らない(descriptive)ため対象外。
+  - **[done セッション24] 旗艦/土台の露出を面横断で「対称化」**: 旗艦は露出済だが土台=科目Bが手薄な高オーソリティ/高eyeball面を3つ埋めた。(1)クイズ完了画面に旗艦/essay `a7feb30`、(2)ホームに土台=科目Bカード `HomeFoundationKamokuB` `28c59f6`(旗艦HomeFlagshipEssayとの非対称解消)、(3)/fe ハブに土台=科目Bセクション `fd57c79`(高度試験の旗艦午後CTAとの非対称解消)。既存gated/ピラー reuse・ESSAY_EXAM_CODES/科目B=FE擬似言語ゲートで誇大回避・回帰pin・新規404ゼロ。**所見**: 主要面で旗艦・土台が対称露出。残る土台未配線面は header QUIZ_MODES(client nav・SSR非対象)程度＝優先度低。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 検索「あと一歩」回収 + 競合薄ブログ強化
