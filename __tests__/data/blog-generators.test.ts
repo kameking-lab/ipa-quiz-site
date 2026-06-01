@@ -538,6 +538,25 @@ describe("blog SC merit post — 午後 structure is the unified 記述式 test 
   });
 });
 
+// sg-shiken-meritto-imi-aru once described the abolished pre-2023 structure
+// (「午前 50 問の四択 + 午後の長文事例（CBT 化以降は科目B として統合）」).
+// IPA 公式 kubun/sg.html: 現行 SG は 科目A（四肢択一）＋科目B（多肢選択）の 2 科目・
+// 計 60 問・120 分の CBT 通年方式で、午前・午後の区分は廃止済。exam-config.ts も
+// SG CBT を 科目A(48問) として保持。pre-2023 の「午前 50 問」「科目B として統合」が
+// silently regress しないよう現行形式を pin。
+describe("blog SG merit post — 現行形式は 科目A・科目B の CBT (午前/午後は廃止)", () => {
+  it("sg-shiken-meritto-imi-aru describes the post-2023 科目A・科目B CBT format, not 午前 50 問", () => {
+    const post = getBlogPostBySlug("sg-shiken-meritto-imi-aru");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("科目 A（四肢択一）と科目 B（多肢選択の事例問題）の 2 科目");
+    expect(body).toContain("計 60 問を 120 分");
+    // The abolished pre-2023 framing must be gone from this SG-specific article.
+    expect(body).not.toContain("午前 50 問の四択");
+    expect(body).not.toContain("科目B として統合");
+  });
+});
+
 // SC 合格後に登録できる国家資格の正式名称は「情報処理安全確保支援士（登録セキスペ）」
 // (IPA 公式 kubun/sc.html)。RISS = Registered Information Security Specialist (英語名)。
 // 「登録情報セキュリティスペシャリスト」は IPA が用いない英語の逆翻訳で不正確
