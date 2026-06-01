@@ -23,7 +23,7 @@ export const EXAM_STATS: Record<ExamCode, ExamStats> = {
     passRateTrend: "CBT 通年実施で比較的安定。受験経験の有無で大きく差が出る。",
     studyHoursLow: 100,
     studyHoursHigh: 180,
-    topicTrend: "ストラテジ系・マネジメント系・テクノロジ系の3分野が均等に出題。",
+    topicTrend: "テクノロジ系の出題が最も多く、ストラテジ系・マネジメント系が続く3分野構成。",
   },
   sg: {
     passRateRecent: "50-55",

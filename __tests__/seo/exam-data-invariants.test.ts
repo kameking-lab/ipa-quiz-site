@@ -39,6 +39,18 @@ describe("EXAM_STATS の値不変条件", () => {
       expect(EXAM_STATS[code].topicTrend.trim().length, code).toBeGreaterThan(0);
     }
   });
+
+  // IP(ITパスポート)の採点対象内訳は IPA 公式（評価方法 range.html）で
+  // テクノロジ系 42 / ストラテジ系 32 / マネジメント系 18（採点 92 問）＝
+  // テクノロジ系が最多であり「3分野が均等に出題」ではない。/ip ハブ（indexable）の
+  // 出題傾向カードに topicTrend がそのまま描画されるため、誤った「均等」表現を回帰固定で防ぐ
+  // （session31 で blog ip-3shukan-goukaku の「ストラテジ系が最多」誤記も是正済＝面横断の整合）。
+  it("ip の topicTrend は『均等』と誤記せず、テクノロジ系が最多であることを反映する", () => {
+    const ip = EXAM_STATS.ip.topicTrend;
+    expect(ip).not.toContain("均等");
+    expect(ip).toContain("テクノロジ系");
+    expect(ip.indexOf("テクノロジ系")).toBeLessThan(ip.indexOf("マネジメント系"));
+  });
 });
 
 describe("EXAM_OFFICIAL_LINKS の値不変条件", () => {
