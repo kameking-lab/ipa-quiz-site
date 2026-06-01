@@ -52,4 +52,17 @@ describe("FAQS registry — FAQPage structured-data invariants", () => {
       }
     }
   });
+
+  // IPA 公式 (about/koudo_menjo.html) では午前I免除は「2年間に実施する試験まで
+  // 何度でも申請可能」。旧「前回・前々回」(=約1年・2回)は有効期間を過小提示する
+  // 誤りで、不要な午前I再受験を招くため禁止する。
+  it("states the 午前I免除 window as 2 years (not the understated 前回・前々回)", () => {
+    const menjo = FAQS.filter((f) => f.answer.includes("午前 I を免除"));
+    // non-vacuous: 午前I免除を説明する FAQ が実在する
+    expect(menjo.length).toBeGreaterThan(0);
+    for (const f of menjo) {
+      expect(f.answer).not.toContain("前回・前々回");
+      expect(f.answer).toContain("2 年間");
+    }
+  });
 });
