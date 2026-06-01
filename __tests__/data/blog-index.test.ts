@@ -8,7 +8,11 @@ import {
   getBlogPostsByExam,
   getRelatedPosts,
 } from "@/data/blog";
-import { getAvailableExams } from "@/lib/seo/exam-meta";
+import {
+  getAvailableExams,
+  getQuestionsByExamStrict,
+  groupByCategory,
+} from "@/lib/seo/exam-meta";
 
 // Characterization tests for the blog post registry (data/blog/index.ts),
 // consumed by the /blog routes: getAllBlogSlugs feeds generateStaticParams,
@@ -187,6 +191,33 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
         if (!slugSet.has(m[1])) dead.push(`${p.slug} -> /blog/${m[1]}`);
       }
     }
+    expect(dead).toEqual([]);
+  });
+
+  it("every in-body /<exam>/topic/<category> deep-link resolves to a generated topic", () => {
+    // Bodies may deep-link into the category pool, e.g.
+    // `](/fe/topic/%E3%82%A2...)`. That route is dynamicParams=false +
+    // notFound(), and its static params are groupByCategory() of the exam's
+    // strict questions — so a stale/mis-encoded category renders a link that
+    // 404s. The 2-letter exam-hub guard above does not cover the /topic/ tail;
+    // pin every topic deep-link to a real (exam, category) pair.
+    const valid = new Set<string>();
+    for (const exam of getAvailableExams()) {
+      for (const c of groupByCategory(getQuestionsByExamStrict(exam))) {
+        valid.add(`${exam}/topic/${encodeURIComponent(c.category)}`);
+      }
+    }
+    const topicLinkRe = /\]\(\/([a-z]{2}\/topic\/[^)]+)\)/g;
+    const dead: string[] = [];
+    let seen = 0;
+    for (const p of ALL) {
+      for (const m of p.body.matchAll(topicLinkRe)) {
+        seen++;
+        if (!valid.has(m[1])) dead.push(`${p.slug} -> /${m[1]}`);
+      }
+    }
+    // Non-vacuous: at least the algorithm-pool deep-link must be exercised.
+    expect(seen).toBeGreaterThan(0);
     expect(dead).toEqual([]);
   });
 
