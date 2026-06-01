@@ -65,3 +65,34 @@ describe("no dead internal links to the (non-existent) /essay/<exam> index", () 
     expect(offenders).toEqual([]);
   });
 });
+
+/**
+ * ブログ本文（data/blog）の markdown リンクも同じ 404 を量産しうる。
+ * 旗艦＝午後AI採点の「論述添削」CTA が markdown で `](/essay/pm)` のように単数形
+ * 試験インデックスへ張られていたが、その route は実在せず（実在は `/essays/<exam>` と
+ * `/essay/<exam>/<questionId>`）全て 404 だった。app/ だけを走査する上のガードでは
+ * 検出できないため、ブログ本文も走査して bare な単数形 essay 索引リンクを禁止する。
+ */
+const DATA_BLOG_DIR = join(process.cwd(), "data", "blog");
+
+describe("no dead /essay/<exam> markdown links in blog content", () => {
+  // markdown 形式 `](/essay/pm)` または `](/essay/pm#anchor)` のみ検出。
+  // 深リンク `](/essay/pm/q1)` と 複数形 `](/essays/pm)`、bare `](/essay)` は対象外。
+  const bareEssayMd = /\]\(\/essay\/[a-z]{2}(?:#[^)]*)?\)/;
+
+  it("no blog body links to a bare /essay/<exam> index", () => {
+    const offenders = walk(DATA_BLOG_DIR).filter((file) =>
+      bareEssayMd.test(readFileSync(file, "utf8")),
+    );
+    expect(offenders).toEqual([]);
+  });
+
+  it("the regex actually catches the old broken pattern (non-vacuous)", () => {
+    expect(bareEssayMd.test("[PM 論述添削](/essay/pm)")).toBe(true);
+    expect(bareEssayMd.test("[サンプル](/essay/pm#sample-answers)")).toBe(true);
+    // 正しい行先・深リンク・bare はマッチしないこと。
+    expect(bareEssayMd.test("[PM 論述添削](/essays/pm)")).toBe(false);
+    expect(bareEssayMd.test("[設問](/essay/pm/q1)")).toBe(false);
+    expect(bareEssayMd.test("[論述添削](/essay)")).toBe(false);
+  });
+});
