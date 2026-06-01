@@ -317,4 +317,19 @@ describe("blog SC merit post — 午後 structure is the unified 記述式 test 
     expect(body).not.toContain("午後 I：90 分で 2 問選択");
     expect(body).not.toContain("午後 II：120 分で 1 問選択");
   });
+
+  // 登録セキスペの更新講習費用 (IPA / 各種公開情報): オンライン講習 約2万円/年
+  // (3年で約6万円) ＋ 実践講習 約8万円〜 (3年に1回) ＝ 更新講習だけで 3年で約14万円〜。
+  // sc-shikaku-merit once understated this as「3年で約8万円程度」「3年で約9万円」
+  // (オンライン講習分を取りこぼし)。費用対効果の判断材料を過小提示する誤りなので、
+  // 約14万円〜の維持費を pin して過小値への regression を防ぐ。
+  it("sc-shikaku-merit states the ~14万円 3-year 更新講習 cost, not the understated 8〜9万円", () => {
+    const post = getBlogPostBySlug("sc-shikaku-merit");
+    const body = post!.body;
+    expect(body).toContain("3 年で約 14 万円〜の維持費");
+    expect(body).toContain("オンライン講習：約 2 万円／年");
+    expect(body).not.toContain("3 年で約 8 万円程度");
+    expect(body).not.toContain("3 年で約 9 万円の維持費");
+    expect(body).not.toContain("維持費 3 年 9 万円");
+  });
 });
