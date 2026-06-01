@@ -299,6 +299,18 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
       expect(post!.body.includes("](/essay)"), slug).toBe(false);
     }
   });
+
+  // The 合格率 ranking article once generalized "高度試験は…午後IIの論述が合格率を
+  // 押し下げる" — false for the 記述式 区分 (NW/DB/ES/SC). Pin that it now frames the
+  // 午後 difficulty driver as 記述・論述 and distinguishes the two exam families.
+  it("ipa-shiken-goukakuritsu-ranking does not call all 高度 午後II 論述", () => {
+    const post = getBlogPostBySlug("ipa-shiken-goukakuritsu-ranking");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).not.toContain("特に午後IIの論述が");
+    expect(body).toContain("午後の記述・論述");
+    expect(body).toContain("記述式（NW・DB・ES・SC）");
+  });
 });
 
 // 応用情報(AP) exam-day schedule in ipa-shiken-moushikomi-nagare: 午前/午後 are
