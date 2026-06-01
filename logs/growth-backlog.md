@@ -59,7 +59,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P1-7: 科目B/アルゴリズム関連の既存問題・解説ページから、AIコパイロットの「つまずき個別解決」クイックアクションへの導線整備（既存QUICK_ACTIONS流用）。
   - **[一部done セッション5]** 科目Bブログ群の funnel整流: 中核ピラーtaisaku↔兄弟2記事を相互内部リンク化 `1c50eb0`、アルゴリズム記事＆ピラーの演習CTAを汎用/feから**アルゴリズム分野別プール** `/fe/topic/アルゴリズムとプログラミング`(200・クイズ/AIコパイロット導線)へ深リンク `3a1859a`/`35bf8a9`。本文 topic 深リンク解決性の回帰ガード新設。
   - **残り（未着手・要慎重監査）**: 問題詳細ページ(/q/...)やクイズ上で科目B/アルゴリズム問題に対しコパイロット quick-action（擬似言語トレース等）を一目で出す UI 導線。共有UIの変更で範囲広め→read-only監査を厚めに。誇大回避: 午前MC「アルゴリズムとプログラミング」分野は擬似言語そのものではない点に注意。
-  - **新角度（セッション15起案・未着手）**: /q 設問ページは論文5区分に `AfternoonEssayHint`(session7 `c785e6a`)で旗艦導線を gated 出力するが、**FE科目B(あるいはFE午前アルゴリズム分野)の設問には土台=科目Bピラー/AIコパイロット「1行ずつトレース」への gated hint が未整備**。AfternoonEssayHint と同じ null-gate server-component パターンで「科目B/アルゴリズム設問→fe-kamoku-b-taisaku＋コパイロット導線」の hint を追加できる(最大クロール面/qでの土台露出)。ただし共有UIで範囲広め＋「午前MCのアルゴリズム分野≠科目B擬似言語」の誇大回避が必要→read-only監査を厚めに、区分/分野ゲートを慎重設計。P1-7本丸のUI監査と統合検討。
+  - **[done セッション16]** /q FE科目B設問に土台ピラー gated hint `KamokuBStudyHint` `eb42014`(session で厳密ゲート=実データの科目B擬似言語のみ・午前MC algorithm分野と混同回避)＋FE午後ハブ /fe/afternoon に pillar link `aeb85b1`(FE限定)。旗艦 AfternoonEssayHint(session7)と対称の土台funnelを2面に配線。回帰テストでゲートdrift検知。
+  - **新角度（セッション16起案・未着手）**: quiz player の解説カード(ExplanationLayers/QuestionCard 等の interactive 0遷移フロー)に /q と同じ旗艦(論文5区分)/土台(FE科目B) gated hint を出すか検討。/q は静的設問ページ・quiz は実プレイ面で eyeball が多い。**ただし共有UI=broad・§10承認寄り＝read-only監査を厚めに**。P1-7本丸(下記)と統合検討。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 検索「あと一歩」回収 + 競合薄ブログ強化
