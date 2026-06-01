@@ -252,3 +252,29 @@ describe("blog 申込の流れ — AP exam-day schedule windows match 150分", (
     expect(body).not.toContain("12:30〜14:00 午後試験");
   });
 });
+
+// 午前I免除制度 (IPA official, about/koudo_menjo.html): AP 合格による免除は
+// 「条件を満たした試験から 2 年後の同時期試験まで」有効＝合格した季を起点に
+// 春・秋で最大 4 回。ap-goukaku-go-koudo-senryaku once stated "翌年度から 2 年間
+// （2回分）" and an example that ended 免除 at 2028年春 — both wrong (免除 starts the
+// SAME 年度's next exam, gives 4 回, and 2028年春 IS the final 免除 round). Pin the
+// corrected facts so the understated window/count can't silently regress.
+describe("blog 午前I免除 post — exemption window facts are correct (2年後の同時期・最大4回)", () => {
+  it("ap-goukaku-go-koudo-senryaku states 2年後の同時期 / 最大4回, never 翌年度から / 2回分", () => {
+    const post = getBlogPostBySlug("ap-goukaku-go-koudo-senryaku");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("2 年後の同時期試験まで");
+    expect(body).toContain("最大4回");
+    expect(body).not.toContain("翌年度から");
+    expect(body).not.toContain("2回分");
+  });
+
+  it("the worked example keeps 2028年春 as 免除可能 (the final round), not 免除終了", () => {
+    const post = getBlogPostBySlug("ap-goukaku-go-koudo-senryaku");
+    const body = post!.body;
+    expect(body).toContain("2028 年春（4月）の高度試験：午前I免除可能");
+    expect(body).toContain("2028 年秋（10月）以降：免除期間終了");
+    expect(body).not.toContain("2028 年春（4月）以降：免除期間終了");
+  });
+});
