@@ -51,7 +51,9 @@ export function getRecommendedPath(
           estMin: 30,
         },
         {
-          href: `/my-progress`,
+          // /my-progress は /account/dashboard に 301 統合済。リダイレクトを
+          // 1 ホップ挟まず、弱点タブ（#weakness）へ直接ディープリンクする。
+          href: `/account/dashboard#weakness`,
           label: "弱点マップで集中分野を決める",
           description: "正答率の低い分野から優先的に潰す",
           estMin: 5,
