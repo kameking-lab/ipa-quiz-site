@@ -374,3 +374,22 @@
   - **事実性監査=「SCの2023改定追従」で3件是正**: (1)sc-shikaku-merit の午後構成を統合午後(150分記述式4問中2問)へ `510e149`、(2)同記事の登録セキスペ維持費を約14万円〜へ是正(過小提示の是正・実害大) `4088252`、(3)2026参考書ガイドのSC午後書名フレーミング是正 `a81d15e`。いずれもIPA公式 kubun/sc.html＋公開情報で裏取り・回帰pin・最小diff・新規404ゼロ(text-only)。
   - **構造的/制度的数値の事実性監査は概ねクリーン**: SC(本セッション)・ST/AP/FE科目B/午前I免除/春秋グルーピング(session17-19)で主要 hard error は是正済。残る outlier は HD-6(sc-ronbun-taisaku の論文誤framing・全面リライト要)/HD-7(2026 CBT・前後期 site-wide)＝人間待ち。一般化「4部構成」記述はHD-7整理時にまとめて。
   - **次の最優先候補**: 事実性 hard error は枯渇気味。残るは (a)P1-7本丸(科目B問題ページ コパイロット quick-action UI＝§10/broad・要慎重監査)、(b)P2-4続き(旗艦/essay 横断書籍リスト=設計判断)、(c)新角度起案=用語/規格名の更新(ITIL 4/PMBOK第7版 等の世代ずれ・ただし学習advice文脈はSKIP寄り)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度変更 HD-7 は人間待ち継続。
+
+## セッション21（growth ループ）2026-06-02 JST
+- 監査(read-only): session17-20の事実性監査を**ブログ以外の高オーソリティ構造化データ面=`/faq`(FAQPage JSON-LD・79問)・`/glossary`(DefinedTermSet)へ角度展開**。これまでの監査は data/blog 中心で、data/faq.ts・data/glossary.ts は未走査だった。IPA公式(WebFetch/WebSearch)＋SSOT(exam-data)で照合し、可視本文＋構造化データに露出する hard error を4件是正。
+- done: [P2-2/事実性] **`/faq` SC登録後の称号を正式名称へ是正(2箇所)**。SHA `719497f`。
+  - 監査: data/faq.ts L448/L522 が登録後の国家資格名を「登録セキュリティスペシャリスト（RISS）」と記載。IPA公式([kubun/sc.html](https://www.ipa.go.jp/shiken/kubun/sc.html) WebFetch実測)では登録後に名乗れるのは国家資格「情報処理安全確保支援士（登録セキスペ）」で、「登録セキュリティスペシャリスト」はIPAが用いない不正確な称号。`app/faq/page.tsx` が FAQS を FAQPage JSON-LD(acceptedAnswer.text)へ直マップ＝構造化データにも誤称号が露出していた。codebase他所(blog/generators.ts)は「情報処理安全確保支援士（登録セキスペ）」で正＝faq.ts のみdrift。
+  - 修正: 2箇所を「情報処理安全確保支援士（登録セキスペ、英語名 RISS）」へ。回帰テスト `__tests__/data/faq.test.ts` に誤称号「登録セキュリティスペシャリスト」の全FAQ不在＋RISS言及時の正式名称併記を pin。検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1740→1741/build OK)。本番ビルド `app/faq.html` に正式名称×8・誤称号**0件**・FAQPage健在を実測。
+- done: [P2-2/事実性] **`/glossary` OWASP Top 10 の最新版表記を 2021→2025年版へ是正**。SHA `b7e336f`。
+  - 監査: data/glossary.ts L132 が「最新版は 2021 年版で、3 年ごとに更新される」と記載。OWASP公式・各種報道([OWASP Top 10:2025](https://owasp.org/Top10/2025/) WebSearch実測)で **Top 10:2025 が2026年1月に最終版公開済**＝2021年版は陳腐化。更新周期も実際は2013/2017/2021/2025＝おおむね4年で「3年ごと」は不正確。`app/glossary/page.tsx` は JSON-LD description=t.short だが t.detail は可視本文(L141)に出力＝SC学習者向けクロール面の誤り。
+  - 修正: 「最新版は 2025 年版（2026 年 1 月公開）で、数年ごとに更新される」へ。回帰テスト `__tests__/data/glossary.test.ts` に stale な「最新版は 2021 年版」不在＋「2025 年版」を pin。検証: 全ゲート緑(test1741→1742/build OK)。本番ビルド `app/glossary.html` に新表記・旧「最新版は2021年版」**0件**を実測。
+- done: [P2-2/事実性] **`/faq` 午前I免除の有効期間を「前回・前々回」→正式な2年間へ是正**。SHA `084bbf7`。
+  - 監査: data/faq.ts L454 が免除対象を「応用情報合格者、または前回・前々回の高度試験で午前Iの基準点超え」に限定(=約1年・2回)。IPA公式([about/koudo_menjo.html](https://www.ipa.go.jp/shiken/about/koudo_menjo.html) WebFetch実測)では合格・基準点充足から「2年間に実施する試験まで何度でも申請可能」で、免除条件は①AP合格②高度/支援士合格③高度/支援士の午前I基準点の3つ。「前回・前々回」は有効期間を過小提示し不要な午前I再受験を招く誤り(session19でブログ ap-goukaku-go-koudo-senryaku の同種誤りを是正済の faq 版)＋条件②の欠落。
+  - 修正: 3条件を正しく併記し「その後 2 年間に実施される試験で午前 I を免除できます（期間内は何度でも申請可能）」へ。回帰テストで「前回・前々回」不在＋「2 年間」を pin。検証: 全ゲート緑(test1742→1743/build OK)。本番ビルド `app/faq.html` に新表記×4・旧「前回・前々回」**0件**を実測。
+- done: [P2-2/事実性] **`/faq` FE科目Aの出題数を 90問→60問 へ是正(90分との取り違え)**。SHA `92bb17a`。
+  - 監査: data/faq.ts L474 が「科目 A（多肢選択 90 問）」と記載。IPA公式・SSOT(blog/exam-data.ts L61・session17確認済)では **FE科目A=60問/90分**(科目B=20問/100分)＝試験時間90分を問数90問と取り違えた誤り。grep で faq.ts L474 が唯一の outlier(他所は60問で正)を確認。FAQPage JSON-LD にも露出。
+  - 修正: 「科目 A（多肢選択 60 問・90 分）と科目 B（…20 問・100 分）」へ(両科目に時間併記)。回帰テストで「科目 A（多肢選択 90 問」不在＋「60 問」を pin(filter は count-stating answer に限定し科目A/B coverage FAQ を誤検知しないよう narrow)。検証: 全ゲート緑(test1743→1744/build OK)。本番ビルド `app/faq.html` に「60 問・90 分」×4・旧「90 問」**0件**を実測。
+- 申し送り（セッション21まとめ）:
+  - **事実性監査をブログ→`/faq`(FAQPage JSON-LD)・`/glossary`(DefinedTermSet)へ角度展開し4件是正**: (1)SC登録称号→情報処理安全確保支援士(登録セキスペ) `719497f`、(2)OWASP Top10 2021→2025年版 `b7e336f`、(3)午前I免除 前回前々回→2年間 `084bbf7`、(4)FE科目A 90問→60問 `92bb17a`。いずれもIPA/OWASP公式で裏取り・構造化データ露出面・回帰pin・最小diff・新規404ゼロ(text-only)。
+  - **新発見**: 事実性監査はブログ群が概ねクリーンでも、**ブログ以外の構造化データ面(faq.ts/glossary.ts)に未監査の hard error が4件残っていた**＝監査面を data/blog 限定にしていた盲点。今後は keywords.ts / exam-meta / exam-content 等の他 data 面も同様に照合余地あり。
+  - **次の最優先候補**: (a)他 data 面の事実性照合継続(data/keywords.ts・lib/seo/exam-meta.ts・exam-content.ts・data/community/* の試験形式/規格名/数値がIPA公式と一致するか)、(b)P1-7本丸(科目B問題ページ コパイロット quick-action UI＝§10/broad・要慎重監査)、(c)P2-4続き(旗艦/essay 横断書籍リスト=設計判断)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度変更 HD-7 は人間待ち継続。
