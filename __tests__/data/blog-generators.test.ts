@@ -84,32 +84,40 @@ describe("blog per-exam generators — publishedAt SEO contract", () => {
   }
 });
 
-describe("blog overview — flagship 午後論述AI採点(/essay) CTA gated to 論文区分", () => {
-  // buildOverviewPost appends a 旗艦 /essay grading CTA in its 午後 section,
-  // but ONLY for exams whose afternoon essays have real data (st/sa/pm/sm/au =
-  // ESSAY_EXAM_CODES). Emitting it for ap/sc/nw/db/es (mock or 記述式) would be
-  // 誇大 (advertising AI grading the product doesn't really back). The CTA list
-  // in generators.ts duplicates ESSAY_EXAM_CODES to avoid importing heavy essay
-  // data; pin the equivalence so a drift between the two surfaces here.
+describe("blog template generators — flagship 午後論述AI採点(/essay) CTA gated to 論文区分", () => {
+  // overview / lastMonth / practice each append a 旗艦 /essay grading CTA in
+  // their 午後(・論文) section, but ONLY for exams whose afternoon essays have
+  // real data (st/sa/pm/sm/au = ESSAY_EXAM_CODES). Emitting it for ap/sc/nw/db/es
+  // (mock or 記述式) would be 誇大 (advertising AI grading the product doesn't
+  // really back). The gate in generators.ts (ESSAY_FLAGSHIP_EXAMS) duplicates
+  // ESSAY_EXAM_CODES to avoid importing heavy essay data; pin the equivalence so
+  // a drift between the two surfaces here, across every generator that funnels.
   const essaySet = new Set<string>(ESSAY_EXAM_CODES);
   // Bare /essay hub link is the flagship target; /essays (plural) is noindex.
   const FLAGSHIP_LINK = "](/essay)";
+  const FUNNELING = [
+    { name: "overview", build: buildOverviewPost },
+    { name: "lastMonth", build: buildLastMonthPost },
+    { name: "practice", build: buildPracticePost },
+  ] as const;
 
-  for (const exam of EXAMS) {
-    const shouldHave = essaySet.has(exam);
-    it(`overview(${exam}) ${shouldHave ? "links" : "does NOT link"} to /essay in body`, () => {
-      const body = buildOverviewPost(exam, 0).body;
-      expect(body.includes(FLAGSHIP_LINK)).toBe(shouldHave);
+  for (const g of FUNNELING) {
+    for (const exam of EXAMS) {
+      const shouldHave = essaySet.has(exam);
+      it(`${g.name}(${exam}) ${shouldHave ? "links" : "does NOT link"} to /essay in body`, () => {
+        const body = g.build(exam, 0).body;
+        expect(body.includes(FLAGSHIP_LINK)).toBe(shouldHave);
+      });
+    }
+
+    it(`${g.name}: exactly the 論文区分 exercise the flagship CTA (non-vacuous)`, () => {
+      const linked = EXAMS.filter((e) =>
+        g.build(e, 0).body.includes(FLAGSHIP_LINK),
+      );
+      expect(linked.length).toBe(ESSAY_EXAM_CODES.length);
+      expect(linked.length).toBeGreaterThan(0);
     });
   }
-
-  it("at least one 論文区分 actually exercises the flagship CTA (non-vacuous)", () => {
-    const linked = EXAMS.filter((e) =>
-      buildOverviewPost(e, 0).body.includes(FLAGSHIP_LINK),
-    );
-    expect(linked.length).toBe(ESSAY_EXAM_CODES.length);
-    expect(linked.length).toBeGreaterThan(0);
-  });
 });
 
 describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 404)", () => {
