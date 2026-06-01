@@ -297,6 +297,35 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     // 合格点 cluster cross-link: AP(素点) ↔ FE(IRT) comparison intent
     expect(body).toContain("/blog/fe-goukaku-ten-irt");
   });
+
+  // IP 合格点 longtail article (新設). 「ITパスポート 何点で合格/総合評価点/
+  // 分野別評価点」の混同キーワード向け。IPA公式(iパス評価方法 range.html WebFetch
+  // 裏取り): 総合評価点1000点満点/600点以上 かつ 分野別評価点(ストラテジ/マネジメント
+  // /テクノロジ)各1000点満点/各300点以上、IRTで算出、出題100問のうち採点対象 約92問。
+  // /ip ハブ + 分野別モード + AIコパイロット + IPクラスタへ funnel。
+  // IPは非essay区分のため旗艦 /essay には送らない。
+  it("ip-goukaku-ten-bunyabetsu: 総合600/分野別300, IRT, 採点92問, /ip funnel, no /essay", () => {
+    const post = getBlogPostBySlug("ip-goukaku-ten-bunyabetsu");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    // total score: 600/1000
+    expect(body).toContain("600点");
+    expect(body).toContain("1000点満点");
+    // per-field cutoff: each of 3 fields must reach 300 (the easily-missed twist)
+    expect(body).toContain("300点");
+    expect(body).toContain("分野別評価点");
+    expect(body).toContain("1分野でも300点未満なら不合格");
+    // IRT scoring; not a simple raw-count
+    expect(body).toContain("IRT");
+    // only ~92 of 100 questions are scored (IPA official)
+    expect(body).toContain("92問");
+    // funnel to /ip hub + IP cluster; IP is not an essay exam → never the flagship grader
+    expect(body).toContain("/blog/ip-3shukan-goukaku");
+    expect(body).not.toContain("/essay");
+    expect(body).toContain("## よくある質問");
+    // 合格点 cluster cross-link: IP(IRT/分野別) ↔ FE(IRT/科目A・B) comparison intent
+    expect(body).toContain("/blog/fe-goukaku-ten-irt");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
