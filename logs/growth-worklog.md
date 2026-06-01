@@ -131,3 +131,9 @@
   - **土台=科目B**: 「わからない/解き方/何から」直撃の新規オリジナル記事 `fe-kamoku-b-wakaranai` を新設(つまずき3タイプ切り分け→既存クラスタへ振分)し、中核ピラーへ inbound 配線 `2e895cd`。
   - **旗艦=午後論述AI採点を面で funnel化**: (1)最高可視性ロードマップ記事→旗艦/土台へ文脈リンク `b8c1ecf`、(2)論文5区分の勉強法記事(overview)から旗艦へ条件付き送客＋誇大回避の区分ゲート `122c129`、(3)その回帰ガード `4058e60`。論文区分の高オーソリティ記事が漏れなく旗艦へ流れる動線が完成。
   - **次の最優先候補**: P1-4(不安系KW新規記事だが「応用情報午後」「セキスペ午後」はモック/記述式で要HD-4・SC事実確認＝安全な角度は論文5区分の個別worry記事) / P2-2(競合薄ブログ強化: it-shikaku-rirekisho-kakikata=既に内容厚いので内部リンク網寄り) / P1-7続き(科目B問題ページ自体のコパイロット quick-action UI＝要慎重監査) / P0-1残り(dev痕跡の410)。AP/FE午後モックは引き続き HD-4 待ち。
+
+## セッション7（growth ループ）2026-06-02 JST
+- done: [P1-1/旗艦] **最大のクロール面 /q/* の論述区分(ST/SA/PM/SM/AU)問題ページから旗艦=午後論述AI採点(/essay)へ送客**。SHA `c785e6a`。
+  - 監査: 旗艦 /essay はヘッダ/ホーム/フッタ(session4)＋論述ブログ群(session3/6)には露出済だが、**サイト最大のクロール面である問題詳細ページ /q/\*（~12,653件）には旗艦への導線が皆無**だった。ST/SA/PM/SM/AU の午前I/午前II問題を解く読者は午後II論述採点の最有力候補なのに、その面で旗艦が不在。
+  - 実装: gated server component `components/quiz/AfternoonEssayHint.tsx` を新設（InlineBookHint/CategoryStudyTip の null-gate パターン踏襲）。`ESSAY_EXAM_CODES`(=lib/essay/load.ts 単一情報源 st/sa/pm/sm/au)に含まれる区分のみ SSR の `<Link href="/essay">` を出力し、ap/fe 等の非論述・モック区分は `null`（誇大回避）。文言は /essay と整合の4軸「適合度・論理性・具体性・業種事例」＋「AI採点は参考評価」明記。リンク先は indexable な /essay（noindex の /essays ではない）。page.tsx の InlineBookHint 直後に配置。
+  - 検証: 全ゲート緑（typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1655→1658(+3) / build OK）。本番ビルド成果物で `q/st/2024-spring/am1/q1.html` に `href="/essay"`＋「午後論述 AI 添削を試す」「この区分は午後IIで論述が出ます」出力、`q/fe/2024-cbt/kamoku-a/q1.html` には hint コピー **0件**（非論述区分に出ない）を実測。回帰テスト `__tests__/components/AfternoonEssayHint.test.tsx`（論述5区分でリンク・非論述8区分で空・non-vacuous）。
