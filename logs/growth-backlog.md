@@ -64,7 +64,11 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 ## P2 — 検索「あと一歩」回収 + 競合薄ブログ強化
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - P2-1: 表示は来てるがクリック0／6〜10位の設問テキスト系ページの title/description/スニペット改善（data-nosnippet整理、冒頭要約の質、文字数キャップ）。対象の具体URLはGSC人手抽出が要るため、まずは「設問ページのtitle/descriptionテンプレ自体の質改善」をテンプレ単位で実施（全/qに波及）。実値をHTMLで実測。
+  - **[SKIP セッション9]**: `lib/seo/question-meta.ts` は phase10レビュー済（DESCRIPTION_MAX=158 hard cap・CTA温存・answer suppression意図的・専用テスト question-meta.test.ts 有）で実害なし。テンプレ修正は理論のみ＝過大修正の罠。GSCの具体URL抽出（人手）が来たら個別対応。
 - P2-2: 競合薄ブログの強化（既存の芽: /blog/it-shikaku-nendaibetsu-roadmap=6.2位CTR9.5% / it-shikaku-rirekisho-kakikata=455表示15位 / kakomon-ai-roadmap-2026 / syakaijin-asakatsu-benkyou）。内容深掘り（オリジナル）・内部リンク網・関連問題リンク・FAQ/JSON-LD補強で1ページ目を狙う。
+  - **[done セッション8]** FAQPage JSON-LD machinery を新設（lib/blog/faq.ts extractFaq・`## よくある質問`節を自動FAQPage化）`b3cd08d`。
+  - **[done セッション9]** roadmap記事の「1日30回」誇張を SSOT(FREE_AI_DAILY_LIMIT=10) へ是正 `9e06379`。土台=科目B中核ピラー `fe-kamoku-b-taisaku` `2922a80`・旗艦=PM論文 `pm-goukaku-ronbun` `0db0f07` にオリジナル4Q&AのFAQ節を追加しFAQPage化（旗艦はQ4で /essay funnel）。
+  - **残り（継続・FAQ未設置の戦略記事に4Q&A追加でFAQPage化）**: fe-kamoku-b-pseudo-language[土台] / st-senryaku-shikou・gyoushu-essay-*[旗艦論述] / 勉強法overview群でFAQ節未設置のもの。**注意**: sc-ronbun-taisaku は SC午後のframe事実性がHD未決（session3 SKIP）でFAQ化も保留、ap-gogo-sentaku は AP午後モック=HD-4。誇大回避: 数値・形式は本文既存記述と一致させ、AI回数は明記しない。
 - P2-3: 内部リンク網の強化（午後採点・科目B・ロードマップ間のハブ&スポーク）。orphan化している価値ページに導線を足す。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━

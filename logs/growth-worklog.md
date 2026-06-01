@@ -170,3 +170,24 @@
   - **誇大回避の一貫**: 旗艦の teaches は単一情報源 ESSAY_EXAM_CODES、`isAccessibleForFree` は freemium のため付けず、FAQ答弁は markdown 除去。Google の FAQ/HowTo リッチ縮小(2023)は注記しつつ「標準準拠で害なし・意味整合に資する」additive 強化として実施。
   - **SKIP→HD-5**: 論文5区分の個別essay記事の採点intent深リンクが noindex,nofollow `/essays/[exam]` を指す件は設計判断のため自律実装せず HD-5 に集約。
   - **次の最優先候補**: P2-2残り(競合薄ブログの内容深掘り・FAQ節追加で本記事もFAQPage化が効く) / P2-1(/q 設問ページの title/description テンプレ質改善＝最大面・要慎重監査) / P1-7続き(科目B問題ページのコパイロット quick-action UI＝要慎重監査) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モックは HD-4、essay深リンクは HD-5 待ち。
+
+## セッション9（growth ループ）2026-06-02 JST
+- done: [P2-2/誇大回避] **roadmap記事の無料枠を「1日30回」→SSOT(FREE_AI_DAILY_LIMIT=10)へ是正**。SHA `9e06379`。
+  - 監査で発見: `lib/constants/ai-quota.ts` のコメントが「Some marketing pages still said '1日30回'; those are corrected to reference this constant」と明記するのに、`kakomon-ai-roadmap-2026` の「維持し続ける方針」節 line2143「AI コパイロット 1 日 30 回（無料枠）」だけが是正漏れ＝enforced値10を**3倍誇張**しSSOTからdriftしていた唯一の箇所。generators.ts は既に `AI_QUOTA_COPY_SHORT` を import 済（line4385/4417 で使用）。
+  - 修正: 当該行を `- AI コパイロット：${AI_QUOTA_COPY_SHORT}`（=「初回 10 回無料（フィードバック後ほぼ無制限）」）へ統一。他2記事と同じ参照パターン。本文の他箇所・relatedSlugs・UIは不変（最小diff）。
+  - 検証: 全ゲート緑（typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1664→1666(+2) / build OK）。本番ビルド `blog/kakomon-ai-roadmap-2026.html` で「30 回」**0件**、`AI コパイロット：初回 10 回無料（フィードバック後ほぼ無制限）` 出力を実測。回帰ガード `__tests__/seo/blog-quota-copy-sync.test.ts`（全記事に「N 回（無料」literal禁止＋roadmap記事がSSOT値10を反映・30回不在）。
+- done: [P2-2/土台] **土台=科目B 中核ピラー記事 fe-kamoku-b-taisaku に「よくある質問」節を追加しFAQPage化**。SHA `2922a80`。
+  - 監査: 科目Bクラスタの中核ピラー(session5/6でクラスタ配線済)だが `## よくある質問` 節が無く、session8の FAQPage JSON-LD machinery(lib/blog/faq.ts extractFaq)の対象外だった。「科目B 何問/何点/未経験/順番/過去問どこで」は通年ロングテールの質問intent。
+  - 実装: オリジナル4Q&A（Q1出題数20・90分・600点／Q2未経験でもトレース力で合格可／Q3科目A→B順／Q4アルゴリズム分野プールで演習）を `## まとめ` 直前に additive 挿入。本文他箇所・relatedSlugs・UI不変。extractFaq が4ペア抽出→`app/blog/[slug]/page.tsx` が FAQPage を自動出力。
+  - 誇大回避: 出題数/時間/合格点は本文既存記述と一致。/fe/topic アルゴリズムプールは午前(科目A)分野で科目B疑似言語そのものではない点を踏まえ「トレース力の土台」と正確表現（worklog既知の区別を踏襲）。AI回数は明記せず。「最新は IPA 公式で確認」明記。
+  - 検証: 全ゲート緑（typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1666→1667(+1) / build OK）。本番ビルド `blog/fe-kamoku-b-taisaku.html` に `"@type":"FAQPage"`×1＋`"@type":"Question"`×4＋実問文「プログラミング未経験でも科目Bに合格できますか」出力、FAQ Q4リンクは実DOMで `<a href="/fe/topic/...">`（markdown剥離・JSON-LD側もleak0）、topicプールHTML(200)実在を実測。回帰ガード blog-faq-jsonld に本記事=4Q&A・Q4 markdownリンク剥離を pin。
+- done: [P2-2/旗艦] **旗艦=PM論文記事 pm-goukaku-ronbun に「よくある質問」節を追加しFAQPage化＋/essay採点へfunnel**。SHA `0db0f07`。
+  - 監査: PMは真正の論文区分(ESSAY_EXAM_CODES)・旗艦=午後論述AI採点の中核intent記事だが `## よくある質問` 節が無くFAQPage対象外。「午後II 形式/未経験/字数配分/合格レベルか自己判断」は論文受験者の質問intent。本文の既存採点CTAは noindex `/essays/pm`（HD-5 territory）。
+  - 実装: オリジナル4Q&A（Q1=120分2問選択ア〜ウ3000字／Q2=未経験でも具体的設定と判断論理／Q3=設問イに半分以上／Q4=自己採点困難→旗艦採点へ）を `## まとめ` 直前に additive 挿入。extractFaq が4ペア抽出→FAQPage自動出力。
+  - 旗艦funnel＆HD-5回避: Q4の**新規**リンクは indexable な `/essay` へ（noindex `/essays/pm` へ送る既存本文CTAはHD-5判断待ちのため不変）。session4/7/8のequity原則踏襲。「AI採点は参考評価」明記。字数/形式は本文既存記述と一致（誇大回避）。
+  - 検証: 全ゲート緑（typecheck0 / lint0err / test1667 / build OK）。本番ビルド `blog/pm-goukaku-ronbun.html` に `"@type":"FAQPage"`×1＋`"@type":"Question"`×4＋実問文「実務経験がなくても合格論文は書けますか」出力、Q4の `/essay` が実DOMで `<a href="/essay">午後論述 AI 採点</a>` レンダ、`essay.html`(200)実在を実測。回帰は corpus-wide blog-faq-jsonld が自動カバー（FAQ節→>0ペア・markdownリンク剥離）。
+- 申し送り（セッション9まとめ）:
+  - **誇大回避の実バグ修正**: roadmap記事の「AI コパイロット 1 日 30 回（無料枠）」を enforced値=SSOT `FREE_AI_DAILY_LIMIT(10)` へ是正 `9e06379`（SSOTコメントが「30回は是正済」と記すのに取り残されていた唯一の箇所＝3倍誇張のdrift）。回帰ガード blog-quota-copy-sync。
+  - **FAQPage機構(session8)を戦略記事へ展開**: 土台=科目B中核ピラー `fe-kamoku-b-taisaku` `2922a80`、旗艦=PM論文 `pm-goukaku-ronbun` `0db0f07` にオリジナル4Q&AずつのFAQ節を追加しFAQPage自動出力＋質問intentの意味整合を強化。旗艦記事はQ4で /essay へfunnel。
+  - **/q メタテンプレ(P2-1)はSKIP**: lib/seo/question-meta.ts は phase10レビュー済(158字hard cap・CTA温存・answer suppression意図的・専用テスト有)で実害なし。修正は理論のみ＝過大修正の罠回避。
+  - **次の最優先候補**: P2-2継続(FAQ未設置の戦略記事＝fe-kamoku-b-pseudo-language[土台]・st-senryaku-shikou/sc-ronbun-taisaku[旗艦論述,ただしSCはHD未決のframe注意]・ap-gogo-sentaku[AP午後はモックHD-4]・勉強法overview群はFAQ節無いものに4Q&A) / P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。
