@@ -7,6 +7,7 @@ import { HomeExamGrid } from "@/components/home/HomeExamGrid";
 import { HomeHeroLede } from "@/components/home/HomeHeroLede";
 import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
 import { HomeFlagshipEssay } from "@/components/home/HomeFlagshipEssay";
+import { HomeFoundationKamokuB } from "@/components/home/HomeFoundationKamokuB";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import {
   HomeReturningHeader,
@@ -153,6 +154,8 @@ export default function HomePage() {
       </section>
 
       <HomeFlagshipEssay />
+
+      <HomeFoundationKamokuB />
 
       <HomeTopicGrid />
 
