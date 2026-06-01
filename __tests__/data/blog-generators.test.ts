@@ -208,3 +208,30 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(post!.body).not.toContain("4.5");
   });
 });
+
+// ITストラテジスト(ST) 午後 structure (IPA official, st.html):
+//   午後I  = 出題3問 / 解答2問 / 90分
+//   午後II = 出題2問 / 解答1問 / 120分(2時間)
+// EXAM_PROFILES.st.afternoonStrategy once stated "4問中2問" (午後I) and
+// "3問中1問" (午後II) — both wrong question counts that propagate into every
+// generator rendering p.afternoonStrategy (overview / lastMonth / practice).
+// Pin the corrected counts so the stale figures can't silently regress.
+describe("blog 旗艦 ST post — 午後 structure facts are correct (3問中2問 / 2問中1問)", () => {
+  it("EXAM_PROFILES.st.afternoonStrategy states the correct selection counts", () => {
+    const s = EXAM_PROFILES.st.afternoonStrategy;
+    expect(s).toContain("3 問中 2 問");
+    expect(s).toContain("2 問中 1 問");
+    expect(s).not.toContain("4 問中 2 問");
+    expect(s).not.toContain("3 問中 1 問");
+  });
+
+  it("st-goukaku-benkyouhou body carries the corrected counts", () => {
+    const post = getBlogPostBySlug("st-goukaku-benkyouhou");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("3 問中 2 問");
+    expect(body).toContain("2 問中 1 問");
+    expect(body).not.toContain("4 問中 2 問");
+    expect(body).not.toContain("3 問中 1 問");
+  });
+});
