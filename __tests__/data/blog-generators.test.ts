@@ -323,6 +323,29 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
     expect(body).not.toMatch(/午後.{0,4}論文/);
   });
 
+  // 新設: DB午後 時間配分 longtail article. IPA official (db.html):
+  //   午後I  = 90分 / 3問中2問 / 記述式
+  //   午後II = 120分 / 2問中1問 / 記述式
+  // DB is 記述式 (not 論述, excluded from ESSAY_EXAM_CODES) — funnels to /db hub +
+  // AI copilot only, never the flagship /essay grader.
+  it("db-gogo-jikan-haibun: correct 午後 facts, /db funnel, FAQ, no /essay", () => {
+    const post = getBlogPostBySlug("db-gogo-jikan-haibun");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("90分");
+    expect(body).toContain("120分");
+    expect(body).toContain("3問中2問");
+    expect(body).toContain("2問中1問");
+    expect(body).toContain("記述式");
+    expect(body).toContain("(/db)");
+    // DB is not an essay exam — must not funnel to the flagship grader
+    expect(body).not.toContain("/essay");
+    expect(body).toContain("## よくある質問");
+    // 記述式 exam: must not mischaracterize 午後 as 論述/論文
+    expect(body).not.toMatch(/午後.{0,4}論述/);
+    expect(body).not.toMatch(/午後.{0,4}論文/);
+  });
+
   // The 合格率 ranking article once generalized "高度試験は…午後IIの論述が合格率を
   // 押し下げる" — false for the 記述式 区分 (NW/DB/ES/SC). Pin that it now frames the
   // 午後 difficulty driver as 記述・論述 and distinguishes the two exam families.
