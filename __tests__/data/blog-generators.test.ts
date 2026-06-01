@@ -235,3 +235,20 @@ describe("blog 旗艦 ST post — 午後 structure facts are correct (3問中2�
     expect(body).not.toContain("3 問中 1 問");
   });
 });
+
+// 応用情報(AP) exam-day schedule in ipa-shiken-moushikomi-nagare: 午前/午後 are
+// each 150分 (IPA official). The clock windows once read 10:00〜11:30 (午前) and
+// 12:30〜14:00 (午後) — both 90-minute spans contradicting their own "（150 分）"
+// labels. Pin the corrected 150-minute windows so a 90-min span labelled 150分
+// can't silently regress.
+describe("blog 申込の流れ — AP exam-day schedule windows match 150分", () => {
+  it("ipa-shiken-moushikomi-nagare shows 150-minute 午前/午後 windows", () => {
+    const post = getBlogPostBySlug("ipa-shiken-moushikomi-nagare");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("10:00〜12:30 午前試験（150 分）");
+    expect(body).toContain("13:30〜16:00 午後試験（150 分）");
+    expect(body).not.toContain("10:00〜11:30 午前試験");
+    expect(body).not.toContain("12:30〜14:00 午後試験");
+  });
+});
