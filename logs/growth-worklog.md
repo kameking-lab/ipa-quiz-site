@@ -217,3 +217,23 @@
   - **FAQPage機構(session8)を戦略記事へ大幅展開＝論文5区分FAQ完成**: 土台=科目B擬似言語 `fbdc913`、旗艦=ST `4225b0c`・AU `7d73f63`・SA/SM `652b878`。これで**論文5区分(PM[session9]/ST/AU/SA/SM)すべてがFAQPage化＋Q4で旗艦 indexable /essay へ funnel**。質問intentの意味整合＋旗艦送客を同時達成。
   - **一貫した誇大回避**: 各記事とも本文既存の数値(字数/合格率/フレームワーク/数値例)のみ引用、本文に無い数値は出さない。「IPA採点基準は非公開」「AI採点は参考評価」「最新はIPA公式で確認」を明記。FAQ Q4の旗艦リンクは indexable `/essay`、既存の noindex `/essays/<exam>` 採点CTAは**HD-5判断待ちのため一切変更しない**(equity原則 session4/7/8/9踏襲)。回帰は corpus-wide `blog-faq-jsonld.test.ts` が自動カバー(FAQ節→>0ペア・markdown剥離・non-vacuous≥20)。
   - **次の最優先候補**: P2-2継続(FAQ未設置の戦略記事＝勉強法overview群でFAQ節無いもの・it-shikaku-nendaibetsu-roadmap等の高可視ブログに4Q&A。ただしSC=HD未決frame・ap-gogo=AP午後モックHD-4はFAQ化も保留) / P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査) / P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。
+
+## セッション11（growth ループ）2026-06-02 JST
+- done: [P2-2/横断] **勉強法overview全13区分(`<exam>-goukaku-benkyouhou`)に「よくある質問」節を追加しFAQPage化**。SHA `6202e19`。
+  - 監査: session8〜10で個別記事(科目B 2本・論文5区分)をFAQ化したが、**最も体系的な高オーソリティ群＝`buildOverviewPost`が生成する13区分の勉強法overview記事には `## よくある質問` 節が無く**、session8のFAQPage機構(lib/blog/faq.ts extractFaq)の対象外だった。backlog P2-2「勉強法overview群でFAQ節未設置のもの」直撃。it-shikaku-nendaibetsu-roadmap は既にFAQ保有(5521)を確認(=対象外、backlog記述は stale)。
+  - 実装: `buildOverviewPost`(generators.ts:40) の `## まとめ` 直前に**テンプレ4Q&A**を additive 挿入(全13区分共通)。Q1=勉強時間(${p.studyHours}・週12-20h)/Q2=未経験独学可(書籍30:過去問70)/Q3=難易度合格率(${p.passRate})/Q4=過去問何年分(過去3年95%)＋`/<exam>`過去問一覧へ送客。全て**本文既存の数値のみ**引用し誇大回避。`level.toUpperCase()`("SKILL3")の不自然表現はFAQ本文に出さず。1テンプレ編集で13記事が一括FAQPage化。
+  - 旗艦funnel: 論文5区分(st/sa/pm/sm/au)のoverviewは既存 `flagshipEssayCta` で本文午後節から `/essay` へ送客済(session6 `122c129`)。FAQは全13区分で統一フォーマット(テスト容易性)とし、essay funnelはFAQに重複追加せず。st overview で `href="/essay"`×2 健在を実測確認。
+  - 検証: 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1667→1668(+1) / build OK)。本番ビルド `blog/ap-goukaku-benkyouhou.html` に `"@type":"FAQPage"`×1＋`"@type":"Question"`×4＋実問文「実務未経験・独学でも合格できますか」出力、Q4 acceptedAnswer は plain text(「応用情報技術者試験 過去問一覧 から年度別」=markdown剥離・JSON-LD leak 0)を実測。`st-goukaku-benkyouhou.html` も FAQPage×1＋Question×4＋既存/essay CTA×2 健在。回帰ガード `blog-faq-jsonld.test.ts` に「overview全件(≥13)=4Q&A・answer markdown剥離」テスト追加(テンプレFAQ削除で落ちる)。
+- done: [P2-2/高可視] **朝活記事 `syakaijin-asakatsu-benkyou` に「よくある質問」節を追加しFAQPage化**。SHA `90ab87a`。
+  - 監査: 高可視ロングテール(社会人朝活習慣化)だがFAQ節無し。「朝活 続かない/夜型/何時起き/学習時間」は強い質問intent。
+  - 実装: オリジナル4Q&A(Q1=段階起床6:30→5:30/Q2=夜型でも就寝固定+スマホ禁止/Q3=朝60分+用語3つ振り返り/Q4=隙間時間→関連記事 ipa-shiken-shakaijin-jikan-kakuho へ funnel)。**本文既存の助言のみ**引用し誇大回避。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1668/build OK)。`blog/syakaijin-asakatsu-benkyou.html` に FAQPage×1＋Question×4＋実問文「夜型なのですが朝活に切り替えられますか」出力、Q4 acceptedAnswer plain(「時間を確保する方法 を参照」=markdown剥離)、リンク先 ipa-shiken-shakaijin-jikan-kakuho.html(200) 実在を実測。corpus-wide test 自動カバー。
+- done: [P2-2/高可視] **roadmap記事 `kakomon-ai-roadmap-2026` に現状ベースの「よくある質問」節を追加しFAQPage化**。SHA `8e4dc3b`。
+  - 監査: 高可視の製品ロードマップ記事(「過去問AI 無料/課金」獲得intent)だがFAQ節無し。**ただし本文は未実装ロードマップ項目(Q2 2026=AP/DB/NW/SC午後採点"全面展開"・業種別100→300・PDF出力・学習プラン自動生成)を含む**。FAQで未実装を現状の事実として誇張する罠を避けるため、**現状の present-state のみに限定**して実装。
+  - 実装: オリジナル4Q&A(Q1=全機能無料か/Q2=課金予定=現状無料運営・継続方針/Q3=対応13区分(IP/SG/FE/AP+ST/SA/PM/SM/NW/DB/SC/ES/AU 列挙)/Q4=AI無料回数=SSOT `AI_QUOTA_COPY_SHORT`)。未実装の午後採点capabilityには一切触れず(誇大回避)。「全機能無料」は§0戦略・本文既存記述の restate であり新規戦略判断ではない。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1668/build OK)。`blog/kakomon-ai-roadmap-2026.html` に FAQPage×1＋Question×4＋実問文「今後、有料化や課金の予定はありますか」「どの試験区分に対応していますか」出力、quota は「初回 10 回無料」(SSOT)・「30 回」**0件**を実測(session9の誇張是正を持ち込まず)。corpus-wide test 自動カバー。
+- SKIP無し(roadmapは present-state限定で安全に実施)。FAQ未設置の残りは pomodoro 等の学習テクニック系ロングテール=戦略価値低・saturation懸念のため本セッションでは見送り。
+- 申し送り（セッション11まとめ）:
+  - **FAQPage機構の戦略記事カバレッジをほぼ完了**: (1)勉強法overview**全13区分**を1テンプレ編集で一括FAQPage化＋回帰ガード `6202e19`、(2)高可視ロングテール朝活 `90ab87a`、(3)高可視roadmap(present-state限定) `8e4dc3b`。これで**戦略的高オーソリティ/高可視記事のFAQ化は概ね完了**(overview13・論文5区分・科目Bクラスタ4・rirekisho・nendaibetsu-roadmap・朝活・roadmap)。
+  - **一貫した誇大回避**: 全Q&Aで本文既存の数値/事実のみ引用、本文に無い数値・未実装capabilityは出さない。roadmapはFAQを present-state(無料/課金/対応区分/AI回数)に限定し未実装の午後採点全面展開(HD-4)に触れない。AI回数はSSOT `AI_QUOTA_COPY_SHORT` 参照で30回誇張を排除。
+  - **次の最優先候補**: FAQはほぼ飽和(残りは pomodoro 等の学習テク系ロングテール=戦略価値低)。次は **角度を変える**: P2-3(内部リンク網/orphan価値ページへの導線)、P1-7続き(科目B問題ページのコパイロットquick-action UI＝要慎重監査・broad)、P0-1残り(dev痕跡410・低優先)。AP/FE午後モック=HD-4、essay深リンク=HD-5待ち。学習テク系ロングテール(pomodoro/その他習慣化)へのFAQ展開は「やれること」だが saturation 配慮で優先度低。

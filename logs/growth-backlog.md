@@ -69,7 +69,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **[done セッション8]** FAQPage JSON-LD machinery を新設（lib/blog/faq.ts extractFaq・`## よくある質問`節を自動FAQPage化）`b3cd08d`。
   - **[done セッション9]** roadmap記事の「1日30回」誇張を SSOT(FREE_AI_DAILY_LIMIT=10) へ是正 `9e06379`。土台=科目B中核ピラー `fe-kamoku-b-taisaku` `2922a80`・旗艦=PM論文 `pm-goukaku-ronbun` `0db0f07` にオリジナル4Q&AのFAQ節を追加しFAQPage化（旗艦はQ4で /essay funnel）。
   - **[done セッション10]** FAQ未設置の戦略記事へ4Q&A展開: 土台=科目B擬似言語 `fe-kamoku-b-pseudo-language` `fbdc913`、旗艦論文 `st-senryaku-shikou` `4225b0c`・`au-shiken-taisaku` `7d73f63`・`sa-architecture-tradeoff`/`sm-itil-storytelling` `652b878`。**論文5区分(PM[s9]/ST/AU/SA/SM)すべてがFAQPage化＋Q4で旗艦 indexable /essay へ funnel完了**。誇大回避: 本文既存の数値のみ引用・「採点基準非公開」「AI採点は参考評価」明記・既存noindex /essays/<exam>採点CTAはHD-5のため不変。
-  - **残り（継続）**: 勉強法overview群でFAQ節未設置のもの / it-shikaku-nendaibetsu-roadmap 等の高可視ブログに4Q&A。**注意**: sc-ronbun-taisaku は SC午後のframe事実性がHD未決（session3 SKIP）でFAQ化も保留、ap-gogo-sentaku は AP午後モック=HD-4。誇大回避: 数値・形式は本文既存記述と一致させ、AI回数は明記しない。
+  - **[done セッション11]** FAQPage を戦略/高可視記事へほぼ全面展開: 勉強法overview**全13区分**を `buildOverviewPost` テンプレ1編集で一括FAQPage化＋回帰ガード `6202e19`、高可視ロングテール朝活 `syakaijin-asakatsu-benkyou` `90ab87a`、高可視roadmap `kakomon-ai-roadmap-2026`(present-state限定・未実装午後採点に触れず) `8e4dc3b`。it-shikaku-nendaibetsu-roadmap は既にFAQ保有(対象外)を確認。**戦略的高オーソリティ記事のFAQ化は概ね完了**。
+  - **残り（低優先・saturation配慮）**: pomodoro 等の学習テクニック系ロングテールへのFAQ展開は「やれること」だが戦略価値低＝優先度を下げる。**注意**: sc-ronbun-taisaku は SC午後のframe事実性がHD未決（session3 SKIP）でFAQ化も保留、ap-gogo-sentaku は AP午後モック=HD-4、roadmap系で未実装capabilityをFAQで現状事実化しない（誇大回避）。誇大回避: 数値・形式は本文既存記述と一致させ、AI回数はSSOT `AI_QUOTA_COPY_SHORT` を参照。
 - P2-3: 内部リンク網の強化（午後採点・科目B・ロードマップ間のハブ&スポーク）。orphan化している価値ページに導線を足す。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
