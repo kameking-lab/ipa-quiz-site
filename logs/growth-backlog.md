@@ -83,6 +83,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **[done セッション14]** 残候補2記事を funnel: 参考書ガイド hub `ipa-sanko-mondaishu-2026` の論文節→旗艦/essay `6b92a25`・科目B節→土台ピラー `5853859`、AI活用テンプレ `ipa-shiken-ai-katsuyou-benkyouhou` の論文添削節→旗艦/essay `05bec2b`。論文5区分scope一致・参考評価明記・additive・新規404ゼロ。
   - **[done セッション15]** テンプレ生成群への旗艦/土台 funnel 完了: lastMonth(cyokusen)/practice(yoru)の午後節に論文5区分ゲートの旗艦/essay funnel `d648150`＋FE限定の土台ピラー funnel `471dfd6`。frequentTopics/analysisは論述writing節が無く対象外(saturation回避)。回帰テストを3生成器横断/FE限定でパラメータ化。また出題傾向分析タイトルの固定年(2024〜2025)をCURRENT_YEAR規約へ是正 `b508a8e`(誇大/staleness)。
   - **残り(funnel gap)**: 自然な本文funnel gap は session13-15 で**ほぼ飽和**。論文exam=header/home/footer/q-page＋overview/lastMonth/practice本文＋論文5記事FAQ、FE=lastMonth/practice本文＋科目Bクラスタで送客済。これ以上の本文funnel追加はsaturation＝無理に増やさない。general記事 `ipa-saishin-doukou`(最新動向2026)は2026 snapshotとして一貫=auto-advance対象外(SKIP)。
+  - **[done セッション23] keyword landing面(/keywords/[slug])に旗艦/土台funnel配線(新surface)**: blog/hub/footer/q は整備済だが keyword LP(indexable・footer「学習トピック」からcrawlable)は旗艦/土台へ未funnelだった。`KeywordPage` に明示オプトイン `strategicCta?:"essay"|"kamoku-b"` を新設し、`st-essay-structure-pattern`(ST午後II論文)→旗艦 `/essay`(AfternoonEssayHint reuse) `717688d`、`fe-kamoku-b-pseudo-language`(科目B擬似言語)→土台ピラー `/blog/fe-kamoku-b-taisaku`(KamokuBStudyHint reuse) `111569c`。誇大回避は明示オプトイン+ESSAY_EXAM_CODESゲートで構造保証(pm計算/SC記述/AP午後モックには出さない)。回帰テスト5件。残り9 keyword ページは誇大/off-topicでSKIP。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 収益導線（控えめに）
