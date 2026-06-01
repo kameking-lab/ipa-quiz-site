@@ -29,8 +29,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   ホーム/ヘッダ/該当試験ページから「あなたの午後答案をAIが採点」入口を一目で分かる位置に。既存UI/コンポーネント踏襲。
 - P1-2: 午後を持つ全区分で採点入口を整える（ap/au/pm/sa/sm/st/db/es/nw/sc/fe）。データのある区分のみ露出（無い区分に空導線を作らない＝404/空ページ回避）。各区分の essays/essay ページが200・SSR・クローラブルか実測。
   - [done セッション2 SHA `b5114b0`]: st/sa/pm/sm/au ハブCTAの 404 死リンク（`/essay/<exam>`）を `/<exam>/afternoon`＋`/essays/<exam>`(200) へ修正・回帰ガード追加。
-  - **★次の最優先（旗艦の本丸）= AP/FE をハブCTAへ追加**: `app/[exam]/page.tsx` の afternoon CTA 条件は `["st","sa","pm","sm","au","sc","nw","db","es"]` で **ap・fe を完全除外**。だが `/ap/afternoon`（2023春/秋・2024春の実データ＝道場が持たない応用情報午後の空白！）/`/fe/afternoon`（科目B/午後＝土台）は 200。AP/FE 用に記述系CTA（→`/<exam>/afternoon`, 必要なら `/essays/<exam>` がある区分のみサンプルボタン）を1コミットで追加。**データのある区分のみ露出**・新規404を作らない。AP は記述（論述ではない）なのでコピーは「午後 記述対策」系に。
-  - 保留判断（人間 or 別タスク）: 記述分岐（sc/nw/db/es）の CTA が「Coming Soon」無リンクだが `/<exam>/afternoon` は 200 実在。Coming Soon を実リンク化するかは**採点品質の準備状況**の判断が要る（勝手に"対応済"化しない）→ growth-human-decisions 候補。
+  - **AP/FE をハブCTAへ追加は HD-4 待ち（自律実行しない）**: `app/[exam]/page.tsx` の afternoon CTA は ap・fe を除外。`/ap/afternoon`・`/fe/afternoon` は 200 だが **練習データがモック**（`data/questions/afternoon/ap/index.ts`「実データはモック」明記・各年季2問）。モックのまま旗艦CTAを大きく出すと誇大表現＝過大修正の罠。記述分岐(sc/nw/db/es)の「Coming Soon」も同根。→ **本番午後データ投入(scripts/parse-afternoon) or ベータ明示CTAの判断は人間（HD-4）**。ループは prematurely 露出しない。
+  - **★モック非依存で先に進めるのはこちら → P1-4 / P1-5**（不安系キーワードの**オリジナル記事**で午後採点へ自然送客。記事自体はモックデータに依存しない）。次セッションは P1-4/P1-5 か、P0-1 残り(dev痕跡の410)、P2-2(競合薄ブログ強化)を優先。
 - P1-3: 採点体験の構造化データ/メタ/見出しを「午後AI採点ができる唯一のサイト」と分かる形に（LearningResource/HowTo等の既存JSON-LD流用、誇大表現は避け事実ベース）。実値をHTMLで実測。
 - P1-4: 不安系キーワード向けの入口ページ/ブログ（**オリジナル生成**・クローラブルSSR）:
   「応用情報 午後 自己採点」「応用情報 午後 部分点」「セキスペ(情報処理安全確保支援士) 午後 採点」等。
