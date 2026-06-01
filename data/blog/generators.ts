@@ -3255,7 +3255,12 @@ IPA疑似言語の配列は1始まりが多い。コードを読む最初に「�
 - AIコパイロットで解法の確認・類題演習
 - 最終週は時間制限つき演習で速度を鍛える
 `,
-    relatedSlugs: ["kakomon-dake-goukaku", "ap-gogo-sentaku", "ai-kakomon-gakushuu"],
+    relatedSlugs: [
+      "fe-kamoku-b-pseudo-language",
+      "fe-algorithm-nigate-kokufuku",
+      "kakomon-dake-goukaku",
+      "ai-kakomon-gakushuu",
+    ],
   });
 
   general.push({

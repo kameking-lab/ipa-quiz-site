@@ -155,6 +155,26 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
     expect(selfRefs).toEqual([]);
   });
 
+  it("keeps the 科目B (foundation) cluster mutually interlinked", () => {
+    // The 土台=科目B pillar funnel relies on the three FE 科目B articles
+    // (完全対策 / 擬似言語 / アルゴリズム苦手克服) forming a closed cluster so a
+    // reader landing on any one is one click from the other two. The central
+    // 完全対策 pillar previously linked outward to siblings but not back; pin
+    // the reciprocity so a future relatedSlugs edit can't silently sever it.
+    const cluster = [
+      "fe-kamoku-b-taisaku",
+      "fe-kamoku-b-pseudo-language",
+      "fe-algorithm-nigate-kokufuku",
+    ];
+    for (const slug of cluster) {
+      const related = new Set(getRelatedPosts(slug, 4).map((r) => r.slug));
+      for (const sibling of cluster) {
+        if (sibling === slug) continue;
+        expect(related.has(sibling)).toBe(true);
+      }
+    }
+  });
+
   it("every in-body /blog/<slug> cross-link resolves to an existing post", () => {
     // Bodies carry hand-authored markdown cross-links like `](/blog/foo-bar)`.
     // A typo'd slug renders a 200-looking link that 404s on click — a dead
