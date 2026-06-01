@@ -79,6 +79,13 @@ const nextConfig: NextConfig = {
       // Account settings sub-pages → settings
       { source: "/account/notifications", destination: "/settings", permanent: true },
       { source: "/account/api-keys", destination: "/settings/api-keys", permanent: true },
+      // Retired account preference / management sub-pages. 音声・BGM(/audio) と
+      // アバター(/avatar) は個人設定なので /settings に集約。請求情報(/billing) は
+      // 全機能無料化で支払い管理が無くなったため、アカウント管理の入口である
+      // /settings へ寄せる（旧ページは /auth/signin への素通しになっていた）。
+      { source: "/account/audio", destination: "/settings", permanent: true },
+      { source: "/account/avatar", destination: "/settings", permanent: true },
+      { source: "/account/billing", destination: "/settings", permanent: true },
       // Merged pages (content absorbed into about / transparency)
       { source: "/support", destination: "/about#support", permanent: true },
       // /stats is now a first-class public dashboard (see app/stats/page.tsx)

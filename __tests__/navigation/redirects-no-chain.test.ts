@@ -47,11 +47,19 @@ describe("next.config redirects", () => {
     }
   });
 
-  it("301s the retired /testimonials to /success-stories", async () => {
+  it("301s retired pages to their consolidated successors", async () => {
     const redirects = await nextConfig.redirects!();
-    const entry = redirects.find((r) => r.source === "/testimonials");
-    expect(entry).toBeDefined();
-    expect(entry!.destination).toBe("/success-stories");
-    expect(entry!.permanent).toBe(true);
+    const expected: Record<string, string> = {
+      "/testimonials": "/success-stories",
+      "/account/audio": "/settings",
+      "/account/avatar": "/settings",
+      "/account/billing": "/settings",
+    };
+    for (const [source, destination] of Object.entries(expected)) {
+      const entry = redirects.find((r) => r.source === source);
+      expect(entry, `missing redirect for ${source}`).toBeDefined();
+      expect(entry!.destination).toBe(destination);
+      expect(entry!.permanent).toBe(true);
+    }
   });
 });
