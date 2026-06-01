@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Shield, FileText, ArrowRight, BookOpen } from "lucide-react";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -158,6 +159,8 @@ export default async function EssayExamPage({
           </Link>
         </div>
       </section>
+
+      <InlineBookHint exam={exam} category="午後" />
 
       {relatedPosts.length > 0 && (
         <section aria-label="関連学習ガイド" className="mt-8">
