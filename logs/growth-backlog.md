@@ -13,8 +13,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 ループが**コード側でできる**こと:
 - P0-1 [301は一部done セッション1]: `git log --diff-filter=D -- "app/**/page.tsx"` で削除済みルートを列挙し、`next.config.*` の redirects と突合。
   - **301 済**（セッション1）: testimonials→success-stories / trust→why-kakomon-ai / account/{audio,avatar,billing}→settings（+ 既存 my-progress/quickstart/support/feedback/practice-weakness 等）。回帰ガード `__tests__/navigation/redirects-no-chain.test.ts`（連鎖禁止＋行先固定）。内部リンク my-progress→/account/dashboard#weakness も解消済。
-  - **★次の最優先 = 410 Gone グループ**（後継なし・復活すべきでない削除ページ）: commerce(特商法) / pricing / premium(+/essay,/heatmap,/simulator) / enterprise/{pilot,pricing,sso} / contact/enterprise(+/thanks) / security(B2B SOC2/SAML) / case-studies / podcast / launch / diagnosis(試験区分診断) / account/pass-simulator / feedback/public / community/{questions,stories} / legal/{dpa,msa,sla}。
-    機構の選択が必要: (a) 既存 middleware.ts は admin-auth 専用 matcher。admin と**分離**して gone-list 分岐を足し matcher 拡張（middleware.test.ts でガード）。(b) もしくは各パスに `route.ts` を置き 410 返却（ファイル数多）。安全側で (a) を1コミットで慎重に。**admin認証を壊さない・新規404を作らない**厳守。dev痕跡（exec-review/feature-review/final-review*/strategy-discussion*/scoring-test/test/*/tmp/*）は元々非公開でSEO価値低→まとめて or 後回し。
+  - **410 Gone グループ [done セッション2 SHA `1ea7157`]**（後継なし・復活すべきでない削除ページ23件）: commerce / pricing / premium(+/essay,/heatmap,/simulator) / enterprise/{pilot,pricing,sso} / contact/enterprise(+/thanks) / security / case-studies / podcast / launch / diagnosis / account/pass-simulator / feedback/public / community/{questions,stories} / legal/{dpa,msa,sla} を採用機構(a)で middleware.ts に `GONE_PATHS` として実装・全パス 410 実測済。matcher 同期＋admin不変＋新規404なしを回帰テストでガード。
+    - **残り = dev痕跡**（exec-review/feature-review/final-review*/strategy-discussion*/scoring-test/test/*/tmp/*）は元々非公開でSEO価値低。現状 404 のままで害は薄い→**着手するなら** GONE_PATHS にワイルドカード相当（prefix一致）で足すか、別途 robots/noindex で十分。優先度は P0-2 以下に下げる。
   - 判断保留の弱い301候補: analytics→/stats（内部DAU vs 公開stats でインテント差・SKIP寄り）。diagnosis は後継なし＝410が正直。
   - 検証: 対象パスが 301(正しい行先200) か 410 になったことを localhost本番ビルドへ curl で実測。新規404を作らない。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
