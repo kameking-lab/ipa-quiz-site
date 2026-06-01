@@ -65,4 +65,16 @@ describe("FAQS registry — FAQPage structured-data invariants", () => {
       expect(f.answer).toContain("2 年間");
     }
   });
+
+  // IPA 公式: FE は 科目A=60問/90分・科目B=20問/100分。旧「科目 A（多肢選択 90 問）」は
+  // 90分との取り違えによる誤り (SSOT exam-data は 60問/90分 で正)。
+  it("FE 科目A は 60 問（90 問の取り違えを禁止）", () => {
+    const fe = FAQS.filter((f) => f.answer.includes("科目 A（多肢選択"));
+    // non-vacuous: 科目A の問数を述べる FAQ が実在する
+    expect(fe.length).toBeGreaterThan(0);
+    for (const f of fe) {
+      expect(f.answer).not.toContain("科目 A（多肢選択 90 問");
+      expect(f.answer).toContain("科目 A（多肢選択 60 問");
+    }
+  });
 });
