@@ -284,3 +284,22 @@
   - **session13の funnel gap 残候補を消化**: 2つの高オーソリティ手書き記事(参考書ガイド hub・AI活用テンプレ)の自然な専節(論文添削・科目B)から旗艦 /essay・土台ピラーへ本文リンクで funnel。3記事是正。relatedSlugs(limit3カット可)に頼らず本文リンクで確実化、論文funnelは論文5区分scope一致時のみ・参考評価明記・新規404ゼロ。
   - **funnel gap はほぼ飽和**: 手書き個別記事で「専節で厚く論じるのに本文未送客」の自然な gap は session13-14 でほぼ拾い切った。テンプレ生成群(cyokusen/yoru)の RONJUTSU-NOFLAG は13区分一括生成のため論文5区分ゲート実装が必須(overview同様)＝コード設計を伴うため次の角度。saturation 回避のため無理に本文リンクを増やさない。
   - **次の最優先候補**: テンプレ生成群(cyokusen/yoru)への論文5区分ゲート付き flagshipEssayCta 展開(overview の flagshipEssayCta パターン流用・要慎重設計) / P1-7本丸(科目B問題ページ コパイロット quick-action UI＝要慎重監査・broad・§10承認寄り) / P2-4続き(旗艦/essay 横断書籍リスト=設計判断) / P0-1残り(dev痕跡410=実害薄・SKIP寄り)。AP/FE午後モック=HD-4、essay深リンク=HD-5。
+
+## セッション15（growth ループ）2026-06-02 JST
+- done: [P2-3/旗艦] **テンプレ生成記事 lastMonth(直前1ヶ月)/practice(解き方ガイド)の午後節から旗艦 /essay へ論文5区分ゲート funnel**。SHA `d648150`。
+  - 監査: session14が次候補とした「テンプレ生成群(cyokusen/yoru)の RONJUTSU-NOFLAG」を実装。`buildLastMonthPost`(`<exam>-cyokusen-1kagetsu`)の「第3週：午後試験の本番演習」節・`buildPracticePost`(`<exam>-yoru-tokurensyu`)の「午後・論文への接続」節は午後/論述を論じるのに旗艦=午後論述AI採点へ未送客だった(13区分一括生成のため未対応)。`buildFrequentTopicsPost`/`buildAnalysisPost`は頻出論点/出題傾向分析で論述writing節が無く、CTA追加は不自然＝対象外(saturation回避)。
+  - 実装: overviewと同じ既存ゲート `ESSAY_FLAGSHIP_EXAMS`(=ESSAY_EXAM_CODES複製 st/sa/pm/sm/au)で論文区分のみ各節末に `](/essay)` を additive 追加。ap/sc/nw/db/es等の非論文・モック区分には出さず誇大回避。「AI採点は参考評価」明記。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1669→1697/build OK)。本番ビルドで pm/st/au の {cyokusen,yoru} HTML に `href="/essay"`×2(本文CTA+footer)＋新句「直前期に書いた論述答案」「論述の答案まで書けるようになったら」、ap/fe は×1(footerのみ・本文CTA 0件)を実測。essay.html(200)実在＝新規404ゼロ。回帰テストを overview/lastMonth/practice 3生成器横断にパラメータ化(各々 linked===5・non-vacuous)しゲートdriftを検知。
+- done: [P2-3/P1-7/土台] **同 lastMonth/practice の午後節から、FEのみ土台=科目B完全対策ピラーへ funnel(FE限定ゲート)**。SHA `471dfd6`。
+  - 監査: FEの午後＝科目B(アルゴリズム・擬似言語、exam-data afternoonStrategyで確認)。旗艦funnelと対称に、FEの午後節は汎用/feプールのみで土台ピラー fe-kamoku-b-taisaku へ未送客だった。
+  - 実装: `exam==="fe"` ゲートで FE のみ `](/blog/fe-kamoku-b-taisaku)` を各午後節末に additive。他区分には出さずoff-topic回避。overviewは午後節が論述framedでFE科目Bに不自然なため対象外(lastMonth/practiceのみ)。
+  - 検証: 全ゲート緑(test1697→1723/build OK)。FE {cyokusen,yoru} HTML にピラーリンク×1、ap/st は0件、pillar HTML(200)実在、新句「基本情報の午後は科目B」を実測。回帰テストでFEのみゲートを固定(2生成器×13区分)。
+- done: [P2-2/誇大回避] **出題傾向分析記事(buildAnalysisPost)の「最新」タイトルを固定年(2024〜2025)→CURRENT_YEARへ是正**。SHA `b508a8e`。
+  - 監査: `<exam>-jisseki-mondai-bunseki` のタイトルが「最新分析｜2024〜2025年で増えた論点」と固定年を埋め込み、本文・descriptionは既にevergreenな「直近2年」。overviewタイトル(`【${CURRENT_YEAR}年最新】`)とgenerators.ts line10コメントが定めるCURRENT_YEAR評価のevergreen規約から唯一driftした箇所＝年が進むと「最新」と謳いつつ陳腐化する誇大表示(session9の30回drift是正と同種)。
+  - 修正: `【${CURRENT_YEAR}年最新】｜増えた論点・捨て論点` へ統一(最小diff・本文/description不変)。なお general記事 `ipa-saishin-doukou`(最新動向2026)は本文・tagが2026年snapshotとして一貫(年固有の制度改定factあり)＝auto-advanceは逆に誇大になるため対象外(SKIP・人間が年次更新)。
+  - 検証: 全ゲート緑(test1723→1725/build OK)。本番ビルド `ap-jisseki-mondai-bunseki.html` の `<title>` が「【2026年最新】」表示・「2024〜2025」0件を実測。回帰テストで overview/analysis の最新タイトルが CURRENT_YEAR を参照し他の固定4桁年を含まないことを固定。
+- 申し送り（セッション15まとめ）:
+  - **テンプレ生成群への旗艦/土台 funnel を完了**: overview(session6)に続き lastMonth/practice の午後節に論文5区分ゲートの旗艦/essay funnel `d648150` ＋ FE限定の土台ピラー funnel `471dfd6` を対称配線。frequentTopics/analysisは論述writing節が無く対象外(saturation回避の意図的除外)。これで**13区分テンプレ生成記事の自然な午後節funnelは網羅**。
+  - **誇大回避の一貫**: 旗艦は ESSAY_FLAGSHIP_EXAMS(=ESSAY_EXAM_CODES)ゲートで論文5区分のみ・「参考評価」明記、土台はFE限定・on-topic(FE午後=科目B)、固定年タイトルはCURRENT_YEAR規約へ是正。各々回帰テストでゲート/規約のdriftを検知。
+  - **funnelはほぼ飽和**: 論文exam は header/home/footer/q-page＋overview/lastMonth/practice本文＋論文5記事FAQ で旗艦へ厚く送客済。FEも lastMonth/practice本文＋科目Bクラスタ相互リンクで土台へ送客済。**これ以上の本文funnel追加はsaturation**＝無理に増やさない(session11/14の restraint 継続)。
+  - **次の最優先候補(残りは設計判断/broad/低価値が中心)**: P1-7本丸(科目B問題ページ コパイロット quick-action UI＝要慎重監査・broad・§10承認寄り) / P2-4続き(旗艦/essay 横断書籍リスト=設計判断) / テンプレFAQ(lastMonth直前等にFAQ節＝強intentだが overview FAQ と二重で corpus-wide thin化リスク・saturation配慮で優先度低) / P0-1残り(dev痕跡410=実害薄・SKIP寄り)。AP/FE午後モック=HD-4、essay深リンク=HD-5。**新角度の起案**: 「設問ページ /q の論文区分でAfternoonEssayHint(session7)が出るが、科目B区分(FE科目B問題)に土台ピラー/コパイロット導線のgated hintは未整備」→P1-7のUI慎重監査と合わせて検討可。

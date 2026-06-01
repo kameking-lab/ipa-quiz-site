@@ -59,6 +59,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P1-7: 科目B/アルゴリズム関連の既存問題・解説ページから、AIコパイロットの「つまずき個別解決」クイックアクションへの導線整備（既存QUICK_ACTIONS流用）。
   - **[一部done セッション5]** 科目Bブログ群の funnel整流: 中核ピラーtaisaku↔兄弟2記事を相互内部リンク化 `1c50eb0`、アルゴリズム記事＆ピラーの演習CTAを汎用/feから**アルゴリズム分野別プール** `/fe/topic/アルゴリズムとプログラミング`(200・クイズ/AIコパイロット導線)へ深リンク `3a1859a`/`35bf8a9`。本文 topic 深リンク解決性の回帰ガード新設。
   - **残り（未着手・要慎重監査）**: 問題詳細ページ(/q/...)やクイズ上で科目B/アルゴリズム問題に対しコパイロット quick-action（擬似言語トレース等）を一目で出す UI 導線。共有UIの変更で範囲広め→read-only監査を厚めに。誇大回避: 午前MC「アルゴリズムとプログラミング」分野は擬似言語そのものではない点に注意。
+  - **新角度（セッション15起案・未着手）**: /q 設問ページは論文5区分に `AfternoonEssayHint`(session7 `c785e6a`)で旗艦導線を gated 出力するが、**FE科目B(あるいはFE午前アルゴリズム分野)の設問には土台=科目Bピラー/AIコパイロット「1行ずつトレース」への gated hint が未整備**。AfternoonEssayHint と同じ null-gate server-component パターンで「科目B/アルゴリズム設問→fe-kamoku-b-taisaku＋コパイロット導線」の hint を追加できる(最大クロール面/qでの土台露出)。ただし共有UIで範囲広め＋「午前MCのアルゴリズム分野≠科目B擬似言語」の誇大回避が必要→read-only監査を厚めに、区分/分野ゲートを慎重設計。P1-7本丸のUI監査と統合検討。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 検索「あと一歩」回収 + 競合薄ブログ強化
@@ -76,7 +77,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **残り**: 監査は indexable blog の orphan は解消済(0件)。非blog の価値ページ orphan は監査対象外＝必要なら手動監査。
   - **[done セッション13] 本文funnel gap の是正(新角度)**: orphan(inbound0)は無いが「科目B/論述を**専節で厚く論じるのに本文から戦略ページへ未送客**」の高オーソリティ記事を高密度走査で実測抽出し本文リンクで funnel。rirekisho→roadmap `6755ea3` / fe-benkyou-jikan-meyasu→土台ピラー `b7c5c87` / kakomon-dake-goukaku→土台+旗艦 `1c27df1` / kakomon-nankai-tokinaosu→土台ピラー `62659d7`。relatedSlugs(limit3カット可)に頼らず本文リンクで funnel確実化。論文funnelは論文5区分scope一致時のみ・参考評価明記。
   - **[done セッション14]** 残候補2記事を funnel: 参考書ガイド hub `ipa-sanko-mondaishu-2026` の論文節→旗艦/essay `6b92a25`・科目B節→土台ピラー `5853859`、AI活用テンプレ `ipa-shiken-ai-katsuyou-benkyouhou` の論文添削節→旗艦/essay `05bec2b`。論文5区分scope一致・参考評価明記・additive・新規404ゼロ。
-  - **残り(funnel gap)**: 手書き個別記事の自然な funnel gap は session13-14 でほぼ拾い切り飽和。**テンプレ生成群(cyokusen/yoru)は13区分一括生成のため flagship 追加に論文5区分ゲート必須**(overview は session6 で flagshipEssayCta 済＝同パターン流用で cyokusen/yoru にも展開可・要慎重設計)。saturation 配慮で自然な gap のみ拾う。
+  - **[done セッション15]** テンプレ生成群への旗艦/土台 funnel 完了: lastMonth(cyokusen)/practice(yoru)の午後節に論文5区分ゲートの旗艦/essay funnel `d648150`＋FE限定の土台ピラー funnel `471dfd6`。frequentTopics/analysisは論述writing節が無く対象外(saturation回避)。回帰テストを3生成器横断/FE限定でパラメータ化。また出題傾向分析タイトルの固定年(2024〜2025)をCURRENT_YEAR規約へ是正 `b508a8e`(誇大/staleness)。
+  - **残り(funnel gap)**: 自然な本文funnel gap は session13-15 で**ほぼ飽和**。論文exam=header/home/footer/q-page＋overview/lastMonth/practice本文＋論文5記事FAQ、FE=lastMonth/practice本文＋科目Bクラスタで送客済。これ以上の本文funnel追加はsaturation＝無理に増やさない。general記事 `ipa-saishin-doukou`(最新動向2026)は2026 snapshotとして一貫=auto-advance対象外(SKIP)。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 収益導線（控えめに）
