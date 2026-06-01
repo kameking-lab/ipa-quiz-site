@@ -549,3 +549,20 @@
   - **新角度=SG現行形式(科目A/B・午前午後廃止)の面横断是正**: session29が確証不足でSKIPした SG 2023形式変更を IPA公式で裏取り確定し、旧午前/午後形式の取り残しを2面是正(blog merit記事 `de36d72`・/faq `47d530a`)。SSOT(exam-config SG=科目A 48問)とも整合。SC午後統合(session17-22)/FE午前午後(session29)に続く「2023再編の取り残し」掃きのSG版。
   - **personas はHD-8へ**: 同じSG午前/午後誤記が合格体験記3ペルソナにも残るが、捏造体験記の全面リライト＋新形式スコア表記の未検証ゆえ editorial/人間判断としてHD-8集約(自律で半端リライト or 数値捏造しない)。
   - **次の最優先候補**: (a)他試験のpre-2023形式取り残しの面横断確認(SG/FE/SC以外で2023再編した区分があれば。ただしCBT再編はIP[元々単一]/SG/FEが主＝概ね消化)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8 は人間待ち継続。
+
+## セッション31（growth ループ）2026-06-02 JST
+- 監査(read-only): session27-28の「合格点/採点の仕組み」angle(FE-IRT `da63cc0`/AP-素点 `d39afe7`)を**IP(ITパスポート)**へ展開。slug grep で `ip-goukaku-*`/総合評価点/分野別評価点 の専用記事が不在と実測(IP合格基準は ip-3shukan-goukaku L3192 の1文のみ)。IPは最大volumeの入門区分で、**総合600点だけでなく分野別各300点の足切り**という混同の核がFE(科目A/B)・AP(素点)と別intent＝saturationでなく新規ページ価値あり。IPA公式 iパス評価方法(range.html WebFetch)で裏取り。
+- done: [P1-6/土台周辺] **ITパスポート「何点で合格?/総合評価点600点と分野別評価点300点」専用の新規オリジナル記事を新設**。SHA `839f0ed`。
+  - 実装: `data/blog/generators.ts` buildGeneralPosts に `ip-goukaku-ten-bunyabetsu`(offset longtail2Offset-5=未使用)を新設。**総合評価点1000点満点/600点以上 かつ 分野別評価点(ストラテジ/マネジメント/テクノロジ)各1000点満点/各300点以上の両方**が必要(1分野でも300点未満なら不合格=見落としがちな足切り)、IRT(項目応答理論)で正答数≠評価点、**出題100問中採点対象は約92問**(残り8問は今後の評価用で採点されない・内訳ストラテジ32/マネジメント18/テクノロジ42)を整理。relatedSlugs=IPクラスタ(ip-3shukan-goukaku/ip-nani-kara-benkyou/fe-goukaku-ten-irt)へ outbound。ip-3shukan-goukaku「試験の基本情報」節から inbound body link。FAQ5Q&AでFAQPage化(Q5でFE合格点記事へcross-link)。
+  - **誇大回避**: IRT換算式は非公開のため特定の正答数→得点を断定しない(目安は「目安」明示・IPA公表値でない旨併記)。IPは非essay区分のため **funnel先は /ip ハブ+分野別モード+AIコパイロット+IPクラスタのみで旗艦 /essay には送らない**(body の /essay は site-wide footer×1のみ)。全数値はIPA公式 range.html 裏取り(総合600/分野別300/IRT/採点92問)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1772→1773/build OK)。本番ビルド `blog/ip-goukaku-ten-bunyabetsu.html`(135KB)実在、SSR本文に 総合評価点/分野別評価点/「1分野でも300点未満なら不合格」/92問/IRT 出力・`href="/ip"`+IPクラスタ funnel・FAQPage JSON-LD・**body に /essay 不在**(footer×1のみ)・inbound from ip-3shukan-goukaku を実測。outbound(ip-nani-kara-benkyou/fe-goukaku-ten-irt/ip)全prerendered(200)。blog.xml sitemap収録。audit 609 body links/FATAL0/WARNING0(新規404ゼロ)。回帰pin(総合600/分野別300/「1分野でも300点未満なら不合格」/IRT/92問/IPクラスタfunnel/`/essay`非送客/FAQ)。
+- done: [P2-3/内部リンク] **合格点クラスタ(FE-IRT↔IP-分野別)を相互内部リンク化**。SHA `aef6f76`。
+  - 監査: 新設IP記事→FEはcross-link済だが、FE-IRT記事→IPの逆リンク無し。FEとIPはともにIRTで評価点算出する近縁(AP素点とは別)で「基本情報 vs ITパスポート 合格点」比較intentの自然な接続先。
+  - 実装: FE記事のIRT節末に、IPも同じIRTだが分野別足切り(各300点)がある点を明示してIP記事へ送客(additive・誇大なし)。session29のFE↔AP相互リンク化と同型。両方向の回帰pin。検証: 本番ビルド両HTMLに相互 `href` 出力・両target prerendered(200)・audit body links 609→611/FATAL0/WARNING0。
+- done: [P2-2/事実性] **ITパスポート3週間記事の「配点はストラテジ系が最多」誤記を是正**。SHA `f2beada`。
+  - 監査: IP記事の採点facts裏取り中に発見。`ip-3shukan-goukaku` L3199「ITパスポートの配点はストラテジ系が最多(約35%)」だが、IPA公式の採点対象内訳(ストラテジ32/マネジメント18/**テクノロジ42**)で出題数が最多なのは**テクノロジ系**。ストラテジは約35%だが最多ではない=hard error(session17-22/26/30の事実性監査angleのIP版)。
+  - 修正: pedagogicalな「ストラテジを先に固める」意図(比率が高く用語暗記で取りやすい)は保ちつつ「最多はテクノロジ系」と明記。最小diff・回帰pin(ストラテジ系が最多 not contain/テクノロジ系が最多 contain)。検証: 本番ビルド `blog/ip-3shukan-goukaku.html` に「テクノロジ系が最多」出力・「ストラテジ系が最多」0件を実測。全ゲート緑(test1773→1774)。
+- 申し送り（セッション31まとめ）:
+  - **「合格点/採点の仕組み」angleをIPへ展開で完結**: FE-IRT(科目A/B・s27)/AP-素点(s28)/**IP-分野別足切り(s31 `839f0ed`)** の主要3区分で混同の核がそれぞれ別intent。IPは「総合600だけでなく分野別各300の足切り」が固有の混同ポイント。+FE↔IP相互リンク `aef6f76`(IRT近縁ペア接続)+裏取り中に見つけた IP配点誤記の是正 `f2beada`。全てIPA公式裏取り・誇大回避(IRT断定回避・非essay区分は/essay非送客)・FAQPage化・回帰pin・新規404ゼロ・sitemap収録。
+  - **合格点angleは打ち止め寄り**: FE/AP/IPで主要intent消化。SGの合格点記事化は**SG現行スコア通知形式が未検証(HD-8)**のため見送り(不確実な数値で記事を書かない=安全側)。高度試験の各60点はAP同型でthin(session28所見)。
+  - **次の最優先候補**: (a)同「ランク済み記事へのIPA公式情報ギャップ補完」マイクロ角度(session29流)の継続(ただし主要formatギャップは概ね消化)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8 は人間待ち継続。
