@@ -450,7 +450,7 @@ ${p.afternoonStrategy}
 export function buildAnalysisPost(exam: ExamCode, idx: number): BlogPost {
   const p = EXAM_PROFILES[exam];
   const slug = `${exam}-jisseki-mondai-bunseki`;
-  const title = `${p.label} 出題傾向の最新分析｜2024〜2025年で増えた論点と捨て論点`;
+  const title = `${p.label} 出題傾向の最新分析【${CURRENT_YEAR}年最新】｜増えた論点・捨て論点`;
   const description = `${p.label}の直近2年の出題傾向を分析し、増加している新論点・減少している論点・捨てて良い論点を整理。学習計画の優先度付けに活用できます。`;
 
   const body = `# ${p.label} 出題傾向の最新分析
