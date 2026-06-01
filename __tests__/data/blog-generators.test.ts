@@ -270,6 +270,25 @@ describe("blog 旗艦 ST post — 午後 structure facts are correct (3問中2�
   });
 });
 
+// NW(ネットワークスペシャリスト) is NOT an essay(論述) exam: IPA official
+// (shiken/kubun/nw.html) lists both 午後I and 午後II as 記述式. This is consistent
+// with the codebase SSOT — ESSAY_EXAM_CODES (lib/essay/load) excludes nw, and
+// lib/essays/load.ts notes NW/DB/ES are 技術記述問題 only. nw-hinshutu-pattern
+// once read "午後IIは論述です" (a hard factuality error that also conflicts with
+// the deliberate flagship /essay funnel excluding NW). Pin 記述式 framing so the
+// 論述 mischaracterization can't silently regress.
+describe("blog NW post — 午後 is 記述式, not 論述", () => {
+  it("nw-hinshutu-pattern frames NW 午後 as 記述式 and never as 論述/論文", () => {
+    const post = getBlogPostBySlug("nw-hinshutu-pattern");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("記述式");
+    expect(body).not.toContain("午後IIは論述");
+    expect(body).not.toMatch(/午後.{0,4}論述/);
+    expect(body).not.toMatch(/午後.{0,4}論文/);
+  });
+});
+
 // 応用情報(AP) exam-day schedule in ipa-shiken-moushikomi-nagare: 午前/午後 are
 // each 150分 (IPA official). The clock windows once read 10:00〜11:30 (午前) and
 // 12:30〜14:00 (午後) — both 90-minute spans contradicting their own "（150 分）"
