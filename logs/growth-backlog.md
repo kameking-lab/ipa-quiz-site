@@ -11,10 +11,11 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 「過去に削除した内部ページ（リダイレクト未設定）」＋「古いURL形式/旧サイトマップ由来」。GSCの実際の404 URL一覧は
 認証必須で**ループからは取得不可**＝human-decisions に「GSCのNot found(404)一覧をエクスポートして共有」を積む。
 ループが**コード側でできる**こと:
-- P0-1: `git log --diff-filter=D -- "app/**/page.tsx"` で削除済みルートを列挙し、`next.config.*` の redirects と突合。
-  リダイレクト未設定の削除ページ（例: enterprise/*, commerce, case-studies, diagnosis, community/*, account/audio|avatar|billing|pass-simulator, admin/feedback|team, analytics, exec-review, feature-review 等）を1種類ずつ精査:
-  - 適切な現存ページがある → 301 redirect を next.config に追加（最小・1コミット数件ずつ）。
-  - 後継が無い/復活すべきでない → 410 Gone を返す（middleware か route handler でコード側のみ。env/KV不可）。Googleに「消えた」と正しく伝えクロール資産を整理。
+- P0-1 [301は一部done セッション1]: `git log --diff-filter=D -- "app/**/page.tsx"` で削除済みルートを列挙し、`next.config.*` の redirects と突合。
+  - **301 済**（セッション1）: testimonials→success-stories / trust→why-kakomon-ai / account/{audio,avatar,billing}→settings（+ 既存 my-progress/quickstart/support/feedback/practice-weakness 等）。回帰ガード `__tests__/navigation/redirects-no-chain.test.ts`（連鎖禁止＋行先固定）。内部リンク my-progress→/account/dashboard#weakness も解消済。
+  - **★次の最優先 = 410 Gone グループ**（後継なし・復活すべきでない削除ページ）: commerce(特商法) / pricing / premium(+/essay,/heatmap,/simulator) / enterprise/{pilot,pricing,sso} / contact/enterprise(+/thanks) / security(B2B SOC2/SAML) / case-studies / podcast / launch / diagnosis(試験区分診断) / account/pass-simulator / feedback/public / community/{questions,stories} / legal/{dpa,msa,sla}。
+    機構の選択が必要: (a) 既存 middleware.ts は admin-auth 専用 matcher。admin と**分離**して gone-list 分岐を足し matcher 拡張（middleware.test.ts でガード）。(b) もしくは各パスに `route.ts` を置き 410 返却（ファイル数多）。安全側で (a) を1コミットで慎重に。**admin認証を壊さない・新規404を作らない**厳守。dev痕跡（exec-review/feature-review/final-review*/strategy-discussion*/scoring-test/test/*/tmp/*）は元々非公開でSEO価値低→まとめて or 後回し。
+  - 判断保留の弱い301候補: analytics→/stats（内部DAU vs 公開stats でインテント差・SKIP寄り）。diagnosis は後継なし＝410が正直。
   - 検証: 対象パスが 301(正しい行先200) か 410 になったことを localhost本番ビルドへ curl で実測。新規404を作らない。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
 - P0-3: 旧URL形式の痕跡調査（git履歴で /q や /quiz のルート構造変更があったか、section命名 am↔am1/am2 の変遷など）。systematicな旧形式が見つかれば redirect を追加。無ければ「ソース側に旧形式なし＝GSC404は外部/履歴由来」と記録し human タスクへ。
