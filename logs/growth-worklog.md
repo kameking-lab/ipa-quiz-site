@@ -566,3 +566,19 @@
   - **「合格点/採点の仕組み」angleをIPへ展開で完結**: FE-IRT(科目A/B・s27)/AP-素点(s28)/**IP-分野別足切り(s31 `839f0ed`)** の主要3区分で混同の核がそれぞれ別intent。IPは「総合600だけでなく分野別各300の足切り」が固有の混同ポイント。+FE↔IP相互リンク `aef6f76`(IRT近縁ペア接続)+裏取り中に見つけた IP配点誤記の是正 `f2beada`。全てIPA公式裏取り・誇大回避(IRT断定回避・非essay区分は/essay非送客)・FAQPage化・回帰pin・新規404ゼロ・sitemap収録。
   - **合格点angleは打ち止め寄り**: FE/AP/IPで主要intent消化。SGの合格点記事化は**SG現行スコア通知形式が未検証(HD-8)**のため見送り(不確実な数値で記事を書かない=安全側)。高度試験の各60点はAP同型でthin(session28所見)。
   - **次の最優先候補**: (a)同「ランク済み記事へのIPA公式情報ギャップ補完」マイクロ角度(session29流)の継続(ただし主要formatギャップは概ね消化)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8 は人間待ち継続。
+
+## セッション32（growth ループ）2026-06-02 JST
+- 監査(read-only): session17-22/26/30/31の「事実性監査(IPA形式の取り残し掃き)」angleを、未監査の indexable surface =全試験ハブ `/[exam]` の静的データ(`lib/seo/exam-stats.ts`・`lib/seo/exam-content.ts`)へ展開。IP採点内訳(IPA range.html・session31裏取り: テクノロジ42/ストラテジ32/マネジメント18・採点92問)を truth に、出題分布の誤記を grep 走査。
+- done: [P2-2/事実性] **/ipハブの出題傾向「3分野が均等に出題」誤記をテクノロジ系最多へ是正**。SHA `ee5731e`。
+  - 監査: `lib/seo/exam-stats.ts` EXAM_STATS.ip.topicTrend が「ストラテジ系・マネジメント系・テクノロジ系の3分野が**均等に出題**」。/ip ハブ(indexable・`app/[exam]/page.tsx` L345 出題傾向カード)にそのまま描画されるのに、IPA公式内訳ではテクノロジ系42が最多で「均等」は事実誤り(session31でblog ip-3shukan-goukakuの「ストラテジ系が最多」誤記も是正済＝面横断の同 error class)。
+  - 修正: 「テクノロジ系の出題が最も多く、ストラテジ系・マネジメント系が続く3分野構成。」へ。最小diff。回帰pin `__tests__/seo/exam-data-invariants.test.ts`(ip topicTrend は「均等」not contain・テクノロジ系 contain・テクノロジ系がマネジメント系より前)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1774→1775/build OK)。本番ビルド `.next/server/app/ip.html` に新文言出力・「均等に出題」0件を実測。
+- done: [P2-2/事実性] **/ipハブのリード文「3領域からバランス良く構成」を出題分布の含意なしへ**。SHA `8e87e58`。
+  - 監査: 上記カード是正後、同一 /ip ページの `lib/seo/exam-content.ts` EXAM_DEEP_CONTENT.ip.leadParagraph が出題を「3領域から**バランス良く**構成」と記載し、同一ページ内で出題分布の含意が不整合(テクノロジ42 vs マネジメント18 で均等・バランスではない)。
+  - 修正: 「3領域から**幅広く**構成」へ(基礎を幅広く扱う事実は保ち、出題数の均等は含意しない最小修正)。「バランス良く」は単独なら soft characterization だが同一ページのカード是正との整合で完結させる判断。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1775〔invariants 12件緑〕/build OK)。本番ビルド `ip.html` に「3 領域から幅広く構成」出力・「バランス良く構成」0件を実測。
+- SKIP→HD-9: **勉強法 overview テンプレ `buildOverviewPost`(全13区分の中核「{exam}-goukaku-benkyouhou」記事)が IP/SG/FE で pre-2023の「春期・秋期/午前・午後」前提をハードコード**。本番ビルド `{fe,sg,ip}-goukaku-benkyouhou.html` に「春期・秋期に実施」「午前試験(基礎知識)の戦略」「午後試験(記述・論文)の戦略」が各2回ずつ live 出力と実測(IP/SG/FEはCBT通年・FE/SGは科目A/B・IPは単一CBTで午後論述なし＝サイト自身がL993-995で通年実施と正しく記載＝テンプレだけ旧前提で内部不整合)。session29-31で是正した「2023再編の取り残し」と同一error classの**テンプレ版(最大の取り残し面)**だが、(1)テンプレ全体の構造(見出し+本文10箇所超)に及び最小diff不能、(2)正しい構造が区分ごと3通り(IP=単一/FE・SG=科目A/B/AP・高度=午前午後)で分岐が編集判断、特にIPは2セクションテンプレに乗らず prose 再設計が要る＝安全側でSKIP。`growth-human-decisions.md` HD-9 に実測evidence(live HTML count・exact strings・IPA/SSOT裏取り)付きで集約(部分修正=実施時期だけ直すと「CBT通年なのに午前/午後見出し」の新規不整合を生むため不可・テンプレ単位でコヒーレント対応が必要)。
+- 申し送り（セッション32まとめ）:
+  - **事実性監査angleを `/[exam]` ハブ静的データへ展開**: blog/faq/glossary(s17-22/30/31)に続き、未監査だった exam-stats.ts/exam-content.ts(全試験ハブ indexable)を IP採点内訳 truth で掃き、IP出題分布の hard error 2件を是正(`ee5731e`/`8e87e58`)。他surface(topics.ts/structured-data.ts/features.ts/exam-resources.ts ROADMAP〔SG/FE既に科目A/B〕)は format hard error 無しを確認＝これら主要data面は枯渇。
+  - **最大の取り残し発見=overview テンプレ(HD-9)**: IP/SG/FEの中核 勉強法ページが live で春秋/午前午後の旧前提。session30申し送り「他試験のpre-2023形式取り残しの面横断確認」への回答。テンプレ構造リライト(区分3通り分岐+IP欠落セクション)は editorial ＝HD-9へ集約(HD-7の2026春秋とは独立=present-tense確定誤りで先行可)。
+  - **次の最優先候補**: (a)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(b)P0-1残りdev痕跡410(実害薄)、(c)残るpre-2023取り残しは overview以外は概ね枯渇(HD-9実装は人間待ち)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8/overviewテンプレ HD-9 が人間待ち継続。
