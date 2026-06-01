@@ -463,21 +463,17 @@ export default async function ExamTopPage({
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="primary" size="sm">
-                    <Link href={`/essay/${code}`}>
+                    {/* 旗艦の入口は試験別の午後AI採点ページ /[exam]/afternoon (200)。
+                        旧リンクは単数形 essay の試験インデックス（page.tsx 不在＝404）だった。 */}
+                    <Link href={`/${code}/afternoon`}>
                       {examLabel(code)} の論述添削へ
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    <Link
-                      href={
-                        code === "sc"
-                          ? `/essays/${code}`
-                          : `/essay/${code}#sample-answers`
-                      }
-                    >
-                      業種別 合格答案サンプル
-                    </Link>
+                    {/* 業種別サンプルは複数形 /essays/[exam] (200)。
+                        旧リンクは sc 以外すべて 404 の死リンクだった。 */}
+                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
                   </Button>
                   <Button asChild variant="ghost" size="sm">
                     <Link href="/demo/essay-grading">採点デモを見る</Link>
