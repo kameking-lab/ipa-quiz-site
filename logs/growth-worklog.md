@@ -532,3 +532,20 @@
   - **新角度=「ランク済み記事へのIPA公式情報ギャップの additive 補完」**: 新規記事 saturation を避けつつ、(1)午前I免除の3条件(AP以外の2ルートがサイト全体で不在) `9c554ca`、(2)FE午前/午後→科目A/B移行(旧制度searcher向け読み替え) `587921a` を既存ランク済み記事に additive 挿入(competingページ無し=cannibalization回避)。+(3)合格点クラスタの相互リンク化 `49dcde1`。全てIPA公式裏取り・最小diff・誇大回避・回帰pin・新規404ゼロ。
   - **SKIP記録**: `lib/seo/category-tips.ts`=分野別汎用学習ポイントで hard error 無し(OWASPはversion無し・形式数値/称号claim無し)→理論のみSKIP。`data/community/{questions,stories}.ts`=どのlive routeにもimportされず(session2で /community/* は410化)=orphan data・SEO価値ゼロ→SKIP。SG(情報セキュリティマネジメント)の2023形式変更は確証不足(SG現行形式の正確な内訳が未裏取り・SG記事は メリット記事のみで明確な午前/午後誤記なし)→安全側でSKIP(不確実な事実でfixを捏造しない)。
   - **次の最優先候補**: (a)同マイクロ角度の継続=他のランク済み記事のIPA公式情報ギャップ(ただし主要な形式/制度ギャップはFE午前午後・SC午後統合[既出sc-shikaku-merit]・免除3条件で概ね消化、残りは thin 寄り)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄=SKIP寄り)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7 は人間待ち継続。
+
+## セッション30（growth ループ）2026-06-02 JST
+- 監査(read-only): session29 が「確証不足で安全側SKIP」とした **SG(情報セキュリティマネジメント)の2023形式変更** を IPA公式 kubun/sg.html(WebFetch)で裏取りして確定。現行SG=**科目A(四肢択一)＋科目B(多肢選択の事例問題)の2科目・計60問・120分・CBT通年・午前午後区分は廃止**。コードSSOT `lib/exam-config.ts` も SG CBT=科目A(48問) を保持(=整合)。これを truth に、旧「午前/午後」形式の取り残しを面横断で grep 走査(session17-22の事実性監査角度のSG版)。
+- done: [P2-2/事実性] **SG試験形式を現行(科目A・科目B/CBT通年)に是正**。SHA `de36d72`。
+  - 監査: blog `sg-shiken-meritto-imi-aru`(SGメリット記事・indexable) が「午前 50 問の四択 + 午後の長文事例（CBT 化以降は科目B として統合）」と **pre-2023形式を誤記**(科目Bだけに統合と誤読させ午前/午後 framing を保持)。
+  - 修正: 「2023年からCBT通年方式となり、科目A(四肢択一)と科目B(多肢選択の事例問題)の2科目・計60問を120分で解く形式(従来の午前・午後区分は廃止)」へ。IPA確認済の事実のみ記載(48/12の内訳は IPA未明示のため断定せず計60問に留め誇大回避)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1770→1771/build OK)。本番ビルド `blog/sg-shiken-meritto-imi-aru.html` SSRに「科目 A（四肢択一）と科目 B」×2・「計 60 問を 120 分」出力、旧「午前 50 問の四択」「科目B として統合」**0件**を実測。回帰pin `blog-generators.test.ts`(現行形式 contain＋旧framing not contain)。
+- done: [P2-2/事実性] **/faq の「IP・SG・FE の午前」誤記を多肢選択式中心へ是正**。SHA `47d530a`。
+  - 監査: `data/faq.ts`「過去問だけで合格できますか?」回答(FAQPage JSON-LD・/faq に露出)が「IP・SG・FE の午前は過去問の繰り返しが…」と記載。**IPは午前/午後の区分が無い単一CBT(100問)**で「IPの午前」は存在しない区分、FE・SGの「午前」は2023年に科目Aへ再編済＝廃止。SG誤記と同一error class(面横断)。
+  - 修正: intent(択一系基礎試験は過去問反復が最短/AP以上の午後・論文は別)を保ち「IP・SG・FE のような多肢選択式中心の試験」へ。回帰pin `faq.test.ts`(「IP・SG・FE の午前」not contain)。
+  - 検証: 全ゲート緑(test1771→1772/build OK)。本番ビルド `faq.html` に旧framing**0件**・新文言出力を実測。
+- SKIP→HD-8: **合格体験記 `data/success-stories/personas.ts` のSGペルソナ3件が pre-2023 の午前/午後形式**(score「午前66点/午後72点」等・scheduleNarrative/strugglePoint/examDayNarrative/keyTakeaways が全て午前午後前提)。1ペルソナ複数フィールド×3件の**捏造体験記の全面リライト**＝最小diff不能・editorial判断、かつ**現行SGの正式スコア通知形式(科目A/Bの満点・合否判定/IRT or 素点)が未検証**で score を正確に書き換えられない(不確実な数値を捏造しない)。安全側でSKIP＝`growth-human-decisions.md` HD-8 に集約(IPA裏取り済の形式facts＋3ペルソナ位置を記載)。
+- SKIP(soft/過大修正回避): `generators.ts` L587「基本情報は科目 A・B 構成、情報セキュリティマネジメントは長文事例中心」はSGを科目A/B構成と明示しないが「長文事例中心」自体はSG科目Bの性質として真＝hard errorでない soft characterization。L2957「IP・SG・FEの科目A」/L7162「AP vs SG」/faq L260(高度試験の午前II/午後I study目安)は SG午前/午後を主張せず正＝対象外。
+- 申し送り（セッション30まとめ）:
+  - **新角度=SG現行形式(科目A/B・午前午後廃止)の面横断是正**: session29が確証不足でSKIPした SG 2023形式変更を IPA公式で裏取り確定し、旧午前/午後形式の取り残しを2面是正(blog merit記事 `de36d72`・/faq `47d530a`)。SSOT(exam-config SG=科目A 48問)とも整合。SC午後統合(session17-22)/FE午前午後(session29)に続く「2023再編の取り残し」掃きのSG版。
+  - **personas はHD-8へ**: 同じSG午前/午後誤記が合格体験記3ペルソナにも残るが、捏造体験記の全面リライト＋新形式スコア表記の未検証ゆえ editorial/人間判断としてHD-8集約(自律で半端リライト or 数値捏造しない)。
+  - **次の最優先候補**: (a)他試験のpre-2023形式取り残しの面横断確認(SG/FE/SC以外で2023再編した区分があれば。ただしCBT再編はIP[元々単一]/SG/FEが主＝概ね消化)、(b)P2-4旗艦/essayハブ書籍リスト(設計判断寄り)、(c)P0-1残りdev痕跡410(実害薄)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8 は人間待ち継続。

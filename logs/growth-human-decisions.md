@@ -58,4 +58,13 @@
 - 緊急度: 中（2026年度＝直近。ただし枠組み変更は広域＆IPA日程未確定要素があるため、SSOT設計と確定情報待ちをセットで）。
 - 関連: セッション19で個別記事 `ap-goukaku-go-koudo-senryaku` の春秋グルーピング誤りは是正済（`ed5d0d6`）。site-wide な春秋→前後期/月/年2回 の枠組み更新は本HD。
 
+### HD-8: 合格体験記(success-stories)のSGペルソナが pre-2023 の「午前/午後」形式で書かれている（セッション30発見・全面リライト＋新形式の得点表記の検証が要る）
+- 何の話か: `data/success-stories/personas.ts` のSG（情報セキュリティマネジメント）ペルソナ3件（`sg-jinji-...` L165付近 / `sg-keiri-34sai-naibutousei-fukugyo` L206付近 / `sg-shanai-se-27sai-jissen-tonyu` L241付近）が、いずれも**廃止済みの「午前・午後」形式**で書かれている。例: `score: "午前66点 / 午後72点"`、`scheduleNarrative`「午前過去問5回分、3か月目から午後の事例問題」、`strugglePoint/examDayNarrative`「午後の長文事例」、`keyTakeaways`「SGは午前より午後の組織運用観点が合否を分ける」。
+- 検証（ループがIPA公式で確認済）: 現行SG（[kubun/sg.html](https://www.ipa.go.jp/shiken/kubun/sg.html)）は **2023年からCBT通年方式で科目A（四肢択一）＋科目B（多肢選択の事例問題）の2科目・計60問・120分**。**午前・午後の区分は廃止済**（本セッションで blog `sg-shiken-meritto-imi-aru` の同種誤記 `de36d72`・`/faq` の「IP・SG・FE の午前」`47d530a` を是正済）。/success-stories は indexable（testimonials→success-stories の301先・session1）。
+- なぜループが決めないか: ①影響が**1ペルソナ複数フィールド×3件**に及び、`score`/`scheduleNarrative`/`strugglePoint`/`examDayNarrative`/`keyTakeaways` が全て午前/午後前提＝最小diff/1論点では是正不能（1行だけ直すと「午前66点/午後72点」等が残り半端に矛盾する）。②**捏造（フィクション）の合格体験記の全面リライト**で編集判断（人物像・物語の再構成）。③**新形式SGの得点表記が未検証**＝現行SGが科目A/科目Bで何点満点・どう合否判定/スコア通知するか（FE同様の1000点満点IRTか素点か）を裏取りしないと `score` を正確に書き換えられない（不確実な数値を捏造しない）。
+- 選択肢: (a) 3ペルソナを現行の科目A/科目B形式へ全面リライト（得点表記はSGの正式なスコア通知形式を裏取りしてから）。(b) SGペルソナを一旦非表示/除外し、新形式で書き直してから再掲。(c) 現状維持（=廃止済み形式の体験記を放置）。
+- 推奨（事実性より）: (a)。ただしSGの現行スコア通知形式の裏取りが前提。裏取りが出るまでの暫定で keyTakeaways の「午前より午後」表現だけでも誤誘導が強い箇所は緩和余地あり（ただし score 等が残ると半端なので本格対応は (a) で一括）。
+- 緊急度: 中（live状態の形式staleness。SC論文誤記(HD-6)ほど受験者を誤誘導しないが、indexable な合格体験記が廃止形式なのは事実性を損なう）。
+- 関連: 本セッション(30)で blog/faq のSG午前/午後誤記は是正済。personas は editorial+得点形式未検証のため本HDへ。
+
 <!-- 以降、ループが判断した人間判断事項を追記 -->
