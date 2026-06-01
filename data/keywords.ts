@@ -16,6 +16,12 @@ export interface KeywordPage {
   relatedTopics: string[];
   /** ページ本文の段落（マークダウン無し、改行で段落区切り） */
   body: string[];
+  /**
+   * 戦略ページへの送客 CTA（任意・誇大回避のため明示オプトイン）。
+   * "essay" = 旗艦＝午後II論述 AI 採点 /essay（論文区分 ST/SA/PM/SM/AU の論述テーマ記事のみ）。
+   * "kamoku-b" = 土台＝基本情報 科目B 完全対策ピラー（FE 科目B 擬似言語記事のみ）。
+   */
+  strategicCta?: "essay" | "kamoku-b";
 }
 
 export const KEYWORD_PAGES: KeywordPage[] = [
@@ -139,6 +145,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "パターン 4: ロードマップ型 ── 短期・中期・長期 → 各期の施策 → 期間ごとの効果 → リスク。中長期の戦略性を打ち出せる。",
       "パターン 5: 失敗→改善型 ── 過去の失敗 → 原因分析 → 改善策 → 結果 → 学び。リーダーシップと内省力を示せる。",
     ],
+    strategicCta: "essay",
   },
   {
     slug: "auditor-coso-cobit",

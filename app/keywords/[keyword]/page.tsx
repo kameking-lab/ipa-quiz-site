@@ -4,9 +4,11 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { topicLinkHref } from "@/lib/seo/topics";
 import { examLabel } from "@/lib/utils";
@@ -67,6 +69,15 @@ export default async function KeywordPage({
   const { keyword } = await params;
   const page = getKeywordPageBySlug(keyword);
   if (!page) notFound();
+
+  // 旗艦＝午後II論述 AI 採点への送客は、明示オプトイン (strategicCta) かつ
+  // 論文区分 (ESSAY_EXAM_CODES) を持つ記事に限定する（誇大回避）。
+  const essayExam =
+    page.strategicCta === "essay"
+      ? (page.exams.find((e) =>
+          (ESSAY_EXAM_CODES as readonly string[]).includes(e),
+        ) as ExamCode | undefined)
+      : undefined;
 
   const absUrl = `${SITE_BASE_URL}/keywords/${page.slug}`;
   const jsonLd = {
@@ -148,6 +159,8 @@ export default async function KeywordPage({
           </p>
         ))}
       </article>
+
+      {essayExam ? <AfternoonEssayHint exam={essayExam} /> : null}
 
       <section aria-label="関連トピック" className="mt-8">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">

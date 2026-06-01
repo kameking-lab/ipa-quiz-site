@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
 // Characterization tests for data/keywords.ts — the long-tail SEO keyword
@@ -68,5 +69,33 @@ describe("KEYWORD_PAGES — SC 午後 framing は2023統合後（午後Iの/II�
     expect(fullBody).not.toContain("午後 II");
     // 統合後の「午後」フレーミングが残っている（non-vacuous）。
     expect(page!.title.includes("午後") || fullBody.includes("午後")).toBe(true);
+  });
+});
+
+// 旗艦＝午後II論述 AI 採点 /essay への送客ゲート。app/keywords/[keyword]/page.tsx は
+// strategicCta==="essay" かつ exams[] に論文区分(ESSAY_EXAM_CODES)を含むときだけ
+// AfternoonEssayHint を描画する。論文区分でない記事(SC=記述・AP/FE=非論述)へ旗艦CTAが
+// 漏れると誇大表現になるため、ゲートの drift を pin する。
+const ESSAY_CODE_SET = new Set<string>(ESSAY_EXAM_CODES);
+
+describe("KEYWORD_PAGES — 旗艦 /essay 送客ゲート(誇大回避)", () => {
+  it("strategicCta:'essay' の記事は必ず論文区分(ST/SA/PM/SM/AU)を持つ", () => {
+    const flagged = KEYWORD_PAGES.filter((p) => p.strategicCta === "essay");
+    expect(flagged.length).toBeGreaterThan(0); // non-vacuous
+    for (const page of flagged) {
+      expect(page.exams.some((e) => ESSAY_CODE_SET.has(e))).toBe(true);
+    }
+  });
+
+  it("論述テーマの st-essay-structure-pattern が旗艦へ送客する", () => {
+    expect(getKeywordPageBySlug("st-essay-structure-pattern")?.strategicCta).toBe(
+      "essay",
+    );
+  });
+
+  it("SC(記述・非論文)の sc-incident-response は旗艦 essay CTA を出さない", () => {
+    expect(
+      getKeywordPageBySlug("sc-incident-response")?.strategicCta,
+    ).not.toBe("essay");
   });
 });
