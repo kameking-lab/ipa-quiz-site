@@ -267,6 +267,8 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     // "基本情報 午後" — pin the transition clarification so it can't silently drop.
     expect(body).toContain("2023年4月から「午前・午後」という区分は廃止");
     expect(body).toContain("旧 午後 → 現 **科目B**");
+    // 合格点 cluster cross-link: FE(IRT) ↔ AP(素点) comparison intent
+    expect(body).toContain("/blog/ap-goukaku-ten-border");
   });
 
   // AP 合格点/ボーダー longtail article (新設). 「応用情報 何点で合格/合算?/
@@ -292,6 +294,8 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).toContain("/blog/ap-gogo-sentaku");
     expect(body).not.toContain("/essay");
     expect(body).toContain("## よくある質問");
+    // 合格点 cluster cross-link: AP(素点) ↔ FE(IRT) comparison intent
+    expect(body).toContain("/blog/fe-goukaku-ten-irt");
   });
 });
 
