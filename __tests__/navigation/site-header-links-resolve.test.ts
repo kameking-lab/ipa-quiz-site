@@ -45,11 +45,17 @@ function staticRoutePathnames(): Set<string> {
   return routes;
 }
 
-/** SiteHeader.tsx の純静的 href="/..." を抽出（テンプレート/クエリ/アンカー除外）。 */
+/**
+ * SiteHeader.tsx の純静的内部リンクを抽出（テンプレート/クエリ/アンカー除外）。
+ * 2 形式を対象にする:
+ *   1. JSX 属性形式  href="/foo"
+ *   2. オブジェクトリテラル形式  { href: "/foo", label: ... }（QUIZ_MODES 等）
+ * クエリ(`?`)・アンカー(`#`)付きは末尾の `"` 直前に許可文字以外が来るため自然に除外される。
+ */
 function staticHeaderHrefs(): string[] {
   const src = readFileSync(join(process.cwd(), "components/SiteHeader.tsx"), "utf8");
   const hrefs = new Set<string>();
-  const re = /href="(\/[a-z0-9/_-]*)"/gi;
+  const re = /href[=:]\s*"(\/[a-z0-9/_-]*)"/gi;
   let m: RegExpExecArray | null;
   while ((m = re.exec(src)) !== null) {
     hrefs.add(m[1]);

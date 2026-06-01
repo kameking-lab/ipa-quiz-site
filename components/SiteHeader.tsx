@@ -36,7 +36,7 @@ const QUIZ_MODES = [
   { href: "/quiz/stream", label: "ストリームモード" },
   { href: "/quiz?mode=review&exam=ap", label: "復習モード" },
   { href: "/quiz?mode=weakness&exam=ap", label: "弱点克服" },
-  { href: "/essays/sc", label: "論述例（SC）" },
+  { href: "/essay", label: "午後論述AI採点" },
 ] as const;
 
 export function SiteHeader() {
