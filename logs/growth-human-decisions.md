@@ -32,4 +32,12 @@
 - 緊急度: 中〜高（旗艦の核。ただし「データが薄いまま大きく見せる」愚を避けるため、データ整備とセットで判断）。
 - 関連: backlog P1-2（AP/FE CTA追加は HD-4 の判断待ち）/ P1-4,P1-5（不安系キーワードの**オリジナル記事**で午後採点へ送客するのはモックデータに依存しないので先に進められる）。
 
+### HD-5: 論文区分の個別essay記事の「AI採点」深リンクが noindex,nofollow の `/essays/[exam]` を指す（equity vs UX relevance のトレードオフ・セッション8発見）
+- 何の話か: 論文5区分(pm/st/sa/sm/au)の個別essay記事(pm-goukaku-ronbun / st-senryaku-shikou / sa-architecture-tradeoff / sm-itil-storytelling / au-audit-evidence-language)本文に「[PM 論述添削](/essays/pm)」「[PM 午後II 論述AI採点](/essays/pm)」等の**採点intentの深リンク**がある（generators.ts 1604/1649/1692/1730/1770/3874/3999/4109 等）。その行先 `/essays/[exam]` は **`robots: { index: false, follow: false }`（noindex かつ nofollow・実測確認）**。一方、旗艦の indexable な集約ハブは `/essay`（robots無指定＝index可）。
+- なぜループが決めないか: トレードオフが本物。`/essays/[exam]` は「その区分の採点ツール＋業種別合格答案サンプル」を持つ**区分特化ページ**で、記事の文脈に最も関連する行先（UX的に正しい）。だが noindex,nofollow ゆえ内部リンク equity が旗艦に流れず、follow:false で**equity が通過すらしない**。equity観点では indexable `/essay` 寄せが筋だが、汎用ハブへ送ると区分特化のUX価値（業種別サンプル等）を失う。どちらを取るかは情報設計判断。なお「業種別合格答案」intentの深リンク(7546/7856-7861)は /essays/[exam] が正しい行先で変更不要。
+- 選択肢: (a) `/essays/[exam]` を indexable 化（robots除去 or index:true）して区分特化ページ自体を検索資産にする（薄い/重複ページ量産のリスク評価が要る＝設計判断）。(b) 採点intentの深リンクを indexable `/essay` へ寄せる（区分特化UXを一部犠牲）。(c) 現状維持（区分特化UXを優先・equityは header/home/footer/q-page の /essay 露出で別途確保済）。
+- 推奨（戦略より）: 当面 (c)。旗艦 /essay はグローバル3面＋/q問題ページで既にクローラブル露出済（session4/7）。区分特化ページのUX価値を保ちつつ、indexable化(a)は「区分ごとに固有で厚い内容があるか」を見てから。
+- 緊急度: 低〜中（旗艦露出は別経路で確保済。設計判断なので腰を据えて）。
+- 関連: backlog P1-5「新規(未着手・要慎重)」。セッション8で SKIP（自律実装せず本HDへ）。
+
 <!-- 以降、ループが判断した人間判断事項を追記 -->

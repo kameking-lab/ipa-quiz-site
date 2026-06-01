@@ -47,7 +47,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **SKIP**: sc-ronbun-taisaku への /essays/sc 送客は見送り（SC午後の形式 framing の事実性に懸念・安全側）。事実確認は人間。
   - **残り（未着手）**: ap-gogo-sentaku / ap-gogo-bunkei-sentaku / ipa-shiken-gogo-vs-am は AP午後＝モックデータのため旗艦採点CTAは HD-4 待ち（誇大回避）。AIコパイロット導線は既にあり。
   - **[done セッション7]** /q/* 問題ページ(最大クロール面)の論述5区分に gated 旗艦 /essay 導線 `c785e6a`。「論述の自己採点」新規記事 `62bd68e`。書き方hub `koudo-ronjutsu-kakikata-kotsu` のAI採点リンクを noindex /essays→indexable /essay 是正 `1d2af50`。
-  - **新規(P1-5 未着手・要慎重)**: 論文5区分の個別essay記事(pm-goukaku-ronbun/st-senryaku-shikou/sa-architecture-tradeoff/sm-itil-storytelling/au-audit-evidence-language)本文の深リンクが `/essays/<exam>` を指すが、**/essays/[exam] も robots index:false（noindex・実測）**。旗艦 equity の観点では indexable `/essay` 寄せが筋だが、exam固有サンプルへの deep link という UX 価値とのトレードオフ。1記事ずつ慎重判断（誇大なし）か、/essays/[exam] の indexable 化は設計判断＝HD候補。
+  - **[SKIP→HD-5 セッション8]** 論文5区分の個別essay記事(pm-goukaku-ronbun/st-senryaku-shikou/sa-architecture-tradeoff/sm-itil-storytelling/au-audit-evidence-language)本文の採点intent深リンクが `/essays/<exam>` を指すが、**/essays/[exam] は robots index:false かつ follow:false（noindex,nofollow・実測）**。equity観点では indexable `/essay` 寄せが筋だが exam固有サンプルのUX価値とのトレードオフ＝設計判断。自律実装せず **HD-5** に集約（旗艦露出は header/home/footer/q-page で確保済）。「業種別合格答案」intent深リンクは /essays/[exam] が正しい行先で変更不要。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P1 — 土台: 基本情報 科目B（アルゴリズム・擬似言語）AI個別指導

@@ -151,3 +151,13 @@
   - **旗艦=午後論述AI採点(/essay) の funnel を「最大クロール面」と「採点intent」へ拡張**: (1)/q/* 問題ページ(~12,653件・最大面)の論述5区分に gated 旗艦カード `c785e6a`、(2)「論述の自己採点」新規記事を新設し旗艦へ funnel＋書き方hubと相互リンク `62bd68e`、(3)書き方hubのAI採点リンクを noindex /essays→indexable /essay へ是正 `1d2af50`。
   - **誇大回避の一貫**: 区分ゲートは lib/essay/load.ts `ESSAY_EXAM_CODES`(st/sa/pm/sm/au)単一情報源、AP/FEモックには出さない、「AI採点は参考評価」「採点基準は非公開」を明記。旗艦リンクは indexable /essay に統一（noindex /essays と区別）。
   - **次の最優先候補**: P1-5残り(論文5区分の個別essay記事 pm-goukaku-ronbun/st-senryaku-shikou 等が deep link `/essays/<exam>`(これも noindex・実測) を指す点。exam固有UX vs crawl equity のトレードオフ＝1記事ずつ慎重に。/essay へ寄せるか /essays/<exam> を indexable 化するかは設計判断寄り→backlog/HD候補) / P2-2(競合薄ブログ強化) / P1-7続き(科目B問題ページのコパイロット quick-action UI＝要慎重監査) / P0-1残り(dev痕跡410)。
+
+## セッション8（growth ループ）2026-06-02 JST
+- done: [P2-2/SEO構造化] **ブログ「よくある質問」節を FAQPage JSON-LD として出力**。SHA `b3cd08d`。
+  - 監査で発見: `app/blog/[slug]/page.tsx` の JSON-LD は Article + LearningResource + BreadcrumbList（+ `-yoru-tokurensyu` のみ HowTo）を出すが、**22記事(101 Q&A)が持つ `## よくある質問` 節に対して FAQPage 構造化データが皆無**だった。これら22記事は rirekisho/benkyouhou/勉強時間 等「○○ 書き方/満点/何時間」の質問intentクエリを狙う informational ページで、FAQPage はページ意味論をそのクエリに整合させる。
+  - 実装: `lib/blog/faq.ts` に `extractFaq(body)` を新設（`## よくある質問` 節を検出→`**Q. ...？**` 行＋直後回答段落を抽出、markdown リンクは text のみに・強調 `**` は除去、回答は500字cap）。page.tsx で `faqs.length>0` のとき FAQPage ノードを `@graph` に追加（`@id` `#faq`、mainEntity=Question/acceptedAnswer）。**additive**＝既存ノード・本文・UIは不変。
+  - 注記: Google は2023年8月に FAQ リッチリザルト表示を権威系サイト中心に縮小済だが、(a)標準準拠の妥当な構造化データで害がなく、(b)質問intentページの意味整合・他サーフェス/AI overview での解釈に資する。誇大なし・本文無改変の安全な additive 強化として実施。
+  - 検証: 全ゲート緑（typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕 / test1658→1661(+3) / build OK）。本番ビルド成果物 `blog/it-shikaku-rirekisho-kakikata.html` の JSON-LD に `"@type":"FAQPage"`＋`"@type":"Question"`×5＋実問文（「ITパスポートはエンジニア転職で書く意味がありますか」）出力を実測。FAQ節を持たない記事は FAQPage 非出力（getAllBlogPosts ベースで test 検証）。回帰テスト `__tests__/seo/blog-faq-jsonld.test.ts`（rirekisho=5問固定／FAQ節有⇔抽出>0 の同期／markdown 漏れ禁止／non-vacuous ≥20記事）。
+- SKIP→HD: [P1-5残り] **論文5区分の個別essay記事の「AI採点」深リンクが noindex,nofollow の `/essays/[exam]` を指す件**は自律実装せず **HD-5** へ。
+  - 監査(read-only): 採点intent深リンク（generators.ts 1604/1649/1692/1730/1770/3874/3999/4109 等 `[PM 論述添削](/essays/pm)` 系）の行先 `/essays/[exam]` が `robots:{index:false,follow:false}`（**実測**）。equity観点では indexable `/essay` 寄せが筋だが、区分特化ページ（区分採点＋業種別サンプル）のUX関連性を失うトレードオフ。「業種別合格答案」intent深リンク(7546/7856-7861)は /essays/[exam] が正しい行先で変更不要。
+  - 判断: 設計判断（/essays/[exam] の indexable 化 or 採点リンクの /essay 寄せ）＝自律実行しない。旗艦 /essay の露出は header/home/footer/q-page で確保済(session4/7)。「迷ったら直さず SKIP（安全側）」に従い HD-5 に積み次へ。コード変更なし。
