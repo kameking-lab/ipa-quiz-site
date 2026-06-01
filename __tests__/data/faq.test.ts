@@ -28,4 +28,28 @@ describe("FAQS registry — FAQPage structured-data invariants", () => {
       expect(FAQ_CATEGORY_LABELS[f.category]).toBeTruthy();
     }
   });
+
+  // IPA 公式 (kubun/sc.html) では、SC 合格・登録後に名乗れる国家資格名は
+  // 「情報処理安全確保支援士（登録セキスペ）」。「登録セキュリティスペシャリスト」は
+  // IPA が用いない不正確な称号で、/faq の FAQPage JSON-LD (acceptedAnswer.text)
+  // にそのまま露出するため誤りを禁止する。
+  it("names the registered SC title with the official IPA term (not an invented 称号)", () => {
+    const scRegistration = FAQS.filter(
+      (f) =>
+        f.answer.includes("情報処理安全確保支援士") ||
+        f.answer.includes("登録セキスペ") ||
+        f.answer.includes("RISS"),
+    );
+    // non-vacuous: SC 登録系の FAQ が実在する
+    expect(scRegistration.length).toBeGreaterThan(0);
+    for (const f of FAQS) {
+      expect(f.answer).not.toContain("登録セキュリティスペシャリスト");
+    }
+    // RISS に言及する回答は必ず正式名称も併記している
+    for (const f of FAQS) {
+      if (f.answer.includes("RISS")) {
+        expect(f.answer).toContain("情報処理安全確保支援士");
+      }
+    }
+  });
 });
