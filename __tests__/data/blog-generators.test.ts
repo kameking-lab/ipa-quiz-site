@@ -332,4 +332,14 @@ describe("blog SC merit post — 午後 structure is the unified 記述式 test 
     expect(body).not.toContain("3 年で約 9 万円の維持費");
     expect(body).not.toContain("維持費 3 年 9 万円");
   });
+
+  // 2026 参考書ガイドの SC 節も、廃止済み「午後I・II」書名フレーミングではなく
+  // 統合後の「午後問題」フレーミングを使う (上記 sc-shikaku-merit と同じ事実)。
+  it("ipa-sanko-mondaishu-2026 references SC 午後問題, not the abolished 午後I・II", () => {
+    const post = getBlogPostBySlug("ipa-sanko-mondaishu-2026");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("「SC 午後問題演習」");
+    expect(body).not.toContain("「SC 午後I・II 問題演習」");
+  });
 });
