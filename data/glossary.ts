@@ -129,7 +129,7 @@ export const GLOSSARY: GlossaryTerm[] = [
     category: "security",
     short: "Web アプリで最重要の脆弱性 10 種を OWASP が公表するリスト。",
     detail:
-      "SQL インジェクション・XSS・CSRF・認証不備などが含まれ、SC 試験の必須知識。最新版は 2021 年版で、3 年ごとに更新される。",
+      "SQL インジェクション・XSS・CSRF・認証不備などが含まれ、SC 試験の必須知識。最新版は 2025 年版（2026 年 1 月公開）で、数年ごとに更新される。",
     relatedTopics: ["XSS", "CSRF", "SQLインジェクション", "OWASP"],
   },
   {
