@@ -263,6 +263,31 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).not.toContain("/essay");
     expect(body).toContain("## よくある質問");
   });
+
+  // AP 合格点/ボーダー longtail article (新設). 「応用情報 何点で合格/合算?/
+  // 午前落ち 午後 採点」の混同キーワード向け。IPA公式(案内書・採点方式資料,
+  // WebSearch裏取り): 午前・午後とも100点満点/基準点60点、各時間区分で基準点
+  // 以上が必要(別判定)、多段階選抜方式=午前が基準点未満なら午後不採点。
+  // FE(IRT/1000点満点)とは別の素点方式。/ap ハブ + AP午後記事 + AIコパイロット
+  // へ funnel。AP午後採点=モック(HD-4)のため旗艦 /essay には送らない。
+  it("ap-goukaku-ten-border: correct scoring facts, 素点/多段階選抜, /ap funnel, no /essay", () => {
+    const post = getBlogPostBySlug("ap-goukaku-ten-border");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("100点満点");
+    expect(body).toContain("基準点60点");
+    expect(body).toContain("午前・午後ともに60点以上");
+    // multi-stage selection: 午前 below benchmark → 午後 ungraded
+    expect(body).toContain("多段階選抜方式");
+    expect(body).toContain("午後試験は採点されず不合格");
+    // AP is 素点方式 (it contrasts against FE's IRT in the body)
+    expect(body).toContain("素点方式");
+    // funnel to /ap hub + AP afternoon articles; never the mock flagship grader
+    expect(body).toContain("(/ap)");
+    expect(body).toContain("/blog/ap-gogo-sentaku");
+    expect(body).not.toContain("/essay");
+    expect(body).toContain("## よくある質問");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
