@@ -99,3 +99,22 @@ describe("KEYWORD_PAGES — 旗艦 /essay 送客ゲート(誇大回避)", () => 
     ).not.toBe("essay");
   });
 });
+
+// 土台＝基本情報 科目B 完全対策ピラーへの送客ゲート。app/keywords/[keyword]/page.tsx は
+// strategicCta==="kamoku-b" のとき KamokuBStudyHint(/blog/fe-kamoku-b-taisaku)を描画する。
+// 科目B擬似言語テーマ(FE)以外へ漏らさない（off-topic回避）。
+describe("KEYWORD_PAGES — 土台 科目B ピラー送客ゲート", () => {
+  it("strategicCta:'kamoku-b' の記事は FE のみ（科目B＝擬似言語の実データ区分）", () => {
+    const flagged = KEYWORD_PAGES.filter((p) => p.strategicCta === "kamoku-b");
+    expect(flagged.length).toBeGreaterThan(0); // non-vacuous
+    for (const page of flagged) {
+      expect(page.exams).toContain("fe");
+    }
+  });
+
+  it("擬似言語テーマの fe-kamoku-b-pseudo-language が土台ピラーへ送客する", () => {
+    expect(
+      getKeywordPageBySlug("fe-kamoku-b-pseudo-language")?.strategicCta,
+    ).toBe("kamoku-b");
+  });
+});

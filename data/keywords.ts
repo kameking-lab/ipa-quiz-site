@@ -54,6 +54,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "第 4 歩は『過去問道場相当の演習量』を確保。本サイトでは AI コパイロットに『この擬似言語をステップごとに教えて』と聞けるので、独学でも詰まりにくくなります。",
       "第 5 歩は『時間配分の訓練』。本番は 100 分で 20 問程度。1 問 5 分の感覚を体に染み込ませます。",
     ],
+    strategicCta: "kamoku-b",
   },
   {
     slug: "ip-1month-study-plan",

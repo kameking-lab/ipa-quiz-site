@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
+import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
@@ -161,6 +162,9 @@ export default async function KeywordPage({
       </article>
 
       {essayExam ? <AfternoonEssayHint exam={essayExam} /> : null}
+      {page.strategicCta === "kamoku-b" ? (
+        <KamokuBStudyHint exam="fe" session="kamoku-b" />
+      ) : null}
 
       <section aria-label="関連トピック" className="mt-8">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
