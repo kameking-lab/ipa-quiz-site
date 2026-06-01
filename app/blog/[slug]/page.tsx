@@ -14,6 +14,7 @@ import {
   getRelatedPosts,
 } from "@/data/blog";
 import { getRelatedQuestionsForPost } from "@/lib/blog/related-questions";
+import { extractFaq } from "@/lib/blog/faq";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
@@ -196,6 +197,22 @@ export default async function BlogArticlePage({ params }: PageProps) {
         position: i + 1,
         name: s.name,
         text: s.text,
+      })),
+    });
+  }
+
+  const faqs = extractFaq(post.body);
+  if (faqs.length > 0) {
+    graphNodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
       })),
     });
   }
