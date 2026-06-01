@@ -74,6 +74,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P2-3: 内部リンク網の強化（午後採点・科目B・ロードマップ間のハブ&スポーク）。orphan化している価値ページに導線を足す。
   - **[done セッション12]** `scripts/audit-internal-links.ts` 実走で inbound 0 の orphan 2件(goukakusha-shukan-review/shaiin-bunkatsu-plan-3pattern)を親ハブ ipa-shiken-shakaijin-jikan-kakuho 本文から内部リンク `8ac2a50`(再実行で orphan 0)。監査自身の topic route 誤検知(FATAL5)も是正 `cdc515c`(=今後の dead-link/orphan 検知が信頼可能)。
   - **残り**: 監査は indexable blog の orphan は解消済(0件)。非blog の価値ページ orphan は監査対象外＝必要なら手動監査。
+  - **[done セッション13] 本文funnel gap の是正(新角度)**: orphan(inbound0)は無いが「科目B/論述を**専節で厚く論じるのに本文から戦略ページへ未送客**」の高オーソリティ記事を高密度走査で実測抽出し本文リンクで funnel。rirekisho→roadmap `6755ea3` / fe-benkyou-jikan-meyasu→土台ピラー `b7c5c87` / kakomon-dake-goukaku→土台+旗艦 `1c27df1` / kakomon-nankai-tokinaosu→土台ピラー `62659d7`。relatedSlugs(limit3カット可)に頼らず本文リンクで funnel確実化。論文funnelは論文5区分scope一致時のみ・参考評価明記。
+  - **残り(funnel gap)**: 個別手書き記事で自然な専節があり未送客のもの(ipa-sanko-mondaishu-2026 科目B×4 等)は継続可。**テンプレ生成群(cyokusen/yoru)は13区分一括生成のため flagship 追加に論文5区分ゲート必須**(overview は session6 で flagshipEssayCta 済)。saturation 配慮で自然な gap のみ拾う。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P2 — 収益導線（控えめに）
