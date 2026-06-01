@@ -278,3 +278,23 @@ describe("blog 午前I免除 post — exemption window facts are correct (2年�
     expect(body).not.toContain("2028 年春（4月）以降：免除期間終了");
   });
 });
+
+// 高度試験の春期/秋期 区分グルーピング (IPA official, 令和7年度春期 r07haru_exam.html
+// ＝2026年度前期/後期と同一グルーピング):
+//   春期(前期): ST / SA / NW / SM      秋期(後期): PM / DB / ES / AU      SC: 春・秋とも
+// ap-goukaku-go-koudo-senryaku once put NW in 秋期 and PM・AU in 春期 — wrong groupings
+// that misdirect "what can I take next" planning. Pin the correct sets so they can't
+// silently regress. (The 春秋→前後期 rename / CBT 日程変更 is a separate site-wide
+// matter tracked in growth-human-decisions.md; this only fixes the exam grouping.)
+describe("blog 午前I免除 post — 高度試験 spring/autumn grouping is correct", () => {
+  it("ap-goukaku-go-koudo-senryaku groups NW into 春期 and PM/AU into 秋期", () => {
+    const post = getBlogPostBySlug("ap-goukaku-go-koudo-senryaku");
+    const body = post!.body;
+    expect(body).toContain("**春期（4月）のみ**：ST、SA、NW、SM");
+    expect(body).toContain("**秋期（10月）のみ**：PM、DB、ES、AU");
+    // The old wrong groupings must be gone.
+    expect(body).not.toContain("AU、ST、SA、PM、SM");
+    expect(body).not.toContain("秋期受験なら SC・NW・DB・ES");
+    expect(body).not.toContain("秋期の SC・NW・DB・ES");
+  });
+});
