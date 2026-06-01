@@ -27,6 +27,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 `app/demo/afternoon`・`app/demo/essay-grading`（PM午後II対応）。午後データは11区分（ap au db es fe nw pm sa sc sm st）。
 - P1-1: 「午後AI採点」を旗艦として前面化する導線設計（既存機能の範囲。新規重AI乱発しない）:
   ホーム/ヘッダ/該当試験ページから「あなたの午後答案をAIが採点」入口を一目で分かる位置に。既存UI/コンポーネント踏襲。
+  - **[done セッション4]** グローバル3面で旗艦 /essay を露出: ヘッダQUIZ_MODES差替 `87c6d80` / ホームSSR旗艦カード `6ece735` / フッタ サービス欄 `f6556d5`。全て実データ論文区分(ST/SA/PM/SM/AU)＋「参考評価」明記で誇大回避。
+  - **残り（任意）**: 該当試験ページ（/st /sa /pm /sm /au ハブ）の旗艦CTAは session2 `b5114b0` で /essays/<exam>・/<exam>/afternoon へ修正済。AP/FE は HD-4 待ち（モック）。主要導線は達成、優先度は P1-4/P2-2/P1-6,7 へ。
 - P1-2: 午後を持つ全区分で採点入口を整える（ap/au/pm/sa/sm/st/db/es/nw/sc/fe）。データのある区分のみ露出（無い区分に空導線を作らない＝404/空ページ回避）。各区分の essays/essay ページが200・SSR・クローラブルか実測。
   - [done セッション2 SHA `b5114b0`]: st/sa/pm/sm/au ハブCTAの 404 死リンク（`/essay/<exam>`）を `/<exam>/afternoon`＋`/essays/<exam>`(200) へ修正・回帰ガード追加。
   - **AP/FE をハブCTAへ追加は HD-4 待ち（自律実行しない）**: `app/[exam]/page.tsx` の afternoon CTA は ap・fe を除外。`/ap/afternoon`・`/fe/afternoon` は 200 だが **練習データがモック**（`data/questions/afternoon/ap/index.ts`「実データはモック」明記・各年季2問）。モックのまま旗艦CTAを大きく出すと誇大表現＝過大修正の罠。記述分岐(sc/nw/db/es)の「Coming Soon」も同根。→ **本番午後データ投入(scripts/parse-afternoon) or ベータ明示CTAの判断は人間（HD-4）**。ループは prematurely 露出しない。
