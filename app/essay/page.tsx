@@ -4,19 +4,65 @@ import { Sparkles, FileText, History, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essay/load";
 import { examLabel } from "@/lib/utils";
 
+const ESSAY_DESCRIPTION =
+  "ST/SA/PM/SM/AU の午後II論述問題を AI が IPA 元採点者プロンプトで添削。設問ア・イ・ウを業種別にフィードバック。";
+
 export const metadata: Metadata = {
   title: "AI 論述添削 (午後II)",
-  description:
-    "ST/SA/PM/SM/AU の午後II論述問題を AI が IPA 元採点者プロンプトで添削。設問ア・イ・ウを業種別にフィードバック。",
+  description: ESSAY_DESCRIPTION,
   alternates: { canonical: "/essay" },
 };
 
 export default function EssayHomePage() {
+  const url = `${SITE_BASE_URL}/essay`;
+  const examNames = ESSAY_EXAM_CODES.map((exam) => examLabel(exam)).join("・");
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LearningResource",
+        "@id": `${url}#learning-resource`,
+        name: "AI 論述添削（午後II）",
+        url,
+        inLanguage: "ja",
+        description: ESSAY_DESCRIPTION,
+        learningResourceType: "AI 採点・添削",
+        educationalLevel: "Professional",
+        educationalUse: "Self-study",
+        audience: STUDENT_AUDIENCE,
+        teaches: `${examNames} の午後II論述対策`,
+        publisher: {
+          "@type": "Organization",
+          "@id": ORG_ID,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: SITE_LOGO_IMAGE,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI 論述添削（午後II）",
+            item: url,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 pb-16 pt-8 sm:px-6">
+      <JsonLd data={jsonLd} />
       <div
         role="note"
         className="mb-6 flex items-start gap-2 rounded-2xl border border-amber-300 bg-amber-50 px-4 py-3 text-xs leading-relaxed text-amber-900 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-100"
