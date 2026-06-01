@@ -207,6 +207,25 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(post).toBeDefined();
     expect(post!.body).not.toContain("4.5");
   });
+
+  // 科目B 時間配分/時間切れ longtail article (新設). Pin its exam-format facts
+  // (100分・600点, never the wrong 90分/4.5分), the 土台 pillar + algorithm topic
+  // pool funnel links (so a broken link surfaces as a failure, not a silent
+  // SEO/UX loss), and the FAQ section that powers its FAQPage JSON-LD.
+  it("fe-kamoku-b-jikan-haibun: correct facts, funnel links, FAQ section", () => {
+    const post = getBlogPostBySlug("fe-kamoku-b-jikan-haibun");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("100分");
+    expect(body).toContain("600点");
+    expect(body).not.toContain("90分");
+    expect(body).not.toContain("4.5");
+    // 土台 pillar + algorithm topic pool funnel (links must resolve to 200 pages)
+    expect(body).toContain("/blog/fe-kamoku-b-taisaku");
+    expect(body).toContain("/fe/topic/");
+    // FAQ section drives FAQPage structured data via lib/blog/faq.ts extractFaq
+    expect(body).toContain("## よくある質問");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
