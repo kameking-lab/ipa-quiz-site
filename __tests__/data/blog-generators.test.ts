@@ -7,6 +7,7 @@ import {
   buildOverviewPost,
   buildPracticePost,
 } from "@/data/blog/generators";
+import { getBlogPostBySlug } from "@/data/blog";
 import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { CURRENT_YEAR } from "@/lib/constants/current-year";
@@ -182,4 +183,28 @@ describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 4
       }
     });
   }
+});
+
+// FE 科目B is 20 questions / 100 minutes (IPA official: 科目A=90分/60問,
+// 科目B=100分/20問). The pillar fe-kamoku-b-taisaku once stated "90分・1問4.5分"
+// (a stale/incorrect figure that also surfaced in its FAQPage JSON-LD). Pin the
+// corrected exam-format facts so the wrong time can't silently regress —
+// especially in structured data Google reads. 科目A's 90分 lives elsewhere and
+// is unaffected; these posts must never claim 科目B is 90分 or 4.5 分/問.
+describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct (100分)", () => {
+  it("fe-kamoku-b-taisaku states 100分 and never the wrong 90分 / 4.5分", () => {
+    const post = getBlogPostBySlug("fe-kamoku-b-taisaku");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("100分");
+    expect(body).toContain("1問5分");
+    expect(body).not.toContain("90分");
+    expect(body).not.toContain("4.5");
+  });
+
+  it("fe-kamoku-b-wakaranai never states the wrong 4.5分/問", () => {
+    const post = getBlogPostBySlug("fe-kamoku-b-wakaranai");
+    expect(post).toBeDefined();
+    expect(post!.body).not.toContain("4.5");
+  });
 });
