@@ -42,6 +42,25 @@ describe("blog FAQ extraction for FAQPage JSON-LD", () => {
     }
   });
 
+  it("ships a FAQ section on every 勉強法 overview article", () => {
+    // buildOverviewPost emits one templated「よくある質問」block (4 Q&A) for all
+    // 13 exam study-method articles. If that template FAQ is removed or reworded
+    // into an unparsable shape, these high-authority pages lose FAQPage data.
+    const overviews = getAllBlogPosts().filter((p) =>
+      p.slug.endsWith("-goukaku-benkyouhou"),
+    );
+    expect(overviews.length).toBeGreaterThanOrEqual(13);
+    for (const post of overviews) {
+      const faqs = extractFaq(post.body);
+      expect(faqs, `no FAQ on ${post.slug}`).toHaveLength(4);
+      // Q4 links to the exam's question list; the answer must be plain text.
+      for (const f of faqs) {
+        expect(f.answer).not.toMatch(/\]\(/);
+        expect(f.question).not.toContain("**");
+      }
+    }
+  });
+
   it("returns an empty array for a post with no FAQ section", () => {
     const post = getAllBlogPosts().find(
       (p) => !p.body.includes("## よくある質問"),
