@@ -25,6 +25,23 @@ describe("blog FAQ extraction for FAQPage JSON-LD", () => {
     }
   });
 
+  it("extracts the foundation 科目B pillar article's FAQ with markdown stripped", () => {
+    const post = getBlogPostBySlug("fe-kamoku-b-taisaku");
+    expect(post).toBeDefined();
+    const faqs = extractFaq(post!.body);
+    // The section added 4 Q&A pairs.
+    expect(faqs).toHaveLength(4);
+    // Q4 contains a markdown link to the algorithm topic pool — its answer must
+    // surface the link text only, never the「](/fe/topic/...)」syntax.
+    const linked = faqs.find((f) => f.answer.includes("アルゴリズム分野の過去問"));
+    expect(linked, "Q4 answer with topic-pool link not found").toBeDefined();
+    expect(linked!.answer).not.toMatch(/\]\(/);
+    for (const f of faqs) {
+      expect(f.question.startsWith("Q")).toBe(false);
+      expect(f.answer).not.toContain("**");
+    }
+  });
+
   it("returns an empty array for a post with no FAQ section", () => {
     const post = getAllBlogPosts().find(
       (p) => !p.body.includes("## よくある質問"),
