@@ -94,6 +94,10 @@ const nextConfig: NextConfig = {
       // unified contact form; redirect so any stale link/bookmark lands there
       // instead of a 404.
       { source: "/feedback", destination: "/contact?type=error", permanent: true },
+      // /testimonials (旧「合格体験記・口コミ / ユーザーの声」) was folded into the
+      // richer /success-stories (「IPA試験 合格体験記｜13区分の合格者ストーリー集」).
+      // 301 protects inbound links / crawl equity for the 合格体験記 intent.
+      { source: "/testimonials", destination: "/success-stories", permanent: true },
     ];
   },
   compress: true,
