@@ -328,3 +328,18 @@
 - 申し送り（セッション17まとめ）:
   - **新角度=事実性監査が当たり**: funnel飽和後の有効な角度として「generators.ts vs exam-data.ts の試験形式数値の矛盾照合＋IPA公式での検証」を実施。(1)FE科目B 90分→100分の誤りを是正(FAQ JSON-LD含む・回帰pin) `56548c4`、(2)SC午後の論文誤framing を事実誤りとして確定しHD-6へ。いずれもIPA公式PDF/ページで authoritative に裏取り。
   - **次の最優先候補**: 事実性監査の継続(論文5区分の午後II字数/時間、AP午前150分・高度免除2年等の数値が IPA公式と一致するか・矛盾箇所のみ最小diff是正。AP午後5問解答/150分・IP100問120分600点・FE科目A60問90分は本セッションで確認済=正)。SC HD-6 の編集方針は人間待ち。残りは従来通り P1-7本丸(§10/broad)・P2-4(設計判断)・AP/FE午後モック=HD-4・essay深リンク=HD-5。
+
+## セッション18（growth ループ）2026-06-02 JST
+- 監査(read-only): session17の事実性監査を継続。generators.ts/exam-data.ts の試験形式数値(問数/時間/字数/配点)をIPA公式で照合。
+- done: [P2-2/事実性] **ITストラテジスト(ST)午後の出題数を是正(午後I 4→3問中2問・午後II 3→2問中1問)**。SHA `fdda1c5`。
+  - 監査: `exam-data.ts` ST.afternoonStrategy が「午後I は事例 **4問中2問**記述、午後II は論文 **3問中1問**選択 2時間」と記載。IPA公式(www.ipa.go.jp/shiken/kubun/st.html・WebFetch実測)で **ST午後I=出題3問/解答2問/90分・午後II=出題2問/解答1問/120分** を確認＝出題数2箇所が誤り(2時間=120分は正)。`p.afternoonStrategy` は3生成器(overview/lastMonth/practice)でレンダされ、st-goukaku-benkyouhou 等の公開記事に伝播。誤値は他exam(11問中5問=AP午後 line87)とは独立=ST固有・本文重複なし(grepで "問中" 該当は exam-data L87/L108 のみ)を確認。
+  - 修正: 出題数2箇所のみ是正(4→3, 3→2・最小diff)。検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1731→1733/build OK)。本番ビルド `blog/st-goukaku-benkyouhou.html` に「3 問中 2 問」×2・「2 問中 1 問」×2 出力・誤値「4 問中 2 問」「3 問中 1 問」**0件**を実測。回帰テスト `blog-generators.test.ts` に ST午後構造(EXAM_PROFILES.st＋公開body両面)を pin。
+- done: [P2-2/事実性] **応用情報の試験当日スケジュールの時間帯を150分窓に整合**。SHA `afbc7d8`。
+  - 監査: `ipa-shiken-moushikomi-nagare`(申込の流れ)の「試験中の流れ(応用情報の場合)」が **午前「10:00〜11:30（150分）」・午後「12:30〜14:00（150分）」**=各90分窓なのに「（150分）」とラベル矛盾。AP午前・午後は共に150分(IPA公式・exam-data AP profile=午前150分/午後150分で確認済)＝時間帯が誤り(自己矛盾)。
+  - 修正: 時間帯を150分窓へ是正(10:00〜12:30 午前／昼休み 12:30〜13:30／13:30〜16:00 午後・「（150分）」ラベルは正につき温存・記事内の9:30着席/9:50説明の narrative と整合する10:00開始を維持)。検証: 全ゲート緑(test1733→1734/build OK)。本番ビルド `blog/ipa-shiken-moushikomi-nagare.html` に「10:00〜12:30 午前試験（150 分）」「13:30〜16:00 午後試験（150 分）」各×2・旧90分窓「10:00〜11:30 午前」「12:30〜14:00 午後」**0件**を実測。回帰テストで150分窓を pin。
+- SKIP(過大修正回避): 合格率レンジの記事間/profile間のゆらぎ(NW: profile13〜15% vs ranking記事15〜18% vs koudo-9kubun記事14〜18%、AU: profile14〜16% vs 記事13〜16% 等)。各記事は「おおむね/約」「年度・季によって変動」「IPA公式で確認」と明示ヘッジ済＝近似レンジで実害なし・合格率は実際に年次変動するため修正は理論のみ。`ipa-shiken-gogo-vs-am` の午前80問前後150分/午後150分/100点満点60点合格も「区分により異なる/標準」とヘッジ済AP一般化で hard error でない＝SKIP。
+- 監査(所見なし・確認した正): SC午後の区分分類は `ipa-koudo-9kubun-chigai`(L4942)で **SC=記述のみ**(論述群ST/SA/PM/SM/AU と明確に区別)＝正・exam-data SC profile も「午後は…長文記述」で正＝sc-ronbun-taisaku(HD-6)が唯一の outlier を再確認。DB午後I 90分3問2問(L3780)・PM午後II 120分2問1問ア〜ウ(L3919/4013)・NW午後I 90分2問選択/午後II 120分1問選択(L5262/5272)・IP 100問120分600点(L3192)・午前I免除2年(複数)・高度9区分・受験料7,500円(L5166)は IPA公式と一致＝正。業種別論述記事(gyoushu-essay-*)に hard な試験形式数値誤りなし・内部リンク `/features/industry-essays` は実在(app/features/[slug]・prerendered 200「業種別 論述事例集 ── ST/SA/PM/SM/AU」)を確認＝dead-linkなし。
+- 申し送り（セッション18まとめ）:
+  - **事実性監査(構造的数値)を継続し2件是正**: (1)ST午後の出題数 4→3問中2問・3→2問中1問(IPA公式 st.html で裏取り) `fdda1c5`、(2)応用情報の当日スケジュール時間帯を150分窓へ整合(自己矛盾の是正) `afbc7d8`。いずれもIPA公式/exam-data SSOTで authoritative に裏取り・回帰テストで pin・最小diff・新規404ゼロ。
+  - **構造的数値(問数/時間/字数/配点)の監査はこれで概ねクリーン**: exam-data profile・主要記事の試験形式数値はIPA公式と一致を確認(残る誤りはSC=HD-6のみ・人間待ち)。合格率レンジは hard error でなくヘッジ済近似＝意図的にSKIP(過大修正回避)。
+  - **次の最優先候補**: 事実性監査は構造的数値が概ね尽きたため、次は別角度=(a)用語・制度の事実性(法令名・規格名・免除条件の細部)、(b)P1-7本丸(科目B問題ページ コパイロット quick-action UI＝§10/broad・要慎重監査)、(c)P2-4(旗艦/essay 横断書籍リスト=設計判断)。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5 は人間待ち継続。
