@@ -226,6 +226,21 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     // FAQ section drives FAQPage structured data via lib/blog/faq.ts extractFaq
     expect(body).toContain("## よくある質問");
   });
+
+  // 応用情報 午後 時間配分/時間切れ longtail article (新設). AP午後 is 150分/5問,
+  // 60点合格; it funnels to the /ap hub + AI copilot (NOT the mock essay grader,
+  // which is HD-4). Pin the exam-format facts and the /ap funnel link.
+  it("ap-gogo-jikan-haibun: correct facts, /ap funnel, FAQ, no essay-grader claim", () => {
+    const post = getBlogPostBySlug("ap-gogo-jikan-haibun");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("150分");
+    expect(body).toContain("60点");
+    expect(body).toContain("(/ap)");
+    // must not over-claim AP afternoon AI grading (mock data — HD-4)
+    expect(body).not.toContain("/essay");
+    expect(body).toContain("## よくある質問");
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
