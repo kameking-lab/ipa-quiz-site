@@ -219,6 +219,20 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P2-5: フリーミアム課金UI（午後AI採点の詳細版/回数無制限を有料境界）は「作るが既定では未有効化/控えめ」。実際の価格・課金有効化は human-decisions へ（勝手に有効化しない）。今は埋もれているので課金の壁で流入を減らさない。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## P-spicy-review triage（`logs/usability-seo-spicy-review-2026-05-26.md` 由来・grounded・優先度順）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+content vein 飽和後の grounded な所見源。**各指摘は着手前に現コードで再検証必須**（s34-94 で多くが既解決のため）。小diff・本番実測・回帰pin・非広域・非HD のみ着手。
+- **[done セッション94]**: SEO-2 /q title 無キャップ → `875b9df`。K-2 /faq「79問」stale → `d0e42a0`。B-2 SearchAction 誤標的 → `a691d96`。SEO-1 /quiz canonical 自己矛盾 → 既解決(現 `app/quiz/page.tsx` canonical:"/"＋noindex,follow)を確認。
+- **[SKIP・実害薄]**: B-3 HowTo/FAQPage 死schema（レビュー自身が「除去しても順位上がらず・残しても数KB増・低優先」と評価＝過大修正寄り）。E-3 sitemap lastmod=now（force-static でビルド時刻確定・per-request でない＝軽微、レビューが過大修正の罠に分類）。
+- **[未着手・grounded候補（次セッション・小diff/非広域/非HD のものから1件ずつ精査）]**:
+  - A-5: `QuizPlayer` のスワイプ(onTouchStart/End)が選択肢onClickと同要素ツリーで `e.preventDefault()` 無し→タップ＋左スワイプ同時で意図せず次問へ（エッジだが実害）。**着手前にスワイプnavを壊さない監査を厚めに**。
+  - A-6: `CopilotMobileSheet`(role="dialog" aria-modal="true") に focus-trap/復帰なし→Tabで背後へ抜ける（WCAG 2.1 モーダル要件）。差別化中核コンポーネントゆえ慎重に。
+  - SEO-5: 孤立ページ `/challenge`・`/referral`（sitemap掲載のみ・内部リンク0）。フッターor機能ハブから文脈内リンク。**ただし着手前に「露出して良い機能か」を確認**（growth系で半完成なら据置＝strategicに要吟味、orphan解消veinのP2-3流儀）。
+  - 使-3: 復習/弱点動線が3系統分散（`/quiz?mode=review`・`/quiz?mode=weakness`・`/review`・`/account/dashboard`）→正規1入口へ集約（UX/routing・中スコープ・要監査）。
+  - H-3: blog→演習の逆方向CTA（worklog では funnel飽和判定済＝重複懸念・着手は要吟味）。K-2系: `/faq` 以外のハードコード件数の有無を機械走査（s94で /faq は解消・他面の stale count を grep で確認）。
+- **[自律着手しない（広域/大型/設計/HD）]**: A-1 CopilotPanel 1,130行分割（広域リファクタ禁止）。使-1 /q に最小回答UIを載せ「読む→解く」ゼロ遷移化（大型機能・アーキ変更）。SEO-4 4分類ハブ(topics/keywords/glossary)の役割階層化・相互canonical（情報設計・HD相当）。K-1 CLAUDE.md の Prisma/NextAuth/40ルート群への追従（プロジェクト指示書の編集＝人間判断）。I-3 /search 0件サジェスト（機能追加）。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P3 — 初動速度（過大投資の罠回避・慎重に）
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - P3-1: 第1弾で「速度は天井近い」と判定済。明確に副作用なく効くものだけ（不要な"use client"削減・画像/フォント読込・不要JS）。体感差の出ない微最適化はSKIP。
