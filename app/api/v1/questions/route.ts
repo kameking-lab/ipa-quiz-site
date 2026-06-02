@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { getSafePdfUrl } from "@/lib/exam-config";
 import { buildRateLimitHeaders, checkApiRateLimit } from "@/lib/api/rate-limit";
 import type { ExamCode, Question, Season } from "@/lib/questions/types";
 
@@ -110,7 +111,7 @@ function toPublic(q: Question) {
     explanation: q.explanation,
     hasImage: q.hasImage,
     imageUrls: q.imageUrls,
-    sourcePdfUrl: q.sourcePdfUrl,
+    sourcePdfUrl: getSafePdfUrl(q.sourcePdfUrl),
     license: q.license,
   };
 }
