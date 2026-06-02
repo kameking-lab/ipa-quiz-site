@@ -1011,3 +1011,22 @@
   - **論文ネタ準備** intent=`pm-essay-shudai-pickup`(4つの問いで題材抽出)既出=general版は saturation。
   - **exam別 blog本数**=最少 sa/es/sm=5(=ほぼテンプレ5生成器のみ)だが全て低volume高度試験で戦略上 deprioritized・他は volume相応。content gap 無し。
 - 申し送り(セッション58): code-side の主要 vein は依然枯渇傾向だが、今回 **dormant だった機能(cross-exam rail)を vetted infra で稼働**させ最大面に新規内部リンクを供給=「枯渇」の中の取り残しを1つ回収。次セッション候補(backlog 参照): (a)**topic-tagger 実行は人間/別タスク**(AI大量発火=loop既定で叩かない・HD相当)＝タグ付与後は crossExam が topic精密へ自動昇格。(b)`related`同分野レール(examPool 先頭5=最古年度寄り)の recency/diversity は marginal・順位測定不可=SKIP寄り。(c)HD群(HD-1/4/5/6/9)=人間待ち。安易な水増しはしない。
+
+## セッション59（growth ループ）2026-06-02 JST
+**P0 新角度: needsReview(404)/placeholder(noindex) 問題が内部リンクレールへ漏れる data-level 死リンクを3面で解消（従来の「404はコード側で網羅完了」の盲点）**
+背景: セッション33で「削除済み・後継なし」404はGONE_PATHSで網羅完了・セッション35で soft-404 も打ち止め と結論していたが、これは **ルート/ページ単位**の話。data に 10件存在する `needsReview: true` 問題（画像のみ選択肢等で /q ページが `notFound()`=404）と placeholder 解説問題（noindex）が、**問題リスト系レールへ無条件に混入**して内部リンク死リンク(404)/noindex リンクを出していた。session58 の cross-exam rail だけが `isLinkableTarget` で除外していたが、同居する旧レール群は未対応。read-only 監査(tsxで corpus 全14,392面を走査)で実測。
+
+- done×1 [P0/cycle1] **/q「関連する問題」「他年度の…問題」レールの 404/noindex リンク除外** SHA `8bf130f`:
+  - 実測(修正前): `related` レールが **needsReview への死リンク106本**(106面)＋placeholder への noindex 13,969本、`otherYears` が noindex 3,686本を出力。両レールは `category` のみで絞り `isLinkableTarget` 未適用だった。
+  - 是正: `lib/questions/related.ts` に `getSameExamRelatedQuestions`/`getSameExamOtherYears`(+`isLinkableTarget` を export)を抽出し page.tsx は委譲。除外を slice 前に適用＝空枠は実問題で補充。同ページ cross-exam rail と規約統一。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1921[+2]/build OK)。本番ビルドHTML `q/sc/2024-autumn/am1/q1`(開発技術)が needsReview の `sc-2009a-am1-q19` を含まず有効同分野リンクのみ描画(死リンク0)。回帰pin2件。
+- done×1 [P0/cycle2] **/q 前後ナビ(prev/next)が needsReview を指す死リンク解消** SHA `1adac15`:
+  - 実測(修正前): 同一回プールに needsReview が混入し隣接問題の prev/next が 404 ページを指す=**18本**。
+  - 是正: 選択ロジックを `getSessionNeighbors`(related.ts・テスト済)へ抽出し `!needsReview` でシーケンス除外(filter.ts の全プール除外と同規約)。placeholder は実200ページゆえ維持。既存 `question-sequential-nav.test.ts` を実関数へ委譲＋`resolves()` を needsReview=404 まで判定するよう強化(従来は data存在のみ確認で404を見逃していた=この盲点の温床)。
+  - 検証: 全ゲート緑(test1924)。corpus全14,392面の prev/next で needsReview先=0(従来18)を tsx 実測。回帰pin。
+- done×1 [P0/cycle3] **/topics/[slug] 索引が needsReview を含み死リンクを出す問題を解消** SHA `9d2b0c6`:
+  - 実測(修正前): `lib/seo/topics.ts::buildIndex()` が ALL_QUESTIONS を無条件にトピック索引化＝`getQuestionsByTopic` を描画する indexable ハブ `/topics/[slug]` が needsReview への **404リンク4本**を出力(topicTags 空ゆえ category fallback で索引)。
+  - 是正: buildIndex で `needsReview` を skip(404ページは索引/リンクしない)。placeholder は維持(ページが「解説準備中」バッジ付きで実200/noindexへリンクする設計)。count も正確化。
+  - 検証: 全ゲート緑(test1926[+2])。本番ビルド topics HTML から sm-2009a-am2-q10/es-2021a-am2-q10/q11/q13 消失(0件)・対象トピック面は有効リンク維持。回帰pin(corpus走査)。
+- **本セッションの read-only 監査(他surfaceは全て clean=対応不要)**: needsReview/placeholder 漏れを全 /q リンク面で点検。sitemap(`getIndexableQuestions`=両除外)・`/[exam]/topic/[category]`・`/[exam]/[yearSeason]`(両者 `getQuestionsByExamStrict`=両除外)・blog related-questions(`getRelatedQuestionsForPost`=両除外)・search index(`question-index.ts`:114/116=両除外)は既に clean。**=needsReview 死リンク vein は3面修正+他面 clean確認で完全打ち止め(計128本の404を解消)**。
+- 申し送り(セッション59): 「ルート単位の404網羅完了」と「data単位の問題が内部リンクへ漏れる」は別問題で、後者は本セッションで打ち止め。残る code-side 候補(backlog 参照): (a)`related`∩`otherYears` の重複リンク 544組(同一問題が同一面で2レールに重複表示=軽微な冗長・404ではない・SKIP寄りだが actionable)。(b)`related` レールの最古年度寄り relevance(session58 candidate b・marginal/順位測定不可=SKIP)。(c)topic-tagger 実行=人間/別タスク(AI大量発火)。(d)HD群(HD-1/4/5/6/9)=人間待ち。安易な水増しはしない。

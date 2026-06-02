@@ -22,6 +22,13 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **[→HD-10] `/q/*`(~12,653件・最大面)は同型だが dynamicParams=false 不可**(ISR設計が必須=sitemap~14k広告・SSGは2024年以降のみ。dynamicParams=false は SSG_MIN_YEAR以前を全404にするリグレッション・コード明記警告)。framework層対応＋production(Vercel/ISR)裏取りが要る(GSC「ソフト404」レポート)＝HD-10。**HD-1のGSC 404一覧と同時確認で soft-404 が主因か切り分け可能**。
   - **[done セッション35]** 残りの「generateStaticParams で有限列挙する page ルート」の soft-404 を網羅解消: `/success-stories/[exam]`+`/success-stories/[exam]/[slug]` `c79bafb`・`/essays/[exam]` `02fae68` に dynamicParams=false を付与し proper 404 化(runtime curl: 有効=200/無効exam・slug・exam不一致=404/control=200・索引リンク=静的セット一致で新規ハード404なし・回帰pin3本)。**=soft-404 はコード側で打ち止め**(他 dynamic ルートは既に dynamicParams=false 済を確認)。残るは `/q/*`(ISR必須でレバー不可)=HD-10 のみ。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
+  - **[確認done セッション59]** sitemap は `getIndexableQuestions()`(`lib/seo/sitemap-pagination.ts`=needsReview＋placeholder の両除外)で生成済＝clean。混入なし。
+- **P0-5 [done セッション59・新角度=data単位の死リンク]**: 「ルート/ページ単位の404網羅完了(s33/35)」の盲点として、data に存在する `needsReview: true` 問題(10件・/q ページが notFound()=404)と placeholder 解説問題(noindex)が**問題リスト系レールへ無条件混入**し内部死リンク(404)/noindex リンクを出していた。session58 cross-exam rail のみ `isLinkableTarget` 済で旧レール群が未対応。corpus全14,392面を tsx で実測し3面修正(計**128本の404**を解消):
+  - cycle1 `8bf130f`: /q「関連する問題」`getSameExamRelatedQuestions`・「他年度の…」`getSameExamOtherYears` を related.ts へ抽出し isLinkableTarget 適用(needsReview404=106本・placeholder noindex=13,969本除外)。
+  - cycle2 `1adac15`: /q prev/next を `getSessionNeighbors` へ抽出し needsReview をシーケンス除外(404=18本)。既存 sequential-nav テストの resolves() を404判定まで強化(盲点の温床だった)。
+  - cycle3 `9d2b0c6`: /topics 索引 `buildIndex()` で needsReview skip(indexableハブの404=4本)。
+  - **他surface=clean確認**: `/[exam]/topic`・`/[exam]/[yearSeason]`(getQuestionsByExamStrict)・blog related-questions(getRelatedQuestionsForPost)・search index(question-index.ts)は既に両除外。**=needsReview 死リンク vein 完全打ち止め**。
+  - **残り(P0-5角度・候補)**: (a)`related`∩`otherYears` の重複リンク 544組(同一問題が同一面で2レール重複・404ではない軽微な冗長・SKIP寄りだが actionable=次セッション要吟味)。(b)`related` 最古年度寄り relevance(session58 candidate b・marginal/順位測定不可=SKIP)。
 - P0-3 [調査done セッション33・コード変更なし]: 旧URL形式の痕跡調査。**結論=ソース側に系統的旧形式なし**。`/q/[exam]/[yearSeason]/[section]/[qnum]` は #38(ac0200f)以来 format不変（builder `lib/seo/question-url.ts`・#407はperf refactorで維持）、section実データは `session:"am"` のみ（am1/am2変遷なし）。flat形式 `/q/ap-2024h-am-q42` は admin metrics mock-data の表示用ダミーのみ（認証配下・非crawlable）。`grep -rE '/q/[a-z]+-[0-9]'`(mock/test除く)=0件＝実crawlableリンクに旧形式なし。**GSC404は外部/履歴由来＝HD-1(人間・GSCエクスポート)継続**。付随: /q indexability は正設計（実問題index/placeholder noindex+sitemap除外/needsReview 404）。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
