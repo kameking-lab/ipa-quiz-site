@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 
 import { generateMetadata as blogPostMeta } from "@/app/blog/[slug]/page";
 import { metadata as blogIndexMeta } from "@/app/blog/page";
+import { metadata as homeMeta } from "@/app/page";
 import { getAllBlogSummaries, getBlogPostBySlug } from "@/data/blog";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { renderBlogFeedXml } from "@/lib/seo/feed-xml";
@@ -66,6 +67,15 @@ describe("renderBlogFeedXml", () => {
     // merges) the root layout's alternates — so a root-level feed type never
     // renders. The blog index is the semantically correct, reliable host.
     const types = blogIndexMeta.alternates?.types as
+      | Record<string, unknown>
+      | undefined;
+    expect(types?.["application/rss+xml"]).toBe("/feed.xml");
+  });
+
+  it("the home page declares feed autodiscovery (bare-domain subscribe)", () => {
+    // Feed readers given just the domain fetch "/" and scan <head>; the home
+    // page overrides alternates so it must declare the feed type itself.
+    const types = homeMeta.alternates?.types as
       | Record<string, unknown>
       | undefined;
     expect(types?.["application/rss+xml"]).toBe("/feed.xml");

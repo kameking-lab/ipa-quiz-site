@@ -39,7 +39,14 @@ const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の過去問を
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    // Feed readers / browser "subscribe" tools fetch the bare domain first and
+    // look for autodiscovery in <head>; /blog and /blog/[slug] already declare
+    // it, but the home page defines its own alternates which REPLACES (not
+    // merges) the root layout's — so the most-checked surface emitted none.
+    types: { "application/rss+xml": "/feed.xml" },
+  },
   // Override the root-layout openGraph/twitter so social shares of the
   // landing page get the same keyword-rich title/description users see in
   // SERPs, not the generic site-wide fallback.
