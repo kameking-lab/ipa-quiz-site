@@ -17,6 +17,12 @@ interface PageProps {
 
 const VALID_EXAMS = new Set(Object.keys(EXAM_LABELS));
 
+// generateStaticParams が体験記を持つ全区分を列挙するため、それ以外の区分は
+// ルータ層で 404 にする（dynamicParams=false）。これがないと無効な
+// /success-stories/{exam} が notFound() を HTTP200 のソフト404として返し、
+// クロール予算を浪費する（/essay deep と同型の修正・セッション34参照）。
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getSuccessStoryExams().map((exam) => ({ exam }));
 }
