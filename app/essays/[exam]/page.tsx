@@ -43,6 +43,12 @@ export async function generateMetadata({
   };
 }
 
+// generateStaticParams が論述区分の全コードを列挙するため、それ以外の区分は
+// ルータ層で 404 にする（dynamicParams=false）。これがないと無効な
+// /essays/{exam} が notFound() を `next start` 上で HTTP200 のソフト404として
+// 返す（深い [qnum] ルートは既に dynamicParams=false・セッション34/35参照）。
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return ESSAY_EXAM_CODES.map((exam) => ({ exam }));
 }
