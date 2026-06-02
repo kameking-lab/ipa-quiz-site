@@ -1,6 +1,7 @@
 "use client";
 
-import { CheckCircle2, AlertTriangle, XCircle, Sparkles, MinusCircle } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, AlertTriangle, XCircle, Sparkles, MinusCircle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type {
@@ -123,6 +124,19 @@ export function EssayResultView({ result, question }: Props) {
           </CardContent>
         </Card>
       )}
+
+      <Link
+        href="/blog/koudo-ronbun-hyouka-rank"
+        className="flex items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm text-zinc-700 transition-colors hover:border-sky-300 hover:text-sky-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200 dark:hover:border-sky-700 dark:hover:text-sky-300"
+      >
+        <span>
+          <span className="font-medium">評価ランク A/B/C/D の判定基準とは？</span>
+          <span className="mt-0.5 block text-xs text-zinc-500 dark:text-zinc-400">
+            午後II論文がA判定（合格）になる基準と、近づけるための答案づくりを解説
+          </span>
+        </span>
+        <ArrowRight className="h-4 w-4 flex-shrink-0" />
+      </Link>
 
       <p className="text-center text-xs text-zinc-500 dark:text-zinc-400">
         ※ AI 採点は学習補助です。実際の合否判定とは異なる場合があります。
