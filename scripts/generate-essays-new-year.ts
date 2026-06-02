@@ -14,6 +14,7 @@
 import { readFileSync, writeFileSync, appendFileSync, existsSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { getSafePdfUrl } from "@/lib/exam-config";
 
 function loadEnvFile(path: string): void {
   const full = join(process.cwd(), path);
@@ -516,7 +517,10 @@ function renderMainFile(
   const constName = constantBaseName(exam.id, year, exam.season);
   const indConst = industriesConstName(exam.id, year, exam.season);
   const seasonLabel = exam.season === "spring" ? "春" : "秋";
-  const pdfUrl = pdfUrlFor(exam.id, year, exam.season);
+  // Gate the (now dead, NXDOMAIN) jitec 出典 URL through getSafePdfUrl so the
+  // persisted pdfUrl degrades to the live IPA index — matching the serve-time
+  // gate and keeping at-rest data honest per CLAUDE.md §8 (see exam-config.ts).
+  const pdfUrl = getSafePdfUrl(pdfUrlFor(exam.id, year, exam.season));
   const ma = result.modelAnswer.essay;
   return `// ${exam.id.toUpperCase()} 午後II 練習用オリジナル問題（IPA過去問の形式を模して作成）。
 // テーマ: ${theme.title}（${year}年${seasonLabel}期）
