@@ -209,7 +209,7 @@ export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
       "午後はインシデント対応・脆弱性診断・運用設計の長文記述。各シナリオで対策を 3 段階（予防・検知・対応）で書き分ける訓練が有効。",
     hardSpots: ["TLS 1.3 / OAuth 2.1", "Active Directory 攻撃手法", "クラウド IAM / SaaS セキュリティ"],
     exampleSubjects: ["インシデントレスポンス", "脆弱性診断", "セキュリティ統制"],
-    career: "登録セキスペ（RISS）として 3 年ごとの更新で有効な業務独占に近い専門資格。",
+    career: "登録セキスペ（RISS）として 3 年ごとの更新で維持する、セキュリティ分野の名称独占資格（業務独占ではない）。",
   },
   sm: {
     code: "sm",

@@ -396,6 +396,28 @@ describe("blog 旗艦 ST post — 午後 structure facts are correct (3問中2�
   });
 });
 
+// 情報処理安全確保支援士(登録セキスペ/RISS)は「名称独占」資格であり「業務独占」ではない
+// (IPA seido/shikumi.html・METI 資料: 独占業務は存在せず、登録者だけが名称を名乗れる)。
+// EXAM_PROFILES.sc.career はかつて「業務独占に近い」と誤記し、overview/lastMonth/practice の
+// 生成記事(sc-goukaku-benkyouhou 等・indexable)に伝播していた。さらに rirekisho 記事は IPA
+// 試験を「能力認定試験」と正しく対比している(業務独占=弁護士/税理士/建築士)ため、「業務独占に
+// 近い」は自サイト内でも不整合だった(session21-32 の称号/事実性是正と同系)。名称独占の表記を pin。
+describe("blog SC career — RISS は名称独占であり業務独占ではない", () => {
+  it("EXAM_PROFILES.sc.career states 名称独占, not 業務独占に近い", () => {
+    const c = EXAM_PROFILES.sc.career;
+    expect(c).toContain("名称独占");
+    expect(c).not.toContain("業務独占に近い");
+  });
+
+  it("sc-goukaku-benkyouhou body carries the corrected 名称独占 framing", () => {
+    const post = getBlogPostBySlug("sc-goukaku-benkyouhou");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("名称独占");
+    expect(body).not.toContain("業務独占に近い");
+  });
+});
+
 // NW(ネットワークスペシャリスト) is NOT an essay(論述) exam: IPA official
 // (shiken/kubun/nw.html) lists both 午後I and 午後II as 記述式. This is consistent
 // with the codebase SSOT — ESSAY_EXAM_CODES (lib/essay/load) excludes nw, and
