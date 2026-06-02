@@ -843,3 +843,17 @@
   - **FAQ vein の最大の取り残し=テンプレ生成52記事を発見**(個別記事のFAQ化は session42-46 でほぼ枯れたが、テンプレ生成群は未着手だった)。本セッションで2テンプレ(頻出論点/直前1ヶ月=計26記事)をFAQPage化。**テンプレFAQの鉄則**: ①13区分横断ゆえ午前/午後/科目の形式特定を避ける(IP/SG/FE誤記=HD-9回避) ②旗艦/土台funnelは既存ゲート(ESSAY_FLAGSHIP_EXAMS/exam==="fe")を踏襲し非論文区分には出さない ③本文既存事実のみ引用・quota/価格はSSOT or 非記載。
   - **次の最優先候補(残テンプレ2本=26記事)**: `buildPracticePost`(`{exam}-yoru-tokurensyu`・夜特訓/実戦演習・L348〜)と `buildAnalysisPost`(`{exam}-jisseki-mondai-bunseki`・実績問題分析・L450〜)が FAQ未設置。同じ鉄則(format-agnostic+既存ゲート踏襲)でFAQPage化すれば残り26記事を一掃できる(vein太い)。**着手前に各テンプレ body を精読**し本文事実と整合するQ&Aを作ること。
   - その後の候補: テンプレ4本完了後はFAQ vein枯渇に近づく→新P2/P3角度起案 or HD群(HD-1〜HD-10)の人間入力待ち。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## セッション47（2026-06-02）— FAQ vein 仕上げ: 残テンプレ2本(26記事)+ 個別厚記事3本
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- done: [P2-2/テンプレ一括] **過去問解き方 buildPracticePost + 出題傾向分析 buildAnalysisPost に FAQ追加→残26記事(各13区分)を一括FAQPage化**。SHA `561a6ad`。
+  - 監査: session46 申し送りの最優先=残テンプレ2本。各 body 精読し本文事実と整合する format-agnostic 4Q&Aを作成。
+  - 実装: **practice** = flagshipEssayCta/kamokuBCta の既存ゲート(ESSAY_FLAGSHIP_EXAMS / exam==="fe")を FAQ短縮CTA(faqEssayCta/faqKamokuBCta)で踏襲。Q&A=過去問何周/AIコパイロット活用/誤答復習タイミング/4モード使い分け。**analysis** = 論述writing節が無いため frequentTopics同様に**非essay funnel**(分野別モード+/exam・/essay非送客)。Q&A=出題傾向の変化/増加論点対策/捨て論点基準/学習配分。format特定を厳禁(HD-9回避)・本文事実厳密整合。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡mjsのみ〕/test1906/build OK)。本番ビルドで **26記事(13×2)=FAQPage×1+Question×4**・gating厳密(practice論文5区分=/essay3[body+FAQ+footer]/非論文=1[footer]・analysis全区分=1[footer]・practice科目B=fe2/他0)を実測=新規404ゼロ。回帰pin2件追加(全5生成器の FAQ存在 + analysis非essay)。
+  - **★節目: 5生成器(overview/lastMonth/frequentTopics/practice/analysis)すべてFAQPage化完了=テンプレFAQ vein枯渇。**
+- done: [P2-2/個別] **IT資格 組み合わせ戦略 ipa-shiken-kumi-awase-senryaku をFAQPage化**(最厚3163字の未設置記事)。SHA `d3adc93`。キャリア戦略の非essay記事=旗艦/essay非送客(footer1)。Q&A=取得順/セキュリティ組み合わせ/数より組み合わせ/日系外資の評価差。本番ビルドでFAQPage×1+Q×4・/essay=1実測。corpus-wide blog-faq-jsonld 自動カバー。
+- done: [P2-2/個別] **学習法longtail2本をFAQPage化**。SHA `f7cde07`。分散学習 `kakomon-spaced-repetition-jissen`(復習タイミング/ライトナー/自動化/直前期)・誤答ふりかえり `kakomon-modori-3step`(見直し手順/4分類/時間配分/自動化)。非essay=footer1・復習モード(/quiz?mode=review)/AIコパイロット/学習計画へ funnel。本番ビルドで各FAQPage×1+Q×4実測。
+- 申し送り（セッション47）:
+  - **テンプレFAQ vein完全枯渇**(5生成器×13区分=全FAQPage化)。個別記事は body長スキャン(`scripts/_faqscan.mts` 相当・getAllBlogPosts→`## よくある質問`正規表現)で **FAQ未設置=42/165記事** 残るが、上位は要注意フラグ多数: `ap-gogo-sentaku`(HD-4 AP午後モック=旗艦送客不可)・`sc-ronbun-taisaku`(HD-6 SC午後frame事実性未決でFAQ化保留)・`ipa-saishin-doukou`/`ai-shaken-saizensen-2026`(年次snapshot=auto-advance SKIP)・`gyoushu-essay-*`3本(ST/PM/SA論文=次セッションの好候補・旗艦/essay funnel可)。
+  - **次セッション候補(clean・actionable)**: `shaiin-bunkatsu-plan-3pattern`(2224)・`goukakusha-100nichi-plan`(1806)・`goukakusha-shukan-review`(1790)・`ai-vs-yobikou-tsukaiwake`(1771)・`mobile-katate-juken-jutsu`(1883)・`ipa-shiken-zenkubun-hikaku`(1539) 等の学習法/キャリア系general記事。**gyoushu-essay-{kinyuu-strategy/seizou-pm/koukyou-sa}** は論文区分ゆえ Q4で旗艦/essay funnel可(参考評価明記)。**鉄則**: 本文事実厳密整合・非論文は/essay非送客・論文区分のみ旗艦送客・quota/価格はSSOT or 非記載・format特定回避。各記事の body精読を先に。
