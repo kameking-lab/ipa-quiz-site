@@ -1301,3 +1301,24 @@
   - 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 2019 / build OK)＝commit前に単独実行。
 - done(docs): SHA `8a61111` **HD-9 スコープ訂正**(実測・コード変更なし)。HD-9は「overviewテンプレだけが旧前提」と記載していたが不正確。generators.tsを午前/午後語で全走査し、`buildLastMonthPost`(L206/212「午前試験/午後試験」)・`buildFrequentTopicsPost`(L317「午前試験・午後試験ともに」)・`buildPracticePost`(L443/447「午後・論文への接続/午前で…午後の長文」)も IP/SG/FE含む全13区分でpre-2023 午前/午後framingをハードコードと判明(buildAnalysisPostのみclean)。影響=計12 live indexable面。HD-9解決時は4生成器をコヒーレントに(部分修正は記事間不整合)。editorial/構造リライトゆえ自律実行せず human-decisions に追記。
 - **vein掘り残し確認**: 土台=科目Bの「実演」veinは合計/最大値/線形探索の基本3パターンで初手をカバー。より発展的なパターン(二分探索/再帰/整列のトレース実演)は別記事化可だが、まず本記事のintent(「読めるのに解けない」初手)で様子見(量産しない・s25「1記事=確実」)。次セッションは backlog の残未着手or本veinの発展パターンを1つ吟味。
+
+## セッション82（growth ループ｜2026-06-02 JST）
+**土台=科目B「発展パターン」vein の最初の1本=二分探索のトレース実演記事を追加（頻出と名指しされながら実演が不在だった盲点を解消）**
+背景（着手前 read-only 監査）:
+- link audit=0 FATAL/0 WARN(176本)・fact/funnel/per-exam非対称/dead-link は done/SKIP/HD で枯渇を再確認。
+- s81 申し送り「発展パターン(二分探索/再帰/整列)は1つ吟味」を消化。`grep 二分探索 data/blog/generators.ts`=**6箇所**ヒットだが、
+  全て `fe-kamoku-b-wakaranai`/`fe-kamoku-b-taisaku`/`fe-algorithm-nigate-kokufuku` 等で「頻出パターン: 線形探索・二分探索・ソート・再帰」と
+  **名前を挙げるだけ**で、1行ずつトレースして見せる実演は不在。s81 の trace-renshu は線形探索まで（二分探索は未実演）。
+  ＝二分探索＝科目B最頻出かつ最難関(lo/hi/mid の3変数同時更新)なのに実演ゼロ＝明確な gap。新規キーワード新規ページは saturation と別(s25 endorse)。
+- done×1 [P1-6 土台/新記事] SHA `36d0ea7` 新記事 `fe-kamoku-b-nibun-tansaku`「二分探索のトレース練習｜ソート済み配列を半分ずつ絞り込む」。
+  - 擬似言語は全オリジナル(IPA過去問・サンプル非転載)・記法早見表/trace-renshu と notation一致(←代入/配列1始まり/÷整数除算切り捨て)。
+    A={2,5,8,11,14,17,20}(昇順ソート済・要素数7)で **見つかる(key=14→位置5)** と **見つからない(key=10→lo>hi で終了・位置-1)** の両ケースを
+    GFMトレース表(lo・hi・mid・A[mid]・判定・更新後(lo,hi)・位置)で実演。**全トレース値を手計算で検算**。
+    つまずき3点(mid整数除算切り捨て/lo←mid+1の±1忘れで無限ループ/ソート済み前提)を解説。
+  - 土台funnel: /fe・trace-renshu・記法早見表・3ステップ訓練法・わからない・科目B完全対策・/fe/topic(科目A相当と明示framing=誇大回避)・AIコパイロット。**旗艦/essay非送客**(土台=非論文)。
+  - inbound: 親 trace-renshu の例3(線形探索)結びから1リンク配線(orphan回避)。relatedSlugs=trace-renshu/記法早見表/pseudo-language/taisaku(全科目B on-topic)。FAQPage化(4Q&A)。
+  - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-nibun-tansaku.html`(150KB)・核心事実(ソート済み/商の整数部分/lo&gt;hi/要素番号は1から始まる/ループ回表)・/fe/topicリンク・FAQPage JSON-LD(「二分探索はソートされていない配列でも使えますか」)をHTML実測。body markdown ](/essay=0(href="/essay"の1件はfooter chrome)。link audit 0 FATAL/0 WARN(176→177本)。回帰pin `fe-kamoku-b-nibun-tansaku-funnel.test.ts`(7件)。
+  - 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 2026 / build OK)＝commit前に単独実行・緑目視。
+- done×1 [P1-6 土台/inbound強化] SHA `6226398` `fe-kamoku-b-wakaranai` タイプC(時間内に解けない)の「頻出パターンを反射で見抜く: 線形探索・二分探索・ソート・再帰」節から、
+  trace-renshu＋新 nibun-tansaku の2実演へ additive で配線。二分探索を名指しする最も自然な文脈で、s13-15/s40 の saturation判断時に存在しなかった**新記事への新規高relevance inbound**(旧funnel再飽和ではない)。本番HTML実測=wakaranai に nibun-tansaku リンク2行render・link audit 0 FATAL/0 WARN。全ゲート緑。
+- **vein掘り残し（次セッション候補・要吟味）**: 二分探索を実演化＝発展パターン veinの2本目(基礎3本=trace-renshu＋二分探索=nibun-tansaku)。**残る発展パターン=整列(バブル/選択ソート)・再帰(階乗/フィボナッチ)・スタック/キュー**のトレース実演は別記事化可だが、**s25「1記事=確実」/s81「様子見・量産しない」を尊重し、本セッションは二分探索1本に絞った**。次セッションが本veinを続けるなら1本ずつ・手計算検算必須。HD群(HD-1/4/5/6/8/9/10/11)/topic-tagger=人間待ちは不変。1改善=確実を維持。
