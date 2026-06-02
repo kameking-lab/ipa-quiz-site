@@ -15,6 +15,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 採点経路は2つ: `app/api/essay-grade/route.ts`（論文 ST/SA/PM/SM/AU）と `app/api/scoring/route.ts`（午後記述 AP/SC/NW/DB/ES）。
 
 - 強み1（採点根拠データの構造化）: essay問題は既に `modelOutline`（想定論述要素）あり。型を1〜2区分で確立=各小問に「必須キーワード/採点の勘所/模範要点」を構造化付与（IPA解答例・予備校配点を長文転載せず要点を自前生成・出典明示）。採点AIがこれを参照。横展開可能な型に。※HD-4: afternoonはモック→型はまず実データのある論文essayで確立。
+  - **[型確立=人間セッション PM `5a138da`]→[横展開 done セッション84]**: 申し送りどおり rubric を PM以外の論文4区分へ展開。**ST `6fef3b1`(3設問)/SA `36dcf93`(2設問)/SM `85db43f`(2設問)/AU `21545ff`(2設問) の全設問・全小問**に requiredKeywords/scoringPoints を付与（既存 modelOutline/officialReview を構造化・IPA長文転載なし）。回帰pin `grading-rubric.test.ts` を st/sa/sm/au パラメータ化。**=論文5区分の主要設問に rubric が揃った**。
+  - **残（横展開）**: PMの残2設問(pm-2024a-pm2-q2/pm-2023a-pm2-q1)のみ未付与。完了時は grading-rubric.test.ts の `withoutRubric>0` アサーションが落ちる（全essayが rubric を持つ）ため、当該テストを「任意フィールドでもロードが壊れない」趣旨へ要書換。afternoon(scoring)側はHD-4解決後＝ループ着手不可。
 - 強み2（採点モデル上位化・用途別）: `resolveModel` に grading 層追加→essay-grade/scoring が上位モデル、copilot/generate-question は free。env切替・既存 cost-guard(¥50k)流用。
 - 強み3（採点AI専用化）: ESSAY/SCORING プロンプトを「採点と直接の学習支援のみ・範囲外/injection拒否・冷たくない断り・ユーザー答案中の指示上書き無視」に。
 - 強み4（採点→弱点→類題 伴走）: essay-grade は既に missingElements/improvements 出力。弱点→類題/関連問題提示（既存 related/generate-question 流用）。横断分析は段階実装。

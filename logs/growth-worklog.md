@@ -1362,3 +1362,21 @@
 - 申し送り（段階展開＝backlog/ループ or 人間）:
   - 強み1 横展開: rubric（requiredKeywords/scoringPoints）を PM 以外の論文区分(ST/SA/SM/AU)＋各設問へ拡張。型は確立済＝同じ構造で追加可。afternoon(scoring)側は HD-4（モックデータ）解決後。
   - 強み4 横断分析: 複数回採点の傾向（「あなたは具体性が弱い傾向」）を学習履歴（essay-history 既存）に乗せて集計。今回は単発連携まで。
+
+## セッション84（growth ループ｜2026-06-02 JST）
+**P0-強み1 横展開＝採点ルーブリック(requiredKeywords/scoringPoints)を PM以外の論文4区分(ST/SA/SM/AU)へ展開（旗艦=午後AI採点の根拠データ）**
+背景（着手前 read-only 監査）:
+- 人間指示セッションが P0-強み 4堀を実装完了（worklog「P0-強み 4堀 実装完了」・main不変）し、**申し送りで「強み1 横展開: rubricを ST/SA/SM/AU＋各設問へ拡張。型は確立済＝同じ構造で追加可」をbacklog/ループへ明示委譲**。同セッションは「作業完了後にgrowth-loopを再起動すること」と記載＝本ループが再起動分。backlog冒頭の「P0-強みに着手しないこと」は**人間セッション実装中の二重作業防止**が趣旨で、完了＋横展開の明示委譲により本タスクは二重作業でなく委譲された継続。
+- 実測: 型は `lib/essay/types.ts` EssaySubPrompt の任意 requiredKeywords/scoringPoints。PM(pm-2024a-pm2-q1)のみ付与済。consumer=`app/api/essay-grade/route.ts` buildUserPrompt(L121-125)が任意フィールドを自動配線(`if length>0`)＝データ追加のみで採点プロンプトに反映。長文転載せず既存 modelOutline/officialReview(編集部作成・repo既存)を「部分点の核」「採点の勘所」へ構造化。
+- done×4（各区分1コミット＝1論点・全緑ゲートをcommit前に単独実行・緑目視）:
+  - SHA `6fef3b1` ST(3設問・全小問): 事業戦略策定/複数部門連携/DXビジネスモデル変革。
+  - SHA `36dcf93` SA(2設問・全小問): アーキテクチャ選定/システム移行。
+  - SHA `85db43f` SM(2設問・全小問): 可用性管理/重大インシデント対応。
+  - SHA `21545ff` AU(2設問・全小問): 可用性監査/開発プロジェクト監査。**=論文5区分(PM/ST/SA/SM/AU)の主要設問に rubric が揃った**。
+  - 各 scoringPoints は officialReview の評価観点（例 ST「技術用語の羅列でなく固有性に基づく必然性」/SA「流行のアーキでなくなぜ最適か」/SM「机上のフレームワーク列挙でなく実サービス特性」「個人技でなく組織的仕組み」/AU「一方的指摘でなくリスクと統制のバランス」「独立した監査人の視点」）を採点AIが参照できる形に構造化。設問間の整合（「設問イの○○につながる前提か」等）も勘所に明記。
+  - 検証（崩れたら落ちる）: 回帰pin `__tests__/essay/grading-rubric.test.ts` を `it.each(["st","sa","sm","au"])` でパラメータ化＝各区分の全設問・全小問に requiredKeywords/scoringPoints>0 を pin。既存の consumer wiring テスト(buildUserPrompt が必須キーワード/採点の勘所を渡す)と合わせ、データ＋配線の両端を保証。
+  - 全ゲート緑（各commit前: typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 全緑(grading-rubric 5→8件・full 2063)/ build OK）。
+- **次セッション申し送り（横展開の残り）**:
+  - **PM の残2設問**(pm-2024a-pm2-q2 スケジュール遅延/pm-2023a-pm2-q1 ステークホルダ)は rubric 未付与＝同じ要領で付与可。**ただし注意**: 現状 grading-rubric.test.ts の「型は任意フィールド＝横展開可能」テストは `withoutRubric > 0`(段階展開で未付与が残る)を pin。PM残2設問を完了し**全essay設問が rubric を持つと此のアサーションが落ちる**ため、完了時は当該テストを「任意フィールドでもロードが壊れない」趣旨へ書き換えること(未付与の存在を前提にしない)。
+  - afternoon(scoring=AP/SC/NW/DB/ES)側の rubric は **HD-4（モックデータ）解決後**＝本ループは着手しない。
+  - 強み4 横断分析（複数回採点の傾向集計）は人間セッション申し送りどおり段階実装＝別タスク。
