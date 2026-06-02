@@ -45,4 +45,14 @@ describe("/recommended-books/[exam] — 論述区分の旗艦 /essay CTA", () =>
     // FE(擬似言語)ではなく長文の事例問題である旨を明示（誇大回避・区分混同防止）
     expect(source).toMatch(/code === "sg"[\s\S]*事例問題/);
   });
+
+  it("記述式午後区分(AP/NW/DB/SC/ES)のみ記述式の書き方記事へ funnel する", () => {
+    // 記述式午後ゲートで部分点記事へ
+    expect(source).toContain('href="/blog/gogo-kijutsu-buhanten"');
+    expect(source).toMatch(/isDescriptiveAfternoonExam[\s\S]*gogo-kijutsu-buhanten/);
+    // ゲートの単一情報源が記述式午後5区分である（旗艦/essay には送らない＝記述式≠論文の誇大回避）
+    expect(source).toMatch(
+      /DESCRIPTIVE_AFTERNOON_EXAMS[^=]*=\s*\[\s*"ap",\s*"nw",\s*"db",\s*"sc",\s*"es"\s*\]/,
+    );
+  });
 });

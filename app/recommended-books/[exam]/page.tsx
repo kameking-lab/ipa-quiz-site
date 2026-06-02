@@ -39,6 +39,11 @@ const EXAM_CODES: ExamCode[] = [
   "au",
 ];
 
+// 記述式午後を持つ区分。論文(論述5区分)でも科目B(FE/SG)でもないが、
+// 午後対策本の読者は「記述式の答案の書き方=部分点の取り方」が自然な次の一歩。
+// 旗艦/essay(論文5区分採点)には送らず=記述式≠論文の誇大回避(s27/s64 precedent)。
+const DESCRIPTIVE_AFTERNOON_EXAMS: ExamCode[] = ["ap", "nw", "db", "sc", "es"];
+
 const EXAM_INTROS: Record<ExamCode, string> = {
   ip: "ITパスポート(IP)はIT基礎教養を問う入門区分。IT未経験の社会人・学生でも、市販テキスト＋過去問演習だけで十分合格を狙えます。",
   sg: "情報セキュリティマネジメント(SG)は管理者・利用者向けセキュリティ区分。法務・組織論まで幅広く問われるため、網羅的なテキストが効きます。",
@@ -116,6 +121,7 @@ export default async function RecommendedBooksExamPage({
   // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
   // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
   const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
+  const isDescriptiveAfternoonExam = DESCRIPTIVE_AFTERNOON_EXAMS.includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
 
   const productOgUrl = (book: RecommendedBook) => {
@@ -370,6 +376,18 @@ export default async function RecommendedBooksExamPage({
               科目Bの事例問題の解き方
             </Link>
             を読み、AIコパイロットに長文を整理してもらいながら設問を1問ずつ解き進めましょう。
+          </p>
+        )}
+        {isDescriptiveAfternoonExam && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            午後の記述式は、知識があっても答案の書き方で部分点を落としがちです。
+            <Link
+              href="/blog/gogo-kijutsu-buhanten"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              記述式で部分点を落とさない答案の書き方
+            </Link>
+            を読み、本文語句の流用・設問の語尾合わせを押さえてから演習に入りましょう。
           </p>
         )}
       </section>
