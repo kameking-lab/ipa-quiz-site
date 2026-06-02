@@ -17,6 +17,7 @@ import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { getCrossExamRelatedQuestions } from "@/lib/questions/related";
 import {
   formatLastUpdatedJa,
   getLastUpdatedISO,
@@ -202,16 +203,13 @@ export default async function QuestionPage({
     return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, 5);
   })();
 
-  const tagSet = new Set(q.topicTags);
-  const crossExamByTopic =
-    q.topicTags.length > 0
-      ? ALL_QUESTIONS.filter(
-          (x) =>
-            x.id !== q.id &&
-            x.exam !== q.exam &&
-            x.topicTags.some((t) => tagSet.has(t)),
-        ).slice(0, 5)
-      : [];
+  // Cross-exam discovery trail. With topicTags populated this ranks by shared
+  // tags; while tags are unset corpus-wide it falls back to the IPA common-skill
+  // category groups (AP/FE/IP/SG shared curriculum) so the rail still seeds
+  // cross-exam internal links from /q instead of staying empty. Indexable
+  // targets only — never links to needsReview (404) or placeholder pages.
+  const { questions: crossExamByTopic, mode: crossExamMode } =
+    getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
@@ -623,13 +621,17 @@ export default async function QuestionPage({
 
       {/* Cross-exam related — by shared topicTags */}
       {crossExamByTopic.length > 0 && (
-        <section aria-label="他試験の同テーマ問題" className="print:hidden mt-10">
+        <section aria-label="他試験区分の関連問題" className="print:hidden mt-10">
           <div className="mb-4">
             <h2 className="text-lg font-bold tracking-tight text-foreground">
-              他試験の同テーマ問題
+              {crossExamMode === "topic"
+                ? "他試験の同テーマ問題"
+                : "他試験区分の同分野問題"}
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              トピック「{q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問
+              {crossExamMode === "topic"
+                ? `トピック「${q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問`
+                : `${examLabel(q.exam)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
             </p>
           </div>
           <ul className="flex flex-col gap-2">
