@@ -1322,3 +1322,16 @@
 - done×1 [P1-6 土台/inbound強化] SHA `6226398` `fe-kamoku-b-wakaranai` タイプC(時間内に解けない)の「頻出パターンを反射で見抜く: 線形探索・二分探索・ソート・再帰」節から、
   trace-renshu＋新 nibun-tansaku の2実演へ additive で配線。二分探索を名指しする最も自然な文脈で、s13-15/s40 の saturation判断時に存在しなかった**新記事への新規高relevance inbound**(旧funnel再飽和ではない)。本番HTML実測=wakaranai に nibun-tansaku リンク2行render・link audit 0 FATAL/0 WARN。全ゲート緑。
 - **vein掘り残し（次セッション候補・要吟味）**: 二分探索を実演化＝発展パターン veinの2本目(基礎3本=trace-renshu＋二分探索=nibun-tansaku)。**残る発展パターン=整列(バブル/選択ソート)・再帰(階乗/フィボナッチ)・スタック/キュー**のトレース実演は別記事化可だが、**s25「1記事=確実」/s81「様子見・量産しない」を尊重し、本セッションは二分探索1本に絞った**。次セッションが本veinを続けるなら1本ずつ・手計算検算必須。HD群(HD-1/4/5/6/8/9/10/11)/topic-tagger=人間待ちは不変。1改善=確実を維持。
+
+## セッション83（growth ループ｜2026-06-02 JST）
+**P1-6 土台×「解き方の実演」発展パターン vein 3本目=ソート(選択ソート)のトレース実演を新設**
+背景: s81 trace-renshu(線形探索ほか)・s82 nibun-tansaku(二分探索)で「発展パターン」veinを開始。コーパスの科目B記事は「頻出パターン=線形探索・二分探索・ソート・再帰」と名指しするのに(wakaranai タイプC/trace-renshu)、**ソート(整列)を擬似言語で1行ずつトレース実演する記事が不在**だった盲点を解消。名指し順(線形→二分→ソート→再帰)の次=ソート。
+- done×1 [P1-6 土台/新vein] SHA `7eeb621`: 新記事 `fe-kamoku-b-sort-trace`「ソート（整列）のトレース練習｜選択ソートで最小値を前へ運ぶ」。
+  - 新しい難所=**二重ループ(外側 i・内側 j)**。二分探索までは単ループ、ここで初めてネストループの添字追跡を扱う(非重複)。A={5,2,8,1,9}を選択ソートで昇順整列する例を、内側ループ(i=1)の min 更新表＋外側4周の配列状態表で実演。
+  - **全値を手計算検算**(python で trace 照合: i=1→[1,2,8,5,9] / i=2 交換なし / i=3→[1,2,5,8,9] / i=4 交換なし / sorted=[1,2,5,8,9])。擬似言語は全オリジナル(IPA非転載)・記法早見表と notation一致(←/配列1始まり)。
+  - つまずき3点(min は値でなく**位置(添字)**/交換は**tmp 経由3行**でないと値が消える/内側ループは **i+1 から**)を解説。バブルソートは「隣接交換」と1段落で対比(全トレースはせず=1記事=確実)。
+  - 土台funnel: /fe・nibun-tansaku・trace-renshu・記法早見表・3ステップ訓練法・わからない・科目B完全対策・/fe/topic(科目A相当と明示framing=誇大回避)・AIコパイロット。**旗艦/essay非送客**(土台=非論文)。
+  - inbound: 親 nibun-tansaku「次のステップ」＋ wakaranai タイプC頻出パターン節の2面に additive 配線(orphan回避・s13-15/s40 saturation判断時に未存在の新記事への新規高relevance inbound)。relatedSlugs=nibun-tansaku/trace-renshu/記法早見表/taisaku(全科目B on-topic)。FAQPage化(4Q&A)。
+  - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-sort-trace.html`(150KB)・選択ソート×13/「見つけた min」表セル/FAQPage JSON-LD をHTML実測。body markdown `](/essay`=0(href="/essay"の1件はfooter chrome)。inbound 2面(nibun-tansaku・wakaranai)でリンクrender実測・outbound 6本(科目B記事)全prerendered 200(新規404ゼロ)・sitemap(blog.xml.body)収録。回帰pin `fe-kamoku-b-sort-trace-funnel.test.ts`(7件)。
+  - 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 2033 / build OK)＝commit前に単独実行・緑目視。
+- **vein掘り残し（次セッション候補・要吟味）**: 発展パターン vein=線形(s81)→二分探索(s82)→ソート/選択(s83)。**残る発展パターン=ソートの別種(バブルソートの完全トレース)・再帰(階乗/フィボナッチ・コールスタック)・スタック/キュー**のトレース実演は別記事化可。s25「1記事=確実」/s81「様子見・量産しない」を尊重し、本セッションはソート1本に絞った。次セッションが続けるなら**再帰(コールスタックという新概念で非重複・高つまずき)**が最有力候補・1本ずつ・手計算検算必須。HD群(HD-1/4/5/6/8/9/10/11)/topic-tagger=人間待ちは不変。1改善=確実を維持。
