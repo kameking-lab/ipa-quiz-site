@@ -8,6 +8,7 @@ import { examLabel, formatYearSeason } from "@/lib/utils";
 import { getAfternoonYearSeasons, getAfternoonByYearSeason } from "@/lib/afternoon/load";
 import { Badge } from "@/components/ui/badge";
 import { AfternoonDisclaimer } from "@/components/afternoon/AfternoonDisclaimer";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
   "ap",
@@ -123,6 +124,11 @@ export default async function AfternoonIndexPage({
         <div className="mb-8">
           <AfternoonDisclaimer />
         </div>
+
+        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)から
+            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
+            コンポーネントが ESSAY_EXAM_CODES で self-gate するため非論述区分には出ない。 */}
+        <AfternoonEssayHint exam={code} />
 
         {code === "fe" && (
           <div className="mb-8">
