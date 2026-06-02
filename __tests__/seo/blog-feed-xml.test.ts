@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { generateMetadata as blogPostMeta } from "@/app/blog/[slug]/page";
 import { metadata as blogIndexMeta } from "@/app/blog/page";
 import { getAllBlogSummaries, getBlogPostBySlug } from "@/data/blog";
 import { SITE_BASE_URL } from "@/lib/seo/config";
@@ -64,6 +65,14 @@ describe("renderBlogFeedXml", () => {
     const types = blogIndexMeta.alternates?.types as
       | Record<string, unknown>
       | undefined;
+    expect(types?.["application/rss+xml"]).toBe("/feed.xml");
+  });
+
+  it("/blog/[slug] also declares feed autodiscovery (subscribe from an article)", async () => {
+    const meta = await blogPostMeta({
+      params: Promise.resolve({ slug: posts[0].slug }),
+    });
+    const types = meta.alternates?.types as Record<string, unknown> | undefined;
     expect(types?.["application/rss+xml"]).toBe("/feed.xml");
   });
 
