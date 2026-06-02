@@ -20,6 +20,34 @@ const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   body: ESSAY_DESCRIPTION,
 }).toString()}`;
 
+// Objection-handling FAQ for the flagship hub. Single source for both the
+// rendered <section> and the FAQPage JSON-LD so the visible text and structured
+// data can never drift. Content is strictly factual: covered exams come from the
+// 論文5区分 only (no AP/FE over-claim), accuracy is framed as 参考評価, and no
+// quota/price numbers are asserted (those are 承認必須 / SSOT-owned elsewhere).
+const ESSAY_FAQ: { question: string; answer: string }[] = [
+  {
+    question: "AI 論述添削は何の試験区分に対応していますか？",
+    answer:
+      "午後II に論述（論文）が出題される高度試験5区分 ── ITストラテジスト・システムアーキテクト・プロジェクトマネージャ・ITサービスマネージャ・システム監査技術者 ── に対応しています。設問ア・イ・ウの記述を AI が添削します。",
+  },
+  {
+    question: "AI の採点はどのくらい正確ですか？",
+    answer:
+      "AI（Gemini Flash-Lite）による参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、IPA 公式の採点基準とは異なる場合があります。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
+  },
+  {
+    question: "ほかの過去問サイトと何が違うのですか？",
+    answer:
+      "多くの過去問サイトは午前の四択問題や解説の閲覧が中心で、午後II の論述を「採点」する機能は提供していません。過去問AI は、あなたが書いた論述を AI が採点し、設問ごとの良かった点・改善点・改善版例まで提示する点が特徴です。",
+  },
+  {
+    question: "採点結果は保存されますか？",
+    answer:
+      "採点結果は A／B／C／不合格 のランク判定とともに採点履歴に保存され、複数回の採点を通じてランクの推移を確認できます。",
+  },
+];
+
 export const metadata: Metadata = {
   title: "AI 論述添削 (午後II)",
   description: ESSAY_DESCRIPTION,
@@ -78,6 +106,18 @@ export default function EssayHomePage() {
             item: url,
           },
         ],
+      },
+      {
+        "@type": "FAQPage",
+        "@id": `${url}#faq`,
+        mainEntity: ESSAY_FAQ.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: f.answer,
+          },
+        })),
       },
     ],
   };
@@ -171,6 +211,30 @@ export default function EssayHomePage() {
         <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
           ※ AI 添削は学習補助です。実際の合否判定とは異なる場合があります。
         </p>
+      </section>
+
+      <section
+        aria-labelledby="essay-faq-heading"
+        className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 text-sm dark:border-zinc-800 dark:bg-zinc-900/50"
+      >
+        <h2
+          id="essay-faq-heading"
+          className="mb-3 text-base font-semibold text-zinc-900 dark:text-zinc-50"
+        >
+          よくある質問
+        </h2>
+        <dl className="space-y-4">
+          {ESSAY_FAQ.map((f) => (
+            <div key={f.question}>
+              <dt className="font-medium text-zinc-800 dark:text-zinc-200">
+                {f.question}
+              </dt>
+              <dd className="mt-1 leading-relaxed text-zinc-600 dark:text-zinc-400">
+                {f.answer}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </section>
 
       <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">

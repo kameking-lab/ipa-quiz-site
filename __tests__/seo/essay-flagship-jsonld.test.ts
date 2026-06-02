@@ -57,6 +57,35 @@ describe("flagship /essay structured data", () => {
   it("funnels to the /recommended-books index (P2-4 affiliate)", () => {
     expect(SOURCE).toContain('href="/recommended-books"');
   });
+
+  // The flagship landing converts flagship-intent searchers, yet it shipped
+  // without the objection-handling FAQ that every strategic blog page carries
+  // (sessions 8-11). Pin a FAQPage in the @graph driven by a single ESSAY_FAQ
+  // source that also renders a visible <dl>, so the structured data and on-page
+  // text can never drift. "崩れたら落ちる".
+  it("emits a FAQPage built from a single ESSAY_FAQ source", () => {
+    expect(SOURCE).toContain('"@type": "FAQPage"');
+    expect(SOURCE).toContain("const ESSAY_FAQ");
+    expect(SOURCE).toContain("ESSAY_FAQ.map((f) => ({");
+    expect(SOURCE).toContain('"@type": "Question"');
+    expect(SOURCE).toContain('"@type": "Answer"');
+  });
+
+  it("renders the same ESSAY_FAQ as a visible definition list", () => {
+    expect(SOURCE).toContain("ESSAY_FAQ.map((f) => (");
+    expect(SOURCE).toContain("よくある質問");
+    expect(SOURCE).toContain("<dt");
+    expect(SOURCE).toContain("<dd");
+  });
+
+  // Anti-exaggeration: the FAQ must not claim AI grading for the mock AP/FE
+  // afternoon data (HD-4) and must keep the 参考評価 caveat. Pin the honest
+  // framing so a future edit can't quietly over-claim coverage.
+  it("keeps the FAQ honest: 参考評価 caveat, no AP/FE grading claim", () => {
+    expect(SOURCE).toContain("参考評価");
+    expect(SOURCE).not.toContain("応用情報");
+    expect(SOURCE).not.toContain("基本情報");
+  });
 });
 
 // The per-question grading pages (now in the sitemap) are the most specific
