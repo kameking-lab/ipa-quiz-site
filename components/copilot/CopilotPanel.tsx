@@ -26,6 +26,7 @@ import {
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { setCopilotPanelOpen } from "@/lib/copilot/visibility";
+import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 
 const Markdown = dynamic(
   () => import("@/components/ui/markdown").then((m) => m.Markdown),
@@ -1356,6 +1357,7 @@ export function CopilotMobileSheet({
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
+  const dialogRef = React.useRef<HTMLDivElement | null>(null);
   const prevOpenRef = React.useRef(open);
 
   // Escape キーでシートを閉じる（キーボードユーザーの脱出経路）
@@ -1376,6 +1378,36 @@ export function CopilotMobileSheet({
     }
     prevOpenRef.current = open;
   }, [open]);
+
+  // 開いたらシート内へフォーカスを送り込む。FAB は open 中アンマウントされるため、
+  // これが無いとキーボード利用者は document.body に取り残され、Tab で背後の
+  // ページ内容に入り込んでしまう（aria-modal の前提が崩れる）。
+  React.useEffect(() => {
+    if (!open) return;
+    const t = window.setTimeout(() => {
+      const first = dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR);
+      first?.focus({ preventScroll: true });
+    }, 0);
+    return () => window.clearTimeout(t);
+  }, [open]);
+
+  // Tab フォーカスをシート内に閉じ込める（WCAG 2.4.3）。aria-modal だけでは
+  // ブラウザは Tab を背後の DOM へ移してしまうため、端で巻き戻す。
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
 
   // Mirror the open state into the shared signal so the global AI quota
   // badge only shows while a copilot panel is actually open.
@@ -1399,10 +1431,12 @@ export function CopilotMobileSheet({
       )}
       {open && (
         <div
+          ref={dialogRef}
           className="fixed inset-0 z-50 sm:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="AI コパイロット"
+          onKeyDown={onDialogKeyDown}
         >
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
