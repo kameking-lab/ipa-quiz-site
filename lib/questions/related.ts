@@ -67,16 +67,22 @@ export function getSessionNeighbors(
 /**
  * 同一試験区分・同一分野で他年度の問題（年度ごと 1 問・新しい年度優先）。
  * 年度をまたぐ内部リンクの動線を作る。リンク可能な対象のみ。
+ * `excludeIds` に渡した問題（例: 同じページの「関連する問題」レールで既に
+ * 表示済みの問題）は飛ばし、その年度は次の問題で補充する。これにより同一
+ * ページの 2 レールに同じ問題が二重リンクされる冗長を避け、より多くの相異な
+ * る問題へ内部リンクを張る。
  */
 export function getSameExamOtherYears(
   current: Question,
   examPool: Question[],
   limit: number,
+  excludeIds?: ReadonlySet<string>,
 ): Question[] {
   const byYear = new Map<number, Question>();
   for (const x of examPool) {
     if (x.id === current.id || x.category !== current.category) continue;
     if (!isLinkableTarget(x)) continue;
+    if (excludeIds?.has(x.id)) continue;
     if (x.year === current.year || byYear.has(x.year)) continue;
     byYear.set(x.year, x);
   }

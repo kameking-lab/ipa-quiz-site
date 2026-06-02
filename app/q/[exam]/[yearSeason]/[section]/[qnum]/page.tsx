@@ -195,7 +195,16 @@ export default async function QuestionPage({
   // Same exam + same category but from OTHER years — one representative per
   // year, newest first. Builds a year-spanning internal-link trail so each
   // /q/* page seeds links into older years' equivalents (phase 7 task ②-2).
-  const otherYearsSameCategory = getSameExamOtherYears(q, examPool, 5);
+  // Exclude questions already shown in the「関連する問題」rail above: the same
+  // question landing in both rails ships a duplicate link on 346 pages corpus-
+  // wide (639 links). Excluding refills the year with a distinct question, so
+  // the page seeds more unique internal links.
+  const otherYearsSameCategory = getSameExamOtherYears(
+    q,
+    examPool,
+    5,
+    new Set(related.map((r) => r.id)),
+  );
 
   // Cross-exam discovery trail. With topicTags populated this ranks by shared
   // tags; while tags are unset corpus-wide it falls back to the IPA common-skill

@@ -155,6 +155,21 @@ describe("getSameExamOtherYears", () => {
       "ap-2023",
     ]);
   });
+
+  // The「他年度の同分野問題」rail must not duplicate a question already shown in
+  // the same page's「関連する問題」rail. excludeIds skips it and the year refills
+  // with a distinct question (no duplicate internal link on one page).
+  it("skips excludeIds and refills that year with a distinct question", () => {
+    const pool = [
+      q({ id: "ap-self", exam: "ap", category: "基礎理論", year: 2025 }), // current year
+      q({ id: "ap-2024-a", exam: "ap", category: "基礎理論", year: 2024 }), // shown in related
+      q({ id: "ap-2024-b", exam: "ap", category: "基礎理論", year: 2024 }), // refill
+      q({ id: "ap-2023", exam: "ap", category: "基礎理論", year: 2023 }),
+    ];
+    expect(
+      getSameExamOtherYears(current, pool, 5, new Set(["ap-2024-a"])).map((r) => r.id),
+    ).toEqual(["ap-2024-b", "ap-2023"]);
+  });
 });
 
 describe("getSessionNeighbors", () => {
