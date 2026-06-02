@@ -1412,3 +1412,17 @@
 - done×1 [inbound完成] SHA `262a50a`: s86 新記事の2本目 inbound を `koudo-ronbun-hyouka-rank`「B・C・Dで止まる答案＝字数不足/設問ウが薄い」文脈から配線(字数不足の多く=時間切れ=高intent接続)。新記事を2 inbound面化し orphan-fragility 回避(s82/s83 precedent)。回帰pinを2 inbound面へ拡張。本番HTML実測=hyouka-rank に inbound render(「時間切れが原因」)。全ゲート緑(test 2073・build OK)。link audit 0 FATAL/0 WARN(180→181本)。**=新記事 koudo-ronbun-jikan-haibun は inbound2面(kakikata-kotsu/hyouka-rank)+旗艦ハブ /essay ガイド節+relatedSlugs で発見性確保・funnel完成**。
   - **深ページ `/essay/{exam}/{id}` への時間配分リンクは見送り**: 同ページの書き方リンクは「Subtle, single link」と明示設計(s72 コメント)＝意図的に1リンク。追加は設計意図に反し clutter ゆえ非配線(過大修正回避)。
 - **次セッション申し送り**: 旗艦の論文系コンテンツveinに「時間配分」を追加し inbound2面+旗艦ハブ+rail で funnel完成。残る論文系の専用ページ不在角度は薄く、量産せず1つずつ裏取り。記述式午後(sc/es)の時間配分は HD-6/HD-11 で着手不可は不変。強み1ループ側完了・afternoon rubric=HD-4待ち・強み4=別タスク は不変。土台=科目B「発展パターン」vein は s83 で主要4パターン網羅済＝停止中。
+
+## セッション87（growth ループ｜2026-06-02 JST）
+**P2-2 制度/access vein=「合格発表・スコアレポート（受験後の結果確認）」専用記事を新設（CBT通年区分にスコープしstaleness回避）**
+背景（着手前 read-only 監査）:
+- s83/s84/s86 申し送りどおり論文/科目B vein は停止し別角度(P2-2 制度/access)を優先。link audit 実走=181本/0 FATAL/0 WARN(クロール資産健全)。個別FAQ s53打ち止め・funnel s13-15飽和・per-exam非対称 s78-80(HD止まり)を再確認。
+- blog corpus走査: 「合格発表」は33箇所言及されるのに**受験後の結果確認(いつ/どこで/どう見る)を正面から扱う専用ページが不在**。`ipa-shiken-moushikomi-nagare` の `## 合否発表` 節に2行(PBT約1.5〜2ヶ月後)あるのみ・CBT即時スコアは別箇所に散在。`goukaku-happyou/kekka/score` 該当slugゼロ=明確なgap。「○○ 合格発表 いつ/スコアレポート 見方」は高intentの受験後クエリ。
+- **staleness landmine回避**: WebSearch/WebFetch(IPA goukaku/index.html・cbt_sg_fe・STUDYing)で裏取りした結果、**AP/高度/SCは令和8年度(2026)からCBT移行中で発表時期が流動的**(s65/s80既知)。cross-exam記事は誇大/staleになるため、**CBT通年区分(IP/SG/FE=土台の入口)にスコープ**=発表の仕組みが durable(試験終了直後の即時評価点・翌月中旬の正式発表・スコアレポートのマイページ照会・合格証書 発表約1ヶ月後/簡易書留)。AP/高度はIPA公式へ hedge(具体日断定しない)。
+- done×1 [P2-2 制度/access新vein] SHA `306f394`: 新記事 `cbt-goukaku-happyou-score-report`「CBT試験（ITパスポート・SG・基本情報）の合格発表とスコアレポート｜結果はいつ・どこで・どう見る」。
+  - 核心(IPA裏取り): ①試験終了直後にその場で評価点表示(FE/SG=科目A・B、IP=総合+分野別) ②試験当日のうちマイページでスコアレポート照会 ③正式発表=受験月の翌月中旬・IPA公式に受験番号公示 ④合格証書=発表約1ヶ月後・簡易書留で登録住所へ ⑤AP/高度は令和8年度CBT移行中→IPA公式要確認(hedge)。
+  - **funnel規律**: 制度=採点無関係ゆえ旗艦/essay 非送客(s27/s65 precedent)。各区分の合格基準記事(fe-goukaku-ten-irt/sg-goukaku-ten-irt/ip-goukaku-ten-bunyabetsu)へ「画面の評価点が合格圏かを判断」文脈で funnel・土台=科目B(fe-kamoku-b-taisaku)/roadmap/data-driven-revisionへも。
+  - inbound: 親 `ipa-shiken-moushikomi-nagare` の `## 合否発表` 節に additive 配線(CBT発表の流れを新記事へ)。relatedSlugs=moushikomi/fe・sg・ip-goukaku-ten(全on-topic制度/合格基準)。FAQPage化(4Q&A・extractFaq leak0)。
+  - 検証(本番ビルド実測): prerendered `/blog/cbt-goukaku-happyou-score-report.html`(129KB)に核心事実(試験終了直後/翌月中旬/スコアレポート/簡易書留/令和8年度)・funnel先slug 全render。本文に `](/essay)` ゼロ(制度記事=非送客)・HTML中の `href="/essay"` 1件は global mobile nav のみと文脈確認。inbound(moushikomi HTML)render実測・funnel/related先7本 全prerendered 200(新規404ゼロ)。回帰pin `cbt-goukaku-happyou-funnel.test.ts`(5件)。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2078全緑(+5) / build OK。
+- **次セッション申し送り**: P2-2 制度/access vein に「受験後の結果確認(合格発表/スコアレポート)」をCBT通年区分スコープで追加。**残る制度/access角度(要吟味・着手前に重複裏取り)**: (a)受験料/合格証書再発行=moushikomi部分カバー・専用化thin懸念(継続保留)。(b)SGスコア通知=HD-8未検証(見送り)。(c)AP/高度の合格発表 専用記事は令和8年度CBT移行が確定/安定するまで staleness で着手不可(IPA公式日程fix後にHD相当か再吟味)。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち は不変。1記事=確実を維持し量産しない。
