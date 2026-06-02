@@ -11,6 +11,15 @@ const FEATURES_TITLE = "機能特集 — AIコパイロット・午後採点・�
 const FEATURES_DESCRIPTION =
   "AI コパイロットによる選択肢別解説、業種別の論述合格答案サンプル、AI 午後採点（β）、本番形式の模試モード、学習計画自動生成など、IPA 過去問学習を一段引き上げる過去問AI 独自機能をまとめた特集ページ。各機能の使い方と狙いをページ別に詳しく紹介します。";
 
+// Page-specific OG card. The /api/og route reserves a "feature" type style for
+// this page; without an explicit images entry the openGraph override would drop
+// the site-wide default image, leaving this page with no social/SERP card.
+const FEATURES_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "feature",
+  title: "機能特集",
+  body: "AIコパイロット・午後採点・模試・学習計画など独自機能を一望。",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: FEATURES_TITLE,
   description: FEATURES_DESCRIPTION,
@@ -22,6 +31,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: FEATURES_OG_URL, width: 1200, height: 630, alt: FEATURES_TITLE }],
   },
 };
 
