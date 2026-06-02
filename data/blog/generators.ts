@@ -3513,7 +3513,7 @@ IPA疑似言語の配列は1始まりが多い。コードを読む最初に「�
 - 試験前に4分野を固定して迷いを排除
 - AIコパイロットで記述解答の質を高める
 `,
-    relatedSlugs: ["kakomon-dake-goukaku", "fe-kamoku-b-taisaku", "nw-hinshutu-pattern", "ap-gogo-management-erabikata"],
+    relatedSlugs: ["kakomon-dake-goukaku", "ap-gogo-bunkei-sentaku", "nw-hinshutu-pattern", "ap-gogo-management-erabikata"],
   });
 
   general.push({

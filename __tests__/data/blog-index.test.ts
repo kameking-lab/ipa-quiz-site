@@ -179,6 +179,20 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
     }
   });
 
+  it("keeps the AP 午後 selection rail on-topic (no cross-exam 科目B leak)", () => {
+    // The route renders the related rail with getRelatedPosts(slug, 4). The
+    // 応用情報 午後選択戦略 article previously carried off-topic
+    // fe-kamoku-b-taisaku (基本情報 科目B — different exam, foundation cluster)
+    // in slot 2, so an AP 午後 reader was sent to an unrelated FE article while
+    // an on-topic AP 午後 sibling was pushed out of the 4-slot rail (the same
+    // relevance leak fixed for the 科目B cluster in an earlier pass). Pin the
+    // AP 午後 selection article's rail to stay on-topic: it must surface the
+    // 文系選択 sibling and must not surface the 科目B pillar.
+    const rail = getRelatedPosts("ap-gogo-sentaku", 4).map((r) => r.slug);
+    expect(rail).toContain("ap-gogo-bunkei-sentaku");
+    expect(rail).not.toContain("fe-kamoku-b-taisaku");
+  });
+
   it("every in-body /blog/<slug> cross-link resolves to an existing post", () => {
     // Bodies carry hand-authored markdown cross-links like `](/blog/foo-bar)`.
     // A typo'd slug renders a 200-looking link that 404s on click — a dead
