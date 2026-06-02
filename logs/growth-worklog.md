@@ -1866,3 +1866,13 @@ content/factual/structured-data/dead-anchor/OG vein が全て saturation のた�
 - **cycle2 SHA `cb64a83`（同 vein・別サーフェス）**: feed autodiscovery を `/blog` 索引だけでなく **記事ページ `/blog/[slug]`** にも展開（読者は1記事を読んで購読する導線が一般的・post pages も canonical を自前定義し root alternates を shadow するため個別付与が必要）。本番 `.next/server/app/blog/fe-kamoku-b-taisaku.html`=autodiscovery link 出力実測・回帰pin追加（`generateMetadata({params})` 呼出で type 宣言を pin・計8 it）。typecheck0/lint0err/test **2205 passed**/build OK。
 - **cycle3 SHA `15e9863`（同 vein・人間向け発見性）**: 機械可読 autodiscovery に加え、読者が購読できる**可視 RSS リンク**（Rss アイコン＋「RSS フィードで購読」）を `/blog` 索引ヘッダに控えめ設置（戦略=押し売りしない・本文分離）。`/feed.xml` は XML route handler ゆえ next/link でなく plain `<a>`。本番 `.next/server/app/blog.html`=href/ラベル出力実測・回帰pin（source-read・計9 it）。typecheck0/lint0err/test **2206 passed**/build OK。
 - **本セッション小計=確実な改善3件**（cycle1 RSS feed 新設 `4cca8f3` / cycle2 記事ページ autodiscovery `cb64a83` / cycle3 可視 RSS リンク `15e9863`）。**=RSS/コンテンツ発見性 vein（フィード本体＋autodiscovery 2面＋可視リンク）を一通り整備**。残（要吟味・thin寄り・量産回避）: 区分別フィード(/feed/{exam}.xml)・Atom/JSON Feed 併設は volume 薄＝着手は要吟味（1フィードで全192本網羅済）。
+
+## セッション114（growth ループ・2026-06-03 JST）— P2-3j cycle1: home page の RSS feed autodiscovery 欠落を是正
+背景（着手前 read-only 監査）:
+- backlog を P0→P3 走査。content vein・404/dead-anchor・FAQ・funnel は s1-113 で軒並み「枯渇/saturation/HD/要吟味」。直近 s113 が RSS 2.0 フィード(P2-3j)を新設したばかり。
+- s113 の RSS 実装を監査: `lib/seo/feed-xml.ts`(RSS2.0・192item)＋`app/feed.xml/route.ts`(force-static)＋autodiscovery は `/blog`(`app/blog/page.tsx`)・`/blog/[slug]` のみ。
+- gap 発見: **home page(`/`=裸ドメイン)に feed autodiscovery link が無い**。`app/layout.tsx` の root alternates=`{canonical:"/"}`(feed type 無し)、`app/page.tsx` も `alternates:{canonical:"/"}` のみ。フィードリーダー／ブラウザ購読ツールは裸ドメインを最初に取得し `<head>` の `<link rel="alternate" type="application/rss+xml">` を探す＝最も参照される発見面が空だった。s113 が blog post page で踏んだ「per-page alternates が root layout を REPLACE(merge でない)」shadow 問題と同型(既存 test L64-67 が明記)。
+- done: SHA `8a1a115`。`app/page.tsx` の alternates に `types:{"application/rss+xml":"/feed.xml"}` を additive 追加(canonical は不変)。回帰pin1件(`__tests__/seo/blog-feed-xml.test.ts` に home metadata の autodiscovery 宣言 it を追加)。
+- 検証(崩れたら落ちる): (1)全ゲート緑 — typecheck0 / lint 0err(既存の untracked `scripts/ux-audit-screenshots.mjs` warning 1件のみ=本変更外) / test 2207全緑(+1) / build OK。(2)**本番ビルド実測**: `.next/server/app/index.html` に `<link rel="alternate" type="application/rss+xml" href="https://www.kakomon-ai.jp/feed.xml"/>` 出力を grep 確認。新規404なし(既存 route への additive link)。
+- push: growth-integration `c0d1142..8a1a115`。
+- 所見: RSS vein の残(区分別フィード・Atom/JSON Feed 併設)は s113 通り thin/量産リスクで要吟味＝着手しない。home autodiscovery で主要3発見面(/ ・/blog ・/blog/[slug])が出揃った。
