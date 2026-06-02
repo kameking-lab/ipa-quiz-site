@@ -651,3 +651,19 @@
   - **旗艦 /essay 面を「ソーシャル共有」と「収益funnel」の2軸で対称化**: (1)ハブ+deep に OG/Twitter カード(`80cffe5`/`bd937a6`)で SNS共有が専用 type=essay 画像に=旗艦の発見性向上、(2)ハブ(索引リンク `f2b2549`)+deep(InlineBookHint論文本 `a6be418`)で書籍funnelを配線=P2-4の旗艦面を実装。誇大回避は既存description/question由来導出/コンポーネント側 sponsored・[PR]で構造保証。
   - **OG角度の枯渇確認**: faq/glossary/keywords/blog/[exam]/recommended-books/home は専用OG済。`/[exam]/afternoon` はモック/ベータ面(HD-4)で意図的に非promotion=OG付与せず(誇大回避)。success-stories/essays複数形は noindex(優先度低)。**主要 indexable 面のOGは旗艦補完で枯渇**。
   - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1 GSC404一覧/HD-4 AP・FE午後本データ/HD-5 essay深リンク/HD-6 SC午後framing/HD-7 2026制度/HD-8 SGスコア/HD-9 overviewテンプレ/HD-10 q soft-404)、(b)新角度の起案余地は旗艦OG補完で更に縮小。主要バックログ(404掃除/旗艦露出/事実性監査/internal-link/blog/OG)は概ね飽和 or 人間待ち。**コード側自律実装可能領域は引き続き縮小傾向**。
+
+## セッション37（growth ループ）2026-06-02 JST
+- 監査(read-only): session34-36 で旗艦 /essay が indexable 化(JSON-LD/OG/sitemap/書籍funnel)された後の**新角度=内部リンク equity の流入経路**を精査。実測: 高オーソリティな試験別サーフェス(試験ハブ /[exam]=sitemap priority 0.9、練習用モック /[exam]/afternoon{,/[year]/[season]})が、論文区分(st/sa/pm/sm/au)で**indexable 旗艦 /essay へ全く funnel していなかった**(exam hub の primary CTA は練習モック /[exam]/afternoon=AI採点ベータ/HD-4 を指し、indexable 実過去問採点 /essay は不在。`grep '"/essay"' app/` に app/[exam]/page.tsx 不在を確認)。session34-36 の旗艦化で新たに生じた funnel gap。
+- done: [P1-1/P2-3/旗艦] **試験ハブ論文区分CTAを旗艦 indexable /essay へ寄せる**。SHA `a288048`。
+  - 実装: `app/[exam]/page.tsx` の st/sa/pm/sm/au 午後II論述セクションの primary CTA を 練習モック `/[exam]/afternoon` → indexable 旗艦 `/essay`(実IPA午後II過去問のAI採点ハブ)へ変更・ラベル「実際の午後II過去問で AI 添削」。練習モックは「練習問題で腕試し（ベータ）」と明示降格(誇大回避・HD-4尊重)。冗長な /demo/essay-grading リンク削除(data/features.ts から到達可=orphan化なし)。回帰pin `__tests__/seo/exam-hub-essay-flagship-cta.test.ts`(primary が /essay・ベータラベル・CTA区分⊆ESSAY_EXAM_CODES)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1792→1795/build OK)。`.next/server/app/st.html` に href="/essay"+新ラベル出力・旧「の論述添削へ」=0・/sc(記述branch)は global nav の /essay のみ=不変。
+- done: [P1-1/P2-3/旗艦] **練習用午後インデックス /[exam]/afternoon から旗艦 /essay へ AfternoonEssayHint を配線**。SHA `52cd2b5`。
+  - 実装: 既存の ESSAY_EXAM_CODES gated・誇大回避済 `AfternoonEssayHint`(/q/*・/keywords/* で実績)を `app/[exam]/afternoon/page.tsx` に再利用。component が self-gate するため非論述区分には出ない。回帰pin `afternoon-essay-flagship-funnel.test.ts`(import/描画。gating自体は既存 AfternoonEssayHint.test で担保)。
+  - 検証: 全ゲート緑(test1795→1797/build OK)。`.next` st/afternoon.html に「午後論述 AI 添削を試す」(href=/essay)・ap/afternoon.html=0(非論文不出)。
+- done: [P1-1/P2-3/旗艦] **練習プレイヤー本体 /[exam]/afternoon/[year]/[season] にも同funnelを配線**。SHA `53dd4d2`。
+  - 実装: index 経由せず直接 landing(indexable・SSG・canonical済)したユーザー向けに、警告note直後・AfternoonPlayer 直前に AfternoonEssayHint を配線(index と対称)。回帰pin を同テストに追加。
+  - 検証: 全ゲート緑(test1797→1798/build OK)。`.next` st/afternoon/2023/spring.html に旗艦リンク出力・ap/afternoon/2023/autumn.html=0。
+- 申し送り（セッション37まとめ）:
+  - **新角度=旗艦への内部リンク equity 経路を3面で配線**: session34-36 で /essay が indexable 化された後、高オーソリティな試験別サーフェス(試験ハブ priority 0.9・練習モック index・練習プレイヤー)が論文区分で旗艦へ未funnel だった gap を解消。試験ハブ primary CTA を旗艦へ寄せ(`a288048`)、練習モック2面に gated AfternoonEssayHint を配線(`52cd2b5`/`53dd4d2`)。誇大回避は全て ESSAY_EXAM_CODES self-gate＋練習モックの「ベータ」明示(HD-4尊重)で構造保証。
+  - **funnel経路の飽和確認**: 旗艦 /essay への内部リンクは header/footer(layout)・home(HomeFlagshipEssay)・not-found・/q/*(AfternoonEssayHint)・/keywords/*・blog論文群・**試験ハブ+練習モック2面(本session)**で網羅。論文区分の主要 landing surface から旗艦へ漏れなく流れる状態。
+  - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1 GSC404一覧/HD-4 AP・FE午後本データ/HD-5 essay深リンク/HD-6 SC午後framing/HD-7 2026制度/HD-8 SGスコア/HD-9 overviewテンプレ/HD-10 q soft-404)、(b)コード側自律領域は funnel経路の飽和で更に縮小。404掃除/旗艦露出/事実性監査/internal-link/blog/OG/funnel は概ね飽和 or 人間待ち。次セッションは新角度起案 or HD解消待ち。
