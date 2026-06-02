@@ -1030,3 +1030,12 @@
   - 検証: 全ゲート緑(test1926[+2])。本番ビルド topics HTML から sm-2009a-am2-q10/es-2021a-am2-q10/q11/q13 消失(0件)・対象トピック面は有効リンク維持。回帰pin(corpus走査)。
 - **本セッションの read-only 監査(他surfaceは全て clean=対応不要)**: needsReview/placeholder 漏れを全 /q リンク面で点検。sitemap(`getIndexableQuestions`=両除外)・`/[exam]/topic/[category]`・`/[exam]/[yearSeason]`(両者 `getQuestionsByExamStrict`=両除外)・blog related-questions(`getRelatedQuestionsForPost`=両除外)・search index(`question-index.ts`:114/116=両除外)は既に clean。**=needsReview 死リンク vein は3面修正+他面 clean確認で完全打ち止め(計128本の404を解消)**。
 - 申し送り(セッション59): 「ルート単位の404網羅完了」と「data単位の問題が内部リンクへ漏れる」は別問題で、後者は本セッションで打ち止め。残る code-side 候補(backlog 参照): (a)`related`∩`otherYears` の重複リンク 544組(同一問題が同一面で2レールに重複表示=軽微な冗長・404ではない・SKIP寄りだが actionable)。(b)`related` レールの最古年度寄り relevance(session58 candidate b・marginal/順位測定不可=SKIP)。(c)topic-tagger 実行=人間/別タスク(AI大量発火)。(d)HD群(HD-1/4/5/6/9)=人間待ち。安易な水増しはしない。
+
+## セッション60（growth ループ）2026-06-02 JST
+**P0-5 残候補(a)消化: /q 同分野レール `related`∩`otherYears` の重複リンクを解消（同一ページ二重リンクの冗長）**
+背景: セッション59申し送りの残コード候補(a)「`related`∩`otherYears` の重複リンク(同一問題が同一面で2レール重複・404ではない軽微な冗長・SKIP寄りだが actionable=要吟味)」を実測で評価。read-only でコーパス全14k面を走査し、実害(distinct内部リンクの冗長)と修正の安全性を確認してから着手。
+- 監査(read-only・実測): `/q/[...]/page.tsx` の「関連する問題」(`getSameExamRelatedQuestions`=同分野・プール先頭5)と「他年度の同分野問題」(`getSameExamOtherYears`=同分野・年度別1問新しい順)は両方とも同一 examPool/同一 category を引くため、related に他年度の問題が入ると otherYears と重複しうる。tsx 走査で実測: **346面で重複・639本の重複リンク**(同一ページに同じ問題への `<Link>` が2レールに出る)。crossExam レールは別 exam ゆえ重複不可(確認済)。
+- done×1 [P0-5/(a)] SHA `d1416f4`:
+  - `getSameExamOtherYears` に `excludeIds?: ReadonlySet<string>` を追加し、related で表示済みの id を skip。skip した年度は次の問題で補充(年度別1問の枠は維持)。page.tsx は `new Set(related.map(r=>r.id))` を渡す。最小diff・additive。
+  - 検証(実測): 全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1927[+1]/build OK)を commit前に単独実行。コーパス全14k面走査で overlap **346→0面/639→0リンク**。otherYears 総リンクは 71858→71458(重複639除去のうち**239を distinct 問題で補充**・残400は補充候補無しで空=元々重複ゆえ distinct リンクは純増)。prerendered HTML `q/sg/2025-cbt/kamoku-a/q2`(旧 dup=sg-2016a-am-q1)で former dup が single-rail 化(2x baseline=他リンクと同数=1レールのみ)・年度2016 slot が distinct `sg-2016a-am-q28` で補充されたことを実測。回帰pin1件(excludeIds skip+refill=崩れたら落ちる)。
+- **所見/申し送り(セッション60)**: 「distinct 内部リンクは減らさず重複だけ除去」=safe で純増の改善。P0-5 残候補(a)は打ち止め。残コード候補: (b)`related` レールの最古年度寄り relevance(examPool 先頭5=古い年度に偏る・年度別 diversity 改善は順位測定不可・リンク増減なし=marginal・SKIP寄り)。(c)topic-tagger 実行=人間/別タスク(AI大量発火)。(d)HD群(HD-1 GSC404一覧/HD-4 AP午後モック/HD-5 essays noindex/HD-6 SC午後frame/HD-9 overviewテンプレ)=人間待ち。code-side の主要 vein は依然枯渇傾向。安易な水増しはしない。
