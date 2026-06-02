@@ -14,11 +14,11 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P0-1 [301は一部done セッション1]: `git log --diff-filter=D -- "app/**/page.tsx"` で削除済みルートを列挙し、`next.config.*` の redirects と突合。
   - **301 済**（セッション1）: testimonials→success-stories / trust→why-kakomon-ai / account/{audio,avatar,billing}→settings（+ 既存 my-progress/quickstart/support/feedback/practice-weakness 等）。回帰ガード `__tests__/navigation/redirects-no-chain.test.ts`（連鎖禁止＋行先固定）。内部リンク my-progress→/account/dashboard#weakness も解消済。
   - **410 Gone グループ [done セッション2 SHA `1ea7157`]**（後継なし・復活すべきでない削除ページ23件）: commerce / pricing / premium(+/essay,/heatmap,/simulator) / enterprise/{pilot,pricing,sso} / contact/enterprise(+/thanks) / security / case-studies / podcast / launch / diagnosis / account/pass-simulator / feedback/public / community/{questions,stories} / legal/{dpa,msa,sla} を採用機構(a)で middleware.ts に `GONE_PATHS` として実装・全パス 410 実測済。matcher 同期＋admin不変＋新規404なしを回帰テストでガード。
-    - **残り = dev痕跡**（exec-review/feature-review/final-review*/strategy-discussion*/scoring-test/test/*/tmp/*）は元々非公開でSEO価値低。現状 404 のままで害は薄い→**着手するなら** GONE_PATHS にワイルドカード相当（prefix一致）で足すか、別途 robots/noindex で十分。優先度は P0-2 以下に下げる。
+    - **dev痕跡 410 グループ [done セッション33 SHA `ac1deb4`]**（exec-review/feature-review/final-review/final-review-v3/scoring-test/strategy-discussion/strategy-discussion-v2/test/posthog/test/sentry/tmp/round7-review の10ルート）: 全て git削除済・後継なし・現在404。GONE_PATHS+matcher へ exact path で追加し410化（着手前に全dir非存在＝live再追加なしを実測してから410化）。runtime curl で新規10パス=410・live(/blog /fe /essay)=200・control /test-foo=404(over-matchingなし) を実測。既存 middleware.test がGONE_PATHSを動的iterateし自動カバー。**=「削除済み・後継なし」404はコード側で網羅完了**。
   - 判断保留の弱い301候補: analytics→/stats（内部DAU vs 公開stats でインテント差・SKIP寄り）。diagnosis は後継なし＝410が正直。
   - 検証: 対象パスが 301(正しい行先200) か 410 になったことを localhost本番ビルドへ curl で実測。新規404を作らない。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
-- P0-3: 旧URL形式の痕跡調査（git履歴で /q や /quiz のルート構造変更があったか、section命名 am↔am1/am2 の変遷など）。systematicな旧形式が見つかれば redirect を追加。無ければ「ソース側に旧形式なし＝GSC404は外部/履歴由来」と記録し human タスクへ。
+- P0-3 [調査done セッション33・コード変更なし]: 旧URL形式の痕跡調査。**結論=ソース側に系統的旧形式なし**。`/q/[exam]/[yearSeason]/[section]/[qnum]` は #38(ac0200f)以来 format不変（builder `lib/seo/question-url.ts`・#407はperf refactorで維持）、section実データは `session:"am"` のみ（am1/am2変遷なし）。flat形式 `/q/ap-2024h-am-q42` は admin metrics mock-data の表示用ダミーのみ（認証配下・非crawlable）。`grep -rE '/q/[a-z]+-[0-9]'`(mock/test除く)=0件＝実crawlableリンクに旧形式なし。**GSC404は外部/履歴由来＝HD-1(人間・GSCエクスポート)継続**。付随: /q indexability は正設計（実問題index/placeholder noindex+sitemap除外/needsReview 404）。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ## P1 — 旗艦: 午後記述・論述の「AI採点」を立てる
