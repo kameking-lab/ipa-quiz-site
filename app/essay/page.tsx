@@ -173,6 +173,17 @@ export default function EssayHomePage() {
         </p>
       </section>
 
+      <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
+        論述対策をさらに深めるなら{" "}
+        <Link
+          href="/recommended-books"
+          className="font-medium text-sky-600 hover:underline dark:text-sky-400"
+        >
+          各区分の合格論文・午後対策の参考書
+        </Link>
+        も活用できます。
+      </p>
+
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         出典: IPA 情報処理技術者試験
       </p>

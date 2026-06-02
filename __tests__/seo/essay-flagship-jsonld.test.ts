@@ -49,6 +49,14 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain("/api/og?");
     expect(SOURCE).toContain('type: "essay"');
   });
+
+  // Revenue funnel (P2-4): the hub covers 5 exams so a single book can't be
+  // picked, but it should still funnel its 論述 audience to the indexable
+  // /recommended-books index (subtle, not pushy). Pin that link so the hub keeps
+  // a book funnel symmetric with the deep grading pages' InlineBookHint.
+  it("funnels to the /recommended-books index (P2-4 affiliate)", () => {
+    expect(SOURCE).toContain('href="/recommended-books"');
+  });
 });
 
 // The per-question grading pages (now in the sitemap) are the most specific
