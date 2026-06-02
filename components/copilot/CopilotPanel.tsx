@@ -1005,6 +1005,7 @@ export function CopilotPanel({
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto p-3"
+        role="log"
         aria-live="polite"
         aria-label="AI コパイロットの応答"
       >
