@@ -16,6 +16,7 @@ import {
 import { getBlogPostBySlug } from "@/data/blog";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE } from "@/lib/seo/structured-data";
 import { topicLinkHref } from "@/lib/seo/topics";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
@@ -104,7 +105,15 @@ export default async function KeywordPage({
         inLanguage: "ja",
         articleSection: "学習トピック",
         keywords: page.relatedTopics.join(", "),
-        publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_BASE_URL },
+        author: { "@type": "Organization", name: SITE_NAME, url: SITE_BASE_URL },
+        publisher: {
+          "@type": "Organization",
+          "@id": ORG_ID,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: SITE_LOGO_IMAGE,
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": absUrl },
       },
       {
         "@type": "BreadcrumbList",
