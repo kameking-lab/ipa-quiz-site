@@ -20,7 +20,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 - P0-4 [新角度・セッション34]: **dynamic ルートの無効URLが notFound() を HTTP200 ソフト404で返す**問題。実測: 修正前の `/essay/{exam}/{id}` と `/q/{...}` の無効URL→200(not-found UI)・対照 `/blog/no-such-slug`→404。差は `dynamicParams=false`(ルータ層404) vs dynamic(handler notFound()が `next start` 上200)。
   - **[done セッション34 SHA `80f1695`]**: 旗艦 `/essay/{exam}/{id}`(12件・全SSG可能)に `generateStaticParams`+`dynamicParams=false` を適用し proper 404 化(runtime curl実測: 無効ID/exam/年度=404・有効=200)。同repo `/blog/[slug]` パターン踏襲。
   - **[→HD-10] `/q/*`(~12,653件・最大面)は同型だが dynamicParams=false 不可**(ISR設計が必須=sitemap~14k広告・SSGは2024年以降のみ。dynamicParams=false は SSG_MIN_YEAR以前を全404にするリグレッション・コード明記警告)。framework層対応＋production(Vercel/ISR)裏取りが要る(GSC「ソフト404」レポート)＝HD-10。**HD-1のGSC 404一覧と同時確認で soft-404 が主因か切り分け可能**。
-  - **残り(ループ可)**: 他の dynamic ルートで「対象が少数で全SSG可能」な小面があれば /essay 同様 dynamicParams=false で先行 soft-404解消(read-only監査で対象列挙→件数が少ない確証が要る)。/q級の大面は不可。
+  - **[done セッション35]** 残りの「generateStaticParams で有限列挙する page ルート」の soft-404 を網羅解消: `/success-stories/[exam]`+`/success-stories/[exam]/[slug]` `c79bafb`・`/essays/[exam]` `02fae68` に dynamicParams=false を付与し proper 404 化(runtime curl: 有効=200/無効exam・slug・exam不一致=404/control=200・索引リンク=静的セット一致で新規ハード404なし・回帰pin3本)。**=soft-404 はコード側で打ち止め**(他 dynamic ルートは既に dynamicParams=false 済を確認)。残るは `/q/*`(ISR必須でレバー不可)=HD-10 のみ。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
 - P0-3 [調査done セッション33・コード変更なし]: 旧URL形式の痕跡調査。**結論=ソース側に系統的旧形式なし**。`/q/[exam]/[yearSeason]/[section]/[qnum]` は #38(ac0200f)以来 format不変（builder `lib/seo/question-url.ts`・#407はperf refactorで維持）、section実データは `session:"am"` のみ（am1/am2変遷なし）。flat形式 `/q/ap-2024h-am-q42` は admin metrics mock-data の表示用ダミーのみ（認証配下・非crawlable）。`grep -rE '/q/[a-z]+-[0-9]'`(mock/test除く)=0件＝実crawlableリンクに旧形式なし。**GSC404は外部/履歴由来＝HD-1(人間・GSCエクスポート)継続**。付随: /q indexability は正設計（実問題index/placeholder noindex+sitemap除外/needsReview 404）。
 
@@ -33,6 +33,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   ホーム/ヘッダ/該当試験ページから「あなたの午後答案をAIが採点」入口を一目で分かる位置に。既存UI/コンポーネント踏襲。
   - **[done セッション4]** グローバル3面で旗艦 /essay を露出: ヘッダQUIZ_MODES差替 `87c6d80` / ホームSSR旗艦カード `6ece735` / フッタ サービス欄 `f6556d5`。全て実データ論文区分(ST/SA/PM/SM/AU)＋「参考評価」明記で誇大回避。
   - **残り（任意）**: 該当試験ページ（/st /sa /pm /sm /au ハブ）の旗艦CTAは session2 `b5114b0` で /essays/<exam>・/<exam>/afternoon へ修正済。AP/FE は HD-4 待ち（モック）。主要導線は達成、優先度は P1-4/P2-2/P1-6,7 へ。
+  - **[done セッション35]** 404復帰ページ(`app/not-found.tsx`)に旗艦 /essay 導線を追加 `31484d3`(header/home/footer/quiz-complete に続く5面目)。soft-404解消で404ページの流入が増す高インテント復帰面にデッドリンク着地ユーザーの旗艦復帰口を設置。回帰pin。
 - P1-2: 午後を持つ全区分で採点入口を整える（ap/au/pm/sa/sm/st/db/es/nw/sc/fe）。データのある区分のみ露出（無い区分に空導線を作らない＝404/空ページ回避）。各区分の essays/essay ページが200・SSR・クローラブルか実測。
   - [done セッション2 SHA `b5114b0`]: st/sa/pm/sm/au ハブCTAの 404 死リンク（`/essay/<exam>`）を `/<exam>/afternoon`＋`/essays/<exam>`(200) へ修正・回帰ガード追加。
   - **AP/FE をハブCTAへ追加は HD-4 待ち（自律実行しない）**: `app/[exam]/page.tsx` の afternoon CTA は ap・fe を除外。`/ap/afternoon`・`/fe/afternoon` は 200 だが **練習データがモック**（`data/questions/afternoon/ap/index.ts`「実データはモック」明記・各年季2問）。モックのまま旗艦CTAを大きく出すと誇大表現＝過大修正の罠。記述分岐(sc/nw/db/es)の「Coming Soon」も同根。→ **本番午後データ投入(scripts/parse-afternoon) or ベータ明示CTAの判断は人間（HD-4）**。ループは prematurely 露出しない。
