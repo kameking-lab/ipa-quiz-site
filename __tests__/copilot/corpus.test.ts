@@ -1,4 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { getCorpus, resetCorpusCache } from "@/lib/copilot/corpus";
 import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
@@ -58,6 +60,29 @@ describe("getCorpus - doc 形状の不変条件", () => {
       expect(d.id.startsWith("g:")).toBe(true);
       expect(d.url.startsWith("/glossary#")).toBe(true);
     }
+  });
+
+  // 引用カードの glossary リンク(citation.url)は app/glossary/page.tsx の
+  // 各用語アンカー id={`term-${encodeURIComponent(t.term)}`} へ着地する必要がある。
+  // 接頭辞 `term-` が片側だけ変わると死アンカー(ページ先頭へ着地)になるため、
+  // 両側のアンカー記法が一致することを機械固定する(崩れたら落ちる)。
+  it("glossary doc の url アンカーは /glossary ページの term- アンカーと一致する", () => {
+    const pageSource = readFileSync(
+      join(process.cwd(), "app/glossary/page.tsx"),
+      "utf8",
+    );
+    expect(pageSource).toContain("id={`term-${encodeURIComponent(t.term)}`}");
+
+    const gDocs = getCorpus().filter((d) => d.kind === "glossary");
+    for (const d of gDocs) {
+      // url 例: /glossary#term-ACID — 接頭辞 term- が必須。
+      expect(d.url.startsWith("/glossary#term-")).toBe(true);
+    }
+    // サンプル1件で encodeURIComponent 記法の一致を具体的に確認。
+    const sample = GLOSSARY[0];
+    const expected = `/glossary#term-${encodeURIComponent(sample.term)}`;
+    const sampleDoc = gDocs.find((d) => d.id === `g:${sample.term}`);
+    expect(sampleDoc?.url).toBe(expected);
   });
 });
 

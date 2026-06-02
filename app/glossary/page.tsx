@@ -122,7 +122,7 @@ export default function GlossaryPage() {
                 <div
                   key={t.term}
                   id={`term-${encodeURIComponent(t.term)}`}
-                  className="rounded-2xl border border-border bg-card p-4 sm:p-5"
+                  className="scroll-mt-20 rounded-2xl border border-border bg-card p-4 sm:p-5"
                 >
                   <dt className="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
                     <span className="text-base font-bold text-foreground">

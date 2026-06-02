@@ -71,7 +71,10 @@ function buildGlossaryDoc(t: GlossaryTerm): CorpusDoc {
     id: `g:${t.term}`,
     kind: "glossary",
     title: `用語集: ${t.term}${t.english ? ` (${t.english})` : ""}`,
-    url: `/glossary#${encodeURIComponent(t.term)}`,
+    // Must match the per-term anchor on app/glossary/page.tsx:
+    // id={`term-${encodeURIComponent(t.term)}`}. Without the `term-` prefix the
+    // citation card link is a dead anchor that lands at the glossary page top.
+    url: `/glossary#term-${encodeURIComponent(t.term)}`,
     text,
     meta: {
       category: t.category,
