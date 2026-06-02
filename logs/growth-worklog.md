@@ -1791,3 +1791,13 @@ codegen gate(cycle1)完了後、「別の404種別=outbound」を非blog面へ�
 - **検証(「崩れたら落ちる」+本番HTML実測+全ゲート別呼び出し緑)**: 新 guard `__tests__/seo/nonblog-external-ipa-link-health.test.ts`(3 it)=app/components/lib を再帰走査し(1)既知 dead path 2本の再出現で fail、(2)gate module(exam-config.ts)以外で jitec.ipa.go.jp host 出力で fail、(3)question-jsonld/about が faq.html を指すこと。**guard が自分の説明コメント中の dead path literal を検出**したため当該コメントを reword(=guard が実際に効く実証)。本番ビルド実測: `.next/.../q/ap/2024-autumn/am/q1.html`=faq.html present・mondai-kaiotu.html **0**、`about.html`=faq.html present・copyright.html **0**。typecheck0/lint0err/test **278 files 2182 passed**(2179→+3)/build OK。
 - **=非blog crawlable 面の outbound 出典 404 を2本是正(うち1本は全 /q 面の JSON-LD=sitewide)＋regression guard 新設**。
 - **次セッション申し送り(P2-3i 継続)**: `lib/seo/exam-resources.ts` の `EXAM_OFFICIAL_LINKS`(全13区分×overview/syllabus/pastQuestions=**~39本の IPA公式テンプレURL**・試験ハブにE-E-A-T リンクとして描画)は今回未verify。`${IPA_BASE}/cbt/ip.html`・`/syllabus/index.html#...`・`/mondai-kaiotu/index.html` 等を1本ずつ curl して dead(404/301)が無いか確認＝次の確実な outbound-404 タスク。
+
+## セッション108 cycle3（2026-06-03）— P2-3i継続: EXAM_OFFICIAL_LINKS の dead /cbt/ overview を4本是正 [done SHA `d682514`]
+cycle2 申し送りの「EXAM_OFFICIAL_LINKS(~39テンプレURL)未verify」を消化。distinct URL を全 curl 実測:
+- **4本が 404**: `/shiken/cbt/{ip,sg,fe,sc}.html`(IP/SG/FE/SC の overview)。IPA が全試験 overview を `/shiken/kubun/` に統合したため旧 `/cbt/` が廃止。**全 /[exam] ハブ(`app/[exam]/page.tsx`→`ExamOfficialResources`)の E-E-A-T 公式リンクが該当4区分で 404**。
+- 残りは clean: `/kubun/{ap,st,sa,pm,nw,db,es,sm,au}.html`=9本200・`/syllabus/index.html`=200・`/mondai-kaiotu/index.html`=200。
+- **正しい行先(WebFetch `kubun/list.html` 裏取り)**: IP/SG/FE/SC も `/shiken/kubun/{exam}.html`(IPA自身の区分一覧がリンクする先)=**4本とも 200** 実測。
+- **修正 SHA `d682514`(1論点=公式リンクの dead overview 根絶)**: ip/sg/fe/sc の `overview` を `${IPA_BASE}/cbt/{x}.html`→`${IPA_BASE}/kubun/{x}.html`。全13 overview が単一の live パターンに統一。
+- **検証(「崩れたら落ちる」+本番HTML実測+全ゲート緑)**: guard `nonblog-external-ipa-link-health.test.ts` に `EXAM_OFFICIAL_LINKS` を import して distinct URL(fragment除去)を**curl検証済 allowlist にpin**する describe を追加(path編集で fail)。本番ビルド `.next/server/app/sc.html`(/[exam]ハブ)=`kubun/sc.html` present・`cbt/sc.html` **0** 実測。typecheck0/lint0err/test **2184 passed**(+2)/build OK。
+- **=非blog面 outbound 出典 404 を本セッションで計6本是正**(cycle2: mondai-kaiotu.html[全/q JSON-LD]・copyright.html[/about] / cycle3: cbt/{ip,sg,fe,sc}.html[/[exam]ハブ])。`#section_xx` の fragment anchor が syllabus/index.html の実DOMアンカーに解決するかは soft(404でない)＝P2-3e系の別観点で要すれば別タスク。
+- **本セッション小計=確実な改善3件**(cycle1 codegen at-rest gate `8e54ea6` / cycle2 非blog outbound 404×2 `012421d` / cycle3 EXAM_OFFICIAL_LINKS dead overview×4 `d682514`)。jitec at-rest vein 完全打ち止め＋非blog outbound 出典 404 を guard 化で予防恒久化。
