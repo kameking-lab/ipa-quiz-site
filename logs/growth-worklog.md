@@ -1233,3 +1233,22 @@
 - done×1 [P1旗艦/micro-angle] SHA `96178e0`: 3本の「AI添削」節に **indexable `/essay` 直リンク＋「採点基準は IPA 非公開/AI採点は参考評価」明記**を **additive** に追加(既存 `/essays/<exam>` 深リンクは温存=HD-5 範囲に踏み込まない)。これらstubは「合格レベルに到達」等を**参考評価 disclaimer 無し**で書いていた取り残しも同時に補正(誇大回避)。誇大回避の構造保証=対象3区分(pm/st/au)は ESSAY_EXAM_CODES の論文5区分。
   - 検証（崩れたら落ちる/実測）: typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test 1996→2002[+6新pin]/build OK を **commit前に単独実行**。本番ビルドHTML実測=3本とも `href="/essay"`(新規) と `href="/essays/{pm,st,au}"`(温存) 併存・disclaimer「AI 採点は参考評価です」描画=新規404ゼロ。回帰pin `ronjutsu-stub-essay-flagship-funnel.test.ts`(3本の /essay 直リンク・参考評価/IPA非公開明記・/essays深リンク温存・論述tag＋ESSAY_EXAM_CODES gate=崩れたら落ちる)。
 - **申し送り（セッション77）**: 旗艦 /essay funnel の **二次記事 stub の非対称**を解消。他の論述 stub(`db-er-design-practice`/`nw-protocol-deep-understanding`/`sc-incident-response-storytelling`)は **/essays も /essay も持たない**が、(i)db/nw=記述式区分(論文でない)→旗艦/essay非送客が正(s27 precedent)、(ii)sc=HD-6 frame未決で自律patch不可、ゆえ対象外。**残る候補(要吟味)**: (a)/topics(午前MCカテゴリ駆動)→教育記事の OUT は「午前category≠午後/科目B/論述」混同リスクで defensible SKIP 継続。(b)旗艦の in-body funnel 非対称はこれで枯渇=以後は footer/header/q-page の global 露出で確保済。HD群(HD-1/4/5/6/8/9)/topic-tagger=人間待ちは不変。1改善=確実を維持。
+
+
+## セッション78（growth ループ）2026-06-02 JST
+**新vein=「立場別 勉強時間目安」ページの区分間 非対称を解消（FE専用ページに対し AP が欠落）**
+開始時の read-only 監査（saturation 確認のため広く掃く）:
+- **internal-link 整合 = clean**: `scripts/audit-internal-links.ts` 実走=174記事/1597リンク・FATAL0/WARNING0/orphan0。
+- **404/redirect/410 UI = clean**: robots/sitemap/middleware 体系は成熟（GONE_PATHS・dynamicParams=false・getIndexableQuestions）。新規の死リンク種別なし。
+- **旗艦 essay deep ページ = データ上限**: `/essay/{exam}/{id}` は ALL_ESSAY_QUESTIONS 12件を generateStaticParams で全件 deep 化済（追加には実データ投入=HD領域）。
+- **科目B データ構造 = 既カバー(SKIP)**: `fe-algorithm-nigate-kokufuku` が連結リスト/木構造/スタック・キュー/二分探索のトレースを専節で網羅・`fe-kamoku-b-taisaku` も二分探索/スタック・キュー言及＝専用「データ構造」記事は thin/重複。
+- **発見した actionable な非対称**: 「○○ 勉強時間/何時間」高volume・競合薄キーワードで、基本情報には専用ページ `fe-benkyou-jikan-meyasu`(立場別=社会人/学生/未経験)があるのに、**第2の主要区分=応用情報には専用の勉強時間ページが無い**(言及は hatarakinagara「500時間神話」節・overview等に散在のみ)。FE precedent があり立場別の variance も大きい＝thin でなく明確な取り残し。
+- done×1 [新vein/content] SHA `5478d07`: **新記事 `ap-benkyou-jikan-meyasu`「応用情報技術者 勉強時間の目安｜基本情報合格者・実務経験者・初学者別の合格モデル」**を additive 追加。
+  - SSOT一致(誇大/誤記回避): 午前80問・四肢択一150分／午後 記述式5問150分／各100点満点・基準点60点／午前未達なら午後不採点(多段階選抜)／「500時間」は初学者基準の平均値・FE合格者や実務者は200〜300時間も／午前4:午後6 配分。数値は `ap-goukaku-ten-border`/`ap-gogo-sentaku`/`ap-gogo-jikan-haibun`/`hatarakinagara-goukaku` と照合。
+  - funnel規律(s25/s28 precedent): **AP午後採点はモック(HD-4)かつ AP は論文区分でないため旗艦 /essay の採点訴求はしない**。/ap・AP午後選択(`ap-gogo-sentaku`)・時間配分(`ap-gogo-jikan-haibun`)・合格基準(`ap-goukaku-ten-border`)・高度ステップアップ(`ap-goukaku-go-koudo-senryaku`)・AIコパイロットへ funnel。書籍CTAは exam:"ap" で `/recommended-books/ap` 自動解決(booksExam不要)。
+  - inbound: `hatarakinagara-goukaku` の「コツ7:合格者の勉強時間神話」節(既に『応用情報は500時間』と言及)から文脈内リンクで配線=orphan回避。relatedSlugs=ap-gogo-sentaku/ap-goukaku-ten-border/fe-benkyou-jikan-meyasu(FE→AP対称ペア)。
+  - 検証(崩れたら落ちる/実測): typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test 2002→2007[+5新pin]/build OK を **commit前に単独実行**。本番ビルド `/blog/ap-benkyou-jikan-meyasu.html`(130KB prerendered)に 核心6事実(80問/記述式5問/60点以上/午後は採点されない/500時間/午前4:午後6)・funnel(/ap×4・ap-gogo-sentaku×4・ap-goukaku-ten-border×4・ap-gogo-jikan-haibun×2)・FAQPage JSON-LD×2 を実測。**body内 /essay リンク=0**(HTML中の /essay 2件は global footer の旗艦リンク＝chrome)。inbound from hatarakinagara(prerendered×2)・blog サイトマップ収録を実測。新規404ゼロ。回帰pin `ap-benkyou-jikan-meyasu-funnel.test.ts`(核心事実/funnel規律=/essay非送客/inbound/FAQPage/サイトマップ=崩れたら落ちる)。
+- **SKIP記録(裏取り済・量産回避)**:
+  - **IP 勉強時間ページ**: `ip-3shukan-goukaku`(30〜42時間・未経験5〜6週間明記)＋`ip-1month-study-plan`(keyword LP=ペース別)が既に「総時間/ペース」を扱う＝立場別 hours 専用ページは **cannibalization 懸念**(FE/AP は競合する pace記事が無かったが IP は2本ある)。安全側で SKIP。
+  - **AP 難易度/合格率ページ**: `ipa-shiken-goukakuritsu-ranking`(AP合格率20%台)＋`ap-goukaku-ten-border`＋散在言及で既カバー。NW が `nw-nanido-goukakuritsu-suii` を持つのは NW合格率推移が distinct niche だから＝AP版は重複・thin で SKIP。
+- **申し送り（セッション78）**: 「立場別 勉強時間目安」vein を AP(第2の主要区分)で開拓し FE との非対称を解消。**残る候補(要吟味・安易に量産しない)**: (i)NW/SG 等の「勉強時間目安」=niche/lower volume かつ overview 記事で概ねカバー＝volume と overlap を1区分ずつ裏取りしてからのみ着手(thin懸念)。(ii)FE↔AP の study-time ペアの相互discovery強化(fe-benkyou-jikan-meyasu→ap-benkyou の relatedSlugs追加)は marginal=保留。(iii)他の per-exam 非対称(FEにあって AP/他に無い専用ページ種別)を1つずつ走査。HD群(HD-1/4/5/6/8/9)/topic-tagger=人間待ちは不変。1改善=確実を維持。
