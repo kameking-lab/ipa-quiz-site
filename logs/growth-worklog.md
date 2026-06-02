@@ -1509,7 +1509,7 @@
 - s91 申し送りで objection vein は IP/SG/SC/FE/AP 網羅・打ち止め。「新角度を起案できない場合のみ flag」に従い、心得「安易に尽きたと宣言せず新角度を起案」で **decision/比較系の新vein** を起案。
 - corpus走査（blog slug 187本・`grep 飛ばし/いきなり`）: 「基本情報 飛ばして 応用情報 / いきなり応用情報 / 基本情報なしで応用情報」は**高volumeの decision query**だが、専用記事が不在。touch は `ap-benkyou-jikan-meyasu` のFAQ2文 + `13-shikaku-osusume-jyun`/career-path の散発言及のみ。objection記事(価値の有無)・roadmap(一般的な順番)・benkyou-jikan(時間)とは**別intent**(=このFE飛ばし可否の判断)で重複thinでなく明確な gap と判定。`grep` で worklog/backlog に過去の検討/SKIP 記録も無し（二重実装でない）。
 - **durable fact 確認**: ①受験資格に制限なし（誰でもAP受験可・`ipa-juken-shikaku-nenrei` SSOT）②FE合格でAP免除なし（FE→APの免除制度は非存在・午前I免除2年はAP合格→高度向けで別物）。いずれも構造的・CBT移行で不変＝staleness landmine無し。
-- done×1 [P2-2 decision新vein] SHA `<FILL>`: 新記事 `fe-tobashite-ap`「基本情報を飛ばして応用情報から受けてもいい？｜FEを省略してAPに挑む判断基準」。
+- done×1 [P2-2 decision新vein] SHA `4be4edf`: 新記事 `fe-tobashite-ap`「基本情報を飛ばして応用情報から受けてもいい？｜FEを省略してAPに挑む判断基準」。
   - 核心: 受験順の決まりは無く飛ばすこと自体は可能／FE合格でAP免除は無い（飛ばしても損しない）／飛ばしてよいケース(IT実務経験者・情報系・午前を今戦える人)／避けるケース(IT初学者・午後記述不安・FEが社内必須)／注意3点(午前知識は結局必要・午前未達なら午後不採点の多段階選抜・午後記述に時間配分)／FE↔AP早見表。
   - **SSOT一致**: FE=レベル2・科目A60問90分/科目B20問100分・各1000点満点600点IRT・約200時間(未経験300時間)。AP=レベル3・午前80問四択150分/午後記述5問150分・各100点満点60点素点・多段階選抜・300〜500時間・合格で高度午前I免除2年（exam-data/fe-goukaku-ten-irt/ap-goukaku-ten-border/ap-benkyou-jikan-meyasu と照合）。資格手当/年収は不記載（誇大回避）。
   - **funnel規律**: 受験順=採点無関係ゆえ**旗艦/essay非送客**（s27/s65 precedent・body /essay=0実測、HTML唯一の/essayは全ページ共通 header nav）。funnel=/fe・/ap・fe/ap-shiken-meritto-imi-aru（価値比較）・ap-benkyou-jikan-meyasu（時間）・ap-goukaku-ten-border（合格基準）・it-shikaku-nendaibetsu-roadmap/13-shikaku-osusume-jyun（順番）・AIコパイロット。exam:"ap"（AP-bound query・/recommended-books/ap 書籍funnelも妥当・essay funnelはESSAY_FLAGSHIP_EXAMSゲートゆえapでは非発火）。
