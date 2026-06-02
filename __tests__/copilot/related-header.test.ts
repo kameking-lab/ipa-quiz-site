@@ -33,7 +33,7 @@ function sampleItem(overrides: Partial<RelatedQuestion> = {}): RelatedQuestion {
     qNumber: 1,
     category: "テクノロジ系",
     preview: "可変長符号化に関する記述として、最も適切なものはどれか。",
-    url: "/quiz?id=ap-2023h-am-q1",
+    url: "/q/ap/2023-spring/am/q1",
     score: 12.5,
     ...overrides,
   };
@@ -105,9 +105,13 @@ describe("findRelatedQuestions", () => {
     for (let i = 1; i < results.length; i++) {
       expect(results[i - 1].score).toBeGreaterThanOrEqual(results[i].score);
     }
-    // 全件が実在する問題 URL を持つ（kind==="question" の写像）。
+    // 全件が正規の indexable な静的問題ページ /q/* を指す（旧 /quiz?id= は mode 無しで
+    // 308 → ホームへリダイレクトされる死リンクだった）。session を持たない RelatedQuestion
+    // からは厳密な path 全体を再構成できないため、exam/qNumber の整合と非 /quiz を固定する。
     for (const r of results) {
-      expect(r.url).toBe(`/quiz?id=${encodeURIComponent(r.questionId)}`);
+      expect(r.url.startsWith(`/q/${r.exam}/`)).toBe(true);
+      expect(r.url.endsWith(`/q${r.qNumber}`)).toBe(true);
+      expect(r.url.startsWith("/quiz?")).toBe(false);
     }
   });
 

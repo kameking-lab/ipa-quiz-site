@@ -3,6 +3,7 @@ import type { Question } from "@/lib/questions/types";
 import { GLOSSARY } from "@/data/glossary";
 import type { GlossaryTerm } from "@/data/glossary";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionPagePath } from "@/lib/seo/question-url";
 import type { CorpusDoc } from "./types";
 import { GLOSSARY_ALIASES } from "./aliases";
 
@@ -31,7 +32,11 @@ function buildQuestionDoc(q: Question): CorpusDoc {
     id: `q:${q.id}`,
     kind: "question",
     title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} / ${q.category}`,
-    url: `/quiz?id=${encodeURIComponent(q.id)}`,
+    // 引用カード/関連問題のリンク先は、正規の indexable な静的問題ページ /q/* を指す。
+    // 旧 `/quiz?id=` は (1) `mode` クエリが無いと next.config.ts の 308 でホームへ
+    // リダイレクトされ、(2) /quiz ページは `id` を読まない ＝ 引用した問題ではなく
+    // ホームへ着地する死リンクだった。questionPagePath で正規ページへ解決する。
+    url: questionPagePath(q),
     text,
     meta: {
       exam: q.exam,
@@ -92,6 +97,9 @@ export function getCorpus(): CorpusDoc[] {
   for (const q of getAllQuestions()) {
     // 解説が空 / placeholder のものは検索対象から外す
     if (!q.explanation || q.explanation.trim().length < 20) continue;
+    // needsReview の問題は /q ページが notFound()（404）を返すため、引用/関連問題の
+    // リンク先にすると死リンクになる。検索対象からも外す（パース不全のため教材価値も低い）。
+    if (q.needsReview) continue;
     docs.push(buildQuestionDoc(q));
   }
   for (const term of GLOSSARY) {
