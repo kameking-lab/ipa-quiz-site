@@ -84,6 +84,14 @@ function canonicalOf(md: Metadata | undefined): string | undefined {
   return typeof c === "string" ? c : undefined;
 }
 
+// openGraph.url を相対パスへ正規化（絶対 `${SITE_BASE_URL}/x` も relative "/x" も許容）。
+// 未設定（親 metadataBase 継承）は undefined。
+function ogUrlOf(md: Metadata | undefined): string | undefined {
+  const u = md?.openGraph?.url;
+  if (u == null) return undefined;
+  return String(u).replace(SITE_BASE_URL, "");
+}
+
 function isNoindex(robots: Metadata["robots"]): boolean {
   if (!robots) return false;
   if (typeof robots === "string") return robots.includes("noindex");
@@ -135,6 +143,30 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
       if (canonical !== selfRoute) bad.push(`${p} -> ${canonical}`);
     }
     expect(bad).toEqual([]);
+  });
+
+  // og:url と canonical はどちらもクローラ/SNS への「このページの正規 URL」signal。
+  // 両者が食い違うと、共有時の正規化先と検索の正規化先が矛盾し、誤った URL に
+  // シグナルが集約されうる（canonical 自己矛盾と同genre の crawl-signal 不整合）。
+  // og:url を**明示している**具象 static ルートは、canonical（=自URL）と一致させる。
+  // og:url 未設定（親 metadataBase 継承）は許容＝チェック対象外。
+  it("og:url を持つ具象 static ルートは canonical と同一 URL を指す", async () => {
+    const bad: string[] = [];
+    let withOg = 0;
+    for (const p of staticLocs) {
+      const loader = pageModules[moduleKeyForRoute(p)];
+      if (!loader) continue;
+      const md = await resolvePageMetadata(loader);
+      const og = ogUrlOf(md);
+      if (og === undefined) continue; // og:url 未設定=継承（許容）
+      withOg += 1;
+      // canonical 明示時はそれを正、未明示なら自URL（"/" は home）。
+      const expected = canonicalOf(md) ?? (p === "" ? "/" : p);
+      if (og !== expected) bad.push(`${p}: og=${og} canonical=${expected}`);
+    }
+    expect(bad).toEqual([]);
+    // 空振り防止: og:url を明示する具象 static ルートが十分数ある（監査が機能している）。
+    expect(withOg).toBeGreaterThan(5);
   });
 });
 
