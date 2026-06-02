@@ -348,6 +348,18 @@ export default async function RecommendedBooksExamPage({
             と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
           </p>
         )}
+        {code === "fe" && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            最大の難関＝科目B（擬似言語・アルゴリズム）でつまずいたら、
+            <Link
+              href="/blog/fe-kamoku-b-taisaku"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              科目Bの対策法
+            </Link>
+            を読み、AIコパイロットに擬似言語を1行ずつ質問しながら解き方を身につけましょう。
+          </p>
+        )}
       </section>
 
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">

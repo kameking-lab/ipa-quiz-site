@@ -29,4 +29,12 @@ describe("/recommended-books/[exam] — 論述区分の旗艦 /essay CTA", () =>
   it("ゲートの単一情報源が論述5区分(ST/SA/PM/SM/AU)である", () => {
     expect([...ESSAY_EXAM_CODES].sort()).toEqual(["au", "pm", "sa", "sm", "st"]);
   });
+
+  it("FE のみ土台=科目B対策記事へ funnel する（旗艦と対称）", () => {
+    // FE 限定ゲートで科目B中核ピラーへ
+    expect(source).toContain('href="/blog/fe-kamoku-b-taisaku"');
+    expect(source).toMatch(/code === "fe"[\s\S]*fe-kamoku-b-taisaku/);
+    // 午前MC「アルゴリズム」分野ではなく科目B(擬似言語)である旨を明示（誇大回避）
+    expect(source).toContain("擬似言語");
+  });
 });
