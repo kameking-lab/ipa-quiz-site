@@ -367,6 +367,36 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(body).not.toContain("ストラテジ系が最多");
     expect(body).toContain("テクノロジ系が最多");
   });
+
+  // 「ITパスポート 意味ない」objection cluster. IP は入門・非論文区分のため
+  // 旗艦 /essay へは送らず(s27/s65 precedent)、入口=/ip と土台=FE科目B へ funnel。
+  // 合格基準は SSOT(ip-goukaku-ten-bunyabetsu)と一致させ、誇大な年収/断定を入れない。
+  // inbound は ip-goukaku-ten-bunyabetsu / ip-3shukan-goukaku の relatedSlugs から
+  // 受ける(orphan回避)。崩れたら落ちる。
+  it("ip-shiken-meritto-imi-aru: ip exam, FAQ source, /ip+FE funnel, no /essay, inbound wired", () => {
+    const post = getBlogPostBySlug("ip-shiken-meritto-imi-aru");
+    expect(post).toBeDefined();
+    expect(post!.exam).toBe("ip");
+    const body = post!.body;
+    // FAQPage source section present
+    expect(body).toContain("## よくある質問");
+    // entry funnel to /ip hub and foundation (FE 科目B); never the flagship grader
+    expect(body).toContain("(/ip)");
+    expect(body).toContain("/blog/fe-kamoku-b-taisaku");
+    expect(body).not.toContain("/essay");
+    // 合格基準は SSOT と一致(総合600/分野別300・1000点満点)
+    expect(body).toContain("600 点");
+    expect(body).toContain("300 点");
+    // 入門レベルの事実(レベル 1)を明示
+    expect(body).toContain("レベル 1");
+    // 誇大回避: 具体的な年収額の断定を入れない
+    expect(body).not.toMatch(/年収\s*\d/);
+    // inbound wiring (non-orphan): listed in IP-cluster siblings' relatedSlugs
+    for (const sib of ["ip-goukaku-ten-bunyabetsu", "ip-3shukan-goukaku"]) {
+      const s = getBlogPostBySlug(sib);
+      expect(s?.relatedSlugs).toContain("ip-shiken-meritto-imi-aru");
+    }
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
