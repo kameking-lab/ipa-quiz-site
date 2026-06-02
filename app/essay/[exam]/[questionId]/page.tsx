@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, ChevronLeft } from "lucide-react";
+import { AlertTriangle, ChevronLeft, BookOpen } from "lucide-react";
 
 import {
   findEssayQuestion,
@@ -162,6 +162,20 @@ export default async function EssayEditorPage({
         </h2>
         <div className="whitespace-pre-wrap">{question.context}</div>
       </section>
+
+      {/* Hub→spoke: the user is about to write — link the "how to write" guide
+          at the tightest intent moment (deep flagship surface had no path to the
+          educational 論述 articles, only book + IPA source). Subtle, single link. */}
+      <p className="mb-4 flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+        <BookOpen className="h-3.5 w-3.5 flex-shrink-0 text-zinc-400" />
+        書き方に迷ったら{" "}
+        <Link
+          href="/blog/koudo-ronjutsu-kakikata-kotsu"
+          className="font-medium text-sky-600 hover:underline dark:text-sky-400"
+        >
+          合格答案の構成と書き方のコツ
+        </Link>
+      </p>
 
       <EssayEditor question={question} />
 

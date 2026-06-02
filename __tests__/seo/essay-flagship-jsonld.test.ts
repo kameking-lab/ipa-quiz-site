@@ -150,4 +150,15 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
       'InlineBookHint exam={question.exam} category="論文"',
     );
   });
+
+  // Hub→spoke at the tightest intent moment: the user is about to write, yet the
+  // deep grading page linked out only to the book + IPA source — no path to the
+  // "how to write" guide. Pin the contextual link to the writing-cotsu article so
+  // this learning path can't silently regress. "崩れたら落ちる".
+  it("links to the 書き方コツ guide at the editor (hub→spoke)", () => {
+    expect(DEEP_SOURCE).toContain(
+      'href="/blog/koudo-ronjutsu-kakikata-kotsu"',
+    );
+    expect(DEEP_SOURCE).toContain("合格答案の構成と書き方のコツ");
+  });
 });
