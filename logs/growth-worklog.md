@@ -739,3 +739,22 @@
   - **旗艦/essay 周辺の新角度を3点開拓**: (1)旗艦ハブの欠落 FAQPage を補完(objection-handling・誇大回避) `4812e48`、(2)最近縁の業種別論文記事3本から旗艦へ直 funnel(取り残し是正) `d0eb11d`、(3)essay-grading 機能ページの「採点基準を参照」誇大を自ページFAQ/site免責へ揃える事実性是正 `3850234`。全て additive・誇大回避(論文5区分gate/参考評価/quota非記載)・回帰pin・新規404ゼロ。
   - **打ち止め確認**: 旗艦essay funnel は gyoushu系で actionable な取り残し枯渇(他10 flagは by-design gate or off-scope)。機能ページ事実性=ヒーロー是正済、残スコープ広告は HD-4。
   - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1〜HD-10、特にGSC404一覧/AP・FE午後本データ/overviewテンプレHD-9/essay-gradingスコープ広告=HD-4追補)、(b)コード側自律領域は旗艦周辺も飽和方向。次セッションは新角度の慎重な起案 or HD解消待ち。
+
+## セッション42（growth ループ）2026-06-02 JST
+- 監査(read-only): session41が「旗艦essay funnel 枯渇・新角度起案 or HD待ち」と総括。**新角度=FAQPage機構(session8-15)が戦略/旗艦/土台 記事へは展開済だが、競合薄の社会人/比較/キャリア系の高intent記事には未展開**だった盲点を発見。全general postsの `## よくある質問` 節有無を機械走査→FAQ未設置の高intent記事を特定し、session8-15と同パターン(オリジナル4Q&A・誇大回避・本文事実と整合・additive)で3本にFAQ節を追加しFAQPage化。
+- done: [P2-2/あと一歩] **働きながら合格記事 hatarakinagara-goukaku に よくある質問節を追加しFAQPage化**。SHA `1766cc5`。
+  - 監査で発見: 競合薄の社会人「あと一歩」記事(働きながら×時間管理×合格戦略)だが `## よくある質問` 節が無く extractFaq の対象外だった。「何ヶ月/スキマ時間/科目B両立/効率化」は働きながら受験者の質問intent。
+  - 実装: オリジナル4Q&A(Q1=時間別プラン目安IP3/FE6/AP10ヶ月・本文の表と整合／Q2=スキマ時間積み上げ・通勤月20h早朝月15h・過去問AIモバイル／Q3=科目B 20問100分トレース力・毎日1問・[fe-kamoku-b-taisaku]へ土台funnel／Q4=詰まり時間をAIコパイロット・[復習モード]funnel)を `## まとめ` 直前にadditive挿入。general記事(非論文)のため旗艦/essay非送客=土台導線のみ。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1828/build OK)。本番ビルド `blog/hatarakinagara-goukaku.html` に FAQPage×1＋Question×4＋実問文「働きながらだと合格まで何ヶ月」・Q3が実DOMで `href="/blog/fe-kamoku-b-taisaku"`・Q4 `href="/quiz?mode=review"` 出力。JSON-LD acceptedAnswer×4 全て markdown leak `](` =0(生markdownはRSC flightペイロード内のみ=既存挙動)。`/essay`は1=site-wide footer(本文over-claim無し)を実測。corpus-wide blog-faq-jsonld が自動カバー。
+- done: [P2-2/あと一歩] **13資格おすすめ順記事 13-shikaku-osusume-jyun に よくある質問節を追加しFAQPage化**。SHA `35f566b`。
+  - 監査で発見: ビギナーfunnelの比較記事(IT資格 おすすめ順/どれから)だがFAQ節無し。「どれから/飛び級可否/午前I免除/同時受験」は入門受験者の質問intent。
+  - 実装: オリジナル4Q&A(Q1=未経験は[IP]・エンジニアは[FE]から／Q2=飛び級可だが午前6割が目安・基礎曖昧なら[FE]／Q3=午前I免除2年間・4段階構成・免除中に高度／Q4=同時受験非推奨・[過去問AIトップ]funnel)を `## まとめ` 直前にadditive挿入。全Q&Aは本文の事実と整合。土台=IP/FEの過去問入口へfunnel。
+  - 検証: 全ゲート緑(test1828/build OK)。本番ビルド `blog/13-shikaku-osusume-jyun.html` に FAQPage×1＋Question×4＋実問文「IPA資格はどれから取るのがおすすめ」・`href="/ip"`/`href="/fe"` funnel出力・JSON-LD answer×4 markdown leak 0 を実測。
+- done: [P2-2/あと一歩] **キャリアパス記事 shikaku-career-path に よくある質問節を追加しFAQPage化**。SHA `3e9bcc2`。
+  - 監査で発見: キャリア系記事(資格取得後の転職/昇格/副業)だがFAQ節無し。「役立つ?/次に何を/SCの違い/合格後の演習意義」は質問intent。本記事は本文に softな年収額の記載があるが自身で「市場情報は変動」と免責済。
+  - 実装: オリジナル4Q&A。**誇大回避のため具体的年収額はFAQに持ち込まず**構造的事実(FE/AP評価傾向・午前I免除2年間・SC=唯一の登録制/登録セキスペ・継続学習)に限定。FE/AP/NW/DB/SC・過去問AIへfunnel。
+  - 検証: 全ゲート緑(test1828/build OK)。本番ビルド `blog/shikaku-career-path.html` に FAQPage×1＋Question×4＋実問文「IPA資格は転職や昇格に役立ちますか」・`href="/sc"` funnel・JSON-LD answer×4 markdown leak 0 を実測。
+- 申し送り（セッション42まとめ）:
+  - **新角度=FAQPage機構を競合薄の高intent記事へ展開**: session8-15は戦略/旗艦/土台記事にFAQ展開したが、社会人/比較/キャリア系の高intent記事(あと一歩/P2-2)は未展開だった。3本(hatarakinagara/13-shikaku-osusume-jyun/shikaku-career-path)にオリジナル4Q&AずつのFAQ節を追加しFAQPage自動出力＋質問intent整合。全て本文事実と整合・誇大回避(年収額/quota/価格非記載・参考評価不要)・土台funnel・新規404ゼロ・corpus-wide回帰自動カバー。
+  - **残るFAQ未設置のgeneral記事**: `it-shikaku-kensetsu`/`it-shikaku-seizou`(建設/製造業向けニッチ・volume低め)・`gyoushu-betsu-it-shikaku`(業種別overview) はFAQ節無し。intentはニッチでvolume小=次セッションの**任意の低優先micro-angle**(やるなら業種別overviewが比較的volume有り。kensetsu/seizouはthin寄り=様子見でも可)。backlog P2-2 に起案追記。
+  - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1〜HD-10)、(b)残FAQ未設置のニッチ業種記事(任意・低優先)、(c)コード側自律領域は引き続き縮小傾向。
