@@ -25,7 +25,7 @@ describe("採点根拠データの型 — PM で確立（強み1）", () => {
     }
   });
 
-  it.each(["st", "sa", "sm", "au"] as const)(
+  it.each(["pm", "st", "sa", "sm", "au"] as const)(
     "%s の全設問・全小問に rubric が付与されている（横展開）",
     (exam) => {
       const questions = getEssayQuestionsByExam(exam);
@@ -45,22 +45,29 @@ describe("採点根拠データの型 — PM で確立（強み1）", () => {
     },
   );
 
-  it("型は任意フィールド＝横展開可能（未付与の設問もそのまま有効にロードできる）", () => {
-    // 全論文区分の全設問がロードでき、rubric 未付与でも壊れない。
+  it("rubric は任意フィールド＝未付与でもロードが壊れず、付与時は配列として読める", () => {
+    // 強み1 は論文5区分の主要設問へ展開完了したが、型としては requiredKeywords/
+    // scoringPoints は任意。未付与の設問が将来追加されてもロードが壊れないこと、
+    // 付与済みの設問では必ず非空配列として読めることを保証する（未付与の存在を前提にしない）。
     const exams = ["st", "sa", "pm", "sm", "au"] as const;
-    let withoutRubric = 0;
     let total = 0;
     for (const exam of exams) {
       for (const q of getEssayQuestionsByExam(exam)) {
         for (const sub of q.subPrompts) {
           total++;
-          if (!sub.requiredKeywords) withoutRubric++;
+          // 任意フィールド：あれば配列、なければ undefined（どちらでもロード可）。
+          if (sub.requiredKeywords !== undefined) {
+            expect(Array.isArray(sub.requiredKeywords)).toBe(true);
+            expect(sub.requiredKeywords.length).toBeGreaterThan(0);
+          }
+          if (sub.scoringPoints !== undefined) {
+            expect(Array.isArray(sub.scoringPoints)).toBe(true);
+            expect(sub.scoringPoints.length).toBeGreaterThan(0);
+          }
         }
       }
     }
     expect(total).toBeGreaterThan(0);
-    // 型は段階展開＝まだ rubric 未付与の設問が残っている（横展開の余地）。
-    expect(withoutRubric).toBeGreaterThan(0);
   });
 });
 
