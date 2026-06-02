@@ -822,3 +822,24 @@
   - **FAQ展開を厚い高intent記事へ4本継続(session43-44の太いvein)**: 参考書ガイド `10cf687`・DB対策 `3c8ca42`・NW頻出 `904607e`・IP短期合格 `2e8fd07`。全て本文事実と厳密整合・誇大回避(年収/quota/価格非記載)・**funnel規律徹底**(参考書Q4のみ論文5区分→旗艦/essay参考評価、DB/NW=記述式ゆえ旗艦非送客で各ハブ+時間配分記事、IP=非論文で土台/モードのみ)・corpus-wide回帰自動カバー・新規404ゼロ・全記事 markdown leak 0 実測。
   - **残るFAQ未設置の厚い記事(次セッション継続可)**: `ai-kakomon-gakushuu`(1638・AI学習法longtail=非論文ゆえ旗艦非送客)・`kakomon-ai-vs-doujou`(2081・**競合比較ゆえ中傷回避で慎重に**・自サイト事実優位の提示に留める)。**要注意(FAQ化保留/制約)**: `sc-ronbun-taisaku`はSC午後frame事実性がHD-6未決でFAQ化も保留、`ap-gogo-sentaku`はAP午後モック=HD-4(選択戦略FAQは可だが旗艦送客不可)、roadmap系は未実装capabilityを現状事実化しない(誇大回避)。短いstub記事(len<800)はthinゆえFAQ対象外。
   - **次の最優先候補**: (a)残り2本(ai-kakomon-gakushuu/kakomon-ai-vs-doujou)へFAQ展開継続でP2-2 FAQ vein をほぼ枯らす、(b)枯れたら新P2/P3角度起案 or HD群の人間入力待ち(HD-1〜HD-10)。
+
+## セッション46（growth ループ）2026-06-02 JST
+- 監査(read-only): session45 申し送りの「残り2本(ai-kakomon-gakushuu/kakomon-ai-vs-doujou)」FAQ展開を完了後、**FAQ未設置の最大の取り残し=テンプレ生成記事群**(buildFrequentTopicsPost/buildLastMonthPost/buildPracticePost/buildAnalysisPost×各13区分=52記事)を build成果物の機械走査(`grep '"@type":"FAQPage"'` 欠落)で発見。session11 `buildOverviewPost` の「テンプレ1編集で全13区分一括FAQPage化」を踏襲し2テンプレを処理。
+- done: [P2-2/あと一歩] **AI学習法記事 ai-kakomon-gakushuu によくある質問節を追加しFAQPage化**。SHA `1f5b873`。
+  - 監査: 非論文のAI学習法longtail記事(1638)だがFAQ節無し。「暗記学習との違い/思考力低下/スキマ時間/科目B」が質問intent。**非論文ゆえ旗艦/essay非送客**(funnel=土台fe-kamoku-b-taisaku・ランダム/分野別モード・AIコパイロット)。
+  - 実装: オリジナル4Q&A(Q1=3機能[即時解説/類題生成/弱点分析]／Q2=教科書→過去問AI弱点可視化→AI「なぜ」解消の3周設計／Q3=通勤30分シナリオ+復習モード／Q4=科目B擬似言語1行トレース→[fe-kamoku-b-taisaku]土台funnel)を `## まとめ` 直前に挿入。本文事実厳密整合。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1828/build OK)。`blog/ai-kakomon-gakushuu.html` に FAQPage×1+Question×4・可視Q・`href="/blog/fe-kamoku-b-taisaku"`×1・`/essay`=1(footerのみ・本文over-claim無し)・JSON-LD leak0 を実測=新規404ゼロ。
+- done: [P2-2/競合比較] **競合比較記事 kakomon-ai-vs-doujou によくある質問節を追加しFAQPage化**。SHA `b3b02c3`。
+  - 監査: 競合比較記事(2081・既に中傷回避の免責文あり・本文は `${AI_QUOTA_COPY_SHORT}` SSOT参照済)だがFAQ節無し。「どちらを使うべき/AIで何ができる/スマホ完結/無料範囲」が質問intent。**競合比較ゆえ中傷回避**(従来型を中立framing・組み合わせ推奨)・非論文ゆえ旗艦非送客。
+  - 実装: オリジナル4Q&A(Q1=従来型は蓄積データ/AIは対話解説・組み合わせ推奨／Q2=AIコパイロット具体機能／Q3=モバイル片手UX[画面遷移ゼロ/スワイプ/PWA]／Q4=無料全13区分・AI回数はSSOT `${AI_QUOTA_COPY_SHORT}`参照・価格非記載)。本文5軸比較と厳密整合。
+  - 検証: 全ゲート緑(test1828/build OK)。`blog/kakomon-ai-vs-doujou.html` に FAQPage×1+Question×4・可視Q「どちらを使うべきですか」「無料でどこまで使えますか」・`/essay`=1(footerのみ)・raw template `${AI_QUOTA_COPY_SHORT}`残存=0(正しく補間)・leak0 を実測。
+- done: [P2-2/テンプレ一括] **頻出論点トップ10 生成テンプレ buildFrequentTopicsPost に FAQ追加→全13区分一括FAQPage化**。SHA `519f101`。
+  - 実装: テンプレ body の `## まとめ` 直前に format-agnostic な4Q&A(Q1=トップ10で6割得点・残りは得意分野上乗せ／Q2=過去問→用語集→再演習の三段階・分野別モード・AIコパイロット比較表／Q3=過去5年傾向の安定性+IPA公式確認の免責／Q4=分野別モード+類題演習+[/exam]ハブ)を1箇所挿入。**13区分横断ゆえ午前/午後/科目の形式特定を厳禁**(IP/SG/FE誤記=HD-9回避)・本文事実厳密整合・非論文混在ゆえ旗艦/essay非送客(funnel=分野別モード+/[exam])。
+  - 検証: 全ゲート緑(test1828/build OK)。本番ビルドで `*-hinnshutsu-ronten-toppu10.html` **13/13 が FAQPage×1+Question×4**・ip記事で `ITパスポート` label補間・`/quiz?mode=topic`×2・`href="/ip"`・`/essay`=1(footerのみ・全区分)・leak0 を実測=新規404ゼロ。
+- done: [P2-2/テンプレ一括] **直前1ヶ月 生成テンプレ buildLastMonthPost に FAQ追加→全13区分一括FAQPage化**。SHA `6c6c34d`。
+  - 実装: テンプレ body の `## まとめ` 直前に4Q&A(Q1=残り1ヶ月の週別配分／Q2=新規教材を増やさない3つの鉄則／Q3=捨てる論点[5年1回/個別ベンダー/重計算]／Q4=復習モード+類題+[/exam])を挿入。**旗艦/essay funnelは既存 `ESSAY_FLAGSHIP_EXAMS` ゲート(st/sa/pm/sm/au)・FE土台は `exam==="fe"` ゲートを FAQ用短縮CTA(`faqEssayCta`/`faqKamokuBCta`)で踏襲**(参考評価明記)。非論文区分には旗艦/土台を出さず復習モード/[exam]のみ=誇大回避を構造保証。
+  - 検証: 全ゲート緑(test1828/build OK)。本番ビルドで `*-cyokusen-1kagetsu.html` **13/13 FAQPage**・**essay funnel gating厳密**(st/sa/pm/sm/au=`/essay`3[body+FAQ+footer]・非論文10区分=1[footerのみ])・**FE kamokuB gating厳密**(fe=2・他0)・`/quiz?mode=review` funnel・leak0 を実測=新規404ゼロ。
+- 申し送り（セッション46まとめ）:
+  - **FAQ vein の最大の取り残し=テンプレ生成52記事を発見**(個別記事のFAQ化は session42-46 でほぼ枯れたが、テンプレ生成群は未着手だった)。本セッションで2テンプレ(頻出論点/直前1ヶ月=計26記事)をFAQPage化。**テンプレFAQの鉄則**: ①13区分横断ゆえ午前/午後/科目の形式特定を避ける(IP/SG/FE誤記=HD-9回避) ②旗艦/土台funnelは既存ゲート(ESSAY_FLAGSHIP_EXAMS/exam==="fe")を踏襲し非論文区分には出さない ③本文既存事実のみ引用・quota/価格はSSOT or 非記載。
+  - **次の最優先候補(残テンプレ2本=26記事)**: `buildPracticePost`(`{exam}-yoru-tokurensyu`・夜特訓/実戦演習・L348〜)と `buildAnalysisPost`(`{exam}-jisseki-mondai-bunseki`・実績問題分析・L450〜)が FAQ未設置。同じ鉄則(format-agnostic+既存ゲート踏襲)でFAQPage化すれば残り26記事を一掃できる(vein太い)。**着手前に各テンプレ body を精読**し本文事実と整合するQ&Aを作ること。
+  - その後の候補: テンプレ4本完了後はFAQ vein枯渇に近づく→新P2/P3角度起案 or HD群(HD-1〜HD-10)の人間入力待ち。
