@@ -1284,3 +1284,20 @@
 - **新 error class マップ完了(backlog 追記)**: 2023高度試験再編で午後形式が変わったのは **SC(統合午後=HD-6)と ES(午後II論述式=HD-11)の2区分のみ**(NW/DB=記述式不変・ST/SA/PM/SM/AU=論述不変)と確定＝今後この vein は新規調査不要。
 - **検証規律**: 本セッションは docs(logs/*.md)のみの変更でコード/データ/テスト不変＝ゲート影響なし。IPA公式WebFetch/WebSearch で ES午後形式を実測裏取りしてから記録(自己申告でなく一次情報)。**最大の成果=誤framing記事を着手前に止め、live の present-tense 事実誤りを正しく escalate した**こと。
 - **申し送り（セッション80）**: s79申し送り(i)のES記事化は HD-11 で**着手不可と確定**。記述式時間配分vein(ap/nw/db)＋論述区分(5)＋scoring(ip/sg/fe/ap/高度)＋per-exam非対称は**枯渇/HD化**。**残る候補(要吟味)**: (i)他の「2023再編以外」の per-exam content 非対称が残るか1区分ずつ裏取り(量産しない)。(ii)P2-3 hub→spoke 逆方向は recommended-books/essay/features/EssayResultViewで網羅・新destination面の OUT gap を read-only監査。(iii)HD群(HD-1/4/5/6/8/9/10/**11**)/topic-tagger=人間待ちは不変。1改善=確実を維持し、satur:水増しせず確実な1件のみ。
+
+## セッション81（growth ループ｜2026-06-02 JST）
+**土台=科目B 新vein=「メタ記事のみで解き方の実演記事が不在」を解消＋HD-9スコープ訂正＋監査clean確認**
+背景: read-only 監査で(1)link audit=0 FATAL/0 WARN(176本)・fact面/funnel/per-exam非対称/dead-link は全て done/SKIP/HD で枯渇を再確認。
+(2)土台=科目Bの既存9記事を走査すると **全てメタ**(勉強法・時間配分・記法早見表・つまずき切り分け・免除)で、
+**具体的なアルゴリズムを擬似言語で1行ずつトレースして見せる「解き方の実演」記事が不在**だった。記法早見表
+(gijigengo-kihou)は「記法を覚えたら手を動かす」と促すのに実演先が無く、訓練法(pseudo-language)は方法論で
+具体例実演ではない＝記法→実演→速度 の「実演」が欠けた橋渡しの盲点。新規キーワード新規ページは saturation とは別で戦略が endorse(s25 precedent)。
+- done: SHA `996abfc` 新記事 `fe-kamoku-b-trace-renshu`「擬似言語トレースの練習｜合計・最大値・線形探索を1行ずつ追う」を追加。
+  - 擬似言語は全てオリジナル(IPA過去問・サンプル非転載)・記法早見表と notation一致(←代入/配列1始まり/for/while/endif)。
+    合計(A={3,1,4,1,5}→14)・最大値(→5)・線形探索(key=4→位置3, 早期exit) の3題をGFMトレース表で実演。トレースの値は全て手計算で検算。
+  - 土台funnel: /fe・記法早見表・3ステップ訓練法・科目B完全対策・わからない・/fe/topic(科目A相当と明示framing=誇大回避)・AIコパイロット(「1行ずつトレースして表に」)。**旗艦/essay非送客**(土台=非論文)。
+  - inbound: gijigengo-kihou「手を動かす」節から1リンク配線(orphan回避)。relatedSlugs=記法早見表/pseudo-language/taisaku/wakaranai(全科目B on-topic)。FAQPage化(4Q&A・リンク/太字leak無し)。
+  - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-trace-renshu.html`(145KB)・トレース表(th「ループ回」)/核心事実「要素番号は1から始まる」「線形探索」「0+3=3」/funnelリンク(/fe/topic・pseudo-language)をHTML実測。body内/essay=0(href="/essay"の1件はfooter chrome)。link audit 0 FATAL/0 WARN(176→177本)。回帰pin `fe-kamoku-b-trace-renshu-funnel.test.ts`(7件)。
+  - 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 2019 / build OK)＝commit前に単独実行。
+- done(docs): SHA `8a61111` **HD-9 スコープ訂正**(実測・コード変更なし)。HD-9は「overviewテンプレだけが旧前提」と記載していたが不正確。generators.tsを午前/午後語で全走査し、`buildLastMonthPost`(L206/212「午前試験/午後試験」)・`buildFrequentTopicsPost`(L317「午前試験・午後試験ともに」)・`buildPracticePost`(L443/447「午後・論文への接続/午前で…午後の長文」)も IP/SG/FE含む全13区分でpre-2023 午前/午後framingをハードコードと判明(buildAnalysisPostのみclean)。影響=計12 live indexable面。HD-9解決時は4生成器をコヒーレントに(部分修正は記事間不整合)。editorial/構造リライトゆえ自律実行せず human-decisions に追記。
+- **vein掘り残し確認**: 土台=科目Bの「実演」veinは合計/最大値/線形探索の基本3パターンで初手をカバー。より発展的なパターン(二分探索/再帰/整列のトレース実演)は別記事化可だが、まず本記事のintent(「読めるのに解けない」初手)で様子見(量産しない・s25「1記事=確実」)。次セッションは backlog の残未着手or本veinの発展パターンを1つ吟味。
