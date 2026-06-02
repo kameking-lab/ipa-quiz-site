@@ -634,3 +634,20 @@
   - **soft-404 角度をコード側で打ち止め**: session34の /essay deep に続き、generateStaticParams で有限列挙する残り page ルート(success-stories 2面 `c79bafb`・essays 1面 `02fae68`)に dynamicParams=false を付与し proper 404 化。runtime curl で有効=200/無効=404/control=200 を全件実測・新規ハード404を作らないこと(索引リンク=静的セット一致)を確認・回帰pin3本。残るソフト404は `/q/*`(~12.6k・ISR設計必須でレバー不可)=**HD-10**(production裏取り・GSCソフト404レポート待ち)のみ。
   - **404ページに旗艦導線**: soft-404解消で重要度が増した復帰面に /essay を配線(`31484d3`)。header/home/footer/quiz-complete に続く5面目の旗艦露出で、デッドリンク着地ユーザーを旗艦へ復帰。
   - **次の最優先候補**: (a)HD-10のproduction裏取り(人間・GSCソフト404レポート)、(b)P2-4旗艦/essayハブ書籍リスト(5区分横断1冊選定=設計判断寄り)、(c)主要バックログ(404掃除/旗艦露出/事実性監査/internal-link/blog)は概ね飽和 or 人間待ち。SC HD-6/AP・FE午後モック HD-4/essay深リンク HD-5/2026制度 HD-7/SGペルソナ HD-8/overviewテンプレ HD-9/q soft-404 HD-10 が人間待ち継続。**コード側の自律実装可能領域は soft-404完了でさらに縮小**＝次セッションは新角度起案 or HD解消(人間入力)待ちの局面。
+
+## セッション36（growth ループ）2026-06-02 JST
+- 監査(read-only): session35が「コード側自律領域は soft-404完了で縮小・新角度起案 or 人間待ち」と総括。**新角度=旗艦 /essay 面のソーシャルカード(OG)欠落**を発見。`/essay` ハブ・`/essay/{exam}/{id}` deep の metadata が openGraph/twitter 未設定で、SNS共有時にルートlayoutの汎用OG画像へフォールバック(blog/[exam]ハブ/recommended-books/faq/glossary/keywords は /api/og の専用カード出力済・**専用 type=essay テンプレも未使用**だった=旗艦が唯一の outlier)。さらに P2-4(旗艦の書籍funnel)が**ハブ・deep とも未配線**(/essays複数形のサンプル面のみ午後本露出)と確認。
+- done: [P1-3/旗艦] **旗艦 /essay ハブに OpenGraph/Twitter ソーシャルカードを追加**。SHA `80cffe5`。
+  - 実装: 静的 metadata に `/api/og?type=essay` を背にした openGraph(website)+twitter(summary_large_image)を付与。title/description は既存 ESSAY_DESCRIPTION 再利用=誇大なし。回帰pin `essay-flagship-jsonld.test`。検証: 全ゲート緑(test1787→1788/build OK)。本番ビルド `essay.html` に og:image(type=essay)/og:title/twitter:card/twitter:image を実測。
+- done: [P1-3/旗艦] **個別採点 deep `/essay/{exam}/{id}` に OG/Twitter カードを追加**。SHA `bd937a6`。
+  - 実装: generateMetadata に question 由来(exam/問番号/title)の `/api/og?type=essay` OG(article)+twitter を付与(ハードコードclaimなし)。回帰pin追加。検証: 全ゲート緑(test1788→1789/build OK)。本番ビルド `essay/au/au-2024a-pm2-q1.html` に og:image(type=essay)/og:type=article/twitter:card を実測。
+- done: [P2-4/収益] **deep `/essay/{exam}/{id}` に論文対策本アフィリ導線を追加**。SHA `a6be418`。
+  - 監査: indexable な旗艦個別採点ページは最高インテントの論述学習面なのに書籍funnel皆無(/essays複数形のサンプル面=午後本露出済・/essay単数形=未)。
+  - 実装: 既存 `InlineBookHint` を `category="論文"` で EssayEditor 直下に再利用。各論述区分(st/sa/pm/sm/au)の「合格論文の書き方・事例集」(tags=["論文","午後II","事例"])へ自然送客。env無編集・rel="sponsored"・[PR]表記はコンポーネント側で保証=押し売り回避。回帰ガード2本: (1)`recommended-books.test` に「**単数 ESSAY_EXAM_CODES(=lib/essay/load・grading set 5区分)** の各区分に論文タグ本≥1」(初版で誤って複数形lib/essays/load〔SC含む6区分〕を参照しSC=記述式で論文本無し→fail→grading setへ修正=HD-6尊重)、(2)deepページの InlineBookHint 配線。検証: 全ゲート緑(test1789→1791/build OK)。本番ビルド deep html に「合格論文の書き方」+sponsored を実測。
+- done: [P2-4/収益] **旗艦 /essay ハブに参考書funnelを追加(控えめ1リンク)**。SHA `f2b2549`。
+  - 監査: deepに配線後もハブは書籍funnel未配線。ハブは5区分横断で特定1冊選定不可(session34申し送りの設計判断ブロッカー)。
+  - 実装: 特定書籍ではなく indexable な `/recommended-books` 索引へ控えめに1リンクのみ送客(押し売り回避・索引はnoindexでない/canonical済を確認)。additive・回帰pin。検証: 全ゲート緑(test1791→1792/build OK)。本番ビルド `essay.html` に href="/recommended-books"+ラベル実測。
+- 申し送り（セッション36まとめ）:
+  - **旗艦 /essay 面を「ソーシャル共有」と「収益funnel」の2軸で対称化**: (1)ハブ+deep に OG/Twitter カード(`80cffe5`/`bd937a6`)で SNS共有が専用 type=essay 画像に=旗艦の発見性向上、(2)ハブ(索引リンク `f2b2549`)+deep(InlineBookHint論文本 `a6be418`)で書籍funnelを配線=P2-4の旗艦面を実装。誇大回避は既存description/question由来導出/コンポーネント側 sponsored・[PR]で構造保証。
+  - **OG角度の枯渇確認**: faq/glossary/keywords/blog/[exam]/recommended-books/home は専用OG済。`/[exam]/afternoon` はモック/ベータ面(HD-4)で意図的に非promotion=OG付与せず(誇大回避)。success-stories/essays複数形は noindex(優先度低)。**主要 indexable 面のOGは旗艦補完で枯渇**。
+  - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1 GSC404一覧/HD-4 AP・FE午後本データ/HD-5 essay深リンク/HD-6 SC午後framing/HD-7 2026制度/HD-8 SGスコア/HD-9 overviewテンプレ/HD-10 q soft-404)、(b)新角度の起案余地は旗艦OG補完で更に縮小。主要バックログ(404掃除/旗艦露出/事実性監査/internal-link/blog/OG)は概ね飽和 or 人間待ち。**コード側自律実装可能領域は引き続き縮小傾向**。

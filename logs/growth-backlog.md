@@ -104,7 +104,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - P2-4: 午後対策の高単価講座/対策本へのアフィリ導線を、午後採点まわり・午後ブログの**学習導線の自然な位置**に設置（既存 data/recommended-books.ts のAmazon/楽天実装流用。タグは env 既存値。env編集はしない）。押し売りUIにしない。
   - **[done セッション12]** 旗艦論述funnelの essay 面(従来アフィリ皆無)に InlineBookHint(category="午後")を設置: 区分別サンプル一覧 /essays/[exam] `2f75565`、答案詳細 /essays/[exam]/.../[qnum] `bb5a241`、data契約の回帰ガード `4239af8`。全6区分(sc/st/sa/pm/sm/au)で正確な午後本・SC論文 誤framing回避・rel="sponsored"・env無編集。
-  - **残り**: 旗艦 indexable ハブ /essay 自体への書籍導線は5区分横断で1冊選定が難しい＝「論述対策の定番書」区分横断リスト化 or 保留(設計判断寄り)。午後/論述ブログ本文への書籍リンクは未着手(blogに書籍コンポーネント無し＝markdownリンク or 新コンポーネント要)。
+  - **[done セッション36] 旗艦 indexable 面(/essay 単数形)の書籍funnel配線完了**: deep `/essay/{exam}/{id}` に InlineBookHint(category="論文"→各区分の合格論文事例集) `a6be418`、ハブ `/essay` は5区分横断で1冊選定不可のため特定書籍でなく `/recommended-books` 索引へ控えめ1リンク `f2b2549`。回帰ガード3本(論述grading set 5区分に論文タグ本≥1・deep配線・hub配線)。誇大/押し売り回避はコンポーネント側 sponsored/[PR]・索引リンク。
+  - **残り**: 午後/論述ブログ本文への書籍リンクは未着手(blog [slug] には bottom CTAの「おすすめ書籍」→/recommended-books/{exam} が既にあり=最低限の funnelは存在。本文インラインの書籍コンポーネント追加は markdown拡張 or 新コンポーネント要＝優先度低・saturation配慮)。
 - P2-5: フリーミアム課金UI（午後AI採点の詳細版/回数無制限を有料境界）は「作るが既定では未有効化/控えめ」。実際の価格・課金有効化は human-decisions へ（勝手に有効化しない）。今は埋もれているので課金の壁で流入を減らさない。
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
