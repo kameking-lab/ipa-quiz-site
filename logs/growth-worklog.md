@@ -1341,3 +1341,13 @@
 - **コーディネーション**: P0-強み は本セッションが直接実装する。growthループは P0-強み に着手しないこと（backlog冒頭に明記）。ループは404/P1/P2の他を継続。
 - 監査（実測）: essay-grade=論文(ST/SA/PM/SM/AU) / scoring=午後記述(AP/SC/NW/DB/ES)。両方 resolveModel("free")=flash-lite。essay-grade は既に missingElements/improvements 出力・essay問題に modelOutline あり。cost-guard(¥50k)・rate-limit 既存。直近ループは app/lib/components を触っていない（衝突リスク低）。
 - 着手順: 強み2(モデル上位化)→強み3(専用化/injection)→強み1(根拠データ型)→強み4(弱点→類題)。各別コミット・全緑ゲート・実測検証。
+
+### セッション83 追記（同一セッション2サイクル目）=再帰(階乗)のコールスタック・トレース実演を新設
+- done×1 [P1-6 土台/新vein・発展パターン4本目] SHA `7fc9bfe`: 新記事 `fe-kamoku-b-saiki-trace`「再帰のトレース練習｜コールスタックで階乗を1段ずつ追う」。
+  - 新概念=**コールスタック**(呼び出しの下り・戻り値の上り・LIFO 後入れ先出し)。探索/ソートまでの変数追跡とは別軸の難所で非重複。最頻出かつ最難関の再帰を、階乗(4)=24 を例に「下り表(段1〜4でスタック積上げ→基底条件 階乗(1)=1)」「上り表(1→2→6→24 で巻き戻し)」の2表で実演。
+  - **手計算検算**(python照合: 階乗(1)=1/(2)=2/(3)=6/(4)=24)。擬似言語は全オリジナル(IPA非転載・○関数定義/return/×)。つまずき3点(基底条件が無いと無限再帰=スタックオーバーフロー/戻り値は深いところから巻き戻る/各呼び出しの n は独立で上書きされない)。フィボナッチ(枝分かれ再帰)は1段落対比のみ(1記事=確実)。
+  - 土台funnel: /fe・sort-trace・nibun-tansaku・trace-renshu・記法早見表・3ステップ訓練法・わからない・科目B完全対策・/fe/topic(科目A相当と明示framing=誇大回避)・AIコパイロット。**旗艦/essay非送客**(土台=非論文)。
+  - inbound: 親 sort-trace「次のステップ」＋ wakaranai タイプC頻出パターン節(再帰を名指し)の2面に additive 配線。relatedSlugs=sort-trace/nibun-tansaku/trace-renshu/taisaku(全科目B on-topic)。FAQPage化(4Q&A)。
+  - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-saiki-trace.html`(150KB)・再帰×23/コールスタック/最終結果24/FAQPage JSON-LD/「| 段 | 呼び出し |」表 をHTML実測。body `](/essay`=0(href="/essay"の1件はfooter chrome)。inbound 2面・outbound 7本全prerendered 200(新規404ゼロ)・sitemap収録。回帰pin `fe-kamoku-b-saiki-trace-funnel.test.ts`(7件)。
+  - **ゲート補足**: build で `.next/lock` の stale lock + Windows ENOTEMPTY(他node多数稼働環境のfile-handle race)に当たったが、stale lock削除＋retryで build OK。typecheck0/lint0err/test 2047/build OK 全緑をcommit前に目視。
+- **発展パターン vein 進捗(s83終了時)**: 線形(s81 trace-renshu)→二分探索(s82 nibun-tansaku)→ソート/選択(s83 sort-trace)→再帰/階乗(s83 saiki-trace)。**頻出4パターン(線形探索・二分探索・ソート・再帰)のトレース実演が出揃った**。残候補=バブルソートの完全トレース・フィボナッチ(枝分かれ再帰)の完全トレース・スタック/キューのトレースだが、主要4パターン網羅で当面の最重要は達成。次セッションは様子見でこの vein を一旦止め、別角度(P2-2 制度/access系の新角度・別試験区分)を優先してよい。s25「1記事=確実」/量産しない を維持。
