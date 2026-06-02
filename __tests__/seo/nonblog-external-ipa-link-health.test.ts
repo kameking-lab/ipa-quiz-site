@@ -132,4 +132,14 @@ describe("EXAM_OFFICIAL_LINKS point at live IPA pages", () => {
   it("matches the curl-verified allowlist exactly (no dead /cbt/ overviews)", () => {
     expect(distinct).toEqual(EXPECTED_OFFICIAL_URLS);
   });
+
+  // IPA's /shiken/syllabus/index.html carries no per-exam DOM anchors — the page
+  // (curl 2026-06-03) contains zero `section` id/name/href, so the old
+  // #section_xx fragments resolved nowhere (soft dead-anchor: 200 page, jump to
+  // top of a generic hub). Stripped on all 13 links; this bans their return.
+  it("carries no dead #section_xx syllabus fragment (anchors absent from IPA DOM)", () => {
+    for (const links of Object.values(EXAM_OFFICIAL_LINKS)) {
+      expect(links.syllabus.includes("#"), `syllabus link has dead fragment: ${links.syllabus}`).toBe(false);
+    }
+  });
 });

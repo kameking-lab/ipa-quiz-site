@@ -19,67 +19,67 @@ const IPA_BASE = "https://www.ipa.go.jp/shiken";
 export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
   ip: {
     overview: `${IPA_BASE}/kubun/ip.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_ip`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sg: {
     overview: `${IPA_BASE}/kubun/sg.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sg`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   fe: {
     overview: `${IPA_BASE}/kubun/fe.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_fe`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   ap: {
     overview: `${IPA_BASE}/kubun/ap.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_ap`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   st: {
     overview: `${IPA_BASE}/kubun/st.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_st`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sa: {
     overview: `${IPA_BASE}/kubun/sa.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sa`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   pm: {
     overview: `${IPA_BASE}/kubun/pm.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_pm`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   nw: {
     overview: `${IPA_BASE}/kubun/nw.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_nw`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   db: {
     overview: `${IPA_BASE}/kubun/db.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_db`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   es: {
     overview: `${IPA_BASE}/kubun/es.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_es`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sc: {
     overview: `${IPA_BASE}/kubun/sc.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sc`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sm: {
     overview: `${IPA_BASE}/kubun/sm.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sm`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   au: {
     overview: `${IPA_BASE}/kubun/au.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_au`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
 };
