@@ -40,10 +40,33 @@ export async function generateMetadata({
   const { questionId } = await params;
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
+  const title = `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
+  const description = `${q.title} — IPA 元採点者プロンプトで AI が論述を採点します。`;
+  const canonical = `/essay/${q.exam}/${q.id}`;
+  const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "essay",
+    title: `${examLabel(q.exam)} 午後II 問${q.qNumber}`,
+    body: q.title,
+  }).toString()}`;
   return {
-    title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`,
-    description: `${q.title} — IPA 元採点者プロンプトで AI が論述を採点します。`,
-    alternates: { canonical: `/essay/${q.exam}/${q.id}` },
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "article",
+      siteName: SITE_NAME,
+      locale: "ja_JP",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 

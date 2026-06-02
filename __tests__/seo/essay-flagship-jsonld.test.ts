@@ -77,4 +77,15 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(DEEP_SOURCE).toContain("getAllEssayQuestions()");
     expect(DEEP_SOURCE).toContain("export const dynamicParams = false");
   });
+
+  // Same OG gap as the hub: deep grading pages are the most specific flagship
+  // surface and were shipped without social cards. Pin a question-derived OG +
+  // Twitter card backed by /api/og?type=essay (no hardcoded claims). "崩れたら落ちる".
+  it("emits openGraph + twitter social cards backed by /api/og?type=essay", () => {
+    expect(DEEP_SOURCE).toContain("openGraph:");
+    expect(DEEP_SOURCE).toContain("twitter:");
+    expect(DEEP_SOURCE).toContain('card: "summary_large_image"');
+    expect(DEEP_SOURCE).toContain("/api/og?");
+    expect(DEEP_SOURCE).toContain('type: "essay"');
+  });
 });
