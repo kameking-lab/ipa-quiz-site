@@ -463,20 +463,23 @@ export default async function ExamTopPage({
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <Button asChild variant="primary" size="sm">
-                    {/* 旗艦の入口は試験別の午後AI採点ページ /[exam]/afternoon (200)。
-                        旧リンクは単数形 essay の試験インデックス（page.tsx 不在＝404）だった。 */}
-                    <Link href={`/${code}/afternoon`}>
-                      {examLabel(code)} の論述添削へ
+                    {/* 旗艦＝実際の IPA 午後II 過去問を AI 採点する indexable ハブ /essay
+                        (LearningResource/OG/sitemap 済・session34-36)。高オーソリティな
+                        試験ハブ(sitemap priority 0.9)から旗艦へ内部リンク equity を流す。
+                        /[exam]/afternoon は練習用モック(AI採点ベータ・HD-4)のため primary は旗艦に寄せる。 */}
+                    <Link href="/essay">
+                      実際の午後II過去問で AI 添削
                       <ArrowRight className="h-3.5 w-3.5" />
                     </Link>
                   </Button>
                   <Button asChild variant="outline" size="sm">
-                    {/* 業種別サンプルは複数形 /essays/[exam] (200)。
-                        旧リンクは sc 以外すべて 404 の死リンクだった。 */}
-                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
+                    {/* 練習用オリジナル問題（AI採点ベータ・モック=HD-4）。誇大回避のため
+                        旗艦の実過去問採点とは別物として「練習・ベータ」を明示する。 */}
+                    <Link href={`/${code}/afternoon`}>練習問題で腕試し（ベータ）</Link>
                   </Button>
-                  <Button asChild variant="ghost" size="sm">
-                    <Link href="/demo/essay-grading">採点デモを見る</Link>
+                  <Button asChild variant="outline" size="sm">
+                    {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
+                    <Link href={`/essays/${code}`}>業種別 合格答案サンプル</Link>
                   </Button>
                 </div>
               </>
