@@ -959,3 +959,15 @@
 - **★keyword LP orphan vein 打ち止め確認**: 全11 LP の文脈内 inbound = 7本配線済(db-3nf/nw-subnet[s54] + ap-chokuzen/ip-1month/pm-evm/st-essay/auditor-coso[s55]) + ai-copilot[feature] = 9本到達済。残2本は fe-kamoku-b-pseudo-language(blog双子で重複=SKIP)・sc-incident-response(HD-6保留)＝着手不可フラグ付き。**P2-3b の exam一致 keyword LP配線は完全消化**。
 - 鉄則順守: 全リンク exam完全一致 or LP自己宣言exam一致・本文既存トピックと厳密一致・additive(本文事実不変)・新規404ゼロ(LP target prerendered実測)・誇大回避(anchorは内容語)・全ゲート緑をcommit前単独実行。
 - 残り(P2-3b次の角度・次セッション以降): (a)`/keywords`索引→cross-exam/分野別学習の総括記事から1本(自然 home の見極め要・無理に増やさない)。(b)HD解消待ち(HD-1 GSC404一覧/HD-4 AP午後モック/HD-6 SC午後frame/HD-9 overviewテンプレ)。code-side の主要 vein(FAQ/funnel/内部リンク/構造化データ/meta/keyword LP orphan)は概ね枯渇。
+
+## セッション56（growth ループ）2026-06-02 JST
+**P2-3b 残角度の消化: `/keywords`索引(学習トピック特集記事一覧)への文脈内 inbound をcross-exam総括記事から配線=keyword面 orphan vein 完全打ち止め**
+- 監査(read-only): `/keywords`索引は blog全165本から文脈内 inbound ゼロ(footer/sitemap/breadcrumb のみ・session54の P2-3b 監査結果と一致)。索引の中身=サブネット計算/正規化/EVM/論文構成 等の頻出論点 特集記事一覧。最も自然な home を blog corpus から精査。
+- done×2(1論点):
+  - **共通テーマ ハブ→/keywords 索引** SHA `3b3bc05`: cross-exam ハブ記事 `ipa-kyoutsuu-juyou-theme`(13区分共通の最重要テーマ=セキュリティ/ネットワーク[サブネット計算]/DB[正規化]/PM[EVM]/論述)の「横断学習の実践方法」節末尾から `/keywords` 索引へ送客。**索引のコアテーマが本記事のコアテーマと厳密一致＝最も自然な home**。additive(本文事実不変)・anchorは「学習トピック特集記事一覧」で誇大回避。
+  - **回帰 pin** SHA `9479797`: `__tests__/seo/keywords-index-inbound.test.ts` 新設。共通テーマ記事から `](/keywords)` 索引への本文リンクが消えて orphan に戻らないことを pin(崩れたら落ちる検証)。
+- 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1906+1pass/build OK)を commit前に単独実行。本番ビルド `blog/ipa-kyoutsuu-juyou-theme.html` に `href="/keywords"`+anchor「学習トピック特集記事一覧」を実測・`/keywords` 索引=prerendered static(200・新規404ゼロ)を実測。
+- 追加監査(read-only・全てclean=対応不要): (1)`audit-internal-links.ts` 実走=blog165本/1443links/FATAL0/WARN0(orphan/dead-link無し)。(2)keyword LP の `relatedTopics`→`topicLinkHref` は未知タグを `/search?q=` へ安全 fallback(dynamicParams=false の/topics 404を生まない設計)=SKIP。(3)keyword 全LP+索引は `sitemap-xml.ts` STATIC_ROUTES 経由で main.xml サブサイトマップに収録済(sitemap.xml.body はindexのみ)=clean。
+- **★keyword面 orphan vein 完全打ち止め**: 個別 keyword LP(session54/55で9/11配線)+ `/keywords`索引(本session)の文脈内 inbound が全て解消。残2 LP は着手不可フラグ付き(fe-kamoku-b双子重複SKIP/sc-incident HD-6保留)。
+- 鉄則順守: exam横断ハブ記事=試験非依存ゆえ exam一致制約は非該当・本文既存トピックと厳密一致・additive・新規404ゼロ・anchorは内容語で誇大回避・全ゲート緑をcommit前単独実行。
+- 申し送り(セッション56): code-side の主要 vein(404掃除/soft-404/FAQ/funnel/内部リンク orphan/構造化データ/meta/keyword LP orphan/keyword索引 inbound)は**全面的に枯渇確認**。残るは全て HD 待ち(HD-1 GSC404一覧/HD-4 AP午後モック投入/HD-5 essays noindex/HD-6 SC午後frame/HD-9 overviewテンプレ)= 人間判断。次セッションは backlog P2-3c(新起案・下記)か、新角度の起案を要する。安易な水増し配線(saturation)はしない。
