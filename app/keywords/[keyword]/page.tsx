@@ -94,6 +94,15 @@ export default async function KeywordPage({
     : undefined;
 
   const absUrl = `${SITE_BASE_URL}/keywords/${page.slug}`;
+  // 同ページの OG 画像（generateMetadata と同一の派生）を Article.image に載せる。
+  // 捏造値ではなく実在の代表画像で、blog Article の image と同形（1200x630）。
+  const articleOgParams = new URLSearchParams({
+    type: "keyword",
+    title: page.title,
+    subtitle: "学習トピック特集",
+    body: page.description,
+  });
+  const articleImage = `${SITE_BASE_URL}/api/og?${articleOgParams.toString()}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -102,6 +111,12 @@ export default async function KeywordPage({
         headline: page.title,
         description: page.description,
         url: absUrl,
+        image: {
+          "@type": "ImageObject",
+          url: articleImage,
+          width: 1200,
+          height: 630,
+        },
         inLanguage: "ja",
         articleSection: "学習トピック",
         keywords: page.relatedTopics.join(", "),

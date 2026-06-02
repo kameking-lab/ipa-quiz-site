@@ -38,6 +38,18 @@ describe("keyword LP Article JSON-LD matches the site Article shape", () => {
     expect(SOURCE).toContain('mainEntityOfPage: { "@type": "WebPage", "@id": absUrl }');
   });
 
+  it("the Article carries an ImageObject pointing at the page's real OG image", () => {
+    // image is one of Article's most important rich-result properties and the
+    // blog Article (the site standard) includes it. The keyword page already
+    // generates this exact OG image in generateMetadata, so this is the page's
+    // genuine representative image — not a fabricated value. Revert => fail.
+    expect(SOURCE).toContain("articleImage");
+    expect(SOURCE).toContain('type: "keyword",');
+    expect(SOURCE).toContain('image: {');
+    expect(SOURCE).toContain('"@type": "ImageObject",');
+    expect(SOURCE).toContain("url: articleImage,");
+  });
+
   it("the shared org constants are well-formed (publisher resolves to a real logo)", () => {
     expect(ORG_ID).toMatch(/^https?:\/\/.+#organization$/);
     expect(SITE_LOGO_IMAGE).toBeTruthy();
