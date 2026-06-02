@@ -117,7 +117,9 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(DEEP_SOURCE).toContain('import { JsonLd }');
     expect(DEEP_SOURCE).toContain("<JsonLd data={jsonLd} />");
     expect(DEEP_SOURCE).toContain("examLabel(question.exam)");
-    expect(DEEP_SOURCE).toContain("isBasedOn: question.pdfUrl");
+    // isBasedOn routes through getSafePdfUrl so a decommissioned jitec.ipa.go.jp
+    // pdfUrl degrades to the live IPA index instead of a dead 出典 link.
+    expect(DEEP_SOURCE).toContain("isBasedOn: getSafePdfUrl(question.pdfUrl)");
   });
 
   // Soft-404 guard: invalid /essay/{exam}/{id} must return a real 404, not a

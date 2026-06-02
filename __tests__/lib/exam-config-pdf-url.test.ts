@@ -17,8 +17,10 @@ import {
 // a 404 or the wrong PDF.
 
 describe("getSafePdfUrl", () => {
-  it("passes through an https URL unchanged", () => {
-    const url = "https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_qs.pdf";
+  it("passes through a live https IPA URL unchanged", () => {
+    // The already-migrated www.ipa.go.jp PDFs (~1,440 questions) must survive.
+    const url =
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf";
     expect(getSafePdfUrl(url)).toBe(url);
   });
 
@@ -31,18 +33,30 @@ describe("getSafePdfUrl", () => {
     expect(getSafePdfUrl("http://example.com/a.pdf")).toBe(IPA_EXAM_INFO_URL);
     expect(getSafePdfUrl("TODO")).toBe(IPA_EXAM_INFO_URL);
   });
+
+  it("rejects the decommissioned jitec.ipa.go.jp host (dead 出典 link)", () => {
+    // www.jitec.ipa.go.jp no longer resolves; ~13k stored URLs point there and
+    // must degrade to the live IPA index, never serve a dead deep link.
+    expect(
+      getSafePdfUrl("https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_qs.pdf"),
+    ).toBe(IPA_EXAM_INFO_URL);
+  });
 });
 
 describe("getOfficialAnswerPdfUrl", () => {
-  it("swaps a trailing _qs.pdf for _ans.pdf", () => {
+  it("swaps a trailing _qs.pdf for _ans.pdf on a live IPA URL", () => {
     expect(
-      getOfficialAnswerPdfUrl("https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_qs.pdf"),
-    ).toBe("https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_ans.pdf");
+      getOfficialAnswerPdfUrl(
+        "https://www.ipa.go.jp/shiken/mondai-kaiotu/abc-att/2024r06h_ap_am_qs.pdf",
+      ),
+    ).toBe(
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/abc-att/2024r06h_ap_am_ans.pdf",
+    );
   });
 
   it("only swaps the trailing token, not an interior _qs.pdf", () => {
     // No trailing _qs.pdf → returned as-is (CBT / non-standard URLs).
-    const url = "https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_qs.pdf?v=1";
+    const url = "https://www.ipa.go.jp/x/2024h06h_ap_am_qs.pdf?v=1";
     expect(getOfficialAnswerPdfUrl(url)).toBe(url);
   });
 
@@ -51,11 +65,17 @@ describe("getOfficialAnswerPdfUrl", () => {
     expect(getOfficialAnswerPdfUrl(url)).toBe(url);
   });
 
-  it("falls back to the IPA info page when absent or non-https", () => {
+  it("falls back to the IPA info page when absent, non-https, or on dead jitec host", () => {
     expect(getOfficialAnswerPdfUrl(undefined)).toBe(IPA_EXAM_INFO_URL);
     expect(getOfficialAnswerPdfUrl("http://example.com/a_qs.pdf")).toBe(
       IPA_EXAM_INFO_URL,
     );
+    // Deriving _ans from a dead jitec _qs URL would stay dead → fall back instead.
+    expect(
+      getOfficialAnswerPdfUrl(
+        "https://www.jitec.ipa.go.jp/x/2024h06h_ap_am_qs.pdf",
+      ),
+    ).toBe(IPA_EXAM_INFO_URL);
   });
 });
 

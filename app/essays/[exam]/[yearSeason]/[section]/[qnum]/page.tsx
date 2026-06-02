@@ -5,6 +5,7 @@ import { ArrowRight, BookOpen, ChevronLeft, Shield } from "lucide-react";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
+import { getSafePdfUrl } from "@/lib/exam-config";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -181,7 +182,7 @@ export default async function EssayPm2DetailPage({
 
       <EssayIndustryTabs
         industries={question.industries}
-        pdfUrl={question.pdfUrl}
+        pdfUrl={getSafePdfUrl(question.pdfUrl)}
       />
 
       <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">

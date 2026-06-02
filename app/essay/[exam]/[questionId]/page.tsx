@@ -10,6 +10,7 @@ import {
 } from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { getSafePdfUrl } from "@/lib/exam-config";
 import { EssayEditor } from "@/components/essay/EssayEditor";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -99,7 +100,7 @@ export default async function EssayEditorPage({
         educationalUse: "Self-assessment",
         audience: STUDENT_AUDIENCE,
         teaches: `${label} の午後II論述対策`,
-        isBasedOn: question.pdfUrl,
+        isBasedOn: getSafePdfUrl(question.pdfUrl),
         publisher: {
           "@type": "Organization",
           "@id": ORG_ID,
@@ -184,7 +185,7 @@ export default async function EssayEditorPage({
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         出典:{" "}
         <a
-          href={question.pdfUrl}
+          href={getSafePdfUrl(question.pdfUrl)}
           target="_blank"
           rel="noreferrer"
           className="underline hover:text-zinc-900 dark:hover:text-zinc-100"

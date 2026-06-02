@@ -14,7 +14,7 @@ import {
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
-import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import {
@@ -347,7 +347,7 @@ export default async function QuestionPage({
               掲載していません。下のリンクから IPA 公式 PDF でご確認ください。
             </p>
             <a
-              href={q.sourcePdfUrl}
+              href={getSafePdfUrl(q.sourcePdfUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-700 dark:hover:text-amber-200"
@@ -435,7 +435,7 @@ export default async function QuestionPage({
           <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
-            sourcePdfUrl={q.sourcePdfUrl}
+            sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
           />
         </details>
