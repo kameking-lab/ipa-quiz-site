@@ -11,6 +11,9 @@ import {
 } from "@/data/recommended-books";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { ESSAY_EXAM_CODES } from "@/lib/essays/load";
+// Singular = the 論述採点 grading set (st/sa/pm/sm/au, no SC); the deep
+// /essay/[exam]/[id] page (where the 論文 book hint renders) iterates this set.
+import { ESSAY_EXAM_CODES as ESSAY_GRADING_EXAM_CODES } from "@/lib/essay/load";
 
 // Characterization tests for data/recommended-books.ts — the affiliate book
 // registry consumed by /recommended-books, /[exam], InlineBookHint, and the
@@ -131,6 +134,22 @@ describe("getRecommendedBooks / RECOMMENDED_BOOKS registry", () => {
         b.tags.some((t) => t.toLowerCase().includes("午後")),
       );
       expect(has午後, `${exam} は午後タグ付き書籍が必要`).toBe(true);
+    }
+  });
+
+  // The indexable flagship grading page /essay/[exam]/[id] renders
+  // <InlineBookHint exam={exam} category="論文" /> — the highest-intent surface
+  // for 論述 learners. pickBookForCategory matches the 論文-tagged 合格論文事例集
+  // book; if an essay exam loses its 論文 tag the affiliate silently degrades to
+  // an off-topic book. Pin that each essay exam keeps a 論文-tagged book.
+  it("has a 論文-tagged book for every essay exam (InlineBookHint category=論文)", () => {
+    expect(ESSAY_GRADING_EXAM_CODES.length).toBeGreaterThan(0); // non-vacuous
+    for (const exam of ESSAY_GRADING_EXAM_CODES) {
+      const books = getRecommendedBooks(exam);
+      const has論文 = books.some((b) =>
+        b.tags.some((t) => t.toLowerCase().includes("論文")),
+      );
+      expect(has論文, `${exam} は論文タグ付き書籍が必要`).toBe(true);
     }
   });
 });

@@ -88,4 +88,15 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(DEEP_SOURCE).toContain("/api/og?");
     expect(DEEP_SOURCE).toContain('type: "essay"');
   });
+
+  // Revenue funnel: the indexable flagship grading page funnels its high-intent
+  // 論述 audience to the per-exam 合格論文 book via the existing InlineBookHint
+  // (category="論文"). The /essays plural pages already do this with "午後"; this
+  // pins the indexable /essay deep page keeps its natural, exam-scoped book link.
+  it("funnels to the per-exam 論文 book via InlineBookHint (P2-4 affiliate)", () => {
+    expect(DEEP_SOURCE).toContain("import { InlineBookHint }");
+    expect(DEEP_SOURCE).toContain(
+      'InlineBookHint exam={question.exam} category="論文"',
+    );
+  });
 });

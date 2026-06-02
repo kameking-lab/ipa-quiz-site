@@ -11,6 +11,7 @@ import {
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { EssayEditor } from "@/components/essay/EssayEditor";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
@@ -163,6 +164,8 @@ export default async function EssayEditorPage({
       </section>
 
       <EssayEditor question={question} />
+
+      <InlineBookHint exam={question.exam} category="論文" />
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         出典:{" "}
