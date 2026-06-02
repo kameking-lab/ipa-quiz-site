@@ -1467,3 +1467,24 @@
   - 全ゲート緑(commit前単独実行): typecheck0 / lint0err / test 2086全緑(+1) / build OK。
 - **追加 clean 確認(対応不要)**: data/ lib/ 全体を full-name＋略称で「春期-only(ST/SA/NW/SM)×秋」「秋期-only(PM/DB/ES/AU)×春」を grep→**他に季違いの誤り無し**(この1件のみ)。
 - **本セッション小計=確実な事実性是正2件**(SC RISS 名称独占 `0ac5588` / 併願例示の季 `dbe6ef7`)。いずれも cross-source consistency 検出・本番ビルド実測・回帰pin付き。発見手法(対の概念/区分×季 の grep で不整合を炙る)が「s21-32 枯渇」の取り残しを2件掘り起こした。
+
+## セッション90（growth ループ｜2026-06-03 JST）
+**P2-2 新vein＝objection/価値系「○○ 取る意味はあるか」の最大の取り残し＝最大の入門区分 IP（ITパスポート）の価値記事を新設**
+背景（着手前 read-only 監査）:
+- s89 申し送りの cross-source consistency を継続調査したが、残る数値乖離は全て editorial で SKIP と確定（実測・裏取り済）:
+  - `EXAM_PROFILES.studyHours` vs `EXAM_STATS.studyHoursLow/High` の乖離（例 st: 300〜500 vs 200-400）＝学習時間は IPA 非公表の主観値・別サーフェス描画（exam-data→blog / exam-stats→/[exam]ハブ）＝canonical 無し＝SKIP（s89 の pass-rate SKIP と同class）。
+  - `exam-content.ts` ST lead の「論文 2,200 字」＝当初 cross-source outlier（他4論述区分は字数なし・blogは3,000字前後）として fix候補にしたが、**`lib/seo/exam-resources.ts` L130/137 でも ST 論文=2,200字を2回使用**＝ST固有の deliberate/internally-consistent な値（よく引かれる ST論文の下限「2,200字以上」）と判明。3,000字前後は generic論文の別framing。**どちらも defensible＝変更は過大修正の罠＝SKIP**（exam-resources との新規不整合を生むリスク）。
+  - 季/構造facts（実施季・午後段数・SC単一午後・AP二段）は exam-content/exam-data 全て正（s22 fix が保持）。
+  - 非blog の static href 全数 sweep（app/components の href 文字列→route tree 突合）＝全て実在ルート＝dead link 0（404種別の盲点無し）。
+- **結論**: cross-source 数値/事実の hard error vein は今round枯渇（残候補は全て editorial SKIP）。心得「尽きたと安易に宣言せず新角度を起案」に従い objection vein を起案・着手。
+- **発見＝objection/価値 vein の非対称**: 「取る意味はあるか/メリット」記事は `sg-shiken-meritto-imi-aru`・`sc-shikaku-merit` の2本のみで、**最大volumeの入門区分 IP（「ITパスポート 意味ない」は著名な高volume objection）が未カバー**。`grep 'slug:"ip-'`＝IP記事は 3shukan/nani-kara/toujitsu-mochimono/goukaku-ten-bunyabetsu の4本で価値/objection記事は不在を確認。
+- done×1 [P2-2 objection新vein] SHA `c69980e`: 新記事 `ip-shiken-meritto-imi-aru`（「ITパスポートを取る意味はあるか｜IPのメリットと『意味ない』と言われる理由を整理」）を新設。sg-meritto を template に IP固有化:
+  - メリット5（全業種ベースラインの公的IT証明/就活・学内アピール/社内DX・リスキリング/FE・APへの足がかり/実用リテラシー）＋「意味ない」と言われる理由3（エンジニア転職での単独評価は限定的/実装スキルの証明にならない/IT職には物足りない）を balanced に整理。
+  - **funnel**: IP=入門・非論文区分のため **旗艦 /essay 非送客**（s27/s65 precedent）。入口=/ip（過去問・分野別・AIコパイロット）＋土台=FE科目B（fe-kamoku-b-taisaku / /fe）＋上位接続（FE/SG/AP）。
+  - **誇大回避**: 合格基準は SSOT `ip-goukaku-ten-bunyabetsu`（総合600/分野別300・1000点満点・IRT・採点約92問）と一致。資格手当/転職評価は hedge（「ケースがある」「限定的」）・**具体年収額は不記載**。
+  - **inbound 2面**（orphan回避）: `ip-goukaku-ten-bunyabetsu`（3→4・displacementなし）＋`ip-3shukan-goukaku`（3→4・displacementなし）の relatedSlugs に追加（どちらも mutual＝本記事が両者へ OUT）。`13-shikaku-osusume-jyun` は既に relatedSlugs 4本（limit=4）ゆえ追加せず（sibling displacement回避）。
+  - 検証（本番ビルド実測 `.next/server/app/blog/ip-shiken-meritto-imi-aru.html` 135KB）: FAQPage JSON-LD=1・href="/ip"・/blog/fe-kamoku-b-taisaku present・本文 /essay funnel=0（HTML中の唯一の /essay は全ページ共通の header nav「午後論述AI採点」＝control `ipa-kamoku-goukaku-nai.html` も同じく1で同一 chrome と確認）・「600 点以上」「300 点以上」render・title render。
+  - **link audit**: 183→184 posts・1761 links・**0 FATAL / 0 WARN**（non-orphan・inbound 確立）。
+  - 回帰pin1件（blog-generators.test.ts の ip-3shukan test隣に追加）: exam=ip / `## よくある質問` present / `(/ip)`＋`/blog/fe-kamoku-b-taisaku` present / body に `/essay` 不在 / `600 点`＋`300 点`（SSOT）/ `レベル 1` / `年収\d` 不在（誇大回避）/ inbound（2 siblings の relatedSlugs に slug 含む）。崩れたら落ちる。
+  - 全ゲート緑（commit前に単独実行・緑目視）: typecheck 0 / lint 0err（warnは未追跡 ux-audit-screenshots.mjs のみ）/ test 2087全緑(+1) / build OK。
+- **次セッション申し送り**: objection/価値 vein は IP を埋めて SG/SC/IP の3本。残候補＝FE/AP の「意味ない/役に立たない」objection は volume はあるが、価値の中核（FE=エンジニア登竜門・AP=高度への足がかり）が既に overview/career-path/13-shikaku で繰り返し述べられ重複thin懸念＝着手は要吟味（量産回避・1記事=確実）。cross-source 数値/事実 hard error は今round枯渇（studyHours/論文字数=editorial SKIP と確定）。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち・制度/access残角度(受験料再発行=thin/SGスコア=HD-8/AP高度発表=staleness)は不変。
