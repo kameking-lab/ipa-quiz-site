@@ -8,7 +8,11 @@ import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import {
+  KEYWORD_PAGES,
+  getKeywordPageBySlug,
+  getRelatedKeywordPages,
+} from "@/data/keywords";
 import { getBlogPostBySlug } from "@/data/blog";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -231,9 +235,7 @@ export default async function KeywordPage({
           他の特集記事
         </h2>
         <ul className="space-y-2">
-          {KEYWORD_PAGES.filter((p) => p.slug !== page.slug)
-            .slice(0, 5)
-            .map((p) => (
+          {getRelatedKeywordPages(page.slug, 5).map((p) => (
               <li key={p.slug}>
                 <Link
                   href={`/keywords/${p.slug}`}

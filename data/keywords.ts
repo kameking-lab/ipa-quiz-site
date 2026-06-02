@@ -203,3 +203,28 @@ export const KEYWORD_PAGES: KeywordPage[] = [
 export function getKeywordPageBySlug(slug: string): KeywordPage | undefined {
   return KEYWORD_PAGES.find((p) => p.slug === slug);
 }
+
+/**
+ * 「他の特集記事」レール用に、対象 LP と関連の濃い順で他の keyword LP を返す。
+ * 従来は配列順の先頭 5 件を出していたため、DB の LP に NW/IP 等の無関係記事が
+ * 並ぶ relevance-leak があった（blog レールで是正した s39-40 と同型）。
+ * スコア = 共有試験区分数 ×10 ＋ 共有トピック数。同点は元の配列順で安定ソート。
+ * スコア 0 でも 5 枠を埋めるため全件を対象にソートして上位を返す（穴を作らない）。
+ */
+export function getRelatedKeywordPages(slug: string, limit = 5): KeywordPage[] {
+  const target = getKeywordPageBySlug(slug);
+  if (!target) return [];
+  const examSet = new Set(target.exams);
+  const topicSet = new Set(target.relatedTopics);
+  return KEYWORD_PAGES.map((p, idx) => ({
+    page: p,
+    idx,
+    score:
+      p.exams.filter((e) => examSet.has(e)).length * 10 +
+      p.relatedTopics.filter((t) => topicSet.has(t)).length,
+  }))
+    .filter((x) => x.page.slug !== slug)
+    .sort((a, b) => b.score - a.score || a.idx - b.idx)
+    .slice(0, limit)
+    .map((x) => x.page);
+}

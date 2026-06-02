@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import {
+  KEYWORD_PAGES,
+  getKeywordPageBySlug,
+  getRelatedKeywordPages,
+} from "@/data/keywords";
 import { getAllBlogPosts } from "@/data/blog";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
@@ -143,5 +147,37 @@ describe("KEYWORD_PAGES — relatedBlogSlug は実在 blog へ解決する（dea
         expect(page.relatedBlogSlug).not.toBe(page.slug);
       }
     }
+  });
+});
+
+// 「他の特集記事」レールの relevance-leak 是正。app/keywords/[keyword]/page.tsx は
+// 従来 KEYWORD_PAGES の配列順 先頭5件を出していたため、DB の LP に NW/IP 等の
+// 無関係記事が並んでいた（blog レールで是正した s39-40 と同型の leak）。
+// getRelatedKeywordPages は 共有試験区分×10＋共有トピック数 のスコア順に並べ替える。
+describe("getRelatedKeywordPages — 他の特集記事レールは関連順（relevance-leak回避）", () => {
+  it("自分を除外し・重複なく・最大 limit 件を返す", () => {
+    for (const page of KEYWORD_PAGES) {
+      const related = getRelatedKeywordPages(page.slug, 5);
+      expect(related.length).toBe(Math.min(5, KEYWORD_PAGES.length - 1));
+      expect(related.some((p) => p.slug === page.slug)).toBe(false);
+      expect(new Set(related.map((p) => p.slug)).size).toBe(related.length);
+    }
+  });
+
+  it("試験区分を共有する LP を、共有しない LP より上位に並べる", () => {
+    // db-3nf-normalization(exams: db, ap)。ap を共有する pm-evm-calculation /
+    // ap-chokuzen-1week は、何も共有しない sc-incident-response(sc) より上位に来る。
+    const related = getRelatedKeywordPages("db-3nf-normalization", 5).map(
+      (p) => p.slug,
+    );
+    const idxPm = related.indexOf("pm-evm-calculation");
+    const idxSc = related.indexOf("sc-incident-response");
+    expect(idxPm).toBeGreaterThanOrEqual(0);
+    // ap 共有の pm は、無関係 sc より前（sc は圏外でも可）。
+    if (idxSc >= 0) expect(idxPm).toBeLessThan(idxSc);
+  });
+
+  it("未知の slug は空配列（route の notFound と整合）", () => {
+    expect(getRelatedKeywordPages("no-such-keyword", 5)).toEqual([]);
   });
 });
