@@ -15,6 +15,11 @@ const SOURCE = readFileSync(
   "utf8",
 );
 
+const DEEP_SOURCE = readFileSync(
+  join(process.cwd(), "app", "essay", "[exam]", "[questionId]", "page.tsx"),
+  "utf8",
+);
+
 describe("flagship /essay structured data", () => {
   it("emits a LearningResource + BreadcrumbList JSON-LD graph", () => {
     expect(SOURCE).toContain('"@type": "LearningResource"');
@@ -30,5 +35,23 @@ describe("flagship /essay structured data", () => {
   it("derives covered exams from ESSAY_EXAM_CODES (no hardcoded exaggeration)", () => {
     expect(SOURCE).toContain("ESSAY_EXAM_CODES.map((exam) => examLabel(exam))");
     expect(SOURCE).toContain("teaches:");
+  });
+});
+
+// The per-question grading pages (now in the sitemap) are the most specific
+// flagship surface; they should carry their own structured data derived from the
+// question (no hardcoded claims) just like the hub. "崩れたら落ちる".
+describe("flagship /essay/[exam]/[questionId] structured data", () => {
+  it("emits a LearningResource + BreadcrumbList JSON-LD graph", () => {
+    expect(DEEP_SOURCE).toContain('"@type": "LearningResource"');
+    expect(DEEP_SOURCE).toContain('"@type": "BreadcrumbList"');
+    expect(DEEP_SOURCE).toContain('"@context": "https://schema.org"');
+  });
+
+  it("renders it via JsonLd and derives fields from the question (not hardcoded)", () => {
+    expect(DEEP_SOURCE).toContain('import { JsonLd }');
+    expect(DEEP_SOURCE).toContain("<JsonLd data={jsonLd} />");
+    expect(DEEP_SOURCE).toContain("examLabel(question.exam)");
+    expect(DEEP_SOURCE).toContain("isBasedOn: question.pdfUrl");
   });
 });

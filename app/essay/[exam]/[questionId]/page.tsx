@@ -7,6 +7,9 @@ import { findEssayQuestion, ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { EssayEditor } from "@/components/essay/EssayEditor";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 
 interface RouteParams {
   exam: string;
@@ -39,8 +42,51 @@ export default async function EssayEditorPage({
   const question = findEssayQuestion(questionId);
   if (!question || question.exam !== exam) notFound();
 
+  const url = `${SITE_BASE_URL}/essay/${question.exam}/${question.id}`;
+  const label = examLabel(question.exam);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LearningResource",
+        "@id": `${url}#learning-resource`,
+        name: `${label} 午後II 論述 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
+        url,
+        inLanguage: "ja",
+        description: `${question.title} — IPA 元採点者プロンプトで AI が論述を採点（参考評価）。`,
+        learningResourceType: "AI 採点・添削",
+        educationalLevel: "Professional",
+        educationalUse: "Self-assessment",
+        audience: STUDENT_AUDIENCE,
+        teaches: `${label} の午後II論述対策`,
+        isBasedOn: question.pdfUrl,
+        publisher: {
+          "@type": "Organization",
+          "@id": ORG_ID,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: SITE_LOGO_IMAGE,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI 論述添削（午後II）",
+            item: `${SITE_BASE_URL}/essay`,
+          },
+          { "@type": "ListItem", position: 3, name: question.title, item: url },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+      <JsonLd data={jsonLd} />
       <Link
         href="/essay"
         className="mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
