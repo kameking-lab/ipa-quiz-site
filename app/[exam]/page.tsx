@@ -6,7 +6,7 @@ import { ArrowRight, BookOpen, ChevronRight, Clock, Code2, FileText, PenLine, Sp
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { ORG_ID } from "@/lib/seo/structured-data";
+import { ORG_ID, buildOrgNode } from "@/lib/seo/structured-data";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import {
   EXAM_DESCRIPTIONS,
@@ -175,6 +175,12 @@ export default async function ExamTopPage({
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      // Define the full Organization node so the Course.provider `@id` reference
+      // resolves to a node with name/logo/sameAs within this document. Google
+      // evaluates each page independently and does not follow `@id` to the home
+      // page, so without this the provider has no resolvable name on all 13
+      // exam hubs (sitemap priority 0.9).
+      buildOrgNode(),
       {
         "@type": "CollectionPage",
         "@id": `${absUrl}#collection`,
