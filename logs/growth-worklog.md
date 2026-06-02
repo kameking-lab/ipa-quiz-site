@@ -1728,3 +1728,15 @@ s103 申し送りが「trace vein 完全枯渇＝別角度(P2-2 競合薄ブロ�
 - 回帰pin: `__tests__/seo/blog-faq-jsonld.test.ts` の rirekisho FAQ length を 5→6 に更新(崩れたら落ちる)。
 push: git pull --ff-only(Already up to date)→push成功 df6aa9e..34b3768。
 申し送り: P2-2 named seed(履歴書)はサブクエリ深掘りで1点強化。残named seed=roadmap(6.2位=既にページ1)/勉強法/科目B/午後は既に厚く、深掘り候補は個別精査が必要(量産回避・1点ずつ)。content vein は概ね枯渇で、次は別named seedの未カバーサブクエリ機械走査 or 別区分longtailのgap確認を1件ずつ。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## セッション106（2026-06-03）— 新角度=outbound(外部 出典)リンクの 404 監査 + 回帰ガード新設 [done SHA `3f7ead0`]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+着手前監査: content vein(trace/FAQ/study-time/objection/制度・access/受験料)は全て saturation or thin/HD-blocked を再確認。factual 監査(FE科目B 20問100分/SG科目A48・科目B12/AP 300〜500時間/s103 tree-trace の4巡回順=preorder 1·2·4·5·3 等)も全て手計算照合で clean。internal link=0 FATAL/0 orphan(audit report)。structured data(Article/LearningResource/BreadcrumbList+条件付HowTo/FAQPage)も完備。
+
+**新角度=「別の404種別: outbound(外部リンク)」**。これまでの 404/死リンク監査(s1-99)は全て**内部リンク限定**で、blog本文が 出典(CLAUDE.md §8 の核心ルール)として張る**外部 IPA リンクは未監査**だった。
+- 実測監査: blog本文の distinct 外部URL=6本(全て `www.ipa.go.jp/shiken/*`)を curl で実測 → **全6本 HTTP 200・リダイレクト無し(canonical)**。死リンク・stale path ゼロ＝現状 clean(IPA URL 再編の影響を受けていない)。
+- ただし §8 出典ルールには**自動enforcementが皆無**(internal は audit-internal-links/nonblog-internal-link-resolvability で守られるが outbound は無防備)。IPA は /shiken/ URL を定期的に再編するため、将来 typo/stale path が dead 出典 として無検知で出荷されるリスクが残る。
+- **回帰ガード新設** `__tests__/seo/blog-external-link-allowlist.test.ts`(3 it): (1)全外部リンク https のみ(insecure http 禁止)、(2)host=公式allowlist(`www.ipa.go.jp`)のみ、(3)distinct 外部URL集合が vetted pin(6本・2026-06-03 に 200/no-redirect 検証済)と完全一致。**崩れたら落ちる**: 新規外部リンク追加 or 既存IPA path編集で(3)が fail → 著者が 200 を再検証して pin 更新を強制＝「このリンク誰か確認した?」を暗黙から enforced gate へ。
+- 検証: 新test 3緑(extraction が6本を正確に拾い pin と一致)。全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 276files 2170 passed〔s105 2167→+3〕/ build OK)。本番side-effect無し(test-only・production変更ゼロ)。
+- **所見**: outbound-404 は現状 clean ゆえ修正対象は無かったが、§8 の核心ルールに唯一存在した enforcement gap を塞いだ＝予防的回帰ガード。**この vein は監査clean + ガード化で打ち止め**(外部リンクは IPA 6本のみ・affiliate は recommended-books 側で blog本文には無し)。次セッションは引き続き P2-2 制度系の薄い残り(午前II対策=量産リスクSKIP寄り)か、本当に尽きていれば DONE.flag を検討(ただし安易に宣言しない)。
