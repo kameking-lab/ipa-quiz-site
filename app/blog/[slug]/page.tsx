@@ -354,10 +354,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
               他のブログ記事を読む
             </Link>
             <Link
-              href="/recommended-books"
+              href={post.booksExam ? `/recommended-books/${post.booksExam}` : "/recommended-books"}
               className="inline-flex min-h-[48px] items-center rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
             >
-              おすすめ書籍
+              {post.booksExam ? `${examLabel(post.booksExam)} のおすすめ書籍` : "おすすめ書籍"}
             </Link>
           </div>
         </section>

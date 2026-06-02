@@ -11047,6 +11047,7 @@ AI 学習ツールが急速に進化した一方、予備校・通信講座は�
     description:
       "ITストラテジスト論文で金融業界を題材にする場合の業種特有の論点・規制・利害関係者を解説。書き出しに使える題材パターンと採点者が見るポイントを整理します。",
     tags: ["論文", "ST", "業種別", "金融"],
+    booksExam: "st",
     publishedAt: publishedAtFor(marketingOffset + 3),
     body: `# 金融業界×ITストラテジスト論文の書き方
 
@@ -11182,6 +11183,7 @@ ST 論文で評価されるのは、
     description:
       "プロジェクトマネージャ論文で製造業を題材にする場合の業種特有の論点を解説。生産管理・サプライチェーン・現場との折衝など、PM論文の説得力を高める題材を整理します。",
     tags: ["論文", "PM", "業種別", "製造業"],
+    booksExam: "pm",
     publishedAt: publishedAtFor(marketingOffset + 4),
     body: `# 製造業×プロジェクトマネージャ論文の書き方
 
@@ -11316,6 +11318,7 @@ ST 論文で評価されるのは、
     description:
       "システムアーキテクト論文で公共・自治体を題材にする場合の業種特有の論点を解説。調達手続き・規制対応・住民影響など、公共特有のステークホルダーと制約を整理します。",
     tags: ["論文", "SA", "業種別", "公共"],
+    booksExam: "sa",
     publishedAt: publishedAtFor(marketingOffset + 5),
     body: `# 公共・自治体×システムアーキテクト論文の書き方
 
