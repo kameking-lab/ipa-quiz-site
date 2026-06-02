@@ -55,10 +55,32 @@ describe("questionSnippet", () => {
 });
 
 describe("questionTitle", () => {
-  it("includes year, exam, session, question number and category", () => {
+  it("includes year, exam, session, question number and category when within budget", () => {
     const title = questionTitle(baseQuestion);
     expect(title).toContain("問1");
     expect(title).toContain("基礎理論");
     expect(title).toContain("解説");
+    expect(title.length).toBeLessThanOrEqual(40);
+  });
+
+  it("drops the supplementary category for an over-long title but keeps the question-number core and 解説", () => {
+    // es 2024 spring → "エンベデッドシステムスペシャリスト試験" (long label); with a
+    // long category the full title overflows the 40-char budget.
+    const longExam: Question = {
+      ...baseQuestion,
+      id: "es-2024s-am1-q18",
+      exam: "es",
+      session: "am1",
+      year: 2024,
+      season: "spring",
+      qNumber: 18,
+      category: "プロジェクトマネジメント",
+    };
+    const title = questionTitle(longExam);
+    expect(title).toContain("問18");
+    expect(title.endsWith("解説")).toBe(true);
+    // The supplementary category is dropped (it has its own badge/link + lives
+    // in the description) so the identifying core survives in the SERP.
+    expect(title).not.toContain("プロジェクトマネジメント");
   });
 });

@@ -5,6 +5,18 @@ import { formatYearSeason } from "@/lib/utils";
 
 const DESCRIPTION_MAX = 158;
 
+/**
+ * Soft ceiling for the page-specific <title> (before layout appends
+ * " | 過去問AI"). Measured across the corpus, every /q/* title truncated in the
+ * SERP and 46% ran past 45 chars — the supplementary `category` word piled on
+ * top of an already-long "{year} {exam} {session} 問N 解説" core. We trim only
+ * the egregious cases: `category` is the safe drop because the visible <h1>
+ * renders just the core (category has its own badge/link below it) and the meta
+ * description still carries the category, so no identifying info is lost. The
+ * core (year/exam/session/問N/解説) is never truncated — we never cut 問N or 解説.
+ */
+const TITLE_MAX = 40;
+
 /** Call-to-action tail shared by every /q/* description. */
 const CTA = "AIが選択肢ごとの違いを無料で即解説。今すぐ演習できます。";
 
@@ -16,7 +28,11 @@ function truncate(s: string, n: number): string {
 
 /** Page <title> for a single question. */
 export function questionTitle(q: Question): string {
-  return `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber} ${q.category} 解説`;
+  const core = `${formatYearSeason(q.year, q.season)} ${examLabelAt(q.exam, q.year, q.season)} ${sessionLabel(q.session)} 問${q.qNumber}`;
+  const withCategory = `${core} ${q.category} 解説`;
+  // Keep the category only while the whole title stays within budget; once it
+  // would push the title past TITLE_MAX, drop it and fall back to the core.
+  return withCategory.length <= TITLE_MAX ? withCategory : `${core} 解説`;
 }
 
 /**
