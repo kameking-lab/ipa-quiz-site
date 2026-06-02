@@ -1780,3 +1780,14 @@ s107 は「jitec vein 完全打ち止め(at-rest+全serve面)」と申し送っ�
 - **検証(「崩れたら落ちる」+全ゲート別呼び出し緑目視)**: 新 source-pin `__tests__/scripts/codegen-pdf-url-gate.test.ts`(4 it)＝両 script が getSafePdfUrl を import し pdfUrl を `getSafePdfUrl(pdfUrlFor|buildPdfUrl(` で wrap していること。raw jitec emit へ revert で fail。typecheck0 / lint0err(warn=未追跡 ux-audit-screenshots.mjs のみ) / test **277 files 2179 passed**(2175→+4) / build Compiled successfully。**本番side-effect無し**(codegen は通常運用で非走行・既存 serve は gate 済・既存 at-rest bulk question data の jitec は HD-14 のまま)。
 - **=jitec at-rest gate は question pipeline(s107)＋essay/afternoon codegen(s108)で codegen 全面完了**。残るは HD-14(既存 bulk data の deep-remap=精度向上のみ・死リンクは serve 全面ゼロ)。
 - **次セッション申し送り**: jitec codegen vein 完全打ち止め(全 at-rest generator が gate済・serve 全面 gate済)。新規の太い vein は人間入力(HD-1 GSC404 / HD-4 本番午後)or 厚い監査待ち。
+
+## セッション108 cycle2（2026-06-03）— 新vein=非blog crawlable面の outbound 出典 404 を発見・是正 [done SHA `012421d`]
+codegen gate(cycle1)完了後、「別の404種別=outbound」を非blog面へ拡張(P2-3h は blog本文のみ guard)。app/components/lib の外部 ipa.go.jp リンクを全列挙→**distinct URL を curl 実測**したところ**2本が HTTP 404**(sitewide な実害):
+- **`lib/seo/question-jsonld.ts:171`**: LearningResource JSON-LD の `license` が `/shiken/mondai-kaiotu.html`=**404**。**全 /q ページ(12k+面)の構造化データに dead link** を出力していた。
+- **`app/about/page.tsx:160`**: §8 著作権リンクが `/shiken/kakomondai/copyright.html`=**404**。
+- 付随: `https://www.ipa.go.jp/shiken`(exam-resources `IPA_BASE`)=301だが**これは連結用 base 定数**(`${IPA_BASE}/cbt/ip.html` 等)で bare link でない＝触らない(末尾/追加は `//cbt` を生む)。
+- **正しい live 行先の特定(WebFetch/WebSearch 裏取り)**: IPA は旧 copyright.html / mondai-kaiotu.html を廃止し、「過去問題の使用について(許諾不要・使用料不要・出典明記)」は **`https://www.ipa.go.jp/shiken/faq.html`** に集約(WebFetch で『当機構で公表している過去の試験問題の使用に関し…許諾や使用料は必要ありません』『出典を…明記してください』を確認)。faq.html=**200 no-redirect** 実測。
+- **修正 SHA `012421d`(1論点=非blog outbound 出典の dead link 根絶)**: 両 dead link を `https://www.ipa.go.jp/shiken/faq.html` へ。JSON-LD `license` は schema.org 的にも terms ページ=faq.html が適切。
+- **検証(「崩れたら落ちる」+本番HTML実測+全ゲート別呼び出し緑)**: 新 guard `__tests__/seo/nonblog-external-ipa-link-health.test.ts`(3 it)=app/components/lib を再帰走査し(1)既知 dead path 2本の再出現で fail、(2)gate module(exam-config.ts)以外で jitec.ipa.go.jp host 出力で fail、(3)question-jsonld/about が faq.html を指すこと。**guard が自分の説明コメント中の dead path literal を検出**したため当該コメントを reword(=guard が実際に効く実証)。本番ビルド実測: `.next/.../q/ap/2024-autumn/am/q1.html`=faq.html present・mondai-kaiotu.html **0**、`about.html`=faq.html present・copyright.html **0**。typecheck0/lint0err/test **278 files 2182 passed**(2179→+3)/build OK。
+- **=非blog crawlable 面の outbound 出典 404 を2本是正(うち1本は全 /q 面の JSON-LD=sitewide)＋regression guard 新設**。
+- **次セッション申し送り(P2-3i 継続)**: `lib/seo/exam-resources.ts` の `EXAM_OFFICIAL_LINKS`(全13区分×overview/syllabus/pastQuestions=**~39本の IPA公式テンプレURL**・試験ハブにE-E-A-T リンクとして描画)は今回未verify。`${IPA_BASE}/cbt/ip.html`・`/syllabus/index.html#...`・`/mondai-kaiotu/index.html` 等を1本ずつ curl して dead(404/301)が無いか確認＝次の確実な outbound-404 タスク。
