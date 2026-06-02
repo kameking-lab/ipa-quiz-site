@@ -9,9 +9,52 @@ function isMorningKnowledge(q: Question): boolean {
   return q.type === "multiple-choice" && MORNING_KNOWLEDGE_SESSIONS.has(q.session);
 }
 
-/** クロスリンク先として安全な問題か（404/noindex 先を作らない）。 */
-function isLinkableTarget(q: Question): boolean {
+/**
+ * クロスリンク先として安全な問題か（404/noindex 先を作らない）。
+ * needsReview は /q ページで notFound()（404）、プレースホルダ解説は noindex。
+ * 関連問題レールはこれらを除外し、回答可能・indexable な問題のみへリンクする。
+ */
+export function isLinkableTarget(q: Question): boolean {
   return !q.needsReview && !isPlaceholderExplanation(q);
+}
+
+/**
+ * 同一試験区分・同一分野の関連問題（プール配列順の先頭 limit 件）。
+ * リンク可能な対象のみ（needsReview=404 / プレースホルダ=noindex を除外）。
+ * 除外を slice の前に適用することで、空いた枠は実問題で補充される。
+ */
+export function getSameExamRelatedQuestions(
+  current: Question,
+  examPool: Question[],
+  limit: number,
+): Question[] {
+  return examPool
+    .filter(
+      (x) =>
+        x.id !== current.id &&
+        x.category === current.category &&
+        isLinkableTarget(x),
+    )
+    .slice(0, limit);
+}
+
+/**
+ * 同一試験区分・同一分野で他年度の問題（年度ごと 1 問・新しい年度優先）。
+ * 年度をまたぐ内部リンクの動線を作る。リンク可能な対象のみ。
+ */
+export function getSameExamOtherYears(
+  current: Question,
+  examPool: Question[],
+  limit: number,
+): Question[] {
+  const byYear = new Map<number, Question>();
+  for (const x of examPool) {
+    if (x.id === current.id || x.category !== current.category) continue;
+    if (!isLinkableTarget(x)) continue;
+    if (x.year === current.year || byYear.has(x.year)) continue;
+    byYear.set(x.year, x);
+  }
+  return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, limit);
 }
 
 export type CrossExamMode = "topic" | "category";

@@ -17,7 +17,11 @@ import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
-import { getCrossExamRelatedQuestions } from "@/lib/questions/related";
+import {
+  getCrossExamRelatedQuestions,
+  getSameExamOtherYears,
+  getSameExamRelatedQuestions,
+} from "@/lib/questions/related";
 import {
   formatLastUpdatedJa,
   getLastUpdatedISO,
@@ -186,22 +190,17 @@ export default async function QuestionPage({
   // Do NOT move these lists into a "use client" island — that would hide the
   // links behind hydration and forfeit the internal-link equity (C-4: ~29%
   // index rate on /q/* pages).
-  const related = examPool
-    .filter((x) => x.id !== q.id && x.category === q.category)
-    .slice(0, 5);
+  // Same-category rails link to linkable targets only — never to needsReview
+  // (which notFound()s → 404) or placeholder (noindex) questions. Without this
+  // filter the「関連する問題」rail shipped 106 dead 404 links corpus-wide. The
+  // sibling cross-exam rail below already enforces the same isLinkableTarget
+  // contract; getSameExam* keep all three rails consistent (see related.ts).
+  const related = getSameExamRelatedQuestions(q, examPool, 5);
 
   // Same exam + same category but from OTHER years — one representative per
   // year, newest first. Builds a year-spanning internal-link trail so each
   // /q/* page seeds links into older years' equivalents (phase 7 task ②-2).
-  const otherYearsSameCategory = (() => {
-    const byYear = new Map<number, Question>();
-    for (const x of examPool) {
-      if (x.id === q.id || x.category !== q.category) continue;
-      if (x.year === q.year || byYear.has(x.year)) continue;
-      byYear.set(x.year, x);
-    }
-    return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, 5);
-  })();
+  const otherYearsSameCategory = getSameExamOtherYears(q, examPool, 5);
 
   // Cross-exam discovery trail. With topicTags populated this ranks by shared
   // tags; while tags are unset corpus-wide it falls back to the IPA common-skill

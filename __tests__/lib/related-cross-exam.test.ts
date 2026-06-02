@@ -1,6 +1,10 @@
 import { describe, it, expect } from "vitest";
 import type { Question, ExamCode, Session } from "@/lib/questions/types";
-import { getCrossExamRelatedQuestions } from "@/lib/questions/related";
+import {
+  getCrossExamRelatedQuestions,
+  getSameExamOtherYears,
+  getSameExamRelatedQuestions,
+} from "@/lib/questions/related";
 
 // getCrossExamRelatedQuestions drives the「他試験区分の関連問題」rail on every
 // /q/* page (the largest crawl surface). Two contracts matter for SEO link
@@ -107,5 +111,46 @@ describe("getCrossExamRelatedQuestions — category-group fallback (tags unset)"
     const pmCurrent = q({ id: "ap-pm", exam: "ap", category: "経営戦略", session: "pm" });
     const pool = [q({ id: "fe-x", exam: "fe", category: "ストラテジ" })];
     expect(getCrossExamRelatedQuestions(pmCurrent, pool, 5).questions).toEqual([]);
+  });
+});
+
+// The same-exam rails (「関連する問題」「他年度の…問題」) historically did NOT
+// filter targets, so they shipped 106 dead 404 links (needsReview) + ~14k
+// noindex (placeholder) links corpus-wide. These guard that both rails now link
+// to linkable targets only — and that excluded slots refill with real questions.
+describe("getSameExamRelatedQuestions", () => {
+  const current = q({ id: "ap-self", exam: "ap", category: "基礎理論" });
+
+  it("excludes self, other categories, and non-linkable targets; refills the slot", () => {
+    const pool = [
+      q({ id: "ap-self", exam: "ap", category: "基礎理論" }), // self
+      q({ id: "ap-review", exam: "ap", category: "基礎理論", needsReview: true }), // 404
+      q({ id: "ap-ph", exam: "ap", category: "基礎理論", explanation: "正解はアです。" }), // noindex
+      q({ id: "ap-other", exam: "ap", category: "ネットワーク" }), // different category
+      q({ id: "ap-ok1", exam: "ap", category: "基礎理論" }),
+      q({ id: "ap-ok2", exam: "ap", category: "基礎理論" }),
+    ];
+    expect(getSameExamRelatedQuestions(current, pool, 5).map((r) => r.id)).toEqual([
+      "ap-ok1",
+      "ap-ok2",
+    ]);
+  });
+});
+
+describe("getSameExamOtherYears", () => {
+  const current = q({ id: "ap-self", exam: "ap", category: "基礎理論", year: 2025 });
+
+  it("one linkable representative per year, newest first, excluding current year", () => {
+    const pool = [
+      q({ id: "ap-self", exam: "ap", category: "基礎理論", year: 2025 }), // current year
+      q({ id: "ap-2025b", exam: "ap", category: "基礎理論", year: 2025 }), // current year
+      q({ id: "ap-2023", exam: "ap", category: "基礎理論", year: 2023 }),
+      q({ id: "ap-2024-review", exam: "ap", category: "基礎理論", year: 2024, needsReview: true }),
+      q({ id: "ap-2024-ok", exam: "ap", category: "基礎理論", year: 2024 }), // refills past the 404
+    ];
+    expect(getSameExamOtherYears(current, pool, 5).map((r) => r.id)).toEqual([
+      "ap-2024-ok",
+      "ap-2023",
+    ]);
   });
 });
