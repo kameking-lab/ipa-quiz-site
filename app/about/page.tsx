@@ -157,7 +157,7 @@ export default function AboutPage() {
           （詳細は
           <a
             className="underline"
-            href="https://www.ipa.go.jp/shiken/kakomondai/copyright.html"
+            href="https://www.ipa.go.jp/shiken/faq.html"
             target="_blank"
             rel="noopener noreferrer"
           >

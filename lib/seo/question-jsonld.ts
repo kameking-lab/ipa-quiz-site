@@ -168,7 +168,10 @@ export function buildQuestionJsonLd({
       ...q.topicTags,
     ].join(", "),
     isAccessibleForFree: true,
-    license: "https://www.ipa.go.jp/shiken/mondai-kaiotu.html",
+    // IPA's past-exam usage terms (許諾不要・使用料不要・出典明記) live on the FAQ
+    // page; the old mondai-kaiotu .html page was decommissioned (404). faq.html
+    // is verified 200. See nonblog-external-ipa-link-health.test.ts.
+    license: "https://www.ipa.go.jp/shiken/faq.html",
     creator: {
       "@type": "Organization",
       name: "情報処理推進機構 (IPA)",
