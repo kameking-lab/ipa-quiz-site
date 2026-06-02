@@ -26,6 +26,34 @@ export function buildOrgNode() {
   };
 }
 
+/**
+ * Shared WebSite node (home @graph singleton).
+ *
+ * The SearchAction must describe the site's *keyword search* with a free-text
+ * query slot. It previously targeted `/quiz?mode=random&exam={exam_code}` —
+ * "start a random quiz for an exam", which is not a search at all. The real
+ * search endpoint is `/search?q=` (SearchClient seeds its active query from the
+ * `q` param), so point the action there with the standard `search_term_string`.
+ */
+export function buildWebsiteNode(description: string) {
+  return {
+    "@type": "WebSite",
+    "@id": SITE_ID,
+    url: SITE_BASE_URL,
+    name: SITE_NAME,
+    inLanguage: "ja-JP",
+    description,
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: `${SITE_BASE_URL}/search?q={search_term_string}`,
+      },
+      "query-input": "required name=search_term_string",
+    },
+  };
+}
+
 /** Minimal WebPage node for pages that don't warrant a richer type. */
 export function buildWebPageNode(url: string, name: string, description: string) {
   return {

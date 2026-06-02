@@ -19,8 +19,8 @@ import { ContinueFromLast } from "@/components/ContinueFromLast";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { SITE_ID, buildOrgNode } from "@/lib/seo/structured-data";
+import { SITE_BASE_URL } from "@/lib/seo/config";
+import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
@@ -85,22 +85,9 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": SITE_ID,
-        url: SITE_BASE_URL,
-        name: SITE_NAME,
-        inLanguage: "ja-JP",
-        description: `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${SITE_BASE_URL}/quiz?mode=random&exam={exam_code}`,
-          },
-          "query-input": "required name=exam_code",
-        },
-      },
+      buildWebsiteNode(
+        `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
+      ),
       {
         ...buildOrgNode(),
         hasOfferCatalog: {
