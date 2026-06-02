@@ -5,6 +5,7 @@ import {
   IPA_EXAM_INFO_URL,
   buildPdfUrl,
   buildRawPdfPath,
+  buildSourcePdfUrl,
   getOfficialAnswerPdfUrl,
   getSafePdfUrl,
 } from "@/lib/exam-config";
@@ -105,6 +106,25 @@ describe("buildPdfUrl", () => {
 
   it("returns empty string for CBT seasons (no jitec URL)", () => {
     expect(buildPdfUrl(ap, 2024, "cbt", amCfg, "qs")).toBe("");
+  });
+});
+
+describe("buildSourcePdfUrl", () => {
+  const ap = EXAM_CONFIGS.ap;
+  const amCfg = ap.sessions[0];
+
+  // This is the value the parse pipeline PERSISTS as each question's 出典 link.
+  // buildPdfUrl() still emits the decommissioned www.jitec.ipa.go.jp host, so the
+  // stored URL must be gated through getSafePdfUrl — never a dead jitec link.
+  it("never persists the dead jitec host (degrades to the live IPA index)", () => {
+    const stored = buildSourcePdfUrl(ap, 2024, "spring", amCfg);
+    expect(stored).not.toContain("jitec.ipa.go.jp");
+    expect(stored).toBe(IPA_EXAM_INFO_URL);
+  });
+
+  it("degrades the empty CBT URL to the live IPA index too", () => {
+    // buildPdfUrl returns "" for CBT; storing "" would render as no 出典 link.
+    expect(buildSourcePdfUrl(ap, 2024, "cbt", amCfg)).toBe(IPA_EXAM_INFO_URL);
   });
 });
 

@@ -345,6 +345,25 @@ export function buildPdfUrl(
   );
 }
 
+/**
+ * Returns the 出典 (source) URL to STORE in question data for a given exam slot.
+ *
+ * buildPdfUrl() still emits the legacy www.jitec.ipa.go.jp deep path (the fetch
+ * crawler uses it to locate the raw file), but that host is decommissioned
+ * (NXDOMAIN), so persisting its output as-is re-injects a dead 出典 link on every
+ * parse run. getSafePdfUrl() degrades the dead host to the live IPA index —
+ * matching exactly what the serve layer already shows — so parsed data stays
+ * honest at rest, not just behind the runtime gate. See CLAUDE.md §8.
+ */
+export function buildSourcePdfUrl(
+  cfg: ExamConfig,
+  year: number,
+  season: Season,
+  sessionCfg: SessionConfig,
+): string {
+  return getSafePdfUrl(buildPdfUrl(cfg, year, season, sessionCfg, "qs"));
+}
+
 export function buildRawPdfPath(
   exam: ExamCode,
   year: number,
