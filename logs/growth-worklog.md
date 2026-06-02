@@ -942,3 +942,20 @@
 - SKIP(誇大/off-topic回避・「迷ったらSKIP」): `pm-evm-calculation`(PM exam LP)はEVM計算の自然な home が AP午後系記事のみ=exam mismatch。`auditor-coso-cobit`は COSO/COBIT が全blog記事に出現せず natural home 無し。両者 SKIP。
 - 残り(次セッション以降・exam完全一致 or 自然 home がある分のみ追加可。無理に増やさない=saturation/誇大回避): `/keywords`索引→cross-exam/分野別学習の総括記事から1本(自然 home の見極め要)。exam一致 keyword LP の未配線分(`sc-incident-response`=SC午後記事はHD-6 frame未決で保留、`st-essay-structure-pattern`=ST論文系・既存/essay funnelと競合しうるので慎重、`ap-chokuzen-1week`/`ip-1month-study-plan`=既存blogクラスタと重複懸念、`ai-copilot-how-to-use`=feature relatedLinkで配線済)。詳細は backlog P2-3b 参照。
 - 申し送り(セッション54): P2-3b は exam完全一致の clean な keyword LP 2本 + glossary 1本を配線。残るは exam mismatch/HD保留/重複懸念で着手は慎重吟味要。次は (a)/keywords索引の自然 home 探索、(b)他の exam完全一致 keyword LP(慎重)、(c)HD解消(人間待ち)。
+
+## セッション55（growth ループ）2026-06-02 JST
+**P2-3b 継続: keyword LP の orphan(blog本文文脈内 inbound 0)を exam完全一致 home から解消=keyword LP vein 打ち止め**
+- 監査(read-only): 全11 keyword LP の blog本文文脈内 inbound を機械走査(`grep -rho '/keywords/...' data/blog/`)。session54時点=2本(db-3nf/nw-subnet)のみ。残9本の自然 home(exam一致・トピック一致)を精読で吟味。session54のSKIP(pm-evm/auditor-coso)を新evidenceで再評価。
+- done×5(各1コミット・gate緑[typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1906pass/build OK]を commit前に単独実行・本番ビルドHTMLで `href="/keywords/..."` 実在＋LP target prerendered を実測):
+  - **AP直前1週間 `ap-chokuzen-1week`** SHA `f3192a6`: `ap-gogo-sentaku`「選択の固定化戦略」節(選択分野を試験前に確定する手順)→直前タイムラインLPへ hub→spoke。exam一致(AP)・intent補完。**session54の「重複懸念」を再評価=この general選択戦略記事は直前タイムラインと別intentで非重複**。
+  - **IP1ヶ月プラン `ip-1month-study-plan`** SHA `66b038a`: `ip-3shukan-goukaku` 前提条件節(未経験は5〜6週間延長推奨と明記)→余裕ペースの代替プランLPへ。exam一致(IP)・pace補完で非重複。
+  - **PM EVM計算 `pm-evm-calculation`** SHA `b00bd21`: `ap-gogo-management-erabikata` PM節(進捗・予算のデータ読み取りを扱う)→EVM指標計算(SV/CV/SPI/CPI)LPへ。**session54のSKIP(exam mismatch)を覆す根拠=LPは `exams:["pm","ap"]` を自己宣言しAP午後PM分野もスコープ＝exam一致**。anchorはPM試験名でなくEVM計算の内容語にして title mismatch回避。
+  - **ST論文構成パターン `st-essay-structure-pattern`** SHA `21b4755`: `st-senryaku-shikou`「頻出テーマと論文構成」節(テーマ別設問構成の導入)→汎用の論文骨組み5パターンLPへ。exam一致(ST)。**「/essay funnel競合懸念」を再評価=LPは strategicCta:"essay" で旗艦/essayへ送客＝funnel補強(競合せず・構成学習→採点の2hopは別intent)**。
+  - **AU COSO/COBIT `auditor-coso-cobit`** SHA `d223e86`: `au-shiken-taisaku`「システム監査基準・情報セキュリティ管理基準の理解」節(論述で引用する判断基準フレームワークを扱う)→内部統制COSO/ITガバナンスCOBIT使い分けLPへ。exam一致(AU)。**session54のSKIP(COSO文字列が全blog非出現)を覆す根拠=文脈内リンクは literal term の事前出現でなく topical anchor(基準/フレームワーク引用節)があれば自然＝強fit**。
+- SKIP/保留(「迷ったらSKIP」順守):
+  - `fe-kamoku-b-pseudo-language` LP = **SKIP**: 同一slugの blog twin(`/blog/fe-kamoku-b-pseudo-language` line1690)が存在＝同トピックの blog記事へ既に kamokuB cluster が funnel。LPへリンクすると自身の blog双子と cannibalization＝重複。
+  - `sc-incident-response` LP = **保留(HD-6)**: 自然 home は `sc-ronbun-taisaku`/`sc-incident-response-storytelling`(両者SC午後frame事実性 HD-6未決)のみ。`sc-shikaku-merit`はメリット記事でインシデント対応設問傾向LPと off-topic。LP自体は正framing(記述式)だが home がHD-6・SKIP。
+  - `ai-copilot-how-to-use` LP = 配線済(feature relatedLink・session54確認)。
+- **★keyword LP orphan vein 打ち止め確認**: 全11 LP の文脈内 inbound = 7本配線済(db-3nf/nw-subnet[s54] + ap-chokuzen/ip-1month/pm-evm/st-essay/auditor-coso[s55]) + ai-copilot[feature] = 9本到達済。残2本は fe-kamoku-b-pseudo-language(blog双子で重複=SKIP)・sc-incident-response(HD-6保留)＝着手不可フラグ付き。**P2-3b の exam一致 keyword LP配線は完全消化**。
+- 鉄則順守: 全リンク exam完全一致 or LP自己宣言exam一致・本文既存トピックと厳密一致・additive(本文事実不変)・新規404ゼロ(LP target prerendered実測)・誇大回避(anchorは内容語)・全ゲート緑をcommit前単独実行。
+- 残り(P2-3b次の角度・次セッション以降): (a)`/keywords`索引→cross-exam/分野別学習の総括記事から1本(自然 home の見極め要・無理に増やさない)。(b)HD解消待ち(HD-1 GSC404一覧/HD-4 AP午後モック/HD-6 SC午後frame/HD-9 overviewテンプレ)。code-side の主要 vein(FAQ/funnel/内部リンク/構造化データ/meta/keyword LP orphan)は概ね枯渇。
