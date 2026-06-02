@@ -1571,3 +1571,12 @@
   - **検証(崩れたら落ちる)**: `__tests__/a11y/focus-trap.test.ts` 9件。pure decision 7件(末→先 wrap/先→末 shift wrap/中間=null/trap外→引き込み/空=null/単一=自己wrap)＋wiring source-pin 2件(trapTabTarget import&call・dialog の onKeyDown 結線)。panel が jsdom で重renderなため純関数＋source-read で堅く pin(既存 CopilotPanel.aria.test の source-read 流儀踏襲)。
   - 全ゲート緑（commit前に単独実行・緑目視）: typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2110→2112 passed(268 files・focus-trap 7→9) / build OK。※source(CopilotPanel/focus-trap)は full-gate 実行時点で確定・以後は test 追記のみ(単独green確認)。
   - **次セッション申し送り（P-spicy-review triage 残）**: (a)**A-6 横展開**=`CopilotDesktopFloating` にも `trapTabTarget` で trap 追加(同 helper 流用・初期focusは既存=最小diff・desktop keyboard 利用者にも同 WCAG 適用)。(b)使-3 復習/弱点動線3系統(`/quiz?mode=review`・`mode=weakness`・`/review`・`/account/dashboard`)の正規入口集約(中スコープ・要監査)。広域(A-1 CopilotPanel分割)・大型(使-1 /q インライン回答)・設計/HD(SEO-4・K-1)は自律着手しない。
+
+### セッション96 — A-6 横展開: CopilotDesktopFloating の focus-trap 実装（P-spicy-review・WCAG 2.4.3）
+- done: [P-spicy-review A-6 横展開] SHA `49ddaf3`: `CopilotDesktopFloating`(role="dialog" aria-modal="true")に Tab focus-trap を追加。s95(続き2)の申し送り(a)を消化。
+  - **着手前監査で gap を確定**: mobile sheet と対称に desktop も Escape閉(L1490)・閉時 FAB へ focus復帰(L1500)・open時 panel 内へ初期focus(L1509・panelRef)は既存。だが **Tab trap が無く**、aria-modal だけではブラウザは Tab を背後の DOM へ移す(WCAG 2.4.3 違反)。mobile(s95 `ba5d8bb`)だけ trap 済で desktop keyboard 利用者が取り残されていた非対称。
+  - **最小diff・helper流用**: s95 で抽出した純関数 `trapTabTarget`(lib/a11y/focus-trap.ts)をそのまま流用。component 側は薄い glue のみ＝role="dialog" 外側 div に `onKeyDown={onDialogKeyDown}`、focusables は `panelRef`(内側 panel)から query(overlay は aria-hidden で非focusable・event は bubble で外側 div が捕捉)。初期focus/復帰は既存ゆえ追加せず＝差分は trap のみ。
+  - **検証(崩れたら落ちる)**: `__tests__/a11y/focus-trap.test.ts` の wiring source-pin を「`onKeyDown={onDialogKeyDown}` が2箇所以上(mobile+desktop)」へ強化(desktop 配線を外すと count<2 で落ちる)。describe名も「Copilot dialogs」へ更新。pure decision 7件は不変。panel が jsdom で重renderなため純関数＋source-read で堅く pin(s95 流儀踏襲)。
+  - 全ゲート緑（commit前に単独実行・緑目視）: typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2112 passed(268 files) / build OK。
+  - **所見**: これで mobile/desktop 両 copilot dialog が WCAG 2.4.3 trap を持ち対称化。差別化中核(AIコパイロット)の a11y gap を最小diffで解消。
+  - **次セッション申し送り（P-spicy-review triage 残）**: 使-3 復習/弱点動線3系統(`/quiz?mode=review`・`mode=weakness`・`/review`・`/account/dashboard`)の正規入口集約(中スコープ・要監査)が grounded な残候補。広域(A-1 CopilotPanel分割)・大型(使-1 /q インライン回答)・設計/HD(SEO-4・K-1)は自律着手しない。content vein は深く飽和。
