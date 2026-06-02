@@ -360,6 +360,18 @@ export default async function RecommendedBooksExamPage({
             を読み、AIコパイロットに擬似言語を1行ずつ質問しながら解き方を身につけましょう。
           </p>
         )}
+        {code === "sg" && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            合否を分ける科目B（長文の事例問題）で読解に迷ったら、
+            <Link
+              href="/blog/sg-kamoku-b-jirei-mondai"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              科目Bの事例問題の解き方
+            </Link>
+            を読み、AIコパイロットに長文を整理してもらいながら設問を1問ずつ解き進めましょう。
+          </p>
+        )}
       </section>
 
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">

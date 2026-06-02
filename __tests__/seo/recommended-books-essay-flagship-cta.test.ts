@@ -37,4 +37,12 @@ describe("/recommended-books/[exam] — 論述区分の旗艦 /essay CTA", () =>
     // 午前MC「アルゴリズム」分野ではなく科目B(擬似言語)である旨を明示（誇大回避）
     expect(source).toContain("擬似言語");
   });
+
+  it("SG のみ土台=科目B事例問題記事へ funnel する（FE と対称・SG 限定ゲート）", () => {
+    // SG 限定ゲートで科目B事例問題の解き方記事へ
+    expect(source).toContain('href="/blog/sg-kamoku-b-jirei-mondai"');
+    expect(source).toMatch(/code === "sg"[\s\S]*sg-kamoku-b-jirei-mondai/);
+    // FE(擬似言語)ではなく長文の事例問題である旨を明示（誇大回避・区分混同防止）
+    expect(source).toMatch(/code === "sg"[\s\S]*事例問題/);
+  });
 });
