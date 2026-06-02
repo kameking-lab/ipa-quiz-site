@@ -917,3 +917,17 @@
   - `nw-protocol-deep-understanding`(NW午後): 暗記不可=5視点/午後70%のコツ/Wireshark/コパイロット活用の4Q&A。NW午後=記述式(論文非該当)=旗艦非送客・/nw funnel(essayLink=1)・JSON-LD md-link-leak=0実測。
 - 鉄則順守: 本文既存の数値・形式と一致(資格手当5,000〜30,000円/質問5軸/模試2回/教材2,500〜4,000円/NW午後70%)・非論文は/essay非送客 論文添削scope一致のみ旗艦(参考評価明記)・format特定回避(HD-9)・新規404ゼロ・corpus-wide blog-faq-jsonld 回帰自動カバー。
 - 記録: 個別FAQ未設置 ≈17/165→≈12/165。clean候補リストから5本消化(残clean: eligible-companies/ai-coplilot-prompt-tips/ai-copilot-rag-citation-katsuyou=各 body短め len~1000-2300)。次セッションは残clean候補から継続(短stub<800は対象外・要注意フラグ ap-gogo-sentaku=HD-4/sc-ronbun=HD-6/年次snapshot=SKIP は除外継続)。
+
+## セッション53（growth ループ・2026-06-02 JST）
+- 監査(read-only): P2-2 個別FAQ vein の clean候補(session52残リスト=eligible-companies/ai-coplilot-prompt-tips/ai-copilot-rag-citation-katsuyou)を body精読・funnel scope確認。3本とも非論文general記事(キャリア/AI活用)=旗艦/essay非送客(footerのみ)。
+- done×3(1コミット SHA `cfb0c29`・gate緑[typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1906pass/build OK]をcommit前に単独実行・本番ビルドHTMLで FAQPage×1+Question×4・JSON-LD md-link-leak0 を実測):
+  - `ipa-eligible-companies`(IPA資格を評価する企業の見分け方): 評価のばらつき/資格手当相場(応用5,000-10,000円・高度10,000-30,000円)/求人票5シグナル/面接質問の4Q&A。本文事実と厳密整合。非論文=旗艦非送客(essayHref=1=footer)。
+  - `ai-coplilot-prompt-tips`(AIコパイロットへの聞き方): 10個全部覚える必要なし=得意3個/誤答分析の聞き方/暗記補助/起動場所の4Q&A。非論文=旗艦非送客(footerのみ)・/quiz funnel。
+  - `ai-copilot-rag-citation-katsuyou`(引用カード活用): 使い方3WF/反証チェック/引用カード非表示時/解説誤り時のIPA公式PDF補正の4Q&A。OWASP等の具体バージョン番号はFAQで断定せず「学習データ締切で最新非反映の場合あり」と一般化(誇大/drift回避)。非論文=旗艦非送客。
+- **★P2-2 個別FAQ vein 枯渇確認**: build成果物 機械走査(`.next/server/app/blog/*.html` で `"@type":"FAQPage"` 欠落)= **9/165**。残9本は全て着手不可フラグ付き=新規FAQ対象なし:
+  - 年次snapshot SKIP: `ai-shaken-saizensen-2026` / `ipa-saishin-doukou`
+  - HD-4(AP午後モック): `ap-gogo-sentaku`
+  - HD-6(SC午後frame事実性未決): `sc-ronbun-taisaku` / `sc-incident-response-storytelling`
+  - thin stub(len<800・過大修正回避): `au-audit-evidence-language` / `db-er-design-practice` / `pm-essay-shudai-pickup` / `st-strategy-perspective`(=論文/技術区分stubだが /essay funnel は既設=funnel gap無しを実測)
+- 追加監査(他vein枯渇確認・read-only): (1)内部リンク整合 `audit-internal-links.ts` 実走=blog165/links1434/FATAL0/WARNING0(dead link無し)。(2)blog構造化データ=Article/BreadcrumbList/FAQPage/LearningResource/WebPage/EducationalAudience/Organization 完備(sample実測)。(3)blog description=165本全て存在・160字超0・短<70は15本だが許容。**=FAQ/funnel/内部リンク/構造化データ/meta description の主要code-side veinは全て枯渇**。
+- 申し送り（セッション53）: 個別FAQは clean候補 完全消化。次セッションは backlog 新規 P2-3b「非blog価値ページの orphan/inbound監査」(現 audit-internal-links は blog内リンクのみ対象=非blog crawlable価値ページの被リンク網は未監査)を起案=着手可能。HD-1/4/6/9 は人間待ち継続。
