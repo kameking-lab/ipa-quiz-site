@@ -67,6 +67,25 @@ describe("FEATURE_LANDING_PAGES registry", () => {
   });
 });
 
+// Factuality / 誇大回避: the essay-grading feature hero must not claim the AI
+// references IPA's grading criteria ("採点基準") — those are non-public, and the
+// flagship /essay disclaimer + this page's own FAQ both frame the basis as IPA
+// 公式解答例 (a 参考評価, not the official rubric). Pin the honest framing so the
+// hero can't drift back into over-claiming. "崩れたら落ちる".
+describe("essay-grading feature hero honesty", () => {
+  const page = getFeatureBySlug("essay-grading");
+
+  it("does not claim the AI references IPA 採点基準 (non-public)", () => {
+    expect(page).toBeDefined();
+    expect(page!.hero.subhead).not.toContain("採点基準を参照");
+  });
+
+  it("frames the basis as IPA 公式解答例 + 参考評価 (matches its own FAQ)", () => {
+    expect(page!.hero.subhead).toContain("公式解答例");
+    expect(page!.hero.subhead).toContain("参考評価");
+  });
+});
+
 describe("getFeatureBySlug", () => {
   it("resolves every registered slug back to its own page (round-trip)", () => {
     for (const page of FEATURE_LANDING_PAGES) {
