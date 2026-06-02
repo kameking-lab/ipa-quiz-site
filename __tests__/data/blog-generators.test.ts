@@ -397,6 +397,33 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
       expect(s?.relatedSlugs).toContain("ip-shiken-meritto-imi-aru");
     }
   });
+
+  // FE objection/value article (foundation exam). inbound は fe-goukaku-ten-irt /
+  // ip-shiken-meritto-imi-aru の relatedSlugs から受ける(orphan回避)。崩れたら落ちる。
+  it("fe-shiken-meritto-imi-aru: fe exam, FAQ source, /fe+科目B funnel, no /essay, inbound wired", () => {
+    const post = getBlogPostBySlug("fe-shiken-meritto-imi-aru");
+    expect(post).toBeDefined();
+    expect(post!.exam).toBe("fe");
+    const body = post!.body;
+    // FAQPage source section present
+    expect(body).toContain("## よくある質問");
+    // entry funnel to /fe hub and foundation (FE 科目B pillar); never the flagship grader
+    expect(body).toContain("(/fe)");
+    expect(body).toContain("/blog/fe-kamoku-b-taisaku");
+    expect(body).not.toContain("/essay");
+    // 合格基準は SSOT と一致(科目A・科目B各600点・1000点満点)
+    expect(body).toContain("600 点");
+    expect(body).toContain("1000 点満点");
+    // FE のレベル(レベル 2)を明示
+    expect(body).toContain("レベル 2");
+    // 誇大回避: 具体的な年収額の断定を入れない
+    expect(body).not.toMatch(/年収\s*\d/);
+    // inbound wiring (non-orphan): listed in FE/IP-cluster siblings' relatedSlugs
+    for (const sib of ["fe-goukaku-ten-irt", "ip-shiken-meritto-imi-aru"]) {
+      const s = getBlogPostBySlug(sib);
+      expect(s?.relatedSlugs).toContain("fe-shiken-meritto-imi-aru");
+    }
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
