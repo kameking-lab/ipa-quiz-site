@@ -815,6 +815,7 @@ export function CopilotPanel({
               {actionsOpen && (
                 <div
                   id="copilot-actions-popup"
+                  role="group"
                   className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
                   aria-label="その他の操作"
                 >

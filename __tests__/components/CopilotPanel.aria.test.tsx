@@ -31,4 +31,18 @@ describe("CopilotPanel — aria-controls の参照整合性", () => {
       );
     }
   });
+
+  // アクションポップアップ(copilot-actions-popup)は aria-label="その他の操作" を
+  // 持つが、role 無しの <div> では aria-label が SR にほぼ無視される(ARIA 仕様)。
+  // role="group" を付けてラベルを有効化し、操作ボタン群の名前付き境界を SR に
+  // 伝える。role を外すとラベルが再び dead markup に戻る回帰を防ぐ。
+  // (role="menu" は矢印キー roving が前提だが未実装のため group が正しい粒度。)
+  it("アクションポップアップが role=\"group\" でラベル付き境界になっている", () => {
+    const popup = source.match(
+      /<div\s+id="copilot-actions-popup"[\s\S]*?>/,
+    )?.[0];
+    expect(popup, "copilot-actions-popup の div が見つからない").toBeDefined();
+    expect(popup).toContain('role="group"');
+    expect(popup).toContain('aria-label="その他の操作"');
+  });
 });
