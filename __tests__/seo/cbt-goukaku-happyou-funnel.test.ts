@@ -57,12 +57,20 @@ describe("CBT 合格発表/スコアレポート記事の事実性と funnel 規
     expect(body).toContain("/blog/ip-goukaku-ten-bunyabetsu");
   });
 
-  it("親記事 moushikomi-nagare から inbound リンクを受け orphan 化しない", () => {
+  it("2 つの関連記事から inbound リンクを受け orphan 化しない（s82/s83 precedent）", () => {
+    // (1) 親=申込フロー記事の合否発表節から
     const parent = getBlogPostBySlug(PARENT);
     expect(parent).toBeDefined();
     expect(
       parent!.body.includes(`/blog/${SLUG}`),
       "moushikomi-nagare から新記事への inbound リンクが無い",
+    ).toBe(true);
+    // (2) FE 合格点記事の「試験当日：仮スコア／正式合否」節からの 2 本目（reciprocal）
+    const feScore = getBlogPostBySlug("fe-goukaku-ten-irt");
+    expect(feScore).toBeDefined();
+    expect(
+      feScore!.body.includes(`/blog/${SLUG}`),
+      "fe-goukaku-ten-irt から新記事への inbound リンクが無い",
     ).toBe(true);
   });
 
