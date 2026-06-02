@@ -1427,3 +1427,17 @@
   - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2078全緑(+5) / build OK。
 - done×1 [orphan回避・2本目inbound] SHA `b4360da`: s82/s83 precedent(新記事=2 inbound面)に従い、新記事の2本目 inbound を `fe-goukaku-ten-irt`(FE合格点=高traffic土台)の「試験当日：仮スコア/正式合否」節から reciprocal 配線(同記事は新記事の funnel先でもあり双方向cluster化)。本文事実(仮スコア即時/正式合否約1ヶ月後)整合・additive。回帰pinを2 inbound面へ拡張。本番HTML実測=fe-goukaku-ten-irt に inbound render。link audit=182本/0 FATAL/0 WARN(新規404ゼロ)。**=新記事 cbt-goukaku-happyou-score-report は inbound2面(moushikomi/fe-goukaku-ten)+relatedSlugs4本で発見性確保**。全ゲート緑(test 2078・build OK)。
 - **次セッション申し送り**: P2-2 制度/access vein に「受験後の結果確認(合格発表/スコアレポート)」をCBT通年区分スコープで追加。**残る制度/access角度(要吟味・着手前に重複裏取り)**: (a)受験料/合格証書再発行=moushikomi部分カバー・専用化thin懸念(継続保留)。(b)SGスコア通知=HD-8未検証(見送り)。(c)AP/高度の合格発表 専用記事は令和8年度CBT移行が確定/安定するまで staleness で着手不可(IPA公式日程fix後にHD相当か再吟味)。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち は不変。1記事=確実を維持し量産しない。
+
+## セッション88（growth ループ｜2026-06-02 JST）
+**P2-2 制度vein=「科目合格はない（前回合格した科目は次回に持ち越せない）」専用記事を新設（再挑戦クエリの盲点を解消）**
+背景（着手前 read-only 監査）:
+- s87 申し送りどおり論文/科目B vein は停止し別角度(P2-2 制度/access)を優先。blog slug 117本を機械走査・link audit健全(s87=182本/0FATAL)を確認。
+- corpus走査: `fe-goukaku-ten-irt` 等は「**その回の中で**科目A・科目Bともに600点必要・片方だけ高得点でも不合格」までカバーするが、**「前回受かった科目を次回に持ち越せるか（＝科目合格・部分合格の有無）」を正面から扱う専用記事が不在**。`科目合格/部分合格/繰り越し/持ち越し` の dedicated扱いゼロ。「基本情報 科目Aだけ合格 次回 / 応用情報 午前だけ合格 免除」は高intentの再挑戦クエリで競合(sikaku-no-iroha/ikitete-yokatta/nokonoko)はカバー済=自サイト側のgap。
+- **裏取り(WebSearch×2)**: ①FE=科目A・科目Bを同回で両方600点以上・**科目合格(部分合格)なし・前回の科目合格は次回に持ち越せない**・唯一の別ルート=IPA認定講座修了による科目A免除(1年・別制度)。②AP=午前だけ/午後だけ合格しても合格にならず**次回に午前免除も無い・毎回両方受け直し**・AP合格後2年=高度の午前I免除。**durable fact**(no-carryoverは構造的・CBT移行で不変=s87のようなstaleness landmine無し→cross-exanで安全)。
+- done×1 [P2-2 制度vein] SHA `18694df`: 新記事 `ipa-kamoku-goukaku-nai`「情報処理技術者試験に『科目合格』はある？｜午前だけ・科目Aだけ合格しても次回に持ち越せない」。
+  - 核心: ①IPAに科目合格(部分合格)制度なし=合否はその回ごとに全科目まとめて判定 ②FE 科目Aだけ・科目Bだけ合格は次回に使えない(両方受け直し) ③AP 午前だけ・午後だけ合格は無効・次回も午前から ④「持ち越せる」唯一の制度=高度の午前I免除(2年)・FEの科目A免除(認定講座)の2つだけ・**どちらも前回試験の科目合格を引き継ぐ制度ではない**(別根拠でスキップ) ⑤だからこそ全科目で安定して取る力(崩れやすい科目B対策)が要。
+  - **誇大回避/funnel規律**: 制度=採点無関係ゆえ旗艦 /essay 非送客(s27/s65/s87 precedent・本文 `](/essay)`=0実測)。funnel=合格基準(fe-goukaku-ten-irt/ap-goukaku-ten-border/koudo-goukaku-ten-ashikiri)・免除(ipa-gozen1-menjo-jouken/fe-kamoku-a-menjo)・土台=科目B(fe-kamoku-b-taisaku)・落ちた後(fugoukaku-recovery/data-driven-revision)・/fe /ap。cross-exam(FE/AP/高度横断)ゆえ exam/booksExam 未設定(索引送客)。FAQPage化(4Q&A・extractFaq leak0)。
+  - inbound2面(s82/s83/s87 precedent=orphan回避): (1)`fe-goukaku-ten-irt` 科目別判定節末に「片方だけ超えても次回に持ち越せない」additive配線、(2)`ipa-shiken-fugoukaku-kara-no-recovery` 第1週 原因分析節に「前回午前だけ合格しても持ち越せない」additive配線(落ちた後=最高intent)。relatedSlugs=fe-goukaku-ten/ap-goukaku-ten/午前I免除/科目A免除(全on-topic制度・合格基準)。
+  - 検証(本番ビルド実測): prerendered `/blog/ipa-kamoku-goukaku-nai.html`(135KB)に核心事実(科目合格/持ち越せ/午前I免除/科目A免除)・funnel6本(fe/ap/koudo-goukaku-ten・午前I免除・科目A免除・fugoukaku-recovery)全render・FAQPage JSON-LD・本文 `](/essay)`=0。inbound両親HTML(fe-goukaku-ten-irt/fugoukaku-recovery)に新記事リンクrender実測。新記事内 /blog link先8本すべてprerendered 200(新規404ゼロ)。回帰pin `kamoku-goukaku-nai-funnel.test.ts`(5件)。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2083全緑(+5) / build OK。
+- **次セッション申し送り**: P2-2 制度vein に「科目合格はない(持ち越し不可)」をcross-exam(durable)で追加。**残る制度/access角度(要吟味・重複裏取り必須)**: (a)受験料/合格証書再発行=moushikomi部分カバー・専用化thin懸念(継続保留)。(b)SGスコア通知=HD-8未検証(見送り)。(c)AP/高度の合格発表専用記事=令和8年度CBT移行が安定するまでstaleness不可。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち は不変。1記事=確実を維持し量産しない。
