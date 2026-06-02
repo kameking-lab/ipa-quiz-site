@@ -228,7 +228,8 @@ content vein 飽和後の grounded な所見源。**各指摘は着手前に現�
 - **[未着手・grounded候補（次セッション・小diff/非広域/非HD のものから1件ずつ精査）]**:
   - ~~A-5~~ **[done s95 `b7d71a7`]**: スワイプ×synthetic-click 衝突を preventDefault で解消(上記 done 行参照)。
   - A-6: `CopilotMobileSheet`(role="dialog" aria-modal="true") に focus-trap/復帰なし→Tabで背後へ抜ける（WCAG 2.1 モーダル要件）。差別化中核コンポーネントゆえ慎重に。
-  - SEO-5: 孤立ページ `/challenge`・`/referral`（sitemap掲載のみ・内部リンク0）。フッターor機能ハブから文脈内リンク。**ただし着手前に「露出して良い機能か」を確認**（growth系で半完成なら据置＝strategicに要吟味、orphan解消veinのP2-3流儀）。
+  - ~~SEO-5~~ **[一部done s95 `4b34e3c`]**: `/challenge`(デイリーチャレンジ=完成・無料・課金非依存)をフッタ「サービス」nav へ配線(全SSRページに crawlable inbound・本番HTML実測でhref/ラベル present・回帰pin)。**`/referral` は据置→HD-12**(Premium特典前提の半完成機能=「Premium7日間無料/コパイロット無制限/Flash高精度」を謳うが特典未実装・課金は§0でフェーズ4まで凍結＝露出は誇大/矛盾リスクで戦略判断)。
+  - **[clean確認 s95] K-2系 stale count grep**: `/faq`「79問」(s94 `d0e42a0`)以外の advertised count drift を機械走査→**他面は枯渇**。総問題数は `lib/constants/question-counts.ts`(SSOT・APPROX_QUESTION_COUNT_LABEL/TOTAL_QUESTIONS_PUBLISHED)へ移行済で FAQ/features/success-stories/home/layout/search/topics/blog が全て派生参照(grep確認)＝旧「12,000問超」ハードコードは残存せず。transparency の「残り12,094問」は2026-03 changelog の point-in-time 記録(live count はL145で別途算出)＝史実ゆえ非対象。他の「N問/件」は機能/形式の固定copy(80問/5問/20問/100問等)で drift しない。**K-2系は対応不要**。
   - 使-3: 復習/弱点動線が3系統分散（`/quiz?mode=review`・`/quiz?mode=weakness`・`/review`・`/account/dashboard`）→正規1入口へ集約（UX/routing・中スコープ・要監査）。
   - H-3: blog→演習の逆方向CTA（worklog では funnel飽和判定済＝重複懸念・着手は要吟味）。K-2系: `/faq` 以外のハードコード件数の有無を機械走査（s94で /faq は解消・他面の stale count を grep で確認）。
 - **[自律着手しない（広域/大型/設計/HD）]**: A-1 CopilotPanel 1,130行分割（広域リファクタ禁止）。使-1 /q に最小回答UIを載せ「読む→解く」ゼロ遷移化（大型機能・アーキ変更）。SEO-4 4分類ハブ(topics/keywords/glossary)の役割階層化・相互canonical（情報設計・HD相当）。K-1 CLAUDE.md の Prisma/NextAuth/40ルート群への追従（プロジェクト指示書の編集＝人間判断）。I-3 /search 0件サジェスト（機能追加）。

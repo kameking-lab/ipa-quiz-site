@@ -1553,3 +1553,13 @@
   - **検証(崩れたら落ちる)**: 回帰pin `__tests__/components/QuizPlayer.swipe.test.tsx`(2 it)。`fireEvent.keyDown(window,{key:"1"})` で reveal→`createEvent.touchEnd` の `preventDefault` を spy。左スワイプ(touchStart x=240→changedTouches x=60・dx=-180)=`onNext` 1回 AND `preventDefault` 呼出／タップ(x=200→204・dx=4)=どちらも非呼出。preventDefault 削除で前者が落ちる(synthetic-click 抑止が pin される)。
   - 全ゲート緑（commit前に単独実行・緑目視）: typecheck 0 / lint 0 errors(warn は未追跡 scripts/ux-audit-screenshots.mjs のみ=非自分) / test 2102 passed(267 files・+2) / build OK。
   - **所見**: 激辛レビュー triage の A-5 は s34-94 で未着手の grounded な correctness 指摘で、監査の結果 synthetic-click の着弾先が「次問の選択肢」という具体的実害経路と確定＝過大修正でない。残候補(A-6 focus-trap/SEO-5 orphan/使-3 routing 集約/K-2系 stale count grep)は次サイクルへ。
+
+### セッション95（続き）— SEO-5 孤立ページ解消(/challenge) + K-2系 stale count の clean確認
+- done: [P-spicy-review SEO-5・一部] SHA `4b34e3c`: `/challenge`(デイリーチャレンジ)をグローバルフッタ「サービス」nav に配線。
+  - **着手前監査**: `/challenge`(app/challenge/page.tsx)=完成した無料機能(毎日5問・deterministic・XP・課金非依存)。内部リンクは `/sitemap` HTML ページ1箇所のみ＝文脈内 inbound 0 の orphan(XML sitemap掲載のみ)。HomeReturningHeader の「今日のおすすめ5問」は別物(client・personalized recommendations)。
+  - **最小diff**: フッタ「サービス」nav(全 indexable SSRページに描画)に `<Link href="/challenge">デイリーチャレンジ</Link>` を午後論述AI採点の下に1行追加。crawlable な global inbound を確立。
+  - **`/referral` は据置→HD-12 へ**: Premium特典前提(「Premium7日間無料/コパイロット無制限/Flash高精度」)の半完成機能で特典未実装明記・課金は §0 でフェーズ4まで凍結。露出は「全機能無料」と矛盾・誇大懸念＝戦略判断ゆえ自律配線せず human-decisions HD-12 に積んだ。
+  - **検証(崩れたら落ちる)**: 既存 `footer-bottomnav-links-resolve.test.ts` が全フッタ href の解決を自動検証(=/challenge が実在ルートで dead-link でないことを担保)＋新 pin「the footer links to the Daily Challenge」(staticHrefs に `/challenge` 含有＝inbound 削除で落ちる)。本番ビルドHTML実測=/about・/faq の footer に `href="/challenge"`×1＋「デイリーチャレンジ」present(全SSRページに描画)。
+  - 全ゲート緑（commit前に単独実行・緑目視）: typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2103 passed(267 files・+1) / build OK。
+- clean確認: [K-2系] `/faq`「79問」(s94)以外の advertised count drift を grep 走査→**枯渇**。総問題数は SSOT `lib/constants/question-counts.ts` へ移行済で全 user-facing 面が派生参照(FAQ/features/success-stories/home/layout/search/topics/blog)＝旧ハードコード残存なし。transparency「残り12,094問」は2026-03 changelog の史実(live total は別算出)＝非対象。他「N問/件」は機能/形式の固定copy で drift しない。**K-2系は対応不要**(過大修正の罠回避)。
+- **次セッション申し送り（P-spicy-review triage 残）**: A-6(CopilotMobileSheet の focus-trap/復帰=WCAG・差別化中核ゆえ慎重・要厚め監査)、使-3(復習/弱点動線3系統の正規入口集約=中スコープ・要監査)が grounded な残候補。広域(A-1 CopilotPanel分割)・大型(使-1 /q インライン回答)・設計/HD(SEO-4 ハブ階層化・K-1 CLAUDE.md drift)は自律着手しない。
