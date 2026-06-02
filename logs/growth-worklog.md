@@ -1039,3 +1039,17 @@
   - `getSameExamOtherYears` に `excludeIds?: ReadonlySet<string>` を追加し、related で表示済みの id を skip。skip した年度は次の問題で補充(年度別1問の枠は維持)。page.tsx は `new Set(related.map(r=>r.id))` を渡す。最小diff・additive。
   - 検証(実測): 全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1927[+1]/build OK)を commit前に単独実行。コーパス全14k面走査で overlap **346→0面/639→0リンク**。otherYears 総リンクは 71858→71458(重複639除去のうち**239を distinct 問題で補充**・残400は補充候補無しで空=元々重複ゆえ distinct リンクは純増)。prerendered HTML `q/sg/2025-cbt/kamoku-a/q2`(旧 dup=sg-2016a-am-q1)で former dup が single-rail 化(2x baseline=他リンクと同数=1レールのみ)・年度2016 slot が distinct `sg-2016a-am-q28` で補充されたことを実測。回帰pin1件(excludeIds skip+refill=崩れたら落ちる)。
 - **所見/申し送り(セッション60)**: 「distinct 内部リンクは減らさず重複だけ除去」=safe で純増の改善。P0-5 残候補(a)は打ち止め。残コード候補: (b)`related` レールの最古年度寄り relevance(examPool 先頭5=古い年度に偏る・年度別 diversity 改善は順位測定不可・リンク増減なし=marginal・SKIP寄り)。(c)topic-tagger 実行=人間/別タスク(AI大量発火)。(d)HD群(HD-1 GSC404一覧/HD-4 AP午後モック/HD-5 essays noindex/HD-6 SC午後frame/HD-9 overviewテンプレ)=人間待ち。code-side の主要 vein は依然枯渇傾向。安易な水増しはしない。
+
+
+## セッション61（growth ループ）2026-06-02 JST
+**P2-2 新角度=「制度/手続き(免除)」系の高インテント・競合薄キーワードで旗艦funnelするオリジナル記事を新設**
+背景: code-side veins(404/soft-404/data死リンク/related重複)は s33-60 で枯渇傾向。content veins(FAQ/funnel/orphan)も s8-58 で飽和。新角度として、コーパス全体で「午前I免除」が **60箇所言及されるのに専用ページが無く、全て『応用情報合格すれば免除』とだけ述べる**(IPA公式の3ルート②③と申請必須を欠く)取り残しを発見。免除は高度試験(=旗艦 午後採点の主戦場)受験者の核心関心ゆえ、旗艦funnelと整合する新vein。
+- done×1 [P2-2/新vein] SHA `3e15b67`: **新記事 `ipa-gozen1-menjo-jouken`「高度試験 午前I免除の3つの条件と申請方法」**を新設。
+  - 事実裏取り(WebSearch+WebFetch `ipa.go.jp/shiken/about/koudo_menjo.html`): ①AP合格 ②高度・支援士いずれか合格 ③高度・支援士の午前Iで基準点(100点満点中60点)以上、の3条件いずれか/有効期間=条件充足から**2年間(2年後の同時期試験まで何度でも申請可)**/**申請必須(一部免除申請番号の入力が無いと自動免除されない)**。
+  - funnel規律: 論文区分(ST/SA/PM/SM/AU)は旗艦 `/essay`(午後II論文AI採点)へ**参考評価明記+採点基準非公開明記**で送客・記述系(NW/DB/SC等)は各ハブ・取得ルートの核心=`/ap`。FAQPage化。
+  - inbound(orphan回避): 既に免除を言及する `ipa-koudo-9kubun-chigai`(高度9区分)・`13-shikaku-osusume-jyun`(午前I免除を最大活用する節)の本文から文脈内リンクを配線+relatedSlugs相互。
+  - 検証(本番ビルド実測): `/blog/ipa-gozen1-menjo-jouken.html` prerendered・H1/FAQPage JSON-LD有・内部リンク先(/ap /nw /db /sc /essay /blog/3本)全prerendered 200・`sitemap/blog.xml.body` に収録(1)・inbound 2面でリンクrender確認。全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1932[+5 新pin]/build OK)を commit前に単独実行。回帰pin `__tests__/seo/ipa-gozen1-menjo-jouken-funnel.test.ts`(3条件/2年間/申請必須の核心事実・参考評価明記・inbound・FAQPage・sitemap収録=崩れたら落ちる)。
+- **本セッションの SKIP(裏取り済・次セッションが再着手しないよう記録)**:
+  - **SC午前II免除(`menjo-sc.html`)= SKIP(niche)**: 当初「SC受験者の高volume keyword」と仮説したが、WebFetchで実態は **IPA認定学科(大学院/大学/高度専門士の専門学校)の修了者限定**(セキュリティ110h含む150h履修認定・修了報告から2年)＝対象が極小。一般のSC再受験者向けではない＝thin/niche＝専用記事は過大。SKIP。
+  - **履歴書 正式名称 = SKIP(既存カバー)**: `it-shikaku-rirekisho-kakikata` が既に「正式名称・記載順序・記載タイミング」をカバー＝per-exam正式名称の新記事は cannibalization/saturation。SKIP。
+- **申し送り(セッション61)**: 「制度/手続き(免除)」は旗艦と整合する新 content vein。**残候補(要吟味・着手前に既存言及の重複と volume を裏取り)**: 他の制度系で専用ページ不在の高インテント角度を1つずつ吟味(登録(支援士)手続きは `sc-shikaku-merit` で既出=重複SKIP寄り/午前I通過者番号の照会実務は moushikomi-nagare 近接で要重複確認)。安易に量産せず1記事=確実を維持。既存コード候補(related最古年度寄り=SKIP寄り/topic-tagger=人間/HD群=人間待ち)は不変。新規404種別・別試験区分の午後導線は s33-37 で網羅済。安易な水増しはしない。
