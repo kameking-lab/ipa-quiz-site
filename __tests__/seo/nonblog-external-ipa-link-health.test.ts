@@ -2,6 +2,8 @@ import { readdirSync, readFileSync, statSync } from "node:fs";
 import { join, relative } from "node:path";
 import { describe, expect, it } from "vitest";
 
+import { EXAM_OFFICIAL_LINKS } from "@/lib/seo/exam-resources";
+
 /**
  * CLAUDE.md §8 makes 出典 (source) links a core rule. blog bodies are already
  * guarded (blog-external-link-allowlist), but the *non-blog* crawlable surfaces
@@ -83,5 +85,51 @@ describe("non-blog crawlable surfaces: outbound IPA 出典 link health", () => {
     expect(byRel.get("app/about/page.tsx")).toContain(
       "https://www.ipa.go.jp/shiken/faq.html",
     );
+  });
+});
+
+/**
+ * EXAM_OFFICIAL_LINKS renders official IPA links on every /[exam] hub for E-E-A-T.
+ * IPA unified all exam overviews under /shiken/kubun/ — the old /shiken/cbt/*.html
+ * overviews (IP/SG/FE/SC) now 404. This pins the distinct URL set (fragment
+ * stripped, since #section_xx is client-side and does not affect HTTP status) to
+ * an allowlist curl-verified HTTP 200, no redirect, on 2026-06-03. Editing a path
+ * fails this until the new URL is re-verified and the allowlist updated.
+ */
+const EXPECTED_OFFICIAL_URLS = [
+  "https://www.ipa.go.jp/shiken/kubun/ip.html",
+  "https://www.ipa.go.jp/shiken/kubun/sg.html",
+  "https://www.ipa.go.jp/shiken/kubun/fe.html",
+  "https://www.ipa.go.jp/shiken/kubun/ap.html",
+  "https://www.ipa.go.jp/shiken/kubun/st.html",
+  "https://www.ipa.go.jp/shiken/kubun/sa.html",
+  "https://www.ipa.go.jp/shiken/kubun/pm.html",
+  "https://www.ipa.go.jp/shiken/kubun/nw.html",
+  "https://www.ipa.go.jp/shiken/kubun/db.html",
+  "https://www.ipa.go.jp/shiken/kubun/es.html",
+  "https://www.ipa.go.jp/shiken/kubun/sc.html",
+  "https://www.ipa.go.jp/shiken/kubun/sm.html",
+  "https://www.ipa.go.jp/shiken/kubun/au.html",
+  "https://www.ipa.go.jp/shiken/syllabus/index.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
+].sort();
+
+describe("EXAM_OFFICIAL_LINKS point at live IPA pages", () => {
+  const urls = new Set<string>();
+  for (const links of Object.values(EXAM_OFFICIAL_LINKS)) {
+    for (const u of [links.overview, links.syllabus, links.pastQuestions]) {
+      urls.add(u.split("#")[0]);
+    }
+  }
+  const distinct = [...urls].sort();
+
+  it("uses https + the official www.ipa.go.jp host for every link", () => {
+    for (const u of distinct) {
+      expect(u.startsWith("https://www.ipa.go.jp/"), `bad official URL: ${u}`).toBe(true);
+    }
+  });
+
+  it("matches the curl-verified allowlist exactly (no dead /cbt/ overviews)", () => {
+    expect(distinct).toEqual(EXPECTED_OFFICIAL_URLS);
   });
 });

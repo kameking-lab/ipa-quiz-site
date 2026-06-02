@@ -18,17 +18,17 @@ const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
   ip: {
-    overview: `${IPA_BASE}/cbt/ip.html`,
+    overview: `${IPA_BASE}/kubun/ip.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html#section_ip`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sg: {
-    overview: `${IPA_BASE}/cbt/sg.html`,
+    overview: `${IPA_BASE}/kubun/sg.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html#section_sg`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   fe: {
-    overview: `${IPA_BASE}/cbt/fe.html`,
+    overview: `${IPA_BASE}/kubun/fe.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html#section_fe`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
@@ -68,7 +68,7 @@ export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sc: {
-    overview: `${IPA_BASE}/cbt/sc.html`,
+    overview: `${IPA_BASE}/kubun/sc.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html#section_sc`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
