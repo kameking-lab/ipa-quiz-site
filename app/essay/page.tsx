@@ -13,10 +13,32 @@ import { examLabel } from "@/lib/utils";
 const ESSAY_DESCRIPTION =
   "ST/SA/PM/SM/AU の午後II論述問題を AI が IPA 元採点者プロンプトで添削。設問ア・イ・ウを業種別にフィードバック。";
 
+const ESSAY_OG_TITLE = "AI 論述添削（午後II）";
+const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "essay",
+  title: ESSAY_OG_TITLE,
+  body: ESSAY_DESCRIPTION,
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: "AI 論述添削 (午後II)",
   description: ESSAY_DESCRIPTION,
   alternates: { canonical: "/essay" },
+  openGraph: {
+    title: ESSAY_OG_TITLE,
+    description: ESSAY_DESCRIPTION,
+    url: "/essay",
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+    images: [{ url: ESSAY_OG_IMAGE, width: 1200, height: 630, alt: ESSAY_OG_TITLE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: ESSAY_OG_TITLE,
+    description: ESSAY_DESCRIPTION,
+    images: [ESSAY_OG_IMAGE],
+  },
 };
 
 export default function EssayHomePage() {

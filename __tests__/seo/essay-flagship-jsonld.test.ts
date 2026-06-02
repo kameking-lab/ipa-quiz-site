@@ -36,6 +36,19 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain("ESSAY_EXAM_CODES.map((exam) => examLabel(exam))");
     expect(SOURCE).toContain("teaches:");
   });
+
+  // The flagship is the surface the whole site funnels toward, yet it shipped
+  // with no openGraph/twitter metadata while blog posts and /[exam] hubs all emit
+  // rich /api/og social cards. Without these, social shares of the flagship show
+  // no preview image. Pin that it emits an OG + Twitter card backed by the
+  // dedicated type=essay /api/og image. "崩れたら落ちる".
+  it("emits openGraph + twitter social cards backed by /api/og?type=essay", () => {
+    expect(SOURCE).toContain("openGraph:");
+    expect(SOURCE).toContain("twitter:");
+    expect(SOURCE).toContain('card: "summary_large_image"');
+    expect(SOURCE).toContain("/api/og?");
+    expect(SOURCE).toContain('type: "essay"');
+  });
 });
 
 // The per-question grading pages (now in the sitemap) are the most specific
