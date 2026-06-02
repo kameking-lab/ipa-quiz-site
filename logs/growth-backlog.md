@@ -119,7 +119,8 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 ## P2 — 検索「あと一歩」回収 + 競合薄ブログ強化
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 - P2-1: 表示は来てるがクリック0／6〜10位の設問テキスト系ページの title/description/スニペット改善（data-nosnippet整理、冒頭要約の質、文字数キャップ）。対象の具体URLはGSC人手抽出が要るため、まずは「設問ページのtitle/descriptionテンプレ自体の質改善」をテンプレ単位で実施（全/qに波及）。実値をHTMLで実測。
-  - **[SKIP セッション9]**: `lib/seo/question-meta.ts` は phase10レビュー済（DESCRIPTION_MAX=158 hard cap・CTA温存・answer suppression意図的・専用テスト question-meta.test.ts 有）で実害なし。テンプレ修正は理論のみ＝過大修正の罠。GSCの具体URL抽出（人手）が来たら個別対応。
+  - **[SKIP セッション9]**: `lib/seo/question-meta.ts` の **description** は phase10レビュー済（DESCRIPTION_MAX=158 hard cap・CTA温存・answer suppression意図的・専用テスト question-meta.test.ts 有）で実害なし。description テンプレ修正は理論のみ＝過大修正の罠。GSCの具体URL抽出（人手）が来たら個別対応。
+  - **[done セッション94 SHA `875b9df`・激辛レビューSEO-2を実測で確定して着手]**: 上記は **description** の話で、**title は無キャップ**という別gapが残っていた（`logs/usability-seo-spicy-review-2026-05-26.md` SEO致命TOP5-2）。corpus 14,402問を実測→全titleがSERP想定超過・46%が45字超・最長64字（description は158キャップ済なのに title だけ無キャップ＝内部不整合）。`questionTitle()` に予算ベースのキャップを追加: 識別コア(年度/試験/区分/問N/解説)は常に温存し、補助的な `category` のみ全体が `TITLE_MAX=40` 超の時 drop（可視h1はコアのみ描画・descriptionがcategory保持ゆえゼロロス）。最長title 56→44字・category drop 4,028/保持 10,374・本番HTML実測でlive反映確認・回帰pin2件。**title無キャップは解消**。レビューの他致命=SEO-1(/quiz canonical)は既解決・SEO-3(HowTo死schema)はレビュー自身が低優先評価＝実害薄SKIP。
 - P2-2: 競合薄ブログの強化（既存の芽: /blog/it-shikaku-nendaibetsu-roadmap=6.2位CTR9.5% / it-shikaku-rirekisho-kakikata=455表示15位 / kakomon-ai-roadmap-2026 / syakaijin-asakatsu-benkyou）。内容深掘り（オリジナル）・内部リンク網・関連問題リンク・FAQ/JSON-LD補強で1ページ目を狙う。
   - **[done セッション8]** FAQPage JSON-LD machinery を新設（lib/blog/faq.ts extractFaq・`## よくある質問`節を自動FAQPage化）`b3cd08d`。
   - **[done セッション9]** roadmap記事の「1日30回」誇張を SSOT(FREE_AI_DAILY_LIMIT=10) へ是正 `9e06379`。土台=科目B中核ピラー `fe-kamoku-b-taisaku` `2922a80`・旗艦=PM論文 `pm-goukaku-ronbun` `0db0f07` にオリジナル4Q&AのFAQ節を追加しFAQPage化（旗艦はQ4で /essay funnel）。
