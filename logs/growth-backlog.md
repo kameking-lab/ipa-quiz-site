@@ -223,9 +223,10 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 content vein 飽和後の grounded な所見源。**各指摘は着手前に現コードで再検証必須**（s34-94 で多くが既解決のため）。小diff・本番実測・回帰pin・非広域・非HD のみ着手。
 - **[done セッション94]**: SEO-2 /q title 無キャップ → `875b9df`。K-2 /faq「79問」stale → `d0e42a0`。B-2 SearchAction 誤標的 → `a691d96`。SEO-1 /quiz canonical 自己矛盾 → 既解決(現 `app/quiz/page.tsx` canonical:"/"＋noindex,follow)を確認。
+- **[done セッション95 SHA `b7d71a7`]**: A-5 スワイプ×クリックの synthetic-click 衝突を解消。監査で実害を確定＝左スワイプは `revealed` 時のみ発火し選択肢は `disabled={revealed}`。スワイプで `goNext()` 後、touchend の compatibility click が**次問の(再enableされた)選択肢**に着弾し意図しない解答選択を起こす。`onTouchEnd` のスワイプ分岐に `e.preventDefault()` を追加し synthetic click を抑止(タップ dx<60 は不変＝選択は維持)。回帰pin `__tests__/components/QuizPlayer.swipe.test.tsx`(左スワイプ=onNext1回+preventDefault呼出／タップ=どちらも非呼出・崩れたら落ちる)。全ゲート緑(typecheck0/lint0err/test 2102/build OK)。
 - **[SKIP・実害薄]**: B-3 HowTo/FAQPage 死schema（レビュー自身が「除去しても順位上がらず・残しても数KB増・低優先」と評価＝過大修正寄り）。E-3 sitemap lastmod=now（force-static でビルド時刻確定・per-request でない＝軽微、レビューが過大修正の罠に分類）。
 - **[未着手・grounded候補（次セッション・小diff/非広域/非HD のものから1件ずつ精査）]**:
-  - A-5: `QuizPlayer` のスワイプ(onTouchStart/End)が選択肢onClickと同要素ツリーで `e.preventDefault()` 無し→タップ＋左スワイプ同時で意図せず次問へ（エッジだが実害）。**着手前にスワイプnavを壊さない監査を厚めに**。
+  - ~~A-5~~ **[done s95 `b7d71a7`]**: スワイプ×synthetic-click 衝突を preventDefault で解消(上記 done 行参照)。
   - A-6: `CopilotMobileSheet`(role="dialog" aria-modal="true") に focus-trap/復帰なし→Tabで背後へ抜ける（WCAG 2.1 モーダル要件）。差別化中核コンポーネントゆえ慎重に。
   - SEO-5: 孤立ページ `/challenge`・`/referral`（sitemap掲載のみ・内部リンク0）。フッターor機能ハブから文脈内リンク。**ただし着手前に「露出して良い機能か」を確認**（growth系で半完成なら据置＝strategicに要吟味、orphan解消veinのP2-3流儀）。
   - 使-3: 復習/弱点動線が3系統分散（`/quiz?mode=review`・`/quiz?mode=weakness`・`/review`・`/account/dashboard`）→正規1入口へ集約（UX/routing・中スコープ・要監査）。
