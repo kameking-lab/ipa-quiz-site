@@ -78,6 +78,20 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain("<dd");
   });
 
+  // Hub→spoke completion: the flagship funnels blog → /essay (sessions 3-7) but
+  // linked OUT only to deep grading pages / history / books — a dead-end toward
+  // the educational 論述 articles. Pin that it now links to the three highest-
+  // value guides (write / grading-rank / self-grade) so the wiring can't silently
+  // regress and those strategic articles keep their hub inbound. "崩れたら落ちる".
+  it("links out to the strategic 論述 guide articles (hub→spoke)", () => {
+    expect(SOURCE).toContain("const ESSAY_GUIDE_POSTS");
+    expect(SOURCE).toContain("/blog/${p.slug}");
+    expect(SOURCE).toContain('slug: "koudo-ronjutsu-kakikata-kotsu"');
+    expect(SOURCE).toContain('slug: "koudo-ronbun-hyouka-rank"');
+    expect(SOURCE).toContain('slug: "koudo-ronjutsu-jiko-saiten"');
+    expect(SOURCE).toContain("論述の書き方・採点を学ぶ");
+  });
+
   // Anti-exaggeration: the FAQ must not claim AI grading for the mock AP/FE
   // afternoon data (HD-4) and must keep the 参考評価 caveat. Pin the honest
   // framing so a future edit can't quietly over-claim coverage.

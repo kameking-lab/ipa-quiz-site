@@ -48,6 +48,29 @@ const ESSAY_FAQ: { question: string; answer: string }[] = [
   },
 ];
 
+// Hub→spoke completion: blog posts funnel INTO /essay (sessions 3-7), but the
+// flagship hub itself linked out only to the deep grading pages, history, and
+// books — a dead-end toward the strategic educational articles that teach how to
+// write and self-grade essays. Link the three highest-value 論述 guides so a
+// searcher who lands on the flagship can learn the 型・採点観点 before/after
+// submitting, and so the hub passes link equity to those articles. Slugs are
+// verified indexable blog posts; labels stay within the 論文5区分 scope (the
+// flagship covers only those — no mock-data exam over-claim, HD-4).
+const ESSAY_GUIDE_POSTS: { slug: string; label: string }[] = [
+  {
+    slug: "koudo-ronjutsu-kakikata-kotsu",
+    label: "合格答案の構成と書き方のコツ",
+  },
+  {
+    slug: "koudo-ronbun-hyouka-rank",
+    label: "評価ランク（A〜D）の判定基準",
+  },
+  {
+    slug: "koudo-ronjutsu-jiko-saiten",
+    label: "採点の観点で自分の論述を客観視する方法",
+  },
+];
+
 export const metadata: Metadata = {
   title: "AI 論述添削 (午後II)",
   description: ESSAY_DESCRIPTION,
@@ -235,6 +258,28 @@ export default function EssayHomePage() {
             </div>
           ))}
         </dl>
+      </section>
+
+      <section className="mt-10 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 text-sm dark:border-zinc-800 dark:bg-zinc-900/50">
+        <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-50">
+          論述の書き方・採点を学ぶ
+        </h2>
+        <p className="mb-3 text-xs text-zinc-500 dark:text-zinc-400">
+          添削に出す前に、合格答案の型と採点の観点を押さえておきましょう。
+        </p>
+        <ul className="space-y-2">
+          {ESSAY_GUIDE_POSTS.map((p) => (
+            <li key={p.slug} className="flex items-start gap-2">
+              <FileText className="mt-0.5 h-4 w-4 flex-shrink-0 text-zinc-400" />
+              <Link
+                href={`/blog/${p.slug}`}
+                className="text-zinc-700 hover:text-sky-700 hover:underline dark:text-zinc-300 dark:hover:text-sky-400"
+              >
+                {p.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
 
       <p className="mt-6 text-center text-sm text-zinc-600 dark:text-zinc-400">
