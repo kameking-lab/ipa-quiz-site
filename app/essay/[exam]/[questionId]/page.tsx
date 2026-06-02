@@ -3,7 +3,11 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AlertTriangle, ChevronLeft } from "lucide-react";
 
-import { findEssayQuestion, ESSAY_EXAM_CODES } from "@/lib/essay/load";
+import {
+  findEssayQuestion,
+  getAllEssayQuestions,
+  ESSAY_EXAM_CODES,
+} from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { EssayEditor } from "@/components/essay/EssayEditor";
@@ -15,6 +19,18 @@ interface RouteParams {
   exam: string;
   questionId: string;
 }
+
+// Prerender only the real essay questions and 404 everything else. Without this
+// the route is fully dynamic, so an invalid /essay/{exam}/{id} (stale/external
+// link) renders notFound() as a SOFT-404 (HTTP 200) instead of a clean 404 —
+// wasted crawl budget. Mirrors the proven /blog/[slug] pattern in this repo.
+export function generateStaticParams(): RouteParams[] {
+  return getAllEssayQuestions().map((q) => ({
+    exam: q.exam,
+    questionId: q.id,
+  }));
+}
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,

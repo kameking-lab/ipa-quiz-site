@@ -54,4 +54,14 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(DEEP_SOURCE).toContain("examLabel(question.exam)");
     expect(DEEP_SOURCE).toContain("isBasedOn: question.pdfUrl");
   });
+
+  // Soft-404 guard: invalid /essay/{exam}/{id} must return a real 404, not a
+  // 200 with the not-found UI. generateStaticParams + dynamicParams=false makes
+  // Next 404 unknown params before rendering (the /blog/[slug] pattern). If this
+  // regresses, stale/external essay URLs become crawl-wasting soft-404s again.
+  it("prerenders only real questions and 404s unknown params (no soft-404)", () => {
+    expect(DEEP_SOURCE).toContain("export function generateStaticParams");
+    expect(DEEP_SOURCE).toContain("getAllEssayQuestions()");
+    expect(DEEP_SOURCE).toContain("export const dynamicParams = false");
+  });
 });
