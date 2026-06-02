@@ -78,9 +78,19 @@ describe("ブログ CTA — リンク先試験区分は実在ルートのみ (no
   // その先が実在の書籍リスト（≥1冊・空ページでない）を指すことを保証する。
   it("booksExam を持つ記事は単一区分・実在の書籍リストを指す（gyoushu-essay-* = st/pm/sa）", () => {
     const mapping: Record<string, string> = {
+      // 業種別論文（高単価 論文事例集へ）
       "gyoushu-essay-kinyuu-strategy": "st",
       "gyoushu-essay-seizou-pm": "pm",
       "gyoushu-essay-koukyou-sa": "sa",
+      // 単一区分の論述/トピック記事（slug prefix = 単一区分）
+      "fe-kamoku-b-pseudo-language": "fe",
+      "nw-protocol-deep-understanding": "nw",
+      "db-er-design-practice": "db",
+      "pm-essay-shudai-pickup": "pm",
+      "st-strategy-perspective": "st",
+      "sa-architecture-tradeoff": "sa",
+      "sm-itil-storytelling": "sm",
+      "au-audit-evidence-language": "au",
     };
     for (const [slug, exam] of Object.entries(mapping)) {
       const post = getBlogPostBySlug(slug);
@@ -102,6 +112,10 @@ describe("ブログ CTA — リンク先試験区分は実在ルートのみ (no
       "koudo-ronjutsu-kakikata-kotsu",
       "koudo-ronbun-hyouka-rank",
       "gogo-kijutsu-buhanten",
+      // 高度試験キャリア（応用情報→高度＝複数区分）は索引へ
+      "ap-goukaku-go-koudo-senryaku",
+      // SC午後 framing は HD-6 で人間判断待ち＝触らない（索引維持）
+      "sc-incident-response-storytelling",
     ]) {
       const post = getBlogPostBySlug(slug);
       expect(post, `post ${slug} は存在する`).toBeTruthy();

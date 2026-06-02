@@ -1692,6 +1692,7 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
     description:
       "FE科目Bの主軸は擬似言語アルゴリズム。配列・繰返し・トレースの3ステップ訓練で、読解スピードを2倍にする学習法を解説します。",
     tags: ["FE", "科目B", "擬似言語"],
+    booksExam: "fe",
     publishedAt: publishedAtFor(extOffset + 2),
     body: `# 基本情報科目B｜擬似言語アルゴリズム読解の3ステップ訓練
 
@@ -1754,6 +1755,7 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
     description:
       "NWの午後で問われるのはプロトコルの暗記ではなく動的挙動。輻輳・再送・ハンドシェイクなど5つの視点でプロトコルを動きとして捉える学習法を解説。",
     tags: ["NW", "プロトコル", "TCP/IP"],
+    booksExam: "nw",
     publishedAt: publishedAtFor(extOffset + 3),
     body: `# ネットワークスペシャリスト｜プロトコルを「動き」で理解する
 
@@ -1812,6 +1814,7 @@ NW は「動き」で理解する。輻輳・再送・ハンドシェイク・�
     description:
       "DB試験の午後I・IIで問われるER図設計を、概念→論理→物理の3段階で訓練し、合格レベルの正規化判定スピードを身に付ける学習法を解説。",
     tags: ["DB", "ER図", "正規化"],
+    booksExam: "db",
     publishedAt: publishedAtFor(extOffset + 4),
     body: `# DBスペシャリスト｜ER図設計を得点源にする
 
@@ -1889,6 +1892,7 @@ SC 午後事例は、サイバーインシデントを 1 本の物語として�
     description:
       "PM試験の論述で書ける「自分のプロジェクト経験」を、4つの問いで業務から抽出する方法。経験が薄くても合格答案を組み立てるテクニックを解説。",
     tags: ["PM", "論述", "経験抽出"],
+    booksExam: "pm",
     publishedAt: publishedAtFor(extOffset + 6),
     body: `# プロジェクトマネージャ午後II｜論述ネタを業務から抽出する4つの問い
 
@@ -1931,6 +1935,7 @@ PM の主体性が問われるため、上長の指示を実行しただけの�
     description:
       "ST試験の論述で求められる経営層視点。CSF/KPI/競争優位性など、午後IIで使うべき語彙を分類整理し、合格答案に落とし込むテクニックを解説。",
     tags: ["ST", "論述", "経営"],
+    booksExam: "st",
     publishedAt: publishedAtFor(extOffset + 7),
     body: `# ITストラテジスト｜経営層視点で論述するための語彙集
 
@@ -1977,6 +1982,7 @@ ST 論述で「現場目線が抜けない」ことが減点の最大要因。�
     description:
       "SA論述で評価されるのは万能解ではなく、トレードオフを言語化した設計判断。可用性vsコスト、性能vs拡張性などを論述に落とし込む技法を解説。",
     tags: ["SA", "論述", "トレードオフ"],
+    booksExam: "sa",
     publishedAt: publishedAtFor(extOffset + 8),
     body: `# システムアーキテクト｜トレードオフの言語化で合格答案を作る
 
@@ -2034,6 +2040,7 @@ IPA は採点基準を公開していないため、自己採点は難しいの�
     description:
       "SM論述ではITIL用語の暗記でなく、運用現場の物語に語彙を乗せることが重要。インシデント・問題・変更管理を題材化する具体的なテクニックを解説。",
     tags: ["SM", "論述", "ITIL"],
+    booksExam: "sm",
     publishedAt: publishedAtFor(extOffset + 9),
     body: `# ITサービスマネージャ｜ITIL用語を物語に乗せる論述術
 
@@ -2086,6 +2093,7 @@ IPA は採点基準を公開していないため、自己採点は難しいの�
     description:
       "AU論述で減点される最大要因は「設計者・運用者目線の混入」。監査人視点を貫く語彙と表現を、設問ア・イ・ウ別にテンプレ化して解説します。",
     tags: ["AU", "論述", "監査人視点"],
+    booksExam: "au",
     publishedAt: publishedAtFor(extOffset + 10),
     body: `# システム監査技術者｜監査人視点を貫く語彙と表現集
 
