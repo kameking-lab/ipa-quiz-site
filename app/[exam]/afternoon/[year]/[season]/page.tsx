@@ -11,6 +11,7 @@ import {
   getAfternoonYearSeasons,
 } from "@/lib/afternoon/load";
 import { AfternoonPlayer } from "@/components/afternoon/AfternoonPlayer";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { Badge } from "@/components/ui/badge";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
@@ -167,6 +168,11 @@ export default async function AfternoonPlayerPage({
             </p>
           </div>
         </div>
+
+        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)の警告に続けて
+            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
+            AfternoonEssayHint が ESSAY_EXAM_CODES で self-gate＝非論述区分には出ない。 */}
+        <AfternoonEssayHint exam={code} />
 
         <AfternoonPlayer questions={questions} />
       </div>

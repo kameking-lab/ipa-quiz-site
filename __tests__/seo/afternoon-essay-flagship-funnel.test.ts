@@ -23,3 +23,19 @@ describe("/[exam]/afternoon funnels 論文 exams to the flagship /essay", () => 
     expect(source).toContain("<AfternoonEssayHint exam={code} />");
   });
 });
+
+// 練習プレイヤー本体 /[exam]/afternoon/[year]/[season] も同じ旗艦 funnel を持つ
+// （直接 landing したユーザーも旗艦へ誘導・index ページと対称）。
+describe("/[exam]/afternoon/[year]/[season] funnels 論文 exams to /essay", () => {
+  const source = readFileSync(
+    join(process.cwd(), "app/[exam]/afternoon/[year]/[season]/page.tsx"),
+    "utf8",
+  );
+
+  it("imports and renders AfternoonEssayHint with the current exam code", () => {
+    expect(source).toContain(
+      'import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint"',
+    );
+    expect(source).toContain("<AfternoonEssayHint exam={code} />");
+  });
+});
