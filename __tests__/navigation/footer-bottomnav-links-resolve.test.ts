@@ -84,6 +84,18 @@ describe("global footer / bottom-nav static internal links resolve", () => {
     expect(staticHrefs("app/layout.tsx")).toContain("/challenge");
   });
 
+  // D-3 (usability/SEO review): these indexable value pages had thin inbound
+  // funnel from leaf pages — /ranking was not in any global nav, and /mock-exam
+  // /recommended-books were desktop-header-only (absent on mobile/leaf footer).
+  // The footer service nav is their crawlable global inbound across every SSR
+  // page. /success-stories is intentionally excluded (noindex,nofollow).
+  it.each(["/mock-exam", "/ranking", "/recommended-books"])(
+    "the footer links to the indexable value page %s (thin-funnel resolution)",
+    (href) => {
+      expect(staticHrefs("app/layout.tsx")).toContain(href);
+    },
+  );
+
   it("every static MobileBottomNav href maps to an existing route (no 404 in bottom nav)", () => {
     const hrefs = staticHrefs("components/MobileBottomNav.tsx");
     expect(hrefs.length).toBeGreaterThanOrEqual(5);
