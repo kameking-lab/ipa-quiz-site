@@ -993,3 +993,21 @@
   - keyword LP の他の技術系数値(pm-evm: SV/CV/SPI/CPI/EAC・db-3nf: 3NF/BCNF定義・nw-subnet: /24=…/30=2host/27=30host・st-essay: 2200字×120分)を read-only 確認＝全て正・誤りは COBIT のみ。
 - 鉄則順守: 全ゲート(typecheck0/lint0err/test pass[最終1913]/build OK)を commit前に単独実行・実測してから commit・additive・新規404ゼロ・誇大回避。
 - 申し送り(セッション57): keyword LP surface は inbound(s54-56)+outbound 逆リンク(s57)+rail relevance(s57)+事実性(s57)で**多面的に整備完了**。code-side の主要 vein は依然枯渇傾向。次セッション候補: (a)relevance-leak 観点を他の indexable 「related/other」surface へ更に展開できるか(features/topics は本session監査で clean/defensible・他に naive slice surface が残るか要走査)。(b)P2-3c の note にある「全LPには無理に付けない」尊重で逆リンク追加は打ち止め。(c)HD群(HD-1/4/5/6/9)= 人間待ち。安易な水増しはしない。
+
+## セッション58（growth ループ）2026-06-02 JST
+**P2-3 新角度: /q 最大クロール面の cross-exam 内部リンクを復活（dormant rail を共通カリキュラム分野で稼働）+ 多面 read-only 監査で saturation 再確認**
+- done×1 [P2-3] **/q「他試験区分の関連問題」レールを共通カリキュラム分野で復活** SHA `82e7d7e`:
+  - **発見**: `/q/[...]/page.tsx` の `crossExamByTopic` レール(「他試験の同テーマ問題」)は `q.topicTags.length > 0` ゲートだが、**全14,416問の topicTags が空(corpus-wide)**=topic-tagger 未実行(CLAUDE.md「未書き込みのヒューリスティックのみ」)。結果、最大クロール面(~12,653 /q)から **cross-exam 内部リンクが完全にゼロ**だった(意図された導線が dormant)。
+  - **是正**: `lib/questions/related.ts` 新設。`getCrossExamRelatedQuestions(current, all, limit)` が topicTag があればトピック精密マッチ(共有タグ数降順・relevance-leak guard)、無ければ `AP_TOPIC_GROUPS`(共通キャリア・スキルフレームワークの同義分野: AP「経営戦略」≒FE/IP「ストラテジ」等・/modes/topic で実績ある vetted マッピング)で代替し各他区分1問ずつ(新年度優先)を返す。**スコープを保守的に限定**: 共通カリキュラム4区分(ap/fe/ip/sg)のみ・午前知識問題(am/am1/am2/kamoku-a × MC)のみ・needsReview(404)/placeholder(noindex)先は除外(新規404・noindex先を作らない=既存レールより厳密)。高度試験は対象外(空)。
+  - `page.tsx` は helper 呼び出しに置換、見出しを mode で分岐(topic→「他試験の同テーマ問題」/category→「他試験区分の同分野問題」+「{exam}と共通カリキュラムの他区分で「{category}」分野を演習する」)。topicTag 付与時はトピック精密マッチへ自動復帰。
+  - **検証(実測)**: 全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1919[+6]pass/build OK)を commit前に単独実行。本番ビルドHTML: 共通4区分で描画(ap1280/fe160/ip400/sg112=計1952面・旧0面)・高度9区分=0面(over-matching無し)・サンプル `q/ap/2024-autumn/am/q1`(基礎理論)→`/q/fe/2025-cbt/kamoku-a/q1`+`/q/ip/2024-cbt/am/q65`(各他区分1問)・両リンク先 prerendered 200+robots`index,follow`(新規404/noindex先ゼロ)。回帰pin6件(topic mode: 共有タグ降順・self/同exam/needsReview/placeholder除外 / category mode: 各区分1代表新年度優先・非共通区分は空・午後は空・needsReview/placeholder除外)。
+- **本セッションの read-only 監査(全て clean/by-design/HD-blocked=対応不要)**: 量より確実性のため複数角度を確認し saturation を再裏取り。
+  - **`.slice(0,N)` related/other surface 走査**(s57 申し送りの未網羅角度): app全体走査。`/[exam]`ハブ blog rail=`getBlogPostsByExam` が publishedAt 降順=recency defensible・clean。`/topics`=`getAllTopics` が topicTags 空時 category fallback(topics.ts:32)で正常稼働・defensible。残りは文字列truncation。**唯一の leak-prone surface が上記 crossExam(本session稼働)**。
+  - **内部リンク監査** `audit-internal-links.ts` 実走=165本/1443links/FATAL0/WARN0。
+  - **サイト chrome(layout+nav+footer)の literal href 全件**=対応 page.tsx 実在(dead-link 0)。
+  - **blog meta description 全165本**=欠落0・>160超0・短(<70)15本は全角62-69字=和文SERPは~60-90全角が適正レンジ＝拡張はむしろ truncation リスク=SKIP(過大修正回避)。
+  - **/q 構造化データ**=QAPage+LearningResource+BreadcrumbList 完備(question-jsonld.ts)。
+  - **/success-stories**=`robots:{index:false,follow:false}`(AI生成ペルソナ・致命傷③)で SEO scope 外・既に旗艦(relatedEssayExam)/土台(relatedBlogSlug)funnel済=clean。
+  - **論文ネタ準備** intent=`pm-essay-shudai-pickup`(4つの問いで題材抽出)既出=general版は saturation。
+  - **exam別 blog本数**=最少 sa/es/sm=5(=ほぼテンプレ5生成器のみ)だが全て低volume高度試験で戦略上 deprioritized・他は volume相応。content gap 無し。
+- 申し送り(セッション58): code-side の主要 vein は依然枯渇傾向だが、今回 **dormant だった機能(cross-exam rail)を vetted infra で稼働**させ最大面に新規内部リンクを供給=「枯渇」の中の取り残しを1つ回収。次セッション候補(backlog 参照): (a)**topic-tagger 実行は人間/別タスク**(AI大量発火=loop既定で叩かない・HD相当)＝タグ付与後は crossExam が topic精密へ自動昇格。(b)`related`同分野レール(examPool 先頭5=最古年度寄り)の recency/diversity は marginal・順位測定不可=SKIP寄り。(c)HD群(HD-1/4/5/6/9)=人間待ち。安易な水増しはしない。
