@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import type { Metadata } from "next";
 
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { getAllEssayQuestions } from "@/lib/essay/load";
 import {
   renderBooksSitemapXml,
   renderMainSitemapXml,
@@ -112,5 +113,50 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
       if (isNoindex(robots)) bad.push(p);
     }
     expect(bad).toEqual([]);
+  });
+});
+
+/**
+ * 旗艦（午後AI採点）の deep ページ `/essay/<exam>/<id>` は main sitemap に12件
+ * 掲載される（sitemap-resolvability が件数と404を担保）。この generateMetadata は
+ * **問題が見つからない時だけ** robots:index:false を返す（L43）。掲載されている
+ * 実在問題が誤って noindex 化されると旗艦が「掲載済みだが noindex」になり crawl
+ * 資産を浪費するため、実 params で robots を評価し index:false でないことを固定する。
+ */
+describe("旗艦 essay deep ページ（sitemap掲載の実在問題）は全て indexable", () => {
+  type EssayGenerateMetadata = (arg: {
+    params: Promise<{ exam: string; questionId: string }>;
+  }) => Promise<Metadata>;
+
+  const essayPageKey = "../../app/essay/[exam]/[questionId]/page.tsx";
+
+  it("essay deep page モジュールが解決する", () => {
+    expect(essayPageKey in pageModules).toBe(true);
+  });
+
+  it("掲載される全 essay 問題で robots:noindex にならない", async () => {
+    const questions = getAllEssayQuestions();
+    expect(questions.length).toBeGreaterThan(0); // 空振り防止
+    const mod = (await pageModules[essayPageKey]()) as {
+      generateMetadata: EssayGenerateMetadata;
+    };
+    const bad: string[] = [];
+    for (const q of questions) {
+      const md = await mod.generateMetadata({
+        params: Promise.resolve({ exam: q.exam, questionId: q.id }),
+      });
+      if (isNoindex(md.robots)) bad.push(`/essay/${q.exam}/${q.id}`);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  it("存在しない問題IDでは robots:noindex を返す（not-found 分岐の健全性）", async () => {
+    const mod = (await pageModules[essayPageKey]()) as {
+      generateMetadata: EssayGenerateMetadata;
+    };
+    const md = await mod.generateMetadata({
+      params: Promise.resolve({ exam: "pm", questionId: "no-such-essay-id" }),
+    });
+    expect(isNoindex(md.robots)).toBe(true);
   });
 });
