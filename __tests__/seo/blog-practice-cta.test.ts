@@ -29,6 +29,19 @@ describe("ブログ記事 → 演習 CTA — 両分岐が実在ルートを指�
     // hub-branch button links to home, not a guessed exam route.
     expect(source).toMatch(/href="\/"[\s\S]*?過去問演習を始める/);
   });
+
+  // 収益導線: exam を持つ記事は /recommended-books/{exam} の書籍CTAが出る一方、
+  // 試験タグの無い general 記事（高単価の論文/午後対策本へ送客したい
+  // koudo-ronjutsu-* / gyoushu-essay-* など）には書籍CTAが無かった。
+  // general 分岐にも書籍ハブ /recommended-books（実在の index ルート）への
+  // おすすめ書籍リンクを出すことで、全記事から書籍アフィリ funnel に到達させる。
+  it("試験タグの無い記事も書籍ハブ /recommended-books へのおすすめ書籍リンクを出す", () => {
+    expect(source).toContain('href="/recommended-books"');
+    // 両分岐ともに「おすすめ書籍」ラベルの書籍導線を持つ
+    // (exam分岐=/recommended-books/${post.exam}, general分岐=/recommended-books)。
+    const bookCtas = source.match(/おすすめ書籍/g) ?? [];
+    expect(bookCtas.length).toBeGreaterThanOrEqual(2);
+  });
 });
 
 describe("ブログ CTA — リンク先試験区分は実在ルートのみ (no 404)", () => {
