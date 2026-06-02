@@ -84,6 +84,15 @@ describe("essay-grading feature hero honesty", () => {
     expect(page!.hero.subhead).toContain("公式解答例");
     expect(page!.hero.subhead).toContain("参考評価");
   });
+
+  // Hub→spoke: the grading feature page complements "what to write" (業種別
+  // 論述事例集) with "how to write" — link the writing-cotsu guide so the
+  // educational learning path from this indexable feature can't regress. The
+  // generic resolvability guard above already proves it's not a 404.
+  it("links to the 書き方コツ guide (hub→spoke learning path)", () => {
+    const hrefs = page!.relatedLinks.map((l) => l.href);
+    expect(hrefs).toContain("/blog/koudo-ronjutsu-kakikata-kotsu");
+  });
 });
 
 describe("getFeatureBySlug", () => {

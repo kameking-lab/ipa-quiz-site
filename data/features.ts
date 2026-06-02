@@ -229,6 +229,11 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
         description: "そもそも何を書くかに悩まない題材集。",
       },
       {
+        href: "/blog/koudo-ronjutsu-kakikata-kotsu",
+        label: "合格答案の構成と書き方のコツ",
+        description: "添削に出す前に押さえる論述の型。",
+      },
+      {
         href: "/keywords/sc-incident-response",
         label: "SC 午後 II インシデント対応の傾向",
         description: "頻出設問パターンと答案構成。",
