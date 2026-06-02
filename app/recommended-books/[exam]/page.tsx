@@ -19,6 +19,7 @@ import {
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 
 export const dynamicParams = false;
 
@@ -112,6 +113,9 @@ export default async function RecommendedBooksExamPage({
   const books = RECOMMENDED_BOOKS[code] ?? [];
   const label = examLabel(code);
   const intro = EXAM_INTROS[code];
+  // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
+  // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
+  const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
 
   const productOgUrl = (book: RecommendedBook) => {
@@ -332,6 +336,18 @@ export default async function RecommendedBooksExamPage({
             <Link href={`/quiz?mode=random&exam=${exam}`}>ランダム出題で始める</Link>
           </Button>
         </div>
+        {isEssayExam && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            論文事例集で「書き方の型」を身につけたら、
+            <Link
+              href="/essay"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              AIに午後論文を添削してもらう
+            </Link>
+            と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
+          </p>
+        )}
       </section>
 
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">
