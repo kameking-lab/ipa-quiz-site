@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, Compass, FileQuestion, HelpCircle, HomeIcon, Info } from "lucide-react";
+import { BookOpen, Compass, FileCheck, FileQuestion, HelpCircle, HomeIcon, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const EXAM_LINKS = [
@@ -82,6 +82,13 @@ export default function NotFound() {
           </div>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-5">
+            <Link
+              href="/essay"
+              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+            >
+              <FileCheck className="h-3.5 w-3.5" />
+              午後論述のAI採点
+            </Link>
             <Link
               href="/faq"
               className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
