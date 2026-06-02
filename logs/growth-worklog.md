@@ -1394,3 +1394,18 @@
   - 検証（崩れたら落ちる）: grading-rubric.test.ts の it.each に "pm" を追加=PM全設問・全小問の rubric>0 を pin。全essayが rubric を持つようになり未付与前提の `withoutRubric>0` が落ちるため、当該テストを「任意フィールドでもロードが壊れない／付与時は非空配列として読める」趣旨へ書換(未付与の存在を前提にしない)。tsx 実測で両設問の全小問が rubric ロード済を確認。
   - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2067全緑(grading-rubric 8→9件) / build OK。
 - **次セッション申し送り**: 強み1 はループ側完了。afternoon(scoring=AP/SC/NW/DB/ES)の rubric は HD-4(モック)解決後でループ着手不可。強み4 横断分析は段階実装=別タスク。土台「発展パターン」vein は s83 で主要4パターン網羅済＝一旦停止し別角度(P2-2 制度/access系・別試験区分)を優先してよい。
+
+## セッション86（growth ループ｜2026-06-02 JST）
+**旗艦=午後AI採点 × 新vein=「論文(午後II論述)の時間配分」専用記事を新設（コーパスが繰り返し"最大の壁"と呼ぶのに専用ページ不在だった盲点を解消）**
+背景（着手前 read-only 監査）:
+- s85 申し送りどおり発展パターン vein(科目B trace)は停止し別角度へ。link audit/FAQ/funnel/per-exam非対称/事実性は done/SKIP/HD で枯渇を再確認。
+- blog corpus(115 general+テンプレ)を走査: 記述式午後の時間配分は `ap/nw/db-gogo-jikan-haibun` の3本あるが、**論述区分(ST/SA/PM/SM/AU)の午後II論文(2時間で手書き3,000字前後)をどう120分配分するかの専用記事が不在**。コーパスは「午後II が 2時間で 2,400字超の小論文。最大の壁はここです」と繰り返す(generators.ts L7514 等)のに時間配分の実プランを与えていない。`koudo-ronjutsu-kakikata-kotsu` に簡潔な時間配分6行があるのみ(深掘り不在)。slug走査=`ronbun-jikan/ronjutsu-jikan` 該当ゼロ＝明確なgap。**旗艦=論文5区分は実データあり**ゆえ /essay へ参考評価で funnel できる(記述式ap/nwとは異なり誇大にならない)。
+- done×1 [P1-4 旗艦/新vein] SHA `730c9f8`: 新記事 `koudo-ronbun-jikan-haibun`「高度試験の論文（午後II）の時間配分｜120分で3,000字を書き切る問題選択・骨子・執筆・見直し」。
+  - 配分の核= **選択10分・骨子20分・執筆80分・見直し10分**(=120分)。執筆80分を字数の重みで設問ア15分(600〜800字)・イ45分(1,600字前後)・ウ20分(600〜800字)へ配分(=80分)。設問ごとの撤退時刻・見直し10分でやること(字数/指示違反/誤字/数値矛盾)・手書きペース(1分35〜40字は要事前練習)をオリジナルで整理。
+  - **SSOT一致**: 120分・2問から1問選択・設問ア〜ウ3段・ア600〜800字/イ1,600字前後/ウ600〜800字・合計3,000字前後(2,400〜3,200字) は pm-goukaku-ronbun/ST/AU/ESSAY FAQ と同じ支配的SSOT(設問イ1,600字前後)。kakikata-kotsu は別系(イ800字/2,800字)だが触らず(別論点=最小diff)・inboundは中立文言で配線し矛盾を露出させない。
+  - **誇大回避**: 論文は点数でなく評価ランク(別記事参照)・AI採点=参考評価/IPA採点基準は非公開を明記。cross-5区分ゆえ exam/booksExam 未設定(=/recommended-books 索引へ送る安全側)。
+  - funnel: 旗艦 /essay(参考評価明記)・/st /sa /pm /sm /au ハブ・AIコパイロット・採点制度記事(koudo-ronbun-hyouka-rank)・自己採点(koudo-ronjutsu-jiko-saiten)・書き方(koudo-ronjutsu-kakikata-kotsu)。
+  - inbound: 親 `koudo-ronjutsu-kakikata-kotsu` の「時間配分の鉄則」節末に additive で配線(orphan回避)。relatedSlugs=kakikata-kotsu/hyouka-rank/jiko-saiten/pm-goukaku-ronbun(全 koudo-/pm- on-topic)。FAQPage化(4Q&A・extractFaqがmarkdown link除去ゆえleak無し)。
+  - 検証(本番ビルド実測): prerendered `/blog/koudo-ronbun-jikan-haibun.html`(132KB)・核心(120分/選択10分・骨子20分・執筆80分・見直し10分/1,600字前後)・/essay funnel×2・参考評価・FAQPage JSON-LD・FAQ質問文 をHTML実測。親HTMLに inbound リンクrender実測・outbound(hyouka-rank/kakikata-kotsu/jiko-saiten)+/essay 全prerendered 200(新規404ゼロ)。回帰pin `koudo-ronbun-jikan-haibun-funnel.test.ts`(6件)。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2073全緑(+6) / build OK。
+- **次セッション申し送り**: 旗艦の論文系コンテンツveinに「時間配分」を追加。残る論文系の専用ページ不在角度は薄く、量産せず1つずつ裏取り。記述式午後(sc/es)の時間配分は HD-6/HD-11 で着手不可は不変。強み1ループ側完了・afternoon rubric=HD-4待ち・強み4=別タスク は不変。
