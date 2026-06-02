@@ -1,3 +1,6 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { describe, expect, it } from "vitest";
 
 import { generateMetadata as blogPostMeta } from "@/app/blog/[slug]/page";
@@ -74,6 +77,13 @@ describe("renderBlogFeedXml", () => {
     });
     const types = meta.alternates?.types as Record<string, unknown> | undefined;
     expect(types?.["application/rss+xml"]).toBe("/feed.xml");
+  });
+
+  it("/blog renders a visible RSS subscribe link for humans", () => {
+    const source = readFileSync(join(process.cwd(), "app/blog/page.tsx"), "utf8");
+    // plain <a> (not next/link) because /feed.xml is an XML route handler.
+    expect(source).toContain('href="/feed.xml"');
+    expect(source).toContain("RSS フィードで購読");
   });
 
   it("escapes ampersands so the XML never contains a raw &", () => {

@@ -1,3 +1,4 @@
+import { Rss } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -134,6 +135,13 @@ export default function BlogIndexPage() {
           AI コパイロット付き過去問演習サイト 過去問AI が運営する学習ブログです。
           記事数は <strong>{posts.length} 本</strong> 公開中。
         </p>
+        <a
+          href="/feed.xml"
+          className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-sky-600 hover:underline dark:text-sky-400"
+        >
+          <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+          RSS フィードで購読
+        </a>
       </header>
 
       <div className="space-y-12">
