@@ -1500,7 +1500,12 @@ IPA 試験対策の選択肢には、予備校通学・通信講座・独学の 
 
 [FE 科目 B 演習](/fe) から始めましょう。
 `,
-    relatedSlugs: ["fe-kamoku-b-taisaku", "ap-gogo-sentaku", "kakomon-dake-goukaku", "fe-algorithm-nigate-kokufuku"],
+    relatedSlugs: [
+      "fe-kamoku-b-taisaku",
+      "fe-kamoku-b-gijigengo-kihou",
+      "fe-algorithm-nigate-kokufuku",
+      "kakomon-dake-goukaku",
+    ],
   });
 
   general.push({

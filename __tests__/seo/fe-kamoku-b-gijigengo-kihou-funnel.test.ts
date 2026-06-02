@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 
-import { getAllBlogSummaries, getBlogPostBySlug } from "@/data/blog";
+import {
+  getAllBlogSummaries,
+  getBlogPostBySlug,
+  getRelatedPosts,
+} from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
 // 既存の科目B 擬似言語記事 fe-kamoku-b-pseudo-language は「読解の3ステップ訓練法」
@@ -55,6 +59,18 @@ describe("FE 科目B 擬似言語 記法早見表記事の事実性と土台 fun
     const body = getBlogPostBySlug(SLUG)!.body;
     expect(body).toContain("科目A");
     expect(body).toContain("科目B そのものの形式ではない");
+  });
+
+  it("訓練法記事の関連レール(route limit=3)が全て科目B on-topic で新記法記事を含み、off-topic AP記事を含まない", () => {
+    // ルートは getRelatedPosts の既定 limit=3 で関連レールを描画する。従来の
+    // pseudo-language の relatedSlugs は off-topic な ap-gogo-sentaku(AP午後選択)が
+    // 2番目に入っており、limit=3 では on-topic な algorithm 兄弟が押し出されて
+    // 関連レールに AP午後記事が表示される relevance leak があった。新記法記事を
+    // 繰り上げ、off-topic AP を除去したことを pin する。
+    const railSlugs = getRelatedPosts(PARENT, 3).map((r) => r.slug);
+    expect(railSlugs).toContain(SLUG);
+    expect(railSlugs).toContain("fe-algorithm-nigate-kokufuku");
+    expect(railSlugs).not.toContain("ap-gogo-sentaku");
   });
 
   it("訓練法記事から inbound リンクがあり orphan 化しない", () => {
