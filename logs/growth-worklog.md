@@ -776,3 +776,26 @@
   - **FAQPage機構を競合薄/高intent/中核戦略記事へ4本展開**: 業種別overview `3cd0747`＋建設/製造個別2本 `bdd989e`(業種別クラスタFAQ完結)＋中核戦略 kakomon-dake-goukaku `a8ebd72`。全て本文事実と厳密整合・誇大回避(年収/quota/価格非記載・旗艦funnelは論文5区分scope一致+参考評価)・corpus-wide回帰自動カバー・新規404ゼロ。
   - **★最重要申し送り=FAQ展開は枯渇していない**: session42 の「残FAQ未設置=kensetsu/seizou/gyoushuのみ」は誤り。機械走査で**内容の厚い高intent記事が10本以上 FAQ未設置**と判明(上記リスト)。次セッションは ipa-shiken-goukakuritsu-ranking(合格率比較・高volume) / db-sql-taisaku・nw-hinshutu-pattern(技術系午後・各ハブ+AIコパイロットfunnel) / kakumon-gakushuu-science(学習法longtail) / ap-goukaku-go-koudo-senryaku(高度試験戦略) 等へFAQ展開を継続できる(P2-2)。各々本文事実整合・誇大回避・論文scope一致時のみ旗艦funnel。**短いstub記事(len<800)はthinなのでFAQ対象外**(過大修正回避)。
   - **次の最優先候補**: (a)上記FAQ未設置の厚い記事へFAQ展開継続(actionable・vein太い)、(b)HD群の人間入力待ち(HD-1〜HD-10)。
+
+## セッション44（growth ループ）2026-06-02 JST
+- 監査(read-only): session43 の最重要申し送り「FAQ展開は枯渇していない・厚い高intent記事が10本以上 FAQ未設置」を受け、リスト先頭から4本にFAQ展開を継続。各記事を read-only で精読し本文事実と厳密整合・誇大回避・論文scope一致時のみ旗艦funnel を徹底。FAQ JSON-LD は `app/blog/[slug]/page.tsx` の extractFaq で自動出力(corpus-wide `blog-faq-jsonld` テストが自動カバー)を確認してから着手。
+- done: [P2-2/あと一歩] **合格率ランキング記事 ipa-shiken-goukakuritsu-ranking に よくある質問節を追加しFAQPage化**。SHA `a5471e0`。
+  - 監査: 高volumeの合格率比較記事(全13区分・あと一歩)だが `## まとめ` で終わり FAQ 節無し。「最も難しい区分は?/高い順に受けるべき?/午前I免除で合格率は?/論述対策は?」が比較検討者の質問intent。
+  - 実装: オリジナル4Q&A(Q1=最低はSM/AU約13-16%・ST/PM約14-17%／Q2=合格しやすい順IP>SG>FE>AP>高度／Q3=応用情報合格で午前I免除2年間／Q4=論述5区分ST/SA/PM/SM/AU→[/essay]旗艦funnel・参考評価明記)を `## まとめ` 直前にadditive挿入。全数値(IP約50-55%/SG約50-70%/SM・AU約13-16%/ST・PM約14-17%/午前I免除2年間)を本文記述に厳密一致。Q4のみ論文5区分scope一致のため旗艦送客。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1828/build OK)。本番ビルド `blog/ipa-shiken-goukakuritsu-ranking.html` に `"@type":"FAQPage"`×1・本文Q「もっとも低く」「午後論述 AI 採点」・`href="/essay"` 出力、`/essay`(essay.html)実在(200)=新規404ゼロを実測。
+- done: [P2-2/旗艦] **高度試験戦略記事 ap-goukaku-go-koudo-senryaku に よくある質問節を追加しFAQPage化**。SHA `f2a1a80`。
+  - 監査: 応用情報合格後の高度試験戦略(高intent・厚い4320)だが FAQ 節無し。「免除はAP以外でも?/いつ受けるのが最速?/どの区分を選ぶ?/午後II論文対策は?」が受験計画者の質問intent。
+  - 実装: オリジナル4Q&A(Q1=午前I免除3条件・2年間・基準点60点／Q2=ゴールデンタイム6ヶ月・実施時期グルーピング春期ST/SA/NW/SM・秋期PM/DB/ES/AU・春秋SC／Q3=職種一致を最優先／Q4=管理系5区分2000-3000字→[/essay]旗艦funnel・参考評価)を `## まとめ` 直前に挿入。本文の免除条件・タイムライン・実施時期と厳密整合。Q4のみ論文5区分scope一致で旗艦送客。
+  - 検証: 全ゲート緑(test1828/build OK)。`blog/ap-goukaku-go-koudo-senryaku.html` に FAQPage×1・「免除の条件は3通り」「ゴールデンタイム」「午後論述 AI 採点」・`href="/essay"` 出力を実測=新規404ゼロ。
+- done: [P2-2/旗艦] **共通テーマ横断記事 ipa-kyoutsuu-juyou-theme に よくある質問節を追加しFAQPage化**。SHA `e4fbd8f`。
+  - 監査: 13区分共通テーマのハブ記事(厚い3798・横断学習intent)だが FAQ 節無し。「共通の最重要テーマは?/何から学ぶ?/セキュリティは全区分?/論述系の対策は?」が横断学習者の質問intent。
+  - 実装: オリジナル4Q&A(Q1=5コアテーマ セキュリティ/ネットワーク/DB/PM/開発手法／Q2=APで共通基礎→高度試験／Q3=セキュリティは全13区分・IPAの方針／Q4=管理系5区分PM/ST/SA/SM/AU→[/essay]旗艦funnel・参考評価)を `## まとめ` 直前に挿入。本文の5コアテーマ・AP共通基礎方針と厳密整合。Q4のみ論文5区分scope一致で旗艦送客。
+  - 検証: 全ゲート緑(test1828/build OK)。`blog/ipa-kyoutsuu-juyou-theme.html` に FAQPage×1・「共通する最重要テーマは何」・`href="/essay"` 出力を実測=新規404ゼロ。
+- done: [P2-2/土台] **学習科学記事 kakumon-gakushuu-science に よくある質問節を追加しFAQPage化**。SHA `4f543a8`。
+  - 監査: 認知心理学ベースの学習法記事(厚い3390・学習法longtail)だが FAQ 節無し。「ただ何周も解けば?/復習タイミングは?/分野は混ぜる?/誤答復習は?」が学習法検索者の質問intent。**学習科学記事=論文scope非該当のため旗艦/essayへは非送客**(funnel先は復習/ランダムモード・AIコパイロットのみ・誇大回避の判断)。
+  - 実装: オリジナル4Q&A(Q1=テスト効果・引き出し行為・ルーディガー2006実験50%／Q2=間隔反復スケジュール翌日→3→7→14→30日・復習モード／Q3=インターリービング・[ランダムモード]／Q4=エラー学習効果4ステップ・AIコパイロット)を `## まとめ` 直前に挿入。全数値(50%/間隔スケジュール)を本文記述に一致。本文に `/essay` リンク無し=footer 1本のみを実測確認(論文非該当の規律を遵守)。
+  - 検証: 全ゲート緑(test1828/build OK)。`blog/kakumon-gakushuu-science.html` に FAQPage×1・「ただ何周も解けば」・`href="/essay"`=1(footer nav「午後論述AI採点」のみ・本文over-claim無し)を grep context で実測=新規404ゼロ。
+- 申し送り（セッション44まとめ）:
+  - **FAQ展開を厚い高intent記事へ4本継続(session43の太いvein)**: 合格率ランキング `a5471e0`・高度試験戦略 `f2a1a80`・共通テーマ横断 `e4fbd8f`・学習科学 `4f543a8`。全て本文事実と厳密整合・誇大回避(年収/quota/価格非記載)・**論文5区分scope一致時のみ旗艦/essay funnel(参考評価明記)**・学習科学記事は論文非該当で旗艦非送客の規律を遵守・corpus-wide回帰自動カバー・新規404ゼロ。
+  - **残るFAQ未設置の厚い記事(次セッション継続可)**: `ipa-sanko-mondaishu-2026`(3481・参考書/アフィリ近接)・`db-sql-taisaku`(2592)/`nw-hinshutu-pattern`(2550)(技術系午後=記述式ゆえ旗艦非送客・各ハブ+AIコパイロットfunnel)・`ip-3shukan-goukaku`(1969)・`ai-kakomon-gakushuu`(1638)・`kakomon-ai-vs-doujou`(2081・競合比較ゆえ中傷回避で慎重に)。**要注意**: `sc-ronbun-taisaku`はSC午後frame事実性がHD-6未決でFAQ化も保留、`ap-gogo-sentaku`はAP午後モック=HD-4(選択戦略FAQは可だが旗艦送客不可)、roadmap系は未実装capabilityを現状事実化しない(誇大回避)。短いstub記事(len<800)はthinゆえFAQ対象外。
+  - **次の最優先候補**: (a)上記FAQ未設置の厚い記事へFAQ展開継続(actionable・vein太い)、(b)HD群の人間入力待ち(HD-1〜HD-10)。
