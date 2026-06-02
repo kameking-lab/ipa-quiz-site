@@ -130,3 +130,11 @@
 - 推奨（戦略より）: (a)。課金・Premium の有効化タイミングは社長の専権（§0・承認必須事項）。/referral の扱いは課金戦略確定とセットで判断するのが筋。
 - 緊急度: 低（孤立のままでも実害なし・sitemapからは到達可）。
 - 関連: SEO-5（/challenge は s95 `4b34e3c` で解消済）。CLAUDE.md §0「課金モード」「禁止事項（Stripe/価格復旧）」/ §9 料金プラン。
+
+### HD-13: blog 記事 title の SERP 長超過 — 著者記述タイトルの短縮は編集判断
+- 何の話か: 激辛レビュー C-1「title 無キャップ」のうち `/q`(問題ページ)は s94 `875b9df` で `TITLE_MAX=40` キャップ済。残る **blog 記事 title** をセッション97で本番ビルド `<title>` 実測したところ、`db-gogo-jikan-haibun`(62字)・`es-goukaku-benkyouhou`/`cbt-goukaku-happyou-score-report`(58字)・`koudo-ronbun-jikan-haibun`/`sg-goukaku-ten-irt`/`nw-gogo-jikan-haibun`(57字)等、**著者記述の post.title(50字超)+「 | 過去問AI」suffix で計57〜62字**＝日本語SERP想定幅(~30〜35字zenkaku)を大きく超え、SERP では末尾が truncate される(ブランドsuffixも切れる)。試験LP title は約25字でSERP内=問題なし。
+- なぜ自律実行しないか（編集判断）: `/q` title は `category` という**構造的に省略可能なセグメント**があったため「予算超過時に category だけ drop・識別コアは温存」で機械的にキャップできた。blog title は著者が意味を込めて書いた editorial 文字列で、droppable な構造セグメントが無い。自律 truncate すると「データベーススペシャリスト 午後で時間が足りない人へ｜午後I・午後II…」の意味の切れ目を機械が壊す＝コンテンツ品質劣化のリスク。確定戦略「迷ったら直さず SKIP（安全側）」「コンテンツはオリジナル品質維持」に従い、編集者(人間)判断に委ねる。
+- 選択肢: (a) 据置＝現状維持（Google は長title を自動 rewrite するため実害は限定的・推奨の安全側）。(b) 長title の記事(目視 57字超の十数本)を人間が SERP 幅に収まるよう手で短縮（編集作業・1本ずつ意味を保って）。(c) `metadata` の title.template でブランドsuffix「 | 過去問AI」を長title時に省く仕組み（~7字節約・ただし title本体が50字超なので焼け石・全ページ波及の設計変更）。
+- 推奨（戦略より）: (a) または、CTR を上げたい高インテント記事に限り (b) を人間が個別実施。順位/CTR は GSC でしか測れないため、GSC で「表示は多いがCTR低い long-title 記事」が判明した記事から優先的に手直しするのが費用対効果が高い（P2-1 と同方針）。
+- 緊急度: 低（既存記事は index 済・Google 側 rewrite で部分的に救済される・実害は CTR の機会損失どまり）。
+- 関連: C-1（レビュー）/ s94 `875b9df`（/q title キャップ=構造セグメント drop 方式）/ P2-1（GSC人手抽出待ちの title/description 個別改善）。

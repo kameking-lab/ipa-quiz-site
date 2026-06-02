@@ -1602,3 +1602,20 @@ A-6(CopilotMobileSheet・s95 `ba5d8bb`)で確立した `trapTabTarget` helper �
   - **検証(崩れたら落ちる)**: 既存 `footer-bottomnav-links-resolve.test.ts` の dead-link 検査(deadLinks===[])が3 href の実ルート解決を自動担保＋新 `it.each(["/mock-exam","/ranking","/recommended-books"])` の orphan-resolution pin(配線削除で落ちる)。本番ビルド HTML 実測(`/about` prerendered footer)=3 href＋ラベル(模試モード/ランキング/おすすめ問題集) present。
   - 全ゲート緑(commit前に単独実行・緑目視): typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2118→2121 passed(269 files・+3) / build OK。
   - **所見**: A-6 modal focus-trap(s95-96)に続く P-spicy-review triage の grounded 消化。D-3 のうち採用可能な3面を配線し、SKIP 3面はいずれも着手不可理由(noindex/設計HD/低価値ツール)を明記。
+
+### セッション97（続き）— A-6 aria-semantics class の掃き出し（role-less div の aria-label）+ title長監査
+本セッション cycle1(D-3 フッタ配線・上記)に続き、P-spicy-review A-6 の「role 無し要素の aria-label が SR に無視される」defect class を面横断で監査・是正。
+- **新角度=「role-less `<div>` + aria-label」defect class の全件監査**: python で `<div>` 開始タグに `aria-label` がありかつ `role=`/`aria-labelledby` を持たないものを全走査=**8件**。各々「ラベルが落ちると実害があるか(=同情報が可視テキスト/内部要素で別途SRに届くか)」で判定。
+- done: [P-spicy-review A-6・cycle2] SHA `bc58f75`: `CopilotPanel` アクションポップアップ(`#copilot-actions-popup`・全体コピー/共有/Markdown DL)の role 無し div に `role="group"` を付与。トリガに `aria-expanded`/`aria-controls` はあるが popup の `aria-label="その他の操作"` が dead markup だった。`role="menu"` は矢印キー roving 前提(未実装)ゆえ受動ロール `role="group"` が正しい粒度。回帰pin(source-read・既存 CopilotPanel.aria.test 流儀)。
+- done: [P-spicy-review A-6・cycle3] SHA `af32dd6`: `CopilotPanel` メッセージ表示領域(scrollRef・AI応答のストリーミング transcript)の role 無し div に `role="log"` を付与。`aria-live="polite"`+`aria-label="AI コパイロットの応答"` を持つが role 欠如でラベルが落ち、かつ**この領域を命名する隣接可視テキストが無い**(badge/mock-exam と違い情報損失が実在)。chat ログの正準ロール role="log"(暗黙 aria-live=polite と一致=**通知挙動は不変**)でラベルを有効化。回帰pin(source-read)。
+- **SKIP(実害なし=過大修正回避) 6件**: いずれもラベルが落ちても同情報が別経路でSRに届く=理論のみ:
+  - `BadgeMedallion`(motivation/badges) — 唯一の使用面 `BadgeWall.tsx:66-76` で medallion 隣に可視 `<h3>{name}</h3>`+tagline+獲得状態テキストがあり、ラベルはそれと冗長。
+  - `MockExamRunner` 3件(平均/最長/合計秒) — 可視数値+直下の可視ラベル(平均/問・最長(問N)・合計時間)で同情報あり。`MockExamLanding` ResultPreviewHint — 内部に可視テキストあり。
+  - `TagInput` — 設定画面(非crawl・低トラフィック)・内部 input は操作可。
+  - **=role-less div aria-label class は実害2件(s97 cycle2/3で是正)・無害6件で打ち止め**。
+- **監査(コード変更なし)=C-1 title長**: s94 が `/q` title を `TITLE_MAX=40` でキャップ済。レビュー「試験LP・blog の title 未確認(要個別検証)」を本番ビルド `<title>` 実測。
+  - **試験LP=問題なし**: `examTopTitle`=`${examLabel} 過去問一覧・AI解説`+suffix で約25字=SERP幅内。
+  - **blog=長い(57〜62字)が editorial/HD**: blog `<title>` は著者記述の post.title(50字超)+「 | 過去問AI」で SERP幅(~30〜35字zenkaku)超だが、`/q` の `category` のような**構造的 droppable segment が無い**=自律truncateは編集意味を壊す editorial判断ゆえ着手せず→**HD-13** に記録。
+- 全ゲート緑(各commit前に単独実行・緑目視): typecheck 0 / lint 0 errors(warn=未追跡 ux-audit-screenshots.mjs のみ) / test 2121→2122→2123 passed(269 files) / build OK。
+- **本セッション小計=確実な改善3件**(D-3 フッタ価値ページ配線3面 `b73b8f0` / A-6 role="group" `bc58f75` / A-6 role="log" `af32dd6`)＋監査2件(aria class打ち止め・title長=HD-13)。
+- **次セッション申し送り(P-spicy-review triage 残)**: 使-3(復習/弱点動線集約)=ルーティング再設計で承認必須(s96 SKIP判断)。A-1/使-1/SEO-4/K-1=自律不可。content/aria vein は深く飽和。新角度は別a11yクラス(roving tabindex の未適用面/ライブリージョンのSR検証)か human待ち(GSC 404一覧・HD群=HD-4/6/8/9/10/11/13)。
