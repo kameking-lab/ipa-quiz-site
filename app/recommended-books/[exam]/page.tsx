@@ -353,7 +353,7 @@ function BookCard({ book }: { book: RecommendedBook }) {
   const rakutenUrl = rakutenReady ? buildRakutenUrl(book.rakutenId) : null;
 
   return (
-    <Card>
+    <Card id={book.id} className="scroll-mt-20">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <CardTitle>{book.title}</CardTitle>
