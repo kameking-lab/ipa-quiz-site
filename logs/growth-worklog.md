@@ -1380,3 +1380,17 @@
   - **PM の残2設問**(pm-2024a-pm2-q2 スケジュール遅延/pm-2023a-pm2-q1 ステークホルダ)は rubric 未付与＝同じ要領で付与可。**ただし注意**: 現状 grading-rubric.test.ts の「型は任意フィールド＝横展開可能」テストは `withoutRubric > 0`(段階展開で未付与が残る)を pin。PM残2設問を完了し**全essay設問が rubric を持つと此のアサーションが落ちる**ため、完了時は当該テストを「任意フィールドでもロードが壊れない」趣旨へ書き換えること(未付与の存在を前提にしない)。
   - afternoon(scoring=AP/SC/NW/DB/ES)側の rubric は **HD-4（モックデータ）解決後**＝本ループは着手しない。
   - 強み4 横断分析（複数回採点の傾向集計）は人間セッション申し送りどおり段階実装＝別タスク。
+
+## セッション85（growth ループ｜2026-06-02 JST）
+**P0-強み1 横展開の最終分＝PM残2設問に採点ルーブリックを付与し、論文5区分の rubric を完成**
+背景（着手前 read-only 監査）:
+- セッション84申し送りどおりの直接継続。強み2/3/4 は人間セッションが実装済・強み1 横展開のみがループへ明示委譲され、s84 で ST/SA/SM/AU が完了。残は PM の2設問(pm-2024a-pm2-q2/pm-2023a-pm2-q1)のみ。
+- 実測: `data/questions/essay/pm.ts` の当該2設問(各3小問)は modelOutline/officialReview はあるが requiredKeywords/scoringPoints 未付与。pm-2024a-pm2-q1 のみ付与済(型確立)。consumer=`app/api/essay-grade/route.ts` buildUserPrompt(L121-126) が任意フィールドを自動配線済＝データ追加のみで採点プロンプトに反映。
+- done×1 [P0-強み1] SHA `321d2c5`: PM残2設問の全小問に requiredKeywords/scoringPoints を付与。
+  - pm-2024a-pm2-q2(スケジュール遅延): ア kw4/sp2・イ kw5/sp4・ウ kw4/sp3。scoringPoints は officialReview の評価観点(「人員追加だけの安直な対応でなくQCDのトレードオフを踏まえた戦略的選択」「原因分析の深さ」「ステークホルダ合意形成」)を構造化。
+  - pm-2023a-pm2-q1(ステークホルダ): ア kw3/sp2・イ kw4/sp3・ウ kw3/sp3。officialReview の「分析の論理性／戦略の具体性／対立解消能力」を勘所へ。設問間整合(「設問イの戦略と対応づくか」等)も明記。
+  - いずれも既存 modelOutline(repo既存)・officialReview(編集部作成)を構造化したもので IPA長文の転載はしない。
+  - **=論文5区分(PM/ST/SA/SM/AU)の全設問・全小問に rubric が揃い、強み1 横展開は完了**。
+  - 検証（崩れたら落ちる）: grading-rubric.test.ts の it.each に "pm" を追加=PM全設問・全小問の rubric>0 を pin。全essayが rubric を持つようになり未付与前提の `withoutRubric>0` が落ちるため、当該テストを「任意フィールドでもロードが壊れない／付与時は非空配列として読める」趣旨へ書換(未付与の存在を前提にしない)。tsx 実測で両設問の全小問が rubric ロード済を確認。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2067全緑(grading-rubric 8→9件) / build OK。
+- **次セッション申し送り**: 強み1 はループ側完了。afternoon(scoring=AP/SC/NW/DB/ES)の rubric は HD-4(モック)解決後でループ着手不可。強み4 横断分析は段階実装=別タスク。土台「発展パターン」vein は s83 で主要4パターン網羅済＝一旦停止し別角度(P2-2 制度/access系・別試験区分)を優先してよい。

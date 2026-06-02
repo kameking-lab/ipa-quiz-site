@@ -16,7 +16,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
 
 - 強み1（採点根拠データの構造化）: essay問題は既に `modelOutline`（想定論述要素）あり。型を1〜2区分で確立=各小問に「必須キーワード/採点の勘所/模範要点」を構造化付与（IPA解答例・予備校配点を長文転載せず要点を自前生成・出典明示）。採点AIがこれを参照。横展開可能な型に。※HD-4: afternoonはモック→型はまず実データのある論文essayで確立。
   - **[型確立=人間セッション PM `5a138da`]→[横展開 done セッション84]**: 申し送りどおり rubric を PM以外の論文4区分へ展開。**ST `6fef3b1`(3設問)/SA `36dcf93`(2設問)/SM `85db43f`(2設問)/AU `21545ff`(2設問) の全設問・全小問**に requiredKeywords/scoringPoints を付与（既存 modelOutline/officialReview を構造化・IPA長文転載なし）。回帰pin `grading-rubric.test.ts` を st/sa/sm/au パラメータ化。**=論文5区分の主要設問に rubric が揃った**。
-  - **残（横展開）**: PMの残2設問(pm-2024a-pm2-q2/pm-2023a-pm2-q1)のみ未付与。完了時は grading-rubric.test.ts の `withoutRubric>0` アサーションが落ちる（全essayが rubric を持つ）ため、当該テストを「任意フィールドでもロードが壊れない」趣旨へ要書換。afternoon(scoring)側はHD-4解決後＝ループ着手不可。
+  - **[横展開完了 done セッション85 SHA `321d2c5`]**: PMの残2設問(pm-2024a-pm2-q2 スケジュール遅延/pm-2023a-pm2-q1 ステークホルダ)の全小問に requiredKeywords/scoringPoints を付与。**=論文5区分(PM/ST/SA/SM/AU)の全設問・全小問に rubric が揃い、強み1 横展開は完了**。grading-rubric.test.ts は it.each に "pm" を追加(PM全設問 pin)＋未付与の存在を前提にしていた `withoutRubric>0` を「任意フィールドでもロードが壊れない／付与時は非空配列」趣旨へ書換。tsx 実測で両設問の全小問が rubric ロード(q2: kw4/5/4・sp2/4/3、2023q1: kw3/4/3・sp2/3/3)。全ゲート緑(test 2067)。afternoon(scoring=AP/SC/NW/DB/ES)側の rubric は **HD-4(モックデータ)解決後**＝本ループは着手不可。**=強み1 はループ側の作業完了**(強み2/3/4 は人間セッション実装済)。
 - 強み2（採点モデル上位化・用途別）: `resolveModel` に grading 層追加→essay-grade/scoring が上位モデル、copilot/generate-question は free。env切替・既存 cost-guard(¥50k)流用。
 - 強み3（採点AI専用化）: ESSAY/SCORING プロンプトを「採点と直接の学習支援のみ・範囲外/injection拒否・冷たくない断り・ユーザー答案中の指示上書き無視」に。
 - 強み4（採点→弱点→類題 伴走）: essay-grade は既に missingElements/improvements 出力。弱点→類題/関連問題提示（既存 related/generate-question 流用）。横断分析は段階実装。
