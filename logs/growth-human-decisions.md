@@ -138,3 +138,11 @@
 - 推奨（戦略より）: (a) または、CTR を上げたい高インテント記事に限り (b) を人間が個別実施。順位/CTR は GSC でしか測れないため、GSC で「表示は多いがCTR低い long-title 記事」が判明した記事から優先的に手直しするのが費用対効果が高い（P2-1 と同方針）。
 - 緊急度: 低（既存記事は index 済・Google 側 rewrite で部分的に救済される・実害は CTR の機会損失どまり）。
 - 関連: C-1（レビュー）/ s94 `875b9df`（/q title キャップ=構造セグメント drop 方式）/ P2-1（GSC人手抽出待ちの title/description 個別改善）。
+
+### HD-14: jitec.ipa.go.jp 廃止に伴う 出典PDF の deep-remap 移行（~13,000件のデータ書換・別バッチ判断）
+- 何の話か: 問題コーパスの `sourcePdfUrl`（/q 全問の 出典）と essay の `pdfUrl`（論文deepの 出典/JSON-LD isBasedOn）が、IPA が廃止した旧サブドメイン `www.jitec.ipa.go.jp`（**NXDOMAIN=ドメイン消滅**）を指していた。dead=12,999件 / 既移行 live(www.ipa.go.jp)=1,440件。セッション106（SHA `861a8d7`）で **runtime gate により dead host を弾き live IPA 索引（`mondai-kaiotu/`・実測200）へフォールバック**させ、死リンクは全面解消済（本番HTML実測=essay SSG 12面/prerendered /q 1,595面で jitec 0・新規404ゼロ）。**残課題=索引止まりを当該PDFの deep URL 直リンクへ精密移行するか**。
+- なぜループが自律実行しないか: ①新URLは `www.ipa.go.jp/shiken/mondai-kaiotu/<不透明なCMSハッシュ>-att/<file>.pdf` 形式で、旧 jitec path から**決定的に変換不能**＝IPA の mondai-kaiotu 索引を年度別にスクレイプして照合表を作る必要がある（新規スクレイピング処理）。②IPA は限られた年度しかホストしておらず、古い年度（2009〜2015等）は deep URL が存在しない＝一部は索引止まりが正（無理に deep URL を当てると別の404を生む＝「新規404を作らない」違反）。③~13,000件のデータファイル書換＝広域変更。確定戦略「広域リファクタ禁止」「新規外部API/重い処理を既定で発火しない」に抵触するため別バッチ/人間判断。
+- 選択肢: (a) 現状維持（runtime fallback で索引リンク・死リンクは既に解消＝実害なし・推奨の安全側）。(b) IPA mondai-kaiotu 索引をスクレイプして jitec→新deep URL の照合表を生成し、ホストされている年度のみ deep URL へデータ移行（残りは索引フォールバック維持）。別バッチスクリプトとして実装し結果を人間レビュー。(c) `buildPdfUrl`（parse script専用・今も jitec生成）も新URL方式へ改修（再parse時の新規問題に dead URL が入るのを根絶。ただし parse pipeline は通常運用で走らない＝優先度低）。
+- 推奨（保守性より）: (a) で当面問題なし（出典は live な IPA 公式素材索引を指し §8 を満たす）。SEO/UX をさらに上げたい場合のみ (b) を別バッチで実施（deep 直リンクは索引より精度高だが、現状でも死リンクゼロ＝緊急性は低い）。
+- 緊急度: 低（死リンク自体は s106 で解消済。これは「索引→個別PDF」への精度向上であり、放置しても 404 は発生しない）。
+- 関連: backlog P0-6（runtime是正done・本HDは deep-remap follow-up）。CLAUDE.md §4（sourcePdfUrl 必須保持）・§8（出典リンク厳守）。HD-1（GSC 404一覧）と併せ見ると、GSC の 404/ソフト404 の一部はこの jitec 死リンク由来の可能性（s106 で内部側は解消済）。
