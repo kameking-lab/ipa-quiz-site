@@ -1457,3 +1457,13 @@
   - SKIP: blog description >120字が14本(最長143字 koudo-goukaku-ten-ashikiri 等)。blog description は /q と違い hard cap 無しで meta description へ直流。ただし(1)各 description はキーワードを front-load し末尾は「…まで整理します」等の動詞境界、(2)末尾にも実キーワード(例「情報処理安全確保支援士の午後統合」)を含むため、SERP 表示完全性と relevance signal のトレードオフが両義的、(3)順位は測定不可。**両義的＝迷ったら SKIP の安全側**。GSC で個別 CTR が低い URL が判明したら個別対応(P2-1 と同方針)。
   - clean(対応不要): 受験料=全箇所 7,500円(税込)で一致(faq.ts/moushikomi-nagare)・OWASP=版数 version-agnostic(s21の2021→genericize 完了・残1件は AI ハルシネーション訂正の例示で意図的)・午前I免除=全箇所2年間で一致(dedicated記事ipa-gozen1 3条件正)・FE科目B=20問100分600点で一致・SG科目B=12問で一致・pass rate は EXAM_PROFILES と EXAM_STATS で「おおむね」近似レンジ(年度変動で canonical 値なし=reconcile は editorial で SKIP)・他 career フィールド12件 clean。
 - **次セッション申し送り**: 事実性監査は s21-32「枯渇」とされていたが**内部矛盾検出(grep で対の概念の片方だけ誤用を炙り出す)で1件発見**＝完全枯渇ではない。残る同手法の候補は薄い(主要な単一概念の対は今回 業務独占/名称独占 を潰した)が、新たな cross-source data 対(EXAM_PROFILES↔EXAM_STATS↔EXAM_DEEP_CONTENT の数値/称号)で乖離が出たら個別吟味。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち・制度/access残角度(受験料再発行=thin/SGスコア=HD-8/AP高度発表=staleness)は不変。1記事=確実を維持し量産しない。
+
+### セッション89 追記（2サイクル目）
+**P2-2 事実性監査・2件目＝「複数区分の同時受験は不可」記事の例示が季違いの区分組を挙げていた誤りを是正**
+- 背景(read-only 監査): 1件目(SC career)の発見手法=cross-source consistency を継続。`grep` で「高度試験名×実施季」を走査し、`ipa-shiken-fukusuu-kubun-juken`(s65・複数区分同時受験の可否)の本文 L7849 が同時受験不可の**例示**として「同じ秋期に NW と DB を両方受ける」「同じ春期に AP と PM を両方受ける」を挙げていたのを発見。高度の実施季は **春期=ST/SA/NW/SM・秋期=PM/DB/ES/AU・AP/SC=春秋両方**(IPA list.html／`exam-data-invariants.test` 準拠)で、**NW は春期・PM は秋期**のため、これらは同じ試験日に並ばず例示が成立しない(同時受験不可の理由=同一試験日の衝突 を誤示)。記事の結論「同一試験日は1区分のみ」自体は正。
+- done×1 [P2-2 事実性] SHA `dbe6ef7`: 例示を**同一季に実施され実際に試験日が衝突する組**へ是正=「同じ春期に AP（応用情報）と NW（ネットワーク）」「同じ秋期に DB（データベース）と PM（プロジェクトマネージャ）」(AP は春秋両方・NW=春期・DB/PM=秋期＝いずれも同じ季の組で衝突する)。
+  - 検証(本番ビルド実測): `.next/.../ipa-shiken-fukusuu-kubun-juken.html` に正組×2 render・旧「同じ秋期に NW」「同じ春期に AP と PM」=0件。
+  - 回帰pin1件(既存 funnel test に「同時受験不可の例示が同一季の組」it を追加・正組present/誤組absent)。
+  - 全ゲート緑(commit前単独実行): typecheck0 / lint0err / test 2086全緑(+1) / build OK。
+- **追加 clean 確認(対応不要)**: data/ lib/ 全体を full-name＋略称で「春期-only(ST/SA/NW/SM)×秋」「秋期-only(PM/DB/ES/AU)×春」を grep→**他に季違いの誤り無し**(この1件のみ)。
+- **本セッション小計=確実な事実性是正2件**(SC RISS 名称独占 `0ac5588` / 併願例示の季 `dbe6ef7`)。いずれも cross-source consistency 検出・本番ビルド実測・回帰pin付き。発見手法(対の概念/区分×季 の grep で不整合を炙る)が「s21-32 枯渇」の取り残しを2件掘り起こした。
