@@ -857,3 +857,21 @@
 - 申し送り（セッション47）:
   - **テンプレFAQ vein完全枯渇**(5生成器×13区分=全FAQPage化)。個別記事は body長スキャン(`scripts/_faqscan.mts` 相当・getAllBlogPosts→`## よくある質問`正規表現)で **FAQ未設置=42/165記事** 残るが、上位は要注意フラグ多数: `ap-gogo-sentaku`(HD-4 AP午後モック=旗艦送客不可)・`sc-ronbun-taisaku`(HD-6 SC午後frame事実性未決でFAQ化保留)・`ipa-saishin-doukou`/`ai-shaken-saizensen-2026`(年次snapshot=auto-advance SKIP)・`gyoushu-essay-*`3本(ST/PM/SA論文=次セッションの好候補・旗艦/essay funnel可)。
   - **次セッション候補(clean・actionable)**: `shaiin-bunkatsu-plan-3pattern`(2224)・`goukakusha-100nichi-plan`(1806)・`goukakusha-shukan-review`(1790)・`ai-vs-yobikou-tsukaiwake`(1771)・`mobile-katate-juken-jutsu`(1883)・`ipa-shiken-zenkubun-hikaku`(1539) 等の学習法/キャリア系general記事。**gyoushu-essay-{kinyuu-strategy/seizou-pm/koukyou-sa}** は論文区分ゆえ Q4で旗艦/essay funnel可(参考評価明記)。**鉄則**: 本文事実厳密整合・非論文は/essay非送客・論文区分のみ旗艦送客・quota/価格はSSOT or 非記載・format特定回避。各記事の body精読を先に。
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+## セッション48（2026-06-02）— FAQ展開: session47 clean候補リストを完全消化（9記事）
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- 監査(read-only): session47 申し送りの clean候補リスト(gyoushu-essay 3本 + 学習法/キャリアgeneral 6本)を各 body 精読。extractFaq形式(`**Q1. ...？**`+回答1行)・corpus-wide `blog-faq-jsonld` 自動カバー・funnel規律(論文5区分のみ旗艦/essay・非論文はfooter1)を徹底。
+- done: [P2-2/旗艦funnel] **業種別論文記事3本(金融ST/製造PM/公共SA)をFAQPage化**。SHA `62b6dbf`。
+  - `gyoushu-essay-{kinyuu-strategy,seizou-pm,koukyou-sa}` は本文が旗艦 /essay へ funnel済の論文区分(ST/PM/SA)記事だが FAQ節欠落。各オリジナル4Q&A(業種採用メリット/題材パターン3つ/業種KW・KPI/客観評価)・Q4で論文5区分scope一致の /essay AI採点へ funnel(参考評価明記)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡mjsのみ〕/test1906/build OK)。3記事とも `blog/*.html` に FAQPage×1+Question×4・`/essay`=3(本文+FAQ Q4+footer)・可視Q・JSON-LD markdown leak`](`=0 を実測=新規404ゼロ。
+- done: [P2-2/非essay] **学習計画/モバイル系general記事4本をFAQPage化**。SHA `9524fea`。
+  - `mobile-katate-juken-jutsu`(隙間時間月31.5h/片手5条件/通勤昼休み待ち時間/継続)・`goukakusha-100nichi-plan`(4期間分割/週次タスク/模試Day30-90/遅延リカバリ)・`goukakusha-shukan-review`(30分5項目/確認内容/体調モチベ/ダッシュボード)・`shaiin-bunkatsu-plan-3pattern`(パターン選択/週合計時間と対象試験/最大化コツ/失敗)。全て非論文=旗艦/essay非送客(footer1)・復習モード/学習計画機能/進捗ダッシュボードへ funnel。
+  - 検証: 全ゲート緑(test1906/build OK)。4記事とも FAQPage×1+Question×4・`/essay`=1(footerのみ=funnel規律)・leak0 を実測=新規404ゼロ。
+- done: [P2-2/非essay] **全区分比較/AI予備校使い分けの2記事をFAQPage化**。SHA `1b56551`。
+  - `ipa-shiken-zenkubun-hikaku`(全13区分比較・高inbound・受験順序/午前I免除2年/同時受験/職種別キャリア接続)・`ai-vs-yobikou-tsukaiwake`(AI/予備校使い分け・補完関係/社会人組合せ/論文区分対策/AI弱み)。両者とも非論文general=footer1。後者は本文が意図的に「AI=草稿・人手=最終仕上げ」framingゆえ /essay funnelを足さず安全側(誇大回避・特定予備校の推奨批判なし)。
+  - 検証: 全ゲート緑(test1906/build OK)。2記事とも FAQPage×1+Question×4・`/essay`=1(footer)・可視Q・leak0 を実測。
+- 申し送り（セッション48）:
+  - **session47 の clean候補リスト(9記事)を完全消化**。3コミットで gyoushu-essay 3本(旗艦funnel)+学習計画/モバイル4本+比較2本=計9記事をFAQPage化。全て本文事実厳密整合・funnel規律徹底(論文5区分のみ旗艦/essay=3・非論文=footer1)・新規404ゼロ・markdown leak0実測。
+  - **★FAQ vein は枯渇していない**: 本セッション終了時の build成果物 機械走査(`.next/server/app/blog/*.html` で `"@type":"FAQPage"` 欠落)で **FAQ未設置=30/165記事**。要注意除外(`ap-gogo-sentaku`=HD-4/`sc-ronbun-taisaku`・`sc-incident-response-storytelling`=HD-6 SC午後frame/`ipa-saishin-doukou`・`ai-shaken-saizensen-2026`=年次snapshot SKIP/短いstub `db-er-design-practice`・`pm-essay-shudai-pickup`・`st-strategy-perspective`・`au-audit-evidence-language`=thin)後も **clean候補多数**。
+  - **次セッション候補(clean・要body精読/長さ確認)**: `ipa-shiken-shakaijin-jikan-kakuho`(高inbound・社会人時間確保)・`ipa-shiken-cbt-vs-pbt`・`kakomon-ai-vs-paper`・`ipa-shiken-keisan-mondai-kokuhuku`・`ipa-shiken-fugoukaku-kara-no-recovery`・`ipa-shiken-mensetsu-katsu-yoho`・`ipa-shiken-tsuukin-jikan-katsuyou`・`ipa-shiken-syotaikennsya-isshukan-puran`・`ipa-shiken-yoshu-vs-douju-jiritsu`・`ipa-old-syllabus-vs-new`・`ipa-eligible-companies`・`shiken-zenjitsu-checklist`・`shippai-pattern-7`・`ipa-shiken-pomodoro`・`ipa-shiken-data-driven-revision`・`ipa-shiken-mokuhi-mondai-tukurikata`・`ai-coplilot-prompt-tips`・`ai-copilot-rag-citation-katsuyou`・`ipa-shiken-ai-katsuyou-benkyouhou`・`nw-protocol-deep-understanding`(NW技術=非essay)・`ipa-shiken-gogo-vs-am`(午前午後比較)。**鉄則**: body長確認(len<800のstubは対象外)→精読→本文事実厳密整合・非論文は/essay非送客・論文区分のみ旗艦・quota/価格SSOT or 非記載・format特定回避(HD-9)。
