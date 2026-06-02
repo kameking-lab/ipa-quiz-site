@@ -1502,3 +1502,20 @@
 - **clean確認(対応不要)**: cross-source level 整合スイープ(`grep 'レベル[0-9].*(基本情報|応用情報)'`)＝FE=レベル2/AP=レベル3 が generators 全所(13区分マップ・キャリア表・難易度順)で一致＝新記事の level 記述も整合。新たな hard error 無し(s89-90 の「factual vein 枯渇」を再確認)。
 - **本セッション小計=確実な objection記事2件**(FE `b28fba1` / AP `e98ec75`)。両者 SSOT照合・本番ビルド実測・回帰pin・link audit 0 FATAL。**=objection/価値 vein は主要区分 IP/SG/SC/FE/AP で網羅**。量産回避のため同vein は1セッション2本で打ち止め（高度試験の objection は区分固有＝論文区分の価値は別 framing で別タスク・要吟味）。
 - **次セッション申し送り**: objection vein は主要区分(IP/SG/SC/FE/AP)網羅で打ち止め。残＝高度試験の区分別 objection は volume が薄く区分固有(NW/DB/SC個別の「意味ない」)＝thin懸念で量産回避・着手は要吟味。cross-source factual hard error は枯渇(level/pass-rate/studyHours/論文字数 すべて整合 or editorial SKIP 確定)。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち・制度/access残角度(受験料再発行=thin/SGスコア=HD-8/AP高度発表=staleness)は不変。**新角度を起案できない場合のみ**次セッションは flag を検討（ただし安易に宣言しない）。
+
+## セッション92（growth ループ｜2026-06-03 JST）
+**P2-2 新vein＝受験順の「飛ばし」decision/比較系：基本情報(FE)を飛ばして応用情報(AP)から受けるべきか の専用記事を新設（高volume decision queryが2文FAQにしか無かった盲点を解消）**
+背景（着手前 read-only 監査）:
+- s91 申し送りで objection vein は IP/SG/SC/FE/AP 網羅・打ち止め。「新角度を起案できない場合のみ flag」に従い、心得「安易に尽きたと宣言せず新角度を起案」で **decision/比較系の新vein** を起案。
+- corpus走査（blog slug 187本・`grep 飛ばし/いきなり`）: 「基本情報 飛ばして 応用情報 / いきなり応用情報 / 基本情報なしで応用情報」は**高volumeの decision query**だが、専用記事が不在。touch は `ap-benkyou-jikan-meyasu` のFAQ2文 + `13-shikaku-osusume-jyun`/career-path の散発言及のみ。objection記事(価値の有無)・roadmap(一般的な順番)・benkyou-jikan(時間)とは**別intent**(=このFE飛ばし可否の判断)で重複thinでなく明確な gap と判定。`grep` で worklog/backlog に過去の検討/SKIP 記録も無し（二重実装でない）。
+- **durable fact 確認**: ①受験資格に制限なし（誰でもAP受験可・`ipa-juken-shikaku-nenrei` SSOT）②FE合格でAP免除なし（FE→APの免除制度は非存在・午前I免除2年はAP合格→高度向けで別物）。いずれも構造的・CBT移行で不変＝staleness landmine無し。
+- done×1 [P2-2 decision新vein] SHA `<FILL>`: 新記事 `fe-tobashite-ap`「基本情報を飛ばして応用情報から受けてもいい？｜FEを省略してAPに挑む判断基準」。
+  - 核心: 受験順の決まりは無く飛ばすこと自体は可能／FE合格でAP免除は無い（飛ばしても損しない）／飛ばしてよいケース(IT実務経験者・情報系・午前を今戦える人)／避けるケース(IT初学者・午後記述不安・FEが社内必須)／注意3点(午前知識は結局必要・午前未達なら午後不採点の多段階選抜・午後記述に時間配分)／FE↔AP早見表。
+  - **SSOT一致**: FE=レベル2・科目A60問90分/科目B20問100分・各1000点満点600点IRT・約200時間(未経験300時間)。AP=レベル3・午前80問四択150分/午後記述5問150分・各100点満点60点素点・多段階選抜・300〜500時間・合格で高度午前I免除2年（exam-data/fe-goukaku-ten-irt/ap-goukaku-ten-border/ap-benkyou-jikan-meyasu と照合）。資格手当/年収は不記載（誇大回避）。
+  - **funnel規律**: 受験順=採点無関係ゆえ**旗艦/essay非送客**（s27/s65 precedent・body /essay=0実測、HTML唯一の/essayは全ページ共通 header nav）。funnel=/fe・/ap・fe/ap-shiken-meritto-imi-aru（価値比較）・ap-benkyou-jikan-meyasu（時間）・ap-goukaku-ten-border（合格基準）・it-shikaku-nendaibetsu-roadmap/13-shikaku-osusume-jyun（順番）・AIコパイロット。exam:"ap"（AP-bound query・/recommended-books/ap 書籍funnelも妥当・essay funnelはESSAY_FLAGSHIP_EXAMSゲートゆえapでは非発火）。
+  - **inbound3面**（orphan回避）: (1)`ap-benkyou-jikan-meyasu` の「基本情報を飛ばして応用情報」FAQ末に本文リンク追加（最高intent一致・relatedSlugs満杯ゆえ本文で確実化）、(2)`ap-shiken-meritto-imi-aru` relatedSlugs 3→4、(3)`fe-shiken-meritto-imi-aru` relatedSlugs 3→4（いずれも displacementなし・mutual＝本記事が両者へOUT）。
+  - 検証（本番ビルド実測 `.next/server/app/blog/fe-tobashite-ap.html` 137KB）: FAQPage JSON-LD=1・href="/fe"×3・href="/ap"×6・fe/ap-shiken-meritto/roadmap funnel render・body /essay=0（control ip-meritto と同じ header nav 1のみ）・「レベル 2」「レベル 3」「受験資格に制限は」「免除されません」「300〜500 時間」「多段階選抜」render・年収+数字=0。新記事内 /blog link 8本すべて prerendered 200（新規404ゼロ）。inbound3親HTMLに新記事リンク render実測。
+  - **link audit**: 186→187 posts・1818 links・**0 FATAL / 0 WARN**（non-orphan・inbound確立）。
+  - 回帰pin1件（blog-generators.test.ts の ap-shiken-meritto test隣）: exam=ap / FAQ節present / `(/fe)`+`(/ap)` present / body `/essay` 不在 / 受験資格制限・免除されません（durable）/ レベル2+レベル3（SSOT）/ 年収\d 不在（誇大回避）/ inbound（2 siblings relatedSlugs + ap-benkyou-jikan-meyasu 本文リンク）。崩れたら落ちる。
+  - 全ゲート緑（commit前に単独実行・緑目視）: typecheck0 / lint0err（warnは未追跡 ux-audit-screenshots.mjs のみ）/ test 2090全緑(+1) / build OK。
+- **次セッション申し送り**: decision/比較系の新vein を1本開拓（FE飛ばし可否）。**残候補（要吟味・1記事=確実で量産しない）**: (a)「ITパスポート 飛ばして 基本情報/応用情報」=IP飛ばしは `ip-shiken-meritto-imi-aru`/13-shikaku で「IT実務者はIPを飛ばしてよい」と既述＝重複thin懸念で要吟味。(b)「応用情報の次は何を取る」=`ap-goukaku-go-koudo-senryaku` 既存で重複。(c)高度試験どれから=区分固有で散在・要吟味。objection vein 打ち止め・論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち・制度/access残角度(受験料再発行=thin/SGスコア=HD-8/AP高度発表=staleness)は不変。

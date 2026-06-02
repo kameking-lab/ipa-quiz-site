@@ -451,6 +451,37 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
       expect(s?.relatedSlugs).toContain("ap-shiken-meritto-imi-aru");
     }
   });
+
+  // FE→AP の受験順を飛ばす判断記事。制度=採点無関係ゆえ旗艦/essay非送客。
+  // 受験資格制限なし/FE合格でAP免除なしは durable fact。崩れたら落ちる。
+  it("fe-tobashite-ap: ap exam, FAQ source, /fe+/ap funnel, no /essay, durable facts, inbound wired", () => {
+    const post = getBlogPostBySlug("fe-tobashite-ap");
+    expect(post).toBeDefined();
+    expect(post!.exam).toBe("ap");
+    const body = post!.body;
+    // FAQPage source section present
+    expect(body).toContain("## よくある質問");
+    // entry funnel to both hubs; decision article never sends to the grader
+    expect(body).toContain("(/fe)");
+    expect(body).toContain("(/ap)");
+    expect(body).not.toContain("/essay");
+    // durable facts: 受験資格制限なし / FE合格でAP免除なし
+    expect(body).toContain("受験資格に制限は");
+    expect(body).toContain("免除されません");
+    // SSOT: FE=レベル2 / AP=レベル3 を早見表で明示
+    expect(body).toContain("レベル 2");
+    expect(body).toContain("レベル 3");
+    // 誇大回避: 具体的な年収額の断定を入れない
+    expect(body).not.toMatch(/年収\s*\d/);
+    // inbound wiring (non-orphan): siblings' relatedSlugs + 親FAQの本文リンク
+    for (const sib of ["ap-shiken-meritto-imi-aru", "fe-shiken-meritto-imi-aru"]) {
+      const s = getBlogPostBySlug(sib);
+      expect(s?.relatedSlugs).toContain("fe-tobashite-ap");
+    }
+    expect(getBlogPostBySlug("ap-benkyou-jikan-meyasu")!.body).toContain(
+      "/blog/fe-tobashite-ap",
+    );
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
