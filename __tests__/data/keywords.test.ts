@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import { getAllBlogPosts } from "@/data/blog";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
@@ -116,5 +117,31 @@ describe("KEYWORD_PAGES — 土台 科目B ピラー送客ゲート", () => {
     expect(
       getKeywordPageBySlug("fe-kamoku-b-pseudo-language")?.strategicCta,
     ).toBe("kamoku-b");
+  });
+});
+
+// 薄い LP の dead-end 解消（P2-3c）。app/keywords/[keyword]/page.tsx は
+// relatedBlogSlug を getBlogPostBySlug で解決し、「さらに深く学ぶ」逆方向リンク
+// (/blog/<slug>) を描画する。typo'd slug は描画されず新規 404 にはならないが、
+// 黙って消えると導線が機能しないため、登録された全 relatedBlogSlug が実在する
+// blog 記事へ解決することを pin する（success-stories の relatedBlogSlug 同様）。
+describe("KEYWORD_PAGES — relatedBlogSlug は実在 blog へ解決する（dead-end解消の逆リンク）", () => {
+  const blogSlugs = new Set(getAllBlogPosts().map((p) => p.slug));
+
+  it("登録された relatedBlogSlug が全て実在する blog 記事を指す", () => {
+    const flagged = KEYWORD_PAGES.filter((p) => p.relatedBlogSlug != null);
+    expect(flagged.length).toBeGreaterThan(0); // non-vacuous
+    const broken = flagged
+      .filter((p) => !blogSlugs.has(p.relatedBlogSlug!))
+      .map((p) => `${p.slug} -> /blog/${p.relatedBlogSlug}`);
+    expect(broken).toEqual([]);
+  });
+
+  it("自分自身（同名 blog twin）を指さない（cannibalization 回避）", () => {
+    for (const page of KEYWORD_PAGES) {
+      if (page.relatedBlogSlug != null) {
+        expect(page.relatedBlogSlug).not.toBe(page.slug);
+      }
+    }
   });
 });

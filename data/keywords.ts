@@ -22,6 +22,13 @@ export interface KeywordPage {
    * "kamoku-b" = 土台＝基本情報 科目B 完全対策ピラー（FE 科目B 擬似言語記事のみ）。
    */
   strategicCta?: "essay" | "kamoku-b";
+  /**
+   * このトピックを深掘りする自然な親ブログ記事の slug（任意・明示オプトイン）。
+   * 薄い LP（800〜1,500 字）から、同一トピックを厚く論じる /blog/<slug> 解説へ
+   * 「さらに深く学ぶ」逆方向リンクを張り、LP の dead-end を解消してクロール深度を上げる。
+   * 必ず実在する blog slug を指定すること（regression test で resolvability を pin）。
+   */
+  relatedBlogSlug?: string;
 }
 
 export const KEYWORD_PAGES: KeywordPage[] = [
@@ -38,6 +45,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "午後問題は『どの大問を選ぶか』を 1 週間以内に確定させます。選択 5 問を 7 分野に絞り込み、各分野で 2 期分を時間制限なし → 制限ありの順に解きます。記述量とキーワード抽出の感覚を身体に覚えさせるのがゴールです。",
       "前日は早めに就寝し、当日朝は時計・受験票・身分証・鉛筆・消しゴム・腕時計を再確認します。AI コパイロットには『午後で時間切れになりそうな時の優先順位』『定番キーワード集』を聞いておくと、心理的な保険になります。",
     ],
+    relatedBlogSlug: "ap-gogo-sentaku",
   },
   {
     slug: "fe-kamoku-b-pseudo-language",
@@ -70,6 +78,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "3 週目から過去問演習に入ります。1 日 30 問ペース・誤答ノート作成・間違えた問題の翌日再挑戦のサイクルで 21 期分以上を解きます。",
       "4 週目は CBT 方式に近い模試形式（100 問・100 分）で 3 回以上挑戦。本番の時間配分とマウス操作に慣れます。前日は早めに就寝し、当日は身分証 2 種類を忘れずに持参します。",
     ],
+    relatedBlogSlug: "ip-3shukan-goukaku",
   },
   {
     slug: "sc-incident-response",
@@ -99,6 +108,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "ステップ 3: ホスト数を計算。ホスト部のビット数を n とすると、利用可能ホスト数は 2^n - 2（ネットワークとブロードキャストを除く）です。/30 なら 2 ホスト、/27 なら 30 ホスト、と即答できるようにします。",
       "練習問題: 192.168.10.50/27 が属するネットワークアドレスとブロードキャストアドレス、利用可能ホスト数を答えてください。回答は本サイトの AI コパイロットに『この問題の解き方を教えて』と聞くと、ステップごとに解説が表示されます。",
     ],
+    relatedBlogSlug: "nw-gogo-jikan-haibun",
   },
   {
     slug: "db-3nf-normalization",
@@ -114,6 +124,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "判定手順 3: 候補キーに含まれない属性（非キー属性）が、候補キー以外を経由して決まっていないか（推移的従属性）を確認します。`候補キー → A → 非キー` のような連鎖があれば 3NF 違反です。",
       "違反した場合は属性を分割し、推移経路に出た属性を別表に切り出します。BCNF（Boyce-Codd 正規形）はさらに厳しい条件で、すべての非自明な FD の左辺がスーパーキーであることを要求します。",
     ],
+    relatedBlogSlug: "db-sql-taisaku",
   },
   {
     slug: "pm-evm-calculation",
@@ -130,6 +141,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "ここから派生する指標が 4 つ: スケジュール差異 SV = EV - PV、コスト差異 CV = EV - AC、スケジュール効率 SPI = EV/PV、コスト効率 CPI = EV/AC。",
       "判定: SV > 0 ならスケジュール先行、CV > 0 ならコスト下回り。SPI < 1 や CPI < 1 は遅延・超過を意味します。完成時総コスト予測 EAC = BAC / CPI（CPI 一定仮定）も頻出。",
     ],
+    relatedBlogSlug: "ap-gogo-management-erabikata",
   },
   {
     slug: "st-essay-structure-pattern",
@@ -147,6 +159,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "パターン 5: 失敗→改善型 ── 過去の失敗 → 原因分析 → 改善策 → 結果 → 学び。リーダーシップと内省力を示せる。",
     ],
     strategicCta: "essay",
+    relatedBlogSlug: "st-senryaku-shikou",
   },
   {
     slug: "auditor-coso-cobit",
@@ -162,6 +175,7 @@ export const KEYWORD_PAGES: KeywordPage[] = [
       "使い分けの目安: 全社的な内部統制を述べるなら COSO、IT 部門の統制成熟度を述べるなら COBIT、両方が絡む場合は『COSO の枠組みを COBIT で IT に展開した』と書きます。",
       "AU 論述では『監査の判断基準』として両者を引用するのが安全。具体名を出すだけで論述の権威性が高まります。",
     ],
+    relatedBlogSlug: "au-shiken-taisaku",
   },
   {
     slug: "ai-copilot-how-to-use",

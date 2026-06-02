@@ -9,6 +9,7 @@ import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import { getBlogPostBySlug } from "@/data/blog";
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { topicLinkHref } from "@/lib/seo/topics";
@@ -79,6 +80,13 @@ export default async function KeywordPage({
           (ESSAY_EXAM_CODES as readonly string[]).includes(e),
         ) as ExamCode | undefined)
       : undefined;
+
+  // 薄い LP の dead-end 解消: 同一トピックを厚く論じる親ブログ記事へ
+  // 「さらに深く学ぶ」逆方向リンクを張る（明示オプトイン relatedBlogSlug のみ）。
+  // 実在しない slug を弾いて新規 404 を作らない（typo は描画しない）。
+  const relatedBlog = page.relatedBlogSlug
+    ? getBlogPostBySlug(page.relatedBlogSlug)
+    : undefined;
 
   const absUrl = `${SITE_BASE_URL}/keywords/${page.slug}`;
   const jsonLd = {
@@ -164,6 +172,25 @@ export default async function KeywordPage({
       {essayExam ? <AfternoonEssayHint exam={essayExam} /> : null}
       {page.strategicCta === "kamoku-b" ? (
         <KamokuBStudyHint exam="fe" session="kamoku-b" />
+      ) : null}
+
+      {relatedBlog ? (
+        <section aria-label="さらに深く学ぶ" className="mt-8">
+          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            さらに深く学ぶ
+          </h2>
+          <Link
+            href={`/blog/${relatedBlog.slug}`}
+            className="group block rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+          >
+            <p className="text-sm font-medium text-foreground group-hover:text-primary">
+              {relatedBlog.title}
+            </p>
+            <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+              {relatedBlog.description}
+            </p>
+          </Link>
+        </section>
       ) : null}
 
       <section aria-label="関連トピック" className="mt-8">
