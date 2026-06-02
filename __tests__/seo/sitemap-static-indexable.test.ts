@@ -62,22 +62,26 @@ type PageModule = {
   generateMetadata?: (arg: unknown) => Metadata | Promise<Metadata>;
 };
 
-async function resolveRobots(
+async function resolvePageMetadata(
   loader: () => Promise<unknown>,
-): Promise<Metadata["robots"]> {
+): Promise<Metadata | undefined> {
   const mod = (await loader()) as PageModule;
-  if (mod.metadata) return mod.metadata.robots ?? undefined;
+  if (mod.metadata) return mod.metadata;
   if (mod.generateMetadata) {
     // 具象 static ページの generateMetadata は引数不要 or {searchParams}/{params} のみ。
     // 余分なキーを渡しても no-arg 関数は無視するので両対応できる。
-    const md = await mod.generateMetadata({
+    return mod.generateMetadata({
       params: Promise.resolve({}),
       searchParams: Promise.resolve({}),
     });
-    return md.robots ?? undefined;
   }
   // メタデータ export 無し = 親 layout 継承。具象 static ルートでは発生しない想定。
   return undefined;
+}
+
+function canonicalOf(md: Metadata | undefined): string | undefined {
+  const c = md?.alternates?.canonical;
+  return typeof c === "string" ? c : undefined;
 }
 
 function isNoindex(robots: Metadata["robots"]): boolean {
@@ -109,8 +113,26 @@ describe("sitemap が載せる具象 static ルートは全て indexable（noind
     for (const p of staticLocs) {
       const loader = pageModules[moduleKeyForRoute(p)];
       if (!loader) continue; // 上の解決テストが拾う
-      const robots = await resolveRobots(loader);
-      if (isNoindex(robots)) bad.push(p);
+      const md = await resolvePageMetadata(loader);
+      if (isNoindex(md?.robots)) bad.push(p);
+    }
+    expect(bad).toEqual([]);
+  });
+
+  // canonical が別URLを指すと、そのページは「自分でなく別ページが正規」と宣言し、
+  // sitemap に載せていても deindex され crawl 資産が無駄になる（激辛レビュー: /quiz の
+  // canonical 自己矛盾が SEO 致命 TOP5 だった）。canonical を**明示している**具象 static
+  // ルートは、必ず自URL（home は "/" 正規化）を指していることを固定する。
+  it("canonical を持つ具象 static ルートは自URLを正規化先にしている", async () => {
+    const bad: string[] = [];
+    for (const p of staticLocs) {
+      const loader = pageModules[moduleKeyForRoute(p)];
+      if (!loader) continue;
+      const md = await resolvePageMetadata(loader);
+      const canonical = canonicalOf(md);
+      if (canonical === undefined) continue; // 明示なし=自己参照フォールバック（許容）
+      const selfRoute = p === "" ? "/" : p; // sitemap の home loc は "" だが canonical は "/"
+      if (canonical !== selfRoute) bad.push(`${p} -> ${canonical}`);
     }
     expect(bad).toEqual([]);
   });
