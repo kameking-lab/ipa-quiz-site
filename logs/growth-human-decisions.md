@@ -31,6 +31,7 @@
 - 推奨（戦略より）: (a) が旗艦を埋もれさせない本筋。最低でも応用情報午後の実データ投入を優先。データが揃うまでは誇大にしない。
 - 緊急度: 中〜高（旗艦の核。ただし「データが薄いまま大きく見せる」愚を避けるため、データ整備とセットで判断）。
 - 関連: backlog P1-2（AP/FE CTA追加は HD-4 の判断待ち）/ P1-4,P1-5（不安系キーワードの**オリジナル記事**で午後採点へ送客するのはモックデータに依存しないので先に進められる）。
+- **追補（セッション41発見）**: 機能ページ `/features/essay-grading`（indexable・marketing）が、description「応用情報の午後記述、SC/NW/DB/ES/PM/SM/AU の午後 I・午後 II ... を AI が即座に添削」・benefit「全試験区分・記述問題に対応（午後記述 AP/SC/NW/DB/ES/PM/SM）」と**AP/SC/NW/DB/ES の午後記述添削に対応済**と広告している。だが実体の AI 採点ツール `/essay` が対象とするのは論文5区分(ST/SA/PM/SM/AU)のみで、AP/SC/NW/DB/ES の午後記述は**モック/Coming-Soon**（HD-4 本体）。この広告スコープを実体に合わせて狭める（or「ベータ/準備中」を明示する）かは**プロダクトのポジショニング判断**＝自律で勝手に縮めない。※ヒーロー文の「IPA 採点基準を参照」→「IPA 公式解答例を参照（参考評価）」の**事実性是正は実施済**（セッション41 `3850234`・非公開の採点基準を参照と誤認させる誇大の解消で、これはポジショニングでなく事実誤りのため）。スコープ広告の是非のみ本HDで人間判断。
 
 ### HD-5: 論文区分の個別essay記事の「AI採点」深リンクが noindex,nofollow の `/essays/[exam]` を指す（equity vs UX relevance のトレードオフ・セッション8発見）
 - 何の話か: 論文5区分(pm/st/sa/sm/au)の個別essay記事(pm-goukaku-ronbun / st-senryaku-shikou / sa-architecture-tradeoff / sm-itil-storytelling / au-audit-evidence-language)本文に「[PM 論述添削](/essays/pm)」「[PM 午後II 論述AI採点](/essays/pm)」等の**採点intentの深リンク**がある（generators.ts 1604/1649/1692/1730/1770/3874/3999/4109 等）。その行先 `/essays/[exam]` は **`robots: { index: false, follow: false }`（noindex かつ nofollow・実測確認）**。一方、旗艦の indexable な集約ハブは `/essay`（robots無指定＝index可）。

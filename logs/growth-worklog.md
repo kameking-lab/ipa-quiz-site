@@ -718,3 +718,24 @@
 - 申し送り（セッション40まとめ）:
   - **新角度=rail relevance-leak を全 blog記事へ網羅点検し打ち止め**: route 実 limit=4 で全記事の rail を機械監査。explicit-curation の off-topic leak は `ap-gogo-sentaku`→`fe-kamoku-b-taisaku`(科目B)の1件のみ残存→AP午後兄弟へ差替 `afcca67`(回帰pin)。残 flag は backfill(系統的by-design)と defensible-overlap で SKIP。**actionable な rail-leak は枯渇**。
   - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1〜HD-10、特にGSC404一覧/AP・FE午後本データ/overviewテンプレHD-9)、(b)コード側自律領域は rail-leak打ち止めで更に縮小。404掃除/旗艦露出/事実性監査/internal-link/blog/OG/funnel/rail-leak は概ね飽和 or 人間待ち。次セッションは新角度の慎重な起案 or HD解消待ちの局面。
+
+## セッション41（growth ループ）2026-06-02 JST
+- 監査(read-only): session40が「rail-leak枯渇・コード側は新角度起案 or HD待ち」と総括。**旗艦/essay 面とその周辺(機能ページ・業種別論文記事)の新角度**を3点開拓。internal-link監査=165posts/FATAL0/WARNING0・全ゲートbaseline緑を確認してから着手。
+- done: [P1-3/旗艦] **旗艦 /essay ハブに objection-handling FAQ + FAQPage JSON-LD を追加**。SHA `4812e48`。
+  - 監査で発見: 旗艦 /essay は LearningResource+BreadcrumbList+OG は持つが、**戦略ブログ全般に展開済(session8-11)の FAQPage が唯一欠落**。最重要 indexable 面(flagship landing)に、流入を阻む疑問(何の試験向け?/AI採点は正確?/他の過去問サイトと何が違う?/結果は保存?)へ答える FAQ が無かった。
+  - 実装: 単一 `ESSAY_FAQ` 配列を**可視 <dl> と FAQPage @graph の両方**に供給(drift不能)。内容は厳密に事実: 対応区分=論文5区分のみ(AP/FEモック非言及=誇大回避/HD-4尊重)・「参考評価」明記・**quota/価格の数値は非記載**(承認必須/SSOT所有のため)。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1817→1820/build OK)。本番ビルド `essay.html` に `"@type":"FAQPage"`(Question×4)・可視「よくある質問」<dl>・「参考評価」出力を実測。ページ source に「応用情報/基本情報」非出力(over-claim無し・footer nav の exam一覧は別物)。回帰pin `essay-flagship-jsonld.test.ts`(FAQPage単一source・可視dl・参考評価/AP/FE非claim を pin・+3 it)。
+- done: [P1-5/旗艦] **業種別論文記事3本(gyoushu-essay-*)から旗艦 /essay へ直 funnel を追加**。SHA `d0eb11d`。
+  - 監査で発見: `gyoushu-essay-{kinyuu-strategy(ST),seizou-pm(PM),koukyou-sa(SA)}` は旗艦=午後II論述AI採点の**最近縁コンテンツ**(業種別論文 ＝ /essay の「業種事例」採点軸そのもの)。だが本文が「AI 添削と業種別事例集の組み合わせで完成度を上げる」と**AI 添削に言及しながら、リンク先は /features/industry-essays と試験ハブ /<exam> のみで indexable 旗艦 /essay へ直リンクが無かった**(=「AI 添削を勧めるのにそのリンクが無い」content gap。session3/7/37 の funnel整備が gyoushu系を取り残していた)。
+  - 修正: 各記事の「過去問AI では…事例集」節に「書き上げた論文は [午後II 論述の AI 採点](/essay) で『適合度・論理性・具体性・業種事例』の4軸フィードバックを受けられます（AI 採点は参考評価です）」を1文追加。ST/PM/SA は全て ESSAY_EXAM_CODES・4軸コピーは /essay 自身と一致・参考評価明記で誇大回避。/features/industry-essays(primaryCta=/essay) は温存=2hop→直リンク併設。
+  - 検証: 全ゲート緑(test1820→1826/build OK)。本番ビルドで3記事とも `href="/essay"`(=2: 本文追加分+footer)・4軸コピー出力を実測。回帰pin新設 `gyoushu-essay-flagship-funnel.test.ts`(3記事が論文タグ+業種別タグ・/essay直リンク・参考評価・4軸 を pin。これら記事は exam無しの general 記事のため tag で論文関連を担保)。
+  - 補足audit(read-only): 全blog本文を「AI添削/採点 を論述文脈で言及するのに /essay(s) リンク無し」で機械走査→10件 flag。うち**8件は非論文 overview(`{sc,es,db,nw,ap,fe,sg,ip}-goukaku-benkyouhou`)で session6 が論文5区分のみに旗艦CTAを gate 済=by-design(SKIP)**、2件(`kakomon-ai-roadmap-2026`=未実装午後採点のroadmap・session11 present-state限定 / `ipa-shiken-gogo-vs-am`=cross-exam汎用explainerで添削=AIコパイロット文脈・非論文scope)も**誇大/off-scopeでSKIP**。gyoushu系が**唯一の actionable な取り残し**＝旗艦essay funnel はこれで打ち止め。
+- done: [P2-2/事実性] **essay-grading 機能ページのヒーローを事実ベースに是正**。SHA `3850234`。
+  - 監査で発見: `/features/essay-grading`(indexable・dynamicParams=false・prerendered) のヒーロー subhead が「AI が **IPA 採点基準を参照**しながら『どこで何点引かれるか』を即座にフィードバック」と記載。だが **IPA 採点基準は非公開**(site自身が HD-6/各免責で明言)・旗艦 /essay 免責は「IPA 公式の採点基準とは**異なる**」・**同ページ自身の FAQ も「IPA 公式解答例とキーワードを基準に評価」**と正しく述べており、ヒーローだけが「採点基準を参照」と内部矛盾・誇大(非公開の基準を参照と誤認させる)。
+  - 修正: subhead を「AI が **IPA 公式解答例を参照**しながら『どこで何点引かれ**そうか**』を即座にフィードバック（**参考評価**）」へ(公式解答例=IPAが実際に公開・同ページFAQ/site免責と整合・参考評価明記)。session21/22/32 の事実性監査と同パターン(誇大を SSOT/自ページの正記述へ揃える)。
+  - 検証: 全ゲート緑(test1826→1828/build OK)。本番ビルド `features/essay-grading.html` で旧「採点基準を参照」=**0**・新「公式解答例を参照」「参考評価」出力を実測。回帰pin `__tests__/data/features.test.ts`(essay-grfeature heroが「採点基準を参照」を含まず「公式解答例」「参考評価」を含む を pin)。
+  - **HD記録**: 同ページの**対応区分広告スコープ**(description/benefitが AP/SC/NW/DB/ES の午後記述添削に「対応済」と広告。だが実体 /essay は論文5区分のみ・AP/SC/NW/DB/ES午後はモック=HD-4)は**プロダクトのポジショニング判断**のため自律で縮めず **HD-4 に追補記録**(事実性是正のヒーロー1文のみ実施・スコープ広告の是非は人間)。
+- 申し送り（セッション41まとめ）:
+  - **旗艦/essay 周辺の新角度を3点開拓**: (1)旗艦ハブの欠落 FAQPage を補完(objection-handling・誇大回避) `4812e48`、(2)最近縁の業種別論文記事3本から旗艦へ直 funnel(取り残し是正) `d0eb11d`、(3)essay-grading 機能ページの「採点基準を参照」誇大を自ページFAQ/site免責へ揃える事実性是正 `3850234`。全て additive・誇大回避(論文5区分gate/参考評価/quota非記載)・回帰pin・新規404ゼロ。
+  - **打ち止め確認**: 旗艦essay funnel は gyoushu系で actionable な取り残し枯渇(他10 flagは by-design gate or off-scope)。機能ページ事実性=ヒーロー是正済、残スコープ広告は HD-4。
+  - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1〜HD-10、特にGSC404一覧/AP・FE午後本データ/overviewテンプレHD-9/essay-gradingスコープ広告=HD-4追補)、(b)コード側自律領域は旗艦周辺も飽和方向。次セッションは新角度の慎重な起案 or HD解消待ち。
