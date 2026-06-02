@@ -49,7 +49,16 @@ export async function getProvider(preferred?: ProviderId): Promise<LLMProvider> 
   return createMockProvider();
 }
 
-export function resolveModel(tier: "free" | "premium"): string {
+export type ModelTier = "free" | "premium" | "grading";
+
+export function resolveModel(tier: ModelTier): string {
+  // 午後記述・論述の AI 採点だけ上位モデルを使う（採点品質優先。Flash 系では
+  // 配点・キーワード照合の判断がブレるため）。無料の四択解説・一般コパイロット・
+  // 類題生成は free 層（flash-lite）のまま＝コスト効率。本番のモデル名は
+  // GEMINI_MODEL_GRADING で運用側が設定する（未設定時は上位モデルへフォールバック）。
+  if (tier === "grading") {
+    return process.env.GEMINI_MODEL_GRADING ?? "gemini-2.5-pro";
+  }
   if (tier === "free") {
     return process.env.GEMINI_MODEL_FREE ?? "gemini-2.5-flash-lite";
   }

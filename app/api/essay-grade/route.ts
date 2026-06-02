@@ -331,7 +331,8 @@ export async function POST(req: Request) {
   }
 
   const userPrompt = buildUserPrompt(question, payload.industry, payload.answers);
-  const model = resolveModel("free");
+  // 論述採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
+  const model = resolveModel("grading");
 
   let buf = "";
   try {

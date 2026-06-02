@@ -256,7 +256,8 @@ export async function POST(req: Request) {
   }
 
   const userPrompt = buildUserPrompt(question, payload.answers);
-  const model = resolveModel("free");
+  // 午後記述の採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
+  const model = resolveModel("grading");
 
   // Collect the full response, parse JSON, then stream the validated object back.
   // (Streaming raw LLM output would risk leaking partial/invalid JSON to the client.)
