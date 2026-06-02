@@ -1712,3 +1712,19 @@ s103 申し送りが「trace vein 完全枯渇＝別角度(P2-2 競合薄ブロ�
   - **検証(各ゲートを commit と別呼び出しで単独実行・緑目視)**: typecheck 0 / lint 0 errors(warn=未追跡 ux-audit-screenshots.mjs のみ) / test **275 files 2167 passed**(274→275 file・2161→2167＝新6 it) / build Compiled successfully(新ページ prerender 136KB) / **link audit 0 FATAL/0 WARNING**(1923 links・1905→1923)。本番HTML実測(.next/server/app/blog/koudo-gozen1-taisaku.html)=全核心事実present(30問/50分/四肢択一/基準点60点/18問/多段階選抜/共通の問題)・FAQPage JSON-LD present・funnel href(/ap×3・menjo・ashikiri・/essay・/nw/db/sc)present・誇大回避(参考評価×4/採点基準は非公開×2/論述系区分×2)・inbound 2面(menjo/ashikiri HTML に koudo-gozen1-taisaku リンク present)。
 - **本セッション小計=確実な改善1件**(午前I対策記事新設 `bb20a48`)。content corpus は s90-103 で深く飽和ゆえ**量産せず1本=確実**(s25規律)を尊重し2本目は着手せず。
 - **次セッション申し送り**: 午前I=対策/免除/合格基準の3観点が揃った。**残る P2-2 制度/対策系の候補(要 gap 確認・量産しない)**: (a)午前II対策は**区分固有(専門知識)で cross-区分の generic 記事は thin**＝per-区分は量産リスク=要慎重・着手しない寄り。(b)受験料/合格証書再発行=thin懸念(継続保留)。(c)SGスコア通知=HD-8。(d)AP/高度の合格発表専用=令和8年度CBT移行安定まで不可。trace vein は s103 で完全枯渇・content/funnel/aria/crawl-signal vein は s90-103 で深く飽和。**新規の太い vein は GSC 404一覧(HD-1)/本番午後データ(HD-4)/ルーティング再設計(使-3)等の人間入力 or 厚い監査が起点**。
+
+## セッション105（growth ループ・2026-06-03 JST）— P2-2 named seed の content深掘り（履歴書記事に「勉強中・取得予定の資格の書き方」節を追加）
+背景（着手前 read-only 監査）:
+- 全主要vein(trace s101-103/FAQ s53/keyword LP s56/objection s91/404 s33-35)は done/SKIP/HD で枯渇を確認。s104申し送りの次着手候補=(a)P2-2 競合薄ブログ強化(1本ずつ) / (b)別区分longtail。
+- 確定戦略(c)が명示する競合薄ブログ強化対象=roadmap/履歴書/勉強法/科目B/午後。named seed `it-shikaku-rirekisho-kakikata`(15位/455表示)を精査。
+- 機械走査で gap 確定: `勉強中/取得予定/学習中/合格見込み` のコーパス言及ゼロ・`受験予定` はリスケ文脈(6800/10648)のみ=「資格 勉強中 履歴書 書き方」高intentサブクエリが完全未カバー。
+実装(1コミット=1論点・最小diff):
+- done SHA `34b3768`: 既存記事に新節「## 勉強中・取得予定の資格の書き方」(学習中/受験予定/結果待ちのステータス別記載例・合格済みと行を分け最下段・合格誤読=経歴詐称リスク)をオリジナル追加。**新規thin記事でなく既存深掘り**で量産回避(strategy c「内容深掘り」)。FAQ 1Q&A(まだ合格していない勉強中の資格)＋まとめ1行も追加。
+- 誇大/安全: durableな履歴書作法(staleness無し・外部数値/IPA要verify無し)・非論文career記事ゆえ旗艦/essay非送客・**新規内部リンク無し=新規404リスクなし**・IPA問題文転載なし(オリジナル生成)。
+ゲート(commitと別呼び出しで緑を目視後にcommit):
+- typecheck 0 / lint 0 error(1 warningは untracked scripts/ux-audit-screenshots.mjs=対象外) / test 2167 全緑(blog-faq-jsonld の FAQ数pin 5→6 を更新) / build OK。
+検証(「崩れたら落ちる」実測):
+- 本番prerendered `.next/server/app/blog/it-shikaku-rirekisho-kakikata.html` を **UTF-8 read**(PS5.1既定はUTF-8日本語を誤読するため[System.IO.File]::ReadAllText+UTF8で再読)。新節h2=2 / 合格に向けて学習中=6 / 受験予定=12 / 経歴詐称=2 / 新FAQ Q present=4 / acceptedAnswer(FAQPage JSON-LD)=6 Q&A 反映を確認。
+- 回帰pin: `__tests__/seo/blog-faq-jsonld.test.ts` の rirekisho FAQ length を 5→6 に更新(崩れたら落ちる)。
+push: git pull --ff-only(Already up to date)→push成功 df6aa9e..34b3768。
+申し送り: P2-2 named seed(履歴書)はサブクエリ深掘りで1点強化。残named seed=roadmap(6.2位=既にページ1)/勉強法/科目B/午後は既に厚く、深掘り候補は個別精査が必要(量産回避・1点ずつ)。content vein は概ね枯渇で、次は別named seedの未カバーサブクエリ機械走査 or 別区分longtailのgap確認を1件ずつ。
