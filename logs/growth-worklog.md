@@ -1270,3 +1270,17 @@
   - **SG 勉強時間ページ**: `sg-shiken-meritto-imi-aru` のFAQ「SGは何時間勉強すれば合格できますか？」＋study-plan表(150時間→27週)で既カバー＝s78 の SG study-time SKIP 判断を再確認(thin/cannibalization 懸念)。
   - **ES/SC 午後 時間配分ページ**: 記述式午後5区分(ap/nw/db/sc/es)のうち `gogo-jikan-haibun` は ap/nw/db のみ・SC=HD-6 frame未決で自律不可・ES=最niche区分(低volume)で thin懸念＝着手見送り(候補として記録)。
 - **申し送り（セッション79）**: per-exam 合格点ページの非対称を SG で解消＝**主要区分の scoring ページは IP/SG/FE/AP/高度で網羅完了**。SG合格点ページを cluster(sg科目B事例・sg意味・fe合格点)へ3本inbound で配線。**残る候補(要吟味・安易に量産しない)**: (i)ES午後時間配分(`es-gogo-jikan-haibun`)=記述式5区分で唯一欠落だが ES は最niche＝volume裏取りしてからのみ。SCは HD-6 で不可。(ii)他の per-exam 非対称(FE科目A免除=FE固有で analog無し・NW合格率推移=NW固有 niche＝横展開不可と確認済)。(iii)content access/discovery 角度(s73)は安易量産せず1つずつ裏取り。HD群(HD-1/4/5/6/8/9)/topic-tagger=人間待ちは不変。1改善=確実を維持。
+
+
+## セッション80（growth ループ）2026-06-02 JST
+**s79申し送り(i)=ES午後時間配分の着手前監査で「ES午後IIは2023年から論述式」と判明＝記事化の前提が誤りと確定し HD-11 へ escalate（誇大/誤framing記事を未然に回避）**
+開始時の read-only 監査（着手前の二重実装/事実確認・saturation把握）:
+- **internal-link 整合 = clean**: `scripts/audit-internal-links.ts` 実走=176記事/1622リンク・FATAL0/WARNING0。
+- **着手候補=`es-gogo-jikan-haibun`(s79申し送り(i))の事実裏取り**: ap/nw/db は `gogo-jikan-haibun` 既存(記述式・午後I 90分3問中2問/午後II 120分2問中1問・旗艦/essay非送客=記述式区分)。ES を同型で追加しようとIPA公式を裏取り→**前提が崩れた**。
+- **IPA公式確認（記事化を止めた決定打）**: [kubun/es.html](https://www.ipa.go.jp/shiken/kubun/es.html)=ES **午後I=90分・出題2問/解答1問・記述式**、**午後II=120分・出題3問/解答1問・論述式**。WebSearch でも「令和5年度(2023)秋期から午後IIは論述式・採点はランク評価でAのみ合格・企画/要件定義を出題範囲に追加」と一致。**ES午後IIは論述式(小論文・評価ランクA/B/C/D)**で、ES は **午後I記述式・午後II論述式のハイブリッド**＝「純・記述式区分」前提の時間配分記事は午後IIを誤framingする。よって**記事化せず**(過大修正/誇大の罠を未然回避＝監査が誤記事を防いだ)。
+- **コーパス監査で present-tense 事実誤りを特定（HD-6のSC午後frameと同 error class）**: サイトは ES を記述式区分(NW・DB・ES・SC)と分類し論述区分=ST/SA/PM/SM/AUの5区分と繰り返し定義(`generators.ts` L2858/7515/7665-7705・`koudo-ronbun-hyouka-rank` L7560-7634・`exam-data.ts:192`・コード定数 ESSAY_EXAM_CODES/DESCRIPTIVE_AFTERNOON_EXAMS)。**ES午後II(論述式)を取りこぼし**。一方 `data/recommended-books.ts:630` のES書籍は既に「論文試験対応」＝**書籍データは論述反映済・blog prose だけが旧分類**の内部不整合。
+- **自律修正せず HD-11 へ escalate した理由**: 論述区分の定義「=5区分」がコーパス横断(prose多数+コード定数+テスト)に織り込まれ、ESを論述側へ動かすと全「論述区分(5)」記述・評価ランク記事・採点funnelゲートへ**連鎖**(HD-9「部分修正は新たな不整合を生む＝コヒーレントに直す」原則)。加えて旗艦 `/essay` の essay-grading データ(ESSAY_EXAM_CODES=st/sa/pm/sm/au)に **ES論述データ不在**＝ESを論述と書いた上で旗艦採点を出すと誇大(HD-4型のモック/未対応スコープ)。ゆえ prose横断reframe＋旗艦スコープ拡張＝**編集+戦略判断**で人間に集約。
+- done×1 [HD escalate/事実性] **HD-11 を新規起票**(`logs/growth-human-decisions.md`)＋ backlog 前提是正＋worklog 記録。IPA公式facts・影響面(5箇所prose+定数)・選択肢(a prose再分類/b ES論述データ整備でスコープ拡張/c現状維持)・推奨(最低 a・旗艦採点は誇大回避でST/SA/PM/SM/AU維持)を記載。**backlog の「es-gogo-jikan-haibun=記述式5区分で唯一欠落＝着手可」前提を覆し着手不可へ更新**。
+- **新 error class マップ完了(backlog 追記)**: 2023高度試験再編で午後形式が変わったのは **SC(統合午後=HD-6)と ES(午後II論述式=HD-11)の2区分のみ**(NW/DB=記述式不変・ST/SA/PM/SM/AU=論述不変)と確定＝今後この vein は新規調査不要。
+- **検証規律**: 本セッションは docs(logs/*.md)のみの変更でコード/データ/テスト不変＝ゲート影響なし。IPA公式WebFetch/WebSearch で ES午後形式を実測裏取りしてから記録(自己申告でなく一次情報)。**最大の成果=誤framing記事を着手前に止め、live の present-tense 事実誤りを正しく escalate した**こと。
+- **申し送り（セッション80）**: s79申し送り(i)のES記事化は HD-11 で**着手不可と確定**。記述式時間配分vein(ap/nw/db)＋論述区分(5)＋scoring(ip/sg/fe/ap/高度)＋per-exam非対称は**枯渇/HD化**。**残る候補(要吟味)**: (i)他の「2023再編以外」の per-exam content 非対称が残るか1区分ずつ裏取り(量産しない)。(ii)P2-3 hub→spoke 逆方向は recommended-books/essay/features/EssayResultViewで網羅・新destination面の OUT gap を read-only監査。(iii)HD群(HD-1/4/5/6/8/9/10/**11**)/topic-tagger=人間待ちは不変。1改善=確実を維持し、satur:水増しせず確実な1件のみ。
