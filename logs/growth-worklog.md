@@ -1890,3 +1890,10 @@ content/dead-link/dead-anchor/FAQ/funnel/RSS/OG vein は s1-114 で軒並み枯�
 - **検証（「崩れたら落ちる」+本番HTML実測+全ゲート別呼び出し緑）**: 新 guard `__tests__/seo/exam-hub-org-provider.test.ts`(3 it=純関数 `buildOrgNode()` が @id===ORG_ID・name 非空・logo・sameAs を持つ／ページ @graph に `buildOrgNode(),` を含む[revert で fail]／Course provider が ORG_ID 参照)。本番ビルド `.next/server/app/ap.html`=`EducationalOrganization`ノードが `@id:.../#organization`・`name:"過去問AI"`・logo present・`#organization` が2回出現(フル定義＋provider参照)を実測。typecheck0(別呼出 exit0)/lint0err(warn=未追跡 ux-audit-screenshots.mjs のみ・本変更外)/test **284 files 2210 passed**(2207→+3)/build Compiled successfully。
 - **本セッション小計=確実な改善1件**(`1ef91c4`)。新規404なし(additive JSON-LD ノードのみ・挙動変更なし)。
 - **次セッション申し送り**: 構造化データの per-page @id 解決性は本セッションで Course.provider を是正。残る薄い候補=CourseInstance に `courseWorkload`(学習時間 ISO8601 duration)を足せば Course rich-result eligibility が上がりうるが、(a)正確な区分別workload SSOT の有無確認が要る (b)Course rich result が試験対策コンテンツで実発火するか不確実＝**theoretical 寄りで要吟味**(過大修正の罠)。他は s110-114 通り HD群/承認必須/広域＝人間入力待ち。
+
+### セッション115 cycle2 — @id 解決性 vein を正しく sweep（実害ある1面のみ是正・残は evidenced SKIP）
+cycle1 で開けた「per-page `@id` 解決性」vein を1面だけ直して放置せず全面 sweep。`grep ORG_ID|SITE_ID` で @id 参照する全ページを列挙し各々の解決状況を実測:
+- **blog `/blog/[slug]`・旗艦 `/essay`・essay deep**: publisher は `{@type:Organization,@id:ORG_ID,name,url,logo}` の **完全 inline ノード**＝解決可能(ぶら下がりでない)。clean。
+- **`/[exam]` ハブ Course.provider**: `{@type,@id:ORG_ID}` の bare stub＝**唯一の実害ある dead ref**(Course=rich-result type ゆえ provider.name が効く)。cycle1 で是正済。
+- **`buildWebPageNode` 利用面(/privacy・/stats・/transparency・/about)**: 同 helper が WebPage に `isPartOf:{@id:SITE_ID}`・`publisher:{@id:ORG_ID}` の bare stub を出し、当該ページは org/website フルノードを同梱しない(about のみ buildOrgNode 同梱で ORG_ID は解決・SITE_ID は dangling)。→ **evidenced SKIP**: (1)WebPage は rich-result 非対象ゆえ dangling publisher/isPartOf の実害が Course と桁違いに小さい、(2)是正は共有 helper `buildWebPageNode` 改修(全 WebPage の JSON-LD 肥大・挙動変更=広域)か複数ページへのノード追加が要る、(3)対象は utility/legal 系の低トラフィック面。**「理論上の指摘で実害なしは SKIP」「迷ったら直さず SKIP」「広域リファクタ禁止」**に従い非着手。Course の1面=高ROIだけを直し vein を閉じる。
+- **結論**: @id 解決性 vein は実害ある Course.provider を是正し打ち止め。残(WebPage stub)は実害薄＋広域で SKIP 確定。
