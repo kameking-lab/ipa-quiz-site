@@ -25,7 +25,7 @@ describe("採点根拠データの型 — PM で確立（強み1）", () => {
     }
   });
 
-  it.each(["st", "sa", "sm"] as const)(
+  it.each(["st", "sa", "sm", "au"] as const)(
     "%s の全設問・全小問に rubric が付与されている（横展開）",
     (exam) => {
       const questions = getEssayQuestionsByExam(exam);
