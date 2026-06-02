@@ -23,6 +23,14 @@ interface Props {
   categories: CategoryItem[];
 }
 
+// Sitemap deep-links to /<exam>#years and /<exam>#topics. The tab values are
+// singular (year/topic), so map the plural anchor hashes onto the right tab.
+const HASH_TO_TAB: Record<string, string> = {
+  years: "year",
+  topics: "topic",
+  mock: "mock",
+};
+
 const MOCK_PRESETS = [
   { label: "本番想定 模試", desc: "実試験と同じ問題数・制限時間で受験", href: (e: string) => `/mock-exam?exam=${e}` },
   { label: "ランダム短時間演習", desc: "スキマ時間で 80 問までランダム", href: (e: string) => `/quiz?mode=random&exam=${e}` },
@@ -31,8 +39,20 @@ const MOCK_PRESETS = [
 ] as const;
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
+  const [tab, setTab] = React.useState<string>("year");
+
+  React.useEffect(() => {
+    const apply = () => {
+      const next = HASH_TO_TAB[window.location.hash.replace("#", "")];
+      if (next) setTab(next);
+    };
+    apply();
+    window.addEventListener("hashchange", apply);
+    return () => window.removeEventListener("hashchange", apply);
+  }, []);
+
   return (
-    <Tabs defaultValue="year">
+    <Tabs value={tab} onValueChange={setTab}>
       <TabsList className="mb-4 w-full">
         <TabsTrigger value="year" className="flex-1">
           <Calendar className="mr-1 h-3.5 w-3.5 inline" />

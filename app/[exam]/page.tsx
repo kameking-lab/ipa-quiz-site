@@ -379,6 +379,10 @@ export default async function ExamTopPage({
 
         {/* Browse tabs */}
         <section aria-label="問題を探す" className="mb-8">
+          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
+              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
+          <span id="years" aria-hidden className="block scroll-mt-20" />
+          <span id="topics" aria-hidden className="block scroll-mt-20" />
           <ExamBrowseTabs exam={code} years={years} categories={categories} />
         </section>
 
