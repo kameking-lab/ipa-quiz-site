@@ -685,3 +685,22 @@
   - **新角度=土台(科目B)の未カバー悩み系intentを2本の新規ページで開拓**: 旗艦/essayが飽和する一方、土台=科目Bクラスタは「素材不足(過去問非公開)」と「セキュリティ分野(科目Bのもう一方の柱)」という2つの distinct intent が専用ページ不在だった。新規キーワード=新規ページ(session25 sanctioned)で2本新設(`74bf62f`/`2ad7e40`)。両者ともIPA公式裏取り・モック非依存の安全な土台導線・ピラーからinbound・回帰pin(計11件)。
   - **saturation境界の遵守**: 既存記事間の追加クロスリンクは session13-15 で「ほぼ飽和・無理に増やさない」と確定済のため**行わず**、新規ページ開拓のみに留めた(過大修正回避)。
   - **次の最優先候補**: (a)HD群の人間入力待ち(HD-1〜HD-10、特にGSC404一覧/AP・FE午後本データ/overviewテンプレ)、(b)残る土台(科目B)の新規角度は「科目B 何問取れば(IRT下の合格ライン体感)」等が候補だが goukaku-ten-irt と近接=要慎重(thin/重複回避)。(c)コード側自律領域は引き続き縮小傾向。次セッションは新角度の慎重な吟味 or HD解消待ち。
+
+## セッション39（growth ループ）2026-06-02 JST
+- 監査(read-only): session38が「旗艦飽和・土台=科目Bは悩み系2本で開拓」と総括。**土台=科目B クラスタに lookup(reference)系の入口が無い**盲点を発見。既存 fe-kamoku-b-pseudo-language は「読解の3ステップ訓練法」=速度向上の**方法**記事で、記法そのもの(代入←/if-elseif-endif/while-do-for/配列の番号)を一覧で引ける **reference** が不在。「擬似言語 記法 / ← 意味 / 配列 番号 1始まり」等の lookup intent は方法記事とは別=新規キーワード=新規ページ(session25 sanctioned)に合致・モック非依存。
+- done: [P1-6/土台] **「基本情報 科目Bの擬似言語 記法早見表」reference記事を新設**。SHA `1799947`。
+  - 事実性(IPA公式裏取り): WebFetch で IPA公開 科目Bサンプル問題PDF＋公式記述形式の解説を照合。代入=`←`(=ではない)・コメント=`/* */`と`//`・選択処理=if/elseif/else＋`endif`・繰返し=while(前判定)/do〜while(後判定=必ず1回実行)/for(回数)＋`endwhile`/`endfor`・**配列の要素番号は1から始まる**(IPA公開サンプル前提・0始まり言語と混同しない最大の関門)・論理演算 and/or/not・比較 = ≠ > < ≧ ≦。正式仕様はIPA公式参照を明記し誇大回避。
+  - 著作権配慮: IPA問題文・公式表は**転載せず**、記法を学習用に言い換えたオリジナル prose＋trivialな汎用例(sum←0等の言語構成要素のみ)。body は template literal のためバッククォート code fence/span を使わず bold項目+箇条書きで表現(既存記事流儀)。
+  - funnel(モック非依存・土台導線のみ): 訓練法 pseudo-language/ピラー taisaku/つまずき切り分け wakaranai/アルゴリズム分野別プール `/fe/topic/アルゴリズムとプログラミング`(実MC)/AIコパイロット。**旗艦/essay非送客**を回帰testで構造保証。`/fe/topic`は「科目A相当の知識土台・科目B形式ではない」と明示framing。
+  - 配線: 訓練法 pseudo-language Q1からinboundリンク(orphan回避・記法reference→訓練法 の自然な親子)。relatedSlugs=[pseudo-language, taisaku, wakaranai, algorithm-nigate]。offset=longtail2Offset+16。
+  - 検証: 全ゲート緑(typecheck0/lint0err〔warnは未追跡ux-audit-screenshots.mjsのみ〕/test1809→1815/build OK)。本番ビルド `blog/fe-kamoku-b-gijigengo-kihou.html`=●SSG・`Article`+`FAQPage`(Q×4) JSON-LD・「要素番号は 1 から始まる」出力・内部リンク先4件(taisaku/pseudo-language/wakaranai/algorithm-nigate)+`/fe/topic/アルゴリズムとプログラミング`全200・pseudo-languageからinbound・blogサイトマップ収録を実測。回帰pin6件(`fe-kamoku-b-gijigengo-kihou-funnel.test.ts`)。
+- done: [P2-3/土台] **擬似言語訓練法記事の関連レールから off-topic AP午後記事を除去**。SHA `cda26a8`。
+  - 監査で発見: 上記記事の inbound 配線中に、pseudo-language の relatedSlugs 2番目に **off-topic な `ap-gogo-sentaku`(AP午後選択)** が残存(session5 は taisaku では除去済だが pseudo-language は取り残し)。route は getRelatedPosts **既定 limit=3** で関連レールを描画するため、limit=3 では on-topic な algorithm 兄弟が押し出され、**科目B擬似言語記事の関連レールに AP午後記事が表示される relevance leak**になっていた(cluster相互リンク維持テストは limit=4 で走るため検知できていなかった)。
+  - 修正: `ap-gogo-sentaku` を除去し新記法 reference を繰り上げ。route limit=3 レールが [taisaku, 記法早見表, algorithm-nigate]=全て科目B on-topic に。cluster相互リンク維持テスト(limit=4)は taisaku/algorithm-nigate 保持で緑のまま。
+  - 検証: 全ゲート緑(typecheck0/lint0err/test1815→1816/build OK)。本番ビルド `blog/fe-kamoku-b-pseudo-language.html` に `ap-gogo-sentaku`=**0件**・記法早見表/algorithm-nigate 出力を実測。回帰pin(route limit=3 レールが新記法を含み AP記事を含まない)追加。
+  - **所見**: 科目B クラスタ9記事の relatedSlugs を route limit=3 で全点検→off-topic leak は pseudo-language の本件のみ。残り8記事は limit=3 で全て on-topic を確認(新たな leak なし)。
+- 申し送り（セッション39まとめ）:
+  - **土台=科目B に reference(lookup)入口を新設**: 方法記事(pseudo-language=訓練法)とは別 intent の「擬似言語 記法早見表」を新設 `1799947`(IPA公式裏取り・著作権クリーンなオリジナル・モック非依存土台funnel・旗艦非送客)。+その配線中に見つけた pseudo-language 関連レールの off-topic AP leak を route limit=3 視点で是正 `cda26a8`。
+  - **新角度=route limit=3 の relevance leak**: 「relatedSlugs に off-topic が混ざり、route の既定 limit=3 で on-topic 兄弟が押し出される」leak は cluster維持テスト(limit=4)では検知不能。科目Bクラスタは点検済(本件のみ)だが、**旗艦/論文クラスタ・高可視記事(roadmap/rirekisho/overview)で同型 leak が無いかは未点検**＝次セッションの安全な micro-angle 候補(backlog P2-3 に起案)。
+  - **saturation遵守**: 新記事の inbound は pseudo-language 1本のみ(orphan回避に十分)。taisaku への追加inboundは session13-15/38 の飽和境界に従い**行わず**(過大クロスリンク回避)。
+  - **次の最優先候補**: (a)route limit=3 relevance-leak の旗艦/高可視クラスタ点検(新micro-angle・read-only監査主体)、(b)HD群の人間入力待ち(HD-1〜HD-10)、(c)コード側自律領域は引き続き縮小傾向。
