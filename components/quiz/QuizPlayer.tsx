@@ -282,6 +282,11 @@ export function QuizPlayer({
     const dx = e.changedTouches[0].clientX - touchStart.current.x;
     const dy = e.changedTouches[0].clientY - touchStart.current.y;
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 2 && dx < 0) {
+      // Suppress the synthetic click the browser fires after touchend. Without
+      // it, a left-swipe that began on a choice both advances to the next
+      // question AND lets the simulated click land on the next question's
+      // (now-enabled) choice — selecting an answer the user never intended.
+      e.preventDefault();
       goNext();
     }
     touchStart.current = null;
