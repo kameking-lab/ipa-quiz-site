@@ -1441,3 +1441,19 @@
   - 検証(本番ビルド実測): prerendered `/blog/ipa-kamoku-goukaku-nai.html`(135KB)に核心事実(科目合格/持ち越せ/午前I免除/科目A免除)・funnel6本(fe/ap/koudo-goukaku-ten・午前I免除・科目A免除・fugoukaku-recovery)全render・FAQPage JSON-LD・本文 `](/essay)`=0。inbound両親HTML(fe-goukaku-ten-irt/fugoukaku-recovery)に新記事リンクrender実測。新記事内 /blog link先8本すべてprerendered 200(新規404ゼロ)。回帰pin `kamoku-goukaku-nai-funnel.test.ts`(5件)。
   - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2083全緑(+5) / build OK。
 - **次セッション申し送り**: P2-2 制度vein に「科目合格はない(持ち越し不可)」をcross-exam(durable)で追加。**残る制度/access角度(要吟味・重複裏取り必須)**: (a)受験料/合格証書再発行=moushikomi部分カバー・専用化thin懸念(継続保留)。(b)SGスコア通知=HD-8未検証(見送り)。(c)AP/高度の合格発表専用記事=令和8年度CBT移行が安定するまでstaleness不可。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち は不変。1記事=確実を維持し量産しない。
+
+## セッション89（growth ループ｜2026-06-02 JST）
+**P2-2 事実性監査の取り残し1件を是正＝SC overview の登録セキスペ(RISS)を「業務独占に近い」→「名称独占」に修正（内部矛盾検出で発見）**
+背景（着手前 read-only 監査）:
+- s88 申し送りどおり論文/科目B vein は停止・制度/access の残角度は全て thin/HD/staleness で着手不可を再確認。link audit 実走=183本/1743links/0 FATAL/0 WARN（クロール資産健全）。全 blog(183)が sitemap 収録・/essay ハブの論述ガイド4本は全リンク済・description<60=0/>120=14（後述SKIP）を確認。
+- **発見手法=内部矛盾検出**: `data/blog/exam-data.ts` の `EXAM_PROFILES.sc.career` が登録セキスペ(RISS)を「業務独占に**近い**専門資格」と記述。一方 `it-shikaku-rirekisho-kakikata` 本文(generators.ts:10511)は IPA 試験を「能力認定試験」と正しく対比し、業務独占=弁護士/税理士/建築士 と定義。**自サイト内で矛盾**していた。`grep 業務独占/名称独占` で 名称独占 が corpus に1件も無い一方 業務独占 が SC career に誤用されていることを特定。
+- **裏取り(WebSearch)**: 情報処理安全確保支援士は**名称独占資格**であり業務独占ではない。独占業務は存在せず、登録者だけが「情報処理安全確保支援士／登録セキスペ」の名称を名乗れる(IPA seido/shikumi.html・METI 資料・複数解説で一致)。
+- done×1 [P2-2 事実性] SHA `0ac5588`: `EXAM_PROFILES.sc.career` を「登録セキスペ（RISS）として 3 年ごとの更新で維持する、セキュリティ分野の**名称独占資格（業務独占ではない）**。」へ是正。career は `buildOverviewPost`(generators.ts:60)で全試験の overview 記事(sc-goukaku-benkyouhou 等・indexable・sitemap収録)に描画される＝誤記が overview に伝播していた。session21-32 の称号/事実性是正(SC称号・OWASP版・免除条件・IP配点)と同系の「単一の孤立 hard error・面横断で内部不整合」パターン。
+  - 検証(本番ビルド実測): `.next/server/app/blog/sc-goukaku-benkyouhou.html` に「名称独占資格（業務独占ではない）」が render・旧「業務独占に近い」=0件(grep -c)。
+  - 面横断 consistency 確認: 是正後、SC の RISS framing は **overview(修正) + `sc-shikaku-merit`(「名称を独占使用」既存正) + rirekisho(「能力認定試験」既存正)** で全て名称独占に整合(s22 の面横断手法と同様、是正で内部矛盾を解消)。
+  - 回帰pin2件(`__tests__/data/blog-generators.test.ts` の ST afternoonStrategy 隣に新 describe): `EXAM_PROFILES.sc.career` が 名称独占 を含み「業務独占に近い」を含まない／`sc-goukaku-benkyouhou` body も同様。崩れたら落ちる。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2085全緑(+2) / build OK。
+- **同セッションの SKIP/clean 記録(裏取り済・実害なし=直さず記録)**:
+  - SKIP: blog description >120字が14本(最長143字 koudo-goukaku-ten-ashikiri 等)。blog description は /q と違い hard cap 無しで meta description へ直流。ただし(1)各 description はキーワードを front-load し末尾は「…まで整理します」等の動詞境界、(2)末尾にも実キーワード(例「情報処理安全確保支援士の午後統合」)を含むため、SERP 表示完全性と relevance signal のトレードオフが両義的、(3)順位は測定不可。**両義的＝迷ったら SKIP の安全側**。GSC で個別 CTR が低い URL が判明したら個別対応(P2-1 と同方針)。
+  - clean(対応不要): 受験料=全箇所 7,500円(税込)で一致(faq.ts/moushikomi-nagare)・OWASP=版数 version-agnostic(s21の2021→genericize 完了・残1件は AI ハルシネーション訂正の例示で意図的)・午前I免除=全箇所2年間で一致(dedicated記事ipa-gozen1 3条件正)・FE科目B=20問100分600点で一致・SG科目B=12問で一致・pass rate は EXAM_PROFILES と EXAM_STATS で「おおむね」近似レンジ(年度変動で canonical 値なし=reconcile は editorial で SKIP)・他 career フィールド12件 clean。
+- **次セッション申し送り**: 事実性監査は s21-32「枯渇」とされていたが**内部矛盾検出(grep で対の概念の片方だけ誤用を炙り出す)で1件発見**＝完全枯渇ではない。残る同手法の候補は薄い(主要な単一概念の対は今回 業務独占/名称独占 を潰した)が、新たな cross-source data 対(EXAM_PROFILES↔EXAM_STATS↔EXAM_DEEP_CONTENT の数値/称号)で乖離が出たら個別吟味。論文/科目B vein 停止・afternoon rubric=HD-4待ち・強み4=別タスク・HD群(HD-1/4/5/6/8/9/10/11)=人間待ち・制度/access残角度(受験料再発行=thin/SGスコア=HD-8/AP高度発表=staleness)は不変。1記事=確実を維持し量産しない。
