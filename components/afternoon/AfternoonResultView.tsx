@@ -8,6 +8,7 @@ import type {
   AfternoonScoringResult,
   IndustryId,
 } from "@/lib/afternoon/types";
+import { getSafePdfUrl } from "@/lib/exam-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -226,7 +227,7 @@ export function AfternoonResultView({ question, result }: Props) {
               AIに質問する
             </Button>
             <a
-              href={question.pdfUrl}
+              href={getSafePdfUrl(question.pdfUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex"

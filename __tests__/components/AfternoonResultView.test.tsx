@@ -2,6 +2,7 @@ import { describe, it, expect, beforeEach } from "vitest";
 import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 
 import { AfternoonResultView } from "@/components/afternoon/AfternoonResultView";
+import { IPA_EXAM_INFO_URL } from "@/lib/exam-config";
 import type {
   AfternoonQuestion,
   AfternoonScoringResult,
@@ -78,6 +79,19 @@ describe("AfternoonResultView — 業種セレクタ A11y", () => {
 
     const mfg = screen.getByRole("button", { name: "製造業" });
     expect(mfg.getAttribute("aria-pressed")).toBe("false");
+  });
+
+  it("出典 PDF リンクは廃止 jitec ホストを live IPA 索引へ degrade する", () => {
+    // 全 afternoon データの pdfUrl は廃止された www.jitec.ipa.go.jp を指す。
+    // 生で href に出すと NXDOMAIN の死リンクになるため getSafePdfUrl で gate する。
+    const q = makeQuestion();
+    q.pdfUrl =
+      "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024a06_1/2024a06a_st_pm2_qs.pdf";
+    render(<AfternoonResultView question={q} result={result} />);
+
+    const link = screen.getByRole("link", { name: /出典 PDF を開く/ });
+    expect(link.getAttribute("href")).toBe(IPA_EXAM_INFO_URL);
+    expect(link.getAttribute("href")).not.toContain("jitec.ipa.go.jp");
   });
 
   it("業種を選ぶと pressed 状態と模範論述が切り替わる", () => {
