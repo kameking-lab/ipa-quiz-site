@@ -1053,3 +1053,14 @@
   - **SC午前II免除(`menjo-sc.html`)= SKIP(niche)**: 当初「SC受験者の高volume keyword」と仮説したが、WebFetchで実態は **IPA認定学科(大学院/大学/高度専門士の専門学校)の修了者限定**(セキュリティ110h含む150h履修認定・修了報告から2年)＝対象が極小。一般のSC再受験者向けではない＝thin/niche＝専用記事は過大。SKIP。
   - **履歴書 正式名称 = SKIP(既存カバー)**: `it-shikaku-rirekisho-kakikata` が既に「正式名称・記載順序・記載タイミング」をカバー＝per-exam正式名称の新記事は cannibalization/saturation。SKIP。
 - **申し送り(セッション61)**: 「制度/手続き(免除)」は旗艦と整合する新 content vein。**残候補(要吟味・着手前に既存言及の重複と volume を裏取り)**: 他の制度系で専用ページ不在の高インテント角度を1つずつ吟味(登録(支援士)手続きは `sc-shikaku-merit` で既出=重複SKIP寄り/午前I通過者番号の照会実務は moushikomi-nagare 近接で要重複確認)。安易に量産せず1記事=確実を維持。既存コード候補(related最古年度寄り=SKIP寄り/topic-tagger=人間/HD群=人間待ち)は不変。新規404種別・別試験区分の午後導線は s33-37 で網羅済。安易な水増しはしない。
+
+
+## セッション62（growth ループ）2026-06-02 JST
+**P2-2 新vein継続=「何点で合格」シリーズの最大の取り残し: 高度試験(4段階多段階選抜)の合格基準 専用記事を新設**
+背景: s61 で「制度/手続き(免除)」が旗艦と整合する新 content vein と確認。同系統で read-only 監査したところ、「何点で合格」シリーズが **IP(`ip-goukaku-ten-bunyabetsu`)・FE(`fe-goukaku-ten-irt`)・AP(`ap-goukaku-ten-border`) しか専用ページが無く、高度試験(NW/DB/ES/SC/ST/SA/PM/SM/AU)の合格基準=4段階多段階選抜(午前I・午前II・午後I・午後II 各60点・前段階未達なら先は採点されない)を扱う専用ページが不在**だった取り残しを発見。「○○ 何点で合格 / 午後I 足切り / 午後II 採点されない / 高度試験 採点の仕組み」は高インテント・競合薄で、合否を分ける午後I/午後II=旗艦(午後AI採点)の主戦場と完全整合。`ipa-koudo-9kubun-chigai` は区分選び(難易度/記述量/キャリア)であって採点基準は扱わず=非重複を確認。
+- done×1 [P2-2/新vein] SHA `f7d084e`: **新記事 `koudo-goukaku-ten-ashikiri`「高度試験は何点で合格？ 多段階選抜(足切り)の仕組み」**を新設。
+  - 事実裏取り(SSOT `lib/seo/exam-content.ts` の各区分 leadParagraph と照合): 高度試験は **午前I・午前II・午後I・午後II の4段階**・各100点満点・基準点60点・段階ごと判定(合算でない)・多段階選抜(前段階が基準点未満なら先は採点されず不合格)。形式=午前I 50分/午前II 40分/午後I 90分/午後II 120分(技術系=記述・管理系=論述)。**SC(情報処理安全確保支援士)は2023年度に午後I・II統合で午後(150分)1つ=3段階**という事実差を明記(s21/22で是正した SC午後統合 drift を新記事で踏襲・誇大/誤記回避)。AP=2段階素点・FE=IRT との違いも整理しシリーズ相互リンク。
+  - funnel規律: 論述区分(ST/SA/PM/SM/AU)の午後II論文→旗艦 `/essay`(参考評価+採点基準は非公開 明記)・記述区分(NW/DB/ES/SC)→各ハブ(/nw /db /sc)+AIコパイロット・午前I免除の土台=`/ap`。
+  - inbound(orphan回避): `ipa-koudo-9kubun-chigai`(比較3 午後記述量節)・`ipa-gozen1-menjo-jouken`(4段階構成の言及節)・`ap-goukaku-ten-border`(多段階選抜節)の本文から文脈内リンクを配線+relatedSlugs相互(ap-border/午前I免除/koudo-9kubun/fe-irt)。
+  - 検証(本番ビルド実測): `/blog/koudo-goukaku-ten-ashikiri.html` prerendered・H1/FAQPage JSON-LD有・内部リンク先(/blog 4本・/ap /nw /db /sc /essay)全prerendered 200・`sitemap/blog.xml.body` に収録・inbound 3面でリンクrender確認。全ゲート緑(typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1937[+5 新pin]/build OK)を commit前に単独実行。回帰pin `__tests__/seo/koudo-goukaku-ten-ashikiri-funnel.test.ts`(4段階/各60点/多段階選抜/SC午後統合3段階の核心事実・論述→/essay参考評価・記述→各ハブ・inbound3面・FAQPage・sitemap収録=崩れたら落ちる)。
+- **申し送り(セッション62)**: 「何点で合格」シリーズは IP/FE/AP/高度 で網羅完了(SG は HD-8=スコア通知形式未検証で見送り継続)。「制度/手続き・合格基準」系は旗艦整合の良 vein だが慎重に1記事ずつ。**残候補(要吟味)**: 制度系で専用ページ不在の高インテント角度を1つずつ裏取り(登録(支援士)手続き=`sc-shikaku-merit`重複SKIP寄り/午前I通過者番号照会=moushikomi-nagare近接で要重複確認)。既存コード候補(related最古年度寄り=SKIP寄り/topic-tagger=人間/HD群 HD-1/4/5/6/8/9=人間待ち)は不変。安易な水増しはしない。
