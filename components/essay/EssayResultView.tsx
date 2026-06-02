@@ -11,6 +11,30 @@ import type {
   EssaySubResult,
 } from "@/lib/essay/types";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
+import { getEssayQuestionsByExam } from "@/lib/essay/load";
+import { examLabel, formatYearSeason } from "@/lib/utils";
+
+// 強み4: 採点→弱点→次の練習の伴走。汎用LLMは単発採点で終わるが、過去問AIは
+// 採点結果の弱点（最も低い評価軸）を言語化し、同区分の他の論述問題へ誘導して
+// 「受かるまで導く」連続性を作る。横断分析（複数回採点の傾向）は段階実装の次段。
+const AXIS_LABELS = {
+  relevance: "設問への適合",
+  logic: "論理構成",
+  concreteness: "具体性",
+  industryFit: "業種事例の適切さ",
+} as const;
+
+function weakestAxis(result: EssayGradingResult): { key: string; label: string } | null {
+  const subs = result.subResults;
+  if (subs.length === 0) return null;
+  const keys = ["relevance", "logic", "concreteness", "industryFit"] as const;
+  let worst: { key: (typeof keys)[number]; avg: number } | null = null;
+  for (const k of keys) {
+    const avg = subs.reduce((s, r) => s + (r.axes?.[k] ?? 0), 0) / subs.length;
+    if (worst === null || avg < worst.avg) worst = { key: k, avg };
+  }
+  return worst ? { key: worst.key, label: AXIS_LABELS[worst.key] } : null;
+}
 
 const RANK_META: Record<EssayRank, { label: string; sub: string; classes: string; ring: string }> = {
   A: {
@@ -124,6 +148,62 @@ export function EssayResultView({ result, question }: Props) {
           </CardContent>
         </Card>
       )}
+
+      {(() => {
+        const weak = weakestAxis(result);
+        const nextEssays = getEssayQuestionsByExam(question.exam)
+          .filter((q) => q.id !== question.id)
+          .slice(0, 3);
+        if (!weak && nextEssays.length === 0) return null;
+        return (
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2 text-base">
+                <ArrowRight className="h-4 w-4 text-sky-500" />
+                弱点を踏まえて次に取り組む
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-3">
+              {weak && (
+                <p className="text-sm text-zinc-700 dark:text-zinc-300">
+                  今回の論述で最も伸びしろが大きいのは{" "}
+                  <span className="font-semibold text-sky-700 dark:text-sky-300">
+                    「{weak.label}」
+                  </span>{" "}
+                  でした。この観点を意識して、同じ {examLabel(question.exam)} の他の論述で繰り返し練習しましょう。
+                </p>
+              )}
+              {nextEssays.length > 0 && (
+                <ul className="space-y-2">
+                  {nextEssays.map((q) => (
+                    <li key={q.id}>
+                      <Link
+                        href={`/essay/${q.exam}/${q.id}`}
+                        className="flex items-center justify-between gap-2 rounded-xl border border-zinc-200 bg-zinc-50 px-4 py-2.5 text-sm text-zinc-700 transition-colors hover:border-sky-300 hover:text-sky-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200 dark:hover:border-sky-700 dark:hover:text-sky-300"
+                      >
+                        <span className="min-w-0">
+                          <span className="block truncate font-medium">{q.title}</span>
+                          <span className="mt-0.5 block text-xs text-zinc-500 dark:text-zinc-400">
+                            {formatYearSeason(q.year, q.season)} の論述を AI 採点で練習
+                          </span>
+                        </span>
+                        <ArrowRight className="h-4 w-4 flex-shrink-0" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <Link
+                href={`/essay/${question.exam}`}
+                className="inline-flex items-center gap-1 text-xs font-medium text-sky-700 hover:underline dark:text-sky-300"
+              >
+                {examLabel(question.exam)} の論述問題をすべて見る
+                <ArrowRight className="h-3 w-3" />
+              </Link>
+            </CardContent>
+          </Card>
+        );
+      })()}
 
       <Link
         href="/blog/koudo-ronbun-hyouka-rank"
