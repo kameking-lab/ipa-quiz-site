@@ -895,3 +895,14 @@
 - 検証(各本共通): typecheck0/lint0err(warnは未追跡ux-audit-screenshots.mjsのみ)/test 1906緑/build OK。本番ビルド `.next/server/app/blog/<slug>.html` で `"@type":"FAQPage"`存在・`"@type":"Question"`×4・FAQ内/essayリーク0(footer由来3件のみ)を実測。
 - 記録: backlog P2-2 残りFAQ未設置 26→≈22/165 へ更新。clean候補リストから4本除去。
 - 次セッション候補: 残clean候補(mensetsu-katsu-yoho/syotaikennsya-isshukan-puran/yoshu-vs-douju-jiritsu/old-syllabus-vs-new/eligible-companies/zenjitsu-checklist/data-driven-revision/mokuhi-mondai-tukurikata/ai-coplilot-prompt-tips/ai-copilot-rag-citation/ai-katsuyou-benkyouhou/nw-protocol-deep-understanding/gogo-vs-am)からFAQ継続。
+
+## セッション51（growth ループ・2026-06-02 JST）
+- 監査(read-only): P2-2 個別FAQ vein の clean候補(backlog/session50リスト)を body長・事実性・funnel scope で精読確認。非論文高intent記事5本を選定。各記事に `## よくある質問` 節(extractFaq形式・**Q. ...？**+回答1段落)を本文事実と厳密整合させて追加=FAQPage JSON-LD 自動生成。
+- done×5(全て gate緑[typecheck0/lint0err/test1906pass/build OK]を commit前に単独実行・本番ビルドHTMLで FAQPage×1+Question×4 実測):
+  - `ipa-shiken-gogo-vs-am`(午前午後比較) SHA `f4956e8`: 対策の順序/時間配分30-40%対60-70%/午後対策の中身/午前I免除2年の4Q&A。非論文=AIコパイロット(/ap)+復習モードfunnel・旗艦/essay非送客(FAQ内/essay=0、footer由来3件のみ)。
+  - `shiken-zenjitsu-checklist`(試験前日チェックリスト) SHA `31c776c`: 前日学習/持ち物(CBT IP·SG·FE=筆記不要/PBT AP·高度=鉛筆必須を明記し本文PBT前提を補正)/睡眠6-7h/当日食事の4Q&A。非論文=復習モードfunnel・旗艦非送客(FAQ内/essay=0)。
+  - `ipa-old-syllabus-vs-new`(シラバス改訂対応) SHA `9b4a3fb`: 古い過去問どこまで遡る/改訂で変わる物=新技術 不変=基礎理論/改訂への備え/年度別モードで年度絞りの4Q&A。非論文=年度別モードfunnel・旗艦非送客(FAQ内/essay=0)。
+  - `ipa-shiken-data-driven-revision`(学習履歴CSV分析) SHA `0e23e41`: エクスポート手順/分析軸=分野別正答率50%未満重点/活かし方/週1頻度の4Q&A。非論文=ダッシュボード+復習モードfunnel・旗艦非送客(FAQ内/essay=0)。
+  - `ipa-shiken-yoshu-vs-douju-jiritsu`(予備校/通信/独学比較) SHA `96802a0`: 区分別選び方/費用相場/独学の論文添削課題→旗艦/essay(AI採点)を参考評価明記で送客/ハイブリッド戦略の4Q&A。**論文5区分(ST/SA/PM/SM/AU)scope一致時のみ**旗艦funnel・本文の「論文添削が独力で困難」課題に整合・採点基準非公開=参考評価明記で誇大回避。FAQ内可視/essayリンク1件(href="/essay"を本番HTMLで実測・extractFaqはJSON-LDからURL除去しテキスト"AI 採点"化=構造化データにURL混入なし・参考評価2件含む)。
+- 鉄則順守: 本文既存の数値・形式と一致(時間配分/CBT区分/シラバス改訂/履歴分析/予備校費用相場)・非論文は/essay非送客 論文scope一致のみ旗艦(参考評価明記)・format特定回避(HD-9)・新規404ゼロ・corpus-wide blog-faq-jsonld 回帰自動カバー。
+- 記録: 個別FAQ未設置 ≈22/165→≈17/165。clean候補リストから5本消化(残: mensetsu-katsu-yoho/syotaikennsya-isshukan-puran/eligible-companies/mokuhi-mondai-tukurikata/ai-coplilot-prompt-tips/ai-copilot-rag-citation/ai-katsuyou-benkyouhou/nw-protocol-deep-understanding)。次セッションは残clean候補から継続。
