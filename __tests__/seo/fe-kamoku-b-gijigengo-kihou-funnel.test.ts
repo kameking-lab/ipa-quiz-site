@@ -61,6 +61,27 @@ describe("FE 科目B 擬似言語 記法早見表記事の事実性と土台 fun
     expect(body).toContain("科目B そのものの形式ではない");
   });
 
+  it("連結リスト・木構造で出てくる クラス/メンバ参照(.)/参照/未定義 の記法を述べている（データ構造トレース記事の記法基盤）", () => {
+    // 既存の発展トレース記事(線形探索・二分探索・選択ソート・再帰・スタック/キュー)は
+    // すべて配列＋添字のみで書けたが、連結リスト・木構造は record/参照型の記法を要する。
+    // IPA 公開のサンプル問題・公開問題で実際に使われる記法（クラス＋メンバ変数、
+    // 変数.メンバ のドット参照、インスタンスへの参照、未定義＝終端/空、大域変数、
+    // コンストラクタ クラス名(引数)）をこの早見表で確立したことを pin する。
+    // これが将来の連結リスト/木構造トレース記事の記法基盤になる。
+    const body = getBlogPostBySlug(SLUG)!.body;
+    expect(body).toContain("クラス");
+    expect(body).toContain("メンバ変数");
+    // メンバはドットでたどる（IPA 公開問題の表記）
+    expect(body).toContain("curr.next");
+    expect(body).toContain("ドット");
+    // 参照（インスタンスへの参照）と未定義（終端・空）
+    expect(body).toContain("参照");
+    expect(body).toContain("未定義");
+    // 大域変数の宣言とコンストラクタ
+    expect(body).toContain("大域");
+    expect(body).toContain("ListElement(qVal)");
+  });
+
   it("訓練法記事の関連レール(route limit=3)が全て科目B on-topic で新記法記事を含み、off-topic AP記事を含まない", () => {
     // ルートは getRelatedPosts の既定 limit=3 で関連レールを描画する。従来の
     // pseudo-language の relatedSlugs は off-topic な ap-gogo-sentaku(AP午後選択)が
