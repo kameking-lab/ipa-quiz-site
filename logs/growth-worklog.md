@@ -1335,3 +1335,9 @@
   - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-sort-trace.html`(150KB)・選択ソート×13/「見つけた min」表セル/FAQPage JSON-LD をHTML実測。body markdown `](/essay`=0(href="/essay"の1件はfooter chrome)。inbound 2面(nibun-tansaku・wakaranai)でリンクrender実測・outbound 6本(科目B記事)全prerendered 200(新規404ゼロ)・sitemap(blog.xml.body)収録。回帰pin `fe-kamoku-b-sort-trace-funnel.test.ts`(7件)。
   - 全ゲート緑(typecheck0 / lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/ test 2033 / build OK)＝commit前に単独実行・緑目視。
 - **vein掘り残し（次セッション候補・要吟味）**: 発展パターン vein=線形(s81)→二分探索(s82)→ソート/選択(s83)。**残る発展パターン=ソートの別種(バブルソートの完全トレース)・再帰(階乗/フィボナッチ・コールスタック)・スタック/キュー**のトレース実演は別記事化可。s25「1記事=確実」/s81「様子見・量産しない」を尊重し、本セッションはソート1本に絞った。次セッションが続けるなら**再帰(コールスタックという新概念で非重複・高つまずき)**が最有力候補・1本ずつ・手計算検算必須。HD群(HD-1/4/5/6/8/9/10/11)/topic-tagger=人間待ちは不変。1改善=確実を維持。
+
+## 人間指示セッション（強み実装）2026-06-02 JST — P0-強み 午後AI採点の4つの堀
+- 社長承認: 採点=上位モデル切替 / 4堀全実装 / コスト当面無料・課金UI作らない / 採点AI=午後採点専用。
+- **コーディネーション**: P0-強み は本セッションが直接実装する。growthループは P0-強み に着手しないこと（backlog冒頭に明記）。ループは404/P1/P2の他を継続。
+- 監査（実測）: essay-grade=論文(ST/SA/PM/SM/AU) / scoring=午後記述(AP/SC/NW/DB/ES)。両方 resolveModel("free")=flash-lite。essay-grade は既に missingElements/improvements 出力・essay問題に modelOutline あり。cost-guard(¥50k)・rate-limit 既存。直近ループは app/lib/components を触っていない（衝突リスク低）。
+- 着手順: 強み2(モデル上位化)→強み3(専用化/injection)→強み1(根拠データ型)→強み4(弱点→類題)。各別コミット・全緑ゲート・実測検証。
