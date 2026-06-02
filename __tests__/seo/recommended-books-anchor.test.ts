@@ -33,3 +33,21 @@ describe("/recommended-books/[exam] — per-book fragment anchors resolve", () =
     expect(source).toContain("#${book.id}`");
   });
 });
+
+describe("InlineBookHint — title deep-links to the book's card anchor", () => {
+  const hintSource = readFileSync(
+    join(process.cwd(), "components/quiz/InlineBookHint.tsx"),
+    "utf8",
+  );
+
+  // The affiliate hint highlights one book; its title should link to that
+  // book's full card (Amazon + 楽天 + 使い分け表), not the page top, now that
+  // the cards carry id anchors. Pin the fragment-href wiring.
+  it("builds /recommended-books/{exam}#{book.id} for the highlighted book", () => {
+    expect(hintSource).toContain("`${allBooksHref}#${book.id}`");
+  });
+
+  it("renders the book title as a Link to that deep href", () => {
+    expect(hintSource).toMatch(/<Link href=\{bookDetailHref\}[\s\S]*?\{book\.title\}/);
+  });
+});
