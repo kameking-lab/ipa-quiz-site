@@ -906,3 +906,14 @@
   - `ipa-shiken-yoshu-vs-douju-jiritsu`(予備校/通信/独学比較) SHA `96802a0`: 区分別選び方/費用相場/独学の論文添削課題→旗艦/essay(AI採点)を参考評価明記で送客/ハイブリッド戦略の4Q&A。**論文5区分(ST/SA/PM/SM/AU)scope一致時のみ**旗艦funnel・本文の「論文添削が独力で困難」課題に整合・採点基準非公開=参考評価明記で誇大回避。FAQ内可視/essayリンク1件(href="/essay"を本番HTMLで実測・extractFaqはJSON-LDからURL除去しテキスト"AI 採点"化=構造化データにURL混入なし・参考評価2件含む)。
 - 鉄則順守: 本文既存の数値・形式と一致(時間配分/CBT区分/シラバス改訂/履歴分析/予備校費用相場)・非論文は/essay非送客 論文scope一致のみ旗艦(参考評価明記)・format特定回避(HD-9)・新規404ゼロ・corpus-wide blog-faq-jsonld 回帰自動カバー。
 - 記録: 個別FAQ未設置 ≈22/165→≈17/165。clean候補リストから5本消化(残: mensetsu-katsu-yoho/syotaikennsya-isshukan-puran/eligible-companies/mokuhi-mondai-tukurikata/ai-coplilot-prompt-tips/ai-copilot-rag-citation/ai-katsuyou-benkyouhou/nw-protocol-deep-understanding)。次セッションは残clean候補から継続。
+
+## セッション52（growth ループ・2026-06-02 JST）
+- 監査(read-only): P2-2 個別FAQ vein の clean候補(session51残リスト)を body長・事実性・funnel scope で精読確認。5本選定。各記事に `## よくある質問` 節(extractFaq形式・**Q. ...？**+回答1段落)を本文事実と厳密整合させて追加=FAQPage JSON-LD 自動生成。1コミット(SHA `bacc939`)。
+- done×5(全て gate緑[typecheck0/lint0err〔warnは未追跡 ux-audit-screenshots.mjs のみ〕/test1906pass/build OK]を commit前に単独実行・本番ビルドHTMLで FAQPage×1+Question×4 実測):
+  - `ipa-shiken-mensetsu-katsu-yoho`(キャリア/転職): 年収への効き方/転職市場評価/資格の数より組み合わせ/取得順の4Q&A。非論文=旗艦/essay非送客(essayLink=1=footerのみ実測)。
+  - `ipa-shiken-ai-katsuyou-benkyouhou`(AI活用): 質問の書き方5軸/二重チェック/論文添削→旗艦/essay(ST/SA/PM/SM/AU・参考評価明記)/汎用AIとコパイロットの違いの4Q&A。**論文添削Q&Aで旗艦funnel可**(本文 template4 が既に /essay リンク済=session14 `05bec2b`)。essayLink=3(本文+FAQ Q3+footer)・JSON-LD md-link-leak=0実測。
+  - `ipa-shiken-mokuhi-mondai-tukurikata`(模試): 受験回数(3ヶ月前/1ヶ月前の2回)/市販社内自作の使い分け/模試で取れても本番落ちる原因/点数より弱点の4Q&A。非論文=旗艦非送客(essayLink=1)。
+  - `ipa-shiken-syotaikennsya-isshukan-puran`(初学者1週間): 7日プラン/試験選び/教材3点/やってはいけない事の4Q&A。非論文=旗艦非送客(essayLink=1)。
+  - `nw-protocol-deep-understanding`(NW午後): 暗記不可=5視点/午後70%のコツ/Wireshark/コパイロット活用の4Q&A。NW午後=記述式(論文非該当)=旗艦非送客・/nw funnel(essayLink=1)・JSON-LD md-link-leak=0実測。
+- 鉄則順守: 本文既存の数値・形式と一致(資格手当5,000〜30,000円/質問5軸/模試2回/教材2,500〜4,000円/NW午後70%)・非論文は/essay非送客 論文添削scope一致のみ旗艦(参考評価明記)・format特定回避(HD-9)・新規404ゼロ・corpus-wide blog-faq-jsonld 回帰自動カバー。
+- 記録: 個別FAQ未設置 ≈17/165→≈12/165。clean候補リストから5本消化(残clean: eligible-companies/ai-coplilot-prompt-tips/ai-copilot-rag-citation-katsuyou=各 body短め len~1000-2300)。次セッションは残clean候補から継続(短stub<800は対象外・要注意フラグ ap-gogo-sentaku=HD-4/sc-ronbun=HD-6/年次snapshot=SKIP は除外継続)。
