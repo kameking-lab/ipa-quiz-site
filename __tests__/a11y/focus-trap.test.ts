@@ -41,10 +41,11 @@ describe("trapTabTarget — modal Tab wrapping", () => {
   });
 });
 
-// The pure helper above is only useful if CopilotMobileSheet actually wires it
-// onto its aria-modal dialog. Pin the wiring so the trap can't be silently
-// removed (the panel renders too heavily to mount cheaply in jsdom).
-describe("CopilotMobileSheet — focus trap is wired to the dialog", () => {
+// The pure helper above is only useful if the copilot dialogs actually wire it
+// onto their aria-modal containers. Pin the wiring so the trap can't be silently
+// removed (the panel renders too heavily to mount cheaply in jsdom). Both the
+// mobile sheet and the desktop floating panel must trap Tab.
+describe("Copilot dialogs — focus trap is wired to the dialog", () => {
   const source = readFileSync(
     join(process.cwd(), "components/copilot/CopilotPanel.tsx"),
     "utf8",
@@ -55,8 +56,9 @@ describe("CopilotMobileSheet — focus trap is wired to the dialog", () => {
     expect(source).toContain("trapTabTarget(");
   });
 
-  it("the aria-modal dialog has an onKeyDown handler", () => {
-    // The dialog container carries role="dialog" / aria-modal + onKeyDown.
-    expect(source).toMatch(/onKeyDown=\{onDialogKeyDown\}/);
+  it("both aria-modal dialogs (mobile sheet + desktop floating) have an onKeyDown trap", () => {
+    // Each dialog container carries role="dialog" / aria-modal + onKeyDown.
+    const wired = source.match(/onKeyDown=\{onDialogKeyDown\}/g) ?? [];
+    expect(wired.length).toBeGreaterThanOrEqual(2);
   });
 });

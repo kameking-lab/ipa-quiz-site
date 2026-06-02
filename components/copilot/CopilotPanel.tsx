@@ -1518,6 +1518,26 @@ export function CopilotDesktopFloating({
     return () => window.clearTimeout(t);
   }, [open]);
 
+  // Trap Tab focus inside the dialog (WCAG 2.4.3), mirroring the mobile sheet.
+  // aria-modal alone does not stop the browser from tabbing into the page
+  // behind the panel, so wrap at the edges. Focusables live inside panelRef
+  // (the overlay is aria-hidden and not focusable).
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !panelRef.current) return;
+    const focusables = Array.from(
+      panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
+
   // Mirror the open state into the shared signal so the global AI quota
   // badge only shows while a copilot panel is actually open.
   React.useEffect(() => {
@@ -1547,6 +1567,7 @@ export function CopilotDesktopFloating({
           role="dialog"
           aria-modal="true"
           aria-label="AI コパイロット"
+          onKeyDown={onDialogKeyDown}
         >
           {/* Semi-transparent overlay so the underlying question stays readable. */}
           <div
