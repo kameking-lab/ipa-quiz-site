@@ -87,6 +87,7 @@ describe("flagship /essay structured data", () => {
     expect(SOURCE).toContain("const ESSAY_GUIDE_POSTS");
     expect(SOURCE).toContain("/blog/${p.slug}");
     expect(SOURCE).toContain('slug: "koudo-ronjutsu-kakikata-kotsu"');
+    expect(SOURCE).toContain('slug: "koudo-ronbun-jikan-haibun"');
     expect(SOURCE).toContain('slug: "koudo-ronbun-hyouka-rank"');
     expect(SOURCE).toContain('slug: "koudo-ronjutsu-jiko-saiten"');
     expect(SOURCE).toContain("論述の書き方・採点を学ぶ");

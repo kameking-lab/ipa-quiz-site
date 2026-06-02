@@ -62,6 +62,10 @@ const ESSAY_GUIDE_POSTS: { slug: string; label: string }[] = [
     label: "合格答案の構成と書き方のコツ",
   },
   {
+    slug: "koudo-ronbun-jikan-haibun",
+    label: "120分の時間配分（問題選択・骨子・執筆・見直し）",
+  },
+  {
     slug: "koudo-ronbun-hyouka-rank",
     label: "評価ランク（A〜D）の判定基準",
   },
