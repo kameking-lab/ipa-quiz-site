@@ -885,3 +885,13 @@
   - `kakomon-ai-vs-paper`(紙vsアプリ) SHA `df4bf21`: どちら買う/アプリだけで合格/紙は不要か/併用配分の4Q&A。復習モード+AIコパイロットfunnel・非論文=旗艦非送客。
 - 結果: 個別FAQ未設置 30/165→26/165。backlog clean候補リストから4本消化(残: fugoukaku-recovery/mensetsu/tsuukin/syotaikennsya/yoshu-douju/old-new-syllabus/eligible-companies/zenjitsu-checklist/shippai-7/pomodoro/data-driven/mokuhi/prompt-tips/rag-citation/ai-katsuyou/nw-protocol/gogo-vs-am 他)。
 - 鉄則順守: 本文既存の数値・形式と一致(300時間/CBT区分/午前計算/紙アプリ)・非論文は/essay非送客・format特定回避・新規404ゼロ・corpus-wide blog-faq-jsonld 回帰自動カバー。次セッションは残clean候補から継続。
+
+## セッション50（growth ループ・2026-06-02 JST）
+- 監査(read-only): P2-2 個別FAQ vein の clean候補(backlog記載)を body長・事実性で精読確認。4本選定。
+- done: [P2-2/FAQ] **不合格リカバリー `ipa-shiken-fugoukaku-kara-no-recovery` をFAQPage化** SHA `a20bf4e`。高intent「IPA試験 落ちた/不合格」。4Q&A(同区分再挑戦/再受験時期=春秋区分は約半年後・CBT3区分IP/SG/FEは通年/学習法見直し/3ヶ月プラン)。再受験時期は誇大回避でCBT通年を明記。非論文=旗艦/essay非送客。
+- done: [P2-2/FAQ] **受からない7パターン `shippai-pattern-7` をFAQPage化** SHA `d1918f5`。4Q&A(7パターン要約/教材コレクター/丸暗記/完璧主義の60%基準)。本文の脱出ルートと整合。非論文=footer1。
+- done: [P2-2/FAQ] **通勤スキマ学習 `ipa-shiken-tsuukin-jikan-katsuyou` をFAQPage化** SHA `28e61e0`。4Q&A(30分で合格可否/時間配分3ブロック/車内継続/不足補完)。推奨ルーチンと整合。非論文=footer1。
+- done: [P2-2/FAQ] **ポモドーロ `ipa-shiken-pomodoro` をFAQPage化** SHA `957a788`。4Q&A(基本ループ25+5/集中続かない人/休憩可否/1日セット数)。非論文=footer1。
+- 検証(各本共通): typecheck0/lint0err(warnは未追跡ux-audit-screenshots.mjsのみ)/test 1906緑/build OK。本番ビルド `.next/server/app/blog/<slug>.html` で `"@type":"FAQPage"`存在・`"@type":"Question"`×4・FAQ内/essayリーク0(footer由来3件のみ)を実測。
+- 記録: backlog P2-2 残りFAQ未設置 26→≈22/165 へ更新。clean候補リストから4本除去。
+- 次セッション候補: 残clean候補(mensetsu-katsu-yoho/syotaikennsya-isshukan-puran/yoshu-vs-douju-jiritsu/old-syllabus-vs-new/eligible-companies/zenjitsu-checklist/data-driven-revision/mokuhi-mondai-tukurikata/ai-coplilot-prompt-tips/ai-copilot-rag-citation/ai-katsuyou-benkyouhou/nw-protocol-deep-understanding/gogo-vs-am)からFAQ継続。
