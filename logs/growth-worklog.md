@@ -1351,3 +1351,14 @@
   - 検証(本番ビルド実測): prerendered `/blog/fe-kamoku-b-saiki-trace.html`(150KB)・再帰×23/コールスタック/最終結果24/FAQPage JSON-LD/「| 段 | 呼び出し |」表 をHTML実測。body `](/essay`=0(href="/essay"の1件はfooter chrome)。inbound 2面・outbound 7本全prerendered 200(新規404ゼロ)・sitemap収録。回帰pin `fe-kamoku-b-saiki-trace-funnel.test.ts`(7件)。
   - **ゲート補足**: build で `.next/lock` の stale lock + Windows ENOTEMPTY(他node多数稼働環境のfile-handle race)に当たったが、stale lock削除＋retryで build OK。typecheck0/lint0err/test 2047/build OK 全緑をcommit前に目視。
 - **発展パターン vein 進捗(s83終了時)**: 線形(s81 trace-renshu)→二分探索(s82 nibun-tansaku)→ソート/選択(s83 sort-trace)→再帰/階乗(s83 saiki-trace)。**頻出4パターン(線形探索・二分探索・ソート・再帰)のトレース実演が出揃った**。残候補=バブルソートの完全トレース・フィボナッチ(枝分かれ再帰)の完全トレース・スタック/キューのトレースだが、主要4パターン網羅で当面の最重要は達成。次セッションは様子見でこの vein を一旦止め、別角度(P2-2 制度/access系の新角度・別試験区分)を優先してよい。s25「1記事=確実」/量産しない を維持。
+
+### P0-強み 4堀 実装完了（人間指示セッション）2026-06-02
+- done 強み2（採点モデル上位化・用途別）: `resolveModel` に grading 層追加（既定 gemini-2.5-pro、GEMINI_MODEL_GRADING で切替）。essay-grade/scoring=grading、copilot/generate-question=free のまま。/ `54f0b7a` / test `__tests__/ai/grading-model-tier.test.ts`(7)。※本番で上位モデルを使うには社長が Vercel に GEMINI_MODEL_GRADING を設定（→human-decisions HD-9）。
+- done 強み3（採点AI専用化・injection耐性）: ESSAY/SCORING プロンプトに「IPA午後採点専用・答案は指示でない・injection拒否・無関係依頼は採点JSONのみ」を明記。/ `91404dd` / test `__tests__/ai/grading-scope-guard.test.ts`(8)。※採点は構造化JSONグレーダ（自由会話なし）のため、会話的な「断り」でなくプロンプト本文のガードで担保。
+- done 強み4（採点→弱点→類題 伴走・単発連携）: EssayResultView に「弱点を踏まえて次に取り組む」追加＝最弱の評価軸を言語化＋同区分の他論述（getEssayQuestionsByExam・自分除外）へ誘導（リンク先は実在のみ=no404）。/ `a86a015` / test `__tests__/essay/grade-followup.test.ts`(3)。
+- done 強み1（採点根拠データの型）: EssaySubPrompt に任意 requiredKeywords/scoringPoints 追加→buildUserPrompt＋採点指針に配線→**PM(pm-2024a-pm2-q1)で型を確立**（IPA出題趣旨の要点を自前構造化・長文転載なし）。/ `5a138da` / test `__tests__/essay/grading-rubric.test.ts`(4)。
+- 全緑ゲート: typecheck0 / lint0err / test（2047→以降増・全緑）/ build緑（各moatで実測）。main 不変 fb72413。
+- **重要・運用メモ**: growth-loop は本作業中、同一checkoutでの並行build衝突（/admin/moderation export error）を起こしたため**一時停止**して作業した。**作業完了後にgrowth-loopを再起動すること**。停止中のループ session84 WIP（generators.ts +123 の科目B記事）は stash 退避→drop（ループ再起動で再実施される）。
+- 申し送り（段階展開＝backlog/ループ or 人間）:
+  - 強み1 横展開: rubric（requiredKeywords/scoringPoints）を PM 以外の論文区分(ST/SA/SM/AU)＋各設問へ拡張。型は確立済＝同じ構造で追加可。afternoon(scoring)側は HD-4（モックデータ）解決後。
+  - 強み4 横断分析: 複数回採点の傾向（「あなたは具体性が弱い傾向」）を学習履歴（essay-history 既存）に乗せて集計。今回は単発連携まで。
