@@ -1876,3 +1876,8 @@ content/factual/structured-data/dead-anchor/OG vein が全て saturation のた�
 - 検証(崩れたら落ちる): (1)全ゲート緑 — typecheck0 / lint 0err(既存の untracked `scripts/ux-audit-screenshots.mjs` warning 1件のみ=本変更外) / test 2207全緑(+1) / build OK。(2)**本番ビルド実測**: `.next/server/app/index.html` に `<link rel="alternate" type="application/rss+xml" href="https://www.kakomon-ai.jp/feed.xml"/>` 出力を grep 確認。新規404なし(既存 route への additive link)。
 - push: growth-integration `c0d1142..8a1a115`。
 - 所見: RSS vein の残(区分別フィード・Atom/JSON Feed 併設)は s113 通り thin/量産リスクで要吟味＝着手しない。home autodiscovery で主要3発見面(/ ・/blog ・/blog/[slug])が出揃った。
+
+### セッション114 cycle2 — CBT予約 専用記事(s110 seed)を overlap 再評価で SKIP 確定
+- 着手前 read-only 監査: `data/blog/generators.ts` の「予約」13箇所を実測。`ipa-shiken-moushikomi-nagare` L5891-5895 が既に予約**ルール**(前々日まで/変更は規定回数まで無料/当日キャンセル原則返金なし)を1段落で網羅・L11284 が off-peak も既出。
+- 判断: seed の非重複増分は「予約が取れない/会場埋まる→早期予約・会場選び」のみ=narrow。残 precise facts(変更回数/手数料/返金)は staleness exposure 大で hedge 必須＝既存 L5895 と同型再掲になり rules で heavy overlap。seed 自身の SKIP 条件(moushikomi-nagare/cbt-toujitsu と重複 thin なら SKIP)＋s66 precedent＋「迷ったら SKIP（安全側）」で **SKIP 確定**(コード変更なし)。backlog の seed 行に SKIP evidence を追記。再着手は GSC で当該 pain の実需要確認後(人間判断)。
+- 本セッション成果: cycle1 = home page RSS autodiscovery 是正(`8a1a115`・本番HTML実測・回帰pin)。cycle2 = CBT予約 seed の SKIP 確定(評価作業)。content/dead-link/FAQ/funnel/dead-anchor vein は s1-113 で軒並み枯渇のため、確実な技術改善1件＋evidenced SKIP1件で正常終了(量より確実性)。
