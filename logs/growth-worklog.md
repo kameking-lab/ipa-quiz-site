@@ -971,3 +971,25 @@
 - **★keyword面 orphan vein 完全打ち止め**: 個別 keyword LP(session54/55で9/11配線)+ `/keywords`索引(本session)の文脈内 inbound が全て解消。残2 LP は着手不可フラグ付き(fe-kamoku-b双子重複SKIP/sc-incident HD-6保留)。
 - 鉄則順守: exam横断ハブ記事=試験非依存ゆえ exam一致制約は非該当・本文既存トピックと厳密一致・additive・新規404ゼロ・anchorは内容語で誇大回避・全ゲート緑をcommit前単独実行。
 - 申し送り(セッション56): code-side の主要 vein(404掃除/soft-404/FAQ/funnel/内部リンク orphan/構造化データ/meta/keyword LP orphan/keyword索引 inbound)は**全面的に枯渇確認**。残るは全て HD 待ち(HD-1 GSC404一覧/HD-4 AP午後モック投入/HD-5 essays noindex/HD-6 SC午後frame/HD-9 overviewテンプレ)= 人間判断。次セッションは backlog P2-3c(新起案・下記)か、新角度の起案を要する。安易な水増し配線(saturation)はしない。
+
+## セッション57（growth ループ）2026-06-02 JST
+**P2-3c 消化 + keyword LP surface の relevance-leak/事実性 是正（3サイクル）**
+- done×1 [P2-3c] **キーワードLP→親ブログ解説への「さらに深く学ぶ」逆リンクで dead-end 解消** SHA `95ebd55`:
+  - 薄い keyword LP(800〜1,500字)は索引/blogから inbound を得たが、LP自身からの onward 導線が exam ハブ・/topics・他特集記事に限られ、同一トピックを厚く論じる親ブログへの逆リンクが無い dead-end だった。
+  - `KeywordPage` に明示オプトイン `relatedBlogSlug?` を新設(success-stories の relatedBlogSlug 同型・regression test 同型)。s54-55 で vetted 済の inbound ペア**7本**を逆方向に配線: ap-chokuzen-1week→ap-gogo-sentaku / ip-1month-study-plan→ip-3shukan-goukaku / nw-subnet-calculation→nw-gogo-jikan-haibun / db-3nf-normalization→db-sql-taisaku / pm-evm-calculation→ap-gogo-management-erabikata / st-essay-structure-pattern→st-senryaku-shikou / auditor-coso-cobit→au-shiken-taisaku。
+  - `app/keywords/[keyword]/page.tsx` で `getBlogPostBySlug` で解決し「さらに深く学ぶ」セクション描画。typo slug は弾いて新規404を作らない。
+  - 誇大回避=明示オプトイン構造保証。回帰pin2件(全 relatedBlogSlug が実在 blog へ解決・同名 twin を指さない)。実測: LP4本の prerendered HTML に「さらに深く学ぶ」+/blog/<slug>・対象 blog7本が全て prerendered を確認。
+  - SKIP/保留(s55 フラグ尊重): fe-kamoku-b-pseudo-language(blog双子=KamokuBStudyHintで /blog/fe-kamoku-b-taisaku へ既リンク・cannibalization回避)・sc-incident-response(HD-6)・ai-copilot-how-to-use(exam一致 deep blog 無し・feature relatedLink済)。**=P2-3c の clear cases 7本で逆リンク vein 打ち止め**。
+- done×1 [新角度=relevance-leak] **keyword LP「他の特集記事」レールを関連順に是正** SHA `1183c18`:
+  - `page.tsx` の「他の特集記事」が `KEYWORD_PAGES` 配列順 先頭5件を出していたため、DB の LP に NW/IP/SC 等の無関係記事が並び、ap共有の pm-evm-calculation 等が圏外に押し出されていた(blogレールで是正した s39-40 と同型の relevance-leak)。
+  - `getRelatedKeywordPages(slug, limit)` 新設: スコア=共有試験区分×10＋共有トピック数 の降順・同点は配列順で安定ソート・スコア0でも5枠を埋める(穴を作らない)。
+  - 実測: db-3nf-normalization(db,ap) の他の特集記事が ap共有4本(ap-chokuzen/nw-subnet/pm-evm/ai-copilot)+fallback1 に変化し、無関係 sc-incident-response が正しく圏外へ。回帰pin3件(自己除外/重複なし/limit充足・ap共有>無関係・未知slug空)。
+- done×1 [事実性] **COBIT 2019 目標数を是正** SHA `03920eb`:
+  - /keywords/auditor-coso-cobit(indexable・sitemap収録)が「COBIT 2019 では 40 のマネジメント目標と 11 のガバナンス目標」と**両数値とも誤記**。ISACA公式コアモデル=ガバナンス及びマネジメント目標 計40(ガバナンス=EDM の5・マネジメント=APO/BAI/DSS/MEA の35)。WebSearch で裏取り。s21-32 事実性監査の取り残し。
+  - 「5つのガバナンス目標(EDM)と35のマネジメント目標(APO/BAI/DSS/MEA)の計40」へ是正。回帰pin1件。実測: 本番HTML に是正後文言×2・廃止数値ゼロ。
+- 追加監査(read-only・対応不要 or SKIP):
+  - `app/features/[slug]/page.tsx`「他の機能特集」=全件列挙(slice無し)＝relevance-leak無し。
+  - `app/topics/[slug]/page.tsx`「他のトピックも見る」=`getHubTopics`(人気ハブトピック)を表示＝discovery nav として defensible(「関連」明示でなく「他の」)・トピック間 relatedness は曖昧＝過大修正回避で **SKIP**。
+  - keyword LP の他の技術系数値(pm-evm: SV/CV/SPI/CPI/EAC・db-3nf: 3NF/BCNF定義・nw-subnet: /24=…/30=2host/27=30host・st-essay: 2200字×120分)を read-only 確認＝全て正・誤りは COBIT のみ。
+- 鉄則順守: 全ゲート(typecheck0/lint0err/test pass[最終1913]/build OK)を commit前に単独実行・実測してから commit・additive・新規404ゼロ・誇大回避。
+- 申し送り(セッション57): keyword LP surface は inbound(s54-56)+outbound 逆リンク(s57)+rail relevance(s57)+事実性(s57)で**多面的に整備完了**。code-side の主要 vein は依然枯渇傾向。次セッション候補: (a)relevance-leak 観点を他の indexable 「related/other」surface へ更に展開できるか(features/topics は本session監査で clean/defensible・他に naive slice surface が残るか要走査)。(b)P2-3c の note にある「全LPには無理に付けない」尊重で逆リンク追加は打ち止め。(c)HD群(HD-1/4/5/6/9)= 人間待ち。安易な水増しはしない。
