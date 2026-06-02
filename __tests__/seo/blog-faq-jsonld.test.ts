@@ -14,8 +14,8 @@ describe("blog FAQ extraction for FAQPage JSON-LD", () => {
     const post = getBlogPostBySlug("it-shikaku-rirekisho-kakikata");
     expect(post).toBeDefined();
     const faqs = extractFaq(post!.body);
-    // The article's「よくある質問」section has 5 questions.
-    expect(faqs).toHaveLength(5);
+    // The article's「よくある質問」section has 6 questions.
+    expect(faqs).toHaveLength(6);
     expect(faqs[0].question).toContain("ITパスポート");
     // Question text must not retain the "Q. " marker or markdown emphasis.
     for (const f of faqs) {
