@@ -424,6 +424,33 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
       expect(s?.relatedSlugs).toContain("fe-shiken-meritto-imi-aru");
     }
   });
+
+  // AP objection/value article. AP午後=記述式(mock/HD-4)ゆえ旗艦/essay非送客(s25/s28)。
+  // inbound は ap-goukaku-ten-border / ap-benkyou-jikan-meyasu の relatedSlugs から。
+  it("ap-shiken-meritto-imi-aru: ap exam, FAQ source, /ap funnel, no /essay, inbound wired", () => {
+    const post = getBlogPostBySlug("ap-shiken-meritto-imi-aru");
+    expect(post).toBeDefined();
+    expect(post!.exam).toBe("ap");
+    const body = post!.body;
+    // FAQPage source section present
+    expect(body).toContain("## よくある質問");
+    // entry funnel to /ap hub; never the flagship grader (AP午後=mock, HD-4)
+    expect(body).toContain("(/ap)");
+    expect(body).not.toContain("/essay");
+    // 合格基準は SSOT と一致(午前・午後 各100点満点中60点・素点方式)
+    expect(body).toContain("100 点満点中 60 点");
+    // AP のレベル(レベル 3)を明示
+    expect(body).toContain("レベル 3");
+    // 高度試験 午前I免除(合格後2年)の実利を明示
+    expect(body).toContain("午前 I が");
+    // 誇大回避: 具体的な年収額の断定を入れない
+    expect(body).not.toMatch(/年収\s*\d/);
+    // inbound wiring (non-orphan): listed in AP-cluster siblings' relatedSlugs
+    for (const sib of ["ap-goukaku-ten-border", "ap-benkyou-jikan-meyasu"]) {
+      const s = getBlogPostBySlug(sib);
+      expect(s?.relatedSlugs).toContain("ap-shiken-meritto-imi-aru");
+    }
+  });
 });
 
 // ITストラテジスト(ST) 午後 structure (IPA official, st.html):
