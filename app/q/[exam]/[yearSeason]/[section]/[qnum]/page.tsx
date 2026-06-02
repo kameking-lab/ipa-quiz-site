@@ -21,6 +21,7 @@ import {
   getCrossExamRelatedQuestions,
   getSameExamOtherYears,
   getSameExamRelatedQuestions,
+  getSessionNeighbors,
 } from "@/lib/questions/related";
 import {
   formatLastUpdatedJa,
@@ -172,17 +173,11 @@ export default async function QuestionPage({
   // 無ければリンクを張らずプレーンテキスト表示にして死リンクを防ぐ。
   const topicPageExists = examTopicPageExists(q.exam, q.category);
 
-  const sessionPool = examPool
-    .filter(
-      (x) =>
-        x.year === q.year &&
-        x.season === q.season &&
-        x.session === q.session,
-    )
-    .sort((a, b) => a.qNumber - b.qNumber);
-  const idx = sessionPool.findIndex((x) => x.id === q.id);
-  const prev = idx > 0 ? sessionPool[idx - 1] : null;
-  const next = idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null;
+  // Sequential prev/next nav skips needsReview questions: their pages
+  // notFound() (404), so keeping them in the sequence would ship dead links
+  // (~18 corpus-wide). Placeholder questions stay navigable (real 200 page).
+  // See getSessionNeighbors in related.ts.
+  const { prev, next } = getSessionNeighbors(q, examPool);
 
   // Related-question link trails are computed here in the Server Component and
   // rendered as plain <Link>s below, so they ship inside the prerendered HTML

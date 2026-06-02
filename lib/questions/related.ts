@@ -39,6 +39,32 @@ export function getSameExamRelatedQuestions(
 }
 
 /**
+ * 同一回（年度・季・セッション）内での前後の問題。needsReview は除外する
+ * （その問題ページは notFound()=404 なので、シーケンスに残すと死リンクになる）。
+ * プレースホルダ解説の問題は実ページ(200・noindex)として閲覧可能なので残す。
+ * filter.ts が全プールから needsReview を除外しているのと同じ規約。
+ */
+export function getSessionNeighbors(
+  current: Question,
+  examPool: Question[],
+): { prev: Question | null; next: Question | null } {
+  const sessionPool = examPool
+    .filter(
+      (x) =>
+        x.year === current.year &&
+        x.season === current.season &&
+        x.session === current.session &&
+        !x.needsReview,
+    )
+    .sort((a, b) => a.qNumber - b.qNumber);
+  const idx = sessionPool.findIndex((x) => x.id === current.id);
+  return {
+    prev: idx > 0 ? sessionPool[idx - 1] : null,
+    next: idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null,
+  };
+}
+
+/**
  * 同一試験区分・同一分野で他年度の問題（年度ごと 1 問・新しい年度優先）。
  * 年度をまたぐ内部リンクの動線を作る。リンク可能な対象のみ。
  */

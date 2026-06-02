@@ -4,6 +4,7 @@ import {
   getCrossExamRelatedQuestions,
   getSameExamOtherYears,
   getSameExamRelatedQuestions,
+  getSessionNeighbors,
 } from "@/lib/questions/related";
 
 // getCrossExamRelatedQuestions drives the「他試験区分の関連問題」rail on every
@@ -22,6 +23,7 @@ function q(partial: {
   topicTags?: string[];
   session?: Session;
   year?: number;
+  qNumber?: number;
   needsReview?: boolean;
   explanation?: string;
 }): Question {
@@ -31,7 +33,7 @@ function q(partial: {
     session: partial.session ?? "am",
     year: partial.year ?? 2024,
     season: "autumn",
-    qNumber: 1,
+    qNumber: partial.qNumber ?? 1,
     type: "multiple-choice",
     category: partial.category ?? "基礎理論",
     topicTags: partial.topicTags ?? [],
@@ -152,5 +154,35 @@ describe("getSameExamOtherYears", () => {
       "ap-2024-ok",
       "ap-2023",
     ]);
+  });
+});
+
+describe("getSessionNeighbors", () => {
+  const pool = [
+    q({ id: "ap-q1", exam: "ap", qNumber: 1 }),
+    q({ id: "ap-q2", exam: "ap", qNumber: 2 }),
+    q({ id: "ap-q3", exam: "ap", qNumber: 3, needsReview: true }), // 404 page
+    q({ id: "ap-q4", exam: "ap", qNumber: 4 }),
+    // different session — must not bleed into neighbors
+    q({ id: "ap-am2-q1", exam: "ap", session: "am2", qNumber: 1 }),
+  ];
+
+  it("skips needsReview questions so prev/next never point at a 404", () => {
+    const onQ2 = getSessionNeighbors(q({ id: "ap-q2", exam: "ap", qNumber: 2 }), pool);
+    expect(onQ2.prev?.id).toBe("ap-q1");
+    expect(onQ2.next?.id).toBe("ap-q4"); // q3 (needsReview) skipped
+
+    const onQ4 = getSessionNeighbors(q({ id: "ap-q4", exam: "ap", qNumber: 4 }), pool);
+    expect(onQ4.prev?.id).toBe("ap-q2"); // q3 skipped
+    expect(onQ4.next).toBeNull();
+  });
+
+  it("stays within the same year/season/session", () => {
+    const onAm2 = getSessionNeighbors(
+      q({ id: "ap-am2-q1", exam: "ap", session: "am2", qNumber: 1 }),
+      pool,
+    );
+    expect(onAm2.prev).toBeNull();
+    expect(onAm2.next).toBeNull();
   });
 });

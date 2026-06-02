@@ -4,6 +4,7 @@ import { join } from "node:path";
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
+import { getSessionNeighbors } from "@/lib/questions/related";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 // Regression guard for the /q "前の問題・次の問題" sequential navigation
@@ -16,28 +17,32 @@ import type { ExamCode, Question } from "@/lib/questions/types";
 // This mirrors the page's selection logic so a regression in ordering or
 // boundary handling trips the test.
 
-/** Same selection logic as the page: same exam+year+season+session, qNumber asc. */
+// Same selection logic as the page: same exam+year+season+session, qNumber asc,
+// EXCLUDING needsReview (whose pages notFound() → 404). Mirrors getSessionNeighbors.
 function sessionPool(q: Question): Question[] {
   const pool = QUESTIONS_BY_EXAM[q.exam] ?? [];
   return pool
     .filter(
       (x) =>
-        x.year === q.year && x.season === q.season && x.session === q.session,
+        x.year === q.year &&
+        x.season === q.season &&
+        x.session === q.session &&
+        !x.needsReview,
     )
     .sort((a, b) => a.qNumber - b.qNumber);
 }
 
+/** Delegates to the page's real selection function so the test can't drift. */
 function siblings(q: Question): { prev: Question | null; next: Question | null } {
-  const pool = sessionPool(q);
-  const idx = pool.findIndex((x) => x.id === q.id);
-  return {
-    prev: idx > 0 ? pool[idx - 1] : null,
-    next: idx >= 0 && idx < pool.length - 1 ? pool[idx + 1] : null,
-  };
+  return getSessionNeighbors(q, QUESTIONS_BY_EXAM[q.exam] ?? []);
 }
 
-/** Re-resolve a prev/next link the way the router would — must hit a real question. */
+/**
+ * Re-resolve a prev/next link the way the page does — must hit a real question
+ * that is NOT needsReview (those return notFound()/404 in the page).
+ */
 function resolves(target: Question): boolean {
+  if (target.needsReview) return false;
   const path = questionPagePath(target); // /q/{exam}/{year}-{season}/{session}/q{n}
   const [, , exam, yearSeason, section, qnum] = path.split("/");
   return (
@@ -126,11 +131,22 @@ describe("/q 前後ナビ — ページ構造ガード (SSR でクローラブ�
     expect(source).toContain("最後の問題です");
   });
 
-  it("同一回プールを year/season/session で絞り qNumber 昇順で並べる", () => {
-    // The selection contract the data tests above rely on must stay in the page.
-    expect(source).toMatch(/x\.year === q\.year/);
-    expect(source).toMatch(/x\.season === q\.season/);
-    expect(source).toMatch(/x\.session === q\.session/);
-    expect(source).toMatch(/a\.qNumber - b\.qNumber/);
+  it("前後ナビの選択を getSessionNeighbors に委譲する", () => {
+    // The selection contract (year/season/session 絞り・qNumber 昇順・
+    // needsReview 除外) now lives in related.ts and is unit-tested there;
+    // the page must delegate to it rather than re-inlining the logic.
+    expect(source).toMatch(/getSessionNeighbors\(\s*q\s*,\s*examPool\s*\)/);
+  });
+
+  it("選択ロジック本体 (related.ts) は year/season/session 絞り・needsReview 除外・qNumber 昇順", () => {
+    const related = readFileSync(
+      join(process.cwd(), "lib/questions/related.ts"),
+      "utf8",
+    );
+    expect(related).toMatch(/x\.year === current\.year/);
+    expect(related).toMatch(/x\.season === current\.season/);
+    expect(related).toMatch(/x\.session === current\.session/);
+    expect(related).toMatch(/!x\.needsReview/);
+    expect(related).toMatch(/a\.qNumber - b\.qNumber/);
   });
 });
