@@ -77,6 +77,13 @@ describe("global footer / bottom-nav static internal links resolve", () => {
     expect(deadLinks("app/layout.tsx")).toEqual([]);
   });
 
+  // /challenge (Daily Challenge) was a sitemap-only orphan with no contextual
+  // inbound link; the footer service nav is its crawlable global inbound. If this
+  // link is removed the page becomes an orphan again, so pin it.
+  it("the footer links to the Daily Challenge (orphan resolution)", () => {
+    expect(staticHrefs("app/layout.tsx")).toContain("/challenge");
+  });
+
   it("every static MobileBottomNav href maps to an existing route (no 404 in bottom nav)", () => {
     const hrefs = staticHrefs("components/MobileBottomNav.tsx");
     expect(hrefs.length).toBeGreaterThanOrEqual(5);
