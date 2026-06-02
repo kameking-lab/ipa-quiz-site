@@ -62,3 +62,30 @@ describe("Copilot dialogs — focus trap is wired to the dialog", () => {
     expect(wired.length).toBeGreaterThanOrEqual(2);
   });
 });
+
+// The stream player's ReviewOverlay is another custom role="dialog"
+// aria-modal="true" that must trap Tab and restore focus to its trigger (which
+// unmounts while the overlay is open). The player is fiddly to drive into the
+// canReview state in jsdom, so pin the wiring instead.
+describe("StreamQuizPlayer ReviewOverlay — focus trap & restore are wired", () => {
+  const source = readFileSync(
+    join(process.cwd(), "components/quiz/stream/StreamQuizPlayer.tsx"),
+    "utf8",
+  );
+
+  it("imports and calls trapTabTarget", () => {
+    expect(source).toMatch(/import\s*\{[^}]*trapTabTarget[^}]*\}\s*from\s*"@\/lib\/a11y\/focus-trap"/);
+    expect(source).toContain("trapTabTarget(");
+  });
+
+  it("the aria-modal overlay has an onKeyDown trap", () => {
+    expect(source).toMatch(/onKeyDown=\{onDialogKeyDown\}/);
+  });
+
+  it("restores focus to the review trigger when the overlay closes", () => {
+    // The trigger button carries the ref, and a close-transition effect focuses
+    // it back so keyboard users are not stranded at document.body.
+    expect(source).toContain("ref={reviewTriggerRef}");
+    expect(source).toMatch(/reviewTriggerRef\.current\?\.focus/);
+  });
+});
