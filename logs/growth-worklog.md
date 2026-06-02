@@ -1755,3 +1755,11 @@ cycle1 の outbound 監査を blog本文(6本=clean)から**非blog面=問題デ
 
 ## セッション106 cycle3（2026-06-03）— jitec fix の API面カバレッジ補完 [done SHA `5c6b37e`]
 cycle2 の page/essay gate に続き、**raw bypass の最後の面=公開API**を是正。`/api/v1/questions`(L113)・`/api/v1/grade`(L70)が `q.sourcePdfUrl` を生(dead jitec)で JSON 返却していたのを `getSafePdfUrl()` 経由へ。APIコンシューマも dead でなく live IPA索引を受け取る。openapi/契約テストは sourcePdfUrl の値をassertしておらず低リスク。typecheck0/lint0err/test 2171/build OK。**=jitec dead-link は page(/q)・essay(deep/essays)・公開API の全 serve 面で live化完了**（残るは HD-14 の deep-remap=精度向上のみ・死リンクは全面ゼロ）。
+
+## セッション107（2026-06-03）— jitec follow-up (B): parse pipeline が出典を dead で永続化する latent bug を是正 [done SHA `7920977`]
+s106 cycle2 の申し送り (B)「`buildPdfUrl`(parse script専用)も jitec生成のまま・serve gate が中和するが script側も IPA_EXAM_INFO_URL ベースへ直すのが筋」を実行。本番挙動不変・main凍結維持・1コミット=1論点。
+- **着手前監査**: `buildPdfUrl` の呼び出し元を grep。fetch-ipa-pdfs.ts(download用・deep path 必要=触らない=HD-14領域)／**parse-all.ts:424・parse-pdf-to-json.ts:297 の2箇所のみが `sourcePdfUrl` の永続値**に使用。両者とも `buildPdfUrl(...)` を生で `sourcePdfUrl` に格納＝**再parseのたびに dead jitec 出典を ~数千件 データ層へ再注入**(serve gate=runtime band-aid が masking していただけ)。§8 出典ルール違反の温床。
+- **修正 SHA `7920977`(1論点=at-rest を live化)**: `lib/exam-config.ts` に純粋helper `buildSourcePdfUrl(cfg,year,season,sessionCfg)` を新設＝`getSafePdfUrl(buildPdfUrl(...,"qs"))`。dead jitec/空CBT を live IPA index(`IPA_EXAM_INFO_URL`)へ degrade(serve層の表示と完全一致)。parse-all.ts/parse-pdf-to-json.ts の import と呼び出しを `buildPdfUrl`→`buildSourcePdfUrl` に差替(両ファイルとも buildPdfUrl は他に未使用)。`buildPdfUrl` 自体は fetch crawler 用に温存・既存テスト不変。
+- **検証(「崩れたら落ちる」+全ゲート別呼び出し緑目視)**: 回帰pin2件を `exam-config-pdf-url.test.ts` に追加＝(1)`buildSourcePdfUrl(ap,2024,spring)` が jitec を含まず `IPA_EXAM_INFO_URL` と一致、(2)CBT空URLも index へ degrade。gating を外す revert で fail。typecheck0 / lint0err(warn=未追跡 ux-audit-screenshots.mjs のみ) / test **276 files 2173 passed**(2171→+2) / build Compiled successfully(30.3s)。本番side-effect無し(parse pipeline は通常運用で非走行・serve出力は cycle2/3 で既に live化済＝今回は at-rest データ整合の予防是正)。
+- **=jitec dead-link 是正の最後の取り残し(parse 永続層)を gate化＝serve面(s106 cycle2/3)＋データ層(s107)で完結**。残るは HD-14(deep-remap=精度向上のみ・死リンクは全面ゼロ)。
+- **次セッション申し送り**: jitec vein 完全打ち止め。content/funnel/aria/crawl-signal/trace vein は s90-106 で深く飽和。**新規の太い vein は GSC 404一覧(HD-1)/本番午後データ(HD-4)/ルーティング再設計(使-3)等の人間入力 or 厚い監査が起点**。P2-2 制度系の薄い残り(午前II対策=区分固有で量産リスク・受験料=thin・SGスコア=HD-8)は SKIP寄り。
