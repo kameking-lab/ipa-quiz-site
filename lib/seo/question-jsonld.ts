@@ -177,9 +177,16 @@ export function buildQuestionJsonLd({
       name: "情報処理推進機構 (IPA)",
       url: "https://www.ipa.go.jp/",
     },
+    // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and
+    // unlike a bare stub), the publisher carries name/url inline so Google
+    // resolves it within this page. The /q surface does not embed the full
+    // `buildOrgNode()` Organization node, so the @id alone would dangle — the
+    // same defect class fixed for the exam-hub `Course.provider` (S115).
     publisher: {
       "@type": "Organization",
       "@id": ORG_ID,
+      name: SITE_NAME,
+      url: SITE_BASE_URL,
     },
   };
 

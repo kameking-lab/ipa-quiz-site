@@ -69,6 +69,22 @@ describe("buildQuestionJsonLd", () => {
     const qapage = build()["@graph"][0] as { dateModified: string };
     expect(qapage.dateModified).toBe("2026-05-23T00:00:00+09:00");
   });
+
+  // The /q page does not embed the full Organization node, so the
+  // LearningResource publisher's @id reference must self-resolve (name + url)
+  // or it dangles — the same defect fixed for the exam-hub Course.provider.
+  // A revert to a bare {@type,@id} stub re-breaks this.
+  it("the LearningResource publisher @id reference self-resolves (name + url)", () => {
+    const learningResource = build()["@graph"][1] as {
+      "@type": string;
+      publisher: { "@type": string; "@id": string; name?: string; url?: string };
+    };
+    expect(learningResource["@type"]).toBe("LearningResource");
+    expect(learningResource.publisher["@id"]).toMatch(/#organization$/);
+    expect(learningResource.publisher.name).toBe("過去問AI");
+    expect(typeof learningResource.publisher.url).toBe("string");
+    expect(learningResource.publisher.url).toMatch(/^https?:\/\//);
+  });
 });
 
 // Google Q&A rich-result compliance — the critical error (missing answerCount)
