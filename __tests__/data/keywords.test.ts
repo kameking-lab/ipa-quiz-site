@@ -181,3 +181,17 @@ describe("getRelatedKeywordPages — 他の特集記事レールは関連順（r
     expect(getRelatedKeywordPages("no-such-keyword", 5)).toEqual([]);
   });
 });
+
+// 事実性 pin。COBIT 2019 のコアモデルは「ガバナンス及びマネジメント目標」計 40
+// （ガバナンス=EDM の 5・マネジメント=APO/BAI/DSS/MEA の 35）。ISACA 公式。
+// /keywords/auditor-coso-cobit(indexable・sitemap収録)が「40 のマネジメント目標と
+// 11 のガバナンス目標」という誤記を持っていたため是正し、廃止数値への regression を防ぐ。
+describe("KEYWORD_PAGES — COBIT 2019 目標数の事実性", () => {
+  it("auditor-coso-cobit は 5 ガバナンス + 35 マネジメント (計40) を使い、誤った 11/40-management を含まない", () => {
+    const body = getKeywordPageBySlug("auditor-coso-cobit")!.body.join("\n");
+    expect(body).toContain("5 つのガバナンス目標");
+    expect(body).toContain("35 のマネジメント目標");
+    expect(body).not.toContain("40 のマネジメント目標");
+    expect(body).not.toContain("11 のガバナンス目標");
+  });
+});
