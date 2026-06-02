@@ -17,6 +17,10 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
     - **dev痕跡 410 グループ [done セッション33 SHA `ac1deb4`]**（exec-review/feature-review/final-review/final-review-v3/scoring-test/strategy-discussion/strategy-discussion-v2/test/posthog/test/sentry/tmp/round7-review の10ルート）: 全て git削除済・後継なし・現在404。GONE_PATHS+matcher へ exact path で追加し410化（着手前に全dir非存在＝live再追加なしを実測してから410化）。runtime curl で新規10パス=410・live(/blog /fe /essay)=200・control /test-foo=404(over-matchingなし) を実測。既存 middleware.test がGONE_PATHSを動的iterateし自動カバー。**=「削除済み・後継なし」404はコード側で網羅完了**。
   - 判断保留の弱い301候補: analytics→/stats（内部DAU vs 公開stats でインテント差・SKIP寄り）。diagnosis は後継なし＝410が正直。
   - 検証: 対象パスが 301(正しい行先200) か 410 になったことを localhost本番ビルドへ curl で実測。新規404を作らない。
+- P0-4 [新角度・セッション34]: **dynamic ルートの無効URLが notFound() を HTTP200 ソフト404で返す**問題。実測: 修正前の `/essay/{exam}/{id}` と `/q/{...}` の無効URL→200(not-found UI)・対照 `/blog/no-such-slug`→404。差は `dynamicParams=false`(ルータ層404) vs dynamic(handler notFound()が `next start` 上200)。
+  - **[done セッション34 SHA `80f1695`]**: 旗艦 `/essay/{exam}/{id}`(12件・全SSG可能)に `generateStaticParams`+`dynamicParams=false` を適用し proper 404 化(runtime curl実測: 無効ID/exam/年度=404・有効=200)。同repo `/blog/[slug]` パターン踏襲。
+  - **[→HD-10] `/q/*`(~12,653件・最大面)は同型だが dynamicParams=false 不可**(ISR設計が必須=sitemap~14k広告・SSGは2024年以降のみ。dynamicParams=false は SSG_MIN_YEAR以前を全404にするリグレッション・コード明記警告)。framework層対応＋production(Vercel/ISR)裏取りが要る(GSC「ソフト404」レポート)＝HD-10。**HD-1のGSC 404一覧と同時確認で soft-404 が主因か切り分け可能**。
+  - **残り(ループ可)**: 他の dynamic ルートで「対象が少数で全SSG可能」な小面があれば /essay 同様 dynamicParams=false で先行 soft-404解消(read-only監査で対象列挙→件数が少ない確証が要る)。/q級の大面は不可。
 - P0-2: sitemap が「実在200のURLのみ」を出しているか再確認（既存テスト sitemap-resolvability を活用、必要なら拡張）。placeholder/needsReview 問題がsitemapに混入していないか実測。
 - P0-3 [調査done セッション33・コード変更なし]: 旧URL形式の痕跡調査。**結論=ソース側に系統的旧形式なし**。`/q/[exam]/[yearSeason]/[section]/[qnum]` は #38(ac0200f)以来 format不変（builder `lib/seo/question-url.ts`・#407はperf refactorで維持）、section実データは `session:"am"` のみ（am1/am2変遷なし）。flat形式 `/q/ap-2024h-am-q42` は admin metrics mock-data の表示用ダミーのみ（認証配下・非crawlable）。`grep -rE '/q/[a-z]+-[0-9]'`(mock/test除く)=0件＝実crawlableリンクに旧形式なし。**GSC404は外部/履歴由来＝HD-1(人間・GSCエクスポート)継続**。付随: /q indexability は正設計（実問題index/placeholder noindex+sitemap除外/needsReview 404）。
 
@@ -34,6 +38,7 @@ P0→P1→P2→P3。実害/効果が薄い・理論のみは SKIP。戦略判断
   - **AP/FE をハブCTAへ追加は HD-4 待ち（自律実行しない）**: `app/[exam]/page.tsx` の afternoon CTA は ap・fe を除外。`/ap/afternoon`・`/fe/afternoon` は 200 だが **練習データがモック**（`data/questions/afternoon/ap/index.ts`「実データはモック」明記・各年季2問）。モックのまま旗艦CTAを大きく出すと誇大表現＝過大修正の罠。記述分岐(sc/nw/db/es)の「Coming Soon」も同根。→ **本番午後データ投入(scripts/parse-afternoon) or ベータ明示CTAの判断は人間（HD-4）**。ループは prematurely 露出しない。
   - **★モック非依存で先に進めるのはこちら → P1-4 / P1-5**（不安系キーワードの**オリジナル記事**で午後採点へ自然送客。記事自体はモックデータに依存しない）。次セッションは P1-4/P1-5 か、P0-1 残り(dev痕跡の410)、P2-2(競合薄ブログ強化)を優先。
 - P1-3: 採点体験の構造化データ/メタ/見出しを「午後AI採点ができる唯一のサイト」と分かる形に（LearningResource/HowTo等の既存JSON-LD流用、誇大表現は避け事実ベース）。実値をHTMLで実測。
+  - **[done セッション34]** ハブ `/essay` は既存で LearningResource+BreadcrumbList+canonical+meta 達成済(essay-flagship-jsonld.test)。**個別採点ページ `/essay/{exam}/{id}` に LearningResource+BreadcrumbList を付与** `926cab8`(question由来導出・isBasedOn=IPA原典pdf・参考評価明記・誇大回避は構造保証)。**deep ページ12件を sitemap 掲載** `c6ea936`(クロール発見性・/q非対称を解消)。HowTo は Google が2023にリッチリザルト廃止済のため不採用(理論のみ回避)。P1-3はハブ+deep両レベルで達成。
 - P1-5b [done セッション6]: 論文5区分(st/sa/pm/sm/au)の勉強法記事 overview から旗艦 `/essay` へ条件付き送客 `122c129`＋回帰ガード `4058e60`。最高可視性ロードマップ記事も旗艦/土台へ funnel `b8c1ecf`。区分ゲートは lib/essay/load.ts ESSAY_EXAM_CODES 準拠で誇大回避。論文区分の高オーソリティ記事は漏れなく旗艦へ流れる。
 - P1-4: 不安系キーワード向けの入口ページ/ブログ（**オリジナル生成**・クローラブルSSR）:
   「応用情報 午後 自己採点」「応用情報 午後 部分点」「セキスペ(情報処理安全確保支援士) 午後 採点」等。

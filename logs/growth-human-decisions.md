@@ -80,4 +80,14 @@
 - 緊急度: 中〜高（最大volumeの入門3区分=IP/SG/FE の中核 勉強法ページが live で旧形式＝受験者を誤った試験構造で誤誘導。SC論文誤記HD-6と同様 present-tense の事実誤り）。
 - 関連: backlog P2-2（事実性監査）/ HD-7（2026春秋→前後期は別軸・本件は先行可）/ HD-8（SGペルソナの午前午後も同 error class の editorial）。session30申し送り「他試験のpre-2023形式取り残しの面横断確認」への回答＝**overview テンプレが最大の取り残し**。
 
+### HD-10: 動的ルート `/q/*`（最大クロール面・~12,653件）の無効URLが notFound() を HTTP 200 のソフト404で返す（セッション34発見・production/GSC裏取りが要る・/q の修正は ISR 設計と干渉）
+- 何の話か: 無効な個別問題URL `/q/{exam}/{yearSeason}/{section}/{qnum}`（存在しない年度・設問など。古いサイトマップ/外部被リンク由来＝HD-1のGSC 404 4,363件の主因候補）を踏むと、ページの `notFound()` が描画されるが **HTTP ステータスは 200（ソフト404）** になる。Googleはソフト404を低品質シグナルとして扱い、クロール予算を浪費する＝P0「404掃除でクロール資産回復」と同根の取り残し。
+- 検証（ループが localhost 本番ビルド `next start` で実測・セッション34）: `/q/ap/9999-spring/am1/q999`→**200**（not-found UI を出すが status 200）/ `/essay/st/DOES-NOT-EXIST`→（修正前）**200** / 対照: `/blog/no-such-slug`→**404**（正しい）/ `/this-path-does-not-exist`→**404**（ルータ層）。差は**ルート設定**: `/blog/[slug]` は `dynamicParams=false`＝ルータ層で未知paramを描画前に 404。`/q` と（修正前の）`/essay` は dynamic（`/q` は `dynamicParams=true`）で、handler 内 `notFound()` が `next start` 上 200 を返す（Next 16.2.6）。
+- 既に対処済の部分: **`/essay/{exam}/{id}`（旗艦・12件）はセッション34で proper 404 化済**（`80f1695`・generateStaticParams + dynamicParams=false。実在12問のみ prerender・無効は描画前404）。これは件数が少なく全SSG可能だったため /blog パターンを適用できた。
+- なぜループが /q を決めない（=自律修正しない）か: ①**`/q` は dynamicParams=false に出来ない**。コード明記の設計（`app/q/.../page.tsx` L51-59）で、sitemapは~14kの indexable 問題を広告するが build時間のため SSG は2024年以降のみ・それ以前は ISR で on-demand 描画。`dynamicParams=false` にすると **SSG_MIN_YEAR 以前の全 indexable 問題が 404**＝大規模リグレッション（コメントが明示的に警告）。②よって修正は「dynamic ルートの `notFound()` が確実に 404 を emit する」フレームワーク層の対応が要り、**広域・要framework調査**（`/q` は最大面で誤爆の影響甚大）。③**production(Vercel/ISR)で同じソフト404になるか未確証**＝`next start` 限定の挙動の可能性。Vercel + ISR では `notFound()` が proper 404 を返すのが通常。GSCの「ソフト404」レポートでの裏取りが要る（HD-1のGSCエクスポートと同時に確認可能）。
+- 選択肢: (a) GSC「ソフト404」レポート（人間）で production の実挙動を確認 → 本当にソフト404なら、(b) `/q` handler の `notFound()` 経路を proper 404 化する方法を検討（Next 16のルートセグメント設定 or middleware で無効 `/q/*` を事前 404・ただし「有効/無効」判定を middleware に移すと二重メンテ）。(c) production が正しく 404 を返しているなら何もしない（`next start` 限定の偽陽性）。
+- 推奨: まず (a) production/GSC裏取り（`next start` の偽陽性かを切り分け）。真にソフト404なら middleware ではなく**ルート側で 404 status を確実化**する最小手を設計（/q は大面のため要慎重・人間レビュー）。/essay 部分集合は先行修正済。
+- 緊急度: 中〜高（最大クロール面。ただし production 裏取り前提＝偽陽性なら無対応で良い）。
+- 関連: HD-1（GSC 404一覧／ソフト404もこのレポートで確認可）。backlog P0。セッション34で /essay deep の同型は修正済。
+
 <!-- 以降、ループが判断した人間判断事項を追記 -->
