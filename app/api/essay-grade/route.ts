@@ -52,6 +52,8 @@ const ESSAY_SYSTEM_PROMPT = `あなたは IPA 高度試験（ST/SA/PM/SM/AU）�
 - 業種固有の事例が論述内容と整合しているかを評価する
 - 抽象論・一般論のみで自社固有性が見えない論述は減点する
 - 論理飛躍、冗長表現、用語の誤用を必ず指摘する
+- 「必須キーワード（部分点の核）」が与えられた設問では、その語・概念の有無を部分点判定の核とし、不足は missingElements に必ず挙げる（汎用LLMが持てない根拠ある採点＝強み1）
+- 「採点の勘所」が与えられた設問では、各評価軸（適合度/論理性/具体性/業種事例）のスコア根拠としてそれを用いる
 
 合否ランクの判定基準:
 - A: 合格率 70% 以上。設問の趣旨を全て満たし、固有性・論理性・具体性が揃う
@@ -115,6 +117,13 @@ function buildUserPrompt(
     lines.push(`■ 設問${sub.key}（目安 ${sub.targetChars}字、${sub.minChars}-${sub.maxChars}字）`);
     lines.push(`設問: ${sub.prompt}`);
     lines.push(`想定する論述要素: ${sub.modelOutline}`);
+    // 採点根拠データ（強み1）。与えられた設問では根拠ある採点に用いる。
+    if (sub.requiredKeywords && sub.requiredKeywords.length > 0) {
+      lines.push(`必須キーワード（部分点の核）: ${sub.requiredKeywords.join(" / ")}`);
+    }
+    if (sub.scoringPoints && sub.scoringPoints.length > 0) {
+      lines.push(`採点の勘所: ${sub.scoringPoints.join(" / ")}`);
+    }
     lines.push(`受験生の論述（${text.length}字）:`);
     lines.push(text || "（無回答）");
   }
