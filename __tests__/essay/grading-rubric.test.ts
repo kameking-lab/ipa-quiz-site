@@ -25,22 +25,25 @@ describe("採点根拠データの型 — PM で確立（強み1）", () => {
     }
   });
 
-  it("ST の全設問・全小問に rubric が付与されている（横展開・第1区分）", () => {
-    const questions = getEssayQuestionsByExam("st");
-    expect(questions.length, "ST 設問が存在する").toBeGreaterThan(0);
-    for (const q of questions) {
-      for (const sub of q.subPrompts) {
-        expect(
-          sub.requiredKeywords?.length ?? 0,
-          `${q.id} 設問${sub.key} の必須キーワード`,
-        ).toBeGreaterThan(0);
-        expect(
-          sub.scoringPoints?.length ?? 0,
-          `${q.id} 設問${sub.key} の採点の勘所`,
-        ).toBeGreaterThan(0);
+  it.each(["st", "sa"] as const)(
+    "%s の全設問・全小問に rubric が付与されている（横展開）",
+    (exam) => {
+      const questions = getEssayQuestionsByExam(exam);
+      expect(questions.length, `${exam} 設問が存在する`).toBeGreaterThan(0);
+      for (const q of questions) {
+        for (const sub of q.subPrompts) {
+          expect(
+            sub.requiredKeywords?.length ?? 0,
+            `${q.id} 設問${sub.key} の必須キーワード`,
+          ).toBeGreaterThan(0);
+          expect(
+            sub.scoringPoints?.length ?? 0,
+            `${q.id} 設問${sub.key} の採点の勘所`,
+          ).toBeGreaterThan(0);
+        }
       }
-    }
-  });
+    },
+  );
 
   it("型は任意フィールド＝横展開可能（未付与の設問もそのまま有効にロードできる）", () => {
     // 全論文区分の全設問がロードでき、rubric 未付与でも壊れない。
