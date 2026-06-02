@@ -20,7 +20,7 @@ import { extractFaq } from "@/lib/blog/faq";
 // (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
 
 const SLUG = "sg-goukaku-ten-irt";
-const INBOUND_PARENTS = ["sg-kamoku-b-jirei-mondai"];
+const INBOUND_PARENTS = ["sg-kamoku-b-jirei-mondai", "sg-shiken-meritto-imi-aru"];
 
 describe("情報セキュリティマネジメント 合格点 記事の事実性と funnel", () => {
   it("記事が存在し 情報セキュリティマネジメント/合格基準/科目B の SG 記事として登録されている", () => {
