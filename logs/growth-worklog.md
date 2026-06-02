@@ -1590,3 +1590,15 @@ A-6(CopilotMobileSheet・s95 `ba5d8bb`)で確立した `trapTabTarget` helper �
 - 全ゲート緑(各commit前に単独実行・緑目視): typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2112→2115→2118 passed(269 files) / build OK。
 - **本セッション小計=確実な a11y 改善3件**(全て P-spicy-review triage の grounded な A-6 系・小diff・本番ゲート緑・回帰pin)。
 - **次セッション申し送り（P-spicy-review triage 残）**: modal focus-trap は枯渇。残る grounded 候補は 使-3(復習/弱点動線3系統 `/quiz?mode=review`・`mode=weakness`・`/review`・`/account/dashboard` の正規入口集約)だが、**`/review` と `/quiz/review` が別ルート＋`?mode=` 変種で multi-route の UX/ルーティング再設計＝「大規模URLルーティング再設計」(承認必須)・広域リファクタ禁止に該当＝自律着手せず**(本セッションで監査の上 SKIP 判断)。content vein も深く飽和。新角度を要する場合は別 a11y クラス(ライブリージョン/ロービングtabindex の検証)か、人間判断待ち(GSC 404一覧・HD群)。
+
+### セッション97 — D-3 フッタ不在の indexable 価値ページ配線（P-spicy-review・SEO致命TOP5-5）
+- done: [P-spicy-review D-3] SHA `b73b8f0`: グローバルフッタ「サービス」nav に `/mock-exam`(模試モード)・`/ranking`(ランキング)・`/recommended-books`(おすすめ問題集・参考書) を配線。
+  - **着手前監査で gap を確定**: レビュー D-3 列挙の6面(`/topics・/mock-exam・/search・/success-stories・/recommended-books・/ranking`)を indexability・既存inbound で再評価。
+    - **`/success-stories` = SKIP**: `app/success-stories/page.tsx:27` で**無条件 `robots:{index:false,follow:false}`**(致命傷③=AI生成架空ペルソナを意図的に deindex)。フッタ配線してもクロール価値ゼロ＋全SSRページから noindex 面へリンク＝過大修正の罠ゆえ配線せず。
+    - **`/topics` = SKIP(保留)**: indexable(0 hub 時のみ noindex)だが SEO-4「4分類ハブ(topics/keywords/glossary)の共食い」(HD/設計)に触れる懸念＝保守的に見送り。
+    - **`/search` = SKIP**: 検索ユーティリティ(ツール)でクロール target 価値薄・既に SiteHeader 露出。
+    - **採用3面**: `/mock-exam`(模試=競合パリティ機能・indexable・header-only)・`/ranking`(段級ランキング・indexable・**どの global nav にも不在=最も funnel が細い**)・`/recommended-books`(収益=アフィリ中心戦略と整合・indexable・header-only)。いずれも完成済の indexable 価値ページで、レビュー指摘どおり「末端ページからの導線が細い」(footer不在 or header-only)。
+  - **最小diff**: フッタ「サービス」column に3 `<Link>` を学習モード(模試/ランキング)＋リソース(参考書)の位置に挿入(8→11項目)。アフィリは footer テキストリンク=「控えめ/UI完全分離」戦略に準拠。env無編集・価格/無料枠数値に不干渉。
+  - **検証(崩れたら落ちる)**: 既存 `footer-bottomnav-links-resolve.test.ts` の dead-link 検査(deadLinks===[])が3 href の実ルート解決を自動担保＋新 `it.each(["/mock-exam","/ranking","/recommended-books"])` の orphan-resolution pin(配線削除で落ちる)。本番ビルド HTML 実測(`/about` prerendered footer)=3 href＋ラベル(模試モード/ランキング/おすすめ問題集) present。
+  - 全ゲート緑(commit前に単独実行・緑目視): typecheck 0 / lint 0 errors(warn は未追跡 ux-audit-screenshots.mjs のみ) / test 2118→2121 passed(269 files・+3) / build OK。
+  - **所見**: A-6 modal focus-trap(s95-96)に続く P-spicy-review triage の grounded 消化。D-3 のうち採用可能な3面を配線し、SKIP 3面はいずれも着手不可理由(noindex/設計HD/低価値ツール)を明記。
