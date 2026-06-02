@@ -165,6 +165,33 @@ describe("blog template generators — 土台 科目B pillar funnel gated to FE"
   }
 });
 
+describe("blog template generators — every per-exam post carries a FAQ (FAQPage source)", () => {
+  // All five per-exam generators emit a `## よくある質問` section, which
+  // lib/blog/faq.ts::extractFaq turns into FAQPage JSON-LD on the rendered page.
+  // overview/lastMonth/frequentTopics were FAQ-ified earlier; practice & analysis
+  // were the last two templates without it. Pin that none silently loses its FAQ
+  // across all 13 区分 (a dropped section = lost structured data for 13 pages).
+  for (const g of GENERATORS) {
+    for (const exam of EXAMS) {
+      it(`${g.name}(${exam}) contains the FAQ section`, () => {
+        expect(g.build(exam, 0).body).toContain("## よくある質問");
+      });
+    }
+  }
+});
+
+describe("blog template generators — analysis never funnels to flagship /essay", () => {
+  // buildAnalysisPost has no 論述 writing section (it's a 出題傾向 analysis), so it
+  // funnels to 分野別モード + the /[exam] hub only — never the flagship grader,
+  // for any exam (mirrors frequentTopics). Guard against a stray /essay link
+  // sneaking into the FAQ or body for the 論文区分.
+  for (const exam of EXAMS) {
+    it(`analysis(${exam}) does NOT link to /essay`, () => {
+      expect(buildAnalysisPost(exam, 0).body).not.toContain("](/essay)");
+    });
+  }
+});
+
 describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 404)", () => {
   for (const exam of EXAMS) {
     it(`${exam}: every exam-prefixed relatedSlug resolves to a sibling generator's slug`, () => {
