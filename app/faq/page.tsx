@@ -6,21 +6,26 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { FAQS, FAQ_CATEGORY_LABELS, type FaqItem } from "@/data/faq";
+import { FaqItem as FaqItemComponent } from "@/components/faq/FaqItem";
+
+// Derive the advertised count from the registry so it never drifts stale
+// (it was hardcoded "79問" while FAQS already held 80 items).
+const FAQ_COUNT = FAQS.length;
 
 const FAQ_OG = (() => {
   const params = new URLSearchParams({
     type: "faq",
     title: "よくある質問",
     subtitle: "過去問AI の使い方",
-    body: "対象試験・AI 解説・申込手続・各試験区分・学習方法など 79 問。",
+    body: `対象試験・AI 解説・申込手続・各試験区分・学習方法など ${FAQ_COUNT} 問。`,
   });
   return `${SITE_BASE_URL}/api/og?${params.toString()}`;
 })();
 
 export const metadata: Metadata = {
   title: "よくある質問（FAQ）— 過去問AIの使い方・AI解説の精度",
-  description:
-    "過去問AIの対象試験・AIコパイロットの精度・受験申込手続・各試験区分の概要・学習方法など79問のよくある質問にまとめてお答えします。教育貢献プロジェクトとして全機能無料で公開しています。",
+  description: `過去問AIの対象試験・AIコパイロットの精度・受験申込手続・各試験区分の概要・学習方法など${FAQ_COUNT}問のよくある質問にまとめてお答えします。教育貢献プロジェクトとして全機能無料で公開しています。`,
   alternates: { canonical: "/faq" },
   openGraph: {
     title: "よくある質問（FAQ） | 過去問AI",
@@ -40,9 +45,6 @@ export const metadata: Metadata = {
     images: [FAQ_OG],
   },
 };
-
-import { FAQS, FAQ_CATEGORY_LABELS, type FaqItem } from "@/data/faq";
-import { FaqItem as FaqItemComponent } from "@/components/faq/FaqItem";
 
 export default function FaqPage() {
   const jsonLd = {
