@@ -58,12 +58,20 @@ describe("論文(午後II)時間配分記事の事実性と旗艦 funnel", () =>
     expect(body).toContain("/blog/koudo-ronbun-hyouka-rank");
   });
 
-  it("親記事（論述の書き方）から inbound リンクがあり orphan 化しない", () => {
+  it("2 つの関連記事から inbound リンクを受け orphan 化しない", () => {
+    // s82/s83 precedent: 新記事は 2 つの inbound 面を持たせ orphan-fragility を避ける。
     const parent = getBlogPostBySlug(PARENT);
     expect(parent).toBeDefined();
     expect(
       parent!.body.includes(`/blog/${SLUG}`),
       "koudo-ronjutsu-kakikata-kotsu から新記事への inbound リンクが無い",
+    ).toBe(true);
+    // 評価ランク記事の「字数不足＝時間切れ」文脈からの 2 本目の inbound
+    const rankPost = getBlogPostBySlug("koudo-ronbun-hyouka-rank");
+    expect(rankPost).toBeDefined();
+    expect(
+      rankPost!.body.includes(`/blog/${SLUG}`),
+      "koudo-ronbun-hyouka-rank から新記事への inbound リンクが無い",
     ).toBe(true);
   });
 
