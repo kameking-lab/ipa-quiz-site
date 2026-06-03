@@ -2177,3 +2177,31 @@ s131 は「CBT移行 vein は cbt-vs-pbt/score-report/toujitsu-nagare/saishin-do
 - done×3: score-report funnel `25ef589` / remote-juken 動向 stale `79d117e` / remote-juken 会場 FE誤記 `134a468`。いずれも本番HTML実測・回帰pin・全ゲート緑（typecheck0 / lint0err[warnは未追跡 ux-audit-screenshots.mjs のみ] / test 304 files 2290 passed / build OK）。
 - 監査メモ: CBT移行 vein は s131 の5面に加え本セッションで score-report funnel・remote-juken 2件を是正し consistent 化完了。L8094（申込日程記事の「今後CBT化が予定」一行 aside）は既に正確・hedged で saturation回避のため非追加。他面の present-tense「春期・秋期/紙」は移行が予定段階ゆえ事実=HD-7（正式移行時に site-wide 更新）。content/funnel/dead-link/dead-anchor/RSS/OG/@id/構造化parity/calc-LP/科目B/exam-logistics の各 vein は s1-131 で枯渇/SKIP/HD のまま。
 - 残: HD-1(GSC404)/HD-4(モック午後)/HD-6(sc-ronbun frame)/HD-7(CBT正式移行時のsite-wide枠組み更新)=人間入力待ち。DONE.flag は作らない（CBT移行ニュースで継続作業余地あり）。
+
+---
+## セッション133（growth第2弾・2026-06-03 JST）= 事実性監査: 海外受験(ITPEC)の誤framing是正 + FE=CBT区分の取り残しを3記事で掃き出し
+
+content vein は s1-132 で枯渇/SKIP/HD のため、read-only 監査（machine-scan）で**事実性の取り残し**を1点ずつ実測し surgical に是正（s21-32/s89 の事実性監査 vein を再稼働）。全て additive/surgical・本番HTML実測・回帰pin・全ゲート緑（commit と別呼び出しで単独実行・目視）。
+
+### [done cycle1 SHA `538aa48`] 在宅受験記事の海外受験説明を ITPEC アジア共通統一試験として事実是正
+- machine-scan（`海外受験/海外会場`）で `ipa-zaitaku-remote-juken` の海外受験記述が誤りと判明。本文「IPA 試験は海外会場が一部設置（タイ・ベトナム等）」「IPA 公式ページの『海外受験』欄を参照」は事実誤り。
+- WebSearch + IPA公式 `https://www.ipa.go.jp/shiken/asia/itpe.html` WebFetch で裏取り: タイ・ベトナム・フィリピン等で実施されるのは **ITPEC（IT Professionals Examination Council）の「アジア共通統一試験」**＝日本の試験をベースにした**別試験**（基本情報・ITパスポート相当、応用情報相当は年1回、英語中心、相互認証）であり「IPA試験の海外会場」ではない。日本の試験そのものは海外で実施されない。「海外受験」欄は実在しない dead reference だった。
+- 本文 bullet＋FAQ の2箇所を surgical 是正（ITPEC/アジア共通統一試験/相互認証の durable fact・日本の試験そのものは海外不可を明示）。出典=IPA公式 itpe.html（curl 200/no-redirect 実測のうえ `blog-external-link-allowlist.test.ts` の EXPECTED_EXTERNAL_URLS へ vetting 追加）。制度=採点無関係ゆえ旗艦/essay非送客（body /essay=header nav 3件のみ）。
+- 実測: 本番 `.next/.../ipa-zaitaku-remote-juken.html` に ITPEC×6・アジア共通統一試験×12・相互認証×6・itpe.html link×4 render／旧 stale「海外会場が一部設置」「海外会場が設置されています」「『海外受験』欄」=全0。回帰pin（既存 remote-juken-cbt-transition.test.ts に6 it 目を追加）。
+
+### [done cycle2 SHA `4e821ee`] 同記事の結論・まとめで FE を CBT 区分に統一（内部矛盾是正）
+- cycle1 の回帰 assertion `not.toContain("CBT 試験（IP・SG）")` が**同記事のさらなる FE 取り残しを検出**。s132 は会場説明節の FE誤記のみ是正したが、結論節は「**PBT 試験（FE・AP・高度試験）**」と FE を PBT 側に列挙し、まとめは「CBT 試験（IP・SG）」と FE を欠いて、会場説明節（CBT 試験（IP・SG・FE））と**内部矛盾**していた。
+- FE は令和3年度以降 CBT 通年で PBT ではない事実に統一（結論節 PBT列挙から FE 除去＋CBT列挙へ・まとめ CBT列挙に FE 補完）。実測: 本番HTML で CBT（IP・SG・FE）×6・FE-omit/FE-as-PBT=0。回帰pin に FE-omit CBT列挙の非残存 assertion 追加。
+
+### [done cycle3 SHA `ca87c63`] マイナンバー申込記事で FE を CBT 区分に統一（FE を PBT 扱いの誤り是正）
+- cycle2 を受けた corpus-wide grep（`PBT.*FE`/`CBT 試験（IP・SG）`）で**別記事の同型誤り**を発見。`ipa-moushikomi-mynumber` は申込手続見出しを「**PBT 試験：AP / FE / 高度試験**」と FE を PBT 申込フローに列挙し、本人確認・当日説明の節は「CBT 試験（IP・SG）」と FE を欠いていた（FE申込は CBT 予約方式・本人確認も CBT 区分側）。3箇所を FE=CBT へ統一。実測: 本番HTML で FE-as-PBT/FE-omit=0・CBT（IP・SG・FE）×4。回帰pin新設 `moushikomi-mynumber-fe-cbt.test.ts`（3 it）。
+
+### [done cycle4 SHA `f81392c`] 合格通知時期記事の CBT スケジュール節に FE を補完
+- 同 grep で `ipa-goukaku-tsuchi-jiki` の「CBT 試験のスケジュール」節が即時スコア・翌月正式発表という CBT 通年区分の発表モデルを IP・SG だけに限定し FE を欠く取り残しを発見（FE も CBT 通年で同モデル）。3箇所に FE を補完（CBT 試験（IP・SG・FE）/基本情報技術者（FE）は通年 CBT 方式）。実測: 本番HTML で CBT（IP・SG・FE）×4・FE-omit=0。回帰pin新設 `goukaku-tsuchi-jiki-fe-cbt.test.ts`（3 it）。
+
+### セッション133 まとめ
+- done×4: 海外受験 ITPEC 是正 `538aa48` / remote-juken FE統一 `4e821ee` / mynumber FE統一 `ca87c63` / tsuchi-jiki FE補完 `f81392c`。全て本番HTML実測・回帰pin・全ゲート緑（typecheck0 / lint0err[warnは未追跡 ux-audit-screenshots.mjs のみ] / test 304→306 files 2297 passed / build OK）。
+- 新知見1: 海外受験＝ITPEC アジア共通統一試験（日本の試験の海外会場ではない・相互認証の別試験）は corpus に1記事のみで誤framing だった clean な事実性 gap。出典 vetting workflow で IPA公式 itpe.html を allowlist 追加。
+- 新知見2: **FE=CBT通年（令和3年度以降）なのに FE を PBT 扱い/CBT列挙から欠く誤りが s132 の会場説明1記事是正の後も3記事に残存**していた（remote-juken 結論/まとめ・mynumber 申込/本人確認・tsuchi-jiki スケジュール）。回帰 assertion が次の取り残しを芋づる式に炙り出す好例（s89「対の概念の片方だけ誤用を grep で炙る」と同型）。
+- **vein 打ち止め確認**: corpus-wide grep（data/lib/app/components）で残る `CBT 試験（IP・SG）` FE-omit=0・FE-as-PBT=0（14625/14693 の「PBT（AP/高度）…CBT通年区分（IP・SG・FE）」は正しい区分け・11144 は履歴書略称で無関係）。**FE method-classification の事実性 vein は本セッションで完全枯渇**。
+- 残: HD-1/HD-4/HD-6/HD-7=人間入力待ち。DONE.flag は作らない（事実性監査は別概念対で継続余地・CBT正式移行ニュースで横断更新余地あり）。
