@@ -23,6 +23,7 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/about/koudo_menjo.html",
   "https://www.ipa.go.jp/shiken/about/menjo-fe.html",
   "https://www.ipa.go.jp/shiken/goukaku/index.html",
+  "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
 ] as const;
