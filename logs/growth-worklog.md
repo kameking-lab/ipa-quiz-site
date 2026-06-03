@@ -2121,3 +2121,21 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - SKIP×1: 試験時間タイムテーブル記事(CBT 移行で固定時間割の前提崩壊=misinformation回避)。
 - done×1: cbt-vs-pbt 記事の CBT 移行 stale 是正 `d9a7928`(公式発表追従・出典 vetting・回帰pin)。
 - 新知見: AP/高度/支援士の CBT 移行(令和8年度予定)は corpus 全体の「AP/高度=紙」前提に影響する潜在 stale vein。ただし移行は「予定」段階ゆえ現時点記述は事実=mass編集は過大修正。**移行が正式実施されたら**(HD候補) cbt-vs-pbt/障害/cbt-toujitsu/zenkubun-hikaku 等の横断更新が要る=backlog/HD に起案。
+
+---
+## セッション130（growth第2弾・2026-06-03 JST）— s129 lead「全区分の試験時間（長さ）一覧」を SSOT 検証→安全に実装
+
+### [done] P2-2 content深掘り: 全区分の試験時間（長さ）一覧を zenkubun-hikaku 比較記事へ追加 — SHA `42e940a`
+- 背景: s128 が積み s129 が「開始時刻タイムテーブルは CBT 予約枠制で前提崩壊=SKIP」とした上で「試験時間の "長さ(分数)" は CBT 移行後も不変=durable で安全な reference になりうる」と再 lead 化していた件。s129 は「13区分の per-区分 duration は要 official 裏取り・enumeration多=error surface大」と慎重姿勢。
+- **risk 解消の鍵**: machine-scan の結果、必要な duration は**全てコーパスに検証済 SSOT として既存**だった（新規外部値の捏造でなく既存検証値の集約）:
+  - IP 100問/120分（exam-data.ts:30）/ SG 60問/120分（generators.ts:5527）/ FE 科目A 60問90分（exam-data.ts:61）+科目B 20問100分（generators 複数）/ AP 午前80問150分・午後5問150分（exam-data.ts:85,87）/ 高度 午前I 30問50分（s104 koudo-gozen1-taisaku）・午前II 25問40分（exam-data.ts:106）・午後I 90分（db-gogo 等）・午後II 120分=2時間（exam-data.ts:108）/ SC 午後150分（2023統合・exam-data.ts:730）。
+- **自然な home = `ipa-shiken-zenkubun-hikaku`**（全13区分比較記事）。難易度・受験順序・キャリアは扱うが**試験時間が完全欠落**だった clean gap。additive な節「## 区分別の試験時間（長さ）」（6区分グルーピングの GFM 表＋注4点）＋FAQ Q5＋まとめ1行を追加。**新規内部リンク無し＝404リスク無し**。制度系ゆえ旗艦/essay 非送客（s27/s65 precedent・body /essay=header nav 3件のみ）。
+- **CBT-robust framing**: 「試験時間の長さは令和8年度の CBT 移行後も変わりません（IPA『各試験時間に変更はありません』）／午前→科目A・午後→科目B 名称変更／開始時刻(時間割)は方式・年度で異なる=最新要項は IPA 公式で確認」を明記。s129 の「移行は予定段階＝断定回避」を踏襲。
+- ゲート（commit前に単独実行・目視）: typecheck 0 / lint 0err（warn は未追跡 ux-audit-screenshots.mjs のみ） / test **301 files 2275 passed**（300/2270→+1file/+5=新pin 5 it） / build Compiled successfully(30.1s)。
+- 実測（崩れたら落ちる）: 本番ビルド `.next/server/app/blog/ipa-shiken-zenkubun-hikaku.html`(122KB) に 区分別の試験時間 節・IP120/FE科目A90+B100/高度 午前I50+午前II40+午後I90+午後II120/SC午後150・durable framing・Q5(FAQPage JSON-LD)が render。
+- 回帰pin `__tests__/seo/zenkubun-hikaku-shiken-jikan.test.ts`(5 it=記事存在/試験時間節存在/各区分 duration SSOT一致[誤分数で落ちる]/CBT不変 framing/FAQ Q5)。
+
+### セッション130 まとめ
+- done×1: 全区分試験時間（長さ）一覧 `42e940a`（s129 lead を SSOT 検証で安全に実装・content深掘り）。
+- 知見: s129 が「要 official 裏取り・risky」とした lead は、実は必要値が**全てコーパス検証済 SSOT**として既存だったため、新規外部 verification 無しで安全に集約できた（捏造でなく集約）。「enumeration risky」と見えても SSOT 在庫を machine-scan で確認すれば確実に着手できる好例。
+- 残（潜在 stale vein・不変）: AP/高度/支援士の CBT 正式移行時の corpus 横断更新（cbt-toujitsu/障害記事/zenkubun-hikaku 等の「紙」present-tense 記述）は移行が「予定」段階ゆえ現状は事実=mass編集は過大修正＝HD候補（正式日程待ち）。今回の zenkubun 追加は長さ(不変)のみ扱い時間割(可変)を断定しないため stale landmine 無し。
