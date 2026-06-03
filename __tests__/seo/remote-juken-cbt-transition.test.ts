@@ -43,6 +43,8 @@ describe("在宅受験記事の CBT 移行 動向 追従", () => {
     expect(body).not.toContain("FE 一部");
     expect(body).toContain("PBT 試験（AP / 高度試験）");
     expect(body).toContain("CBT 試験（IP・SG・FE）");
+    // まとめの CBT 区分列挙も FE を含む（s132 が本文を直した際の取り残し是正・s133）
+    expect(body).not.toContain("CBT 試験（IP・SG）");
   });
 
   // 海外受験の事実性是正（s133）: タイ・ベトナム等で実施されるのは ITPEC の
