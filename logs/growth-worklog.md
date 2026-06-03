@@ -2155,3 +2155,25 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - done×1: ipa-saishin-doukou の CBT 移行 stale 是正 `67b3bed`(公式発表追従・最新動向記事の取り残し解消・回帰pin)。
 - 監査メモ: CBT 移行(令和8年度予定)vein は cbt-vs-pbt(s129)＋score-report＋toujitsu-nagare＋saishin-doukou(s131)＋zenkubun 試験時間(s130)の5面で網羅＝**「予定」段階で書ける範囲は consistent に反映完了**。`ipa-old-syllabus-vs-new` は syllabus"内容"改訂の記事で CBT="実施方式"は off-topic＝非追加(water-down 回避)。content/FAQ/dead-link/dead-anchor/funnel/RSS/OG/@id/構造化parity/calc-LP/科目B細分/exam-logistics の各 vein は s1-130 で枯渇/SKIP/HD。
 - 残（HD・人間入力待ち）: HD-1(GSC 404一覧)・HD-4(モック午後データ)・HD-6(sc-ronbun-taisaku frame)・**HD-7(CBT 正式移行時の site-wide「春期/秋期/紙/年2回」枠組み更新＝SSOT設計を伴う広域＝正式日程確定後に人間判断)**。DONE.flag は作らない(HD 解除や新ニュースで継続作業余地あり・安易な枯渇宣言を回避)。
+
+---
+## セッション132（growth第2弾・2026-06-03 JST）= CBT移行 stale/funnel の取り残しを3件是正（在宅受験・結果確認記事）
+
+s131 は「CBT移行 vein は cbt-vs-pbt/score-report/toujitsu-nagare/saishin-doukou/zenkubun の5面で網羅」と総括したが、read-only 監査で **hub→spoke funnel の非対称** と **forward-looking stale claim** の取り残しを3件発見し是正（s129/s131 と同型手順）。全て additive/surgical・本番HTML実測・回帰pin・全ゲート緑。
+
+### [done cycle1 SHA `25ef589`] 結果確認記事 → canonical cbt-vs-pbt funnel
+- `cbt-goukaku-happyou-score-report` の「応用情報・高度はどうなる？」節が令和8年度CBT移行（予定）に触れながら、移行内容を整理した canonical `ipa-shiken-cbt-vs-pbt`（s129 で durable fact 反映済）へ未リンクで、IPA公式と申込フロー記事へしか送客していなかった hub→spoke gap（s131 が saishin-doukou で塞いだのと同型）。「移行で何が変わるか（試験時間変更なし・午前→科目A/午後→科目B・予約枠制）は [CBTとPBTの違い] で詳しく整理」を本文に additive 追加・断定回避。
+- 検証: 本番 `.next/.../cbt-goukaku-happyou-score-report.html` に「移行で何が変わるか」「/blog/ipa-shiken-cbt-vs-pbt」「午前→科目A・午後→科目B」render。回帰pin `__tests__/seo/score-report-cbt-vs-pbt-funnel.test.ts`（4 it）。
+
+### [done cycle2 SHA `79d117e`] 在宅受験記事のオンライン化動向を stale 是正
+- `ipa-zaitaku-remote-juken` の「オンライン化の動向」節が高度試験CBT化を「議論されています」と未確定framingで述べ、CBT化済み区分の列挙から基本情報（FE）を欠いていた stale claim（s129 が cbt-vs-pbt で塞いだのと同型）。確定済み durable fact（応用情報・高度・支援士＝令和8年度CBT移行予定）へ追従し、FE を列挙に補い、canonical cbt-vs-pbt へ funnel。「論述試験のオンライン採点化が議論」という speculative 文は削除（IPA未公表の推測は misinformation回避）。「予定」段階明示で断定回避。
+- 検証: 本番HTML に「令和8年度（2026年度）からCBT方式へ移行する予定」「情報セキュリティマネジメント・基本情報」「/blog/ipa-shiken-cbt-vs-pbt」render・旧「議論」framing=0。回帰pin `__tests__/seo/remote-juken-cbt-transition.test.ts`。
+
+### [done cycle3 SHA `134a468`] 同記事の会場説明で基本情報をCBT区分として是正（FE 一部PBT 誤記）
+- cycle2 で同記事の動向節を「FEもCBT化済」と直した結果、会場説明3箇所（CBT会場予約区分の列挙=IP・SGのみ／PBT試験＝「FE 一部 / AP / 高度試験」／代替策のCBT試験＝IP・SGのみ）が依然 FE を PBT 扱いして **内部矛盾** になっていた。FE は令和3年度以降CBT通年でPBTは存在しない事実誤りを是正＝CBT会場予約区分=IP・SG・FE／PBT=AP・高度 へ統一。
+- 検証: 本番HTML に「PBT 試験（AP / 高度試験）」「CBT 試験（IP・SG・FE）」render・「FE 一部」=0。同 test に FE一貫性 3 assertion 追加。
+
+### セッション132 まとめ
+- done×3: score-report funnel `25ef589` / remote-juken 動向 stale `79d117e` / remote-juken 会場 FE誤記 `134a468`。いずれも本番HTML実測・回帰pin・全ゲート緑（typecheck0 / lint0err[warnは未追跡 ux-audit-screenshots.mjs のみ] / test 304 files 2290 passed / build OK）。
+- 監査メモ: CBT移行 vein は s131 の5面に加え本セッションで score-report funnel・remote-juken 2件を是正し consistent 化完了。L8094（申込日程記事の「今後CBT化が予定」一行 aside）は既に正確・hedged で saturation回避のため非追加。他面の present-tense「春期・秋期/紙」は移行が予定段階ゆえ事実=HD-7（正式移行時に site-wide 更新）。content/funnel/dead-link/dead-anchor/RSS/OG/@id/構造化parity/calc-LP/科目B/exam-logistics の各 vein は s1-131 で枯渇/SKIP/HD のまま。
+- 残: HD-1(GSC404)/HD-4(モック午後)/HD-6(sc-ronbun frame)/HD-7(CBT正式移行時のsite-wide枠組み更新)=人間入力待ち。DONE.flag は作らない（CBT移行ニュースで継続作業余地あり）。
