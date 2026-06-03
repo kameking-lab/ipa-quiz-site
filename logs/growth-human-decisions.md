@@ -154,3 +154,11 @@
 - 推奨: (a)で当面問題なし。CTR改善を狙う段で (b)（GSC連動・区分単位）。ブログ title の同種判断（HD-13）と方針一致（GSCでCTR低 long-title を人間が個別短縮）。
 - 緊急度: 低（截断は補助語のみ・主要KWは保持・新規404やリンク切れ等のhard欠陥ではない）。
 - 関連: HD-13（blog title 長・droppable segment無し）/ HD-1（GSC 404・順位データ）/ 確定戦略(c)「あと一歩クエリの title/description/スニペット改善」。
+
+### HD-16: 高ボリューム午前計算 keyword LP 候補（2の補数・待ち行列）が「頻出7パターン」blog framing 外で defer 継続中 — 着手可否は編集 framing 判断（セッション119-122 で3回 defer・本セッション124 で正式 HD 化）
+- 何の話か: P2-2「○○計算 解き方」keyword LP vein は、計算克服 blog `ipa-shiken-keisan-mondai-kokuhuku` の「頻出7パターン」named pattern に専用解法 LP を1本ずつ揃えて完走した（s119 稼働率 / s120 スループット / s121 論理演算 / s122 確率・期待値＋計算量 / 既存 db-3nf-normalization=正規化 / 基数変換=mechanical・web飽和で意図的に非新設）。残る高ボリューム午前計算で **LP 化されていない有力候補が2件**: (a) **2の補数（負数表現・符号ビット・オーバーフロー）** = `data/questions/**` で **19ファイル・全12区分（AP/FE/AU/DB/ES/IP/NW/PM/SA/SC/SM/ST）に分布**する高頻度・高 pain（反転して+1・符号拡張・桁あふれが genuinely 紛らわしい）・競合道場は静的解説のみで差別化可。(b) **待ち行列（M/M/1）** = 高 pain・競合薄（s119-121 で「稼働率と並ぶ最有力」と評価）。両者ともコーパス/blog に専用の段階的解法面が不在（2の補数は blog 言及ゼロ＝`grep`実測。スタックオーバーフロー=再帰記事の別文脈のみ）。
+- なぜループが自律実行しないか: 両候補は **blog「頻出7パターン」list の named pattern ではない**ため、s120-122 が以下の framing 選択を「編集判断＝迷ったら安全側で見送り」とした: ①「## パターン別の最短解法」に subsection を足す → named「7」list と非対称。②基数変換 section へ fold → 基数変換（=進数相互変換）の scope を負数表現まで広げる framing 変更。確定戦略「迷ったら直さず SKIP（安全側）」＋「戦略/編集判断は自律実行しない」に従い、blog framing を勝手に確定しない。
+- 選択肢: (a) 現状維持＝非新設（基数変換と同じ「飽和/framing外」扱い・安全側）。(b) blog「頻出7パターン」を 8/9 に拡張し subsection＋LP を新設（list framing を編集判断で更新＝人間が承認すれば s119-122 と同型の双方向リンクでクリーンに実装可）。(c) **【本セッション124 が新たに発見した framing-neutral 経路】blog を一切触らず** LP を新設し、`/keywords` 索引＋sitemap＋**`getRelatedKeywordPages` の「他の特集記事」レール**のみで配線する。同レールは共有試験区分（ap/fe）で score 20 を付けるため、新 LP は既存5本の計算 LP クラスタへ自動相互リンクされ orphan 化しない（s54-55「索引のみ=弱い」懸念を5本の sibling-rail inbound が緩和）。残課題=「計算 LP の中で唯一 blog inbound を持たない」別種の非対称が生じる点のみ。
+- 推奨: (c) が **purely additive・blog framing 不変・既存レール活用で discoverability 確保**ゆえ最も安全に着手可能（人間が「blog symmetric を捨て framing-neutral を許容」と一言判断すれば次セッションが s119-122 と同手順で 2の補数 LP を実装＝高ボリューム/高差別化で高 ROI）。blog symmetric を重視するなら (b)（list を 7→8 に拡張承認）。緊急性が無ければ (a)。
+- 緊急度: 中（高ボリューム/競合薄/モック非依存＝HD-4 非依存で旗艦ブロッカー無し・着手すれば確実な集客改善だが、framing 判断が無いと安全に進められない）。
+- 関連: backlog P2-2「○○計算 解き方」LP vein（s119-122 完走・本 HD は残2候補の framing ブロッカー）。worklog s120-122 申し送り（待ち行列/2の補数 を defer 記録）。確定戦略「高ボリューム午前ロングテール・競合は静的解説のみ＝差別化」。
