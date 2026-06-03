@@ -1930,3 +1930,9 @@ s117 が「構造化データ完全性パリティ vein はほぼ枯渇」と宣
 - **検証（「崩れたら落ちる」+本番HTML実測+全ゲート別呼び出し緑）**: 既存 guard `__tests__/seo/keyword-article-publisher.test.ts` に「Article が ImageObject を持つ」it 追加(`articleImage`/`type:"keyword"`/`image:{`/`"@type":"ImageObject"`/`url: articleImage` を pin・revert で fail)。本番ビルド `.next/server/app/keywords/ap-chokuzen-1week.html`=`"image":{"@type":"ImageObject","url":"https://www.kakomon-ai.jp/api/og?type=keyword&...","width":1200,"height":630}` を実測(og:image と同一 URL=代表画像一致)。typecheck0(別呼出)/lint0err(warn=未追跡 ux-audit-screenshots.mjs のみ・本変更外)/test **285 files 2215 passed**(2214→+1)/build Compiled successfully。
 - **本セッション小計=確実な改善1件**(`6a0831b`)。Article は blog/keywords の2箇所のみで、image を揃えて**両者が完全な blog 標準形に到達＝構造化データ完全性パリティ vein 完全枯渇**。
 - **次セッション申し送り**: パリティ vein は image 補完で打ち止め。content/dead-link/dead-anchor/FAQ/funnel/RSS/OG/@id解決性/構造化データ完全性パリティ の各 vein は s1-118 で枯渇/SKIP/HD。残着手可能面は HD 群(GSC 404=HD-1/本番午後=HD-4 ほか)・承認必須・広域リファクタ(使-3)=人間入力 or 厚い監査待ち。
+
+### セッション118 cycle2 — 隣接の構造化データ追加候補2件を評価し evidenced SKIP（水増し回避）
+cycle1 で開けた parity 視点で隣接面を read-only 監査し、追加候補2件を「実害/rich-result 有無」で評価:
+- **keywords 索引 `/keywords` の CollectionPage に mainEntity:ItemList を足すか**: 現状 `CollectionPage`(name/url/inLanguage)は bare で、blog 索引(`Blog` ノードが `blogPost:[...]` で子を列挙)と非対称。ただし**可視 `<ul>` の keyword リンクは全件 crawlable＋sitemap 収録済**＝子ページの発見性は既に担保。CollectionPage+ItemList は**可視 rich-result を生まない**ため追加は theoretical signal 止まり。**SKIP**(「理論上の指摘で実害なしは SKIP」・courseWorkload/WebPage stub SKIP と同 class)。
+- **keyword LP に LearningResource ノードを足すか(blog は Article+LearningResource、keyword は Article+Breadcrumb)**: LearningResource は現状 Google で可視 rich-result を生まず、追加は speculative＝過大修正の罠。**SKIP**。
+- **結論**: cycle1 の image は Article 最重要級 rich-result プロパティ＋実在画像で高ROI だったが、隣接候補2件は no-rich-result の theoretical signal＝安全側で非着手。本セッションは確実な改善1件(`6a0831b`)＋evidenced SKIP2件で正常終了(量より確実性)。
