@@ -61,6 +61,26 @@ describe("blog FAQ extraction for FAQPage JSON-LD", () => {
     }
   });
 
+  it("extracts the AP 午後選択戦略 FAQ without funnelling to the flagship /essay", () => {
+    // ap-gogo-sentaku is AP's highest-volume 午後 article. It gained a 4 Q&A FAQ
+    // section, but AP 午後 grading data is still a mock (HD-4), so the FAQ must
+    // NOT advertise the flagship AI grader (/essay) — only the /ap hub and the
+    // AI copilot (/quiz). If a /essay funnel leaks in, this fails.
+    const post = getBlogPostBySlug("ap-gogo-sentaku");
+    expect(post).toBeDefined();
+    const faqs = extractFaq(post!.body);
+    expect(faqs).toHaveLength(4);
+    const faqSection = post!.body
+      .split(/(?=^## )/m)
+      .find((s) => /^## よくある質問/.test(s))!;
+    expect(faqSection).not.toContain("/essay");
+    for (const f of faqs) {
+      expect(f.question.startsWith("Q")).toBe(false);
+      expect(f.answer).not.toMatch(/\]\(/);
+      expect(f.answer).not.toContain("**");
+    }
+  });
+
   it("returns an empty array for a post with no FAQ section", () => {
     const post = getAllBlogPosts().find(
       (p) => !p.body.includes("## よくある質問"),
