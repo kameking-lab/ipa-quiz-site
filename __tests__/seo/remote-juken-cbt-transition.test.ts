@@ -36,4 +36,12 @@ describe("在宅受験記事の CBT 移行 動向 追従", () => {
       "/blog/ipa-shiken-cbt-vs-pbt",
     );
   });
+
+  it("基本情報を PBT でなく CBT 区分として扱っている（FE 一部 PBT の stale 表記なし）", () => {
+    const body = getBlogPostBySlug(SLUG)!.body;
+    // FE はCBT通年（令和3年度以降）で PBT ではない。会場説明の内部矛盾を防ぐ。
+    expect(body).not.toContain("FE 一部");
+    expect(body).toContain("PBT 試験（AP / 高度試験）");
+    expect(body).toContain("CBT 試験（IP・SG・FE）");
+  });
 });
