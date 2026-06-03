@@ -2075,3 +2075,28 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - done×2: (1)nendaibetsu-roadmap リスキリング深掘り `1e18369`・(2)受験特別措置 新記事 `80fd0b6`。
 - SKIP×1: 科目B keyword-LP 細分化=cannibalization(per-pattern DEEP blog 既存)。
 - 監査メモ: named seed の content深掘り vein は概ね saturation(リスキリングが clean な最後級)・exam-logistics/AI学習も網羅済。次セッションは残 seed(s110 CBT予約=SKIP済/HD群=人間待ち)を確認しつつ、別の mission-aligned ゼロカバレッジ角度(例: access/discovery系)を1つずつ裏取りして起案。water-down 禁止=clean gap が実測できた時のみ着手。
+
+---
+## セッション128（growth第2弾・2026-06-03 JST）— content深掘り新vein継続: 試験後ロジスティクスのゼロカバレッジ盲点
+
+### [done] P2-2 新vein content: 合格証明書の交付申請 専用記事 — SHA `536c8eb`
+- machine-scan: `交付申請/700円/シー・ビー・ティ` = コーパス**ゼロカバレッジ**を実測。既存 `ipa-goukaku-tsuchi-jiki` は自動郵送の**合格証書**(経産大臣交付・再発行不可)を扱うが、申請制で再発行/英字氏名/複数通に対応する**合格証明書**(IPA交付・1通700円・オンライン申請)の交付申請は未カバー=clean gap。CLAUDE.md §0「誰でも無料で学べる」と整合・競合薄・受験後の高インテント。
+- 裏取り: IPA公式「合格証明書の交付手続き」(`/shiken/goukaku/shinsei_01.html`) WebFetch。durable fact 抽出=証書(大臣交付・再発行不可)/証明書(IPA交付・申請制)/手数料1通700円/オンライン申請(委託先シー・ビー・ティ・ソリューションズ・郵送手続きなし)/外国籍は和文証明書の氏名を英字表記で交付可(旧姓・通称併記可)/申請から約1週間で発行可否・入金後約1週間で郵送。支払詳細・必要書類は断定せず公式へ誘導。
+- 新記事 `ipa-goukaku-shoumeisho-koufu`(general.push・longtail2Offset+42・cross区分ゆえ exam未設定)。制度=採点無関係ゆえ旗艦/essay非送客・既存ページ(ipa-goukaku-tsuchi-jiki/cbt-goukaku-happyou-score-report/it-shikaku-rirekisho-kakikata)へのみ内部リンク=新規404なし。出典=IPA公式リンク。
+- inbound + 事実是正: 親 `ipa-goukaku-tsuchi-jiki` の不正確な記述「証書はIPAから再発行可能」→「証書そのもの(大臣交付)は再発行不可だが、申請すれば合格証明書を交付(1通700円・オンライン)」へ是正し新記事へ配線(orphan回避)。
+- ゲート(commit前に単独実行・目視): typecheck0 / lint0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test **299 files 2265 passed**(298/2259→+1file/+6) / build Compiled successfully(29.6s)。`blog-external-link-allowlist.test.ts` の vetting workflow: 新IPA URL を curl で 200/no-redirect 実測のうえ EXPECTED_EXTERNAL_URLS に追加→全緑。
+- 実測(崩れたら落ちる): 本番ビルド `.next/server/app/blog/ipa-goukaku-shoumeisho-koufu.html`(117KB) に core fact(経済産業大臣6/700×81/英字表記20/オンライン24)・FAQPage JSON-LD(4 Q&A)・出典 shinsei_01 リンク・内部リンク3本 render。body /essay=0(HTML中3件は共有 header nav)。親記事HTMLに inbound link present(2)。`audit-internal-links.ts`=FATAL 0/WARNING 0・body links 1295→1308(+13=新記事内部リンク+inbound・全resolve)。
+- 回帰pin `__tests__/seo/goukaku-shoumeisho-koufu-funnel.test.ts`(6 it=合格証明書/制度タグ存在・durable fact[大臣/再発行不可/推進機構/700円/オンライン/英字表記]・funnel非送客+内部リンク3本・出典・FAQ4問・親inbound)。
+
+### [SKIP・misinformation回避] デジタル合格証/オープンバッジ
+- machine-scan で `オープンバッジ/デジタル合格証` = ゼロカバレッジだったが、WebSearch 裏取りの結果**情報処理技術者試験(FE/AP/高度)には公式オープンバッジが存在しない**(IPA公式バッジは「DX推進パスポート」=ITパスポート+トレーニング群の別プログラムのみ。Qiita等で「IPAが作らないので自作」と言及)。「情報処理技術者試験にオープンバッジがある」と書くと誤情報=有害ゆえ **SKIP**(安全側)。正確に書くなら「公式バッジは無い」記事になり価値薄。
+
+### [lead→backlog] 試験時間・タイムテーブル記事(各区分の試験時間の長さ)
+- `試験時間割/時間割` 専用記事は不在(既存 jikan-haibun 群は午後の**時間配分戦略**で公式試験時間でない・併願記事の言及は断片)。高インテント(「応用情報 試験時間 何時から」等)・competitor薄・mission整合の clean gap候補。
+- ただし**13区分の試験時間(分)は試験要綱PDFが正**で、本セッション(短時間・非対話)では PDF を確実に検証不能=durationを誤ると misinformation。**自律実行せず backlog へ**(要 PDF careful 検証)。検証用 source 確定: `https://www.ipa.go.jp/shiken/syllabus/gaiyou.html` → 試験要綱 `https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kle-att/youkou_ver5_5.pdf`(Ver5.5・2026-01-08掲載)。
+
+### セッション128 まとめ
+- done×1: 合格証明書交付申請 新記事 `536c8eb`(content深掘り・受験後ロジスティクスvein)。
+- SKIP×1: オープンバッジ=misinformation回避。
+- backlog lead×1: 試験時間タイムテーブル記事(PDF検証要・source確定済)。
+- 監査メモ: 試験後/制度ロジスティクスvein は s127(特別措置)→s128(合格証明書)で良質gap継続。残ロジスティクス候補(申込内容変更/受験地変更等)は既存 moushikomi-nagare に部分被り=要吟味。量より確実性で1件確実改善を優先。
