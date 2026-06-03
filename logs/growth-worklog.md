@@ -2100,3 +2100,24 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - SKIP×1: オープンバッジ=misinformation回避。
 - backlog lead×1: 試験時間タイムテーブル記事(PDF検証要・source確定済)。
 - 監査メモ: 試験後/制度ロジスティクスvein は s127(特別措置)→s128(合格証明書)で良質gap継続。残ロジスティクス候補(申込内容変更/受験地変更等)は既存 moushikomi-nagare に部分被り=要吟味。量より確実性で1件確実改善を優先。
+
+---
+## セッション129（growth第2弾・2026-06-03 JST）— s128 lead「試験時間タイムテーブル記事」を careful 検証→SKIP(前提崩壊)・代わりに発見した stale 是正を実施
+
+### [SKIP→転換] s128 lead「試験時間・タイムテーブル記事」= 前提が CBT 移行で崩壊
+- s128 が backlog に積んだ「各区分の試験時間割(開始時刻)reference 記事」を careful 検証。検証 source(IPA youkou PDF)に加え、`https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html`(IPA公式告知)を WebFetch。
+- **発見**: IPA は **令和8年度(2026年度)から応用情報・高度試験・情報処理安全確保支援士を CBT 方式へ移行する予定**を公表済。**春期(4月)・秋期(10月)の一斉実施をやめ、一定期間内の複数日に実施し受験者が予約枠から日時を選ぶ方式**になる=**固定の試験時間割(全国一斉開始時刻)という概念自体が AP/高度で消滅**。よって「タイムテーブル(開始時刻)記事」は dissolving な前提の上に立つ＝misinformation リスク高=**SKIP**(s128 自身の「duration を誤ると misinformation」懸念の正しい帰結)。durable な事実(試験時間=分数は不変)は下記 stale 是正で届ける方が安全。
+
+### [done] P2-2 stale是正: cbt-vs-pbt 記事を令和8年度 CBT 移行の公式発表に追従 — SHA `d9a7928`
+- 既存 `ipa-shiken-cbt-vs-pbt` は「応用情報・高度試験は現時点で PBT／**将来的な CBT 移行も検討されています**」と古い framing のまま=IPA が「検討」から「令和8年度移行予定」へ公表を進めたのに追従しておらず、間もなく誤誘導になる stale content だった。
+- 公式告知(ap_koudo_sc-cbt.html)から durable fact を抽出して本文・FAQ・まとめを是正: (1)令和8年度から CBT 移行予定(対象=応用情報・高度・支援士)、(2)**各試験時間に変更はありません**(IPA明記)、(3)名称変更=午前→科目A・午後→科目B(高度は午前I→科目A-1[50分]/午前II→科目A-2[40分]/午後I→科目B-1[90分]/午後II→科目B-2[120分])、(4)春秋一斉→複数日の予約枠制(固定時間割の廃止)、(5)科目間に10分休憩 予定。「予定」段階ゆえ断定せず公式へ誘導。
+- 出典追加=公式 CBT 告知 URL を curl で **HTTP 200/no-redirect 実測**のうえ `blog-external-link-allowlist.test.ts` の EXPECTED_EXTERNAL_URLS へ追加(vetting workflow)。
+- 過大修正回避: 他記事(障害記事・cbt-toujitsu 等)の「応用情報・高度=紙」記述は**現時点(令和7年度実施分)では事実**ゆえ非編集(移行は予定段階)。stale だったのは cbt-vs-pbt の forward-looking 文言のみ=その1記事に surgical に限定。
+- ゲート(commit前に単独実行・目視): typecheck 0 / lint 0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test **300 files 2270 passed** / build Compiled successfully(29.3s)。
+- 実測(崩れたら落ちる): 本番ビルド `.next/server/app/blog/ipa-shiken-cbt-vs-pbt.html` に 令和8年度(4)・CBT移行予定(4)・各試験時間に変更はありません(2)・科目A試験(4)・科目B試験(4)・出典URL(2) render／**古い framing「現時点で PBT」「移行も検討」= 0**。
+- 回帰pin `__tests__/seo/cbt-vs-pbt-koudo-cbt-transition.test.ts`(5 it=記事存在/令和8年度移行予定/durable fact[時間変更なし・科目A/B 名称]/出典リンク/古い framing 非残存)。
+
+### セッション129 まとめ
+- SKIP×1: 試験時間タイムテーブル記事(CBT 移行で固定時間割の前提崩壊=misinformation回避)。
+- done×1: cbt-vs-pbt 記事の CBT 移行 stale 是正 `d9a7928`(公式発表追従・出典 vetting・回帰pin)。
+- 新知見: AP/高度/支援士の CBT 移行(令和8年度予定)は corpus 全体の「AP/高度=紙」前提に影響する潜在 stale vein。ただし移行は「予定」段階ゆえ現時点記述は事実=mass編集は過大修正。**移行が正式実施されたら**(HD候補) cbt-vs-pbt/障害/cbt-toujitsu/zenkubun-hikaku 等の横断更新が要る=backlog/HD に起案。
