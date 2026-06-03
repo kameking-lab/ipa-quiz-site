@@ -44,4 +44,25 @@ describe("在宅受験記事の CBT 移行 動向 追従", () => {
     expect(body).toContain("PBT 試験（AP / 高度試験）");
     expect(body).toContain("CBT 試験（IP・SG・FE）");
   });
+
+  // 海外受験の事実性是正（s133）: タイ・ベトナム等で実施されるのは ITPEC の
+  // 「アジア共通統一試験」(日本の試験をベースにした相当試験・英語中心・相互認証)で
+  // あり、「IPA 試験の海外会場」ではない。日本の試験そのものは海外で実施されない。
+  // また「IPA 公式ページの『海外受験』欄」は実在しない dead reference だった。
+  it("海外受験を ITPEC アジア共通統一試験として正しく説明している", () => {
+    const body = getBlogPostBySlug(SLUG)!.body;
+    // 誤った framing「海外会場が（一部）設置」を残していない
+    expect(body).not.toContain("海外会場が一部設置");
+    expect(body).not.toContain("海外会場が設置されています");
+    // 実在しない「海外受験」欄への dead reference を残していない
+    expect(body).not.toContain("「海外受験」欄");
+    // 正しい durable fact: ITPEC / アジア共通統一試験 / 相互認証
+    expect(body).toContain("ITPEC");
+    expect(body).toContain("アジア共通統一試験");
+    expect(body).toContain("相互認証");
+    // 日本の試験そのものは海外で実施されない旨を明示
+    expect(body).toContain("日本の情報処理技術者試験そのもの");
+    // 出典＝IPA 公式 アジア共通統一試験ページ（allowlist で 200/no-redirect 済）
+    expect(body).toContain("https://www.ipa.go.jp/shiken/asia/itpe.html");
+  });
 });
