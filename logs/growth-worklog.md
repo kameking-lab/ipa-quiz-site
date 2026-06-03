@@ -2046,3 +2046,32 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - **path(c) calc LP vein の状態**: s125 が seed した (a)CPU性能=実装済(s126c1)・(b)浮動小数点=実装済(s126c3)・(c)情報量/ハフマン=実装済(s126c2)＝**named seed を全消化**。残る calc 候補は全て弱い: 基数変換=mechanical/web飽和で意図的非新設(precedent)・集合=DB SQL と conflate で純度低・標準偏差15/メモリアドレス7/ベン図1=薄。**calc LP vein は実質枯渇**（高 volume かつ honest かつ未カバーな計算トピックは出尽くし）。
 - **次の grounded 新角度（次セッション lead・要 careful 監査）= 土台「科目B」の細分化 LP**: 現状 `fe-kamoku-b-pseudo-language`（科目B 擬似言語 対策手順の概論 LP・strategicCta:kamoku-b）が1本のみ。戦略の「土台=基本情報 科目B（アルゴリズム/擬似言語）AI個別指導・『科目B わからない/解き方/苦手』ロングテール」に対し、**特定アルゴリズム単位の細分 LP**（例: 「擬似言語 トレースのやり方」「二分探索 擬似言語 解き方」等）に gap がある可能性。ただし科目B は strategy-core（土台）ゆえ **rush せず careful な read-only 監査が必須**（既存概論 LP と重複しない specific な解き方面か・corpus 実需・honest か を裏取り）。本セッションでは時間配分のため起案に留め、次セッションが監査の上で1本ずつ。
 - **次セッション申し送り**: (1)最優先 lead=上記「科目B 細分化 LP」を careful 監査の上で着手（土台＝strategy-core・高 value）。(2)それが thin/重複なら別角度を要起案。content/FAQ/dead-link/dead-anchor/funnel/RSS/OG/@id解決性/構造化データparity/calc-LP の各 vein は s1-126 で枯渇/SKIP/HD。HD群（GSC 404=HD-1/モック午後=HD-4 ほか）は人間入力待ち。DONE.flag は作らない（科目B 角度に着手可能な実タスクが残るため）。
+
+---
+## セッション127（growth第2弾・2026-06-03）
+
+### [監査→SKIP] 次 lead「土台=科目B keyword-LP 細分化」(s126起案) = thin/cannibalization
+- read-only 監査: keyword-LP システム `data/keywords.ts`（全21 LP・科目B は `fe-kamoku-b-pseudo-language` 概論1本のみ）と 科目B blog クラスタ（15記事=pseudo-language/taisaku/wakaranai/jikan-haibun/kakomon-nai/security/gijigengo-kihou + 7 trace パターン/sg-jirei）を突合。
+- **結論=SKIP**: calc LP path(c)（s119-126）は「parent blog がinlineで7パターンを述べるのみ・per-pattern PAGE が不在」の gap を埋めた=非cannibalization。対して 科目B の specific「解き方」(二分探索/ソート/再帰/スタック・キュー/連結リスト/木/トレース)は**全て per-pattern の DEEP blog page が既存**。同一トピックで keyword-LP を新設すると自サイト2ページが同一KWを取り合う=cannibalization。「情報セキュリティ/記法/何点」等も各々 dedicated blog 既存。**科目B は blog+概論LP で saturation=keyword-LP 細分化は thin/重複**。s126 自身の but「thin/重複なら別角度」に従い SKIP。
+
+### [done] P2-2 path(a) content深掘り: nendaibetsu-roadmap にリスキリング節 — SHA `1e18369`
+- 別角度として s105 precedent の content深掘りを「あと一歩」最高可視 seed `it-shikaku-nendaibetsu-roadmap`（6.2位/CTR9.5%）で実施。
+- machine-scan: 高インテント サブクエリ「リスキリング/学び直し/異業種転職で年代別にどの IPA 資格から始めるか」が**ゼロカバレッジ**を実測（リスキリング=IP企業導入文脈3件のみ/異業種=受験資格記事1件/セカンドキャリア・学び直しroadmap=0・career-path は「取得後」キャリアで selection-for-reskilling 非カバー）。
+- 焦点節「## リスキリング・学び直し・異業種転職での資格選び」+ FAQ1問を additive 追加。年齢でなく「現在の IT 知識のベース」で IP/FE 入口を選ぶ指針・受験資格不問(ipa-juken-shikaku-nenrei)紐づけ・既存内部リンクのみ(新規404なし)・career記事ゆえ新節は旗艦 /essay 非送客(誇大回避)。
+- 全ゲート緑（commit前に単独実行・目視）: typecheck 0 / lint 0err(warnは未追跡 ux-audit-screenshots.mjs のみ) / test 2253 passed(297 files) / build OK。
+- 実測（崩れたら落ちる）: 本番ビルド `.next/server/app/blog/it-shikaku-nendaibetsu-roadmap.html` に新節h2・「いま持っている IT 知識のベース」・リスキリングFAQ Q・/blog/ipa-juken-shikaku-nenrei・/blog/fe-kamoku-b-taisaku が render。FAQPage JSON-LD は5 Q&A にスケール。新節内 /essay=0（既存5件は header nav + 40代管理系 funnel=intentional）。
+- 回帰pin `__tests__/seo/nendaibetsu-roadmap-reskilling.test.ts`（節存在/IT知識ベース文言/内部リンク3本/新節 /essay非送客/FAQ5問+リスキリングQ抽出）。
+
+### [done] P2-2 新vein content: 受験特別措置（障害・身体の不自由）専用記事 — SHA `80fd0b6`
+- machine-scan: `特別措置/車椅子/弱視/点字/バリアフリー` = コーパス**ゼロカバレッジ**を実測（障害22件は全て技術的「障害対応」=無関係）。CLAUDE.md §0「教育貢献=誰でも無料で学べる環境」と強整合・競合薄。
+- 裏取り: WebSearch + IPA公式「障害をお持ちの方へ」(jitecinquiry_handicapped.html) WebFetch。durable fact 抽出=対象「目や耳・肢体など身体の不自由な方」/CBT不可時は「筆記による試験(特別措置試験)」予定/「受験申込の前」に確認・申請/窓口は試験区分(IP・SG/FE・AP/高度/支援士)で異なる。具体配慮(時間延長/別室等)・期限は IPA公式へ誘導し断定回避(sensitive topic=誤情報有害)。
+- 新記事 `ipa-shiken-juken-tokubetsu-sochi`(general.push・longtail2Offset+38・cross区分ゆえ exam未設定)。制度=採点無関係ゆえ旗艦/essay非送客・既存ページ(ipa-juken-shikaku-nenrei/moushikomi-nagare/cbt-vs-pbt)へのみ内部リンク=新規404なし。出典=IPA公式リンク。
+- inbound=親 受験資格 `ipa-juken-shikaku-nenrei`「学歴・国籍・実務経験も不問」節に additive 配線(受験資格不問→身体の不自由な方も特別措置で受験可・orphan回避)。
+- ゲート: 初回 full test で `blog-external-link-allowlist.test.ts`(出典URL allowlist の崩れたら落ちるpin)が新IPA URLで1件fail→**意図された vetting workflow**: curl で 200/no-redirect 実測のうえ EXPECTED_EXTERNAL_URLS に追加→全緑。typecheck0/lint0err/test 2259 passed(298 files)/build OK。
+- 実測: 本番ビルド `.next/server/app/blog/ipa-shiken-juken-tokubetsu-sochi.html`(117KB) に core fact(目や耳・肢体/受験申込の前/筆記による)・FAQPage JSON-LD(4 Q&A)・出典 jitecinquiry リンク・内部リンク3本 render。body /essay=0(3件は共有 header nav)。親記事HTMLに inbound link present。
+- 回帰pin `__tests__/seo/juken-tokubetsu-sochi-funnel.test.ts`(事実性/funnel非送客/出典/FAQ4問/inbound)。
+
+### セッション127 まとめ
+- done×2: (1)nendaibetsu-roadmap リスキリング深掘り `1e18369`・(2)受験特別措置 新記事 `80fd0b6`。
+- SKIP×1: 科目B keyword-LP 細分化=cannibalization(per-pattern DEEP blog 既存)。
+- 監査メモ: named seed の content深掘り vein は概ね saturation(リスキリングが clean な最後級)・exam-logistics/AI学習も網羅済。次セッションは残 seed(s110 CBT予約=SKIP済/HD群=人間待ち)を確認しつつ、別の mission-aligned ゼロカバレッジ角度(例: access/discovery系)を1つずつ裏取りして起案。water-down 禁止=clean gap が実測できた時のみ着手。
