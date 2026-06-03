@@ -2139,3 +2139,19 @@ s125 seed (b) 浮動小数点誤差 を採用。corpus 実測=`浮動小数点/�
 - done×1: 全区分試験時間（長さ）一覧 `42e940a`（s129 lead を SSOT 検証で安全に実装・content深掘り）。
 - 知見: s129 が「要 official 裏取り・risky」とした lead は、実は必要値が**全てコーパス検証済 SSOT**として既存だったため、新規外部 verification 無しで安全に集約できた（捏造でなく集約）。「enumeration risky」と見えても SSOT 在庫を machine-scan で確認すれば確実に着手できる好例。
 - 残（潜在 stale vein・不変）: AP/高度/支援士の CBT 正式移行時の corpus 横断更新（cbt-toujitsu/障害記事/zenkubun-hikaku 等の「紙」present-tense 記述）は移行が「予定」段階ゆえ現状は事実=mass編集は過大修正＝HD候補（正式日程待ち）。今回の zenkubun 追加は長さ(不変)のみ扱い時間割(可変)を断定しないため stale landmine 無し。
+
+---
+## セッション131（growth第2弾・2026-06-03 JST）— stale是正: 「最新動向2026」記事に応用情報・高度の令和8年度CBT移行（予定）を反映
+
+### [done] P2-2 stale是正: ipa-saishin-doukou トレンド3 を CBT 移行公式発表へ追従 — SHA `67b3bed`
+- 背景: s129(cbt-vs-pbt)・cbt-goukaku-happyou-score-report・cbt-shiken-toujitsu-nagare は既に「応用情報・高度・支援士=令和8年度 CBT 移行予定」を反映済。だが**「最新動向2026」を標題に掲げる `ipa-saishin-doukou` の「最重要トレンド3」が IP・SG・FE の CBT 移行"完了"までしか述べず、最大級の 2026 制度ニュース（AP/高度/SC の令和8年度移行）を欠落**していた＝最新動向記事が corpus 内で最も古い framing という stale gap。read-only 監査(grep `CBT移行完了|全区分CBT`)で他面は consistent・本記事のみ取り残しと確認(=非cannibalization・非mass-edit)。
+- 是正(additive/surgical): トレンド3 見出しを「CBT移行の拡大（IP・SG・FEは完了、応用情報・高度は令和8年度予定）」へ。IP/SG/FE の"完了"記述は維持し、新サブ節「応用情報・高度試験・支援士も令和8年度からCBTへ（予定）」を追加。s129 で vetting 済の durable fact のみ記載: **各試験時間に変更なし(IPA明記)／午前→科目A・午後→科目B 名称／春秋一斉→複数日予約枠制／科目間10分休憩(予定)**。「予定」段階を明示し断定回避・最新は IPA 公式へ誘導。まとめ1行も同期。
+- funnel: 詳細記事 `/blog/ipa-shiken-cbt-vs-pbt`(canonical CBT 記事=s129)へ本文内部リンク(cbt-vs-pbt の inbound 純増)。出典=IPA 公式告知(`ap_koudo_sc-cbt.html`・既に s129 で curl 200/no-redirect 実測済＋allowlist 収録ゆえ vetting 追加不要)。**過大修正回避**: 他記事の present-tense「春期/秋期/紙」記述は令和7年度実施分の事実ゆえ非編集(=HD-7 site-wide 枠組み更新には踏み込まない)。トレンド4(高度午後)も予定段階ゆえ非編集。
+- ゲート(commit と別呼び出しで単独実行・目視): typecheck 0 / lint 0err(warn は未追跡 ux-audit-screenshots.mjs のみ) / test **302 files 2281 passed**(301/2275→+1file/+6=新pin 6 it) / build Compiled successfully。
+- 実測(崩れたら落ちる): 本番ビルド `.next/server/app/blog/ipa-saishin-doukou.html` に「令和8年度（2026年度）に実施する試験からCBT方式へ移行する予定」×2・「各試験の試験時間に変更はありません」×2・「午前→科目A・午後→科目B」×2・`/blog/ipa-shiken-cbt-vs-pbt`×2・`ap_koudo_sc-cbt.html`×2 が render／**古い見出し「CBT移行完了とその影響」=0**。
+- 回帰pin `__tests__/seo/saishin-doukou-cbt-transition.test.ts`(6 it=記事存在/令和8年度移行予定+「予定」段階明示/durable fact[時間変更なし・科目A/B名称]/出典リンク/cbt-vs-pbt funnel/古い見出し非残存)。
+
+### セッション131 まとめ
+- done×1: ipa-saishin-doukou の CBT 移行 stale 是正 `67b3bed`(公式発表追従・最新動向記事の取り残し解消・回帰pin)。
+- 監査メモ: CBT 移行(令和8年度予定)vein は cbt-vs-pbt(s129)＋score-report＋toujitsu-nagare＋saishin-doukou(s131)＋zenkubun 試験時間(s130)の5面で網羅＝**「予定」段階で書ける範囲は consistent に反映完了**。`ipa-old-syllabus-vs-new` は syllabus"内容"改訂の記事で CBT="実施方式"は off-topic＝非追加(water-down 回避)。content/FAQ/dead-link/dead-anchor/funnel/RSS/OG/@id/構造化parity/calc-LP/科目B細分/exam-logistics の各 vein は s1-130 で枯渇/SKIP/HD。
+- 残（HD・人間入力待ち）: HD-1(GSC 404一覧)・HD-4(モック午後データ)・HD-6(sc-ronbun-taisaku frame)・**HD-7(CBT 正式移行時の site-wide「春期/秋期/紙/年2回」枠組み更新＝SSOT設計を伴う広域＝正式日程確定後に人間判断)**。DONE.flag は作らない(HD 解除や新ニュースで継続作業余地あり・安易な枯渇宣言を回避)。
