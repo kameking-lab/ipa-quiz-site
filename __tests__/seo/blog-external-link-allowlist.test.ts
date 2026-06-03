@@ -20,6 +20,7 @@ import { getAllBlogPosts } from "@/data/blog";
 // Verified resolving (curl, HTTP 200, no redirect) on 2026-06-03:
 const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/",
+  "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html",
   "https://www.ipa.go.jp/shiken/about/koudo_menjo.html",
   "https://www.ipa.go.jp/shiken/about/menjo-fe.html",
   "https://www.ipa.go.jp/shiken/goukaku/index.html",
