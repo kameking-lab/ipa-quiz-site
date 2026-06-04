@@ -2205,3 +2205,14 @@ content vein は s1-132 で枯渇/SKIP/HD のため、read-only 監査（machine
 - 新知見2: **FE=CBT通年（令和3年度以降）なのに FE を PBT 扱い/CBT列挙から欠く誤りが s132 の会場説明1記事是正の後も3記事に残存**していた（remote-juken 結論/まとめ・mynumber 申込/本人確認・tsuchi-jiki スケジュール）。回帰 assertion が次の取り残しを芋づる式に炙り出す好例（s89「対の概念の片方だけ誤用を grep で炙る」と同型）。
 - **vein 打ち止め確認**: corpus-wide grep（data/lib/app/components）で残る `CBT 試験（IP・SG）` FE-omit=0・FE-as-PBT=0（14625/14693 の「PBT（AP/高度）…CBT通年区分（IP・SG・FE）」は正しい区分け・11144 は履歴書略称で無関係）。**FE method-classification の事実性 vein は本セッションで完全枯渇**。
 - 残: HD-1/HD-4/HD-6/HD-7=人間入力待ち。DONE.flag は作らない（事実性監査は別概念対で継続余地・CBT正式移行ニュースで横断更新余地あり）。
+
+### 反映前 事実誤り是正（人間指示セッション）2026-06-04
+- done HD-6: SC午後を「論述/論文試験」と誤記していた記事 sc-ronbun-taisaku を、IPA公式+web裏取りの上「午後＝記述式（2023秋に午後I/II統合・150分・4問中2問）」へ全面リライト（slug維持＝relatedSlugs不変）。factuality guard test追加。/ `85810ff`
+- done HD-11: ES午後II＝論述式(2023〜・評価ランクA〜D)を、IPA公式(20230627.html)+web裏取りの上、ESを純・記述式グループから外し「午後I記述式・午後II論述式」へコヒーレント是正（generators.ts 8箇所+exam-data /es+test pin更新+ES guard追加）。旗艦/essay採点スコープはST/SA/PM/SM/AU維持(ES論述採点は対象外/準備中)。/ `401d81c`
+- 全緑: typecheck0/lint0err/test 2297→2299/build緑。SC記事の是正後HTML・/es論述式をビルド成果物で実測確認。リンク健全性/soft404ガード緑。
+- ループ停止確認: growth-loop バッチ(PID4104/45160)が session50 のclaude pipe(cmd45160)で~33h hung→stale processを安全終了(0残)。原因=--printに per-session timeout が無く、claude死亡時にpipe cmdがデッドロック→loop停止。**再発防止案: batに per-session timeout(start/taskkill or timeout監視)を追加(反映後タスク)**。
+- **反映後タスク(申し送り)**:
+  - HD-7(2026年度CBT移行・春期/秋期→前期/後期・実施月変更): site-wide前提更新。範囲広大＋IPA日程一部未確定ゆえ反映後にSSOT化(exam-dataに実施時期フィールド)してから一括。今回は未着手(誤誘導の中核は別途、まずは枠組みSSOT設計)。
+  - HD-14(jitec.ipa.go.jp廃止の出典PDF ~13,000件 deep-remap): 範囲巨大、別バッチ。今回未着手(指示どおり)。
+  - HD-1(GSC 404実URL一覧エクスポート): 人間作業。404掃除の精度向上の起点。
+  - loop再起動(session134から続き)。per-session timeout追加で再発防止。
