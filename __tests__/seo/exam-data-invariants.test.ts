@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import { EXAM_OFFICIAL_LINKS, EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
+import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import type { ExamCode } from "@/lib/questions/types";
 
 // 試験区分ごとの静的データ（合格率/学習時間・公式リンク・ロードマップ・関連試験）は
@@ -163,5 +164,15 @@ describe("EXAM_DEEP_CONTENT の値不変条件", () => {
     const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
     expect(sc).toContain("情報処理安全確保支援士（登録セキスペ、英語名 RISS）");
     expect(sc).not.toContain("登録情報セキュリティスペシャリスト");
+  });
+
+  // HD-11: ES(エンベデッドシステムスペシャリスト)の午後IIは令和5年(2023)秋から
+  // 記述式→論述式(小論文・評価ランクA〜D)に変更(IPA shiken/syllabus/henkou/2023/
+  // 20230627.html)。/es ハブの afternoonStrategy が午後IIを「設計問題(=記述)」と
+  // 誤誘導していたのを是正。午後IIを論述式と明記し、設計問題と誤記しないことを pin。
+  it("es の afternoonStrategy は午後II=論述式（2023〜）を正しく述べる", () => {
+    const es = EXAM_PROFILES.es.afternoonStrategy;
+    expect(es).toContain("論述式");
+    expect(es).not.toContain("午後 II は本格的な設計問題");
   });
 });

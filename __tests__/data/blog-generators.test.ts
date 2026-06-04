@@ -638,7 +638,11 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
     const body = post!.body;
     expect(body).not.toContain("特に午後IIの論述が");
     expect(body).toContain("午後の記述・論述");
-    expect(body).toContain("記述式（NW・DB・ES・SC）");
+    // HD-11: ES午後IIは2023年から論述式。記述式グループから ES を外し、ES の
+    // ハイブリッド性を明記する（ES を純・記述式と誤分類しない）。
+    expect(body).toContain("記述式（NW・DB・SC）");
+    expect(body).not.toContain("記述式（NW・DB・ES・SC）");
+    expect(body).toContain("午後IIは2023年から論述式");
   });
 });
 
