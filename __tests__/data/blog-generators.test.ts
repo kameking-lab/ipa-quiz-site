@@ -533,6 +533,26 @@ describe("blog SC career — RISS は名称独占であり業務独占ではな�
   });
 });
 
+// SC(情報処理安全確保支援士) is NOT an essay(論述/論文) exam (HD-6). IPA official
+// (shiken/kubun/sc.html): 2023秋 merged 午後I/II into a single 午後 (150分/4問中2問/
+// 記述式). sc-ronbun-taisaku once framed SC午後II as a 論述試験 with 合格論文/設問ア〜ウ/
+// 3,200字 — a fabricated essay format SC never had. Pin 記述式 framing so the
+// 論述/論文 mischaracterization can't silently regress.
+describe("blog SC post — 午後 is 記述式, not 論述/論文 (HD-6)", () => {
+  it("sc-ronbun-taisaku frames SC午後 as 記述式, never a 論述/合格論文 exam", () => {
+    const post = getBlogPostBySlug("sc-ronbun-taisaku");
+    expect(post).toBeDefined();
+    const body = post!.body;
+    expect(body).toContain("記述式");
+    // must not present SC午後 as an essay(論文/論述) exam or its format
+    expect(body).not.toContain("合格論文");
+    expect(body).not.toContain("論述試験");
+    expect(body).not.toContain("3,200字");
+    expect(body).not.toContain("設問ア");
+    expect(body).not.toMatch(/午後IIは論述/);
+  });
+});
+
 // NW(ネットワークスペシャリスト) is NOT an essay(論述) exam: IPA official
 // (shiken/kubun/nw.html) lists both 午後I and 午後II as 記述式. This is consistent
 // with the codebase SSOT — ESSAY_EXAM_CODES (lib/essay/load) excludes nw, and
