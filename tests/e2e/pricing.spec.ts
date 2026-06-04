@@ -1,11 +1,12 @@
 import { test, expect } from "@playwright/test";
 
-// 教育貢献プロジェクト方針により /pricing は意図的に 404 を返す。
-// 詳細は lib/seo/expected-404.ts と smoke-routes.spec.ts を参照。
-test.describe("/pricing は意図的 404", () => {
-  test("/pricing は 404 を返す", async ({ request }) => {
+// 教育貢献プロジェクト方針により /pricing は恒久削除済み。middleware の GONE_PATHS で
+// 410 Gone を返す（404 より強い「もう辿らなくてよい」シグナルでクロール資産を回復）。
+// 詳細は middleware.ts と smoke-routes.spec.ts を参照。
+test.describe("/pricing は恒久削除（410 Gone）", () => {
+  test("/pricing は 410 を返す", async ({ request }) => {
     const res = await request.get("/pricing");
-    expect(res.status()).toBe(404);
+    expect(res.status()).toBe(410);
   });
 
   test("/about の料金についてセクションが教育貢献ピボットを伝えている", async ({ page }) => {

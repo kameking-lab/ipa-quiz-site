@@ -58,8 +58,9 @@ test.describe("/contact/enterprise GET page (PAID_MODE only)", () => {
 test.describe("/contact/enterprise GET page (educational contribution mode)", () => {
   test.skip(PAID_MODE, "PAID_MODE=true 時は別テストで検証する");
 
-  test("returns 404 in educational contribution mode", async ({ page }) => {
+  test("returns 410 Gone in educational contribution mode", async ({ page }) => {
+    // /contact/enterprise は GONE_PATHS（恒久削除）。middleware が 410 Gone を返す。
     const res = await page.goto("/contact/enterprise");
-    expect(res?.status()).toBe(404);
+    expect(res?.status()).toBe(410);
   });
 });
