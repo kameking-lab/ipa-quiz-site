@@ -11,6 +11,7 @@ import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { tierForModel } from "@/lib/ai/cost-tracker";
 
 export const runtime = "nodejs";
 
@@ -171,7 +172,7 @@ export async function POST(req: Request) {
     onComplete: isRealProvider
       ? (outputChars) => {
           void recordAiCost({
-            tier: "flash-lite",
+            tier: tierForModel(model),
             inputTokens: estimateTokens(inputChars),
             outputTokens: estimateTokens(outputChars),
             label: "copilot",

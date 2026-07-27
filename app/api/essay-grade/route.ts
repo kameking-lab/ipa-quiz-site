@@ -6,6 +6,7 @@ import type { LLMProvider } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { tierForModel } from "@/lib/ai/cost-tracker";
 import { findEssayQuestion } from "@/lib/essay/load";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import type {
@@ -361,7 +362,9 @@ export async function POST(req: Request) {
       buf += chunk;
     }
     void recordAiCost({
-      tier: "flash-lite",
+      // 論述採点は resolveModel("grading") = pro 層。層はモデル ID から導出する
+      // （手書きの "flash-lite" は pro の 1/25 の出力単価で、集計が大幅に過小だった）。
+      tier: tierForModel(model),
       inputTokens: estimateTokens(ESSAY_SYSTEM_PROMPT.length + userPrompt.length),
       outputTokens: estimateTokens(buf.length),
       label: "essay-grade",

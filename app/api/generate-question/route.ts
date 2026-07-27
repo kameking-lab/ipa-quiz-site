@@ -6,6 +6,7 @@ import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { captureException } from "@/lib/monitoring/sentry";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { tierForModel } from "@/lib/ai/cost-tracker";
 
 export const runtime = "nodejs";
 
@@ -142,7 +143,7 @@ ${choicesText}
     }
     if (provider.name !== "mock") {
       void recordAiCost({
-        tier: "flash-lite",
+        tier: tierForModel(model),
         inputTokens: estimateTokens(SYSTEM_PROMPT.length + userPrompt.length),
         outputTokens: estimateTokens(raw.length),
         label: "generate-question",
