@@ -1,4 +1,9 @@
 import { FREE_AI_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
+import {
+  FEEDBACK_COOKIE_NAME,
+  readCookieValue,
+  verifyFeedbackToken,
+} from "@/lib/rate-limit/feedback-token";
 
 const WINDOW_MS_DAY = 24 * 60 * 60 * 1000;
 const WINDOW_MS_MINUTE = 60 * 1000;
@@ -150,7 +155,8 @@ export interface RateLimitOpts {
 /**
  * Server-side rate limit check.
  * - First 10 requests/day per IP are free for everyone.
- * - Once the user submits feedback (client passes a header), daily limit jumps to 9999.
+ * - Once the user submits feedback, /api/contact issues a signed cookie and the
+ *   daily limit jumps to 9999. 判定はサーバ署名の検証のみ（自己申告は不可）。
  * - Minute burst limit applies to all.
  * - When KV_REST_API_URL/KV_REST_API_TOKEN are set, state is persisted in Upstash KV
  *   so the limit holds across serverless instances. Falls back to per-instance in-memory
@@ -212,7 +218,15 @@ export function getClientIp(req: Request): string {
   return "0.0.0.0";
 }
 
-/** True if the request advertises a verified feedback submission (client header). */
+/**
+ * フィードバック投稿による無料枠解除の判定。
+ *
+ * 判定根拠はサーバが署名した Cookie のみ。従来の x-feedback-submitted ヘッダは
+ * クライアントの自己申告で、任意の値を送るだけで日次上限を 10 → 9999 に
+ * 開けてしまうため、もう読まない（読むとその時点で防御が無効になる）。
+ * トークンは /api/contact がフィードバック受理時にのみ発行する。
+ */
 export function readFeedbackFlag(req: Request): boolean {
-  return req.headers.get("x-feedback-submitted") === "1";
+  const raw = readCookieValue(req.headers.get("cookie"), FEEDBACK_COOKIE_NAME);
+  return verifyFeedbackToken(raw);
 }

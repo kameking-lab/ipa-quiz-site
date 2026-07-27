@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import {
+  FEEDBACK_COOKIE_NAME,
+  feedbackCookieOptions,
+  issueFeedbackToken,
+} from "@/lib/rate-limit/feedback-token";
 import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 import { verifyTurnstileToken } from "@/lib/turnstile";
 import { sendSlackMessage } from "@/lib/notify/slack";
@@ -157,7 +162,22 @@ export async function POST(req: Request) {
   // failure never blocks the user's submission.
   void sendSlackMessage(buildSlackText(maskedPayload, hashIp(ip)));
 
-  return NextResponse.json({ ok: true });
+  const res = NextResponse.json({ ok: true });
+
+  // フィードバックを実際に受理したときだけ、無料枠解除の署名済み証跡を発行する。
+  // これがサーバ側で検証可能な唯一の解除根拠（クライアントの自己申告は不可）。
+  if (payload.kind === "feedback") {
+    const token = issueFeedbackToken();
+    if (token) {
+      res.cookies.set({
+        name: FEEDBACK_COOKIE_NAME,
+        value: token,
+        ...feedbackCookieOptions(),
+      });
+    }
+  }
+
+  return res;
 }
 
 function buildSlackText(payload: z.infer<typeof BodySchema>, ipHash: string): string {

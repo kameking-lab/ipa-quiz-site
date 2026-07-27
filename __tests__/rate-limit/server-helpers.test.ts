@@ -1,47 +1,116 @@
-import { describe, expect, it } from "vitest";
+import { beforeAll, describe, expect, it } from "vitest";
 
 import { getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import {
+  FEEDBACK_COOKIE_NAME,
+  issueFeedbackToken,
+} from "@/lib/rate-limit/feedback-token";
 
 /**
- * Characterization tests for the pure request-header helpers in
- * lib/rate-limit/server.ts. checkRateLimit の挙動は ip-rate-limit / quota-sync で
- * 別途固定されているが、これら 2 つのヘッダ読み取り関数の「実挙動」は未テストだった
+ * Characterization tests for the pure request helpers in lib/rate-limit/server.ts.
+ * checkRateLimit の挙動は ip-rate-limit / quota-sync で別途固定されているが、
+ * これら 2 つの読み取り関数の「実挙動」は未テストだった
  * （rate-limit-key.test はモジュール全体をモックするため実装を通らない）。
  *
- * 特に readFeedbackFlag は「x-feedback-submitted: 1」を厳密一致で判定する
- * セキュリティ境界。ここが緩むと（例: 真偽値化や != null）任意の値で
- * POST_FEEDBACK の準無制限日次枠が解放され、無料枠の悪用経路になる。
- * source 無変更・現挙動の回帰固定（崩れたら落ちる契約）。
+ * readFeedbackFlag は日次上限を 10 → 9999 に開けるセキュリティ境界。
+ * 以前は x-feedback-submitted ヘッダの値だけで判定しており、クライアントが
+ * 自由に付けられるヘッダで準無制限枠が取れた（本番で 9999 を実測）。
+ * 現在の判定根拠はサーバ署名済み Cookie のみ。ここが「ヘッダも見る」に
+ * 戻ると防御が丸ごと無効になるので、それを落ちる形で固定する。
  */
+
+beforeAll(() => {
+  process.env.AUTH_SECRET = "test-secret-for-feedback-token";
+});
 
 function req(headers: Record<string, string> = {}): Request {
   return new Request("https://example.test/api/copilot", { headers });
 }
 
-describe("readFeedbackFlag — フィードバック枠ゲート", () => {
-  it("x-feedback-submitted がちょうど \"1\" のときだけ true", () => {
-    expect(readFeedbackFlag(req({ "x-feedback-submitted": "1" }))).toBe(true);
+function withCookie(value: string): Request {
+  return req({ cookie: `${FEEDBACK_COOKIE_NAME}=${value}` });
+}
+
+describe("readFeedbackFlag — 自己申告ヘッダは一切信用しない", () => {
+  it("x-feedback-submitted: 1 だけでは解除されない（旧・悪用経路）", () => {
+    // 修正前はこれが true を返し、curl 一発で準無制限枠が取れた。
+    expect(readFeedbackFlag(req({ "x-feedback-submitted": "1" }))).toBe(false);
   });
 
-  it("ヘッダ未指定は false", () => {
+  it("ヘッダの真っぽい値も全て false", () => {
+    for (const v of ["0", "true", "2", "", "1"]) {
+      expect(readFeedbackFlag(req({ "x-feedback-submitted": v }))).toBe(false);
+    }
+    expect(readFeedbackFlag(req({ "X-Feedback-Submitted": "1" }))).toBe(false);
+  });
+
+  it("ヘッダも Cookie も無ければ false", () => {
     expect(readFeedbackFlag(req())).toBe(false);
   });
+});
 
-  it("\"1\" 以外の真っぽい値は全て false（厳密一致＝緩めない）", () => {
-    // この 3 値はいずれも !== "1"。`=== "1"` が真偽値化や != null に緩むと
-    // どれかが true になり、準無制限枠が誤って解放される。
-    // （" 1 " のような前後空白は Headers API が OWS トリムし "1" になるため対象外）
-    for (const v of ["0", "true", "2"]) {
-      expect(readFeedbackFlag(req({ "x-feedback-submitted": v }))).toBe(false);
+describe("readFeedbackFlag — サーバ署名済み Cookie のみを根拠にする", () => {
+  it("サーバが発行した正規トークンなら true", () => {
+    const token = issueFeedbackToken();
+    expect(token).toBeTruthy();
+    expect(readFeedbackFlag(withCookie(token!))).toBe(true);
+  });
+
+  it("他の Cookie が混在していても正しく取り出す", () => {
+    const token = issueFeedbackToken()!;
+    const r = req({
+      cookie: `theme=dark; ${FEEDBACK_COOKIE_NAME}=${token}; other=1`,
+    });
+    expect(readFeedbackFlag(r)).toBe(true);
+  });
+
+  it("署名を 1 文字でも改竄すると false", () => {
+    const token = issueFeedbackToken()!;
+    const parts = token.split(".");
+    const sig = parts[2];
+    const tampered = `${parts[0]}.${parts[1]}.${sig.slice(0, -1)}${sig.endsWith("A") ? "B" : "A"}`;
+    expect(readFeedbackFlag(withCookie(tampered))).toBe(false);
+  });
+
+  it("有効期限だけ延ばした自作トークンは false（署名が合わない）", () => {
+    const token = issueFeedbackToken()!;
+    const parts = token.split(".");
+    const forged = `${parts[0]}.${Number(parts[1]) + 100_000}.${parts[2]}`;
+    expect(readFeedbackFlag(withCookie(forged))).toBe(false);
+  });
+
+  it("署名なしの素朴な値（1 / true など）は false", () => {
+    for (const v of ["1", "true", "v1.9999999999", "a.b.c", ""]) {
+      expect(readFeedbackFlag(withCookie(v))).toBe(false);
     }
   });
 
-  it("空文字も false", () => {
-    expect(readFeedbackFlag(req({ "x-feedback-submitted": "" }))).toBe(false);
+  it("別の鍵で署名されたトークンは false", () => {
+    const prev = process.env.AUTH_SECRET;
+    process.env.AUTH_SECRET = "a-different-secret";
+    const foreign = issueFeedbackToken()!;
+    process.env.AUTH_SECRET = prev;
+    expect(readFeedbackFlag(withCookie(foreign))).toBe(false);
   });
 
-  it("ヘッダ名は大文字小文字を問わない（Headers 正規化）", () => {
-    expect(readFeedbackFlag(req({ "X-Feedback-Submitted": "1" }))).toBe(true);
+  it("期限切れトークンは false", () => {
+    // 1 年 + 1 日ぶん過去に発行 → すでに exp を過ぎている
+    const past = Date.now() - (366 * 24 * 60 * 60 * 1000);
+    const expired = issueFeedbackToken(past)!;
+    expect(readFeedbackFlag(withCookie(expired))).toBe(false);
+  });
+
+  it("AUTH_SECRET 未設定なら発行も検証もしない（fail-closed）", () => {
+    const token = issueFeedbackToken()!;
+    const prev = process.env.AUTH_SECRET;
+    delete process.env.AUTH_SECRET;
+    try {
+      // 鍵が無い状態で「素通り」してはならない。
+      expect(readFeedbackFlag(withCookie(token))).toBe(false);
+      expect(issueFeedbackToken()).toBeNull();
+    } finally {
+      process.env.AUTH_SECRET = prev;
+    }
   });
 });
 

@@ -71,6 +71,7 @@ import {
   incrementAiUsage,
   readAiUsage,
   readFeedbackSubmitted,
+  syncFeedbackUnlockFromResponse,
 } from "@/lib/storage/rate-limit-client";
 import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
@@ -398,10 +399,9 @@ export function CopilotPanel({
         });
         const res = await fetch("/api/copilot", {
           method: "POST",
-          headers: {
-            "content-type": "application/json",
-            ...(feedbackSubmitted ? { "x-feedback-submitted": "1" } : {}),
-          },
+          // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
+          // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
+          headers: { "content-type": "application/json" },
           signal: controller.signal,
           body: JSON.stringify({
             question,
@@ -416,6 +416,10 @@ export function CopilotPanel({
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
+
+        // 旧方式(自己申告ヘッダ)で解除済みのユーザーを、サーバの実際の枠に合わせる。
+        syncFeedbackUnlockFromResponse(res);
+        setFeedbackSubmittedState(readFeedbackSubmitted());
 
         if (res.status === 429) {
           const body = (await res.json()) as { message?: string; reason?: string };
@@ -565,7 +569,6 @@ export function CopilotPanel({
       streaming,
       usage.count,
       dailyLimit,
-      feedbackSubmitted,
       messages,
       question,
       selectedChoice,
