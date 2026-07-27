@@ -21,9 +21,18 @@ interface Props {
 
 type IndustryTab = "common" | IndustryId;
 
-function scoreBadge(score: number): "success" | "warn" | "danger" {
-  if (score >= 70) return "success";
-  if (score >= 40) return "warn";
+/**
+ * 得点を「満点に対する割合」で色分けする。
+ *
+ * 設問スコアは各設問の配点（20点/30点など）に対する得点なので、閾値を素点に
+ * 当ててはいけない。以前は 20点満点の設問で満点を取っても素点 20 < 40 となり
+ * danger（赤）で表示されていた。割合で判定することで、満点=緑・部分点=黄・
+ * 低得点=赤が配点によらず成立する。
+ */
+function scoreBadge(score: number, maxScore = 100): "success" | "warn" | "danger" {
+  const ratio = maxScore > 0 ? score / maxScore : 0;
+  if (ratio >= 0.7) return "success";
+  if (ratio >= 0.4) return "warn";
   return "danger";
 }
 
@@ -136,6 +145,9 @@ export function AfternoonResultView({ question, result }: Props) {
         <ol className="space-y-4">
           {result.subResults.map((sr) => {
             const sub = question.subQuestions.find((s) => s.label === sr.label);
+            // 設問スコアは「その設問の配点に対する得点」。配点未設定の設問のみ
+            // 100 点満点として扱う（従来表示との後方互換）。
+            const maxScore = sub?.points ?? 100;
             return (
               <li
                 key={sr.label}
@@ -145,7 +157,9 @@ export function AfternoonResultView({ question, result }: Props) {
                   <p className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">
                     {sr.label}
                   </p>
-                  <Badge variant={scoreBadge(sr.score)}>{sr.score} / 100</Badge>
+                  <Badge variant={scoreBadge(sr.score, maxScore)}>
+                    {sr.score} / {maxScore}
+                  </Badge>
                 </div>
 
                 {sr.goodPoints.length > 0 && (
