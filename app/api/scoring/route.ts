@@ -3,6 +3,8 @@ import { z } from "zod";
 
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
@@ -261,6 +263,19 @@ export async function POST(req: Request) {
     });
   }
 
+  // CLAUDE.md §0 hard cap: stop new real AI requests at ¥50,000/month.
+  // （mock は上の分岐で返済み＝ここに来るのは実課金リクエストのみ）
+  const cap = await checkMonthlyCostCap();
+  if (!cap.allowed) {
+    return NextResponse.json(
+      {
+        error: "cost_capped",
+        message: "AI 採点は今月の利用上限に達したため一時的にメンテナンス中です。翌月初に再開します。",
+      },
+      { status: 503, headers: { "X-Error-Type": "cost_capped" } },
+    );
+  }
+
   const userPrompt = buildUserPrompt(question, payload.answers);
   // 午後記述の採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
   const model = resolveModel("grading");
@@ -281,6 +296,13 @@ export async function POST(req: Request) {
         })) {
           buf += chunk;
         }
+        // 完了したぶんだけ月間累計に計上する（既存 3 ルートと同じ fire-and-forget）。
+        void recordAiCost({
+          tier: tierForModel(model),
+          inputTokens: estimateTokens(SCORING_SYSTEM_PROMPT.length + userPrompt.length),
+          outputTokens: estimateTokens(buf.length),
+          label: "scoring",
+        });
       } catch (err) {
         await captureException(err, {
           route: "/api/scoring",

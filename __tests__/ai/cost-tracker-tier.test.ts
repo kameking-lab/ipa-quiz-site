@@ -75,11 +75,11 @@ describe("単価表 — pro 行の存在", () => {
 });
 
 describe("全 AI ルートが課金層を手書きしていない", () => {
-  // scoring は別コミット（ブロッカー1: cost-guard 未配線）で追加する。
   const ROUTES = [
     "app/api/copilot/route.ts",
     "app/api/essay-grade/route.ts",
     "app/api/generate-question/route.ts",
+    "app/api/scoring/route.ts",
   ];
 
   it.each(ROUTES)("%s は tier をリテラルで書かず tierForModel(model) を使う", (rel) => {
