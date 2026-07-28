@@ -12,6 +12,7 @@ import { getSafePdfUrl } from "@/lib/exam-config";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SimplifiedGradingNotice } from "@/components/SimplifiedGradingNotice";
 import { AfternoonDisclaimer } from "./AfternoonDisclaimer";
 
 interface Props {
@@ -74,6 +75,8 @@ export function AfternoonResultView({ question, result }: Props) {
         </header>
 
         <AfternoonDisclaimer />
+
+        {result.gradingMode === "simplified" && <SimplifiedGradingNotice />}
 
         {result.overallComment && (
           <p className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/40 dark:bg-sky-900/20 dark:text-sky-100">

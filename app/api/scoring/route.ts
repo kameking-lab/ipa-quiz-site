@@ -153,8 +153,9 @@ function buildMockScoring(
     questionId: question.id,
     totalScore,
     subResults,
+    gradingMode: "simplified",
     overallComment:
-      "（モック採点）AI採点は目安です。GEMINI_API_KEY を設定すると、より精度の高い採点が利用できます。",
+      "AI 採点を利用できなかったため、解答の記入状況にもとづく簡易判定を表示しています。記述内容そのものは評価していないため、得点は目安としてお使いください。",
   };
 }
 
@@ -189,6 +190,7 @@ function safeParseScoring(
       questionId: question.id,
       totalScore: Math.max(0, Math.min(100, Math.round(obj.totalScore))),
       subResults,
+      gradingMode: "ai",
       overallComment: typeof obj.overallComment === "string" ? obj.overallComment : "",
     };
   } catch {
@@ -277,6 +279,7 @@ export async function POST(req: Request) {
         "X-RateLimit-Remaining": String(rl.remaining),
         "X-RateLimit-Reset": String(rl.resetAt),
         "X-Provider": provider.name,
+        "X-Grading-Mode": "simplified",
       },
     });
   }
@@ -331,13 +334,25 @@ export async function POST(req: Request) {
         });
         const fallback = buildMockScoring(question, payload.answers);
         fallback.overallComment =
-          "AI採点中にエラーが発生したため、簡易採点を表示しています。少し時間を置いて再度お試しください。";
+          "AI採点中にエラーが発生したため、簡易判定を表示しています。少し時間を置いて再度お試しください。";
         controller.enqueue(encoder.encode(JSON.stringify(fallback)));
         controller.close();
         return;
       }
 
-      const parsed = safeParseScoring(buf, question) ?? buildMockScoring(question, payload.answers);
+      let parsed = safeParseScoring(buf, question);
+      if (!parsed) {
+        // 課金は発生済みなのに中身は簡易判定、という状態。頻度を後から追えるよう
+        // サーバ側に必ず残す（利用者には gradingMode:"simplified" で開示する）。
+        console.warn("[scoring] mock-fallback: AI応答の解析に失敗", {
+          questionId: question.id,
+          provider: provider.name,
+          model,
+          rawChars: buf.length,
+          rawHead: buf.slice(0, 200),
+        });
+        parsed = buildMockScoring(question, payload.answers);
+      }
       controller.enqueue(encoder.encode(JSON.stringify(parsed)));
       controller.close();
     },

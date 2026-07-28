@@ -196,6 +196,7 @@ function safeParseGrading(
         ? obj.unnecessaryElements.map(String)
         : [],
       improvedExample: typeof obj.improvedExample === "string" ? obj.improvedExample : undefined,
+      gradingMode: "ai",
       gradedAt: new Date().toISOString(),
     };
   } catch {
@@ -238,7 +239,7 @@ function buildMockGrading(
               `想定論述要素「${sub.modelOutline}」のキーワードを盛り込みましょう`,
               "結論→理由→具体例の順で論理を整理してください",
             ],
-      missingElements: ["（モック採点）固有性のある具体的な施策・数値"],
+      missingElements: ["（簡易判定のため未評価）固有性のある具体的な施策・数値"],
       charCount: text.length,
     };
   });
@@ -251,9 +252,10 @@ function buildMockGrading(
     passProbability: avg,
     subResults,
     overallAdvice:
-      "（モック採点）GEMINI_API_KEY を設定すると、IPA 元採点者プロンプトに基づいた本番品質の AI 採点が利用できます。",
+      "AI 採点を利用できなかったため、字数など機械的な指標にもとづく簡易判定を表示しています。論述の内容そのものは評価していないため、ランク・合格率予測は目安としてお使いください。",
     unnecessaryElements: [],
     improvedExample: undefined,
+    gradingMode: "simplified",
     gradedAt: new Date().toISOString(),
   };
 }
@@ -330,6 +332,7 @@ export async function POST(req: Request) {
         "X-RateLimit-Remaining": String(rl.remaining),
         "X-RateLimit-Reset": String(rl.resetAt),
         "X-Provider": provider.name,
+        "X-Grading-Mode": "simplified",
       },
     });
   }
@@ -378,15 +381,29 @@ export async function POST(req: Request) {
     console.error("[essay-grade] provider error", err);
     const fallback = buildMockGrading(question, payload.industry, payload.answers);
     fallback.overallAdvice =
-      "AI 採点が一時的に利用できなかったため、簡易採点を表示しています。時間を置いて再度お試しください。";
+      "AI 採点が一時的に利用できなかったため、簡易判定を表示しています。時間を置いて再度お試しください。";
     return NextResponse.json(fallback, {
-      headers: { "X-Provider": provider.name, "X-Error-Type": "provider_error" },
+      headers: {
+        "X-Provider": provider.name,
+        "X-Error-Type": "provider_error",
+        "X-Grading-Mode": "simplified",
+      },
     });
   }
 
-  const parsed =
-    safeParseGrading(buf, question, payload.industry, payload.answers) ??
-    buildMockGrading(question, payload.industry, payload.answers);
+  let parsed = safeParseGrading(buf, question, payload.industry, payload.answers);
+  if (!parsed) {
+    // 課金は発生済みなのに中身は簡易判定、という状態。頻度を後から追えるよう
+    // サーバ側に必ず残す（利用者には gradingMode:"simplified" で開示する）。
+    console.warn("[essay-grade] mock-fallback: AI応答の解析に失敗", {
+      questionId: question.id,
+      provider: provider.name,
+      model,
+      rawChars: buf.length,
+      rawHead: buf.slice(0, 200),
+    });
+    parsed = buildMockGrading(question, payload.industry, payload.answers);
+  }
   parsed.model = model;
 
   return NextResponse.json(parsed, {
@@ -395,6 +412,7 @@ export async function POST(req: Request) {
       "X-RateLimit-Remaining": String(rl.remaining),
       "X-RateLimit-Reset": String(rl.resetAt),
       "X-Provider": provider.name,
+      "X-Grading-Mode": parsed.gradingMode ?? "ai",
     },
   });
 }

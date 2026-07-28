@@ -4,6 +4,7 @@ import Link from "next/link";
 import { CheckCircle2, AlertTriangle, XCircle, Sparkles, MinusCircle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { SimplifiedGradingNotice } from "@/components/SimplifiedGradingNotice";
 import type {
   EssayGradingResult,
   EssayQuestion,
@@ -97,6 +98,11 @@ export function EssayResultView({ result, question }: Props) {
               </div>
             </div>
           </div>
+          {result.gradingMode === "simplified" && (
+            <div className="mt-5">
+              <SimplifiedGradingNotice />
+            </div>
+          )}
           {result.overallAdvice && (
             <div className="mt-5 rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm leading-relaxed text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200">
               <p className="mb-2 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
