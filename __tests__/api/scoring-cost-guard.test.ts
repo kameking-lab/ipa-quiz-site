@@ -62,12 +62,15 @@ beforeEach(() => {
   vi.clearAllMocks();
   delete process.env.KV_REST_API_URL;
   delete process.env.KV_REST_API_TOKEN;
-  delete process.env.GEMINI_MODEL_GRADING;
+  // 層がモデル ID から導出されることを見たいので、上位モデルを明示して固定する
+  // （既定値は安全側の flash。既定値そのものの契約は cost-tracker-tier.test.ts）。
+  process.env.GEMINI_MODEL_GRADING = "gemini-2.5-pro";
   checkMonthlyCostCap.mockResolvedValue({ allowed: true, totalJpy: 0, capJpy: 50_000 });
   recordAiCost.mockResolvedValue(undefined);
 });
 
 afterEach(() => {
+  delete process.env.GEMINI_MODEL_GRADING;
   vi.resetModules();
 });
 

@@ -13,9 +13,12 @@ afterEach(() => {
 });
 
 describe("resolveModel — grading 層（採点専用の上位モデル）", () => {
-  it("grading は既定で上位モデル(gemini-2.5-pro)を返す", () => {
+  it("grading の既定は安全側の flash（env 未設定で pro に上がらない）", () => {
+    // 既定を pro にすると env の設定漏れ・消失が単価 4 倍の暴走になり、かつ
+    // scoring の maxTokens 1500 では pro が採点 JSON を返しきれず、課金だけ
+    // 発生して中身は簡易採点に落ちる（Preview 実測）。既定は必ず安全側。
     vi.unstubAllEnvs();
-    expect(resolveModel("grading")).toBe("gemini-2.5-pro");
+    expect(resolveModel("grading")).toBe("gemini-2.5-flash");
   });
 
   it("grading は GEMINI_MODEL_GRADING で上書きできる（本番値は運用側設定）", () => {
@@ -32,6 +35,11 @@ describe("resolveModel — grading 層（採点専用の上位モデル）", () 
   it("grading は free より上位（flash-lite と別物）", () => {
     vi.unstubAllEnvs();
     expect(resolveModel("grading")).not.toBe(resolveModel("free"));
+  });
+
+  it("運用側が env で pro を明示すれば pro を使える（上位モデルの道は残す）", () => {
+    vi.stubEnv("GEMINI_MODEL_GRADING", "gemini-2.5-pro");
+    expect(resolveModel("grading")).toBe("gemini-2.5-pro");
   });
 });
 

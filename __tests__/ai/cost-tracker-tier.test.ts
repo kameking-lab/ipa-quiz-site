@@ -16,7 +16,7 @@ import { resolveModel } from "@/lib/ai/provider";
  * ここで固定する契約:
  *  1. pro の単価行が存在し、flash / flash-lite より高い
  *  2. 課金層はモデル ID から導出される（手書き禁止）
- *  3. resolveModel("grading") の実際の戻り値が pro 層に落ちる
+ *  3. env 未設定時の grading 既定は安全側（pro に上がらない）／env 明示なら pro を使える
  *  4. 未知モデルは最上位単価にフォールバックする（過小計上させない）
  *  5. recordAiCost を呼ぶ全ルートが tier を手書きしていない
  */
@@ -36,13 +36,31 @@ describe("tierForModel — モデル ID から課金層を導出", () => {
     expect(tierForModel("")).toBe("pro");
   });
 
-  it("resolveModel('grading') の実戻り値が pro 層に落ちる", () => {
+  it("GEMINI_MODEL_GRADING 未設定なら既定は安全側で、pro 層へは上がらない", () => {
+    // 既定を pro にしていると、env の設定漏れ・消失がそのまま単価 4 倍の暴走になる。
+    // さらに scoring の maxTokens 1500 では pro が採点 JSON を返しきれず、
+    // 課金だけ発生して中身は簡易採点に落ちる（Preview 実測）。
+    // 既定が pro に戻ったらここが落ちる。
     const prev = process.env.GEMINI_MODEL_GRADING;
     delete process.env.GEMINI_MODEL_GRADING;
     try {
-      expect(tierForModel(resolveModel("grading"))).toBe("pro");
+      expect(resolveModel("grading")).toBe("gemini-2.5-flash");
+      expect(tierForModel(resolveModel("grading"))).not.toBe("pro");
     } finally {
       if (prev !== undefined) process.env.GEMINI_MODEL_GRADING = prev;
+    }
+  });
+
+  it("GEMINI_MODEL_GRADING で pro を明示すれば pro 層で計上される", () => {
+    // 既定を下げても「運用側が明示すれば上位モデルを使える」形は維持する。
+    const prev = process.env.GEMINI_MODEL_GRADING;
+    process.env.GEMINI_MODEL_GRADING = "gemini-2.5-pro";
+    try {
+      expect(resolveModel("grading")).toBe("gemini-2.5-pro");
+      expect(tierForModel(resolveModel("grading"))).toBe("pro");
+    } finally {
+      if (prev === undefined) delete process.env.GEMINI_MODEL_GRADING;
+      else process.env.GEMINI_MODEL_GRADING = prev;
     }
   });
 

@@ -55,9 +55,14 @@ export function resolveModel(tier: ModelTier): string {
   // 午後記述・論述の AI 採点だけ上位モデルを使う（採点品質優先。Flash 系では
   // 配点・キーワード照合の判断がブレるため）。無料の四択解説・一般コパイロット・
   // 類題生成は free 層（flash-lite）のまま＝コスト効率。本番のモデル名は
-  // GEMINI_MODEL_GRADING で運用側が設定する（未設定時は上位モデルへフォールバック）。
+  // GEMINI_MODEL_GRADING で運用側が設定する。
+  //
+  // 既定値は flash（安全側）。既定を pro にしていると、env が消えた・新しい環境に
+  // 設定し忘れたという運用ミスがそのまま単価 4 倍の暴走になり、さらに scoring の
+  // maxTokens 1500 では pro が採点 JSON を返しきれず、課金だけ発生して中身は
+  // 簡易採点に落ちる（Preview で実測）。pro を使いたい場合は env で明示する。
   if (tier === "grading") {
-    return process.env.GEMINI_MODEL_GRADING ?? "gemini-2.5-pro";
+    return process.env.GEMINI_MODEL_GRADING ?? "gemini-2.5-flash";
   }
   if (tier === "free") {
     return process.env.GEMINI_MODEL_FREE ?? "gemini-2.5-flash-lite";
