@@ -314,8 +314,11 @@ export async function POST(req: Request) {
         })) {
           buf += chunk;
         }
-        // 完了したぶんだけ月間累計に計上する（既存 3 ルートと同じ fire-and-forget）。
-        void recordAiCost({
+        // 完了したぶんだけ月間累計に計上する。
+        // await は必須。fire-and-forget にすると controller.close() でレスポンスが
+        // 完了した時点でサーバレス関数が凍結され、未完了の KV 書き込みが捨てられる
+        // （本番実測: scoring を 4 回叩いても ai_cost:YYYY-MM が 1 円も動かなかった）。
+        await recordAiCost({
           tier: tierForModel(model),
           inputTokens: estimateTokens(SCORING_SYSTEM_PROMPT.length + userPrompt.length),
           outputTokens: estimateTokens(buf.length),

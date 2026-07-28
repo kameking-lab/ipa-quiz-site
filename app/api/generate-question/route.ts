@@ -142,7 +142,9 @@ ${choicesText}
       raw += chunk;
     }
     if (provider.name !== "mock") {
-      void recordAiCost({
+      // await は必須（scoring / essay-grade と同じ理由）。レスポンス完了後に
+      // 残った KV 書き込みはサーバレス関数の凍結で失われる。
+      await recordAiCost({
         tier: tierForModel(model),
         inputTokens: estimateTokens(SYSTEM_PROMPT.length + userPrompt.length),
         outputTokens: estimateTokens(raw.length),

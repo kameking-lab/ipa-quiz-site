@@ -361,7 +361,10 @@ export async function POST(req: Request) {
     })) {
       buf += chunk;
     }
-    void recordAiCost({
+    // await は必須。fire-and-forget にすると return でレスポンスが完了した時点で
+    // サーバレス関数が凍結され、未完了の KV 書き込みが捨てられる（§0 の上限が
+    // 最高単価の経路を見失う）。recordAiCost は内部で握り潰すので決して throw しない。
+    await recordAiCost({
       // 論述採点は resolveModel("grading") = pro 層。層はモデル ID から導出する
       // （手書きの "flash-lite" は pro の 1/25 の出力単価で、集計が大幅に過小だった）。
       tier: tierForModel(model),

@@ -170,14 +170,15 @@ export async function POST(req: Request) {
     hasGrounding: rag.hasGrounding,
     timeoutMs: STREAM_TIMEOUT_MS,
     onComplete: isRealProvider
-      ? (outputChars) => {
-          void recordAiCost({
+      ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
+        // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
+        (outputChars) =>
+          recordAiCost({
             tier: tierForModel(model),
             inputTokens: estimateTokens(inputChars),
             outputTokens: estimateTokens(outputChars),
             label: "copilot",
-          });
-        }
+          })
       : undefined,
   });
 
