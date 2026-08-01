@@ -18,68 +18,68 @@ const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
 export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
   ip: {
-    overview: `${IPA_BASE}/cbt/ip.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_ip`,
+    overview: `${IPA_BASE}/kubun/ip.html`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sg: {
-    overview: `${IPA_BASE}/cbt/sg.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sg`,
+    overview: `${IPA_BASE}/kubun/sg.html`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   fe: {
-    overview: `${IPA_BASE}/cbt/fe.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_fe`,
+    overview: `${IPA_BASE}/kubun/fe.html`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   ap: {
     overview: `${IPA_BASE}/kubun/ap.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_ap`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   st: {
     overview: `${IPA_BASE}/kubun/st.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_st`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sa: {
     overview: `${IPA_BASE}/kubun/sa.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sa`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   pm: {
     overview: `${IPA_BASE}/kubun/pm.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_pm`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   nw: {
     overview: `${IPA_BASE}/kubun/nw.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_nw`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   db: {
     overview: `${IPA_BASE}/kubun/db.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_db`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   es: {
     overview: `${IPA_BASE}/kubun/es.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_es`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sc: {
-    overview: `${IPA_BASE}/cbt/sc.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sc`,
+    overview: `${IPA_BASE}/kubun/sc.html`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   sm: {
     overview: `${IPA_BASE}/kubun/sm.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_sm`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
   au: {
     overview: `${IPA_BASE}/kubun/au.html`,
-    syllabus: `${IPA_BASE}/syllabus/index.html#section_au`,
+    syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
 };
@@ -168,8 +168,8 @@ export const EXAM_ROADMAP: Record<ExamCode, RoadmapStep[]> = {
   sc: [
     { monthsBefore: 4, title: "セキュリティ全体像", body: "脅威・脆弱性・対策技術の体系を整理。" },
     { monthsBefore: 3, title: "午前 II 演習", body: "暗号・認証・脆弱性管理を反復。" },
-    { monthsBefore: 2, title: "午後 I 記述", body: "インシデント対応・脆弱性診断のシナリオ問題に慣れる。" },
-    { monthsBefore: 1, title: "午後 II 長文", body: "システム構築 / 運用での具体的な対策設計の長文問題に取組む。" },
+    { monthsBefore: 2, title: "午後 記述演習（基礎）", body: "インシデント対応・脆弱性診断のシナリオ問題に慣れる。" },
+    { monthsBefore: 1, title: "午後 記述演習（実践）", body: "システム構築 / 運用での具体的な対策設計の長文記述問題に取組む。" },
     { monthsBefore: 0, title: "総仕上げ", body: "最新の脅威動向（OWASP Top 10 など）と直近年度を確認。" },
   ],
   sm: [

@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import { EXAM_OFFICIAL_LINKS, EXAM_ROADMAP } from "@/lib/seo/exam-resources";
 import { EXAM_DEEP_CONTENT } from "@/lib/seo/exam-content";
+import { EXAM_PROFILES } from "@/data/blog/exam-data";
 import type { ExamCode } from "@/lib/questions/types";
 
 // 試験区分ごとの静的データ（合格率/学習時間・公式リンク・ロードマップ・関連試験）は
@@ -39,6 +40,18 @@ describe("EXAM_STATS の値不変条件", () => {
       expect(EXAM_STATS[code].topicTrend.trim().length, code).toBeGreaterThan(0);
     }
   });
+
+  // IP(ITパスポート)の採点対象内訳は IPA 公式（評価方法 range.html）で
+  // テクノロジ系 42 / ストラテジ系 32 / マネジメント系 18（採点 92 問）＝
+  // テクノロジ系が最多であり「3分野が均等に出題」ではない。/ip ハブ（indexable）の
+  // 出題傾向カードに topicTrend がそのまま描画されるため、誤った「均等」表現を回帰固定で防ぐ
+  // （session31 で blog ip-3shukan-goukaku の「ストラテジ系が最多」誤記も是正済＝面横断の整合）。
+  it("ip の topicTrend は『均等』と誤記せず、テクノロジ系が最多であることを反映する", () => {
+    const ip = EXAM_STATS.ip.topicTrend;
+    expect(ip).not.toContain("均等");
+    expect(ip).toContain("テクノロジ系");
+    expect(ip.indexOf("テクノロジ系")).toBeLessThan(ip.indexOf("マネジメント系"));
+  });
 });
 
 describe("EXAM_OFFICIAL_LINKS の値不変条件", () => {
@@ -75,6 +88,19 @@ describe("EXAM_ROADMAP の値不変条件", () => {
       }
     }
   });
+
+  // SC(情報処理安全確保支援士)午後は 2023年4月改定で午後I・午後IIが単一の午後(記述式)に
+  // 統合済(IPA 公式 kubun/sc.html・exam-data SC profile・SC leadParagraph も単一午後)。
+  // SC ロードマップは廃止済みの「午後 I」「午後 II」ステップを持たない。
+  // (NW/DB/ES は午後I・IIが現存するため対象外＝SC のみの契約)。session20の sc-shikaku-merit
+  // 同種是正と整合。/sc ハブ(indexable)に step.title が描画されるため誤構造の露出を防ぐ。
+  it("sc ロードマップは統合後の午後（記述式）で、廃止済み 午後I/午後II を持たない", () => {
+    const titles = EXAM_ROADMAP.sc.map((s) => s.title);
+    expect(titles.some((t) => t.includes("午後 I") || t.includes("午後I"))).toBe(false);
+    expect(titles.some((t) => t.includes("午後 II") || t.includes("午後II"))).toBe(false);
+    // 統合後の午後記述ステップが存在する（non-vacuous）。
+    expect(titles.some((t) => t.includes("午後 記述"))).toBe(true);
+  });
 });
 
 describe("EXAM_DEEP_CONTENT の値不変条件", () => {
@@ -104,5 +130,49 @@ describe("EXAM_DEEP_CONTENT の値不変条件", () => {
         expect(r.reason.trim().length, `${code} -> ${r.exam}`).toBeGreaterThan(0);
       }
     }
+  });
+
+  // 高度試験の実施時期グルーピング（IPA 公式: 令和7年度春期 r07haru_exam.html ＝ list.html）。
+  // 春期=ST/SA/NW/SM・秋期=PM/DB/ES/AU・SC=春秋両方。leadParagraph は /[exam] ハブ
+  // （indexable）に描画されるため、誤った季が出ると「次に何を受けられるか」の判断を誤らせる。
+  // 季の取り違え（NW/SM を秋期、ES/AU を春期 等）を回帰固定する。
+  // ※ 2026年度の CBT 移行に伴う「春期/秋期」→「前期/後期」名称変更（HD-7）でも
+  //   グルーピング自体は不変（前期=旧春期・後期=旧秋期）＝本契約は名称変更後も有効。
+  it("leadParagraph の実施時期は IPA 公式グルーピングと一致する（高度8区分・SC=両期）", () => {
+    const SPRING: ExamCode[] = ["st", "sa", "nw", "sm"];
+    const AUTUMN: ExamCode[] = ["pm", "db", "es", "au"];
+    for (const code of SPRING) {
+      const lead = EXAM_DEEP_CONTENT[code].leadParagraph;
+      expect(lead, `${code} は春期実施`).toContain("春期年 1 回実施");
+      expect(lead, `${code} は秋期と誤記しない`).not.toContain("秋期年 1 回実施");
+    }
+    for (const code of AUTUMN) {
+      const lead = EXAM_DEEP_CONTENT[code].leadParagraph;
+      expect(lead, `${code} は秋期実施`).toContain("秋期年 1 回実施");
+      expect(lead, `${code} は春期と誤記しない`).not.toContain("春期年 1 回実施");
+    }
+    // SC は春秋両方（年2回）。片方の季の「年1回実施」と誤記しない。
+    const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
+    expect(sc).toContain("年 2 回（春・秋）実施");
+  });
+
+  // SC 合格後に登録できる国家資格の正式名称は「情報処理安全確保支援士（登録セキスペ）」
+  // (IPA 公式 kubun/sc.html)。RISS = Registered Information Security Specialist の英語名。
+  // 「登録情報セキュリティスペシャリスト」は IPA が用いない逆翻訳で不正確
+  // (session21 で faq.ts の同種誤称号を是正済)。/sc ハブの leadParagraph 称号を pin。
+  it("sc の leadParagraph は正式名称（情報処理安全確保支援士・登録セキスペ）を使う", () => {
+    const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
+    expect(sc).toContain("情報処理安全確保支援士（登録セキスペ、英語名 RISS）");
+    expect(sc).not.toContain("登録情報セキュリティスペシャリスト");
+  });
+
+  // HD-11: ES(エンベデッドシステムスペシャリスト)の午後IIは令和5年(2023)秋から
+  // 記述式→論述式(小論文・評価ランクA〜D)に変更(IPA shiken/syllabus/henkou/2023/
+  // 20230627.html)。/es ハブの afternoonStrategy が午後IIを「設計問題(=記述)」と
+  // 誤誘導していたのを是正。午後IIを論述式と明記し、設計問題と誤記しないことを pin。
+  it("es の afternoonStrategy は午後II=論述式（2023〜）を正しく述べる", () => {
+    const es = EXAM_PROFILES.es.afternoonStrategy;
+    expect(es).toContain("論述式");
+    expect(es).not.toContain("午後 II は本格的な設計問題");
   });
 });

@@ -25,6 +25,15 @@ const EXAM_ORDER: ExamCode[] = [
   "au",
 ];
 
+// Page-specific OG card. The /api/og route reserves a "books" type style for
+// this page; without an explicit images entry the openGraph override would drop
+// the site-wide default image, leaving this page with no social/SERP card.
+const BOOKS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "books",
+  title: "おすすめ問題集・参考書",
+  body: "IPA 全13区分の定番問題集・参考書を試験別に厳選。",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: "IPA試験 おすすめ問題集・参考書",
   description:
@@ -36,6 +45,7 @@ export const metadata: Metadata = {
       "IPA情報処理技術者試験13区分の定番問題集を試験別にまとめた、AI推薦の参考書ガイド。",
     type: "website",
     url: `${SITE_BASE_URL}/recommended-books`,
+    images: [{ url: BOOKS_OG_URL, width: 1200, height: 630, alt: "IPA試験 おすすめ問題集・参考書" }],
   },
 };
 

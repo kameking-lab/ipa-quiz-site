@@ -6,6 +6,8 @@ import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
 import { HomeHeroLede } from "@/components/home/HomeHeroLede";
 import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
+import { HomeFlagshipEssay } from "@/components/home/HomeFlagshipEssay";
+import { HomeFoundationKamokuB } from "@/components/home/HomeFoundationKamokuB";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
 import {
   HomeReturningHeader,
@@ -17,8 +19,8 @@ import { ContinueFromLast } from "@/components/ContinueFromLast";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
 import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
-import { SITE_ID, buildOrgNode } from "@/lib/seo/structured-data";
+import { SITE_BASE_URL } from "@/lib/seo/config";
+import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
@@ -37,7 +39,14 @@ const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の過去問を
 export const metadata: Metadata = {
   title: HOME_TITLE,
   description: HOME_DESCRIPTION,
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    // Feed readers / browser "subscribe" tools fetch the bare domain first and
+    // look for autodiscovery in <head>; /blog and /blog/[slug] already declare
+    // it, but the home page defines its own alternates which REPLACES (not
+    // merges) the root layout's — so the most-checked surface emitted none.
+    types: { "application/rss+xml": "/feed.xml" },
+  },
   // Override the root-layout openGraph/twitter so social shares of the
   // landing page get the same keyword-rich title/description users see in
   // SERPs, not the generic site-wide fallback.
@@ -83,22 +92,9 @@ export default function HomePage() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": SITE_ID,
-        url: SITE_BASE_URL,
-        name: SITE_NAME,
-        inLanguage: "ja-JP",
-        description: `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
-        potentialAction: {
-          "@type": "SearchAction",
-          target: {
-            "@type": "EntryPoint",
-            urlTemplate: `${SITE_BASE_URL}/quiz?mode=random&exam={exam_code}`,
-          },
-          "query-input": "required name=exam_code",
-        },
-      },
+      buildWebsiteNode(
+        `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
+      ),
       {
         ...buildOrgNode(),
         hasOfferCatalog: {
@@ -150,6 +146,10 @@ export default function HomePage() {
         <TotalAnswerCounter />
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
+
+      <HomeFlagshipEssay />
+
+      <HomeFoundationKamokuB />
 
       <HomeTopicGrid />
 

@@ -1,0 +1,191 @@
+import { AP_TOPIC_GROUPS, AP_GROUP_EXAMS } from "./category-pool";
+import { isPlaceholderExplanation } from "./filter";
+import type { ExamCode, Question } from "./types";
+
+/** 共通カリキュラム横断学習が成立する午前知識問題のセッション。 */
+const MORNING_KNOWLEDGE_SESSIONS = new Set(["am", "am1", "am2", "kamoku-a"]);
+
+function isMorningKnowledge(q: Question): boolean {
+  return q.type === "multiple-choice" && MORNING_KNOWLEDGE_SESSIONS.has(q.session);
+}
+
+/**
+ * クロスリンク先として安全な問題か（404/noindex 先を作らない）。
+ * needsReview は /q ページで notFound()（404）、プレースホルダ解説は noindex。
+ * 関連問題レールはこれらを除外し、回答可能・indexable な問題のみへリンクする。
+ */
+export function isLinkableTarget(q: Question): boolean {
+  return !q.needsReview && !isPlaceholderExplanation(q);
+}
+
+/**
+ * 同一試験区分・同一分野の関連問題（プール配列順の先頭 limit 件）。
+ * リンク可能な対象のみ（needsReview=404 / プレースホルダ=noindex を除外）。
+ * 除外を slice の前に適用することで、空いた枠は実問題で補充される。
+ */
+export function getSameExamRelatedQuestions(
+  current: Question,
+  examPool: Question[],
+  limit: number,
+): Question[] {
+  return examPool
+    .filter(
+      (x) =>
+        x.id !== current.id &&
+        x.category === current.category &&
+        isLinkableTarget(x),
+    )
+    .slice(0, limit);
+}
+
+/**
+ * 同一回（年度・季・セッション）内での前後の問題。needsReview は除外する
+ * （その問題ページは notFound()=404 なので、シーケンスに残すと死リンクになる）。
+ * プレースホルダ解説の問題は実ページ(200・noindex)として閲覧可能なので残す。
+ * filter.ts が全プールから needsReview を除外しているのと同じ規約。
+ */
+export function getSessionNeighbors(
+  current: Question,
+  examPool: Question[],
+): { prev: Question | null; next: Question | null } {
+  const sessionPool = examPool
+    .filter(
+      (x) =>
+        x.year === current.year &&
+        x.season === current.season &&
+        x.session === current.session &&
+        !x.needsReview,
+    )
+    .sort((a, b) => a.qNumber - b.qNumber);
+  const idx = sessionPool.findIndex((x) => x.id === current.id);
+  return {
+    prev: idx > 0 ? sessionPool[idx - 1] : null,
+    next: idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null,
+  };
+}
+
+/**
+ * 同一試験区分・同一分野で他年度の問題（年度ごと 1 問・新しい年度優先）。
+ * 年度をまたぐ内部リンクの動線を作る。リンク可能な対象のみ。
+ * `excludeIds` に渡した問題（例: 同じページの「関連する問題」レールで既に
+ * 表示済みの問題）は飛ばし、その年度は次の問題で補充する。これにより同一
+ * ページの 2 レールに同じ問題が二重リンクされる冗長を避け、より多くの相異な
+ * る問題へ内部リンクを張る。
+ */
+export function getSameExamOtherYears(
+  current: Question,
+  examPool: Question[],
+  limit: number,
+  excludeIds?: ReadonlySet<string>,
+): Question[] {
+  const byYear = new Map<number, Question>();
+  for (const x of examPool) {
+    if (x.id === current.id || x.category !== current.category) continue;
+    if (!isLinkableTarget(x)) continue;
+    if (excludeIds?.has(x.id)) continue;
+    if (x.year === current.year || byYear.has(x.year)) continue;
+    byYear.set(x.year, x);
+  }
+  return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, limit);
+}
+
+export type CrossExamMode = "topic" | "category";
+
+export interface CrossExamRelated {
+  questions: Question[];
+  mode: CrossExamMode;
+}
+
+/**
+ * トピックタグを共有する他試験区分の過去問を、共有タグ数の多い順に返す。
+ * 単純な filter().slice() は ALL_QUESTIONS 配列順の先頭を採るため、タグを 1 本
+ * しか共有しない関連の薄い問題が複数タグ共有の問題を押し出す relevance-leak が
+ * 起きる。共有タグ数の降順（同点は配列順を保つ安定ソート）で採る。
+ */
+function byTopicTags(
+  current: Question,
+  allQuestions: Question[],
+  limit: number,
+): Question[] {
+  const tagSet = new Set(current.topicTags);
+  return allQuestions
+    .filter(
+      (x) =>
+        x.id !== current.id &&
+        x.exam !== current.exam &&
+        isLinkableTarget(x) &&
+        x.topicTags.some((t) => tagSet.has(t)),
+    )
+    .map((x) => ({
+      q: x,
+      shared: x.topicTags.reduce((n, t) => (tagSet.has(t) ? n + 1 : n), 0),
+    }))
+    .sort((a, b) => b.shared - a.shared)
+    .slice(0, limit)
+    .map((s) => s.q);
+}
+
+/**
+ * 共通カリキュラム(AP/FE/IP/SG)で同じ分野グループに属する他試験区分の午前知識
+ * 問題を、各区分 1 問ずつ（新しい年度優先）返す。topicTag が未付与でも IPA
+ * 共通キャリア・スキルフレームワーク上の同義分野（例: AP「経営戦略」≒ FE/IP
+ * 「ストラテジ」）で横断クロスリンクを張り、/q 面の内部リンク網を補強する。
+ * 高度試験など共通カリキュラム外の区分は対象外（空を返す）。
+ */
+function byCategoryGroup(
+  current: Question,
+  allQuestions: Question[],
+  limit: number,
+): Question[] {
+  if (!AP_GROUP_EXAMS.includes(current.exam)) return [];
+  if (!isMorningKnowledge(current)) return [];
+
+  const group = AP_TOPIC_GROUPS.find((g) =>
+    (g.byExam[current.exam] ?? []).includes(current.category),
+  );
+  if (!group) return [];
+
+  // 各「他試験区分 → その区分でこのグループに属する category 集合」を引けるよう索引化。
+  const otherExamCats = new Map<ExamCode, Set<string>>();
+  for (const [examCode, cats] of Object.entries(group.byExam) as Array<
+    [ExamCode, string[]]
+  >) {
+    if (examCode === current.exam) continue;
+    otherExamCats.set(examCode, new Set(cats));
+  }
+  if (otherExamCats.size === 0) return [];
+
+  // 各他区分から最新年度の代表 1 問を採り、特定区分が枠を独占しないようにする。
+  const repByExam = new Map<ExamCode, Question>();
+  for (const x of allQuestions) {
+    if (x.exam === current.exam || x.id === current.id) continue;
+    if (!isMorningKnowledge(x) || !isLinkableTarget(x)) continue;
+    const cats = otherExamCats.get(x.exam);
+    if (!cats || !cats.has(x.category)) continue;
+    const cur = repByExam.get(x.exam);
+    if (!cur || x.year > cur.year) repByExam.set(x.exam, x);
+  }
+
+  return [...repByExam.values()]
+    .sort((a, b) => b.year - a.year)
+    .slice(0, limit);
+}
+
+/**
+ * /q ページの「他試験区分の関連問題」レール用。topicTag があればトピック精密
+ * マッチ（mode:"topic"）、無ければ共通カリキュラムの同分野グループで代替
+ * （mode:"category"）。どちらも該当しなければ空。
+ */
+export function getCrossExamRelatedQuestions(
+  current: Question,
+  allQuestions: Question[],
+  limit: number,
+): CrossExamRelated {
+  if (current.topicTags.length > 0) {
+    return { questions: byTopicTags(current, allQuestions, limit), mode: "topic" };
+  }
+  return {
+    questions: byCategoryGroup(current, allQuestions, limit),
+    mode: "category",
+  };
+}

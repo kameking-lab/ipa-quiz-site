@@ -8,7 +8,11 @@ import {
   getBlogPostsByExam,
   getRelatedPosts,
 } from "@/data/blog";
-import { getAvailableExams } from "@/lib/seo/exam-meta";
+import {
+  getAvailableExams,
+  getQuestionsByExamStrict,
+  groupByCategory,
+} from "@/lib/seo/exam-meta";
 
 // Characterization tests for the blog post registry (data/blog/index.ts),
 // consumed by the /blog routes: getAllBlogSlugs feeds generateStaticParams,
@@ -155,6 +159,40 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
     expect(selfRefs).toEqual([]);
   });
 
+  it("keeps the 科目B (foundation) cluster mutually interlinked", () => {
+    // The 土台=科目B pillar funnel relies on the three FE 科目B articles
+    // (完全対策 / 擬似言語 / アルゴリズム苦手克服) forming a closed cluster so a
+    // reader landing on any one is one click from the other two. The central
+    // 完全対策 pillar previously linked outward to siblings but not back; pin
+    // the reciprocity so a future relatedSlugs edit can't silently sever it.
+    const cluster = [
+      "fe-kamoku-b-taisaku",
+      "fe-kamoku-b-pseudo-language",
+      "fe-algorithm-nigate-kokufuku",
+    ];
+    for (const slug of cluster) {
+      const related = new Set(getRelatedPosts(slug, 4).map((r) => r.slug));
+      for (const sibling of cluster) {
+        if (sibling === slug) continue;
+        expect(related.has(sibling)).toBe(true);
+      }
+    }
+  });
+
+  it("keeps the AP 午後 selection rail on-topic (no cross-exam 科目B leak)", () => {
+    // The route renders the related rail with getRelatedPosts(slug, 4). The
+    // 応用情報 午後選択戦略 article previously carried off-topic
+    // fe-kamoku-b-taisaku (基本情報 科目B — different exam, foundation cluster)
+    // in slot 2, so an AP 午後 reader was sent to an unrelated FE article while
+    // an on-topic AP 午後 sibling was pushed out of the 4-slot rail (the same
+    // relevance leak fixed for the 科目B cluster in an earlier pass). Pin the
+    // AP 午後 selection article's rail to stay on-topic: it must surface the
+    // 文系選択 sibling and must not surface the 科目B pillar.
+    const rail = getRelatedPosts("ap-gogo-sentaku", 4).map((r) => r.slug);
+    expect(rail).toContain("ap-gogo-bunkei-sentaku");
+    expect(rail).not.toContain("fe-kamoku-b-taisaku");
+  });
+
   it("every in-body /blog/<slug> cross-link resolves to an existing post", () => {
     // Bodies carry hand-authored markdown cross-links like `](/blog/foo-bar)`.
     // A typo'd slug renders a 200-looking link that 404s on click — a dead
@@ -167,6 +205,33 @@ describe("explicit relatedSlugs integrity (no dead internal-link intent)", () =>
         if (!slugSet.has(m[1])) dead.push(`${p.slug} -> /blog/${m[1]}`);
       }
     }
+    expect(dead).toEqual([]);
+  });
+
+  it("every in-body /<exam>/topic/<category> deep-link resolves to a generated topic", () => {
+    // Bodies may deep-link into the category pool, e.g.
+    // `](/fe/topic/%E3%82%A2...)`. That route is dynamicParams=false +
+    // notFound(), and its static params are groupByCategory() of the exam's
+    // strict questions — so a stale/mis-encoded category renders a link that
+    // 404s. The 2-letter exam-hub guard above does not cover the /topic/ tail;
+    // pin every topic deep-link to a real (exam, category) pair.
+    const valid = new Set<string>();
+    for (const exam of getAvailableExams()) {
+      for (const c of groupByCategory(getQuestionsByExamStrict(exam))) {
+        valid.add(`${exam}/topic/${encodeURIComponent(c.category)}`);
+      }
+    }
+    const topicLinkRe = /\]\(\/([a-z]{2}\/topic\/[^)]+)\)/g;
+    const dead: string[] = [];
+    let seen = 0;
+    for (const p of ALL) {
+      for (const m of p.body.matchAll(topicLinkRe)) {
+        seen++;
+        if (!valid.has(m[1])) dead.push(`${p.slug} -> /${m[1]}`);
+      }
+    }
+    // Non-vacuous: at least the algorithm-pool deep-link must be exercised.
+    expect(seen).toBeGreaterThan(0);
     expect(dead).toEqual([]);
   });
 

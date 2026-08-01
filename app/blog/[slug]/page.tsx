@@ -14,6 +14,7 @@ import {
   getRelatedPosts,
 } from "@/data/blog";
 import { getRelatedQuestionsForPost } from "@/lib/blog/related-questions";
+import { extractFaq } from "@/lib/blog/faq";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
@@ -46,7 +47,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: post.title,
     description: post.description,
-    alternates: { canonical: url },
+    alternates: {
+      canonical: url,
+      types: { "application/rss+xml": "/feed.xml" },
+    },
     openGraph: {
       title: post.title,
       description: post.description,
@@ -200,6 +204,22 @@ export default async function BlogArticlePage({ params }: PageProps) {
     });
   }
 
+  const faqs = extractFaq(post.body);
+  if (faqs.length > 0) {
+    graphNodes.push({
+      "@type": "FAQPage",
+      "@id": `${url}#faq`,
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: f.answer,
+        },
+      })),
+    });
+  }
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": graphNodes,
@@ -335,6 +355,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
               className="inline-flex min-h-[48px] items-center rounded-full border border-sky-300 bg-white px-4 py-2 text-sm font-semibold text-sky-700 hover:bg-sky-50 dark:border-sky-800 dark:bg-zinc-950 dark:text-sky-300 dark:hover:bg-sky-950/40"
             >
               他のブログ記事を読む
+            </Link>
+            <Link
+              href={post.booksExam ? `/recommended-books/${post.booksExam}` : "/recommended-books"}
+              className="inline-flex min-h-[48px] items-center rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
+            >
+              {post.booksExam ? `${examLabel(post.booksExam)} のおすすめ書籍` : "おすすめ書籍"}
             </Link>
           </div>
         </section>

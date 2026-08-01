@@ -105,7 +105,7 @@ export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
     morningStrategy:
       "午前 II 25 問は基本、過去 3 年分を 95% 以上で固める。午前 I は応用情報合格者は免除。",
     afternoonStrategy:
-      "午後 I は事例 4 問中 2 問記述、午後 II は論文 3 問中 1 問選択 2 時間。論文は『題意 → 論述骨子 → 章構成 → 経験裏付け』の流れを反復練習する。",
+      "午後 I は事例 3 問中 2 問記述、午後 II は論文 2 問中 1 問選択 2 時間。論文は『題意 → 論述骨子 → 章構成 → 経験裏付け』の流れを反復練習する。",
     hardSpots: ["論文の章立て設計", "経営課題の数値根拠付け", "IT 投資の評価指標"],
     exampleSubjects: ["事業戦略", "IT 投資マネジメント", "DX とビジネスモデル"],
     career: "情報処理技術者試験の最高難度に位置付けられ、CIO / CDO 系キャリアと相性が良い。",
@@ -189,7 +189,7 @@ export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
     morningStrategy:
       "ハードウェア寄りの計算問題（消費電力・タイミング）が多い。午前 II は計算ドリルで底上げ。",
     afternoonStrategy:
-      "午後 I は組込み事例の記述、午後 II は本格的な設計問題。タスクスケジューリングと割込み処理を完全に図示できる状態を作る。",
+      "午後 I は組込み事例の記述式。午後 II は 2023 年（令和 5 年）秋から論述式（小論文）に変わり、評価ランク A〜D（A のみ合格）で判定される。タスクスケジューリングや割込み処理などの設計判断を、企画・要件定義から具体的に論述できる状態を作る。",
     hardSpots: ["RTOS タスク優先度", "DMA / バスアービトレーション", "セーフティ規格（ISO 26262 等）"],
     exampleSubjects: ["組込み制御設計", "車載 / IoT", "FPGA 設計"],
     career: "車載・産業機器・IoT デバイスの開発者にとって専門能力の証明として機能する。",
@@ -209,7 +209,7 @@ export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
       "午後はインシデント対応・脆弱性診断・運用設計の長文記述。各シナリオで対策を 3 段階（予防・検知・対応）で書き分ける訓練が有効。",
     hardSpots: ["TLS 1.3 / OAuth 2.1", "Active Directory 攻撃手法", "クラウド IAM / SaaS セキュリティ"],
     exampleSubjects: ["インシデントレスポンス", "脆弱性診断", "セキュリティ統制"],
-    career: "登録セキスペ（RISS）として 3 年ごとの更新で有効な業務独占に近い専門資格。",
+    career: "登録セキスペ（RISS）として 3 年ごとの更新で維持する、セキュリティ分野の名称独占資格（業務独占ではない）。",
   },
   sm: {
     code: "sm",

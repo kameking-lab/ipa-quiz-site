@@ -5,6 +5,8 @@ import {
   decodeCitationsHeader,
   encodeCitationsHeader,
 } from "@/lib/copilot/citation-meta";
+import { IPA_EXAM_INFO_URL } from "@/lib/exam-config";
+import { getAllQuestions } from "@/lib/questions/load";
 import type { CorpusDoc, RerankedCandidate } from "@/lib/copilot/types";
 
 function glossaryDoc(text: string): CorpusDoc {
@@ -62,6 +64,35 @@ describe("buildCitationMetas", () => {
     expect(meta.kind).toBe("glossary");
     expect(meta.glossary).toBeUndefined();
     expect(meta.docId).toBe("g:__test-term-not-in-glossary__");
+  });
+});
+
+describe("buildCitationMetas — 出典リンク (fullSourceUrl) gating", () => {
+  function questionDoc(id: string): CorpusDoc {
+    // `q:`-prefixed question doc; meta enrichment resolves the real question by id.
+    return { id: `q:${id}`, kind: "question", title: "問", url: `/x/${id}`, text: "x", meta: {} };
+  }
+
+  it("廃止 jitec ホストの sourcePdfUrl を live IPA 索引へ degrade する", () => {
+    // CitationCards は fullSourceUrl をそのまま href に出す。NXDOMAIN の
+    // www.jitec.ipa.go.jp を生で返すと AI 回答の出典が死リンクになる。
+    const jitecQ = getAllQuestions().find((q) =>
+      q.sourcePdfUrl?.includes("jitec.ipa.go.jp"),
+    );
+    if (jitecQ) {
+      const [meta] = buildCitationMetas([candidate(questionDoc(jitecQ.id), 0)]);
+      expect(meta.fullSourceUrl).toBe(IPA_EXAM_INFO_URL);
+    }
+    // Invariant (holds even after data migration): no question citation ever
+    // emits a dead jitec 出典 URL. Removing the gate re-introduces ~13k of them.
+    const metas = buildCitationMetas(
+      getAllQuestions()
+        .slice(0, 500)
+        .map((q, i) => candidate(questionDoc(q.id), i)),
+    );
+    for (const m of metas) {
+      expect(m.fullSourceUrl).not.toContain("jitec.ipa.go.jp");
+    }
   });
 });
 

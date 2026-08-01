@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { createHistoryStore } from "@/lib/storage/history";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
@@ -32,6 +33,17 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
   const [showSummary, setShowSummary] = React.useState(false);
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
+  // The review trigger unmounts while the overlay is open (canReview === false),
+  // so restore focus to it when the overlay closes — otherwise keyboard users
+  // are stranded at document.body (WCAG 2.4.3).
+  const reviewTriggerRef = React.useRef<HTMLButtonElement | null>(null);
+  const prevReviewingRef = React.useRef(reviewing);
+  React.useEffect(() => {
+    if (prevReviewingRef.current && !reviewing) {
+      reviewTriggerRef.current?.focus({ preventScroll: true });
+    }
+    prevReviewingRef.current = reviewing;
+  }, [reviewing]);
 
   const question = questions[index];
   const lastAnswer = answers[answers.length - 1];
@@ -179,6 +191,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
           </span>
           {canReview && (
             <button
+              ref={reviewTriggerRef}
               type="button"
               onClick={() => setReviewing(true)}
               className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-zinc-200 backdrop-blur transition-colors hover:bg-white/20"
@@ -316,6 +329,8 @@ function ReviewOverlay({
   answer: AnswerLog;
   onClose: () => void;
 }) {
+  const dialogRef = React.useRef<HTMLDivElement | null>(null);
+
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -324,16 +339,47 @@ function ReviewOverlay({
     return () => window.removeEventListener("keydown", onKey);
   }, [onClose]);
 
+  // Push focus into the overlay on open so keyboard users land inside this
+  // aria-modal dialog instead of staying on the page behind it.
+  React.useEffect(() => {
+    const t = window.setTimeout(() => {
+      dialogRef.current
+        ?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR)
+        ?.focus({ preventScroll: true });
+    }, 0);
+    return () => window.clearTimeout(t);
+  }, []);
+
+  // Trap Tab focus inside the overlay (WCAG 2.4.3). aria-modal alone does not
+  // stop the browser from tabbing into the inert quiz behind it.
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
+
   const answerKey = Array.isArray(question.answer)
     ? (question.answer[0] as string)
     : String(question.answer);
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95 backdrop-blur"
       role="dialog"
       aria-modal="true"
       aria-label="直前に解いた問題の復習"
+      onKeyDown={onDialogKeyDown}
     >
       <header className="flex items-center justify-between px-4 pt-4 pb-2">
         <button

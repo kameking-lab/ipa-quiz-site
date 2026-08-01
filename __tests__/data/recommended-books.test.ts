@@ -10,6 +10,10 @@ import {
   isRakutenIdFilled,
 } from "@/data/recommended-books";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { ESSAY_EXAM_CODES } from "@/lib/essays/load";
+// Singular = the 論述採点 grading set (st/sa/pm/sm/au, no SC); the deep
+// /essay/[exam]/[id] page (where the 論文 book hint renders) iterates this set.
+import { ESSAY_EXAM_CODES as ESSAY_GRADING_EXAM_CODES } from "@/lib/essay/load";
 
 // Characterization tests for data/recommended-books.ts — the affiliate book
 // registry consumed by /recommended-books, /[exam], InlineBookHint, and the
@@ -114,5 +118,38 @@ describe("getRecommendedBooks / RECOMMENDED_BOOKS registry", () => {
       .flat()
       .map((b) => b.id);
     expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  // The essay funnel pages (/essays/[exam] and the answer-detail page) render
+  // <InlineBookHint exam={exam} category="午後" />. pickBookForCategory matches
+  // on tags.some(t => t.toLowerCase().includes(category)), so each essay exam
+  // MUST have a 午後-tagged book — otherwise the affiliate silently falls back
+  // to a non-午後 (e.g. 教科書) book on the flagship 論述 funnel. This pins that
+  // data contract so dropping/retagging a 午後 book for an essay exam fails CI.
+  it("has a 午後-tagged book for every essay exam (InlineBookHint category=午後)", () => {
+    expect(ESSAY_EXAM_CODES.length).toBeGreaterThan(0); // non-vacuous
+    for (const exam of ESSAY_EXAM_CODES) {
+      const books = getRecommendedBooks(exam);
+      const has午後 = books.some((b) =>
+        b.tags.some((t) => t.toLowerCase().includes("午後")),
+      );
+      expect(has午後, `${exam} は午後タグ付き書籍が必要`).toBe(true);
+    }
+  });
+
+  // The indexable flagship grading page /essay/[exam]/[id] renders
+  // <InlineBookHint exam={exam} category="論文" /> — the highest-intent surface
+  // for 論述 learners. pickBookForCategory matches the 論文-tagged 合格論文事例集
+  // book; if an essay exam loses its 論文 tag the affiliate silently degrades to
+  // an off-topic book. Pin that each essay exam keeps a 論文-tagged book.
+  it("has a 論文-tagged book for every essay exam (InlineBookHint category=論文)", () => {
+    expect(ESSAY_GRADING_EXAM_CODES.length).toBeGreaterThan(0); // non-vacuous
+    for (const exam of ESSAY_GRADING_EXAM_CODES) {
+      const books = getRecommendedBooks(exam);
+      const has論文 = books.some((b) =>
+        b.tags.some((t) => t.toLowerCase().includes("論文")),
+      );
+      expect(has論文, `${exam} は論文タグ付き書籍が必要`).toBe(true);
+    }
   });
 });

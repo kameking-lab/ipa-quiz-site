@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BookOpen, ChevronLeft, Shield } from "lucide-react";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
+import { getSafePdfUrl } from "@/lib/exam-config";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -111,6 +113,8 @@ export default async function EssayPm2DetailPage({
   const resolved = await params;
   const question = resolveQuestion(resolved);
   if (!question) notFound();
+  // resolveQuestion already validated the code; narrow for typed components.
+  if (!isEssayExamCode(resolved.exam)) notFound();
 
   const seasonLabel = question.season === "spring" ? "春" : "秋";
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
@@ -178,7 +182,7 @@ export default async function EssayPm2DetailPage({
 
       <EssayIndustryTabs
         industries={question.industries}
-        pdfUrl={question.pdfUrl}
+        pdfUrl={getSafePdfUrl(question.pdfUrl)}
       />
 
       <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
@@ -192,6 +196,10 @@ export default async function EssayPm2DetailPage({
         >
           AI 論述添削を試す →
         </Link>
+      </div>
+
+      <div className="print:hidden">
+        <InlineBookHint exam={resolved.exam} category="午後" />
       </div>
 
       {relatedPosts.length > 0 && (

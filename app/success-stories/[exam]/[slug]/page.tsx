@@ -15,6 +15,12 @@ import { EXAM_LABELS, examLabel } from "@/lib/utils";
 
 const VALID_EXAMS = new Set(Object.keys(EXAM_LABELS));
 
+// generateStaticParams が全 (exam, slug) 組を列挙するため、それ以外の組は
+// ルータ層で 404 にする（dynamicParams=false）。これがないと無効な
+// /success-stories/{exam}/{slug} が notFound() を HTTP200 のソフト404として
+// 返し、クロール予算を浪費する（/essay deep と同型の修正・セッション34参照）。
+export const dynamicParams = false;
+
 export async function generateStaticParams() {
   return getAllSuccessStorySlugs();
 }

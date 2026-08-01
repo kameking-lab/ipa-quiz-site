@@ -50,6 +50,7 @@ pnpm dev
 | `LLM_PROVIDER` | プロバイダ選択 | `gemini` |
 | `GEMINI_MODEL_FREE` | 無料ユーザー向けモデル | `gemini-2.5-flash-lite` |
 | `GEMINI_MODEL_PREMIUM` | プレミアム向けモデル | `gemini-2.5-flash` |
+| `GEMINI_MODEL_GRADING` | 午後記述・論述 AI 採点のモデル | `gemini-2.5-flash` |
 | `FREE_DAILY_LIMIT` | 無料枠の 1 日回数 | `30` |
 | `PREMIUM_MINUTE_LIMIT` | プレミアムの 1 分ソフトリミット | `10` |
 

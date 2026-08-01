@@ -1,3 +1,4 @@
+import { Rss } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -17,7 +18,10 @@ export const metadata: Metadata = {
   title: "IPA試験ブログ｜全13区分の合格戦略・勉強法・出題傾向",
   description:
     "IPA 情報処理技術者試験 13 区分（IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU）の合格戦略・勉強法・直前対策・頻出論点・出題傾向分析を網羅。AI 解説付きの過去問演習サイト過去問AI が運営する学習ブログで、初学者の最短合格ルートから高度試験の論述対策まで実務目線で解説します。",
-  alternates: { canonical: "/blog" },
+  alternates: {
+    canonical: "/blog",
+    types: { "application/rss+xml": "/feed.xml" },
+  },
   openGraph: {
     title: "IPA試験ブログ | 過去問AI",
     description:
@@ -131,6 +135,13 @@ export default function BlogIndexPage() {
           AI コパイロット付き過去問演習サイト 過去問AI が運営する学習ブログです。
           記事数は <strong>{posts.length} 本</strong> 公開中。
         </p>
+        <a
+          href="/feed.xml"
+          className="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-sky-600 hover:underline dark:text-sky-400"
+        >
+          <Rss className="h-3.5 w-3.5" aria-hidden="true" />
+          RSS フィードで購読
+        </a>
       </header>
 
       <div className="space-y-12">

@@ -146,7 +146,7 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <h2 className="mb-2 text-lg font-semibold">出典・著作権</h2>
+      <h2 id="attribution" className="mb-2 scroll-mt-20 text-lg font-semibold">出典・著作権</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
           当サイトに掲載している問題文・選択肢・模範解答等の一次情報は、IPA が公式サイトで
@@ -157,7 +157,7 @@ export default function AboutPage() {
           （詳細は
           <a
             className="underline"
-            href="https://www.ipa.go.jp/shiken/kakomondai/copyright.html"
+            href="https://www.ipa.go.jp/shiken/faq.html"
             target="_blank"
             rel="noopener noreferrer"
           >

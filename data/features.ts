@@ -188,7 +188,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       badge: "差別化機能",
       headline: "AI 論述添削",
       subhead:
-        "書いた答案を貼り付けるだけで、AI が IPA 採点基準を参照しながら『どこで何点引かれるか』を即座にフィードバック。",
+        "書いた答案を貼り付けるだけで、AI が IPA 公式解答例を参照しながら『どこで何点引かれそうか』を即座にフィードバック（参考評価）。",
     },
     benefits: [
       {
@@ -227,6 +227,11 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
         href: "/features/industry-essays",
         label: "業種別 論述事例集",
         description: "そもそも何を書くかに悩まない題材集。",
+      },
+      {
+        href: "/blog/koudo-ronjutsu-kakikata-kotsu",
+        label: "合格答案の構成と書き方のコツ",
+        description: "添削に出す前に押さえる論述の型。",
       },
       {
         href: "/keywords/sc-incident-response",

@@ -4,10 +4,19 @@ import { notFound } from "next/navigation";
 import { ArrowRight, BookOpen } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
+import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { KEYWORD_PAGES, getKeywordPageBySlug } from "@/data/keywords";
+import {
+  KEYWORD_PAGES,
+  getKeywordPageBySlug,
+  getRelatedKeywordPages,
+} from "@/data/keywords";
+import { getBlogPostBySlug } from "@/data/blog";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE } from "@/lib/seo/structured-data";
 import { topicLinkHref } from "@/lib/seo/topics";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
@@ -68,7 +77,32 @@ export default async function KeywordPage({
   const page = getKeywordPageBySlug(keyword);
   if (!page) notFound();
 
+  // 旗艦＝午後II論述 AI 採点への送客は、明示オプトイン (strategicCta) かつ
+  // 論文区分 (ESSAY_EXAM_CODES) を持つ記事に限定する（誇大回避）。
+  const essayExam =
+    page.strategicCta === "essay"
+      ? (page.exams.find((e) =>
+          (ESSAY_EXAM_CODES as readonly string[]).includes(e),
+        ) as ExamCode | undefined)
+      : undefined;
+
+  // 薄い LP の dead-end 解消: 同一トピックを厚く論じる親ブログ記事へ
+  // 「さらに深く学ぶ」逆方向リンクを張る（明示オプトイン relatedBlogSlug のみ）。
+  // 実在しない slug を弾いて新規 404 を作らない（typo は描画しない）。
+  const relatedBlog = page.relatedBlogSlug
+    ? getBlogPostBySlug(page.relatedBlogSlug)
+    : undefined;
+
   const absUrl = `${SITE_BASE_URL}/keywords/${page.slug}`;
+  // 同ページの OG 画像（generateMetadata と同一の派生）を Article.image に載せる。
+  // 捏造値ではなく実在の代表画像で、blog Article の image と同形（1200x630）。
+  const articleOgParams = new URLSearchParams({
+    type: "keyword",
+    title: page.title,
+    subtitle: "学習トピック特集",
+    body: page.description,
+  });
+  const articleImage = `${SITE_BASE_URL}/api/og?${articleOgParams.toString()}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -77,10 +111,24 @@ export default async function KeywordPage({
         headline: page.title,
         description: page.description,
         url: absUrl,
+        image: {
+          "@type": "ImageObject",
+          url: articleImage,
+          width: 1200,
+          height: 630,
+        },
         inLanguage: "ja",
         articleSection: "学習トピック",
         keywords: page.relatedTopics.join(", "),
-        publisher: { "@type": "Organization", name: SITE_NAME, url: SITE_BASE_URL },
+        author: { "@type": "Organization", name: SITE_NAME, url: SITE_BASE_URL },
+        publisher: {
+          "@type": "Organization",
+          "@id": ORG_ID,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: SITE_LOGO_IMAGE,
+        },
+        mainEntityOfPage: { "@type": "WebPage", "@id": absUrl },
       },
       {
         "@type": "BreadcrumbList",
@@ -149,6 +197,30 @@ export default async function KeywordPage({
         ))}
       </article>
 
+      {essayExam ? <AfternoonEssayHint exam={essayExam} /> : null}
+      {page.strategicCta === "kamoku-b" ? (
+        <KamokuBStudyHint exam="fe" session="kamoku-b" />
+      ) : null}
+
+      {relatedBlog ? (
+        <section aria-label="さらに深く学ぶ" className="mt-8">
+          <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+            さらに深く学ぶ
+          </h2>
+          <Link
+            href={`/blog/${relatedBlog.slug}`}
+            className="group block rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+          >
+            <p className="text-sm font-medium text-foreground group-hover:text-primary">
+              {relatedBlog.title}
+            </p>
+            <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
+              {relatedBlog.description}
+            </p>
+          </Link>
+        </section>
+      ) : null}
+
       <section aria-label="関連トピック" className="mt-8">
         <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
           関連トピック
@@ -187,9 +259,7 @@ export default async function KeywordPage({
           他の特集記事
         </h2>
         <ul className="space-y-2">
-          {KEYWORD_PAGES.filter((p) => p.slug !== page.slug)
-            .slice(0, 5)
-            .map((p) => (
+          {getRelatedKeywordPages(page.slug, 5).map((p) => (
               <li key={p.slug}>
                 <Link
                   href={`/keywords/${p.slug}`}

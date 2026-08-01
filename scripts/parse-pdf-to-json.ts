@@ -32,7 +32,7 @@ import type { ExamCode, Session } from "@/lib/questions/types";
 import {
   EXAM_CONFIGS,
   ALL_EXAM_CODES,
-  buildPdfUrl,
+  buildSourcePdfUrl,
   buildRawPdfPath,
   buildExtractionPrompt,
   buildAnswerExtractionPrompt,
@@ -294,7 +294,7 @@ function buildQuestions(
     const id = `${cfg.code}-${year}${sc}-${sessionCfg.session}-q${raw.qNumber}`;
     const reiwa = year - 2018;
     const reiwaLabel = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
-    const sourcePdfUrl = buildPdfUrl(cfg, year, season, sessionCfg, "qs");
+    const sourcePdfUrl = buildSourcePdfUrl(cfg, year, season, sessionCfg);
     const explanation =
       explanations[raw.qNumber] ??
       `正解は${ansKey}です。（出典: IPA ${cfg.nameFull} ${reiwaLabel}${seasonLabel} ${sessionCfg.label} 問${raw.qNumber}）`;

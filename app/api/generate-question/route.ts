@@ -6,6 +6,7 @@ import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { captureException } from "@/lib/monitoring/sentry";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { tierForModel } from "@/lib/ai/cost-tracker";
 
 export const runtime = "nodejs";
 
@@ -141,8 +142,10 @@ ${choicesText}
       raw += chunk;
     }
     if (provider.name !== "mock") {
-      void recordAiCost({
-        tier: "flash-lite",
+      // await は必須（scoring / essay-grade と同じ理由）。レスポンス完了後に
+      // 残った KV 書き込みはサーバレス関数の凍結で失われる。
+      await recordAiCost({
+        tier: tierForModel(model),
         inputTokens: estimateTokens(SYSTEM_PROMPT.length + userPrompt.length),
         outputTokens: estimateTokens(raw.length),
         label: "generate-question",
@@ -231,15 +234,15 @@ function parseGenerated(raw: string): GeneratedQuestion | null {
 
 function mockSimilar(base: z.infer<typeof BodySchema>["baseQuestion"]): GeneratedQuestion {
   return {
-    question: `（モック類題）${base.category}に関する類題です。実際のAI生成には GEMINI_API_KEY が必要です。元問題: ${base.question.slice(0, 80)}…`,
+    question: `（サンプル類題）${base.category}に関する類題です。AI 生成が利用できないため、仮の内容を表示しています。元問題: ${base.question.slice(0, 80)}…`,
     choices: {
-      ア: "（モック選択肢ア）",
-      イ: "（モック選択肢イ）",
-      ウ: "（モック選択肢ウ）",
-      エ: "（モック選択肢エ）",
+      ア: "（サンプル選択肢ア）",
+      イ: "（サンプル選択肢イ）",
+      ウ: "（サンプル選択肢ウ）",
+      エ: "（サンプル選択肢エ）",
     },
     answer: "ア",
     explanation:
-      "これはモックプロバイダによる仮のレスポンスです。GEMINI_API_KEYが設定されると実際のAIが類題を生成します。",
+      "AI 生成が利用できないため、仮のサンプルを表示しています。学習の判断材料にはお使いにならないでください。",
   };
 }

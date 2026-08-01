@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { Keyboard, X } from "lucide-react";
+import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 
 const SHORTCUTS = [
   { keys: ["1", "2", "3", "4"], desc: "選択肢 ア・イ・ウ・エ を選択" },
@@ -12,6 +13,9 @@ const SHORTCUTS = [
 
 export function KeyboardShortcutsHelp() {
   const [open, setOpen] = React.useState(false);
+  const dialogRef = React.useRef<HTMLDivElement | null>(null);
+  // The element that had focus before opening, so it can be restored on close.
+  const lastFocusedRef = React.useRef<HTMLElement | null>(null);
 
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -21,7 +25,11 @@ export function KeyboardShortcutsHelp() {
       }
       if (e.key === "?") {
         e.preventDefault();
-        setOpen((v) => !v);
+        setOpen((v) => {
+          // Capture the trigger element only when transitioning open.
+          if (!v) lastFocusedRef.current = document.activeElement as HTMLElement | null;
+          return !v;
+        });
       }
       if (e.key === "Escape") setOpen(false);
     };
@@ -29,15 +37,50 @@ export function KeyboardShortcutsHelp() {
     return () => window.removeEventListener("keydown", handler);
   }, []);
 
+  // On open, push focus into the dialog (it is triggered by a global key, so
+  // focus is otherwise left on the page behind). On close, restore focus to
+  // wherever it was, so keyboard users are not stranded at document.body.
+  React.useEffect(() => {
+    if (open) {
+      const t = window.setTimeout(() => {
+        const first = dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR);
+        first?.focus({ preventScroll: true });
+      }, 0);
+      return () => window.clearTimeout(t);
+    }
+    lastFocusedRef.current?.focus({ preventScroll: true });
+  }, [open]);
+
+  // Trap Tab focus inside the dialog (WCAG 2.4.3) — aria-modal alone lets the
+  // browser tab into the inert page behind the modal. With a single focusable
+  // (the close button) this keeps Tab parked on it instead of escaping.
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
+
   if (!open) return null;
 
   return (
     <div
+      ref={dialogRef}
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
       aria-label="キーボードショートカット一覧"
       onClick={() => setOpen(false)}
+      onKeyDown={onDialogKeyDown}
     >
       <div
         className="w-full max-w-sm rounded-2xl border border-zinc-200 bg-white p-5 shadow-2xl dark:border-zinc-700 dark:bg-zinc-900"

@@ -280,24 +280,42 @@ export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as ExamCode[];
 /** Fallback URL shown when a question has no specific PDF URL. */
 export const IPA_EXAM_INFO_URL = "https://www.ipa.go.jp/shiken/mondai-kaiotu/";
 
+// www.jitec.ipa.go.jp was IPA's old exam-materials subdomain. IPA decommissioned
+// it — the host no longer resolves (NXDOMAIN as of 2026-06) — so every stored
+// sourcePdfUrl pointing there is a dead 出典 link. The replacement PDFs live under
+// www.ipa.go.jp/shiken/mondai-kaiotu/ but in opaque CMS-hashed directories
+// (…/gmcbt80000009sgk-att/…), so the old path cannot be remapped deterministically
+// and IPA keeps only a limited window of years online. Rather than serve a dead
+// link (or guess a new one that 404s), route these to the live IPA exam-materials
+// index, which is always 200 and lists the current PDFs — keeping the 出典 link
+// honest per CLAUDE.md §8. Already-migrated www.ipa.go.jp URLs pass through.
+const DEAD_PDF_HOST = "jitec.ipa.go.jp";
+
+function isLivePdfUrl(url: string | undefined): url is string {
+  return (
+    !!url && url.startsWith("https://") && !url.includes(DEAD_PDF_HOST)
+  );
+}
+
 /**
- * Returns a valid IPA source URL for the given raw value.
- * Falls back to the IPA exam materials page when the URL is absent or clearly a placeholder.
+ * Returns a valid, live IPA source URL for the given raw value.
+ * Falls back to the IPA exam materials index when the URL is absent, a
+ * placeholder, or points to the decommissioned jitec.ipa.go.jp host.
  */
 export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
-  if (sourcePdfUrl && sourcePdfUrl.startsWith("https://")) return sourcePdfUrl;
-  return IPA_EXAM_INFO_URL;
+  return isLivePdfUrl(sourcePdfUrl) ? sourcePdfUrl : IPA_EXAM_INFO_URL;
 }
 
 /**
  * Returns the IPA official answer PDF URL for a question.
  * Derived from sourcePdfUrl by swapping "_qs.pdf" → "_ans.pdf" (the IPA naming convention).
- * Falls back to the safe info page when derivation is impossible.
+ * Falls back to the safe info page when the URL is missing, a placeholder, or
+ * on the decommissioned jitec.ipa.go.jp host (deriving from a dead URL stays dead).
  */
 export function getOfficialAnswerPdfUrl(
   sourcePdfUrl: string | undefined,
 ): string {
-  if (!sourcePdfUrl || !sourcePdfUrl.startsWith("https://")) {
+  if (!isLivePdfUrl(sourcePdfUrl)) {
     return IPA_EXAM_INFO_URL;
   }
   if (sourcePdfUrl.endsWith("_qs.pdf")) {
@@ -325,6 +343,25 @@ export function buildPdfUrl(
     `https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_${year}h${rr}_${sn}/` +
     `${year}h${rr}${sc}_${cfg.urlSlug}_${sessionCfg.urlSlug}_${type}.pdf`
   );
+}
+
+/**
+ * Returns the 出典 (source) URL to STORE in question data for a given exam slot.
+ *
+ * buildPdfUrl() still emits the legacy www.jitec.ipa.go.jp deep path (the fetch
+ * crawler uses it to locate the raw file), but that host is decommissioned
+ * (NXDOMAIN), so persisting its output as-is re-injects a dead 出典 link on every
+ * parse run. getSafePdfUrl() degrades the dead host to the live IPA index —
+ * matching exactly what the serve layer already shows — so parsed data stays
+ * honest at rest, not just behind the runtime gate. See CLAUDE.md §8.
+ */
+export function buildSourcePdfUrl(
+  cfg: ExamConfig,
+  year: number,
+  season: Season,
+  sessionCfg: SessionConfig,
+): string {
+  return getSafePdfUrl(buildPdfUrl(cfg, year, season, sessionCfg, "qs"));
 }
 
 export function buildRawPdfPath(

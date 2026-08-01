@@ -43,6 +43,9 @@ describe("getRecommendedPath", () => {
 
     const experienced = getRecommendedPath("experienced", "ap");
     expect(experienced.steps[0].href).toBe("/mock-exam?exam=ap");
+    // 弱点マップは統合先ダッシュボードの弱点タブへ直リンク（旧 /my-progress は
+    // 301 されるため、リダイレクトを挟まない最終 URL を固定する）。
+    expect(experienced.steps[1].href).toBe("/account/dashboard#weakness");
     expect(experienced.steps[2].href).toBe("/quiz?mode=review&exam=ap");
 
     const lastMinute = getRecommendedPath("last-minute", "ip");

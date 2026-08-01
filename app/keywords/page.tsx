@@ -9,6 +9,15 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 
+// Page-specific OG card. The /api/og route reserves a "keyword" type style for
+// this page; without an explicit images entry the openGraph override would drop
+// the site-wide default image, leaving this page with no social/SERP card.
+const KEYWORDS_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+  type: "keyword",
+  title: "学習トピック特集記事一覧",
+  body: "サブネット計算・EVM・論文構成・直前対策など頻出論点の特集を集約。",
+}).toString()}`;
+
 export const metadata: Metadata = {
   title: "学習トピック特集記事一覧",
   description:
@@ -21,6 +30,7 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    images: [{ url: KEYWORDS_OG_URL, width: 1200, height: 630, alt: "学習トピック特集記事一覧" }],
   },
 };
 

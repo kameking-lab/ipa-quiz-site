@@ -1,5 +1,6 @@
 import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
+import { getSafePdfUrl } from "@/lib/exam-config";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { ExamCode, Question, Season } from "@/lib/questions/types";
 import type { RerankedCandidate } from "./types";
@@ -82,7 +83,10 @@ export function buildCitationMetas(
         kind: "question",
         title: p.doc.title,
         url: p.doc.url,
-        fullSourceUrl: q?.sourcePdfUrl ?? p.doc.url,
+        // Gate through getSafePdfUrl so a decommissioned jitec 出典 (dead for
+        // ~13k questions) degrades to the live IPA index, never a dead link in
+        // a copilot citation card. Fall back to the internal /q url otherwise.
+        fullSourceUrl: q?.sourcePdfUrl ? getSafePdfUrl(q.sourcePdfUrl) : p.doc.url,
         snippet: shortenSnippet(q?.explanation ?? p.doc.text),
         score: p.score,
         rerankScore: p.rerankScore,

@@ -8,6 +8,7 @@ import { examLabel, formatYearSeason } from "@/lib/utils";
 import { getAfternoonYearSeasons, getAfternoonByYearSeason } from "@/lib/afternoon/load";
 import { Badge } from "@/components/ui/badge";
 import { AfternoonDisclaimer } from "@/components/afternoon/AfternoonDisclaimer";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 
 const SUPPORTED_AFTERNOON_EXAMS: ExamCode[] = [
   "ap",
@@ -123,6 +124,34 @@ export default async function AfternoonIndexPage({
         <div className="mb-8">
           <AfternoonDisclaimer />
         </div>
+
+        {/* 論文区分(st/sa/pm/sm/au)は、この練習用モック(AI採点ベータ)から
+            実際の IPA 午後II 過去問を採点する indexable 旗艦 /essay へ誘導する。
+            コンポーネントが ESSAY_EXAM_CODES で self-gate するため非論述区分には出ない。 */}
+        <AfternoonEssayHint exam={code} />
+
+        {code === "fe" && (
+          <div className="mb-8">
+            <Link
+              href="/blog/fe-kamoku-b-taisaku"
+              className="group flex items-start gap-3 rounded-2xl border border-indigo-300/70 bg-indigo-50/60 p-4 transition-all hover:-translate-y-0.5 hover:border-indigo-400 hover:shadow-md dark:border-indigo-800/60 dark:bg-indigo-950/30 sm:p-5"
+            >
+              <span className="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-indigo-100 text-indigo-700 dark:bg-indigo-900/60 dark:text-indigo-300">
+                <FileEdit className="h-4 w-4" />
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-medium text-foreground group-hover:text-primary">
+                  基本情報の午後は科目B（アルゴリズム・擬似言語）が中心
+                </span>
+                <span className="mt-1 block text-xs leading-relaxed text-muted-foreground">
+                  擬似言語の読み方・トレースの型を体系的に整理してから演習に入ると伸びます。「基本情報
+                  科目B 完全対策」で読み方を最短整理。
+                </span>
+              </span>
+              <ChevronRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+            </Link>
+          </div>
+        )}
 
         {yearSeasons.length === 0 ? (
           <div className="rounded-2xl border border-dashed border-border bg-muted/40 p-8 text-center">

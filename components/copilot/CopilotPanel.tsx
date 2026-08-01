@@ -26,6 +26,7 @@ import {
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { setCopilotPanelOpen } from "@/lib/copilot/visibility";
+import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 
 const Markdown = dynamic(
   () => import("@/components/ui/markdown").then((m) => m.Markdown),
@@ -70,6 +71,7 @@ import {
   incrementAiUsage,
   readAiUsage,
   readFeedbackSubmitted,
+  syncFeedbackUnlockFromResponse,
 } from "@/lib/storage/rate-limit-client";
 import { downloadMarkdown } from "@/lib/chat/export-markdown";
 import { useChatSession } from "@/hooks/useChatSession";
@@ -397,10 +399,9 @@ export function CopilotPanel({
         });
         const res = await fetch("/api/copilot", {
           method: "POST",
-          headers: {
-            "content-type": "application/json",
-            ...(feedbackSubmitted ? { "x-feedback-submitted": "1" } : {}),
-          },
+          // 無料枠解除はサーバ署名済み Cookie で判定するため、自己申告ヘッダは送らない
+          // （送っても無視される。ヘッダを残すと解除根拠を誤解させる）。
+          headers: { "content-type": "application/json" },
           signal: controller.signal,
           body: JSON.stringify({
             question,
@@ -415,6 +416,10 @@ export function CopilotPanel({
             messages: nextMessages.map((m) => ({ role: m.role, content: m.content })),
           }),
         });
+
+        // 旧方式(自己申告ヘッダ)で解除済みのユーザーを、サーバの実際の枠に合わせる。
+        syncFeedbackUnlockFromResponse(res);
+        setFeedbackSubmittedState(readFeedbackSubmitted());
 
         if (res.status === 429) {
           const body = (await res.json()) as { message?: string; reason?: string };
@@ -564,7 +569,6 @@ export function CopilotPanel({
       streaming,
       usage.count,
       dailyLimit,
-      feedbackSubmitted,
       messages,
       question,
       selectedChoice,
@@ -814,6 +818,7 @@ export function CopilotPanel({
               {actionsOpen && (
                 <div
                   id="copilot-actions-popup"
+                  role="group"
                   className="absolute right-0 top-full z-50 mt-1 w-44 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-lg dark:border-zinc-800 dark:bg-zinc-950"
                   aria-label="その他の操作"
                 >
@@ -1003,6 +1008,7 @@ export function CopilotPanel({
       <div
         ref={scrollRef}
         className="flex-1 overflow-y-auto p-3"
+        role="log"
         aria-live="polite"
         aria-label="AI コパイロットの応答"
       >
@@ -1356,6 +1362,7 @@ export function CopilotMobileSheet({
 }: Omit<Props, "className" | "onClose" | "headerRight"> & { defaultOpen?: boolean }) {
   const [open, setOpen] = React.useState(defaultOpen);
   const fabRef = React.useRef<HTMLButtonElement | null>(null);
+  const dialogRef = React.useRef<HTMLDivElement | null>(null);
   const prevOpenRef = React.useRef(open);
 
   // Escape キーでシートを閉じる（キーボードユーザーの脱出経路）
@@ -1376,6 +1383,36 @@ export function CopilotMobileSheet({
     }
     prevOpenRef.current = open;
   }, [open]);
+
+  // 開いたらシート内へフォーカスを送り込む。FAB は open 中アンマウントされるため、
+  // これが無いとキーボード利用者は document.body に取り残され、Tab で背後の
+  // ページ内容に入り込んでしまう（aria-modal の前提が崩れる）。
+  React.useEffect(() => {
+    if (!open) return;
+    const t = window.setTimeout(() => {
+      const first = dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE_SELECTOR);
+      first?.focus({ preventScroll: true });
+    }, 0);
+    return () => window.clearTimeout(t);
+  }, [open]);
+
+  // Tab フォーカスをシート内に閉じ込める（WCAG 2.4.3）。aria-modal だけでは
+  // ブラウザは Tab を背後の DOM へ移してしまうため、端で巻き戻す。
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !dialogRef.current) return;
+    const focusables = Array.from(
+      dialogRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
 
   // Mirror the open state into the shared signal so the global AI quota
   // badge only shows while a copilot panel is actually open.
@@ -1399,10 +1436,12 @@ export function CopilotMobileSheet({
       )}
       {open && (
         <div
+          ref={dialogRef}
           className="fixed inset-0 z-50 sm:hidden"
           role="dialog"
           aria-modal="true"
           aria-label="AI コパイロット"
+          onKeyDown={onDialogKeyDown}
         >
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -1484,6 +1523,26 @@ export function CopilotDesktopFloating({
     return () => window.clearTimeout(t);
   }, [open]);
 
+  // Trap Tab focus inside the dialog (WCAG 2.4.3), mirroring the mobile sheet.
+  // aria-modal alone does not stop the browser from tabbing into the page
+  // behind the panel, so wrap at the edges. Focusables live inside panelRef
+  // (the overlay is aria-hidden and not focusable).
+  const onDialogKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key !== "Tab" || !panelRef.current) return;
+    const focusables = Array.from(
+      panelRef.current.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR),
+    ).filter((el) => el.offsetParent !== null || el === document.activeElement);
+    const target = trapTabTarget(
+      focusables,
+      document.activeElement as HTMLElement | null,
+      e.shiftKey,
+    );
+    if (target) {
+      e.preventDefault();
+      target.focus({ preventScroll: true });
+    }
+  };
+
   // Mirror the open state into the shared signal so the global AI quota
   // badge only shows while a copilot panel is actually open.
   React.useEffect(() => {
@@ -1513,6 +1572,7 @@ export function CopilotDesktopFloating({
           role="dialog"
           aria-modal="true"
           aria-label="AI コパイロット"
+          onKeyDown={onDialogKeyDown}
         >
           {/* Semi-transparent overlay so the underlying question stays readable. */}
           <div

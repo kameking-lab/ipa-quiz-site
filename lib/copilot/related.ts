@@ -1,5 +1,6 @@
 import { getAllQuestions } from "@/lib/questions/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionPagePath } from "@/lib/seo/question-url";
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { getCorpus } from "./corpus";
 import { getCachedIndex, retrieve } from "./retriever";
@@ -21,7 +22,7 @@ export interface RelatedQuestion {
   category: string;
   /** 問題文の冒頭プレビュー（180 文字）。 */
   preview: string;
-  /** 演習開始用 URL（クイズプレイヤー）。 */
+  /** 問題ページ URL（正規の indexable な静的 /q/* ページ）。 */
   url: string;
   /** BM25 スコア（並び順保持用）。 */
   score: number;
@@ -160,7 +161,9 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
         qNumber: q.qNumber,
         category: q.category,
         preview: shortenPreview(q.question),
-        url: `/quiz?id=${encodeURIComponent(q.id)}`,
+        // 正規の indexable な静的問題ページへ。旧 `/quiz?id=` は mode 無しで 308 →
+        // ホームへリダイレクトされ /quiz は id を読まない死リンクだった（corpus.ts と同様）。
+        url: questionPagePath(q),
         score: c.score * examBoost * topicBoost,
       },
     });

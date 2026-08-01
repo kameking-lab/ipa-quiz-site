@@ -1,4 +1,6 @@
 import { describe, it, expect, beforeEach } from "vitest";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { getCorpus, resetCorpusCache } from "@/lib/copilot/corpus";
 import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
@@ -40,14 +42,30 @@ describe("getCorpus - キャッシュ", () => {
 });
 
 describe("getCorpus - doc 形状の不変条件", () => {
-  it("question doc は q: プレフィックス・kind=question・/quiz?id= の URL", () => {
+  it("question doc は q: プレフィックス・kind=question・正規 /q/ 問題ページの URL", () => {
     const qDocs = getCorpus().filter((d) => d.kind === "question");
     expect(qDocs.length).toBeGreaterThan(0);
     for (const d of qDocs.slice(0, 200)) {
       expect(d.id.startsWith("q:")).toBe(true);
-      expect(d.url.startsWith("/quiz?id=")).toBe(true);
+      // 引用カード/関連問題のリンク先は正規 indexable な静的問題ページ /q/* を指す。
+      // 旧 `/quiz?id=` は mode 無しで 308 → ホームへリダイレクトされる死リンクだった。
+      expect(d.url.startsWith("/q/")).toBe(true);
+      expect(d.url.startsWith("/quiz?")).toBe(false);
       expect(d.title.length).toBeGreaterThan(0);
       expect(d.text.length).toBeGreaterThan(0);
+    }
+  });
+
+  // needsReview の問題は /q ページが notFound()（404）を返すため、コーパスに
+  // 乗せると引用/関連問題が死リンクになる。コーパスから除外されることを固定する。
+  it("needsReview の問題はコーパスに乗らない（/q が 404 になる死リンクを作らない）", () => {
+    const reviewIds = new Set(
+      getAllQuestions().filter((q) => q.needsReview).map((q) => `q:${q.id}`),
+    );
+    expect(reviewIds.size).toBeGreaterThan(0); // データに needsReview が実在することを担保
+    const docIds = new Set(getCorpus().map((d) => d.id));
+    for (const rid of reviewIds) {
+      expect(docIds.has(rid)).toBe(false);
     }
   });
 
@@ -58,6 +76,29 @@ describe("getCorpus - doc 形状の不変条件", () => {
       expect(d.id.startsWith("g:")).toBe(true);
       expect(d.url.startsWith("/glossary#")).toBe(true);
     }
+  });
+
+  // 引用カードの glossary リンク(citation.url)は app/glossary/page.tsx の
+  // 各用語アンカー id={`term-${encodeURIComponent(t.term)}`} へ着地する必要がある。
+  // 接頭辞 `term-` が片側だけ変わると死アンカー(ページ先頭へ着地)になるため、
+  // 両側のアンカー記法が一致することを機械固定する(崩れたら落ちる)。
+  it("glossary doc の url アンカーは /glossary ページの term- アンカーと一致する", () => {
+    const pageSource = readFileSync(
+      join(process.cwd(), "app/glossary/page.tsx"),
+      "utf8",
+    );
+    expect(pageSource).toContain("id={`term-${encodeURIComponent(t.term)}`}");
+
+    const gDocs = getCorpus().filter((d) => d.kind === "glossary");
+    for (const d of gDocs) {
+      // url 例: /glossary#term-ACID — 接頭辞 term- が必須。
+      expect(d.url.startsWith("/glossary#term-")).toBe(true);
+    }
+    // サンプル1件で encodeURIComponent 記法の一致を具体的に確認。
+    const sample = GLOSSARY[0];
+    const expected = `/glossary#term-${encodeURIComponent(sample.term)}`;
+    const sampleDoc = gDocs.find((d) => d.id === `g:${sample.term}`);
+    expect(sampleDoc?.url).toBe(expected);
   });
 });
 

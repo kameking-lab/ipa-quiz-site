@@ -1,13 +1,37 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
 import { join } from "node:path";
 
-export type ModelTier = "flash" | "flash-lite";
+export type ModelTier = "pro" | "flash" | "flash-lite";
 
-// USD per 1M tokens (Gemini 2.5 Flash / Flash-Lite)
+// USD per 1M tokens (Gemini 2.5 Pro / Flash / Flash-Lite)
+// Record<ModelTier, ...> なので、ModelTier に層を足すと単価行の追加が
+// コンパイルエラーで強制される（＝単価未定義の層が生まれない）。
 const PRICING: Record<ModelTier, { input: number; output: number }> = {
+  pro: { input: 1.25, output: 10.00 },
   flash: { input: 0.30, output: 2.50 },
   "flash-lite": { input: 0.10, output: 0.40 },
 };
+
+/**
+ * 解決済みモデル ID（resolveModel の戻り値）から課金層を導出する。
+ *
+ * 呼び出し側が層を手書きすると、モデルだけ上位に変えたときに単価が
+ * 取り残されて計上が数倍過小になる（午後採点が pro なのに flash-lite 単価で
+ * 記録されていた実例）。層はモデル ID から必ず導出し、手書きしない。
+ *
+ * 未知のモデル名は最上位単価（pro）で計上する。§0 の上限は安全装置なので、
+ * 「過小計上で素通り」より「過大計上で早めに止まる」側に倒す。
+ * （cost-guard の estimateTokens が chars/2 で高めに見積もるのと同じ方針）
+ */
+export function tierForModel(model: string | undefined): ModelTier {
+  const id = (model ?? "").toLowerCase();
+  // "flash-lite" は "flash" を部分文字列に含むので、必ず先に判定する。
+  if (id.includes("flash-lite")) return "flash-lite";
+  if (id.includes("flash")) return "flash";
+  if (id.includes("pro")) return "pro";
+  console.warn(`[cost-tracker] unknown model "${model}" — pro 単価で計上します`);
+  return "pro";
+}
 
 const USD_TO_JPY = 150;
 const LOGS_DIR = join(process.cwd(), "logs");

@@ -28,6 +28,7 @@ import { join } from "node:path";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { AfternoonQuestion, SubQuestion } from "@/lib/afternoon/types";
 import type { Season } from "@/lib/questions/types";
+import { getSafePdfUrl } from "@/lib/exam-config";
 
 const RAW_DIR = join(process.cwd(), "data", "raw_pdfs");
 const OUT_DIR = join(process.cwd(), "data", "questions", "afternoon", "ap");
@@ -169,7 +170,10 @@ function toAfternoonQuestion(
     title: raw.title,
     context: raw.context,
     subQuestions,
-    pdfUrl: buildPdfUrl(year, season),
+    // Gate the (now dead, NXDOMAIN) jitec 出典 URL through getSafePdfUrl so the
+    // persisted pdfUrl degrades to the live IPA index — matching the serve-time
+    // gate and keeping at-rest data honest per CLAUDE.md §8 (see exam-config.ts).
+    pdfUrl: getSafePdfUrl(buildPdfUrl(year, season)),
     license: "IPA-public",
     totalTimeMinutes: 150,
   };

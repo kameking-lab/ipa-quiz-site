@@ -42,3 +42,40 @@ describe("QuizCompleteScreen — コピー成功の SR 通知", () => {
     });
   });
 });
+
+// クイズ完了画面は最大エンゲージメントの単発タイミング。論述区分(ST/SA/PM/SM/AU)を
+// 解き終えた読者にだけ旗艦=午後II論述AI採点(/essay)への導線を 1 回だけ出す
+// (解説カードと違い問題ごとに繰り返さない)。ゲートは AfternoonEssayHint 内の
+// ESSAY_EXAM_CODES 単一情報源。非論述区分には出さない(誇大回避)。
+describe("QuizCompleteScreen — 旗艦=午後論述AI採点への導線", () => {
+  it("論述区分(pm)では /essay への旗艦導線を出す", () => {
+    render(
+      <QuizCompleteScreen
+        stats={{ answered: 10, correct: 7 }}
+        elapsed={120}
+        exam="pm"
+        mode="random"
+        onRetry={vi.fn()}
+        onBack={vi.fn()}
+      />,
+    );
+    const link = screen.getByRole("link", { name: /午後論述 AI 添削を試す/ });
+    expect(link).toHaveAttribute("href", "/essay");
+  });
+
+  it("非論述区分(ap)では旗艦導線を出さない", () => {
+    render(
+      <QuizCompleteScreen
+        stats={{ answered: 10, correct: 7 }}
+        elapsed={120}
+        exam="ap"
+        mode="random"
+        onRetry={vi.fn()}
+        onBack={vi.fn()}
+      />,
+    );
+    expect(
+      screen.queryByRole("link", { name: /午後論述 AI 添削を試す/ }),
+    ).toBeNull();
+  });
+});

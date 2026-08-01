@@ -20,6 +20,14 @@ export interface EssaySubPrompt {
   maxChars: number;
   /** IPA公表または編集者作成の解答骨子 */
   modelOutline: string;
+  /**
+   * 採点根拠データ（強み1）。汎用LLMが持てない「根拠ある採点」のための構造化ルーブリック。
+   * いずれも任意。IPA 出題趣旨・採点講評の要点を編集部が自前で構造化したもの（原文の長文転載はしない）。
+   */
+  /** 部分点の核になる語・概念。採点AIはこの有無を部分点判定の核とする。 */
+  requiredKeywords?: string[];
+  /** 採点の勘所（配点の指針・典型的な減点観点）。各評価軸の根拠として用いる。 */
+  scoringPoints?: string[];
 }
 
 export interface EssayQuestion {
@@ -119,6 +127,13 @@ export interface EssayGradingResult {
   improvedExample?: string;
   /** 採点モデル名 */
   model?: string;
+  /**
+   * 採点の出どころ。"ai" は AI が採点した結果、"simplified" は AI 応答を
+   * 使えず字数など機械的な指標だけから出した簡易判定。
+   * simplified でも AI 呼び出しの課金は発生しうるため、利用者に必ず開示する。
+   * 省略時は "ai" 相当（この項目が無い時期に保存された履歴との後方互換）。
+   */
+  gradingMode?: "ai" | "simplified";
   /** 採点した時刻（ISO） */
   gradedAt: string;
 }

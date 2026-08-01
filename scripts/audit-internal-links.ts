@@ -22,6 +22,11 @@ import { ESSAY_EXAM_CODES as ESSAY_AI_EXAM_CODES } from "@/lib/essay/load";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import {
+  getAvailableExams,
+  getQuestionsByExamStrict,
+  groupByCategory,
+} from "@/lib/seo/exam-meta";
+import {
   getAllSuccessStorySummaries,
   getSuccessStoryExams,
 } from "@/data/success-stories";
@@ -168,6 +173,20 @@ function buildValidPaths(): Set<string> {
   for (const exam of EXAM_CODES) {
     paths.add(`/${exam}/afternoon`);
     paths.add(`/${exam}/afternoon/`);
+  }
+
+  // Category pool pages /{exam}/topic/{category} (dynamicParams=false +
+  // notFound()). Static params = groupByCategory() of the exam's strict
+  // questions, percent-encoded — same source of truth as the blog-index
+  // "topic deep-link resolves" regression test. Without this the audit
+  // false-flags valid percent-encoded topic deep-links (e.g. the algorithm
+  // pool /fe/topic/%E3%82%A2...) as dead.
+  for (const exam of getAvailableExams()) {
+    for (const c of groupByCategory(getQuestionsByExamStrict(exam))) {
+      const enc = encodeURIComponent(c.category);
+      paths.add(`/${exam}/topic/${enc}`);
+      paths.add(`/${exam}/topic/${enc}/`);
+    }
   }
 
   // Feature landing pages /features/{slug} (dynamic [slug] route)

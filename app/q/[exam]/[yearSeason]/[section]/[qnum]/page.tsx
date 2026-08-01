@@ -14,9 +14,15 @@ import {
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
-import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import {
+  getCrossExamRelatedQuestions,
+  getSameExamOtherYears,
+  getSameExamRelatedQuestions,
+  getSessionNeighbors,
+} from "@/lib/questions/related";
 import {
   formatLastUpdatedJa,
   getLastUpdatedISO,
@@ -40,6 +46,8 @@ import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
+import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
+import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
@@ -165,17 +173,11 @@ export default async function QuestionPage({
   // 無ければリンクを張らずプレーンテキスト表示にして死リンクを防ぐ。
   const topicPageExists = examTopicPageExists(q.exam, q.category);
 
-  const sessionPool = examPool
-    .filter(
-      (x) =>
-        x.year === q.year &&
-        x.season === q.season &&
-        x.session === q.session,
-    )
-    .sort((a, b) => a.qNumber - b.qNumber);
-  const idx = sessionPool.findIndex((x) => x.id === q.id);
-  const prev = idx > 0 ? sessionPool[idx - 1] : null;
-  const next = idx >= 0 && idx < sessionPool.length - 1 ? sessionPool[idx + 1] : null;
+  // Sequential prev/next nav skips needsReview questions: their pages
+  // notFound() (404), so keeping them in the sequence would ship dead links
+  // (~18 corpus-wide). Placeholder questions stay navigable (real 200 page).
+  // See getSessionNeighbors in related.ts.
+  const { prev, next } = getSessionNeighbors(q, examPool);
 
   // Related-question link trails are computed here in the Server Component and
   // rendered as plain <Link>s below, so they ship inside the prerendered HTML
@@ -183,33 +185,34 @@ export default async function QuestionPage({
   // Do NOT move these lists into a "use client" island — that would hide the
   // links behind hydration and forfeit the internal-link equity (C-4: ~29%
   // index rate on /q/* pages).
-  const related = examPool
-    .filter((x) => x.id !== q.id && x.category === q.category)
-    .slice(0, 5);
+  // Same-category rails link to linkable targets only — never to needsReview
+  // (which notFound()s → 404) or placeholder (noindex) questions. Without this
+  // filter the「関連する問題」rail shipped 106 dead 404 links corpus-wide. The
+  // sibling cross-exam rail below already enforces the same isLinkableTarget
+  // contract; getSameExam* keep all three rails consistent (see related.ts).
+  const related = getSameExamRelatedQuestions(q, examPool, 5);
 
   // Same exam + same category but from OTHER years — one representative per
   // year, newest first. Builds a year-spanning internal-link trail so each
   // /q/* page seeds links into older years' equivalents (phase 7 task ②-2).
-  const otherYearsSameCategory = (() => {
-    const byYear = new Map<number, Question>();
-    for (const x of examPool) {
-      if (x.id === q.id || x.category !== q.category) continue;
-      if (x.year === q.year || byYear.has(x.year)) continue;
-      byYear.set(x.year, x);
-    }
-    return [...byYear.values()].sort((a, b) => b.year - a.year).slice(0, 5);
-  })();
+  // Exclude questions already shown in the「関連する問題」rail above: the same
+  // question landing in both rails ships a duplicate link on 346 pages corpus-
+  // wide (639 links). Excluding refills the year with a distinct question, so
+  // the page seeds more unique internal links.
+  const otherYearsSameCategory = getSameExamOtherYears(
+    q,
+    examPool,
+    5,
+    new Set(related.map((r) => r.id)),
+  );
 
-  const tagSet = new Set(q.topicTags);
-  const crossExamByTopic =
-    q.topicTags.length > 0
-      ? ALL_QUESTIONS.filter(
-          (x) =>
-            x.id !== q.id &&
-            x.exam !== q.exam &&
-            x.topicTags.some((t) => tagSet.has(t)),
-        ).slice(0, 5)
-      : [];
+  // Cross-exam discovery trail. With topicTags populated this ranks by shared
+  // tags; while tags are unset corpus-wide it falls back to the IPA common-skill
+  // category groups (AP/FE/IP/SG shared curriculum) so the rail still seeds
+  // cross-exam internal links from /q instead of staying empty. Indexable
+  // targets only — never links to needsReview (404) or placeholder pages.
+  const { questions: crossExamByTopic, mode: crossExamMode } =
+    getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
@@ -344,7 +347,7 @@ export default async function QuestionPage({
               掲載していません。下のリンクから IPA 公式 PDF でご確認ください。
             </p>
             <a
-              href={q.sourcePdfUrl}
+              href={getSafePdfUrl(q.sourcePdfUrl)}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-700 dark:hover:text-amber-200"
@@ -432,7 +435,7 @@ export default async function QuestionPage({
           <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
-            sourcePdfUrl={q.sourcePdfUrl}
+            sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
             answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
           />
         </details>
@@ -451,6 +454,16 @@ export default async function QuestionPage({
       {/* Inline book recommendation tied to the category */}
       <div className="print:hidden">
         <InlineBookHint exam={q.exam} category={q.category} />
+      </div>
+
+      {/* 旗艦＝午後II論述AI採点への導線（論述区分 ST/SA/PM/SM/AU のみ自己ゲート） */}
+      <div className="print:hidden">
+        <AfternoonEssayHint exam={q.exam} />
+      </div>
+
+      {/* 土台＝基本情報 科目B（擬似言語）完全対策への導線（FE科目Bのみ自己ゲート） */}
+      <div className="print:hidden">
+        <KamokuBStudyHint exam={q.exam} session={q.session} />
       </div>
 
       {/* AI Copilot CTA — gradient panel */}
@@ -611,13 +624,17 @@ export default async function QuestionPage({
 
       {/* Cross-exam related — by shared topicTags */}
       {crossExamByTopic.length > 0 && (
-        <section aria-label="他試験の同テーマ問題" className="print:hidden mt-10">
+        <section aria-label="他試験区分の関連問題" className="print:hidden mt-10">
           <div className="mb-4">
             <h2 className="text-lg font-bold tracking-tight text-foreground">
-              他試験の同テーマ問題
+              {crossExamMode === "topic"
+                ? "他試験の同テーマ問題"
+                : "他試験区分の同分野問題"}
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              トピック「{q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問
+              {crossExamMode === "topic"
+                ? `トピック「${q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問`
+                : `${examLabel(q.exam)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
             </p>
           </div>
           <ul className="flex flex-col gap-2">

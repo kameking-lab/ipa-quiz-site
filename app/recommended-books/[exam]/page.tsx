@@ -19,6 +19,7 @@ import {
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_LABELS, examLabel } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
 
 export const dynamicParams = false;
 
@@ -37,6 +38,11 @@ const EXAM_CODES: ExamCode[] = [
   "sm",
   "au",
 ];
+
+// 記述式午後を持つ区分。論文(論述5区分)でも科目B(FE/SG)でもないが、
+// 午後対策本の読者は「記述式の答案の書き方=部分点の取り方」が自然な次の一歩。
+// 旗艦/essay(論文5区分採点)には送らず=記述式≠論文の誇大回避(s27/s64 precedent)。
+const DESCRIPTIVE_AFTERNOON_EXAMS: ExamCode[] = ["ap", "nw", "db", "sc", "es"];
 
 const EXAM_INTROS: Record<ExamCode, string> = {
   ip: "ITパスポート(IP)はIT基礎教養を問う入門区分。IT未経験の社会人・学生でも、市販テキスト＋過去問演習だけで十分合格を狙えます。",
@@ -112,6 +118,10 @@ export default async function RecommendedBooksExamPage({
   const books = RECOMMENDED_BOOKS[code] ?? [];
   const label = examLabel(code);
   const intro = EXAM_INTROS[code];
+  // 論述区分(ST/SA/PM/SM/AU)は論文事例集の読者＝旗艦「午後AI採点」の対象。
+  // 書籍購入後の自然な次の一歩としてAI論述添削へ導く（参考評価・誇大回避）。
+  const isEssayExam = (ESSAY_EXAM_CODES as string[]).includes(code);
+  const isDescriptiveAfternoonExam = DESCRIPTIVE_AFTERNOON_EXAMS.includes(code);
   const absUrl = `${SITE_BASE_URL}/recommended-books/${exam}`;
 
   const productOgUrl = (book: RecommendedBook) => {
@@ -332,6 +342,54 @@ export default async function RecommendedBooksExamPage({
             <Link href={`/quiz?mode=random&exam=${exam}`}>ランダム出題で始める</Link>
           </Button>
         </div>
+        {isEssayExam && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            論文事例集で「書き方の型」を身につけたら、
+            <Link
+              href="/essay"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              AIに午後論文を添削してもらう
+            </Link>
+            と、自分の答案の弱点を具体的に把握できます（AI採点は参考評価です）。
+          </p>
+        )}
+        {code === "fe" && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            最大の難関＝科目B（擬似言語・アルゴリズム）でつまずいたら、
+            <Link
+              href="/blog/fe-kamoku-b-taisaku"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              科目Bの対策法
+            </Link>
+            を読み、AIコパイロットに擬似言語を1行ずつ質問しながら解き方を身につけましょう。
+          </p>
+        )}
+        {code === "sg" && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            合否を分ける科目B（長文の事例問題）で読解に迷ったら、
+            <Link
+              href="/blog/sg-kamoku-b-jirei-mondai"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              科目Bの事例問題の解き方
+            </Link>
+            を読み、AIコパイロットに長文を整理してもらいながら設問を1問ずつ解き進めましょう。
+          </p>
+        )}
+        {isDescriptiveAfternoonExam && (
+          <p className="mt-4 border-t border-sky-200 pt-3 text-sm leading-relaxed text-sky-900 dark:border-sky-900/50 dark:text-sky-100">
+            午後の記述式は、知識があっても答案の書き方で部分点を落としがちです。
+            <Link
+              href="/blog/gogo-kijutsu-buhanten"
+              className="mx-1 font-medium underline decoration-sky-400 underline-offset-2 hover:text-sky-700 dark:hover:text-sky-200"
+            >
+              記述式で部分点を落とさない答案の書き方
+            </Link>
+            を読み、本文語句の流用・設問の語尾合わせを押さえてから演習に入りましょう。
+          </p>
+        )}
       </section>
 
       <section className="mb-8 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-900 dark:border-amber-900/50 dark:bg-amber-950/30 dark:text-amber-200">
@@ -353,7 +411,7 @@ function BookCard({ book }: { book: RecommendedBook }) {
   const rakutenUrl = rakutenReady ? buildRakutenUrl(book.rakutenId) : null;
 
   return (
-    <Card>
+    <Card id={book.id} className="scroll-mt-20">
       <CardHeader>
         <div className="flex items-start justify-between gap-3">
           <CardTitle>{book.title}</CardTitle>

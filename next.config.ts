@@ -79,6 +79,13 @@ const nextConfig: NextConfig = {
       // Account settings sub-pages → settings
       { source: "/account/notifications", destination: "/settings", permanent: true },
       { source: "/account/api-keys", destination: "/settings/api-keys", permanent: true },
+      // Retired account preference / management sub-pages. 音声・BGM(/audio) と
+      // アバター(/avatar) は個人設定なので /settings に集約。請求情報(/billing) は
+      // 全機能無料化で支払い管理が無くなったため、アカウント管理の入口である
+      // /settings へ寄せる（旧ページは /auth/signin への素通しになっていた）。
+      { source: "/account/audio", destination: "/settings", permanent: true },
+      { source: "/account/avatar", destination: "/settings", permanent: true },
+      { source: "/account/billing", destination: "/settings", permanent: true },
       // Merged pages (content absorbed into about / transparency)
       { source: "/support", destination: "/about#support", permanent: true },
       // /stats is now a first-class public dashboard (see app/stats/page.tsx)
@@ -94,6 +101,13 @@ const nextConfig: NextConfig = {
       // unified contact form; redirect so any stale link/bookmark lands there
       // instead of a 404.
       { source: "/feedback", destination: "/contact?type=error", permanent: true },
+      // /testimonials (旧「合格体験記・口コミ / ユーザーの声」) was folded into the
+      // richer /success-stories (「IPA試験 合格体験記｜13区分の合格者ストーリー集」).
+      // 301 protects inbound links / crawl equity for the 合格体験記 intent.
+      { source: "/testimonials", destination: "/success-stories", permanent: true },
+      // /trust (旧「信頼性ポリシー — なぜ過去問AIが選ばれるのか」) は同インテントの
+      // /why-kakomon-ai（「過去問AI を選ぶ理由」）に統合済。301 で誘導する。
+      { source: "/trust", destination: "/why-kakomon-ai", permanent: true },
     ];
   },
   compress: true,

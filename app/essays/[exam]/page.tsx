@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Shield, FileText, ArrowRight, BookOpen } from "lucide-react";
 
 import { AiContentNotice } from "@/components/AiContentNotice";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 
@@ -41,6 +42,12 @@ export async function generateMetadata({
     robots: { index: false, follow: false },
   };
 }
+
+// generateStaticParams が論述区分の全コードを列挙するため、それ以外の区分は
+// ルータ層で 404 にする（dynamicParams=false）。これがないと無効な
+// /essays/{exam} が notFound() を `next start` 上で HTTP200 のソフト404として
+// 返す（深い [qnum] ルートは既に dynamicParams=false・セッション34/35参照）。
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
   return ESSAY_EXAM_CODES.map((exam) => ({ exam }));
@@ -158,6 +165,8 @@ export default async function EssayExamPage({
           </Link>
         </div>
       </section>
+
+      <InlineBookHint exam={exam} category="午後" />
 
       {relatedPosts.length > 0 && (
         <section aria-label="関連学習ガイド" className="mt-8">

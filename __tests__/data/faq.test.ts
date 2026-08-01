@@ -28,4 +28,63 @@ describe("FAQS registry — FAQPage structured-data invariants", () => {
       expect(FAQ_CATEGORY_LABELS[f.category]).toBeTruthy();
     }
   });
+
+  // IPA 公式 (kubun/sc.html) では、SC 合格・登録後に名乗れる国家資格名は
+  // 「情報処理安全確保支援士（登録セキスペ）」。「登録セキュリティスペシャリスト」は
+  // IPA が用いない不正確な称号で、/faq の FAQPage JSON-LD (acceptedAnswer.text)
+  // にそのまま露出するため誤りを禁止する。
+  it("names the registered SC title with the official IPA term (not an invented 称号)", () => {
+    const scRegistration = FAQS.filter(
+      (f) =>
+        f.answer.includes("情報処理安全確保支援士") ||
+        f.answer.includes("登録セキスペ") ||
+        f.answer.includes("RISS"),
+    );
+    // non-vacuous: SC 登録系の FAQ が実在する
+    expect(scRegistration.length).toBeGreaterThan(0);
+    for (const f of FAQS) {
+      expect(f.answer).not.toContain("登録セキュリティスペシャリスト");
+    }
+    // RISS に言及する回答は必ず正式名称も併記している
+    for (const f of FAQS) {
+      if (f.answer.includes("RISS")) {
+        expect(f.answer).toContain("情報処理安全確保支援士");
+      }
+    }
+  });
+
+  // IPA 公式 (about/koudo_menjo.html) では午前I免除は「2年間に実施する試験まで
+  // 何度でも申請可能」。旧「前回・前々回」(=約1年・2回)は有効期間を過小提示する
+  // 誤りで、不要な午前I再受験を招くため禁止する。
+  it("states the 午前I免除 window as 2 years (not the understated 前回・前々回)", () => {
+    const menjo = FAQS.filter((f) => f.answer.includes("午前 I を免除"));
+    // non-vacuous: 午前I免除を説明する FAQ が実在する
+    expect(menjo.length).toBeGreaterThan(0);
+    for (const f of menjo) {
+      expect(f.answer).not.toContain("前回・前々回");
+      expect(f.answer).toContain("2 年間");
+    }
+  });
+
+  // IPA 公式: IP は午前/午後の区分が無い単一 CBT（100問）、FE・SG は 2023 年から
+  // 午前→科目A に再編済。旧「IP・SG・FE の午前」は IP に存在しない区分を当てはめ、
+  // FE・SG の廃止済み「午前」を使う誤り。多肢選択式中心という正しい括りに是正したので、
+  // 「IP・SG・FE の午前」が FAQPage JSON-LD に silently regress しないよう pin。
+  it("does not describe IP/SG/FE with the abolished/nonexistent 午前 区分", () => {
+    for (const f of FAQS) {
+      expect(f.answer).not.toContain("IP・SG・FE の午前");
+    }
+  });
+
+  // IPA 公式: FE は 科目A=60問/90分・科目B=20問/100分。旧「科目 A（多肢選択 90 問）」は
+  // 90分との取り違えによる誤り (SSOT exam-data は 60問/90分 で正)。
+  it("FE 科目A は 60 問（90 問の取り違えを禁止）", () => {
+    const fe = FAQS.filter((f) => f.answer.includes("科目 A（多肢選択"));
+    // non-vacuous: 科目A の問数を述べる FAQ が実在する
+    expect(fe.length).toBeGreaterThan(0);
+    for (const f of fe) {
+      expect(f.answer).not.toContain("科目 A（多肢選択 90 問");
+      expect(f.answer).toContain("科目 A（多肢選択 60 問");
+    }
+  });
 });

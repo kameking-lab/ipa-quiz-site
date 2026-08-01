@@ -1,17 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AlertTriangle, ChevronLeft } from "lucide-react";
+import { AlertTriangle, ChevronLeft, BookOpen } from "lucide-react";
 
-import { findEssayQuestion, ESSAY_EXAM_CODES } from "@/lib/essay/load";
+import {
+  findEssayQuestion,
+  getAllEssayQuestions,
+  ESSAY_EXAM_CODES,
+} from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { getSafePdfUrl } from "@/lib/exam-config";
 import { EssayEditor } from "@/components/essay/EssayEditor";
+import { InlineBookHint } from "@/components/quiz/InlineBookHint";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 
 interface RouteParams {
   exam: string;
   questionId: string;
 }
+
+// Prerender only the real essay questions and 404 everything else. Without this
+// the route is fully dynamic, so an invalid /essay/{exam}/{id} (stale/external
+// link) renders notFound() as a SOFT-404 (HTTP 200) instead of a clean 404 —
+// wasted crawl budget. Mirrors the proven /blog/[slug] pattern in this repo.
+export function generateStaticParams(): RouteParams[] {
+  return getAllEssayQuestions().map((q) => ({
+    exam: q.exam,
+    questionId: q.id,
+  }));
+}
+export const dynamicParams = false;
 
 export async function generateMetadata({
   params,
@@ -21,10 +42,33 @@ export async function generateMetadata({
   const { questionId } = await params;
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
+  const title = `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
+  const description = `${q.title} — IPA 元採点者プロンプトで AI が論述を採点します。`;
+  const canonical = `/essay/${q.exam}/${q.id}`;
+  const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "essay",
+    title: `${examLabel(q.exam)} 午後II 問${q.qNumber}`,
+    body: q.title,
+  }).toString()}`;
   return {
-    title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`,
-    description: `${q.title} — IPA 元採点者プロンプトで AI が論述を採点します。`,
-    alternates: { canonical: `/essay/${q.exam}/${q.id}` },
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "article",
+      siteName: SITE_NAME,
+      locale: "ja_JP",
+      images: [{ url: ogImage, width: 1200, height: 630, alt: title }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [ogImage],
+    },
   };
 }
 
@@ -39,8 +83,51 @@ export default async function EssayEditorPage({
   const question = findEssayQuestion(questionId);
   if (!question || question.exam !== exam) notFound();
 
+  const url = `${SITE_BASE_URL}/essay/${question.exam}/${question.id}`;
+  const label = examLabel(question.exam);
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "LearningResource",
+        "@id": `${url}#learning-resource`,
+        name: `${label} 午後II 論述 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
+        url,
+        inLanguage: "ja",
+        description: `${question.title} — IPA 元採点者プロンプトで AI が論述を採点（参考評価）。`,
+        learningResourceType: "AI 採点・添削",
+        educationalLevel: "Professional",
+        educationalUse: "Self-assessment",
+        audience: STUDENT_AUDIENCE,
+        teaches: `${label} の午後II論述対策`,
+        isBasedOn: getSafePdfUrl(question.pdfUrl),
+        publisher: {
+          "@type": "Organization",
+          "@id": ORG_ID,
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+          logo: SITE_LOGO_IMAGE,
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "ホーム", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "AI 論述添削（午後II）",
+            item: `${SITE_BASE_URL}/essay`,
+          },
+          { "@type": "ListItem", position: 3, name: question.title, item: url },
+        ],
+      },
+    ],
+  };
+
   return (
     <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-6 sm:px-6">
+      <JsonLd data={jsonLd} />
       <Link
         href="/essay"
         className="mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
@@ -77,12 +164,28 @@ export default async function EssayEditorPage({
         <div className="whitespace-pre-wrap">{question.context}</div>
       </section>
 
+      {/* Hub→spoke: the user is about to write — link the "how to write" guide
+          at the tightest intent moment (deep flagship surface had no path to the
+          educational 論述 articles, only book + IPA source). Subtle, single link. */}
+      <p className="mb-4 flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
+        <BookOpen className="h-3.5 w-3.5 flex-shrink-0 text-zinc-400" />
+        書き方に迷ったら{" "}
+        <Link
+          href="/blog/koudo-ronjutsu-kakikata-kotsu"
+          className="font-medium text-sky-600 hover:underline dark:text-sky-400"
+        >
+          合格答案の構成と書き方のコツ
+        </Link>
+      </p>
+
       <EssayEditor question={question} />
+
+      <InlineBookHint exam={question.exam} category="論文" />
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
         出典:{" "}
         <a
-          href={question.pdfUrl}
+          href={getSafePdfUrl(question.pdfUrl)}
           target="_blank"
           rel="noreferrer"
           className="underline hover:text-zinc-900 dark:hover:text-zinc-100"

@@ -37,6 +37,9 @@ export function InlineBookHint({
   if (!book) return null;
 
   const allBooksHref = `/recommended-books/${exam}`;
+  // Deep-link straight at this book's full card (Amazon + 楽天 + 使い分け表).
+  // The card carries id={book.id}; see app/recommended-books/[exam]/page.tsx.
+  const bookDetailHref = `${allBooksHref}#${book.id}`;
   const linkable = isAsinFilled(book.asin);
   const externalHref = linkable ? buildAmazonUrl(book.asin) : null;
 
@@ -52,7 +55,11 @@ export function InlineBookHint({
         <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
           この分野を体系的に学べる参考書
         </p>
-        <p className="mt-1 text-sm font-medium text-foreground">{book.title}</p>
+        <p className="mt-1 text-sm font-medium text-foreground">
+          <Link href={bookDetailHref} className="hover:underline">
+            {book.title}
+          </Link>
+        </p>
         <p className="text-xs text-muted-foreground">
           {book.author} / {book.publisher}
         </p>

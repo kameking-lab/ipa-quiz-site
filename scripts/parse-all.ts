@@ -26,7 +26,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import type { Question, Season } from "@/lib/questions/types";
 import {
   EXAM_CONFIGS,
-  buildPdfUrl,
+  buildSourcePdfUrl,
   buildRawPdfPath,
   buildExtractionPrompt,
   buildAnswerExtractionPrompt,
@@ -421,7 +421,7 @@ function buildQuestions(
     }
     const id = `${task.cfg.code}-${task.year}${sc}-${task.sessionCfg.session}-q${raw.qNumber}`;
     const effSeason = task.season === "cbt" ? "spring" : task.season;
-    const sourcePdfUrl = buildPdfUrl(task.cfg, task.year, effSeason, task.sessionCfg, "qs");
+    const sourcePdfUrl = buildSourcePdfUrl(task.cfg, task.year, effSeason, task.sessionCfg);
     return [
       {
         id,

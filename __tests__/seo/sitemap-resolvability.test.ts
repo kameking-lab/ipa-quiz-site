@@ -5,15 +5,25 @@ import { getAllBlogSummaries } from "@/data/blog";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { findQuestionByRoute } from "@/lib/seo/question-url";
 import { findTopicByAnySlug } from "@/lib/seo/topics";
+import {
+  ESSAY_EXAM_CODES,
+  findEssayQuestion,
+  getAllEssayQuestions,
+} from "@/lib/essay/load";
+import type { EssayExamCode } from "@/lib/essay/load";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import {
   renderExamsSitemapXml,
   renderBlogSitemapXml,
+  renderBooksSitemapXml,
+  renderMainSitemapXml,
   renderQuestionsSitemapChunkXml,
   renderTopicsSitemapXml,
 } from "@/lib/seo/sitemap-xml";
 import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
 import type { ExamCode } from "@/lib/questions/types";
+import { GONE_PATHS } from "@/middleware";
+import nextConfig from "@/next.config";
 
 function locs(xml: string): string[] {
   return [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].map((m) =>
@@ -66,6 +76,14 @@ function isResolvable(path: string): boolean {
   // /blog/{slug}
   const blog = /^\/blog\/(.+)$/.exec(path);
   if (blog) return blogSlugs.has(decodeURIComponent(blog[1]));
+  // /essay/{exam}/{id} — mirrors app/essay/[exam]/[questionId]/page.tsx notFound()
+  const essay = /^\/essay\/([a-z]{2})\/(.+)$/.exec(path);
+  if (essay) {
+    const [, exam, id] = essay;
+    if (!ESSAY_EXAM_CODES.includes(exam as EssayExamCode)) return false;
+    const q = findEssayQuestion(decodeURIComponent(id));
+    return Boolean(q && q.exam === exam);
+  }
   // Anything else (static app routes, /recommended-books*) is out of scope.
   return true;
 }
@@ -92,6 +110,52 @@ describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
       ...locs(renderTopicsSitemapXml()),
       ...locs(renderBlogSitemapXml()),
     ].filter((p) => !isResolvable(p));
+    expect(bad).toEqual([]);
+  });
+
+  it("main sitemap lists every flagship essay deep page, all resolvable", () => {
+    const essayPaths = locs(renderMainSitemapXml()).filter((p) =>
+      /^\/essay\/[a-z]{2}\//.test(p),
+    );
+    // non-vacuous: one entry per real essay question (currently 12 across 5 exams)
+    expect(essayPaths.length).toBe(getAllEssayQuestions().length);
+    expect(essayPaths.length).toBeGreaterThan(0);
+    expect(essayPaths.filter((p) => !isResolvable(p))).toEqual([]);
+  });
+});
+
+/**
+ * 静的・書籍ルートは isResolvable では out-of-scope（手動メンテ）。だが「sitemap は
+ * 200 の URL のみを載せる」が崩れる典型は、後でそのページを 301（後継へ統合）または
+ * 410（削除）したのに sitemap から外し忘れるケース。ここで sitemap が出す全 loc を
+ * (a) middleware の GONE_PATHS（410）と (b) next.config の無条件 301 source に突き合わせ、
+ * 矛盾したら CI を落とす。実測（本番ビルドへ curl）でも main+books 60件すべて 200 を確認済。
+ */
+describe("sitemap never lists a retired (301/410) URL", () => {
+  const allSitemapPaths: string[] = [
+    ...locs(renderMainSitemapXml()),
+    ...locs(renderExamsSitemapXml()),
+    ...locs(renderTopicsSitemapXml()),
+    ...locs(renderBlogSitemapXml()),
+    ...locs(renderBooksSitemapXml()),
+  ];
+
+  it("no sitemap URL is in middleware GONE_PATHS (410)", () => {
+    const goneSet = new Set<string>(GONE_PATHS);
+    const bad = allSitemapPaths.filter((p) => goneSet.has(p));
+    expect(bad).toEqual([]);
+  });
+
+  it("no sitemap URL is an unconditional 301 redirect source", async () => {
+    const rules = (await nextConfig.redirects?.()) ?? [];
+    // 設定ロード自体が壊れて空配列だと検査が空振りするのでガードする。
+    expect(rules.length).toBeGreaterThan(0);
+    // 無条件（has/missing 条件の付かない）exact-source の 301 のみを対象にする。
+    // 条件付き（例: /quiz は mode クエリ欠落時のみ転送）は対象外＝誤検知を避ける。
+    const unconditionalSources = new Set(
+      rules.filter((r) => !r.has && !r.missing).map((r) => r.source),
+    );
+    const bad = allSitemapPaths.filter((p) => unconditionalSources.has(p));
     expect(bad).toEqual([]);
   });
 });

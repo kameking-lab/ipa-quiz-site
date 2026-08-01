@@ -133,4 +133,11 @@ export interface AfternoonScoringResult {
   subResults: SubScoringResult[];
   /** 全体講評 */
   overallComment: string;
+  /**
+   * 採点の出どころ。"ai" は AI が採点した結果、"simplified" は AI 応答を
+   * 使えず解答の記入状況だけから機械的に出した簡易判定。
+   * simplified でも AI 呼び出しの課金は発生しうるため、利用者に必ず開示する。
+   * 省略時は "ai" 相当（この項目が無い時期に保存された履歴との後方互換）。
+   */
+  gradingMode?: "ai" | "simplified";
 }

@@ -29,6 +29,11 @@ function buildIndex(): void {
   if (cachedAllTopics) return;
   const counts = new Map<string, number>();
   for (const q of ALL_QUESTIONS) {
+    // needsReview questions 404 at /q/* (their page notFound()s), so they must
+    // never enter the topic index — /topics/[slug] links every pooled question
+    // and would otherwise ship dead links. Placeholder questions are kept (the
+    // page badges them 「解説準備中」 and links to a real noindex 200 page).
+    if (q.needsReview) continue;
     const tags = q.topicTags.length > 0 ? q.topicTags : [q.category];
     for (const t of tags) {
       const trimmed = t.trim();

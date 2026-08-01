@@ -1,0 +1,120 @@
+import { describe, expect, it } from "vitest";
+
+import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
+import { extractFaq } from "@/lib/blog/faq";
+
+// app/blog/[slug]/page.tsx emits a FAQPage JSON-LD node when extractFaq()
+// returns Q&A pairs from a post's「## よくある質問」section. These tests pin the
+// extractor so the structured data stays in sync with the article bodies:
+// if a FAQ section is reworded into a format the parser no longer recognises,
+// or markdown leaks into the answer text, this fails ("崩れたら落ちる").
+
+describe("blog FAQ extraction for FAQPage JSON-LD", () => {
+  it("extracts every Q&A pair from a known FAQ article", () => {
+    const post = getBlogPostBySlug("it-shikaku-rirekisho-kakikata");
+    expect(post).toBeDefined();
+    const faqs = extractFaq(post!.body);
+    // The article's「よくある質問」section has 6 questions.
+    expect(faqs).toHaveLength(6);
+    expect(faqs[0].question).toContain("ITパスポート");
+    // Question text must not retain the "Q. " marker or markdown emphasis.
+    for (const f of faqs) {
+      expect(f.question.startsWith("Q")).toBe(false);
+      expect(f.question).not.toContain("**");
+      expect(f.answer.length).toBeGreaterThan(0);
+    }
+  });
+
+  it("extracts the foundation 科目B pillar article's FAQ with markdown stripped", () => {
+    const post = getBlogPostBySlug("fe-kamoku-b-taisaku");
+    expect(post).toBeDefined();
+    const faqs = extractFaq(post!.body);
+    // The section added 4 Q&A pairs.
+    expect(faqs).toHaveLength(4);
+    // Q4 contains a markdown link to the algorithm topic pool — its answer must
+    // surface the link text only, never the「](/fe/topic/...)」syntax.
+    const linked = faqs.find((f) => f.answer.includes("アルゴリズム分野の過去問"));
+    expect(linked, "Q4 answer with topic-pool link not found").toBeDefined();
+    expect(linked!.answer).not.toMatch(/\]\(/);
+    for (const f of faqs) {
+      expect(f.question.startsWith("Q")).toBe(false);
+      expect(f.answer).not.toContain("**");
+    }
+  });
+
+  it("ships a FAQ section on every 勉強法 overview article", () => {
+    // buildOverviewPost emits one templated「よくある質問」block (4 Q&A) for all
+    // 13 exam study-method articles. If that template FAQ is removed or reworded
+    // into an unparsable shape, these high-authority pages lose FAQPage data.
+    const overviews = getAllBlogPosts().filter((p) =>
+      p.slug.endsWith("-goukaku-benkyouhou"),
+    );
+    expect(overviews.length).toBeGreaterThanOrEqual(13);
+    for (const post of overviews) {
+      const faqs = extractFaq(post.body);
+      expect(faqs, `no FAQ on ${post.slug}`).toHaveLength(4);
+      // Q4 links to the exam's question list; the answer must be plain text.
+      for (const f of faqs) {
+        expect(f.answer).not.toMatch(/\]\(/);
+        expect(f.question).not.toContain("**");
+      }
+    }
+  });
+
+  it("extracts the AP 午後選択戦略 FAQ without funnelling to the flagship /essay", () => {
+    // ap-gogo-sentaku is AP's highest-volume 午後 article. It gained a 4 Q&A FAQ
+    // section, but AP 午後 grading data is still a mock (HD-4), so the FAQ must
+    // NOT advertise the flagship AI grader (/essay) — only the /ap hub and the
+    // AI copilot (/quiz). If a /essay funnel leaks in, this fails.
+    const post = getBlogPostBySlug("ap-gogo-sentaku");
+    expect(post).toBeDefined();
+    const faqs = extractFaq(post!.body);
+    expect(faqs).toHaveLength(4);
+    const faqSection = post!.body
+      .split(/(?=^## )/m)
+      .find((s) => /^## よくある質問/.test(s))!;
+    expect(faqSection).not.toContain("/essay");
+    for (const f of faqs) {
+      expect(f.question.startsWith("Q")).toBe(false);
+      expect(f.answer).not.toMatch(/\]\(/);
+      expect(f.answer).not.toContain("**");
+    }
+  });
+
+  it("returns an empty array for a post with no FAQ section", () => {
+    const post = getAllBlogPosts().find(
+      (p) => !p.body.includes("## よくある質問"),
+    );
+    expect(post).toBeDefined();
+    expect(extractFaq(post!.body)).toEqual([]);
+  });
+
+  it("keeps every FAQ article in sync and strips markdown from answers", () => {
+    const posts = getAllBlogPosts();
+    let withFaqSection = 0;
+    for (const post of posts) {
+      const hasSection = post.body.includes("## よくある質問");
+      const faqs = extractFaq(post.body);
+      if (hasSection) {
+        withFaqSection += 1;
+        // A recognised FAQ section must yield at least one parsed pair.
+        expect(faqs.length, `no FAQ parsed for ${post.slug}`).toBeGreaterThan(0);
+      } else {
+        expect(faqs, `unexpected FAQ for ${post.slug}`).toEqual([]);
+      }
+      for (const f of faqs) {
+        expect(f.question.length).toBeGreaterThan(0);
+        expect(f.answer.length).toBeGreaterThan(0);
+        // Markdown link syntax must be reduced to its text only.
+        expect(f.answer, `markdown link leaked in ${post.slug}`).not.toMatch(
+          /\]\(/,
+        );
+        expect(f.answer).not.toContain("**");
+        expect(f.answer.length).toBeLessThanOrEqual(500);
+      }
+    }
+    // Non-vacuous: the site ships many FAQ articles; guard against a regex
+    // change that silently parses none.
+    expect(withFaqSection).toBeGreaterThanOrEqual(20);
+  });
+});

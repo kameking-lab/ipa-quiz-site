@@ -18,8 +18,13 @@ export interface CopilotStreamInput {
    * Called once after the stream settles with the number of output characters
    * produced (excludes the citation footer / fallback text). Used for cost
    * accounting; must not throw.
+   *
+   * A returned promise is awaited **before** the stream is closed. Cost
+   * accounting persists to KV, and on a serverless platform the function is
+   * frozen the moment the response completes — anything still in flight at
+   * close() is silently dropped.
    */
-  onComplete?: (outputChars: number) => void;
+  onComplete?: (outputChars: number) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -60,6 +65,16 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
+      let closed = false;
+      const closeStream = () => {
+        if (closed) return;
+        closed = true;
+        try {
+          controller.close();
+        } catch {
+          // controller may already be closed if the client disconnected mid-flight
+        }
+      };
       try {
         for await (const chunk of provider.streamChat({
           system,
@@ -76,7 +91,6 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         if (hasGrounding && citationFooter) {
           controller.enqueue(encoder.encode(citationFooter));
         }
-        controller.close();
       } catch (err) {
         const aborted =
           (err as { name?: string } | null)?.name === "AbortError" ||
@@ -84,11 +98,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         const timedOut = aborted && !clientSignal?.aborted;
 
         if (aborted && clientSignal?.aborted) {
-          try {
-            controller.close();
-          } catch {
-            // already closed
-          }
+          // finally 側で計上してから閉じる（部分出力ぶんの課金は発生している）。
           return;
         }
 
@@ -107,7 +117,6 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
 
         try {
           controller.enqueue(encoder.encode(fallback));
-          controller.close();
         } catch {
           // controller may already be closed if the client disconnected mid-error
         }
@@ -116,11 +125,15 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         clientSignal?.removeEventListener("abort", onClientAbort);
         // Report whatever was produced (incl. partial on timeout) for cost
         // accounting. Wrapped so a faulty callback never breaks the stream.
+        //
+        // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
+        // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          onComplete?.(producedChars);
+          await onComplete?.(producedChars);
         } catch {
           // ignore
         }
+        closeStream();
       }
     },
     cancel() {

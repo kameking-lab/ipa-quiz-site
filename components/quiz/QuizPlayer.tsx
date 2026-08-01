@@ -3,9 +3,10 @@
 import * as React from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
-import type { Question, ChoiceKey } from "@/lib/questions/types";
+import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
+import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
@@ -281,6 +282,11 @@ export function QuizPlayer({
     const dx = e.changedTouches[0].clientX - touchStart.current.x;
     const dy = e.changedTouches[0].clientY - touchStart.current.y;
     if (Math.abs(dx) > 60 && Math.abs(dx) > Math.abs(dy) * 2 && dx < 0) {
+      // Suppress the synthetic click the browser fires after touchend. Without
+      // it, a left-swipe that began on a choice both advances to the next
+      // question AND lets the simulated click land on the next question's
+      // (now-enabled) choice — selecting an answer the user never intended.
+      e.preventDefault();
       goNext();
     }
     touchStart.current = null;
@@ -686,6 +692,11 @@ export function QuizCompleteScreen({
             <ArrowLeft className="h-4 w-4" /> モード選択に戻る
           </Button>
         </div>
+
+        {/* 旗艦＝午後II論述AI採点への導線。論述区分 (ST/SA/PM/SM/AU) を解き終えた
+            読者にだけ 1 回だけ提示する（解説カードと違い問題ごとに繰り返さない）。
+            ゲートは AfternoonEssayHint 内の ESSAY_EXAM_CODES 単一情報源。 */}
+        <AfternoonEssayHint exam={exam as ExamCode} />
       </div>
     </div>
   );
