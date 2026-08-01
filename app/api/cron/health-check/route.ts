@@ -1,40 +1,16 @@
 import { NextResponse } from "next/server";
 
+import { expectedRouteStatuses } from "@/lib/seo/expected-routes";
+import type { ExpectedStatus } from "@/lib/seo/expected-routes";
+
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 export const maxDuration = 60;
 
-// 必須 200 ルート（15）：lib/seo/expected-404.ts と smoke-routes.spec.ts を正とする。
-const REQUIRED_200_ROUTES = [
-  "/",
-  "/about",
-  "/faq",
-  "/privacy",
-  "/terms",
-  "/operator",
-  "/settings",
-  "/modes/year",
-  "/modes/topic",
-  "/referral",
-  "/transparency",
-  "/review",
-  "/recommended-books",
-  "/robots.txt",
-  "/sitemap.xml",
-];
-
-const EXAM_CODES = [
-  "ip", "sg", "fe", "ap", "sc", "nw", "db",
-  "es", "st", "sa", "pm", "sm", "au",
-];
-
-const EXPECTED_404_ROUTES = ["/pricing", "/commerce", "/tokutei", "/checkout"];
-
-const ALL_REQUIRED_200 = [
-  ...REQUIRED_200_ROUTES,
-  ...EXAM_CODES.map((c) => `/${c}`),
-  ...EXAM_CODES.map((c) => `/recommended-books/${c}`),
-];
+// 監視対象と期待ステータスは lib/seo/expected-routes.ts を正とする。
+// ここに直接ベタ書きしていた頃、恒久削除ルートが 410 に変わったあとも
+// 「404 のはず」と見続けていたため、日次チェックが毎回 2 件の不一致を出し、
+// 本物の障害と区別がつかない状態になっていた。
 
 function getBaseUrl(): string {
   if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
@@ -44,12 +20,16 @@ function getBaseUrl(): string {
 
 interface RouteResult {
   path: string;
-  expected: 200 | 404;
+  expected: ExpectedStatus;
   actual: number;
   ok: boolean;
 }
 
-async function probe(baseUrl: string, path: string, expected: 200 | 404): Promise<RouteResult> {
+async function probe(
+  baseUrl: string,
+  path: string,
+  expected: ExpectedStatus,
+): Promise<RouteResult> {
   try {
     const res = await fetch(`${baseUrl}${path}`, {
       method: "GET",
@@ -90,11 +70,9 @@ export async function GET(req: Request): Promise<NextResponse> {
   }
 
   const baseUrl = getBaseUrl();
-  const probes = [
-    ...ALL_REQUIRED_200.map((p) => probe(baseUrl, p, 200 as const)),
-    ...EXPECTED_404_ROUTES.map((p) => probe(baseUrl, p, 404 as const)),
-  ];
-  const results = await Promise.all(probes);
+  const results = await Promise.all(
+    expectedRouteStatuses().map(({ path, expected }) => probe(baseUrl, path, expected)),
+  );
 
   const failures = results.filter((r) => !r.ok);
   const ok = failures.length === 0;
