@@ -86,13 +86,23 @@ describe("resolveModel（既定モデルは承認必須＝§9/§10）", () => {
     expect(resolveModel("premium")).toBe("gemini-2.5-flash");
   });
 
-  it("free は GEMINI_MODEL_FREE env で上書き可能", () => {
-    process.env.GEMINI_MODEL_FREE = "custom-free-model";
-    expect(resolveModel("free")).toBe("custom-free-model");
+  // env による上書きは「単価が確定できるモデル名」に限る。任意の文字列を
+  // 通していた頃は、空文字・タイプミス・単価表にない上位モデルがそのまま
+  // 本番の課金モデルになりえた（lib/ai/provider の modelFromEnv 参照）。
+  it("free は GEMINI_MODEL_FREE env で上書き可能（単価の分かるモデル名）", () => {
+    process.env.GEMINI_MODEL_FREE = "gemini-3.0-flash-lite";
+    expect(resolveModel("free")).toBe("gemini-3.0-flash-lite");
   });
 
-  it("premium は GEMINI_MODEL_PREMIUM env で上書き可能", () => {
+  it("premium は GEMINI_MODEL_PREMIUM env で上書き可能（単価の分かるモデル名）", () => {
+    process.env.GEMINI_MODEL_PREMIUM = "gemini-3.0-flash";
+    expect(resolveModel("premium")).toBe("gemini-3.0-flash");
+  });
+
+  it("単価表に無い名前では上書きできず既定に戻る（原価が黙って跳ねるのを防ぐ）", () => {
+    process.env.GEMINI_MODEL_FREE = "custom-free-model";
     process.env.GEMINI_MODEL_PREMIUM = "custom-premium-model";
-    expect(resolveModel("premium")).toBe("custom-premium-model");
+    expect(resolveModel("free")).toBe("gemini-2.5-flash-lite");
+    expect(resolveModel("premium")).toBe("gemini-2.5-flash");
   });
 });

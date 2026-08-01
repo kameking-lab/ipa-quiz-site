@@ -7,6 +7,7 @@ import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
+import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { findEssayQuestion } from "@/lib/essay/load";
 import { INDUSTRY_LABELS } from "@/lib/essay/types";
 import type {
@@ -433,6 +434,19 @@ export async function POST(req: Request) {
       outputTokens: usage?.outputTokens,
       thoughtsTokens: usage?.thoughtsTokens,
       rawHead: buf.slice(0, 200),
+    });
+    // ログだけでは誰も気づけない。課金は発生しているのに中身は簡易判定
+    // という状態が続くのが最悪なので、運用側にも上げる（同一事象は
+    // 1 時間に 1 回まで）。
+    notifyOpsInBackground({
+      key: usage?.truncated ? "essay-grade:truncated" : "essay-grade:mock-fallback",
+      text: buildGradingFallbackAlert({
+        route: "/api/essay-grade",
+        questionId: question.id,
+        model,
+        usage,
+        rawChars: buf.length,
+      }),
     });
     parsed = buildMockGrading(question, payload.industry, payload.answers);
     if (usage?.truncated) {

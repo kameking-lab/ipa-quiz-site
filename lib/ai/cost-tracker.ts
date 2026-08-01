@@ -13,6 +13,33 @@ const PRICING: Record<ModelTier, { input: number; output: number }> = {
 };
 
 /**
+ * モデル ID から課金層を引く。層を確定できない名前には null を返す。
+ *
+ * tierForModel（未知を pro に倒す）と、resolveModel の env 検証
+ * （未知なら env を採用しない）の両方がこの 1 つの判定を共有する。
+ * 片方だけが「知らない名前」を別の基準で判断すると、
+ * 「計上は pro なのに実行は素通り」というズレが生まれるため。
+ */
+function lookupTier(model: string | undefined): ModelTier | null {
+  const id = (model ?? "").toLowerCase();
+  // "flash-lite" は "flash" を部分文字列に含むので、必ず先に判定する。
+  if (id.includes("flash-lite")) return "flash-lite";
+  if (id.includes("flash")) return "flash";
+  if (id.includes("pro")) return "pro";
+  return null;
+}
+
+/**
+ * 単価表のどの層に載るか確定できるモデル名か。
+ *
+ * 「単価が分かる」＝「課金の見積もりが立つ」なので、env 由来のモデル名を
+ * 採用してよいかの判定にそのまま使える（lib/ai/provider の resolveModel）。
+ */
+export function isPricedModel(model: string | undefined): boolean {
+  return lookupTier(model) !== null;
+}
+
+/**
  * 解決済みモデル ID（resolveModel の戻り値）から課金層を導出する。
  *
  * 呼び出し側が層を手書きすると、モデルだけ上位に変えたときに単価が
@@ -24,11 +51,8 @@ const PRICING: Record<ModelTier, { input: number; output: number }> = {
  * （cost-guard の estimateTokens が chars/2 で高めに見積もるのと同じ方針）
  */
 export function tierForModel(model: string | undefined): ModelTier {
-  const id = (model ?? "").toLowerCase();
-  // "flash-lite" は "flash" を部分文字列に含むので、必ず先に判定する。
-  if (id.includes("flash-lite")) return "flash-lite";
-  if (id.includes("flash")) return "flash";
-  if (id.includes("pro")) return "pro";
+  const tier = lookupTier(model);
+  if (tier) return tier;
   console.warn(`[cost-tracker] unknown model "${model}" — pro 単価で計上します`);
   return "pro";
 }

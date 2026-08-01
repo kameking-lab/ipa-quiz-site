@@ -1,9 +1,15 @@
-import { FREE_AI_DAILY_LIMIT, POST_FEEDBACK_AI_DAILY_LIMIT } from "@/lib/constants/ai-quota";
+import {
+  FEEDBACK_TOKEN_DAILY_LIMIT,
+  FREE_AI_DAILY_LIMIT,
+  POST_FEEDBACK_AI_DAILY_LIMIT,
+} from "@/lib/constants/ai-quota";
 import {
   FEEDBACK_COOKIE_NAME,
   readCookieValue,
+  readFeedbackToken,
   verifyFeedbackToken,
 } from "@/lib/rate-limit/feedback-token";
+import type { FeedbackTokenInfo } from "@/lib/rate-limit/feedback-token";
 
 const WINDOW_MS_DAY = 24 * 60 * 60 * 1000;
 const WINDOW_MS_MINUTE = 60 * 1000;
@@ -15,6 +21,8 @@ interface Bucket {
 
 const dayBuckets = new Map<string, Bucket>();
 const minuteBuckets = new Map<string, Bucket>();
+/** トークン単位の日次カウント（KV が無いときのフォールバック用）。 */
+const tokenBuckets = new Map<string, Bucket>();
 
 function parseLimit(raw: string | undefined, fallback: number): number {
   const n = Number(raw ?? fallback);
@@ -47,6 +55,9 @@ if (typeof setInterval !== "undefined") {
     }
     for (const [key, b] of minuteBuckets) {
       if (b.resetAt <= now) minuteBuckets.delete(key);
+    }
+    for (const [key, b] of tokenBuckets) {
+      if (b.resetAt <= now) tokenBuckets.delete(key);
     }
   }, 10 * 60 * 1000);
 }
@@ -150,6 +161,12 @@ export interface RateLimitOpts {
   ip: string;
   /** Set to true if the user has submitted feedback — grants near-unlimited daily quota. */
   feedbackSubmitted?: boolean;
+  /**
+   * 解除トークンの一意 ID（v2 のみ）。渡すと IP 単位の枠に加えて
+   * 「そのトークン 1 本」の日次上限も適用される。所持ベースの Cookie は
+   * 複製で共有できてしまい、IP 単位の枠では増幅を止められないため。
+   */
+  feedbackTokenId?: string | null;
 }
 
 /**
@@ -163,7 +180,7 @@ export interface RateLimitOpts {
  *   when KV is absent or unreachable.
  */
 export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResult> {
-  const { ip, feedbackSubmitted } = opts;
+  const { ip, feedbackSubmitted, feedbackTokenId } = opts;
   const dailyLimit = feedbackSubmitted ? POST_FEEDBACK_DAILY_LIMIT : FREE_INITIAL_LIMIT;
   const now = Date.now();
   const minResetAt = now + WINDOW_MS_MINUTE;
@@ -171,10 +188,15 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
 
   const minKey = `rl:min:${ip}`;
   const dayKey = `rl:day:${ip}`;
+  // 解除が効いているときだけトークン単位でも数える（未解除なら 10 回枠の
+  // 時点で頭打ちなので、数えても意味がない＝KV 往復を増やさない）。
+  const tokenKey =
+    feedbackSubmitted && feedbackTokenId ? `rl:day:tok:${feedbackTokenId}` : null;
 
-  const [minCount, dayCount] = await Promise.all([
+  const [minCount, dayCount, tokenCount] = await Promise.all([
     peek(minKey, minuteBuckets),
     peek(dayKey, dayBuckets),
+    tokenKey ? peek(tokenKey, tokenBuckets) : Promise.resolve(0),
   ]);
 
   if (minCount >= BETA_MINUTE_LIMIT) {
@@ -197,9 +219,24 @@ export async function checkRateLimit(opts: RateLimitOpts): Promise<RateLimitResu
     };
   }
 
+  // 1 本のトークンが 1 日に使える総量の上限。IP を変えても同じトークンなら
+  // ここで頭打ちになる（＝Cookie を配って回す形の増幅を止める）。
+  if (tokenKey && tokenCount >= FEEDBACK_TOKEN_DAILY_LIMIT) {
+    return {
+      ok: false,
+      remaining: 0,
+      limit: FEEDBACK_TOKEN_DAILY_LIMIT,
+      resetAt: dayResetAt,
+      reason: "daily",
+    };
+  }
+
   await Promise.all([
     consume(minKey, minuteBuckets, WINDOW_MS_MINUTE, minResetAt),
     consume(dayKey, dayBuckets, WINDOW_MS_DAY, dayResetAt),
+    tokenKey
+      ? consume(tokenKey, tokenBuckets, WINDOW_MS_DAY, dayResetAt)
+      : Promise.resolve(),
   ]);
 
   return {
@@ -229,4 +266,16 @@ export function getClientIp(req: Request): string {
 export function readFeedbackFlag(req: Request): boolean {
   const raw = readCookieValue(req.headers.get("cookie"), FEEDBACK_COOKIE_NAME);
   return verifyFeedbackToken(raw);
+}
+
+/**
+ * 解除の可否に加えて、トークン単位の識別子まで取り出す。
+ *
+ * checkRateLimit に feedbackTokenId を渡すために使う。readFeedbackFlag だけだと
+ * 「解除されている」ことしか分からず、1 本のトークンが何回使われたかを
+ * 数えられない（＝共有による増幅を止められない）。
+ */
+export function readFeedbackTokenInfo(req: Request): FeedbackTokenInfo {
+  const raw = readCookieValue(req.headers.get("cookie"), FEEDBACK_COOKIE_NAME);
+  return readFeedbackToken(raw);
 }

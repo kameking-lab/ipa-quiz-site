@@ -3,7 +3,7 @@ import { z } from "zod";
 import { getProvider, resolveModel } from "@/lib/ai/provider";
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
-import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import type { Question } from "@/lib/questions/types";
 import { ragEnabled } from "@/lib/copilot/rag";
@@ -69,8 +69,13 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const feedbackSubmitted = readFeedbackFlag(req);
-  const rl = await checkRateLimit({ ip, feedbackSubmitted });
+  const feedbackToken = readFeedbackTokenInfo(req);
+  const feedbackSubmitted = feedbackToken.valid;
+  const rl = await checkRateLimit({
+    ip,
+    feedbackSubmitted,
+    feedbackTokenId: feedbackToken.id,
+  });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
