@@ -88,11 +88,17 @@ export function monthlyCostKey(now: Date = new Date()): string {
 }
 
 /**
- * Estimate Gemini token count from a character count. The provider streams plain
- * text and does not expose usageMetadata, so we approximate. Japanese tokenizes at
+ * Estimate Gemini token count from a character count. Japanese tokenizes at
  * roughly ~1 token/char and English at ~1 token/4 chars; chars/2 is a deliberate
  * midpoint that errs slightly high, so the safety cap trips a little early rather
  * than late. Precision is not critical for a ¥50k backstop.
+ *
+ * This is the fallback path, not the primary one. The Gemini provider reports
+ * usageMetadata through StreamChatParams.onComplete, and the grading routes
+ * (/api/scoring, /api/essay-grade) record those measured counts — including
+ * thinking tokens, which are billed as output and which a character-count
+ * estimate cannot see at all. estimateTokens is used only when a stream ends
+ * without usage metadata (e.g. the call threw part-way through).
  */
 export function estimateTokens(charCount: number): number {
   return Math.ceil(Math.max(0, charCount) / 2);
