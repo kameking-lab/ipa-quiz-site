@@ -1,6 +1,6 @@
 import { NextResponse, after } from "next/server";
 import { z } from "zod";
-import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import {
   FEEDBACK_COOKIE_NAME,
   feedbackCookieOptions,
@@ -97,7 +97,12 @@ export async function POST(req: Request) {
 
   // Reuse the same rate-limit bucket so abuse mitigations apply uniformly,
   // but never block feedback submissions outright (educational mission).
-  const rl = await checkRateLimit({ ip, feedbackSubmitted: readFeedbackFlag(req) });
+  const contactToken = readFeedbackTokenInfo(req);
+  const rl = await checkRateLimit({
+    ip,
+    feedbackSubmitted: contactToken.valid,
+    feedbackTokenId: contactToken.id,
+  });
   if (!rl.ok && rl.reason === "minute") {
     return NextResponse.json(
       { error: "rate_limited", message: "短時間に投稿が集中しています。1 分ほど待ってから再送信してください。" },

@@ -6,7 +6,7 @@ import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { tierForModel } from "@/lib/ai/cost-tracker";
-import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
+import { checkRateLimit, getClientIp, readFeedbackTokenInfo } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { findAfternoonQuestion } from "@/lib/afternoon/load";
 import { captureException } from "@/lib/monitoring/sentry";
@@ -233,8 +233,13 @@ export async function POST(req: Request) {
   }
 
   const ip = getClientIp(req);
-  const feedbackSubmitted = readFeedbackFlag(req);
-  const rl = await checkRateLimit({ ip, feedbackSubmitted });
+  const feedbackToken = readFeedbackTokenInfo(req);
+  const feedbackSubmitted = feedbackToken.valid;
+  const rl = await checkRateLimit({
+    ip,
+    feedbackSubmitted,
+    feedbackTokenId: feedbackToken.id,
+  });
   if (!rl.ok) {
     const message =
       rl.reason === "daily"
