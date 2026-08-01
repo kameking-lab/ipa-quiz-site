@@ -4,6 +4,7 @@ import { z } from "zod";
 import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provider";
 import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
@@ -384,6 +385,19 @@ export async function POST(req: Request) {
           outputTokens: usage?.outputTokens,
           thoughtsTokens: usage?.thoughtsTokens,
           rawHead: buf.slice(0, 200),
+        });
+        // ログだけでは誰も気づけない。課金は発生しているのに中身は簡易判定
+        // という状態が続くのが最悪なので、運用側にも上げる（同一事象は
+        // 1 時間に 1 回まで）。
+        notifyOpsInBackground({
+          key: usage?.truncated ? "scoring:truncated" : "scoring:mock-fallback",
+          text: buildGradingFallbackAlert({
+            route: "/api/scoring",
+            questionId: question.id,
+            model,
+            usage,
+            rawChars: buf.length,
+          }),
         });
         parsed = buildMockScoring(question, payload.answers);
         if (usage?.truncated) {
