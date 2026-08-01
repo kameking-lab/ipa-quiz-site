@@ -1,3 +1,4 @@
+import { createHmac } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
@@ -56,7 +57,6 @@ describe("トークンは 1 本ずつ識別できる（共有を数えるため�
     // v1 は ID を持たないので、トークン単位の上限は適用できない。
     // 1 年の有効期限で自然に入れ替わる想定。
     const exp = Math.floor(Date.now() / 1000) + 1000;
-    const { createHmac } = require("node:crypto") as typeof import("node:crypto");
     const payload = `v1.${exp}`;
     const sig = createHmac("sha256", "test-secret-for-feedback-token")
       .update(payload)
