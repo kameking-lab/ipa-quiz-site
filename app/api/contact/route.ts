@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextResponse, after } from "next/server";
 import { z } from "zod";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
 import {
@@ -158,9 +158,31 @@ export async function POST(req: Request) {
   }
 
   // Forward to Slack so inbound signals reach the team (the old admin/feedback
-  // dashboard read a file nothing wrote to and was always empty). Best-effort:
-  // failure never blocks the user's submission.
-  void sendSlackMessage(buildSlackText(maskedPayload, hashIp(ip)));
+  // dashboard read a file nothing wrote to and was always empty).
+  //
+  // after() を使う理由:
+  // - 素の void は「投げっぱなし」。サーバレスはレスポンス完了で関数が凍結
+  //   されるため、Slack への fetch が飛ばずに消えることがある。
+  // - await にすると、利用者のフォーム送信に Slack 往復（最大 3 秒）の
+  //   レイテンシがそのまま乗る。通知は利用者の応答をブロックする理由がない。
+  // after() はレスポンス送出後に実行され、かつ実行がプラットフォーム側で
+  // 保証される。recordAiCost で await を選んだのは、あれが §0 のコスト上限
+  // という自前の安全装置で、保証を自分の制御フローに閉じる必要があったため。
+  // ここは要件が違う（チーム向けのベストエフォート通知）。
+  //
+  // sendSlackMessage は決して throw しないので、通知が失敗しても
+  // 問い合わせ自体は受理済み（fail-open）。
+  //
+  // after() 自体はリクエストスコープ外で呼ぶと throw する。ルートハンドラは
+  // 常にスコープ内なので本番では起きないが、ここで throw すると
+  // 「通知の都合で利用者の問い合わせが 500 になって失われる」という、最も
+  // 避けたい失敗になる。素の void へ落として通知は試みる。
+  const notify = () => sendSlackMessage(buildSlackText(maskedPayload, hashIp(ip)));
+  try {
+    after(notify);
+  } catch {
+    void notify();
+  }
 
   const res = NextResponse.json({ ok: true });
 
