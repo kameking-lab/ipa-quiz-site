@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { getProvider, resolveModel } from "@/lib/ai/provider";
-import type { LLMProvider } from "@/lib/ai/provider";
+import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provider";
+import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkRateLimit, getClientIp, readFeedbackFlag } from "@/lib/rate-limit/server";
@@ -307,13 +307,25 @@ export async function POST(req: Request) {
   const stream = new ReadableStream({
     async start(controller) {
       let buf = "";
+      // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
+      const completed: { value?: StreamCompletion } = {};
       try {
         for await (const chunk of provider.streamChat({
           system: SCORING_SYSTEM_PROMPT,
           messages: [{ role: "user", content: userPrompt }],
           model,
-          maxTokens: question.type === "essay" ? 4000 : 1500,
+          maxTokens: question.type === "essay" ? 6000 : 3000,
+          // 思考トークンは maxOutputTokens を食う。既定はオフにして、上限を
+          // まるごと採点 JSON に使わせる（実測: 思考ありでは 1500 のうち 1091 を
+          // 思考が消費し、JSON が improvements の途中で切れていた）。
+          thinkingBudget: gradingThinkingBudget(model),
+          // JSON モード。```json フェンスや前置きの散文が混ざらなくなり、
+          // 出力トークンの無駄も減る。
+          responseMimeType: "application/json",
           temperature: 0.2,
+          onComplete: (c) => {
+            completed.value = c;
+          },
         })) {
           buf += chunk;
         }
@@ -321,10 +333,16 @@ export async function POST(req: Request) {
         // await は必須。fire-and-forget にすると controller.close() でレスポンスが
         // 完了した時点でサーバレス関数が凍結され、未完了の KV 書き込みが捨てられる
         // （本番実測: scoring を 4 回叩いても ai_cost:YYYY-MM が 1 円も動かなかった）。
+        // 実測トークンが取れたらそれを使う。思考トークンは出力として課金される
+        // ため outputTokens に必ず足す（文字数推定だけだと思考ぶんを取りこぼす）。
+        const usage = completed.value;
         await recordAiCost({
           tier: tierForModel(model),
-          inputTokens: estimateTokens(SCORING_SYSTEM_PROMPT.length + userPrompt.length),
-          outputTokens: estimateTokens(buf.length),
+          inputTokens:
+            usage?.promptTokens ??
+            estimateTokens(SCORING_SYSTEM_PROMPT.length + userPrompt.length),
+          outputTokens:
+            (usage?.outputTokens ?? estimateTokens(buf.length)) + (usage?.thoughtsTokens ?? 0),
           label: "scoring",
         });
       } catch (err) {
@@ -340,18 +358,39 @@ export async function POST(req: Request) {
         return;
       }
 
+      // 成功時も実測値を残す。思考トークンが maxOutputTokens を食い潰して
+      // 黙って簡易判定に落ちる事故を、再発時に数値で追えるようにするため。
+      console.info("[scoring] graded", {
+        questionId: question.id,
+        model,
+        finishReason: completed.value?.finishReason,
+        promptTokens: completed.value?.promptTokens,
+        outputTokens: completed.value?.outputTokens,
+        thoughtsTokens: completed.value?.thoughtsTokens,
+      });
+
       let parsed = safeParseScoring(buf, question);
       if (!parsed) {
         // 課金は発生済みなのに中身は簡易判定、という状態。頻度を後から追えるよう
         // サーバ側に必ず残す（利用者には gradingMode:"simplified" で開示する）。
+        const usage = completed.value;
         console.warn("[scoring] mock-fallback: AI応答の解析に失敗", {
           questionId: question.id,
           provider: provider.name,
           model,
           rawChars: buf.length,
+          finishReason: usage?.finishReason,
+          truncated: usage?.truncated ?? false,
+          outputTokens: usage?.outputTokens,
+          thoughtsTokens: usage?.thoughtsTokens,
           rawHead: buf.slice(0, 200),
         });
         parsed = buildMockScoring(question, payload.answers);
+        if (usage?.truncated) {
+          // 「解析できなかった」ではなく「出力上限で切れた」と切り分けて出す。
+          parsed.overallComment =
+            "AI 採点の応答が出力上限で途中終了したため、簡易判定を表示しています。記述内容そのものは評価していないため、得点は目安としてお使いください。";
+        }
       }
       controller.enqueue(encoder.encode(JSON.stringify(parsed)));
       controller.close();

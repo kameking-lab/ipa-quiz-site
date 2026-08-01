@@ -1,8 +1,8 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
-import { getProvider, resolveModel } from "@/lib/ai/provider";
-import type { LLMProvider } from "@/lib/ai/provider";
+import { getProvider, resolveModel, gradingThinkingBudget } from "@/lib/ai/provider";
+import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
@@ -354,25 +354,41 @@ export async function POST(req: Request) {
   const model = resolveModel("grading");
 
   let buf = "";
+  // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
+  const completed: { value?: StreamCompletion } = {};
   try {
     for await (const chunk of provider.streamChat({
       system: ESSAY_SYSTEM_PROMPT,
       messages: [{ role: "user", content: userPrompt }],
       model,
-      maxTokens: 4000,
+      maxTokens: 8000,
+      // 思考トークンは maxOutputTokens を食う。既定はオフにして、上限をまるごと
+      // 採点 JSON に使わせる（実測: 4000 のうち大半を思考が消費し、axes の途中で
+      // 切れていた）。
+      thinkingBudget: gradingThinkingBudget(model),
+      // JSON モード。前置きの散文やコードフェンスが混ざらなくなる。
+      responseMimeType: "application/json",
       temperature: 0.2,
+      onComplete: (c) => {
+        completed.value = c;
+      },
     })) {
       buf += chunk;
     }
     // await は必須。fire-and-forget にすると return でレスポンスが完了した時点で
     // サーバレス関数が凍結され、未完了の KV 書き込みが捨てられる（§0 の上限が
     // 最高単価の経路を見失う）。recordAiCost は内部で握り潰すので決して throw しない。
+    // 実測トークンが取れたらそれを使う。思考トークンは出力として課金される
+    // ため outputTokens に必ず足す（文字数推定だけだと思考ぶんを取りこぼす）。
+    const usage = completed.value;
     await recordAiCost({
       // 論述採点は resolveModel("grading") = pro 層。層はモデル ID から導出する
       // （手書きの "flash-lite" は pro の 1/25 の出力単価で、集計が大幅に過小だった）。
       tier: tierForModel(model),
-      inputTokens: estimateTokens(ESSAY_SYSTEM_PROMPT.length + userPrompt.length),
-      outputTokens: estimateTokens(buf.length),
+      inputTokens:
+        usage?.promptTokens ?? estimateTokens(ESSAY_SYSTEM_PROMPT.length + userPrompt.length),
+      outputTokens:
+        (usage?.outputTokens ?? estimateTokens(buf.length)) + (usage?.thoughtsTokens ?? 0),
       label: "essay-grade",
     });
   } catch (err) {
@@ -391,18 +407,39 @@ export async function POST(req: Request) {
     });
   }
 
+  // 成功時も実測値を残す。思考トークンが maxOutputTokens を食い潰して黙って
+  // 簡易判定に落ちる事故を、再発時に数値で追えるようにするため。
+  console.info("[essay-grade] graded", {
+    questionId: question.id,
+    model,
+    finishReason: completed.value?.finishReason,
+    promptTokens: completed.value?.promptTokens,
+    outputTokens: completed.value?.outputTokens,
+    thoughtsTokens: completed.value?.thoughtsTokens,
+  });
+
   let parsed = safeParseGrading(buf, question, payload.industry, payload.answers);
   if (!parsed) {
     // 課金は発生済みなのに中身は簡易判定、という状態。頻度を後から追えるよう
     // サーバ側に必ず残す（利用者には gradingMode:"simplified" で開示する）。
+    const usage = completed.value;
     console.warn("[essay-grade] mock-fallback: AI応答の解析に失敗", {
       questionId: question.id,
       provider: provider.name,
       model,
       rawChars: buf.length,
+      finishReason: usage?.finishReason,
+      truncated: usage?.truncated ?? false,
+      outputTokens: usage?.outputTokens,
+      thoughtsTokens: usage?.thoughtsTokens,
       rawHead: buf.slice(0, 200),
     });
     parsed = buildMockGrading(question, payload.industry, payload.answers);
+    if (usage?.truncated) {
+      // 「解析できなかった」ではなく「出力上限で切れた」と切り分けて出す。
+      parsed.overallAdvice =
+        "AI 採点の応答が出力上限で途中終了したため、簡易判定を表示しています。論述の内容そのものは評価していないため、ランク・合格率予測は目安としてお使いください。";
+    }
   }
   parsed.model = model;
 

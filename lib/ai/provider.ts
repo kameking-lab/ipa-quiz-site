@@ -5,6 +5,28 @@ export interface ChatMessage {
   content: string;
 }
 
+/**
+ * ストリーム完走時にプロバイダが報告する実測メタデータ。
+ *
+ * これが無いと「応答が maxOutputTokens で打ち切られた」ことを呼び出し側が
+ * 検知できず、切れた JSON の解析に失敗して黙って簡易判定に落ちる（＝課金だけ
+ * 発生して中身は字数判定）。truncated を上げて呼び出し側に開示させるための型。
+ */
+export interface StreamCompletion {
+  /** Gemini の finishReason（"STOP" / "MAX_TOKENS" 等）。取得できなければ undefined */
+  finishReason?: string;
+  promptTokens?: number;
+  /** 応答本文のトークン数（思考トークンは含まない） */
+  outputTokens?: number;
+  /**
+   * 思考トークン数（Gemini 2.5 系）。maxOutputTokens を消費し、
+   * かつ出力トークンとして課金される。
+   */
+  thoughtsTokens?: number;
+  /** maxOutputTokens に達して応答が途中で打ち切られたか */
+  truncated: boolean;
+}
+
 export interface StreamChatParams {
   system: string;
   messages: ChatMessage[];
@@ -12,6 +34,16 @@ export interface StreamChatParams {
   maxTokens?: number;
   temperature?: number;
   signal?: AbortSignal;
+  /**
+   * Gemini 2.5 系の思考トークン上限。0 で思考を無効化する。
+   * 未指定だと 2.5 Flash/Pro は「動的思考」となり、思考が maxOutputTokens を
+   * 食い尽くして本文が出ないことがある（採点 JSON が途中で切れる原因）。
+   */
+  thinkingBudget?: number;
+  /** "application/json" を渡すと JSON のみを返させる（前後の散文・コードフェンス防止） */
+  responseMimeType?: string;
+  /** ストリーム完走時に一度だけ呼ばれる。実測メタデータの受け口。 */
+  onComplete?: (completion: StreamCompletion) => void;
 }
 
 export interface LLMProvider {
@@ -69,3 +101,22 @@ export function resolveModel(tier: ModelTier): string {
   }
   return process.env.GEMINI_MODEL_PREMIUM ?? "gemini-2.5-flash";
 }
+
+/**
+ * 採点系リクエストに渡す thinkingBudget。
+ *
+ * Gemini 2.5 系は思考トークンが maxOutputTokens を消費する（Preview 実測:
+ * maxOutputTokens 1500 に対し thoughtsTokenCount 1091 / candidatesTokenCount 400
+ * で finishReason=MAX_TOKENS。採点 JSON が途中で切れ、課金だけ発生して
+ * 簡易判定に落ちていた）。採点はルーブリックと模範解答を与えた照合作業で、
+ * 長い思考を必要としないため既定は 0（思考オフ）。
+ *
+ * ただし 2.5 Pro は思考を無効化できず（最小 128）、0 を渡すと API エラーになる。
+ * GEMINI_MODEL_GRADING に pro を設定する運用があり得るので、モデルで分岐する。
+ */
+export function gradingThinkingBudget(model: string): number {
+  return model.includes("pro") ? PRO_MIN_THINKING_BUDGET : 0;
+}
+
+/** 2.5 Pro が受け付ける thinkingBudget の下限。 */
+export const PRO_MIN_THINKING_BUDGET = 128;
