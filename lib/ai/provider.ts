@@ -1,3 +1,5 @@
+import { isPricedModel, tierForModel } from "@/lib/ai/cost-tracker";
+
 export type ChatRole = "system" | "user" | "assistant";
 
 export interface ChatMessage {
@@ -83,6 +85,41 @@ export async function getProvider(preferred?: ProviderId): Promise<LLMProvider> 
 
 export type ModelTier = "free" | "premium" | "grading";
 
+/** 層ごとの既定モデル。env が無い・使えないときはここへ倒す（すべて安全側）。 */
+const DEFAULT_MODELS: Record<ModelTier, string> = {
+  grading: "gemini-2.5-flash",
+  free: "gemini-2.5-flash-lite",
+  premium: "gemini-2.5-flash",
+};
+
+/** 解決済みモデルを層ごとに 1 回だけログするための既出記録（インスタンス単位）。 */
+const loggedTiers = new Set<ModelTier>();
+
+/**
+ * env で指定されたモデル名を検証して採用可否を決める。
+ *
+ * 既定値を安全側に倒すだけでは、env に値が「入っている」場合の事故を防げない。
+ * 想定される事故は 3 つで、いずれも本番でしか起きない:
+ *   1. 空文字・空白のみ（Vercel の env は空文字を保存できる）。`??` は空文字を
+ *      素通しするため、既定値に落ちずモデル名なしで API を叩いてしまう。
+ *   2. タイプミス（"gemini-2.5-flsh"）。API エラーになり採点が全件フォールバック。
+ *   3. 単価表にない未知・上位モデル。tierForModel が pro 単価で計上するので
+ *      §0 の上限は守られるが、実行そのものは止まらない＝原価だけが跳ねる。
+ *
+ * そこで「単価が確定できるモデル名（= isPricedModel）」だけを採用し、
+ * それ以外は既定へ倒して warn を残す。単価が分かる名前しか通さない、が不変条件。
+ */
+function modelFromEnv(tier: ModelTier, raw: string | undefined): string {
+  const fallback = DEFAULT_MODELS[tier];
+  const name = raw?.trim();
+  if (!name) return fallback;
+  if (isPricedModel(name)) return name;
+  console.warn(
+    `[provider] ${tier} のモデル指定 "${name}" は単価表に無いため採用しません。既定の ${fallback} を使います。`,
+  );
+  return fallback;
+}
+
 export function resolveModel(tier: ModelTier): string {
   // 午後記述・論述の AI 採点だけ上位モデルを使う（採点品質優先。Flash 系では
   // 配点・キーワード照合の判断がブレるため）。無料の四択解説・一般コパイロット・
@@ -93,13 +130,24 @@ export function resolveModel(tier: ModelTier): string {
   // 設定し忘れたという運用ミスがそのまま単価 4 倍の暴走になり、さらに scoring の
   // maxTokens 1500 では pro が採点 JSON を返しきれず、課金だけ発生して中身は
   // 簡易採点に落ちる（Preview で実測）。pro を使いたい場合は env で明示する。
-  if (tier === "grading") {
-    return process.env.GEMINI_MODEL_GRADING ?? "gemini-2.5-flash";
+  const raw =
+    tier === "grading"
+      ? process.env.GEMINI_MODEL_GRADING
+      : tier === "free"
+        ? process.env.GEMINI_MODEL_FREE
+        : process.env.GEMINI_MODEL_PREMIUM;
+  const model = modelFromEnv(tier, raw);
+
+  // どのモデルで課金されているかを後から追えるようにする。env の設定ミスは
+  // 「気づかないまま単価だけ変わる」形で効いてくるため、実際に採用した名前を
+  // 層ごとに 1 回だけ残す（毎回出すとログが埋まる）。
+  if (!loggedTiers.has(tier)) {
+    loggedTiers.add(tier);
+    console.info(
+      `[provider] model resolved tier=${tier} model=${model} pricing=${tierForModel(model)}`,
+    );
   }
-  if (tier === "free") {
-    return process.env.GEMINI_MODEL_FREE ?? "gemini-2.5-flash-lite";
-  }
-  return process.env.GEMINI_MODEL_PREMIUM ?? "gemini-2.5-flash";
+  return model;
 }
 
 /**
