@@ -416,9 +416,6 @@ export default async function ExamTopPage({
                 すべて見る →
               </Link>
             </div>
-            <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
-              実在の合格者の証言ではなく、学習上の判断例を示す架空ケースです。
-            </p>
             <ul className="space-y-2">
               {books.map((b) => (
                 <li
@@ -618,6 +615,9 @@ export default async function ExamTopPage({
                 ケース一覧 →
               </Link>
             </div>
+            <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
+              実在の合格者の証言ではなく、学習上の判断例を示す架空ケースです。
+            </p>
             <ul className="space-y-2">
               {successStories.map((s) => (
                 <li key={s.slug}>
