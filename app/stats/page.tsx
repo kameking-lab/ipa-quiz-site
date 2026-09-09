@@ -148,7 +148,7 @@ export default async function StatsPage() {
           過去問AI の公開統計
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          無料・登録不要・広告なしで運営している IPA 過去問学習サイト「過去問AI」の利用状況を公開しています。
+          無料・登録不要で運営している IPA 過去問学習サイト「過去問AI」の利用状況を公開しています。
           数値は Google Search Console と PostHog の実データです。
         </p>
 
@@ -271,12 +271,14 @@ export default async function StatsPage() {
         <Section
           icon={<Activity className="h-3.5 w-3.5" />}
           title="機能別アクセス比率"
-          subtitle="直近 30 日のページビューを機能別にバケット化"
+          subtitle="直近30日の取得上位最大200パスを機能別にバケット化"
         >
           <Card>
             <CardHeader>
               <CardTitle className="text-base">どの機能がよく使われているか</CardTitle>
-              <CardDescription>PostHog の $pageview を URL パス別に集計しています。</CardDescription>
+              <CardDescription>
+                PostHog の page_view を、取得できた上位最大200パス内で比較しています。
+              </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="grid items-center gap-6 sm:grid-cols-[1fr_auto]">
@@ -373,7 +375,7 @@ export default async function StatsPage() {
             <PolicyRow label="運営形態" value="個人ボランティア運営（教育貢献プロジェクト）" />
             <PolicyRow label="利用料金" value="完全無料（全機能）" />
             <PolicyRow label="会員登録" value="不要" />
-            <PolicyRow label="広告" value="掲載なし" />
+            <PolicyRow label="広告" value="一部の読み物ページの本文末尾に掲載" />
             <PolicyRow
               label="個人情報"
               value="学習履歴は端末の localStorage のみ。AI 呼び出し時の IP は非可逆ハッシュとして保存。"

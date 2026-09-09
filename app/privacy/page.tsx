@@ -189,7 +189,31 @@ export default function PrivacyPage() {
             <p>
               Vercel Analytics・Speed Insights はいずれも <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ。Speed Insights は LCP・FID・CLS 等の Core Web Vitals を集計）。
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
-              第三者 Cookie の発行はありません。
+              この説明はアクセス解析に関するものです。
+            </p>
+            <p>
+              一部の読み物ページでは <strong>Google AdSense</strong> による広告を本文末尾に掲載します。
+              Google などの第三者配信事業者は Cookie を使用し、本サイトや他のサイトへの過去のアクセス情報に基づいて広告を配信することがあります。
+              Google が広告 Cookie を使用することで、Google とそのパートナーは利用者に適した広告を表示できます。
+              利用者は{" "}
+              <a
+                href="https://adssettings.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                Google の広告設定
+              </a>
+              {" "}でパーソナライズド広告を無効にできます。第三者配信事業者の Cookie は{" "}
+              <a
+                href="https://optout.aboutads.info/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-primary underline-offset-4 hover:underline"
+              >
+                AboutAds のオプトアウトページ
+              </a>
+              {" "}から無効にできる場合があります。
             </p>
             <p>
               テーマ設定・学習履歴（匿名利用時）は localStorage を使用します。

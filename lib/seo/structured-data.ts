@@ -1,4 +1,5 @@
 import { SITE_BASE_URL, SITE_NAME } from "./config";
+import { NOTE_PROFILE_URL } from "@/lib/external-links";
 
 /** Canonical @id for site-wide singletons. Use SITE_BASE_URL + "/" + fragment so
  *  the path segment is explicit and consistent across all pages. */
@@ -20,7 +21,7 @@ export function buildOrgNode() {
     name: SITE_NAME,
     url: SITE_BASE_URL,
     logo: SITE_LOGO_IMAGE,
-    sameAs: ["https://x.com/kakomon_ai_jp", "https://note.com/kakomon_ai"],
+    sameAs: ["https://x.com/kakomon_ai_jp", NOTE_PROFILE_URL],
     description:
       "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
   };

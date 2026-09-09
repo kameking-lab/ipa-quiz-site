@@ -21,6 +21,11 @@ export type AnalyticsEvent =
   | { name: "email_signup"; source: "pricing" | "upsell-dialog" | "other"; plan?: string }
   | { name: "streak_milestone"; days: 3 | 7 | 14 | 30 | 100 }
   | { name: "exam_select"; exam: string }
+  | {
+      name: "note_outbound_click";
+      source: "footer" | "operator" | "exam_sa" | "exam_st" | "exam_nw";
+      account: "ipa_quiz_ai" | "sikaku_rakutoru";
+    }
   // ----- CVR funnel -----
   | { name: "signin_started"; provider: "google" | "github" | "email"; source?: string }
   | { name: "signin_completed"; provider: string; firstTime?: boolean }

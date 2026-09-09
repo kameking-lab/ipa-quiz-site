@@ -11,7 +11,7 @@ import { ESSAY_EXAM_CODES, getEssayQuestionsByExam } from "@/lib/essay/load";
 import { examLabel } from "@/lib/utils";
 
 const ESSAY_DESCRIPTION =
-  "ST/SA/PM/SM/AU の午後II論述問題を AI が IPA 元採点者プロンプトで添削。設問ア・イ・ウを業種別にフィードバック。";
+  "ST/SA/PM/SM/AU の午後II論述問題を AI が学習用の4観点で添削。設問ア・イ・ウを業種別にフィードバック。";
 
 const ESSAY_OG_TITLE = "AI 論述添削（午後II）";
 const ESSAY_OG_IMAGE = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -173,8 +173,12 @@ export default function EssayHomePage() {
           AI 論述添削 <span className="text-sky-600 dark:text-sky-400">（午後II）</span>
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          高度試験の合否を分ける論述。IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+          高度試験の合否を分ける論述を、AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
+        </p>
+        <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
+          収録問題は2025年度までの午後II過去問です。2026年度の科目B-2対策として、
+          論述の構成と具体性を練習できます。
         </p>
         <div className="mt-5 flex justify-center gap-3">
           <Button asChild variant="outline" size="sm">
@@ -231,7 +235,7 @@ export default function EssayHomePage() {
         <h2 className="mb-2 text-base font-semibold">AI 添削の仕組み</h2>
         <ol className="list-decimal space-y-1 pl-5 text-zinc-600 dark:text-zinc-400">
           <li>業種を選択して、設問ア・イ・ウを記述（自動保存）</li>
-          <li>AI（IPA 元採点者プロンプト）が 4 軸で採点 → A/B/C/不合格 のランク判定</li>
+          <li>AI が学習用の 4 観点で評価 → A/B/C/不合格 の参考ランクを表示</li>
           <li>設問ごとの良かった点・改善点・不足要素・改善版例を表示</li>
           <li>採点結果は履歴に保存され、ランク推移を確認可能</li>
         </ol>

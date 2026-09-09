@@ -52,7 +52,7 @@ const TABS: TabItem[] = [
 const SECONDARY_NAV: { href: string; label: string; icon: React.ComponentType<{ className?: string }> }[] = [
   { href: "/bookmarks", label: "ブックマーク", icon: Bookmark },
   { href: "/study-plan", label: "学習計画", icon: CalendarRange },
-  { href: "/success-stories", label: "合格体験記", icon: Trophy },
+  { href: "/success-stories", label: "学習例（架空）", icon: Trophy },
   { href: "/why-kakomon-ai", label: "過去問AIを選ぶ理由", icon: HelpCircle },
   { href: "/features", label: "機能特集", icon: Sparkles },
   { href: "/essays", label: "論述例", icon: FileText },

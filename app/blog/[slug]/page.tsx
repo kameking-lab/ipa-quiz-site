@@ -19,6 +19,7 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { ContentEndAd } from "@/components/ads/ContentEndAd";
 
 export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -442,6 +443,8 @@ export default async function BlogArticlePage({ params }: PageProps) {
           で確認してください。
         </p>
       </section>
+
+      <ContentEndAd />
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
