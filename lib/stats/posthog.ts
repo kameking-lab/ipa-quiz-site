@@ -79,13 +79,12 @@ function bucketFeature(rawPath: string): string {
 export async function fetchFeatureBreakdown(): Promise<FeatureBreakdownRow[] | null> {
   const env = readEnv();
   if (!env) return null;
-  // Pull last 30 days of $pageview events grouped by URL path. We sum on the
-  // server here rather than via SQL because PostHog cloud doesn't always expose
-  // path() as a built-in — string-prefix matching after-the-fact is robust.
+  // PostHogProvider sends the explicit `page_view` event with a `path`
+  // property; automatic `$pageview` capture is disabled there.
   const q = `
-    SELECT properties.$pathname AS path, count() AS pv
+    SELECT properties.path AS path, count() AS pv
     FROM events
-    WHERE event = '$pageview'
+    WHERE event = 'page_view'
       AND timestamp >= now() - INTERVAL 30 DAY
     GROUP BY path
     ORDER BY pv DESC
@@ -136,7 +135,7 @@ export async function fetchReferrerBreakdown(): Promise<ReferrerRow[] | null> {
   const q = `
     SELECT properties.$referring_domain AS ref, count() AS pv
     FROM events
-    WHERE event = '$pageview'
+    WHERE event = 'page_view'
       AND timestamp >= now() - INTERVAL 30 DAY
     GROUP BY ref
     ORDER BY pv DESC

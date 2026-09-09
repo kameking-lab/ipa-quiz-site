@@ -132,28 +132,29 @@ describe("EXAM_DEEP_CONTENT の値不変条件", () => {
     }
   });
 
-  // 高度試験の実施時期グルーピング（IPA 公式: 令和7年度春期 r07haru_exam.html ＝ list.html）。
-  // 春期=ST/SA/NW/SM・秋期=PM/DB/ES/AU・SC=春秋両方。leadParagraph は /[exam] ハブ
+  // 高度試験の実施時期グルーピング。2025年度までは
+  // 春期=ST/SA/NW/SM・秋期=PM/DB/ES/AU・SC=春秋両方、2026年度からは
+  // CBTの前期/後期へ移行した。leadParagraph は /[exam] ハブ
   // （indexable）に描画されるため、誤った季が出ると「次に何を受けられるか」の判断を誤らせる。
   // 季の取り違え（NW/SM を秋期、ES/AU を春期 等）を回帰固定する。
-  // ※ 2026年度の CBT 移行に伴う「春期/秋期」→「前期/後期」名称変更（HD-7）でも
-  //   グルーピング自体は不変（前期=旧春期・後期=旧秋期）＝本契約は名称変更後も有効。
-  it("leadParagraph の実施時期は IPA 公式グルーピングと一致する（高度8区分・SC=両期）", () => {
+  it("leadParagraph は2025年度までの季別実施と2026年度CBTの前期/後期を区別する", () => {
     const SPRING: ExamCode[] = ["st", "sa", "nw", "sm"];
     const AUTUMN: ExamCode[] = ["pm", "db", "es", "au"];
     for (const code of SPRING) {
       const lead = EXAM_DEEP_CONTENT[code].leadParagraph;
-      expect(lead, `${code} は春期実施`).toContain("春期年 1 回実施");
-      expect(lead, `${code} は秋期と誤記しない`).not.toContain("秋期年 1 回実施");
+      expect(lead, `${code} は2025年度まで春期`).toContain("2025年度までは春期");
+      expect(lead, `${code} は2026年度から前期`).toContain("2026年度はCBT方式の前期試験");
+      expect(lead, `${code} は後期と誤記しない`).not.toContain("CBT方式の後期試験");
     }
     for (const code of AUTUMN) {
       const lead = EXAM_DEEP_CONTENT[code].leadParagraph;
-      expect(lead, `${code} は秋期実施`).toContain("秋期年 1 回実施");
-      expect(lead, `${code} は春期と誤記しない`).not.toContain("春期年 1 回実施");
+      expect(lead, `${code} は2025年度まで秋期`).toContain("2025年度までは秋期");
+      expect(lead, `${code} は2026年度から後期`).toContain("2026年度はCBT方式の後期試験");
+      expect(lead, `${code} は前期と誤記しない`).not.toContain("CBT方式の前期試験");
     }
-    // SC は春秋両方（年2回）。片方の季の「年1回実施」と誤記しない。
+    // SC は前期・後期。
     const sc = EXAM_DEEP_CONTENT.sc.leadParagraph;
-    expect(sc).toContain("年 2 回（春・秋）実施");
+    expect(sc).toContain("2026年度はCBT方式の前期・後期試験");
   });
 
   // SC 合格後に登録できる国家資格の正式名称は「情報処理安全確保支援士（登録セキスペ）」

@@ -43,7 +43,7 @@ export async function generateMetadata({
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
   const title = `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
-  const description = `${q.title} — IPA 元採点者プロンプトで AI が論述を採点します。`;
+  const description = `${q.title} — AI が学習用の4観点で論述を評価します。`;
   const canonical = `/essay/${q.exam}/${q.id}`;
   const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "essay",
@@ -94,7 +94,7 @@ export default async function EssayEditorPage({
         name: `${label} 午後II 論述 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
         url,
         inLanguage: "ja",
-        description: `${question.title} — IPA 元採点者プロンプトで AI が論述を採点（参考評価）。`,
+        description: `${question.title} — AI が学習用の4観点で論述を評価します（参考評価）。`,
         learningResourceType: "AI 採点・添削",
         educationalLevel: "Professional",
         educationalUse: "Self-assessment",

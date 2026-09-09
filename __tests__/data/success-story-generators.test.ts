@@ -36,10 +36,13 @@ describe("buildSuccessStory — field mapping", () => {
 });
 
 describe("buildSuccessStory — title / description templates", () => {
-  it("formats the title as 【{examLabel}合格体験記】{titleHook}", () => {
+  it("labels every generated story as fictional before its title hook", () => {
     for (const p of ALL_PERSONAS) {
       const s = buildSuccessStory(p);
-      expect(s.title).toBe(`【${examLabel(p.exam)}合格体験記】${p.titleHook}`);
+      expect(s.title).toBe(`【架空の学習ケース・${examLabel(p.exam)}】${p.titleHook}`);
+      expect(s.description).toMatch(/^架空の学習ケース。/);
+      expect(s.description).not.toContain("合格した実体験");
+      expect(s.body).toMatch(/^> 以下は架空の人物/);
     }
   });
 

@@ -16,6 +16,8 @@ import { PostHogProvider } from "@/components/PostHogProvider";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { NOTE_PROFILE_URL } from "@/lib/external-links";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -90,6 +92,9 @@ export const metadata: Metadata = {
     other: {
       "msvalidate.01": process.env.BING_SITE_VERIFICATION ?? "",
     },
+  },
+  other: {
+    "google-adsense-account": "ca-pub-8751260838396451",
   },
 };
 
@@ -212,15 +217,17 @@ export default function RootLayout({
                         </a>
                       </li>
                       <li>
-                        <a
-                          href="https://note.com/kakomon_ai"
+                        <TrackedNoteLink
+                          href={NOTE_PROFILE_URL}
+                          source="footer"
+                          account="ipa_quiz_ai"
                           target="_blank"
                           rel="noopener noreferrer"
                           aria-label="note を読む（新しいタブで開く）"
                           className="block py-2.5 hover:text-foreground"
                         >
                           note
-                        </a>
+                        </TrackedNoteLink>
                       </li>
                       <li><Link href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
                       <li><Link href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>

@@ -4,8 +4,8 @@ import * as React from "react";
 import { Users } from "lucide-react";
 
 interface AnswerCountResponse {
-  count: number;
-  source: "db" | "baseline";
+  count: number | null;
+  source: "db" | "unavailable";
 }
 
 const COUNTUP_DURATION_MS = 1500;
@@ -19,7 +19,9 @@ export function TotalAnswerCounter() {
     fetch("/api/stats/answer-count", { cache: "no-store" })
       .then((r) => (r.ok ? (r.json() as Promise<AnswerCountResponse>) : null))
       .then((data) => {
-        if (!cancelled && data) setTarget(data.count);
+        if (!cancelled && data?.source === "db" && data.count !== null) {
+          setTarget(data.count);
+        }
       })
       .catch(() => {
         // silent fail — counter just won't show
@@ -58,7 +60,7 @@ export function TotalAnswerCounter() {
         <strong className="tabular-nums text-emerald-700 dark:text-emerald-300">
           {displayed.toLocaleString("ja-JP")}
         </strong>
-        {" "}回の回答が共有されています
+        {" "}件の学習記録が保存されています
       </span>
     </div>
   );

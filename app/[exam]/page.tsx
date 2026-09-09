@@ -34,6 +34,7 @@ const ExamBrowseTabs = dynamic(
 );
 import { ExamOfficialResources } from "@/components/exam/ExamOfficialResources";
 import { ExamRoadmap } from "@/components/exam/ExamRoadmap";
+import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import {
   ExamDeepLead,
   ExamMainTopics,
@@ -59,6 +60,7 @@ import {
 import { getBlogPostsByExam } from "@/data/blog";
 import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
+import { ContentEndAd } from "@/components/ads/ContentEndAd";
 
 export const dynamicParams = false;
 
@@ -383,6 +385,8 @@ export default async function ExamTopPage({
         {/* Official IPA resources — E-E-A-T */}
         <ExamOfficialResources exam={code} />
 
+        <ExamNoteGuide exam={code} />
+
         {/* Browse tabs */}
         <section aria-label="問題を探す" className="mb-8">
           {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
@@ -412,6 +416,9 @@ export default async function ExamTopPage({
                 すべて見る →
               </Link>
             </div>
+            <p className="mb-3 text-xs leading-relaxed text-muted-foreground">
+              実在の合格者の証言ではなく、学習上の判断例を示す架空ケースです。
+            </p>
             <ul className="space-y-2">
               {books.map((b) => (
                 <li
@@ -468,7 +475,7 @@ export default async function ExamTopPage({
             {(["st", "sa", "pm", "sm", "au"] as ExamCode[]).includes(code) ? (
               <>
                 <p className="mb-3 text-sm leading-relaxed text-muted-foreground">
-                  IPA 元採点者プロンプトで AI が「適合度／論理性／具体性／業種事例」の 4 軸で採点。
+                  AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
                   業種別の合格答案サンプルも参照しながら、設問ア・イ・ウを段階的に仕上げます。
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -596,19 +603,19 @@ export default async function ExamTopPage({
           </section>
         )}
 
-        {/* Related success stories */}
+        {/* Fictional learning cases — labels must not imply real testimonials. */}
         {successStories.length > 0 && (
-          <section aria-label="合格体験記" className="mb-8">
+          <section aria-label="架空の学習ケース" className="mb-8">
             <div className="mb-3 flex items-center justify-between">
               <h2 className="flex items-center gap-2 text-base font-semibold text-foreground">
                 <FileText className="h-4 w-4 text-muted-foreground" />
-                {examLabel(code)} 合格体験記
+                {examLabel(code)} 学習ケース（架空）
               </h2>
               <Link
                 href={`/success-stories/${exam}`}
                 className="text-xs text-sky-600 hover:underline dark:text-sky-400"
               >
-                すべて見る →
+                ケース一覧 →
               </Link>
             </div>
             <ul className="space-y-2">
@@ -641,6 +648,8 @@ export default async function ExamTopPage({
             </ul>
           </section>
         )}
+
+        <ContentEndAd />
       </div>
     </main>
   );

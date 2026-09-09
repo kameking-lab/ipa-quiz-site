@@ -63,22 +63,27 @@ describe("fetch functions return null when unconfigured", () => {
 
 describe("fetchFeatureBreakdown", () => {
   it("classifies paths into feature buckets, computes pct, and sorts desc", async () => {
+    const fetchMock = resultsFetch([
+      ["/quiz/123", 50],
+      ["/q/ap-2023h-am-q1", 10], // also クイズ → merges with /quiz
+      ["/afternoon/ap", 20],
+      ["/essays/sc", 5],
+      ["/mock-exam", 5],
+      ["/blog/post", 4],
+      ["/ranking", 3],
+      ["/glossary/tcp", 2],
+      ["/about", 1], // その他
+      ["", 999], // empty path skipped, excluded from grand total
+    ]);
     vi.stubGlobal(
       "fetch",
-      resultsFetch([
-        ["/quiz/123", 50],
-        ["/q/ap-2023h-am-q1", 10], // also クイズ → merges with /quiz
-        ["/afternoon/ap", 20],
-        ["/essays/sc", 5],
-        ["/mock-exam", 5],
-        ["/blog/post", 4],
-        ["/ranking", 3],
-        ["/glossary/tcp", 2],
-        ["/about", 1], // その他
-        ["", 999], // empty path skipped, excluded from grand total
-      ]),
+      fetchMock,
     );
     const rows = await fetchFeatureBreakdown();
+    const requestBody = JSON.parse(String(fetchMock.mock.calls[0]?.[1]?.body));
+    expect(requestBody.query.query).toContain("event = 'page_view'");
+    expect(requestBody.query.query).toContain("properties.path");
+    expect(requestBody.query.query).not.toContain("event = '$pageview'");
     // grand = 50+10+20+5+5+4+3+2+1 = 100 (empty path's 999 excluded).
     expect(rows).not.toBeNull();
     const byFeature = Object.fromEntries(rows!.map((r) => [r.feature, r]));

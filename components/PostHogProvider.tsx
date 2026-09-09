@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { POSTHOG_CONFIG, isPostHogConfigured, posthogCapture, setPostHogClient } from "@/lib/posthog";
 
@@ -10,6 +10,8 @@ import { POSTHOG_CONFIG, isPostHogConfigured, posthogCapture, setPostHogClient }
  * UI は何も描画せず、副作用だけを担う初期化コンポーネント。
  */
 export function PostHogProvider() {
+  const [ready, setReady] = useState(false);
+
   useEffect(() => {
     if (!isPostHogConfigured || typeof window === "undefined") return;
     let cancelled = false;
@@ -26,6 +28,7 @@ export function PostHogProvider() {
           persistence: "localStorage",
         });
         setPostHogClient(client);
+        setReady(true);
       } catch {
         // 失敗しても無視（アナリティクスは UI を壊さない）
       }
@@ -36,16 +39,16 @@ export function PostHogProvider() {
     };
   }, []);
 
-  return <PageViewTracker />;
+  return <PageViewTracker ready={ready} />;
 }
 
-function PageViewTracker() {
+function PageViewTracker({ ready }: { ready: boolean }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const utmFiredRef = useRef(false);
 
   useEffect(() => {
-    if (!isPostHogConfigured || !pathname) return;
+    if (!isPostHogConfigured || !ready || !pathname) return;
     const url = searchParams?.toString() ? `${pathname}?${searchParams.toString()}` : pathname;
     posthogCapture("page_view", { path: url });
 
@@ -64,7 +67,7 @@ function PageViewTracker() {
         });
       }
     }
-  }, [pathname, searchParams]);
+  }, [pathname, ready, searchParams]);
 
   return null;
 }

@@ -34,12 +34,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const stories = getSuccessStoriesByExam(exam as ExamCode);
   if (stories.length === 0) return { title: "体験記がありません" };
   const url = `/success-stories/${exam}`;
-  const title = `${label} 合格体験記｜${stories.length}名の合格者ストーリー`;
-  const description = `${label}に合格した${stories.length}名のリアル体験記。職種・年齢・学習期間別に勉強法・つまずき・突破方法を生々しく紹介。`;
+  const title = `${label} 学習ケース（架空）｜${stories.length}本の架空の学習ケース`;
+  const description = `${label}の学習を想定した${stories.length}本の架空ケースです。職種・年齢・学習期間別に勉強法・つまずき・突破方法を参考例として紹介。`;
   const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "blog",
     title,
-    subtitle: `${label} 合格者ストーリー`,
+    subtitle: `${label} 架空の学習ケース`,
     body: description,
   }).toString()}`;
   return {
@@ -90,7 +90,7 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/success-stories" className="hover:underline">
-              合格体験記
+              学習ケース（架空）
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -102,15 +102,15 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
 
       <header className="mb-8">
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
-          {label} 合格体験記
+          {label} 学習ケース（架空）
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300 sm:text-base">
-          {label}に合格した <strong>{stories.length} 名</strong> のリアル体験記。
-          職種・年齢・学習期間が違う合格者のストーリーから、自分に合った戦略を見つけてください。
+          {label}の学習を想定した <strong>{stories.length} 本</strong> の架空ケースです。
+          職種・年齢・学習期間の設定が違うケースから、自分に合った戦略を見つけてください。
         </p>
         <AiContentNotice
           className="mt-4"
-          body="実在の合格者・人物への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習法・スケジュールは実証されたパターンに基づく参考情報としてご活用ください。"
+          body="実在の合格者・人物への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習時間や結果は設定上の例で、実測値や学習効果の保証ではありません。自分の前提知識と生活に合わせて計画を考える参考にしてください。"
         />
       </header>
 
@@ -151,7 +151,7 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
           {label} の過去問演習で挑戦を始める
         </h2>
         <p className="mb-3 leading-relaxed">
-          体験記の合格者と同じスタートラインに立ちましょう。AI コパイロット付きで分からない問題はその場で解決できます。
+          ケースを参考に、自分の前提知識に合う学習計画を立てましょう。AI コパイロット付きで分からない問題はその場で解決できます。
         </p>
         <div className="flex flex-wrap gap-2">
           <Link
@@ -170,7 +170,7 @@ export default async function SuccessStoryCategoryPage({ params }: PageProps) {
             href="/success-stories"
             className="inline-block rounded-full border border-zinc-300 bg-white px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-950 dark:text-zinc-200 dark:hover:bg-zinc-900"
           >
-            他区分の合格体験記
+            他区分の学習ケース（架空）
           </Link>
         </div>
       </section>

@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const ogParams = new URLSearchParams({
     type: "blog",
     title: story.title,
-    subtitle: `${examLabel(exam)} 合格体験記`,
+    subtitle: `${examLabel(exam)} 学習ケース（架空）`,
     body: story.description,
   });
   const ogImage = `${SITE_BASE_URL}/api/og?${ogParams.toString()}`;
@@ -97,7 +97,7 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
           <li aria-hidden="true">/</li>
           <li>
             <Link href="/success-stories" className="hover:underline">
-              合格体験記
+              学習ケース（架空）
             </Link>
           </li>
           <li aria-hidden="true">/</li>
@@ -154,7 +154,7 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
         </p>
         <AiContentNotice
           className="mt-4"
-          body="この体験記は実在の人物・合格者への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習法・スケジュールは実証されたパターンに基づく参考情報としてご活用ください。"
+          body="この体験記は実在の人物・合格者への取材ではありません。典型的な合格者像をもとに過去問AIが構成した架空のペルソナです。学習時間や結果は設定上の例で、実測値や学習効果の保証ではありません。自分の前提知識と生活に合わせて計画を考える参考にしてください。"
         />
       </header>
 
@@ -251,11 +251,11 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
 
       {related.length > 0 ? (
         <section
-          aria-label="他の合格体験記"
+          aria-label="他の学習ケース（架空）"
           className="mt-10 border-t border-zinc-200 pt-6 dark:border-zinc-800"
         >
           <h2 className="mb-4 text-base font-bold text-zinc-900 dark:text-zinc-50 sm:text-lg">
-            他の合格体験記
+            他の学習ケース（架空）
           </h2>
           <ul className="space-y-3">
             {related.map((r) => (
@@ -328,7 +328,7 @@ export default async function SuccessStoryArticlePage({ params }: PageProps) {
       <section className="mt-10 text-xs text-zinc-500 dark:text-zinc-500">
         <p>
           ※ 本記事は 過去問AI が学習者の典型像をもとに構成した合格者ペルソナです。
-          実在モデルへの取材ではありませんが、学習法・スケジュールは実証されたパターンに基づきます。
+          架空の人物による参考例です。学習法・スケジュールの効果を実証した記録ではありません。
           試験要項の最新情報は必ず{" "}
           <a
             href="https://www.ipa.go.jp/shiken/"

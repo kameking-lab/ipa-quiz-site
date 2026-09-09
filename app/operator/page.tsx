@@ -15,6 +15,8 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { NOTE_PROFILE_URL } from "@/lib/external-links";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 
 export const metadata: Metadata = {
   title: "運営者情報",
@@ -51,15 +53,17 @@ const INFO_ROWS: InfoRow[] = [
   {
     label: "note",
     value: (
-      <a
-        href="https://note.com/kakomon_ai"
+      <TrackedNoteLink
+        href={NOTE_PROFILE_URL}
+        source="operator"
+        account="ipa_quiz_ai"
         target="_blank"
         rel="noopener noreferrer"
         className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
       >
-        note.com/kakomon_ai
+        note.com/ipa_quiz_ai
         <ExternalLink className="h-3 w-3" />
-      </a>
+      </TrackedNoteLink>
     ),
   },
   {
@@ -79,7 +83,7 @@ const INFO_ROWS: InfoRow[] = [
   },
   {
     label: "プロジェクト形態",
-    value: "教育貢献プロジェクト（全機能無料・非営利）",
+    value: "教育貢献プロジェクト（全機能無料）",
   },
   {
     label: "お問い合わせ",
@@ -116,7 +120,7 @@ export default function OperatorPage() {
     sameAs: [
       OPERATOR_GITHUB_URL,
       "https://x.com/kakomon_ai_jp",
-      "https://note.com/kakomon_ai",
+      NOTE_PROFILE_URL,
     ],
     jobTitle: "個人開発者・教育貢献プロジェクト運営",
     worksFor: {
