@@ -24,11 +24,11 @@ const PRIVACY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
   title: "プライバシーポリシー",
   subtitle: "データ保護方針",
-  body: "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+  body: "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
 }).toString()}`;
 
 const PRIVACY_DESC =
-  "過去問AI のプライバシーポリシー。匿名利用時はブラウザ localStorage のみ。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。";
+  "過去問AI のプライバシーポリシー。匿名利用の学習履歴はブラウザに保存。ログイン時のクラウド同期・AI コパイロット利用時のデータ送信・Cookie・データ削除方法について。";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "プライバシーポリシー | 過去問AI",
     description:
-      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+      "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
     url: `${SITE_BASE_URL}/privacy`,
     type: "website",
     siteName: SITE_NAME,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "プライバシーポリシー | 過去問AI",
     description:
-      "匿名利用はブラウザ localStorage のみ。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
+      "匿名利用の学習履歴はブラウザに保存。クラウド同期・AI 利用時のデータ管理・Cookie・削除方法について。",
     images: [PRIVACY_OG_URL],
   },
 };
@@ -95,7 +95,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年5月17日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年9月11日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -189,6 +189,12 @@ export default function PrivacyPage() {
             <p>
               Vercel Analytics・Speed Insights はいずれも <strong>Cookie を使用しない</strong> プライバシー重視設計です（IP ハッシュ化・国レベル集計のみ。Speed Insights は LCP・FID・CLS 等の Core Web Vitals を集計）。
               PostHog は <code className="rounded bg-zinc-100 px-1 text-xs dark:bg-zinc-800">localStorage</code> に匿名 ID を保存してセッションを識別します。
+            </p>
+            <p>
+              現在の利用人数を表示するため、表示中のページから匿名のブラウザ識別子と最終操作からの経過時間を送信します。
+              識別子はブラウザに保存し、日ごとに更新します。サーバーはハッシュ化した識別子と最終利用時刻だけを保持し、
+              直近2分の利用を集計します。期限を過ぎた記録は次の集計時に削除します。
+              氏名・メールアドレス・回答内容はこの集計に含めません。
               この説明はアクセス解析に関するものです。
             </p>
             <p>
