@@ -13,6 +13,7 @@ import { VercelAnalyticsWithPrivacy } from "@/components/analytics/VercelAnalyti
 import { Suspense } from "react";
 import { EmailLeadCapture } from "@/components/EmailLeadCapture";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { SITE_BASE_URL } from "@/lib/seo/config";
@@ -126,6 +127,7 @@ export default function RootLayout({
       </head>
       <body className="min-h-[100dvh] antialiased">
         <ThemeProvider>
+          <StudyPresence />
           {/* Skip link first in the DOM so a single Tab reaches it before any
               header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
           <a
