@@ -40,3 +40,11 @@ it("clears the last count after a network failure", async () => {
   await act(() => vi.advanceTimersByTimeAsync(30_000));
   expect(screen.queryByRole("status")).toBeNull();
 });
+it("consumes an HTTP error body and hides its count", async () => {
+  const json = vi.fn().mockResolvedValue({ count: 9 });
+  fetchMock.mockResolvedValue({ ok: false, json });
+  render(<><StudyPresence /><TotalAnswerCounter /></>);
+  await act(() => vi.advanceTimersByTimeAsync(1));
+  expect(json).toHaveBeenCalledOnce();
+  expect(screen.queryByRole("status")).toBeNull();
+});

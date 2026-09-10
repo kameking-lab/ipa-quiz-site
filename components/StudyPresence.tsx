@@ -44,7 +44,9 @@ export function StudyPresence() {
           method: "POST", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ visitorId: id, idleMs: Math.min(Date.now() - lastActivity, 119_999) }), cache: "no-store", signal: controller.signal,
         });
-        const data = response.ok ? await response.json() : null;
+        // Consume error responses too so the browser can finish the request.
+        const payload = await response.json();
+        const data = response.ok ? payload : null;
         if (!disposed && isActiveStudyTab(document.visibilityState === "visible", lastActivity, Date.now())) {
           emit(Number.isSafeInteger(data?.count) && data.count >= 0 ? data.count : null);
         }
