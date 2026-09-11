@@ -46,7 +46,7 @@ test.describe("home SERP snippet", () => {
   });
 
   test("the AI demo widget is marked data-nosnippet (excluded from SERP)", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/ipa");
     // The demo renders client-side for first-time visitors (no answer history).
     const demo = page.locator("[data-nosnippet].hero-ai-demo");
     await expect(demo).toBeVisible();

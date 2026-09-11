@@ -75,6 +75,7 @@ const RECOMMENDED_BOOKS_EXAMS = [
 const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/e-learning/exams`, lastModified: "2026-09-11", changeFrequency: "monthly", priority: 0.8 },
   ...EXAM_CATALOG.map((entry): UrlEntry => ({ url: `${SITE_BASE_URL}/e-learning/exams/${entry.id}`, lastModified: entry.checkedAt, changeFrequency: "monthly", priority: 0.7 })),
+  { url: `${SITE_BASE_URL}/ipa`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 0.9 },
   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
   { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
