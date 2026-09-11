@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import { loadExamPaper } from "@/lib/exam-library-papers";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { findQuestionByRoute } from "@/lib/seo/question-url";
@@ -41,6 +42,8 @@ const blogSlugs = new Set(getAllBlogSummaries().map((p) => p.slug));
  * a URL that the route would 404.
  */
 function isResolvable(path: string): boolean {
+  const safetyExam = /^\/e-learning\/exams\/([^/]+)$/.exec(path);
+  if (safetyExam) return Boolean(loadExamPaper(safetyExam[1])?.length);
   // /q/{exam}/{year-season}/{section}/{qnum}
   const q = /^\/q\/([^/]+)\/([^/]+)\/([^/]+)\/([^/]+)$/.exec(path);
   if (q) {
@@ -89,6 +92,11 @@ function isResolvable(path: string): boolean {
 }
 
 describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
+  it("all safety exam papers in the main sitemap contain playable questions", () => {
+    const paths = locs(renderMainSitemapXml()).filter((path) => path.startsWith("/e-learning/exams/"));
+    expect(paths.length).toBeGreaterThan(0);
+    expect(paths.filter((path) => !isResolvable(path))).toEqual([]);
+  });
   it("every question URL resolves to an answerable, non-needsReview question", () => {
     const chunks = getSitemapChunkCount();
     const bad: string[] = [];
