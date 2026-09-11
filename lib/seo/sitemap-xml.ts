@@ -17,6 +17,7 @@ import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { getAllEssayQuestions } from "@/lib/essay/load";
+import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 
 // Build date (YYYY-MM-DD). Auto-advances every deploy, so genuinely static
 // pages no longer carry a hand-maintained literal that goes stale (E-5).
@@ -72,6 +73,8 @@ const RECOMMENDED_BOOKS_EXAMS = [
 // they carry `robots: { index: false }` in their page metadata or are blocked
 // by robots.txt. Including them here would contradict crawler signals.
 const STATIC_ROUTES: UrlEntry[] = [
+  { url: `${SITE_BASE_URL}/e-learning/exams`, lastModified: "2026-09-11", changeFrequency: "monthly", priority: 0.8 },
+  ...EXAM_CATALOG.map((entry): UrlEntry => ({ url: `${SITE_BASE_URL}/e-learning/exams/${entry.id}`, lastModified: entry.checkedAt, changeFrequency: "monthly", priority: 0.7 })),
   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
   { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },

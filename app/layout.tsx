@@ -284,6 +284,7 @@ export default function RootLayout({
                   <span className="ml-3 text-zinc-500 dark:text-zinc-500">
                     本サービスは IPA 非公式の学習支援サービスです。
                   </span>
+                  <p className="mt-2">安全衛生の試験問題の出典: <a href="https://www.exam.or.jp/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">公益財団法人安全衛生技術試験協会</a>。各演習ページから公表PDFを確認できます。</p>
                 </div>
               </div>
             </footer>

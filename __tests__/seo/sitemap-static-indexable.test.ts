@@ -36,6 +36,7 @@ function locs(xml: string): string[] {
 
 // データ駆動（1 slug/exam/id = 1 エントリ）の動的ルート接頭辞。具象 static のみ残す。
 const DYNAMIC_PREFIXES: RegExp[] = [
+  /^\/e-learning\/exams\/.+/,
   /^\/blog\/.+/,
   /^\/keywords\/.+/,
   /^\/features\/.+/,

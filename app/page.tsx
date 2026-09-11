@@ -1,4 +1,5 @@
 import * as React from "react";
+import Link from "next/link";
 import type { Metadata } from "next";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
@@ -148,6 +149,11 @@ export default function HomePage() {
       </section>
 
       <HomeFlagshipEssay />
+      <section aria-labelledby="safety-exams-heading" className="mb-6 rounded-2xl border border-border bg-card p-5 sm:p-6">
+        <h2 id="safety-exams-heading" className="text-xl font-bold">安全衛生の資格も、過去問で学ぶ</h2>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">衛生管理者・ボイラー技士などの免許試験、作業環境測定士、労働安全・労働衛生コンサルタント。試験・科目・回を選んで、1問ずつ練習できます。</p>
+        <Link href="/e-learning/exams" className="mt-4 inline-flex min-h-11 items-center rounded-lg bg-primary px-4 py-2 font-semibold text-primary-foreground hover:opacity-90">安全衛生の過去問を選ぶ →</Link>
+      </section>
 
       <HomeFoundationKamokuB />
 

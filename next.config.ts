@@ -57,6 +57,10 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/e-learning/exams": ["./data/exam-library/papers/*.json"],
+    "/e-learning/exams/*": ["./data/exam-library/papers/*.json"],
+  },
   async redirects() {
     return [
       // /quiz with no mode query → home (broken entry point)
