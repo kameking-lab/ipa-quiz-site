@@ -169,6 +169,7 @@ export default function RootLayout({
                       <li><Link href="/sc" className="block py-2.5 hover:text-foreground">SC セキュリティ</Link></li>
                       <li><Link href="/db" className="block py-2.5 hover:text-foreground">DB データベース</Link></li>
                       <li><Link href="/ipa" className="block py-2.5 font-medium hover:text-foreground">IPAの全試験 →</Link></li>
+                      <li><Link href="/" className="block py-2.5 font-medium hover:text-foreground">IPA・安全を選ぶ →</Link></li>
                     </ul>
                   </nav>
                   <nav aria-labelledby="footer-nav-safety">
