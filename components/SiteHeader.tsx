@@ -1,4 +1,5 @@
 "use client";
+import { SafetySiteHeader } from "@/components/SafetySiteHeader";
 
 import * as React from "react";
 import Link from "next/link";
@@ -59,6 +60,8 @@ export function SiteHeader() {
   const isSearchActive = pathname?.startsWith("/search");
   const isBookmarksActive = pathname?.startsWith("/bookmarks");
   const isMockExamActive = pathname?.startsWith("/mock-exam");
+
+  if (pathname?.startsWith("/e-learning")) return <SafetySiteHeader />;
 
   return (
     <header

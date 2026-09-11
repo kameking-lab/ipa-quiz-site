@@ -21,6 +21,7 @@ interface Props {
   starred: boolean;
   onToggleStar: () => void;
   onNext: () => void;
+  nextLabel?: string;
   onAskAI: () => void;
   onAnalyzeWrong?: () => void;
 }
@@ -32,6 +33,7 @@ export function ExplanationCard({
   starred,
   onToggleStar,
   onNext,
+  nextLabel = "次の問題へ",
   onAskAI,
   onAnalyzeWrong,
 }: Props) {
@@ -152,7 +154,7 @@ export function ExplanationCard({
           onClick={onNext}
           className="font-semibold shadow-md sm:flex-1"
         >
-          次の問題へ
+          {nextLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>
       </div>

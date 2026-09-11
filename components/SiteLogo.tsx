@@ -1,4 +1,4 @@
-import { BookOpen, Sparkles } from "lucide-react";
+import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { cn } from "@/lib/utils";
 
 interface Props {
@@ -9,10 +9,7 @@ interface Props {
 export function SiteLogo({ className, iconOnly = false }: Props) {
   return (
     <span className={cn("inline-flex items-center gap-2", className)}>
-      <span className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
-        <BookOpen className="h-4 w-4" />
-        <Sparkles className="absolute -right-1 -top-1 h-3.5 w-3.5 rounded-full bg-amber-400 p-0.5 text-white shadow-sm" />
-      </span>
+      <ChihuahuaMascot pose="guide" size={36} />
       {!iconOnly && (
         <span className="text-base font-bold tracking-tight text-foreground">
           過去問AI

@@ -4,13 +4,13 @@ import * as React from "react";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
+import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
 import { GenerateSimilar } from "./GenerateSimilar";
-import { TtsControls } from "./TtsControls";
 import {
   CopilotMobileSheet,
   CopilotDesktopFloating,
@@ -38,6 +38,11 @@ import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
 import { AchievementToast } from "@/components/motivation/AchievementToast";
+
+export function quizModeLabel(mode: string): string {
+  const labels: Record<string, string> = { random: "ランダム", year: "年度別", topic: "分野別", review: "復習", starred: "あとで復習", mock: "模試", sequential: "順番に解く", unanswered: "未回答" };
+  return labels[mode] ?? "過去問演習";
+}
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -70,6 +75,8 @@ export function QuizPlayer({
   const history = React.useMemo(() => createHistoryStore(), []);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const [completed, setCompleted] = React.useState(false);
+  const questionStartRef = React.useRef<HTMLDivElement>(null);
   const [upsellOpen, setUpsellOpen] = React.useState(false);
   const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
   const [starred, setStarred] = React.useState(false);
@@ -104,9 +111,10 @@ export function QuizPlayer({
   }, [question, mode, total]);
 
   React.useEffect(() => {
+    if (completed) return;
     const id = setInterval(() => setElapsed((e) => e + 1), 1000);
     return () => clearInterval(id);
-  }, []);
+  }, [completed]);
 
   React.useEffect(() => {
     if (!question) return;
@@ -127,21 +135,19 @@ export function QuizPlayer({
     question?.id ?? "",
   );
 
-  // When the session runs out of questions, send the user back with ?done=1.
-  React.useEffect(() => {
-    if (total > 0 && index >= total) {
-      router.push(`${backHref}?done=1`);
-    }
-  }, [index, total, router, backHref]);
-
   const goNext = React.useCallback(() => {
     setCopilotQuery(null);
     if (index + 1 >= total) {
-      router.push(`${backHref}?done=1`);
+      setCompleted(true);
+      window.scrollTo?.({ top: 0, behavior: "instant" });
       return;
     }
     onNext();
-  }, [index, total, router, backHref, onNext]);
+    requestAnimationFrame(() => {
+      questionStartRef.current?.focus({ preventScroll: true });
+      questionStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    });
+  }, [index, total, onNext]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
@@ -307,7 +313,7 @@ export function QuizPlayer({
     );
   }
 
-  if (!question && index >= total && total > 0) {
+  if (completed || (!question && index >= total && total > 0)) {
     return (
       <QuizCompleteScreen
         stats={stats}
@@ -352,7 +358,7 @@ export function QuizPlayer({
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
-          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {mode}</div>
+          <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300">モード: {quizModeLabel(mode)}</div>
           <div className="ml-auto flex items-center gap-2 text-sm font-medium text-zinc-700 sm:gap-3 dark:text-zinc-300">
             <ComboCounter combo={combo} />
             <span
@@ -399,12 +405,11 @@ export function QuizPlayer({
 
       <div className="flex flex-1">
         <main
-          className="flex-1 px-3 pb-32 pt-4 sm:px-6"
+          className="flex-1 px-3 pb-8 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
-          <div className="mx-auto max-w-2xl space-y-4">
-            <TtsControls text={question.question} />
+          <div ref={questionStartRef} tabIndex={-1} className="mx-auto max-w-2xl scroll-mt-24 space-y-4 outline-none">
             <QuestionCard
               question={question}
               progress={{ current: index, total }}
@@ -449,6 +454,7 @@ export function QuizPlayer({
                   starred={starred}
                   onToggleStar={toggleStar}
                   onNext={goNext}
+                  nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
                   onAskAI={() => setCopilotQuery("open")}
                   onAnalyzeWrong={
                     !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
@@ -474,13 +480,6 @@ export function QuizPlayer({
             )}
           </div>
 
-          {revealed && (
-            <div className="fixed inset-x-0 bottom-0 z-30 border-t border-zinc-200 bg-white/95 p-3 backdrop-blur sm:hidden dark:border-zinc-800 dark:bg-zinc-950/95">
-              <Button variant="primary" size="xl" onClick={goNext} className="w-full">
-                次の問題へ
-              </Button>
-            </div>
-          )}
         </main>
 
       </div>
@@ -632,7 +631,6 @@ export function QuizCompleteScreen({
     } catch { /* ignore */ }
   };
 
-  const emoji = accuracy >= 80 ? "🎉" : accuracy >= 60 ? "👍" : "💪";
 
   const btnClass =
     "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
@@ -641,7 +639,7 @@ export function QuizCompleteScreen({
     <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
       <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
-          <div className="mb-2 text-5xl" aria-hidden="true">{emoji}</div>
+          <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
           <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}

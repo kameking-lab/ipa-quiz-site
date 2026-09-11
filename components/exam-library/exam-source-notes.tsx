@@ -35,7 +35,7 @@ export function ExamSourceNotes({ entry, className = "" }: ExamSourceNotesProps)
           正解・不正解は、公表PDFの正答表示を確認できた問題だけに表示します。記述式や正答未登録の問題は採点しません。
         </li>
         <li>
-          回答は初期設定では保存しません。「この端末に保存する」をオンにした場合だけ、ブラウザ内に保存します。
+          回答は同じタブ内の移動や再読み込みで保持します。タブを閉じた後も残す場合は「この端末に保存する」をオンにしてください。
         </li>
       </ul>
       <div className="mt-5 border-t border-sky-300 pt-4 dark:border-sky-700">

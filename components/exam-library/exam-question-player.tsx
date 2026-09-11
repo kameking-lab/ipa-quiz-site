@@ -18,6 +18,8 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
+import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
+import { readExamTabProgress, writeExamTabProgress } from "@/lib/exam-library-session";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
 import { buttonVariants } from "@/components/ui/button";
 import { extractExamChoices } from "@/lib/exam-library-choices";
@@ -45,6 +47,8 @@ import {
 } from "@/lib/exam-library-progress";
 
 interface ExamQuestionPlayerProps {
+  initialQuestionId?: string;
+  initialView?: "question" | "summary";
   examId: string;
   examTitle: string;
   pdfUrl: string;
@@ -95,7 +99,10 @@ function authorityBadge(question: ExamQuestion): string {
 }
 
 function focusLater(ref: { readonly current: HTMLElement | null }) {
-  requestAnimationFrame(() => ref.current?.focus());
+  requestAnimationFrame(() => {
+    ref.current?.focus({ preventScroll: true });
+    ref.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
+  });
 }
 
 function isEditableTarget(target: EventTarget | null): boolean {
@@ -106,6 +113,8 @@ function isEditableTarget(target: EventTarget | null): boolean {
 }
 
 export function ExamQuestionPlayer({
+  initialQuestionId,
+  initialView = "question",
   examId,
   examTitle,
   pdfUrl,
@@ -120,8 +129,8 @@ export function ExamQuestionPlayer({
   const [answers, setAnswers] = useState<ExamSessionAnswers>({});
   const [roundIds, setRoundIds] = useState<string[]>(allIds);
   const [retryRound, setRetryRound] = useState(false);
-  const [index, setIndex] = useState(0);
-  const [view, setView] = useState<"question" | "summary">("question");
+  const [index, setIndex] = useState(Math.max(0, allIds.indexOf(initialQuestionId ?? "")));
+  const [view, setView] = useState<"question" | "summary">(initialView);
   const [draftChoice, setDraftChoice] = useState<number | null>(null);
   const [saveEnabled, setSaveEnabled] = useState(false);
   const [restoreHandled, setRestoreHandled] = useState(false);
@@ -129,6 +138,7 @@ export function ExamQuestionPlayer({
   const headingRef = useRef<HTMLHeadingElement>(null);
   const feedbackRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLHeadingElement>(null);
+  const tabRestoredRef = useRef(false);
   const firstChoiceRef = useRef<HTMLButtonElement>(null);
 
   // 端末内の保存データはマウント後だけ読む（サーバー描画では常に「なし」）
@@ -157,21 +167,37 @@ export function ExamQuestionPlayer({
   const wrongIds = useMemo(() => wrongQuestionIds(questions, answers), [answers, questions]);
   const firstUnansweredIndex = allIds.findIndex((id) => !answers[id]?.submitted);
 
+  useEffect(() => {
+    if (tabRestoredRef.current) return;
+    tabRestoredRef.current = true;
+    const disk = getBrowserStorage();
+    const diskProgress = disk ? parseExamProgress(readExamProgressRaw(disk, examId), examId, questions) : null;
+    const progress = readExamTabProgress(examId, questions) ?? (initialView === "summary" ? diskProgress : null);
+    if (!progress) return;
+    // Browser tab state is unavailable during server rendering; restore after hydration.
+    setAnswers(progress.answers);
+    setSaveEnabled(Boolean(diskProgress));
+    const lastIndex = allIds.indexOf(initialQuestionId ?? progress.lastQuestionId ?? "");
+    setIndex(Math.max(0, lastIndex));
+    setRestoreHandled(true);
+  }, [allIds, examId, initialQuestionId, initialView, questions]);
+
   /** 状態更新と（オン時のみ）端末保存を同時に行う */
   const commit = useCallback(
     (next: ExamSessionAnswers, lastQuestionId: string | null) => {
       setAnswers(next);
+      writeExamTabProgress(createExamProgress(examId, next, lastQuestionId), questions, examTitle);
       if (!saveEnabled) return;
       const storage = getBrowserStorage();
       const ok =
         storage !== null &&
-        saveExamProgress(storage, createExamProgress(examId, next, lastQuestionId));
+        saveExamProgress(storage, { ...createExamProgress(examId, next, lastQuestionId), summary: { ...summarizeExamProgress(questions, next), examTitle } });
       if (!ok) {
         setSaveEnabled(false);
         setSaveStatus("端末への保存に失敗したため、保存をオフにしました。回答はこの画面では続けられます。");
       }
     },
-    [examId, saveEnabled],
+    [examId, examTitle, questions, saveEnabled],
   );
 
   const showQuestion = useCallback(
@@ -189,9 +215,9 @@ export function ExamQuestionPlayer({
     (nextIndex: number) => {
       if (nextIndex < 0 || nextIndex >= roundIds.length) return;
       showQuestion(nextIndex, roundIds, answers);
-      if (saveEnabled) commit(answers, roundIds[nextIndex] ?? null);
+      commit(answers, roundIds[nextIndex] ?? null);
     },
-    [answers, commit, roundIds, saveEnabled, showQuestion],
+    [answers, commit, roundIds, showQuestion],
   );
 
   const showSummary = useCallback(() => {
@@ -294,6 +320,7 @@ export function ExamQuestionPlayer({
     const unanswered = allIds.findIndex((id) => !saved.answers[id]?.submitted);
     const startIndex = lastIndex >= 0 ? lastIndex : Math.max(unanswered, 0);
     setAnswers(saved.answers);
+    writeExamTabProgress(saved, questions, examTitle);
     setSaveEnabled(true);
     setRestoreHandled(true);
     setSaveStatus("保存した進捗を読み込みました。以降の回答もこの端末に保存します。");
@@ -312,7 +339,7 @@ export function ExamQuestionPlayer({
     if (enabled) {
       const ok =
         storage !== null &&
-        saveExamProgress(storage, createExamProgress(examId, answers, currentId ?? null));
+        saveExamProgress(storage, { ...createExamProgress(examId, answers, currentId ?? null), summary: { ...summary, examTitle } });
       if (ok) {
         const overwrote = saved !== null && savedSubmittedCount > 0 && !restoreHandled;
         setSaveEnabled(true);
@@ -403,6 +430,7 @@ export function ExamQuestionPlayer({
             aria-labelledby="exam-summary-title"
             className="rounded-3xl border-2 border-slate-800 bg-white p-5 text-slate-950 dark:border-slate-300 dark:bg-slate-950 dark:text-white forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-7"
           >
+            <ChihuahuaMascot pose="celebrate" size={80} className="mb-2" />
             <h2
               ref={summaryRef}
               id="exam-summary-title"
@@ -454,7 +482,7 @@ export function ExamQuestionPlayer({
             <p className="mt-3 text-xs leading-5 text-slate-600 dark:text-slate-300">
               {saveEnabled
                 ? "この結果はこの端末（ブラウザ）に保存されています。"
-                : "この結果は保存していません。ページを閉じると消えます。"}
+                : "このタブで結果を保持しています。タブを閉じた後も残すには「この端末に保存する」をオンにしてください。"}
             </p>
 
             <h3 className="mt-7 text-lg font-semibold">回答の見直し</h3>
@@ -589,7 +617,7 @@ export function ExamQuestionPlayer({
                 <p id={`exam-memo-help-${current.id}`} className="mt-1 text-xs leading-5 text-slate-600 dark:text-slate-300">
                   {saveEnabled
                     ? "メモはこの端末（ブラウザ）に保存されます。送信はしません。"
-                    : "保存はオフです。ページを閉じるとメモは消えます。"}
+                    : "長期保存はオフです。同じタブ内の移動ではメモを保持し、タブを閉じると消えます。"}
                 </p>
                 {!submitted ? (
                   <button type="button" onClick={submitAnswer} className={`${primaryButton} mt-3 w-full sm:w-auto`}>
@@ -647,7 +675,7 @@ export function ExamQuestionPlayer({
                 </div>
 
                 <div className="mt-4 border-t border-current/25 pt-3">
-                  <h4 className="font-semibold">AIによる学習用解説</h4>
+                  <h4 className="font-semibold">{scorable ? "AIによる学習用解説" : "参考解説（採点なし）"}</h4>
                   {current.explanation ? <p className="mt-1 text-xs leading-5">公式解説ではありません。法令の時点や出典も確認しながら学習してください。</p> : null}
                   {current.explanation ? (
                     <p className="mt-1 whitespace-pre-line text-sm leading-7">{current.explanation}</p>
@@ -707,6 +735,10 @@ export function ExamQuestionPlayer({
       </div>
 
       <aside className="grid min-w-0 gap-4" aria-label="演習の進み具合">
+        <div className="flex flex-wrap gap-2">
+          <button type="button" onClick={showSummary} className={secondaryButton}>結果を見る</button>
+          <button type="button" onClick={retryWrong} disabled={wrongIds.length === 0} className={secondaryButton}>間違えた問題を復習（{wrongIds.length}問）</button>
+        </div>
         <details className="rounded-2xl border border-border bg-card p-4">
           <summary className="cursor-pointer py-2 text-sm font-medium">問題一覧・進捗（回答 {summary.answered}／{summary.total}）</summary>
         <nav
@@ -749,9 +781,7 @@ export function ExamQuestionPlayer({
           <p className="mt-2 text-[11px] leading-4 text-slate-600 dark:text-slate-300">
             正＝正解、誤＝不正解、済＝回答済み（採点なし）
           </p>
-          <button type="button" onClick={showSummary} className={`${secondaryButton} mt-3 w-full`}>
-            結果と見直しを表示
-          </button>
+
         </nav>
         </details>
 

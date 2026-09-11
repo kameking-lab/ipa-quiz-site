@@ -248,6 +248,8 @@ export default async function ExamTopPage({
               </Link>
             </li>
             <li aria-hidden="true">/</li>
+            <li><Link href="/ipa" className="inline-block py-1.5 hover:underline">IPA</Link></li>
+            <li aria-hidden="true">/</li>
             <li aria-current="page" className="text-foreground">
               {examLabel(code)}
             </li>
@@ -299,11 +301,25 @@ export default async function ExamTopPage({
               className="w-full font-semibold shadow-md hover:shadow-lg"
             >
               <Link href={`/quiz?mode=random&exam=${exam}`}>
-                いますぐランダム出題で解く
+                今すぐ解く
                 <ChevronRight className="h-4 w-4" />
               </Link>
             </Button>
           )}
+        </section>
+
+        {/* Browse tabs */}
+        <section aria-label="問題を探す" className="mb-8">
+          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
+              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
+          <span id="years" aria-hidden className="block scroll-mt-20" />
+          <span id="topics" aria-hidden className="block scroll-mt-20" />
+          <ExamBrowseTabs exam={code} years={years} categories={categories} />
+        </section>
+
+        {/* Progress */}
+        <section aria-label="進捗" className="mb-8">
+          <ExamProgressBar exam={code} totalQuestions={questions.length} />
         </section>
 
         {/* Stats: pass rate / study hours / topic trend */}
@@ -386,20 +402,6 @@ export default async function ExamTopPage({
         <ExamOfficialResources exam={code} />
 
         <ExamNoteGuide exam={code} />
-
-        {/* Browse tabs */}
-        <section aria-label="問題を探す" className="mb-8">
-          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
-              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
-          <span id="years" aria-hidden className="block scroll-mt-20" />
-          <span id="topics" aria-hidden className="block scroll-mt-20" />
-          <ExamBrowseTabs exam={code} years={years} categories={categories} />
-        </section>
-
-        {/* Progress */}
-        <section aria-label="進捗" className="mb-8">
-          <ExamProgressBar exam={code} totalQuestions={questions.length} />
-        </section>
 
         {/* Recommended books */}
         {books.length > 0 && (

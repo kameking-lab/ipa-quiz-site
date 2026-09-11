@@ -1,6 +1,6 @@
 import {chromium,expect} from '@playwright/test';
 import fs from 'node:fs';
-const base=process.env.EXAM_TEST_BASE_URL||'http://localhost:3128';
+const base=process.env.EXAM_TEST_BASE_URL||'http://localhost:3131';
 fs.mkdirSync('logs/safety-browser',{recursive:true});
 const browser=await chromium.launch({headless:true});const checks=[];
 try{
@@ -22,13 +22,19 @@ try{
  const wrong=paper[1].correctChoice===1?2:1;await page.keyboard.press(String(wrong));
  await expect(page.getByRole('heading',{name:'不正解',exact:true})).toBeVisible();
  if(await page.evaluate(()=>Object.keys(localStorage).some(k=>k.startsWith('ipa-quiz:exam-library:'))))throw Error('Unexpected default persistence');
- await page.locator('summary').filter({hasText:'問題一覧・進捗'}).click();
- await page.getByRole('button',{name:'結果と見直しを表示',exact:true}).click();
+ await page.getByRole('navigation',{name:'グローバルナビゲーション',exact:true}).getByRole('link',{name:'進捗・復習',exact:true}).click();
+ await expect(page.getByText('回答 2問 · 正解 1問',{exact:true})).toBeVisible();
+ await page.getByRole('link',{name:'続きから解く →',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'不正解',exact:true})).toBeVisible();
+ await page.goBack();
+ await page.getByRole('link',{name:'結果・間違いを復習 →',exact:true}).click();
+ await expect(page.getByRole('heading',{name:'結果と見直し',exact:true})).toBeVisible();
  await page.getByRole('button',{name:'間違えた1問を解き直す',exact:true}).click();
  await page.getByRole('radio',{name:new RegExp(`^選択肢 ${paper[1].correctChoice}:`)}).click();
  await expect(page.getByRole('heading',{name:'正解',exact:true})).toBeVisible();checks.push('keyboard selection / wrong-answer retry / no default storage');
  await page.getByRole('checkbox',{name:'この端末に保存する',exact:true}).check();await page.reload({waitUntil:'networkidle'});
- await expect(page.getByText('保存した進捗があります')).toBeVisible();checks.push('opt-in resume');
+ await expect(page.getByRole('checkbox',{name:'この端末に保存する',exact:true})).toBeChecked();
+ await expect(page.getByRole('heading',{name:'結果と見直し',exact:true})).toBeVisible();checks.push('opt-in resume');
  await page.goto(base+'/e-learning/exams/emkohyo-EM20261801',{waitUntil:'networkidle'});
  const unconfirmed=page.getByRole('radio',{name:/^選択肢 1:/});await unconfirmed.click();
  await expect(page.getByRole('heading',{name:'回答を記録しました（採点なし）',exact:true})).toBeVisible();
@@ -37,10 +43,11 @@ try{
  await expect(page.getByRole('textbox').first()).toBeVisible();await expect(page.getByRole('radio')).toHaveCount(0);checks.push('descriptive preserved');
  const mobile=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});
  await mobile.goto(base+'/e-learning/exams',{waitUntil:'networkidle'});
- await mobile.getByRole('tab',{name:'作業環境測定士',exact:true}).click();
- await mobile.getByRole('link',{name:/^労働衛生一般/}).click();
+ await mobile.getByRole('navigation',{name:'安全の資格一覧',exact:true}).getByRole('link',{name:'作業環境測定士',exact:true}).click();
+ await mobile.getByRole('region',{name:'作業環境測定士',exact:true}).getByRole('link',{name:/^労働衛生一般/}).click();
  await expect(mobile.getByRole('heading',{name:'労働衛生一般の過去問',exact:true})).toBeVisible();
- await mobile.goBack();await expect(mobile.getByRole('tab',{name:'作業環境測定士',exact:true})).toHaveAttribute('aria-selected','true');
+ await mobile.goBack();await expect(mobile.getByRole('region',{name:'作業環境測定士',exact:true})).toBeVisible();
+ await expect(mobile.getByRole('tablist')).toHaveCount(0);
  await mobile.goto(base+'/e-learning/exams/lckohyo-LC20260415-1',{waitUntil:'networkidle'});
  await expect(mobile.getByRole('button',{name:'文字で読む',exact:true})).toHaveAttribute('aria-pressed','true');
  await mobile.getByRole('button',{name:'原図で読む',exact:true}).click();await expect(mobile.getByRole('img',{name:/問1の問題文/})).toBeVisible();

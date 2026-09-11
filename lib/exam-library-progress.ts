@@ -35,6 +35,8 @@ export interface ExamProgress {
   answers: ExamSessionAnswers;
   lastQuestionId: string | null;
   updatedAt: string;
+  /** Optional dashboard metadata; grading always uses current questions. */
+  summary?: ExamProgressSummary & { examTitle: string };
 }
 
 export function examProgressKey(examId: string): string {

@@ -80,6 +80,10 @@ export function shuffle<T>(arr: T[]): T[] {
 
 export function shuffleChoices(q: Question): Question {
   if (!q.choices) return q;
+  // Labels in authored prose refer to the original choices. Reordering only the
+  // answer map would silently contradict the explanation (for example AP 2017秋 問2).
+  const prose = [q.question, q.explanation, ...Object.values(q.choices)].join("\n");
+  if (/(?:^|[^ァ-ヶー])[アイウエ](?![ァ-ヶー])/u.test(prose) || Array.isArray(q.answer)) return q;
   const keys: Array<"ア" | "イ" | "ウ" | "エ"> = ["ア", "イ", "ウ", "エ"];
   const values = keys.map((k) => q.choices![k]!);
   shuffle(values);
