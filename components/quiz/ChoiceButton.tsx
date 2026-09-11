@@ -6,7 +6,7 @@ import { Check, X } from "lucide-react";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 interface Props {
-  choiceKey: ChoiceKey;
+  choiceKey: ChoiceKey | `${number}`;
   text: string;
   revealed: boolean;
   selected: boolean;
@@ -20,7 +20,7 @@ interface Props {
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
 }
 
-const CHOICE_INDEX: Partial<Record<ChoiceKey, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
+const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
 
 export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
   {

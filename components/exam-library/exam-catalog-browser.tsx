@@ -1,14 +1,11 @@
 "use client";
-
-import { useMemo, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, ExternalLink } from "lucide-react";
-import type {
-  ExamAnswerMode,
-  ExamDateKind,
-  ExamGroupId,
-  ExamGroupInfo,
-} from "@/lib/exam-library-model";
+import { useState } from "react";
+import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import type { ExamAnswerMode, ExamDateKind, ExamGroupId, ExamGroupInfo } from "@/lib/exam-library-model";
 
 /** 一覧表示に必要な最小限の情報（問題本文は含めない） */
 export interface ExamCatalogItem {
@@ -35,192 +32,59 @@ interface ExamCatalogBrowserProps {
   initialSubject: string | null;
 }
 
-const ALL_SUBJECTS = "";
-
-function syncUrl(group: ExamGroupId, subject: string) {
-  const url = new URL(window.location.href);
-  url.searchParams.set("group", group);
-  if (subject) url.searchParams.set("subject", subject);
-  else url.searchParams.delete("subject");
-  window.history.replaceState(window.history.state, "", `${url.pathname}${url.search}`);
+function catalogHref(group: string, subject?: string) {
+  return `/e-learning/exams?${new URLSearchParams({ group, ...(subject ? { subject } : {}) })}`;
 }
 
-function scoringBadge(item: ExamCatalogItem): string {
-  if (item.questionCount === null) return "問題データ未掲載";
-  if (item.answerMode === "reference" && item.scoredCount === 0) return "自己確認（自動採点なし）";
-  if (item.scoredCount === 0) return "公式正答未登録（採点なし）";
-  if (item.scoredCount === item.questionCount) return `公式正答で採点 ${item.scoredCount}問`;
-  return `公式正答で採点 ${item.scoredCount}問／${item.questionCount}問`;
-}
-
-const chipBase =
-  "inline-flex min-h-11 items-center justify-center rounded-xl border-2 px-4 py-2 text-sm font-black leading-5 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 motion-reduce:transition-none forced-colors:border-[ButtonText]";
-const chipOn =
-  "border-slate-950 bg-slate-950 text-white dark:border-white dark:bg-white dark:text-slate-950 forced-colors:bg-[Highlight] forced-colors:text-[HighlightText]";
-const chipOff =
-  "border-slate-300 bg-white text-slate-900 hover:border-slate-700 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100 forced-colors:bg-[ButtonFace] forced-colors:text-[ButtonText]";
-
-export function ExamCatalogBrowser({
-  groups,
-  items,
-  initialGroup,
-  initialSubject,
-}: ExamCatalogBrowserProps) {
+export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject }: ExamCatalogBrowserProps) {
   const [group, setGroup] = useState<ExamGroupId>(initialGroup);
-  const [subject, setSubject] = useState<string>(initialSubject ?? ALL_SUBJECTS);
-
-  const subjects = useMemo(() => {
-    const seen: string[] = [];
-    for (const item of items) {
-      if (item.group === group && !seen.includes(item.subject)) seen.push(item.subject);
-    }
-    return seen;
-  }, [group, items]);
-
-  const visibleBySubject = useMemo(() => {
-    const grouped = new Map<string, ExamCatalogItem[]>();
-    for (const item of items) {
-      if (item.group !== group) continue;
-      if (subject && item.subject !== subject) continue;
-      grouped.set(item.subject, [...(grouped.get(item.subject) ?? []), item]);
-    }
-    return [...grouped.entries()];
-  }, [group, items, subject]);
-
-  const activeGroup = groups.find((candidate) => candidate.id === group) ?? groups[0];
-
-  return (
-    <div className="grid gap-6">
-      <section aria-labelledby="exam-step-group">
-        <h2 id="exam-step-group" className="text-lg font-black text-slate-950 dark:text-white">
-          <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 text-sm text-white dark:bg-white dark:text-slate-950 forced-colors:border forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" aria-hidden="true">1</span>
-          試験を選ぶ
-        </h2>
-        <div className="mt-3 grid gap-3 sm:grid-cols-3">
-          {groups.map((candidate) => {
-            const count = items.filter((item) => item.group === candidate.id).length;
-            const selected = candidate.id === group;
-            return (
-              <button
-                key={candidate.id}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => {
-                  setGroup(candidate.id);
-                  setSubject(ALL_SUBJECTS);
-                  syncUrl(candidate.id, ALL_SUBJECTS);
-                }}
-                className={`flex min-h-20 flex-col items-start rounded-2xl border-2 p-4 text-left focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 forced-colors:border-[ButtonText] ${
-                  selected ? chipOn : chipOff
-                }`}
-              >
-                <span className="text-base font-black leading-6">{candidate.shortTitle}</span>
-                <span className={`mt-1 text-xs font-bold ${selected ? "opacity-90" : "text-slate-600 dark:text-slate-300"}`}>
-                  {count}回分
-                </span>
-              </button>
-            );
-          })}
-        </div>
-        {activeGroup ? (
-          <p className="mt-3 text-sm leading-6 text-slate-700 dark:text-slate-200">
-            {activeGroup.description}
-            <strong className="ml-1 font-black">{activeGroup.dateNote}</strong>
-          </p>
-        ) : null}
-      </section>
-
-      <section aria-labelledby="exam-step-subject">
-        <h2 id="exam-step-subject" className="text-lg font-black text-slate-950 dark:text-white">
-          <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 text-sm text-white dark:bg-white dark:text-slate-950 forced-colors:border forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" aria-hidden="true">2</span>
-          {group === "lckohyo" ? "資格を選ぶ" : "科目を選ぶ"}
-        </h2>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {[ALL_SUBJECTS, ...subjects].map((candidate) => {
-            const selected = candidate === subject;
-            return (
-              <button
-                key={candidate || "all"}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => {
-                  setSubject(candidate);
-                  syncUrl(group, candidate);
-                }}
-                className={`${chipBase} ${selected ? chipOn : chipOff}`}
-              >
-                {candidate || "すべて"}
-              </button>
-            );
-          })}
-        </div>
-      </section>
-
-      <section aria-labelledby="exam-step-date">
-        <h2 id="exam-step-date" className="text-lg font-black text-slate-950 dark:text-white">
-          <span className="mr-2 inline-flex h-7 w-7 items-center justify-center rounded-full bg-slate-950 text-sm text-white dark:bg-white dark:text-slate-950 forced-colors:border forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" aria-hidden="true">3</span>
-          回を選ぶ
-        </h2>
-        <p className="sr-only" aria-live="polite">
-          {visibleBySubject.reduce((total, [, list]) => total + list.length, 0)}回分を表示しています。
-        </p>
-        <div className="mt-3 grid gap-5">
-          {visibleBySubject.map(([subjectName, list]) => (
-            <div key={subjectName}>
-              <h3 className="text-base font-black text-slate-950 dark:text-white">{subjectName}</h3>
-              <ul className="mt-2 grid gap-3 md:grid-cols-2">
-                {list.map((item) => (
-                  <li
-                    key={item.id}
-                    className="flex min-w-0 flex-col rounded-2xl border-2 border-slate-300 bg-white p-4 dark:border-slate-600 dark:bg-slate-950 forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                  >
-                    <p className="text-base font-black leading-6 text-slate-950 dark:text-white">
-                      {item.label}
-                    </p>
-                    <p className="text-sm font-bold text-slate-700 dark:text-slate-200">
-                      <time dateTime={item.date}>{item.dateText}</time>
-                      {item.dateKind === "publication" ? "（試験実施日ではありません）" : null}
-                    </p>
-                    <ul className="mt-2 flex flex-wrap gap-2 text-xs font-bold text-slate-800 dark:text-slate-100">
-                      {item.questionCount !== null ? (
-                        <li className="rounded-full border border-slate-400 px-2 py-1">
-                          {item.questionCount}問
-                        </li>
-                      ) : null}
-                      <li className="rounded-full border border-slate-400 px-2 py-1">
-                        {scoringBadge(item)}
-                      </li>
-                    </ul>
-                    <div className="mt-3 flex flex-wrap items-center gap-3">
-                      {item.questionCount !== null ? (
-                        <Link
-                          href={item.href}
-                          prefetch={false}
-                          aria-label={`${item.subject} ${item.label}の問題演習を始める`}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-emerald-800 px-4 py-2 font-black text-white hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 forced-colors:border-2 forced-colors:border-[LinkText] forced-colors:bg-[Canvas] forced-colors:text-[LinkText]"
-                        >
-                          演習する
-                          <ArrowRight className="h-5 w-5" aria-hidden="true" />
-                        </Link>
-                      ) : null}
-                      <a
-                        href={item.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex min-h-11 items-center gap-1 text-sm font-bold text-sky-900 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
-                      >
-                        公式PDF
-                        <span className="sr-only">（{item.subject} {item.label}、新しいタブで開きます）</span>
-                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
-                      </a>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
-  );
+  const [subject, setSubject] = useState(initialSubject);
+  const activeItems = items.filter((item) => item.group === group);
+  const subjects = [...new Set(activeItems.map((item) => item.subject))];
+  const papers = activeItems.filter((item) => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
+  const latest = papers.find((item) => item.questionCount !== null);
+  return <div className="space-y-6">
+    <Tabs value={group} onValueChange={(value) => {
+      if (!groups.some((item) => item.id === value)) return;
+      setGroup(value as ExamGroupId); setSubject(null);
+      window.history.replaceState(window.history.state, "", catalogHref(value));
+    }}>
+      <TabsList className="mb-4 h-auto w-full flex-wrap">
+        {groups.map((item) => <TabsTrigger key={item.id} value={item.id} className="min-h-11 flex-1 whitespace-normal">{item.shortTitle}</TabsTrigger>)}
+      </TabsList>
+      {groups.map((item) => <TabsContent key={item.id} value={item.id}>
+        <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.description}</p>
+      </TabsContent>)}
+    </Tabs>
+    {!subject ? <section aria-labelledby="safety-exam-select">
+      <h2 id="safety-exam-select" className="mb-3 text-lg font-semibold">{group === "lckohyo" ? "試験を選ぶ" : "科目を選ぶ"}</h2>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+        {subjects.map((name) => {
+          const list = activeItems.filter((item) => item.subject === name);
+          return <Link key={name} href={catalogHref(group, name)} className="group flex min-h-32 flex-col justify-between gap-3 rounded-2xl border-2 border-sky-300 bg-sky-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-500 dark:border-sky-700 dark:bg-sky-950/40">
+            <span className="text-sm font-semibold text-foreground">{name}</span>
+            <span className="flex items-center justify-between text-xs text-sky-700 dark:text-sky-300">{list.reduce((n,q) => n+(q.questionCount ?? 0),0)}問<ChevronRight className="h-4 w-4" aria-hidden="true" /></span>
+          </Link>;
+        })}
+      </div>
+    </section> : <section aria-labelledby="safety-subject-heading" className="space-y-5">
+      <Link href={catalogHref(group)} className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" aria-hidden="true" />試験・科目を選び直す</Link>
+      <div className="rounded-2xl border border-border bg-card p-5">
+        <h2 id="safety-subject-heading" className="text-2xl font-bold">{subject}の過去問</h2>
+        <p className="mt-2 text-sm text-muted-foreground">{latest?.answerMode === "reference" ? "解答メモを書いて確認したら、次の問題へ進みます。" : "選択肢を押して解答し、解説を確認したら次の問題へ進みます。"}</p>
+        {latest ? <Button asChild className="mt-4"><Link href={latest.href} prefetch={false}>今すぐ解く<ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" /></Link></Button> : null}
+        {latest ? <p className="mt-2 text-xs text-muted-foreground">最新の{latest.dateText}・{latest.questionCount}問{latest.scoredCount === 0 ? "（自動採点なし）" : ""}</p> : null}
+      </div>
+      <h3 className="flex items-center gap-2 text-lg font-semibold"><Calendar className="h-4 w-4" aria-hidden="true" />年度別</h3>
+      <p className="text-xs text-muted-foreground">{groups.find((item) => item.id === group)?.dateNote}</p>
+      <ul className="grid gap-2 sm:grid-cols-2">
+        {papers.map((item) => <li key={item.id}>
+          <Link href={item.questionCount === null ? item.pdfUrl : item.href} prefetch={false} className="group flex min-h-20 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md">
+            <span><span className="block font-medium text-foreground">{item.dateText}</span><span className="mt-1 block text-xs text-muted-foreground">{item.questionCount === null ? "公式PDF" : item.scoredCount === 0 ? "自動採点なし" : `公式正答で採点 ${item.scoredCount}問`}</span></span>
+            <span className="flex shrink-0 items-center gap-2"><Badge variant="default">{item.questionCount ?? "—"}問</Badge><ChevronRight className="h-4 w-4 text-muted-foreground" aria-hidden="true" /></span>
+          </Link>
+        </li>)}
+      </ul>
+    </section>}
+  </div>;
 }

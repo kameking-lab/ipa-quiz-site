@@ -41,8 +41,7 @@ function renderPlayer(items: readonly ExamQuestion[] = questions) {
 }
 
 function answer(choice: number) {
-  fireEvent.click(screen.getByLabelText(`（${choice}）`));
-  fireEvent.click(screen.getByRole("button", { name: /^回答/ }));
+  fireEvent.click(screen.getByRole("radio", { name: new RegExp(`^選択肢 ${choice}:`) }));
 }
 
 function next() {
@@ -61,21 +60,48 @@ describe("ExamQuestionPlayer", () => {
     expect(images).toHaveLength(1);
     expect(images[0].getAttribute("src")).toBe(`/exam-library/${EXAM_ID}/q1.webp`);
     for (let choice = 1; choice <= 5; choice += 1) {
-      expect(screen.getByLabelText(`（${choice}）`)).toBeTruthy();
+      expect(screen.getByRole("radio", { name: new RegExp(`^選択肢 ${choice}:`) })).toBeTruthy();
     }
     // 画像の代替として本文テキストも読める（スマホの文字表示・PCの読み上げ用の両方）
-    expect(screen.getAllByText("問 1 テキスト版").length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/テキスト版/).length).toBeGreaterThan(0);
   });
 
-  it("requires a choice, then grades with the official answer and shows the explanation", () => {
+  it("immediately grades the selected choice with the official answer and shows the explanation", () => {
     renderPlayer();
-    fireEvent.click(screen.getByRole("button", { name: "回答する" }));
-    expect(screen.getByRole("alert").textContent).toContain("解答番号を1つ選んでください");
+    expect(screen.queryByRole("button", { name: "回答する" })).toBeNull();
 
     answer(3);
     expect(screen.getByRole("heading", { name: "正解" })).toBeTruthy();
     expect(screen.getByText(/あなたの回答 （3） ／ 公式正答 （3）/)).toBeTruthy();
     expect(screen.getByText("問1の解説本文")).toBeTruthy();
+  });
+
+  it("renders complete source choices and supports immediate keyboard answers", () => {
+    renderPlayer([question(1, { text: "問 1 正しいものはどれか。\n（1）最初の文章\n（2）次の文章\n（3）正しい文章\n（4）四番目\n（5）五番目" }), question(2)]);
+    expect(screen.getByRole("radio", { name: /^選択肢 3: 正しい文章/ })).toBeTruthy();
+    fireEvent.keyDown(window, { key: "1" });
+    expect(screen.getByRole("heading", { name: "不正解" })).toBeTruthy();
+    expect(screen.getByRole("radio", { name: /^選択肢 1:/ }).getAttribute("data-state")).toBe("wrong");
+    expect(screen.getByRole("radio", { name: /^選択肢 3:/ }).getAttribute("data-state")).toBe("revealed-correct");
+    fireEvent.keyDown(window, { key: "Enter" });
+    expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
+  });
+
+  it("keeps an essential diagram visible even when all choice text can be split", () => {
+    renderPlayer([question(1, { text: "問1 下図の装置に関する説明を選べ。\n（1）一\n（2）二\n（3）三\n（4）四\n（5）五" })]);
+    expect(screen.getByRole("button", { name: "原図で読む" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByRole("radio", { name: /^選択肢 1: 一/ })).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "文字で読む" }));
+    expect(screen.getByRole("button", { name: "文字で読む" }).getAttribute("aria-pressed")).toBe("true");
+    expect(screen.getByText("下図の装置に関する説明を選べ。")).toBeTruthy();
+  });
+
+  it("does not change an already submitted answer with another choice", () => {
+    renderPlayer();
+    answer(3);
+    answer(1);
+    expect(screen.getByRole("heading", { name: "正解" })).toBeTruthy();
+    expect(screen.getByRole("radio", { name: /^選択肢 3:/ }).getAttribute("aria-checked")).toBe("true");
   });
 
   it("says the explanation is pending with an official source link when none exists", () => {
@@ -91,9 +117,11 @@ describe("ExamQuestionPlayer", () => {
 
   it("does not grade unconfirmed or descriptive questions", () => {
     renderPlayer();
+    fireEvent.click(screen.getByText(/問題一覧・進捗/));
     fireEvent.click(screen.getByRole("button", { name: "問3（未回答）" }));
-    fireEvent.click(screen.getByLabelText("（2）"));
-    fireEvent.click(screen.getByRole("button", { name: "回答を記録する（採点なし）" }));
+    answer(2);
+    expect(screen.getByRole("radio", { name: /^選択肢 2:/ }).getAttribute("data-state")).toBe("selected");
+    expect(document.querySelector('[data-state="wrong"], [data-state="revealed-correct"]')).toBeNull();
     expect(screen.getByRole("heading", { name: "回答を記録しました（採点なし）" })).toBeTruthy();
     expect(screen.getByText(/公式正答が未登録のため、正誤を表示しません/)).toBeTruthy();
     expect(screen.queryByText("正解")).toBeNull();
@@ -169,6 +197,7 @@ describe("ExamQuestionPlayer", () => {
 
     fireEvent.click(screen.getByRole("button", { name: "続きから再開" }));
     expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
+    fireEvent.click(screen.getByText(/問題一覧・進捗/));
     expect(screen.getByRole("button", { name: "問1（不正解）" })).toBeTruthy();
     expect((screen.getByRole("checkbox", { name: "この端末に保存する" }) as HTMLInputElement).checked).toBe(true);
   });

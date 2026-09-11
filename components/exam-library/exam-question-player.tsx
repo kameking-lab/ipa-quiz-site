@@ -18,6 +18,9 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
+import { ChoiceButton } from "@/components/quiz/ChoiceButton";
+import { buttonVariants } from "@/components/ui/button";
+import { extractExamChoices } from "@/lib/exam-library-choices";
 import { ExamQuestionFigure } from "@/components/exam-library/exam-question-figure";
 import { ExamDeviceSavePanel } from "@/components/exam-library/exam-device-save-panel";
 import {
@@ -76,12 +79,10 @@ const STATUS_CELL_CLASS: Record<AnswerStatus, string> = {
     "border-slate-300 bg-white text-slate-900 dark:border-slate-600 dark:bg-slate-950 dark:text-slate-100",
 };
 
-const primaryButton =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl bg-emerald-800 px-5 py-3 font-black text-white hover:bg-emerald-900 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300 disabled:cursor-not-allowed disabled:opacity-60 forced-colors:border-2 forced-colors:border-[ButtonText] forced-colors:bg-[ButtonFace] forced-colors:text-[ButtonText]";
-const secondaryButton =
-  "inline-flex min-h-11 items-center justify-center gap-2 rounded-xl border-2 border-slate-700 bg-white px-4 py-2 font-black text-slate-950 hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 disabled:cursor-not-allowed disabled:opacity-50 dark:border-slate-300 dark:bg-slate-950 dark:text-white dark:hover:bg-slate-900 forced-colors:border-[ButtonText] forced-colors:bg-[ButtonFace] forced-colors:text-[ButtonText]";
+const primaryButton = buttonVariants({ variant: "primary", size: "lg" });
+const secondaryButton = buttonVariants({ variant: "outline", size: "lg" });
 const linkClass =
-  "inline-flex min-h-11 items-center gap-1 font-black text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]";
+  "inline-flex min-h-11 items-center gap-1 font-semibold text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]";
 
 function choiceText(choice: number | null | undefined): string {
   return typeof choice === "number" ? `（${choice}）` : "なし";
@@ -122,14 +123,13 @@ export function ExamQuestionPlayer({
   const [index, setIndex] = useState(0);
   const [view, setView] = useState<"question" | "summary">("question");
   const [draftChoice, setDraftChoice] = useState<number | null>(null);
-  const [validation, setValidation] = useState("");
   const [saveEnabled, setSaveEnabled] = useState(false);
   const [restoreHandled, setRestoreHandled] = useState(false);
   const [saveStatus, setSaveStatus] = useState("");
   const headingRef = useRef<HTMLHeadingElement>(null);
   const feedbackRef = useRef<HTMLHeadingElement>(null);
   const summaryRef = useRef<HTMLHeadingElement>(null);
-  const firstChoiceRef = useRef<HTMLInputElement>(null);
+  const firstChoiceRef = useRef<HTMLButtonElement>(null);
 
   // 端末内の保存データはマウント後だけ読む（サーバー描画では常に「なし」）
   const savedRaw = useSyncExternalStore(
@@ -179,7 +179,6 @@ export function ExamQuestionPlayer({
       const id = ids[nextIndex];
       setIndex(nextIndex);
       setDraftChoice(id ? (source[id]?.choice ?? null) : null);
-      setValidation("");
       setView("question");
       focusLater(headingRef);
     },
@@ -197,7 +196,6 @@ export function ExamQuestionPlayer({
 
   const showSummary = useCallback(() => {
     setView("summary");
-    setValidation("");
     focusLater(summaryRef);
   }, []);
 
@@ -208,17 +206,20 @@ export function ExamQuestionPlayer({
 
   const selectChoice = useCallback(
     (choice: number) => {
-      if (submitted) return;
+      if (!current || submitted || choice < 1 || choice > current.choiceCount) return;
       setDraftChoice(choice);
-      setValidation("");
+      commit({
+        ...answers,
+        [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true },
+      }, current.id);
+      focusLater(feedbackRef);
     },
-    [submitted],
+    [answers, commit, current, currentAnswer?.memo, submitted],
   );
 
   const submitAnswer = useCallback(() => {
     if (!current || submitted) return;
     if (current.choiceCount > 0 && draftChoice === null) {
-      setValidation("解答番号を1つ選んでください。");
       firstChoiceRef.current?.focus();
       return;
     }
@@ -343,15 +344,15 @@ export function ExamQuestionPlayer({
         if (choice > current.choiceCount) return;
         event.preventDefault();
         selectChoice(choice);
-        document.getElementById(`exam-choice-${current.id}-${choice}`)?.focus();
         return;
       }
-      if (event.key !== "Enter") return;
+      if (event.key !== "Enter" && event.key !== "ArrowRight") return;
+      if (event.key === "ArrowRight" && !submitted) return;
       const tag = event.target instanceof HTMLElement ? event.target.tagName.toLowerCase() : "";
       if (tag === "button" || tag === "a" || tag === "summary") return;
       event.preventDefault();
       if (submitted) moveNext();
-      else if (current.choiceCount > 0) submitAnswer();
+
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
@@ -362,12 +363,13 @@ export function ExamQuestionPlayer({
   const scoredAnswered = summary.correct + summary.incorrect;
   const shownChoice = submitted ? (currentAnswer?.choice ?? null) : draftChoice;
   const scorable = current ? isScorableQuestion(current) : false;
+  const parsedChoices = current ? extractExamChoices(current.text, current.choiceCount) : null;
   const sourcePage = current?.sourcePages?.[0];
   const showRestore =
     saved !== null && savedSubmittedCount > 0 && !saveEnabled && !restoreHandled;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_19rem] lg:items-start">
+    <div className="grid gap-6">
       <div className="min-w-0">
         {showRestore && saved ? (
           <div
@@ -375,7 +377,7 @@ export function ExamQuestionPlayer({
             aria-labelledby="exam-restore-title"
             className="mb-5 rounded-2xl border-2 border-sky-800 bg-sky-50 p-4 text-sky-950 dark:border-sky-300 dark:bg-sky-950/40 dark:text-sky-50 forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
           >
-            <h2 id="exam-restore-title" className="font-black">
+            <h2 id="exam-restore-title" className="font-semibold">
               この端末に保存した進捗があります
             </h2>
             <p className="mt-1 text-sm leading-6">
@@ -405,7 +407,7 @@ export function ExamQuestionPlayer({
               ref={summaryRef}
               id="exam-summary-title"
               tabIndex={-1}
-              className="text-2xl font-black outline-none focus-visible:ring-4 focus-visible:ring-sky-300"
+              className="text-2xl font-semibold outline-none focus-visible:ring-4 focus-visible:ring-sky-300"
             >
               {retryRound ? "解き直しの結果" : "結果と見直し"}
             </h2>
@@ -420,8 +422,8 @@ export function ExamQuestionPlayer({
                   key={term}
                   className="rounded-2xl border-2 border-slate-300 p-3 dark:border-slate-600 forced-colors:border-[CanvasText]"
                 >
-                  <dt className="text-xs font-black text-slate-600 dark:text-slate-300">{term}</dt>
-                  <dd className="mt-1 text-xl font-black">{value}</dd>
+                  <dt className="text-xs font-semibold text-slate-600 dark:text-slate-300">{term}</dt>
+                  <dd className="mt-1 text-xl font-semibold">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -455,7 +457,7 @@ export function ExamQuestionPlayer({
                 : "この結果は保存していません。ページを閉じると消えます。"}
             </p>
 
-            <h3 className="mt-7 text-lg font-black">回答の見直し</h3>
+            <h3 className="mt-7 text-lg font-semibold">回答の見直し</h3>
             <ol className="mt-3 divide-y divide-slate-200 rounded-2xl border-2 border-slate-300 dark:divide-slate-700 dark:border-slate-600 forced-colors:border-[CanvasText]">
               {questions.map((question) => {
                 const answer = answers[question.id];
@@ -466,7 +468,7 @@ export function ExamQuestionPlayer({
                     className="flex flex-wrap items-center justify-between gap-2 px-3 py-2"
                   >
                     <div className="min-w-0">
-                      <p className="font-black">
+                      <p className="font-semibold">
                         問{question.number}
                         <span
                           className={`ml-2 inline-block rounded-full border px-2 py-0.5 text-xs ${STATUS_CELL_CLASS[itemStatus]}`}
@@ -485,7 +487,7 @@ export function ExamQuestionPlayer({
                       type="button"
                       onClick={() => openFromReview(question.id)}
                       aria-label={`問${question.number}を開く`}
-                      className="inline-flex min-h-11 items-center px-2 text-sm font-black text-sky-900 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
+                      className="inline-flex min-h-11 items-center px-2 text-sm font-semibold text-sky-900 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
                     >
                       開く
                     </button>
@@ -497,14 +499,14 @@ export function ExamQuestionPlayer({
         ) : current ? (
           <section
             aria-labelledby="exam-question-heading"
-            className="rounded-3xl border-2 border-slate-300 bg-white p-4 text-slate-950 shadow-sm dark:border-slate-600 dark:bg-slate-950 dark:text-white forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-6"
+            className="rounded-2xl border border-border bg-card p-4 text-foreground shadow-sm forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-6"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <p id="exam-progress-text" className="text-sm font-black text-slate-700 dark:text-slate-200">
+              <p id="exam-progress-text" className="text-sm font-semibold text-slate-700 dark:text-slate-200">
                 {retryRound ? "解き直し " : ""}
                 {index + 1}問目／{roundIds.length}問
               </p>
-              <span className="rounded-full border border-slate-500 px-3 py-1 text-xs font-black">
+              <span className="rounded-full border border-slate-500 px-3 py-1 text-xs font-semibold">
                 {authorityBadge(current)}
               </span>
             </div>
@@ -513,7 +515,7 @@ export function ExamQuestionPlayer({
               aria-hidden="true"
             >
               <div
-                className="h-full bg-emerald-700 dark:bg-emerald-400 forced-colors:bg-[Highlight]"
+                className="h-full bg-primary forced-colors:bg-[Highlight]"
                 style={{ width: `${Math.round(((index + 1) / roundIds.length) * 100)}%` }}
               />
             </div>
@@ -522,7 +524,7 @@ export function ExamQuestionPlayer({
               id="exam-question-heading"
               tabIndex={-1}
               aria-describedby="exam-progress-text"
-              className="mt-3 scroll-mt-24 text-2xl font-black outline-none focus-visible:ring-4 focus-visible:ring-sky-300"
+              className="mt-3 scroll-mt-24 text-2xl font-semibold outline-none focus-visible:ring-4 focus-visible:ring-sky-300"
             >
               問{current.number}
               {current.sourceQuestionNumber && current.sourceQuestionNumber !== current.number ? <span className="ml-2 text-sm font-normal">（原文の問{current.sourceQuestionNumber}）</span> : null}
@@ -530,68 +532,40 @@ export function ExamQuestionPlayer({
             </h2>
 
             <div className="mt-3">
-              <ExamQuestionFigure question={current} />
+              <ExamQuestionFigure question={current} prompt={parsedChoices?.prompt} />
             </div>
 
             {current.choiceCount > 0 ? (
-              <fieldset
-                className="mt-5"
-                aria-describedby={validation ? "exam-answer-help exam-answer-error" : "exam-answer-help"}
-              >
-                <legend className="text-base font-black">解答番号を選ぶ</legend>
-                <p id="exam-answer-help" className="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-300">
-                  画像の選択肢（1）〜（{current.choiceCount}）から1つ選んでください。キーボードの1〜{current.choiceCount}とEnterでも操作できます。
+              <fieldset className="mt-5" aria-describedby="exam-answer-help">
+                <legend className="text-base font-semibold">選択肢を選んで解答</legend>
+                <p id="exam-answer-help" className="mt-1 text-sm leading-6 text-muted-foreground">
+                  {scorable ? "選ぶと正解と解説を表示します。" : "選ぶと回答を記録します。この問題は採点しません。"}
+                  <span className="hidden sm:inline"> 数字キー1〜{current.choiceCount}でも選べます。</span>
                 </p>
-                <div className="mt-3 grid grid-cols-5 gap-2">
-                  {Array.from({ length: current.choiceCount }, (_, offset) => offset + 1).map((choice) => {
-                    const selected = shownChoice === choice;
-                    const isCorrect = submitted && scorable && current.correctChoice === choice;
-                    const isWrongPick = submitted && scorable && selected && !isCorrect;
-                    const tone = isCorrect
-                      ? "border-emerald-800 bg-emerald-100 text-emerald-950 dark:border-emerald-300 dark:bg-emerald-950 dark:text-emerald-50"
-                      : isWrongPick
-                        ? "border-red-800 bg-red-100 text-red-950 dark:border-red-300 dark:bg-red-950 dark:text-red-50"
-                        : selected
-                          ? "border-slate-950 bg-slate-950 text-white dark:border-white dark:bg-white dark:text-slate-950"
-                          : "border-slate-300 bg-slate-50 text-slate-950 hover:border-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-white";
-                    const note = isCorrect ? "公式正答" : selected ? "選択" : "";
-                    return (
-                      <label
-                        key={choice}
-                        className={`relative flex min-h-14 cursor-pointer flex-col items-center justify-center rounded-xl border-2 text-lg font-black has-[:focus-visible]:ring-4 has-[:focus-visible]:ring-sky-300 forced-colors:border-[ButtonText] ${tone} ${submitted ? "cursor-default" : ""}`}
-                      >
-                        <input
-                          ref={choice === 1 ? firstChoiceRef : undefined}
-                          id={`exam-choice-${current.id}-${choice}`}
-                          type="radio"
-                          name={`exam-answer-${current.id}`}
-                          value={choice}
-                          checked={selected}
-                          disabled={submitted}
-                          onChange={() => selectChoice(choice)}
-                          aria-label={`（${choice}）${note ? ` ${note}` : ""}`}
-                          className="sr-only"
-                        />
-                        <span aria-hidden="true">（{choice}）</span>
-                        {note ? (
-                          <span className="text-[11px] font-black leading-4" aria-hidden="true">
-                            {note}
-                          </span>
-                        ) : null}
-                      </label>
-                    );
-                  })}
+                <div className="mt-3 grid gap-3" role="radiogroup" aria-label="選択肢">
+                  {Array.from({ length: current.choiceCount }, (_, offset) => offset + 1).map((choice) => (
+                    <ChoiceButton
+                      key={choice}
+                      ref={choice === 1 ? firstChoiceRef : undefined}
+                      choiceKey={`${choice}`}
+                      text={parsedChoices?.choices[choice - 1]?.text ?? `原図・問題文の（${choice}）`}
+                      selected={shownChoice === choice}
+                      correct={scorable && current.correctChoice === choice}
+                      revealed={submitted && scorable}
+                      disabled={submitted}
+                      shortcutIndex={choice}
+                      onClick={() => selectChoice(choice)}
+                      onKeyDown={(event) => {
+                        if (submitted || !["ArrowDown", "ArrowUp", "ArrowLeft", "ArrowRight"].includes(event.key)) return;
+                        event.preventDefault();
+                        event.stopPropagation();
+                        const radios = event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>('[role="radio"]');
+                        const offset = event.key === "ArrowDown" || event.key === "ArrowRight" ? 1 : -1;
+                        radios?.[(choice - 1 + offset + current.choiceCount) % current.choiceCount]?.focus();
+                      }}
+                    />
+                  ))}
                 </div>
-                {validation ? (
-                  <p id="exam-answer-error" role="alert" className="mt-3 font-bold text-red-800 dark:text-red-200">
-                    {validation}
-                  </p>
-                ) : null}
-                {!submitted ? (
-                  <button type="button" onClick={submitAnswer} className={`${primaryButton} mt-4 w-full sm:w-auto`}>
-                    {scorable ? "回答する" : "回答を記録する（採点なし）"}
-                  </button>
-                ) : null}
               </fieldset>
             ) : (
               <div className="mt-5">
@@ -600,7 +574,7 @@ export function ExamQuestionPlayer({
                     ? "記述式の問題です。自動採点はしません。解答の下書きを書いてから、公式PDFで確認してください。"
                     : "この問題は解答番号ボタンを用意できていません。画像で問題を確認してください。採点はしません。"}
                 </p>
-                <label htmlFor={`exam-memo-${current.id}`} className="mt-3 block font-black">
+                <label htmlFor={`exam-memo-${current.id}`} className="mt-3 block font-semibold">
                   解答メモ（下書き・任意）
                 </label>
                 <textarea
@@ -639,7 +613,7 @@ export function ExamQuestionPlayer({
                 <h3
                   ref={feedbackRef}
                   tabIndex={-1}
-                  className="flex items-center gap-2 text-lg font-black outline-none focus-visible:ring-4 focus-visible:ring-current"
+                  className="flex items-center gap-2 text-lg font-semibold outline-none focus-visible:ring-4 focus-visible:ring-current"
                 >
                   {status === "correct" ? (
                     <CheckCircle2 className="h-6 w-6 shrink-0" aria-hidden="true" />
@@ -673,7 +647,7 @@ export function ExamQuestionPlayer({
                 </div>
 
                 <div className="mt-4 border-t border-current/25 pt-3">
-                  <h4 className="font-black">AIによる学習用解説</h4>
+                  <h4 className="font-semibold">AIによる学習用解説</h4>
                   {current.explanation ? <p className="mt-1 text-xs leading-5">公式解説ではありません。法令の時点や出典も確認しながら学習してください。</p> : null}
                   {current.explanation ? (
                     <p className="mt-1 whitespace-pre-line text-sm leading-7">{current.explanation}</p>
@@ -723,8 +697,8 @@ export function ExamQuestionPlayer({
                 <ArrowLeft className="h-5 w-5" aria-hidden="true" />
                 前へ
               </button>
-              <button type="button" onClick={moveNext} className={submitted ? primaryButton : secondaryButton}>
-                {index >= roundIds.length - 1 ? "結果を見る" : submitted ? "次の問題" : "スキップして次へ"}
+              <button type="button" onClick={moveNext} className={`${submitted ? primaryButton : secondaryButton} flex-1`}>
+                {index >= roundIds.length - 1 ? "結果を見る" : submitted ? "次の問題へ" : "スキップして次へ"}
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
             </div>
@@ -732,19 +706,21 @@ export function ExamQuestionPlayer({
         ) : null}
       </div>
 
-      <aside className="grid min-w-0 gap-4 lg:sticky lg:top-24" aria-label="演習の進み具合">
+      <aside className="grid min-w-0 gap-4" aria-label="演習の進み具合">
+        <details className="rounded-2xl border border-border bg-card p-4">
+          <summary className="cursor-pointer py-2 text-sm font-medium">問題一覧・進捗（回答 {summary.answered}／{summary.total}）</summary>
         <nav
           aria-labelledby="exam-navigator-title"
-          className="rounded-2xl border-2 border-slate-300 bg-white p-4 dark:border-slate-600 dark:bg-slate-950 forced-colors:border-[CanvasText] forced-colors:bg-[Canvas]"
+          className="mt-3"
         >
-          <h2 id="exam-navigator-title" className="flex items-center gap-2 font-black text-slate-950 dark:text-white">
+          <h2 id="exam-navigator-title" className="flex items-center gap-2 font-semibold text-slate-950 dark:text-white">
             <ClipboardList className="h-5 w-5" aria-hidden="true" />
             {retryRound ? "解き直す問題" : "問題一覧"}
           </h2>
           <p className="mt-1 text-xs font-bold text-slate-700 dark:text-slate-200">
             回答 {summary.answered}／{summary.total}　正解 {summary.correct}　不正解 {summary.incorrect}
           </p>
-          <ol className="mt-3 grid grid-cols-6 gap-1.5 sm:grid-cols-10 lg:grid-cols-5">
+          <ol className="mt-3 grid grid-cols-6 gap-1.5 sm:grid-cols-10">
             {roundIds.map((id, position) => {
               const question = byId.get(id);
               if (!question) return null;
@@ -757,7 +733,7 @@ export function ExamQuestionPlayer({
                     onClick={() => goTo(position)}
                     aria-current={active ? "step" : undefined}
                     aria-label={`問${question.number}（${STATUS_LABEL[cellStatus]}）`}
-                    className={`flex min-h-11 w-full flex-col items-center justify-center rounded-lg border-2 text-sm font-black leading-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 forced-colors:border-[ButtonText] ${STATUS_CELL_CLASS[cellStatus]} ${
+                    className={`flex min-h-11 w-full flex-col items-center justify-center rounded-lg border-2 text-sm font-semibold leading-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 forced-colors:border-[ButtonText] ${STATUS_CELL_CLASS[cellStatus]} ${
                       active ? "ring-4 ring-sky-500 forced-colors:ring-[Highlight]" : ""
                     }`}
                   >
@@ -777,6 +753,7 @@ export function ExamQuestionPlayer({
             結果と見直しを表示
           </button>
         </nav>
+        </details>
 
         <ExamDeviceSavePanel enabled={saveEnabled} status={saveStatus} onToggle={toggleSave} />
       </aside>

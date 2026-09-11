@@ -87,31 +87,16 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
     <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
       <ExamStructuredData title={TITLE} description={DESCRIPTION} url={url} />
 
-      <header className="rounded-[2rem] border-2 border-slate-800 bg-slate-950 p-5 text-white shadow-xl forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText] sm:p-8">
-        <p className="text-sm font-black tracking-[.12em] text-cyan-300 forced-colors:text-[CanvasText]">
-          PAST EXAM PRACTICE
-        </p>
-        <h1 className="mt-2 text-3xl font-black tracking-tight sm:text-4xl">
-          公表試験問題の過去問演習
-        </h1>
-        <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-200 forced-colors:text-[CanvasText] sm:text-base">
-          公益財団法人安全衛生技術試験協会が公表している試験問題を、試験・科目・回の順に選んで1問ずつ解けます。公式正答が確認できる問題だけ採点し、間違えた問題はまとめて解き直せます。
-        </p>
-        <ul className="mt-5 flex flex-wrap gap-2 text-sm font-bold">
-          <li className="rounded-full border border-white/40 px-3 py-2">{playable.length}科目・回分を演習可能</li>
-          <li className="rounded-full border border-white/40 px-3 py-2">{questionTotal}問</li>
-          <li className="rounded-full border border-white/40 px-3 py-2">公式正答で採点 {scoredTotal}問</li>
-          <li className="rounded-full border border-white/40 px-3 py-2">初期設定は保存なし</li>
-        </ul>
-        {checkedAt ? (
-          <p className="mt-4 text-xs leading-5 text-slate-300 forced-colors:text-[CanvasText]">
-            公表ページの確認日: <time dateTime={checkedAt}>{formatExamDate(checkedAt)}</time>
-          </p>
-        ) : null}
+      <header className="mb-6">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">安全衛生の過去問</h1>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">試験を選んで、今すぐ解く。択一問題は選択肢を押すと解答結果が表示されます。</p>
+        <p className="mt-2 text-xs text-muted-foreground">{playable.length}科目・回分 / <span>{questionTotal}問</span> / 公式正答で採点 {scoredTotal}問</p>
+        {checkedAt ? <p className="mt-1 text-xs text-muted-foreground">公表ページの確認日: {formatExamDate(checkedAt)}</p> : null}
       </header>
 
       <div className="mt-8">
         <ExamCatalogBrowser
+          key={`${initialGroup}-${initialSubject ?? "all"}`}
           groups={groups}
           items={items}
           initialGroup={initialGroup}

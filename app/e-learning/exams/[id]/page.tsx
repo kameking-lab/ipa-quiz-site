@@ -78,46 +78,46 @@ export default async function ExamPage({ params }: ExamPageProps) {
   const backHref = `${EXAM_LIBRARY_PATH}?${new URLSearchParams({ group: entry.group, subject: entry.subject }).toString()}`;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
       <ExamStructuredData title={title} description={examDescription(entry, questions.length, scoredCount)} url={url} />
 
       <nav aria-label="パンくず補助" className="mb-3">
         <Link
           href={backHref}
           prefetch={false}
-          className="inline-flex min-h-11 items-center gap-2 font-black text-sky-900 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
+          className="inline-flex min-h-11 items-center gap-2 font-semibold text-sky-900 underline underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
         >
           <ArrowLeft className="h-5 w-5" aria-hidden="true" />
-          試験・科目・回の選択へ戻る
+          試験の過去問一覧へ
         </Link>
       </nav>
 
       <header className="mb-6">
-        <p className="text-sm font-black text-emerald-800 dark:text-emerald-300 forced-colors:text-[CanvasText]">
+        <p className="text-sm font-semibold text-muted-foreground forced-colors:text-[CanvasText]">
           {group?.title ?? "公表試験問題"}
         </p>
-        <h1 className="mt-1 text-2xl font-black tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+        <h1 className="mt-1 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
           {entry.subject}
           <span className="ml-2 inline-block text-xl sm:text-2xl">{entry.label}</span>
         </h1>
         <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-800 dark:text-slate-100">
           <div className="flex gap-1">
-            <dt className="font-black">{entry.dateKind === "publication" ? "公表時期" : "実施日"}:</dt>
+            <dt className="font-semibold">{entry.dateKind === "publication" ? "公表時期" : "実施日"}:</dt>
             <dd>
               <time dateTime={entry.date}>{formatExamDate(entry.date)}</time>
               {entry.dateKind === "publication" ? "（試験実施日ではありません）" : null}
             </dd>
           </div>
           <div className="flex gap-1">
-            <dt className="font-black">問題数:</dt>
+            <dt className="font-semibold">問題数:</dt>
             <dd>{questions.length}問</dd>
           </div>
           <div className="flex gap-1">
-            <dt className="font-black">公式正答で採点:</dt>
+            <dt className="font-semibold">公式正答で採点:</dt>
             <dd>{scoredCount}問</dd>
           </div>
           <div className="flex gap-1">
-            <dt className="font-black">公表ページ確認日:</dt>
+            <dt className="font-semibold">公表ページ確認日:</dt>
             <dd>
               <time dateTime={entry.checkedAt}>{formatExamDate(entry.checkedAt)}</time>
             </dd>
@@ -139,7 +139,7 @@ export default async function ExamPage({ params }: ExamPageProps) {
 
       {entry.noteLinks ? (
         <section aria-labelledby="exam-note-links-title" className="mt-8">
-          <h2 id="exam-note-links-title" className="text-xl font-black text-slate-950 dark:text-white">
+          <h2 id="exam-note-links-title" className="text-xl font-semibold text-slate-950 dark:text-white">
             関連する解説記事
           </h2>
           <ul className="mt-2 grid gap-1">
@@ -149,7 +149,7 @@ export default async function ExamPage({ params }: ExamPageProps) {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center gap-1 font-black text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
+                  className="inline-flex min-h-11 items-center gap-1 font-semibold text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
                 >
                   {link.title}
                   <span className="sr-only">（新しいタブで開きます）</span>
