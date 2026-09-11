@@ -19,6 +19,7 @@ import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
 
 interface ExamPageProps {
   params: Promise<{ id: string }>;
+  searchParams?: Promise<{ question?: string | string[]; view?: string | string[] }>;
 }
 
 // 問題データを表示できるカタログ内の回だけを受け付ける（その他は404）
@@ -66,11 +67,14 @@ export async function generateMetadata({ params }: ExamPageProps): Promise<Metad
   };
 }
 
-export default async function ExamPage({ params }: ExamPageProps) {
+export default async function ExamPage({ params, searchParams }: ExamPageProps) {
   const { id } = await params;
   const resolved = resolveExam(id);
   if (!resolved) notFound();
   const { entry, questions } = resolved;
+  const query = await searchParams;
+  const requestedQuestion = query?.question;
+  const initialQuestionId = typeof requestedQuestion === "string" && questions.some((question) => question.id === requestedQuestion) ? requestedQuestion : undefined;
   const group = findExamGroup(entry.group);
   const scoredCount = questions.filter(isScorableQuestion).length;
   const title = examTitle(entry);
@@ -78,7 +82,7 @@ export default async function ExamPage({ params }: ExamPageProps) {
   const backHref = `${EXAM_LIBRARY_PATH}?${new URLSearchParams({ group: entry.group, subject: entry.subject }).toString()}`;
 
   return (
-    <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6">
       <ExamStructuredData title={title} description={examDescription(entry, questions.length, scoredCount)} url={url} />
 
       <nav aria-label="パンくず補助" className="mb-3">
@@ -92,14 +96,15 @@ export default async function ExamPage({ params }: ExamPageProps) {
         </Link>
       </nav>
 
-      <header className="mb-6">
+      <header className="mb-4">
         <p className="text-sm font-semibold text-muted-foreground forced-colors:text-[CanvasText]">
           {group?.title ?? "公表試験問題"}
         </p>
-        <h1 className="mt-1 text-2xl font-semibold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+        <h1 className="mt-1 text-lg font-semibold tracking-tight text-slate-950 dark:text-white sm:text-xl">
           {entry.subject}
-          <span className="ml-2 inline-block text-xl sm:text-2xl">{entry.label}</span>
+          <span className="ml-2 inline-block text-base sm:text-lg">{entry.label}</span>
         </h1>
+        <details className="mt-2 text-sm"><summary className="cursor-pointer py-2 text-muted-foreground">出典・試験情報</summary>
         <dl className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-sm text-slate-800 dark:text-slate-100">
           <div className="flex gap-1">
             <dt className="font-semibold">{entry.dateKind === "publication" ? "公表時期" : "実施日"}:</dt>
@@ -123,13 +128,16 @@ export default async function ExamPage({ params }: ExamPageProps) {
             </dd>
           </div>
         </dl>
-        <p className="mt-3 rounded-xl border-2 border-amber-700 bg-amber-50 p-3 text-sm font-bold leading-6 text-amber-950 dark:border-amber-300 dark:bg-amber-950/40 dark:text-amber-50 forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]">
+        </details>
+        <p className="mt-2 text-xs leading-5 text-muted-foreground">
           出題当時の法令に基づく問題です。その後の法改正で、現行の規定と異なる場合があります。
         </p>
       </header>
 
       <ExamQuestionPlayer
-        key={entry.id}
+        key={`${entry.id}:${initialQuestionId ?? "resume"}`}
+        initialQuestionId={initialQuestionId}
+        initialView={query?.view === "results" ? "summary" : "question"}
         examId={entry.id}
         examTitle={title}
         pdfUrl={entry.pdfUrl}

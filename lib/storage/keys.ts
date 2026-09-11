@@ -1,5 +1,6 @@
 export const LS_KEYS = {
   examLibraryPrefix: "ipa-quiz:exam-library:v1:",
+  examLibrarySessionPrefix: "ipa-quiz:exam-library-session:v1:",
   history: "ipa-quiz:history:v1",
   starred: "ipa-quiz:starred:v1",
   premium: "ipa-quiz:premium:v1",

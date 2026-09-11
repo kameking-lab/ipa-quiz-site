@@ -1,3 +1,4 @@
+import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { ArrowRight, Monitor, HardHat } from "lucide-react";
@@ -20,12 +21,13 @@ const categories = [
 ];
 
 export default function HomePage() {
-  return <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-10 sm:px-6 sm:py-16">
+  return <main className="mx-auto w-full max-w-4xl flex-1 px-4 py-5 sm:px-6 sm:py-10">
     <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
+    <div className="mb-3 flex justify-center"><ChihuahuaMascot size={72} alt="一緒に学ぶチワワ" /></div>
     <h1 className="text-center text-2xl font-bold sm:text-3xl">学習する試験を選ぶ</h1>
-    <p className="mb-8 mt-3 text-center text-sm text-muted-foreground">IPAか安全を選んで、過去問の学習を始めましょう。</p>
+    <p className="mb-5 mt-3 text-center text-sm text-muted-foreground">IPAか安全を選んで、過去問の学習を始めましょう。</p>
     <nav aria-label="IPAか安全を選ぶ" className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-      {categories.map(({ name, description, examples, href, icon: Icon, color, iconColor }) => <Link key={name} href={href} className={`flex min-h-56 flex-col items-center justify-center rounded-3xl border-2 p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary sm:min-h-72 ${color}`}>
+      {categories.map(({ name, description, examples, href, icon: Icon, color, iconColor }) => <Link key={name} href={href} className={`flex min-h-48 flex-col items-center justify-center rounded-3xl border-2 p-6 text-center shadow-sm transition hover:-translate-y-1 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary sm:min-h-72 ${color}`}>
         <Icon className={`mb-3 h-10 w-10 ${iconColor}`} aria-hidden="true" />
         <span className="text-4xl font-bold sm:text-5xl">{name}</span>
         <span className="mt-3 font-semibold">{description}</span>

@@ -83,6 +83,13 @@ function isActive(pathname: string | null, tab: TabItem): boolean {
  */
 export function MobileBottomNav() {
   const pathname = usePathname();
+  const safety = pathname?.startsWith("/e-learning");
+  const tabs: TabItem[] = safety ? [
+    { href: "/e-learning/exams", label: "試験一覧", icon: BookOpen, match: ["/e-learning/exams"] },
+    { href: "/e-learning/search", label: "検索", icon: Search, match: ["/e-learning/search"] },
+    { href: "/e-learning/progress", label: "進捗・復習", icon: LineChart, match: ["/e-learning/progress"] },
+  ] : TABS;
+  const secondary = safety ? [{ href: "/", label: "IPA・安全を選ぶ", icon: BookOpen }] : SECONDARY_NAV;
   const [menuOpen, setMenuOpen] = React.useState(false);
 
   // Hide the bottom tab bar inside focused learning flows (/quiz*, /q/*): those
@@ -97,7 +104,7 @@ export function MobileBottomNav() {
         className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 shadow-[0_-2px_10px_-6px_rgba(0,0,0,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/80 md:hidden print:hidden"
       >
         <ul className="mx-auto flex max-w-3xl items-stretch">
-          {TABS.map((tab) => {
+          {tabs.map((tab) => {
             const Icon = tab.icon;
             const active = isActive(pathname, tab);
             return (
@@ -148,7 +155,7 @@ export function MobileBottomNav() {
             <SheetTitle>メニュー</SheetTitle>
           </SheetHeader>
           <nav aria-label="二次メニュー" className="flex flex-col gap-1 overflow-y-auto">
-            {SECONDARY_NAV.map((item) => {
+            {secondary.map((item) => {
               const Icon = item.icon;
               return (
                 <SheetClose asChild key={item.href}>

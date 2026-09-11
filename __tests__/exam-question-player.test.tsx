@@ -45,12 +45,13 @@ function answer(choice: number) {
 }
 
 function next() {
-  fireEvent.click(screen.getByRole("button", { name: /次の問題|結果を見る|スキップして次へ/ }));
+  fireEvent.click(screen.getAllByRole("button", { name: /次の問題|結果を見る|スキップして次へ/ })[0]);
 }
 
 describe("ExamQuestionPlayer", () => {
   beforeEach(() => {
     window.localStorage.clear();
+    window.sessionStorage.clear();
   });
 
   it("shows one question image at a time with fixed answer controls and a text fallback", () => {
@@ -177,6 +178,18 @@ describe("ExamQuestionPlayer", () => {
     act(() => {
       fireEvent.click(toggle);
     });
+    expect(window.localStorage.getItem(examProgressKey(EXAM_ID))).toBeNull();
+  });
+
+  it("keeps answers across same-tab navigation without opting into long-term storage", () => {
+    const first = renderPlayer();
+    answer(3);
+    next();
+    first.unmount();
+    renderPlayer();
+    expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
+    fireEvent.click(screen.getByRole("button", { name: "結果を見る" }));
+    expect(screen.getByText(/あなたの回答 （3） ／ 公式正答 （3）/)).toBeTruthy();
     expect(window.localStorage.getItem(examProgressKey(EXAM_ID))).toBeNull();
   });
 

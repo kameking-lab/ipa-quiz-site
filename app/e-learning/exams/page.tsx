@@ -85,18 +85,18 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   const url = `${SITE_URL}${EXAM_LIBRARY_PATH}`;
 
   return (
-    <div className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">
+    <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
       <ExamStructuredData title={TITLE} description={DESCRIPTION} url={url} />
 
       <header className="mb-6">
         <Link href="/" className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← IPA・安全を選び直す</Link>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">安全衛生の過去問</h1>
-        <p className="mt-2 text-sm leading-7 text-muted-foreground">試験を選んで、今すぐ解く。択一問題は選択肢を押すと解答結果が表示されます。</p>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">資格を選んで、今すぐ解く。年度別からも問題を選べます。</p>
         <p className="mt-2 text-xs text-muted-foreground">{playable.length}科目・回分 / <span>{questionTotal}問</span> / 公式正答で採点 {scoredTotal}問</p>
         {checkedAt ? <p className="mt-1 text-xs text-muted-foreground">公表ページの確認日: {formatExamDate(checkedAt)}</p> : null}
       </header>
 
-      <div className="mt-8">
+      <div>
         <ExamCatalogBrowser
           key={`${initialGroup}-${initialSubject ?? "all"}`}
           groups={groups}

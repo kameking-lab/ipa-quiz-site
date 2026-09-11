@@ -242,6 +242,13 @@ describe("shuffleChoices", () => {
     expect(Object.values(shuffled.choices!).sort()).toEqual(["A値", "B値", "C値", "D値"]);
   });
 
+  it("keeps original labels when explanation prose refers to choices", () => {
+    const original = q({ choices: { ア: "123", イ: "124", ウ: "127", エ: "128" }, answer: "ア", explanation: "イの124、ウの127、エの128は条件を満たさない。" });
+    vi.spyOn(Math, "random").mockReturnValue(0);
+    expect(shuffleChoices(original)).toBe(original);
+    expect(original.choices?.イ).toBe("124");
+  });
+
   it("choices を持たない問題はそのまま返す", () => {
     const noChoices = q({ choices: undefined, answer: "記述解答" });
     expect(shuffleChoices(noChoices)).toBe(noChoices);

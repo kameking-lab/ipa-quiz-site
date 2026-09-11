@@ -3,10 +3,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { SessionSummaryGate } from "@/components/motivation/SessionSummaryGate";
-import { SiteLogo } from "@/components/SiteLogo";
 import { HomeExamGrid } from "@/components/home/HomeExamGrid";
-import { HomeHeroLede } from "@/components/home/HomeHeroLede";
-import { HomeQuickTrialCta } from "@/components/home/HomeQuickTrialCta";
 import { HomeFlagshipEssay } from "@/components/home/HomeFlagshipEssay";
 import { HomeFoundationKamokuB } from "@/components/home/HomeFoundationKamokuB";
 import { HomeTopicGrid } from "@/components/home/HomeTopicGrid";
@@ -18,17 +15,13 @@ import { LearningCalendar } from "@/components/home/LearningCalendar";
 import { HomeAuxSection } from "@/components/home/HomeAuxSection";
 import { ContinueFromLast } from "@/components/ContinueFromLast";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
-import { HeroAiDemo } from "@/components/home/HeroAiDemo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
-import {
-  APPROX_QUESTION_COUNT_LABEL,
-  TOTAL_QUESTIONS_PUBLISHED,
-} from "@/lib/constants/question-counts";
+import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
 // Snippet-optimised: front-load the value prop + count and drop the 13-code list
@@ -64,9 +57,6 @@ export const metadata: Metadata = {
 
 export default function IpaPage() {
   const questionCounts = EXAM_QUESTION_COUNTS;
-
-  // Published (answerable/indexable) total — the only count shown to users.
-  const totalQuestions = TOTAL_QUESTIONS_PUBLISHED;
 
   const availableExamEntries = (
     Object.entries(questionCounts) as Array<[ExamCode, number]>
@@ -126,28 +116,17 @@ export default function IpaPage() {
         <SessionSummaryGate />
       </React.Suspense>
 
-      <div className="mb-6">
-        <SiteLogo />
-      </div>
-
       <Link href="/" className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← IPA・安全を選び直す</Link>
-      <HomeReturningHeader recommendationPool={recommendationPool} />
-
-      <section aria-label="試験を選んで学習を始める" className="mb-6">
-        <HomeHeroLede totalQuestions={totalQuestions} />
-        {/* CTA sits directly under the (SSR-stable) lede so its on-screen
-            position never moves. HeroAiDemo and TotalAnswerCounter render null
-            during SSR and pop in only after hydration / an async fetch; placing
-            them ABOVE the CTA shoved it down ~200-290px post-load, so a real
-            mouse/agent click computed on the first-paint position landed on the
-            shifted-in content instead of the link (empirical review F-2). They
-            now mount below the CTA, where their pop-in shifts only the exam
-            grid. */}
-        <HomeQuickTrialCta />
-        <HeroAiDemo />
-        <TotalAnswerCounter />
+      <header className="mb-6">
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">IPAの過去問</h1>
+        <p className="mt-2 text-sm leading-7 text-muted-foreground">資格を選んで、今すぐ解く。年度別・分野別からも問題を選べます。</p>
+      </header>
+      <section aria-labelledby="ipa-exam-select" className="mb-8">
+        <h2 id="ipa-exam-select" className="mb-3 text-lg font-semibold">資格を選ぶ</h2>
         <HomeExamGrid questionCounts={questionCounts} />
       </section>
+      <HomeReturningHeader recommendationPool={recommendationPool} />
+      <TotalAnswerCounter />
 
       <HomeFlagshipEssay />
 

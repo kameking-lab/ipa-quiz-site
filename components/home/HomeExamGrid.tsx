@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Shuffle } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 import { createHistoryStore } from "@/lib/storage/history";
 import type { ExamCode } from "@/lib/questions/types";
 
@@ -223,8 +223,8 @@ function ExamCard({
     >
       <Link
         href={`/${exam.id}`}
-        aria-label={`${exam.name}の詳細を開く${level === "in-progress" ? `（解答中・${uniqueAnswered}問解答済み・正答率${accuracy ?? "—"}%）` : level === "passing" ? "（合格圏）" : "（未挑戦）"}`}
-        className="flex flex-col gap-1.5 rounded-lg transition-transform motion-safe:hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        aria-label={`${exam.name}${exam.sub ?? ""}の過去問を選ぶ${level === "in-progress" ? `（解答中・${uniqueAnswered}問解答済み・正答率${accuracy ?? "—"}%）` : level === "passing" ? "（合格圏）" : "（未挑戦）"}`}
+        className="flex min-h-32 flex-col justify-between gap-3 rounded-lg transition-transform motion-safe:hover:-translate-y-0.5 focus:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
       >
         <div className="flex items-start justify-between gap-1">
           <span className="rounded-lg bg-sky-600 px-2 py-0.5 text-sm font-bold text-white">
@@ -254,30 +254,13 @@ function ExamCard({
           >
             {tier.label}
           </span>
-          <span className="text-[11px] text-sky-700 dark:text-sky-300">
+          <span className="ml-auto flex items-center gap-2 text-xs text-sky-700 dark:text-sky-300">
             {uniqueAnswered > 0 ? `${uniqueAnswered}/${count}問` : `${count}問`}
+            <ChevronRight className="h-4 w-4" aria-hidden="true" />
           </span>
         </div>
       </Link>
-      {exam.tier === "beginner" ? (
-        <Link
-          href={`/quiz?mode=random&exam=${exam.id}`}
-          aria-label={`今すぐ解く（${exam.name}・ランダム出題）`}
-          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1 whitespace-nowrap rounded-full bg-emerald-700 px-3 py-1.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-emerald-700 dark:hover:bg-emerald-600 min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:w-auto min-[480px]:justify-start"
-        >
-          <Shuffle className="h-3.5 w-3.5 shrink-0" aria-hidden="true" />
-          今すぐ解く →
-        </Link>
-      ) : (
-        <Link
-          href={`/quiz?mode=random&exam=${exam.id}`}
-          aria-label={`ランダムに解く（${exam.name}）`}
-          className="mt-auto flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-md bg-white/90 px-3 py-2 text-xs font-semibold text-sky-700 shadow-sm ring-1 ring-sky-200 transition hover:bg-sky-600 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:bg-zinc-900/90 dark:text-sky-300 dark:ring-sky-800 dark:hover:bg-sky-600 dark:hover:text-white min-[480px]:absolute min-[480px]:bottom-1.5 min-[480px]:right-1.5 min-[480px]:z-10 min-[480px]:mt-0 min-[480px]:h-11 min-[480px]:w-11 min-[480px]:justify-center min-[480px]:gap-0 min-[480px]:px-0 min-[480px]:py-0 min-[480px]:text-transparent"
-        >
-          <Shuffle className="h-4 w-4 shrink-0" aria-hidden="true" />
-          <span className="min-[480px]:hidden">ランダムに解く →</span>
-        </Link>
-      )}
+
     </div>
   );
 }
