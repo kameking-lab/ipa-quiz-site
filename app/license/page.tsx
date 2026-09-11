@@ -54,6 +54,12 @@ export default function LicensePage() {
         </div>
 
         <div>
+          <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">安全衛生の試験問題について</h2>
+          <p>安全衛生の過去問演習は、公益財団法人安全衛生技術試験協会が公表する問題を収録しています。各演習ページに出典PDFと対象年月を表示しています。学習用のAI解説は、試験実施機関の公式解説とは別のものです。</p>
+          <Link href="/e-learning/exams" className="mt-2 inline-block underline">安全衛生の過去問演習と出典を確認する</Link>
+        </div>
+
+        <div>
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">AI 生成解説・オリジナルコンテンツ</h2>
           <p className="mb-2">
             AI コパイロットが生成する解説・補足説明・類題は、本サービスが独自に生成するものです。
@@ -78,7 +84,7 @@ export default function LicensePage() {
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">リンク・引用</h2>
           <p>
             本サービスへのリンクは自由です。記事・ブログ・SNS 等での紹介を歓迎します。
-            問題の引用は出典（過去問 AI および IPA）を明記の上、教育目的の範囲でお願いします。
+            問題を引用する際は、各問題に表示した出典を確認してください。
           </p>
         </div>
 
@@ -87,7 +93,7 @@ export default function LicensePage() {
           <p>
             AI 生成解説の正確性について最善を尽くしていますが、
             誤りが含まれる可能性があります。
-            重要な判断は必ず IPA 公式資料で確認してください。
+            重要な判断は必ず各試験実施機関の公式資料で確認してください。
             詳細は <Link href="/terms" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">利用規約</Link> をご参照ください。
           </p>
         </div>
