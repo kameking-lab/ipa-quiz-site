@@ -42,7 +42,7 @@ function expectQuizUrl(page: Page, search: string): void {
 test.describe("home primary CTA — real mouse click", () => {
   for (const cta of [PRIMARY, SECONDARY]) {
     test(`"${cta.name}" navigates on a coordinate left-click`, async ({ page }) => {
-      await page.goto("/");
+      await page.goto("/ipa");
       const link = page.getByRole("link", { name: cta.name });
 
       // 1) Nothing may intercept pointer events at the CTA. trial:true runs the
@@ -59,7 +59,7 @@ test.describe("home primary CTA — real mouse click", () => {
 
   test("primary CTA works on a mobile viewport (360x740)", async ({ page }) => {
     await page.setViewportSize({ width: 360, height: 740 });
-    await page.goto("/");
+    await page.goto("/ipa");
     const link = page.getByRole("link", { name: PRIMARY.name });
     await link.click({ trial: true });
     await coordinateClick(page, link);
@@ -68,7 +68,7 @@ test.describe("home primary CTA — real mouse click", () => {
   });
 
   test("primary CTA href is a valid quiz deep-link (has mode → no /quiz→/ redirect)", async ({ page }) => {
-    await page.goto("/");
+    await page.goto("/ipa");
     const href = await page.getByRole("link", { name: PRIMARY.name }).getAttribute("href");
     expect(href).toBe("/quiz?mode=random&exam=ap&limit=3");
     // Guard against the next.config.ts rule that 301s mode-less /quiz to "/".
@@ -85,7 +85,7 @@ test.describe("home primary CTA — real mouse click", () => {
  */
 test.describe("home primary CTA — stability & early-click", () => {
   test("CTA position is stable from DOMContentLoaded through full settle (no shift)", async ({ page }) => {
-    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await page.goto("/ipa", { waitUntil: "domcontentloaded" });
     const link = page.getByRole("link", { name: PRIMARY.name });
     await expect(link).toBeVisible();
     const early = await link.boundingBox();
@@ -113,7 +113,7 @@ test.describe("home primary CTA — stability & early-click", () => {
     // under full-suite parallel-load server contention. That window is an
     // inherent React-SSR browser edge, not a site bug. networkidle is already
     // used reliably by the stability test above on this same page.
-    await page.goto("/");
+    await page.goto("/ipa");
     await page.waitForLoadState("networkidle");
     const link = page.getByRole("link", { name: PRIMARY.name });
     await expect(link).toBeVisible();

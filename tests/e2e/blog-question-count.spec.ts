@@ -12,9 +12,9 @@ import { test, expect, type APIRequestContext } from "@playwright/test";
  * and it would have failed pre-fix (2,398 ≠ 2,381).
  */
 
-/** Pull the IP exam's advertised count out of the home page ItemList JSON-LD. */
-async function homeIpCount(request: APIRequestContext): Promise<number | null> {
-  const html = await (await request.get("/")).text();
+/** Pull the IP exam's advertised count out of the IPA page ItemList JSON-LD. */
+async function ipaIpCount(request: APIRequestContext): Promise<number | null> {
+  const html = await (await request.get("/ipa")).text();
   const blocks = [
     ...html.matchAll(/<script type="application\/ld\+json">(.*?)<\/script>/gs),
   ].map((m) => m[1]);
@@ -40,9 +40,9 @@ async function homeIpCount(request: APIRequestContext): Promise<number | null> {
 }
 
 test.describe("blog ↔ exam-list question-count consistency (SSOT)", () => {
-  test("IP blog CTA count equals the home exam-list IP count", async ({ request }) => {
-    const home = await homeIpCount(request);
-    expect(home, "home JSON-LD must advertise the IP exam count").not.toBeNull();
+  test("IP blog CTA count equals the IPA exam-list IP count", async ({ request }) => {
+    const home = await ipaIpCount(request);
+    expect(home, "IPA JSON-LD must advertise the IP exam count").not.toBeNull();
 
     const blogHtml = await (await request.get("/blog/ip-nani-kara-benkyou")).text();
     // React splits text around interpolations with <!-- --> comment markers —
