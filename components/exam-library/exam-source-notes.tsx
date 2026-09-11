@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import relatedGuides from "@/data/exam-library/related-guides.json";
 import { EXAM_GROUPS, type ExamCatalogEntry } from "@/lib/exam-library-model";
 
 interface ExamSourceNotesProps {
@@ -37,6 +38,15 @@ export function ExamSourceNotes({ entry, className = "" }: ExamSourceNotesProps)
           回答は初期設定では保存しません。「この端末に保存する」をオンにした場合だけ、ブラウザ内に保存します。
         </li>
       </ul>
+      <div className="mt-5 border-t border-sky-300 pt-4 dark:border-sky-700">
+        <h3 className="font-bold">学び方の無料記事</h3>
+        <p className="mt-1 text-sm leading-6">試験の選び方や、間違えた問題の振り返り方をnoteで紹介しています。</p>
+        {relatedGuides.filter((guide) => !entry || guide.groups.includes(entry.group)).map((guide) => (
+          <a key={guide.url} href={guide.url} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-bold underline underline-offset-4">
+            {guide.title}<span className="sr-only">（note・新しいタブで開きます）</span><ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
+          </a>
+        ))}
+      </div>
       {entry ? (
         <div className="mt-3 flex flex-wrap gap-x-5">
           <a

@@ -1,6 +1,6 @@
 import {chromium,expect} from '@playwright/test';
 import fs from 'node:fs';
-const base=process.env.EXAM_TEST_BASE_URL||'http://localhost:3127';
+const base=process.env.EXAM_TEST_BASE_URL||'http://localhost:3128';
 fs.mkdirSync('logs/safety-browser',{recursive:true});
 const browser=await chromium.launch({headless:true});const checks=[];
 try{
@@ -13,6 +13,9 @@ try{
  await page.getByRole('button',{name:'文字で読む',exact:true}).click();checks.push('mobile text/image switching');
  await page.getByRole('radio',{name:`（${q.correctChoice===1?2:1}）`,exact:true}).locator('..').click();await page.getByRole('button',{name:'回答する',exact:true}).click();
  await expect(page.getByRole('heading',{name:'不正解',exact:true})).toBeVisible();
+ await expect(page.getByRole('heading',{name:'AIによる学習用解説',exact:true})).toBeVisible();
+ const explanation=JSON.parse(fs.readFileSync('data/exam-library/explanations.json','utf8'))[q.id];
+ await expect(page.getByText(explanation,{exact:true})).toBeVisible();checks.push('authored AI explanation displayed after answering');
  if(await page.evaluate(()=>Object.keys(localStorage).some(k=>k.startsWith('ipa-quiz:exam-library:'))))throw Error('Unexpected default persistence');checks.push('official grading / no default persistence');
  await page.getByRole('button',{name:'結果と見直しを表示',exact:true}).click();
  await page.getByRole('button',{name:'間違えた1問を解き直す',exact:true}).click();
