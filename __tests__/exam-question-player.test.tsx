@@ -54,17 +54,15 @@ describe("ExamQuestionPlayer", () => {
     window.sessionStorage.clear();
   });
 
-  it("shows one question image at a time with fixed answer controls and a text fallback", () => {
+  it("shows selectable question text and answer controls without a whole-question screenshot", () => {
     renderPlayer();
     expect(screen.getByRole("heading", { name: /問1/ })).toBeTruthy();
-    const images = screen.getAllByRole("img");
-    expect(images).toHaveLength(1);
-    expect(images[0].getAttribute("src")).toBe(`/exam-library/${EXAM_ID}/q1.webp`);
+    expect(screen.queryAllByRole("img")).toHaveLength(0);
+    expect(screen.queryByRole("button", { name: "原図で読む" })).toBeNull();
     for (let choice = 1; choice <= 5; choice += 1) {
       expect(screen.getByRole("radio", { name: new RegExp(`^選択肢 ${choice}:`) })).toBeTruthy();
     }
-    // 画像の代替として本文テキストも読める（スマホの文字表示・PCの読み上げ用の両方）
-    expect(screen.getAllByText(/テキスト版/).length).toBeGreaterThan(0);
+    expect(screen.getByText("テキスト版")).toBeTruthy();
   });
 
   it("immediately grades the selected choice with the official answer and shows the explanation", () => {
@@ -88,13 +86,21 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
   });
 
-  it("keeps an essential diagram visible even when all choice text can be split", () => {
-    renderPlayer([question(1, { text: "問1 下図の装置に関する説明を選べ。\n（1）一\n（2）二\n（3）三\n（4）四\n（5）五" })]);
-    expect(screen.getByRole("button", { name: "原図で読む" }).getAttribute("aria-pressed")).toBe("true");
-    expect(screen.getByRole("radio", { name: /^選択肢 1: 一/ })).toBeTruthy();
-    fireEvent.click(screen.getByRole("button", { name: "文字で読む" }));
-    expect(screen.getByRole("button", { name: "文字で読む" }).getAttribute("aria-pressed")).toBe("true");
+  it("shows transcription and the dedicated diagram together without a reading-mode switch", () => {
+    const diagram = `/exam-library/${EXAM_ID}/text-q1-p1-fig1.webp`;
+    renderPlayer([question(1, {
+      presentation: {
+        sourceHash: "verified-in-loader",
+        prompt: "下図の装置に関する説明を選べ。",
+        choices: ["一", "二", "三", "四", "五"].map((text, index) => ({ number: index + 1, text })),
+        figures: [{ src: diagram, alt: "問1の装置の図", width: 500, height: 300 }],
+      },
+    })]);
     expect(screen.getByText("下図の装置に関する説明を選べ。")).toBeTruthy();
+    expect(screen.getByRole("radio", { name: /^選択肢 1: 一/ })).toBeTruthy();
+    expect(screen.getByRole("img", { name: "問1の装置の図" }).getAttribute("src")).toBe(diagram);
+    expect(screen.queryByRole("button", { name: "文字で読む" })).toBeNull();
+    expect(screen.queryByRole("button", { name: "原図で読む" })).toBeNull();
   });
 
   it("does not change an already submitted answer with another choice", () => {

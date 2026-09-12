@@ -213,7 +213,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
         <div className="flex gap-2">
           <Button asChild variant="primary" className="flex-1">
-            <Link href="/">ホームへ</Link>
+            <Link href="/ipa">試験選択へ</Link>
           </Button>
           <Button asChild variant="outline" className="flex-1">
             <Link href="/account">アチーブメント確認</Link>
@@ -324,11 +324,11 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div className="text-center">
         <Link
-          href="/"
+          href="/ipa"
           className="inline-flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
         >
           <RefreshCw className="h-3 w-3" />
-          中断してホームへ戻る
+          中断して試験選択へ戻る
         </Link>
       </div>
     </div>

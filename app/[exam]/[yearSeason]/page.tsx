@@ -1,3 +1,4 @@
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -212,19 +213,16 @@ export default async function ExamYearSeasonPage({
         </header>
 
         <section aria-label="クイズを始める" className="mb-8">
-          <Button
-            asChild
-            variant="gradient"
-            size="xl"
-            className="w-full font-semibold shadow-md hover:shadow-lg"
-          >
-            <Link
-              href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}`}
-            >
-              この年度でクイズを始める
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => q.type === "multiple-choice")).map(([session]) => (
+              <Button key={session} asChild variant="gradient" size="lg" className="w-full">
+                <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
+                  {practiceSessionLabel(session as typeof pool[number]["session"])}を解く
+                  <ChevronRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            ))}
+          </div>
         </section>
 
         <QuestionListWithFilter groups={sessionGroups} />

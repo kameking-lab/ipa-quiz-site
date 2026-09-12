@@ -451,14 +451,14 @@ function ResultView({
             {verdict === "合格圏内" && "🎉 "}
             {verdict === "あと一歩" && "📈 "}
             {verdict === "要対策" && "📚 "}
-            {verdict}
+            {config.exam === "sg" && verdict === "合格圏内" ? "演習目標達成" : verdict}
           </span>
           <div className="mt-3 text-xs text-zinc-500">
             {result.correct}/{result.totalQuestions}問正解 ・{" "}
             {Math.round(result.timeUsedSec / 60)}分{result.timeUsedSec % 60}秒使用
           </div>
           <div className="mt-1 text-xs text-zinc-400">
-            合格基準: {Math.round(config.passThreshold * 100)}点以上
+            {config.exam === "sg" ? "この演習の目標" : "合格基準"}: {Math.round(config.passThreshold * 100)}点以上
           </div>
         </div>
       </Card>

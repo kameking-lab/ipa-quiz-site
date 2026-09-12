@@ -106,7 +106,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       >
         {choiceKey}
       </span>
-      <span className="flex-1 pt-1 text-base leading-relaxed">{text}</span>
+      <span className="flex-1 whitespace-pre-line pt-1 text-base leading-relaxed">{text}</span>
       {state === "revealed-correct" && (
         <Check
           aria-hidden="true"

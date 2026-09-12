@@ -1,3 +1,5 @@
+import { defaultPracticeSession, parsePracticeSession, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Tags } from "lucide-react";
@@ -17,7 +19,7 @@ const DEFAULT_EXAM: ExamCode = "ap";
 export async function generateMetadata({
   searchParams,
 }: {
-  searchParams: Promise<{ exam?: string }>;
+  searchParams: Promise<{ exam?: string; session?: string }>;
 }): Promise<Metadata> {
   const { exam } = await searchParams;
   const code: ExamCode = isExamCode(exam) ? exam : DEFAULT_EXAM;
@@ -56,11 +58,13 @@ function isExamCode(s: unknown): s is ExamCode {
 export default async function TopicModePage({
   searchParams,
 }: {
-  searchParams: Promise<{ exam?: string }>;
+  searchParams: Promise<{ exam?: string; session?: string }>;
 }) {
   const params = await searchParams;
   const exam: ExamCode = isExamCode(params.exam) ? params.exam : DEFAULT_EXAM;
   const label = examLabel(exam);
+  const session = parsePracticeSession(params.session) ?? defaultPracticeSession(exam);
+  const sessions = PRACTICE_SESSIONS.filter((s) => ALL_QUESTIONS.some((q) => q.exam === exam && q.session === s));
 
   // AP は AP+FE+IP+SG を横断して分野プール（合計 4,980+問）。
   const isApPool = exam === "ap";
@@ -69,7 +73,7 @@ export default async function TopicModePage({
   const byCategory = new Map<string, { count: number; tags: Set<string> }>();
   if (!isApPool) {
     for (const q of ALL_QUESTIONS) {
-      if (q.exam !== exam) continue;
+      if (q.exam !== exam || q.session !== session) continue;
       const entry = byCategory.get(q.category) ?? { count: 0, tags: new Set() };
       entry.count += 1;
       for (const t of q.topicTags) entry.tags.add(t);
@@ -97,12 +101,13 @@ export default async function TopicModePage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <Button asChild variant="ghost" size="sm" className="mb-4">
-          <Link href="/">
+          <Link href={`/${exam}`}>
             <ArrowLeft className="h-4 w-4" />
-            戻る
+            試験ページに戻る
           </Link>
         </Button>
 
+        {exam !== "ap" && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
         <header className="mb-8 animate-fade-in">
           <Badge variant="soft" className="mb-3">
             <Tags className="h-3 w-3" />
@@ -179,7 +184,7 @@ export default async function TopicModePage({
             {items.map(([category, v]) => (
               <Link
                 key={category}
-                href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}`}
+                href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/modes/topic?exam=${exam}&session=${session}`)}`}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
               >
                 <div className="absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 transition-opacity group-hover:opacity-100" />

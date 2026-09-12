@@ -1,3 +1,5 @@
+import { defaultPracticeSession, parsePracticeSession, quizBackHref, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
 import type { ExamCode } from "@/lib/questions/types";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -19,6 +21,8 @@ interface SearchParams {
   exam?: string;
   topic?: string;
   category?: string;
+  session?: string;
+  returnTo?: string;
 }
 
 export default async function StreamQuizPage({
@@ -30,9 +34,12 @@ export default async function StreamQuizPage({
   const exam = (VALID_EXAMS.has(sp.exam ?? "") ? sp.exam : "ap") as ExamCode;
 
   const all = await getQuestionsForExam(exam);
+  const session = parsePracticeSession(sp.session) ?? defaultPracticeSession(exam);
+  const sessions = PRACTICE_SESSIONS.filter((s) => all.some((q) => q.session === s));
   const pool = filterQuestions(all, {
     mode: "random",
     exam,
+    session,
     topicTag: sp.topic,
     category: sp.category,
   }).slice(0, STREAM_POOL_SIZE);
@@ -40,7 +47,8 @@ export default async function StreamQuizPage({
   return (
     <>
       <QuizModeTabs active="stream" exam={exam} />
-      <StreamQuizLoader pool={pool} />
+      <PracticeSessionTabs sessions={[...sessions]} selected={session} />
+      <StreamQuizLoader pool={pool} backHref={quizBackHref({ exam, returnTo: sp.returnTo })} />
     </>
   );
 }

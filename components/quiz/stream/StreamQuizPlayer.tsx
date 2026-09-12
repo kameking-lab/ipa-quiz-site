@@ -21,7 +21,7 @@ interface AnswerLog {
   correct: boolean;
 }
 
-export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
+export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: Question[]; backHref?: string }) {
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [index, setIndex] = React.useState(0);
@@ -152,11 +152,12 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     const recent = answers.slice(-SUMMARY_AT);
     return (
       <StreamSummary
+        backHref={backHref}
         recentAnswers={recent}
         totalAnswered={answers.length}
         onContinue={() => {
           if (index + 1 >= questions.length) {
-            router.push("/?done=1");
+            router.push(backHref);
             return;
           }
           setIndex((i) => i + 1);
@@ -179,7 +180,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
         <Link
-          href="/"
+          href={backHref}
           className="rounded-full bg-white/10 p-2 backdrop-blur hover:bg-white/20"
           aria-label="戻る"
         >

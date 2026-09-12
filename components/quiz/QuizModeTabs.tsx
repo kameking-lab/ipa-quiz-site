@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   RefreshCw,
   Sparkles,
@@ -57,6 +58,15 @@ const TABS: {
 ];
 
 export function QuizModeTabs({ active, exam = "ap" }: Props) {
+  const search = useSearchParams();
+  function modeHref(base: string, key: string) {
+    const url = new URL(base, "https://local.invalid");
+    for (const name of ["session", "returnTo"]) {
+      const value = search.get(name);
+      if (value && (name !== "session" || key !== "mock")) url.searchParams.set(name, value);
+    }
+    return url.pathname + url.search;
+  }
   return (
     <nav
       aria-label="クイズモード切替"
@@ -68,7 +78,7 @@ export function QuizModeTabs({ active, exam = "ap" }: Props) {
           return (
             <Link
               key={t.key}
-              href={t.href(exam)}
+              href={modeHref(t.href(exam), t.key)}
               aria-current={isActive ? "page" : undefined}
               className={`inline-flex shrink-0 items-center gap-1 rounded-lg px-3 py-1.5 text-xs font-medium transition-colors ${
                 isActive

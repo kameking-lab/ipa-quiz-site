@@ -25,6 +25,7 @@ export function filterQuestions(
   }
   if (filter.year) pool = pool.filter((q) => q.year === filter.year);
   if (filter.season) pool = pool.filter((q) => q.season === filter.season);
+  if (filter.session) pool = pool.filter((q) => q.session === filter.session);
   if (filter.topicTag) {
     pool = pool.filter((q) => q.topicTags.includes(filter.topicTag!));
   }

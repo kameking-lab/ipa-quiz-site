@@ -390,7 +390,7 @@ export function ExamQuestionPlayer({
   const scoredAnswered = summary.correct + summary.incorrect;
   const shownChoice = submitted ? (currentAnswer?.choice ?? null) : draftChoice;
   const scorable = current ? isScorableQuestion(current) : false;
-  const parsedChoices = current ? extractExamChoices(current.text, current.choiceCount) : null;
+  const parsedChoices = current ? (current.presentation ?? extractExamChoices(current.text, current.choiceCount)) : null;
   const sourcePage = current?.sourcePages?.[0];
   const showRestore =
     saved !== null && savedSubmittedCount > 0 && !saveEnabled && !restoreHandled;
@@ -576,7 +576,7 @@ export function ExamQuestionPlayer({
                       key={choice}
                       ref={choice === 1 ? firstChoiceRef : undefined}
                       choiceKey={`${choice}`}
-                      text={parsedChoices?.choices[choice - 1]?.text ?? `原図・問題文の（${choice}）`}
+                      text={parsedChoices?.choices[choice - 1]?.text ?? `図の（${choice}）`}
                       selected={shownChoice === choice}
                       correct={scorable && current.correctChoice === choice}
                       revealed={submitted && scorable}

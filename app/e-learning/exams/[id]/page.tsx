@@ -12,6 +12,7 @@ import {
   findExamGroup,
   formatExamDate,
   isScorableQuestion,
+  isHealthConsultantSubject,
   type ExamCatalogEntry,
 } from "@/lib/exam-library-model";
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
@@ -98,7 +99,7 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
 
       <header className="mb-4">
         <p className="text-sm font-semibold text-muted-foreground forced-colors:text-[CanvasText]">
-          {group?.title ?? "公表試験問題"}
+          {entry.group === "cskohyo" ? `${isHealthConsultantSubject(entry.subject) ? "労働衛生" : "労働安全"}コンサルタント試験の公表問題` : group?.title ?? "公表試験問題"}
         </p>
         <h1 className="mt-1 text-lg font-semibold tracking-tight text-slate-950 dark:text-white sm:text-xl">
           {entry.subject}
