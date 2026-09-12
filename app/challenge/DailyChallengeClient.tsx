@@ -1,4 +1,5 @@
 "use client";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys, CHOICE_SHORTCUTS } from "@/lib/questions/answers";
 
 import * as React from "react";
 import Link from "next/link";
@@ -22,7 +23,6 @@ interface Props {
   date: string;
 }
 
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 interface FinalResult {
   correctCount: number;
@@ -70,8 +70,8 @@ export function DailyChallengeClient({ questions, date }: Props) {
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
   // commits). Unconditional, before the early returns, per the rules of hooks.
   const choiceRoving = useQuizChoiceRoving(
-    CHOICE_KEYS.length,
-    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    getChoiceKeys(current?.choices).length,
+    selected ? getChoiceKeys(current?.choices).indexOf(selected) : -1,
     revealed,
     current?.id ?? "",
   );
@@ -79,10 +79,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (!current || revealed) return;
-      const answerKey = Array.isArray(current.answer)
-        ? String(current.answer[0])
-        : String(current.answer);
-      const correct = key === answerKey;
+      const correct = isAcceptedAnswer(current.answer, key);
       setSelected(key);
       setRevealed(true);
       setResults((prev) => [...prev, correct ? "correct" : "incorrect"]);
@@ -104,9 +101,9 @@ export function DailyChallengeClient({ questions, date }: Props) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
       }
-      const i = ["1", "2", "3", "4"].indexOf(e.key);
+      const i = CHOICE_SHORTCUTS.indexOf(e.key);
       if (i < 0) return;
-      const key = CHOICE_KEYS[i];
+      const key = getChoiceKeys(current.choices)[i];
       if (current.choices?.[key]) {
         e.preventDefault();
         onSelect(key);
@@ -232,9 +229,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   if (!current) return null;
 
   const choices = current.choices ?? {};
-  const answerKey = Array.isArray(current.answer)
-    ? String(current.answer[0])
-    : String(current.answer);
+  const answerKey = formatAcceptedAnswers(current.answer);
 
   return (
     <div className="space-y-4">
@@ -268,10 +263,10 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div
         role="radiogroup"
-        aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+        aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
         className="space-y-2"
       >
-        {CHOICE_KEYS.map((k, i) => {
+        {getChoiceKeys(current.choices).map((k, i) => {
           const text = choices[k];
           if (!text) return null;
           return (
@@ -281,10 +276,10 @@ export function DailyChallengeClient({ questions, date }: Props) {
               text={text}
               revealed={revealed}
               selected={selected === k}
-              correct={k === answerKey}
+              correct={isAcceptedAnswer(current.answer, k)}
               disabled={revealed}
               onClick={() => onSelect(k)}
-              shortcutIndex={i + 1}
+              shortcutIndex={(i + 1) % 10}
               {...choiceRoving.getRadioProps(i)}
             />
           );
@@ -294,7 +289,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
       {/* Screen-reader announcement of the outcome (parity with /quiz・/q). */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {revealed
-          ? selected === answerKey
+          ? isAcceptedAnswer(current.answer, selected)
             ? "正解です。下に解説があります。"
             : `不正解です。正解は ${answerKey} です。下に解説があります。`
           : ""}
@@ -303,14 +298,14 @@ export function DailyChallengeClient({ questions, date }: Props) {
       {revealed && (
         <div className="space-y-3 rounded-2xl border border-border bg-card p-4">
           <div className="flex items-start gap-2">
-            {selected === answerKey ? (
+            {isAcceptedAnswer(current.answer, selected) ? (
               <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-emerald-500" />
             ) : (
               <XCircle className="mt-0.5 h-5 w-5 shrink-0 text-rose-500" />
             )}
             <div className="flex-1 text-sm">
               <p className="mb-1 font-semibold">
-                {selected === answerKey ? "正解！" : `不正解（正解は ${answerKey}）`}
+                {isAcceptedAnswer(current.answer, selected) ? "正解！" : `不正解（正解は ${answerKey}）`}
               </p>
               <p className="leading-relaxed text-muted-foreground">{current.explanation}</p>
             </div>

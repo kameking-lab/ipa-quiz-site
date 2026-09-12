@@ -10,9 +10,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
-  title: "業種別合格答案サンプル",
+  title: "業種別参考答案サンプル",
   description:
-    "IPA 高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）午後 II 論述問題の業種別合格答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
+    "IPA 高度情報処理技術者試験（SC/ST/SA/PM/SM/AU）独自の論述練習問題の業種別参考答案サンプル集。製造業・金融・公共・SaaS など実務シーンを想定した AI 生成の参考例で、設問への論点整理・章立て・字数配分まで一気通貫の構成骨格として活用できます。",
   alternates: { canonical: "/essays" },
   // 致命傷③: AI生成の架空の参考答案集なので検索インデックス対象外。
   robots: { index: false, follow: false },
@@ -40,7 +40,7 @@ export default function EssaysIndexPage() {
           </li>
           <li aria-hidden="true">/</li>
           <li aria-current="page" className="text-zinc-700 dark:text-zinc-300">
-            業種別合格答案サンプル
+            業種別参考答案サンプル
           </li>
         </ol>
       </nav>
@@ -50,18 +50,18 @@ export default function EssaysIndexPage() {
           <Shield className="h-6 w-6 text-sky-600 dark:text-sky-400" />
           <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
             業種別{" "}
-            <span className="text-sky-600 dark:text-sky-400">合格答案サンプル</span>
+            <span className="text-sky-600 dark:text-sky-400">参考答案サンプル</span>
           </h1>
         </div>
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-          IPA 高度情報処理技術者試験（SC / ST / SA / PM / SM / AU）午後 II 論述問題の
+          IPA 高度情報処理技術者試験（SC / ST / SA / PM / SM / AU）独自の論述練習問題の
           業種別参考答案です。製造・金融・公共など自分の業務経験に近い業種を選んで、
           論述の骨格づくりにお役立てください。
         </p>
         <AiContentNotice
           className="mt-4"
           headline="AI生成の参考答案（架空）"
-          body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
+          body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
         />
       </section>
 
@@ -75,7 +75,7 @@ export default function EssaysIndexPage() {
                 </Badge>
               </div>
               <CardTitle className="text-base leading-snug">
-                {label} 午後II 論述
+                {label} 独自の論述練習
               </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-1 flex-col justify-between">

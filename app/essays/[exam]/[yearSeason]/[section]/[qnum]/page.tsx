@@ -78,8 +78,8 @@ export async function generateMetadata({
   }
   const seasonLabel = question.season === "spring" ? "春" : "秋";
   const canonical = `/essays/${resolved.exam}/${resolved.yearSeason}/${resolved.section}/${resolved.qnum}`;
-  const title = `${question.theme} | ${examLabel(resolved.exam)} 午後II 業種別合格答案 ${question.year}年${seasonLabel}期`;
-  const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 午後II 問${question.qNumber}「${question.theme}」の業種別合格答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
+  const title = `${question.theme} | ${examLabel(resolved.exam)} 独自練習 業種別参考答案 ${question.year}年${seasonLabel}期`;
+  const description = `${examLabel(resolved.exam)} ${question.year}年${seasonLabel}期 独自練習 問${question.qNumber}「${question.theme}」の業種別参考答案サンプル。業種別の論述例（序論・本論・結論）を掲載。AI 生成の参考例（査読推奨）。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "essay", title: title.slice(0, 80) }).toString()}`;
   return {
     title,
@@ -138,7 +138,7 @@ export default async function EssayPm2DetailPage({
         className="print:hidden mb-4 inline-flex items-center gap-1 text-xs text-zinc-500 hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
       >
         <ChevronLeft className="h-3 w-3" />
-        {examLabel(resolved.exam)} 業種別合格答案
+        {examLabel(resolved.exam)} 業種別参考答案
       </Link>
 
       <header className="mb-6">
@@ -159,7 +159,7 @@ export default async function EssayPm2DetailPage({
       <AiContentNotice
         className="mb-6"
         headline="AI生成の参考答案（架空）"
-        body="IPA公式の合格答案ではありません。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
+        body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
       />
 
       <section className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/50">
@@ -234,7 +234,7 @@ export default async function EssayPm2DetailPage({
       {/* Print-only attribution */}
       <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
         <p>過去問AI（https://www.kakomon-ai.jp{canonical}）より印刷</p>
-        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/） IPA の過去問は IPA が著作権を保有し、非商用・教育目的での利用が認められています。</p>
+        <p className="mt-1">過去問AIが作成した独自の練習問題と架空事例の参考答案です。IPA公式の過去問・解答ではありません。</p>
       </div>
     </main>
   );

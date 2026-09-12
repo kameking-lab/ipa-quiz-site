@@ -32,7 +32,7 @@ export function buildCitationFooter(passages: RerankedCandidate[]): string {
   const lines: string[] = [];
   lines.push("");
   lines.push("---");
-  lines.push("**出典**");
+  lines.push("**参照資料（引用番号に対応）**");
   passages.forEach((p, i) => {
     const num = i + 1;
     lines.push(`- [${num}] [${p.doc.title}](${p.doc.url})`);

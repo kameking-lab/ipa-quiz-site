@@ -113,7 +113,7 @@ describe("createCopilotResponseStream — 正常系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(3); // "ABC" のみ（フッター除外）
+    expect(onComplete).toHaveBeenCalledWith(3, undefined); // "ABC" のみ（フッター除外）
   });
 });
 
@@ -139,6 +139,21 @@ describe("createCopilotResponseStream — エラー系", () => {
       ),
     );
     expect(onComplete).toHaveBeenCalledTimes(1);
-    expect(onComplete).toHaveBeenCalledWith(0); // throw 前に何も出ていない
+    expect(onComplete).toHaveBeenCalledWith(0, undefined); // throw 前に何も出ていない
   });
+});
+
+it("出力上限による切断を表示し、実測使用量を計上側に引き渡す", async () => {
+  const usage = { finishReason: "MAX_TOKENS", truncated: true, promptTokens: 120, outputTokens: 4, thoughtsTokens: 8 };
+  const provider: LLMProvider = {
+    name: "gemini",
+    async *streamChat(params) {
+      yield "途中";
+      params.onComplete?.(usage);
+    },
+  };
+  const onComplete = vi.fn();
+  const out = await readAll(createCopilotResponseStream(baseInput({ provider, onComplete })));
+  expect(out).toContain("[応答の途中終了]");
+  expect(onComplete).toHaveBeenCalledExactlyOnceWith(2, usage);
 });

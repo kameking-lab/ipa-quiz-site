@@ -8,9 +8,9 @@ import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 
 export const metadata: Metadata = {
-  title: "ストリーム学習 — TikTok風連続UI",
+  title: "ストリーム学習 — 自分のペースで連続演習",
   description:
-    "縦スワイプで次々と問題を解く、TikTok風の連続学習モード。10問ごとにWordle風サマリでシェア。",
+    "問題を解き、解説を確認してから次へ進む連続学習モード。10問ごとに学習結果を振り返り、共有できます。",
   alternates: { canonical: "/quiz/stream" },
 };
 

@@ -1,4 +1,5 @@
 import { Lightbulb, Layers, BookOpen, ChevronDown } from "lucide-react";
+import { QuestionBody } from "./QuestionBody";
 
 type Layer = {
   label: string;
@@ -18,12 +19,16 @@ type Layer = {
  * the existing prose into the layer container.
  */
 function splitSingleParagraphBySentence(para: string): string[] {
-  const matches = para.match(/[^。]+。/g);
+  const matches = para.match(/[^。]+(?:。|$)/g);
   if (!matches || matches.length < 3) return [para];
   return [matches[0], matches.slice(1).join("")];
 }
 
 function splitLayers(explanation: string): Layer[] {
+  // Do not split a code fence or a table across independently rendered layers.
+  if (/^\s*(`{3,}|~{3,})/m.test(explanation) || /^\s*\|.*\|\s*$/m.test(explanation)) {
+    return [{ label: "解説", icon: <Lightbulb className="h-3.5 w-3.5" />, body: explanation, tone: "primary" }];
+  }
   let paragraphs = explanation
     .split(/\n{2,}/)
     .map((p) => p.trim())
@@ -121,11 +126,7 @@ function LayerBody({
     <div
       className={`selectable-content text-sm leading-[1.85] sm:text-[15px] ${textClass}`}
     >
-      {body.split("\n").map((line, i) => (
-        <p key={i} className="mb-2.5 last:mb-0">
-          {line}
-        </p>
-      ))}
+      <QuestionBody text={body} />
     </div>
   );
 }

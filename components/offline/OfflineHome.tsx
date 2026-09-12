@@ -1,4 +1,6 @@
 "use client";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+
 
 import * as React from "react";
 import Link from "next/link";
@@ -7,7 +9,6 @@ import { ALL_QUESTIONS } from "@/data/questions";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { questionPagePath } from "@/lib/seo/question-url";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { Question } from "@/lib/questions/types";
 
 interface OfflineQuestionLink {
@@ -20,7 +21,7 @@ function toLink(q: Question): OfflineQuestionLink {
   return {
     id: q.id,
     href: questionPagePath(q),
-    label: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber}`,
+    label: `${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber}`,
   };
 }
 

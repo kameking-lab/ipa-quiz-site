@@ -59,6 +59,12 @@ const QuestionSchema = z.object({
       イ: z.string(),
       ウ: z.string(),
       エ: z.string(),
+      オ: z.string().optional(),
+      カ: z.string().optional(),
+      キ: z.string().optional(),
+      ク: z.string().optional(),
+      ケ: z.string().optional(),
+      コ: z.string().optional(),
     })
     .optional(),
   answer: z.union([z.string().min(1), z.array(z.string().min(1))]),
@@ -85,7 +91,6 @@ const UNCERTAIN_PHRASES = [
   /でしょう[。．]/,
   /不明です/,
   /確認が必要/,
-  /^正解は[アイウエ]です[。．]/,
 ];
 
 function computeQuality(q: Question): QualityResult {
@@ -102,6 +107,10 @@ function computeQuality(q: Question): QualityResult {
   }
 
   const expLen = q.explanation.trim().length;
+  if (/^正解は[アイウエオカキクケコ]です[。．]\s*(?:[（(]出典[:：][^）)]*[）)])?\s*$/.test(q.explanation.trim())) {
+    score -= 15;
+    warnings.push("解説が正答・出典のみで理由がない");
+  }
   if (expLen < 30) {
     score -= 30;
     warnings.push(`explanation < 30文字 (${expLen}字) — 要確認`);
@@ -211,12 +220,13 @@ function validate(questions: Question[]): ValidationResult {
         console.error(`[FAIL] ${q.id}: multiple-choice requires choices`);
         continue;
       }
-      const ans = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-      if (!["ア", "イ", "ウ", "エ"].includes(ans)) {
+      const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
+      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      if (ans !== undefined || answers.length === 0) {
         fail++;
         byExam[examKey].fail++;
         issues.push({ id: q.id, level: "error", message: `answer 不正: "${ans}"` });
-        console.error(`[FAIL] ${q.id}: answer must be ア/イ/ウ/エ, got "${ans}"`);
+        console.error(`[FAIL] ${q.id}: answer must identify a present choice, got "${ans}"`);
         continue;
       }
     }

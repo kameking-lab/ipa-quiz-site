@@ -1,4 +1,5 @@
 "use client";
+import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys } from "@/lib/questions/answers";
 
 import * as React from "react";
 import type { ChoiceKey } from "@/lib/questions/types";
@@ -21,7 +22,6 @@ import { Badge } from "@/components/ui/badge";
 import { addGold, addXp } from "@/lib/gamification/economy";
 import { evaluateAchievementsAfterMock } from "@/lib/gamification/achievements";
 
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 interface Props {
   questions: SlimMockQuestion[];
@@ -105,8 +105,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       for (let i = 0; i < questions.length; i++) {
         const q = questions[i];
         const ans = answers[i];
-        const correctKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-        const isCorrect = ans === correctKey;
+        const isCorrect = isAcceptedAnswer(q.answer, ans);
         if (isCorrect) correct++;
         else wrongQuestionIds.push(q.id);
         const cat = q.category || "その他";
@@ -185,8 +184,6 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   }
 
   const q = questions[index];
-  const correctKey = Array.isArray(q.answer) ? q.answer[0] : (q.answer as ChoiceKey);
-  void correctKey;
   const answered = answers.filter((a) => a !== undefined).length;
   const m = Math.floor(remaining / 60);
   const s = remaining % 60;
@@ -251,7 +248,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           </p>
           {q.choices && (
             <div className="space-y-2">
-              {CHOICE_KEYS.map((k) => {
+              {getChoiceKeys(q.choices).map((k) => {
                 const text = q.choices?.[k];
                 if (!text) return null;
                 const selected = answers[index] === k;
@@ -415,8 +412,7 @@ function ResultView({
   const wrongQuestions = questions
     .map((q, i) => ({ q, i, userAns: answers[i] }))
     .filter(({ q, userAns }) => {
-      const correctKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-      return userAns !== correctKey;
+      return !isAcceptedAnswer(q.answer, userAns);
     });
 
   const weakCatParam = weakCats.map(([cat]) => cat).join(",");
@@ -607,10 +603,8 @@ function ResultView({
               aria-labelledby="result-wrong"
             >
               {displayWrong.map(({ q, i, userAns }) => {
-                const correctKey = Array.isArray(q.answer)
-                  ? (q.answer[0] as ChoiceKey)
-                  : (q.answer as ChoiceKey);
-                const correctText = q.choices?.[correctKey];
+                const correctKey = formatAcceptedAnswers(q.answer);
+                const correctText = (Array.isArray(q.answer) ? q.answer : [q.answer]).map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ");
                 const userText = userAns ? q.choices?.[userAns] : undefined;
                 return (
                   <li

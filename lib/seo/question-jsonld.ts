@@ -1,8 +1,7 @@
-import { examLabelAt } from "@/lib/exam-naming/history";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 
 /**
  * Approximate publish date (ISO `YYYY-MM-DD`) for an exam session, used for the
@@ -73,17 +72,13 @@ export function buildQuestionJsonLd({
   title,
   lastUpdatedISO,
 }: QuestionJsonLdInput) {
-  const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const answerText =
-    q.choices && answerKey in q.choices
-      ? q.choices[answerKey as ChoiceKey]
-      : undefined;
+  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
   const otherChoices = q.choices
     ? (Object.entries(q.choices) as [ChoiceKey, string][]).filter(
-        ([key]) => key !== answerKey,
+        ([key]) => !answerKeys.some(answer => answer === key),
       )
     : [];
 
@@ -104,15 +99,16 @@ export function buildQuestionJsonLd({
   const lastUpdatedDateTimeISO = toJstDateTimeISO(lastUpdatedISO);
 
   // The accepted answer links to the in-page explanation anchor (#explanation).
-  const acceptedAnswer = {
+  const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: answerText ? `${answerKey}: ${answerText}` : String(answerKey),
+    text: q.choices?.[answerKey as ChoiceKey] ? `${answerKey}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
     datePublished: lastUpdatedDateTimeISO,
     upvoteCount: 0,
-  };
+  }));
+  const acceptedAnswer = acceptedAnswers.length === 1 ? acceptedAnswers[0] : acceptedAnswers;
 
   const questionEntity = {
     "@type": "Question",
@@ -122,7 +118,7 @@ export function buildQuestionJsonLd({
     inLanguage: "ja",
     // Required by Google Q&A (the missing field was the critical error): total
     // answers = the correct one + the distractor choices.
-    answerCount: 1 + otherChoices.length,
+    answerCount: acceptedAnswers.length + otherChoices.length,
     author: ipaAuthor,
     datePublished: questionDateISO,
     dateCreated: questionDateISO,
@@ -162,8 +158,8 @@ export function buildQuestionJsonLd({
       },
     ],
     keywords: [
-      examLabel(q.exam),
-      examLabelAt(q.exam, q.year, q.season),
+      questionSourceExam(q),
+      questionSourceExam(q),
       q.category,
       ...q.topicTags,
     ].join(", "),
@@ -215,13 +211,13 @@ export function buildQuestionJsonLd({
           {
             "@type": "ListItem",
             position: 2,
-            name: examLabel(q.exam),
+            name: questionSourceExam(q),
             item: `${SITE_BASE_URL}${examPath}`,
           },
           {
             "@type": "ListItem",
             position: 3,
-            name: formatYearSeason(q.year, q.season),
+            name: questionSourceEdition(q),
             item: `${SITE_BASE_URL}${yearSeasonPath}`,
           },
           {

@@ -26,6 +26,12 @@ describe("examLabelAt — SC（3世代の改名）", () => {
 });
 
 describe("examLabelAt — 期の順序（春 < 秋）が改名境界を分ける", () => {
+  it("DBとESは公式の2009春期問題冊子からスペシャリストの名称", () => {
+    expect(examLabelAt("db", 2009, "spring")).toBe("データベーススペシャリスト");
+    expect(examLabelAt("es", 2009, "spring")).toBe("エンベデッドシステムスペシャリスト");
+    expect(examLabelAt("db", 2008, "spring")).toBe("テクニカルエンジニア(データベース)");
+    expect(examLabelAt("es", 2008, "spring")).toBe("テクニカルエンジニア(エンベデッドシステム)");
+  });
   it("NW は 2009秋 改名：同年春は旧名・同年秋は新名", () => {
     // 改名境界が autumn のため、同じ 2009 年でも春と秋で名称が変わる。
     expect(examLabelAt("nw", 2009, "spring")).toBe("テクニカルエンジニア(ネットワーク)");

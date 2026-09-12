@@ -90,7 +90,7 @@ export interface AfternoonQuestion {
   subQuestions: SubQuestion[];
   /** 出典 PDF URL */
   pdfUrl: string;
-  license: "IPA-public";
+  license: "IPA-public" | "original";
   /** 試験全体の制限時間（分）。AP午後は150分。 */
   totalTimeMinutes?: number;
   /** 解説品質が低い・要確認のフラグ。出題プールから除外する用途。 */

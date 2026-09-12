@@ -260,7 +260,7 @@ export function AfternoonPlayer({ questions }: Props) {
                         ? `afternoon-${sub.label}-count`
                         : undefined
                     }
-                    placeholder={isEssay ? "論述（2,000〜3,000字）をここに入力" : "ここに解答を入力"}
+                    placeholder={isEssay ? "この設問の字数条件に沿って論述を入力" : "ここに解答を入力"}
                     className={
                       "w-full rounded-xl border px-3 py-2 text-sm leading-relaxed shadow-sm focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-zinc-900 dark:text-zinc-50 " +
                       (over || under
@@ -268,6 +268,15 @@ export function AfternoonPlayer({ questions }: Props) {
                         : "border-zinc-300 dark:border-zinc-700")
                     }
                   />
+                  <details className="rounded-lg border border-sky-200 bg-sky-50 p-3 text-sm dark:border-sky-900 dark:bg-sky-950/40">
+                    <summary className="cursor-pointer font-semibold text-sky-800 dark:text-sky-200">
+                      参考解答・採点観点を読む（採点不要）
+                    </summary>
+                    <p className="mt-2 text-xs text-zinc-500">編集者作成の解答例です。設問条件を満たす別の表現も認められます。</p>
+                    <p className="mt-3 whitespace-pre-wrap leading-relaxed">{sub.modelAnswer}</p>
+                    <h3 className="mt-4 font-semibold">採点の観点</h3>
+                    <p className="mt-2 whitespace-pre-wrap text-xs leading-relaxed">{sub.scoringRubric}</p>
+                  </details>
                 </li>
               );
             })}

@@ -7,6 +7,7 @@ import { buildCitationFooter, buildRAGContextBlock } from "@/lib/copilot/citatio
 import type { RAGResult } from "@/lib/copilot/types";
 import { buildCitationMetas, encodeCitationsHeader } from "@/lib/copilot/citation-meta";
 import { encodeRelatedHeader, findRelatedQuestions } from "@/lib/copilot/related";
+import { buildQuestionDoc } from "@/lib/copilot/corpus";
 
 export interface RAGPipelineInput {
   question: Question;
@@ -67,6 +68,19 @@ export async function runCopilotRAGPipeline(
   const passesThreshold = ragResult.topScore >= ragMinScore();
   if (!(ragResult.passages.length > 0 && passesThreshold)) {
     return { ...EMPTY, ragResult };
+  }
+
+  // Give the current problem its own citation. Otherwise the model can attach
+  // another problem's citation to facts found only in the current explanation.
+  if (!question.needsReview && question.explanation.trim()) {
+    const currentDoc = buildQuestionDoc(question);
+    ragResult = {
+      ...ragResult,
+      passages: [
+        { doc: currentDoc, score: ragResult.topScore, rerankScore: ragResult.topScore },
+        ...ragResult.passages.filter((passage) => passage.doc.id !== currentDoc.id),
+      ],
+    };
   }
 
   const ragDirective = buildRAGDirective(ragResult.passages.length);

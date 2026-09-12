@@ -27,7 +27,8 @@ const BodySchema = z.object({
       typeof q.question === "string" && q.question.length > 0 &&
       typeof choices === "object" && choices !== null &&
       typeof choices.ア === "string" &&
-      typeof q.answer === "string" && q.answer.length > 0
+      ((typeof q.answer === "string" && q.answer.length > 0) ||
+       (Array.isArray(q.answer) && q.answer.length > 0 && q.answer.every(key => typeof key === "string" && typeof choices[key] === "string")))
     );
   }),
   messages: z
@@ -177,13 +178,21 @@ export async function POST(req: Request) {
     onComplete: isRealProvider
       ? // await して返す。ストリームは計上完了まで close されない（fire-and-forget
         // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
-        (outputChars) =>
-          recordAiCost({
+        async (outputChars, usage) => {
+          console.info("[copilot] completed", {
+            questionId: payload.question.id, model,
+            finishReason: usage?.finishReason,
+            promptTokens: usage?.promptTokens,
+            outputTokens: usage?.outputTokens,
+            thoughtsTokens: usage?.thoughtsTokens,
+          });
+          await recordAiCost({
             tier: tierForModel(model),
-            inputTokens: estimateTokens(inputChars),
-            outputTokens: estimateTokens(outputChars),
+            inputTokens: usage?.promptTokens ?? estimateTokens(inputChars),
+            outputTokens: (usage?.outputTokens ?? estimateTokens(outputChars)) + (usage?.thoughtsTokens ?? 0),
             label: "copilot",
-          })
+          });
+        }
       : undefined,
   });
 

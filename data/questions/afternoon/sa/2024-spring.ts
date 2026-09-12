@@ -27,7 +27,6 @@ export const SA_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
           "あなたが携わった、業務のデジタル化を実現するシステムの概要と、デジタル化の対象業務及び業務上の課題について、800字以内で述べよ。",
         type: "essay-text",
         maxLength: 800,
-        minLength: 600,
         modelAnswer: `私が携わったのは、地方銀行B社における法人融資稟議業務のデジタル化プロジェクトである。B社は預金量約3.2兆円・行員約1,800名の地域金融機関で、法人融資の年間稟議件数は約12,000件、平均稟議リードタイムは14営業日を要していた。私はB社のシステムアーキテクトとして、システム企画段階から本番稼働までの設計統括を担った。
 
 デジタル化の対象業務は、営業店での稟議書作成、本部審査部での与信判断、決裁権限者の承認、契約書作成、貸出実行までの一連の流れである。従来は、Excelで作成された稟議書を本部に紙で回送し、審査部・本部関連部署を経由して決裁する運用であった。
@@ -159,7 +158,7 @@ export const SA_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h05_1/2024h05h_sa_pm2_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 120,
     industryVariants: SA_2024_SPRING_Q1_INDUSTRIES,
   },

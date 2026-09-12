@@ -10,7 +10,6 @@ import {
 } from "@/lib/essay/load";
 import type { EssayExamCode } from "@/lib/essay/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
-import { getSafePdfUrl } from "@/lib/exam-config";
 import { EssayEditor } from "@/components/essay/EssayEditor";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -42,7 +41,7 @@ export async function generateMetadata({
   const { questionId } = await params;
   const q = findEssayQuestion(questionId);
   if (!q) return { title: "論述問題が見つかりません", robots: { index: false } };
-  const title = `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
+  const title = `${examLabel(q.exam)} 独自練習 ${formatYearSeason(q.year, q.season)} 問${q.qNumber} | AI 論述添削`;
   const description = `${q.title} — AI が学習用の4観点で論述を評価します。`;
   const canonical = `/essay/${q.exam}/${q.id}`;
   const ogImage = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
@@ -91,7 +90,7 @@ export default async function EssayEditorPage({
       {
         "@type": "LearningResource",
         "@id": `${url}#learning-resource`,
-        name: `${label} 午後II 論述 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
+        name: `${label} 独自論述練習 ${formatYearSeason(question.year, question.season)} 問${question.qNumber} ── ${question.title}`,
         url,
         inLanguage: "ja",
         description: `${question.title} — AI が学習用の4観点で論述を評価します（参考評価）。`,
@@ -100,7 +99,6 @@ export default async function EssayEditorPage({
         educationalUse: "Self-assessment",
         audience: STUDENT_AUDIENCE,
         teaches: `${label} の午後II論述対策`,
-        isBasedOn: getSafePdfUrl(question.pdfUrl),
         publisher: {
           "@type": "Organization",
           "@id": ORG_ID,
@@ -137,7 +135,7 @@ export default async function EssayEditorPage({
 
       <header className="mb-6">
         <p className="mb-2 text-xs font-medium tracking-wide text-sky-600 dark:text-sky-400">
-          {examLabel(question.exam)} 午後II ──{" "}
+          {examLabel(question.exam)} 独自論述練習 ──{" "}
           {formatYearSeason(question.year, question.season)} 問{question.qNumber}
         </p>
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
@@ -151,7 +149,9 @@ export default async function EssayEditorPage({
       >
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
-          <strong>本機能は AI（Gemini Flash-Lite）による参考評価です。</strong>
+          <strong>編集者作成の練習用オリジナル問題です。</strong>
+          実際の試験で出題された問題ではありません。年度・季節は教材整理用のラベルです。
+          解答骨子・評価観点も編集者作成で、AI 添削は学習用の参考評価です。
           IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
           学習の参考としてご活用ください。
         </p>
@@ -183,9 +183,9 @@ export default async function EssayEditorPage({
       <InlineBookHint exam={question.exam} category="論文" />
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        出典:{" "}
+        試験制度・公式過去問の確認:{" "}
         <a
-          href={getSafePdfUrl(question.pdfUrl)}
+          href="https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html"
           target="_blank"
           rel="noreferrer"
           className="underline hover:text-zinc-900 dark:hover:text-zinc-100"

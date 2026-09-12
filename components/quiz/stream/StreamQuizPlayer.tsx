@@ -1,19 +1,21 @@
 "use client";
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
+
 
 import * as React from "react";
+import { QuestionBody } from "../QuestionBody";
+import { QuestionFigures } from "../QuestionFigures";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { createHistoryStore } from "@/lib/storage/history";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
 
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const SUMMARY_AT = 10;
-const AUTO_ADVANCE_MS = 3000;
 
 interface AnswerLog {
   questionId: string;
@@ -33,6 +35,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [showSummary, setShowSummary] = React.useState(false);
   const [transitioning, setTransitioning] = React.useState<"none" | "out">("none");
   const [reviewing, setReviewing] = React.useState(false);
+  const advancingRef = React.useRef(false);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -53,11 +56,14 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const canReview = !reviewing && lastAnsweredQuestion !== null && lastAnsweredQuestion.id !== question?.id;
 
   const goNext = React.useCallback(() => {
+    if (advancingRef.current) return;
+    advancingRef.current = true;
     setTransitioning("out");
     window.setTimeout(() => {
       setSelected(null);
       setRevealed(false);
       setTransitioning("none");
+      advancingRef.current = false;
       setIndex((prev) => {
         const next = prev + 1;
         if ((prev + 1) % SUMMARY_AT === 0) {
@@ -76,10 +82,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (!question || revealed) return;
-      const answerKey = Array.isArray(question.answer)
-        ? (question.answer[0] as string)
-        : String(question.answer);
-      const correct = key === answerKey;
+      const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
       setAnswers((prev) => [
@@ -104,27 +107,8 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   );
 
   React.useEffect(() => {
-    if (!revealed) return;
-    if (reviewing) return;
-    const t = window.setTimeout(goNext, AUTO_ADVANCE_MS);
-    return () => window.clearTimeout(t);
-  }, [revealed, goNext, reviewing]);
-
-  const touchStart = React.useRef<{ y: number; t: number } | null>(null);
-  const onTouchStart = (e: React.TouchEvent) => {
-    touchStart.current = { y: e.touches[0].clientY, t: Date.now() };
-  };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (!touchStart.current) return;
-    const dy = e.changedTouches[0].clientY - touchStart.current.y;
-    const dt = Date.now() - touchStart.current.t;
-    touchStart.current = null;
-    if (dy < -60 && dt < 600 && revealed) goNext();
-  };
-
-  React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (showSummary) return;
+      if (!question || showSummary || reviewing) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
@@ -132,19 +116,19 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
-        const i = ["1", "2", "3", "4"].indexOf(e.key);
-        if (i >= 0) {
+        const i = CHOICE_SHORTCUTS.indexOf(e.key);
+        if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
-          onSelect(CHOICE_KEYS[i]);
+          onSelect(getChoiceKeys(question.choices)[i]);
         }
-      } else if (e.key === "ArrowDown" || e.key === " " || e.key === "Enter") {
+      } else if (e.key === "Enter" && !(e.target instanceof HTMLElement && e.target.closest("button, a, summary"))) {
         e.preventDefault();
         goNext();
       }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onSelect, goNext, revealed, showSummary]);
+  }, [onSelect, goNext, revealed, showSummary, reviewing, question]);
 
   if (!question) return null;
 
@@ -168,15 +152,11 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = Array.isArray(question.answer)
-    ? (question.answer[0] as string)
-    : String(question.answer);
+  const answerKey = formatAcceptedAnswers(question.answer);
 
   return (
     <div
       className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
-      onTouchStart={onTouchStart}
-      onTouchEnd={onTouchEnd}
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
         <Link
@@ -212,14 +192,14 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       </header>
 
       <main
-        className={`relative z-10 flex flex-1 flex-col px-5 pb-6 transition-all duration-300 ${
+        className={`relative z-10 flex min-h-0 flex-1 flex-col overflow-y-auto px-5 pb-20 transition-all duration-300 ${
           transitioning === "out" ? "-translate-y-8 opacity-0" : "translate-y-0 opacity-100"
         }`}
         key={question.id}
       >
         <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+            {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
             問{question.qNumber}
@@ -229,18 +209,15 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
           </span>
         </div>
 
-        <div className="mb-4 flex-1 overflow-y-auto rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
-          {question.question.split("\n").map((line, i) => (
-            <p key={i} className="mb-2 last:mb-0">
-              {line}
-            </p>
-          ))}
+        <div className="mb-4 shrink-0 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
+          <QuestionBody text={question.question} />
+          <QuestionFigures question={question} />
         </div>
 
         <div className="space-y-2">
           {question.choices &&
-            CHOICE_KEYS.map((key) => {
-              const isCorrect = answerKey === key;
+            getChoiceKeys(question.choices).map((key) => {
+              const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
               let cls =
                 "border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 active:bg-white/15";
@@ -289,11 +266,9 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               <span className="font-semibold text-emerald-300">
                 正解: {answerKey}
               </span>
-              <span className="text-zinc-400">3秒後に次の問題へ ↓</span>
+              <span className="text-zinc-400">読んだら次の問題へ</span>
             </div>
-            <p className="mt-2 line-clamp-4 text-zinc-200">
-              {question.explanation || "解説は準備中です。"}
-            </p>
+            <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
           </div>
         )}
       </main>
@@ -304,7 +279,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
           className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent py-4 text-xs text-zinc-300 hover:text-white"
         >
           <ChevronUp className="h-4 w-4 animate-bounce" />
-          次の問題へスワイプ
+          次の問題へ
         </button>
       )}
 
@@ -369,9 +344,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = Array.isArray(question.answer)
-    ? (question.answer[0] as string)
-    : String(question.answer);
+  const answerKey = formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -400,7 +373,7 @@ function ReviewOverlay({
       <div className="flex-1 overflow-y-auto px-5 pb-8">
         <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+            {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
             問{question.qNumber}
@@ -411,17 +384,14 @@ function ReviewOverlay({
         </div>
 
         <div className="mb-4 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed text-zinc-100 ring-1 ring-white/10">
-          {question.question.split("\n").map((line, i) => (
-            <p key={i} className="mb-2 last:mb-0">
-              {line}
-            </p>
-          ))}
+          <QuestionBody text={question.question} />
+          <QuestionFigures question={question} />
         </div>
 
         <div className="mb-4 space-y-2">
           {question.choices &&
-            CHOICE_KEYS.map((key) => {
-              const isCorrect = answerKey === key;
+            getChoiceKeys(question.choices).map((key) => {
+              const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;
               let cls = "border-white/10 bg-white/5 text-zinc-300 opacity-70";
               if (isCorrect) cls = "border-emerald-400 bg-emerald-500/20 text-emerald-50";
@@ -452,7 +422,7 @@ function ReviewOverlay({
             </span>
           </div>
           <div className="whitespace-pre-wrap leading-relaxed text-zinc-200">
-            {question.explanation || "解説は準備中です。"}
+            <QuestionBody text={question.explanation || "解説は準備中です。"} />
           </div>
         </div>
       </div>

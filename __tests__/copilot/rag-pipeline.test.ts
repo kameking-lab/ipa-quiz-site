@@ -133,6 +133,9 @@ describe("runCopilotRAGPipeline", () => {
     expect(out.hasGrounding).toBe(true);
     expect(out.ragResult.passages.length).toBeGreaterThan(0);
     expect(out.ragResult.topScore).toBeGreaterThan(0);
+    expect(out.ragResult.passages[0].doc.id).toBe("q:ap-2024a-am-q1");
+    expect(out.ragResult.passages[0].doc.text).toContain(q().explanation);
+    expect(out.ragResult.passages.filter((p) => p.doc.id === "q:ap-2024a-am-q1")).toHaveLength(1);
     expect(out.ragDirective).not.toBeNull();
     expect(out.ragContextBlock.length).toBeGreaterThan(0);
     expect(out.citationFooter.length).toBeGreaterThan(0);

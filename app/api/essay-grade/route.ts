@@ -44,13 +44,13 @@ const BodySchema = z.object({
   }),
 });
 
-const ESSAY_SYSTEM_PROMPT = `あなたは IPA 高度試験（ST/SA/PM/SM/AU）の元採点委員です。
+const ESSAY_SYSTEM_PROMPT = `あなたは IPA 高度試験（ST/SA/PM/SM/AU）対策の論述教材を評価する学習支援者です。
 以下の論述（午後II）を厳密に採点してください。
 
 採点指針:
 - 設問ア・イ・ウそれぞれを「適合度」「論理性」「具体性」「業種事例の適切さ」の4軸で評価する（各 0-100）
 - 字数の目安と大きく乖離している場合は減点する（過少は致命的、過多は冗長と判断）
-- IPA 公表の採点講評・出題趣旨を最優先の判断基準とする
+- これは編集者作成の独自練習問題であり、IPA公式過去問ではない。提示された設問条件を最優先とし、編集者の評価観点を補助に使う。公式の採点講評や正解として扱わない。
 - 業種固有の事例が論述内容と整合しているかを評価する
 - 抽象論・一般論のみで自社固有性が見えない論述は減点する
 - 論理飛躍、冗長表現、用語の誤用を必ず指摘する
@@ -100,15 +100,16 @@ function buildUserPrompt(
   answers: { ア: string; イ: string; ウ: string },
 ): string {
   const lines: string[] = [];
+  lines.push("【教材種別】独自の論述練習問題。実際の試験問題ではありません。");
   lines.push(`【試験区分】${examLabel(question.exam)}（午後II）`);
-  lines.push(`【出題年度】${question.year}年 ${question.season === "spring" ? "春期" : "秋期"}`);
+  lines.push(`【教材整理用の年度ラベル（実際の出題年度ではない）】${question.year}年 ${question.season === "spring" ? "春期" : "秋期"}`);
   lines.push(`【問題タイトル】${question.title}`);
   lines.push("");
   lines.push("【問題本文（背景）】");
   lines.push(question.context);
   lines.push("");
-  lines.push("【IPA 公式採点講評・出題趣旨】");
-  lines.push(question.officialReview);
+  lines.push("【編集者作成の評価観点（公式講評ではない）】");
+  lines.push(question.editorialReview);
   lines.push("");
   lines.push(`【受験生の業種】${INDUSTRY_LABELS[industry]}`);
   lines.push("");

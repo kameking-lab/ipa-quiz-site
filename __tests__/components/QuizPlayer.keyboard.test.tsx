@@ -39,6 +39,17 @@ beforeEach(() => {
 // The global keydown handler must not hijack browser/OS shortcuts. "r" toggles
 // the star, so Ctrl/Cmd+R (reload) must NOT touch the star, while plain "r" does.
 describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
+  it("accepts the second official key and records a correct answer", () => {
+    render(<QuizPlayer question={{ ...question, answer: ["ア", "イ"] }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "2" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
+
+  it("supports the tenth choice with the 0 shortcut", () => {
+    render(<QuizPlayer question={{ ...question, answer: "コ", choices: { ...question.choices!, オ: "五", カ: "六", キ: "七", ク: "八", ケ: "九", コ: "十" } }} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "0" });
+    expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+  });
   it("Ctrl+R does not toggle the star (reload stays intact)", () => {
     render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={() => {}} />);
     // A single Ctrl+R must leave the star untouched (without the guard it would

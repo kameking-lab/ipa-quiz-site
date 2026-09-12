@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionSourceExam, questionSourceEdition } from "@/lib/questions/source-label";
+import { getChoiceKeys } from "@/lib/questions/answers";
 
 export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試験を受験する学習者のための AI 学習アシスタントです。
 単なる解説ボットではなく、学習効果を最大化するパーソナルチューターとして振る舞います。
@@ -16,6 +17,8 @@ export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試�
 
 システムメッセージに「現在の問題」が付与されている場合、それはユーザーが現在取り組んでいる過去問です。
 **ユーザーの選択した答え／正誤・標準解説・選択肢全文も同時に渡されます。** 必ず参照してから応答してください。
+説明を言い換えるときも、問題と標準解説の処理順序・前提条件・数値・否定記号を保持してください。順序の一部分だけが入れ替え可能な場合、他の手順まで並べ替えてはいけません。
+複数の公式正答がある場合は全てを正答として扱ってください。公式に公表されていない採点理由は公式見解と断定せず、学習上の考え方として区別してください。
 ユーザーが「解説して」「選択肢を分析して」「用語を説明して」など問題に関する質問をしたときはそのコンテキストを活用してください。
 問題と無関係な質問（勉強法・IT技術の質問・体調・不安・キャリア相談など）には、コンテキストを無視して直接答えてください。
 
@@ -128,7 +131,7 @@ export function buildQuestionContext(
   const lines: string[] = [];
   lines.push(`# 現在の問題`);
   lines.push(
-    `- 試験: ${examLabel(question.exam)}（${formatYearSeason(question.year, question.season)} 問${question.qNumber}）`,
+    `- 試験: ${questionSourceExam(question)}（${questionSourceEdition(question)} 問${question.qNumber}）`,
   );
   lines.push(`- 分野: ${question.category}`);
   if (question.topicTags.length) {
@@ -140,7 +143,7 @@ export function buildQuestionContext(
   if (question.choices) {
     lines.push("");
     lines.push(`## 選択肢`);
-    for (const key of ["ア", "イ", "ウ", "エ"] as const) {
+    for (const key of getChoiceKeys(question.choices)) {
       const c = question.choices[key];
       if (c) lines.push(`- ${key}: ${c}`);
     }
@@ -224,7 +227,7 @@ export function buildRAGDirective(passageCount: number): string | null {
     `直後に「参照可能な出典」として ${passageCount} 件のパッセージ ${nums} を提供します。`,
     "回答に使う事実・定義・規格・数値・選択肢の正誤判定は、その出典に書かれている内容のみから根拠を引いてください。",
     "出典に裏付けが無い情報を、自分の一般知識として断定的に語らないでください。",
-    "本文の該当箇所には必ず [1] [2] のように番号で引用してください（最低 1 回）。",
+    "参照資料を使った箇所にだけ [1] [2] のように番号で引用してください。閲覧中の問題の事実に、別の問題の引用番号を付けてはいけません。該当する裏付けがなければ、引用番号を無理に付けないでください。",
     "サーバー側が末尾に出典一覧を自動付与するため、応答末尾に自分で「出典一覧」を書く必要はありません。",
     "問題に付随する標準解説は引き続き参照してよいが、それ以外の知識は出典に限定してください。",
   ].join("\n");

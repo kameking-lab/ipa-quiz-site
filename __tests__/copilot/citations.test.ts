@@ -51,7 +51,7 @@ describe("buildCitationFooter", () => {
     ]);
     expect(f).toContain("[1] [Q1 タイトル](/quiz?id=a)");
     expect(f).toContain("[2] [用語: ACID](/glossary#ACID)");
-    expect(f).toContain("出典");
+    expect(f).toContain("参照資料");
   });
 });
 

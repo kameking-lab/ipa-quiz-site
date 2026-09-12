@@ -33,9 +33,9 @@ describe("safety text presentation", () => {
     expect(choiceCount).toBe(1884);
   });
 
-  it("preserves the deliberate wrong axis and wrong chemical structure in the official question", () => {
+  it("preserves the source's three distinct axes and deliberate wrong chemical structure", () => {
     const vibration = read(join(base, "presentation", "emkohyo-EM20261801.json")) as Record<string, { choices: { text: string }[] }>;
-    expect(vibration["emkohyo-EM20261801-q12"]!.choices[1]!.text).toContain("aₓ²＋aₓ²＋a_z²");
+    expect(vibration["emkohyo-EM20261801-q12"]!.choices[1]!.text).toContain("aₓ²＋aᵧ²＋a_z²");
     const chemistry = read(join(base, "presentation", "emkohyo-EM20251807.json")) as Record<string, { choices: { text: string }[] }>;
     expect(chemistry["emkohyo-EM20251807-q15"]!.choices[3]!.text).toContain("−O−C≡N");
   });

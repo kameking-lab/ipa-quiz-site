@@ -22,9 +22,9 @@ function makeQuestion(): EssayQuestion {
     title: "論述テスト",
     context: "背景。",
     subPrompts: [sub("ア"), sub("イ"), sub("ウ")],
-    officialReview: "講評",
+    editorialReview: "講評",
     pdfUrl: "https://example.com/q.pdf",
-    license: "IPA-public",
+    license: "original",
   };
 }
 
@@ -65,7 +65,7 @@ describe("EssayEditor — ヒント開閉ボタンの aria-expanded", () => {
   it("初期状態は aria-expanded='false'、クリックで 'true' に同期しヒントが表示される", () => {
     render(<EssayEditor question={makeQuestion()} />);
 
-    const toggles = screen.getAllByRole("button", { name: "論述要素のヒントを表示" });
+    const toggles = screen.getAllByRole("button", { name: "参考解答の骨子を読む（採点不要）" });
     expect(toggles.length).toBeGreaterThan(0);
     for (const btn of toggles) {
       expect(btn.getAttribute("aria-expanded")).toBe("false");
@@ -73,7 +73,7 @@ describe("EssayEditor — ヒント開閉ボタンの aria-expanded", () => {
 
     fireEvent.click(toggles[0]);
 
-    const opened = screen.getByRole("button", { name: "ヒントを隠す" });
+    const opened = screen.getByRole("button", { name: "解答骨子を閉じる" });
     expect(opened.getAttribute("aria-expanded")).toBe("true");
   });
 });

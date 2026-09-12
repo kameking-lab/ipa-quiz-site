@@ -4,6 +4,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Check, X } from "lucide-react";
 import type { ChoiceKey } from "@/lib/questions/types";
+import { QuestionBody } from "./QuestionBody";
 
 interface Props {
   choiceKey: ChoiceKey | `${number}`;
@@ -20,7 +21,7 @@ interface Props {
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
 }
 
-const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
+const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4, オ: 5, カ: 6, キ: 7, ク: 8, ケ: 9, コ: 0 };
 
 export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
   {
@@ -106,7 +107,9 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       >
         {choiceKey}
       </span>
-      <span className="flex-1 whitespace-pre-line pt-1 text-base leading-relaxed">{text}</span>
+      <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
+        <QuestionBody text={text} />
+      </div>
       {state === "revealed-correct" && (
         <Check
           aria-hidden="true"

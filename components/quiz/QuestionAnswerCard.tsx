@@ -1,6 +1,9 @@
 "use client";
 
+import { QuestionBody } from "./QuestionBody";
+
 import * as React from "react";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
 
@@ -13,12 +16,11 @@ import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
 
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 interface Props {
   questionId: string;
   choices: Partial<Record<ChoiceKey, string>>;
-  answerKey: ChoiceKey;
+  answerKey: ChoiceKey | ChoiceKey[];
   answerText?: string;
   exam: ExamCode;
   year: number;
@@ -64,7 +66,7 @@ export function QuestionAnswerCard({
   const [revealed, setRevealed] = React.useState(false);
 
   const keys = React.useMemo(
-    () => CHOICE_KEYS.filter((k) => choices[k] != null),
+    () => getChoiceKeys(choices),
     [choices],
   );
   const selectedIndex = selected ? keys.indexOf(selected) : -1;
@@ -72,7 +74,7 @@ export function QuestionAnswerCard({
 
   const recordOutcome = React.useCallback(
     (key: ChoiceKey) => {
-      const correct = key === answerKey;
+      const correct = isAcceptedAnswer(answerKey, key);
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
@@ -117,7 +119,7 @@ export function QuestionAnswerCard({
       }
       // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const i = ["1", "2", "3", "4"].indexOf(e.key);
+      const i = CHOICE_SHORTCUTS.indexOf(e.key);
       if (i >= 0 && i < keys.length) {
         e.preventDefault();
         onSelect(keys[i]);
@@ -127,13 +129,14 @@ export function QuestionAnswerCard({
     return () => window.removeEventListener("keydown", handler);
   }, [revealed, keys, onSelect]);
 
-  const isCorrect = selected !== undefined && selected === answerKey;
+  const isCorrect = isAcceptedAnswer(answerKey, selected);
+  const answerLabel = formatAcceptedAnswers(answerKey);
 
   return (
     <div className="space-y-4">
       <div
         role="radiogroup"
-        aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+        aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (
@@ -143,10 +146,10 @@ export function QuestionAnswerCard({
             text={choices[key]!}
             revealed={revealed}
             selected={selected === key}
-            correct={answerKey === key}
+            correct={isAcceptedAnswer(answerKey, key)}
             disabled={revealed}
             onClick={() => onSelect(key)}
-            shortcutIndex={idx + 1}
+            shortcutIndex={(idx + 1) % 10}
             {...roving.getRadioProps(idx)}
           />
         ))}
@@ -156,10 +159,10 @@ export function QuestionAnswerCard({
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {revealed
           ? selected === undefined
-            ? `正解は ${answerKey} です。下に解説があります。`
+            ? `正解は ${answerLabel} です。下に解説があります。`
             : isCorrect
               ? "正解です。下に解説があります。"
-              : `不正解です。正解は ${answerKey} です。下に解説があります。`
+              : `不正解です。正解は ${answerLabel} です。下に解説があります。`
           : ""}
       </div>
 
@@ -180,18 +183,20 @@ export function QuestionAnswerCard({
               : "rounded-2xl border border-red-300/60 bg-red-50 p-4 dark:border-red-700/50 dark:bg-red-950/40"
           }
         >
-          <p className="text-sm font-bold">
+          <div className="text-sm font-bold">
             {selected === undefined ? (
-              <span className="text-emerald-800 dark:text-emerald-200">正解は {answerKey}</span>
+              <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
             ) : isCorrect ? (
               <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
             ) : (
-              <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerKey}</span>
+              <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>
             )}
-            {answerText && (
+            {answerText && (answerText.includes("\n") ? (
+              <div className="mt-2 min-w-0 font-normal text-foreground"><QuestionBody text={answerText} /></div>
+            ) : (
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
-            )}
-          </p>
+            ))}
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"

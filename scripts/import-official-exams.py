@@ -1,6 +1,5 @@
 """Import owner-authorized official PDFs; preserve figures, remove answer marks from prompts."""
 import concurrent.futures, hashlib, json, pathlib, re, unicodedata, urllib.request
-import pdfplumber
 from PIL import ImageDraw, ImageChops, Image
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
@@ -10,7 +9,27 @@ PUBLIC = ROOT / 'public/exam-library'
 
 def norm(s): return unicodedata.normalize('NFKC', s)
 
+def apply_reviewed_answer_keys(questions, record, pdf_hash):
+    """Vector circles are not text. Reuse only visually reviewed keys for the exact PDF."""
+    key_file = DATA / 'reviewed-answer-keys.json'
+    if not key_file.exists(): return
+    reviewed = next((r for r in json.loads(key_file.read_text(encoding='utf8'))
+                     if r['paperId'] == record['id']), None)
+    if reviewed is None: return
+    if reviewed['pdfSha256'] != pdf_hash or reviewed['pdfUrl'] != record['pdfUrl']:
+        raise ValueError(f'Reviewed answer source changed: {record["id"]}')
+    if len(questions) != len(reviewed['answers']):
+        raise ValueError(f'Reviewed question count changed: {record["id"]}')
+    for index, (question, answer, page) in enumerate(zip(questions, reviewed['answers'], reviewed['pages'])):
+        if question['id'] != f'{record["id"]}-q{index+1}' or question['choiceCount'] != 5 or page not in question['sourcePages']:
+            raise ValueError(f'Reviewed question mapping changed: {question["id"]}')
+        if question['correctChoice'] not in (None, answer):
+            raise ValueError(f'Text mark conflicts with reviewed key: {question["id"]}')
+        question['correctChoice'] = answer
+        question['answerAuthority'] = 'official'
+
 def run(record):
+    import pdfplumber
     key = record['id']
     CACHE.mkdir(parents=True, exist_ok=True)
     destination = PUBLIC / key
@@ -96,6 +115,7 @@ def run(record):
         q['extractionStatus']='complete' if q['choiceCount']==5 or q['answerAuthority']=='descriptive' else 'review-needed'
     if len({q['id'] for q in questions})!=len(questions):
         raise ValueError(f'Duplicate question number: {key}')
+    apply_reviewed_answer_keys(questions, record, hashlib.sha256(pdf.read_bytes()).hexdigest())
     papers=DATA/'papers'; papers.mkdir(exist_ok=True)
     (papers/f'{key}.json').write_text(json.dumps(questions,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
     record.update(questionCount=len(questions),scoredCount=sum(q['answerAuthority']=='official' for q in questions),

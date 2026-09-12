@@ -76,10 +76,10 @@ export const ST_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `本問は、デジタル技術活用を前提とした事業戦略の策定能力を問う問題である。経営目標との整合、ターゲット顧客と提供価値の明確化、KPI設計の具体性、リスク対応策の妥当性が評価ポイントとなる。
+    editorialReview: `本問は、デジタル技術活用を前提とした事業戦略の策定能力を問う問題である。経営目標との整合、ターゲット顧客と提供価値の明確化、KPI設計の具体性、リスク対応策の妥当性が評価ポイントとなる。
 論述では、抽象的な技術用語の羅列ではなく、自社事業の固有性に基づいた戦略の必然性を示すことが重要である。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "st-2024a-pm2-q2",
@@ -153,10 +153,10 @@ export const ST_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `関係部門間の利害調整、業務プロセス再設計の主導力、合意形成プロセスの具体性が評価される。
+    editorialReview: `関係部門間の利害調整、業務プロセス再設計の主導力、合意形成プロセスの具体性が評価される。
 単に部門会議を開いただけの記述ではなく、対立の構造をどう捉え、どう解決したかを論理的に展開することが求められる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "st-2023a-pm2-q1",
@@ -227,9 +227,9 @@ export const ST_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `ビジネスモデル変革の必然性と、これを支える IT インフラの整合性が評価ポイントである。
+    editorialReview: `ビジネスモデル変革の必然性と、これを支える IT インフラの整合性が評価ポイントである。
 ビジネスとITのどちらか一方に偏らず、両者を統合した戦略として論述できているかが重要である。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2023r05.html",
-    license: "IPA-public",
+    license: "original",
   },
 ];

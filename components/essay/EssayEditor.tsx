@@ -314,13 +314,13 @@ function SubPromptEditor({
             aria-expanded={showHint}
             className="text-sky-600 hover:underline dark:text-sky-400"
           >
-            {showHint ? "ヒントを隠す" : "論述要素のヒントを表示"}
+            {showHint ? "解答骨子を閉じる" : "参考解答の骨子を読む（採点不要）"}
           </button>
           <span className={`tabular-nums ${status.color}`}>{status.message}</span>
         </div>
         {showHint && (
           <div className="mt-3 rounded-lg border border-sky-200 bg-sky-50 p-3 text-xs text-sky-900 dark:border-sky-900 dark:bg-sky-950/50 dark:text-sky-100">
-            <p className="mb-1 font-semibold">想定される論述要素</p>
+            <p className="mb-1 font-semibold">編集者作成の解答骨子（一例）</p>
             <p className="leading-relaxed whitespace-pre-wrap">{modelOutline}</p>
           </div>
         )}

@@ -1,9 +1,9 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import "server-only";
 import type { CitationMeta } from "./header-codec";
 import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
 import { getSafePdfUrl } from "@/lib/exam-config";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { Question } from "@/lib/questions/types";
 import type { RerankedCandidate } from "./types";
 
@@ -61,10 +61,10 @@ export function buildCitationMetas(
           ? {
               questionId: q.id,
               exam: q.exam,
-              examLabel: examLabel(q.exam),
+              examLabel: questionSourceExam(q),
               year: q.year,
               season: q.season,
-              yearSeasonLabel: formatYearSeason(q.year, q.season),
+              yearSeasonLabel: questionSourceEdition(q),
               qNumber: q.qNumber,
               category: q.category,
             }

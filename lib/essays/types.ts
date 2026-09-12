@@ -39,6 +39,6 @@ export interface SCpm2Question {
   theme: string;
   context: string;
   pdfUrl: string;
-  license: "IPA-public";
+  license: "IPA-public" | "original";
   industries: SCEssayAnswer[];
 }

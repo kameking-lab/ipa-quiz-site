@@ -1,4 +1,7 @@
 import type { ExamCode, Session, Season } from "@/lib/questions/types";
+import officialSources from "@/data/questions/corrections/official-sources.json";
+
+const officialAnswerUrls = new Map(Object.values(officialSources).map(source => [source.question, source.answer]));
 
 export interface SessionConfig {
   session: Session;
@@ -18,7 +21,7 @@ export interface ExamConfig {
   sessions: SessionConfig[];
   seasons: Array<Season>;
   yearRange: { start: number; end: number };
-  /** 2009-2011 pre-reform period had different seasons for most specialist exams */
+  /** Before the 2020/2021 schedule changes, most specialist exams used the opposite season */
   legacyYearRange?: { start: number; end: number };
   legacySeasons?: Array<Season>;
   /** CBT-format years (IP 2021+, FE/SG 2023+) */
@@ -159,9 +162,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["ITストラテジスト専門", "情報戦略", "業務改革", "システム化計画", "プロジェクト推進"]),
     ],
     seasons: ["spring"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   sa: {
     code: "sa",
@@ -173,9 +176,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["システムアーキテクチャ", "要件定義", "システム設計", "ソフトウェア設計", "品質管理"]),
     ],
     seasons: ["spring"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   pm: {
     code: "pm",
@@ -187,9 +190,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["プロジェクトマネジメント", "スコープ管理", "コスト管理", "スケジュール管理", "リスク管理", "品質管理", "EVM"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   nw: {
     code: "nw",
@@ -201,9 +204,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["ネットワーク設計", "TCP/IP", "プロトコル", "ネットワークセキュリティ", "ルーティング", "無線LAN"]),
     ],
     seasons: ["spring"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   db: {
     code: "db",
@@ -215,9 +218,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["データベース設計", "SQL", "正規化", "トランザクション", "障害回復", "データウェアハウス"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   es: {
     code: "es",
@@ -229,9 +232,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["組込みシステム", "リアルタイムOS", "ハードウェア設計", "IoT", "信頼性設計", "安全性設計"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   sc: {
     code: "sc",
@@ -255,9 +258,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["ITサービスマネジメント", "ITIL", "SLA", "インシデント管理", "問題管理", "変更管理", "キャパシティ管理"]),
     ],
     seasons: ["spring"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
     legacySeasons: ["autumn"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
   au: {
     code: "au",
@@ -269,9 +272,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       am2(["システム監査", "内部統制", "監査手続", "ITガバナンス", "リスク評価", "コンプライアンス"]),
     ],
     seasons: ["autumn"],
-    yearRange: { start: 2012, end: 2025 },
+    yearRange: { start: 2020, end: 2025 },
     legacySeasons: ["spring"],
-    legacyYearRange: { start: 2009, end: 2011 },
+    legacyYearRange: { start: 2009, end: 2019 },
   },
 };
 
@@ -315,6 +318,7 @@ export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
 export function getOfficialAnswerPdfUrl(
   sourcePdfUrl: string | undefined,
 ): string {
+  if (sourcePdfUrl && officialAnswerUrls.has(sourcePdfUrl)) return officialAnswerUrls.get(sourcePdfUrl)!;
   if (!isLivePdfUrl(sourcePdfUrl)) {
     return IPA_EXAM_INFO_URL;
   }
