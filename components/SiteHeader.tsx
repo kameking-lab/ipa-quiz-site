@@ -62,6 +62,7 @@ export function SiteHeader() {
   const isMockExamActive = pathname?.startsWith("/mock-exam");
 
   if (pathname?.startsWith("/e-learning")) return <SafetySiteHeader />;
+  if (pathname === "/") return <SafetySiteHeader home />;
 
   return (
     <header

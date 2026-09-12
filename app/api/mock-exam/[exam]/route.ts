@@ -46,7 +46,7 @@ export async function GET(
       ? (modeParam as SelectionMode)
       : "balanced";
 
-  const pool = filterQuestions(ALL_QUESTIONS, { mode: "random", exam });
+  const pool = filterQuestions(ALL_QUESTIONS, { mode: "random", exam, session: config.session });
   if (pool.length === 0) {
     return NextResponse.json(
       { error: "no_questions", message: "問題が不足しています。" },

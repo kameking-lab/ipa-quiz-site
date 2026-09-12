@@ -21,11 +21,13 @@ function buildPattern(answers: AnswerLog[]): string {
 }
 
 export function StreamSummary({
+  backHref = "/ipa",
   recentAnswers,
   totalAnswered,
   onContinue,
   canContinue,
 }: {
+  backHref?: string;
   recentAnswers: AnswerLog[];
   totalAnswered: number;
   onContinue: () => void;
@@ -108,7 +110,7 @@ export function StreamSummary({
 
         <div className="grid grid-cols-2 gap-3">
           <Link
-            href="/"
+            href={backHref}
             className="flex items-center justify-center gap-2 rounded-2xl bg-white/5 py-3 text-sm text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/10"
           >
             <Home className="h-4 w-4" /> ホーム
@@ -122,7 +124,7 @@ export function StreamSummary({
             </button>
           ) : (
             <Link
-              href="/quiz/stream"
+              href={typeof window !== "undefined" ? window.location.pathname + window.location.search : "/quiz/stream"}
               className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
             >
               <RotateCw className="h-4 w-4" /> もう一度

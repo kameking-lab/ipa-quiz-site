@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { isHealthConsultantSubject } from "@/lib/exam-library-model";
 import type { ExamAnswerMode, ExamDateKind, ExamGroupId, ExamGroupInfo } from "@/lib/exam-library-model";
 
 /** 一覧表示に必要な最小限の情報（問題本文は含めない） */
@@ -40,12 +41,11 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
   const activeItems = items.filter((item) => item.group === group);
   const papers = activeItems.filter((item) => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
   const latest = papers.find((item) => item.questionCount !== null);
-  const healthSubjects = new Set(["労働衛生一般", "労働衛生関係法令", "健康管理", "労働衛生工学"]);
   const sections = [
     { id: "licenses", group: "lckohyo", title: "免許試験", filter: () => true },
     { id: "measurement", group: "emkohyo", title: "作業環境測定士", filter: () => true },
-    { id: "safety-consultant", group: "cskohyo", title: "労働安全コンサルタント", filter: (name: string) => !healthSubjects.has(name) },
-    { id: "health-consultant", group: "cskohyo", title: "労働衛生コンサルタント", filter: (name: string) => healthSubjects.has(name) },
+    { id: "safety-consultant", group: "cskohyo", title: "労働安全コンサルタント", filter: (name: string) => !isHealthConsultantSubject(name) },
+    { id: "health-consultant", group: "cskohyo", title: "労働衛生コンサルタント", filter: (name: string) => isHealthConsultantSubject(name) },
   ];
   return <div className="space-y-6">
     {!subject ? <section aria-labelledby="safety-exam-select">

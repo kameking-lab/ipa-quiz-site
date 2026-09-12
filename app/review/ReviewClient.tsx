@@ -239,7 +239,7 @@ export function ReviewClient() {
             もう一度
           </Button>
           <Button asChild variant="outline" className="flex-1">
-            <Link href="/">ホームに戻る</Link>
+            <Link href="/ipa">試験選択に戻る</Link>
           </Button>
         </div>
       </div>

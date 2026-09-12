@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import type { ExamCode } from "@/lib/questions/types";
 import { getMockConfig, MOCK_EXAM_CONFIGS } from "@/lib/mock-exam/config";
 import { getMockExamHistoryByExam } from "@/lib/mock-exam/storage";
@@ -144,6 +145,7 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
+      <Link href={`/${exam}`} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
       <Breadcrumbs
         items={[
           { name: "ホーム", href: "/" },
@@ -153,11 +155,11 @@ export function MockExamLanding({ examFromQuery }: { examFromQuery?: string }) {
       <header className="mb-6">
         <div className="mb-2 flex items-center gap-2">
           <Timer className="h-5 w-5 text-sky-500" />
-          <Badge variant="outline">本番形式</Badge>
+          <Badge variant="outline">{exam === "sg" ? "科目Aの収録問題で演習" : "本番形式"}</Badge>
         </div>
-        <h1 className="text-2xl font-bold">模試モード — 本番形式で実力チェック</h1>
+        <h1 className="text-2xl font-bold">{exam === "sg" ? "科目A 演習 — 収録問題で実力チェック" : "模試モード — 本番形式で実力チェック"}</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          本番と同じ問題数・時間配分で挑戦。終了後に合否判定と分野別分析を表示します。
+          {exam === "sg" ? "演習対象の科目A 37問で練習します。科目Bは含みません。制限時間120分・正答率60%はこの演習の設定で、本試験全体の再現や合否判定ではありません。" : "本番と同じ問題数・時間配分で挑戦。終了後に学習の目安と分野別分析を表示します。"}
         </p>
       </header>
 

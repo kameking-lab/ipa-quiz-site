@@ -1,3 +1,4 @@
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -170,19 +171,15 @@ export default async function ExamTopicPage({
         </header>
 
         <section aria-label="クイズを始める" className="mb-8">
-          <Button
-            asChild
-            variant="gradient"
-            size="xl"
-            className="w-full font-semibold shadow-md hover:shadow-lg"
-          >
-            <Link
-              href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}`}
-            >
-              この分野でクイズを始める
-              <ChevronRight className="h-4 w-4" />
-            </Link>
-          </Button>
+          <div className="flex flex-wrap gap-2">
+            {[...new Set(pool.filter((q) => q.type === "multiple-choice").map((q) => q.session))].map((session) => (
+              <Button key={session} asChild variant="gradient" size="lg">
+                <Link href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/${exam}/topic/${topicSlug}`)}`}>
+                  {practiceSessionLabel(session)}・この分野を解く<ChevronRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            ))}
+          </div>
         </section>
 
         <ul className="space-y-2">

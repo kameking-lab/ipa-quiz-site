@@ -1,5 +1,8 @@
+import { defaultPracticeSession, parsePracticeSession, quizBackHref, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import type { Metadata } from "next";
-import type { ExamCode, QuizFilter, QuizMode, Season, Session } from "@/lib/questions/types";
+import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/types";
 import { getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
@@ -44,10 +47,11 @@ interface SearchParams {
    * QuizPlayer's progress counter said '1問目 / 80問中' instead of '1問目 / 3問中'.
    */
   limit?: string;
+  returnTo?: string;
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
-const VALID_SESSIONS: Session[] = ["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b"];
+
 
 export default async function QuizPage({
   searchParams,
@@ -56,15 +60,13 @@ export default async function QuizPage({
 }) {
   const sp = await searchParams;
   const mode = (VALID_MODES.includes(sp.mode as QuizMode) ? sp.mode : "random") as QuizMode;
-  const session = VALID_SESSIONS.includes(sp.session as Session)
-    ? (sp.session as Session)
-    : undefined;
+
 
   const examGroup = sp.examGroup
     ? (sp.examGroup
         .split(",")
         .map((s) => s.trim())
-        .filter(Boolean) as ExamCode[])
+        .filter((s): s is ExamCode => ALL_EXAM_CODES.includes(s as ExamCode)))
     : undefined;
   const categoryGroup = sp.categoryGroup
     ? sp.categoryGroup
@@ -73,10 +75,13 @@ export default async function QuizPage({
         .filter(Boolean)
     : undefined;
 
-  const exam = (sp.exam as ExamCode | undefined) ?? "ap";
+  const exam: ExamCode = ALL_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
+  const session = parsePracticeSession(sp.session) ?? (examGroup?.length ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
+  const examQuestions = await getQuestionsForExam(exam);
+  const sessions = PRACTICE_SESSIONS.filter((s) => examQuestions.some((q) => q.session === s && (!sp.year || q.year === Number(sp.year)) && (!sp.season || q.season === sp.season)));
   const filter: QuizFilter = {
     mode,
-    exam: examGroup ? undefined : exam,
+    exam: examGroup?.length ? undefined : exam,
     examGroup,
     year: sp.year ? Number(sp.year) : undefined,
     season: sp.season as Season | undefined,
@@ -104,10 +109,11 @@ export default async function QuizPage({
   return (
     <>
       <QuizModeTabs active={mode} exam={exam} />
+      {!examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}
         mode={mode}
-        backHref="/"
+        backHref={quizBackHref({ exam, mode, returnTo: sp.returnTo })}
         exam={exam}
         categoryById={categoryById}
       />

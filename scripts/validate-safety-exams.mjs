@@ -80,8 +80,13 @@ const paperFiles = fs.readdirSync(path.join(data, 'papers')).filter(name => name
 check(paperFiles.length === catalog.length && paperFiles.every(name => paperIds.has(name.slice(0, -5))), 'Catalog and paper files differ');
 for (const [id, explanation] of Object.entries(explanations)) {
   check(questions.has(id), `Orphan explanation: ${id}`);
-  check(questions.get(id)?.answerAuthority === 'official', `Explanation attached to non-official answer: ${id}`);
-  check(typeof explanation === 'string' && explanation.trim().length > 0, `Empty explanation: ${id}`);
+  // A learning explanation is independent of grading authority. Unconfirmed and
+  // descriptive questions may have authored reasoning without an official key.
+  check(typeof explanation === 'string' && explanation.trim().length >= 120, `Empty/insubstantial explanation: ${id}`);
+  check(!/準備中|今後追加|解説を作成できません/.test(explanation), `Placeholder explanation: ${id}`);
+}
+if (process.argv.includes('--require-explanations')) {
+  for (const id of questions.keys()) check(Object.hasOwn(explanations, id), `Missing explanation: ${id}`);
 }
 const duplicateGroups = [...duplicates.values()].filter(ids => ids.length > 1);
 const explanationReuseCandidates = duplicateGroups.flatMap(ids => {
@@ -93,6 +98,7 @@ const result = {
   officialAnswers: authority.official, unconfirmed: authority.unconfirmed,
   descriptive: authority.descriptive, images: images.size,
   explanations: Object.keys(explanations).length,
+  explanationCoverage: Number((Object.keys(explanations).length / questions.size * 100).toFixed(2)),
   duplicateGroups: duplicateGroups.length,
   duplicateQuestions: duplicateGroups.reduce((sum, ids) => sum + ids.length, 0),
   explanationReuseCandidates, errors,

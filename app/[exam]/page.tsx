@@ -279,7 +279,7 @@ export default async function ExamTopPage({
               <h2 className="mb-3 text-sm font-semibold text-foreground">
                 ランダム出題の範囲を選択
               </h2>
-              <div className="grid gap-2 sm:grid-cols-3">
+              <div className="grid gap-2 sm:grid-cols-2">
                 <Button asChild variant="gradient" size="lg" className="font-semibold">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
                     午前 II
@@ -287,9 +287,6 @@ export default async function ExamTopPage({
                 </Button>
                 <Button asChild variant="outline" size="lg">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前 I</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}`}>午前 I＋II</Link>
                 </Button>
               </div>
             </div>

@@ -9,9 +9,10 @@ import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
+import { questionPagePath } from "@/lib/seo/question-url";
 
 function isPlaceholderExplanation(explanation: string): boolean {
-  return /^正解は[アイウエ]です[。.]/.test(explanation) || explanation.trim() === "";
+  return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
 }
 
 interface Props {
@@ -165,7 +166,7 @@ export function ExplanationCard({
             ✨ 正解おめでとうございます！教育貢献プロジェクトをシェアして仲間と学習しませんか？
           </p>
           <ShareButtons
-            url={typeof window !== "undefined" ? window.location.href : "https://www.kakomon-ai.jp/"}
+            url={`https://www.kakomon-ai.jp${questionPagePath(question)}`}
             text={`過去問AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
             hashtags={["過去問AI", "IPA試験"]}
             compact
@@ -179,7 +180,7 @@ export function ExplanationCard({
             苦手分野を克服しませんか？
           </p>
           <Link
-            href="/modes/topic"
+            href={`/${question.exam}/topic/${encodeURIComponent(question.category)}`}
             data-track="explanation-cta-topic"
             className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-95"
           >

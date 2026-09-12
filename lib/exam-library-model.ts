@@ -37,12 +37,21 @@ export interface ExamCatalogEntry {
   noteLinks?: ExamNoteLink[];
 }
 
+export interface ExamQuestionPresentation {
+  /** Hash of the untouched source text; stale overlays are rejected by the server. */
+  sourceHash: string;
+  prompt: string;
+  choices: { number: number; text: string }[];
+  figures: { src: string; alt: string; width: number; height: number }[];
+}
+
 export interface ExamQuestion {
   id: string;
   number: number;
-  /** 画像の代替テキスト・検索用。表示の正本は images */
+  /** 取り込み時の原文。解説照合と検索用に改変せず保持。 */
   text: string;
   images: string[];
+  presentation?: ExamQuestionPresentation;
   correctChoice: number | null;
   choiceCount: number;
   answerAuthority: ExamAnswerAuthority;
@@ -84,6 +93,12 @@ export const EXAM_GROUPS: readonly ExamGroupInfo[] = [
     dateNote: "日付は筆記試験の実施日です。",
   },
 ];
+
+const HEALTH_CONSULTANT_SUBJECTS = new Set(["労働衛生一般", "労働衛生関係法令", "健康管理", "労働衛生工学"]);
+
+export function isHealthConsultantSubject(subject: string): boolean {
+  return HEALTH_CONSULTANT_SUBJECTS.has(subject);
+}
 
 export function findExamGroup(id: string): ExamGroupInfo | undefined {
   return EXAM_GROUPS.find((group) => group.id === id);

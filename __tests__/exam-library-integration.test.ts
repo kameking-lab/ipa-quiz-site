@@ -1,10 +1,25 @@
 import { describe, expect, it } from "vitest";
+import { createHash } from "node:crypto";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
 import { isScorableQuestion } from "@/lib/exam-library-model";
 import explanations from "@/data/exam-library/explanations.json";
 
 describe("official exam library integration", () => {
+  it("requires a substantive explanation for every question and preserves all published answer keys", () => {
+    const questions = listAvailableExamIds().flatMap((id) => loadExamPaper(id) ?? []);
+    expect(Object.keys(explanations).sort()).toEqual(questions.map((question) => question.id).sort());
+    for (const question of questions) {
+      expect(question.explanation?.trim().length, question.id).toBeGreaterThanOrEqual(120);
+      expect(question.explanation, question.id).not.toMatch(/解説準備中|解説は準備中|後日追加|TODO|TBD/);
+    }
+    const answerSnapshot = questions
+      .map((question) => [question.id, question.correctChoice, question.answerAuthority])
+      .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
+    expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
+      .toBe("52951cd224ae1b7dc8d28473fa8093473802a75183a6d2f295cadc1a499dec35");
+  });
+
   it("loads every catalog paper from the site's data root without inventing answer keys", () => {
     const ids = listAvailableExamIds();
     expect(ids.length).toBe(EXAM_CATALOG.length);

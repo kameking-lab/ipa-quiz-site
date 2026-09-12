@@ -4,6 +4,8 @@ import "server-only";
  * 全回の問題をクライアントへ同梱しないため、ページ単位で fs から読む。
  * パスはカタログに存在するIDだけから組み立て、任意パスを読まない。
  */
+import { createHash } from "node:crypto";
+import { parseExamPresentation } from "@/lib/exam-library-presentation";
 import explanationsJson from "@/data/exam-library/explanations.json";
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
@@ -33,9 +35,13 @@ export function loadExamPaper(id: string): readonly ExamQuestion[] | null {
     try {
       const raw = readFileSync(file, "utf8");
       const parsed = parseExamPaper(JSON.parse(raw.charCodeAt(0) === 0xfeff ? raw.slice(1) : raw), id);
+      const presentationFile = join(process.cwd(), "data", "exam-library", "presentation", `${id}.json`);
+      const overlay: unknown = existsSync(presentationFile) ? JSON.parse(readFileSync(presentationFile, "utf8")) : {};
       questions = parsed.length > 0 ? parsed.map((question) => {
         const explanation = (explanationsJson as Record<string, string>)[question.id];
-        return explanation?.trim() ? { ...question, explanation: explanation.trim() } : question;
+        const sourceHash = createHash("sha256").update(question.text).digest("hex");
+        const presentation = parseExamPresentation(overlay, question, sourceHash);
+        return { ...question, ...(explanation?.trim() ? { explanation: explanation.trim() } : {}), ...(presentation ? { presentation } : {}) };
       }) : null;
     } catch {
       questions = null;

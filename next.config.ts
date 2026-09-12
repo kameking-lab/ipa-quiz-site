@@ -58,8 +58,8 @@ const longCacheImmutable = {
 
 const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
-    "/e-learning/exams": ["./data/exam-library/papers/*.json"],
-    "/e-learning/exams/*": ["./data/exam-library/papers/*.json"],
+    "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
+    "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
   },
   async redirects() {
     return [

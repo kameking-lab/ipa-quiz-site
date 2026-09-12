@@ -490,7 +490,7 @@ export default async function QuestionPage({
           </div>
           <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
             <Link
-              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}`}
+              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&returnTo=${encodeURIComponent(questionPagePath(q))}`}
             >
               クイズモードで開く
               <ArrowRight className="h-4 w-4" />
@@ -512,7 +512,7 @@ export default async function QuestionPage({
             ].map((label) => (
               <li key={label}>
                 <Link
-                  href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}#q${q.qNumber}`}
+                  href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&returnTo=${encodeURIComponent(questionPagePath(q))}#q${q.qNumber}`}
                   className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-card px-2.5 py-1 text-xs text-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary-soft"
                 >
                   <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
