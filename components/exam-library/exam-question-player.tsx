@@ -18,6 +18,8 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
+import Image from "next/image";
+import answerFiguresJson from "@/data/exam-library/answer-figures.json";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { readExamTabProgress, writeExamTabProgress } from "@/lib/exam-library-session";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
@@ -26,6 +28,7 @@ import { extractExamChoices } from "@/lib/exam-library-choices";
 import { ExamQuestionFigure } from "@/components/exam-library/exam-question-figure";
 import { ExamDeviceSavePanel } from "@/components/exam-library/exam-device-save-panel";
 import {
+  boilerAnswerPage,
   isScorableQuestion,
   officialPdfPageUrl,
   type ExamQuestion,
@@ -45,6 +48,9 @@ import {
   wrongQuestionIds,
   type ExamSessionAnswers,
 } from "@/lib/exam-library-progress";
+
+type AnswerFigure = { src: string; alt: string; width: number; height: number; official?: boolean };
+const answerFigures: Record<string, AnswerFigure[]> = answerFiguresJson;
 
 interface ExamQuestionPlayerProps {
   initialQuestionId?: string;
@@ -392,6 +398,7 @@ export function ExamQuestionPlayer({
   const scorable = current ? isScorableQuestion(current) : false;
   const parsedChoices = current ? (current.presentation ?? extractExamChoices(current.text, current.choiceCount)) : null;
   const sourcePage = current?.sourcePages?.[0];
+  const answerPage = current ? boilerAnswerPage(examId, current.number) : undefined;
   const showRestore =
     saved !== null && savedSubmittedCount > 0 && !saveEnabled && !restoreHandled;
 
@@ -599,7 +606,7 @@ export function ExamQuestionPlayer({
               <div className="mt-5">
                 <p className="text-sm leading-6 text-slate-700 dark:text-slate-200">
                   {current.answerAuthority === "descriptive"
-                    ? "記述式の問題です。自動採点はしません。解答の下書きを書いてから、公式PDFで確認してください。"
+                    ? "記述・複数選択式の問題です。自動採点はしません。自分の解答を考えたら、模範解答と照らし合わせましょう。メモを書かずに読むこともできます。"
                     : "この問題は解答番号ボタンを用意できていません。画像で問題を確認してください。採点はしません。"}
                 </p>
                 <label htmlFor={`exam-memo-${current.id}`} className="mt-3 block font-semibold">
@@ -621,7 +628,7 @@ export function ExamQuestionPlayer({
                 </p>
                 {!submitted ? (
                   <button type="button" onClick={submitAnswer} className={`${primaryButton} mt-3 w-full sm:w-auto`}>
-                    確認済みにする
+                    模範解答を見る
                   </button>
                 ) : null}
               </div>
@@ -675,8 +682,8 @@ export function ExamQuestionPlayer({
                 </div>
 
                 <div className="mt-4 border-t border-current/25 pt-3">
-                  <h4 className="font-semibold">{scorable ? "AIによる学習用解説" : "参考解説（採点なし）"}</h4>
-                  {current.explanation ? <p className="mt-1 text-xs leading-5">公式解説ではありません。法令の時点や出典も確認しながら学習してください。</p> : null}
+                  <h4 className="font-semibold">{current.answerAuthority === "descriptive" ? "模範解答・解説（学習用）" : scorable ? "AIによる学習用解説" : "参考解説（採点なし）"}</h4>
+                  {current.explanation ? <p className="mt-1 text-xs leading-5">{answerPage ? "公式の正答・正答例を参照して、このサイトが学習用に整理した解答と解説です。公式原文とは表現や計算の丸め方が異なる場合があります。" : current.answerAuthority === "descriptive" ? "このサイトが作成した模範解答例です。公式の正答例ではありません。別の適切な答え方もあり、法令は出題時点で確認してください。" : "公式解説ではありません。法令の時点や出典も確認しながら学習してください。"}</p> : null}
                   {current.explanation ? (
                     <p className="mt-1 whitespace-pre-line text-sm leading-7">{current.explanation}</p>
                   ) : (
@@ -685,7 +692,26 @@ export function ExamQuestionPlayer({
                       {sourcePage ? `（${sourcePage}ページ）` : ""}で確認できます。
                     </p>
                   )}
+                  {answerFigures[current.id]?.length ? (
+                    <div className="mt-4 grid gap-4">
+                      {answerFigures[current.id]!.map((figure) => (
+                        <figure key={figure.src}>
+                          <a href={figure.src} target="_blank" rel="noopener noreferrer" aria-label={`${figure.alt}を拡大（新しいタブ）`}>
+                            <Image src={figure.src} alt={figure.alt} width={figure.width} height={figure.height} className="h-auto max-w-full rounded-lg bg-white" />
+                          </a>
+                          <figcaption className="mt-1 text-xs">{figure.alt}：{figure.official ? "公式の正答例から抜粋" : "模範解答用の模式図（独自作成）"}。図を押すと拡大できます。</figcaption>
+                        </figure>
+                      ))}
+                    </div>
+                  ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">
+                    {answerPage ? (
+                      <a href={officialPdfPageUrl(pdfUrl, answerPage)} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                        公式の正答・正答例を確認（PDF {answerPage}ページ）
+                        <span className="sr-only">（新しいタブで開きます）</span>
+                        <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
+                      </a>
+                    ) : null}
                     <a
                       href={officialPdfPageUrl(pdfUrl, sourcePage)}
                       target="_blank"

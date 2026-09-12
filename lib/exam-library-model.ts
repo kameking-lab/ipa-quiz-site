@@ -331,3 +331,12 @@ export function examPath(id: string): string {
 export function officialPdfPageUrl(pdfUrl: string, page: number | undefined): string {
   return page ? `${pdfUrl}#page=${page}` : pdfUrl;
 }
+
+/** 特級ボイラーの公式PDF末尾「正答・正答例」の該当ページ。 */
+export function boilerAnswerPage(examId: string, questionNumber: number): number | undefined {
+  const pages: Record<string, readonly number[]> = {
+    "lckohyo-LC20260401-2": [32,33,34,34,34,34,35,35,36,36,36,36,37,38,39,39,39,39,40,40,41,41,41,41],
+    "lckohyo-LC20251101": [30,31,32,32,32,32,33,34,35,35,35,35,36,37,38,38,38,38,39,39,40,40,40,40],
+  };
+  return pages[examId]?.[questionNumber - 1];
+}
