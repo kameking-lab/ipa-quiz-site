@@ -1,7 +1,13 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+import { renderToStaticMarkup } from "react-dom/server";
+import EssayEditorPage from "@/app/essay/[exam]/[questionId]/page";
+import { getAllEssayQuestions } from "@/lib/essay/load";
+
+vi.mock("@/components/essay/EssayEditor", () => ({ EssayEditor: () => null }));
+vi.mock("@/components/quiz/InlineBookHint", () => ({ InlineBookHint: () => null }));
 
 // The flagship page (app/essay/page.tsx) is the strategic centerpiece the site
 // funnels toward, yet it shipped with no structured data while blog posts and
@@ -117,9 +123,20 @@ describe("flagship /essay/[exam]/[questionId] structured data", () => {
     expect(DEEP_SOURCE).toContain('import { JsonLd }');
     expect(DEEP_SOURCE).toContain("<JsonLd data={jsonLd} />");
     expect(DEEP_SOURCE).toContain("examLabel(question.exam)");
-    // isBasedOn routes through getSafePdfUrl so a decommissioned jitec.ipa.go.jp
-    // pdfUrl degrades to the live IPA index instead of a dead 出典 link.
-    expect(DEEP_SOURCE).toContain("isBasedOn: getSafePdfUrl(question.pdfUrl)");
+  });
+
+  it("renders original practice without claiming an official source in JSON-LD", async () => {
+    const question = getAllEssayQuestions()[0]!;
+    const markup = renderToStaticMarkup(await EssayEditorPage({
+      params: Promise.resolve({ exam: question.exam, questionId: question.id }),
+    }));
+    const document = new DOMParser().parseFromString(markup, "text/html");
+    const script = document.querySelector('script[type="application/ld+json"]');
+    const graph = JSON.parse(script?.textContent ?? "{}")["@graph"] as Array<Record<string, unknown>>;
+    const resource = graph.find((node) => node["@type"] === "LearningResource");
+    expect(resource?.name).toContain("独自論述練習");
+    expect(resource).not.toHaveProperty("isBasedOn");
+    expect(document.body.textContent).toContain("独自");
   });
 
   // Soft-404 guard: invalid /essay/{exam}/{id} must return a real 404, not a

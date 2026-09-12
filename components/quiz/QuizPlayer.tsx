@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
@@ -60,7 +61,6 @@ interface Props {
   onNext: () => void;
 }
 
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 export function QuizPlayer({
   question,
@@ -129,8 +129,8 @@ export function QuizPlayer({
   // commits via ChoiceButton's native activation). Called unconditionally before
   // the early returns below to respect the rules of hooks.
   const choiceRoving = useQuizChoiceRoving(
-    CHOICE_KEYS.length,
-    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    getChoiceKeys(question?.choices).length,
+    selected ? getChoiceKeys(question?.choices).indexOf(selected) : -1,
     revealed,
     question?.id ?? "",
   );
@@ -154,10 +154,7 @@ export function QuizPlayer({
       if (!question || revealed) return;
       setSelected(key);
       setRevealed(true);
-      const answerKey = Array.isArray(question.answer)
-        ? (question.answer[0] as string)
-        : String(question.answer);
-      const correct = key === answerKey;
+      const correct = isAcceptedAnswer(question.answer, key);
       posthogCapture("question_answered", {
         questionId: question.id,
         exam: question.exam,
@@ -242,10 +239,10 @@ export function QuizPlayer({
       // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
-        const i = ["1", "2", "3", "4"].indexOf(e.key);
-        if (i >= 0) {
+        const i = CHOICE_SHORTCUTS.indexOf(e.key);
+        if (i >= 0 && i < getChoiceKeys(question.choices).length) {
           e.preventDefault();
-          onSelect(CHOICE_KEYS[i]);
+          onSelect(getChoiceKeys(question.choices)[i]);
           return;
         }
       } else {
@@ -340,10 +337,8 @@ export function QuizPlayer({
     );
   }
 
-  const answerKey = Array.isArray(question.answer)
-    ? (question.answer[0] as string)
-    : String(question.answer);
-  const isCorrect = selected === answerKey;
+  const answerKey = formatAcceptedAnswers(question.answer);
+  const isCorrect = isAcceptedAnswer(question.answer, selected);
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -417,21 +412,21 @@ export function QuizPlayer({
 
             <div
               role="radiogroup"
-              aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+              aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
               className="space-y-2"
             >
               {question.choices &&
-                CHOICE_KEYS.map((key, idx) => (
+                getChoiceKeys(question.choices).map((key, idx) => (
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
                     text={question.choices![key]!}
                     revealed={revealed}
                     selected={selected === key}
-                    correct={answerKey === key}
+                    correct={isAcceptedAnswer(question.answer, key)}
                     disabled={revealed}
                     onClick={() => onSelect(key)}
-                    shortcutIndex={idx + 1}
+                    shortcutIndex={(idx + 1) % 10}
                     {...choiceRoving.getRadioProps(idx)}
                   />
                 ))}

@@ -16,9 +16,9 @@ describe("official exam library integration", () => {
     const answerSnapshot = questions
       .map((question) => [question.id, question.correctChoice, question.answerAuthority])
       .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
-    // 特級ボイラー16択一の公式末尾キーを原本画像照合して追加（2026-09-12）。
+    // 特級16問に加え、図形の○印で公表された作業環境測定士360問を原本照合。
     expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
-      .toBe("7a1546401a363fc6e19b6c13b92e5d5748cf1c1f04817bf29f7b576d8395bb37");
+      .toBe("33748a42d157cc0bbdae85f102679453bdf18158536914b68195fa93ab1a260c");
   });
 
   it("loads every catalog paper from the site's data root without inventing answer keys", () => {

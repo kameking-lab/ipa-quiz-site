@@ -31,7 +31,7 @@ export const AP_AFTERNOON_2023_SPRING: AfternoonQuestion[] = [
         type: "long-text",
         maxLength: 40,
         modelAnswer:
-          "店舗ごとに直列でDB問い合わせを行うため、I/O待ちで CPU が遊休する時間が大半を占めるから。",
+          "DBへの直列問合せでI/O待ちが累積し、CPUが遊休するため。",
         scoringRubric:
           "【満点】「直列処理」＋「I/O待ち」＋「CPU遊休（または並列化未実施でリソース余剰）」の3要素を含む。問題文のリソース利用率（CPU 20% など）に整合した説明になっていれば加点。\n【部分点】2要素のみ／単純に「処理が遅い」「店舗数が多い」と原因を表層的に述べている。\n【0点】DB性能不足など、問題文のリソース余剰と矛盾する原因を挙げる。",
         points: 25,
@@ -67,7 +67,7 @@ export const AP_AFTERNOON_2023_SPRING: AfternoonQuestion[] = [
         type: "long-text",
         maxLength: 50,
         modelAnswer:
-          "並列処理が同時に大量INSERTを実行しロック競合を招くため、店舗グループ単位で分割し排他範囲を限定する。",
+          "同時INSERTによるロック競合を避けるため、処理対象と並列度を分割・制御する。",
         scoringRubric:
           "【満点】副作用（ロック競合／DB負荷集中／メモリ枯渇／障害時のリトライ困難）＋緩和策（バッチ単位分割／パーティション／リトライ設計）を併記。\n【部分点】副作用のみ／緩和策のみ／副作用と緩和策が論理的にかみ合わない。\n【0点】改善案を取り消す方向の解答（並列度を1にするなど、改善目的と矛盾）。",
         points: 25,
@@ -75,7 +75,7 @@ export const AP_AFTERNOON_2023_SPRING: AfternoonQuestion[] = [
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_ap_pm_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 150,
   },
 ];

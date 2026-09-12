@@ -80,7 +80,7 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
           >
             <div className="flex items-center justify-between">
               <h2 className="text-base font-bold text-zinc-900 dark:text-zinc-50">
-                {essay.industryName}の合格答案例
+                {essay.industryName}の参考答案例
               </h2>
               <span className="rounded-full bg-zinc-100 px-2.5 py-0.5 text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
                 約 {charCount.toLocaleString()} 字
@@ -115,7 +115,7 @@ export default function EssayIndustryTabs({ industries, pdfUrl }: Props) {
             </section>
 
             <p className="text-right text-xs text-zinc-400 dark:text-zinc-500">
-              出題参考:{" "}
+              試験制度・公式過去問の確認:{" "}
               <a
                 href={pdfUrl}
                 target="_blank"

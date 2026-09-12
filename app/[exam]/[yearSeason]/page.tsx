@@ -6,6 +6,7 @@ import { ChevronRight, Sparkles } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
+import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
@@ -58,10 +59,12 @@ export async function generateMetadata({
   }
   const parsed = parseYearSeason(yearSeason);
   if (!parsed) return { title: "年度が見つかりません", robots: { index: false } };
-  const label = formatYearSeason(parsed.year, parsed.season);
-  const histLabel = examLabelAt(exam as ExamCode, parsed.year, parsed.season);
+  const pool = getQuestionsByExamStrict(exam as ExamCode).filter(q => q.year === parsed.year && q.season === parsed.season);
+  const commonOnly = pool.length > 0 && pool.every(q => q.session === "am1");
+  const label = pool[0] ? questionSourceEdition(pool[0]) : formatYearSeason(parsed.year, parsed.season);
+  const histLabel = commonOnly ? "高度試験共通 午前I" : examLabelAt(exam as ExamCode, parsed.year, parsed.season);
   const title = `${label} ${histLabel} 過去問一覧`;
-  const description = `${label}に実施された${histLabel}試験の全問題を一覧で確認できます。AI解説付きで効率的に学習を進められます。`;
+  const description = `${label}の${histLabel}の収録問題を一覧で確認できます。解説付きで効率的に学習を進められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "exam",
     title: `${label} ${histLabel}`,
@@ -101,8 +104,9 @@ export default async function ExamYearSeasonPage({
     .sort((a, b) => (a.session === b.session ? a.qNumber - b.qNumber : a.session.localeCompare(b.session)));
   if (pool.length === 0) notFound();
 
-  const label = formatYearSeason(parsed.year, parsed.season);
-  const histLabel = examLabelAt(code, parsed.year, parsed.season);
+  const commonOnly = pool.every(q => q.session === "am1");
+  const label = questionSourceEdition(pool[0]!);
+  const histLabel = commonOnly ? "高度試験共通 午前I" : examLabelAt(code, parsed.year, parsed.season);
   const absUrl = `${SITE_BASE_URL}/${exam}/${yearSeason}`;
 
   const sessionMap = new Map<string, typeof pool>();
@@ -210,7 +214,7 @@ export default async function ExamYearSeasonPage({
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
             {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"])} {items.length}問</Badge>)}
-            {sessionMap.has("am1") && !sessionMap.has("am2") && <p className="w-full text-amber-700 dark:text-amber-300">この年度の午前IIは未収録です。午前Iは共通問題です。</p>}
+            {commonOnly && <p className="w-full text-muted-foreground">{examLabel(code)}の学習に使える共通の午前I問題です。この一覧には午前IIの問題は含まれません。</p>}
           </div>
         </header>
 

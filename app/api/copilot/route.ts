@@ -27,7 +27,8 @@ const BodySchema = z.object({
       typeof q.question === "string" && q.question.length > 0 &&
       typeof choices === "object" && choices !== null &&
       typeof choices.ア === "string" &&
-      typeof q.answer === "string" && q.answer.length > 0
+      ((typeof q.answer === "string" && q.answer.length > 0) ||
+       (Array.isArray(q.answer) && q.answer.length > 0 && q.answer.every(key => typeof key === "string" && typeof choices[key] === "string")))
     );
   }),
   messages: z

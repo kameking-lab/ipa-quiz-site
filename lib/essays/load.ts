@@ -53,7 +53,7 @@ function afternoonToEssayQuestion(q: AfternoonQuestion): SCpm2Question | null {
     season: q.season,
     qNumber: q.qNumber,
     theme: q.title,
-    context: q.context,
+    context: `${q.context}\n\n${q.subQuestions.map(s => `${s.label}：${s.prompt}`).join("\n\n")}`,
     pdfUrl: q.pdfUrl,
     license: q.license,
     industries: q.industryVariants.map(industryVariantToEssayAnswer),

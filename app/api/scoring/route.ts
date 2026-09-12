@@ -32,8 +32,9 @@ const BodySchema = z.object({
     .max(20),
 });
 
-const SCORING_SYSTEM_PROMPT = `あなたはIPA情報処理技術者試験の午後問題（記述式・論述式）の採点者です。
+const SCORING_SYSTEM_PROMPT = `あなたは情報処理技術者試験対策の記述式・論述式教材を評価する学習支援者です。
 ユーザーの解答を、与えられたモデル解答と採点ルーブリックに基づき採点してください。
+教材の出自を確認し、独自教材の設問・参考解答・ルーブリックをIPAの公式問題・公式正解・公式採点基準として扱わないでください。
 
 【記述式（short-text / long-text）の採点基準】
 - キーワードの一致だけでなく、論理的な文脈・因果関係も評価する
@@ -43,7 +44,7 @@ const SCORING_SYSTEM_PROMPT = `あなたはIPA情報処理技術者試験の午�
 
 【論述式（essay-text）の採点基準】
 - 設問への適合性、論述の具体性、構成の一貫性、自身の関与の明示の4軸で評価する
-- 字数下限に達していない場合は明確に減点する
+- 設問に字数下限が明示されている場合だけ、その未達を評価する。上限のみの設問に下限を推測して加えない
 - 抽象的な標語の繰り返し（「DX推進」「AI活用」など）が多い解答は減点する
 - 数値・固有名詞・具体的判断が織り込まれているかを重視する
 - scoringCriteria が与えられている場合は、各観点を踏まえて評価する
@@ -69,7 +70,7 @@ const SCORING_SYSTEM_PROMPT = `あなたはIPA情報処理技術者試験の午�
       "score": <number 0以上・その設問の配点以下>,
       "goodPoints": [<string>, ...],
       "improvements": [<string>, ...],
-      "modelAnswer": "<IPA解答例>"
+      "modelAnswer": "<提示された参考解答>"
     }
   ],
   "overallComment": "<全体講評を150字以内>"
@@ -79,6 +80,7 @@ function buildUserPrompt(question: AfternoonQuestion, answers: AfternoonAnswer[]
   const lines: string[] = [];
   lines.push(`【大問】問${question.qNumber}: ${question.title}`);
   lines.push(`【分野】${question.category}`);
+  lines.push(`【教材の出自】${question.license === "original" ? "編集者作成の独自練習問題。公式問題・公式採点基準ではない" : "公開問題。編集者作成の解説は公式採点基準とは区別する"}`);
   lines.push(`【背景】\n${question.context}`);
   lines.push("");
   lines.push("【設問とユーザー解答】");

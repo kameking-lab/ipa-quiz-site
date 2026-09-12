@@ -26,7 +26,6 @@ export const ST_AFTERNOON_2024_SPRING: AfternoonQuestion[] = [
           "あなたが携わった事業又は事業構想の概要と、その事業を取り巻く事業環境の変化について、800字以内で述べよ。",
         type: "essay-text",
         maxLength: 800,
-        minLength: 600,
         modelAnswer: `私が携わったのは、中堅製造業A社における製造現場のデジタル化を核とした新規事業構想である。A社は精密部品の受託製造を主力とし、年商約180億円、従業員数約650名の企業である。私はA社のIT戦略コンサルタントとして、2023年度より同社経営企画部と協働し、事業戦略の見直しに参画した。
 
 A社を取り巻く事業環境は、複合的な変化に直面していた。第1に、主要顧客である自動車業界がEVシフトを進めたことで、内燃機関向け精密部品の需要が中期的に縮小する見通しが明確になった。第2に、現場熟練工の50代以上比率が65%に達し、暗黙知の継承が経営リスクとして顕在化した。第3に、顧客側からスコープ3排出量の開示要求が強まり、製造工程ごとのCO2排出量を即時集計できる体制が必須となった。
@@ -143,7 +142,7 @@ A社を取り巻く事業環境は、複合的な変化に直面していた。�
     ],
     pdfUrl:
       "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h05_1/2024h05h_st_pm2_qs.pdf",
-    license: "IPA-public",
+    license: "original",
     totalTimeMinutes: 120,
     industryVariants: ST_2024_SPRING_Q1_INDUSTRIES,
   },

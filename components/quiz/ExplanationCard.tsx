@@ -10,6 +10,7 @@ import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
 import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { QuestionBody } from "./QuestionBody";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
@@ -131,11 +132,7 @@ export function ExplanationCard({
             </span>
             です。
           </p>
-          {question.explanation.split("\n").map((line, i) => (
-            <p key={i} className="mb-2 last:mb-0">
-              {line}
-            </p>
-          ))}
+          <QuestionBody text={question.explanation} />
         </div>
       )}
 

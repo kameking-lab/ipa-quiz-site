@@ -3,6 +3,14 @@ import { render, screen, cleanup } from "@testing-library/react";
 
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 
+it("preserves literal BNF and code indentation without displaying fences", () => {
+  const { container } = render(<QuestionBody text={'`<DNA>` を選ぶ。\n\n```text\n<DNA> ::= A|T\n  <DNA>\n```\n\n**条件**'} />);
+  expect(container.querySelector("pre code")?.textContent).toBe("<DNA> ::= A|T\n  <DNA>");
+  expect(container.textContent).not.toContain("```");
+  expect(container.querySelector("p code")?.textContent).toBe("<DNA>");
+  expect(container.querySelector("strong")?.textContent).toBe("条件");
+});
+
 afterEach(cleanup);
 
 // 問題本文のパイプテーブルは列見出しのみを持つ単一ヘッダ行テーブル。

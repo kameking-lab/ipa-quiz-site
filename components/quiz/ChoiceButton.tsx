@@ -20,7 +20,7 @@ interface Props {
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
 }
 
-const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4 };
+const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4, オ: 5, カ: 6, キ: 7, ク: 8, ケ: 9, コ: 0 };
 
 export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
   {

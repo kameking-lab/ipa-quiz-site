@@ -74,10 +74,10 @@ export const SA_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `アーキテクチャ選定の論理的根拠、業務要件・非機能要件との整合性が評価される。
+    editorialReview: `アーキテクチャ選定の論理的根拠、業務要件・非機能要件との整合性が評価される。
 「流行のアーキテクチャを選んだ」という記述ではなく、固有の要件・制約に対してなぜそれが最適かを示す必要がある。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
   {
     id: "sa-2024a-pm2-q2",
@@ -151,9 +151,9 @@ export const SA_ESSAY_QUESTIONS: EssayQuestion[] = [
         ],
       },
     ],
-    officialReview: `移行方式選定の根拠、業務継続性の確保、リスク対応の具体性が評価ポイントである。
+    editorialReview: `移行方式選定の根拠、業務継続性の確保、リスク対応の具体性が評価ポイントである。
 机上の計画だけでなく、リハーサルや切戻し計画も含めた現実的な記述が求められる。`,
     pdfUrl: "https://www.ipa.go.jp/shiken/mondai-kaiotu/2024r06.html",
-    license: "IPA-public",
+    license: "original",
   },
 ];

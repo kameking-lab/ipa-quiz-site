@@ -50,6 +50,15 @@ afterEach(() => {
 // 字数制限つき設問の textarea は aria-invalid だけでなく、なぜ無効かを
 // スクリーンリーダーが説明できるよう、字数カウンタを aria-describedby で参照する。
 describe("AfternoonPlayer — 字数制限の aria-describedby 連携", () => {
+  it("未回答でも採点APIを呼ばず参考解答を読める", () => {
+    const fetchMock = vi.fn();
+    vi.stubGlobal("fetch", fetchMock);
+    render(<AfternoonPlayer questions={[makeQuestion()]} />);
+    const disclosure = screen.getAllByText("参考解答・採点観点を読む（採点不要）")[0];
+    expect(disclosure.closest("details")?.textContent).toContain("模範解答");
+    expect(disclosure.closest("details")?.textContent).toContain("ルーブリック");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
   it("字数制限つき設問の textarea がカウンタ span を aria-describedby で参照する", () => {
     render(<AfternoonPlayer questions={[makeQuestion()]} />);
 

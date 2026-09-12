@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionSourceExam, questionSourceEdition } from "@/lib/questions/source-label";
+import { getChoiceKeys } from "@/lib/questions/answers";
 
 export const COPILOT_SYSTEM_PROMPT = `あなたは IPA 情報処理技術者試験を受験する学習者のための AI 学習アシスタントです。
 単なる解説ボットではなく、学習効果を最大化するパーソナルチューターとして振る舞います。
@@ -128,7 +129,7 @@ export function buildQuestionContext(
   const lines: string[] = [];
   lines.push(`# 現在の問題`);
   lines.push(
-    `- 試験: ${examLabel(question.exam)}（${formatYearSeason(question.year, question.season)} 問${question.qNumber}）`,
+    `- 試験: ${questionSourceExam(question)}（${questionSourceEdition(question)} 問${question.qNumber}）`,
   );
   lines.push(`- 分野: ${question.category}`);
   if (question.topicTags.length) {
@@ -140,7 +141,7 @@ export function buildQuestionContext(
   if (question.choices) {
     lines.push("");
     lines.push(`## 選択肢`);
-    for (const key of ["ア", "イ", "ウ", "エ"] as const) {
+    for (const key of getChoiceKeys(question.choices)) {
       const c = question.choices[key];
       if (c) lines.push(`- ${key}: ${c}`);
     }

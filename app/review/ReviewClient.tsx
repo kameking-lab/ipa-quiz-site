@@ -1,4 +1,5 @@
 "use client";
+import { formatAcceptedAnswers } from "@/lib/questions/answers";
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
@@ -247,7 +248,7 @@ export function ReviewClient() {
   }
 
   const q = dueQuestions[currentIndex]!;
-  const correctAnswer = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+  const correctAnswer = formatAcceptedAnswers(q.answer);
   const record = store[q.id];
   const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
 

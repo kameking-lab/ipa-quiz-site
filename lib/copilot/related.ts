@@ -1,7 +1,7 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import "server-only";
 import type { RelatedQuestion } from "./header-codec";
 import { getAllQuestions } from "@/lib/questions/load";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import type { ExamCode } from "@/lib/questions/types";
 import { getCorpus } from "./corpus";
@@ -140,10 +140,10 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
       item: {
         questionId: q.id,
         exam: q.exam,
-        examLabel: examLabel(q.exam),
+        examLabel: questionSourceExam(q),
         year: q.year,
         season: q.season,
-        yearSeasonLabel: formatYearSeason(q.year, q.season),
+        yearSeasonLabel: questionSourceEdition(q),
         qNumber: q.qNumber,
         category: q.category,
         preview: shortenPreview(q.question),

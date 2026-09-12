@@ -86,6 +86,17 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
   });
 
+  it("renders calculation tables and official evidence links as readable content", () => {
+    renderPlayer([question(1, {
+      explanation: "計算結果\n\n| 番地 | 静圧 Pa |\n| --- | ---: |\n| 9-10 | 2100 |\n\n[公式の根拠](https://www.exam.or.jp/example.pdf)",
+    })]);
+    answer(3);
+    expect(screen.getByRole("table")).toBeTruthy();
+    expect(screen.getByRole("cell", { name: "2100" })).toBeTruthy();
+    expect(screen.getByRole("link", { name: "公式の根拠" }).getAttribute("href"))
+      .toBe("https://www.exam.or.jp/example.pdf");
+  });
+
   it("shows transcription and the dedicated diagram together without a reading-mode switch", () => {
     const diagram = `/exam-library/${EXAM_ID}/text-q1-p1-fig1.webp`;
     renderPlayer([question(1, {

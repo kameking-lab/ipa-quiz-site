@@ -27,6 +27,19 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
+  it("renders ten choices and supports the zero shortcut for コ", () => {
+    render(<QuestionAnswerCard {...baseProps} answerKey="コ" choices={{...baseProps.choices, オ:"選択肢オ",カ:"選択肢カ",キ:"選択肢キ",ク:"選択肢ク",ケ:"選択肢ケ",コ:"選択肢コ"}} />);
+    expect(screen.getAllByRole("radio")).toHaveLength(10);
+    fireEvent.keyDown(window, {key:"0"});
+    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ selected:"コ", correct:true });
+  });
+  it("accepts the second official answer and records a correct attempt", () => {
+    render(<QuestionAnswerCard {...baseProps} answerKey={["ア", "ウ"]} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 ウ/ }));
+    expect(screen.getByText("正解！")).toBeTruthy();
+    expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ selected: "ウ", correct: true });
+  });
   it("renders every choice text (so the content is crawlable / readable)", () => {
     render(<QuestionAnswerCard {...baseProps} />);
     const radios = screen.getAllByRole("radio");

@@ -199,7 +199,9 @@ export function AfternoonResultView({ question, result }: Props) {
                       ? activeVariant
                         ? `模範解答（${activeVariant.industryName} 版）`
                         : "模範解答（論述例）"
-                      : "IPA解答例"}
+                      : question.license === "original"
+                        ? "編集者作成の参考解答"
+                        : "IPA解答例"}
                   </p>
                   <p className="whitespace-pre-wrap rounded-md bg-zinc-50 p-2 text-sm text-zinc-800 dark:bg-zinc-900 dark:text-zinc-100">
                     {(activeVariant && sub?.type === "essay-text"
@@ -250,7 +252,7 @@ export function AfternoonResultView({ question, result }: Props) {
               className="inline-flex"
             >
               <Button type="button" variant="ghost" size="md">
-                出典 PDF を開く
+                {question.license === "original" ? "IPAの公式過去問を確認" : "出典 PDF を開く"}
               </Button>
             </a>
           </div>
@@ -259,7 +261,7 @@ export function AfternoonResultView({ question, result }: Props) {
               id={`ai-note-${question.id}`}
               className="rounded-md border border-zinc-200 bg-zinc-50 p-2 text-xs text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-200"
             >
-              午後問題のAIコパイロット対話は近日対応予定です。当面は採点結果のコメントと出典PDFを参照してください。
+              採点結果のコメントと参考解答・採点観点を見比べて復習できます。
             </p>
           )}
         </div>

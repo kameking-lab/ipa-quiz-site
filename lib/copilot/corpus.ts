@@ -1,8 +1,8 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { getAllQuestions } from "@/lib/questions/load";
 import type { Question } from "@/lib/questions/types";
 import { GLOSSARY } from "@/data/glossary";
 import type { GlossaryTerm } from "@/data/glossary";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import type { CorpusDoc } from "./types";
 import { GLOSSARY_ALIASES } from "./aliases";
@@ -31,7 +31,7 @@ function buildQuestionDoc(q: Question): CorpusDoc {
   return {
     id: `q:${q.id}`,
     kind: "question",
-    title: `${examLabel(q.exam)} ${formatYearSeason(q.year, q.season)} 問${q.qNumber} / ${q.category}`,
+    title: `${questionSourceExam(q)} ${questionSourceEdition(q)} 問${q.qNumber} / ${q.category}`,
     // 引用カード/関連問題のリンク先は、正規の indexable な静的問題ページ /q/* を指す。
     // 旧 `/quiz?id=` は (1) `mode` クエリが無いと next.config.ts の 308 でホームへ
     // リダイレクトされ、(2) /quiz ページは `id` を読まない ＝ 引用した問題ではなく

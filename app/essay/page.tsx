@@ -34,7 +34,7 @@ const ESSAY_FAQ: { question: string; answer: string }[] = [
   {
     question: "AI の採点はどのくらい正確ですか？",
     answer:
-      "AI（Gemini Flash-Lite）による参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、IPA 公式の採点基準とは異なる場合があります。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
+      "AIによる参考評価です。「適合度・論理性・具体性・業種事例」の4軸でフィードバックしますが、掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠にはご利用にならず、学習の参考としてお使いください。",
   },
   {
     question: "ほかの過去問サイトと何が違うのですか？",
@@ -158,8 +158,8 @@ export default function EssayHomePage() {
       >
         <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0 text-amber-600 dark:text-amber-300" />
         <p>
-          <strong>本機能は AI（Gemini Flash-Lite）による参考評価です。</strong>
-          IPA 公式の採点基準とは異なる場合があります。合否判定の根拠としてはご利用にならず、
+          <strong>本機能は AIによる参考評価です。</strong>
+          掲載問題・解答骨子・評価観点は編集者作成のオリジナル教材です。年度は整理用のラベルで、公式過去問・公式採点講評ではありません。合否判定の根拠としてはご利用にならず、
           学習の参考としてご活用ください。
         </p>
       </div>
@@ -177,8 +177,8 @@ export default function EssayHomePage() {
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-          収録問題は2025年度までの午後II過去問です。2026年度の科目B-2対策として、
-          論述の構成と具体性を練習できます。
+          編集者が作成した独自の練習問題で、論述の構成と具体性を学べます。
+          年度は教材を整理するためのラベルです。
         </p>
         <div className="mt-5 flex justify-center gap-3">
           <Button asChild variant="outline" size="sm">
@@ -302,7 +302,7 @@ export default function EssayHomePage() {
       </p>
 
       <p className="mt-6 text-center text-xs text-zinc-500 dark:text-zinc-400">
-        出典: IPA 情報処理技術者試験
+        問題・解答骨子・評価観点: 過去問AIのオリジナル教材
       </p>
     </main>
   );

@@ -1,8 +1,8 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { QuestionFigures } from "./QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { Badge } from "@/components/ui/badge";
 import type { Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { getSafePdfUrl } from "@/lib/exam-config";
 import { QuestionBody } from "./QuestionBody";
 import { TTSButton } from "./TTSButton";
@@ -18,7 +18,7 @@ export function QuestionCard({
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-2 text-xs">
         <Badge variant="outline">
-          {examLabel(question.exam)} {formatYearSeason(question.year, question.season)}
+          {questionSourceExam(question)} {questionSourceEdition(question)}
         </Badge>
         <Badge variant="default">問{question.qNumber}</Badge>
         <Badge variant="default">{question.category}</Badge>

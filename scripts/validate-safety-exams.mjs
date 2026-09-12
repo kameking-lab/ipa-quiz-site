@@ -49,7 +49,11 @@ for (const paper of catalog) {
     check(Array.isArray(q.sourcePages) && q.sourcePages.length > 0 && q.sourcePages.every(p => Number.isInteger(p) && p > 0 && p <= paper.pageCount), `Invalid PDF pages: ${q.id}`);
     check(Object.hasOwn(authority, q.answerAuthority), `Invalid answer authority: ${q.id}`);
     if (Object.hasOwn(authority, q.answerAuthority)) authority[q.answerAuthority]++;
-    check((paper.answerMode === 'reference') === (q.answerAuthority === 'descriptive'), `Paper/question answer mode mismatch: ${q.id}`);
+    // 特級の同一PDFには記述16問と公式正答付き択一8問が併載されている。
+    const mixedBoilerChoice = ['lckohyo-LC20260401-2', 'lckohyo-LC20251101'].includes(paper.id)
+      && [4, 5, 10, 11, 16, 17, 22, 23].includes(q.number)
+      && q.answerAuthority === 'official' && q.choiceCount === 5;
+    check(mixedBoilerChoice || (paper.answerMode === 'reference') === (q.answerAuthority === 'descriptive'), `Paper/question answer mode mismatch: ${q.id}`);
     if (q.answerAuthority === 'official') {
       check(q.choiceCount === 5 && Number.isInteger(q.correctChoice) && q.correctChoice >= 1 && q.correctChoice <= 5, `Invalid official answer: ${q.id}`);
     } else {

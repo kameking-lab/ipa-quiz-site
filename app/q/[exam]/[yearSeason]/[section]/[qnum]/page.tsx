@@ -1,3 +1,4 @@
+import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
@@ -17,7 +18,6 @@ import {
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
-import { examLabelAt } from "@/lib/exam-naming/history";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
@@ -30,7 +30,6 @@ import {
   getLastUpdatedISO,
 } from "@/lib/questions/last-updated";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
-import { examLabel, formatYearSeason } from "@/lib/utils";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   findQuestionByRoute,
@@ -155,10 +154,10 @@ export default async function QuestionPage({
   // the URL layer to match the quiz-pool exclusion in filter.ts.
   if (q.needsReview) notFound();
 
-  const answerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
+  const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const answerText =
-    q.choices && answerKey in q.choices
-      ? q.choices[answerKey as ChoiceKey]
+    q.choices
+      ? answerKeys.map(key => q.choices?.[key as ChoiceKey]).filter(Boolean).join(" ／ ")
       : undefined;
   const showRealExplanation = !isPlaceholderExplanation(q);
 
@@ -265,7 +264,7 @@ export default async function QuestionPage({
               href={examPath}
               className="transition hover:text-foreground hover:underline"
             >
-              {examLabel(q.exam)}
+              {questionSourceExam(q)}
             </Link>
           </li>
           <li aria-hidden="true" className="text-border">
@@ -276,7 +275,7 @@ export default async function QuestionPage({
               href={yearSeasonPath}
               className="transition hover:text-foreground hover:underline"
             >
-              {formatYearSeason(q.year, q.season)}
+              {questionSourceEdition(q)}
             </Link>
           </li>
           <li aria-hidden="true" className="text-border">
@@ -293,9 +292,9 @@ export default async function QuestionPage({
         <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
           <div className="flex flex-wrap items-center gap-1.5 text-xs">
             <Badge variant="primary">
-              {examLabelAt(q.exam, q.year, q.season)}
+              {questionSourceExam(q)}
             </Badge>
-            <Badge variant="soft">{formatYearSeason(q.year, q.season)}</Badge>
+            <Badge variant="soft">{questionSourceEdition(q)}</Badge>
             <Badge variant="outline">{sessionLabel(q.session)}</Badge>
             <Badge variant="outline">問 {q.qNumber}</Badge>
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
@@ -305,7 +304,7 @@ export default async function QuestionPage({
           </div>
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
-          {formatYearSeason(q.year, q.season)} {examLabelAt(q.exam, q.year, q.season)}{" "}
+          {questionSourceEdition(q)} {questionSourceExam(q)}{" "}
           {sessionLabel(q.session)} 問{q.qNumber}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
@@ -380,7 +379,7 @@ export default async function QuestionPage({
           <QuestionAnswerCard
             questionId={q.id}
             choices={q.choices}
-            answerKey={answerKey as ChoiceKey}
+            answerKey={answerKeys as ChoiceKey[]}
             answerText={answerText}
             exam={q.exam}
             year={q.year}
@@ -608,10 +607,10 @@ export default async function QuestionPage({
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
                     <Badge variant="outline" className="text-[10px]">
-                      {examLabelAt(r.exam, r.year, r.season)}
+                      {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{r.qNumber}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -637,7 +636,7 @@ export default async function QuestionPage({
             <p className="mt-0.5 text-xs text-muted-foreground">
               {crossExamMode === "topic"
                 ? `トピック「${q.topicTags.slice(0, 2).join("・")}」を扱う他試験区分の過去問`
-                : `${examLabel(q.exam)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
+                : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
             </p>
           </div>
           <ul className="flex flex-col gap-2">
@@ -649,10 +648,10 @@ export default async function QuestionPage({
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
                     <Badge variant="primary" className="text-[10px]">
-                      {examLabelAt(r.exam, r.year, r.season)}
+                      {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {formatYearSeason(r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{r.qNumber}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -674,7 +673,7 @@ export default async function QuestionPage({
               他年度の「{q.category}」問題
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
-              {examLabel(q.exam)} の同じ分野を年度をまたいで演習する
+              {questionSourceExam(q)} の同じ分野を年度をまたいで演習する
             </p>
           </div>
           <ul className="flex flex-col gap-2">
@@ -686,10 +685,10 @@ export default async function QuestionPage({
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
                     <Badge variant="outline" className="text-[10px]">
-                      {formatYearSeason(r.year, r.season)}
+                      {questionSourceEdition(r)}
                     </Badge>
                     <span>
-                      {examLabelAt(r.exam, r.year, r.season)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceExam(r)} {sessionLabel(r.session)} 問{r.qNumber}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -706,7 +705,7 @@ export default async function QuestionPage({
       {relatedBlogPosts.length > 0 && (
         <section aria-label="この試験区分の学習ガイド" className="print:hidden mt-10">
           <h2 className="mb-3 text-base font-bold tracking-tight text-foreground">
-            {examLabel(q.exam)} の学習ガイド
+            {questionSourceExam(q)} の学習ガイド
           </h2>
           <ul className="flex flex-col gap-2">
             {relatedBlogPosts.map((p) => (
