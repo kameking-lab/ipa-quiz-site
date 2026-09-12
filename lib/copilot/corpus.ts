@@ -7,7 +7,7 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import type { CorpusDoc } from "./types";
 import { GLOSSARY_ALIASES } from "./aliases";
 
-function buildQuestionDoc(q: Question): CorpusDoc {
+export function buildQuestionDoc(q: Question): CorpusDoc {
   // 検索対象文書は「問題文 + 選択肢 + 解説 + タグ + カテゴリ」を統合。
   // カテゴリとタグは BM25 でやや弱くなりがちなので 2 回繰り返してフィールド重みを上げる。
   const choiceText = q.choices

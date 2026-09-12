@@ -1,5 +1,7 @@
 "use client";
 
+import { QuestionBody } from "./QuestionBody";
+
 import * as React from "react";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
 import Link from "next/link";
@@ -181,7 +183,7 @@ export function QuestionAnswerCard({
               : "rounded-2xl border border-red-300/60 bg-red-50 p-4 dark:border-red-700/50 dark:bg-red-950/40"
           }
         >
-          <p className="text-sm font-bold">
+          <div className="text-sm font-bold">
             {selected === undefined ? (
               <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
             ) : isCorrect ? (
@@ -189,10 +191,12 @@ export function QuestionAnswerCard({
             ) : (
               <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>
             )}
-            {answerText && (
+            {answerText && (answerText.includes("\n") ? (
+              <div className="mt-2 min-w-0 font-normal text-foreground"><QuestionBody text={answerText} /></div>
+            ) : (
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
-            )}
-          </p>
+            ))}
+          </div>
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"

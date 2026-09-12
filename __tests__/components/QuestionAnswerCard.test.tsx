@@ -27,6 +27,13 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
+  it("renders a table in the revealed answer without raw Markdown", () => {
+    const table = "| 店 |\n| --- |\n| B |";
+    const { container } = render(<QuestionAnswerCard {...baseProps} answerText={table} />);
+    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
+    expect(container.querySelector("table td")?.textContent).toBe("B");
+    expect(container.textContent).not.toContain("| --- |");
+  });
   it("renders ten choices and supports the zero shortcut for コ", () => {
     render(<QuestionAnswerCard {...baseProps} answerKey="コ" choices={{...baseProps.choices, オ:"選択肢オ",カ:"選択肢カ",キ:"選択肢キ",ク:"選択肢ク",ケ:"選択肢ケ",コ:"選択肢コ"}} />);
     expect(screen.getAllByRole("radio")).toHaveLength(10);
