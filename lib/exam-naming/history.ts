@@ -63,11 +63,11 @@ const EXAM_NAME_HISTORY: Record<ExamCode, ExamNameEntry[]> = {
   ],
   db: [
     { label: "テクニカルエンジニア(データベース)", shortLabel: "DB", from: { year: 2001, season: "spring" } },
-    { label: "データベーススペシャリスト", from: { year: 2009, season: "autumn" } },
+    { label: "データベーススペシャリスト", from: { year: 2009, season: "spring" } },
   ],
   es: [
     { label: "テクニカルエンジニア(エンベデッドシステム)", shortLabel: "EM", from: { year: 2001, season: "spring" } },
-    { label: "エンベデッドシステムスペシャリスト", from: { year: 2009, season: "autumn" } },
+    { label: "エンベデッドシステムスペシャリスト", from: { year: 2009, season: "spring" } },
   ],
   sc: [
     { label: "テクニカルエンジニア(情報セキュリティ)", shortLabel: "SU", from: { year: 2006, season: "spring" } },

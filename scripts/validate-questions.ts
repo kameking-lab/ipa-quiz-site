@@ -91,7 +91,6 @@ const UNCERTAIN_PHRASES = [
   /でしょう[。．]/,
   /不明です/,
   /確認が必要/,
-  /^正解は[アイウエ]です[。．]/,
 ];
 
 function computeQuality(q: Question): QualityResult {
@@ -108,6 +107,10 @@ function computeQuality(q: Question): QualityResult {
   }
 
   const expLen = q.explanation.trim().length;
+  if (/^正解は[アイウエオカキクケコ]です[。．]\s*(?:[（(]出典[:：][^）)]*[）)])?\s*$/.test(q.explanation.trim())) {
+    score -= 15;
+    warnings.push("解説が正答・出典のみで理由がない");
+  }
   if (expLen < 30) {
     score -= 30;
     warnings.push(`explanation < 30文字 (${expLen}字) — 要確認`);
