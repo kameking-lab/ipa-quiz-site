@@ -1,3 +1,4 @@
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -119,7 +120,11 @@ export default async function ExamTopPage({
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
   const code = exam as ExamCode;
   const questions = getQuestionsByExamStrict(code);
-  const years = groupByYearSeason(questions);
+  const years = groupByYearSeason(questions).map((group) => {
+    const items = questions.filter((q) => q.year === group.year && q.season === group.season);
+    const sessions = [...new Set(items.map((q) => q.session))];
+    return { ...group, coverage: sessions.map((session) => `${practiceSessionLabel(session)} ${items.filter((q) => q.session === session).length}問`).join("・"), missingSpecialist: sessions.includes("am1") && !sessions.includes("am2") };
+  });
   const categories = groupByCategory(questions);
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);
   const posts = getBlogPostsByExam(code).slice(0, 3);

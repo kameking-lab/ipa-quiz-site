@@ -1,3 +1,4 @@
+import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
@@ -47,7 +48,7 @@ export async function POST(req: Request) {
 
     const q = await findQuestionById(id);
     if (!q) continue;
-    if (q.type !== "multiple-choice" || q.hasImage || q.needsReview) continue;
+    if (q.type !== "multiple-choice" || hasUnrenderableContent(q) || q.needsReview) continue;
 
     dueQuestions.push(q);
   }

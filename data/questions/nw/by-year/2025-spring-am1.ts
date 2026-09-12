@@ -15,7 +15,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "基礎理論",
     "topicTags": [],
     "difficulty": 3,
-    "question": "0≦x≦1の範囲で単調に増加する連続関数 f(x) がf (0) <0≦f (1)を満たすときに、区間内でf(x) = 0であるxの値を近似的に求めるアルゴリズムにおいて, (2) は何回実行されるか。〔アルゴリズム〕 (1) X00, ×₁ ←1とする。X+X1(2) x←とする。2(3) x₁x < 0.001 ならば×の値を近似値として終了する。(4) f(x) ≥0ならば×₁ ←×として、そうでなければ×。←×とする。(5) (2) に戻る。",
+    "question": "0≦x≦1の範囲で単調に増加する連続関数 f(x) が f(0) < 0 ≦ f(1) を満たすときに、区間内で f(x) = 0 である x の値を近似的に求めるアルゴリズムにおいて、(2)は何回実行されるか。\n\n〔アルゴリズム〕\n(1) x₀ ← 0、x₁ ← 1 とする。\n(2) x ← (x₀ + x₁) / 2 とする。\n(3) x₁ − x < 0.001 ならば x の値を近似値として終了する。\n(4) f(x) ≧ 0 ならば x₁ ← x として、そうでなければ x₀ ← x とする。\n(5) (2)に戻る。",
     "choices": {
       "ア": "10",
       "イ": "20",
@@ -23,9 +23,9 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "1,000"
     },
     "answer": "ア",
-    "explanation": "二分探索法は、探索区間の幅を毎回半分にするアルゴリズムです。初期の区間幅が1で、終了条件は区間幅が0.001未満になることと設定されています。区間幅が1から0.001未満になるには、2^n > 1000を満たす最小のnを求める必要があり、これはn=10（2^10=1024）となります。したがって、中間値を計算する(2)の処理は10回実行されます。",
+    "explanation": "二分法では、(2)で区間の中点 x = (x₀ + x₁) / 2 を求めます。(2)をk回実行した直後の x₁ − x は 1 / 2^k です。9回目は1/512 ≒ 0.001953で終了条件を満たさず、10回目は1/1024 ≒ 0.000977 < 0.001となります。したがって実行回数は10回（ア）です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -49,7 +49,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "過学習は、機械学習モデルが訓練データに過度に適合し、未知のデータに対する予測性能（汎化性能）が低下する現象です。この解消方法として、元の訓練データに加工を施してデータ量を増やす「データ拡張」は有効です。これにより、モデルがより多様なデータから学習し、特定のパターンへの過度な適合を防ぎ、汎化性能を向上させることができます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -71,10 +71,13 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "6"
     },
     "answer": "ウ",
-    "explanation": "A, B, C の順に入力されるデータをスタックに挿入・取り出しを行う場合、スタックのLIFO（Last-In, First-Out）特性に従ってデータが出力されます。このような操作によって得られる出力順序の数は、カタラン数によって計算でき、3つの要素の場合のカタラン数C_3は5です。具体的な出力順序は、ABC, ACB, BAC, BCA, CBAの5通りです。",
-    "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
-    "license": "IPA-public"
+    "explanation": "スタックは後入れ先出しです。可能な出力順序はABC、ACB、BAC、BCA、CBAの5通りで、ウが正解です。残りのCABは作れません。Cを最初に出すにはA、B、Cを順に入れる必要があり、Cを取り出した後にはBがAの上に残るため、AをBより先に取り出せないからです。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am1/q3-figure.png"
+    ]
   },
   {
     "id": "nw-2025h-am1-q4",
@@ -87,7 +90,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "コンピュータシステム",
     "topicTags": [],
     "difficulty": 3,
-    "question": "同じ命令セットをもつコンピュータAとBとがある。それぞれのCPUクロック周期, 及びあるプログラムを実行したときの CPI (Cycles Per Instruction)は、表のとおりである。そのプログラムを実行したとき、コンピュータAの処理時間は、コンピュータBの処理時間の何倍になるか。CPUクロック周期CPIコンピュータ A1ナノ秒4.0コンピュータ B4ナノ秒0.5",
+    "question": "同じ命令セットをもつコンピュータAとBとがある。それぞれのCPUクロック周期, 及びあるプログラムを実行したときの CPI (Cycles Per Instruction)は、表のとおりである。そのプログラムを実行したとき、コンピュータAの処理時間は、コンピュータBの処理時間の何倍になるか。CPUクロック周期CPIコンピュータ A1ナノ秒4.0コンピュータ B4ナノ秒0.5\n\n| コンピュータ | CPUクロック周期 | CPI |\n| --- | --- | --- |\n| A | 1ナノ秒 | 4.0 |\n| B | 4ナノ秒 | 0.5 |",
     "choices": {
       "ア": "1/32",
       "イ": "1/2",
@@ -95,9 +98,9 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "8"
     },
     "answer": "ウ",
-    "explanation": "この問題では、コンピュータAとBの処理時間の比率を求めるために、CPUクロック周波数とCPI（Cycles Per Instruction: 1命令あたりのクロック数）という情報が与えられています。処理時間を計算する基本公式は「処理時間 = 命令数 × CPI × CPUクロック周期」です。\n\nまず、コンピュータAの処理時間をT_A、コンピュータBの処理時間をT_Bとします。命令数をNとすると、T_A = N × 4.0 × 1ナノ秒、T_B = N × 0.5 × 4ナノ秒となります。両者の比率を計算すると、T_A / T_B = (N × 4.0 × 1) / (N × 0.5 × 4) = 4.0 / 2.0 = 2となります。したがって、コンピュータAの処理時間はコンピュータBの処理時間の2倍になります。\n\n選択肢アは1/32であり、これはCPUクロック周期とCPIの単純な積や比率を誤って計算した場合に生じうる値であり、正しい計算結果とは異なります。選択肢イの1/2は、CPUクロック周期とCPIを正しく考慮せずに、どちらか一方の値の比率だけを見てしまった場合に考えられる誤りです。選択肢エの8は、CPUクロック周期とCPIの間の関係を逆にして計算したり、単純に数値を掛け合わせたりした場合に生じうる誤った結果です。",
-    "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "explanation": "同じプログラムの命令数をNとすると、処理時間は N × CPI × CPUクロック周期です。原典の表は、Aが1ナノ秒・CPI 4.0、Bが4ナノ秒・CPI 0.5です。\n\nAの処理時間はN × 4.0 × 1 = 4Nナノ秒、BはN × 0.5 × 4 = 2Nナノ秒。したがってA/B = 4N / 2N = 2倍で、ウが正解です。クロック周期だけでなく、1命令に必要なクロック数（CPI）も掛け合わせます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -118,10 +121,10 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "ウ": "αA > αBならば、 MTBFA > MTBFBであり,かつ MTTRA > MTTRBである。",
       "エ": "αA > αBならば, MTTRA / MTBFA > MTTRB / MTBFBである。"
     },
-    "answer": "ウ",
-    "explanation": "稼働率αは「MTBF / (MTBF + MTTR)」という関係で定義されます。この式を変形すると、「MTTR / MTBF = (1/α) - 1」という関係が得られます。したがって、二つのシステムAとBの稼働率αAとαBが等しい場合、両者の「(1/α) - 1」も等しくなるため、「MTTRA / MTBFA = MTTRB / MTBFB」が常に成り立ちます。",
+    "answer": "イ",
+    "explanation": "稼働率は α = MTBF / (MTBF + MTTR) = 1 / (1 + MTTR/MTBF) です。αA = αBなら、MTTRA/MTBFA = MTTRB/MTBFBとなり、イが必ず成り立ちます。\n\nアは誤りです。MTBFとMTTRが同じ比率で増えても稼働率は変わりません。ウも必ずしも成り立ちません。稼働率の大小で分かるのはMTTR/MTBFという比の大小で、両方の値それぞれの大小は決まりません。エは不等号が逆です。αA > αBならMTTRA/MTBFA < MTTRB/MTBFBです。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -142,10 +145,10 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "ウ": "6000",
       "エ": "7000"
     },
-    "answer": "イ",
-    "explanation": "LRU（Least Recently Used）方式は、最も長い間参照されていないページを置換対象とするアルゴリズムです。問題の参照シーケンスと初期のページ割り当てをLRUアルゴリズムに従って追跡していくと、最終的にページ4が主記憶にロードされる直前には、5000番地を占めていたページが最も長く利用されていなかったページとなります。その結果、ページ4は5000番地にページインされます。",
+    "answer": "ウ",
+    "explanation": "LRUは、最後に参照されてから最も長い時間がたったページを置き換えます。最初の1→2→3→4で、4000・5000・6000・7000番地に各ページが入ります。\n\nその後の参照を追うと、2はヒット、5は最も古い1を置換して4000番地へ、3はヒット、1は4を置換して7000番地へ、6は2を置換して5000番地へ、5はヒットとなります。最後の4の直前には、最後に参照された順が古い方から3・1・6・5です。したがって3が置換され、4は6000番地へ入ります。正解はウです。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -169,8 +172,11 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "この問題では、センサーノードの平均消費電流を1µA以下にするために必要な待機時間を求めます。平均電流は、動作中の電流と待機中の電流の、それぞれの時間で重み付けされた平均値として計算されます。\n\nまず、1回の動作サイクルにおける消費電力量を考えます。動作時間は10ミリ秒（0.01秒）で、この間の平均電流は10mA（0.01A）です。したがって、動作中の消費電力量は 0.01秒 × 0.01A = 0.0001A・秒 です。\n待機中の電流は0.1µA（0.0000001A）で、待機時間をT秒とすると、待機中の消費電力量は T秒 × 0.0000001A = 0.0000001T A・秒 です。\n1回の動作サイクル（動作時間＋待機時間）の合計電力量は 0.0001 + 0.0000001T A・秒 となります。\nこのサイクルの合計時間は 0.01 + T 秒です。\n平均電流は、合計電力量を合計時間で割ったものであり、これが1µA（0.000001A）以下になるようにします。\n(0.0001 + 0.0000001T) / (0.01 + T) <= 0.000001\nこの不等式を解くと、T >= 111.111... 秒となります。したがって、最も短い待機時間は111.1秒です。\n\n選択肢アの1.1秒では、平均電流が1µAを大きく超えてしまい、条件を満たせません。\n選択肢イの11.1秒も、計算結果から111.1秒より短いため、条件を満たすには不十分です。\n選択肢エの1111.1秒は、条件を満たす十分な時間ですが、問題は「最も短い待機時間」を求めているため、より短い111.1秒が正解となります。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
-    "license": "IPA-public"
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am1/q7-figure.png"
+    ]
   },
   {
     "id": "nw-2025h-am1-q8",
@@ -190,10 +196,10 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "ウ": "SVG",
       "エ": "TIFF"
     },
-    "answer": "イ",
-    "explanation": "SVG（Scalable Vector Graphics）は、W3Cによって策定された、XML形式で記述される2Dベクターグラフィックスの画像フォーマットです。矩形、円、直線、文字列といった図形オブジェクトをXMLで定義し、Webページ上で拡大・縮小しても品質が劣化しない高品質なグラフィックス描画が可能です。",
+    "answer": "ウ",
+    "explanation": "SVG（Scalable Vector Graphics）は、矩形・円・直線・文字列などをXMLで記述する、W3Cで仕様が定義された画像形式です。拡大縮小しても図形が滑らかに表示され、Webページにも組み込めます。正解はウです。PNGとTIFFは主に画素の集合として画像を保持するラスター形式、OpenGLは描画APIです。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -214,10 +220,10 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "ウ": "候補キーの一部の属性から、候補キー以外の属性への関数従属性がある場合,その関係を分解する。",
       "エ": "一つの属性に複数の値が入っている場合、単一の値になるように分解する。"
     },
-    "answer": "ウ",
-    "explanation": "第3正規形は、第2正規形であることに加えて、非キー属性間での推移的関数従属性が存在しない状態を指します。したがって、第2正規形から第3正規形に変換する手順は、候補キー以外の属性（非キー属性）間に関数従属性がある場合に、その関係を分解し、推移的関数従属を解消することです。",
+    "answer": "イ",
+    "explanation": "第3正規形では、第2正規形に加えて、非キー属性を介した推移的関数従属を取り除きます。候補キー以外の属性間に関数従属性があれば関係を分解する、イが該当します。例えば社員番号→部署番号→部署名なら、部署番号と部署名を部署表に分離します。ウは部分関数従属を取り除いて第2正規形にする操作、エは繰返しを取り除いて第1正規形にする操作です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -231,7 +237,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "データベース",
     "topicTags": [],
     "difficulty": 3,
-    "question": "SQL 文に示す参照制約が存在する“商品”表と“受注”表とがある。“商品”表の行を削除したとき、削除した行の商品コードと同じ値の商品コードをもつ“受注”表の行を自動的に削除する SQL文として、aに入れる字句はどれか。〔SQL文〕CREATE TABLE 商品(商品コードCHAR(4) PRIMARY KEY,商品名VARCHAR(64))CREATE TABLE 受注(受注番号INTEGER PRIMARY KEY,商品コードCHAR(4),受注個数INTEGER,納品日CHAR(8),FOREIGN KEY(商品コード) REFERENCES 商品(商品コード)ON DELETEa)",
+    "question": "SQL 文に示す参照制約が存在する“商品”表と“受注”表とがある。“商品”表の行を削除したとき、削除した行の商品コードと同じ値の商品コードをもつ“受注”表の行を自動的に削除する SQL文として、aに入れる字句はどれか。〔SQL文〕CREATE TABLE 商品(商品コードCHAR(4) PRIMARY KEY,商品名VARCHAR(64))CREATE TABLE 受注(受注番号INTEGER PRIMARY KEY,商品コードCHAR(4),受注個数INTEGER,納品日CHAR(8),FOREIGN KEY(商品コード) REFERENCES 商品(商品コード)ON DELETEa)\n\n〔SQL文〕\nCREATE TABLE 商品 (\n  商品コード CHAR(4) PRIMARY KEY,\n  商品名 VARCHAR(64)\n)\n\nCREATE TABLE 受注 (\n  受注番号 INTEGER PRIMARY KEY,\n  商品コード CHAR(4),\n  受注個数 INTEGER,\n  納品日 CHAR(8),\n  FOREIGN KEY (商品コード) REFERENCES 商品(商品コード)\n  ON DELETE [ a ]\n)",
     "choices": {
       "ア": "CASCADE",
       "イ": "RESTRICT",
@@ -241,7 +247,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ア",
     "explanation": "SQLの外部キー制約におけるON DELETE句は、親テーブルの行が削除された際に子テーブルの関連行をどのように扱うかを定義します。ON DELETE CASCADEは、親テーブルの行が削除された場合、その行を参照する子テーブルの関連行も自動的に削除する動作を指定するため、問題文の要件に合致します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -265,7 +271,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "PoE（Power over Ethernet）は、イーサネットケーブル（LANケーブル）を使用してデータ通信と同時に電力を供給する技術です。これにより、無線LANのアクセスポイントやIP電話機などのネットワーク機器を、別途電源工事なしにLANケーブル一本で接続・給電することが可能となり、配線設置の簡素化に貢献します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -289,7 +295,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "電子政府推奨暗号リストは、CRYPTREC（暗号技術検討会）が安全性と実装性能を確認し、市場での利用実績や将来的な普及が見込まれると判断した暗号技術のリストです。このリストに掲載された暗号技術は、電子政府において安全な情報システムを構築するために推奨されています。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -313,7 +319,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "SBOM（Software Bill Of Materials）は、ソフトウェアを構成する全てのコンポーネント（ライブラリ、モジュールなど）とそのバージョン、ライセンス情報などを一覧化したものです。SBOM管理ツールは、この情報をもとに、既知の脆弱性データベースと照合することで、ソフトウェアに含まれる脆弱性を特定し、脆弱性管理を効率的に行うことができます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -337,7 +343,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "OSコマンドインジェクションは、Webアプリケーションがユーザー入力をもとにOSコマンドを実行する際に、悪意のあるコマンドを注入されることで、任意のシステムコマンドが実行されてしまう脆弱性です。この対策としては、シェルを起動してコマンドを実行する言語機能の利用を可能な限り避け、やむを得ず利用する場合は入力値を厳密に検証・エスケープすることが最も効果的です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -351,17 +357,17 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "ネットワーク",
     "topicTags": [],
     "difficulty": 3,
-    "question": "VPNで使用されるプロトコルである IPsec, L2TP, TLS の, OSI 基本参照モデルにおける相対的な位置関係はどれか。OSI基本参照モデル上位層(アプリケーション層)下位層(物理層)AIPsecL2TPTLSBIPsecTLSL2TPCTLSIPsecL2TPDTLSL2TPIPsec",
+    "question": "VPNで使用されるプロトコルである IPsec, L2TP, TLS の, OSI 基本参照モデルにおける相対的な位置関係はどれか。OSI基本参照モデル上位層(アプリケーション層)下位層(物理層)AIPsecL2TPTLSBIPsecTLSL2TPCTLSIPsecL2TPDTLSL2TPIPsec\n\n各選択肢は、OSI基本参照モデルの上位層（アプリケーション層側）から下位層（物理層側）への順序を示す。",
     "choices": {
-      "ア": "A",
-      "イ": "B",
-      "ウ": "C",
-      "エ": "D"
+      "ア": "A：IPsec → L2TP → TLS",
+      "イ": "B：IPsec → TLS → L2TP",
+      "ウ": "C：TLS → IPsec → L2TP",
+      "エ": "D：TLS → L2TP → IPsec"
     },
     "answer": "ウ",
-    "explanation": "正解はウです。この問題では、VPNで利用されるIPsec、L2TP、TLSといったプロトコルが、OSI基本参照モデルのどの層で動作するかを問われています。OSI基本参照モデルは、ネットワーク通信を7つの階層に分けた概念モデルで、下位層から物理層、データリンク層、ネットワーク層、トランスポート層、セッション層、プレゼンテーション層、アプリケーション層と並びます。\n\nIPsecは、IPパケットを暗号化・認証するプロトコルであり、主にネットワーク層（第3層）またはトランスポート層（第4層）で機能します。L2TPは、PPP（Point-to-Point Protocol）のパケットをカプセル化し、IPsecと組み合わせて利用されることが一般的ですが、L2TP自体はトンネリングプロトコルとして、ネットワーク層（第3層）で扱われます。TLS（Transport Layer Security）は、トランスポート層（第4層）で動作し、アプリケーション層間の通信を保護するために利用されます。したがって、OSI参照モデルにおける相対的な位置関係は、上位層からTLS、L2TP、IPsecの順となります。\n\n選択肢アは、IPsecが最も上位にあるため不適切です。IPsecはネットワーク層やトランスポート層であり、アプリケーション層のTLSよりも下位に位置します。選択肢イは、L2TPが最も上位にあり、TLSが中間にあるため不適切です。L2TPはトンネリングプロトコルであり、TLSやIPsecと異なり、アプリケーション層に近い位置にはありません。選択肢エは、TLSが最も下位にあり、IPsecが最も上位にあるため不適切です。TLSはトランスポート層で動作するため、ネットワーク層やそれより下位で機能するIPsecやL2TPよりも上位に位置します。",
-    "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "explanation": "TLSはトランスポート層より上位で暗号化通信を提供し、IPsecはネットワーク層（第3層）、L2TPはデータリンク層（第2層）のトンネリングに対応します。OSI基本参照モデルで上位から並べると TLS → IPsec → L2TP で、C（ウ）が正解です。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -385,7 +391,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ア",
     "explanation": "デザインレビューの目的は、ソフトウェア開発の設計工程において、作成された設計成果物の品質、要件との適合性、実現可能性などを評価し、潜在的な問題点や欠陥を早期に発見することです。これにより、後工程での手戻りを削減し、プロジェクト全体の効率と品質向上を目指します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -409,7 +415,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "スクラムのスプリントレビューは、スプリントの最後に開催されるイベントで、完成したプロダクトインクリメントをステークホルダに提示し、デモンストレーションを行います。ステークホルダからのフィードバックを受けてプロダクトゴールに対する進捗を評価し、必要に応じてプロダクトバックログ（今後の作業スコープ）の調整について話し合います。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -423,7 +429,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "プロジェクトマネジメント",
     "topicTags": [],
     "difficulty": 3,
-    "question": "EVM を使用してマネジメントをしているプロジェクトで、進捗に関する指標値は次のとおりであった。このプロジェクトに対する適切な評価と対策はどれか。〔進捗に関する指標値〕CPI(コスト効率指数): 0.9SPI(スケジュール効率指数): 1.1BAC(完成時総予算)に基づく TCPI (残作業効率指数): 1.2",
+    "question": "EVM を使用してマネジメントをしているプロジェクトで、進捗に関する指標値は次のとおりであった。このプロジェクトに対する適切な評価と対策はどれか。\n\n〔進捗に関する指標値〕\nCPI(コスト効率指数): 0.9\nSPI(スケジュール効率指数): 1.1\nBAC(完成時総予算)に基づく TCPI (残作業効率指数): 1.2",
     "choices": {
       "ア": "コストが予算を超えているが、スケジュールには余裕があり、残作業のコスト効率を計画よりも上げる必要はないので、CPI に基づいて完成までに必要なコストを予測する。",
       "イ": "コストが予算を超えているので、完成時総予算を超過するおそれがあるが、スケジュールには余裕があるので、残作業のコスト効率を上げる対策を検討するか、コンティンジェンシー予備費の使用を検討する。",
@@ -433,7 +439,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "CPI（コスト効率指数）が0.9であるためコストは予算を超過しており、TCPI（残作業効率指数）が1.2であるため、残りの作業を当初予算内で完了するには計画より効率を上げる必要があります。SPI（スケジュール効率指数）が1.1なのでスケジュールは進んでいますが、コスト超過のリスクがあるため、コスト効率改善策の検討や、緊急事態に備えたコンティンジェンシー予備費の使用を検討するのが適切です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -457,7 +463,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "エ",
     "explanation": "クラッシングとは、プロジェクトの期間を短縮するために、追加コストを支払ってクリティカルパス上の活動期間を短縮する手法です。プロジェクトの外部から熟練要員を調達し、クリティカルパス上の作業に投入することは、コストを増やして作業を加速させる典型的なクラッシングに該当します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -471,7 +477,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "サービスマネジメント",
     "topicTags": [],
     "difficulty": 3,
-    "question": "あるサービスでは〔サービス可用性の SLA] に基づき、サービス可用性の目標値の遵守状況を月ごとに測定して評価している。ある月の実績値は 99.3%だった。この月にサービス可用性の目標値を達成するためには、サービス停止時間は、最低,何時間少なければよかったか。〔サービス可用性のSLA〕・サービス可用性の目標値:99.5%以上・サービス提供時間帯:7時~22時・サービス提供日数:20日/月",
+    "question": "あるサービスでは〔サービス可用性の SLA] に基づき、サービス可用性の目標値の遵守状況を月ごとに測定して評価している。ある月の実績値は 99.3%だった。この月にサービス可用性の目標値を達成するためには、サービス停止時間は、最低,何時間少なければよかったか。\n\n〔サービス可用性のSLA〕\n\n・サービス可用性の目標値:99.5%以上\n・サービス提供時間帯:7時~22時\n・サービス提供日数:20日/月",
     "choices": {
       "ア": "0.4",
       "イ": "0.6",
@@ -479,9 +485,9 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "1.95"
     },
     "answer": "イ",
-    "explanation": "まず、月の総サービス提供時間は15時間/日 × 20日/月 = 300時間です。目標可用性99.5%を達成するための許容停止時間は300時間 × (1 - 0.995) = 1.5時間です。実績可用性99.3%における実際の停止時間は300時間 × (1 - 0.993) = 2.1時間でした。したがって、目標達成のためには、2.1時間 - 1.5時間 = 0.6時間、サービス停止時間を少なくする必要がありました。",
+    "explanation": "サービス提供時間は (22−7) × 20 = 300時間/月です。実績99.3%の停止時間は300 × 0.007 = 2.1時間、目標99.5%で許容される停止時間は300 × 0.005 = 1.5時間です。したがって必要な削減は2.1−1.5 = 0.6時間（イ）です。0.4時間では不足し、1.3時間と1.95時間は目標を達成できますが、必要最低限の削減時間ではありません。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -505,7 +511,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "システム監査におけるウォークスルー法は、監査対象のシステムや業務プロセスにおいて、データの生成から入力、処理、出力、利活用に至るまでの一連の流れを、実際に追跡して確認する手法です。この方法により、プロセスが適切に機能しているか、そして組み込まれているコントロールが有効であるかを検証します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -529,7 +535,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "システム監査における「監査手続」とは、監査人が監査意見を表明するために必要な、十分かつ適切な監査証拠を入手するために実施する具体的な検証活動の総称です。これには、質問、観察、文書点検、分析、再実施など、様々な証拠収集活動が含まれます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -553,7 +559,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "DX認定制度の認定基準には、企業が経営ビジョンとしてデジタル技術を活用した事業変革の方向性を明確にし、そのビジョンを実現するための具体的なDX戦略を策定して社内外に公表していることが含まれています。これは、企業がDX推進に経営レベルでコミットしていることを示す重要な要素です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -577,7 +583,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "エ",
     "explanation": "プロビジョニングとは、利用者の需要に応じて必要なITリソースを準備・割り当てることを指します。選択肢エは、需要予測に基づきネットワーク設備やシステムリソースを計画的に調達・強化し、サービス提供に備えるという、このプロビジョニングの定義に最も合致しています。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -591,7 +597,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "企業と法務",
     "topicTags": [],
     "difficulty": 3,
-    "question": "ベンダーX 社に対して、表に示すように要件定義フェーズから運用テストフェーズまでを委託したい。X社との契約に当たって、“情報システム・モデル取引・契約書<第二版>”に照らし、各フェーズの契約形態を整理した。a~d の契約形態のうち,準委任型が適切であるとされるものはどれか。要件定義システム外部設計システム内部設計ソフトウェア設計,プログラミング、ソフトウェアテストシステム結合システムテスト運用テストa準委任型又は請負型b請負型c準委任型又は請負型d",
+    "question": "ベンダーX 社に対して、表に示すように要件定義フェーズから運用テストフェーズまでを委託したい。X社との契約に当たって、“情報システム・モデル取引・契約書<第二版>”に照らし、各フェーズの契約形態を整理した。a~d の契約形態のうち,準委任型が適切であるとされるものはどれか。要件定義システム外部設計システム内部設計ソフトウェア設計,プログラミング、ソフトウェアテストシステム結合システムテスト運用テストa準委任型又は請負型b請負型c準委任型又は請負型d\n\n| フェーズ | 契約形態 |\n| --- | --- |\n| 要件定義 | a |\n| システム外部設計 | 準委任型又は請負型 |\n| システム内部設計 | b |\n| ソフトウェア設計、プログラミング、ソフトウェアテスト | 請負型 |\n| システム結合 | c |\n| システムテスト | 準委任型又は請負型 |\n| 運用テスト | d |",
     "choices": {
       "ア": "a, b",
       "イ": "a, d",
@@ -599,9 +605,9 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "b, d"
     },
     "answer": "イ",
-    "explanation": "イが正解である根拠は、準委任型契約は、受託者が善管注意義務を負うものの、成果物の完成を保証しない委任契約の性質を持つからです。一方、請負型契約は、成果物の完成を約束し、その完成責任を負う契約形態です。\n\nアが誤りである理由は、システム外部設計は成果物の完成が比較的明確であるため、請負型がより適切であり、準委任型のみが適切とは言えないからです。\n\nウが誤りである理由は、bのソフトウェア設計、プログラミング、ソフトウェアテストは、明確な成果物（プログラム）の完成を目的とするため、請負型が適切であり、準委任型または請負型とするのはbの記述と矛盾するからです。\n\nエが誤りである理由は、bは請負型が適切であり、準委任型または請負型とするのはbの記述と矛盾するからです。\n\nしたがって、要件定義フェーズ（a）は、顧客の意図を具体化する作業であり、仕様の確定が難しいため準委任型または請負型が考えられ、運用テストフェーズ（d）は、システムが正常に動作することの確認が主眼であり、これも成果の保証が難しいため準委任型または請負型が適切であるという選択肢イの判断が、情報システム・モデル取引・契約書に照らし合わせて最も妥当と考えられます。",
-    "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "explanation": "原典の表では、aは要件定義、bはシステム内部設計、cはシステム結合、dは運用テストです。モデル取引・契約書の整理で準委任型が適切とされるのはaとdで、イが正解です。要件定義と運用テストはユーザー側が主体となり、ベンダーが業務を支援する性質があります。一方、bとcは成果物の完成を目的とする請負型に整理されています。これは設問で指定されたモデルの分類であり、すべての個別契約が一律に決まるという意味ではありません。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -625,7 +631,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "PPM（プロダクト・ポートフォリオ・マネジメント）は、市場成長率と相対的市場シェアの2軸で事業を分類し、各事業への最適な資源配分を決定するためのフレームワークです。この手法は、設問で述べられている市場と企業の関係分析および資源配分方針の決定に直接対応します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -649,7 +655,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "エッジAIにおけるエッジデバイスの役割は、クラウドで事前に学習されたモデルを利用して、現場でリアルタイムにデータから結論を導き出す「推論」を行うことです。選択肢イは、学習済みモデルに基づきデータの識別などを行うプロセスを説明しており、これが推論処理に該当します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -673,7 +679,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "エ",
     "explanation": "AIを用いたマシンビジョンは、カメラなどの視覚センサーとAIによる画像処理技術を活用し、対象物の状態を認識・検査する技術です。スマートファクトリーでは、人間の目視検査を代替し、製品の品質検査を自動化・高度化することで、検査効率を大幅に向上させることを主な目的とします。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -697,7 +703,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "ウ",
     "explanation": "提示された2つの売上高と利益の関係から、変動費率を算出します。利益 = 売上高 - (売上高 × 変動費率) - 固定費の式に数値を代入し連立方程式を解くと、変動費率は60%と導き出されます。この変動費率を売上高8,000万円に適用すると、変動費は8,000万円 × 0.6 = 4,800万円となります。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -721,7 +727,7 @@ export const NW_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "answer": "イ",
     "explanation": "生成AIによって作成された画像であっても、それが既存の著作権で保護された画像と類似しており、かつその既存画像に依拠して（学習データの一部として利用されるなど）生成されたと判断される場合、著作権侵害となる可能性があります。これは、著作権法における著作権侵害の判断基準である「類似性」と「依拠性」の原則に基づいています。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_nw_am1_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"
   }
 ];

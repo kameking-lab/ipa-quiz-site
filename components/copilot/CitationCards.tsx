@@ -10,7 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
-import type { CitationMeta } from "@/lib/copilot/citation-meta";
+import type { CitationMeta } from "@/lib/copilot/header-codec";
 import { posthogCapture } from "@/lib/posthog";
 
 interface Props {

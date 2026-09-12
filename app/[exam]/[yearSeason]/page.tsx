@@ -209,6 +209,8 @@ export default async function ExamYearSeasonPage({
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
+            {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"])} {items.length}問</Badge>)}
+            {sessionMap.has("am1") && !sessionMap.has("am2") && <p className="w-full text-amber-700 dark:text-amber-300">この年度の午前IIは未収録です。午前Iは共通問題です。</p>}
           </div>
         </header>
 
