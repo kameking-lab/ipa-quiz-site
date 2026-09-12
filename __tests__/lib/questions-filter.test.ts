@@ -32,6 +32,7 @@ function q(partial: Partial<Question> & { id?: string }): Question {
     answer: partial.answer ?? "ア",
     explanation: partial.explanation ?? "これは十分に長い実際の解説文です。",
     hasImage: partial.hasImage ?? false,
+    imageUrls: partial.imageUrls,
     sourcePdfUrl: "https://example.com/x.pdf",
     license: "IPA-public",
     isCalculation: partial.isCalculation,
@@ -145,15 +146,17 @@ describe("filterQuestions — フィルタ条件", () => {
 });
 
 describe("filterQuestions — 品質フィルタ", () => {
-  it("表/図/条件に言及するが画像のない問題を除外する", () => {
+  it("画像フラグだけの問題を除外し、実画像と文字起こしした表は出題する", () => {
     const all = [
       q({ id: "ok", question: "正規化に関する記述はどれか。" }),
       q({ id: "table", question: "次の表に示すデータについて答えよ。", hasImage: false }),
       q({ id: "tableImg", question: "次の表に示すデータについて答えよ。", hasImage: true }),
+      q({ id: "rendered", question: "次の図に示す回路", hasImage: true, imageUrls: ["/figure.png"] }),
+      q({ id: "transcribed", question: "次の表について。\nA | B\n--- | ---\n1 | 2", hasImage: false }),
       q({ id: "cond", question: "以下の条件のもとで計算せよ。", hasImage: false }),
     ];
     const out = filterQuestions(all, { mode: "year" });
-    expect(out.map((x) => x.id).sort()).toEqual(["ok", "tableImg"]);
+    expect(out.map((x) => x.id).sort()).toEqual(["cond", "ok", "rendered", "transcribed"]);
   });
 
   it("needsReview の問題を除外する", () => {

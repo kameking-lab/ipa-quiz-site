@@ -1,3 +1,4 @@
+import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -49,6 +50,9 @@ export async function POST(req: Request) {
     );
   }
 
+  if (q.needsReview || hasUnrenderableContent(q)) {
+    return NextResponse.json({ error: "content_under_review", message: "原典との照合中のため、この問題の演習・採点は停止しています。" }, { status: 409, headers: { "Cache-Control": "no-store" } });
+  }
   if (q.type !== "multiple-choice") {
     return NextResponse.json(
       {

@@ -10,6 +10,8 @@ export interface YearItem {
   key: string;
   label: string;
   count: number;
+  coverage?: string;
+  missingSpecialist?: boolean;
 }
 
 export interface CategoryItem {
@@ -81,7 +83,10 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
                   href={`/${exam}/${g.key}`}
                   className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
-                  <span className="font-medium text-foreground">{g.label}</span>
+                  <span className="min-w-0 font-medium text-foreground">{g.label}
+                    {g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}
+                    {g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}
+                  </span>
                   <span className="flex items-center gap-2 text-xs text-muted-foreground">
                     <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
                       {g.count}問

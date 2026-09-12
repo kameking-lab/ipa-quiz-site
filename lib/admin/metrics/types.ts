@@ -122,7 +122,7 @@ export interface InsightSection {
   aiComment: string;
 }
 
-export interface MetricsResponse {
+export interface AvailableMetricsResponse {
   meta: MetricsRangeMeta;
   source: "posthog" | "mock";
   generatedAt: string;
@@ -136,3 +136,14 @@ export interface MetricsResponse {
   errors: ErrorSection;
   insights: InsightSection;
 }
+
+/** Missing measurements must not be represented by zero or demo values. */
+export interface UnavailableMetricsResponse {
+  meta: MetricsRangeMeta;
+  source: "unavailable";
+  generatedAt: string;
+  cachedAt?: string;
+  reason: string;
+}
+
+export type MetricsResponse = AvailableMetricsResponse | UnavailableMetricsResponse;

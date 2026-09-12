@@ -6,7 +6,7 @@ import type {
   InsightSection,
   KpiValue,
   MetricsRangeMeta,
-  MetricsResponse,
+  AvailableMetricsResponse,
   PageAccessSection,
   SummarySection,
   TrafficSection,
@@ -321,7 +321,7 @@ function buildInsights(): InsightSection {
   };
 }
 
-export function buildMockMetrics(meta: MetricsRangeMeta): MetricsResponse {
+export function buildMockMetrics(meta: MetricsRangeMeta): AvailableMetricsResponse {
   const seed = seedFromString(`${meta.from}-${meta.to}-${meta.range}`);
   const rand = rng(seed);
   return {

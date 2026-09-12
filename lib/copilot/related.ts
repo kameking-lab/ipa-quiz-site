@@ -1,7 +1,9 @@
+import "server-only";
+import type { RelatedQuestion } from "./header-codec";
 import { getAllQuestions } from "@/lib/questions/load";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
-import type { ExamCode, Season } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import { getCorpus } from "./corpus";
 import { getCachedIndex, retrieve } from "./retriever";
 import { buildRetrievalQuery, isQueryRetrievable, type RerankContext } from "./reranker";
@@ -11,22 +13,6 @@ import { buildRetrievalQuery, isQueryRetrievable, type RerankContext } from "./r
  * AI コパイロットの回答下部に「この質問に関連する問題」セクションを
  * 描画するために使う。引用に採用された出典は除外する。
  */
-export interface RelatedQuestion {
-  questionId: string;
-  exam: ExamCode;
-  examLabel: string;
-  year: number;
-  season: Season;
-  yearSeasonLabel: string;
-  qNumber: number;
-  category: string;
-  /** 問題文の冒頭プレビュー（180 文字）。 */
-  preview: string;
-  /** 問題ページ URL（正規の indexable な静的 /q/* ページ）。 */
-  url: string;
-  /** BM25 スコア（並び順保持用）。 */
-  score: number;
-}
 
 const PREVIEW_MAX_LEN = 180;
 
@@ -182,31 +168,5 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     .slice(0, limit);
 }
 
-/** HTTP ヘッダ送信用 base64 エンコード。 */
-export function encodeRelatedHeader(items: RelatedQuestion[]): string {
-  if (items.length === 0) return "";
-  const json = JSON.stringify(items);
-  return Buffer.from(json, "utf8").toString("base64");
-}
-
-/** クライアント側で X-Related-Questions ヘッダを RelatedQuestion[] に戻す。 */
-export function decodeRelatedHeader(header: string | null): RelatedQuestion[] {
-  if (!header) return [];
-  try {
-    const json =
-      typeof atob === "function"
-        ? decodeURIComponent(
-            Array.prototype.map
-              .call(atob(header), (c: string) =>
-                `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`,
-              )
-              .join(""),
-          )
-        : Buffer.from(header, "base64").toString("utf8");
-    const parsed = JSON.parse(json) as RelatedQuestion[];
-    if (!Array.isArray(parsed)) return [];
-    return parsed;
-  } catch {
-    return [];
-  }
-}
+export { encodeRelatedHeader, decodeRelatedHeader } from "./header-codec";
+export type { RelatedQuestion } from "./header-codec";

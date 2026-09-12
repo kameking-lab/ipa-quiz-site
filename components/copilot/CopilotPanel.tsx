@@ -56,11 +56,11 @@ import {
 import {
   decodeCitationsHeader,
   type CitationMeta,
-} from "@/lib/copilot/citation-meta";
+} from "@/lib/copilot/header-codec";
 import {
   decodeRelatedHeader,
   type RelatedQuestion,
-} from "@/lib/copilot/related";
+} from "@/lib/copilot/header-codec";
 import { CitationCards } from "@/components/copilot/CitationCards";
 import { RelatedQuestionsSection } from "@/components/copilot/RelatedQuestions";
 import { LS_KEYS } from "@/lib/storage/keys";

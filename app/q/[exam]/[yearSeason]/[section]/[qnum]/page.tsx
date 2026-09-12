@@ -1,3 +1,5 @@
+import { QuestionFigures } from "@/components/quiz/QuestionFigures";
+import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
@@ -335,7 +337,7 @@ export default async function QuestionPage({
       </header>
 
       {/* Figure-bearing notice — text-only fallback hint */}
-      {q.hasImage && (
+      {hasUnrenderableContent(q) && (
         <aside
           aria-label="図表に関する注釈"
           className="mb-3 flex items-start gap-2.5 rounded-xl border border-amber-300/70 bg-amber-50 p-3.5 text-[13px] leading-relaxed text-amber-900 dark:border-amber-700/60 dark:bg-amber-950/40 dark:text-amber-100"
@@ -343,8 +345,8 @@ export default async function QuestionPage({
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <div className="space-y-1">
             <p>
-              この問題には図表が含まれます。図表は権利上の都合で本サイトには
-              掲載していません。下のリンクから IPA 公式 PDF でご確認ください。
+              この問題の図表は原典との照合が必要です。図表の確認が終わるまで、
+              演習への出題とこのページでの採点を停止しています。出典から問題をご確認ください。
             </p>
             <a
               href={getSafePdfUrl(q.sourcePdfUrl)}
@@ -365,13 +367,14 @@ export default async function QuestionPage({
         className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
       >
         <QuestionBody text={q.question} />
+        <QuestionFigures question={q} />
       </section>
 
       {/* Choices + solve-in-place. The choice text ships in the prerendered
           HTML via ChoiceButton (crawlable / readable with JS off); hydration
           adds the grading interaction so a search visitor can answer right here
           instead of hopping to /quiz (致命傷⑤). */}
-      {q.choices && (
+      {q.choices && !hasUnrenderableContent(q) && (
         <section aria-label="選択肢と解答" className="mt-4">
           <h2 className="sr-only">選択肢</h2>
           <QuestionAnswerCard
