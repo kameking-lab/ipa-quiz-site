@@ -1,4 +1,4 @@
-import type { LLMProvider } from "@/lib/ai/provider";
+import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { captureException } from "@/lib/monitoring/sentry";
 
 export interface CopilotStreamInput {
@@ -24,7 +24,7 @@ export interface CopilotStreamInput {
    * frozen the moment the response completes — anything still in flight at
    * close() is silently dropped.
    */
-  onComplete?: (outputChars: number) => void | Promise<void>;
+  onComplete?: (outputChars: number, usage?: StreamCompletion) => void | Promise<void>;
 }
 
 const DEFAULT_TIMEOUT_MS = 35_000;
@@ -62,6 +62,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
   const encoder = new TextEncoder();
   let producedAnyChunk = false;
   let producedChars = 0;
+  let usage: StreamCompletion | undefined;
 
   return new ReadableStream<Uint8Array>({
     async start(controller) {
@@ -83,10 +84,14 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
           maxTokens,
           temperature,
           signal: upstreamAbort.signal,
+          onComplete: (completion) => { usage = completion; },
         })) {
           producedAnyChunk = true;
           producedChars += chunk.length;
           controller.enqueue(encoder.encode(chunk));
+        }
+        if (usage?.truncated) {
+          controller.enqueue(encoder.encode("\n\n[応答の途中終了] 出力上限に達しました。続きを質問してください。"));
         }
         if (hasGrounding && citationFooter) {
           controller.enqueue(encoder.encode(citationFooter));
@@ -129,7 +134,7 @@ export function createCopilotResponseStream(input: CopilotStreamInput): Readable
         // 必ず close() の **前** に await する。close() 後に投げた非同期処理は、
         // レスポンス完了でサーバレス関数が凍結されるため完了が保証されない。
         try {
-          await onComplete?.(producedChars);
+          await onComplete?.(producedChars, usage);
         } catch {
           // ignore
         }
