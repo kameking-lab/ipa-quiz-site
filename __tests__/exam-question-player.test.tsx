@@ -139,8 +139,9 @@ describe("ExamQuestionPlayer", () => {
     fireEvent.change(screen.getByLabelText("解答メモ（下書き・任意）"), {
       target: { value: "記述の下書き" },
     });
-    fireEvent.click(screen.getByRole("button", { name: "確認済みにする" }));
+    fireEvent.click(screen.getByRole("button", { name: "模範解答を見る" }));
     expect(screen.getByRole("heading", { name: "確認済み（採点なし）" })).toBeTruthy();
+    expect(screen.getByRole("heading", { name: "模範解答・解説（学習用）" })).toBeTruthy();
     expect(screen.getByText(/記述式のため、このサイトでは正誤を判定しません/)).toBeTruthy();
   });
 

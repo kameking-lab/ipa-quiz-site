@@ -12,7 +12,7 @@
 // previously-stored caches (activate fires only on install), and effectively
 // nullify the cache strategy while bloating client storage.
 
-const CACHE_VERSION = 'v2';
+const CACHE_VERSION = 'v3-chihuahua';
 const STATIC_CACHE = `ipa-quiz-static-${CACHE_VERSION}`;
 const PAGE_CACHE = `ipa-quiz-pages-${CACHE_VERSION}`;
 const CONTENT_CACHE = `ipa-quiz-content-${CACHE_VERSION}`;
