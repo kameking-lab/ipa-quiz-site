@@ -80,8 +80,84 @@ export const EXAM_NOTE_GUIDES: Partial<Record<ExamCode, NoteGuideLink>> = {
     source: "exam_db",
     account: "sikaku_rakutoru",
   },
+  // 出典: reports/revenue-completion-20260913/receipts/free-05-sm-am2.json (ok:true, 2026-09-13 観測)。
+  sm: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/nba9435c2ae0f",
+    label: "運用プロセスの定義と復習手順",
+    source: "exam_sm",
+    account: "sikaku_rakutoru",
+  },
+  // 出典: reports/revenue-completion-20260913/receipts/free-06-es-am2.json (ok:true, 2026-09-13 観測)。
+  es: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/nd0881771250e",
+    label: "リアルタイムOSの用語と復習手順",
+    source: "exam_es",
+    account: "sikaku_rakutoru",
+  },
+  // 出典: reports/revenue-completion-20260913/receipts/cf-10-sg-free.json (ok:true, 2026-09-13 観測)。
+  sg: {
+    kind: "free",
+    href: "https://note.com/ipa_quiz_ai/n/n094a9aefbc1a",
+    label: "情報セキュリティマネジメント試験の形式と学習手順",
+    source: "exam_sg",
+    account: "ipa_quiz_ai",
+  },
+  // 出典: reports/revenue-completion-20260913/receipts/cf-11-ap-free.json (ok:true, 2026-09-13 観測)。
+  ap: {
+    kind: "free",
+    href: "https://note.com/ipa_quiz_ai/n/n550db5ff2054",
+    label: "応用情報の試験形式と高度試験への進み方",
+    source: "exam_ap",
+    account: "ipa_quiz_ai",
+  },
+  // 出典: reports/revenue-completion-20260913/existing-guides/existing-fe-free.json
+  // (公開APIの実測 2026-09-13: status=published / price=0 / is_limited=false)。
+  // 新規公開ではなく、既に公開済みの無料記事の再利用。
+  fe: {
+    kind: "free",
+    href: "https://note.com/ipa_quiz_ai/n/n7e5046098452",
+    label: "9大分類・23中分類をつなげて用語を覚える",
+    source: "exam_fe",
+    account: "ipa_quiz_ai",
+  },
+  // 出典: reports/revenue-completion-20260913/existing-guides/existing-ip-free.json
+  // (公開APIの実測 2026-09-13: status=published / price=0 / is_limited=false)。
+  // 新規公開ではなく、既に公開済みの無料記事の再利用。
+  ip: {
+    kind: "free",
+    href: "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
+    label: "ストラテジ系32問を経営3手法で判別する",
+    source: "exam_ip",
+    account: "ipa_quiz_ai",
+  },
 };
 
 export function getNoteGuide(exam: ExamCode): NoteGuideLink | undefined {
   return EXAM_NOTE_GUIDES[exam];
+}
+
+// 主リンク(上記 EXAM_NOTE_GUIDES)を隠さずに、有料教材を「補助リンク」として
+// 追加で出すための別テーブル。既存の EXAM_NOTE_GUIDES / getNoteGuide の形・
+// 挙動・既存テストは一切変更しない(下位互換の拡張)。
+// オーナー承認 2026-09-13: PM の無料記事(exam_pm)を隠さず、有料ワークシートを
+// 補助リンクとして併記する。
+export const EXAM_NOTE_SUPPLEMENTS: Partial<Record<ExamCode, NoteGuideLink>> = {
+  pm: {
+    kind: "paid",
+    href: "https://note.com/sikaku_rakutoru/n/nb57e5dd70d62",
+    label: "6問+2ワークシートで科目A-2を演習する",
+    source: "exam_pm_paid",
+    account: "sikaku_rakutoru",
+    // 出典: reports/revenue-eco-20260913/PROGRESS.md 6行目「有料2教材は最初の
+    // 一通りの演習・事例を無料公開」。無料記事だけでも学習は完結するため、
+    // 購入が必須であるかのような文言は書かない。
+    description:
+      "500円（購入は任意です）。最初の演習は記事内で無料の試し読みができます。6問の演習と2つのワークシートで、無料ガイドの型を実際の答案に書き起こせます。",
+  },
+};
+
+export function getNoteGuideSupplement(exam: ExamCode): NoteGuideLink | undefined {
+  return EXAM_NOTE_SUPPLEMENTS[exam];
 }

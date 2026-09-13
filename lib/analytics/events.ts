@@ -23,8 +23,32 @@ export type AnalyticsEvent =
   | { name: "exam_select"; exam: string }
   | {
       name: "note_outbound_click";
-      source: "footer" | "operator" | "exam_sa" | "exam_st" | "exam_nw" | "exam_au" | "exam_sc" | "exam_pm" | "exam_db";
-      account: "ipa_quiz_ai" | "sikaku_rakutoru";
+      source:
+        | "footer"
+        | "operator"
+        | "exam_sa"
+        | "exam_st"
+        | "exam_nw"
+        | "exam_au"
+        | "exam_sc"
+        | "exam_pm"
+        | "exam_pm_paid"
+        | "exam_db"
+        | "exam_sm"
+        | "exam_es"
+        | "exam_sg"
+        | "exam_ap"
+        | "exam_fe"
+        | "exam_ip"
+        | "exam_library";
+      account: "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";
+    }
+  | {
+      name: "book_click";
+      exam: string;
+      bookId: string;
+      retailer: "amazon" | "rakuten";
+      placement: "recommended_books_page" | "quiz_inline_hint";
     }
   // ----- CVR funnel -----
   | { name: "signin_started"; provider: "google" | "github" | "email"; source?: string }

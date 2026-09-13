@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-09-13T00:00:00+09:00",
+  "agent": "single-session-direct-implementation",
+  "note": "指示にあった reports/revenue-completion-20260913/technical/result.json と patches はこのworktree・branch(codex/revenue-completion-20260913)には存在しなかった(find で確認)。別ブランチ codex/qualification-revenue-eco-20260913 は別worktreeで checkout中のため中身は読めない。result.json/patchesの機械的な適用ではなく、ユーザー指示文そのものを要件として直接コード実装した。",
+  "scope": "ipa-quiz-site (worktree: ipa-quiz-site-revenue-completion-20260913, branch: codex/revenue-completion-20260913, base commit dc5ae55)",
+  "changes": [
+    {
+      "file": "lib/note-guides.ts",
+      "change": "EXAM_NOTE_SUPPLEMENTS / getNoteGuideSupplement() を追加。既存 EXAM_NOTE_GUIDES / getNoteGuide() の形・挙動は無変更(下位互換の拡張)。pm に有料補助リンク(sikaku_rakutoru nb57e5dd70d62, 500円, 6問+2ワークシート)を追加し、既存の無料記事(exam_pm, n20f719f019ac)は隠していない。"
+    },
+    {
+      "file": "components/analytics/TrackedNoteLink.tsx",
+      "change": "NoteLinkSource に exam_pm_paid を追加。"
+    },
+    {
+      "file": "lib/analytics/events.ts",
+      "change": "note_outbound_click.source に exam_pm_paid を追加。新規イベント book_click(exam, bookId, retailer) を追加。"
+    },
+    {
+      "file": "lib/posthog.ts",
+      "change": "PostHogEventName に book_click を追加。"
+    },
+    {
+      "file": "components/exam/ExamNoteGuide.tsx",
+      "change": "primary(無料)ガイドを表示するカードの下に、有料補助リンクがある場合だけ追記する形にリファクタ。free/paid の文言(KIND_COPY)は既存のまま分離を維持し、無料が先・有料が後の順で両方表示する。"
+    },
+    {
+      "file": "data/exam-library/official-catalog.json",
+      "change": "cskohyo-CS20251908(労働衛生一般)・cskohyo-CS20251910(健康管理) の既存 noteLinks(無料記事)配列に、anzen_ai_jp の有料記事(nb9490806c1ef, 500円, 3ケース+2テンプレ)を kind:paid として追記。無料記事は削除・変更していない。労働衛生工学(CS20251911)は主題が異なるため追加せず対象外とした。既存の ExamNoteLink[] 型・parseNoteLinks() はそのまま複数件を扱えるため型変更は不要だった。"
+    },
+    {
+      "file": "components/analytics/TrackedBookLink.tsx",
+      "change": "新規。参考書アフィリエイトリンク(Amazon/楽天)のクリック計測用クライアントコンポーネント。TrackedNoteLink と同方針(計測失敗でも遷移は必ず起こす)。"
+    },
+    {
+      "file": "components/quiz/InlineBookHint.tsx",
+      "change": "Amazon リンクを TrackedBookLink に置き換え、クイズ画面からのクリックも計測対象にした。"
+    },
+    {
+      "file": "app/recommended-books/[exam]/page.tsx",
+      "change": "BookCard の Amazon/楽天リンクを TrackedBookLink に置き換え(クリック計測)。加えて『書籍の使い分け』表の直前に、難度(入門/中級/上級)をどう選ぶかの目安を1段落だけ追記(既存ページで学習段階の選び方が不明だった点への最小限の改善)。"
+    }
+  ],
+  "newFiles": [
+    "components/analytics/TrackedBookLink.tsx",
+    "__tests__/components/TrackedBookLink.test.tsx",
+    "reports/revenue-completion-20260913/technical/implementation-result.json"
+  ],
+  "testsAdded": [
+    "__tests__/lib/note-guides.test.ts: pm主リンク無変更の確認 / pm有料補助リンクの内容 / 補助リンクが無いexamでundefined / free-paid文言混在防止(補助側)",
+    "__tests__/components/ExamNoteGuide.test.tsx: pmで無料+有料補助が両方表示されクリックでexam_pm_paidが発火 / 補助リンクが無いexam(sa)では有料ブロックが出ない",
+    "__tests__/components/TrackedBookLink.test.tsx: amazon/rakuten クリックの計測とhrefでの遷移(新規ファイル)"
+  ],
+  "testResults": {
+    "command": "pnpm vitest run __tests__/lib/note-guides.test.ts __tests__/components/ExamNoteGuide.test.tsx __tests__/components/TrackedBookLink.test.tsx __tests__/components/TrackedNoteLink.test.tsx __tests__/exam-library-model.test.ts __tests__/exam-question-player.test.tsx __tests__/data/recommended-books.test.ts",
+    "result": "7 files / 63 tests passed",
+    "additionalRun": "pnpm vitest run __tests__/components/QuizPlayer.noteGuide.test.tsx __tests__/components/QuestionAnswerCard.test.tsx — 2 files / 26 tests passed (ExamNoteGuide を埋め込んでいる既存画面の回帰確認)"
+  },
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "result": "pass (tsc --noEmit, エラー0件)"
+  },
+  "lint": {
+    "command": "pnpm eslint <touched files>",
+    "result": "pass (警告・エラー0件)"
+  },
+  "build": {
+    "ran": false,
+    "reason": "指示は『意味のあるfocused testとtypecheckを実行』であり、公開・push禁止のスコープ。typecheck+lint+関連テストで十分に検証済みと判断し、フルの pnpm build は実行していない。必要ならrootの指示で追加実行できる。"
+  },
+  "noteAutomationSideTool": {
+    "file": "note-automation/tools/free-to-paid-funnel-report.mjs",
+    "purpose": "無料記事から有料記事(PM/健康衛生)への導線が実際に売れているかを、note.com購入明細APIから読むだけの新規ツール。既存の tools/lib/note-sales-read.mjs (GETのみ・cookie生値を出さない設計) を再利用。",
+    "secretsHandling": "session.json の cookie は一切ログ・出力しない。sidHashのみ内部で扱う(note-sales-read.mjs の既存方針を継承)。stdoutにも書き込みJSONにも認証情報は含まれない。",
+    "verifiedExecutable": true,
+    "verification": "node tools/free-to-paid-funnel-report.mjs --help で実バッチが走らないことを確認。node tools/free-to-paid-funnel-report.mjs --months 1 を実際に実行し、reports/state-2026-09-13/free-to-paid-funnel.json を生成(session未解除のため両垢とも『未測定』、¥0を偽装しない設計を確認)。",
+    "knownGap": "無料記事側の閲覧数・クリック数は現時点のnote公開APIでは測れない。ツールはこれを『not_measured_by_this_api』として明示し、実測できない値を実測したように書かない(誇大表現の禁止方針に合わせた)。"
+  },
+  "notInScope": [
+    "資格別の新規無料記事URLの追加マッピング — root が別途行う(未確定のため今回は既存公開分のみを対象にした)。",
+    "1リンク型(getNoteGuide)自体の破壊的変更 — 行っていない。EXAM_NOTE_SUPPLEMENTS という別テーブルで下位互換に拡張した。",
+    "PAID_MODE有効化・Stripe実装・料金変更・DBスキーマ変更等、AGENTS.md『承認必須事項』に該当する変更 — 行っていない。",
+    "git add / commit / push、公開操作 — 行っていない(未追跡ファイル・変更はworking treeに残したまま)。"
+  ],
+  "delegation": {
+    "otherAgentsUsed": false,
+    "note": "指示『別agent禁止』に従い、Agent toolや他エージェントへの委譲は一切行わず、本セッション内で直接調査・実装・テストを行った。"
+  }
+}

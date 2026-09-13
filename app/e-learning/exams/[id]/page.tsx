@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink } from "lucide-react";
+import { TrackedNoteLink, deriveNoteAccountFromUrl } from "@/components/analytics/TrackedNoteLink";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
@@ -153,25 +154,46 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
             関連する解説記事
           </h2>
           <ul className="mt-2 grid gap-1">
-            {entry.noteLinks.map((link) => (
-              <li key={link.url}>
-                {link.kind ? (
-                  <span className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}>
-                    {link.kind === "free" ? "無料" : "有料"}
-                  </span>
-                ) : null}
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex min-h-11 items-center gap-1 font-semibold text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
-                >
+            {entry.noteLinks.map((link) => {
+              const account = deriveNoteAccountFromUrl(link.url);
+              const anchorClassName =
+                "inline-flex min-h-11 items-center gap-1 font-semibold text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]";
+              const linkBody = (
+                <>
                   {link.title}
                   <span className="sr-only">（新しいタブで開きます）</span>
                   <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                </a>
-              </li>
-            ))}
+                </>
+              );
+              return (
+                <li key={link.url}>
+                  {link.kind ? (
+                    <span className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}>
+                      {link.kind === "free" ? "無料" : "有料"}
+                    </span>
+                  ) : null}
+                  {account ? (
+                    // 公表問題ライブラリの解説記事リンクは note_outbound_click 計測が
+                    // 存在しなかった (account が未知だと計測できないため plain <a> のまま
+                    // 残っていた)。既知の account が判定できたときだけ計測付きリンクにする。
+                    <TrackedNoteLink
+                      href={link.url}
+                      source="exam_library"
+                      account={account}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={anchorClassName}
+                    >
+                      {linkBody}
+                    </TrackedNoteLink>
+                  ) : (
+                    <a href={link.url} target="_blank" rel="noopener noreferrer" className={anchorClassName}>
+                      {linkBody}
+                    </a>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </section>
       ) : null}

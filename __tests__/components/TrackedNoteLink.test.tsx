@@ -9,7 +9,7 @@ const { trackEvent, posthogCapture } = vi.hoisted(() => ({
 vi.mock("@/lib/analytics/events", () => ({ trackEvent }));
 vi.mock("@/lib/posthog", () => ({ posthogCapture }));
 
-import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { TrackedNoteLink, deriveNoteAccountFromUrl } from "@/components/analytics/TrackedNoteLink";
 
 beforeEach(() => {
   trackEvent.mockReset();
@@ -66,5 +66,44 @@ describe("TrackedNoteLink", () => {
       source: "exam_au",
       account: "sikaku_rakutoru",
     });
+  });
+
+  it("records anzen_ai_jp account clicks with the exam_library source (labor-safety exam library links)", () => {
+    render(
+      <TrackedNoteLink
+        href="https://note.com/anzen_ai_jp/n/nb9490806c1ef"
+        source="exam_library"
+        account="anzen_ai_jp"
+        onClick={(event) => event.preventDefault()}
+      >
+        note
+      </TrackedNoteLink>,
+    );
+
+    fireEvent.click(screen.getByRole("link", { name: "note" }));
+
+    expect(trackEvent).toHaveBeenCalledWith({
+      name: "note_outbound_click",
+      source: "exam_library",
+      account: "anzen_ai_jp",
+    });
+    expect(posthogCapture).toHaveBeenCalledWith("note_outbound_click", {
+      source: "exam_library",
+      account: "anzen_ai_jp",
+    });
+  });
+});
+
+describe("deriveNoteAccountFromUrl", () => {
+  it("recognises all three known note.com accounts", () => {
+    expect(deriveNoteAccountFromUrl("https://note.com/ipa_quiz_ai/n/nabc")).toBe("ipa_quiz_ai");
+    expect(deriveNoteAccountFromUrl("https://note.com/sikaku_rakutoru/n/nabc")).toBe("sikaku_rakutoru");
+    expect(deriveNoteAccountFromUrl("https://note.com/anzen_ai_jp/n/nabc")).toBe("anzen_ai_jp");
+  });
+
+  it("returns null for unknown accounts, non-note.com hosts, and malformed URLs (fail-safe, no crash)", () => {
+    expect(deriveNoteAccountFromUrl("https://note.com/someone_else/n/nabc")).toBeNull();
+    expect(deriveNoteAccountFromUrl("https://example.com/ipa_quiz_ai")).toBeNull();
+    expect(deriveNoteAccountFromUrl("not-a-url")).toBeNull();
   });
 });
