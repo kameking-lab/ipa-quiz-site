@@ -456,9 +456,9 @@ export function QuizPlayer({
                     !isCorrect ? () => setCopilotQuery("why-wrong") : undefined
                   }
                 />
+                <ExamNoteGuide exam={question.exam as ExamCode} />
                 <GenerateSimilar baseQuestion={question} />
                 <QuestionCommentBox questionId={question.id} />
-                <ExamNoteGuide exam={question.exam as ExamCode} />
               </>
             )}
 
