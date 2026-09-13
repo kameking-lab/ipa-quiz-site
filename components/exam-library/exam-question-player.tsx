@@ -18,7 +18,8 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
-import { TrackedNoteLink, deriveNoteAccountFromUrl } from "@/components/analytics/TrackedNoteLink";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import Image from "next/image";
 import answerFiguresJson from "@/data/exam-library/answer-figures.json";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";

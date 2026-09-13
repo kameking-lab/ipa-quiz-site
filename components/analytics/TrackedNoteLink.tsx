@@ -3,6 +3,10 @@
 import type { AnchorHTMLAttributes, MouseEvent } from "react";
 import { trackEvent } from "@/lib/analytics/events";
 import { posthogCapture } from "@/lib/posthog";
+// KNOWN_NOTE_ACCOUNTS / deriveNoteAccountFromUrl は lib/note-accounts.ts にある。
+// サーバーコンポーネントからも呼ぶ必要があり、"use client" の付いたこのファイルに
+// 置くとサーバー側の呼び出しが実行時に落ちるため。
+import type { NoteAccount } from "@/lib/note-accounts";
 
 export type NoteLinkSource =
   | "footer"
@@ -26,28 +30,6 @@ export type NoteLinkSource =
   // 全 group (lckohyo/emkohyo/cskohyo) に共通する1値。個別 group ごとの source は
   // 実測ニーズが出るまで作らない。
   | "exam_library";
-
-/** note_outbound_click / posthogCapture の account として許可する値の唯一の情報源。 */
-export const KNOWN_NOTE_ACCOUNTS = ["ipa_quiz_ai", "sikaku_rakutoru", "anzen_ai_jp"] as const;
-export type NoteAccount = (typeof KNOWN_NOTE_ACCOUNTS)[number];
-
-/**
- * note.com の記事URLからアカウントを判定する。未知のホスト/パスは null を返し、
- * 呼び出し側は「計測なしの生リンク」にフォールバックすること
- * (計測を追加するために既存リンクを壊さないための安全側デフォルト)。
- */
-export function deriveNoteAccountFromUrl(url: string): NoteAccount | null {
-  try {
-    const parsed = new URL(url);
-    if (parsed.hostname !== "note.com") return null;
-    const segment = parsed.pathname.split("/")[1] ?? "";
-    return (KNOWN_NOTE_ACCOUNTS as readonly string[]).includes(segment)
-      ? (segment as NoteAccount)
-      : null;
-  } catch {
-    return null;
-  }
-}
 
 interface TrackedNoteLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;

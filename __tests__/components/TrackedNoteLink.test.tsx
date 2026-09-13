@@ -9,7 +9,8 @@ const { trackEvent, posthogCapture } = vi.hoisted(() => ({
 vi.mock("@/lib/analytics/events", () => ({ trackEvent }));
 vi.mock("@/lib/posthog", () => ({ posthogCapture }));
 
-import { TrackedNoteLink, deriveNoteAccountFromUrl } from "@/components/analytics/TrackedNoteLink";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 
 beforeEach(() => {
   trackEvent.mockReset();
