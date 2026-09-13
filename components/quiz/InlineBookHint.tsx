@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { BookOpen, ExternalLink } from "lucide-react";
 
+import { TrackedBookLink } from "@/components/analytics/TrackedBookLink";
 import {
   RECOMMENDED_BOOKS,
   buildAmazonUrl,
@@ -74,8 +75,12 @@ export function InlineBookHint({
             この試験の推薦書一覧
           </Link>
           {externalHref && (
-            <a
+            <TrackedBookLink
               href={externalHref}
+              exam={exam}
+              bookId={book.id}
+              retailer="amazon"
+              placement="quiz_inline_hint"
               target="_blank"
               rel="noopener noreferrer sponsored"
               className="inline-flex items-center gap-1 text-muted-foreground hover:text-foreground hover:underline"
@@ -83,7 +88,7 @@ export function InlineBookHint({
               <span className="text-[9px] opacity-60">[PR]</span>
               Amazon で見る
               <ExternalLink className="h-3 w-3" />
-            </a>
+            </TrackedBookLink>
           )}
         </div>
       </div>

@@ -57,7 +57,7 @@ describe("QuizPlayer — after-answer note guide placement", () => {
     expect(entries[0]?.correct).toBe(true);
   });
 
-  it("shows no note guide for an exam without a registered guide (ap)", () => {
+  it("shows the AP note-guide link after answering (all 13 exams are mapped as of 2026-09-13)", () => {
     render(
       <QuizPlayer
         question={{ ...auQuestion, id: "ap-2024a-am-q1", exam: "ap" }}
@@ -67,7 +67,33 @@ describe("QuizPlayer — after-answer note guide placement", () => {
         onNext={() => {}}
       />,
     );
-    fireEvent.keyDown(window, { key: "2" });
     expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    fireEvent.keyDown(window, { key: "2" });
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/ipa_quiz_ai/n/n550db5ff2054",
+    );
+  });
+
+  // 13区分すべてに無料ガイドを結線したので「ガイドが無い試験区分」を実在の
+  // ExamCode で表せなくなった。ガイドが失効・削除されたときに空カードを出さない
+  // 分岐そのものは残っているので、getNoteGuide を差し替えて検証を続ける。
+  it("renders no guide block at all when the exam has no registered guide", async () => {
+    vi.resetModules();
+    vi.doMock("@/lib/note-guides", async () => {
+      const actual = await vi.importActual<typeof import("@/lib/note-guides")>("@/lib/note-guides");
+      return { ...actual, getNoteGuide: () => undefined, getNoteGuideSupplement: () => undefined };
+    });
+    const { QuizPlayer: QuizPlayerWithNoGuide } = await import("@/components/quiz/QuizPlayer");
+    render(<QuizPlayerWithNoGuide question={auQuestion} index={0} total={10} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "2" });
+    // 解答の記録は今までどおり成立する(ガイドが無いことで解答経路が壊れない)。
+    const entries = createHistoryStore().getAllEntries();
+    expect(entries).toHaveLength(1);
+    expect(entries[0]?.correct).toBe(true);
+    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    vi.doUnmock("@/lib/note-guides");
+    vi.resetModules();
   });
 });

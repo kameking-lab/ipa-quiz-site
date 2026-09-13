@@ -18,6 +18,8 @@ import {
   RotateCcw,
   XCircle,
 } from "lucide-react";
+import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
+import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import Image from "next/image";
 import answerFiguresJson from "@/data/exam-library/answer-figures.json";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
@@ -748,23 +750,37 @@ export function ExamQuestionPlayer({
                   <div className="mt-4 border-t border-current/25 pt-3">
                     <h4 className="font-semibold">関連する解説記事</h4>
                     <ul className="mt-1 grid gap-1">
-                      {noteLinks.map((link) => (
-                        <li key={link.url}>
-                          {link.kind ? (
-                            <span
-                              className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                              style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
-                            >
-                              {link.kind === "free" ? "無料" : "有料"}
-                            </span>
-                          ) : null}
-                          <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                      {noteLinks.map((link) => {
+                        const account = deriveNoteAccountFromUrl(link.url);
+                        const linkBody = (
+                          <>
                             {link.title}
                             <span className="sr-only">（新しいタブで開きます）</span>
                             <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                          </a>
-                        </li>
-                      ))}
+                          </>
+                        );
+                        return (
+                          <li key={link.url}>
+                            {link.kind ? (
+                              <span
+                                className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
+                                style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
+                              >
+                                {link.kind === "free" ? "無料" : "有料"}
+                              </span>
+                            ) : null}
+                            {account ? (
+                              <TrackedNoteLink href={link.url} source="exam_library" account={account} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                                {linkBody}
+                              </TrackedNoteLink>
+                            ) : (
+                              <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                                {linkBody}
+                              </a>
+                            )}
+                          </li>
+                        );
+                      })}
                     </ul>
                   </div>
                 ) : null}
