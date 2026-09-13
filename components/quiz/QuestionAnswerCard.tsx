@@ -8,6 +8,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
+import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
@@ -215,6 +216,7 @@ export function QuestionAnswerCard({
               </Link>
             )}
           </div>
+          <ExamNoteGuide exam={exam} />
         </div>
       )}
     </div>

@@ -75,6 +75,24 @@ describe("exam-library catalog contract", () => {
     expect(parsed[0].noteLinks).toEqual([{ title: "解説", url: "https://note.com/example/n/abc" }]);
   });
 
+  it("keeps a valid free/paid noteLinks.kind and drops an invalid one, without free/paid mislabeling", () => {
+    const parsed = parseExamCatalog([
+      {
+        ...baseEntry,
+        noteLinks: [
+          { title: "無料記事", url: "https://note.com/example/n/free1", kind: "free" },
+          { title: "有料記事", url: "https://note.com/example/n/paid1", kind: "paid" },
+          { title: "kind不正", url: "https://note.com/example/n/bad1", kind: "discount" },
+        ],
+      },
+    ]);
+    expect(parsed[0].noteLinks).toEqual([
+      { title: "無料記事", url: "https://note.com/example/n/free1", kind: "free" },
+      { title: "有料記事", url: "https://note.com/example/n/paid1", kind: "paid" },
+      { title: "kind不正", url: "https://note.com/example/n/bad1" },
+    ]);
+  });
+
   it("formats dates with their meaning", () => {
     expect(formatExamDate("2026-04")).toBe("2026年4月");
     expect(formatExamDate("2026-08-19")).toBe("2026年8月19日");

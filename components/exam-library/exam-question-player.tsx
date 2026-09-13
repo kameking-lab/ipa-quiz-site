@@ -32,6 +32,7 @@ import {
   boilerAnswerPage,
   isScorableQuestion,
   officialPdfPageUrl,
+  type ExamNoteLink,
   type ExamQuestion,
 } from "@/lib/exam-library-model";
 import {
@@ -61,6 +62,8 @@ interface ExamQuestionPlayerProps {
   pdfUrl: string;
   indexUrl: string;
   questions: readonly ExamQuestion[];
+  /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
+  noteLinks?: readonly ExamNoteLink[];
 }
 
 type AnswerStatus = ReturnType<typeof answerResult>;
@@ -127,6 +130,7 @@ export function ExamQuestionPlayer({
   pdfUrl,
   indexUrl,
   questions,
+  noteLinks,
 }: ExamQuestionPlayerProps) {
   const allIds = useMemo(() => questions.map((question) => question.id), [questions]);
   const byId = useMemo(
@@ -738,6 +742,31 @@ export function ExamQuestionPlayer({
                     <RotateCcw className="h-5 w-5" aria-hidden="true" />
                     {status === "incorrect" ? "この問題をもう一度解く" : "選び直す"}
                   </button>
+                ) : null}
+
+                {noteLinks && noteLinks.length > 0 ? (
+                  <div className="mt-4 border-t border-current/25 pt-3">
+                    <h4 className="font-semibold">関連する解説記事</h4>
+                    <ul className="mt-1 grid gap-1">
+                      {noteLinks.map((link) => (
+                        <li key={link.url}>
+                          {link.kind ? (
+                            <span
+                              className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
+                              style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
+                            >
+                              {link.kind === "free" ? "無料" : "有料"}
+                            </span>
+                          ) : null}
+                          <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                            {link.title}
+                            <span className="sr-only">（新しいタブで開きます）</span>
+                            <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 ) : null}
               </div>
             ) : null}

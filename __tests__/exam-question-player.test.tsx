@@ -54,6 +54,83 @@ describe("ExamQuestionPlayer", () => {
     window.sessionStorage.clear();
   });
 
+  // reports/revenue-eco-20260913 で検証済みの労働衛生コンサルタント(保健衛生区分)向け
+  // noteLinks が、解答前には出ず解答後にだけ出ることを確認する。労働安全コンサルタント
+  // (別試験)向けリンクをここに混ぜない、という指示の裏取りでもある。
+  const healthConsultantNoteLinks = [
+    {
+      title: "無料記事: 労働衛生コンサルタント「保健衛生」区分の始め方｜健康管理を答案にする手順",
+      url: "https://note.com/anzen_ai_jp/n/n8ffef6a2eb2d",
+      kind: "free" as const,
+    },
+  ];
+
+  it("does not show noteLinks before an answer is revealed", () => {
+    render(
+      <ExamQuestionPlayer
+        examId={EXAM_ID}
+        examTitle="テスト試験"
+        pdfUrl={PDF_URL}
+        indexUrl="https://www.exam.or.jp/cskohyo/"
+        questions={questions}
+        noteLinks={healthConsultantNoteLinks}
+      />,
+    );
+    expect(screen.queryByText(/健康管理を答案にする手順/)).not.toBeInTheDocument();
+  });
+
+  it("shows the verified free noteLink after answering, with a 無料 badge and the exact URL", () => {
+    render(
+      <ExamQuestionPlayer
+        examId={EXAM_ID}
+        examTitle="テスト試験"
+        pdfUrl={PDF_URL}
+        indexUrl="https://www.exam.or.jp/cskohyo/"
+        questions={questions}
+        noteLinks={healthConsultantNoteLinks}
+      />,
+    );
+    answer(3);
+    expect(screen.getByText("無料")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /健康管理を答案にする手順/ });
+    expect(link).toHaveAttribute("href", "https://note.com/anzen_ai_jp/n/n8ffef6a2eb2d");
+  });
+
+  it("renders no noteLinks section when the prop is omitted (existing exams unaffected)", () => {
+    renderPlayer();
+    answer(3);
+    expect(screen.queryByText("関連する解説記事")).not.toBeInTheDocument();
+  });
+
+  // safety-free-02 (労働衛生工学区分) の公開検証: reports/revenue-eco-20260913/receipts/
+  // safety-free-02-eisei-kijutsu.json (ok:true) -> data/exam-library/official-catalog.json
+  // の cskohyo-CS20251911(subject: 労働衛生工学) に付与した noteLinks と同じ形。
+  const laborHygieneEngineeringNoteLinks = [
+    {
+      title: "無料記事: 労働衛生コンサルタント「労働衛生工学」区分｜記述式2問を設問の型から組む",
+      url: "https://note.com/anzen_ai_jp/n/n6143ee15b9d5",
+      kind: "free" as const,
+    },
+  ];
+
+  it("shows the verified 労働衛生工学 noteLink only after answering, never before", () => {
+    render(
+      <ExamQuestionPlayer
+        examId={EXAM_ID}
+        examTitle="テスト試験"
+        pdfUrl={PDF_URL}
+        indexUrl="https://www.exam.or.jp/cskohyo/"
+        questions={questions}
+        noteLinks={laborHygieneEngineeringNoteLinks}
+      />,
+    );
+    expect(screen.queryByText(/記述式2問を設問の型から組む/)).not.toBeInTheDocument();
+    answer(3);
+    expect(screen.getByText("無料")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /記述式2問を設問の型から組む/ });
+    expect(link).toHaveAttribute("href", "https://note.com/anzen_ai_jp/n/n6143ee15b9d5");
+  });
+
   it("shows selectable question text and answer controls without a whole-question screenshot", () => {
     renderPlayer();
     expect(screen.getByRole("heading", { name: /問1/ })).toBeTruthy();

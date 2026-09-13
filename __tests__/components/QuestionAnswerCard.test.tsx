@@ -122,6 +122,83 @@ describe("QuestionAnswerCard — solve in place", () => {
   });
 });
 
+// The AU note guide (verified: reports/revenue-eco-20260913/receipts/free-01-au-am2.json)
+// must only ever appear after the reader has actually answered/revealed, never before,
+// and must not appear for exams without a registered guide. Nothing about the existing
+// answer/navigation/storage logic changes here.
+describe("QuestionAnswerCard — after-answer note guide placement", () => {
+  const auProps = { ...baseProps, exam: "au" as const };
+
+  it("does not show the AU note-guide link before selection/reveal", () => {
+    render(<QuestionAnswerCard {...auProps} />);
+    expect(screen.queryByRole("link", { name: /無料ガイドを読む/ })).not.toBeInTheDocument();
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+  });
+
+  it("shows the AU note-guide link after answering, pointing at the verified URL", () => {
+    render(<QuestionAnswerCard {...auProps} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/n573e38ac5dea",
+    );
+  });
+
+  it("shows the AU note-guide link after 答えだけ見る (reveal-only) too", () => {
+    render(<QuestionAnswerCard {...auProps} />);
+    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toBeInTheDocument();
+  });
+
+  it("shows no note guide for an exam without a registered guide (ip), even after reveal", () => {
+    render(<QuestionAnswerCard {...baseProps} />); // baseProps.exam === "ip"
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByText("正解！")).toBeTruthy(); // reveal did happen
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+  });
+
+  it("shows the SC note-guide link after answering, same route as AU", () => {
+    render(<QuestionAnswerCard {...baseProps} exam="sc" />);
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/nee848928ccb7",
+    );
+  });
+
+  it("shows the PM note-guide link after answering, same route as AU/SC", () => {
+    render(<QuestionAnswerCard {...baseProps} exam="pm" />);
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/n20f719f019ac",
+    );
+  });
+
+  it("shows the DB note-guide link after answering, same route as AU/SC/PM", () => {
+    render(<QuestionAnswerCard {...baseProps} exam="db" />);
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/n8b0780e3c3b8",
+    );
+  });
+
+  it("does not change existing answer counting/history instrumentation", () => {
+    render(<QuestionAnswerCard {...auProps} />);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    // Same recording contract as the non-guide exams: exactly one entry, correct.
+    const entries = createHistoryStore().getAllEntries();
+    expect(entries).toHaveLength(1);
+    expect(entries[0]).toMatchObject({ id: auProps.questionId, selected: "イ", correct: true });
+    // The guide's presence does not add a second/duplicate history write.
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toBeInTheDocument();
+  });
+});
+
 // Number-key 1–4 selection must actually work — the ChoiceButton advertises it
 // via aria-keyshortcuts/「数字キーN でも選択できます」 (致命傷⑩).
 describe("QuestionAnswerCard — number-key selection", () => {

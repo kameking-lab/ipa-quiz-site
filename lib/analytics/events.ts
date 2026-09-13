@@ -23,7 +23,7 @@ export type AnalyticsEvent =
   | { name: "exam_select"; exam: string }
   | {
       name: "note_outbound_click";
-      source: "footer" | "operator" | "exam_sa" | "exam_st" | "exam_nw";
+      source: "footer" | "operator" | "exam_sa" | "exam_st" | "exam_nw" | "exam_au" | "exam_sc" | "exam_pm" | "exam_db";
       account: "ipa_quiz_ai" | "sikaku_rakutoru";
     }
   // ----- CVR funnel -----
