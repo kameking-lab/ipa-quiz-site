@@ -24,6 +24,33 @@ describe("note-guides", () => {
     expect(getNoteGuide("ap")).toBeUndefined();
   });
 
+  it("wires the verified AU article (reports/revenue-eco-20260913/receipts/free-01-au-am2.json, ok:true)", () => {
+    expect(getNoteGuide("au")).toEqual({
+      kind: "free",
+      href: "https://note.com/sikaku_rakutoru/n/n573e38ac5dea",
+      label: "科目A-2(択一)を論文対策の前に1周させる",
+      source: "exam_au",
+      account: "sikaku_rakutoru",
+    });
+  });
+
+  it("wires the verified SC article (reports/revenue-eco-20260913/receipts/free-02-sc-am2.json, ok:true)", () => {
+    expect(getNoteGuide("sc")).toEqual({
+      kind: "free",
+      href: "https://note.com/sikaku_rakutoru/n/nee848928ccb7",
+      label: "科目A-2を記述対策の隣に置く",
+      source: "exam_sc",
+      account: "sikaku_rakutoru",
+    });
+  });
+
+  it("does not register guides for the still-unpublished PM/DB A-2 drafts", () => {
+    // reports/revenue-eco-20260913 の free-03/04 は本セッション時点で公開URL未確認。
+    // 確認できていないURLをここに書かない(fake URL 禁止)。
+    expect(getNoteGuide("pm")).toBeUndefined();
+    expect(getNoteGuide("db")).toBeUndefined();
+  });
+
   it("never mixes free/paid wording into a label", () => {
     for (const guide of Object.values(EXAM_NOTE_GUIDES)) {
       if (!guide) continue;

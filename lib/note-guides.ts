@@ -14,6 +14,11 @@ export interface NoteGuideLink {
   label: string;
   source: NoteLinkSource;
   account: NoteGuideAccount;
+  /**
+   * kind 共通の説明文(ExamNoteGuide の KIND_COPY.body)で実態と合わない場合だけ、
+   * この記事専用の説明文で上書きする。省略時は共通文言を使う。
+   */
+  description?: string;
 }
 
 // 出典: components/exam/ExamNoteGuide.tsx の既存 NOTE_GUIDES を 2026-09-13 に
@@ -40,6 +45,23 @@ export const EXAM_NOTE_GUIDES: Partial<Record<ExamCode, NoteGuideLink>> = {
     href: "https://note.com/sikaku_rakutoru/n/n3a7c95159e7a",
     label: "冗長切替を3段階の答案型で整理する",
     source: "exam_nw",
+    account: "sikaku_rakutoru",
+  },
+  // 出典: reports/revenue-eco-20260913/receipts/free-01-au-am2.json (ok:true, 2026-09-13 観測)。
+  // account/ipa-sikaku/history.json 経由で公開が確認できた記事のみを登録する。
+  au: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/n573e38ac5dea",
+    label: "科目A-2(択一)を論文対策の前に1周させる",
+    source: "exam_au",
+    account: "sikaku_rakutoru",
+  },
+  // 出典: reports/revenue-eco-20260913/receipts/free-02-sc-am2.json (ok:true, 2026-09-13 観測)。
+  sc: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/nee848928ccb7",
+    label: "科目A-2を記述対策の隣に置く",
+    source: "exam_sc",
     account: "sikaku_rakutoru",
   },
 };

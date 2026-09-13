@@ -144,6 +144,7 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
         pdfUrl={entry.pdfUrl}
         indexUrl={entry.indexUrl}
         questions={questions}
+        noteLinks={entry.noteLinks}
       />
 
       {entry.noteLinks ? (
@@ -154,6 +155,11 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
           <ul className="mt-2 grid gap-1">
             {entry.noteLinks.map((link) => (
               <li key={link.url}>
+                {link.kind ? (
+                  <span className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]" style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}>
+                    {link.kind === "free" ? "無料" : "有料"}
+                  </span>
+                ) : null}
                 <a
                   href={link.url}
                   target="_blank"

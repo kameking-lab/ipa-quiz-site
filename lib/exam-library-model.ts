@@ -17,6 +17,11 @@ export type ExamAnswerResult = "correct" | "incorrect" | "unscored";
 export interface ExamNoteLink {
   title: string;
   url: string;
+  /**
+   * 省略時はバッジを表示しない(旧データ互換)。"paid" を free の文言/バッジで
+   * 出してはならない（逆も同様）— components/exam/ExamNoteGuide.tsx と同じ方針。
+   */
+  kind?: "free" | "paid";
 }
 
 export interface ExamCatalogEntry {
@@ -146,11 +151,11 @@ function isHttpsUrl(value: unknown): value is string {
 
 function parseNoteLinks(value: unknown): ExamNoteLink[] | undefined {
   if (!Array.isArray(value)) return undefined;
-  const links = value.flatMap((item): ExamNoteLink[] =>
-    isRecord(item) && nonEmptyString(item.title) && isHttpsUrl(item.url)
-      ? [{ title: item.title.trim(), url: item.url }]
-      : [],
-  );
+  const links = value.flatMap((item): ExamNoteLink[] => {
+    if (!isRecord(item) || !nonEmptyString(item.title) || !isHttpsUrl(item.url)) return [];
+    const kind = item.kind === "free" || item.kind === "paid" ? item.kind : undefined;
+    return [{ title: item.title.trim(), url: item.url, ...(kind ? { kind } : {}) }];
+  });
   return links.length > 0 ? links : undefined;
 }
 

@@ -11,7 +11,9 @@ const KIND_COPY: Record<
 > = {
   free: {
     eyebrow: "noteの無料ガイド",
-    body: "過去問演習とあわせて、記述答案の組み立て方を具体例で確認できます。",
+    // 記述式・択一式のどちらのガイドにも当てはまる表現にする。
+    // 特定の出題形式や得点・合格を確約する表現は入れない。
+    body: "過去問演習とあわせて、設問の考え方を具体例で確認できます。",
     cta: "無料ガイドを読む",
     ariaLabel: "無料の答案ガイド",
   },
@@ -43,7 +45,7 @@ export function ExamNoteGuide({ exam }: { exam: ExamCode }) {
           </p>
           <h2 className="mt-1 text-sm font-semibold text-foreground">{guide.label}</h2>
           <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground">
-            {copy.body}
+            {guide.description ?? copy.body}
           </p>
           <TrackedNoteLink
             href={guide.href}

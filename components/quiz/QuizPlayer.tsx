@@ -19,6 +19,7 @@ import {
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { QuestionCommentBox } from "./QuestionCommentBox";
+import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 
 const FeedbackGateModal = dynamic(
   () => import("@/components/FeedbackGateModal").then((m) => m.FeedbackGateModal),
@@ -457,6 +458,7 @@ export function QuizPlayer({
                 />
                 <GenerateSimilar baseQuestion={question} />
                 <QuestionCommentBox questionId={question.id} />
+                <ExamNoteGuide exam={question.exam as ExamCode} />
               </>
             )}
 
