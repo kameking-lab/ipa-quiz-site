@@ -65,3 +65,35 @@ describe("科目を絞った一覧ページはその科目の解説記事を出�
     }
   });
 });
+
+describe("ExamNoteLinks が実際に描画される", () => {
+  it("リンクがあれば見出しとアンカーを出し、無ければ何も出さない", async () => {
+    const { render, screen } = await import("@testing-library/react");
+    const { ExamNoteLinks } = await import("@/components/exam-library/exam-note-links");
+
+    const { container, unmount } = render(
+      <ExamNoteLinks
+        links={[
+          { title: "無料記事: 有機溶剤の始め方", url: "https://note.com/anzen_ai_jp/n/n611c052c28e4", kind: "free" },
+          { title: "有料記事: ワークブック", url: "https://note.com/anzen_ai_jp/n/nb9490806c1ef", kind: "paid" },
+        ]}
+        headingId="t"
+        heading="有機溶剤の解説記事"
+      />,
+    );
+    expect(screen.getByRole("heading", { name: "有機溶剤の解説記事" })).toBeTruthy();
+    const anchor = screen.getByRole("link", { name: /有機溶剤の始め方/ });
+    expect(anchor.getAttribute("href")).toBe("https://note.com/anzen_ai_jp/n/n611c052c28e4");
+    expect(anchor.getAttribute("target")).toBe("_blank");
+    expect(anchor.getAttribute("rel")).toContain("noopener");
+    expect(container.querySelectorAll("a").length).toBe(2);
+    // 無料/有料のしるしが読者に出ている
+    expect(container.textContent).toContain("無料");
+    expect(container.textContent).toContain("有料");
+    unmount();
+
+    const empty = render(<ExamNoteLinks links={[]} headingId="t2" />);
+    expect(empty.container.innerHTML).toBe("");
+    empty.unmount();
+  });
+});
