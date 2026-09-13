@@ -167,6 +167,26 @@ describe("QuestionAnswerCard — after-answer note guide placement", () => {
     );
   });
 
+  it("shows the PM note-guide link after answering, same route as AU/SC", () => {
+    render(<QuestionAnswerCard {...baseProps} exam="pm" />);
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/n20f719f019ac",
+    );
+  });
+
+  it("shows the DB note-guide link after answering, same route as AU/SC/PM", () => {
+    render(<QuestionAnswerCard {...baseProps} exam="db" />);
+    expect(screen.queryByText("noteの無料ガイド")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href",
+      "https://note.com/sikaku_rakutoru/n/n8b0780e3c3b8",
+    );
+  });
+
   it("does not change existing answer counting/history instrumentation", () => {
     render(<QuestionAnswerCard {...auProps} />);
     fireEvent.click(screen.getByRole("radio", { name: /選択肢 イ/ }));

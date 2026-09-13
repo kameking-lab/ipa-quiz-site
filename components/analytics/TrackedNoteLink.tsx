@@ -11,7 +11,9 @@ export type NoteLinkSource =
   | "exam_st"
   | "exam_nw"
   | "exam_au"
-  | "exam_sc";
+  | "exam_sc"
+  | "exam_pm"
+  | "exam_db";
 
 interface TrackedNoteLinkProps extends AnchorHTMLAttributes<HTMLAnchorElement> {
   href: string;

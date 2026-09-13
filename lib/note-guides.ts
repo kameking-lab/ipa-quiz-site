@@ -64,6 +64,22 @@ export const EXAM_NOTE_GUIDES: Partial<Record<ExamCode, NoteGuideLink>> = {
     source: "exam_sc",
     account: "sikaku_rakutoru",
   },
+  // 出典: reports/revenue-eco-20260913/receipts/free-03-pm-am2.json (ok:true, 2026-09-13 観測)。
+  pm: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/n20f719f019ac",
+    label: "科目A-2を論文と別枠で取る",
+    source: "exam_pm",
+    account: "sikaku_rakutoru",
+  },
+  // 出典: reports/revenue-eco-20260913/receipts/free-04-db-am2.json (ok:true, 2026-09-13 観測)。
+  db: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/n8b0780e3c3b8",
+    label: "科目A-2は設計問題と別の筋肉を使う",
+    source: "exam_db",
+    account: "sikaku_rakutoru",
+  },
 };
 
 export function getNoteGuide(exam: ExamCode): NoteGuideLink | undefined {

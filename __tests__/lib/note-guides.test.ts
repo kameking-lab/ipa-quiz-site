@@ -44,11 +44,31 @@ describe("note-guides", () => {
     });
   });
 
-  it("does not register guides for the still-unpublished PM/DB A-2 drafts", () => {
-    // reports/revenue-eco-20260913 の free-03/04 は本セッション時点で公開URL未確認。
-    // 確認できていないURLをここに書かない(fake URL 禁止)。
-    expect(getNoteGuide("pm")).toBeUndefined();
-    expect(getNoteGuide("db")).toBeUndefined();
+  it("wires the verified PM article (reports/revenue-eco-20260913/receipts/free-03-pm-am2.json, ok:true)", () => {
+    expect(getNoteGuide("pm")).toEqual({
+      kind: "free",
+      href: "https://note.com/sikaku_rakutoru/n/n20f719f019ac",
+      label: "科目A-2を論文と別枠で取る",
+      source: "exam_pm",
+      account: "sikaku_rakutoru",
+    });
+  });
+
+  it("wires the verified DB article (reports/revenue-eco-20260913/receipts/free-04-db-am2.json, ok:true)", () => {
+    expect(getNoteGuide("db")).toEqual({
+      kind: "free",
+      href: "https://note.com/sikaku_rakutoru/n/n8b0780e3c3b8",
+      label: "科目A-2は設計問題と別の筋肉を使う",
+      source: "exam_db",
+      account: "sikaku_rakutoru",
+    });
+  });
+
+  it("still returns undefined for exam codes that genuinely have no registered guide (ip/ap)", () => {
+    // All 6 free drafts (au/sc/pm/db + safety-free-01/02, tracked separately) are
+    // published now; ip/ap were never part of this batch and remain unmapped.
+    expect(getNoteGuide("ip")).toBeUndefined();
+    expect(getNoteGuide("ap")).toBeUndefined();
   });
 
   it("never mixes free/paid wording into a label", () => {

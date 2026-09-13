@@ -102,6 +102,35 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.queryByText("関連する解説記事")).not.toBeInTheDocument();
   });
 
+  // safety-free-02 (労働衛生工学区分) の公開検証: reports/revenue-eco-20260913/receipts/
+  // safety-free-02-eisei-kijutsu.json (ok:true) -> data/exam-library/official-catalog.json
+  // の cskohyo-CS20251911(subject: 労働衛生工学) に付与した noteLinks と同じ形。
+  const laborHygieneEngineeringNoteLinks = [
+    {
+      title: "無料記事: 労働衛生コンサルタント「労働衛生工学」区分｜記述式2問を設問の型から組む",
+      url: "https://note.com/anzen_ai_jp/n/n6143ee15b9d5",
+      kind: "free" as const,
+    },
+  ];
+
+  it("shows the verified 労働衛生工学 noteLink only after answering, never before", () => {
+    render(
+      <ExamQuestionPlayer
+        examId={EXAM_ID}
+        examTitle="テスト試験"
+        pdfUrl={PDF_URL}
+        indexUrl="https://www.exam.or.jp/cskohyo/"
+        questions={questions}
+        noteLinks={laborHygieneEngineeringNoteLinks}
+      />,
+    );
+    expect(screen.queryByText(/記述式2問を設問の型から組む/)).not.toBeInTheDocument();
+    answer(3);
+    expect(screen.getByText("無料")).toBeInTheDocument();
+    const link = screen.getByRole("link", { name: /記述式2問を設問の型から組む/ });
+    expect(link).toHaveAttribute("href", "https://note.com/anzen_ai_jp/n/n6143ee15b9d5");
+  });
+
   it("shows selectable question text and answer controls without a whole-question screenshot", () => {
     renderPlayer();
     expect(screen.getByRole("heading", { name: /問1/ })).toBeTruthy();
