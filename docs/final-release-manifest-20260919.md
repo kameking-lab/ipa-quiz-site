@@ -6,10 +6,11 @@
 - 基点: `origin/main` の `56b6cf5`
 - AdSense CSPコミット: `6ebaee1`（元コミット `246e643`）
 - 安全試験完成コミット: `12c843d`（元コミット `e935332`）
-- 2コミットはいずれも競合なくcherry-pick済み
+- IPA科目・演習整合コミット: `b0d372f`（元コミット `60ff5ea`）
+- 3機能コミットはいずれも競合なくcherry-pick済み
 - 本番公開: 完了
 - 本番URL: `https://www.kakomon-ai.jp/`
-- Vercel deployment: `dpl_5x1Xzo73Qg6Dkc5985ozzcj274vH`
+- Vercel deployment: `dpl_DePwjv4So3YdH17tA5aMR1DserUt`
 
 このブランチは、mainに既に統合済みのnote連携PR #491・#492を保持し、重複する旧note連携コミットを含めずに作成した。元のreleaseブランチで発生していた12ファイルの履歴競合を解消している。
 
@@ -44,6 +45,10 @@
 - 図表左右順11件を修正し、回帰テストを追加
 - `CS20241902-q1` と `CS20251901-q9` の問題文中の正答spoilerを除去
 - 問題文・選択肢を文字起こしし、図表だけ画像を利用
+- ITストラテジスト2025年春期午前IIの公式正答をQ7=ウ、Q11=エへ修正
+- 同午前IIの不足図表6点を公式IPA PDFから追加し、25 / 25問を演習可能化
+- 詳細解説1,455問を仮解説と誤判定していた条件を修正
+- 一覧・演習・詳細・検索・サイトマップ・RAGの出題可否を共通判定へ統一し、全試験・年度・科目のIDと件数を回帰検証
 
 ### AdSense CSP
 
@@ -53,11 +58,11 @@
 
 ## 検証結果
 
-2026-09-19、main統合用worktreeで実行。
+2026-09-20、main統合用worktreeで実行。
 
 - `pnpm typecheck`: 合格
 - `pnpm lint`: 合格
-- 関連Vitest: 13ファイル・77テスト合格
+- Vitest全件: 364ファイル・2,748テスト合格
 - `node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations`: 合格
   - 111資料
   - 2,326問
@@ -69,10 +74,10 @@
   - 259ユニークURL
   - 259 / 259正常
 - `pnpm build`: 合格
-  - 2,716ページ生成
+  - 2,554ページ生成
 - `git diff --check origin/main...HEAD`: 合格
 
-本番ブラウザでは、5択全肢の解説、正誤表示、政府リンク、記述式模範解答、資格・科目を保持する戻り先、console errorなしを確認済み。
+本番ブラウザでは、ST午前IIのAM1非混入・25問表示・Q7正答ウ、5択全肢の解説、正誤表示、政府リンク、記述式模範解答、資格・科目を保持する戻り先を確認済み。
 
 ## 差分管理
 

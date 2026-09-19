@@ -1,6 +1,6 @@
 # 労働安全・労働衛生コンサルタント 5年分整備完了報告
 
-最終更新: 2026-09-19 JST
+最終更新: 2026-09-20 JST
 
 ## 状態
 
@@ -8,11 +8,11 @@
 
 本番デプロイ:
 
-- deployment: `dpl_5x1Xzo73Qg6Dkc5985ozzcj274vH`
+- deployment: `dpl_DePwjv4So3YdH17tA5aMR1DserUt`
 - alias: `https://www.kakomon-ai.jp`
-- production URL: `https://ipa-quiz-site-ozoi8xobw-kameking-labs-projects.vercel.app`
+- production URL: `https://ipa-quiz-site-i6f77nhra-kameking-labs-projects.vercel.app`
 
-main統合用ブランチは `codex/safety-consultant-merge-ready-20260919`。`origin/main` を基点に、AdSense CSP修正と安全試験完成コミットだけを競合なく載せ直した。検証対象の機能統合コミットは `12c843d`。
+main統合用ブランチは `codex/safety-consultant-merge-ready-20260919`。`origin/main` を基点に、AdSense CSP、安全試験完成、IPA科目・演習整合の各コミットを競合なく載せ直した。主要コミットは `12c843d` と `b0d372f`。
 
 ## 完了した内容
 
@@ -29,6 +29,8 @@ main統合用ブランチは `codex/safety-consultant-merge-ready-20260919`。`o
 - 2024年度・2025年度の問題文に混入していた正答spoilerを除去
 - 5年分coverage、公式正答、解説、政府URLをCIで検証
 - AdSenseが必要とするGoogle配信先をCSPへ限定追加
+- ITストラテジスト2025年春期午前IIを公式正答と図表に合わせて25 / 25問へ修正
+- 詳細解説1,455問の誤除外を解消し、一覧・演習・詳細・検索・サイトマップの出題可否を統一
 
 ## 最終数量
 
@@ -47,9 +49,9 @@ main統合用ブランチは `codex/safety-consultant-merge-ready-20260919`。`o
 
 - TypeScript typecheck: 合格
 - ESLint: 合格
-- 関連テスト: 13ファイル・77件合格
+- 全テスト: 364ファイル・2,748件合格
 - safety validator: 合格、エラー0
 - government source validator: 259 / 259 URL正常、エラー0
-- production build: 合格、2,716ページ生成
+- production build: 合格、2,554ページ生成
 
 production buildには既存のmiddleware非推奨警告と、静的生成時のRechartsサイズ警告が出るが、ビルドは正常完了している。
