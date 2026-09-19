@@ -37,6 +37,7 @@ import {
   officialPdfPageUrl,
   type ExamNoteLink,
   type ExamQuestion,
+  type ExamSourceMode,
 } from "@/lib/exam-library-model";
 import {
   EXAM_PROGRESS_MEMO_MAX_LENGTH,
@@ -63,6 +64,7 @@ interface ExamQuestionPlayerProps {
   examId: string;
   examTitle: string;
   pdfUrl: string;
+  sourceMode?: ExamSourceMode;
   indexUrl: string;
   questions: readonly ExamQuestion[];
   /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
@@ -131,6 +133,7 @@ export function ExamQuestionPlayer({
   examId,
   examTitle,
   pdfUrl,
+  sourceMode = "official-pdf",
   indexUrl,
   questions,
   noteLinks,
@@ -731,7 +734,7 @@ export function ExamQuestionPlayer({
                       rel="noopener noreferrer"
                       className={linkClass}
                     >
-                      公式PDFで問{current.sourceQuestionNumber ?? current.number}を確認
+                      {sourceMode === "official-archive-copy" ? "公表PDFの保存コピー" : "公式PDF"}で問{current.sourceQuestionNumber ?? current.number}を確認
                       <span className="sr-only">（新しいタブで開きます）</span>
                       <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
                     </a>

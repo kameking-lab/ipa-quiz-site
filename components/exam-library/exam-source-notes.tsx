@@ -1,6 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import relatedGuides from "@/data/exam-library/related-guides.json";
-import { EXAM_GROUPS, type ExamCatalogEntry } from "@/lib/exam-library-model";
+import { EXAM_GROUPS, examSourcePdfUrl, type ExamCatalogEntry } from "@/lib/exam-library-model";
 
 interface ExamSourceNotesProps {
   /** 回ページでは該当する回の情報だけを表示する */
@@ -23,6 +23,9 @@ export function ExamSourceNotes({ entry, className = "" }: ExamSourceNotesProps)
         <li>
           問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。
         </li>
+        {entry?.sourceMode === "official-archive-copy" ? (
+          <li>この回の旧公式PDFは公開を終了しているため、旧公式索引と照合した公開保存コピー（osh-lab.com）へリンクします。</li>
+        ) : null}
         {groups.map((group) => (
           <li key={group.id}>
             {group.shortTitle}: {group.dateNote}
@@ -50,12 +53,12 @@ export function ExamSourceNotes({ entry, className = "" }: ExamSourceNotesProps)
       {entry ? (
         <div className="mt-3 flex flex-wrap gap-x-5">
           <a
-            href={entry.pdfUrl}
+            href={examSourcePdfUrl(entry)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-1 font-black text-sky-900 underline decoration-2 underline-offset-4 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]"
           >
-            この回の公式PDF
+            {entry.sourceMode === "official-archive-copy" ? "この回の公表PDFの保存コピー" : "この回の公式PDF"}
             <span className="sr-only">（新しいタブで開きます）</span>
             <ExternalLink className="h-4 w-4" aria-hidden="true" />
           </a>

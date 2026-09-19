@@ -11,6 +11,7 @@ import { findExamEntry } from "@/lib/exam-library-catalog";
 import {
   describeExamDate,
   examPath,
+  examSourcePdfUrl,
   findExamGroup,
   formatExamDate,
   isScorableQuestion,
@@ -144,7 +145,8 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
         initialView={query?.view === "results" ? "summary" : "question"}
         examId={entry.id}
         examTitle={title}
-        pdfUrl={entry.pdfUrl}
+        pdfUrl={examSourcePdfUrl(entry)}
+        sourceMode={entry.sourceMode}
         indexUrl={entry.indexUrl}
         questions={questions}
         noteLinks={entry.noteLinks}
