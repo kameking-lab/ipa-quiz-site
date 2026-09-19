@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 // Read-only publication gate. Run from any directory with Node 20+.
@@ -8,6 +9,8 @@ const data = path.join(root, 'data/exam-library');
 const read = (name) => JSON.parse(fs.readFileSync(path.join(data, name), 'utf8').replace(/^\uFEFF/, ''));
 const catalog = read('official-catalog.json');
 const explanations = read('explanations.json');
+const choiceExplanations = read('choice-explanations.json');
+const coverageContract = read('coverage-contract.json');
 const errors = [];
 const check = (condition, message) => { if (!condition) errors.push(message); };
 const paperIds = new Set();
@@ -24,7 +27,23 @@ for (const paper of catalog) {
   paperIds.add(paper.id);
   groups[paper.group] = (groups[paper.group] ?? 0) + 1;
   check(paper.id.startsWith(`${paper.group}-`), `Group mismatch: ${paper.id}`);
-  check(paper.sourceMode === 'official-pdf', `Unexpected source mode: ${paper.id}`);
+  check(
+    paper.sourceMode === 'official-pdf' || paper.sourceMode === 'official-archive-copy',
+    `Unexpected source mode: ${paper.id}`,
+  );
+  if (paper.sourceMode === 'official-archive-copy') {
+    check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
+    check(
+      typeof paper.archiveSourceUrl === 'string' &&
+        /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(paper.archiveSourceUrl),
+      `Missing reviewed archive source: ${paper.id}`,
+    );
+    check(
+      paper.officialArchiveManifestUrl ===
+        'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
+      `Missing official archive manifest: ${paper.id}`,
+    );
+  }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);
   for (const key of ['pdfUrl', 'indexUrl']) {
     try {
@@ -90,19 +109,123 @@ for (const [id, explanation] of Object.entries(explanations)) {
   check(!/準備中|今後追加|解説を作成できません/.test(explanation), `Placeholder explanation: ${id}`);
 }
 if (process.argv.includes('--require-explanations')) {
-  for (const id of questions.keys()) check(Object.hasOwn(explanations, id), `Missing explanation: ${id}`);
+  for (const [id, question] of questions) {
+    const hasNarrativeExplanation = Object.hasOwn(explanations, id);
+    const hasStructuredChoiceExplanation =
+      question.answerAuthority === 'official'
+      && question.choiceCount === 5
+      && Object.hasOwn(choiceExplanations, id);
+    check(
+      hasNarrativeExplanation || hasStructuredChoiceExplanation,
+      `Missing explanation: ${id}`,
+    );
+  }
+}
+
+const isGovernmentPrimarySourceUrl = (value) => {
+  if (typeof value !== 'string' || value !== value.trim()) return false;
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:' && !url.username && !url.password && !url.port
+      && url.hostname.endsWith('.go.jp');
+  } catch { return false; }
+};
+for (const [id, overlay] of Object.entries(choiceExplanations)) {
+  const question = questions.get(id);
+  check(Boolean(question), `Orphan choice explanation: ${id}`);
+  if (!question) continue;
+  check(question.answerAuthority === 'official' && question.choiceCount === 5 && Number.isInteger(question.correctChoice), `Choice explanation requires an official five-choice answer: ${id}`);
+  check(overlay && typeof overlay === 'object' && !Array.isArray(overlay), `Invalid choice explanation object: ${id}`);
+  if (!overlay || typeof overlay !== 'object' || Array.isArray(overlay)) continue;
+  const sourceHash = createHash('sha256').update(question.text).digest('hex');
+  check(overlay.sourceHash === sourceHash, `Stale choice explanation source: ${id}`);
+  check(overlay.correctChoice === question.correctChoice, `Choice explanation answer mismatch: ${id}`);
+  check(typeof overlay.summary === 'string' && overlay.summary.trim().length >= 20, `Short choice explanation summary: ${id}`);
+  check(
+    typeof overlay.summary === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(overlay.summary),
+    `Choice explanation summary must keep links in sources: ${id}`,
+  );
+  check(Array.isArray(overlay.choices) && overlay.choices.length === 5, `Choice explanation must contain five choices: ${id}`);
+  if (Array.isArray(overlay.choices)) {
+    const numbers = overlay.choices.map(choice => choice?.number);
+    check(new Set(numbers).size === 5 && [1, 2, 3, 4, 5].every(number => numbers.includes(number)), `Choice explanation numbers incomplete: ${id}`);
+    for (const choice of overlay.choices) {
+      check(choice && typeof choice === 'object', `Invalid choice explanation row: ${id}`);
+      if (!choice || typeof choice !== 'object') continue;
+      check(choice.verdict === (choice.number === question.correctChoice ? 'correct' : 'incorrect'), `Choice explanation verdict mismatch: ${id}/${choice.number}`);
+      check(typeof choice.reason === 'string' && choice.reason.trim().length >= 40, `Short choice explanation reason: ${id}/${choice.number}`);
+      check(
+        typeof choice.reason === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(choice.reason),
+        `Choice explanation reason must keep links in sources: ${id}/${choice.number}`,
+      );
+    }
+  }
+  check(Array.isArray(overlay.sources) && overlay.sources.length > 0, `Choice explanation requires government sources: ${id}`);
+  if (Array.isArray(overlay.sources)) {
+    const urls = [];
+    for (const source of overlay.sources) {
+      check(source && typeof source === 'object' && typeof source.title === 'string' && source.title.trim().length > 0, `Invalid choice explanation source title: ${id}`);
+      check(source && typeof source === 'object' && isGovernmentPrimarySourceUrl(source.url), `Non-government choice explanation source: ${id}/${source?.url}`);
+      if (source && typeof source === 'object' && typeof source.url === 'string') urls.push(source.url);
+    }
+    check(new Set(urls).size === urls.length, `Duplicate choice explanation source: ${id}`);
+  }
+}
+const requiredStructuredPapers = coverageContract.structuredChoiceExplanations?.requiredPaperIds;
+check(Array.isArray(requiredStructuredPapers), 'Missing structured-choice coverage contract');
+const requiredStructuredQuestionIds = [];
+for (const paperId of requiredStructuredPapers ?? []) {
+  check(paperIds.has(paperId), `Unknown required structured-choice paper: ${paperId}`);
+  for (const [id, question] of questions) {
+    if (
+      id.startsWith(`${paperId}-q`) &&
+      question.answerAuthority === 'official' &&
+      question.choiceCount === 5
+    ) {
+      requiredStructuredQuestionIds.push(id);
+      check(Object.hasOwn(choiceExplanations, id), `Missing required structured choice explanation: ${id}`);
+    }
+  }
+}
+
+const consultantContract = coverageContract.consultant;
+check(Array.isArray(consultantContract?.years) && consultantContract.years.length > 0, 'Missing consultant year coverage contract');
+check(Array.isArray(consultantContract?.subjects) && consultantContract.subjects.length > 0, 'Missing consultant subject coverage contract');
+const availablePaperIds = new Set(paperFiles.map(name => name.slice(0, -5)));
+const consultantPresent = new Set(catalog.filter(paper => paper.group === 'cskohyo' && availablePaperIds.has(paper.id))
+  .map(paper => `${Number(paper.date.slice(0, 4))}|${paper.subject}`));
+const missingConsultantPapers = (consultantContract?.years ?? []).flatMap(year =>
+  (consultantContract?.subjects ?? []).filter(subject => !consultantPresent.has(`${year}|${subject}`))
+    .map(subject => ({ year, subject })));
+const missingConsultantYears = (consultantContract?.years ?? []).filter(year =>
+  !(consultantContract?.subjects ?? []).some(subject => consultantPresent.has(`${year}|${subject}`)));
+if (process.argv.includes('--require-consultant-five-years')) {
+  for (const missing of missingConsultantPapers) errors.push(`Missing consultant paper: ${missing.year}/${missing.subject}`);
 }
 const duplicateGroups = [...duplicates.values()].filter(ids => ids.length > 1);
 const explanationReuseCandidates = duplicateGroups.flatMap(ids => {
   const sources = ids.filter(id => Object.hasOwn(explanations, id));
   return sources.length ? ids.filter(id => !Object.hasOwn(explanations, id)).map(target => ({ target, sources })) : [];
 });
+const explainedQuestionIds = new Set([
+  ...Object.keys(explanations),
+  ...Object.keys(choiceExplanations),
+]);
 const result = {
   ok: errors.length === 0, papers: catalog.length, groups, questions: questions.size,
   officialAnswers: authority.official, unconfirmed: authority.unconfirmed,
   descriptive: authority.descriptive, images: images.size,
   explanations: Object.keys(explanations).length,
-  explanationCoverage: Number((Object.keys(explanations).length / questions.size * 100).toFixed(2)),
+  totalExplainedQuestions: explainedQuestionIds.size,
+  explanationCoverage: Number((explainedQuestionIds.size / questions.size * 100).toFixed(2)),
+  structuredChoiceExplanations: Object.keys(choiceExplanations).length,
+  requiredStructuredChoiceExplanations: requiredStructuredQuestionIds.length,
+  consultantCoverage: {
+    requiredYears: consultantContract?.years ?? [],
+    missingYears: missingConsultantYears,
+    missingPapers: missingConsultantPapers.length,
+    complete: missingConsultantPapers.length === 0,
+  },
   duplicateGroups: duplicateGroups.length,
   duplicateQuestions: duplicateGroups.reduce((sum, ids) => sum + ids.length, 0),
   explanationReuseCandidates, errors,

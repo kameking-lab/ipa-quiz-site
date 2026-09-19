@@ -1,5 +1,5 @@
 import { AP_TOPIC_GROUPS, AP_GROUP_EXAMS } from "./category-pool";
-import { isPlaceholderExplanation } from "./filter";
+import { isPracticeReadyQuestion } from "./filter";
 import type { ExamCode, Question } from "./types";
 
 /** 共通カリキュラム横断学習が成立する午前知識問題のセッション。 */
@@ -15,7 +15,7 @@ function isMorningKnowledge(q: Question): boolean {
  * 関連問題レールはこれらを除外し、回答可能・indexable な問題のみへリンクする。
  */
 export function isLinkableTarget(q: Question): boolean {
-  return !q.needsReview && !isPlaceholderExplanation(q);
+  return isPracticeReadyQuestion(q);
 }
 
 /**
@@ -54,7 +54,7 @@ export function getSessionNeighbors(
         x.year === current.year &&
         x.season === current.season &&
         x.session === current.session &&
-        !x.needsReview,
+        isPracticeReadyQuestion(x),
     )
     .sort((a, b) => a.qNumber - b.qNumber);
   const idx = sessionPool.findIndex((x) => x.id === current.id);

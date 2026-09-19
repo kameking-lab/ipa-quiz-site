@@ -18,7 +18,7 @@ import {
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
   getSameExamOtherYears,
@@ -68,7 +68,7 @@ export const revalidate = 86400;
 const SSG_MIN_YEAR = 2024;
 
 export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
-  return ALL_QUESTIONS.filter((q) => q.year >= SSG_MIN_YEAR).map((q) => ({
+  return ALL_QUESTIONS.filter((q) => q.year >= SSG_MIN_YEAR && isPracticeReadyQuestion(q)).map((q) => ({
     exam: q.exam,
     yearSeason: `${q.year}-${q.season}`,
     section: q.session,
@@ -89,7 +89,7 @@ export async function generateMetadata({
   const title = questionTitle(q);
   const description = questionSnippet(q);
   const canonical = questionPagePath(q);
-  const indexable = !isPlaceholderExplanation(q);
+  const indexable = isPracticeReadyQuestion(q);
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "question", title: title.slice(0, 80) }).toString()}`;
 
   return {
@@ -149,10 +149,9 @@ export default async function QuestionPage({
     // the 200-with-"準備中" shell as a near-duplicate of the homepage.
     notFound();
   }
-  // Questions flagged needsReview (e.g. image-only choices that the parser
-  // couldn't extract) are unanswerable in their current form. Hide them at
-  // the URL layer to match the quiz-pool exclusion in filter.ts.
-  if (q.needsReview) notFound();
+  // Keep detail pages, paper listings and the interactive player on the same
+  // quality boundary. A listed question must also be readable and playable.
+  if (!isPracticeReadyQuestion(q)) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const answerText =

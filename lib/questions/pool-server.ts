@@ -1,9 +1,8 @@
-import { hasUnrenderableContent } from "./content-quality";
 import "server-only";
 
 import type { ExamCode, Question, QuizFilter } from "./types";
 import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
-import { isPlaceholderExplanation } from "./filter";
+import { isPracticeReadyQuestion } from "./filter";
 
 
 
@@ -38,11 +37,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   }
   if (filter.calculationOnly) pool = pool.filter((q) => q.isCalculation === true);
 
-  pool = pool.filter((q) => !hasUnrenderableContent(q));
-  pool = pool.filter((q) => !q.needsReview);
-
-  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
-  if (withReal.length > 0) pool = withReal;
+  pool = pool.filter(isPracticeReadyQuestion);
 
   if (filter.inOrder) {
     pool = [...pool].sort((a, b) => a.qNumber - b.qNumber);

@@ -39,6 +39,12 @@ jobs:
       - name: Unit tests
         run: pnpm test
 
+      - name: Validate safety exam sources and contracted coverage
+        run: node scripts/validate-safety-exams.mjs --require-consultant-five-years --require-explanations
+
+      - name: Validate government-only explanation links
+        run: node scripts/validate-government-source-links.mjs --skip-live
+
       - name: Build
         run: pnpm build
 

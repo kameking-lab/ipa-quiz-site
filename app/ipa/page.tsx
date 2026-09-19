@@ -22,6 +22,7 @@ import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
 // Snippet-optimised: front-load the value prop + count and drop the 13-code list
@@ -68,7 +69,7 @@ export default function IpaPage() {
   // client component picks 5 per calendar date from this server-prepared
   // list so we do not ship the full ALL_QUESTIONS payload to the bundle.
   const recommendationPool: RecommendationItem[] = ALL_QUESTIONS
-    .filter((q) => !q.needsReview && q.choices && q.year >= 2020)
+    .filter((q) => isPracticeReadyQuestion(q) && q.choices && q.year >= 2020)
     .slice(0, 200)
     .map((q) => ({
       id: q.id,

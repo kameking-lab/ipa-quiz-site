@@ -1,8 +1,8 @@
-import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
 import type { Question } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 export const runtime = "nodejs";
 
@@ -48,7 +48,7 @@ export async function POST(req: Request) {
 
     const q = await findQuestionById(id);
     if (!q) continue;
-    if (q.type !== "multiple-choice" || hasUnrenderableContent(q) || q.needsReview) continue;
+    if (q.type !== "multiple-choice" || !isPracticeReadyQuestion(q)) continue;
 
     dueQuestions.push(q);
   }

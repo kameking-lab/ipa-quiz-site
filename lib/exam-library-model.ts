@@ -11,6 +11,7 @@ export type ExamGroupId = (typeof EXAM_GROUP_IDS)[number];
 
 export type ExamDateKind = "publication" | "exam";
 export type ExamAnswerMode = "official-choice" | "reference";
+export type ExamSourceMode = "official-pdf" | "official-archive-copy";
 export type ExamAnswerAuthority = "official" | "unconfirmed" | "descriptive";
 export type ExamAnswerResult = "correct" | "incorrect" | "unscored";
 
@@ -33,6 +34,8 @@ export interface ExamCatalogEntry {
   date: string;
   dateKind: ExamDateKind;
   pdfUrl: string;
+  sourceMode?: ExamSourceMode;
+  archiveSourceUrl?: string;
   indexUrl: string;
   answerMode: ExamAnswerMode;
   checkedAt: string;
@@ -50,6 +53,29 @@ export interface ExamQuestionPresentation {
   figures: { src: string; alt: string; width: number; height: number }[];
 }
 
+export interface ExamExplanationSource {
+  title: string;
+  url: string;
+}
+
+export interface ExamChoiceExplanationItem {
+  number: number;
+  verdict: "correct" | "incorrect";
+  reason: string;
+}
+
+/**
+ * 択一問題の正答と全誤答を別々に説明する、原文・正答照合済みの上書きデータ。
+ * sourceHash と correctChoice が現行問題に一致しないデータはローダーで採用しない。
+ */
+export interface ExamChoiceExplanation {
+  sourceHash: string;
+  correctChoice: number;
+  summary: string;
+  choices: ExamChoiceExplanationItem[];
+  sources: ExamExplanationSource[];
+}
+
 export interface ExamQuestion {
   id: string;
   number: number;
@@ -61,6 +87,7 @@ export interface ExamQuestion {
   choiceCount: number;
   answerAuthority: ExamAnswerAuthority;
   explanation?: string;
+  choiceExplanation?: ExamChoiceExplanation;
   sourcePages?: number[];
   sourceQuestionNumber?: number;
 }
@@ -178,6 +205,14 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (typeof indexUrl !== "string" || !indexUrl.startsWith(OFFICIAL_ORIGIN)) return null;
   if (answerMode !== "official-choice" && answerMode !== "reference") return null;
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
+  const sourceMode = value.sourceMode ?? "official-pdf";
+  if (sourceMode !== "official-pdf" && sourceMode !== "official-archive-copy") return null;
+  // 公開コピーは出典監査済みの2021年度と配布元・パスだけを許可する。
+  if (sourceMode === "official-archive-copy" && (
+    !/^cskohyo-CS202119\d{2}$/u.test(id) ||
+    typeof value.archiveSourceUrl !== "string" ||
+    !/^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl)
+  )) return null;
 
   const entry: ExamCatalogEntry = {
     id,
@@ -187,10 +222,12 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
     date,
     dateKind,
     pdfUrl,
+    sourceMode,
     indexUrl,
     answerMode,
     checkedAt,
   };
+  if (sourceMode === "official-archive-copy") entry.archiveSourceUrl = value.archiveSourceUrl as string;
   if (isNonNegativeInteger(value.questionCount)) entry.questionCount = value.questionCount;
   if (isNonNegativeInteger(value.scoredCount)) entry.scoredCount = value.scoredCount;
   const noteLinks = parseNoteLinks(value.noteLinks);
@@ -335,6 +372,13 @@ export function examPath(id: string): string {
 
 export function officialPdfPageUrl(pdfUrl: string, page: number | undefined): string {
   return page ? `${pdfUrl}#page=${page}` : pdfUrl;
+}
+
+/** 旧公式URLは由来として保持し、閲覧には監査済みの保存コピーを使う。 */
+export function examSourcePdfUrl(entry: ExamCatalogEntry): string {
+  return entry.sourceMode === "official-archive-copy" && entry.archiveSourceUrl
+    ? entry.archiveSourceUrl
+    : entry.pdfUrl;
 }
 
 /** 特級ボイラーの公式PDF末尾「正答・正答例」の該当ページ。 */

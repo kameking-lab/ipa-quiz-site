@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { examLibraryHref } from "@/lib/exam-library-navigation";
 import { isHealthConsultantSubject } from "@/lib/exam-library-model";
 import type { ExamAnswerMode, ExamDateKind, ExamGroupId, ExamGroupInfo } from "@/lib/exam-library-model";
 
@@ -31,17 +32,18 @@ interface ExamCatalogBrowserProps {
   initialSubject: string | null;
 }
 
-function catalogHref(group: string, subject?: string) {
-  return `/e-learning/exams?${new URLSearchParams({ group, ...(subject ? { subject } : {}) })}`;
-}
-
 export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject }: ExamCatalogBrowserProps) {
   const group = initialGroup;
   const subject = initialSubject;
   const activeItems = items.filter((item) => item.group === group);
   const papers = activeItems.filter((item) => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
   const latest = papers.find((item) => item.questionCount !== null);
-  const sections = [
+  const sections: readonly {
+    id: string;
+    group: ExamGroupId;
+    title: string;
+    filter: (name: string) => boolean;
+  }[] = [
     { id: "licenses", group: "lckohyo", title: "免許試験", filter: () => true },
     { id: "measurement", group: "emkohyo", title: "作業環境測定士", filter: () => true },
     { id: "safety-consultant", group: "cskohyo", title: "労働安全コンサルタント", filter: (name: string) => !isHealthConsultantSubject(name) },
@@ -63,7 +65,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
             {subjects.map((name) => {
               const list = sectionItems.filter((item) => item.subject === name);
               const scored = list.reduce((n, item) => n + (item.scoredCount ?? 0), 0);
-              return <Link key={name} href={catalogHref(section.group, name)} className="group flex min-h-32 flex-col justify-between gap-3 rounded-2xl border-2 border-sky-300 bg-sky-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-500 dark:border-sky-700 dark:bg-sky-950/40">
+              return <Link key={name} href={examLibraryHref(section.group, name)} className="group flex min-h-32 flex-col justify-between gap-3 rounded-2xl border-2 border-sky-300 bg-sky-50 p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-500 dark:border-sky-700 dark:bg-sky-950/40">
                 <span className="text-sm font-semibold text-foreground">{name}</span>
                 <span className="text-xs text-muted-foreground">{list.every((item) => item.answerMode === "reference") ? scored > 0 ? "択一式は採点・記述式は模範解答で学習" : "記述式・模範解答で学習" : scored === 0 ? "択一式・自動採点なし" : "択一式・公式正答で採点"}</span>
                 <span className="flex items-center justify-between text-xs text-sky-700 dark:text-sky-300">{list.reduce((n,q) => n+(q.questionCount ?? 0),0)}問<ChevronRight className="h-4 w-4" aria-hidden="true" /></span>
@@ -73,7 +75,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
         </section>;
       })}
     </section> : <section aria-labelledby="safety-subject-heading" className="space-y-5">
-      <Link href="/e-learning/exams" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" aria-hidden="true" />資格を選び直す</Link>
+      <Link href={examLibraryHref()} className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" aria-hidden="true" />資格を選び直す</Link>
       <div className="rounded-2xl border border-border bg-card p-5">
         <h2 id="safety-subject-heading" className="text-2xl font-bold">{subject}の過去問</h2>
         <p className="mt-2 text-sm text-muted-foreground">{latest?.answerMode === "reference" ? (latest.scoredCount ?? 0) > 0 ? "択一式は選択肢を押して採点。記述式は模範解答と見比べて学習できます。" : "自分の解答を模範解答と見比べて学習できます。記述式は自動採点しません。" : "選択肢を押して解答し、解説を確認したら次の問題へ進みます。"}</p>

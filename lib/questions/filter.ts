@@ -5,7 +5,17 @@ import type { HistoryStore } from "@/lib/storage/history";
 
 
 export function isPlaceholderExplanation(q: Question): boolean {
-  return /^正解は[アイウエ]です[。.]/.test(q.explanation) || q.explanation.trim() === "";
+  const explanation = q.explanation.trim();
+  return /^正解は[アイウエ]です[。.]?$/.test(explanation) || explanation === "";
+}
+
+/**
+ * A question can be advertised in an IPA paper list only when the interactive
+ * player can render and explain it. Keeping this predicate shared prevents a
+ * paper page from promising more questions than the quiz can actually serve.
+ */
+export function isPracticeReadyQuestion(q: Question): boolean {
+  return !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(
@@ -50,15 +60,7 @@ export function filterQuestions(
     pool = pool.filter((q) => !recent.has(q.id));
   }
 
-  // Exclude questions that reference tables/figures but have no image data
-  pool = pool.filter((q) => !hasUnrenderableContent(q));
-
-  // Exclude questions flagged for review (low-quality explanations, etc.)
-  pool = pool.filter((q) => !q.needsReview);
-
-  // Remove placeholder explanations if real explanations are available
-  const withReal = pool.filter((q) => !isPlaceholderExplanation(q));
-  if (withReal.length > 0) pool = withReal;
+  pool = pool.filter(isPracticeReadyQuestion);
 
   if (filter.mode === "random") {
     shuffle(pool);

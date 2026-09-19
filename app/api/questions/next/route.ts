@@ -1,7 +1,6 @@
-import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { NextResponse } from "next/server";
 import { findQuestionById } from "@/lib/questions/pool-server";
-import { shuffleChoices } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 
 export const runtime = "nodejs";
 
@@ -15,7 +14,7 @@ export async function GET(request: Request) {
   if (!question) {
     return NextResponse.json({ error: "not found" }, { status: 404 });
   }
-  if (question.needsReview || hasUnrenderableContent(question)) {
+  if (!isPracticeReadyQuestion(question)) {
     return NextResponse.json({ error: "content_under_review", message: "原典との照合中のため、この問題の演習・採点は停止しています。" }, { status: 409, headers: { "Cache-Control": "no-store" } });
   }
   const shuffle = url.searchParams.get("shuffle") === "1";

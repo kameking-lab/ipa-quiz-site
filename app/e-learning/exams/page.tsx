@@ -17,6 +17,7 @@ import {
   EXAM_GROUPS,
   describeExamDate,
   examPath,
+  examSourcePdfUrl,
   findExamGroup,
   formatExamDate,
   type ExamGroupId,
@@ -56,7 +57,7 @@ function buildItems(): ExamCatalogItem[] {
       dateKind: entry.dateKind,
       answerMode: entry.answerMode,
       href: examPath(entry.id),
-      pdfUrl: entry.pdfUrl,
+      pdfUrl: examSourcePdfUrl(entry),
       questionCount: stats?.questionCount ?? null,
       scoredCount: stats?.scoredCount ?? null,
     };
