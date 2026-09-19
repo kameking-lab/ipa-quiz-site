@@ -29,6 +29,7 @@ import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
 import { extractExamChoices } from "@/lib/exam-library-choices";
 import { ExamQuestionFigure } from "@/components/exam-library/exam-question-figure";
+import { ChoiceExplanationPanel } from "@/components/exam-library/choice-explanation-panel";
 import { ExamDeviceSavePanel } from "@/components/exam-library/exam-device-save-panel";
 import {
   boilerAnswerPage,
@@ -690,8 +691,13 @@ export function ExamQuestionPlayer({
 
                 <div className="mt-4 border-t border-current/25 pt-3">
                   <h4 className="font-semibold">{current.answerAuthority === "descriptive" ? "模範解答・解説（学習用）" : scorable ? "AIによる学習用解説" : "参考解説（採点なし）"}</h4>
-                  {current.explanation ? <p className="mt-1 text-xs leading-5">{answerPage ? "公式の正答・正答例を参照して、このサイトが学習用に整理した解答と解説です。公式原文とは表現や計算の丸め方が異なる場合があります。" : current.answerAuthority === "descriptive" ? "このサイトが作成した模範解答例です。公式の正答例ではありません。別の適切な答え方もあり、法令は出題時点で確認してください。" : "公式解説ではありません。法令の時点や出典も確認しながら学習してください。"}</p> : null}
-                  {current.explanation ? (
+                  {current.choiceExplanation || current.explanation ? <p className="mt-1 text-xs leading-5">{answerPage ? "公式の正答・正答例を参照して、このサイトが学習用に整理した解答と解説です。公式原文とは表現や計算の丸め方が異なる場合があります。" : current.answerAuthority === "descriptive" ? "このサイトが作成した模範解答例です。公式の正答例ではありません。別の適切な答え方もあり、法令は出題時点で確認してください。" : "公式解説ではありません。法令の時点や出典も確認しながら学習してください。"}</p> : null}
+                  {current.choiceExplanation ? (
+                    <ChoiceExplanationPanel
+                      explanation={current.choiceExplanation}
+                      selectedChoice={currentAnswer?.choice}
+                    />
+                  ) : current.explanation ? (
                     <Markdown className="mt-1 min-w-0 [overflow-wrap:anywhere] leading-7 [&_p]:whitespace-pre-line [&_a]:text-blue-700 [&_a]:underline dark:[&_a]:text-blue-300">{current.explanation}</Markdown>
                   ) : (
                     <p className="mt-1 text-sm leading-6">

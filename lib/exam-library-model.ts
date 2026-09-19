@@ -50,6 +50,29 @@ export interface ExamQuestionPresentation {
   figures: { src: string; alt: string; width: number; height: number }[];
 }
 
+export interface ExamExplanationSource {
+  title: string;
+  url: string;
+}
+
+export interface ExamChoiceExplanationItem {
+  number: number;
+  verdict: "correct" | "incorrect";
+  reason: string;
+}
+
+/**
+ * 択一問題の正答と全誤答を別々に説明する、原文・正答照合済みの上書きデータ。
+ * sourceHash と correctChoice が現行問題に一致しないデータはローダーで採用しない。
+ */
+export interface ExamChoiceExplanation {
+  sourceHash: string;
+  correctChoice: number;
+  summary: string;
+  choices: ExamChoiceExplanationItem[];
+  sources: ExamExplanationSource[];
+}
+
 export interface ExamQuestion {
   id: string;
   number: number;
@@ -61,6 +84,7 @@ export interface ExamQuestion {
   choiceCount: number;
   answerAuthority: ExamAnswerAuthority;
   explanation?: string;
+  choiceExplanation?: ExamChoiceExplanation;
   sourcePages?: number[];
   sourceQuestionNumber?: number;
 }

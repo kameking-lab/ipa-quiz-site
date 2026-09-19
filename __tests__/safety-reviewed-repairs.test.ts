@@ -36,7 +36,9 @@ describe("source-reviewed safety repairs", () => {
       const q = loadExamPaper(id.replace(/-q\d+$/, ""))!.find((q) => q.id === id)!;
       expect(q.correctChoice).toBe(answer);
       expect(q.explanation).toMatch(new RegExp(`^公式正答は（${answer}）です。`));
-      expect(q.explanation).toContain("https://www.exam.or.jp/");
+      expect(q.explanation!.length).toBeGreaterThanOrEqual(120);
+      expect(q.explanation).not.toMatch(/解説準備中|TODO|TBD/);
+      expect(q.explanation).not.toContain("https://www.exam.or.jp/");
     }
   });
 

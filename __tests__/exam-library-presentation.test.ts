@@ -21,6 +21,11 @@ describe("safety text presentation", () => {
         const presentation = parseExamPresentation(overlay, question, hash);
         expect(presentation, question.id).not.toBeNull();
         expect(parseExamPresentation(overlay, question, "stale-source"), question.id).toBeNull();
+        if (/^cskohyo-CS202[123]19\d{2}\.json$/.test(name)) {
+          expect(presentation!.prompt, question.id).not.toMatch(
+            /(?:^|\n)\s*[０-９0-9]+\s*[／/]\s*[０-９0-9]+(?=\s|表|$)/u,
+          );
+        }
         for (const figure of presentation!.figures) {
           expect(existsSync(join(process.cwd(), "public", figure.src)), figure.src).toBe(true);
           expect(question.images).not.toContain(figure.src);
@@ -29,8 +34,8 @@ describe("safety text presentation", () => {
         if (question.choiceCount === 5) choiceCount += 1;
       }
     }
-    expect(count).toBe(1972);
-    expect(choiceCount).toBe(1884);
+    expect(count).toBe(2326);
+    expect(choiceCount).toBe(2154);
   });
 
   it("preserves the source's three distinct axes and deliberate wrong chemical structure", () => {
@@ -38,6 +43,54 @@ describe("safety text presentation", () => {
     expect(vibration["emkohyo-EM20261801-q12"]!.choices[1]!.text).toContain("aₓ²＋aᵧ²＋a_z²");
     const chemistry = read(join(base, "presentation", "emkohyo-EM20251807.json")) as Record<string, { choices: { text: string }[] }>;
     expect(chemistry["emkohyo-EM20251807-q15"]!.choices[3]!.text).toContain("−O−C≡N");
+  });
+
+  it("preserves reviewed consultant formulas and units", () => {
+    const safety = read(join(base, "presentation", "cskohyo-CS20211901.json")) as Record<
+      string,
+      { prompt: string; choices: { text: string }[] }
+    >;
+    expect(safety["cskohyo-CS20211901-q5"]!.choices[3]!.text).toBe("Ｒs＝Ｒ－２Ｒ²＋Ｒ³");
+
+    const engineering = read(join(base, "presentation", "cskohyo-CS20231911.json")) as Record<
+      string,
+      { prompt: string; choices: { text: string }[] }
+    >;
+    expect(engineering["cskohyo-CS20231911-q3"]!.prompt).toContain(
+      "空気の密度は1.20 kg/m³とし、計算は有効数字４桁で行い",
+    );
+    expect(engineering["cskohyo-CS20231911-q3"]!.prompt).not.toContain("1.20kg/m効数字");
+  });
+
+  it("keeps same-row consultant figures in left-to-right reading order", () => {
+    const expected: Record<string, Record<string, string[]>> = {
+      "cskohyo-CS20211911": {
+        q3: ["fig1", "fig2", "fig1", "fig2", "fig1"],
+        q4: ["fig2", "fig1", "fig3", "fig4", "fig1", "fig2", "fig3", "fig1", "fig2"],
+      },
+      "cskohyo-CS20221905": { q2: ["fig2", "fig1", "fig3"] },
+      "cskohyo-CS20231903": { q2: ["fig2", "fig1"] },
+      "cskohyo-CS20231906": { q4: ["fig1", "fig2", "fig3", "fig4", "fig1", "fig3", "fig2", "fig4"] },
+      "cskohyo-CS20231907": { q3: ["fig2", "fig1", "fig3", "fig4", "fig1", "fig2", "fig3"] },
+      "cskohyo-CS20241901": { q5: ["fig3", "fig2", "fig1"] },
+      "cskohyo-CS20241911": { q3: ["fig1", "fig2", "fig4", "fig3", "fig1", "fig1", "fig1", "fig2", "fig1"] },
+      "cskohyo-CS20251906": { q1: ["fig3", "fig2", "fig1"] },
+      "cskohyo-CS20251907": { q3: ["fig1", "fig2", "fig3", "fig2", "fig1", "fig3"] },
+      "cskohyo-CS20251911": { q3: ["fig1", "fig1", "fig2", "fig2", "fig1", "fig3", "fig4", "fig1", "fig2"] },
+    };
+
+    for (const [paperId, questions] of Object.entries(expected)) {
+      const overlay = read(join(base, "presentation", `${paperId}.json`)) as Record<
+        string,
+        { figures: { src: string }[] }
+      >;
+      for (const [question, suffixes] of Object.entries(questions)) {
+        const actual = overlay[`${paperId}-${question}`]!.figures.map((figure) =>
+          figure.src.match(/-(fig\d+)\.webp$/)?.[1],
+        );
+        expect(actual, `${paperId}-${question}`).toEqual(suffixes);
+      }
+    }
   });
   it("restores boiler single-choice questions using the answers printed in each official PDF", () => {
     const keys = {

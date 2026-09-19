@@ -7,7 +7,7 @@ import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
-import { EXAM_LIBRARY_PATH, findExamEntry } from "@/lib/exam-library-catalog";
+import { findExamEntry } from "@/lib/exam-library-catalog";
 import {
   describeExamDate,
   examPath,
@@ -18,6 +18,7 @@ import {
   type ExamCatalogEntry,
 } from "@/lib/exam-library-model";
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
+import { examLibraryHref } from "@/lib/exam-library-navigation";
 import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
 
 interface ExamPageProps {
@@ -82,7 +83,7 @@ export default async function ExamPage({ params, searchParams }: ExamPageProps) 
   const scoredCount = questions.filter(isScorableQuestion).length;
   const title = examTitle(entry);
   const url = `${SITE_URL}${examPath(entry.id)}`;
-  const backHref = `${EXAM_LIBRARY_PATH}?${new URLSearchParams({ group: entry.group, subject: entry.subject }).toString()}`;
+  const backHref = examLibraryHref(entry.group, entry.subject);
 
   return (
     <div className="mx-auto w-full max-w-3xl px-4 py-3 sm:px-6">
