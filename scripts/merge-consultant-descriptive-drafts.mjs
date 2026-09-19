@@ -12,10 +12,10 @@ const questions = new Map(readdirSync(join(data, "papers")).filter((name) => nam
 const files = existsSync(draftDir) ? readdirSync(draftDir).filter((name) => name.endsWith(".json")).sort() : [];
 const accepted = new Map();
 const errors = [];
-const urlPattern = /https:\/\/[^\s)\]}>]+/gu;
+const urlPattern = /https?:[^\s)\]}>]+/giu;
 
 function governmentUrl(value) {
-  if (typeof value !== "string" || value !== value.trim()) return false;
+  if (typeof value !== "string" || value !== value.trim() || !/^https:\/\/[^/\\]/u.test(value)) return false;
   try {
     const url = new URL(value.replace(/[。、，．]+$/u, ""));
     return url.protocol === "https:" && url.hostname.endsWith(".go.jp");

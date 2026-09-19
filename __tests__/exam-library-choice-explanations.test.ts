@@ -68,6 +68,9 @@ describe("structured choice explanations", () => {
     }
     for (const url of [
       "http://www.mhlw.go.jp/example",
+      "https:/www.mhlw.go.jp/example",
+      "https:www.mhlw.go.jp/example",
+      "https:///www.mhlw.go.jp/example",
       "https://www.exam.or.jp/example.pdf",
       "https://www.jaish.gr.jp/example",
       "https://webdesk.jsa.or.jp/example.pdf",

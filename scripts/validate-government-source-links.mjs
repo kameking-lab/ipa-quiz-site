@@ -13,7 +13,8 @@ function read(file) {
 }
 
 function governmentUrl(value) {
-  if (typeof value !== "string" || value !== value.trim()) return false;
+  // WHATWG URL silently repairs missing slashes; require the written HTTPS form.
+  if (typeof value !== "string" || value !== value.trim() || !/^https:\/\/[^/\\]/u.test(value)) return false;
   try {
     const url = new URL(value);
     return url.protocol === "https:" && !url.username && !url.password && !url.port &&
@@ -48,12 +49,12 @@ for (const [file, batch] of records) {
       ...(Array.isArray(value?.choices) ? value.choices.map((choice) => choice?.reason) : []),
     ]) {
       if (typeof text !== "string") continue;
-      for (const match of text.matchAll(/https:\/\/[^\s)\]}>]+/gu)) {
+      for (const match of text.matchAll(/https?:[^\s)\]}>]+/giu)) {
         references.push({ file, questionId, url: match[0] });
       }
     }
     if (typeof value === "string") {
-      for (const match of value.matchAll(/https:\/\/[^\s)\]}>]+/gu)) {
+      for (const match of value.matchAll(/https?:[^\s)\]}>]+/giu)) {
         references.push({ file, questionId, url: match[0] });
       }
     }

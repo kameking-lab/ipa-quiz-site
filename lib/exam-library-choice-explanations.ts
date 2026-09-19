@@ -22,7 +22,7 @@ function containsEmbeddedLink(value: unknown): boolean {
 
 /** 解説の根拠リンクはHTTPSの日本政府ドメインだけを受け付ける。 */
 export function isGovernmentPrimarySourceUrl(value: unknown): value is string {
-  if (typeof value !== "string" || value !== value.trim()) return false;
+  if (typeof value !== "string" || value !== value.trim() || !/^https:\/\/[^/\\]/u.test(value)) return false;
   try {
     const url = new URL(value);
     return (

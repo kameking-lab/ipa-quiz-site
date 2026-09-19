@@ -43,6 +43,17 @@ afterEach(() => {
 });
 
 describe("consultant descriptive draft publication gate", () => {
+  it("rejects a malformed reference even alongside a valid government link", () => {
+    const text = "模範解答として必要な判断手順、計算過程、結論を具体的に説明します。".repeat(6)
+      + " https://laws.e-gov.go.jp/law/347AC0000000057 https:/www.mhlw.go.jp/example";
+    const result = runFixture(text);
+    expect(result.status).toBe(1);
+    expect(result.report.errors).toContain(
+      `fixture.json/${questionId}: 政府一次資料以外のURLを含みます`,
+    );
+    expect(result.output).toEqual({ preserved: "既存の公開済み解説" });
+  });
+
   it("rejects a substantial draft that has no government-primary-source link", () => {
     const text = "模範解答として必要な判断手順、計算過程、結論を具体的に説明します。".repeat(6);
     const result = runFixture(text);
