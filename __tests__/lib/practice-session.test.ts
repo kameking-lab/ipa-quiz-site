@@ -64,6 +64,7 @@ describe("contextual return destinations", () => {
   it("returns to the exact originating paper or category including its selection", () => {
     expect(quizBackHref({ exam: "st", mode: "year", returnTo: "/st/2025-spring" })).toBe("/st/2025-spring");
     expect(quizBackHref({ exam: "st", mode: "topic", returnTo: "/modes/topic?exam=st&session=am1" })).toBe("/modes/topic?exam=st&session=am1");
+    expect(quizBackHref({ exam: "st", mode: "year", returnTo: "/q/st/2025-spring/am2/q1" })).toBe("/q/st/2025-spring/am2/q1");
   });
   it("has useful direct-entry fallbacks without bouncing to the site homepage", () => {
     expect(quizBackHref({ exam: "st", mode: "year" })).toBe("/modes/year?exam=st");

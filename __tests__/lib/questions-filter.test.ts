@@ -3,6 +3,7 @@ import type { Question, ExamCode, Season, Session } from "@/lib/questions/types"
 import type { HistoryStore } from "@/lib/storage/history";
 import {
   filterQuestions,
+  isPracticeReadyQuestion,
   isPlaceholderExplanation,
   shuffle,
   shuffleChoices,
@@ -69,7 +70,7 @@ describe("isPlaceholderExplanation", () => {
   it("実際の解説はプレースホルダ扱いしない", () => {
     expect(
       isPlaceholderExplanation(q({ explanation: "正解はアです。なぜなら…と続く解説。" })),
-    ).toBe(true); // 先頭一致のため前置きが定型なら該当する（現挙動を固定）
+    ).toBe(false);
     expect(
       isPlaceholderExplanation(q({ explanation: "この問題のポイントは正規化である。" })),
     ).toBe(false);
@@ -165,7 +166,7 @@ describe("filterQuestions — 品質フィルタ", () => {
     expect(out.map((x) => x.id)).toEqual(["ok"]);
   });
 
-  it("実解説がある場合プレースホルダ解説を落とすが、全てプレースホルダなら残す", () => {
+  it("プレースホルダ解説は、同じ絞り込み内の件数にかかわらず出題しない", () => {
     const mixed = [
       q({ id: "real", explanation: "実際の解説です。" }),
       q({ id: "ph", explanation: "正解はイです。" }),
@@ -176,10 +177,14 @@ describe("filterQuestions — 品質フィルタ", () => {
       q({ id: "p1", explanation: "正解はアです。" }),
       q({ id: "p2", explanation: "正解はウです。" }),
     ];
-    expect(filterQuestions(allPlaceholder, { mode: "year" }).map((x) => x.id).sort()).toEqual([
-      "p1",
-      "p2",
-    ]);
+    expect(filterQuestions(allPlaceholder, { mode: "year" })).toEqual([]);
+  });
+
+  it("一覧とプレイヤーが共有する公開条件を一つの述語で判定する", () => {
+    expect(isPracticeReadyQuestion(q({ id: "ready" }))).toBe(true);
+    expect(isPracticeReadyQuestion(q({ id: "figure", hasImage: true }))).toBe(false);
+    expect(isPracticeReadyQuestion(q({ id: "review", needsReview: true }))).toBe(false);
+    expect(isPracticeReadyQuestion(q({ id: "placeholder", explanation: "正解はアです。" }))).toBe(false);
   });
 
   it("inOrder は qNumber 昇順に並べる", () => {

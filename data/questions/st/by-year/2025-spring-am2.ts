@@ -25,7 +25,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "目的変数が「ガンの発症の有無」という2値のカテゴリカルデータであり、説明変数（年齢、飲酒の頻度、喫煙本数）からこの事象の発生確率を推定するモデルを構築する手法です。ロジスティック回帰分析は、このような2値目的変数の確率を予測する際に用いられる統計分析手法として適切です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -49,7 +49,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "ECRSは業務改善の4原則（Eliminate:排除、Combine:結合、Rearrange:交換/再配置、Simplify:簡素化）の頭文字です。E (Eliminate)は無駄な業務や作業をなくすことを指し、事務工数削減と業務効率向上に繋がります。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -73,7 +73,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "顧客の複数の属性（性別、年齢層、職業、年収など）と購買履歴データから、商品の購入可能性が最も高いセグメントを予測する問題です。決定木分析は、このように条件分岐を繰り返しながら、データの特徴に基づいて分類や予測を行う分析手法として活用されます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -95,9 +95,12 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "d"
     },
     "answer": "ア",
-    "explanation": "この問題では、DCF法（Discounted Cash Flow法）を用いてIT投資プロジェクトの金銭的価値を算定します。DCF法は、将来のキャッシュフローを現在価値に割り引いて合計することで、投資の価値を評価する手法です。割引率20%が与えられており、キャッシュフローは年度末に発生します。また、年度ごとの百万円未満の切り捨てが指示されています。\n\n正解は、プロジェクト開始時点の初期投資150百万円を考慮し、3年間のキャッシュフローをそれぞれ割引率20%で現在価値に割り引いた合計額から初期投資を差し引いた、最も正しい算定結果となります。具体的な計算では、各年度末のキャッシュフローを、1年後なら1.2、2年後なら1.44、3年後なら1.728で割ることで現在価値を求め、それらを合計して初期投資額を差し引きます。\n\n選択肢イは、初期投資を割引計算に含めていない、あるいは割引率の適用方法が誤っている可能性があり、DCF法の基本的な計算手順から外れています。選択肢ウは、キャッシュフローの割引計算において、年度を誤って適用している、もしくは割引率の計算を間違えていることが考えられます。選択肢エは、百万円未満の切り捨て処理を正しく行っていない、あるいはキャッシュフローの合算方法に誤りがあるために、正しい結果から乖離していると推測されます。",
+    "explanation": "各年度のキャッシュフロー100百万円を20%で現在価値に割り引き、年度ごとに百万円未満を切り捨てます。1年後は100÷1.2＝83百万円、2年後は100÷1.2²＝69百万円、3年後は100÷1.2³＝57百万円です。開始時点の支出150百万円を含めると、−150＋83＋69＋57＝59百万円となるので、算定結果aを示すアが正解です。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q4-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -119,9 +122,12 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "受託者 設計, 受託者 製造, 委託者 販売"
     },
     "answer": "エ",
-    "explanation": "ODM（Original Design Manufacturer）における委託者と受託者の役割分担は、委託者が製品の企画や仕様決定を行い、受託者がその仕様に基づいた製品の設計・製造・販売を請け負うのが一般的です。したがって、委託者は「設計」の指示を行い、受託者が「製造」と「販売」を担うという構造が、ODMのビジネスモデルの本質を表しています。\n\n選択肢エは、受託者が設計、受託者が製造、委託者が販売となっており、これはODMではなく、受託者が企画・設計・製造まで行い、委託者が販売チャネルを持つ受託製造（CM）の形態に近いですが、問題文の「ODM」という言葉と、委託者と受託者の一般的な役割分担を考慮すると、最も整合性の取れる解釈が求められます。ODMでは、委託者が仕様やコンセプトを提示し、受託者がそれを基に設計・製造を行うため、選択肢エの「受託者 設計, 受託者 製造」という部分はODMのプロセスに合致します。しかし、「委託者 販売」は、ODMの一般的なモデルとは異なります。ODMは、基本的には受託者が製造した製品を委託者のブランドで販売する形が一般的であり、販売まで受託者が担う場合もあれば、委託者が自社チャネルで販売する場合もあります。\n\nアは、委託者が設計と製造を担い、受託者が販売を担うとなっており、これは製造委託（EMS）とは異なるため不適切です。イは、委託者が設計を担い、受託者が製造と販売を担うとなっており、これはODMの最も典型的な形ですが、選択肢エが正解とされていることから、この問題では設計も受託者に委ねられるケースを想定していると考えられます。ウは、受託者が設計を担い、委託者が製造と販売を担うとなっており、これは製造委託（EMS）の形態に近く、ODMの定義とは異なります。\n\n改めて、ODMでは委託者が製品のコンセプトや大まかな仕様を提示し、受託者がそれを具体化する設計を行い、製造から販売までを請け負う、あるいは委託者が販売チャネルを持つといった多様な形態があり得ます。選択肢エは、受託者が設計・製造まで担い、委託者が販売を担うという、ODMの一つのバリエーションとして捉えることができます。",
+    "explanation": "ODM（Original Design Manufacturer）は、受託者が製品の設計と製造を行い、委託者が自社ブランドで販売する方式です。したがって、設計・製造が受託者、販売が委託者であるエが正解です。設計を委託者が担うイは、設計済み製品の製造を受託するOEMに近い役割分担です。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q5-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -145,7 +151,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ア",
     "explanation": "バリューチェーンは、企業活動を主活動（製造、販売など）と支援活動（調達、人事など）に区分し、それぞれの活動でどのように付加価値が生まれるかを分析するフレームワークです。これにより、企業の競争優位の源泉を特定し、戦略を立案することができます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -166,10 +172,10 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "ウ": "潜在顧客に向けて、価値のあるコンテンツを作成し、情報発信することによって、潜在顧客との関係性を深め、最終的に自らの製品・サービスの購入につなげる手法",
       "エ": "動画共有サイトに自主制作のコンテンツを継続的に公開して、ファンとなるコミュニティを形成することによって、企業からの広告料収入を得る手法"
     },
-    "answer": "ア",
+    "answer": "ウ",
     "explanation": "コンテンツマーケティングは、潜在顧客に向けて価値のある情報やコンテンツ（記事、動画など）を継続的に作成・発信し、顧客との信頼関係を築くことで、最終的に自社の製品やサービスの購入につなげるマーケティング手法です。一方的な広告とは異なり、顧客の課題解決やニーズに応える情報提供を重視します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -193,7 +199,10 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "イ",
     "explanation": "マーケティング戦略策定プロセスにおいて、環境分析、市場細分化、ターゲット特定を経て、最終的に具体的な施策へと落とし込む段階がマーケティングミックスの決定です。このプロセスは、まず外部環境（市場、競合、顧客など）を分析（ア）し、次に全体市場を類似したニーズを持つグループに分ける市場細分化（エ）を行います。その後、自社の強みやリソースを考慮して、最も収益性が高いと見込まれるグループを選定するターゲット特定（ウ）が行われます。これらの分析と選定を経て、選ばれたターゲット層に対して、製品（Product）、価格（Price）、流通（Place）、プロモーション（Promotion）といった具体的なマーケティング活動をどのように組み合わせるかを決定するのがマーケティングミックス決定（イ）です。したがって、図のdにはマーケティングミックス決定が入ります。\n\nアの環境分析は、戦略策定の初期段階であり、dよりも前のプロセスです。エの市場細分化は、環境分析の後に行われ、ターゲット特定の前段階に位置するため、dには入りません。ウのターゲット特定は、市場細分化によって生まれたセグメントの中から、狙うべき顧客層を選ぶプロセスであり、マーケティングミックス決定の直前に位置するため、dよりも前の段階となります。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q8-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -217,7 +226,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "需要の価格弾力性とは、価格の変化に対して需要量がどの程度変化するかを示す指標です。必需品は価格が変化しても需要が大きく変動しにくいため、一般的に価格弾力性が小さい（非弾力的）とされます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -241,7 +250,10 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "ウが正解となるのは、「不協和低減型」という購買行動の定義に基づきます。このタイプは、製品への関与度は高いものの、ブランド間の違いはあまり知覚されない状況を指します。消費者は、購入前に十分な情報収集やブランド比較を行わないまま購入に至りやすく、その結果、購入後に「本当にこの選択で良かったのか」という後悔（認知的不協和）を感じやすいという特徴があります。\n\nアは、製品への関与度が低く、ブランド間の違いを認識しやすい「多様性追求型」の行動に該当します。イは、製品への関与度もブランド間の違いの知覚度も低い「習慣型」の行動です。エは、製品への関与度もブランド間の違いの知覚度も高い「包括的決定型」の行動に該当します。\n\nしたがって、製品への関与度は高いものの、ブランド間の違いがあまり認識されないために購入後に後悔が生じやすい「不協和低減型」の消費者の行動は、ウで説明されている内容と一致します。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q10-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -262,10 +274,10 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "ウ": "内部プロセスの視点",
       "エ": "学習と成長の視点"
     },
-    "answer": "イ",
+    "answer": "エ",
     "explanation": "バランススコアカードの「学習と成長の視点」は、組織が将来にわたって成長し、価値を創造し続ける能力をどのように維持・向上させるかに焦点を当てます。人材、技術、組織文化といった無形資産がこの視点の要素であり、他の財務、顧客、内部プロセスの各視点の業績改善の先行指標となります。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -289,7 +301,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ア",
     "explanation": "マルチサイドプラットフォームは、異なる複数の種類の顧客セグメント（例：売り手と買い手、ドライバーと乗客）を結びつけ、それらの間の交流や取引を促進することで価値を創造するビジネスモデルです。プラットフォームが双方に価値を提供することで、多くの利用者を集めます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -313,7 +325,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "S&OP（Sales and Operations Planning）は、販売計画と生産・供給計画を統合し、需要と供給のバランスを取りながら経営目標達成を目指す戦略的な計画策定プロセスです。顧客重視のマーケティング計画とサプライチェーン管理を融合させ、経営者に事業推進能力を提供します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -337,7 +349,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "イ",
     "explanation": "技術経営における「魔の川」とは、研究段階で得られた成果（シーズ）を、実際に市場投入可能な製品として開発し、事業として成立させる（事業化）までの間に横たわる様々な困難や障壁を指します。技術的課題の克服だけでなく、量産化やコスト、市場適合性などの問題をクリアする必要があります。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -361,7 +373,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ア",
     "explanation": "エネルギーレビューにおける「著しいエネルギーの使用の特定と特性の把握」とは、工場内で特にエネルギー消費量の多い設備やプロセス、またはエネルギー使用量に大きな影響を与える操業条件などを特定し、その具体的な使用状況や影響要因を詳細に理解する活動です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -385,7 +397,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "ティアダウンとは、競合他社の製品を購入し、それを分解して部品構成、構造、材料、製造コスト、技術的特徴などを詳細に分析する手法です。この分析を通じて、自社製品と比較し、コスト削減や性能向上、新たな製品開発のヒントを得ることを目的とします。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -409,7 +421,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "サイバーフィジカルシステム（CPS）は、現実世界（フィジカル空間）のデータをセンサーなどで収集し、サイバー空間で分析・加工した上で、その結果をリアルタイムにフィジカル空間にフィードバックして新たな価値を創造する仕組みです。IoTやAI技術を統合し、社会や産業の課題解決に貢献します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -433,7 +445,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "J.コッターは、リーダーシップを「変革を生み出す」機能と定義しており、その主要な要素として「ビジョンの提示」、人々を鼓舞し「動機付け」を行うこと、そして成長を促す「コーチング」などを挙げています。これらは組織を新たな方向へ導き、変化を推進するために不可欠な機能とされます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -457,7 +469,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "キャッシュフロー計算書において、投資活動によるキャッシュフローは、将来の成長や収益獲得のために行われる投資に関する現金の動きを示します。有形固定資産の取得や売却、有価証券の購入や売却などがこれに該当し、有形固定資産の売却による収入は投資活動によるプラスのキャッシュフローです。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -481,7 +493,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ア",
     "explanation": "債務超過とは、企業の貸借対照表において、負債の総額が資産の総額を上回っている状態を指します。これは、企業の純資産合計がマイナスであることを意味し、企業の財務状況が極めて厳しいことを示します。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -503,9 +515,12 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
       "エ": "500"
     },
     "answer": "イ",
-    "explanation": "日本基準における営業利益は、売上高から売上原価と販売費及び一般管理費を差し引くことで計算されます。この計算式を適用し、提示された損益計算資料から該当する数値を抽出することで、当期の営業利益を算出します。\n\nアの270百万円は、計算過程で売上原価や販管費のいずれかの項目に誤りがあるか、または計算順序を誤っている可能性が考えられます。ウの310百万円は、営業外損益や特別損益を営業利益の計算に含めてしまっている、あるいは計算対象外の費用を算入している場合に生じる誤りです。エの500百万円は、売上高や売上原価の誤認、あるいは過大な販管費の計上など、根本的な数値の誤りが推測されます。\n\nしたがって、損益計算資料に基づき、売上高から売上原価および販売費及び一般管理費を正しく差し引くことで算出される300百万円が、当期の営業利益として適切な値となります。",
+    "explanation": "日本基準の営業利益は、売上高から売上原価と販売費及び一般管理費を差し引いて求めます。1,500−1,000−200＝300百万円です。営業外収益40百万円と営業外費用30百万円は経常利益の計算で使うため、営業利益には含めません。したがってイが正解です。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q21-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -529,7 +544,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "フェアユースは、著作権法における特定の目的（批評、解説、ニュース報道、教育、研究など）のために、著作権者の許諾なしに著作物を利用できるという原則です。これにより、知的創造活動や情報流通の自由が保護され、公共の利益に資する利用が認められます。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -553,7 +568,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "レースコンディションは、複数のプロセスやスレッドが共有リソースに同時にアクセスしようとした際に、アクセス順序によって実行結果が不確定になり、想定外の動作や誤った結果が生じる状態を指します。排他制御の不備が原因で発生することが多いです。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -577,7 +592,10 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "ウ",
     "explanation": "CSIRT ガイドにおけるベンダーチームの機能とサービス対象の適切な組み合わせは、ウである。ベンダーチームは、自社が提供する製品やサービスに関連するセキュリティインシデントに対応する役割を担う。具体的には、自社製品に発見された脆弱性に対して、修正プログラム（パッチ）の作成や、利用者への注意喚起を行うことがその中心的な機能となる。これにより、自組織だけでなく、自社製品の利用者全体をセキュリティリスクから守る。\n\nアは、CSIRT間の情報連携や調整を行う機能は、情報共有チームなどの他の機能に該当する可能性が高い。イは、インシデントの傾向分析やマルウェア解析、攻撃痕跡分析などは、分析チームやインテリジェンスチームの機能と解釈されるのが一般的であり、ベンダーチームとは異なる。エは、CSIRTの機能を外部に有償で提供するサービスプロバイダとしての役割であり、これはアウトソーシングやマネージドセキュリティサービス（MSS）といった形態であり、ベンダーチームの本来の定義とは異なる。",
     "hasImage": true,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "imageUrls": [
+      "/questions/ipa/2025-spring-am2/q24-figure.png"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -601,7 +619,7 @@ export const ST_QUESTIONS_2025_SPRING_AM2: Question[] = [
     "answer": "エ",
     "explanation": "デジタルフォレンジックスとは、コンピュータやネットワークにおける不正アクセス、情報漏洩、サイバー犯罪などが発生した際に、その証拠となるデジタルデータを法的に有効な形で収集、保全、分析し、報告する一連の科学的調査手法です。証拠の改ざんを防ぎ、正確な事実を明らかにすることを目的とします。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_st_am2_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
     "license": "IPA-public"
   }
 ];

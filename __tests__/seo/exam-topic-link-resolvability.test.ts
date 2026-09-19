@@ -7,6 +7,7 @@ import {
   getQuestionsByExamStrict,
   groupByCategory,
 } from "@/lib/seo/exam-meta";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 /**
  * no-404: 問題詳細ページ (/q/[exam]/[yearSeason]/[section]/[qnum]) は、
@@ -21,11 +22,10 @@ import {
  * topic ページを指す（=死リンクゼロ）ことを保証する。
  */
 describe("examTopicPageExists gates /q topic links to resolvable pages", () => {
-  it("returns false for a category that lives only in a placeholder question", () => {
-    // ap-2013a-am-q75「品質管理」は AP 唯一の同分野問題でプレースホルダ解説
-    // （`正解はアです。…`）のため strict プールから除外され、topic ページが
-    // 実在しない。ここが false でないと /q から 404 リンクが復活する。
-    expect(examTopicPageExists("ap", "品質管理")).toBe(false);
+  it("returns false for a category that has no practice-ready question", () => {
+    // IP「経営戦略」は raw corpus にはあるが、唯一の問題を直接表示できないため
+    // strict pool には入らず、topic ページも生成されない。
+    expect(examTopicPageExists("ip", "経営戦略")).toBe(false);
   });
 
   it("returns true for a category backed by at least one non-placeholder question", () => {
@@ -63,7 +63,7 @@ describe("examTopicPageExists gates /q topic links to resolvable pages", () => {
     // 「分野が見つからずプレーンテキスト化」する分岐が実データで発火している
     // ことを保証（=回帰固定の対象が消えていない）。
     const gated = ALL_QUESTIONS.filter(
-      (q) => !q.needsReview && !examTopicPageExists(q.exam, q.category),
+      (q) => !isPracticeReadyQuestion(q) && !examTopicPageExists(q.exam, q.category),
     );
     expect(gated.length).toBeGreaterThan(0);
   });
