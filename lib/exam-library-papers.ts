@@ -5,6 +5,8 @@ import "server-only";
  * パスはカタログに存在するIDだけから組み立て、任意パスを読まない。
  */
 import { createHash } from "node:crypto";
+import choiceExplanationsJson from "@/data/exam-library/choice-explanations.json";
+import { parseExamChoiceExplanation } from "@/lib/exam-library-choice-explanations";
 import { parseExamPresentation } from "@/lib/exam-library-presentation";
 import explanationsJson from "@/data/exam-library/explanations.json";
 import { existsSync, readFileSync } from "node:fs";
@@ -41,7 +43,17 @@ export function loadExamPaper(id: string): readonly ExamQuestion[] | null {
         const explanation = (explanationsJson as Record<string, string>)[question.id];
         const sourceHash = createHash("sha256").update(question.text).digest("hex");
         const presentation = parseExamPresentation(overlay, question, sourceHash);
-        return { ...question, ...(explanation?.trim() ? { explanation: explanation.trim() } : {}), ...(presentation ? { presentation } : {}) };
+        const choiceExplanation = parseExamChoiceExplanation(
+          (choiceExplanationsJson as Record<string, unknown>)[question.id],
+          question,
+          sourceHash,
+        );
+        return {
+          ...question,
+          ...(explanation?.trim() ? { explanation: explanation.trim() } : {}),
+          ...(presentation ? { presentation } : {}),
+          ...(choiceExplanation ? { choiceExplanation } : {}),
+        };
       }) : null;
     } catch {
       questions = null;

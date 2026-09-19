@@ -152,6 +152,48 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.getByText("問1の解説本文")).toBeTruthy();
   });
 
+  it("shows the correct reason, every wrong-choice reason and government sources from a structured overlay", () => {
+    renderPlayer([question(1, {
+      explanation: "移行中の旧解説は構造化解説がある場合には表示しません。",
+      choiceExplanation: {
+        sourceHash: "a".repeat(64),
+        correctChoice: 3,
+        summary: "五つの選択肢を同じ粒度で比較します。",
+        choices: [1, 2, 3, 4, 5].map((number) => ({
+          number,
+          verdict: number === 3 ? "correct" as const : "incorrect" as const,
+          reason: `選択肢${number}の根拠を、設問条件と法令の規定に沿って個別に説明します。`,
+        })),
+        sources: [{
+          title: "e-Gov 労働安全衛生法",
+          url: "https://laws.e-gov.go.jp/law/347AC0000000057",
+        }],
+      },
+    })]);
+    answer(1);
+    const panel = screen.getByRole("region", { name: "選択肢ごとの解説" });
+    const choiceList = within(panel).getByRole("list", { name: "5つの選択肢の判定と理由" });
+    expect(within(choiceList).getAllByRole("listitem")).toHaveLength(5);
+    expect(within(panel).getByRole("heading", { name: "選択肢（3）: この問題の正答" })).toBeTruthy();
+    expect(within(panel).getByRole("heading", {
+      name: "選択肢（1）: この問題では誤答 あなたの回答",
+    })).toBeTruthy();
+    for (const number of [2, 4, 5]) {
+      expect(within(panel).getByRole("heading", {
+        name: `選択肢（${number}）: この問題では誤答`,
+      })).toBeTruthy();
+    }
+    for (let number = 1; number <= 5; number += 1) {
+      expect(within(panel).getByText(new RegExp(`^選択肢${number}の根拠`))).toBeTruthy();
+    }
+    const sourceList = within(panel).getByRole("list", { name: "政府一次資料" });
+    const source = within(sourceList).getByRole("link", { name: /e-Gov 労働安全衛生法/ });
+    expect(source).toHaveAttribute("href", "https://laws.e-gov.go.jp/law/347AC0000000057");
+    expect(source).toHaveAttribute("target", "_blank");
+    expect(source).toHaveAttribute("rel", "noopener noreferrer");
+    expect(screen.queryByText(/移行中の旧解説/)).not.toBeInTheDocument();
+  });
+
   it("renders complete source choices and supports immediate keyboard answers", () => {
     renderPlayer([question(1, { text: "問 1 正しいものはどれか。\n（1）最初の文章\n（2）次の文章\n（3）正しい文章\n（4）四番目\n（5）五番目" }), question(2)]);
     expect(screen.getByRole("radio", { name: /^選択肢 3: 正しい文章/ })).toBeTruthy();
@@ -161,6 +203,18 @@ describe("ExamQuestionPlayer", () => {
     expect(screen.getByRole("radio", { name: /^選択肢 3:/ }).getAttribute("data-state")).toBe("revealed-correct");
     fireEvent.keyDown(window, { key: "Enter" });
     expect(screen.getByRole("heading", { name: /問2/ })).toBeTruthy();
+  });
+
+  it("wraps keyboard focus across all five choices without accidentally submitting", () => {
+    renderPlayer();
+    const first = screen.getByRole("radio", { name: /^選択肢 1:/ });
+    const fifth = screen.getByRole("radio", { name: /^選択肢 5:/ });
+    first.focus();
+    fireEvent.keyDown(first, { key: "ArrowUp" });
+    expect(fifth).toHaveFocus();
+    expect(screen.queryByRole("heading", { name: /正解|不正解/ })).toBeNull();
+    fireEvent.keyDown(fifth, { key: "ArrowRight" });
+    expect(first).toHaveFocus();
   });
 
   it("renders calculation tables and official evidence links as readable content", () => {
