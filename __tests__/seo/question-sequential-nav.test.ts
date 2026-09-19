@@ -6,6 +6,7 @@ import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { getSessionNeighbors } from "@/lib/questions/related";
 import type { ExamCode, Question } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 // Regression guard for the /q "前の問題・次の問題" sequential navigation
 // (app/q/[exam]/[yearSeason]/[section]/[qnum]/page.tsx). The page builds a
@@ -27,7 +28,7 @@ function sessionPool(q: Question): Question[] {
         x.year === q.year &&
         x.season === q.season &&
         x.session === q.session &&
-        !x.needsReview,
+        isPracticeReadyQuestion(x),
     )
     .sort((a, b) => a.qNumber - b.qNumber);
 }
@@ -42,7 +43,7 @@ function siblings(q: Question): { prev: Question | null; next: Question | null }
  * that is NOT needsReview (those return notFound()/404 in the page).
  */
 function resolves(target: Question): boolean {
-  if (target.needsReview) return false;
+  if (!isPracticeReadyQuestion(target)) return false;
   const path = questionPagePath(target); // /q/{exam}/{year}-{season}/{session}/q{n}
   const [, , exam, yearSeason, section, qnum] = path.split("/");
   return (
@@ -138,7 +139,7 @@ describe("/q 前後ナビ — ページ構造ガード (SSR でクローラブ�
     expect(source).toMatch(/getSessionNeighbors\(\s*q\s*,\s*examPool\s*\)/);
   });
 
-  it("選択ロジック本体 (related.ts) は year/season/session 絞り・needsReview 除外・qNumber 昇順", () => {
+  it("選択ロジック本体 (related.ts) は year/season/session 絞り・共通eligibility・qNumber 昇順", () => {
     const related = readFileSync(
       join(process.cwd(), "lib/questions/related.ts"),
       "utf8",
@@ -146,7 +147,7 @@ describe("/q 前後ナビ — ページ構造ガード (SSR でクローラブ�
     expect(related).toMatch(/x\.year === current\.year/);
     expect(related).toMatch(/x\.season === current\.season/);
     expect(related).toMatch(/x\.session === current\.session/);
-    expect(related).toMatch(/!x\.needsReview/);
+    expect(related).toMatch(/isPracticeReadyQuestion\(x\)/);
     expect(related).toMatch(/a\.qNumber - b\.qNumber/);
   });
 });

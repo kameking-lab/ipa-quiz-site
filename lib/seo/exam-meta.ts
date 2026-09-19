@@ -1,6 +1,6 @@
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import type { ExamCode, Question } from "@/lib/questions/types";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
@@ -32,14 +32,12 @@ export function getAvailableExams(): ExamCode[] {
  * Phase 11 / F-6: per-exam/category counts previously used the raw module
  * length while the home headline + sitemap used the indexable count, so
  * summing the category badges produced a third, larger number. Deriving
- * everything from the indexable set makes all breakdowns reconcile to the
- * headline. needsReview questions 404 at /q and placeholder-explanation
- * questions are noindex, so neither should be advertised in counts/listings.
+ * everything from the playable set makes all breakdowns reconcile to the
+ * headline. Unrenderable, needsReview, and placeholder-explanation questions
+ * 404 at /q, so none should be advertised in counts/listings.
  */
 export function getQuestionsByExamStrict(exam: ExamCode): Question[] {
-  return (QUESTIONS_BY_EXAM[exam] ?? []).filter(
-    (q) => !q.needsReview && !isPlaceholderExplanation(q),
-  );
+  return (QUESTIONS_BY_EXAM[exam] ?? []).filter(isPracticeReadyQuestion);
 }
 
 /**

@@ -11,7 +11,7 @@ import {
   getAllQuestionsLazy,
   getQuestionsForExam,
 } from "@/lib/questions/get-questions";
-import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 export type SearchSort = "relevance" | "year_desc" | "category" | "random";
 
@@ -103,18 +103,8 @@ function scoreQuestion(q: Question, tokens: string[]): number {
   return score;
 }
 
-const tableOrFigurePattern =
-  /次の表|以下の表|下の表|表のように|表に示す|次の図|以下の図|下の図|図のように|図に示す|図中の|次の条件|以下の条件/;
-
-function isUnrenderable(q: Question): boolean {
-  return tableOrFigurePattern.test(q.question) && !q.hasImage;
-}
-
 function passesBaseFilters(q: Question): boolean {
-  if (q.needsReview) return false;
-  if (isUnrenderable(q)) return false;
-  if (isPlaceholderExplanation(q)) return false;
-  return true;
+  return isPracticeReadyQuestion(q);
 }
 
 function passesFacets(q: Question, query: SearchQuery): boolean {

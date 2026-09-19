@@ -23,6 +23,7 @@ import {
 } from "@/lib/seo/sitemap-xml";
 import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
 import type { ExamCode } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { GONE_PATHS } from "@/middleware";
 import nextConfig from "@/next.config";
 
@@ -53,7 +54,7 @@ function isResolvable(path: string): boolean {
       section: q[3],
       qnum: q[4],
     });
-    return Boolean(found && !found.needsReview);
+    return Boolean(found && isPracticeReadyQuestion(found));
   }
   // /{exam}/{year-season}
   const ys = /^\/([a-z]{2})\/(\d{4}-(?:spring|autumn|cbt))$/.exec(path);

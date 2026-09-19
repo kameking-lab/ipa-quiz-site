@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { getAllTopics, getQuestionsByTopic } from "@/lib/seo/topics";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 /**
  * /topics/[slug] links every pooled question via questionPagePath. needsReview
@@ -10,12 +11,12 @@ import { getAllTopics, getQuestionsByTopic } from "@/lib/seo/topics";
  * intentionally kept (the page badges them 「解説準備中」 and links a real 200
  * noindex page), so this guard only forbids needsReview.
  */
-describe("/topics index — never pools needsReview questions (no 404 links)", () => {
-  it("no topic pool contains a needsReview question", () => {
+describe("/topics index — only pools practice-ready questions", () => {
+  it("no topic pool contains a question whose detail route is unavailable", () => {
     const dead: string[] = [];
     for (const t of getAllTopics()) {
       for (const q of getQuestionsByTopic(t.tag)) {
-        if (q.needsReview) dead.push(`${t.slug} -> ${q.id}`);
+        if (!isPracticeReadyQuestion(q)) dead.push(`${t.slug} -> ${q.id}`);
       }
     }
     expect(dead).toEqual([]);
