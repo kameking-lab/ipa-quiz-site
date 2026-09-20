@@ -21,6 +21,12 @@ import { Button } from "@/components/ui/button";
 import { cn, examLabel, seasonLabel, formatYearSeason } from "@/lib/utils";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { buildSearchPracticeUrl } from "@/lib/search/practice-url";
+import { extractRecentlyViewedIds } from "@/lib/search/recently-viewed";
+import {
+  encodeExplicitPoolIds,
+  MAX_EXPLICIT_POOL_IDS,
+} from "@/lib/questions/explicit-pool";
 import type {
   ExamCode,
   Season,
@@ -155,18 +161,6 @@ function queryLabel(q: ActiveQuery): string {
   return parts.join(" · ") || "条件なし";
 }
 
-function buildPracticeUrl(q: ActiveQuery): string {
-  const sp = new URLSearchParams();
-  sp.set("mode", "random");
-  if (q.exam) sp.set("exam", q.exam);
-  if (q.year) sp.set("year", q.year);
-  if (q.season) sp.set("season", q.season);
-  if (q.category) sp.set("category", q.category);
-  if (q.calculationOnly) sp.set("calc", "1");
-  if (!q.exam) sp.set("exam", "ap");
-  return `/quiz?${sp.toString()}`;
-}
-
 function loadSearchHistory(): SearchHistoryEntry[] {
   if (typeof window === "undefined") return [];
   try {
@@ -198,14 +192,8 @@ function saveSavedSearches(entries: SavedSearch[]): void {
 function loadRecentlyViewedIds(): Set<string> {
   if (typeof window === "undefined") return new Set();
   try {
-    const raw = JSON.parse(localStorage.getItem(LS_KEYS.history) ?? "[]");
-    if (Array.isArray(raw)) {
-      const ids = (raw as { id?: string }[])
-        .map((e) => e?.id)
-        .filter((id): id is string => typeof id === "string");
-      return new Set(ids);
-    }
-    return new Set();
+    const raw: unknown = JSON.parse(localStorage.getItem(LS_KEYS.history) ?? "[]");
+    return new Set(extractRecentlyViewedIds(raw));
   } catch {
     return new Set();
   }
@@ -244,6 +232,7 @@ export function SearchClient() {
   const [query, setQuery] = useState<ActiveQuery>(EMPTY_QUERY);
   const [inputText, setInputText] = useState("");
   const [result, setResult] = useState<SearchResponse | null>(null);
+  const [resultQueryKey, setResultQueryKey] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const abortRef = useRef<AbortController | null>(null);
@@ -267,6 +256,7 @@ export function SearchClient() {
     const q = readFromParams(new URLSearchParams(searchParams.toString()));
     setQuery(q);
     setInputText(q.q);
+    setRecentOnly(searchParams.get("recent") === "1");
   }, [searchParams]);
 
   // Fetch results
@@ -276,20 +266,25 @@ export function SearchClient() {
     abortRef.current = ctrl;
     setLoading(true);
     setError(null);
+    const queryKey = toParams(q).toString();
     try {
       const sp = toParams(q);
+      sp.set("limit", String(MAX_EXPLICIT_POOL_IDS));
       const res = await fetch(`/api/search/questions?${sp.toString()}`, {
         signal: ctrl.signal,
       });
       if (!res.ok) throw new Error(`status ${res.status}`);
       const data: SearchResponse = await res.json();
+      if (abortRef.current !== ctrl) return;
       setResult(data);
+      setResultQueryKey(queryKey);
     } catch (err) {
       if ((err as Error).name === "AbortError") return;
       setError("検索に失敗しました。時間をおいて再度お試しください。");
       setResult(null);
+      setResultQueryKey(null);
     } finally {
-      setLoading(false);
+      if (abortRef.current === ctrl) setLoading(false);
     }
   }, []);
 
@@ -385,6 +380,13 @@ export function SearchClient() {
     });
   }, []);
 
+  const toggleRecentOnly = useCallback(() => {
+    const params = toParams(query);
+    if (!recentOnly) params.set("recent", "1");
+    const qs = params.toString();
+    router.replace(qs ? `/search?${qs}` : "/search", { scroll: false });
+  }, [query, recentOnly, router]);
+
   const currentParamsStr = toParams(query).toString();
   const isCurrentSaved = savedSearches.some((s) => s.params === currentParamsStr);
   const tokens = useMemo(
@@ -392,15 +394,30 @@ export function SearchClient() {
     [query.q],
   );
 
+  const currentQueryKey = toParams(query).toString();
+  const resultIsCurrent = resultQueryKey === currentQueryKey;
   const filteredHits = useMemo(() => {
-    if (!result) return null;
+    if (!result || !resultIsCurrent) return null;
     if (!recentOnly) return result;
     const filtered = result.hits.filter((h) => recentlyViewedIds.has(h.id));
     return { ...result, hits: filtered, total: filtered.length };
-  }, [result, recentOnly, recentlyViewedIds]);
+  }, [result, resultIsCurrent, recentOnly, recentlyViewedIds]);
 
-  const practiceUrl = useMemo(() => buildPracticeUrl(query), [query]);
-  const hasFacetForPractice = Boolean(query.exam || query.year || query.season || query.category);
+  const practiceHits = useMemo(() => {
+    const hits = filteredHits?.hits ?? [];
+    const encoded = encodeExplicitPoolIds(hits.map((hit) => hit.id));
+    if (!encoded) return [];
+    const included = new Set(encoded.split(","));
+    return hits.filter((hit) => included.has(hit.id));
+  }, [filteredHits]);
+  const practiceUrl = useMemo(
+    () => {
+      const params = toParams(query);
+      if (recentOnly) params.set("recent", "1");
+      return buildSearchPracticeUrl(params.toString(), practiceHits);
+    },
+    [query, practiceHits, recentOnly],
+  );
 
   return (
     <div className="space-y-4">
@@ -443,14 +460,14 @@ export function SearchClient() {
             isCurrentSaved={isCurrentSaved}
             onToggleSave={toggleSaveSearch}
             recentOnly={recentOnly}
-            onToggleRecentOnly={() => setRecentOnly((v) => !v)}
+            onToggleRecentOnly={toggleRecentOnly}
             hasRecentlyViewed={recentlyViewedIds.size > 0}
             sort={query.sort}
             onSortChange={(sort) => updateQuery({ sort })}
-            hasFacetForPractice={hasFacetForPractice}
             practiceUrl={practiceUrl}
-            total={filteredHits?.total ?? 0}
-            loading={loading}
+            practiceCount={practiceHits.length}
+            searchTotal={filteredHits?.total ?? 0}
+            loading={loading || !resultIsCurrent}
           />
           <div className="mt-4">
             <ResultsPanel
@@ -661,9 +678,9 @@ interface SearchToolbarProps {
   hasRecentlyViewed: boolean;
   sort: SearchSort;
   onSortChange: (s: SearchSort) => void;
-  hasFacetForPractice: boolean;
   practiceUrl: string;
-  total: number;
+  practiceCount: number;
+  searchTotal: number;
   loading: boolean;
 }
 
@@ -671,8 +688,7 @@ function SearchToolbar({
   isCurrentSaved, onToggleSave,
   recentOnly, onToggleRecentOnly, hasRecentlyViewed,
   sort, onSortChange,
-  hasFacetForPractice, practiceUrl,
-  total, loading,
+  practiceUrl, practiceCount, searchTotal, loading,
 }: SearchToolbarProps) {
   return (
     <div className="flex flex-wrap items-center gap-2">
@@ -729,14 +745,14 @@ function SearchToolbar({
       </select>
 
       {/* Practice mode CTA */}
-      {total > 0 && hasFacetForPractice && (
+      {practiceCount > 0 && !loading && (
         <Link
           href={practiceUrl}
           className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-primary bg-primary px-3 py-1 text-xs text-primary-foreground transition-opacity hover:opacity-90"
-          aria-label={`${total.toLocaleString("ja-JP")}件の問題を連続演習する`}
+          aria-label={`${practiceCount.toLocaleString("ja-JP")}件の検索結果を連続演習する${searchTotal > practiceCount ? `（全${searchTotal.toLocaleString("ja-JP")}件中）` : ""}`}
         >
           <Play className="h-3 w-3 fill-current" aria-hidden="true" />
-          {loading ? "..." : `${total.toLocaleString("ja-JP")}件を演習`}
+          {loading ? "..." : `${practiceCount.toLocaleString("ja-JP")}件を演習`}
         </Link>
       )}
     </div>

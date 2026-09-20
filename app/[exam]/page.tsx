@@ -123,7 +123,17 @@ export default async function ExamTopPage({
   const years = groupByYearSeason(questions).map((group) => {
     const items = questions.filter((q) => q.year === group.year && q.season === group.season);
     const sessions = [...new Set(items.map((q) => q.session))];
-    return { ...group, coverage: sessions.map((session) => `${practiceSessionLabel(session)} ${items.filter((q) => q.session === session).length}問`).join("・"), missingSpecialist: sessions.includes("am1") && !sessions.includes("am2") };
+    const coverageLabels = sessions.map(practiceSessionLabel);
+    return {
+      ...group,
+      // The card's badge owns the total question count. Keep this line for the
+      // covered range only so assistive technology and visual readers do not
+      // encounter a duplicated value such as "67問 67問".
+      coverage: coverageLabels.length === 1
+        ? `${coverageLabels[0]}のみ`
+        : coverageLabels.join("・"),
+      missingSpecialist: sessions.includes("am1") && !sessions.includes("am2"),
+    };
   });
   const categories = groupByCategory(questions);
   const books = (RECOMMENDED_BOOKS[code] ?? []).slice(0, 3);

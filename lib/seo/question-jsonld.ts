@@ -1,29 +1,13 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
-import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
+import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 
 /**
- * Approximate publish date (ISO `YYYY-MM-DD`) for an exam session, used for the
- * Q&A `Question.datePublished`/`dateCreated`. IPA spring exams run mid-April and
- * autumn exams mid-October; CBT divisions (IP/SG) run year-round, so we anchor
- * those to the exam year. A valid in-year date is what Google Q&A needs — exact
- * sitting dates per question are not tracked.
- */
-function examPublishDateISO(year: number, season: Season): string {
-  const monthDay =
-    season === "autumn" ? "10-21" : season === "spring" ? "04-21" : "04-01";
-  return `${year}-${monthDay}`;
-}
-
-/**
  * Qualify a date-only ISO string (`YYYY-MM-DD`) with the JST timezone so it
- * becomes a full ISO 8601 datetime (`YYYY-MM-DDT00:00:00+09:00`). Google's Q&A
- * rich-result validation emits recommendation warnings for bare dates on
- * `datePublished` / `dateCreated` / `dateModified`; a timezone-qualified
- * datetime clears them. The exam/update dates are Japan-local, so +09:00 is the
- * correct anchor. Inputs that already carry a time component pass through
- * unchanged.
+ * becomes a full ISO 8601 datetime (`YYYY-MM-DDT00:00:00+09:00`). The exam and
+ * update dates are Japan-local, so +09:00 is the correct anchor. Inputs that
+ * already carry a time component pass through unchanged.
  */
 function toJstDateTimeISO(iso: string): string {
   return /^\d{4}-\d{2}-\d{2}$/.test(iso) ? `${iso}T00:00:00+09:00` : iso;
@@ -57,14 +41,14 @@ export interface QuestionJsonLdInput {
 /**
  * Build the structured-data graph for a single question page.
  *
- * Schema set (phase 10 / C-2 dedup): QAPage + LearningResource + BreadcrumbList.
- * The previously co-located `Quiz` node was removed — it duplicated the QAPage's
- * role (Google preferentially evaluates the Q&A type for this content) and added
- * no incremental rich-result eligibility, so the stacking read as redundant.
+ * Schema set: LearningResource (containing a Question) + BreadcrumbList.
  *
- * `suggestedAnswer` now carries only the *non-accepted* choices, matching
- * schema.org semantics. Previously it listed every choice including the correct
- * one, which contradicted `acceptedAnswer`.
+ * This is an editorial practice problem with a published correct answer. It is
+ * not a user-generated Q&A page and visitors cannot submit answers for public
+ * display, so QAPage would misrepresent both the page and Google's eligibility
+ * rules. Distractors are rendered in the HTML UI, but are deliberately not
+ * emitted as suggestedAnswer: a wrong multiple-choice option is not a proposed
+ * answer authored by a user.
  */
 export function buildQuestionJsonLd({
   question: q,
@@ -76,15 +60,9 @@ export function buildQuestionJsonLd({
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
-  const otherChoices = q.choices
-    ? (Object.entries(q.choices) as [ChoiceKey, string][]).filter(
-        ([key]) => !answerKeys.some(answer => answer === key),
-      )
-    : [];
-
-  // Q&A authorship: IPA authored the question; this site authored the answer
-  // (explanation). Full inline Organization objects (not @id refs) so Google's
-  // per-page Q&A validation resolves them without the homepage Organization node.
+  // IPA authored the question; this site authored the published answer
+  // (explanation). Full inline Organization objects keep the graph useful even
+  // though the question page does not embed the homepage Organization node.
   const ipaAuthor = {
     "@type": "Organization",
     name: "情報処理推進機構 (IPA)",
@@ -95,7 +73,6 @@ export function buildQuestionJsonLd({
     name: SITE_NAME,
     url: SITE_BASE_URL,
   };
-  const questionDateISO = toJstDateTimeISO(examPublishDateISO(q.year, q.season));
   const lastUpdatedDateTimeISO = toJstDateTimeISO(lastUpdatedISO);
 
   // The accepted answer links to the in-page explanation anchor (#explanation).
@@ -116,34 +93,18 @@ export function buildQuestionJsonLd({
     name: q.question.slice(0, 120),
     text: q.question,
     inLanguage: "ja",
-    // Required by Google Q&A (the missing field was the critical error): total
-    // answers = the correct one + the distractor choices.
-    answerCount: acceptedAnswers.length + otherChoices.length,
     author: ipaAuthor,
-    datePublished: questionDateISO,
-    dateCreated: questionDateISO,
     upvoteCount: 0,
     url: pageUrlAbs,
     acceptedAnswer,
-    ...(otherChoices.length > 0
-      ? {
-          suggestedAnswer: otherChoices.map(([key, text]) => ({
-            "@type": "Answer",
-            text: `${key}: ${text}`,
-            inLanguage: "ja",
-            url: pageUrlAbs,
-            author: siteAuthor,
-            datePublished: lastUpdatedDateTimeISO,
-            upvoteCount: 0,
-          })),
-        }
-      : {}),
   };
 
   const learningResource = {
     "@type": "LearningResource",
     "@id": `${pageUrlAbs}#learning-resource`,
     name: title,
+    url: pageUrlAbs,
+    dateModified: lastUpdatedDateTimeISO,
     inLanguage: "ja",
     learningResourceType: "Practice problem",
     educationalLevel: "Professional",
@@ -164,6 +125,13 @@ export function buildQuestionJsonLd({
       ...q.topicTags,
     ].join(", "),
     isAccessibleForFree: true,
+    hasPart: questionEntity,
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": SITE_ID,
+      name: SITE_NAME,
+      url: SITE_BASE_URL,
+    },
     // IPA's past-exam usage terms (許諾不要・使用料不要・出典明記) live on the FAQ
     // page; the old mondai-kaiotu .html page was decommissioned (404). faq.html
     // is verified 200. See nonblog-external-ipa-link-health.test.ts.
@@ -189,20 +157,6 @@ export function buildQuestionJsonLd({
   return {
     "@context": "https://schema.org",
     "@graph": [
-      {
-        "@type": "QAPage",
-        "@id": `${pageUrlAbs}#qapage`,
-        url: pageUrlAbs,
-        inLanguage: "ja",
-        dateModified: lastUpdatedDateTimeISO,
-        mainEntity: questionEntity,
-        isPartOf: {
-          "@type": "WebSite",
-          "@id": SITE_ID,
-          name: SITE_NAME,
-          url: SITE_BASE_URL,
-        },
-      },
       learningResource,
       {
         "@type": "BreadcrumbList",

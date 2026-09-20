@@ -3,6 +3,7 @@ import "server-only";
 import type { ExamCode, Question, QuizFilter } from "./types";
 import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
 import { isPracticeReadyQuestion } from "./filter";
+import { selectExplicitPoolIds } from "./explicit-pool";
 
 
 
@@ -50,6 +51,19 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
 export async function getPoolIds(filter: QuizFilter): Promise<string[]> {
   const pool = await loadServerPool(filter);
   return pool.map((q) => q.id);
+}
+
+/**
+ * Resolve a caller-supplied pool against the canonical corpus. Invalid IDs,
+ * review-only questions and duplicates never reach the client. A malformed
+ * payload fails closed to an empty pool rather than falling back to all exams.
+ */
+export async function getExplicitPoolIds(raw: unknown): Promise<string[]> {
+  const all = await getAllQuestionsLazy();
+  return selectExplicitPoolIds(
+    raw,
+    all.filter(isPracticeReadyQuestion).map((question) => question.id),
+  );
 }
 
 /** Look up a single question by ID (server-only). */

@@ -320,6 +320,33 @@ button,
   padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
 }
 
+/* MobileBottomNav is fixed, so reserve its measured box in the root content
+   flow. The tabs are min-h-[48px], plus the top border and safe-area padding;
+   the extra 0.5rem keeps the final card/CTA visibly separate from the bar. */
+.mobile-bottom-nav {
+  box-sizing: border-box;
+  height: calc(3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem));
+}
+
+.mobile-bottom-nav-reserve {
+  padding-bottom: calc(3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem) + 0.5rem);
+}
+
+/* The footer is outside #main-content, so reserve the fixed nav there too. */
+.mobile-bottom-nav-footer-reserve {
+  padding-bottom: calc(2rem + 3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem) + 0.5rem);
+}
+
+@media (min-width: 45rem) {
+  .mobile-bottom-nav-reserve {
+    padding-bottom: 0;
+  }
+
+  .mobile-bottom-nav-footer-reserve {
+    padding-bottom: 2rem;
+  }
+}
+
 .bottom-safe {
   bottom: max(env(safe-area-inset-bottom), 1rem);
 }

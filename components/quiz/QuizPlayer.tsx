@@ -58,7 +58,10 @@ interface Props {
   total: number;
   mode: string;
   backHref?: string;
+  backLabel?: string;
   exam?: string;
+  completionLabel?: string;
+  completionShareHref?: string;
   onNext: () => void;
 }
 
@@ -69,7 +72,10 @@ export function QuizPlayer({
   total,
   mode,
   backHref = "/",
+  backLabel = "モード選択に戻る",
   exam = "ap",
+  completionLabel,
+  completionShareHref,
   onNext,
 }: Props) {
   const router = useRouter();
@@ -304,7 +310,7 @@ export function QuizPlayer({
             該当する問題がありませんでした。
           </p>
           <Button variant="outline" onClick={() => router.push(backHref)}>
-            <ArrowLeft className="h-4 w-4" /> モード選択に戻る
+            <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
       </div>
@@ -318,6 +324,8 @@ export function QuizPlayer({
         elapsed={elapsed}
         exam={exam}
         mode={mode}
+        labelOverride={completionLabel}
+        shareHref={completionShareHref}
         onRetry={() => {
           setStats({ answered: 0, correct: 0 });
           setElapsed(0);
@@ -326,6 +334,7 @@ export function QuizPlayer({
           router.push(backHref);
         }}
         onBack={() => router.push(backHref)}
+        backLabel={backLabel}
       />
     );
   }
@@ -349,7 +358,7 @@ export function QuizPlayer({
             variant="ghost"
             size="icon"
             onClick={() => router.push(backHref)}
-            aria-label="モード選択に戻る"
+            aria-label={backLabel}
             className="hover:bg-zinc-100 dark:hover:bg-zinc-800"
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
@@ -591,6 +600,9 @@ export function QuizCompleteScreen({
   mode,
   onRetry,
   onBack,
+  backLabel = "モード選択に戻る",
+  labelOverride,
+  shareHref,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
@@ -598,6 +610,9 @@ export function QuizCompleteScreen({
   mode: string;
   onRetry: () => void;
   onBack: () => void;
+  backLabel?: string;
+  labelOverride?: string;
+  shareHref?: string;
 }) {
   const [copied, setCopied] = React.useState(false);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -614,8 +629,11 @@ export function QuizCompleteScreen({
     // fire once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const label = examLabel(exam);
-  const shareUrl = `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
+  const label = labelOverride ?? examLabel(exam);
+  const safeShareHref = shareHref && /^\/(?!\/)/.test(shareHref) ? shareHref : undefined;
+  const shareUrl = safeShareHref
+    ? `${QUIZ_ORIGIN}${safeShareHref}`
+    : `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
   const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
@@ -684,7 +702,7 @@ export function QuizCompleteScreen({
             もう一度挑戦
           </Button>
           <Button variant="outline" onClick={onBack} className="w-full">
-            <ArrowLeft className="h-4 w-4" /> モード選択に戻る
+            <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
 

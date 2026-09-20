@@ -149,10 +149,14 @@ export default function RootLayout({
             <div className="print:hidden">
               <SiteHeader />
             </div>
-            <div id="main-content" tabIndex={-1} className="flex flex-1 flex-col overflow-x-clip outline-none">
+            <div
+              id="main-content"
+              tabIndex={-1}
+              className="mobile-bottom-nav-reserve flex flex-1 flex-col overflow-x-clip outline-none"
+            >
               {children}
             </div>
-            <footer className="pb-safe mt-auto border-t border-border bg-background/60 px-4 py-8 text-xs text-muted-foreground">
+            <footer className="mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
                 <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">
@@ -302,10 +306,6 @@ export default function RootLayout({
                 </div>
               </div>
             </footer>
-            {/* Spacer so content above the fixed mobile bottom nav stays */}
-            {/* visible on the smallest viewports; hidden once md+ exposes */}
-            {/* the top SiteHeader as the primary nav. */}
-            <div aria-hidden="true" className="h-14 md:hidden print:hidden" />
           </div>
           <MobileBottomNav />
         </ThemeProvider>

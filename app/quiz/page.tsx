@@ -3,7 +3,7 @@ import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import type { Metadata } from "next";
 import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/types";
-import { getPoolIds } from "@/lib/questions/pool-server";
+import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
@@ -48,6 +48,10 @@ interface SearchParams {
    */
   limit?: string;
   returnTo?: string;
+  source?: string;
+  ids?: string | string[];
+  /** Serialized /search filters, retained for diagnostics and shareability. */
+  search?: string;
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
@@ -76,7 +80,10 @@ export default async function QuizPage({
     : undefined;
 
   const exam: ExamCode = ALL_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
-  const session = parsePracticeSession(sp.session) ?? (examGroup?.length ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
+  const isSearchPool = sp.source === "search";
+  const session = isSearchPool
+    ? undefined
+    : parsePracticeSession(sp.session) ?? (examGroup?.length ? undefined : defaultPracticeSession(exam, sp.year ? Number(sp.year) : undefined));
   const examQuestions = await getQuestionsForExam(exam);
   const sessions = PRACTICE_SESSIONS.filter((s) => examQuestions.some((q) => q.session === s && (!sp.year || q.year === Number(sp.year)) && (!sp.season || q.season === sp.season)));
   const filter: QuizFilter = {
@@ -93,11 +100,16 @@ export default async function QuizPage({
     inOrder: sp.order === "1",
   };
 
-  const fullPoolIds = await getPoolIds(filter);
+  // Search-origin sessions carry an exact, bounded set. Invalid or stale IDs
+  // are discarded and an invalid payload fails closed to the empty state.
+  const fullPoolIds = isSearchPool
+    ? await getExplicitPoolIds(sp.ids ?? "")
+    : await getPoolIds(filter);
   // Honor the optional limit query (the home 3問体験 CTA sends limit=3).
   // Cap at 200 so a malformed value cannot make the page hang.
   const limit = sp.limit ? Math.max(1, Math.min(200, Number(sp.limit) || 0)) : 0;
   const poolIds = limit > 0 ? fullPoolIds.slice(0, limit) : fullPoolIds;
+  const backHref = quizBackHref({ exam, mode, returnTo: sp.returnTo });
 
   let categoryById: Record<string, string> | undefined;
   if (mode === "weakness") {
@@ -108,13 +120,16 @@ export default async function QuizPage({
 
   return (
     <>
-      <QuizModeTabs active={mode} exam={exam} />
-      {!examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
+      {!isSearchPool && <QuizModeTabs active={mode} exam={exam} />}
+      {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}
         mode={mode}
-        backHref={quizBackHref({ exam, mode, returnTo: sp.returnTo })}
-        exam={exam}
+        backHref={backHref}
+        backLabel={isSearchPool ? "検索結果に戻る" : undefined}
+        exam={isSearchPool ? "search" : exam}
+        completionLabel={isSearchPool ? "検索結果から選んだ問題" : undefined}
+        completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
       />
     </>

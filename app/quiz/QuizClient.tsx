@@ -84,13 +84,19 @@ export function QuizClient({
   poolIds,
   mode,
   backHref,
+  backLabel,
   exam = "ap",
+  completionLabel,
+  completionShareHref,
   categoryById,
 }: {
   poolIds: string[];
   mode: QuizMode;
   backHref: string;
+  backLabel?: string;
   exam?: string;
+  completionLabel?: string;
+  completionShareHref?: string;
   categoryById?: Record<string, string>;
 }) {
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
@@ -159,7 +165,10 @@ export function QuizClient({
       total={sessionIds.length}
       mode={mode}
       backHref={backHref}
+      backLabel={backLabel}
       exam={exam}
+      completionLabel={completionLabel}
+      completionShareHref={completionShareHref}
       onNext={handleNext}
     />
   );
