@@ -15,9 +15,15 @@ describe("consistent qualification selection", () => {
     expect(screen.queryByRole("tablist")).toBeNull();
     const safety = screen.getByRole("region", { name: "労働安全コンサルタント" });
     const health = screen.getByRole("region", { name: "労働衛生コンサルタント" });
-    expect(within(safety).getByRole("link", { name: /産業安全一般/ })).toHaveAttribute("href", expect.stringContaining("group=cskohyo"));
+    expect(within(safety).getByRole("link", { name: /産業安全一般/ })).toHaveAttribute(
+      "href",
+      "/e-learning/exams/qualifications/rodo-anzen-consultant",
+    );
     expect(within(safety).queryByRole("link", { name: /労働衛生一般/ })).toBeNull();
-    expect(within(health).getByRole("link", { name: /労働衛生一般/ })).toBeInTheDocument();
+    expect(within(health).getByRole("link", { name: /労働衛生一般/ })).toHaveAttribute(
+      "href",
+      "/e-learning/exams/qualifications/rodo-eisei-consultant",
+    );
     expect(within(health).queryByRole("link", { name: /産業安全一般/ })).toBeNull();
   });
   it("keeps old consultant subject links and shows only the selected subject papers", () => {

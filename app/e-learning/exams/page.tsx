@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { permanentRedirect } from "next/navigation";
 import { ExternalLink } from "lucide-react";
 import { ExamStructuredData } from "@/components/exam-library/exam-structured-data";
 import {
@@ -23,18 +24,15 @@ import {
   type ExamGroupId,
 } from "@/lib/exam-library-model";
 import { getExamPaperStats } from "@/lib/exam-library-papers";
+import {
+  qualificationHubForSelection,
+  qualificationHubPath,
+} from "@/lib/exam-qualification-hubs";
 import { SITE_BASE_URL as SITE_URL } from "@/lib/seo/config";
 
 const TITLE = "安全衛生の公表試験問題 過去問演習｜試験・科目・回を選んで1問ずつ";
 const DESCRIPTION =
   "ボイラー技士・クレーン・衛生管理者などの免許試験、作業環境測定士試験、労働安全・労働衛生コンサルタント試験の公表問題を、試験・科目・回を選んで1問ずつ解けます。公式正答がある問題だけ採点し、間違えた問題を解き直せます。";
-
-export const metadata: Metadata = {
-  title: TITLE,
-  description: DESCRIPTION,
-  alternates: { canonical: EXAM_LIBRARY_PATH },
-  robots: { index: true, follow: true },
-};
 
 interface ExamLibraryPageProps {
   searchParams: Promise<{ group?: string | string[]; subject?: string | string[] }>;
@@ -42,6 +40,17 @@ interface ExamLibraryPageProps {
 
 function firstValue(value: string | string[] | undefined): string | undefined {
   return Array.isArray(value) ? value[0] : value;
+}
+
+export async function generateMetadata({ searchParams }: ExamLibraryPageProps): Promise<Metadata> {
+  const params = await searchParams;
+  const hasFilter = Boolean(firstValue(params.group) || firstValue(params.subject));
+  return {
+    title: TITLE,
+    description: DESCRIPTION,
+    alternates: { canonical: EXAM_LIBRARY_PATH },
+    robots: { index: !hasFilter, follow: true },
+  };
 }
 
 function buildItems(): ExamCatalogItem[] {
@@ -68,12 +77,29 @@ export default async function ExamLibraryPage({ searchParams }: ExamLibraryPageP
   const params = await searchParams;
   const items = buildItems();
   const groups = EXAM_GROUPS.filter((group) => items.some((item) => item.group === group.id));
-  const requestedGroup = findExamGroup(firstValue(params.group) ?? "");
+  const rawGroup = firstValue(params.group);
+  const requestedSubject = firstValue(params.subject);
+  const requestedGroup = findExamGroup(rawGroup ?? "");
+  if ((rawGroup && !requestedGroup) || (!rawGroup && requestedSubject)) {
+    permanentRedirect(EXAM_LIBRARY_PATH);
+  }
+  if (
+    requestedGroup &&
+    requestedSubject &&
+    !items.some(
+      (item) => item.group === requestedGroup.id && item.subject === requestedSubject,
+    )
+  ) {
+    permanentRedirect(EXAM_LIBRARY_PATH);
+  }
+  if (requestedGroup) {
+    const hub = qualificationHubForSelection(requestedGroup.id, requestedSubject);
+    if (hub) permanentRedirect(qualificationHubPath(hub.slug));
+  }
   const initialGroup: ExamGroupId =
     requestedGroup && groups.some((group) => group.id === requestedGroup.id)
       ? requestedGroup.id
       : (groups[0]?.id ?? "lckohyo");
-  const requestedSubject = firstValue(params.subject);
   const initialSubject =
     requestedSubject &&
     items.some((item) => item.group === initialGroup && item.subject === requestedSubject)

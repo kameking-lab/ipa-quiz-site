@@ -1,4 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  EXAM_GROUP_IDS,
+  EXAM_LIBRARY_PATH,
+  type ExamGroupId,
+} from "@/lib/exam-library-model";
+import {
+  qualificationHubForSelection,
+  qualificationHubPath,
+} from "@/lib/exam-qualification-hubs";
 
 const REALM = "Kakomon AI Admin";
 
@@ -66,6 +75,24 @@ function unauthorized(): NextResponse {
   });
 }
 
+function examLibraryRedirect(req: NextRequest): NextResponse {
+  const group = req.nextUrl.searchParams.get("group");
+  const subject = req.nextUrl.searchParams.get("subject") ?? undefined;
+  if (!group && !subject) return NextResponse.next();
+
+  const destination = req.nextUrl.clone();
+  destination.search = "";
+  if (!group || !(EXAM_GROUP_IDS as readonly string[]).includes(group)) {
+    destination.pathname = EXAM_LIBRARY_PATH;
+    return NextResponse.redirect(destination, 308);
+  }
+
+  const hub = qualificationHubForSelection(group as ExamGroupId, subject);
+  if (!hub) return NextResponse.next();
+  destination.pathname = qualificationHubPath(hub.slug);
+  return NextResponse.redirect(destination, 308);
+}
+
 function timingSafeEqual(a: string, b: string): boolean {
   if (a.length !== b.length) return false;
   let result = 0;
@@ -95,6 +122,10 @@ function decodeBasicCredentials(header: string): { user: string; pass: string } 
 export function middleware(req: NextRequest) {
   // 削除済みルートは admin 認証より前に 410 を返す（admin パスとは重複しない）。
   if (GONE_SET.has(req.nextUrl.pathname)) return gone();
+
+  // React のストリーミング開始後に page.tsx で redirect() すると、HTTP 200 と
+  // クライアント側リダイレクトになる。旧絞り込みURLはヘッダー送信前に 308 へ寄せる。
+  if (req.nextUrl.pathname === EXAM_LIBRARY_PATH) return examLibraryRedirect(req);
 
   const user = process.env.ADMIN_BASIC_USER?.trim();
   const pass = process.env.ADMIN_BASIC_PASS?.trim();
@@ -135,6 +166,7 @@ export const config = {
     "/admin/:path*",
     "/api/admin",
     "/api/admin/:path*",
+    "/e-learning/exams",
     // --- GONE_PATHS（410 Gone・後継なし削除ページ）---
     "/commerce",
     "/pricing",
