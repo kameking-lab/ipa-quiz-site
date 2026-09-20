@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Sparkles, ExternalLink, Info } from "lucide-react";
+import { ipaSourceLabel } from "@/lib/exam-config";
 
 interface Props {
   lastUpdatedISO: string;
@@ -53,7 +54,7 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            出典: IPA 問題 PDF
+            出典: {ipaSourceLabel(sourcePdfUrl, "question")}
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
           <a
@@ -62,7 +63,7 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            IPA 公式解答 PDF
+            {ipaSourceLabel(answerPdfUrl, "answer")}
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
         </div>

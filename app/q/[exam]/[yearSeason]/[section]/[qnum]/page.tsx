@@ -17,7 +17,7 @@ import {
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
-import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
@@ -352,7 +352,7 @@ export default async function QuestionPage({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1 font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-700 dark:hover:text-amber-200"
             >
-              IPA 公式 PDF で図表を見る
+              {ipaSourceLabel(getSafePdfUrl(q.sourcePdfUrl), "question")}で図表を見る
               <ExternalLink className="h-3 w-3" />
             </a>
           </div>
