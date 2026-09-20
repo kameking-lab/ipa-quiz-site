@@ -18,6 +18,10 @@ const CANONICAL_PAGES: [string, string][] = [
   ["/demo/afternoon", "/demo/afternoon"],
   ["/sitemap", "/sitemap"],
   ["/student", "/student"],
+  [
+    "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
+    "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
+  ],
   // ─── クイズ関連 ────────────────────────────────────────────────────────────
   ["/quiz/review", "/quiz/review"],
   ["/quiz/stream", "/quiz/stream"],

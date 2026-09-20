@@ -149,3 +149,48 @@ describe("gone middleware — 410 for retired routes (no successor)", () => {
     }
   });
 });
+
+describe("safety qualification legacy redirects", () => {
+  function examReq(query = ""): NextRequest {
+    return new NextRequest(`https://www.kakomon-ai.jp/e-learning/exams${query}`);
+  }
+
+  it("redirects a first-class qualification filter before React starts streaming", () => {
+    const res = middleware(
+      examReq("?group=lckohyo&subject=%E7%AC%AC%E4%B8%80%E7%A8%AE%E8%A1%9B%E7%94%9F%E7%AE%A1%E7%90%86%E8%80%85"),
+    );
+    expect(res.status).toBe(308);
+    expect(res.headers.get("location")).toBe(
+      "https://www.kakomon-ai.jp/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha",
+    );
+  });
+
+  it("redirects invalid groups to the clean library URL", () => {
+    const res = middleware(examReq("?group=unknown&subject=unknown"));
+    expect(res.status).toBe(308);
+    expect(res.headers.get("location")).toBe("https://www.kakomon-ai.jp/e-learning/exams");
+  });
+
+  it("does not guess measurement or consultant hubs for unknown subjects", () => {
+    for (const query of [
+      "?group=emkohyo&subject=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E7%A7%91%E7%9B%AE",
+      "?group=cskohyo&subject=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E7%A7%91%E7%9B%AE",
+    ]) {
+      const res = middleware(examReq(query));
+      expect(res.status).toBe(308);
+      expect(res.headers.get("location")).toBe("https://www.kakomon-ai.jp/e-learning/exams");
+    }
+  });
+
+  it("passes through clean and non-hub library views without admin auth", () => {
+    for (const query of ["", "?group=lckohyo&subject=%E6%BD%9C%E6%B0%B4%E5%A3%AB"]) {
+      const res = middleware(examReq(query));
+      expect(res.status).toBe(200);
+      expect(res.headers.get("x-middleware-next")).toBe("1");
+    }
+  });
+
+  it("includes the exam library in the matcher", () => {
+    expect(config.matcher).toContain("/e-learning/exams");
+  });
+});

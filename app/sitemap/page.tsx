@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { getAllBlogSlugs, getBlogPostBySlug } from "@/data/blog";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
@@ -89,6 +90,7 @@ export default function HtmlSitemapPage() {
           {[
             { href: "/", label: "ホーム" },
             { href: "/search", label: "問題検索" },
+            { href: "/e-learning/exams", label: "安全衛生の過去問" },
             { href: "/modes/year", label: "年度別一覧" },
             { href: "/modes/topic", label: "分野別一覧" },
             { href: "/topics", label: "トピック一覧" },
@@ -126,6 +128,22 @@ export default function HtmlSitemapPage() {
                 className="text-sky-600 hover:underline dark:text-sky-400"
               >
                 {p.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section aria-label="安全衛生資格別ページ" className="mb-10">
+        <h2 className="mb-3 text-lg font-bold text-foreground">安全衛生資格別ページ</h2>
+        <ul className="grid gap-2 text-sm sm:grid-cols-2">
+          {QUALIFICATION_HUBS.map((hub) => (
+            <li key={hub.slug}>
+              <Link
+                href={qualificationHubPath(hub.slug)}
+                className="block rounded-xl border border-border px-3 py-2 text-sky-600 hover:border-sky-300 hover:underline dark:text-sky-400"
+              >
+                {hub.name}の過去問
               </Link>
             </li>
           ))}
