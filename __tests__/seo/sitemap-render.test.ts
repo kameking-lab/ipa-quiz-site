@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import {
-  getIndexableQuestions,
+  getSitemapQuestions,
   getSitemapChunkCount,
   SITEMAP_CHUNK_SIZE,
 } from "@/lib/seo/sitemap-pagination";
@@ -240,7 +240,7 @@ describe("renderQuestionsSitemapChunkXml pagination", () => {
       expect(chunkLocs.length).toBeLessThanOrEqual(SITEMAP_CHUNK_SIZE);
       seen.push(...chunkLocs);
     }
-    expect(seen.length).toBe(getIndexableQuestions().length);
+    expect(seen.length).toBe(getSitemapQuestions().length);
     // No URL appears in two chunks.
     expect(new Set(seen).size).toBe(seen.length);
   });

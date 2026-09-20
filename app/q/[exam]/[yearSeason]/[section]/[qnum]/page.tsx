@@ -54,6 +54,7 @@ import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
+import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
 // SSG only the most recent years to keep build time tractable; let older
 // years render on-demand with ISR caching. dynamicParams=true is what lets
@@ -88,7 +89,9 @@ export async function generateMetadata({
   }
   const title = questionTitle(q);
   const description = questionSnippet(q);
-  const canonical = questionPagePath(q);
+  const canonical = questionPagePath(
+    getQuestionCanonicalRepresentative(ALL_QUESTIONS, q),
+  );
   const indexable = isPracticeReadyQuestion(q);
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({ type: "question", title: title.slice(0, 80) }).toString()}`;
 
@@ -216,7 +219,12 @@ export default async function QuestionPage({
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
 
-  const pageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
+  // Structured-data identities follow rel=canonical. The visible page, links,
+  // breadcrumbs and quiz return target continue to use q, preserving the exam
+  // context in which the visitor opened this shared morning-I question.
+  const canonicalQuestion = getQuestionCanonicalRepresentative(ALL_QUESTIONS, q);
+  const canonicalPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(canonicalQuestion)}`;
+  const requestedPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
   const title = questionTitle(q);
@@ -225,7 +233,7 @@ export default async function QuestionPage({
 
   const jsonLd = buildQuestionJsonLd({
     question: q,
-    pageUrlAbs,
+    pageUrlAbs: canonicalPageUrlAbs,
     title,
     lastUpdatedISO,
   });
@@ -299,7 +307,7 @@ export default async function QuestionPage({
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
           <div className="print:hidden">
-            <ShareButtons url={pageUrlAbs} text={title} compact />
+            <ShareButtons url={requestedPageUrlAbs} text={title} compact />
           </div>
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
