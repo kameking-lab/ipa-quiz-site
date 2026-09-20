@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
+import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import {
   EXAM_GROUP_IDS,
-  EXAM_LIBRARY_PATH,
   type ExamGroupId,
 } from "@/lib/exam-library-model";
 import {
@@ -87,7 +87,16 @@ function examLibraryRedirect(req: NextRequest): NextResponse {
     return NextResponse.redirect(destination, 308);
   }
 
-  const hub = qualificationHubForSelection(group as ExamGroupId, subject);
+  const groupId = group as ExamGroupId;
+  if (
+    subject &&
+    !EXAM_CATALOG.some((entry) => entry.group === groupId && entry.subject === subject)
+  ) {
+    destination.pathname = EXAM_LIBRARY_PATH;
+    return NextResponse.redirect(destination, 308);
+  }
+
+  const hub = qualificationHubForSelection(groupId, subject, EXAM_CATALOG);
   if (!hub) return NextResponse.next();
   destination.pathname = qualificationHubPath(hub.slug);
   return NextResponse.redirect(destination, 308);

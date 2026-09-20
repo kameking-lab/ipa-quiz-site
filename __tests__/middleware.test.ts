@@ -171,6 +171,17 @@ describe("safety qualification legacy redirects", () => {
     expect(res.headers.get("location")).toBe("https://www.kakomon-ai.jp/e-learning/exams");
   });
 
+  it("does not guess measurement or consultant hubs for unknown subjects", () => {
+    for (const query of [
+      "?group=emkohyo&subject=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E7%A7%91%E7%9B%AE",
+      "?group=cskohyo&subject=%E5%AD%98%E5%9C%A8%E3%81%97%E3%81%AA%E3%81%84%E7%A7%91%E7%9B%AE",
+    ]) {
+      const res = middleware(examReq(query));
+      expect(res.status).toBe(308);
+      expect(res.headers.get("location")).toBe("https://www.kakomon-ai.jp/e-learning/exams");
+    }
+  });
+
   it("passes through clean and non-hub library views without admin auth", () => {
     for (const query of ["", "?group=lckohyo&subject=%E6%BD%9C%E6%B0%B4%E5%A3%AB"]) {
       const res = middleware(examReq(query));
