@@ -4,7 +4,18 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 import { describeExamDate } from "@/lib/exam-library-model";
 import { Button } from "@/components/ui/button";
-export const metadata: Metadata = { title: "安全衛生の問題検索", robots: { index: false, follow: true }, alternates: { canonical: "/e-learning/search" } };
+export const metadata: Metadata = {
+  title: "労働安全衛生の過去問検索",
+  description: "衛生管理者、作業環境測定士、労働安全・労働衛生コンサルタントの公表過去問を、キーワードと試験・科目で検索できます。",
+  robots: { index: false, follow: true },
+  alternates: { canonical: "/e-learning/search" },
+  openGraph: {
+    title: "労働安全衛生の過去問検索",
+    description: "安全衛生分野の公表過去問を資格・科目とキーワードで検索。",
+    url: "/e-learning/search",
+    type: "website",
+  },
+};
 export default async function SafetySearchPage({ searchParams }: { searchParams: Promise<{ q?: string; subject?: string }> }) {
   const params = await searchParams;
   const q = typeof params.q === "string" ? params.q.trim().slice(0,100) : "";
