@@ -11,6 +11,7 @@ import { questionPagePath } from "./question-url";
 import {
   SITEMAP_CHUNK_SIZE,
   getIndexableQuestions,
+  getSitemapQuestions,
   getSitemapChunkCount,
 } from "./sitemap-pagination";
 import { getHubTopics } from "./topics";
@@ -302,7 +303,7 @@ export function renderBooksSitemapXml(): string {
 }
 
 export function renderQuestionsSitemapChunkXml(pageIndex: number): string {
-  const indexable = getIndexableQuestions();
+  const indexable = getSitemapQuestions();
   const start = pageIndex * SITEMAP_CHUNK_SIZE;
   const slice = indexable.slice(start, start + SITEMAP_CHUNK_SIZE);
   return renderUrlSet(
