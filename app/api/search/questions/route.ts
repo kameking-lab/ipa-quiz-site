@@ -50,6 +50,9 @@ const QuerySchema = z.object({
     .union([z.literal("true"), z.literal("false"), z.boolean()])
     .transform((v) => v === true || v === "true")
     .optional(),
+  // Public /search URLs use the compact `calc=1` form. Keep the longer API
+  // parameter too for backwards compatibility with direct consumers.
+  calc: z.enum(["0", "1"]).transform((value) => value === "1").optional(),
   sort: z.enum(["relevance", "year_desc", "category", "random"]).optional(),
   limit: z.coerce.number().int().min(1).max(60).optional(),
   offset: z.coerce.number().int().min(0).max(5000).optional(),
@@ -80,7 +83,7 @@ export async function GET(req: Request) {
     topicTag: data.topicTag,
     difficulty: data.difficulty as Difficulty | undefined,
     hasImage: data.hasImage,
-    calculationOnly: data.calculationOnly,
+    calculationOnly: data.calculationOnly ?? data.calc,
     sort: data.sort,
     limit: data.limit,
     offset: data.offset,

@@ -76,10 +76,10 @@ function isActive(pathname: string | null, tab: TabItem): boolean {
  * with secondary destinations (settings, recommended books, etc). PC keeps
  * the existing top header untouched — this component is hidden at md+.
  *
- * Layout cooperation: the bar adds its own height (≈56px + safe-area) at
- * the bottom of the viewport via fixed positioning. A body-level
- * pb-[64px] md:pb-0 class added in the root layout reserves the space
- * so content does not sit underneath.
+ * Layout cooperation: the bar has an explicit height (48px tabs + border +
+ * safe-area inset) and the root layout reserves that height plus an 8px gap.
+ * The focused learning routes return before rendering this bar, preserving
+ * their dedicated bottom CTA and preventing this nav from intercepting taps.
  */
 export function MobileBottomNav() {
   const pathname = usePathname();
@@ -101,7 +101,7 @@ export function MobileBottomNav() {
     <>
       <nav
         aria-label="モバイル底タブ"
-        className="pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 shadow-[0_-2px_10px_-6px_rgba(0,0,0,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/80 md:hidden print:hidden"
+        className="mobile-bottom-nav pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 shadow-[0_-2px_10px_-6px_rgba(0,0,0,0.15)] backdrop-blur supports-[backdrop-filter]:bg-background/80 md:hidden print:hidden"
       >
         <ul className="mx-auto flex max-w-3xl items-stretch">
           {tabs.map((tab) => {

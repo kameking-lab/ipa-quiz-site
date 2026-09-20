@@ -5,7 +5,7 @@ import { test, expect, type APIRequestContext } from "@playwright/test";
  *
  * The /q/* pages are the search-entry surface. Previously a visitor could only
  * read them and had to hop to /quiz to actually answer. This verifies:
- *   1. SEO assets are intact — the question choices and the QAPage JSON-LD ship
+ *   1. SEO assets are intact — the question choices and LearningResource JSON-LD ship
  *      in the server-rendered HTML (crawlable / readable with JS off).
  *   2. After hydration the visitor can answer in place: clicking a choice
  *      reveals correct/incorrect and surfaces the explanation, no navigation.
@@ -23,7 +23,7 @@ async function pickQuestionUrl(request: APIRequestContext): Promise<string> {
 }
 
 test.describe("/q inline answer", () => {
-  test("server-rendered HTML keeps the choices + QAPage JSON-LD (SEO/no-JS)", async ({
+  test("server-rendered HTML keeps the choices + honest JSON-LD (SEO/no-JS)", async ({
     request,
   }) => {
     const path = await pickQuestionUrl(request);
@@ -31,8 +31,9 @@ test.describe("/q inline answer", () => {
     expect(res.status()).toBe(200);
     const html = await res.text();
 
-    // QAPage structured data preserved.
-    expect(html).toContain('"@type":"QAPage"');
+    expect(html).toContain('"@type":"LearningResource"');
+    expect(html).toContain('"@type":"Question"');
+    expect(html).not.toContain('"@type":"QAPage"');
     // Choices ship in SSR HTML as a radiogroup of radio buttons with text.
     expect(html).toMatch(/role="radiogroup"/);
     const radioCount = (html.match(/role="radio"/g) ?? []).length;

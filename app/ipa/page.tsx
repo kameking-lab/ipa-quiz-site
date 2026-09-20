@@ -24,7 +24,8 @@ import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
-const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
+const HOME_TITLE = "IPA過去問×AI、無料で全機能";
+const HOME_SOCIAL_TITLE = `${HOME_TITLE} | 過去問AI`;
 // Snippet-optimised: front-load the value prop + count and drop the 13-code list
 // （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
 // pushed Google toward synthesising a worse snippet from the page body. Kept
@@ -46,12 +47,12 @@ export const metadata: Metadata = {
   // landing page get the same keyword-rich title/description users see in
   // SERPs, not the generic site-wide fallback.
   openGraph: {
-    title: HOME_TITLE,
+    title: HOME_SOCIAL_TITLE,
     description: HOME_DESCRIPTION,
     url: "/ipa",
   },
   twitter: {
-    title: HOME_TITLE,
+    title: HOME_SOCIAL_TITLE,
     description: HOME_DESCRIPTION,
   },
 };
