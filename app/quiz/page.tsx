@@ -1,6 +1,6 @@
 import { defaultPracticeSession, parsePracticeSession, quizBackHref, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
-import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import type { Metadata } from "next";
 import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/types";
 import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
@@ -55,6 +55,14 @@ interface SearchParams {
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
+const MODE_LABELS: Record<QuizMode, string> = {
+  random: "ランダム",
+  year: "年度別",
+  topic: "分野別",
+  review: "復習",
+  unanswered: "未回答",
+  weakness: "苦手",
+};
 
 
 export default async function QuizPage({
@@ -120,6 +128,11 @@ export default async function QuizPage({
 
   return (
     <>
+      <h1 className="sr-only">
+        {isSearchPool
+          ? "検索結果から選んだ過去問演習"
+          : `${EXAM_CONFIGS[exam].nameFull} ${MODE_LABELS[mode]}過去問演習`}
+      </h1>
       {!isSearchPool && <QuizModeTabs active={mode} exam={exam} />}
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient

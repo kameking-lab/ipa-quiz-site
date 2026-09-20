@@ -107,7 +107,6 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/quiz/stream`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/study-plan`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/student`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/referral`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },

@@ -6,7 +6,7 @@ import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags }
 import type { Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { getOfficialAnswerPdfUrl, getSafePdfUrl } from "@/lib/exam-config";
+import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
 import { questionPagePath } from "@/lib/seo/question-url";
@@ -199,7 +199,7 @@ export function ExplanationCard({
             className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
-            問題PDF
+            {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
           </a>
           <a
             href={getOfficialAnswerPdfUrl(question.sourcePdfUrl)}
@@ -208,7 +208,7 @@ export function ExplanationCard({
             className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
-            公式解答PDF
+            {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl), "answer")}
           </a>
         </div>
       </div>

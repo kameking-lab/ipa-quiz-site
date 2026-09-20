@@ -184,11 +184,9 @@ describe("renderMainSitemapXml route contract", () => {
   });
 
   it("omits 301-redirect routes (canonical destinations only)", () => {
-    // /quiz and /support 301-redirect (next.config.ts); /quiz/stream is the
-    // real route and must remain.
+    // /quiz and /support 301-redirect (next.config.ts).
     expect(mainLocs).not.toContain("/quiz");
     expect(mainLocs).not.toContain("/support");
-    expect(mainLocs).toContain("/quiz/stream");
   });
 
   it("omits noindex routes", () => {
@@ -197,6 +195,7 @@ describe("renderMainSitemapXml route contract", () => {
       "/success-stories",
       "/bookmarks",
       "/review",
+      "/quiz/stream",
       "/my-progress",
     ]) {
       expect(mainLocs).not.toContain(path);
