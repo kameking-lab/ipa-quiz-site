@@ -6,12 +6,14 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { filterQuestions } from "@/lib/questions/filter";
 import { StreamQuizLoader } from "@/components/quiz/stream/StreamQuizLoader";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 
 export const metadata: Metadata = {
   title: "ストリーム学習 — 自分のペースで連続演習",
   description:
     "問題を解き、解説を確認してから次へ進む連続学習モード。10問ごとに学習結果を振り返り、共有できます。",
   alternates: { canonical: "/quiz/stream" },
+  robots: { index: false, follow: true },
 };
 
 const VALID_EXAMS = new Set<string>(["ap","ip","sg","fe","sc","nw","db","st","sa","pm","es","sm","au"]);
@@ -46,6 +48,7 @@ export default async function StreamQuizPage({
 
   return (
     <>
+      <h1 className="sr-only">{EXAM_CONFIGS[exam].nameFull} ストリーム過去問演習</h1>
       <QuizModeTabs active="stream" exam={exam} />
       <PracticeSessionTabs sessions={[...sessions]} selected={session} />
       <StreamQuizLoader pool={pool} backHref={quizBackHref({ exam, returnTo: sp.returnTo })} />

@@ -7,11 +7,26 @@ import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { SearchClient } from "@/components/search/SearchClient";
 import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
-export const metadata: Metadata = {
-  title: "問題検索",
-  description: `${APPROX_QUESTION_COUNT_LABEL}問超の IPA 情報処理技術者試験 過去問をキーワード・試験区分・年度・分野・難度で横断検索。IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU の 13 区分すべてに対応し、ヒットした問題は AI コパイロット付きでそのまま解説まで確認できます。`,
-  alternates: { canonical: "/search" },
-};
+const SEARCH_DESCRIPTION = `${APPROX_QUESTION_COUNT_LABEL}問超の IPA 情報処理技術者試験 過去問をキーワード・試験区分・年度・分野・難度で横断検索。IP/SG/FE/AP/SC/NW/DB/ES/ST/SA/PM/SM/AU の 13 区分すべてに対応し、ヒットした問題は AI コパイロット付きでそのまま解説まで確認できます。`;
+
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  const params = await searchParams;
+  const hasSearchState = Object.values(params).some((value) =>
+    Array.isArray(value) ? value.some(Boolean) : Boolean(value),
+  );
+  return {
+    title: "問題検索",
+    description: SEARCH_DESCRIPTION,
+    alternates: { canonical: "/search" },
+    robots: hasSearchState
+      ? { index: false, follow: true }
+      : { index: true, follow: true },
+  };
+}
 
 export default function SearchPage() {
   return (

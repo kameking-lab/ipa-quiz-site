@@ -300,6 +300,22 @@ function isLivePdfUrl(url: string | undefined): url is string {
   );
 }
 
+/** True when a link points directly to a PDF document, rather than an index page. */
+export function isPdfDocumentUrl(url: string | undefined): boolean {
+  if (!url) return false;
+  try {
+    return new URL(url).pathname.toLowerCase().endsWith(".pdf");
+  } catch {
+    return false;
+  }
+}
+
+/** Honest user-facing label for an IPA source link after fallback handling. */
+export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
+  if (!isPdfDocumentUrl(url)) return "IPA公式の過去問一覧";
+  return kind === "question" ? "問題PDF" : "公式解答PDF";
+}
+
 /**
  * Returns a valid, live IPA source URL for the given raw value.
  * Falls back to the IPA exam materials index when the URL is absent, a
