@@ -4,6 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition, practicalSourceUrls } from "@/lib/fp2/practical";
+import { splitPracticalChoices } from "@/lib/fp2/practical-choices";
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -25,13 +26,20 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
   if (!data || !q) notFound();
   const source = practicalSourceUrls(edition);
   const sourcePdfPage = `${source.question}#page=${q.sourcePage}`;
+  const choiceLayout = splitPracticalChoices(q.body, q.modelAnswer);
+  const selectedChoice = choiceLayout?.choices.find((choice) => String(choice.number) === q.modelAnswer.trim());
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp2" className="hover:underline">FP2級</Link> / <Link href="/fp2/practical" className="hover:underline">実技</Link> / <Link href={`/fp2/practical/${edition}`} className="hover:underline">{data.label}</Link> / 問{q.number}</nav>
       <header><h1 className="text-2xl font-bold text-foreground sm:text-3xl">{data.label} 実技 問{q.number}</h1><p className="mt-2 text-sm text-muted-foreground">法令基準日 {data.lawReferenceDate}</p></header>
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-lg font-semibold">問題</h2>
-        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{q.body}</p>
+        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{choiceLayout?.questionText ?? q.body}</p>
+        {choiceLayout ? <div aria-label="選択肢" className="mt-5 grid gap-3">
+          {choiceLayout.choices.map((choice) => <div key={choice.number} className="flex gap-3 rounded-xl border border-border bg-background p-4 text-base leading-relaxed">
+            <span className="shrink-0 font-bold text-primary">{choice.number}.</span><span>{choice.text}</span>
+          </div>)}
+        </div> : null}
       </section>
       {q.panels.length > 0 ? <section aria-label="原典の図表" className="mt-4">
         <details open className="rounded-2xl border border-border bg-card p-4 sm:p-5">
@@ -44,7 +52,7 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
       </section> : null}
       <details className="mt-5 rounded-2xl border border-primary/30 bg-card p-5 sm:p-6">
         <summary className="cursor-pointer text-lg font-bold text-primary">公式模範解答を見る</summary>
-        <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{q.modelAnswer}</p>
+        <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{selectedChoice ? `${selectedChoice.number}. ${selectedChoice.text}` : q.modelAnswer}</p>
         <p className="mt-3 text-xs text-muted-foreground">表記・単位・複数空欄の組合せは公式模範解答に合わせています。配点は協会非公表です。</p>
       </details>
       <div className="mt-6 flex flex-wrap gap-4 text-sm"><a href={sourcePdfPage} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary underline">公式問題PDF <ExternalLink className="h-3 w-3" /></a><a href={source.answer} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary underline">公式模範解答PDF <ExternalLink className="h-3 w-3" /></a></div>
