@@ -33,6 +33,7 @@ def main() -> None:
                         help="Resume one exam year first; may be passed twice")
     parser.add_argument("--limit-batches", type=int,
                         help="Bound model calls in this run; remaining batches stay resumable")
+    parser.add_argument("--plan", action="store_true", help="Print selected jobs without calling Claude")
     args = parser.parse_args()
     workers = args.workers
     if not 1 <= workers <= 3:
@@ -58,6 +59,9 @@ def main() -> None:
         jobs = jobs[:args.limit_batches]
     print(f"EM paper={len(papers)} expected={len(papers)*20} pendingDraftBatches={pending} "
           f"runningBatches={len(jobs)} workers={workers}", flush=True)
+    if args.plan:
+        print(json.dumps({"jobs": jobs}, ensure_ascii=False), flush=True)
+        return
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for future in as_completed([pool.submit(work, job) for job in jobs]):
             job, code, output = future.result()
