@@ -85,12 +85,13 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
     if legal_receipts:
         hashes["legalReceiptSha256"] = {str(path.relative_to(ROOT)).replace("\\", "/"): sha256(path.read_bytes()).hexdigest()
                                       for path in legal_receipts.values()}
+    source_root = ROOT / f"docs/evidence/denko2-sources/{batch_path.stem[:8]}"
     source_packs = ({
-        str(item["number"]): ROOT / f"docs/evidence/denko2-sources/20250525/q{item['number']:02}.json"
+        str(item["number"]): source_root / f"q{item['number']:02}.json"
         for item in original
-    } if batch_path.stem.startswith("20250525") else {})
+    } if source_root.is_dir() else {})
     hashes["sourcePackSha256"] = {
-        number: sha256(path.read_bytes()).hexdigest()
+        number: sha256(path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")).hexdigest()
         for number, path in source_packs.items() if path.exists()
     }
     hashes["sourceFigureSha256"] = {}
