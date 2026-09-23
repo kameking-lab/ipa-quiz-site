@@ -111,6 +111,13 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
         if number in legal_receipts:
             proof = json.loads(legal_receipts[number].read_text(encoding="utf-8"))
             blocks.append({"type": "text", "text": f"問{number}の一次法令照合receipt（URL・原文照合句・sha256を確認済み）: {json.dumps(proof, ensure_ascii=False)}"})
+            if proof.get("referenceImage"):
+                reference = ROOT / proof["referenceImage"]
+                if sha256(reference.read_bytes()).hexdigest() != proof["referenceImageSha256"]:
+                    raise ValueError(f"Q{number} internal reference image hash changed")
+                blocks.append({"type": "text", "text": f"問{number}の試験センター原表・内部照合用画像。公開リンクではなく肢別組合せの検証にだけ使う: {reference.name}"})
+                blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                         "data": b64encode(reference.read_bytes()).decode("ascii")}})
         detail_urls = candidate.get("imageUrls", []) + list(candidate.get("choiceImageUrls", {}).values())
         for image_url in detail_urls:
             path = ROOT / "public" / image_url.lstrip("/")

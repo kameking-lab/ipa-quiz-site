@@ -3,7 +3,7 @@ import { describe, expect, it, vi } from "vitest";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
-import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
+import { DENKO2_2026_PILOT, DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { getChoiceKeys } from "@/lib/questions/answers";
 import { shuffleChoices } from "@/lib/questions/filter";
@@ -17,12 +17,12 @@ const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUEST
 const FP2_PILOT = FP2_QUESTIONS.filter((q) => q.year === 2026);
 
 describe("official-source qualification pilot data", () => {
-  it("contains the transcribed FP sets and gated electrical pilot", () => {
+  it("contains the transcribed FP sets and the complete gated electrician academic papers", () => {
     expect(FP2_QUESTIONS).toHaveLength(250);
     expect(FP2_PILOT).toHaveLength(10);
     expect(FP3_QUESTIONS).toHaveLength(120);
     expect(DENKEN3_QUESTIONS).toHaveLength(2);
-    expect(DENKO2_QUESTIONS).toHaveLength(10);
+    expect(DENKO2_QUESTIONS).toHaveLength(200);
   });
 
   it("keeps Denken3 behind the notification-required publication gate", () => {
@@ -65,14 +65,23 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_PILOT.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
   });
 
-  it("matches the official 2026 first-term electrician answer sequence and diagrams", () => {
-    expect(DENKO2_QUESTIONS.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
-    expect(DENKO2_QUESTIONS.map((q) => q.answer)).toEqual(["ア","イ","ウ","エ","イ","イ","エ","イ","ア","ウ"]);
+  it("holds 50 consecutive academic questions in each 2024–2025 sitting", () => {
+    for (const year of [2024, 2025]) {
+      for (const season of ["first", "second"]) {
+        const sitting = DENKO2_QUESTIONS.filter((q) => q.year === year && q.season === season);
+        expect(sitting.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+      }
+    }
     expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choices ?? {}).length === 4)).toBe(true);
     expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choiceExplanations ?? {}).length === 4)).toBe(true);
-    expect(Object.keys(DENKO2_QUESTIONS[9]!.choiceImageUrls ?? {})).toEqual(["ア","イ","ウ","エ"]);
     expect(DENKO2_QUESTIONS.every((q) => !hasUnrenderableContent(q))).toBe(true);
-    for (const q of DENKO2_QUESTIONS.slice(7)) {
+  });
+
+  it("keeps the incomplete 2026 electrician pilot outside the 2024–2025 release set", () => {
+    expect(DENKO2_2026_PILOT.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+    expect(DENKO2_2026_PILOT.map((q) => q.answer)).toEqual(["ア","イ","ウ","エ","イ","イ","エ","イ","ア","ウ"]);
+    expect(Object.keys(DENKO2_2026_PILOT[9]!.choiceImageUrls ?? {})).toEqual(["ア","イ","ウ","エ"]);
+    for (const q of DENKO2_2026_PILOT.slice(7)) {
       expect(q.officialReferenceUrls).toEqual(["https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"]);
     }
   });

@@ -29,8 +29,8 @@ def require_clean(assessment: dict) -> None:
 
 
 def main() -> None:
-    if len(sys.argv) != 2 or sys.argv[1] not in {"20251026-q21-30", "20251026-q31-40"}:
-        raise SystemExit("Usage: denko2-accept-reviewed-batch.py 20251026-q21-30|20251026-q31-40")
+    if len(sys.argv) != 2 or sys.argv[1] not in {"20251026-q21-30", "20251026-q31-40", "20251026-q41-50"}:
+        raise SystemExit("Usage: denko2-accept-reviewed-batch.py 20251026-q21-30|20251026-q31-40|20251026-q41-50")
     name = sys.argv[1]
     batch = json.loads((BATCHES / f"{name}.json").read_text(encoding="utf-8"))
     numbers = [item["number"] for item in batch["questions"]]
@@ -46,7 +46,8 @@ def main() -> None:
         items = json.loads(path.read_text(encoding="utf-8"))
         if [item["number"] for item in items] != list(range(first, last + 1)):
             raise ValueError(f"Reviewed numbering changed: {path}")
-        review_path = REVIEWS / f"{name}-opus-review-part{part:02}.json"
+        suffix = f"-fix-q{'-'.join(str(number) for number in range(first, last + 1))}" if name.endswith("q41-50") else ""
+        review_path = REVIEWS / f"{name}-opus-review-part{part:02}{suffix}.json"
         review = json.loads(review_path.read_text(encoding="utf-8"))
         hashes = review["inputHashes"]
         if hashes["draftSha256"] != candidate_digest(items):

@@ -1,0 +1,39 @@
+{
+  "inputHashes": {
+    "draftSha256": "309972c8e7607fc51f76d8884d34a153b71009ea1381a5220441431b60bb4acd",
+    "rowSha256": {
+      "11": "c1cdcbf99cd0f28febb7fd822ccd14ccd7c427e3cdca4f7a5d107b2998df2cb6",
+      "12": "00d5325538928196b6c4c1496e855d05f32848614f6738ede6659b3ef51dca0f"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q11.json": "6c04e97abcb6cc9b1420a31dbeb9fac2d9d8b643a0386c45fb27dac4a65c2372",
+      "docs/evidence/denko2-law/20251026-q12.json": "1c57bbbd53309b9c9a438ab2c665f1bd2f7d3063b0c3e44fa90d20e6ba9b0d3b"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "ハの肢別理由は90℃の出典を『経済産業省の電技解釈解説』としている。一方、本文の解説とreceiptは同じ値を『電気設備の技術基準の解釈』第146条146-3表から取っている。90℃の出典は解釈本体の第146条（146-3表）とし、本文の解説と揃えるべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "本文の解説とイの肢別理由は、第146条146-3表でビニルが60℃とされていることを誤答の由来にしている。しかしreceiptのverifiedClausesで照合済みなのはポリエチレン（架橋したものを除く）の75℃と、架橋したものに限るポリエチレンの90℃だけ。ビニル混合物の60℃は照合していない。",
+        "本文の解説は146-3表を『導体接触部の温度区分』と表現している。receiptが照合したのは材料名と数値だけで、この表の見出しや区分名は照合していない。"
+      ]
+    }
+  ]
+}
