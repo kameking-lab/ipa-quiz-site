@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:58:57.486Z",
+  "batch": "0009-e20506924627-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q79",
+      "status": "FIX",
+      "sourceSha256": "5e383331833661ff14de843b7bea6339c10b0bf6a4ee8e44c3dc352bcd94d6d9",
+      "overlaySha256": "3ac937e58a3442faad33d9136699be576ab9d0495f571a92f758740d1f45c0a2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 「労働者派遣法では…事前特定行為を原則禁止しており…違法となります」は法的根拠を強く言い過ぎている。労働者派遣法第26条第6項では、派遣先に求められているのは特定目的行為をしないよう努めることで、条文上は努力義務にとどまる。これを「行わないこと」と明確に定めているのは「派遣先が講ずべき措置に関する指針」である。また紹介予定派遣は例外になる。次のように直す：「誤りです。労働者派遣法第26条第6項及び派遣先指針により、派遣先は派遣労働者を特定することを目的とする行為（事前面接、履歴書・業務経歴書の送付要求など）を行ってはならないとされており（紹介予定派遣を除く）、書類選考で面接対象者を絞り込む行為は不適切です。」"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q80",
+      "status": "FIX",
+      "sourceSha256": "e30bcad7bb715cc0be48971497f11641a7d29d575e7a0406f58bc8f0c34fb247",
+      "overlaySha256": "93b1ccdd29dbf3f88cd415f77e72fc76aa897952bc88114d1ea06923c340e520",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 「デジタル社会形成基本法第3条の基本理念には…信頼性のある情報の自由かつ安全な流通を確保することが掲げられています」の条文番号が正しくない。e-Gov の法令データで確認すると、「情報通信技術の恵沢を享受できる社会の実現」は第3条にある。一方、「信頼性のある情報の自由かつ安全な流通の確保」は第10条（個人及び法人の権利利益の保護等）にある。選択肢ウはこの二つの理念を合わせた記述である。次のように直す：「正しいです。デジタル社会形成基本法の第3条〜第12条には10項目の基本理念が定められています。全ての国民が情報通信技術の恵沢を享受できる社会の実現は第3条、情報通信技術を用いた情報の活用による信頼性のある情報の自由かつ安全な流通の確保は第10条に掲げられています。」"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q1",
+      "status": "PASS",
+      "sourceSha256": "d6437274942876582dce4ccf22450871caf57c7b29624fc1a226481aaa60c421",
+      "overlaySha256": "f4c9d78530cfabfcee1c5240e958ddbd21b1b6c0bc16d3b402a34b0d2bdcf251",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q2",
+      "status": "PASS",
+      "sourceSha256": "9b505598d286ebfd9274c64a610f7c488bb6a50974c5e4dbea8d54239e3ed618",
+      "overlaySha256": "6db38ddf81f7762684654898cca763d3a11e474dbce4033ffd2c9b51374e3b4c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q3",
+      "status": "PASS",
+      "sourceSha256": "71bbee24ea6192517663823a9175b81b39f5125ffafdb42632d92aa877358fcc",
+      "overlaySha256": "cd6dc02d4204cc53ad53dd29292bd67fd0548854a3e876a2f893d6ff3d945edd",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

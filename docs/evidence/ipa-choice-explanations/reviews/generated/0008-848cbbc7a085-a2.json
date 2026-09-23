@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:58:42.397Z",
+  "batch": "0008-848cbbc7a085-a2",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q72",
+      "status": "PASS",
+      "sourceSha256": "fe33504e13f3bbd85c22eb68b6a29018aeb41b7d29af265e885875983ca779ec",
+      "overlaySha256": "4376010cece2735c56ecd242383ee14eeeabbe65543127d136ec9d7f31e99bba",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q74",
+      "status": "PASS",
+      "sourceSha256": "a12bfb230330fff9ca5f814713faf472fe13d37d1b4e47366c818e7b6fd4b90a",
+      "overlaySha256": "cb91cdf07bbcdbe38332d7c471df23690b9255b838c0d00adc683d214a7778fa",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q76",
+      "status": "PASS",
+      "sourceSha256": "95ec112c1d900aef01b505d177076e61f43bc70ce5eba5bc6949005c92a6c060",
+      "overlaySha256": "73433eda073b2d34f764ed003a708113d327d1390631af5584ec3347561f7ce3",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q78",
+      "status": "FIX",
+      "sourceSha256": "e5be8c70784bd0fa7a8aa3b90eaec11d4eb563281a24607e1bb38f9506aaadeb",
+      "overlaySha256": "8af7362e3853b75fee3961fb9307fb9610dd8a0248a06a094b37a76055e9dcba",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: The candidate says the law explicitly removes the solution method from the definition of a copyrighted work (「同項により著作物に含まれないと明示的に除外されている」). That misstates the law. Copyright Act Article 10(3) says protection of a program work does not extend to the programming language, protocols and solution methods used to create it (「その著作物を作成するために用いるプログラム言語、規約及び解法に及ばない」). It does not say they are excluded from being works. Rewrite it as: 「アルゴリズムは第10条3項3号の『解法』に当たり、同項によりプログラムの著作物に対する保護は解法に及ばない」.",
+        "ウ: Same mistake as ア. The candidate says programming languages are explicitly excluded from copyrighted works (「著作物に含まれないと明示的に除外されている」). Rewrite it as: 「プログラム言語は第10条3項1号の『プログラム言語』に当たり、同項によりプログラムの著作物に対する保護はプログラム言語に及ばない」."
+      ]
+    }
+  ]
+}

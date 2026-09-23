@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:54:34.143Z",
+  "batch": "0001-217b218283f1-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q9",
+      "status": "PASS",
+      "sourceSha256": "6493108c94fd779d2ee6fa028405a493f7a4fc1bdb3ce1492b0e809a9fe770cb",
+      "overlaySha256": "a5290f382f1391522c9cb24664fd1bf918b51bebec477500f7c003b84d869300",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q10",
+      "status": "PASS",
+      "sourceSha256": "bcf3fcca22d7e2b082c671d3e1b6a559f033ad31b3739537b7ae387f43ecefff",
+      "overlaySha256": "2c58392747a4992553db505e8d7bebc32e5a0d7e781c59fe63b585e9e9891492",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q11",
+      "status": "FIX",
+      "sourceSha256": "d9ffa1fb3656aabc5637375496d4e8f4e1e657339b4429412118b9eff04fe62d",
+      "overlaySha256": "0c33d7620bc5c3ca549bd0bf5a72ca7b53ec306b09cb59fad3e7f2155ee8bf77",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 「パラレルSCSIは主記憶装置接続用の旧来の規格」は技術的に誤り。SCSIは主記憶の接続規格ではない。ハードディスクなどの補助記憶装置や周辺機器をつなぐ規格である。『パラレルSCSIは、補助記憶装置などの周辺機器を並列の信号線で接続する旧来のインタフェース規格であり、FCの物理層（FC-0）には使えない。FCの物理層は光・電気のシリアル伝送であり、SCSIのコマンド体系はFCの上位層（FCP）で運ばれる』という趣旨に書き直す。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q12",
+      "status": "PASS",
+      "sourceSha256": "5467f1f878482048fdbc808176d6c133412b38ab2c10c154249c495039bfae94",
+      "overlaySha256": "234d18c44bc6ab6f0520d460695b5f10e2e1b6110a1aa9eeb3726b037f02059e",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q13",
+      "status": "PASS",
+      "sourceSha256": "ac11bd32ec5b6dc58fa9bbb4370b0f3268b8602448c2ad3e8c484ab2b7c49135",
+      "overlaySha256": "f6c2c5366b686da98c0d41763ca464a8e8a83ce47c6f33a7db8efc7ef220dd37",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

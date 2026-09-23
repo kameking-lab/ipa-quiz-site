@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:56:17.976Z",
+  "batch": "0005-2b2540daa911-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q55",
+      "status": "PASS",
+      "sourceSha256": "6e6167a8bc35463a87654f08c40b22b878cec4b73ef0945ca0e042dd8dd28400",
+      "overlaySha256": "230bf2e05b498bbd5083501e10bb79fddbb3bd091a0f71c7284528bfab7633c2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q56",
+      "status": "FIX",
+      "sourceSha256": "f9bed8616a3fc7920c15a7dac946e74daf756b6feccda8992e8939c97ebd8d25",
+      "overlaySha256": "ac696501007f9fb820bb25745e04754365edc0daf1c53a19d2849296e86b3a4c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 誤りの根拠がずれています。後半で『改善の機会の評価基準には目的との整合性が求められる』と書いていますが、これは正答ウの内容です。ア自体の誤りの根拠にはなっていません。JIS Q 20000-1:2020 の 10.2 では、承認された改善活動の目標は『品質、価値、能力、費用、生産性、資源の利用及びリスク低減』の一つ以上について設定すると定めています。したがって『品質と費用の両方』を必須とする点が誤りである、と書き直してください。",
+        "ウ: 規格の文言に『及び提供するサービスの目的』を足していますが、その根拠が確認できていません。10.2 が評価基準に含めるよう求めているのは『サービスマネジメントの目的との整合』です。規格の該当箇所の文言に合わせて、未確認の追加部分は削除してください。",
+        "エ: 大筋は正しいです。ただし、10.2 は実施した改善を設定した目標に照らして測定し、目標が達成されない場合は必要な処置をとることを求めています。その要求を明記すると、より具体的になります（必須ではありません）。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q57",
+      "status": "PASS",
+      "sourceSha256": "ed12f081309e4550bae90bd063a8e35eabf70077bd21484491b1f0a8d366310d",
+      "overlaySha256": "eb2b1f5a6bf3e2bbe5dd4548c2c8620e14e9706435166b4061dca61cb2c8d47d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q58",
+      "status": "PASS",
+      "sourceSha256": "6205a71844dbe9f548b1d8dc082b2aabf742d76f081b42205f51fd15931c33e0",
+      "overlaySha256": "a5f5440ef9e33c5b842975460bbf77d882dab689cb883d6152e34f3c51ef9ec9",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q59",
+      "status": "PASS",
+      "sourceSha256": "ac0565e64ab7e7376a09e526410df392503b84f6b3b62d4e8f5a2439840459f2",
+      "overlaySha256": "ebf4f00d257c9682259c8c695aca0c9c3eba3c08835f220b368db64bb50c577c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

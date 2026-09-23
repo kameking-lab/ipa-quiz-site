@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:54:09.613Z",
+  "batch": "0002-fa93c5142717-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q40",
+      "status": "PASS",
+      "sourceSha256": "a093a7c047ad2b002d089b0847d1ff9fd9193927fe41186b2bc4e32f25a1bdd6",
+      "overlaySha256": "d8e92a9c8613ee9e851c9e10f245818293434507ee25206cc547718a44c4f83d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q41",
+      "status": "PASS",
+      "sourceSha256": "881409ef4938f9dbe54b4345d3e835997699269742323f7fb62ee9ede51592b5",
+      "overlaySha256": "8b1c146fc1a2c32c95b20d1ea2c67a90789b1929a6973dd29759655326fe5545",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q42",
+      "status": "FIX",
+      "sourceSha256": "4824c351baf0747f181cc5079762c9cde81bad8bd5b8f967c7b436e1fe96380c",
+      "overlaySha256": "e69eb0611ba83faac2dd9ebc1537efb88aec3e8465c883c539b46b96932be2c0",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 「IDを一致させることが極めて困難になり、キャッシュポイズニングを防止できる」は言い過ぎで、技術的に正確ではない。トランザクションIDは16ビットしかなく、ID単独のランダム化はカミンスキー攻撃などで突破されうる。『固定IDに比べて偽応答のIDを一致させる確率が大きく下がり、有効な対策となる（実運用では送信元ポート番号のランダム化と組み合わせて推測空間をさらに広げる）』のように、効果の程度を正確に書き直す。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q43",
+      "status": "PASS",
+      "sourceSha256": "5a54910fb818edd54a4bf13dbca0cd316b4133f307fd69b963e2a856ddc4cbd7",
+      "overlaySha256": "3ad9c7b63cbdc506b1df7fcbaaa4bd9f85361f2c74ed7d700fff606016ff2c3d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q44",
+      "status": "FIX",
+      "sourceSha256": "71c81565dedad5bedce99cb82f111bcd1717a0a704f7329269d645aaaa1654a0",
+      "overlaySha256": "0220b5a10f81abe5aa76b15580189208b96bc31bc321b8b691a50665fb663453",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 「秘密鍵で電子メール本文にデジタル署名を付与し」は不正確。DKIMの署名対象は本文だけでなく、選んだヘッダー（From、Subjectなど）も含む。選択肢の文言どおり『電子メール（ヘッダーと本文）にデジタル署名を付与し』と直す。そのうえで『DNSSECが署名するのはDNSのリソースレコードであり、電子メールではない』という対比は残す。"
+      ]
+    }
+  ]
+}

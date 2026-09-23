@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:57:26.896Z",
+  "batch": "0008-848cbbc7a085-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q71",
+      "status": "PASS",
+      "sourceSha256": "bf5891b81db74557272c1a7711b141c3ff876e2a9d26a2edece2b5404b1e20e6",
+      "overlaySha256": "99840bca6c54acdf24a93941dc9044c31379127d0c385364403f271066ab52da",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q72",
+      "status": "FIX",
+      "sourceSha256": "fe33504e13f3bbd85c22eb68b6a29018aeb41b7d29af265e885875983ca779ec",
+      "overlaySha256": "07baecba6c89d09884d206e3905a7888ec952d118ee2578b32f7310854af91a3",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: The totals are correct. b→a→c→d gives 1+1+2=4, a→b→c→d gives 5, a→b→d→c gives 6 and b→c→d→a gives 7. The problem is that ア only states '24通りある実行順の中でこれが最小値' and never shows why 4 is the minimum. Add the lower-bound argument: 'The only 1-hour setups are a→c, b→a and b→c. These three cannot form an order that visits all four jobs once, because b→a and b→c both start at b. So at least one of the three changeovers takes 2 hours or more, and the total is at least 1+1+2=4 hours. b→a→c→d reaches that bound.'"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q74",
+      "status": "FIX",
+      "sourceSha256": "a12bfb230330fff9ca5f814713faf472fe13d37d1b4e47366c818e7b6fd4b90a",
+      "overlaySha256": "7a17c032969dd46dd2ec93a4a99502297ce12a0599768be3279c13029a0b90d8",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: The explanation calls the error a skipped middle step ('経営理念を直接事業戦略に分解するのではなく、間に経営戦略の策定という段階を経る'). That misreads エ. The real error is that エ reverses the order of 経営戦略 and 事業戦略: it sets 事業戦略 first, then breaks it down into 経営戦略. Rewrite to say that the company-wide 経営戦略 sits above the department-level 事業戦略. エ puts 事業戦略 on top and breaks it down into 経営戦略, which reverses the correct hierarchy (経営理念→経営戦略→事業戦略)."
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q76",
+      "status": "FIX",
+      "sourceSha256": "95ec112c1d900aef01b505d177076e61f43bc70ce5eba5bc6949005c92a6c060",
+      "overlaySha256": "d9ec0e8aeacc75eff7989e6b1218afe2fd31e6dbda054f3aa42427b4c2a0538c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: The explanation cites '国民経済計算体系(SNA)のような貿易統計に関する国際的な取決め'. This is a factual error. SNA is the framework for national accounts (GDP and similar). It is not trade statistics, and it is not based on a treaty. ア describes 貿易統計 (trade statistics), which Japan's Ministry of Finance compiles under the 経済統計に関する国際条約 (the international convention on economic statistics). Remove the SNA reference and correct it to that description of 貿易統計, then keep the point that this differs from Bayesian statistics, which updates probabilities through prior and posterior distributions."
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q78",
+      "status": "FIX",
+      "sourceSha256": "e5be8c70784bd0fa7a8aa3b90eaec11d4eb563281a24607e1bb38f9506aaadeb",
+      "overlaySha256": "c250c6190c07471cd8bfb1e89e8dda3ca09d48f57decb73c313c3f6bd865563b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: The explanation paraphrases 規約 in 著作権法第10条3項 as 'その記号の用法についての特別な約束'. The statute actually reads 'プログラム言語の用法についての特別の約束' (Article 10(3), item 2), so the quote is inaccurate. Correct it to: '著作権法第10条3項2号の「規約」（特定のプログラムにおける前号のプログラム言語の用法についての特別の約束）に当たり、著作物として保護されない'. Also check the item numbers in ア and ウ: プログラム言語 is item 1 and 解法 is item 3. Stating them would make those explanations more precise."
+      ]
+    }
+  ]
+}

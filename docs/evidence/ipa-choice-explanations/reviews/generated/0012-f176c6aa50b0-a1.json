@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:01:23.302Z",
+  "batch": "0012-f176c6aa50b0-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q18",
+      "status": "PASS",
+      "sourceSha256": "0b2f97ab76f11e40aab17cb729924099eb49b336b22250b256c8e83b4d5288cd",
+      "overlaySha256": "f91a139837383804c759f9681472a9ed099d46a91d99ded5d336482b36fc49ce",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q19",
+      "status": "PASS",
+      "sourceSha256": "0dcf9769b68fe567d0fdb1f9d11bf7464d4afa2ebe94f6ed82a41f14536a2449",
+      "overlaySha256": "9f536f0ea2486fffb465f1d35fff57ae287f62f570067d4a736911b040773270",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q20",
+      "status": "FIX",
+      "sourceSha256": "527814bcd1ccf1d7db613db2f5d6ee5cc825b6dc731224171048048039dbe290",
+      "overlaySha256": "bbf9e1aa666c223d4fca1867c2c9d12994f58becbf0886f552fc86d15e23f1d0",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「交流と直流を相互変換するインバータ」は技術的に誤りです。インバータが行うのは直流→交流の変換だけで、交流→直流は整流器（コンバータ）の役割です。この書き方はウ・エの説明とも食い違います。「直流を交流に変換するインバータの説明ではありません」のように、変換の向きを一方向に直してください。",
+        "イ: 「直流と交流を相互に変換するインバータの機能」もアと同じ誤りです。「直流電力を交流電力に変換するインバータの機能ではありません」に直してください。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q23",
+      "status": "PASS",
+      "sourceSha256": "08513a4b87b639ebbf2d706ced5bc7f92e0bcd4ffb5d7b4fb1d7b6c27f8a4dcf",
+      "overlaySha256": "fa9894df297e3f59ffe6422fa092dd17f62f9157d7469091cbfd23f9d6cd42d3",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q24",
+      "status": "PASS",
+      "sourceSha256": "5966aef61092b6dd4dbc000bfcf934d213420ae0daa2b1b4c6e9ac20de028998",
+      "overlaySha256": "cd39b7f750178f1075e5ec98edba402c9cc138549c0ab54225027d4b4690b039",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

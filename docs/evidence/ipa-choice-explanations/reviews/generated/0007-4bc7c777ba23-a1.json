@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:55:59.837Z",
+  "batch": "0007-4bc7c777ba23-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q66",
+      "status": "PASS",
+      "sourceSha256": "034946097f119e49231c0af29af92bd99caad0228ef67e8c050b7b6d6d022665",
+      "overlaySha256": "9fc58bd9238d6923bec4637f6c5b2be7202ed1420ff733e360d8e0b8c6bc3543",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q67",
+      "status": "PASS",
+      "sourceSha256": "a966a31c992bba5b186413eb092385758bc07389f57df5b3e26a98ee19ed5554",
+      "overlaySha256": "d9393523ef8353695eb25c734a1d95063fa2bb8917278fc4b7f01621968b8bd1",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q68",
+      "status": "PASS",
+      "sourceSha256": "8f2b8a8da6e9d8603ae856ab05762f28fa1ce57cfd62a44c487d3eb145b73b2b",
+      "overlaySha256": "a5e6b93483cc5ec158b72e0bf0994e011cb669e92d3dadf430f6f90d7857a239",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q69",
+      "status": "PASS",
+      "sourceSha256": "28fce1531b53317e095ba77ea9b4e896b8fa458a0b9f502c5b6318fbe2660ffb",
+      "overlaySha256": "07ae5b9a745dd652af59dbe3aecc5f81585961d7f5697745758b7366b8e56241",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q70",
+      "status": "FIX",
+      "sourceSha256": "8813280ec40330cb3d5f9a42320fbc366967ea59cff5fba00ae2c1b455832028",
+      "overlaySha256": "79df8af899d7256d01b6f6cccf2b5315409fd80e8bb08e37f91d902701b29e85",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 死の谷を「研究フェーズから事業化フェーズへ移行する際」の障壁と説明しているが、技術経営(MOT)の定義では 研究→開発=魔の川、開発→事業化=死の谷、事業化→産業化=ダーウィンの海 の順になる。この説明は開発段階を飛ばしており、エの解説(魔の川=研究→開発)とも食い違う。『死の谷は、開発した製品を事業化する段階、すなわち開発フェーズから事業化フェーズへ移るときに直面する障壁(主に資金調達や製品化の壁)を指し、事業化から産業化へ移る競争段階の障壁ではない』のように、開発→事業化に直すこと。"
+      ]
+    }
+  ]
+}

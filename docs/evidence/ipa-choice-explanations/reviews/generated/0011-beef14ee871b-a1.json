@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:59:49.927Z",
+  "batch": "0011-beef14ee871b-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q12",
+      "status": "PASS",
+      "sourceSha256": "c382c1292fc0d4deffc944c4793e33704d9802d306adfbfd3d1d5830c22e4fc3",
+      "overlaySha256": "5267e5d1c702a43edd5cdccddc301fe13c53b4d6009e8733b8c9088907577a46",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q13",
+      "status": "PASS",
+      "sourceSha256": "10399a6984557c115bce94d2d1d6dd0a24cd9f3c2f9804a61992db697d723ee6",
+      "overlaySha256": "887cb1cda59975d446527abc5b6a2d0018deaa989b11de1ba45296bb722f6739",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q14",
+      "status": "FIX",
+      "sourceSha256": "233a60f91de822c7820e442f53bbf2e86f20312e8667c13217828c883c76d441",
+      "overlaySha256": "5233b386ce7853abefe09ad46280442b86d8a2d4f0fe3bc87bcbbb13140e405f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 「1/aの計算でa=1/15相当とした場合などに生じる値」は、どういう誤りで15が出るのかを確かめないまま書いた推測で、根拠がない。また、残りの部分は「10と一致しない」と言い換えているだけの循環説明になっている。a=0.1を代入するとP=n/(1+0.1(n-1))=10n/(n+9)となり、分子10nは分母n+9の10倍より常に90だけ小さいので、どのnでもP<10で、nを増やすと10に近づくだけである。したがってPが15に達することはない、という技術的な根拠に直すこと。",
+        "ア/エ: ウと同じく「〜とした場合の上限に相当」「一致しない」という定型の文になっている。ア・エ自体の記述は計算上正しいので、直すのは任意でよい。ただしアは、n=9でP=9/(1+0.8)=5となり、Pはnを増やすと5を超えて10に近づくので5は上限ではない、と書くと、この肢ならではの誤りの説明になる。エは、P<10なので20には達しない、という根拠を加えることを推奨する。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q15",
+      "status": "PASS",
+      "sourceSha256": "0559c1c4b082c81adf15f824e9ef36b5fa6061260b16cad66ab972b34353630e",
+      "overlaySha256": "ecf1f6fca74fc9e676e46b3c24cdf845e5d7ca025deb9321c87a4aae13abef32",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q16",
+      "status": "PASS",
+      "sourceSha256": "7d384fdee53df601516e936d84b92d5398b8eb9ad11b0812477a10435aa065f9",
+      "overlaySha256": "f91befede8306ccf0b029489255713baae5e8715b9e24df0a9f2f02fcb7534b7",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}
