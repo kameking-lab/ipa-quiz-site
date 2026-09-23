@@ -5,10 +5,20 @@ on:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "data/raw_pdfs/denko2/review/**"
+      - "docs/evidence/denko2-*/**"
+      - "public/images/denko2/**"
+      - "scripts/denko2-*"
+      - ".github/workflows/question-quality.yml"
   pull_request:
     branches: [main]
     paths:
       - "data/questions/**"
+      - "data/raw_pdfs/denko2/review/**"
+      - "docs/evidence/denko2-*/**"
+      - "public/images/denko2/**"
+      - "scripts/denko2-*"
+      - ".github/workflows/question-quality.yml"
   workflow_dispatch:
 
 jobs:
@@ -34,7 +44,7 @@ jobs:
         run: pnpm validate:questions
 
       - name: Verify electrician original-review coverage and live gate
-        run: python3 scripts/denko2-strict-coverage.py
+        run: python3 scripts/denko2-strict-coverage.py --require-complete
 
       - name: Run data integrity audit (gates on critical findings)
         # scripts/audit-questions.ts — fails (exit 1) on critical findings
