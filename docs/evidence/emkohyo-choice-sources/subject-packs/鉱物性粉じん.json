@@ -1,7 +1,38 @@
 {
   "subject": "鉱物性粉じん",
-  "registrySha256": "3b2c5380d3f9f142e8bb8ab10051c03421b5bfc39da014b183f7f0608a8d2c94",
+  "registrySha256": "875b0a306682b5da637a42fb8a8a133766515cfef674a09174e16cdea2094d63",
   "sources": [
+    {
+      "title": "原子力規制委員会 沈降速度（遠心沈降法）結果一覧・ストークスの式",
+      "url": "https://www.nra.go.jp/data/000447909.pdf",
+      "finalUrl": "https://www.nra.go.jp/data/000447909.pdf",
+      "status": 200,
+      "sha256": "9666b04c6c780b5b575bcc5b742f156adee1b91569a3c6d66c8d39484a8713bc",
+      "contentType": "application/pdf",
+      "pdfPages": 108,
+      "facts": [
+        {
+          "pdfPage": 96,
+          "keyword": "ストークスの式",
+          "excerpt": "4 0.999 1.111 0.7 0.000039 2.624 0.999 1.111 0.5 0.000020 2.624 0.999 1.111 65.182 0.3383 ストークスの式：V＝ ｄ2（ρｓ―ρｆ）ｇ 18μ No.22122991 No.22122991 48"
+        },
+        {
+          "pdfPage": 105,
+          "keyword": "ストークスの式",
+          "excerpt": "2.637 0.998 1.111 0.5 0.000020 2.637 0.998 1.111 14.845 0.0177 ｄ2（ρｓ―ρｆ）ｇ 18μ No.22122929 ストークスの式：V＝ 57"
+        },
+        {
+          "pdfPage": 96,
+          "keyword": "沈降速度",
+          "excerpt": "沈降速度（遠⼼沈降法）結果⼀覧 V：沈降速度（cm/s) d：粒⼦径（cm） ρs：粒⼦密度（g/cm3） ρf：液体密度（g/cm3） ｇ：重⼒加速度（cm/s2）＝980 μ：液体の粘度（g/cm・s） ρs ρｆ μ ｄ V ρs ρｆ μ ｄ V 粒⼦密度 液体密度 液体の粘度 粒径 沈降速度 粒⼦密度 液体密度 液体の粘度 粒径 沈降速度 g/cm3 g/cm3 c poise μm cm/s g/cm3 g/cm"
+        },
+        {
+          "pdfPage": 96,
+          "keyword": "沈降速度",
+          "excerpt": "沈降速度（遠⼼沈降法）結果⼀覧 V：沈降速度（cm/s) d：粒⼦径（cm） ρs：粒⼦密度（g/cm3） ρf：液体密度（g/cm3） ｇ：重⼒加速度（cm/s2）＝980 μ：液体の粘度（g/cm・s） ρs ρｆ μ ｄ V ρs ρｆ μ ｄ V 粒⼦密度 液体密度 液体の粘度 粒径 沈降速度 粒⼦密度 液体密度 液体の粘度 粒径 沈降速度 g/cm3 g/cm3 c poise μm cm/s g/cm3 g/cm3 c poise μm cm/s"
+        }
+      ]
+    },
     {
       "title": "厚生労働省 粉じん障害防止規則",
       "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
