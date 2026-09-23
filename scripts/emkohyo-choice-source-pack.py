@@ -15,6 +15,8 @@ from bs4 import BeautifulSoup
 import fitz
 import requests
 
+from emkohyo_portable_hash import text_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 REVIEW = ROOT / "data/exam-library/emkohyo-review"
@@ -92,7 +94,7 @@ def main() -> None:
                            "context": clean[max(0, offset - 100):offset + len(search) + 100]
                            if offset >= 0 else ""})
         records.append({**page, "claimedExcerpts": claims})
-    pack = {"paperId": paper, "range": [first, last], "draftSha256": sha256(file.read_bytes()).hexdigest(),
+    pack = {"paperId": paper, "range": [first, last], "draftSha256": text_sha256(file),
             "sources": records, "claimedExcerpts": len(evidence),
             "missingEvidenceQuestions": [id_ for id_, question in draft.items()
                                          if not question.get("sourceEvidence")],

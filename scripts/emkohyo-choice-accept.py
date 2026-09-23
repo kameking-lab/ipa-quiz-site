@@ -9,6 +9,8 @@ from pathlib import Path
 import runpy
 import sys
 
+from emkohyo_portable_hash import matches_text_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
@@ -56,13 +58,15 @@ def main() -> None:
         if expected_figures and receipt.get("figureSha256", {}).get(id_) != expected_figures:
             raise ValueError(f"Stale or missing figure review: {id_}")
         focused_pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
-        if focused_pack.exists():
+        if receipt.get("sourcePackPath"):
+            pack = ROOT / receipt["sourcePackPath"]
+        elif focused_pack.exists():
             pack = focused_pack
         elif paper == "emkohyo-EM20251805" and number <= 3:
             pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
         else:
             pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{first+4:02}.json"
-        if receipt["sourcePackSha256"] != sha256(pack.read_bytes()).hexdigest():
+        if not matches_text_sha256(pack, receipt["sourcePackSha256"]):
             raise ValueError(f"Stale source pack review: {id_}")
         if id_ in existing:
             raise ValueError(f"Already published: {id_}")

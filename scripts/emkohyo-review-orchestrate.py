@@ -6,12 +6,13 @@ workers through emkohyo-2025-review-batch.py. This never accepts or publishes.
 
 import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from hashlib import sha256
 import json
 from pathlib import Path
 import subprocess
 import sys
 from urllib.parse import urlparse
+
+from emkohyo_portable_hash import matches_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -43,7 +44,7 @@ def eligible(pack_file: Path, year: str | None, accepted: set[str]) -> tuple | N
     raw_file = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-assessment.json"
     if not draft_file.exists() or review_file.exists() or raw_file.exists():
         return None
-    if pack.get("draftSha256") != sha256(draft_file.read_bytes()).hexdigest():
+    if not matches_text_sha256(draft_file, pack.get("draftSha256", "")):
         return None
     if pack.get("missingEvidenceQuestions") or pack.get("unverifiedExcerpts"):
         return None

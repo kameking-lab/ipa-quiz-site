@@ -12,6 +12,8 @@ import subprocess
 import sys
 from urllib.parse import urlparse
 
+from emkohyo_portable_hash import matches_text_sha256, text_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
@@ -85,7 +87,7 @@ def main() -> None:
     if sources.get("paperId") == paper and "draftSha256" in sources:
         if sources.get("range") != [first, last]:
             raise ValueError(f"Source pack range differs from review range: {source_file}")
-        if sources["draftSha256"] != sha256(draft_file.read_bytes()).hexdigest():
+        if not matches_text_sha256(draft_file, sources["draftSha256"]):
             raise ValueError(f"Source pack is stale for current draft: {source_file}")
         if sources.get("missingEvidenceQuestions") or sources.get("unverifiedExcerpts"):
             raise ValueError(f"Source pack has unresolved evidence: {source_file}")
@@ -133,7 +135,8 @@ def main() -> None:
                "paperId": paper, "ids": ids,
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
                "candidateSha256": {id_: sha256(json.dumps(candidates[id_], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() for id_ in ids},
-               "sourcePackSha256": sha256(source_file.read_bytes()).hexdigest(), "assessment": result}
+               "sourcePackPath": source_file.relative_to(ROOT).as_posix(),
+               "sourcePackSha256": text_sha256(source_file), "assessment": result}
     out.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{out}: PASS {sum(x['status']=='PASS' for x in result.values())}/{len(result)}")
 

@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 import re
 
+from emkohyo_portable_hash import matches_text_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
@@ -72,13 +74,15 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
         return False
     focused = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
     first = (number - 1) // 5 * 5 + 1
-    if focused.exists():
+    if receipt.get("sourcePackPath"):
+        pack = ROOT / receipt["sourcePackPath"]
+    elif focused.exists():
         pack = focused
     elif paper == "emkohyo-EM20251805" and number <= 3:
         pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
     else:
         pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{first+4:02}.json"
-    return pack.exists() and receipt.get("sourcePackSha256") == sha256(pack.read_bytes()).hexdigest()
+    return pack.exists() and matches_text_sha256(pack, receipt.get("sourcePackSha256", ""))
 
 
 def main() -> None:
