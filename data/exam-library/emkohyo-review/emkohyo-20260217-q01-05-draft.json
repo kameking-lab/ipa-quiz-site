@@ -355,61 +355,173 @@
       "overlay": {
         "sourceHash": "6762895b2645ec247fb5cd4165572ceb21ce42356804f31d50b280d843dd9846",
         "correctChoice": 2,
-        "summary": "しきい値がないとされる発がん物質にはNOAELが存在しないため、ユニットリスクやVSD等で評価する。しきい値がある物質ではNOAEL（得られなければLOAEL）を用いる。この対応を取り違えた肢2が誤り。",
+        "summary": "しきい値がないとされる発がん物質にはNOAELが存在しないため、ユニットリスクやVSD等で評価する。しきい値がある物質ではNOAELやLOAEL等を用いる。前者にNOAELを当てた肢2が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "LC50は吸入等で試験動物の半数が死亡する気中濃度、LD50は経口・経皮等で半数が死亡する投与量である。どちらも単回又は短期のばく露による急性毒性の強さを比べる指標なので正しい。"
+            "reason": "この記述は正しい。厚労省の用語解説ではLC50を短時間吸入で実験動物の半数が死亡する濃度、LD50を一回投与で半数が死亡する量と定義する。いずれも短時間または一回の投与による急性毒性の大きさを表す指標で、LC50は吸入の濃度、LD50は一回投与の量とばく露経路も異なる。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "しきい値がない有害性ではNOAEL（無毒性量）自体が存在せず、発がんリスクはユニットリスクやVSD（実質安全量）等で評価する。NOAELやLOAELはしきい値がある物質の評価に使う値なので、両者の対応を逆に書いたこの記述が誤りで、正答である。"
+            "reason": "これが誤り。NITEはしきい値のない有害性ではNOAELが存在せず、発がんリスクはユニットリスクや実質安全量などで評価すると説明する。環境省の審議会議事録は、しきい値のある物質の評価にNOAELやLOAELを用いると説明する。しきい値のない発がん物質に存在しないNOAELを当てた点が設問の誤りである。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "許容濃度やTLVなどのばく露限界は、ほとんど全ての労働者が反復してばく露されても健康に悪影響を受けないと考えられる濃度又は量である。量－影響関係や量－反応関係の知見から導かれるので正しい。ただし全員の無影響を保証する値ではない。"
+            "reason": "この記述は正しい。厚労省の用語解説は、ばく露限界を量―反応関係等から導かれ、ほとんど全ての労働者が連日反復ばく露しても健康影響を受けないと考えられる濃度又は量のしきい値と定義する。厚労省の講義資料は量影響関係もばく露限界値を考える際の対象として示す。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "変異原性試験は、化学物質が遺伝子の突然変異や染色体異常を起こすかを調べる試験である。代表例はエームス試験などの細菌を用いた復帰突然変異試験である。変異原性は発がん性と関連が深いので、発がん性のスクリーニングに使われるという記述は正しい。"
+            "reason": "この記述は正しい。食品安全委員会の用語集は、変異原性試験を遺伝子突然変異や染色体異常を調べる試験と定義する。厚労省は発がん性スクリーニングの手法に微生物を用いた変異原性試験を挙げる。化学物質が遺伝子等を変化させるか調べる試験は、発がん性の候補を絞る用途にも使われる。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "BEI（Biological Exposure Indices）は、米国ACGIHが尿・血液・呼気中の化学物質や代謝物の濃度を評価するために示した参考値である。生物学的モニタリングの結果を判断する指標という説明は正しい。"
+            "reason": "この記述は正しい。厚労省資料はBEIをBiological Exposure Indicesの略と記し、ACGIHのBEI値を生物学的モニタリングの測定データに対するばく露レベル評価で用いる。ACGIHが示した値を生物学的モニタリングの評価指標とする設問の説明に合う。"
           }
         ],
         "sources": [
           {
-            "title": "製品評価技術基盤機構 化学物質のリスク評価について－よりよく理解するために－5",
+            "title": "厚生労働省 職場のあんぜんサイト 化学物質用語解説",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html"
+          },
+          {
+            "title": "製品評価技術基盤機構 閾値のない発がん性の評価",
             "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html"
+          },
+          {
+            "title": "環境省 化学物質評価専門委員会議事録",
+            "url": "https://www.env.go.jp/council/05hoken/y052-09a.html"
+          },
+          {
+            "title": "厚生労働省 職場における化学物質のリスク評価",
+            "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html"
+          },
+          {
+            "title": "食品安全委員会 用語集（変異原性試験）",
+            "url": "https://www.fsc.go.jp/yougoshu/kensaku_dokusei.html"
+          },
+          {
+            "title": "厚生労働省掲載 化学物質リスクアセスメント演習「作業環境測定値等の比較例」",
+            "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf"
+          },
+          {
+            "title": "厚生労働省掲載 大前和幸氏講義「我が国における化学物質管理の現状と課題」",
+            "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "短時間の吸入ばく露（通常1時間から4時間）で1群の実験動物の50％を死亡させる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "1回の投与で1群の実験動物の50％を死亡させる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "急性毒性デｰタの指標",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
           "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
-          "excerpt": "NOAEL（無毒性量）やTDI（耐容一日摂取量）も存在しない",
+          "excerpt": "有害性に閾値がない場合には、NOAEL（無毒性量）やTDI",
           "choiceNumbers": [
             2
           ]
         },
         {
           "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
-          "excerpt": "10万分の1の確率で発がんする量",
+          "excerpt": "ユニットリスク",
           "choiceNumbers": [
             2
           ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "VSD（実質安全量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/council/05hoken/y052-09a.html",
+          "excerpt": "閾値があると考えられるものにつきましては、ＮＯＡＥＬ、あるいはＬＯＡＥＬ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kag_yogo.html",
+          "excerpt": "量―反応関係等から導かれる、ほとんどすべての労働者が連日繰り返しばく露されても健康に影響を受けない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf",
+          "excerpt": "量影響関係（量と健康影響の強さの関係）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000716406.pdf",
+          "excerpt": "ばく露限界値(仮称)が標的",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/yougoshu/kensaku_dokusei.html",
+          "excerpt": "変異原性を確認する目的で行う試験。遺伝子突然変異試験、染色体異常試験等がある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html",
+          "excerpt": "遺伝毒性試験、中期発がん性試験等による発がん性のスクリーニング",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000113892.html",
+          "excerpt": "スクリーニング試験の手法、評価の基準等 微生物を用いた変異原性試験",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf",
+          "excerpt": "ACGIH「Biological Exposure Indices」",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei14/dl/kagaku4_0015.pdf",
+          "excerpt": "生物学的モニタリングの測定データがある場合のばく露レベル",
+          "choiceNumbers": [
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "採用した政府資料はNITE（nite.go.jp）の一般向け解説で、厚労省・環境省の一次文書ではない。環境省の発がん性評価手順書（PDF）は本文を確認していない。",
-        "肢1（LD50・LC50）、肢3（ばく露限界の定義）、肢4（変異原性試験）、肢5（ACGIHのBEI）は、本文を確認できた政府資料がない。解説は一般的な知識による。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-q4": {
       "overlay": {
