@@ -53,13 +53,13 @@
           }
         ],
         "sources": [
-          {"title": "厚生労働省 労働安全衛生規則 第36条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"},
+          {"title": "e-Gov 労働安全衛生規則 第36条・試験日2026年2月17日時点", "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"},
           {"title": "厚生労働省 電離放射線障害防止規則 第8・18条の6・7", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"},
           {"title": "厚生労働省 電離放射線障害防止規則 第46・52・56・57条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"}
         ]
       },
       "sourceEvidence": [
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2", "excerpt": "エックス線装置又はガンマ線照射装置を取り扱う業務", "choiceNumbers": [1]},
+        {"url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17", "excerpt": "エツクス線装置又はガンマ線照射装置を用いて行う透過写真の撮影の業務", "choiceNumbers": [1]},
         {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に、線源容器のしやへい能力の異常の有無について自主検査を行わなければならない", "choiceNumbers": [2]},
         {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "前二条の自主検査を行つたときは、次の事項を記録し、これを三年間保存しなければならない", "choiceNumbers": [2]},
         {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "エツクス線作業主任者及びガンマ線透過写真撮影作業主任者", "choiceNumbers": [3]},
@@ -69,7 +69,7 @@
         {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "これらを三十年間保存しなければならない", "choiceNumbers": [5]}
       ],
       "reviewIssues": [
-        "厚労省の安衛則・電離則で5肢の直接根拠を照合済み。不存在の主任者を問う肢3を含め、独立Opus原文照合は未了。"
+        "安衛則第36条は現行MHLW表示で試験後の改正が反映され対象業務が拡大したため、肢1には2026年2月17日時点のe-Gov版を使用。電離則の各肢も照合済みだが、独立Opus原文審査は未了。"
       ]
     },
     "emkohyo-20260217-2-q17": {
@@ -212,6 +212,10 @@
           {
             "title": "厚生労働省 酸素欠乏症等防止規則 第2・4・11・21条",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令 別表第6・試験日2026年2月17日時点",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
           }
         ]
       },
@@ -224,8 +228,8 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
-          "excerpt": "炭酸水を 湧 出しており、又は 湧 出するおそれのある地層",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "炭酸水を湧ゆう出しており、又は湧ゆう出するおそれのある地層",
           "choiceNumbers": [
             1
           ]
