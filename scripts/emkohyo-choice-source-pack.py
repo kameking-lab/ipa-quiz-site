@@ -30,10 +30,24 @@ def read_url(url: str) -> dict:
     response.raise_for_status()
     content_type = response.headers.get("Content-Type", "")
     is_pdf = content_type.startswith("application/pdf") or url.lower().split("?")[0].endswith(".pdf")
+    revision = None
     if is_pdf:
         pdf = fitz.open(stream=response.content, filetype="pdf")
         pages = [page.get_text() for page in pdf]
         text = "\n".join(pages)
+    elif content_type.startswith("application/json"):
+        body = response.json()
+        revision = body.get("revision_info")
+
+        def law_text(node: object) -> str:
+            if isinstance(node, str):
+                return node
+            if isinstance(node, dict):
+                return " ".join(law_text(child) for child in node.get("children", []))
+            return ""
+
+        text = law_text(body["law_full_text"])
+        pages = [text]
     else:
         soup = BeautifulSoup(response.content, "html.parser")
         for tag in soup(["script", "style", "nav", "footer"]):
@@ -42,7 +56,8 @@ def read_url(url: str) -> dict:
         pages = [text]
     return {"url": url, "status": response.status_code, "finalUrl": response.url,
             "sha256": sha256(response.content).hexdigest(), "contentType": content_type,
-            "pages": len(pages), "pageTexts": pages, "text": text}
+            "pages": len(pages), "pageTexts": pages, "text": text,
+            "revisionInfo": revision}
 
 
 def main() -> None:
