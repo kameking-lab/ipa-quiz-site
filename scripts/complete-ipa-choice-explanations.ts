@@ -156,9 +156,17 @@ function promptFor(batch: Question[]): string {
 ${JSON.stringify(input, null, 2)}`;
 }
 
-async function runClaude(batch: Question[], options: Options, batchIndex: number): Promise<Overlay> {
+async function runClaude(
+  batch: Question[],
+  options: Options,
+  batchIndex: number,
+  attempt: number,
+): Promise<Overlay> {
   const token = createHash("sha256").update(batch.map((question) => question.id).join("|")).digest("hex").slice(0, 12);
-  const prefix = join(LOG_ROOT, `${String(batchIndex + 1).padStart(4, "0")}-${token}`);
+  const prefix = join(
+    LOG_ROOT,
+    `${String(batchIndex + 1).padStart(4, "0")}-${token}-a${attempt}`,
+  );
   writeJson(`${prefix}.input.json`, batch);
   const prompt = promptFor(batch);
   writeFileSync(`${prefix}.prompt.txt`, prompt, "utf8");
@@ -230,7 +238,17 @@ async function main(): Promise<void> {
     while (next < batches.length) {
       const index = next++;
       const batch = batches[index]!;
-      const result = await runClaude(batch, options, index);
+      let result: Overlay | undefined;
+      let lastError: unknown;
+      for (let attempt = 1; attempt <= 3 && !result; attempt += 1) {
+        try {
+          result = await runClaude(batch, options, index, attempt);
+        } catch (error) {
+          lastError = error;
+          console.error(`[retry] batch=${index + 1} attempt=${attempt}`, error);
+        }
+      }
+      if (!result) throw lastError;
       for (const question of batch) overlays[question.exam]![question.id] = result[question.id]!;
       for (const exam of new Set(batch.map((question) => question.exam))) {
         writeJson(overlayPath(exam), overlays[exam]);
