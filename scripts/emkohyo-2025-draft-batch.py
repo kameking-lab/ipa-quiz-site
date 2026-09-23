@@ -85,14 +85,24 @@ def main() -> None:
     retrieved = retrieve(subject, request_items, per_question=5)
     if retrieved["missingCachedSources"]:
         raise ValueError(f"Build the pinned source cache first: {retrieved['missingCachedSources']}")
-    arithmetic = None
-    if paper == "emkohyo-EM20251805" and first <= 18 <= last:
-        arithmetic_file = ROOT / "docs/evidence/emkohyo-choice-sources/EM20251805-q18-19-arithmetic-20260924.json"
-        arithmetic = json.loads(arithmetic_file.read_text(encoding="utf-8"))
-        arithmetic = {"formula": arithmetic["formula"],
-                      "molarVolumeLiterPerMol25C1Atm": arithmetic["molarVolumeLiterPerMol25C1Atm"],
-                      "questions": arithmetic["questions"],
-                      "status": "independent arithmetic audit only; full choice reasons still need review"}
+    arithmetic = []
+    selected_ids = {item["id"] for item in request_items}
+    evidence_dir = ROOT / "docs/evidence/emkohyo-choice-sources"
+    for filename in ("EM20251805-q18-19-arithmetic-20260924.json",
+                     "EM-calculation-spotchecks-20260924.json",
+                     "EM2025-calculation-spotchecks-20260924.json"):
+        evidence = json.loads((evidence_dir / filename).read_text(encoding="utf-8"))
+        records = evidence["questions"]
+        if isinstance(records, dict):
+            records = [{"id": f"{evidence['paperId']}-q{number}",
+                        "formula": evidence["formula"], **item}
+                       for number, item in records.items()]
+        arithmetic.extend({"id": item["id"], "formula": item["formula"],
+                           "value": item.get("value", item.get("ppm")),
+                           "unit": item.get("unit", "ppm"),
+                           "officialChoice": item["officialChoice"],
+                           "rowTextSha256": item["rowTextSha256"]}
+                          for item in records if item["id"] in selected_ids)
     web = "--web" in sys.argv[4:]
     prompt = (
         "第一種作業環境測定士の公式5択問題について、問題原文と既存解説を根拠に、選択肢1〜5それぞれの正誤理由を作る。"
@@ -118,7 +128,8 @@ def main() -> None:
                + "\n政府資料候補: " + json.dumps(sources, ensure_ascii=False)
                + "\n設問別一次資料抜粋: " + json.dumps(retrieved, ensure_ascii=False)
                + "\n物質別SDS: " + json.dumps(supplemental, ensure_ascii=False)
-               + "\n独立計算の参考資料: " + json.dumps(arithmetic, ensure_ascii=False))
+               + "\n独立計算の参考資料（算術のみ検証済み。各肢理由の承認ではない）: "
+               + json.dumps(arithmetic, ensure_ascii=False))
     ids = [item["id"] for item in request_items]
     schema = {"type": "object", "properties": {id_: {"type": "object"} for id_ in ids},
               "required": ids, "additionalProperties": False}
