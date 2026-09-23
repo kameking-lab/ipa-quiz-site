@@ -35,7 +35,7 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = SITE_BASE_URL;
 
-const ROOT_DESCRIPTION = `IPA 13区分とFP3級の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。全機能無料。`;
+const ROOT_DESCRIPTION = `IPA 13区分とFP2級・FP3級の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。全機能無料。`;
 
 export const metadata: Metadata = {
   title: {

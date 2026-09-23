@@ -11,7 +11,7 @@ for (const width of [390, 1280]) {
     const safety = choices.getByRole("link", { name: /^安全/ });
     await expect(ipa).toBeInViewport();
     await expect(safety).toBeInViewport();
-    const other = page.getByRole("link", { name: /^FP3級/ });
+    const other = page.getByRole("link", { name: /^FP2級・FP3級/ });
     await expect(other).toBeVisible();
     await expect(page.locator("main").getByRole("link")).toHaveCount(3);
     await ipa.click();
