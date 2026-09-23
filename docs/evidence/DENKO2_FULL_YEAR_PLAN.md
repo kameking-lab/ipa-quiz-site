@@ -16,6 +16,8 @@
 
 2024上期問1〜10の視認済み本文・四肢・各肢解説は `data/questions/denko2/reviewed/`、図部分のみの9点の画像は `public/images/denko2/2024-first/` に保管。問8〜10の法令説明は試験前の経産省2023-12-26版第146・148・149条と表を照合した。問1〜7の計算・回路解説に無関係な法令リンクは付けない。10問バッチの個別検収数は `docs/evidence/denko2-coverage/20240526-q01-10.json`。公開データへはまだ登録していない。
 
+同じ10問を独立したOpus 5.5の画像監査で再照合し、初回に指摘された数式差分・中性線損失・原図記号を修正した後、10/10 PASSを `docs/evidence/denko2-independent/` に記録した。モデルが外部確認を要するとした法令問8〜10は、Codexが試験前の経済産業省資料で別途確認した。Opusの判定のみで法令の根拠確認を完了扱いにしない。
+
 再現手順: `py -3.12 scripts/denko2-extract.py` → `py -3.12 scripts/denko2-batches.py` → `py -3.12 scripts/denko2-review-pack.py`。`scripts/denko2-source-manifest.json` の公式URLとSHA-256で全5回のPDFを検証し、各回の問題番号1〜50と公式正答1〜50の欠番・重複を検査する。原本PDFと自動抽出結果・原本照合用HTMLはgit追跡対象外の`data/raw_pdfs/denko2/`に置く。`scripts/denko2-draft.py` はClaudeで非公開の編集下書きを作る補助器であり、作成自体は検収や公開承認を意味しない。問題文・選択肢のPDF抽出文字列は図・数式・写真で欠落や誤認が生じるため、そのまま公開しない。視覚フラグの有無にかかわらず全200問を原本画像と比較し、800肢全解説と正答検算、必要図の切り出し、政府資料の根拠確認を通す。
 
 画像を直接読む下書き生成は `py -3.12 scripts/denko2-vision-draft.py sonnet 2024,2025`。これは購読済みClaude CLIのstream-json画像入力を使い、5問ずつの非公開草稿を保存する。`py -3.12 scripts/denko2-coverage.py` は10問ごとに `docs/evidence/denko2-coverage/` の独立receiptを更新する。**草稿件数と原本視認QC・解説QCの件数は混同しない。** 全項目を照合したバッチだけ `accepted` とし、受入件数に加算する。
