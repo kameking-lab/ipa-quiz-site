@@ -2,7 +2,8 @@ import { expect, test } from "@playwright/test";
 
 test("skill exam: date → question diagram and figure 2 → official answer → return", async ({ page }) => {
   const response = await page.goto("/denko2/skill");
-  if (response?.status() === 404) {
+  // The static catch-all can render the not-found shell with HTTP 200.
+  if (response?.status() === 404 || await page.getByRole("heading", { name: "お探しのページが見つかりませんでした" }).isVisible()) {
     test.skip(true, "Second-class electrician release gate is still closed");
     return;
   }
@@ -27,7 +28,7 @@ test("skill exam: date → question diagram and figure 2 → official answer →
 test("skill exam: small-screen problem and answer images remain readable and zoomable", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   const response = await page.goto("/denko2/skill/denko2-2025-07-20-skill-04");
-  if (response?.status() === 404) {
+  if (response?.status() === 404 || await page.getByRole("heading", { name: "お探しのページが見つかりませんでした" }).isVisible()) {
     test.skip(true, "Second-class electrician release gate is still closed");
     return;
   }
