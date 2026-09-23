@@ -1,0 +1,373 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-20260217",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-20260217-q1": {
+      "overlay": {
+        "sourceHash": "cc1dbc7047d330dfa3a4e4fd57f38be245aae7f3d930f44826c1561ad6794227",
+        "correctChoice": 5,
+        "summary": "労働災害発生時の再リスクアセスメントは「過去のリスクアセスメント等の内容に問題がある場合」という条件付きであり、休業の有無等にかかわらず必ず行うとする肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "指針は「総括安全衛生管理者が選任されている場合には、当該者にリスクアセスメント等の実施を統括管理させること」と定めており、総括安全衛生管理者が統括管理するという記述は指針どおりで正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "施行通達は入手すべき「作業環境測定結果等」の「等」に個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果等が含まれるとしており、列挙された3情報はいずれも該当するので正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "通達は指針8ア・イについて、危険性又は有害性の特定をまずSDSのGHS分類結果、管理濃度及び濃度基準値、それらが未設定なら許容濃度等のばく露限界の把握によって行うとしており、業務の洗い出し後に管理濃度・濃度基準値に即して特定する記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "通達はリスク見積りの方法として、CREATE-SIMPLEで気中濃度を推定する方法と、ECETOC-TRAでリスクを見積もる方法を例示している。性状・作業条件と濃度基準値やばく露限界を入力して見積もるという記述は、この二つの方法と整合する。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "指針が労働災害を契機に掲げるのは「労働災害が発生した場合であって、過去のリスクアセスメント等の内容に問題がある場合」であり、無条件ではない。休業の有無や日数にかかわらず「必ず」行うとする点が誤りで、これが正答である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 化学物質等による危険性又は有害性等の調査等に関する指針について（施行通達）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "労働災害が発生した場合であって、過去のリスクアセスメント等の内容に問題がある場合",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "総括安全衛生管理者が選任されている場合には、当該者にリスクアセスメント等",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果等",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "管理濃度及び濃度基準値並びにこれらの値が設定されていない場合には",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "CREATE―SIMPLE(クリエイト・シンプル)を用いて気中濃度を推定する方法",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
+          "excerpt": "(ECETOC―TRA)を用いてリスクを見積もる方法",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "提示された候補資料（作業環境測定基準）は本問の判断根拠にならないため、sourcesに入れなかった。",
+        "通達のt_docページは平成27年基発0918第3号として表示されるが、本文には令和5年改正の濃度基準値に関する記述がある。本問が前提とする改正後の指針告示（新旧対照表PDF 001091867.pdf）はPDF本文を読み取れず、直接照合できていない。",
+        "労働災害時の再実施が指針5(2)の努力義務に当たるかどうかは、該当文言を直接確認できていない。そのため解説では「条件付き」である点だけを根拠にした。"
+      ]
+    },
+    "emkohyo-20260217-q2": {
+      "overlay": {
+        "sourceHash": "539bdec25b5441308c487a4c846e2ae2e691bcd88ed450b77bed1d93e26e1f24",
+        "correctChoice": 1,
+        "summary": "GHSの区分数は危険有害性クラスごとに異なり、急性毒性の区分1〜5、皮膚腐食性・刺激性の1A/1B/1C・2・3、自己反応性化学品のタイプA〜Gなどがある。一律に区分1〜4の4区分とする肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "厚労省の早見表では、急性毒性（経口）に区分5（飲み込むと有害のおそれ）がある。皮膚腐食性・刺激性は1A/1B/1C・2・3、自己反応性化学品はタイプA〜Gに分かれる。全クラスが区分1〜4の4区分とする記述は誤りで、これが正答である。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "GHSの絵表示は爆弾の爆発、炎、円上の炎、ガスボンベ、どくろ、感嘆符、腐食性、健康有害性、環境の9種類である。このうち健康有害性に使うのは、どくろ、感嘆符、腐食性、健康有害性の4種類なので正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "原文の㋑㋺は画像のため本文テキストに残っていないが、公式正答から㋑はどくろ、㋺は感嘆符と解される。健康有害性の優先順位では、どくろを付す場合に感嘆符は付さないため、この組み合わせなら記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "注意喚起語は、重大な危険有害性区分に使う「危険」と、比較的軽い区分に使う「警告」の2種類である。複数の危険有害性があって「危険」を適用する場合は、ラベルに「警告」を併記しないので正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "GHS及びJIS Z 7253のSDSは、「化学品及び会社情報」から「その他の情報」までの16項目で構成される。受け手が必要な情報を探しやすいよう、項目の番号・項目名・順序は変更しない決まりなので正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "職場のあんぜんサイト 危険有害性、区分、シンボル、注意喚起語、危険有害性情報早見表",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html",
+          "excerpt": "飲み込むと有害のおそれ（経口）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html",
+          "excerpt": "軽度の皮膚刺激",
+          "choiceNumbers": [
+            1
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "早見表は表形式のため、抜粋は区分5（急性毒性）・区分3（皮膚刺激）の行の危険有害性情報の欄にとどまる。区分欄の数字そのものは抜粋として示せていない。",
+        "肢3の㋑㋺の絵表示は画像で、問題文テキストから欠落している。どくろ／感嘆符とみなしたのは公式正答からの推定であり、原本の画像で確認が必要。",
+        "肢3（どくろと感嘆符の優先順位）、肢4（「危険」適用時は「警告」を使わない）、肢5（SDS16項目の番号・項目名・順序）の根拠となる政府資料は、本文を直接確認できなかった。GHS改訂6版（METI）は403、厚労省の毒劇物GHSマニュアル（nihs.go.jp）はPDFの本文を抽出できなかった。",
+        "肢2の絵表示9種類と健康有害性4種類は、あんぜんサイトのGHSシンボルのページ（ghs_symbol.html）で内容は確認した。ただし正確な抜粋文を取れなかったため、sourceEvidenceには入れていない。"
+      ]
+    },
+    "emkohyo-20260217-q3": {
+      "overlay": {
+        "sourceHash": "6762895b2645ec247fb5cd4165572ceb21ce42356804f31d50b280d843dd9846",
+        "correctChoice": 2,
+        "summary": "しきい値がないとされる発がん物質にはNOAELが存在しないため、ユニットリスクやVSD等で評価する。しきい値がある物質ではNOAEL（得られなければLOAEL）を用いる。この対応を取り違えた肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "LC50は吸入等で試験動物の半数が死亡する気中濃度、LD50は経口・経皮等で半数が死亡する投与量である。どちらも単回又は短期のばく露による急性毒性の強さを比べる指標なので正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "しきい値がない有害性ではNOAEL（無毒性量）自体が存在せず、発がんリスクはユニットリスクやVSD（実質安全量）等で評価する。NOAELやLOAELはしきい値がある物質の評価に使う値なので、両者の対応を逆に書いたこの記述が誤りで、正答である。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "許容濃度やTLVなどのばく露限界は、ほとんど全ての労働者が反復してばく露されても健康に悪影響を受けないと考えられる濃度又は量である。量－影響関係や量－反応関係の知見から導かれるので正しい。ただし全員の無影響を保証する値ではない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "変異原性試験は、化学物質が遺伝子の突然変異や染色体異常を起こすかを調べる試験である。代表例はエームス試験などの細菌を用いた復帰突然変異試験である。変異原性は発がん性と関連が深いので、発がん性のスクリーニングに使われるという記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "BEI（Biological Exposure Indices）は、米国ACGIHが尿・血液・呼気中の化学物質や代謝物の濃度を評価するために示した参考値である。生物学的モニタリングの結果を判断する指標という説明は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "製品評価技術基盤機構 化学物質のリスク評価について－よりよく理解するために－5",
+            "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "NOAEL（無毒性量）やTDI（耐容一日摂取量）も存在しない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/ra/about_ra5.html",
+          "excerpt": "10万分の1の確率で発がんする量",
+          "choiceNumbers": [
+            2
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "採用した政府資料はNITE（nite.go.jp）の一般向け解説で、厚労省・環境省の一次文書ではない。環境省の発がん性評価手順書（PDF）は本文を確認していない。",
+        "肢1（LD50・LC50）、肢3（ばく露限界の定義）、肢4（変異原性試験）、肢5（ACGIHのBEI）は、本文を確認できた政府資料がない。解説は一般的な知識による。"
+      ]
+    },
+    "emkohyo-20260217-q4": {
+      "overlay": {
+        "sourceHash": "be24d0a308e9312e2b35f198c945d8e00437ed9eb60ff16dc4f19c9bea80a512",
+        "correctChoice": 3,
+        "summary": "ベンゼンは体内で酸化されてフェノール等に代謝され、尿中に排泄される。代謝の向きを逆にして「フェノールがベンゼンとして排泄される」とした肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "マンガンは体内で代謝されない金属元素なので、生物学的モニタリングでは代謝物でなく尿中又は血液中のマンガン量そのものを指標にする。ばく露の把握に使われるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "鉛にばく露すると、まず血液中の鉛濃度が速やかに上がる。尿中δ-アミノレブリン酸は、鉛がヘム合成酵素（ALA脱水酵素）を阻害した結果として増える影響指標なので、上昇は血中鉛より遅れる。記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ベンゼンは主に肝臓で酸化され、フェノールやその抱合体などに代謝されて尿中に排泄される。フェノールが代謝されてベンゼンとして排泄されるという、代謝の向きを逆にしたこの記述が誤りで、正答である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "有機溶剤の尿中代謝物は作業中に体内へ蓄積して増えるため、採尿は濃度が最も高くなる時期に行う。作業日が連続する場合は、後半の作業日の作業終了時に採尿するのが望ましいとされているので、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "体内に取り込まれた物質は代謝で水溶性が高まり排泄されやすくなることが多いが、代謝活性化で毒性の強い中間体ができる場合もある。例として、ノルマルヘキサンの2,5-ヘキサンジオンがある。代謝物が障害の原因になりうるという記述は正しい。"
+          }
+        ],
+        "sources": []
+      },
+      "sourceEvidence": [],
+      "reviewIssues": [
+        "正答の肢3（ベンゼン→フェノールの代謝）を直接裏付ける政府資料の本文を確認できなかった。あんぜんサイトのベンゼンのモデルSDS（71-43-2）では、フェノールは別名の欄にしか出てこず、代謝の記述は見つからなかった。",
+        "肢4の採尿時期（連続作業日の後半の作業終了時）は、厚労省の通達にあると検索結果で示された。しかし候補の平成元年基発第462号（t_doc 00tb2072）は「別途示すところによること」とだけ書いており、該当する本文は大阪労働局PDF・JOHAS PDFとも抽出できなかった。",
+        "肢1（マンガン）、肢2（血中鉛と尿中ALAの時間差）、肢5（代謝活性化）も、政府資料の本文を確認できていない。本問のsourcesとsourceEvidenceは空で、追加調査が必要。"
+      ]
+    },
+    "emkohyo-20260217-q5": {
+      "overlay": {
+        "sourceHash": "054178a1a46834c33f6f741ff58f36bd2fb1d04e5760f3f0f9321386d0a99f16",
+        "correctChoice": 4,
+        "summary": "ジクロロメタンの蒸気密度はトルエンより小さい（前半は正しい）が、25℃の蒸気圧は約435mmHgでトルエンの約28mmHgよりはるかに大きい。後半を誤った肢4が正答。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "溶解度が小さく、気体と液体が反応しない場合は、温度一定で一定量の液体に溶ける気体の質量がその気体の分圧に比例する（ヘンリーの法則）。条件も含めて正しい記述である。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "ヒュームは金属などの固体が加熱で蒸発し、空気中で凝縮してできた固体微粒子で、粒径はおおむね1µm以下と小さい。ミストは液体が飛散した液滴で、粒径は数µm以上とヒュームより大きいのが一般的なので、記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚労省のモデルSDSではアクリルアミドの融点は84.5℃で、外観は白色の固体である。25℃・1気圧では融点より十分低いので固体として存在し、記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "分子量はジクロロメタン84.93、トルエン92.14で、相対蒸気密度は約2.93と約3.1なので前半は正しい。しかし25℃の蒸気圧はジクロロメタン435mmHg、トルエン28.4mmHgで、ジクロロメタンの方がはるかに大きい。後半が誤りなので、この肢が正答である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "N,N-ジメチルホルムアミドは水と任意の割合で混ざり、多くの有機溶媒とも混ざる極性の非プロトン性溶媒である。水溶性と脂溶性を併せ持つため皮膚からも吸収されやすく、記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "職場のあんぜんサイト モデルSDS ジクロロメタン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS トルエン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS アクリルアミド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS N,N-ジメチルホルムアミド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html",
+          "excerpt": "435 mmHg (25℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "28.4 mmHg（25℃）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html",
+          "excerpt": "CH2Cl2 (84.93)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "3.1 (Air=1)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "C7H8（92.14）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html",
+          "excerpt": "84.5 ℃",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "水に溶ける",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "蒸気密度を分子量から独立に検算した。ジクロロメタンは84.93÷28.97≒2.93、トルエンは92.14÷28.97≒3.18で、ジクロロメタンの方が小さいことはSDSの値（2.93、3.1）と一致する。",
+        "ジクロロメタンのモデルSDSの相対蒸気密度の欄は取得した表記が「2.93(空気= 1.02)」と不自然だったため、抜粋に使わず分子量の値で代えた。",
+        "肢5のDMFが脂溶性を持つ（有機溶媒と混ざる）点は、モデルSDSで直接の記述を確認できず、「水に溶ける」ことだけを抜粋した。",
+        "肢1（ヘンリーの法則）と肢2（ヒュームとミストの粒径）は、本文を確認できた政府資料がない。"
+      ]
+    }
+  }
+}

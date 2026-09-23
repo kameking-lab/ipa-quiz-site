@@ -15,6 +15,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "docs/evidence/emkohyo-choice-sources/subject-packs"
 CACHE = ROOT / "data/raw_pdfs/emkohyo-source-cache"
 OUT = ROOT / "docs/evidence/emkohyo-choice-sources/mhlw-law-pages.json"
+ADDITIONAL_LAWS = (
+    ("有機溶剤中毒予防規則", "74090000", ("労働衛生関係法令", "有機溶剤")),
+    ("特定化学物質障害予防規則", "74097000", ("労働衛生関係法令", "特定化学物質")),
+    ("鉛中毒予防規則", "74094000", ("労働衛生関係法令", "金属類")),
+    ("電離放射線障害防止規則", "74101000", ("労働衛生関係法令", "放射性物質")),
+    ("粉じん障害防止規則", "74107000", ("労働衛生関係法令", "鉱物性粉じん")),
+    ("酸素欠乏症等防止規則", "74105000", ("労働衛生関係法令", "労働衛生一般")),
+    ("じん肺法", "74164000", ("労働衛生関係法令", "鉱物性粉じん")),
+    ("労働安全衛生法施行令", "74002000", ("労働衛生関係法令",)),
+)
 
 
 def page_url(url: str, number: int) -> str:
@@ -56,6 +66,25 @@ def main() -> None:
                 continue
             entry = first_pages.setdefault(source["url"], {"source": source, "subjects": set()})
             entry["subjects"].add(subject)
+    for title, data_id, subjects in ADDITIONAL_LAWS:
+        url = f"https://www.mhlw.go.jp/web/t_doc?dataId={data_id}&dataType=0&pageNo=1"
+        response = requests.get(url, timeout=90,
+                                headers={"User-Agent": "QualificationStudySourceVerifier/1.0"})
+        response.raise_for_status()
+        soup = BeautifulSoup(response.content, "html.parser")
+        for tag in soup(["script", "style", "nav", "footer"]):
+            tag.decompose()
+        text = soup.get_text(" ", strip=True)
+        if f"○{title}" not in text:
+            raise ValueError(f"Unexpected MHLW law title: {url}")
+        digest = sha256(response.content).hexdigest()
+        CACHE.joinpath(f"{digest}.json").write_text(
+            json.dumps({"url": url, "sha256": digest, "pages": [text]}, ensure_ascii=False) + "\n",
+            encoding="utf-8")
+        entry = first_pages.setdefault(url, {"source": {"title": f"厚生労働省 {title}",
+                                                   "url": url, "sha256": digest},
+                                             "subjects": set()})
+        entry["subjects"].update(subjects)
     jobs = []
     index = []
     for url, entry in first_pages.items():

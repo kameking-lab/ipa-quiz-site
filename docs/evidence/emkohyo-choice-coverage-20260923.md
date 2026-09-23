@@ -10,4 +10,6 @@
 
 法令の長文は先頭ページや科目共通の数抜粋だけでは個別条文が欠ける。`emkohyo-cache-source-text.py`で16原典の全文をSHA照合してローカルに保持し、`emkohyo-expand-mhlw-law-pages.py`で厚労省の分割法令25ページをURL・SHA別に固定した。今後の草稿では`emkohyo_source_retrieval.py`が問題文と既存解説から該当部分だけを検索し、設問別に根拠候補を渡す。公開判断は別の原文・正答・政府資料照合で行い、検索結果だけで承認しない。旧草稿は自動受入せず、根拠不足が残る問だけ再起票する。
 
+2026年9月23日の追加索引では、有機則・特化則・鉛則・電離則・粉じん則・酸欠則・じん肺法・安衛法施行令の厚労省本文を加え、分割法令は計36ページとなった。原典のURL・取得SHAは`mhlw-law-pages.json`、再取得手順は同スクリプトに固定した。公開済み6問は変更していない。私有草稿195問の静的監査では25問の採点verdict誤表記を公式正答番号に合わせて機械補正したが、説明文と法令適用の独立審査は未完のまま保留した。`draft-static-audit.json`に保留理由を問単位で残す。
+
 `coverage-contract.json`の`emkohyoTwoYearTarget`に18紙360問を固定した。通常の検証では対象紙と収録数・現受入数を表示し、`node scripts/validate-safety-exams.mjs --require-em-two-years`は360問すべてで全肢解説が揃うまで失敗する。`requiredPaperIds`は既存の公開済み必須集合として維持し、未完成のEMを完了とは呼ばない。

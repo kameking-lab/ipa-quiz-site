@@ -47,6 +47,35 @@ def candidate_problems(row: dict, candidate: dict) -> list[str]:
     return errors
 
 
+def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
+    """A PASS label counts only with the current candidate and source bytes."""
+    if candidate.get("reviewIssues"):
+        return False
+    id_ = f"{paper}-q{number}"
+    receipts = [json.loads(file.read_text(encoding="utf-8"))
+                for file in REVIEW.glob(f"{paper}-q*-review.json")]
+    matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])]
+    if len(matching) != 1:
+        return False
+    receipt = matching[0]
+    assessment = receipt.get("assessment", {}).get(id_, {})
+    issue_keys = ("textIssues", "choiceIssues", "reasonIssues", "sourceIssues", "needsExternalCheck")
+    if assessment.get("status") != "PASS" or any(assessment.get(key) for key in issue_keys):
+        return False
+    digest = sha256(json.dumps(candidate["overlay"], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+    if receipt.get("candidateSha256", {}).get(id_) != digest:
+        return False
+    focused = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
+    first = (number - 1) // 5 * 5 + 1
+    if focused.exists():
+        pack = focused
+    elif paper == "emkohyo-EM20251805" and number <= 3:
+        pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
+    else:
+        pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{first+4:02}.json"
+    return pack.exists() and receipt.get("sourcePackSha256") == sha256(pack.read_bytes()).hexdigest()
+
+
 def main() -> None:
     catalog = json.loads((DATA / "official-catalog.json").read_text(encoding="utf-8"))
     selected = [item for item in catalog if item["group"] == "emkohyo"
@@ -76,6 +105,8 @@ def main() -> None:
                 if not issues:
                     counter["staticValid"] += 1
                     receipt["candidateStaticValid"] += 1
+                    if current_direct_review(paper["id"], row["number"], candidate):
+                        receipt["reviewedPassCurrentHash"] += 1
                 if candidate.get("reviewIssues"):
                     receipt["candidateWithReviewIssues"] += 1
                     issues.append("reviewIssues")
