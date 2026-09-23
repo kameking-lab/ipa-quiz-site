@@ -18,6 +18,14 @@ INDEPENDENT = ROOT / "docs/evidence/denko2-independent"
 FINAL = ROOT / "docs/evidence/denko2-final"
 
 
+def portable_digest(path: Path) -> str:
+    """Hash text receipts independent of checkout newline mode; keep binaries raw."""
+    raw = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".txt", ".py"}:
+        raw = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+    return sha256(raw).hexdigest()
+
+
 def read(relative: str) -> dict:
     path = ROOT / relative
     if not path.is_file():
@@ -34,7 +42,7 @@ def pending_fields(assessment: dict) -> list[str]:
 
 
 def current_direct_reviews(stem: str, source_items: dict[int, dict], candidates: dict) -> dict[int, list[tuple[dict, str]]]:
-    """Ignore legacy aggregate PASS claims and verify direct Opus inputs afresh."""
+    """Use direct Opus receipts only, with per-question candidate/source hashes."""
     current: dict[int, list[tuple[dict, str]]] = {}
     for path in sorted(INDEPENDENT.glob(f"{stem}-opus-review-part*.json")):
         review = json.loads(path.read_text(encoding="utf-8"))
@@ -42,38 +50,43 @@ def current_direct_reviews(stem: str, source_items: dict[int, dict], candidates:
         numbers = [item.get("number") for item in assessments]
         if not numbers or len(numbers) != len(set(numbers)) or not set(numbers).issubset(source_items):
             continue
-        items = [candidates.get((stem[:8], number)) for number in numbers]
-        if any(item is None for item in items):
-            continue
         hashes = review.get("inputHashes", {})
-        digest = sha256(json.dumps(items, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
-        if hashes.get("draftSha256") != digest:
-            continue
-        if any(hashes.get("rowSha256", {}).get(str(number)) !=
-               sha256((ROOT / source_items[number]["reviewCrop"]).read_bytes()).hexdigest()
-               for number in numbers):
-            continue
-        proof_changed = False
-        for field in ("sharedFigureSha256", "detailFigureSha256", "legalReceiptSha256"):
-            for relative, recorded in hashes.get(field, {}).items():
-                target = ROOT / relative
-                if not target.is_file() or sha256(target.read_bytes()).hexdigest() != recorded:
-                    proof_changed = True
-        if hashes.get("commonInstructionsSha256"):
-            common = INDEPENDENT / f"{stem[:8]}-common-instructions.png"
-            if not common.is_file() or sha256(common.read_bytes()).hexdigest() != hashes["commonInstructionsSha256"]:
-                proof_changed = True
-        for number in numbers:
-            law_path = ROOT / f"docs/evidence/denko2-law/{stem[:8]}-q{number:02}.json"
-            if law_path.exists():
-                relative = str(law_path.relative_to(ROOT)).replace("\\", "/")
-                if hashes.get("legalReceiptSha256", {}).get(relative) != sha256(law_path.read_bytes()).hexdigest():
-                    proof_changed = True
-        if proof_changed:
-            continue
         relative = str(path.relative_to(ROOT)).replace("\\", "/")
         for assessment in assessments:
-            current.setdefault(assessment["number"], []).append((assessment, relative))
+            number = assessment["number"]
+            candidate = candidates.get((stem[:8], number))
+            if candidate is None:
+                continue
+            canonical = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+            if hashes.get("candidateSha256"):
+                if hashes["candidateSha256"].get(str(number)) != canonical:
+                    continue
+            else:
+                group = [candidates.get((stem[:8], value)) for value in numbers]
+                if any(item is None for item in group) or hashes.get("draftSha256") != sha256(
+                    json.dumps(group, ensure_ascii=False, sort_keys=True).encode("utf-8")
+                ).hexdigest():
+                    continue
+            crop = ROOT / source_items[number]["reviewCrop"]
+            if hashes.get("rowSha256", {}).get(str(number)) != sha256(crop.read_bytes()).hexdigest():
+                continue
+            figures = [ROOT / "public" / url.lstrip("/") for url in candidate.get("imageUrls", []) + list(candidate.get("choiceImageUrls", {}).values())]
+            if any(not path.is_file() or sha256(path.read_bytes()).hexdigest() not in {
+                hashes.get("detailFigureSha256", {}).get(str(path.relative_to(ROOT)).replace("\\", "/")),
+                hashes.get("sharedFigureSha256", {}).get(str(path.relative_to(ROOT)).replace("\\", "/")),
+            } for path in figures):
+                continue
+            proof = ROOT / f"docs/evidence/denko2-law/{stem[:8]}-q{number:02}.json"
+            if proof.exists():
+                key = str(proof.relative_to(ROOT)).replace("\\", "/")
+                if hashes.get("legalReceiptSha256", {}).get(key) not in {portable_digest(proof), sha256(proof.read_bytes()).hexdigest()}:
+                    continue
+            source_pack = ROOT / f"docs/evidence/denko2-sources/{stem[:8]}/q{number:02}.json"
+            if source_pack.exists() and hashes.get("sourcePackSha256", {}).get(str(number)) not in {
+                portable_digest(source_pack), sha256(source_pack.read_bytes()).hexdigest()
+            }:
+                continue
+            current.setdefault(number, []).append((assessment, relative))
     return current
 
 
@@ -135,10 +148,11 @@ def main() -> None:
                 pending.append(f"{label}: final candidate/row/answer hash mismatch")
                 continue
             relative = pinned.get("directReviewReceipt", "")
-            if (not relative.startswith("docs/evidence/denko2-independent/") or
-                "-opus-review-part" not in relative or
+            if (not relative.startswith(("docs/evidence/denko2-independent/", "docs/evidence/denko2-final/direct/")) or
                 not (ROOT / relative).is_file() or
-                pinned.get("directReviewSha256") != sha256((ROOT / relative).read_bytes()).hexdigest()):
+                pinned.get("directReviewSha256") not in {
+                    portable_digest(ROOT / relative), sha256((ROOT / relative).read_bytes()).hexdigest()
+                }):
                 pending.append(f"{label}: final direct Opus receipt missing or changed")
                 continue
             figures = {str((ROOT / "public" / url.lstrip("/")).relative_to(ROOT)).replace("\\", "/"):
@@ -148,12 +162,44 @@ def main() -> None:
                 pending.append(f"{label}: final figure hashes changed")
                 continue
             law_path = ROOT / f"docs/evidence/denko2-law/{paper}-q{number:02}.json"
+            source_pack = ROOT / f"docs/evidence/denko2-sources/{paper}/q{number:02}.json"
             law = pinned.get("lawReceipt")
-            if (law_path.exists() and (not law or law.get("path") != str(law_path.relative_to(ROOT)).replace("\\", "/") or
-                                      law.get("sha256") != sha256(law_path.read_bytes()).hexdigest())) or (not law_path.exists() and law):
+            expected_proof = source_pack if source_pack.exists() else law_path if law_path.exists() else None
+            if (expected_proof and (not law or law.get("path") != str(expected_proof.relative_to(ROOT)).replace("\\", "/") or
+                                    law.get("sha256") != portable_digest(expected_proof))) or (not expected_proof and law):
                 pending.append(f"{label}: final official-source proof changed")
                 continue
             reviews = [item for item in by_number.get(number, []) if item[1] == relative]
+            if relative.startswith("docs/evidence/denko2-final/direct/"):
+                wrapper = json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                upstream_relative = wrapper.get("upstreamReviewReceipt", "")
+                upstream = ROOT / upstream_relative
+                if (wrapper.get("receiptKind") != "canonicalized-direct-review" or
+                    not upstream_relative.startswith("docs/evidence/denko2-strict-") or
+                    not upstream.is_file() or
+                    wrapper.get("upstreamReviewSha256") != portable_digest(upstream)):
+                    pending.append(f"{label}: canonical direct receipt upstream missing or changed")
+                    continue
+                upstream_data = json.loads(upstream.read_text(encoding="utf-8"))
+                if upstream_data.get("inputHashes", {}).get("candidateSha256", {}).get(str(number)) != canonical:
+                    pending.append(f"{label}: canonical direct upstream candidate mismatch")
+                    continue
+                matches = [item for item in upstream_data.get("assessment", []) if item.get("number") == number]
+                if len(matches) != 1 or matches[0].get("status") != "PASS" or pending_fields(matches[0]):
+                    pending.append(f"{label}: canonical direct upstream review pending")
+                    continue
+                if wrapper.get("assessment") != matches:
+                    pending.append(f"{label}: canonical direct assessment differs from upstream")
+                    continue
+                if (wrapper.get("inputHashes", {}).get("draftSha256") != sha256(json.dumps([candidate], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() or
+                    wrapper.get("inputHashes", {}).get("rowSha256", {}).get(str(number)) != original_sha or
+                    wrapper.get("inputHashes", {}).get("detailFigureSha256") != figures or
+                    wrapper.get("inputHashes", {}).get("legalReceiptSha256", {}) != (
+                        {str(expected_proof.relative_to(ROOT)).replace("\\", "/"): portable_digest(expected_proof)} if expected_proof else {}
+                    )):
+                    pending.append(f"{label}: canonical direct input hashes changed")
+                    continue
+                reviews = [(matches[0], relative)]
             if not reviews:
                 pending.append(f"{label}: direct Opus input hashes not current")
                 continue

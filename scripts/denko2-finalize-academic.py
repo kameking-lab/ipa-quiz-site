@@ -12,7 +12,10 @@ FINAL = ROOT / "docs/evidence/denko2-final"
 
 
 def digest(path: Path) -> str:
-    return sha256(path.read_bytes()).hexdigest()
+    raw = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".txt", ".py"}:
+        raw = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+    return sha256(raw).hexdigest()
 
 
 def canonical(value) -> str:
@@ -68,7 +71,7 @@ def main() -> None:
         if law_path.exists():
             key = str(law_path.relative_to(ROOT)).replace("\\", "/")
             actual = digest(law_path)
-            if hashes.get("legalReceiptSha256", {}).get(key) != actual:
+            if hashes.get("legalReceiptSha256", {}).get(key) not in {actual, sha256(law_path.read_bytes()).hexdigest()}:
                 raise ValueError(f"Q{number} source proof not verified in direct review")
             if json.loads(law_path.read_text(encoding="utf-8")).get("unresolved"):
                 raise ValueError(f"Q{number} source proof has unresolved item")
