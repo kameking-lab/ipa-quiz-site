@@ -22,7 +22,7 @@ CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 MODEL_ID = "claude-opus-5-5"
 
 
-def parse(stdout: str) -> tuple[object, str]:
+def parse(stdout: str) -> tuple[object, str, dict]:
     events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
@@ -32,7 +32,7 @@ def parse(stdout: str) -> tuple[object, str]:
     if len(models) != 1 or not models[0].startswith(MODEL_ID):
         raise ValueError(f"Cannot prove the requested model from Claude modelUsage: {models}")
     resolved_model = models[0]
-    return json.loads(value[value.find("{"):value.rfind("}") + 1]), resolved_model
+    return json.loads(value[value.find("{"):value.rfind("}") + 1]), resolved_model, final["modelUsage"]
 
 
 def main() -> None:
@@ -136,7 +136,7 @@ def main() -> None:
     )
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-1000:])
-    result, resolved_model = parse(process.stdout)
+    result, resolved_model, model_usage = parse(process.stdout)
     raw_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if set(result) != set(ids):
         raise ValueError("Review omitted or added question IDs")
@@ -146,7 +146,11 @@ def main() -> None:
             raise ValueError(f"Invalid review: {id_}")
         if item["status"] == "PASS" and any(item[k] for k in keys):
             item["status"] = "FIX"
+    usage_record = model_usage[resolved_model]
     receipt = {"reviewModel": resolved_model, "requestedModel": MODEL_ID,
+               "canonicalModel": usage_record.get("canonicalModel", resolved_model),
+               "provider": usage_record.get("provider"),
+               "modelUsage": model_usage,
                "paperId": paper, "ids": ids,
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
                "governmentSourceImageSha256": source_page_image_hashes,
