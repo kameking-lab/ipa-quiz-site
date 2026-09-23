@@ -42,6 +42,8 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
 
     def test_source_host_must_be_government(self):
         self.assertTrue(MODULE.government_url("https://laws.e-gov.go.jp/law/347AC0000000057"))
+        self.assertTrue(MODULE.government_url("https://www.stat.go.jp/naruhodo/10_tokucho/chirabari.html"))
+        self.assertTrue(MODULE.government_url("https://www.fdma.go.jp/laws/kokuji/post95/"))
         for url in ["https://go.jp.example.com/law", "https://www.exam.or.jp/paper.pdf", "http://www.mhlw.go.jp/", "https://go.jp/", "https://okayamas.johas.go.jp/example"]:
             self.assertFalse(MODULE.government_url(url), url)
 
