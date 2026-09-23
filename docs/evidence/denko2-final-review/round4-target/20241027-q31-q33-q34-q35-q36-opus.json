@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": {
+      "31": "91398f7d370dd38ebfa6c0f073c5525f1af92540d03c049a5598c134144ebd82",
+      "33": "91398f7d370dd38ebfa6c0f073c5525f1af92540d03c049a5598c134144ebd82",
+      "34": "91398f7d370dd38ebfa6c0f073c5525f1af92540d03c049a5598c134144ebd82",
+      "35": "91398f7d370dd38ebfa6c0f073c5525f1af92540d03c049a5598c134144ebd82",
+      "36": "4604402af49606e01b6f9f817c442be6fe185cf28c0b108472324b4cbbc951a1"
+    },
+    "rowSha256": {
+      "31": "23bc1469ca5d7ae86a28ac73132e1639ae515512ebd8c0a9dcf9ddea26d069ab",
+      "33": "9310970f1c348c21a54a761e1645cdf50d03220d7c5f2238f60a3f02fec59474",
+      "34": "c2d3754b7c7181b3ff4944766ac55d1f340da41d3df9254d0d503d3bb96802fa",
+      "35": "643a65dd0ad89bdde44e4b3045e719f98f624872f0f215561b81b66ba4676f81",
+      "36": "edf1092ee2e6760670c5326e87aa04136f3fd90cd5b92eb69a87af813b866389"
+    }
+  },
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescriptionの「L-2(電灯分電盤2)のⓒは、⑬のジョイントボックスから分岐する2階の照明回路の一つである」は、配線の向きが逆である。15頁配線図では、ⓒはL-2の分岐回路(B 100V 20A)であり、L-2からジョイントボックス⑬へ電源を送る配線である。⑬から枝分かれする回路ではない。また2階の照明はⓒの1回路だけ(ⓓはコンセント回路)なので、「照明回路の一つ」という書き方も誤解を招く。「L-2の分岐回路ⓒ(100V 20A)がジョイントボックス⑬へ電源を供給する」などに直す。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations.イは、圧力スイッチの図記号を「●P」(黒丸に傍記P)とし、「記号の形・傍記とも圧力スイッチとは異なる」としているが、誤り。JIS C 0303の圧力スイッチは、押しボタンと同じ◉に傍記Pを付けた「◉P」で、電磁開閉器用押しボタン「◉B」と記号の形は同じ。違うのは傍記(PかBか)だけである。記号を「◉P」に直し、「傍記がBではなくPである点で区別される」という説明に改める。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 36,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}
