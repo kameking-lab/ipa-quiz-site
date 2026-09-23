@@ -52,3 +52,19 @@ test("ST 2025 spring AM II listing and player expose the same questions", async 
   await expect(page.getByRole("radio").first()).toBeVisible();
   await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "25");
 });
+
+test("ST 2024 keeps AM I and AM II separate and renders audited figures", async ({ page }) => {
+  await page.goto("/st/2024-spring");
+
+  await expect(page.locator('a[href^="/q/st/2024-spring/am1/"]')).toHaveCount(30);
+  await expect(page.locator('a[href^="/q/st/2024-spring/am2/"]')).toHaveCount(25);
+
+  await page.goto("/q/st/2024-spring/am1/q3");
+  await expect(page.getByAltText("問3の図表1")).toBeVisible();
+
+  await page.getByRole("link", { name: /クイズモードで開く/ }).first().click();
+  await expect(page).toHaveURL(/session=am1/);
+  await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuemax", "30");
+  await page.getByRole("button", { name: "モード選択に戻る" }).click();
+  await expect(page).toHaveURL(/\/q\/st\/2024-spring\/am1\/q3$/);
+});

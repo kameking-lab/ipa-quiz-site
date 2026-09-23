@@ -1,10 +1,15 @@
 import { spawn } from "node:child_process";
-import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { ST_QUESTIONS } from "@/data/questions/st";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import {
+  isStReviewReceiptAccepted,
+  stReviewDigest,
+  stReviewInputHash,
+  type StReviewInput,
+} from "@/scripts/lib/st-review-gate";
 
 const ROOT = process.cwd();
 const MODEL = "claude-opus-5-5";
@@ -71,14 +76,14 @@ interface PromptInput {
   question: string;
   choices: Record<string, string>;
   officialAnswer: string | string[];
+  existingNarrative: string;
+  hasImage: boolean;
+  imageUrls: string[];
   candidateChoiceExplanations: ChoiceReasons;
 }
 
 function digest(value: unknown): string {
-  const input = typeof value === "string" || Buffer.isBuffer(value)
-    ? value
-    : JSON.stringify(value);
-  return createHash("sha256").update(input).digest("hex");
+  return stReviewDigest(value);
 }
 
 function readJson<T>(path: string, fallback: T): T {
@@ -140,8 +145,19 @@ function evidenceHash(question: Question, ledger: ReceiptLedger): string {
   return digest(sourceUrls(question).map((url) => ({ url, sha256: ledger.evidence[url]?.sha256 })));
 }
 
+function reviewInput(question: Question): StReviewInput {
+  return {
+    question: question.question,
+    choices: question.choices ?? {},
+    officialAnswer: question.answer,
+    existingNarrative: question.explanation,
+    hasImage: question.hasImage,
+    imageUrls: question.imageUrls ?? [],
+  };
+}
+
 function inputHash(question: Question): string {
-  return digest({ question: question.question, choices: question.choices, officialAnswer: question.answer });
+  return stReviewInputHash(reviewInput(question));
 }
 
 function parsePromptInput(prompt: string): PromptInput[] {
@@ -199,6 +215,15 @@ function importLegacyReceipts(
       const promptRow = promptRows.get(id);
       const current = overlay[id];
       if (!promptRow || !current) continue;
+      const storedInput: StReviewInput = {
+        question: promptRow.question,
+        choices: promptRow.choices,
+        officialAnswer: promptRow.officialAnswer,
+        existingNarrative: promptRow.existingNarrative,
+        hasImage: promptRow.hasImage,
+        imageUrls: promptRow.imageUrls,
+      };
+      if (stReviewInputHash(storedInput) !== inputHash(question)) continue;
       validateReasons(question, review.choiceExplanations);
       if (digest(current) !== digest(review.choiceExplanations)) continue;
       ledger.questions[id] = {
@@ -206,7 +231,7 @@ function importLegacyReceipts(
         batch: batchId,
         status: review.status,
         issues: review.issues,
-        inputHash: digest({ question: promptRow.question, choices: promptRow.choices, officialAnswer: promptRow.officialAnswer }),
+        inputHash: stReviewInputHash(storedInput),
         candidateHash: digest(promptRow.candidateChoiceExplanations),
         evidenceHash: evidenceHash(question, ledger),
         acceptedHash: digest(review.choiceExplanations),
@@ -373,11 +398,22 @@ async function main(): Promise<void> {
   );
   const pending = targets.filter((question) => {
     const receipt = ledger.questions[question.id];
-    return !receipt
-      || mixedBatches.has(receipt.batch)
-      || receipt.inputHash !== inputHash(question)
-      || receipt.acceptedHash !== digest(overlay[question.id])
-      || receipt.evidenceHash !== evidenceHash(question, ledger);
+    const batch = receipt ? ledger.batches[receipt.batch] : undefined;
+    const batchValid = batch !== undefined
+      && batch.requestedModel === MODEL
+      && batch.canonicalModel === MODEL
+      && batch.provider === "firstParty"
+      && batch.modelUsage.canonicalModel === MODEL
+      && batch.modelUsage.provider === "firstParty"
+      && /^[a-f0-9]{64}$/u.test(batch.promptHash)
+      && /^[a-f0-9]{64}$/u.test(batch.rawHash);
+    return !isStReviewReceiptAccepted(receipt, {
+      input: reviewInput(question),
+      candidateHash: digest(overlay[question.id]),
+      evidenceHash: evidenceHash(question, ledger),
+      mixedBatch: receipt ? mixedBatches.has(receipt.batch) : false,
+      batchValid,
+    });
   });
   console.log(JSON.stringify({ total: targets.length, accepted: targets.length - pending.length, pending: pending.length, papers: Object.fromEntries([...groups].map(([key, rows]) => [key, rows.length])) }, null, 2));
   if (process.argv.includes("--prune-receipts")) {
@@ -435,4 +471,3 @@ main().catch((error: unknown) => {
   console.error(error instanceof Error ? error.stack : error);
   process.exitCode = 1;
 });
-

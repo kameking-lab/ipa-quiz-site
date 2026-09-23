@@ -3,6 +3,7 @@ import { IPA_AUDIT_CORRECTIONS } from "./ipa-audit-20260913";
 import { IPA_AUDIT_ADDITIONS } from "./ipa-audit-additions-20260913";
 import { IPA_EXPLANATION_REPAIRS } from "./explanations-20260913";
 import sources from "./official-sources.json";
+import { ST_FIGURE_CORRECTIONS } from "./st-figures-20260924";
 
 const sourceByPaper: Record<string, { question: string; answer: string }> = sources;
 
@@ -13,12 +14,14 @@ export function applyIpaCorrections(exam: ExamCode, questions: Question[]): Ques
     const source = sourceByPaper[`${q.exam}/${q.year}/${q.season}/${q.session}`];
     const explanation = IPA_EXPLANATION_REPAIRS[q.id];
     const verified = IPA_AUDIT_CORRECTIONS[q.id];
+    const figure = ST_FIGURE_CORRECTIONS[q.id];
     return {
       ...q,
       ...(source ? { sourcePdfUrl: source.question } : {}),
       ...explanation,
       ...verified,
-      ...(explanation || verified ? { lastUpdated: "2026-09-13" } : {}),
+      ...figure,
+      ...(figure ? { lastUpdated: "2026-09-24" } : explanation || verified ? { lastUpdated: "2026-09-13" } : {}),
     };
   });
 }

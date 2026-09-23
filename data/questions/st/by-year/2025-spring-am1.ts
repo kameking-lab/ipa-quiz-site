@@ -264,7 +264,7 @@ export const ST_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "question": "無線LANのアクセスポイントやIP電話機などに、LANケーブルを利用して給電も行う仕組みはどれか。",
     "choices": {
       "ア": "PLC",
-      "イ": "POE",
+      "イ": "PoE",
       "ウ": "UPS",
       "エ": "USB"
     },
