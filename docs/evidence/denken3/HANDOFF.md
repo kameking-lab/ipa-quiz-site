@@ -23,3 +23,10 @@
 - `denken3` は現行カタログで `notification-required`。2問pilotを含め、16紙320公開解答単位が `needsReview=false`/独立PASSで揃い、試験センターへの利用状況連絡が完了するまで `live` にしない。
 - [試験センターFAQ](https://www.shiken.or.jp/shiken/faq/faq08/000082.html)は教育目的の過去問利用に許諾・使用料不要、出典・改変の明記、利用状況のメール連絡（法人・担当者・連絡先・使用問題・目的）を求める。連絡メールはこの作業で送信しない。運営者情報が確定した後に所管担当者が対応する。
 - 出典には**年度・期・科目・問番号・加工の有無**を表示する。試験日の暦年と年度を混同しない。特に2025-03-23は2024年度下期、2026-03-22は2025年度下期。
+
+## 2026-09-23 strict監査チェックポイント
+
+- 2024上期理論Q15/Q17/Q18を候補化し、Q18(b)の回路接続・波形対応・変調の因果を公式原図に合わせて修正した。Q18の図1・図2は `public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png` に図だけを切り出した。
+- 新規 `scripts/denken3-direct-review.py` は解答単位キーごとにcurrent candidate SHA、公式問題頁SHA、公開図SHA、公式問題PDF/解答PDF SHA、公式正答単位SHAを固定してOpus highで審査する。
+- strict2の5単位はQ17(a)、Q17(b)、Q18(a)がPASS、Q15(a)、Q15(b)がFIX。次回はQ15両候補へ大問共通文（素子L/C、`v=500 sin(1000t)`, `i=-50 cos(1000t)`）を追加し、Q15(a)に原図のv/i基準方向と受動符号規約を明記してtargeted再審査する。
+- `docs/evidence/denken3/strict/` の旧巡を保持する。旧partial acceptanceはstrictへ継承せず、全候補を現内容と原図から再審査する。現在のstrict cleanは3/80、非公開候補は22/80。
