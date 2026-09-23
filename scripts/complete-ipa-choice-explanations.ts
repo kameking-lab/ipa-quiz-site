@@ -35,6 +35,11 @@ const visualSourceByPaper = sourcePdfManifest.papers as Record<string, {
 const reviewPriorityById = new Map(
   fixQueue.questions.map((row) => [row.id, row.lastReviewStatus === "FIX" || row.lastReviewStatus === "STALE" ? 0 : 1]),
 );
+const priorFixIssuesById = new Map(
+  fixQueue.questions
+    .filter((row) => row.lastReviewStatus === "FIX" && row.lastReviewIssues.length > 0)
+    .map((row) => [row.id, row.lastReviewIssues]),
+);
 
 interface Options {
   exams: CoreExam[];
@@ -306,6 +311,7 @@ function inputFor(question: Question) {
     sourceAnswerUrl: officialSource?.answer ?? question.sourceAnswerUrl,
     officialReferenceUrls: question.officialReferenceUrls ?? [],
     imageFiles: imageFiles(question),
+    priorIndependentReviewIssues: priorFixIssuesById.get(question.id) ?? [],
   };
 }
 
