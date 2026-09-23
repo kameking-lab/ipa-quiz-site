@@ -62,11 +62,15 @@ def main() -> None:
     if args.plan:
         print(json.dumps({"jobs": jobs}, ensure_ascii=False), flush=True)
         return
+    failures = 0
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for future in as_completed([pool.submit(work, job) for job in jobs]):
             job, code, output = future.result()
+            failures += code != 0
             print(json.dumps({"paper": job[0], "range": [job[1], job[2]],
                               "ok": code == 0, "message": output.strip()}, ensure_ascii=False), flush=True)
+    if failures:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":

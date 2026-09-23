@@ -91,9 +91,14 @@ def main() -> None:
                       "selectedDistinctUnaccepted": len(covered), "jobs": jobs}, ensure_ascii=False), flush=True)
     if not args.run:
         return
+    failures = 0
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         for future in as_completed([pool.submit(work, job) for job in jobs]):
-            print(json.dumps(future.result(), ensure_ascii=False), flush=True)
+            result = future.result()
+            failures += not result["ok"]
+            print(json.dumps(result, ensure_ascii=False), flush=True)
+    if failures:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
