@@ -39,17 +39,17 @@
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "「放射性物質取扱作業室」自体は電離則上の用語だが、そこで非密封放射性物質を扱う作業に「放射性物質取扱作業主任者技能講習」の修了者から主任者を選任する制度はない。電離則の作業主任者はエックス線作業主任者とガンマ線透過写真撮影作業主任者であり、この記述は誤り。"
+            "reason": "電離則第22条は非密封放射性物質を扱う「放射性物質取扱作業室」を定めるが、同室での作業だけを理由とする主任者選任義務は定めない。施行令第6条第5号・第5号の2に挙がる放射線関係の作業は、電離則第46条・第52条の2によりエックス線作業主任者またはガンマ線透過写真撮影作業主任者の免許を受けた者から選任する。設問の非密封放射性物質取扱いに「放射性物質取扱作業主任者技能講習」修了者から選任するという規定はなく、肢3は誤りである。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "外部被ばく線量は、基本部位の胸部（妊娠可能な女性は腹部）に加え、最も多く放射線にさらされるおそれのある部位が頭頸部・腹大腿部・末端部などであれば、その部位にも測定器を装着する。不均等被ばくでは複数部位の測定が必要になるため正しい。"
+            "reason": "電離則第8条第3項は、男性または妊娠する可能性がないと診断された女性では胸部、その他の女性では腹部に測定器を装着させる。さらに頭・頸部、胸・上腕部、腹・大腿部のうち最も被ばくする部位が基本部位と異なる場合などには、その部位にも装着させる。不均等被ばくでは複数部位の測定が必要となるため肢4は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "管理区域に立ち入る放射線業務常時従事者には、雇入れ時・配置替え時とその後6か月以内ごとに1回の健康診断を行う。電離放射線健康診断個人票は、厚生労働大臣が指定する機関に引き渡す場合を除き30年間保存するので、記述は正しい。"
+            "reason": "電離則第56条は、管理区域に立ち入る放射線業務常時従事者に雇入れ時・配置替え時と、その後6か月以内ごとの健康診断を定める。第57条は電離放射線健康診断個人票を30年間保存する義務を定め、5年間保存した後に指定機関へ引き渡す場合だけ例外とする。肢5の保存期間はこれに一致し、正しい。"
           }
         ],
         "sources": [
@@ -58,12 +58,12 @@
             "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"
           },
           {
-            "title": "厚生労働省 電離放射線障害防止規則 第8・18条の6・7",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"
+            "title": "e-Gov 電離放射線障害防止規則（2026年2月17日時点）第8・18条の6・18条の7・22・46・52条の2・56・57条",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17"
           },
           {
-            "title": "厚生労働省 電離放射線障害防止規則 第46・52・56・57条",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"
+            "title": "e-Gov 労働安全衛生法施行令（2026年2月17日時点）第6条",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
           }
         ]
       },
@@ -76,58 +76,126 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に、線源容器のしやへい能力の異常の有無について自主検査を行わなければならない",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "前二条の自主検査を行つたときは、次の事項を記録し、これを三年間保存しなければならない",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "エツクス線作業主任者及びガンマ線透過写真撮影作業主任者",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "最も多く放射線にさらされるおそれのある部位",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "その後六月以内ごとに一回、定期に、次の項目について医師による健康診断を行わなければならない",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
-          "excerpt": "電離放射線健康診断個人票(様式第一号の二)を",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "電離放射線健康診断個人票（様式第一号の二）を",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
           "excerpt": "これらを三十年間保存しなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "放射性物質取扱作業室（前項の作業室及び同項本文の作業に従事中の者の専用の廊下等をいう",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "第四十六条事業者は、令第六条第五号に掲げる作業については、エツクス線作業主任者免許を受けた者のうちから",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "第五十二条の二事業者は、令第六条第五号の二に掲げる作業については、ガンマ線透過写真撮影作業主任者免許を受けた者のうちから",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "五別表第二第一号又は第三号に掲げる放射線業務に係る作業",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "五の二ガンマ線照射装置を用いて行う透過写真の撮影の作業",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "男性又は妊娠する可能性がないと診断された女性にあつては胸部、その他の女性にあつては腹部",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "頭・頸けい部、胸・上腕部及び腹・大腿たい部のうち、最も多く放射線にさらされるおそれのある部位",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "これらを三十年間保存しなければならない。ただし、当該記録を五年間保存した後において、厚生労働大臣が指定する機関に引き渡すときは、この限りでない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000041?asof=2026-02-17",
+          "excerpt": "第五十六条事業者は、放射線業務に常時従事する労働者で管理区域に立ち入るものに対し",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "安衛則第36条は現行MHLW表示で試験後の改正が反映され対象業務が拡大したため、肢1には2026年2月17日時点のe-Gov版を使用。電離則の各肢も照合済みだが、独立Opus原文審査は未了。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q17": {
       "overlay": {
