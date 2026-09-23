@@ -89,7 +89,8 @@ export function parseExamChoiceExplanation(
   });
   if (
     choices.length !== question.choiceCount ||
-    new Set(choices.map((choice) => choice.number)).size !== question.choiceCount
+    new Set(choices.map((choice) => choice.number)).size !== question.choiceCount ||
+    new Set(choices.map((choice) => choice.reason)).size !== question.choiceCount
   ) {
     return null;
   }
