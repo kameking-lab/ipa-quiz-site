@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "d448292f4dd8705077945d91be6d39fb6908a80a46e13f30e334ba10d7380a75",
+    "rowSha256": {
+      "26": "b618521625fbc6d2f21c8e65c2bd5608d0c13968c56176897dc0c871967c27a2",
+      "27": "2046d471e29a2f7dd78295044b62fb9f623a18c3cac69fae3e8a3170a017a258",
+      "28": "7ed62d27ff2832b1d7b882689ef5aa58f7adf40c7cb3f6b301e40c551f367c9c",
+      "29": "be4c33d822baf67a78e572d7cd91d166f2c876bf988d51604b65e30583e3a7f4",
+      "30": "2fc4351a425d0cc6c446212198542cbe11295ca53004b20690cf3611bb12795c"
+    }
+  },
+  "assessment": [
+    {
+      "number": 26,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": [
+        "解説は電技省令第58条(0.4MΩ)と電技解釈第17条・第29条(C種接地、10Ω/500Ω)の両方に依拠しているが、officialReferenceUrlsはMETIのPDF(20231226-2.pdf)1件しかない。このPDFが電技解釈なのか省令なのかをこちらでは確かめられていない。省令第58条の根拠として、e-Govの電気設備に関する技術基準を定める省令(https://elaws.e-gov.go.jp/document?lawid=409M50000400052)を追加し、METIのPDFが電技解釈(令和5年12月改正版)であることも確認すること"
+      ]
+    },
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説と選択肢イ・ロの理由に「配線用遮断器は定格電圧100V以上600V以下・定格電流100A以下」とあるが、電気用品安全法施行令別表第一の配線器具(配線用遮断器を含む)は、定格電圧100V以上300V以下の交流用に限られるとみられる。600Vは電線の区分と混同した値である可能性が高い。条文で確認のうえ「100V以上300V以下・100A以下」に修正すること(Aは200Vなので結論は変わらない)"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "解説は電気用品安全法施行令の別表第一・別表第二に全面的に依拠しているが、officialReferenceUrlsが空になっている。e-Govの電気用品安全法施行令(https://elaws.e-gov.go.jp/document?lawid=337CO0000000324)を追加すること",
+        "配線用遮断器の特定電気用品指定範囲の定格電圧上限(600V)は、施行令別表第一の配線器具の区分(100V以上300V以下)と合っていないとみられる"
+      ]
+    },
+    {
+      "number": 30,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": [
+        "解説の根拠は電技省令第2条第1項だが、officialReferenceUrlsはMETIのPDF(20231226-2.pdf)1件のみ。このPDFは電技解釈である可能性があり、省令第2条の本文を載せているかどうかはこちらで確かめられていない。e-Govの電気設備に関する技術基準を定める省令(https://elaws.e-gov.go.jp/document?lawid=409M50000400052)に差し替えるか、追加すること"
+      ]
+    }
+  ]
+}

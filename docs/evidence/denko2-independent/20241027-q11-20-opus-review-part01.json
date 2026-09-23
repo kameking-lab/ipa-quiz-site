@@ -1,0 +1,73 @@
+{
+  "inputHashes": {
+    "draftSha256": "dc45562c50883f496f36040f72c772df7b34159635a1923b459fb3e003b8a576",
+    "rowSha256": {
+      "11": "cb160799f1d4ba848ad3945ae628e105eaf0de0756bdc6b0d3bf729825d7e064",
+      "12": "b1cb420488b09248068e05369da9c2d36a5b43195df4d1a68c9bd2bd3c325f91",
+      "13": "d625c7ab7cecd664225765f2bf011db797ea4a7dc6b8524e5764f1cbd7ef29fe",
+      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754",
+      "15": "7f27799f3c4098c0b45326ef80a08df46d97cfe5a33db25ef8843cf5380f17e5"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "本文解説に「JIS規格上の許容最高温度は90℃」とあるが、根拠規格は画像から確認できない。規格名を出さずに「CVケーブルの絶縁物（架橋ポリエチレン）の最高許容温度は90℃」と書くか、出典を確認してから規格名を残すこと。",
+        "肢ニの「120℃は一般的な低圧配線用ケーブルの絶縁材料には用いられない」は断定しすぎで、画像からは裏付けられない。「CVの最高許容温度90℃を上回り、正答と一致しない」程度にとどめること。",
+        "肢ロの理由は「他の絶縁材料の値との混同と考えられるが、確証はない」で止まっており、なぜ誤りかの説明になっていない。正答90℃と一致しないことを主な理由に書き直すこと。75℃を耐熱ビニル絶縁電線(HIV)の値と書く場合は、事前に外部資料で確認すること。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "CV（架橋ポリエチレン）90℃、IV 60℃という各絶縁物の最高許容温度と、その根拠規格名を外部資料で確認すること。"
+      ]
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "FIX",
+      "textIssues": [
+        "原本の単位は上付きの「min⁻¹」（「[min⁻¹]」）だが、JSONでは「min-1」と平文になっている。「min⁻¹」に直すこと。本文解説と各肢の理由の「min-1」も同様に直す。"
+      ],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "本文解説に「電気設備の技術基準に基づき…定められている」とあるが、配線用遮断器の動作時間規定があるのは省令の技術基準本体ではなく「電気設備の技術基準の解釈」（該当条項は要確認）。根拠の表記を改めること。",
+        "肢イ・ロ・ニの理由は「規定の60分と一致しない」を繰り返すだけで、正答を前提にした循環的な説明になっている。規定の区分（定格30A以下・1.25倍電流で60分以内）を示したうえで、各値がどの条件にも当たらない、または別の定格区分の値であることを書くこと。ただし、その区分値は外部資料で確認してから書く。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電気設備の技術基準の解釈にある配線用遮断器の動作特性（定格電流30A以下で、定格電流の1.25倍が流れたとき60分以内に動作）の条項番号と数値を、原典で確認すること。"
+      ]
+    }
+  ]
+}

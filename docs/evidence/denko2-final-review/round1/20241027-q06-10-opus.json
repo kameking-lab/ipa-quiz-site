@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "defdbc2e56dd49715a019e21491a4dd730250f1224e9fa9b70dffb9b9bd8ff38",
+    "rowSha256": {
+      "6": "bcc2bd9122b481937d934e4fb3c244669e85e73448323d8b119d07bbdf23bb24",
+      "7": "fbc7e8806ec02c53dd40aff859d7ae74a714ea0c89afe8b1bf8acab437387ddb",
+      "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
+      "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
+      "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    }
+  },
+  "assessment": [
+    {
+      "number": 6,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イの「往路のみを計算し復路の抵抗による降下を見落とす典型的な誤り」は、誤答の由来を根拠なく決めつけている。「99Vに加える電圧降下の合計は6Vであり、3V(102V)では不足」のように、正しい計算との違いで説明すべき。",
+        "choiceExplanations.ロは誤答の由来を2通り挙げたうえで「どちらの誤りに基づくかは断定できない」としており、由来を推測で埋めている。公開用の解説として不適切。電圧降下の合計が4Vでは不足(正しくは6V)という理由に書き換えるべき。",
+        "choiceExplanations.ハは「b'-c'間の降下1Vを加え忘れた場合」と特定した直後に「どの区間を具体的に見落としたかは断定できない」と書いており、自己矛盾している。推測による由来の説明を削除し、合計5Vでは不足(正しくは6V)という理由にすべき。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 7,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロは「1本分しか計算しない」誤りと「比較の向きを取り違える」誤りを二重に仮定して1/2を作り出しており、誤答の由来として根拠がない。損失は電流の2乗に比例し、電流が10Aから20Aの2倍になるため損失は4倍になる、よって1/2倍は誤り、という理由に書き換えるべき。",
+        "choiceExplanations.ハは2通りの誤りを推定したうえで「どちらが実際の誤りかは断定できない」としており、由来を推測で埋めている。電流2倍で損失は2²=4倍になるため2倍は誤り、という根拠の説明に置き換えるべき。",
+        "choiceExplanations.イの「比較の向きを取り違える」も推測による由来である。損失は増加(20W→80W)するので、減少を意味する1/4倍は誤り、という事実ベースの記述にすべき。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanationとchoiceExplanations.ハが「小数点以下を四捨五入して31A」としているが、電技解釈第146条の規定は小数点以下1位の「7捨8入」である。30.87→31Aという結果は変わらないが、端数処理の規則は正確に記載すべき。",
+        "choiceExplanations.イの「0.63を2回掛けた」「別の減少要因を重複して適用」は根拠のない推測である。正しい値は49×0.63≒31Aであり19Aでは過小、という理由に書き換えるべき。",
+        "choiceExplanations.ロは「由来は不明とする」で終わっており、この肢が誤りである理由を述べていない。正しい値31Aと一致しない、という誤りの理由を明記すべき。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "許容電流49A、電流減少係数0.63(同一管内4本)、7捨8入の根拠である電気設備技術基準の解釈第146条(表146-1・表146-2)が条番号で明記されていない。officialReferenceUrlsのMETI資料についても、該当する条・表を特定して記載すべき。"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロは「由来は不明とする」だけで、誤りの理由がない。57Aは必要値68.75Aに満たないため不適、と明記すべき。",
+        "choiceExplanations.ニは「由来は不明とする」だけで、誤りの理由がない。89Aは68.75A以上を満たすが、問われているのは『最小値』であり、69Aの方が小さいので最小値ではない、という理由を明記すべき。"
+      ],
+      "visualIssues": [
+        "diagramDescriptionの「10mの寸法はaの高さからbの高さまで斜めの補助線で示されている」は、図の表現と異なる。実際の図は、a付近とb付近にそれぞれ斜めの引出線があり、その間を縦の両矢印で10mと示している。"
+      ],
+      "lawIssues": [
+        "分岐点から8mを超える位置に過電流遮断器を置く場合に55%以上、3mを超え8m以下なら35%以上、という規定の根拠である電技解釈第149条第1項が条番号で明記されていない。"
+      ]
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イの「電線の太さは2.6mm(5.5mm²相当)以上で規定を満たすが」は文意が不明瞭。「30A分岐回路の電線は2.6mm(5.5mm²)以上が必要で、5.5mm²はこれを満たす」と正確に書くべき。",
+        "ただし書きの条件『分岐点から配線用遮断器まで3m』(分岐回路用の過電流遮断器の設置位置が規定を満たすことを示す前提)について、総合解説で触れていない。"
+      ],
+      "visualIssues": [
+        "diagramDescriptionに、各図の上端にある横線(幹線)と分岐点(黒丸)の記述がない。幹線上の分岐点から配線用遮断器へ分岐する構成であることを追記すべき。"
+      ],
+      "lawIssues": [
+        "配線用遮断器の定格、電線の太さ、コンセント定格の組合せの根拠である電技解釈第149条(表149-3)が条番号で明記されていない。"
+      ]
+    }
+  ]
+}

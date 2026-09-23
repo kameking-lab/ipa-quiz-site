@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": {
+      "43": "7791bcd3bb402c15a4a99411c4317e1ab3c88738c432a4e4616c8c2de03ae236",
+      "46": "3cb2033fc518c779fa1da9609f9a1d8434b2fbb2e615e214e3f6ed161f997cae"
+    },
+    "rowSha256": {
+      "43": "e194236db9bc347e8821cbaa5ad8385859d9ea46f90f08a4402b4520a5311cf8",
+      "46": "812227c44f30b5dcd7566477f417199547b6adeeab5af68669fcd4d607c27c3e"
+    }
+  },
+  "assessment": [
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [
+        "問題文の読点が原本と違う。原本の設問行画像は「ただし，心線数は最少とする。」と全角カンマ「，」を使っているが、JSONは「ただし、心線数は最少とする。」と読点「、」になっている。原本どおり「，」に直す。同じバッチの問43は原本どおり「，」を使っているので、そちらとも揃う。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

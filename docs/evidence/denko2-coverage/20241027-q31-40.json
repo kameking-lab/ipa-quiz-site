@@ -1,16 +1,25 @@
 {
   "schemaVersion": 1,
   "batch": "20241027-q31-40",
-  "status": "source-verified-draft-pending",
-  "questionOriginalVisualQc": 0,
-  "choiceTextOriginalVisualQc": 0,
-  "choiceExplanationQc": 0,
-  "figureAndPhotoQc": 0,
-  "governmentSourceQc": 0,
-  "reviewedQuestionNumbers": [],
-  "unresolved": [
-    "原本画像での全問・全肢・解説・図表の個別照合が未完了"
+  "status": "accepted",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 3,
+  "governmentSourceQc": 4,
+  "reviewedQuestionNumbers": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
   ],
+  "unresolved": [],
   "sourceDate": "2024-10-27",
   "sourceQuestionPdfSha256": "24810bc348b169ac0acda3ba0ace038f3e7947772963bbdfe5b4dd550fb466cb",
   "sourceAnswerPdfSha256": "221233ea508b81be22cfa5c0e472477f054492bc2fa21ec01a664c54ebefc582",
@@ -27,5 +36,30 @@
     40
   ],
   "sourceOfficialAnswerCount": 10,
-  "visionDraftQuestionCount": 10
+  "visionDraftQuestionCount": 10,
+  "publishGate": "notification-required-and-two-full-years-required",
+  "governmentSourceApplicableQuestions": [
+    32,
+    36,
+    37,
+    38
+  ],
+  "governmentSourceVersion": "経済産業省・2023-12-26改正（2024-10-27試験以前）",
+  "governmentSourceUrl": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+  "reviewMethod": "公式設問行画像と15頁配線図を原本として全文・四肢・正答・全肢解説・図表を照合し、Sonnet訂正とOpus独立監査をPASSまで反復。",
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-final-review/accepted/20241027-q31-40.json"
+    ],
+    "sourceReceipts": [
+      "docs/evidence/denko2-final-review/round3/20241027-q31-35-opus.json",
+      "docs/evidence/denko2-final-review/round3/20241027-q36-40-opus.json",
+      "docs/evidence/denko2-final-review/round4-target/20241027-q31-q33-q34-q35-q36-opus.json",
+      "docs/evidence/denko2-final-review/round5-target/20241027-q18-q21-q31-q33-opus.json",
+      "docs/evidence/denko2-final-review/round6-target/20241027-q39-q43-q46-opus.json"
+    ]
+  }
 }

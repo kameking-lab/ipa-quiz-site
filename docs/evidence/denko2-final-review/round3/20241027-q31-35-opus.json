@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "ee299a4da87b552a116359eec6d1e6af059fc86263faa1be8ef384a5b6008afe",
+    "rowSha256": {
+      "31": "23bc1469ca5d7ae86a28ac73132e1639ae515512ebd8c0a9dcf9ddea26d069ab",
+      "32": "b63b0f807539932f07fa91f403a7004c537853cd4382e340421902a7331435ec",
+      "33": "9310970f1c348c21a54a761e1645cdf50d03220d7c5f2238f60a3f02fec59474",
+      "34": "c2d3754b7c7181b3ff4944766ac55d1f340da41d3df9254d0d503d3bb96802fa",
+      "35": "643a65dd0ad89bdde44e4b3045e719f98f624872f0f215561b81b66ba4676f81"
+    }
+  },
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescriptionに①と関係のない2階RC・CV5.5-3C・P-1回路aの説明が入っている。これは15頁の配線図の読み取りで確かめていない。とくに、四角の中に丸付きSを描いた記号を「開閉器Ⓢ」と断定している点は根拠がない。①の区間(点滅器群イロハ・⑬ジョイントボックス・階段付近の○矢印立下り・1階の3ハ/階段灯ハ・L-2ⓒ)に絞って書き直すこと"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 32,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "選択肢ロの理由にある「単なる押しボタンの図記号は◉のみで傍記を伴わない」は誤り。押しボタンの記号でも、ボタン数などの傍記は付く。正しい区別は「傍記Bが電磁開閉器用であることを示す」であり、「傍記の有無」ではない。総合解説の「傍記が付かない」「傍記Bが付く場合に限り」も同じ理由で直すこと",
+        "選択肢ニの理由は「別形状の図記号」と書くだけで、握り押しボタンの記号の形を示していない。記号を具体的に書くか、表現を③の記号との違いに限ること"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "選択肢ニの理由で、平形(EM-EEF)を「2心並行」と断定している点は誤り。平形には3心もある。「平形」とだけ書くこと"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "選択肢ハの理由「傍記は『RAS』系統の検知部を示す別の記号となる」は根拠のない曖昧な説明で、センサの記号の形を示していない。JIS C 0303の熱線式自動スイッチ用センサの記号を正確に書くこと。確認できない場合は、⑤の●A(6A)(自動点滅器)と一致しない点だけを述べること"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}
