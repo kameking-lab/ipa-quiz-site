@@ -1,0 +1,41 @@
+{
+  "verifiedAt": "2026-09-23T22:40:00+09:00",
+  "method": "Downloaded the official IPA PDFs, rendered the relevant pages with Poppler at 150 dpi, and visually compared every affected symbol.",
+  "fixes": [
+    {
+      "id": "ap-2025h-am-q1",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
+      "pdfSha256": "1e95bc839260464cbadb209a3d41685cad66662dc1f33cdb187c1b03c6607c2c",
+      "pdfPage": 4,
+      "verified": "The generated data had lost all overbar negations. The four formulas were restored from the official rendered page, including ¬Q and ¬P in each affected implication."
+    },
+    {
+      "id": "ap-2025a-am-q1",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+      "pdfSha256": "1e705af2f38ad50eeebcad436b8476264a6f101e3c0d8cfa2f177f9962770f27",
+      "pdfPage": 4,
+      "verified": "The generated data had lost every negation bar. Choices are ア A・B・¬C・D+¬B・¬D, イ ¬A・¬B・¬C・¬D+B・D, ウ A・B・D+¬B・¬D, エ ¬A・¬B・¬D+B・D."
+    },
+    {
+      "id": "ap-2025a-am-q6",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+      "pdfSha256": "1e705af2f38ad50eeebcad436b8476264a6f101e3c0d8cfa2f177f9962770f27",
+      "pdfPage": 6,
+      "verified": "Choice イ is m/2 + n/(2m), not n/2 + n/(2m)."
+    },
+    {
+      "id": "ap-2025a-am-q21",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_am_qs.pdf",
+      "pdfSha256": "1e705af2f38ad50eeebcad436b8476264a6f101e3c0d8cfa2f177f9962770f27",
+      "pdfPage": 13,
+      "verified": "Choices are ア a・¬b, イ ¬a・b, ウ a+¬b, エ ¬a+b. The generated data had lost every negation bar."
+    },
+    {
+      "id": "fe-2024cbt-kamoku-a-q2",
+      "officialUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/eid2eo0000007g1d-att/2024r06_fe_kamoku_a_qs.pdf",
+      "pdfSha256": "c8a462741a1111950f7376e3ebd9bd0b2eff75d32fa9cfa3e39e97b7bf979789",
+      "pdfPage": 2,
+      "verified": "Choice ウ is cとl (lower-case L), not cとし and not cとs."
+    }
+  ]
+}

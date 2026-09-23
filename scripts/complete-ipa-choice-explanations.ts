@@ -8,6 +8,7 @@ import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 
 import { ALL_QUESTIONS } from "@/data/questions";
+import officialSources from "@/data/questions/corrections/official-sources.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const ROOT = process.cwd();
@@ -23,6 +24,7 @@ const REQUIRED_YEARS: Record<CoreExam, readonly number[]> = {
   fe: [2024, 2025],
 };
 const MIN_REASON_LENGTH = 55;
+const sourceByPaper = officialSources as Record<string, { question: string; answer: string }>;
 
 interface Options {
   exams: CoreExam[];
@@ -272,6 +274,7 @@ async function callClaude(prompt: string, model: string, prefix: string): Promis
 }
 
 function inputFor(question: Question) {
+  const officialSource = sourceByPaper[`${question.exam}/${question.year}/${question.season}/${question.session}`];
   return {
     id: question.id,
     exam: question.exam,
@@ -282,8 +285,8 @@ function inputFor(question: Question) {
     choices: question.choices,
     officialAnswer: question.answer,
     existingExplanation: question.explanation,
-    sourcePdfUrl: question.sourcePdfUrl,
-    sourceAnswerUrl: question.sourceAnswerUrl,
+    sourcePdfUrl: officialSource?.question ?? question.sourcePdfUrl,
+    sourceAnswerUrl: officialSource?.answer ?? question.sourceAnswerUrl,
     officialReferenceUrls: question.officialReferenceUrls ?? [],
     imageFiles: imageFiles(question),
   };

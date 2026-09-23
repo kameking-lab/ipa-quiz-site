@@ -10,6 +10,7 @@ import { IP_QUESTIONS } from "@/data/questions/ip";
 import ipOverlayJson from "@/data/questions/ip/choice-explanations-2024-2025.json";
 import { SG_QUESTIONS } from "@/data/questions/sg";
 import sgOverlayJson from "@/data/questions/sg/choice-explanations-2024-2025.json";
+import officialSources from "@/data/questions/corrections/official-sources.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const EXAMS = ["ap", "ip", "sg", "fe"] as const;
@@ -22,6 +23,7 @@ const REQUIRED_YEARS: Record<TargetExam, readonly number[]> = {
   sg: [2024, 2025],
   fe: [2024, 2025],
 };
+const sourceByPaper = officialSources as Record<string, { question: string; answer: string }>;
 
 interface ReceiptItem {
   id: string;
@@ -217,6 +219,7 @@ const complete = process.argv.includes("--complete");
 const issues: string[] = [];
 const duplicateReasons = new Map<string, string[]>();
 const summary: Record<string, { target: number; choices: number; covered: number; accepted: number }> = {};
+const ledger: Array<Record<string, unknown>> = [];
 
 for (const exam of selectedExams) {
   const questions = targetQuestions[exam];
@@ -230,6 +233,27 @@ for (const exam of selectedExams) {
   for (const question of questions) {
     const explanations = overlays[exam][question.id];
     if (!explanations) {
+      const receipt = receipts.get(question.id);
+      const officialSource = sourceByPaper[`${question.exam}/${question.year}/${question.season}/${question.session}`];
+      ledger.push({
+        id: question.id,
+        exam,
+        year: question.year,
+        season: question.season,
+        session: question.session,
+        qNumber: question.qNumber,
+        queue: question.hasImage || (question.imageUrls?.length ?? 0) > 0 || Object.keys(question.choiceImageUrls ?? {}).length > 0 ? "image" : "non-image",
+        status: "MISSING",
+        sourceSha256: sourceFingerprint(question),
+        officialQuestionUrl: officialSource?.question ?? question.sourcePdfUrl,
+        officialAnswerUrl: officialSource?.answer ?? question.sourceAnswerUrl,
+        lastReviewStatus: receipt
+          ? receipt.sourceSha256 === sourceFingerprint(question) ? receipt.status : "STALE"
+          : undefined,
+        lastReviewIssues: receipt
+          ? receipt.sourceSha256 === sourceFingerprint(question) ? receipt.issues : ["source data changed after review"]
+          : [],
+      });
       if (complete) issues.push(`${question.id}: 全肢解説が未作成`);
       continue;
     }
@@ -274,6 +298,22 @@ for (const exam of selectedExams) {
       continue;
     }
     accepted++;
+    const officialSource = sourceByPaper[`${question.exam}/${question.year}/${question.season}/${question.session}`];
+    ledger.push({
+      id: question.id,
+      exam,
+      year: question.year,
+      season: question.season,
+      session: question.session,
+      qNumber: question.qNumber,
+      queue: question.hasImage || (question.imageUrls?.length ?? 0) > 0 || Object.keys(question.choiceImageUrls ?? {}).length > 0 ? "image" : "non-image",
+      status: "PASS",
+      sourceSha256: sourceFingerprint(question),
+      overlaySha256: overlayFingerprint(explanations),
+      officialQuestionUrl: officialSource?.question ?? question.sourcePdfUrl,
+      officialAnswerUrl: officialSource?.answer ?? question.sourceAnswerUrl,
+      reviewerStatus: receipt.status,
+    });
   }
   summary[exam] = {
     target: questions.length,
@@ -288,6 +328,51 @@ for (const [reason, ids] of duplicateReasons) {
 }
 
 console.log(JSON.stringify({ requiredYears: REQUIRED_YEARS, summary, issueCount: issues.length }, null, 2));
+const reportPath = parseArg("report");
+if (reportPath) {
+  const papers = Object.entries(
+    Object.groupBy(ledger, (row) => `${row.exam}/${row.year}/${row.season}/${row.session}`),
+  ).map(([paper, rows]) => ({
+    paper,
+    questions: rows?.length ?? 0,
+    accepted: rows?.filter((row) => row.status === "PASS").length ?? 0,
+    officialQuestionUrl: rows?.[0]?.officialQuestionUrl,
+    officialAnswerUrl: rows?.[0]?.officialAnswerUrl,
+  }));
+  const absolute = resolve(reportPath);
+  mkdirSync(dirname(absolute), { recursive: true });
+  writeFileSync(absolute, `${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    requiredYears: REQUIRED_YEARS,
+    summary,
+    papers,
+    questions: ledger.sort((left, right) =>
+      String(left.exam).localeCompare(String(right.exam)) || Number(left.year) - Number(right.year) || Number(left.qNumber) - Number(right.qNumber)),
+  }, null, 2)}\n`);
+  console.log(`wrote ${absolute}`);
+}
+const fixReportPath = parseArg("fix-report");
+if (fixReportPath) {
+  const missing = ledger.filter((row) => row.status === "MISSING").sort((left, right) => {
+    const priority = (row: Record<string, unknown>) =>
+      row.lastReviewStatus === "FIX" || row.lastReviewStatus === "STALE" ? 0 : row.queue === "non-image" ? 1 : 2;
+    return priority(left) - priority(right)
+      || String(left.exam).localeCompare(String(right.exam))
+      || Number(left.year) - Number(right.year)
+      || Number(left.qNumber) - Number(right.qNumber);
+  });
+  const absolute = resolve(fixReportPath);
+  mkdirSync(dirname(absolute), { recursive: true });
+  writeFileSync(absolute, `${JSON.stringify({
+    generatedAt: new Date().toISOString(),
+    remaining: missing.length,
+    reviewFixOrStale: missing.filter((row) => row.lastReviewStatus === "FIX" || row.lastReviewStatus === "STALE").length,
+    nonImage: missing.filter((row) => row.queue === "non-image").length,
+    image: missing.filter((row) => row.queue === "image").length,
+    questions: missing,
+  }, null, 2)}\n`);
+  console.log(`wrote ${absolute}`);
+}
 if (issues.length > 0) {
   console.error(issues.slice(0, 100).join("\n"));
   if (issues.length > 100) console.error(`...ほか ${issues.length - 100} 件`);

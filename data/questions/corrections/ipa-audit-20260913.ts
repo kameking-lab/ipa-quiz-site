@@ -2,6 +2,59 @@ import type { Question } from "@/lib/questions/types";
 
 /** Official IPA answer keys and visually verified content repairs. Includes five source-restored explanations for previously blank-choice records. */
 export const IPA_AUDIT_CORRECTIONS: Record<string, Partial<Question>> = {
+  "ap-2025h-am-q1": {
+    "question": "論理式P、Qがいずれも真であるとき、論理式Rの真偽にかかわらず真になる式はどれか。ここで、“¬”は否定を、“∨”は論理和を、“∧”は論理積を、“→”は含意（“真→偽”となるときに限り偽となる演算）を表す。",
+    "choices": {
+      "ア": "((P→Q)∧(Q→P))→(R→¬Q)",
+      "イ": "((P→Q)∧(¬Q→¬P))→(Q→R)",
+      "ウ": "((P→¬Q)∨(Q→P))→(R→¬Q)",
+      "エ": "((P→¬Q)∨(Q→¬P))→(Q→R)"
+    },
+    "explanation": "P=Q=真を代入すると、エの前件は(P→¬Q)∨(Q→¬P)=偽∨偽=偽です。含意は前件が偽なら後件Rの真偽にかかわらず真なので、正答はエです。他の式は前件が真となり、Rによって式全体が偽になる場合があります。",
+    "needsReview": false
+  },
+  "ap-2025a-am-q1": {
+    "question": "A, B, C, Dを論理変数とするとき、次のカルノー図と等価な論理式はどれか。ここで、“・”は論理積、“+”は論理和、“¬X”はXの否定を表す。",
+    "choices": {
+      "ア": "A・B・¬C・D+¬B・¬D",
+      "イ": "¬A・¬B・¬C・¬D+B・D",
+      "ウ": "A・B・D+¬B・¬D",
+      "エ": "¬A・¬B・¬D+B・D"
+    },
+    "explanation": "カルノー図の上段両端の1は左右端を隣接としてまとめると¬A・¬B・¬Dになります。中央の2行×中央の2列にある4個の1はB・Dにまとめられます。したがって論理式は¬A・¬B・¬D+B・Dとなり、正答はエです。",
+    "needsReview": false
+  },
+  "ap-2025a-am-q6": {
+    "choices": {
+      "ア": "m + n/m",
+      "イ": "m/2 + n/(2m)",
+      "ウ": "n/m",
+      "エ": "n/(2m)"
+    },
+    "explanation": "ブロック末尾の探索ではn/m個のブロックを調べるので平均n/(2m)回、ブロック内ではm個を調べるので平均m/2回です。合計はm/2+n/(2m)となるため、正答はイです。",
+    "needsReview": false
+  },
+  "ap-2025a-am-q21": {
+    "question": "組込みシステムのプログラムで、放された状態では0になり、押された状態では1になるスイッチの値を読み込んでいる。このプログラムによって、スイッチの値は周期的に適切なタイミングで読み込まれ、チャタリング処理などの適切な処理が行われるものとし、aが今回の値で、bが前回の値とする。このスイッチが放された状態から押された状態に変化したことを検出するための論理式はどれか。ここで、“・”は論理積、“+”は論理和、“¬”は論理否定を表す。",
+    "choices": {
+      "ア": "a・¬b",
+      "イ": "¬a・b",
+      "ウ": "a+¬b",
+      "エ": "¬a+b"
+    },
+    "explanation": "前回は放されているのでb=0、今回は押されているのでa=1です。aと¬bがともに1になる論理積a・¬bが、0から1への変化を検出する式です。",
+    "needsReview": false
+  },
+  "fe-2024cbt-kamoku-a-q2": {
+    "choices": {
+      "ア": "aとi",
+      "イ": "bとr",
+      "ウ": "cとl",
+      "エ": "dとx"
+    },
+    "explanation": "ASCIIコードの1の位を比較します。dは100、xは120で、どちらも1の位が0なので衝突します。cは99、lは108であり、1の位は異なります。したがって正答はエです。",
+    "needsReview": false
+  },
   "ap-2011h-am-q24": {
     "choices": {
       "ア": "X・Y",
