@@ -19,6 +19,7 @@ import requests
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache" / "fp2-official"
 OUTPUT = ROOT / "docs" / "evidence" / "fp2-two-year"
+PRACTICAL_OUTPUT = ROOT / "data" / "questions" / "fp2" / "practical-2024-2025.json"
 BASE = "https://www.jafp.or.jp/exam/mohan/files/"
 EDITIONS = [
     ("202405", "2024-05-26", "2023-10-01", "paper"),
@@ -201,7 +202,7 @@ def main() -> None:
         })
     (OUTPUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (OUTPUT / "gakka-extraction.json").write_text(json.dumps(academic, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    (OUTPUT / "jitsugi-extraction.json").write_text(json.dumps(practical, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    PRACTICAL_OUTPUT.write_text(json.dumps(practical, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print("Academic: 240/240 extracted with four choices and official answers. Practical: 160/160 questions with official model answers extracted.")
 
 

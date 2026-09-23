@@ -19,8 +19,8 @@ from PIL import Image
 ROOT = Path(__file__).resolve().parents[1]
 CACHE = ROOT / ".cache" / "fp2-official"
 OUTPUT = ROOT / "public" / "fp2" / "practical"
-RECEIPT = ROOT / "docs" / "evidence" / "fp2-two-year" / "practical-figures.json"
-SOURCE = json.loads((ROOT / "docs" / "evidence" / "fp2-two-year" / "jitsugi-extraction.json").read_text(encoding="utf-8"))
+RECEIPT = ROOT / "data" / "questions" / "fp2" / "practical-figures-2024-2025.json"
+SOURCE = json.loads((ROOT / "data" / "questions" / "fp2" / "practical-2024-2025.json").read_text(encoding="utf-8"))
 
 
 def heading_positions(page: fitz.Page) -> dict[int, float]:

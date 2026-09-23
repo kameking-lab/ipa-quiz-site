@@ -1,5 +1,5 @@
-import extracted from "@/docs/evidence/fp2-two-year/jitsugi-extraction.json";
-import figures from "@/docs/evidence/fp2-two-year/practical-figures.json";
+import extracted from "@/data/questions/fp2/practical-2024-2025.json";
+import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
 
 export interface PracticalPanel {
   url: string;

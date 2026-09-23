@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import academic from "@/docs/evidence/fp2-two-year/gakka-extraction.json";
-import practical from "@/docs/evidence/fp2-two-year/jitsugi-extraction.json";
-import figures from "@/docs/evidence/fp2-two-year/practical-figures.json";
+import practical from "@/data/questions/fp2/practical-2024-2025.json";
+import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
 import manifest from "@/docs/evidence/fp2-two-year/manifest.json";
 
 const editions = ["202405", "202409", "202501", "202505"] as const;
@@ -30,7 +30,7 @@ describe("FP2 official 2024–2025 corpus", () => {
       for (const q of questions) {
         expect(q.body.trim().length).toBeGreaterThan(10);
         expect(q.modelAnswer.trim()).not.toBe("");
-        expect(figures[edition][String(q.number)]?.length).toBeGreaterThan(0);
+        expect((figures[edition] as Record<string, unknown[]>)[String(q.number)]?.length).toBeGreaterThan(0);
       }
     }
   });
