@@ -25,7 +25,7 @@ export interface ExamDeepContent {
   relatedExams: ExamRelatedLink[];
 }
 
-export const EXAM_DEEP_CONTENT: Record<ExamCode, ExamDeepContent> = {
+export const EXAM_DEEP_CONTENT = {
   ip: {
     leadParagraph:
       "IT パスポート試験（IP）は、職種や業種を問わずすべての社会人・学生が IT を活用するうえで必要な基礎知識を測る、IPA の国家試験エントリーレベルです。出題はストラテジ系・マネジメント系・テクノロジ系の 3 領域から幅広く構成され、CBT 方式で通年受験できます。社会人の DX 学習や就職活動でのアピール、上位試験への足がかりとして広く受験されています。",
@@ -275,4 +275,4 @@ export const EXAM_DEEP_CONTENT: Record<ExamCode, ExamDeepContent> = {
       { exam: "st", reason: "経営層対話のため戦略視点を強化する選択肢。" },
     ],
   },
-};
+} as unknown as Record<ExamCode, ExamDeepContent>;

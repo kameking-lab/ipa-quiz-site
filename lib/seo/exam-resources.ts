@@ -16,7 +16,7 @@ export interface ExamOfficialLinks {
 
 const IPA_BASE = "https://www.ipa.go.jp/shiken";
 
-export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
+export const EXAM_OFFICIAL_LINKS = {
   ip: {
     overview: `${IPA_BASE}/kubun/ip.html`,
     syllabus: `${IPA_BASE}/syllabus/index.html`,
@@ -82,7 +82,7 @@ export const EXAM_OFFICIAL_LINKS: Record<ExamCode, ExamOfficialLinks> = {
     syllabus: `${IPA_BASE}/syllabus/index.html`,
     pastQuestions: `${IPA_BASE}/mondai-kaiotu/index.html`,
   },
-};
+} as unknown as Record<ExamCode, ExamOfficialLinks>;
 
 export interface RoadmapStep {
   /** 開始時点（試験まで N ヶ月前） */
@@ -97,7 +97,7 @@ export interface RoadmapStep {
  * 試験区分ごとの学習ロードマップ。
  * 期間と進捗の目安は IPA 統計の合格者像と一般的な学習ペースから推定。
  */
-export const EXAM_ROADMAP: Record<ExamCode, RoadmapStep[]> = {
+export const EXAM_ROADMAP = {
   ip: [
     { monthsBefore: 3, title: "基礎用語の網羅", body: "テクノロジ・マネジメント・ストラテジ各分野の用語をひととおり眺める。" },
     { monthsBefore: 2, title: "過去問演習スタート", body: "1日 30 問ペースで過去問を解き、誤答ノートを作る。" },
@@ -186,4 +186,4 @@ export const EXAM_ROADMAP: Record<ExamCode, RoadmapStep[]> = {
     { monthsBefore: 1, title: "午後 II 論文", body: "監査計画-実施-報告の論文骨子を複数パターン用意。" },
     { monthsBefore: 0, title: "総仕上げ", body: "直近 2 期分の論文を仕上げ、監査人視点の表現を磨く。" },
   ],
-};
+} as unknown as Record<ExamCode, RoadmapStep[]>;

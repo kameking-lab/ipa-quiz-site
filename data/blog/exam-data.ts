@@ -1,4 +1,4 @@
-import type { ExamCode } from "@/lib/questions/types";
+import type { ExamCode, IpaExamCode } from "@/lib/questions/types";
 
 export interface ExamProfile {
   code: ExamCode;
@@ -16,7 +16,7 @@ export interface ExamProfile {
   career: string;
 }
 
-export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
+export const EXAM_PROFILES = {
   ip: {
     code: "ip",
     label: "ITパスポート試験",
@@ -243,9 +243,9 @@ export const EXAM_PROFILES: Record<ExamCode, ExamProfile> = {
     exampleSubjects: ["業務監査", "情報セキュリティ監査", "システム開発監査"],
     career: "公認システム監査人・公認情報システム監査人の補完として活用される。",
   },
-};
+} as unknown as Record<ExamCode, ExamProfile>;
 
-export const EXAM_CODES: ExamCode[] = [
+export const EXAM_CODES: IpaExamCode[] = [
   "ip",
   "sg",
   "fe",

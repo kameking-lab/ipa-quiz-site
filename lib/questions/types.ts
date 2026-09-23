@@ -11,7 +11,12 @@ export type ExamCode =
   | "es"
   | "sc"
   | "sm"
-  | "au";
+  | "au"
+  | "fp3"
+  | "denken3";
+
+/** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
+export type IpaExamCode = Exclude<ExamCode, "fp3" | "denken3">;
 
 export type Session =
   | "am"
@@ -21,9 +26,11 @@ export type Session =
   | "pm1"
   | "pm2"
   | "kamoku-a"
-  | "kamoku-b";
+  | "kamoku-b"
+  | "gakka"
+  | "riron";
 
-export type Season = "spring" | "autumn" | "cbt";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
@@ -46,12 +53,20 @@ export interface Question {
   choices?: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey | ChoiceKey[] | string;
   explanation: string;
+  /** 正解・不正解を各選択肢ごとに説明する。公開パイロットでは必須。 */
+  choiceExplanations?: Partial<Record<ChoiceKey, string>>;
   modelAnswer?: string;
   scoringCriteria?: string;
   hasImage: boolean;
   imageUrls?: string[];
   sourcePdfUrl: string;
-  license: "IPA-public";
+  /** 公式の正答表。問題PDFと同一の場合も明示して保持する。 */
+  sourceAnswerUrl?: string;
+  /** 公式が指定する出典表記。 */
+  sourceAttribution?: string;
+  /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
+  officialReferenceUrls?: string[];
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "ECEE-educational-reuse";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

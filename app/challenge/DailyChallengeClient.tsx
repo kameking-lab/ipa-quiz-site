@@ -16,13 +16,12 @@ import { awardXp, XP_REWARDS, xpProgress, readXp } from "@/lib/gamification/xp";
 import { unlockManual } from "@/lib/gamification/achievements";
 import { createHistoryStore } from "@/lib/storage/history";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
 
 interface Props {
   questions: Question[];
   date: string;
 }
-
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 interface FinalResult {
   correctCount: number;
@@ -66,12 +65,13 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
   const current = questions[index];
   const total = questions.length;
+  const choiceKeys = React.useMemo(() => getChoiceKeys(current?.choices), [current]);
 
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
   // commits). Unconditional, before the early returns, per the rules of hooks.
   const choiceRoving = useQuizChoiceRoving(
-    CHOICE_KEYS.length,
-    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    choiceKeys.length,
+    selected ? choiceKeys.indexOf(selected) : -1,
     revealed,
     current?.id ?? "",
   );
@@ -92,7 +92,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
     [current, revealed, history],
   );
 
-  // Number-key (1–4) selection — the ChoiceButton/radiogroup advertise
+  // Number-key (1–9) selection — the ChoiceButton/radiogroup advertise
   // aria-keyshortcuts「数字キーN でも選択できます」, so the keys must actually work
   // (致命傷⑩: the label lied here — /quiz・/q already had this handler, /challenge
   // did not). N maps to CHOICE_KEYS[N-1] (matching shortcutIndex={i+1}); only
@@ -104,9 +104,9 @@ export function DailyChallengeClient({ questions, date }: Props) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
       }
-      const i = ["1", "2", "3", "4"].indexOf(e.key);
+      const i = keyboardChoiceIndex(e.key);
       if (i < 0) return;
-      const key = CHOICE_KEYS[i];
+      const key = choiceKeys[i];
       if (current.choices?.[key]) {
         e.preventDefault();
         onSelect(key);
@@ -114,7 +114,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [revealed, current, onSelect]);
+  }, [revealed, current, onSelect, choiceKeys]);
 
   const onNext = React.useCallback(() => {
     if (index + 1 < total) {
@@ -268,10 +268,10 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div
         role="radiogroup"
-        aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+        aria-label={`選択肢（矢印キーで移動、数字キー1〜${choiceKeys.length}・Enter/スペースで選択）`}
         className="space-y-2"
       >
-        {CHOICE_KEYS.map((k, i) => {
+        {choiceKeys.map((k, i) => {
           const text = choices[k];
           if (!text) return null;
           return (

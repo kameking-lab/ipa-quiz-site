@@ -20,8 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { addGold, addXp } from "@/lib/gamification/economy";
 import { evaluateAchievementsAfterMock } from "@/lib/gamification/achievements";
-
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
+import { getChoiceKeys } from "@/lib/questions/choices";
 
 interface Props {
   questions: SlimMockQuestion[];
@@ -251,7 +250,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           </p>
           {q.choices && (
             <div className="space-y-2">
-              {CHOICE_KEYS.map((k) => {
+              {getChoiceKeys(q.choices).map((k) => {
                 const text = q.choices?.[k];
                 if (!text) return null;
                 const selected = answers[index] === k;

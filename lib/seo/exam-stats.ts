@@ -17,7 +17,7 @@ export interface ExamStats {
   topicTrend: string;
 }
 
-export const EXAM_STATS: Record<ExamCode, ExamStats> = {
+export const EXAM_STATS = {
   ip: {
     passRateRecent: "50-55",
     passRateTrend: "CBT 通年実施で比較的安定。受験経験の有無で大きく差が出る。",
@@ -109,4 +109,4 @@ export const EXAM_STATS: Record<ExamCode, ExamStats> = {
     studyHoursHigh: 400,
     topicTrend: "システム監査基準・監査手続・監査報告・統制評価。",
   },
-};
+} as unknown as Record<ExamCode, ExamStats>;

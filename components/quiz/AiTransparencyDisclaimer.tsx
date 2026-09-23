@@ -6,6 +6,7 @@ interface Props {
   lastUpdatedJa: string;
   sourcePdfUrl: string;
   answerPdfUrl: string;
+  sourceAttribution?: string;
 }
 
 /**
@@ -22,6 +23,7 @@ export function AiTransparencyDisclaimer({
   lastUpdatedJa,
   sourcePdfUrl,
   answerPdfUrl,
+  sourceAttribution,
 }: Props) {
   return (
     <details className="group relative mt-4 inline-block text-xs">
@@ -36,9 +38,9 @@ export function AiTransparencyDisclaimer({
         className="absolute left-0 z-20 mt-2 w-[min(20rem,calc(100vw-2rem))] space-y-2 rounded-xl border border-border bg-card p-3 leading-relaxed text-muted-foreground shadow-lg"
       >
         <p>
-          解説は Google Gemini に IPA 公式の問題文・公式解答を入力して生成しています。
+          解説は公式の問題文・公式解答を基に作成しています。
           事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性があるため、
-          重要な判断は必ず IPA 公式資料でご確認ください。
+          重要な判断は必ずリンク先の公式資料でご確認ください。
         </p>
         <p>
           最終更新:{" "}
@@ -53,7 +55,7 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            出典: IPA 問題 PDF
+            公式問題 PDF
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
           <a
@@ -62,10 +64,11 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            IPA 公式解答 PDF
+            公式解答 PDF
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
         </div>
+        {sourceAttribution && <p>{sourceAttribution}</p>}
         <p>
           検証プロセス・誤り報告フローは{" "}
           <Link href="/transparency" className="font-medium underline">

@@ -7,6 +7,7 @@
 import { generateStudyPlan, listDates, todayLocalDate } from "@/lib/study-plan/generator";
 import type { StudyPlanInput, KnowledgeLevel } from "@/lib/study-plan/types";
 import { LEVEL_MULTIPLIERS, REQUIRED_HOURS } from "@/lib/study-plan/constants";
+import type { IpaExamCode } from "@/lib/questions/types";
 
 type Case = { name: string; input: StudyPlanInput };
 
@@ -98,7 +99,7 @@ for (const c of cases) {
   assert(plan.summary.daysRemaining === expectedDays, "summary.daysRemaining matches");
 
   const expectedRequired = Math.round(
-    REQUIRED_HOURS[c.input.exam] * LEVEL_MULTIPLIERS[c.input.level],
+    REQUIRED_HOURS[c.input.exam as IpaExamCode] * LEVEL_MULTIPLIERS[c.input.level],
   );
   assert(plan.summary.totalHoursRequired === expectedRequired, `required hours = ${expectedRequired}`);
 

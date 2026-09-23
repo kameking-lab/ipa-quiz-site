@@ -38,6 +38,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
 import { AchievementToast } from "@/components/motivation/AchievementToast";
+import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
 
 function formatElapsed(s: number) {
   const m = Math.floor(s / 60);
@@ -54,8 +55,6 @@ interface Props {
   exam?: string;
   onNext: () => void;
 }
-
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
 export function QuizPlayer({
   question,
@@ -82,6 +81,7 @@ export function QuizPlayer({
   const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
   const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
+  const choiceKeys = React.useMemo(() => getChoiceKeys(question?.choices), [question]);
 
   React.useEffect(() => {
     motivationSettingsRef.current = readMotivationSettings();
@@ -121,8 +121,8 @@ export function QuizPlayer({
   // commits via ChoiceButton's native activation). Called unconditionally before
   // the early returns below to respect the rules of hooks.
   const choiceRoving = useQuizChoiceRoving(
-    CHOICE_KEYS.length,
-    selected ? CHOICE_KEYS.indexOf(selected) : -1,
+    choiceKeys.length,
+    selected ? choiceKeys.indexOf(selected) : -1,
     revealed,
     question?.id ?? "",
   );
@@ -236,10 +236,11 @@ export function QuizPlayer({
       // switches tabs, etc. Shift is allowed (no modifier-less "?" conflict).
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
-        const i = ["1", "2", "3", "4"].indexOf(e.key);
-        if (i >= 0) {
+        const i = keyboardChoiceIndex(e.key);
+        const key = choiceKeys[i];
+        if (key) {
           e.preventDefault();
-          onSelect(CHOICE_KEYS[i]);
+          onSelect(key);
           return;
         }
       } else {
@@ -271,7 +272,7 @@ export function QuizPlayer({
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery, showKeyboardHelp]);
+  }, [question, choiceKeys, revealed, onSelect, goNext, toggleStar, upsellOpen, copilotQuery, showKeyboardHelp]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -412,11 +413,11 @@ export function QuizPlayer({
 
             <div
               role="radiogroup"
-              aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+              aria-label={`選択肢（矢印キーで移動、数字キー1〜${choiceKeys.length}・Enter/スペースで選択）`}
               className="space-y-2"
             >
               {question.choices &&
-                CHOICE_KEYS.map((key, idx) => (
+                choiceKeys.map((key, idx) => (
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
@@ -462,7 +463,7 @@ export function QuizPlayer({
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 [@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : "キーボード: 1〜4 で選択 / R でスター / ? でヘルプ"}
+                : `キーボード: 1〜${choiceKeys.length} で選択 / R でスター / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">

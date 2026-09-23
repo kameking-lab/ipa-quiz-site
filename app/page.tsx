@@ -29,12 +29,12 @@ import {
   TOTAL_QUESTIONS_PUBLISHED,
 } from "@/lib/constants/question-counts";
 
-const HOME_TITLE = "IPA過去問×AI、無料で全機能 — 過去問AI";
+const HOME_TITLE = "国家資格の過去問×AI、無料で全機能 — 過去問AI";
 // Snippet-optimised: front-load the value prop + count and drop the 13-code list
 // （IP/SG/FE/…）— that list ate ~40 low-value chars of the visible SERP window and
 // pushed Google toward synthesising a worse snippet from the page body. Kept
 // under the ~150 full-width-char budget. (empirical review 致命傷⑦)
-const HOME_DESCRIPTION = `情報処理技術者試験 全13区分の過去問を AI 解説付きで完全無料公開。ITパスポート・基本情報・応用情報から高度試験まで ${APPROX_QUESTION_COUNT_LABEL}問超を収録し、年度別・分野別・模試・苦手復習の6モードと学習履歴で効率学習。登録不要、スマホ片手で。`;
+const HOME_DESCRIPTION = `IPA情報処理技術者試験13区分と、FP3級・電験三種の公式公開過去問をAI解説付きで無料提供。${APPROX_QUESTION_COUNT_LABEL}問超を年度別・分野別・模試・復習モードで学べます。登録不要、スマホ対応。`;
 
 export const metadata: Metadata = {
   title: HOME_TITLE,
@@ -93,20 +93,20 @@ export default function HomePage() {
     "@context": "https://schema.org",
     "@graph": [
       buildWebsiteNode(
-        `IPA 情報処理技術者試験 13 区分・${APPROX_QUESTION_COUNT_LABEL} 問超を AI コパイロット付きで学習できる無料の過去問サイト。`,
+        `IPA 13区分とFP3級・電験三種の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超をAIコパイロット付きで学べる無料サイト。`,
       ),
       {
         ...buildOrgNode(),
         hasOfferCatalog: {
           "@type": "OfferCatalog",
-          name: "IPA 試験対策コース一覧",
+          name: "資格試験対策コース一覧",
           url: SITE_BASE_URL,
         },
       },
       {
         "@type": "ItemList",
         "@id": `${SITE_BASE_URL}/#exam-list`,
-        name: "IPA 情報処理技術者試験 区分一覧",
+        name: "資格試験 過去問一覧",
         numberOfItems: availableExamEntries.length,
         itemListElement: availableExamEntries.map(([code, count], idx) => ({
           "@type": "ListItem",

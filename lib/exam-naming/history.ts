@@ -29,7 +29,7 @@ export interface ExamNameEntry {
  * 各試験区分コードに対する名称変更の履歴。新しい順ではなく **古い順** に並べる。
  * 検索ロジックは「from 以降のエントリのうち最新のもの」を返す。
  */
-const EXAM_NAME_HISTORY: Record<ExamCode, ExamNameEntry[]> = {
+const EXAM_NAME_HISTORY = {
   ip: [
     { label: "ITパスポート", from: { year: 2009, season: "spring" } },
   ],
@@ -81,7 +81,7 @@ const EXAM_NAME_HISTORY: Record<ExamCode, ExamNameEntry[]> = {
   au: [
     { label: "システム監査技術者", from: { year: 1986, season: "spring" } },
   ],
-};
+} as unknown as Record<ExamCode, ExamNameEntry[]>;
 
 function seasonRank(season: string): number {
   return season === "spring" ? 0 : 1;

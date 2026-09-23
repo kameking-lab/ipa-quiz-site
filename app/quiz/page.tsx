@@ -21,7 +21,7 @@ import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 export const metadata: Metadata = {
   title: "クイズ — 過去問演習",
   description:
-    "IPA 情報処理技術者試験 13区分の過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AI コパイロットが各選択肢の正誤理由をその場で解説します。",
+    "IPA情報処理技術者試験、FP3級、電験三種の公式公開過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AIコパイロットが各選択肢を解説します。",
   alternates: { canonical: "/" },
   robots: { index: false, follow: true },
 };
@@ -47,7 +47,9 @@ interface SearchParams {
 }
 
 const VALID_MODES: QuizMode[] = ["random", "year", "topic", "review", "unanswered", "weakness"];
-const VALID_SESSIONS: Session[] = ["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b"];
+const VALID_SESSIONS: Session[] = [
+  "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron",
+];
 
 export default async function QuizPage({
   searchParams,

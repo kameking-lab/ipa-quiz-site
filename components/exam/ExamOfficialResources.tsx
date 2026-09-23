@@ -2,9 +2,53 @@ import { ExternalLink, Landmark } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_OFFICIAL_LINKS } from "@/lib/seo/exam-resources";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   const links = EXAM_OFFICIAL_LINKS[exam];
+  const qualification = getQualificationByExamCode(exam);
+  if (!links && !qualification) return null;
+
+  if (qualification) {
+    const items = [
+      {
+        label: `${qualification.administrator} 公式問題・正答`,
+        href: qualification.officialQuestionsUrl,
+        description: "問題と公式正答の一次情報。公開範囲や基準日も確認できます。",
+      },
+      {
+        label: "過去問題の利用条件",
+        href: qualification.officialReuseTermsUrl,
+        description: qualification.reuseSummary,
+      },
+    ];
+    return (
+      <section aria-label="公式リソース" className="mb-8 rounded-2xl border border-border bg-card p-5 shadow-sm">
+        <div className="mb-3 flex items-center gap-2.5">
+          <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-sky-500/10 text-sky-600 dark:text-sky-400">
+            <Landmark className="h-4 w-4" />
+          </span>
+          <div className="leading-tight">
+            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
+            <p className="text-[11px] text-muted-foreground">問題・正答・利用条件の一次情報</p>
+          </div>
+        </div>
+        <ul className="grid gap-2 sm:grid-cols-2">
+          {items.map((item) => (
+            <li key={item.href}>
+              <a href={item.href} target="_blank" rel="noopener noreferrer" className="group block h-full rounded-xl border border-border bg-background p-3 text-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md">
+                <div className="flex items-center gap-1 font-medium text-foreground group-hover:text-primary">
+                  {item.label}<ExternalLink className="h-3 w-3 opacity-60" />
+                </div>
+                <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">{item.description}</p>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+
   if (!links) return null;
 
   const items: { label: string; href: string; description: string }[] = [

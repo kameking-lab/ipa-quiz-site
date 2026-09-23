@@ -55,7 +55,7 @@ export function QuestionCard({
                 rel="noopener noreferrer"
                 className="underline hover:text-amber-900 dark:hover:text-amber-100"
               >
-                IPA公式PDF
+                公式問題PDF
               </a>
               をご確認ください。
             </span>

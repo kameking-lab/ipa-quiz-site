@@ -197,6 +197,8 @@ describe("sessionLabel", () => {
       pm2: true,
       "kamoku-a": true,
       "kamoku-b": true,
+      gakka: true,
+      riron: true,
     };
     const ALL_SESSIONS = Object.keys(SESSION_PRESENCE) as Session[];
     for (const s of ALL_SESSIONS) {

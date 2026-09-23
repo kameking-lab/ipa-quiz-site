@@ -535,6 +535,7 @@ async function main(): Promise<void> {
 
   for (const examCode of exams) {
     const cfg = EXAM_CONFIGS[examCode];
+    if (!cfg) throw new Error(`Unsupported IPA exam: ${examCode}`);
     if (cfg.sessions.length === 0) {
       console.log(`[skip] ${cfg.nameFull} — no parseable sessions (CBT)`);
       continue;

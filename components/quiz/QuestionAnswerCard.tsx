@@ -12,8 +12,7 @@ import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
-
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
+import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
 
 interface Props {
   questionId: string;
@@ -64,7 +63,7 @@ export function QuestionAnswerCard({
   const [revealed, setRevealed] = React.useState(false);
 
   const keys = React.useMemo(
-    () => CHOICE_KEYS.filter((k) => choices[k] != null),
+    () => getChoiceKeys(choices),
     [choices],
   );
   const selectedIndex = selected ? keys.indexOf(selected) : -1;
@@ -106,7 +105,7 @@ export function QuestionAnswerCard({
     setRevealed(true);
   }, [revealed]);
 
-  // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
+  // Number-key selection (1–9), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
   React.useEffect(() => {
     if (revealed) return;
@@ -115,9 +114,9 @@ export function QuestionAnswerCard({
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || e.target.isContentEditable) return;
       }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+number switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
-      const i = ["1", "2", "3", "4"].indexOf(e.key);
+      const i = keyboardChoiceIndex(e.key);
       if (i >= 0 && i < keys.length) {
         e.preventDefault();
         onSelect(keys[i]);
@@ -133,7 +132,7 @@ export function QuestionAnswerCard({
     <div className="space-y-4">
       <div
         role="radiogroup"
-        aria-label="選択肢（矢印キーで移動、数字キー1〜4・Enter/スペースで選択）"
+        aria-label={`選択肢（矢印キーで移動、数字キー1〜${keys.length}・Enter/スペースで選択）`}
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (

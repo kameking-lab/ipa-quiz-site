@@ -1,4 +1,4 @@
-import type { ExamCode, Session, Season } from "@/lib/questions/types";
+import type { ExamCode, IpaExamCode, Session, Season } from "@/lib/questions/types";
 
 export interface SessionConfig {
   session: Session;
@@ -11,7 +11,7 @@ export interface SessionConfig {
 }
 
 export interface ExamConfig {
-  code: ExamCode;
+  code: IpaExamCode;
   nameFull: string;
   urlSlug: string;
   level: "basic" | "advanced" | "specialist";
@@ -96,7 +96,7 @@ function am2(categories: string[]): SessionConfig {
 
 // ------- Exam configs -------
 
-export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+export const EXAM_CONFIGS: Record<IpaExamCode, ExamConfig> & Partial<Record<ExamCode, ExamConfig>> = {
   ip: {
     code: "ip",
     nameFull: "ITパスポート試験",
@@ -275,7 +275,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   },
 };
 
-export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as ExamCode[];
+export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as IpaExamCode[];
 
 /** Fallback URL shown when a question has no specific PDF URL. */
 export const IPA_EXAM_INFO_URL = "https://www.ipa.go.jp/shiken/mondai-kaiotu/";
@@ -314,7 +314,9 @@ export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
  */
 export function getOfficialAnswerPdfUrl(
   sourcePdfUrl: string | undefined,
+  sourceAnswerUrl?: string,
 ): string {
+  if (sourceAnswerUrl?.startsWith("https://")) return sourceAnswerUrl;
   if (!isLivePdfUrl(sourcePdfUrl)) {
     return IPA_EXAM_INFO_URL;
   }
@@ -365,7 +367,7 @@ export function buildSourcePdfUrl(
 }
 
 export function buildRawPdfPath(
-  exam: ExamCode,
+  exam: IpaExamCode,
   year: number,
   season: Season,
   session: Session,
@@ -381,10 +383,10 @@ export function buildRawPdfPath(
 export function buildExtractionPrompt(
   cfg: ExamConfig,
   year: number,
-  season: "spring" | "autumn" | "cbt",
+  season: Season,
   sessionCfg: SessionConfig,
 ): string {
-  const seasonLabel = season === "spring" ? "春期" : season === "autumn" ? "秋期" : "CBT";
+  const seasonLabel = season === "spring" ? "春期" : season === "autumn" ? "秋期" : season === "cbt" ? "CBT" : season;
   const categoryList = sessionCfg.categories
     .map((c, i) => `${i + 1}. ${c}`)
     .join("\n");

@@ -1,4 +1,5 @@
 import type { Question, QuizFilter } from "./types";
+import { getChoiceKeys } from "./choices";
 import type { HistoryStore } from "@/lib/storage/history";
 
 function hasUnrenderableContent(q: Question): boolean {
@@ -80,17 +81,28 @@ export function shuffle<T>(arr: T[]): T[] {
 
 export function shuffleChoices(q: Question): Question {
   if (!q.choices) return q;
-  const keys: Array<"ア" | "イ" | "ウ" | "エ"> = ["ア", "イ", "ウ", "エ"];
-  const values = keys.map((k) => q.choices![k]!);
-  shuffle(values);
-  const newChoices: Record<"ア" | "イ" | "ウ" | "エ", string> = {
-    ア: values[0],
-    イ: values[1],
-    ウ: values[2],
-    エ: values[3],
-  };
+  const keys = getChoiceKeys(q.choices);
+  const options = keys.map((key) => ({
+    originalKey: key,
+    value: q.choices![key]!,
+    explanation: q.choiceExplanations?.[key],
+  }));
+  shuffle(options);
+  const newChoices: Question["choices"] = {};
+  const newChoiceExplanations: Question["choiceExplanations"] = q.choiceExplanations ? {} : undefined;
+  keys.forEach((key, index) => {
+    const option = options[index]!;
+    newChoices[key] = option.value;
+    if (newChoiceExplanations && option.explanation) {
+      newChoiceExplanations[key] = option.explanation;
+    }
+  });
   const originalAnswerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const originalAnswerValue = q.choices[originalAnswerKey as "ア" | "イ" | "ウ" | "エ"]!;
-  const newAnswerKey = keys[values.indexOf(originalAnswerValue)];
-  return { ...q, choices: newChoices, answer: newAnswerKey };
+  const newAnswerKey = keys[options.findIndex((option) => option.originalKey === originalAnswerKey)];
+  return {
+    ...q,
+    choices: newChoices,
+    answer: newAnswerKey,
+    ...(newChoiceExplanations ? { choiceExplanations: newChoiceExplanations } : {}),
+  };
 }

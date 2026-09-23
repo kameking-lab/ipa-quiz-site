@@ -61,7 +61,7 @@ export function StudyPlanClient() {
   }, []);
 
   const cfg = EXAM_CONFIGS[exam];
-  const expectedQuestions = cfg.sessions.reduce((s, sess) => s + sess.expectedQuestions, 0);
+  const expectedQuestions = cfg?.sessions.reduce((sum, session) => sum + session.expectedQuestions, 0) ?? 60;
 
   function generatePlan() {
     if (!examDate) return;

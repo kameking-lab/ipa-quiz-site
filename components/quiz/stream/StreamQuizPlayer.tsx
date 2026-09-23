@@ -10,8 +10,7 @@ import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
-
-const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
+import { getChoiceKeys, keyboardChoiceIndex } from "@/lib/questions/choices";
 const SUMMARY_AT = 10;
 const AUTO_ADVANCE_MS = 3000;
 
@@ -46,6 +45,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
   }, [reviewing]);
 
   const question = questions[index];
+  const choiceKeys = React.useMemo(() => getChoiceKeys(question?.choices), [question]);
   const lastAnswer = answers[answers.length - 1];
   const lastAnsweredQuestion = lastAnswer
     ? questions.find((q) => q.id === lastAnswer.questionId) ?? null
@@ -129,13 +129,14 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA") return;
       }
-      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+1–4 switches tabs, etc.
+      // Don't hijack browser/OS shortcuts: Ctrl/Cmd+number switches tabs, etc.
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (!revealed) {
-        const i = ["1", "2", "3", "4"].indexOf(e.key);
-        if (i >= 0) {
+        const i = keyboardChoiceIndex(e.key);
+        const key = choiceKeys[i];
+        if (key) {
           e.preventDefault();
-          onSelect(CHOICE_KEYS[i]);
+          onSelect(key);
         }
       } else if (e.key === "ArrowDown" || e.key === " " || e.key === "Enter") {
         e.preventDefault();
@@ -144,7 +145,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [onSelect, goNext, revealed, showSummary]);
+  }, [onSelect, goNext, revealed, showSummary, choiceKeys]);
 
   if (!question) return null;
 
@@ -238,7 +239,7 @@ export function StreamQuizPlayer({ questions }: { questions: Question[] }) {
 
         <div className="space-y-2">
           {question.choices &&
-            CHOICE_KEYS.map((key) => {
+            choiceKeys.map((key) => {
               const isCorrect = answerKey === key;
               const isSelected = selected === key;
               let cls =
@@ -419,7 +420,7 @@ function ReviewOverlay({
 
         <div className="mb-4 space-y-2">
           {question.choices &&
-            CHOICE_KEYS.map((key) => {
+            getChoiceKeys(question.choices).map((key) => {
               const isCorrect = answerKey === key;
               const isSelected = answer.selected === key;
               let cls = "border-white/10 bg-white/5 text-zinc-300 opacity-70";

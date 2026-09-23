@@ -18,7 +18,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   session: Session;
   qNumber: number;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;

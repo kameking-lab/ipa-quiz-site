@@ -59,6 +59,7 @@ import {
 import { getBlogPostsByExam } from "@/data/blog";
 import { getRelatedSuccessStoriesByExam } from "@/lib/success-stories/related-content";
 import { EXAM_ROADMAP } from "@/lib/seo/exam-resources";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 export const dynamicParams = false;
 
@@ -124,6 +125,7 @@ export default async function ExamTopPage({
   const successStories = getRelatedSuccessStoriesByExam(code, 3);
   const absUrl = `${SITE_BASE_URL}/${exam}`;
   const roadmapSteps = EXAM_ROADMAP[code] ?? [];
+  const externalQualification = getQualificationByExamCode(code);
 
   const credentialId = `${absUrl}#credential`;
   const courseNode = {
@@ -200,8 +202,8 @@ export default async function ExamTopPage({
         description: EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の国家試験。`,
         recognizedBy: {
           "@type": "Organization",
-          name: "情報処理推進機構（IPA）",
-          url: "https://www.ipa.go.jp/",
+          name: externalQualification?.administrator ?? "情報処理推進機構（IPA）",
+          url: externalQualification?.officialQuestionsUrl ?? "https://www.ipa.go.jp/",
         },
         educationalLevel: "Professional",
         competencyRequired: categories.map((c) => c.category).slice(0, 12),
