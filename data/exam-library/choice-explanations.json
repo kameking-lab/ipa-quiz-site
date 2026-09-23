@@ -22046,5 +22046,47 @@
         "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html"
       }
     ]
+  },
+  "emkohyo-EM20261804-q11": {
+    "sourceHash": "cf80a3ea3116b72acb34d4b434ffa68ecf45d7b88161484799039ff6396c973a",
+    "correctChoice": 4,
+    "summary": "硫酸銅1 molは銅1 molを含むので、銅の物質量1.00×10⁻⁶ molに63.5を掛けて6.35×10⁻² mgになる",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "6.35×10⁻³ mgは銅1.00×10⁻⁷ molに当たり、正しい物質量の1/10です。5.00 mL＝5.00×10⁻³ LをL単位へ直すときに桁を1つずらすと、この値になります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "無水硫酸銅CuSO₄の式量は63.5＋32.1＋16.0×4＝159.6です。1.00×10⁻⁶ molのCuSO₄は0.160 mgで、1.60×10⁻² mgはその1/10です。しかも問われているのは銅の質量です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "五水和物の式量は159.6＋18.0×5＝249.6です。1.00×10⁻⁶ molの五水和物は0.250 mgで、2.50×10⁻² mgは結晶の質量を1/10にした値です。銅だけの質量ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "2.00×10⁻⁴ mol/L×5.00×10⁻³ L＝1.00×10⁻⁶ molです。CuSO₄ 1 molには銅が1 mol含まれるので、63.5 g/molを掛けると6.35×10⁻⁵ g＝6.35×10⁻² mgになります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "1.60×10⁻¹ mgは無水硫酸銅CuSO₄（式量159.6）1.00×10⁻⁶ mol分の質量です。問われているのは溶液中の銅の質量なので、硫黄と酸素の分まで含めてしまっています。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "原子力規制委員会 モル濃度の定義",
+        "url": "https://radioactivity.nra.go.jp/cont/ja/docs/reps/rad-dist/research-results-part2/5600_201203131000_report2-2.pdf"
+      },
+      {
+        "title": "産業技術総合研究所 モル質量の定義",
+        "url": "https://www.aist.go.jp/aist_j/new_research/2012/nr20120227/nr20120227.html"
+      }
+    ]
   }
 }

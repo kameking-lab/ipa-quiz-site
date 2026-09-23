@@ -290,13 +290,42 @@
             "reason": "1.60×10⁻¹ mgは無水硫酸銅CuSO₄（式量159.6）1.00×10⁻⁶ mol分の質量です。問われているのは溶液中の銅の質量なので、硫黄と酸素の分まで含めてしまっています。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "原子力規制委員会 モル濃度の定義",
+            "url": "https://radioactivity.nra.go.jp/cont/ja/docs/reps/rad-dist/research-results-part2/5600_201203131000_report2-2.pdf"
+          },
+          {
+            "title": "産業技術総合研究所 モル質量の定義",
+            "url": "https://www.aist.go.jp/aist_j/new_research/2012/nr20120227/nr20120227.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された一次資料の抜粋（厚労省の個人サンプラー報告書、作業環境測定基準、環境省の分析方法）には、モル濃度と物質量の換算、原子量による質量計算を直接支える記述がない。政府資料を根拠にできないため、sourcesとsourceEvidenceは空にした。",
-        "正答は問題文に与えられた原子量（H 1.0、O 16.0、S 32.1、Cu 63.5）を使って独立に検算した（Cu 1.00×10⁻⁶ mol → 6.35×10⁻² mg）。選択肢2、3、5はそれぞれCuSO₄の1/10、五水和物の1/10、CuSO₄の値と一致することも確認した。政府の典拠を付けるには検索が必要。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://radioactivity.nra.go.jp/cont/ja/docs/reps/rad-dist/research-results-part2/5600_201203131000_report2-2.pdf",
+          "excerpt": "M (mol/L)はモル濃度であり、溶液1L 中の溶質をそのモル数で表した単位",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.aist.go.jp/aist_j/new_research/2012/nr20120227/nr20120227.html",
+          "excerpt": "物質1モルあたりの質量を表す物理量",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q12": {
       "overlay": {
