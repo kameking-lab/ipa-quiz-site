@@ -1,0 +1,114 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "candidateSha256": {
+    "6": "cd91dfb5d0fe5ca66c10e57bd3034f4f374bb7a0dd071ffa76a286630a9b4e26",
+    "7": "bfd28fe3be87d557243c5de45f12c835450f76accdb1abd54b0895d6cead8f6f",
+    "8": "0a22d503564e76cc4644c519c5d9832aef780aad52b1346e5aac63c02cb3ead7",
+    "9": "4754d8d33eb458adab41cd186d1ee13c17e924ba059979f010693d862db6c136",
+    "10": "a7205794eaa4177aecdefdd72cb9d802f08dcc3a5ba3b52ddcfb38ff01167666"
+  },
+  "candidateGroupSha256": "139f9d2136645a9988d622dbad59d934cdde592ccadbb7124092910952dee605",
+  "officialRowSha256": {
+    "6": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p09.png": "e6797a2124a054d2e52e4c8a187e7793938af0cfbab27c65183d22f6e327755b"
+    },
+    "7": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "8": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p11.png": "efd6e3d71e5b5b3fadca9bbc2198810bebe8925d950b1b88ee9baafdcaea37bd"
+    },
+    "9": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p12.png": "ab88770aa5736f907e7488ea692b3f131dcc2dab065ab929ed90abdecaa6f8e1"
+    },
+    "10": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p13.png": "913046b7ccbe39b9d90d24f57f25148567f0700f8db8675797538d242bde79e2"
+    }
+  },
+  "figureSha256": {
+    "20250831-theory-q06-three-circuits": "3b3c18fe322f3d34dc7117059d776727d8f3171877778d58ad5328a7293965bc",
+    "20250831-theory-q07-circuit": "6f958e5f3368cf0d5bc02f839a09110780bc495bcecc9affb9a6d55c72a0e7ed",
+    "20250831-theory-q09-circuit": "9f8a9c42951285ca1663b3a73097752cc7c864b5a0a78d6c0dbf9998c8f57adf",
+    "20250831-theory-q10-circuit": "6e99e149593e34b78336f39fbe3dba6fcbfd13fa36356e870ae4e0a973353a2e",
+    "20250831-theory-q10-choice-1": "367f63f278c4d795ae2b210986b739fdc989e4f5fd452526136ca470662f3909",
+    "20250831-theory-q10-choice-2": "208fee14d5acaa7bcc6cc6553083ee040586625e3405fd2ade29fffaf41a3056",
+    "20250831-theory-q10-choice-3": "55f2c2f0d589a2cbd50874df69030c179ae825c5778c32e741cb803378bf5066",
+    "20250831-theory-q10-choice-4": "413ee461f4db8456f157df6519802f62f1e5b997c86a676c9437c2e273cabdad",
+    "20250831-theory-q10-choice-5": "daba9f04355096807331f978b9ddd38446c9d6ba1c1a4e202880d4c8f73e6b52"
+  },
+  "officialAnswerImageSha256": "96876ac1c8401278aba9307657ffb2f468b3ef41dff1cd70f0d7f03f6817d3bb",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[5] は、0.10 を「図1の電圧比 10V/100V = 0.1 をそのまま電流値と混同した場合に生じ得る誤答」と説明している。この誤答経路には根拠がなく、推測にすぎない。確認できる事実（正しい値 100/225 ≒ 0.444 A と一致しない）だけを書くか、推測であることを明記すること。"
+      ],
+      "figureIssues": [
+        "figureDescription は図3しか説明していない。そのうえ「R1・R2の値を求めるための前提情報として必要」と書いているが、R1・R2 の算出に使うのは図1（b-c 開放で 10 V）と図2（b-c 間に 15 Ω を R2 と並列に接続して 4 V）であり、図3ではない。公開用の切り出し画像には図1〜図3がすべて入っているので、図1・図2の接続（a-b 間に R1、b-c 間に R2、図2では b-c 間に 15 Ω を並列、電圧矢印の範囲）も説明し、図3の役割は「b-c 短絡線を流れる電流 I の定義」と正しく書くこと。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanation の末尾が「よって正answer は (5)。」となっている。日本語と英語が混ざった誤記なので「よって正答は (5)。」に直すこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "選択肢(1)は「t=0で1を超える正の値から始まり」と書かれているが、原図の(1)は t<0 で 0、t=0 でちょうど 1（破線上）に跳び、そこから 1 を下回る谷へ下がった後、1 に戻る。「1を超える値から始まる」は誤り。",
+        "選択肢(3)は「t=0近傍（1のライン付近）から始まり」と曖昧に書かれている。原図は t<0 で 0、t=0 でちょうど 1 に跳び、その直後から 1 を超える山へなめらかに上がる。「t=0 で 0 から 1 へ跳躍」と明記しないと、(3)と(4)・(5)の決定的な違いである初期値 1 が文面から読み取れない。",
+        "選択肢(4)は「(3)よりも急な（折れ線的・直線的な）立ち上がりでより高いピーク」と書かれているが、原図と合わない。(3)は t=0 で 1 に瞬時に跳ぶので、(4)の立ち上がりが(3)より急ということはない。ピークの高さも、原図の目盛り比で(3)が約1.27、(4)が約1.18であり、(4)のほうが低い。(4)の形は「t=0 で 0 から始まり、なめらかに上がって 1 を横切り、1 を少し超えるピークの後に 1 へ収束」である。",
+        "選択肢(1)〜(5)の原図はどれも t<0 の区間に i_S=0 の太線が描かれているが、どの選択肢テキストもこれに触れていない。特に(5)は「t≥0で常に1」とだけ書かれており、t=0 で 0 から 1 へ跳ぶステップ波形であることが読み取れない。"
+      ],
+      "explanationIssues": [
+        "explanation と choiceExplanations[1] は、(1)を誤りとする理由に「2つの実根の一次系の重ね合わせで複素共役極を持たないため振動しない（アンダーシュートは生じない）」を使っている。この理由は成り立たない。(1)の波形は谷が1つあるだけで振動波形ではなく、実根だけの指数関数の和でも、係数の符号次第で1回のアンダーシュートは起こる（例: 1+e^(−t)−e^(−t/2)）。正しい理由は、t>0 では e^(−t/2) > e^(−t) なので i_S(t) = 1 + (e^(−t/2) − e^(−t)) > 1 となり、1 を下回らないこと。",
+        "choiceExplanations[4] は「急激・折れ線的に立ち上がりより高いピークに達する」と書き、実際の図とは違う形状を前提に論じている（(4)のピークは原図では(3)より低い）。誤りの理由は「t=0⁺ で i_S が 0 から始まっており、計算上の i_S(0⁺)=1 A と矛盾する」の一点に絞ること。"
+      ],
+      "figureIssues": [
+        "切り出し画像 20250831-theory-q10-choice-1 の下端に、次の選択肢ラベル「(3)」の上半分が混入している。",
+        "切り出し画像 20250831-theory-q10-choice-2 の下端に、次の選択肢ラベル「(4)」の上半分が混入している。",
+        "切り出し画像 20250831-theory-q10-choice-3 と 20250831-theory-q10-choice-4 は、上端で選択肢ラベル「(3)」「(4)」の頭がわずかに欠けているように見える。原図と並べて、欠けがないか目視で再確認し、必要なら余白を広げて切り直すこと。"
+      ],
+      "sourceIssues": [
+        "uncertainty に「当該回のPDFの確定的な一次資料URLは特定できなかった」とあるが、sourceQuestionPdfUrl と sourceAnswerPdfUrl には試験センターの公式 PDF URL と SHA-256 が入っており、記述が食い違っている。uncertainty の該当文を削除するか直すこと。"
+      ],
+      "needsExternalCheck": []
+    }
+  ]
+}

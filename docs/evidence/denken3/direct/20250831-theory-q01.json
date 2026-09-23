@@ -1,0 +1,104 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "candidateSha256": {
+    "1": "2904e9b68823cf9d2a308c6e1147fdc159e072713828d716ea731138d256ee90",
+    "2": "6a2fbab2ffc1f9808c06940cdced12f9dd9389be97bb65c49b0b9027bb5432a7",
+    "3": "1c748458067acdc9285f9d07c167d5038c5b8b4810945d70b05957fc98b37fb6",
+    "4": "952371076e7b0d28ff4c43c06bf494f403967e865bebe74bdec9d0d99cc85b04",
+    "5": "3636e49ea45d5deca16df7217979c70f72d2b14dca3ec6ae9607255d0801b4fb"
+  },
+  "candidateGroupSha256": "47ba715c8425d03d65d044d3755d2b4ddbcc4766f5abc6e83dbbfba1618fdca3",
+  "officialRowSha256": {
+    "1": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p04.png": "c3261add3f9d4c07593bd3319b5b7da51184ee8f0e1b77704bbe839a18f7a93d"
+    },
+    "2": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p05.png": "c466e827967c8856d73d749c5ccb74156588528cde33984eb9a5a9601363a4e4"
+    },
+    "3": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p06.png": "013d15e155caa61b759225d013d08b7a8a1c295cdbde14f15411bd917737dfc7"
+    },
+    "4": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p07.png": "105d962f43171c068ee91991b415b66cf1894b6d25de64bf68a49ea301bd0e89"
+    },
+    "5": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+    }
+  },
+  "figureSha256": {
+    "20250831-theory-q03-core": "3dcf188cef0cc9105fad96232784103e3a0645d95b3013411b838d93fcaacc6d",
+    "20250831-theory-q04-fields": "ffff4f29dad32c660f176d9edddfa7096ff32127ae07e857422666218bfb48de",
+    "20250831-theory-q05-circuit": "cd8fd4d36762a34484beb005eb111f2e9d1d4dfbdbb7c1355b2ca618dcc5f99b"
+  },
+  "officialAnswerImageSha256": "96876ac1c8401278aba9307657ffb2f468b3ef41dff1cd70f0d7f03f6817d3bb",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 2,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 3,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "選択肢(1)の誤答理由「巻数と自己インダクタンスの関係（2乗比例）を逆に適用した誤り」は計算上成り立たない。2乗比例を逆向きに当てはめると n=N/3（選択肢(2)）になり、N/9 にはならない。N/9 が出るのは、LがNに単純比例すると誤解したうえで逆数をとった場合である。原因の推測を削るか、正しい導出過程に直すこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 4,
+      "status": "FIX",
+      "textIssues": [
+        "sharedContextに設問文の言い換えがほぼそのまま入っている。単一設問（part=null）なので、他の問と同じく null にすること。そのままだと本文が二重に表示されるおそれがある。"
+      ],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "選択肢(2)の誤答理由は数式として誤り。H2=I2/(πa) と取り違えた場合、I1/(2πa)=I2/(πa) から I1=2I2 になり、I1=(2/π)I2 は出てこない。導出過程が成り立たないので削除か修正が必要。",
+        "選択肢(1)の誤答理由「2πaのπを二重に誤って処理」は、どのような計算過程かが具体的でなく根拠が薄い推測である。",
+        "選択肢(3)の誤答理由「逆数にさらにもう一つπを掛けて誤ってπ²で除した」は、どの公式をどう取り違えたのかが示されておらず、根拠が薄い推測である。"
+      ],
+      "figureIssues": [
+        "figureDescriptionでは図1の電流I1の向き（上向き）は書かれているが、図2の電流I2の向き（円の左側で下向き＝反時計回り）が「向きを示す矢印」とだけあり、向きそのものが書かれていない。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 5,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "選択肢(1)の説明「単なる公式の取り違え・誤植と考えられる形」は、意図的な誤答肢を試験問題の誤植のように読ませる表現で不適切。次元が合わないという根拠だけで十分なので、「誤植」の推測は削除すること。"
+      ],
+      "figureIssues": [
+        "figureDescriptionに、スイッチSが開いた状態で描かれていることが書かれていない。問題文の「スイッチSを閉じて」に対応する初期状態なので明記が望ましい。"
+      ],
+      "sourceIssues": [
+        "uncertaintyに「公式一次資料（IPA/経済産業省・電気技術者試験センター等のPDF URL）をこの場で確実に特定できない」とあるが、sourceQuestionPdfUrl・sourceAnswerPdfUrlには試験センターの公式PDFが指定済みで記述が矛盾している。また、電験三種はIPAの試験ではない。uncertaintyのこの記述を削除または修正すること。"
+      ],
+      "needsExternalCheck": []
+    }
+  ]
+}

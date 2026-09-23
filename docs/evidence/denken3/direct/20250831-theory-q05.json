@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "candidateSha256": {
+    "3": "6efb6a02de0afafd0721a9f040e02fcb136c592f229984493c74517d649c435d",
+    "4": "35f95f295101ef2aa57c7602740401f1154fe310150a37888f8840692ce768f9",
+    "5": "4eb5f23ff0f0128a2832056ebfc6669b23c611250b5528ecf810f628f907d6f3"
+  },
+  "candidateGroupSha256": "d6eb79d54ff1901fd48423d26368643ba15af7132936ba858b829a1553d73652",
+  "officialRowSha256": {
+    "3": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p06.png": "013d15e155caa61b759225d013d08b7a8a1c295cdbde14f15411bd917737dfc7"
+    },
+    "4": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p07.png": "105d962f43171c068ee91991b415b66cf1894b6d25de64bf68a49ea301bd0e89"
+    },
+    "5": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+    }
+  },
+  "figureSha256": {
+    "20250831-theory-q03-core": "3dcf188cef0cc9105fad96232784103e3a0645d95b3013411b838d93fcaacc6d",
+    "20250831-theory-q04-fields": "ffff4f29dad32c660f176d9edddfa7096ff32127ae07e857422666218bfb48de",
+    "20250831-theory-q05-circuit": "cd8fd4d36762a34484beb005eb111f2e9d1d4dfbdbb7c1355b2ca618dcc5f99b"
+  },
+  "officialAnswerImageSha256": "96876ac1c8401278aba9307657ffb2f468b3ef41dff1cd70f0d7f03f6817d3bb",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 3,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説冒頭の「磁気抵抗（パーミアンス）をPとすると、L = P・N²」は用語が誤っている。磁気抵抗（リラクタンス）R_m = l/(μS) とパーミアンス P = 1/R_m は互いに逆数の量で、同じものではない。L = P・N² が成り立つのは P がパーミアンスのときで、磁気抵抗を使うなら L = N²/R_m になる。「磁気抵抗R_m（その逆数がパーミアンスP）」のように書き分けること。",
+        "「両コイルは同一の環状鉄心に巻かれているため磁気抵抗Pは共通である」も同じ混同をしている。共通なのは磁気抵抗R_m（したがってパーミアンスPも共通）なので、記号と名称を上の修正に合わせること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 4,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 5,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  ]
+}
