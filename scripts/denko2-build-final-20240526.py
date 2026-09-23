@@ -21,7 +21,10 @@ def canonical(value) -> str:
 
 
 def digest(path: Path) -> str:
-    return sha256(path.read_bytes()).hexdigest()
+    raw = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".txt", ".py"}:
+        raw = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+    return sha256(raw).hexdigest()
 
 
 def clean(item: dict) -> bool:
