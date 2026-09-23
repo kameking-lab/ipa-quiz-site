@@ -25,7 +25,6 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
   if (!data || !q) notFound();
   const source = practicalSourceUrls(edition);
   const sourcePdfPage = `${source.question}#page=${q.sourcePage}`;
-  const needsLayout = q.sourcePageContainsRaster || /(?:<|＜)(?:資料|図|表|親族関係図)/.test(q.body) || q.panels.length > 1;
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp2" className="hover:underline">FP2級</Link> / <Link href="/fp2/practical" className="hover:underline">実技</Link> / <Link href={`/fp2/practical/${edition}`} className="hover:underline">{data.label}</Link> / 問{q.number}</nav>
@@ -34,15 +33,15 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
         <h2 className="mb-4 text-lg font-semibold">問題</h2>
         <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{q.body}</p>
       </section>
-      <section aria-label="原典の図表" className="mt-4">
-        <details open={needsLayout} className="rounded-2xl border border-border bg-card p-4 sm:p-5">
-          <summary className="cursor-pointer font-semibold">原典の図表・資料を表示</summary>
-          <p className="my-3 text-xs text-muted-foreground">表や図、資料の配置は原典画像でも確認できます。拡大して読む場合は公式PDFを開いてください。</p>
+      {q.panels.length > 0 ? <section aria-label="原典の図表" className="mt-4">
+        <details open className="rounded-2xl border border-border bg-card p-4 sm:p-5">
+          <summary className="cursor-pointer font-semibold">図表・資料の画像を見る</summary>
+          <p className="my-3 text-xs text-muted-foreground">図表と資料の配置を原典の該当部分から表示しています。問題文は上のテキストで読めます。</p>
           <div className="space-y-3">
-            {q.panels.map((panel) => <Image key={panel.url} src={panel.url} alt={`${data.label} 実技 問${q.number} 原典の資料（PDF ${panel.pdfPage}ページ）`} width={panel.width} height={panel.height} unoptimized className="h-auto w-full rounded border border-border" />)}
+            {q.panels.map((panel) => <Image key={panel.url} src={panel.url} alt={`${data.label} 実技 問${q.number} の図表（原典PDF ${panel.pdfPage}ページ）`} width={panel.width} height={panel.height} unoptimized className="h-auto w-full rounded border border-border" />)}
           </div>
         </details>
-      </section>
+      </section> : null}
       <details className="mt-5 rounded-2xl border border-primary/30 bg-card p-5 sm:p-6">
         <summary className="cursor-pointer text-lg font-bold text-primary">公式模範解答を見る</summary>
         <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{q.modelAnswer}</p>
@@ -54,7 +53,7 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
         <Link href={`/fp2/practical/${edition}`} className="text-muted-foreground hover:underline">問題一覧</Link>
         {q.number < 40 ? <Link href={`/fp2/practical/${edition}/${q.number + 1}`} className="inline-flex items-center gap-1 text-primary hover:underline">次の問題<ChevronRight className="h-4 w-4" /></Link> : <span />}
       </nav>
-      <p className="mt-8 text-xs leading-relaxed text-muted-foreground">出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 実技試験（資産設計提案業務）{data.label}。改行・空白を整え、原典ページの画像を併記。</p>
+      <p className="mt-8 text-xs leading-relaxed text-muted-foreground">出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 実技試験（資産設計提案業務）{data.label}。改行・空白を整え、図表がある設問では原典の該当箇所を画像で併記。</p>
     </main>
   );
 }

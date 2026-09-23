@@ -10,11 +10,12 @@ test("FP2 practical papers remain separate from academic practice and show exact
   await expect(page.getByRole("heading", { name: "2024年5月試験 実技40問" })).toBeVisible();
   await page.getByRole("link", { name: /^問7 / }).click();
   await expect(page.getByRole("heading", { name: "2024年5月試験 実技 問7" })).toBeVisible();
-  await expect(page.getByRole("img", { name: /問7 原典の資料/ }).first()).toBeVisible();
+  await expect(page.getByRole("img", { name: /問7 の図表/ }).first()).toBeVisible();
   await page.getByText("公式模範解答を見る").click();
   await expect(page.getByText("260(㎡)")).toBeVisible();
   await page.getByRole("link", { name: "次の問題" }).click();
   await expect(page.getByRole("heading", { name: "2024年5月試験 実技 問8" })).toBeVisible();
+  await expect(page.getByRole("img", { name: /問8 の図表/ })).toHaveCount(0);
 });
 
 test("FP2 CBT published practical paper exposes its final model answer", async ({ page }) => {
