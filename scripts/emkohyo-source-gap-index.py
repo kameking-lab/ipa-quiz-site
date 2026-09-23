@@ -39,11 +39,13 @@ def main() -> None:
                                "year": paper["date"][:4], "fingerprint": sha256(text.encode()).hexdigest()}
     drafted = set()
     draft_files = {}
+    draft_candidates = {}
     for file in (DATA / "emkohyo-review").glob("emkohyo-*-draft.json"):
         draft = json.loads(file.read_text(encoding="utf-8"))
         ids = set(draft.get("questions", {})) & set(rows)
         drafted.update(ids)
         draft_files.update({id_: file for id_ in ids})
+        draft_candidates.update({id_: draft["questions"][id_] for id_ in ids})
     accepted = set(json.loads((DATA / "choice-explanations.json").read_text(encoding="utf-8"))) & set(rows)
     verified_excerpts = set()
     stale_packs = 0
@@ -85,6 +87,9 @@ def main() -> None:
                              for url in retrieval.get(id_, {}).get("candidateGovernmentUrls", [])})
     by_lane = Counter(rows[id_]["lane"] for id_ in missing)
     fingerprints = {rows[id_]["fingerprint"] for id_ in missing}
+    full_five_claims = sorted(id_ for id_ in (verified_excerpts - accepted)
+                              if {n for claim in draft_candidates[id_].get("sourceEvidence", [])
+                                  for n in claim.get("choiceNumbers", [])} == {1, 2, 3, 4, 5})
     detailed = [{"id": id_, **rows[id_],
                  "topRetrievalScore": retrieval.get(id_, {}).get("topRetrievalScore"),
                  "lowRelevance": retrieval.get(id_, {}).get("lowRelevance"),
@@ -99,12 +104,15 @@ def main() -> None:
               "distinctCachedGovernmentCandidateUrls": len(candidate_urls),
               "lowRelevanceQuestions": sum(bool(x["lowRelevance"]) for x in detailed),
               "missingByLane": dict(sorted(by_lane.items())),
+              "currentSourcePackFullFiveChoiceClaims": len(full_five_claims),
+              "fullFiveChoiceReviewQueue": full_five_claims,
               "candidateGovernmentUrls": candidate_urls,
               "missingQuestions": detailed,
               "acceptance": "none; a matched excerpt is not a complete five-choice explanation or independent review"}
     OUT.write_text(json.dumps(output, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({key: value for key, value in output.items()
-                      if key not in {"candidateGovernmentUrls", "missingQuestions"}}, ensure_ascii=False))
+                      if key not in {"candidateGovernmentUrls", "missingQuestions", "fullFiveChoiceReviewQueue"}},
+                     ensure_ascii=False))
 
 
 if __name__ == "__main__":

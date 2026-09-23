@@ -2,18 +2,42 @@
   "scope": "EM 2025/2026 official multiple choice",
   "expectedQuestions": 360,
   "drafted": 300,
-  "accepted": 34,
-  "draftedWithoutVerifiedGovernmentExcerpt": 199,
+  "accepted": 36,
+  "draftedWithoutVerifiedGovernmentExcerpt": 196,
   "staleDraftPinnedSourcePacks": 43,
-  "questionsOnlyInStalePacks": 24,
-  "distinctExactQuestionFingerprints": 199,
+  "questionsOnlyInStalePacks": 23,
+  "distinctExactQuestionFingerprints": 196,
   "distinctCachedGovernmentCandidateUrls": 43,
-  "lowRelevanceQuestions": 88,
+  "lowRelevanceQuestions": 86,
   "missingByLane": {
-    "analysis": 148,
+    "analysis": 146,
     "general": 29,
-    "law": 22
+    "law": 21
   },
+  "currentSourcePackFullFiveChoiceClaims": 21,
+  "fullFiveChoiceReviewQueue": [
+    "emkohyo-20260217-2-q10",
+    "emkohyo-20260217-2-q9",
+    "emkohyo-20260217-3-q20",
+    "emkohyo-20260217-q1",
+    "emkohyo-EM20251805-q1",
+    "emkohyo-EM20251805-q8",
+    "emkohyo-EM20251806-q1",
+    "emkohyo-EM20251806-q3",
+    "emkohyo-EM20251807-q10",
+    "emkohyo-EM20251807-q19",
+    "emkohyo-EM20251807-q4",
+    "emkohyo-EM20251807-q5",
+    "emkohyo-EM20251807-q7",
+    "emkohyo-EM20261803-q20",
+    "emkohyo-EM20261803-q3",
+    "emkohyo-EM20261805-q19",
+    "emkohyo-EM20261805-q6",
+    "emkohyo-EM20261805-q7",
+    "emkohyo-EM20261807-q10",
+    "emkohyo-EM20261807-q17",
+    "emkohyo-EM20261807-q18"
+  ],
   "candidateGovernmentUrls": [
     "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kagaku_index.html",
     "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
@@ -128,20 +152,6 @@
       "candidateGovernmentUrls": [
         "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
-      ]
-    },
-    {
-      "id": "emkohyo-20260217-2-q9",
-      "subject": "労働衛生関係法令",
-      "lane": "law",
-      "year": "2026",
-      "fingerprint": "ac64c7b02f766ff160628522592930f7991ef04e54d180076b001f2d872695ab",
-      "topRetrievalScore": 0.1577,
-      "lowRelevance": false,
-      "candidateGovernmentUrls": [
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
       ]
     },
@@ -2733,20 +2743,6 @@
       ]
     },
     {
-      "id": "emkohyo-EM20261808-q19",
-      "subject": "金属類",
-      "lane": "analysis",
-      "year": "2026",
-      "fingerprint": "807adc0a164c8242b304b54224cae8fb8541c35d3a834ff33773143417373204",
-      "topRetrievalScore": 0.0333,
-      "lowRelevance": true,
-      "candidateGovernmentUrls": [
-        "https://jrecin.jst.go.jp/html/compass/e-learning/36-549/data/1-%E6%BA%B6%E6%8E%A5/faq/naiyou.html",
-        "https://www.customs.go.jp/tariff/2011_8/data/i201108j_74.htm",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3"
-      ]
-    },
-    {
       "id": "emkohyo-EM20261808-q2",
       "subject": "金属類",
       "lane": "analysis",
@@ -2759,20 +2755,6 @@
         "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=2",
         "https://www.nite.go.jp/chem/shiryo/product/dish/dish3.html"
-      ]
-    },
-    {
-      "id": "emkohyo-EM20261808-q20",
-      "subject": "金属類",
-      "lane": "analysis",
-      "year": "2026",
-      "fingerprint": "6b0b643b18d85c00527f335389548564c41165dc9393df379b61b69e206fe4f8",
-      "topRetrievalScore": 0.0278,
-      "lowRelevance": true,
-      "candidateGovernmentUrls": [
-        "https://jrecin.jst.go.jp/html/compass/e-learning/36-549/data/1-%E6%BA%B6%E6%8E%A5/faq/naiyou.html",
-        "https://www.customs.go.jp/tariff/2011_8/data/i201108j_74.htm",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
       ]
     },
     {

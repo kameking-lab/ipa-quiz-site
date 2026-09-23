@@ -21066,5 +21066,81 @@
         "url": "https://koushien.jst.go.jp/koushien/pastexam/2015/files/1-1.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261808-q19": {
+    "sourceHash": "a4c36a8fc6190a03d157b42e5f082f3b3029031f07193148e2cf85f1dd52bfcd",
+    "correctChoice": 4,
+    "summary": "Cr 100 mgをK₂Cr₂O₇（式量294.2、Cr2原子）で割り戻すと282.9 mg≒283 mgとなる計算問題",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "93.5 mgのK₂Cr₂O₇に含まれるCrは93.5×104.0÷294.2≒33.1 mgである。1.00 L中のCr濃度は約33.1 µg/mLにとどまり、指定の100 µg/mLにならないため誤り。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "141 mgのK₂Cr₂O₇に含まれるCrは141×104.0÷294.2≒49.8 mgである。1.00 Lに溶かしても約49.8 µg/mLとなり、必要な100 µg/mLの約半分なので誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "187 mgのK₂Cr₂O₇に含まれるCrは187×104.0÷294.2≒66.1 mgである。1.00 Lに定容したときのCr濃度は約66.1 µg/mLで、指定の100 µg/mLに達しないため誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "正しい。必要なCrは100 µg/mL×1000 mL＝1.00×10⁵ µg＝100 mg。K₂Cr₂O₇の式量は39.1×2＋52.0×2＋16.0×7＝294.2で、Crの質量分率は104.0÷294.2＝0.3535。よって100÷0.3535＝282.9 mg≒283 mgとなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "374 mgのK₂Cr₂O₇に含まれるCrは374×104.0÷294.2≒132.2 mgである。これを1.00 Lに定容すると約132.2 µg/mLとなり、目標の100 µg/mLを超えるため誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 底質調査方法・クロム標準液（1 mgCr/mL）の調製",
+        "url": "https://www.env.go.jp/hourei/05/000178.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261808-q20": {
+    "sourceHash": "8d108aede2c49fe236e2efba0c3a230f410f05072329e2329965f2de2454124b",
+    "correctChoice": 3,
+    "summary": "採気量200 L＝0.200 m³、鉛量0.08 µg/mL×100 mL＝8 µgから、8 µg÷0.2 m³＝0.04 mg/m³となる計算問題",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "誤り。採気量は20 L/min×10 min＝200 L＝0.200 m³、鉛量は0.08 µg/mL×100 mL＝8 µgで、濃度は40 µg/m³＝0.04 mg/m³である。0.004 mg/m³は正解の1/10で、200 Lを2 m³とするなどL→m³の換算を1桁誤った値に相当する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "0.02 mg/m³は正しい値0.04 mg/m³の半分である。例えば採気量を400 L（捕集20分相当）としたり、鉛量を4 µg（試料液50 mL相当）としたりすれば出るが、問題の200 L・8 µgとは整合しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "採気量は20 L/min×10 min＝200 L＝0.200 m³。試料液の鉛量は0.08 µg/mL×100 mL＝8 µg＝0.008 mgなので0.008÷0.200＝0.04 mg/m³。厚労省公開の鉛算出式でも、c＝80 ng/mL、q＝100 mL、Q＝200 Lを代入すると80×100÷200×10⁻³＝0.04 mg/m³となる。出典はICP-MSの手順書だが、試料液量と採気量による換算は本問の電気加熱原子吸光法にも共通する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "誤り。0.2 mg/m³は正解0.04 mg/m³の5倍で、8 µgを40 L（0.04 m³）で割るか、40 µgを200 Lで割った場合の値に当たる。条件から得られる採気量200 L・鉛量8 µgのどちらとも整合しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "誤り。0.4 mg/m³は正解の10倍で、採気量を1分間分の20 L（0.020 m³）とし、8 µg÷0.020 m³＝400 µg/m³と計算した場合に相当する。10分間の捕集時間を掛け忘れた誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省公開「作業環境測定ガイドブックに準じた形式による手順書」別紙・鉛の気中濃度算出式（PDF p.24、本文p.80）",
+        "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+      }
+    ]
   }
 }
