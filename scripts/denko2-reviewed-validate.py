@@ -61,7 +61,8 @@ def main() -> None:
             for source_url in item.get("officialReferenceUrls", []):
                 host = urlparse(source_url).hostname or ""
                 if not (host == "e-gov.go.jp" or host.endswith(".e-gov.go.jp") or
-                        host == "meti.go.jp" or host.endswith(".meti.go.jp")):
+                        host == "meti.go.jp" or host.endswith(".meti.go.jp") or
+                        host == "mlit.go.jp" or host.endswith(".mlit.go.jp")):
                     raise ValueError(f"Non-government explanation source: {key} {source_url}")
             count += 1
     print(f"Structurally reviewed {count} questions and {count * 4} choices; original visual QC is separately receipted")
