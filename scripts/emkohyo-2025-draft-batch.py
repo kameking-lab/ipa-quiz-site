@@ -90,7 +90,8 @@ def main() -> None:
     evidence_dir = ROOT / "docs/evidence/emkohyo-choice-sources"
     for filename in ("EM20251805-q18-19-arithmetic-20260924.json",
                      "EM-calculation-spotchecks-20260924.json",
-                     "EM2025-calculation-spotchecks-20260924.json"):
+                     "EM2025-calculation-spotchecks-20260924.json",
+                     "EM2025-radiation-arithmetic-20260924.json"):
         evidence = json.loads((evidence_dir / filename).read_text(encoding="utf-8"))
         records = evidence["questions"]
         if isinstance(records, dict):

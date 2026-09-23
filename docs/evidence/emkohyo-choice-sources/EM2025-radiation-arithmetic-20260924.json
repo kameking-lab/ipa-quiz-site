@@ -1,0 +1,81 @@
+{
+  "questions": [
+    {
+      "id": "emkohyo-EM20251809-q8",
+      "formula": "(3*sqrt(2)*sqrt(150 cpm*30 min)/30 min)/(0.10*60 s/min)",
+      "value": 1.5811388300841895,
+      "unit": "Bq",
+      "printedChoices": [
+        0.16,
+        0.86,
+        1.6,
+        8.6,
+        16
+      ],
+      "nearestChoice": 3,
+      "officialChoice": 3,
+      "rowTextSha256": "36456684a31664e7f9b43a2f80d636f499b979636f03b590aef069d69e8bb36b",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251809/q8-p6-1.webp": "eba2b5f0a42af402bb4ffd23dd2a2e1fec23cb06708590b85338db726ef1a6f6"
+      }
+    },
+    {
+      "id": "emkohyo-EM20251809-q9",
+      "formula": "sqrt(6400/(1000 s)^2 + 350/(4000 s)^2)",
+      "value": 0.08013660212412303,
+      "unit": "s^-1",
+      "printedChoices": [
+        0.08,
+        0.025,
+        0.8,
+        2.5,
+        8
+      ],
+      "nearestChoice": 1,
+      "officialChoice": 1,
+      "rowTextSha256": "6920911424d154111111e645e918d54841128fc63c0593d5cbdbd0f8a81f3aa3",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251809/q9-p7-0.webp": "b89cc8143d94c8c1360baa02d8450d57efbade5d8b5839c85c03a08513bca566"
+      }
+    },
+    {
+      "id": "emkohyo-EM20251809-q16",
+      "formula": "3 Bq * 2^(48 h/8 h) / (1.1 L*1000 cm3/L)",
+      "value": 0.17454545454545456,
+      "unit": "Bq/cm3",
+      "printedChoices": [
+        0.016,
+        0.019,
+        0.02,
+        0.17,
+        0.21
+      ],
+      "nearestChoice": 4,
+      "officialChoice": 4,
+      "rowTextSha256": "507bfbd32e0023fa387c951ffc82a023c4ff90bb4368c18b26e0983ea9ac874b",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251809/q16-p10-1.webp": "e25e291e2c5fe2a99c3c6b40afa41c28a1472d1c48bbb64b46af17c4932edcd6"
+      }
+    },
+    {
+      "id": "emkohyo-EM20251809-q18",
+      "formula": "(5.0e-7 Bq/cm3 / 10) * ((100+92)/2 L/min*24*60 min*1000 cm3/L) * 0.25",
+      "value": 1.728,
+      "unit": "s^-1",
+      "printedChoices": [
+        0.83,
+        0.91,
+        1.7,
+        6.9,
+        28
+      ],
+      "nearestChoice": 3,
+      "officialChoice": 3,
+      "rowTextSha256": "c863fe7ce61d51caa457ad24821c8d97ecffa9378ccdac34aa98fb302066d4a8",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20251809/q18-p11-1.webp": "7d0e61b7bc133d12432c4b16707e0745641caf4dd6e12be03ab0864bbeebbd5f"
+      }
+    }
+  ],
+  "acceptance": "arithmetic only; source-aware five-choice review pending"
+}
