@@ -85,6 +85,14 @@ def main() -> None:
     retrieved = retrieve(subject, request_items, per_question=5)
     if retrieved["missingCachedSources"]:
         raise ValueError(f"Build the pinned source cache first: {retrieved['missingCachedSources']}")
+    arithmetic = None
+    if paper == "emkohyo-EM20251805" and first <= 18 <= last:
+        arithmetic_file = ROOT / "docs/evidence/emkohyo-choice-sources/EM20251805-q18-19-arithmetic-20260924.json"
+        arithmetic = json.loads(arithmetic_file.read_text(encoding="utf-8"))
+        arithmetic = {"formula": arithmetic["formula"],
+                      "molarVolumeLiterPerMol25C1Atm": arithmetic["molarVolumeLiterPerMol25C1Atm"],
+                      "questions": arithmetic["questions"],
+                      "status": "independent arithmetic audit only; full choice reasons still need review"}
     web = "--web" in sys.argv[4:]
     prompt = (
         "第一種作業環境測定士の公式5択問題について、問題原文と既存解説を根拠に、選択肢1〜5それぞれの正誤理由を作る。"
@@ -109,7 +117,8 @@ def main() -> None:
     payload = (prompt + "\n問題: " + json.dumps(request_items, ensure_ascii=False)
                + "\n政府資料候補: " + json.dumps(sources, ensure_ascii=False)
                + "\n設問別一次資料抜粋: " + json.dumps(retrieved, ensure_ascii=False)
-               + "\n物質別SDS: " + json.dumps(supplemental, ensure_ascii=False))
+               + "\n物質別SDS: " + json.dumps(supplemental, ensure_ascii=False)
+               + "\n独立計算の参考資料: " + json.dumps(arithmetic, ensure_ascii=False))
     ids = [item["id"] for item in request_items]
     schema = {"type": "object", "properties": {id_: {"type": "object"} for id_ in ids},
               "required": ids, "additionalProperties": False}
