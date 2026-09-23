@@ -2,19 +2,19 @@
   "scope": "EM 2025/2026 official multiple choice",
   "expectedQuestions": 360,
   "drafted": 300,
-  "accepted": 26,
-  "draftedWithoutVerifiedGovernmentExcerpt": 179,
-  "distinctExactQuestionFingerprints": 179,
-  "distinctCachedGovernmentCandidateUrls": 39,
+  "accepted": 28,
+  "draftedWithoutVerifiedGovernmentExcerpt": 177,
+  "distinctExactQuestionFingerprints": 177,
+  "distinctCachedGovernmentCandidateUrls": 40,
   "lowRelevanceQuestions": 82,
   "missingByLane": {
-    "analysis": 138,
+    "analysis": 136,
     "general": 26,
     "law": 15
   },
   "candidateGovernmentUrls": [
     "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kagaku_index.html",
-    "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
+    "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
     "https://jrecin.jst.go.jp/html/compass/e-learning/36-549/data/1-%E6%BA%B6%E6%8E%A5/faq/naiyou.html",
     "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
     "https://unit.aist.go.jp/mcml/rg-tp/ja/kaisetsu/shokai_TEmethod.html",
@@ -23,6 +23,7 @@
     "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
     "https://www.env.go.jp/hourei/04/000010.html",
     "https://www.env.go.jp/kijun/wt_a05.html",
+    "https://www.jaea.go.jp/jishin/qa/qa01.pdf",
     "https://www.mhlw.go.jp/content/000616847.pdf",
     "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
@@ -111,26 +112,12 @@
       ]
     },
     {
-      "id": "emkohyo-20260217-4-q1",
-      "subject": "分析に関する概論",
-      "lane": "analysis",
-      "year": "2026",
-      "fingerprint": "76805a1aa7f294b78e49c40bd29cfa54a8b8418ccc1451cd2c427c2919dfd2e9",
-      "topRetrievalScore": 0.096,
-      "lowRelevance": false,
-      "candidateGovernmentUrls": [
-        "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
-        "https://unit.aist.go.jp/nmij/library/si-units/",
-        "https://www.mhlw.go.jp/content/000616847.pdf"
-      ]
-    },
-    {
       "id": "emkohyo-20260217-4-q11",
       "subject": "分析に関する概論",
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "9540b0e56273fda8098c967cf7135033c6882e144c6010f6ac7e6e7117d93dd3",
-      "topRetrievalScore": 0.0918,
+      "topRetrievalScore": 0.0942,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -144,7 +131,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "aab4bfe4168fd7695fa56539698d98b139082e8d55c0654ad2ece67c7f991f67",
-      "topRetrievalScore": 0.0654,
+      "topRetrievalScore": 0.0674,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -158,7 +145,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "a61cc1ecad83a8d0071244b8cfb215645a15c6fa9527476abb65f70f0cc3558e",
-      "topRetrievalScore": 0.0653,
+      "topRetrievalScore": 0.0664,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -173,13 +160,12 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "60d03d1d609271ae709e9c4b39f62d4884ca007d7f3290d4a2b8babbba8d5470",
-      "topRetrievalScore": 0.0274,
+      "topRetrievalScore": 0.0278,
       "lowRelevance": true,
       "candidateGovernmentUrls": [
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
-        "https://unit.aist.go.jp/nmij/library/si-units/",
-        "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
-        "https://www.mhlw.go.jp/content/000616847.pdf"
+        "https://www.jaea.go.jp/jishin/qa/qa01.pdf"
       ]
     },
     {
@@ -188,7 +174,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "d6049bb2199f4472e82bc035e4fceb88cd50fdec594e60309b1cad0b1bb2a851",
-      "topRetrievalScore": 0.0806,
+      "topRetrievalScore": 0.0815,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/hourei/04/000010.html",
@@ -202,7 +188,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "c9cb52c29f9da9af5ab3d0c13340141a24057963042b337be7aa9334589e3a88",
-      "topRetrievalScore": 0.2102,
+      "topRetrievalScore": 0.2139,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
@@ -216,26 +202,12 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "a3b4a291d7b444be3a79bce05c7c8a0c79bb441e8e7ebb15cd6fe0c0410e5c1e",
-      "topRetrievalScore": 0.0704,
+      "topRetrievalScore": 0.0713,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://unit.aist.go.jp/mcml/rg-tp/ja/kaisetsu/shokai_TEmethod.html",
-        "https://www.mhlw.go.jp/content/000616847.pdf",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
-      ]
-    },
-    {
-      "id": "emkohyo-20260217-4-q20",
-      "subject": "分析に関する概論",
-      "lane": "analysis",
-      "year": "2026",
-      "fingerprint": "c27b6f6fed5a7e215e69bd86f10d581cd9d93c2c3da9db62d9824647d5606ccf",
-      "topRetrievalScore": 0.069,
-      "lowRelevance": false,
-      "candidateGovernmentUrls": [
-        "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
-        "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+        "https://www.mhlw.go.jp/content/000616847.pdf"
       ]
     },
     {
@@ -244,7 +216,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "d4e70aa5c7a2b0f1a5e65ba5880f2681623b76137261a8c28f5d442c321bb5c9",
-      "topRetrievalScore": 0.0431,
+      "topRetrievalScore": 0.045,
       "lowRelevance": true,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -258,7 +230,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "9c66d112a01220c802a228eae24e7526368600f92d7c0863202056a1ffb40632",
-      "topRetrievalScore": 0.0537,
+      "topRetrievalScore": 0.0543,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -272,7 +244,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "fd5cfcce63ec5938d9b8654ec4cd14fbe663067f978743b94e3c10cd00dd71e6",
-      "topRetrievalScore": 0.0439,
+      "topRetrievalScore": 0.0457,
       "lowRelevance": true,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -286,7 +258,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "c24c8aef81f539dd0b3efa5a0d7569186ebaef74191f2ca856dd7c24130afc1e",
-      "topRetrievalScore": 0.0405,
+      "topRetrievalScore": 0.0419,
       "lowRelevance": true,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -300,12 +272,12 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "7868f5157be3b809b9cd05b39cab27701694df3794693d0bfa4114a5a38af429",
-      "topRetrievalScore": 0.0624,
+      "topRetrievalScore": 0.0639,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
-        "https://www.mhlw.go.jp/content/000616847.pdf"
+        "https://www.env.go.jp/hourei/04/000010.html"
       ]
     },
     {
@@ -314,7 +286,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "ef66de67c2555c2751693693b5fc33e9a15c90a5047eca1a1dea6e2f17ea5cb9",
-      "topRetrievalScore": 0.0579,
+      "topRetrievalScore": 0.0601,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -328,7 +300,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "5f408e92b8ebfdc507ca1c5194bf1ee9e588cf09046c8d2d9e59fde83437f4d9",
-      "topRetrievalScore": 0.0642,
+      "topRetrievalScore": 0.0659,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -1599,9 +1571,10 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "40114b444d026173a900deb23f7f24309cafb3bad342d930ba6cad9361253840",
-      "topRetrievalScore": 0.0561,
+      "topRetrievalScore": 0.056,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
         "https://unit.aist.go.jp/nmij/library/si-units/",
         "https://www.mhlw.go.jp/content/000616847.pdf"
@@ -1613,7 +1586,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "3ac07e5dc57790c60eaa3bddf1b562dc3afeed7fe1c4a5b0e36d574caa784676",
-      "topRetrievalScore": 0.0546,
+      "topRetrievalScore": 0.0537,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/hourei/04/000010.html",
@@ -1627,7 +1600,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "4fef103c79e733365f1fc0931d20505051689b07b1d40f671a572419d0e9cd50",
-      "topRetrievalScore": 0.0601,
+      "topRetrievalScore": 0.0603,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -1641,7 +1614,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "fd68baa26e0c41b0e248b98a8af94faaed8598e8eca94db4e7b7e7a7d103e885",
-      "topRetrievalScore": 0.0737,
+      "topRetrievalScore": 0.0763,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -1655,13 +1628,13 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "0119e747bb745740779c2ef2d6a004c8b25b82a4031fe6e1f15c9a8d08dcc8cd",
-      "topRetrievalScore": 0.0767,
+      "topRetrievalScore": 0.0778,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
-        "https://www.mhlw.go.jp/content/000616847.pdf",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+        "https://www.mhlw.go.jp/content/000616847.pdf"
       ]
     },
     {
@@ -1670,7 +1643,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "05ea4083e01632b114049fefd3f4acface389623c5e57177d9a10336861bb1a6",
-      "topRetrievalScore": 0.0791,
+      "topRetrievalScore": 0.0796,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -1684,7 +1657,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "de839b2955eb088fb6cd0e7a006a45ef5331d6f8a92b3fa895a732ed2cd5d9bf",
-      "topRetrievalScore": 0.1713,
+      "topRetrievalScore": 0.1757,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
@@ -1698,7 +1671,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "bfe1a5bf3f6ea4d88f3dd29f02c3581b78132272614d40e67e66a260a4667912",
-      "topRetrievalScore": 0.0731,
+      "topRetrievalScore": 0.0747,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
@@ -1712,10 +1685,10 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "3a551f758fd49896aae25c5af0c641a542b847307b96687b7a875947d8b547c0",
-      "topRetrievalScore": 0.0727,
+      "topRetrievalScore": 0.0721,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
-        "https://unit.aist.go.jp/mcml/rg-tp/ja/kaisetsu/shokai_TEmethod.html",
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
         "https://www.mhlw.go.jp/content/000616847.pdf"
       ]
@@ -1726,13 +1699,12 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "aeda07d7852ed9af8b1986e67504a19712c8b3f9715de1bb516386c4c031a574",
-      "topRetrievalScore": 0.0504,
+      "topRetrievalScore": 0.1187,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
-        "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
+        "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
-        "https://unit.aist.go.jp/nmij/library/si-units/",
-        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+        "https://www.jaea.go.jp/jishin/qa/qa01.pdf"
       ]
     },
     {
@@ -1741,7 +1713,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "2002758e1424dec7363349dc3d0b17514f8fa979264b877a732ac552353db9da",
-      "topRetrievalScore": 0.0625,
+      "topRetrievalScore": 0.0647,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
@@ -1755,7 +1727,7 @@
       "lane": "analysis",
       "year": "2026",
       "fingerprint": "03aae15520aa95b5f0d4db2a69fd41291381064445d460f68e277c21437ec03d",
-      "topRetrievalScore": 0.0383,
+      "topRetrievalScore": 0.0405,
       "lowRelevance": true,
       "candidateGovernmentUrls": [
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",

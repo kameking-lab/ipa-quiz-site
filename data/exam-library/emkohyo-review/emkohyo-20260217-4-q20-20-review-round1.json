@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2140,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 13794,
+      "webSearchRequests": 0,
+      "costUSD": 0.1818648,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1338,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q20": {
+      "/exam-library/emkohyo-20260217-4/q20-p12-1.webp": "85424b28b53466a6a14753619f90500e6133ba74278bf81b0f1994e9ce4828cd"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q20": "a89f5b89d74d140d39bb1fd0b44723db40b13fceb98e29c07d9dd71a91be5736"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q20-20.json",
+  "sourcePackSha256": "434b6d2b14b1224ea49e35a8452e56e8d4a95cb3bd8e6985da38f0978a1eed8c",
+  "assessment": {
+    "emkohyo-20260217-4-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 「被ばく線量は放射線を受ける側への影響を扱う量」という説明が大まかすぎる。吸収線量（Gy）は物質1kgが吸収したエネルギーを表す物理量で、影響の重み付けをするのは等価線量・実効線量（Sv）である。肢5を誤りとする理由は「Bqは被ばく側の線量ではなく、線源の毎秒の壊変数である」という区別だけで足りる。「影響を扱う量」と言い切らず、たとえば「放射線を受けた側の吸収エネルギーやそれに基づく線量で、線源の壊変数ではない」のように直すか、出典で支えられる範囲に表現を絞ること。"
+      ],
+      "sourceIssues": [
+        "肢5: 添付資料のJAEA ATOMICA「ベクレル」はBqの定義（1秒間に原子核が崩壊する数、1Bq=1s⁻¹、1Ci=3.7×10¹⁰Bq）しか載っていない。被ばく線量がどういう量か（受ける側の量であること、単位Gy/Sv）は一切書かれておらず、肢5の理由のうち被ばく線量の性質を述べた部分を直接支えていない。線量の定義を示す一次資料を追加するか、該当部分の記述を削ること。",
+        "肢4: 添付資料はBqを「原子核が崩壊する数」と定義しているだけで、「放射線の数」とは一致しない理由（1回の壊変で複数の放射線が出ることがある、など）は書いていない。定義からの対比として誤りの判定は成り立つが、壊変数と放射線数が別物である根拠そのものは出典に直接書かれていない。"
+      ],
+      "needsExternalCheck": [
+        "被ばく線量（吸収線量Gy・等価線量/実効線量Sv）の定義を示す政府一次資料。たとえば環境省「放射線による健康影響等に関する統一的な基礎資料」の該当ページ、または放射線審議会・原子力規制委員会の資料。これで肢5の理由を支える。"
+      ]
+    }
+  }
+}

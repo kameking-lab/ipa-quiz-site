@@ -20706,5 +20706,89 @@
         "url": "https://laws.e-gov.go.jp/api/2/law_data/347AC0000000057?asof=2026-02-17"
       }
     ]
+  },
+  "emkohyo-20260217-4-q1": {
+    "sourceHash": "cf50d6b41ac7f375710420e312278fff80b5b72d26a2b1e1651b32e1b3b6f0a5",
+    "correctChoice": 2,
+    "summary": "気体定数の単位はJ K⁻¹ mol⁻¹で、KとmolはJに掛けず割るため肢2の組合せが誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "文は正しい。圧力は力÷面積で、Pa＝N/m²＝(kg m s⁻²)/m²＝m⁻¹ kg s⁻²となり、表のⒷと一致するため、誤っているものとして選ぶ肢ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "誤りなので正答。R＝PV/(nT)のため、気体定数の単位はJ K⁻¹ mol⁻¹で、基本単位に直すとm² kg s⁻² K⁻¹ mol⁻¹になる。KとmolをJに掛けた「J K mol」は指数の符号が逆で、Jという組立単位も残っている。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "文は正しい。ヘルツは周波数の単位で、1秒あたりの繰り返し回数を表すため、Hz＝s⁻¹となる。回数は無次元なので、基本単位による表現は秒の逆数だけとなり、表と一致する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "文は正しい。電荷は電流×時間なので、クーロンはC＝A sとなる。表の「sA」はアンペアと秒の積であり、SI基本単位による表現として正しい組合せである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "文は正しい。Ω＝V/Aで、V＝W/A＝kg m² s⁻³ A⁻¹であるから、Ω＝m² kg s⁻³ A⁻²となる。表のⒷは電力の次元から導いた指数とすべて一致している。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産総研計量標準総合センター 国際単位系（SI）",
+        "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+      }
+    ]
+  },
+  "emkohyo-20260217-4-q20": {
+    "sourceHash": "03dcb2c7a0b2f103b0f2cf5cc8b1ad93a7cb1df61e144f85d7a42c6b9ad6dac0",
+    "correctChoice": 3,
+    "summary": "1Bqは1秒間に原子核が1個壊変する放射能で、定義は単位時間当たりの壊変数",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "単位質量当たりの壊変数では時間による割り算がなく、Bqの定義と一致しない。JAEAはベクレルを1秒間に原子核が崩壊する数と説明しており、質量で割った値は別の量になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "単位質量当たりの放射線の数は、質量を分母にする上に、数えているのも原子核の壊変ではない。ベクレルは原子核が1秒間に崩壊する数を表すため、肢2は時間と対象の両方が異なる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "正しい。放射能の単位ベクレル（Bq）は、放射性核種が単位時間（1秒）当たりに壊変する数で定義される。1Bqは毎秒1個の壊変に等しい（旧単位の1Ciは3.7×10¹⁰Bq）。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "時間当たりという部分はBqに似ているが、Bqが数えるのは放出された放射線ではなく原子核の壊変である。JAEAの定義は1秒間に原子核が崩壊する数なので、放射線の数に置き換えることはできない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "被ばく線量は放射線を受けた側の吸収エネルギー等に基づく量で、放射性物質の原子核の壊変数ではない。BqはJAEAの定義にあるとおり、1秒間に原子核が崩壊する数を表し、時間当たりの被ばく線量とは異なる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ベクレル",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 放射線・放射能Q&A",
+        "url": "https://www.jaea.go.jp/jishin/qa/qa01.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 放射線計数率と壊変率",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html"
+      }
+    ]
   }
 }

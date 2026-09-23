@@ -290,13 +290,51 @@
             "reason": "文は正しい。Ω＝V/Aで、V＝W/A＝kg m² s⁻³ A⁻¹であるから、Ω＝m² kg s⁻³ A⁻²となる。表のⒷは電力の次元から導いた指数とすべて一致している。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "産総研計量標準総合センター 国際単位系（SI）",
+            "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "添付の一次資料抜粋（作業環境測定基準、個人サンプラー報告書、環境省分析法）には、SI組立単位の定義も基本単位への展開も載っていない。各肢の正誤は次元解析で独立に検算したが、政府系の根拠（例: 産総研計量標準総合センターのSI単位解説や計量単位令）は未確認で、検索が必要。",
-        "抽出テキストでは肢2のⒷが「JKmol」となっており、他の行にある指数（-１など）が表示されていない。指数や記号が抽出で落ちた可能性があるため、原本PDFで肢2の表記を確認する必要がある。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "ad = m/m 立体角 ステラジアン sr = m 2 /m 2 周波数 ヘルツ Hz = s −1 力 ニュートン N = kg m s −2 圧力、応力 パスカル Pa = kg m −1 s −2 N/m 2 エネルギー、仕事、熱量 ジュール J = kg m 2 s −2 N m 仕事率、放射束 ワット W = kg m 2 s −3 J/s 電荷 クーロン C = A s 電位差 ボルト V = kg m 2 s −3 A −1 W/A 静電容量 ファラド F = kg −1 m −2 s 4 A 2 C/V 電気抵抗 オーム Ω = kg m 2 s −3 A −2 V/A コンダクタンス ジーメンス S ",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "380 649 × 10 −23 J K −1 （定義値） アボガドロ定数 N A , L 6.022 140 76 × 10 23 mol −1 （定義値） 気体定数 R 8.314 462 618･･･ J mol −1 K −1 （定義値） ファラデー定数 F 96 485.332 12･･･ C mol −1 （定義値） シュテファン-ボルツマン定数 σ 5.670 374 419･･･ × 10 −8 W m −2 K −4 （定義値） （注）:（　）は標準不確かさを表す。例えば 6.674 30(15) × 10 −11 は、値が 6.674 30 × 10 −11 、標準不確かさが 0.000 15 × 1",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "名称 単位記号及び基本単位による表現 他のSI単位も用いた表現 平面角 ラジアン rad = m/m 立体角 ステラジアン sr = m 2 /m 2 周波数 ヘルツ Hz = s −1 力 ニュートン N = kg m s −2 圧力、応力 パスカル Pa = kg m −1 s −2 N/m 2 エネルギー、仕事、熱量 ジュール J = kg m 2 s −2 N m 仕事率、放射束 ワット W = kg m 2 s −3 J/s 電荷 クーロン C = A s 電位差 ボルト V = kg m 2 s −3 A −1 W/A 静電容量 ファラド F = kg −1 m −2 s 4 A 2 C/V 電気抵抗 オー",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "2 N/m 2 エネルギー、仕事、熱量 ジュール J = kg m 2 s −2 N m 仕事率、放射束 ワット W = kg m 2 s −3 J/s 電荷 クーロン C = A s 電位差 ボルト V = kg m 2 s −3 A −1 W/A 静電容量 ファラド F = kg −1 m −2 s 4 A 2 C/V 電気抵抗 オーム Ω = kg m 2 s −3 A −2 V/A コンダクタンス ジーメンス S = kg −1 m −2 s 3 A 2 A/V 磁束 ウェーバ Wb = kg m 2 s −2 A −1 V s 磁束密度 テスラ T = kg s −2 A −1 Wb/m 2 インダクタンス ヘ",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": " A s 電位差 ボルト V = kg m 2 s −3 A −1 W/A 静電容量 ファラド F = kg −1 m −2 s 4 A 2 C/V 電気抵抗 オーム Ω = kg m 2 s −3 A −2 V/A コンダクタンス ジーメンス S = kg −1 m −2 s 3 A 2 A/V 磁束 ウェーバ Wb = kg m 2 s −2 A −1 V s 磁束密度 テスラ T = kg s −2 A −1 Wb/m 2 インダクタンス ヘンリー H = kg m 2 s −2 A −2 Wb/A セルシウス温度 セルシウス度 °C = K 光束 ルーメン lm = cd sr （注） cd sr 照度 ルクス",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-20260217-4-q2": {
       "overlay": {
