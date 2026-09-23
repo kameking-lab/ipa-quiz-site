@@ -21,6 +21,7 @@ CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 SHARED_FIGURES = {
     "20240526": [ROOT / "public/images/denko2/2024-first/wiring-main.png",
                  ROOT / "public/images/denko2/2024-first/wiring-panels.png"],
+    "20250525": [ROOT / "public/images/denko2/2025-first/wiring-main.png"],
 }
 
 
@@ -32,16 +33,22 @@ def draft_for(batch_path: Path, part: int) -> tuple[list[dict], Path]:
     return json.loads(path.read_text(encoding="utf-8")), path
 
 
-def check(batch_path: Path, part: int) -> str:
+def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
     batch = json.loads(batch_path.read_text(encoding="utf-8"))
     original = batch["questions"][(part - 1) * 5:part * 5]
     draft, draft_path = draft_for(batch_path, part)
+    if selected is not None:
+        original = [item for item in original if item["number"] in selected]
+        draft = [item for item in draft if item["number"] in selected]
+        if not original:
+            return f"{batch_path.stem} part{part:02}: no selected questions"
     if {item["number"] for item in original} != {item["number"] for item in draft}:
         raise ValueError("Draft and official row numbering differs")
     RECEIPTS.mkdir(parents=True, exist_ok=True)
-    output = RECEIPTS / (batch_path.stem + f"-opus-review-part{part:02}.json")
+    suffix = f"-fix-q{'-'.join(str(item['number']) for item in original)}" if selected is not None else ""
+    output = RECEIPTS / (batch_path.stem + f"-opus-review-part{part:02}{suffix}.json")
     hashes = {
-        "draftSha256": sha256(draft_path.read_bytes()).hexdigest(),
+        "draftSha256": sha256(json.dumps(draft, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest(),
         "rowSha256": {str(item["number"]): sha256((ROOT / item["reviewCrop"]).read_bytes()).hexdigest()
                       for item in original},
     }
@@ -125,8 +132,11 @@ def check(batch_path: Path, part: int) -> str:
 def main() -> None:
     selected = sys.argv[1] if len(sys.argv) > 1 else "20240526-q01-10"
     path = BATCHES / f"{selected}.json"
+    questions = None
+    if len(sys.argv) > 2 and sys.argv[2].startswith("--questions="):
+        questions = {int(value) for value in sys.argv[2].split("=", 1)[1].split(",")}
     for part in (1, 2):
-        print(check(path, part), flush=True)
+        print(check(path, part, questions), flush=True)
 
 
 if __name__ == "__main__":

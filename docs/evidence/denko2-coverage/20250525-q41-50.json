@@ -1,16 +1,25 @@
 {
   "schemaVersion": 1,
   "batch": "20250525-q41-50",
-  "status": "source-verified-draft-pending",
-  "questionOriginalVisualQc": 0,
-  "choiceTextOriginalVisualQc": 0,
-  "choiceExplanationQc": 0,
-  "figureAndPhotoQc": 0,
+  "status": "accepted",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 10,
   "governmentSourceQc": 0,
-  "reviewedQuestionNumbers": [],
-  "unresolved": [
-    "原本画像での全問・全肢・解説・図表の個別照合が未完了"
+  "reviewedQuestionNumbers": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50
   ],
+  "unresolved": [],
   "sourceDate": "2025-05-25",
   "sourceQuestionPdfSha256": "e1a564f3c783d0c6c55356ab058937fa3a919c271d7ba43aeb258427c57d5bc3",
   "sourceAnswerPdfSha256": "194e465b21806b6bc89865f08ee0a89bd4164a5fe4ce9405b29a8b53b2244ef6",
@@ -27,5 +36,16 @@
     50
   ],
   "sourceOfficialAnswerCount": 10,
-  "visionDraftQuestionCount": 10
+  "visionDraftQuestionCount": 10,
+  "publishGate": "notification-required-and-two-full-years-required",
+  "governmentSourceApplicableQuestions": [],
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20250525-q41-50-acceptance.json"
+    ]
+  },
+  "reviewMethod": "公式行画像・四肢・正答・肢別解説・図表をOpus独立照合。修正問は当該問のみ再照合し、設問別最終証跡をacceptance-ledgerに集約。"
 }
