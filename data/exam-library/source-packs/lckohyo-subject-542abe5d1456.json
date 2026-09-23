@@ -1,6 +1,6 @@
 {
   "subject": "第二種衛生管理者",
-  "sourceCount": 13,
+  "sourceCount": 22,
   "notice": "参照候補のみ。設問ごとの適用条文・出題時点・PDF頁を原本で再確認する。",
   "sources": [
     {
@@ -175,6 +175,66 @@
       }
     },
     {
+      "url": "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-002.html",
+      "title": "BMI | 生活習慣病などの情報(e-ヘルスネット) | 健康日本21アクション支援システム Webサイト",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q20"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-002.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "f59d0d921bdebe0799c3df3511a3f54ebad7381f48d51498896182bdb12b1cca",
+        "bytes": 30008,
+        "contentType": "text/html"
+      }
+    },
+    {
+      "url": "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-013.html",
+      "title": "運動負荷心電図 | 生活習慣病などの情報(e-ヘルスネット) | 健康日本21アクション支援システム Webサイト",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q17"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-013.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "9a561cd57442ae98ad95c43fa60caf36cb815e658a4eab95c538980e2280703e",
+        "bytes": 28671,
+        "contentType": "text/html"
+      }
+    },
+    {
+      "url": "https://kennet.mhlw.go.jp/information/information/food/e-02-001.html",
+      "title": "肥満と健康 | 生活習慣病などの情報(e-ヘルスネット) | 健康日本21アクション支援システム Webサイト",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q20"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://kennet.mhlw.go.jp/information/information/food/e-02-001.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "d11e5b6ca0bbc171f47c9053578bf5a132b4635f28d6ce25382075f7dc16621b",
+        "bytes": 46940,
+        "contentType": "text/html"
+      }
+    },
+    {
+      "url": "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html",
+      "title": "狭心症・心筋梗塞などの心臓病（虚血性心疾患） | 生活習慣病などの情報(e-ヘルスネット) | 健康日本21アクション支援システム Webサイト",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q17"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "fbb8399eab11e7dc219722347913856bd0448e37cf20b782a4c7f16eebb7903d",
+        "bytes": 30866,
+        "contentType": "text/html"
+      }
+    },
+    {
       "url": "https://laws.e-gov.go.jp/law/347CO0000000318",
       "title": "e-Gov 労働安全衛生法施行令（第2条）",
       "locators": [
@@ -225,6 +285,23 @@
       }
     },
     {
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf",
+      "title": "市民用 救急蘇生法の指針 2015（監修：日本救急医療財団心肺蘇生法委員会、厚生労働省掲載）IV-1 急性心筋梗塞 11頁",
+      "locators": [
+        "11頁"
+      ],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q17"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf",
+        "retrievedOn": "2026-09-23",
+        "sha256": "1c95a09813d8077b0fcb5e3e8328f558377278895cb3b1218fe30e512a112aaa",
+        "bytes": 3607833,
+        "contentType": "application/pdf"
+      }
+    },
+    {
       "url": "https://www.mhlw.go.jp/hourei/doc/kouji/K151130K0020.pdf",
       "title": "労働者の心の健康の保持増進のための指針（平成18年3月31日健康保持増進のための指針公示第3号、平成27年11月30日改正同第6号）",
       "locators": [],
@@ -252,6 +329,66 @@
         "sha256": "b008772cbd0e70dba07a21a65e47b132b58239327ee0daf4212f0cbab387036a",
         "bytes": 58301,
         "contentType": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130677.html",
+      "title": "ヒスタミンによる食中毒について｜厚生労働省",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q16"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130677.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "5fa9e9c40667ccc14ee393daa999a3fcabc8bc934fe9954bca49c5a2b20cd7e3",
+        "bytes": 57225,
+        "contentType": "text/html"
+      }
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177609.html",
+      "title": "腸管出血性大腸菌Ｑ＆Ａ｜厚生労働省",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q16"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177609.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "00463251385798cc2236a3d6cfd5b3ed5da3affe77bf9eaa75edac8d295aa6b4",
+        "bytes": 125927,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html",
+      "title": "ノロウイルスに関するＱ＆Ａ｜厚生労働省",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q16"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html",
+        "retrievedOn": "2026-09-23",
+        "sha256": "798642df09a627a6d48e3d1fe077a4ba12832574a7484fed3e75f8d991570c6f",
+        "bytes": 129086,
+        "contentType": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf",
+      "title": "食中毒原因物質の分類（厚生労働省掲載 意見交換会資料 1枚目）",
+      "locators": [],
+      "relevantQuestionIds": [
+        "lckohyo-LC20252115-q16"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf",
+        "retrievedOn": "2026-09-23",
+        "sha256": "81443edde115add3d8d18b5e3f20711596e7cca40198e12d7ca62037b332b2f5",
+        "bytes": 208526,
+        "contentType": "application/pdf"
       }
     }
   ]
