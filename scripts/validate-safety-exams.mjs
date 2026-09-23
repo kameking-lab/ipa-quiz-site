@@ -200,11 +200,45 @@ const emCatalog = catalog.filter(paper => paper.group === 'emkohyo' && emYears.i
 const actualEmPaperIds = new Set(emCatalog.map(paper => paper.id));
 check(emPaperIds.length === emCatalog.length && emPaperIds.every(id => actualEmPaperIds.has(id)), 'EM two-year contract differs from official catalog');
 const emQuestionIds = [];
+let emTextCards = 0;
+let emFigureCrops = 0;
 for (const paper of emCatalog) {
   const rows = read(`papers/${paper.id}.json`);
+  let presentation;
+  try { presentation = read(`presentation/${paper.id}.json`); }
+  catch (error) { errors.push(`Missing EM text presentation: ${paper.id}: ${error.message}`); continue; }
   const eligible = rows.filter(row => row.answerAuthority === 'official' && row.choiceCount === 5);
   check(eligible.length === emTarget?.expectedQuestionsPerPaper, `EM target paper count mismatch: ${paper.id}`);
   emQuestionIds.push(...eligible.map(row => row.id));
+  check(Object.keys(presentation).length === eligible.length, `EM presentation count mismatch: ${paper.id}`);
+  for (const row of eligible) {
+    const shown = presentation[row.id];
+    check(Boolean(shown), `Missing EM text card: ${row.id}`);
+    if (!shown) continue;
+    emTextCards++;
+    check(shown.sourceHash === createHash('sha256').update(row.text).digest('hex'), `Stale EM text card: ${row.id}`);
+    check(typeof shown.prompt === 'string' && shown.prompt.trim().length > 0, `Empty EM text prompt: ${row.id}`);
+    const cards = shown.choices;
+    check(Array.isArray(cards) && cards.length === 5, `Missing five EM choice cards: ${row.id}`);
+    if (Array.isArray(cards) && cards.length === 5) {
+      check(cards.every((card, index) => card?.number === index + 1
+        && typeof card.text === 'string' && card.text.trim().length > 0), `Invalid EM choice card: ${row.id}`);
+      check(new Set(cards.map(card => card?.text?.trim())).size === 5, `Repeated EM choice card: ${row.id}`);
+    }
+    for (const figure of shown.figures ?? []) {
+      const safe = typeof figure.src === 'string'
+        && figure.src.startsWith(`/exam-library/${paper.id}/`)
+        && figure.src.endsWith('.webp');
+      check(safe, `Invalid EM figure crop path: ${row.id}/${figure.src}`);
+      if (!safe) continue;
+      emFigureCrops++;
+      try {
+        const bytes = fs.readFileSync(path.join(root, 'public', figure.src));
+        check(bytes.length > 12 && bytes.toString('ascii', 0, 4) === 'RIFF'
+          && bytes.toString('ascii', 8, 12) === 'WEBP', `Invalid EM figure crop: ${row.id}/${figure.src}`);
+      } catch { errors.push(`Missing EM figure crop: ${row.id}/${figure.src}`); }
+    }
+  }
 }
 check(emQuestionIds.length === emTarget?.expectedQuestions, 'EM two-year expected question count mismatch');
 const emStructuredCount = emQuestionIds.filter(id => Object.hasOwn(choiceExplanations, id)).length;
@@ -256,6 +290,8 @@ const result = {
     years: emYears,
     papers: emCatalog.length,
     expectedQuestions: emQuestionIds.length,
+    textCards: emTextCards,
+    figureCrops: emFigureCrops,
     structuredChoiceExplanations: emStructuredCount,
     complete: emStructuredCount === emQuestionIds.length,
   },
