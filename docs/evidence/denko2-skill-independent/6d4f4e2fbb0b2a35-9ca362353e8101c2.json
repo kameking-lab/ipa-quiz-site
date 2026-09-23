@@ -1,0 +1,29 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "6d4f4e2fbb0b2a3553a76d9dd1cc1c867c8cb7147bb58012d03e0afb79a0d9bc",
+    "answerPdfSha256": "9ca362353e8101c2253a7467a35c2befdd5d86e065e0add7f6ef4d778bf80b04",
+    "extractedRecordSha256": "7eb4d7bef86f355393e6e42fb3b81358fa832282896e8ac562c4575f8e88ec42"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-12-13-skill-13",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [
+      "The bottom of the diagramImage crop sits right at the ground symbol and the E_D label. E_D is still readable, but the crop leaves little margin. The dash-dot lines at the bottom of the construction-omitted area are cut at the crop edge. This does not affect reading the construction conditions, so it is not a FIX."
+    ],
+    "modelAnswerIssues": [],
+    "notes": [
+      "instructionText matches the original on page 2: the 40-minute exam time, the phrase 'all materials given (except spares)', and the 5 notes (terminal block substitutes for the automatic switch, dash-dot parts are omitted, junction and switch boxes are not supplied, insulation treatment is omitted, no protective board).",
+      "All 14 items in materialsText match the original on page 1 for cable type, size, core count, length, sheath color and quantity: 1 is VVF blue sheath 2.0mm 2-core 250mm; 2 is VVF 1.6mm 2-core 1400mm; 3 is VVF 1.6mm 3-core 350mm; 4 is VVR 1.6mm 2-core 250mm; 5 is IV 1.6mm green 150mm; 6 is a 3-pole terminal block; 11 is small ring sleeves, 5 including spares; 12–14 are one each of 2-, 3- and 4-wire push-in connectors. The exam number tag and vinyl bag are rightly left out.",
+      "conditionsText matches the original on page 3: condition 1 (layout per Figure 1) through condition 5 (the mounting frame is used for the outlet). This includes the white-wire terminals in 3-④ (outlet W terminal, lamp receptacle screw-shell terminal, terminal block No. 2), ring sleeves at A, push-in connectors at B.",
+      "diagramNotesText matches Notes 1 and 2 under Figure 1 (JIS C 0303:2000; Ⓡ = lamp receptacle). Ⓡ in Note 2 is a circled character, so it should be checked when read from the text layer.",
+      "The diagramImage is readable without cut-offs for: power source 1φ2W 100V, VVF2.0-2C, VVF1.6-3C, VVF1.6-2C ×3, VVR1.6-2C, E1.6, dimensions 150/150/150/150/150/200/200/100mm, A(3A), ロ, the outdoor lamp, construction omitted, and labels A, B, E and イ.",
+      "The secondFigureImage shows all of Figure 2: the internal wiring of the automatic switch, terminals 1/2/3, the CdS circuit and the terminal block's 1/2/3 terminals. The Figure 1 caption and the note text are kept separate.",
+      "The model answer header is '令和7年度第二種下期技能試験の解答 候補No.13', so it is the same No. as this problem.",
+      "The concept diagram, multiline diagram and finished-work photo are consistent with the problem: VVF2.0 blue sheath, VVF1.6-3C between A and B, terminal block 1 black / 2 white / 3 to VVR, the VVR white going to terminal 2, the outlet W side white, the green ground wire, and the mounting frame used only for the outlet. The multiline diagram shows ring sleeves at A and push-in connectors at B, matching the construction conditions.",
+      "This review only checks the extraction against the original PDFs. No physical work piece was graded."
+    ]
+  }
+}
