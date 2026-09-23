@@ -21820,5 +21820,139 @@
         "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"
       }
     ]
+  },
+  "emkohyo-20260217-4-q5": {
+    "sourceHash": "2a5c2e043e9aa4cab1fafb0f62e8a60a65501f54a69256578cd1f7f6615c2a7c",
+    "correctChoice": 3,
+    "summary": "溶質52.0 gを10.0％にするには全体520 gが必要で、加える水は520−130＝390 g＝390 mL",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "195 mLは正しい必要量390 mLのちょうど半分である。水195 gを加えると全体は325 gとなり、H₂SO₄ 52.0 gの濃度は52.0÷325＝16.0％にとどまる。10.0％には届かない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水300 mLの質量は密度1.00 g/mLより300 gである。元の硫酸水溶液130 gと合わせると全体は430 g。硫酸52.0 gの質量割合は52.0÷430×100≒12.1％であり、目標の10.0％より濃い。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "元の溶液は100 mL×1.30 g/cm³＝130 gで、H₂SO₄は130×0.400＝52.0 g。10.0％にするには全体が520 g必要なので、水は520−130＝390 g。密度1.00より390 mLとなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水420 mLは密度1.00 g/mLなので420 gである。元の硫酸水溶液130 gを足すと全体は550 gになり、硫酸52.0 gの割合は52.0÷550×100≒9.45％。目標の10.0％を下回るため加水量が多すぎる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水442 mLを加えると密度1.00 g/mLから442 g増え、元の硫酸水溶液130 gとの合計は572 g。硫酸は52.0 gのままなので質量割合は52.0÷572×100≒9.09％となり、目標の10.0％より薄い。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "科学技術振興機構 質量パーセント濃度の定義",
+        "url": "https://www.jst.go.jp/pr/announce/20150804-2/index.html"
+      }
+    ]
+  },
+  "emkohyo-20260217-4-q3": {
+    "sourceHash": "15dd108765490e0528c608006162b8f116ef4d6921ba6a23e33bc70b2d1251e9",
+    "correctChoice": 4,
+    "summary": "トルエンは極性の小さい芳香族炭化水素で水に溶けにくく、「水によく溶ける」が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "文は正しい。厚生労働省のフェノールSDSは水溶液のpHを6.0と記しており、7より小さい値は酸性側である。この数値は濃度や温度が明示されないため、酸の強さを定量的に一般化せず、設問の『酸性を示す』という判断に限る。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "文は正しい。厚生労働省のアニリンSDSはpHを約8.8と記しており、7より大きいので水溶液はアルカリ性側である。SDSには測定濃度と温度が明示されないため、具体的なpHをすべての濃度に当てはめず、液性の方向を判断する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "文は正しい。プロピオン酸はカルボキシ基をもつ酸で、厚生労働省のSDSは酸としての性質と水への高い溶解度を示している。水中では一部がプロピオン酸イオンと水素イオンに電離するので、水溶液は酸性側となる。完全電離する強酸とは扱わない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "誤りなので正答。厚生労働省のトルエンSDSは25℃で水への溶解度を526 mg/Lと示している。これは同じSDSで有機溶剤には完全混和すると記した性質と対照的で、水には限られた量しか溶けないため『よく溶ける』とする記述は不適切である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "文は正しい。厚生労働省のアセトンSDSは溶解度の欄で『水に易溶』と明記している。設問の『水によく溶ける』と直接整合し、トルエンSDSの526 mg/Lという限定的な溶解度と区別できる。分子構造による機構を資料以上に断定しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 フェノール安全データシート",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0061.html"
+      },
+      {
+        "title": "厚生労働省 アニリン安全データシート",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html"
+      },
+      {
+        "title": "厚生労働省 プロピオン酸安全データシート",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html"
+      },
+      {
+        "title": "厚生労働省 トルエン安全データシート",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+      },
+      {
+        "title": "厚生労働省 アセトン安全データシート",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+      }
+    ]
+  },
+  "emkohyo-20260217-4-q4": {
+    "sourceHash": "8ff05abba2d093fa7c704d5f9836d89d1772a7dfc707f5ba0c3966464ffb0b50",
+    "correctChoice": 2,
+    "summary": "C＋O₂→CO₂では気体のmol数が変わらず、同じ容積・同じ25℃なので圧力は1.0気圧のまま",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.5気圧になるのは、CO₂が消費したO₂の半分のmol数しか生じない場合である。C＋O₂→CO₂の気体の係数は1対1で、容積5.0 Lと温度25℃も同じなので、圧力が半減する理由はない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "固体の炭素は気体のmol数に数えず、反応式C＋O₂→CO₂でO₂ 1 molからCO₂ 1 molが生じるので気体のmol数は変わらない。炭素の体積を無視する条件により気体の容積は5.0 Lのまま、温度も25℃に戻る。PV＝nRTでn、V、Tが同じだから圧力は1.0気圧となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "1.5気圧にするには、気体のmol数が1.5倍に増える必要がある。しかしCO₂だけが生じる反応では、気体の係数はO₂が1、CO₂が1である。固体の炭素は気体のmol数に加わらないので、1.5倍になる根拠はない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "2.0気圧になるには、容積5.0 Lと温度25℃が同じ条件で、気体のmol数が燃焼前の2倍になる必要がある。本問で指定されたC＋O₂→CO₂は酸素1 molから二酸化炭素1 molを生じるのでmol数は増えず、圧力は1.0気圧のままである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "2.5気圧にするには、気体のmol数が2.5倍になる必要があるが、反応式にその比は現れない。燃焼直後の高温では一時的に圧力が上がるが、問われているのは25℃に戻した後なので、PV＝nRTより1.0気圧に戻る。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 Science Station どうして化学反応が起きるのか？第2回",
+        "url": "https://fukushima.jaea.go.jp/pamphlet/science/science-station_c002.html"
+      },
+      {
+        "title": "環境省 令和4年度脱炭素化・先導的廃棄物処理システム実証事業委託業務成果報告書（PDF53頁）",
+        "url": "https://www.env.go.jp/content/000126413.pdf"
+      }
+    ]
   }
 }
