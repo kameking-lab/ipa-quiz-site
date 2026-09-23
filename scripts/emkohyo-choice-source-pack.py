@@ -22,13 +22,49 @@ ROOT = Path(__file__).resolve().parents[1]
 REVIEW = ROOT / "data/exam-library/emkohyo-review"
 OUT = ROOT / "docs/evidence/emkohyo-choice-sources"
 SOURCE_PAGE_IMAGES = OUT / "source-page-images.json"
+TEXT_CACHE = ROOT / "data/raw_pdfs/emkohyo-source-cache"
 
 
 def normal(text: str) -> str:
     return re.sub(r"\s+", "", text).replace("−", "-").replace("－", "-")
 
 
-def read_url(url: str) -> dict:
+def pinned_sources() -> dict:
+    index = {}
+    for file in (OUT / "subject-packs").glob("*.json"):
+        data = json.loads(file.read_text(encoding="utf-8"))
+        for source in data["sources"]:
+            previous = index.get(source["url"])
+            if previous and previous["sha256"] != source["sha256"]:
+                raise ValueError(f"Conflicting pinned source: {source['url']}")
+            index[source["url"]] = source
+    law_pages = OUT / "mhlw-law-pages.json"
+    if law_pages.exists():
+        data = json.loads(law_pages.read_text(encoding="utf-8"))
+        for source in data["pages"]:
+            previous = index.get(source["url"])
+            if previous and previous["sha256"] != source["sha256"]:
+                raise ValueError(f"Conflicting pinned source: {source['url']}")
+            index[source["url"]] = source
+    return index
+
+
+def read_url(url: str, pinned: dict) -> dict:
+    source = pinned.get(url)
+    if source:
+        cached_file = TEXT_CACHE / f"{source['sha256']}.json"
+        if cached_file.exists():
+            cached = json.loads(cached_file.read_text(encoding="utf-8"))
+            if cached.get("url") != url or cached.get("sha256") != source["sha256"]:
+                raise ValueError(f"Pinned text cache differs from source: {url}")
+            pages = cached["pages"]
+            text = "\n".join(pages)
+            return {"url": url, "status": source.get("status", 200),
+                    "finalUrl": source.get("finalUrl", url), "sha256": source["sha256"],
+                    "contentType": source.get("contentType", "text/html"),
+                    "pages": len(pages), "pageTexts": pages, "text": text,
+                    "revisionInfo": None, "sourceMode": "sha-pinned-text-cache",
+                    "cachedTextSha256": sha256(text.encode("utf-8")).hexdigest()}
     response = requests.get(url, timeout=60, headers={"User-Agent": "QualificationStudySourceVerifier/1.0"})
     response.raise_for_status()
     content_type = response.headers.get("Content-Type", "")
@@ -68,6 +104,9 @@ def main() -> None:
     batch_first = (first - 1) // 5 * 5 + 1
     if (last - 1) // 5 * 5 + 1 != batch_first:
         raise ValueError("Evidence pack must stay within one draft batch")
+    target = OUT / f"{paper}-q{first:02}-{last:02}.json"
+    if target.exists() and "--replace" not in sys.argv[4:]:
+        raise FileExistsError(f"Existing source pack is immutable without --replace: {target}")
     file = REVIEW / f"{paper}-q{batch_first:02}-{batch_first+4:02}-draft.json"
     all_candidates = json.loads(file.read_text(encoding="utf-8"))["questions"]
     draft = {f"{paper}-q{n}": all_candidates[f"{paper}-q{n}"]
@@ -75,8 +114,9 @@ def main() -> None:
     sources = {source["url"] for question in draft.values() for source in question["overlay"].get("sources", [])}
     evidence = [(id_, record) for id_, question in draft.items()
                 for record in question.get("sourceEvidence", []) if isinstance(record, dict)]
+    pinned = pinned_sources()
     with ThreadPoolExecutor(max_workers=6) as pool:
-        fetched = {result["url"]: result for result in pool.map(read_url, sorted(sources))}
+        fetched = {result["url"]: result for result in pool.map(lambda url: read_url(url, pinned), sorted(sources))}
     records = []
     for url, page in fetched.items():
         claims = []
@@ -112,7 +152,6 @@ def main() -> None:
         if images:
             pack["sourcePageImages"] = images
     OUT.mkdir(parents=True, exist_ok=True)
-    target = OUT / f"{paper}-q{first:02}-{last:02}.json"
     target.write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{target}: sources={len(records)}, claims={pack['claimedExcerpts']}, "
           f"missing={len(pack['missingEvidenceQuestions'])}, unmatched={pack['unverifiedExcerpts']}")
