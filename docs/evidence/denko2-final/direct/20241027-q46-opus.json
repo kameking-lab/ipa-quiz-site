@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q46-47-48-49-50-opus.json",
+  "upstreamReviewSha256": "024f404b9618d30ea8a305a6375f5b63fec80d53956bd7d585dfe6e2097a93fb",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "cd8016276f15c8d783bca89329a82503a8c550eb57d2e24f6a5a9f6164e5c9fc",
+    "rowSha256": {
+      "46": "812227c44f30b5dcd7566477f417199547b6adeeab5af68669fcd4d607c27c3e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q46-1.png": "dd4bf92422a25037c855f1d4903835c80cacf9be62eb280d22810a5798804411"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q46.json": "d798a003eaaf4aac4c5ecb3e8cbba622804a89923e4ed80dde619bbf1a821c50"
+    }
+  },
+  "assessment": [
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "問題文を公式問題の問46設問行原図と照合した。『⑯で示す部分の配線工事に必要なケーブルは。ただし，心線数は最少とする。』で一致し、否定語は含まない。公式正答はハで、候補JSONのofficialAnswerもハである。公式15頁の共通配線図では、⑯の引出線（右上の⑯から左下へ延びる線）の先端が、1階階段付近の灯具『ハ』の左上にある小円＋外向き矢印（立上り）を指している。この灯具は同じ行の右側にある1階3路スイッチ『3 ハ』に配線されている。2階階段脇にはイロハの3連スイッチがあり、ハの下に『3』表示がある。1階の灯具ハを1階・2階の3路スイッチで操作する回路で、⑯はその1階・2階間の立上りである。2階側の3路スイッチとは渡り線2本、1階の灯具とは接地側電線1本で結ぶため、最少3心となる。これは公式正答の3心ケーブル（ハ）と整合する。電線種別は固定済み一次資料pack（SHA256=e3eb4735…b176）で確認した。試験センター公式問題冊子20241027_co_second_q01.pdfの11頁【注意】1に『電灯回路は600Vビニル絶縁ビニルシースケーブル平形(VVF)』とあり、候補の記述と一致する。なお、同URLをWebFetchしたが、PDFのテキストは抽出できなかった。確認は固定pack抜粋によった。写真は原図と公開用q46-1.pngの両方で照合した。イ＝灰色の丸形シースで白・黒2心、黄褐色の介在物とテープ巻きあり。ロ＝灰色の平形で白・黒2心、介在物は見えない。ハ＝灰色の平形で赤・白・黒3心、介在物は見えない。ニ＝黒色の丸形で赤・白・黒3心、介在物とテープ巻きあり。候補の選択肢記述、各肢の正誤理由、diagramDescriptionはいずれも写真・配線図と一致する。"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q46-47-48-49-50-opus.json",
+  "upstreamReviewSha256": "024f404b9618d30ea8a305a6375f5b63fec80d53956bd7d585dfe6e2097a93fb",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "f330662246a8df7b631c35520e321b304211901c59dfd8b7a003c17f83749909",
+    "rowSha256": {
+      "49": "3d2ebeeeee30370fdbd72dc01a4c15a60029744a77a934daf0d4a543ccb6e0b1"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q49-1.png": "84aa1e38f80d8c7db30cde670a9c082c50f587752709b970e6c488e8e0e52b2d"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q49.json": "887aa8c8f8e519a2e50421cbd78e8774246dbcfa2be731863ca9c60575991728"
+    }
+  },
+  "assessment": [
+    {
+      "number": 49,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "問題文を公式問題の問49設問行原図と照合した。『⑲で示すジョイントボックス内の電線相互の接続作業に使用されることのないものは。』で一致する。否定語『使用されることのない』は候補も保持している。公式正答はイで、候補もイである。公式15頁の配線図では、⑲の引出線が1階工場の左側、P-2への配線上にある小さな四角（ジョイントボックス）を指している。そこでは、P-2へ向かう『IV14×3 (E31)』と、左下の『CV 14−3C』傍記の経路が接続されている。P-1結線図では、eが『3P 50A → P−2 1階工場』である。一次資料pack（SHA256=b91ef39f…42fc）で試験センター『技能試験の概要と注意すべきポイント』point2024.pdfの記載を確認した。p.24は、低圧屋内配線工事で使うリングスリーブをJIS C 2806の小・中・大の3種類としている。p.25の組合せ表は、電線の最大をφ2.6mm又は5.5mm²としている。同じくp.25に『リングスリーブ用圧着工具は…握り部分の色が黄色のもの』とあり、刻印は○・小・中・大である。したがって、黄色柄のリングスリーブ用圧着工具（イ）は14mm²電線の接続には用いない、という候補の推論は一次資料と整合する。写真は原図と公開用q49-1.pngで照合した。イ＝黄色柄で、黒い頭部に黄色のダイス表示がある。ロ＝青色アームに黄色グリップのケーブルカッター。ハ＝木柄の折りたたみナイフ。ニ＝黒色の長柄2本と油圧シリンダ状の本体を持つ圧着工具。いずれも候補の記述と一致する。"
+    }
+  ]
+}
