@@ -18,6 +18,7 @@ FILENAMES = (
     "EM2025-calculation-spotchecks-20260924.json",
     "EM2025-radiation-arithmetic-20260924.json",
     "EM2026-radiation-arithmetic-20260924.json",
+    "EM2026-simple-calculation-spotchecks-20260924.json",
 )
 
 

@@ -92,7 +92,8 @@ def main() -> None:
                      "EM-calculation-spotchecks-20260924.json",
                      "EM2025-calculation-spotchecks-20260924.json",
                      "EM2025-radiation-arithmetic-20260924.json",
-                     "EM2026-radiation-arithmetic-20260924.json"):
+                     "EM2026-radiation-arithmetic-20260924.json",
+                     "EM2026-simple-calculation-spotchecks-20260924.json"):
         evidence = json.loads((evidence_dir / filename).read_text(encoding="utf-8"))
         records = evidence["questions"]
         if isinstance(records, dict):
