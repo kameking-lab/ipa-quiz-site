@@ -33,17 +33,27 @@ describe("note-accounts", () => {
     expect(source).not.toMatch(/^\s*["']use client["']/m);
   });
 
+  // 2026-09-13: 解説記事リンクの描画を個別ページと一覧ページで共有するため
+  // components/exam-library/exam-note-links.tsx へ切り出した。呼び出し元が移っても
+  // 固定したい不変条件は同じ = 「deriveNoteAccountFromUrl を呼ぶサーバー側モジュールは
+  // lib/note-accounts から取り込む」。対象ファイルだけ追従させる。
   it("is imported from lib/note-accounts by the server component, not from the client module", () => {
-    const serverPage = read("app/e-learning/exams/[id]/page.tsx");
-    expect(serverPage).toContain('from "@/lib/note-accounts"');
-    // サーバーコンポーネントが client モジュールから関数を取り込んでいないこと。
-    // (TrackedNoteLink コンポーネント自体の import は許される。)
+    const serverComponent = read("components/exam-library/exam-note-links.tsx");
+    expect(serverComponent).toContain('from "@/lib/note-accounts"');
+    // この描画はサーバーコンポーネントのままであること ("use client" が付くと
+    // 一覧・個別の両ページが client 境界を越えてしまう)。
+    expect(serverComponent).not.toMatch(/^\s*["']use client["']/m);
+    // client モジュールからは TrackedNoteLink コンポーネントだけを取り込む。
     const clientImport = /import\s*\{([^}]*)\}\s*from\s*"@\/components\/analytics\/TrackedNoteLink"/.exec(
-      serverPage,
+      serverComponent,
     );
     expect(clientImport).toBeTruthy();
     const imported = clientImport![1]!.split(",").map((name) => name.trim()).filter(Boolean);
     expect(imported).toEqual(["TrackedNoteLink"]);
+    // 呼び出し元のページは、この関数を自前で取り込み直していないこと。
+    for (const page of ["app/e-learning/exams/[id]/page.tsx", "app/e-learning/exams/page.tsx"]) {
+      expect(read(page)).not.toContain("deriveNoteAccountFromUrl");
+    }
   });
 
   it("keeps the client module free of the account helper definitions", () => {
