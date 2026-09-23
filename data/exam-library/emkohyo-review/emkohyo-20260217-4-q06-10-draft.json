@@ -262,42 +262,111 @@
       "overlay": {
         "sourceHash": "dcb9a015f2e0a613ac5fb8055537d8230680dda20e5a32a676e1d46391c95ac8",
         "correctChoice": 4,
-        "summary": "同じ0.1 mol/Lなら、電離が部分的な弱酸のフッ化水素酸だけが水素イオン濃度が小さく、pHが最も大きい",
+        "summary": "同濃度の酸では電離によって生じる水素イオンが少ないほどpHは大きい。政府資料で弱酸とされるフッ化水素酸を選ぶ。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "塩酸（HCl）は強酸で、水中でほぼ完全に電離する。0.1 mol/Lなら[H⁺]≒0.1 mol/Lなので、pH≒1.0となる。弱酸のフッ化水素酸（pH約2）より小さいため、最大ではない。"
+            "reason": "塩酸は日本原子力研究開発機構の資料で硝酸とともに強酸とされる。同じ物質量濃度の弱酸であるフッ化水素酸より水素イオンを多く生じるため、pHが最も大きい水溶液には当たらない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "硝酸（HNO₃）は1価の強酸（オキソ酸）で、ほぼ完全に電離する。0.1 mol/Lの溶液は[H⁺]≒0.1 mol/L、pH≒1.0で塩酸とほぼ同じ値になるため、pHが最大の液ではない。"
+            "reason": "硝酸は日本原子力研究開発機構の資料で塩酸とともに強酸とされる。同じ0.1 mol/Lで比べると、弱酸のフッ化水素酸より水素イオン濃度が高くなるため、最大のpHを示す選択肢ではない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "硫酸（H₂SO₄）は2価の酸である。1段目は完全に電離し、2段目（HSO₄⁻→H⁺＋SO₄²⁻）も一部電離するため、[H⁺]は0.1 mol/Lを上回る。pHは1.0より小さく、5つの中で最も小さい。"
+            "reason": "硫酸は日本原子力研究開発機構の技術報告でヨウ化水素酸とともに強酸と明記される。同じ0.1 mol/Lの弱酸フッ化水素酸より水素イオンを多く生じる側なので、pHが最も大きいという条件に合わない。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "フッ化水素酸（HF）は、ハロゲン化水素酸のうち唯一の弱酸で、電離定数は25℃で10⁻³程度と小さい。0.1 mol/Lでも[H⁺]は約8×10⁻³ mol/L、pHは約2.1で、強酸の約1.0より大きく、pHが最大となる。"
+            "reason": "厚生労働省のフッ化水素酸SDSは、この酸を弱酸と記す。文部科学省掲載の試験問題は強酸がほぼ完全に電離する性質を示す。同濃度では弱酸の電離による水素イオンが少なく、pH＝−log[H⁺]より最大となる。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ヨウ化水素酸（HI）は、H–I結合が弱く、塩酸以上に強い強酸で、水中でほぼ完全に電離する。0.1 mol/Lではフッ化水素酸と異なり[H⁺]≒0.1 mol/L、pH≒1.0となるため、pHは最大にならない。"
+            "reason": "ヨウ化水素酸は日本原子力研究開発機構の資料で硫酸とともに強酸と明記される。同じ0.1 mol/Lの弱酸フッ化水素酸より多くの水素イオンを生じるため、pHが最大となるものではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ストロンチウムの放射化学分析と測定",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-26.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ISプロセス用高温継手機能評価試験結果",
+            "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Technology-2007-060.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト フッ化水素酸SDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3b.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA pH",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html"
+          },
+          {
+            "title": "文部科学省 高等学校卒業程度認定試験 化学基礎",
+            "url": "https://www.mext.go.jp/component/a_menu/education/detail/__icsFiles/afieldfile/2018/05/25/1398423_13.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提示された政府資料候補3件（個人サンプラー報告書・揮発性有機化合物分析方法・作業環境測定基準）とその抜粋には、酸の電離度・電離定数・pHの記述がない。この設問の判断を支えないため、sourcesとsourceEvidenceには採用していない。",
-        "HFの電離定数（25℃で約7×10⁻⁴）とHSO₄⁻の2段目電離定数（約1×10⁻²）は一般的な化学の値で、政府一次資料では確認していない。この値から独立に検算した（HF: [H⁺]≒7.9×10⁻³→pH≒2.10、H₂SO₄: [H⁺]≒0.110→pH≒0.96、他の強酸はpH≒1.0）。値の出典は検索して確認する必要がある。",
-        "正答番号（4）は公式正答と一致する。既存解説にも誤りはない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-26.html",
+          "excerpt": "塩酸や硝酸のような強酸水溶液",
+          "choiceNumbers": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Technology-2007-060.pdf",
+          "excerpt": "強酸である硫酸やヨウ化水素酸",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3b.html",
+          "excerpt": "pH 弱酸（ICSC(2017)）",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html",
+          "excerpt": "pH＝−log 10 ［H + ］",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mext.go.jp/component/a_menu/education/detail/__icsFiles/afieldfile/2018/05/25/1398423_13.pdf",
+          "excerpt": "水溶液中でほぼ完全に電離する酸・塩基を強酸・強塩基という",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-20260217-4-q7": {
       "overlay": {
