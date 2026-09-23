@@ -336,14 +336,27 @@ async function processBatch(
   let previous: { draft: Overlay; review: Review } | undefined;
   let accepted = 0;
   for (let attempt = 1; attempt <= 3 && batch.length > 0; attempt += 1) {
-    const prefix = join(LOG_ROOT, `${batchName}-a${attempt}`);
-    writeJson(`${prefix}.input.json`, batch.map(inputFor));
-    const draftRaw = await callClaude(draftPrompt(batch, previous), options.draftModel, `${prefix}.draft`);
-    const draft = validateDraft(draftRaw, batch);
-    writeJson(`${prefix}.draft.accepted.json`, draft);
-    const reviewRaw = await callClaude(reviewPrompt(batch, draft), options.reviewModel, `${prefix}.review`);
-    const review = validateReview(reviewRaw, batch);
-    writeJson(`${prefix}.review.parsed.json`, review);
+    let draft: Overlay | undefined;
+    let review: Review | undefined;
+    let lastError: unknown;
+    for (let transportAttempt = 1; transportAttempt <= 3 && (!draft || !review); transportAttempt += 1) {
+      const prefix = join(LOG_ROOT, `${batchName}-a${attempt}-t${transportAttempt}`);
+      writeJson(`${prefix}.input.json`, batch.map(inputFor));
+      try {
+        const draftRaw = await callClaude(draftPrompt(batch, previous), options.draftModel, `${prefix}.draft`);
+        draft = validateDraft(draftRaw, batch);
+        writeJson(`${prefix}.draft.accepted.json`, draft);
+        const reviewRaw = await callClaude(reviewPrompt(batch, draft), options.reviewModel, `${prefix}.review`);
+        review = validateReview(reviewRaw, batch);
+        writeJson(`${prefix}.review.parsed.json`, review);
+      } catch (error) {
+        lastError = error;
+        draft = undefined;
+        review = undefined;
+        console.error(`[retry] batch=${batchIndex + 1} semanticAttempt=${attempt} transportAttempt=${transportAttempt}`, error);
+      }
+    }
+    if (!draft || !review) throw lastError;
     saveReceipt(batchName, attempt, `${options.reviewModel} via Claude Code`, batch, draft, review);
 
     const retry: Question[] = [];

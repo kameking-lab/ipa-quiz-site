@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:49:55.243Z",
+  "batch": "0005-326e36b6fce1-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q27",
+      "status": "FIX",
+      "sourceSha256": "522c6b315e6417921405df36c74e1d21f02b222448b40e811b616ddcd0f0d814",
+      "overlaySha256": "9f5ae35bb8296f4044bf30277e01fa1cf32e6a32165933ea2fc3587ce34ef95f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 「判断不能状態に陥らない」理由として「参加者自身は最終決定を送信も受信もしていないため」と書いているが、この理由は正しくない。参加者は最終決定を送る立場ではない。また「最終決定を受信していない」のは正答のイでも同じなので、イとの違いを説明できていない。本当の理由は、参加者がまだコミット可否の応答（投票）を調停者に届けていない点にある。この段階の参加者は調停者に対して何も約束していないので、自分の判断で一方的にロールバックできる。調停者のほうも、応答が来ないことをタイムアウトで検知して全体をロールバックと決める。このため両者の判断は食い違わず、参加者が判断不能になることはない。この筋に沿って説明を書き直すこと。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q31",
+      "status": "PASS",
+      "sourceSha256": "0750389e2aa884474443e25dcd363839a2063c7d80e627557b5bac07934d7e8b",
+      "overlaySha256": "ee674063025252f1ade416e539d825c0876ef8c6e8ae63f1975db5dfc62596cb",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q32",
+      "status": "PASS",
+      "sourceSha256": "dafe122d75354de208435c292d48503dc80a48b4e65c78bf2bea75f9dc503831",
+      "overlaySha256": "4f350f217dc3562be5dd82c62266cc7438903670ff733ba86758e38a2368bf03",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q33",
+      "status": "PASS",
+      "sourceSha256": "e80e321d1eae9bf576f950d8e82ac016cb1fca8c3250e11d729e106c1bfc8e5c",
+      "overlaySha256": "946959b786adefeb2726d10557bb457db6f49f44a7f39355371fee0f65b2f0e7",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q34",
+      "status": "PASS",
+      "sourceSha256": "aa95079b67ec8452b93dd243d963826e44ce5289636c46362b35f39227368307",
+      "overlaySha256": "2d84b5c69605ec62b34f6a80d0c175045c72daa6fb515e6ce399d9e14ca028e2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

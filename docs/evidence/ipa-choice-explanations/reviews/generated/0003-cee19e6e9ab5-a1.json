@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:47:11.450Z",
+  "batch": "0003-cee19e6e9ab5-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q15",
+      "status": "FIX",
+      "sourceSha256": "056097fcd1525cca0daf667b4af8a8c4390ed0830402679f4aac03d46576d077",
+      "overlaySha256": "e44e1b28fd6c7512714ca5a02ea9773d1c5ed841b9788ccbfc805a17f8055f82",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 計算が間違っています。候補の説明は「8×10^7ビット/秒を2×10^5で割った値（×8のビット換算が抜けた値）」としていますが、8×10^7÷(2×10^5)は400で、200にはなりません。しかも、この説明はエの説明と同じ誤りの型で、同じ計算の使い回しになっています。直し方: ウの固有の誤りとして、次の点を書いてください。200件/秒は、サーバの処理能力（10^8命令/秒÷10^6命令/件＝100件/秒）もネットワークの処理能力（8×10^7ビット/秒÷1.6×10^6ビット/件＝50件/秒）も上回っています。どちらの資源でもこの件数は処理できず、律速となる50件/秒とは合いません。根拠のない誤計算の経路は書かないでください。",
+        "エ: 400件/秒は8×10^7÷(2×10^5)で、バイトをビットに換算していない値です。この説明は計算として正しいので、このまま残してください。ウの説明を上のとおり直し、エと同じ理由にならないようにしてください。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q16",
+      "status": "PASS",
+      "sourceSha256": "813c93fac973d2671c43e0980d9ce2b8a32c899bde8ceec14bb85a52b42c1732",
+      "overlaySha256": "316d0f4be6677c646739207554325dec0a2c2a61e9156d33a539eea40868d0b1",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q17",
+      "status": "PASS",
+      "sourceSha256": "767259f0366272fa7e3c85ea7eaff84e96c8f9855eb33ade2e6eea66bf791179",
+      "overlaySha256": "22ef9bc9f454b049e6e0948385d389a4ccab8ce45f39b0dda4b9dcc9dd77f800",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q18",
+      "status": "PASS",
+      "sourceSha256": "de79090297cfe6e2ef4c3af452419c05d2b6a23d97eaf8c707170649ef5280ee",
+      "overlaySha256": "6250695e3a438d2d8f1dfda10f308c4acede8e33f36ae8bc21dd9c6d71edf793",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q19",
+      "status": "PASS",
+      "sourceSha256": "1be53d79fa850fa7ce046890b65a4dc2f37351130c5f71d12a8f08c37fb38856",
+      "overlaySha256": "fd6569323bc92b0cb1e1e9f60229ca34826b73d7eb885767f1d93aef07187ebc",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T12:50:11.504Z",
+  "batch": "0006-f6d3fcafaf34-a1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q35",
+      "status": "PASS",
+      "sourceSha256": "1c04d47d46a88ac8d7943b738d50a8c94569c902c1a694add4585283badeb113",
+      "overlaySha256": "c5f484fe0204b65ecf6e5a7677f3e0178eb4ce37dca8eae39131f50a1291f056",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q36",
+      "status": "PASS",
+      "sourceSha256": "98a9cd3cf1fd068d2d72ac52a896e0884a4fb72c21d758d2b1ff194223c9f615",
+      "overlaySha256": "8743ad2b85bfa232e9a661a9c420801c04a15deb77467a6e71003aeb0fec4bea",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q37",
+      "status": "PASS",
+      "sourceSha256": "0824f479b6b8bebe2c9704683590aaaf2c9e2b8e9192394133c24e7177ad8062",
+      "overlaySha256": "768625e07649fb8bc1f8541940c0c7bf701dd29042a06435ab39aaf723b0a17d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q38",
+      "status": "PASS",
+      "sourceSha256": "c0760f76d3ce70d1d2d2d4af4251dffb02b361484cb6bd911109a6babc730e34",
+      "overlaySha256": "6e735fa1fd2d00f63ae8b5fa3596980d730797dafcfacd0f7624ea015da0716e",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q39",
+      "status": "FIX",
+      "sourceSha256": "e375f278704e4fc1af3100faf5bc50f2034ebd8f45814cd8fc33d012e18a0a29",
+      "overlaySha256": "331d6595ee1aa6e9b59c7a33fabab9a140732974add0000e873d62bc7f770a45",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 「ランサムウェアを用いない二重恐喝型の脅迫メール」という分類が誤っている。二重恐喝（ダブルエクストーション）は、ランサムウェアでデータを暗号化したうえで、盗んだデータの公開もちらつかせて脅す手口を指す。そのため「ランサムウェアを用いない」と組み合わせると矛盾する。また、この選択肢は、実際にはデータを取得していないのに取得したと『誤認させる』ブラフ型の手口である。暗号化はせずにデータを実際に盗むノーウェアランサムとも異なる。直し方: 『二重恐喝型』という語を削除する。『実際には取得していない秘密情報を取得したと偽って公開をちらつかせ、暗号資産を要求する詐欺的な脅迫メール（ブラフ型の恐喝）であり、AIで音声・映像を偽造するディープフェイクは用いていない』のように、手口を正確に書き直す。"
+      ]
+    }
+  ]
+}
