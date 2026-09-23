@@ -218,7 +218,7 @@
       "overlay": {
         "sourceHash": "0c861ced376330ac881fff3234bafab14cb7becd0cc3564e6a40ad501dc8d8f3",
         "correctChoice": 5,
-        "summary": "振動工具の3軸合成値を6か月ごとに定期測定する法令上の義務はないため、肢5が誤り。",
+        "summary": "安衛則・事務所則の測定頻度と異なり、振動工具の3軸合成値を6か月ごとに測るという法定周期は示されていないため、誤りは肢5。",
         "choices": [
           {
             "number": 1,
@@ -228,7 +228,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "労働者が内部で作業する冷凍庫は寒冷の屋内作業場として扱われ、半月以内ごとに1回、気温及び湿度を測定します。ふく射熱の測定は暑熱源のある作業場に限られるので、本肢の測定項目は正しいです。"
+            "reason": "労働安全衛生規則第587条第12号は、労働者が内部で作業する冷凍庫を対象に掲げます。第607条は半月以内ごとに気温と湿度を測定し、ふく射熱は第1号から第8号の作業場だけに限るため、本肢は正しい記述です。"
           },
           {
             "number": 3,
@@ -243,17 +243,115 @@
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "振動工具については、周波数補正振動加速度実効値の3軸合成値によるばく露管理が行政の指針で示されています。しかし6か月以内ごとに定期測定する法令上の義務はないため、本肢が誤りで正答です。"
+            "reason": "厚生労働省の振動工具に関する通達は、製造・輸入事業者等が3軸合成値を測定・表示する取組を示します。一方、問題文のように事業者が6か月以内ごとに定期測定する法定周期を設ける内容ではありません。公式正答も肢5です。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 労働安全衛生規則 第587・589条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生規則 第607・612条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 第21条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 事務所衛生基準規則 第7条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 振動工具3軸合成値の測定・表示等について（通達）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "八　溶融ガラスからガラス製品を成型する業務を行なう屋内作業場",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "十二　冷蔵庫、製氷庫、貯氷庫又は冷凍庫等で、労働者がその内部で作業を行なうもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
+          "excerpt": "半月以内ごとに一回、定期に、当該屋内作業場における気温、湿度及びふく射熱",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
+          "excerpt": "同条第一号から第八号までの屋内作業場に限る",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+          "excerpt": "二　気温が二十八度をこえ、又はこえるおそれのある坑内の作業場",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
+          "excerpt": "第五百八十九条第二号の坑内の作業場について、半月以内ごとに一回、定期に、当該作業場における気温を測定",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+          "excerpt": "五　中央管理方式の空気調和設備",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1",
+          "excerpt": "第二十一条第五号の室について、二月以内ごとに一回、定期に",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1",
+          "excerpt": "一　一酸化炭素及び二酸化炭素の含有率",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "振動工具の製造事業者等が、「周波数補正振動加速度実効値の3軸合成値」の測定、表示等を行うことが必要",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "製造し、又は輸入する事業者等に対して、下記について取り組むよう、指導等に遺憾なきを期されたい",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "肢1〜3の根拠（労働安全衛生規則第587条の暑熱・寒冷・多湿作業場の列挙、第607条の半月ごとの測定とふく射熱の対象範囲、第612条の坑内気温測定）は、packでは目次「第五章 温度及び湿度」までしか確認できない。候補URL（pageNo=1）にこれらの条文本文が載っているかも未確認のため、sourcesに入れず本文の検索・確認が必要。",
-        "肢4の根拠である事務所衛生基準規則第7条は、候補にもpackにも含まれていない。検索が必要。",
-        "正答肢5の根拠（振動工具に法定の定期測定義務がないこと、3軸合成値が行政指針上の概念であること）は、政府資料で直接確認できていない。振動障害予防対策指針（厚生労働省通達）を検索して、指針の位置づけと法令上の測定義務がないことを確認する必要がある。正答理由を直接支える抜粋はまだない。",
-        "溶融ガラス成型がふく射熱測定の対象号（第587条第1号〜第8号）に含まれるかは、既存知識による判断で原文未確認。"
+        "政府条文・通達の直接抜粋と公式正答は照合済み。振動工具の非法定周期を含む全肢について、独立Opusによるsource-aware審査待ち。"
       ]
     },
     "emkohyo-20260217-2-q9": {
@@ -332,24 +430,50 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "厚生労働省 作業環境測定基準 第2～5・9条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "ガス状 液体捕集方法、固体捕集方法、直接捕集方法又は冷却凝縮捕集方法",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "切羽と坑口(切羽と坑口との間に坑の分岐点がある場合には、当該切羽に最も近い坑の分岐点)との中間の位置及び切羽に、それぞれ一以上とすること",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "当該単位作業場所の中央部の床上五十センチメートル以上百五十センチメートル以下の位置に、一以上とすること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "測定点は、単位作業場所について五以上とすること。ただし、単位作業場所が著しく狭い場合であつて、当該単位作業場所における騒音レベルがほぼ均一であることが明らかなときは、この限りでない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "一の測定点における試料空気の採取時間は、十分間以上の継続した時間とすること。ただし、相対濃度指示方法による測定については、この限りでない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "粒子状 液体捕集方法又はろ過捕集方法 ガス状 液体捕集方法、固体捕集方法、直接捕集方法又は冷却凝縮捕集方法",
           "choiceNumbers": [
             5
           ]
         }
       ],
       "reviewIssues": [
-        "正答肢4の根拠（作業環境測定基準第2条の、1測定点の採取時間を10分間以上とする規定と、相対濃度指示方法の例外）は、packの抜粋に含まれていない（第2条の抜粋は測定点の位置まで）。本文を直接確認して採取時間の条文を抜粋する必要がある。正答理由を直接支える抜粋はまだない。",
-        "肢5の「のみ」（冷却凝縮捕集方法が放射性物質のガス状以外で使われないこと）は、packの放射性物質の表だけでは網羅性を確認できない。測定基準全体（第1条の定義、別表）で他の用例がないか検索が必要。",
-        "肢1（坑内の炭酸ガス測定点）、肢2（暑熱作業場の測定点の高さ）、肢3（騒音の測定点5未満の例外）の各条文は、packで未確認。packの床上50cm以上150cm以下の抜粋は粉じん（第2条）のもので、暑熱（肢2）の根拠には流用していない。検索が必要。"
+        "作業環境測定基準の第2～5・9条に5肢の直接根拠を照合済み。独立Opus source-aware審査待ち。"
       ]
     }
   }
