@@ -1,36 +1,39 @@
 {
   "inputHashes": {
-    "draftSha256": "559cad6f59bd9fbc376e97fb941c973f7cb8347eb6c3b1026307006cd5e164fc",
+    "draftSha256": "008f979996b96a7f95d7d4e66a0386d112c74fde4f5ad9abd2a97512ac9430b4",
     "rowSha256": {
       "1": "63d0ef8f0f6ca411bbd33df403011756298c9db14233f7673c1b304e5a91c4ad",
       "2": "4be56085253f9784979b7f2361caabddf295941df67f5b0f6f2f100d9a4e3beb",
       "3": "4233bb40b72fa9ca97032d18746fe2a888800a4a182b6cafe649652f4314ba56",
       "4": "a2f297b2b95471fd4cfa0ba00b44bd0a86df3642411bffe3e67a051708d0e974",
       "5": "efacba95a7353368248752c6d674962cd6a1d86672b1ac72a339a748335efa69"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q1-1.png": "58d3291d79aa506c7785890080ec2c17e76fc08447ee449938d1c32873f22521",
+      "public/images/denko2/2024-second/q4-1.png": "3d6dfd25afdcb177a9684fc8cb7f78fec2da59a91ea551cdb99c261640b46491",
+      "public/images/denko2/2024-second/q4-2.png": "3b899d92325b2bd4a7395c96f4918eae5b5363d3bbb4aefa01a07760c92d1a44",
+      "public/images/denko2/2024-second/q4-3.png": "764fa481eec873748aea789d819fcbe6d5383f4f33efb22fca22cc2f4b2a58f9",
+      "public/images/denko2/2024-second/q4-4.png": "41c7750aeba85454f7c8c26857bfb68f9038e0ff74be51af9035f92bd8e549ed",
+      "public/images/denko2/2024-second/q4-5.png": "93d7f65711639b2fd5ef86931c62eb5c21f20b8c232d49a08c00d9f1385b9b58"
     }
   },
   "reviewModel": "claude-opus-5-5",
   "assessment": [
     {
       "number": 1,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
       "explanationIssues": [],
-      "figureIssues": [
-        "diagramDescriptionは冒頭で「端子a-b間に3つの並列経路を持つ回路」と書いているが、画像はそうなっていない。2Ω×2の並列部と3Ω∥6Ωの並列部が1点Mで直列につながり、その直列部全体が上段の6Ωと並列になっている。中段と下段は節点Mを共有しているので、a-b間の独立した並列経路ではない。後半の「a-M間に2Ωが2本並列、M-b間に3Ωと6Ωが並列」とも食い違うため、冒頭を「上段6Ωと、(2Ω∥2Ω)-(3Ω∥6Ω)の直列部とが並列」に直すべき。",
-        "画像では、2Ω並列部が合流する点と、3Ω/6Ωが分岐する点が別々の黒丸として描かれ、短い導線でつながっている。同じ電位なので節点Mとまとめる扱いは正しいが、説明文にも「2つの接続点を導線で結んだ同一節点」と明記した方が図に忠実。"
-      ],
+      "figureIssues": [],
       "lawNeedsExternalCheck": []
     },
     {
       "number": 2,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "ハ(4)の肢別理由に「4倍に至る具体的な計算過程はこの数値条件からは特定できない」とあるが、これは誤り。長さの比(20/40=0.5)を無視して断面積の比だけで(d_B/d_A)^2=(3.2/1.6)^2=4とすれば、この値がそのまま出る。長さの比を掛け忘れる誤りとして示せるので、書き直すべき。"
-      ],
+      "explanationIssues": [],
       "figureIssues": [],
       "lawNeedsExternalCheck": []
     },
@@ -45,33 +48,19 @@
     },
     {
       "number": 4,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
-      "choiceIssues": [
-        "イの肢文「vとiがともに0°付近から立ち上がる正弦波」は画像と合わない。画像のイでは、iは0°で負の最大値付近から始まり、90°目盛り付近で0を上に横切る。つまりiはvより90°遅れている(i∝sin(ωt−90°))。そう書き直すべき。",
-        "ロの肢文「上記イとは異なる位相関係」は曖昧すぎる。画像のロでは、iはvと同じく0°から立ち上がり、180°と360°でvと一緒に0になる同相波形で、iの振幅はvより小さく描かれている。「同相」と明記すべき。",
-        "ニの肢文「いずれとも異なる形(断定困難)」は不要な留保。画像のニでは、iは0°から負側へ下がり、vの正の半周期でiが負になる逆位相(180°差)の波形である。",
-        "ハの肢文(iがvより90°進み)は画像と合っている。0°でiが正の最大値付近から下がる形になっている。"
-      ],
-      "explanationIssues": [
-        "イ・ロ・ニの肢別理由はすべて「正確な位相差は断定できない」としているが、画像から判読できる。それぞれ「イ=90°遅れ(誘導性回路の波形)」「ロ=同相(抵抗回路の波形)」「ニ=逆位相の180°差で、コンデンサ回路には該当しない」と具体的に書くべき。",
-        "uncertaintyに「曲線の細部を厳密に読み取れない」とあるが、4肢の区別(遅れ90°、同相、進み90°、逆相)は0°・90°・180°の目盛りとの交点から明確に読み取れる。この留保は削除すべき。"
-      ],
-      "figureIssues": [
-        "diagramDescriptionの選択肢説明に「見かけ上の振幅」で区別とあるが、振幅差で区別しているのはロ(iの振幅がvより小さい)だけで、ほかの3肢は位相で区別されている。肢ごとの具体的な位相関係を書くべき。"
-      ],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": []
     },
     {
       "number": 5,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "イの肢別理由「単相回路の考え方…に一致する」は計算上合わない。単相として扱えば分母はVItとなり、W/(VIt)×10^5になる。3VItは単相から出る形ではなく、V・Iを相電圧・相電流とみなして3倍した場合(√3と3の取り違え)の形である。「単相回路の考え方」は削除すべき。",
-        "ロの肢別理由「分子分母が正答と入れ替わった形」は誤り。正答W/(√3VIt)の分子と分母を入れ替えると√3VIt/Wで、tは分子に来る。ロの√3VI/(Wt)ではtが分母に残っているので、単純な逆数ではない。「電力量W[kW・h]と時間tの関係を誤ったうえで、式を逆にした形」と正しく書くべき。",
-        "ハの肢別理由は「tの欠落」と「√3→3」しか挙げていない。しかしハの3VI/Wでは、VIが分子、Wが分母にあり、力率の式の分子と分母が逆になっている点も含まれる。この3点目を書き加えるべき。"
-      ],
+      "explanationIssues": [],
       "figureIssues": [],
       "lawNeedsExternalCheck": []
     }

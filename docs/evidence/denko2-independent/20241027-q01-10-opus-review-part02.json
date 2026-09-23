@@ -1,95 +1,75 @@
 {
   "inputHashes": {
-    "draftSha256": "758f9b5f2fa4615bb77b3a0d53207ea1e5c549aa5d07d425dceadfe4731ea424",
+    "draftSha256": "59853e4f66fcf9404e1a901510655eeeb0a121a7c721ae09f3a75a1164d60aa2",
     "rowSha256": {
       "6": "bcc2bd9122b481937d934e4fb3c244669e85e73448323d8b119d07bbdf23bb24",
       "7": "fbc7e8806ec02c53dd40aff859d7ae74a714ea0c89afe8b1bf8acab437387ddb",
       "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
       "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
       "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q6-1.png": "02eb60075a06e17bde8dbdfad4c4389ccde91d0f91aa453d0b26780c9936a16c",
+      "public/images/denko2/2024-second/q7-1.png": "fb3254149af910da97ff86fcfad0fdb27b1025e93ccb55b2429e5abbde5e81e0",
+      "public/images/denko2/2024-second/q7-2.png": "947c9a81ab71a82c9f1f7e5efd47f47aad87607bc0ac88fe399e8d3c67d2fd4e",
+      "public/images/denko2/2024-second/q9-1.png": "80e651fcc96d8908ae2679898656ff168cc7817497e09da21c33d4dc52830e7e",
+      "public/images/denko2/2024-second/q10-1.png": "dc9cd34dfcf02fd15da6da2b2af8fbe0f992ca48ffd14f604c7016625ddd0ff8"
     }
   },
   "reviewModel": "claude-opus-5-5",
   "assessment": [
     {
       "number": 6,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "choiceExplanations.ニ の「正answer」は英語が混ざった誤記。「正答」に直す。",
-        "ロ(103)の由来として「4区間のうちb'-a'の2Vだけを加え忘れた(2+1+1=4)」としているが、なぜこの区間だけを落とすのか根拠がない。より自然な誤り方は「全区間に10Aが流れると考える(0.1Ω×10A×4区間=4V、99+4=103)」で、こちらも計算は合う。どちらかに断定せず、推測であると明記するか、区間電流を取り違えた型に書き換える。",
-        "ハ(104)の由来「b'-c'の1Vだけを加え忘れた(2+1+2=5)」も、特定の1区間だけを落とす理由がなく恣意的。計算は合うが、推測であることを明記する。"
-      ],
-      "figureIssues": [
-        "diagramDescription に電源表示「1φ2W 電源」(a-a'側)が書かれていない。b-b'間の負荷とc-c'間の負荷は、それぞれ上線の分岐点b・cから下線のb'・c'へ接続されている、と接続関係を明記する。"
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": []
     },
     {
       "number": 7,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "choiceExplanations.ニ の「正answer」は誤記。「正答」に直す。",
-        "ロの冒頭「1/2は、ハの2倍の逆数に一致する」は、「ハの値を2倍したものの逆数」とも読めて意味がぶれる。「ハ(2倍)の逆数」と書き直す。計算(20/40=1/2)自体は矛盾しない。",
-        "ハ(2倍)の由来について、1線分40Wで計算した型のほかに「電流が2倍なので損失も2倍と、I²ではなくIに比例させた」型でも2倍になる。断定を避けて推測であると明記するのが望ましい。"
-      ],
-      "figureIssues": [
-        "図1の説明「外線と中性線の間に負荷A・Bがそれぞれ接続」は、画像ではA・Bが外線間に直列に並び、その中点が中性線につながる構成。この接続を明記する。"
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": []
     },
     {
       "number": 8,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "explanation の「30.87A、小数点以下を切り捨てて31A」は計算と矛盾する。30.87を切り捨てれば30Aで、31Aは切り上げ(四捨五入または7捨8入)の結果。choiceExplanations.ハ の「切り捨てた31A」も同じ誤り。端数処理の方法を正しく書き直す。",
-        "explanation と uncertainty にある「絶縛電線」は誤字。「絶縁電線」に直す。",
-        "choiceExplanations.ハ の「正answer」は誤記。「正答」に直す。",
-        "イ(19)の由来として「0.63を2回掛けた」を断定しているが、計算上は30×0.63=18.9や27×0.7=18.9でも19になる。断定の根拠がないので、推測であることを明記する。",
-        "ロ(24)は「由来不明」としているが、2.0mmの基準値35A×0.7=24.5→24のように、別の太さの表値と係数を誤用した候補がある。書くなら推測として明示する。"
-      ],
+      "explanationIssues": [],
       "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "基準許容電流49A(600Vビニル絶縁電線・軟銅線5.5mm²・周囲温度30℃以下)は問題文にも画像にも示されていない。電技解釈の表の値と照合が必要。",
-        "許容電流の端数処理のルール(内線規程の7捨8入など)が要確認。"
+        "電技解釈第146条 表146-1: 600Vビニル絶縁電線(軟銅線)5.5mm²の許容電流が49Aであること（照合receipt未添付）",
+        "電流減少係数0.49が同一管内7〜15本に適用される値であること（ロの誤答由来の根拠。照合receipt未添付）",
+        "内線規程1340-1: 許容電流の小数点以下1位を7捨8入する規定（内線規程は民間規格で、officialReferenceUrlsの電技解釈PDFには含まれない）"
       ]
     },
     {
       "number": 9,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "choiceExplanations.ハ の「正answer」は誤記。「正答」に直す。",
-        "イの計算125×0.35=43.75→44は矛盾しない。ロ(57)・ニ(89)を由来不明としている点は、根拠のない推測を避けていて妥当。"
-      ],
-      "figureIssues": [
-        "画像ではaは幹線上の分岐点(黒丸)の直下にあり、10mの寸法はaの高さからbの高さまで斜めの補助線で示されている。diagramDescription の「分岐点aで分岐した電線が10m経てb」とは概ね一致する。幹線は分岐点の右へも続いている、と追記する。"
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "分岐点から過電流遮断器までが8mを超える場合は幹線の過電流遮断器の定格電流の55%以上、3m超8m以下なら35%以上、という規定(電技解釈第149条相当)は、条文と照合して要確認。"
+        "電技解釈第149条第1項: 分岐点から過電流遮断器までの長さが8mを超える場合は幹線過電流遮断器定格電流の55%以上、3mを超え8m以下の場合は35%以上であること（照合receipt未添付）"
       ]
     },
     {
       "number": 10,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "explanation の「20A配線用遮断器の分岐回路は電線の太さ2.0mm以上、コンセントは定格電流20Aのもの」は誤り。一般に知られる組合せでは、20A配線用遮断器なら電線1.6mm以上、コンセントは20A以下(15Aも可)。ロが適切な理由は「2.0mmは1.6mm以上を満たし、20Aコンセントは20A以下を満たす」と書き直す必要がある。",
-        "choiceExplanations.ニ の「1.6mmでは太さが不足」は誤り。20A配線用遮断器に1.6mmは適合する。ニが不適切な理由は、30Aコンセントが20A以下という条件に反することだけ。「電線・コンセントの双方が不適切」という結論も誤り。",
-        "choiceExplanations.ロ の「正answer」は誤記。「正答」に直す。",
-        "イ(30A遮断器に15Aコンセントは不可)とハ(30A遮断器に2.0mmは太さ不足)の理由は、一般的な規定と矛盾しない。"
-      ],
+      "explanationIssues": [],
       "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "分岐回路の配線用遮断器の定格電流、電線の太さ、コンセントの定格電流の組合せ(20A:1.6mm以上・20A以下、30A:2.6mm(5.5mm²)以上・20A以上30A以下)は、電技解釈第149条の表と照合して要確認。",
-        "ただし書きの「分岐点から配線用遮断器まで3m」が、どの規定の適用条件にあたるかも要確認。"
+        "電技解釈第149条 表149-3: 20A配線用遮断器の分岐回路は電線1.6mm以上・コンセント20A以下、30A配線用遮断器の分岐回路は電線2.6mm(5.5mm²)以上・コンセント20A以上30A以下であること（照合receipt未添付）",
+        "電技解釈第149条第1項: 分岐点から3m以下の箇所に分岐回路用の過電流遮断器を施設する規定（照合receipt未添付）"
       ]
     }
   ]

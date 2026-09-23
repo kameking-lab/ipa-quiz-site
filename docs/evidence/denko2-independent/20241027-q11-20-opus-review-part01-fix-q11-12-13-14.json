@@ -1,15 +1,11 @@
 {
   "inputHashes": {
-    "draftSha256": "aff608769cb18c499e74ff4e34d9069811358d12b62c30209da7d9814a626e59",
+    "draftSha256": "53856204c30e9589c0ae4df5f09be3e7fc27eea6611eb453eea91888fb5d8dcf",
     "rowSha256": {
       "11": "cb160799f1d4ba848ad3945ae628e105eaf0de0756bdc6b0d3bf729825d7e064",
       "12": "b1cb420488b09248068e05369da9c2d36a5b43195df4d1a68c9bd2bd3c325f91",
       "13": "d625c7ab7cecd664225765f2bf011db797ea4a7dc6b8524e5764f1cbd7ef29fe",
-      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754",
-      "15": "7f27799f3c4098c0b45326ef80a08df46d97cfe5a33db25ef8843cf5380f17e5"
-    },
-    "legalReceiptSha256": {
-      "docs/evidence/denko2-law/20241027-q15.json": "43bf059f76966f6665504daf50e3930f133e06958cb62b797b105c2935db2203"
+      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754"
     }
   },
   "reviewModel": "claude-opus-5-5",
@@ -47,17 +43,6 @@
       "textIssues": [],
       "choiceIssues": [],
       "explanationIssues": [],
-      "figureIssues": [],
-      "lawNeedsExternalCheck": []
-    },
-    {
-      "number": 15,
-      "status": "FIX",
-      "textIssues": [],
-      "choiceIssues": [],
-      "explanationIssues": [
-        "choiceExplanations.ニ の「120分は、定格電流50Aを超える配線用遮断器に…」は上限のない範囲で書かれているが、receipt が検証したのは「50Aを超え100A以下」「120分」の区分だけである。receipt で裏付けのある範囲にそろえるため、「定格電流50Aを超え100A以下の配線用遮断器」と上限を明記すること"
-      ],
       "figureIssues": [],
       "lawNeedsExternalCheck": []
     }

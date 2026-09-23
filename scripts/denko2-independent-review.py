@@ -21,6 +21,7 @@ CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 SHARED_FIGURES = {
     "20240526": [ROOT / "public/images/denko2/2024-first/wiring-main.png",
                  ROOT / "public/images/denko2/2024-first/wiring-panels.png"],
+    "20241027": [ROOT / "public/images/denko2/2024-second/wiring-diagram.png"],
     "20250525": [ROOT / "public/images/denko2/2025-first/wiring-main.png"],
     "20251026": [ROOT / "public/images/denko2/2025-second/wiring-first-floor.png",
                  ROOT / "public/images/denko2/2025-second/wiring-second-floor.png",
