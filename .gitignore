@@ -68,3 +68,7 @@ next-env.d.ts
 /playwright/.cache
 .cache/fp2-official/
 scripts/__pycache__/
+
+# locally downloaded official PDFs and Python bytecode
+/.cache/
+**/__pycache__/
