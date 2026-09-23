@@ -4,6 +4,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 
+
 ROOT = Path(__file__).resolve().parents[1]
 QUESTIONS = ROOT / "data/questions/denko2/reviewed"
 REVIEWS = ROOT / "docs/evidence/denko2-independent"
@@ -27,9 +28,15 @@ def main() -> None:
             latest[assessment["number"]] = (receipt, assessment)
     if set(latest) != set(range(1, 51)):
         raise ValueError(f"Missing independent review: {sorted(set(range(1, 51)) - set(latest))}")
-    fixes = [n for n, (_, item) in latest.items() if item["status"] != "PASS"]
+    fixes = [
+        n for n, (_, item) in latest.items()
+        if item["status"] != "PASS" or any(
+            key.lower().endswith(("issues", "needsexternalcheck", "check")) and value not in ([], None, False, "")
+            for key, value in item.items()
+        )
+    ]
     if fixes:
-        raise ValueError(f"Latest independent review still has FIX: {sorted(fixes)}")
+        raise ValueError(f"Latest independent review has FIX or unresolved checks: {sorted(fixes)}")
 
     rows: dict[int, dict] = {}
     for path in sorted(QUESTIONS.glob("20250525-q??-??.json")):
@@ -115,4 +122,8 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # Keep the historical entry point safe: only the hash-pinned strict gate
+    # may regenerate the acceptance ledger.
+    from runpy import run_path
+
+    run_path(str(Path(__file__).with_name("denko2-finalize-20250525-strict.py")), run_name="__main__")

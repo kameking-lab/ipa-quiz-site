@@ -1,0 +1,27 @@
+{
+  "officialSources": [
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+      "sha256": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb",
+      "pages": [174, 175, 176, 177],
+      "clauses": [
+        "第175条: 可燃性粉じんのある場所の合成樹脂管工事には厚さ2mm未満の管及びCD管を用いない。",
+        "第176条: 可燃性ガスのある場所の金属管工事は薄鋼電線管以上の強度と5山以上のねじ接続等を要する。がい装ケーブルまたはMIケーブルなら防護装置省略の例外。",
+        "第177条: 危険物がある場所のケーブル工事では、所定のがい装ケーブル又はMIケーブルを除き管その他の防護装置に収める。"
+      ]
+    },
+    {
+      "url": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+      "document": "JIS C 8430:2019 硬質ポリ塩化ビニル電線管",
+      "download": "JISC検索でC8430を選択し、詳細画面の音声PDF001を閲覧（ログイン不要）。PDF本体は著作権保護のためリポジトリへ収録せず、ignored raw_pdfsに保存。",
+      "localPath": "data/raw_pdfs/denko2/jisc-C8430-2019-audio.pdf",
+      "sha256": "08a2e7741cc985167c29cb9dfb7538223b3c766706a77da90a4ebb5b44a1349b",
+      "page": 6,
+      "clause": "JIS C 8430:2019 第8項・表2: VE28の外径34.0mm、最小厚さ2.7mm。電技解釈第175条の2mm条件を満たす。"
+    },
+    {
+      "url": "https://www.water.go.jp/chubu/kisogawa/keiyaku/R06/bugakari/20241127_bugakari_nagaradousuidennkibousyokusetubikousinnkouji.pdf",
+      "clause": "水資源機構2024年公共工事設計図はJIS C 8430のVE28を外径34mm、内径28mm、厚さ約3.0mmと指定。"
+    }
+  ]
+}

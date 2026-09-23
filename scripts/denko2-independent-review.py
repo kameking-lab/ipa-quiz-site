@@ -49,6 +49,10 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
     output = RECEIPTS / (batch_path.stem + f"-opus-review-part{part:02}{suffix}.json")
     hashes = {
         "draftSha256": sha256(json.dumps(draft, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest(),
+        "candidateSha256": {
+            str(item["number"]): sha256(json.dumps(item, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+            for item in draft
+        },
         "rowSha256": {str(item["number"]): sha256((ROOT / item["reviewCrop"]).read_bytes()).hexdigest()
                       for item in original},
     }
@@ -64,6 +68,21 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
                 detail_figures[str(path.relative_to(ROOT)).replace("\\", "/")] = sha256(path.read_bytes()).hexdigest()
     if detail_figures:
         hashes["detailFigureSha256"] = detail_figures
+    source_packs = {
+        str(item["number"]): ROOT / f"docs/evidence/denko2-sources/20250525/q{item['number']:02}.json"
+        for item in original
+    }
+    hashes["sourcePackSha256"] = {
+        number: sha256(path.read_bytes()).hexdigest()
+        for number, path in source_packs.items() if path.exists()
+    }
+    hashes["sourceFigureSha256"] = {}
+    for number, path in source_packs.items():
+        if path.exists():
+            source_pack = json.loads(path.read_text(encoding="utf-8"))
+            if source_pack.get("sourceFigurePath"):
+                figure = ROOT / source_pack["sourceFigurePath"]
+                hashes["sourceFigureSha256"][number] = sha256(figure.read_bytes()).hexdigest()
     if output.exists():
         previous = json.loads(output.read_text(encoding="utf-8"))
         if previous.get("inputHashes") == hashes:
@@ -80,16 +99,27 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
         "あなたは第二種電気工事士の独立品質監査者。問題原本の画像と、別モデルが清書したJSONを突き合わせる。"
         "全ての問について問題文の極性・数値・単位・図の接続、イロハニ全肢の文字と順番、公式正答との整合、"
         "解説と4つの肢別理由の数式・因果関係を厳しく検査。推測した誤答の由来に計算矛盾があれば必ず指摘する。"
-        "規則条項の真偽は画像だけで判定せず、要確認と明記。問題文全文画像を公開できると判断しない。"
+        "規則条項の真偽は画像だけで判定せず、添付した一次資料の原文がある場合はそれを照合する。"
+        "一次資料がなく条項を確認できない場合はlawNeedsExternalCheckに必ず残す。問題・図面は掲載許諾を別途取得済みであり、公開権利は本監査の対象外としてissueに挙げない。"
         "出力はJSON配列のみ。各問についてnumber,status(PASS又はFIX),textIssues,choiceIssues,"
         "explanationIssues,figureIssues,lawNeedsExternalCheckを持つ。issue各フィールドは文字列配列。"
-        "ミスが無い問も必ず1件出力。一般論は書かず、元画像とJSONの具体的差分を書く。"
+        "PASSとするのは全てのissue/NeedsExternalCheck配列が空の場合だけ。改善提案が実際の誤り・未確認事項ならFIXにし、"
+        "単なる文体の好みはissueに書かない。ミスが無い問も必ず1件出力。一般論は書かず、元画像とJSONの具体的差分を書く。"
     )
     blocks = [{"type": "text", "text": prompt}]
     for source in original:
         number = source["number"]
         candidate = next(item for item in draft if item["number"] == number)
         blocks.append({"type": "text", "text": f"問{number}。公式正答={source['officialAnswer']}。清書JSON={json.dumps(candidate, ensure_ascii=False)}"})
+        source_pack = ROOT / f"docs/evidence/denko2-sources/20250525/q{number:02}.json"
+        if source_pack.exists():
+            proof = json.loads(source_pack.read_text(encoding="utf-8"))
+            blocks.append({"type": "text", "text": f"問{number}の一次資料照合パック={json.dumps(proof, ensure_ascii=False)}"})
+            if proof.get("sourceFigurePath"):
+                figure = ROOT / proof["sourceFigurePath"]
+                blocks.append({"type": "text", "text": f"問{number}の一次資料の図記号表（原PDFより抽出）: {figure.name}"})
+                blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                         "data": b64encode(figure.read_bytes()).decode("ascii")}})
         blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                  "data": b64encode((ROOT / source["reviewCrop"]).read_bytes()).decode("ascii")}})
         detail_urls = candidate.get("imageUrls", []) + list(candidate.get("choiceImageUrls", {}).values())

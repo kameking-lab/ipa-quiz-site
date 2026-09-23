@@ -1,0 +1,45 @@
+{
+  "inputHashes": {
+    "draftSha256": "3ef77e32c857d73a96af61d9d8cec4f05b7a291c56d0c56865d0de9dacfacbfb",
+    "rowSha256": {
+      "8": "a302ee8a75a90772189f62830118f57bb89400baf48e774172f91fc320eec7a5",
+      "10": "2f21aa5a477ae99689fd5b7dfc13c73aab5735231a17c4f58ad58a26a7c7d390"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q10-i.png": "55bd4e3ec629f4e07dac0cd7938f411fc04487d205e25c4fd39566c2e60e534d",
+      "public/images/denko2/2025-first/q10-ro.png": "aa40aa3619b8ff57a4f3f8e077da1e65930384230605194b0c8afdec55ae487f",
+      "public/images/denko2/2025-first/q10-ha.png": "4eaeeaba96dde52efa75fb1a6f4c79a7ae0f3254ad66a9626d8e46968136ba51",
+      "public/images/denko2/2025-first/q10-ni.png": "ccf610d56e38afd5bc841a0caae6e724030382204edb760040a23c38837041ca"
+    },
+    "sourcePackSha256": {
+      "8": "e0fc4d963c54e1eafa4d71376f25421feecca7d2a7ed7a0a9fbda891d0f7695a",
+      "10": "5304e6e9a76fb713adef281e7e3b5b603655df1b3ab6fff962e76c362252e839"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハ: 61A×0.70=42.7Aとしているが、普通に四捨五入すると43Aになり、選択肢の42Aとは一致しない。42Aになるのは、小数点以下第1位を7捨8入する場合だけ（42.7→42）。この丸め規則を書かずに「42.7Aに近い」とだけ書いているため、誤答の由来の説明として計算が合わない。",
+        "丸め規則は explanation と choiceExplanations のどこにも書かれていない。イ（25.9→26）、ロ（34.3→34）、ハ（42.7→42）の3つが同時に成り立つのは7捨8入の場合だけなので、根拠条文と一緒に丸め規則を明記する必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "許容電流に電流減少係数を掛けた値の小数点以下を「7捨8入」する規定（電技解釈第146条第2項の本文または146-2表の注記と思われる）。照合パックに原文がないため、イ26A・ハ42Aの丸め方の根拠を条文で確認できていない。"
+      ]
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

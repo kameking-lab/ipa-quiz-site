@@ -1,0 +1,37 @@
+{
+  "inputHashes": {
+    "draftSha256": "7b6cfa6a513f38fc778dab2e1ff6b4145c970f29569acffb8fe5cf14993be25a",
+    "rowSha256": {
+      "17": "8b13b572d6b573231d85028dda06409b8a4fa6b978bcfab6e929a7271e123c49",
+      "18": "3faad7bb436f40ee03f388551bc65e31a21947027f8b7249f24d454ed41cccff"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q17.png": "08b29bcaa5a06c3c51f8a83d53b0076045cd69916095f8390f013b6ebb81e5e8",
+      "public/images/denko2/2025-first/q18.png": "f88ff8779d944c178915bf36456d368b50788ed1d755101c8fa052658b6a7a86"
+    },
+    "sourcePackSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionでは「PUSH TO TRIP」の文字と赤い丸ボタンがハンドルの「左上」にあるとしているが、原本画像では右銘板の下部、ハンドルの右下にある。「PUSH TO TRIP」の表記は「200V 2.2kW相当」表示の直下、赤い丸ボタンはその右側にある。位置を「ハンドル右下（右銘板下部）」に訂正すること。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

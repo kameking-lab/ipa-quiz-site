@@ -47,5 +47,8 @@
       "docs/evidence/denko2-independent/20250525-q41-50-acceptance.json"
     ]
   },
-  "reviewMethod": "公式行画像・四肢・正答・肢別解説・図表をOpus独立照合。修正問は当該問のみ再照合し、設問別最終証跡をacceptance-ledgerに集約。"
+  "reviewMethod": "公式行画像・全肢・正答・解説・図表・一次資料をOpus独立再照合。各問の現候補、原図、図表、資料、最終direct receiptのSHA一致と未解決配列0を確認。",
+  "strictCurrentHashPinned": true,
+  "finalReceipt": "docs/evidence/denko2-final/20250525.json",
+  "finalReceiptSha256": "6fd8d6b465a3f1bcd2eea6e079f22e9aeacb5705c59646ab5a15fb25975ca087"
 }
