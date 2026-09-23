@@ -272,7 +272,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "1.0×10⁻⁷ mol/Lは中性（pH7）の値です。中性になるのは酸と塩基の物質量が等しい場合だけです。本問では水酸化ナトリウムが塩酸の3倍の物質量あり、OH⁻が2.0×10⁻⁴ mol残ります。"
+            "reason": "1.0×10⁻⁷ mol/Lは水素イオン濃度と水酸化物イオン濃度が等しい中性の値です。本問の塩酸と水酸化ナトリウムでは、OH⁻が3.0×10⁻⁴−1.0×10⁻⁴＝2.0×10⁻⁴ mol残ります。混合液は塩基性なのでこの値にはなりません。"
           },
           {
             "number": 3,
@@ -287,16 +287,52 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "[H⁺]＝1.0×10⁻¹⁶ mol/Lなら、イオン積から[OH⁻]＝1.0×10² mol/L（100 mol/L）が必要になり、0.030 mol/LのNaOH水溶液ではあり得ません。10⁻¹⁴と10⁻²を割らずに掛けたときに出る値です。"
+            "reason": "1.0×10⁻¹⁶ mol/Lなら、水のイオン積から[OH⁻]＝1.0×10² mol/Lが必要になります。問題のNaOHは0.030 mol/Lを10 mLだけ用いており、混合後にそんな高濃度のOH⁻は存在しません。正しくは10⁻¹⁴を残存OH⁻濃度10⁻²で割ります。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA pH",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された一次資料抜粋（厚労省 個人サンプラー報告書、環境省 付表5、作業環境測定基準）には、中和計算や水のイオン積に関する記述がありません。本問の判断を支える政府資料は確認できなかったため、sourcesとsourceEvidenceは空にしました。出典が必要なら検索が必要です。",
-        "計算は全選択肢を独立に検算済みです。H⁺ 1.0×10⁻⁴ mol、OH⁻ 3.0×10⁻⁴ mol、残りのOH⁻ 2.0×10⁻⁴ mol、0.020 Lで割って[OH⁻]＝1.0×10⁻² mol/L、[H⁺]＝1.0×10⁻¹² mol/Lとなり、公式正答4と一致します。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html",
+          "excerpt": "水素イオン濃度［H + ］と水酸化物イオン濃度［OH - ］の積は一定値となる",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html",
+          "excerpt": "室温では10 -14 となる",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html",
+          "excerpt": "水酸化物イオンとの中和で）水素イオン濃度が低下",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-20260217-4-q12": {
       "overlay": {

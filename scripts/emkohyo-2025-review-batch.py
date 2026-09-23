@@ -107,6 +107,22 @@ def main() -> None:
     else:
         raise ValueError(f"Source pack lacks candidate hash and range pins: {source_file}")
     source_page_image_hashes = {}
+    official_page_image_hashes = {}
+    for source_image in sources.get("officialPageImages", []):
+        if source_image.get("officialPdfSha256") != paper_meta["pdfSha256"]:
+            raise ValueError("High-resolution official crop is not pinned to the catalogued PDF")
+        path = ROOT / source_image["path"]
+        raw = path.read_bytes()
+        digest = sha256(raw).hexdigest()
+        if digest != source_image["sha256"]:
+            raise ValueError(f"High-resolution official crop changed: {path}")
+        official_page_image_hashes[source_image["path"]] = digest
+        image_blocks.append({"type": "text", "text":
+                             f"同一公式PDFの高解像度原図: {source_image['description']} "
+                             f"{source_image['path']} SHA256={digest}。"
+                             "原図中の丸印は公表正答を示す印であり、問題文ではない。"})
+        image_blocks.append({"type": "image", "source": {"type": "base64",
+                        "media_type": "image/png", "data": base64.b64encode(raw).decode("ascii")}})
     for source_image in sources.get("sourcePageImages", []):
         path = ROOT / source_image["path"]
         raw = path.read_bytes()
@@ -161,6 +177,7 @@ def main() -> None:
                "modelUsage": model_usage,
                "paperId": paper, "ids": ids,
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
+               "officialPageImageSha256": official_page_image_hashes,
                "governmentSourceImageSha256": source_page_image_hashes,
                "candidateSha256": {id_: sha256(json.dumps(candidates[id_], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() for id_ in ids},
                "sourcePackPath": source_file.relative_to(ROOT).as_posix(),

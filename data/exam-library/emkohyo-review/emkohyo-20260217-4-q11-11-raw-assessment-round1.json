@@ -1,0 +1,22 @@
+{
+  "emkohyo-20260217-4-q11": {
+    "status": "FIX",
+    "textIssues": [
+      "In the official source image q11-p7-0.webp, the small superscript exponent in choice 5 is hard to read. It could be −15 or −16. The official text data and the transcription both say 1.0×10⁻¹⁶. At this crop's resolution, I cannot confirm from the image that the exponent is −16. The reason for choice 5 depends on the value 10⁻¹⁶, so check the original PDF at higher resolution before passing this.",
+      "The crop shows a small stray mark to the left of choice 4. It looks like a scan or rendering artefact, not part of the question. Check that it is not an answer marker or other written mark from the original."
+    ],
+    "choiceIssues": [],
+    "reasonIssues": [
+      "Choice 2 says a solution is neutral only when the acid and base amounts are equal. That is too general. A weak acid neutralised by a strong base is not neutral at the equivalence point. The statement should be limited to a monoprotic strong acid and a monovalent strong base, like HCl and NaOH here. For example: 'HClとNaOHのような1価の強酸・強塩基では、物質量が等しいときに中性になる'.",
+      "Choice 5 says you get 10⁻¹⁶ by multiplying 10⁻¹⁴ and 10⁻² instead of dividing. That is a guess about how a candidate might go wrong. The numbers are right, but the wording should make clear it is only one example of an error pattern."
+    ],
+    "sourceIssues": [
+      "The ATOMICA source is published by JAEA, a national research and development agency. It is a science glossary, not a primary government legal or administrative document. It supports three general points: the ion product of water, the value 10⁻¹⁴ at room temperature, and that neutralisation by hydroxide lowers [H⁺]. It does not directly support the specific working here: calculating the amounts of substance, subtracting the excess OH⁻, and dividing by the combined 20 mL volume. That working comes only from the question's own data.",
+      "The question gives the ion product of water as 1.0×10⁻¹⁴ mol²·L⁻². ATOMICA only says '室温では10⁻¹⁴' (10⁻¹⁴ at room temperature), with no unit and no exact temperature. The explanation can safely use the question's value, but the source adds no support for the unit or temperature."
+    ],
+    "needsExternalCheck": [
+      "Check the exponent in choice 5 (−16 or −15) in the official PDF at https://www.exam.or.jp/20260217-4/ at high resolution.",
+      "Check whether the mark to the left of choice 4 in the original is an artefact."
+    ]
+  }
+}

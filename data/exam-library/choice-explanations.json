@@ -22008,5 +22008,43 @@
         "url": "https://www.mext.go.jp/component/a_menu/education/detail/__icsFiles/afieldfile/2018/05/25/1398423_13.pdf"
       }
     ]
+  },
+  "emkohyo-20260217-4-q11": {
+    "sourceHash": "03c28c99f6d2d4c73893db36f397beeefcc328674a668ddc2b045207369e98ff",
+    "correctChoice": 4,
+    "summary": "OH⁻が過剰に残るため、水のイオン積から[H⁺]＝1.0×10⁻¹² mol/Lとなる",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "H⁺は1.0×10⁻⁴ mol、OH⁻は3.0×10⁻⁴ molなので、混合後は塩基が過剰です。[H⁺]＝1.0×10⁻⁵ mol/L（pH5）は酸性側の値で、塩基性になる混合液とは合いません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "1.0×10⁻⁷ mol/Lは水素イオン濃度と水酸化物イオン濃度が等しい中性の値です。本問の塩酸と水酸化ナトリウムでは、OH⁻が3.0×10⁻⁴−1.0×10⁻⁴＝2.0×10⁻⁴ mol残ります。混合液は塩基性なのでこの値にはなりません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "[H⁺]＝1.0×10⁻⁹ mol/Lなら[OH⁻]＝1.0×10⁻⁵ mol/Lになります。これは実際の過剰OH⁻濃度1.0×10⁻² mol/L（2.0×10⁻⁴ mol÷0.020 L）の1000分の1しかなく、過剰分を過小評価しています。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "中和後に残るOH⁻は3.0×10⁻⁴－1.0×10⁻⁴＝2.0×10⁻⁴ molです。全体積0.020 Lで割ると[OH⁻]＝1.0×10⁻² mol/Lなので、[H⁺]＝1.0×10⁻¹⁴÷1.0×10⁻²＝1.0×10⁻¹² mol/L（pH12）となります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "1.0×10⁻¹⁶ mol/Lなら、水のイオン積から[OH⁻]＝1.0×10² mol/Lが必要になります。問題のNaOHは0.030 mol/Lを10 mLだけ用いており、混合後にそんな高濃度のOH⁻は存在しません。正しくは10⁻¹⁴を残存OH⁻濃度10⁻²で割ります。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA pH",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_2153.html"
+      }
+    ]
   }
 }
