@@ -22,6 +22,8 @@ WindowsのCRLFとLFの差で政府資料packやレビューreceiptのSHAが食�
 
 組合せ表24問の選択肢120件を公式原図と見比べ、連結した表OCRを㋑/㋺/㋩/㋥の見やすいカードへ修正した。原図SHAと変更前後は`table-choice-curation-20260924.json`に記録した。2025有機溶剤Q18/Q19のD/C測定計算は、それぞれ43.987 ppm→公式選択肢2、30.013 ppm→公式選択肢5と独立計算し、`EM20251805-q18-19-arithmetic-20260924.json`へ固定した。どちらも未審査の5肢理由を公開受入に変えるものではない。
 
-9月24日の数値・原図監査は30問へ拡張した。`scripts/emkohyo-verify-arithmetic-receipts.py`は全30問の公式row/原図/正答番号のハッシュ・算術選択肢を検証しPASS。`scripts/validate-safety-exams.mjs --require-explanations`は18紙360問の文字起こし問題文・独立した5選択肢カードと図表切出し23枚を常時検証しPASS。ただし全肢解説の公開受入は6/360のまま。`scripts/emkohyo-accept-reviewed.py`は現在候補と政府packのSHAが一致し、独立Opusの全issue空PASSがある問だけを公開候補とする。通常は読み取り専用、`--run`時も既存厳格acceptorを呼ぶ。
+9月24日の数値・原図監査は32問へ拡張した。`scripts/emkohyo-verify-arithmetic-receipts.py`は全32問の公式row/原図SHA、記録済み計算結果と公式正答番号の一致を検証しPASS。各算術generatorも個別に式を再計算する。`scripts/validate-safety-exams.mjs --require-explanations`は18紙360問の文字起こし問題文・独立した5選択肢カードと図表切出し23枚を常時検証しPASS。ただし全肢解説の公開受入は6/360のまま。`scripts/emkohyo-accept-reviewed.py`は現在候補と政府packのSHAが一致し、独立Opusの全issue空PASSがある問だけを公開候補とする。通常は読み取り専用、`--run`時も既存厳格acceptorを呼ぶ。
 
-次のモデル枠では2025有機Q1を単問direct reviewし、PASSなら厳格acceptorで公開する。その後、2026年の根拠準備済み42問から最大3並列・5問単位でdirect reviewする。未草稿は2025年85問と2026年80問で、既存生成器を再開すれば各5問の小バッチだけを追加する。既存草稿の政府一次資料不足は検索スコアだけで埋めず、原文一致と選択肢固有理由まで独立照合する。
+資料pack生成器は取得済み政府本文51 URLを元のURL・内容SHAで再利用し、未収録の資料だけ直接取得する。既存packは誤上書きを防ぐため`--replace`がなければ保持する。欠落のある研究pack14件も`acceptance:none`・missingEvidenceQuestionsを明記して保存し、独立審査候補からは除外した。
+
+次のモデル枠では2025有機Q1を単問direct reviewし、PASSなら厳格acceptorで公開する。その後、2026年の根拠準備済み42問から最大3並列・5問単位でdirect reviewする。内訳は20260217-2（法令）20問、20260217-3（デザイン）13問、EM20261801（衛生一般）5問、EM20261803（金属）1問、EM20261804（分析）3問。未草稿は2025年85問と2026年80問で、既存生成器を再開すれば各5問の小バッチだけを追加する。既存草稿の政府一次資料不足は検索スコアだけで埋めず、原文一致と選択肢固有理由まで独立照合する。
