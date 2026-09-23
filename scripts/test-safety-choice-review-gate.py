@@ -1,11 +1,18 @@
 import copy
 from hashlib import sha256
+import importlib.util
 import tempfile
 from pathlib import Path
 import unittest
+from unittest.mock import patch
 
 from safety_choice_review_gate import (candidate_issues, make_receipt, receipt_current,
                                       source_snapshot, validate_assessment)
+
+REVIEW_SPEC = importlib.util.spec_from_file_location(
+    "review_safety_choice_clusters", Path(__file__).with_name("review-safety-choice-clusters.py"))
+REVIEW = importlib.util.module_from_spec(REVIEW_SPEC)
+REVIEW_SPEC.loader.exec_module(REVIEW)
 
 
 class FullReviewGateTest(unittest.TestCase):
@@ -34,7 +41,7 @@ class FullReviewGateTest(unittest.TestCase):
 
     def receipt(self):
         return make_receipt("q1", source_snapshot(self.root, self.q, self.paper),
-                            self.candidate, self.evidence, self.assessment, "opus")
+                            self.candidate, self.evidence, self.assessment, "claude-opus-5-5")
 
     def test_complete_current_review_passes(self):
         self.assertEqual(candidate_issues(self.q, self.candidate, "lckohyo"), [])
@@ -65,6 +72,11 @@ class FullReviewGateTest(unittest.TestCase):
         del self.assessment["choiceChecks"]["5"]
         self.assertEqual(self.receipt()["status"], "HOLD")
 
+    def test_alias_cannot_be_recorded_as_verified_model(self):
+        receipt = make_receipt("q1", source_snapshot(self.root, self.q, self.paper),
+                               self.candidate, self.evidence, self.assessment, "opus")
+        self.assertEqual(receipt["status"], "HOLD")
+
     def test_conflict_and_unchecked_history_hold(self):
         self.assessment["issues"] = ["official answer contradicts quoted clause"]
         self.assertEqual(self.receipt()["status"], "HOLD")
@@ -80,6 +92,26 @@ class FullReviewGateTest(unittest.TestCase):
         (self.root / "public/images/q.webp").unlink()
         with self.assertRaises(ValueError):
             source_snapshot(self.root, self.q, self.paper)
+
+    def test_official_pdf_bytes_must_match_catalog_digest(self):
+        payload = b"%PDF-1.7 original exam"
+        self.paper.update(pdfUrl="https://www.exam.or.jp/original.pdf",
+                          pdfSha256=sha256(payload).hexdigest())
+        class Response:
+            content = payload
+            def raise_for_status(self):
+                pass
+        with patch.object(REVIEW.requests, "get", return_value=Response()) as fetched:
+            path = REVIEW.verified_official_pdf(self.root, self.paper)
+            self.assertEqual(path.read_bytes(), payload)
+            path.write_bytes(b"tampered local PDF")
+            self.assertEqual(REVIEW.verified_official_pdf(self.root, self.paper).read_bytes(), payload)
+            self.assertEqual(fetched.call_count, 2)
+        path.unlink()
+        with patch.object(REVIEW.requests, "get", return_value=type(
+            "BadResponse", (), {"content": b"changed server PDF", "raise_for_status": lambda self: None})()):
+            with self.assertRaisesRegex(ValueError, "Official PDF content mismatch"):
+                REVIEW.verified_official_pdf(self.root, self.paper)
 
 
 if __name__ == "__main__":

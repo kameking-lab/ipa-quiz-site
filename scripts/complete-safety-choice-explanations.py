@@ -135,16 +135,17 @@ def call_claude(prompt, prefix, model, return_model=False):
     if run.returncode or re.search(r"You've hit your limit|usage limit|rate limit exceeded", raw, re.I):
         raise RuntimeError(f"Claude unavailable; no paid fallback: {prefix}")
     responses = [json.loads(line) for line in raw.splitlines() if line.strip()]
-    content = next(row for row in reversed(responses) if row.get("type") == "result").get("result", "")
+    result_row = next(row for row in reversed(responses) if row.get("type") == "result")
+    if result_row.get("subtype") != "success":
+        raise RuntimeError(f"Claude did not complete successfully: {prefix}")
+    content = result_row.get("result", "")
     result = extract_json(content)
-    if not return_model:
-        return result
     model_ids = {row.get("message", {}).get("model") for row in responses
                  if row.get("type") == "assistant" and isinstance(row.get("message"), dict)}
     model_ids.discard(None)
     if model_ids != {model}:
         raise RuntimeError(f"Unexpected Claude model ID {model_ids}; expected {model}")
-    return result, model
+    return (result, model) if return_model else result
 
 
 def source_hints(batch):

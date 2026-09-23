@@ -76,6 +76,8 @@ def validate_assessment(assessment, candidate):
 
 def make_receipt(question_id, snapshot, candidate, evidence, assessment, model):
     errors = validate_assessment(assessment, candidate)
+    if model != "claude-opus-5-5":
+        errors.append("review model ID is not the verified claude-opus-5-5")
     return {"schemaVersion": 1, "questionId": question_id,
             **receipt_key(snapshot, candidate, evidence), "model": model,
             "status": "HOLD" if errors else "PASS", "gateIssues": errors,
@@ -84,6 +86,7 @@ def make_receipt(question_id, snapshot, candidate, evidence, assessment, model):
 
 def receipt_current(receipt, snapshot, candidate, evidence):
     return (receipt.get("schemaVersion") == 1 and receipt.get("status") == "PASS"
+            and receipt.get("model") == "claude-opus-5-5"
             and all(receipt.get(k) == v for k, v in
                     receipt_key(snapshot, candidate, evidence).items())
             and not validate_assessment(receipt.get("assessment"), candidate))
