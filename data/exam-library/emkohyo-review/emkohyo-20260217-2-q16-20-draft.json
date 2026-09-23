@@ -173,16 +173,95 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "タンク内部など通風が不十分な場所でアルゴン、炭酸ガス又はヘリウムを使用して溶接するときは、酸素濃度を18％以上に保つよう換気するか、空気呼吸器等を使用させる。不活性ガスが空気を置換して酸素欠乏を招くための措置で、記述は正しい。"
+            "reason": "酸素欠乏症等防止規則第21条は、通風が不十分な場所でアルゴン・炭酸ガス・ヘリウムを用いて溶接させるとき、酸素濃度を18％以上に保つ換気か空気呼吸器等の使用のいずれかを求めます。肢5はこの二択を正しく示しています。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 別表第6",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省 酸素欠乏症等防止規則 第2・4・11・21条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "井戸、井筒、たて坑、ずい道",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "炭酸水を 湧 出しており、又は 湧 出するおそれのある地層",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "石炭、亜炭、硫化鉱、鋼材、くず鉄、原木、チツプ、乾性油、魚油その他空気中の酸素を吸収する物質",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "第二種酸素欠乏危険作業以外の作業をいう",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "令別表第六第三号の三、第九号又は第十二号に掲げる酸素欠乏危険場所",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "測定を行うため必要な測定器具を備え、又は容易に利用できるような措置を講じておかなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "その日の作業を開始する前、作業に従事するすべての労働者が作業を行う場所を離れた後再び作業を開始する前",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "同項第二号中「酸素」とあるのは「酸素及び硫化水素」と",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "アルゴン、炭酸ガス又はヘリウムを使用して行う溶接の作業",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "作業を行う場所の空気中の酸素の濃度を十八パーセント以上に保つように換気すること。 二　労働者に空気呼吸器等を使用させること",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "第1種・第2種の区分の根拠は、労働安全衛生法施行令別表第6（酸素欠乏危険場所）の各号と酸素欠乏症等防止規則第2条の定義である。いずれもpackに含まれておらず、正答肢2の根拠（硫化鉱を酸素を吸収する物質として掲げる号）の原文抜粋を確保できていないため、sourceEvidenceは空欄とした。施行令別表第6と酸欠則原文の検索が必要。",
-        "肢3（測定器具の備付け）、肢4（作業主任者の職務としての酸素・硫化水素濃度の測定）、肢5（不活性ガスを用いる溶接の換気・空気呼吸器等）は、酸欠則原文が未確認。",
-        "作業環境測定基準の抜粋にある酸素計・硫化水素検定器の規定は測定機器に関するもので、各肢の正誤判断を直接支えないため採用していない。"
+        "施行令別表第6と酸欠則第2・4・11・21条で五肢の直接根拠を照合済み。酸欠危険場所の分類を独立Opus source-aware審査するまで受入保留。"
       ]
     },
     "emkohyo-20260217-2-q20": {
@@ -199,12 +278,12 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "公式正答が1なので、手洗い用溶液・爪ブラシ・石けん・うがい液を作業場ごとに備え、作業終了後と必要に応じて使用させる措置は、鉛則の規定内容として正しい扱いである。ただし溶液名が硝酸水溶液か酢酸水溶液かは条文原文で確認が必要。"
+            "reason": "鉛中毒予防規則第49条は「硝酸水溶液その他の手洗い用溶液、爪ブラシ、石けん及びうがい液」を作業場ごとに備え、作業終了後及び必要に応じ使用させるよう定める。溶液名も条文どおりなので、この肢は正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "鉛則に基づく局所排気装置の除じん装置には、鉛粉じんを確実に捕集するため、ろ過除じん方式又はこれと同等以上の性能を有する除じん装置を用いることが求められる。記述は規定の趣旨どおりで正しい。"
+            "reason": "鉛中毒予防規則第26条は、対象の鉛業務について設ける設備に、ろ過除じん方式又は同等以上の性能を有する除じん装置を求める。設問は適用除外・特例がないと指定しており、局所排気装置についての記述は正しい。"
           },
           {
             "number": 4,
@@ -214,16 +293,27 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "鉛健康診断の結果に基づいて作成する鉛健康診断個人票の保存期間は5年間である。電離放射線（30年）や石綿（40年）のような長期保存の特例はないため、記述は正しい。"
+            "reason": "鉛中毒予防規則第54条は、鉛健康診断の結果に基づき鉛健康診断個人票を作成し、これを5年間保存するよう定める。設問の「5年間保存」は条文の数字と一致するので正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 鉛中毒予防規則 第1・26・33・49・54条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛を当該合金の重量の十パーセント以上含有するものをいう", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛化合物　労働安全衛生法施行令", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "硝酸水溶液その他の手洗い用溶液、爪ブラシ、石けん及びうがい液", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "作業終了後及び必要に応じ、当該労働者にこれらを使用させなければならない", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "ろ過除じん方式の除じん装置又はこれと同等以上の性能を有する除じん装置を設けなければならない", "choiceNumbers": [3]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "局所排気装置、プッシュプル型換気装置、全体換気装置、排気筒及び除じん装置を毎週一回以上点検すること", "choiceNumbers": [4]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛健康診断個人票(様式第二号)を作成し、これを五年間保存しなければならない", "choiceNumbers": [5]}
+      ],
       "reviewIssues": [
-        "正答肢1の根拠となる鉛中毒予防規則第1条（鉛合金・鉛化合物の定義）の原文がpackに含まれていない。既存解説はe-Gov（https://laws.e-gov.go.jp/law/347M50002000037）の第1条と第51条を根拠に挙げているが、本文を直接確認できていないため、sourcesにもsourceEvidenceにも含めず保留とした。鉛則原文の検索と確認が必要。",
-        "肢2の溶液名について、既存解説は条文上「硝酸水溶液その他の手洗い用溶液」だとしているが、原文未確認のため鵜呑みにせず保留した。公式正答1との整合から肢2は正しい記述と扱ったが、溶液名と条番号（既存解説では第51条）を原文で照合する必要がある。",
-        "肢3（ろ過除じん方式の除じん装置）、肢4（作業主任者による毎週1回以上の点検）、肢5（個人票の5年保存）も鉛則原文が未確認で、検索が必要。"
+        "厚労省の鉛中毒予防規則第1・26・33・49・54条で各肢の直接根拠を照合済み。独立Opus原文照合は未了。"
       ]
     }
   }
