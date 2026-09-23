@@ -66,3 +66,7 @@ next-env.d.ts
 /test-results
 /playwright-report
 /playwright/.cache
+
+# Local Python helpers for source PDF verification
+__pycache__/
+*.pyc
