@@ -44,7 +44,9 @@ jobs:
         run: pnpm validate:questions
 
       - name: Verify electrician original-review coverage and live gate
-        run: python3 scripts/denko2-strict-coverage.py --require-complete
+        run: |
+          python3 scripts/denko2-test-portable-digest.py
+          python3 scripts/denko2-strict-coverage.py --require-complete
 
       - name: Run data integrity audit (gates on critical findings)
         # scripts/audit-questions.ts — fails (exit 1) on critical findings

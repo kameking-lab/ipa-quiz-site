@@ -18,8 +18,17 @@ INDEPENDENT = ROOT / "docs/evidence/denko2-independent"
 FINAL = ROOT / "docs/evidence/denko2-final"
 
 
+def portable_digests(path: Path) -> set[str]:
+    """Accept historical LF/CRLF receipts without tolerating content changes."""
+    raw = path.read_bytes()
+    if path.suffix.lower() in {".json", ".md", ".txt", ".py"}:
+        lf = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
+        return {sha256(value).hexdigest() for value in (raw, lf, lf.replace(b"\n", b"\r\n"))}
+    return {sha256(raw).hexdigest()}
+
+
 def portable_digest(path: Path) -> str:
-    """Hash text receipts independent of checkout newline mode; keep binaries raw."""
+    """Use canonical LF hashes when generating any new text receipt."""
     raw = path.read_bytes()
     if path.suffix.lower() in {".json", ".md", ".txt", ".py"}:
         raw = raw.decode("utf-8").replace("\r\n", "\n").replace("\r", "\n").encode("utf-8")
@@ -79,12 +88,10 @@ def current_direct_reviews(stem: str, source_items: dict[int, dict], candidates:
             proof = ROOT / f"docs/evidence/denko2-law/{stem[:8]}-q{number:02}.json"
             if proof.exists():
                 key = str(proof.relative_to(ROOT)).replace("\\", "/")
-                if hashes.get("legalReceiptSha256", {}).get(key) not in {portable_digest(proof), sha256(proof.read_bytes()).hexdigest()}:
+                if hashes.get("legalReceiptSha256", {}).get(key) not in portable_digests(proof):
                     continue
             source_pack = ROOT / f"docs/evidence/denko2-sources/{stem[:8]}/q{number:02}.json"
-            if source_pack.exists() and hashes.get("sourcePackSha256", {}).get(str(number)) not in {
-                portable_digest(source_pack), sha256(source_pack.read_bytes()).hexdigest()
-            }:
+            if source_pack.exists() and hashes.get("sourcePackSha256", {}).get(str(number)) not in portable_digests(source_pack):
                 continue
             current.setdefault(number, []).append((assessment, relative))
     return current
@@ -150,9 +157,7 @@ def main() -> None:
             relative = pinned.get("directReviewReceipt", "")
             if (not relative.startswith(("docs/evidence/denko2-independent/", "docs/evidence/denko2-final/direct/")) or
                 not (ROOT / relative).is_file() or
-                pinned.get("directReviewSha256") not in {
-                    portable_digest(ROOT / relative), sha256((ROOT / relative).read_bytes()).hexdigest()
-                }):
+                pinned.get("directReviewSha256") not in portable_digests(ROOT / relative)):
                 pending.append(f"{label}: final direct Opus receipt missing or changed")
                 continue
             figures = {str((ROOT / "public" / url.lstrip("/")).relative_to(ROOT)).replace("\\", "/"):
@@ -166,7 +171,7 @@ def main() -> None:
             law = pinned.get("lawReceipt")
             expected_proof = source_pack if source_pack.exists() else law_path if law_path.exists() else None
             if (expected_proof and (not law or law.get("path") != str(expected_proof.relative_to(ROOT)).replace("\\", "/") or
-                                    law.get("sha256") != portable_digest(expected_proof))) or (not expected_proof and law):
+                                    law.get("sha256") not in portable_digests(expected_proof))) or (not expected_proof and law):
                 pending.append(f"{label}: final official-source proof changed")
                 continue
             reviews = [item for item in by_number.get(number, []) if item[1] == relative]
@@ -177,7 +182,7 @@ def main() -> None:
                 if (wrapper.get("receiptKind") != "canonicalized-direct-review" or
                     not upstream_relative.startswith("docs/evidence/denko2-strict-") or
                     not upstream.is_file() or
-                    wrapper.get("upstreamReviewSha256") != portable_digest(upstream)):
+                    wrapper.get("upstreamReviewSha256") not in portable_digests(upstream)):
                     pending.append(f"{label}: canonical direct receipt upstream missing or changed")
                     continue
                 upstream_data = json.loads(upstream.read_text(encoding="utf-8"))
@@ -194,9 +199,10 @@ def main() -> None:
                 if (wrapper.get("inputHashes", {}).get("draftSha256") != sha256(json.dumps([candidate], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() or
                     wrapper.get("inputHashes", {}).get("rowSha256", {}).get(str(number)) != original_sha or
                     wrapper.get("inputHashes", {}).get("detailFigureSha256") != figures or
-                    wrapper.get("inputHashes", {}).get("legalReceiptSha256", {}) != (
-                        {str(expected_proof.relative_to(ROOT)).replace("\\", "/"): portable_digest(expected_proof)} if expected_proof else {}
-                    )):
+                    (expected_proof and (
+                        set(wrapper.get("inputHashes", {}).get("legalReceiptSha256", {})) != {str(expected_proof.relative_to(ROOT)).replace("\\", "/")} or
+                        wrapper["inputHashes"]["legalReceiptSha256"][str(expected_proof.relative_to(ROOT)).replace("\\", "/")] not in portable_digests(expected_proof)
+                    )) or (not expected_proof and wrapper.get("inputHashes", {}).get("legalReceiptSha256"))):
                     pending.append(f"{label}: canonical direct input hashes changed")
                     continue
                 reviews = [(matches[0], relative)]
