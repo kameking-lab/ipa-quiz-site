@@ -10,6 +10,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from urllib.parse import urlparse
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -77,6 +78,21 @@ def main() -> None:
     else:
         source_file = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{batch_first:02}-{batch_last:02}.json"
     sources = json.loads(source_file.read_text(encoding="utf-8"))
+    if sources.get("paperId") == paper and "draftSha256" in sources:
+        if sources.get("range") != [first, last]:
+            raise ValueError(f"Source pack range differs from review range: {source_file}")
+        if sources["draftSha256"] != sha256(draft_file.read_bytes()).hexdigest():
+            raise ValueError(f"Source pack is stale for current draft: {source_file}")
+        if sources.get("missingEvidenceQuestions") or sources.get("unverifiedExcerpts"):
+            raise ValueError(f"Source pack has unresolved evidence: {source_file}")
+        if not sources.get("claimedExcerpts"):
+            raise ValueError(f"Source pack has no direct excerpts: {source_file}")
+        for source in sources.get("sources", []):
+            host = urlparse(source.get("url", "")).hostname or ""
+            if not host.endswith(".go.jp") or source.get("status") != 200:
+                raise ValueError(f"Non-government or unreachable source in {source_file}: {host}")
+    else:
+        raise ValueError(f"Source pack lacks candidate hash and range pins: {source_file}")
     prompt = (
         "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の政府一次資料で厳密に照合する。"
         "問題文の選択肢1〜5との対応、解説の個別因果、数値・温度・単位、正誤判定を全件見る。"
