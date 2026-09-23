@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3566,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17156,
+      "webSearchRequests": 0,
+      "costUSD": 0.23646460000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2984,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q15": {
+      "/exam-library/emkohyo-EM20261804/q15-p10-0.webp": "cd2d7842c628894ca12772eddcfe9d93353521c69691614d37ec4001d0bd8eef"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/images/emkohyo-EM20261804-q15-jaea-p23.png": "7fabcbccbf63e3707649e2b7f5d7f9b431b1d638f44cf91ff475f09e98aa679a"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q15": "0ef6370878bf60419693a84cc0c0f341b838dc542cab38ef0ebdfdf86ce6a838"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q15-15.json",
+  "sourcePackSha256": "534de7c76407655fbcb81f04ab8142f1812203efb92d36f7c6b2feb0f3828da5",
+  "assessment": {
+    "emkohyo-EM20261804-q15": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢2: 根拠の産総研ページは機器の仕様一覧です。出典: 鳥取県産業技術センターの開放機器を産総研サイトに掲載したもの。直接支えるのは、仕様項目『バックグラウンド補正』に『連続スペクトル光源補正（重水素ランプ）』とある点だけです。理由文の『測定対象原子以外による吸収や散乱を補正するための光源として使う』という補正の中身は、このページにも他の添付資料にも書かれていません。MHLW 8e01.pdf p.12 も『バックグラウンド補正部を備えたものもある』『バックグラウンドを考慮する必要がある』と述べるだけで、重水素ランプの役割には触れていません。直し方は2通りあります。(a) 理由文を『仕様にバックグラウンド補正として重水素ランプ（連続スペクトル光源補正）が明記されている』までに絞る。(b) 分子吸収や散乱を補正すると明記した政府資料を追加する。",
+        "肢1: 理由文の『代表的な線光源』のうち『線光源』はMHLW 8e01.pdf p.12の記載にありません。同ページにあるのは『光源部には中空陰極ランプ又は放電ランプ等を用いる』だけです。正誤判定は変わりませんが、出典で裏づけられない語は削るか、根拠を足してください。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

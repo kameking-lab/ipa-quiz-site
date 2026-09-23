@@ -590,36 +590,119 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "文は正しいです。中空陰極ランプは陰極に測定元素そのものを使い、その元素に特有の鋭い輝線を出します。原子吸光分析の線光源として元素ごとに使い分けます。"
+            "reason": "文自体は正しい。厚生労働省が示す原子吸光光度法の装置説明では、光源部に中空陰極ランプなどを用いると明記される。原子吸光では測定元素に固有の波長の光を原子蒸気へ照射する必要があり、この装置の光源部に中空陰極ランプを置くという設問の記述は、同省の装置説明と一致する。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "文は正しいです。重水素ランプは紫外域の連続光を出します。分子吸収や光散乱によるバックグラウンド吸収を測って差し引く、補正用の光源として使われます。"
+            "reason": "文自体は正しい。産総研が掲載する鳥取県産業技術センターの機器仕様は、重水素ランプを連続スペクトル光源補正に使用すると明記する。環境省の底質調査方法は、水銀測定で揮発性有機物が測定波長の光を吸収する妨害に対し、重水素ランプによる補正を示す。中空陰極ランプと重水素ランプの指示値の差を利用する水銀測定の操作例があり、記述は正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "文は正しいです。フレームの温度（約2000〜3000 K）では、ボルツマン分布により励起状態にある原子はごく一部です。原子蒸気の大部分は、光を吸収できる基底状態にあります。"
+            "reason": "文自体は正しい。動力炉・核燃料開発事業団の原子吸光分析報告（現在JAEAが公開）は、試料を炎に導入して熱解離した原子の大部分が基底状態にあると説明する。原子吸光法はその基底状態原子が特有波長の光を吸収する現象を測るため、目的原子のほとんどが基底状態という記述は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "文は正しいです。グラファイト炉法（電気加熱原子化法）では、黒鉛管に大電流を流して生じるジュール熱で、乾燥・灰化・原子化の各段階の昇温を行います。"
+            "reason": "文自体は正しい。食品安全委員会の評価書では、炭素管に大電流を流し、生じたジュール熱で炉温を上げて原子化するものをグラファイト炉原子化法と呼ぶ。したがって炉への通電で発生するジュール熱を使うという説明は原理に合う。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "この記述が誤りです。吸光度は光路中にある測定元素の基底状態原子の濃度に対応します。原子番号との比例関係はなく、元素ごとに吸収線や感度が違うので、それぞれの検量線が必要です。"
+            "reason": "これが誤りの記述。原子吸光の吸光度は光路中の基底状態原子の吸収に対応し、厚生労働省の測定法も濃度の異なる標準液から検量線を作って被検元素量を求める。原子番号そのものに比例するわけではなく、同一元素でも濃度が変われば吸光度は変わる。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 食品、添加物等の規格基準・原子吸光光度法",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          },
+          {
+            "title": "産業技術総合研究所掲載・鳥取県産業技術センターの原子吸光光度計",
+            "url": "https://unit.aist.go.jp/chugoku/kaihou-kiki/data/tottori/kikai/B-02-088.html"
+          },
+          {
+            "title": "環境省 底質調査方法・重水素ランプによるバックグラウンド補正",
+            "url": "https://www.env.go.jp/hourei/05/000178.html"
+          },
+          {
+            "title": "動力炉・核燃料開発事業団の原子吸光分析報告（現JAEA公開）",
+            "url": "https://jopss.jaea.go.jp/pdfdata/PNC-TN841-71-36.pdf"
+          },
+          {
+            "title": "食品安全委員会 清涼飲料水評価書・六価クロム",
+            "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?fileId=201&retrievalId=kya20030703091"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された抜粋では、作業環境測定基準の別表や厚労省報告書p.46に「原子吸光分析方法（フレームレス法／還元気化法）」という手法名が出るだけである。中空陰極ランプ、重水素ランプによる補正、基底状態の分布、ジュール熱による原子化、吸光度と原子番号の関係は記述されていないため、sourcesは空にした。JIS K 0121などの公的解説を探す検索が必要。",
-        "選択肢3の「ほとんどが基底状態」は、ボルツマン分布による一般的な理解に基づいて判断した。温度と励起エネルギーの具体的な数値は、一次資料で確認できていない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "光源部には中空陰極ランプ",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "基底状態の原子が特有波長の光を吸収",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "3種以上の濃度の異なる標準液を調製",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/chugoku/kaihou-kiki/data/tottori/kikai/B-02-088.html",
+          "excerpt": "連続スペクトル光源補正（重水素ランプ）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/hourei/05/000178.html",
+          "excerpt": "重水素ランプなどによるバックグラウンド補正",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/hourei/05/000178.html",
+          "excerpt": "ベンゼン、アセトンなどは２５３．７nmの光を吸収して正の誤差",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/hourei/05/000178.html",
+          "excerpt": "水銀中空陰極ランプと重水素ランプを用いて指示値の差",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?fileId=201&retrievalId=kya20030703091",
+          "excerpt": "発生したジュール",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?fileId=201&retrievalId=kya20030703091",
+          "excerpt": "グラファイト炉原子化法",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
     }
   }
 }
