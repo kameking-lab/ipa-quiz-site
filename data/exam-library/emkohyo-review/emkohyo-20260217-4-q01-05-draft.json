@@ -340,7 +340,7 @@
       "overlay": {
         "sourceHash": "414763a1487446892048fa2473760f95bf5604d45ec004dcef813eb129856978",
         "correctChoice": 3,
-    "summary": "通気量は6 Lで、捕集効率75％を割り戻すと約11.18 µg/L。公表正答と選択肢に合わせて2桁の11 µg/Lを選ぶ",
+        "summary": "通気量は6 Lで、捕集効率75％を割り戻すと約11.18 µg/L。公表正答と選択肢に合わせて2桁の11 µg/Lを選ぶ",
         "choices": [
           {
             "number": 1,
@@ -355,17 +355,17 @@
           {
             "number": 3,
             "verdict": "correct",
-        "reason": "通気量は100 mL/min×60.0 min＝6000 mL＝6 L。75％捕集された量が50.30 µgなので、通過した全量は50.30÷0.75 µg。濃度は50.30÷0.75÷6＝約11.18 µg/L。設問の100の末尾0は有効桁を明示しないが、公表正答と選択肢は75％の2桁に丸めた11を指定している。"
+            "reason": "この肢が正しいです。通気量は100 mL/分×60.0分＝6000 mL＝6 Lです。捕集効率75％だから実際に通過した物質量は50.30 µg÷0.75となり、濃度は約11.177 µg/Lです。乗除算の結果は有効数字の最少桁に合わせるため、75％の2桁で11 µg/Lを選びます。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-        "reason": "11.2は50.30÷0.75÷6を3桁に丸めた値で、捕集効率を割り戻す向きは正しい。ただし本問の公表正答は11であり、選択肢では75％の2桁に合わせて最終値を示す。100 mL/minの末尾0だけで流量の有効桁を断定せず、設問の採点意図も踏まえて区別する。"
+            "reason": "11.2は捕集効率を割り戻す計算の途中値約11.177 µg/Lを3桁に丸めたものです。補正の向きは合っていますが、問題の捕集効率75％は2桁です。乗除算の有効数字を最少の2桁にそろえると11となるため、この肢は最終表示の桁数が多すぎます。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-        "reason": "11.18は50.30÷0.75÷6＝11.177…の途中計算を4桁で示した値で、捕集効率補正の向きは正しい。しかし公表正答は11であり、この選択肢群では75％の2桁に合わせて最終値を選ぶ。途中計算の桁をそのまま測定濃度の有効桁として残さない。"
+            "reason": "11.18は捕集効率で割り戻した途中値約11.177 µg/Lを4桁に丸めたものです。正しい計算方向でも、測定値の有効数字を超えて桁を残すことはできません。75％という2桁の効率を用いる乗除算なので、最終濃度は2桁の11 µg/Lで示します。"
           }
         ],
         "sources": [
@@ -387,25 +387,30 @@
         {
           "url": "https://www.mhlw.go.jp/content/000616847.pdf",
           "excerpt": "濃度（μg/L）＝[5（μg）]／[0.040（L/min）・15（min）]",
-        "choiceNumbers": [
-          3
-        ]
-      },
-      {
-        "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_thema/pdf/shiryou1-2.pdf",
-        "excerpt": "（乗・除算）有効数字の桁数を四捨五入によって最も少ないものにそろえてから、乗・除算を行い、その結果も四捨五入によって同じ桁数とする。",
-        "choiceNumbers": [3, 4, 5]
-      },
-      {
-        "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
-        "excerpt": "必要に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。",
-        "choiceNumbers": [1, 2, 3]
-      }
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_thema/pdf/shiryou1-2.pdf",
+          "excerpt": "（乗・除算）有効数字の桁数を四捨五入によって最も少ないものにそろえてから、乗・除算を行い、その結果も四捨五入によって同じ桁数とする。",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "必要に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。",
+          "choiceNumbers": [
+            1,
+            2,
+            3
+          ]
+        }
       ],
-      "reviewIssues": [
-        "採用した抜粋（報告書PDF p.43、hash c449a05c…）が裏付けるのは「濃度＝捕集量÷(流量×時間)」という基本式だけである。捕集効率で割る補正と、有効数字の丸め規則を直接述べた政府資料は抜粋になく、検索が必要。",
-        "全選択肢を独立に検算した結果は、6.00 L、50.30÷0.75÷6.00＝11.177…、50.30×0.75÷6.00＝6.2875。正答を11.2・11.18ではなく11とする根拠は、効率75％が有効数字2桁であることに依拠している。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-4-q3": {
       "overlay": {
@@ -416,45 +421,96 @@
           {
             "number": 1,
             "verdict": "incorrect",
-        "reason": "文は正しい。厚生労働省のフェノールSDSは水溶液のpHを6.0と記しており、7より小さい値は酸性側である。この数値は濃度や温度が明示されないため、酸の強さを定量的に一般化せず、設問の『酸性を示す』という判断に限る。"
+            "reason": "文は正しい。厚生労働省のフェノールSDSは水溶液のpHを6.0と記しており、7より小さい値は酸性側である。この数値は濃度や温度が明示されないため、酸の強さを定量的に一般化せず、設問の『酸性を示す』という判断に限る。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-        "reason": "文は正しい。厚生労働省のアニリンSDSはpHを約8.8と記しており、7より大きいので水溶液はアルカリ性側である。SDSには測定濃度と温度が明示されないため、具体的なpHをすべての濃度に当てはめず、液性の方向を判断する。"
+            "reason": "文は正しい。厚生労働省のアニリンSDSはpHを約8.8と記しており、7より大きいので水溶液はアルカリ性側である。SDSには測定濃度と温度が明示されないため、具体的なpHをすべての濃度に当てはめず、液性の方向を判断する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-        "reason": "文は正しい。プロピオン酸はカルボキシ基をもつ酸で、厚生労働省のSDSは酸としての性質と水への高い溶解度を示している。水中では一部がプロピオン酸イオンと水素イオンに電離するので、水溶液は酸性側となる。完全電離する強酸とは扱わない。"
+            "reason": "文は正しい。プロピオン酸はカルボキシ基をもつ酸で、厚生労働省のSDSは酸としての性質と水への高い溶解度を示している。水中では一部がプロピオン酸イオンと水素イオンに電離するので、水溶液は酸性側となる。完全電離する強酸とは扱わない。"
           },
           {
             "number": 4,
             "verdict": "correct",
-        "reason": "誤りなので正答。厚生労働省のトルエンSDSは25℃で水への溶解度を526 mg/Lと示している。これは同じSDSで有機溶剤には完全混和すると記した性質と対照的で、水には限られた量しか溶けないため『よく溶ける』とする記述は不適切である。"
+            "reason": "誤りなので正答。厚生労働省のトルエンSDSは25℃で水への溶解度を526 mg/Lと示している。これは同じSDSで有機溶剤には完全混和すると記した性質と対照的で、水には限られた量しか溶けないため『よく溶ける』とする記述は不適切である。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-        "reason": "文は正しい。厚生労働省のアセトンSDSは溶解度の欄で『水に易溶』と明記している。設問の『水によく溶ける』と直接整合し、トルエンSDSの526 mg/Lという限定的な溶解度と区別できる。分子構造による機構を資料以上に断定しない。"
+            "reason": "文は正しい。厚生労働省のアセトンSDSは溶解度の欄で『水に易溶』と明記している。設問の『水によく溶ける』と直接整合し、トルエンSDSの526 mg/Lという限定的な溶解度と区別できる。分子構造による機構を資料以上に断定しない。"
           }
         ],
-    "sources": [
-      {"title": "厚生労働省 フェノール安全データシート", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0061.html"},
-      {"title": "厚生労働省 アニリン安全データシート", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html"},
-      {"title": "厚生労働省 プロピオン酸安全データシート", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html"},
-      {"title": "厚生労働省 トルエン安全データシート", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"},
-      {"title": "厚生労働省 アセトン安全データシート", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"}
-    ]
-  },
-  "sourceEvidence": [
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0061.html", "excerpt": "pH： 6.0(水溶液)", "choiceNumbers": [1]},
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html", "excerpt": "pH ca. 8.8", "choiceNumbers": [2]},
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html", "excerpt": "中程度の強さの酸である。塩基、強酸化剤、アミンと反応し", "choiceNumbers": [3]},
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html", "excerpt": "溶解度 水 : 1000g/L", "choiceNumbers": [3]},
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html", "excerpt": "溶解度 水：526mg/L（25℃, EXP）", "choiceNumbers": [4]},
-    {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html", "excerpt": "溶解度 水に易溶", "choiceNumbers": [5]}
-  ],
+        "sources": [
+          {
+            "title": "厚生労働省 フェノール安全データシート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0061.html"
+          },
+          {
+            "title": "厚生労働省 アニリン安全データシート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html"
+          },
+          {
+            "title": "厚生労働省 プロピオン酸安全データシート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html"
+          },
+          {
+            "title": "厚生労働省 トルエン安全データシート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+          },
+          {
+            "title": "厚生労働省 アセトン安全データシート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0061.html",
+          "excerpt": "pH： 6.0(水溶液)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html",
+          "excerpt": "pH ca. 8.8",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html",
+          "excerpt": "中程度の強さの酸である。塩基、強酸化剤、アミンと反応し",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-09-4.html",
+          "excerpt": "溶解度 水 : 1000g/L",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "溶解度 水：526mg/L（25℃, EXP）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "溶解度 水に易溶",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": []
     },
     "emkohyo-20260217-4-q4": {
@@ -471,7 +527,7 @@
           {
             "number": 2,
             "verdict": "correct",
-        "reason": "固体の炭素は気体のmol数に数えず、反応式C＋O₂→CO₂でO₂ 1 molからCO₂ 1 molが生じるので気体のmol数は変わらない。炭素の体積を無視する条件により気体の容積は5.0 Lのまま、温度も25℃に戻る。PV＝nRTでn、V、Tが同じだから圧力は1.0気圧となる。"
+            "reason": "固体の炭素は気体のmol数に数えず、反応式C＋O₂→CO₂でO₂ 1 molからCO₂ 1 molが生じるので気体のmol数は変わらない。炭素の体積を無視する条件により気体の容積は5.0 Lのまま、温度も25℃に戻る。PV＝nRTでn、V、Tが同じだから圧力は1.0気圧となる。"
           },
           {
             "number": 3,
@@ -489,15 +545,41 @@
             "reason": "2.5気圧にするには、気体のmol数が2.5倍になる必要があるが、反応式にその比は現れない。燃焼直後の高温では一時的に圧力が上がるが、問われているのは25℃に戻した後なので、PV＝nRTより1.0気圧に戻る。"
           }
         ],
-    "sources": [
-      {"title": "日本原子力研究開発機構 Science Station どうして化学反応が起きるのか？第2回", "url": "https://fukushima.jaea.go.jp/pamphlet/science/science-station_c002.html"},
-      {"title": "環境省 令和4年度脱炭素化・先導的廃棄物処理システム実証事業委託業務成果報告書（PDF53頁）", "url": "https://www.env.go.jp/content/000126413.pdf"}
-    ]
-  },
-  "sourceEvidence": [
-    {"url": "https://fukushima.jaea.go.jp/pamphlet/science/science-station_c002.html", "excerpt": "炭素原子が酸素原子2つとそれぞれ二重結合することで", "choiceNumbers": [1,2,3,4,5]},
-    {"url": "https://www.env.go.jp/content/000126413.pdf", "excerpt": "理想気体の状態方程式は PV=nRT である", "choiceNumbers": [1,2,3,4,5]}
-  ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 Science Station どうして化学反応が起きるのか？第2回",
+            "url": "https://fukushima.jaea.go.jp/pamphlet/science/science-station_c002.html"
+          },
+          {
+            "title": "環境省 令和4年度脱炭素化・先導的廃棄物処理システム実証事業委託業務成果報告書（PDF53頁）",
+            "url": "https://www.env.go.jp/content/000126413.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://fukushima.jaea.go.jp/pamphlet/science/science-station_c002.html",
+          "excerpt": "炭素原子が酸素原子2つとそれぞれ二重結合することで",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/000126413.pdf",
+          "excerpt": "理想気体の状態方程式は PV=nRT である",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
       "reviewIssues": []
     },
     "emkohyo-20260217-4-q5": {
@@ -514,7 +596,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-        "reason": "水300 mLの質量は密度1.00 g/mLより300 gである。元の硫酸水溶液130 gと合わせると全体は430 g。硫酸52.0 gの質量割合は52.0÷430×100≒12.1％であり、目標の10.0％より濃い。"
+            "reason": "水300 mLの質量は密度1.00 g/mLより300 gである。元の硫酸水溶液130 gと合わせると全体は430 g。硫酸52.0 gの質量割合は52.0÷430×100≒12.1％であり、目標の10.0％より濃い。"
           },
           {
             "number": 3,
@@ -524,22 +606,35 @@
           {
             "number": 4,
             "verdict": "incorrect",
-        "reason": "水420 mLは密度1.00 g/mLなので420 gである。元の硫酸水溶液130 gを足すと全体は550 gになり、硫酸52.0 gの割合は52.0÷550×100≒9.45％。目標の10.0％を下回るため加水量が多すぎる。"
+            "reason": "水420 mLは密度1.00 g/mLなので420 gである。元の硫酸水溶液130 gを足すと全体は550 gになり、硫酸52.0 gの割合は52.0÷550×100≒9.45％。目標の10.0％を下回るため加水量が多すぎる。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-        "reason": "水442 mLを加えると密度1.00 g/mLから442 g増え、元の硫酸水溶液130 gとの合計は572 g。硫酸は52.0 gのままなので質量割合は52.0÷572×100≒9.09％となり、目標の10.0％より薄い。"
+            "reason": "水442 mLを加えると密度1.00 g/mLから442 g増え、元の硫酸水溶液130 gとの合計は572 g。硫酸は52.0 gのままなので質量割合は52.0÷572×100≒9.09％となり、目標の10.0％より薄い。"
           }
         ],
-    "sources": [
-      {"title": "科学技術振興機構 質量パーセント濃度の定義", "url": "https://www.jst.go.jp/pr/announce/20150804-2/index.html"}
-    ]
-  },
-  "sourceEvidence": [
-    {"url": "https://www.jst.go.jp/pr/announce/20150804-2/index.html", "excerpt": "溶液全体の質量と溶質の質量の比をパーセントで示した単位", "choiceNumbers": [1,2,3,4,5]}
-  ],
-  "reviewIssues": []
+        "sources": [
+          {
+            "title": "科学技術振興機構 質量パーセント濃度の定義",
+            "url": "https://www.jst.go.jp/pr/announce/20150804-2/index.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.jst.go.jp/pr/announce/20150804-2/index.html",
+          "excerpt": "溶液全体の質量と溶質の質量の比をパーセントで示した単位",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     }
   }
 }
