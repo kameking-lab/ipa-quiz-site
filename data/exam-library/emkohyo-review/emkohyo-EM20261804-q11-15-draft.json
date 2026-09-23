@@ -439,13 +439,38 @@
             "reason": "透過率30％は吸光度≒0.523で、元の約1.7倍の濃度に当たります。濃度を1/2にすると光はより透過しやすくなるので、50％より低い30％は方向からして誤りです。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 医薬部外品原料規格 紫外可視吸光度測定法",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb7934&dataType=1&pageNo=1"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された一次資料の抜粋には、ランベルト・ベールの法則（A＝−log T＝εcl）や、透過率と吸光度の換算を直接述べた記述がない。厚労省報告書p.41の「吸光度0.03」は定量下限の定義であり、この設問の判断根拠にはならない。政府の典拠を付けるには検索が必要。",
-        "5つの選択肢すべてについて、透過率から吸光度を独立に計算し、元の値（0.301）に対する濃度比を検算した。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb7934&dataType=1&pageNo=1",
+          "excerpt": "T＝I／I 0 ×100＝100t　A＝log(I 0 ／I)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb7934&dataType=1&pageNo=1",
+          "excerpt": "吸光度(A)は，溶液の濃度(c)及び層長(l)に比例する",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q15": {
       "overlay": {
