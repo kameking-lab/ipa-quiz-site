@@ -20468,5 +20468,71 @@
         "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
       }
     ]
+  },
+  "emkohyo-20260217-2-q8": {
+    "sourceHash": "0c861ced376330ac881fff3234bafab14cb7becd0cc3564e6a40ad501dc8d8f3",
+    "correctChoice": 5,
+    "summary": "施行令第21条の作業環境測定対象に振動工具は挙がらず、3軸合成値の6か月ごとの定期測定義務はないため肢5が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生規則第587条第8号は溶融ガラスからガラス製品を成型する屋内作業場を挙げる。同第607条は半月以内ごとに気温・湿度を測定させ、ふく射熱の測定も第1号から第8号の作業場に限って求めるため、本肢の3項目は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "安衛則第587条第12号は、労働者が内部で作業する冷凍庫を対象とする。同第607条は半月以内ごとに気温・湿度を測定させるが、ふく射熱は第1号から第8号の作業場に限るため、冷凍庫について述べた本肢は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "安衛則第589条第2号は、気温が28℃を超え、又は超えるおそれのある坑内作業場を掲げる。同第612条第1項は、その坑内作業場の気温を半月以内ごとに1回測定するよう定めるため、本肢の測定項目と周期は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "事務所衛生基準規則第7条第1項は、施行令第21条第5号の室について2か月以内ごとに1回、一酸化炭素・二酸化炭素の含有率、室温・外気温、相対湿度を測定させる。ただし書の頻度緩和は温度・湿度だけで、CO・CO2には及ばず、本肢は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "施行令第21条の作業環境測定対象10類型に振動工具作業は列挙されていない。厚労省通達は製造・輸入事業者等による3軸合成値の測定・表示を行政指導として要請するもので、労働者を使用する事業者への6か月ごとの定期測定義務を定めない。参考に、6か月周期は安衛則第590条第1項の騒音測定に定めがある。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 労働安全衛生規則 第587・589条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生規則 第607・612条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生法施行令 第21条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 事務所衛生基準規則 第7条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74089000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 振動工具3軸合成値の測定・表示等について（通達）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1"
+      },
+      {
+        "title": "e-Gov 労働安全衛生法施行令（2026年2月17日時点）第21条",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
+      },
+      {
+        "title": "e-Gov 労働安全衛生規則（2026年2月17日時点）第590条",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"
+      },
+      {
+        "title": "e-Gov 事務所衛生基準規則（2026年2月17日時点）第7条",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000043?asof=2026-02-17"
+      }
+    ]
   }
 }
