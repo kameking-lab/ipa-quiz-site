@@ -25,6 +25,11 @@ describe("FP3 2024–2025 complete official sets", () => {
       expect(question.sourcePdfUrl).toMatch(/^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\/g3_/);
       expect((question.officialReferenceUrls ?? []).every((url) => /^(?:https:\/\/laws\.e-gov\.go\.jp\/law\/|https:\/\/[^/]+\.(?:mhlw|fsa|nta|mlit)\.go\.jp\/)/.test(url))).toBe(true);
     }
+    expect(FP3_QUESTIONS.filter((question) => (question.officialReferenceUrls ?? []).length > 0).length).toBeGreaterThanOrEqual(70);
+    expect(FP3_QUESTIONS.find((question) => question.year === 2024 && question.qNumber === 2)?.officialReferenceUrls)
+      .toEqual([expect.stringContaining("349AC0000000116")]);
+    expect(FP3_QUESTIONS.find((question) => question.year === 2024 && question.qNumber === 3)?.officialReferenceUrls)
+      .toEqual([expect.stringContaining("334AC0000000141")]);
   });
 
   it("contains both complete practical sets and readable explanations for every choice", () => {
