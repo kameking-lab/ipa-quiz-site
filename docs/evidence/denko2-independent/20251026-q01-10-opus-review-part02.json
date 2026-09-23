@@ -1,0 +1,79 @@
+{
+  "inputHashes": {
+    "draftSha256": "0ebf13826e5fa4a33340930bd9863702cc29b656de5c96804080312bc3f3e36b",
+    "rowSha256": {
+      "6": "e1359457c4ce80328c1540069c3ec22abb0904bc44593c61a4f9cacd549cbe38",
+      "7": "c87a2bf8babac2ad07a88174bb7bd15c9e5ed376178c224cbc59dcd3d80a55ee",
+      "8": "593f39ee25b0e407dabc52dbf4fd83b7ee70de6fcd515c26b9c4aafe933e3765",
+      "9": "6b9cd15f2e4f58eb9254031a14238a3006716f74dde0d457cb3c3b5b435ce98a",
+      "10": "91063b0cc3171d7f03107de3c994e52fb8a3cf51c3f6a52149e77275907aae61"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-second/q6-diagram.png": "799dc9ff3e909e23c60b98b88827778947ec5f7cc242559d39e7bb446d1b51f9",
+      "public/images/denko2/2025-second/q7-diagram.png": "dc4e15ce0cafa395dbe15babd59028635481d676ab640abda6eef7735e47ac5f",
+      "public/images/denko2/2025-second/q9-diagram.png": "cb735a64628cde83a0bb4d738956271fbd02b89e676d6b499c1a70a1cf325abb",
+      "public/images/denko2/2025-second/q10-i.png": "5a4048fed7b0297b5326fb2e67f693c5f0835b0830bb71e654fbdc35c44f2b3f",
+      "public/images/denko2/2025-second/q10-ro.png": "849daaf50f069794dd3abc7739c3feb27bf2b7666cac7b36b7d7165042aa36f1",
+      "public/images/denko2/2025-second/q10-ha.png": "028efd0c59bc69606f9ef0e9ed7589dc9a440279ed9efa0c71ac2fc94b6dffc5",
+      "public/images/denko2/2025-second/q10-ni.png": "198de43a38c845729a9157d988b2ebe3b3b2d22551ada97fd568e63218edcc1a"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "The source image does not show these rule citations, so they need checking against the current regulation text: the explanation cites 電気設備の技術基準の解釈 第146条第2項 (146-1表: 35A for 2.0mm soft copper solid wire; 146-4表: factor 0.63 for 4 wires). The choice reasons for イ, ロ and ニ also use 27A for 1.6mm and a factor of 0.70 for 3 wires or fewer.",
+        "22.05A→22A and 24.5A→24A depend on the rounding rule in 解釈 (decimals rounded down up to 0.7, up from 0.8). The JSON does not state this rule. Check it before relying on the ニ explanation."
+      ]
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "The image cannot confirm these citations: 解釈 第149条第1項第1号ロ (35% or more when the breaker is more than 3m and up to 8m away) and 同号イ (55% or more removes the distance limit), cited in the ニ explanation. Check the clause and item numbers against the current regulation text.",
+        "The ニ explanation says that with 55% or more the breaker can be placed more than 3m from the branch point. Check this wording against the rule text: the actual requirement is 55% or more when the distance exceeds 8m."
+      ]
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "The question sets the distance from the branch point to the breaker at 3m. The explanation never says this condition satisfies the breaker-placement requirement and so has no effect on the answer. It is not wrong, but it is missing."
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "The image cannot confirm these rule values: 解釈 第149条第2項第1号ロ・ニ and 149-1表・149-3表. The explanation relies on them: 20A breaker → outlets 20A or less; 30A → wire 2.6mm or more, outlets 20–30A; 40A → 8mm² or more, outlets 30–40A. Check them against the current regulation text."
+      ]
+    }
+  ]
+}
