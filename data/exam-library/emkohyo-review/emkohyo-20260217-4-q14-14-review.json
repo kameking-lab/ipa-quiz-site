@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1552,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 18300,
+      "webSearchRequests": 0,
+      "costUSD": 0.2041544,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1473,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q14"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q14": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q14": {
+      "/exam-library/emkohyo-20260217-4/q14-p8-1.webp": "3ccf581b12eb49557b5aa3875c34dae659a105237623e90a6b2c644198d67a6a"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p109.png": "b7a837d1579876d4ace0ed0f2820ea581b9f410310a4fa6fe161d05307225dde",
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p111.png": "ed701f0c354da0ea65a289ff76d27b4f49979aecdce1ce0390f8f6a73da0e3d2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-4-q14": "55d8273224c9d3f57c9e0d87add9bc4c707808a93faaa3e8b37aef55e0599767"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q14-14.json",
+  "sourcePackSha256": "f95a28ece097b2ee5a1b84648added893ceaf650fbcb2ceb0ac94413d5f358a5",
+  "assessment": {
+    "emkohyo-20260217-4-q14": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

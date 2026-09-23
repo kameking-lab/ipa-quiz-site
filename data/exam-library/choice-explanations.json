@@ -20848,5 +20848,85 @@
         "url": "https://www.mhlw.go.jp/content/11300000/001566348.pdf"
       }
     ]
+  },
+  "emkohyo-20260217-4-q14": {
+    "sourceHash": "d87005a2d4283072718fb5b8e18a2807a046ecbe9e693bfc544a68b3b45c85b0",
+    "correctChoice": 2,
+    "summary": "A＝εclから濃度1.2×10⁻⁵ mol/Lを求め、100 mLとモル質量50を掛けて60 µgとなる",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "30 µgは6.0×10⁻⁷ mol、100 mL中では6.0×10⁻⁶ mol/Lに相当します。この濃度ではA＝2.0×10⁴×6.0×10⁻⁶×2.0＝0.240で、測定値0.480の半分にしかならないため誤りです。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "c＝A/(εl)＝0.480/(2.0×10⁴×2.0)＝1.2×10⁻⁵ mol/Lです。100 mL（0.100 L）では1.2×10⁻⁶ mol、これに50 g/molを掛けると6.0×10⁻⁵ g＝60 µgとなり、正答です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "90 µgは1.8×10⁻⁶ mol、100 mL中では1.8×10⁻⁵ mol/Lに相当します。光路長2.0 cmで計算するとA＝0.720となり、測定された吸光度0.480と一致しないため誤りです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "120 µgは100 mL中の濃度2.4×10⁻⁵ mol/Lに相当し、光路長2.0 cmならA＝0.960となります。誤って1.0 cmとしてc＝0.480÷(2.0×10⁴×1.0)を計算すると、この濃度と120 µgが出ます。指定された2.0 cmを落とした値なので正答ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "150 µgは3.0×10⁻⁶ mol、100 mL中では3.0×10⁻⁵ mol/Lに相当します。A＝2.0×10⁴×3.0×10⁻⁵×2.0＝1.20となり、測定値0.480の2.5倍になるため誤りです。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産総研ほか『セルロースナノファイバーの有害性試験手順書』手順資料§3.2",
+        "url": "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf"
+      }
+    ]
+  },
+  "emkohyo-20260217-4-q13": {
+    "sourceHash": "6f9336d73fd6bae5c1aa52b8be0c1836b818a1da69522b8594ff7af834ea9d0b",
+    "correctChoice": 2,
+    "summary": "透過率は光路長に反比例せず指数関数的に減少し、光路長に比例するのは吸光度である",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "文は正しい内容です。透過率T＝I/I₀とすると、吸光度はA＝log₁₀(1/T)＝−log₁₀Tと定義されます。つまり透過率の逆数の常用対数が吸光度であり、記述は定義どおりです。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "これが誤りの記述です。透過率をT＝I/I₀と置くと、産総研資料の式(1)はA＝−log₁₀Tと書けます。ランバート－ベールの法則が成り立つ場合、式(2)のA＝εClと合わせてT＝10^(−εCl)です。透過率は光路長に反比例せず指数関数的に減り、T＝0.1で光路長を2倍にすると0.01になります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "文は正しい内容です。ランバート－ベールの法則が成り立つ場合、産総研資料の式(2)はA＝εClです。吸光係数εと光路長lが一定なら、吸光度Aは測定対象物質の濃度Cに比例します。この比例関係を用いることで濃度を吸光度から求められます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "文は正しい内容です。濃度の異なる標準溶液を段階的に調製して吸光度を測り、濃度と吸光度の関係を示す検量線を作ります。試料の吸光度をこの検量線に当てはめて濃度を求めます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "文は正しい内容です。環境省の『底質調査方法』の精度管理でも、標準溶液の濃度に対する吸光度が直線性を示す範囲で検量線を使用するとされています。したがって定量は検量線の直線範囲内で行います。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産総研ほか『セルロースナノファイバーの有害性試験手順書』手順資料§3.2",
+        "url": "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf"
+      },
+      {
+        "title": "環境省『底質調査方法』Ⅱ 2.精度管理",
+        "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+      }
+    ]
   }
 }

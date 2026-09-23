@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3428,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 20316,
+      "webSearchRequests": 0,
+      "costUSD": 0.2598008,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2290,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q13": {
+      "/exam-library/emkohyo-20260217-4/q13-p8-0.webp": "5afc699c08755424a4bc896f98c5c0198506b799a50a06953ce1b2c8a833e316"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p109.png": "b7a837d1579876d4ace0ed0f2820ea581b9f410310a4fa6fe161d05307225dde",
+    "docs/evidence/emkohyo-choice-sources/aist-absorbance-p111.png": "ed701f0c354da0ea65a289ff76d27b4f49979aecdce1ce0390f8f6a73da0e3d2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-4-q13": "3782a44cb9222aa9bd96fabdf95b9dadfd84b5988a20bdc125327a5782eeb231"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q13-13.json",
+  "sourcePackSha256": "a230dec3cea726439fe5471c0b0f5e0d6fab8b53878ed37d2599a9b2e28bd21e",
+  "assessment": {
+    "emkohyo-20260217-4-q13": {
+      "status": "FIX",
+      "textIssues": [
+        "肢5の解説だけ文体が違う。肢1〜4は「文は正しい内容です。」で始まる です・ます調だが、肢5は「正しい記述。」で始まる常体。肢5を他の肢と同じ書き出しと文体に揃える。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の解説の「必要なら試料を調整して範囲内で測定する」は曖昧。何をすれば範囲内に入るのかが読み取れない。「試料を希釈（または濃縮）して、吸光度が検量線の直線範囲に入るようにして測定する」のように具体的に書く。",
+        "肢5の解説は、環境省資料が「直線性を示す範囲で検量線を使用すると定めている」と一般的な規定のように書いている。しかし引用箇所は『底質調査方法』の精度管理の一部で、ヒ素・ほう素の吸光光度法についての記述である。「底質調査方法の精度管理でも、…範囲で使用するとされている」のように、例として示す書き方に改める。",
+        "肢3の解説は ε を「モル吸光係数」としているが、根拠の産総研資料の式(2)では ε は「吸光係数」、C は CNF の濃度である。モル吸光係数と書くのは c がモル濃度のときに限られる。「吸光係数ε」と書くか、c をモル濃度と明示する。"
+      ],
+      "sourceIssues": [
+        "sources[].title の「産総研 吸光光度とランベルト・ベールの式」は文書の実際の題名ではなく、内容を説明した見出しになっている。実物は CNF（セルロースナノファイバー）の有害性評価手順書の手順資料§3.2「動物組織中のCNF分析」（PDF p109・p111、印刷ページ101・103）である。実際の題名と該当箇所を記す。",
+        "sources[].title の「環境省 底質調査方法の精度管理と検量線」も内容の説明であり、実際の題名は『底質調査方法』である。該当箇所（Ⅱ 2. 精度管理、PDF p31、印刷ページ-23-）を記す。",
+        "肢5の解説の「範囲外の吸光度を直線で外挿しない／試料を希釈等して範囲内で測定する」を直接支える記述は、添付資料の引用箇所にない。環境省資料が支えるのは「直線性を示す範囲で使用する」という部分だけである。この部分を削るか、直接の根拠を追加する。",
+        "肢2の理由（T＝10^(−εcl)、透過率は光路長に対して指数関数的に減る）を資料は直接述べていない。産総研資料の式(1) A＝−log(I/I₀)（常用対数）と式(2) A＝εCl から導いたものであり、導出としては正しく、結論も支えられる。そのため修正は不要。ただし根拠を示す際は「式(1)(2)からの導出」と明記するとよい。"
+      ],
+      "needsExternalCheck": [
+        "2つの資料の実際の題名を原本で確認し、sources[].title を正確な題名に差し替える。対象は産総研 CNF_Hazard_Assessment_Procedure_20200409.pdf の表紙と、環境省 teishitsu-chousa/00_full.pdf の表紙。"
+      ]
+    }
+  }
+}
