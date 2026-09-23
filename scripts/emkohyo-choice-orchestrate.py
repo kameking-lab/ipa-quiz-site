@@ -4,6 +4,7 @@ This produces candidates only. It never publishes overlays or changes the
 coverage contract. Missing government support remains in the review queue.
 """
 
+import argparse
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import json
 from pathlib import Path
@@ -26,12 +27,22 @@ def work(job: tuple[str, int, int]) -> tuple[tuple[str, int, int], int, str]:
 
 
 def main() -> None:
-    workers = int(sys.argv[1]) if len(sys.argv) > 1 else 2
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("workers", type=int, nargs="?", default=2)
+    parser.add_argument("--year", action="append", choices=("2025", "2026"),
+                        help="Resume one exam year first; may be passed twice")
+    parser.add_argument("--limit-batches", type=int,
+                        help="Bound model calls in this run; remaining batches stay resumable")
+    args = parser.parse_args()
+    workers = args.workers
     if not 1 <= workers <= 3:
         raise ValueError("Workers must be 1–3")
+    if args.limit_batches is not None and args.limit_batches < 1:
+        raise ValueError("--limit-batches must be positive")
     catalog = json.loads((DATA / "official-catalog.json").read_text(encoding="utf-8"))
+    years = set(args.year or ("2025", "2026"))
     papers = [item for item in catalog if item["group"] == "emkohyo"
-              and item["date"][:4] in {"2025", "2026"}]
+              and item["date"][:4] in years]
     jobs = []
     for paper in papers:
         rows = json.loads((DATA / "papers" / f"{paper['id']}.json").read_text(encoding="utf-8"))
@@ -42,7 +53,11 @@ def main() -> None:
             out = REVIEW / f"{paper['id']}-q{first:02}-{first+4:02}-draft.json"
             if not out.exists():
                 jobs.append((paper["id"], first, first + 4))
-    print(f"EM paper={len(papers)} expected={len(papers)*20} pendingDraftBatches={len(jobs)} workers={workers}", flush=True)
+    pending = len(jobs)
+    if args.limit_batches is not None:
+        jobs = jobs[:args.limit_batches]
+    print(f"EM paper={len(papers)} expected={len(papers)*20} pendingDraftBatches={pending} "
+          f"runningBatches={len(jobs)} workers={workers}", flush=True)
     with ThreadPoolExecutor(max_workers=workers) as pool:
         for future in as_completed([pool.submit(work, job) for job in jobs]):
             job, code, output = future.result()
