@@ -142,11 +142,28 @@ def call_claude(prompt, prefix, model):
     return extract_json(content)
 
 
+def source_hints(batch):
+    subjects = {question["subject"] for question in batch}
+    if len(subjects) != 1:
+        raise ValueError("A batch must stay within one qualification subject")
+    subject = next(iter(subjects))
+    path = DATA / "source-packs" / f"lckohyo-subject-{sha256(subject.encode()).hexdigest()[:12]}.json"
+    if not path.exists():
+        return []
+    pack = read(path)
+    if pack["subject"] != subject:
+        raise ValueError(f"Source pack subject mismatch: {path}")
+    return [{"title": item["title"], "url": item["url"], "locators": item["locators"],
+             "retrievalSha256": item["retrieval"]["sha256"]} for item in pack["sources"][:24]]
+
+
 def batch_prompt(batch):
+    hints = source_hints(batch)
     return f"""あなたは日本の免許試験教材の執筆者です。次の{len(batch)}問についてJSONだけを返してください。既存のplainExplanationは草稿であり、正誤の正本はquestion.textとcorrectChoiceおよび公式PDFの○印です。
 各問は {{"question-id": {{"correctChoice": 数値, "summary": 20字以上, "choices": [{{"number":1,"verdict":"correctまたはincorrect","reason":"各肢固有の40字以上の理由"}}を1～5], "sources":[{{"title":"政府資料の正確なタイトル","url":"https://...go.jp/..."}}]}} }} の形。sourceHashは付けず、採用時に原文から機械計算します。
 verdictは『その肢を解答として選ぶと正解か』であり、『誤っているもの』を選ぶ設問の正答肢もcorrectです。残り4肢それぞれについて、なぜ選ばないかをその肢の語句・数値・条件に即して説明します。丸写し、理由の使い回し、未確認条文、架空URL、一般論は不可。
 根拠URLはe-Gov、厚生労働省等の日本政府のHTTPS *.go.jpに限定。協会PDFは設問と正答の確認用でありsourcesに入れません。法令は出題時点と現行を混同せず、条・項・号を一次資料で確認してください。図表参照の問題では添付されたimagesや公式PDF原図を確認してください。全件のIDを返し、不確かな事項は最後に別文でなく該当reasonに慎重な確定事実だけを書いてください。確認できない問があれば空欄で量産せずJSONの外で理由を報告してください。ファイル編集・投稿・コミットは禁止。
+同一資格の既検証source-pack候補（取得ハッシュは同一資料を探すためのもので、この問題への適用を保証しない）。該当条文・頁・出題時点が一致するものだけを使い、足りなければ政府一次資料を新規探索すること。JIS固有の数値を法令だけで代用しない: {json.dumps(hints, ensure_ascii=False)}
 入力JSON: {json.dumps(batch, ensure_ascii=False)}
 """
 
@@ -290,11 +307,26 @@ def main():
     if reused:
         write(OUTPUT, overlays)
     batches = []
-    end = min(len(missing), args.skip_first + args.batch_size * args.max_batches)
-    for start in range(args.skip_first, end, args.batch_size):
-        batch = missing[start:start + args.batch_size]
-        token = sha256("|".join(q["id"] for q in batch).encode()).hexdigest()[:12]
-        batches.append((batch, token))
+    pending = missing[args.skip_first:]
+    paper_groups = {}
+    for question in pending:
+        paper_groups.setdefault(question["id"].rsplit("-q", 1)[0], []).append(question)
+    for paper_questions in paper_groups.values():
+        for start in range(0, len(paper_questions), args.batch_size):
+            if len(batches) >= args.max_batches:
+                break
+            batch = paper_questions[start:start + args.batch_size]
+            if len(batch) < 5:
+                # Merge short tails with the preceding same-paper batch, if it fits.
+                if batches and batches[-1][0][0]["id"].rsplit("-q", 1)[0] == batch[0]["id"].rsplit("-q", 1)[0] and len(batches[-1][0]) + len(batch) <= 8:
+                    previous, _ = batches.pop()
+                    batch = previous + batch
+                else:
+                    print(f"SMALL TAIL {batch[0]['id']}: {len(batch)} questions remain in this paper", flush=True)
+            token = sha256("|".join(q["id"] for q in batch).encode()).hexdigest()[:12]
+            batches.append((batch, token))
+        if len(batches) >= args.max_batches:
+            break
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         future_map = {pool.submit(author_and_review, item, args.model): item[1] for item in batches}
         for future in as_completed(future_map):

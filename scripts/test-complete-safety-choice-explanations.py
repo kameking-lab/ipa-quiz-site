@@ -37,8 +37,15 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
 
     def test_source_host_must_be_government(self):
         self.assertTrue(MODULE.government_url("https://laws.e-gov.go.jp/law/347AC0000000057"))
-        for url in ["https://go.jp.example.com/law", "https://www.exam.or.jp/paper.pdf", "http://www.mhlw.go.jp/", "https://go.jp/"]:
+        for url in ["https://go.jp.example.com/law", "https://www.exam.or.jp/paper.pdf", "http://www.mhlw.go.jp/", "https://go.jp/", "https://okayamas.johas.go.jp/example"]:
             self.assertFalse(MODULE.government_url(url), url)
+
+    def test_subject_pack_is_retrieved_without_claiming_applicability(self):
+        question = dict(self.question, subject="第二種衛生管理者")
+        hints = MODULE.source_hints([question])
+        self.assertGreaterEqual(len(hints), 10)
+        self.assertTrue(all(len(source["retrievalSha256"]) == 64 for source in hints))
+        self.assertFalse(any("johas.go.jp" in source["url"] for source in hints))
 
 
 if __name__ == "__main__":
