@@ -1,0 +1,54 @@
+{
+  "paperId": "emkohyo-EM20261804",
+  "range": [
+    2,
+    2
+  ],
+  "draftSha256": "cc3e4aa52d5eceafabe9d983b79918b2d617deb8add290714d4e8839f4624af4",
+  "sources": [
+    {
+      "url": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf",
+      "status": 200,
+      "finalUrl": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf",
+      "sha256": "3b8dc609fce2971a453ebc25b10410116a1e5e6d14b2f37f24e2a6afc6a818d3",
+      "contentType": "application/pdf",
+      "pages": 46,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261804-q2",
+          "excerpt": "n 回の実効増倍率の分散は、以下のように計算できる。これを標本分散という。",
+          "matched": true,
+          "pdfPage": 19,
+          "context": "率から評価した分散は、必ず小さめに計算されると言うことである。では、どの程度小さめに予測されるのだろうか。逆に、n回の計算の実効増倍率の標準偏差から、実効増倍率の母集団の標準偏差は推定できるだろうか。n回の実効増倍率の分散は、以下のように計算できる。これを標本分散という。標本分散：()∑=-=nininXn122)(1µσ(6.6)わからないが、ここでは簡単のため、母集団の標準偏差がわかっているものとしている。20一方、母集団の分散は、以下の式により推定可能である。こ"
+        },
+        {
+          "questionId": "emkohyo-EM20261804-q2",
+          "excerpt": "分散は、以下の式により推定可能である。これを不偏分散という。",
+          "matched": true,
+          "pdfPage": 20,
+          "context": "ように計算できる。これを標本分散という。標本分散：()∑=-=nininXn122)(1µσ(6.6)わからないが、ここでは簡単のため、母集団の標準偏差がわかっているものとしている。20一方、母集団の分散は、以下の式により推定可能である。これを不偏分散という。不偏分散：()∑=--=niniXn122)(11µσ(6.7)■例17：例16で標本分散と不偏分散を比較する。実効増倍率を平均1.01、標準偏差を0.02、サンプル数(計算回数)をnとしてランダムに"
+        }
+      ]
+    },
+    {
+      "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/club/club13-1.pdf",
+      "status": 200,
+      "finalUrl": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/club/club13-1.pdf",
+      "sha256": "757158c7d3e07a6f1a65b97331d3bfbbed8f4a01553dad621c9d6fea8d03d341",
+      "contentType": "application/pdf",
+      "pages": 81,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261804-q2",
+          "excerpt": "自由度\n(n-1)で割って算出した標本分散は，不偏分散とも呼ばれ",
+          "matched": true,
+          "pdfPage": 42,
+          "context": "，推定値がちゃんと知りたい値をズレがなく推定することができているか，ということがある。この，ズレがなく推定できる推定量のことを「不偏推定量」という。例えば，標本平均は，母平均の不偏推定量である。また，自由度(n-1)で割って算出した標本分散は，不偏分散とも呼ばれ，これは母分散の不偏推定量である。ちなみに，不偏分散の平方根である，標本標準偏差は，母標準偏差の不偏推定量ではありません！42標準偏差から不確かさへ測定値平均値ばらつき実験標準偏差＝測定値のばらつき平"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 3,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0
+}

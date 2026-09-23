@@ -375,12 +375,54 @@
             "reason": "㋑はi＝1〜nの偏差平方和をnで割った分散、㋺は同じ偏差平方和を自由度n−1で割った不偏分散で、二乗・和の範囲・分母がすべて正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 不確かさ評価の基礎 pp.19-20",
+            "url": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf"
+          },
+          {
+            "title": "産業技術総合研究所 不確かさセミナー p.42",
+            "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/club/club13-1.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf",
+          "excerpt": "n 回の実効増倍率の分散は、以下のように計算できる。これを標本分散という。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf",
+          "excerpt": "分散は、以下の式により推定可能である。これを不偏分散という。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/club/club13-1.pdf",
+          "excerpt": "自由度\n(n-1)で割って算出した標本分散は，不偏分散とも呼ばれ",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "問題文の数式は抽出テキストが崩れているため、各選択肢の㋑・㋺の式（和の上限n/n−1、二乗の有無、分母n/n−1、肢2の(xᵢ＋x̄)²）を崩れたテキストから再構成した。原本PDFの図版で式の対応を再確認する必要がある。",
-        "添付の厚生労働省報告書は幾何平均・幾何標準偏差による評価値の式を扱うのみで、分散と不偏分散（分母nとn−1）の定義を述べていないため採用しない。不偏分散の定義を示す公的資料の検索が必要。"
+        "公式PDFの式画像とpresentationの文字起こしは目視照合済み。独立Opus再審査までは公開保留。"
       ]
     },
     "emkohyo-EM20261804-q3": {
@@ -415,12 +457,68 @@
             "reason": "ジエチルエーテルC₂H₅OC₂H₅は二つのエチル基を酸素原子が結ぶエーテルで、エーテル結合−O−を持つ。組合せは正しく、誤っている組合せではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト アニリンSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト アセトニトリルSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-05-8.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト トルエンSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト アセトンSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          },
+          {
+            "title": "環境省 資源循環分野報告書 p.99",
+            "url": "https://www.env.go.jp/content/000164284.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/62-53-3.html",
+          "excerpt": "アミノベンゼン フェニルアミン ベンゼンアミン",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-05-8.html",
+          "excerpt": "シアノメタン エタンニトリル メチルシアニド",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "1-メチルベンゼン、メチルベンゼン",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "ジメチルケトン （Dimethyl ketone)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/000164284.pdf",
+          "excerpt": "ジエチルエーテル（C2H5OC2H5）",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "作業環境測定基準の別表第二はアセトン等の試料採取・分析方法を列挙するのみで、官能基や構造式を記載していないため根拠として採用しない。",
-        "各化合物の構造式・官能基を示す公的資料（例: 職場のあんぜんサイトのGHSモデルSDS等）の検索が必要。現時点の判断は一般的な有機化学の知識による。"
+        "政府資料抜粋は照合中。独立Opus審査まで公開保留。"
       ]
     },
     "emkohyo-EM20261804-q4": {

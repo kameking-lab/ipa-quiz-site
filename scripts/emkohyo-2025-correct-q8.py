@@ -29,5 +29,7 @@ question["sourceEvidence"] = [
      "excerpt": excerpt, "choiceNumbers": [number]}
     for number, (cas, excerpt) in urls.items()
 ]
-question["reviewIssues"] = []
+question["reviewIssues"] = [
+    "独立Opus審査FIX。SDSの沸点は照合済みだが、無極性GC固定相で保持時間の比較を直接支える政府原典が不足。公開保留。"
+]
 file.write_text(json.dumps(draft, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
