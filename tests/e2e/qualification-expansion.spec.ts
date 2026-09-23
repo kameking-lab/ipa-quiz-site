@@ -13,7 +13,7 @@ interface QualificationCase {
 const cases: QualificationCase[] = [
   { exam: "fp2", yearSeason: "2026-published", questionCount: 10, questionPath: "/q/fp2/2026-published/gakka/q1", correctIndex: 2, choiceCount: 4, answerUrl: "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf" },
   {
-    questionCount: 5,
+    questionCount: 60,
     exam: "fp3",
     yearSeason: "2025-published",
     questionPath: "/q/fp3/2025-published/gakka/q31",
