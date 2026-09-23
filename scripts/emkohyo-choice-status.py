@@ -65,6 +65,11 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
     digest = sha256(json.dumps(candidate["overlay"], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
     if receipt.get("candidateSha256", {}).get(id_) != digest:
         return False
+    presentation = json.loads((DATA / "presentation" / f"{paper}.json").read_text(encoding="utf-8"))
+    figures = {figure["src"]: sha256((ROOT / "public" / figure["src"].lstrip("/")).read_bytes()).hexdigest()
+               for figure in presentation[id_].get("figures", [])}
+    if figures and receipt.get("figureSha256", {}).get(id_) != figures:
+        return False
     focused = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
     first = (number - 1) // 5 * 5 + 1
     if focused.exists():

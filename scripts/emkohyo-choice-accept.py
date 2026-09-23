@@ -50,6 +50,11 @@ def main() -> None:
         digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
         if receipt["candidateSha256"].get(id_) != digest:
             raise ValueError(f"Stale candidate review: {id_}")
+        presentation = json.loads((DATA / "presentation" / f"{paper}.json").read_text(encoding="utf-8"))
+        expected_figures = {figure["src"]: sha256((ROOT / "public" / figure["src"].lstrip("/")).read_bytes()).hexdigest()
+                            for figure in presentation[id_].get("figures", [])}
+        if expected_figures and receipt.get("figureSha256", {}).get(id_) != expected_figures:
+            raise ValueError(f"Stale or missing figure review: {id_}")
         focused_pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
         if focused_pack.exists():
             pack = focused_pack

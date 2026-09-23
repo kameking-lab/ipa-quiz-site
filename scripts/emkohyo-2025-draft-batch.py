@@ -18,6 +18,7 @@ ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
 REVIEW = DATA / "emkohyo-review"
 CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+MODEL_ID = "claude-opus-5-5"
 MEASUREMENT = {"title": "厚生労働省 作業環境測定基準", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"}
 ORGANIC_METHOD = {"title": "厚生労働省 有機溶剤の測定技術に係る資料", "url": "https://www.mhlw.go.jp/shingi/2007/11/dl/s1101-11f.pdf"}
 ORGANIC_CAS = {
@@ -30,18 +31,20 @@ ORGANIC_CAS = {
 }
 
 
-def parse_result(stdout: str) -> object:
+def parse_result(stdout: str) -> tuple[object, str]:
     events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
         raise ValueError(f"No successful model response: {stdout[-1000:]}")
+    models = [name for name in (final.get("modelUsage") or {}) if name.startswith("claude-")]
+    resolved_model = models[0] if len(models) == 1 else MODEL_ID
     if isinstance(final.get("structured_output"), dict):
-        return final["structured_output"]
+        return final["structured_output"], resolved_model
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
     start, end = value.find("{"), value.rfind("}")
     if start < 0 or end < start:
         raise ValueError(f"No JSON object: {value[-1000:]}")
-    return json.loads(value[start:end + 1])
+    return json.loads(value[start:end + 1]), resolved_model
 
 
 def main() -> None:
@@ -109,7 +112,7 @@ def main() -> None:
     schema = {"type": "object", "properties": {id_: {"type": "object"} for id_ in ids},
               "required": ids, "additionalProperties": False}
     process = subprocess.run(
-        [str(CLI), "-p", "--model", "opus", "--effort", "high", "--input-format", "stream-json",
+        [str(CLI), "-p", "--model", MODEL_ID, "--effort", "high", "--input-format", "stream-json",
          "--output-format", "stream-json", "--verbose", "--json-schema", json.dumps(schema),
          "--tools", "WebSearch,WebFetch" if web else ""],
         input=json.dumps({"type": "user", "message": {"role": "user", "content": [{"type": "text", "text": payload}]}},
@@ -118,14 +121,15 @@ def main() -> None:
     )
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-1000:])
-    result = parse_result(process.stdout)
+    result, resolved_model = parse_result(process.stdout)
     if not isinstance(result, dict) or set(result) != {x["id"] for x in selected}:
         raise ValueError("Model omitted or added question IDs")
     REVIEW.mkdir(parents=True, exist_ok=True)
     out = REVIEW / f"{paper}-q{first:02}-{last:02}-draft.json"
     if out.exists():
         raise FileExistsError(out)
-    out.write_text(json.dumps({"candidateModel": "claude-opus-5-5", "paperId": paper,
+    out.write_text(json.dumps({"candidateModel": resolved_model, "requestedModel": MODEL_ID,
+                               "paperId": paper,
                                "governmentSourceCandidates": sources,
                                "retrievedEvidence": retrieved, "questions": result},
                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
