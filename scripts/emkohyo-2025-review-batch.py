@@ -101,6 +101,19 @@ def main() -> None:
                 raise ValueError(f"Non-government or unreachable source in {source_file}: {host}")
     else:
         raise ValueError(f"Source pack lacks candidate hash and range pins: {source_file}")
+    source_page_image_hashes = {}
+    for source_image in sources.get("sourcePageImages", []):
+        path = ROOT / source_image["path"]
+        raw = path.read_bytes()
+        digest = sha256(raw).hexdigest()
+        if digest != source_image["sha256"]:
+            raise ValueError(f"Government source table image changed: {path}")
+        source_page_image_hashes[source_image["path"]] = digest
+        image_blocks.append({"type": "text", "text":
+                             f"政府資料の原表: {source_image['description']} "
+                             f"{source_image['path']} SHA256={digest}"})
+        image_blocks.append({"type": "image", "source": {"type": "base64",
+                        "media_type": "image/png", "data": base64.b64encode(raw).decode("ascii")}})
     prompt = (
         "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の政府一次資料で厳密に照合する。"
         "問題文の選択肢1〜5との対応、解説の個別因果、数値・温度・単位、正誤判定を全件見る。"
@@ -136,6 +149,7 @@ def main() -> None:
     receipt = {"reviewModel": resolved_model, "requestedModel": MODEL_ID,
                "paperId": paper, "ids": ids,
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
+               "governmentSourceImageSha256": source_page_image_hashes,
                "candidateSha256": {id_: sha256(json.dumps(candidates[id_], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() for id_ in ids},
                "sourcePackPath": source_file.relative_to(ROOT).as_posix(),
                "sourcePackSha256": text_sha256(source_file), "assessment": result}

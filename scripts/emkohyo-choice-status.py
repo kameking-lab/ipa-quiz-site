@@ -56,16 +56,15 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
     id_ = f"{paper}-q{number}"
     receipts = [json.loads(file.read_text(encoding="utf-8"))
                 for file in REVIEW.glob(f"{paper}-q*-review.json")]
-    matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])]
+    digest = sha256(json.dumps(candidate["overlay"], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+    matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])
+                and receipt.get("candidateSha256", {}).get(id_) == digest]
     if len(matching) != 1:
         return False
     receipt = matching[0]
     assessment = receipt.get("assessment", {}).get(id_, {})
     issue_keys = ("textIssues", "choiceIssues", "reasonIssues", "sourceIssues", "needsExternalCheck")
     if assessment.get("status") != "PASS" or any(assessment.get(key) for key in issue_keys):
-        return False
-    digest = sha256(json.dumps(candidate["overlay"], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
-    if receipt.get("candidateSha256", {}).get(id_) != digest:
         return False
     presentation = json.loads((DATA / "presentation" / f"{paper}.json").read_text(encoding="utf-8"))
     figures = {figure["src"]: sha256((ROOT / "public" / figure["src"].lstrip("/")).read_bytes()).hexdigest()

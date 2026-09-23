@@ -4,7 +4,7 @@
     1,
     1
   ],
-  "draftSha256": "94672cad0cff5ac6936c4ffe547ab2a819a232158ea12017368ddd60226b4e9c",
+  "draftSha256": "801c0959403f264318d649501e12c3e5a471ec9925e3861223a3cc89b264842b",
   "sources": [
     {
       "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
@@ -215,6 +215,24 @@
       ]
     },
     {
+      "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+      "status": 200,
+      "finalUrl": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+      "sha256": "ac5faabe7eab78eaa76f32da0bf6dc89a3c70f1a54de5bd659f57f6881cffa3c",
+      "contentType": "application/pdf",
+      "pages": 64,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251805-q1",
+          "excerpt": "100 (21.2)\n200 (34.8)",
+          "matched": true,
+          "pdfPage": 41,
+          "context": "04化学量論組成，\b%12.256.534.454.454爆発上限界，%361913.712.74蒸気圧，mmHg****1(-44)5(-25.3)10(-16.2)20(-6.0)60(12.1)100(21.2)200(34.8)760(64.7)1(-31.3)5(-12.0)10(-2.3)20(8.0)60(26.0)100(34.9)200(48.4)760(78.4)1(-15.0)5(5.0)10(14.7)20("
+        }
+      ]
+    },
+    {
       "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf",
       "status": 200,
       "finalUrl": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf",
@@ -233,7 +251,14 @@
       ]
     }
   ],
-  "claimedExcerpts": 15,
+  "claimedExcerpts": 16,
   "missingEvidenceQuestions": [],
-  "unverifiedExcerpts": 0
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/EM20251805-q1-fdma-table-p35.png",
+      "sha256": "8680e18eca2b22ca79f5cac5933f85b41a4fba9186eb9084a44f8593b3e755d2",
+      "description": "消防研究所報告第129号 p35 表1 メタノール蒸気圧の原表"
+    }
+  ]
 }

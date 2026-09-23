@@ -21,6 +21,7 @@ from emkohyo_portable_hash import text_sha256
 ROOT = Path(__file__).resolve().parents[1]
 REVIEW = ROOT / "data/exam-library/emkohyo-review"
 OUT = ROOT / "docs/evidence/emkohyo-choice-sources"
+SOURCE_PAGE_IMAGES = OUT / "source-page-images.json"
 
 
 def normal(text: str) -> str:
@@ -100,6 +101,16 @@ def main() -> None:
                                          if not question.get("sourceEvidence")],
             "unverifiedExcerpts": sum(not c["matched"] for p in records
                                       for c in p["claimedExcerpts"])}
+    if SOURCE_PAGE_IMAGES.exists():
+        image_map = json.loads(SOURCE_PAGE_IMAGES.read_text(encoding="utf-8"))
+        key = f"{paper}-q{first:02}-{last:02}"
+        images = image_map.get(key, [])
+        for image in images:
+            path = ROOT / image["path"]
+            if sha256(path.read_bytes()).hexdigest() != image["sha256"]:
+                raise ValueError(f"Source page image changed: {path}")
+        if images:
+            pack["sourcePageImages"] = images
     OUT.mkdir(parents=True, exist_ok=True)
     target = OUT / f"{paper}-q{first:02}-{last:02}.json"
     target.write_text(json.dumps(pack, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

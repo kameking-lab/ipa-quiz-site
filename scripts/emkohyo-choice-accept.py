@@ -41,17 +41,16 @@ def main() -> None:
             raise ValueError(f"Candidate gate failed {id_}: {problems}")
         review_files = sorted(REVIEW.glob(f"{paper}-q*-review.json"))
         receipts = [json.loads(file.read_text(encoding="utf-8")) for file in review_files]
-        matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])]
+        digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
+        matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])
+                    and receipt.get("candidateSha256", {}).get(id_) == digest]
         if len(matching) != 1:
-            raise ValueError(f"Expected exactly one current direct review: {id_}")
+            raise ValueError(f"Expected exactly one current-candidate direct review: {id_}")
         receipt = matching[0]
         assessment = receipt["assessment"].get(id_)
         keys = ("textIssues", "choiceIssues", "reasonIssues", "sourceIssues", "needsExternalCheck")
         if not assessment or assessment["status"] != "PASS" or any(assessment.get(k) for k in keys):
             raise ValueError(f"Direct review failed: {id_}")
-        digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
-        if receipt["candidateSha256"].get(id_) != digest:
-            raise ValueError(f"Stale candidate review: {id_}")
         presentation = json.loads((DATA / "presentation" / f"{paper}.json").read_text(encoding="utf-8"))
         expected_figures = {figure["src"]: sha256((ROOT / "public" / figure["src"].lstrip("/")).read_bytes()).hexdigest()
                             for figure in presentation[id_].get("figures", [])}
