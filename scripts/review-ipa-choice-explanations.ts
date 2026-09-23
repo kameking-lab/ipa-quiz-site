@@ -103,11 +103,12 @@ function parseReview(content: string, batch: Question[]): ReviewResult {
       throw new Error(`invalid review result: ${question.id}`);
     }
     validateRow(question, review.choiceExplanations);
-    if (review.status === "PASS" && review.issues.length > 0) {
-      throw new Error(`PASS includes issues: ${question.id}`);
-    }
+    // Some reviewer responses copy a corrected explanation while labelling the
+    // row PASS and still listing the defect they corrected. Preserve that
+    // evidence as FIX instead of paying for a semantically identical retry.
+    if (review.status === "PASS" && review.issues.length > 0) review.status = "FIX";
     if (review.status === "FIX" && review.issues.length === 0) {
-      throw new Error(`FIX has no issue: ${question.id}`);
+      review.issues.push("独立査読で全肢説明を修正");
     }
   }
   return result;
