@@ -1,0 +1,25 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q4"
+  ],
+  "candidateSha256": {
+    "emkohyo-EM20261804-q4": "5bdbb0f9a7332af6ec9402db468cd9c59b5a38a1014ac724f27ca7c06a263dd1"
+  },
+  "sourcePackSha256": "0f434441efecd3c1b1d60c42198af75830515dc192cbaa9e95c084737214743c",
+  "assessment": {
+    "emkohyo-EM20261804-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢4の理由にある「逆算した圧力も約0.99 atm」は、実際の計算と合わない。n＝2.3÷57＝0.04035 mol、P＝0.04035×0.082×370÷1.23＝0.9953 atm となり、小数第2位で丸めると1.00 atmである。0.99は四捨五入ではなく切り捨ての値になっている。『約0.995 atm』または『約1.0 atm』に直す必要がある。"
+      ],
+      "sourceIssues": [
+        "科学技術振興機構（JST）の資料 p.19 で確認できるのは、理想気体の状態方程式 PV＝nRT の一般的な説明だけである。しかもこの箇所は圧縮因子Zを使う別の問題の解説で、単位もSI（R＝8.31 Pa･m3/(K･mol)）である。本問の中心になる n＝m/M による分子量の求め方、℃からKへの換算（97＋273＝370 K）、0.082 atm･L･K-1･mol-1 を使った計算は、この資料では直接裏付けられていない。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

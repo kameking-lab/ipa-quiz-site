@@ -17,9 +17,35 @@ PACKS = ROOT / "docs/evidence/emkohyo-choice-sources/subject-packs"
 LAW_PAGES = ROOT / "docs/evidence/emkohyo-choice-sources/mhlw-law-pages.json"
 CACHE = ROOT / "data/raw_pdfs/emkohyo-source-cache"
 ARTICLE = re.compile(r"第[一二三四五六七八九十百千〇零0-9０-９]+条(?:の[一二三四五六七八九十0-9０-９]+)?")
+KANJI_DIGITS = {char: value for value, char in enumerate("〇一二三四五六七八九")}
 
 
-def chunks(text: str, size: int = 650, overlap: int = 120):
+def number(text: str) -> int:
+    text = text.translate(str.maketrans("０１２３４５６７８９", "0123456789"))
+    if text.isdecimal():
+        return int(text)
+    total = 0
+    current = 0
+    for char in text:
+        if char in KANJI_DIGITS:
+            current = KANJI_DIGITS[char]
+        elif char in "十百千":
+            total += (current or 1) * {"十": 10, "百": 100, "千": 1000}[char]
+            current = 0
+        else:
+            return -1
+    return total + current
+
+
+def article_numbers(text: str) -> set[tuple[int, int]]:
+    found = set()
+    for match in ARTICLE.findall(text):
+        article, _, suffix = match[1:].partition("条")
+        found.add((number(article), number(suffix.removeprefix("の")) if suffix else 0))
+    return found
+
+
+def chunks(text: str, size: int = 900, overlap: int = 200):
     compact = " ".join(text.split())
     if len(compact) < 80:
         return
@@ -67,10 +93,10 @@ def retrieve(subject: str, questions: list[dict], per_question: int = 6) -> dict
     result = {}
     for qindex, question in enumerate(questions):
         scores = similarities.getrow(qindex).toarray().ravel()
-        article_names = set(ARTICLE.findall(queries[qindex]))
+        article_names = article_numbers(queries[qindex])
         ranked = sorted(range(len(records)),
                         key=lambda i: float(scores[i])
-                        + (0.5 if article_names.intersection(ARTICLE.findall(records[i]["excerpt"])) else 0),
+                        + (0.35 if article_names.intersection(article_numbers(records[i]["excerpt"])) else 0),
                         reverse=True)
         selected = []
         per_url = {}

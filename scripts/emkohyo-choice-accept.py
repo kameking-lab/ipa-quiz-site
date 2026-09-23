@@ -28,7 +28,10 @@ def main() -> None:
         number = int(number_text)
         first = (number - 1) // 5 * 5 + 1
         draft_file = REVIEW / f"{paper}-q{first:02}-{first+4:02}-draft.json"
-        candidate = json.loads(draft_file.read_text(encoding="utf-8"))["questions"][id_]["overlay"]
+        draft_record = json.loads(draft_file.read_text(encoding="utf-8"))["questions"][id_]
+        candidate = draft_record["overlay"]
+        if draft_record.get("reviewIssues"):
+            raise ValueError(f"Unresolved draft issues: {id_}: {draft_record['reviewIssues']}")
         row = next(row for row in json.loads((DATA / "papers" / f"{paper}.json").read_text(encoding="utf-8"))
                    if row["id"] == id_)
         problems = candidate_problems(row, {"overlay": candidate})

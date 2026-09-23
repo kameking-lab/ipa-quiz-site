@@ -208,6 +208,14 @@ for (const paper of emCatalog) {
 }
 check(emQuestionIds.length === emTarget?.expectedQuestions, 'EM two-year expected question count mismatch');
 const emStructuredCount = emQuestionIds.filter(id => Object.hasOwn(choiceExplanations, id)).length;
+for (const id of emQuestionIds) {
+  const overlay = choiceExplanations[id];
+  if (!overlay) continue;
+  for (const choice of overlay.choices ?? []) {
+    check(typeof choice.reason === 'string' && choice.reason.trim().length >= 55,
+      `Short EM two-year choice reason: ${id}/${choice.number}`);
+  }
+}
 if (process.argv.includes('--require-em-two-years')) {
   for (const id of emQuestionIds) check(Object.hasOwn(choiceExplanations, id), `Missing EM two-year choice explanation: ${id}`);
 }

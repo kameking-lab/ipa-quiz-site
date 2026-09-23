@@ -19694,5 +19694,89 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2159&dataType=1&pageNo=1"
       }
     ]
+  },
+  "emkohyo-EM20261804-q1": {
+    "sourceHash": "7a3c6b0a46f7a190e12cd6e68d031e929ee8e3fea14bea6e349218b07b0ff311",
+    "correctChoice": 3,
+    "summary": "圧力の単位はPa＝m⁻¹ kg s⁻²で、m kg s⁻²は力（N）の単位のため誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "絶対温度（熱力学温度）はSI基本量の一つで、単位記号はケルビンKである。組合せ自体は正しいため、誤りを選ぶ本問でこの肢を選ぶと不正解になる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アボガドロ定数は物質量1 mol当たりの粒子数で約6.022×10²³ mol⁻¹。単位mol⁻¹との組合せは正しく、誤っている組合せには当たらない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "圧力は単位面積当たりの力で、Pa＝N/m²＝m⁻¹ kg s⁻²となる。示されたm kg s⁻²は力（ニュートン）の単位で、面積で割る操作が抜けているため誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "エネルギー（仕事）は力×距離で、J＝N·m＝m² kg s⁻²となる。mの指数2は力の単位に距離を掛けた結果として正しく、誤っている組合せではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "電荷は電流×時間で定義され、クーロンC＝A·s（s A）となる。組合せは正しいため、誤りを選ぶ本問でこの肢を選ぶと不正解になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産業技術総合研究所 計量標準総合センター 国際単位系（SI）",
+        "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+      }
+    ]
+  },
+  "emkohyo-EM20261804-q4": {
+    "sourceHash": "41a108309006913b46247c9e1e642470565dfc0784482fee43309b6164458396",
+    "correctChoice": 4,
+    "summary": "M＝mRT/(PV)＝2.3×0.082×370÷(1.0×1.23)≒56.7で最も近いのは57",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "分子量20なら2.3 gは0.115 molとなり、P＝nRT/V＝0.115×0.082×370÷1.23≒2.8 atmで1.0気圧と合わない。実際のM≒56.7とも大きく離れる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "分子量23なら物質量は2.3÷23＝0.10 molで、370 K・1.23 Lでは圧力が約2.5 atmになる。条件の1.0気圧と一致せず、M≒56.7に最も近い値でもない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "分子量46では0.050 molとなり、370 Kでの圧力は約1.23 atmで1.0気圧を超える。温度を300 K（27 ℃）とすると46になるが、97 ℃の条件に反する。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "T＝97＋273＝370 K、n＝1.0×1.23÷(0.082×370)≒0.0405 mol、M＝2.3÷0.0405≒56.7となる。57 g/molで逆算した圧力も約1.0 atmで条件に合い、57が最も近い。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "分子量69では0.0333 molとなり、370 K・1.23 Lでの圧力は約0.82 atmで1.0気圧に届かない。M≒56.7との差も約12あり、57の方が近い。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "科学技術振興機構 科学の甲子園・筆記競技解答例と解説 p.19",
+        "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+      },
+      {
+        "title": "産業技術総合研究所 国際単位系（SI）",
+        "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+      },
+      {
+        "title": "国立環境研究所 酸素の観測を支える標準ガス",
+        "url": "https://cger.nies.go.jp/cgernews/202209/382001.html"
+      }
+    ]
   }
 }
