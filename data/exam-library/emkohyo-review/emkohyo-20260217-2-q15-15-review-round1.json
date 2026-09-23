@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5378,
+      "cacheReadInputTokens": 125175,
+      "cacheCreationInputTokens": 22447,
+      "webSearchRequests": 0,
+      "costUSD": 0.312179,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4548,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q15": {
+      "/exam-library/emkohyo-20260217-2/q15-p10-1.webp": "b1cb2b53501cb819c29f7a3f05c3f912754c7b6670414c9d8a0136288972510b"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q15": "2bcc5fc76ffab133d0a5b4c55925efeba1cfc86523c0ec608e1fc46aa3492a70"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q15-15.json",
+  "sourcePackSha256": "7df530bb7e62a13e30fcaae86c115b2fae2f62ad90d1962c701a672516362a53",
+  "assessment": {
+    "emkohyo-20260217-2-q15": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 理由の因果が途中で切れている。『第3種＝第1種・第2種以外』（有機則第1条第1項第5号）から、いきなり『別表第48号以降のガソリン等は対象外』へ進んでいる。間にあるべき根拠が書かれていない。有機則第1条第1項第3号・第4号は、第1種・第2種を令別表第6の2の第1号〜第47号の範囲内の物（およびそれを5%超含む混合物）と定めている。そのため、第28条の『第1号から第47号までに掲げる有機溶剤に係る有機溶剤業務』は第1種・第2種有機溶剤等の業務にあたり、第3種有機溶剤等の業務は含まれない。この対応関係を明記すべき。",
+        "肢4: 『別表の第48号以降のガソリン等』が第3種有機溶剤等と同じ範囲であるかのように読める。実際の第3種有機溶剤等には、第48号〜第55号の物のほか、第1号〜第47号の溶剤を5%以下含む混合物も入る。正確には『第28条の測定対象は第1種・第2種有機溶剤等に係る業務に限られ、第3種有機溶剤等に係る業務は含まれない』と書くべき。",
+        "肢4: 『洗浄作業も第3種だけなら』の『だけなら』が余計な条件に読め、不正確。肢4の前提は第3種有機溶剤等を用いた業務なので、条件を付けずに、第3種の業務は業務の種類（洗浄）にも通風の状況にもかかわらず第28条の対象外、と書けばよい。"
+      ],
+      "sourceIssues": [
+        "肢4: 政府資料の抜粋は3点しかない。第3種の定義（第1条第1項第5号）、第28条第1項、令別表第6の2の『四十八ガソリン』である。第1種・第2種を令別表第6の2の号番号で定める有機則第1条第1項第3号・第4号の条文は抜粋されていない。したがって『第1号〜第47号＝第1種・第2種、第3種は対象外』という結論を直接支える一次資料の記載が証拠に含まれていない。第1条第1項第3号・第4号の抜粋を追加すべき。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}
