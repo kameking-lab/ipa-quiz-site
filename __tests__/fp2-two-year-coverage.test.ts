@@ -4,7 +4,9 @@ import academicPublished from "@/data/questions/fp2/academic-2024-2025.json";
 import academicFigures from "@/data/questions/fp2/academic-figures-2024-2025.json";
 import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import practical from "@/data/questions/fp2/practical-2024-2025.json";
+import practicalExplanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
+import sharedCases from "@/data/questions/fp2/practical-shared-context-2024-2025.json";
 import manifest from "@/docs/evidence/fp2-two-year/manifest.json";
 
 const editions = ["202405", "202409", "202501", "202505"] as const;
@@ -60,6 +62,39 @@ describe("FP2 official 2024–2025 corpus", () => {
       }
       expect((figures[edition] as Record<string, unknown[]>)["1"]).toHaveLength(0);
     }
+  });
+
+  it("includes a reviewed solution for all 160 practical questions and every numeric option", () => {
+    for (const edition of editions) {
+      const source = practical[edition].questions;
+      const solutions = practicalExplanations[edition] as Record<string, {
+        explanation: string;
+        choiceExplanations: Record<string, string>;
+        governmentReferenceUrls: string[];
+        needsReview: boolean;
+      }>;
+      expect(Object.keys(solutions)).toHaveLength(40);
+      for (const q of source) {
+        const solution = solutions[String(q.number)];
+        expect(solution, `${edition} Q${q.number}`).toBeDefined();
+        expect(solution.explanation.trim().length).toBeGreaterThan(20);
+        expect(solution.needsReview, `${edition} Q${q.number} still needs review`).toBe(false);
+        const numeric = /^[1-4]$/.test(q.modelAnswer);
+        if (numeric) expect(Object.keys(solution.choiceExplanations)).toEqual(["1", "2", "3", "4"]);
+        expect(Object.values(solution.choiceExplanations).every((reason) => reason.trim().length > 10)).toBe(true);
+        expect(solution.governmentReferenceUrls.every((url) => /^https:\/\/(?:laws\.e-gov\.go\.jp|[a-z.]+\.go\.jp)\//.test(url))).toBe(true);
+      }
+    }
+  });
+
+  it("keeps the preceding shared case visible for practical questions that depend on it", () => {
+    expect(sharedCases["202405"]["31"].text).toContain("学資保険C");
+    expect(sharedCases["202405"]["31"].text).toContain("菜々美");
+    expect(sharedCases["202409"]["30"].sourcePages).toEqual([26]);
+    expect(sharedCases["202501"]["35"].sourcePages).toEqual([32]);
+    expect((figures["202405"] as Record<string, unknown[]>)["23"].length).toBeGreaterThan(0);
+    expect((figures["202409"] as Record<string, unknown[]>)["24"].length).toBeGreaterThan(0);
+    expect((figures["202501"] as Record<string, unknown[]>)["24"].length).toBeGreaterThan(0);
   });
 
   it("pins all original PDFs and the four different legal reference dates", () => {

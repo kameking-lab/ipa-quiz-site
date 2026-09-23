@@ -1,0 +1,75 @@
+[
+  {
+    "number": 25,
+    "approved": false,
+    "issues": [
+      "Choice 4 explanation is wrong. It says (イ) and (ウ) are correct, but (ウ)「ペアローンすべて」is also wrong. Under a pair loan, each spouse joins group credit life insurance separately, so only the deceased spouse's loan balance is paid off. Only (イ)「夫と妻それぞれ」is correct in choice 4.",
+      "Choice 1 explanation only names the (イ) error. It misses the (ウ)「ペアローンすべて」error.",
+      "Choice 3 explanation only names the (ア) error. It misses the (イ)「主たる債務者」error; the correct (イ) is 夫と妻それぞれ.",
+      "The OCR for question 25 also contains the lead-in text and coefficient table for questions 26-28. This does not change the answer, but the question boundaries in the OCR should be separated."
+    ],
+    "suggestedCorrection": "Replace choiceExplanations with: 1 = (ア) 高く is correct. (イ) is wrong because both husband and wife can claim the housing loan deduction, not just the primary debtor. (ウ) is wrong because each spouse has separate group credit life insurance, so only the deceased spouse's balance is paid off. 3 = (ウ) 亡くなった人のみ is correct. (ア) is wrong because a pair loan needs two contracts, so fees and stamp duty cost more. (イ) is wrong for the same reason as choice 1. 4 = (イ) 夫と妻それぞれ is correct. (ア) is wrong because the costs are higher, not lower. (ウ) is wrong because only the deceased spouse's balance is paid off, not the whole pair loan.",
+    "sourceQueries": [
+      "ペアローン 収入合算 諸費用 印紙税 事務手数料 比較",
+      "ペアローン 住宅借入金等特別控除 夫婦それぞれ 適用",
+      "ペアローン 団体信用生命保険 死亡 残高 弁済 範囲"
+    ]
+  },
+  {
+    "number": 26,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "年金終価係数 毎年末積立 将来額 計算"
+    ]
+  },
+  {
+    "number": 27,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "現価係数 目標額 現在必要額 計算"
+    ]
+  },
+  {
+    "number": 28,
+    "approved": false,
+    "issues": [
+      "The draft's uncertainty note is factually wrong. The coefficient table is in the OCR, placed with question 25's text. It shows 5.795 for the 6-year annuity present value factor at 1.0%, so the coefficient can be checked.",
+      "The draft writes the factor as ≒5.795. The problem says to use the table values as given, so it should state 5.795 exactly.",
+      "needsReview=true should be removed now that the source of the coefficient is confirmed.",
+      "The OCR for question 28 also contains the 小田家 case study for questions 29 and 30, so the question boundaries in the OCR need fixing."
+    ],
+    "suggestedCorrection": "explanation: To receive 600,000 yen at each year-end for 6 years, the required principal at the start of the first year uses the annuity present value factor (6 years, 1.0%) = 5.795. 600,000 yen × 5.795 = 3,477,000 yen. Set needsReview=false and clear uncertainty.",
+    "sourceQueries": [
+      "年金現価係数 毎年末受取 必要元本 計算"
+    ]
+  },
+  {
+    "number": 29,
+    "approved": true,
+    "issues": [],
+    "suggestedCorrection": "",
+    "sourceQueries": [
+      "期間短縮型 繰上げ返済 償還予定表 元金累計 短縮期間"
+    ]
+  },
+  {
+    "number": 30,
+    "approved": false,
+    "issues": [
+      "The draft does not state the condition behind the protected amount: principal is protected up to 10 million yen per depositor per financial institution. It should confirm that both totals (800,000 yen and 700,000 yen) are within that cap.",
+      "It does not say that Mayuri's floating-rate time deposit is also a general deposit and fully protected. This is a likely trap, so the reason is under-explained.",
+      "It does not say that the ordinary deposits are not settlement-purpose deposits, and so fall under the 10-million-yen cap. The problem's own note says this.",
+      "The reason the 4 million yen education endowment insurance (学資保険) is excluded should be explained: it is an insurance product, not a deposit, even if bought through a bank."
+    ],
+    "suggestedCorrection": "explanation: Deposit insurance protects general yen deposits (ordinary and time deposits, fixed or floating rate) up to 10 million yen of principal plus interest per depositor per institution. Foreign-currency deposits, investment trusts and insurance products are not covered. (ア) 孝義: ordinary 300,000 + fixed-rate time 500,000 = 800,000 yen. The 600,000 investment trust and the 4 million education insurance are not covered. Within the cap, so 80万円. (イ) 真由利: ordinary 100,000 + floating-rate time 600,000 = 700,000 yen. The 400,000 foreign-currency deposit is not covered. Within the cap, so 70万円.",
+    "sourceQueries": [
+      "預金保険制度 保護対象 一般預金等 元本1,000万円 外貨預金 対象外",
+      "預金保険機構 変動金利定期預金 保護対象",
+      "預金保険 投資信託 保険商品 銀行窓口販売 対象外"
+    ]
+  }
+]

@@ -1,0 +1,85 @@
+[
+  {
+    "number": 25,
+    "approved": false,
+    "issues": [
+      "The OCR text does not include the Tsuyuki family cash-flow table figures needed for blank (イ): the previous year's savings balance, the rate of change, and the current year's annual cash flow. The draft cannot show how 793万円 is reached, so the calculation cannot be checked.",
+      "The draft gives only the general formula. The substituted values, the unit (万円) and the rounding step (no rounding during the calculation, round the final result to the nearest 万円) are not traced through.",
+      "The draft does not say where the cash-flow table sits in relation to the question (the table image for Q24–Q25 and which row blank (イ) is in). The figure placement cannot be confirmed from the question text."
+    ],
+    "suggestedCorrection": "Add the Tsuyuki family cash-flow table (the previous year's savings balance, the rate of change, and the annual cash flow for the year of blank (イ)) to the question text or shared context. Then write the calculation out: savings balance for that year = previous year's balance × (1 + rate of change) + that year's annual cash flow. Keep all decimals and round only the final result to the nearest 万円, showing that it comes to 793万円. Leave the official answer (793万円) unchanged.",
+    "sourceQueries": [
+      "日本FP協会 2級 実技 資産設計提案業務 2024年9月 問25 露木家 キャッシュフロー表",
+      "FP2級 2024年9月 実技 キャッシュフロー表 貯蓄残高 変動率 計算 端数処理"
+    ]
+  },
+  {
+    "number": 26,
+    "approved": true,
+    "issues": [
+      "The Q26 question text also contains the preamble and the compound-interest factor table ([係数早見表(年利1.0%)]) that belong to Q27–Q29. Q26 does not use them. This is a data-structure problem: the placement is clear from the wording '下記の係数早見表を乗算で使用し、各問について計算しなさい' (use the table for each question below), so the content should move to the shared context for Q27–Q29.",
+      "The overall explanation says 'the other choices state the opposite of practice and the law'. That fits choices 1 and 2, but choice 4 is wrong because business use is not allowed, not because it is reversed. The individual choice explanations are correct, so this is a minor wording issue.",
+      "Legal timing: the interest caps in the Interest Rate Restriction Act (20% below 10万円, 18% from 10万円 to under 100万円, 15% from 100万円) have not changed as of the 2024-04-01 reference date. No issue."
+    ],
+    "suggestedCorrection": "Remove the preamble and factor table from the Q26 question text and move them to shared context for Q27–Q29. In the overall explanation, change 'the other choices state the opposite' to: 'Choices 1 and 2 reverse the direction of the change (up/down, high/low). Choice 4 is wrong because free loans generally cannot be used for business funds.' Leave the official answer (3) unchanged.",
+    "sourceQueries": [
+      "利息制限法 第1条 上限金利 10万円未満 20% 100万円以上 15%",
+      "リボルビング払い 残高スライド方式 返済額",
+      "カードローン キャッシング 金利 比較",
+      "フリーローン 事業資金 使途"
+    ]
+  },
+  {
+    "number": 27,
+    "approved": true,
+    "issues": [
+      "The factor table this question needs appears only inside the Q26 question text. The preamble says it applies to each question below, so the placement can be determined. The 5-year, 1.0% final value factor of 1.051 matches the table."
+    ],
+    "suggestedCorrection": "Link the factor table to Q27 as shared context. Checked: 2,500,000円 × 1.051 = 2,627,500円. There is no rounding and no condition or unit problem, so the draft needs no change.",
+    "sourceQueries": [
+      "FP2級 実技 2024年9月 係数早見表 終価係数 年利1.0% 5年"
+    ]
+  },
+  {
+    "number": 28,
+    "approved": true,
+    "issues": [
+      "The draft calls the factor '積立終価係数' (accumulation final value factor), but the table in the question labels it '年金終価係数' (annuity final value factor). They mean the same thing, but the draft should use the table's label.",
+      "Placement: the factor table appears only inside the Q26 question text. As with Q27, the preamble makes it clear the table applies here."
+    ],
+    "suggestedCorrection": "Rewrite the draft as: 'Year-end deposits of equal amounts are multiplied by the 年金終価係数 from the table. 300,000円 × 10.462 (1.0%, 10 years) = 3,138,600円.' The calculation is correct and the official answer (3,138,600円) stays unchanged.",
+    "sourceQueries": [
+      "年金終価係数 毎年末積立 将来価値 FP2級",
+      "FP2級 実技 2024年9月 係数早見表 年金終価係数 10年"
+    ]
+  },
+  {
+    "number": 29,
+    "approved": true,
+    "issues": [
+      "The Q29 question text includes the case study for Q30 onward (Anzai family, data as of 2024-09-01). Q29 does not use it. The placement is clear because Q30 refers to 亜紀さん and 加瀬さん, but the case study should move to the shared context for Q30 onward.",
+      "The calculation checks out: the 9-year, 1.0% sinking fund factor of 0.107 matches the table, and 1,200,000円 × 0.107 = 128,400円. No rounding is needed."
+    ],
+    "suggestedCorrection": "Remove the Anzai family case study from the Q29 question text and link it to Q30 onward as shared context. The explanation can stay as is. Optionally add a note that the sinking fund factor gives the fixed annual deposit needed to reach a target amount. The official answer (128,400円) stays unchanged.",
+    "sourceQueries": [
+      "減債基金係数 目標額 毎年の積立額 FP2級",
+      "FP2級 実技 2024年9月 係数早見表 減債基金係数 9年"
+    ]
+  },
+  {
+    "number": 30,
+    "approved": true,
+    "issues": [
+      "All four choices are explained. The draft correctly reads choice 1 ('reviewed every year') as the inappropriate one, because the rate is reviewed every six months. Choices 2 (0.05% floor), 3 (early redemption allowed after 1 year) and 4 (early redemption adjustment based on the two most recent interest payments, before tax) are correct.",
+      "Legal timing: the terms of variable-rate 10-year retail JGBs (reviewed every six months, 0.05% floor, early redemption after 1 year, the adjustment calculation) did not change between the 2024-04-01 reference date and the exam date. No issue.",
+      "Optional detail for choice 4: the Ministry of Finance explains the adjustment as the sum of the two most recent interest payments (before tax) × 0.79685. The draft is not insufficient without this."
+    ],
+    "suggestedCorrection": "Approved as is. Optionally add to choice 4: 'the adjustment is the sum of the two most recent interest payments (before tax) × 0.79685'. The official answer (1) stays unchanged.",
+    "sourceQueries": [
+      "個人向け国債 変動10年 適用利率 半年ごと 見直し 財務省",
+      "個人向け国債 下限金利 0.05%",
+      "個人向け国債 中途換金 発行後1年経過",
+      "個人向け国債 中途換金調整額 直前2回分 税引前 0.79685"
+    ]
+  }
+]
