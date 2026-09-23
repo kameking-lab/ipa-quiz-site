@@ -59,6 +59,11 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
     digest = sha256(json.dumps(candidate["overlay"], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
     matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])
                 and receipt.get("candidateSha256", {}).get(id_) == digest]
+    # A focused correction review supersedes an earlier wider batch receipt.
+    # Equally specific conflicting receipts remain ambiguous and cannot pass.
+    if matching:
+        narrowest = min(len(receipt.get("ids", [])) for receipt in matching)
+        matching = [receipt for receipt in matching if len(receipt.get("ids", [])) == narrowest]
     if len(matching) != 1:
         return False
     receipt = matching[0]

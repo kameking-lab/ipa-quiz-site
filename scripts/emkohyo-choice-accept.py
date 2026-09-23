@@ -44,6 +44,11 @@ def main() -> None:
         digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
         matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])
                     and receipt.get("candidateSha256", {}).get(id_) == digest]
+        # A focused correction review supersedes an earlier wider batch receipt.
+        # Equally specific conflicting receipts remain ambiguous and cannot pass.
+        if matching:
+            narrowest = min(len(receipt.get("ids", [])) for receipt in matching)
+            matching = [receipt for receipt in matching if len(receipt.get("ids", [])) == narrowest]
         if len(matching) != 1:
             raise ValueError(f"Expected exactly one current-candidate direct review: {id_}")
         receipt = matching[0]
