@@ -1,4 +1,4 @@
-"""Recalculate two 2025 radiation questions against the official answer key."""
+"""Recalculate 2025/2026 radiation questions against the official answer key."""
 
 from hashlib import sha256
 import json
@@ -8,8 +8,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PAPER = "emkohyo-EM20251809"
+PAPER_2026 = "emkohyo-EM20261809"
 ROWS = ROOT / "data/exam-library/papers" / f"{PAPER}.json"
 OUT = ROOT / "docs/evidence/emkohyo-choice-sources" / f"{PAPER}-numeric-audit.json"
+OUT_2026 = ROOT / "docs/evidence/emkohyo-choice-sources" / f"{PAPER_2026}-numeric-audit.json"
 
 
 def closest(value: float, choices: list[float]) -> int:
@@ -49,6 +51,23 @@ def main() -> None:
                                "acceptance": "none; per-choice explanation review remains required"},
                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{OUT}: {len(checks)}/{len(checks)} official choices match recalculation")
+    rows_2026 = {row["number"]: row for row in json.loads(
+        (ROOT / "data/exam-library/papers" / f"{PAPER_2026}.json").read_text(encoding="utf-8"))}
+    q8_2026 = rows_2026[8]
+    if "3√2σ" not in q8_2026["text"] or "20 分間" not in q8_2026["text"] or "60 cpm" not in q8_2026["text"]:
+        raise ValueError("2026 Q8 formula or operands changed; recalculate before accepting")
+    value = (3 * sqrt(2) * (sqrt(60 * 20) / 20)) / 60 / 0.10
+    check = {"id": q8_2026["id"], "officialRowSha256": sha256(q8_2026["text"].encode()).hexdigest(),
+             "formula": "3*sqrt(2)*sqrt(60*20)/20/60/0.10 Bq", "result": value,
+             "choiceValues": [0.012, 0.55, 1.2, 5.5, 12.0],
+             "computedChoice": closest(value, [0.012, 0.55, 1.2, 5.5, 12.0]),
+             "officialChoice": q8_2026["correctChoice"]}
+    if check["computedChoice"] != check["officialChoice"]:
+        raise ValueError("2026 Q8 recalculation differs from official answer")
+    OUT_2026.write_text(json.dumps({"checks": [check], "passed": 1,
+                                    "acceptance": "none; per-choice explanation review remains required"},
+                                   ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    print(f"{OUT_2026}: 1/1 official choices match recalculation")
 
 
 if __name__ == "__main__":
