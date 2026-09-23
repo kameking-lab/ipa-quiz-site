@@ -12,6 +12,7 @@ import { PM_QUESTIONS } from "./pm";
 import { ES_QUESTIONS } from "./es";
 import { SM_QUESTIONS } from "./sm";
 import { AU_QUESTIONS } from "./au";
+import { FP2_QUESTIONS } from "./fp2";
 import { FP3_QUESTIONS } from "./fp3";
 
 // ─── How to add a new exam ───────────────────────────────────────────────────
@@ -37,6 +38,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   es: ES_QUESTIONS,
   sm: SM_QUESTIONS,
   au: AU_QUESTIONS,
+  fp2: FP2_QUESTIONS,
   fp3: FP3_QUESTIONS,
 };
 

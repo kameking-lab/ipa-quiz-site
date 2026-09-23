@@ -37,7 +37,7 @@ import type {
 type SearchSort = "relevance" | "year_desc" | "category" | "random";
 
 const EXAM_OPTIONS: ExamCode[] = [
-  "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp3",
+  "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3",
 ];
 const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];

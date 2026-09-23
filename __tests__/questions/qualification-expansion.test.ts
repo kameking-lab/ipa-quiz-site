@@ -1,6 +1,7 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { getChoiceKeys } from "@/lib/questions/answers";
@@ -10,10 +11,11 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
-const EXTERNAL_QUESTIONS = [...FP3_QUESTIONS, ...DENKEN3_QUESTIONS];
+const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS];
 
 describe("official-source qualification pilot data", () => {
-  it("contains only the seven transcribed pilot questions", () => {
+  it("contains the transcribed FP sets and gated electrical pilot", () => {
+    expect(FP2_QUESTIONS).toHaveLength(10);
     expect(FP3_QUESTIONS).toHaveLength(5);
     expect(DENKEN3_QUESTIONS).toHaveLength(2);
   });
@@ -21,6 +23,7 @@ describe("official-source qualification pilot data", () => {
   it("keeps Denken3 behind the notification-required publication gate", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("notification-required");
     expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
+    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(10);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(5);
   });
 
@@ -38,6 +41,12 @@ describe("official-source qualification pilot data", () => {
     expect(q.officialReferenceUrls?.every((url) => url.startsWith("https://"))).toBe(true);
   });
 
+  it("matches the official FP2 answer sequence and 2025 law reference date", () => {
+    expect(FP2_QUESTIONS.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+    expect(FP2_QUESTIONS.map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
+    expect(FP2_QUESTIONS.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
+  });
+
   it("uses the explicit official answer PDF URL when question and answer files differ", () => {
     const q = DENKEN3_QUESTIONS[0]!;
     expect(getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)).toBe(q.sourceAnswerUrl);
@@ -45,6 +54,7 @@ describe("official-source qualification pilot data", () => {
   });
 
   it.each([
+    [FP2_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
     [FP3_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
     [DENKEN3_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
   ] as const)("$0.id identifies the official author and reuse terms in JSON-LD", (q, author, license) => {
@@ -61,7 +71,7 @@ describe("official-source qualification pilot data", () => {
     expect(String(resource.license)).toContain(license);
   });
 
-  it.each([FP3_QUESTIONS[0]!, DENKEN3_QUESTIONS[0]!])(
+  it.each([FP2_QUESTIONS[0]!, FP3_QUESTIONS[0]!, DENKEN3_QUESTIONS[0]!])(
     "$id keeps answer text and each-choice explanations aligned after shuffling",
     (q) => {
       const originalAnswer = (Array.isArray(q.answer) ? q.answer[0]! : q.answer) as ChoiceKey;
@@ -70,7 +80,9 @@ describe("official-source qualification pilot data", () => {
         getChoiceKeys(q.choices).map((key) => [q.choices?.[key], q.choiceExplanations?.[key]]),
       );
 
+      const random = vi.spyOn(Math, "random").mockReturnValue(0);
       const shuffled = shuffleChoices(q);
+      random.mockRestore();
       const shuffledAnswer = (Array.isArray(shuffled.answer) ? shuffled.answer[0]! : shuffled.answer) as ChoiceKey;
       expect(shuffled.choices?.[shuffledAnswer]).toBe(correctText);
       for (const key of getChoiceKeys(shuffled.choices)) {

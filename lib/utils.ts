@@ -19,6 +19,7 @@ export const EXAM_LABELS: Record<string, string> = {
   sc: "情報処理安全確保支援士",
   sm: "ITサービスマネージャ",
   au: "システム監査技術者",
+  fp2: "2級FP技能検定",
   fp3: "3級FP技能検定",
   denken3: "第三種電気主任技術者",
 };

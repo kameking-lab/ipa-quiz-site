@@ -83,11 +83,12 @@ export function shuffleChoices(q: Question): Question {
   if (!q.choices) return q;
   // Labels in authored prose refer to the original choices. Reordering only the
   // answer map would silently contradict the explanation (for example AP 2017秋 問2).
-  const prose = [q.question, q.explanation, ...Object.values(q.choices)].join("\n");
+  const prose = [q.question, q.explanation, ...Object.values(q.choices), ...Object.values(q.choiceExplanations ?? {})].join("\n");
   if (/(?:^|[^ァ-ヶー])[アイウエオカキクケコ](?![ァ-ヶー])/u.test(prose) || Array.isArray(q.answer) || Object.keys(q.choices).length !== 4) return q;
   const keys: Array<"ア" | "イ" | "ウ" | "エ"> = ["ア", "イ", "ウ", "エ"];
-  const values = keys.map((k) => q.choices![k]!);
-  shuffle(values);
+  const originalKeys = [...keys];
+  shuffle(originalKeys);
+  const values = originalKeys.map((k) => q.choices![k]!);
   const newChoices: Record<"ア" | "イ" | "ウ" | "エ", string> = {
     ア: values[0],
     イ: values[1],
@@ -95,7 +96,9 @@ export function shuffleChoices(q: Question): Question {
     エ: values[3],
   };
   const originalAnswerKey = Array.isArray(q.answer) ? q.answer[0] : q.answer;
-  const originalAnswerValue = q.choices[originalAnswerKey as "ア" | "イ" | "ウ" | "エ"]!;
-  const newAnswerKey = keys[values.indexOf(originalAnswerValue)];
-  return { ...q, choices: newChoices, answer: newAnswerKey };
+  const newAnswerKey = keys[originalKeys.indexOf(originalAnswerKey as "ア" | "イ" | "ウ" | "エ")];
+  const choiceExplanations = q.choiceExplanations
+    ? Object.fromEntries(keys.map((key, index) => [key, q.choiceExplanations![originalKeys[index]]]))
+    : undefined;
+  return { ...q, choices: newChoices, answer: newAnswerKey, choiceExplanations };
 }
