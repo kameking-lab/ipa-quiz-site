@@ -8,6 +8,20 @@
   "choiceExplanationQc": 40,
   "figureAndPhotoQc": 9,
   "governmentSourceQc": 3,
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20240526-q01-10-opus-review-part01.json",
+      "docs/evidence/denko2-independent/20240526-q01-10-opus-review-part02.json"
+    ],
+    "lawChecksResolvedSeparately": [
+      8,
+      9,
+      10
+    ]
+  },
   "governmentSourceApplicableQuestions": [
     8,
     9,

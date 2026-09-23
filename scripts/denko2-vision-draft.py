@@ -95,6 +95,18 @@ def parse_array(response: str) -> list[dict]:
     return value
 
 
+def generate(batch: dict, model: str) -> list[dict]:
+    questions = batch["questions"]
+    try:
+        return parse_array(run_cli(batch, model))
+    except (ValueError, json.JSONDecodeError):
+        if len(questions) == 1:
+            raise
+        midpoint = len(questions) // 2
+        return (generate({**batch, "questions": questions[:midpoint]}, model) +
+                generate({**batch, "questions": questions[midpoint:]}, model))
+
+
 def draft_chunk(batch_path: Path, questions: list[dict], part: int, model: str) -> tuple[str, str]:
     output = batch_path.with_name(batch_path.stem + f"-vision-part{part:02}.json")
     qc_path = output.with_name(output.stem + "-qc.json")
@@ -114,7 +126,7 @@ def draft_chunk(batch_path: Path, questions: list[dict], part: int, model: str) 
         archive_stale(qc_path)
     parent = json.loads(batch_path.read_text(encoding="utf-8"))
     batch = {**parent, "questions": questions}
-    result = parse_array(run_cli(batch, model))
+    result = generate(batch, model)
     expected = {item["number"]: item for item in questions}
     if len(result) != len(expected) or {item.get("number") for item in result} != set(expected):
         raise ValueError(f"{output.name}: question coverage differs")
@@ -152,12 +164,12 @@ def main() -> None:
         jobs.extend((path, questions[offset:offset + CHUNK_SIZE], offset // CHUNK_SIZE + 1, model)
                     for offset in range(0, len(questions), CHUNK_SIZE))
     with ThreadPoolExecutor(max_workers=2) as pool:
-        futures = [pool.submit(draft_chunk, *job) for job in jobs]
+        futures = {pool.submit(draft_chunk, *job): job for job in jobs}
         for future in as_completed(futures):
             try:
                 print(*future.result(), flush=True)
             except Exception as error:
-                print(f"ERROR {error}", flush=True)
+                print(f"ERROR {futures[future][0].stem} part{futures[future][2]:02}: {error}", flush=True)
 
 
 if __name__ == "__main__":

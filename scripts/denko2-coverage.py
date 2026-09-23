@@ -7,6 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 BATCHES = ROOT / "data/raw_pdfs/denko2/review/batches"
 RECEIPTS = ROOT / "docs/evidence/denko2-coverage"
+REVIEWED = ROOT / "data/questions/denko2/reviewed"
 
 
 def read_vision_count(path: Path) -> int:
@@ -53,6 +54,23 @@ def main() -> None:
                 sorted(receipt["reviewedQuestionNumbers"]) != numbers or
                 receipt["unresolved"]):
                 raise ValueError(f"Incomplete accepted receipt: {output}")
+            reviewed_numbers = set()
+            for reviewed_file in REVIEWED.glob(path.name[:8] + "-*.json"):
+                reviewed_numbers.update(item["number"] for item in json.loads(reviewed_file.read_text(encoding="utf-8")))
+            if not set(numbers).issubset(reviewed_numbers):
+                raise ValueError(f"Accepted receipt lacks reviewed content: {output}")
+            independent = receipt.get("independentVisionReview", {})
+            if independent.get("passedQuestions") != 10 or independent.get("totalQuestions") != 10:
+                raise ValueError(f"Accepted receipt lacks full independent review: {output}")
+            independent_numbers = set()
+            for relative in independent.get("receipts", []):
+                review = json.loads((ROOT / relative).read_text(encoding="utf-8"))
+                for item in review["assessment"]:
+                    if item["status"] != "PASS":
+                        raise ValueError(f"Independent review not passed: {relative} Q{item['number']}")
+                    independent_numbers.add(item["number"])
+            if independent_numbers != set(numbers):
+                raise ValueError(f"Independent review coverage differs: {output}")
             accepted += 10
         output.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Required 200 questions / 800 choices; accepted {accepted} / 200; batch receipts {len(required)}")
