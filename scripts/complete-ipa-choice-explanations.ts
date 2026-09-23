@@ -15,6 +15,7 @@ const ALL_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", 
 const TARGET_YEARS = new Set([2024, 2025]);
 const DEFAULT_EXAMS = ["sc", "nw", "db", "st", "sa", "pm", "es", "sm", "au"] as ExamCode[];
 const MIN_REASON_LENGTH = 55;
+const REQUIRED_MODEL = "claude-opus-5-5";
 
 interface Options {
   exams: ExamCode[];
@@ -36,9 +37,15 @@ function parseOptions(): Options {
     batchSize: Number(value("batch-size") ?? 5),
     maxBatches: Number(value("max-batches") ?? 500),
     workers: Math.max(1, Math.min(3, Number(value("workers") ?? 3))),
-    model: value("model") ?? "opus",
+    model: value("model") ?? REQUIRED_MODEL,
     dryRun: args.includes("--dry-run"),
   };
+}
+
+function assertPinnedModel(options: Options): void {
+  if (options.model !== REQUIRED_MODEL) {
+    throw new Error(`authoring model must be explicitly pinned to ${REQUIRED_MODEL}; received ${options.model}`);
+  }
 }
 
 function overlayPath(exam: ExamCode): string {
@@ -211,6 +218,7 @@ async function runClaude(
 
 async function main(): Promise<void> {
   const options = parseOptions();
+  assertPinnedModel(options);
   mkdirSync(LOG_ROOT, { recursive: true });
   const overlays = Object.fromEntries(options.exams.map((exam) => [exam, readOverlay(exam)])) as Record<string, Overlay>;
   const targets = ALL_QUESTIONS.filter((question) =>

@@ -13,6 +13,7 @@ const EXAMS = ["sc", "nw", "db", "st", "sa", "pm", "es", "sm", "au"] as ExamCode
 const YEARS = new Set([2024, 2025]);
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
 const MIN_LENGTH = 55;
+const REQUIRED_MODEL = "claude-opus-5-5";
 
 type Overlay = Record<string, Partial<Record<ChoiceKey, string>>>;
 interface ReviewRow {
@@ -36,7 +37,10 @@ function option(name: string, fallback: string): string {
 const batchSize = Number(option("batch-size", "6"));
 const workers = Math.max(1, Math.min(3, Number(option("workers", "3"))));
 const maxBatches = Number(option("max-batches", "500"));
-const model = option("model", "opus");
+const model = option("model", REQUIRED_MODEL);
+if (model !== REQUIRED_MODEL) {
+  throw new Error(`review model must be explicitly pinned to ${REQUIRED_MODEL}; received ${model}`);
+}
 const dryRun = process.argv.includes("--dry-run");
 
 function readJson<T>(path: string, fallback: T): T {
@@ -150,7 +154,7 @@ ${JSON.stringify(batch.map((question) => ({
   })), null, 2)}`;
 }
 
-async function reviewBatch(batch: Question[], index: number, attempt: number): Promise<ReviewResult> {
+async function reviewBatch(batch: Question[], index: number, attempt: number): Promise<{ result: ReviewResult; actualModel: string }> {
   const token = digest(batch.map((question) => question.id)).slice(0, 12);
   const prefix = join(LOG_ROOT, `${String(index + 1).padStart(4, "0")}-${token}-a${attempt}`);
   const prompt = makePrompt(batch);
@@ -176,11 +180,15 @@ async function reviewBatch(batch: Question[], index: number, attempt: number): P
     });
     child.stdin.end(prompt);
   });
-  const envelope = JSON.parse(raw) as { result?: string };
+  const envelope = JSON.parse(raw) as { result?: string; modelUsage?: Record<string, unknown> };
   if (typeof envelope.result !== "string") throw new Error(`review result missing ${token}`);
+  const actualModels = Object.keys(envelope.modelUsage ?? {});
+  if (!actualModels.includes(REQUIRED_MODEL)) {
+    throw new Error(`review did not use pinned model ${REQUIRED_MODEL}: ${actualModels.join(",") || "unknown"}`);
+  }
   const result = parseReview(envelope.result.replace(/^```(?:json)?\s*|\s*```$/gu, ""), batch);
   writeJson(`${prefix}.accepted.json`, result);
-  return result;
+  return { result, actualModel: REQUIRED_MODEL };
 }
 
 async function main(): Promise<void> {
@@ -207,18 +215,18 @@ async function main(): Promise<void> {
     while (next < batches.length) {
       const index = next++;
       const batch = batches[index]!;
-      let result: ReviewResult | undefined;
+      let reviewed: { result: ReviewResult; actualModel: string } | undefined;
       let lastError: unknown;
-      for (let attempt = 1; attempt <= 3 && !result; attempt += 1) {
-        try { result = await reviewBatch(batch, index, attempt); }
+      for (let attempt = 1; attempt <= 3 && !reviewed; attempt += 1) {
+        try { reviewed = await reviewBatch(batch, index, attempt); }
         catch (error) { lastError = error; console.error(`[review-retry] batch=${index + 1} attempt=${attempt}`, error); }
       }
-      if (!result) throw lastError;
+      if (!reviewed) throw lastError;
       for (const question of batch) {
-        const review = result[question.id]!;
+        const review = reviewed.result[question.id]!;
         overlays[question.exam]![question.id] = review.choiceExplanations;
         const current = hashes(question, review.choiceExplanations);
-        ledger[question.id] = { ...current, status: review.status, issues: review.issues, model };
+        ledger[question.id] = { ...current, status: review.status, issues: review.issues, model: reviewed.actualModel };
       }
       for (const exam of new Set(batch.map((question) => question.exam))) writeJson(overlayPath(exam), overlays[exam]);
       writeJson(LEDGER_PATH, ledger);
