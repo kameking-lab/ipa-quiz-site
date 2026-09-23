@@ -149,6 +149,8 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   if (Array.isArray(overlay.choices)) {
     const numbers = overlay.choices.map(choice => choice?.number);
     check(new Set(numbers).size === 5 && [1, 2, 3, 4, 5].every(number => numbers.includes(number)), `Choice explanation numbers incomplete: ${id}`);
+    const reasons = overlay.choices.map(choice => typeof choice?.reason === 'string' ? choice.reason.trim() : null);
+    check(new Set(reasons).size === 5, `Duplicate choice explanation reason: ${id}`);
     for (const choice of overlay.choices) {
       check(choice && typeof choice === 'object', `Invalid choice explanation row: ${id}`);
       if (!choice || typeof choice !== 'object') continue;
