@@ -1,0 +1,26 @@
+{
+  "officialSources": [
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+      "document": "経済産業省 電気設備の技術基準の解釈（2024年10月22日）",
+      "localPath": "data/raw_pdfs/denko2/meti-20241022-2.pdf",
+      "sha256": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb",
+      "clauses": ["PDF121頁、第120条第1項。地中電線路は電線にケーブルを使用し、管路式・暗きょ式・直接埋設式により施設する。"]
+    },
+    {
+      "url": "https://www.maff.go.jp/j/nousin/pompjyo/attach/pdf/ponnpu-4.pdf",
+      "document": "農林水産省 土地改良事業計画設計基準・ポンプ場技術書 第10章補機設備",
+      "localPath": "data/raw_pdfs/denko2/maff-pump-electrical-2019.pdf",
+      "sha256": "09038ea72fff339ef41c55a67c6417b779130170560bc9513341555eed93622f",
+      "clauses": ["PDF14頁・印刷頁443の表10.26。FEP・鋼管等を使用する管路式の地中電線路の施設場所に『引込配線、構内配線』と明記。原図②は同一構内の庭園灯間をFEP管路で結ぶため、構内配線の管路式地中配線に該当する。"]
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001108579.pdf",
+      "document": "国土交通省 公共建築設備工事標準図（電気設備工事編）平成28年版",
+      "localPath": "data/raw_pdfs/denko2/mlit-electrical-drawings-2016.pdf",
+      "sha256": "6659d47a16814598d7bc1d05eb7b837a81952e58423d1f7f724435755c4584aa",
+      "clauses": ["PDF24頁の電線類の名称表。EM-IEは600V耐燃性ポリエチレン絶縁電線、EM-EEF・EM-EE・EM-CEはいずれもシースケーブルと分類されている。"]
+    }
+  ],
+  "reviewScope": "原図②を構内配線のFEP管路と確認し、農水省表10.26の施設分類と経産省第120条を接続する。実際の各ケーブル商品の追加施工条件までは断定しない。問題・共通図面の掲載許諾は取得済み。"
+}

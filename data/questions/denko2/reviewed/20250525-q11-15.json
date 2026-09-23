@@ -30,7 +30,7 @@
       "ニ": "2 000 Wの電気乾燥器"
     },
     "officialAnswer": "ロ",
-    "explanation": "内線規程・電技解釈の許容電流表により、断面積1.25 mm²のゴムコード(天然ゴム混合物絶縁)の許容電流は12 Aである。定格電圧100 Vのとき使用可能な最大消費電力は P = V × I = 100 V × 12 A = 1200 W。この1200 W以下の範囲で最も消費電力が大きい機器を選ぶ。",
+    "explanation": "経済産業省の電気用品の技術基準解釈に示されたコードの許容電流表では、周囲温度30℃、公称断面積1.25mm²、絶縁物使用温度上限60℃のコードは12A。天然ゴム混合物を用いた本問のコードはこの値を使う。定格電圧100VではP=V×I=100V×12A=1200Wまでなので、選択肢中で1200W以下の最大値を選ぶ。",
     "choiceExplanations": {
       "イ": "600 Wは1200 W以下で使用可能だが、選択肢中で消費電力が最も大きいわけではない。",
       "ロ": "1000 Wは1200 W以下に収まり、かつ選択肢の中で許容電流内に収まる最大の消費電力であるため正答。",
@@ -40,7 +40,10 @@
     "diagramDescription": "図・写真はなく、問題文と4肢のみのテキスト行。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20250525/q12.png",
-    "editorialReviewNotes": "許容電流12 Aという数値は一般に知られる内線規程の許容電流表(ゴムコード1.25 mm²)に基づくが、画像内に表そのものは示されておらず、出題時の参照表の版・数値を画像から直接確認することはできない。"
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/consumer/seian/denan/file/04_cn/ts/240601/kaiseibun_240601.pdf",
+      "https://www.meti.go.jp/policy/consumer/seian/denan/kaishaku/gijutsukijunkaishaku/130701_sinkaishaku.pdf"
+    ]
   },
   {
     "number": 13,

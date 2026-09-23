@@ -1,21 +1,24 @@
 {
   "reviewModel": "claude-opus-5-5",
   "sourceReceipts": [
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-44.json",
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q42.json",
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01.json",
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q49-50.json",
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q50.json",
-    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02.json"
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43-44-45.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q44.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46-47-48-49-50.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46-47.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46.json",
+    "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q48.json"
   ],
+  "strictCurrentHashPinned": true,
   "assessment": [
     {
       "number": 41,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-44.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43.json",
+      "directReviewSha256": "ac2ecbb93f1b7a729172ba0775789488ea9233cdd91201900653cf66d7edc95e",
       "officialAnswer": "ロ",
-      "currentCandidateSha256": "bb3f58bcbab3a15b7fe6dd101a55a7f7d847a0e974a572d568b46a39bd3e9c17",
+      "currentCandidateSha256": "97f7004b919e56b17fecfa90ec0bccbc83534b6a73dc92227ca0e8b0654827c2",
       "originalRowSha256": "54f4343cabf4dc1a43353fe0582903538a0c870f88bbd58990b9f51394aeae7e",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -24,16 +27,23 @@
         "public/images/denko2/2025-first/q41-ha.png": "c8ec1b74ba3e24aeabd73a176cbb2cbf1fef27ba88fb9f147407a795ec4fe9cd",
         "public/images/denko2/2025-first/q41-ni.png": "988f7d7146dcec64d8a8ebd8f3f7f6566da562d57d13e873746ba77ce90d9e6d"
       },
-      "officialReferenceUrls": [],
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q41.json",
+        "sha256": "d6f09224e01822b39fde5fe1c1649ea0b10b7e0f59b7679e7dfd890a3585f50d"
+      },
+      "officialReferenceUrls": [
+        "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html"
+      ],
       "editorialCaveatRetained": true
     },
     {
       "number": 42,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q42.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43.json",
+      "directReviewSha256": "ac2ecbb93f1b7a729172ba0775789488ea9233cdd91201900653cf66d7edc95e",
       "officialAnswer": "ロ",
-      "currentCandidateSha256": "88942201b623fee4fcceeef53eee4615111a82d5cfd5f4a74f97ed34d2405033",
+      "currentCandidateSha256": "43d22469025806401799298ecb8cee6f271ed647b8d806139ffd4e4bda8932f3",
       "originalRowSha256": "d0966102c1d0c8b0dcddba3b2cf0f82a0dc9fd0c78a068425ac44df37ca1cee3",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -42,16 +52,23 @@
         "public/images/denko2/2025-first/q42-ha.png": "1616a217abb62a2d9e339bd937ecf6120686f2eb7e24802fb20a66f3dd28ffc5",
         "public/images/denko2/2025-first/q42-ni.png": "e1c8fadad3df886332c107c9ac6b75fc0781f8a8376f8ee3acec266eede219f9"
       },
-      "officialReferenceUrls": [],
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q42.json",
+        "sha256": "1a7202f7a8e8c0cdc50ebcdd87d3c1c48ba131fa4747e078a0cf7f374d34e311"
+      },
+      "officialReferenceUrls": [
+        "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html"
+      ],
       "editorialCaveatRetained": true
     },
     {
       "number": 43,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43.json",
+      "directReviewSha256": "ac2ecbb93f1b7a729172ba0775789488ea9233cdd91201900653cf66d7edc95e",
       "officialAnswer": "ニ",
-      "currentCandidateSha256": "b1930d6fb4faab5c319d95e452b75f280ba2d4d9535daad3238a50d15a72758e",
+      "currentCandidateSha256": "2ec9bb8cfa4dd1becf805701756b33a1c2325ba13da50ff950c41c84606b5582",
       "originalRowSha256": "9bd6187f3b03f00680d44f170e19beba43607dae53b0bb3c2c152e473b735650",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -60,16 +77,21 @@
         "public/images/denko2/2025-first/q43-ha.png": "9f59a80482aeb45556e1d808062fd85d17f785b6ba66c2bc5a521fe866daad6c",
         "public/images/denko2/2025-first/q43-ni.png": "3d6ffe67f3bc06475e8881c467c69e5ab61a3f56aecb045bec27bd1411b00455"
       },
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q43.json",
+        "sha256": "8c5dfd136bef7044f665ba707e59403c4051cd3b48832be3a27bb71f6c76c672"
+      },
       "officialReferenceUrls": [],
       "editorialCaveatRetained": true
     },
     {
       "number": 44,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-44.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q44.json",
+      "directReviewSha256": "d9002621e3494667fb867204faf0bd50a8cc42aad654d11494a3d3db5e99341f",
       "officialAnswer": "ハ",
-      "currentCandidateSha256": "51a6dcad7739d1120b4402258dc78f5469560783ceee43b62672a3ec9ddd45ff",
+      "currentCandidateSha256": "7970bce58d703e37df1af78be0f560cb8ba5a3fb33b0d204f0248dd9a9434fdb",
       "originalRowSha256": "d9356f9bccc9135d894748f094b77fda4aaa7917fd89500d9c16d07a4e74a0e4",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -78,14 +100,16 @@
         "public/images/denko2/2025-first/q44-ha.png": "b1251c47b15d4737c60661d2f2ef5620fc7b1d4cce1afb06a8a55234b63bca63",
         "public/images/denko2/2025-first/q44-ni.png": "cc8b89c65af69635c8b713cf3948bb31f51702d98033c1198c2bf10e26120e76"
       },
+      "sourcePack": null,
       "officialReferenceUrls": [],
       "editorialCaveatRetained": true
     },
     {
       "number": 45,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part01-fix-q41-42-43-44-45.json",
+      "directReviewSha256": "da64ed40ecaf3c4be2feac8d2c5d23bbfac30221a2cdd361f458038e5674d3f1",
       "officialAnswer": "イ",
       "currentCandidateSha256": "3df30a5f964203774a0a7c5f2b87adf3d7ef428b47cc0264b48e00961957353c",
       "originalRowSha256": "b5a236c9babe90dc930c52ccca51b68974f54b00f8b24865179fd3d3f0fc5963",
@@ -96,16 +120,21 @@
         "public/images/denko2/2025-first/q45-ha.png": "d501f0ce16cc46baf4c342356df6406fed196d7aefa86353abe7ad0e0c675a5c",
         "public/images/denko2/2025-first/q45-ni.png": "2cc94c3827df032abc057dccecfe13a869470cd704582dc3c256a99f97bef458"
       },
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q45.json",
+        "sha256": "e54d7070e6845c76ce804665956c0ea6224eb98c01507aab2aa8e74367a8c3ba"
+      },
       "officialReferenceUrls": [],
       "editorialCaveatRetained": true
     },
     {
       "number": 46,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46.json",
+      "directReviewSha256": "d2e39337fbb3a475390ad5a4413b2865e22faa19f90dde586ac1c90b8dcd6029",
       "officialAnswer": "ロ",
-      "currentCandidateSha256": "9251cc648c461bfa52353498e61778d643c5cbc1a24da653d29f6bfa0109cb8c",
+      "currentCandidateSha256": "90ea7904d21de6239795d17b8f309cf75b3a6f2ae236163dca9ff84e13770ac7",
       "originalRowSha256": "b93ea2bc7319c16951490ff929c72cf5528d8ab14d151df99577b55179c0adb5",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -114,16 +143,23 @@
         "public/images/denko2/2025-first/q46-ha.png": "837ac0f790519a3689445c0b040f3324301df4906a74c229892e9c1dd00a0b7c",
         "public/images/denko2/2025-first/q46-ni.png": "6bf6f46e90e7c4c72db80a614f2b4a9792bf097ca63ac6416df9c5970fb12120"
       },
-      "officialReferenceUrls": [],
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q46.json",
+        "sha256": "8b57d2c7d73d07d255cb4a2e29826ae636dd7dca7b8f7c3db3cf81b1bc410b0e"
+      },
+      "officialReferenceUrls": [
+        "https://www.kkr.mlit.go.jp/n_info/sekkeishiyo/r6/kouji/r9733f0000029iol-att/a1737353565555.pdf"
+      ],
       "editorialCaveatRetained": true
     },
     {
       "number": 47,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46-47.json",
+      "directReviewSha256": "08209be52fd5166ec65d7aec71f17871535802cb82b678f9e42e16a9ddde672c",
       "officialAnswer": "ハ",
-      "currentCandidateSha256": "751e0d4aa81484ca32eb1eb6b7d7129c3422b5e70c55e463b468301a1a52cfd0",
+      "currentCandidateSha256": "94987ec9f613da10cd494d5fe6c1e022da5dc3ce47f02ceab55830dde4a065a1",
       "originalRowSha256": "3dfcbb7195fdf300f31310481d58f765e9200338ffc5fa12d3a70adf15e76e71",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -132,16 +168,23 @@
         "public/images/denko2/2025-first/q47-ha.png": "89fb6220f34bd72da4c1716c43442fc9f23df2f29eb5d1ae403939563ca0c2e3",
         "public/images/denko2/2025-first/q47-ni.png": "3eccf2b2afa831fdc0dfead76614500eb161e3ee6e028a38455b3060f658d30d"
       },
-      "officialReferenceUrls": [],
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q47.json",
+        "sha256": "d6d7dd53bdc66cda53087c49e320d02d70bf447b1839a20efe4a834bfc99db73"
+      },
+      "officialReferenceUrls": [
+        "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html"
+      ],
       "editorialCaveatRetained": true
     },
     {
       "number": 48,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q48.json",
+      "directReviewSha256": "ef9af3354980b866c3a51f7e37af262584d92fff0c5a78ddca9983b1513a869f",
       "officialAnswer": "ロ",
-      "currentCandidateSha256": "04ca7c9391050d0b26c46f32fee1ec6de17dff6408cad6e3c902710d46820337",
+      "currentCandidateSha256": "3b6994a6ce7aeace9d3cf03d03ba4e501c4ca2d41b794be04665198cd1d6e46f",
       "originalRowSha256": "b528ee5eda184f51949ceb743000905f341f0b670acc9c5003ae758f24007095",
       "publishedFigureSha256": {
         "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277",
@@ -150,14 +193,16 @@
         "public/images/denko2/2025-first/q48-ha.png": "fdb3de0f0c7812e353196b28f2014d4522b8b663adc26d7308b479cd59ca5d2b",
         "public/images/denko2/2025-first/q48-ni.png": "9d05ad60d84c8f36c30f3823b33b99056b6c1decb6f2a36dfb82c5e166212eb7"
       },
+      "sourcePack": null,
       "officialReferenceUrls": [],
       "editorialCaveatRetained": true
     },
     {
       "number": 49,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q49-50.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46-47-48-49-50.json",
+      "directReviewSha256": "dd5f1afcfdf431ca096d159f22cd74b504ecb066da0d7c2f4a81bc7d8eeca6d6",
       "officialAnswer": "ロ",
       "currentCandidateSha256": "f0357e21c2dfd10c06bc222299838b4971fab0d21817c8005ba67547c2a7b22e",
       "originalRowSha256": "cc640cd14be0980792325e43850db2e1010053c7934f96b5bef743a7df2848a9",
@@ -168,14 +213,19 @@
         "public/images/denko2/2025-first/q49-ha.png": "42d5124d4ad546b6238cbf3c8fda207d3ef3c1d5a4acfd555e58201da9a3e2f8",
         "public/images/denko2/2025-first/q49-ni.png": "5fc968f1ad8703540e5ee91986d960c65d8c39f088abe183b95287add78fc527"
       },
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q49.json",
+        "sha256": "4bf106244f0c600a76724b872c70239eb0e0e499d631ce14ea1901942f744790"
+      },
       "officialReferenceUrls": [],
       "editorialCaveatRetained": true
     },
     {
       "number": 50,
       "status": "PASS",
-      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q50.json",
       "reviewModel": "claude-opus-5-5",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q41-50-opus-review-part02-fix-q46-47-48-49-50.json",
+      "directReviewSha256": "dd5f1afcfdf431ca096d159f22cd74b504ecb066da0d7c2f4a81bc7d8eeca6d6",
       "officialAnswer": "ハ",
       "currentCandidateSha256": "c68f965b98b9ac7da89fa2604bbe9558c11418df8b26704e13b024547dc4b0de",
       "originalRowSha256": "1622980b713b7bf06dbc36d227f5b50e587f98653b5ee887d1ebd102f4174703",
@@ -185,6 +235,10 @@
         "public/images/denko2/2025-first/q50-ro.png": "674164e2237ff47463a52d33089d426fda8f886275348ec4b3f1d751f7e4cc6b",
         "public/images/denko2/2025-first/q50-ha.png": "5fd9c2732ae1a8315d81fffdd2d4d60bc794b0d6fcddcbc14c3d8455572ab46c",
         "public/images/denko2/2025-first/q50-ni.png": "37f4486b50ae91e2cb81ee3169ba82631b112430a0334dd3213fc985842b33d7"
+      },
+      "sourcePack": {
+        "path": "docs/evidence/denko2-sources/20250525/q50.json",
+        "sha256": "e6282083ef4bfa975233e54ef09da0655247dba8c4fa9b68ca629676e7944854"
       },
       "officialReferenceUrls": [],
       "editorialCaveatRetained": false

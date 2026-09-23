@@ -1,0 +1,33 @@
+{
+  "officialSources": [
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+      "sha256": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb",
+      "pages": [154, 155],
+      "clauses": [
+        "第159条第1項第1号: 金属管工事の電線は屋外用ビニル絶縁電線を除いた絶縁電線。",
+        "第159条第3項第4号: 300V以下の金属管はD種接地が原則。乾燥場所の管全長4m以下、または交流対地電圧150V以下で全長8m以下かつ簡易接触防護措置又は乾燥場所の例外。"
+      ]
+    },
+    {
+      "url": "https://www.hkd.mlit.go.jp/ky/jg/gijyutu/u23dsn0000000cmy-att/u23dsn0000000cvo.pdf",
+      "clause": "国土交通省北海道開発局の金属管配線施工仕様: OW電線除外。曲げ内側半径は管内径の6倍以上。"
+    },
+    {
+      "url": "https://mhlw-grants.niph.go.jp/system/files/2004/044031/200401115A/200401115A0001.pdf",
+      "clause": "厚生労働科学研究費の200V配線研究報告は、日本の通常の三相3線式200Vの対地電圧を200Vとする。"
+    },
+    {
+      "url": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-27.pdf",
+      "sha256": "08879da85a8ca493f222acc849062e2a4a8c4532dd9c9e657e54a67e79769f87",
+      "page": 44,
+      "clause": "農林水産省『電気設備工事の工事費積算指針』第7章表7.7-14は薄鋼電線管19の内径15.9mm、管内断面積198.5mm²、占積率32%の面積63mm²を掲載。"
+    },
+    {
+      "url": "https://www.maff.go.jp/j/nousin/sekkei/sekisan_kijun/sekisan_kijun_old/attach/pdf/sekisan_kijun_R5-39.pdf",
+      "sha256": "87a536b9c87d20c6c4d1e03250f3c2cff70a7730741c69a96b4e3b3a9a084f52",
+      "page": 61,
+      "clause": "農林水産省『土地改良事業等請負工事積算基準及び標準歩掛等の参考資料』電線・ケーブルの仕上外径表は600Vビニル絶縁電線（IV）2.0mmの参考仕上外径3.6mm、配線に適用する仕上外径5mmを掲載。5mmを用いる保守的な3本の面積は3×π×(5/2)^2=58.9mm²で、63mm²以下。"
+    }
+  ]
+}
