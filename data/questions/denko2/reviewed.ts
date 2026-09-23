@@ -9,6 +9,16 @@ import p2407 from "./reviewed/20240526-q31-35.json";
 import p2408 from "./reviewed/20240526-q36-40.json";
 import p2409 from "./reviewed/20240526-q41-45.json";
 import p2410 from "./reviewed/20240526-q46-50.json";
+import p24s01 from "./reviewed/20241027-q01-05.json";
+import p24s02 from "./reviewed/20241027-q06-10.json";
+import p24s03 from "./reviewed/20241027-q11-15.json";
+import p24s04 from "./reviewed/20241027-q16-20.json";
+import p24s05 from "./reviewed/20241027-q21-25.json";
+import p24s06 from "./reviewed/20241027-q26-30.json";
+import p24s07 from "./reviewed/20241027-q31-35.json";
+import p24s08 from "./reviewed/20241027-q36-40.json";
+import p24s09 from "./reviewed/20241027-q41-45.json";
+import p24s10 from "./reviewed/20241027-q46-50.json";
 import p2501 from "./reviewed/20250525-q01-05.json";
 import p2502 from "./reviewed/20250525-q06-10.json";
 import p2503 from "./reviewed/20250525-q11-15.json";
@@ -46,6 +56,10 @@ const papers = [
   {
     date: "20240526", year: 2024, season: "first" as const,
     batches: [p2401, p2402, p2403, p2404, p2405, p2406, p2407, p2408, p2409, p2410],
+  },
+  {
+    date: "20241027", year: 2024, season: "second" as const,
+    batches: [p24s01, p24s02, p24s03, p24s04, p24s05, p24s06, p24s07, p24s08, p24s09, p24s10],
   },
   {
     date: "20250525", year: 2025, season: "first" as const,
