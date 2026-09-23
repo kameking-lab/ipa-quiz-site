@@ -1,0 +1,27 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "bffd880ed217ce869bd94f495cd4cd73cc809fcbe84839ebadb5b8e0f1d93c31",
+    "answerPdfSha256": "3eea142439b632109b5f31d09d6efa2a148e9e6271e2216ce422ef211c1fc8ee",
+    "extractedRecordSha256": "6b8e8f700f9e350e7490ca128d2d5f0e96c1d8fb2ff0f35fa343b40085f7ee3b"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-12-13-skill-06",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "The instructions match the original on page 2: 40 minutes, use all supplied materials except spares, follow the construction conditions, and notes 1 to 4. The ―・―・― mark stands in for the original's dash-dot line and means the same thing.",
+      "All 10 supplied materials match the original. Items 1 to 3 are VVF cable: 2.0mm 2-core with blue sheath about 250mm (1 piece), 1.6mm 2-core about 850mm (1 piece), and 1.6mm 3-core about 1050mm (1 piece). The rest are 1 exposed outlet with no cover, 1 hook ceiling rosette (square body only), 2 flush 3-way tumbler switches, 2 mounting frames, 6 small ring sleeves including spares, 2 two-wire push-in connectors, and 2 three-wire push-in connectors. The exam number tag and plastic bag are correctly left out as exam-administration items.",
+      "Construction conditions 1 to 5 match the original. This covers the 3-way switch terminals 0, 1 and 3; the white and black wire colours; white wire on the outlet's W terminal and the rosette's grounded-side terminal; push-in connectors at A and ring sleeves at B; and connecting the outlet at the terminal nearest the cable entry.",
+      "The two lines of notes below the diagram (JIS C 0303:2000, and parts not directly related to the work are omitted or simplified) match the original.",
+      "The diagramImage crop shows the whole diagram with nothing cut off: the dash-dot omitted-work area with the ceiling rosette イ, ceiling rosette イ, the exposed outlet (露出形), boxes A and B, two 3-way switches marked イ/3 (one labelled S), all five VVF labels (1.6-2C twice, 1.6-3C three times, 2.0-2C), the dimensions (150mm ×4, 100mm, 150mm ×2), and the power source label 1φ2W 100V. The crop also includes the notes below the diagram, which are displayed as text as well, so they appear twice. That does not affect whether the content matches.",
+      "The answer PDF's heading is 令和7年度第二種下期技能試験の解答 候補No.6, which matches problem No.6 (sheet code 4B-6). The concept diagram, the wiring diagram and the finished-work example photo all show the same layout as the problem: the omitted rosette, rosette イ, exposed outlet, A, B, two 3-way switches and a 2.0-2C power cable.",
+      "The wiring diagram is consistent with the material counts. At A (push-in connectors) there are one 3-wire white joint, one 3-wire black joint and two 2-wire traveller joints, which uses exactly 2 two-wire and 2 three-wire connectors. At B (ring sleeves) there are 4 joints: white, black and two travellers. That is consistent with 6 small sleeves including spares.",
+      "The PDF text layer shows no missing equations or unreadable in-diagram text. The in-diagram labels, including 1φ2W, are covered by the diagramImage.",
+      "This check only confirms agreement with the original documents. No physical work was graded."
+    ]
+  }
+}
