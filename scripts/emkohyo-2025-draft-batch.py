@@ -37,7 +37,9 @@ def parse_result(stdout: str) -> tuple[object, str]:
     if final is None or final.get("is_error"):
         raise ValueError(f"No successful model response: {stdout[-1000:]}")
     models = [name for name in (final.get("modelUsage") or {}) if name.startswith("claude-")]
-    resolved_model = models[0] if len(models) == 1 else MODEL_ID
+    if len(models) != 1 or not models[0].startswith(MODEL_ID):
+        raise ValueError(f"Cannot prove the requested model from Claude modelUsage: {models}")
+    resolved_model = models[0]
     if isinstance(final.get("structured_output"), dict):
         return final["structured_output"], resolved_model
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)

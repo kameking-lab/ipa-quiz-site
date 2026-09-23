@@ -29,7 +29,9 @@ def parse(stdout: str) -> tuple[object, str]:
         raise ValueError(f"No successful model response: {stdout[-1000:]}")
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
     models = [name for name in (final.get("modelUsage") or {}) if name.startswith("claude-")]
-    resolved_model = models[0] if len(models) == 1 else MODEL_ID
+    if len(models) != 1 or not models[0].startswith(MODEL_ID):
+        raise ValueError(f"Cannot prove the requested model from Claude modelUsage: {models}")
+    resolved_model = models[0]
     return json.loads(value[value.find("{"):value.rfind("}") + 1]), resolved_model
 
 
