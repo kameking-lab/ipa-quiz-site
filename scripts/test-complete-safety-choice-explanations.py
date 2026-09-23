@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from types import SimpleNamespace
 from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -80,6 +81,32 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
             self.assertTrue((log / "test-batch.candidate.json").exists())
             self.assertEqual(output.read_text(encoding="utf-8"), "{}\n")
             self.assertFalse((log / "test-batch.accepted.json").exists())
+
+    def test_model_receipt_uses_actual_cli_model_id(self):
+        with tempfile.TemporaryDirectory() as temp:
+            cli = Path(temp) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe"
+            cli.parent.mkdir(parents=True)
+            cli.touch()
+            rows = [
+                {"type": "assistant", "message": {"model": "claude-opus-5-5"}},
+                {"type": "result", "subtype": "success", "result": '{"qid":{"status":"PASS"}}'},
+            ]
+
+            def fake_run(command, **kwargs):
+                kwargs["stdout"].write("\n".join(json.dumps(row) for row in rows) + "\n")
+                kwargs["stdout"].flush()
+                return SimpleNamespace(returncode=0)
+
+            with patch.dict(MODULE.os.environ, {"APPDATA": temp}), patch.object(
+                MODULE.subprocess, "run", side_effect=fake_run
+            ):
+                result, model = MODULE.call_claude("review", Path(temp) / "receipt",
+                                                   "claude-opus-5-5", return_model=True)
+                self.assertEqual(result["qid"]["status"], "PASS")
+                self.assertEqual(model, "claude-opus-5-5")
+                with self.assertRaisesRegex(RuntimeError, "Unexpected Claude model ID"):
+                    MODULE.call_claude("review", Path(temp) / "alias",
+                                       "opus", return_model=True)
 
 
 if __name__ == "__main__":

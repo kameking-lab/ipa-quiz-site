@@ -7,11 +7,15 @@ target worktree's --root to inspect lckohyo or emkohyo without cherry-picking da
 import argparse
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from hashlib import sha256
 import importlib.util
 import json
 from pathlib import Path
+import re
 import subprocess
 import sys
+
+import requests
 
 from safety_choice_review_gate import (candidate_issues, digest, make_receipt, receipt_current,
                                       receipt_key, reuse_candidate_key, source_snapshot)
@@ -26,6 +30,29 @@ def write(path, value):
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temp.replace(path)
+
+
+def verified_official_pdf(root, paper):
+    """Only hand a reviewer bytes matching the catalog's original PDF digest."""
+    expected = paper.get("pdfSha256", "")
+    if not re.fullmatch(r"[0-9a-f]{64}", expected):
+        raise ValueError(f"Missing original PDF SHA-256: {paper.get('id')}")
+    cache = root / ".cache/safety-full-review/official-pdfs" / f"{expected}.pdf"
+    if cache.is_file():
+        if sha256(cache.read_bytes()).hexdigest() == expected:
+            return cache
+        cache.unlink()
+    url = paper.get("pdfUrl", "")
+    if not url.startswith("https://www.exam.or.jp/"):
+        raise ValueError(f"Unexpected official PDF host: {url}")
+    response = requests.get(url, timeout=60)
+    response.raise_for_status()
+    payload = response.content
+    if len(payload) > 32 * 1024 * 1024 or sha256(payload).hexdigest() != expected:
+        raise ValueError(f"Official PDF content mismatch: {paper['id']}")
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_bytes(payload)
+    return cache
 
 
 def candidates(root, published, selections):
@@ -205,9 +232,16 @@ def main():
     adapter = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(adapter)
     adapter.ROOT = root
+    pdf_paths = {}
+    for batch in batches[:args.max_batches]:
+        for row in batch:
+            paper = row["snapshot"]["paper"]
+            if paper["id"] not in pdf_paths:
+                pdf_paths[paper["id"]] = verified_official_pdf(root, paper)
     def review_batch(batch):
         shared_evidence = {item["sha256"]: item for row in batch for item in row["evidence"]}
-        payload = {"questions": [{k: v for k, v in row.items() if k != "evidence"}
+        payload = {"questions": [dict({k: v for k, v in row.items() if k != "evidence"},
+                                     officialPdfLocalPath=str(pdf_paths[row["snapshot"]["paper"]["id"]]))
                                  for row in batch], "sharedEvidence": list(shared_evidence.values())}
         prompt = ("独立レビュー。下記の全問・全5肢を政府一次資料と公式問題に照合しJSONのみ返す。"
                   "1問のサンプルから他問をPASSにしない。画像はローカルpublic配下のファイルをReadで見る。"
