@@ -23,7 +23,7 @@ export function buildOrgNode() {
     logo: SITE_LOGO_IMAGE,
     sameAs: ["https://x.com/kakomon_ai_jp", NOTE_PROFILE_URL],
     description:
-      "IPA 情報処理技術者試験 13 区分の過去問を AI コパイロット付きで無料提供する教育プラットフォーム。",
+      "IPA情報処理技術者試験に加え、公式の再利用条件を確認した国家資格の公開過去問をAIコパイロット付きで無料提供する教育プラットフォーム。",
   };
 }
 

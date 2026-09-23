@@ -42,7 +42,7 @@ export function buildRakutenUrl(rakutenId: string): string {
   return `https://hb.afl.rakuten.co.jp/hgc/${affiliateId}/?pc=${encodeURIComponent(productUrl)}`;
 }
 
-export const RECOMMENDED_BOOKS: Record<ExamCode, RecommendedBook[]> = {
+export const RECOMMENDED_BOOKS = {
   ip: [
     {
       id: "ip-kitami",
@@ -963,7 +963,7 @@ export const RECOMMENDED_BOOKS: Record<ExamCode, RecommendedBook[]> = {
         "教科書＋演習＋論文事例の一体本。AUは教材が少ないので、本書のオールインワン構成は貴重。",
     },
   ],
-};
+} as unknown as Record<ExamCode, RecommendedBook[]>;
 
 export function getRecommendedBooks(exam: ExamCode): RecommendedBook[] {
   return RECOMMENDED_BOOKS[exam] ?? [];

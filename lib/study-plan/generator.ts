@@ -18,6 +18,7 @@ import type {
   TaskItem,
   TaskKind,
 } from "./types";
+import type { IpaExamCode } from "@/lib/questions/types";
 
 /**
  * Returns the inclusive list of ISO date strings from `from` to `to`.
@@ -94,6 +95,7 @@ function buildCategoryPlan(
   input: StudyPlanInput,
 ): CategoryPlan[] {
   const cfg = EXAM_CONFIGS[input.exam];
+  if (!cfg) return [{ category: "総合演習", weight: 1 }];
   const all = new Set<string>();
   for (const s of cfg.sessions) for (const c of s.categories) all.add(c);
   if (cfg.cbtSessions) {
@@ -296,7 +298,7 @@ export function generateStudyPlan(input: StudyPlanInput): StudyPlan {
   const categories = buildCategoryPlan(input);
 
   const requiredHours =
-    REQUIRED_HOURS[input.exam] * LEVEL_MULTIPLIERS[input.level];
+    (REQUIRED_HOURS[input.exam as IpaExamCode] ?? 100) * LEVEL_MULTIPLIERS[input.level];
 
   const totalAvailableMinutes = studyDates.reduce(
     (sum, d) => sum + dailyBudget(d, input.weekdayMinutes, input.weekendMinutes),

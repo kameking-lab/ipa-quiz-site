@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/test";
 
 for (const width of [390, 1280]) {
-  test(`home starts with two categories at ${width}px`, async ({ page }) => {
+  test(`home keeps IPA and safety as the two primary categories at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     const choices = page.getByRole("navigation", { name: "IPAか安全を選ぶ" });
@@ -11,7 +11,9 @@ for (const width of [390, 1280]) {
     const safety = choices.getByRole("link", { name: /^安全/ });
     await expect(ipa).toBeInViewport();
     await expect(safety).toBeInViewport();
-    await expect(page.locator("main").getByRole("link")).toHaveCount(2);
+    const other = page.getByRole("link", { name: /^FP3級/ });
+    await expect(other).toBeVisible();
+    await expect(page.locator("main").getByRole("link")).toHaveCount(3);
     await ipa.click();
     await expect(page).toHaveURL(/\/ipa$/);
     await expect(page.locator('main a[href="/ip"]').first()).toBeInViewport();
@@ -29,6 +31,10 @@ for (const width of [390, 1280]) {
     await expect(healthConsultant.getByRole("link", { name: /^労働衛生一般/ })).toHaveCount(1);
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(choices).toBeVisible();
+    await other.click();
+    await expect(page).toHaveURL(/\/qualifications$/);
+    await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
+    await expect(page.getByRole("link", { name: /年度・科目を選ぶ/ })).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

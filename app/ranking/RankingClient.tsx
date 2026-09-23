@@ -14,7 +14,7 @@ import {
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { examLabel } from "@/lib/utils";
 import {
   getMockScores,
@@ -90,7 +90,7 @@ export function RankingClient() {
                 onChange={(e) => setExam(e.target.value as ExamCode)}
                 className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               >
-                {ALL_EXAM_CODES.map((c) => (
+                {ALL_QUIZ_EXAM_CODES.map((c) => (
                   <option key={c} value={c}>
                     {examLabel(c)}
                   </option>

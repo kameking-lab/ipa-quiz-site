@@ -155,6 +155,7 @@ async function main() {
 
   for (const examCode of exams) {
     const cfg = EXAM_CONFIGS[examCode];
+    if (!cfg) throw new Error(`Unsupported IPA exam: ${examCode}`);
     if (cfg.seasons.length === 0) {
       console.log(`[skip-exam] ${cfg.nameFull} — no standard PDF exams (CBT)`);
       continue;

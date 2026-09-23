@@ -24,6 +24,8 @@ export function sessionLabel(session: string): string {
     pm2: "午後II",
     "kamoku-a": "科目A",
     "kamoku-b": "科目B",
+    gakka: "学科",
+    riron: "理論",
   };
   return map[session] ?? session.toUpperCase();
 }
@@ -60,14 +62,30 @@ export function buildQuestionJsonLd({
   const examPath = `/${q.exam}`;
   const yearSeasonPath = `${examPath}/${q.year}-${q.season}`;
 
-  // IPA authored the question; this site authored the published answer
-  // (explanation). Full inline Organization objects keep the graph useful even
-  // though the question page does not embed the homepage Organization node.
-  const ipaAuthor = {
-    "@type": "Organization",
-    name: "情報処理推進機構 (IPA)",
-    url: "https://www.ipa.go.jp/",
-  };
+  // The administering body authored the question; this site authored the
+  // learning explanation. Keep the author inline so the node is self-contained.
+  const questionAuthor = q.exam === "fp3"
+    ? {
+        "@type": "Organization",
+        name: "日本ファイナンシャル・プランナーズ協会",
+        url: "https://www.jafp.or.jp/",
+      }
+    : q.exam === "denken3"
+      ? {
+          "@type": "Organization",
+          name: "一般財団法人 電気技術者試験センター",
+          url: "https://www.shiken.or.jp/",
+        }
+      : {
+          "@type": "Organization",
+          name: "情報処理推進機構 (IPA)",
+          url: "https://www.ipa.go.jp/",
+        };
+  const licenseUrl = q.exam === "fp3"
+    ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
+    : q.exam === "denken3"
+      ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
+      : "https://www.ipa.go.jp/shiken/faq.html";
   const siteAuthor = {
     "@type": "Organization",
     name: SITE_NAME,
@@ -93,7 +111,7 @@ export function buildQuestionJsonLd({
     name: q.question.slice(0, 120),
     text: q.question,
     inLanguage: "ja",
-    author: ipaAuthor,
+    author: questionAuthor,
     upvoteCount: 0,
     url: pageUrlAbs,
     acceptedAnswer,
@@ -132,15 +150,8 @@ export function buildQuestionJsonLd({
       name: SITE_NAME,
       url: SITE_BASE_URL,
     },
-    // IPA's past-exam usage terms (許諾不要・使用料不要・出典明記) live on the FAQ
-    // page; the old mondai-kaiotu .html page was decommissioned (404). faq.html
-    // is verified 200. See nonblog-external-ipa-link-health.test.ts.
-    license: "https://www.ipa.go.jp/shiken/faq.html",
-    creator: {
-      "@type": "Organization",
-      name: "情報処理推進機構 (IPA)",
-      url: "https://www.ipa.go.jp/",
-    },
+    license: licenseUrl,
+    creator: questionAuthor,
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and
     // unlike a bare stub), the publisher carries name/url inline so Google
     // resolves it within this page. The /q surface does not embed the full

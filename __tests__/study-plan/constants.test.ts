@@ -15,7 +15,7 @@ import {
   MIN_WEEKEND_MINUTES,
   MAX_WEEKEND_MINUTES,
 } from "@/lib/study-plan/constants";
-import type { ExamCode } from "@/lib/questions/types";
+import type { IpaExamCode } from "@/lib/questions/types";
 import type { KnowledgeLevel } from "@/lib/study-plan/types";
 
 /**
@@ -26,8 +26,8 @@ import type { KnowledgeLevel } from "@/lib/study-plan/types";
  * skews every generated plan, so the invariants are pinned here.
  */
 
-// Canonical exam codes — must mirror ExamCode in lib/questions/types.ts.
-const ALL_EXAM_CODES: ExamCode[] = [
+// Study-plan baselines currently cover the canonical IPA exam codes.
+const ALL_EXAM_CODES: IpaExamCode[] = [
   "ip",
   "sg",
   "fe",
@@ -51,7 +51,7 @@ const ALL_LEVELS: KnowledgeLevel[] = [
 ];
 
 describe("study-plan/constants REQUIRED_HOURS", () => {
-  it("covers every ExamCode with a positive integer baseline", () => {
+  it("covers every IPA exam code with a positive integer baseline", () => {
     const keys = Object.keys(REQUIRED_HOURS).sort();
     expect(keys).toEqual([...ALL_EXAM_CODES].sort());
     for (const code of ALL_EXAM_CODES) {

@@ -1,5 +1,6 @@
 import type { ExamCode, Session, Season } from "@/lib/questions/types";
 import officialSources from "@/data/questions/corrections/official-sources.json";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 const officialAnswerUrls = new Map(Object.values(officialSources).map(source => [source.question, source.answer]));
 
@@ -276,9 +277,45 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
   },
+  fp3: {
+    code: "fp3",
+    nameFull: "3級ファイナンシャル・プランニング技能検定",
+    urlSlug: "fp3",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 60,
+      label: "学科",
+      categories: ["ライフプランニング", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+    }],
+    seasons: ["published"],
+    yearRange: { start: 2025, end: 2025 },
+  },
+  denken3: {
+    code: "denken3",
+    nameFull: "第三種電気主任技術者試験",
+    urlSlug: "denken3",
+    level: "advanced",
+    sessions: [{
+      session: "riron",
+      urlSlug: "riron",
+      expectedQuestions: 17,
+      label: "理論",
+      categories: ["電気理論", "電子理論", "電気計測", "電子計測"],
+    }],
+    seasons: ["first"],
+    yearRange: { start: 2025, end: 2025 },
+  },
 };
 
-export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS) as ExamCode[];
+/** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
+export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
+  (code): code is Exclude<ExamCode, "fp3" | "denken3"> => code !== "fp3" && code !== "denken3",
+);
+
+/** Every exam playable in the application, including external qualifications. */
+export const ALL_QUIZ_EXAM_CODES = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
 
 /** Fallback URL shown when a question has no specific PDF URL. */
 export const IPA_EXAM_INFO_URL = "https://www.ipa.go.jp/shiken/mondai-kaiotu/";
@@ -333,7 +370,9 @@ export function getSafePdfUrl(sourcePdfUrl: string | undefined): string {
  */
 export function getOfficialAnswerPdfUrl(
   sourcePdfUrl: string | undefined,
+  sourceAnswerUrl?: string,
 ): string {
+  if (sourceAnswerUrl?.startsWith("https://")) return sourceAnswerUrl;
   if (sourcePdfUrl && officialAnswerUrls.has(sourcePdfUrl)) return officialAnswerUrls.get(sourcePdfUrl)!;
   if (!isLivePdfUrl(sourcePdfUrl)) {
     return IPA_EXAM_INFO_URL;
@@ -401,10 +440,10 @@ export function buildRawPdfPath(
 export function buildExtractionPrompt(
   cfg: ExamConfig,
   year: number,
-  season: "spring" | "autumn" | "cbt",
+  season: Season,
   sessionCfg: SessionConfig,
 ): string {
-  const seasonLabel = season === "spring" ? "春期" : season === "autumn" ? "秋期" : "CBT";
+  const seasonLabel = season === "spring" ? "春期" : season === "autumn" ? "秋期" : season === "cbt" ? "CBT" : season;
   const categoryList = sessionCfg.categories
     .map((c, i) => `${i + 1}. ${c}`)
     .join("\n");

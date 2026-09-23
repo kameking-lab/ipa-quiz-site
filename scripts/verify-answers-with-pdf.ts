@@ -208,6 +208,7 @@ async function main(): Promise<void> {
 
   for (const examCode of opts.exams) {
     const cfg = EXAM_CONFIGS[examCode];
+    if (!cfg) throw new Error(`Unsupported IPA exam: ${examCode}`);
     if (cfg.seasons.length === 0) continue;
 
     const stat: ExamStat = { total: 0, scanned: 0, mismatches: 0 };

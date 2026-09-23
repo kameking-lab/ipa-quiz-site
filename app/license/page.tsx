@@ -60,6 +60,17 @@ export default function LicensePage() {
         </div>
 
         <div>
+          <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">FP技能検定・電気系資格の過去問データ</h2>
+          <p className="mb-2">
+            FP技能検定は日本FP協会の利用条件に従い、出典と加工の有無を明記して掲載します。
+            電気主任技術者・電気工事士は、電気技術者試験センターが教育目的での利用を許諾・使用料不要としている公式問題を対象とし、案内された利用状況の連絡後に公開します。
+          </p>
+          <p>
+            問題ごとの公式問題PDF・正答PDF・指定出典表記を正本とし、他資格については再掲載許諾を確認できるまで問題本文を収録しません。
+          </p>
+        </div>
+
+        <div>
           <h2 className="mb-2 text-base font-semibold text-zinc-900 dark:text-zinc-100">AI 生成解説・オリジナルコンテンツ</h2>
           <p className="mb-2">
             AI コパイロットが生成する解説・補足説明・類題は、本サービスが独自に生成するものです。

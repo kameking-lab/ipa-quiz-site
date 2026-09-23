@@ -19,9 +19,10 @@ const EXAM_CODES = [
   "sc",
   "sm",
   "au",
+  "fp3",
 ] as const;
 
-const SEASONS = ["spring", "autumn", "cbt"] as const;
+const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second"] as const;
 const SESSIONS = [
   "am",
   "am1",
@@ -31,6 +32,8 @@ const SESSIONS = [
   "pm2",
   "kamoku-a",
   "kamoku-b",
+  "gakka",
+  "riron",
 ] as const;
 
 const QuerySchema = z.object({

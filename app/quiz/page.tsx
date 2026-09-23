@@ -1,6 +1,6 @@
 import { defaultPracticeSession, parsePracticeSession, quizBackHref, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
-import { ALL_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
+import { ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import type { Metadata } from "next";
 import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/types";
 import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
@@ -24,7 +24,7 @@ import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 export const metadata: Metadata = {
   title: "クイズ — 過去問演習",
   description:
-    "IPA 情報処理技術者試験 13区分の過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AI コパイロットが各選択肢の正誤理由をその場で解説します。",
+    "IPA情報処理技術者試験とFP3級の公式公開過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AIコパイロットが各選択肢を解説します。",
   alternates: { canonical: "/" },
   robots: { index: false, follow: true },
 };
@@ -64,7 +64,6 @@ const MODE_LABELS: Record<QuizMode, string> = {
   weakness: "苦手",
 };
 
-
 export default async function QuizPage({
   searchParams,
 }: {
@@ -78,7 +77,7 @@ export default async function QuizPage({
     ? (sp.examGroup
         .split(",")
         .map((s) => s.trim())
-        .filter((s): s is ExamCode => ALL_EXAM_CODES.includes(s as ExamCode)))
+        .filter((s): s is ExamCode => ALL_QUIZ_EXAM_CODES.includes(s as ExamCode)))
     : undefined;
   const categoryGroup = sp.categoryGroup
     ? sp.categoryGroup
@@ -87,7 +86,7 @@ export default async function QuizPage({
         .filter(Boolean)
     : undefined;
 
-  const exam: ExamCode = ALL_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
+  const exam: ExamCode = ALL_QUIZ_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
   const isSearchPool = sp.source === "search";
   const session = isSearchPool
     ? undefined
