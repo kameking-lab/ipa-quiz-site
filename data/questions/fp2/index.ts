@@ -1,7 +1,8 @@
 import type { Question } from "@/lib/questions/types";
+import academic2024And2025 from "./academic-2024-2025.json";
 
 /** 2026年5月公表・学科の問1〜10。全60問中のライフプラン分野先行セット。 */
-export const FP2_QUESTIONS: Question[] = [
+const FP2_2026_PILOT_QUESTIONS: Question[] = [
   {
     "id": "fp2-2026-published-gakka-q1",
     "exam": "fp2",
@@ -407,4 +408,10 @@ export const FP2_QUESTIONS: Question[] = [
     "lawReferenceDate": "2025-04-01",
     "lastUpdated": "2026-09-23"
   }
+];
+
+/** 2024・2025年の公式公開4回は学科240問、2026年公表分は問1〜10のみ。 */
+export const FP2_QUESTIONS: Question[] = [
+  ...FP2_2026_PILOT_QUESTIONS,
+  ...academic2024And2025 as Question[],
 ];

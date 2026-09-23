@@ -35,10 +35,15 @@ export function seasonLabel(season: string): string {
   if (season === "published") return "公表問題";
   if (season === "first") return "上期";
   if (season === "second") return "下期";
+  if (season === "may") return "5月試験";
+  if (season === "september") return "9月試験";
+  if (season === "january") return "1月試験";
   return season;
 }
 
 export function formatYearSeason(year: number, season: string): string {
+  if (["may", "september", "january"].includes(season)) return `${year}年${seasonLabel(season)}`;
+  if (season === "published") return `${year}年5月公表問題`;
   const reiwa = year - 2018;
   const era = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
   return `${era} ${seasonLabel(season)}`;

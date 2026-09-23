@@ -41,7 +41,7 @@ export default function QualificationsPage() {
               <Badge variant="outline">収録 {questionCounts[item.slug]} 問</Badge>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
-            {item.slug === "fp2" && <p className="mb-4 text-sm text-muted-foreground">2026年5月公表・学科60問のうち問1〜10を収録。法令基準日：2025年4月1日。</p>}
+            {item.slug === "fp2" && <p className="mb-4 text-sm text-muted-foreground">2024・2025年の公式公開4回：学科240問と実技160問を年度別に収録。2026年5月公表の学科は60問中、問1〜10を先行収録しています。</p>}
             <Button asChild variant="primary" className="w-full">
               <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>
