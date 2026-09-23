@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Claude Opus via Claude Code 2.1.280",
+  "reviewedAt": "2026-09-23T12:28:45.995Z",
+  "batch": "sg-batch001-round1",
+  "questions": [
+    {
+      "id": "sg-2024cbt-kamoku-a-q1",
+      "status": "PASS",
+      "sourceSha256": "247350b6dfcc3b52acc4f44719a4a8b384723e2bc8f5c885251004aa59cd9c8e",
+      "overlaySha256": "9605066a6424b4608150bcd8bb7ae1aac2789c33f5fc398ee0ff0a9a3f730654",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "sg-2024cbt-kamoku-a-q2",
+      "status": "FIX",
+      "sourceSha256": "28c9b1c41dbc6598ab2822f8453a408c585aba8a0bef0d22bac4d7b82b6beb75",
+      "overlaySha256": "2f7fd09dbbca666bd8ee35da18a181cc5774b5da804c4e0d07e83df95af42430",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「ペーパレス化は…文書への物理的アクセスを防ぐ対策」という説明は正確ではない。選択肢は、紙の文書を電子化し、システムのアクセス権限で権限のない従業員の閲覧を制限する対策を指している。物理的アクセスの防止と説明するのは誤り。",
+        "ア: 誤りの理由が「ラベル付けの効果は持たない」という、正答肢との比較にとどまっている。この肢固有の理由を書く必要がある。アクセス制御は権限のない者の閲覧を防ぐが、閲覧権限を持つ従業員に対して、その情報が社外秘であり持出し禁止であることは示さない。そのため「社外秘情報とは知らなかった」という言い訳は封じられない、という点を明記すること。"
+      ]
+    },
+    {
+      "id": "sg-2024cbt-kamoku-a-q3",
+      "status": "PASS",
+      "sourceSha256": "befd03c993479aee1f449660ee749cf9b6580b786406b74f974457d80c45f336",
+      "overlaySha256": "7e12a8e9e9dafbf2b92c3319e82c61d706b3ace001938ba729c015049c087cf4",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "sg-2024cbt-kamoku-a-q4",
+      "status": "PASS",
+      "sourceSha256": "393ef22a991a43b81d6e311b69ad86c88d4fd519c313c406a6abe85cf119a9d5",
+      "overlaySha256": "b09524339d8c417159e8e309cc077e9ab3b3967b5f765d4769361b8e248864a1",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "sg-2024cbt-kamoku-a-q5",
+      "status": "PASS",
+      "sourceSha256": "d42425a3cda1254c11760e3fc20e3bda608bfab3551d4586fda389748481c2de",
+      "overlaySha256": "bc64b5ef42dc09be7c0c399ead46438a01444a0098545f84f44728e87aa6f66a",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

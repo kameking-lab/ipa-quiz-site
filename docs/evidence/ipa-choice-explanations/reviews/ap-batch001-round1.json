@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Claude Opus via Claude Code 2.1.280",
+  "reviewedAt": "2026-09-23T12:28:45.706Z",
+  "batch": "ap-batch001-round1",
+  "questions": [
+    {
+      "id": "ap-2024a-am-q1",
+      "status": "FIX",
+      "sourceSha256": "789b7f9e161ce2ed51d1bdec4d3c4214662a5dac0947d9fde65e092ee89e9f10",
+      "overlaySha256": "b0160176a1f643eff8de9423f101b47a61dda8dc0500450b0f2af7609e527802",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 1.25の出どころを説明せず、「比例関係と一致しない」と書いているだけなので、この肢固有の誤りが示されていない。1.25は(1-0.25)/(1-0.40)=0.75/0.60で求まる。これは1/(1-ρ)の比で、待ち時間を含む平均応答時間（系内時間）の倍率にあたる。ρ/(1-ρ)に比例する平均待ち時間と取り違えた値だと明記すること。",
+        "ア: 「0.6667/0.3333の計算から2倍」は、何と何の比なのか分からない。(0.40/0.60)/(0.25/0.75)=(2/3)/(1/3)=2のように、利用率40%と25%の値を示した式にすること。",
+        "エ: 「3.00は利用率40%と25%の差を単純に拡大した値」は根拠のない推測である。差0.15をどう拡大しても3.00にはならず、技術的に意味のない説明になっている。出どころの推測はやめること。そのうえで、ρ/(1-ρ)で正しく計算すると(2/3)/(1/3)=2.00であり、3.00はこの計算結果と一致しないことを具体的な数値で示すこと。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q2",
+      "status": "PASS",
+      "sourceSha256": "fe47fd45fff0beb33c9bdc2bddf999050514c6e10b136faf0232360a890cd614",
+      "overlaySha256": "09c7147c60e40d38d39f853471a760c2f6bf36ef87471ad9ce04301ea99c2229",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024a-am-q3",
+      "status": "FIX",
+      "sourceSha256": "5b852bf1ea97d25e423b57b67029abae97cdd52a9b730a9047a4f8f4c38bb3c6",
+      "overlaySha256": "95a084f14aba9d830c29eb9f9b8bdd536164dab381222b06b20da49bdec58ed8",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 「×+ABC」が「AとBを先に加算した結果にCを乗じる式を表す」と断定しているが、この読み方は前置記法（ポーランド記法）として解釈した場合だけ成り立つ。逆ポーランド記法として読むと、先頭の×と+には被演算子がないので、スタック上で評価できない不正な並びになる。①演算子が被演算子より前にあるため後置記法として成立しないこと、②前置記法として読めば(A+B)×Cになること、の2点を区別して書くこと。"
+      ]
+    },
+    {
+      "id": "ap-2024a-am-q4",
+      "status": "PASS",
+      "sourceSha256": "7bb7e0171400a7d556bd26879efcbbcd096b9fbccddb7dd5759fe4de45526311",
+      "overlaySha256": "77cc83633ce0a76b23d612b0ad62c774c66e86c72d1264138d01e52386dc6ea8",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

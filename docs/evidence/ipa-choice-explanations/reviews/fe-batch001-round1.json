@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Claude Opus via Claude Code 2.1.280",
+  "reviewedAt": "2026-09-23T12:28:46.344Z",
+  "batch": "fe-batch001-round1",
+  "questions": [
+    {
+      "id": "fe-2024cbt-kamoku-a-q2",
+      "status": "FIX",
+      "sourceSha256": "a8fda5895457f88e34bd30d4ef658663951e44ba323143a0bdd3034b7aae441a",
+      "overlaySha256": "0875dbf72ba544f732f1b0ed30826f0e7c09b569e38787934245be614d9035cf",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 選択肢の文字列は「cとし」で、「し」は小文字アルファベットではない。原典PDFの「cとs」がOCRで崩れたものと考えられる。候補は相手の文字を名指しせずに「対になる文字…1の位は5」と書いており、入力にない値を暗に補って推測している。まず原典PDFで選択肢ウを確認し、データの選択肢文を「cとs」に直すこと。そのうえで、解説は「sのASCIIコードは115で1の位は5、cは99で1の位は9なので一致しない」と文字を明示した形にすること。データを直せない場合は、選択肢文と解説が食い違っていることを明記すること。",
+        "全体(推奨): 問題文にはASCIIコードの具体的な値が示されておらず、前提は「アルファベット順に連続したコードが割り当てられている」ことだけである。意図された解き方は「2文字のコードの差が10の倍数なら1の位が一致する」という考え方(例: dとxは差が20)。各肢の解説に、文字の順番の差(ア 8、イ 16、ウ 15、エ 20)で判定できることを一言添えると、出題意図と合う。"
+      ]
+    },
+    {
+      "id": "fe-2024cbt-kamoku-a-q4",
+      "status": "PASS",
+      "sourceSha256": "ff0287a8f0f457ab0aae68334ef5b6b0aaad2f637901f9b04a5f8cb80009890e",
+      "overlaySha256": "2663538b1d197fccf0a994022f1e4826db4855749213e776203e3d5a1611b188",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "fe-2024cbt-kamoku-a-q5",
+      "status": "FIX",
+      "sourceSha256": "19601f31cb6b605fedfe526ae656f13a54c08791ee7446e0cb42086f19054054",
+      "overlaySha256": "c24ac285727d632bf804162993749b93e7d7c7657921a673626544f77480c468",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: マッシュアップは一般に、プレゼンテーション・データ・ロジックの3種類に分けられる。他サービスの地図をそのまま画面に埋め込んで表示する例は、この分類では『プレゼンテーションマッシュアップ』に当たる。候補の『コンテンツマッシュアップ』はこの分類にない呼び方なので、『プレゼンテーションマッシュアップ』に直すこと。",
+        "イ: 複数のWebサービスから経済指標データを取得し、統合・加工(グラフ化)して表示する例は『データマッシュアップ』に当たる。候補はこれを『プレゼンテーションマッシュアップ』としており、分類を取り違えている。『データマッシュアップ』に直し、『あるサービスの出力を別サービスの入力として処理を連結していないので、ロジックマッシュアップではない』ことを明記すること。"
+      ]
+    }
+  ]
+}

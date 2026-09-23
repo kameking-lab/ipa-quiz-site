@@ -16,6 +16,13 @@ const EXAMS = ["ap", "ip", "sg", "fe"] as const;
 type TargetExam = (typeof EXAMS)[number];
 type Overlay = Record<string, Record<string, string>>;
 
+const REQUIRED_YEARS: Record<TargetExam, readonly number[]> = {
+  ap: [2024, 2025],
+  ip: [2023, 2024],
+  sg: [2024, 2025],
+  fe: [2024, 2025],
+};
+
 interface ReceiptItem {
   id: string;
   status: "PASS" | "FIX";
@@ -57,7 +64,7 @@ const targetQuestions = Object.fromEntries(
     exam,
     questionsByExam[exam].filter(
       (question) =>
-        (question.year === 2024 || question.year === 2025) &&
+        REQUIRED_YEARS[exam].includes(question.year) &&
         question.type === "multiple-choice" &&
         question.choices,
     ),
@@ -80,8 +87,12 @@ function sourceFingerprint(question: Question): string {
     choices: question.choices,
     answer: question.answer,
     explanation: question.explanation,
+    hasImage: question.hasImage,
+    imageUrls: question.imageUrls,
+    choiceImageUrls: question.choiceImageUrls,
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: question.sourceAnswerUrl,
+    officialReferenceUrls: question.officialReferenceUrls,
   });
 }
 
@@ -107,7 +118,12 @@ function loadReceipts(): Map<string, ReceiptItem> {
     const receipt = JSON.parse(readFileSync(path, "utf8")) as Partial<ReviewReceipt>;
     if (receipt.schemaVersion !== 1 || !Array.isArray(receipt.questions)) continue;
     for (const item of receipt.questions) {
-      if (item && typeof item.id === "string") result.set(item.id, item);
+      if (item && typeof item.id === "string") {
+        const previous = result.get(item.id);
+        if (!previous || (receipt.reviewedAt ?? "") >= ((previous as ReceiptItem & { reviewedAt?: string }).reviewedAt ?? "")) {
+          result.set(item.id, { ...item, reviewedAt: receipt.reviewedAt } as ReceiptItem);
+        }
+      }
     }
   }
   return result;
@@ -182,8 +198,12 @@ if (dumpPath) {
     choices: question.choices,
     officialAnswer: question.answer,
     existingExplanation: question.explanation,
+    hasImage: question.hasImage,
+    imageUrls: question.imageUrls,
+    choiceImageUrls: question.choiceImageUrls,
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: question.sourceAnswerUrl,
+    officialReferenceUrls: question.officialReferenceUrls,
   }));
   const absolute = resolve(dumpPath);
   mkdirSync(dirname(absolute), { recursive: true });
@@ -267,7 +287,7 @@ for (const [reason, ids] of duplicateReasons) {
   if (reason.length > 0 && ids.length > 1) issues.push(`同一解説の再利用: ${ids.join(", ")}`);
 }
 
-console.log(JSON.stringify({ summary, issueCount: issues.length }, null, 2));
+console.log(JSON.stringify({ requiredYears: REQUIRED_YEARS, summary, issueCount: issues.length }, null, 2));
 if (issues.length > 0) {
   console.error(issues.slice(0, 100).join("\n"));
   if (issues.length > 100) console.error(`...ほか ${issues.length - 100} 件`);

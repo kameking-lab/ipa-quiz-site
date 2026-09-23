@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "Claude Opus via Claude Code 2.1.280",
+  "reviewedAt": "2026-09-23T12:28:45.383Z",
+  "batch": "ip-batch001-round1",
+  "questions": [
+    {
+      "id": "ip-2024cbt-am-q1",
+      "status": "PASS",
+      "sourceSha256": "b01ac8f7241812857c68265277896984d0288ab334c0ba7ee8f2390f61e32b01",
+      "overlaySha256": "38878a99418aad974037c28cc7372d91062791f9230ecc54dc9db3358063fd79",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ip-2024cbt-am-q2",
+      "status": "FIX",
+      "sourceSha256": "19023539150fd60059621b773bd3b05053f21b588ef28e3e85bb0e3cc67af212",
+      "overlaySha256": "1081794717e49566c354249b23cb26c1e29c992d10725c5f5e110d66aa9c57fa",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 不正アクセス禁止法の対象を「他人のID・パスワードを無断使用してコンピュータに侵入する行為そのもの」に限っているが、これは不正確。同法はセキュリティホールを突く侵入も不正アクセス行為としている。また、他人の識別符号の不正取得・保管・提供（不正アクセスを助長する行為）やフィッシング行為も禁止している。「ID・パスワードの無断使用に限らない不正アクセス行為と、その助長行為を禁止・処罰する刑事的な法律であり、サイバーセキュリティの基本理念や国の責務を定める基本法ではない」という趣旨に直し、処罰規定を置く個別法と理念・責務を定める基本法の違いが分かるようにすること。"
+      ]
+    },
+    {
+      "id": "ip-2024cbt-am-q3",
+      "status": "PASS",
+      "sourceSha256": "5f8554fed32c628fcab7865cd19455e6be4183850919c161cf5f6614e218022a",
+      "overlaySha256": "23664c0c8f7f7619e7fea3e5be0b72dc1174b8ee81b76f7a8ce249252c51aeab",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ip-2024cbt-am-q4",
+      "status": "PASS",
+      "sourceSha256": "06d6ab20b49ad9a03ceacfd2f636822a20530790777b2b52c3a67104b2437916",
+      "overlaySha256": "5fd65d7545130944b6cbed3e5e5829dca2be0c578a14e1f41f09cb35c25770fa",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ip-2024cbt-am-q5",
+      "status": "PASS",
+      "sourceSha256": "f7ded31c0cb4a48199e70f7a3a6332016977047ada65b04f87f1a0404b7a7057",
+      "overlaySha256": "470d12e3dd7c5b5914ca311bb7b893931e96d6078339717796f328229e8f47b6",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}
