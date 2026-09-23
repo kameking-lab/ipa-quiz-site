@@ -14,6 +14,12 @@ def digest(path: Path) -> str:
     return sha256(path.read_bytes()).hexdigest()
 
 
+def portable_text_digest(path: Path) -> str:
+    """Keep evidence JSON stable across LF/CRLF worktree checkouts."""
+    data = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return sha256(data).hexdigest()
+
+
 def canonical(value) -> str:
     return sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
 
@@ -68,7 +74,7 @@ def main() -> None:
         source_figure = None
         if source_pack.exists():
             key = str(source_pack.relative_to(ROOT)).replace("\\", "/")
-            actual = digest(source_pack)
+            actual = portable_text_digest(source_pack)
             if hashes.get("sourcePackSha256", {}).get(label) != actual:
                 raise ValueError(f"Q{number} source pack not verified in direct review")
             proof = json.loads(source_pack.read_text(encoding="utf-8"))
