@@ -33,6 +33,9 @@ jobs:
       - name: Run question schema validation
         run: pnpm validate:questions
 
+      - name: Verify electrician original-review coverage and live gate
+        run: python3 scripts/denko2-strict-coverage.py
+
       - name: Run data integrity audit (gates on critical findings)
         # scripts/audit-questions.ts — fails (exit 1) on critical findings
         # (missing fields, duplicate IDs, broken choices/answer). Already-
