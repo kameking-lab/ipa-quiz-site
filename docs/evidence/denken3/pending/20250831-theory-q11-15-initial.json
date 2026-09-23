@@ -1,0 +1,113 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "candidateSha256": {
+    "11": "20e35a67e0ecd4814862098e7a1cbd9c6cac2137a60ef62e56440119745ffa81",
+    "12": "8b44e5f839b5f1e5003c3f61d65566951cf6395fee4a8d07d15705f74f0ab891",
+    "13": "53a683e42e38cc68bbb74772b275948d3836e490e6cd08e86b8cee6c0e491c46",
+    "14": "8ad82f9b7896df7779f15d6d9a3f3855abc6c51c20603cddd39d348b794baf47",
+    "15": "5394367b5a149feb04dce1132c9b8f47c9397157ff29b06b9cab7c4db18436c7"
+  },
+  "candidateGroupSha256": "34e4b3eeeb905402477cb44d215a07910b0660f402dade9f6a5c714a2ffefaf5",
+  "officialRowSha256": {
+    "11": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p14.png": "3fbef9d46b0019437ea557a9145515aa813aeb8c9a5db326b2b7f4a3dff2a22c"
+    },
+    "12": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "13": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p16.png": "e2b6e3bb7bec1a5157f7c8f4c1ba57224e8e1e7d7801f59a9e7633731f3d612f"
+    },
+    "14": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p17.png": "a3f52a4ad999d13530e3ce5ac650d60b105237355ea64933a650e9956af4dd76"
+    },
+    "15": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p18.png": "5d6497754eadcd9c47e9435c4a7d0d62e70994d302ecdf3fef6657f5dce19749"
+    }
+  },
+  "figureSha256": {
+    "20250831-theory-q11-hall-elements": "12f930bc01c9130ddd5b125836b2c5cc7735ba51f82d98bbf5e3c7e6b50f3763",
+    "20250831-theory-q12-electrodes": "9bb692d199aa1985f02c2dc01a015b3574b752a7c38fa99a455afa6397261ebb",
+    "20250831-theory-q13-characteristics": "65f6e1b7012156a7d585bb423414aefe4222ce6f2f37f38826c33c164c9dabd2",
+    "20250831-theory-q15-three-phase": "bbd09806716d63b9a67a1113bb2cc42473a3209731f2c1bc0b7d226114e8ee19"
+  },
+  "officialAnswerImageSha256": "96876ac1c8401278aba9307657ffb2f468b3ef41dff1cd70f0d7f03f6817d3bb",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "(ア)(イ)の解説は「図1のように正孔が…電極①側へ曲げられると」と書いており、結論を前提に置いている。図のIとBの向きからF=qv×Bで偏向方向を導いていない。原図ではIが奥側の辺（右上）から手前側（左下）へ流れ、Bは下から上向きである。正孔の速度vは手前向き、Bは上向きなので、v×Bは左向き（電極①側）になる。この導出を明記すれば、電極①が正・電極②が負であることを検算できる形になる。",
+        "(ウ)の「電子は正孔と逆方向(電極②から①へ向かう向き)に移動する」は誤り。電子が動くのは電流と逆向き、つまり電流軸に沿った手前→奥の方向である。電極②→①方向（ホール電界の方向）に移動するわけではない。",
+        "uncertaintyは「図の細部の角度によらず…結論の正当性への影響はない」としているが誤り。電極①が正になるか負になるかは、IとBの向き、電極の配置に直接依存する。図を読まなくてよい根拠にはならない。"
+      ],
+      "figureIssues": [
+        "figureDescriptionの「素子の下辺には格子状のハッチング(接地または固定を示す記号)」は誤り。網掛けは素子の左右の長辺に沿った帯状の電極①・②そのものである。原図に接地記号はない。",
+        "電極の説明が不正確。電極は「下部左側面付近」の円ではなく、左右の側面全長に付いた帯である。そこから白丸端子のリード線が、電極①は左へ、電極②は右へ出ている。",
+        "Iの向きを「左上から右下(またはその逆)」と不確定に書いている。原図ではI[A]の矢印が奥側の辺（右上）から左下向きに素子へ入り、手前の辺から左下へ抜ける。B[T]の白抜き矢印は素子の下から貫通して上向きに出ている。本文だけで偏向方向を再現できるように、「Iは奥→手前、Bは下→上、電極①は左側面、電極②は右側面」と明記すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "肢(2)の「eのみでVを乗じ忘れた(あるいは桁が半分)値に相当」は誤り。eだけなら1.6×10⁻¹⁹ Jである。1.6×10⁻¹⁶ Jはe×1000、つまりVを半分（1000 V）にした値に当たる。"
+      ],
+      "figureIssues": [
+        "figureDescriptionの「電極Kとヒータの下端は直流電源(電池記号)を介して接続され」は誤り。ヒータのコイルは両端が左へ開いた線として描かれているだけで、回路には接続されていない。原図の配線は、電極K下端の接続点と電極P下端の接続点の間に直流電源が入り、P側の接続点が接地されている。「電極Pの下端とともに接地記号に接続」という書き方では、Kも接地されているように読めてしまう。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 13,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "I_B=40μA曲線の読み取り値（V_CE=2Vで3.7mA、8Vで4.3mA）が原図と合わない。原図の曲線は(6V, 4.0mA)と(10V, 約4.4mA)を通っており、2Vでは約3.6mA、8Vでは約4.2mAである。候補の値だとV_CE=6VでI_C≈4.1mAになり、動作点の4.0mAと矛盾する。差分ΔI_C=0.6mAは結果的に同じだが、個々の値を直すべき。格子点で明確に読める(6V, 4.0mA)と(10V, 4.4mA)を使い、ΔV_CE=4V、ΔI_C=0.4mAから1/h_oe=10000Ωとする方が確実。",
+        "肢(3)の解説も同じ誤った読み取り値（3.7mAから4.3mA）を使っている。"
+      ],
+      "figureIssues": [
+        "切り出し画像の上端に、本文「…のを次の(1)〜(5)のうちから一つ選べ。」の下半分が欠けた状態で入り込んでいる。図だけになるように上端を詰める必要がある。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "(b)の解説は「循環電流成分が重畳することはない」を回路の回転対称性から当然のように述べている。しかし理想電圧源のΔ結線では、キルヒホッフの法則だけでは循環電流が決まらない。枝電流が対称三相（İ_ab+İ_bc+İ_ca=0、İ_ca=İ_ab∠2π/3）であることは導出結果ではなく前提なので、仮定として明示すべき。",
+        "(b)肢(1)の「正しい大きさ6.67Aとも、また(a)で誤りとした200/10=20Aの値とも整合するが」は自己矛盾で、20.00は6.67と整合しない。さらに「Δ結線内の枝電流が線電流の1/√3倍になる関係を反映しておらず」とあるが、20.00は線電流İ1（11.55）でもない。誤答理由の説明として成り立っていない。"
+      ],
+      "figureIssues": [
+        "切り出し画像の左端でĖ_cのラベル「Ė_c =」が切れ、「200∠-4π/3 V」しか残っていない。原図では「Ė_c = 200∠-4π/3 V」。",
+        "切り出し画像の上端に、本文「の(a)及び(b)の問に答えよ。」の下半分が欠けた状態で入り込んでいる。",
+        "figureDescriptionはİ2・İ3の行き先を「本設問には影響しない」として不確定のままにしているが、原図では明確である。頂点bから下へ出た線は右へ延びてb'に至る（İ2）。頂点cから下へ出た最下段の線はİ2の線と交差してc'に至る（İ3）。「İ2: b→b'、İ3: c→c'」と明記すべき。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  ]
+}
