@@ -50,7 +50,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "出典を明記し、加工時は加工した旨を明記すれば申請不要。",
     attributionTemplate: "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（公表年月）",
-    remainingWork: ["2024年・2026年公表問題の追加", "法改正影響を受ける問題の失効管理"],
+    remainingWork: ["2026年公表問題の追加", "法改正影響を受ける問題の失効管理"],
   },
   {
     slug: "fp2",
