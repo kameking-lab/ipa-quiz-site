@@ -11,6 +11,11 @@ SPEC = importlib.util.spec_from_file_location(
 )
 MODULE = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(MODULE)
+SOURCE_SPEC = importlib.util.spec_from_file_location(
+    "build_safety_choice_source_packs", ROOT / "scripts/build-safety-choice-source-packs.py"
+)
+SOURCE_MODULE = importlib.util.module_from_spec(SOURCE_SPEC)
+SOURCE_SPEC.loader.exec_module(SOURCE_MODULE)
 
 
 class ChoiceAuthoringGateTest(unittest.TestCase):
@@ -46,6 +51,16 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
         self.assertGreaterEqual(len(hints), 10)
         self.assertTrue(all(len(source["retrievalSha256"]) == 64 for source in hints))
         self.assertFalse(any("johas.go.jp" in source["url"] for source in hints))
+
+    def test_egov_historical_source_uses_matching_revision_api(self):
+        self.assertEqual(
+            SOURCE_MODULE.retrieval_url("https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"),
+            "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032_20250401_505M60000100121",
+        )
+        self.assertEqual(
+            SOURCE_MODULE.retrieval_url("https://www.mhlw.go.jp/content/001104962.pdf#page=79"),
+            "https://www.mhlw.go.jp/content/001104962.pdf",
+        )
 
 
 if __name__ == "__main__":

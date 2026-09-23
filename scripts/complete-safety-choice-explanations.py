@@ -180,20 +180,28 @@ def author_and_review(item, model):
     batch, token = item
     prefix = LOG / token
     write(prefix.with_suffix(".input.json"), batch)
-    raw = call_claude(batch_prompt(batch), prefix.with_name(token + "-author"), model)
     expected = {q["id"] for q in batch}
-    if set(raw) != expected:
-        raise ValueError(f"{token}: incomplete IDs")
-    candidate = {}
+    candidate_file = prefix.with_suffix(".candidate.json")
+    if candidate_file.exists():
+        candidate = read(candidate_file)
+    else:
+        raw = call_claude(batch_prompt(batch), prefix.with_name(token + "-author"), model)
+        if set(raw) != expected:
+            raise ValueError(f"{token}: incomplete IDs")
+        candidate = {}
+        for q in batch:
+            overlay = raw[q["id"]]
+            if isinstance(overlay, dict):
+                overlay["sourceHash"] = sha256(q["text"].encode("utf-8")).hexdigest()
+            candidate[q["id"]] = overlay
+        write(candidate_file, candidate)
+    if set(candidate) != expected:
+        raise ValueError(f"{token}: candidate IDs do not match the input")
     for q in batch:
-        overlay = raw[q["id"]]
-        if isinstance(overlay, dict):
-            overlay["sourceHash"] = sha256(q["text"].encode("utf-8")).hexdigest()
+        overlay = candidate[q["id"]]
         issues = validate_overlay(q, overlay)
         if issues:
             raise ValueError("; ".join(issues))
-        candidate[q["id"]] = overlay
-    write(prefix.with_suffix(".candidate.json"), candidate)
     index = int(sha256(token.encode()).hexdigest(), 16) % len(batch)
     sample = batch[index]
     review = call_claude(review_prompt(sample, candidate[sample["id"]]), prefix.with_name(token + "-review"), model)
@@ -220,6 +228,7 @@ def main():
     parser.add_argument("--batch-size", type=int, default=6)
     parser.add_argument("--max-batches", type=int, default=1)
     parser.add_argument("--skip-first", type=int, default=0, help="Skip this many unique missing questions after a held batch")
+    parser.add_argument("--retry-holds", action="store_true", help="Explicitly retry batches previously held for source/quality issues")
     parser.add_argument("--workers", type=int, default=3)
     parser.add_argument("--model", default="opus")
     parser.add_argument("--paper-id", help="Author one complete paper at a time; global coverage still audited")
@@ -324,6 +333,9 @@ def main():
                 else:
                     print(f"SMALL TAIL {batch[0]['id']}: {len(batch)} questions remain in this paper", flush=True)
             token = sha256("|".join(q["id"] for q in batch).encode()).hexdigest()[:12]
+            if (LOG / f"{token}.hold.txt").exists() and not args.retry_holds:
+                print(f"SKIP HELD {token}: {batch[0]['id']}..{batch[-1]['id']}", flush=True)
+                continue
             batches.append((batch, token))
         if len(batches) >= args.max_batches:
             break
