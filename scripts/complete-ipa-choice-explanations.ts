@@ -10,6 +10,7 @@ import { dirname, join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import officialSources from "@/data/questions/corrections/official-sources.json";
 import sourcePdfManifest from "@/docs/evidence/ipa-choice-explanations/source-pdf-manifest.json";
+import fixQueue from "@/docs/evidence/ipa-choice-explanations/fix-queue.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const ROOT = process.cwd();
@@ -31,6 +32,9 @@ const visualSourceByPaper = sourcePdfManifest.papers as Record<string, {
   cacheRelativePath: string;
   sha256: string;
 }>;
+const reviewPriorityById = new Map(
+  fixQueue.questions.map((row) => [row.id, row.lastReviewStatus === "FIX" || row.lastReviewStatus === "STALE" ? 0 : 1]),
+);
 
 interface Options {
   exams: CoreExam[];
@@ -436,7 +440,9 @@ async function main(): Promise<void> {
   const missing = allTargets.filter((question) => !hasCompleteOverlay(question, overlays[question.exam]));
   const wrongQueue = missing.filter((question) =>
     options.queue === "non-image" ? isVisual(question) : options.queue === "image" ? !isVisual(question) : false);
-  const targets = missing.filter((question) => !wrongQueue.includes(question));
+  const targets = missing
+    .filter((question) => !wrongQueue.includes(question))
+    .sort((left, right) => (reviewPriorityById.get(left.id) ?? 1) - (reviewPriorityById.get(right.id) ?? 1));
   const missingImageFiles = options.queue === "image"
     ? targets.filter((question) => {
       const files = imageFiles(question);
@@ -454,6 +460,7 @@ async function main(): Promise<void> {
     deferredOtherQueue: wrongQueue.length,
     missingImageFiles: missingImageFiles.map((question) => question.id),
     runnable: runnable.length,
+    nextIds: runnable.slice(0, Math.min(20, options.batchSize * options.workers)).map((question) => question.id),
     byExam: Object.fromEntries(options.exams.map((exam) => [exam, runnable.filter((question) => question.exam === exam).length])),
   }, null, 2));
   if (options.dryRun || runnable.length === 0) return;
