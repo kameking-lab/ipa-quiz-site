@@ -19,6 +19,12 @@ def digest(path: Path) -> str:
     return sha256(path.read_bytes()).hexdigest()
 
 
+def portable_text_digest(path: Path) -> str:
+    """Compare text evidence by LF-normalized bytes, never rehash JSON semantics."""
+    data = path.read_bytes().replace(b"\r\n", b"\n").replace(b"\r", b"\n")
+    return sha256(data).hexdigest()
+
+
 def is_issue_field(key: str) -> bool:
     value = key.lower()
     return value.endswith("issues") or value.endswith("needsexternalcheck") or value.endswith("check")
@@ -122,7 +128,7 @@ def main() -> None:
                 reasons.append(f"published figure not reviewed: {image_path}")
         if item.get("sourcePack"):
             source = item["sourcePack"]
-            if digest(ROOT / source["path"]) != source["sha256"]:
+            if portable_text_digest(ROOT / source["path"]) != source["sha256"]:
                 reasons.append("source pack changed")
             if hashes.get("sourcePackSha256", {}).get(str(number)) != source["sha256"]:
                 reasons.append("source pack was not directly reviewed")
