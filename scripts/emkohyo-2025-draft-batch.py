@@ -43,7 +43,7 @@ def parse_result(stdout: str) -> object:
 def main() -> None:
     paper, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
     catalog = json.loads((DATA / "official-catalog.json").read_text(encoding="utf-8"))
-    allowed = {item["id"] for item in catalog if item["group"] == "emkohyo"
+    allowed = {item["id"]: item for item in catalog if item["group"] == "emkohyo"
                and item["date"][:4] in {"2025", "2026"}}
     if paper not in allowed or last - first != 4:
         raise ValueError("Use a 2025/2026 EM paper and exactly five question numbers")
@@ -52,25 +52,35 @@ def main() -> None:
     selected = [row for row in rows if first <= row["number"] <= last]
     if len(selected) != 5 or any(row["answerAuthority"] != "official" or row["choiceCount"] != 5 for row in selected):
         raise ValueError("Not five official five-choice questions")
-    sources = [MEASUREMENT]
+    subject = allowed[paper]["subject"]
+    subject_pack_file = ROOT / "docs/evidence/emkohyo-choice-sources/subject-packs" / f"{subject}.json"
+    subject_pack = json.loads(subject_pack_file.read_text(encoding="utf-8"))
+    sources = [{"title": source["title"], "url": source["url"]} for source in subject_pack["sources"]]
+    supplemental = []
     if paper == "emkohyo-EM20251805":
-        sources.append(ORGANIC_METHOD)
+        sds_pack_file = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
+        sds_pack = json.loads(sds_pack_file.read_text(encoding="utf-8"))
         for name, cas in ORGANIC_CAS.items():
             if any(name in row["text"] for row in selected):
-                sources.append({"title": f"厚生労働省 モデルSDS {name}",
-                                "url": f"https://anzeninfo.mhlw.go.jp/anzen/gmsds/{cas}.html"})
+                url = f"https://anzeninfo.mhlw.go.jp/anzen/gmsds/{cas}.html"
+                source = next((item for item in sds_pack["governmentSds"] if item["url"] == url), None)
+                if source:
+                    sources.append({"title": source["title"], "url": url})
+                    supplemental.append(source)
     request_items = [
         {"id": row["id"], "text": row["text"], "correctChoice": row["correctChoice"],
          "sourceHash": sha256(row["text"].encode("utf-8")).hexdigest(),
          "existingExplanation": narratives.get(row["id"], "")}
         for row in selected
     ]
+    web = "--web" in sys.argv[4:]
     prompt = (
         "第一種作業環境測定士の公式5択問題について、問題原文と既存解説を根拠に、選択肢1〜5それぞれの正誤理由を作る。"
         "公式正答番号は必ず維持するが、既存解説の誤りや根拠不足は鵜呑みにしない。"
         "各肢の具体的理由は55文字以上。選択肢固有の条件・数値・用語を用い、5肢同じ定型文にしない。"
-        "WebSearch/WebFetchで厚労省・e-Gov・環境省・原子力規制委員会など.go.jpの一次資料を調べ、"
-        "具体的な判断根拠を確認する。URLが実在しても本文を読んでいなければ確認済みとはしない。"
+        + ("既存packで不足する論点だけWebSearch/WebFetchで.go.jp一次資料を補う。" if web
+           else "添付の取得hash付き科目別一次資料packを使う。不足する論点はreviewIssuesへ明記し、検索が必要と記す。")
+        + "URLが実在しても本文を読んでいなければ確認済みとはしない。"
         "sourcesには下記候補または検索で発見した、実際にその設問の判断を支える政府ページだけを入れる。"
         "候補がない・内容を確認できない場合は無関係URLを飾りで入れずreviewIssuesで不足を明記する。"
         "各問題のsourceEvidenceは[{url,excerpt,choiceNumbers}]配列とし、採用URLごとの正確な原文抜粋（40字以内）と、"
@@ -82,10 +92,13 @@ def main() -> None:
         "overlayは sourceHash,correctChoice,summary(20字以上),choices(番号1〜5, verdict correct/incorrect, reason),"
         "sources(タイトル,url) の構造。reviewIssuesは配列。"
     )
-    payload = prompt + "\n問題: " + json.dumps(request_items, ensure_ascii=False) + "\n政府資料候補: " + json.dumps(sources, ensure_ascii=False)
+    payload = (prompt + "\n問題: " + json.dumps(request_items, ensure_ascii=False)
+               + "\n政府資料候補: " + json.dumps(sources, ensure_ascii=False)
+               + "\n科目別一次資料pack: " + json.dumps(subject_pack, ensure_ascii=False)
+               + "\n物質別SDS: " + json.dumps(supplemental, ensure_ascii=False))
     process = subprocess.run(
         [str(CLI), "-p", "--model", "opus", "--effort", "high", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", "WebSearch,WebFetch"],
+         "--output-format", "stream-json", "--verbose", "--tools", "WebSearch,WebFetch" if web else ""],
         input=json.dumps({"type": "user", "message": {"role": "user", "content": [{"type": "text", "text": payload}]}},
                          ensure_ascii=False) + "\n",
         text=True, encoding="utf-8", capture_output=True, cwd=ROOT, timeout=900,

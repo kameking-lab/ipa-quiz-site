@@ -42,7 +42,7 @@ def read_url(url: str) -> dict:
         pages = [text]
     return {"url": url, "status": response.status_code, "finalUrl": response.url,
             "sha256": sha256(response.content).hexdigest(), "contentType": content_type,
-            "pages": len(pages), "text": text}
+            "pages": len(pages), "pageTexts": pages, "text": text}
 
 
 def main() -> None:
@@ -58,6 +58,7 @@ def main() -> None:
     for url, page in fetched.items():
         claims = []
         clean = normal(page.pop("text"))
+        page_texts = [normal(value) for value in page.pop("pageTexts")]
         for id_, item in evidence:
             claim_url = item.get("url") or item.get("sourceUrl")
             if claim_url != url:
@@ -65,8 +66,10 @@ def main() -> None:
             excerpt = item.get("excerpt") or item.get("exactSourceExcerpt") or ""
             search = normal(excerpt)
             offset = clean.find(search) if search else -1
+            source_page = next((index + 1 for index, value in enumerate(page_texts) if search and search in value), None)
             claims.append({"questionId": id_, "excerpt": excerpt,
-                           "matched": offset >= 0, "context": clean[max(0, offset - 100):offset + len(search) + 100]
+                           "matched": offset >= 0, "pdfPage": source_page,
+                           "context": clean[max(0, offset - 100):offset + len(search) + 100]
                            if offset >= 0 else ""})
         records.append({**page, "claimedExcerpts": claims})
     pack = {"paperId": paper, "range": [first, last], "draftSha256": sha256(file.read_bytes()).hexdigest(),

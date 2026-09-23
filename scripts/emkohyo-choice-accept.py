@@ -34,8 +34,12 @@ def main() -> None:
         problems = candidate_problems(row, {"overlay": candidate})
         if problems:
             raise ValueError(f"Candidate gate failed {id_}: {problems}")
-        review_file = REVIEW / f"{paper}-q01-03-review.json"
-        receipt = json.loads(review_file.read_text(encoding="utf-8"))
+        review_files = sorted(REVIEW.glob(f"{paper}-q*-review.json"))
+        receipts = [json.loads(file.read_text(encoding="utf-8")) for file in review_files]
+        matching = [receipt for receipt in receipts if id_ in receipt.get("ids", [])]
+        if len(matching) != 1:
+            raise ValueError(f"Expected exactly one current direct review: {id_}")
+        receipt = matching[0]
         assessment = receipt["assessment"].get(id_)
         keys = ("textIssues", "choiceIssues", "reasonIssues", "sourceIssues", "needsExternalCheck")
         if not assessment or assessment["status"] != "PASS" or any(assessment.get(k) for k in keys):
@@ -43,7 +47,10 @@ def main() -> None:
         digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
         if receipt["candidateSha256"].get(id_) != digest:
             raise ValueError(f"Stale candidate review: {id_}")
-        pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
+        if paper == "emkohyo-EM20251805" and number <= 3:
+            pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
+        else:
+            pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{first+4:02}.json"
         if receipt["sourcePackSha256"] != sha256(pack.read_bytes()).hexdigest():
             raise ValueError(f"Stale source pack review: {id_}")
         if id_ in existing:

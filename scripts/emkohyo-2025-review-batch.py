@@ -28,23 +28,30 @@ def parse(stdout: str) -> object:
 
 def main() -> None:
     paper, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
-    draft_file = REVIEW / f"{paper}-q01-05-draft.json"
+    batch_first = (first - 1) // 5 * 5 + 1
+    batch_last = batch_first + 4
+    if (last - 1) // 5 * 5 + 1 != batch_first:
+        raise ValueError("A direct review must stay within one five-question draft batch")
+    draft_file = REVIEW / f"{paper}-q{batch_first:02}-{batch_last:02}-draft.json"
     draft = json.loads(draft_file.read_text(encoding="utf-8"))["questions"]
     rows = json.loads((DATA / "papers" / f"{paper}.json").read_text(encoding="utf-8"))
     ids = [f"{paper}-q{n}" for n in range(first, last + 1)]
     candidates = {id_: draft[id_]["overlay"] for id_ in ids}
     question_rows = {x["id"]: x for x in rows if x["id"] in ids}
-    source_file = ROOT / f"docs/evidence/emkohyo-2025-sources/EM20251805-q{first:02}-{last:02}.json"
+    if paper == "emkohyo-EM20251805" and first == 1 and last == 3:
+        source_file = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
+    else:
+        source_file = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{batch_first:02}-{batch_last:02}.json"
     sources = json.loads(source_file.read_text(encoding="utf-8"))
     prompt = (
-        "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の厚労省SDS実測抜粋で厳密に照合する。"
+        "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の政府一次資料で厳密に照合する。"
         "問題文の選択肢1〜5との対応、解説の個別因果、数値・温度・単位、正誤判定を全件見る。"
-        "SDSの20℃値を25℃値として断定していないか、近似であるなら比較結論が支持されるか検査する。"
+        "物性値の温度・単位が出典と整合するか、近似であるなら比較結論が支持されるか検査する。"
         "政府ページが理由を直接支えない場合sourceIssuesに記す。見出しのみの一般資料を根拠として通さない。"
         "出力はJSONオブジェクトのみ。キーは問題ID、値はstatus(PASS/FIX),textIssues,choiceIssues,reasonIssues,sourceIssues,needsExternalCheck。"
         "全issue項目は文字列配列。PASSなら全配列空。疑義は具体的に記す。"
     )
-    payload = prompt + "\n公式問題: " + json.dumps(question_rows, ensure_ascii=False) + "\n現候補: " + json.dumps(candidates, ensure_ascii=False) + "\n政府SDS証拠: " + json.dumps(sources, ensure_ascii=False)
+    payload = prompt + "\n公式問題: " + json.dumps(question_rows, ensure_ascii=False) + "\n現候補: " + json.dumps(candidates, ensure_ascii=False) + "\n政府資料証拠: " + json.dumps(sources, ensure_ascii=False)
     process = subprocess.run(
         [str(CLI), "-p", "--model", "opus", "--effort", "high", "--input-format", "stream-json",
          "--output-format", "stream-json", "--verbose", "--tools", ""],
