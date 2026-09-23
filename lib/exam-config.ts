@@ -302,10 +302,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       urlSlug: "gakka",
       expectedQuestions: 60,
       label: "学科",
-      categories: ["ライフプランニング", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
     }],
     seasons: ["published"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
   },
   denken3: {
     code: "denken3",
