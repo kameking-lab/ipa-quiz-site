@@ -1,4 +1,4 @@
-"""Recalculate four EM 2026 numeric items pinned to their official row images.
+"""Recalculate EM 2026 numeric items pinned to their official row images.
 
 This proves the chosen numerical option only. The five separate reasons and
 government-source review remain required before publication.
@@ -6,7 +6,7 @@ government-source review remain required before publication.
 
 from hashlib import sha256
 import json
-from math import sqrt
+from math import pi, sqrt
 from pathlib import Path
 
 
@@ -60,6 +60,22 @@ def main() -> None:
          "formula": "(1750 ug/mL*2 mL/0.90)/(0.1 L/min*6 h*60 min/h) * 24.4654 L/mol /88.1 g/mol",
          "value": (1750*2/.90)/(.1*6*60)*24.46540369703822/88.1,
          "unit": "ppm", "printedChoices": [3, 15, 30, 60, 120]},
+        {"id": "emkohyo-EM20261807-q11",
+         "operands": ["25mL", "1700", "0.25µg", "5300", "1.0L", "10分間"],
+         "formula": "(1700/5300)*(0.25 ug/mL)*25 mL/(1.0 L/min*10 min/1000 L/m3)/1000 ug/mg",
+         "value": (1700/5300)*.25*25/(1.0*10/1000)/1000,
+         "unit": "mg/m3", "printedChoices": [.1, .2, .4, .6, .8]},
+        {"id": "emkohyo-EM20261806-q18",
+         "operands": ["20 mm", "1.26 mg", "280 cps", "1.25", "7000 cps"],
+         "formula": "((280 cps/7000 cps)*1 mg/cm2)*pi*(20 mm/2 in cm)^2*1.25/1.26 mg*100",
+         "value": (280/7000)*pi*(20/20)**2*1.25/1.26*100,
+         "unit": "% quartz", "printedChoices": [3.2, 4.0, 7.6, 10.0, 12.5]},
+        {"id": "emkohyo-EM20261807-q14",
+         "operands": ["体積２ L", "1 g", "20 ℃", "53", "58", "142", "15 kPa", "59 kPa", "54 kPa"],
+         "formula": "P_i=min((1 g/M_i)*R*T/(2 L), saturation pressure_i), T=293.15 K",
+         "value": {name: min((1/mass)*8.314462618*293.15/2, saturation)
+                   for name, mass, saturation in (("A",53,15), ("B",58,59), ("C",142,54))},
+         "unit": "kPa", "choiceOrders": ["ACB", "BAC", "BCA", "CAB", "CBA"]},
     ]
     for spec in specs:
         paper = spec["id"].rsplit("-q", 1)[0]
@@ -67,7 +83,12 @@ def main() -> None:
         row = next(item for item in rows if item["id"] == spec["id"])
         if any(operand not in row["text"] for operand in spec.pop("operands")):
             raise ValueError(f"Official operands changed: {spec['id']}")
-        spec["nearestChoice"] = min(range(1, 6), key=lambda n: abs(spec["value"] - spec["printedChoices"][n-1]))
+        if "choiceOrders" in spec:
+            order = "".join(sorted(spec["value"], key=lambda name: spec["value"][name], reverse=True))
+            spec["computedOrder"] = order
+            spec["nearestChoice"] = spec["choiceOrders"].index(order) + 1
+        else:
+            spec["nearestChoice"] = min(range(1, 6), key=lambda n: abs(spec["value"] - spec["printedChoices"][n-1]))
         spec["officialChoice"] = row["correctChoice"]
         if spec["nearestChoice"] != spec["officialChoice"]:
             raise ValueError(f"Arithmetic differs from official answer: {spec['id']}")

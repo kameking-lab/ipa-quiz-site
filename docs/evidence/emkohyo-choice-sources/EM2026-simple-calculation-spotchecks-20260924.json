@@ -165,6 +165,68 @@
       "officialImageSha256": {
         "/exam-library/emkohyo-EM20261805/q19-p11-0.webp": "cde8ca1a3d8f4476a3d4c0692a69dbafde6cc3c2aa541079234416474ec3c8ac"
       }
+    },
+    {
+      "id": "emkohyo-EM20261807-q11",
+      "formula": "(1700/5300)*(0.25 ug/mL)*25 mL/(1.0 L/min*10 min/1000 L/m3)/1000 ug/mg",
+      "value": 0.20047169811320753,
+      "unit": "mg/m3",
+      "printedChoices": [
+        0.1,
+        0.2,
+        0.4,
+        0.6,
+        0.8
+      ],
+      "nearestChoice": 2,
+      "officialChoice": 2,
+      "rowTextSha256": "17d5ffacd35d88ad968ab0af0ad09d819e944f72c5a3cf28d26a450663a33e60",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261807/q11-p7-0.webp": "22730dd9ae83dd024706dc528de993e534dd9b678744dc6ddf72f783c8eb8851"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261806-q18",
+      "formula": "((280 cps/7000 cps)*1 mg/cm2)*pi*(20 mm/2 in cm)^2*1.25/1.26 mg*100",
+      "value": 12.46663751424521,
+      "unit": "% quartz",
+      "printedChoices": [
+        3.2,
+        4.0,
+        7.6,
+        10.0,
+        12.5
+      ],
+      "nearestChoice": 5,
+      "officialChoice": 5,
+      "rowTextSha256": "57e7121cae63758de7794d37a5b265149567fdd068f4dd9d11e7a2feca1aeba8",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261806/q18-p11-1.webp": "0c52a4c4e1d309d34d046cd8ea9c8731f4d515f2828b5cb18593407c27a0e320"
+      }
+    },
+    {
+      "id": "emkohyo-EM20261807-q14",
+      "formula": "P_i=min((1 g/M_i)*R*T/(2 L), saturation pressure_i), T=293.15 K",
+      "value": {
+        "A": 15,
+        "B": 21.011937210919825,
+        "C": 8.582340550939085
+      },
+      "unit": "kPa",
+      "choiceOrders": [
+        "ACB",
+        "BAC",
+        "BCA",
+        "CAB",
+        "CBA"
+      ],
+      "computedOrder": "BAC",
+      "nearestChoice": 2,
+      "officialChoice": 2,
+      "rowTextSha256": "eb9e1e8c8898693155cbe16085ceec63129a3251f46976689446973cc9455132",
+      "officialImageSha256": {
+        "/exam-library/emkohyo-EM20261807/q14-p9-0.webp": "a211ca7c76d045ce5e6d94455d67424cdcc1b4f9c63a3722fcd839ff9f4211bf"
+      }
     }
   ],
   "acceptance": "arithmetic only; direct five-choice government-source review pending"
