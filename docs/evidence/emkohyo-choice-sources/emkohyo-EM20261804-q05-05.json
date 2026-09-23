@@ -4,8 +4,26 @@
     5,
     5
   ],
-  "draftSha256": "d601b51d2805440bb5f3029ee8ebb06d85da525dcc0b515b3323f3cc0319d0af",
+  "draftSha256": "4373e958cdfccb1a19141083007f96be3d91c475b54a26da96cc9c330fc97502",
   "sources": [
+    {
+      "url": "https://laws.e-gov.go.jp/data/MinisterialOrdinance/351M50010000035/629471_1/pict/351M50010000035_202512010000_002.pdf",
+      "status": 200,
+      "finalUrl": "https://laws.e-gov.go.jp/data/MinisterialOrdinance/351M50010000035/629471_1/pict/351M50010000035_202512010000_002.pdf",
+      "sha256": "0ac2b3ab38bd5dd366cff1c2d53ae63ffb91b4cc6fb31282869e33c542d30817",
+      "contentType": "application/pdf",
+      "pages": 652,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261804-q5",
+          "excerpt": "容量分析用標準液には、モル液を用いる。溶液1,000mL中に有効物質1グラム分子\n量を含む溶液を1モル液とし、1mol／Lで表す。",
+          "matched": true,
+          "pdfPage": 182,
+          "context": "シノール0.1gを硫酸(1→10)10mLに溶かす。レゾルシンレソルシノールの項に定める。(3)容量分析用標準液容量分析用標準液は、濃度が精密に知られた試薬溶液で、主として容量分析に用いるものである。容量分析用標準液には、モル液を用いる。溶液1,000mL中に有効物質1グラム分子量を含む溶液を1モル液とし、1mol／Lで表す。また、必要に応じて、それらを一定の割合に薄めた溶液を用いる。容量分析用標準液は、別に規定する場合を除き、無色又は遮光した共栓瓶に入れ保存する。調製容量分析用標準液は、次のいずれかの方法により調製し、モ"
+        }
+      ]
+    },
     {
       "url": "https://www.nier.go.jp/18chousakekkahoukoku/report/data/18msci.pdf",
       "status": 200,
@@ -13,6 +31,7 @@
       "sha256": "d05549934a6856d6a39798d4c9e3b191623178a0a0aab365a1d0658ea7f0974e",
       "contentType": "application/pdf",
       "pages": 98,
+      "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261804-q5",
@@ -24,7 +43,7 @@
       ]
     }
   ],
-  "claimedExcerpts": 1,
+  "claimedExcerpts": 2,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0
 }

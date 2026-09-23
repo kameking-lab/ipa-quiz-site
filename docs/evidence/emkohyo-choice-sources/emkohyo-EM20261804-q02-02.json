@@ -4,7 +4,7 @@
     2,
     2
   ],
-  "draftSha256": "d601b51d2805440bb5f3029ee8ebb06d85da525dcc0b515b3323f3cc0319d0af",
+  "draftSha256": "330c68e61dc1678dbc200557ceb2b8df16fa67e46383dca55545147dd1b0c09f",
   "sources": [
     {
       "url": "https://rpg.jaea.go.jp/else/rpd/others/study/materials/44th-rpd-seminar_yamamoto.pdf",
@@ -13,6 +13,7 @@
       "sha256": "3b8dc609fce2971a453ebc25b10410116a1e5e6d14b2f37f24e2a6afc6a818d3",
       "contentType": "application/pdf",
       "pages": 46,
+      "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261804-q2",
@@ -37,6 +38,7 @@
       "sha256": "757158c7d3e07a6f1a65b97331d3bfbbed8f4a01553dad621c9d6fea8d03d341",
       "contentType": "application/pdf",
       "pages": 81,
+      "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261804-q2",
@@ -50,5 +52,17 @@
   ],
   "claimedExcerpts": 3,
   "missingEvidenceQuestions": [],
-  "unverifiedExcerpts": 0
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/jaea-variance-p19.png",
+      "sha256": "531e94de3e048c0106eddec65dc8c9627b98b5b1103d73a35f8c646afb09a03a",
+      "description": "JAEA 不確かさ評価の基礎 PDF p19 分散・不偏分散の原式"
+    },
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/jaea-variance-p20.png",
+      "sha256": "9f0d353715a7cf6f22cf263c82603c401732fe51939719f8fd3363b304ae5967",
+      "description": "JAEA 不確かさ評価の基礎 PDF p20 分散・不偏分散の原式"
+    }
+  ]
 }

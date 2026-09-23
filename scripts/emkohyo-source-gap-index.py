@@ -9,6 +9,8 @@ import json
 from pathlib import Path
 import re
 
+from emkohyo_portable_hash import matches_text_sha256
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
@@ -36,15 +38,35 @@ def main() -> None:
             rows[row["id"]] = {"subject": paper["subject"], "lane": lane(paper["subject"]),
                                "year": paper["date"][:4], "fingerprint": sha256(text.encode()).hexdigest()}
     drafted = set()
+    draft_files = {}
     for file in (DATA / "emkohyo-review").glob("emkohyo-*-draft.json"):
         draft = json.loads(file.read_text(encoding="utf-8"))
-        drafted.update(set(draft.get("questions", {})) & set(rows))
+        ids = set(draft.get("questions", {})) & set(rows)
+        drafted.update(ids)
+        draft_files.update({id_: file for id_ in ids})
     accepted = set(json.loads((DATA / "choice-explanations.json").read_text(encoding="utf-8"))) & set(rows)
     verified_excerpts = set()
+    stale_packs = 0
+    stale_claim_questions = set()
     for file in PACKS.glob("emkohyo-*-q*.json"):
         try:
             pack = json.loads(file.read_text(encoding="utf-8"))
         except (json.JSONDecodeError, OSError):
+            continue
+        claimed_ids = {claim["questionId"] for source in pack.get("sources", [])
+                       if source.get("status") == 200
+                       for claim in source.get("claimedExcerpts", [])
+                       if claim.get("matched") and claim.get("questionId") in rows}
+        # A source excerpt from an older draft cannot count as current evidence.
+        # The reviewer enforces this same draft-file pin before accepting work.
+        if not pack.get("draftSha256") or not pack.get("range"):
+            continue
+        first = pack["range"][0]
+        id_ = f"{pack['paperId']}-q{first}"
+        draft_file = draft_files.get(id_)
+        if not draft_file or not matches_text_sha256(draft_file, pack["draftSha256"]):
+            stale_packs += 1
+            stale_claim_questions.update(claimed_ids)
             continue
         for source in pack.get("sources", []):
             if source.get("status") == 200:
@@ -71,6 +93,8 @@ def main() -> None:
     output = {"scope": "EM 2025/2026 official multiple choice",
               "expectedQuestions": len(rows), "drafted": len(drafted), "accepted": len(accepted),
               "draftedWithoutVerifiedGovernmentExcerpt": len(missing),
+              "staleDraftPinnedSourcePacks": stale_packs,
+              "questionsOnlyInStalePacks": len(stale_claim_questions - verified_excerpts - accepted),
               "distinctExactQuestionFingerprints": len(fingerprints),
               "distinctCachedGovernmentCandidateUrls": len(candidate_urls),
               "lowRelevanceQuestions": sum(bool(x["lowRelevance"]) for x in detailed),

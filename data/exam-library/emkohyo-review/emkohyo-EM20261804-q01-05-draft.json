@@ -421,9 +421,7 @@
           ]
         }
       ],
-      "reviewIssues": [
-        "公式PDFの式画像とpresentationの文字起こしは目視照合済み。独立Opus再審査までは公開保留。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q3": {
       "overlay": {
@@ -434,27 +432,27 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "アニリンC₆H₅NH₂はベンゼン環にアミノ基−NH₂が結合した芳香族アミンで、組合せは正しい。誤りを選ぶ本問ではこの肢を選ぶと不正解になる。"
+            "reason": "厚生労働省のアニリンSDSは別名を「アミノベンゼン」と記す。ベンゼンに結合したアミノ基が−NH₂であり、設問の組合せは正しいため、誤りを選ぶ本問では不正解となる。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "アセトニトリルCH₃CNはメチル基にシアノ基（ニトリル基）−C≡Nが結合した化合物で、官能基−CNとの対応は正しく、誤っている組合せではない。"
+            "reason": "厚生労働省のアセトニトリルSDSは「シアノメタン」「メチルシアニド」を別名に挙げる。シアノ基（ニトリル基）−CNを持つことと合い、設問の組合せは正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "トルエンC₆H₅CH₃はベンゼン環の水素1個をメチル基−CH₃で置換した芳香族炭化水素で、組合せは正しい。誤りを選ぶ本問では不正解の肢となる。"
+            "reason": "厚生労働省のトルエンSDSは「メチルベンゼン」を別名に挙げる。ベンゼン環にメチル基−CH₃が結合した化合物なので、設問の組合せは正しく、誤りではない。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "アセトンCH₃COCH₃はケトンで、カルボニル基>C=Oの両側に炭素が結合する。−CHOはアセトアルデヒド等が持つアルデヒド基なので、この組合せが誤り。"
+            "reason": "消防庁のアセトン資料は示性式をCH3-CO-CH3と明記する。中央のC=Oの両側は炭素で、設問の−CHOのようにカルボニル炭素にHが直接結合していない。したがって組合せが誤りである。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ジエチルエーテルC₂H₅OC₂H₅は二つのエチル基を酸素原子が結ぶエーテルで、エーテル結合−O−を持つ。組合せは正しく、誤っている組合せではない。"
+            "reason": "科学技術振興機構の原図はジエチルエーテルをCH₃CH₂−O−CH₂CH₃と示し、炭素原子間のC−O−Cをエーテル結合と説明する。設問の−O−との対応は正しく、誤りではない。"
           }
         ],
         "sources": [
@@ -471,12 +469,12 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
           },
           {
-            "title": "厚生労働省 職場のあんぜんサイト アセトンSDS",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+            "title": "消防庁 アセトンの物性・示性式",
+            "url": "https://internal.fdma.go.jp/kiken-info/material/m_01408.html"
           },
           {
-            "title": "環境省 資源循環分野報告書 p.99",
-            "url": "https://www.env.go.jp/content/000164284.pdf"
+            "title": "科学技術振興機構 科学の甲子園2015筆記問題 p.10 エーテル構造式",
+            "url": "https://koushien.jst.go.jp/koushien/pastexam/2015/files/1-1.pdf"
           }
         ]
       },
@@ -503,23 +501,21 @@
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
-          "excerpt": "ジメチルケトン （Dimethyl ketone)",
+          "url": "https://internal.fdma.go.jp/kiken-info/material/m_01408.html",
+          "excerpt": "示性式 C3H6O/CH3-CO-CH3",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.env.go.jp/content/000164284.pdf",
-          "excerpt": "ジエチルエーテル（C2H5OC2H5）",
+          "url": "https://koushien.jst.go.jp/koushien/pastexam/2015/files/1-1.pdf",
+          "excerpt": "ジエチルエーテルのように酸素原子を挟んで炭素原子2 個が結合した形の化合物をエーテ\nルといい，C－O－Cをエーテル結合という。",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "政府資料抜粋は照合中。独立Opus審査まで公開保留。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q4": {
       "overlay": {
@@ -641,6 +637,10 @@
           {
             "title": "国立教育政策研究所 全国学力・学習状況調査報告書 p.35",
             "url": "https://www.nier.go.jp/18chousakekkahoukoku/report/data/18msci.pdf"
+          },
+          {
+            "title": "e-Gov 飼料及び飼料添加物の成分規格等に関する省令・容量分析用標準液 p.182",
+            "url": "https://laws.e-gov.go.jp/data/MinisterialOrdinance/351M50010000035/629471_1/pict/351M50010000035_202512010000_002.pdf"
           }
         ]
       },
@@ -655,11 +655,20 @@
             4,
             5
           ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/data/MinisterialOrdinance/351M50010000035/629471_1/pict/351M50010000035_202512010000_002.pdf",
+          "excerpt": "容量分析用標準液には、モル液を用いる。溶液1,000mL中に有効物質1グラム分子\n量を含む溶液を1モル液とし、1mol／Lで表す。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "政府原典の抜粋照合済み。独立Opus審査はセッション上限で未実施。公開保留。"
-      ]
+      "reviewIssues": []
     }
   }
 }

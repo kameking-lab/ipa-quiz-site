@@ -2,15 +2,17 @@
   "scope": "EM 2025/2026 official multiple choice",
   "expectedQuestions": 360,
   "drafted": 300,
-  "accepted": 31,
-  "draftedWithoutVerifiedGovernmentExcerpt": 175,
-  "distinctExactQuestionFingerprints": 175,
-  "distinctCachedGovernmentCandidateUrls": 40,
-  "lowRelevanceQuestions": 82,
+  "accepted": 34,
+  "draftedWithoutVerifiedGovernmentExcerpt": 199,
+  "staleDraftPinnedSourcePacks": 43,
+  "questionsOnlyInStalePacks": 24,
+  "distinctExactQuestionFingerprints": 199,
+  "distinctCachedGovernmentCandidateUrls": 43,
+  "lowRelevanceQuestions": 88,
   "missingByLane": {
-    "analysis": 135,
-    "general": 25,
-    "law": 15
+    "analysis": 148,
+    "general": 29,
+    "law": 22
   },
   "candidateGovernmentUrls": [
     "https://anzeninfo.mhlw.go.jp/user/anzen/kag/kagaku_index.html",
@@ -28,7 +30,9 @@
     "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
     "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=12",
@@ -50,11 +54,111 @@
     "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+    "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1",
     "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
     "https://www.nite.go.jp/chem/shiryo/product/dish/dish3.html",
     "https://www.nra.go.jp/data/000447909.pdf"
   ],
   "missingQuestions": [
+    {
+      "id": "emkohyo-20260217-2-q2",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "94ed6c196941a0e4de17bbbfbddb99d451e5a31d807556a2471d7e863fe38958",
+      "topRetrievalScore": 0.4257,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-2-q3",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "6c6ff26eca6d313ad757e8bdbf550f26064de956cad0a7e1716da36b0a574170",
+      "topRetrievalScore": 0.2026,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-2-q4",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "bfc7428bf38e63ce300084bb9a7fc64d67425c0b0e771fd59280fd9a6a4a2e72",
+      "topRetrievalScore": 0.2631,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-2-q5",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "d1eabc460e4170a33beee956b9f468af08add0da6ab9d622c6ca731430da42ba",
+      "topRetrievalScore": 0.2032,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=14",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-2-q6",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "c62d2cf08b86c9a31ceb693c9c9f29ab3cd9c927b9f8c5ce9831e1ccdf2e0cd8",
+      "topRetrievalScore": 0.2509,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-2-q9",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "ac64c7b02f766ff160628522592930f7991ef04e54d180076b001f2d872695ab",
+      "topRetrievalScore": 0.1577,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74156000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q1",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "badf67b43c2c490af3779e7599b4f23013a922ac0f55149a2e073f96769bc093",
+      "topRetrievalScore": 0.0341,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
     {
       "id": "emkohyo-20260217-3-q10",
       "subject": "デザイン・サンプリング",
@@ -112,6 +216,90 @@
       ]
     },
     {
+      "id": "emkohyo-20260217-3-q2",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "33e59eff056ba5c1d1a5510b2eeaa36e6608c0d4722b08a145e0668a5c74b048",
+      "topRetrievalScore": 0.0805,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q3",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "2dc0297bef332b9ef9380ae81d0bb250ce93198a74e6fdcd7d00b6987857e3c1",
+      "topRetrievalScore": 0.2183,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q4",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "186bc184cd53c1044cd76f9833b5bd702148f36410ad92f79018837da88d0550",
+      "topRetrievalScore": 0.1009,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q6",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "ffeccf2e8f39e3866b187c1b6b29e3dd4caadbcc4e18d3216082fbf12b584ce9",
+      "topRetrievalScore": 0.1538,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q7",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "1bf8ed7f82123836889746ea14947f730c4028f115b231a1bf67b3f8e834c780",
+      "topRetrievalScore": 0.0589,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-3-q9",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "f86c96d09cd2030e8610c3a5744feabe9d4806fcdbcb5600d65a7dcce1222ffc",
+      "topRetrievalScore": 0.1044,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
       "id": "emkohyo-20260217-4-q11",
       "subject": "分析に関する概論",
       "lane": "analysis",
@@ -137,6 +325,20 @@
         "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
         "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
         "https://www.env.go.jp/kijun/wt_a05.html"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-4-q15",
+      "subject": "分析に関する概論",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "5548eee700702e30a543b61a4a75e2d1d6373e2797d921cd00604e2c9df390b0",
+      "topRetrievalScore": 0.105,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://unit.aist.go.jp/mcml/rg-tp/ja/kaisetsu/shokai_TEmethod.html",
+        "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
+        "https://www.mhlw.go.jp/content/000616847.pdf"
       ]
     },
     {
@@ -192,6 +394,20 @@
       "candidateGovernmentUrls": [
         "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
         "https://unit.aist.go.jp/mcml/rg-tp/ja/kaisetsu/shokai_TEmethod.html",
+        "https://www.mhlw.go.jp/content/000616847.pdf"
+      ]
+    },
+    {
+      "id": "emkohyo-20260217-4-q2",
+      "subject": "分析に関する概論",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "27182ec34f5258a7ee0ac4465609dfe0e15d742e588e77d246bc02501bf029fe",
+      "topRetrievalScore": 0.044,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://riss.aist.go.jp/wp-content/uploads/2021/08/CNF_Hazard_Assessment_Procedure_20200409.pdf",
+        "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-1.pdf",
         "https://www.mhlw.go.jp/content/000616847.pdf"
       ]
     },
@@ -1039,6 +1255,62 @@
       ]
     },
     {
+      "id": "emkohyo-EM20261801-q16",
+      "subject": "労働衛生一般",
+      "lane": "general",
+      "year": "2026",
+      "fingerprint": "0b88a9312aa90c832a43c8af9d1b70b67fe3f8664eb4c444bd78b7c8b488f4a5",
+      "topRetrievalScore": 0.0293,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261801-q17",
+      "subject": "労働衛生一般",
+      "lane": "general",
+      "year": "2026",
+      "fingerprint": "ffae6f67bfec7168facb3ae627c5e441035d3ad09ccc72470f353e60c12dd0ab",
+      "topRetrievalScore": 0.0343,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261801-q18",
+      "subject": "労働衛生一般",
+      "lane": "general",
+      "year": "2026",
+      "fingerprint": "154654dcff396415abd2039e2a73797e5815145cc3e24fbc2e0068d8ba138f5a",
+      "topRetrievalScore": 0.0501,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261801-q19",
+      "subject": "労働衛生一般",
+      "lane": "general",
+      "year": "2026",
+      "fingerprint": "e76fd4a7a94c248dceee6a31fb301ac0ec3b097494f2cc8efc8f171b20bedb02",
+      "topRetrievalScore": 0.0583,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      ]
+    },
+    {
       "id": "emkohyo-EM20261801-q2",
       "subject": "労働衛生一般",
       "lane": "general",
@@ -1148,6 +1420,20 @@
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/anzeneisei02.html",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261802-q1",
+      "subject": "労働衛生関係法令",
+      "lane": "law",
+      "year": "2026",
+      "fingerprint": "dfe9f3ec25233f9c1bd5c84a8baa906fedc7d9ef84b058cafbfdf99a6ca33e88",
+      "topRetrievalScore": 0.2884,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
       ]
     },
     {
@@ -1431,6 +1717,20 @@
       "year": "2026",
       "fingerprint": "6ef30d5f82890543ab030b709aecec6f46515be17dae636311c7ca792b2b4572",
       "topRetrievalScore": 0.0618,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/000616847.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261803-q16",
+      "subject": "デザイン・サンプリング",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "4f6c3f1b51d0ccfe39dfc2e159c063aad93cc321529777f55ed5088b2092d735",
+      "topRetrievalScore": 0.1449,
       "lowRelevance": false,
       "candidateGovernmentUrls": [
         "https://www.mhlw.go.jp/content/000616847.pdf",
@@ -2034,6 +2334,20 @@
       ]
     },
     {
+      "id": "emkohyo-EM20261806-q2",
+      "subject": "鉱物性粉じん",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "f681f720c247f2f21c86f1b07569844a6a6b9cae36bcbcd88cc4fb438d2bf542",
+      "topRetrievalScore": 0.0694,
+      "lowRelevance": false,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.nra.go.jp/data/000447909.pdf"
+      ]
+    },
+    {
       "id": "emkohyo-EM20261806-q20",
       "subject": "鉱物性粉じん",
       "lane": "analysis",
@@ -2046,6 +2360,34 @@
         "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
         "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261806-q4",
+      "subject": "鉱物性粉じん",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "98643fd32982cb30f54ed8938113be0e817092d837f60c650e9d117de7ec5da5",
+      "topRetrievalScore": 0.0365,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.nra.go.jp/data/000447909.pdf"
+      ]
+    },
+    {
+      "id": "emkohyo-EM20261806-q5",
+      "subject": "鉱物性粉じん",
+      "lane": "analysis",
+      "year": "2026",
+      "fingerprint": "1fc17c09e728fb0553ba7a55283daa876dab3abf1c64eeaa7d1381e653fa4ae2",
+      "topRetrievalScore": 0.0274,
+      "lowRelevance": true,
+      "candidateGovernmentUrls": [
+        "https://www.mhlw.go.jp/content/11201250/001640056.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+        "https://www.nra.go.jp/data/000447909.pdf"
       ]
     },
     {
