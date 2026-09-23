@@ -29,6 +29,7 @@ const visualSourceByPaper = sourcePdfManifest.papers as Record<string, {
   officialUrl: string;
   cacheRelativePath: string;
   sha256: string;
+  visualQuestions: string[];
 }>;
 
 interface ReceiptItem {
@@ -257,10 +258,36 @@ for (const exam of selectedExams) {
   let covered = 0;
   let accepted = 0;
   for (const question of questions) {
+    const choiceKeys = Object.keys(question.choices ?? {}).sort();
+    const answerKeys = new Set(Array.isArray(question.answer) ? question.answer : [question.answer]);
+    const paper = `${question.exam}/${question.year}/${question.season}/${question.session}`;
+    const officialSource = sourceByPaper[paper];
+    if ([...answerKeys].some((answer) => !choiceKeys.includes(answer))) {
+      issues.push(`${question.id}: 公式正答が選択肢に存在しない (${[...answerKeys].join(",")})`);
+    }
+    const choiceValues = Object.values(question.choices ?? {}).map((value) => value.trim());
+    if (!question.hasImage && new Set(choiceValues).size !== choiceValues.length) {
+      issues.push(`${question.id}: 非図表問題の選択肢本文が重複`);
+    }
+    if (!officialSource?.question || !officialSource.answer) {
+      issues.push(`${question.id}: 公式問題・解答URLが不足`);
+    }
+    if (question.hasImage) {
+      const visualSource = visualSourceByPaper[paper];
+      if (!visualSource || !/^[a-f0-9]{64}$/u.test(visualSource.sha256)) {
+        issues.push(`${question.id}: 公式図表PDFのSHA固定がない`);
+      } else {
+        if (!visualSource.visualQuestions.includes(question.id)) {
+          issues.push(`${question.id}: 公式図表PDF manifestの対象IDに含まれない`);
+        }
+        if (officialSource?.question && visualSource.officialUrl !== officialSource.question) {
+          issues.push(`${question.id}: 公式図表PDF URLがofficial-sourcesと不一致`);
+        }
+      }
+    }
     const explanations = overlays[exam][question.id];
     if (!explanations) {
       const receipt = receipts.get(question.id);
-      const officialSource = sourceByPaper[`${question.exam}/${question.year}/${question.season}/${question.session}`];
       ledger.push({
         id: question.id,
         exam,
@@ -287,15 +314,9 @@ for (const exam of selectedExams) {
       continue;
     }
     covered++;
-    const choiceKeys = Object.keys(question.choices ?? {}).sort();
     const explanationKeys = Object.keys(explanations).sort();
     if (choiceKeys.join(",") !== explanationKeys.join(",")) {
       issues.push(`${question.id}: 選択肢と全肢解説のキーが不一致`);
-      continue;
-    }
-    const answerKeys = new Set(Array.isArray(question.answer) ? question.answer : [question.answer]);
-    if ([...answerKeys].some((answer) => !choiceKeys.includes(answer))) {
-      issues.push(`${question.id}: 公式正答が選択肢に存在しない (${[...answerKeys].join(",")})`);
       continue;
     }
     for (const [key, reason] of Object.entries(explanations)) {
@@ -327,7 +348,6 @@ for (const exam of selectedExams) {
       continue;
     }
     accepted++;
-    const officialSource = sourceByPaper[`${question.exam}/${question.year}/${question.season}/${question.session}`];
     ledger.push({
       id: question.id,
       exam,
