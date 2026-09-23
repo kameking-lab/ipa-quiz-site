@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:08:33.099Z",
+  "batch": "0006-b3519f27fced-a2",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q54",
+      "status": "FIX",
+      "sourceSha256": "a2bacd0486ae0f2cdf95ec4e196cf14ca51ec9e7d75c4cf4d4a2f01b5e301e12",
+      "overlaySha256": "179019fd1b4c153232eb3d5fec5ccef4f2bd1d509c5bccf98cd9a37167f1cac3",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: The explanation states as fact that 130億円 came from adding 180 and 50 without probability weights and then subtracting the 100億円 investment. The arithmetic checks out (180+50-100=130), but other derivations give 130 just as easily, such as expansion revenue minus contraction revenue (180-50=130). Nothing confirms which one the choice was built from. Either remove the claimed derivation or mark it as one possible path, e.g. 「130億円は、確率で重み付けせずに収入を合算して投資額を引くなどの誤った計算で得られる値と考えられます」. Base the reason for the error on facts you can check: the correct new-system value is 180×0.7+50×0.3-100=41億円, which is not 130, and 41億円 is lower than the refurbishment value of 46億円, so choosing the new system is also wrong.",
+        "ア/イ/ウ: I recalculated every value. New system: 126+15-100=41. Existing system: 84+12-50=46. For イ, 96 is the expected revenue 84+12 before subtracting the 50億円 investment. These explanations are correct and specific to each choice, and they need no changes."
+      ]
+    }
+  ]
+}

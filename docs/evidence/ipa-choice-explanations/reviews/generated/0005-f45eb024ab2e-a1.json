@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:07:07.231Z",
+  "batch": "0005-f45eb024ab2e-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q46",
+      "status": "FIX",
+      "sourceSha256": "55d13b8f8a3885f625f621ef07de972f61528597734ec950c69c9f9c8c389b4e",
+      "overlaySha256": "fc79a12c1738566241466918fc45c4b55005f20c78e18033f9df36f2b4e7d3be",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「内容結合は7段階の結合度のうち最も強く」の「7段階」は典拠によって数え方が変わる。一般的な分類はデータ・スタンプ・制御・外部・共通・内容の6種類で、非直接結合を含めた場合だけ7種類になる。「7段階の」を削除し、「モジュール結合度の分類のうち最も強く」のように段階数を示さない書き方に直す。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q48",
+      "status": "PASS",
+      "sourceSha256": "b655bacb6e67fbf08de7d213e459f8a2a571f6b021d4cbf3168e87acba1f4316",
+      "overlaySha256": "d52fa19a07007228e5f9f94b833b42bf81c4754e80aaf9ef434e2beaa8b3db59",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q49",
+      "status": "FIX",
+      "sourceSha256": "27ba6fec27515dd7f9238d32e3f977f928471b8febf30442d8e13f61709757f8",
+      "overlaySha256": "6c5d1a2a1fed40fb5ce264d2be878941bc2f28c1eb0a479af6c1193cb744e2be",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「JIS X 33004などのプロセス改善規格」は規格の特定が誤り。ISO/IEC 33004はプロセス参照モデル・プロセスアセスメントモデル・成熟度モデルの要求事項を定める規格で、プロセス改善の規格ではない（プロセス改善の手引はISO/IEC 33014）。確認できない規格番号は削除し、次の方向で直す。「継続的なプロセス改善による品質向上は、アセスメント結果を用いた改善活動の説明である。JIS X 33002はその前提となるアセスメント（診断）を実施するための要求事項を規定する規格であり、改善活動そのものの要求事項ではない」。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q50",
+      "status": "PASS",
+      "sourceSha256": "f3d93af4c39f9c6caa5aafabdb920c88134e48a989c187f1424328fa4ba24b1c",
+      "overlaySha256": "94e3aae8b4c81522bd87cdd1e083dd3690f7746bffb592c42e630a3a399a3a82",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q53",
+      "status": "PASS",
+      "sourceSha256": "22fe0dfa5c1557f62e62d5bc0caf3d187419d1494631b69cace66555f121ef8c",
+      "overlaySha256": "d5ce6be31f5b836f85da357dd7203edad28884952160e6d7a606be32c563807c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

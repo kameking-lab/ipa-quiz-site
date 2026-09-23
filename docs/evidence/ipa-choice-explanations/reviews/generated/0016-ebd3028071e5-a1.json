@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:18:29.747Z",
+  "batch": "0016-ebd3028071e5-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q35",
+      "status": "FIX",
+      "sourceSha256": "f4a1881bf181c66c1b9a8ff39331a2353de16733a007fcb84daf63fbdf8abc33",
+      "overlaySha256": "8e077cba4f450d87bdfceee0e6c0289f39e0b7e9d4dbefdcda7efa56fe824e28",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 計算自体(10,000×0.000001×1,000=10)は正しい。ただし『誤って1,000ビットとして扱う』という誤り方には問題文上の根拠がなく、未確認の推測になっている。特定の誤り方のせいにせず、次のように直す:『10は1パケットの誤り確率を0.001とした値であり、12,000ビット×10^-6=0.012から求まる確率の1/12にすぎない。そのため期待値を過小に見積もっている。』",
+        "ウ: ア と同じ問題。『パケット長を1,000バイト(8,000ビット)として計算』という誤り方の想定には根拠がない。次のように直す:『80は1パケットの誤り確率を0.008とした値で、正しい0.012(12,000ビット×10^-6)より小さい。』",
+        "イ: 1,500バイトをビットに換算し忘れた(×8を欠いた)ために15になる、という説明は典型的な誤りとして妥当。修正は不要。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q36",
+      "status": "PASS",
+      "sourceSha256": "deadf486c9a0177eb48a1d684f3daa422dc620380a5c4902ef56d2ce8ccab666",
+      "overlaySha256": "43e6b904999220d322b199f02b2b2fdcce347165ee0363ad07c28064a25cab8c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q37",
+      "status": "PASS",
+      "sourceSha256": "1bf6cd821192f59485f11b3246425bd7a41d1d42e8a223e72d2c5a26fad8e436",
+      "overlaySha256": "b467fdb93ce116d16da57cb7f9c88d0a98d33721d8dd614c9a170f5fa138c586",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q38",
+      "status": "FIX",
+      "sourceSha256": "10d4cce4c890f9f22003708fdba5779937852f4217ef1891661feaac914efbf1",
+      "overlaySha256": "842fa435ecbdf07b4653a7cc7522c9a80d80ad8a68a384c46fe07fc9536c7540",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 『(なりすましAP)』という分類が技術的に誤り。なりすましAP(evil twin)は、正規のAPを装って通信を傍受・中継する攻撃であり、チャネル干渉による通信妨害ではない。括弧書きを削除し、次のように直す:『無線チャネル間の電波干渉を起こして通信を妨害するDoS型の攻撃である。ここでいう“チャネル”は無線の周波数チャネルであり、暗号処理中の消費電力などの物理的な副次情報を使うサイドチャネル攻撃とは別物である。』"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q39",
+      "status": "FIX",
+      "sourceSha256": "5b8721508656f33893d3929e3ddeb4db9fa6003546dfcb291dd9b5dda7c4280b",
+      "overlaySha256": "bbe7b4cc36d907830d8ec90344a5a23432752d913edb44a4a3ef2560ec8c3e82",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 選択肢の内容を取り違えている。選択肢は『失効後1年間』記載する義務を述べているのに、解説は『有効期間満了後さらに1年間』の規定を否定している。さらに、RFC 5280の実際の規定も正確に示すべきである。次のように直す:『RFC 5280に、失効後1年間CRLに記載するという固定期間の義務はない。失効エントリは、証明書の有効期間が満了した後に定期発行されるCRLに少なくとも1回載るまで削除してはならない、と定められている。つまり記載期間は証明書の残りの有効期間によって決まり、一律1年ではない。』"
+      ]
+    }
+  ]
+}

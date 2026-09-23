@@ -50,6 +50,9 @@ interface ReviewDecision {
 
 type Review = Record<string, ReviewDecision>;
 
+class ClaudeUsageLimitError extends Error {}
+let usageLimitTriggered = false;
+
 function parseOptions(): Options {
   const args = process.argv.slice(2);
   const value = (name: string) => args.find((arg) => arg.startsWith(`--${name}=`))?.split("=").slice(1).join("=");
@@ -145,10 +148,30 @@ function isVisual(question: Question): boolean {
 function parseJsonObject<T>(content: string): T {
   const trimmed = content.replace(/^```(?:json)?\s*|\s*```$/gu, "").trim();
   for (const match of trimmed.matchAll(/\{/gu)) {
-    try {
-      return JSON.parse(trimmed.slice(match.index ?? 0).replace(/\s*```\s*$/u, "")) as T;
-    } catch {
-      // Claude may prepend prose. Try the next opening brace.
+    const start = match.index ?? 0;
+    let depth = 0;
+    let inString = false;
+    let escaped = false;
+    for (let cursor = start; cursor < trimmed.length; cursor += 1) {
+      const character = trimmed[cursor]!;
+      if (inString) {
+        if (escaped) escaped = false;
+        else if (character === "\\") escaped = true;
+        else if (character === '"') inString = false;
+        continue;
+      }
+      if (character === '"') inString = true;
+      else if (character === "{") depth += 1;
+      else if (character === "}") {
+        depth -= 1;
+        if (depth === 0) {
+          try {
+            return JSON.parse(trimmed.slice(start, cursor + 1)) as T;
+          } catch {
+            break;
+          }
+        }
+      }
     }
   }
   throw new Error("Claude response does not contain a complete JSON object");
@@ -210,6 +233,7 @@ function claudeExecutable(): string {
 }
 
 async function callClaude(prompt: string, model: string, prefix: string): Promise<string> {
+  if (usageLimitTriggered) throw new ClaudeUsageLimitError("Claude usage limit already detected");
   writeFileSync(`${prefix}.prompt.txt`, prompt, "utf8");
   const raw = await new Promise<string>((accept, reject) => {
     const child = spawn(claudeExecutable(), [
@@ -234,9 +258,11 @@ async function callClaude(prompt: string, model: string, prefix: string): Promis
       clearTimeout(timeout);
       writeFileSync(`${prefix}.raw.json`, stdout, "utf8");
       writeFileSync(`${prefix}.stderr.txt`, stderr, "utf8");
-      if (code !== 0 || /usage limit|rate limit|hit your limit/iu.test(`${stdout}\n${stderr}`)) {
-        reject(new Error(`Claude unavailable; no paid fallback used: ${prefix}`));
-      } else accept(stdout);
+      if (/usage limit|rate limit|hit your limit/iu.test(`${stdout}\n${stderr}`)) {
+        usageLimitTriggered = true;
+        reject(new ClaudeUsageLimitError(`Claude usage limit reached; no paid fallback used: ${prefix}`));
+      } else if (code !== 0) reject(new Error(`Claude unavailable: ${prefix}`));
+      else accept(stdout);
     });
     child.stdin.end(prompt);
   });
@@ -350,6 +376,7 @@ async function processBatch(
         review = validateReview(reviewRaw, batch);
         writeJson(`${prefix}.review.parsed.json`, review);
       } catch (error) {
+        if (error instanceof ClaudeUsageLimitError) throw error;
         lastError = error;
         draft = undefined;
         review = undefined;
@@ -417,7 +444,7 @@ async function main(): Promise<void> {
   let accepted = 0;
   let pending = 0;
   const worker = async () => {
-    while (next < batches.length) {
+    while (next < batches.length && !usageLimitTriggered) {
       const index = next++;
       try {
         const result = await processBatch(batches[index]!, options, index, overlays);
@@ -427,6 +454,7 @@ async function main(): Promise<void> {
       } catch (error) {
         pending += batches[index]!.length;
         console.error(`[batch-failed] index=${index + 1}`, error);
+        if (error instanceof ClaudeUsageLimitError) return;
       }
     }
   };

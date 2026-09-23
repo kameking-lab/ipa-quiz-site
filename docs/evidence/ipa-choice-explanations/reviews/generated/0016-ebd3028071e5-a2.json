@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:19:45.075Z",
+  "batch": "0016-ebd3028071e5-a2",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q35",
+      "status": "FIX",
+      "sourceSha256": "f4a1881bf181c66c1b9a8ff39331a2353de16733a007fcb84daf63fbdf8abc33",
+      "overlaySha256": "02201154b0ac85ce83b2737109f1b91430bb088daf7df57092fa018fb3a1856f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「10は1パケットあたりの誤り確率を0.001とみなした場合の値」は10÷10,000を逆算しただけで、誤りの原因を説明していない循環説明です。誰かが0.001を使う理由も示されていません。確かめられる誤算の経路がないなら、それらしい誤りの前提を作らないでください。代わりに正しい計算(12,000ビット×10^-6×10,000個≒120)と比べ、10は正しい期待値の約1/12で大幅な過小評価だと、計算上の差として説明してください。",
+        "ウ: アと同じ問題です。「誤り確率0.008とした場合の値」は80から逆算した前提で、固有の誤り原因を説明していません。確かめられる誤算の経路(例: 何ビットとして計算したか)を示すか、示せない場合は、正しい期待値約120の2/3にとどまる過小評価だと計算上の比較で説明してください。",
+        "エ(軽微): 12,000×10^-6=0.012は1パケットあたりの誤りビット数の期待値で、少なくとも1ビット誤る確率を近似したものです(厳密には1-(1-10^-6)^12000≒0.0119)。正答の説明としては成り立ちますが、「誤り確率はおよそ0.012」のように近似であることを明記してください。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q38",
+      "status": "PASS",
+      "sourceSha256": "10d4cce4c890f9f22003708fdba5779937852f4217ef1891661feaac914efbf1",
+      "overlaySha256": "4c040e1dc326d002fac61a54706899cecefd757837bb1c40df2bdcb210c5e28d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q39",
+      "status": "PASS",
+      "sourceSha256": "5b8721508656f33893d3929e3ddeb4db9fa6003546dfcb291dd9b5dda7c4280b",
+      "overlaySha256": "1ca72ff79b304fb9d8cd2c6735de62f483028c3c61871f880ecba9f826692832",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

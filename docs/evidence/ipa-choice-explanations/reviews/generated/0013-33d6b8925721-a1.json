@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:13:34.791Z",
+  "batch": "0013-33d6b8925721-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q17",
+      "status": "FIX",
+      "sourceSha256": "4b12f6e33720f49c27e42c7b39b19493322bc31537106e7685082abb6e5cc7a6",
+      "overlaySha256": "935f65f340522c49ac87e5deabee63ee02687f4c6be77ed357ae6ce70b466629",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: この肢を「排他的なアクセス制御の説明」としているが、排他制御はスレッドセーフを実現する代表的な手段で、肢ウの解説も『排他制御などによって』と書いている。このままだと解説どうしが矛盾する。『複数スレッドからの呼出し自体を禁止する＝マルチスレッドでの利用を前提としない(スレッドセーフでない処理の使い方を制限する)運用上の制約であり、並行実行されても正しく動くという性質の説明ではない』のように、排他制御と呼ばずに書き直す。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q18",
+      "status": "PASS",
+      "sourceSha256": "e17ce190c7e32aca262540e249f452e30f961ca9e2ce863b3aec6c364f9a6837",
+      "overlaySha256": "6896d5e3a10b6f895bbde4c1ff7f6e5abda37d41344097f131a8d87cdd98b360",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q21",
+      "status": "FIX",
+      "sourceSha256": "0d9f70d5f5f4d42865f33e5719b9211ca11684b52a62503de8b3fd826ade01da",
+      "overlaySha256": "dfc939a6dcb76a4f36c7924897c736b3f5b21c0de27a4f131b641203f20c86e4",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 計算が誤っている。¬a+b が偽になるのは a=1, b=0 のときだけ。つまり押された瞬間だけ偽で、それ以外はすべて真になる式であり、正答アの否定にあたる。解説は『放されたまま(a=0,b=0)の場合を除く』としているが、a=0 なら ¬a=1 で真なので誤り。『¬a+b は a=1, b=0(押された瞬間)のときだけ偽、それ以外は真となり、検出したい変化とは真偽が正反対(アの否定)になる』に直す。",
+        "イ/ウ/エ(アも含む): 選択肢データでは上線(論理否定)の記号が失われ、4肢とも見た目が同じ文字列になっている。候補の解説は イ=¬a・b、ウ=a+¬b、エ=¬a+b という対応を前提にしているが、原典PDFで確認していない推測である。2025r07a_ap_am_qs.pdf の問21で各肢のどの変数に上線があるかを確かめ、肢ごとの式の解釈を原典に合わせる。あわせて、解説文でも否定を『¬a』『aの否定』のように明示し、上線が消えた表記に頼らない(既存解説の『bの論理否定bが1』も同じ問題がある)。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q23",
+      "status": "FIX",
+      "sourceSha256": "eac33d1a5333196232d69eb1b8f1e07829cd64d9c06def6d847eef32adcb3d60",
+      "overlaySha256": "0e76b26c541e40c2fdd7fab3f0abb984b4e048deb7a541b72a11be9040610f1b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 『周波数や桁の換算を誤った場合に得られる値』では一般論にとどまり、どの誤りで 0.3 になるかを特定していない。『150 ÷ 500(kHz) = 0.3 はミリ秒単位の値であり、マイクロ秒に直すと 300μs。単位(ms と μs)を取り違えた値である』のように、具体的な計算過程で説明する。",
+        "ウ: 『時間の単位であるマイクロ秒には対応していません』は説明として曖昧。『150μs になるのは 1 カウントを 1μs(1MHz)とみなした場合で、16MHz÷32=500kHz(周期 2μs)という分周を正しく反映していない』のように、どの誤った前提で 150 になるかを書く。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q24",
+      "status": "PASS",
+      "sourceSha256": "4c8d9c59d77a1ac6372f559672688a7a1d074a58f3d96b83a704ed2f3840f553",
+      "overlaySha256": "3eaa84f88dafb9a351a10c4ad507d34ff0715355c80b9dff64f24df381068546",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

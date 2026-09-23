@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:08:32.321Z",
+  "batch": "0007-8df986102898-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q59",
+      "status": "FIX",
+      "sourceSha256": "4f9b531fd2d3627cf6349d3d9e9461b4e75e265ed5bc77e75b840832c8dcfdd8",
+      "overlaySha256": "442d9dd1969457803301dcb77562060fd890a3d398d6efc2c52613527d85c7a2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 鉤括弧で基準の文言として引用している「情報システムのガバナンス、マネジメント及びコントロール」は、システム監査基準(令和5年)の原文「情報システムのガバナンス、マネジメント又はコントロールを点検・評価・検証する」と一致しない(原文は「及び」ではなく「又は」)。「三つと定めており」も原文にない言い方である。直し方: 原文どおり『ガバナンス、マネジメント又はコントロール』と引用するか、鉤括弧を外して『監査対象を情報システムのガバナンス、マネジメント、コントロールとしている』と地の文で書く。",
+        "エ: 『モニタリングはコントロールを構成する監視活動の一要素』は根拠を確認していない断定であり、基準との関係も曖昧である。直し方: 『モニタリングは統制が有効に機能しているかを継続的に監視・評価する活動(内部統制の構成要素の一つ)であり、基準が点検・評価の対象として並べるガバナンス・マネジメント・コントロールとは階層が異なる』のように、確認できる事実だけに絞って書く。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q60",
+      "status": "PASS",
+      "sourceSha256": "2b04068586bd810c327496abc81b50c208f35b94f2a2fa7db0d0320961da3518",
+      "overlaySha256": "2514dd14d5647a4fcd21e25dc8c76ba0a6925e6af8fc8ad9670d0db77416cf2f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q61",
+      "status": "PASS",
+      "sourceSha256": "b73f0766f08d5e9bd9b4636c6abefd89999ee17054756e3eb7e48d1f7c2e4d24",
+      "overlaySha256": "a493a959f8074e9a3c93874d5ad955740cdf9c0662fd5f164e5503010e415aca",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q62",
+      "status": "PASS",
+      "sourceSha256": "78dd26c24aebea369e0a14dc7ecad9a03cf49a3fb300a4f036c8c2b892e9114f",
+      "overlaySha256": "4d203b1f5422b3babec5992d239decc3928994e87f1d657d7f8631bfd9bb6cef",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q63",
+      "status": "FIX",
+      "sourceSha256": "8ee655b974495ed67296b4f5d5da933825960e60a85dd4a9e860f0ae47b23e28",
+      "overlaySha256": "d1350cb9ac0d40c337f2c2b41331b1bd6b08848b5654ed5b85d108913c40f6c8",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 『PDCAサイクルに基づく業務改善の説明』は選択肢の文言をほぼ言い換えただけで循環説明に近く、この肢が何を説明しているかを特定していない。直し方: 『業務プロセスの問題点を洗い出し、目標設定・実行・チェック・修正のサイクルで継続的に改善する手法はBPM(Business Process Management)の説明であり、システム機能をサービス部品化して連携させるSOAとは異なる』のように、BPMの名称を挙げてSOAとの違いを書く。"
+      ]
+    }
+  ]
+}

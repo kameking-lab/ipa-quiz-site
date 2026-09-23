@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:21:16.524Z",
+  "batch": "0011-b4994d2eec36-a2",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q6",
+      "status": "FIX",
+      "sourceSha256": "ce0c54c19a429ec34a420f0f03f3cf2fb974574b873bf000daaa0448153c4610",
+      "overlaySha256": "db47e47ed32c8efaea03536f798e66f50503303d0ba6a9cdd48d499bc881c91a",
+      "checks": {
+        "answerConsistent": false,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: the stored choice text and the candidate explanation give different formulas. The input has choices.イ as \"n/2 + n/2m\", but the candidate explains m/2 + n/(2m). I checked page 6 of the official question PDF (2025r07a_ap_am_qs.pdf), and choice イ there is m/2 + n/2m. So the stored choice text is a transcription error, and the candidate matches the official source. If this is published as is, learners will see choice イ as n/2 + n/2m with an explanation that says m/2 + n/(2m). Fix: correct choices.イ in the question data to \"m/2 + n/2m\" to match the PDF. This changes question data, so it needs approval as a separate data fix and should not be done by rewriting the candidate. After that fix, the candidate's イ explanation can stay as written. Do not accept the candidate until the choice text is corrected.",
+        "Reference (outside the candidate): the existingExplanation calls n/2 the average search count over all the data, which is technically wrong. The correct average is n/(2m) comparisons to find the block plus m/2 comparisons inside the block. Do not reuse the existingExplanation wording when replacing it.",
+        "ア, ウ and エ: no problems. ア correctly says both averages were left unhalved, so the result is too large. ウ correctly identifies n/m as the number of blocks. エ correctly identifies n/2m as only the block-finding step, missing the m/2 inside the block. All three are specific to their own choice and technically correct."
+      ]
+    }
+  ]
+}

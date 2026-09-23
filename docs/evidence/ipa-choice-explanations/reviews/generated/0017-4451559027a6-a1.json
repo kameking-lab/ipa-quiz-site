@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:18:32.526Z",
+  "batch": "0017-4451559027a6-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q40",
+      "status": "PASS",
+      "sourceSha256": "745151ce579dacff6d4a50202465c4da58a616519175f30c432f7628a9159f91",
+      "overlaySha256": "7ed2df5dd0a7b5e4ec8491bc6417b9581ec1c209abc253120468264484738264",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q42",
+      "status": "PASS",
+      "sourceSha256": "5fdb4a768299bc7ccb28de3c6836799628f66516c58d96429c046258d990dad8",
+      "overlaySha256": "519d02872da43147eabf3781db312d564204a5b01d73082bf4ef2f3db19fb535",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q43",
+      "status": "PASS",
+      "sourceSha256": "a77daccfc41feb613fc0bd4f6f601ebc3386c566e14a1353c608c9d68e47be2f",
+      "overlaySha256": "3aa1ab0921e8a030f3276a01e7841f9ebc22d629c0bae307facd86f87ba7310b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q44",
+      "status": "PASS",
+      "sourceSha256": "c668d83e6d7a45532c505683c74f4af42da993a5d9954f9905d71b6fa83fcacb",
+      "overlaySha256": "089f0243a189d89959dd2290f5359fc5668071157b4ffa71be13fefd0d3cebb9",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q45",
+      "status": "FIX",
+      "sourceSha256": "3ca5cf31f11659f27a3873a84c1511a6f1d04e1c8aa6d83e2c620604eb455610",
+      "overlaySha256": "ffb8c9aca8aa9bdc13438459f72719b575d4e930d0372ac2b7fc10e072f37ec7",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 「送信者の秘密鍵を用いてメッセージ単位でデジタル署名や本文の暗号化を行う」と書かれているため、本文の暗号化にも送信者の秘密鍵を使うように読めてしまいます。これは技術的に誤りです。S/MIMEでは、デジタル署名は送信者の秘密鍵で作成し、本文の暗号化は受信者の公開鍵（受信者の証明書）を使います。例:「S/MIMEは、送信者の秘密鍵によるデジタル署名と、受信者の公開鍵による本文の暗号化を、メールクライアント間でメッセージ単位に行う方式であり、送信側メールサーバが署名をヘッダーに付与し受信側メールサーバで検証するDKIMとは仕組みが異なります。」のように、署名に使う鍵と暗号化に使う鍵を分けて書いてください。"
+      ]
+    }
+  ]
+}

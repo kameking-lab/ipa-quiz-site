@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:14:22.676Z",
+  "batch": "0014-54ef87b7866f-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q25",
+      "status": "FIX",
+      "sourceSha256": "c5b67e589d711a279cd7494954ac709d0b5f6cec4756085830c0e61a581581e6",
+      "overlaySha256": "31550fcdbc1588760fc8a333db4a2d56b7222ad6419bbdf89bc89ba3cd5c4d2b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「20kHz×20=400kHz」から求めた値だという説明は、誤答の由来を推測したもので根拠が確認できない。推測の記述は削除する。代わりに次のように書く。2.5マイクロ秒は標本化周波数400kHzに当たる。400kHzは最低限必要な40kHz以上なので、標本化定理自体は満たしている。しかし必要な最大周期25マイクロ秒より短く、『最大のサンプリング周期』ではない。",
+        "イ: 「20kHz×10=200kHz」から求めた値だという説明は推測なので削除する。さらに『最大周波数の2倍40kHzという条件と対応しない』という記述は技術的に誤り。5マイクロ秒は標本化周波数200kHzに当たり、40kHz以上なので標本化定理を満たしている。直し方は次のとおり。条件は満たすが許される最大周期25マイクロ秒より短いので、最大値ではない。ここを誤りの理由として書く。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q26",
+      "status": "PASS",
+      "sourceSha256": "628d4514ba97fecda2011ea3a50366c5a710c8ac28987d7ee2aca04cb4598206",
+      "overlaySha256": "01a9937b90922a8df90195f99ecef3c9bfe33f8a8ebb3be2d9f5336f68fdd14c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q27",
+      "status": "PASS",
+      "sourceSha256": "52d478fc78fcdee86ea08a8368bb7628e041b0ceb6bf78e81055215d942bf895",
+      "overlaySha256": "3260dd7e65fcae93ef2cabc79be6eaa58eba8035be11e58b1d5463fc69594495",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q28",
+      "status": "FIX",
+      "sourceSha256": "062b77be8f41a69424396e7571a0e7ab86860babf05cecaa788ec4c63faf7a4c",
+      "overlaySha256": "2e6c3a7e402295dba53c81fa79e701e0e03168f0e537d56cbeea6171734f1f0f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 『結合列が両表の主キーや一意キーを含み…場合に限り更新可能』は、更新できる条件を根拠なく限定しており、技術的にも不正確。例えば Oracle の key-preserved 条件では、更新対象の表のキーが結合結果の中で一意であればよく、両表のキーは要らない。SQL標準と各DBMSでも条件は違う。直し方は次のとおり。『結合したビューの行が、どの基表のどの行に対応するか一意に定まらない場合などは更新できない。更新の可否は結合の仕方や定義内容で決まるため、常に更新できるわけではない』のように、断定しすぎない正確な表現にする。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q29",
+      "status": "PASS",
+      "sourceSha256": "f13254986485de7205321e2d711c18c55c48ec69b104e01e786efa90a52c3b7a",
+      "overlaySha256": "27f3e0c49e5c96e3987d209e685d77f88bb75cd964bc8d2ac5f98054289324a5",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

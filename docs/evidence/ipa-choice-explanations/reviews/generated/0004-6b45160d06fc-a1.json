@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:06:21.677Z",
+  "batch": "0004-6b45160d06fc-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q41",
+      "status": "PASS",
+      "sourceSha256": "53372d5d77ba98ebfff89af38f676e6dcc3941ea46008a4ed5be412abe50ac26",
+      "overlaySha256": "720e17717058091319faed0dcc006360d72de02c661772d736f515420d39e924",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q42",
+      "status": "FIX",
+      "sourceSha256": "0a9683456f35e702be041caa831df3f90c6521e6516b147aa0a4dc947dc49cfa",
+      "overlaySha256": "3f7fdadc998c82450962a7b2ed09f8fa146e7638f228377ef8e4cb4bdbced3c6",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 「IP認証プロトコル(PAP・CHAP)」は誤りです。PAPとCHAPはPPPの接続時に使う認証プロトコルで、IPの認証プロトコルではありません。「PPPの認証プロトコル(PAP・CHAP)」に直してください。また、PPPにはECP(Encryption Control Protocol, RFC 1968)という暗号化の拡張があるので、「暗号化機能を持たない」と言い切らないでください。論点は層に絞り、「PPPはデータリンク層で二点間のリンクを確立するプロトコルで、ネットワーク層でIPパケットを暗号化する仕組みではない」と書き直してください。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q43",
+      "status": "PASS",
+      "sourceSha256": "186fb7b26ae233fa027641302a59534a95cd6be0a2c7c5583fc3a2872f2c49a7",
+      "overlaySha256": "1ae71c6f436667103cfb4c8bb692507928ce39d8b296e3fee959288ed9bcf98f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q44",
+      "status": "PASS",
+      "sourceSha256": "5deddffd3b815361b0f8148d52d03431cf8469c058336e8be3d1199f486c2fcb",
+      "overlaySha256": "1fd94ddd0bc14ace12a4c724afef0b9bf6c8c8d06ed7677d10c66effcdbfc436",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q45",
+      "status": "PASS",
+      "sourceSha256": "ba58f0244a1e51b80a6286d40e6fe2bdecf84d33cd1f28537e22b25800433fa4",
+      "overlaySha256": "eb92dfef271cbd4e57084318ac751fdaf20d96e0b218c6a2035a6549c74dc4a1",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

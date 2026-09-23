@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:03:58.297Z",
+  "batch": "0003-7c915f24cb16-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q36",
+      "status": "PASS",
+      "sourceSha256": "ea0650433c5f4eb0aad22535c69278df524b5e573686f1cc62738430871871d4",
+      "overlaySha256": "2a91d88788671dcd1d3e9598c2bc3d482496c80e0c599863561551dc6eeca97f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q37",
+      "status": "PASS",
+      "sourceSha256": "1b3dcd628a44e02d53e9857fc66ac451294960d56e35ee0b5c43e7dcfc7a1af9",
+      "overlaySha256": "278e748f97259eaf54abc816c65492ddf9552bfb199045b8089bc2962fd23818",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q38",
+      "status": "FIX",
+      "sourceSha256": "292162c3dae96239726d2ad777eff53434c758f1e03de1fef1544bf435077666",
+      "overlaySha256": "8672aa3a10fa3c5ea12d9176704c6576205e1ddee3bb5c76499ce79954240521",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 説明が循環しています。「n+1は必要鍵数に該当しない」「算出方法と一致しない」と言うだけで、何が誤りなのかを示していません。具体例で示すこと。n=2なら2n=4個必要なのにn+1=3個しかなく、n≥2では常に2nより少ないため、各人が公開鍵と秘密鍵を1組ずつ持つという条件を満たせない（誰かの鍵が不足する）点を書く。",
+        "エ: 説明が一般論にとどまっています。「2乗に比例することはない」と述べるだけで、計算上の誤りを示していません。n=2ではn²=4が2n=4と偶然一致するが、n=3ではn²=9に対し必要なのは2n=6個であることを示す。そのうえで、n²は各人が全員分（自分を含むn人分）の鍵を別々に持つような数え方になり、1人1組の鍵ペアを全員で使い回せる公開鍵暗号方式の性質を無視している、と説明する。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q39",
+      "status": "PASS",
+      "sourceSha256": "c00b91db093a1c5de7c46b029de828e632a043174bee1710ab3331e86edcad28",
+      "overlaySha256": "4a9a56aadd01d5665607fd87e139e487a90e4bf032dee237fc7357b5858a9fda",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q40",
+      "status": "FIX",
+      "sourceSha256": "3ed3874de3c385a01ec17272b61e800fe630156cf9f866482d6bc46ee38a82ad",
+      "overlaySha256": "a3938f8e14d2a164a2d964550b273595f3002df351b0b848f7e0decb054f9987",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 工程の対応付けが誤っています。JIS Q 31000:2019で「残留リスクが許容可能かどうかの判断」が置かれているのは、リスク評価（6.4.4）ではなくリスク対応（6.5）です。リスク対応は、対策の選択・実施、有効性の評価、残留リスクが許容可能かの判断、許容できなければ追加対応、という反復プロセスとして定義されています。「リスク評価の段階で行われる」を「リスク対応の段階で、対応を実施した後に行われる」に直し、リスク特定の考慮事項ではないと説明すること。"
+      ]
+    }
+  ]
+}

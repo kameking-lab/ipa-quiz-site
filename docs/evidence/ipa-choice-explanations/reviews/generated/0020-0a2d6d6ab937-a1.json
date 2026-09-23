@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:23:11.651Z",
+  "batch": "0020-0a2d6d6ab937-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q57",
+      "status": "PASS",
+      "sourceSha256": "3da3f9194492bab4b037246d5e15b671075d87fc461455510458884a78741063",
+      "overlaySha256": "72c74dfc2f7066ac7f0e0dcf0bca725a57827c1bd808e3b3be4f8fab73236329",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q58",
+      "status": "FIX",
+      "sourceSha256": "79de81b5aa57568c80579419b1492dd5baae045256125716a0b2fc0d230bfb99",
+      "overlaySha256": "e462df41a44ed9b65b3b634f4b1d4075a81e9ca83ef32dc46042107f1c53f8fe",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 「検証可能性に関する特性」は誤り。システム監査基準（令和5年）の用語集では、「他の標準的な監査人が監査を実施した場合であっても同じ検証結果を得られること」は『再現性』の定義。『再現性の定義であり、所見の定義ではない』に直す。所見の定義も用語集どおり『監査で発見したこと、又は発見したことに基づく考えや意見』にそろえる（出典: 経済産業省 システム監査基準（案）用語集 https://public-comment.e-gov.go.jp/pcm/download?seqNo=0000247393 ）。",
+        "イ: 「客観性の定義に近い説明」は誤り。用語集では「誠実に行動し、客観性を保持という精神的な態度を堅持できること」は『精神的独立性』の定義（客観性は『バイアス・利益相反を排し不当な影響を受けずに判断を行うこと』として別に定義されている）。『精神的独立性の定義であり、正当な懐疑心ではない』に直す。正当な懐疑心の定義は、ISA流の『監査証拠の矛盾…を批判的に評価する姿勢』ではなく、用語集の『何事をも当然のこととせず、疑ってみる、又は確認してみる心』に置き換える。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q59",
+      "status": "PASS",
+      "sourceSha256": "d331a03ecaa024128348fec32a8c855fae252decccf732f140f95a788f1c2364",
+      "overlaySha256": "cd247961c1d597edb90b14f1764cbdd9ff19d5cff24f04f94d471a33ce4f6198",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q60",
+      "status": "PASS",
+      "sourceSha256": "940c37f57559defd1628f1948a9d0a89db28296633bb2c0655b693f7b5e26b60",
+      "overlaySha256": "9e24b7c60fe77b4d31da8d518ae1e16e1a2d532eb7363cfba00e2dd9a3aacb90",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q61",
+      "status": "PASS",
+      "sourceSha256": "602ac1f409cbf1e0887fc7e33fe0e8c4b00c91436e6f0212fc598d8327d4f609",
+      "overlaySha256": "9c99d4f7969ffd5db6bdd41911362cf1fbfe7cd4d6c48ed2231648abccfecd76",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

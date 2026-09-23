@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:10:10.953Z",
+  "batch": "0008-2c0e8c3aa700-a2",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q65",
+      "status": "PASS",
+      "sourceSha256": "fb86ddb5e31ac671dffa53fef9fceb16440cdae9a6844a8e9bad69fd88be7271",
+      "overlaySha256": "0e9d395908b8c65a67f952b61f9d8e516927eeee679983a1a570240db9c8e054",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q66",
+      "status": "PASS",
+      "sourceSha256": "a8ac330c62be1b157e1ab0cabb893dc7f8c11bd6def6419617dbd8509f415bde",
+      "overlaySha256": "76ff85093d8684354d624a6c2d8b4118af2d9eef8b124486762a73c5eaec7b1d",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

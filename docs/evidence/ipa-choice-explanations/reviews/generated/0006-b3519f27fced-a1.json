@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:07:54.367Z",
+  "batch": "0006-b3519f27fced-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q54",
+      "status": "FIX",
+      "sourceSha256": "a2bacd0486ae0f2cdf95ec4e196cf14ca51ec9e7d75c4cf4d4a2f01b5e301e12",
+      "overlaySha256": "5cf0879653d0dfd3c5e992c8602188c41cab08c9f43c14917251c0d1abed380f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 現在の説明は「130億円は141億円とも41億円とも一致しない」と、答えではない値を並べているだけで、この誤答に固有の誤りを示していない。130億円は、確率で重み付けせずに収入を単純に足し、投資額を引いた値（180+50−100=130）として導ける。これを明記し、確率70%/30%を掛けていない点が誤りだと説明すること。あわせて、採用案が誤りである根拠も書くこと。正しく計算すると新規開発は41億円、既存改修は46億円で、改修の方が高いので新規開発を採る判断は誤りになる。今の「採用案・数値ともに誤り」は理由のない断定になっている。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q55",
+      "status": "PASS",
+      "sourceSha256": "61fb81316c75ae64cce7b9d985abdda4065e97a6e42ff2c3e87393b6a3eec23d",
+      "overlaySha256": "7552f532e0c3dce40d99f0e01d4ce730d495ededace5b301db54a285ea118b21",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q56",
+      "status": "PASS",
+      "sourceSha256": "d1625c44e83ccd391ee44ce26943ea9b63ae7261250e5baede95b8bfe2dcbc63",
+      "overlaySha256": "4d568c48383f1bc750f0a0bc9fbfd5320bc8cea2e7672b6b9f19ba096d0044ee",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q57",
+      "status": "PASS",
+      "sourceSha256": "9b15f97b27555134f52e39168195ff40195a9e161e9438121712b1f39c0aa23d",
+      "overlaySha256": "ce9495522be837500c1c017dc34066f26f88f57ec09d4a997def1dff43b95c77",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q58",
+      "status": "PASS",
+      "sourceSha256": "001aa16d7308f86a27fc037d7b29923402e6d4afdd5bbe175c9acb65a73cff14",
+      "overlaySha256": "cc3c4c30605a58350fd34590166237f8c6138a3e8822664a271611cc129f5f9f",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

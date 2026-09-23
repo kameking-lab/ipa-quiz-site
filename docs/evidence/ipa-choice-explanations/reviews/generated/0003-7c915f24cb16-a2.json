@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:04:48.713Z",
+  "batch": "0003-7c915f24cb16-a2",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q38",
+      "status": "FIX",
+      "sourceSha256": "292162c3dae96239726d2ad777eff53434c758f1e03de1fef1544bf435077666",
+      "overlaySha256": "10e66d911bd292db99cb586af0b30bbf13932cd57fbfa0db0c4c45c304e0f0a6",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 「1組の鍵ペアを全員で共用できる公開鍵暗号方式の性質」は技術的に誤りです。全員に配布して共用するのは公開鍵だけで、秘密鍵は所有者本人しか持ちません。鍵ペアそのものを全員で共用するわけではありません。「n²は各人が自分を含む全員分の鍵を別々に保持するような数え方」という部分も、根拠のない推測で数え方の由来を決めつけています。直し方: n=3のときn²=9に対し、正しい鍵数は2n=6になるという反例はそのまま残します。そのうえで理由を次のように書き換えます。「各人は自分の鍵ペア1組を持ち、公開鍵を他の全員に配布すれば、誰とでも暗号通信できる。通信相手ごとに鍵を増やす必要はないので、鍵数は人数に比例する2nになり、nの2乗に比例して増えることはない」。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q40",
+      "status": "PASS",
+      "sourceSha256": "3ed3874de3c385a01ec17272b61e800fe630156cf9f866482d6bc46ee38a82ad",
+      "overlaySha256": "3f0526d89f648141e1e241e36e4408c5a24ced86b773d38973674d2dd020edef",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

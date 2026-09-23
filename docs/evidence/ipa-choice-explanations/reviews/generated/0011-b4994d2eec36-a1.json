@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:19:03.550Z",
+  "batch": "0011-b4994d2eec36-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q4",
+      "status": "PASS",
+      "sourceSha256": "460f87d95c9abef23df90bcf63e65d0c74028226f22abf53b3e1335156709c0a",
+      "overlaySha256": "4783b4141ae3c33fc391c50c0cc7c69bb86c1bcc3567a57955eabd9486539292",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q5",
+      "status": "PASS",
+      "sourceSha256": "0cfab0b4b97b3e3543d186a7a3767c8a77fcdf74b0b5cee4956b8cd0ebebfde8",
+      "overlaySha256": "d3e2f86ecf4f62a30b6c27a91a9ed25e1801f6631c258814318e4fa3bf9d0a72",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q6",
+      "status": "FIX",
+      "sourceSha256": "ce0c54c19a429ec34a420f0f03f3cf2fb974574b873bf000daaa0448153c4610",
+      "overlaySha256": "f8fa95c2e571eab20123bc33b7851baba9c40fd0730b7bc0f485a452c3ac5915",
+      "checks": {
+        "answerConsistent": false,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 保存されている選択肢の文字列「n/2 + n/2m」は原典と合わない。原典PDF（2025r07a_ap_am_qs.pdf、6ページ、問6）では、イは m/2 + n/2m と印字されている。候補の解説は正しく m/2+n/(2m) を導いているが、画面に出る選択肢の文字列（n/2 + n/2m）と食い違う。そのため、このままでは解説が別の式を正答として説明していることになる。直し方: この審査では問題文・選択肢を変更しない。データ担当者が、原典PDFに合わせてイを「m/2 + n/2m」に直すかどうか判断する。直すまでは、この問題の解説は採用しない。",
+        "イ(existingExplanation): 既存の解説は平均比較回数を「n/2 と n/(2m) の合計」としており、原典とも計算とも合わない。n/2 は表全体を線形探索したときの平均で、この二段階探索の値ではない。正しくは、ブロックを特定する段階の平均 n/(2m) と、ブロック内を探索する段階の平均 m/2 の和になる。選択肢の文字列を直すときに、既存の解説もあわせて見直すこと。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q7",
+      "status": "PASS",
+      "sourceSha256": "9d9cb83c4c46de0fbfc547b6ab04947c25f071c1a47d2b3be3f385e57d79d8fe",
+      "overlaySha256": "fe3076da7a908bea7be9e905856593ed177e5a505afe5d3e72bec54f79c3624c",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q8",
+      "status": "PASS",
+      "sourceSha256": "44bfa6f225eb09dc72134a8e959c3e821d9bd655fa5eb56a411f250dbc103871",
+      "overlaySha256": "7214f31643d0766ff24f0735f0be4176b7836184edba1e206e40e1dde007ffe2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

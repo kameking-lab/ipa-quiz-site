@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:12:06.556Z",
+  "batch": "0010-d552bb3bbd14-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q78",
+      "status": "PASS",
+      "sourceSha256": "0b515d8ac3aad6cdb252051fbbbff3be808f01a9232bd25080cb1554b549c355",
+      "overlaySha256": "1d1cddfc0e77f9ef80d82d61e9635e719130cf9060246090bccdeba8a70e66cc",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q79",
+      "status": "FIX",
+      "sourceSha256": "fc74adb32cc6494a7097374d35f54a9f96eecd72d206adb99e49d80a65d39ce5",
+      "overlaySha256": "205816c8db86c8072cfb18630c2ccf4256c93e89833156e8b7c0c61a8c6cca1e",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ウ: 問題文にない条件が入っている。「著名・周知な商品名」とあるが、ドメイン名の不正取得等（不正競争防止法第2条第1項第19号）は他人の特定商品等表示を対象とし、周知性や著名性を要件としない。問題文も「商標権のない商品名」としか述べていない。「商標権がなくても、他人の特定商品等表示である商品名と同一・類似のドメイン名を、不正の利益を得る目的（コピー商品販売による利益取得）で取得・使用しているため第19号に該当する」と書き直すこと。",
+        "ウ: 「商品の形態を模倣したコピー商品」「商品形態模倣に該当する」は確認できない推測である。問題文は形態を模倣したことを述べておらず、本問の論点はドメイン名の不正取得等である。形態模倣への言及を削除し、ドメイン名の取得・使用に不正の利益を得る目的があるという根拠に一本化すること。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q80",
+      "status": "FIX",
+      "sourceSha256": "4ce4085e93882ae6a8b4a9c87bedc161af5f72afe8562fd088b10c5d74a2925d",
+      "overlaySha256": "26d936b5a847fd0e4094da5364a5aa3e673d0f483ea4eeae9ba04d152f964a18",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 「運転免許証番号やクレジットカード番号は個人識別符号や個人情報には該当する」は不正確である。個人識別符号は政令で限定列挙されており、運転免許証番号は含まれるが、クレジットカード番号は含まれない。「運転免許証番号は個人識別符号に当たるが、クレジットカード番号は個人識別符号ではない。いずれも、病歴・犯罪の経歴など差別や偏見を生じさせるおそれのある情報として法定列挙された要配慮個人情報には当たらない」と区別して書き直すこと。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q2",
+      "status": "PASS",
+      "sourceSha256": "0dbe36c783a59cb63808a879032324bf197855b5e15e2f3944f491fca9e09d36",
+      "overlaySha256": "53d1621d145ee9d33f4aec4f67d3838f92d435bfa5963cc4b6fadda64e733fa2",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q3",
+      "status": "PASS",
+      "sourceSha256": "dd3704bd81cdd1e3d9cecc9335f855b877f1468fd9ef36e81b18403f6f0e21fa",
+      "overlaySha256": "4846dcfb5c57c2521c3ec2a14898ecfa39a933f115bdc4932989fc73dccfaa23",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:09:19.708Z",
+  "batch": "0008-2c0e8c3aa700-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q65",
+      "status": "FIX",
+      "sourceSha256": "fb86ddb5e31ac671dffa53fef9fceb16440cdae9a6844a8e9bad69fd88be7271",
+      "overlaySha256": "80c92b1002d9956fc88fcf83037b2812a8e7ee9e831e022a6bd7c7d275e71a47",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: 候補の説明は主語を取り違えている。選択肢アでは、委託を受ける企業が設計だけを請け負い、製造は相手先（ブランド企業）が行う。候補が言う「自社ブランド品の設計のみを担当し量産は委託先に任せるファブレス企業」とは立場が逆で、ファブレスの説明として誤り。書くべき内容は次のとおり。アは設計だけを請け負う設計受託（デザインハウス型）の形態である。EMSは他社から電子機器の製造を請け負う事業であり、製造を請け負わないアはEMSに当たらない。「EMSの定義とは逆」という表現は根拠がずれているので削除し、この違いに置き換える。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q66",
+      "status": "FIX",
+      "sourceSha256": "a8ac330c62be1b157e1ab0cabb893dc7f8c11bd6def6419617dbd8509f415bde",
+      "overlaySha256": "5d5899e08577a1d3d080f60af7126c31e4283a447501b0cd1a8ad7a91e11846b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 品質担保を条件にした契約を「リスク回避・移転」と分類している点が不正確。リスク回避は、リスクの原因となる活動そのものをやめる対応を指す。製造委託を続けたまま契約で品質を担保するのは回避に当たらない。書き直し方は次のとおり。これは品質不良の発生を事前に防ぐ予防的な対策（リスク低減、または契約によって責任の一部を委託先に移すリスク移転）である。リスクが顕在化した後に何をするかを定める計画ではないので、コンティンジェンシープランには当たらない。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q67",
+      "status": "PASS",
+      "sourceSha256": "140a3e1ee14ffefa7036734b846d80404ee1e32afc79ac7bea68f08d137e4afc",
+      "overlaySha256": "0127d7a744438d67e6f47aa7347a0088a4296e6d29852359e1d012a1e5b12313",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q68",
+      "status": "PASS",
+      "sourceSha256": "b7d3bee07a949bb67c1738a268c97474464c0add84e67f01ec517ffd04683e7a",
+      "overlaySha256": "17698b5de0a08391be5e2f0f3021a28da7679ae9305e5fcb50aa859e0c21d722",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q69",
+      "status": "PASS",
+      "sourceSha256": "e0fbcefd01f2e2629e78411cf7fd0a30670c52dc197b2e2087bd69dd86f5cc99",
+      "overlaySha256": "1adea736a22acf52c601963a2cb6aa29136b683360cc3b21cb85b9f1c50042bc",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

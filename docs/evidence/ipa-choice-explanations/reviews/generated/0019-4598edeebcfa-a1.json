@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:23:33.474Z",
+  "batch": "0019-4598edeebcfa-a1",
+  "questions": [
+    {
+      "id": "ap-2025a-am-q51",
+      "status": "PASS",
+      "sourceSha256": "2245fb5f52c5c121463dfe4a12c3362eac4c48f3f6d5dead49f82c2f10a32094",
+      "overlaySha256": "4dacad86001f23086cd35bba3c33dc9e7f09197974a2ec0a828cf498cd012c3e",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q52",
+      "status": "FIX",
+      "sourceSha256": "45150c0e30cfcf90a9aa1accfd4162eb13f242e1186c65c4966e0bd4dcdd8ce4",
+      "overlaySha256": "19eadcd33709c20b15a4645e59630cebaeb88f1edbbb18527ed965df7369564a",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 遂行期(Performing)を「最終段階」と書いているが誤り。設問は五段階のタックマンモデルを前提にしており、遂行期の後に散会期(Adjourning)がある。「最終段階」を削除し、「第4段階」または「散会期の前の段階」に直す。遂行期は、チームが成熟して自律的に高い成果を出す段階であり、意見が対立する段階ではない、という誤りの核心は残す。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q53",
+      "status": "FIX",
+      "sourceSha256": "6c8db431423969d20399c2c1d42fdab8ceb1438b13e33e55750069ae0d78d1a5",
+      "overlaySha256": "7d21225bda4fd22f3bd2f5ad240fafc11c2f39a8277e60f9e03cc29e3a7bc1fd",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "エ: 誤りの導き方が自己矛盾している。引継ぎを1か月と見誤るなら、増員メンバーは7月初めから参加するので、在籍期間は3か月になる。それなのに2.5か月で計算しており、6人×2.5か月=1500万円という式は成り立たない(引継ぎ1か月で一貫させると6人×3か月−800=1000万円になり、700万円にならない)。矛盾のない誤りの筋道に書き換えること。例: 正しい増加額450万円に、増員5人の引継ぎ期間分の人件費250万円(5人×0.5か月×100万円)を二重に足して700万円とした誤り。正解は、10人月を補うために5人を2.5か月増員した1250万円から、離脱4人の8・9月分800万円を差し引いた450万円であることを添える。",
+        "ウ(表記): 『Aug-Sep』という英語表記が混ざっている。『8・9月』に直す(計算内容は正しい)。"
+      ]
+    },
+    {
+      "id": "ap-2025a-am-q55",
+      "status": "PASS",
+      "sourceSha256": "81e7ba41634e858736e81fdc24fe407175bc4051431554f971df5f7e0371926f",
+      "overlaySha256": "9c9c74b807d8256ccf78774af934448c78b3c5b486ae3261d8dab4283d9a3368",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2025a-am-q56",
+      "status": "PASS",
+      "sourceSha256": "7b0480efc1e7571d3635f14e865eb3cf4d75ceeb79c9aa0816ffcba506a95734",
+      "overlaySha256": "81fef17669e44f1eaf80c675c1ab3dcbe67b217c30970cdb42d4b8108f728fb3",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}

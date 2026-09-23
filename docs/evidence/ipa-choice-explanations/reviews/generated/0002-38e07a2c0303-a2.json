@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:05:46.299Z",
+  "batch": "0002-38e07a2c0303-a2",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q33",
+      "status": "FIX",
+      "sourceSha256": "9b7aa3bd49d29f8cd7eef981b8059e4bcbfda80698ce85c0290109b91b8a49f1",
+      "overlaySha256": "851acc00f8a31a59abf32d0631f42bfc129809302380db9c07cf1b8aafd0c19b",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "ア: The explanation works backward from 10 and assumes a packet of '1,000ビット相当', which nothing in the problem supports. That is an unverified guess. ウ uses the same pattern ('過小評価である。仮にXビットとして計算すると一致'), so it reads as a reused template. Fix: remove the 1,000-bit assumption. Instead, state what went wrong: 10 is 1/12 of the correct value 120, because it drops the packet's 12,000 bits from the count. Explain it as 1 packet = 12,000 bits × error rate 10^-6 = 0.012 → 10,000 packets = 120. If you want to name a mistake, use one that can actually be traced, such as '1,500バイトを1,000バイトと丸めたうえでビット換算も省いた場合 1,000×10^-6×10,000=10'.",
+        "ウ: The explanation assumes '8,000ビット' but never says how that figure arises, so it is an unverified guess. It also has the same structure as ア. Fix: give a concrete source for 80 instead of an unexplained 8,000 bits. For example: 80 comes from treating 1,500 bytes as 1,000 bytes and converting to bits (1,000×8=8,000 bits), giving 8,000×10^-6×10,000=80. Then contrast that with the correct 12,000 bits → 120. Word it differently from ア.",
+        "イ: Pass. It correctly identifies 15 as the result of skipping the ×8 byte-to-bit conversion (1,500×10^-6×10,000=15).",
+        "エ: Pass. It matches officialAnswer エ, and the calculation is correct: 0.0001%=10^-6, 12,000 bits × 10^-6 = 0.012, × 10,000 = 120. If you revise it, you could add one note: because the error rate is small, 1-(1-p)^n ≈ np, which is why the expected value is 'およそ' 120."
+      ]
+    }
+  ]
+}

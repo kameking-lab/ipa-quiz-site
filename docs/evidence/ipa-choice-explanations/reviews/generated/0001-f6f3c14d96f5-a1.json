@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewer": "opus via Claude Code",
+  "reviewedAt": "2026-09-23T13:03:52.963Z",
+  "batch": "0001-f6f3c14d96f5-a1",
+  "questions": [
+    {
+      "id": "ap-2024h-am-q25",
+      "status": "FIX",
+      "sourceSha256": "7940dc23bf953787c1b7f29c3cc057ed5c78cd122f5f8423158bb7b7ae2ae1b8",
+      "overlaySha256": "ab6263127692ceb027110584929a458bc0c496fd9f56560f2ac93fd2f2052893",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": false,
+        "noTemplateReason": false,
+        "officialAnswerPreserved": true
+      },
+      "issues": [
+        "イ: 否定の根拠が「利点として一般に説明される内容ではない」になっている。これは通説に頼った循環説明で、技術的な理由になっていない。次のように書き直すこと。ストアドプロシージャは事前にコンパイルした実行計画を再利用するため、SQL文を解析・コンパイルする処理を減らせる。ただし、プロシージャ内のSQL文はそれぞれ自分の実行計画を持つ。したがって、一括して処理してもDBMS内の実行計画の数は減らない。",
+        "ウ: 最後の「ストアドプロシージャの利点ではない」は結論を繰り返しているだけで、根拠になっていない。バッファが減らない理由を具体的に書くこと。バッファ数は、アクセスするデータページの量と同時に実行されるトランザクションの数で決まる。SQL文をサーバ側でまとめて実行しても、アクセスするページは変わらないので、必要なバッファ数も変わらない。"
+      ]
+    },
+    {
+      "id": "ap-2024h-am-q27",
+      "status": "PASS",
+      "sourceSha256": "49771a6f5807caf1dd816a345076352d944777ff9ce2b3cdc1289eabab185dff",
+      "overlaySha256": "ec3831459334a87cc0cfb0ff992fcc09d365b16b50d8b9498c435ef73c6b51e4",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q28",
+      "status": "PASS",
+      "sourceSha256": "6753b047415633dc81f5743ed4dd9d1f438f9efe4dd0f9baf18c6b642d13f5ca",
+      "overlaySha256": "4eb1a0dcf0daf4d77d49c5e81d56278d5f5c8aecf301ee5adf4207884d2123db",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q29",
+      "status": "PASS",
+      "sourceSha256": "80e61f09fd5b92f6a0a4d4da6e8929a51d937e670949933869f4a4416817d4b1",
+      "overlaySha256": "65a376ac62a6128937e9f4545b1ec9b50ce7dc1d2eeaab64ebbc1a939abdcbeb",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    },
+    {
+      "id": "ap-2024h-am-q30",
+      "status": "PASS",
+      "sourceSha256": "894073166dc7bb8ab655c241d293fbb5f06bc47f0ab1d658ec2b2678b1b6f41a",
+      "overlaySha256": "f0d3e9aaaff730d0d2107e2352e2b442d4c63a9ee490b136a57c00ffefbc29d4",
+      "checks": {
+        "answerConsistent": true,
+        "everyChoiceSpecific": true,
+        "noTemplateReason": true,
+        "officialAnswerPreserved": true
+      },
+      "issues": []
+    }
+  ]
+}
