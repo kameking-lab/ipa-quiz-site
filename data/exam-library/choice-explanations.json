@@ -22126,5 +22126,59 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb7934&dataType=1&pageNo=1"
       }
     ]
+  },
+  "emkohyo-EM20261804-q13": {
+    "sourceHash": "150b5d3627c88ce0f0dff01b5971523e112f23f37f20c3fa2105d16e2082a615",
+    "correctChoice": 5,
+    "summary": "モル吸光係数の単位はL·mol⁻¹·cm⁻¹で、mol·L⁻¹·cmという記述は次元が逆で誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "この記述は正しいです。農林水産消費安全技術センターが公開する分析法は、可視部を測る光電分光光度計の光源としてタングステンランプを明記しています。したがって、光源が適さないという理由でこの肢を選ぶことはできません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "この記述は正しいです。農林水産消費安全技術センターの分析法は、可視部の測定にガラス製または石英製のセルを用いると明記しています。石英セルは紫外部だけに限定されず、可視光の吸光度測定にも使えます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この記述は正しいです。環境省は吸光光度計の一般的な分析条件として、検出部に光電子増倍管などを挙げています。鳥取県産業技術センターの紫外可視分光光度計の公開仕様も同検出器を示します。ただし他の検出器も使われるので、全装置に必須という意味ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この記述は正しいです。農林水産消費安全技術センター掲載の省令では、定量は通例、吸収極大波長で行います。科学の甲子園の公開競技問題は、錯体の見える色は吸収光の補色で、残った光が目に届くと説明しています。ゆえに測定する吸収波長の光の色と、溶液として見える色は異なります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "この記述が誤りです。厚生労働省の通知に添付された光安全性評価ガイダンスは、吸光度を無次元、濃度をmol/L、光路長をcm、モル吸光係数をL mol⁻¹ cm⁻¹と示します。科学の甲子園の公開式A＝εclと合わせると、係数は濃度と長さの逆数の単位が必要で、設問のmol・L⁻¹・cmとは逆です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "農林水産消費安全技術センター 飼料及び飼料添加物の成分規格等に関する省令",
+        "url": "https://www.famic.go.jp/ffis/feed/hourei/sub1_seibunkikaku.html"
+      },
+      {
+        "title": "産業技術総合研究所 中国地域公設研究機関の開放機器・紫外可視分光光度計",
+        "url": "https://unit.aist.go.jp/chugoku/kaihou-kiki/data/tottori/shokuhin/B-03-001.html"
+      },
+      {
+        "title": "環境省 平成27年度環境測定分析統一精度管理調査",
+        "url": "https://www.env.go.jp/air/tech/seidokanri/outline/pdf/res2015_00.pdf"
+      },
+      {
+        "title": "科学技術振興機構 第11回科学の甲子園全国大会・筆記競技",
+        "url": "https://koushien.jst.go.jp/koushien/pastexam/2021/files/1-1.pdf"
+      },
+      {
+        "title": "厚生労働省 医薬部外品・化粧品の光安全性試験評価体系に関するガイダンス",
+        "url": "https://www.pmda.go.jp/files/000274581.pdf"
+      }
+    ]
   }
 }
