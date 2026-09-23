@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 4749,
+      "cacheReadInputTokens": 314665,
+      "cacheCreationInputTokens": 30749,
+      "webSearchRequests": 0,
+      "costUSD": 0.403921,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4122,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q1": {
+      "/exam-library/emkohyo-EM20261801/q1-p2-0.webp": "eae153746f9d72a85e775089cb37180de5529e8dd0b7e903f6ecf19e535ba925"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q1": "46c32fedf713f2de2c6b8341845401f493ac44951e8560146d3b8dd33b2a6246"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q01-01.json",
+  "sourcePackSha256": "5b5e9bde7ba11f537eba07f0b11f88715210ae33f174e3d75fe788d59dd0f870",
+  "assessment": {
+    "emkohyo-EM20261801-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "The sources include the Ministry of Health, Labour and Welfare's technical guideline PDF, revised October 2025 (001566348.pdf). Its numbering differs from the 2023 text published on the t_doc page (00tc7653): the passage that the old text lists as item ウ appears in the PDF as item エ, because a definition of 呼吸域 was added. The exam date for this paper is not given, so the revised PDF may postdate the exam. The body text of item ウ in 00tc7653 alone supports the reason for choice 2, including the division by the designated protection factor. Either drop the revised PDF or label it as supplementary and treat the version in force on the exam date as the main source."
+      ],
+      "needsExternalCheck": [
+        "Check the exam date of EM20261801 and whether the October 2025 revision of the technical guideline was in force on that date.",
+        "The retrieved excerpts do not contain the document numbers in the source titles: 基発0427第2号 for 00tc7653 and 基発0427第3号 for 00tc7654. Confirm both numbers against the page headings."
+      ]
+    }
+  }
+}

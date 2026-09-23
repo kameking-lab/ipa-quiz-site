@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3919,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 125764,
+      "webSearchRequests": 0,
+      "costUSD": 1.0844999999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3014,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q1": {
+      "/exam-library/emkohyo-EM20261801/q1-p2-0.webp": "eae153746f9d72a85e775089cb37180de5529e8dd0b7e903f6ecf19e535ba925"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q1": "665a96cf5117442cc4c1b77f9c8a302e7cea666c9a48856553b5be166a2a2da6"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q01-01.json",
+  "sourcePackSha256": "3159851fe39424b565b1b34a58e7aa0d76bab527adfb62ea2c174aaeee5a8446",
+  "assessment": {
+    "emkohyo-EM20261801-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由にある「分布の中心を表す幾何平均値」「高濃度側のリスクを見落とし得る」は、どの出典にも書かれていない推論である。判定に必要なのは、指針が比較対象を第一評価値と定めていることだけだ（基発0427第3号の9(1)イ(ア)）。補強するなら、基発第605号に直接書かれている事実を使うとよい。第一評価値は高濃度側5％に相当する濃度の推定値である。第二評価値も幾何平均ではなく算術平均濃度の推定値である。つまり、どちらの評価値も幾何平均値ではない。"
+      ],
+      "sourceIssues": [
+        "幾何平均値の性質（分布の中心であること、第一評価値の算出基礎であること）を支える政府資料が挙がっていない。基発第605号の抜粋は第一評価値・第二評価値の定義だけを示しており、幾何平均には触れていない。作業環境評価基準（昭和63年労働省告示第79号）の評価値算定式（幾何平均M・幾何標準偏差σ）を出典に加えるか、理由から幾何平均の性質の記述を削ること。",
+        "肢4の「作業条件や物質の情報を入力して推定する」を支えるCREATE-SIMPLEマニュアルの抜粋は、v3.2のPDFに載っている入力画面の図（画面表示はver 3.1）から抽出した断片的な文字列である。入力項目の説明文ではない。ECETOC-TRAマニュアルの抜粋は物理化学的特性の入力説明で、作業条件の入力は文脈部分（作業時間・含有量・保護具係数）にしか出てこない。結論は変わらないが、作業内容・取扱量などの入力項目を説明している本文のページを抜粋として示すほうが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "濃度基準値の技術上の指針は、令和5年の制定後に一部改正を受けている（例: 令和6年5月8日）。肢2の根拠に使った基発0427第2号の文言が、試験日時点の改正後の指針・通達でも維持されているか確認すること。確認する文言は2点。呼吸用保護具を使っている場合は、ばく露の程度を内側の濃度で表すこと。内側の濃度は、呼吸域の濃度を指定防護係数で割って算定できること。"
+      ]
+    }
+  }
+}

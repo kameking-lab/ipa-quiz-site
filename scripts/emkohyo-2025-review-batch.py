@@ -51,6 +51,8 @@ def main() -> None:
     draft_file = REVIEW / f"{paper}-q{batch_first:02}-{batch_last:02}-draft.json"
     draft = json.loads(draft_file.read_text(encoding="utf-8"))["questions"]
     rows = json.loads((DATA / "papers" / f"{paper}.json").read_text(encoding="utf-8"))
+    catalog = json.loads((DATA / "official-catalog.json").read_text(encoding="utf-8"))
+    paper_meta = next(item for item in catalog if item["id"] == paper)
     ids = [f"{paper}-q{n}" for n in range(first, last + 1)]
     candidates = {id_: draft[id_]["overlay"] for id_ in ids}
     question_rows = {x["id"]: x for x in rows if x["id"] in ids}
@@ -126,7 +128,10 @@ def main() -> None:
         "出力はJSONオブジェクトのみ。キーは問題ID、値はstatus(PASS/FIX),textIssues,choiceIssues,reasonIssues,sourceIssues,needsExternalCheck。"
         "全issue項目は文字列配列。PASSなら全配列空。疑義は具体的に記す。"
     )
-    payload = (prompt + "\n公式問題: " + json.dumps(question_rows, ensure_ascii=False)
+    payload = (prompt + "\n公式試験日・原典: " + json.dumps(
+                   {key: paper_meta[key] for key in ("id", "label", "date", "pdfUrl", "pdfSha256")},
+                   ensure_ascii=False)
+               + "\n公式問題: " + json.dumps(question_rows, ensure_ascii=False)
                + "\n文字起こし・図表位置: " + json.dumps(presented, ensure_ascii=False)
                + "\n現候補: " + json.dumps(candidates, ensure_ascii=False)
                + "\n政府資料証拠: " + json.dumps(sources, ensure_ascii=False))

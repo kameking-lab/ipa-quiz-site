@@ -20790,5 +20790,63 @@
         "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html"
       }
     ]
+  },
+  "emkohyo-EM20261801-q1": {
+    "sourceHash": "a710f976effce911c49fcc8769f5ed97e9e37df06b4b8998917647232f134adc",
+    "correctChoice": 1,
+    "summary": "管理濃度と比べるのは作業環境測定の第一評価値であり、幾何平均値ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "誤っている記述なので、この肢が正答。厚生労働省の改正指針通達は、管理濃度が定められた物質について、作業環境測定で得た第一評価値を管理濃度と比較する方法を示す。第一評価値は高濃度側5％に相当する濃度の推定値であり、幾何平均値ではない。比較する値そのものが異なるため、設問の方法は指針と一致しない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい記述。改正リスクアセスメント指針は、濃度基準値がある物質では個人ばく露測定の濃度を基準値と比較する方法を示す。技術上の指針は、保護具を使う場合のばく露を保護具内側の濃度で表し、呼吸域の濃度を指定防護係数で割って算定できるとする。前半の比較方法と後半の内側濃度の算定の両方が一次資料に合う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい記述。改正通達は、管理濃度も濃度基準値もない物質について、作業環境測定などで得た気中濃度をばく露限界と比べる方法を挙げている。ばく露限界の例として、日本産業衛生学会の許容濃度やACGIHのTLV-TWAを示している。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい記述。改正通達は数理モデルによる見積りの例を挙げている。厚生労働省の簡易ツールCREATE-SIMPLEで気中濃度を推定する方法と、ECETOC-TRAでリスクを見積もる方法である。作業条件や物質の情報を入力して推定する点も合っている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい記述。これは改正通達が示すマトリクス法そのもの。ばく露の程度と有害性の程度を相対的に尺度化して縦軸・横軸とし、あらかじめリスクを割り付けた表で見積もる。通達の原文とほぼ同じ文言である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "「化学物質等による危険性又は有害性等の調査等に関する指針の一部を改正する指針」について（令和5年4月27日基発0427第3号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7654&dataType=1&pageNo=1"
+      },
+      {
+        "title": "「化学物質による健康障害防止のための濃度の基準の適用等に関する技術上の指針」の制定について（令和5年4月27日基発0427第2号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7653&dataType=1&pageNo=1"
+      },
+      {
+        "title": "作業環境評価基準の適用について（昭和63年9月16日基発第605号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 CREATE-SIMPLE マニュアル",
+        "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/CREATE-SIMPLE_manual_v3.2.pdf"
+      },
+      {
+        "title": "厚生労働省 ECETOC-TRA マニュアル",
+        "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ECETOC-TRA_manual.pdf"
+      },
+      {
+        "title": "厚生労働省 濃度基準の技術上の指針（2025年10月改正版）",
+        "url": "https://www.mhlw.go.jp/content/11300000/001566348.pdf"
+      }
+    ]
   }
 }
