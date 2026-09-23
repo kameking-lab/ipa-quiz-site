@@ -22402,5 +22402,59 @@
         "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?fileId=201&retrievalId=kya20030703091"
       }
     ]
+  },
+  "emkohyo-EM20261801-q16": {
+    "sourceHash": "7d3808379bfdb13c8af61ef2972b532b87fe11feac3898f26b55ce5cc90592c0",
+    "correctChoice": 1,
+    "summary": "物理学的半減期は核種ごとに決まった値であり、温度が上がれば短くなるという記述が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "これが誤りの記述。日本原子力研究開発機構の報告は、原子核の半減期は周囲の温度、圧力、化学環境を変えても変化しないと明示する。温度で変わる化学反応速度と、核種に固有の確率で起こる放射性壊変を混同しているため、この選択肢が誤りである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "文自体は正しい。環境省の透過力の説明では、α線は空気中で数cm程度しか進まず紙一枚で止まり、β線はα線より遠くまで進む。一方、γ線とX線は透過力が強く体の奥まで届く。したがって列挙されたα・β・γのうち最も透過力が大きいのはγ線である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "文自体は正しい。PMDAの粉末X線回折測定法は、波長λ、原子面の面間隔d、回折角θにnλ＝2d sinθが成り立つと記す。sinθは1以下なのでλ≦2dであり、原子面の間隔と同程度またはそれより短い波長のX線なら回折条件を満たせる。その回折強度を角度ごとに測り、固体中の結晶相の同定や定量的な相分析に使える。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "文自体は正しい。環境省の資料p.3のICRP勧告・報告書118に基づくしきい線量表は、白内障による視力低下を約0.5 Gy、一時的脱毛を約4 Gyと示す。同じ表に載る二つの組織反応を線量で比べると、白内障の方が小さい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "文自体は正しい。国立保健医療科学院が公開する労災疾病臨床研究の報告では、確率的影響は線量が増すと発生確率が上がる一方、起きた影響の重篤度は変わらないと説明する。がんなどは発生するリスクと症状の重さを区別するため、この記述は正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 JAEA-Research 2008-042",
+        "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Research-2008-042.pdf"
+      },
+      {
+        "title": "環境省 放射線の体内での透過力",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-09.html"
+      },
+      {
+        "title": "PMDA 粉末X線回折測定法",
+        "url": "https://www.pmda.go.jp/files/000240227.pdf"
+      },
+      {
+        "title": "環境省 放射線基礎資料・様々な影響のしきい値",
+        "url": "https://www.env.go.jp/chemi/rhm/r1kisoshiryo/attach/r1kiso-slide03-03.pdf"
+      },
+      {
+        "title": "国立保健医療科学院 労災疾病臨床研究・放射線業務の線量と健康影響",
+        "url": "https://www.niph.go.jp/soshiki/09seikatsu/EMA/radiation/pdf/occupational_radiation_kunugita_fy2018.pdf"
+      }
+    ]
   }
 }
