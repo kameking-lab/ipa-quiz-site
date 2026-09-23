@@ -20,14 +20,18 @@ def load_paper(paper: str) -> list[tuple[dict, dict | None]]:
     rows: list[tuple[dict, dict | None]] = []
     for batch_path in sorted(BATCHES.glob(f"{paper}-q??-??.json")):
         batch = json.loads(batch_path.read_text(encoding="utf-8"))
-        draft_path = batch_path.with_name(batch_path.stem + "-draft.json")
         drafts = {}
-        if draft_path.exists():
+        draft_paths = sorted(batch_path.parent.glob(batch_path.stem + "-vision-part[0-9][0-9].json"))
+        if not draft_paths:
+            draft_paths = [batch_path.with_name(batch_path.stem + "-draft.json")]
+        for draft_path in draft_paths:
+            if not draft_path.exists():
+                continue
             try:
-                drafts = {
+                drafts.update({
                     item["number"]: item
                     for item in json.loads(draft_path.read_text(encoding="utf-8"))
-                }
+                })
             except (ValueError, KeyError, TypeError):
                 pass
         rows.extend((original, drafts.get(original["number"])) for original in batch["questions"])
