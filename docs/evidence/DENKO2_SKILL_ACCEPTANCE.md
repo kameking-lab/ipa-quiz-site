@@ -1,12 +1,16 @@
 # 第二種電気工事士 技能試験の全問収録ゲート
 
-2026-09-23時点。**公開済み0/104種類**。学科の2024・2025年200問とは別の受入項目であり、技能試験を学科の4択クイズとして登録しない。
+2026-09-23時点。**PDF照合・文字抽出104/104、図表資産246点生成、原本個別受入は `denko2-skill-acceptance.json` で計数、公開0/104種類**。学科の2024・2025年200問とは別の受入項目であり、技能試験を学科の4択クイズとして登録しない。
 
 ## 公式収録対象
 
 [電気技術者試験センターの問題・解答一覧](https://www.shiken.or.jp/construction/second/qa/)にある2024・2025年の上下期、土日2実施日ずつ。計8実施日で、各日の公表問題No.1〜13を対象とする（8×13＝**104種類**）。公式の試験問題PDFと解答PDFは1種類につき1組、計208ファイル。`scripts/denko2-skill-source-manifest.json` に8日の公式詳細ページ、13組ずつのPDF直リンク、SHA-256、年度候補問題、[欠陥の判断基準](https://www.shiken.or.jp/construction/second/defect/)を記録した。取得・照合の再現手順は `py -3.12 scripts/denko2-skill-manifest.py`。PDFはGit対象外の `data/raw_pdfs/denko2/skill/` に保管する。
 
 SHA照合では、104の実施日×No.のうち問題PDFと解答PDFの**同一内容ペアは65種類**だった。2024年上下期と2025年下期の土日ペアは13組ずつ同じ内容で、2025年上期だけ土日で問題PDFが異なる（解答PDFは同じ）。同一ハッシュの画像資産は再利用できるが、画面上の実施日・公式リンクは104件すべて保持する。異なるハッシュの問題は同じNo.でも別々に照合する。
+
+`py -3.12 scripts/denko2-skill-extract.py` は、104組すべてのPDF SHAをマニフェストと照合してから、施工条件・材料・試験指示・図下注記をテキストとして `data/questions/denko2/skills-draft.json` に抽出する。問題の配線図、必要な図2（端子台等）、解答の概念図・結線図・完成写真をWebP化する。65種の問題図、25種の図2、52種の解答PDF×3頁で、画像資産は計246点。抽出receiptは `docs/evidence/denko2-skill-extraction.json`。**これは機械抽出の完了を表すだけで、本文・図の個別視認QCの代用にならない。**
+
+`py -3.12 scripts/denko2-skill-independent-review.py <start> <count>` は65種のユニークな問題/解答PDFペアごとに、公式6頁と公開候補の図面切り抜きを独立した画像モデルで照合し、個別receiptを `denko2-skill-independent/` に保存する。`py -3.12 scripts/denko2-skill-accept.py` はPASSのユニークペアから実施日別104件への対応を計算し、未検収を `denko2-skill-acceptance.json` に列挙する。重複したPDFでも試験日と公式リンクは別々に保持する。
 
 候補問題と実際に各実施日に公表された試験問題を混同しない。No.が同じでも年度・期・日付ごとの施工条件や支給材料に差があれば別問題として表示する。完成例は解答PDFにある概念図・作品例に基づき、見えていない配線や欠陥を推測で補わない。
 
