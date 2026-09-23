@@ -11,6 +11,7 @@ import ipOverlayJson from "@/data/questions/ip/choice-explanations-2024-2025.jso
 import { SG_QUESTIONS } from "@/data/questions/sg";
 import sgOverlayJson from "@/data/questions/sg/choice-explanations-2024-2025.json";
 import officialSources from "@/data/questions/corrections/official-sources.json";
+import sourcePdfManifest from "@/docs/evidence/ipa-choice-explanations/source-pdf-manifest.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const EXAMS = ["ap", "ip", "sg", "fe"] as const;
@@ -24,6 +25,11 @@ const REQUIRED_YEARS: Record<TargetExam, readonly number[]> = {
   fe: [2024, 2025],
 };
 const sourceByPaper = officialSources as Record<string, { question: string; answer: string }>;
+const visualSourceByPaper = sourcePdfManifest.papers as Record<string, {
+  officialUrl: string;
+  cacheRelativePath: string;
+  sha256: string;
+}>;
 
 interface ReceiptItem {
   id: string;
@@ -88,6 +94,7 @@ function sha256(value: unknown): string {
 }
 
 function sourceFingerprint(question: Question): string {
+  const paper = `${question.exam}/${question.year}/${question.season}/${question.session}`;
   return sha256({
     id: question.id,
     exam: question.exam,
@@ -105,6 +112,7 @@ function sourceFingerprint(question: Question): string {
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: question.sourceAnswerUrl,
     officialReferenceUrls: question.officialReferenceUrls,
+    ...(question.hasImage ? { officialVisualPdfSha256: visualSourceByPaper[paper]?.sha256 } : {}),
   });
 }
 

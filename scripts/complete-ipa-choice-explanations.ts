@@ -9,6 +9,7 @@ import { dirname, join } from "node:path";
 
 import { ALL_QUESTIONS } from "@/data/questions";
 import officialSources from "@/data/questions/corrections/official-sources.json";
+import sourcePdfManifest from "@/docs/evidence/ipa-choice-explanations/source-pdf-manifest.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const ROOT = process.cwd();
@@ -25,6 +26,11 @@ const REQUIRED_YEARS: Record<CoreExam, readonly number[]> = {
 };
 const MIN_REASON_LENGTH = 55;
 const sourceByPaper = officialSources as Record<string, { question: string; answer: string }>;
+const visualSourceByPaper = sourcePdfManifest.papers as Record<string, {
+  officialUrl: string;
+  cacheRelativePath: string;
+  sha256: string;
+}>;
 
 interface Options {
   exams: CoreExam[];
@@ -93,6 +99,7 @@ function sha256(value: unknown): string {
 }
 
 function sourceFingerprint(question: Question): string {
+  const paper = `${question.exam}/${question.year}/${question.season}/${question.session}`;
   return sha256({
     id: question.id,
     exam: question.exam,
@@ -110,6 +117,7 @@ function sourceFingerprint(question: Question): string {
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: question.sourceAnswerUrl,
     officialReferenceUrls: question.officialReferenceUrls,
+    ...(question.hasImage ? { officialVisualPdfSha256: visualSourceByPaper[paper]?.sha256 } : {}),
   });
 }
 
@@ -140,7 +148,11 @@ function imageFiles(question: Question): string[] {
     ...(question.imageUrls ?? []),
     ...Object.values(question.choiceImageUrls ?? {}).filter((url): url is string => typeof url === "string"),
   ];
-  return urls.map((url) => url.startsWith("/") ? join(ROOT, "public", url.slice(1)) : join(ROOT, "public", url));
+  const explicit = urls.map((url) => url.startsWith("/") ? join(ROOT, "public", url.slice(1)) : join(ROOT, "public", url));
+  if (explicit.length > 0 || !question.hasImage) return explicit;
+  const paper = `${question.exam}/${question.year}/${question.season}/${question.session}`;
+  const source = visualSourceByPaper[paper];
+  return source ? [join(ROOT, source.cacheRelativePath)] : [];
 }
 
 function isVisual(question: Question): boolean {
@@ -281,6 +293,7 @@ function inputFor(question: Question) {
     year: question.year,
     season: question.season,
     session: question.session,
+    qNumber: question.qNumber,
     question: question.question,
     choices: question.choices,
     officialAnswer: question.answer,
@@ -425,7 +438,10 @@ async function main(): Promise<void> {
     options.queue === "non-image" ? isVisual(question) : options.queue === "image" ? !isVisual(question) : false);
   const targets = missing.filter((question) => !wrongQueue.includes(question));
   const missingImageFiles = options.queue === "image"
-    ? targets.filter((question) => imageFiles(question).some((path) => !existsSync(path)))
+    ? targets.filter((question) => {
+      const files = imageFiles(question);
+      return isVisual(question) && (files.length === 0 || files.some((path) => !existsSync(path)));
+    })
     : [];
   const runnable = targets.filter((question) => !missingImageFiles.includes(question));
 
