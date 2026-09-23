@@ -19,6 +19,8 @@ export const EXAM_LABELS: Record<string, string> = {
   sc: "情報処理安全確保支援士",
   sm: "ITサービスマネージャ",
   au: "システム監査技術者",
+  fp3: "3級FP技能検定",
+  denken3: "第三種電気主任技術者",
 };
 
 export function examLabel(exam: string): string {
@@ -29,6 +31,9 @@ export function seasonLabel(season: string): string {
   if (season === "spring") return "春期";
   if (season === "autumn") return "秋期";
   if (season === "cbt") return "CBT";
+  if (season === "published") return "公表問題";
+  if (season === "first") return "上期";
+  if (season === "second") return "下期";
   return season;
 }
 

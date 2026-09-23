@@ -1,0 +1,81 @@
+import type { Question } from "@/lib/questions/types";
+
+const QUESTION_URL = "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf";
+const ANSWER_URL = "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf";
+const SOURCE_INDEX = "https://www.shiken.or.jp/chief/third/qa/";
+const ATTRIBUTION = "出典：令和7年度上期第三種電気主任技術者試験 理論科目";
+
+export const DENKEN3_QUESTIONS: Question[] = [
+  {
+    id: "denken3-2025-first-riron-q2",
+    exam: "denken3",
+    session: "riron",
+    year: 2025,
+    season: "first",
+    qNumber: 2,
+    type: "multiple-choice",
+    category: "電気理論",
+    topicTags: ["静電気", "誘電率", "静電容量"],
+    difficulty: 2,
+    question: "真空中に電荷Q[C]をもつ半径r[m]の球状導体がある。周囲の真空を比誘電率2の絶縁性液体で満たしたときの記述として正しいものはどれか。ただし無限遠点の電位を零とする。",
+    choices: {
+      ア: "球状導体表面の電位は、液体を満たす前の2倍になった。",
+      イ: "球状導体表面の電界の強さは、液体を満たす前の2倍になった。",
+      ウ: "球状導体表面の電束密度は、液体を満たす前の2倍になった。",
+      エ: "球状導体から出る電気力線の本数は、液体を満たす前の2倍になった。",
+      オ: "球状導体の静電容量は、液体を満たす前の2倍になった。",
+    },
+    answer: "オ",
+    explanation: "孤立した球状導体の静電容量は周囲の誘電率に比例します。比誘電率2の物質で満たすと静電容量は2倍になり、電荷一定なら電位と電界は2分の1になります。",
+    choiceExplanations: {
+      ア: "電荷一定で静電容量が2倍になるため、表面電位は2分の1になります。",
+      イ: "同じ電荷に対する電界は誘電率に反比例し、2分の1になります。",
+      ウ: "自由電荷Qが一定なので、電束密度Dはガウスの法則により変わりません。",
+      エ: "自由電荷量は変わらないため、電気力線の総数が2倍になるとはいえません。",
+      オ: "静電容量は誘電率に比例するため、比誘電率2の液体中では2倍になります。",
+    },
+    hasImage: false,
+    sourcePdfUrl: QUESTION_URL,
+    sourceAnswerUrl: ANSWER_URL,
+    sourceAttribution: ATTRIBUTION,
+    officialReferenceUrls: [SOURCE_INDEX],
+    license: "ECEE-educational-reuse",
+    lastUpdated: "2026-09-23",
+  },
+  {
+    id: "denken3-2025-first-riron-q14",
+    exam: "denken3",
+    session: "riron",
+    year: 2025,
+    season: "first",
+    qNumber: 14,
+    type: "multiple-choice",
+    category: "電気理論",
+    topicTags: ["SI単位", "電磁気"],
+    difficulty: 1,
+    question: "電気および磁気に関する量と、その単位記号（同じ内容を表す単位記号を含む）の組合せとして、誤っているものはどれか。",
+    choices: {
+      ア: "電流：C/s",
+      イ: "磁気抵抗：1/H",
+      ウ: "電力量：W・s",
+      エ: "磁束：T",
+      オ: "電界の強さ：V/m",
+    },
+    answer: "エ",
+    explanation: "T（テスラ）は磁束密度の単位で、磁束の単位はWb（ウェーバ）です。したがって「磁束：T」が誤りです。",
+    choiceExplanations: {
+      ア: "1A＝1C/sなので、電流の単位として正しい表現です。",
+      イ: "磁気抵抗はパーミアンスの逆数で、Hの逆数で表せます。",
+      ウ: "電力量は電力と時間の積なのでW・s（J）で表せます。",
+      エ: "Tは磁束密度の単位です。磁束にはWbを使うため、この組合せが誤りです。",
+      オ: "電界の強さは単位長さ当たりの電位差としてV/mで表せます。",
+    },
+    hasImage: false,
+    sourcePdfUrl: QUESTION_URL,
+    sourceAnswerUrl: ANSWER_URL,
+    sourceAttribution: ATTRIBUTION,
+    officialReferenceUrls: [SOURCE_INDEX],
+    license: "ECEE-educational-reuse",
+    lastUpdated: "2026-09-23",
+  },
+];

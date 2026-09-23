@@ -108,6 +108,8 @@ describe("sessionLabel", () => {
       pm2: true,
       "kamoku-a": true,
       "kamoku-b": true,
+      gakka: true,
+      riron: true,
     };
     for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
       expect(sessionLabel(session)).not.toBe(session.toUpperCase());

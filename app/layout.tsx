@@ -35,7 +35,7 @@ const geistMono = Geist_Mono({
 
 const BASE_URL = SITE_BASE_URL;
 
-const ROOT_DESCRIPTION = `IPA 13試験 ${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。教育貢献プロジェクトとして全機能無料公開中。`;
+const ROOT_DESCRIPTION = `IPA 13区分とFP3級の公式公開過去問、計${APPROX_QUESTION_COUNT_LABEL}問超。AIコパイロットが選択肢ごとに解説。全機能無料。`;
 
 export const metadata: Metadata = {
   title: {
@@ -262,7 +262,7 @@ export default function RootLayout({
                       <li><Link href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
                       <li><Link href="/license" className="block py-2.5 hover:text-foreground">コンテンツ利用方針</Link></li>
                       <li><Link href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
-                      <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">IPA著作権・出典</Link></li>
+                      <li><Link href="/about#attribution" className="block py-2.5 hover:text-foreground">公式問題の著作権・出典</Link></li>
                     </ul>
                   </nav>
                 </div>
@@ -300,7 +300,7 @@ export default function RootLayout({
                     著作権・利用条件
                   </Link>
                   <span className="ml-3 text-zinc-500 dark:text-zinc-500">
-                    本サービスは IPA 非公式の学習支援サービスです。
+                    その他資格の出典・利用条件は「著作権・利用条件」に記載しています。本サービスは各試験実施団体とは独立した非公式の学習支援サービスです。
                   </span>
                   <p className="mt-2">安全衛生の試験問題の出典: <a href="https://www.exam.or.jp/" target="_blank" rel="noopener noreferrer" className="underline hover:text-foreground">公益財団法人安全衛生技術試験協会</a>。各演習ページから公表PDFを確認できます。</p>
                 </div>

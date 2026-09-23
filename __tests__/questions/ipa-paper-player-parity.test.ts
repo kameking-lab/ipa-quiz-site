@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 
-import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
+import { ALL_QUESTIONS } from "@/data/questions";
 import { ST_QUESTIONS_2025_SPRING_AM2 } from "@/data/questions/st/by-year/2025-spring-am2";
 import {
   filterQuestions,
@@ -11,6 +11,7 @@ import {
 } from "@/lib/questions/filter";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
 type Paper = {
   exam: ExamCode;
@@ -23,9 +24,13 @@ function paperKey({ exam, year, season, session }: Paper): string {
   return `${exam}/${year}/${season}/${session}`;
 }
 
+const ipaQuestions = ALL_QUESTIONS.filter((q) =>
+  ALL_EXAM_CODES.includes(q.exam as (typeof ALL_EXAM_CODES)[number]),
+);
+
 const papers = [
   ...new Map(
-    ALL_QUESTIONS.map((q) => [
+    ipaQuestions.map((q) => [
       paperKey(q),
       { exam: q.exam, year: q.year, season: q.season, session: q.session },
     ]),
@@ -34,11 +39,11 @@ const papers = [
 
 describe("IPA paper listing and quiz pool parity", () => {
   it("recovers detailed explanations that start with the answer sentence", () => {
-    const legacyPrefixMatches = ALL_QUESTIONS.filter((q) =>
+    const legacyPrefixMatches = ipaQuestions.filter((q) =>
       /^正解は[アイウエ]です[。.]/.test(q.explanation),
     );
 
-    expect(ALL_QUESTIONS).toHaveLength(14_412);
+    expect(ipaQuestions).toHaveLength(14_412);
     expect(legacyPrefixMatches).toHaveLength(1_455);
     expect(legacyPrefixMatches.every((q) => q.explanation.trim().length > 30)).toBe(true);
     expect(legacyPrefixMatches.every((q) => !isPlaceholderExplanation(q))).toBe(true);
@@ -46,7 +51,7 @@ describe("IPA paper listing and quiz pool parity", () => {
   });
 
   it("uses the same playable IDs for every exam/year/season/session", () => {
-    expect(Object.keys(QUESTIONS_BY_EXAM)).toHaveLength(13);
+    expect(ALL_EXAM_CODES).toHaveLength(13);
     expect(papers.length).toBeGreaterThan(100);
 
     for (const paper of papers) {

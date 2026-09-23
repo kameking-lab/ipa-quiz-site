@@ -4,6 +4,8 @@ import { render, screen, fireEvent, cleanup } from "@testing-library/react";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
+import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import type { ChoiceKey } from "@/lib/questions/types";
 
 const baseProps = {
   questionId: "ip-2024s-am-q1",
@@ -27,6 +29,25 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
+  it("answers a gated five-choice Denken3 pilot question in component validation", () => {
+    const q = DENKEN3_QUESTIONS[0]!;
+    render(
+      <QuestionAnswerCard
+        questionId={q.id}
+        choices={q.choices!}
+        answerKey={q.answer as ChoiceKey | ChoiceKey[]}
+        answerText={q.choices?.オ}
+        exam={q.exam}
+        year={q.year}
+        season={q.season}
+        session={q.session}
+        qNumber={q.qNumber}
+      />,
+    );
+    expect(screen.getAllByRole("radio")).toHaveLength(5);
+    fireEvent.click(screen.getByRole("radio", { name: /選択肢 オ/ }));
+    expect(screen.getByText("正解！")).toBeTruthy();
+  });
   it("renders a table in the revealed answer without raw Markdown", () => {
     const table = "| 店 |\n| --- |\n| B |";
     const { container } = render(<QuestionAnswerCard {...baseProps} answerText={table} />);

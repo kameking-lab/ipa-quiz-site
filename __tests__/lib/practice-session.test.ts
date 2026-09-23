@@ -4,14 +4,16 @@ import { filterQuestions } from "@/lib/questions/filter";
 import { defaultPracticeSession, parsePracticeSession, quizBackHref, SPECIALIST_EXAMS } from "@/lib/questions/practice-session";
 import { getMockConfig } from "@/lib/mock-exam/config";
 import { GET } from "@/app/api/mock-exam/[exam]/route";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
 vi.mock("server-only", () => ({}));
 import { getPoolIds } from "@/lib/questions/pool-server";
 
 describe("IPA paper separation across the complete registered corpus", () => {
   it("every exam index, question ID and named source PDF agrees with the stored session", () => {
-    expect(Object.keys(QUESTIONS_BY_EXAM)).toHaveLength(13);
-    for (const [exam, questions] of Object.entries(QUESTIONS_BY_EXAM)) {
+    expect(ALL_EXAM_CODES).toHaveLength(13);
+    for (const exam of ALL_EXAM_CODES) {
+      const questions = QUESTIONS_BY_EXAM[exam];
       for (const q of questions ?? []) {
         expect(q.exam, q.id).toBe(exam);
         const idSession = q.id.match(/-(am1|am2|am|pm1|pm2|pm|kamoku-a|kamoku-b)-q\d+$/)?.[1];

@@ -12,9 +12,14 @@
 import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
+import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
+
+// Publication-gated pilots still require the same schema and source validation
+// before their release gate can be lifted.
+const VALIDATION_QUESTIONS = [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
@@ -43,10 +48,10 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp3", "denken3"]),
+  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]),
   qNumber: z.number().int().min(1),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),
   category: z.string().min(1),
@@ -55,10 +60,10 @@ const QuestionSchema = z.object({
   question: z.string().min(1),
   choices: z
     .object({
-      ア: z.string(),
-      イ: z.string(),
-      ウ: z.string(),
-      エ: z.string(),
+      ア: z.string().optional(),
+      イ: z.string().optional(),
+      ウ: z.string().optional(),
+      エ: z.string().optional(),
       オ: z.string().optional(),
       カ: z.string().optional(),
       キ: z.string().optional(),
@@ -66,15 +71,20 @@ const QuestionSchema = z.object({
       ケ: z.string().optional(),
       コ: z.string().optional(),
     })
+    .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   answer: z.union([z.string().min(1), z.array(z.string().min(1))]),
   explanation: z.string().min(1),
+  choiceExplanations: z.record(z.string(), z.string()).optional(),
   modelAnswer: z.string().optional(),
   scoringCriteria: z.string().optional(),
   hasImage: z.boolean(),
   imageUrls: z.array(z.string()).optional(),
   sourcePdfUrl: z.string().url(),
-  license: z.literal("IPA-public"),
+  sourceAnswerUrl: z.string().url().optional(),
+  sourceAttribution: z.string().min(1).optional(),
+  officialReferenceUrls: z.array(z.string().url()).optional(),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -131,7 +141,7 @@ function computeQuality(q: Question): QualityResult {
   }
   if (q.type === "multiple-choice") {
     const choices = q.choices;
-    if (!choices) {
+      if (!choices || Object.keys(choices).length < 2) {
       score -= 25;
       warnings.push("multiple-choice に choices なし");
     } else {
@@ -228,6 +238,38 @@ function validate(questions: Question[]): ValidationResult {
         issues.push({ id: q.id, level: "error", message: `answer 不正: "${ans}"` });
         console.error(`[FAIL] ${q.id}: answer must identify a present choice, got "${ans}"`);
         continue;
+      }
+
+      if (q.choiceExplanations) {
+        const choiceKeys = Object.entries(q.choices)
+          .filter((entry): entry is [string, string] => typeof entry[1] === "string")
+          .map(([key]) => key)
+          .sort();
+        const explanationKeys = Object.entries(q.choiceExplanations)
+          .filter((entry): entry is [string, string] => typeof entry[1] === "string" && entry[1].trim().length > 0)
+          .map(([key]) => key)
+          .sort();
+        if (choiceKeys.join(",") !== explanationKeys.join(",")) {
+          fail++;
+          byExam[examKey].fail++;
+          issues.push({ id: q.id, level: "error", message: "選択肢数と全肢解説数が不一致" });
+          console.error(`[FAIL] ${q.id}: every choice requires exactly one explanation`);
+          continue;
+        }
+      }
+
+      if (q.license !== "IPA-public") {
+        if (!q.choiceExplanations || !q.sourceAnswerUrl || !q.sourceAttribution) {
+          fail++;
+          byExam[examKey].fail++;
+          issues.push({
+            id: q.id,
+            level: "error",
+            message: "外部資格には全肢解説・公式正答URL・出典表記が必要",
+          });
+          console.error(`[FAIL] ${q.id}: external qualification metadata is incomplete`);
+          continue;
+        }
       }
     }
 
@@ -364,8 +406,8 @@ function reportFixes(questions: Question[]): void {
 
 const opts = parseCliOptions();
 const questions = opts.exams.length > 0
-  ? ALL_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
-  : ALL_QUESTIONS;
+  ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
+  : VALIDATION_QUESTIONS;
 
 if (opts.exams.length > 0) {
   console.log(`[filter] exam: ${opts.exams.join(", ")} → ${questions.length}件`);

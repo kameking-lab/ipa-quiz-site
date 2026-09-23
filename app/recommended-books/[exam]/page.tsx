@@ -45,7 +45,7 @@ const EXAM_CODES: ExamCode[] = [
 // 旗艦/essay(論文5区分採点)には送らず=記述式≠論文の誇大回避(s27/s64 precedent)。
 const DESCRIPTIVE_AFTERNOON_EXAMS: ExamCode[] = ["ap", "nw", "db", "sc", "es"];
 
-const EXAM_INTROS: Record<ExamCode, string> = {
+const EXAM_INTROS = {
   ip: "ITパスポート(IP)はIT基礎教養を問う入門区分。IT未経験の社会人・学生でも、市販テキスト＋過去問演習だけで十分合格を狙えます。",
   sg: "情報セキュリティマネジメント(SG)は管理者・利用者向けセキュリティ区分。法務・組織論まで幅広く問われるため、網羅的なテキストが効きます。",
   fe: "基本情報技術者(FE)はITエンジニアの登竜門。新試験で科目B（旧午後）の擬似言語比重が増えたため、アルゴリズム特化本との併用がおすすめ。",
@@ -59,7 +59,7 @@ const EXAM_INTROS: Record<ExamCode, string> = {
   pm: "プロジェクトマネージャ(PM)はプロジェクト統括者向けの高度試験。PMBOK整理＋IPA特有の出題パターン＋論文事例の三本柱で対策します。",
   sm: "ITサービスマネージャ(SM)はITIL系の運用マネジメント区分。インシデント・問題・変更管理の引き出しを論文に落とせるかが勝負。",
   au: "システム監査技術者(AU)は監査人視点の高度試験。論述では一貫した監査人の立場を貫く必要があり、論文事例集での型作りが必須。",
-};
+} as unknown as Record<ExamCode, string>;
 
 interface RouteParams {
   exam: string;

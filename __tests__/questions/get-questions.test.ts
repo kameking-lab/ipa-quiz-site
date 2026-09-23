@@ -42,11 +42,13 @@ describe("getQuestionsForExam", () => {
 });
 
 describe("getRegisteredExamCodes", () => {
-  it("登録済み試験コードを列挙する（全 13 区分）", () => {
+  it("公開済み試験コードだけを列挙する（IPA 13区分＋FP3級）", () => {
     const codes = getRegisteredExamCodes();
     expect(codes).toContain("ap");
     expect(codes).toContain("ip");
-    expect(codes.length).toBe(13);
+    expect(codes).toContain("fp3");
+    expect(codes).not.toContain("denken3");
+    expect(codes.length).toBe(14);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

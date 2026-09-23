@@ -1,4 +1,4 @@
-import type { ExamCode } from "@/lib/questions/types";
+import type { IpaExamCode } from "@/lib/questions/types";
 import type { KnowledgeLevel } from "./types";
 
 /**
@@ -6,7 +6,7 @@ import type { KnowledgeLevel } from "./types";
  * surveys and major prep-school estimates. Used as the "完全初心者" baseline;
  * higher knowledge levels scale this down via LEVEL_MULTIPLIERS.
  */
-export const REQUIRED_HOURS: Record<ExamCode, number> = {
+export const REQUIRED_HOURS: Record<IpaExamCode, number> = {
   ip: 40,
   sg: 65,
   fe: 125,

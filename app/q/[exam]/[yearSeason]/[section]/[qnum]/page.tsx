@@ -121,7 +121,7 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
   const qMatch = /^q(\d+)$/.exec(p.qnum);
@@ -132,6 +132,7 @@ function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
     (q) =>
       q.exam === p.exam &&
       q.year === year &&
+      q.season === yearSeasonMatch[2] &&
       q.session === p.section &&
       q.qNumber === qNumber,
   );
@@ -425,7 +426,27 @@ export default async function QuestionPage({
           </summary>
 
           {showRealExplanation ? (
-            <ExplanationLayers explanation={q.explanation} />
+            <>
+              <ExplanationLayers explanation={q.explanation} />
+              {q.choiceExplanations && q.choices && (
+                <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
+                  <h3 className="mb-3 text-sm font-bold text-foreground">各選択肢の解説</h3>
+                  <dl className="space-y-3 text-sm leading-relaxed">
+                    {Object.entries(q.choices).map(([key, choice]) => (
+                      <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
+                        <dt className="font-bold text-primary">{key}</dt>
+                        <dd>
+                          <p className="font-medium text-foreground">{choice}</p>
+                          <p className="mt-1 text-muted-foreground">
+                            {q.choiceExplanations?.[key as ChoiceKey]}
+                          </p>
+                        </dd>
+                      </div>
+                    ))}
+                  </dl>
+                </div>
+              )}
+            </>
           ) : (
             <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
               <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
@@ -445,7 +466,8 @@ export default async function QuestionPage({
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
-            answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl)}
+            answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
+            sourceAttribution={q.sourceAttribution}
           />
         </details>
       </section>
@@ -740,7 +762,7 @@ export default async function QuestionPage({
       {/* Print-only attribution */}
       <div className="print-only hidden mt-10 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
         <p>過去問AI（https://www.kakomon-ai.jp{questionPagePath(q)}）より印刷</p>
-        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/） IPA の過去問は IPA が著作権を保有し、非商用・教育目的での利用が認められています。</p>
+        <p className="mt-1">{q.sourceAttribution ?? "出典: IPA 情報処理技術者試験"}</p>
       </div>
 
       {/* Spacer so sticky bottom nav doesn't cover the related list on mobile */}

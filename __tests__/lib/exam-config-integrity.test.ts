@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   ALL_EXAM_CODES,
+  ALL_QUIZ_EXAM_CODES,
   EXAM_CONFIGS,
   type ExamConfig,
   type SessionConfig,
@@ -40,9 +41,13 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
     }
   });
 
-  it("ALL_EXAM_CODES は EXAM_CONFIGS のキー集合と一致する", () => {
+  it("ALL_QUIZ_EXAM_CODES は公開設定、ALL_EXAM_CODES はIPA設定を列挙する", () => {
     const keys = ENTRIES.map(([k]) => k);
-    expect([...ALL_EXAM_CODES].sort()).toEqual([...keys].sort());
+    expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.filter((key) => key !== "denken3").sort());
+    expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
+    expect(ALL_QUIZ_EXAM_CODES).not.toContain("denken3");
+    expect(ALL_EXAM_CODES).not.toContain("fp3");
+    expect(ALL_EXAM_CODES).not.toContain("denken3");
     // 各コードは実在キーであり重複しない
     expect(new Set(ALL_EXAM_CODES).size).toBe(ALL_EXAM_CODES.length);
   });

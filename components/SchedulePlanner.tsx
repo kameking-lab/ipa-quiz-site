@@ -69,6 +69,7 @@ function defaultExamDate(): string {
 
 function collectCategories(exam: ExamCode): string[] {
   const cfg = EXAM_CONFIGS[exam];
+  if (!cfg) return [];
   const set = new Set<string>();
   for (const s of cfg.sessions) for (const c of s.categories) set.add(c);
   if (cfg.cbtSessions) {
@@ -168,7 +169,7 @@ export function SchedulePlanner() {
               ))}
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              目安学習時間: 約 {REQUIRED_HOURS[exam]} 時間（完全初心者の場合）
+              目安学習時間: 約 {REQUIRED_HOURS[exam as keyof typeof REQUIRED_HOURS] ?? 100} 時間（完全初心者の場合）
             </p>
           </CardContent>
         </Card>
