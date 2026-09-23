@@ -298,7 +298,16 @@ export default async function ExamTopPage({
 
         {/* Big CTA */}
         <section aria-label="今すぐ解く" className="mb-8">
-          {isHighLevel ? (
+          {code === "fp2" ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+                <Link href="/quiz?mode=random&exam=fp2&session=gakka">学科を解く</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
+                <Link href="/fp2/practical">実技の問題と模範解答（160問）</Link>
+              </Button>
+            </div>
+          ) : isHighLevel ? (
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
               <h2 className="mb-3 text-sm font-semibold text-foreground">
                 ランダム出題の範囲を選択
