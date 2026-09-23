@@ -557,7 +557,7 @@
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "ホルムアルデヒドの常圧での沸点は約−19℃で、25℃より低く、常温で気体である（ホルマリンはその水溶液）。定義上『ガス』に分類されるので、組合せは正しい。"
+            "reason": "厚労省モデルSDSでホルムアルデヒドの沸点は−20℃で、25℃より低く、常温で気体である（ホルマリンはその水溶液）。設問の定義では『ガス』に分類されるので、組合せは正しい。"
           },
           {
             "number": 5,
@@ -565,14 +565,23 @@
             "reason": "1,2-ジクロロプロパンの常圧での沸点は約96℃で、25℃では液体である。空気中の気体分は、沸点が常温より高いものとして定義上『蒸気』に当たり、『ガス』とする組合せは誤り。"
           }
         ],
-        "sources": []
+        "sources": [
+          {"title": "厚生労働省 モデルSDS ヨウ化メチル", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"},
+          {"title": "厚生労働省 モデルSDS 二硫化炭素", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"},
+          {"title": "厚生労働省 モデルSDS 硫化水素", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html"},
+          {"title": "厚生労働省 モデルSDS ホルムアルデヒド", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"},
+          {"title": "厚生労働省 モデルSDS 1,2-ジクロロプロパン", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html"}
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html", "excerpt": "沸点、初留点及び沸騰範囲 42.5℃", "choiceNumbers": [1]},
+        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html", "excerpt": "沸点、初留点及び沸騰範囲 46℃", "choiceNumbers": [2]},
+        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html", "excerpt": "沸点、初留点及び沸騰範囲 -60℃", "choiceNumbers": [3]},
+        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html", "excerpt": "沸点、初留点及び沸騰範囲 -20 ℃", "choiceNumbers": [4]},
+        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html", "excerpt": "沸点、初留点及び沸騰範囲 96 ℃", "choiceNumbers": [5]}
+      ],
       "reviewIssues": [
-        "5物質の常圧沸点（ヨウ化メチル約42℃、二硫化炭素約46℃、硫化水素約−60℃、ホルムアルデヒド約−19℃、1,2-ジクロロプロパン約96℃）は一般的な物性値に基づくもので、添付の政府資料の抜粋では確認できない。職場のあんぜんサイトのモデルSDSなど、政府系のSDS・物性資料の検索が必要。",
-        "添付の抜粋（測定基準の検知管対象物質の一覧や別表の捕集方法、評価基準の管理濃度）は、各物質がガスか蒸気かの判定を直接支えないため、sourcesとsourceEvidenceには入れていない。",
-        "正答の肢5を直接支える一次資料の抜粋がないため、1,2-ジクロロプロパンの沸点を示す政府資料を最優先で検索する必要がある。",
-        "採点verdictを公式正答番号から機械補正。各肢の説明文は独立再審査待ち。"
+        "厚労省モデルSDSの5物質の沸点を直接照合済み。図表と全肢の独立Opus原文照合は未了。"
       ]
     }
   }
