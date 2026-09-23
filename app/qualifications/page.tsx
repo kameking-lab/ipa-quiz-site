@@ -4,16 +4,19 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
 export const metadata: Metadata = {
   title: "FPなどの公式公開過去問",
-  description: "FP3級の公式公開過去問を、全選択肢の学習用解説と公式問題・正答リンク付きで学べます。",
+  description: "FP2級・FP3級の公式公開過去問を、全選択肢の学習用解説と公式問題・正答リンク付きで学べます。",
   alternates: { canonical: "/qualifications" },
 };
 
 const published = QUALIFICATION_CATALOG.filter((item) => item.status === "live");
-const questionCounts: Record<string, number> = { fp3: 5 };
+const questionCounts: Record<string, number> = Object.fromEntries(
+  published.map((item) => [item.slug, item.examCode ? (QUESTIONS_BY_EXAM[item.examCode]?.length ?? 0) : 0]),
+);
 const publishedQuestionCount = published.reduce((sum, item) => sum + (questionCounts[item.slug] ?? 0), 0);
 
 export default function QualificationsPage() {
@@ -38,6 +41,7 @@ export default function QualificationsPage() {
               <Badge variant="outline">収録 {questionCounts[item.slug]} 問</Badge>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
+            {item.slug === "fp2" && <p className="mb-4 text-sm text-muted-foreground">2026年5月公表・学科60問のうち問1〜10を収録。法令基準日：2025年4月1日。</p>}
             <Button asChild variant="primary" className="w-full">
               <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>

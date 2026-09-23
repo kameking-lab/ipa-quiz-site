@@ -277,6 +277,21 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     legacySeasons: ["spring"],
     legacyYearRange: { start: 2009, end: 2019 },
   },
+  fp2: {
+    code: "fp2",
+    nameFull: "2級ファイナンシャル・プランニング技能検定",
+    urlSlug: "fp2",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 60,
+      label: "学科",
+      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+    }],
+    seasons: ["published"],
+    yearRange: { start: 2026, end: 2026 },
+  },
   fp3: {
     code: "fp3",
     nameFull: "3級ファイナンシャル・プランニング技能検定",
@@ -311,7 +326,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp3" | "denken3"> => code !== "fp3" && code !== "denken3",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3"> => code !== "fp2" && code !== "fp3" && code !== "denken3",
 );
 
 /** Every exam playable in the application, including external qualifications. */

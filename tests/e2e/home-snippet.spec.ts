@@ -54,8 +54,8 @@ test.describe("home SERP snippet", () => {
       return data["@graph"] ?? [data];
     }));
     const list = nodes.find(node => node["@type"] === "ItemList");
-    expect(list?.numberOfItems).toBe(14);
-    expect(list?.itemListElement).toHaveLength(14);
+    expect(list?.numberOfItems).toBe(15);
+    expect(list?.itemListElement).toHaveLength(15);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
   });

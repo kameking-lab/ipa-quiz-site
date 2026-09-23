@@ -22,7 +22,7 @@ const ExamCodeSchema = z.enum([
   "sc",
   "sm",
   "au",
-  "fp3",
+  "fp2", "fp3",
 ]);
 
 const QuerySchema = z.object({

@@ -373,6 +373,11 @@ export default async function QuestionPage({
         aria-label="問題文"
         className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
       >
+        {q.lawReferenceDate && (
+          <p className="mb-3 text-sm font-medium text-muted-foreground">
+            法令基準日: {q.lawReferenceDate}（この日の制度で解答）
+          </p>
+        )}
         <QuestionBody text={q.question} />
         <QuestionFigures question={q} />
       </section>
@@ -462,6 +467,16 @@ export default async function QuestionPage({
             </div>
           )}
 
+          {q.officialReferenceUrls && q.officialReferenceUrls.length > 0 && (
+            <nav aria-label="解説の公式根拠" className="mt-4 text-sm">
+              <h3 className="font-semibold">解説の公式根拠</h3>
+              <ul className="mt-2 list-inside list-disc space-y-2">
+                {q.officialReferenceUrls.map((url, index) => (
+                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">公式資料 {index + 1}（{new URL(url).hostname}）</a></li>
+                ))}
+              </ul>
+            </nav>
+          )}
           <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}

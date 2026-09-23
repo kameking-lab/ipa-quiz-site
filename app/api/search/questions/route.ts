@@ -19,7 +19,7 @@ const EXAM_CODES = [
   "sc",
   "sm",
   "au",
-  "fp3",
+  "fp2", "fp3",
 ] as const;
 
 const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second"] as const;

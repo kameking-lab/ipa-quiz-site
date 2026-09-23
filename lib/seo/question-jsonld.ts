@@ -64,7 +64,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = q.exam === "fp3"
+  const questionAuthor = (q.exam === "fp2" || q.exam === "fp3")
     ? {
         "@type": "Organization",
         name: "日本ファイナンシャル・プランナーズ協会",
@@ -81,7 +81,7 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = q.exam === "fp3"
+  const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "denken3"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"

@@ -38,6 +38,11 @@ export function QuestionCard({
         <div className="mb-2 flex justify-end">
           <TTSButton text={question.question} label="読み上げ" />
         </div>
+        {question.lawReferenceDate && (
+          <p className="mb-3 text-sm font-medium text-muted-foreground">
+            法令基準日: {question.lawReferenceDate}（この日の制度で解答）
+          </p>
+        )}
         <QuestionBody text={question.question} />
         <QuestionFigures question={question} />
         {hasUnrenderableContent(question) && (

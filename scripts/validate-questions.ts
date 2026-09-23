@@ -48,7 +48,7 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp3", "denken3"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3"]),
   session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]),
@@ -83,6 +83,7 @@ const QuestionSchema = z.object({
   sourcePdfUrl: z.string().url(),
   sourceAnswerUrl: z.string().url().optional(),
   sourceAttribution: z.string().min(1).optional(),
+  lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
   license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse"]),
   isCalculation: z.boolean().optional(),

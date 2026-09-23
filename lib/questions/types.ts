@@ -12,11 +12,12 @@ export type ExamCode =
   | "sc"
   | "sm"
   | "au"
+  | "fp2"
   | "fp3"
   | "denken3";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp3" | "denken3">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3">;
 
 export type Session =
   | "am"
@@ -72,6 +73,8 @@ export interface Question {
   needsReview?: boolean;
   /** 解説の最終更新日 (ISO 8601: YYYY-MM-DD)。未設定時はビルド日へフォールバック。 */
   lastUpdated?: string;
+  /** 出題が前提とする法令・制度の基準日。解説更新日とは区別する。 */
+  lawReferenceDate?: string;
 }
 
 export type QuizMode = "random" | "year" | "topic" | "review" | "unanswered" | "weakness";
