@@ -33,6 +33,10 @@ def parse(stdout: str) -> tuple[object, str]:
 
 def main() -> None:
     paper, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
+    out = REVIEW / f"{paper}-q{first:02}-{last:02}-review.json"
+    raw_out = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-assessment.json"
+    if out.exists() or raw_out.exists():
+        raise FileExistsError(f"Archive the previous review before rerunning: {out}")
     batch_first = (first - 1) // 5 * 5 + 1
     batch_last = batch_first + 4
     if (last - 1) // 5 * 5 + 1 != batch_first:
@@ -116,7 +120,6 @@ def main() -> None:
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-1000:])
     result, resolved_model = parse(process.stdout)
-    raw_out = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-assessment.json"
     raw_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if set(result) != set(ids):
         raise ValueError("Review omitted or added question IDs")
@@ -131,9 +134,6 @@ def main() -> None:
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
                "candidateSha256": {id_: sha256(json.dumps(candidates[id_], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() for id_ in ids},
                "sourcePackSha256": sha256(source_file.read_bytes()).hexdigest(), "assessment": result}
-    out = REVIEW / f"{paper}-q{first:02}-{last:02}-review.json"
-    if out.exists():
-        raise FileExistsError(out)
     out.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{out}: PASS {sum(x['status']=='PASS' for x in result.values())}/{len(result)}")
 

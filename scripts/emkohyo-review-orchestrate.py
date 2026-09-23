@@ -40,7 +40,8 @@ def eligible(pack_file: Path, year: str | None, accepted: set[str]) -> tuple | N
     batch_first = (first - 1) // 5 * 5 + 1
     draft_file = REVIEW / f"{paper}-q{batch_first:02}-{batch_first+4:02}-draft.json"
     review_file = REVIEW / f"{paper}-q{first:02}-{last:02}-review.json"
-    if not draft_file.exists() or review_file.exists():
+    raw_file = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-assessment.json"
+    if not draft_file.exists() or review_file.exists() or raw_file.exists():
         return None
     if pack.get("draftSha256") != sha256(draft_file.read_bytes()).hexdigest():
         return None
