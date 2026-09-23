@@ -23,7 +23,7 @@ describe("FP3 2024–2025 complete official sets", () => {
       expect(keys).toContain(question.answer);
       expect(question.needsReview).toBe(false);
       expect(question.sourcePdfUrl).toMatch(/^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\/g3_/);
-      expect(question.officialReferenceUrls?.every((url) => /\.(?:mhlw|fsa|nta|mlit)\.go\.jp\//.test(url))).toBe(true);
+      expect((question.officialReferenceUrls ?? []).every((url) => /^(?:https:\/\/laws\.e-gov\.go\.jp\/law\/|https:\/\/[^/]+\.(?:mhlw|fsa|nta|mlit)\.go\.jp\/)/.test(url))).toBe(true);
     }
   });
 

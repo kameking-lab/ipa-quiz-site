@@ -19,14 +19,43 @@ CATEGORIES = [
     "不動産",
     "相続・事業承継",
 ]
-REFERENCES = {
-    "ライフプランニングと資金計画": ["https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"],
-    "リスク管理": ["https://www.fsa.go.jp/ordinary/hoken.html"],
-    "金融資産運用": ["https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"],
-    "タックスプランニング": ["https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"],
-    "不動産": ["https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"],
-    "相続・事業承継": ["https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"],
-}
+# Link only a primary source that actually matches the question's subject.
+# A category-wide link is misleading (for example, an employment-insurance
+# question must not point at the pension top page), so unmatched questions keep
+# the official exam PDF as their sole authority.
+LAW_REFERENCES = (
+    (("健康保険", "傷病手当金", "高額療養費"), "211AC0000000070"),
+    (("雇用保険", "基本手当"), "349AC0000000116"),
+    (("国民年金", "老齢基礎年金", "障害基礎年金", "国民年金基金"), "334AC0000000141"),
+    (("厚生年金", "老齢厚生年金", "加給年金"), "329AC0000000115"),
+    (("後期高齢者医療",), "357AC0000000080"),
+    (("介護保険",), "409AC0000000123"),
+    (("確定拠出年金", "個人型年金", "企業型年金"), "413AC0000000088"),
+    (("金融商品取引法", "適合性の原則"), "323AC0000000025"),
+    (("個人情報", "守秘義務"), "415AC0000000057"),
+    (("著作権",), "345AC0000000048"),
+    (("所得税", "給与所得", "雑所得", "退職所得", "譲渡所得", "医療費控除"), "340AC0000000033"),
+    (("法人税",), "340AC0000000034"),
+    (("消費税", "適格請求書"), "363AC0000000108"),
+    (("相続税", "贈与税"), "325AC0000000073"),
+    (("住宅ローン控除", "小規模宅地等"), "332AC0000000026"),
+    (("建築基準法", "建蔽率", "建ぺい率", "容積率", "セットバック"), "325AC0000000201"),
+    (("都市計画", "用途地域", "市街化区域"), "343AC0000000100"),
+    (("宅地建物取引", "宅建業者"), "327AC1000000176"),
+    (("借地", "借家", "賃貸借"), "403AC0000000090"),
+    (("区分所有", "マンションの共用部分"), "337AC0000000069"),
+    (("不動産登記", "登記事項証明書"), "416AC0000000123"),
+    (("法定相続", "代襲相続", "遺産分割", "遺留分", "相続放棄"), "129AC0000000089"),
+)
+
+
+def government_links(text: str, law_date: str) -> list[str]:
+    date = law_date.replace("-", "")
+    return [
+        f"https://laws.e-gov.go.jp/law/{law}?occasion_date={date}"
+        for keywords, law in LAW_REFERENCES
+        if any(keyword in text for keyword in keywords)
+    ]
 
 
 def category_for(number: int) -> str:
@@ -58,6 +87,8 @@ def main() -> None:
             keys = KEYS[: len(item["choices"])]
             category = category_for(number)
             draft = drafts[number]
+            searchable = item["stem"] + " " + " ".join(item["choices"]) + " " + draft["explanation"]
+            references = government_links(searchable, values["lawReferenceDate"])
             questions.append({
                 "id": f"fp3-{year}-published-gakka-q{number}",
                 "exam": "fp3",
@@ -78,7 +109,7 @@ def main() -> None:
                 "sourcePdfUrl": source,
                 "sourceAnswerUrl": source,
                 "sourceAttribution": f"出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（{year}年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-                "officialReferenceUrls": REFERENCES[category],
+                **({"officialReferenceUrls": references} if references else {}),
                 "license": "JAFP-reuse-with-attribution",
                 "needsReview": bool(draft["needsReview"]),
                 "lastUpdated": "2026-09-23",

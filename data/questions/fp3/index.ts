@@ -32,7 +32,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/415AC0000000057?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -68,7 +68,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/349AC0000000116?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -104,7 +104,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -140,7 +140,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/413AC0000000088?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -176,7 +177,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -211,9 +212,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -247,9 +245,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -283,9 +278,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -319,9 +311,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -355,9 +344,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -391,9 +377,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -427,9 +410,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -463,9 +443,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -499,9 +476,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -536,7 +510,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
+      "https://laws.e-gov.go.jp/law/323AC0000000025?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -572,7 +546,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -607,9 +581,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -644,7 +615,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -680,7 +651,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -716,7 +687,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -752,7 +723,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/416AC0000000123?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -788,7 +759,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/403AC0000000090?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -824,7 +795,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/343AC0000000100?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -859,9 +830,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -895,9 +863,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -932,7 +897,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -967,9 +932,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1004,7 +966,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1040,7 +1002,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1076,7 +1039,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1113,9 +1076,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1152,7 +1112,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/211AC0000000070?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1190,7 +1150,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1228,7 +1188,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1265,9 +1225,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1303,9 +1260,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1342,7 +1296,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
+      "https://laws.e-gov.go.jp/law/323AC0000000025?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1379,9 +1333,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1417,9 +1368,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1456,7 +1404,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1493,9 +1442,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1531,9 +1477,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1569,9 +1512,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1607,9 +1547,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1645,9 +1582,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -1684,7 +1618,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1722,7 +1656,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1760,7 +1694,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1798,7 +1732,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/332AC0000000026?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1836,7 +1771,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/332AC0000000026?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1874,7 +1810,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/327AC1000000176?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1912,7 +1848,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/325AC0000000201?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/343AC0000000100?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1950,7 +1887,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/337AC0000000069?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -1988,7 +1925,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2025,9 +1962,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2064,7 +1998,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2102,7 +2036,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2140,7 +2074,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2178,7 +2112,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/403AC0000000090?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2216,7 +2151,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202405_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2024年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20230401",
+      "https://laws.e-gov.go.jp/law/332AC0000000026?occasion_date=20230401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2251,9 +2187,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2288,7 +2221,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/349AC0000000116?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2324,7 +2257,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2360,7 +2293,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/413AC0000000088?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2395,9 +2329,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2431,9 +2362,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2467,9 +2395,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2503,9 +2428,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2539,9 +2461,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2575,9 +2494,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2611,9 +2527,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2647,9 +2560,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2683,9 +2593,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2719,9 +2626,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2755,9 +2659,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -2792,7 +2693,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2828,7 +2729,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2864,7 +2765,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2900,7 +2801,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2936,7 +2837,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -2972,7 +2873,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/416AC0000000123?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3008,7 +2909,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/403AC0000000090?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3044,7 +2945,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/343AC0000000100?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3079,9 +2980,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3115,9 +3013,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3152,7 +3047,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3187,9 +3082,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3224,7 +3116,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3260,7 +3153,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3296,7 +3190,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3334,7 +3228,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3372,7 +3266,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/211AC0000000070?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3410,7 +3304,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3448,7 +3342,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
+      "https://laws.e-gov.go.jp/law/329AC0000000115?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3485,9 +3379,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3523,9 +3414,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3561,9 +3449,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3599,9 +3484,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3637,9 +3519,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3676,7 +3555,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.fsa.go.jp/ordinary/hoken.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3713,9 +3593,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3751,9 +3628,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3789,9 +3663,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3827,9 +3698,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3865,9 +3733,6 @@ export const FP3_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
-    "officialReferenceUrls": [
-      "https://www.fsa.go.jp/policy/nisa2/knowledge/index.html"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
     "lastUpdated": "2026-09-23",
@@ -3904,7 +3769,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3942,7 +3807,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/334AC0000000141?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -3980,7 +3846,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4018,7 +3884,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/332AC0000000026?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4056,7 +3923,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/index2.htm"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4094,7 +3961,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/327AC1000000176?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4132,7 +3999,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/325AC0000000201?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4170,7 +4037,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/337AC0000000069?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4208,7 +4075,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4246,7 +4113,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000268.html"
+      "https://laws.e-gov.go.jp/law/340AC0000000033?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4284,7 +4151,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4322,7 +4189,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/129AC0000000089?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4360,7 +4227,7 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4398,7 +4265,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/403AC0000000090?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
@@ -4436,7 +4304,8 @@ export const FP3_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。改行・空白と選択肢記号をWeb表示向けに整えています。",
     "officialReferenceUrls": [
-      "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/souzo.htm"
+      "https://laws.e-gov.go.jp/law/325AC0000000073?occasion_date=20240401",
+      "https://laws.e-gov.go.jp/law/332AC0000000026?occasion_date=20240401"
     ],
     "license": "JAFP-reuse-with-attribution",
     "needsReview": false,
