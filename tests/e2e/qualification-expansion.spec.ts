@@ -40,7 +40,7 @@ for (const c of cases) {
 
     if (c.exam === "fp2") {
       await expect(page.getByText("法令基準日: 2025-04-01（この日の制度で解答）")).toBeVisible();
-      await expect(page.getByRole("navigation", { name: "解説の公式根拠" }).getByRole("link")).not.toHaveCount(0);
+      await expect(page.getByRole("navigation", { name: "解説の公式根拠" })).toHaveCount(0);
     }
     const choices = page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio");
     await expect(choices).toHaveCount(c.choiceCount);
@@ -82,5 +82,6 @@ test("FP2 uses the common quiz player with its law reference date and each-choic
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").nth(2).click();
   await expect(page.getByRole("region", { name: "正解の解説" })).toBeVisible();
   await expect(page.getByRole("region", { name: "選択肢ごとの解説" }).locator("dd")).toHaveCount(4);
-  await expect(page.getByRole("link", { name: "公式公開ページ", exact: true })).toHaveAttribute("href", "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf#page=2");
+  await expect(page.getByRole("link", { name: "公式公開ページ", exact: true })).toHaveCount(0);
+  await expect(page.locator('a[href="https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf"]').first()).toBeVisible();
 });

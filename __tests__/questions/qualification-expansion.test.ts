@@ -38,7 +38,18 @@ describe("official-source qualification pilot data", () => {
     expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
     expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);
     expect(q.sourceAttribution).toMatch(/^出典：/);
-    expect(q.officialReferenceUrls?.every((url) => url.startsWith("https://"))).toBe(true);
+    expect((q.officialReferenceUrls ?? []).every((url) => url.startsWith("https://"))).toBe(true);
+  });
+
+  it("keeps FP2 explanation sources government-only and separates the mathematical question's source PDF", () => {
+    expect(FP2_QUESTIONS[0]!.officialReferenceUrls ?? []).toHaveLength(0);
+    expect(FP2_QUESTIONS[0]!.sourcePdfUrl).toContain("jafp.or.jp");
+    for (const q of FP2_QUESTIONS.slice(1)) {
+      expect(q.officialReferenceUrls?.length).toBeGreaterThan(0);
+      for (const url of q.officialReferenceUrls ?? []) {
+        expect(new URL(url).hostname).toMatch(/\.(?:mhlw|nta|meti|mlit)\.go\.jp$/);
+      }
+    }
   });
 
   it("matches the official FP2 answer sequence and 2025 law reference date", () => {

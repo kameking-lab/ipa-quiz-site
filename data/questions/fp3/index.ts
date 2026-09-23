@@ -2,7 +2,7 @@ import type { Question } from "@/lib/questions/types";
 
 const SOURCE_URL = "https://www.jafp.or.jp/exam/mohan/files/g3_202505_qa.pdf";
 const SOURCE_INDEX = "https://www.jafp.or.jp/exam/mohan/";
-const ATTRIBUTION = "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）";
+const ATTRIBUTION = "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（2025年5月公表分）。資料の文章化・穴埋め形式の変更・選択肢番号の置換を行っています。";
 
 export const FP3_QUESTIONS: Question[] = [
   {

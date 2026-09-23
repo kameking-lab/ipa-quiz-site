@@ -24,7 +24,7 @@ export const FP2_QUESTIONS: Question[] = [
       "エ": "一定の利率で複利運用しながら一定期間、毎年一定金額を受け取るために必要な元本を試算する際、毎年受け取りたい金額に乗じる係数は、資本回収係数である。"
     },
     "answer": "ウ",
-    "explanation": "目標額から毎年の積立額を逆算する場合は減債基金係数を使います。現在の一括資金を将来額にする終価係数、毎年の積立額を将来額にする年金終価係数、定額の受取りを支える元本を求める年金現価係数と区別します。",
+    "explanation": "目標額から毎年の積立額を逆算する場合は減債基金係数を使います。現在の一括資金を将来額にする終価係数、毎年の積立額を将来額にする年金終価係数、定額の受取りを支える元本を求める年金現価係数と区別します。 年利率をr、年数をn、毎年末の積立額をaとすると、目標額はa×{(1+r)^n−1}/rです。したがって毎年の積立額は目標額×r/{(1+r)^n−1}となり、後半が減債基金係数です（rが0の場合は1/n）。",
     "choiceExplanations": {
       "ア": "誤りです。一括の現在資金を将来の元利合計に変換するのは終価係数です。現価係数は将来の額から現在必要な元本を逆算するときに使います。",
       "イ": "誤りです。毎年の積立額から将来の累計額を求めるのは年金終価係数です。年金現価係数は、将来の定期的な受取額を現在の元本に換算します。",
@@ -35,9 +35,6 @@ export const FP2_QUESTIONS: Question[] = [
     "sourcePdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
-    "officialReferenceUrls": [
-      "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf#page=2"
-    ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
     "lastUpdated": "2026-09-23"
@@ -76,9 +73,9 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.kyoukaikenpo.or.jp/faq/benefit/006/",
-      "https://www.kyoukaikenpo.or.jp/faq/benefit/004/",
-      "https://www.kyoukaikenpo.or.jp/benefit/injury_and_sickness_allowance/"
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/shussan/index.html",
+      "https://www.mhlw.go.jp/stf/newpage_22308.html",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/juuyou/kougakuiryou/index.html"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
@@ -158,8 +155,8 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.nenkin.go.jp/service/kokunen/menjo/20150514.html",
-      "https://www.nenkin.go.jp/section/faq/kokunen/seido/hokenryo/tsuino/20130111.html"
+      "https://www.mhlw.go.jp/stf/nenkin_shikumi_002.html",
+      "https://www.mhlw.go.jp/content/04_nenkin_20230331.pdf"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
@@ -199,8 +196,8 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/zaishoku/20150401-01.html",
-      "https://www.nenkin.go.jp/service/jukyu/seido/roureinenkin/kuriage-kurisage/20140421-02.html"
+      "https://www.mhlw.go.jp/stf/nenkin_shikumi_010.html",
+      "https://www.mhlw.go.jp/stf/nenkin_shikumi_011.html"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
@@ -240,8 +237,6 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.nenkin.go.jp/service/jukyu/seido/shougainenkin/jukyu-yoken/20150401-02.html",
-      "https://www.nenkin.go.jp/service/yougo/sagyo/ninteibi.html",
       "https://www.mhlw.go.jp/stf/nenkin_shikumi_012.html"
     ],
     "license": "JAFP-reuse-with-attribution",
@@ -282,9 +277,8 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.ideco-koushiki.jp/faq/",
-      "https://www.ideco-koushiki.jp/start/entry.html",
-      "https://www.mhlw.go.jp/kouteki_nenkin_simulator_guide/ideco/"
+      "https://www.mhlw.go.jp/kouteki_nenkin_simulator_guide/ideco/",
+      "https://www.mhlw.go.jp/content/12500000/001230769.pdf"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
@@ -366,8 +360,8 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.flat35.com/files/topics/6172_ext_99_4.pdf",
-      "https://www.flat35.com/user/"
+      "https://www.mlit.go.jp/report/interview/daijin190507.html",
+      "https://www.mlit.go.jp/common/001201075.pdf"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
@@ -407,8 +401,7 @@ export const FP2_QUESTIONS: Question[] = [
     "sourceAnswerUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sourceAttribution": "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）。改行・空白を整形し、選択肢番号1〜4をア〜エへ置換。",
     "officialReferenceUrls": [
-      "https://www.meti.go.jp/policy/economy/keiei_innovation/sangyokinyu/index.html",
-      "https://www.boj.or.jp/about/education/oshiete/glossary/market/m01.htm"
+      "https://www.meti.go.jp/policy/economy/keiei_innovation/sangyokinyu/index.html"
     ],
     "license": "JAFP-reuse-with-attribution",
     "lawReferenceDate": "2025-04-01",
