@@ -2,6 +2,8 @@
 
 import json
 from pathlib import Path
+import subprocess
+import sys
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -73,7 +75,12 @@ def main() -> None:
                 raise ValueError(f"Independent review coverage differs: {output}")
             accepted += 10
         output.write_text(json.dumps(receipt, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Required 200 questions / 800 choices; accepted {accepted} / 200; batch receipts {len(required)}")
+    strict = subprocess.run([sys.executable, str(ROOT / "scripts/denko2-strict-coverage.py")],
+                            capture_output=True, text=True, check=True)
+    counts = json.loads(strict.stdout)
+    print(f"Required 200 questions / 800 choices; strict-clean {counts['strictCleanAcademic']} / 200; "
+          f"legacy batch-marked {accepted} / 200; pending {counts['pendingReview']}; "
+          f"unfinished {counts['unfinished']}; batch receipts {len(required)}")
 
 
 if __name__ == "__main__":

@@ -22,6 +22,12 @@ SHARED_FIGURES = {
     "20240526": [ROOT / "public/images/denko2/2024-first/wiring-main.png",
                  ROOT / "public/images/denko2/2024-first/wiring-panels.png"],
     "20250525": [ROOT / "public/images/denko2/2025-first/wiring-main.png"],
+    "20251026": [ROOT / "public/images/denko2/2025-second/wiring-first-floor.png",
+                 ROOT / "public/images/denko2/2025-second/wiring-second-floor.png",
+                 ROOT / "public/images/denko2/2025-second/wiring-panel.png"],
+}
+COMMON_INSTRUCTIONS = {
+    "20251026": ROOT / "docs/evidence/denko2-independent/20251026-common-instructions.png",
 }
 
 
@@ -56,14 +62,24 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
     if shared_figures:
         hashes["sharedFigureSha256"] = {str(path.relative_to(ROOT)).replace("\\", "/"): sha256(path.read_bytes()).hexdigest()
                                         for path in shared_figures}
+    common_instructions = COMMON_INSTRUCTIONS.get(batch_path.stem[:8]) if shared_figures else None
+    if common_instructions:
+        hashes["commonInstructionsSha256"] = sha256(common_instructions.read_bytes()).hexdigest()
     detail_figures = {}
+    legal_receipts = {}
     for item in draft:
+        legal_path = ROOT / f"docs/evidence/denko2-law/{batch_path.stem[:8]}-q{item['number']:02}.json"
+        if legal_path.exists():
+            legal_receipts[item["number"]] = legal_path
         for image_url in item.get("imageUrls", []) + list(item.get("choiceImageUrls", {}).values()):
             path = ROOT / "public" / image_url.lstrip("/")
             if path not in shared_figures:
                 detail_figures[str(path.relative_to(ROOT)).replace("\\", "/")] = sha256(path.read_bytes()).hexdigest()
     if detail_figures:
         hashes["detailFigureSha256"] = detail_figures
+    if legal_receipts:
+        hashes["legalReceiptSha256"] = {str(path.relative_to(ROOT)).replace("\\", "/"): sha256(path.read_bytes()).hexdigest()
+                                      for path in legal_receipts.values()}
     if output.exists():
         previous = json.loads(output.read_text(encoding="utf-8"))
         if previous.get("inputHashes") == hashes:
@@ -80,10 +96,10 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
         "あなたは第二種電気工事士の独立品質監査者。問題原本の画像と、別モデルが清書したJSONを突き合わせる。"
         "全ての問について問題文の極性・数値・単位・図の接続、イロハニ全肢の文字と順番、公式正答との整合、"
         "解説と4つの肢別理由の数式・因果関係を厳しく検査。推測した誤答の由来に計算矛盾があれば必ず指摘する。"
-        "規則条項の真偽は画像だけで判定せず、要確認と明記。問題文全文画像を公開できると判断しない。"
+        "規則条項の真偽は画像だけで判定しない。添付された一次法令の照合receiptが該当条項と数値を検証済みなら、lawNeedsExternalCheckは空にする。未照合の法令だけ要確認とする。問題文全文画像を公開できると判断しない。"
         "出力はJSON配列のみ。各問についてnumber,status(PASS又はFIX),textIssues,choiceIssues,"
         "explanationIssues,figureIssues,lawNeedsExternalCheckを持つ。issue各フィールドは文字列配列。"
-        "ミスが無い問も必ず1件出力。一般論は書かず、元画像とJSONの具体的差分を書く。"
+        "ミスが無い問も必ず1件出力。整合している事実はissue欄に書かず空配列にする。一般論は書かず、元画像とJSONの具体的差分だけを書く。"
     )
     blocks = [{"type": "text", "text": prompt}]
     for source in original:
@@ -92,6 +108,9 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
         blocks.append({"type": "text", "text": f"問{number}。公式正答={source['officialAnswer']}。清書JSON={json.dumps(candidate, ensure_ascii=False)}"})
         blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                  "data": b64encode((ROOT / source["reviewCrop"]).read_bytes()).decode("ascii")}})
+        if number in legal_receipts:
+            proof = json.loads(legal_receipts[number].read_text(encoding="utf-8"))
+            blocks.append({"type": "text", "text": f"問{number}の一次法令照合receipt（URL・原文照合句・sha256を確認済み）: {json.dumps(proof, ensure_ascii=False)}"})
         detail_urls = candidate.get("imageUrls", []) + list(candidate.get("choiceImageUrls", {}).values())
         for image_url in detail_urls:
             path = ROOT / "public" / image_url.lstrip("/")
@@ -104,6 +123,10 @@ def check(batch_path: Path, part: int, selected: set[int] | None = None) -> str:
         blocks.append({"type": "text", "text": f"公式問題PDFの共通配線図のみ（別頁）。参照画像: {path.name}。丸数字①〜⑳の矢印を辿って設問と照合すること。"})
         blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                  "data": b64encode(path.read_bytes()).decode("ascii")}})
+    if common_instructions:
+        blocks.append({"type": "text", "text": "公式問題冊子の問題2共通条件。木造2階建、漏電遮断器の動作時間、分電盤外箱材質などを各問と照合すること。これは内部照合用で公開図ではない。"})
+        blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                 "data": b64encode(common_instructions.read_bytes()).decode("ascii")}})
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
     process = subprocess.run(
         [str(CLI), "-p", "--model", "opus", "--effort", "medium", "--input-format", "stream-json",
