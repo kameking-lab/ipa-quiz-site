@@ -359,13 +359,33 @@
             "reason": "文は正しいです。エタンC₂H₆の水素原子6個は、完全燃焼でH₂O 3分子になります。生成する水はエタンの物質量の3倍で、7/2 O₂の係数とも整合します。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "科学技術振興機構 第5回科学の甲子園ジュニア筆記競技・解答例と解説",
+            "url": "https://koushien.jst.go.jp/koushien-Jr/pastexam/2017/files/2017_hikki_03.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された一次資料の抜粋には、エチレンやエタンの燃焼反応式や化学量論を扱う記述がない。抜粋に出てくる「エチレングリコール…」などは物質名が一致するだけで、この設問とは関係ない。政府の典拠を付けるには検索が必要。",
-        "各選択肢は原子数保存から自分で反応式を立てて検算した（C₂H₄＋3O₂→2CO₂＋2H₂O、C₂H₆＋3.5O₂→2CO₂＋3H₂O）。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://koushien.jst.go.jp/koushien-Jr/pastexam/2017/files/2017_hikki_03.pdf",
+          "excerpt": "2C2H6　＋　7O2　→　4CO2　＋　6H2O",
+          "choiceNumbers": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://koushien.jst.go.jp/koushien-Jr/pastexam/2017/files/2017_hikki_03.pdf",
+          "excerpt": "C2H4　＋　3O2　→　2CO2　＋　2H2O",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q13": {
       "overlay": {

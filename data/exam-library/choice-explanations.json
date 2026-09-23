@@ -22180,5 +22180,43 @@
         "url": "https://www.pmda.go.jp/files/000274581.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261804-q12": {
+    "sourceHash": "14da3f20ff93db07ef8f22094ffb9cf680df887e347351c22a4ae527cb2a22b7",
+    "correctChoice": 2,
+    "summary": "エタンの完全燃焼に必要な酸素はエタンの3.5倍で、5倍とする記述が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "文は正しいので誤りの選択肢にはなりません。C₂H₄＋3O₂→2CO₂＋2H₂Oでは、生成物の酸素原子が4＋2＝6個なのでO₂は3 molです。エチレンの3倍という記述は反応式と合っています。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "この記述が誤りです。C₂H₆＋7/2 O₂→2CO₂＋3H₂Oでは、生成物の酸素原子が4＋3＝7個なので、必要なO₂はエタンの3.5倍です。5倍ではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "文は正しいです。エチレンC₂H₄は炭素2個からCO₂が2 mol、水素4個からH₂Oが2 molできます。二酸化炭素と水の物質量は等しく、どちらも2 molです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "文は正しいです。エタンC₂H₆は1分子に炭素原子を2個含みます。完全燃焼では炭素がすべてCO₂になるので、生成するCO₂はエタンの物質量の2倍です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "文は正しいです。エタンC₂H₆の水素原子6個は、完全燃焼でH₂O 3分子になります。生成する水はエタンの物質量の3倍で、7/2 O₂の係数とも整合します。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "科学技術振興機構 第5回科学の甲子園ジュニア筆記競技・解答例と解説",
+        "url": "https://koushien.jst.go.jp/koushien-Jr/pastexam/2017/files/2017_hikki_03.pdf"
+      }
+    ]
   }
 }
