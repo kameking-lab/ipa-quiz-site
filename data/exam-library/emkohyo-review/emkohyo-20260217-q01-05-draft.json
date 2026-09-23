@@ -17,85 +17,151 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "指針は「総括安全衛生管理者が選任されている場合には、当該者にリスクアセスメント等の実施を統括管理させること」と定めており、総括安全衛生管理者が統括管理するという記述は指針どおりで正しい。"
+            "reason": "文自体は正しい。厚生労働省の改正指針は、総括安全衛生管理者が選任されている事業場では、その者にリスクアセスメントとリスク低減措置の実施を統括管理させると明記する。選任されていない事業場との役割分担も区別されており、設問は選任済みの場合を正しく述べている。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "施行通達は入手すべき「作業環境測定結果等」の「等」に個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果等が含まれるとしており、列挙された3情報はいずれも該当するので正しい。"
+            "reason": "文自体は正しい。改正指針7(2)イは作業環境測定結果等を必要に応じ入手する情報に挙げる。その施行通達は『等』に、個人ばく露測定結果、特殊健康診断結果、生物学的モニタリング結果などが入ると明示する。列挙された三つはいずれも実際のばく露や健康影響を把握するための情報なので、必要に応じて入手する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "通達は指針8ア・イについて、危険性又は有害性の特定をまずSDSのGHS分類結果、管理濃度及び濃度基準値、それらが未設定なら許容濃度等のばく露限界の把握によって行うとしており、業務の洗い出し後に管理濃度・濃度基準値に即して特定する記述は正しい。"
+            "reason": "文自体は正しい。改正指針8は対象となる業務を洗い出し、原則として列挙された情報に即して危険性・有害性を特定する。管理濃度と濃度基準値が設定されている物質ではそれらの値に即して特定する。値が未設定なら許容濃度などのばく露限界を用いる区別もあり、設問は前者を述べたものである。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "通達はリスク見積りの方法として、CREATE-SIMPLEで気中濃度を推定する方法と、ECETOC-TRAでリスクを見積もる方法を例示している。性状・作業条件と濃度基準値やばく露限界を入力して見積もるという記述は、この二つの方法と整合する。"
+            "reason": "文自体は正しい。改正指針9(1)イ(エ)は数理モデルで推定した気中濃度を濃度基準値又はばく露限界と比較する方法を認める。施行通達はCREATE-SIMPLEによる気中濃度推定とECETOC-TRAによるリスク見積りをその具体例に挙げる。前者は取扱量・換気条件・作業時間、後者は物理化学的特性・作業形態・換気条件などを入力し、推定ばく露濃度とばく露限界を比較する。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "指針が労働災害を契機に掲げるのは「労働災害が発生した場合であって、過去のリスクアセスメント等の内容に問題がある場合」であり、無条件ではない。休業の有無や日数にかかわらず「必ず」行うとする点が誤りで、これが正答である。"
+            "reason": "これが誤り。改正指針5(2)は労働災害が発生し、過去のリスクアセスメント等の内容に問題が確認された場合に再度行うよう努めると記す。休業の有無や日数だけで無条件に『必ず行う』とは定めていないため、設問は実施の条件と義務の強さの両方を取り違えている。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 化学物質等による危険性又は有害性等の調査等に関する指針について（施行通達）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1"
+            "title": "厚生労働省 化学物質等による危険性又は有害性等の調査等に関する指針（令和5年改正）・施行通達",
+            "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "労働災害が発生した場合であって、過去のリスクアセスメント等の内容に問題がある場合",
-          "choiceNumbers": [
-            5
-          ]
-        },
-        {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "総括安全衛生管理者が選任されている場合には、当該者にリスクアセスメント等",
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "総括安全衛生管理者が選任されている場合には",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果等",
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "個人ばく露測定結果、ばく露の推定値、特殊健康診断結果、生物学的モニタリング結果",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "管理濃度及び濃度基準値並びにこれらの値が設定されていない場合には",
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "次に掲げる情報に関する資料等を、必要に応じ入手する",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "リスクアセスメント等の対象となる業務を洗い出した上で",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "CREATE―SIMPLE(クリエイト・シンプル)を用いて気中濃度を推定する方法",
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "リスクアセスメント対象物の管理濃度及び濃度基準値",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "CREATE-SIMPLE",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc1267&dataType=1",
-          "excerpt": "(ECETOC―TRA)を用いてリスクを見積もる方法",
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "ECETOC-TRA",
           "choiceNumbers": [
             4
           ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "指針の９(1)イ(ｴ)の気中濃度の推定方法には",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "数理モデルを用いて対象の業務に係る作業を行う労働者の周辺のリスクアセスメント対象物の気中濃度を推定し、当該物質の濃度基準値又はばく露限界と比較する方法",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "取扱量、含有率、換気条件、作業時間・頻度、保護具の有無等",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "推定したばく露濃度とばく露限界等を比較する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "必要な入力項目",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "物理化学的特性（蒸気圧など）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "計算により推定ばく露濃度が算出されるので、これをばく露限界と比較する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "５ 実施時期",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001091755.pdf",
+          "excerpt": "過去のリスクアセスメント等の内容に問題があることが確認された場合",
+          "choiceNumbers": [
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "提示された候補資料（作業環境測定基準）は本問の判断根拠にならないため、sourcesに入れなかった。",
-        "通達のt_docページは平成27年基発0918第3号として表示されるが、本文には令和5年改正の濃度基準値に関する記述がある。本問が前提とする改正後の指針告示（新旧対照表PDF 001091867.pdf）はPDF本文を読み取れず、直接照合できていない。",
-        "労働災害時の再実施が指針5(2)の努力義務に当たるかどうかは、該当文言を直接確認できていない。そのため解説では「条件付き」である点だけを根拠にした。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-q2": {
       "overlay": {
