@@ -17,6 +17,7 @@ import requests
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "docs/evidence/emkohyo-choice-sources/supplemental-science-sources.json"
+CACHE = ROOT / "data/raw_pdfs/emkohyo-source-cache"
 SOURCES = [
     {"title": "産総研計量標準総合センター 国際単位系（SI）",
      "url": "https://unit.aist.go.jp/nmij/library/si-units/",
@@ -68,12 +69,20 @@ def fetch(source: dict) -> dict:
         "pageCount": len(pages), "matchedKeywords": len(facts),
         "missingKeywords": sorted(set(source["keywords"]) - {x["keyword"] for x in facts}),
         "facts": facts,
+        "_pages": pages,
     }
 
 
 def main() -> None:
     with ThreadPoolExecutor(max_workers=3) as pool:
         records = list(pool.map(fetch, SOURCES))
+    CACHE.mkdir(parents=True, exist_ok=True)
+    for record in records:
+        pages = record.pop("_pages")
+        cache_file = CACHE / f"{record['rawSha256']}.json"
+        cache_file.write_text(json.dumps({"url": record["url"],
+                                          "sha256": record["rawSha256"], "pages": pages},
+                                         ensure_ascii=False) + "\n", encoding="utf-8")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"sources": records,
                                "acceptance": "none; research excerpts require choice-specific direct review"},

@@ -15,6 +15,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 ROOT = Path(__file__).resolve().parents[1]
 PACKS = ROOT / "docs/evidence/emkohyo-choice-sources/subject-packs"
 LAW_PAGES = ROOT / "docs/evidence/emkohyo-choice-sources/mhlw-law-pages.json"
+SCIENCE = ROOT / "docs/evidence/emkohyo-choice-sources/supplemental-science-sources.json"
 CACHE = ROOT / "data/raw_pdfs/emkohyo-source-cache"
 ARTICLE = re.compile(r"第[一二三四五六七八九十百千〇零0-9０-９]+条(?:の[一二三四五六七八九十0-9０-９]+)?")
 KANJI_DIGITS = {char: value for value, char in enumerate("〇一二三四五六七八九")}
@@ -64,6 +65,10 @@ def retrieve(subject: str, questions: list[dict], per_question: int = 6) -> dict
         law_index = json.loads(LAW_PAGES.read_text(encoding="utf-8"))
         sources.update({item["url"]: item for item in law_index["pages"]
                         if subject in item["subjects"]})
+    if SCIENCE.exists():
+        science_index = json.loads(SCIENCE.read_text(encoding="utf-8"))
+        sources.update({item["url"]: {**item, "sha256": item["rawSha256"]}
+                        for item in science_index["sources"] if item["subject"] == subject})
     records = []
     missing = []
     for source in sources.values():

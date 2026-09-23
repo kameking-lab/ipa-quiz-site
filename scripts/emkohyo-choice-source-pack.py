@@ -46,6 +46,15 @@ def pinned_sources() -> dict:
             if previous and previous["sha256"] != source["sha256"]:
                 raise ValueError(f"Conflicting pinned source: {source['url']}")
             index[source["url"]] = source
+    science_index = OUT / "supplemental-science-sources.json"
+    if science_index.exists():
+        data = json.loads(science_index.read_text(encoding="utf-8"))
+        for source in data["sources"]:
+            previous = index.get(source["url"])
+            digest = source["rawSha256"]
+            if previous and previous["sha256"] != digest:
+                raise ValueError(f"Conflicting pinned source: {source['url']}")
+            index[source["url"]] = {**source, "sha256": digest}
     return index
 
 
