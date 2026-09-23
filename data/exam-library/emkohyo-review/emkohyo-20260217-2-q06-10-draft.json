@@ -24,53 +24,65 @@
       "overlay": {
         "sourceHash": "1dbbe6b831cfe78de80155c2ba19baab1681f822a2aefd5e0bff2cad44eceb50",
         "correctChoice": 3,
-        "summary": "第1種測定士は登録区分外でも第2種の業務範囲（簡易測定機器による分析を含む）を行えるため、肢3が誤り。",
+        "summary": "施行規則第3条は、作業環境測定士なら簡易測定機器による分析と通常のデザイン・サンプリングを行えるとする。放射性物質の登録だけで粉じん測定を一律に禁じる肢3が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "試験実施日の2026年2月17日時点の作業環境測定法第5条は、試験合格と所定講習の修了で資格を有すると定める。現在公開中の将来施行版には実務経験の文言が加わっているため、試験時点の版で判断すれば本肢は正しい。"
+            "reason": "試験日適用の作業環境測定法第5条は、試験合格と厚生労働大臣又は都道府県労働局長の登録を受けた講習機関による講習修了で、測定士となる資格を有すると定める。同法第32条はその講習機関の登録手続を定めるため、肢は正しい。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "資格を有するだけでは作業環境測定士にはなれず、作業環境測定士名簿に所定事項の登録を受ける必要があります。登録事務を指定登録機関が行う場合、名簿は指定登録機関に備えられるため、本肢は正しい記述です。"
+            "reason": "作業環境測定法第7条は資格者が測定士となるには名簿登録を要する。同法第8条第1項の備付け先「厚生労働省」は、第32条の2第3項により指定登録機関が登録事務を行う場合に「指定登録機関」と読み替えられる。このため指定登録機関に備えられた名簿への登録を求める肢は正しい。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "作業環境測定法施行規則第3条は、登録区分が必要なのを簡易測定機器以外による分析とし、それ以外の分析を作業環境測定士に認める。重量法を標準に較正された相対濃度計は同規則第2条の簡易測定機器に含まれるため、放射性物質登録だけでも当該粉じん測定はでき、「できない」が誤り。"
+            "reason": "安衛令第21条第1号の鉱物性粉じん作業場は作業環境測定法施行令第1条第1号により指定作業場。施行規則第3条第1項第1号ロは通常のデザイン・サンプリングを、第2号ロは簡易測定機器による分析を、いずれも種類別登録を問わず「作業環境測定士」に認める。光散乱式のデジタル粉じん計は相対濃度計の一種で、規則第2条第2号の重量法標準機器による較正を満たせば簡易測定機器に当たる。放射性物質のみの登録を理由に粉じん測定を一律不可とする肢は誤り。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "第2種作業環境測定士は、分析業務のうち厚生労働省令で定める簡易な測定機器を用いるものに限って行えます。検知管方式による測定機器はその代表例なので、第2種が検知管で分析を行えるとする本肢は正しい記述です。"
+            "reason": "作業環境測定法第2条第6号は第2種測定士の業務から省令所定機器による分析だけを除外する。施行規則第2条はその所定機器を簡易測定機器以外とし、検知管方式を簡易測定機器に挙げる。したがって第2種も検知管による分析を行える。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "作業環境測定士に測定を実施させる義務は、粉じん・特定化学物質・鉛・有機溶剤・放射性物質に係る指定作業場に限られます。著しい騒音の屋内作業場は指定作業場ではないため、等価騒音レベルは測定士以外も測定でき、正しい記述です。"
+            "reason": "作業環境測定法第3条が測定士に実施させる義務を定めるのは指定作業場。施行令第1条は安衛令第21条第1・7・8・10号と、第6号のうち省令所定の作業場だけを指定する。騒音作業場は第3号なので指定作業場に含まれず、測定士以外も測定できる。"
           }
         ],
         "sources": [
           {
-            "title": "e-Gov 作業環境測定法・試験日2026年2月17日時点",
+            "title": "e-Gov 作業環境測定法（試験日適用）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17"
           },
           {
-            "title": "e-Gov 作業環境測定法施行規則・試験日2026年2月17日時点",
+            "title": "e-Gov 作業環境測定法施行規則（試験日適用）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17"
           },
           {
-            "title": "e-Gov 作業環境測定法施行令・試験日2026年2月17日時点",
+            "title": "e-Gov 作業環境測定法施行令（試験日適用）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/350CO0000000244?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令（試験日適用）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 作業環境測定士の業務範囲",
+            "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00012.html"
+          },
+          {
+            "title": "厚生労働省 デジタル粉じん計の方式と較正（2019年）",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/taisaku/common_Management201903.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
-          "excerpt": "作業環境測定士試験（以下「試験」という。）に合格し、かつ、厚生労働大臣又は都道府県労働局長の登録を受けた者が行う講習（以下「講習」という。）を修了した者",
+          "excerpt": "作業環境測定士試験（以下「試験」という。）に合格し、かつ、厚生労働大臣又は都道府県労働局長の登録を受けた者が行う講習",
           "choiceNumbers": [
             1
           ]
@@ -91,14 +103,14 @@
         },
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
-          "excerpt": "簡易測定機器以外の機器を用いて行う分析",
+          "excerpt": "ロ 個人サンプリング法以外のもの 作業環境測定士",
           "choiceNumbers": [
             3
           ]
         },
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
-          "excerpt": "イに規定する分析以外のもの",
+          "excerpt": "ロ イに規定する分析以外のもの 作業環境測定士",
           "choiceNumbers": [
             3
           ]
@@ -111,10 +123,38 @@
           ]
         },
         {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/anzen/newpage_00012.html",
+          "excerpt": "検知管やデジタル粉じん計などの簡易測定機器を用いたもの",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "厚生労働省令で定める機器を用いて行う分析（解析を含む。）の業務を除く",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
+          "excerpt": "次に掲げる機器（以下「簡易測定機器」という。）以外の機器とする",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
           "excerpt": "検知管方式によりガス若しくは蒸気の濃度を測定する機器",
           "choiceNumbers": [
             4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "指定作業場について作業環境測定を行うときは、厚生労働省令で定めるところにより、その使用する作業環境測定士にこれを実施させなければならない",
+          "choiceNumbers": [
+            5
           ]
         },
         {
@@ -125,16 +165,77 @@
           ]
         },
         {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "三 著しい騒音を発する屋内作業場",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "第三節　登録講習機関 第三十二条  第五条又は第四十四条第一項の規定による登録",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "作業環境測定士名簿は、厚生労働省に備える",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "第八条第一項中「厚生労働省」とあり、及び第九条第一項中「厚生労働大臣」とあるのは、「第三十二条の二第二項に規定する指定登録機関」とする",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
+          "excerpt": "グラスファイバーろ紙（〇・三マイクロメートルのステアリン酸粒子を九九・九パーセント以上捕集する性能を有するものに限る。）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "一 土石、岩石、鉱物、金属又は炭素の粉じんを著しく発散する屋内作業場",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350CO0000000244?asof=2026-02-17",
           "excerpt": "第二十一条第六号に掲げる作業場のうち厚生労働省令で定める作業場",
           "choiceNumbers": [
             5
           ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/taisaku/common_Management201903.pdf",
+          "excerpt": "相対濃度を測る光散乱方式",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/taisaku/common_Management201903.pdf",
+          "excerpt": "校正が必要となる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350CO0000000244?asof=2026-02-17",
+          "excerpt": "一 労働安全衛生法施行令（昭和四十七年政令第三百十八号）第二十一条第一号、第七号、第八号及び第十号に掲げる作業場",
+          "choiceNumbers": [
+            3
+          ]
         }
       ],
-      "reviewIssues": [
-        "e-Gov APIのasof=2026-02-17で試験日適用の法・規則・令を取得。現行MHLW本文に含まれる将来施行の実務経験要件を肢1に誤適用しない。光散乱式相対濃度計の規則第2条該当性を含め、独立Opus原文照合は未了。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q7": {
       "overlay": {
