@@ -61,7 +61,9 @@ def row_positions(pdf: fitz.Document, count: int) -> dict[int, tuple[int, float,
     for number in range(1, count + 1):
         index, start = positions[number]
         next_position = positions.get(number + 1)
-        end = next_position[1] if next_position and next_position[0] == index else 930.0
+        # Final rows often continue below y=930 (notably diagrams at the foot
+        # of the page). Keep the entire table down to the footer margin.
+        end = next_position[1] if next_position and next_position[0] == index else pdf[index].rect.height - 65
         rows[number] = (index, start - 5, end - 6)
     return rows
 
