@@ -75,4 +75,41 @@ describe("live external qualification two-year publication gate", () => {
       }
     }
   });
+
+  it("keeps official answer keys and adjacent figures out of learner-facing FP text", () => {
+    const answerKeyLeak = /(?:^|\n|\\n)\s*(?:正解|解答)\s*[1-5１-５ア-オ]/;
+    const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];
+
+    for (const question of academic) {
+      expect(question.question, question.id).not.toMatch(answerKeyLeak);
+      for (const [key, choice] of Object.entries(question.choices ?? {})) {
+        expect(choice, `${question.id} choice ${key}`).not.toMatch(answerKeyLeak);
+      }
+    }
+
+    expect(JSON.stringify(fp2Practical), "FP2 practical papers").not.toMatch(answerKeyLeak);
+    expect(JSON.stringify(fp3Practical), "FP3 practical papers").not.toMatch(answerKeyLeak);
+  });
+
+  it("uses only the official FP body, answer, and legal-reference hosts", () => {
+    const allowedHosts = new Set([
+      "www.jafp.or.jp",
+      "laws.e-gov.go.jp",
+      "www.hellowork.mhlw.go.jp",
+      "www.meti.go.jp",
+      "www.mhlw.go.jp",
+      "www.mlit.go.jp",
+      "www.nta.go.jp",
+    ]);
+
+    const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];
+    expect(new Set(academic.map((question) => question.id)).size).toBe(academic.length);
+    for (const question of academic) {
+      expect(new URL(question.sourcePdfUrl).hostname, question.id).toBe("www.jafp.or.jp");
+      expect(new URL(question.sourceAnswerUrl!).hostname, question.id).toBe("www.jafp.or.jp");
+      for (const referenceUrl of question.officialReferenceUrls ?? []) {
+        expect(allowedHosts.has(new URL(referenceUrl).hostname), `${question.id}: ${referenceUrl}`).toBe(true);
+      }
+    }
+  });
 });
