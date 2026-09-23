@@ -34,7 +34,9 @@ for (const width of [390, 1280]) {
     await other.click();
     await expect(page).toHaveURL(/\/qualifications$/);
     await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
-    await expect(page.getByRole("link", { name: /年度・科目を選ぶ/ })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "FP2級" })).toBeVisible();
+    await expect(page.locator('a[href="/fp3"]')).toBeVisible();
+    await expect(page.locator('a[href="/fp2"]')).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
