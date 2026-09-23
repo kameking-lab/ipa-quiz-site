@@ -188,6 +188,30 @@ for (const paperId of requiredStructuredPapers ?? []) {
   }
 }
 
+// Pin every official EM paper from the two latest complete publication years.
+// The target is visible in normal validation; --require-em-two-years closes
+// the publication gate only after every official five-choice row is reviewed.
+const emTarget = coverageContract.structuredChoiceExplanations?.emkohyoTwoYearTarget;
+const emYears = emTarget?.years ?? [];
+const emPaperIds = emTarget?.paperIds ?? [];
+check(Array.isArray(emYears) && emYears.length === 2, 'Missing EM two-year target years');
+check(Array.isArray(emPaperIds) && new Set(emPaperIds).size === emPaperIds.length, 'Invalid EM two-year paper IDs');
+const emCatalog = catalog.filter(paper => paper.group === 'emkohyo' && emYears.includes(Number(paper.date.slice(0, 4))));
+const actualEmPaperIds = new Set(emCatalog.map(paper => paper.id));
+check(emPaperIds.length === emCatalog.length && emPaperIds.every(id => actualEmPaperIds.has(id)), 'EM two-year contract differs from official catalog');
+const emQuestionIds = [];
+for (const paper of emCatalog) {
+  const rows = read(`papers/${paper.id}.json`);
+  const eligible = rows.filter(row => row.answerAuthority === 'official' && row.choiceCount === 5);
+  check(eligible.length === emTarget?.expectedQuestionsPerPaper, `EM target paper count mismatch: ${paper.id}`);
+  emQuestionIds.push(...eligible.map(row => row.id));
+}
+check(emQuestionIds.length === emTarget?.expectedQuestions, 'EM two-year expected question count mismatch');
+const emStructuredCount = emQuestionIds.filter(id => Object.hasOwn(choiceExplanations, id)).length;
+if (process.argv.includes('--require-em-two-years')) {
+  for (const id of emQuestionIds) check(Object.hasOwn(choiceExplanations, id), `Missing EM two-year choice explanation: ${id}`);
+}
+
 const consultantContract = coverageContract.consultant;
 check(Array.isArray(consultantContract?.years) && consultantContract.years.length > 0, 'Missing consultant year coverage contract');
 check(Array.isArray(consultantContract?.subjects) && consultantContract.subjects.length > 0, 'Missing consultant subject coverage contract');
@@ -220,6 +244,13 @@ const result = {
   explanationCoverage: Number((explainedQuestionIds.size / questions.size * 100).toFixed(2)),
   structuredChoiceExplanations: Object.keys(choiceExplanations).length,
   requiredStructuredChoiceExplanations: requiredStructuredQuestionIds.length,
+  emTwoYearCoverage: {
+    years: emYears,
+    papers: emCatalog.length,
+    expectedQuestions: emQuestionIds.length,
+    structuredChoiceExplanations: emStructuredCount,
+    complete: emStructuredCount === emQuestionIds.length,
+  },
   consultantCoverage: {
     requiredYears: consultantContract?.years ?? [],
     missingYears: missingConsultantYears,

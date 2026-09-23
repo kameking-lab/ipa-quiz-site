@@ -164,16 +164,33 @@
           {
             "title": "厚生労働省 相対濃度指示方法による測定において使用する質量濃度変換係数及び妨害物質がある場合における検知管方式による測定の具体的方法について（平成2年基発第462号）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2159&dataType=1&pageNo=1"
-          },
-          {
-            "title": "厚生労働省 作業環境測定基準 第13条第3項（許可を受けた場合の検知管方式）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
           }
         ]
       },
-      "reviewIssues": [
-        "全選択肢を独立に検算した（×15ppmで0.087／0.1725／0.345／0.69／1.38）。成立するのは4だけ。",
-        "4物質の管理濃度は問題文で与えられた値をそのまま使い、作業環境評価基準の別表との照合はしていない。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "C＝(C 1 ／E 1 )＋(C 2 ／E 2 )＋……",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2159&dataType=1&pageNo=1",
+          "excerpt": "換算値／併行測定点における検知管の指示値",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
       ]
     },
     "emkohyo-EM20251805-q8": {

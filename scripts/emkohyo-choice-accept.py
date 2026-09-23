@@ -47,7 +47,10 @@ def main() -> None:
         digest = sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
         if receipt["candidateSha256"].get(id_) != digest:
             raise ValueError(f"Stale candidate review: {id_}")
-        if paper == "emkohyo-EM20251805" and number <= 3:
+        focused_pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{number:02}-{number:02}.json"
+        if focused_pack.exists():
+            pack = focused_pack
+        elif paper == "emkohyo-EM20251805" and number <= 3:
             pack = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
         else:
             pack = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{first+4:02}.json"

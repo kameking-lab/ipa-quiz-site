@@ -38,7 +38,10 @@ def main() -> None:
     ids = [f"{paper}-q{n}" for n in range(first, last + 1)]
     candidates = {id_: draft[id_]["overlay"] for id_ in ids}
     question_rows = {x["id"]: x for x in rows if x["id"] in ids}
-    if paper == "emkohyo-EM20251805" and first == 1 and last == 3:
+    focused_source = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{last:02}.json"
+    if focused_source.exists():
+        source_file = focused_source
+    elif paper == "emkohyo-EM20251805" and first == 1 and last == 3:
         source_file = ROOT / "docs/evidence/emkohyo-2025-sources/EM20251805-q01-03.json"
     else:
         source_file = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{batch_first:02}-{batch_last:02}.json"

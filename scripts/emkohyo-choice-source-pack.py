@@ -47,8 +47,13 @@ def read_url(url: str) -> dict:
 
 def main() -> None:
     paper, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
-    file = REVIEW / f"{paper}-q{first:02}-{last:02}-draft.json"
-    draft = json.loads(file.read_text(encoding="utf-8"))["questions"]
+    batch_first = (first - 1) // 5 * 5 + 1
+    if (last - 1) // 5 * 5 + 1 != batch_first:
+        raise ValueError("Evidence pack must stay within one draft batch")
+    file = REVIEW / f"{paper}-q{batch_first:02}-{batch_first+4:02}-draft.json"
+    all_candidates = json.loads(file.read_text(encoding="utf-8"))["questions"]
+    draft = {f"{paper}-q{n}": all_candidates[f"{paper}-q{n}"]
+             for n in range(first, last + 1)}
     sources = {source["url"] for question in draft.values() for source in question["overlay"].get("sources", [])}
     evidence = [(id_, record) for id_, question in draft.items()
                 for record in question.get("sourceEvidence", []) if isinstance(record, dict)]
