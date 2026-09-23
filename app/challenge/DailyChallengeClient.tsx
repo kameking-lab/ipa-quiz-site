@@ -42,6 +42,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   const [results, setResults] = React.useState<Array<"correct" | "incorrect">>([]);
   const [final, setFinal] = React.useState<FinalResult | null>(null);
   const [alreadyDoneOnLoad, setAlreadyDoneOnLoad] = React.useState(false);
+  const [shortcutsReady, setShortcutsReady] = React.useState(false);
   const history = React.useMemo(() => createHistoryStore(), []);
 
   React.useEffect(() => {
@@ -110,7 +111,11 @@ export function DailyChallengeClient({ questions, date }: Props) {
       }
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    setShortcutsReady(true);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      setShortcutsReady(false);
+    };
   }, [revealed, current, onSelect]);
 
   const onNext = React.useCallback(() => {
@@ -263,6 +268,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
 
       <div
         role="radiogroup"
+        data-shortcuts-ready={shortcutsReady}
         aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
         className="space-y-2"
       >
