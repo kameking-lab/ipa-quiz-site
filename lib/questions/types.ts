@@ -14,10 +14,11 @@ export type ExamCode =
   | "au"
   | "fp2"
   | "fp3"
-  | "denken3";
+  | "denken3"
+  | "denko2";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2">;
 
 export type Session =
   | "am"
@@ -56,6 +57,8 @@ export interface Question {
   explanation: string;
   /** 正解・不正解を各選択肢ごとに説明する。公開パイロットでは必須。 */
   choiceExplanations?: Partial<Record<ChoiceKey, string>>;
+  /** 図を含む選択肢。文字起こしした選択肢と同じキーに結び付ける。 */
+  choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
   modelAnswer?: string;
   scoringCriteria?: string;
   hasImage: boolean;

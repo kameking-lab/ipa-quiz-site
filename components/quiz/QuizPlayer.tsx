@@ -431,6 +431,7 @@ export function QuizPlayer({
                     key={key}
                     choiceKey={key}
                     text={question.choices![key]!}
+                    imageUrl={question.choiceImageUrls?.[key]}
                     revealed={revealed}
                     selected={selected === key}
                     correct={isAcceptedAnswer(question.answer, key)}

@@ -13,13 +13,14 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
-const VALIDATION_QUESTIONS = [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS];
+const VALIDATION_QUESTIONS = [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
@@ -48,7 +49,7 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denko2"]),
   session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]),
@@ -80,6 +81,7 @@ const QuestionSchema = z.object({
   scoringCriteria: z.string().optional(),
   hasImage: z.boolean(),
   imageUrls: z.array(z.string()).optional(),
+  choiceImageUrls: z.record(z.string(), z.string()).optional(),
   sourcePdfUrl: z.string().url(),
   sourceAnswerUrl: z.string().url().optional(),
   sourceAttribution: z.string().min(1).optional(),
@@ -136,7 +138,7 @@ function computeQuality(q: Question): QualityResult {
     warnings.push(`不安言い回し検出: "${q.explanation.slice(0, 40)}…"`);
   }
 
-  if (q.hasImage && !q.imageUrls?.length) {
+  if (q.hasImage && !q.imageUrls?.length && !Object.values(q.choiceImageUrls ?? {}).some(Boolean)) {
     score -= 10;
     warnings.push("hasImage=true だが imageUrls なし");
   }

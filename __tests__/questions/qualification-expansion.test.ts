@@ -3,26 +3,31 @@ import { describe, expect, it, vi } from "vitest";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
+import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import { getChoiceKeys } from "@/lib/questions/answers";
 import { shuffleChoices } from "@/lib/questions/filter";
+import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
-const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS];
+const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS];
 
 describe("official-source qualification pilot data", () => {
   it("contains the transcribed FP sets and gated electrical pilot", () => {
     expect(FP2_QUESTIONS).toHaveLength(10);
     expect(FP3_QUESTIONS).toHaveLength(5);
     expect(DENKEN3_QUESTIONS).toHaveLength(2);
+    expect(DENKO2_QUESTIONS).toHaveLength(10);
   });
 
   it("keeps Denken3 behind the notification-required publication gate", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("notification-required");
     expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
+    expect(getQualificationByExamCode("denko2")?.status).toBe("notification-required");
+    expect(QUESTIONS_BY_EXAM.denko2).toBeUndefined();
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(10);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(5);
   });
@@ -56,6 +61,29 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_QUESTIONS.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
     expect(FP2_QUESTIONS.map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
     expect(FP2_QUESTIONS.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
+  });
+
+  it("matches the official 2026 first-term electrician answer sequence and diagrams", () => {
+    expect(DENKO2_QUESTIONS.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+    expect(DENKO2_QUESTIONS.map((q) => q.answer)).toEqual(["ア","イ","ウ","エ","イ","イ","エ","イ","ア","ウ"]);
+    expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choices ?? {}).length === 4)).toBe(true);
+    expect(DENKO2_QUESTIONS.every((q) => Object.keys(q.choiceExplanations ?? {}).length === 4)).toBe(true);
+    expect(Object.keys(DENKO2_QUESTIONS[9]!.choiceImageUrls ?? {})).toEqual(["ア","イ","ウ","エ"]);
+    expect(DENKO2_QUESTIONS.every((q) => !hasUnrenderableContent(q))).toBe(true);
+    for (const q of DENKO2_QUESTIONS.slice(7)) {
+      expect(q.officialReferenceUrls).toEqual(["https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"]);
+    }
+  });
+
+  it("keeps each electrician choice image with its text and explanation after shuffling", () => {
+    const q = DENKO2_QUESTIONS[9]!;
+    const before = new Map(getChoiceKeys(q.choices).map((key) => [q.choices?.[key], [q.choiceImageUrls?.[key], q.choiceExplanations?.[key]]]));
+    const random = vi.spyOn(Math, "random").mockReturnValue(0);
+    const shuffled = shuffleChoices(q);
+    random.mockRestore();
+    for (const key of getChoiceKeys(shuffled.choices)) {
+      expect([shuffled.choiceImageUrls?.[key], shuffled.choiceExplanations?.[key]]).toEqual(before.get(shuffled.choices?.[key]));
+    }
   });
 
   it("uses the explicit official answer PDF URL when question and answer files differ", () => {
