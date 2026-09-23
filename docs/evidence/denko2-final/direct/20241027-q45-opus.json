@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct3-q44-45-opus.json",
+  "upstreamReviewSha256": "5bc09dab20ededcb16b5352904c8630c0e8632cb20856e71798b1e9b508ce1b3",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "30b1f09507f26d7902bf65d72dd873f2044c7db9da0cb393e403979866ba2efe",
+    "rowSha256": {
+      "45": "a58985359ef31dbfd80c46b40fa544e89bab733dabee9f348e0a5141c97f1408"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q45-1.png": "e7d633839afd0e40df25808eba2a298ed2135c53cd2d61691c67a5b53dfb6dad"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q45.json": "6a992fd556d43b26f6b1fd5a84cd844915aba1bcf7c792350e149817eedf3b6f"
+    }
+  },
+  "assessment": [
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "設問行の原図（問45）と照合。問題文は「⑮で示す図記号のコンセントは。」で、候補と一致する。",
+        "公式正答はハで、候補の officialAnswer もハ。公式正答は変更していない。",
+        "公式問題15頁の共通配線図の1階平面図、上部の洗面所右側を確認。⑮の矢印は、壁付（半塗り円）のコンセント図記号を指している。傍記は「ET」のみで、口数を示す「2」はない。したがって1口の接地端子付であり、候補の解説と一致する。",
+        "固定済みの一次資料pack（SHA256=6742f5e1…7a14）で確認した国土交通省資料は、mlit.go.jp/common/001108579.pdf（公共建築設備工事標準図 電気設備工事編 平成28年版）のPDF8頁の図記号表。抜止形LK・引掛形T・接地極付E・接地端子付ETが区別されており、EETは接地極と接地端子の両方を持つものを示す。候補解説の「E/ETの区別、両方を備える場合はEET」と一致する。",
+        "同じpackで確認したJISC資料は、JIS C 0303:2000 の公式閲覧音声PDFの4.2（PDF11頁）。接地極付・接地端子付・接地極付接地端子付がそれぞれ別の区分として挙げられており、候補がニを「EET相当でETと不一致」とした理由を裏付ける。officialReferenceUrls の jisc.go.jp は検索画面だが、JISCの公式閲覧入口であり、解説の主根拠は mlit 側にある。",
+        "写真を照合。イは上下2口で、接地極穴・接地端子ともにない。ロは上下2口で、各口の下に丸い接地極穴がある。ハは1口（2穴）で、下部に黄銅色のねじ式接地端子があり、接地極穴はない。ニは1口で、丸い接地極穴があり、その下にねじ式接地端子もある。4肢とも、選択肢の記述・diagramDescription・各肢の解説と一致する。",
+        "公開用図 q45-1.png は、設問行原図のイ〜ニの写真と同じ順序・内容で、欠けや取り違えはない。"
+      ]
+    }
+  ]
+}
