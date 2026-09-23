@@ -542,7 +542,7 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "ヨウ化メチルの常圧での沸点は約42℃で、25℃より高い。常温では液体で、空気中では蒸発した気体として存在するため、問題の定義では『蒸気』になる。組合せは正しい。"
+            "reason": "ヨウ化メチルの常圧での沸点は42.5℃で、25℃より高い。常温では液体で、空気中では蒸発した気体として存在するため、問題の定義では『蒸気』になる。組合せは正しい。"
           },
           {
             "number": 2,
@@ -566,23 +566,66 @@
           }
         ],
         "sources": [
-          {"title": "厚生労働省 モデルSDS ヨウ化メチル", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"},
-          {"title": "厚生労働省 モデルSDS 二硫化炭素", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"},
-          {"title": "厚生労働省 モデルSDS 硫化水素", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html"},
-          {"title": "厚生労働省 モデルSDS ホルムアルデヒド", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"},
-          {"title": "厚生労働省 モデルSDS 1,2-ジクロロプロパン", "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html"}
+          {
+            "title": "厚生労働省 モデルSDS ヨウ化メチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 二硫化炭素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 硫化水素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS ホルムアルデヒド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 1,2-ジクロロプロパン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html"
+          }
         ]
       },
       "sourceEvidence": [
-        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html", "excerpt": "沸点、初留点及び沸騰範囲 42.5℃", "choiceNumbers": [1]},
-        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html", "excerpt": "沸点、初留点及び沸騰範囲 46℃", "choiceNumbers": [2]},
-        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html", "excerpt": "沸点、初留点及び沸騰範囲 -60℃", "choiceNumbers": [3]},
-        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html", "excerpt": "沸点、初留点及び沸騰範囲 -20 ℃", "choiceNumbers": [4]},
-        {"url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html", "excerpt": "沸点、初留点及び沸騰範囲 96 ℃", "choiceNumbers": [5]}
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 42.5℃",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 46℃",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 -60℃",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 -20 ℃",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-87-5.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 96 ℃",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ],
-      "reviewIssues": [
-        "厚労省モデルSDSの5物質の沸点を直接照合済み。図表と全肢の独立Opus原文照合は未了。"
-      ]
+      "reviewIssues": []
     }
   }
 }

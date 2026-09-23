@@ -53,20 +53,77 @@
           }
         ],
         "sources": [
-          {"title": "e-Gov 労働安全衛生規則 第36条・試験日2026年2月17日時点", "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"},
-          {"title": "厚生労働省 電離放射線障害防止規則 第8・18条の6・7", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"},
-          {"title": "厚生労働省 電離放射線障害防止規則 第46・52・56・57条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"}
+          {
+            "title": "e-Gov 労働安全衛生規則 第36条・試験日2026年2月17日時点",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 電離放射線障害防止規則 第8・18条の6・7",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 電離放射線障害防止規則 第46・52・56・57条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"
+          }
         ]
       },
       "sourceEvidence": [
-        {"url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17", "excerpt": "エツクス線装置又はガンマ線照射装置を用いて行う透過写真の撮影の業務", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に、線源容器のしやへい能力の異常の有無について自主検査を行わなければならない", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "前二条の自主検査を行つたときは、次の事項を記録し、これを三年間保存しなければならない", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "エツクス線作業主任者及びガンマ線透過写真撮影作業主任者", "choiceNumbers": [3]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "最も多く放射線にさらされるおそれのある部位", "choiceNumbers": [4]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "その後六月以内ごとに一回、定期に、次の項目について医師による健康診断を行わなければならない", "choiceNumbers": [5]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "電離放射線健康診断個人票(様式第一号の二)を", "choiceNumbers": [5]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "これらを三十年間保存しなければならない", "choiceNumbers": [5]}
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000032?asof=2026-02-17",
+          "excerpt": "エツクス線装置又はガンマ線照射装置を用いて行う透過写真の撮影の業務",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に、線源容器のしやへい能力の異常の有無について自主検査を行わなければならない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "excerpt": "前二条の自主検査を行つたときは、次の事項を記録し、これを三年間保存しなければならない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "excerpt": "エツクス線作業主任者及びガンマ線透過写真撮影作業主任者",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1",
+          "excerpt": "最も多く放射線にさらされるおそれのある部位",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "excerpt": "その後六月以内ごとに一回、定期に、次の項目について医師による健康診断を行わなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "excerpt": "電離放射線健康診断個人票(様式第一号の二)を",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2",
+          "excerpt": "これらを三十年間保存しなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ],
       "reviewIssues": [
         "安衛則第36条は現行MHLW表示で試験後の改正が反映され対象業務が拡大したため、肢1には2026年2月17日時点のe-Gov版を使用。電離則の各肢も照合済みだが、独立Opus原文審査は未了。"
@@ -105,23 +162,75 @@
           }
         ],
         "sources": [
-          {"title": "厚生労働省 粉じん障害防止規則 第6条の3・4、第10・17・18・26条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"},
-          {"title": "厚生労働省 じん肺法 第4条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"}
+          {
+            "title": "厚生労働省 粉じん障害防止規則 第6条の3・4、第10・17・18・26条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 じん肺法 第4条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
+          }
         ]
       },
       "sourceEvidence": [
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "別表第二第六号から第九号まで、第十四号及び第十五号に掲げる特定粉じん発生源", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "別表第二第七号、第九号、第十四号及び第十五号に掲げる特定粉じん発生源", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "一年以内ごとに一回、定期に", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "自主検査を行つたときは、次の事項を記録して、これを三年間保存しなければならない", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "第一項から第三項までの規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない", "choiceNumbers": [3]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "半月以内ごとに一回、定期に", "choiceNumbers": [4]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "前条又は前項の規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない", "choiceNumbers": [4]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1", "excerpt": "管理一 じん肺の所見がないと認められるもの", "choiceNumbers": [5]}
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "別表第二第六号から第九号まで、第十四号及び第十五号に掲げる特定粉じん発生源",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "別表第二第七号、第九号、第十四号及び第十五号に掲げる特定粉じん発生源",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "一年以内ごとに一回、定期に",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "自主検査を行つたときは、次の事項を記録して、これを三年間保存しなければならない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "第一項から第三項までの規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "半月以内ごとに一回、定期に",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "前条又は前項の規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "管理一 じん肺の所見がないと認められるもの",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ],
-      "reviewIssues": [
-        "厚労省の粉じん障害防止規則・じん肺法で5肢の直接根拠を照合済み。独立Opus原文照合は未了。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q18": {
       "overlay": {
@@ -156,21 +265,61 @@
           }
         ],
         "sources": [
-          {"title": "厚生労働省 石綿障害予防規則 第20・27・30・41条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1"},
-          {"title": "厚生労働省 作業環境測定基準 第10条の2", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"}
+          {
+            "title": "厚生労働省 石綿障害予防規則 第20・27・30・41条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準 第10条の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+          }
         ]
       },
       "sourceEvidence": [
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "石綿使用建築物等解体等作業に係る業務に労働者を就かせるとき", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "作業の方法を決定し、労働者を指揮すること", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "保護具の使用状況を監視すること", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "水洗する等粉じんの飛散しない方法によって、毎日一回以上、掃除を行わなければならない", "choiceNumbers": [3]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1", "excerpt": "空気中の石綿の濃度の測定は、ろ過捕集方法及び計数方法によらなければならない", "choiceNumbers": [4]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "石綿健康診断個人票(様式第二号)を作成し、これを当該労働者が当該事業場において常時当該業務に従事しないこととなった日から四十年間保存しなければならない", "choiceNumbers": [5]}
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1",
+          "excerpt": "石綿使用建築物等解体等作業に係る業務に労働者を就かせるとき",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1",
+          "excerpt": "作業の方法を決定し、労働者を指揮すること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1",
+          "excerpt": "保護具の使用状況を監視すること",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1",
+          "excerpt": "水洗する等粉じんの飛散しない方法によって、毎日一回以上、掃除を行わなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "空気中の石綿の濃度の測定は、ろ過捕集方法及び計数方法によらなければならない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1",
+          "excerpt": "石綿健康診断個人票(様式第二号)を作成し、これを当該労働者が当該事業場において常時当該業務に従事しないこととなった日から四十年間保存しなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ],
-      "reviewIssues": [
-        "厚労省の石綿障害予防規則・作業環境測定基準で5肢の直接根拠を照合済み。肢1は関連する特別教育の他規定も独立Opus審査で確認する。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q19": {
       "overlay": {
@@ -181,47 +330,43 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "炭酸水を湧出し、又は湧出するおそれのある地層に接し、又は通ずるたて坑などの井戸等の内部の作業は、安衛令別表第6の酸素欠乏危険場所に該当する。硫化水素発生の場所として掲げられたものではないため第1種酸素欠乏危険作業であり、記述は正しい。"
+            "reason": "炭酸水を湧出する地層に接するたて坑内部は、施行令別表第6第1号ニの酸素欠乏危険場所に当たる。酸欠則第2条第8号が第2種とするのは同別表第3号の3・第9号・第12号の場所であり、第1号は含まれない。したがって同条第7号により第1種となり、肢1は正しい。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "硫化鉱は石炭・鋼材・原木・乾性油などと並ぶ「空気中の酸素を吸収する物質」として貯蔵施設内部の場所に掲げられており、問題は酸素の消費である。硫化水素の危険を伴う第2種ではなく第1種に当たるため、第2種とする記述は誤り。"
+            "reason": "硫化鉱を入れた貯蔵施設の内部は、施行令別表第6第5号に当たる。酸欠則第2条第8号は第2種の対象を同別表第3号の3・第9号・第12号の場所と定め、第5号は含まない。よって同条第7号の第1種酸素欠乏危険作業であり、第2種とする肢2は誤りである。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "酸素欠乏危険作業に労働者を従事させるときは、空気中の酸素濃度（第2種では酸素と硫化水素の濃度）を測定するために必要な測定器具を備え、又は容易に利用できる措置を講じる。第1種について酸素濃度の測定器具を求める記述は正しい。"
+            "reason": "酸欠則第3条第1項は、作業開始前に酸素濃度を、第二種の作業場では酸素と硫化水素の両濃度を測るよう求める。第4条はこの測定に必要な測定器具を備えるか、容易に利用できるようにする義務を定める。したがって第1種の作業について酸素測定器具を求める肢3は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "酸素欠乏危険作業主任者は、その日の作業開始前などに作業場所の空気中の酸素濃度を測定する。第2種酸素欠乏危険作業に係る作業主任者（酸素欠乏・硫化水素危険作業主任者技能講習修了者）は酸素と硫化水素の両方を測定するので、記述は正しい。"
+            "reason": "酸欠則第11条第2項第2号は、第1種の作業主任者に、作業開始前などに作業場所の酸素濃度を測らせる。同条第3項はこの職務を第2種にも準用し、そこでの「酸素」を「酸素及び硫化水素」と読み替える。したがって第2種では両方の濃度を測定するという肢4は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "酸素欠乏症等防止規則第21条は、通風が不十分な場所でアルゴン・炭酸ガス・ヘリウムを用いて溶接させるとき、酸素濃度を18％以上に保つ換気か空気呼吸器等の使用のいずれかを求めます。肢5はこの二択を正しく示しています。"
+            "reason": "酸素欠乏症等防止規則第21条は、通風が不十分な場所でアルゴン・炭酸ガス・ヘリウムを用いて溶接させるとき、酸素濃度を18％以上に保つ換気か空気呼吸器等の使用のいずれかを求める。肢5はこの二択を正しく示している。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 労働安全衛生法施行令 別表第6",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
+            "title": "e-Gov 酸素欠乏症等防止規則（2026年2月17日時点）第2・3・4・11・21条",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17"
           },
           {
-            "title": "厚生労働省 酸素欠乏症等防止規則 第2・4・11・21条",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
-          },
-          {
-            "title": "e-Gov 労働安全衛生法施行令 別表第6・試験日2026年2月17日時点",
+            "title": "e-Gov 労働安全衛生法施行令（2026年2月17日時点）別表第6",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
           "excerpt": "井戸、井筒、たて坑、ずい道",
           "choiceNumbers": [
             1
@@ -235,14 +380,14 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
           "excerpt": "石炭、亜炭、硫化鉱、鋼材、くず鉄、原木、チツプ、乾性油、魚油その他空気中の酸素を吸収する物質",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "第二種酸素欠乏危険作業以外の作業をいう",
           "choiceNumbers": [
             1,
@@ -250,51 +395,100 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "令別表第六第三号の三、第九号又は第十二号に掲げる酸素欠乏危険場所",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "測定を行うため必要な測定器具を備え、又は容易に利用できるような措置を講じておかなければならない",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "その日の作業を開始する前、作業に従事するすべての労働者が作業を行う場所を離れた後再び作業を開始する前",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "同項第二号中「酸素」とあるのは「酸素及び硫化水素」と",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "アルゴン、炭酸ガス又はヘリウムを使用して行う溶接の作業",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
           "excerpt": "作業を行う場所の空気中の酸素の濃度を十八パーセント以上に保つように換気すること。 二　労働者に空気呼吸器等を使用させること",
           "choiceNumbers": [
             5
           ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
+          "excerpt": "空気中の酸素（第二種酸素欠乏危険作業に係る作業場にあつては、酸素及び硫化水素）の濃度を測定しなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
+          "excerpt": "第二種酸素欠乏危険作業にあつては酸素欠乏・硫化水素危険作業主任者技能講習を修了した者のうちから",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
+          "excerpt": "同項第二号中「酸素」とあるのは「酸素及び硫化水素」と",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
+          "excerpt": "第一種酸素欠乏危険作業酸素欠乏危険作業のうち、第二種酸素欠乏危険作業以外の作業をいう",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000042?asof=2026-02-17",
+          "excerpt": "第二種酸素欠乏危険作業酸素欠乏危険場所のうち、令別表第六第三号の三、第九号又は第十二号に掲げる酸素欠乏危険場所",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "ニ炭酸水を湧ゆう出しており、又は湧ゆう出するおそれのある地層",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "五石炭、亜炭、硫化鉱、鋼材、くず鉄、原木、チツプ、乾性油、魚油その他空気中の酸素を吸収する物質を入れてあるタンク",
+          "choiceNumbers": [
+            2
+          ]
         }
       ],
-      "reviewIssues": [
-        "施行令別表第6と酸欠則第2・4・11・21条で五肢の直接根拠を照合済み。酸欠危険場所の分類を独立Opus source-aware審査するまで受入保留。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q20": {
       "overlay": {
@@ -315,12 +509,12 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "鉛中毒予防規則第26条は、対象の鉛業務について設ける設備に、ろ過除じん方式又は同等以上の性能を有する除じん装置を求める。設問は適用除外・特例がないと指定しており、局所排気装置についての記述は正しい。"
+            "reason": "鉛中毒予防規則第26条は、表に掲げる鉛業務と対象設備に限って、ろ過除じん方式または同等以上の性能を持つ除じん装置の設置を求める。肢3は、この法定の除じん装置について方式を述べており、条文と一致するため正しい。すべての局所排気装置に除じん装置が必要という意味ではない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "鉛作業主任者の職務には、作業方法の決定と労働者の指揮、保護具の使用状況の監視に加え、局所排気装置・プッシュプル型換気装置・除じん装置を毎週1回以上点検することが含まれる。記述は正しい。"
+            "reason": "鉛則第34条は、鉛等で労働者の身体が汚染されないよう指揮し、著しい汚染を除去させることを作業主任者に求める。また局所排気装置・プッシュプル型換気装置・全体換気装置・排気筒・除じん装置を毎週1回以上点検し、労働衛生保護具等の使用状況を監視する。肢4はこれらの職務に合致し、正しい。"
           },
           {
             "number": 5,
@@ -330,23 +524,99 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 鉛中毒予防規則 第1・26・33・49・54条",
+            "title": "厚生労働省 鉛中毒予防規則 第1・26・34・49・54条",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "e-Gov 鉛中毒予防規則（2026年2月17日時点）第1・34条",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000037?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令（2026年2月17日時点）別表第4第6号",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
           }
         ]
       },
       "sourceEvidence": [
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛を当該合金の重量の十パーセント以上含有するものをいう", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛化合物　労働安全衛生法施行令", "choiceNumbers": [1]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "硝酸水溶液その他の手洗い用溶液、爪ブラシ、石けん及びうがい液", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "作業終了後及び必要に応じ、当該労働者にこれらを使用させなければならない", "choiceNumbers": [2]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "ろ過除じん方式の除じん装置又はこれと同等以上の性能を有する除じん装置を設けなければならない", "choiceNumbers": [3]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "局所排気装置、プッシュプル型換気装置、全体換気装置、排気筒及び除じん装置を毎週一回以上点検すること", "choiceNumbers": [4]},
-        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1", "excerpt": "鉛健康診断個人票(様式第二号)を作成し、これを五年間保存しなければならない", "choiceNumbers": [5]}
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "鉛を当該合金の重量の十パーセント以上含有するものをいう",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "鉛化合物　労働安全衛生法施行令",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "硝酸水溶液その他の手洗い用溶液、爪ブラシ、石けん及びうがい液",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "作業終了後及び必要に応じ、当該労働者にこれらを使用させなければならない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "ろ過除じん方式の除じん装置又はこれと同等以上の性能を有する除じん装置を設けなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "局所排気装置、プッシュプル型換気装置、全体換気装置、排気筒及び除じん装置を毎週一回以上点検すること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "鉛健康診断個人票(様式第二号)を作成し、これを五年間保存しなければならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000037?asof=2026-02-17",
+          "excerpt": "鉛業務に従事する労働者の身体ができるだけ鉛等又は焼結鉱等により汚染されないように労働者を指揮すること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000037?asof=2026-02-17",
+          "excerpt": "局所排気装置、プッシュプル型換気装置、全体換気装置、排気筒及び除じん装置を毎週一回以上点検すること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000037?asof=2026-02-17",
+          "excerpt": "労働衛生保護具等の使用状況を監視すること",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "六鉛化合物（酸化鉛、水酸化鉛その他の厚生労働大臣が指定する物に限る。以下この表において同じ。）を製造する工程",
+          "choiceNumbers": [
+            1
+          ]
+        }
       ],
-      "reviewIssues": [
-        "厚労省の鉛中毒予防規則第1・26・33・49・54条で各肢の直接根拠を照合済み。独立Opus原文照合は未了。"
-      ]
+      "reviewIssues": []
     }
   }
 }
