@@ -14,6 +14,7 @@ import fixQueue from "@/docs/evidence/ipa-choice-explanations/fix-queue.json";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 const ROOT = process.cwd();
+const RUN_ID = new Date().toISOString().replace(/[-:.TZ]/gu, "").slice(0, 14);
 const LOG_ROOT = join(ROOT, "logs", "ipa-choice-explanations-core");
 const RECEIPT_ROOT = join(ROOT, "docs", "evidence", "ipa-choice-explanations", "reviews", "generated");
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"];
@@ -386,7 +387,7 @@ async function processBatch(
   overlays: Record<CoreExam, Overlay>,
 ): Promise<{ accepted: number; pending: number }> {
   const token = sha256(originalBatch.map((question) => question.id)).slice(0, 12);
-  const batchName = `${String(batchIndex + 1).padStart(4, "0")}-${token}`;
+  const batchName = `${RUN_ID}-${String(batchIndex + 1).padStart(4, "0")}-${token}`;
   let batch = [...originalBatch];
   let previous: { draft: Overlay; review: Review } | undefined;
   let accepted = 0;
