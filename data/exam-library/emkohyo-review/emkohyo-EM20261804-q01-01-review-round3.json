@@ -6,14 +6,14 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 569,
+      "outputTokens": 1281,
       "cacheReadInputTokens": 115183,
-      "cacheCreationInputTokens": 14602,
+      "cacheCreationInputTokens": 14611,
       "webSearchRequests": 0,
-      "costUSD": 0.1512406,
+      "costUSD": 0.1655526,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 485,
+      "thinkingTokens": 969,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
@@ -33,16 +33,18 @@
   },
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-EM20261804-q1": "bbb89cd4595408360fb875d5d4448eb589580f662ab4b6942fe3d6c1a856d1a2"
+    "emkohyo-EM20261804-q1": "9b0809dd74831b13780c295971bf1e32e73cb44e585de5d3a9bfa2925f7c6f8f"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q01-01.json",
-  "sourcePackSha256": "76d986903209d314205ec530055a71b2436634d37393e517e533356c01616ef0",
+  "sourcePackSha256": "4f2d9529fb43f1f8b55ed33fe488f709f170851bbdda482f78b582ee100ae2bc",
   "assessment": {
     "emkohyo-EM20261804-q1": {
-      "status": "PASS",
+      "status": "FIX",
       "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [],
+      "reasonIssues": [
+        "肢2の解説だけが「記載しています」「正しいです」「該当しません」と、です・ます調で書かれている。肢1・3・4・5と要約は「である」調で統一されているため、肢2も同じ調子にそろえる必要がある。例：「アボガドロ定数は6.02214076×10²³ mol⁻¹と定義される定数で、単位はmol⁻¹である。組合せは正しいため、誤りを選ぶ本問でこの肢を選ぶと不正解になる。」内容自体（値・単位・正誤判定）は産総研の表と一致しており、誤りはない。"
+      ],
       "sourceIssues": [],
       "needsExternalCheck": []
     }

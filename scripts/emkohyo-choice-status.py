@@ -67,6 +67,14 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
     if len(matching) != 1:
         return False
     receipt = matching[0]
+    model = "claude-opus-5-5"
+    usage = receipt.get("modelUsage")
+    if (receipt.get("requestedModel") != model or receipt.get("reviewModel") != model
+            or receipt.get("canonicalModel") != model or not isinstance(usage, dict)
+            or set(usage) != {model} or usage[model].get("canonicalModel") != model
+            or receipt.get("provider") != usage[model].get("provider")
+            or not receipt.get("provider")):
+        return False
     assessment = receipt.get("assessment", {}).get(id_, {})
     issue_keys = ("textIssues", "choiceIssues", "reasonIssues", "sourceIssues", "needsExternalCheck")
     if assessment.get("status") != "PASS" or any(assessment.get(key) for key in issue_keys):

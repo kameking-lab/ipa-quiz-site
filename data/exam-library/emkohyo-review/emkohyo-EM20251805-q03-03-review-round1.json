@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1858,
+      "cacheReadInputTokens": 125175,
+      "cacheCreationInputTokens": 15528,
+      "webSearchRequests": 0,
+      "costUSD": 0.186427,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 871,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q3": {
+      "/exam-library/emkohyo-EM20251805/q3-p3-0.webp": "ffd3ad1abb2d52d98dade890f88ea6422719068129b1e23da2eeea5e9cbaa36f"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q3": "5ddeca3c71b92615895f64f326a91a0f37fb437a09439cfdc186947548248857"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q03-03.json",
+  "sourcePackSha256": "f8b0e47e3ed2cfabbe5825013ceecafbd22c7c5499f45e8e0df82d3cc0e0ee57",
+  "assessment": {
+    "emkohyo-EM20251805-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は「厚労省が示す構造式HCON(CH₃)₂」と書いているが、政府資料の証拠では確認できていない。モデルSDSの該当欄は「化学特性(示性式又は構造式)」の直後が空で、すぐ「CAS番号68-12-2」に続く。構造式は画像か空欄とみられ、HCON(CH₃)₂という文字列は取れていない。リスク評価書PDFからは抜粋が一つも取れていない。証拠として出せる形で構造式を示すか、「厚労省が示す」という帰属を外し、確認済みの分子式C3H7NOと一般的な化学知識を根拠とする書き方に改めること。",
+        "肢1・肢5の理由も構造式HCON(CH₃)₂を前提にしている（窒素が一つ、C=Oがある、アミドである）。窒素が一つであることは、SDSの分子式C3H7NOで直接裏付けられるので、その根拠を明記したほうがよい。カルボニル基をもつこと、アミド（-CO-N<）でありアミノ基ではないことは、分子式だけでは決まらない。確認済みの政府資料では直接裏付けられていないので、構造の根拠を補強すること。"
+      ],
+      "sourceIssues": [
+        "厚生労働省「N,N-ジメチルホルムアミドのリスク評価書」（000943313.pdf）は取得できている（status 200、73ページ）が、抜粋が0件である。どの理由も直接には支えておらず、出典として挙げる裏付けがない。構造式や官能基の記載がある箇所の抜粋を付けるか、出典から外すこと。",
+        "モデルSDS（68-12-2.html）で直接確認できたのは、分子式C3H7NO（73）、物理状態「液体」、融点−61℃、沸点153℃だけである。常温常圧で液体であることは、融点と沸点がともに常温の範囲外にあることから支持され、温度・単位も出典と合っている。一方、官能基（カルボニル基／アミド、アミノ基ではない）を直接支える政府資料の記述はない。"
+      ],
+      "needsExternalCheck": [
+        "リスク評価書PDF 000943313.pdf の物質の同定・性状の節に、構造式（HCON(CH₃)₂）または示性式が載っているか確認し、あればページ番号と抜粋を記録すること。",
+        "モデルSDS（68-12-2.html）の「化学特性(示性式又は構造式)」欄が画像で表示されているか確認し、画像ならその内容がHCON(CH₃)₂と一致するか見ること。"
+      ]
+    }
+  }
+}

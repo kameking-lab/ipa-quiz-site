@@ -4,7 +4,7 @@
     3,
     3
   ],
-  "draftSha256": "fcd9a62d39bc8a3b23ec762a0384db2572ce8bd99ac0c37903f917420b42928c",
+  "draftSha256": "667f070bfd1aba17dd87b4916fe747ad15775471a712fb78d7cd97ea7f6b50da",
   "sources": [
     {
       "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
@@ -13,6 +13,7 @@
       "sha256": "a2ac4aedf15ac050e73fc730690b29a306244f520b58ff51831fc9c8c96ac417",
       "contentType": "text/html",
       "pages": 1,
+      "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20251805-q3",
@@ -52,16 +53,25 @@
       ]
     },
     {
-      "url": "https://www.mhlw.go.jp/content/11305000/000943313.pdf",
+      "url": "https://internal.fdma.go.jp/kiken-info/material/m_00372.html",
       "status": 200,
-      "finalUrl": "https://www.mhlw.go.jp/content/11305000/000943313.pdf",
-      "sha256": "130c582236def081d2ef170659859d30a67674fbc1c22500bc76f5f6f15b4349",
-      "contentType": "application/pdf",
-      "pages": 73,
-      "claimedExcerpts": []
+      "finalUrl": "https://internal.fdma.go.jp/kiken-info/material/m_00372.html",
+      "sha256": "3f1710fb6c0950d10d1026e4c48c01c101e3f7b92394a76f61c501bec5044f13",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251805-q3",
+          "excerpt": "示性式 HCON(CH3)2",
+          "matched": true,
+          "pdfPage": 1,
+          "context": ",N-DIMETHYLFORMAMIDEホルミルジメチルアミンＤＭＦＤＭＦＡN,N-ジメチルホルムアミドDimethylformamideDMFDMFA登録番号CAS番号68-12-2国連番号2265示性式HCON(CH3)2危険物分類危険物質消防活動阻害物質主成分含有率状態液体爆発範囲2.2～15.2vol％(空気中)(100℃)色無色比重0.95臭気特徴臭蒸気比重2.51引火点58℃融点-61℃発火点４４５℃水溶性石油"
+        }
+      ]
     }
   ],
-  "claimedExcerpts": 5,
+  "claimedExcerpts": 6,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0
 }
