@@ -18,6 +18,10 @@ BATCHES = ROOT / "data/raw_pdfs/denko2/review/batches"
 REVIEWED = ROOT / "data/questions/denko2/reviewed"
 RECEIPTS = ROOT / "docs/evidence/denko2-independent"
 CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+SHARED_FIGURES = {
+    "20240526": [ROOT / "public/images/denko2/2024-first/wiring-main.png",
+                 ROOT / "public/images/denko2/2024-first/wiring-panels.png"],
+}
 
 
 def draft_for(batch_path: Path, part: int) -> tuple[list[dict], Path]:
@@ -41,11 +45,23 @@ def check(batch_path: Path, part: int) -> str:
         "rowSha256": {str(item["number"]): sha256((ROOT / item["reviewCrop"]).read_bytes()).hexdigest()
                       for item in original},
     }
+    shared_figures = SHARED_FIGURES.get(batch_path.stem[:8], []) if any(item["number"] >= 31 for item in original) else []
+    if shared_figures:
+        hashes["sharedFigureSha256"] = {str(path.relative_to(ROOT)).replace("\\", "/"): sha256(path.read_bytes()).hexdigest()
+                                        for path in shared_figures}
+    detail_figures = {}
+    for item in draft:
+        for image_url in item.get("imageUrls", []) + list(item.get("choiceImageUrls", {}).values()):
+            path = ROOT / "public" / image_url.lstrip("/")
+            if path not in shared_figures:
+                detail_figures[str(path.relative_to(ROOT)).replace("\\", "/")] = sha256(path.read_bytes()).hexdigest()
+    if detail_figures:
+        hashes["detailFigureSha256"] = detail_figures
     if output.exists():
         previous = json.loads(output.read_text(encoding="utf-8"))
         if previous.get("inputHashes") == hashes:
             return f"{output.name}: existing and input hashes match"
-        old_sha = previous.get("inputHashes", {}).get("draftSha256", "unknown")[:12]
+        old_sha = sha256(json.dumps(previous.get("inputHashes", {}), sort_keys=True).encode("utf-8")).hexdigest()[:12]
         archive = BATCHES / "independent-archive"
         archive.mkdir(parents=True, exist_ok=True)
         stale = archive / (output.stem + f"-old-{old_sha}.json")
@@ -69,6 +85,18 @@ def check(batch_path: Path, part: int) -> str:
         blocks.append({"type": "text", "text": f"問{number}。公式正答={source['officialAnswer']}。清書JSON={json.dumps(candidate, ensure_ascii=False)}"})
         blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                  "data": b64encode((ROOT / source["reviewCrop"]).read_bytes()).decode("ascii")}})
+        detail_urls = candidate.get("imageUrls", []) + list(candidate.get("choiceImageUrls", {}).values())
+        for image_url in detail_urls:
+            path = ROOT / "public" / image_url.lstrip("/")
+            if path in shared_figures:
+                continue
+            blocks.append({"type": "text", "text": f"問{number}の図記号拡大図（原本PDFから図だけ切り出し）: {path.name}"})
+            blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                     "data": b64encode(path.read_bytes()).decode("ascii")}})
+    for path in shared_figures:
+        blocks.append({"type": "text", "text": f"公式問題PDFの共通配線図のみ（別頁）。参照画像: {path.name}。丸数字①〜⑳の矢印を辿って設問と照合すること。"})
+        blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                 "data": b64encode(path.read_bytes()).decode("ascii")}})
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
     process = subprocess.run(
         [str(CLI), "-p", "--model", "opus", "--effort", "medium", "--input-format", "stream-json",

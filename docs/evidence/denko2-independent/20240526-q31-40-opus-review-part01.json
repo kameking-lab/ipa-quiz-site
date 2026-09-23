@@ -1,89 +1,74 @@
 {
   "inputHashes": {
-    "draftSha256": "fdd2a39468e7f81895ad53937adf14ae6a64eb221ae1d892e2f8396ba92c9070",
+    "draftSha256": "a8682c4a301ed014a85f8041235efb950cccf8d43bd7da0f0a75f8d2a26a3018",
     "rowSha256": {
       "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3",
       "32": "d0d51ef6fbc4b894367051e35a6757936fe0940f2ba9de3ec449368371f6f0a8",
       "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b",
       "34": "0a90448670bc7974c2b243ac35c299fe539eb18b8bbe096d24f10498abfe37a1",
       "35": "27e65a19d859afdf2fd176e179e0202a675e8ac11c5338843f60e14202ee5bcb"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q31-symbol.png": "8d423c170fe578d9a2613c72b92c6fd0ad710c36bfefa090eb12750cc26643f8",
+      "public/images/denko2/2024-first/q33-i.png": "90db5c0eb9186403d8f2b75125afb5962fc193990b9615a300f7d2131f6877a0",
+      "public/images/denko2/2024-first/q33-ro.png": "193e313e13a1cab18b7a19a8f8172e3396e0f879ed544ea758140a3dea9ff965",
+      "public/images/denko2/2024-first/q33-ha.png": "821eb6d5b329684dd5694de55f7f4e5bca45dad869de9afed3651dc1a5c7f2f3",
+      "public/images/denko2/2024-first/q33-ni.png": "d4ad2c650e13cfed89f1186185a21e1bb853f06f9934736da649948fbce8ea56",
+      "public/images/denko2/2024-first/q34-symbol.png": "c4da63ef55a0c3d43fb63c61c5a903e5c1e4d28527ced02638682fcae403654b"
     }
   },
   "reviewModel": "claude-opus-5-5",
   "assessment": [
     {
       "number": 31,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "The image contains only the question text and choices イ〜ニ; symbol ① itself is not there. Yet explanation and choiceExplanations.イ state as fact that the symbol matches the notation for a リモコンセレクタスイッチ. The source provides no basis for this, so the explanation just restates the official answer.",
-        "choiceExplanations.ロ/ハ/ニ say each is 'shown by a different dedicated symbol that differs from the shape of ①', but they never say what ① looks like or how it differs from each symbol. The wrong-answer reasons have no concrete content.",
-        "The explanation should describe the actual shape of ① from the wiring drawing (the full plan view), then explain the difference from the symbols for 漏電警報器, リモコントランス and 表示スイッチ. It should not be finalized until that is added."
-      ],
-      "figureIssues": [
-        "The ① symbol on the wiring drawing needs to be cross-checked against a separate image. diagramDescription correctly says the symbol is not in the cropped image."
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "The correspondence between the ① symbol and the name リモコンセレクタスイッチ (JIS C 0303 graphical symbols for building wiring) needs to be checked against the wiring drawing and the standard."
+        "解説は、円内に交差線（⊗）を描き『6』を傍記した記号をリモコンセレクタスイッチ（6点）としている。JIS C 0303 の図記号定義とは、画像の外で照合する必要がある。",
+        "officialReferenceUrls の mlit.go.jp/koku/content/001611774.pdf が、どの基準文書（図記号表）か画像からは判断できない。問32・問34と共通。"
       ]
     },
     {
       "number": 32,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "The explanation says '②の図記号は天井面に取り付ける照明器具等を表す図記号'. Symbol ② is not in the image, so nothing confirms that ② is a light fixture. 「照明器具等」 is speculation.",
-        "The question asks where the fixture is mounted. The answer depends on how the mounting location is marked on symbol ② (for example, whether it has a mark added for a floor, wall or raised-floor location). The explanation never states this and just asserts 'the ceiling is the mounting location'.",
-        "choiceExplanations.イ/ハ/ニ only say 'the notation differs from the symbol for floor / wall / raised-floor mounting'. They never say how the notation differs, so the wrong-answer reasons have no concrete content.",
-        "choiceExplanations.ニ adds the example '二重床面（フロアコンセント等）'. That example is unrelated to what ② actually is and may mislead readers."
-      ],
-      "figureIssues": [
-        "The shape of the ② symbol on the wiring drawing, and whether it carries any mounting-location mark, needs to be checked against a separate image."
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "How mounting locations (ceiling, floor, wall, raised floor) are marked on the symbol in JIS C 0303 needs to be checked against the standard."
+        "解説は、半塗りのない白抜き円に縦線2本を描いたコンセント記号を天井取付けとし、壁側を半塗りした記号を壁付けとしている。JIS C 0303 の定義とは外部で照合する必要がある。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001611774.pdf）が図記号の根拠文書として妥当かは要確認。"
       ]
     },
     {
       "number": 33,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
-      "choiceIssues": [
-        "The description of choice イ is wrong. In the source, イ has a hooked L-shaped slot lying horizontally on the left, a horizontal flat slot on the right, and a round ground hole at the bottom center. The JSON describes it as 'two horizontal flat slots side by side on top' and also 'two vertically elongated slots side by side', which contradicts itself and misses the L-shaped slot.",
-        "In choice ニ, left and right are reversed. In the source, ニ has the L-shaped (hooked) slot on the left and a vertical flat slot on the right, with the ground hole at the bottom. The JSON says '左側に縦向き、右側にL字状'.",
-        "The descriptions of ロ (two vertical flat slots + ground hole) and ハ (two horizontal flat slots + ground hole) match the source."
-      ],
-      "explanationIssues": [
-        "choiceExplanations.イ says イ is wrong because it 'has no L-shaped blade'. In the source, イ does have an L-shaped slot. The wrong-answer reason contradicts the choice image. The correct way to tell イ and ニ apart is the orientation: イ has its slots horizontal (250 V configuration) and ニ has them vertical (125 V configuration). This needs to be rewritten.",
-        "Because both イ and ニ have L-shaped slots, the explanation's 'the L-shaped slot matches the conditions of use of ③' does not separate ニ from イ. The explanation must link the rated voltage and current shown by ③ (for example, a notation like 20A, 接地極付) to the vertical-L configuration of ニ.",
-        "choiceExplanations.ロ/ハ are right that neither has an L-shaped slot, but they do not say what rating each configuration represents (ロ: 125 V 15 A with ground, ハ: 250 V 15 A with ground) or why that rating does not fit ③."
-      ],
-      "figureIssues": [
-        "diagramDescription says the choices differ only in 'horizontal parallel pair / vertical parallel pair / one L-shaped slot'. The source has four distinct patterns: イ (horizontal + L), ロ (vertical pair), ハ (horizontal pair) and ニ (vertical + L). Describing only one choice as L-shaped misrepresents the image.",
-        "The notation for ③ on the wiring drawing (rated current, voltage, grounding) needs to be checked against a separate image."
-      ],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "The correspondence between each slot configuration and its rating (125 V/250 V, 15 A/20 A, grounded) under JIS C 8303 needs to be checked against the standard.",
-        "The rating that ③ requires (the notation on the wiring drawing) needs to be checked."
+        "解説は、横L字＋横平刃を250V 20A、縦平刃2本を125V 15A、横平刃2本を250V 15A、縦L字＋縦平刃を125V 20Aとし、いずれも接地極付きとしている。この刃受の定格対応は、電気用品の技術基準の解釈 別表第四（officialReferenceUrls の beppyoudai4.pdf）の該当図と照合する必要がある。",
+        "『E』は接地極付き、『20A』は定格20Aを表すとする傍記の読みは、JIS C 0303 と照合する必要がある。"
       ]
     },
     {
       "number": 34,
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "explanationIssues": [
-        "Symbol ④ is not in the image, but explanation and choiceExplanations.イ state as fact that the symbol matches the notation for a 誘導灯. The source provides no basis for this.",
-        "choiceExplanations.ロ/ハ/ニ only say 'a different dedicated symbol'. The key distinction, how the 誘導灯 symbol differs in shape from the 非常用照明 symbol (choice ニ), is not given, so the wrong-answer reasons have no concrete content.",
-        "The explanation calls a 誘導灯 an 'illuminating fixture that shows the evacuation direction'. Given that a 誘導灯 is a separate category from 非常用照明, the explanation should say how they differ in role (guiding evacuation vs. lighting a room during a power failure)."
-      ],
-      "figureIssues": [
-        "The ④ symbol on the wiring drawing needs to be cross-checked against a separate image. diagramDescription correctly says the symbol is not in the cropped image."
-      ],
+      "explanationIssues": [],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "The correspondence between the symbols for 誘導灯 and 非常用照明 in JIS C 0303 needs to be checked against the standard."
+        "解説は、横長の棒と、相対する区画を黒く塗った円とを組み合わせた記号を誘導灯（蛍光灯形）としている。JIS C 0303 の定義とは外部で照合する必要がある。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001611774.pdf）の文書の種類は要確認。"
       ]
     },
     {
@@ -92,11 +77,11 @@
       "textIssues": [],
       "choiceIssues": [],
       "explanationIssues": [],
-      "figureIssues": [
-        "The (VE28) notation for ⑤ on the wiring drawing needs to be checked against a separate image. The question text itself states (VE28), which matches the source."
-      ],
+      "figureIssues": [],
       "lawNeedsExternalCheck": [
-        "The claim that the size designation of VE conduit (硬質ポリ塩化ビニル電線管) is based on the inside diameter (the nearest even number) needs to be checked against JIS C 8430."
+        "VEは硬質ポリ塩化ビニル電線管で、呼び28はおおよその内径を表すとしている。この点は JIS C 8430 等の呼び径の定義と外部で照合する必要がある。",
+        "diagramDescription は一点鎖線の配線を『埋設配線』と読んでいる。これは JIS C 0303 の線種定義に基づく推定なので要確認。",
+        "officialReferenceUrls の mlit.go.jp/koku/content/001885918.pdf の文書の種類は要確認。"
       ]
     }
   ]
