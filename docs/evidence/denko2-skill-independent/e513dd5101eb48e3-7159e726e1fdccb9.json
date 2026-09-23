@@ -1,0 +1,29 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "e513dd5101eb48e35d11b474cb91c2b6b2f85a2d345122a0238b5c222ff5491e",
+    "answerPdfSha256": "7159e726e1fdccb9440bdcee537981c9624eede336735d578dfe85d473bb0913",
+    "extractedRecordSha256": "67ec50020dc1fc1ea0a871a919fe16499bb2f0a62206e1ea2b7947713d1523f4"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-07-19-skill-12",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [
+      "Material 7 has a misplaced closing parenthesis, likely from the PDF text layer. The source reads 'ジョイントボックス（アウトレットボックス）（19mm 4箇所ノックアウト打抜き済み）'. The JSON reads 'ジョイントボックス（アウトレットボックス（） 19mm 4 箇所ノックアウト打抜き済み）'. The name, size and count still match, so this is a bracket fix only."
+    ],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "Test instructions: the time limit (40 minutes), the requirement to use all materials except spares, and items 1-3 of the 'なお' list (boxes not supplied, insulation skipped, no mounting board) all match the source.",
+      "Supplied materials: all 18 items match the source. That covers type, size, number of cores, sheath colour, length and quantity. Checked details include VVF 2.0-2C blue sheath about 250mm ×1, VVF 1.6-2C about 1000mm ×1, VVF 1.6-3C about 350mm ×1, and IV black 500mm, white 400mm and red 400mm ×1 each. The rest are PF16 about 70mm ×1, PF16 box connector ×1, lamp receptacle ×1, ceiling rosette (square body only) ×1, tumbler switch ×2, outlet ×1, mounting frame ×1, rubber bushing (19) ×3, small ring sleeve 6 (spares included), 2-wire push-in connector ×2 and 3-wire push-in connector ×1. The exam number tag and plastic bag in the lower part of the table are correctly left out.",
+      "Construction conditions: all 6 match the source. Condition 3 has 3 white-wire terminals (outlet W, lamp receptacle screw-shell terminal, rosette grounded-side terminal). Condition 4 requires push-in connectors at A and ring sleeves at B. Condition 5 puts the box connector on the junction-box side. Condition 6 uses the mounting frame for switch (ロ) and the outlet.",
+      "Notes below the diagram: note 1 (JIS C 0303:2000, parts omitted or simplified) and note 2 (Ⓡ means lamp receptacle) match the source.",
+      "diagramImage crop: every label and symbol is readable and nothing is cut off. That includes 電源 1φ2W 100V, the dimensions 150mm ×5 and 200mm, and the cable labels VVF 2.0-2C, VVF 1.6-2C ×3, VVF 1.6-3C and IV 1.6×3 (PF16). It also includes the A and B symbols, the イ and ロ labels, Ⓡ, the ceiling rosette, the switch dots, and the switch-plus-outlet combination. The outlet symbol at the right edge is close to the crop boundary but fully shown.",
+      "This problem has no Figure 2 and no omitted-construction area, so a secondFigureImage is not needed.",
+      "Model answer: the title on answer PDF page 1 is '候補No. 12', which matches this problem's No. 12. The concept diagram, the multi-wire diagram and the example photo all match the problem. They show VVF2.0-2C for the supply and PF16 to the switch (ロ) and outlet. They show the ロ lamp receptacle, the イ ceiling rosette and the イ switch, push-in connectors at A and ring sleeves at B. They also show 3 rubber bushings, with the fourth hole taken by the PF connector, and red wire as the switched line for switch ロ.",
+      "PDF text layer: the diagram labels (1φ2W, the dimensions, the cable labels) are inside the image and are not pulled out as text, which is fine because they are shown via diagramImage. The circled R (Ⓡ) in the notes is correctly rendered as Ⓡ in the JSON. No formulas or other text that failed to extract were found.",
+      "This check only compares the extracted content with the original PDFs. It does not grade a physical finished work."
+    ]
+  }
+}
