@@ -46,7 +46,10 @@ def main() -> None:
             raise ValueError(f"Q{number} absent/duplicated in direct review {relative}")
         current_group = [candidates[value] for value in group_numbers]
         hashes = review.get("inputHashes", {})
-        if hashes.get("draftSha256") != canonical(current_group):
+        candidate_hash = hashes.get("candidateSha256", {}).get(label)
+        if candidate_hash is not None and candidate_hash != canonical(candidate):
+            raise ValueError(f"Q{number} direct review question hash stale: {relative}")
+        if candidate_hash is None and hashes.get("draftSha256") != canonical(current_group):
             raise ValueError(f"Q{number} direct review candidate hash stale: {relative}")
         if hashes.get("rowSha256", {}).get(label) != digest(ROOT / source["reviewCrop"]):
             raise ValueError(f"Q{number} original row hash stale")

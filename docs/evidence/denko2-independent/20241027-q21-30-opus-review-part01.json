@@ -1,10 +1,10 @@
 {
   "inputHashes": {
-    "draftSha256": "2af46c9bd2a525a22fe0e5dadd02c0a0e78c7dc8bbb0103a6087db3af14bbd0d",
+    "draftSha256": "10bc5f6cf55cb7f23b8d77f41a474d8c7fbbdbe35b02ce7ca9311c16a1381df7",
     "candidateSha256": {
       "21": "7a74cab352e173347ac49e19897c7e67a4fff5a3e4612b83467bc9743851fb30",
       "22": "2e203de38989dc07a6d633ddd76624d075eb5d6424b1e276d806f7187371669b",
-      "23": "81ccdc1cc3921fd16dbff618519440a2676ddc2196bf936a03a22ec1f11f7e61",
+      "23": "7350ef94a7c613b7f5bd8db19566a754e1b3091ed5553dec75c159d8a0e7663c",
       "24": "1a52d614f11f5b2a5c34432df520bc123f22ff8ed14a21caa9b70da1b468d7ef",
       "25": "2ed4280a57da3edb7da7c0b96928955f9a016653645d2dc54ef36c2ba940cf5e"
     },
@@ -21,7 +21,7 @@
     "legalReceiptSha256": {
       "docs/evidence/denko2-law/20241027-q21.json": "aac74223328687bfc728bff4f10b6b1376faf4cf30b99f6b5fca4b637addfdd0",
       "docs/evidence/denko2-law/20241027-q22.json": "8d97737b51aed23c140fede8874f9860fdb5016f46a3a8c291d6549c89192733",
-      "docs/evidence/denko2-law/20241027-q23.json": "a7e8ffe197716db9688df23c72bddfaaa76b2010d6159a3c10e67c93cd96a6d5"
+      "docs/evidence/denko2-law/20241027-q23.json": "b5683f6fffa87b42719e59f607fc3fa5be01f4c74f902617911c068fe95624c9"
     },
     "sourcePackSha256": {},
     "sourceFigureSha256": {}
@@ -52,14 +52,10 @@
       "textIssues": [],
       "choiceIssues": [],
       "explanationIssues": [
-        "officialReferenceUrls が空配列になっている。照合receiptでは解釈第159条（meti 20231226-2.pdf）と農水省 denkisetsubi_koutei-21.pdf p.69 の2件を照合済みなので、JSON側にもこの2件を記載すべき。",
-        "イの肢別理由に「同じ太さの電線のみを収める場合には32%規定を用いない」とある。receiptで確認できたのは「同一太さ8mm²以下は内線規程3115-7表を参照」「異なる太さでは32%以下」の2点だけ。同一太さでも8mm²を超える場合は表の対象外であり、断定の範囲が広すぎる。「同一太さ8mm²以下の場合は表による」と限定して書くべき。"
+        "肢イの理由は計算自体は正しい（3×(6.0÷22.2)²≈21.9%）。しかし「管内に十分な空間を残せるため適切」とだけ書いており、適否をどの基準で判定したかが示されていない。同じ太さの電線を入れる場合の判定基準は、receipt（p.69）では内線規程3115-7表を参照するとしている。一方、その表で8mm²×3本がC25に収まるという値はreceiptで照合されていない。本文は32%基準を「本肢に直接適用する規定とは区別する」として除外したが、代わりの基準を示していないため、適切と言える根拠が欠けている。修正案は二つ。3115-7表の該当値を照合して示すか、21.9%が太さの異なる電線を混ぜる場合の厳しい32%基準も下回るので、どの基準でも収まると明記する。"
       ],
       "figureIssues": [],
-      "lawNeedsExternalCheck": [
-        "ニの肢別理由にある「ボックス間の配管では直角又はそれに近い屈曲箇所を3箇所を超えて設けない（4箇所以上は不可）」という内線規程の規定は、receiptの照合句（「屈曲が少ない場合の引入れ・引替えに関する条件」）では検証されていない。未照合のため一次資料で要確認。",
-        "イの肢別理由にある「太さ25mmの薄鋼電線管に8mm²のビニル絶縁電線を3本まで収容できる」という表の具体値は未照合。receiptが検証したのは3115-7表を参照せよという指示だけで、表の中身ではない。表本体での確認が必要。"
-      ]
+      "lawNeedsExternalCheck": []
     },
     {
       "number": 24,
