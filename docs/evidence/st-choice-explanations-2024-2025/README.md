@@ -43,5 +43,5 @@
 - TypeScript型検査: 成功
 - 対象ESLint: 成功
 - 全問題検証: 14,784問、失敗0件
-- Next.js build: 3,195ページ生成成功
+- Next.js build: 3,209ページ生成成功
 - ITストラテジスト導線E2E: 5件成功
