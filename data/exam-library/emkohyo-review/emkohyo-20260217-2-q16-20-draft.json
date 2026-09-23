@@ -52,13 +52,24 @@
             "reason": "管理区域に立ち入る放射線業務常時従事者には、雇入れ時・配置替え時とその後6か月以内ごとに1回の健康診断を行う。電離放射線健康診断個人票は、厚生労働大臣が指定する機関に引き渡す場合を除き30年間保存するので、記述は正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {"title": "厚生労働省 労働安全衛生規則 第36条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"},
+          {"title": "厚生労働省 電離放射線障害防止規則 第8・18条の6・7", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1"},
+          {"title": "厚生労働省 電離放射線障害防止規則 第46・52・56・57条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2"}
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2", "excerpt": "エックス線装置又はガンマ線照射装置を取り扱う業務", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "透過写真撮影用ガンマ線照射装置については、六月以内ごとに一回、定期に、線源容器のしやへい能力の異常の有無について自主検査を行わなければならない", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "前二条の自主検査を行つたときは、次の事項を記録し、これを三年間保存しなければならない", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "エツクス線作業主任者及びガンマ線透過写真撮影作業主任者", "choiceNumbers": [3]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=1", "excerpt": "最も多く放射線にさらされるおそれのある部位", "choiceNumbers": [4]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "その後六月以内ごとに一回、定期に、次の項目について医師による健康診断を行わなければならない", "choiceNumbers": [5]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "電離放射線健康診断個人票(様式第一号の二)を", "choiceNumbers": [5]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000&dataType=0&pageNo=2", "excerpt": "これらを三十年間保存しなければならない", "choiceNumbers": [5]}
+      ],
       "reviewIssues": [
-        "科目別一次資料pack（安衛法・安衛則・作業環境測定法・作業環境測定基準）の抜粋に電離放射線障害防止規則の条文本文は含まれていない。作業主任者の種類、ガンマ線照射装置の定期自主検査（6か月・3年保存）、外部被ばくの測定部位、健康診断（6か月・30年保存）を直接支える原文を確認できていないため、sourceEvidenceとsourcesは空欄とした。電離則原文（e-Gov法令検索または厚生労働省法令等データベース）の検索と本文確認が必要。",
-        "肢1の特別教育対象業務は安衛則の特別教育規定（第36条）の該当号で確認する必要がある。pack内の安衛則抜粋は目次部分だけなので、別途検索が必要。",
-        "作業環境測定基準の抜粋にある放射性物質の濃度測定（試料採取方法）は本問の各肢の判断を支えないため採用していない。"
+        "厚労省の安衛則・電離則で5肢の直接根拠を照合済み。不存在の主任者を問う肢3を含め、独立Opus原文照合は未了。"
       ]
     },
     "emkohyo-20260217-2-q17": {
@@ -70,7 +81,7 @@
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "粉じん則の除じん装置の設置義務は、条文が対象とする局所排気装置・プッシュプル型換気装置と粉じんの種類ごとに、除じん方式を定めるものである。法令に基づき設置する装置の「全て」に一律で除じん装置を求めてはいないため、この記述は誤り。"
+            "reason": "粉じん障害防止規則第10条は、局所排気装置とプッシュプル型換気装置のうち、別表第二の指定された特定粉じん発生源に係るものに除じん装置を要求する。法令に基づき設置する装置の全てを対象とはしていないため、肢1が誤り。"
           },
           {
             "number": 2,
@@ -93,14 +104,23 @@
             "reason": "じん肺法のじん肺管理区分は管理1〜4に分かれ、管理1は「じん肺の所見がないと認められるもの」と定義されている。管理2以上がエックス線写真の像や肺機能障害の程度で区分されるのと対比しても、記述は正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {"title": "厚生労働省 粉じん障害防止規則 第6条の3・4、第10・17・18・26条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"},
+          {"title": "厚生労働省 じん肺法 第4条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"}
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "別表第二第六号から第九号まで、第十四号及び第十五号に掲げる特定粉じん発生源", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "別表第二第七号、第九号、第十四号及び第十五号に掲げる特定粉じん発生源", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "一年以内ごとに一回、定期に", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "自主検査を行つたときは、次の事項を記録して、これを三年間保存しなければならない", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "第一項から第三項までの規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない", "choiceNumbers": [3]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "半月以内ごとに一回、定期に", "choiceNumbers": [4]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1", "excerpt": "前条又は前項の規定による測定を行つたときは、その都度、次の事項を記録して、これを七年間保存しなければならない", "choiceNumbers": [4]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1", "excerpt": "管理一 じん肺の所見がないと認められるもの", "choiceNumbers": [5]}
+      ],
       "reviewIssues": [
-        "科目別一次資料packに粉じん障害防止規則とじん肺法の条文本文は含まれていない。除じん装置の設置義務の対象範囲（どの局所排気装置・プッシュプル型換気装置に、どの特定粉じん発生源について除じん装置を求めるか、除外される類型があるか）を原文で確認できていない。肢1の正答理由を直接支える抜粋がないため、sourceEvidenceは空欄とした。粉じん則の除じん装置の条文（第13条付近）の検索と本文確認が必要。",
-        "肢2（除じん装置の定期自主検査：1年・記録3年）、肢3（屋内作業場の測定記録：7年）、肢4（ずい道等の半月以内ごとの測定・7年保存）、肢5（じん肺法の管理1の定義）はいずれも原文未確認のため、粉じん則とじん肺法の条文検索が必要。",
-        "既存解説は設置義務の対象を「特定粉じん発生源に係る」ものと説明しているが、条文上の限定の正確な書き方は未確認のため、reasonでは断定を避けた。",
-        "作業環境測定基準の抜粋にある粉じん濃度の測定点（6m以下の等間隔など）は本問の各肢の判断を支えないため採用していない。"
+        "厚労省の粉じん障害防止規則・じん肺法で5肢の直接根拠を照合済み。独立Opus原文照合は未了。"
       ]
     },
     "emkohyo-20260217-2-q18": {
@@ -127,7 +147,7 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "屋内作業場の石綿の作業環境測定は、空気中の石綿濃度をろ過捕集した試料の繊維数で求めるもので、石綿の種類をエックス線回折分析法で分析することは測定の要件ではない。エックス線回折は建材中の石綿含有を調べる分析に使う手法であり、両者を混同した記述で誤り。"
+            "reason": "作業環境測定基準第10条の2は、屋内作業場における空気中の石綿濃度を「ろ過捕集方法及び計数方法」で測ると定める。取り扱う石綿の種類が不明でも、エックス線回折による種類分析を加える条件は条文にないため誤り。"
           },
           {
             "number": 5,
@@ -135,13 +155,21 @@
             "reason": "石綿健康診断個人票は、当該労働者が石綿等の取扱い等に伴い石綿の粉じんを発散する場所での業務に常時従事しないこととなった日から40年間保存する。潜伏期間の長い中皮腫・肺がんを想定した長期保存で、記述は正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {"title": "厚生労働省 石綿障害予防規則 第20・27・30・41条", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1"},
+          {"title": "厚生労働省 作業環境測定基準 第10条の2", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"}
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "石綿使用建築物等解体等作業に係る業務に労働者を就かせるとき", "choiceNumbers": [1]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "作業の方法を決定し、労働者を指揮すること", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "保護具の使用状況を監視すること", "choiceNumbers": [2]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "水洗する等粉じんの飛散しない方法によって、毎日一回以上、掃除を行わなければならない", "choiceNumbers": [3]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1", "excerpt": "空気中の石綿の濃度の測定は、ろ過捕集方法及び計数方法によらなければならない", "choiceNumbers": [4]},
+        {"url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1", "excerpt": "石綿健康診断個人票(様式第二号)を作成し、これを当該労働者が当該事業場において常時当該業務に従事しないこととなった日から四十年間保存しなければならない", "choiceNumbers": [5]}
+      ],
       "reviewIssues": [
-        "正答肢4の根拠となる作業環境測定基準の石綿の濃度測定の規定（試料採取方法・分析方法）は、pack内の作業環境測定基準の抜粋（粉じん・有機溶剤・放射性物質の部分）に含まれていない。原文抜粋を確保できないため、sourceEvidenceは空欄とした。作業環境測定基準の石綿の条項本文の検索と確認が必要。",
-        "石綿障害予防規則の条文本文（特別教育の対象、作業主任者の職務、床の毎日の清掃、個人票の40年保存）がpackになく、肢1〜3・5はいずれも原文未確認。石綿則の検索が必要。",
-        "肢1の特別教育対象の範囲は、安衛則の特別教育規定の石綿関係の号と石綿則の特別教育条文を照合して確認する必要がある。"
+        "厚労省の石綿障害予防規則・作業環境測定基準で5肢の直接根拠を照合済み。肢1は関連する特別教育の他規定も独立Opus審査で確認する。"
       ]
     },
     "emkohyo-20260217-2-q19": {
