@@ -1,0 +1,90 @@
+{
+  "inputHashes": {
+    "draftSha256": "9fb0b75314fea2ab53fab2f11920c8a77378de0371cff0da6973c7433fd46f20",
+    "rowSha256": {
+      "16": "b418ac16361d499b8c4e3c3e0ecb192497a044ba0214b21019fc49a56f60388a",
+      "17": "8b13b572d6b573231d85028dda06409b8a4fa6b978bcfab6e929a7271e123c49",
+      "18": "3faad7bb436f40ee03f388551bc65e31a21947027f8b7249f24d454ed41cccff",
+      "19": "543a910c1b9c22166fb6509c644d3e0a3d56f8317c34e13f99b9cf61fba8c5eb",
+      "20": "441a83294562dd83d7bac1174358b56ccd0016ad84fd4a9c024b94275095988e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q16.png": "6e0d2229ff6be21d8651fc9269e28eff698ca595900d7d8c659c785a933316ef",
+      "public/images/denko2/2025-first/q17.png": "08b29bcaa5a06c3c51f8a83d53b0076045cd69916095f8390f013b6ebb81e5e8",
+      "public/images/denko2/2025-first/q18.png": "f88ff8779d944c178915bf36456d368b50788ed1d755101c8fa052658b6a7a86"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハ で、PF管同士をつなぐ継手の構造を「ロックナットやソケット等」と書いているが誤り。ロックナットはボックスに固定する部品で、PF管同士をつなぐカップリングの構造ではない。「PF管用カップリング（管の外面の波形を受けるワンタッチ式などの構造）がなく、写真は平滑な直管の受け口形状である」と、写真と比べる形に直すべき。",
+        "choiceExplanations.ロ で、金属管と硬質塩ビ管の接続に「ボックスコネクタ等の金属部品が必要」と書いているが不適切。ボックスコネクタは管をボックスに接続する部材であり、管と管をつなぐ継手ではない。異種管の接続には金属側にねじ部などを持つ専用カップリングを使う、という趣旨で、写真の部材が全体とも同じ灰色の樹脂で両端とも同じ受け口であることと比べるべき。",
+        "explanation の「金属管や可とう管に特有の異径・可とう構造は見られない」の「異径」は、金属管との接続部材の特徴を正しく表していない。写真は両端が同じ径の受け口であり、「両端が同形状で、異種管用の非対称構造がない」と書く方が、写真との対応が正確になる。",
+        "explanation と choiceExplanations.イ の「接着剤を併用して差し込み接続する」は画像からは読み取れない一般知識なので、写真で読み取れる事実（左右対称、両端が太い受け口、中央が細い）と書き分けるべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescription の右銘板の並びが「Ue」「AC415V 1.5kA」「AC200V 2.5kA」「Icu」となっている。原本は、左列が Ue／AC415V／AC200V／Cat.A、右列が Icu／1.5kA／2.5kA の2列表である。意味の取り違えはないが、見出し（Ue・Icu）と数値の対応が崩れた順番で書かれている。修正は必須ではない。",
+        "原本の「JET」の右隣は「MCM」と読めるが、画像の解像度では確定できない。uncertainty で断定を避けており、問題はない。"
+      ],
+      "lawNeedsExternalCheck": [
+        "銘板の「JIS C 8201-2-1 Ann2」が、配線用遮断器（電動機保護兼用を含む）の規格区分に当たるかどうかは画像だけでは判定できない。要確認。"
+      ]
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "原本のボンベ下部にある丸いラベル（容量表示とみられる）は diagramDescription に書かれていないが、判定には影響しない。赤い部品の機能を断定しない点は適切。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電技解釈第12条（と推定）にある、接続部分の電気抵抗を増加させないこと、引張強さを20%以上減少させないこと、同等以上の絶縁効力のあるもので被覆すること、の3要件が現行条文と一致するかは要確認。explanation の「20%以上減少させない＝80%を超えて保持」という換算と、b（10%減少）を適合とする判断は、この要件と整合している。",
+        "officialReferenceUrls の METI PDF（20241022-2.pdf）に該当条文が入っているかは未検証。要確認。"
+      ]
+    },
+    {
+      "number": 20,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イ は「8mはその上限（具体的な数値は画像からは確認できない）を超えていると考えられる」としか書いておらず、比べる相手の数値がないため、不適切とする理由が立っていない。uncertainty には「接触防護措置を施した場所で垂直に取り付ける場合は6m以下」と書いてあり、explanation と choiceExplanations だけがこの数値を省いていて、前後で食い違っている。外部で確認したうえで「6m以下のところ8mなので超過」と、数値を比べる形で書くべき。",
+        "explanation のまとめ部分（イの判断）も「上限を超えていると考えられ」と推測の形で、同じ問題がある。",
+        "choiceExplanations.ロ は、例外を「金属製の電気的遮へい層を持つ通信用ケーブル等である場合に限り」と一つに絞って書いている。例外がこれだけかどうかは確認されていない。「限り」は、条文を確認するまで断定を避けるべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "ケーブル工事の支持点間距離（造営材の下面・側面に沿う場合は2m以下、接触防護措置を施した場所で垂直に取り付ける場合は6m以下）の数値と条項（電技解釈第164条と推定）は要確認。",
+        "屈曲部の内側半径の基準（外径の6倍以上、単心は8倍以上）が、電技解釈と内線規程のどちらに由来するか、単心の8倍が低圧ケーブルにも当てはまるかは要確認。どちらであってもニ（8倍）は基準を満たすので、正答判定には影響しない。",
+        "低圧配線と弱電流電線を同じ管に収めることの禁止と、その例外の全範囲（電技解釈第167条と推定）は要確認。",
+        "コンクリートに直接埋設できるケーブルの種類（MIケーブル、コンクリート直埋用ケーブルなど）の条項は要確認。",
+        "officialReferenceUrls の METI PDF に上記の条文が入っているかは未検証。"
+      ]
+    }
+  ]
+}

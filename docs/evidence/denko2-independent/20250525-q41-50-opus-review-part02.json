@@ -1,0 +1,107 @@
+{
+  "inputHashes": {
+    "draftSha256": "cf06c0cf330bf2c7f051f29a59d564dd2abb04a3e91fda13594fb10b51dd754e",
+    "rowSha256": {
+      "46": "b93ea2bc7319c16951490ff929c72cf5528d8ab14d151df99577b55179c0adb5",
+      "47": "3dfcbb7195fdf300f31310481d58f765e9200338ffc5fa12d3a70adf15e76e71",
+      "48": "b528ee5eda184f51949ceb743000905f341f0b670acc9c5003ae758f24007095",
+      "49": "cc640cd14be0980792325e43850db2e1010053c7934f96b5bef743a7df2848a9",
+      "50": "1622980b713b7bf06dbc36d227f5b50e587f98653b5ee887d1ebd102f4174703"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q46-i.png": "bbaf106c6fd0fa9ce9e4212c8d18f59cd1cafbf96a1abdf61d93f9045e9a4a05",
+      "public/images/denko2/2025-first/q46-ro.png": "a12ac33502eb3e1177422ef9e6a826b9e775cc151826237928c36b706f15ccf7",
+      "public/images/denko2/2025-first/q46-ha.png": "837ac0f790519a3689445c0b040f3324301df4906a74c229892e9c1dd00a0b7c",
+      "public/images/denko2/2025-first/q46-ni.png": "6bf6f46e90e7c4c72db80a614f2b4a9792bf097ca63ac6416df9c5970fb12120",
+      "public/images/denko2/2025-first/q47-i.png": "63fee5dcefba77b4ef4317cd0c2eed6aa5885b2c525593098a3b12c1550d67b3",
+      "public/images/denko2/2025-first/q47-ro.png": "9ed0e6a375443baa2538a1ccd0435593374ca751dd684ff7444097963b3da06e",
+      "public/images/denko2/2025-first/q47-ha.png": "89fb6220f34bd72da4c1716c43442fc9f23df2f29eb5d1ae403939563ca0c2e3",
+      "public/images/denko2/2025-first/q47-ni.png": "3eccf2b2afa831fdc0dfead76614500eb161e3ee6e028a38455b3060f658d30d",
+      "public/images/denko2/2025-first/q48-i.png": "ce826277f592ea56133e541e7aced3bdde807046fe842131b388e527e3033139",
+      "public/images/denko2/2025-first/q48-ro.png": "85c5fee6dde7866a822a6d880544ba8805366a6ab81a193e27867ab079214e9d",
+      "public/images/denko2/2025-first/q48-ha.png": "fdb3de0f0c7812e353196b28f2014d4522b8b663adc26d7308b479cd59ca5d2b",
+      "public/images/denko2/2025-first/q48-ni.png": "9d05ad60d84c8f36c30f3823b33b99056b6c1decb6f2a36dfb82c5e166212eb7",
+      "public/images/denko2/2025-first/q49-i.png": "3e503898bbb952839f2e2d94e61376a37c0d405b966cf33bfae0437b2562eda2",
+      "public/images/denko2/2025-first/q49-ro.png": "ace300641a9803142622576332e5328bdb358df7f6bb28228393d012ae729cf0",
+      "public/images/denko2/2025-first/q49-ha.png": "42d5124d4ad546b6238cbf3c8fda207d3ef3c1d5a4acfd555e58201da9a3e2f8",
+      "public/images/denko2/2025-first/q49-ni.png": "5fc968f1ad8703540e5ee91986d960c65d8c39f088abe183b95287add78fc527",
+      "public/images/denko2/2025-first/q50-i.png": "329b2ce4e094ba321dd82fed886fc11b3122e525621790da9cd8b76e8f8c2624",
+      "public/images/denko2/2025-first/q50-ro.png": "674164e2237ff47463a52d33089d426fda8f886275348ec4b3f1d751f7e4cc6b",
+      "public/images/denko2/2025-first/q50-ha.png": "5fd9c2732ae1a8315d81fffdd2d4d60bc794b0d6fcddcbc14c3d8455572ab46c",
+      "public/images/denko2/2025-first/q50-ni.png": "37f4486b50ae91e2cb81ee3169ba82631b112430a0334dd3213fc985842b33d7"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説の「傍記E（E31）はねじなし電線管を表す」はJIS C 0303に基づく判断であり、画像だけでは判定できない。要確認。",
+        "ニの上面にある2本のねじのうち、大きい頭のほうが管固定用の止めねじで、もう1本が接地用端子ねじだという役割分担は、写真だけでは断定できない（JSONのuncertaintyどおり）。メーカー資料で要確認。"
+      ]
+    },
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "リングスリーブ小にVVF1.6を2本・3本・4本入れられること、また中が1.6×5〜6本用であること（ロの肢別理由の前提）は、JIS C 2806の組合せ表で要確認。",
+        "⑰への配線は図から次のように読んだ：ⓒ送り、⑱方向、1階の壁付灯ア、1階の3路スイッチ、地下への引下げ。そのうえで、地下1階へ下ろす電線をT1・T2・N・1階の灯アへの帰り線の4本とした場合（地下の3路を負荷側にした場合）、接続箇所は3本・4本・2本・2本・2本の5か所で小5個となり、計算に矛盾はない。"
+      ]
+    },
+    {
+      "number": 48,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "写真から読んだ差込口の数（赤は2本用、青は3本用、黄緑は4本用、オレンジは5本用）はメーカー仕様で要確認。",
+        "⑱につながるのは次のとおりと読んだ：⑰からの電源、蛍光灯イが上下2台、左の壁付灯イ、スイッチ●イ、コンセント。この読みでLは3本、Nは5本、帰り線は4本となり、3本用・4本用・5本用が各1個必要というロの結論と矛盾はない。ただし、左にある灯イの器具の種類（壁付の蛍光灯か白熱灯か）は図記号が小さく、判別しきれない。"
+      ]
+    },
+    {
+      "number": 49,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ハの写真で見える刃受穴は円弧状であり、配線図にある「LK（抜止形）」の刃受形状（まっすぐな刃受の先がかぎ形に曲がった形）とは見た目が違う。choices.ハには「弧状（曲線状）」としか書かれていないため、引掛形らしいという要確認の注記を補うこと。"
+      ],
+      "explanationIssues": [
+        "解説では、ハ・ニが使われていない理由を「公式正答がロの1つに絞られることから…該当しない器具であると判断できる」と説明している。これは正答から逆算した循環論法で、ハ・ニが誤りである根拠になっていない。ハの刃受が円弧状で、配線図のWP LK（防雨・抜止形）の形状と合わない、という写真上の違いを根拠として書くよう改めること。",
+        "choiceExplanations.ハ・ニも「正答がロである以上…該当しない」と同じ逆算の書き方になっている。写真に見える特徴（ハは円弧状の刃受、ニは十字形の差込口と端子台状の金具）がWP LKと一致しない点を理由として書き直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "傍記EET（接地極付接地端子付）、WP（防雨形）、LK（抜止形）、E（接地極付）の意味はJIS C 0303で要確認。",
+        "ハ・ニの器具形式（引掛形か、接地極付か、接地端子付かなど）はメーカー資料または公式解説で要確認。"
+      ]
+    },
+    {
+      "number": 50,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説とchoiceExplanations.ロでは、傍記BLを「B＝押しボタン、L＝確認表示灯内蔵」と説明している。しかし配線図の記号◉自体がすでに押しボタンを表しており、傍記Bはそれが電磁開閉器用であることを示す。「B＝電磁開閉器用、L＝確認表示灯付」と直すこと。",
+        "ハの接点図（端子0を1と3に切り替え、1と3の間に表示灯）と、ニの接点図（片切の接点に表示灯を並列につなぐ＝H）の読み取りは、原本の図と一致している。1階・地下1階の3アにHの傍記がないこと、1階自販機付近のエにHの傍記があることも図と一致しており、正答ハとの論理に矛盾はない。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "傍記H（位置表示灯内蔵）、B（電磁開閉器用）、L（確認表示灯付）、LF3（フロートレススイッチ電極・3極）の意味はJIS C 0303で要確認。"
+      ]
+    }
+  ]
+}
