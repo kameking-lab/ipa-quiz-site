@@ -3,7 +3,9 @@
 import importlib.util
 import json
 from pathlib import Path
+import tempfile
 import unittest
+from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 SPEC = importlib.util.spec_from_file_location(
@@ -63,6 +65,21 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
             SOURCE_MODULE.retrieval_url("https://www.mhlw.go.jp/content/001104962.pdf#page=79"),
             "https://www.mhlw.go.jp/content/001104962.pdf",
         )
+
+    def test_authoring_only_creates_candidate_not_publication(self):
+        with tempfile.TemporaryDirectory() as temp:
+            log = Path(temp) / "drafts"
+            output = Path(temp) / "choice-explanations.json"
+            output.write_text("{}\n", encoding="utf-8")
+            candidate = dict(self.overlay)
+            candidate.pop("sourceHash")
+            with (patch.object(MODULE, "LOG", log), patch.object(MODULE, "OUTPUT", output),
+                  patch.object(MODULE, "call_claude", return_value={self.question["id"]: candidate})):
+                MODULE.author_candidate(([dict(self.question, subject="第二種衛生管理者")], "test-batch"),
+                                        "claude-opus-5-5")
+            self.assertTrue((log / "test-batch.candidate.json").exists())
+            self.assertEqual(output.read_text(encoding="utf-8"), "{}\n")
+            self.assertFalse((log / "test-batch.accepted.json").exists())
 
 
 if __name__ == "__main__":

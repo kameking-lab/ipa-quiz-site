@@ -1,8 +1,7 @@
-"""Resumeable 2025/2026 lckohyo five-choice authoring through the user's Claude CLI.
+"""Resumable 2025/2026 lckohyo five-choice candidate authoring.
 
-Generation and independent spot review are bounded to three concurrent CLI calls.
-Only structurally valid, source-grounded batches with a clean independent sample
-are merged. The existing question text and official answers are never modified.
+This command never publishes generated candidates. Each question and all five
+choices require a current full-review receipt before separate promotion.
 """
 
 import argparse
@@ -119,7 +118,7 @@ def extract_json(content, expected_ids=None):
     raise ValueError("No complete JSON object matching the requested IDs")
 
 
-def call_claude(prompt, prefix, model):
+def call_claude(prompt, prefix, model, return_model=False):
     cli = Path(os.environ["APPDATA"]) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe"
     if not cli.exists():
         raise RuntimeError(f"Claude CLI missing: {cli}")
@@ -137,7 +136,15 @@ def call_claude(prompt, prefix, model):
         raise RuntimeError(f"Claude unavailable; no paid fallback: {prefix}")
     responses = [json.loads(line) for line in raw.splitlines() if line.strip()]
     content = next(row for row in reversed(responses) if row.get("type") == "result").get("result", "")
-    return extract_json(content)
+    result = extract_json(content)
+    if not return_model:
+        return result
+    model_ids = {row.get("message", {}).get("model") for row in responses
+                 if row.get("type") == "assistant" and isinstance(row.get("message"), dict)}
+    model_ids.discard(None)
+    if model_ids != {model}:
+        raise RuntimeError(f"Unexpected Claude model ID {model_ids}; expected {model}")
+    return result, model
 
 
 def source_hints(batch):
@@ -174,7 +181,7 @@ def review_prompt(sample, overlay):
 """
 
 
-def author_and_review(item, model):
+def author_candidate(item, model):
     batch, token = item
     prefix = LOG / token
     write(prefix.with_suffix(".input.json"), batch)
@@ -200,23 +207,6 @@ def author_and_review(item, model):
         issues = validate_overlay(q, overlay)
         if issues:
             raise ValueError("; ".join(issues))
-    index = int(sha256(token.encode()).hexdigest(), 16) % len(batch)
-    sample = batch[index]
-    review = call_claude(review_prompt(sample, candidate[sample["id"]]), prefix.with_name(token + "-review"), model)
-    write(prefix.with_suffix(".review.json"), review)
-    if review.get("status") != "PASS" or review.get("issues") != []:
-        raise ValueError(f"{token}: independent review FIX for {sample['id']}")
-    evidence_urls = review.get("evidenceUrls")
-    if not isinstance(evidence_urls, list) or not evidence_urls or not all(government_url(url) for url in evidence_urls):
-        raise ValueError(f"{token}: review evidence missing or non-government")
-    write(prefix.with_suffix(".accepted.json"), candidate)
-    write(EVIDENCE / f"{token}.json", {
-        "questionIds": sorted(candidate),
-        "candidateSha256": sha256(json.dumps(candidate, ensure_ascii=False, sort_keys=True).encode()).hexdigest(),
-        "sampleQuestionId": sample["id"],
-        "independentReview": review,
-        "status": "accepted",
-    })
     return batch, candidate, token
 
 
@@ -228,7 +218,7 @@ def main():
     parser.add_argument("--skip-first", type=int, default=0, help="Skip this many unique missing questions after a held batch")
     parser.add_argument("--retry-holds", action="store_true", help="Explicitly retry batches previously held for source/quality issues")
     parser.add_argument("--workers", type=int, default=3)
-    parser.add_argument("--model", default="opus")
+    parser.add_argument("--model", default="claude-opus-5-5")
     parser.add_argument("--paper-id", help="Author one complete paper at a time; global coverage still audited")
     args = parser.parse_args()
     if not 5 <= args.batch_size <= 8 or not 1 <= args.workers <= 3 or args.max_batches < 0 or args.skip_first < 0:
@@ -260,59 +250,26 @@ def main():
         parser.error("paper-id must name a 2025/2026 lckohyo paper")
     narratives = read(DATA / "explanations.json")
     overlays = read(OUTPUT)
-    recovered = []
-    for accepted_file in LOG.glob("*.accepted.json"):
-        token = accepted_file.name.removesuffix(".accepted.json")
-        input_file = LOG / f"{token}.input.json"
-        if not input_file.exists():
-            raise SystemExit(f"Accepted batch has no input checkpoint: {token}")
-        source = {q["id"]: q for q in read(input_file)}
-        for qid, overlay in read(accepted_file).items():
-            if qid not in question_map or qid not in source or fingerprint(question_map[qid]) != fingerprint(source[qid]):
-                raise SystemExit(f"Stale accepted batch: {qid}")
-            issues = validate_overlay(question_map[qid], overlay)
-            if issues:
-                raise SystemExit("; ".join(issues))
-            if qid not in overlays:
-                overlays[qid] = overlay
-                recovered.append(qid)
-    if recovered:
-        write(OUTPUT, overlays)
     for qid, q in question_map.items():
         if qid in overlays:
             issues = validate_overlay(q, overlays[qid])
             if issues:
                 raise SystemExit("; ".join(issues))
-    # Publication JSON is the resume checkpoint. The input fingerprint is never fuzzy.
-    by_fingerprint = {fingerprint(q): overlays[qid] for qid, q in question_map.items() if qid in overlays}
-    reused = []
-    for qid, q in question_map.items():
-        if qid not in overlays and fingerprint(q) in by_fingerprint:
-            overlay = dict(by_fingerprint[fingerprint(q)], sourceHash=sha256(q["text"].encode("utf-8")).hexdigest())
-            if not validate_overlay(q, overlay):
-                overlays[qid] = overlay
-                reused.append(qid)
     selected_ids = [qid for qid in question_map if not args.paper_id or qid.startswith(args.paper_id + "-q")]
-    seen = set()
     missing = []
     for qid, q in question_map.items():
-        key = fingerprint(q)
         if args.paper_id and not qid.startswith(args.paper_id + "-q"):
             continue
-        if qid not in overlays and key not in seen:
+        if qid not in overlays:
             missing.append(dict(q, plainExplanation=narratives[qid]))
-            seen.add(key)
     structured_count = sum(qid in overlays for qid in question_map)
     selected_structured = sum(qid in overlays for qid in selected_ids)
     print(json.dumps({"officialChoiceQuestions": len(question_map), "structured": structured_count,
-                      "recoveredAccepted": len(recovered), "reusedIdenticalNow": len(reused), "selectedQuestions": len(selected_ids),
+                      "selectedQuestions": len(selected_ids),
                       "selectedStructured": selected_structured,
-                      "duplicateUnstructured": len(selected_ids) - selected_structured - len(missing),
                       "uniqueMissing": len(missing), "paperFilter": args.paper_id, "model": args.model}, ensure_ascii=False), flush=True)
     if not args.generate:
         return
-    if reused:
-        write(OUTPUT, overlays)
     batches = []
     pending = missing[args.skip_first:]
     paper_groups = {}
@@ -338,7 +295,7 @@ def main():
         if len(batches) >= args.max_batches:
             break
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
-        future_map = {pool.submit(author_and_review, item, args.model): item[1] for item in batches}
+        future_map = {pool.submit(author_candidate, item, args.model): item[1] for item in batches}
         for future in as_completed(future_map):
             token = future_map[future]
             try:
@@ -347,31 +304,7 @@ def main():
                 (LOG / f"{token}.hold.txt").write_text(str(exc), encoding="utf-8")
                 print(f"HOLD {token}: {exc}", flush=True)
                 continue
-            for q in batch:
-                overlays[q["id"]] = result[q["id"]]
-                by_fingerprint[fingerprint(q)] = result[q["id"]]
-            for qid, q in question_map.items():
-                if qid not in overlays and fingerprint(q) in by_fingerprint:
-                    overlay = dict(by_fingerprint[fingerprint(q)], sourceHash=sha256(q["text"].encode("utf-8")).hexdigest())
-                    if not validate_overlay(q, overlay):
-                        overlays[qid] = overlay
-            write(OUTPUT, overlays)
-            print(f"ACCEPT {token}: {len(batch)} authored; structured {sum(qid in overlays for qid in question_map)}/{len(question_map)}", flush=True)
-    # Close a paper only when every official five-choice item has an accepted overlay.
-    required = contract["structuredChoiceExplanations"]["requiredPaperIds"]
-    completed = []
-    for paper_id in sorted({qid.rsplit("-q", 1)[0] for qid in question_map}):
-        ids = [qid for qid in question_map if qid.startswith(paper_id + "-q")]
-        if all(qid in overlays for qid in ids) and paper_id not in required:
-            required.append(paper_id)
-            completed.append(paper_id)
-    if completed:
-        write(CONTRACT, contract)
-        print("CLOSED PAPERS " + ", ".join(completed), flush=True)
-    check = subprocess.run(["node", str(ROOT / "scripts/validate-safety-exams.mjs"), "--require-explanations"],
-                           cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
-    if check.returncode:
-        raise SystemExit("Safety validator failed after merge: " + check.stdout[-4000:] + check.stderr[-1000:])
+            print(f"CANDIDATE {token}: {len(batch)} authored; requires full per-question review", flush=True)
 
 
 if __name__ == "__main__":

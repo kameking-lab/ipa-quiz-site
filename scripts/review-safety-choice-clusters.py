@@ -6,13 +6,15 @@ target worktree's --root to inspect lckohyo or emkohyo without cherry-picking da
 """
 import argparse
 from collections import Counter, defaultdict
+from concurrent.futures import ThreadPoolExecutor, as_completed
 import importlib.util
 import json
 from pathlib import Path
+import subprocess
 import sys
 
 from safety_choice_review_gate import (candidate_issues, digest, make_receipt, receipt_current,
-                                      reuse_candidate_key, source_snapshot)
+                                      receipt_key, reuse_candidate_key, source_snapshot)
 
 
 def read(path):
@@ -26,21 +28,35 @@ def write(path, value):
     temp.replace(path)
 
 
-def candidates(root, published):
+def candidates(root, published, selections):
     result = dict(published)
     conflicts = set()
+    matched = set()
     private = []
     for file in (root / ".cache/safety-choice-lckohyo").glob("*.candidate.json"):
-        private.extend(read(file).items())
+        private.extend((qid, overlay, file.name) for qid, overlay in read(file).items())
     for file in (root / "data/exam-library/emkohyo-review").glob("*-draft.json"):
-        private.extend((qid, row.get("overlay")) for qid, row in read(file).get("questions", {}).items())
-    for qid, overlay in private:
-        if not isinstance(overlay, dict) or qid in published:
+        private.extend((qid, row.get("overlay"), file.name)
+                       for qid, row in read(file).get("questions", {}).items())
+    for qid, overlay, filename in private:
+        if not isinstance(overlay, dict) or (qid in published and qid not in selections):
+            continue
+        selected = selections.get(qid)
+        if selected and (filename != selected.get("file")
+                         or digest(overlay) != selected.get("sha256")):
+            continue
+        if selected:
+            matched.add(qid)
+        if selected and qid in published:
+            result[qid] = overlay
             continue
         if qid in result and result[qid] != overlay:
             conflicts.add(qid)
         else:
             result[qid] = overlay
+    for qid, selected in selections.items():
+        if qid not in matched:
+            conflicts.add(qid)
     for qid in conflicts:
         result.pop(qid, None)
     return result, sorted(conflicts)
@@ -51,23 +67,32 @@ def main():
     ap.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     ap.add_argument("--group", choices=["lckohyo", "emkohyo"], required=True)
     ap.add_argument("--review", action="store_true")
+    ap.add_argument("--promote-reviewed", action="store_true",
+                    help="Publish only questions with current full five-choice PASS receipts")
+    ap.add_argument("--retry-holds", action="store_true",
+                    help="Retry unchanged full-review HOLD receipts")
+    ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--max-batches", type=int, default=1)
     ap.add_argument("--batch-size", type=int, default=6)
-    ap.add_argument("--model", default="opus")
+    ap.add_argument("--model", default="claude-opus-5-5")
     ap.add_argument("--ledger", type=Path)
     ap.add_argument("--plan", type=Path)
     args = ap.parse_args()
-    if not 1 <= args.batch_size <= 8 or args.max_batches < 0:
-        ap.error("batch-size 1..8; max-batches nonnegative")
+    if not 1 <= args.batch_size <= 8 or args.max_batches < 0 or not 1 <= args.workers <= 3:
+        ap.error("batch-size 1..8; workers 1..3; max-batches nonnegative")
+    if args.review and args.promote_reviewed:
+        ap.error("review and promotion are separate resume checkpoints")
     root = args.root.resolve()
     data = root / "data/exam-library"
+    selection_file = root / f"docs/evidence/{args.group}-choice-candidate-selections.json"
+    selections = read(selection_file) if selection_file.exists() else {}
     catalog = [p for p in read(data / "official-catalog.json") if p["group"] == args.group]
     years = sorted({p["date"][:4] for p in catalog}, reverse=True)[:2]
     catalog = [p for p in catalog if p["date"][:4] in years]
     ledger_path = args.ledger or root / f"docs/evidence/{args.group}-full-choice-review-ledger.json"
     ledger = read(ledger_path) if ledger_path.exists() else {}
     published = read(data / "choice-explanations.json")
-    drafts, conflicts = candidates(root, published)
+    drafts, conflicts = candidates(root, published, selections)
     packs = []
     for folder in (data / "source-packs", root / "docs/evidence/emkohyo-choice-sources",
                    root / "docs/evidence/emkohyo-2025-sources"):
@@ -81,12 +106,16 @@ def main():
     duplicates = defaultdict(list)
     missing_images = []
     static_holds = []
+    ready = {}
+    verified_ids = set()
+    paper_targets = defaultdict(set)
     for paper in catalog:
         for question in read(data / "papers" / (paper["id"] + ".json")):
             if question.get("answerAuthority") != "official" or question.get("choiceCount") != 5:
                 continue
             qid = question["id"]
             counts["target"] += 1
+            paper_targets[paper["id"]].add(qid)
             duplicates[reuse_candidate_key(question)].append(qid)
             if qid not in drafts:
                 counts["candidateMissing"] += 1
@@ -107,6 +136,16 @@ def main():
                 continue
             if receipt_current(ledger.get(qid, {}), snapshot, candidate, relevant):
                 counts["fullReviewCurrent"] += 1
+                verified_ids.add(qid)
+                if published.get(qid) != candidate:
+                    ready[qid] = candidate
+                continue
+            previous = ledger.get(qid, {})
+            if (previous.get("status") == "HOLD"
+                    and all(previous.get(k) == v for k, v in
+                            receipt_key(snapshot, candidate, relevant).items())
+                    and not args.retry_holds):
+                counts["reviewHold"] += 1
                 continue
             counts["reviewPending"] += 1
             groups[paper["subject"]].append({"id": qid, "snapshot": snapshot,
@@ -129,6 +168,35 @@ def main():
     print(json.dumps({k: v for k, v in plan.items() if k not in
                       ("batches", "exactTextReuseCandidates", "sourceHolds", "staticHolds")}, ensure_ascii=False), flush=True)
     if not args.review:
+        if args.promote_reviewed:
+            if args.group != "lckohyo":
+                raise SystemExit("Only lckohyo promotion is implemented in this worktree")
+            before = dict(published)
+            published.update(ready)
+            if ready:
+                published_path = data / "choice-explanations.json"
+                write(published_path, published)
+                check = subprocess.run(["node", str(root / "scripts/validate-safety-exams.mjs"),
+                                        "--require-explanations"], cwd=root,
+                                       capture_output=True, text=True, encoding="utf-8")
+                if check.returncode:
+                    write(published_path, before)
+                    raise SystemExit("Validation failed; publication restored: " +
+                                     check.stdout[-2000:] + check.stderr[-1000:])
+            contract_path = data / "coverage-contract.json"
+            contract = read(contract_path)
+            required = contract["structuredChoiceExplanations"]["requiredPaperIds"]
+            closed = []
+            current_ids = {qid for qid in published if qid in verified_ids}
+            for paper_id, ids in paper_targets.items():
+                if ids <= current_ids and paper_id not in required:
+                    required.append(paper_id)
+                    closed.append(paper_id)
+            if closed:
+                write(contract_path, contract)
+            print(json.dumps({"promoted": len(ready), "fullReviewCurrent":
+                              counts["fullReviewCurrent"], "papersClosed": closed},
+                             ensure_ascii=False), flush=True)
         return
     adapter_path = root / "scripts/complete-safety-choice-explanations.py"
     if not adapter_path.exists():
@@ -137,7 +205,7 @@ def main():
     adapter = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(adapter)
     adapter.ROOT = root
-    for batch in batches[:args.max_batches]:
+    def review_batch(batch):
         shared_evidence = {item["sha256"]: item for row in batch for item in row["evidence"]}
         payload = {"questions": [{k: v for k, v in row.items() if k != "evidence"}
                                  for row in batch], "sharedEvidence": list(shared_evidence.values())}
@@ -152,15 +220,36 @@ def main():
                   + json.dumps(payload, ensure_ascii=False))
         token = digest(batch)[:16]
         # Existing CLI adapter fails closed on limit; no queued retries or paid fallback.
-        review = adapter.call_claude(prompt, root / ".cache/safety-full-review" / token, args.model)
+        review, actual_model = adapter.call_claude(
+            prompt, root / ".cache/safety-full-review" / token,
+            args.model, return_model=True)
         if set(review) != {q["id"] for q in batch}:
             raise ValueError("Reviewer omitted or added IDs; no receipts accepted")
+        receipts = {}
         for row in batch:
-            ledger[row["id"]] = make_receipt(row["id"], row["snapshot"], row["candidate"],
-                                             row["evidence"], review[row["id"]], args.model)
-        write(ledger_path, ledger)
-        print(json.dumps({"batch": token, "results": {row["id"]: ledger[row["id"]]["status"]
-                                                       for row in batch}}, ensure_ascii=False), flush=True)
+            receipts[row["id"]] = make_receipt(row["id"], row["snapshot"], row["candidate"],
+                                               row["evidence"], review[row["id"]], actual_model)
+        return token, receipts
+
+    failures = []
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        pending = {pool.submit(review_batch, batch): batch for batch in batches[:args.max_batches]}
+        for future in as_completed(pending):
+            try:
+                token, receipts = future.result()
+            except Exception as exc:
+                failures.append(str(exc))
+                print(json.dumps({"reviewError": str(exc),
+                                  "questionIds": [row["id"] for row in pending[future]]},
+                                 ensure_ascii=False), flush=True)
+                continue
+            ledger.update(receipts)
+            write(ledger_path, ledger)
+            print(json.dumps({"batch": token, "results": {qid: row["status"]
+                                                       for qid, row in receipts.items()},
+                              "model": args.model}, ensure_ascii=False), flush=True)
+    if failures:
+        raise SystemExit(f"{len(failures)} review batches failed; completed receipts saved")
 
 
 if __name__ == "__main__":
