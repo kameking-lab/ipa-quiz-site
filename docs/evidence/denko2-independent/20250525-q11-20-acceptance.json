@@ -1,0 +1,142 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "sourceReceipts": [
+    "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+    "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02-fix-q16-20.json",
+    "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02-fix-q20.json",
+    "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02.json"
+  ],
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "2f43317a4d7ba04a50b9a3e6ba2416fe2cf506310693534199659583afc882be",
+      "originalRowSha256": "2e2391b6893728216427651a7a6bf0af1129144876d19e6ba26140a88da4915c",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": false
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "04b7a7794ec781e192f815208e91017da9b148e3007425b9ae40eab512b61622",
+      "originalRowSha256": "d95741b919e4435b2b86e396c8df3644966708f008783326e22cf93de21b216c",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": true
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "a9f459c3aa67b32870d699449b75a6f31b3333a5f769359758c0d6d30d95f79c",
+      "originalRowSha256": "8ec64525de97fd1d2b74fe91004d69b648b31d8cc4a484b22f263374dd420118",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": false
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ロ",
+      "currentCandidateSha256": "695248d4f3282519cb306cee010c7acb1a2d196ef5c7086e293611c8f6e5c8fe",
+      "originalRowSha256": "bb2c55b802ab2a38776f36d24a35424db2fd846d1f3f46a1656eb43fc2076408",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": false
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part01.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "e373ea92390db3f6145f8931b4b1fee7dec35e1e23eef6295502d742638ae022",
+      "originalRowSha256": "e002796ab642a3258973fe559f112fde2ff5d50095cd1381316c9b85b13b76ed",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": false
+    },
+    {
+      "number": 16,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02-fix-q16-20.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "d4a916acff5ef4822b72dfbe79e793940f39b5c9a1d2986754a7ce8ecad6e8a5",
+      "originalRowSha256": "b418ac16361d499b8c4e3c3e0ecb192497a044ba0214b21019fc49a56f60388a",
+      "publishedFigureSha256": {
+        "public/images/denko2/2025-first/q16.png": "6e0d2229ff6be21d8651fc9269e28eff698ca595900d7d8c659c785a933316ef"
+      },
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": false
+    },
+    {
+      "number": 17,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ハ",
+      "currentCandidateSha256": "f4d0a76cfe3cc4a6a0581093505a4fa24676433502fd0d758633e231ea681587",
+      "originalRowSha256": "8b13b572d6b573231d85028dda06409b8a4fa6b978bcfab6e929a7271e123c49",
+      "publishedFigureSha256": {
+        "public/images/denko2/2025-first/q17.png": "08b29bcaa5a06c3c51f8a83d53b0076045cd69916095f8390f013b6ebb81e5e8"
+      },
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": true
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "イ",
+      "currentCandidateSha256": "c629992f5e661f400bed8673b47240ad8537a5a4faf833a53a9eedd6d7a873ee",
+      "originalRowSha256": "3faad7bb436f40ee03f388551bc65e31a21947027f8b7249f24d454ed41cccff",
+      "publishedFigureSha256": {
+        "public/images/denko2/2025-first/q18.png": "f88ff8779d944c178915bf36456d368b50788ed1d755101c8fa052658b6a7a86"
+      },
+      "officialReferenceUrls": [],
+      "editorialCaveatRetained": true
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "944862cdf2ca09c14349e58f258440c5009c8ac28a8c9a760d67ff3f8d360184",
+      "originalRowSha256": "543a910c1b9c22166fb6509c644d3e0a3d56f8317c34e13f99b9cf61fba8c5eb",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+      ],
+      "editorialCaveatRetained": true
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "reviewReceipt": "docs/evidence/denko2-independent/20250525-q11-20-opus-review-part02-fix-q20.json",
+      "reviewModel": "claude-opus-5-5",
+      "officialAnswer": "ニ",
+      "currentCandidateSha256": "e8620a467ace650f31d998443a3b743ab2757275fb49622a6466624d2a87f108",
+      "originalRowSha256": "441a83294562dd83d7bac1174358b56ccd0016ad84fd4a9c024b94275095988e",
+      "publishedFigureSha256": {},
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+        "https://www.mlit.go.jp/gobuild/content/001879364.pdf"
+      ],
+      "editorialCaveatRetained": false
+    }
+  ]
+}
