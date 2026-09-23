@@ -24,7 +24,7 @@ import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 export const metadata: Metadata = {
   title: "クイズ — 過去問演習",
   description:
-    "IPA情報処理技術者試験とFP3級の公式公開過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AIコパイロットが各選択肢を解説します。",
+    "IPA情報処理技術者試験とFP2級・FP3級の公式公開過去問をランダム・年度別・分野別・復習・未回答・苦手の6モードで演習。AIコパイロットが各選択肢を解説します。",
   alternates: { canonical: "/" },
   robots: { index: false, follow: true },
 };

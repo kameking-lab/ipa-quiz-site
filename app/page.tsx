@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 
 const title = "IPA・安全衛生・FPの過去問を無料で学習 — 過去問AI";
-const description = "IPA情報処理技術者試験、安全衛生、FP3級の公式公開過去問を無料で学習。選択肢を押して解答し、公式正答やAIによる各選択肢の学習用解説を確認できます。";
+const description = "IPA情報処理技術者試験、安全衛生、FP2級・FP3級の公式公開過去問を無料で学習。選択肢を押して解答し、公式正答やAIによる各選択肢の学習用解説を確認できます。";
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },
@@ -40,7 +40,7 @@ export default function HomePage() {
       <Link href="/qualifications" className="flex items-center gap-4 rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 shadow-sm transition hover:border-amber-500 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary dark:border-amber-700 dark:bg-amber-950/40">
         <Landmark className="h-8 w-8 shrink-0 text-amber-700 dark:text-amber-300" aria-hidden="true" />
         <span className="min-w-0 flex-1">
-          <span className="block font-bold">FP3級</span>
+          <span className="block font-bold">FP2級・FP3級</span>
           <span className="block text-sm text-muted-foreground">公式公開問題を選択肢ごとの解説付きで学習</span>
         </span>
         <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-amber-700 dark:text-amber-300">一覧へ<ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
