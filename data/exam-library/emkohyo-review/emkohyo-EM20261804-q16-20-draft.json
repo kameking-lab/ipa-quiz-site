@@ -437,7 +437,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "文自体は正しい。壊変定数λ（半減期）は核種ごとに固有の値である。半減期が数秒程度の核種から数十億年の238Uまで大きな幅があり、同じ原子数でも単位時間に壊変する数は核種によって異なる。"
+            "reason": "文自体は正しい。壊変定数は核種に固有で、核種が異なると単位時間当たりの壊変確率も異なる。環境省の例でもヨウ素131は約8日、セシウム134は約2年、セシウム137は約30年と半減期が違う。同じ原子数なら、壊変定数が大きい核種ほど単位時間に壊変する原子数が多くなる。"
           },
           {
             "number": 3,
@@ -455,14 +455,73 @@
             "reason": "文自体は正しい。10半減期後の残存割合は(1/2)^10＝1/1024≒0.000977、すなわち約0.098％となる。放射能は初めの約0.1％まで減衰するという記述は計算と一致する。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA・壊変定数",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_237.html"
+          },
+          {
+            "title": "環境省 放射線による健康影響等に関する統一的な基礎資料・半減期と放射能の減衰",
+            "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "作業環境測定基準第7〜9条の抜粋は、放射線の線量当量の測定機器や空気中放射性物質の試料採取・分析方法を定めた規定で、壊変の法則、壊変定数と温度の関係、半減期の計算を述べていない。正誤判断を支えないため採用していない。",
-        "正答理由（壊変速度は温度に依存しない）を直接支える政府系資料の本文を確認できていない。検索が必要。",
-        "肢5の数値は独自に検算した：(1/2)^10＝1/1024≒0.0977％。指数減衰、核種固有の壊変定数、λ＝ln2/T（肢1・2・4）の公的な根拠資料は確認できていない。検索が必要。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_237.html",
+          "excerpt": "核種に固有な定数",
+          "choiceNumbers": [
+            2,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_237.html",
+          "excerpt": "温度、圧力などの影響をまったく受けることなく",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_237.html",
+          "excerpt": "dN = −λNdt",
+          "choiceNumbers": [
+            1,
+            2,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_237.html",
+          "excerpt": "λ = ln2/T(1/2)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html",
+          "excerpt": "半減期分の時間が経過するたびに放射能が半分",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html",
+          "excerpt": "ヨウ素131の半減期は約８日、セシウム134の半減期は約２年、セシウム137の半減期は約30年",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html",
+          "excerpt": "指数関数的に減る",
+          "choiceNumbers": [
+            1
+          ]
+        }
+      ],
+      "reviewIssues": []
     }
   }
 }

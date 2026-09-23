@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1534,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 14138,
+      "webSearchRequests": 0,
+      "costUSD": 0.1704984,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1012,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q20": {
+      "/exam-library/emkohyo-EM20261804/q20-p12-1.webp": "00e3aab339adb4e257ee824a51c9fe05d0781ec64561f4015aaafa1bc29a383c"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q20": "dbe47156b2567a36cb3fbe34be1af531740e67d9674784d9803b78d744dfad50"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q20-20.json",
+  "sourcePackSha256": "d1bab3599646f3fb5c317c81d94b9be665cced2a28515a08893dbc7a77cde6ae",
+  "assessment": {
+    "emkohyo-EM20261804-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の解説にある「半減期が数秒程度の核種から数十億年の238Uまで」という範囲の書き方は、下限を『数秒程度』としているため不正確。半減期がマイクロ秒以下の核種もあり、範囲の端が数秒であるかのように読める。添付の環境省ページが直接示すヨウ素131（約8日）、セシウム134（約2年）、セシウム137（約30年）を例に使い、『半減期は核種によって異なる』と書き直すのが安全。"
+      ],
+      "sourceIssues": [
+        "肢2で挙げている238Uの半減期（数十億年）と『数秒程度の核種』は、添付の政府資料2件のどちらにも書かれていない。ATOMICAは壊変定数が核種ごとに固有であることまでは述べているが、具体的な核種や数値は示していない。環境省ページの例はI-131、Cs-134、Cs-137だけ。数値を使うなら、その数値を直接載せている一次資料（例：JAEA核データ）を追加するか、環境省ページの例に置き換える必要がある。"
+      ],
+      "needsExternalCheck": [
+        "238Uの半減期（約44.7億年）を肢2に残す場合は、その数値を載せた公的一次資料で確認すること。"
+      ]
+    }
+  }
+}
