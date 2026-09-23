@@ -21,6 +21,8 @@ import p2509 from "./reviewed/20250525-q41-45.json";
 import p2510 from "./reviewed/20250525-q46-50.json";
 import p2521 from "./reviewed/20251026-q01-05.json";
 import p2522 from "./reviewed/20251026-q06-10.json";
+import p2523 from "./reviewed/20251026-q11-15.json";
+import p2524 from "./reviewed/20251026-q16-20.json";
 
 type OfficialChoice = "イ" | "ロ" | "ハ" | "ニ";
 type Reviewed = {
@@ -51,7 +53,7 @@ const papers = [
   },
   {
     date: "20251026", year: 2025, season: "second" as const,
-    batches: [p2521, p2522],
+    batches: [p2521, p2522, p2523, p2524],
   },
 ];
 
