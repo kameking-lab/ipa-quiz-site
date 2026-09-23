@@ -13,6 +13,7 @@ MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
 RAW = ROOT / "data/raw_pdfs/denken3"
 REVIEWED = ROOT / "data/questions/denken3/reviewed"
 RECEIPTS = ROOT / "docs/evidence/denken3/receipts"
+PARTIAL = ROOT / "docs/evidence/denken3/partial"
 SUBJECTS = {"theory", "power", "machinery", "law"}
 
 
@@ -92,10 +93,45 @@ def validate_acceptance(data: dict) -> None:
     print("Accepted 16 papers / 264 question numbers / 320 public answer units / 1600 choices")
 
 
+def validate_partial(data: dict) -> None:
+    expected = {}
+    for session in data["sessions"]:
+        date = session["examDate"].replace("-", "")
+        for paper in session["subjects"]:
+            for unit in paper["answerUnits"]:
+                expected[(date, paper["subject"], unit["question"], unit["part"])] = unit["answer"]
+    observed = set()
+    units = 0
+    questions = set()
+    for receipt_path in sorted(PARTIAL.glob("*.json")):
+        receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
+        data_path = REVIEWED / receipt_path.name
+        if not data_path.is_file() or sha256(data_path.read_bytes()).hexdigest() != receipt["reviewedDataSha256"]:
+            raise ValueError(f"Partial data changed after receipt: {data_path}")
+        rows = json.loads(data_path.read_text(encoding="utf-8"))
+        if receipt["status"] != "partial-accepted" or len(rows) != receipt["answerUnitCount"]:
+            raise ValueError(f"Invalid partial receipt: {receipt_path}")
+        for row in rows:
+            key = (row["examDate"].replace("-", ""), row["subject"], row["questionNumber"], row["part"])
+            if key in observed or key not in expected or row["officialAnswer"] != expected[key]:
+                raise ValueError(f"Duplicate/unofficial accepted row: {key}")
+            observed.add(key)
+            questions.add(key[:3])
+            if row.get("needsReview") is not False or set(row["choices"]) != {"1", "2", "3", "4", "5"} or set(row["choiceExplanations"]) != {"1", "2", "3", "4", "5"}:
+                raise ValueError(f"Incomplete accepted choices: {key}")
+            for url in row.get("figureUrls", []) + list(row.get("choiceFigureUrls", {}).values()):
+                if not url.startswith("/images/denken3/") or not (ROOT / "public" / url.lstrip("/")).is_file():
+                    raise ValueError(f"Missing figure asset: {key} {url}")
+            units += 1
+    print(f"Partially accepted: {len(questions)}/264 question numbers, {units}/320 public answer units, {units*5}/1600 choices")
+
+
 def main() -> None:
     data = load_manifest()
     if "--local-pdfs" in sys.argv:
         validate_local_pdfs(data)
+    if "--partial" in sys.argv:
+        validate_partial(data)
     if "--accept" in sys.argv:
         validate_acceptance(data)
     print("Source manifest: 4 sessions / 16 papers / 320 official answer units verified")
