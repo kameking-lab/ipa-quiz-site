@@ -16,21 +16,24 @@ export function ExamNoteLinks({
   links,
   headingId,
   heading = "関連する解説記事",
+  headingLevel = "h2",
   className,
 }: {
   links: readonly ExamNoteLink[];
   headingId: string;
   heading?: string;
+  headingLevel?: "h2" | "h4";
   className?: string;
 }) {
   if (links.length === 0) return null;
+  const Heading = headingLevel;
   const anchorClassName =
     "inline-flex min-h-11 items-center gap-1 font-semibold text-sky-900 underline decoration-2 underline-offset-4 [overflow-wrap:anywhere] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-300 dark:text-sky-200 forced-colors:text-[LinkText]";
   return (
     <section aria-labelledby={headingId} className={className}>
-      <h2 id={headingId} className="text-xl font-semibold text-slate-950 dark:text-white">
+      <Heading id={headingId} className="text-xl font-semibold text-slate-950 dark:text-white">
         {heading}
-      </h2>
+      </Heading>
       <ul className="mt-2 grid gap-1">
         {links.map((link) => {
           const account = deriveNoteAccountFromUrl(link.url);
@@ -46,7 +49,7 @@ export function ExamNoteLinks({
               {link.kind ? (
                 <span
                   className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                  style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
+                  style={{ backgroundColor: link.kind === "free" ? "#0369a1" : "#a16207" }}
                 >
                   {link.kind === "free" ? "無料" : "有料"}
                 </span>
