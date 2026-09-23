@@ -64,7 +64,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "FP3級と同じ利用条件。共通学科問題は日本FP協会と金財が著作権を共有。",
     attributionTemplate: "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定（公表年月）",
-    remainingWork: ["2026年5月公表の問11〜60の追加", "他公表年の追加", "法改正影響の継続確認"],
+      remainingWork: ["2026年5月公表の問11〜60の追加", "法改正影響の継続確認"],
   },
   {
     slug: "denken3",

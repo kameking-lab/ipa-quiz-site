@@ -31,7 +31,7 @@ export type Session =
   | "gakka"
   | "riron";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "may" | "september" | "january";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 

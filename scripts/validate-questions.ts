@@ -51,7 +51,7 @@ const QuestionSchema = z.object({
   exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3"]),
   session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "may", "september", "january"]),
   qNumber: z.number().int().min(1),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),
   category: z.string().min(1),

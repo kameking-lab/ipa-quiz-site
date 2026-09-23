@@ -22,7 +22,7 @@ const EXAM_CODES = [
   "fp2", "fp3",
 ] as const;
 
-const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second"] as const;
+const SEASONS = ["spring", "autumn", "cbt", "published", "first", "second", "may", "september", "january"] as const;
 const SESSIONS = [
   "am",
   "am1",

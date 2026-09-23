@@ -289,8 +289,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       label: "学科",
       categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
     }],
-    seasons: ["published"],
-    yearRange: { start: 2026, end: 2026 },
+    seasons: ["may", "september", "january", "published"],
+    yearRange: { start: 2024, end: 2026 },
   },
   fp3: {
     code: "fp3",

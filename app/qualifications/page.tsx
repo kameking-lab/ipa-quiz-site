@@ -17,7 +17,6 @@ const published = QUALIFICATION_CATALOG.filter((item) => item.status === "live")
 const questionCounts: Record<string, number> = Object.fromEntries(
   published.map((item) => [item.slug, item.examCode ? (QUESTIONS_BY_EXAM[item.examCode]?.length ?? 0) : 0]),
 );
-const publishedQuestionCount = published.reduce((sum, item) => sum + (questionCounts[item.slug] ?? 0), 0);
 
 export default function QualificationsPage() {
   return (
@@ -29,7 +28,7 @@ export default function QualificationsPage() {
         <Badge variant="soft" className="mb-3">公式公開資料から収録</Badge>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          公式問題と正答を確認でき、再利用条件と公開前手続きを満たした問題だけを掲載しています。現在は試験版として合計{publishedQuestionCount}問を収録しています。
+          公式問題と正答を確認できるFP2級・FP3級の学科と実技を、年度と科目から選べます。
         </p>
       </header>
 
@@ -38,10 +37,11 @@ export default function QualificationsPage() {
           <article key={item.slug} className="rounded-2xl border border-border bg-card p-5 shadow-sm">
             <div className="mb-3 flex items-center justify-between gap-3">
               <h2 className="text-lg font-bold">{item.shortName}</h2>
-              <Badge variant="outline">収録 {questionCounts[item.slug]} 問</Badge>
+              <Badge variant="outline">{item.slug === "fp2" ? `学科 ${questionCounts.fp2}問・実技 160問` : item.slug === "fp3" ? `学科 ${questionCounts.fp3}問・実技 40問` : `収録 ${questionCounts[item.slug]}問`}</Badge>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
-            {item.slug === "fp2" && <p className="mb-4 text-sm text-muted-foreground">2026年5月公表・学科60問のうち問1〜10を収録。法令基準日：2025年4月1日。</p>}
+            {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の公式公開4回を、学科240問・実技160問すべて収録。</p><p className="mb-4 mt-2 text-xs text-muted-foreground">追加セット：2026年5月公表の学科は問1〜10を先行収録。</p></>}
+            {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024・2025年の学科120問と実技40問を収録。</p>}
             <Button asChild variant="primary" className="w-full">
               <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>

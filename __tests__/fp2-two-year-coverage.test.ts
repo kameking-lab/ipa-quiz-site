@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
 import academic from "@/docs/evidence/fp2-two-year/gakka-extraction.json";
+import academicPublished from "@/data/questions/fp2/academic-2024-2025.json";
+import academicFigures from "@/data/questions/fp2/academic-figures-2024-2025.json";
+import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import practical from "@/data/questions/fp2/practical-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
 import manifest from "@/docs/evidence/fp2-two-year/manifest.json";
@@ -18,6 +21,29 @@ describe("FP2 official 2024–2025 corpus", () => {
         expect(q.choices.every((choice) => choice.trim().length > 0)).toBe(true);
         expect(q.answer).toBeGreaterThanOrEqual(1);
         expect(q.answer).toBeLessThanOrEqual(4);
+      }
+    }
+  });
+
+  it("publishes each 2024–2025 academic question with the official answer and four choice reasons", () => {
+    expect(academicPublished).toHaveLength(240);
+    expect(FP2_QUESTIONS).toHaveLength(250); // Includes the separate 2026 Q1–10 pilot.
+    expect(academicPublished.filter((q) => q.needsReview)).toHaveLength(0);
+    for (const edition of editions) {
+      const original = academic[edition].questions;
+      const published = academicPublished.filter((q) => q.id.startsWith(`fp2-${edition}-`));
+      expect(published).toHaveLength(60);
+      expect(published.map((q) => q.qNumber)).toEqual(Array.from({ length: 60 }, (_, i) => i + 1));
+      for (const q of published) {
+        const source = original[q.qNumber - 1];
+        expect(q.answer).toBe("アイウエ"[source.answer - 1]);
+        expect(Object.keys(q.choices)).toEqual(["ア", "イ", "ウ", "エ"]);
+        expect(Object.keys(q.choiceExplanations)).toEqual(["ア", "イ", "ウ", "エ"]);
+        expect(Object.values(q.choiceExplanations).every((reason) => reason.trim().length > 10)).toBe(true);
+        expect(q.question.trim().length).toBeGreaterThan(10);
+        expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\//);
+        expect(q.officialReferenceUrls?.every((url) => /^https:\/\/(?:laws\.e-gov\.go\.jp|[a-z.]+\.go\.jp)\//.test(url)) ?? true).toBe(true);
+        expect(q.imageUrls?.length ?? 0).toBe((academicFigures[edition] as Record<string, unknown[]>)[String(q.qNumber)]?.length ?? 0);
       }
     }
   });

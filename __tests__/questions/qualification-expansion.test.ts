@@ -12,10 +12,12 @@ import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS];
+const FP2_PILOT = FP2_QUESTIONS.filter((q) => q.year === 2026);
 
 describe("official-source qualification pilot data", () => {
   it("contains the transcribed FP sets and gated electrical pilot", () => {
-    expect(FP2_QUESTIONS).toHaveLength(10);
+    expect(FP2_QUESTIONS).toHaveLength(250);
+    expect(FP2_PILOT).toHaveLength(10);
     expect(FP3_QUESTIONS).toHaveLength(120);
     expect(DENKEN3_QUESTIONS).toHaveLength(2);
   });
@@ -23,7 +25,7 @@ describe("official-source qualification pilot data", () => {
   it("keeps Denken3 behind the notification-required publication gate", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("notification-required");
     expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
-    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(10);
+    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(250);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(120);
   });
 
@@ -42,9 +44,9 @@ describe("official-source qualification pilot data", () => {
   });
 
   it("keeps FP2 explanation sources government-only and separates the mathematical question's source PDF", () => {
-    expect(FP2_QUESTIONS[0]!.officialReferenceUrls ?? []).toHaveLength(0);
-    expect(FP2_QUESTIONS[0]!.sourcePdfUrl).toContain("jafp.or.jp");
-    for (const q of FP2_QUESTIONS.slice(1)) {
+    expect(FP2_PILOT[0]!.officialReferenceUrls ?? []).toHaveLength(0);
+    expect(FP2_PILOT[0]!.sourcePdfUrl).toContain("jafp.or.jp");
+    for (const q of FP2_PILOT.slice(1)) {
       expect(q.officialReferenceUrls?.length).toBeGreaterThan(0);
       for (const url of q.officialReferenceUrls ?? []) {
         expect(new URL(url).hostname).toMatch(/\.(?:mhlw|nta|meti|mlit)\.go\.jp$/);
@@ -53,9 +55,9 @@ describe("official-source qualification pilot data", () => {
   });
 
   it("matches the official FP2 answer sequence and 2025 law reference date", () => {
-    expect(FP2_QUESTIONS.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
-    expect(FP2_QUESTIONS.map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
-    expect(FP2_QUESTIONS.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
+    expect(FP2_PILOT.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
+    expect(FP2_PILOT.map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
+    expect(FP2_PILOT.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
   });
 
   it("uses the explicit official answer PDF URL when question and answer files differ", () => {
