@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import receipts from "@/docs/evidence/sc-choice-explanations-2024-2025/review-receipts.json";
 import { SC_QUESTIONS } from "@/data/questions/sc";
 import type { ChoiceKey } from "@/lib/questions/types";
+import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 
 const EXPECTED_PAPERS: Record<string, number> = {
   "2024/spring/am1": 30,
@@ -31,6 +32,16 @@ describe("SC 2024/2025 all-choice explanations", () => {
     expect(questions).toHaveLength(220);
   });
 
+  it("publishes every official question in the interactive practice pool", () => {
+    const practiceCounts: Record<string, number> = {};
+    for (const question of questions.filter(isPracticeReadyQuestion)) {
+      const key = `${question.year}/${question.season}/${question.session}`;
+      practiceCounts[key] = (practiceCounts[key] ?? 0) + 1;
+    }
+    expect(practiceCounts).toEqual(EXPECTED_PAPERS);
+    expect(questions.filter(isPracticeReadyQuestion)).toHaveLength(220);
+  });
+
   it("covers every displayed choice with a distinct correct/wrong reason", () => {
     for (const question of questions) {
       const choiceKeys = Object.keys(question.choices ?? {}).sort() as ChoiceKey[];
@@ -56,6 +67,8 @@ describe("SC 2024/2025 all-choice explanations", () => {
       const receipt = receipts.questions[question.id as keyof typeof receipts.questions];
       expect(receipt, question.id).toBeDefined();
       expect(receipt.paper, question.id).toBe(`${question.year}/${question.season}/${question.session}`);
+      expect(receipt.status, question.id).toBe("PASS");
+      expect(receipt.issues, question.id).toEqual([]);
       expect(receipt.officialQuestionUrl, question.id).toMatch(/^https:\/\/(?:www\.)?ipa\.go\.jp\//u);
       expect(receipt.officialAnswerUrl, question.id).toMatch(/^https:\/\/(?:www\.)?ipa\.go\.jp\//u);
       for (const hash of [receipt.inputHash, receipt.candidateHash, receipt.evidenceHash, receipt.acceptedHash]) {

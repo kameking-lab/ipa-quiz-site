@@ -15,3 +15,24 @@ test("SC wrong answer shows its reason, official evidence, and preserves the ret
   await page.getByRole("button", { name: "モード選択に戻る" }).click();
   await expect(page).toHaveURL(/\/sc\/2025-spring$/);
 });
+
+test("SC recent papers expose every AM1 and AM2 question without mixing", async ({ page }) => {
+  test.setTimeout(180_000);
+  const papers = [
+    { year: 2024, season: "spring", session: "am1", count: "30" },
+    { year: 2024, season: "spring", session: "am2", count: "25" },
+    { year: 2024, season: "autumn", session: "am1", count: "30" },
+    { year: 2024, season: "autumn", session: "am2", count: "25" },
+    { year: 2025, season: "spring", session: "am1", count: "30" },
+    { year: 2025, season: "spring", session: "am2", count: "25" },
+    { year: 2025, season: "autumn", session: "am1", count: "30" },
+    { year: 2025, season: "autumn", session: "am2", count: "25" },
+  ] as const;
+
+  for (const paper of papers) {
+    await page.goto(`/quiz?mode=year&exam=sc&year=${paper.year}&season=${paper.season}&session=${paper.session}`);
+    await expect(page).toHaveURL(new RegExp(`session=${paper.session}`));
+    await expect(page.getByRole("progressbar", { name: "クイズ進捗" }))
+      .toHaveAttribute("aria-valuemax", paper.count);
+  }
+});

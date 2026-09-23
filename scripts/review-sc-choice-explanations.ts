@@ -12,6 +12,27 @@ const OVERLAY_PATH = join(ROOT, "data", "questions", "sc", "choice-explanations-
 const RECEIPT_PATH = join(ROOT, "docs", "evidence", "sc-choice-explanations-2024-2025", "review-receipts.json");
 const LOG_ROOT = join(ROOT, "logs", "sc-choice-explanations-2024-2025");
 const YEARS = new Set([2024, 2025]);
+const CORRECTED_INPUT_IDS = new Set([
+  "sc-2024h-am1-q3",
+  "sc-2024h-am2-q7",
+  "sc-2024h-am2-q24",
+  "sc-2025h-am1-q5",
+  "sc-2025h-am1-q6",
+  "sc-2025h-am1-q11",
+  "sc-2025a-am1-q7",
+  "sc-2024a-am1-q10",
+  "sc-2024a-am1-q24",
+  "sc-2024a-am1-q28",
+  "sc-2024h-am1-q6",
+  "sc-2024h-am1-q7",
+  "sc-2024h-am1-q18",
+  "sc-2024h-am1-q19",
+  "sc-2024h-am1-q29",
+  "sc-2025a-am1-q6",
+  "sc-2025a-am1-q14",
+  "sc-2025a-am1-q27",
+  "sc-2025a-am2-q22",
+]);
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
 
 type ChoiceReasons = Partial<Record<ChoiceKey, string>>;
@@ -71,6 +92,9 @@ interface PromptInput {
   question: string;
   choices: Record<string, string>;
   officialAnswer: string | string[];
+  existingNarrative: string;
+  hasImage: boolean;
+  imageUrls: string[];
   candidateChoiceExplanations: ChoiceReasons;
 }
 
@@ -141,7 +165,23 @@ function evidenceHash(question: Question, ledger: ReceiptLedger): string {
 }
 
 function inputHash(question: Question): string {
+  return digest({
+    question: question.question,
+    choices: question.choices,
+    officialAnswer: question.answer,
+    existingNarrative: question.explanation,
+    hasImage: question.hasImage,
+    imageUrls: question.imageUrls ?? [],
+  });
+}
+
+function legacyInputHash(question: Question): string {
   return digest({ question: question.question, choices: question.choices, officialAnswer: question.answer });
+}
+
+function inputHashMatches(question: Question, recordedHash: string): boolean {
+  if (recordedHash === inputHash(question)) return true;
+  return !CORRECTED_INPUT_IDS.has(question.id) && recordedHash === legacyInputHash(question);
 }
 
 function parsePromptInput(prompt: string): PromptInput[] {
@@ -206,7 +246,14 @@ function importLegacyReceipts(
         batch: batchId,
         status: review.status,
         issues: review.issues,
-        inputHash: digest({ question: promptRow.question, choices: promptRow.choices, officialAnswer: promptRow.officialAnswer }),
+        inputHash: digest({
+          question: promptRow.question,
+          choices: promptRow.choices,
+          officialAnswer: promptRow.officialAnswer,
+          existingNarrative: promptRow.existingNarrative,
+          hasImage: promptRow.hasImage,
+          imageUrls: promptRow.imageUrls,
+        }),
         candidateHash: digest(promptRow.candidateChoiceExplanations),
         evidenceHash: evidenceHash(question, ledger),
         acceptedHash: digest(review.choiceExplanations),
@@ -241,6 +288,7 @@ function makePrompt(batch: Question[]): string {
     choices: question.choices,
     officialAnswer: question.answer,
     existingNarrative: question.explanation,
+    hasImage: question.hasImage,
     candidateChoiceExplanations: question.choiceExplanations,
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl),
@@ -374,8 +422,10 @@ async function main(): Promise<void> {
   const pending = targets.filter((question) => {
     const receipt = ledger.questions[question.id];
     return !receipt
+      || receipt.status !== "PASS"
+      || receipt.issues.length !== 0
       || mixedBatches.has(receipt.batch)
-      || receipt.inputHash !== inputHash(question)
+      || !inputHashMatches(question, receipt.inputHash)
       || receipt.acceptedHash !== digest(overlay[question.id])
       || receipt.evidenceHash !== evidenceHash(question, ledger);
   });
