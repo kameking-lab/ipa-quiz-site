@@ -57,6 +57,7 @@ describe("FP2 official 2024–2025 corpus", () => {
       expect(questions.map((q) => q.number)).toEqual(Array.from({ length: 40 }, (_, i) => i + 1));
       for (const q of questions) {
         expect(q.body.trim().length).toBeGreaterThan(10);
+        expect(q.body, `${edition} Q${q.number} contains the next section's shared case`).not.toContain("<設例>");
         expect(q.modelAnswer.trim()).not.toBe("");
         expect((figures[edition] as Record<string, unknown[]>)[String(q.number)]).toBeDefined();
       }
