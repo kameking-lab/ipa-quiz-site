@@ -46,20 +46,29 @@ def main() -> None:
     presentation = json.loads(presentation_file.read_text(encoding="utf-8"))
     presented = {id_: presentation[id_] for id_ in ids}
     figure_hashes = {}
+    row_image_hashes = {}
     image_blocks = []
+    seen_images = set()
     for id_ in ids:
         figure_hashes[id_] = {}
-        for figure in presented[id_].get("figures", []):
-            src = figure["src"]
-            path = ROOT / "public" / src.lstrip("/")
-            if not path.exists():
-                raise FileNotFoundError(path)
-            raw = path.read_bytes()
-            figure_hashes[id_][src] = sha256(raw).hexdigest()
-            image_blocks.append({"type": "text", "text": f"公式図表: {id_} {src} SHA256={figure_hashes[id_][src]}"})
-            image_blocks.append({"type": "image", "source": {"type": "base64",
-                                                           "media_type": "image/webp",
-                                                           "data": base64.b64encode(raw).decode("ascii")}})
+        row_image_hashes[id_] = {}
+        for kind, sources in (
+            ("公式問題原図", question_rows[id_].get("images", [])),
+            ("図表切出し", [figure["src"] for figure in presented[id_].get("figures", [])]),
+        ):
+            for src in sources:
+                path = ROOT / "public" / src.lstrip("/")
+                if not path.exists():
+                    raise FileNotFoundError(path)
+                raw = path.read_bytes()
+                digest = sha256(raw).hexdigest()
+                (row_image_hashes if kind == "公式問題原図" else figure_hashes)[id_][src] = digest
+                if src not in seen_images:
+                    seen_images.add(src)
+                    image_blocks.append({"type": "text", "text": f"{kind}: {id_} {src} SHA256={digest}"})
+                    image_blocks.append({"type": "image", "source": {"type": "base64",
+                                                                   "media_type": "image/webp",
+                                                                   "data": base64.b64encode(raw).decode("ascii")}})
     focused_source = ROOT / f"docs/evidence/emkohyo-choice-sources/{paper}-q{first:02}-{last:02}.json"
     if focused_source.exists():
         source_file = focused_source
@@ -71,7 +80,7 @@ def main() -> None:
     prompt = (
         "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の政府一次資料で厳密に照合する。"
         "問題文の選択肢1〜5との対応、解説の個別因果、数値・温度・単位、正誤判定を全件見る。"
-        "文字起こしpresentationと添付した公式図表画像も見比べる。図表を見ずには判定できない肢を推測でPASSにしない。"
+        "文字起こしpresentationを公式問題原図と照合し、図表切出しとの対応も見る。画像を見ずには判定できない肢を推測でPASSにしない。"
         "物性値の温度・単位が出典と整合するか、近似であるなら比較結論が支持されるか検査する。"
         "政府ページが理由を直接支えない場合sourceIssuesに記す。見出しのみの一般資料を根拠として通さない。"
         "出力はJSONオブジェクトのみ。キーは問題ID、値はstatus(PASS/FIX),textIssues,choiceIssues,reasonIssues,sourceIssues,needsExternalCheck。"
@@ -103,7 +112,7 @@ def main() -> None:
             item["status"] = "FIX"
     receipt = {"reviewModel": resolved_model, "requestedModel": MODEL_ID,
                "paperId": paper, "ids": ids,
-               "figureSha256": figure_hashes,
+               "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
                "candidateSha256": {id_: sha256(json.dumps(candidates[id_], ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest() for id_ in ids},
                "sourcePackSha256": sha256(source_file.read_bytes()).hexdigest(), "assessment": result}
     out = REVIEW / f"{paper}-q{first:02}-{last:02}-review.json"
