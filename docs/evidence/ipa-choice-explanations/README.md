@@ -17,7 +17,7 @@
 2. 正答は変更しない。正答肢は正しい理由、誤答肢はその肢が誤りである具体的な理由を40文字以上で書く。
 3. 選択肢ごとに固有語を含め、結論だけの文や他問への使い回しを拒否する。
 4. 草稿担当とは別の高品質モデルが、正答整合、全肢固有性、テンプレ不使用、公式正答維持を設問単位で審査する。
-5. PASSだけをoverlayへ入れ、`reviews/` のreceiptに現問題source SHAとoverlay SHAを固定する。FIXは修正して再審査する。
+5. PASSだけをoverlayへ入れ、`reviews/` のreceiptに現問題source SHA、overlay SHA、審査対象だった全肢候補を固定する。FIXは候補と具体的な指摘を保持して修正・再審査する。
 6. `pnpm exec tsx scripts/validate-ipa-choice-explanations.ts` で登録済み全件を検証する。全602問完成時だけ `--complete` を付け、未作成も失敗にする。
 
 `hasImage=true`の問題は、先に次のコマンドで公式問題PDFをローカルキャッシュします。PDF自体はgitに含めず、`source-pdf-manifest.json`へ公式URL・SHA-256・対象問題IDを固定します。画像パスがない問題もこのPDFをClaudeのRead入力へ必ず渡し、原図未確認のまま審査しません。

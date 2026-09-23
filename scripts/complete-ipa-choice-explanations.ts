@@ -374,6 +374,7 @@ function saveReceipt(
       status: review[question.id]!.status,
       sourceSha256: sourceFingerprint(question),
       overlaySha256: overlayFingerprint(draft[question.id]!),
+      candidateChoiceExplanations: draft[question.id],
       checks: review[question.id]!.checks,
       issues: review[question.id]!.issues,
     })),

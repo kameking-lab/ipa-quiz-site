@@ -37,6 +37,7 @@ interface ReceiptItem {
   status: "PASS" | "FIX";
   sourceSha256: string;
   overlaySha256: string;
+  candidateChoiceExplanations?: Record<string, string>;
   checks: {
     answerConsistent: boolean;
     everyChoiceSpecific: boolean;
