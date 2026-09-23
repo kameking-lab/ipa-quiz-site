@@ -605,65 +605,91 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "作業環境測定法施行規則第6条第1号は、講習科目のうち個人サンプリング法に係るものを修了した者について、その方法を行えることを登録事項としています。講習科目を受けて登録するという肢1の記述は正しい。"
+            "reason": "作業環境測定法第5条・第32条は登録講習機関による講習を定める。施行規則第6条第1号は、個人サンプリング法に係る講習科目を修了した者について「個人サンプリング法を行うことができること」を登録事項とする。登録には受講に加え修了が必要だが、受講を要するとする肢は正しい。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "作業環境測定法施行規則第3条第1項は、個人サンプリング法のデザイン・サンプリングを、同法の測定士で当該方法の登録を受けた者に認めています。特定化学物質の区分登録を要するのは簡易機器以外で行う分析の側であり、「デザイン等ができない」は誤りである。"
+            "reason": "作業環境測定法施行規則第3条第1項第1号イは個人サンプリング法のデザイン・サンプリングを、作業環境測定法第2条第4号の測定士で当該方法の登録を受けた者に認める。同項第2号イの分析では作業場の種類（特定化学物質等）ごとの登録が必要だが、デザイン等には要求されないため肢は誤り。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "作業環境測定基準第13条第5項は、特別有機溶剤を含む有機溶剤の測定に第10条第5項の個人サンプリング法を準用します。他方、同第10条第5項は対象となる特定化学物質を号数で限定列挙するため、肢3の区別は正しい。"
+            "reason": "作業環境測定基準第13条第5項は第10条第5項を準用し、特化則第36条の5により有機則第28条第2項の測定を行う場合は特別有機溶剤を含める。厚労省の2023年施行通知は有機溶剤等を塗装作業等に限る扱いを廃止し全作業へ拡大した。一方、第10条第5項の他の特定化学物質は号数限定で、例えば令別表第3第二号3のアルキル水銀化合物は含まれない。したがって肢は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "作業環境測定基準第9条は放射性物質の状態ごとに粒子状・ガス状の試料採取方法を定め、身体装着の個人サンプリング法を選択肢として掲げていない。一方、個人サンプリング法の対象は第2条第4項・第10条第5項・第11条第3項・第13条第5項で個別に指定されるため、放射性物質取扱作業室は対象外となる。"
+            "reason": "作業環境測定基準第9条の放射性物質の測定には個人サンプリング法の規定・準用がない。同基準は第10条第5項や第13条第5項などで対象物を個別に指定している。厚労省ガイドラインの対象一覧も放射性物質を挙げず、肢は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "作業環境測定基準第10条第2項は、他物質の干渉がない場合、アクリロニトリル等に検知管方式を認める。同条第5項は施行令別表第3第二類第2号のアクリロニトリルを個人サンプリング法の対象にも含める。両項は別々の測定方法の許容規定なので、両条件を満たす物質があるという本肢は正しい。"
+            "reason": "作業環境測定基準第10条第2項は干渉物質がない場合にアクリロニトリル等の検知管方式を認め、同条第5項はアクリロニトリルを個人サンプリング法の対象に含む。厚労省ガイドライン第2の1は身体装着する「試料採取機器等」に検知管方式の測定機器が含まれると明記する。したがって両条件を満たす対象物があり、肢は正しい。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定法施行規則 第3・6条",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=1"
+            "title": "e-Gov 作業環境測定法（2026-02-17時点）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17"
           },
           {
-            "title": "厚生労働省 作業環境測定基準 第9・10・13条",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
-          },
-          {
-            "title": "e-Gov 作業環境測定法施行規則（2026年2月17日時点）第3・6条",
+            "title": "e-Gov 作業環境測定法施行規則（2026-02-17時点）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17"
           },
           {
-            "title": "e-Gov 労働安全衛生法施行令（2026年2月17日時点）別表第3",
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 個人サンプリング法ガイドライン（2024年改正）",
+            "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf"
+          },
+          {
+            "title": "e-Gov 労働安全衛生法施行令（2026-02-17時点）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17"
+          },
+          {
+            "title": "e-Gov 特定化学物質障害予防規則（2026-02-17時点）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17"
+          },
+          {
+            "title": "厚生労働省 個人サンプリング法の全作業への拡大通知（2023年施行）",
+            "url": "https://www.mhlw.go.jp/content/11300000/001088102.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=1",
-          "excerpt": "個人サンプリング法に係るものを修了した者　個人サンプリング法を行うことができること",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "作業環境測定士試験（以下「試験」という。）に合格し、かつ、厚生労働大臣又は都道府県労働局長の登録を受けた者が行う講習",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350AC0000000028?asof=2026-02-17",
+          "excerpt": "第三節　登録講習機関 第三十二条",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
+          "excerpt": "個人サンプリング法に係るものを修了した者",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
           "excerpt": "個人サンプリング法について登録を受けているもの",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=1",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
           "excerpt": "簡易測定機器以外の機器を用いて行う分析",
           "choiceNumbers": [
             2
@@ -671,10 +697,9 @@
         },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "第十条第五項の規定は、第一項に規定する測定について準用する",
+          "excerpt": "５　第十条第五項の規定は、第一項に規定する測定について準用する",
           "choiceNumbers": [
-            3,
-            5
+            3
           ]
         },
         {
@@ -692,10 +717,39 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "放射性物質の状態 試料採取方法 粒子状 液体捕集方法又はろ過捕集方法 ガス状 液体捕集方法、固体捕集方法、直接捕集方法又は冷却凝縮捕集方法",
+          "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf",
+          "excerpt": "個人サンプリング法対象特化物",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf",
+          "excerpt": "特別有機溶剤",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf",
+          "excerpt": "粉じん（遊離けい酸の含有率が極めて高いものを除く。）",
           "choiceNumbers": [
             4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "放射性物質の状態 試料採取方法 粒子状 液体捕集方法又はろ過捕集方法 ガス状",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "空気中の次に掲げる物の濃度の測定は、検知管方式による測定機器",
+          "choiceNumbers": [
+            5
           ]
         },
         {
@@ -706,58 +760,145 @@
           ]
         },
         {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "一　アクリロニトリル",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "同表第二号1、2、3の2",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf",
+          "excerpt": "「試料採取機器等」の「等」には、検知管方式による測定機器が含まれること",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
-          "excerpt": "（作業環境測定の実施）第三条事業者は、労働安全衛生法",
+          "excerpt": "（作業環境測定の実施） 第三条",
           "choiceNumbers": [
             2
           ]
         },
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
-          "excerpt": "（登録事項）第六条法第七条第四号の厚生労働省令で定める事項は",
+          "excerpt": "（登録事項） 第六条",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "２　前項の規定にかかわらず、空気中の次に掲げる物の濃度の測定は、検知管方式による測定機器又はこれと同等以上の性能を有する測定機器を用いる方法によることができる。ただし、空気中の次の各号のいずれかに掲げる物の濃度を測定する場合において、当該物以外の物が測定値に影響を及ぼすおそれのあるときは、この限りでない。 一　アクリロニトリル",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
+          "excerpt": "個人サンプリング法を行うことができること",
           "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/350M50002000020?asof=2026-02-17",
+          "excerpt": "当該指定作業場の属する別表に掲げる作業場の種類について登録を受けているもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "５　前項の規定にかかわらず、第一項に規定する測定のうち、令別表第三第一号1、3から6まで又は同表第二号1、2、3の2",
+          "choiceNumbers": [
+            3,
             5
           ]
         },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "令別表第三第一号1、3から6まで又は同表第二号1、2、3の2、5から11まで",
+          "excerpt": "第十三条　令第二十一条第十号の屋内作業場",
           "choiceNumbers": [
-            5
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "５　第十条第五項の規定は、第一項に規定する測定について準用する。この場合において",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "特別有機溶剤を含む。)」と読み替えるものとする",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "第九条　電離放射線障害防止規則第五十三条第二号、第二号の二又は第三号に掲げる作業場における空気中の放射性物質の濃度の測定",
+          "choiceNumbers": [
+            4
           ]
         },
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
-          "excerpt": "二第二類物質１アクリルアミド２アクリロニトリル３アルキル水銀化合物",
+          "excerpt": "二 第二類物質 １ アクリルアミド ２ アクリロニトリル",
           "choiceNumbers": [
             5
           ]
         },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "第十条第五項の規定は、第一項に規定する測定について準用する",
+          "excerpt": "この告示は、令和七年一月一日から適用する",
           "choiceNumbers": [
-            4
+            3,
+            4,
+            5
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
-          "excerpt": "第十条第五項の規定は、第一項に規定する測定について準用する",
+          "url": "https://www.mhlw.go.jp/content/11300000/001088214.pdf",
+          "excerpt": "改正 令和６年４月10日",
           "choiceNumbers": [
-            4
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "第三十六条の五  特別有機溶剤又は有機溶剤を含有する製剤その他の物",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039?asof=2026-02-17",
+          "excerpt": "有機則第二十八条（第一項を除く。）から第二十八条の四までの規定を準用する",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001088102.pdf",
+          "excerpt": "全ての作業に対象を拡大するもの",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318?asof=2026-02-17",
+          "excerpt": "３ アルキル水銀化合物",
+          "choiceNumbers": [
+            3
           ]
         }
       ],
-      "reviewIssues": [
-        "Opus5.5独立査読FIX: 個人サンプリング法で検知管方式を使えるという核心が第10条第2項と第5項を併せた根拠だけでは立証できない。試験日適用の条文・通達で確認するまで公開しない。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-2-q10": {
       "overlay": {
