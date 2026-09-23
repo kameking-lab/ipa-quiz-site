@@ -68,6 +68,14 @@ test("denken3 remains unreachable until the required usage notification is compl
   expect(response?.status()).toBe(404);
 });
 
+test("denko2 remains unreachable until the required usage notification is complete", async ({ page }) => {
+  const response = await page.goto("/denko2");
+  expect(response?.status()).toBe(404);
+  await page.goto("/q/denko2/2026-first/gakka/q10");
+  await expect(page.getByRole("heading", { name: "お探しのページが見つかりませんでした" })).toBeVisible();
+  await expect(page.getByText("低圧屋内配線の分岐回路の設計で")).toHaveCount(0);
+});
+
 test("FP2 negative questions explain why a selected true statement is not the answer", async ({ page }) => {
   await page.goto("/q/fp2/2026-published/gakka/q2");
   await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();

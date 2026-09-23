@@ -100,5 +100,8 @@ export function shuffleChoices(q: Question): Question {
   const choiceExplanations = q.choiceExplanations
     ? Object.fromEntries(keys.map((key, index) => [key, q.choiceExplanations![originalKeys[index]]]))
     : undefined;
-  return { ...q, choices: newChoices, answer: newAnswerKey, choiceExplanations };
+  const choiceImageUrls = q.choiceImageUrls
+    ? Object.fromEntries(keys.map((key, index) => [key, q.choiceImageUrls![originalKeys[index]]]))
+    : undefined;
+  return { ...q, choices: newChoices, answer: newAnswerKey, choiceExplanations, choiceImageUrls };
 }

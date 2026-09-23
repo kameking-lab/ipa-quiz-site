@@ -322,11 +322,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["first"],
     yearRange: { start: 2025, end: 2025 },
   },
+  denko2: {
+    code: "denko2",
+    nameFull: "第二種電気工事士学科試験",
+    urlSlug: "denko2",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 50,
+      label: "学科（問1〜10先行収録）",
+      categories: ["電気理論", "配電理論", "電気設備技術基準"],
+    }],
+    seasons: ["first"],
+    yearRange: { start: 2026, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3"> => code !== "fp2" && code !== "fp3" && code !== "denken3",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2",
 );
 
 /** Every exam playable in the application, including external qualifications. */

@@ -20,6 +20,7 @@ export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
   fp2: "2級FP技能検定の公式公表問題。年金・保険・金融・税などの知識を全選択肢の解説と基準日付きで学べます。",
   fp3: "3級FP技能検定は、家計・保険・金融資産・税・不動産・相続に関する基礎知識を問う国家検定です。",
   denken3: "第三種電気主任技術者試験は、事業用電気工作物の保安監督に必要な電気理論・電力・機械・法規の知識を問う国家試験です。",
+  denko2: "第二種電気工事士学科試験の令和8年度上期問題。全50問中の問1〜10を先行収録し、各選択肢を解説します。",
 };
 
 export function getAvailableExams(): ExamCode[] {
@@ -119,6 +120,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
   fp2: "2級ファイナンシャル・プランニング技能検定",
   fp3: "3級ファイナンシャル・プランニング技能検定",
   denken3: "第三種電気主任技術者試験",
+  denko2: "第二種電気工事士学科試験",
 };
 
 export function examFullName(exam: ExamCode): string {
@@ -161,6 +163,8 @@ const EXAM_META_DESC_DIVERSE: Record<
     `3級FP技能検定の公式公表問題を${c}問・${y}期分・${k}分野収録。全選択肢の解説と日本FP協会の問題・模範解答リンクを確認しながら、家計・年金・保険・金融・税・不動産・相続の基礎を学べます。`,
   denken3: (c, y, k) =>
     `第三種電気主任技術者試験の公式過去問を${c}問・${y}期分・${k}分野収録。全選択肢の解説と電気技術者試験センターの問題・正答リンク付きで、理論科目から段階的に学べます。`,
+  denko2: (c, y, k) =>
+    `第二種電気工事士学科の令和8年度上期から問1〜10を先行収録。${c}問・${y}期分・${k}分野の全選択肢に解説を付け、公式問題・正答を確認できます。全50問の模擬試験ではありません。`,
 };
 
 export function examMetaDescription(

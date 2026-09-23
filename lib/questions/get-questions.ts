@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "./types";
+import { isExamPublished } from "@/lib/qualifications/catalog";
 
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
@@ -18,6 +19,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   au: async () => (await import("@/data/questions/au")).AU_QUESTIONS,
   fp2: async () => (await import("@/data/questions/fp2")).FP2_QUESTIONS,
   fp3: async () => (await import("@/data/questions/fp3")).FP3_QUESTIONS,
+  denko2: async () => isExamPublished("denko2") ? (await import("@/data/questions/denko2")).DENKO2_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */
@@ -36,7 +38,7 @@ export async function getAllQuestionsLazy(): Promise<Question[]> {
 
 /** Exam codes that have data registered (may differ from ExamCode union). */
 export function getRegisteredExamCodes(): ExamCode[] {
-  return Object.keys(EXAM_LOADERS) as ExamCode[];
+  return (Object.keys(EXAM_LOADERS) as ExamCode[]).filter(isExamPublished);
 }
 
 /** Question count per exam, loaded lazily. Useful for UI badges. */
