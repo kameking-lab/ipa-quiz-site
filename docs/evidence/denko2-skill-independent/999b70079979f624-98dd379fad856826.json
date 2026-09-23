@@ -1,0 +1,27 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "999b70079979f6242786d91a9d4bb34d1b62e3796936f2335384b431c8d228a7",
+    "answerPdfSha256": "98dd379fad856826a0d99b1f875dfbf17d9738ec18f925627feb13e3bb575b72",
+    "extractedRecordSha256": "b32f863b3b0890df7532a669be80f33ad21416252f688c3aaf7ccb75cc58dd58"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2024-12-14-skill-09",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "Instructions (問題第2頁) match the original: 40-minute test time, all materials except spares, items 1–4 of なお. The original's dash-dot line symbol is rendered as ―・―・―, which carries the same meaning.",
+      "Materials table matches all 13 items. Checked sizes, core counts and lengths: 2.0mm-2C blue sheath about 600mm, 1.6mm-2C about 1250mm, 1.6mm-3C about 350mm, green 1.6mm about 150mm. Checked device names: カバーなし, ボディ（丸形）のみ, 15A125V 接地極付接地端子付. Checked quantities: small sleeves 2, medium sleeves 3 (spares included), 2-wire connectors 2, 3-wire connector 1. The ‥ left after item 1 is a leftover dot leader; it does not change any value. The 受験番号札 and ビニル袋 rows below the table are not extracted, which is correct because they are exam administration items.",
+      "Construction conditions (第3頁) match. Color rules ①–④: white for the grounded side, black for the ungrounded side, green for the ground wire. The three terminals that take white (コンセントW, receptacle screw-shell terminal, rosette W) all match. Connection methods match: A by push-in connector, B by ring sleeve.",
+      "The note under the figure matches in both lines: JIS C 0303:2000 compliance plus the simplification statement, and Ⓡ = ランプレセプタクル.",
+      "The diagramImage crop shows every item in the original wiring diagram, none cut off: Ⓡ-イ, 電源 1φ2W 100V, each VVF label (1.6-2C ×3, 2.0-2C ×2, 1.6-3C), every 150mm dimension, 100mm, E1.6, EET, the 2-outlet receptacle '2', the lower symbol E_D, junction boxes A and B, switch ●イ, ceiling rosette ( )イ, and both 施工省略 dash-dot boxes. This problem has no Figure 2, so secondFigureImage is not needed.",
+      "The answer PDF header reads 令和6年度第二種下期技能試験の解答 候補No.9. This matches 2024-12-14 and number 9.",
+      "The multi-wire diagram agrees with the problem. At A (push-in connectors): R white + 3C white, 3C black + switch black, and a 3-wire joint of R black + switch white + red. At B (ring sleeves): 4 whites (2.0×2 + 1.6×2 → medium sleeve), 3 blacks (2.0×2 + 1.6 → medium sleeve), and rosette black + red (1.6×2 → small sleeve). Used connectors are 2-wire ×2 and 3-wire ×1, used sleeves are 1 small and 2 medium; adding one spare of each sleeve matches the supplied 2 small and 3 medium.",
+      "The conceptual drawing and the example-work photo agree with the multi-wire diagram. Both show the blue VVF2.0-2C at the power feed and on the B–EET run, the green wire on the outlet's ground terminal, and the '2口コンセントへ' lead. This check only confirms that the drawings match the original PDF; no physical work was graded.",
+      "Text in the figure that the PDF text layer may not carry, such as the φ in 1φ2W and the subscript D in E_D, is visible in diagramImage and does not need to be copied into the body text."
+    ]
+  }
+}
