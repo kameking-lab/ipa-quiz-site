@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q06-07-11-13-14-opus.json",
+  "upstreamReviewSha256": "534e46b5ca1597437e76bf2ad0859473fa79e232bc2499d6e5b644ae420d1751",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "575186ca09659440606931ec0a3f76a34b99b1118fe684dadccf938f4086d531",
+    "rowSha256": {
+      "11": "7d487e31138facad14db76ff9e258525571c84268a28781cf9222fc47ef7e964"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文の否定語「不適切なものは」とイ〜ニ全肢の文言は原図と一致。公式正答はハ。正答以外のイ・ロ・ニが適切な使用法であることは、単一正答の公式正答から直接裏付けられる。法令条項の主張なし。図表なしの記載も原図と一致。"
+    }
+  ]
+}

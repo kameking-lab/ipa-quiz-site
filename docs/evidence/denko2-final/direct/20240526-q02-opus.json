@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q01-02-03-04-05-opus.json",
+  "upstreamReviewSha256": "78522c7fede078dd18175237cfc7154e2ebca37b7a63b3f576ec891151e859da",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "b5bc99fdab8a77cc607b379339ddc55b00fb3a642562ec53b3b83cca9e3efe8e",
+    "rowSha256": {
+      "2": "a7363db04101acb5f1ab1991d67b1342db1a0337da4a1fae6818c50d7c7b3d6b"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 2,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と4つの式（イ πDR/(4L×10³)、ロ πD²R/(L²×10⁶)、ハ πD²R/(4L×10⁶)、ニ πDR/(4L²×10³)）は原図と一致。ρ=RA/L、A=π(D×10⁻³)²/4 から得られる式はハで、公式正答ハと合う。各選択肢の誤りの説明も式の差と合っている。本問に図はない。"
+    }
+  ]
+}

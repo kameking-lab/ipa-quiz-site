@@ -9,14 +9,14 @@
       "ニ": "D種接地工事 500Ω"
     },
     "officialAnswer": "ハ",
-    "explanation": "⑥は電灯分電盤結線図でE5.5の接地線につながる接地極を指す。引込みは単相3線式100/200Vで、300V以下の低圧機器の接地に当たるためD種接地工事。経済産業省『電気設備の技術基準の解釈』第17条の原則は100Ω以下。主幹は漏電遮断器BEではなく配線用遮断器Bで、設問でも引込線の電源側に地絡遮断装置がないため、地絡時0.5秒以内の自動遮断による500Ω緩和を適用しない。",
+    "explanation": "⑥は電灯分電盤結線図でE5.5の接地線につながる接地極を指す。引込みは単相3線式100/200Vで、300V以下の低圧機器の接地に当たるためD種接地工事。経済産業省『電気設備の技術基準の解釈』第29条の接地工事区分によりD種となり、第17条第4項のD種接地抵抗の原則は100Ω以下。主幹は漏電遮断器BEではなく配線用遮断器Bで、設問でも引込線の電源側に地絡遮断装置がないため、地絡時0.5秒以内の自動遮断による500Ω緩和を適用しない。",
     "choiceExplanations": {
       "イ": "C種の10Ωは300Vを超える低圧機器の接地で用いる区分。⑥は単相100/200Vの電灯分電盤の接地なのでD種。",
       "ロ": "C種が対象外であるうえ、50ΩはC種の原則値10ΩにもD種の原則値100Ωにも該当しない。",
       "ハ": "100/200Vの電灯分電盤の接地なのでD種、設問条件で0.5秒遮断の緩和は使えず100Ω以下が正しい。",
       "ニ": "D種という種類は合うが、500Ωへの緩和は地絡後0.5秒以内に自動遮断する装置がある場合。主幹はBであり、設問でも引込線電源側に地絡遮断装置がない。"
     },
-    "diagramDescription": "⑥は電灯分電盤結線図の下の接地記号を指し、⑯はその上のE5.5と傍記した接地線を指す。電灯分電盤の電源は単相3線式100/200V、主幹はB 3P100A。",
+    "diagramDescription": "⑥は電灯分電盤結線図の下にある接地記号を指す。電灯分電盤の電源は単相3線式100/200V、主幹はB 3P100A。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q36.png",
     "imageUrls": [
@@ -25,7 +25,9 @@
     ],
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 37,
@@ -37,12 +39,12 @@
       "ニ": "黒丸にRを付した図記号。"
     },
     "officialAnswer": "ロ",
-    "explanation": "⑦は電灯分電盤結線図で、6個のリモコンリレーの電源側に描かれた破線の設置箇所を指す。リモコンリレーを操作する低電圧電源を供給するリモコントランスが必要なので、円内TにRを付したロ。図中の『TS』は別のタイムスイッチであり、T_Rをタイムスイッチと読まない。",
+    "explanation": "⑦は電灯分電盤結線図で、6個のリモコンリレーの制御電源を置く破線位置を指す。公式正答ロの円内T・傍記Rの図記号が、この位置に入るリモコントランスを示す。",
     "choiceExplanations": {
-      "イ": "円内TにBはベル用トランスを表す。⑦が給電するのはベルではなく6個のリモコンリレー。",
-      "ロ": "円内TにRはリモコントランス。電灯分電盤のリモコンリレー6回路に制御電源を供給する⑦に合う。",
-      "ハ": "黒丸Dは遅延スイッチの記号で、⑦に必要な変圧器ではない。",
-      "ニ": "黒丸Rはリモコンスイッチを表すが、⑦は操作側スイッチでなく分電盤内の電源用変圧器を置く位置。"
+      "イ": "円内TにBの図記号で、⑦に入る公式正答ロのT・Rとは傍記が異なる。",
+      "ロ": "円内TにRの図記号。リモコンリレー6回路の制御電源を置く⑦に対応する。",
+      "ハ": "黒丸にDの図記号で、⑦に入る変圧器の図記号T・Rではない。",
+      "ニ": "黒丸にRの図記号で、⑦に入る変圧器の図記号T・Rではない。"
     },
     "diagramDescription": "⑦は電灯分電盤結線図の左下、6個のリモコンリレーの前にある破線の枠を指す。選択肢はT_B、T_R、黒丸D、黒丸Rの図。",
     "uncertainty": "",
@@ -57,10 +59,9 @@
       "ハ": "/images/denko2/2024-first/q37-ha.png",
       "ニ": "/images/denko2/2024-first/q37-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.hrr.mlit.go.jp/youchi/youchi_shiyousyo/240326_zenbun.pdf",
-      "https://www.mlit.go.jp/koku/content/001611774.pdf"
-    ]
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 38,
@@ -72,9 +73,9 @@
       "ニ": "1.0"
     },
     "officialAnswer": "イ",
-    "explanation": "⑧の引出線は平面図左下のⒼ回路を指す。電灯分電盤結線図でⒼは単相3線式の200V・20A分岐。中性線接地の単相3線式では対地電圧100Vであり、使用電圧300V以下・対地電圧150V以下の区分になる。電気設備に関する技術基準を定める省令第58条の絶縁抵抗の最小値は0.1MΩ。",
+    "explanation": "⑧の引出線は平面図左下のⒼ回路を指す。Ⓖは1φ3W 100/200V電源から分岐した単相200V・20A回路で、BEからTSを経由する。電技解釈第24条第1項第一号イにより変圧器低圧側の中性点にはB種接地工事を施すため、この200V回路の各線と大地との間の電圧は100V。したがって使用電圧300V以下・対地電圧150V以下の区分になり、省令第58条による絶縁抵抗の最小値は0.1MΩ。",
     "choiceExplanations": {
-      "イ": "Ⓖは単相200V回路だが中性線接地で対地電圧は100V。省令第58条の150V以下区分で0.1MΩが最小値。",
+      "イ": "電技解釈第24条により中性点が接地された1φ3W 100/200V電源から取る200V回路なので、対地電圧は100V。省令第58条の150V以下区分で0.1MΩが最小値。",
       "ロ": "0.2MΩは使用電圧300V以下でも対地電圧150Vを超える区分の最小値。Ⓖの対地電圧は100V。",
       "ハ": "0.4MΩは使用電圧300V超の低圧電路の最小値。Ⓖの使用電圧は200V。",
       "ニ": "1.0MΩは省令第58条でこの電圧区分に定めた最小値ではない。0.1MΩ以上で足りる。"
@@ -87,8 +88,11 @@
       "/images/denko2/2024-first/wiring-panels.png"
     ],
     "officialReferenceUrls": [
-      "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096"
-    ]
+      "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096",
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 39,
@@ -100,12 +104,12 @@
       "ニ": "不平衡電流を遮断する。"
     },
     "officialAnswer": "イ",
-    "explanation": "平面図⑨の矢印は冷蔵庫の右にある、四角内の丸囲みSと傍記f20Aを指す。接続先cは三相200Vの冷蔵庫回路。Sは開閉器、f20Aは20Aのヒューズ付きを示す。ヒューズが過電流で溶断して電路を遮断するのが目的であり、地絡専用の検出器ではない。",
+    "explanation": "平面図⑨の矢印は冷蔵庫回路cの右にある四角内の丸囲みSと傍記f20Aを指す。公式正答イのとおり、この器具の目的は過電流を遮断すること。地絡電流や不平衡電流を検出して遮断する器具ではない。",
     "choiceExplanations": {
-      "イ": "三相200Vのc回路にあるS（f20A）のヒューズは過電流で溶断し、回路を遮断する。",
-      "ロ": "地絡電流の検出・遮断は漏電遮断器等の機能。⑨はヒューズ付き開閉器で地絡専用の検出器ではない。",
-      "ハ": "⑨のヒューズは過電流を遮断するが、地絡電流を検出して遮断する機能まで備えた漏電遮断器ではない。",
-      "ニ": "三相200Vのc回路に付く器具だが、不平衡電流の検出が目的ではなく、f20Aのヒューズによる過電流保護である。"
+      "イ": "公式正答が示すとおり、⑨の目的は過電流を遮断すること。",
+      "ロ": "⑨は地絡電流を検出して遮断する器具ではない。",
+      "ハ": "⑨が遮断する目的は過電流であり、地絡電流の検出・遮断までを目的とする器具ではない。",
+      "ニ": "⑨は不平衡電流を検出して遮断する器具ではない。"
     },
     "diagramDescription": "⑨は冷蔵庫の右側の、四角内の丸囲みSと傍記f20Aを指す。その横のcは凡例で三相200Vの冷蔵庫回路。",
     "uncertainty": "",
@@ -114,10 +118,9 @@
       "/images/denko2/2024-first/wiring-main.png",
       "/images/denko2/2024-first/wiring-panels.png"
     ],
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001611774.pdf",
-      "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2020/06/20200601-2-4.pdf"
-    ]
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 40,
@@ -129,22 +132,20 @@
       "ニ": "5"
     },
     "officialAnswer": "ロ",
-    "explanation": "⑩の矢印は事務所の蛍光灯『ア』につながる結線点から、右壁の『ア 3』三路スイッチへ向かう配線区間を指す。左側にも『ア 3』三路スイッチがあるため、両スイッチを連絡する渡り線2本と、右側スイッチの共通端子につながる線1本が必要で、最少3心となる。",
+    "explanation": "⑩は⑲のジョイントボックスから、事務所右下（店舗側出入口付近）の『ア3』三路スイッチへ向かう配線区間。事務所左側にも『ア3』三路スイッチがあるため、両スイッチ間の渡り線2本と右側スイッチの共通端子につながる線1本が必要で、最少3心となる。",
     "choiceExplanations": {
       "イ": "三路スイッチ間の渡り線だけで2本を使い、右側スイッチの共通端子への線が1本不足する。",
       "ロ": "渡り線2本と共通端子への線1本で、⑩の区間に必要な最少3心となる。",
       "ハ": "必要な3本にさらに1本足した値で、⑩の三路スイッチ区間の最少本数ではない。",
       "ニ": "必要な3本より2本多く、図中の⑩には追加の切替線を要求する器具がない。"
     },
-    "diagramDescription": "平面図⑩は事務所の蛍光灯『ア』の結線点と右壁の『ア 3』三路スイッチを結ぶ配線を指す。左側にも『ア 3』三路スイッチがある。",
+    "diagramDescription": "平面図⑩は、⑲のジョイントボックスと事務所右下（店舗側出入口付近）の『ア3』三路スイッチを結ぶ配線を指す。事務所左側にも『ア3』三路スイッチがある。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q40.png",
     "imageUrls": [
       "/images/denko2/2024-first/wiring-main.png",
       "/images/denko2/2024-first/wiring-panels.png"
     ],
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001611774.pdf"
-    ]
+    "officialReferenceUrls": []
   }
 ]

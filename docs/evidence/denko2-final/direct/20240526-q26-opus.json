@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q26-27-31-33-35-opus.json",
+  "upstreamReviewSha256": "9262f1c4a7f62a782533b685cbcae63ed86e7f06180cbb7f426ad99afab9fcda",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "a44c7e648c05ee7d65fdcd70c5913e4465502cb709c74f6933ecd276340e5f5a",
+    "rowSha256": {
+      "26": "a6f969fb16f19bec5d06d7ef3f24094759195fc92531c21c5ea688c65453d540"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the question text, the negation (適合していないもの) and the values in イ–ニ against the official question-image crop; official answer イ matches. Interpretation of the Technical Standards Art. 17(4)(i), from the official local excerpt https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf (SHA256 7ff56485…, PDF p.33; WebFetch returned 403): Class D grounding resistance is 100Ω or less, or 500Ω or less where the circuit is cut automatically within 0.5 s. Ministerial Ordinance Art. 58 table, from https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096 (confirmed via the e-Gov API): circuits of 300V or less with voltage to earth of 150V or less need 0.1MΩ. So イ fails at 600Ω > 500Ω, ロ at 500Ω and ニ at 0.1MΩ are at the limit and comply, and ハ complies."
+    }
+  ]
+}

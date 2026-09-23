@@ -21,7 +21,9 @@
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q21.png",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 22,
@@ -33,7 +35,7 @@
       "ニ": "a、b、c、d"
     },
     "officialAnswer": "ロ",
-    "explanation": "低圧屋内配線が弱電流電線と接近または交差する場合は、原則として弱電流電線と接触しないように施設しなければならない。離隔距離を確保する(c)か、堅ろうな隔壁を設ける(d)ことで接触を回避する施工が適切であり、接触している(a、b)施工は不適切。",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第167条第2項は、ケーブル工事による低圧屋内配線が弱電流電線又は水管等と接近又は交差する場合、接触しないように施設することを定める。cは10cm離して接触を避け、dは堅ろうな隔壁で接触を避けるため適切。接触しているa・bは不適切。",
     "choiceExplanations": {
       "イ": "cが適切な施工として含まれておらず、cを除外しているため誤り。",
       "ロ": "cは離隔距離を確保して接触を回避しており適切、dは堅ろうな隔壁により接触を回避しており適切。両方とも接触しないように施設する要件を満たしているため、この組合せが正しい。",
@@ -45,7 +47,9 @@
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q22.png",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 23,
@@ -69,7 +73,9 @@
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q23.png",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 24,
@@ -102,7 +108,7 @@
       "ニ": "被測定回路に電源電圧が加わっている状態で測定する。"
     },
     "officialAnswer": "ニ",
-    "explanation": "絶縁抵抗測定は、被測定回路を電路から完全に切り離し、電源電圧が加わっていない無電圧状態で行わなければならない。電源電圧が加わったまま測定すると、感電の危険や絶縁抵抗計・機器の損傷、測定値の誤りを招くため、本肢の記述は誤り。",
+    "explanation": "絶縁抵抗測定は、開閉器を開いて被測定回路を電源から切り離し、電源電圧が加わっていない無電圧状態で行う。電源電圧が加わったままの測定は感電や計器・機器損傷、誤測定につながるためニが誤り。",
     "choiceExplanations": {
       "イ": "電池内蔵の絶縁抵抗計は、電池が消耗していると正しい測定ができないため、測定前に電池の有効性を確認することは正しい手順。",
       "ロ": "測定前にE端子とL端子を短絡し、指針が零点(0MΩ)を指すことを確認する操作は、絶縁抵抗計の基本的な零点確認であり正しい。",

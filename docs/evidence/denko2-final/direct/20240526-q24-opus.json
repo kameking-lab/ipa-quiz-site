@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q15-16-17-18-24-opus.json",
+  "upstreamReviewSha256": "e9ca6254d847da63dbcf92b32419119c166f75a00d710920b6628193b72cefc6",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "e0eb5b94602d10d8141a51421d58331017c85de42d0ac5a473500ce1ecfbe622",
+    "rowSha256": {
+      "24": "a59519606f504dff3c3a3bb52fe181b2351e36955bbf880d2d5a693bd41bbb9a"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（ニ）を照合。問題文の否定語「誤っているもの」、イロハニ全肢の文言、0Ωの表記は原図と一致。ニの『倍率で割って』が誤りで、正しくは指示値に倍率を掛けるという解説は公式正答と整合する。図表なし。"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round5-q12-27-33-opus.json",
+  "upstreamReviewSha256": "7c4725c06b2a910991f87224652749596259c192b0ef6032c4e6c37ba218c3da",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "a7a0b7e51eb6457f6f6407f22d24110e947d5222707ee7ab65b2d89a706ab1ac",
+    "rowSha256": {
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question crop (q01 PDF, Q12) and the official answer ロ. The METI PDF https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf returned 403 to WebFetch, so I used the supplied SHA-pinned local excerpt (SHA256=7ff56485…3b43, PDF pp.145-146). In 第146条第2項第二号イ, table 146-3 gives the correction formula √((60−θ)/30) for vinyl compound that is not heat-resistant. The other formulas are 75 (heat-resistant vinyl, non-crosslinked polyethylene, SBR), 80 (EP rubber), 90 (crosslinked PE; fluororesin and silicone in the 'other cases' rows), 200 and 180. The table has no row based on 45℃. The note defines θ as ambient temperature, taken as 30 at or below 30℃. Question text, units and all four choices イ45, ロ60, ハ75, ニ90 match the original. Classifying IV in the non-heat-resistant vinyl row matches the official answer (60℃) for this question."
+    }
+  ]
+}

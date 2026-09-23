@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q06-07-11-13-14-opus.json",
+  "upstreamReviewSha256": "534e46b5ca1597437e76bf2ad0859473fa79e232bc2499d6e5b644ae420d1751",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "f92fcf0bfab038eb7aa07fc8103aed78d1e1edf01adc9cdcb88241666ce13317",
+    "rowSha256": {
+      "6": "48a6dcf483891a0c6eb24430ad22afc1d58363a4ac7a773ec088a46117a9bbe6"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q6.png": "4cf88c26a8a28a94c3d5a14601eb92e7f6dcacf752d18e7fe6a73a89ed33fa2f"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と数値（こう長8m、2000W、100V、1000mあたり3.2Ω）、選択肢イ〜ニ（1/2/3/4）は原図と一致。公式正答はイ。計算：往復16m×3.2Ω/1000m＝0.0512Ω、I＝2000/100＝20A、v＝20×0.0512＝1.024V≒1V。q6.png の切出しは原図の回路（1φ2W電源、各線の抵抗記号、上下の8m寸法、抵抗負荷2000W、100V）と一致。法令主張なし。"
+    }
+  ]
+}

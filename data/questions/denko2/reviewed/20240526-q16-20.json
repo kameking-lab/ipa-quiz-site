@@ -9,18 +9,22 @@
       "ニ": "2種金属製線ぴ"
     },
     "officialAnswer": "ロ",
-    "explanation": "写真の矢印が示すのは、側桁と横桟からなる開放的な梯子状のケーブル支持材。名称はケーブルラックである。",
+    "explanation": "国土交通省『公共建築工事標準仕様書（電気設備工事編）令和7年版』1.2.8(2)は、はしご形ケーブルラックを親げたと子げたを接続したものと定める。公式写真の矢印は、左右の親げたに横向きの子げたを並べた開放形の支持材を指しており、この構造に一致するためロのケーブルラック。",
     "choiceExplanations": {
-      "イ": "金属ダクトは電線を収める樋状の本体に蓋を付ける。写真の開放的な梯子状の支持材とは異なる。",
-      "ロ": "側桁と横桟でケーブルを支える梯子状の構造がケーブルラックに一致する。",
-      "ハ": "ライティングダクトは照明器具を接続する導体を内部に持つ。写真の大型の梯子状支持材とは異なる。",
-      "ニ": "2種金属製線ぴは電線を収める細い樋状の線ぴであり、写真の開放的なケーブルラックとは異なる。"
+      "イ": "国交省仕様書1.2.7は、ふたの分割・位置や終端部の閉そく（分電盤等へ接続する場合を除く）を規定し、ふたで閉じる構造を前提とする。写真は子げたの間が開いた梯子形なので異なる。",
+      "ロ": "左右の親げたと横向きの子げたからなる開放的な梯子形で、国交省仕様書のはしご形ケーブルラックの構造に一致する。",
+      "ハ": "電技解釈第165条第3項第六号はライティングダクトの開口部を原則下向き（同号イ・ロの場合は横向き可）に施設すると定める。写真は上向きに開いた大形の梯子状支持材なので異なる。",
+      "ニ": "電技解釈第161条の金属線ぴは、その内部に絶縁電線を収める設備。写真は多数のケーブルを上に載せる大形の梯子状支持材なので異なる。"
     },
-    "diagramDescription": "壁沿いに複数の梯子状の金属支持材があり、矢印はケーブルが載るラックの曲がり部分を指す。段数や天井との位置関係は写真だけでは確定しない。",
+    "diagramDescription": "壁沿いに複数段の梯子状の金属支持材があり、矢印は下段のケーブルラックの曲がり部分を指す。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q16.png",
     "imageUrls": [
       "/images/denko2/2024-first/q16.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/gobuild/content/001888825.pdf",
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
     ]
   },
   {
@@ -33,20 +37,19 @@
       "ニ": "ランプレセプタクル"
     },
     "officialAnswer": "ロ",
-    "explanation": "写真は吊り下げ用の鉤が付いた上部カバー、端子部、白・黒の線でつながるソケット本体を示す。端子部から線でソケット本体が吊り下がる構成から、線付防水ソケットと識別する。",
+    "explanation": "公式写真には上部カバーと端子部、白・黒の線でつながるソケット本体が写る。キーや引きひもはなく、台座直付け形でもない。公式正答が示す名称は線付防水ソケット。",
     "choiceExplanations": {
-      "イ": "キーソケットには点滅用のキーが付く。写真にはそのキーがない。",
-      "ロ": "上部の鉤付きカバーと、白・黒の線でつながるソケット本体の組合せは、線付防水ソケットに一致する。",
-      "ハ": "プルソケットには点滅用の引きひもが付く。写真には引きひもがない。",
-      "ニ": "ランプレセプタクルは台座とソケットが一体で造営材へ直付けする器具。写真のようにソケット本体が線で端子部から離れた構成ではない。"
+      "イ": "写真に点滅操作用のキーは写っておらず、公式正答もキーソケットではない。",
+      "ロ": "公式写真と公式正答が示す名称は線付防水ソケット。",
+      "ハ": "写真に引きひもは写っておらず、公式正答もプルソケットではない。",
+      "ニ": "写真はソケット本体が線で端子部から離れた構成で、公式正答はランプレセプタクルではない。"
     },
     "diagramDescription": "左上にJ字形の吊り鉤がある黒いカバー、右上にねじ端子部、その端子部から白・黒各1本の線が下の黒いソケット本体へ伸びる。下部には銅色のねじ込み受けが見える。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q17.png",
     "imageUrls": [
       "/images/denko2/2024-first/q17.png"
-    ],
-    "sourceForInternalQcOnly": "https://jpn.faq.panasonic.com/app/answers/detail/a_id/108317"
+    ]
   },
   {
     "number": 18,
@@ -95,7 +98,12 @@
     "imageUrls": [
       "/images/denko2/2024-first/q19.png"
     ],
-    "sourceForInternalQcOnly": "https://www.shiken.or.jp/construction/upload/point2024.pdf"
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf",
+    "supplementalOfficialSourceUrls": [
+      "https://www.shiken.or.jp/construction/upload/point2024.pdf"
+    ]
   },
   {
     "number": 20,
@@ -107,7 +115,7 @@
       "ニ": "建造物の壁を貫通してライティングダクトを設置した。"
     },
     "officialAnswer": "ニ",
-    "explanation": "経済産業省『電気設備の技術基準の解釈』のライティングダクト工事の規定では、支持点間距離は2m以下、終端部は閉そく、造営材を貫通しない。対地電圧150V以下で全長4m以下ならD種接地工事を省略できる。100V・3.5mのハも適切で、壁を貫通させるニだけが不適切。",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第165条第3項では、ライティングダクトの支持点間距離は2m以下、終端部は閉そく、開口部は原則下向き、造営材を貫通しないことを定める。同項は、対地電圧150V以下で全長4m以下ならD種接地工事を省略できる。したがって100V・3.5mのハは適切で、壁を貫通させるニが不適切。",
     "choiceExplanations": {
       "イ": "開口部を下に向けた堅ろうな取付けで、支持点間1.5mは2m以下の条件を満たす。",
       "ロ": "終端部をエンドキャップで閉そくしており、規定に合う。",
@@ -119,6 +127,8 @@
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q20.png",
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   }
 ]

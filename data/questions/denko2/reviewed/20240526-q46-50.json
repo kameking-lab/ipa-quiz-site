@@ -9,12 +9,12 @@
       "ニ": "写真：赤色のハンドルの裸圧着スリーブ用工具と、P形スリーブ。"
     },
     "officialAnswer": "ニ",
-    "explanation": "⑯は電灯分電盤の接地線E5.5を指す。設問の『直線重合せ接続』に使うのはP形裸圧着スリーブで、その専用圧着工具は赤いハンドルの写真。E形はリングスリーブで終端重合せ接続用なので、この接続方法に合わない。",
+    "explanation": "⑯は電灯分電盤の接地線E5.5を指す。試験センター資料はE形を終端重合せ用リングスリーブ、黄色ハンドルをリングスリーブ用工具と示す。設問が求める直線重合せ接続では公式正答ニのP形と赤色ハンドルの圧着工具を組み合わせる。",
     "choiceExplanations": {
-      "イ": "黄色の工具とE形リングスリーブ自体は組合せが合うが、E形は終端重合せ用。⑯の直線重合せ接続には使わない。",
-      "ロ": "P形は直線重合せに使うが、黄色の工具はE形リングスリーブ用。P形用の工具ではない。",
-      "ハ": "赤色の工具はP形などの裸圧着スリーブ用だが、組み合わせたE形リングスリーブは終端重合せ用。工具とスリーブ、接続方法が合わない。",
-      "ニ": "直線重合せ接続に適したP形スリーブと、これに対応する赤色ハンドルの圧着工具の組合せ。"
+      "イ": "黄色工具とE形は終端重合せ用の組合せで、設問の直線重合せ接続ではない。",
+      "ロ": "P形は設問の直線重合せに対応するが、黄色工具は試験センター資料でE形リングスリーブ用とされるため工具が合わない。",
+      "ハ": "赤色工具側でも、E形は試験センター資料で終端重合せ用とされ、設問の直線重合せに合わない。",
+      "ニ": "公式正答が示す、直線重合せ用P形と赤色ハンドルの圧着工具の組合せ。"
     },
     "diagramDescription": "電灯分電盤の⑯はE5.5と記された接地線。写真のイ・ロは黄色の工具、ハ・ニは赤色の工具。イ・ハのEスリーブは一端が広がった形、ロ・ニのPスリーブは横置きの円筒形。",
     "uncertainty": "",
@@ -29,8 +29,11 @@
       "ハ": "/images/denko2/2024-first/q46-ha.png",
       "ニ": "/images/denko2/2024-first/q46-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001885918.pdf"
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf",
+    "supplementalOfficialSourceUrls": [
+      "https://www.shiken.or.jp/construction/upload/point2024.pdf"
     ]
   },
   {
@@ -43,14 +46,14 @@
       "ニ": "写真：操作部に表示灯用の窓。下の接点図は0の開閉接点から1へ給電し、負荷側の分岐から表示灯を経て3へつながる確認表示灯内蔵スイッチ。"
     },
     "officialAnswer": "ニ",
-    "explanation": "平面図⑰はトイレと手洗場の仕切り付近の2個連用スイッチ『●●L』、傍記エオを指す。Lは片方に確認表示灯を内蔵し、負荷が入ったことを知らせる。ニの接点図ではスイッチの負荷側から表示灯へ分岐し、ONで表示灯が点く。3路スイッチを示す『3』の傍記ではない。",
+    "explanation": "平面図⑰が指すのは、トイレと手洗場の仕切り付近で●が2つ並び、傍記L・エオがある箇所。Lは確認表示灯内蔵スイッチを示す。ニの接点図ではスイッチの負荷側から表示灯へ分岐し、負荷ON時に表示灯が点灯する。",
     "choiceExplanations": {
       "イ": "接点が0から1又は3へ切り替わる3路スイッチ。⑰の●Lが示す確認表示灯を備えない。",
       "ロ": "ランプが接点と並列なのでOFF時に点灯する位置表示灯内蔵の構成。負荷ONを知らせる●Lとは異なる。",
       "ハ": "表示灯がない片切スイッチ。⑰には確認表示灯Lが必要。",
       "ニ": "負荷側に表示灯が接続され、負荷ON時に点灯する確認表示灯内蔵スイッチで●Lと一致。"
     },
-    "diagramDescription": "共通配線図⑰の矢印はトイレ・手洗場の仕切り付近の黒丸2つの連用スイッチ『●●L』、傍記エオを指す。肢の接点図は順に3路、接点と並列ランプ、ランプなし片切、負荷側にランプ付き片切。",
+    "diagramDescription": "共通配線図⑰の矢印は、トイレ・手洗場の仕切り付近で●が2つ並び、傍記L・エオがある箇所を指す。肢の接点図は順に3路、接点と並列ランプ、ランプなし片切、負荷側にランプ付き片切。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q47.png",
     "imageUrls": [
@@ -63,9 +66,9 @@
       "ハ": "/images/denko2/2024-first/q47-ha.png",
       "ニ": "/images/denko2/2024-first/q47-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001611774.pdf"
-    ]
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 48,
@@ -77,14 +80,14 @@
       "ニ": "写真：大スリーブ2個と中スリーブ1個。"
     },
     "officialAnswer": "ロ",
-    "explanation": "⑱の斜線ボックスには、左のVVF2.0-2C、右の分電盤ⓒからのVVF2.0-3C、下のVVF2.0-3C、上辺の接地極付き2E・EETコンセントへ向かう配線が入る。上辺の接地極付きコンセントへの枝には接地線が必要だが、太さの傍記はないため2.0mmとは断定しない。非接地側・接地側・接地線の3接続点に分けると、前2者は2.0mm3本＋上枝1本、接地線は2.0mm2本＋上枝1本。上枝を1.6mm又は2.0mmのいずれとしても各組合せは中スリーブの適用範囲となり、中3個。",
+    "explanation": "⑱にはVVF2.0-3Cが3本（上の2E、分電盤ⓒ、下の2E）とVVF2.0-2Cが1本（左の照明側ボックス）入る。非接地側・接地側はそれぞれ2.0mm×4本、接地線は2.0mm×3本を接続するため、3接続点はいずれも中スリーブ。必要数は中3個。",
     "choiceExplanations": {
       "イ": "3接続点は中スリーブの適用範囲。大3個は今回の電線の組合せの適用範囲外。",
       "ロ": "非接地側・接地側・接地線の3接続点がいずれも中スリーブの適用範囲に入り、中3個となる。",
-      "ハ": "非接地側・接地側は2.0mm3本＋上枝1本、接地線も2.0mm2本＋上枝1本で、いずれも小スリーブの適用範囲を超える。",
+      "ハ": "接続は2.0mm×4本が2か所、2.0mm×3本が1か所で、いずれも小スリーブの適用範囲を超える。",
       "ニ": "3接続点とも中スリーブの適用範囲なので、大を2個混ぜるのは不適切。"
     },
-    "diagramDescription": "⑱の斜線ボックスには左の照明側からVVF2.0-2C、右の分電盤ⓒからVVF2.0-3C、下の冷蔵庫付近の2EコンセントからVVF2.0-3C、上辺の2Eコンセントへの太さの傍記がない枝が入る。肢は大3、中3、小3、大2＋中1の写真と個数。",
+    "diagramDescription": "⑱にはVVF2.0-3Cが3本（上の2E、右の分電盤ⓒ、下の2E）とVVF2.0-2Cが1本（左の照明側ボックス）入る。肢は大3、中3、小3、大2＋中1。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q48.png",
     "imageUrls": [
@@ -97,8 +100,11 @@
       "ハ": "/images/denko2/2024-first/q48-ha.png",
       "ニ": "/images/denko2/2024-first/q48-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001885918.pdf"
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf",
+    "supplementalOfficialSourceUrls": [
+      "https://www.shiken.or.jp/construction/upload/point2024.pdf"
     ]
   },
   {
@@ -131,8 +137,11 @@
       "ハ": "/images/denko2/2024-first/q49-ha.png",
       "ニ": "/images/denko2/2024-first/q49-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001885918.pdf"
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf",
+    "supplementalOfficialSourceUrls": [
+      "https://www.shiken.or.jp/construction/upload/point2024.pdf"
     ]
   },
   {
@@ -145,12 +154,12 @@
       "ニ": "写真：黒い本体に上・左・右・下の4つの差込口がある多極コンセント。"
     },
     "officialAnswer": "ニ",
-    "explanation": "共通配線図には、イの接地極付2口コンセントに対応する『2E』、ロの抜け止め形の『LK』、ハの接地極・接地端子付の『EET』が描かれる。別の『20A』『E20A』は凡例で単相100Vと示されるⓗ・ⓘの回路にある。単相用は2極、E20Aのような接地極付なら2極＋接地極の3孔。それに対してニの黒い器具には4つの差込口があり、20A・E20Aには当たらない。二重丸ⓐ〜ⓕの単相200V回路は屋内の照明器具の列へ、ⓖはTSを経て構内の屋外灯へつながり、250Vコンセントの傍記はない。三相200Vの□a・□bはRCへ、□cは開閉器Ⓢを経て冷蔵庫へつながり、いずれも多極コンセント記号を持たない。写真だけでニの電圧定格を断定しない。",
+    "explanation": "共通配線図にはイに対応する『2E』、ロに対応する『LK』、ハに対応する『EET』が実際に描かれている。一方、ニの写真と同じ4差込口の多極コンセントに対応する図記号・傍記は配線図のどこにもない。したがって未使用はニ。",
     "choiceExplanations": {
       "イ": "平面図の店舗・手洗場付近に『2E』が複数あり、写真の接地極付2口コンセントを使う。",
-      "ロ": "平面図のカウンター2か所と屋外の『2 LK EET WP』に抜け止め形LKがあり、写真ロに対応する。",
-      "ハ": "平面図の左上のトイレ区画と屋外の『2 LK EET WP』にEETがあり、写真ハの接地極・接地端子付器具に対応する。",
-      "ニ": "上・左・右・下の4つの差込口（3極＋接地極の配置と見られる）の写真は、単相100Vの20A（2極）・E20A（2極＋接地極の3孔）と形が違う。三相回路にもこれを置く記号はない。"
+      "ロ": "カウンター2か所に1口の『LK』があり、写真ロの抜け止め形コンセントに対応する。屋外の『2 LK EET WP』は複数の傍記を持つ別仕様の器具である。",
+      "ハ": "左上区画に1口の『EET』があり、写真ハの接地極・接地端子付コンセントに対応する。",
+      "ニ": "写真だけではニの正確な規格・定格までは特定しない。ただし同じ4差込口の器具に対応する図記号・傍記は共通配線図にないため、使用されていない。"
     },
     "diagramDescription": "平面図には2E、LK、EETのほか、2、20A、E20A、WPのコンセント傍記がある。写真は順に白色2E、白色LK、白色EET、4差込口を持つ黒色の多極コンセント。",
     "uncertainty": "",
@@ -165,8 +174,8 @@
       "ハ": "/images/denko2/2024-first/q50-ha.png",
       "ニ": "/images/denko2/2024-first/q50-ni.png"
     },
-    "officialReferenceUrls": [
-      "https://www.mlit.go.jp/koku/content/001611774.pdf"
-    ]
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   }
 ]

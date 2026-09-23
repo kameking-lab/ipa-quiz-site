@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q20-21-22-23-26-opus.json",
+  "upstreamReviewSha256": "9ba7316bd7658ec17b8c96a72f62501cacf9fedd4087f7f1196f6a8e479ee671",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "eff0f7d5be05fd603eea43f34f309eef38218d3d3448a3b824132d1a1d496dc9",
+    "rowSha256": {
+      "21": "1f8a41efc18e99dcde2d0c5b29246b685292cc4e18dbca329c3714d283acc5af"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 21,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（問21）および公式正答イと照合済み。解釈（20231226-2.pdf の公式抜粋）で次を確認: 第160条第2項第二号 1種金属製可とう電線管は展開した場所又は点検できる隠ぺい場所で、かつ乾燥した場所などの条件に限る（p.156）。第160条第3項第四号 防湿装置は2種を湿気の多い場所に施設する場合の要件（p.156）。第164条第1項第三号 造営材の下面・側面に沿うケーブルの支持点間は2m以下（p.158）。第159条第1項第一号 屋外用ビニル絶縁電線を除く絶縁電線なら金属管に収められる（p.154）。第159条第3項第四号イ 使用電圧300V以下で管長4m以下を乾燥した場所に施設すればD種接地を省略可（p.154）。"
+    }
+  ]
+}

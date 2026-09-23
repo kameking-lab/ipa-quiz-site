@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q20-21-22-23-26-opus.json",
+  "upstreamReviewSha256": "9ba7316bd7658ec17b8c96a72f62501cacf9fedd4087f7f1196f6a8e479ee671",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "0af7bb17e1f979980532c981416bfdd35953c5ccbed1e190c09174efcb044a8d",
+    "rowSha256": {
+      "20": "93b922c4ad186e2275926159d0b83a2e6ac9cf47e2b510ef3133309f60ce58a5"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（20240526_co_second_q01.pdf 問20）および公式正答ニ（20240526_co_second_a01.pdf）と照合済み。問題文、否定語『不適切なもの』、イ〜ニの全肢、1.5m・3.5m・100Vの数値は原図と一致。電気設備の技術基準の解釈 第165条第3項（https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf、SHA固定の公式抜粋 p.161）で次を確認: 第三号 造営材に堅ろうに取付け、第四号 支持点間2m以下、第五号 終端部の閉そく、第六号 開口部は下向き、第七号 造営材を貫通しない、第八号ロ 対地電圧150V以下かつ全長4m以下ならD種接地工事を省略可。条番号が第165条であることは、同条第2項の165-1表で確認（p.160）。"
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "36": "371307c22c329dbc0e3c7b1ac7ad5e11a43968efb5620e596504b25302673c84",
+      "37": "935e6fa853bd4d1622b6288fb50c975208a020af54c5eeec333eaf266ec9d309",
+      "39": "128af33fd8bc5b80f6312ad4444b97acf017f8a909d2a0cf4c7ec6ec8b37d71b",
+      "46": "e176049e465b90faaf5333cddef04d28aef4eafb3e30fa5712e7155116d6f4c5",
+      "48": "95953a366b092084750fcef871d59ba97c84f12f57395237c120094bd6ade2f2"
+    },
+    "sourceCropSha256": {
+      "36": "772a6ef60f211e50748c4c270a7405a81988e41d73abec05d59950a175574f4a",
+      "37": "e70d42abd34150abad527ab4faff97ea7c46386dbd34229f258ed55ec73ea401",
+      "39": "e947e42663d3b4af0edf496907ee42c833fef6531cc0c0d40ded65f03c648fd1",
+      "46": "1983191681022a9d42d1de602b1ba368e3695dc59630ba185ff4b83072f30f7e",
+      "48": "a35c0baa53554b4aa7471f789eebfffb0aa691f1cb5d4d4506b85043b2e43666"
+    }
+  },
+  "assessment": [
+    {
+      "number": 36,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf：WebFetchは403だったため、SHA256=7ff56485…3b43で固定された公式抜粋を使用した。第29条29-1表（PDF p.39）で、低圧300V以下はD種接地工事、300V超過はC種接地工事と確認した。第17条第4項第一号（PDF p.33）で、D種の上限は100Ω、0.5秒以内の自動遮断装置がある場合は500Ωと確認した。第17条第3項第一号で、C種の上限は10Ω（同じ緩和で500Ω）と確認した。公式原図（20240526_co_second_q01.pdf 15頁）では、⑥が電灯分電盤結線図のE5.5接地線の下の接地記号を指し、電源は1φ3W 100/200V、主幹はB 3P100Aであることを確認した。公式正答（20240526_co_second_a01.pdf）はハ。"
+    },
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf 15頁、https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf 正答ロ）。原図では、⑦の破線枠がBE 100V 20Aの分岐から給電され、▲×6（⑮）へ配線されていることを確認した。候補の選択肢図（q37-i/ro/ha/ni）は、原図の円内T+B、円内T+R、●D、●Rと一致する。器具の分類は、指示に従い公式正答を一次資料として扱った。"
+    },
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf 15頁、https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf 正答イ）。原図では、⑨の引出線が冷蔵庫の右の、四角内に丸囲みSと傍記f20Aがある器具を指すことを確認した。その隣のcは、凡例どおり三相200V回路の冷蔵庫（動力分電盤BE 3P20A）である。解説は公式正答以外の器具仕様を主張していない。"
+    },
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "https://www.shiken.or.jp/construction/upload/point2024.pdf：WebFetchでは本文を抽出できなかったため、SHA256=0b40cdd6…5717で固定された公式抜粋を使用した。p.24で、リングスリーブはJIS C 2806の終端重合せ用スリーブ（E）と確認した。p.25で、リングスリーブ用圧着工具は握りが黄色と確認した。p.26で、赤（オレンジ）色の持ち手は圧着端子用工具と確認した。公式原図15頁で、⑯がE5.5接地線を指すことを確認した。問題の写真は、イ・ロが黄色の工具、ハ・ニが赤色の工具で、スリーブはE/Pの表示どおり。公式正答（20240526_co_second_a01.pdf）はニ。"
+    },
+    {
+      "number": 48,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図15頁（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf）で、⑱に入るケーブルを確認した。VVF2.0-3Cが3本（上の2Eコンセント、分電盤ⓒ、下の2Eコンセント）、VVF2.0-2Cが1本（左のジョイントボックス）。このため、非接地側は2.0mm×4、接地側は2.0mm×4、接地線は2.0mm×3となる。https://www.shiken.or.jp/construction/upload/point2024.pdf p.25の公式抜粋（SHA256固定）にあるJIS C 2806準拠の表では、φ2.0同一の場合は小が2本、中が3～4本、大が5本。よって3接続点とも中スリーブで、中3個が正しい。公式正答（20240526_co_second_a01.pdf）はロで、選択肢写真の大3・中3・小3・大2+中1とも一致した。"
+    }
+  ]
+}
