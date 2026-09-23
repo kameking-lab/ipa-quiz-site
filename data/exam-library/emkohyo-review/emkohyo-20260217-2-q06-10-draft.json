@@ -84,36 +84,134 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "鉛業務を行う屋内作業場の空気中の鉛濃度は1年以内ごとに1回測定し、記録は3年間保存します。鉛は30年保存の特別管理物質ではないため、頻度欄・保存期間欄とも組合せは正しいです。"
+            "reason": "鉛中毒予防規則第52条は、対象屋内作業場の鉛濃度を1年以内ごとに1回測定し、その記録を3年間保存すると定める。表の対象・頻度・保存期間がすべて合うので、この肢は誤った組合せではない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "ニッケル化合物（粉状のもの）は特定化学物質の第2類物質で、6か月以内ごとに1回測定します。発がん性に着目した特別管理物質に当たるため記録は30年間保存となり、組合せは正しいです。"
+            "reason": "施行令別表第3の第二類物質23の3は粉状のニッケル化合物を掲げる。特化則第36条の測定頻度は6か月以内ごとに1回で、同条3項の30年保存対象に23の3が含まれるため、この組合せは正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "二硫化炭素は有機溶剤中毒予防規則の第1種有機溶剤で、6か月以内ごとに1回測定し、記録は3年間保存します。特別有機溶剤でも特別管理物質でもないため、3年保存とする組合せは正しいです。"
+            "reason": "施行令別表第6の2には二硫化炭素が有機溶剤として掲げられる。有機則第28条は対象屋内作業場で6か月以内ごとの測定と記録の3年保存を定めるので、表の組合せは誤りではない。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "メチルエチルケトンは第2種有機溶剤です。6か月以内ごとに1回という測定頻度は正しいものの、記録の保存は3年間です。特別管理物質ではないので保存期間を「30年」とした欄が誤りで、本肢が正答です。"
+            "reason": "施行令別表第6の2にメチルエチルケトンが有機溶剤として掲げられる。有機則第28条で測定頻度は6か月以内ごとに1回だが、記録保存は3年間であり、表の30年が誤り。したがって本肢が正答となる。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ベンゼンは特定化学物質の第2類物質であり、特別管理物質でもあります。6か月以内ごとに1回の測定と記録の30年間保存が求められ、3欄とも法令の定めに一致するので組合せは正しいです。"
+            "reason": "施行令別表第3の第二類物質30はベンゼンを掲げる。特化則第36条の測定頻度は6か月以内ごとに1回で、同条3項の30年保存対象にも30が含まれるので、3欄とも一致する。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 鉛中毒予防規則 第52条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 特定化学物質障害予防規則 第36条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 有機溶剤中毒予防規則 第28条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 労働安全衛生法施行令 別表第3・別表第6の2",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "一年以内ごとに一回、定期に、空気中における鉛の濃度を測定しなければならない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74094000&dataType=0&pageNo=1",
+          "excerpt": "これを三年間保存しなければならない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "六月以内ごとに一回、定期に、第一類物質",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "23の2から24まで、26、27の2、29、30",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1",
+          "excerpt": "測定の記録については、三十年間保存するものとする。",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "六月以内ごとに一回、定期に、当該有機溶剤の濃度を測定しなければならない。",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "これを三年間保存しなければならない。",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "２３の３　ニツケル化合物",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "３０　ベンゼン",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "三十八　二硫化炭素",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2",
+          "excerpt": "四十四　メチルエチルケトン",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
       "reviewIssues": [
-        "判断根拠となる鉛中毒予防規則第52条、特定化学物質障害予防規則第36条（特別管理物質の30年保存を含む）、有機溶剤中毒予防規則第28条は、政府資料候補にも科目別packにも含まれていない。正答肢4（MEKの記録3年保存）を直接支える原文抜粋がないため、各規則の本文を検索して確認する必要がある。",
-        "ニッケル化合物が特別管理物質に当たる範囲（粉状に限る、ニッケルカルボニルを除く等）、二硫化炭素・MEKの有機溶剤区分（第1種・第2種）は既存知識に基づく記述で、原文は未確認。検索が必要。",
-        "候補URLの本文はどれも本問の判断を直接支える箇所を確認できなかったため、sourcesは空にした。"
+        "政府法令の対象番号・頻度・保存期間を照合中。独立Opus審査まで公開保留。"
       ]
     },
     "emkohyo-20260217-2-q8": {
