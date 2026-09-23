@@ -3,6 +3,7 @@ import receipts from "@/docs/evidence/sc-choice-explanations-2024-2025/review-re
 import { SC_QUESTIONS } from "@/data/questions/sc";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { scReviewInputHash } from "@/scripts/lib/sc-review-gate";
 
 const EXPECTED_PAPERS: Record<string, number> = {
   "2024/spring/am1": 30,
@@ -69,6 +70,14 @@ describe("SC 2024/2025 all-choice explanations", () => {
       expect(receipt.paper, question.id).toBe(`${question.year}/${question.season}/${question.session}`);
       expect(receipt.status, question.id).toBe("PASS");
       expect(receipt.issues, question.id).toEqual([]);
+      expect(receipt.inputHash, question.id).toBe(scReviewInputHash({
+        question: question.question,
+        choices: question.choices ?? {},
+        officialAnswer: question.answer,
+        existingNarrative: question.explanation,
+        hasImage: question.hasImage,
+        imageUrls: question.imageUrls ?? [],
+      }));
       expect(receipt.officialQuestionUrl, question.id).toMatch(/^https:\/\/(?:www\.)?ipa\.go\.jp\//u);
       expect(receipt.officialAnswerUrl, question.id).toMatch(/^https:\/\/(?:www\.)?ipa\.go\.jp\//u);
       for (const hash of [receipt.inputHash, receipt.candidateHash, receipt.evidenceHash, receipt.acceptedHash]) {

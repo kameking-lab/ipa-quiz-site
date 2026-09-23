@@ -1,10 +1,15 @@
 import { spawn } from "node:child_process";
-import { createHash } from "node:crypto";
 import { existsSync, mkdirSync, readFileSync, readdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { SC_QUESTIONS } from "@/data/questions/sc";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import {
+  isScReviewReceiptAccepted,
+  scReviewDigest,
+  scReviewInputHash,
+  type ScReviewInput,
+} from "@/scripts/lib/sc-review-gate";
 
 const ROOT = process.cwd();
 const MODEL = "claude-opus-5-5";
@@ -12,27 +17,6 @@ const OVERLAY_PATH = join(ROOT, "data", "questions", "sc", "choice-explanations-
 const RECEIPT_PATH = join(ROOT, "docs", "evidence", "sc-choice-explanations-2024-2025", "review-receipts.json");
 const LOG_ROOT = join(ROOT, "logs", "sc-choice-explanations-2024-2025");
 const YEARS = new Set([2024, 2025]);
-const CORRECTED_INPUT_IDS = new Set([
-  "sc-2024h-am1-q3",
-  "sc-2024h-am2-q7",
-  "sc-2024h-am2-q24",
-  "sc-2025h-am1-q5",
-  "sc-2025h-am1-q6",
-  "sc-2025h-am1-q11",
-  "sc-2025a-am1-q7",
-  "sc-2024a-am1-q10",
-  "sc-2024a-am1-q24",
-  "sc-2024a-am1-q28",
-  "sc-2024h-am1-q6",
-  "sc-2024h-am1-q7",
-  "sc-2024h-am1-q18",
-  "sc-2024h-am1-q19",
-  "sc-2024h-am1-q29",
-  "sc-2025a-am1-q6",
-  "sc-2025a-am1-q14",
-  "sc-2025a-am1-q27",
-  "sc-2025a-am2-q22",
-]);
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
 
 type ChoiceReasons = Partial<Record<ChoiceKey, string>>;
@@ -99,10 +83,7 @@ interface PromptInput {
 }
 
 function digest(value: unknown): string {
-  const input = typeof value === "string" || Buffer.isBuffer(value)
-    ? value
-    : JSON.stringify(value);
-  return createHash("sha256").update(input).digest("hex");
+  return scReviewDigest(value);
 }
 
 function readJson<T>(path: string, fallback: T): T {
@@ -164,24 +145,19 @@ function evidenceHash(question: Question, ledger: ReceiptLedger): string {
   return digest(sourceUrls(question).map((url) => ({ url, sha256: ledger.evidence[url]?.sha256 })));
 }
 
-function inputHash(question: Question): string {
-  return digest({
+function reviewInput(question: Question): ScReviewInput {
+  return {
     question: question.question,
-    choices: question.choices,
+    choices: question.choices ?? {},
     officialAnswer: question.answer,
     existingNarrative: question.explanation,
     hasImage: question.hasImage,
     imageUrls: question.imageUrls ?? [],
-  });
+  };
 }
 
-function legacyInputHash(question: Question): string {
-  return digest({ question: question.question, choices: question.choices, officialAnswer: question.answer });
-}
-
-function inputHashMatches(question: Question, recordedHash: string): boolean {
-  if (recordedHash === inputHash(question)) return true;
-  return !CORRECTED_INPUT_IDS.has(question.id) && recordedHash === legacyInputHash(question);
+function inputHash(question: Question): string {
+  return scReviewInputHash(reviewInput(question));
 }
 
 function parsePromptInput(prompt: string): PromptInput[] {
@@ -239,6 +215,15 @@ function importLegacyReceipts(
       const promptRow = promptRows.get(id);
       const current = overlay[id];
       if (!promptRow || !current) continue;
+      const storedInput: ScReviewInput = {
+        question: promptRow.question,
+        choices: promptRow.choices,
+        officialAnswer: promptRow.officialAnswer,
+        existingNarrative: promptRow.existingNarrative,
+        hasImage: promptRow.hasImage,
+        imageUrls: promptRow.imageUrls,
+      };
+      if (scReviewInputHash(storedInput) !== inputHash(question)) continue;
       validateReasons(question, review.choiceExplanations);
       if (digest(current) !== digest(review.choiceExplanations)) continue;
       ledger.questions[id] = {
@@ -246,14 +231,7 @@ function importLegacyReceipts(
         batch: batchId,
         status: review.status,
         issues: review.issues,
-        inputHash: digest({
-          question: promptRow.question,
-          choices: promptRow.choices,
-          officialAnswer: promptRow.officialAnswer,
-          existingNarrative: promptRow.existingNarrative,
-          hasImage: promptRow.hasImage,
-          imageUrls: promptRow.imageUrls,
-        }),
+        inputHash: scReviewInputHash(storedInput),
         candidateHash: digest(promptRow.candidateChoiceExplanations),
         evidenceHash: evidenceHash(question, ledger),
         acceptedHash: digest(review.choiceExplanations),
@@ -421,13 +399,12 @@ async function main(): Promise<void> {
   );
   const pending = targets.filter((question) => {
     const receipt = ledger.questions[question.id];
-    return !receipt
-      || receipt.status !== "PASS"
-      || receipt.issues.length !== 0
-      || mixedBatches.has(receipt.batch)
-      || !inputHashMatches(question, receipt.inputHash)
-      || receipt.acceptedHash !== digest(overlay[question.id])
-      || receipt.evidenceHash !== evidenceHash(question, ledger);
+    return !isScReviewReceiptAccepted(receipt, {
+      input: reviewInput(question),
+      acceptedHash: digest(overlay[question.id]),
+      evidenceHash: evidenceHash(question, ledger),
+      mixedBatch: receipt ? mixedBatches.has(receipt.batch) : false,
+    });
   });
   console.log(JSON.stringify({ total: targets.length, accepted: targets.length - pending.length, pending: pending.length, papers: Object.fromEntries([...groups].map(([key, rows]) => [key, rows.length])) }, null, 2));
   if (process.argv.includes("--prune-receipts")) {
