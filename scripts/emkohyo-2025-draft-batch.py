@@ -11,6 +11,8 @@ import re
 import subprocess
 import sys
 
+from emkohyo_source_retrieval import retrieve
+
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
@@ -33,6 +35,8 @@ def parse_result(stdout: str) -> object:
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
         raise ValueError(f"No successful model response: {stdout[-1000:]}")
+    if isinstance(final.get("structured_output"), dict):
+        return final["structured_output"]
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
     start, end = value.find("{"), value.rfind("}")
     if start < 0 or end < start:
@@ -73,13 +77,18 @@ def main() -> None:
          "existingExplanation": narratives.get(row["id"], "")}
         for row in selected
     ]
+    retrieved = retrieve(subject, request_items, per_question=5)
+    if retrieved["missingCachedSources"]:
+        raise ValueError(f"Build the pinned source cache first: {retrieved['missingCachedSources']}")
     web = "--web" in sys.argv[4:]
     prompt = (
         "第一種作業環境測定士の公式5択問題について、問題原文と既存解説を根拠に、選択肢1〜5それぞれの正誤理由を作る。"
         "公式正答番号は必ず維持するが、既存解説の誤りや根拠不足は鵜呑みにしない。"
+        "verdictはクイズで選んだときの採点を表す。正答番号だけcorrect、他4肢はincorrect。"
+        "『誤っているものを選べ』なら、文自体が正しい4肢はverdict=incorrectにし、reasonに文の正しさを説明する。"
         "各肢の具体的理由は55文字以上。選択肢固有の条件・数値・用語を用い、5肢同じ定型文にしない。"
         + ("既存packで不足する論点だけWebSearch/WebFetchで.go.jp一次資料を補う。" if web
-           else "添付の取得hash付き科目別一次資料packを使う。不足する論点はreviewIssuesへ明記し、検索が必要と記す。")
+           else "添付の取得hash付き設問別一次資料抜粋を使う。不足する論点はreviewIssuesへ明記し、検索が必要と記す。")
         + "URLが実在しても本文を読んでいなければ確認済みとはしない。"
         "sourcesには下記候補または検索で発見した、実際にその設問の判断を支える政府ページだけを入れる。"
         "候補がない・内容を確認できない場合は無関係URLを飾りで入れずreviewIssuesで不足を明記する。"
@@ -94,11 +103,15 @@ def main() -> None:
     )
     payload = (prompt + "\n問題: " + json.dumps(request_items, ensure_ascii=False)
                + "\n政府資料候補: " + json.dumps(sources, ensure_ascii=False)
-               + "\n科目別一次資料pack: " + json.dumps(subject_pack, ensure_ascii=False)
+               + "\n設問別一次資料抜粋: " + json.dumps(retrieved, ensure_ascii=False)
                + "\n物質別SDS: " + json.dumps(supplemental, ensure_ascii=False))
+    ids = [item["id"] for item in request_items]
+    schema = {"type": "object", "properties": {id_: {"type": "object"} for id_ in ids},
+              "required": ids, "additionalProperties": False}
     process = subprocess.run(
         [str(CLI), "-p", "--model", "opus", "--effort", "high", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", "WebSearch,WebFetch" if web else ""],
+         "--output-format", "stream-json", "--verbose", "--json-schema", json.dumps(schema),
+         "--tools", "WebSearch,WebFetch" if web else ""],
         input=json.dumps({"type": "user", "message": {"role": "user", "content": [{"type": "text", "text": payload}]}},
                          ensure_ascii=False) + "\n",
         text=True, encoding="utf-8", capture_output=True, cwd=ROOT, timeout=900,
@@ -113,7 +126,8 @@ def main() -> None:
     if out.exists():
         raise FileExistsError(out)
     out.write_text(json.dumps({"candidateModel": "claude-opus-5-5", "paperId": paper,
-                               "governmentSourceCandidates": sources, "questions": result},
+                               "governmentSourceCandidates": sources,
+                               "retrievedEvidence": retrieved, "questions": result},
                               ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"{out}: drafted {len(result)}, issues {sum(bool(x.get('reviewIssues')) for x in result.values())}")
 

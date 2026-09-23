@@ -8,4 +8,6 @@
 
 科目別一次資料packは`subject-source-registry.json`と`emkohyo-build-subject-source-packs.py`で9科目を一度取得し、URL・本文hash・該当ページ/抜粋を固定する。各5問はその科目packと、必要に応じて物質別SDSだけを入力する。同じ政府ページを問題ごとに検索し直さず、packにない論点だけ個別に探索する。pack内のURLが生きていても肢の理由を直接支えない場合は保留する。
 
+法令の長文は先頭ページや科目共通の数抜粋だけでは個別条文が欠ける。`emkohyo-cache-source-text.py`で16原典の全文をSHA照合してローカルに保持し、`emkohyo-expand-mhlw-law-pages.py`で厚労省の分割法令25ページをURL・SHA別に固定した。今後の草稿では`emkohyo_source_retrieval.py`が問題文と既存解説から該当部分だけを検索し、設問別に根拠候補を渡す。公開判断は別の原文・正答・政府資料照合で行い、検索結果だけで承認しない。旧草稿は自動受入せず、根拠不足が残る問だけ再起票する。
+
 `coverage-contract.json`の`emkohyoTwoYearTarget`に18紙360問を固定した。通常の検証では対象紙と収録数・現受入数を表示し、`node scripts/validate-safety-exams.mjs --require-em-two-years`は360問すべてで全肢解説が揃うまで失敗する。`requiredPaperIds`は既存の公開済み必須集合として維持し、未完成のEMを完了とは呼ばない。
