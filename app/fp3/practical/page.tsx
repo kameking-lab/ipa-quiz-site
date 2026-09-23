@@ -14,7 +14,7 @@ export default function Fp3PracticalHome() {
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp3" className="hover:underline">FP3級</Link> / 実技</nav>
       <h1 className="text-3xl font-bold text-foreground">FP3級 実技の過去問</h1>
-      <p className="mt-3 leading-relaxed text-muted-foreground">日本FP協会が公表した2024年・2025年の2024年・2025年の全2セット、各20問。計算、複数の空欄、○×問題も公式模範解答の単位と組合せを保って掲載しています。</p>
+      <p className="mt-3 leading-relaxed text-muted-foreground">日本FP協会が公表した2024年・2025年の全2セット、各20問。計算、複数の空欄、○×問題も公式模範解答の単位と組合せを保って掲載しています。</p>
       <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted-foreground"><span>2年分</span><span>・</span><span>40問</span></div>
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
         {FP3_PRACTICAL_EDITIONS.map((edition) => {

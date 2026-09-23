@@ -16,7 +16,7 @@ const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUEST
 describe("official-source qualification pilot data", () => {
   it("contains the transcribed FP sets and gated electrical pilot", () => {
     expect(FP2_QUESTIONS).toHaveLength(10);
-    expect(FP3_QUESTIONS).toHaveLength(5);
+    expect(FP3_QUESTIONS).toHaveLength(120);
     expect(DENKEN3_QUESTIONS).toHaveLength(2);
   });
 
@@ -24,14 +24,14 @@ describe("official-source qualification pilot data", () => {
     expect(getQualificationByExamCode("denken3")?.status).toBe("notification-required");
     expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(10);
-    expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(5);
+    expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(120);
   });
 
-  it.each(EXTERNAL_QUESTIONS)("$id has 3–5 choices, one explanation per choice, and a valid answer", (q) => {
+  it.each(EXTERNAL_QUESTIONS)("$id has 2–5 choices, one explanation per choice, and a valid answer", (q) => {
     const choiceKeys = getChoiceKeys(q.choices);
     const explanationKeys = Object.keys(q.choiceExplanations ?? {}).sort();
 
-    expect(choiceKeys.length).toBeGreaterThanOrEqual(3);
+    expect(choiceKeys.length).toBeGreaterThanOrEqual(2);
     expect(choiceKeys.length).toBeLessThanOrEqual(5);
     expect(explanationKeys).toEqual([...choiceKeys].sort());
     expect(choiceKeys).toContain(q.answer);
