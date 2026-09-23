@@ -6,6 +6,12 @@ import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition, practicalSourceUrls } from "@/lib/fp2/practical";
 import { splitPracticalChoices } from "@/lib/fp2/practical-choices";
 
+function readableIntro(text: string): string {
+  const firstBreak = text.indexOf("\n\n");
+  if (firstBreak < 0) return text;
+  return text.slice(0, firstBreak).replace(/\s*\n\s*/g, "") + text.slice(firstBreak);
+}
+
 export const dynamicParams = false;
 export function generateStaticParams() {
   return FP2_PRACTICAL_EDITIONS.flatMap((edition) => Array.from({ length: 40 }, (_, index) => ({ edition, number: String(index + 1) })));
@@ -34,7 +40,15 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
       <header><h1 className="text-2xl font-bold text-foreground sm:text-3xl">{data.label} 実技 問{q.number}</h1><p className="mt-2 text-sm text-muted-foreground">法令基準日 {data.lawReferenceDate}</p></header>
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-lg font-semibold">問題</h2>
-        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{choiceLayout?.questionText ?? q.body}</p>
+        <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{readableIntro(choiceLayout?.questionText ?? q.body)}</p>
+        {q.sharedContext ? <details open className="mt-5 rounded-xl border border-border bg-background p-4">
+          <summary className="cursor-pointer font-semibold">この問題で使う共通設例</summary>
+          <p className="mt-3 text-xs text-muted-foreground">同じ大問の前ページにある家族・資産などの条件です。原典PDF {q.sharedContext.sourcePages.join("・")}ページ。</p>
+          <p className="mt-3 whitespace-pre-wrap text-sm leading-7">{q.sharedContext.text}</p>
+          {q.sharedContext.panels.length > 0 ? <div className="mt-4 space-y-3">
+            {q.sharedContext.panels.map((panel) => <Image key={panel.url} src={panel.url} alt={`${data.label} 実技 問${q.number} の共通設例の図表（原典PDF ${panel.pdfPage}ページ）`} width={panel.width} height={panel.height} unoptimized className="h-auto w-full rounded border border-border" />)}
+          </div> : null}
+        </details> : null}
         {choiceLayout ? <div aria-label="選択肢" className="mt-5 grid gap-3">
           {choiceLayout.choices.map((choice) => <div key={choice.number} className="flex gap-3 rounded-xl border border-border bg-background p-4 text-base leading-relaxed">
             <span className="shrink-0 font-bold text-primary">{choice.number}.</span><span>{choice.text}</span>
@@ -54,6 +68,17 @@ export default async function Fp2PracticalQuestion({ params }: { params: Promise
         <summary className="cursor-pointer text-lg font-bold text-primary">公式模範解答を見る</summary>
         <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{selectedChoice ? `${selectedChoice.number}. ${selectedChoice.text}` : q.modelAnswer}</p>
         <p className="mt-3 text-xs text-muted-foreground">表記・単位・複数空欄の組合せは公式模範解答に合わせています。配点は協会非公表です。</p>
+        {q.solution && !q.solution.needsReview ? <section aria-label="解法と各肢の理由" className="mt-5 border-t border-border pt-5">
+          <h3 className="font-semibold">解き方・判断の根拠</h3>
+          <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-foreground">{q.solution.explanation}</p>
+          {Object.keys(q.solution.choiceExplanations).length > 0 ? <div className="mt-5 space-y-3">
+            <h4 className="font-semibold">各選択肢の理由</h4>
+            {Object.entries(q.solution.choiceExplanations).map(([number, reason]) => <p key={number} className="rounded-lg border border-border bg-background p-3 text-sm leading-7"><strong className="mr-2 text-primary">{number}.</strong>{reason}</p>)}
+          </div> : null}
+          {q.solution.governmentReferenceUrls.length > 0 ? <div className="mt-5 flex flex-wrap gap-3 text-xs">
+            {q.solution.governmentReferenceUrls.map((url) => <a key={url} href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary underline">国の資料で確認 <ExternalLink className="h-3 w-3" /></a>)}
+          </div> : null}
+        </section> : null}
       </details>
       <div className="mt-6 flex flex-wrap gap-4 text-sm"><a href={sourcePdfPage} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary underline">公式問題PDF <ExternalLink className="h-3 w-3" /></a><a href={source.answer} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-primary underline">公式模範解答PDF <ExternalLink className="h-3 w-3" /></a></div>
       <nav aria-label="問題を移動" className="mt-8 flex items-center justify-between gap-3 border-t border-border pt-6 text-sm">

@@ -36,3 +36,14 @@ test("FP2 numeric practical choices are separate cards and the answer includes t
   await page.getByText("公式模範解答を見る").click();
   await expect(page.getByText("3. 43,900円")).toBeVisible();
 });
+
+test("FP2 practical solutions show every option reason and preserve shared source tables", async ({ page }) => {
+  await page.goto("/fp2/practical/202405/2");
+  await page.getByText("公式模範解答を見る").click();
+  await expect(page.getByRole("heading", { name: "各選択肢の理由" })).toBeVisible();
+  await expect(page.getByLabel("解法と各肢の理由").locator("p.rounded-lg")).toHaveCount(4);
+  await page.goto("/fp2/practical/202405/23");
+  await expect(page.getByRole("img", { name: /問23 の図表/ })).toBeVisible();
+  await page.getByText("公式模範解答を見る").click();
+  await expect(page.getByText(/384×1\.02\^2/)).toBeVisible();
+});

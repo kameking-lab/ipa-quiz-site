@@ -1,5 +1,14 @@
 import extracted from "@/data/questions/fp2/practical-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
+import explanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
+import sharedCases from "@/data/questions/fp2/practical-shared-context-2024-2025.json";
+
+export interface PracticalSolution {
+  explanation: string;
+  choiceExplanations: Record<string, string>;
+  governmentReferenceUrls: string[];
+  needsReview: boolean;
+}
 
 export interface PracticalPanel {
   url: string;
@@ -9,6 +18,12 @@ export interface PracticalPanel {
   bytes: number;
 }
 
+export interface PracticalSharedContext {
+  sourcePages: number[];
+  text: string;
+  panels: PracticalPanel[];
+}
+
 export interface PracticalQuestion {
   number: number;
   body: string;
@@ -16,11 +31,15 @@ export interface PracticalQuestion {
   sourcePage: number;
   sourcePageContainsRaster: boolean;
   panels: PracticalPanel[];
+  solution?: PracticalSolution;
+  sharedContext?: PracticalSharedContext;
 }
 
 type RawEdition = { lawReferenceDate: string; questions: Omit<PracticalQuestion, "panels">[] };
 const DATA = extracted as Record<string, RawEdition>;
 const FIGURES = figures as Record<string, Record<string, PracticalPanel[]>>;
+const SOLUTIONS = explanations as Record<string, Record<string, PracticalSolution>>;
+const SHARED_CASES = sharedCases as Record<string, Record<string, PracticalSharedContext>>;
 
 export const FP2_PRACTICAL_EDITIONS = ["202405", "202409", "202501", "202505"] as const;
 
@@ -41,7 +60,8 @@ export function getPracticalEdition(edition: string): { label: string; lawRefere
   return {
     label: practicalEditionLabel(edition),
     lawReferenceDate: data.lawReferenceDate,
-    questions: data.questions.map((q) => ({ ...q, panels: panels[String(q.number)] ?? [] })),
+    questions: data.questions.map((q) => ({ ...q, panels: panels[String(q.number)] ?? [],
+      solution: SOLUTIONS[edition]?.[String(q.number)], sharedContext: SHARED_CASES[edition]?.[String(q.number)] })),
   };
 }
 

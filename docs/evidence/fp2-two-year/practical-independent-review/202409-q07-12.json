@@ -1,0 +1,88 @@
+[
+  {
+    "number": 7,
+    "approved": false,
+    "issues": [
+      "The question 7 text says only '<資料>'. The data needed for the calculation (準住居地域150㎡, 近隣商業地域50㎡, 建蔽率6/10 and 8/10, 敷地面積200㎡, 幅員6m市道) appears only in the question 8 OCR text, so the figure's placement cannot be confirmed from the question 7 text.",
+      "The calculation 150×6/10=90㎡ and 50×8/10=40㎡, total 130㎡, matches the official answer. However, the draft's uncertainty field itself says the source figure was not checked.",
+      "The explanation does not say why 角地緩和 (+1/10) and 防火地域・耐火建築物緩和 do not apply (the question says to ignore anything not stated, and 資料 shows no corner lot or fire-zone designation). It is not stated explicitly."
+    ],
+    "suggestedCorrection": "Move the figure data wrongly placed in the question 8 OCR text (準住居地域150㎡・建蔽率6/10, 近隣商業地域50㎡・建蔽率8/10, 敷地面積200㎡, 幅員6m市道) into question 7's <資料>, then check it against the original PDF image. Add to the explanation: 'The site spans two 用途地域, so calculate 敷地面積×建蔽率 for each area and add them (weighted average). 資料 contains no corner lot or 防火地域 condition, so 建蔽率緩和 is not applied. 150㎡×6/10＝90㎡, 50㎡×8/10＝40㎡, 90＋40＝130㎡.'",
+    "sourceQueries": [
+      "建築基準法 第53条 第2項 建築物の敷地が建蔽率の異なる区域にわたる場合",
+      "建築基準法 第53条 第3項 角地 防火地域 建蔽率緩和",
+      "日本FP協会 2級 実技 資産設計提案業務 2024年9月 問7"
+    ]
+  },
+  {
+    "number": 8,
+    "approved": false,
+    "issues": [
+      "The question 8 OCR text contains question 7's <資料> figure data (準住居地域150㎡, 建蔽率, 敷地面積200㎡, etc.) after the 語群, so the figure placement is broken.",
+      "The answer reasoning itself is correct: 課税主体 is 市町村 (東京23区は都), the 賦課期日 is January 1, the 小規模住宅用地 limit is 200㎡ per dwelling unit, and 課税標準 is 1/6. The special rule is unchanged as of 2024-04-01.",
+      "The draft does not explain why the distractors are wrong (国・都道府県, 4月1日, 240㎡, 3分の1). The 3分の1 rule is for 一般住宅用地 (the part over 200㎡), so it is easy to confuse, and this reason should be added."
+    ],
+    "suggestedCorrection": "Remove the question 7 figure data from the question 8 text and move it to question 7. Add to the explanation: '(ア) 固定資産税 is a 市町村税 (地方税法 第342条); in the 23 wards 東京都 levies it (第734条). It is not a 国税 or 都道府県税. (イ) The 賦課期日 is January 1 (第359条); April 1 is the start of the fiscal year, not the 賦課期日. (ウ)(エ) The 小規模住宅用地 is the part up to 200㎡ per dwelling unit, with 課税標準 = 評価額×1/6 (第349条の3の2). The part over 200㎡ (一般住宅用地) is 1/3, so 3分の1 is wrong. 240㎡ is not a threshold of this special rule.'",
+    "sourceQueries": [
+      "地方税法 第349条の3の2 住宅用地に対する固定資産税の課税標準の特例 200平方メートル 6分の1",
+      "地方税法 第359条 固定資産税の賦課期日",
+      "地方税法 第734条 特別区 固定資産税 都が課する"
+    ]
+  },
+  {
+    "number": 9,
+    "approved": true,
+    "issues": [
+      "The reason for choice 4 does not state that 2022 is 前々年 relative to 2024. It should say this explicitly.",
+      "資料 shows a 所有期間 of under 5 years (acquired 2022). The draft does not note that the 3,000万円特別控除 has no 所有期間 requirement, which makes clear that this is not a reason the special rule would be denied. This is a gap, but it does not affect the answer."
+    ],
+    "suggestedCorrection": "Choice 4 reason: 'When the property is sold in 2024, 2022 is the 前々年. If the special rule was applied in 前年 or 前々年, it cannot be applied again (措置法35条 but-clause), so the statement is correct.' Add to the overall explanation: 'The special rule has no 所有期間 requirement and no 合計所得金額 requirement (the 所得要件 of 2,000万円 or less belongs to 住宅ローン控除 and similar rules).'",
+    "sourceQueries": [
+      "租税特別措置法 第35条 居住用財産を譲渡した場合の3,000万円の特別控除",
+      "租税特別措置法施行令 第23条 第2項 特別の関係がある者",
+      "国税庁 タックスアンサー No.3302 マイホームを売ったときの特例"
+    ]
+  },
+  {
+    "number": 10,
+    "approved": true,
+    "issues": [
+      "The (ア) reason could also note that since the 2022 amendment (借地借家法38条2項) the contract can be made by 電磁的記録. As of 2024-04-01, a 電磁的記録 counts as 書面 (38条2項), so the answer is still 2.",
+      "The draft does not explain why the distractors are wrong (3 公正証書に限る, 5 正当事由の有無にかかわらず, 7・8 みなし期間). Also, the (エ) reason does not cite the provision that removes any upper limit on 建物賃貸借 terms (29条2項 excludes 民法604条)."
+    ],
+    "suggestedCorrection": "Add: '(ア) 38条1項 says 公正証書による等書面によって, so the contract is not limited to 公正証書 and 3 is wrong. (イ) Under 28条, a 更新拒絶 by the landlord requires 正当事由, so 5 is wrong. (ウ) Under 29条1項, a 普通借家 term of less than 1 year is treated as a lease with no fixed term, so the 1-year and 2-year みなし options are wrong. (エ) 29条2項 excludes 民法604条 (50-year cap), and a 定期借家 can set any term under 38条1項, so there is no upper or lower limit.'",
+    "sourceQueries": [
+      "借地借家法 第38条 定期建物賃貸借 書面 電磁的記録",
+      "借地借家法 第28条 建物賃貸借契約の更新拒絶等の要件 正当の事由",
+      "借地借家法 第29条 建物賃貸借の期間"
+    ]
+  },
+  {
+    "number": 11,
+    "approved": true,
+    "issues": [
+      "The choice reasons say only '4.71%でなく4.25%'. They do not say where 4.71% comes from: (1,680,000−360,000)÷28,000,000≒4.71%, the incorrect figure you get if 固定資産税・都市計画税 is left out of the costs. The distractor reasoning is thin.",
+      "The rounding check is fine: 1,190,000÷28,000,000×100＝4.25 exactly. The 管理業務委託費 is 140,000×5%＝7,000円 per month, and the calculation is correct."
+    ],
+    "suggestedCorrection": "Choice 2 and 4 reason: '4.71% is (1,680,000−360,000)÷28,000,000, which leaves 固定資産税・都市計画税 of 130,000円 out of 運営コスト. The 実質利回り deducts all annual costs including taxes, so the correct figure is 4.25%.' Add to the (イ)(ウ) reason: 'The 元金 portion is repayment of borrowed money and is not an expense. The building part is recovered through 減価償却費 instead.'",
+    "sourceQueries": [
+      "不動産投資 実質利回り NOI利回り 計算式 年間賃料 諸経費 購入価額",
+      "所得税法 第37条 必要経費 借入金利子 不動産所得",
+      "国税庁 タックスアンサー No.1376 不動産所得の収入計上時期 必要経費"
+    ]
+  },
+  {
+    "number": 12,
+    "approved": true,
+    "issues": [
+      "(ア): the contract date is 2024-10-01 and the policy year starts every October 1, so 2027-12-10 falls in the 4th year (2027-10-01 to 2028-09-30). 35−3＝32回×120万円＝3,840万円 is correct, but the draft does not show how the policy year is counted from the date. It also does not state that neither 特定疾病保険 (死亡保障なし型) nor 総合医療保険 pays anything on death.",
+      "(イ)(ウ) match the official answers. For (ウ), the draft should state that 重粒子線治療 is not a 公的医療保険 surgery, so no 手術給付金 is paid, and that 317万円 is within the 通算2,000万円 limit."
+    ],
+    "suggestedCorrection": "(ア) 'Contract 2024-10-01 → year 1 2024/10–2025/9 (35回), year 2 (34回), year 3 (33回), year 4 2027/10–2028/9 (32回). Death on 2027-12-10 is in year 4, so 120万円×32回＝3,840万円. The 特定疾病保険 has no death benefit and 医療保険 pays nothing on death.' (イ) '脳卒中 is a 脳血管疾患 hospitalization → 特定疾病保険金100万円. Hospitalization 73 days, capped at 60 days per stay → 1万円×60＝60万円. Surgery during the stay 10万円. Total 170万円.' (ウ) 'がん diagnosed → 100万円. 先進医療 technical fee 317万円 (within the 通算2,000万円 limit). Hospitalization 1万円×7日＝7万円. 重粒子線治療 is not a 公的医療保険 surgery, so no 手術給付金. Total 424万円.'",
+    "sourceQueries": [
+      "収入保障保険 逓減 支払回数 保険年度 契約日応当日",
+      "先進医療 重粒子線治療 技術料 全額自己負担 公的医療保険対象外",
+      "日本FP協会 2級 実技 資産設計提案業務 2024年9月 問12"
+    ]
+  }
+]

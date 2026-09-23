@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import fp2Practical from "@/data/questions/fp2/practical-2024-2025.json";
+import fp2PracticalExplanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import fp3Practical from "@/data/questions/fp3/practical-2024-2025.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
@@ -39,12 +40,25 @@ describe("live external qualification two-year publication gate", () => {
     }
   });
 
-  it("covers all four FP2 practical papers and every official model answer", () => {
+  it("covers all four FP2 practical papers with reviewed solutions and every numeric choice reason", () => {
     expect(Object.keys(fp2Practical).sort()).toEqual(["202405", "202409", "202501", "202505"]);
-    for (const edition of Object.values(fp2Practical)) {
-      expect(edition.questions).toHaveLength(40);
-      expect(edition.questions.map((question) => question.number)).toEqual(Array.from({ length: 40 }, (_, index) => index + 1));
-      expect(edition.questions.every((question) => question.body.trim() && question.modelAnswer.trim())).toBe(true);
+    for (const [edition, paper] of Object.entries(fp2Practical)) {
+      expect(paper.questions).toHaveLength(40);
+      expect(paper.questions.map((question) => question.number)).toEqual(Array.from({ length: 40 }, (_, index) => index + 1));
+      const solutions = fp2PracticalExplanations[edition as keyof typeof fp2PracticalExplanations];
+      expect(Object.keys(solutions)).toHaveLength(40);
+      for (const question of paper.questions) {
+        expect(question.body.trim().length).toBeGreaterThan(10);
+        expect(question.modelAnswer.trim().length).toBeGreaterThan(0);
+        const solution = solutions[String(question.number) as keyof typeof solutions];
+        expect(solution, `${edition} Q${question.number}`).toBeDefined();
+        expect(solution.needsReview, `${edition} Q${question.number}`).toBe(false);
+        expect(solution.explanation.trim().length, `${edition} Q${question.number}`).toBeGreaterThan(20);
+        if (/^[1-4]$/.test(question.modelAnswer)) {
+          expect(Object.keys(solution.choiceExplanations).sort(), `${edition} Q${question.number}`).toEqual(["1", "2", "3", "4"]);
+          expect(Object.values(solution.choiceExplanations).every((reason) => reason.trim().length > 10), `${edition} Q${question.number}`).toBe(true);
+        }
+      }
     }
   });
 
