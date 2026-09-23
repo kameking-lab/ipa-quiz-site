@@ -22,7 +22,7 @@ describe("FP2 official 2024–2025 corpus", () => {
     }
   });
 
-  it("pairs every practical prompt with its exact answer and a source-layout panel", () => {
+  it("pairs every practical prompt with its exact answer and shows images only for diagrams or tables", () => {
     for (const edition of editions) {
       const questions = practical[edition].questions;
       expect(questions).toHaveLength(40);
@@ -30,8 +30,9 @@ describe("FP2 official 2024–2025 corpus", () => {
       for (const q of questions) {
         expect(q.body.trim().length).toBeGreaterThan(10);
         expect(q.modelAnswer.trim()).not.toBe("");
-        expect((figures[edition] as Record<string, unknown[]>)[String(q.number)]?.length).toBeGreaterThan(0);
+        expect((figures[edition] as Record<string, unknown[]>)[String(q.number)]).toBeDefined();
       }
+      expect((figures[edition] as Record<string, unknown[]>)["1"]).toHaveLength(0);
     }
   });
 
