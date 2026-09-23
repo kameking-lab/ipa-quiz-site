@@ -44,7 +44,9 @@ export function getRegisteredExamCodes(): ExamCode[] {
 /** Question count per exam, loaded lazily. Useful for UI badges. */
 export async function getQuestionCountsByExam(): Promise<Partial<Record<ExamCode, number>>> {
   const entries = await Promise.all(
-    (Object.entries(EXAM_LOADERS) as Array<[ExamCode, () => Promise<Question[]>]>).map(
+    (Object.entries(EXAM_LOADERS) as Array<[ExamCode, () => Promise<Question[]>]>).filter(
+      ([code]) => isExamPublished(code),
+    ).map(
       async ([code, load]) => [code, (await load()).length] as const,
     ),
   );
