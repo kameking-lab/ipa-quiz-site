@@ -118,7 +118,7 @@ export const ST_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "choices": {
       "ア": "αA=αBならば、MTBFA=MTBFBであり,かつ MTTRA=MTTRBである。",
       "イ": "αA=αBならば、MTTRA / MTBFA=MTTRB / MTBFBである。",
-      "ウ": "αA > αBならば、MTBFA > MTBFBであり,かつ MTTRA < MTTRBである。",
+      "ウ": "αA > αBならば、MTBFA > MTBFBであり,かつ MTTRA > MTTRBである。",
       "エ": "αA > αBならば, MTTRA / MTBFA > MTTRB / MTBFBである。"
     },
     "answer": "イ",
@@ -725,7 +725,7 @@ export const ST_QUESTIONS_2025_SPRING_AM1: Question[] = [
       "エ": "AI を利用して生成した画像は、生成した本人の私的使用に限って、利用が認められており、商業利用を行った場合は、いかなる場合も著作権侵害となる。"
     },
     "answer": "イ",
-    "explanation": "著作権侵害が成立するためには、既存の著作物への「依拠性」と、表現上の「類似性」が必要です。AIが生成した画像であっても、それが著作権で保護された既存の画像と類似しており、かつAIの学習データにその著作物が含まれていた（依拠性があると判断される）場合、著作権侵害となる可能性があります。特に、その画像を公開する行為は、著作権法上の権利侵害を問われやすくなります。",
+    "explanation": "著作権侵害の判断では、既存の著作物との類似性と依拠性が問題になります。生成物に既存の著作物との類似性及び依拠性が認められる場合、権利制限規定等が適用される場合を除き、利用について著作権者の許諾が必要です。したがってイが正解です。AIを使ったことだけで侵害や適法性が決まるわけではなく、学習データへの収録だけから全ての生成物を一律に判断することもできません。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
     "license": "IPA-public"

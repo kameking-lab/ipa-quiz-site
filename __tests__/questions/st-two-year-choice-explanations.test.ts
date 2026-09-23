@@ -84,6 +84,17 @@ describe("ST 2024/2025 all-choice explanations", () => {
     expect(questions.reduce((sum, question) => sum + Object.keys(question.choices ?? {}).length, 0)).toBe(440);
   });
 
+  it("preserves the audited circuit choices, reliability inequality, and sample table", () => {
+    const circuit = questions.find((question) => question.id === "st-2024h-am1-q7")!;
+    expect(circuit.choices).toEqual({ ア: "図の回路ア", イ: "図の回路イ", ウ: "図の回路ウ", エ: "図の回路エ" });
+    expect(circuit.explanation).toContain("NAND（否定論理積）");
+    const reliability = questions.find((question) => question.id === "st-2025h-am1-q5")!;
+    expect(reliability.choices?.ウ).toContain("MTTRA > MTTRB");
+    const sample = questions.find((question) => question.id === "st-2025h-am2-q1")!;
+    expect(sample.question).toContain("| 50 | 7 | 70 | 有 |");
+    expect(sample.question).toContain("| 45 | 5 | 0 | 無 |");
+  });
+
   it("has an exact source-pinned Opus 5.5 PASS receipt for all 110 questions and 440 choices", () => {
     expect(receipts.scope).toEqual({ exam: "st", years: [2024, 2025], totalQuestions: 110, totalChoices: 440 });
     expect(Object.keys(receipts.questions)).toHaveLength(110);
@@ -119,6 +130,10 @@ describe("ST 2024/2025 all-choice explanations", () => {
       expect(batch.modelUsage.canonicalModel).toBe("claude-opus-5-5");
       expect(batch.modelUsage.provider).toBe("firstParty");
       expect(batch.modelUsage.outputTokens).toBeGreaterThan(0);
+      expect(batch.promptPath).toMatch(/\.prompt\.txt$/u);
+      expect(batch.rawPath).toMatch(/\.raw\.json$/u);
+      expect(batch.stderrPath).toMatch(/\.stderr\.txt$/u);
+      expect(batch.usagePath).toMatch(/\.usage\.json$/u);
     }
   });
 

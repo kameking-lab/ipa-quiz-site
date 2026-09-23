@@ -1,0 +1,2172 @@
+{
+  "auditedAt": "2026-09-23T21:59:09.482Z",
+  "initialHead": "b57493505156ea5d84bf74410258fba3fe7c0a2f",
+  "publicationGate": true,
+  "totalQuestions": 110,
+  "totalChoices": 440,
+  "accepted": 110,
+  "pending": 0,
+  "failures": [],
+  "invalidatedInitialReceipts": {
+    "reason": "Original raw envelopes missing; all prior receipts invalidated and rereviewed.",
+    "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\invalidated-initial-receipts.json",
+    "sha256": "f07feac06bf811051f6a14bb3e53e710af7f22615796d0a4a986447940bfa730",
+    "bytes": 111522
+  },
+  "content": [
+    {
+      "path": "data/questions/st/choice-explanations-2024-2025.json",
+      "sha256": "d90554352e441bf41a7352d75a4b5063d8de935144c681084e10fc70afcb18a3",
+      "bytes": 158509
+    },
+    {
+      "path": "data/questions/st/by-year/2024-spring-am1.ts",
+      "sha256": "826b8799a3ae30ba935449f7512ed9c5f95be523db4ead8603454536176b6ed1",
+      "bytes": 50847
+    },
+    {
+      "path": "data/questions/st/by-year/2024-spring-am2.ts",
+      "sha256": "71afb7ab4374e3ebea04ce1cba001250b6a410088eb83651a018d46690c45ebc",
+      "bytes": 40330
+    },
+    {
+      "path": "data/questions/st/by-year/2025-spring-am1.ts",
+      "sha256": "40f3f77eda01663331ba1cbab877e06cb022e10f4112d90d19aaf8ac0be98a83",
+      "bytes": 52362
+    },
+    {
+      "path": "data/questions/st/by-year/2025-spring-am2.ts",
+      "sha256": "b42f8cdfb2e52b1819dd5a1ae6c686c805f187a587c164e234e729b7779beb97",
+      "bytes": 40956
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_koudo_am1_ans.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2024r06h_koudo_am1_ans.pdf",
+      "sha256": "b8a61bdebc21cb91edf8313ce5a14ce61265fee30d3307ff59eb12b6001083cc",
+      "bytes": 33929
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_koudo_am1_qs.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2024r06h_koudo_am1_qs.pdf",
+      "sha256": "af5a908f675557dcef3f2de64c97ce8a4e577d3a741bc98039c29fc730f6bb07",
+      "bytes": 2260952
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_st_am2_ans.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2024r06h_st_am2_ans.pdf",
+      "sha256": "5264ed9c19654be127fb94b6a68323d8b7838306f118131076566c25a8646150",
+      "bytes": 29823
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_st_am2_qs.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2024r06h_st_am2_qs.pdf",
+      "sha256": "ad7eb4c1b05cd544c133d207cf958bb7dc852b9d58d8f01d6e4671a83de1bdd0",
+      "bytes": 1931428
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_ans.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2025r07h_koudo_am1_ans.pdf",
+      "sha256": "e1121c3c11c0ffe120ab25e688e39de7d6dcdbfb15aafd95ec6f5bb1e4f61f37",
+      "bytes": 33928
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_koudo_am1_qs.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2025r07h_koudo_am1_qs.pdf",
+      "sha256": "ad34ffa99163fb1ec0ebe97f3f874dcb129fc0925820d53f43a9abf41f5d9f53",
+      "bytes": 2286500
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_ans.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2025r07h_st_am2_ans.pdf",
+      "sha256": "d78419dfd3e9ccd235a620157b00c05c1cd070e7c279cde7c4e6ca755625ca0f",
+      "bytes": 29815
+    },
+    {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_st_am2_qs.pdf",
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\sources\\2025r07h_st_am2_qs.pdf",
+      "sha256": "6a4f1e363cee7598b15154438ed0ae7fde2cd8957fd3cb6cb919dd48cd00a599",
+      "bytes": 2030037
+    }
+  ],
+  "assets": [
+    {
+      "questionId": "st-2024h-am1-q3",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q3.png",
+      "sha256": "b3aa753ca332345acba8d25da1535a39044556c2826477bae63c514c1f3aeb63",
+      "bytes": 47247
+    },
+    {
+      "questionId": "st-2024h-am1-q6",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q6.png",
+      "sha256": "e8d358e985053d7acda87f7bde70e89a817ff89371fd5149a4d095cc1f55e8a0",
+      "bytes": 38972
+    },
+    {
+      "questionId": "st-2024h-am1-q7",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q7.png",
+      "sha256": "ff3bd4b86d79dddbc5b2188aa41ff16598d4ad4bbd9cb8134f50e7ad0acc59a5",
+      "bytes": 42092
+    },
+    {
+      "questionId": "st-2024h-am1-q17",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260913\\sa-2024h-am1-q17.png",
+      "sha256": "87136394fdb7f4e4485e3a31d6df8742619e2a99903abd417fafebdc1ebe6678",
+      "bytes": 82764
+    },
+    {
+      "questionId": "st-2024h-am1-q18",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q18.png",
+      "sha256": "8d8447bb7c048479bda22bc5e5f78f33ab939e227a39bbec14561cf55b6a5393",
+      "bytes": 35176
+    },
+    {
+      "questionId": "st-2024h-am1-q19",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q19.png",
+      "sha256": "8a592f9bfb5dcc99b3647cb605fef5a798efd1c85c4cff897dcc0c50e82d5062",
+      "bytes": 63670
+    },
+    {
+      "questionId": "st-2024h-am1-q29",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am1-q29.png",
+      "sha256": "049962568e6b86528d1f05a02094211d18ca4cf1e0b6868d82d1943d8309ebfe",
+      "bytes": 34849
+    },
+    {
+      "questionId": "st-2024h-am2-q5",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am2-q5.png",
+      "sha256": "291929e250839d5ebcb38cb47c433dc23f8090381331fee14083b576c518f73c",
+      "bytes": 79800
+    },
+    {
+      "questionId": "st-2024h-am2-q11",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am2-q11.png",
+      "sha256": "38904f72ff9ed0dca7fae4b1906aca14ca73c497c96e1f62d437ae33d8a07a05",
+      "bytes": 133190
+    },
+    {
+      "questionId": "st-2024h-am2-q20",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2024h-am2-q20.png",
+      "sha256": "95a21eb6a7bad728fea58272f0c0bdf6e696c7105faf8d80505acfc896be475c",
+      "bytes": 53239
+    },
+    {
+      "questionId": "st-2025h-am1-q3",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am1\\q3-figure.png",
+      "sha256": "0c49e01d301e4f7724d63c0a059c65872a6405568482ff5e280dff047036e1ec",
+      "bytes": 20068
+    },
+    {
+      "questionId": "st-2025h-am1-q7",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am1\\q7-figure.png",
+      "sha256": "906fbf0186e58fd911e7d24333304ca8e0abb0034cf45a43b68c9d09887f2917",
+      "bytes": 92995
+    },
+    {
+      "questionId": "st-2025h-am2-q4",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am2\\q4-figure.png",
+      "sha256": "79a76fca2ca1097e756a08b96bf27678228a3e6a6a738ec576d0a7615527302a",
+      "bytes": 429949
+    },
+    {
+      "questionId": "st-2025h-am2-q5",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am2\\q5-figure.png",
+      "sha256": "5da2ea88182a5efedcdfe07f9817448bac9ebdc3dff041d3f6d14c772e28af0c",
+      "bytes": 178618
+    },
+    {
+      "questionId": "st-2025h-am2-q8",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am2\\q8-figure.png",
+      "sha256": "5c1f9fed0cc8a4207b5d4bd91060c6298ce1b2d7c85d7b5b101a366d456acbcf",
+      "bytes": 68421
+    },
+    {
+      "questionId": "st-2025h-am2-q10",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa-audit-20260924\\st-2025h-am2-q10.png",
+      "sha256": "68574182d44d4bb6a9fbb6fb976b3ca3b7e1d8a97f20b1897abcb758ad4dfa1d",
+      "bytes": 123161
+    },
+    {
+      "questionId": "st-2025h-am2-q21",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am2\\q21-figure.png",
+      "sha256": "4e90ec1fbacb6158b313fd094060bffe7df8334ca918134e4263642d8a02f65e",
+      "bytes": 150583
+    },
+    {
+      "questionId": "st-2025h-am2-q24",
+      "path": "C:\\Users\\kanet\\20260522\\ipa-st-two-year-sol-20260924\\public\\questions\\ipa\\2025-spring-am2\\q24-figure.png",
+      "sha256": "dba5c14bec58ff6f27c1a29e2a8629724910bb39f52d0b17988db51996f8325f",
+      "bytes": 518017
+    }
+  ],
+  "batches": [
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2",
+      "questionIds": [
+        "st-2024h-am1-q3",
+        "st-2024h-am1-q5"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 6,
+        "outputTokens": 7216,
+        "cacheReadInputTokens": 480723,
+        "cacheCreationInputTokens": 26162,
+        "webSearchRequests": 0,
+        "costUSD": 0.4497846,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3196,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2.prompt.txt",
+        "sha256": "eb15a133111abdaaae23bef648793dac3f76f05a920189273dd3afe27a29c3a6",
+        "bytes": 18543
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.raw.json",
+        "sha256": "87a540837f21f903b0edf95d866da2b20f02aa985c18c69cd092abf4555a633e",
+        "bytes": 11648
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.usage.json",
+        "sha256": "1ecd568032db324bb2d1637cb3584faad04fbd4ff04af2c88d81b003b2400483",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff",
+      "questionIds": [
+        "st-2024h-am1-q6",
+        "st-2024h-am1-q7",
+        "st-2024h-am1-q8",
+        "st-2024h-am1-q9",
+        "st-2024h-am1-q10"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 4240,
+        "cacheReadInputTokens": 645370,
+        "cacheCreationInputTokens": 27533,
+        "webSearchRequests": 0,
+        "costUSD": 0.43416999999999994,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1069,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff.prompt.txt",
+        "sha256": "acd67b5073e75d19aa98c7b40c80f255efc28aab7a4d75234d20d26f04300272",
+        "bytes": 17566
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.raw.json",
+        "sha256": "9e27bcef07f7c3208f3e5f4a115b75658c95bc3952ed52f2a9b552b3d56d8c74",
+        "bytes": 9334
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.usage.json",
+        "sha256": "6c15ac9cb77b092b284886828b8c428ee743fc665d3dad167a134d307e090dbb",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2",
+      "questionIds": [
+        "st-2024h-am1-q11",
+        "st-2024h-am1-q12"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 6266,
+        "cacheReadInputTokens": 451446,
+        "cacheCreationInputTokens": 191717,
+        "webSearchRequests": 0,
+        "costUSD": 1.7493771999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2612,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2.prompt.txt",
+        "sha256": "cc3340166bcc78fa868c119eb6db75bf1c5a1003d6f9dcacf7f707ae266f0be9",
+        "bytes": 16238
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.raw.json",
+        "sha256": "69e4d559599c94daa73aeb6c62d3a7e5263195266cb4548826a11288445ca1be",
+        "bytes": 10652
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.usage.json",
+        "sha256": "4d216c21e3cfae9298d078064d22c6a6dceacdbfe373587d46bbe7f16ae083af",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33",
+      "questionIds": [
+        "st-2024h-am1-q16",
+        "st-2024h-am1-q17",
+        "st-2024h-am1-q18",
+        "st-2024h-am1-q19",
+        "st-2024h-am1-q20"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 10,
+        "outputTokens": 4172,
+        "cacheReadInputTokens": 831092,
+        "cacheCreationInputTokens": 31101,
+        "webSearchRequests": 0,
+        "costUSD": 0.4985064,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 880,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33.prompt.txt",
+        "sha256": "2da112dff91f68465ae735391d4c95dfc9c869bb97251395b8844258edab57c1",
+        "bytes": 20206
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.raw.json",
+        "sha256": "f2d38851ca0133f4fe72a4aaff61335e47ce598988bc9d275eacb34a98070326",
+        "bytes": 8584
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.usage.json",
+        "sha256": "eee7faece2e4dd2fff31efbb5464e754ffa6a5981c2c6e5a1fb60718ca1008ce",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223",
+      "questionIds": [
+        "st-2024h-am1-q22",
+        "st-2024h-am1-q23",
+        "st-2024h-am1-q24",
+        "st-2024h-am1-q25"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 20,
+        "outputTokens": 6827,
+        "cacheReadInputTokens": 1712091,
+        "cacheCreationInputTokens": 39007,
+        "webSearchRequests": 0,
+        "costUSD": 0.7910942,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2395,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223.prompt.txt",
+        "sha256": "6dcb1c2dec839a58b64d136037a32a920ee4403f3f597e2a4b4790fd849addf8",
+        "bytes": 17604
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.raw.json",
+        "sha256": "00779ea4ec5842f89f1eb4a12e8966d728e2ff9dc932a23e3851e32804118cb7",
+        "bytes": 11203
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.usage.json",
+        "sha256": "799d63c20de0e7f1bb87bbe86eaa30a808fbbce573bcc62276b900c0489d48df",
+        "bytes": 451
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7",
+      "questionIds": [
+        "st-2024h-am1-q26",
+        "st-2024h-am1-q27",
+        "st-2024h-am1-q28",
+        "st-2024h-am1-q29"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 10,
+        "outputTokens": 5775,
+        "cacheReadInputTokens": 541397,
+        "cacheCreationInputTokens": 192383,
+        "webSearchRequests": 0,
+        "costUSD": 1.7628834,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2207,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7.prompt.txt",
+        "sha256": "6df19a68b9a98173188a70bc65db2f7159079f67e29cbe115aacc63d2d18258d",
+        "bytes": 18963
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.raw.json",
+        "sha256": "1f35120649b08d3900c72ad9cd2df8390474ebe7cc4ce75a768f5ea641b3eca6",
+        "bytes": 10677
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.usage.json",
+        "sha256": "7964640ee5bf309128ee8986ca8ebf731aa970e3ea1c06ede75ed71701e5e5e9",
+        "bytes": 451
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689",
+      "questionIds": [
+        "st-2024h-am2-q1",
+        "st-2024h-am2-q2",
+        "st-2024h-am2-q3",
+        "st-2024h-am2-q4",
+        "st-2024h-am2-q5"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 4242,
+        "cacheReadInputTokens": 309821,
+        "cacheCreationInputTokens": 24122,
+        "webSearchRequests": 0,
+        "costUSD": 0.3397962,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1429,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689.prompt.txt",
+        "sha256": "17c629f6fa616fc270c9513443e961c26fa6a779be1bdab672ef6a403feb9c84",
+        "bytes": 18469
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.raw.json",
+        "sha256": "0d130b129a334863c4c0621f3f1ad1172b96b82992d7081de1879a8e092c4df0",
+        "bytes": 9440
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.usage.json",
+        "sha256": "9cb0ee3a9487fb250a93cbd4d4801e2fd300bf77548558cf04627084eafd3a7d",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5",
+      "questionIds": [
+        "st-2024h-am2-q6",
+        "st-2024h-am2-q7",
+        "st-2024h-am2-q8",
+        "st-2024h-am2-q9",
+        "st-2024h-am2-q10"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 3783,
+        "cacheReadInputTokens": 309885,
+        "cacheCreationInputTokens": 23495,
+        "webSearchRequests": 0,
+        "costUSD": 0.32561299999999993,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1140,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5.prompt.txt",
+        "sha256": "805d932b8646147152180486cdcb48bc7dc913ab34506a21430e6da4f29b4e0d",
+        "bytes": 18432
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.raw.json",
+        "sha256": "a7519ba9e2887818968ce0ce3491785b898854be7394fa910b006bdb8a5c4a74",
+        "bytes": 9133
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.usage.json",
+        "sha256": "cd5bf323bdf2ff2f370392f92c70f2a970df82f65d19d470cefd7f619dfaf807",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230",
+      "questionIds": [
+        "st-2024h-am2-q11",
+        "st-2024h-am2-q12",
+        "st-2024h-am2-q13",
+        "st-2024h-am2-q14",
+        "st-2024h-am2-q15"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 6,
+        "outputTokens": 5447,
+        "cacheReadInputTokens": 453071,
+        "cacheCreationInputTokens": 33917,
+        "webSearchRequests": 0,
+        "costUSD": 0.4709142,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2587,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230.prompt.txt",
+        "sha256": "97bf038e172ec3a79cc5889c4a9d5a17d7620b522ef75051a901998a76b2906e",
+        "bytes": 17482
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.raw.json",
+        "sha256": "566e2514032df4014cd67f9d89fbc082d9f188db26a7e11ce6d2ddd109a6abe0",
+        "bytes": 9294
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.usage.json",
+        "sha256": "f255ba4e93640a738a6bf06eeb26a1f788ab8ec6edf8ebe07b9859705e32e942",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9",
+      "questionIds": [
+        "st-2024h-am2-q16",
+        "st-2024h-am2-q17",
+        "st-2024h-am2-q18",
+        "st-2024h-am2-q19",
+        "st-2024h-am2-q20"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 4506,
+        "cacheReadInputTokens": 309567,
+        "cacheCreationInputTokens": 23551,
+        "webSearchRequests": 0,
+        "costUSD": 0.3404574,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1772,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9.prompt.txt",
+        "sha256": "a70b98f06fb0dff62f4d0e9fdbb7b75dbdf68f983dd2086a6b4d4028d6c387f7",
+        "bytes": 17378
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.raw.json",
+        "sha256": "abff9f9b6d2bafb91471aa5a0dafaec7515a575de03cd73560b411b9213a475a",
+        "bytes": 9106
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.usage.json",
+        "sha256": "7a42fc05cef72fa6157ee146a560e3c5931340331a80cc48368b59ccd92dbac4",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7",
+      "questionIds": [
+        "st-2024h-am2-q21",
+        "st-2024h-am2-q22",
+        "st-2024h-am2-q23",
+        "st-2024h-am2-q24"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 14,
+        "outputTokens": 6963,
+        "cacheReadInputTokens": 1201204,
+        "cacheCreationInputTokens": 43135,
+        "webSearchRequests": 0,
+        "costUSD": 0.7246367999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2617,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7.prompt.txt",
+        "sha256": "e9eab98a2777ad39cec00fe569def0db49217c5c5d97602dbc8e6f2a9179abde",
+        "bytes": 20453
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.raw.json",
+        "sha256": "2146e86672b3bd6d156213bc1ece41b2aacb02d4efb1ef88a5c164f008e10321",
+        "bytes": 11515
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.usage.json",
+        "sha256": "dba03b5b37ec1a6a138a508a095bf4e75e40363cb73b9b2b847e090c2411e279",
+        "bytes": 460
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d",
+      "questionIds": [
+        "st-2025h-am1-q1",
+        "st-2025h-am1-q2",
+        "st-2025h-am1-q3",
+        "st-2025h-am1-q4",
+        "st-2025h-am1-q5"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 4010,
+        "cacheReadInputTokens": 652791,
+        "cacheCreationInputTokens": 26481,
+        "webSearchRequests": 0,
+        "costUSD": 0.42263819999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 890,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d.prompt.txt",
+        "sha256": "68f394227c62100f3ec0f3ffe688d5947d8fdfdc30390be4502766c93e79701f",
+        "bytes": 16696
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.raw.json",
+        "sha256": "b9a7d9f0a00458f31e9e1e2dedc8e5d6e5e8aa9ef30bdd6ffeb0b6d8cab51b5c",
+        "bytes": 8587
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.usage.json",
+        "sha256": "fc4e3509bf5cc108405beb1962c71f0641c131ebb22eab730e4aa8cc701aabbd",
+        "bytes": 458
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37",
+      "questionIds": [
+        "st-2025h-am1-q6",
+        "st-2025h-am1-q7",
+        "st-2025h-am1-q8",
+        "st-2025h-am1-q9",
+        "st-2025h-am1-q10"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 6,
+        "outputTokens": 5052,
+        "cacheReadInputTokens": 481680,
+        "cacheCreationInputTokens": 28515,
+        "webSearchRequests": 0,
+        "costUSD": 0.42552,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2032,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37.prompt.txt",
+        "sha256": "5b36577a9cf1fab43cd8ebcdb08c4175e6353bc0e18095a00e55e2865552ad58",
+        "bytes": 19436
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.raw.json",
+        "sha256": "f160ffd6e588190807c29142e4da3f39c3b0a4ca543b2bb058efbecd77288c26",
+        "bytes": 8869
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.usage.json",
+        "sha256": "2d65a927b8dbffdb54cff62861d7178fb207af22a583760b47e20ff77b067aac",
+        "bytes": 447
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056",
+      "questionIds": [
+        "st-2025h-am1-q11",
+        "st-2025h-am1-q12",
+        "st-2025h-am1-q13",
+        "st-2025h-am1-q14"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 12,
+        "outputTokens": 6993,
+        "cacheReadInputTokens": 1009743,
+        "cacheCreationInputTokens": 37242,
+        "webSearchRequests": 0,
+        "costUSD": 0.6397925999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3124,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056.prompt.txt",
+        "sha256": "7c6a03e3af20402def470cbeccd25c6910b5589f72f05646445a4ff0a20f2c99",
+        "bytes": 17790
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.raw.json",
+        "sha256": "16ab34891ec17ea2a59f4267a4df176fbb38693443f8fa0aa421df76726e6b04",
+        "bytes": 10768
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.usage.json",
+        "sha256": "e8bdb31d541c6cdfd1b559ad2527f6c38362e8e52ae9cb59f9de3a7dc8a2b2e8",
+        "bytes": 460
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8",
+      "questionIds": [
+        "st-2025h-am1-q16",
+        "st-2025h-am1-q17",
+        "st-2025h-am1-q18",
+        "st-2025h-am1-q19",
+        "st-2025h-am1-q20"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 6,
+        "outputTokens": 5387,
+        "cacheReadInputTokens": 482614,
+        "cacheCreationInputTokens": 26691,
+        "webSearchRequests": 0,
+        "costUSD": 0.41781479999999993,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2588,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8.prompt.txt",
+        "sha256": "9b7327dcc1334c1e58a876128603e1e9643d9e6c243a4558c0536f3c8a6e1872",
+        "bytes": 20873
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.raw.json",
+        "sha256": "ef9b6a84af3a4d856a50f5d7be4308c1ec65e888a2840bc5222e34303df64fa6",
+        "bytes": 9191
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.usage.json",
+        "sha256": "a65d86eb69eabd98dd98e92534f0e07b76f2c913491f66fda3d1454dba655c25",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b",
+      "questionIds": [
+        "st-2025h-am1-q21",
+        "st-2025h-am1-q22",
+        "st-2025h-am1-q23",
+        "st-2025h-am1-q24",
+        "st-2025h-am1-q25"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 3939,
+        "cacheReadInputTokens": 309604,
+        "cacheCreationInputTokens": 24275,
+        "webSearchRequests": 0,
+        "costUSD": 0.3349168,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1613,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b.prompt.txt",
+        "sha256": "76d3a55d71b9f325e4c77d640a9c66c0ea449f5146fc9ac1eeb45b5a97503c9d",
+        "bytes": 17780
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.raw.json",
+        "sha256": "d8c5a02ba7a47a5a949f26b43ac1787563b73d98e47d6822a639899334c430f8",
+        "bytes": 8441
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.usage.json",
+        "sha256": "506d0e7d7ce132ae42d232f3b211b26843cc9238e8101a4cd62bf442eca75ff1",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272",
+      "questionIds": [
+        "st-2025h-am1-q26",
+        "st-2025h-am1-q27",
+        "st-2025h-am1-q28",
+        "st-2025h-am1-q29",
+        "st-2025h-am1-q30"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 4055,
+        "cacheReadInputTokens": 309638,
+        "cacheCreationInputTokens": 23324,
+        "webSearchRequests": 0,
+        "costUSD": 0.32963560000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1546,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272.prompt.txt",
+        "sha256": "3e1ff4918a329bf2fffd8d7f031d4cb384a0e7fa1704fbb9aa4f6cf156aa4c88",
+        "bytes": 17390
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.raw.json",
+        "sha256": "8ead767b937987928ebab453ad57dd142cccb054e498bc737dc9ab060350762a",
+        "bytes": 8690
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.usage.json",
+        "sha256": "a0aca5a96c15320e29ea7ea565efc2effd7f9630044fc2fd775a6f4210cfb33c",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13",
+      "questionIds": [
+        "st-2025h-am2-q1",
+        "st-2025h-am2-q2",
+        "st-2025h-am2-q3",
+        "st-2025h-am2-q4",
+        "st-2025h-am2-q5"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 4175,
+        "cacheReadInputTokens": 651185,
+        "cacheCreationInputTokens": 28005,
+        "webSearchRequests": 0,
+        "costUSD": 0.43780899999999995,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 933,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13.prompt.txt",
+        "sha256": "8c1f54afb9d982d349e293c8130c59bee8f720e35617b52f9faff327cb28ea02",
+        "bytes": 17578
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.raw.json",
+        "sha256": "d6412e6b5a0ea38d9ab41c9296cd6802fdca358a585084dcda61b4b17f614083",
+        "bytes": 9336
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.usage.json",
+        "sha256": "0c3452234f06adc2e87b86ea9afe0f3f3771c97942e39bfe68c70921b646fadf",
+        "bytes": 458
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92",
+      "questionIds": [
+        "st-2025h-am2-q6",
+        "st-2025h-am2-q9"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 5790,
+        "cacheReadInputTokens": 652927,
+        "cacheCreationInputTokens": 27573,
+        "webSearchRequests": 0,
+        "costUSD": 0.46700139999999996,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1706,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92.prompt.txt",
+        "sha256": "3b32e317a5d929970c6dd4ee26d0c6a8d4c944bfa7d5b9999660e99e6fd9a727",
+        "bytes": 20253
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.raw.json",
+        "sha256": "da95073fe8038b8780a031d12441313c437c64c863e140693c1c967b05926425",
+        "bytes": 12809
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.usage.json",
+        "sha256": "989450b10fb6475ad6f69022a5e1e24011a17274307d23e934407ae36d16a6b7",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1",
+      "questionIds": [
+        "st-2025h-am2-q11",
+        "st-2025h-am2-q12",
+        "st-2025h-am2-q13",
+        "st-2025h-am2-q14",
+        "st-2025h-am2-q15"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 6,
+        "outputTokens": 3899,
+        "cacheReadInputTokens": 287451,
+        "cacheCreationInputTokens": 190747,
+        "webSearchRequests": 0,
+        "costUSD": 1.6614702000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1017,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1.prompt.txt",
+        "sha256": "99926054786a910ebc2bea262ee0167250591323067636af3f4478de1880964e",
+        "bytes": 19758
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.raw.json",
+        "sha256": "6a97fb4252c7489a42f0f79418f5a618b3cc185f757880ae16cf80f98940ec08",
+        "bytes": 9562
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.usage.json",
+        "sha256": "afb2a4dfc89f65ac0705ffe3fda3b628fb1fc8f033f8c8eb80d5cd3d788aa4ea",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a",
+      "questionIds": [
+        "st-2025h-am2-q16",
+        "st-2025h-am2-q17",
+        "st-2025h-am2-q18",
+        "st-2025h-am2-q19",
+        "st-2025h-am2-q20"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 4085,
+        "cacheReadInputTokens": 309326,
+        "cacheCreationInputTokens": 23931,
+        "webSearchRequests": 0,
+        "costUSD": 0.3350292,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1564,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a.prompt.txt",
+        "sha256": "c6d65d7ac3121a1a1d2cecdca73ce05d1c5ac69621570110d8dbd6c12e4b8910",
+        "bytes": 16702
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.raw.json",
+        "sha256": "c2903d6776f7663c9961f59f06d048d55a89912ad6230529e620b24384cfc80e",
+        "bytes": 8912
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.usage.json",
+        "sha256": "556c6f0edf38a4a0a262c2a3e63f5f7958f7a86c4c19bc0ba2f4e522e816188a",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117",
+      "questionIds": [
+        "st-2025h-am2-q21",
+        "st-2025h-am2-q22",
+        "st-2025h-am2-q23",
+        "st-2025h-am2-q25"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 12,
+        "outputTokens": 5567,
+        "cacheReadInputTokens": 976659,
+        "cacheCreationInputTokens": 47167,
+        "webSearchRequests": 0,
+        "costUSD": 0.6840558000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2022,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117.prompt.txt",
+        "sha256": "4730736f3fe027caac430ccbcb994e63f889eefe0f865784f791a210627392f8",
+        "bytes": 17635
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.raw.json",
+        "sha256": "abcea0db1485ea0d46152e2b140aa3d12ebf9562e3be72122c6e3e067cd1bb9b",
+        "bytes": 10001
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.usage.json",
+        "sha256": "e0c9633f7cdf5c6907ced8de6e7f02c5e7f6f056d30fbd4f084f3f6238ec0edb",
+        "bytes": 459
+      }
+    },
+    {
+      "id": "2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8",
+      "questionIds": [
+        "st-2024h-am1-q1",
+        "st-2024h-am1-q2",
+        "st-2024h-am1-q13",
+        "st-2024h-am1-q14"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 5315,
+        "cacheReadInputTokens": 661058,
+        "cacheCreationInputTokens": 31364,
+        "webSearchRequests": 0,
+        "costUSD": 0.4894556,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1947,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8.prompt.txt",
+        "sha256": "daeddcfdb2a7af425b312f343bc3e3837964a2c50b30a6f016680504100a37dc",
+        "bytes": 17484
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.raw.json",
+        "sha256": "142b368b118c85b04b816290512389f1349dd0dbfdfca0b9531c13943de5d4b1",
+        "bytes": 9733
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.usage.json",
+        "sha256": "f97e5e75132141ed9c367d44d7c33fbcee8a5e63c50629fb04c42d7d17dd9ce4",
+        "bytes": 449
+      }
+    },
+    {
+      "id": "2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e",
+      "questionIds": [
+        "st-2024h-am1-q15",
+        "st-2024h-am1-q30"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 28,
+        "outputTokens": 7179,
+        "cacheReadInputTokens": 2429880,
+        "cacheCreationInputTokens": 42726,
+        "webSearchRequests": 0,
+        "costUSD": 0.9714760000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3060,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e.prompt.txt",
+        "sha256": "0755c757f1d21bc9b79364a60fa054ead6d8b0dc6008fec7241dfabb9beb1006",
+        "bytes": 11698
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.raw.json",
+        "sha256": "de1d9be86c216606241dc767b66946b8b8be825f7fb2ff539b7005428e0d6a43",
+        "bytes": 8051
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.usage.json",
+        "sha256": "cb78e3c6bcac02c4471d198140b4a584b77570654176becdd9cdf9e99b10ee2e",
+        "bytes": 460
+      }
+    },
+    {
+      "id": "2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188",
+      "questionIds": [
+        "st-2024h-am2-q25"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 14,
+        "outputTokens": 3241,
+        "cacheReadInputTokens": 1156629,
+        "cacheCreationInputTokens": 36152,
+        "webSearchRequests": 0,
+        "costUSD": 0.5854178,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1369,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188.prompt.txt",
+        "sha256": "3ffc59e3c3431af5b9d579f34fc9e25a2d6a6b6e3f1787586c435a1d32d233d9",
+        "bytes": 5940
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.raw.json",
+        "sha256": "3d32f2becc79eb8bc1b580a7c6c4eff9745fc9bcb68d003cf100294df854cca2",
+        "bytes": 4060
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.usage.json",
+        "sha256": "e6360c067ddb7c676d8205444053ba0e300293df222a62b846364077959401a6",
+        "bytes": 451
+      }
+    },
+    {
+      "id": "2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046",
+      "questionIds": [
+        "st-2025h-am1-q15"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 4,
+        "outputTokens": 1733,
+        "cacheReadInputTokens": 284339,
+        "cacheCreationInputTokens": 29517,
+        "webSearchRequests": 0,
+        "costUSD": 0.32767979999999997,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 917,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046.prompt.txt",
+        "sha256": "898530f95c399e943c14017e02f7ca8a8812aead534c3192376028d01c1ebe80",
+        "bytes": 4796
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.raw.json",
+        "sha256": "a54d45d7c76f3dcd7d33d8a6ba85e33cf44231685e244803d81038c359a1c0a2",
+        "bytes": 3433
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.usage.json",
+        "sha256": "765b474ca6e6bffea1726268bca6f82d93bb6bf231a12f4b8db1ee3f2356a063",
+        "bytes": 458
+      }
+    },
+    {
+      "id": "2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05",
+      "questionIds": [
+        "st-2025h-am2-q7",
+        "st-2025h-am2-q8",
+        "st-2025h-am2-q10"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 12,
+        "outputTokens": 5784,
+        "cacheReadInputTokens": 1022953,
+        "cacheCreationInputTokens": 50195,
+        "webSearchRequests": 0,
+        "costUSD": 0.7218786000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2158,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05.prompt.txt",
+        "sha256": "7af390c5e1395d830d20280ca640a4a1a009cf4c956d65153ef233a5a6dc9fcd",
+        "bytes": 16772
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.raw.json",
+        "sha256": "def67216582805b465308826467d3d6b894e2839f5cd5499e49a006f1b672320",
+        "bytes": 9485
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.usage.json",
+        "sha256": "16b74d345a8bd0940f233f663d9c2baab1d98670c518ffb3bcb7bd4dddccff6d",
+        "bytes": 460
+      }
+    },
+    {
+      "id": "2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be",
+      "questionIds": [
+        "st-2024h-am1-q21"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 20,
+        "outputTokens": 5406,
+        "cacheReadInputTokens": 1707680,
+        "cacheCreationInputTokens": 39851,
+        "webSearchRequests": 0,
+        "costUSD": 0.768544,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2446,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be.prompt.txt",
+        "sha256": "a8616714074f4b515cf1d7ae3fafdd30e7582c09794cc834c76da75785733d8e",
+        "bytes": 8596
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.raw.json",
+        "sha256": "c7f6cb0ee2fc9961781133a6c34e1f31a575ece4a07d81423d21eb21a1197ec2",
+        "bytes": 6970
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.usage.json",
+        "sha256": "3063e5f553ed3423a5bc3d699ff33c77eaeb645d8c2cc479511471d0c2bd0aa0",
+        "bytes": 450
+      }
+    },
+    {
+      "id": "2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2",
+      "questionIds": [
+        "st-2025h-am2-q24"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 14,
+        "outputTokens": 2721,
+        "cacheReadInputTokens": 1165309,
+        "cacheCreationInputTokens": 38268,
+        "webSearchRequests": 0,
+        "costUSD": 0.5936818,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1005,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2.prompt.txt",
+        "sha256": "600a449b5da79d87c7f760e978dfe48e50783ddf2fa2a80fcc6ed0a657d910f5",
+        "bytes": 5292
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.raw.json",
+        "sha256": "bfa7c197916f6728bdfb53a26231b199121b786c629a41c9c9cdbaa26b450ddf",
+        "bytes": 3482
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.usage.json",
+        "sha256": "5273fe6956abc4e7c1055d3be2e08d97cd7ab8143a2462514f0510b669f58bd5",
+        "bytes": 451
+      }
+    },
+    {
+      "id": "2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122",
+      "questionIds": [
+        "st-2024h-am1-q4"
+      ],
+      "valid": true,
+      "modelUsage": {
+        "inputTokens": 8,
+        "outputTokens": 1883,
+        "cacheReadInputTokens": 544521,
+        "cacheCreationInputTokens": 73116,
+        "webSearchRequests": 0,
+        "costUSD": 0.7315242000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 823,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      },
+      "prompt": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122.prompt.txt",
+        "sha256": "f4c10b9ca32c7584c00e5ce3b1dfaeda56a041e87178c491553d7eaf059d48c3",
+        "bytes": 5141
+      },
+      "raw": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.raw.json",
+        "sha256": "aed662b454b45f4c44f7b8e5968cc349a5a9228d0daec661cd47fd06f5486d6c",
+        "bytes": 3597
+      },
+      "stderr": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "usage": {
+        "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.usage.json",
+        "sha256": "2ba5973f4be41c1ef8278c9c980f970743702f2159d0acbfe5c215e85427bd6e",
+        "bytes": 457
+      }
+    }
+  ],
+  "allArtifacts": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.raw.json",
+      "sha256": "87a540837f21f903b0edf95d866da2b20f02aa985c18c69cd092abf4555a633e",
+      "bytes": 11648
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2-a1.usage.json",
+      "sha256": "1ecd568032db324bb2d1637cb3584faad04fbd4ff04af2c88d81b003b2400483",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-001-e955c07c50e2.prompt.txt",
+      "sha256": "eb15a133111abdaaae23bef648793dac3f76f05a920189273dd3afe27a29c3a6",
+      "bytes": 18543
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.raw.json",
+      "sha256": "9e27bcef07f7c3208f3e5f4a115b75658c95bc3952ed52f2a9b552b3d56d8c74",
+      "bytes": 9334
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff-a1.usage.json",
+      "sha256": "6c15ac9cb77b092b284886828b8c428ee743fc665d3dad167a134d307e090dbb",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-002-cf5b325e0eff.prompt.txt",
+      "sha256": "acd67b5073e75d19aa98c7b40c80f255efc28aab7a4d75234d20d26f04300272",
+      "bytes": 17566
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.raw.json",
+      "sha256": "69e4d559599c94daa73aeb6c62d3a7e5263195266cb4548826a11288445ca1be",
+      "bytes": 10652
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2-a1.usage.json",
+      "sha256": "4d216c21e3cfae9298d078064d22c6a6dceacdbfe373587d46bbe7f16ae083af",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-003-27a6c4a3a2e2.prompt.txt",
+      "sha256": "cc3340166bcc78fa868c119eb6db75bf1c5a1003d6f9dcacf7f707ae266f0be9",
+      "bytes": 16238
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.raw.json",
+      "sha256": "f2d38851ca0133f4fe72a4aaff61335e47ce598988bc9d275eacb34a98070326",
+      "bytes": 8584
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33-a1.usage.json",
+      "sha256": "eee7faece2e4dd2fff31efbb5464e754ffa6a5981c2c6e5a1fb60718ca1008ce",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-004-865e58d66f33.prompt.txt",
+      "sha256": "2da112dff91f68465ae735391d4c95dfc9c869bb97251395b8844258edab57c1",
+      "bytes": 20206
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.raw.json",
+      "sha256": "00779ea4ec5842f89f1eb4a12e8966d728e2ff9dc932a23e3851e32804118cb7",
+      "bytes": 11203
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223-a1.usage.json",
+      "sha256": "799d63c20de0e7f1bb87bbe86eaa30a808fbbce573bcc62276b900c0489d48df",
+      "bytes": 451
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-005-aeddd8eb3223.prompt.txt",
+      "sha256": "6dcb1c2dec839a58b64d136037a32a920ee4403f3f597e2a4b4790fd849addf8",
+      "bytes": 17604
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.raw.json",
+      "sha256": "1f35120649b08d3900c72ad9cd2df8390474ebe7cc4ce75a768f5ea641b3eca6",
+      "bytes": 10677
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7-a1.usage.json",
+      "sha256": "7964640ee5bf309128ee8986ca8ebf731aa970e3ea1c06ede75ed71701e5e5e9",
+      "bytes": 451
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am1-006-b6d7237795c7.prompt.txt",
+      "sha256": "6df19a68b9a98173188a70bc65db2f7159079f67e29cbe115aacc63d2d18258d",
+      "bytes": 18963
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.raw.json",
+      "sha256": "0d130b129a334863c4c0621f3f1ad1172b96b82992d7081de1879a8e092c4df0",
+      "bytes": 9440
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689-a1.usage.json",
+      "sha256": "9cb0ee3a9487fb250a93cbd4d4801e2fd300bf77548558cf04627084eafd3a7d",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-007-8390ab989689.prompt.txt",
+      "sha256": "17c629f6fa616fc270c9513443e961c26fa6a779be1bdab672ef6a403feb9c84",
+      "bytes": 18469
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.raw.json",
+      "sha256": "a7519ba9e2887818968ce0ce3491785b898854be7394fa910b006bdb8a5c4a74",
+      "bytes": 9133
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5-a1.usage.json",
+      "sha256": "cd5bf323bdf2ff2f370392f92c70f2a970df82f65d19d470cefd7f619dfaf807",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-008-e18f758d46e5.prompt.txt",
+      "sha256": "805d932b8646147152180486cdcb48bc7dc913ab34506a21430e6da4f29b4e0d",
+      "bytes": 18432
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.raw.json",
+      "sha256": "566e2514032df4014cd67f9d89fbc082d9f188db26a7e11ce6d2ddd109a6abe0",
+      "bytes": 9294
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230-a1.usage.json",
+      "sha256": "f255ba4e93640a738a6bf06eeb26a1f788ab8ec6edf8ebe07b9859705e32e942",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-009-33de685f7230.prompt.txt",
+      "sha256": "97bf038e172ec3a79cc5889c4a9d5a17d7620b522ef75051a901998a76b2906e",
+      "bytes": 17482
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.raw.json",
+      "sha256": "abff9f9b6d2bafb91471aa5a0dafaec7515a575de03cd73560b411b9213a475a",
+      "bytes": 9106
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9-a1.usage.json",
+      "sha256": "7a42fc05cef72fa6157ee146a560e3c5931340331a80cc48368b59ccd92dbac4",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-010-ec03ec36f3c9.prompt.txt",
+      "sha256": "a70b98f06fb0dff62f4d0e9fdbb7b75dbdf68f983dd2086a6b4d4028d6c387f7",
+      "bytes": 17378
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.raw.json",
+      "sha256": "2146e86672b3bd6d156213bc1ece41b2aacb02d4efb1ef88a5c164f008e10321",
+      "bytes": 11515
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7-a1.usage.json",
+      "sha256": "dba03b5b37ec1a6a138a508a095bf4e75e40363cb73b9b2b847e090c2411e279",
+      "bytes": 460
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2024-spring-am2-011-9b79635160d7.prompt.txt",
+      "sha256": "e9eab98a2777ad39cec00fe569def0db49217c5c5d97602dbc8e6f2a9179abde",
+      "bytes": 20453
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.raw.json",
+      "sha256": "b9a7d9f0a00458f31e9e1e2dedc8e5d6e5e8aa9ef30bdd6ffeb0b6d8cab51b5c",
+      "bytes": 8587
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d-a1.usage.json",
+      "sha256": "fc4e3509bf5cc108405beb1962c71f0641c131ebb22eab730e4aa8cc701aabbd",
+      "bytes": 458
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-012-78d66c451a2d.prompt.txt",
+      "sha256": "68f394227c62100f3ec0f3ffe688d5947d8fdfdc30390be4502766c93e79701f",
+      "bytes": 16696
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.raw.json",
+      "sha256": "f160ffd6e588190807c29142e4da3f39c3b0a4ca543b2bb058efbecd77288c26",
+      "bytes": 8869
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37-a1.usage.json",
+      "sha256": "2d65a927b8dbffdb54cff62861d7178fb207af22a583760b47e20ff77b067aac",
+      "bytes": 447
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-013-d467bb35ee37.prompt.txt",
+      "sha256": "5b36577a9cf1fab43cd8ebcdb08c4175e6353bc0e18095a00e55e2865552ad58",
+      "bytes": 19436
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.raw.json",
+      "sha256": "16ab34891ec17ea2a59f4267a4df176fbb38693443f8fa0aa421df76726e6b04",
+      "bytes": 10768
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056-a1.usage.json",
+      "sha256": "e8bdb31d541c6cdfd1b559ad2527f6c38362e8e52ae9cb59f9de3a7dc8a2b2e8",
+      "bytes": 460
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-014-fedda88e0056.prompt.txt",
+      "sha256": "7c6a03e3af20402def470cbeccd25c6910b5589f72f05646445a4ff0a20f2c99",
+      "bytes": 17790
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.raw.json",
+      "sha256": "ef9b6a84af3a4d856a50f5d7be4308c1ec65e888a2840bc5222e34303df64fa6",
+      "bytes": 9191
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8-a1.usage.json",
+      "sha256": "a65d86eb69eabd98dd98e92534f0e07b76f2c913491f66fda3d1454dba655c25",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-015-df06edfc9eb8.prompt.txt",
+      "sha256": "9b7327dcc1334c1e58a876128603e1e9643d9e6c243a4558c0536f3c8a6e1872",
+      "bytes": 20873
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.raw.json",
+      "sha256": "d8c5a02ba7a47a5a949f26b43ac1787563b73d98e47d6822a639899334c430f8",
+      "bytes": 8441
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b-a1.usage.json",
+      "sha256": "506d0e7d7ce132ae42d232f3b211b26843cc9238e8101a4cd62bf442eca75ff1",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-016-a2f9f708527b.prompt.txt",
+      "sha256": "76d3a55d71b9f325e4c77d640a9c66c0ea449f5146fc9ac1eeb45b5a97503c9d",
+      "bytes": 17780
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.raw.json",
+      "sha256": "8ead767b937987928ebab453ad57dd142cccb054e498bc737dc9ab060350762a",
+      "bytes": 8690
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272-a1.usage.json",
+      "sha256": "a0aca5a96c15320e29ea7ea565efc2effd7f9630044fc2fd775a6f4210cfb33c",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am1-017-8cd247858272.prompt.txt",
+      "sha256": "3e1ff4918a329bf2fffd8d7f031d4cb384a0e7fa1704fbb9aa4f6cf156aa4c88",
+      "bytes": 17390
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.raw.json",
+      "sha256": "d6412e6b5a0ea38d9ab41c9296cd6802fdca358a585084dcda61b4b17f614083",
+      "bytes": 9336
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13-a1.usage.json",
+      "sha256": "0c3452234f06adc2e87b86ea9afe0f3f3771c97942e39bfe68c70921b646fadf",
+      "bytes": 458
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-018-cc81d1b31d13.prompt.txt",
+      "sha256": "8c1f54afb9d982d349e293c8130c59bee8f720e35617b52f9faff327cb28ea02",
+      "bytes": 17578
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.raw.json",
+      "sha256": "da95073fe8038b8780a031d12441313c437c64c863e140693c1c967b05926425",
+      "bytes": 12809
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92-a1.usage.json",
+      "sha256": "989450b10fb6475ad6f69022a5e1e24011a17274307d23e934407ae36d16a6b7",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-019-6d6ec7b48e92.prompt.txt",
+      "sha256": "3b32e317a5d929970c6dd4ee26d0c6a8d4c944bfa7d5b9999660e99e6fd9a727",
+      "bytes": 20253
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.raw.json",
+      "sha256": "6a97fb4252c7489a42f0f79418f5a618b3cc185f757880ae16cf80f98940ec08",
+      "bytes": 9562
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1-a1.usage.json",
+      "sha256": "afb2a4dfc89f65ac0705ffe3fda3b628fb1fc8f033f8c8eb80d5cd3d788aa4ea",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-020-19a9f814f8c1.prompt.txt",
+      "sha256": "99926054786a910ebc2bea262ee0167250591323067636af3f4478de1880964e",
+      "bytes": 19758
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.raw.json",
+      "sha256": "c2903d6776f7663c9961f59f06d048d55a89912ad6230529e620b24384cfc80e",
+      "bytes": 8912
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a-a1.usage.json",
+      "sha256": "556c6f0edf38a4a0a262c2a3e63f5f7958f7a86c4c19bc0ba2f4e522e816188a",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-021-5be0cae0c03a.prompt.txt",
+      "sha256": "c6d65d7ac3121a1a1d2cecdca73ce05d1c5ac69621570110d8dbd6c12e4b8910",
+      "bytes": 16702
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.raw.json",
+      "sha256": "abcea0db1485ea0d46152e2b140aa3d12ebf9562e3be72122c6e3e067cd1bb9b",
+      "bytes": 10001
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117-a1.usage.json",
+      "sha256": "e0c9633f7cdf5c6907ced8de6e7f02c5e7f6f056d30fbd4f084f3f6238ec0edb",
+      "bytes": 459
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-33-59-033Z-2025-spring-am2-022-abf86aa76117.prompt.txt",
+      "sha256": "4730736f3fe027caac430ccbcb994e63f889eefe0f865784f791a210627392f8",
+      "bytes": 17635
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.raw.json",
+      "sha256": "142b368b118c85b04b816290512389f1349dd0dbfdfca0b9531c13943de5d4b1",
+      "bytes": 9733
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8-a1.usage.json",
+      "sha256": "f97e5e75132141ed9c367d44d7c33fbcee8a5e63c50629fb04c42d7d17dd9ce4",
+      "bytes": 449
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-001-5c74d27716a8.prompt.txt",
+      "sha256": "daeddcfdb2a7af425b312f343bc3e3837964a2c50b30a6f016680504100a37dc",
+      "bytes": 17484
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.raw.json",
+      "sha256": "de1d9be86c216606241dc767b66946b8b8be825f7fb2ff539b7005428e0d6a43",
+      "bytes": 8051
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e-a1.usage.json",
+      "sha256": "cb78e3c6bcac02c4471d198140b4a584b77570654176becdd9cdf9e99b10ee2e",
+      "bytes": 460
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am1-002-cde3ddb2ca3e.prompt.txt",
+      "sha256": "0755c757f1d21bc9b79364a60fa054ead6d8b0dc6008fec7241dfabb9beb1006",
+      "bytes": 11698
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.raw.json",
+      "sha256": "3d32f2becc79eb8bc1b580a7c6c4eff9745fc9bcb68d003cf100294df854cca2",
+      "bytes": 4060
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188-a1.usage.json",
+      "sha256": "e6360c067ddb7c676d8205444053ba0e300293df222a62b846364077959401a6",
+      "bytes": 451
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2024-spring-am2-003-acee582c3188.prompt.txt",
+      "sha256": "3ffc59e3c3431af5b9d579f34fc9e25a2d6a6b6e3f1787586c435a1d32d233d9",
+      "bytes": 5940
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.raw.json",
+      "sha256": "a54d45d7c76f3dcd7d33d8a6ba85e33cf44231685e244803d81038c359a1c0a2",
+      "bytes": 3433
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046-a1.usage.json",
+      "sha256": "765b474ca6e6bffea1726268bca6f82d93bb6bf231a12f4b8db1ee3f2356a063",
+      "bytes": 458
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am1-004-225a56783046.prompt.txt",
+      "sha256": "898530f95c399e943c14017e02f7ca8a8812aead534c3192376028d01c1ebe80",
+      "bytes": 4796
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.raw.json",
+      "sha256": "def67216582805b465308826467d3d6b894e2839f5cd5499e49a006f1b672320",
+      "bytes": 9485
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05-a1.usage.json",
+      "sha256": "16b74d345a8bd0940f233f663d9c2baab1d98670c518ffb3bcb7bd4dddccff6d",
+      "bytes": 460
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-43-30-722Z-2025-spring-am2-005-45961d87bf05.prompt.txt",
+      "sha256": "7af390c5e1395d830d20280ca640a4a1a009cf4c956d65153ef233a5a6dc9fcd",
+      "bytes": 16772
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.raw.json",
+      "sha256": "c7f6cb0ee2fc9961781133a6c34e1f31a575ece4a07d81423d21eb21a1197ec2",
+      "bytes": 6970
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be-a1.usage.json",
+      "sha256": "3063e5f553ed3423a5bc3d699ff33c77eaeb645d8c2cc479511471d0c2bd0aa0",
+      "bytes": 450
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2024-spring-am1-001-dad5b26eb6be.prompt.txt",
+      "sha256": "a8616714074f4b515cf1d7ae3fafdd30e7582c09794cc834c76da75785733d8e",
+      "bytes": 8596
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.raw.json",
+      "sha256": "bfa7c197916f6728bdfb53a26231b199121b786c629a41c9c9cdbaa26b450ddf",
+      "bytes": 3482
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2-a1.usage.json",
+      "sha256": "5273fe6956abc4e7c1055d3be2e08d97cd7ab8143a2462514f0510b669f58bd5",
+      "bytes": 451
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-47-19-232Z-2025-spring-am2-002-fdccc576afa2.prompt.txt",
+      "sha256": "600a449b5da79d87c7f760e978dfe48e50783ddf2fa2a80fcc6ed0a657d910f5",
+      "bytes": 5292
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.raw.json",
+      "sha256": "aed662b454b45f4c44f7b8e5968cc349a5a9228d0daec661cd47fd06f5486d6c",
+      "bytes": 3597
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122-a1.usage.json",
+      "sha256": "2ba5973f4be41c1ef8278c9c980f970743702f2159d0acbfe5c215e85427bd6e",
+      "bytes": 457
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\2026-09-23T21-49-45-123Z-2024-spring-am1-001-702cf4020122.prompt.txt",
+      "sha256": "f4c10b9ca32c7584c00e5ce3b1dfaeda56a041e87178c491553d7eaf059d48c3",
+      "bytes": 5141
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\invalidated-initial-receipts.json",
+      "sha256": "f07feac06bf811051f6a14bb3e53e710af7f22615796d0a4a986447940bfa730",
+      "bytes": 111522
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\source-check.json",
+      "sha256": "766851a710c42b073cb5d0cdbfcd80d0c9fc44d46109ba63440c3d8065241a4c",
+      "bytes": 1107
+    }
+  ],
+  "realModelUsage": {
+    "successfulCalls": 30,
+    "inputTokens": 280,
+    "outputTokens": 145651,
+    "cacheReadInputTokens": 22341654,
+    "cacheCreationInputTokens": 1481263,
+    "costUSD": 19.23257479999999
+  },
+  "validation": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-build.log",
+      "sha256": "ae30a3fc7412cf61a3064ac90a042291e5f7807a097cc8f9ece477c37c4bae4f",
+      "bytes": 8717
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-e2e.log",
+      "sha256": "5d0762cd1c8051d69d0dc4af11a431f04765f8e8faf2e9648fa33481476a0934",
+      "bytes": 1967
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-lint.log",
+      "sha256": "324b08eb28d9afa8185f16489173f2f0638223791c723fca8c80ef1de252ce38",
+      "bytes": 95
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-tests.log",
+      "sha256": "736212f5865ab777926997ae3f61b5a32afc6a2a9ab226695924c6a9badbd3cc",
+      "bytes": 61071
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-typecheck.log",
+      "sha256": "02440d77e75770579599f24a1b8fbcee8d29e730fa036edb137f4ce197dad60d",
+      "bytes": 106
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\final-validation.log",
+      "sha256": "be30bc87958abacf173644f80fd84680e8ccbc7838ef505b91bce9c176d36a1e",
+      "bytes": 740822
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\st-pr510-audit-evidence-20260924\\validation\\strict-gate.log",
+      "sha256": "a0807a7f8c55e6a68c7f67f32567c0a5e4b6f61a0260dc7432ba9ab1d03f996c",
+      "bytes": 191
+    }
+  ]
+}

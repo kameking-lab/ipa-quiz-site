@@ -15,7 +15,8 @@ const ROOT = process.cwd();
 const MODEL = "claude-opus-5-5";
 const OVERLAY_PATH = join(ROOT, "data", "questions", "st", "choice-explanations-2024-2025.json");
 const RECEIPT_PATH = join(ROOT, "docs", "evidence", "st-choice-explanations-2024-2025", "review-receipts.json");
-const LOG_ROOT = join(ROOT, "logs", "st-choice-explanations-2024-2025");
+const LOG_ROOT = option("evidence-dir") ?? join(ROOT, "logs", "st-choice-explanations-2024-2025");
+const RUN_ID = new Date().toISOString().replace(/[:.]/gu, "-");
 const YEARS = new Set([2024, 2025]);
 const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
 
@@ -46,6 +47,10 @@ interface BatchReceipt {
   promptHash: string;
   rawHash: string;
   reviewedAt: string;
+  promptPath?: string;
+  rawPath?: string;
+  stderrPath?: string;
+  usagePath?: string;
 }
 interface QuestionReceipt {
   paper: string;
@@ -168,11 +173,13 @@ function parsePromptInput(prompt: string): PromptInput[] {
 }
 
 function envelopeMetadata(raw: string): { usage: ModelUsage; canonicalModel: string; provider: string } {
-  const envelope = JSON.parse(raw) as { modelUsage?: Record<string, ModelUsage> };
+  const envelope = JSON.parse(raw) as { modelUsage?: Record<string, ModelUsage>; is_error?: boolean; subtype?: string };
+  if (envelope.is_error !== false || envelope.subtype !== "success") throw new Error("successful raw envelope required");
   const usage = envelope.modelUsage?.[MODEL];
   if (!usage) throw new Error(`raw receipt does not prove requested model ${MODEL}`);
   if (usage.canonicalModel !== MODEL) throw new Error(`canonical model mismatch: ${String(usage.canonicalModel)}`);
-  if (typeof usage.provider !== "string" || usage.provider.length === 0) throw new Error("provider missing");
+  if (usage.provider !== "firstParty") throw new Error("firstParty provider required");
+  if (!(typeof usage.outputTokens === "number" && usage.outputTokens > 0)) throw new Error("positive output token usage required");
   return { usage, canonicalModel: usage.canonicalModel, provider: usage.provider };
 }
 
@@ -255,7 +262,9 @@ function makePrompt(batch: Question[]): string {
 - 正答肢は「正しいです。」、誤答肢は「誤りです。」で始める。各肢固有の理由を55字以上で示し、誤答は何をどう直せば正しいかを説明する。
 - 計算、規格、法令、セキュリティ仕様を推測しない。不確かな場合はIPA、NISC、デジタル庁、総務省、経産省、JPCERT/CC、NIST、RFC等の一次資料だけを調査する。
 - sourcePdfUrl/sourceAnswerUrlを公式の問題・正答根拠として照合する。図表依存で確認できない場合はPASSにしない。
-- PASSでもchoiceExplanationsを全肢返す。FIXなら修正済み全文を返す。
+- existingNarrativeの正しさ、転記と原典の一致、図表を含めて確認する。本文に誤りがあればissuesに具体的に記録してFIXとする。
+- ローカルPDFは公式URLから取得しSHA-256照合済み。localQuestionPdfPath/localAnswerPdfPathとpublic配下の画像をReadで参照できる。
+- 修正不要ならPASSとしてcandidateChoiceExplanationsを一字も変えず全肢返す。修正が必要ならFIXとして修正済み全文と具体的issuesを返す。
 - 出力は純粋なJSONのみ: {"id":{"status":"PASS|FIX","issues":["具体的な問題点"],"choiceExplanations":{"ア":"..."}}}
 - ファイル編集・コミットはしない。
 
@@ -266,9 +275,12 @@ function makePrompt(batch: Question[]): string {
     choices: question.choices,
     officialAnswer: question.answer,
     existingNarrative: question.explanation,
+    hasImage: question.hasImage,
     candidateChoiceExplanations: question.choiceExplanations,
     sourcePdfUrl: question.sourcePdfUrl,
     sourceAnswerUrl: getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl),
+    localQuestionPdfPath: join(LOG_ROOT, "sources", question.sourcePdfUrl.split("/").at(-1)!),
+    localAnswerPdfPath: join(LOG_ROOT, "sources", getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl).split("/").at(-1)!),
     officialReferenceUrls: question.officialReferenceUrls ?? [],
     imageUrls: question.imageUrls ?? [],
   })), null, 2)}`;
@@ -310,9 +322,10 @@ async function reviewBatch(batch: Question[], serial: number): Promise<{
   prompt: string;
   raw: string;
   metadata: ReturnType<typeof envelopeMetadata>;
+  paths: { promptPath: string; rawPath: string; stderrPath: string; usagePath: string };
 }> {
   const token = digest(batch.map((question) => question.id)).slice(0, 12);
-  const id = `${paper(batch[0]!).replaceAll("/", "-")}-${String(serial).padStart(3, "0")}-${token}`;
+  const id = `${RUN_ID}-${paper(batch[0]!).replaceAll("/", "-")}-${String(serial).padStart(3, "0")}-${token}`;
   const prompt = makePrompt(batch);
   mkdirSync(LOG_ROOT, { recursive: true });
   writeFileSync(join(LOG_ROOT, `${id}.prompt.txt`), prompt, "utf8");
@@ -342,7 +355,14 @@ async function reviewBatch(batch: Question[], serial: number): Promise<{
       const envelope = JSON.parse(raw) as { result?: string };
       if (typeof envelope.result !== "string") throw new Error("review result missing");
       const metadata = envelopeMetadata(raw);
-      return { id, result: parseReview(envelope.result, batch), prompt, raw, metadata };
+      const paths = {
+        promptPath: join(LOG_ROOT, `${id}.prompt.txt`),
+        rawPath: join(LOG_ROOT, `${id}-a${attempt}.raw.json`),
+        stderrPath: join(LOG_ROOT, `${id}-a${attempt}.stderr.txt`),
+        usagePath: join(LOG_ROOT, `${id}-a${attempt}.usage.json`),
+      };
+      writeJson(paths.usagePath, metadata);
+      return { id, result: parseReview(envelope.result, batch), prompt, raw, metadata, paths };
     } catch (error) {
       if (attempt === 3) throw error;
       console.error(`[retry] ${id} attempt=${attempt}`, error);
@@ -405,6 +425,9 @@ async function main(): Promise<void> {
       && batch.provider === "firstParty"
       && batch.modelUsage.canonicalModel === MODEL
       && batch.modelUsage.provider === "firstParty"
+      && typeof batch.modelUsage.outputTokens === "number" && batch.modelUsage.outputTokens > 0
+      && typeof batch.promptPath === "string" && typeof batch.rawPath === "string"
+      && typeof batch.stderrPath === "string" && typeof batch.usagePath === "string"
       && /^[a-f0-9]{64}$/u.test(batch.promptHash)
       && /^[a-f0-9]{64}$/u.test(batch.rawHash);
     return !isStReviewReceiptAccepted(receipt, {
@@ -436,10 +459,12 @@ async function main(): Promise<void> {
 
   for (let cursor = 0; cursor < batches.length; cursor += workers) {
     const wave = batches.slice(cursor, cursor + workers);
-    const reviewed = await Promise.all(wave.map((batch, index) => reviewBatch(batch, cursor + index + 1)));
+    const reviewed = await Promise.allSettled(wave.map((batch, index) => reviewBatch(batch, cursor + index + 1)));
     for (let index = 0; index < reviewed.length; index += 1) {
       const batch = wave[index]!;
-      const review = reviewed[index]!;
+      const result = reviewed[index]!;
+      if (result.status === "rejected") continue;
+      const review = result.value;
       ledger.batches[review.id] = {
         requestedModel: MODEL,
         canonicalModel: review.metadata.canonicalModel,
@@ -448,6 +473,7 @@ async function main(): Promise<void> {
         promptHash: digest(review.prompt),
         rawHash: digest(review.raw),
         reviewedAt: new Date().toISOString(),
+        ...review.paths,
       };
       for (const question of batch) {
         const row = review.result[question.id]!;
@@ -463,7 +489,9 @@ async function main(): Promise<void> {
     }
     writeJson(OVERLAY_PATH, overlay);
     writeJson(RECEIPT_PATH, ledger);
-    console.log(`[review] accepted=${Math.min(cursor + wave.length, batches.length)}/${batches.length} batches receipts=${Object.keys(ledger.questions).length}/110`);
+    const failures = reviewed.filter((result) => result.status === "rejected");
+    if (failures.length > 0) throw new AggregateError(failures.map((result) => result.reason), "Review stopped; successful batches and raw artifacts were preserved. Publication gate remains closed.");
+    console.log(`[review] processed=${Math.min(cursor + wave.length, batches.length)}/${batches.length} batches receipts=${Object.keys(ledger.questions).length}/110`);
   }
 }
 
