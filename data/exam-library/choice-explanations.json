@@ -21382,5 +21382,47 @@
         "url": "https://www.nra.go.jp/data/000269726.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261805-q19": {
+    "sourceHash": "769d9b079bb1ff7befe8ec072fef4a3c07e9bb295ee11b00a5959bbcaa0270dc",
+    "correctChoice": 3,
+    "summary": "回収量3500µgを脱着率0.9で割り、採気量36Lで割ると108µg/L。これをppmに換算すると約30ppm",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "3ppmは気中濃度に直すと約10.8µg/Lで、36L採気なら捕集量は約389µgとなる。実際の捕集量3888.9µg（1750.0µg/mL×2mL÷0.90）の約10分の1にすぎず、桁が一つ違う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "15ppmは、脱着溶媒2mLを掛け忘れ、1750.0µgを捕集量として計算した値と一致する（1750÷0.90÷36×24.47÷88.1≈15.0）。溶液濃度に液量を乗じていないため誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "正答。1750.0µg/mL×2mL＝3500µg、脱着率で割ると3888.9µg。採気量は0.1L/min×360min＝36Lなので108.0µg/L。ppm＝108.0×24.47÷88.1≈30.0ppm。脱着率を補正しなくても27ppmで、30ppmが最も近い。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "60ppmは約216µg/Lに当たり、36Lの採気なら約7780µgの捕集量が必要になる。算出された3888.9µgの約2倍であり、脱着液2mLを反映し、脱着率0.90で補正した計算と整合しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "120ppmは約432µg/L（432mg/m³）に当たり、36L採気なら約15.6mgの捕集が必要になる。実際の捕集量3888.9µgの4倍で、流量0.1L/minと6時間から求めた採気量36Lと整合しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
+        "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+      },
+      {
+        "title": "厚生労働省 ジスルホトンの測定分析法検討報告書（気中濃度と脱着率の換算式）",
+        "url": "https://www.mhlw.go.jp/content/11201000/000358488.pdf"
+      }
+    ]
   }
 }
