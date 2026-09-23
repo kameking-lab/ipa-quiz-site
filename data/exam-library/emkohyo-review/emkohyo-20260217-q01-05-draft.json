@@ -167,63 +167,189 @@
       "overlay": {
         "sourceHash": "539bdec25b5441308c487a4c846e2ae2e691bcd88ed450b77bed1d93e26e1f24",
         "correctChoice": 1,
-        "summary": "GHSの区分数は危険有害性クラスごとに異なり、急性毒性の区分1〜5、皮膚腐食性・刺激性の1A/1B/1C・2・3、自己反応性化学品のタイプA〜Gなどがある。一律に区分1〜4の4区分とする肢1が誤り。",
+        "summary": "GHSの危険有害性区分はクラスごとに異なる。厚労省掲載のGHS本文では急性毒性だけでも区分1～5があるので、全クラスに区分1～4の四区分しかないとする肢1が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "厚労省の早見表では、急性毒性（経口）に区分5（飲み込むと有害のおそれ）がある。皮膚腐食性・刺激性は1A/1B/1C・2・3、自己反応性化学品はタイプA〜Gに分かれる。全クラスが区分1〜4の4区分とする記述は誤りで、これが正答である。"
+            "reason": "これが誤り。厚労省掲載のGHS本文は急性毒性に区分1から区分5を設けており、たとえば経口急性毒性の区分5には危険有害性情報『飲み込むと有害のおそれ』を割り当てる。クラスごとに分類方法や区分数は異なるので、すべてのクラスが一律に区分1～4の四区分とはいえない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "GHSの絵表示は爆弾の爆発、炎、円上の炎、ガスボンベ、どくろ、感嘆符、腐食性、健康有害性、環境の9種類である。このうち健康有害性に使うのは、どくろ、感嘆符、腐食性、健康有害性の4種類なので正しい。"
+            "reason": "この記述は正しい。厚労省の一覧に並ぶ絵表示を数えると全部で9種類。各絵表示の対象クラスから健康に対する有害性に用いるものを数えると、どくろ・感嘆符・腐食性・健康有害性（人体シルエット）の4種類になる。腐食性は金属腐食にも使うが、皮膚や眼の損傷にも用いる。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "原文の㋑㋺は画像のため本文テキストに残っていないが、公式正答から㋑はどくろ、㋺は感嘆符と解される。健康有害性の優先順位では、どくろを付す場合に感嘆符は付さないため、この組み合わせなら記述は正しい。"
+            "reason": "この記述は正しい。公式問題の図を確認すると㋑がどくろ、㋺が感嘆符である。厚労省掲載のGHS本文1.4.10.5.3.1は複数絵表示の優先順位として、どくろを適用する場合は感嘆符を使用すべきでないと定める。したがって、この図の組み合わせは優先順位の規則に合う。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "注意喚起語は、重大な危険有害性区分に使う「危険」と、比較的軽い区分に使う「警告」の2種類である。複数の危険有害性があって「危険」を適用する場合は、ラベルに「警告」を併記しないので正しい。"
+            "reason": "この記述は正しい。GHSの注意喚起語は『危険』と『警告』の2種類で、GHS本文1.4.10.5.3.2は『危険』を適用するとき『警告』を使用すべきでないと示す。複数の危険有害性があっても両方を同じラベルに重ねて記載しない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "GHS及びJIS Z 7253のSDSは、「化学品及び会社情報」から「その他の情報」までの16項目で構成される。受け手が必要な情報を探しやすいよう、項目の番号・項目名・順序は変更しない決まりなので正しい。"
+            "reason": "この記述は正しい。厚労省資料のSDS解説は『その他の情報』を含む16項目を列挙し、項目の番号、項目名、順序を変更してはならないと明記する。同じ16番『その他の情報』は、現行のJIS Z 7253:2019に基づく労働者健康安全機構の教材でも確認できる。"
           }
         ],
         "sources": [
           {
-            "title": "職場のあんぜんサイト 危険有害性、区分、シンボル、注意喚起語、危険有害性情報早見表",
-            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html"
+            "title": "厚生労働省 GHS改訂第6版和訳",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf"
+          },
+          {
+            "title": "厚生労働省 GHSのシンボルと名称",
+            "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html"
+          },
+          {
+            "title": "厚生労働省 防水スプレー製品調査報告 付録（11）SDSについて",
+            "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf"
+          },
+          {
+            "title": "労働者健康安全機構 令和6年度化学物質管理初心者向け教材第3巻",
+            "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html",
-          "excerpt": "飲み込むと有害のおそれ（経口）",
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "区分  5",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_class.html",
-          "excerpt": "軽度の皮膚刺激",
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "飲み込むと有害のおそれ",
           "choiceNumbers": [
             1
           ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "GHSのシンボルと名称",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "感嘆符",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "どくろ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "腐食性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "健康有害性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "急性毒性（区分4）、皮膚腐食性・刺激性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "急性毒性（区分1-3）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "皮膚腐食性・刺激性（区分1A-C）、眼に対する重篤な損傷・眼刺激性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/ghs_symbol.html",
+          "excerpt": "呼吸器感作性、生殖細胞変異原性、発がん性",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "どくろを適用する場合、感嘆符を使用するべきでない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/ghs_rev6_jp.pdf",
+          "excerpt": "注意喚起語「危険」を適用する場合、注意喚起語「警告」を使用するべきでない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "これらの項目名の番号、項目名及び順序を変更してはならない",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "次の16項目及びその情報を記載しなければ",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "項目-16 その他の情報",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001571853.pdf",
+          "excerpt": "JIS Z7253:2012",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html",
+          "excerpt": "JIS Z 7253:2019に規定された項目名",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://cheminfo.johas.go.jp/useful/book3/pageindices/index22.html",
+          "excerpt": "16 その他の情報",
+          "choiceNumbers": [
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "早見表は表形式のため、抜粋は区分5（急性毒性）・区分3（皮膚刺激）の行の危険有害性情報の欄にとどまる。区分欄の数字そのものは抜粋として示せていない。",
-        "肢3の㋑㋺の絵表示は画像で、問題文テキストから欠落している。どくろ／感嘆符とみなしたのは公式正答からの推定であり、原本の画像で確認が必要。",
-        "肢3（どくろと感嘆符の優先順位）、肢4（「危険」適用時は「警告」を使わない）、肢5（SDS16項目の番号・項目名・順序）の根拠となる政府資料は、本文を直接確認できなかった。GHS改訂6版（METI）は403、厚労省の毒劇物GHSマニュアル（nihs.go.jp）はPDFの本文を抽出できなかった。",
-        "肢2の絵表示9種類と健康有害性4種類は、あんぜんサイトのGHSシンボルのページ（ghs_symbol.html）で内容は確認した。ただし正確な抜粋文を取れなかったため、sourceEvidenceには入れていない。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-q3": {
       "overlay": {
