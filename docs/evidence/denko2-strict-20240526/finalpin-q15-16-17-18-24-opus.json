@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "15": "829ba6afd2398c658a9ee30a86427eee13cc664ee2bbe021f9de5ac2020e5405",
+      "16": "e7e8904ce48edd0c553e59a433be8417494f18c8f89457fb9fd1a1ab6cd55423",
+      "17": "dc10d95eb096d4a1ade48eb51405d8acbf5ef2ec136e3e852a5d732c57e99461",
+      "18": "6fa1ad7757516f2df8c0519e806e1b5caf610d9cfc75f9222b4eeca318d957df",
+      "24": "d826a6bd5927f6e32c951a6aff722301adca1d16d94d95af27abf53c7def4ea3"
+    },
+    "sourceCropSha256": {
+      "15": "911c8f3ec36ddf3a3990e1db6f124796bc6dd4a6d3ed311ea6125939b74ad047",
+      "16": "a9a523c997ccd022d3b321c4155de4e9c2a6a53780bc58cb89a424e5e57a7970",
+      "17": "7fe09a0490ce0517ab9d363544fffe68c1de51832a0f09d1109ad106f432d651",
+      "18": "1388285992baea9156bc645705d5dd7f41d13357edd8488716f8cf22916b2f06",
+      "24": "a59519606f504dff3c3a3bb52fe181b2351e36955bbf880d2d5a693bd41bbb9a"
+    }
+  },
+  "assessment": [
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（イ）を照合。問題文の否定語「誤っているもの」とイロハニ全肢の文言は原図と一致（読点「，」が「、」になっているだけ）。単一正答がイなので、ロ・ハ・ニが正しい組合せであるという候補の説明と矛盾しない。図表なし。"
+    },
+    {
+      "number": 16,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescription末尾の『段数や天井との位置関係は写真だけでは確定しない。』は、公開用の図説明として不要な保留表現で、読者に曖昧さを残す。公式写真では天井付近・中段・下段の複数段のラックが写っているので、保留文を削除し、写っている内容（複数段の梯子状ラックがあり、矢印は下段ラックの曲がり部分を指す）だけを記述すべき。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（ロ）を照合。問題文とイロハニ全肢の文言は原図と一致。公開用の切出しq16.pngは公式写真と同じ範囲・同じ矢印位置であることを確認。"
+    },
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説とロの理由は、根拠を『端子部から線でソケット本体が吊り下がる構成』『白・黒の線でつながる』に置いている。これは『線付』の説明にしかならず、名称のもう一つの要素『防水』を写真のどこから判断したかが書かれていない。このままでは、ソケット本体が防水構造であることと、そこに電線があらかじめ取り付けられた器具であることが伝わらない。写真で確認できる特徴に絞って、防水の根拠を補うべき。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "sourceForInternalQcOnlyに民間サイト（jpn.faq.panasonic.com）のURLがあり、一次資料ではない。器具の分類は公式問題の写真と公式正答（ロ）で裏付けられるので、このフィールドは削除するか、少なくとも根拠として使わないこと。"
+      ],
+      "verifiedEvidence": "公式原図と公式正答（ロ）を照合。問題文とイロハニ全肢の文言は原図と一致。公開用の切出しq17.pngは公式写真と同じ範囲であることを確認。diagramDescriptionの記述（左上の鉤付きカバー、右上のねじ端子部、白・黒2本の線、下部のソケット本体と銅色のねじ込み受け）は写真と一致。"
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（イ）を照合。問題文とイロハニ全肢の文言・読点「，」は原図と一致。公開用の切出しq18.pngは公式写真と同じ範囲であることを確認。diagramDescriptionの記述（左端のチャック、付け根の黒い切替部、中央上部の赤褐色の握り、右端の丸い押さえ）は写真と一致。"
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（ニ）を照合。問題文の否定語「誤っているもの」、イロハニ全肢の文言、0Ωの表記は原図と一致。ニの『倍率で割って』が誤りで、正しくは指示値に倍率を掛けるという解説は公式正答と整合する。図表なし。"
+    }
+  ]
+}

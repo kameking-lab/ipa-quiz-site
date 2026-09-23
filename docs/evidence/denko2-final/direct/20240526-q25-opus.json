@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin2-q05-16-17-25-40-opus.json",
+  "upstreamReviewSha256": "e57d1c2a4b88d7c185445da60a81a52a846fb03b5d76ea20bcb93ef2b72d44b8",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "371dcc679d36f40da989f5a76fe8d4ca94ea87e36499a724698a12177193614a",
+    "rowSha256": {
+      "25": "71e9945940ce0c0599ed2380db8c1fbd92bd702bc279522d3a6536099df8af77"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 25,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合（問題文「誤っているもの」の太字否定、イ〜ニの全文、正答ニ）。公式正答がニなので、イ・ロ・ハは正しい手順として公式に裏付けられている。電気設備に関する技術基準を定める省令第58条（e-Gov法令API: https://laws.e-gov.go.jp/api/1/articles;lawNum=平成九年通商産業省令第五十二号;article=58 ）で、低圧電路の絶縁抵抗は「開閉器又は過電流遮断器で区切ることのできる電路ごとに」測ると確認した。解説の「開閉器で電源から切り離して測定する」と矛盾しない。"
+    }
+  ]
+}

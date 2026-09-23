@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q06-07-11-13-14-opus.json",
+  "upstreamReviewSha256": "534e46b5ca1597437e76bf2ad0859473fa79e232bc2499d6e5b644ae420d1751",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "7a3f14cf0788f6356cb39d02bb1dd4da6c37cc58334908b6a55549ccdea8238b",
+    "rowSha256": {
+      "13": "8e7b8562ed9f4c8d521296dd236f512654ba73906103bcffef480e055638e3a9"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文の「適切なものは」と4つの組合せ（イ：カッタ・圧着工具・パイプベンダ、ロ：電工ナイフ・面取器・パイプベンダ、ハ：電工ナイフ・圧着工具・トーチランプ、ニ：カッタ・面取器・トーチランプ）は原図と一致。公式正答はニ。法令条項の主張なし。図表なしの記載も原図と一致。"
+    }
+  ]
+}

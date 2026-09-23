@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q06-07-11-13-14-opus.json",
+  "upstreamReviewSha256": "534e46b5ca1597437e76bf2ad0859473fa79e232bc2499d6e5b644ae420d1751",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "567a9359ff41f406d4b0d3889df96152dd12b39a92f6d51f0386a21adc3fd6fd",
+    "rowSha256": {
+      "7": "686b4d13d09a6656f12f24cf7613619fbb9e58930e0dcce12720b885eda37acd"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q7.png": "7dc67732d7843009dd9b5d6a82a79a8f4aa429dea053428711e955f39d0de475"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と数値（1線あたり0.1Ω、負荷電流は各15A）、選択肢（45/60/90/135）は原図と一致。公式正答はイ。平衡負荷なので中性線の電流は0A、損失＝15²×0.1×2＝45W。q7.png の切出しは原図（1φ3W電源、100V/100V/200Vの表示、3線すべてに0.1Ω、各15Aの矢印、中性線が負荷の接続点につながる）と一致。法令主張なし。"
+    }
+  ]
+}

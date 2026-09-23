@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "5": "ed8a034fc0338282019a2e1a0da8009ca036f9b533fd64c4550f000122ef0722",
+      "16": "ae0e91e5d6a8dce258b980c60cdd934ff77bf24b9d162301ff7fbb15b869dcda",
+      "42": "0a1ffd12f8493db3b740276818cc811510756ce1ad9680d75b3b1acbe17d1e56",
+      "43": "840878dcd53409666d099612a90ddca21bc5b9cbc907c220f20577a92105527a"
+    },
+    "sourceCropSha256": {
+      "5": "416ca8c0ee369a56acd30921c00401dbef5072d939dbc1214dd7aa1d6eec0ac9",
+      "16": "a9a523c997ccd022d3b321c4155de4e9c2a6a53780bc58cb89a424e5e57a7970",
+      "42": "9bdf5036b52062b923b8c9d599a15ba6179281f036f206bd3c0766602ae27317",
+      "43": "07948aac1410e898f37fff9574a2d62d2f07d73abd32d2b826d8f22e886181a7"
+    }
+  },
+  "assessment": [
+    {
+      "number": 5,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official figure and the official answer (ロ). The source figure shows a 3φ3W 200 V supply with three 10 Ω resistors in Y connection. The three 200 V arrows run upper–middle, middle–lower, and the outer upper–lower span. I is shown on the top line. Recalculated: 200/√3 ≈ 115.47 V, and 115.47/10 ≈ 11.55 A, which matches ロ 11.6. The reasons given for イ, ハ and ニ are numerically correct. The q5.png crop covers the whole source figure with nothing missing. The question makes no legal claims."
+    },
+    {
+      "number": 16,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The main explanation only restates the photo and the official answer. It gives no identifying feature or reference that ties the name ケーブルラック to the side-rail-and-rung ladder shape."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The only officialReferenceUrls entry (20231226-2.pdf, the Interpretation of the Technical Standards for Electrical Equipment) returned HTTP 403 on WebFetch. The local excerpt (PDF pp.156, 158, 160, 161) does not contain the word ケーブルラック, so it does not directly support the claim that the correct answer is a cable rack.",
+        "The choice イ reason says 金属ダクト is a box enclosed on four sides. Article 162 (metal duct work) is not in the local excerpt, so the reference URL does not directly support this shape claim.",
+        "The choice ハ reason says ライティングダクト is a power rail for mounting light fixtures. Article 165(3) in the excerpt covers only construction and grounding requirements for ライティングダクト work. It does not describe the device's purpose or shape as a power rail.",
+        "The choice ニ reason says 2種金属製線ぴ is a channel with a cover fitted over it. Article 161 in the excerpt only mentions 2種金属製線ぴ by name (plus dimensions for brass/copper products) and does not describe that shape."
+      ],
+      "verifiedEvidence": "Checked the official photo against the official answer (ロ): the arrow points at the curved section of the lower ladder-shaped support. The q16.png crop matches the source photo, including the arrow. For officialReferenceUrls=https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf, WebFetch returned 403, so the SHA-pinned local excerpt was used instead. It confirms that Article 161 (metal wireway work) and Article 165(3) (lighting duct work) exist. It does not support the name ケーブルラック or any of the device-shape claims."
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "The choice text names the items: ハ says 硬質ポリ塩化ビニル電線管用TSカップリング, ロ says ねじなし電線管用, and イ says PF管用. The original offers photos only. Because ⑫ is VE28, a learner can pick ハ from the name alone, which defeats the photo-identification question. Choice text should describe appearance only.",
+        "The naming in the choice text is inconsistent with the choice reasons. The reasons describe only appearance and never name the items."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The reasons for イ, ロ and ニ are circular: each only says the item is not ハ, the official answer. They should give the actual reason each item cannot join VE pipes, for example that it is a fitting for a different kind of conduit.",
+        "The main explanation jumps from VE28 to ハ with only 'the official answer says so'. It never explains why ハ is the fitting for joining VE pipes together."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. No official primary source supports the item names TSカップリング (ハ), ねじなし電線管用カップリング (ロ), PF管用カップリング (イ) or コンビネーションカップリング (ニ), all used in the choice text or diagramDescription. The JIS C 8430 excerpt defines only the VE symbol and pipe dimensions; it does not cover couplings.",
+        "supplementalOfficialSourceUrls points to the JISC search page (GnrJISSearch.html), not the JIS C 8430 document itself. The URL cannot be used on its own to reach the source."
+      ],
+      "verifiedEvidence": "Checked the official shared wiring diagram (p.15), the official photos and the official answer (ハ). In the bottom-right label group ⑫⑬⑤, the leader line points to the conduit labelled '600V CV 5.5-2C (VE28)'. The q42 crops for イ, ロ, ハ and ニ each match the source photos, and the wiring-main.png crop matches the source diagram. JIS C 8430:2019 (SHA256 08a2e774…) §6.1 gives the symbol VE and Table 2 lists VE28 (outside diameter 34.0 mm), which supports the 'VE = rigid PVC conduit' statement in the explanation."
+    },
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "The choice text uses identifying names such as 塩ビ管用カッター (ロ) and 合成樹脂管用面取り器 (ハ), but the choice reasons call ハ just a 円筒形工具 (cylindrical tool). The descriptions are inconsistent."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The イ reason only says it is the official answer. It does not explain why a pipe wrench is not used in VE28 work, for example that it is a tool for tightening threaded metal conduit and fittings.",
+        "The reasons for ロ, ハ and ニ are all the same circular sentence: 'the official answer is イ, so this one does not apply'. None explains what each tool is used for in VE pipe work (cutting the pipe, chamfering the pipe end, heat-bending the pipe)."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. No official primary source supports the tool names パイプレンチ, 塩ビ管用カッター, 合成樹脂管用面取り器 or トーチランプ used in the choice text and diagramDescription. The JIS C 8430 excerpt defines only the pipe and does not cover tools.",
+        "supplementalOfficialSourceUrls is the JISC search page, not the JIS C 8430 document itself."
+      ],
+      "verifiedEvidence": "Checked the official shared wiring diagram (p.15), the official photos and the official answer (イ). ⑬ shares the leader line with ⑫ and points to the conduit labelled '600V CV 5.5-2C (VE28)'. The q43 crops for イ, ロ, ハ and ニ each match the source photos. JIS C 8430:2019 §6.1 (symbol VE) supports the statement that VE28 is rigid PVC conduit."
+    }
+  ]
+}

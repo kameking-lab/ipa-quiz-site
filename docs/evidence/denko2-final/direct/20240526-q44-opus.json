@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin2-q41-42-43-44-opus.json",
+  "upstreamReviewSha256": "78f7d7993f60ab163871eb8fd13a5ae161b494f1b14305e8d82ac93711783523",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "76f0ba23be2a130ee633c2ece02c84772e35f9b996e6a7fa3d10291bcb895ecd",
+    "rowSha256": {
+      "44": "fbd85396920b36199ef1267c58c156a10c0a4792174b5a9655905ec4d80fc609"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q44-i.png": "0ddc7b1e33d7c399d0b7852a718f47791a952cb91d39ed91e3209387594da723",
+      "public/images/denko2/2024-first/q44-ro.png": "00a7eb6636fa126c6e91be457428eb6a18ba49f8f9a3c9b4b158b5ced303766a",
+      "public/images/denko2/2024-first/q44-ha.png": "1e2ba86276a33dbae2c100640e150004821660f8c46c42c407709e5af15827d6",
+      "public/images/denko2/2024-first/q44-ni.png": "2e2c8a52137b8c0c4972125e3317d0578899f21d42e06637bcc854a73e4bbc99"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題15頁の動力分電盤結線図で、⑭はBE 3P30Aから空調機aへ向かう三相200Vの分岐を指す。問44の公式写真は、イ＝クランプ部とデジタル表示を持つクランプ形測定器、ロ＝ACV/DCV切替ダイヤルとテストリードのアナログ回路計、ハ＝ペン形と黄色本体の検電器2点、ニ＝目盛にMΩ表示のある絶縁抵抗計。公式正答イ（漏れ電流を測定できるもの）と一致し、肢の切出しq44-i/ro/ha/ni.pngも公式写真と一致する。"
+    }
+  ]
+}

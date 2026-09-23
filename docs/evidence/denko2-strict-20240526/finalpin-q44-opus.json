@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "44": "05de1d286bf6e792d85398cc9de0ed729d928eb3779fc4b502ab6bf80e61b506"
+    },
+    "sourceCropSha256": {
+      "44": "fbd85396920b36199ef1267c58c156a10c0a4792174b5a9655905ec4d80fc609"
+    }
+  },
+  "assessment": [
+    {
+      "number": 44,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ニの「停止・切離し後の絶縁状態を測る」は範囲を狭め過ぎている。絶縁抵抗測定の前提として必要なのは停電（無電圧）状態であり、負荷の切離しは常に必要な条件ではない。『停電状態で電路の絶縁抵抗を測る器具で、通電中の漏れ電流値を測る器具ではない』程度に改めるのが適切。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001885918.pdf は、国交省航空局『令和7年版 航空無線工事施工管理指針』（検索結果のタイトルで確認）。WebFetch は10MBの上限を超えて失敗した。このプロンプトにはSHA固定の抜粋が添付されていないため、この資料が解説の主張（漏れ電流用クランプメータで接地線を除く三相3線を一括クランプし、残留（零相）電流として漏れ電流を測ること）を直接裏付けるか確認できない。資料の内容も航空無線工事向けで、第二種電気工事士の本問に対する直接の根拠としては不適合の可能性が高い。",
+        "漏れ電流の測定原理（接地線を除く全電線を一括クランプする、1本ずつなら負荷電流になる）について、直接裏付ける官公庁の一次資料が確認できていない。候補は METI『電気設備の技術基準の解釈の解説』（https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishakukaisetsu.pdf）の第14条（低圧電路の絶縁性能、漏えい電流1mA以下）に関する記述、または試験センターの公式技術資料。該当箇所を取得・固定し、差し替えるか追加すること。"
+      ],
+      "verifiedEvidence": "公式原図と公式正答を照合（正答=イ）。問題文『⑭で示す回路の漏れ電流を測定できるものは。』は原図と一致。⑭の引出線は、15頁の動力分電盤結線図で BE 3P30A から空調機a（凡例では三相200V回路）へ向かう分岐を指しており、候補の説明と一致。wiring-main.png と wiring-panels.png は公式15頁の共通配線図と一致し、⑭は wiring-panels.png に収まっている。選択肢の切出し q44-i/ro/ha/ni は原図の各写真と一致：イ＝クランプ形の漏れ電流計（mAレンジ付き、ストラップ付き）、ロ＝アナログ回路計、ハ＝ペン形と黄色の低圧検電器2点、ニ＝MΩ目盛のアナログ絶縁抵抗計。officialReferenceUrls の mlit.go.jp/koku/content/001885918.pdf は取得できず（上限超過）、裏付けは確認できていない。"
+    }
+  ]
+}

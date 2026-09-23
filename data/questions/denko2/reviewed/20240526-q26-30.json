@@ -9,7 +9,7 @@
       "ニ": "a 10　b 0.1"
     },
     "officialAnswer": "イ",
-    "explanation": "経済産業省『電気設備の技術基準の解釈』第17条ではD種接地の接地抵抗値は原則100Ω以下だが、地絡後0.5秒以内に自動遮断する装置があれば500Ω以下。本問は0.1秒で遮断する。100Vの低圧電路では、絶縁抵抗の基準は0.1MΩ以上（省令第58条）。イは絶縁抵抗2.0MΩを満たす一方、接地抵抗600Ωが500Ωを超えるので不適合。",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第17条第4項ではD種接地の接地抵抗値は原則100Ω以下だが、地絡後0.5秒以内に自動遮断する装置があれば500Ω以下。本問は0.1秒で遮断する。100Vの低圧電路では、絶縁抵抗の基準は0.1MΩ以上（省令第58条）。イは絶縁抵抗2.0MΩを満たす一方、接地抵抗600Ωが500Ωを超えるので不適合。",
     "choiceExplanations": {
       "イ": "接地抵抗a=600Ωは、0.5秒以内遮断装置施設時の緩和基準500Ω以下を超過しているため不適合。絶縁抵抗b=2.0MΩは基準0.1MΩ以上を満たす。接地抵抗の超過により本肢が不適合＝正答。",
       "ロ": "a=500Ωは緩和基準500Ω以下ちょうどで適合。b=1.0MΩは基準0.1MΩ以上を満たすため適合。",
@@ -22,7 +22,9 @@
     "officialReferenceUrls": [
       "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
       "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 27,
@@ -34,19 +36,22 @@
       "ニ": "交流回路用の測定器である。"
     },
     "officialAnswer": "ロ",
-    "explanation": "目盛板中央のVは電圧計、波線は交流用を示す。左下には可動鉄片形の動作原理を表す記号と、水平置きを表す記号が別々にある。したがって永久磁石可動コイル形とするロが誤り。",
+    "explanation": "目盛板中央にはV、Vの下には波線、左下には姿勢記号と動作原理記号がある。公式問題原図と公式正答を照合すると、Vを電圧計とするイ、水平置きとするハ、交流回路用とするニは正しく、動作原理を永久磁石可動コイル形とするロが誤り。ロの判定は、原図の動作原理記号が永久磁石可動コイル形の記号ではないことによる。",
     "choiceExplanations": {
       "イ": "中央にVの記号があり、電圧計である。",
-      "ロ": "左下の動作原理記号は可動鉄片形を示す。永久磁石可動コイル形ではないので誤り。",
+      "ロ": "原図左下の動作原理記号は、永久磁石可動コイル形を表す記号とは異なるため誤り。",
       "ハ": "左下の水平置き記号は、測定器を水平に置いて使うことを示す。",
       "ニ": "Vの下の波線は交流用の記号であり、交流回路用の測定器である。"
     },
-    "diagramDescription": "0、50、100、150の目盛を持つ電圧計の目盛板。中央にVと交流を表す波線、左下に可動鉄片形の動作原理記号、水平置き記号、階級1.0の表示がある。",
+    "diagramDescription": "0、50、100、150の目盛を持つ測定器の目盛板。中央にVと波線、左下に動作原理記号、姿勢記号及び『1.0』の表示がある。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q27.png",
     "imageUrls": [
       "/images/denko2/2024-first/q27.png"
-    ]
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 28,
@@ -69,9 +74,11 @@
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q28.png",
     "officialReferenceUrls": [
-      "https://laws.e-gov.go.jp/law/335M50000400097/20220401_503M60000400021",
+      "https://laws.e-gov.go.jp/law/335M50000400097/20231228_505M60000400063",
       "https://laws.e-gov.go.jp/law/335CO0000000260/20230401_504CO0000000365"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 29,
@@ -98,8 +105,11 @@
       "ハ": "/images/denko2/2024-first/q29-circle-pse.png"
     },
     "officialReferenceUrls": [
-      "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/denan_guide_ver501.pdf"
-    ]
+      "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/hanbai.pdf",
+      "https://laws.e-gov.go.jp/law/336AC0000000234"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 30,
@@ -116,13 +126,15 @@
       "イ": "同省令第2条で電圧を低圧・高圧・特別高圧の三種に区分し、それぞれの範囲を規定している旨と一致するため正しい記述。",
       "ロ": "同省令第4条（電気設備における感電、火災等の防止）の趣旨と一致する記述であり正しい。",
       "ハ": "同省令第1条で「電気機械器具」を「電路を構成する機械器具をいう」と定義している旨と一致するため正しい記述。",
-      "ニ": "『通常の使用状態で電気が通じているところ』は電路の定義であり、電線の定義ではない。用語を取り違えている。"
+      "ニ": "『通常の使用状態で電気が通じているところ』は電路の定義。電線は強電流電気の伝送に使用する電気導体等をいうため、定義を取り違えたニが誤り。"
     },
     "diagramDescription": "図表なし。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q30.png",
     "officialReferenceUrls": [
       "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096"
-    ]
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   }
 ]

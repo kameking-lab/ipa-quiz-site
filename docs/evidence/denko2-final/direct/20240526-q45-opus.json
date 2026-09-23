@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q39-45-46-47-48-opus.json",
+  "upstreamReviewSha256": "ee602a934a8a4c9ccedd74e8a2db2326b86042917609be6e8f179c901e79a422",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "e3533bdb6d397614d466f39fb3d9795f2a86257e297af12c658fac674e0a5d87",
+    "rowSha256": {
+      "45": "1f1154106b4e910e1a3f72a4dfe32872e89f539ee95b62591794c663b58c4081"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q45-i.png": "fa73df8b6b253f8bbf7250ca1c1a15bb35209f15181c87a6d9437f6278fd0ff9",
+      "public/images/denko2/2024-first/q45-ro.png": "0e35b8b25f1817b7fe905b0a31b1c6b1911f85053a979eb41fcf18ec60029a49",
+      "public/images/denko2/2024-first/q45-ha.png": "76308e1cb82ab77ba2e4cf4c3c25ef88730156997a47f1e8070df4542909c603",
+      "public/images/denko2/2024-first/q45-ni.png": "bc2295c93c5e96ff725ac269f540cee74ba5243f0f7d7a8e0246bc24878ba217"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question PDF (common wiring diagram p.15 and the 問45 photos) and the official answer (問45=ニ). ⑮ is the triangle symbol with '6' in the lighting panel diagram, feeding the double-circled a–f circuits (legend: double circles are single-phase 200V). g is routed separately through TS. ⑦ is the dashed box fed from BE 100V20A. In the photos, イ is a remote-control transformer (100V/24V, fuse capacity 2A), ロ has a time dial, ハ has 2 main-circuit terminals and ニ has 4. The crops match the original."
+    }
+  ]
+}

@@ -30,19 +30,21 @@
       "ニ": "90"
     },
     "officialAnswer": "ロ",
-    "explanation": "600Vビニル絶縁電線（IV）の絶縁体の最高許容温度は60℃。経済産業省の電気設備技術基準解釈の解説でも、許容電流の前提となるビニル絶縁体の導体許容温度を60℃としている。",
+    "explanation": "公式正答はロの60℃。経済産業省『電気設備の技術基準の解釈』第146条146-3表も、耐熱性を有しないビニル混合物について許容電流補正係数を√((60−θ)/30)（θは周囲温度）と定めており、周囲温度60℃で係数が0になる式である。",
     "choiceExplanations": {
-      "イ": "45℃はIVの最高許容温度60℃と異なる。",
-      "ロ": "IVの絶縁体の最高許容温度60℃に一致する。",
-      "ハ": "75℃はIVの最高許容温度60℃と異なる。耐熱ビニル絶縁体などの温度区分と混同しない。",
-      "ニ": "90℃はIVの最高許容温度60℃と異なる。架橋ポリエチレン絶縁体などの温度区分と混同しない。"
+      "イ": "146-3表に45℃を基準とする電線区分はなく、耐熱性を有しないビニル混合物の式は60℃を基準とするため誤り。",
+      "ロ": "146-3表で耐熱性を有しないビニル混合物に用いる式は√((60−θ)/30)。本問のIVに対応する60℃が正答。",
+      "ハ": "75℃を基準とする式は耐熱性を有するビニル混合物及び架橋しないポリエチレン混合物の区分であり、本問のIVの区分ではない。",
+      "ニ": "90℃を基準とする式は架橋ポリエチレン混合物等の区分であり、本問のIVの区分ではない。"
     },
     "diagramDescription": "図表なし。",
     "uncertainty": "",
     "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q12.png",
     "officialReferenceUrls": [
-      "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2018/09/300928-5.pdf"
-    ]
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
   },
   {
     "number": 13,

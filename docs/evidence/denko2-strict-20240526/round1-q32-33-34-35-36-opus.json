@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "32": "b08581f42a502ed99f469b2da970db30af22230126f7637d250068887e0f4afb",
+      "33": "0bb3bbe1880651696b98e169da56406b08b2902e8d49e719f5e8ec80f5bdb798",
+      "34": "7839da21a74d084167f2f0a8e91ad64f1a0e9b9e966cb658b1c50bebb413f07f",
+      "35": "34ce2dc3b3bb380630583c9c2dc3b2c62ad78d407303298f74ea640959efa31c",
+      "36": "72aba0bcd5decc9458369812e2ce3e6f66fc59c637ddb669af9b2cb9c91f7ae6"
+    },
+    "sourceCropSha256": {
+      "32": "d0d51ef6fbc4b894367051e35a6757936fe0940f2ba9de3ec449368371f6f0a8",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b",
+      "34": "0a90448670bc7974c2b243ac35c299fe539eb18b8bbe096d24f10498abfe37a1",
+      "35": "27e65a19d859afdf2fd176e179e0202a675e8ac11c5338843f60e14202ee5bcb",
+      "36": "772a6ef60f211e50748c4c270a7405a81988e41d73abec05d59950a175574f4a"
+    }
+  },
+  "assessment": [
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イは「天井コンセントだから床面ではない」と言っているだけで、答えを理由に使っている。床面用の図記号にどんな表示が付くか（床付けの表示があること）を書き、②との違いを示すべき。",
+        "choiceExplanations.ニは「二重床用の記号ではない」と言い切っているが、二重床用の図記号がどう表示されるかを書いていない。一次資料で表示を確かめてから、②との違いを具体的に書くべき。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001611774.pdf は航空局の資料。WebFetch では中身が圧縮されたバイナリとしてしか返らず、文書名も、コンセント（天井・床・二重床・壁付けの塗り分け）や LK の図記号の記述も取り出せなかった。「白抜きの円＝天井面」という主張を直接裏付けているか確認できない。",
+        "航空局の資料が JIS C 0303 系の屋内配線図記号の一次資料として妥当かどうかも不明。国土交通省官庁営繕部の『公共建築設備工事標準図（電気設備工事編）』(https://www.mlit.go.jp/gobuild/content/001879276.pdf) などの該当頁に差し替え、頁番号を付けて裏付け直す必要がある（この資料も今回は中身を取り出せなかった）。"
+      ],
+      "verifiedEvidence": "公式問題の問32の切出しと候補の問題文・イロハニ全肢が一致することを照合した。共通配線図で、②の引出線がカウンタ内の白抜き円（縦線2本、傍記 LK）を指していること、右壁の ⓗ（20A）のコンセントが壁側を塗った記号であることを目視で確認した。図記号の意味の一次資料による裏付けは取れていない。"
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.meti.go.jp/policy/consumer/seian/denan/kaishaku/gijutsukijunkaishaku/beppyoudai4.pdf は WebFetch で HTTP 403 になり、取得できなかった。4肢それぞれの定格の判定（125V 20A の接地極付きは縦向きの L 字刃受、250V 20A は横向きの L 字、125V 15A は縦向きの平刃2本、250V 15A は横向きの平刃2本）を、別表第四のどの付表・図が裏付けるのか確認できない。付表の番号を明記し、取得できる一次資料で裏付け直す必要がある。"
+      ],
+      "verifiedEvidence": "公式問題の問33の切出しと候補の問題文、選択肢画像 q33-i/ro/ha/ni.png の刃受の形（イ＝横向き L 字＋横向き平刃、ロ＝縦向き平刃2本、ハ＝横向き平刃2本、ニ＝縦向き L 字＋縦向き平刃。いずれも接地極あり）が一致することを照合した。共通配線図で、③が右壁の壁付けコンセント（傍記 E20A）を指し ⓘ 回路につながること、電灯分電盤結線図で ⓘ が 100V 20A であることを確認した。刃受の形と定格の対応は、一次資料では確認できていない。"
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001611774.pdf（航空局の資料）は、WebFetch では中身が圧縮されたバイナリとしてしか返らず、誘導灯（蛍光灯形：横長の器具に、向かい合う区画を塗った円）と非常用照明の図記号の記述を取り出せなかった。図記号の名称を直接裏付けているか確認できない。",
+        "「非常用照明は停電時の照度確保が役割」という制度上の主張にも、それを裏付ける一次資料の URL が付いていない。"
+      ],
+      "verifiedEvidence": "公式問題の問34の切出しと候補の問題文・全肢が一致することを照合した。共通配線図と q34-symbol.png で、④が出入口の扉の上枠にある、横長の器具と向かい合う区画を塗った円が一体になった記号を指し、上へ引き出した線が単丸の ⓐ（凡例では単相100V、分電盤結線図では B 100V 20A）へつながることを確認した。図記号の名称は、一次資料では確認できていない。"
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "「28は公称の内径を表す呼び」「実測内径の厳密な28.0mmを保証する表記ではなく」という書き方には、一次資料（JIS C 8430 の寸法表、または官公庁の標準仕様書・標準図）の裏付けがない。呼びと内径の関係を示す根拠を添えるか、断定を控えた表現に改めるべき。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001885918.pdf は 10MB を超えていて WebFetch で取得できず、「VE＝硬質ポリ塩化ビニル電線管」「28＝内径の呼び」を直接裏付けているか確認できない。",
+        "官公庁ドメインで検索したところ、『公共建築工事標準仕様書（電気設備工事編）令和7年版』(https://www.mlit.go.jp/gobuild/content/001888825.pdf) で VE が JIS C 8430 の硬質ポリ塩化ビニル電線管を指すことが示唆された。ただし本文は直接確認できず、呼びと内径の関係の裏付けも得られなかった。"
+      ],
+      "verifiedEvidence": "公式問題の問35の切出しと候補の問題文・全肢が一致することを照合した。共通配線図の下端で、⑤（⑫⑬と同じ引出線）が一点鎖線の配線「600V CV 5.5-2C (VE28)」を指すことを確認した。VE と呼びの意味は、一次資料では確認できていない。"
+    },
+    {
+      "number": 36,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "D種を選ぶ根拠（300V以下の低圧機器の金属製外箱等は D種、300V超の低圧は C種）は電気設備の技術基準の解釈第29条の表によるのに、総合解説では第17条（接地抵抗値）しか挙げていない。第29条も明記すべき。"
+      ],
+      "visualIssues": [
+        "diagramDescription の「⑯はその上のE5.5と傍記した接地線を指す」は原図の読みと合わない。原図では⑯と⑥の引出線はどちらも電灯分電盤の下にある接地記号のあたりで終わっていて、⑯が E5.5 の傍記部分（それより上）を指しているとは読み取れない。問36に不要な記述なので、削除するか、⑥と⑯の指す先の記述を原図に合わせて直すべき。"
+      ],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf は WebFetch で HTTP 403 になった。METI の解釈本文・解説の別 URL（280401-3-4.pdf、dengikaishakukaisetsu.pdf）も 403 で、第17条（D種 100Ω、0.5秒以内の自動遮断で 500Ω、C種 10Ω・500Ω）と第29条の表の条文を確認できなかった。取得できる一次資料で条文を確認し、条・項を明記し直す必要がある。"
+      ],
+      "verifiedEvidence": "公式問題の問36の切出しと候補の問題文（「正しいものは。」と、引込線の電源側に地絡遮断装置がないという注記）・全肢が一致することを照合した。電灯分電盤結線図で、電源が 1φ3W 100/200V、主幹が B 3P100A（漏電遮断器 BE ではない）、⑥が盤の下の接地記号を指すことを確認した。第17条・第29条の条文は、一次資料では確認できていない。"
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q36-37-39-46-48-opus.json",
+  "upstreamReviewSha256": "2e46f84085873cd292ab066293a71723fb89aa639bb9f8d6379aca120673efd3",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "5a6e7f79a136b3cd434eed8fa2410b6a08ec5931142c787b41cbbc88b890945a",
+    "rowSha256": {
+      "37": "e70d42abd34150abad527ab4faff97ea7c46386dbd34229f258ed55ec73ea401"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q37-i.png": "6c41cf8c6295da7c8fb5258ac1c0938512efeee3b342245f1fd1ef3f76effe82",
+      "public/images/denko2/2024-first/q37-ro.png": "1ac24639de622b74dc1c387f82d3e6f403082e4a48a2fdff0a59d62fb4b29ff2",
+      "public/images/denko2/2024-first/q37-ha.png": "8ed27b157ad385c2a9152d6faf8d487d1732e8c76f76a523b2a8af08ccdb5dbc",
+      "public/images/denko2/2024-first/q37-ni.png": "854405a993711851de2336272eefb540f8308dcef5c0c2f62e9fcd476246c39e"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 37,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf 15頁、https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf 正答ロ）。原図では、⑦の破線枠がBE 100V 20Aの分岐から給電され、▲×6（⑮）へ配線されていることを確認した。候補の選択肢図（q37-i/ro/ha/ni）は、原図の円内T+B、円内T+R、●D、●Rと一致する。器具の分類は、指示に従い公式正答を一次資料として扱った。"
+    }
+  ]
+}

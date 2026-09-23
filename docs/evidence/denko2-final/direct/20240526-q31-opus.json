@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q26-27-31-33-35-opus.json",
+  "upstreamReviewSha256": "9262f1c4a7f62a782533b685cbcae63ed86e7f06180cbb7f426ad99afab9fcda",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "34386943856eb4d078929824954c38b54a90e890dd2f64a8532822482bbdd067",
+    "rowSha256": {
+      "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q31-symbol.png": "1798c60e1a798dc9a54047b5de90834cfd8fe8095880c5631c55bd120ab00167"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the question and choices イ–ニ against the official question-image crop; official answer イ (リモコンセレクタスイッチ) matches. In the official common wiring diagram (question PDF p.15), marker ① points to the circle-with-cross symbol at the right end of the '分電盤へ' arrow, labelled '6 ⓐ～ⓕ用' with double circles. In the lighting panel diagram, the triangle group is labelled '6' and outputs the double-circled ⓐ～ⓕ, which the legend defines as single-phase 200V circuits. All of this matches the candidate. The crops q31-symbol.png, wiring-main.png and wiring-panels.png match the original drawing and marker positions."
+    }
+  ]
+}

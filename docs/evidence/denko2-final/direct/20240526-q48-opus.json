@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q36-37-39-46-48-opus.json",
+  "upstreamReviewSha256": "2e46f84085873cd292ab066293a71723fb89aa639bb9f8d6379aca120673efd3",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "82841a2e5659684a2ab0742ff7c9381fb47b858ef82baddb65d32df4a0bd50ad",
+    "rowSha256": {
+      "48": "a35c0baa53554b4aa7471f789eebfffb0aa691f1cb5d4d4506b85043b2e43666"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q48-i.png": "9d7e3430f344139d056d49f976ec2454afbbd31806c7d9d60f0bea1cee15b334",
+      "public/images/denko2/2024-first/q48-ro.png": "5c144076693588a73fad54f5224e0cf008e255bb22068cd4f0d5d2b906fa06a5",
+      "public/images/denko2/2024-first/q48-ha.png": "7e75f218cf68aabb7e0605dc9c75dee94d212353e54483022b6293cd26232401",
+      "public/images/denko2/2024-first/q48-ni.png": "c1fe482e43d42521961c065080b0b83090a376cd5606f94b100dd42d80158c1f"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 48,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図15頁（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf）で、⑱に入るケーブルを確認した。VVF2.0-3Cが3本（上の2Eコンセント、分電盤ⓒ、下の2Eコンセント）、VVF2.0-2Cが1本（左のジョイントボックス）。このため、非接地側は2.0mm×4、接地側は2.0mm×4、接地線は2.0mm×3となる。https://www.shiken.or.jp/construction/upload/point2024.pdf p.25の公式抜粋（SHA256固定）にあるJIS C 2806準拠の表では、φ2.0同一の場合は小が2本、中が3～4本、大が5本。よって3接続点とも中スリーブで、中3個が正しい。公式正答（20240526_co_second_a01.pdf）はロで、選択肢写真の大3・中3・小3・大2+中1とも一致した。"
+    }
+  ]
+}

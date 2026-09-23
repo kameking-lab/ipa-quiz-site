@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "38": "d1588d4ec582365548dc5272b444943851d030406681bbb1e1370232418ca675"
+    },
+    "sourceCropSha256": {
+      "38": "43facd4cb31a3514b972c488b78da382ee40be9f75665c16ef3897bcd6de3a4b"
+    }
+  },
+  "assessment": [
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the original problem crop and the official answer (イ) given in the task. The question text '⑧で示す部分の電路と大地間の絶縁抵抗として、許容される最小値[MΩ]は。' and choices イ0.1/ロ0.2/ハ0.4/ニ1.0 match the candidate exactly. In the official common wiring diagram (p.15), the ⑧ leader line points to the wire running from the small box at bottom left to Ⓖ. The legend defines ◎a–◎g as single-phase 200V circuits. The lighting panel wiring diagram shows Ⓖ as BE 200V 20A → TS → Ⓖ, fed from 1φ3W 100/200V. wiring-main.png and wiring-panels.png match these positions. Legal check: the e-Gov Ministerial Ordinance on Technical Standards for Electrical Equipment (平成9年通商産業省令第52号), Article 58 table, reads: 300V以下で対地電圧150V以下=0.1MΩ, その他=0.2MΩ, 300V超=0.4MΩ. This supports the reasons for イ, ロ and ハ and rules out ニ. Retrieved through the e-Gov API because the officialReferenceUrls page did not return the article text. METI Technical Interpretation Article 24(1)(i)(イ) (local excerpt PDF p.36–37, SHA256 7ff56485…) confirms B-type grounding at the transformer's low-voltage neutral. Item ロ allows grounding at one terminal only when the neutral is hard to ground, which does not apply to 1φ3W where the neutral is available. So the claim that the 200V circuit's voltage to ground is 100V holds."
+    }
+  ]
+}

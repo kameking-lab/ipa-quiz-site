@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "12": "fd34fefef5b2dfd698428864d704c9a1d5a4b058aa0c99fda0d95e32927e631d",
+      "27": "e507d89b84c655deecf6a17ba73b60b7f14e6a857b0b319adb0fe3ba69498fb9",
+      "33": "0042a97c061a7344ba7a6d517f52c3af263b89791fbb0bc53eba8edf58278416"
+    },
+    "sourceCropSha256": {
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd",
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b"
+    }
+  },
+  "assessment": [
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question crop (q01 PDF, Q12) and the official answer ロ. The METI PDF https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf returned 403 to WebFetch, so I used the supplied SHA-pinned local excerpt (SHA256=7ff56485…3b43, PDF pp.145-146). In 第146条第2項第二号イ, table 146-3 gives the correction formula √((60−θ)/30) for vinyl compound that is not heat-resistant. The other formulas are 75 (heat-resistant vinyl, non-crosslinked polyethylene, SBR), 80 (EP rubber), 90 (crosslinked PE; fluororesin and silicone in the 'other cases' rows), 200 and 180. The table has no row based on 45℃. The note defines θ as ambient temperature, taken as 30 at or below 30℃. Question text, units and all four choices イ45, ロ60, ハ75, ニ90 match the original. Classifying IV in the non-heat-resistant vinyl row matches the official answer (60℃) for this question."
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロ contains the phrase 「交流表示だけを理由にはしない」. This is a reviewer's internal note about how the judgment was made, not an explanation for learners, and it is hard to follow on its own. Remove it, or replace it with an explanation of the symbol that has official backing. Naming the symbol type (for example, 可動鉄片形) needs a primary source; since officialReferenceUrls is empty, do not add a type name without one."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official question crop (https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf, Q27) and the official answer ロ (https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf). Question text, the negation 「誤っているもの」 and choices イ–ニ match the original. The dial in q27.png matches the original: scale 0/50/100/150, the V and wavy-line symbols, the operating-principle and position symbols at lower left, and 1.0. Because ロ is the only incorrect statement, the official answer directly supports イ (voltmeter), ハ (used horizontally) and ニ (for AC circuits) as correct, and ロ (permanent-magnet moving-coil type) as incorrect."
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イ: the rating claim 「20A・250V系」 for this slot arrangement could not be checked against a primary source (see sourceIssues).",
+        "ロ: the rating claim 「15A・125V系」 could not be checked against a primary source.",
+        "ハ: the rating claim 「15A・250V系」 could not be checked against a primary source.",
+        "ニ: the rating claim 「20A・125V系」 could not be checked against a primary source. The official answer confirms that ニ is the arrangement to use at ③ (100V・20A・earthed). It does not by itself confirm the rating wording in the explanation text."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The main explanation's point that ニ fits the 100V・20A・earthed condition is backed by the official drawing and the official answer. However, the explanations for the other choices depend on voltage and current ratings for each slot shape, which are unconfirmed (same cause as choiceIssues)."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The only entry in officialReferenceUrls, https://www.meti.go.jp/policy/consumer/seian/denan/PDF/old_beppyou4.pdf, returned HTTP 403 to WebFetch, and no SHA-pinned local excerpt of it was supplied. The Electrician Exam Center's official technical materials (https://www.shiken.or.jp/construction/upload/kex06.pdf, kex04.pdf) could be fetched, but their text could not be extracted, so they could not be used either. As a result, the primary-source check of which shape corresponds to which rating (15A/20A, 125V/250V) is incomplete. Supply a local excerpt of the relevant attached figure in old_beppyou4.pdf, fixed by SHA, or of the corresponding METI primary document."
+      ],
+      "verifiedEvidence": "Checked the official shared wiring diagram (q01 PDF p.15) against wiring-main.png. ③ correctly points to the 『E20A』 outlet on the right wall, which connects to circuit ⓘ. wiring-panels.png matches the original, and ⓘ in the lighting distribution board diagram is labelled 100V 20A. The four slot crops q33-i/ro/ha/ni match the original choice drawings: イ horizontal L-slot plus horizontal flat slot, ロ two vertical flat slots, ハ two horizontal flat slots, ニ vertical L-slot plus vertical flat slot, and every choice has an earth-pin receptacle. The official answer is ニ. The rating claims for each shape are unconfirmed (see sourceIssues)."
+    }
+  ]
+}

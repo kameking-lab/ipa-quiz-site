@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q09-10-12-19-22-opus.json",
+  "upstreamReviewSha256": "27f6f3a6d9b4abf5558e0cd4e2b21d4fa77d32cad09b655a2110deace1711ecf",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "a4aa0afd7929edb414db20e8a56f027989b4d0da4f7de095cb5e946a8124a56b",
+    "rowSha256": {
+      "9": "191e1d46e9ed9216d10a9c4adf42651dc872f3a0091658b7cffeb586961c12cc"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q9.png": "ff53cedea3550134e970cf5203599c20791a494a17335c1f7445ff5d00d70a23"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official figure (20240526_co_second_q01.pdf, Q9) against official answer ハ. The question text, the four choices, and the figure all match: main-line B, B-H 10A, and two B-M 20A branches whose B symbols have a vertical line. The q9.png crop matches the figure. Legal basis: https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf. WebFetch returned 403, so I used the attached SHA-pinned excerpt (PDF p.147). Article 148(1)(ii)(a): motor currents total 40A, which is at most 50A and larger than 10A, so I_W = 1.25×40 + 10 = 60A. Article 148(1)(v)(a): 3×40 + 10 = 130A. Item (b): the 2.5×I_W = 150A cap does not apply, because 130A does not exceed it. So I_B = 130A. The reasoning for every choice is arithmetically correct."
+    }
+  ]
+}

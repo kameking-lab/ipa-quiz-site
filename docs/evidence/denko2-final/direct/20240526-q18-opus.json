@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q15-16-17-18-24-opus.json",
+  "upstreamReviewSha256": "e9ca6254d847da63dbcf92b32419119c166f75a00d710920b6628193b72cefc6",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "0d4944ed24a46060b613f0fad4f2c950aa0837ed55652873b6b26ce5c7d6a358",
+    "rowSha256": {
+      "18": "1388285992baea9156bc645705d5dd7f41d13357edd8488716f8cf22916b2f06"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q18.png": "23c1581ddfac9a953c8d132add9e90eb9ac6eb5f5d2799e3d109d8d977cd2c6a"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答（イ）を照合。問題文とイロハニ全肢の文言・読点「，」は原図と一致。公開用の切出しq18.pngは公式写真と同じ範囲であることを確認。diagramDescriptionの記述（左端のチャック、付け根の黒い切替部、中央上部の赤褐色の握り、右端の丸い押さえ）は写真と一致。"
+    }
+  ]
+}
