@@ -21,11 +21,10 @@ CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 
 
 def draft_for(batch_path: Path, part: int) -> tuple[list[dict], Path]:
-    if batch_path.stem == "20240526-q01-10":
-        suffix = "q01-05" if part == 1 else "q06-10"
-        path = REVIEWED / f"20240526-{suffix}.json"
-    else:
-        path = batch_path.with_name(batch_path.stem + f"-vision-part{part:02}.json")
+    original = json.loads(batch_path.read_text(encoding="utf-8"))["questions"][(part - 1) * 5:part * 5]
+    first, last = original[0]["number"], original[-1]["number"]
+    reviewed_path = REVIEWED / f"{batch_path.stem[:8]}-q{first:02}-{last:02}.json"
+    path = reviewed_path if reviewed_path.exists() else batch_path.with_name(batch_path.stem + f"-vision-part{part:02}.json")
     return json.loads(path.read_text(encoding="utf-8")), path
 
 

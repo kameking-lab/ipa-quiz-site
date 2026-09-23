@@ -1,16 +1,48 @@
 {
   "schemaVersion": 1,
   "batch": "20240526-q11-20",
-  "status": "source-verified-draft-pending",
-  "questionOriginalVisualQc": 0,
-  "choiceTextOriginalVisualQc": 0,
-  "choiceExplanationQc": 0,
-  "figureAndPhotoQc": 0,
-  "governmentSourceQc": 0,
-  "reviewedQuestionNumbers": [],
-  "unresolved": [
-    "原本画像での全問・全肢・解説・図表の個別照合が未完了"
+  "status": "accepted",
+  "publishGate": "notification-required-and-two-full-years-required",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 4,
+  "governmentSourceQc": 2,
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20240526-q11-20-opus-review-part01.json",
+      "docs/evidence/denko2-independent/20240526-q11-20-opus-review-part02.json"
+    ],
+    "lawChecksResolvedSeparately": [
+      12,
+      20
+    ]
+  },
+  "governmentSourceApplicableQuestions": [
+    12,
+    20
   ],
+  "governmentSourceUrls": [
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2018/09/300928-5.pdf",
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+  ],
+  "reviewMethod": "公式設問行と全文・四肢・正答・肢別解説を個別視認照合。Q12のIV=60℃とQ20のライティングダクト全長4m以下・接地省略を試験前のMETI資料で確認。Q16〜18は写真部分、Q19は表部分だけを切り出し、Q19の適合表は試験センター2024技能の一次資料で内部照合。",
+  "reviewedQuestionNumbers": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "unresolved": [],
   "sourceDate": "2024-05-26",
   "sourceQuestionPdfSha256": "75c63bb409cd18c0fd442f24478dd6920b7f95ba1864ff4ab1ebadc5a8d29e78",
   "sourceAnswerPdfSha256": "31b1b214ee98e4340f4a65708d9ab3f8e2482084ff9d168b5b0698116ebe5a4a",
