@@ -330,17 +330,17 @@
       "overlay": {
         "sourceHash": "054178a1a46834c33f6f741ff58f36bd2fb1d04e5760f3f0f9321386d0a99f16",
         "correctChoice": 4,
-        "summary": "ジクロロメタンの蒸気密度はトルエンより小さい（前半は正しい）が、25℃の蒸気圧は約435mmHgでトルエンの約28mmHgよりはるかに大きい。後半を誤った肢4が正答。",
+        "summary": "環境省の物性表ではジクロロメタンの分子量84.9はトルエン92.1より小さいが、25℃での蒸気圧58.0kPaはトルエン3.79kPaより大きい。蒸気圧の大小を逆にした肢4が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "溶解度が小さく、気体と液体が反応しない場合は、温度一定で一定量の液体に溶ける気体の質量がその気体の分圧に比例する（ヘンリーの法則）。条件も含めて正しい記述である。"
+            "reason": "この記述は正しい。溶解度が小さく液体と反応しない気体は、溶液が希薄で溶質も化学変化しないというヘンリーの法則の前提に合う。環境省資料は気体の分圧と液中濃度の比例を示す。温度一定なら比例定数も一定で、一定量の液体では濃度に比例して溶解質量も変わるため、気体の圧力と溶解質量が比例する。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "ヒュームは金属などの固体が加熱で蒸発し、空気中で凝縮してできた固体微粒子で、粒径はおおむね1µm以下と小さい。ミストは液体が飛散した液滴で、粒径は数µm以上とヒュームより大きいのが一般的なので、記述は正しい。"
+            "reason": "この記述は正しい。産総研の用語集は、ヒュームを蒸気の凝固等で生じる固体微粒子で粒径0.1～1µm、ミストを空気中に浮遊する液体微粒子で粒径5～10µmと定義する。厚生労働省の溶接ヒューム資料も蒸気が凝固した0.1～1µmの固体粒子と説明しており、両者を一般的な範囲で比較するとヒュームの方が小さい。"
           },
           {
             "number": 3,
@@ -350,67 +350,90 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "分子量はジクロロメタン84.93、トルエン92.14で、相対蒸気密度は約2.93と約3.1なので前半は正しい。しかし25℃の蒸気圧はジクロロメタン435mmHg、トルエン28.4mmHgで、ジクロロメタンの方がはるかに大きい。後半が誤りなので、この肢が正答である。"
+            "reason": "これが誤り。気体の状態方程式より同温同圧の気体の密度は分子量に比例する。環境省の測定マニュアルの表ではジクロロメタン84.9、トルエン92.1なので蒸気密度の大小は設問の前半どおり。しかし25℃の蒸気圧はジクロロメタン58.0kPa、トルエン3.79kPaで前者の方が大きい。後半の比較が逆なので、誤っている肢は4である。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "N,N-ジメチルホルムアミドは水と任意の割合で混ざり、多くの有機溶媒とも混ざる極性の非プロトン性溶媒である。水溶性と脂溶性を併せ持つため皮膚からも吸収されやすく、記述は正しい。"
+            "reason": "この記述は正しい。国立環境研究所の物性情報はN,N-ジメチルホルムアミドを『水、多くの有機溶媒に易溶』と記す。厚労省会議資料にも、トルエンに溶かしたDMFと水系緩衝液に溶かしたDMFの比較実験がある。ここでいう脂溶性は有機溶媒側にも溶ける性質を指し、水にも有機溶媒にも溶けるという設問の趣旨と一致する。"
           }
         ],
         "sources": [
           {
-            "title": "職場のあんぜんサイト モデルSDS ジクロロメタン",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html"
+            "title": "環境省 ダイオキシン類挙動モデルハンドブック",
+            "url": "https://www.env.go.jp/air/tech/kyodomoderuhandbookH16.pdf"
           },
           {
-            "title": "職場のあんぜんサイト モデルSDS トルエン",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+            "title": "厚生労働省地方労働局 溶接ヒューム規制",
+            "url": "https://jsite.mhlw.go.jp/yamagata-roudoukyoku/taisyou-20201112.html"
           },
           {
-            "title": "職場のあんぜんサイト モデルSDS アクリルアミド",
+            "title": "産業技術総合研究所 詳細リスク評価書のための用語集",
+            "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS アクリルアミド",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
           },
           {
-            "title": "職場のあんぜんサイト モデルSDS N,N-ジメチルホルムアミド",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html"
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 物理的性質表",
+            "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf"
+          },
+          {
+            "title": "国立環境研究所 化学物質情報 N,N-ジメチルホルムアミド",
+            "url": "https://www.nies.go.jp/kisplus/dtl/chem/YOT00201"
+          },
+          {
+            "title": "厚生労働省 化学物質管理に関する意見交換会資料",
+            "url": "https://www.mhlw.go.jp/content/11305000/001343235.pdf"
+          },
+          {
+            "title": "文部科学省 理科教材 気体の密度と分子量の比較表",
+            "url": "https://www.mext.go.jp/content/1412880_4_1.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html",
-          "excerpt": "435 mmHg (25℃)",
+          "url": "https://www.env.go.jp/air/tech/kyodomoderuhandbookH16.pdf",
+          "excerpt": "気相内の溶質の分圧ｐは溶液中の濃度ｃに比例する",
           "choiceNumbers": [
-            4
+            1
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
-          "excerpt": "28.4 mmHg（25℃）",
+          "url": "https://jsite.mhlw.go.jp/yamagata-roudoukyoku/taisyou-20201112.html",
+          "excerpt": "溶接により生じた蒸気が空気中で凝固した個体の粒子（粒径0.1～1μm程度）",
           "choiceNumbers": [
-            4
+            2
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-09-2.html",
-          "excerpt": "CH2Cl2 (84.93)",
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "金属の蒸気等の気体が空気中で凝固や化学変化を起こし，固体の微粒子として空気中に浮遊しているもの",
           "choiceNumbers": [
-            4
+            2
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
-          "excerpt": "3.1 (Air=1)",
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "粒径は0.1〜１μmである",
           "choiceNumbers": [
-            4
+            2
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
-          "excerpt": "C7H8（92.14）",
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "液体の微細な粒子で空気中に浮遊しているもの",
           "choiceNumbers": [
-            4
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/mainmenu/3-1.html",
+          "excerpt": "粒径は5〜10μmである",
+          "choiceNumbers": [
+            2
           ]
         },
         {
@@ -421,19 +444,63 @@
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
-          "excerpt": "水に溶ける",
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "ジクロロメタン 84.9",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "トルエン 92.1",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "蒸気圧(kPa)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "58.0 （25℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf_rev201903/01_chpt1-2-1.pdf",
+          "excerpt": "3.79 （25℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mext.go.jp/content/1412880_4_1.pdf",
+          "excerpt": "標準状態における一酸化炭素と二酸化炭素の密度",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.nies.go.jp/kisplus/dtl/chem/YOT00201",
+          "excerpt": "水、多くの有機溶媒に易溶",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11305000/001343235.pdf",
+          "excerpt": "トルエンに溶かしたものの対象としまして、水溶性の溶剤",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "蒸気密度を分子量から独立に検算した。ジクロロメタンは84.93÷28.97≒2.93、トルエンは92.14÷28.97≒3.18で、ジクロロメタンの方が小さいことはSDSの値（2.93、3.1）と一致する。",
-        "ジクロロメタンのモデルSDSの相対蒸気密度の欄は取得した表記が「2.93(空気= 1.02)」と不自然だったため、抜粋に使わず分子量の値で代えた。",
-        "肢5のDMFが脂溶性を持つ（有機溶媒と混ざる）点は、モデルSDSで直接の記述を確認できず、「水に溶ける」ことだけを抜粋した。",
-        "肢1（ヘンリーの法則）と肢2（ヒュームとミストの粒径）は、本文を確認できた政府資料がない。"
-      ]
+      "reviewIssues": []
     }
   }
 }
