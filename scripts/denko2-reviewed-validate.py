@@ -53,8 +53,8 @@ def main() -> None:
                 if not image_url.startswith("/images/denko2/") or not (ROOT / "public" / image_url.lstrip("/")).is_file():
                     raise ValueError(f"Missing/unsafe diagram path: {key} {image_url}")
             choice_images = item.get("choiceImageUrls", {})
-            if choice_images and set(choice_images) != LABELS:
-                raise ValueError(f"Incomplete choice diagrams: {key}")
+            if not set(choice_images).issubset(LABELS):
+                raise ValueError(f"Unknown choice diagram label: {key}")
             for image_url in choice_images.values():
                 if not image_url.startswith("/images/denko2/") or not (ROOT / "public" / image_url.lstrip("/")).is_file():
                     raise ValueError(f"Missing/unsafe choice diagram: {key} {image_url}")

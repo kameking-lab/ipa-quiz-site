@@ -1,16 +1,61 @@
 {
   "schemaVersion": 1,
   "batch": "20240526-q21-30",
-  "status": "source-verified-draft-pending",
-  "questionOriginalVisualQc": 0,
-  "choiceTextOriginalVisualQc": 0,
-  "choiceExplanationQc": 0,
-  "figureAndPhotoQc": 0,
-  "governmentSourceQc": 0,
-  "reviewedQuestionNumbers": [],
-  "unresolved": [
-    "原本画像での全問・全肢・解説・図表の個別照合が未完了"
+  "status": "accepted",
+  "publishGate": "notification-required-and-two-full-years-required",
+  "questionOriginalVisualQc": 10,
+  "choiceTextOriginalVisualQc": 40,
+  "choiceExplanationQc": 40,
+  "figureAndPhotoQc": 3,
+  "governmentSourceQc": 7,
+  "independentVisionReview": {
+    "model": "claude-opus-5-5",
+    "passedQuestions": 10,
+    "totalQuestions": 10,
+    "receipts": [
+      "docs/evidence/denko2-independent/20240526-q21-30-opus-review-part01.json",
+      "docs/evidence/denko2-independent/20240526-q21-30-opus-review-part02.json"
+    ],
+    "lawChecksResolvedSeparately": [
+      21,
+      22,
+      23,
+      26,
+      28,
+      29,
+      30
+    ]
+  },
+  "governmentSourceApplicableQuestions": [
+    21,
+    22,
+    23,
+    26,
+    28,
+    29,
+    30
   ],
+  "governmentSourceUrls": [
+    "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+    "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096",
+    "https://laws.e-gov.go.jp/law/335M50000400097/20220401_503M60000400021",
+    "https://laws.e-gov.go.jp/law/335CO0000000260/20230401_504CO0000000365",
+    "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/denan_guide_ver501.pdf"
+  ],
+  "reviewMethod": "公式設問行と全文・40肢・正答・肢別解説を個別視認照合。Q21〜23/26/28〜30の規則・表示を試験前のMETI又はe-Gov資料で確認。Q27の計器目盛とQ29の菱形・丸形PSE記号だけ画像切出し。",
+  "reviewedQuestionNumbers": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "unresolved": [],
   "sourceDate": "2024-05-26",
   "sourceQuestionPdfSha256": "75c63bb409cd18c0fd442f24478dd6920b7f95ba1864ff4ab1ebadc5a8d29e78",
   "sourceAnswerPdfSha256": "31b1b214ee98e4340f4a65708d9ab3f8e2482084ff9d168b5b0698116ebe5a4a",

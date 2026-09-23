@@ -1,0 +1,103 @@
+{
+  "inputHashes": {
+    "draftSha256": "fdd2a39468e7f81895ad53937adf14ae6a64eb221ae1d892e2f8396ba92c9070",
+    "rowSha256": {
+      "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3",
+      "32": "d0d51ef6fbc4b894367051e35a6757936fe0940f2ba9de3ec449368371f6f0a8",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b",
+      "34": "0a90448670bc7974c2b243ac35c299fe539eb18b8bbe096d24f10498abfe37a1",
+      "35": "27e65a19d859afdf2fd176e179e0202a675e8ac11c5338843f60e14202ee5bcb"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "The image contains only the question text and choices イ〜ニ; symbol ① itself is not there. Yet explanation and choiceExplanations.イ state as fact that the symbol matches the notation for a リモコンセレクタスイッチ. The source provides no basis for this, so the explanation just restates the official answer.",
+        "choiceExplanations.ロ/ハ/ニ say each is 'shown by a different dedicated symbol that differs from the shape of ①', but they never say what ① looks like or how it differs from each symbol. The wrong-answer reasons have no concrete content.",
+        "The explanation should describe the actual shape of ① from the wiring drawing (the full plan view), then explain the difference from the symbols for 漏電警報器, リモコントランス and 表示スイッチ. It should not be finalized until that is added."
+      ],
+      "figureIssues": [
+        "The ① symbol on the wiring drawing needs to be cross-checked against a separate image. diagramDescription correctly says the symbol is not in the cropped image."
+      ],
+      "lawNeedsExternalCheck": [
+        "The correspondence between the ① symbol and the name リモコンセレクタスイッチ (JIS C 0303 graphical symbols for building wiring) needs to be checked against the wiring drawing and the standard."
+      ]
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "The explanation says '②の図記号は天井面に取り付ける照明器具等を表す図記号'. Symbol ② is not in the image, so nothing confirms that ② is a light fixture. 「照明器具等」 is speculation.",
+        "The question asks where the fixture is mounted. The answer depends on how the mounting location is marked on symbol ② (for example, whether it has a mark added for a floor, wall or raised-floor location). The explanation never states this and just asserts 'the ceiling is the mounting location'.",
+        "choiceExplanations.イ/ハ/ニ only say 'the notation differs from the symbol for floor / wall / raised-floor mounting'. They never say how the notation differs, so the wrong-answer reasons have no concrete content.",
+        "choiceExplanations.ニ adds the example '二重床面（フロアコンセント等）'. That example is unrelated to what ② actually is and may mislead readers."
+      ],
+      "figureIssues": [
+        "The shape of the ② symbol on the wiring drawing, and whether it carries any mounting-location mark, needs to be checked against a separate image."
+      ],
+      "lawNeedsExternalCheck": [
+        "How mounting locations (ceiling, floor, wall, raised floor) are marked on the symbol in JIS C 0303 needs to be checked against the standard."
+      ]
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "The description of choice イ is wrong. In the source, イ has a hooked L-shaped slot lying horizontally on the left, a horizontal flat slot on the right, and a round ground hole at the bottom center. The JSON describes it as 'two horizontal flat slots side by side on top' and also 'two vertically elongated slots side by side', which contradicts itself and misses the L-shaped slot.",
+        "In choice ニ, left and right are reversed. In the source, ニ has the L-shaped (hooked) slot on the left and a vertical flat slot on the right, with the ground hole at the bottom. The JSON says '左側に縦向き、右側にL字状'.",
+        "The descriptions of ロ (two vertical flat slots + ground hole) and ハ (two horizontal flat slots + ground hole) match the source."
+      ],
+      "explanationIssues": [
+        "choiceExplanations.イ says イ is wrong because it 'has no L-shaped blade'. In the source, イ does have an L-shaped slot. The wrong-answer reason contradicts the choice image. The correct way to tell イ and ニ apart is the orientation: イ has its slots horizontal (250 V configuration) and ニ has them vertical (125 V configuration). This needs to be rewritten.",
+        "Because both イ and ニ have L-shaped slots, the explanation's 'the L-shaped slot matches the conditions of use of ③' does not separate ニ from イ. The explanation must link the rated voltage and current shown by ③ (for example, a notation like 20A, 接地極付) to the vertical-L configuration of ニ.",
+        "choiceExplanations.ロ/ハ are right that neither has an L-shaped slot, but they do not say what rating each configuration represents (ロ: 125 V 15 A with ground, ハ: 250 V 15 A with ground) or why that rating does not fit ③."
+      ],
+      "figureIssues": [
+        "diagramDescription says the choices differ only in 'horizontal parallel pair / vertical parallel pair / one L-shaped slot'. The source has four distinct patterns: イ (horizontal + L), ロ (vertical pair), ハ (horizontal pair) and ニ (vertical + L). Describing only one choice as L-shaped misrepresents the image.",
+        "The notation for ③ on the wiring drawing (rated current, voltage, grounding) needs to be checked against a separate image."
+      ],
+      "lawNeedsExternalCheck": [
+        "The correspondence between each slot configuration and its rating (125 V/250 V, 15 A/20 A, grounded) under JIS C 8303 needs to be checked against the standard.",
+        "The rating that ③ requires (the notation on the wiring drawing) needs to be checked."
+      ]
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "Symbol ④ is not in the image, but explanation and choiceExplanations.イ state as fact that the symbol matches the notation for a 誘導灯. The source provides no basis for this.",
+        "choiceExplanations.ロ/ハ/ニ only say 'a different dedicated symbol'. The key distinction, how the 誘導灯 symbol differs in shape from the 非常用照明 symbol (choice ニ), is not given, so the wrong-answer reasons have no concrete content.",
+        "The explanation calls a 誘導灯 an 'illuminating fixture that shows the evacuation direction'. Given that a 誘導灯 is a separate category from 非常用照明, the explanation should say how they differ in role (guiding evacuation vs. lighting a room during a power failure)."
+      ],
+      "figureIssues": [
+        "The ④ symbol on the wiring drawing needs to be cross-checked against a separate image. diagramDescription correctly says the symbol is not in the cropped image."
+      ],
+      "lawNeedsExternalCheck": [
+        "The correspondence between the symbols for 誘導灯 and 非常用照明 in JIS C 0303 needs to be checked against the standard."
+      ]
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "The (VE28) notation for ⑤ on the wiring drawing needs to be checked against a separate image. The question text itself states (VE28), which matches the source."
+      ],
+      "lawNeedsExternalCheck": [
+        "The claim that the size designation of VE conduit (硬質ポリ塩化ビニル電線管) is based on the inside diameter (the nearest even number) needs to be checked against JIS C 8430."
+      ]
+    }
+  ]
+}
