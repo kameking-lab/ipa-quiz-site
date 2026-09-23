@@ -12,4 +12,6 @@
 
 検証: `node scripts/validate-safety-exams.mjs --require-explanations` PASS、構造化解説466件（既存450件＋今回15件＋重複1件）。`__tests__/exam-library-choice-explanations.test.ts` 14件、`__tests__/exam-library-integration.test.ts` 5件、`__tests__/validate-safety-exams-explanations.test.ts` 4件、ESLint、TypeScript typecheckがPASS。残りは2025年択一657問・3,285肢、2026年択一671問・3,355肢。`coverage-contract.json` の対象集合には2025・2026年の全38紙、各672問を固定し、完了要求集合へは各紙の公式択一全問を仕上げてから移す。今回の16件を紙全体の完成とは扱わない。
 
-以後は `scripts/complete-safety-choice-explanations.py` で既存のClaude契約を用い、5～8問のバッチを最大3件まで並列生成する。各バッチは機械的な原文・正答・五肢・政府資料ゲートと、別セッションによる一次資料の抜取レビューを通るまで掲載データへ統合しない。原文・正答・肢数が完全一致する設問だけ再利用し、未完の紙は `coverage-contract.json` の完成集合に含めない。
+2026年9月23日の追加監査で、抜取1問のPASSはバッチ全体の全肢確認にならないと判明した。既存の公開19件を保持しつつ、新形式の全問・全5肢receiptでは19件すべて未確認として再審査する。旧19件の執筆モデルは成功ログで8件を `claude-opus-5-5` と確認し、残り11件は `unknown` とした。モデル名の解決は内容の品質認定とは別である。
+
+以後 `scripts/complete-safety-choice-explanations.py` は5～8問の候補を最大3並列で作るだけで公開データを更新しない。`scripts/review-safety-choice-clusters.py` は正式モデルID `claude-opus-5-5` を指定し、問題ごとに公式原文・正答・画像・出題時点・政府根拠・全5肢を確認したreceiptを保存する。receiptが現行候補と完全一致するPASSだけ `--promote-reviewed` で公開する。同一原文・正答の別年度問題も自動PASSにせず個別に確認する。未完の紙は `coverage-contract.json` の完成集合に含めない。
