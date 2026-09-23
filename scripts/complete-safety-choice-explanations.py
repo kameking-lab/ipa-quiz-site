@@ -25,10 +25,8 @@ FORBIDDEN = re.compile(r"準備中|今後追加|解説を作成できません|h
 GOVERNMENT_ROOTS = (
     "e-gov.go.jp", "mhlw.go.jp", "mext.go.jp", "mlit.go.jp", "meti.go.jp",
     "maff.go.jp", "env.go.jp", "cao.go.jp", "nra.go.jp", "jma.go.jp",
-    "jisc.go.jp", "fdma.go.jp", "npa.go.jp",
+    "jisc.go.jp", "fdma.go.jp", "npa.go.jp", "stat.go.jp",
 )
-
-
 def read(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
