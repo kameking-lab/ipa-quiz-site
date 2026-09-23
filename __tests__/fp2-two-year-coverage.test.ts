@@ -1,0 +1,54 @@
+import { describe, expect, it } from "vitest";
+import academic from "@/docs/evidence/fp2-two-year/gakka-extraction.json";
+import practical from "@/docs/evidence/fp2-two-year/jitsugi-extraction.json";
+import figures from "@/docs/evidence/fp2-two-year/practical-figures.json";
+import manifest from "@/docs/evidence/fp2-two-year/manifest.json";
+
+const editions = ["202405", "202409", "202501", "202505"] as const;
+
+describe("FP2 official 2024–2025 corpus", () => {
+  it("holds four complete academic papers with all choices and official answers", () => {
+    for (const edition of editions) {
+      const questions = academic[edition].questions;
+      expect(questions).toHaveLength(60);
+      expect(questions.map((q) => q.number)).toEqual(Array.from({ length: 60 }, (_, i) => i + 1));
+      for (const q of questions) {
+        expect(q.stem.trim().length).toBeGreaterThan(10);
+        expect(q.choices).toHaveLength(4);
+        expect(q.choices.every((choice) => choice.trim().length > 0)).toBe(true);
+        expect(q.answer).toBeGreaterThanOrEqual(1);
+        expect(q.answer).toBeLessThanOrEqual(4);
+      }
+    }
+  });
+
+  it("pairs every practical prompt with its exact answer and a source-layout panel", () => {
+    for (const edition of editions) {
+      const questions = practical[edition].questions;
+      expect(questions).toHaveLength(40);
+      expect(questions.map((q) => q.number)).toEqual(Array.from({ length: 40 }, (_, i) => i + 1));
+      for (const q of questions) {
+        expect(q.body.trim().length).toBeGreaterThan(10);
+        expect(q.modelAnswer.trim()).not.toBe("");
+        expect(figures[edition][String(q.number)]?.length).toBeGreaterThan(0);
+      }
+    }
+  });
+
+  it("pins all original PDFs and the four different legal reference dates", () => {
+    expect(manifest.editions.map((edition) => edition.edition)).toEqual(editions);
+    expect(manifest.editions.map((edition) => edition.lawReferenceDate)).toEqual([
+      "2023-10-01", "2024-04-01", "2024-10-01", "2024-04-01",
+    ]);
+    for (const edition of manifest.editions) {
+      expect(edition.expectedGakkaQuestions).toBe(60);
+      expect(edition.extractedGakkaQuestions).toBe(60);
+      expect(edition.expectedJitsugiQuestions).toBe(40);
+      expect(edition.extractedJitsugiAnswers).toBe(40);
+      for (const file of Object.values(edition.files)) {
+        expect(file.sha256).toMatch(/^[a-f0-9]{64}$/);
+        expect(file.url).toMatch(/^https:\/\/www\.jafp\.or\.jp\/exam\/mohan\/files\//);
+      }
+    }
+  });
+});
