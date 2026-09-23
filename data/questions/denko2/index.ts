@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { DENKO2_REVIEWED_QUESTIONS } from "./reviewed";
 
 const sourcePdfUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf";
 const sourceAnswerUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf";
@@ -34,7 +35,7 @@ function question(
 }
 
 /** 公式2026年5月24日実施の学科問1〜10。全50問中の先行収録。 */
-export const DENKO2_QUESTIONS: Question[] = [
+export const DENKO2_2026_PILOT: Question[] = [
   question(1, {
     officialAnswer: "イ", category: "電気理論", topicTags: ["合成抵抗", "短絡"], difficulty: 2,
     question: "図のような回路で、端子a-b間の合成抵抗［Ω］は。",
@@ -171,3 +172,7 @@ export const DENKO2_QUESTIONS: Question[] = [
     }, officialReferenceUrls: [governmentRule], lawReferenceDate: "2025-11-20",
   }),
 ];
+
+// The 2026 paper has only a partial pilot. Keep it out of the publication
+// registry until the entire sitting has independent original-PDF acceptance.
+export const DENKO2_QUESTIONS: Question[] = DENKO2_REVIEWED_QUESTIONS;
