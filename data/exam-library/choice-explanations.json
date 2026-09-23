@@ -21508,5 +21508,55 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
       }
     ]
+  },
+  "emkohyo-20260217-2-q2": {
+    "sourceHash": "eacbcff573c24cd4e3ac16bf0f0973a701df3995191d8703d5dec22ce585c482",
+    "correctChoice": 2,
+    "summary": "製造事業場の化学物質管理者の資格は、大臣が定める講習の修了者等である。都道府県労働局長の免許ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "安衛則第12条の5第1項は、リスクアセスメント対象物を製造し、又は取り扱う事業場ごとに化学物質管理者を選任するよう定める。常時使用労働者数による除外を置いていないため、本肢は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "正答。安衛則第12条の5第3項第2号イは、製造事業場の化学物質管理者を厚生労働大臣所定の講習修了者又は同等以上の能力を有する者から選ぶと定める。都道府県労働局長の免許を要件とはしていないため、本肢は誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "安衛則第12条の5第3項第1号は、化学物質管理者を選任すべき事由が発生した日から十四日以内に選任することと定める。14日以内という本肢の期限はこの規定と一致する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "安衛則第34条の2の10は、化学物質による労働災害が発生した等の事業場で管理改善の指示を受けた事業者に、遅滞なく化学物質管理専門家から管理状況の確認と望ましい改善措置の助言を受けるよう義務付ける。本肢はその該当事例である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "厚生労働省告示第274号第1号ハは、作業環境測定士の登録後6年以上の業務経験と、厚生労働省労働基準局長が定める講習の修了を要件の一つとする。同告示第2号により、この類型は安衛則第34条の2の10第2項の化学物質管理専門家にも該当する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 労働安全衛生規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"
+      },
+      {
+        "title": "厚生労働省 化学物質管理専門家の要件に係る作業環境測定士への講習（基発0106第2号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7268&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省告示第274号 化学物質管理専門家の要件",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74ab8895&dataType=0&pageNo=1"
+      }
+    ]
   }
 }
