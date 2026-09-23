@@ -67,8 +67,8 @@ function parseOptions(): Options {
     batchSize: Math.max(1, Math.min(8, Number(value("batch-size") ?? 5))),
     maxBatches: Math.max(1, Number(value("max-batches") ?? 500)),
     workers: Math.max(1, Math.min(3, Number(value("workers") ?? 3))),
-    draftModel: value("draft-model") ?? "sonnet",
-    reviewModel: value("review-model") ?? "opus",
+    draftModel: value("draft-model") ?? "claude-sonnet-5",
+    reviewModel: value("review-model") ?? "claude-opus-5-5",
     queue,
     dryRun: args.includes("--dry-run"),
   };
@@ -332,14 +332,17 @@ ${JSON.stringify(batch.map((question) => ({ ...inputFor(question), candidateChoi
 function saveReceipt(
   batchName: string,
   attempt: number,
-  reviewer: string,
+  draftModel: string,
+  reviewModel: string,
   questions: Question[],
   draft: Overlay,
   review: Review,
 ): void {
   writeJson(join(RECEIPT_ROOT, `${batchName}-a${attempt}.json`), {
     schemaVersion: 1,
-    reviewer,
+    reviewer: `${reviewModel} via Claude Code`,
+    draftModel,
+    reviewModel,
     reviewedAt: new Date().toISOString(),
     batch: `${batchName}-a${attempt}`,
     questions: questions.map((question) => ({
@@ -387,7 +390,7 @@ async function processBatch(
       }
     }
     if (!draft || !review) throw lastError;
-    saveReceipt(batchName, attempt, `${options.reviewModel} via Claude Code`, batch, draft, review);
+    saveReceipt(batchName, attempt, options.draftModel, options.reviewModel, batch, draft, review);
 
     const retry: Question[] = [];
     for (const question of batch) {

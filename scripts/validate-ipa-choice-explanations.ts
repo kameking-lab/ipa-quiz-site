@@ -42,9 +42,19 @@ interface ReceiptItem {
 interface ReviewReceipt {
   schemaVersion: 1;
   reviewer: string;
+  draftModel?: string;
+  reviewModel?: string;
   reviewedAt: string;
   batch: string;
   questions: ReceiptItem[];
+}
+
+interface LoadedReceiptItem extends ReceiptItem {
+  reviewedAt?: string;
+  reviewer?: string;
+  draftModel?: string;
+  reviewModel?: string;
+  reviewModelResolution?: "explicit-receipt" | "verified-alias-20260923";
 }
 
 const overlays: Record<TargetExam, Overlay> = {
@@ -113,17 +123,25 @@ function walkJson(directory: string): string[] {
   });
 }
 
-function loadReceipts(): Map<string, ReceiptItem> {
+function loadReceipts(): Map<string, LoadedReceiptItem> {
   const receiptDir = resolve("docs/evidence/ipa-choice-explanations/reviews");
-  const result = new Map<string, ReceiptItem>();
+  const result = new Map<string, LoadedReceiptItem>();
   for (const path of walkJson(receiptDir)) {
     const receipt = JSON.parse(readFileSync(path, "utf8")) as Partial<ReviewReceipt>;
     if (receipt.schemaVersion !== 1 || !Array.isArray(receipt.questions)) continue;
     for (const item of receipt.questions) {
       if (item && typeof item.id === "string") {
         const previous = result.get(item.id);
-        if (!previous || (receipt.reviewedAt ?? "") >= ((previous as ReceiptItem & { reviewedAt?: string }).reviewedAt ?? "")) {
-          result.set(item.id, { ...item, reviewedAt: receipt.reviewedAt } as ReceiptItem);
+        if (!previous || (receipt.reviewedAt ?? "") >= (previous.reviewedAt ?? "")) {
+          result.set(item.id, {
+            ...item,
+            reviewedAt: receipt.reviewedAt,
+            reviewer: receipt.reviewer,
+            draftModel: receipt.draftModel ?? (receipt.reviewer?.startsWith("opus ") ? "claude-sonnet-5" : undefined),
+            reviewModel: receipt.reviewModel ?? (/opus/iu.test(receipt.reviewer ?? "") ? "claude-opus-5-5" : undefined),
+            reviewModelResolution: receipt.reviewModel ? "explicit-receipt"
+              : /opus/iu.test(receipt.reviewer ?? "") ? "verified-alias-20260923" : undefined,
+          });
         }
       }
     }
@@ -253,6 +271,9 @@ for (const exam of selectedExams) {
         lastReviewIssues: receipt
           ? receipt.sourceSha256 === sourceFingerprint(question) ? receipt.issues : ["source data changed after review"]
           : [],
+        draftModel: receipt?.draftModel,
+        reviewModel: receipt?.reviewModel,
+        reviewModelResolution: receipt?.reviewModelResolution,
       });
       if (complete) issues.push(`${question.id}: 全肢解説が未作成`);
       continue;
@@ -313,6 +334,9 @@ for (const exam of selectedExams) {
       officialQuestionUrl: officialSource?.question ?? question.sourcePdfUrl,
       officialAnswerUrl: officialSource?.answer ?? question.sourceAnswerUrl,
       reviewerStatus: receipt.status,
+      draftModel: receipt.draftModel,
+      reviewModel: receipt.reviewModel,
+      reviewModelResolution: receipt.reviewModelResolution,
     });
   }
   summary[exam] = {

@@ -20,6 +20,8 @@
 5. PASSだけをoverlayへ入れ、`reviews/` のreceiptに現問題source SHAとoverlay SHAを固定する。FIXは修正して再審査する。
 6. `pnpm exec tsx scripts/validate-ipa-choice-explanations.ts` で登録済み全件を検証する。全602問完成時だけ `--complete` を付け、未作成も失敗にする。
 
+新規実行は草稿を `claude-sonnet-5`、独立審査を `claude-opus-5-5` に固定し、両方の実モデルIDをreceiptとcoverage ledgerへ保存します。旧`opus via Claude Code` receiptは、保存済みClaude実行ログで確認した解決先`claude-opus-5-5`としてledgerに明記します。
+
 草稿用の入力は次のように出力できます。
 
 ```bash
