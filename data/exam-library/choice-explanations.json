@@ -24662,5 +24662,137 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=2"
       }
     ]
+  },
+  "emkohyo-20260217-3-q19": {
+    "sourceHash": "65d2bd4b9af80e830243be496c95f31e6cb514f6315bac4420bb5a6b79427e28",
+    "correctChoice": 2,
+    "summary": "系統誤差は原因が分かれば補正で減らせる。補正できないのは1つの測定値の偶然誤差であり、肢2が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "常に目盛りを小さめに読む癖は、毎回同じ向きに値をずらす。環境省の精度管理マニュアルは、これを「個人的誤差」とし、狭義の「系統的誤差」（測定器・分析法由来）と並べて、測定中一定の大きさや比率を保つ「定誤差」に含めている。一般にいう系統誤差（かたより）はこの定誤差全体に当たり、QSTも真の値との差に方向性がある誤差を系統誤差と定義するので、記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "環境省マニュアルは、定誤差（一般にいう系統誤差に当たる）について「その原因を探求できれば補正できる場合がある」とし、産総研の資料もGUMを引いて「系統誤差は、補正を行うことによって減少させることができる」としている。原因を明らかにしても補正できないとする記述は誤りで、これが正答。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "コーデックスのガイドライン（厚労省仮訳）は、偶然誤差について「試験を繰り返すと、その結果が平均値の上下に分布するのはこの誤差のため」と説明している。同じ試料を同じ条件で繰り返し測って値がばらつく原因を偶然誤差とする記述は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "偶然誤差は、繰り返し測定したときに平均値の上下へばらつく原因となる誤差である。環境省マニュアルは、繰り返し測定のバラツキの程度（精密度）を「平均値と標準偏差で表すことができる」としている。偶然誤差の大きさをばらつきの指標である標準偏差で表すという記述は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "環境省の精度管理マニュアルは、過失誤差を「単位の間違い、数値の書き誤りなど不注意から生じる誤差」と定義している。測定機器の指示値を記録するときの書き違いはこの「数値の書き誤り」に当たるので、過失誤差とする記述は正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 化学物質環境実態調査 分析精度管理",
+        "url": "https://www.env.go.jp/chemi/kurohon/http2004/02moni-manu/02pdf/sec2-02.pdf"
+      },
+      {
+        "title": "量子科学技術研究開発機構 SIRABE 系統誤差",
+        "url": "https://sirabe.nirs.qst.go.jp/sirabe/%E7%B3%BB%E7%B5%B1%E8%AA%A4%E5%B7%AE.html"
+      },
+      {
+        "title": "産業技術総合研究所 測定における不確かさの意味と考え方",
+        "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/download_file/2014_JAIMA01_01.pdf"
+      },
+      {
+        "title": "厚生労働省 分析結果の不確かさの推定に関するガイドライン CAC/GL 59-2006（仮訳）",
+        "url": "https://www.mhlw.go.jp/topics/idenshi/codex/06/dl/cac_gl59.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20251805-q1": {
+    "sourceHash": "f8032879c5073963b06d4ac6aecf9a5865e716789611b2acddd168342e952a0a",
+    "correctChoice": 4,
+    "summary": "モル質量と25℃の蒸気圧の両方で、ⒶがⒷより大きい組合せは酢酸メチルとメタノールだけである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "酢酸エチルのモル質量は88.11g/molで、トルエンの92.14g/molより小さい。設問はモル質量と25℃蒸気圧の両方でⒶが大きいことを求めるため、蒸気圧を調べるまでもなくこの組合せは除外できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "テトラヒドロフランのモル質量は72.11g/molで、n-ヘキサンの約86g/molより小さい。蒸気圧を比べる前に、Ⓐのモル質量がⒷより大きいという必要条件を満たさないため除外できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "シクロヘキサノンのモル質量は98.14g/molで、シクロヘキサノールの100.16g/molより小さい。両方の値が大きいことが条件なので、蒸気圧の大小にかかわらずこの組合せは該当しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "酢酸メチルのモル質量74.079g/molはメタノールの32.04g/molより大きい。環境省は酢酸メチル25℃の蒸気圧を実測216mmHgと記載する。消防研究所の表ではメタノールが200mmHgに達するのは34.8℃で、蒸気圧は温度とともに上がるから25℃では200mmHg未満である。よって蒸気圧も酢酸メチルが大きい（大小比較なのでmmHgのままでよい）。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "2-ブタノールのモル質量74.12g/molはイソプロピルアルコールの60.096g/molより大きいが、蒸気圧は逆である。厚労省モデルSDSでは20℃で2-ブタノール1.7kPa（17hPa）、イソプロピルアルコール4.4kPa（44hPa）で約2.6倍の差がある。イソプロピルアルコールの25℃飽和蒸気圧濃度53,762ppmVは約54hPa（0.053762×1013hPa）に当たる。2-ブタノールが25℃でこれを上回るには5℃の昇温で約3.2倍になる必要があるが、消防研究所の表では1-プロパノールも2-プロパノールも蒸気圧が20→60mmHg（3倍）になるのに約18℃（25.3→43.5℃、12.7→30.5℃）を要する。沸点も2-ブタノール100℃がイソプロピルアルコール82.3℃より高い。したがって25℃でもⒶの蒸気圧はⒷより小さい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 モデルSDS 酢酸メチル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS メタノール",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS 酢酸エチル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/141-78-6.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS トルエン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS テトラヒドロフラン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS n-ヘキサン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS シクロヘキサノン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS シクロヘキサノール",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-93-0.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS 2-ブタノール",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html"
+      },
+      {
+        "title": "厚生労働省 モデルSDS イソプロピルアルコール",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html"
+      },
+      {
+        "title": "環境省 酢酸メチルの環境リスク評価（25℃蒸気圧）",
+        "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf"
+      },
+      {
+        "title": "消防研究所報告 第129号 表1 アルコールの性質",
+        "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf"
+      }
+    ]
   }
 }
