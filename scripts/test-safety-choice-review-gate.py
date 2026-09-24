@@ -148,9 +148,9 @@ class FullReviewGateTest(unittest.TestCase):
                         "headers": {"Content-Type": "text/html"},
                         "raise_for_status": lambda self: None})()
         with patch.object(REVIEW.requests, "get", return_value=response):
-            pack, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            packs, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
         self.assertEqual(unpinnable, {})
-        source = pack["content"]["sources"][0]
+        source = packs[-1]["content"]["sources"][0]
         self.assertEqual(source["retrieval"]["retrievalUrl"],
                          "https://www.mhlw.go.jp/new.html")
         self.assertEqual(source["retrieval"]["sha256"], sha256(payload).hexdigest())
@@ -164,9 +164,23 @@ class FullReviewGateTest(unittest.TestCase):
         response = type("Response", (), {"content": b"", "headers": {},
                         "raise_for_status": fail})()
         with patch.object(REVIEW.requests, "get", return_value=response):
-            pack, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            packs, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
         self.assertIn("https://www.mhlw.go.jp/missing.pdf", unpinnable)
-        self.assertEqual(pack["content"]["sources"], [])
+        self.assertEqual(packs, [])
+
+    def test_second_question_citing_pinned_url_gets_scoped_pack(self):
+        url = "https://www.mhlw.go.jp/doc.pdf#page=3"
+        existing = [{"path": "legacy", "sha256": "x", "content": {"sources": [
+            {"url": url, "relevantQuestionIds": ["q1"]}]}}]
+        drafts = {"q1": {"sources": [{"url": url, "title": "doc"}]},
+                  "q2": {"sources": [{"url": url, "title": "doc"}]}}
+        payload = b"government source body" * 30
+        response = type("Response", (), {"content": payload,
+                        "headers": {"Content-Type": "application/pdf"},
+                        "raise_for_status": lambda self: None})()
+        with patch.object(REVIEW.requests, "get", return_value=response):
+            packs, _ = REVIEW.pin_candidate_sources(self.root, drafts, existing, "lckohyo")
+        self.assertEqual([p["content"]["questionIds"] for p in packs], [["q2"]])
 
     def test_refreshed_pack_is_scoped_to_named_questions(self):
         packs = [{"path": "old", "sha256": "a", "content": {"sources": [

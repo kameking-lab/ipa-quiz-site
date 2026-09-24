@@ -108,31 +108,47 @@ def verified_government_source(root, source):
 
 
 def pin_candidate_sources(root, drafts, existing_packs, group):
-    """Persist byte receipts for candidate citations absent from accepted packs."""
-    path = root / f"docs/evidence/{group}-candidate-source-pins.json"
-    previous = read(path) if path.exists() else {"sources": []}
-    pinned = {source["url"]: source for source in previous.get("sources", [])}
+    """Pin candidate citations that no pack yet covers for the citing question.
+
+    The legacy shared candidate pack is frozen: rewriting it would change the
+    evidence digest of every receipt that cites it. Each new (URL, questions)
+    pair gets its own immutable question-scoped pack instead. Returns the packs
+    to add and the citations that could not be pinned.
+    """
+    packs = []
+    legacy = root / f"docs/evidence/{group}-candidate-source-pins.json"
+    if legacy.exists():
+        value = read(legacy)
+        packs.append({"path": pack_path(root, legacy), "sha256": digest(value), "content": value})
     unpinnable = {}
-    known = {source.get("url") for pack in existing_packs
-             for source in pack["content"].get("sources", [])}
+
+    def covered(url, qid):
+        return any(source.get("url") == url and (not source.get("relevantQuestionIds")
+                                                 or qid in source["relevantQuestionIds"])
+                   for pack in [*existing_packs, *packs]
+                   for source in pack["content"].get("sources", []))
+
     grouped = defaultdict(lambda: {"titles": set(), "questionIds": set()})
     for qid, candidate in drafts.items():
         for source in candidate.get("sources", []):
+            if covered(source.get("url"), qid):
+                continue
             grouped[source.get("url")]["titles"].add(source.get("title", ""))
             grouped[source.get("url")]["questionIds"].add(qid)
-    for url, references in sorted(grouped.items()):
-        if url in known:
-            continue
-        parsed = urlparse(url)
+    for url, references in sorted(grouped.items(), key=lambda item: str(item[0])):
+        parsed = urlparse(url or "")
         if (parsed.scheme != "https" or parsed.hostname is None
                 or not parsed.hostname.endswith(".go.jp")
                 or parsed.username or parsed.password or parsed.port is not None):
             unpinnable[url] = "non-government"
             continue
-        retrieval_url = parsed._replace(fragment="").geturl()
-        current = pinned.get(url)
-        if current and current.get("retrieval", {}).get("retrievalUrl") == retrieval_url:
+        qids = sorted(references["questionIds"])
+        path = root / f"docs/evidence/{group}-current-source-pins/cand-{digest([url, qids])[:16]}.json"
+        if path.exists():
+            value = read(path)
+            packs.append({"path": pack_path(root, path), "sha256": digest(value), "content": value})
             continue
+        retrieval_url = parsed._replace(fragment="").geturl()
         try:
             response = requests.get(retrieval_url, timeout=90, headers=HEADERS)
             response.raise_for_status()
@@ -148,23 +164,18 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
         receipt = {"retrievalUrl": retrieval_url, "retrievedOn": date.today().isoformat(),
                    "sha256": sha256(payload).hexdigest(), "bytes": len(payload),
                    "contentType": content_type}
-        pinned[url] = {"url": url, "title": sorted(references["titles"])[0],
-                       "locators": [], "relevantQuestionIds": sorted(references["questionIds"]),
-                       "retrieval": receipt}
         suffix = ".pdf" if "pdf" in content_type.lower() else ".json" if "json" in content_type.lower() else ".html"
         cache = root / ".cache/safety-full-review/government-sources" / f"{receipt['sha256']}{suffix}"
         cache.parent.mkdir(parents=True, exist_ok=True)
         cache.write_bytes(payload)
-    rows = [pinned[url] for url in sorted(pinned)]
-    # Keep the pack byte-stable when nothing new was pinned; a date-only rewrite
-    # would silently invalidate every receipt that cites this pack.
-    stamp = (previous.get("retrievedOn") if previous.get("sources") == rows
-             and previous.get("retrievedOn") else date.today().isoformat())
-    value = {"retrievedOn": stamp,
-             "notice": "Candidate evidence only; question-level Opus review is still required.",
-             "sources": rows}
-    write(path, value)
-    return {"path": pack_path(root, path), "sha256": digest(value), "content": value}, unpinnable
+        value = {"schemaVersion": 1, "group": group, "questionIds": qids,
+                 "retrievedOn": receipt["retrievedOn"],
+                 "notice": "Candidate citation bytes scoped to the citing questions; review still required.",
+                 "sources": [{"url": url, "title": sorted(references["titles"])[0],
+                              "locators": [], "relevantQuestionIds": qids, "retrieval": receipt}]}
+        write(path, value)
+        packs.append({"path": pack_path(root, path), "sha256": digest(value), "content": value})
+    return packs, unpinnable
 
 
 def refresh_question_sources(root, drafts, question_ids, group):
@@ -331,8 +342,8 @@ def main():
             packs.append(refreshed)
     # Question-scoped packs must be visible before extending the shared candidate
     # pack, otherwise adding one candidate invalidates unrelated receipts.
-    candidate_pack, unpinnable = pin_candidate_sources(root, target_drafts, packs, args.group)
-    packs.append(candidate_pack)
+    candidate_packs, unpinnable = pin_candidate_sources(root, target_drafts, packs, args.group)
+    packs.extend(p for p in candidate_packs if all(p["path"] != q["path"] for q in packs))
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
