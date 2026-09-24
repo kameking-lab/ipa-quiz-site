@@ -27980,5 +27980,129 @@
         "url": "https://www.jstage.jst.go.jp/article/radioisotopes1952/15/5/15_5_280/_pdf/-char/ja"
       }
     ]
+  },
+  "emkohyo-20260217-4-q18": {
+    "sourceHash": "377852383f1d74a5fcb3049c22560f26ceea9c7f6b7fe907efcd419529fccffe",
+    "correctChoice": 5,
+    "summary": "熱イオン化検出器（FTD、TID）は含窒素・含りん化合物に選択的に高感度で、飽和炭化水素の検出には適さない。肢5が不適切",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "組合せは適切。環境省の実証資料は、水素炎の中に炭化水素ガスが入ると炎の電気伝導度が増大し、その変化から濃度を求めるのがFIDの原理と説明する。不飽和炭化水素も炭素と水素からなる炭化水素なので、FIDで検出できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "組合せは適切。環境省の悪臭物質の測定方法では、メチルメルカプタン、硫化メチル、二硫化メチルなどの硫黄化合物をガスクロマトグラフで測る際、炎光光度検出器を備えることを条件にしている。FPDは有機硫黄化合物の分析に用いられる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "組合せは適切。日本原子力研究開発機構の解説では、ECDのセルにハロゲン化合物などの親電子性化合物が入ると電子を捕獲して負イオンとなり電流が減る。環境省のマニュアルもECDは一部の物質に非常に高感度で選択性に優れるとしている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "組合せは適切。環境省の有害大気汚染物質測定方法マニュアルは、PIDは芳香族炭化水素類や不飽和炭化水素類に対して高感度であると明記している。したがってPIDと芳香族炭化水素化合物の組合せは適切である。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "これが不適切。環境省のマニュアルは、FTDは含窒素化合物と含りん化合物に高感度で選択的に応答すると記す。国立医薬品食品衛生研究所はFTDをNPDとも表記し、税関の分析報告も窒素・りん検出器は窒素化合物に選択的とする。窒素もりんも含まない飽和炭化水素はFTDで測る対象ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 VOC測定技術実証報告書 水素炎イオン化検出器の原理",
+        "url": "https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf"
+      },
+      {
+        "title": "環境省 悪臭防止法 特定悪臭物質の測定の方法（第2部 資料編）",
+        "url": "https://www.env.go.jp/content/900400294.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ECDの原理",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html"
+      },
+      {
+        "title": "環境省 有害大気汚染物質等測定方法マニュアル 第1部 検出器の特徴",
+        "url": "https://www.env.go.jp/content/900402504.pdf"
+      },
+      {
+        "title": "国立医薬品食品衛生研究所 食品中の残留農薬等の規制と公示試験法（研修資料）",
+        "url": "https://www.nihs.go.jp/kanren/shokuhin/20130705-food.pdf"
+      },
+      {
+        "title": "税関 関税中央分析所報 窒素・りん検出器（NPD）を用いたガスクロマトグラフィー",
+        "url": "https://www.customs.go.jp/ccl_search/info_search/drugs/r_34_10_j.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20251809-q12": {
+    "sourceHash": "dbcbbd43ed03e9d5a95ee1c4e49e6b7f80449c46ee9d370b37f62500f2515b27",
+    "correctChoice": 2,
+    "summary": "γ線エネルギー分析装置の校正には、特定エネルギーのγ線・X線（光電ピーク）を出し半減期が十分長い²²Na、¹⁰⁹Cd、¹³⁷Cs等が使われる。純β線核種、短半減期の¹⁸F、自発核分裂中性子源の²⁵²Cfを含む組合せは不適切。肢2が正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ATOMICAの標準線源の解説は³H・¹⁴C・¹⁴⁷Pmをβ線放出核種用の標準線源として挙げ、規制庁No.36のβ線源の表でも¹⁴C・¹⁴⁷Pmはγ線も放出する核種の注記がない。いずれもγ線をほとんど出さず、γ線エネルギー分析装置の校正に使える光電ピークが得られないので適切でない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ATOMICAはγ線スペクトロメトリのエネルギー校正用標準線源として²²Na、¹³⁷Cs等を挙げ、X線用に¹⁰⁹Cdの特性X線を挙げる。規制庁No.7も校正用線源に¹⁰⁹Cd(88.0keV)を含めている。²²Na・¹⁰⁹Cd・¹³⁷Csはいずれもγ線分析装置の校正用線源として適切な組合せである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "¹³⁷Csと²⁴¹Amは校正用に使われるが、¹⁸Fは不適切。¹⁸Fの半減期は約110分で、厚労省の放射性医薬品基準もフルデオキシグルコース(¹⁸F)の確認試験で実測半減期が105〜115分であることを求めている。放射能が数時間で大きく減衰するため、繰り返し使う校正用線源に適さない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "¹⁰⁹Cdと²⁴¹Amは適切だが、²⁵²Cfは自発核分裂で高速中性子を放出する核種で、ATOMICAは自発核分裂によるCf-252線源を中性子標準線源として挙げている。γ線の標準線源（Co-60、Cs-137等）とは用途が異なり、γ線分析装置の校正用線源として適切でない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "⁴⁰K・⁶⁰Coはγ線を出すが、³²Pはγ線を放出しない純β線放出核種（ATOMICAがβ線のみを放出する核種の代表例に挙げる）であり、γ線エネルギー分析装置の校正用線源にはならない。したがって組合せ全体として適切でない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 標準線源",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+      },
+      {
+        "title": "厚生労働省 放射性医薬品基準（平成25年厚生労働省告示第83号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 中性子源",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 標準線源（用語辞書）",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1009.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+      }
+    ]
   }
 }

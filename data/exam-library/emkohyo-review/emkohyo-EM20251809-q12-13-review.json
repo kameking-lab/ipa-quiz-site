@@ -1,0 +1,77 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5724,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 23612,
+      "webSearchRequests": 0,
+      "costUSD": 0.3036398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4637,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q12-13-raw-response.txt",
+  "rawResponseSha256": "5b2b970267b0e6741ca327ef76541b550948377ee3cbdc849a54a4c865eae303",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q12",
+    "emkohyo-EM20251809-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q12": {},
+    "emkohyo-EM20251809-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q12": {
+      "/exam-library/emkohyo-EM20251809/q12-p8-1.webp": "49b07a205826b74989bfc6fa59050f73c227643c357d5d526a0721b0210ee95c"
+    },
+    "emkohyo-EM20251809-q13": {
+      "/exam-library/emkohyo-EM20251809/q13-p9-0.webp": "9d3ee81bb320c2fb97d82246cf86cb374da15702cfcdffe4c5ddfed65b26be5a"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q12": "4ba0ebabedd8479496c537f0f5bda4db1ebcc6fc63ec289d0ea5b2de81703029",
+    "emkohyo-EM20251809-q13": "5a3d00fe4b97044e17ee92d430354cf1f5de51175f969d0aa95f0c294c9c699e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q12-13.json",
+  "sourcePackSha256": "4990c9d2c5c579a44cde044ca29ef78188bb72537b9862c04bb5875d585f5d55",
+  "assessment": {
+    "emkohyo-EM20251809-q12": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q13": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの㋩が「³H と¹⁴C の同時測定」となっており、³H・¹⁴Cの直後に原図に無い半角スペースが入っている。スペースの入り方も「と¹⁴C」側だけ詰まっていて不揃いである。原図どおり「³Hと¹⁴Cの同時測定」に揃えるべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、規制庁No.25の記述から「エネルギー領域で両者を区別できる」と言い切っている。しかし¹⁴Cのβ線スペクトルは³Hの低エネルギー領域にも重なる。このため³H側の計数には¹⁴C寄与の補正（No.23の連立方程式による同時定量）が必要であり、単純にエネルギー領域で区別できるわけではない。「波高分布の違いを利用し、チャネルごとの効率から連立方程式で同時定量できる」という表現に改めるべき。"
+      ],
+      "sourceIssues": [
+        "規制庁No.25（p.46）の該当抜粋は、アセチレン発生に使う水に含まれるトリチウムが¹⁴C測定では無視できるという試料調製上の注記である。液体シンチレーションによる³H・¹⁴C同時測定の可否を述べた箇所ではない。したがって肢3の「エネルギー領域で両者を区別できる」を直接には支えない。¹⁴Cの最大エネルギー156keVの根拠としてのみ用いるか、根拠をNo.23の同時定量法に一本化すべき。",
+        "文部科学省No.23の抜粋（p.224）は、⁸⁹Sr＋⁹⁰Sr（＋⁹⁰Y）の3核種同時定量の例である。³H・¹⁴Cの同時測定に同じ原理が適用できることは解説側の推論であり、資料が³H/¹⁴Cを直接扱っているわけではない。"
+      ],
+      "needsExternalCheck": [
+        "放射能測定法シリーズNo.23（液体シンチレーションカウンタによる放射性核種分析法）の発行者表記を確認すること。本資料は平成8年に科学技術庁から発行されたものとみられ、「文部科学省」表記（sources.titleおよび肢3・肢5の理由文）は不正確の可能性がある。PDF奥付で確認のこと。",
+        "放射能測定法シリーズNo.25（放射性炭素分析法、No25_AN-C.pdf）の発行者表記を確認すること。改訂版でなければ科学技術庁発行とみられ、「原子力規制庁」表記が正しいかPDF奥付で確認のこと。"
+      ]
+    }
+  }
+}

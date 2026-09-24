@@ -55,6 +55,14 @@
       "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html"
     },
     {
+      "title": "日本原子力研究開発機構 ATOMICA 標準線源（用語辞書）",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1009.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+    },
+    {
       "title": "原子力規制庁 放射能測定法シリーズNo.9 トリチウム分析法",
       "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf"
     },
@@ -71,8 +79,8 @@
       "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1126.html"
     },
     {
-      "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
-      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+      "title": "原子力規制庁 放射能測定法シリーズNo.25 放射性炭素分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No25_AN-C.pdf"
     },
     {
       "title": "厚生労働省 作業環境測定基準",
@@ -89,6 +97,10 @@
     {
       "title": "日本原子力研究開発機構 ATOMICA 空気汚染モニタリング",
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA ヨウ素モニタ",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-10.html"
     }
   ],
   "questions": {
@@ -237,12 +249,12 @@
       "overlay": {
         "sourceHash": "dbcbbd43ed03e9d5a95ee1c4e49e6b7f80449c46ee9d370b37f62500f2515b27",
         "correctChoice": 2,
-        "summary": "γ線エネルギー分析装置の校正には、単色のγ線・X線を出し半減期が十分長い²²Na、¹⁰⁹Cd、¹³⁷Cs等が使われる。純β線核種、短半減期の¹⁸F、自発核分裂中性子源の²⁵²Cfを含む組合せは不適切。肢2が正しい。",
+        "summary": "γ線エネルギー分析装置の校正には、特定エネルギーのγ線・X線（光電ピーク）を出し半減期が十分長い²²Na、¹⁰⁹Cd、¹³⁷Cs等が使われる。純β線核種、短半減期の¹⁸F、自発核分裂中性子源の²⁵²Cfを含む組合せは不適切。肢2が正しい。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "³H・¹⁴C・¹⁴⁷Pmはいずれもγ線を出さない純β線放出核種で、ATOMICAの標準線源の解説でもβ線放出核種用の標準線源として挙げられている。γ線エネルギー分析装置のエネルギー校正に使える光電ピークを作らないので、組合せとして適切でない。"
+            "reason": "ATOMICAの標準線源の解説は³H・¹⁴C・¹⁴⁷Pmをβ線放出核種用の標準線源として挙げ、規制庁No.36のβ線源の表でも¹⁴C・¹⁴⁷Pmはγ線も放出する核種の注記がない。いずれもγ線をほとんど出さず、γ線エネルギー分析装置の校正に使える光電ピークが得られないので適切でない。"
           },
           {
             "number": 2,
@@ -252,12 +264,12 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "¹³⁷Csと²⁴¹Amは校正用に使われるが、¹⁸Fは不適切。厚労省の放射性医薬品基準はフルデオキシグルコース(¹⁸F)の半減期を105〜115分とし、γ線は0.511MeVの消滅放射線のみである。半減期約110分では放射能値が急速に変わり、繰り返し使う校正用線源に適さない。"
+            "reason": "¹³⁷Csと²⁴¹Amは校正用に使われるが、¹⁸Fは不適切。¹⁸Fの半減期は約110分で、厚労省の放射性医薬品基準もフルデオキシグルコース(¹⁸F)の確認試験で実測半減期が105〜115分であることを求めている。放射能が数時間で大きく減衰するため、繰り返し使う校正用線源に適さない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "¹⁰⁹Cdと²⁴¹Amは適切だが、²⁵²Cfは自発核分裂による中性子源として原子炉の起動用中性子源等に用いられる核種である。ATOMICAが挙げるγ線スペクトロメトリ用のエネルギー校正用標準線源には含まれず、γ線分析装置の校正用線源として適切でない。"
+            "reason": "¹⁰⁹Cdと²⁴¹Amは適切だが、²⁵²Cfは自発核分裂で高速中性子を放出する核種で、ATOMICAは自発核分裂によるCf-252線源を中性子標準線源として挙げている。γ線の標準線源（Co-60、Cs-137等）とは用途が異なり、γ線分析装置の校正用線源として適切でない。"
           },
           {
             "number": 5,
@@ -289,6 +301,14 @@
           {
             "title": "日本原子力研究開発機構 ATOMICA 中性子源",
             "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 標準線源（用語辞書）",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1009.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
           }
         ]
       },
@@ -341,7 +361,7 @@
         },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3",
-          "excerpt": "0.511MeVにピークを認める。また、定量法の項により適当な時間間隔をあけて2回試験を行い、測定時間間隔と2回の放射能の測定値から半減期を測定するとき、その値は105～115分である",
+          "excerpt": "定量法の項により適当な時間間隔をあけて2回試験を行い、測定時間間隔と2回の放射能の測定値から半減期を測定するとき、その値は105～115分である",
           "choiceNumbers": [
             3
           ]
@@ -358,6 +378,42 @@
           "excerpt": "自発核分裂中性子源では、Ｃｆ−２５２の酸化物をステンレス鋼カプセルに密封しており",
           "choiceNumbers": [
             4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html",
+          "excerpt": "自発核分裂でも高速の中性子が放出される",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1009.html",
+          "excerpt": "中性子標準線源としては、Ｂｅのα−ｎ反応を利用した［Ａｍ−２４１，Ｂｅ］線源や自発核分裂によるＣｆ−２５２線源などがある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1009.html",
+          "excerpt": "γ線の標準線源としては、Ｃｏ−60、Ｃｓ−137　がもっとも広く用いられているが",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "Pm-147 \n2.62 年 \n225",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "これらの核種はγ線も放出する",
+          "choiceNumbers": [
+            1
           ]
         }
       ],
@@ -382,7 +438,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "㋺は正しいが、㋩は誤り。規制庁No.23は、化学分離できない複数核種について「β線波高分布」の違いを利用し、異なるチャネルにおける効率から核種ごとに放射能を決める同時定量法を示している。最大エネルギーが18.6keVの³Hと157keVの¹⁴Cも同様にチャネルを分けて同時測定できる。"
+            "reason": "㋺は正しいが、㋩は誤り。文部科学省No.23は、化学分離できない複数核種をβ線波高分布の違いを利用し、異なるチャネルの効率から核種ごとに定量する同時定量法を示す。規制庁No.25も³Hの最大β線エネルギー約18keVは156keVの¹⁴Cの測定では無視できるとしており、エネルギー領域で両者を区別できる。"
           },
           {
             "number": 4,
@@ -392,7 +448,7 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "㋥は正しいが㋩が誤り。β線スペクトルは連続でも、³H（最大18.6keV）と¹⁴C（最大157keV）では波高分布が異なるため、No.23が示すように異なるチャネルの効率を用いた連立方程式で核種ごとに同時定量できる。したがってこの組合せは誤り。"
+            "reason": "㋥は正しいが㋩が誤り。β線スペクトルは連続でも、³H（最大約18keV）と¹⁴C（最大約156keV）では波高分布が異なる。文部科学省No.23は波高分布の違いを利用して異なるチャネルの効率から複数核種を同時定量する方法を示しており、連続スペクトルだから同時測定できないとはいえない。"
           }
         ],
         "sources": [
@@ -417,8 +473,8 @@
             "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1126.html"
           },
           {
-            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
-            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+            "title": "原子力規制庁 放射能測定法シリーズNo.25 放射性炭素分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No25_AN-C.pdf"
           }
         ]
       },
@@ -488,8 +544,8 @@
           ]
         },
         {
-          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
-          "excerpt": "C-14 \n5700 年 \n157",
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No25_AN-C.pdf",
+          "excerpt": "トリチウムの最大β線エネルギーは約18keVと低く、最大β線エネルギー156keVの14Cの測定では無視できる",
           "choiceNumbers": [
             3,
             5
@@ -589,7 +645,7 @@
       "overlay": {
         "sourceHash": "051872269718b2a14d0550a6e1a218e1b9bd6cfedd5a9edb6eb4f9aa81ec4e23",
         "correctChoice": 4,
-        "summary": "水蒸気状トリチウム(HTO)はシリカゲル等、ガス状トリチウム(HT)は酸化触媒で水に変えてから捕集する。ガス状ヨウ素は活性炭含浸ろ紙、粒子状のPuO₂はろ過捕集、希ガスの¹³³Xeは捕集用電離箱による直接捕集。㋺㋥の肢4。",
+        "summary": "水蒸気状トリチウム(HTO)はシリカゲル等、ガス状トリチウム(HT)は酸化触媒で水に変えてから捕集する。種々の化学形の放射性ヨウ素は活性炭捕集材（活性炭含浸ろ紙等）、粒子状のPuO₂はろ過捕集、希ガスの¹³³Xeは捕集用電離箱による直接捕集。㋺㋥の肢4。",
         "choices": [
           {
             "number": 1,
@@ -609,7 +665,7 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "㋺：No.36表参A-1はガス状（揮発性）のI-131等を活性炭含浸ろ紙等で固体捕集するとしており、H¹³¹IO₄の捕集に活性炭含浸ろ紙は適切。㋥：ATOMICAは直接捕集法（ガス捕集用電離箱）で希ガス（Rn、Ar、Kr、Xe）を測定するとしており、¹³³Xeに捕集用電離箱は適切。"
+            "reason": "㋺：ATOMICAは空気中の放射性ヨウ素がI₂、HOI、CH₃I等の多様な化学形で存在し、多種類の化学形のヨウ素を効率よく捕集できる活性炭捕集材が最も多く用いられ、活性炭含浸ろ紙が広く使われるとする。H¹³¹IO₄に活性炭含浸ろ紙は適切。㋥：ATOMICAは直接捕集法（ガス捕集用電離箱）で希ガス（Rn、Ar、Kr、Xe）を測るとしており、¹³³Xeに適切。"
           },
           {
             "number": 5,
@@ -633,6 +689,10 @@
           {
             "title": "日本原子力研究開発機構 ATOMICA 直接捕集法",
             "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ヨウ素モニタ",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-10.html"
           }
         ]
       },
@@ -665,8 +725,28 @@
           "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
           "excerpt": "固体捕集 \n・活性炭含浸ろ紙 \n・活性炭カートリッジ \n・活性炭素繊維ろ紙 \nI-131",
           "choiceNumbers": [
-            1,
             3,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-10.html",
+          "excerpt": "元素状ヨウ素（I 2 ）、次亜ヨウ素酸（HOI）、ヨウ化メチル（CH 3 I）および粉塵にヨウ素が吸着した粒子状ヨウ素である",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-10.html",
+          "excerpt": "多種類の化学形の低濃度ヨウ素をある期間（数時間〜数週間）効率よく捕集できること、捕集した放射性物質を定量するための測定が容易であることなどの要求によって、現在では活性炭捕集材が最も多く用いられている",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-10.html",
+          "excerpt": "活性炭含浸ろ紙は、カートリッジに比べると捕集効率は一般に劣るが、β線計測が適用できるなどの利点もあり広く用いられている",
+          "choiceNumbers": [
             4
           ]
         },
