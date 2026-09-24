@@ -171,14 +171,31 @@ def source_hints(batch):
         raise ValueError("A batch must stay within one qualification subject")
     subject = next(iter(subjects))
     path = DATA / "source-packs" / f"lckohyo-subject-{sha256(subject.encode()).hexdigest()[:12]}.json"
-    hints = []
+    hints_by_url = {}
     if path.exists():
         pack = read(path)
         if pack["subject"] != subject:
             raise ValueError(f"Source pack subject mismatch: {path}")
-        hints.extend({"title": item["title"], "url": item["url"], "locators": item["locators"],
-                      "retrievalSha256": item["retrieval"]["sha256"]}
-                     for item in pack["sources"][:24])
+        for item in pack["sources"]:
+            digest_value = item["retrieval"]["sha256"]
+            local = next((candidate for candidate in
+                          (ROOT / ".cache/safety-full-review/government-sources").glob(
+                              f"{digest_value}.*")), None)
+            row = {"title": item["title"], "url": item["url"],
+                   "locators": item["locators"], "retrievalSha256": digest_value}
+            if local:
+                row["localPath"] = str(local)
+            hints_by_url[item["url"]] = row
+    for current_path in (ROOT / "docs/evidence/lckohyo-current-source-pins").glob("*.json"):
+        for item in read(current_path).get("sources", []):
+            digest_value = item["retrieval"]["sha256"]
+            local = next((candidate for candidate in
+                          (ROOT / ".cache/safety-full-review/government-sources").glob(
+                              f"{digest_value}.*")), None)
+            if local:
+                hints_by_url[item["url"]] = {"title": item["title"], "url": item["url"],
+                    "locators": item.get("locators", []), "retrievalSha256": digest_value,
+                    "localPath": str(local)}
     hold_path = ROOT / "docs/evidence/lckohyo-choice-hold-source-index-20260923.json"
     if hold_path.exists():
         holds = read(hold_path).get("questions", {})
@@ -200,10 +217,10 @@ def source_hints(batch):
                 local.parent.mkdir(parents=True, exist_ok=True)
                 if not local.exists():
                     local.write_bytes(payload)
-                hints.append({"title": source["name"], "url": url,
-                              "locators": [source.get("locatorCandidate", "")],
-                              "retrievalSha256": actual, "localPath": str(local)})
-    return hints
+                hints_by_url[url] = {"title": source["name"], "url": url,
+                                     "locators": [source.get("locatorCandidate", "")],
+                                     "retrievalSha256": actual, "localPath": str(local)}
+    return list(hints_by_url.values())
 
 
 def batch_prompt(batch):
