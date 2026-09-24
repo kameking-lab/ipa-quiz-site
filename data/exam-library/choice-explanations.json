@@ -23250,5 +23250,67 @@
         "url": "https://www.env.go.jp/kijun/wt_a04.html"
       }
     ]
+  },
+  "emkohyo-EM20251805-q16": {
+    "sourceHash": "b26bc81f1986b09771faf59712fb73c15b00663d61a0bbc9eb28051dd7f08227",
+    "correctChoice": 5,
+    "summary": "吸光度は透過度 I/I₀ の逆数の常用対数、すなわち A=log₁₀(I₀/I)。肢5は比が逆。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "本肢の『通常200～1000 nm』は協会の公式正答で誤りとされていない装置範囲の目安であり、厳密な公定法の適用範囲を定義するものではない。厚生労働省の紫外可視吸光度測定法は通例200～800 nmだが、産業技術総合研究所の装置仕様は200～1100 nm、原子力規制委員会の吸光度測定部は200～1000 nmで、装置は800 nmを超えて測定できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "二重結合のうちC=Cは紫外線吸収の代表例である。農研機構の色素解説は、炭素同士の二重結合が紫外線を吸収し、共役二重結合が長くなると吸収波長が長くなると直接説明する。肢2を説明する具体例としてC=Cを挙げたもので、すべての二重結合やすべての化合物が同じ紫外波長で吸収するとの意味ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "化合物によって吸収極大が複数あるという記述は正しい。国立科学博物館のフラボノイドの説明では、紫外から可視の領域に二つの吸収帯があり、第1表には例えばアピゲニンのBand Iが336 nm、Band IIが267 nmと示されている。したがって吸収極大は必ず一つということではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "石英製セルは紫外域でも可視域でも使える。農林水産消費安全技術センターの成分規格は紫外域に石英製、可視域にガラス製または石英製セルを指定する。さらに第十八改正日本薬局方第一追補は750～2500 nmの近赤外域の液体試料にも石英ガラスセルを用いる。各資料の規定から、石英は紫外・可視・近赤外にまたがって利用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "吸光度は、透過度 t=I/I₀ の逆数を常用対数にした A=log₁₀(I₀/I)=-log₁₀(I/I₀)である。農林水産消費安全技術センター公開の成分規格もこの比を明示する。肢5はIとI₀が逆で、吸収によって透過光Iが弱まるほど負の値になる式なので誤り。これが公式正答である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "産業技術総合研究所 フロー分析用紫外可視分光光度計仕様書",
+        "url": "https://www.aist.go.jp/aist_j/procure/supplyinfoold/detail/202410/8T72PU5O/5NL7B8CFSKVPTV7RWPDG.pdf"
+      },
+      {
+        "title": "原子力規制委員会 令和3年度蛍光吸光度分光測定装置の購入 仕様書",
+        "url": "https://www.nra.go.jp/data/000374571.pdf"
+      },
+      {
+        "title": "厚生労働省 食品、添加物等の規格基準 紫外可視吸光度測定法",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=62"
+      },
+      {
+        "title": "農研機構 色素の基礎知識",
+        "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
+      },
+      {
+        "title": "国立科学博物館 フラボノイドコレクション データの見方",
+        "url": "https://www.kahaku.go.jp/research/db/botany/flavonoid/guide/index.php"
+      },
+      {
+        "title": "農林水産消費安全技術センター 飼料及び飼料添加物の成分規格等に関する省令",
+        "url": "https://www.famic.go.jp/ffis/feed/hourei/sub1_seibunkikaku.html"
+      },
+      {
+        "title": "厚生労働省 第十八改正日本薬局方第一追補 近赤外吸収スペクトル測定法",
+        "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+      }
+    ]
   }
 }

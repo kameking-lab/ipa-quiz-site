@@ -271,43 +271,138 @@
       "overlay": {
         "sourceHash": "b26bc81f1986b09771faf59712fb73c15b00663d61a0bbc9eb28051dd7f08227",
         "correctChoice": 5,
-        "summary": "吸光度の定義はA=log10(I0/I)で、比を逆にした肢5の式が誤り。",
+        "summary": "吸光度は透過度 I/I₀ の逆数の常用対数、すなわち A=log₁₀(I₀/I)。肢5は比が逆。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "一般的な紫外可視分光光度計は紫外用光源と可視用光源を切り替えて使い、およそ200～1000nm前後の紫外～可視・近赤外域を測れる。この記述は正しいため、誤りを選ぶ本問の正答にはならない。"
+            "reason": "本肢の『通常200～1000 nm』は協会の公式正答で誤りとされていない装置範囲の目安であり、厳密な公定法の適用範囲を定義するものではない。厚生労働省の紫外可視吸光度測定法は通例200～800 nmだが、産業技術総合研究所の装置仕様は200～1100 nm、原子力規制委員会の吸光度測定部は200～1000 nmで、装置は800 nmを超えて測定できる。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "C=CやC=Oなどの二重結合をもつ化合物は、π→π*遷移やn→π*遷移によって紫外部に吸収を示す。共役が長くなるほど吸収は長波長側へ移る。この記述は正しい。"
+            "reason": "二重結合のうちC=Cは紫外線吸収の代表例である。農研機構の色素解説は、炭素同士の二重結合が紫外線を吸収し、共役二重結合が長くなると吸収波長が長くなると直接説明する。肢2を説明する具体例としてC=Cを挙げたもので、すべての二重結合やすべての化合物が同じ紫外波長で吸収するとの意味ではない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "ベンゼン環や共役系をもつ化合物などは、複数の電子遷移に対応して吸収極大を2つ以上示すことがある。測定波長は感度と妨害を考えて選ぶ。この記述は正しく、本問の正答ではない。"
+            "reason": "化合物によって吸収極大が複数あるという記述は正しい。国立科学博物館のフラボノイドの説明では、紫外から可視の領域に二つの吸収帯があり、第1表には例えばアピゲニンのBand Iが336 nm、Band IIが267 nmと示されている。したがって吸収極大は必ず一つということではない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "石英セルは紫外域から可視・近赤外域まで光を通すため、200～1000nmの全測定波長域で使える。ガラス製やプラスチック製のセルは紫外光を吸収するので可視域用に限られる。この記述は正しい。"
+            "reason": "石英製セルは紫外域でも可視域でも使える。農林水産消費安全技術センターの成分規格は紫外域に石英製、可視域にガラス製または石英製セルを指定する。さらに第十八改正日本薬局方第一追補は750～2500 nmの近赤外域の液体試料にも石英ガラスセルを用いる。各資料の規定から、石英は紫外・可視・近赤外にまたがって利用できる。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "吸光度はA=log10(I0/I)=−log10(I/I0)と定義され、透過光Iが小さいほどAは大きくなる。記述のlog10(I/I0)は比が逆で値が負になるため誤りで、これが公式正答（誤っているもの）である。"
+            "reason": "吸光度は、透過度 t=I/I₀ の逆数を常用対数にした A=log₁₀(I₀/I)=-log₁₀(I/I₀)である。農林水産消費安全技術センター公開の成分規格もこの比を明示する。肢5はIとI₀が逆で、吸収によって透過光Iが弱まるほど負の値になる式なので誤り。これが公式正答である。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "産業技術総合研究所 フロー分析用紫外可視分光光度計仕様書",
+            "url": "https://www.aist.go.jp/aist_j/procure/supplyinfoold/detail/202410/8T72PU5O/5NL7B8CFSKVPTV7RWPDG.pdf"
+          },
+          {
+            "title": "原子力規制委員会 令和3年度蛍光吸光度分光測定装置の購入 仕様書",
+            "url": "https://www.nra.go.jp/data/000374571.pdf"
+          },
+          {
+            "title": "厚生労働省 食品、添加物等の規格基準 紫外可視吸光度測定法",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=62"
+          },
+          {
+            "title": "農研機構 色素の基礎知識",
+            "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
+          },
+          {
+            "title": "国立科学博物館 フラボノイドコレクション データの見方",
+            "url": "https://www.kahaku.go.jp/research/db/botany/flavonoid/guide/index.php"
+          },
+          {
+            "title": "農林水産消費安全技術センター 飼料及び飼料添加物の成分規格等に関する省令",
+            "url": "https://www.famic.go.jp/ffis/feed/hourei/sub1_seibunkikaku.html"
+          },
+          {
+            "title": "厚生労働省 第十八改正日本薬局方第一追補 近赤外吸収スペクトル測定法",
+            "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "吸光度の定義式A=log10(I0/I)、石英セルの透過波長域、分光光度計の測定波長範囲（200～1000nm）について、添付の政府資料抜粋には直接の記述がなく、sources・sourceEvidenceは空にした。吸光光度分析の通則にあたる公的資料の検索が必要。",
-        "添付抜粋のうち厚生労働省報告書（000616847.pdf）の吸光度0.03や5cmセルの記述は本問の判断を支えないため採用しなかった。",
-        "設問原文はPDF抽出で添字が崩れ『A=log (I/I ) 0 10 0』となっている。公式正答5と整合するA=log10(I/I0)と読んだが、原本画像での確認が望ましい。",
-        "肢2の『二重結合をもつ化合物は紫外部の光を吸収する』について、孤立C=Cの吸収は200nm未満（真空紫外）にある。『紫外部』という表現では正しい扱いとしたが、出題意図の確認は未了。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.aist.go.jp/aist_j/procure/supplyinfoold/detail/202410/8T72PU5O/5NL7B8CFSKVPTV7RWPDG.pdf",
+          "excerpt": "測定波長は200～1,100㎚の範囲を満たすこと。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000374571.pdf",
+          "excerpt": "波長範囲：200-1000 nm",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=62",
+          "excerpt": "紫外可視吸光度測定法は、通例、波長200nmから800nmまでの範囲の光が、物質により吸収される度合いを測定",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html",
+          "excerpt": "炭素と炭素の結合が二重結合の場合(C=C)、紫外線を吸収します。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.kahaku.go.jp/research/db/botany/flavonoid/guide/index.php",
+          "excerpt": "フラボノイドは紫外線領域～可視領域（190～700 nm）に２か所の吸収帯をもちます。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.kahaku.go.jp/research/db/botany/flavonoid/guide/index.php",
+          "excerpt": "フラボン アピゲニン 336 267",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/feed/hourei/sub1_seibunkikaku.html",
+          "excerpt": "紫外部の吸収測定にあっては石英製のセルを、可視部の吸収測定にあってはガラス製又は石英製のセルを用いる。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "近赤外線は，可視光線と赤外線の間にあって，通例，750 ～ 2500 nm",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "本法は，液体又は溶液試料に適用される方法であり，石英ガ ラスセル，フローセルなどに注入し",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/feed/hourei/sub1_seibunkikaku.html",
+          "excerpt": "透過度の逆数の常用対数を吸光度（Ａ）という。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20251805-q17": {
       "overlay": {
