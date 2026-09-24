@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5480,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22631,
+      "webSearchRequests": 0,
+      "costUSD": 0.29091179999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4224,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261801-q04-04-raw-response.txt",
+  "rawResponseSha256": "e7d4bc1132b0b8891c5eb619d35744ab7138f087376ef370bc5a06dfc31d9314",
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q4": {
+      "/exam-library/emkohyo-EM20261801/q4-p4-1.webp": "8a36349e1294500e9706a7233284f4feccc8adbdfe57f8aacd4c00a3ce529c41"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20261801-q04-mhlw-skin-absorption-list-p18.png": "38536003427f11cd89af77612f9bbfd45b6905060bac1bd7865c6c1afd0a3a14"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261801-q4": "92e0304d871922b8be8d35ed453a0681f9818998ad4be77588d01d97edd5c75e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q04-04.json",
+  "sourcePackSha256": "0d6791cb89c3d7507a48bb0bc2613d3371b52cea253b65129e425c5e5c6b1f09",
+  "assessment": {
+    "emkohyo-EM20261801-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は、職場のあんぜんサイトの法定検査項目表で1,2-ジクロロエタンの行に『尿中のトリクロル酢酸又は総三塩化物の量』が無いことだけを根拠にしている。これは法令上の特殊健診項目の一覧であり、『載っていない＝指標ではない』は不在からの推論にとどまる。肢2が誤りである因果を補うこと。トリクロル酢酸・総三塩化物は、トリクロロエチレン・テトラクロロエチレン・1,1,1-トリクロルエタンのように塩素を3個以上持つ溶剤の代謝物である。1,2-ジクロロエタン（C2H4Cl2、塩素2個）からは生じない。この趣旨を理由に加えることを推奨する。",
+        "肢3の理由は、o-トルイジンの皮膚刺激性について、モデルSDSのGHS分類『区分外』だけを示している。しかし同じSDSの根拠欄には、半閉塞適用で紅斑・浮腫のスコアが付き、72時間後に1/6匹で壊死が見られた記載がある。さらに『ウサギの皮膚に対して中等度から強度の刺激性を持つとの記載がある(ACGIH)』とも注記されている。引用中のリスク評価書p4にも、ACGIHのTLVが皮膚刺激の防止を目的の一つとして設定されたとの記載がある。『皮膚刺激性はない』はGHS分類上の整理であり、刺激を示すデータも存在することを理由内で明示し、断定を和らげること。"
+      ],
+      "sourceIssues": [
+        "肢3で経皮吸収の根拠とした厚労省資料001414208.pdf p18は、平成29年2月24日の意見交換会資料である。そこに示された『保護衣等の使用が義務となる特定化学物質』の整理は当時の特化則に基づく。その後、皮膚等障害化学物質等に関する規制（安衛則594条の2等、令和5〜6年施行）へ改正されている。理由文の『義務となる特定化学物質に挙げられ』という現在形の記述は、この資料の時点の整理であることを明示するか、現行法令の根拠に差し替えること。",
+        "sources欄の『厚生労働省 オルト－トルイジンに対する今後の対応（リスク評価書）』（0000131502.pdf）は、各肢の理由本文で一度も言及されていない。肢3の経皮吸収の補強として本文で参照するか、sourcesから外すこと。",
+        "肢1の根拠として引く環境省PRTRファクトシートは、DMFが代謝されて主に尿中に排せつされることを述べるだけで、代謝物がN-メチルホルムアミドであることは述べていない。NMFの特定は職場のあんぜんサイトの表だけに依拠している。理由文の書き分けは概ね適切だが、ファクトシートがNMFを直接支える資料ではない点に留意すること。"
+      ],
+      "needsExternalCheck": [
+        "o-トルイジン及びMOCAが、現行の安衛則594条の2に基づく皮膚等障害化学物質（経皮吸収性物質）の告示・通達リストに含まれているかを、現行の厚労省資料で確認すること。含まれていれば、肢3の『保護衣等の使用が義務』の記述を現行法令の根拠に更新する。"
+      ]
+    }
+  }
+}
