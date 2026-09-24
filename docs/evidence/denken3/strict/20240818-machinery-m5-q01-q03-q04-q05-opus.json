@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7474,
+      "cacheReadInputTokens": 109052,
+      "cacheCreationInputTokens": 30372,
+      "webSearchRequests": 0,
+      "costUSD": 0.41427440000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4570,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bdb855177b399b9e6de9a4fb8e71fd1cd97cf85a75439382fbdc919ba6d16d4e",
+  "inputRequestSha256": "e169e7f50b70f3f4bfb8e59f0e2997d5c8c5ffd48a4969ce2661ba4b85e8c4dc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4b80f0c087eeeda80263ba52671704ed483c192c5138027bb2ed98d64935d009",
+      "q03": "3d76ad8c9ad5811cdfde85402f9e1015c407791d3ed1b4b4624c6969d392667b",
+      "q04": "5549e21c35b6e5069609e4f61ee889575e7adecd73cc51ce6ab04dc0d9fb4c02",
+      "q05": "b17fec3eee28d67d2687de87ffdbb108a06762cf64bf949779e93236a486fae3"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p04.png": "7fca54a8a3c64e7f6fc345589ef4a04bd160ed64b330729d909e75fe908585f9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p06.png": "a830098afd833626b91be26fdfacbc9ae0693c6d4a5733f151d389281f11a1b3",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p07.png": "0b622d00f1f952376a9e444bf9cb1c3a926f9589c3d2ed13cdccb6191518e0fc",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p08.png": "317b959180e779f9e3cf120875d4c7f8e50b878166a391b5b70bca74cf16465a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a6048ea45d028c09d920b0a534dd2ce30ad1be8f2443067705301d66292e3985",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "Minor formatting problem in choiceExplanations[2]: a stray space follows the full stop in 「…火花である。 (エ)補極だけは…」. Delete the space.",
+        "Minor formatting problem in choiceExplanations[3]: a stray space follows the full stop in 「…火花（アーク）によるものである。 さらに(エ)補償巻線も誤りで…」. Delete the space."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official original (T1-K 004, printed page -1-, reviewedFromPage 4). The wording, the blanks (ア)–(エ) and 「固定子から見た(イ)中性軸」 all match. The only difference is comma style (，→、), which is normal formatting.",
+        "The choices table matches the original for all five rows: (1) 界磁/電気的/火花/補償巻線, (2) 界磁/幾何学的/応力/補極, (3) 電機子/幾何学的/応力/補償巻線, (4) 電機子/電気的/火花/補償巻線, (5) 電機子/電気的/火花/補極.",
+        "The machinery Q1 entry in the official answer table is 5. This agrees with officialAnswer=5 and the manifest answer unit.",
+        "The explanation's reasoning holds for every blank. (ア) The armature is the rotor. (イ) Armature reaction shifts the electrical neutral axis; the geometric axis is fixed. (ウ) Commutation failure causes sparking. (エ) Compensating windings are used in large machines and interpoles in small ones.",
+        "The reasons for each wrong choice are correct. (1) has two errors: (ア) and (エ). (2) has three errors: (ア), (イ) and (ウ); only (エ) is correct. (3) has three errors: (イ), (ウ) and (エ). (4) has one error: (エ).",
+        "No figure is needed. The candidate has an empty figureUrls and an empty officialReferenceUrls, so no independent claims need checking."
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription contradicts itself. It first says 「問題文中に図・表はなく」 (there is no figure or table) and then 「選択肢の組合せ表のみが掲載されている」 (only the choices table is shown). Suggested fix: 「回路図・構造図はなく、選択肢(1)〜(5)×(ア)〜(エ)の語句組合せ表のみ」."
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official original (T1-K 006, printed page -3-, reviewedFromPage 6). The following all match: 「同期速度の(ア)と回転子との速度の差（相対速度）」, 「ブラシと(イ)で外部に引き出して二次抵抗値を調整」, 「停止（滑り s=1）から同期速度（滑り s=0）の間，すなわち，1＞s＞0」, and 「同期速度より高速の場合…(エ)」.",
+        "The choices table matches the original for all five rows: (1) 交番/スリップリング/電動機/発電機, (2) 交番/整流子/発電機/電動機, (3) 回転/スリップリング/電動機/発電機, (4) 回転/スリップリング/発電機/電動機, (5) 交番/整流子/電動機/発電機.",
+        "The machinery Q3 entry in the official answer table is 3. This agrees with officialAnswer=3.",
+        "The explanation is correct on all points: a three-phase winding produces a rotating field, not an alternating one; a wound-rotor machine uses slip rings for secondary resistance control; the machine motors when 0<s<1 and generates above synchronous speed (s<0).",
+        "The errors attributed to each wrong choice are correct. (1) has one error: (ア). (2) has four errors: (ア), (イ), (ウ) and (エ). (4) has two errors: (ウ) and (エ). (5) has two errors: (ア) and (イ).",
+        "No figure is needed, and officialReferenceUrls is empty."
+      ]
+    },
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official original (T1-K 007, printed page -4-, reviewedFromPage 7). The following all match: V/f constant control, 6 poles, V/f ratio = 4, 66 Hz, slip 5 %, and the unit [min⁻¹].",
+        "The choices match the original: (1) 1 140, (2) 1 200, (3) 1 254, (4) 1 320, (5) 1 710.",
+        "The machinery Q4 entry in the official answer table is 3. This agrees with officialAnswer=3.",
+        "Recalculated: Ns = 120×66/6 = 1320 min⁻¹, and N = 1320×0.95 = 1254 min⁻¹. This matches choice (3).",
+        "The derivations offered for each wrong choice all recalculate correctly: 1200×0.95 = 1140; 120×60/6 = 1200; 1320 is the synchronous speed; 120×60/4×0.95 = 1710.",
+        "The explanation correctly says the V/f ratio is not needed to find the speed.",
+        "No figure is needed, and officialReferenceUrls is empty."
+      ]
+    },
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription says 「正誤判定に必須の情報として choices/officialAnswer に転記済み」. This is inaccurate: the choices table was transcribed into choices, but officialAnswer comes from the official answer table, not from the figure. Suggested fix: 「choices に転記済み」."
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official original (T1-K 008, printed page -5-, reviewedFromPage 8). The following all match: 「回転界磁形同期電動機」, 「平均トルクは零」, 「回転子の磁極面に(ア)を施す」, 「(ウ)を抵抗で短絡して起動」 and 「この短絡を切り放し(エ)で励磁」. The original's wording 「切り放し」 is preserved.",
+        "The choices table matches the original for all five rows: (1) 補償/巻線形/界磁/交流, (2) 制動/かご形/界磁/直流, (3) 制動/巻線形/界磁/交流, (4) 制動/かご形/固定子/直流, (5) 補償/かご形/固定子/直流.",
+        "The machinery Q5 entry in the official answer table is 2. This agrees with officialAnswer=2.",
+        "The explanation's reasoning holds throughout: the damper winding acts as a squirrel-cage secondary to give self-starting; the field winding is shorted through a resistor during starting to prevent insulation breakdown; near synchronous speed the short is removed and DC excitation pulls the rotor into synchronism.",
+        "The errors attributed to each wrong choice are correct. (1) has three errors: (ア), (イ) and (エ). (3) has two errors: (イ) and (エ). (4) has one error: (ウ). (5) has two errors: (ア) and (ウ).",
+        "No figure is needed, and officialReferenceUrls is empty."
+      ]
+    }
+  ]
+}

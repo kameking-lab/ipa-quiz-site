@@ -1,0 +1,46 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "machinery",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "39942c88ea9c5a3d390818a9bd1c0161c26ebcd4e850a59bfe22115b308e149e",
+  "questions": [
+    {
+      "number": 16,
+      "sourceDraftSha256": "e7af653dc9e9c5c7ce1dadc1ca67cf6d9527415b8ba280bc5c489590021e1cc0",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/machinery/q16-opus-review.json",
+      "opusReceiptSha256": "ecbd9d49767b07803c4206230245c6c8cc953128d98191517853cd92a0d007ed",
+      "assessment": {
+        "number": 16,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20240818-machinery-q16-inverter-circuit": "3b0bd667e5ee7feea55ce672d7b23928e89f7b9ccdba8578513d2d48cbfb63a1",
+        "20240818-machinery-q16-inverter-waveform": "6dec55ebdd7a6a90642fb7ee8881743b66f6c0e6b39e041051f19968bc39c883"
+      }
+    }
+  ],
+  "strictReview": {
+    "q16a": {
+      "path": "docs/evidence/denken3/strict/20240818-machinery-m14-q16a-q16b-opus.json",
+      "sha256": "1ed1b54bd2dc40cd26e8e44de9f91746093c99293555d1c2b22c2ce0c704ba3f",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q16b": {
+      "path": "docs/evidence/denken3/strict/20240818-machinery-m14-q16a-q16b-opus.json",
+      "sha256": "1ed1b54bd2dc40cd26e8e44de9f91746093c99293555d1c2b22c2ce0c704ba3f",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}
