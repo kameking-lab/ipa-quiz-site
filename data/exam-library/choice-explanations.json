@@ -27120,5 +27120,97 @@
         "url": "https://www.env.go.jp/content/000213735.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261807-q11": {
+    "sourceHash": "17d5ffacd35d88ad968ab0af0ad09d819e944f72c5a3cf28d26a450663a33e60",
+    "correctChoice": 2,
+    "summary": "試料液濃度＝0.25×1700/5300≒0.0802µg/mL、捕集量＝0.0802×25mL≒2.0µg、吸引空気量＝1.0L/min×10min＝10L。2.0µg÷10L＝0.20µg/L＝0.20mg/m³で肢2。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "誤り。0.1mg/m³は正しい値約0.20mg/m³の半分である。標準液とのピーク面積比から試料液濃度0.0802µg/mLを求め、定容後の全量25mLを掛けた2.0µgを吸引空気量10Lで割れば0.20mg/m³となり、0.1にはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "正しい。試料液濃度＝0.25µg/mL×1700/5300≒0.0802µg/mL、捕集量＝0.0802µg/mL×25mL≒2.0µg。吸引空気量は1.0L/min×10min＝10Lなので、濃度＝2.0µg÷10L＝0.20µg/L＝0.20mg/m³となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "誤り。0.4mg/m³は正しい値0.20mg/m³の2倍で、インピンジャー2本分として液量を二重に数えた（50mL）ような計算に相当する。2本の捕集液は合わせて25mLに定容しているので、捕集量は約2.0µg、濃度は0.20mg/m³である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "誤り。0.6mg/m³は、ピーク面積比1700/5300を掛けずに標準液濃度0.25µg/mL×25mL÷10L≒0.63mg/m³とした値に近い。試料液のピーク面積は標準液の約0.32倍なので、濃度は約0.20mg/m³になる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "誤り。0.8mg/m³は正しい値約0.20mg/m³の4倍であり、面積比・定容量25mL・吸引空気量10Lのいずれを正しく用いても得られない。0.0802µg/mL×25mL÷10L＝0.20mg/m³が正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書（定量下限と下限濃度の計算式）",
+        "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+      },
+      {
+        "title": "PMDA 日本薬局方 2.00 クロマトグラフィー総論（外部標準法）",
+        "url": "https://www.pmda.go.jp/files/000242610.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20261807-q14": {
+    "sourceHash": "eb9e1e8c8898693155cbe16085ceec63129a3251f46976689446973cc9455132",
+    "correctChoice": 2,
+    "summary": "1gを全量気化させたときの圧力をPV＝nRTで求め、飽和蒸気圧を超える物質は飽和蒸気圧で頭打ちになる。PA＝15kPa（計算23.0kPa）、PB≒21.0kPa、PC≒8.6kPaでPB＞PA＞PC、肢2。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "誤り。PAを最大としているが、アクリロニトリルは全量気化すると約23.0kPaとなり飽和蒸気圧15kPaを超えるため、液が残って分圧は15kPaにとどまる。酸化プロピレンの約21.0kPaより小さく、PA＞PC＞PBの順にはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "正しい。T＝293.15K、V＝2.0×10⁻³m³でP＝(m/M)RT/Vを計算すると、A：(1/53)×8.314×293.15/0.002≒23.0kPa＞15kPaなのでPA＝15kPa、B：(1/58)×…≒21.0kPa＜59kPa、C：(1/142)×…≒8.6kPa＜54kPa。よってPB＞PA＞PCとなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "誤り。PBが最大である点は正しいが、ヨウ化メチルはモル質量142と大きく1gでは約0.0070molしかないため、全量気化しても約8.6kPaである。PAの15kPaより小さく、PC＞PAとする並びは誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "誤り。飽和蒸気圧の大きさだけでなく物質量が効く。ヨウ化メチル1gは約0.0070molで分圧は約8.6kPaと3物質中最小であり、PCを最大とするこの並びは成り立たない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "誤り。ヨウ化メチルは飽和蒸気圧54kPaでも1gを全量気化させて約8.6kPaにしかならないため最小である。一方アクリロニトリルは飽和蒸気圧15kPaで頭打ちとなるがPCより大きく、PC＞PB＞PAにはならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "科学技術振興機構 科学の甲子園・筆記競技解答例（理想気体の状態方程式）",
+        "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+      },
+      {
+        "title": "国立環境研究所 酸素の観測を支える標準ガス（質量と物質量）",
+        "url": "https://cger.nies.go.jp/cgernews/202209/382001.html"
+      },
+      {
+        "title": "産総研計量標準総合センター 国際単位系（SI）",
+        "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+      },
+      {
+        "title": "JOGMEC 用語辞典 蒸気圧",
+        "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
+      }
+    ]
   }
 }
