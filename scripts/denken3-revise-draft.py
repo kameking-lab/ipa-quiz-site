@@ -87,7 +87,9 @@ def main() -> None:
     figures = [item for item in specs if item["examDate"] == date and item["subject"] == subject
                and item["questionNumber"] == number]
     public = {key: value for key, value in draft.items() if key in ("questionNumber", "sharedContext", "units")}
-    all_refs = sorted({url for unit in draft["units"] for url in unit.get("officialReferenceUrls", [])} | set(refs))
+    pinned = {entry["url"] for entry in json.loads((ROOT / "scripts/denken3-reference-manifest.json").read_text(encoding="utf-8"))}
+    all_refs = sorted(url for url in {url for unit in draft["units"] for url in unit.get("officialReferenceUrls", [])} | set(refs)
+                      if url.split("#", 1)[0] in pinned)
     prompt = (
         "あなたは第三種電気主任技術者試験の問題データ編集者。添付の試験センター公式問題原図と公式正答を一次資料として、"
         "現行草稿を独立監査の指摘に従って修正し、修正後の完全な草稿JSONオブジェクトだけを出力する。"

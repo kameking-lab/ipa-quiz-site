@@ -4,28 +4,30 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 3605,
+      "outputTokens": 2379,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 13761,
+      "cacheCreationInputTokens": 28412,
       "webSearchRequests": 0,
-      "costUSD": 0.1824518,
+      "costUSD": 0.2751398,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 3053,
+      "thinkingTokens": 2287,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
-  "rawResponseSha256": "4c0fe86b8c6359a3e5b534c4a11e196a41013c006f6fc8f9ca80e54e141d53c7",
+  "rawResponseSha256": "74b9fa7b45a61444d09933d832a2b16d40de2d9bed891f9430807233b76f639d",
   "draftSha256": {
-    "2": "5c097bafd7d143e3324a206f3fff9e3493f2c87911e6c688cf1e1d60f9f7da72"
+    "2": "51c7558e7e75699b47dc7700f1bc72a6d67caa508e6a6c52de1f3bfc44045405"
   },
   "figureSha256": {},
   "basisPageSha256": {
     "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
   },
-  "referenceJsonSha256": {},
+  "referenceJsonSha256": {
+    "data/raw_pdfs/denken3/review/egov/340M50000400054-20250401.json": "4cdb08201a4f7653f216d16416f06878f68d87290d508b20e8a70a5abadf64c7"
+  },
   "referencePdfSha256": {},
   "referencePageSha256": {},
   "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
@@ -38,12 +40,7 @@
       "choiceIssues": [],
       "explanationIssues": [],
       "figureIssues": [],
-      "externalSourceIssues": [
-        "要外部確認: 令和7年4月1日時点のe-Gov原文（電気関係報告規則）が添付されていないため、条文を検証できなかった。解説にある事故類型の要件は、原文と照合するまで確定扱いにしない。",
-        "要外部確認: (5)の根拠となる第3条第1項の該当号の現行文言を原文で確認する必要がある。現行が「他の物件に損傷を与え、又はその機能の全部又は一部を損なわせた事故」なのか、旧来の「公共の財産に被害を与え…社会的に影響を及ぼした事故」系の文言なのかを確かめる。確認後は、草稿の「他者の物件・公共の施設などに被害を与えた事故」という要約を原文に合わせる。",
-        "要外部確認: (4)の根拠として、自家用需要設備の主要電気工作物の破損事故の報告対象電圧（草稿の不確実性欄では「一般に1万V以上」）を原文で確認する必要がある。あわせて、第1条の「破損事故」「電気火災事故」の定義文言も確認する。",
-        "要外部確認: (2)の波及事故の号の文言を原文で確認する必要がある。確認点は、電圧3,000 V以上であること、要因に破損・誤操作・操作しないことが含まれることの2点。"
-      ]
+      "externalSourceIssues": []
     }
   ]
 }

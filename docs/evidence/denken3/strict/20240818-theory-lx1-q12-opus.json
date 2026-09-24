@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2825,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13973,
+      "webSearchRequests": 0,
+      "costUSD": 0.1685478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1331,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fdb6cf29ca9e23db2643267eeae4efafb08d484adf0d1d298c2e489ab8a12cc7",
+  "inputRequestSha256": "7d3f4ad510063c9ad3996772b90cbc1dd80b3de349c8179cc276364777d4a098",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "4e37fe68803e7fbea4195f5dcde525ac5ddb7dc7fd089c8e39a39e0403989e69"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p16.png": "b41cb1143445d5f842b26034b9bffc40d254b8c57b0b6b0eccbcf2fed578c8fb"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "b2cbc3ae9bd13bdf0ef007d6278ddd7bda1bc339dd754bb64b8dc30e113677ba",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図（PDF第16頁、頁下部「- 13 -」「T1－R 016」）と照合した。真空中の平行電極板、直流電圧V[V]、平等電界E[V/m]、陰極板から初速零で出発する電子、陽極板到達時の速さv[m/s]、式「1/2 mv² = (ア)」、電気素量e[C]と質量m[kg]の但し書き、(イ)の空欄、設問指示が原文と一致する。候補の差は「速さは、」の読点省略と、数式を1行表記にした整形だけで、意味の変化はない。",
+        "選択肢: 原図の表と照合した。(1) eV / √(4eV/m)、(2) eV / √(2eV/m)、(3) 2eV / √(4eV/m)、(4) eE / √(2eE/m)、(5) eE / √(4eE/m)。五肢とも、(ア)(イ)の値・係数・根号内の分子分母が一致する。",
+        "公式正答: 公式解答表（令和6年度上期・理論）の問12は「2」。候補のofficialAnswer=\"2\"と一致し、manifest固定値 {question:12, part:null, answer:\"2\"} とも一致する。",
+        "総合解説の検算: 電子が電位差Vを移動するときに電界がする仕事はeV。初速零なので、これがすべて運動エネルギーになり 1/2 mv² = eV。ここから v² = 2eV/m、v = √(2eV/m)。(ア)=eV、(イ)=√(2eV/m) で、選択肢(2)と一致する。陰極から陽極へ向かう電子は加速されるので、極性の扱いも正しい。",
+        "補足注記の検算: eEの単位は [C]·[V/m] = [N] で力を表す。距離dを掛けた eEd = eV で初めて [J] になる。V = Ed の関係の記述も正しい。",
+        "各肢解説の検算(1): 1/2 mv² = eV から得られる v² は 2eV/m であり、係数4は誤り。解説と一致する。",
+        "各肢解説の検算(2): 導出結果と一致し、正答とする理由も妥当である。",
+        "各肢解説の検算(3): 仮に1/2 mv² = 2eV とすると v² = 4eV/m となり、(イ)は(ア)の誤りをそのまま反映した形になる。解説の因果説明は正しい。",
+        "各肢解説の検算(4): eEは力[N]である。eE/mは加速度[m/s²]で、その平方根の次元は m^{1/2}/s となり[m/s]にならない。次元解析は正しい。",
+        "各肢解説の検算(5): eEがエネルギーの次元を持たない点、および係数4が正しい導出結果 2eV/m と一致しない点を挙げており、正しい。",
+        "図: 原図の問12頁にある図表は選択肢の組合せ表だけで、電極配置図などの物理図はない。表の内容はchoicesにすべて文字で再現されているため、figureUrlsが空でも解答に支障はない。figureDescriptionの記述も原図と一致する。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl=…20240818_ch_third_q01.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[16]。いずれもmanifestと一致する。sourceAttributionの「令和6年度上期第三種電気主任技術者試験 理論科目 問12」も一致する。",
+        "参照URL: officialReferenceUrlsは空である。解説は問題文の条件と基本法則（仕事とエネルギーの関係、V=Ed）だけで完結しており、外部資料での確認が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

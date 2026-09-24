@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7934,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 24073,
+      "webSearchRequests": 0,
+      "costUSD": 0.3515278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5566,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5c221a4bcf1252944fa3e01f52c35cfe7cee55fe62d4c3b68af15757216f1d99",
+  "inputRequestSha256": "c3b51827ef5c9f95fb09d75bac3b28c30ff149d14f0fb6ea28bf10c7086ceba6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "ac11e469fdde8c95acc99eb07bc2c053ba8d9b51166e31e92ebbefa1befa9931"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p14.png": "c5f77d654f7b8e5a15ad6d5ff27c61a659272605556ec0065cd85294e689a8e0",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "54153b5a719e7c6661b9372493142473cb6ef20527e4ba77b99992a1fd68197c",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+      "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+      "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説（ア）段落の「つまり地絡事故では、PAS は配電線の停電を待たずに自ら開放する」と、choiceExplanations(3)(4)の「地絡事故は G 動作の対象であり、PAS が配電線の停電を待たずに自動的に開放し」は、地絡なら常に G 動作になると断定している。しかし、解説自身が引用する九州産業保安監督部資料 p.9 ②は「短絡や地絡が発生し、地絡継電器の過電流蓄勢動作（SO）により区分開閉器は正常に開放動作し」と記述しており、地絡を含む事象で SO 動作が報告されている。したがってこの断定は、引用資料の範囲では支持できない。戸上スライドが示すのは「地絡事故時（G動作）」と「過電流事故時（ロック電流値以上の事故電流）（SO動作）」という区分だけである。（ア）の根拠は次の二点に限定するよう修正する。①本文の構図（負荷電流は遮断できるが大きな電流は遮断できず、開放命令を保存して待機する）はロック電流値以上の過電流事故、すなわち SO 動作の説明である。②スライドは地絡事故時を G 動作（即時開放・配電線は停電しない）として説明しており、本文の蓄勢待機の流れに当てはまる典型は短絡である。",
+        "総合解説の最終段の前段で、九州資料 p.9 ②を「過電流蓄勢動作（SO）により区分開閉器が正常に開放動作し、電力会社配電線の再閉路が成功した例がある。この例では…」と単数の一例として要約している。原文は「作業者の過失による事故3件」の総括であり、起因も「短絡や地絡」である。件数（3件）と起因（短絡や地絡）を原文どおり反映し、「地絡」を省いた要約で（ア）の論拠を補強する形にしないこと。",
+        "総合解説（イ）段落とchoiceExplanations(2)にある「一般的な高圧受電設備の構成では、配電線からの引込み点に PAS があり、受電用遮断器はそれより需要家設備側にある」は、添付の公式参考資料の原頁では検証できない一般知識である（解説自身も参考資料に図示がないと認めている）。（イ）＝負荷は、問題文から導ける。PAS の開放で事故点が切り離され、配電線の再閉路が成功するという本文第2段落の因果から、事故区間は PAS の負荷側と導ける。したがって根拠はこの導出を主にし、一般構成の記述は補足であることが分かる表現にとどめる。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "四国産業保安監督部資料の引用に頁の特定がない。該当箇所は PDF 第124頁（紙面印刷頁 122、スライド番号 9・10）にある。PDF 頁と印刷頁がずれているため、追跡性の確保のため PDF 頁とスライド番号を明記することを推奨する。",
+        "uncertainty が非空である（電気関係報告規則上の波及事故の定義と、自動再閉路成功時の扱いが未確認）一方で、needsReview=false となっている。解説本文は「再閉路成功なら波及事故として取り扱われない」を問題文の前提として正しく帰属させているため、正答判断には影響しない。ただし外部確認事項が残っていることに変わりはない。この項目を公式資料で解消するか、needsReview と整合させること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（問題PDF第14頁、紙面「-11-」、T1-H 014）と照合した。導入文、第1段落（（ア）×2、（イ）、（ウ））、第2段落（（ウ）×2、（エ））、設問文の語句・順序・空欄位置はすべて一致した。全角括弧化などの整形は sourceAttribution の「読みやすく整形」の範囲内である。",
+        "選択肢：原図の表 (1)短絡/負荷/開放/配電線、(2)短絡/電源/遮断/波及、(3)地絡/電源/遮断/波及、(4)地絡/電源/遮断/配電線、(5)短絡/負荷/開放/波及 と choices は5肢とも一致した。",
+        "公式正答：解答PDF（令和7年度第三種上期試験解答）の＜法規＞問10は解答 5・配点 6 であり、officialAnswer=5、scoringPoints=6 と一致した。",
+        "メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf、reviewedFromPage=[14] は manifest と一致した。注意書き頁の注3（令和7年4月1日現在の法令）と矛盾する記述もない。",
+        "各肢の正誤判定：(1)は（エ）のみ誤り、(2)は（イ）（ウ）が誤り、(3)は（エ）のみ正しい、(4)は全誤り、(5)は全て正しい。choiceExplanations の正誤の内訳はすべて正確である。",
+        "戸上スライド（四国資料 PDF第124頁）：SOG＝Storage Over Current Ground（過電流蓄勢トリップ付地絡トリップ形）、G動作（地絡事故時に PAS が自動開放、配電線は停電しない）、SO動作（過電流事故時・ロック電流値以上、配電線停電で電圧消失後に PAS 自動開放、配電線は一度は停電）、設置目的（地絡・短絡事故を配電線へ波及させない）、波及事故の説明文の各引用が原頁と一致することを確認した。",
+        "九州資料 PDF第9頁 ④末項：受電用真空遮断器2次側の原因不明の相間短絡で「過電流蓄勢」が作動表示となり、区分開閉器が閉路状態のため波及事故となった事例は、引用どおり原頁に存在することを確認した。",
+        "（ウ）開放の論理：無電圧確認後に開くため PAS は事故電流を遮断しない、という説明は問題文第2段落と整合する。",
+        "図：回路図はなく、選択肢表のみである。figureDescription の記述は原図と一致し、解答に図は不要である。figureUrls が空であることは妥当である。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3731,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16217,
+      "webSearchRequests": 0,
+      "costUSD": 0.20461979999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2155,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7f575b33a223e58c16c98e0313d8bf283df139f3730734ff4d22de344b9baf48",
+  "inputRequestSha256": "0ba4260c860b3800222f1b464b3eb75df718eba8193266b497a98f472163bd84",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "1ec4a91cb3de2aa390e150372d3e17c79bd6d2d096831c6c35198b109e67a157"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p12.png": "2e246ff94f28173235863c97a95608b28255009f95f851e03d5fe14c3b92a401",
+      "data/raw_pdfs/denken3/review/20240818/power/p13.png": "87cee68446bb6d77057f27361acbcf3f41850213009eac71ff41b36d7c29dd0c"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ebc233193a967568f62cc4592814b54702ea07953d2e90f7d9701de2f6b9be61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の見出し「令和6年度 上期 第三種電気主任技術者試験解答」と manifest（2024年度上期・試験日2024-08-18・電力）が、候補の fiscalYear=2024 / term=upper / examDate=2024-08-18 / subject=power と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl も manifest と一致する。",
+        "reviewedFromPage=[12,13]: 添付原図2枚（冊子ノンブル -9- / -10-、管理番号 T1-D 012 / T1-D 013）が manifest の PDF 第12・13頁に対応する。第12頁に問題文、第13頁に(1)〜(5)がある。",
+        "問題文: 導入文（外部過電圧＝雷サージ電圧、内部過電圧＝開閉サージ電圧と短時間交流過電圧）と設問文「誤っているものを次の(1)〜(5)のうちから一つ選べ」を原図と照合した。語句・句読点（，。）・括弧はすべて一致し、脱落・改変はない。",
+        "選択肢(1)〜(5): 5肢すべてを原図と一字単位で照合し、一致を確認した。(1)の「外部過電圧そのものの大きさを低減することである」、(2)の「特性要素」「続流を短時間のうちに遮断して原状に自復」、(3)の「必ずしも十分に耐えるように設計されるとは限らない」、(4)の「いずれも原則として，内部過電圧に対しては十分に耐える」、(5)の「その保護レベルは，避雷器の制限電圧に基づいて決まる」は、いずれも原文どおりである。",
+        "公式正答: 公式解答表の電力列で問9=1。manifest固定の単位 {question:9, part:null, answer:\"1\"} および候補の officialAnswer=\"1\" と一致する。",
+        "総合解説: 絶縁協調の定義を正しく述べている。すなわち、避雷器などの保護レベルと機器・設備の絶縁強度を整合させ、系統全体として経済的・合理的な絶縁を決める設計思想である。(1)が絶縁協調を「外部過電圧自体の低減」と定義している点を誤りの根拠としており、因果は正しい。計算要素はない。",
+        "肢別解説(1): 誤りの理由を正しく特定している。絶縁強度の整合という考え方を、外部過電圧の大きさの低減と取り違えている点を指摘しており妥当である。",
+        "肢別解説(2): 次の3点が避雷器の動作原理と整合する。動作開始電圧を超えると特性要素（酸化亜鉛素子等）に電流が流れる。過電圧は制限電圧（放電中の端子間残留電圧）程度に抑えられる。続流を短時間で遮断して自復する。動作開始電圧と制限電圧も区別されている。",
+        "肢別解説(3): 架空送電線のがいし装置は、経済性から雷サージに対して完全にはフラッシオーバを防止しない。そのうえで架空地線や塔脚接地抵抗の低減により事故率を許容範囲に抑える。この設計思想の説明は正しい。",
+        "肢別解説(4): 内部過電圧は常規対地電圧の数倍以内にとどまるため、十分に耐える絶縁を経済的に実現できる。一方、雷サージに完全に耐える絶縁は不経済となる。この対比は正しい。",
+        "肢別解説(5): 発変電所機器は避雷器による保護を前提として設計される。避雷器の制限電圧が保護レベルを決め、機器の雷インパルス耐電圧（BIL）は保護レベルに裕度を加えて定める。この説明は正しい。",
+        "図: 原図2頁とも図・表はなく、解答に図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "参考資料: officialReferenceUrls は空配列である。検証を要する外部の独立主張はなく、外部確認事項もない。"
+      ]
+    }
+  ]
+}

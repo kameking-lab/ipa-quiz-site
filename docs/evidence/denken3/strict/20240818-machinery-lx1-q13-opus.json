@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2486,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14725,
+      "webSearchRequests": 0,
+      "costUSD": 0.1677838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1096,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6eabfec8a0af50b0bb03014f4d05fbed87cf4ded0a952c919d87ccbf0a174d93",
+  "inputRequestSha256": "1a76480aa4a52dcde8924eb6e215f11ece60be0c7814c28295fb0dbf31f00084",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "d1e42e19a56f0ce2536beaf3dab0b139bf648e4a369d3357f98e104dd169475b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p18.png": "1c2c9a494dbab8d359d3b51154f2b797ae50b2bd72a6371b3f09da8c6ab02162"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a005b6c80d3cfafce1793b0e054fff5b3f2757024ee0fdfd2804adc8ef398ed0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第18頁、印刷ノンブル『-15-』、管理番号 T1-K 018）の問13本文と候補の question を全文照合した。導入文、(ア)〜(エ)の空欄位置、『シーケンス制御と (ア) 制御とに大別される』『電磁リレーを用いた (イ) シーケンス制御』『相手のb接点を直列に接続して，両者が決して同時に働かないようにすること』『横軸に時間を表し，縦軸にコイルや接点の動作状態』、設問文の脱落・改変はない。差異は『2 個』→『2個』の空白整形のみで、意味は変わらない。",
+        "選択肢: 原図の表と照合した。(1)フィードフォワード/無接点/ブロック/フローチャート、(2)フィードバック/有接点/インタロック/タイムチャート、(3)フィードバック/有接点/ブロック/フローチャート、(4)フィードフォワード/有接点/インタロック/タイムチャート、(5)フィードバック/無接点/ブロック/タイムチャート。全5肢×4欄が候補と一致する。",
+        "公式正答: 公式解答表（令和6年度上期、機械列）の問13は『2』。manifest固定の正答単位 {question:13, part:null, answer:'2'} および候補の officialAnswer='2' と一致する。",
+        "総合解説: (ア)〜(エ)の各欄を検証した。(ア)自動制御はシーケンス制御とフィードバック制御に大別される。(イ)電磁リレーの接点開閉による制御は有接点シーケンス制御であり、リレーシーケンスに当たる。無接点は半導体素子による方式である。(ウ)相手のb接点をコイル回路に直列に入れると、一方が動作した時点で他方のコイル回路が開路され、同時動作が阻止される。この因果の説明は正しく、用語はインタロックである。(エ)横軸に時間、縦軸にON/OFF状態をとる図はタイムチャートである。いずれも技術的に正しく、結論(2)と整合する。",
+        "肢別解説: 各誤答肢の誤り箇所を独立に検算した。(1)はア・イ・ウ・エの4欄とも誤り。(3)はウ・エが誤り。(4)はアのみ誤り。(5)はイ・ウが誤り。候補の記述はこれとすべて一致する。各欄の誤りの理由も適切で、フィードフォワード≠シーケンス制御の対概念、無接点は電磁リレーと矛盾、ブロックは同時動作防止の用語ではない、フローチャートは処理手順図で時間軸図ではない、の各点は妥当。正答肢(2)の4欄すべての理由も正しい。",
+        "図: 本問は語句穴埋めで、解答に図を要しない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[18] がすべて manifest と一致する。sourceAttribution『令和6年度上期第三種電気主任技術者試験 機械科目 問13』も整合する。",
+        "参考URL: officialReferenceUrls は空配列で、検証を要する独立主張はない。uncertainty の記載内容とも矛盾しない。"
+      ]
+    }
+  ]
+}

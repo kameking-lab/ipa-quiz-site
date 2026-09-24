@@ -13,7 +13,7 @@
         "5": "(ア) 3.3×10⁵　(イ) 熱電子　(ウ) 3.2×10⁻¹⁶"
       },
       "officialAnswer": "5",
-      "explanation": "(ア) 電界が一様な平行平板電極では、電界の強さ E は電圧 V を電極間隔 d で割って求める。d = 6 mm = 6×10⁻³ m なので、\nE = V / d = 2000 / (6×10⁻³) ≒ 3.33×10⁵ V/m ≒ 3.3×10⁵ V/m\n\n(イ) 金属を加熱すると、熱エネルギーを得た電子が表面から飛び出す（熱電子放出）。このとき放出される電子を熱電子という。光の照射によって放出される電子（光電子）とは区別される。\n\n(ウ) 問題文では、電極Kから放出された初速度 0 の電子が電極Pに達するとしている。負電荷である電子が電界によって電極Pへ向かって加速されるのだから、電極Pは電極Kより 2000 V 高電位である（図の直流電源も、電極K側を負極、電極P側を正極として接続されている）。初速度 0 の電子が電位差 V の区間で電界から受ける仕事がそのまま運動エネルギーになるので、\nW = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J\n（同じ値は、力 eE と移動距離 d の積 eEd = 1.6×10⁻¹⁹ × {2000 / (6×10⁻³)} × 6×10⁻³ = 3.2×10⁻¹⁶ J としても得られる。真空中で初速度が零であれば、運動エネルギーは電極間隔によらず電圧だけで決まる。）\n\nよって (ア) 3.3×10⁵、(イ) 熱電子、(ウ) 3.2×10⁻¹⁶ の組合せである (5) が正しい。",
+      "explanation": "(ア) 電界が一様な平行平板電極では、電界の強さ E は電圧 V を電極間隔 d で割って求める。d = 6 mm = 6×10⁻³ m なので、\nE = V / d = 2000 / (6×10⁻³) ≒ 3.33×10⁵ V/m ≒ 3.3×10⁵ V/m\n\n(イ) 金属を加熱すると、熱エネルギーを得た電子が表面から飛び出す（熱電子放出）。このとき放出される電子を熱電子という。光の照射によって放出される電子（光電子）とは区別される。\n\n(ウ) 問題文では、電極Kから放出された初速度 0 の電子が電極Pに達するとしている。負電荷である電子が電界によって電極Pへ向かって加速されるのだから、電極Pは電極Kより 2000 V 高電位である。初速度 0 の電子が電位差 V の区間で電界から受ける仕事がそのまま運動エネルギーになるので、\nW = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J\n（同じ値は、力 eE と移動距離 d の積 eEd = 1.6×10⁻¹⁹ × {2000 / (6×10⁻³)} × 6×10⁻³ = 3.2×10⁻¹⁶ J としても得られる。真空中で初速度が零であれば、運動エネルギーは電極間隔によらず電圧だけで決まる。）\n\nよって (ア) 3.3×10⁵、(イ) 熱電子、(ウ) 3.2×10⁻¹⁶ の組合せである (5) が正しい。",
       "choiceExplanations": {
         "1": "誤り。(ア) 3.3×10² は 2000 ÷ 6 の値で、電極間隔を m に換算していない（V/mm の値に相当する）。正しくは 3.3×10⁵ V/m。(イ) 光電子は光の照射で放出される電子であり、ヒータによる加熱で放出されるのは熱電子。(ウ) W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J であり、1.6×10⁻¹⁶ J ではない。3 つとも誤り。",
         "2": "誤り。(ア) 3.3×10⁵ V/m と (イ) 熱電子 は正しいが、(ウ) の運動エネルギーは W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J であり、1.6×10⁻¹⁶ J ではない。",
@@ -21,7 +21,7 @@
         "4": "誤り。(イ) 熱電子 は正しいが、(ア) は E = 2000 / (6×10⁻³) ≒ 3.3×10⁵ V/m であり 3.3×10² ではない。(ウ) も W = eV = 3.2×10⁻¹⁶ J であり 1.6×10⁻¹⁶ J ではない。",
         "5": "正しい。(ア) E = V/d = 2000 / (6×10⁻³) ≒ 3.3×10⁵ V/m、(イ) 加熱した電極表面から放出されるのは熱電子、(ウ) W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J で、3 つすべてが正しい。"
       },
-      "figureDescription": "問題文と選択肢の表の間に配置された回路図。上部に左から「電極K」「電極P」のラベルがある。電極Kは左側が開いたコの字形の板として描かれ、その内側（左側）にコイル状のヒータが置かれている。ヒータのコイルの上端と下端からは、それぞれ左方向へ引出線が 1 本ずつ水平に伸び、どちらも左端は何にも接続されていない開放端である。この 2 本の引出線の間の左側に「ヒータ」のラベルがある。電極Pは縦長の板として電極Kの右側に平行に向かい合って描かれ、電極Kの対向面（コの字の右側の縦辺）と電極Pの対向面の間に両矢印と「6 mm」の寸法表示がある。電極K側の黒丸（接続点）はコの字形電極の下辺の外縁上にあり、下辺のほぼ中央からやや右寄りの位置で、電極Pに対向する右側の縦辺よりも左側にある。そこから導線が下へ伸びて右へ折れ、直流電源（電池記号）の左端に接続する。電池記号は、左側（電極K側）が短線（負極）、右側（電極P・接地側）が長線（正極）である。電極P側には黒丸が 2 つある。1 つは電極Pの下端にあり、そこから導線が真下へ伸びる。もう 1 つはその下の導線上の分岐点にあり、電池記号の右端から右へ伸びる導線がこの分岐点に接続する。接地記号はこの分岐点のさらに下に描かれている。図は、ヒータが電極Kを加熱する構成と、間隔 6 mm で向かい合う電極K・P 間に、電極P側を正極として直流電源が接続され、電極P側が接地されていることを示している。",
+      "figureDescription": "問題文と選択肢の表の間に配置された回路図。上部に左から「電極K」「電極P」のラベルがある。電極Kは左側が開いたコの字形の板として描かれ、その内側（左側）にコイル状のヒータが置かれている。ヒータのコイルの上端と下端からは、それぞれ左方向へ引出線が 1 本ずつ水平に伸び、どちらも左端は何にも接続されていない開放端である。この 2 本の引出線の間の左側に「ヒータ」のラベルがある。電極Pは縦長の板として電極Kの右側に平行に向かい合って描かれ、電極Kの対向面（コの字の右側の縦辺）と電極Pの対向面の間に両矢印と「6 mm」の寸法表示がある。電極K側の黒丸（接続点）はコの字形電極の下辺の外縁上にあり、下辺のほぼ中央からやや右寄りの位置で、電極Pに対向する右側の縦辺よりも左側にある。そこから導線が下へ伸びて右へ折れ、直流電源（2 本の平行な縦線による電池記号）の左端に接続する。電極P側には黒丸が 2 つある。1 つは電極Pの下端にあり、そこから導線が真下へ伸びる。もう 1 つはその下の導線上の分岐点にあり、電池記号の右端から右へ伸びる導線がこの分岐点に接続する。接地記号はこの分岐点のさらに下に描かれている。図は、ヒータが電極Kを加熱する構成と、間隔 6 mm で向かい合う電極K側と電極P側の間に直流電源が接続され、電極P側が接地されていることを示している。",
       "officialReferenceUrls": [],
       "uncertainty": "なし",
       "needsReview": true,
@@ -256,6 +256,108 @@
       "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-opus-review-v6.json",
       "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s12-q12-opus.json",
       "answeredStrictReceiptSha256": "dfef25783e9d21e59dce27b6258044b26c155a4e4c66ef418eeb1460cea17231",
+      "figureSha256": {
+        "20250831-theory-q12-fig1": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+      },
+      "referenceHashes": {},
+      "operatorNote": "図の電池記号（高解像度原図で確認済み）：左側（電極K側）が短線＝負極、右側（電極P・接地側）が長線＝正極。したがって電極Pが高電位で、問題文の設定と整合する。ヒータのコイル上端・下端から左向きに開放端の引出線が2本ある。"
+    },
+    {
+      "version": 7,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4249,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14320,
+          "webSearchRequests": 0,
+          "costUSD": 0.19980379999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1698,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "8daf9ba16c2b1642222aa47591dc576876c6f566a2179cb79986bd596b0818f8",
+      "inputRequestSha256": "98e31e6d942b421fa4b677e99a2d0c410b249280fa672937daa62d4fb22d92a5",
+      "previousDraftSha256": "6dbc977a4956745decb964954dcdb6ee1985407c88ca9045b3aedd84cd969d0b",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-vision-draft-v7.json",
+      "answeredReviewSha256": "7a16f6fa2c46d7a020562d27b21db3f0adcdf30799de817015046cb5107e171d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-opus-review-v7.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s13-q12-opus.json",
+      "answeredStrictReceiptSha256": "b9418ec790456906943ea6b07674a01e178c98aea31dc3096e8fd0e4966e43a9",
+      "figureSha256": {
+        "20250831-theory-q12-fig1": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+      },
+      "referenceHashes": {},
+      "operatorNote": "図の電池記号（高解像度原図で確認済み）：左側（電極K側）が短線＝負極、右側（電極P・接地側）が長線＝正極。したがって電極Pが高電位で、問題文の設定と整合する。ヒータのコイル上端・下端から左向きに開放端の引出線が2本ある。"
+    },
+    {
+      "version": 8,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3777,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14411,
+          "webSearchRequests": 0,
+          "costUSD": 0.19109179999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1175,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e421aca75bd9d03f17a2aeaf3cd153b855efdddf1b925227ca809d4c348c9dbd",
+      "inputRequestSha256": "a238a4958f77c1d741f18bf3d48fc2f0b1ba35ce0258d5b52b303c4dd548090d",
+      "previousDraftSha256": "cc776dee265ed8ba8d55a5fd25d734786c3f52000f3402543c69b78358ddf0f4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-vision-draft-v8.json",
+      "answeredReviewSha256": "8257a13dd29d67c11d7fd5235db5e104d35d5802bd1f0f776eb7284e332feb7d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-opus-review-v8.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s21-q12-opus.json",
+      "answeredStrictReceiptSha256": "cf439e05f64c4d689f8bb5409407319e4e125dd4f861fc68451f2accef1fae2e",
+      "figureSha256": {
+        "20250831-theory-q12-fig1": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+      },
+      "referenceHashes": {},
+      "operatorNote": "図の電池記号（高解像度原図で確認済み）：左側（電極K側）が短線＝負極、右側（電極P・接地側）が長線＝正極。したがって電極Pが高電位で、問題文の設定と整合する。ヒータのコイル上端・下端から左向きに開放端の引出線が2本ある。"
+    },
+    {
+      "version": 9,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4081,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14339,
+          "webSearchRequests": 0,
+          "costUSD": 0.1965958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1569,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2edf32ed5f3bfa582c7ddc6008b0e5e11d6851e3f78dda2e60390934c2915986",
+      "inputRequestSha256": "51abbef671475564f48797fd71d4632279effd430fc29cf30723313870b307e6",
+      "previousDraftSha256": "6f7d64b5ae2495623fc3cefee9cbd762951b6cc58b1e3eae94c76d30cccd660e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-vision-draft-v9.json",
+      "answeredReviewSha256": "d10a2f93727dea491e3ccca340c5a08c88c4f528a7f023bd49cdf923d7810a21",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q12-opus-review-v9.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s22r-q12-opus.json",
+      "answeredStrictReceiptSha256": "ae87038d4040c15660103f81b46df5168461916b53b587e5a85557e96aa2e2b1",
       "figureSha256": {
         "20250831-theory-q12-fig1": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
       },

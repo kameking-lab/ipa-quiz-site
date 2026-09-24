@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2659,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13961,
+      "webSearchRequests": 0,
+      "costUSD": 0.1651318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1383,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3587d80e6a44fd7badb78fd2386424586f7f5059eaad011eece1715f6a256e7e",
+  "inputRequestSha256": "1d29d9699c43c03581ddadd15348b45f1949be208feb85ae37d8dcd8fe4e8b44",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "1e7b949560073c129819c7407cbc63af85254dab3fcfcde3f6c817c5e992cc28"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p11.png": "c6a33a2f41cf8c228764b26715f6b3e99d158d31a3f5816a0917587d614ece46"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"4\"]の「スペーサで区切られた素導体間の短い径間（サブスパン）」は、サブスパンを素導体どうしの横方向の間隔と読める曖昧な表現である。サブスパンは、線路方向に隣接するスペーサ間の素導体の区間を指す。修正案：「スペーサとスペーサの間の素導体の短い区間（サブスパン）において，風上側の素導体の後流（ウェーク）の中に入った風下側の素導体が不安定になって振動する現象」。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：候補の設問文を公式原図（PDF第11頁、印刷頁-8-、T1−D 011）と照合し、文言が一致することを確認した。",
+        "選択肢：(1)〜(5)の全肢を原図と1字単位で照合し、一致を確認した。(4)の「風速10 m/s」の数値と単位も原図と一致する。",
+        "公式正答：公式解答表（令和6年度上期・電力・問8）は3。manifest固定の正答単位{question:8, answer:\"3\"}および候補のofficialAnswer \"3\"と一致する。",
+        "総合解説：多導体ではスペーサの拘束で素導体がねじれにくい。このため着氷雪が非対称断面を保ちやすく、単導体よりギャロッピングが発生しやすい。この因果は正しく、(3)の「多導体では発生しにくい」が誤りとする結論は公式正答と整合する。0.1〜1 Hz程度の低周波・大振幅の自励振動という記述も一般的な教科書記述と整合する。",
+        "肢(1)の理由：上下配列の電線にオフセットを設けてスリートジャンプやギャロッピング時の混触を防ぐ、という説明は正しい。",
+        "肢(2)の理由：数m/s程度の一様な微風でカルマン渦が生じ、上下に振動する現象を微風振動という。ダンパ（ストックブリッジダンパ等）で抑制するという説明も正しい。",
+        "肢(3)の理由：前半の定義は正しく、後半の多導体に関する記述が誤りである、という切り分けは正確である。",
+        "肢(4)の理由：多導体特有の後流（ウェーク）起因の振動で、目安は10 m/s超という説明は正しい。ただしサブスパンの定義文言に上記の曖昧さがある。",
+        "肢(5)の理由：氷雪が脱落すると荷重が急減し、その反動で電線が跳ね上がる、という説明は正しい。",
+        "図：原図に図版はなく、文章のみの問題である。figureUrls・choiceFigureUrlsが空であること、figureDescriptionの頁記述（PDF第11頁、印刷頁8、T1−D 011）が原図と整合することを確認した。",
+        "出典メタデータ：fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power、reviewedFromPage=[11]、sourceQuestionPdfUrl、sourceAnswerPdfUrlはいずれもmanifestと一致する。sourceAttributionの「令和6年度上期…電力科目 問8」も一致する。",
+        "officialReferenceUrlsは空であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

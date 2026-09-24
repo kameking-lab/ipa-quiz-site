@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1972,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13676,
+      "webSearchRequests": 0,
+      "costUSD": 0.14911180000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 860,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "eaeaf7cdb2e37593cd7fd44451baf58b39c743adb39fa92a272f79f36540247e",
+  "inputRequestSha256": "a78f6d19c3b3c959388529b2d94b037c90ddf86e31ad4c94f851123e26a7034c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "55fd1b750efd0186918f5c4ac0ed4fa9fd1620b710242f16a463d62f6d6bff0e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p15.png": "61d54b6ef24d9c63814c1b653a02639732c93d46ab2bff87796c2da9d5ab88b6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "d23dd44a9646379a01d48c17ad09aad2bfa15c5259dacf59a99d06985e012aa6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの『ページ下部に脚注等の付随情報もない』は原図と合わない。原図の下部には頁番号『- 12 -』と印刷管理コード『■ T1－R 015』がある。どちらも解答に不要な付随情報なので、『解答に関係する付随情報はない（頁番号・管理コードのみ）』のように、正確に書き直す必要がある。図・回路図が存在しないという判断自体は正しい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を原図（PDF第15頁、印刷頁番号『- 12 -』、管理コードT1－R 015）と照合した。『バイポーラトランジスタと電界効果トランジスタ(FET)に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』と文言が一致する。差異は読点『，』を『、』に変えた整形だけで、この点はuncertaintyに明記されている。",
+        "選択肢(1)〜(5)の文言を原図と一字ずつ照合した。『ドレーン』『自由電子及び正孔』『自由電子又は正孔』などの表記を含め、句読点の整形以外に差異はない。",
+        "公式解答表『令和6年度 上期 第三種電気主任技術者試験解答』の＜理論＞欄で、問11の正答は4である。manifestの公式正答単位（answer '4'）およびofficialAnswer '4'と一致する。",
+        "総合解説を検証した。バイポーラトランジスタはベース電流でコレクタ電流を制御する電流制御素子、FETはゲート電圧でドレーン電流を制御する電圧制御素子である。(4)はこの対応を逆にしており誤りで、正答4と整合する。",
+        "各肢の理由を検証した。(1)駆動電流の有無による消費電力の比較、(2)MOSゲート酸化膜の静電破壊、(3)入力インピーダンスの高低とJFETの逆バイアス接合、(5)バイポーラ（2種のキャリア）とユニポーラ（1種のキャリア）の区別は、いずれも標準的な事実として正しい。",
+        "メタデータを照合した。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[15]はいずれもmanifestと一致する。sourceAttributionの『令和6年度上期…理論科目 問11』も正しい。",
+        "図・回路図はない。解答に図は不要で、figureUrls=[]とchoiceFigureUrls={}は妥当である。",
+        "officialReferenceUrlsは空である。解説は標準的な教科書知識の範囲で完結しており、外部検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

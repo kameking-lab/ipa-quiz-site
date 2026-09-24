@@ -4,28 +4,30 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 2093,
+      "outputTokens": 949,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 16077,
+      "cacheCreationInputTokens": 23030,
       "webSearchRequests": 0,
-      "costUSD": 0.1707398,
+      "costUSD": 0.2034838,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 1843,
+      "thinkingTokens": 857,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
-  "rawResponseSha256": "372253574a727ee62628910f711f95543eb5dab17417b9ed8518c1cb0ff36dfc",
+  "rawResponseSha256": "535e445cec3e762267e7b162c424f4f6799d61f708f357c66d441ff5d63edb3f",
   "draftSha256": {
-    "1": "c5470843bbf9624dca548d7339a39e16143b3d6c46ca2509866f83f8e0cd95e3"
+    "1": "e8a9bb0e8feec129461c03c2f4df5f303f133a14c19c11ae06965d62c938dcc7"
   },
   "figureSha256": {},
   "basisPageSha256": {
     "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
   },
-  "referenceJsonSha256": {},
+  "referenceJsonSha256": {
+    "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+  },
   "referencePdfSha256": {},
   "referencePageSha256": {},
   "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
@@ -38,9 +40,7 @@
       "choiceIssues": [],
       "explanationIssues": [],
       "figureIssues": [],
-      "externalSourceIssues": [
-        "令和7年4月1日時点の電気事業法のe-Gov原文が添付されていないため、要外部確認。確認対象は、推進機関の指示の根拠が「業務規程」で相手方が「会員」であること（草稿は第28条の44と推定）、および経済産業大臣の供給命令の相手方が「電気事業者」であること（草稿は第31条と推定）。本監査では条文の文言と条番号を原文で検証していない。"
-      ]
+      "externalSourceIssues": []
     }
   ]
 }

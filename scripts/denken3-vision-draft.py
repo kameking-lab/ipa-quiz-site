@@ -70,6 +70,11 @@ def draft(date: str, subject: str, number: int) -> None:
             raise ValueError(f"Vision result missing choices: {date} {subject} q{number}")
         if set(row.get("choiceExplanations", {})) != {"1", "2", "3", "4", "5"}:
             raise ValueError(f"Vision result missing reasons: {date} {subject} q{number}")
+        pinned = {entry["url"] for entry in json.loads((ROOT / "scripts/denken3-reference-manifest.json").read_text(encoding="utf-8"))}
+        unpinned = [url for url in row.get("officialReferenceUrls", []) if url.split("#", 1)[0] not in pinned]
+        if unpinned:  # only SHA-pinned official sources may be cited; the review scripts reject anything else
+            result.setdefault("droppedUnpinnedReferenceUrls", []).extend(unpinned)
+            row["officialReferenceUrls"] = [url for url in row["officialReferenceUrls"] if url not in unpinned]
         row["needsReview"] = True
         row["sourceQuestionPdfUrl"] = paper["url"]
         row["sourceAnswerPdfUrl"] = session["officialAnswer"]["url"]

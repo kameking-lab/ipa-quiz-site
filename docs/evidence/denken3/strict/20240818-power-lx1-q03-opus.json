@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2943,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13865,
+      "webSearchRequests": 0,
+      "costUSD": 0.1700438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1613,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d14d4ee83fbf8cba897dea28d9f43c2c974e4a3e6224e1f7e467f13036b69abd",
+  "inputRequestSha256": "64fb4d30eb71009c30299713daeb4c72f13d88011093b237ea9fa2419dc6ece4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "506245932af0bbcc91a9f4502c118f7bb934ecd2b6355e4254fa3c9a7752956f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p06.png": "a5794ede5140cdc093d1cbd03a4f6c85443e6554fa73d771ff5e681fb6b5de25"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "eb7264dcf6af79b52c56d8522b09f93c99778d62124b226a7b8b305c3d32af95",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[4] の因果説明「燃焼が主体でこの制約を受けにくい汽力発電」は不正確。ガスタービンも燃焼で動くので、『燃焼が主体』では両者の違いを説明できない。差が出る理由は作動流体にある。ガスタービンは圧縮機が吸い込む大気そのものを作動流体にするため、外気温が上がって空気密度が下がると質量流量と出力が直接落ちる。汽力発電の作動流体は閉サイクル内の水・蒸気で、燃焼用空気は押込通風機で供給される。このため、吸気密度が最大出力に直接効く構造になっていない。この趣旨に書き換える必要がある。総合解説の同旨部分（『汽力発電はボイラでの燃焼・蒸気発生が主体であり』）も、作動流体の違いを明示する形に補強するのが望ましい。",
+        "choiceExplanations の句読点が混在している。(1)と(5)は「、」、(2)(3)(4)と本文・総合解説は「，」。原図と本文に合わせて「，」に統一すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第6頁、頁下部の印字は『-3-』と『T1-D 006』）の問3本文と一字一句照合し、一致した。『一般的な排熱回収方式のガスタービンコンバインドサイクル発電を，同一出力の汽力発電と比較した記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』",
+        "選択肢(1)〜(5): 原図の五肢と全文一致を確認した（始動・停止時間が短い／負荷変化に対する追従性が高い／熱効率が高い／外気温の最大出力に与える影響が小さい／温排水量が少ない）。",
+        "公式正答: 添付の公式解答表（令和6年度上期、電力列）で問3＝4 を確認した。候補の officialAnswer '4' と一致。",
+        "正答の妥当性: ガスタービンは外気温が上がると吸気密度が下がって出力が低下する。そのためコンバインドサイクルは汽力発電より外気温の影響が大きく、(4)が誤りとなる。(1)(2)(3)(5)はコンバインドサイクルの一般的特徴として正しく、正答4と整合する。",
+        "誤答肢の理由: (1) 起動の速さと蒸気系の小容量、(2) ガスタービンの燃料制御による速い応答、(3) ブレイトン＋ランキンの複合による高効率、(5) 蒸気タービンの分担が全体の一部で復水器排熱が小さいため温排水が少ない。いずれも正しい因果であることを確認した。",
+        "図: 原図に図・表・数式はない。figureDescription、figureUrls=[]、choiceFigureUrls={} はこれと整合する。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power、sourceQuestionPdfUrl=…20240818_ch_third_q02.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[6] がすべて manifest と一致した。sourceAttribution の年度・期・科目・問番号も一致。",
+        "officialReferenceUrls は空で独立主張がないため、外部確認事項はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2952,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14714,
+      "webSearchRequests": 0,
+      "costUSD": 0.1770158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1518,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b31e171b7ce6763c5fb590f530c0327716b446d8c65ec2f54da6af626615451c",
+  "inputRequestSha256": "d627f167112b7a309d14dc5b2e46c7aa2cd128c9003eceb2f457234f732e8e1b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "0c54dca78a47fa80fc59ed40ee3293478cf5576458da8355d58eb490b6449a3b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p08.png": "317b959180e779f9e3cf120875d4c7f8e50b878166a391b5b70bca74cf16465a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "74034d68d165e617b6ba06f82ee41a74292d153fc1b24f88ecadb5cd72a10a11",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024, term=upper, examDate=2024-08-18, subject=machinery, sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf, sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf はmanifestと一致する。reviewedFromPage=[8]はmanifestのPDF第8頁と一致する。原図のフッター『T1－K 008』と冊子ノンブル『-5-』はこの頁の表示と矛盾しない。",
+        "問題文: 原図と一字ずつ照合した。『回転界磁形同期電動機』『対称三相交流電圧』『励磁された回転子磁極』『平均トルクは零』『回転子の磁極面に(ア)を施す』『(イ)と同じ起動原理』『誘導トルク』『回転磁束によって誘導される高電圧』『(ウ)を抵抗で短絡して起動』『この短絡を切り放し(エ)で励磁』『同期速度に引き込まれる』はすべて原文どおりで、脱落・改変はない。原図の四角囲み空欄は本文中の(ア)〜(エ)として表記されている。",
+        "選択肢: 原図の表を行ごとに照合し、(1)〜(5)の4空欄×5肢、計20セルが候補のchoicesと完全に一致した。(1)補償巻線/巻線形誘導電動機/界磁巻線/交流、(2)制動巻線/かご形誘導電動機/界磁巻線/直流、(3)制動巻線/巻線形誘導電動機/界磁巻線/交流、(4)制動巻線/かご形誘導電動機/固定子巻線/直流、(5)補償巻線/かご形誘導電動機/固定子巻線/直流。",
+        "公式正答: 公式解答表『令和6年度 上期』機械欄の問5は『2』である。manifest固定の正答単位{question:5, answer:'2'}および候補のofficialAnswer='2'と一致する。",
+        "総合解説: 平均トルク零により自己始動できないこと、制動巻線(かご形導体)による誘導電動機原理での起動、多巻数の界磁巻線に誘導される高電圧と抵抗短絡による絶縁保護、同期速度付近での直流励磁による引き入れ、という因果連鎖を検算し、誤りはなかった。『単純短絡すると始動特性が悪化する』は、直接短絡時に界磁巻線が単相巻線として働き、半速度付近でトルクが低下する(ゲルゲス現象)ことを簡潔に述べたもので、標準的な教科書知識の範囲内であり誤りではない。",
+        "肢別解説: 各肢の誤り箇所数を正答(2)と照合した。(1)は(ア)(イ)(エ)の3箇所が誤りで(ウ)のみ正しい。(3)は(イ)(エ)の2箇所が誤り。(4)は(ウ)の1箇所が誤り。(5)は(ア)(ウ)の2箇所が誤り。いずれも候補の記述と一致する。補償巻線を直流機の電機子反作用対策とする説明、固定子巻線を三相交流の印加側とする説明はどちらも正確である。",
+        "図: 本問は文章と組合せ表のみで、回路図・構造図はない。表の内容はchoicesにすべて転記されているため、figureUrls=[]とchoiceFigureUrls={}は妥当である。figureDescriptionの表構成の記述は原図と一致する。",
+        "参考資料: officialReferenceUrlsは空である。外部の独立主張がないため、検証を要する外部確認事項はない。"
+      ]
+    }
+  ]
+}

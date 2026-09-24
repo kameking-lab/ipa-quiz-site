@@ -1,0 +1,82 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6075,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 39360,
+      "webSearchRequests": 0,
+      "costUSD": 0.43664379999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3941,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "248ee15d2867091c5e328e521f85200c3ccdda710dbcf2cf78d6542c60766b32",
+  "inputRequestSha256": "f0fc42f9baaba7c04e87d0184d564f7cee98dfdd550f454e63622e0fc8915d85",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "5ecc1baf043da91de2feaadcf881d6d56ee0c437452589a6bf37be44944d9023"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p06.png": "45285660e7e34b4fd323061b0e142882867f63ca41a026afcdda298889e5258f",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "e7ec82631490ca53cc72fca622cf5fd252fdb8243298d6500a584abacb476fe3",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-houkoku-rule-240415.pdf": "b355e08002ea585205bdf6b96b74be16ffd49de1aedac4a4273a011b4eee7f78"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p001.png": "65f090dda9f1278a0cdef291aeebdab66f2bde38ef7ca6afe7c4df27b5ae00a4",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p006.png": "2400ca67cc63afe5b6d74465ac4f38466073e78035551a69b9e4088562f1ca57",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p008.png": "18b97c532988523abbf5274f65a8f2c719d018d634333e16011d0eef95d73202",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p009.png": "af135fa48fb513ed63195d72b4dd2c5b67a98ca7fa23880a55aaf3755a516922",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p011.png": "22dd1333e978a422c35cfaa2134e3a134b328dfd183081881cec9c0ad9039f01",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p012.png": "53b97524ccc68faf87baa738f54318783dcc93a0c5287a07d346f00ef4853315",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p021.png": "697947616c9fc40dfb26b8cfb781dd9cdbd4e2031cf86a93acc6ba5bb807bf94",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p022.png": "57d1d31a092cf61337c8d58e2c7fd1670544c16a813af278ef61d45eb805cf0f"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は冒頭で「経済産業省の2024年4月15日改正の運用資料で確認すると」と述べ、令和6年4月15日改正版を判断根拠として示している。しかし問題冊子の注3によれば、本試験は令和6年4月1日現在で効力のある法令に基づいて作成されている。基準日より後の改正版を唯一の根拠として示すと、出題基準との対応が不正確になる。解説に出題基準日（令和6年4月1日）を明記し、そのうえで、使用した第1号・第2号・第3号・第4号ヌ・第5号・第12号の規定が基準日時点と同一であることを、根拠資料とともに示す必要がある。",
+        "解説は規則第3条第1項の表の各号を、経済産業省の内規である「運用について」を通じて説明している。規則本文の条文そのものに当たったかどうかが区別されていない。運用資料が引用している表の文言で判断したことを明示するか、基準日時点の規則本文で裏付けること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls は、令和6年4月15日改正（20240403保局第2号）の「電気関係報告規則第3条及び第3条の2の運用について」だけを指している（PDF第1頁の改正履歴で確認）。一方、本試験の法令基準日は令和6年4月1日である（法規冊子の注3）。添付資料の範囲では、4月15日改正で何が変わったか、4月1日時点で第1号・第2号・第3号・第4号ヌ・第5号・第12号および運用上の留意点（自動再閉路の除外、地域独立系統の除外、第3号③の自然現象の除外）が同一文言だったかを検証できない。そのため外部確認事項として記録する。基準日時点で有効だった版（前回改正の令和5年3月20日版など）の該当頁を添付して照合するか、改正内容が本問の論拠に影響しないことを公式資料で確認すること。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表（令和6年度上期・法規）の問2は4。候補の officialAnswer=4 と一致する。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=law、reviewedFromPage=[6]、問題PDF・解答PDFのURL、sourceAttribution（令和6年度上期 法規 問2）はいずれも manifest と一致する。",
+        "問題文・選択肢: 原図（PDF第6頁、冊子p.3）と照合した。問題文と(1)〜(5)は全文一致しており、6 600 V、200 V、100 V、構内1号柱、高圧負荷開閉器、一般送配電事業者などの数値・語句に誤りはない。句読点「，」が「、」に変わっているのは整形による差で、内容は変わっていない。図は無く、figureUrls が空であることも妥当。",
+        "(1): 運用資料PDF第9頁で確認した。第3号は、電気工作物の破損等により他の物件に損傷を与えた事故を対象とする。語句解釈①で「他の物件」は第三者の物件とされ、②ロに「支持物の傾斜、折損等による家屋等の損壊」が例示されている。したがって報告対象であり、候補の記述は正しい。",
+        "(2): 運用資料PDF第6頁で確認した。第1号は、感電等により人が死傷した事故のうち死亡又は病院・診療所への入院に限る。電圧による限定は無く、入院があるので報告対象。候補の記述は正しい。",
+        "(3): 運用資料PDF第8頁で確認した。第2号は電気火災事故で、工作物については半焼以上に限る。語句解釈①は漏電による発火を含み、③で半焼は延床面積の20%以上70%未満とされる。建屋の半焼は要件を満たす。電気工作物それ自体の火災のみの場合の扱い（破損事故として扱う）は本肢には当たらない。候補の記述は正しい。",
+        "(4): 運用資料PDF第11頁で確認した。第4号ヌは「電圧一万ボルト以上の需要設備（自家用電気工作物を設置する者に限る。）」であり、第5号イ〜ハには需要設備の区分が無い。受電6600Vの需要設備にある誘導電動機の損壊は主要電気工作物破損事故に当たらない。また、自社設備であるため第3号の「他の物件」（PDF第9頁①）にも当たらず、死傷・火災・供給支障も無い。したがって報告対象外で、公式正答4と整合する。",
+        "(5): 運用資料PDF第21頁で確認した。第12号は、一般送配電事業者等の電気工作物と電気的に接続された電圧3000V以上の自家用電気工作物の破損事故等により、一般送配電事業者等に供給支障を発生させた事故を対象とする。表の文言に支障電力や時間の下限は無い。運用上の除外は、同頁①の自動再閉路成功の場合と、PDF第22頁③の地域独立系統の場合だけで、落雷起因の除外は無い。第3号③の自然現象除外と落雷の例示（PDF第9頁）は他物損事故についての規定であり、候補がこれを第12号と区別している点は正しい。",
+        "PDF第12頁で確認した。語句解釈②の「破損事故」の定義（運転停止や使用不能に至るもの）により、高圧負荷開閉器の破損は第12号にいう破損事故に当たり得る。候補の(5)の記述と矛盾しない。",
+        "officialReferenceUrls の #page=1,6,8,9,11,12,21,22 は、添付資料のPDF頁番号（印刷頁番号+1）と一致する。各頁に、候補が主張する内容が記載されていることも確認した。"
+      ]
+    }
+  ]
+}

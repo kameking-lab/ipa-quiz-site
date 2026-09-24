@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2653,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14885,
+      "webSearchRequests": 0,
+      "costUSD": 0.1724038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1191,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8e4104e5192f9c42792df483f64c473890f36724254a80a85d369aeb58afc4ea",
+  "inputRequestSha256": "6dbbcfd199277077026d838eea06e4ce5a4b5da3f59adc70fe69c4afd8b8facc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "c2b5978bf77505eb65b697811cb04ec7820a22809aae36a73566de67e8f488f9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p16.png": "c66d410d45a15bc50aa3859442535674fca327511c18428fdb3780d0cf323a08"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』は fiscalYear=2025・term=lower と一致する。examDate=2026-03-22、subject=power、問題PDF(q02)と解答PDF(a01)のURLも manifest と一致する。",
+        "頁照合: 添付原図の印字頁は『- 13 -』、フッターは『T2-D 016』である。manifest の PDF第16頁と整合し、reviewedFromPage=[16] は正しい。",
+        "問題文: 原図と字句を照合した。定格容量200 kV·A、出力P=120 kW、遅れ力率cosθ=0.6、並列増設負荷の力率0.6、進相コンデンサにより遅れ力率0.8へ改善、求める量は皮相電力S′[kV·A]である。いずれも一致し、数値・単位・遅れ/進みの極性に相違はない。",
+        "選択肢: 原図は (1)93.3 (2)120 (3)66.7 (4)160 (5)40 である。候補の全5肢と順序・数値が一致する。",
+        "公式正答: 公式解答表の電力・問13は解答3・配点5である。候補の officialAnswer='3' と scoringPoints=5 は一致する。",
+        "総合解説の検算(既設負荷): S₁ = 120/0.6 = 200 kV·A、Q₁ = 200×0.8 = 160 kvar。",
+        "総合解説の検算(改善後の上限): P = 200×0.8 = 160 kW、Q = 200×0.6 = 120 kvar。",
+        "総合解説の検算(増設負荷): P′ = 160−120 = 40 kW、S′ = 40/0.6 = 200/3 ≒ 66.67 kV·A。",
+        "総合解説の検算(コンデンサと合成値): Q′ = 40×0.8/0.6 = 160/3 kvar、Qc = 160+160/3−120 = 280/3 ≒ 93.3 kvar。合成 √(160²+120²) = 200 kV·A、合成力率 0.8。すべて正しい。",
+        "因果の妥当性: 進相コンデンサは有効電力を変えない。改善後の力率を0.8に固定すると、合成皮相電力は合成有効電力に比例する。したがって上限は合成皮相電力=200 kV·Aで決まる。この論理は正しい。",
+        "肢(1): 93.3 は Qc と同値である。93.3 kV·A を増設すると P は約56 kW、合計176 kW、176/0.8 = 220 kV·A となり、200を超える。正しい。",
+        "肢(2): 120 kV·A を増設すると P = 72 kW、合計192 kW、192/0.8 = 240 kV·A となり、200を超える。120 kW(既設有効電力)および120 kvar(改善後の無効電力)との同値指摘も正しい。",
+        "肢(3): 正答理由は上記の計算と一致する。",
+        "肢(4): 160 kV·A を増設すると P = 96 kW、合計216 kW となり、力率1でも200 kV·Aを超える。正しい。",
+        "肢(5): 40 は P′ と同値である。40 kV·A の負荷は P = 24 kW、Q = 32 kvar で、合成は 144/0.8 = 180 kV·A となり可能だが上限ではない。この説明は正しく、問題文『増設できる』の上限解釈とも整合する。",
+        "図: 原図に図はない。figureUrls=[]、choiceFigureUrls={}、figureDescription は妥当である。",
+        "参考URL: officialReferenceUrls=[] で、検証を要する独立主張はない。sourceAttribution の年度・期・科目・問番号は正しい。"
+      ]
+    }
+  ]
+}

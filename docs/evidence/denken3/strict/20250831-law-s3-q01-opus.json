@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3799,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21688,
+      "webSearchRequests": 0,
+      "costUSD": 0.24974779999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1994,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "72ac4b8de38e15ad758ad96fcd2fece0b15bef9792fe574d4874ea6024fd9dcd",
+  "inputRequestSha256": "30683ad47a759ba47a75307f9ae26e9ae1118fb00753fdf13c0ab60763c97da4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4c5d2f85d7846c7eaa6441b10d54f09bc7999e7616510297f5bd4b4370773ccd"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe",
+      "data/raw_pdfs/denken3/review/20250831/law/p05.png": "d0a3b0e702a7d10c4bc35d51d6ca370b4b1f76dda9b6e09b1edb93cdd0e162ac"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c98c3800e2485a6fe3ab2f0e50a30ac3808618cdda96a7241de506e92857a39c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は、問題文前半が電気事業法第28条の44第1項に対応すると断定しています。この判断は「推進機関」＝「電力広域的運営推進機関(OCCTO)」という同一性を前提にしています。しかし候補自身のuncertainty欄のとおり、この略称の定義規定は添付の条文（第28条の44・第31条・第34条の2）に含まれていません。そのため、(ア)「業務規程」が『電力広域的運営推進機関の』業務規程であるという結論も、添付資料だけでは閉じていません。定義条項（電気事業法中の推進機関の定義規定。第28条の4付近と推測されますが未検証）の原文を公式参考資料として添付・引用し、解説でその同一性を明示する必要があります。",
+        "uncertainty欄に未解消の確認事項が記載されている一方で、needsReviewがfalseになっており、内部で矛盾しています。定義条項を検証して確認事項を解消するまでは、needsReviewをtrueにする必要があります。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（e-Gov 電気事業法 occasion_date=20250401）に依拠する独立主張「推進機関＝電力広域的運営推進機関(OCCTO)」は、添付された公式参考資料の原頁（第28条の44・第31条・第34条の2の抜粋）では検証できません。添付の問題原図・解答原図にもこの対応関係を示す記載はありません。推進機関の定義規定の原文を施行時点2025-04-01版で取得し、添付して検証する必要があります。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図PDF第4頁の問1本文（OCCTOの指示に関する段落、経済産業大臣の命令に関する段落）と、第5頁の設問文「上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして，適切なものを次の(1)〜(5)のうちから一つ選べ。」を一字ずつ照合し、候補questionと一致しました（空欄位置(ア)(イ)(ウ)、「かつ適切であると認めるときは」の読点の有無も原図どおり）。",
+        "選択肢：原図PDF第5頁の表の5行3列（(1)保安規程/会員/電気事業者、(2)保安規程/事業者/一般送配電事業者、(3)送配電等業務指針/特定事業者/特定自家用電気工作物設置者、(4)業務規程/事業者/特定自家用電気工作物設置者、(5)業務規程/会員/電気事業者）が、候補choicesの全肢と一致しました。",
+        "公式正答：解答PDF原図の法規・問1は解答5・配点6です。manifest固定正答 {question:1, part:null, answer:\"5\", points:6} とも、候補のofficialAnswer=\"5\"・scoringPoints=6とも一致しました。",
+        "第28条の44第1項（添付原文）：「業務規程で定めるところにより、会員に対し」指示できること、第1号〜第5号の内容、ただし書の制限（第1号は送電事業者である会員、第2号は小売・発電・特定卸供給事業者である会員、第3号は送電・発電・特定卸供給事業者である会員には指示不可）が、解説の記述と一致しました。「相互に電気の供給」「電気工作物を共用」を第1・3・4号に対応させた点も条文と整合します。",
+        "第31条第1項（添付原文）：命令の相手方が「電気事業者」であること、第1号〜第5号、ただし書の制限が、解説の記述と一致しました。第2項が特定自家用電気工作物設置者に対する「勧告」の規定であること（肢3・4の誤り理由）も原文と一致しました。",
+        "誤答肢の理由：(1)は(ア)のみ誤り、(2)は(ア)(イ)(ウ)とも誤り、(3)は(ア)(イ)(ウ)とも誤り、(4)は(イ)(ウ)が誤りで、いずれも各肢固有の理由として条文と整合しています。(5)は全空欄が条文と一致します。",
+        "図：本問は図を持たず、選択肢表の内容はchoicesにすべて転記されています。figureUrls=[]・choiceFigureUrls={}で解答に支障はありません。",
+        "メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、sourceQuestionPdfUrl／sourceAnswerPdfUrl、reviewedFromPage=[4,5]がmanifestと一致しました。sourceAttributionの年度・期・科目・問番号も一致しました。",
+        "効力基準日：法規冊子の注3「令和7年4月1日現在，効力のある法令」と、参照URLのoccasion_date=20250401が一致しました。"
+      ]
+    }
+  ]
+}

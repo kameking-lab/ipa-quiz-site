@@ -37,3 +37,14 @@
 - `py -3.12 scripts/denken3-strict-status.py` は原稿SHA、公式資料SHA、公開図SHA、モデル実IDと生応答SHA、全issue空を再照合し、現ブランチの厳格PASSが22/320と出る。`py -3.12 scripts/denken3-validate.py --local-pdfs --partial` もPASS。
 - 2024年度上期の残り3科目と下期4科目は未受入。2025年度は別worktreeで進行中。全16科目・320公開解答単位と画面品質のゲートを満たすまで公開しない。
 - ユーザーは試験センターへの利用状況連絡等を完了済みとして公開まで進めるよう指示した。送信日時や受付番号は未提示のため作成しない。
+
+## 2026-09-24 Linux継続（claude/denki3-two-year-continuation-nm3yuk）
+
+- 実行環境に依存しない共通部 `scripts/denken3_cli.py` を追加。`claude` CLI を OS 非依存で解決し、親セッション変数を外して `CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1` で起動する。`modelUsage` に `claude-opus-5-5`（firstParty）以外が1件でもあれば結果を採用しない。草稿生成・修正・独立査読・厳格査読の全段がこれを通る（草稿は従来の sonnet から Opus 5.5 に変更）。
+- 生応答は非追跡の `data/raw_pdfs/denken3/review/` と、同一バイトの追跡ミラー `docs/evidence/denken3/raw/`（`.gitattributes` で `-text`）に保存する。`denken3-strict-status.py` は私有側→追跡側の順で生応答を探す。旧作業環境の非追跡領域にしか生応答がない既存単位は `passRawNotInCheckout` として別計上し、strictPass には数えない。
+- 旧レシートは Windows の CRLF 作業コピーでハッシュされていたため、`denken3-validate.py` と binder は LF/CRLF 双方の digest を受け付ける。どの版とも一致しなかった部分受入2件（2024上期法規問2、理論問15）は、行の正準JSONが厳格PASSの candidateSha256 と一致することを確かめた上でファイル digest だけ再固定し、`reviewedDataSha256Repair` に理由を残した。
+- `scripts/denken3-restore-private.py` で新しいチェックアウトから私有ツリー（公式PDF、頁画像、参考資料頁、e-Gov、図切出し）を再構築できる。頁画像・図切出しは既存レシートのSHAとバイト一致を確認済み。例外：e-Gov パブコメ抜粋PDF（2024上期法規問8で使用）は現在 HTML を返し取得不能、2024下期法規問11の旧 p15.png は再現不能。
+- `scripts/denken3-pipeline.py`：問ごとに 草稿→独立査読→（FIXなら修正、最大4回）→昇格→厳格直接査読→（FIXなら撤回・修正・再査読、最大3巡）を回し、収束しない問は HOLD のまま残す。`denken3-revise-draft.py`（独立査読または `--strict` 厳格レシートへの回答、旧草稿・旧査読を archive へ退避し改訂履歴にOpusレシートを残す）、`denken3-withdraw-candidate.py`（厳格PASS未結合の候補だけ撤回可）。
+- 法規は問題冊子の注3「令和X年4月1日現在、効力のある法令（解釈を含む）」が基準日。2024年度（2025-03-23実施）は令和6年4月1日→解釈は令和5年12月26日改正版、2025年度（上期・下期とも）は令和7年4月1日→令和6年10月22日改正版。各改正の施行日は統合版PDF末尾の附則一覧（20241022-2.pdf 第237頁、dengikaishaku.pdf 第239頁）で確認し、法令は e-Gov API v2 の asof=基準日スナップショットを固定する。法規の査読には注3の頁を常に添付する。
+- 厳格査読の依頼文に manifest 固定の年度・期・試験日・科目・PDF頁番号を入れた（試験日が原図に無いことによる FIX の防止）。
+- 2025年度の図は描画クラスタ検出で切り出し、オーバーレイ一覧で全数目視、ラベル欠け・本文混入は手で矩形を修正。(a)/(b) 専用図は `part` で割当。

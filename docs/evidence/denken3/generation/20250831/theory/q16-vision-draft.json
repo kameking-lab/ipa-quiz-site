@@ -23,7 +23,7 @@
       },
       "figureDescription": "図の範囲：永久磁石可動コイル形電流電圧計内部の接続を示す回路図1枚。\nラベル：上辺の電線に右向き矢印「4 mA」、破線の楕円で囲まれた抵抗「r = 5 Ω」（下に「コイル」）、上辺右側の抵抗「R₃[Ω]」、縦向きの抵抗「R₀ = 19 Ω」、中段の抵抗「R₁[Ω]」「R₂[Ω]」、破線の四角で囲まれた端子「A」「B」「C」（下に「切り替えスイッチ」）、下端の端子「＋」「－」。接続点の黒丸は4個。\n接続：＋端子から左側の縦線が上に伸び、上端でコイル r の左端に、途中の接続点（黒丸）で R₁ の左端につながる。コイル r の右端の接続点（黒丸。図中に名前はなく、解説では節点 P と呼ぶ）から、右へ R₃ を経て右辺を下り、左へ折れて端子 C に至る経路と、下へ R₀ を経て接続点（黒丸。解説では節点 Q と呼ぶ）に至る経路に分かれる。節点 Q はそのまま下へ伸びて端子 B につながる。R₁ の右端の接続点（黒丸。解説では節点 M と呼ぶ）から下へ伸び、右へ折れて端子 A につながり、M と Q の間に R₂ が接続されている。切り替えスイッチの可動片は－端子に接続され、図では端子 A 側に倒れた状態で描かれている。\n必要性：スイッチ位置ごとに、どの抵抗がコイルと直列・並列（分流器）になるかは図の接続からのみ判断でき、問題文だけでは解けない。",
       "officialReferenceUrls": [],
-      "uncertainty": "問題ページには試験の実施年度・回次・試験日が記載されておらず、本データではこれらを確定情報として扱わない。問題文・図・数値・正答については未解消の不確実性はない。",
+      "uncertainty": "試験の実施年度・回次・試験日は本問の問題ページ（印刷頁「- 16 -」、フッタ「T1－R 019」）に印字されておらず、このページからは確認できない。問題文・図・数値・正答については未解消の不確実性はない。",
       "needsReview": true,
       "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
       "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
@@ -52,7 +52,7 @@
       },
       "figureDescription": "図の範囲：永久磁石可動コイル形電流電圧計内部の接続を示す回路図1枚。\nラベル：上辺の電線に右向き矢印「4 mA」、破線の楕円で囲まれた抵抗「r = 5 Ω」（下に「コイル」）、上辺右側の抵抗「R₃[Ω]」、縦向きの抵抗「R₀ = 19 Ω」、中段の抵抗「R₁[Ω]」「R₂[Ω]」、破線の四角で囲まれた端子「A」「B」「C」（下に「切り替えスイッチ」）、下端の端子「＋」「－」。接続点の黒丸は4個。\n接続：＋端子から左側の縦線が上に伸び、上端でコイル r の左端に、途中の接続点（黒丸）で R₁ の左端につながる。コイル r の右端の接続点（黒丸。図中に名前はなく、解説では節点 P と呼ぶ）から、右へ R₃ を経て右辺を下り、左へ折れて端子 C に至る経路と、下へ R₀ を経て接続点（黒丸。解説では節点 Q と呼ぶ）に至る経路に分かれる。節点 Q はそのまま下へ伸びて端子 B につながる。R₁ の右端の接続点（黒丸。解説では節点 M と呼ぶ）から下へ伸び、右へ折れて端子 A につながり、M と Q の間に R₂ が接続されている。切り替えスイッチの可動片は－端子に接続され、図では端子 A 側に倒れた状態で描かれている。\n必要性：スイッチ C のとき、R₀・R₂・R₁ を直列につないだ経路（計 20 Ω）がコイルと並列になり、R₃ がその先に直列の倍率器として入ることは図の接続からのみ判断でき、問題文だけでは解けない。",
       "officialReferenceUrls": [],
-      "uncertainty": "問題ページには試験の実施年度・回次・試験日が記載されておらず、本データではこれらを確定情報として扱わない。問題文・図・数値・正答については未解消の不確実性はない。",
+      "uncertainty": "試験の実施年度・回次・試験日は本問の問題ページ（印刷頁「- 16 -」、フッタ「T1－R 019」）に印字されておらず、このページからは確認できない。問題文・図・数値・正答については未解消の不確実性はない。",
       "needsReview": true,
       "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
       "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
@@ -149,6 +149,40 @@
       "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-opus-review-v2.json",
       "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s2-q16a-q16b-opus.json",
       "answeredStrictReceiptSha256": "e6bac89b8d8f3bb866efd26b721357373f22521bd3cb262c06fa7a95f7aa7081",
+      "figureSha256": {
+        "20250831-theory-q16-fig1": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7921,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18467,
+          "webSearchRequests": 0,
+          "costUSD": 0.3064198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2413,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4bc733e9175330bb0d0ed498b816c89f04f04aec5d652f073b32ff5657cd3725",
+      "inputRequestSha256": "86d603c68bbed202e2062e0e80c8b49c23c0a9f22d8777220442fbc9f700c91d",
+      "previousDraftSha256": "4775ce488b579474a4e46b2b8cb07f5223c8ba0963fcfbc583a7e0a8c50f6248",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-vision-draft-v3.json",
+      "answeredReviewSha256": "d92c6cf74cb30599ae4f18dfae64db3ae9763a5119302c409a3fab4cff675b9f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q16-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s3-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "940c880bf65e7198b8a8ca89c533ee91277900c6f0f5f5b991ca8dca4de08be0",
       "figureSha256": {
         "20250831-theory-q16-fig1": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
       },

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2556,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13918,
+      "webSearchRequests": 0,
+      "costUSD": 0.1627278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1262,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "51755b97054178faad0fe66c5e58a272caac2477039b124fc09716a249c11303",
+  "inputRequestSha256": "95301ee6d03ff108e7ddf813f28d5f814f4ea99ccffa86e0ddb6f07b9cd4fce1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "254c1535df8174f10eb4d31c641efd57ff38e1c5c8c0c769d0d820271c44bc92"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p19.png": "4081a455b0fab972bb4733b49918e166698a1a65f2abb5bfd085105905d257fc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "6d10e4929aa76f1345880f8ef7bd37d4b8041a5825d18c5d99ed0a0235a998c4",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 問題原図の頁下部は「-16-」「T1－K 019」で、manifest固定のPDF第19頁と一致する。reviewedFromPage=[19]、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、問題PDF URL（q03）、解答PDF URL（a01）、sourceAttribution（令和6年度上期 機械 問14）はいずれもmanifestと一致する。",
+        "問題文: 原図の全文と照合した。ビットパターン1101・1011、ExOR→(ア)、NOR→(イ)、(ア)と(イ)のOR→(ウ)、1011と(ウ)のExOR結果を16進数で表す→(エ)、の構成と語句は原図どおりで、欠落・改変はない。",
+        "選択肢: 原図の表と全肢を照合し、すべて一致した。(1) 1001/0110/1001/9、(2) 0110/0000/1111/D、(3) 1001/1111/1001/F、(4) 0110/1111/1001/9、(5) 0110/0000/0110/D。",
+        "公式正答: 試験センター解答表の＜機械＞問14は5。候補のofficialAnswer=5、および公式正答単位{question:14, part:null, answer:\"5\"}と一致する。",
+        "検算(ア): 1101 XOR 1011 を上位ビットから計算すると 1⊕1=0、1⊕0=1、0⊕1=1、1⊕1=0 で 0110。",
+        "検算(イ): 1101 OR 1011 = 1111 で、これを反転した NOR は 0000。",
+        "検算(ウ): 0110 OR 0000 = 0110。",
+        "検算(エ): 1011 XOR 0110 を上位ビットから計算すると 1⊕0=1、0⊕1=1、1⊕1=0、1⊕0=1 で 1101₂。これは13₁₀なので16進数でD。組合せ(0110, 0000, 0110, D)は選択肢(5)に一意に一致する。",
+        "誤答肢の理由(1): (ア)1001、(イ)0110、(ウ)1001、(エ)9 の4つすべてが正値と不一致。記述は正しい。",
+        "誤答肢の理由(2): (ア)(イ)(エ)は正値と一致し、(ウ)1111のみが誤り。補足の検算 1011 XOR 1111 = 0100 = 4₁₆ も正しく、記述は正しい。",
+        "誤答肢の理由(3): (ア)1001、(イ)1111、(ウ)1001、(エ)F の4つすべてが正値と不一致。記述は正しい。",
+        "誤答肢の理由(4): (ア)0110は正値と一致し、(イ)1111、(ウ)1001、(エ)9 は不一致。記述は正しい。",
+        "正答肢の理由(5): 4つの空欄すべてについて、根拠となる計算が正しい。",
+        "図: 原図に回路図などの図版はない。選択肢の表は候補のchoicesにテキストとして完全に再現されているため、figureUrls=[]・figureDescription=null で解答に支障はない。",
+        "参考資料: officialReferenceUrls=[] で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

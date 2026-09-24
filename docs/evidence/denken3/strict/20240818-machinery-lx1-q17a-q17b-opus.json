@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4158,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16866,
+      "webSearchRequests": 0,
+      "costUSD": 0.21835179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2587,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9ed883f8a979cab0a758ca2d8507533a5f2080668b29f281206b0bc894928adf",
+  "inputRequestSha256": "0a5ee4c5ab05ec7d9bbfd2cfc46fb10b7d766274e3ff1aac90521791b7428640",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "4a575a9c80d33a9712c4002ec7b82d8cfbe78ce5ecde93de67ef6a45067f5ee6",
+      "q17b": "7570c29abd7fe082c3d4c562060c4ebc38efebd8318354d0756594c9302b2bf9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p24.png": "75ed25a700c3497342e203b50a04d637b9e221fa4a4f8209b3d1fddb9fda691e",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p25.png": "f7ca2c56c43cab3bd4c44a87855190ba3e9f3a6319b18638a218f331bf8a9da4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "6d2e7d55078def3ba800eeef934256f4c10ed588cd9da52acc4ce645ac65a367",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 問題原図は冊子頁「- 21 -」「- 22 -」、管理番号「T1－K 024」「T1－K 025」。manifestのPDF第24・25頁と一致する。候補のreviewedFromPage=[24,25]、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、問題PDF URL、解答PDF URLもmanifestと一致する。",
+        "公式正答: 解答表「令和6年度 上期」機械欄の問17(a)は2。候補のofficialAnswer=\"2\"と一致する。",
+        "問題文: 原図21頁と照合した。選択問題の注記、均等放射の球形光源、直径30cm、床から中心まで3m、全光束12000lm、直下の水平面照度[lx]、反射光の影響なしの各条件が、欠落・改変なく転記されている。",
+        "選択肢: (1)35、(2)106、(3)142、(4)212、(5)425。原図と完全に一致する。",
+        "総合解説の検算: I=12000/(4π)=954.93cd。E=I/3²=954.93/9=106.10lx。よって(2)。均一輝度の球の外部では照度は中心からの距離で逆二乗則に従うため、r=3m(中心基準)は正しい。",
+        "誤答肢の検算: (1) 954.93/27=35.37。(4) 12000/(2π)/9=1909.86/9=212.21。(5) 12000/(9π)=424.41。いずれも記載どおり一致する。(3)は正しい計算値106.1lxと一致しないという理由付けで、事実誤りはない。参考として、142は12000/(27π)=141.5に一致する。",
+        "図: 問17(a)に図はなく、figureUrls=[]、figureDescription=nullで妥当。officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 原図22頁(管理番号T1－K 025、PDF第25頁)が(b)を含む。reviewedFromPage=[24,25]を含め、年度・期・試験日・科目・両PDF URLはmanifestと一致する。",
+        "公式正答: 解答表の機械欄、問17(b)は1。候補のofficialAnswer=\"1\"と一致する。",
+        "問題文: 原図22頁と照合した。「球形光源の光度の値[cd]と輝度の値[cd/m²]との組合せとして、最も近いもの」は忠実に転記されている。共通前文(直径30cm・高さ3m・全光束12000lm)も原図21頁と一致する。",
+        "選択肢: 原図の表と照合した。(1)955/13500、(2)955/3380、(3)1910/1010、(4)1910/27000、(5)3820/13500の光度・輝度の対応はすべて一致する。",
+        "総合解説の検算: I=12000/(4π)=954.93cd。投影面積はπ×0.15²=0.070686m²。L=954.93/0.070686=13509cd/m²≒13500。よって(1)。",
+        "誤答肢の検算: (2) 4π×0.15²=0.28274m²、954.93/0.28274=3377≒3380。(3)(4) 12000/(2π)=1909.86cd。(4) 1909.86/0.070686=27019≒27000。(5) 12000/π=3819.7cd。いずれも記載どおり一致する。(3)の輝度1010が正しい値13500と一致しないという指摘も正しい。",
+        "図: (b)は表形式の選択肢のみで図はない。表の内容はchoicesに行単位で正しく展開されており、figureUrls=[]で妥当。officialReferenceUrlsは空で、外部確認事項はない。"
+      ]
+    }
+  ]
+}

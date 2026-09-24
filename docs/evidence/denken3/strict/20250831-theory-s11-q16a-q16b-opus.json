@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5404,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19099,
+      "webSearchRequests": 0,
+      "costUSD": 0.26113580000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2909,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "34ca144806631948644f10b28c1b1322b0f0e9c0c6322a9ddda5e3b3c2acb063",
+  "inputRequestSha256": "2335b59b8f2c9b2d27192ad1c16344d52863b03edaa4e172e4e92190f4a0d4ab",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "a7e2f303c4db437ddd980e7c9743f4a44159e65515362fd5c642262ba64ea960",
+      "q16b": "ea4f9bb30d3ae294c193879723380cd946173248c4e8b3ef07164b56e9fbea4a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p19.png": "5885bbad7b51bf9f4f172e31bd3a2e5e19bc033244c18d33de09777edbfca849"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q16-fig1.png": "076f6ef5cbb10352f9de60450fc60e54d042a5642c8750951fa743c2dad6eb50"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a56a1e28c8a1e77d4386ae0febe4357f89bd3b41749030699517cd0838f3ee5e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：manifest の問題PDF 20250831_ch_third_q01.pdf、PDF第19頁（印刷頁「- 16 -」、フッタ「T1－R 019」）と一致。reviewedFromPage=[19]、fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、sourceAttribution「令和7年度上期…理論科目 問16(a)」はいずれも manifest と一致。公式解答表の見出し「令和7年度 第三種電気主任技術者上期試験解答」とも整合する。",
+        "uncertainty 欄の「年度・回次・試験日は問題ページに印字されていない」は事実として正しい。ただし年度・回次・試験日は manifest と公式解答表の見出しで確定しているため、未解消の外部確認事項は残らない。",
+        "問題文：前文、r = 5 Ω、最大 4 mA、条件Ⅰ（A, 1 A）・条件Ⅱ（B, 100 mA）・条件Ⅲ（C, 1.2 V）、設問(a)の文言は原図と一致。",
+        "選択肢：(1)0.1 (2)0.9 (3)4 (4)9.6 (5)9.96 は原図と全肢一致。",
+        "公式正答：公式解答表の理論 問16(a) は解答 1・配点 5。officialAnswer=\"1\"、scoringPoints=5 と一致。",
+        "回路接続（原図で確認）：＋側の縦線はコイル r の左端と R₁ の左端（黒丸）につながる。r の右端の節点 P から R₃ を経て端子 C へ、R₀ を経て節点 Q へ分かれる。Q は R₂ の右端につながり、端子 B へ下りる。R₁ と R₂ の間の節点 M は端子 A へつながる。可動片は－端子につながる。黒丸は 4 個。",
+        "スイッチ B：r+R₀ = 24 Ω の経路に 4 mA が流れ、端子間電圧は 0.096 V。分流側の電流は 0.096 A なので R₁+R₂ = 1 Ω。R₃ は C が開放のため無電流。",
+        "スイッチ A：分流側は R₁（0.996 A）、コイル経路は 24+R₂。式 0.004(24+R₂) = 0.996R₁ に R₂ = 1−R₁ を代入すると 0.1 = R₁、よって R₁ = 0.1 Ω、R₂ = 0.9 Ω。検算 0.0996/0.1 + 0.004 = 1 A も正しい。",
+        "誤答肢の理由：(2) R₁ = 0.9 のとき 0.004 + 0.004×24.1/0.9 = 0.1111 A ≒ 0.111 A で数値は正しい。(3)〜(5) は R₁+R₂ = 1 から R₂ がそれぞれ −3、−8.6、−8.96 Ω となり、いずれも計算が正しい。",
+        "公開候補図：原図の回路部分を欠けなく切り出している。全ラベル（4 mA と右向き矢印、r = 5 Ω、コイル、R₃[Ω]、R₀ = 19 Ω、R₁[Ω]、R₂[Ω]、A・B・C、切り替えスイッチ、＋、－）と黒丸 4 個、スイッチ可動片が A 側に描かれている点まで原図と一致し、候補図だけで解答できる。figureDescription の接続記述も図と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：manifest の問題PDF 20250831_ch_third_q01.pdf、PDF第19頁と一致。reviewedFromPage=[19]、fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、sourceAttribution「令和7年度上期…理論科目 問16(b)」はいずれも manifest と公式解答表の見出しに整合する。",
+        "uncertainty 欄の記述は事実として正しく、年度・回次・試験日は manifest で確定しているため、未解消の外部確認事項は残らない。",
+        "問題文：前文と条件Ⅰ〜Ⅲ、設問(b)「抵抗 R₃ の値[Ω]として…」は原図と一致。",
+        "選択肢：(1)2.36 (2)23.6 (3)25 (4)236 (5)2360 は原図と全肢一致。",
+        "公式正答：公式解答表の理論 問16(b) は解答 4・配点 5。officialAnswer=\"4\"、scoringPoints=5 と一致。",
+        "スイッチ C：A と B は開放。コイル r（5 Ω）に、R₁・R₂・R₀ を直列にした経路 1+19 = 20 Ω が並列に入り、節点 P から R₃ を経て C に至る。この接続解釈は原図と一致する。",
+        "計算：コイル電圧 0.004×5 = 0.02 V、並列側の電流 0.02/20 = 1 mA、R₃ の電流 5 mA。0.02 + 0.005R₃ = 1.2 より R₃ = 236 Ω。検算：5∥20 = 4 Ω、全抵抗 240 Ω、全電流 5 mA、コイル分流 0.005×20/25 = 4 mA で正しい。",
+        "(b) の R₁+R₂ = 1 Ω の導出（スイッチ B）は (a) と同じく正しい。",
+        "誤答肢の理由：(1) 0.02 + 0.0118 = 0.0318 ≒ 0.032 V。(2) 0.138 V。(3) 0.145 V。(5) 全抵抗 2364 Ω、全電流 1.2/2364 ≒ 0.51 mA、コイル電流 ≒ 0.41 mA、4 mA に達する電圧 11.82 V。いずれも数値は正しい。",
+        "公開候補図：原図と全ラベル・接続・黒丸 4 個・スイッチ描画が一致する。R₃ が C への倍率器になり、R₁・R₂・R₀ がコイルの並列路になることを候補図だけで読み取れる。figureDescription も図と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

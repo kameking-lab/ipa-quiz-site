@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2121,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13382,
+      "webSearchRequests": 0,
+      "costUSD": 0.1497398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1148,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4bc72b2cd70b5da1a48fe7a67f02d238ce7ba55a2371c5f94e5951ea0360bc78",
+  "inputRequestSha256": "dfac84c69501bb186919e1ada836b24857a3f9702e2da7e5aae8498721322b4c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "5549e21c35b6e5069609e4f61ee889575e7adecd73cc51ce6ab04dc0d9fb4c02"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p07.png": "0b622d00f1f952376a9e444bf9cb1c3a926f9589c3d2ed13cdccb6191518e0fc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "6ae63796de43156aac580c3ce705236a987e2128a772755da6e6473c196bcbf7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第7頁、印字頁「-4-」、T1−K 007）と照合。6極、端子電圧V[V]、周波数f[Hz]、V/f比=4一定制御、66 Hz、滑り5%、回転速度[min⁻¹]はすべて一致する。句読点の全角化と min-1→min⁻¹ の表記整形だけで、意味の変化はない。",
+        "選択肢: 原図の(1) 1 140、(2) 1 200、(3) 1 254、(4) 1 320、(5) 1 710 と候補の5肢がすべて一致する。",
+        "公式正答: 公式解答表の機械・問4は「3」。manifest固定の正答単位 answer=3 および候補 officialAnswer=\"3\" と一致する。",
+        "総合解説の検算: Ns=120f/P=120×66/6=7920/6=1320 min⁻¹。N=Ns(1−s)=1320×0.95=1254 min⁻¹ で(3)に一致する。V/f一定は磁束をほぼ一定に保つための制御条件で、速度計算に不要という説明も妥当。",
+        "肢(1)の理由を検算: 120×60/6=1200、1200×0.95=1140 で正しい。",
+        "肢(2)の理由を検算: 120×60/6=1200 は60 Hz・6極の同期速度で、滑り未反映という説明は正しい。",
+        "肢(3)の理由: 正答の計算と一致する。",
+        "肢(4)の理由を検算: 1320 は66 Hz・6極の同期速度（s=0）で、説明は正しい。",
+        "肢(5)の理由を検算: 120×60/4=1800、1800×0.95=1710 で正しい。",
+        "図: 原図に図はなく、解答にも不要。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=machinery、問題PDF=20240818_ch_third_q03.pdf、解答PDF=20240818_ch_third_a01.pdf、reviewedFromPage=[7] はmanifestと一致する。sourceAttributionも適切。",
+        "officialReferenceUrls は空で、外部の独立主張はなく、外部確認事項もない。"
+      ]
+    }
+  ]
+}

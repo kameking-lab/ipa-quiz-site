@@ -31,7 +31,8 @@ def crop(item: dict, manifest: dict) -> Path:
         raise ValueError(f"Crop outside PDF page: {item['id']}")
     output = RAW / "review" / item["examDate"] / item["subject"] / "figures" / f"{item['id']}.png"
     output.parent.mkdir(parents=True, exist_ok=True)
-    page.get_pixmap(matrix=fitz.Matrix(3, 3), clip=rect, alpha=False).save(output)
+    zoom = item.get("zoom", 3)  # higher zoom for figures whose fine details (e.g. cell polarity) must stay legible
+    page.get_pixmap(matrix=fitz.Matrix(zoom, zoom), clip=rect, alpha=False).save(output)
     return output
 
 

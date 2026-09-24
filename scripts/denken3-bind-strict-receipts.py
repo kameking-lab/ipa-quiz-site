@@ -78,6 +78,8 @@ def main() -> None:
             binding = {"path": path.relative_to(ROOT).as_posix(), "sha256": digest(path.read_bytes()),
                        "status": "PASS", "resolvedModel": "claude-opus-5-5"}
             previous = mapping.get(key) or {}
+            if previous and (ROOT / previous["path"]).is_file() and json.loads((ROOT / previous["path"]).read_text(encoding="utf-8"))["inputHashes"]["candidateSha256"].get(key) == target_hash:
+                continue  # keep the original binding; later re-verification receipts are additional evidence only
             if previous.get("path") == binding["path"] and previous.get("sha256") in denken3_cli.text_digests(path):
                 continue  # same receipt, hashed under the other line-ending convention
             if mapping.get(key) != binding:
