@@ -463,14 +463,14 @@
         }
       ],
       "reviewIssues": [
-        "【HOLD】出典にJ-STAGE掲載論文（jstage.jst.go.jp）を含む。J-STAGEは学術誌の掲載基盤であり政府一次資料ではないため、同論文だけが支える肢を政府資料で裏付け直すまで公開しない。"
+        "【HOLD】㋥の否定（³Hと¹⁴Cは液体シンチレーションでβ線エネルギー領域を分けて同時測定できる）を支える出典がJ-STAGE掲載論文（薬学雑誌88(5)、RADIOISOTOPES 15(5)）だけで、J-STAGEは政府一次資料ではないため公開しない（2026-09-24再探索）。政府資料で確認できたのは放射能測定法シリーズNo.23解説Ⅰ-7の⁸⁹Sr＋⁹⁰Sr（＋⁹⁰Y）のβ線波高分布の違いによる連立方程式同時定量、No.9・ATOMICAのトリチウム単独測定、JAEA報告（JAEA-Data/Code 2019-016、2023-002等）の³H・¹⁴Cを化学的に分離してから個別にLSC測定する手順までで、³H/¹⁴Cの二重標識（複数ウィンドウ）同時測定を直接述べる*.go.jp資料は見つからない。肢2・4・5の㋥否定の根拠が未確保のため公開保留。"
       ]
     },
     "emkohyo-EM20261809-q14": {
       "overlay": {
         "sourceHash": "0b45419b0986b7a8e548c3302d6043e62c687f591e6e06c7138d32da8b37f158",
         "correctChoice": 2,
-        "summary": "トリチウム化水蒸気（HTO）の捕集にはシリカゲルやモレキュラシーブ等の固体捕集法、コールドトラップによる冷却凝縮法、水バブラ等が用いられ、モノエタノールアミン（エタノールアミン）は放射性二酸化炭素の捕集に用いられるので、肢2が誤り。",
+        "summary": "トリチウム化水蒸気（HTO）の捕集にはシリカゲルやモレキュラシーブ等の固体吸着剤やコールドトラップによる冷却凝縮が用いられ、モノエタノールアミン（MEA）は¹⁴C捕集用のCO₂吸収剤であるので、肢2が誤り。",
         "choices": [
           {
             "number": 1,
@@ -480,7 +480,7 @@
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "水蒸気状の放射性物質はシリカゲルやモレキュラシーブ等の固体捕集法、コールドトラップの冷却凝縮法で捕集され、トリチウムは冷却凝縮法で捕集してよいとされる。エタノールアミンを含むシンチレータは放射性二酸化炭素用に使われており、HTOの吸着剤とするこの記述が誤り。"
+            "reason": "これが誤り。空気中のトリチウムを水として捕集するにはシリカゲルやモレキュラーシーブなどの固体の水分吸着剤か、コールドトラップによる凝縮を用いる。モノエタノールアミン（MEA）は空気中¹⁴Cを捕集するCO₂吸収剤として使われるもので、HTOの吸着剤ではない。"
           },
           {
             "number": 3,
@@ -490,7 +490,7 @@
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "表面捕集率は、ろ紙に捕集された粉じんのうち、α線の平均飛程以内の表面部分に捕集された割合である。ろ紙内部に入り込んだ粒子からのα線はろ紙に吸収されて計数されにくいため、この割合で補正する。記述は定義どおりで正しい。"
+            "reason": "記述は正しい。放射能測定法シリーズNo.36は表面捕集率を、ろ紙に捕集された粒子のうちろ紙の表面付近で捕らえられた粒子の割合とし、α線放出核種ではろ材の中に入り込んだ粒子が計数できない可能性を指摘する。α線の飛程は紙中で数十µm程度と短く、表面付近とはα線が抜け出せる深さの部分を指す。"
           },
           {
             "number": 5,
@@ -516,16 +516,20 @@
             "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
           },
           {
-            "title": "日本薬学会『薬学雑誌』88巻5号（J-STAGE）液体シンチレーション計数装置による生体試料中の14Cの測定法および3H,14Cの同時測定法",
-            "url": "https://www.jstage.jst.go.jp/article/yakushi1947/88/5/88_5_635/_article/-char/ja/"
-          },
-          {
             "title": "厚生労働省 昭和63年労働省告示第93号（電離則第3条第3項等に基づく限度及び方法）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
           },
           {
-            "title": "日本原子力研究開発機構 ATOMICA「スペクトロメトリ（α線、β線、γ線、中性子）」",
-            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法（令和4年6月制定）",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          },
+          {
+            "title": "核燃料サイクル開発機構 JNC TN8410 2004-003 東海再処理施設における排気中トリチウム、炭素14及びヨウ素129の捕集方法と捕集効率",
+            "url": "https://jopss.jaea.go.jp/pdfdata/JNC-TN8410-2004-003.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「原子核物理の基礎（6）放射線と物質の相互作用」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_03-06-03-06.html"
           }
         ]
       },
@@ -559,13 +563,6 @@
           ]
         },
         {
-          "url": "https://www.jstage.jst.go.jp/article/yakushi1947/88/5/88_5_635/_article/-char/ja/",
-          "excerpt": "Scintillator containing ethanolamine was used for radioactive carbon dixoide",
-          "choiceNumbers": [
-            2
-          ]
-        },
-        {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
           "excerpt": "各放射性物質の空気中の濃度の前号の限度に対する割合の和が一となる各放射性物質の空気中の濃度",
           "choiceNumbers": [
@@ -580,23 +577,63 @@
           ]
         },
         {
-          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
-          "excerpt": "試料中でのα線の自己吸収を小さくするために",
-          "choiceNumbers": [
-            4
-          ]
-        },
-        {
           "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html",
           "excerpt": "放射性ガスによって汚染した空気を吸引装置により連続的に検出器内に取り込み測定を行う通気型電離箱式、および汚染空気を通気型ガスタンクに流し、このタンクの中心にNaI（Tl）シンチレーション検出器やGM計数管、プラスチックシンチレーション検出器を挿入する構造の通気型ガスモニタ",
           "choiceNumbers": [
             5
           ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JNC-TN8410-2004-003.pdf",
+          "excerpt": "空気中のトリチウムを水として捕集・回収する方法としては，シリカゲルやモレキュラーシーブなどの固体の水分吸着剤を用いる方法やコールドトラップなどによって水分を凝縮する方法がある",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JNC-TN8410-2004-003.pdf",
+          "excerpt": "モノエタノールアミン（MEA）を用いて空気中14C のサンプリングを行った",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JNC-TN8410-2004-003.pdf",
+          "excerpt": "14C のサンプリングで使用するCO2 吸収剤に3H を含む水分が混入し",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α線放出核種を対象として捕集、測定する場合は、ろ材の中に粒子が入り込んで計数できない等の可能性があり",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α 線放出核種の直接測定においては、ろ紙の表面捕集率*が重要な要素である。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "＊ ろ紙に捕集された粒子のうち、ろ紙の表面付近で捕らえられた粒子の割合",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_03-06-03-06.html",
+          "excerpt": "もし、空気中での飛程が50mmの場合、殆どが水と考えてよい紙や生体中での飛程は50μmとなり",
+          "choiceNumbers": [
+            4
+          ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】肢4「表面捕集率とは、測定対象となるα線の平均飛程以内のろ紙表面部分に捕集された粉じんの、全捕集粉じんに対する割合である」の定義を直接述べる政府・公的機関の一次資料が見つからない。手元で確認できたのはATOMICAの「試料中でのα線の自己吸収を小さくする」必要性の一般記述のみで、表面捕集率の定義・補正の根拠にならない。肢4の理由が未裏付けのため独立審査に出さず公開保留（他の4肢は政府資料で裏付け済み）。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261809-q15": {
       "overlay": {

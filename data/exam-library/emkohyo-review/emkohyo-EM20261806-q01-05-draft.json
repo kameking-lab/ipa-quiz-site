@@ -612,57 +612,157 @@
       "overlay": {
         "sourceHash": "7ded4cdcc353e562dce1626af395130c9c5fcf3a0ec24a571111dad48dc92c3b",
         "correctChoice": 3,
-        "summary": "メンブランフィルターの圧力損失は繊維層フィルターより大きい。「小さい」とした肢3が誤り。",
+        "summary": "メンブランフィルターの圧力損失は繊維層フィルターよりかなり大きい（経産省マニュアル表1）。「小さい」とした肢3が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "繊維層フィルターは空隙率が高く、繊維間の距離は繊維径より長い。それでも粒子は慣性衝突・さえぎり・拡散によって個々の繊維に到達し捕集される（単一繊維捕集）。記述は正しいので正答ではない。"
+            "reason": "繊維層フィルターは、ふるい分けではなく個々の繊維との相互作用で粒子を捕らえる。労働安全衛生総合研究所の資料は、慣性力で気流から外れた粒子が繊維に衝突する、粒子の大きさで繊維表面に接触する、ブラウン運動で繊維に触れる、の各機構で捕捉されると示す。記述は正しい。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "粒径0.1µm未満の微細粒子は、ブラウン運動によって流線から外れて繊維表面に到達し付着する。これが拡散効果で、粒径が小さいほど強く働く。記述は正しいので誤りの肢ではない。"
+            "reason": "同資料は、拡散効果を粒子のランダムな振動（ブラウン運動）で繊維に触れて捕集される現象とし、粒径0.1µm以下では拡散効果により粒子が小さいほど捕集効率が高いとする。ブラウン運動で流線から外れた微細粒子が繊維に捕捉されるという記述は正しい。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "メンブランフィルターは微細な孔をもつ多孔膜で、空隙率は繊維層より低い。同じ面速なら通気抵抗、つまり圧力損失は繊維層フィルターより大きくなる。「圧力損失は小さい」とした記述が誤りで正答となる。"
+            "reason": "経産省マニュアル表1（面速1cm/sでの圧力損失）では、グラスファイバーフィルター60.8・67.7・29.4Pa、石英繊維ろ紙53.0・73.5Paに対し、セルローズエステルメンブランフィルターは470.7・343.2・225.6Paと数倍以上大きい。「圧力損失は小さい」は誤りで、この肢が正答。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "メンブランフィルターはふるい分けだけでなく、拡散やさえぎりでも粒子を捕集する。そのため平均孔径0.8µmでも孔より小さい0.3µm粒子を99.5%以上捕集できるとされ、記述は正しい扱いで正答ではない。"
+            "reason": "経産省マニュアル表1では、0.3µmのステアリン酸粒子を面速20cm/sで試験した捕集率が、セルローズエステルメンブランフィルター3銘柄でいずれも99.9％である。石綿測定には平均孔径0.8µmのセルロースエステル製メンブランフィルターが使われており、孔より小さい0.3µm粒子を99.5％以上捕集できるという記述は正しい扱い。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "メンブランフィルターは静電気を帯びやすく、ひょう量時に天秤の指示が不安定になるなど、微量な質量差の測定で誤差を生じやすい。そのため質量濃度用のろ過材には不向きとされ、記述は正しい。"
+            "reason": "経産省マニュアル表1では、セルローズエステルメンブランフィルターの吸湿量が0.50～0.52mgで、グラスファイバーの0.03～0.45mgより大きい。環境省資料もPTFE製フィルタについて、質量濃度測定では静電気の影響を受け精度が上がりにくいとし、帯電性への考慮を求める。質量濃度用に不向きという記述は正しい。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "経済産業省 鉱山における粉じん濃度測定マニュアル（平成22年8月）表1 代表的ろ過材の特性",
+            "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf"
+          },
+          {
+            "title": "環境省 成分測定用微小粒子状物質捕集法 表3.1-1 PTFE製フィルタ及び石英繊維製フィルタの特徴",
+            "url": "https://www.env.go.jp/content/900403676.pdf"
+          },
+          {
+            "title": "労働安全衛生総合研究所 作業環境中の粉じん測定とばく露対策（フィルターによる粒子の除去メカニズム）",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf"
+          },
+          {
+            "title": "環境省 アスベストモニタリングマニュアル（第4.0版）",
+            "url": "https://www.env.go.jp/content/000066622.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "〇・三マイクロメートルの粒子を九十五パーセント以上捕集する性能を有するもの",
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "慣性力により気流から外れ 繊維に衝突して捕捉",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "粒子自らの大きさにより 繊維表面に接触して捕捉",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "粒子のランダムな振動（ブラウン運動）により 繊維に触れて捕集される。",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "粒径0.1µm以下：拡散効果により粒子が小さいほど捕集効率高い",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "セルローズエステル メンブランフィルター ミリポアAA",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "60.8 67.7 29.4 53.0 73.5 470.7 343.2 225.6",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "面速1cm/s における値",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "99.9 99.9 98 99.9 99.9 99.9 99.9 99.9",
           "choiceNumbers": [
             4
           ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "0.3μm のステアリン酸粒子を用い、20cm/s の面速で測定した値",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/000066622.pdf",
+          "excerpt": "直径47mm、平均孔径0.8μm の円形白色のセルロースエステル製メンブランフィルターを使用する。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "0.45±0.08 0.30±0.04 0.03±0.01 0.17±0.03 0.15±0.04 0.52±0.11 0.50±0.10 0.52±0.11",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+          "excerpt": "吸湿性の大きなろ紙は測定値に偏りを生ずることがある。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900403676.pdf",
+          "excerpt": "静電気の影響を受け、測定 精度が上がりにくい。 静電気除去が必要。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900403676.pdf",
+          "excerpt": "質量濃度も測定する場合は吸湿性、帯電性等についても考慮しなければならない",
+          "choiceNumbers": [
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】正答肢3（メンブランフィルターの圧力損失は繊維層フィルターより大きい）と肢4（平均孔径0.8µmで0.3µm粒子を99.5％以上捕集）、肢5（メンブランフィルターは帯電しやすく質量濃度用に不向き）を直接述べた政府一次資料が見つからない。肢2の拡散効果は労働安全衛生総合研究所資料（siryou_5.pdf p19-21）で支持できるが、5肢すべては揃わない。",
-        "正答肢3の根拠（メンブランフィルターの圧力損失が繊維層フィルターより大きいこと）を直接示す政府資料の抜粋がない。検索が必要。",
-        "肢4の『平均孔径0.8µmで0.3µm粒子を99.5%以上捕集』という具体的数値は、政府資料では未確認。作業環境測定基準第1条第5号がろ過材に求めているのは『0.3µm粒子を95%以上捕集』であり、99.5%を裏付けるものではない。検索が必要。",
-        "肢1・2（単一繊維捕集機構、拡散効果）と肢5（メンブランフィルターの帯電と質量濃度測定への不適性）を裏付ける政府資料は未確認。検索が必要。",
-        "NRA資料とじん肺診査ハンドブックの抜粋は本問のろ過捕集の判断と無関係なので採用していない。"
-      ]
+      "reviewIssues": []
     }
   }
 }
