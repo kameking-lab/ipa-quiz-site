@@ -28684,5 +28684,63 @@
         "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
       }
     ]
+  },
+  "emkohyo-20260217-q12": {
+    "sourceHash": "3c70842e737b7af37803fe939c48f417422590c5dc86ed5352f07696618c726a",
+    "correctChoice": 4,
+    "summary": "振動障害の特殊健康診断は通達上、定期健診のうち1回（又は年1回）を冬期に行うとされるので、冬季を避けるとした肢4が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "基発0710第3号は、振動の周波数などで手腕への影響を評価するとし、手腕振動の周波数補正係数Whを示しています。係数は12.5Hzで0.958と最大で、10Hzで0.951、16Hzで0.896と、それより高くても低くても小さくなります。12Hz前後で影響が最大とする記述は正しいです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "職場のあんぜんサイトは、振動障害をチェーンソー、グラインダー、刈払機などの振動工具の使用で起こる末梢循環障害、末梢神経障害及び運動器障害の総称としています。チェーンソーなどの振動工具で起こり、末梢神経障害や末梢循環障害がみられるという記述は正しいです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "振動障害の認定基準（昭和52年基発第307号）は、レイノー現象を、全身が寒冷にさらされ冷感を覚えたとき等に手指が発作的に蒼白となる現象とし、回復の過程で痛みやしびれを伴うのが通例としています。記述はこれと一致しており正しいです。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "振動工具の特殊健康診断は、神奈川労働局の一覧で「6月毎に1回（内1回は冬期）」「1年毎に1回（冬期）」とされ、林野庁資料も刈払機使用者の健診を1年以内ごとに1回（冬期）行うとしています。冬期に行うべきものであり、冬季を避けるとした記述が誤りです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "基発0710第2号の指針は、3軸合成値aと1日の振動ばく露時間Tから日振動ばく露量A(8)を求め、日振動ばく露対策値を2.5m/s2としています。5.0×√(T/8)≦2.5 から √(T/8)≦0.5、T/8≦0.25 で T≦2時間となるので、記述は正しいです。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 振動工具の「周波数補正振動加速度実効値の3軸合成値」の測定、表示等について（基発0710第3号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 安全衛生キーワード 振動障害",
+        "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo97_1.html"
+      },
+      {
+        "title": "厚生労働省 振動障害の認定基準について（昭和52年基発第307号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1"
+      },
+      {
+        "title": "神奈川労働局 健康診断を行うべき有害な業務と健診項目一覧",
+        "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf"
+      },
+      {
+        "title": "林野庁中部森林管理局 林業労働における安全衛生確保のための遵守事項等",
+        "url": "https://www.rinya.maff.go.jp/chubu/nansin/HP/attach/pdf/R4jigyou-3.pdf"
+      },
+      {
+        "title": "宮崎労働局 チェーンソー以外の振動工具の取扱い業務に係る振動障害予防対策指針",
+        "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf"
+      }
+    ]
   }
 }

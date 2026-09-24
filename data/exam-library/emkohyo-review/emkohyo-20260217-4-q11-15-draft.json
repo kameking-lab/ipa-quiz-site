@@ -363,7 +363,7 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "記述は正しい。環境省の化学分析の基本操作教材は、滴定の条件として反応が定量的に進行すること、反応速度が大きいことを挙げる。定量的に進行するには平衡が生成側に大きく偏る必要があり、これは平衡定数が大きいことに相当する（一般的な化学平衡の考え方による）。"
+            "reason": "記述は正しい。関税中央分析所の講座は、生成定数Kを平衡定数とし、キレート滴定の成立要件に条件安定度定数が8以上であることと速やかな反応を挙げる。環境省教材も滴定の条件に反応の定量的進行と大きい反応速度を挙げており、標定に用いる反応にも同じ条件が必要である。"
           }
         ],
         "sources": [
@@ -374,6 +374,10 @@
           {
             "title": "環境省 環境技術移転のための分析ビデオシリーズ『化学分析の基本操作』（滴定の条件）",
             "url": "https://www.env.go.jp/earth/coop/coop/document/tbboca_j/11-tbbocaj.pdf"
+          },
+          {
+            "title": "財務省関税中央分析所 関税中央分析所報 講座「キレート滴定の基礎（Ⅰ）」",
+            "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf"
           }
         ]
       },
@@ -419,11 +423,30 @@
           "choiceNumbers": [
             5
           ]
+        },
+        {
+          "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf",
+          "excerpt": "K は平衡定数であるが，この場合生成定数（Formation constant）とよび",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf",
+          "excerpt": "キレート滴定を成立させる要件として次の5 項目があげられる",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf",
+          "excerpt": "(1) 金属・キレート化合物の条件安定度定数 （K′MY）は8 以上であること。 (2) 金属イオンとキレート化剤とが速かに反応すること。",
+          "choiceNumbers": [
+            5
+          ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】独立審査3回（r1〜r3）で肢1〜4と肢2の抜粋差替えは解消したが、肢5の『平衡定数が大きい』を直接述べた政府一次資料がない。環境省『化学分析の基本操作』は滴定の条件として『反応が定量的に進行すること。反応速度が大きいこと。』までしか挙げず、平衡定数への言及は解説側の推論にとどまる（最終receipt r3のsourceIssues）。平衡定数に触れた政府公表の分析教材等が見つかるまで公開保留。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-4-q13": {
       "overlay": {
