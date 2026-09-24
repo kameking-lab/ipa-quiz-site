@@ -27212,5 +27212,145 @@
         "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
       }
     ]
+  },
+  "emkohyo-EM20261807-q9": {
+    "sourceHash": "2524f42e744c6f820eb16c799bd53e82db8dd089d39874780a2b6982cd09175b",
+    "correctChoice": 1,
+    "summary": "25℃・1気圧の気体1molの体積は約24.45Lで、22.4Lは0℃の値。厚労省の25℃換算式ppm≒mg/m³×24.45／分子量と一致しない肢1が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "これが誤り。厚労省の換算式ppm≒mg/m³×24.45／分子量（25℃）が示すとおり、25℃・1気圧の気体1molの体積は約24.45Lである。22.4Lは0℃での値で、PV＝nRTより体積は絶対温度に比例し22.4×298.15/273.15≒24.45Lとなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい。特化則の燻蒸作業に係る表の備考は、濃度を温度25度・1気圧の空気1m³当たりに占める当該物の重量又は容積で表すとしている。重量で表すのが質量濃度（mg/m³）、容積で表すのが体積分率（ppm）で、両者は厚労省の25℃換算式で相互に換算できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい。特化則は特定化学物質が『ガス、蒸気若しくは粉じん』として作業場に発散することを前提に規定しており、厚労省の個人サンプリング法報告書も捕集機器を粒子状物質用とガス・蒸気状物質用に分けて説明している。空気中の有害物質は粒子、ガス又は蒸気の状態で存在する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい。環境省の底質調査方法では、シアン化物イオン標準液を調製した後にその濃度を滴定で求め、硝酸銀溶液もファクター(f)を算出して用いる。標準液は正確な濃度が分かっていればよく、所定の濃度にぴったり合わせる必要はない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい。個別の公定法の例として、環境省の酸化エチレン測定方法は5段階程度の標準濃度系列用の標準溶液を『使用時に調製する』とし、底質調査方法も希釈したシアン化物イオン標準液を使用時に調製するとしている。検量線用の標準系列液は使用のつど調製し、原則として保管しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省・室内空気中化学物質の25℃濃度換算式",
+        "url": "https://www.mhlw.go.jp/houdou/0107/h0724-1c.html"
+      },
+      {
+        "title": "科学技術振興機構 科学の甲子園・筆記競技解答例（理想気体の状態方程式）",
+        "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+      },
+      {
+        "title": "産総研計量標準総合センター 国際単位系（SI）",
+        "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+      },
+      {
+        "title": "厚生労働省 特定化学物質障害予防規則（燻蒸作業に係る表の備考）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=2"
+      },
+      {
+        "title": "厚生労働省 特定化学物質障害予防規則（第5条ほか）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
+        "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+      },
+      {
+        "title": "環境省『底質調査方法』Ⅱ4.11 シアン化合物（標準液の調製）",
+        "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+      },
+      {
+        "title": "環境省 有害大気汚染物質測定方法マニュアル 酸化エチレン及び酸化プロピレンの測定方法",
+        "url": "https://www.env.go.jp/content/000213735.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20251809-q7": {
+    "sourceHash": "65d1881da68e99ee1d8d9c531d56fe995d3a734563364736fce597cd18ffa621",
+    "correctChoice": 2,
+    "summary": "³²Pはγ線を放出しない純β線放出核種であり、γ線スペクトロメトリ用のGe半導体検出器による測定対象として適切でない。肢2が答え。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは²⁵²Cfを自発核分裂による中性子源（原子炉の起動用中性子源等に利用）としている。³He計数管は³He(n,p)³H反応で熱中性子を検出し、速中性子はこの比例計数管をパラフィン等の減速材で覆って熱中性子化して測定する。中性子を出す²⁵²Cfの測定に³He比例計数管を用いる組合せは適切である。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ATOMICAは³²Pを、³H・¹⁴C等と並ぶ「β線のみを放出する核種」の代表例に挙げている。Ge半導体検出器は光電ピークでγ線のエネルギーを分析する検出器であり、γ線を出さない純β線放出核種の³²P（β線最大1711keV）の測定には適さない。組合せとして適切でない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "⁴⁰Kは1461keVのγ線を放出し、規制庁No.6は塩化カリウム中の⁴⁰KをNaI(Tl)スペクトロメータのエネルギー確認用γ線源に使えるとしている。NaI(Tl)シンチレーション検出器はγ線測定に広く用いられ、⁴⁰Kの測定に用いる組合せは適切である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは「Ｐｏ−２１０はα線源としてよく用いられる」とし、α線スペクトロメトリの検出器として表面障壁型・イオン注入型のシリコン(Si)半導体を挙げている。²¹⁰Poのα線をSi半導体検出器で測る組合せは適切である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "²⁴¹Amは59.5keVのγ線を放出し、ATOMICAはγ線スペクトロメトリの検出器として沃化セシウム(CsI)のシンチレーション検出器を挙げている。CsI(Tl)シンチレーション検出器で²⁴¹Amのγ線を測る組合せは適切である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 中性子モニタ",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1504.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ポロニウム",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1291.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+      }
+    ]
   }
 }
