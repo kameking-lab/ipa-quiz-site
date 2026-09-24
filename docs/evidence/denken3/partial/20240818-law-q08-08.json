@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "45cb205f9b788b4094671857930d7139cabdf2b4f4b531400dfc171f20338137",
+  "questions": [
+    {
+      "number": 8,
+      "sourceDraftSha256": "5e620f4f3066a9ff66ab739edee9cf53488cd7cc4a8ef94e7d6fcdd360a99ce1",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q08-opus-review.json",
+      "opusReceiptSha256": "9c97c5dac14a94549657b97da4f9e533e5eba7cf4195cf721d5252e735e286b3",
+      "assessment": {
+        "number": 8,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "The page image cannot confirm the current wording of Article 58 of the Ordinance on Technical Standards for Electrical Equipment (電気設備に関する技術基準を定める省令), or what page 99 of the cited Kanto Tohoku Industrial Safety Inspection Department PDF says. Check both external sources (e-Gov as of 2024-08-18, and that PDF page) directly."
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q08": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l20-q08-opus.json",
+      "sha256": "37355de03d238e0f2e5dccabb4478c41dd0913b3f37a5614ac35705ef071d58c",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

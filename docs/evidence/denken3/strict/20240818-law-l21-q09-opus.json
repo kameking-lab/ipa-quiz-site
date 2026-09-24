@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2406,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 34822,
+      "webSearchRequests": 0,
+      "costUSD": 0.3545926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1003,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9b8f7bdb11ede431c5b072bea759fe942d33f2b43fc56c1517aebc8f1179cd6d",
+  "inputRequestSha256": "69532f990ce64dd8028aec1bd88cfae8ddfd7526e5525d76264d61585c575480",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "7fc758a3406db46e5b0b2fdae162898faae2859cd3fed3ef0161b48974881465"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p15.png": "c03035232cc05752605e2df72db1a33e5c553d959fe68eaf13605116683faa4a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "d019a92c9387a6b1ff239fa86094464920a140db8e5bbfe682357868e231da8e",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（印刷頁「-12-」、フッタ「T1-H 015」）と照合した。前置き、a)〜d) の各文、空白(ア)(イ)(ウ)の位置、設問文が候補JSONと一致する。候補は全角スペースと改行を整えただけで、語句の脱落や改変はない。reviewedFromPage=[15] はフッタ「015」と矛盾しない。",
+        "選択肢: 原図の表と照合した。(1) 充電部分が露出しない／張力／感電の、(2) 取扱者以外の者が容易に開けることができない／異常電圧／損傷を受ける、(3) 取扱者以外の者が容易に開けることができない／張力／感電の、(4) 充電部分が露出しない／張力／損傷を受ける、(5) 取扱者以外の者が容易に開けることができない／異常電圧／感電の。5肢すべてについて、(ア)〜(ウ)の対応と語句が候補JSONと一致する。",
+        "公式正答: 公式解答表の原図〈法規〉欄で「問9 4」を確認した。manifest の単位 {question:9, part:null, answer:\"4\"} と、候補の officialAnswer=\"4\" がどちらもこれと一致する。",
+        "根拠条文: 経済産業省「電気設備の技術基準の解釈」PDF第150頁の第150条【配線器具の施設】（省令第59条第1項）を添付原頁で照合した。第1項第一号「充電部分が露出しないように施設すること。ただし、取扱者以外の者が出入りできないように措置した場所に施設する場合は、この限りでない。」、第二号「湿気の多い場所又は水気のある場所…防湿装置」、第三号「…接続点に張力が加わらないようにすること。」、第四号「屋外において電気機械器具に施設する開閉器、接続器、点滅器その他の器具は、損傷を受けるおそれがある場合には、これに堅ろうな防護装置を施すこと。」を確認した。問題文の a)〜d) はこの第一号〜第四号に対応する。(ア)=充電部分が露出しない、(イ)=張力、(ウ)=損傷を受ける であり、正答(4)と一致する。",
+        "総合解説: 第150条第1項第一号・第三号・第四号の要旨、第一号ただし書の例外、結論(4)を条文原頁と照合した。事実の誤りはない。「取扱者以外が出入りできない場所」は条文の「取扱者以外の者が出入りできないように措置した場所」を要約した表現で、意味は変わっていない。",
+        "各肢の解説: (1) は(ア)(イ)が一致し(ウ)だけ不一致、(2) は(ウ)だけ一致し(ア)(イ)が不一致、(3) は(イ)だけ一致し(ア)(ウ)が不一致、(4) は3語すべて一致、(5) は3語すべて不一致。いずれも原図の表と第150条の条文から導いた正誤の組合せと一致しており、各肢に固有の理由として正しい。",
+        "officialReferenceUrls: 候補に記載された URL は 20231226-2.pdf#page=150 の1件だけで、添付の公式参考資料PDF第150頁で第150条の記載を確認した。解説中の独立した主張は第150条に関するものだけで、未検証の外部主張は残っていない。",
+        "図: 本問は文章と表だけの穴埋め問題で、解答に図は不要。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で問題文と整合する。"
+      ]
+    }
+  ]
+}
