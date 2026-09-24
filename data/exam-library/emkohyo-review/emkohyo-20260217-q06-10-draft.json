@@ -263,7 +263,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】独立審査（claude-opus-5-5、emkohyo-20260217-q06-06-review.json）でFIX。肢1の『慢性中毒では歯牙酸蝕症や慢性気管支炎』を二酸化窒素について直接述べた政府資料がない（告示の二酸化窒素欄は前眼部障害又は気道・肺障害のみで、歯牙酸蝕は硝酸経由の推論、モデルSDSは長期ばく露の肺疾患まで）。肢4のナフタレンの『眼の痛み・かすみ・流涙』もモデルSDSは充血・軽度の刺激・角膜炎等で直接一致しない。Web検索上限のため追加の一次資料探索ができず保留する。"
+      ]
     },
     "emkohyo-20260217-q7": {
       "overlay": {
@@ -299,6 +301,10 @@
         ],
         "sources": [
           {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
             "title": "e-Gov法令検索 労働基準法施行規則",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
           },
@@ -311,16 +317,19 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-01-6.html"
           },
           {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
-          },
-          {
             "title": "厚生労働省 モデルSDS ニトログリコール",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/628-96-6.html"
           }
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            3
+          ]
+        },
         {
           "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
           "excerpt": "オーラミンを製造する工程における業務による尿路系腫瘍",
@@ -569,16 +578,16 @@
         ],
         "sources": [
           {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
             "title": "環境省 水俣病の経験と教訓",
             "url": "https://www.env.go.jp/content/900414996.pdf"
           },
           {
             "title": "国立水俣病総合研究センター 水俣病と水銀について",
             "url": "https://nimd.env.go.jp/archives/minamata_disease_in_depth/"
-          },
-          {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {
             "title": "厚生労働省 職場のあんぜんサイト 生物学的モニタリング",
@@ -599,6 +608,17 @@
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
         {
           "url": "https://www.env.go.jp/content/900414996.pdf",
           "excerpt": "メチル水銀化合物に汚染された魚介類を食べることによって起こった中毒性の神経系疾患です",
@@ -762,6 +782,10 @@
         ],
         "sources": [
           {
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
+          },
+          {
             "title": "厚生労働省 有機溶剤を正しく使いましょう",
             "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/120815-01.pdf"
           },
@@ -772,10 +796,6 @@
           {
             "title": "食品安全委員会 清涼飲料水評価書（案）トルエン",
             "url": "https://www.fsc.go.jp/iken-bosyu/pc7_kagaku_osen_toluene_200925.pdf"
-          },
-          {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {
             "title": "厚生労働省 モデルSDS 酢酸メチル",
@@ -796,6 +816,16 @@
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1",
+          "excerpt": "(◆平成25年09月30日厚生労働省告示第316号)",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
         {
           "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/gyousei/anzen/dl/120815-01.pdf",
           "excerpt": "油脂に溶ける性質があることから皮膚からも吸収されます",
