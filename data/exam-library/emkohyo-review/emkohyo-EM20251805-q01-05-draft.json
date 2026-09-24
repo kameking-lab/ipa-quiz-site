@@ -92,12 +92,12 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "酢酸メチルのモル質量74.079g/molはメタノールの32.04g/molより大きい。環境省は酢酸メチル25℃の蒸気圧を実測216mmHgと記載する。消防研究所の表ではメタノールが200mmHgに達するのは34.8℃なので、25℃では200mmHg未満であり、蒸気圧も酢酸メチルが大きい。"
+            "reason": "酢酸メチルのモル質量74.079g/molはメタノールの32.04g/molより大きい。環境省は酢酸メチル25℃の蒸気圧を実測216mmHgと記載する。消防研究所の表ではメタノールが200mmHgに達するのは34.8℃で、蒸気圧は温度とともに上がるから25℃では200mmHg未満である。よって蒸気圧も酢酸メチルが大きい（大小比較なのでmmHgのままでよい）。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "2-ブタノールのモル質量74.12g/molはイソプロピルアルコールの60.096g/molより大きい。一方、国立環境研究所の物性表で2-ブタノールの蒸気圧は20〜32.2℃の測定範囲で最大31hPa。厚労省のモデルSDSでイソプロピルアルコールは20℃ですでに44hPaであり、蒸気圧は温度上昇とともに増えるので25℃でも44hPaを超える。したがって25℃ではⒶの蒸気圧がⒷより低い。"
+            "reason": "2-ブタノールのモル質量74.12g/molはイソプロピルアルコールの60.096g/molより大きいが、蒸気圧は逆である。厚労省モデルSDSでは20℃で2-ブタノール1.7kPa（17hPa）、イソプロピルアルコール4.4kPa（44hPa）で約2.6倍の差がある。イソプロピルアルコールの25℃飽和蒸気圧濃度53,762ppmVは約54hPa（0.053762×1013hPa）に当たる。2-ブタノールが25℃でこれを上回るには5℃の昇温で約3.2倍になる必要があるが、消防研究所の表では1-プロパノールも2-プロパノールも蒸気圧が20→60mmHg（3倍）になるのに約18℃（25.3→43.5℃、12.7→30.5℃）を要する。沸点も2-ブタノール100℃がイソプロピルアルコール82.3℃より高い。したがって25℃でもⒶの蒸気圧はⒷより小さい。"
           }
         ],
         "sources": [
@@ -148,10 +148,6 @@
           {
             "title": "消防研究所報告 第129号 表1 アルコールの性質",
             "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf"
-          },
-          {
-            "title": "国立環境研究所 Webkis-Plus 第２ブタノール物性情報",
-            "url": "https://www.nies.go.jp/kisplus/dtl/chem/TKV00018"
           }
         ]
       },
@@ -269,8 +265,36 @@
           ]
         },
         {
-          "url": "https://www.nies.go.jp/kisplus/dtl/chem/TKV00018",
-          "excerpt": "蒸気圧 10 31 hPa KIS-NET 10201 222 1 蒸気圧測定温度 20 32.2 deg C",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "飽和蒸気圧濃度 (53,762 ppmV (25℃))",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+          "excerpt": "10 (14.7)\n20 (25.3)\n60 (43.5)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+          "excerpt": "10 (2.4)\n20 (12.7)\n60 (30.5)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html",
+          "excerpt": "100℃（沸点）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "82.3℃：HSDB（2013）",
           "choiceNumbers": [
             5
           ]
