@@ -25122,5 +25122,237 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=2"
       }
     ]
+  },
+  "emkohyo-EM20261801-q7": {
+    "sourceHash": "9685d5ebfe3e2dcbe452766f92e79637034c273d1e1081548293da022bcf43f3",
+    "correctChoice": 5,
+    "summary": "ヨウ化メチルはIARCでグループ3（ヒトに対する発がん性について分類できない）であり、主要ながんを甲状腺がんとする（5）が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "正しい。厚労省モデルSDS（水酸化カドミウム）は、IARCがカドミウム及びカドミウム化合物へのばく露をヒトの肺がんリスクの増加と関連づけ、十分な証拠ありと結論したと記す。食品安全委員会も、職業曝露による肺がんリスクの研究に基づきIARCがグループ1に分類したとしている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい。労働基準法施行規則別表第1の2は、ニッケルの製錬・精錬工程の業務による肺がん又は上気道のがんを業務上疾病としている。厚労省モデルSDS（亜硫化ニッケル）もニッケル化合物をIARCグループ1とする。ラット吸入試験で肺の腺腫・癌腫が増えたという記載は動物での補足データである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい。厚労省モデルSDS（三酸化二ヒ素）は、IARCの評価として、亜ヒ酸塩やヒ酸塩を含む無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされたと記す。無機ヒ素化合物と膀胱がんの組合せは正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい。労働基準法施行規則別表第1の2は、オーラミンを製造する工程の業務による尿路系腫瘍（膀胱がんを含む）を業務上疾病としており、これが主な根拠となる。膀胱がんとの関連の根拠はオーラミン単体（IARC分類2B）ではなく製造工程でのばく露にある。モデルSDSも製造作業者集団の膀胱腫瘍増加を記すが、他の膀胱発がん物質との同時ばく露の可能性を注記している。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "誤り。ヨウ化メチルはIARCでグループ3であり、これを受けて厚労省モデルSDSはGHS分類の発がん性を「分類できない」としている。ヒトでの発がん性の証拠は不十分で、甲状腺がんを主要ながんとする根拠はない。同SDSにあるラットの甲状腺重量増加・濾胞上皮過形成などは動物の反復ばく露影響で、ヒトの主要ながんの根拠にはならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "職場のあんぜんサイト モデルSDS 水酸化カドミウム",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html"
+      },
+      {
+        "title": "食品安全委員会 汚染物質評価書 食品からのカドミウム摂取の現状に係る安全性確保について（概要版）",
+        "url": "https://www.fsc.go.jp/hyouka/hy/hy-gaiyou-cadmium.pdf"
+      },
+      {
+        "title": "労働基準法施行規則 別表第1の2（e-Gov法令API・現行版本文）",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS 亜硫化ニッケル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS 三酸化二ヒ素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS オーラミン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS ヨウ化メチル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261803-q8": {
+    "sourceHash": "04ee8af4648efad62222474391e09d3e30c01252558c3b0297182c5e280ad8b3",
+    "correctChoice": 3,
+    "summary": "ナフタレンは室温で昇華するが、融点は80℃なので1気圧で加熱すれば液体になる。「液体となることはない」とする肢3が誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "正しい。職場のあんぜんサイトの塩化ビニルのモデルSDSは、物理状態を「気体」とし、沸点を-13.4℃としている。沸点が常温より低いので、常温・常圧では気体である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい。環境省の化学物質の環境リスク評価は、1,4-ジオキサンの水溶性を「任意の割合で溶解」としている。水と任意の割合で混ざり合うという記述と一致する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "誤り。ナフタレンのモデルSDSは、室温で昇華するとしつつ、融点を80℃、沸点を218℃としている。1気圧で常温から温度を上げると、80℃で融けて液体になり、218℃で沸騰する。昇華性があっても液体にならないわけではないので、この記述が誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい。二硫化炭素のモデルSDSは比重（相対密度）を1.2632（20℃/4℃）としている。4℃の水を1とした値が1より大きいので、二硫化炭素は水より密度が大きい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい。奈良国立博物館の用語解説は、瑪瑙を玉髄（石英の微小結晶の集合体）の一種としている。厚労省の作業環境測定結果報告書の様式では、遊離けい酸含有率を石英・クリストバライト・トリジマイトの含有率の合計として求めるので、石英の微細結晶からなる玉ずいやメノウの粉じんも遊離けい酸含有率の測定対象になる。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS 塩化ビニル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-01-4.html"
+      },
+      {
+        "title": "環境省 化学物質の環境リスク評価 1,4-ジオキサン",
+        "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/09.pdf"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS ナフタレン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/91-20-3.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS 二硫化炭素",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+      },
+      {
+        "title": "奈良国立博物館 正倉院展用語解説 瑪瑙",
+        "url": "https://shosointen-glossary.narahaku.go.jp/meno/"
+      },
+      {
+        "title": "厚生労働省 作業環境測定結果報告書（証明書）様式",
+        "url": "https://www.mhlw.go.jp/bunya/roudoukijun/anzeneisei17/dl/21.pdf"
+      },
+      {
+        "title": "厚生労働省 作業環境測定基準第2条の2",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      }
+    ]
+  },
+  "emkohyo-EM20251809-q2": {
+    "sourceHash": "02e020a1386f808ba9877d9086e0d74e135bf6e886b56c8abfa7ec8c863531b4",
+    "correctChoice": 3,
+    "summary": "照射線量は空気の単位質量当たりに生じる電荷（C/kg）で定義されるため、照射線量率の単位はC･kg⁻¹･s⁻¹となる。単位をC･s⁻¹とする肢3が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "電離則は放射線装置室の遮へい基準などで「一センチメートル線量当量率が二十マイクロシーベルト毎時」のように、1cm線量当量率をシーベルト毎時で規定している。作業環境測定の1cm線量当量率をSv･h⁻¹で表すのは正しい記述。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは吸収線量を物質の単位質量に与えられたエネルギーとし、「国際単位系（SI）による吸収線量の単位はＪkg−1」と説明する。空気吸収線量は物質を空気とした吸収線量なので、単位J･kg⁻¹とするこの記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "ATOMICAは照射線量を「空気１kgにつき１クーロンの電気量に相当する正または負のイオン群を生じさせる照射線量を１Ｃ/kg」とし、SI単位はC/kgと説明する。照射線量率は単位質量の空気当たりの電荷を時間で割った量でC･kg⁻¹･s⁻¹となり、C･s⁻¹とする記述は誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電離則告示（昭和63年労働省告示第93号）別表第一は「空気中の放射性物質の濃度に関する限度(Bq／cm3)」と規定し、産総研の校正試験一覧も放射性ガスの放射能濃度をBq･cm⁻³で表す。空気中放射能濃度の単位をBq･cm⁻³とする記述は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "産総研の依頼試験一覧は中性子源校正試験の「中性子放出率範囲：1.0×10³s⁻¹以上3.0×10⁷s⁻¹以下（252Cf）」とs⁻¹で表示している。中性子放出率は単位時間当たりに線源から放出される中性子数なので、単位をs⁻¹とする記述は正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 電離放射線障害防止規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 照射線量に関する単位",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html"
+      },
+      {
+        "title": "厚生労働省 昭和63年労働省告示第93号（電離則に基づく限度及び方法）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "産業技術総合研究所 計量標準総合センター 試験・校正の種類（依頼試験一覧）",
+        "url": "https://unit.aist.go.jp/qualmanmet/metrolqual/calibration/service/doc/iraishiken_241202.pdf"
+      }
+    ]
+  },
+  "emkohyo-EM20251809-q3": {
+    "sourceHash": "46d026bd7c95c249db89fe3419250283635e10505b7fb7bb115e0bc0d56137c0",
+    "correctChoice": 5,
+    "summary": "電子捕獲では核内の陽子が軌道電子を取り込んで中性子に変わるため、原子番号は1つ減少する。「1つ増加する」とする肢5が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは軌道電子捕獲を「原子番号が一つ小さい、つまり陽子の数が一つ少なく」なる現象と説明しており、原子番号が原子核中の陽子数と一致することを示している。原子番号＝陽子数とするこの記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは「陽子 2個、 中性子 2個からできているα粒子が飛び出していったあとには、陽子が2個減って、原子番号が2だけ小さい原子核が残る」と説明している。α崩壊で陽子2個・中性子2個が放出され原子番号が2減るという記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ATOMICAはβ壊変について「β − 壊変では原子番号は１だけ増加し、β ＋ 壊変や軌道電子捕獲では原子番号が１だけ減少する」とし、電子とともに反ニュートリノ、陽電子とともにニュートリノが放出されると説明する。記述は正しい（反ニュートリノを含めニュートリノと総称）。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは核異性体について「同じ原子番号と質量数をもった原子核でも、異なったエネルギー状態をもつ」とし、励起状態のものはγ崩壊して低いエネルギー状態に遷移すると説明する。γ線は励起状態からの遷移で出る電磁波で原子番号は変わらず、正しい記述。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ATOMICAは軌道電子捕獲を、核内の陽子が軌道電子と反応して中性子に変わり「原子番号が一つ小さい」別の原子核になる現象と説明する。特性X線が放出される点は正しいが、原子番号は1つ減少するので「1つ増加する」とするこの記述は誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 軌道電子捕獲",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA α壊変",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-05.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA β壊変",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-06.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 核異性体",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1321.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA γ線",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_807.html"
+      }
+    ]
   }
 }
