@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 import subprocess
 import sys
+from urllib.parse import urlparse
 
 import requests
 
@@ -50,6 +51,36 @@ def verified_official_pdf(root, paper):
     payload = response.content
     if len(payload) > 32 * 1024 * 1024 or sha256(payload).hexdigest() != expected:
         raise ValueError(f"Official PDF content mismatch: {paper['id']}")
+    cache.parent.mkdir(parents=True, exist_ok=True)
+    cache.write_bytes(payload)
+    return cache
+
+
+def verified_government_source(root, source):
+    """Cache the exact government bytes pinned by the source-pack receipt."""
+    retrieval = source.get("retrieval", {})
+    expected = retrieval.get("sha256", "")
+    url = retrieval.get("retrievalUrl", "")
+    parsed = urlparse(url)
+    if (parsed.scheme != "https" or parsed.hostname is None
+            or not parsed.hostname.endswith(".go.jp")
+            or parsed.username or parsed.password or parsed.port is not None
+            or not re.fullmatch(r"[0-9a-f]{64}", expected)):
+        raise ValueError(f"Invalid pinned government source: {source.get('url')}")
+    content_type = retrieval.get("contentType", "").lower()
+    suffix = ".pdf" if "pdf" in content_type else ".json" if "json" in content_type else ".html"
+    cache = root / ".cache/safety-full-review/government-sources" / f"{expected}{suffix}"
+    if cache.is_file():
+        if sha256(cache.read_bytes()).hexdigest() == expected:
+            return cache
+        cache.unlink()
+    response = requests.get(url, timeout=90)
+    response.raise_for_status()
+    payload = response.content
+    if (len(payload) != retrieval.get("bytes")
+            or len(payload) > 32 * 1024 * 1024
+            or sha256(payload).hexdigest() != expected):
+        raise ValueError(f"Government source content mismatch: {source.get('url')}")
     cache.parent.mkdir(parents=True, exist_ok=True)
     cache.write_bytes(payload)
     return cache
@@ -240,9 +271,24 @@ def main():
                 pdf_paths[paper["id"]] = verified_official_pdf(root, paper)
     def review_batch(batch):
         shared_evidence = {item["sha256"]: item for row in batch for item in row["evidence"]}
-        payload = {"questions": [dict({k: v for k, v in row.items() if k != "evidence"},
-                                     officialPdfLocalPath=str(pdf_paths[row["snapshot"]["paper"]["id"]]))
-                                 for row in batch], "sharedEvidence": list(shared_evidence.values())}
+        questions = []
+        for row in batch:
+            source_records = {source.get("url"): source
+                              for item in row["evidence"]
+                              for source in item["content"].get("sources", [])}
+            local_sources = []
+            for cited in row["candidate"].get("sources", []):
+                source = source_records.get(cited.get("url"))
+                if source is None:
+                    raise ValueError(f"No SHA-pinned source bytes for {row['id']}: {cited.get('url')}")
+                local_sources.append({"url": cited["url"], "title": source.get("title"),
+                                      "locators": source.get("locators", []),
+                                      "sha256": source["retrieval"]["sha256"],
+                                      "localPath": str(verified_government_source(root, source))})
+            questions.append(dict({k: v for k, v in row.items() if k != "evidence"},
+                                  officialPdfLocalPath=str(pdf_paths[row["snapshot"]["paper"]["id"]]),
+                                  governmentSourceFiles=local_sources))
+        payload = {"questions": questions, "sharedEvidence": list(shared_evidence.values())}
         prompt = ("独立レビュー。下記の全問・全5肢を政府一次資料と公式問題に照合しJSONのみ返す。"
                   "1問のサンプルから他問をPASSにしない。画像はローカルpublic配下のファイルをReadで見る。"
                   "各PDF/条項/出題時の適用を確認。元の正答との矛盾や未確認はHOLD。"
@@ -256,7 +302,7 @@ def main():
         # Existing CLI adapter fails closed on limit; no queued retries or paid fallback.
         review, model_proof = adapter.call_claude(
             prompt, root / ".cache/safety-full-review" / token,
-            args.model, return_model=True)
+            args.model, return_model=True, tools=("Read", "Glob", "Grep"))
         if set(review) != {q["id"] for q in batch}:
             raise ValueError("Reviewer omitted or added IDs; no receipts accepted")
         receipts = {}

@@ -121,6 +121,25 @@ class FullReviewGateTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Official PDF content mismatch"):
                 REVIEW.verified_official_pdf(self.root, self.paper)
 
+    def test_government_source_bytes_must_match_pinned_receipt(self):
+        payload = b'{"law":"verified original"}'
+        source = {"url": "https://laws.e-gov.go.jp/law/test",
+                  "retrieval": {"retrievalUrl": "https://laws.e-gov.go.jp/api/2/law_data/test",
+                                "sha256": sha256(payload).hexdigest(), "bytes": len(payload),
+                                "contentType": "application/json"}}
+        response = type("Response", (), {"content": payload,
+                        "raise_for_status": lambda self: None})()
+        with patch.object(REVIEW.requests, "get", return_value=response) as fetched:
+            path = REVIEW.verified_government_source(self.root, source)
+            self.assertEqual(path.read_bytes(), payload)
+            self.assertEqual(fetched.call_count, 1)
+        path.unlink()
+        bad = type("Response", (), {"content": b"changed",
+                   "raise_for_status": lambda self: None})()
+        with patch.object(REVIEW.requests, "get", return_value=bad):
+            with self.assertRaisesRegex(ValueError, "Government source content mismatch"):
+                REVIEW.verified_government_source(self.root, source)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -118,16 +118,17 @@ def extract_json(content, expected_ids=None):
     raise ValueError("No complete JSON object matching the requested IDs")
 
 
-def call_claude(prompt, prefix, model, return_model=False):
+def call_claude(prompt, prefix, model, return_model=False,
+                tools=("Read", "Glob", "Grep", "WebSearch", "WebFetch")):
     cli = Path(os.environ["APPDATA"]) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe"
     if not cli.exists():
         raise RuntimeError(f"Claude CLI missing: {cli}")
     prefix.parent.mkdir(parents=True, exist_ok=True)
     prefix.with_suffix(".prompt.txt").write_text(prompt, encoding="utf-8")
     env = dict(os.environ, CLAUDE_CODE_MAX_OUTPUT_TOKENS="64000")
+    tool_list = ",".join(tools)
     command = [str(cli), "-p", "--model", model, "--effort", "high", "--output-format", "stream-json",
-               "--verbose", "--allowedTools", "Read,Glob,Grep,WebSearch,WebFetch",
-               "--tools", "Read,Glob,Grep,WebSearch,WebFetch"]
+               "--verbose", "--allowedTools", tool_list, "--tools", tool_list]
     with prefix.with_suffix(".raw.jsonl").open("w", encoding="utf-8") as output, prefix.with_suffix(".stderr.txt").open("w", encoding="utf-8") as errors:
         run = subprocess.run(command, input=prompt, text=True, encoding="utf-8", errors="replace",
                              cwd=ROOT, stdout=output, stderr=errors, timeout=1800, env=env)
