@@ -349,39 +349,54 @@
       "overlay": {
         "sourceHash": "b50b9762ddfdf2eab63e486842c88ce6e597f81dca6021c6e41bcb4779fc8da0",
         "correctChoice": 2,
-        "summary": "FIDは炭素を含む有機物の燃焼で生じるイオンを検出し、無機化合物にはほとんど応答しないため2が誤り",
+        "summary": "FIDは炭化水素などを高感度で検出する一方、水・二酸化炭素などの無機ガスには通常応答しない。『ほとんどの無機化合物を検出できる』とする2が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "ECDは⁶³Niのβ線で生じた電子による定常電流が、電子親和性の高い成分に捕獲されて減る量を測ります。有機塩素系溶剤などハロゲン化合物に高感度で、記述は正しいので正答ではありません。"
+            "reason": "日本原子力研究開発機構の解説では、ECDセル内のβ線源で生じる電流がハロゲン化合物による電子捕獲で減少すること、線源には63Niが多く使われることを示しています。設問の原理と高感度対象は一致し、誤りの肢ではありません。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "FIDは有機物が水素炎中で燃えるときに炭素由来で生じるイオンを測るため、有機化合物の大半に応答します。一方、水・二酸化炭素・一酸化炭素・窒素・酸素など無機化合物にはほとんど応答しません。「無機化合物も検出できる」が誤りです。"
+            "reason": "環境省の水素炎方式の実証資料では、炭化水素は高感度に検出する一方、H2・NO・CO・CO2・H2Oなどの無機ガスは検出の妨害をしないと記されています。水や二酸化炭素など代表的な無機ガスまで広く検出できるという本肢の後半が誤りです。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "TCDは、加熱したフィラメント周囲のガスの熱伝導度がキャリアガスと試料成分で異なることで生じる抵抗変化を測ります。熱伝導度に差があれば無機ガスも有機物も応答するため、選択性がないという記述は正しいです。"
+            "reason": "設問にあるTCDの熱伝導度差という検出原理は、特定の元素だけと反応させる方式ではありません。農研機構はTCDを『比較的汎用性の高い』検出器に分類し、厚生労働省の規格も窒素を導入してTCDの感度を確認しています。特定物質への選択性がないという本肢は正しいです。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "MSは溶出成分をイオン化して質量電荷比ごとに分け、マススペクトルを得ます。分子イオンやフラグメントから構造情報が得られ、スペクトル照合で未知物質の同定もできるため、記述は正しいです。"
+            "reason": "国立環境研究所はGCと高分解能MSを組み合わせた装置について、分子量測定、元素組成、構造解析などの定性分析が可能と説明しています。得られる質量分析の情報を未知成分の同定に使えるという本肢の趣旨は正しいです。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "PIDは、紫外線ランプの光子エネルギーよりイオン化エネルギーが低い成分を光イオン化し、生じたイオン電流を測ります。芳香族やケトンなど多くの有機化合物を高感度に検出でき、記述は正しいので正答ではありません。"
+            "reason": "労働安全衛生総合研究所はPIDが紫外線で化学物質をイオン化し、電流値から濃度を見積もると説明します。環境省の有害大気汚染物質測定方法マニュアルも、PIDは芳香族炭化水素類や不飽和炭化水素類に高感度と記し、有機化合物の多くを検出する本肢と整合します。"
           }
         ],
-        "sources": []
+        "sources": [
+          {"title": "日本原子力研究開発機構 ATOMICA ECDの原理", "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html"},
+          {"title": "環境省 VOC測定技術実証報告書 実証対象のFID方式装置の特長", "url": "https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf"},
+          {"title": "農研機構 ガスクロマトグラフの汎用検出器", "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/gc_genri/index.html"},
+          {"title": "厚生労働省 食品、添加物等の規格基準 窒素のTCD測定", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=102"},
+          {"title": "国立環境研究所 ガスクロマトグラフ高分解能質量分析装置", "url": "https://www.nies.go.jp/pr/publications/news/8/8-4/8-4-11.html"},
+          {"title": "労働安全衛生総合研究所 PIDによる化学物質測定", "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2020/139-column-1.html"},
+          {"title": "環境省 有害大気汚染物質測定方法マニュアル PIDの対象物質", "url": "https://www.env.go.jp/content/900402504.pdf"}
+        ]
       },
-      "reviewIssues": [
-        "FID・TCD・ECD・MS・PIDの検出原理と応答対象を説明した政府一次資料の本文は確認できなかった。環境省の有機化合物分析資料や厚労省審議会資料のPDFは本文を取得できず、内容未確認のためsourcesは空にした。",
-        "環境省付表5はECDの使用を示すが、ECDの原理（⁶³Niのβ線）やFIDの応答対象は記載しておらず、本問の判断根拠にはならないので採用しなかった。判断はGC検出器の一般原理に依拠している。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {"url":"https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html","excerpt":"ハロゲン化合物などの親電子性化合物の分子が流入すると、電子を捕獲して負イオンが出来る","choiceNumbers":[1]},
+        {"url":"https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html","excerpt":"RI線源には、63Niの370MBq程度のβ線源が多く用いられている","choiceNumbers":[1]},
+        {"url":"https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf","excerpt":"炭化水素以外の無機ガス(H2、NO、NO2、CO、CO2 及びH2O など)は検出の妨害をしない","choiceNumbers":[2]},
+        {"url":"https://www.naro.go.jp/laboratory/niah/disease/biochem/gc_genri/index.html","excerpt":"比較的汎用性の高い熱伝導度型(TCD)","choiceNumbers":[3]},
+        {"url":"https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=102","excerpt":"0.02vol％の窒素を含む水素又はヘリウム4mLを導入したとき","choiceNumbers":[3]},
+        {"url":"https://www.nies.go.jp/pr/publications/news/8/8-4/8-4-11.html","excerpt":"分子量測定，元素組成，構造解析等の定性分析","choiceNumbers":[4]},
+        {"url":"https://www.jniosh.johas.go.jp/publication/mail_mag/2020/139-column-1.html","excerpt":"このPIDは、紫外線を化学物質に照射してイオン化させ電流値から濃度を見積もる手法です","choiceNumbers":[5]},
+        {"url":"https://www.env.go.jp/content/900402504.pdf","excerpt":"PIDは芳香族炭化水素類や不飽和炭化水素類に対して高感度である","choiceNumbers":[5]}
       ]
     }
   }

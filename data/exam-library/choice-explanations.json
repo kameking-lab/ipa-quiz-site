@@ -23016,5 +23016,67 @@
         "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
       }
     ]
+  },
+  "emkohyo-EM20251805-q10": {
+    "sourceHash": "b50b9762ddfdf2eab63e486842c88ce6e597f81dca6021c6e41bcb4779fc8da0",
+    "correctChoice": 2,
+    "summary": "FIDは炭化水素などを高感度で検出する一方、水・二酸化炭素などの無機ガスには通常応答しない。『ほとんどの無機化合物を検出できる』とする2が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "日本原子力研究開発機構の解説では、ECDセル内のβ線源で生じる電流がハロゲン化合物による電子捕獲で減少すること、線源には63Niが多く使われることを示しています。設問の原理と高感度対象は一致し、誤りの肢ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "環境省の水素炎方式の実証資料では、炭化水素は高感度に検出する一方、H2・NO・CO・CO2・H2Oなどの無機ガスは検出の妨害をしないと記されています。水や二酸化炭素など代表的な無機ガスまで広く検出できるという本肢の後半が誤りです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "設問にあるTCDの熱伝導度差という検出原理は、特定の元素だけと反応させる方式ではありません。農研機構はTCDを『比較的汎用性の高い』検出器に分類し、厚生労働省の規格も窒素を導入してTCDの感度を確認しています。特定物質への選択性がないという本肢は正しいです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "国立環境研究所はGCと高分解能MSを組み合わせた装置について、分子量測定、元素組成、構造解析などの定性分析が可能と説明しています。得られる質量分析の情報を未知成分の同定に使えるという本肢の趣旨は正しいです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "労働安全衛生総合研究所はPIDが紫外線で化学物質をイオン化し、電流値から濃度を見積もると説明します。環境省の有害大気汚染物質測定方法マニュアルも、PIDは芳香族炭化水素類や不飽和炭化水素類に高感度と記し、有機化合物の多くを検出する本肢と整合します。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ECDの原理",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html"
+      },
+      {
+        "title": "環境省 VOC測定技術実証報告書 実証対象のFID方式装置の特長",
+        "url": "https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf"
+      },
+      {
+        "title": "農研機構 ガスクロマトグラフの汎用検出器",
+        "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/gc_genri/index.html"
+      },
+      {
+        "title": "厚生労働省 食品、添加物等の規格基準 窒素のTCD測定",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=102"
+      },
+      {
+        "title": "国立環境研究所 ガスクロマトグラフ高分解能質量分析装置",
+        "url": "https://www.nies.go.jp/pr/publications/news/8/8-4/8-4-11.html"
+      },
+      {
+        "title": "労働安全衛生総合研究所 PIDによる化学物質測定",
+        "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2020/139-column-1.html"
+      },
+      {
+        "title": "環境省 有害大気汚染物質測定方法マニュアル PIDの対象物質",
+        "url": "https://www.env.go.jp/content/900402504.pdf"
+      }
+    ]
   }
 }
