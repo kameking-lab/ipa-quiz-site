@@ -4433,5 +4433,283 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q34": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q34",
+    "sourceSha256": "daf6ce0e76d3232e2ce27760091c97d8719c77c759d443f27a1b06a5109434e4",
+    "candidateSha256": "bef5636776225152550d553b3f4e50c212a053972fa4d2c50106c4178b2d0f9a",
+    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://kennet.mhlw.go.jp/information/information/food/e-02-001.html",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-002.html"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 28,
+        "outputTokens": 9146,
+        "cacheReadInputTokens": 2327047,
+        "cacheCreationInputTokens": 244296,
+        "webSearchRequests": 0,
+        "costUSD": 2.6028094,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2465,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q31": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q31",
+    "sourceSha256": "b9ffbe9a15a12ae44ab77ba9fbc69954f6c6c6a37c18d0141399ffbe374f983e",
+    "candidateSha256": "65ac062b3a3086a5b73dca254a4bfd4b41f069df6c633d43e5f9957c3ef387f1",
+    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "肢(5)の「長くても15分以内」という数値は、提示された政府資料のどれにも書かれていない。e-ヘルスネット m-05-005 にあるのは狭心症の発作は「数分以内におさまります」という記述だけで、15分という上限は確認できない。",
+        "肢(5)の前半「狭心症の痛みの場所は、心筋梗塞とほぼ同じ」も、提示資料で直接確認できない。m-05-005 は狭心症を『胸を圧迫されるような痛み』、心筋梗塞を『胸に激痛』（放散痛あり）と書くだけで、両者の部位が同じだとは述べていない。",
+        "候補解説(5)自身も『提示した政府資料に明記されていない』と認めており、公式正答に頼って正しい記述と扱っている。一次資料で裏付けられていないため、未確認としてHOLDにする。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-013.html",
+        "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html",
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 28,
+        "outputTokens": 9146,
+        "cacheReadInputTokens": 2327047,
+        "cacheCreationInputTokens": 244296,
+        "webSearchRequests": 0,
+        "costUSD": 2.6028094,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2465,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q32": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q32",
+    "sourceSha256": "a3a2b30064dec979158d891489dad9eafc850c468c4751bf6a6e1ae2755bd61d",
+    "candidateSha256": "5be796b69998af03bb13a98bef573ddd7c51eb3819acdba90ef36f9b2c626df1",
+    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "肢(1)の『開放骨折＝複雑骨折』という定義は、消防庁『わたしの防災サバイバル手帳』37頁（提示資料で唯一の政府資料）に書かれていない。",
+        "肢(2)の『複雑骨折は感染が起こりやすく治りにくい』を裏付ける記載は提示資料にない。37頁の『骨がつき出しているときは清潔なガーゼや布を当て』『キズ口は洗わないこと』からは推測にとどまる。",
+        "肢(4)は公式正答。ただし、単純骨折（閉鎖骨折）の定義や、ひびの入った状態（不全骨折）との違いを示す政府資料が提示されておらず、なぜ誤りなのかを一次資料で説明できない。",
+        "肢(5)の軋轢音は、37頁の『骨折のみかた』（激しい痛み・はれや変形・冷や汗・骨がずれている・骨のはしが出ている）に含まれていない。",
+        "肢(3)だけは37頁で確認できた。『副子を当て、痛くない位置で固定する。副子は骨折部分の上下の関節より長くする』『骨がとび出している場合でも、元に戻さない』とある。",
+        "候補自身も肢1・2・4・5をHOLDとしており、解説本文が確定していない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.fdma.go.jp/relocation/html/life/survival/pdf/h29/survival2903.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 28,
+        "outputTokens": 9146,
+        "cacheReadInputTokens": 2327047,
+        "cacheCreationInputTokens": 244296,
+        "webSearchRequests": 0,
+        "costUSD": 2.6028094,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2465,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q30": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q30",
+    "sourceSha256": "720ce2f270fbf84200dab72c76e577f83fbff6265eab0e52d7374c6308779725",
+    "candidateSha256": "3f80dcd3443d9ae145841e66c72ded6cc12d9f4b83c446160abecc0968f7f10e",
+    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130677.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177609.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html",
+        "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 28,
+        "outputTokens": 9146,
+        "cacheReadInputTokens": 2327047,
+        "cacheCreationInputTokens": 244296,
+        "webSearchRequests": 0,
+        "costUSD": 2.6028094,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2465,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q33": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q33",
+    "sourceSha256": "5a7d27ef271486083294307ba89aec3aaac403ee7404034a57b77dcd6c0a8e2c",
+    "candidateSha256": "a78afef43517ee7a5ac16e7e6a2b04c4d7b49490ca46c4b92e48b1c25de6ab7b",
+    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "肢(1)は公式正答。ただし、有所見率と発生率の定義の違いを示す政府資料が提示されておらず、なぜ誤りなのかを一次資料で説明できない。",
+        "肢(4)の『相関関係があっても因果関係があるとは限らない』を述べた政府資料が提示されていない。総務省統計局『データの散らばりを見る』のページにも該当する記述はない。",
+        "肢(5)の病休度数率の定義（延べ実労働時間100万時間当たりの疾病休業件数）を載せた政府資料が提示されていない。",
+        "肢(2)と(3)は統計局のページで確認できた。『平均値はどれも5…それぞれ違う特徴をもったデータであることが推測できます』『分布の形によっては最頻値や中央値を代表値にする場合もあります』とある。",
+        "候補自身も肢1・4・5をHOLDとしている。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.stat.go.jp/naruhodo/10_tokucho/chirabari.html"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 28,
+        "outputTokens": 9146,
+        "cacheReadInputTokens": 2327047,
+        "cacheCreationInputTokens": 244296,
+        "webSearchRequests": 0,
+        "costUSD": 2.6028094,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2465,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
