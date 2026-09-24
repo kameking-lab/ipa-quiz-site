@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "group": "lckohyo",
+  "name": "gas container safety rules",
+  "retrievedOn": "2026-09-24",
+  "windows": {
+    "2025-10": [
+      "2025-01-01",
+      "2025-06-30"
+    ],
+    "2026-04": [
+      "2025-07-01",
+      "2025-12-31"
+    ]
+  },
+  "notice": "Statute revisions in force at each exam-window boundary, pinned from the e-Gov API. Applicability of a specific article must still be checked per question; no reuse or PASS is implied.",
+  "sources": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/341M50000400050/20240615_506M60000400037",
+      "title": "e-Gov法令検索 容器保安規則（2024-06-15施行版）",
+      "locators": [],
+      "relevantQuestionIds": [],
+      "inForceOn": [
+        "2025-01-01"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://laws.e-gov.go.jp/api/2/law_data/341M50000400050_20240615_506M60000400037",
+        "retrievedOn": "2026-09-24",
+        "sha256": "7dfb93d57c109248916a9fec74d30bfcb3ea02f9c0ca7c2e5d489ff8d75412aa",
+        "bytes": 499741,
+        "contentType": "application/json"
+      }
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/341M50000400050/20250401_507M60000400023",
+      "title": "e-Gov法令検索 容器保安規則（2025-04-01施行版）",
+      "locators": [],
+      "relevantQuestionIds": [],
+      "inForceOn": [
+        "2025-06-30",
+        "2025-07-01"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://laws.e-gov.go.jp/api/2/law_data/341M50000400050_20250401_507M60000400023",
+        "retrievedOn": "2026-09-24",
+        "sha256": "cabe7f2e62d88e71d6b9a6413c1888c666cceb14130fea8cb72d09c11b04f902",
+        "bytes": 505738,
+        "contentType": "application/json"
+      }
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/341M50000400050/20250801_507M60000400057",
+      "title": "e-Gov法令検索 容器保安規則（2025-08-01施行版）",
+      "locators": [],
+      "relevantQuestionIds": [],
+      "inForceOn": [
+        "2025-12-31"
+      ],
+      "retrieval": {
+        "retrievalUrl": "https://laws.e-gov.go.jp/api/2/law_data/341M50000400050_20250801_507M60000400057",
+        "retrievedOn": "2026-09-24",
+        "sha256": "0e86de4823b4bd9c45ea5249c5e5e89c2560132b72602279e905017179f64d5d",
+        "bytes": 505858,
+        "contentType": "application/json"
+      }
+    }
+  ]
+}

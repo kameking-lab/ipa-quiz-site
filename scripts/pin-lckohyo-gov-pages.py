@@ -43,7 +43,9 @@ def main():
         response = None
         for attempt in range(4):
             # env.go.jp's CDN intermittently rejects non-browser user agents.
-            response = requests.get(retrieval_url, timeout=120, headers=HEADERS)
+            # METI rejects the default agent and env.go.jp the browser one: alternate.
+            response = requests.get(retrieval_url, timeout=120,
+                                    headers=HEADERS if attempt % 2 == 0 else None)
             if response.status_code == 200:
                 break
             time.sleep(2 ** attempt)
