@@ -4,7 +4,7 @@
     16,
     16
   ],
-  "draftSha256": "0c7c3fcacea902fcf63861edb7f0de4964d353e50f8f82635a44a87ce8c7a9ff",
+  "draftSha256": "7825838912d73c9529ab1b773e8fa1601c5705cdb86316582c823b23294296b1",
   "sources": [
     {
       "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html",
@@ -57,6 +57,24 @@
       ]
     },
     {
+      "url": "https://www.mhlw.go.jp/content/11300000/001096482.pdf",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/11300000/001096482.pdf",
+      "sha256": "61d1abf793ca011ffa643da016d17eb4b7fe9d5b9dac5a2dfd8832b531835b66",
+      "contentType": "application/pdf",
+      "pages": 279,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251808-q16",
+          "excerpt": "水素化ホウ素ナトリウム（NaBH4）を加えて水素化し、水素化物発生-AASで分析する。",
+          "matched": true,
+          "pdfPage": 145,
+          "context": "囲備考⑯DFGOrderno.：BGI505-29Eろ過捕集方法セルロースエステルメンブランフィルター水素化物発生-原子吸光法（AAS）1L/minでサンプリングし、試料中のアンチモンを塩酸で溶解し、水素化ホウ素ナトリウム（NaBH4）を加えて水素化し、水素化物発生-AASで分析する。定量下限1.8µg/m3(420L)⑨EPAMETHODIO-3.3ろ過捕集方法テフロンフィルター（TRF分析用）蛍光X線分析法（XRFS）捕集粒子中の金属をXRFSで分析する。定量下限9.45ng/"
+        }
+      ]
+    },
+    {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
       "status": 200,
       "finalUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
@@ -103,7 +121,7 @@
       ]
     }
   ],
-  "claimedExcerpts": 9,
+  "claimedExcerpts": 10,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0
 }

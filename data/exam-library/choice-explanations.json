@@ -28104,5 +28104,63 @@
         "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
       }
     ]
+  },
+  "emkohyo-EM20251808-q4": {
+    "sourceHash": "809ae742998b35072b7894c07a8d4e9bf76757048f71691d732da2f3717c16c5",
+    "correctChoice": 1,
+    "summary": "吸光光度分析法は試料が特定波長の光を吸収する度合を測る。溶液に見える色の光は吸収されずに残った光なので、肢1が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "吸光光度分析法は、試料が一定の狭い波長範囲の光を吸収する度合を測る方法である。溶液に見える色は吸収されずに残った光の色で、吸収される光の色とは異なる。例えばクロムのジフェニルカルバジド錯体は540 nm付近の光を吸収して赤紫色に見える。『溶液色の波長光の吸収』とするこの組合せが誤りである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "蛍光光度分析法は、蛍光物質の溶液に励起光を当てたときに放射される蛍光の強さを測る方法である。原理の基礎が『物質による蛍光の発生』にあるという組合せは正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "原子吸光分析法は、光が原子蒸気層を通るとき、基底状態の原子がその元素に特有の波長の光を吸収する現象を利用する。『原子固有の光の吸収』という組合せは正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ICP発光分析法（ICP-AES）は、試料中の元素を誘導結合プラズマで原子化・励起し、そこから出る発光スペクトル線の強度で定量する。環境省の底質調査方法ではICP発光の測定波長に中性原子線(I)とイオン線(II)の両方が示されており、『励起された原子及びイオンの発光』という組合せは正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ICP質量分析法（ICP-MS）は、プラズマ中で生成した測定対象元素のイオンを質量分析計で分離・定量する。『イオン化された原子の質量』という組合せは正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      },
+      {
+        "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+        "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+      },
+      {
+        "title": "農研機構 野菜花き研究部門 色素の基礎知識",
+        "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
+      },
+      {
+        "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+        "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+      },
+      {
+        "title": "環境省 底質調査方法",
+        "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+      },
+      {
+        "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+        "url": "https://www.env.go.jp/content/900403678.pdf"
+      }
+    ]
   }
 }
