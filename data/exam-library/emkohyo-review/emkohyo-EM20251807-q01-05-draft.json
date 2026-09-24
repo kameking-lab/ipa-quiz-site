@@ -466,82 +466,131 @@
       "overlay": {
         "sourceHash": "d8c48f26e1246a9ed462745f642f6cd8083ecf127b0aac6a8ea3e0ec2f77e27a",
         "correctChoice": 1,
-        "summary": "ハロゲンを含まないアクリロニトリルにECDを組み合わせる肢1が不適当",
+        "summary": "電子捕獲検出器はハロゲン化合物などに高感度で、アクリロニトリルと組み合わせる肢1が不適当。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "この組合せが不適当。ECDはハロゲン化合物など電子親和性の大きい物質に高感度な検出器で、ハロゲンを含まないアクリロニトリルには感度が低い。アクリロニトリルはFIDや、窒素に選択的なFTDで検出するのが適当である。"
+            "reason": "アクリロニトリル（CH₂=CHCN）はハロゲンを含まない。電子捕獲検出器はハロゲン化合物など電子を捕獲する物質への選択性が高い。厚生労働省の医薬部外品原料規格におけるアクリロニトリル試験法ではFIDを用いる。したがってECDとの組合せが不適当である。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "組合せは適当なので正答ではない。アクリルアミドは窒素を含む化合物である。FTD（TID）はアルカリ塩ビードによって窒素・リン化合物に選択的かつ高感度に応答するため、固体捕集・ろ過捕集後のGC分析に使うのは妥当である。"
+            "reason": "アクリルアミドは窒素を含む有機化合物である。国立環境研究所はフレームサーミオニック検出器を窒素又はリンを含む化合物に選択的な検出器と説明しており、この組合せは誤りではない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "組合せは適当なので正答ではない。臭化メチルは炭素を含む有機化合物で、水素炎中で燃焼してイオンを生じるため、FIDで検出できる。臭素を含むのでECDも高感度だが、FIDとの組合せ自体は誤りではない。"
+            "reason": "農林水産省の臭化メチルくん蒸試験では、装置内の臭化メチルのガス濃度をGC-FIDで測定している。臭素を含むからといってFIDで検出できないわけではなく、この組合せは誤りではない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "組合せは適当なので正答ではない。ナフタレンは固体捕集後にガスクロマトグラフで分析する。質量分析器（MS）なら分子イオンm/z128などの質量スペクトルで同定しながら、選択イオン検出で定量でき、検出器として適切である。"
+            "reason": "環境省の大気中ナフタレン測定マニュアルは、固体吸着で採取した試料をジクロロメタンで抽出・濃縮し、ガスクロマトグラフ質量分析法で分析すると記載する。この組合せは公的測定方法と一致する。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "組合せは適当なので正答ではない。硫酸ジメチルは分子内に硫黄を含む。炎光光度検出器（FPD）は、水素炎中で硫黄化合物が出す394nm付近の発光をフィルターで選んで検出するため、硫黄選択的に高感度で測定できる。"
+            "reason": "硫酸ジメチルは硫黄を含む化合物である。厚生労働省の硫酸ジイソプロピル測定法検討資料は、硫酸ジメチルについても捕集・脱着後にガスクロマトグラフの炎光光度検出器で分析すると記載している。この組合せは誤りではない。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "日本原子力研究開発機構・ECDの原理",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html"
+          },
+          {
+            "title": "厚生労働省・医薬部外品原料規格と分析法検討資料",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9023&dataType=1"
+          },
+          {
+            "title": "厚生労働省・アクリロニトリルSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-13-1.html"
+          },
+          {
+            "title": "国立環境研究所・FTD解説",
+            "url": "https://www.nies.go.jp/pr/publications/tokubetu/setsumei/sr-039-2001b.html"
+          },
+          {
+            "title": "農林水産省・臭化メチルくん蒸試験",
+            "url": "https://www.maff.go.jp/j/syouan/seisaku/regulatory_science/attach/pdf/shuryo_plant-7.pdf"
+          },
+          {
+            "title": "環境省・ナフタレン測定マニュアル",
+            "url": "https://www.env.go.jp/air/osen/manual2/pdf-rev1103/01_chpt1-2-3.pdf"
+          },
+          {
+            "title": "厚生労働省・医薬部外品原料規格と分析法検討資料",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000130871.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "アクリロニトリル 液体捕集方法、固体捕集方法又は直接捕集方法",
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html",
+          "excerpt": "ハロゲン化合物などの親電子性化合物",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "アクリルアミド 固体捕集方法及びろ過捕集方法 ガスクロマトグラフ分析方法",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9023&dataType=1",
+          "excerpt": "検出器：水素炎イオン化検出器",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc9023&dataType=1",
+          "excerpt": "アクリロニトリル試験法とは",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-13-1.html",
+          "excerpt": "C3H3N",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nies.go.jp/pr/publications/tokubetu/setsumei/sr-039-2001b.html",
+          "excerpt": "窒素やリンを含む化学物質を選択的、高感度に検出",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "臭化メチル 液体捕集方法、固体捕集方法又は直接捕集方法",
+          "url": "https://www.maff.go.jp/j/syouan/seisaku/regulatory_science/attach/pdf/shuryo_plant-7.pdf",
+          "excerpt": "GC-FID 測定",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "ナフタレン 固体捕集方法 ガスクロマトグラフ分析方法",
+          "url": "https://www.maff.go.jp/j/syouan/seisaku/regulatory_science/attach/pdf/shuryo_plant-7.pdf",
+          "excerpt": "臭化メチル原液",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/osen/manual2/pdf-rev1103/01_chpt1-2-3.pdf",
+          "excerpt": "採取した試料はジクロロメタンで抽出し、濃縮したもの",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "硫酸ジメチル 液体捕集方法又は固体捕集方法",
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000130871.pdf",
+          "excerpt": "ガスクロマトグラフ（FPD）で分析",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "作業環境測定基準の抜粋で確認できるのは、5物質がガスクロマトグラフ分析方法の対象（固体捕集・直接捕集等の場合）だという前提だけである。どの検出器を選ぶべきかは同基準に書かれていない。正答肢1（ECDの不適当性）を直接支える公的根拠がないため、作業環境測定ガイドブック等の検索が必要。",
-        "各検出器の応答原理（FTDの窒素・リン選択性、FPDの硫黄394nm発光など）は一般的な分析化学の知識である。公的資料の本文では確認していない。"
-      ]
+      "reviewIssues": []
     }
   }
 }
