@@ -464,7 +464,7 @@
       "overlay": {
         "sourceHash": "a853a7d011102b58c509c5548fae80564d716d33562e0b84c0a0897e9dfbedfb",
         "correctChoice": 1,
-        "summary": "⁹⁰Yのβ線の最大エネルギーは2.280MeVで、1MeVのβ線でも飛程は約0.4g/cm²（空気中で約3.3m）に達するため、空気中の最大飛程は数mであり「80cm程度」とする肢1が誤り。",
+        "summary": "⁹⁰Yのβ線の最大エネルギーは2.280MeVで、1MeVのβ線でも飛程は約0.4g/cm²（空気中で約3.3m）に達するため、空気中の最大飛程は3m以上であり「80cm程度」とする肢1が誤り。",
         "choices": [
           {
             "number": 1,
@@ -489,7 +489,7 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "消防庁資料は、中性子線の減弱には水など水素を多く含む原子番号の小さい元素が有効で、鉛や鉄でも減衰するが効率は良くないと説明し、ATOMICAも中性子線の遮へい材に水・パラフィン等を挙げる。熱中性子線について水の方が鉄より遮へい効果が大きいという記述はこれに沿い、正しい記述として扱われる。"
+            "reason": "記述は正しい。熱中性子は散乱と吸収で除かれる。JENDL-4.0の0.0253eVの全断面積はH 30.60b、O 3.955b、Fe 13.90bで、水1分子（2H＋O、約18.0g/mol）は65.2b、鉄1原子（55.845g/mol）は13.9bとなる。1gあたりでは水が鉄の約14.5倍（3.62÷0.249）で、ATOMICAも熱中性子の吸収に使う物質に軽水を挙げている。"
           }
         ],
         "sources": [
@@ -514,12 +514,32 @@
             "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_03-06-03-06.html"
           },
           {
-            "title": "消防庁 参考資料3 Q&A（講師用）放射線の種類と被ばく影響",
-            "url": "https://www.fdma.go.jp/pressrelease/houdou/items/h23/2303/230318_2houdou/sankousiryou/03.pdf"
+            "title": "日本原子力研究開発機構 核データ研究グループ JENDL-4.0 断面積表（1-H-nat）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/H000.intern"
           },
           {
-            "title": "日本原子力研究開発機構 ATOMICA「放射線防護上の遮へい」",
-            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html"
+            "title": "日本原子力研究開発機構 核データ研究グループ JENDL-4.0 断面積表（8-O-nat）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/O000.intern"
+          },
+          {
+            "title": "日本原子力研究開発機構 核データ研究グループ JENDL-4.0 断面積表（26-Fe-nat）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/Fe000.intern"
+          },
+          {
+            "title": "日本原子力研究開発機構 核データ研究グループ 核データの表（Hydrogen：原子量）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?01"
+          },
+          {
+            "title": "日本原子力研究開発機構 核データ研究グループ 核データの表（Oxygen：原子量）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?08"
+          },
+          {
+            "title": "日本原子力研究開発機構 核データ研究グループ 核データの表（Iron：原子量）",
+            "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?26"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 用語辞書「中性子遮蔽体」",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1050.html"
           }
         ]
       },
@@ -588,30 +608,56 @@
           ]
         },
         {
-          "url": "https://www.fdma.go.jp/pressrelease/houdou/items/h23/2303/230318_2houdou/sankousiryou/03.pdf",
-          "excerpt": "中性子線を減弱させるのには、一般的に原子番号の小さい元素（水など水素を多く含有するもの）が有効です",
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/H000.intern",
+          "excerpt": "(n,total) 30.60 (b)",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://www.fdma.go.jp/pressrelease/houdou/items/h23/2303/230318_2houdou/sankousiryou/03.pdf",
-          "excerpt": "鉛や鉄などでも減衰しますが、効率は良くありません",
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/O000.intern",
+          "excerpt": "(n,total) 3.955 (b)",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html",
-          "excerpt": "中性子線には水、パラフィン等原子番号の小さい物質が一般的に用いられている",
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/Fe000.intern",
+          "excerpt": "(n,total) 13.90 (b)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?01",
+          "excerpt": "H-nat 1.00794",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?08",
+          "excerpt": "O-nat 15.9994",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?26",
+          "excerpt": "Fe-nat 55.845",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1050.html",
+          "excerpt": "次に熱中性子に対する吸収断面積の大きな物質（ホウ素、カドミウム、ガドリニウム、軽水など）を利用して吸収させる",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】肢5「熱中性子線に対しては、鉄よりも水の方が遮へい効果が大きい」について、熱中性子に即して水と鉄の遮へい効果を比較する政府一次資料を確保できていない。消防庁Q&A・ATOMICAは中性子線一般（主に減速）で水が有効・鉄は効率が良くないと述べるのみで、独立審査（第1・第2ラウンド、q01-05・q05-05）は熱中性子固有の因果（散乱＋吸収の巨視的断面積の比較）が欠けるとしてFIXとした。一方、JAEA執筆の日本中性子科学会『波紋』28(4)の表では熱中性子捕獲断面積がH 0.332b・Fe 2.566bであり、吸収だけなら鉄が大きい。JENDL等の公的核データ（H・O・Feの熱中性子散乱・吸収断面積）で水と鉄の巨視的全断面積を比較できる一次資料を得るまで公開保留。"
-      ]
+      "reviewIssues": []
     }
   }
 }
