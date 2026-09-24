@@ -36695,5 +36695,383 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q14": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q14",
+    "sourceSha256": "e2c2f5672b15dcabed5190dd54c7e537b6d594d18781294351f767974a6e9b58",
+    "candidateSha256": "dd430e1353a3c2453e6a2e26effea384e79b19f521e61015943dbae54a6f3c08",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 9, printed page 8/23) marks (1) as the correct answer with ○, matching correctChoice=1. The local image and the extracted text match the PDF exactly.",
+        "Both versions of the Boiler and Pressure Vessel Safety Regulations (ボイラー則) cover the exam window. The 2023-12-21 version is in force on 2025-01-01 and the 2025-04-01 version on 2025-06-30. Article 28(1)(ii) and 28(2) have the same text in both, so the version in force at the time of the exam was confirmed.",
+        "(2) matches Article 28(2) word for word: when there are two or more safety valves, one is set at or below the maximum allowable working pressure (MAWP) and the others at or below MAWP plus 3%. The statement is correct, so it is not the answer.",
+        "(3) The operating order (the superheater safety valve opens before the drum safety valve) matches Article 28(1)(ii). The purpose clause 'to prevent superheater burnout' is not in the regulation. The statement counts as correct only on the strength of the operating order.",
+        "(1) No government source was found for lowering the pressure to about 80% of the set pressure or for which way to turn the adjusting bolt. Searches for 設定圧力/吹出し圧力 in the regulations and the structure standard found only the valve-marking item. Why the official answer is wrong cannot be traced to a government source.",
+        "(4) No government source was found for setting safety valves on connected boilers with different MAWPs to the lowest MAWP. A search for 最高使用圧力の異なる found nothing.",
+        "(5) No government source was found for doing the manual test with the test lever at 75% or more of MAWP. Searches for レバー/手動試験/七十五パーセント found nothing."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q25": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q25",
+    "sourceSha256": "3178f3d08bb1333c7cb4580d68394b69a94b47cde873b15204290df1312bd157",
+    "candidateSha256": "335b7cd00cc43ddff403196b2fb8ef2404ea70de86d024e42e3967b251f62eeb",
+    "evidenceSha256": "76eeade2f199b54883db80174671fa025d12d574dd7a3c79d08e76b83f28bbae",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 16, printed page 15/23) marks (1) A,B with ○, matching correctChoice=1. The local image and the extracted text match the PDF.",
+        "Statement C is contradicted by the MOE NOx guideline, printed page 127. It describes the oil-pressure burner as atomizing 'without spray air, by raising the oil pressure' and gives a 30–40 kg/cm2 pressure line. That conflicts with C's claim that the atomizing medium is steam or air at 0.5–0.7 MPa. So (2), (4) and (5), which all include C, can be rejected. This rests on reading the guideline's oil-pressure burner (油圧バーナー) as the same thing as the question's pressure-atomizing burner (圧力噴霧式). The guideline describes the mechanism in those terms but never uses the word 圧力噴霧式. The source is about glass furnaces, not boilers.",
+        "A (steam/air atomizing burners handle fuels from tar to kerosene): no source. The guideline mentions kerosene only in a table of fuel nitrogen content.",
+        "B (on a rotary burner, the airflow runs opposite to the fuel's swirl): no source. The only ロータリー hit is a cement rotary kiln.",
+        "D (the air register atomizes the fuel): no source. Searches for エアレジスタ and アトマイザ found nothing. Neither the correct answer (1) nor the rejection of (3) can be confirmed.",
+        "The guideline is undated current text with no amendment history, so whether it applied during the exam window cannot be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.env.go.jp/en/water/wq/ine/pdf/tool/3_guideline-fixed%20sources-jp.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q26": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q26",
+    "sourceSha256": "2ecccca9a59a5492c09f36a08bdd90adc2ac5c535f2d1878ba33965d1a9d35ae",
+    "candidateSha256": "5f08ca347fe90830bb9b78ee12a8c9b998aa84c86dd76ce83e6ec38a5210fa02",
+    "evidenceSha256": "76eeade2f199b54883db80174671fa025d12d574dd7a3c79d08e76b83f28bbae",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 16, printed page 15/23) marks (1) A,B with ○, matching correctChoice=1. The local image and the extracted text match the PDF.",
+        "A: the guideline (around printed pages 118–119) defines the air ratio as 'm0 (actual air / theoretical air)', which matches A.",
+        "C: the guideline, printed page 127, says burning with only theoretical air produces soot and unburned matter, and that operation is 'normally at 10–30% excess air (air ratio 1.1–1.3)'. That contradicts C's claim that actual air generally does not exceed theoretical air. So (2), (4) and (5), which include C, can be rejected.",
+        "B (the definition of dry combustion gas) has no government source in the evidence pack, so the correct answer (1) cannot be confirmed.",
+        "D (how dry combustion gas volume relates to excess air) has no government source, so there is no basis for rejecting (3) A,D.",
+        "The guideline is undated current text, so whether it applied during the exam window cannot be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.env.go.jp/en/water/wq/ine/pdf/tool/3_guideline-fixed%20sources-jp.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q38": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q38",
+    "sourceSha256": "98d67d8d4f07fc665273d88a9018c94ab94e0ba931d60a68d86d2e316e62dc22",
+    "candidateSha256": "72466e0725680b729137eb054540dbd5cfa1024451b5d3d81557db28b3d36ccf",
+    "evidenceSha256": "d4c70e2e6274d86451ff900474ca9f372f5c62ef6cc722b44122d17383c5df5e",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS"
+    ],
+    "assessment": {
+      "status": "PASS",
+      "issues": [
+        "The official PDF (page 23, printed page 22/23) marks (3) with ○, matching correctChoice=3. The local image and the extracted text match the PDF.",
+        "(1) matches Article 73(1) of the Boiler Structure Standard (ボイラー構造規格) word for word.",
+        "(2) matches Article 74, which treats connected boilers as a single boiler for the purposes of Article 73.",
+        "(3) Article 73(2) requires 'two' feed-water devices for boilers that keep receiving heat after the fuel supply is cut. The statement says 3, so it is wrong, which is why it is the correct answer.",
+        "(4) matches the proviso to Article 75: once-through boilers and boilers under 0.1 MPa need only a feed-water valve.",
+        "(5) matches Article 76 word for word.",
+        "Applicability at the time of the exam: the retrieved text is after amendment by MHLW Notice 291 of 2025 (Reiwa 7), which applies from 2026-04-01. Articles 73–76 carry no amendment notes (Articles 69, 78 and others do). The summary of that amendment (Industrial Safety and Health Subcommittee, meeting 177, Material 7) does not mention feed-water devices. The same text therefore applied during the exam window, 2025-01-01 to 2025-06-30."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/content/11201250/001556664.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q5": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q5",
+    "sourceSha256": "43871124d99b743365ed233544d1297af9476301551889c9c855de4788cc5073",
+    "candidateSha256": "31b9b65a95b17743c59f32aed28f782ca0d3f00f70ee23dec7922298a14d3784",
+    "evidenceSha256": "d4c70e2e6274d86451ff900474ca9f372f5c62ef6cc722b44122d17383c5df5e",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 4, printed page 3/23) marks (5) with ○, matching correctChoice=5. The local image and the extracted text match the PDF.",
+        "(1) Article 100 of the structure standard requires that pipes from a pressurized water source be attached to the return pipe. Under Articles 94–95, relief pipes (逃がし管) are safety devices for hot-water boilers. The statement says, without qualification, that the feed pipe attaches to the relief pipe, which contradicts Article 100, so it is wrong.",
+        "(2) 'Directly on the rear section' conflicts with Article 100 only when feed water comes from a pressurized source. The statement assumes condensate recirculation, where Article 100 may not apply. 'Recirculating condensate is the rule' and 'just below the safety low water level' have no source.",
+        "(3) Efficiency of about 90%, equivalent evaporation of about 4 t/h, and water content per heating surface: no source for which of these is wrong.",
+        "(4) Wet-bottom furnace floor: no source. Article 90 only requires sectional construction.",
+        "(5) Studs on the section walls: no source. Article 91 mentions only reinforcement by stays. The correct answer has no government-source support.",
+        "Applicability at the time of the exam: Articles 90–95 and 100 carry no amendment notes, so the same text applied during the exam window."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863&dataType=0&pageNo=1"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q6": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q6",
+    "sourceSha256": "f5fc1557bebcc4ee44fe06139a84664d5792be2eb01c60024c6ae68536d80484",
+    "candidateSha256": "8c07dec88690abe1c8f0af8bed45aedc8968a558409a7e28de9f143a6323d405",
+    "evidenceSha256": "d4c70e2e6274d86451ff900474ca9f372f5c62ef6cc722b44122d17383c5df5e",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 4, printed page 3/23) marks (2) A,B,C with ○, matching correctChoice=2. The local image and the extracted text match the PDF.",
+        "A (stay tubes also serve as heat-transfer tubes): no source. Article 26 only lists stay tubes among the items whose cross-sectional area is regulated.",
+        "B (thicker-walled than smoke tubes; welded or screwed in): no source. Article 26(2) only requires attachment with sufficient strength and says nothing about wall thickness or method.",
+        "C: Article 27 implies that stay bolts join the plates on both sides, which is consistent with C. But the standard does not mention locomotive boilers or the inner and outer firebox plates, so C is only partly confirmed.",
+        "D: there is no source for the breathing space (ブリージングスペース), so the basis for calling D wrong cannot be confirmed.",
+        "Every combination depends on unsourced statements (A, B and D, plus C only partly), so no choice can be judged.",
+        "Applicability at the time of the exam: Articles 25–27 carry no amendment notes, so the same text applied during the exam window."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863&dataType=0&pageNo=1"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b17d29bd4eb7722b66642d096de69f1fc23d351ef86d88ab7afff414ec1ecfda",
+    "resultSha256": "e7b72434435930d756824105dc088f04ed9b9ad3b455bb86c6f8f6ad174cd022",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 14675,
+        "cacheReadInputTokens": 998246,
+        "cacheCreationInputTokens": 83083,
+        "webSearchRequests": 0,
+        "costUSD": 1.1579412,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6016,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
