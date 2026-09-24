@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3077,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 18632,
+      "webSearchRequests": 0,
+      "costUSD": 0.2384926,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1755,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "38cbaddf248799db2b0c3df1e9ab218d32b96b1135923a5b84b7a160c4af697f",
+  "inputRequestSha256": "c12283d70f5c02df6933e8c59af5ecde3acf2b85339cf8e4d9a98badb6e475d3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "050e33fe5569fc902c811899fb59348f80464259d355dadcfc315ee5b4b2b16a",
+      "q16b": "e43d44632a4d500792a2c79558f9ebc4b184036e02900bdaf8073564e658ee45"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p21.png": "a1aadb2e71dc0b3b1d2c83eb148814a7e270bef5085b70445d5024004a8b1ec2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "b1151483ff8a005ba22c2aa5747bd44c31cc92fb735d317a4bae9d992b2de7b7"
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The common statement matches the official page (printed page -18-, footer T1-D 021, consistent with reviewedFromPage 21): TA is 80 MV·A, 33 kV/11 kV, %Z 18.3% on its own rating; the source %Z is 1.5% on an 80 MV·A system base; resistance and other constants are ignored.",
+        "Part (a) text and all five choices match the official page: 5, 8, 12.5, 20, 25 kA. The original prints '12. 5', which is the same value as 12.5.",
+        "The official answer table (R6 upper, power, Q16(a)) gives 5, which matches officialAnswer.",
+        "Calculation checks out. The base current at 80 MV·A and 11 kV is 80e6/(√3×11e3) = 4198.9 A. Total %Z on the common 80 MV·A base is 18.3 + 1.5 = 19.8%. Short-circuit current is 4198.9×100/19.8 ≈ 21.21 kA.",
+        "Choice reasoning is correct. 5, 8, 12.5 and 20 kA are all below 21.2 kA, so their breaking capacity is too low (20 kA falls short by only about 1.2 kA). 25 kA is the only choice at or above 21.2 kA.",
+        "There is no figure on the official page. figureUrls is empty and the description is accurate.",
+        "officialReferenceUrls is empty, so there are no independent claims to verify."
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Part (b) text matches the official page: TB is 50 MV·A with %Z 12.0% on its own rating, connected in parallel with TA, carrying a 40 MW load; only this load is connected, and resistance and other constants are ignored.",
+        "All five choices match the official page: 15.8, 19.5, 20.5, 24.2, 24.6.",
+        "The official answer table (R6 upper, power, Q16(b)) gives 3, which matches officialAnswer.",
+        "Calculation checks out. TB's %Z converted to the 80 MV·A base is 12.0×80/50 = 19.2%. TA's share is 40×19.2/(18.3+19.2) = 40×0.512 = 20.48 MW, which rounds to 20.5.",
+        "Recomputed each wrong-choice value. (1) 40×12.0/30.3 = 15.84. (2) TB's share is 40×18.3/37.5 = 19.52. (4) 40×18.3/30.3 = 24.16. (5) 40×80/130 = 24.62. All match the choices, and each reason is correct.",
+        "The candidate's uncertainty field already notes that the wrong-choice derivations do not claim to be the examiner's intended mistakes. Each choiceExplanation only states that the numbers agree, which is factually correct.",
+        "Because resistance is ignored, the %Z inverse-ratio split applies equally to active power (MW). The explanation's causal logic holds.",
+        "There is no figure on the official page. figureUrls is empty and the description is accurate. officialReferenceUrls is empty, so there are no independent claims to verify."
+      ]
+    }
+  ]
+}

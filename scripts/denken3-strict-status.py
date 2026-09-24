@@ -73,6 +73,12 @@ def main() -> None:
             if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
                    for source, value in hashes["figureSha256"].items()):
                 continue
+            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+                   for source, value in hashes.get("referencePdfSha256", {}).items()):
+                continue
+            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+                   for source, value in hashes.get("referencePageSha256", {}).items()):
+                continue
             if item["status"] == "PASS" and all(item.get(issue) == [] for issue in ISSUES):
                 passed[id_] = str(path.relative_to(ROOT)).replace("\\", "/")
     grouped = {}

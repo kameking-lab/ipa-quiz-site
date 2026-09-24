@@ -14,6 +14,8 @@ import re
 import subprocess
 import sys
 
+import fitz
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
@@ -21,6 +23,7 @@ REVIEWED = ROOT / "data/questions/denken3/reviewed"
 PRIVATE = ROOT / "data/raw_pdfs/denken3/review"
 ANSWER_DIR = ROOT / "data/raw_pdfs/denken3"
 OUT = ROOT / "docs/evidence/denken3/strict"
+REFERENCE_MANIFEST = ROOT / "scripts/denken3-reference-manifest.json"
 CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 ISSUES = ("textIssues", "choiceIssues", "answerIssues", "explanationIssues", "figureIssues", "sourceIssues")
 
@@ -111,6 +114,8 @@ def main() -> None:
         "sourceQuestionPdfSha256": paper["sha256"],
         "sourceAnswerPdfSha256": session["officialAnswer"]["sha256"],
         "officialAnswerUnitsSha256": canonical([official[key] for key in selected_keys]),
+        "referencePdfSha256": {},
+        "referencePageSha256": {},
     }
 
     prompt = (
@@ -118,7 +123,8 @@ def main() -> None:
         "manifest固定の公式正答、公開候補図と解答単位ごとに照合する。問題文・数式・極性・単位、(1)〜(5)全肢、"
         "公式正答、総合解説の計算・因果、正答肢と各誤答肢固有の理由、図の接続・向き・全ラベルを検算する。"
         "図が解答に必要なら公開候補図だけで理解できるかも検査する。公式ReferenceUrlsに独立主張がある場合、"
-        "添付原図だけで検証できなければsourceIssuesに記録し、推測でPASSにしない。"
+        "添付原図または添付した公式参考資料の原頁で検証できなければsourceIssuesに記録し、推測でPASSにしない。"
+        "監査レシートのp番号は査読回次タグで、PDFページ番号ではない。PDFページはreviewedFromPageと添付原図から判断する。"
         "status=PASSは誤り・曖昧さ・外部確認事項が一つもない場合だけ。出力はJSON配列のみ。各要素は"
         "unitKey,questionNumber,part,status(PASS/FIX),textIssues,choiceIssues,answerIssues,explanationIssues,"
         "figureIssues,sourceIssues,verifiedEvidenceを持つ。issuesは必ず配列。公式正答は変更しない。"
@@ -131,6 +137,27 @@ def main() -> None:
     answer_image = ANSWER_DIR / f"answer-{date}.png"
     if answer_image.is_file():
         blocks += [{"type": "text", "text": "試験センター公式解答表の原図:"}, image(answer_image)]
+    reference_manifest = {entry["url"]: entry for entry in json.loads(REFERENCE_MANIFEST.read_text(encoding="utf-8"))}
+    referenced_urls = {url.split("#", 1)[0] for candidate in selected_candidates
+                       for url in candidate.get("officialReferenceUrls", [])}
+    for url in sorted(referenced_urls):
+        if url not in reference_manifest:
+            raise ValueError(f"Official reference lacks pinned source pages: {url}")
+        entry = reference_manifest[url]
+        pdf = ROOT / entry["localPdf"]
+        if raw_digest(pdf) != entry["sha256"]:
+            raise ValueError(f"Official reference PDF hash changed: {url}")
+        hashes["referencePdfSha256"][entry["localPdf"]] = entry["sha256"]
+        document = fitz.open(pdf)
+        for page_number in entry["pages"]:
+            destination = PRIVATE / "references" / f"{pdf.stem}-p{page_number:03}.png"
+            destination.parent.mkdir(parents=True, exist_ok=True)
+            if not destination.exists():
+                document[page_number - 1].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(destination)
+            relative = destination.relative_to(ROOT).as_posix()
+            hashes["referencePageSha256"][relative] = raw_digest(destination)
+            blocks += [{"type": "text", "text": f"公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁:"},
+                       image(destination)]
     for key in selected_keys:
         candidate = candidates[key]
         blocks.append({"type": "text", "text":

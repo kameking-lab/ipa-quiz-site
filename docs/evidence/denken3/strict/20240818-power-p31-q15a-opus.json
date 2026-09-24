@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3622,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 22205,
+      "webSearchRequests": 0,
+      "costUSD": 0.2699,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2175,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0c30c85ae5310626443f019be6c44082308eeb0088bca39a29fbf6260b3652fa",
+  "inputRequestSha256": "d527f5e4b2efae9c57d8a818c2ed4adfe832003e8399ea4d6cbcb5c4e4783f6c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "2f9ed47bf81bbd640a50ffb0898d605fbddf4beb3b691145bdbf8095a652d7aa"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p20.png": "3f728cf05119aade2a533e25e716520c6464ae499a0eaf846ec26756e6e79fea"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "fdff63a71b7ad457916a1b6b9c83b59e816e254417effca1eebadddee9942f66",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official scan (printed page -17-, T1-D 020). The lead sentence and the (a) conditions match exactly: effective head 200 m, turbine output 85 000 kW, specific speed 100 m·kW, and the question asks for the combination of rotational speed and turbine type. The only changes are punctuation and number formatting (，→、 and '85 000'→'85000'). Meaning, units and values are unchanged.",
+        "Choices: the official table for (a) reads (1) Francis 217, (2) Kaplan 217, (3) Kaplan 258, (4) Francis 258, (5) Pelton 258, all in min⁻¹. The candidate choices 1–5 match every row, including the turbine type, the number and the unit.",
+        "Official answer: the official answer table (令和6年度上期, 電力) lists 問15(a) = 4. This matches the manifest's official answer unit (question 15, part a, answer 4) and the candidate's officialAnswer '4'.",
+        "Calculation: the formula ns = N·√P / H^(5/4) is solved correctly for N as N = ns·H^(5/4)/√P. Recomputed: 200^0.25 = 3.7606, so 200^1.25 = 752.12. √85000 = 291.55. N = 100 × 752.12 / 291.55 = 257.97 ≈ 258 min⁻¹. This matches the explanation. 217 does not match the calculated value.",
+        "Turbine type, text evidence: on the attached JICA manual page (PDF page 294, printed 12-14, section 12.1.2), the text says Pelton turbines suit high head with small flow, propeller turbines suit low head with large flow, and Francis turbines are applied at medium to high head. This matches what the explanation cites.",
+        "Turbine type, chart evidence: on the attached JICA manual page (PDF page 295), Fig. 12-17 (turbine type selection chart, 10 MW and above) plots reference effective head against maximum turbine output at reference head. At 85,000 kW (log ≈ 4.93), a head of 200 m lies inside the blue Francis boundary, whose lower edge is about 30 m and upper edge several hundred metres. It lies below the lower edge of the red Pelton boundary, about 250 m at that output. It is far above the upper edge of the green Kaplan boundary, about 70 m. So the explanation's statements that the point is in the Francis region and outside the Kaplan and Pelton regions are confirmed on the attached original page. The caveat that the chart axes are reference head and maximum output is also correctly stated in the explanation and in the uncertainty field. The margin is large enough that the conclusion does not change.",
+        "Per-choice reasons: (1) The type matches but the speed 217 contradicts the calculation. (2) The speed contradicts the calculation and the type falls outside the Kaplan region. (3) The speed is correct but the type falls outside the Kaplan region. (4) Both speed and type fit. (5) The speed is correct but the point is outside the Pelton region and inside the Francis region. Each reason is specific to its choice and consistent with the calculation and the chart.",
+        "Figures: the only figure in (a) is the choices table, and its content is fully represented in the choices text. The question can be answered without a published figure, so an empty figureUrls is appropriate.",
+        "Sources: officialReferenceUrls (#page=294 and #page=295) match the attached JICA original pages. Both of the explanation's independent claims (the text description and Fig. 12-17) were verified against those attached pages. sourceQuestionPdfUrl (…_q02.pdf, power) and sourceAnswerPdfUrl (…_a01.pdf) are consistent with the attached scans. reviewedFromPage [20] corresponds to the attached scan showing printed page -17-, which is the PDF page for question 15."
+      ]
+    }
+  ]
+}
