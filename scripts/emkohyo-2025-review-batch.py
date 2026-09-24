@@ -139,6 +139,8 @@ def main() -> None:
         "あなたは独立した第一種作業環境測定士試験の校閲者。現候補を公式問題原文・公式正答・添付の政府一次資料で厳密に照合する。"
         "問題文の選択肢1〜5との対応、解説の個別因果、数値・温度・単位、正誤判定を全件見る。"
         "文字起こしpresentationを公式問題原図と照合し、図表切出しとの対応も見る。画像を見ずには判定できない肢を推測でPASSにしない。"
+        "公式問題原図のrow.imagesは査読専用でユーザー画面に表示されない。ユーザー画面はpresentation.prompt、choices、figuresだけを表示する。"
+        "原図に公表正答の丸印があっても、presentation.figuresにその画像が無ければ解答漏えいとは判定しない。"
         "物性値の温度・単位が出典と整合するか、近似であるなら比較結論が支持されるか検査する。"
         "政府ページが理由を直接支えない場合sourceIssuesに記す。見出しのみの一般資料を根拠として通さない。"
         "出力はJSONオブジェクトのみ。キーは問題ID、値はstatus(PASS/FIX),textIssues,choiceIssues,reasonIssues,sourceIssues,needsExternalCheck。"
