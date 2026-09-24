@@ -12,65 +12,161 @@
       "overlay": {
         "sourceHash": "72f93b96d022784bace61ea2cfc4a7d01634ae04a99089a5739c4f2c0d254093",
         "correctChoice": 4,
-        "summary": "フッ化水素の慢性影響は骨・歯（骨フッ素症）であり、発がん性は政府GHS分類で「分類できない」とされるため肢4が誤り。",
+        "summary": "フッ化水素の慢性中毒による骨・歯の障害は正しいが、発がん性は確認されておらず、がんを生じるとする（4）が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "アクリロニトリルの記述は正しい。政府GHS分類は、吸入すると頭痛・悪心・眩暈などが出るというヒトの事例を根拠に、神経系を区分1としている。特化則別表第三の健診にも頭重・頭痛の有無の検査がある。皮膚にできる水疱は、読んだ政府資料では直接確認できていない。"
+            "reason": "正しい。環境省のアクリロニトリル健康リスク評価資料は、液が皮膚に触れると熱感とともに赤くなり、さらに水泡やかさぶたができることがあると記す。高濃度の蒸気を吸入した例では頭痛、めまい、嘔吐、震えが起きたとされ、中枢神経症状を生じるという記述と合う。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "TDIの記述は正しい。政府GHS分類は、ヒトの「鋭い眼の痛み」から眼刺激性を区分2、「TDIは喘息を発症させ、呼吸器刺激性と呼吸器感作性を示す」から呼吸器感作性を区分1としている。特化則の健診にもアレルギー性喘息等の有無の検査がある。"
+            "reason": "正しい。厚労省モデルSDSは、TDIを眼刺激性区分2、呼吸器感作性区分1とし、喘息を発症させ呼吸器刺激性と呼吸器感作性を示すと記す。感作が成立すると喘息症状を繰り返すため、喘息症状を示した者は以後接触しないよう求めており、ばく露が続くとぜんそく様発作を呈するという記述と合う。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "フェノールの記述は正しいとされる。政府GHS分類は皮膚腐食性を区分1とし、皮膚から吸収されると不整脈・腎障害・けいれんなどの中毒症状が急速に現れるとしている。深く浸透して組織を傷つける特徴に合う。局所麻酔で感覚がなくなる点は政府資料では確認できていない。"
+            "reason": "正しい。化学熱傷の総説（日本熱傷学会誌）は、フェノールが強力な蛋白変性作用をもち、解離したフェノールがさらに浸透して深達性障害をきたすとする。はじめ疼痛、灼熱感を訴えるが、間もなく知覚神経末端の局所麻酔作用で無感覚になることもあると記しており、本肢と一致する。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "フッ化水素の記述が誤り。政府GHS分類は反復ばく露の標的を骨・歯（区分1）とし、慢性ばく露による骨フッ素症を根拠に挙げている。一方、発がん性は「データ不足のため分類できない」としており、慢性中毒でがんを生じるとした部分が誤りである。"
+            "reason": "誤り。厚労省モデルSDSは、フッ素が骨と歯に蓄積し、フッ化水素への慢性ばく露で骨フッ素症が起こるとする。歯の斑状歯も食品安全委員会の評価書に記載がある。しかし同SDSは発がん性を「データ不足のため分類できない」とし、同評価書もヒトの発がん性を示す証拠は不十分としており、がんを生じるとする部分が誤り。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "濃硫酸の記述は正しい。政府GHS分類は皮膚腐食性を区分1とし、濃硫酸による皮膚火傷が多数報告され、高濃度では組織を急速に破壊して重い火傷になるとしている。脱水・炭化で傷が黒褐色になる点は、読んだ政府資料には直接の記述がなかった。"
+            "reason": "正しい。化学熱傷の総説は、硫酸の皮膚曝露でまず激痛を伴い、濃硫酸ではその脱水・炭化作用により受傷面が黒褐色調を示すと記す。厚労省モデルSDSも、皮膚の腐食性損傷が最初は白化し、その後茶色から黒色に変色するとしており、本肢と一致する。"
           }
         ],
         "sources": [
           {
-            "title": "NITE 政府GHS分類結果 フッ化水素",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-7664-39-3.html"
+            "title": "環境省 アクリロニトリルに係る健康リスク評価について（別添2-1）",
+            "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf"
           },
           {
-            "title": "NITE 政府GHS分類結果 アクリロニトリル",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-107-13-1.html"
+            "title": "職場のあんぜんサイト モデルSDS トリレン-2,4-ジイソシアネート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html"
           },
           {
-            "title": "NITE 政府GHS分類結果 2,4-トリレンジイソシアネート",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-584-84-9.html"
+            "title": "山元修「化学熱傷：誰もが知っておきたい知識」熱傷46巻1号（J-STAGE）",
+            "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf"
           },
           {
-            "title": "NITE 政府GHS分類結果 フェノール",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-108-95-2.html"
+            "title": "職場のあんぜんサイト モデルSDS フッ化水素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html"
           },
           {
-            "title": "NITE 政府GHS分類結果 硫酸",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-7664-93-9.html"
+            "title": "食品安全委員会 清涼飲料水評価書 フッ素（2012年11月 案）",
+            "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130"
           },
           {
-            "title": "厚生労働省 特定化学物質障害予防規則（別表第三）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3"
+            "title": "職場のあんぜんサイト モデルSDS 硫酸",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-93-9.html"
           }
         ]
       },
-      "reviewIssues": [
-        "アクリロニトリルが皮膚に水疱を作ること、フェノールの局所麻酔作用、濃硫酸の脱水・炭化で傷が黒褐色になることは、読んだ政府資料では直接確認できていない。",
-        "職場のあんぜんサイトのモデルSDSは文字化けで本文を読めなかったため、NITEの政府GHS分類ページを根拠にした。",
-        "特化則別表第三の健診項目の文言は、取得ツールで要約された形でしか確認できていない。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf",
+          "excerpt": "皮膚にアクリロニトリル液が接触すると、すこし後で熱感とともに皮膚が赤くなり、更に水泡、かさぶたが出来ることがある",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf",
+          "excerpt": "高濃度のアクリロニトリル蒸気に曝露した一例では、頭痛、めまい、嘔吐、震え、不随意運動、痙攣を起こした。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
+          "excerpt": "眼に対する重篤な損傷性／眼刺激性区分2呼吸器感作性区分1",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
+          "excerpt": "喘息を発症させ、呼吸器刺激性と呼吸器感作性を示し、慢性気管支炎、限局性呼吸器疾患などを生じる",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
+          "excerpt": "この物質により喘息の症状を示した者は、以後この物質に接触しないこと。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "フェノールとクレゾールの性状は中毒学的にほぼ同一で，ともに強力な蛋白変性作用を有し細胞質毒となる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "解離したフェノールがさらに浸透し深達性障害をきたす",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "はじめ疼痛，灼熱感を訴えるが，間もなく知覚神経末端の局所麻酔作用（脱ミエリン作用）により無感覚になることもある",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "フッ素は骨及び歯芽に蓄積し、高レベルのフッ化物及びフッ化水素への慢性ばく露により、骨フッ素症が発生するとの報告がある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "発がん性【分類根拠】データ不足のため分類できない。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130",
+          "excerpt": "飲料水中フッ化物濃度が1.0ppmの時の斑状歯の罹患率は48％",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130",
+          "excerpt": "ヒトの発がん性を示す証拠は不十分であり、実験動物における発がん性の証拠も明らかではない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
+          "excerpt": "まず激痛を伴い白色〜黄褐色の痂皮を形成し，濃硫酸ではその脱水・炭化作用により受傷面が黒褐色調を示す",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-93-9.html",
+          "excerpt": "皮膚：熱傷のように急速に現れる腐食性損傷（最初は白化、その後茶色から黒色の変色、後に潰瘍、化膿性炎症）",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ]
     },
     "emkohyo-EM20261801-q7": {
