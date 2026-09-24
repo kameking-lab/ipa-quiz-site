@@ -439,30 +439,38 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "常に目盛りを小さめに読む癖は、毎回同じ向きに値をずらす。気象庁の手引は観測者の癖による偏りを個人誤差として説明し、NITEは同じ要因が繰り返し測定のすべてに影響するものを系統的な影響としている。この偏りは系統誤差に含まれ、記述は正しい。"
+            "reason": "常に目盛りを小さめに読む癖は、毎回同じ向きに値をずらす。環境省の精度管理マニュアルは、分析者のくせで過大・過小に読む誤差を「個人的誤差」とし、測定中一定の大きさや比率を保つ「定誤差」に含めている。真の値との差に方向性がある誤差は系統誤差（QSTの定義）なので、記述は正しい。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "産総研の資料はGUMを引き、「系統誤差は、補正を行うことによって減少させることができる」としている。原因が分かった系統誤差は、校正や補正で取り除いたり小さくしたりできる。「原因を明らかにしても補正できない」は誤りで、これが正答。"
+            "reason": "環境省マニュアルは、定誤差（系統誤差）は「その原因を探求できれば補正できる場合がある」とし、産総研の資料もGUMを引いて「系統誤差は、補正を行うことによって減少させることができる」としている。原因を明らかにしても補正できないとする記述は誤りで、これが正答。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "コーデックスのガイドライン（厚労省訳）は、偶然誤差について「試験を繰り返すと、その結果が平均値の上下に分布するのはこの誤差のため」と説明している。同じ試料を同じ条件で繰り返し測って値がばらつく原因を偶然誤差とする記述は正しい。"
+            "reason": "コーデックスのガイドライン（厚労省仮訳）は、偶然誤差について「試験を繰り返すと、その結果が平均値の上下に分布するのはこの誤差のため」と説明している。同じ試料を同じ条件で繰り返し測って値がばらつく原因を偶然誤差とする記述は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "偶然誤差は平均値の周りのばらつきとして現れる。産総研の校正事例でも、偶然誤差を「平均値周りのばらつき（標準偏差）」で表しており、偶然誤差の大きさを標準偏差で表すという記述は正しい。"
+            "reason": "偶然誤差は平均値の周りのばらつきとして現れるので、その大きさはばらつきの指標である標準偏差で表す。産総研のピペット校正の説明でも、偶然誤差を「平均値周りのばらつき（標準偏差）」として示しており、記述は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "指示値の書き違いは、測定者の不注意による誤りである。コーデックスのガイドラインは、意図しない誤差を大誤差（gross error）とし、その測定値は無効で、品質保証手順で抑えるとしている。NITEも作業者のミスは注意深い作業とチェックで避けるべきものとしている。これが過失誤差であり、記述は正しい。"
+            "reason": "環境省の精度管理マニュアルは、過失誤差を「単位の間違い、数値の書き誤りなど不注意から生じる誤差」と定義している。測定機器の指示値を記録するときの書き違いはこの「数値の書き誤り」に当たるので、過失誤差とする記述は正しい。"
           }
         ],
         "sources": [
+          {
+            "title": "環境省 化学物質環境実態調査 分析精度管理",
+            "url": "https://www.env.go.jp/chemi/kurohon/http2004/02moni-manu/02pdf/sec2-02.pdf"
+          },
+          {
+            "title": "量子科学技術研究開発機構 SIRABE 系統誤差",
+            "url": "https://sirabe.nirs.qst.go.jp/sirabe/%E7%B3%BB%E7%B5%B1%E8%AA%A4%E5%B7%AE.html"
+          },
           {
             "title": "産業技術総合研究所 測定における不確かさの意味と考え方",
             "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/download_file/2014_JAIMA01_01.pdf"
@@ -474,30 +482,29 @@
           {
             "title": "産業技術総合研究所 マイクロピペットの校正と不確かさ評価事例",
             "url": "https://unit.aist.go.jp/riem/ds-rg/uncertainty/download_file/2018_JAIMA01_06.pdf"
-          },
-          {
-            "title": "製品評価技術基盤機構 不確かさの入門ガイド ASG104",
-            "url": "https://www.nite.go.jp/data/000050641.pdf"
-          },
-          {
-            "title": "気象庁 気象観測の手引き",
-            "url": "https://www.jma.go.jp/jma/kishou/know/kansoku_guide/tebiki.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.jma.go.jp/jma/kishou/know/kansoku_guide/tebiki.pdf",
-          "excerpt": "個人誤差とは，気象測器の指示を観測者が目で読み取って数値を得る場合に，観測者の癖によって偏ることなどである",
+          "url": "https://www.env.go.jp/chemi/kurohon/http2004/02moni-manu/02pdf/sec2-02.pdf",
+          "excerpt": "②個人的誤差：分析者のくせによって、面積を過大に読みすぎるとか、不足に読みすぎるなどの原因から生じる誤差である。これらの定誤差は、測定中一定の大きさや比率を保っており",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.nite.go.jp/data/000050641.pdf",
-          "excerpt": "系統的(Systematic)：ここでは、同じ要因が個々の繰り返し測定に影響します",
+          "url": "https://sirabe.nirs.qst.go.jp/sirabe/%E7%B3%BB%E7%B5%B1%E8%AA%A4%E5%B7%AE.html",
+          "excerpt": "非標本誤差のうち真の値との差に方向性がある誤差を 系統誤差 という。",
           "choiceNumbers": [
             1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/kurohon/http2004/02moni-manu/02pdf/sec2-02.pdf",
+          "excerpt": "その原因を探求できれば補正できる場合がある",
+          "choiceNumbers": [
+            2
           ]
         },
         {
@@ -509,16 +516,10 @@
         },
         {
           "url": "https://www.mhlw.go.jp/topics/idenshi/codex/06/dl/cac_gl59.pdf",
-          "excerpt": "１つの測定値の偶然誤差を補正することはできないが",
-          "choiceNumbers": [
-            2
-          ]
-        },
-        {
-          "url": "https://www.mhlw.go.jp/topics/idenshi/codex/06/dl/cac_gl59.pdf",
           "excerpt": "偶然誤差（random error）はあらゆる測定値に含まれており、試験を繰り返すと、その結果が平均値の上下に分布するのはこの誤差のためである。",
           "choiceNumbers": [
-            3
+            3,
+            4
           ]
         },
         {
@@ -529,22 +530,8 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/topics/idenshi/codex/06/dl/cac_gl59.pdf",
-          "excerpt": "大誤差（gross error）とは、分析結果を得る過程で生じる意図しない／予測不可能な誤差をいう。この種の誤差があると、その測定値は無効になる。大誤差は、試験所の品質保証手順によって最小限に抑える必要がある。",
-          "choiceNumbers": [
-            5
-          ]
-        },
-        {
-          "url": "https://www.nite.go.jp/data/000050641.pdf",
-          "excerpt": "作業者が犯すミスは測定の不確かさではありません。",
-          "choiceNumbers": [
-            5
-          ]
-        },
-        {
-          "url": "https://www.nite.go.jp/data/000050641.pdf",
-          "excerpt": "これは注意深く作業し、かつ作業をチェックすることによって回避すべきものです。",
+          "url": "https://www.env.go.jp/chemi/kurohon/http2004/02moni-manu/02pdf/sec2-02.pdf",
+          "excerpt": "２．過失誤差単位の間違い、数値の書き誤りなど不注意から生じる誤差で、この誤差は、前後の関係や計算の結果などから発見できる。",
           "choiceNumbers": [
             5
           ]
