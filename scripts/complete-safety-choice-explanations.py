@@ -200,8 +200,9 @@ def source_hints(batch):
                 if text_view(local):
                     row["textPath"] = text_view(local)
             hints_by_url[item["url"]] = row
-    for current_path in (ROOT / "docs/evidence/lckohyo-current-source-pins").glob("*.json"):
-        for item in read(current_path).get("sources", []):
+    for current_path in sorted((ROOT / "docs/evidence/lckohyo-current-source-pins").glob("*.json")):
+        pack = read(current_path)
+        for item in pack.get("sources", []):
             digest_value = item["retrieval"]["sha256"]
             local = next((candidate for candidate in
                           (ROOT / ".cache/safety-full-review/government-sources").glob(
@@ -218,6 +219,7 @@ def source_hints(batch):
                     "locators": item.get("locators", []), "retrievalSha256": digest_value,
                     "bytes": item["retrieval"].get("bytes", 0),
                     "inForceOn": item.get("inForceOn", []),
+                    "packNotice": pack.get("notice", ""),
                     "localPath": str(local)}
                 if text_view(local):
                     hints_by_url[item["url"]]["textPath"] = text_view(local)
@@ -295,6 +297,15 @@ def author_candidate(item, model):
         for q in batch:
             overlay = raw[q["id"]]
             if isinstance(overlay, dict):
+                # Only the published schema is kept; author side notes never ship.
+                overlay = {key: overlay[key] for key in
+                           ("correctChoice", "summary", "choices", "sources") if key in overlay}
+                if isinstance(overlay.get("choices"), list):
+                    overlay["choices"] = [{k: c[k] for k in ("number", "verdict", "reason") if k in c}
+                                          if isinstance(c, dict) else c for c in overlay["choices"]]
+                if isinstance(overlay.get("sources"), list):
+                    overlay["sources"] = [{k: c[k] for k in ("title", "url") if k in c}
+                                          if isinstance(c, dict) else c for c in overlay["sources"]]
                 overlay["sourceHash"] = sha256(q["text"].encode("utf-8")).hexdigest()
             candidate[q["id"]] = overlay
         write(candidate_file, candidate)

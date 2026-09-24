@@ -1,10 +1,14 @@
-"""Deterministic plain-text rendering of pinned e-Gov API v2 law_data JSON.
+"""Deterministic plain-text views of pinned government sources (e-Gov JSON, HTML, PDF).
 
 The pinned JSON bytes stay the evidence; this text is only a greppable view of
 the same bytes so authors and reviewers can locate articles, items and tables.
 """
+import html
 import json
 from pathlib import Path
+import re
+import shutil
+import subprocess
 
 BLOCK = {
     "LawTitle", "LawNum", "EnactStatement", "PartTitle", "ChapterTitle", "SectionTitle",
@@ -70,17 +74,43 @@ def render_law_json(payload: bytes) -> str:
     return "\n".join(header + lines) + "\n"
 
 
+def render_html(payload: bytes) -> str:
+    raw = payload.decode("utf-8", errors="replace")
+    charset = re.search(r"charset=[\"']?([A-Za-z0-9_-]+)", raw[:3000])
+    if charset and charset.group(1).lower().replace("_", "-") in ("shift-jis", "sjis", "x-sjis", "cp932"):
+        raw = payload.decode("cp932", errors="replace")
+    raw = re.sub(r"(?is)<(script|style)\b.*?</\1>", "", raw)
+    raw = re.sub(r"(?i)<(br|/p|/div|/tr|/li|/h[1-6]|/dt|/dd)\b[^>]*>", "\n", raw)
+    raw = re.sub(r"(?i)</t[dh]>", " | ", raw)
+    text = html.unescape(re.sub(r"<[^>]+>", "", raw))
+    lines = [re.sub(r"[ \t\u3000]+", " ", line).strip() for line in text.splitlines()]
+    return "\n".join(line for line in lines if line) + "\n"
+
+
 def text_view(local_path):
-    """Write <sha>.txt beside a cached e-Gov law_data JSON; return its path or None."""
+    """Write <sha>.txt beside a cached pinned source (e-Gov JSON, HTML or PDF).
+
+    The pinned bytes remain the evidence; the text is a deterministic search aid."""
     path = Path(local_path)
-    if path.suffix != ".json":
-        return None
     target = path.with_suffix(".txt")
     if target.is_file():
         return str(target)
     try:
-        text = render_law_json(path.read_bytes())
-    except (KeyError, ValueError, TypeError):
+        if path.suffix == ".json":
+            text = render_law_json(path.read_bytes())
+        elif path.suffix == ".html":
+            text = render_html(path.read_bytes())
+        elif path.suffix == ".pdf" and shutil.which("pdftotext"):
+            run = subprocess.run(["pdftotext", "-layout", str(path), "-"], capture_output=True,
+                                 timeout=120)
+            if run.returncode:
+                return None
+            text = run.stdout.decode("utf-8", errors="replace")
+        else:
+            return None
+    except (KeyError, ValueError, TypeError, subprocess.TimeoutExpired):
+        return None
+    if len(text.strip()) < 200:
         return None
     target.write_text(text, encoding="utf-8")
     return str(target)

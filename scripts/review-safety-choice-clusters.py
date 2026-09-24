@@ -405,16 +405,23 @@ def main():
             contract_path = data / "coverage-contract.json"
             contract = read(contract_path)
             required = contract["structuredChoiceExplanations"]["requiredPaperIds"]
-            closed = []
+            closed, ready_papers = [], []
             current_ids = {qid for qid in published if qid in verified_ids}
+            # Publication gate stays closed until every target question in both
+            # years is strictly verified; complete papers are only reported.
+            gate_open = counts["fullReviewCurrent"] == counts["target"] and all(
+                ids <= current_ids for ids in paper_targets.values())
             for paper_id, ids in paper_targets.items():
                 if ids <= current_ids and paper_id not in required:
-                    required.append(paper_id)
-                    closed.append(paper_id)
+                    ready_papers.append(paper_id)
+                    if gate_open:
+                        required.append(paper_id)
+                        closed.append(paper_id)
             if closed:
                 write(contract_path, contract)
             print(json.dumps({"promoted": len(ready), "fullReviewCurrent":
-                              counts["fullReviewCurrent"], "papersClosed": closed},
+                              counts["fullReviewCurrent"], "papersClosed": closed,
+                              "papersReadyGateClosed": [] if gate_open else ready_papers},
                              ensure_ascii=False), flush=True)
         return
     adapter_path = root / "scripts/complete-safety-choice-explanations.py"

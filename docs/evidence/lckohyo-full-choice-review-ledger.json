@@ -5919,21 +5919,11 @@
     "sourceSha256": "7fdbec3963d0b8358cc1507b5e0f11425c44aa66061ccea287125209bb03855f",
     "candidateSha256": "6faaf9f771692bae9a37d253f48a10b2c44889bb859b9a8f9d341c194b8ce468",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（1）を原本で照合していない。",
-        "ローカル画像 q34-p16-0.webp は目視し、snapshot の問題文（木質バイオマス温水ボイラーではない旨のただし書を含む）と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
-        "施行令第1条第3号・第4号（小型ボイラーの温水は8m²以下・2m²以下）、第20条第3号、同条第5号イ〜ニ（750mm×1300mm以下、蒸気3m²以下、温水14m²以下、貫流30m²以下〔気水分離器の制限は有する場合のみ〕）は、2024-11-18施行版・2025-04-01施行版で同文だった。規則第2条第4号（電気ボイラーは60kWを1m²とみなす）、第23条第1項・第2項も規則の両版で同文だった。",
-        "19m²の温水ボイラーだけが第5号ハを超え、小型ボイラーにも当たらない。このため規則第23条第1項によりボイラー技士が必要で、候補の正答（1）と一致する。肢2〜5の理由（上限値と等しい場合を含む、圧力要件なし、気水分離器なし、75kW＝1.25m²）も条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない（施行令2025年版は 2025-10、規則2023年版は 2024-10 と表示）。施行日は原本ヘッダで確認し、試験期間内の改正前後の両版で同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -5947,8 +5937,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -5956,20 +5946,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -5983,20 +5973,11 @@
     "sourceSha256": "c74c46d5f796f70f2105593a34a5126985ac51a404fc2930dfb16adb9b46cf78",
     "candidateSha256": "dc70484d0572cf1bced5bc6655f411ad409c6faa847ee3131af08f3f94a8f21d",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDF（official-pdfs/35c7aaf1…ecfe9.pdf）をこの環境で読めなかった。pdftoppm が未インストールでページを描画できず、本文ストリームも FlateDecode 圧縮のため Grep できない。このため、原本の問題文と公式正答（5）を原本で照合していない。",
-        "ローカル画像 q31-p15-0.webp は目視し、snapshot の問題文・5肢と一致した。ただし画像が当該PDFの p15 から切り出されたものかは確認していない（sha256 も照合していない）。",
-        "規則第2条（第1号＝本体面〔煙管・炉筒〕、第2号イ＝水管・管寄せ、第3号＝貫流は過熱器入口までの水管）と第7条第1項（附属設備＝過熱器・節炭器）は、2023-12-21施行版・2025-04-01施行版で同文だった。過熱器管を算入する号はなく、候補の正答（5）と全肢の理由は条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn（2024-10 / 2025-10）は、このセットの examWindow（2025-01-01〜2025-06-30）の境界日と合っていない。各版の施行日は原本ヘッダ（2023-12-21 / 2025-04-01）で確認し、試験期間内の改正前後の両版で該当条文が同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -6008,8 +5989,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -6017,20 +5998,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -6044,20 +6025,11 @@
     "sourceSha256": "149d5f773d5c5083b6c3620a576fd9a605c37c475c059ddc141d77333f1be536",
     "candidateSha256": "d71e62d7d87c8db0b3b993015bbb12656972ddb9149a72aa4d8b7d1458888246",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（2）を原本で照合していない。",
-        "ローカル画像 q32-p15-1.webp は目視し、snapshot の問題文と A・B の組合せ5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
-        "規則第5条第2項（溶接によるボイラーは、第7条第1項の検査〔溶接検査〕に合格した後でなければ構造検査を受けられない）と第7条第2項（溶接作業に着手する前に申請）は、2023-12-21施行版・2025-04-01施行版で同文だった。A＝溶接、B＝構造で、候補の正答（2）と全肢の理由は条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -6069,8 +6041,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -6078,20 +6050,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -6105,20 +6077,11 @@
     "sourceSha256": "e394d5478afce78216740739e9145ebaf02137439ed7ef54ed681f231cba6100",
     "candidateSha256": "01a234a1176234b8b51cb5c3c5b805b30c0f3e7ba6ac68619655e9f1112c64c5",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（2）を原本で照合していない。",
-        "ローカル画像 q33-p15-2.webp は目視し、snapshot の問題文（内径500mm・長さ1000mm、本体を被覆していないボイラー）と5肢（0.15/0.30/0.45/1.20/2.00m）に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
-        "両版で同文だった条文：規則第20条第1項（上部の構造物まで1.2m）、第2項本文（側部の構造物まで0.45m）、同項ただし書（内径500mm以下かつ長さ1000mm以下なら0.3m）、第21条第1項（可燃物との距離0.15m）、第21条第2項（燃料を2m〔固体燃料は1.2m〕離す）。候補の正答（2）と全肢の理由は条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -6130,8 +6093,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -6139,20 +6102,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -6166,20 +6129,11 @@
     "sourceSha256": "46ef55b4528e9622252ce96e367a0ddf164dbfb93e18d698f994cb83c127b181",
     "candidateSha256": "144f0adcdb8c290a3cd8bfb90cf55288d089096ee21e8b51d53390e12abbf03e",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（4）を原本で照合していない。",
-        "ローカル画像 q35-p16-1.webp は目視し、snapshot の A〜D の表と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
-        "規則第32条第1項の表は両版で同文だった。ボイラー本体は損傷の有無のみ。燃焼装置はストレーナ・バーナタイル及び炉壁・煙道を含む。自動制御装置は火炎検出装置を含む。附属装置及び附属品は給水装置・蒸気管及び弁・空気予熱器・水処理装置。一致するのは B・C だけで、候補の正答（4）と全肢の理由は条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -6191,8 +6145,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -6200,20 +6154,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -6227,21 +6181,11 @@
     "sourceSha256": "1c4763d6008bf6bcd3070fef5a82484dccf71a6d5f4d9eae4572b95fa9935e3c",
     "candidateSha256": "321427584fff649158da86c3efdf49b1b40949a278e47b5e8e278d0365bae462",
     "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "officialAnswerChecked missing",
-      "originalTextChecked missing"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（3）を原本で照合していない。",
-        "ローカル画像 q36-p17-0.webp は目視し、snapshot の問題文（監督署長が不要と認めたボイラーではない旨のただし書を含む）と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
-        "両版で同文だった条文：規則第41条各号（胴等の本体部分／附属設備／燃焼装置／据付基礎）、第42条第1項（変更検査）、第7条第1項（附属設備は過熱器及び節炭器に限る。以下この章において同じ）、第12条第1項第2号（構造検査後1年以上〔保管状況良好と認められたものは2年以上〕設置されなかったもの）、同項第3号（使用を廃止したボイラーの再設置・再使用）。第12条の2つは使用検査の対象になる。",
-        "候補の正答（3）と全肢の理由は条文で裏付けられる。",
-        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
@@ -6253,8 +6197,8 @@
         "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
         "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
       ],
-      "officialAnswerChecked": false,
-      "originalTextChecked": false,
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": true,
       "sourceSupportChecked": true
@@ -6262,20 +6206,1035 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
-    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
-    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "rawResponseSha256": "60706fdb2598c27db744b5c0646c881a6a41e55ec0158524f0890be4f612dbff",
+    "resultSha256": "2b2ab6ddf8e0adeeb27e5a3d373ecdc1b6f9147907dac98e825f3b524673de11",
     "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13352,
-        "cacheReadInputTokens": 833754,
-        "cacheCreationInputTokens": 80465,
+        "inputTokens": 26,
+        "outputTokens": 8262,
+        "cacheReadInputTokens": 777757,
+        "cacheCreationInputTokens": 96990,
         "webSearchRequests": 0,
-        "costUSD": 1.0776388,
+        "costUSD": 1.0968154,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 5122,
+        "thinkingTokens": 3635,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q34": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q34",
+    "sourceSha256": "ad98c6ad991471b93bc311fcaf4194c767412aac434f34e60af2060741dfb9ab",
+    "candidateSha256": "89b80927839afb62433a922b4607fa0a8e4fe07e89672a4267222b5ceda97277",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080",
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20241118_506CO0000000342",
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20250401_505CO0000000265"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q31": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q31",
+    "sourceSha256": "caf03dd6ddb6e22c04c3a3afd67902d200efa7dea176b43463becc33b08368e9",
+    "candidateSha256": "ae7bea62d2b0958c3502ae564ef52d77cc343597b9c7bd9cfba4cc7b4742b908",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q32": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q32",
+    "sourceSha256": "3c734686c52002076866224f7270c000f996f7ff5ef679e8aae26d895838f7d3",
+    "candidateSha256": "9f3d31518d77ac7f876f825cb271bd6ea34293b22cec235efd2dabe03ec2ad28",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q33": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q33",
+    "sourceSha256": "4def8b5199c68ce040b678774662259688468dddaf5bd7b974d403d3384cab11",
+    "candidateSha256": "10799bfaec9bb268996b8f8caa4b227df501d81f5fa74e376c9ad08b1f75988b",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q35": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q35",
+    "sourceSha256": "1fc50bf1d2297e14b25554c4429935bf93db87d60ce914b3cf47ee4fde06937e",
+    "candidateSha256": "a1ff0584370468a61632fc92130dfe5d50e4d7cd55f322e6b29ea7c5e9435d71",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252102-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252102-q36",
+    "sourceSha256": "1de6fa3548dcba81759318eff21699b1cd63492d8415f4f4e39c86c7bef22dfa",
+    "candidateSha256": "0adb703b5c0db6eea758999f9c62746e4264a52e80e532bcdb808b0f42590e7f",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "b207b91efb7677143a21fb93fbfa8e9544c48a89960a05e107832676d0e21ae9",
+    "resultSha256": "1d08b7e6a6c26bf20c1362e7fc49cbf9a019c4bbf08d159a47c137f9b2287f33",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6927,
+        "cacheReadInputTokens": 561373,
+        "cacheCreationInputTokens": 88389,
+        "webSearchRequests": 0,
+        "costUSD": 0.9580065999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2712,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252106-q16": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252106-q16",
+    "sourceSha256": "50bc261186eff782f3846a3530b6c46cbc5968133ef34cf01c4e94ef89671212",
+    "candidateSha256": "3302c0a6c752bcd6ccda93509d67d61e60747792d13d66fe99cd70da7faa9387",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "27998111ecff6b1228051b5b1d21c3872c8786eecd44d30288a0d746a14e462f",
+    "resultSha256": "32312f9f2fcdde99c0472a1e08504cd205609b03439d11a979b13f83080c5e5a",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6254,
+        "cacheReadInputTokens": 444887,
+        "cacheCreationInputTokens": 61014,
+        "webSearchRequests": 0,
+        "costUSD": 0.7022493999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1360,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252106-q17": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252106-q17",
+    "sourceSha256": "aabee4ec7086fc64f4fc5adf4a0a04d15408e6550e6f1e08618a6b3207d0c31f",
+    "candidateSha256": "83f5301cb8ce50b9283b5acd693eb632e3daaeefc17f39e7193d6950a0a27233",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "27998111ecff6b1228051b5b1d21c3872c8786eecd44d30288a0d746a14e462f",
+    "resultSha256": "32312f9f2fcdde99c0472a1e08504cd205609b03439d11a979b13f83080c5e5a",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6254,
+        "cacheReadInputTokens": 444887,
+        "cacheCreationInputTokens": 61014,
+        "webSearchRequests": 0,
+        "costUSD": 0.7022493999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1360,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252106-q18": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252106-q18",
+    "sourceSha256": "c1fd22810df7d6c8b92d1e31ef7b2d87be928fd01e01f44d7a341e21eea1248d",
+    "candidateSha256": "5d27b9123020ebd38637f3af9c6dba3784e6cbd6e0b4cba3f5cef826cf68bdef",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "27998111ecff6b1228051b5b1d21c3872c8786eecd44d30288a0d746a14e462f",
+    "resultSha256": "32312f9f2fcdde99c0472a1e08504cd205609b03439d11a979b13f83080c5e5a",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6254,
+        "cacheReadInputTokens": 444887,
+        "cacheCreationInputTokens": 61014,
+        "webSearchRequests": 0,
+        "costUSD": 0.7022493999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1360,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252106-q19": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252106-q19",
+    "sourceSha256": "32fa1dacf85552878aa371e390168f3bdf9a1751ed787425b9d57b0f02709a63",
+    "candidateSha256": "1d6237337b291f0322926f2dac4ee612aa2d8cd304a2878e8bd8246b5cdfbb66",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "27998111ecff6b1228051b5b1d21c3872c8786eecd44d30288a0d746a14e462f",
+    "resultSha256": "32312f9f2fcdde99c0472a1e08504cd205609b03439d11a979b13f83080c5e5a",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6254,
+        "cacheReadInputTokens": 444887,
+        "cacheCreationInputTokens": 61014,
+        "webSearchRequests": 0,
+        "costUSD": 0.7022493999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1360,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252105-q35": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252105-q35",
+    "sourceSha256": "9c285d5d4634fac99a77873f329c5bd5861bd16b1fb961a5aad5514995c040d5",
+    "candidateSha256": "21513b8064b9cda2871c0c5bd0a5b82e49b5c050d8ee8b68bb1c688144981035",
+    "evidenceSha256": "e4caf5c4acb8fa8d122b602d6671b9f51110a9896872f8f598abef3fa4b9b5ee",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの18ページ（普ボ溶 17/19）で、問35の正答は（3）に○が付いている。候補の正答3と一致する。",
+        "問題画像 q35-p18-0.webp と問題本文を公式PDFと突き合わせ、一致を確認した。",
+        "じん肺法施行規則（2025-01-01施行版）の第2条は、粉じん作業を別表の作業としている。別表第二十号の二は「金属をアーク溶接する作業」である。これで肢1（ヒューム吸入によるじん肺）は裏付けられる。この版は受験期間 2025-01-01〜2025-06-30 の全体で施行中だった。",
+        "肢2（低水素系溶接棒のヒュームによる中毒症状）について、提示された政府資料には記載がない。textPath を「低水素」で検索しても該当はなかった。",
+        "肢3（電光性眼炎の原因が赤外線か紫外線か）について、政府資料に記載がない。textPath を「紫外線」「赤外線」「電光性」で検索しても該当はなかった。正答は公式PDFと一致するが、赤外線とする点が誤りであることを一次資料で確かめられない。",
+        "肢4（亜鉛メッキ鋼板・黄銅のヒュームによる中毒）について、政府資料に記載がない。「亜鉛」で検索しても該当はなかった。",
+        "肢5（炭酸ガスアーク溶接で一酸化炭素中毒）について、政府資料に記載がない。「一酸化炭素」で検索しても該当はなかった。",
+        "肢2〜5には政府資料がないため、出題時の適用も確認できない。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/335M50002000006/20250101_506M60000100045"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "f2637f5d0acc35c819a504bee0cdc3095847f512b3da283c6753294924ac6baf",
+    "resultSha256": "72767ffa6cccc37c8778cafaac95fd884468e522ab70aac0ea5a628ac605414c",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 18,
+        "outputTokens": 8124,
+        "cacheReadInputTokens": 358091,
+        "cacheCreationInputTokens": 60063,
+        "webSearchRequests": 0,
+        "costUSD": 0.7146742000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3219,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252105-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252105-q36",
+    "sourceSha256": "dbac5a4489cd8f62979c94f475c6985ab9aee0796f9b12ba560e5733a82dd188",
+    "candidateSha256": "3d93a0d7c870329faabccc69d9d44b47b39d89d8d3cb5837ed9eee3950e7d828",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "f2637f5d0acc35c819a504bee0cdc3095847f512b3da283c6753294924ac6baf",
+    "resultSha256": "72767ffa6cccc37c8778cafaac95fd884468e522ab70aac0ea5a628ac605414c",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 18,
+        "outputTokens": 8124,
+        "cacheReadInputTokens": 358091,
+        "cacheCreationInputTokens": 60063,
+        "webSearchRequests": 0,
+        "costUSD": 0.7146742000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3219,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252105-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252105-q37",
+    "sourceSha256": "ffa8e929cb5efa34652b2522c6f5423817674ce5e24352b609e0aea7a5deadfc",
+    "candidateSha256": "7daf3d9c191707e5f1f2a3b7007c5ff1f43d7383865a2ad2dca610c63120eedf",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "f2637f5d0acc35c819a504bee0cdc3095847f512b3da283c6753294924ac6baf",
+    "resultSha256": "72767ffa6cccc37c8778cafaac95fd884468e522ab70aac0ea5a628ac605414c",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 18,
+        "outputTokens": 8124,
+        "cacheReadInputTokens": 358091,
+        "cacheCreationInputTokens": 60063,
+        "webSearchRequests": 0,
+        "costUSD": 0.7146742000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3219,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252105-q38": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252105-q38",
+    "sourceSha256": "e3ef07c51b315526d672aa7f94d93ce306bfbbe923b256d082d5adcb7d13c816",
+    "candidateSha256": "233afbcb4ec1255f96983af57bf424632cc4caa621de8500c01d35ae86afb9df",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの19ページ（普ボ溶 18/19）で、問38の正答は（3）である。候補の正答3と一致する。",
+        "問題画像と問題本文は公式PDFと一致する。",
+        "2つの版（2023-12-21施行版と2025-04-01施行版）の第2条は同じ文言である。第1号は燃焼ガス等に触れる本体の面、第3号は燃焼室入口から過熱器入口まで、第4号は60kWを1m²とみなす、と定めている。これで肢2と肢5は条文どおりと確認できた。肢3と肢4も、燃焼ガス等に触れる側で算定するという原則と公式正答から、筋が通る。",
+        "肢1（エコノマイザの伝熱面は算入しない）は、第2条のどの号にも明記されていない。候補は第7条第1項の附属設備の定義を根拠にしている。しかしこの定義は「以下この章において同じ」とあり、第2章にだけ及ぶ。第2条は第1章にあるので届かない。また第2条第2号は水管ボイラーについて「水管及び管寄せ」の面積を合計するとしており、節炭器を文言上除いていない。節炭器を除くと明示した政府一次資料（解釈通達など）は提示されておらず、根拠の構造に欠陥があるため肢1は保留とする。",
+        "肢3で横管の内側に水が通るという構造は、政府資料に書かれていない技術的事実である。条文の原則と公式正答によって補って判断した。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "f2637f5d0acc35c819a504bee0cdc3095847f512b3da283c6753294924ac6baf",
+    "resultSha256": "72767ffa6cccc37c8778cafaac95fd884468e522ab70aac0ea5a628ac605414c",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 18,
+        "outputTokens": 8124,
+        "cacheReadInputTokens": 358091,
+        "cacheCreationInputTokens": 60063,
+        "webSearchRequests": 0,
+        "costUSD": 0.7146742000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3219,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252105-q39": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252105-q39",
+    "sourceSha256": "7f420c35eaa6e7960884ac973e472c3162914e6d5f34e6a47678bdb185fe0deb",
+    "candidateSha256": "542b953b74ef9ba208f7e53474a640e56af855f008fc626fc6025329a9835ce9",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "f2637f5d0acc35c819a504bee0cdc3095847f512b3da283c6753294924ac6baf",
+    "resultSha256": "72767ffa6cccc37c8778cafaac95fd884468e522ab70aac0ea5a628ac605414c",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 18,
+        "outputTokens": 8124,
+        "cacheReadInputTokens": 358091,
+        "cacheCreationInputTokens": 60063,
+        "webSearchRequests": 0,
+        "costUSD": 0.7146742000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3219,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252104-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252104-q36",
+    "sourceSha256": "797d506440a86fb9a58ef2413fda620e88610ea3f8edc148c4cddd4c3622344d",
+    "candidateSha256": "9fb6168d2d7bd41ccec01dedbee73738e8d7b79b615922e873cbb29b7d55e4c1",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080",
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20241118_506CO0000000342",
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20250401_505CO0000000265"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "57feceda18ee67ea557aaf2cae3248e761bc01ca04c8e4b0505004c822e8b846",
+    "resultSha256": "ef9aaf85cd1dcf8323f513333d0c48afff41817aba3d2e8fbd95f49840903bd4",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 7458,
+        "cacheReadInputTokens": 579483,
+        "cacheCreationInputTokens": 70119,
+        "webSearchRequests": 0,
+        "costUSD": 0.8261046,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3076,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252104-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252104-q37",
+    "sourceSha256": "14bcb96ce17b9b149e7e3bf5ef4738c9c59c44d439bbb2f31c758fd4617a6351",
+    "candidateSha256": "a54d93e74e88ef30960478c3903c02c1969415aa225cd70920cafdf27104226f",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "57feceda18ee67ea557aaf2cae3248e761bc01ca04c8e4b0505004c822e8b846",
+    "resultSha256": "ef9aaf85cd1dcf8323f513333d0c48afff41817aba3d2e8fbd95f49840903bd4",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 7458,
+        "cacheReadInputTokens": 579483,
+        "cacheCreationInputTokens": 70119,
+        "webSearchRequests": 0,
+        "costUSD": 0.8261046,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3076,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252104-q38": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252104-q38",
+    "sourceSha256": "ef9b5a43088773c0d8342c09ea65fca6c5f3cd19d8c0a4cd902ebeb6c2ee269e",
+    "candidateSha256": "bdde258439eaf43703a661da261ef18fb4b8d5ee37a4dd0d7f5d81c9c2cafb54",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "57feceda18ee67ea557aaf2cae3248e761bc01ca04c8e4b0505004c822e8b846",
+    "resultSha256": "ef9aaf85cd1dcf8323f513333d0c48afff41817aba3d2e8fbd95f49840903bd4",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 7458,
+        "cacheReadInputTokens": 579483,
+        "cacheCreationInputTokens": 70119,
+        "webSearchRequests": 0,
+        "costUSD": 0.8261046,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3076,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252104-q39": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252104-q39",
+    "sourceSha256": "e7022daa131ace893bfe3485ef181fb27aa2bf2d099cc4335fe2a6fba2d8eeeb",
+    "candidateSha256": "e62eb7c3490c956562863c35d7119c650e96d4d6cf79b745f7aec8b53310682a",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "57feceda18ee67ea557aaf2cae3248e761bc01ca04c8e4b0505004c822e8b846",
+    "resultSha256": "ef9aaf85cd1dcf8323f513333d0c48afff41817aba3d2e8fbd95f49840903bd4",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 7458,
+        "cacheReadInputTokens": 579483,
+        "cacheCreationInputTokens": 70119,
+        "webSearchRequests": 0,
+        "costUSD": 0.8261046,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3076,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"

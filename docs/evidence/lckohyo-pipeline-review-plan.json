@@ -6,13 +6,13 @@
   ],
   "counts": {
     "target": 1344,
-    "candidateMissing": 1254,
-    "staticHold": 35,
-    "reviewPending": 19,
-    "reviewHold": 8,
-    "fullReviewCurrent": 28
+    "candidateMissing": 1227,
+    "staticHold": 36,
+    "fullReviewCurrent": 51,
+    "reviewHold": 4,
+    "reviewPending": 26
   },
-  "clusterBatches": 4,
+  "clusterBatches": 6,
   "candidateConflicts": [],
   "sourceHolds": [],
   "staticHolds": [
@@ -222,6 +222,12 @@
     },
     {
       "questionId": "lckohyo-LC20252106-q27",
+      "issues": [
+        "sources missing"
+      ]
+    },
+    {
+      "questionId": "lckohyo-LC20252110-q25",
       "issues": [
         "sources missing"
       ]
@@ -524,31 +530,42 @@
   "notice": "Reuse groups are candidates only; image/date/legal applicability is not inferred.",
   "batches": [
     [
-      "lckohyo-LC20252106-q16",
-      "lckohyo-LC20252106-q17",
-      "lckohyo-LC20252106-q18",
-      "lckohyo-LC20252106-q19"
+      "lckohyo-LC20252107-q16",
+      "lckohyo-LC20252107-q11",
+      "lckohyo-LC20252107-q12",
+      "lckohyo-LC20252107-q13",
+      "lckohyo-LC20252107-q14",
+      "lckohyo-LC20252107-q15"
     ],
     [
-      "lckohyo-LC20252102-q34",
-      "lckohyo-LC20252102-q31",
-      "lckohyo-LC20252102-q32",
-      "lckohyo-LC20252102-q33",
-      "lckohyo-LC20252102-q35",
-      "lckohyo-LC20252102-q36"
+      "lckohyo-LC20252110-q16",
+      "lckohyo-LC20252110-q20",
+      "lckohyo-LC20252110-q12",
+      "lckohyo-LC20252110-q13",
+      "lckohyo-LC20252110-q14",
+      "lckohyo-LC20252110-q15"
     ],
     [
-      "lckohyo-LC20252105-q35",
-      "lckohyo-LC20252105-q36",
-      "lckohyo-LC20252105-q37",
-      "lckohyo-LC20252105-q38",
-      "lckohyo-LC20252105-q39"
+      "lckohyo-LC20252110-q17",
+      "lckohyo-LC20252110-q18",
+      "lckohyo-LC20252110-q19"
     ],
     [
-      "lckohyo-LC20252104-q36",
-      "lckohyo-LC20252104-q37",
-      "lckohyo-LC20252104-q38",
-      "lckohyo-LC20252104-q39"
+      "lckohyo-LC20252111-q16"
+    ],
+    [
+      "lckohyo-LC20252109-q30",
+      "lckohyo-LC20252109-q21",
+      "lckohyo-LC20252109-q23",
+      "lckohyo-LC20252109-q25",
+      "lckohyo-LC20252109-q22",
+      "lckohyo-LC20252109-q24"
+    ],
+    [
+      "lckohyo-LC20252109-q26",
+      "lckohyo-LC20252109-q27",
+      "lckohyo-LC20252109-q28",
+      "lckohyo-LC20252109-q29"
     ]
   ]
 }
