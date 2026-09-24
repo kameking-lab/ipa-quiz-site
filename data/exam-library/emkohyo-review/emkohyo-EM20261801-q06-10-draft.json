@@ -322,53 +322,139 @@
       "overlay": {
         "sourceHash": "afdaf894ef15a7b06e65b2a7d1c299bcd2c8e76c9a11cedce9499ea39572f914",
         "correctChoice": 1,
-        "summary": "吸入性・咽頭通過性・吸引性粉じんは、10μm・100μmで排他的に分ける区分ではなく、捕集特性で定める包含関係の区分なので肢1が誤り。",
+        "summary": "吸引性粉じんは100μm以下、咽頭通過性粉じんは10μm以下、吸入性粉じんは4μm以下で肺胞まで達する粒子であり、区分と粒径の対応を誤っている（1）が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "記述は誤り。吸引性・咽頭通過性・吸入性は、呼吸器のどこまで届くかに応じた捕集特性による区分で、10μm・100μmで互いに重ならないように分けるものではない。作業環境測定基準も、吸入性粉じん用の分粒装置を相対沈降径4.25μm・Σ1.5の透過率曲線で定めている。"
+            "reason": "誤り。労働安全衛生総合研究所は、ISO 7708に基づく区分を、鼻孔または口を通過する吸引性粉じん（100μm以下）、咽頭を通過し肺に向かう咽頭通過性粉じん（10μm以下）、肺胞まで達する吸入性粉じん（4μm以下）と説明する。3区分は大小の範囲を順に切り分けたものではなく、粒径の数値も本肢と合わない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "記述は正しい。ヒュームは、金属などが加熱されて蒸気になり、空気中で凝縮・酸化してできる微粒子である。一次粒子は一般に1μm以下のサブミクロン粒子とされ、機械的に砕いて生じる粉じんより細かい。ただし、この粒径の数値は読んだ政府資料では直接確認できていない。"
+            "reason": "正しい。岡山労働局の資料は、溶接ヒュームをアーク溶接で生じた蒸気が空気中で凝固した固体の粒子（粒径0.1～1μm）と説明する。蒸気が凝縮してできるヒュームの粒子は1μm程度以下の微細なもので、一次粒子の粒径が一般に1μm以下という記述と合う。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "記述は正しい。溶接ヒュームは、溶接の高熱で蒸発した金属が空気中で冷えて固まった微粒子で、溶接工肺（じん肺）の原因になる。三重労働局の資料は、IARCが溶接ヒュームをグループ1（ヒトに対する発がん性）に分類したことを示しており、令和3年に特定化学物質へ追加された。"
+            "reason": "正しい。岡山労働局資料は、溶接ヒュームを蒸気が空気中で凝固した固体の粒子とし、IARCがグループ1に分類したと記す。粉じん則は「金属をアーク溶接する作業」を粉じん作業とし、厚労省検討会報告書も溶接ヒュームは疫学研究で発がん性が示されたが、じん肺を機序とする原発性肺がんとの区別がついていないとする。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "記述は正しい。じん肺法施行規則第1条は、管理二・管理三のじん肺に合併する疾病として、肺結核、結核性胸膜炎、続発性気管支炎、続発性気管支拡張症、続発性気胸、原発性肺がんを定めている。肺結核・気管支炎・肺がんはすべて含まれる。"
+            "reason": "正しい。じん肺法施行規則第1条は、じん肺管理区分が管理二又は管理三の者のじん肺と合併した肺結核、結核性胸膜炎、続発性気管支炎、続発性気管支拡張症、続発性気胸、原発性肺がんを合併症と定めている。肺結核、気管支炎、肺がんを合併症として挙げた本肢と一致する。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "記述は正しい。角閃石系の青石綿（クロシドライト）・茶石綿（アモサイト）は、蛇紋石系の白石綿（クリソタイル）より有害性、特に中皮腫の発生リスクが高いとされる。ただし白石綿もIARCグループ1で安全ではない。種類別の比較は政府ページ本文では確認できていない。"
+            "reason": "正しい。厚生労働省の検証報告は、1977年のEC委員会の報告で、発がん性の強さがクロシドライト、アモサイト、クリソタイルの順であることが専門家間で確認されていたと記す。WHOもクロシドライトとアモサイトを有害性が著しく高いとして使用禁止を勧告しており、青石綿・茶石綿の方が白石綿より有害性が高い。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "労働安全衛生総合研究所 作業環境中の粉じん測定とばく露対策（2017年）",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf"
           },
           {
-            "title": "三重労働局 特定化学物質障害予防規則改正（金属アーク溶接等作業への規制強化）について",
-            "url": "https://jsite.mhlw.go.jp/mie-roudoukyoku/tokka_arc.html"
+            "title": "労働安全衛生総合研究所 メールマガジン「粉じんの吸入ばく露による健康障害を評価する」",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html"
           },
           {
-            "title": "厚生労働省 じん肺法施行規則",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74166000&dataType=0&pageNo=1"
+            "title": "岡山労働局 溶接ヒューム等に係る健康障害防止対策について",
+            "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf"
+          },
+          {
+            "title": "厚生労働省 令和元年度 化学物質による労働者の健康障害防止措置に係る検討会報告書（マンガン及びその化合物並びに溶接ヒューム）",
+            "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf"
+          },
+          {
+            "title": "粉じん障害防止規則（別表第一 粉じん作業）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "じん肺法施行規則（e-Gov法令API・現行版本文）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006"
+          },
+          {
+            "title": "厚生労働省 アスベスト問題に関する厚生労働省の過去の対応の検証（追加）平成17年9月29日",
+            "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf"
           }
         ]
       },
-      "reviewIssues": [
-        "ヒュームの一次粒子径が1μm以下であることは、政府資料本文で確認できていない。",
-        "青石綿・茶石綿・白石綿の有害性の比較は、検索スニペットにあっただけで、読めたページ（厚労省アスベストQ&A、ERCA）では本文を確認できていない。比較は図の画像内にあって読めず、PDFは抽出できなかった。そのためsourcesには入れていない。",
-        "作業環境測定基準の分粒特性（4.25μm・Σ1.5）は、取得ツールの抽出結果による。図の数値そのものは目視していない。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "1.吸引性粉じん：鼻孔または口を通過する粒子。（100μm以下）2.咽頭通過性粉じん：咽頭を通過し、肺に向かう粒子。（10μm以下）3.吸入性粉じん：肺胞まで達する粒子。（4μm以下）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
+          "excerpt": "「咽頭通過性粉じん」は、吸引性粉じんの中で咽頭を通過して肺に向かう粒子であり、さらにその中で肺胞まで到達する粒子を「吸入性粉じん」といいます。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
+          "excerpt": "ヒューム：固体が蒸発し、その後凝縮したものであり金属の加熱溶解、溶接、溶断などで生じる。",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf",
+          "excerpt": "アーク溶接により生じた蒸気が空気中で凝固した固体の粒子（粒径0.1～１μm）。",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/okayama-roudoukyoku/content/contents/001247447.pdf",
+          "excerpt": "国際がん研究機関（IARC）では人に対する発がん性があるグループ１に分類。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "二十の二金属をアーク溶接する作業",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf",
+          "excerpt": "溶接ヒュームは、疫学研究によって発がん性があることが示されたが、原因物質は特定されず、じん肺を機序とする原発性肺がんとの区別もついていない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006",
+          "excerpt": "じん肺管理区分が管理二又は管理三と決定された者に係るじん肺と合併した次に掲げる疾病とする。一肺結核二結核性胸膜炎三続発性気管支炎四続発性気管支拡張症五続発性気胸六原発性肺がん",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf",
+          "excerpt": "既にその発がん性の強さがクロシドライト、アモサイト、クリソタイルの順であることが専門家の間で確認されていた",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf",
+          "excerpt": "有害性が著しく高くばく露限界の提案ができないクロシドライト及びアモサイトの使用禁止を勧告している",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ]
     },
     "emkohyo-EM20261801-q9": {
