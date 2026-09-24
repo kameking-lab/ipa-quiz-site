@@ -12,6 +12,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import sys
+import time
 from urllib.parse import urlparse
 
 import requests
@@ -21,6 +22,7 @@ from egov_law_text import text_view  # noqa: E402
 from safety_choice_review_gate import digest, government_url  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
+HEADERS = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
 
 
 def main():
@@ -38,7 +40,13 @@ def main():
         if not government_url(url):
             raise SystemExit(f"Not a government URL: {url}")
         retrieval_url = urlparse(url)._replace(fragment="").geturl()
-        response = requests.get(retrieval_url, timeout=120)
+        response = None
+        for attempt in range(4):
+            # env.go.jp's CDN intermittently rejects non-browser user agents.
+            response = requests.get(retrieval_url, timeout=120, headers=HEADERS)
+            if response.status_code == 200:
+                break
+            time.sleep(2 ** attempt)
         response.raise_for_status()
         payload = response.content
         if len(payload) < 2000 or b"[ERR-WEB-" in payload[:5000]:

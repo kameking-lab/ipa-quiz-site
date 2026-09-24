@@ -24,6 +24,10 @@ from safety_choice_review_gate import (candidate_issues, digest, make_receipt, r
                                       receipt_key, reuse_candidate_key, source_snapshot)
 
 
+HEADERS = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 "
+           "(KHTML, like Gecko) Chrome/126.0 Safari/537.36"}
+
+
 def read(path):
     return json.loads(path.read_text(encoding="utf-8-sig"))
 
@@ -91,7 +95,7 @@ def verified_government_source(root, source):
         if sha256(cache.read_bytes()).hexdigest() == expected:
             return cache
         cache.unlink()
-    response = requests.get(url, timeout=90)
+    response = requests.get(url, timeout=90, headers=HEADERS)
     response.raise_for_status()
     payload = response.content
     if (len(payload) != retrieval.get("bytes")
@@ -127,7 +131,7 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
         current = pinned.get(url)
         if current and current.get("retrieval", {}).get("retrievalUrl") == retrieval_url:
             continue
-        response = requests.get(retrieval_url, timeout=90)
+        response = requests.get(retrieval_url, timeout=90, headers=HEADERS)
         response.raise_for_status()
         payload = response.content
         if len(payload) < 300 or len(payload) > 32 * 1024 * 1024:
@@ -177,7 +181,7 @@ def refresh_question_sources(root, drafts, question_ids, group):
                 or parsed.username or parsed.password or parsed.port is not None):
             raise ValueError(f"Cannot refresh non-government source: {url}")
         retrieval_url = parsed._replace(fragment="").geturl()
-        response = requests.get(retrieval_url, timeout=90)
+        response = requests.get(retrieval_url, timeout=90, headers=HEADERS)
         response.raise_for_status()
         payload = response.content
         if len(payload) < 300 or len(payload) > 32 * 1024 * 1024:
