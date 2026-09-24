@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1691,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 10463,
+      "webSearchRequests": 0,
+      "costUSD": 0.1177878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1099,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261804-q06-06-raw-response.txt",
+  "rawResponseSha256": "54351f0855fb9d1a0589dc90afcb82f7770861275e04c05e66816b73a4fddb7d",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q6": {
+      "/exam-library/emkohyo-EM20261804/q6-p5-1.webp": "c0898b8fdd1701e63ac3a4c90c38b3b6528c758a13a8c4eda0c352c1881ec4ed"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q6": "8b2562ceefc2c3c8949b64554063a0e0465085f3689d154aadcaa56fbf7996b0"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q06-06.json",
+  "sourcePackSha256": "ab95dd1496b4b89cc93fe50f56a8f95860fa9a64d961a0e86cf1bb41f0f81933",
+  "assessment": {
+    "emkohyo-EM20261804-q6": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの反応式「H₂ + Br₂ 2HBr」から、公式問題原図にある可逆反応の矢印（⇄）が脱落している。平衡反応であることを示す記号が消えているため、「H₂ + Br₂ ⇄ 2HBr」と復元すること。",
+        "presentation.promptで、反応式の直後に改行が無く「2HBrこの反応の平衡定数として…」と次の文につながっている。原図では反応式が独立した行になっているため、反応式の後に改行を入れること。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "添付資料は日本化学会の『化学と教育』69巻10号の論説で、J-STAGE（科学技術振興機構が運営）に掲載されている。政府の一次資料ではない。source titleの「科学技術振興機構J-STAGE掲載」という表記は、政府資料であるかのように読める。発行主体が日本化学会であることが分かる表記に改めること。",
+        "添付資料が直接支えているのは、平衡定数の一般式 K＝[P]^p[Q]^q…/[X]^x[Y]^y… と、H₂＋I₂→2HI の量関係（1:1:2）の例までである。H₂＋Br₂⇄2HBr の平衡定数の算出（K=9）を直接支える政府ページは存在しない。本問の結論は化学量論計算で検証可能だが、政府資料による直接の裏付けは無い。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

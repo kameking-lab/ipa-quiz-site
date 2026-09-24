@@ -164,64 +164,151 @@
       "overlay": {
         "sourceHash": "9685d5ebfe3e2dcbe452766f92e79637034c273d1e1081548293da022bcf43f3",
         "correctChoice": 5,
-        "summary": "ヨウ化メチルはIARCグループ3で、政府GHS分類でも発がん性を「分類できない」とされる。甲状腺がんとの組合せが誤り。",
+        "summary": "ヨウ化メチルはIARCでグループ3（ヒトに対する発がん性について分類できない）で、甲状腺がんを生じる主要ながんとする（5）が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "カドミウム化合物と肺がんの組合せは正しい。政府GHS分類（酸化カドミウム等）は、IARCが「カドミウム及びカドミウム化合物」をグループ1としていることから発がん性を区分1Aとしている。ただし、主な部位が肺であることは読んだ政府ページでは明記を確認できていない。"
+            "reason": "正しい。厚労省モデルSDS（水酸化カドミウム）は、IARCがカドミウム及びカドミウム化合物へのばく露をヒトの肺がんリスクの増加と関連づけ、十分な証拠ありと結論したと記す。食品安全委員会も、職業曝露による肺がんリスクの研究に基づきIARCがグループ1に分類したとしている。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "ニッケル化合物と肺がんの組合せは正しい。労基則別表第1の2第7号に「ニッケルの製錬又は精錬を行う工程における業務による肺がん又は上気道のがん」が職業がんとして定められている。酸化ニッケルもIARCグループ1で、政府GHS分類は区分1Aである。"
+            "reason": "正しい。労働基準法施行規則別表第1の2は、ニッケルの製錬・精錬工程の業務による肺がん又は上気道のがんを業務上疾病とする。厚労省モデルSDS（亜硫化ニッケル）も、ニッケル化合物をIARCグループ1とし、ラット吸入試験で肺胞・細気管支の腺腫・癌腫の増加を記しており、組合せは正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "無機ヒ素化合物と膀胱がんの組合せは正しい。政府GHS分類（三酸化二ヒ素）はIARCの評価を引用し、無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされたとして区分1Aとしている。職業病リストには製錬等による肺がん・皮膚がんが定められている。"
+            "reason": "正しい。厚労省モデルSDS（三酸化二ヒ素）は、IARCの評価として、亜ヒ酸塩やヒ酸塩を含む無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされたと記す。無機ヒ素化合物と膀胱がんの組合せは正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "オーラミンと膀胱がんの組合せは正しい。労基則別表第1の2第7号に「オーラミンを製造する工程における業務による尿路系腫瘍」がある。政府GHS分類も製造作業者の集団で膀胱腫瘍が多発したと記載している。オーラミンという物質自体の評価はIARC 2Bである。"
+            "reason": "正しい。労働基準法施行規則別表第1の2は、オーラミンを製造する工程の業務による尿路系腫瘍を業務上疾病とし、厚労省モデルSDSは製造作業者集団で膀胱腫瘍の過剰発生がみられたと記す。オーラミン自体のIARC分類は2Bで、主な根拠は製造工程でのばく露だが、膀胱がんとの組合せは正しい。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "ヨウ化メチルと甲状腺がんの組合せが誤り。政府GHS分類は、IARCがヨウ化メチルをグループ3（ヒトへの発がん性を分類できない）としており、2010年の評価でも変わっていないことから、発がん性を「分類できない」としている。ヒトの主要ながんに甲状腺がんを対応させる根拠はない。"
+            "reason": "誤り。厚労省モデルSDSによると、ヨウ化メチルはIARCでグループ3のため発がん性は「分類できない」とされている。甲状腺については、ラットの反復吸入で重量増加や濾胞上皮細胞の過形成など非腫瘍性の影響が記されているだけで、甲状腺がんを生じる主要ながんとする組合せは誤りである。"
           }
         ],
         "sources": [
           {
-            "title": "NITE 政府GHS分類結果 沃化メチル",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-74-88-4.html"
+            "title": "職場のあんぜんサイト モデルSDS 水酸化カドミウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html"
           },
           {
-            "title": "厚生労働省 職業病リスト（労働基準法施行規則別表第１の２）",
-            "url": "https://www.mhlw.go.jp/stf/newpage_30055.html"
+            "title": "食品安全委員会 汚染物質評価書 食品からのカドミウム摂取の現状に係る安全性確保について（概要版）",
+            "url": "https://www.fsc.go.jp/hyouka/hy/hy-gaiyou-cadmium.pdf"
           },
           {
-            "title": "NITE 政府GHS分類結果 オーラミン",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-492-80-8.html"
+            "title": "労働基準法施行規則（e-Gov法令）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
           },
           {
-            "title": "NITE 政府GHS分類結果 三酸化二ヒ素",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-1327-53-3.html"
+            "title": "職場のあんぜんサイト モデルSDS 亜硫化ニッケル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html"
           },
           {
-            "title": "NITE 政府GHS分類結果 酸化ニッケル",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-1313-99-1.html"
+            "title": "職場のあんぜんサイト モデルSDS 三酸化二ヒ素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html"
           },
           {
-            "title": "NITE 政府GHS分類結果 酸化カドミウム",
-            "url": "https://www.chem-info.nite.go.jp/chem/ghs/m-nite-1306-19-0.html"
+            "title": "職場のあんぜんサイト モデルSDS オーラミン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS ヨウ化メチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"
           }
         ]
       },
-      "reviewIssues": [
-        "カドミウム化合物の主ながんが肺がんであることを明記した政府ページは読めていない。GHSページはIARCグループ1の記載のみ。候補の厚労省PDF（特殊健診項目の見直し）は本文を抽出できなかった。",
-        "候補の「作業環境測定基準」はこの設問の判断根拠にならないため使っていない。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html",
+          "excerpt": "カドミウム及びカドミウム化合物へのばく露はヒトの肺がんリスクの増加に関連し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/21041-95-2.html",
+          "excerpt": "カドミウム及びカドミウム化合物はヒトで発がん性を有するとの十分な証拠があると結論された",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/hyouka/hy/hy-gaiyou-cadmium.pdf",
+          "excerpt": "IARCの専門家委員会では、職業曝露による肺がんリスクが高いとする複数の研究報告に基づいてグループ１（ヒトに対して発がん性がある）に分類",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "excerpt": "ニッケルの製錬又は精錬を行う工程における業務による肺がん又は上気道のがん",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html",
+          "excerpt": "発がん性ニッケル化合物についてIARCでグループ１",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/12035-72-2.html",
+          "excerpt": "ばく露に関連する肺胞・細気管支の腺腫、癌腫の発生頻度の増加",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1327-53-3.html",
+          "excerpt": "本物質、亜ヒ酸塩及びヒ酸塩を含め無機ヒ素化合物への混合ばく露の発がん性について、これらの無機ヒ素化合物は肺がん、膀胱がん及び皮膚がんを生じることが明らかにされた。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "excerpt": "オーラミンを製造する工程における業務による尿路系腫瘍",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
+          "excerpt": "本物質の製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられた",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
+          "excerpt": "IARCでグループ2B",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "発がん性IARCでグループ3(IARC71(1999))であるため、「分類できない」とした。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "甲状腺への影響(重量増加、濾胞上皮細胞の細胞質空胞化及び過形成)が認められた",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ]
     },
     "emkohyo-EM20261801-q8": {
