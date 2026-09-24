@@ -194,7 +194,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "作業環境評価基準では、土石・岩石・鉱物・金属・炭素の粉じんの管理濃度を、遊離けい酸含有率Q（％）を用いたE＝3.0/(1.19Q＋1) mg/m³で求めます。記述の式と一致するので正しいです。"
+            "reason": "作業環境評価基準（労働省告示第79号）の別表は、土石・岩石・鉱物・金属・炭素の粉じんの管理濃度を、遊離けい酸含有率Q（％）に応じてE＝3.0/(1.19Q＋1) mg/m³で算定すると定めています。記述の式と一致します。"
           },
           {
             "number": 4,
@@ -204,32 +204,103 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "許容濃度等の勧告には、化学物質の許容濃度や発がん性分類のほか、騒音、手腕振動・全身振動、高温、寒冷などの物理的因子の許容基準も収載されています。この記述は正しいので正答ではありません。"
+            "reason": "厚生労働省掲載の日本産業衛生学会『許容濃度等の勧告』には発がん性分類の章があります。前文は有害物質の許容濃度・生物学的許容値に加え、騒音・高温・寒冷・全身振動・手腕振動などの許容基準を列挙しています。化学物質と物理的因子の両方を扱うため正しい記述です。"
           }
         ],
         "sources": [
+        {
+          "title": "厚生労働省 作業環境評価基準の適用について（基発第605号）",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+        },
+        {
+          "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号・別表）",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000"
+        },
           {
-            "title": "厚生労働省 労働安全衛生法",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
-          }
+            "title": "厚生労働省 管理濃度・抑制濃度等一覧 参考資料2-2",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080701.pdf"
+          },
+          {
+          "title": "厚生労働省掲載 業務上疾病に関する医学的知見の収集に係る調査研究（化学物質等による疾病）報告書",
+            "url": "https://www.mhlw.go.jp/content/11201000/000748737.pdf"
+          },
+          {
+            "title": "厚生労働省掲載 日本産業衛生学会 許容濃度等の勧告（2019年度）",
+            "url": "https://www.mhlw.go.jp/content/11201000/000606772.pdf"
+        }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
-          "excerpt": "厚生労働大臣の定める作業環境評価基準に従つて行わなければならない",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "高濃度側から五％に相当する濃度の推定値",
           "choiceNumbers": [
-            1,
-            2,
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第一評価値＜管理濃度",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "当該単位作業場所のほとんど(九五％以上)の場所で気中有害物質の濃度が管理濃度を超えない状態",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第二評価値」とは、単位作業場所における気中有害物質の算術平均濃度の推定値",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "第二評価値＞管理濃度",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080701.pdf",
+          "excerpt": "Q=当該粉じんの遊離けい酸含有率(%)",
+          "choiceNumbers": [
             3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000",
+          "excerpt": "土石、岩石、鉱物、金属又は炭素の粉じん 次の式により算定される値 E＝3.0／(1.19Q＋1)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11201000/000748737.pdf",
+          "excerpt": "感作性（気道・皮膚） 第1 群 人間に対して明らかに感作性がある物質 第2 群 人間に対しておそらく感作性があると考えられる物質 第3 群 動物試験などにより人間に対して感作性が懸念される物質",
+          "choiceNumbers": [
+            4
           ]
         }
       ],
-      "reviewIssues": [
-        "採用した労働安全衛生法の抜粋は、作業環境測定結果の評価を作業環境評価基準に従って行うという法的根拠を示すだけです。第1評価値・第2評価値の定義（上側5％点、算術平均）、管理区分の判定、鉱物性粉じんの管理濃度の式は、この抜粋では確認できません。正答理由（肢2）を直接支える抜粋はまだないため、作業環境評価基準（告示本文）の検索が必要です。",
-        "肢4・肢5は日本産業衛生学会『許容濃度等の勧告』（学会資料で、政府資料ではありません）の内容です。本文を未確認のため、sourcesに入れていません。最新年度の勧告本文での確認が必要です。",
-        "肢3の管理濃度の式は、作業環境評価基準の別表で確認するまで、一次資料による確認は未了です。"
-      ]
+      "independentCurrentEditionVerification": {
+        "scope": "査読用の現行性照合。公開する根拠リンクには使用しない",
+        "url": "https://www.jstage.jst.go.jp/article/sangyoeisei/67/5/67_S25001/_pdf",
+        "sha256": "11c12c8fd05a180cf5b56eee100e8821cf3e392e6c929c86bc0fc2ccd9975fd4",
+        "publication": "日本産業衛生学会 許容濃度等の勧告（2025年度）, 産業衛生学雑誌 67(5)",
+        "checks": [
+          {"pdfPage": 1, "excerpt": "ここに述べる有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，", "purpose": "騒音・振動・高温・寒冷を含む前文の現行性"},
+          {"pdfPage": 18, "excerpt": "感作性物質を，反応の場としての気道と皮膚に分けて", "purpose": "気道と皮膚の分類を2025年度版で確認"},
+          {"pdfPage": 18, "excerpt": "物質（第3 群）", "purpose": "第1〜第3群の分類を2025年度版で確認"},
+          {"pdfPage": 10, "excerpt": "III．発がん性分類", "purpose": "発がん性分類の章が現行勧告に存在することを確認"}
+        ]
+      },
+      "reviewIssues": []
     }
   }
 }

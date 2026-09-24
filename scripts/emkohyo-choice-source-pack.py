@@ -145,11 +145,29 @@ def main() -> None:
                            if offset >= 0 else ""})
         records.append({**page, "claimedExcerpts": claims})
     pack = {"paperId": paper, "range": [first, last], "draftSha256": text_sha256(file),
-            "sources": records, "claimedExcerpts": len(evidence),
-            "missingEvidenceQuestions": [id_ for id_, question in draft.items()
-                                         if not question.get("sourceEvidence")],
-            "unverifiedExcerpts": sum(not c["matched"] for p in records
-                                      for c in p["claimedExcerpts"])}
+             "sources": records, "claimedExcerpts": len(evidence),
+             "missingEvidenceQuestions": [id_ for id_, question in draft.items()
+                                          if not question.get("sourceEvidence")],
+             "unverifiedExcerpts": sum(not c["matched"] for p in records
+                                       for c in p["claimedExcerpts"])}
+    current_edition_checks = []
+    for id_, question in draft.items():
+        reference = question.get("independentCurrentEditionVerification")
+        if not reference:
+            continue
+        response = requests.get(reference["url"], timeout=60)
+        response.raise_for_status()
+        digest = sha256(response.content).hexdigest()
+        if digest != reference["sha256"]:
+            raise ValueError(f"Current-edition reference changed: {id_}")
+        pdf = fitz.open(stream=response.content, filetype="pdf")
+        for check in reference["checks"]:
+            page = check["pdfPage"]
+            if not 1 <= page <= len(pdf) or normal(check["excerpt"]) not in normal(pdf[page - 1].get_text()):
+                raise ValueError(f"Current-edition excerpt not found: {id_} p{page}")
+        current_edition_checks.append({"questionId": id_, **reference, "verifiedSha256": digest})
+    if current_edition_checks:
+        pack["independentCurrentEditionChecks"] = current_edition_checks
     if SOURCE_PAGE_IMAGES.exists():
         image_map = json.loads(SOURCE_PAGE_IMAGES.read_text(encoding="utf-8"))
         key = f"{paper}-q{first:02}-{last:02}"
