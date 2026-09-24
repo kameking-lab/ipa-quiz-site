@@ -1,0 +1,296 @@
+{
+  "questionNumber": 13,
+  "sharedContext": "受電電圧6 kV、契約電力500 kWの自家用電気工作物の受電設備がある。「電気設備の技術基準の解釈」に基づき、周波数50 Hzの交流電源を使用して受電設備の高圧電路の絶縁耐力試験を行うとき、次の(a)及び(b)の問に答えよ。\nただし、高圧電路の最大使用電圧は6 900 Vとし、3線一括した高圧電路と大地との間の静電容量は0.2 μFとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "受電電圧6 kV、契約電力500 kWの自家用電気工作物の受電設備がある。「電気設備の技術基準の解釈」に基づき、周波数50 Hzの交流電源を使用して受電設備の高圧電路の絶縁耐力試験を行うとき、次の(a)及び(b)の問に答えよ。\nただし、高圧電路の最大使用電圧は6 900 Vとし、3線一括した高圧電路と大地との間の静電容量は0.2 μFとする。\n\n(a) 絶縁耐力試験における対地充電電流[A]の値として、最も近いのは次のうちどれか。",
+      "choices": {
+        "1": "0.32",
+        "2": "0.43",
+        "3": "0.54",
+        "4": "0.65",
+        "5": "0.71"
+      },
+      "officialAnswer": "4",
+      "explanation": "根拠とする「電気設備の技術基準の解釈」は、令和6年10月22日改正版（経済産業省 20241022-2.pdf）とする。同版第1頁の改正履歴の最終行は「改正 20241004保局第1号 令和6年10月22日付け」である。一方、令和7年11月20日改正版（経済産業省 dengikaishaku.pdf を2026年9月24日に取得した時点の版。このURLは常に最新の統合版に差し替わるため、後日開くと別の版が表示され、頁番号や改正履歴の最終行が本解説の記述と一致しない場合がある）の第1頁の改正履歴では、令和6年10月22日付けの次の改正が「改正 20251104保局第2号 令和7年11月20日付け」であり、両者の間に改正はない。したがって、試験日（2025年3月23日）の時点で最新の改正版は令和6年10月22日改正版である。\n第15条【高圧又は特別高圧の電路の絶縁性能】は、高圧又は特別高圧の電路が次の各号のいずれかに適合する絶縁性能を有することを求めている（令和6年10月22日改正版第24〜25頁）。\n・第一号：15-1表に規定する試験電圧を電路と大地との間に連続して10分間加えたとき、これに耐えること。\n・第二号：電線にケーブルを使用する交流の電路において、15-1表に規定する試験電圧の2倍の直流電圧を電路と大地との間に連続して10分間加えたとき、これに耐えること。\n本問の高圧電路は、受電電圧6 kVの受電設備の交流の電路で、最大使用電圧は6 900 V（7,000 V以下）である。試験は50 Hzの交流電源で行うので、第二号の直流試験ではなく第一号の試験が適用される。15-1表の「最大使用電圧が7,000 V以下の電路」のうち「交流の電路」の行は「最大使用電圧の1.5倍の交流電圧」なので、\n試験電圧 V = 1.5 × 6 900 = 10 350 V\n1.5倍になるのは電路が交流の電路だからであり、試験電源が交流であることは15-1表の行を選ぶ根拠ではない。同表では、最大使用電圧7,000 V以下の直流の電路を交流電圧で試験する場合は「1倍の交流電圧」となる。上記の令和7年11月20日改正版（2026年9月24日取得時点）の第25頁の15-1表でも、この区分と倍率は同じである。\n3線一括した高圧電路と大地との間の静電容量は C = 0.2 μF = 0.2 × 10⁻⁶ F、周波数は f = 50 Hz である。対地充電電流は\nI = ωCV = 2πfCV = 2π × 50 × 0.2 × 10⁻⁶ × 10 350\n  = 6.283 × 10⁻⁵ × 10 350 ≒ 0.650 A\nよって最も近いのは (4) 0.65 A。\nなお、受電設備に変圧器が含まれる場合、その電路には第16条が適用される。令和6年10月22日改正版第26頁の16-1表でも、最大使用電圧が7,000 V以下のものの試験電圧は「最大使用電圧の1.5倍の電圧（500 V未満となる場合は、500 V）」である。試験方法は※1で、試験される巻線と他の巻線、鉄心及び外箱との間に連続して10分間加える。6 900 V × 1.5 = 10 350 V となり、結論は変わらない。\n（受電電圧6 kV・契約電力500 kWの数値は、この計算には使用しない。）",
+      "choiceExplanations": {
+        "1": "誤り。0.32 A は、正しい計算値 0.650 A の約半分である。0.32 A に対応する試験電圧は 0.32 ÷ (2π × 50 × 0.2 × 10⁻⁶) ≒ 5 090 V で、最大使用電圧 6 900 V すら下回り、最大使用電圧7,000 V以下の交流の電路に適用される15-1表の試験電圧（1.5倍の10 350 V）と一致しない。",
+        "2": "誤り。0.43 A は、試験電圧を最大使用電圧の1倍（6 900 V）として計算した値（2π × 50 × 0.2 × 10⁻⁶ × 6 900 ≒ 0.434 A）に相当する。15-1表で「1倍の交流電圧」が認められているのは、最大使用電圧7,000 V以下の直流の電路である。本問は交流の電路なので1.5倍の交流電圧を用いる。よって不適。",
+        "3": "誤り。0.54 A は、試験電圧を最大使用電圧の1.25倍（8 625 V）として計算した値（≒ 0.542 A）に相当する。15-1表で1.25倍が現れるのは、最大使用電圧が7,000 Vを超える電路の区分である。具体的には、7,000 Vを超え60,000 V以下の電路のうち「上記以外」（10,500 V未満となる場合は10,500 V）と、60,000 Vを超える電路のうち整流器に接続する以外のものの「中性点非接地式電路」である。最大使用電圧6 900 Vの交流の電路はいずれの区分にも当たらず、1.5倍を用いる。よって不適。",
+        "4": "正しい。交流の電路で最大使用電圧7,000 V以下なので、15-1表の試験電圧は 1.5 × 6 900 = 10 350 V である。I = 2π × 50 × 0.2 × 10⁻⁶ × 10 350 ≒ 0.650 A となり、選択肢中で最も近い。",
+        "5": "誤り。0.71 A に対応する試験電圧は 0.71 ÷ (2π × 50 × 0.2 × 10⁻⁶) ≒ 11 300 V（最大使用電圧の約1.64倍）で、15-1表の「1.5倍の交流電圧」と一致しない。計算値 0.650 A より約9 %大きく、0.65 A の方が近い。"
+      },
+      "figureDescription": "図なし。原図ページ（公式PDF p17、ページ番号 -14-、識別コード T2−H 017）には問題文と選択肢のみが掲載されており、図はない。",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250323_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/2024_3_2.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    },
+    {
+      "part": "b",
+      "question": "受電電圧6 kV、契約電力500 kWの自家用電気工作物の受電設備がある。「電気設備の技術基準の解釈」に基づき、周波数50 Hzの交流電源を使用して受電設備の高圧電路の絶縁耐力試験を行うとき、次の(a)及び(b)の問に答えよ。\nただし、高圧電路の最大使用電圧は6 900 Vとし、3線一括した高圧電路と大地との間の静電容量は0.2 μFとする。\n\n(b) この試験に使用する試験装置に必要な容量[kV·A]の値として、最も近いのは次のうちどれか。",
+      "choices": {
+        "1": "3",
+        "2": "5",
+        "3": "7",
+        "4": "9",
+        "5": "11"
+      },
+      "officialAnswer": "3",
+      "explanation": "試験装置に必要な容量は、試験電圧と(a)で求めた対地充電電流の積で求める。\n試験電圧は(a)と同じ 10 350 V である。根拠は、「電気設備の技術基準の解釈」令和6年10月22日改正版（経済産業省 20241022-2.pdf）の第15条第一号・15-1表である。同版第1頁の改正履歴の最終行は令和6年10月22日付けの改正であり、令和7年11月20日改正版（経済産業省 dengikaishaku.pdf を2026年9月24日に取得した時点の版。このURLは常に最新の統合版に差し替わるため、後日開くと別の版が表示される場合がある）の第1頁の改正履歴では、その次の改正が令和7年11月20日付けである。したがって、試験日（2025年3月23日）の時点で最新の改正版は令和6年10月22日改正版である。\n本問の高圧電路は最大使用電圧7,000 V以下の交流の電路なので、15-1表の「交流の電路」の行の「最大使用電圧の1.5倍の交流電圧」を適用し、V = 1.5 × 6 900 = 10 350 V となる。50 Hzの交流電源で試験するので、第二号（15-1表の試験電圧の2倍の直流電圧）ではなく第一号の試験になる。\n(a)より I ≒ 0.650 A なので\nP = V × I = 10 350 × 0.650 ≒ 6 731 V·A ≒ 6.73 kV·A\n（P = ωCV² = 2π × 50 × 0.2 × 10⁻⁶ × 10 350² ≒ 6.73 kV·A としても同じ。）\nよって最も近いのは (3) 7 kV·A。\n（(a)の選択肢値 0.65 A を用いても 10 350 × 0.65 ≒ 6.73 kV·A で、結論は同じ。）\nなお、変圧器の巻線について定めた第16条の16-1表（令和6年10月22日改正版第26頁）でも、最大使用電圧7,000 V以下のものの試験電圧は最大使用電圧の1.5倍の電圧である。したがって試験電圧・必要容量は変わらない。",
+      "choiceExplanations": {
+        "1": "誤り。3 kV·A は、試験電圧を最大使用電圧の1倍（6 900 V）として 6 900 V × 0.434 A ≒ 2.99 kV·A と計算した値に相当する。15-1表で1倍の交流電圧が認められているのは、最大使用電圧7,000 V以下の直流の電路である。本問は交流の電路なので1.5倍を用いる。よって不適。",
+        "2": "誤り。5 kV·A は、1.25倍の電圧 8 625 V と対応する電流 0.542 A で計算した値（≒ 4.67 kV·A）に近い。1.25倍は15-1表で最大使用電圧7,000 Vを超える電路の区分の倍率であり、6 900 Vの交流の電路には適用されない。また計算値 6.73 kV·A より小さく、容量不足になる。",
+        "3": "正しい。10 350 V × 0.650 A ≒ 6.73 kV·A で、選択肢中で最も近い。",
+        "4": "誤り。9 kV·A を試験電圧 10 350 V で割ると約0.87 A となり、(a)の対地充電電流 0.650 A と整合しない。計算値 6.73 kV·A から約2.3 kV·A 離れており、7 kV·A の方が近い。",
+        "5": "誤り。11 kV·A を試験電圧 10 350 V で割ると約1.06 A で、(a)の対地充電電流 0.650 A の約1.6倍に当たる。計算値 6.73 kV·A より大幅に大きく、最も近い値ではない。"
+      },
+      "figureDescription": "図なし。原図ページ（公式PDF p17、ページ番号 -14-、識別コード T2−H 017）には問題文と選択肢のみが掲載されており、図はない。",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250323_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/2024_3_2.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4024,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9308,
+      "webSearchRequests": 0,
+      "costUSD": 0.1552078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1412,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "70532d8cd31368a206b43b7703edfaf3d3e0c88047c1772570d22173099fd006",
+  "inputRequestSha256": "02e330446a0e9b8048a6522e0994b72f778410bc283ef55bd0cc2ce13a0e970b",
+  "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250323/law/p17.png": "56357ad9495c336b7b7f24020c5fed69f0664c2c900e1c3ab508644cdf75f6fa"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7076,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 36389,
+          "webSearchRequests": 0,
+          "costUSD": 0.4328958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3488,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7226003e9aaab9bc00d4b63d3cade9680c026b4ffcdb73c15460088631369b19",
+      "inputRequestSha256": "199736591f9bb51038c29172ac16696f0c2cebb8bda9b53e4e52a01deef7c7f2",
+      "previousDraftSha256": "a7a368af1076cfd00886ff4fffe05b00cc80e01897cd675d80ad2e58ca2719da",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-vision-draft-v1.json",
+      "answeredReviewSha256": "5986d120f807e2f571dc4f1fa950273466562a3552f14ffd8574dfeca03e1f22",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-opus-review-v1.json",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022-diff.pdf": "3e72367ab40304a726ca545b865f7fbfdce2bcf8881fb3fd7c783c83e1c72098",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p001.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p002.png": "ca5f5f7a3a20f01e6ffd7c756fe7afe0c96c5bca370991dd9270f1f9717f0273",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p003.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p004.png": "6688c6e187d46245069c50efa5661a5aaef6b8a736e7a601531ebc86d04f8f94",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p005.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p006.png": "9b80693bf7e7e0b5f87d4bfedfd39b5f443c6cd64aa694759fa2cac454890e16",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p007.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p008.png": "dd9fb2c487a08ecf468dc229636ea9028c4a06bc93d444743d54da5631019693",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p009.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p010.png": "54aec29adb7e408090bd77e48b95e22d58e116fce7f540000a25bd4993dfe06a",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p011.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-diff-p012.png": "18a2e5fbfbfad2ecb1a2953aaa81e6b2ca2240200dcd58406a0fd567ca73a0ea",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      },
+      "operatorNote": "本問の試験日は2025-03-23（令和6年度下期）。添付の解釈（令和6年10月22日改正）第1頁の改正履歴では、この日以前の最終改正は令和6年10月22日付けで、次の改正は令和7年11月20日付け。よって試験日時点の施行版は令和6年10月22日改正版。添付の同改正の新旧対照表全頁で、改正対象に第15条・第16条・第17条が含まれないことも確認できる。根拠URLには試験日時点版のみを使う。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7086,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 31293,
+          "webSearchRequests": 0,
+          "costUSD": 0.3923278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2754,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "58a59e1c307c8a0aa867365c79ff3fcf85220414b82ed53afa41fee50916217a",
+      "inputRequestSha256": "97d98abae87fd246dc0168789ed2d8d0bc3200a10b8873ae6dff4eb816f191da",
+      "previousDraftSha256": "275d0187d6c96cacfdadbf60476f225f200dc0d95d6f9afbd4ef25abfb396195",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-vision-draft-v2.json",
+      "answeredReviewSha256": "289be878c64d37b646d540406c7a8554d937def00a742b28e9c825985b604ead",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-opus-review-v2.json",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+        }
+      },
+      "operatorNote": "前回メモの訂正：新旧対照表（令和6年10月22日改正）で第16条は改正対象に含まれるが、改正されたのは第16条第6項（開閉器等の器具）で、第1項（16-1表）は「（略）」＝改正なし。第15条・第17条は新旧対照表に現れない。試験日2025-03-23時点の施行版は令和6年10月22日改正版（第1頁の改正履歴で確認）で、その第24〜26頁で第15条柱書・15-1表・16-1表を直接確認できる。添付頁は全て判読可能。"
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 8622,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 41560,
+          "webSearchRequests": 0,
+          "costUSD": 0.5051838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4580,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "f6ba2e9764059068b5adc4596b158375f2a741a1192f2715c7a3216aeb97dc40",
+      "inputRequestSha256": "e0daf694527f8f200351585836dcabd424eed44aab5f3bcb47da001c1fdd30e7",
+      "previousDraftSha256": "2d3007761245949129ac8bbfdc435cf9334d4f1a2e882f934e87ccbfcf199fc9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-vision-draft-v3.json",
+      "answeredReviewSha256": "e68efa6a6405332c6502dd03624e6c3cb6d5e83d6aae899b3404874f2162c137",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250323-law-s1-q13a-q13b-opus.json",
+      "answeredStrictReceiptSha256": "91c732dc21b3ebf8dd475ea49f5ff911acf77ced2defed85b8bf46be684f95e9",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+        }
+      },
+      "operatorNote": "試験日2025-03-23時点の施行版の根拠：添付の令和6年10月22日改正版第1頁の改正履歴の最終行は令和6年10月22日付け。さらに添付の令和7年11月20日改正版（最新統合版）第1頁の改正履歴では、令和6年10月22日付けの次の改正が令和7年11月20日付けであり、その間に改正はない。したがって2025-03-23時点の施行版は令和6年10月22日改正版。uncertaintyには添付資料で検証できた事実だけを書き、未解消事項が無ければ『なし』とする。"
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 8033,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 49774,
+          "webSearchRequests": 0,
+          "costUSD": 0.5591158,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3439,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "d40b0e65e9bbfbe714400d43ff2c9cc098a9a74bcd91a691ebde8c1fb0863486",
+      "inputRequestSha256": "2bae629a200f05b8f9f73fb81c7565bf194e7688a946a568fecd9ed0578f2fff",
+      "previousDraftSha256": "7bc0c23b1bf963ec94d61ef8bed210ababb891953447ff96171da4dad236b080",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-vision-draft-v4.json",
+      "answeredReviewSha256": "60dc06e2ad5d64f53fea2e2484b25546bdb09075afc9a30cf3c445c7077ab150",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250323/law/archive/q13-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250323-law-s2-q13a-q13b-opus.json",
+      "answeredStrictReceiptSha256": "4c761fc343f6babaa9bb8bdce0210dab2fc50b82e31f55190fa226117cab87e8",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "8ae565cedbdf3315eef21dbc4ec309e9de14cd3603b452582d559e68a7e20312",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "1891e6f9347719abf32ae8b996a33399786837a991c415cd411ebf85ffbc077d",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "4be13bddc05b0b2709d10c655787e2a89927b5ec5008ad811bc3a29e5ecdd406",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+        }
+      },
+      "operatorNote": "根拠資料の使い分け：条文内容は試験日2025-03-23時点の施行版である令和6年10月22日改正版（20241022-2.pdf）で示す。その版が試験日時点の施行版であることは、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。このURLは常に最新版に差し替わる）第1頁の改正履歴で、令和6年10月22日付けの次の改正が令和7年11月20日付けであることから示す。両URLを officialReferenceUrls に入れ、解説の出典記述には版名と、dengikaishaku.pdf については取得日と差し替わりURLである旨を書く。添付頁はすべて判読可能。"
+    }
+  ]
+}

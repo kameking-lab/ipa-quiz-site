@@ -18,6 +18,7 @@ PRIVATE = ROOT / "data/raw_pdfs/denken3/review"
 REVIEWED = ROOT / "data/questions/denken3/reviewed"
 PUBLIC = ROOT / "public/images/denken3"
 EVIDENCE = ROOT / "docs/evidence/denken3/partial"
+GENERATION = ROOT / "docs/evidence/denken3/generation"
 
 
 def sha(path: Path) -> str:
@@ -98,6 +99,11 @@ def promote(date: str, subject: str, numbers: list[int]) -> None:
                                       for item in figures if "choice-" in item["id"]}
             row["needsReview"] = False
             rows.append(row)
+        mirror = GENERATION / date / subject
+        mirror.mkdir(parents=True, exist_ok=True)
+        # Tracked copies of the Opus generation/review receipts (modelUsage, raw SHA, revision chain).
+        shutil.copyfile(draft_path, mirror / draft_path.name)
+        shutil.copyfile(receipt_path, mirror / receipt_path.name)
         proofs.append({"number": number, "sourceDraftSha256": sha(draft_path),
                        "opusReceipt": str(receipt_path.relative_to(ROOT)).replace("\\", "/"),
                        "opusReceiptSha256": sha(receipt_path), "assessment": assessment,

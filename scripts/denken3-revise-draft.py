@@ -1,11 +1,13 @@
 """Revise one private draft with Opus from the latest review issues (never publishes).
 
-Usage: python scripts/denken3-revise-draft.py 20250323 law 12 [--refs URL[,URL...]] [--note TEXT]
+Usage: python scripts/denken3-revise-draft.py 20250323 law 12 [--refs URL[,URL...]] [--note TEXT] [--strict RECEIPT]
 
 The previous draft and its FIX review are archived under the private tree, and
 the new draft records the review it answered plus the Opus receipt that wrote it.
 `--refs` attaches SHA-pinned manifest references the model may cite; `--note`
 adds an operator-verified hint (e.g. a crop that was replaced) as plain context.
+`--strict` answers the FIX items of a strict direct-review receipt instead of the
+independent review; the promoted candidate must then be withdrawn and re-promoted.
 """
 
 from __future__ import annotations
@@ -42,6 +44,11 @@ def main() -> None:
     args = sys.argv[1:]
     refs: list[str] = []
     note = ""
+    strict: Path | None = None
+    if "--strict" in args:
+        index = args.index("--strict")
+        strict = ROOT / args[index + 1]
+        del args[index:index + 2]
     if "--refs" in args:
         index = args.index("--refs")
         refs = [value for value in args[index + 1].split(",") if value]
@@ -65,7 +72,15 @@ def main() -> None:
     if review["draftSha256"].get(str(number)) != sha(draft_path):
         raise ValueError("Latest review does not match the current draft")
     assessment = next(item for item in review["assessment"] if item.get("number") == number)
-    if assessment["status"] == "PASS" and not note and not refs:
+    strict_sha = None
+    if strict is not None:
+        strict_sha = sha(strict)
+        items = [item for item in json.loads(strict.read_text(encoding="utf-8"))["assessment"]
+                 if item.get("questionNumber") == number and item.get("status") != "PASS"]
+        if assessment["status"] != "PASS" or not items:
+            raise ValueError("Strict revision needs a PASS independent review and strict FIX items")
+        assessment = {"source": strict.relative_to(ROOT).as_posix(), "strictFixItems": items}
+    elif assessment["status"] == "PASS" and not note and not refs:
         raise SystemExit("Current draft already PASS; nothing to revise")
     official = [item for item in paper["answerUnits"] if item["question"] == number]
     specs = json.loads(FIGURE_SPECS.read_text(encoding="utf-8"))
@@ -81,6 +96,8 @@ def main() -> None:
         "図は文字で捏造せず figureDescription に図の範囲とラベルを原図どおり記す。"
         "officialReferenceUrls には添付資料として実際に示されたURLだけを入れ、その資料で確認できる主張だけに使う。"
         "添付資料で確認できない法令・規格上の主張は書かない。uncertainty は未解消の不確実性があれば具体的に書き、なければ『なし』。"
+        "全フィールドは学習者向け公開データになる。作業経緯・監査指摘の採否・作業者メモ・添付ファイルの状態・needsReview には一切言及しない。"
+        "添付資料が読めない場合は推測で補わず、該当主張を書かない。"
         "出力キーは questionNumber, sharedContext, units。units要素は part, question, choices(1〜5), officialAnswer,"
         "explanation, choiceExplanations(1〜5), figureDescription, officialReferenceUrls, uncertainty。"
     )
@@ -136,6 +153,8 @@ def main() -> None:
         "inputRequestSha256": sha256((json.dumps(request, ensure_ascii=False) + "\n").encode("utf-8")).hexdigest(),
         "previousDraftSha256": old_draft_sha, "previousDraft": archived_draft.relative_to(ROOT).as_posix(),
         "answeredReviewSha256": old_review_sha, "answeredReview": archived_review.relative_to(ROOT).as_posix(),
+        "answeredStrictReceipt": strict.relative_to(ROOT).as_posix() if strict else None,
+        "answeredStrictReceiptSha256": strict_sha,
         "figureSha256": figure_hashes, "referenceHashes": hashes, "operatorNote": note,
     }]
     draft_path.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

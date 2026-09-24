@@ -43,7 +43,7 @@ def draft(date: str, subject: str, number: int) -> None:
         "出力はJSONオブジェクトのみ。キーは questionNumber, sharedContext, units。units は指定した公式解答単位の数と一致。"
         "各units要素は part(null または a/b), question, choices(キー1〜5), officialAnswer(文字列),"
         "explanation, choiceExplanations(キー1〜5), figureDescription, officialReferenceUrls, uncertainty。"
-        "数式は可能な限りUnicodeのプレーンテキストで明瞭に書く。原図の内容と自分の推論を混同しない。"
+        "数式は可能な限りUnicodeのプレーンテキストで明瞭に書く。原図の内容と自分の推論を混同しない。各フィールドは学習者向け公開データになるので作業経緯には触れない。"
     )
     blocks = [{"type": "text", "text": prompt + "\n公式の解答単位: " + json.dumps(units, ensure_ascii=False)}]
     for image_path in info["images"]:

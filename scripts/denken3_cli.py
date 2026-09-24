@@ -105,6 +105,17 @@ def text_digests(path: Path) -> set[str]:
     return {sha256(lf).hexdigest(), sha256(lf.replace(b"\n", b"\r\n")).hexdigest()}
 
 
+def render_page(document, index: int, target: Path) -> None:
+    """Render a PDF page once, atomically, so concurrent reviewers never read a partial PNG."""
+    import fitz
+    if target.exists():
+        return
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = target.with_name(f".{target.name}.{os.getpid()}.tmp")
+    document[index].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(temporary, output="png")
+    os.replace(temporary, target)
+
+
 def image_block(path: Path) -> dict:
     from base64 import b64encode
     return {"type": "image", "source": {"type": "base64", "media_type": "image/png",
@@ -171,9 +182,7 @@ def reference_blocks(urls: list[str], label: str, hashes: dict[str, dict[str, st
         document = fitz.open(pdf)
         for page_number in entry["pages"]:
             rendered = PRIVATE_RAW / "references" / f"{pdf.stem}-p{page_number:03}.png"
-            rendered.parent.mkdir(parents=True, exist_ok=True)
-            if not rendered.exists():
-                document[page_number - 1].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(rendered)
+            render_page(document, page_number - 1, rendered)
             hashes.setdefault("referencePageSha256", {})[rendered.relative_to(ROOT).as_posix()] = \
                 sha256(rendered.read_bytes()).hexdigest()
             blocks += [{"type": "text", "text": f"{label} 公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁:"},

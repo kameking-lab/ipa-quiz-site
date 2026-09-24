@@ -177,9 +177,7 @@ def main() -> None:
         document = fitz.open(pdf)
         for page_number in entry["pages"]:
             destination = PRIVATE / "references" / f"{pdf.stem}-p{page_number:03}.png"
-            destination.parent.mkdir(parents=True, exist_ok=True)
-            if not destination.exists():
-                document[page_number - 1].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(destination)
+            denken3_cli.render_page(document, page_number - 1, destination)
             relative = destination.relative_to(ROOT).as_posix()
             hashes["referencePageSha256"][relative] = raw_digest(destination)
             blocks += [{"type": "text", "text": f"公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁:"},

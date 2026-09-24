@@ -110,9 +110,7 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
                 pdf = fitz.open(pdf_path)
                 for page_number in entry["pages"]:
                     rendered = REVIEW / "references" / f"{pdf_path.stem}-p{page_number:03}.png"
-                    rendered.parent.mkdir(parents=True, exist_ok=True)
-                    if not rendered.exists():
-                        pdf[page_number - 1].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(rendered)
+                    denken3_cli.render_page(pdf, page_number - 1, rendered)
                     reference_page_hashes[rendered.relative_to(ROOT).as_posix()] = sha256(rendered.read_bytes()).hexdigest()
                     blocks.append({"type": "text", "text": f"問{number} 公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁"})
                     blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
