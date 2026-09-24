@@ -45,7 +45,12 @@ def draft(date: str, subject: str, number: int) -> None:
         "explanation, choiceExplanations(キー1〜5), figureDescription, officialReferenceUrls, uncertainty。"
         "数式は可能な限りUnicodeのプレーンテキストで明瞭に書く。原図の内容と自分の推論を混同しない。各フィールドは学習者向け公開データになるので作業経緯には触れない。"
     )
-    blocks = [{"type": "text", "text": prompt + "\n公式の解答単位: " + json.dumps(units, ensure_ascii=False)}]
+    term = "上期" if session["term"] == "upper" else "下期"
+    source = f"\n出典：{session['fiscalYear']}年度{term}（試験日{session['examDate']}）第三種電気主任技術者試験 {paper['label']}科目 問{number}"
+    blocks = [{"type": "text", "text": prompt + source + "\n公式の解答単位: " + json.dumps(units, ensure_ascii=False)}]
+    basis = denken3_cli.basis_page(page_map, subject)
+    if basis is not None and str(basis.relative_to(ROOT).as_posix()) not in info["images"]:
+        blocks += [{"type": "text", "text": denken3_cli.BASIS_CAPTION}, denken3_cli.image_block(basis)]
     for image_path in info["images"]:
         path = ROOT / image_path
         blocks.append({"type": "text", "text": f"問{number}の公式PDF p{path.stem[1:]}"})

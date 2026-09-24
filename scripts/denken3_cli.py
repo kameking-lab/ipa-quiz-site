@@ -188,3 +188,13 @@ def reference_blocks(urls: list[str], label: str, hashes: dict[str, dict[str, st
             blocks += [{"type": "text", "text": f"{label} 公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁:"},
                        image_block(rendered)]
     return blocks
+
+
+def basis_page(page_map: dict, subject: str) -> Path | None:
+    """Law papers state their legal base date (注3) on the first question page; attach it as evidence."""
+    if subject != "law":
+        return None
+    return ROOT / page_map["questions"]["1"]["images"][0]
+
+
+BASIS_CAPTION = "法規科目の注意書き頁（注3に、問題作成の基準となる法令・解釈の効力基準日が記載されている）:"

@@ -101,9 +101,14 @@ def main() -> None:
         "出力キーは questionNumber, sharedContext, units。units要素は part, question, choices(1〜5), officialAnswer,"
         "explanation, choiceExplanations(1〜5), figureDescription, officialReferenceUrls, uncertainty。"
     )
-    blocks: list[dict] = [{"type": "text", "text": prompt + "\n公式正答単位: " + json.dumps(official, ensure_ascii=False)}]
+    term = "上期" if session["term"] == "upper" else "下期"
+    source = f"\n出典：{session['fiscalYear']}年度{term}（試験日{session['examDate']}）第三種電気主任技術者試験 {paper['label']}科目 問{number}"
+    blocks: list[dict] = [{"type": "text", "text": prompt + source + "\n公式正答単位: " + json.dumps(official, ensure_ascii=False)}]
     for relative in page_map["questions"][str(number)]["images"]:
         blocks += [{"type": "text", "text": f"問{number}の公式PDF {Path(relative).stem}"}, denken3_cli.image_block(ROOT / relative)]
+    basis = denken3_cli.basis_page(page_map, subject)
+    if basis is not None:
+        blocks += [{"type": "text", "text": denken3_cli.BASIS_CAPTION}, denken3_cli.image_block(basis)]
     figure_hashes = {}
     for item in figures:
         path = folder / "figures" / f"{item['id']}.png"

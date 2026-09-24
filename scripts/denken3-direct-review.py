@@ -140,11 +140,22 @@ def main() -> None:
         "unitKey,questionNumber,part,status(PASS/FIX),textIssues,choiceIssues,answerIssues,explanationIssues,"
         "figureIssues,sourceIssues,verifiedEvidenceを持つ。issuesは必ず配列。公式正答は変更しない。"
     )
-    blocks: list[dict] = [{"type": "text", "text": prompt}]
+    term = "上期" if session["term"] == "upper" else "下期"
+    blocks: list[dict] = [{"type": "text", "text": prompt + (
+        f"\nmanifest固定の出典情報（試験センター公式過去問一覧 {manifest['sourceIndex']} から取得）: "
+        f"{session['fiscalYear']}年度{term}、試験日{session['examDate']}、科目={paper['label']}。"
+        f"問題PDF={paper['url']}（{paper['label']}科目の冊子）、解答PDF={session['officialAnswer']['url']}。"
+        + "".join(f"問{number}の原図はPDF第{page_map['questions'][str(number)]['pdfPages']}頁。"
+                  for number in sorted({item[0] for item in selected}))
+        + "候補のfiscalYear・term・examDate・subject・sourceAttribution・reviewedFromPageはこれと照合する。")}]
     for number in sorted({item[0] for item in selected}):
         blocks.append({"type": "text", "text": f"問{number}の公式問題原図:"})
         for relative in page_map["questions"][str(number)]["images"]:
             blocks.append(image(ROOT / relative))
+    basis = denken3_cli.basis_page(page_map, subject)
+    if basis is not None:
+        blocks += [{"type": "text", "text": denken3_cli.BASIS_CAPTION}, image(basis)]
+        hashes["officialPageSha256"][basis.relative_to(ROOT).as_posix()] = raw_digest(basis)
     answer_image = ANSWER_DIR / f"answer-{date}.png"
     if answer_image.is_file():
         blocks += [{"type": "text", "text": "試験センター公式解答表の原図:"}, image(answer_image)]

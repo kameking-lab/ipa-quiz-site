@@ -94,6 +94,11 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
         "問題番号ごと必ず1件、細部に問題がなければ全issues空配列でPASS。"
     )
     blocks = [{"type": "text", "text": prompt}]
+    basis = denken3_cli.basis_page(page_map, subject)
+    basis_hash = {}
+    if basis is not None:
+        blocks += [{"type": "text", "text": denken3_cli.BASIS_CAPTION}, denken3_cli.image_block(basis)]
+        basis_hash[basis.relative_to(ROOT).as_posix()] = sha256(basis.read_bytes()).hexdigest()
     for number in numbers:
         official = [item for item in paper["answerUnits"] if item["question"] == number]
         blocks.append({"type": "text", "text": f"問{number}の公式正答: {json.dumps(official, ensure_ascii=False)}\n別モデル草稿: {json.dumps(drafts[number], ensure_ascii=False)}"})
@@ -155,6 +160,7 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
                                "modelUsage": model_usage, "rawResponseSha256": raw_sha,
                                "draftSha256": draft_hashes,
                                "figureSha256": figure_hashes,
+                               "basisPageSha256": basis_hash,
                                "referenceJsonSha256": reference_hashes,
                                "referencePdfSha256": reference_pdf_hashes,
                                "referencePageSha256": reference_page_hashes,
