@@ -1,0 +1,64 @@
+{
+  "paperId": "emkohyo-EM20251807",
+  "range": [
+    8,
+    8
+  ],
+  "draftSha256": "a9e74e137db9923b0325e8aff88a2d70f167b6256724d033e57d96afac81e0be",
+  "sources": [
+    {
+      "url": "https://www.pmda.go.jp/files/000267010.pdf",
+      "status": 200,
+      "finalUrl": "https://www.pmda.go.jp/files/000267010.pdf",
+      "sha256": "570441da4cbbe5cfdd45ba8ab2ae2d17ad2d3fa7ea9b9f124b8e77b9273b7c90",
+      "contentType": "application/pdf",
+      "pages": 8,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251807-q8",
+          "excerpt": "カラム性能(カラム効率)を示す数値．",
+          "matched": true,
+          "pdfPage": 2,
+          "context": "曲線の最下点105(ピークの谷)の基線からの高さ106理論段高さ(H)(同義語：理論段相当高さ(HETP))107カラムの長さ(L：μm)と理論段数(N)の比．108H＝LN109理論段数(N)110カラム性能(カラム効率)を示す数値．用いる技術によるも111のの，恒温，イソクラティック，又は等密度の条件下で得ら112れたデータによってのみ，次式により理論段数として求める113ことができる．ここで，tRとwhは同じ単位で表される．1"
+        },
+        {
+          "questionId": "emkohyo-EM20251807-q8",
+          "excerpt": "N ＝ 5.54( tR wh )2",
+          "matched": true,
+          "pdfPage": 2,
+          "context": "る技術によるも111のの，恒温，イソクラティック，又は等密度の条件下で得ら112れたデータによってのみ，次式により理論段数として求める113ことができる．ここで，tRとwhは同じ単位で表される．114N＝5.54(tRwh)2115tR：被検成分のピークの保持時間116wh：ピーク高さの中点におけるピーク幅(h／2)117理論段数は，被検成分はもちろん，カラム，カラム温度，118移動相，保持時間によっても変化する．119換"
+        },
+        {
+          "questionId": "emkohyo-EM20251807-q8",
+          "excerpt": "tR：被検成分のピークの保持時間",
+          "matched": true,
+          "pdfPage": 2,
+          "context": "イソクラティック，又は等密度の条件下で得ら112れたデータによってのみ，次式により理論段数として求める113ことができる．ここで，tRとwhは同じ単位で表される．114N＝5.54(tRwh)2115tR：被検成分のピークの保持時間116wh：ピーク高さの中点におけるピーク幅(h／2)117理論段数は，被検成分はもちろん，カラム，カラム温度，118移動相，保持時間によっても変化する．119換算理論段高さ(h)120理論段高さ(H"
+        },
+        {
+          "questionId": "emkohyo-EM20251807-q8",
+          "excerpt": "wh：ピーク高さの中点におけるピーク幅(h／2)",
+          "matched": true,
+          "pdfPage": 2,
+          "context": "得ら112れたデータによってのみ，次式により理論段数として求める113ことができる．ここで，tRとwhは同じ単位で表される．114N＝5.54(tRwh)2115tR：被検成分のピークの保持時間116wh：ピーク高さの中点におけるピーク幅(h／2)117理論段数は，被検成分はもちろん，カラム，カラム温度，118移動相，保持時間によっても変化する．119換算理論段高さ(h)120理論段高さ(H：μm)と粒子径(dp：μm)の比．121h＝Hdp1"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 4,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/EM20251807-q8-jp-theoretical-plates-p2-left.png",
+      "description": "PMDA掲載 日本薬局方 2.00 クロマトグラフィー総論 PDF p2 左段 行110-113：理論段数(N)の定義文。原PDF https://www.pmda.go.jp/files/000267010.pdf SHA256=570441da4cbbe5cfdd45ba8ab2ae2d17ad2d3fa7ea9b9f124b8e77b9273b7c90",
+      "sha256": "eb1df772c31189f042b102c77baab25374927ad355fe53ce6012e15bab3efbd4"
+    },
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/EM20251807-q8-jp-theoretical-plates-p2.png",
+      "description": "同PDF p2 右段 行114-117：N＝5.54(tR/wh)²、tR＝保持時間、wh＝ピーク高さの中点におけるピーク幅の原式。",
+      "sha256": "5172058b1ba110ba470548d7df6f589ffbba589640db38434351397156b8859e"
+    }
+  ]
+}
