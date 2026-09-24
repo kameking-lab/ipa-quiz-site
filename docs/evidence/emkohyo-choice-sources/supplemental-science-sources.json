@@ -302,6 +302,66 @@
         }
       ],
       "fetchNote": "www.meti.go.jp returns HTTP 403 to non-browser User-Agents (including the verifier UA); fetched 2026-09-24 with a browser User-Agent and pinned by raw SHA256. Text cache pages are PyMuPDF get_text() of that exact file."
+    },
+    {
+      "title": "環境省「６．流量計」（6.4差圧式・6.5面積式排水流量計）",
+      "url": "https://www.env.go.jp/content/900542160.pdf",
+      "subject": "流量計",
+      "status": 200,
+      "finalUrl": "https://www.env.go.jp/content/900542160.pdf",
+      "rawSha256": "6ba41ab6f718e9dc23f86654b1e5cb51f47012ae7ae10c35a0e56f91d1b4b4d4",
+      "contentType": "application/pdf",
+      "pageCount": 20,
+      "matchedKeywords": 2,
+      "missingKeywords": [],
+      "facts": [
+        {
+          "keyword": "面積式",
+          "page": 16,
+          "exactExcerpt": "このとき流量は、流通面積すなわちフロートの位置と一定の関係にあるので",
+          "excerptSha256": "46ea541c64dff84052858af6b65947f908fb7351b965f56011bb74f9b43e30a7"
+        },
+        {
+          "keyword": "差圧式",
+          "page": 14,
+          "exactExcerpt": "管路の流れの中に絞り（抵抗）を設けると、その前後に流量の2 乗に比例した圧力の差を生じる",
+          "excerptSha256": "af83dad83fbb777d7bb337cc3f0e8ed41b38d6244a97a6eb185308db3477ad23"
+        }
+      ],
+      "fetchNote": "www.env.go.jp intermittently returns HTTP 403 to automated requests; fetched 2026-09-24 with a browser User-Agent after retries and pinned by raw SHA-256 with a local text cache."
+    },
+    {
+      "title": "環境省 環境大気常時監視マニュアル 第3章 大気汚染自動測定機",
+      "url": "https://www.env.go.jp/content/900402537.pdf",
+      "subject": "流量計・光散乱法",
+      "status": 200,
+      "finalUrl": "https://www.env.go.jp/content/900402537.pdf",
+      "rawSha256": "91412906d43791799c5257a3f9acf91427049e97c90fece90095709ceb663bdb",
+      "contentType": "application/pdf",
+      "pageCount": 214,
+      "matchedKeywords": 3,
+      "missingKeywords": [],
+      "facts": [
+        {
+          "keyword": "精密膜流量計",
+          "page": 8,
+          "exactExcerpt": "精密膜流量計の標線間を通過する時間（sec）を",
+          "excerptSha256": "416dbca5e41aef863712d9651d3b8c2715972c857b19017a047b9903502d3ab5"
+        },
+        {
+          "keyword": "石鹸膜流量計",
+          "page": 8,
+          "exactExcerpt": "また、最近ではデジタル方式の石鹸膜流量計も使用されている。",
+          "excerptSha256": "9758a0cbf377c18e851bc61276e261105de81ed247b14f89ae8c4008175de187"
+        },
+        {
+          "keyword": "光散乱法",
+          "page": 76,
+          "exactExcerpt": "散乱光の強度は、粉じんの形状、大きさ、色、相対屈折率等によって変化するが",
+          "excerptSha256": "7c532c78a276c87d8d216d97db9adfb4072acaa7176a21f5fb7b0e0179abbca1"
+        }
+      ],
+      "fetchNote": "www.env.go.jp intermittently returns HTTP 403 to automated requests; fetched 2026-09-24 with a browser User-Agent after retries and pinned by raw SHA-256 with a local text cache."
     }
   ],
   "acceptance": "none; research excerpts require choice-specific direct review"
