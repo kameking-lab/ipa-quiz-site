@@ -1,0 +1,41 @@
+{
+  "wave": "lckohyo-wave-a",
+  "batch": "LC20251101-q04",
+  "ids": [
+    "lckohyo-LC20251101-q4",
+    "lckohyo-LC20251101-q5",
+    "lckohyo-LC20251101-q10",
+    "lckohyo-LC20251101-q11",
+    "lckohyo-LC20251101-q16",
+    "lckohyo-LC20251101-q17",
+    "lckohyo-LC20251101-q22",
+    "lckohyo-LC20251101-q23"
+  ],
+  "generatedAt": "2026-09-24T21:52:50+00:00",
+  "attempt": 0,
+  "promptSha256": "68d92d8b1b0f989cccd9bf9ad996b13f7ac65b1823d741f86a77de153721bfec",
+  "resultSha256": "75e02ddd6cdc46ebb0d74d5d22454755b7d533c8e70abcc88f9da8d834472a4d",
+  "modelProof": {
+    "requestedModel": "claude-opus-5-5",
+    "assistantModels": [
+      "claude-opus-5-5"
+    ],
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 2,
+        "outputTokens": 5232,
+        "cacheReadInputTokens": 1279,
+        "cacheCreationInputTokens": 9010,
+        "webSearchRequests": 0,
+        "costUSD": 0.1769838,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1350,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "cliVersion": "2.1.282"
+  }
+}
