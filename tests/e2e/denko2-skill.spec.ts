@@ -7,10 +7,12 @@ test("skill exam: date → question diagram and figure 2 → official answer →
   const response = await page.goto("/denko2/skill");
   expect(response?.status()).toBe(200);
   await expect(page.getByRole("heading", { name: "技能試験の公表問題" })).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/denko2\/skill$/);
   await expect(page.getByRole("link", { name: /2024年上期・2024-07-20/ })).toBeVisible();
 
   await page.goto("/denko2/skill/denko2-2024-07-20-skill-03");
   await expect(page.getByRole("heading", { name: "技能試験 No.3" })).toBeVisible();
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", /\/denko2\/skill\/denko2-2024-07-20-skill-03$/);
   await expect(page.getByRole("heading", { name: "問題図" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "図2・端子台などの説明図" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "施工条件" })).toBeVisible();

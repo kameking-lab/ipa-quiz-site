@@ -8,6 +8,7 @@ export function generateMetadata(): Metadata {
   return {
     title: "第二種電気工事士 技能試験の公表問題と完成例",
     description: "第二種電気工事士の技能試験。試験日と候補No.を選んで問題図、施工条件、公式の概念図と完成例を確認できます。",
+    alternates: { canonical: "/denko2/skill" },
     robots: isExamPublished("denko2") ? undefined : { index: false, follow: false },
   };
 }
