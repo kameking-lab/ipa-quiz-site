@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5172,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 18002,
+      "webSearchRequests": 0,
+      "costUSD": 0.2753526,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4164,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q19": {
+      "/exam-library/emkohyo-EM20261801/text-q19-p12-fig1.webp": "5ea8a80238922017147adfc36fc773bd7ae2db5ef2cc5d2a38c68ce2f1be553a"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q19": {
+      "/exam-library/emkohyo-EM20261801/q19-p12-1.webp": "a47e7cb4a0641c171e7790de0e7c51bfc9263f452fa49ef045128bcbbe416a74"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q19": "d72a514f74dbe6eb44e3942bdc97e02643184fc5b971a50a8a61b9f0eb3fed88"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q19-19.json",
+  "sourcePackSha256": "ce474830ed9e7830c1229c350931a1ab8801a34ac86dab5add3300104b4a7b67",
+  "assessment": {
+    "emkohyo-EM20261801-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由は「現行の厚生労働省通達別表5でもオイルミスト混在時の取替え式にはRL区分を掲げる」と、表番号と列の意味を言い切っている。ところが証拠の抜粋は「全面形面体 RL3」という表の一行だけで、表題（別表5であること、どの作業が対象か）も、その列が「オイルミスト等が混在する場合」であることも示していない。この表は特定の作業（例: ダイオキシン類ばく露作業など）を対象にした選択表で、防じんマスク全般の選択基準ではない可能性がある。記述を検証済みの根拠に合わせて直すこと。候補は二つある。(a) 通達本文の一般的な選択基準（オイルミスト等が混在する場合はRL/DL等を選ぶ旨）を直接引用する。(b) 表番号・列名を断定せず、規格上RSは固体の塩化ナトリウム粒子でしか試験されていない、という因果を主軸にする。"
+      ],
+      "sourceIssues": [
+        "厚生労働省 防じんマスク等の選択・使用に関する令和5年通達（001100843.pdf）の抜粋（p.23「全面形面体 RL3」）は、表の列見出しも表題も含んでいない。そのため、肢4の結論「RS3はオイルミストが混在する場所で使用できない」を直接支える文言になっていない。オイルミスト混在時の選択区分を定めた本文の条項、または列見出し（オイルミスト等が混在する場合）を含む抜粋を証拠に追加すること。",
+        "除染等業務のガイドライン改正通達の抜粋（「液体状の事故由来廃棄物等を取り扱う場合は…RL又はDLを使用」「捕集効率…3種類」）は除染作業に限った規定である。オイルミスト混在時の一般的な選択規定でもなく、肢5の根拠は防じんマスクの規格第6条で足りている。根拠として必要なのか、使うならどの肢のどの主張を支えるのかをはっきりさせること。"
+      ],
+      "needsExternalCheck": [
+        "https://www.mhlw.go.jp/content/11300000/001100843.pdf が令和5年5月25日基発0525第3号（防じんマスク、防毒マスク及び電動ファン付き呼吸用保護具の選択、使用等について）の本体または別表なのか、23ページの表が「別表5」なのか、その表の対象作業と列見出し（オイルミスト等の混在の有無）を原文で確認すること。",
+        "同じ通達の本文に、オイルミスト等が混在する場合に区分RL・DL（電動ファン付きはPL）を選ぶと定めた一般規定があるか確認し、あれば該当箇所を肢4の根拠として抜粋すること。"
+      ]
+    }
+  }
+}

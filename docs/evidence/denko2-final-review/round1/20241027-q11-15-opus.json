@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "1074d15a4810377bc9b2890d50a72b2c3701854125103c88204ca60d8c26e8b6",
+    "rowSha256": {
+      "11": "cb160799f1d4ba848ad3945ae628e105eaf0de0756bdc6b0d3bf729825d7e064",
+      "12": "b1cb420488b09248068e05369da9c2d36a5b43195df4d1a68c9bd2bd3c325f91",
+      "13": "d625c7ab7cecd664225765f2bf011db797ea4a7dc6b8524e5764f1cbd7ef29fe",
+      "14": "20fe3194d8ffeab319a549029e49076061753b9aab0a1e30215eccfa4fd3b754",
+      "15": "7f27799f3c4098c0b45326ef80a08df46d97cfe5a33db25ef8843cf5380f17e5"
+    }
+  },
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "ロの理由は「90℃と一致しない」と言っているだけで、正答から逆算した説明になっている。75℃は600V二種ビニル絶縁電線(HIV)の最高許容温度であることを示して、誤りの理由を具体的に書くこと。",
+        "ニの理由も「90℃を上回る」と言っているだけで、正答から逆算した説明になっている。120℃がどの絶縁材料や規格の値でもないことや、CVの90℃との関係など、根拠のある理由に書き直すこと。",
+        "ハの理由「架橋ポリエチレン絶縁の耐熱区分に対応する」は曖昧である。架橋ポリエチレンの最高許容温度は90℃であり、同じ公称断面積のIVより許容電流が大きい、といった具体的な記述にすることが望ましい。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 15,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "ニの理由は「60分を超えている」と言っているだけで、正答から逆算した説明になっている。120分は定格電流50Aを超える配線用遮断器に定格の1.25倍の電流が流れた場合の動作時間であり、20A定格には当てはまらない、と具体的に書くこと。",
+        "イ(20分)とロ(30分)の理由は、ほぼ同じ文の繰り返しになっている。どちらも解釈の表にない値だと明記したうえで、30A以下の遮断器について定められた2つ目の値(定格の2倍の電流で2分以内)と対比させるなど、区別がつく理由にすることが望ましい。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "総合解説は「電気設備の技術基準の解釈により」とだけ書いており、条項が特定されていない。電気設備の技術基準の解釈 第33条第4項(配線用遮断器、第33-2表)と条項・表番号まで明記すること。",
+        "officialReferenceUrls の METI の PDF(20231226-2.pdf)が電技解釈の該当条文を含む文書かどうか、解説からも reviewedFromCrop からも確認できない。第33条と第33-2表が載っている版であることを確認するか、該当する公式URLに差し替えること。"
+      ]
+    }
+  ]
+}

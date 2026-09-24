@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2389,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12799,
+      "webSearchRequests": 0,
+      "costUSD": 0.1504358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1502,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q01-01-raw-response.txt",
+  "rawResponseSha256": "a1997a081c56713daedb4b1d4d48bf355965a4dec2ea3cdf5ee841b4d2eb1a8f",
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q1": {
+      "/exam-library/emkohyo-EM20261808/q1-p2-0.webp": "7b8e8d00b60b46d9103604b321f433de00987eeaffa2cdbf43a76125c7489a24"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q1": "8c0df688a34421a175525b80cf795b0686e35c3fbbf081694cb34b4ff16db5ad"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q01-01.json",
+  "sourcePackSha256": "b5f057bdf346637b2306233ce7d1ef3f31562cd22a29e90a7aa3696fa3ad4914",
+  "assessment": {
+    "emkohyo-EM20261808-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "選択肢3の理由にある「毒性値をVII価（7価）のマンガンとして換算して示しており」は、引用した政府資料の記述を正しく言い換えていない。抜粋の記述は「EC50=0.084mg/L（CERIハザードデータ集、2002）（過マンガン酸カリウム（VII（濃度換算値：0.242mg/L）」である。0.084×(KMnO₄ 158.0／Mn 54.94)≒0.242 なので、この換算は0.084mg/L（マンガン基準と推定される値）を過マンガン酸カリウムの濃度に直したものと読める。「7価マンガンとして換算」ではない。換算の説明を削除し、SDSが本物質を「過マンガン酸カリウム（VII）」と表記している事実だけを根拠として書くよう修正すべき。酸化数の計算部分（−1−(−8)＝＋7）と正誤判定は正しい。"
+      ],
+      "sourceIssues": [
+        "過マンガン酸カリウムのモデルSDS（7722-64-7）の抜粋は「過マンガン酸カリウム（VII（濃度換算値」と括弧が閉じておらず、原文の記載が崩れている。この箇所は生態毒性の換算値の注記にすぎず、マンガンの酸化数＋7を直接述べた記述ではない。理由を直接支える根拠としては弱い。",
+        "選択肢4の根拠は日本薬局方のNa₃[Fe(CN)₅NH₃]（鉄(Ⅱ)）の化学式から、NH₃の電荷が0であることを逆算した類推である。[Ni(NH₃)₆]²⁺そのものを扱った記述ではない。計算自体は正しい（Na 3個で＋3、錯イオン−3、Fe＋2、CN⁻ 5個で−5、よってNH₃は0）。ただし間接的な根拠であることを明記するのが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "モデルSDS 7722-64-7 の化学物質名・別名・英語名の欄に、「過マンガン酸カリウム（VII）」や「Potassium manganate(VII)」などマンガンの酸化数を直接示す表記があるか確認する。あれば選択肢3の根拠をその表記の抜粋に差し替える。"
+      ]
+    }
+  }
+}

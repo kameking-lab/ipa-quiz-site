@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1562,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12292,
+      "webSearchRequests": 0,
+      "costUSD": 0.1298398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1461,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251805-q12-12-raw-response.txt",
+  "rawResponseSha256": "387e2b60a6582805a5cdfa5b9f8ea7862750f1581f80420f265de796a44506be",
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q12": {
+      "/exam-library/emkohyo-EM20251805/q12-p7-1.webp": "102c63a11277ab447929293c5465311e1ff60ff67b56d75b642fac77b1a750be"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q12": "e0ba8f1880e31e3e4826064ba1dfcf608aa4e3ca89a9f81ccbe3e22954895808"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q12-12.json",
+  "sourcePackSha256": "92ed24d9dc716acc53613faf70fb7f9cf880b6fd8c78cc2d8b67995d47920502",
+  "assessment": {
+    "emkohyo-EM20251805-q12": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

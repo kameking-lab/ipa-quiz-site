@@ -14,6 +14,11 @@ export function ChoiceExplanationPanel({
 }: ChoiceExplanationPanelProps) {
   return (
     <section aria-label="選択肢ごとの解説" className="mt-3">
+      {explanation.provisionalReview ? (
+        <p className="mb-3 rounded-lg border border-amber-400/70 bg-amber-50 px-3 py-2 text-sm text-amber-950 dark:bg-amber-950/30 dark:text-amber-100">
+          暫定解説 · 問題・公式正答・表示の最終確認日: {explanation.lastCheckedAt}
+        </p>
+      ) : null}
       <Markdown>{explanation.summary}</Markdown>
       <ol aria-label="5つの選択肢の判定と理由" className="mt-3 space-y-3">
         {explanation.choices.map((choice) => {
@@ -46,7 +51,7 @@ export function ChoiceExplanationPanel({
           );
         })}
       </ol>
-      <div className="mt-4 border-t border-current/20 pt-3">
+      {explanation.sources.length > 0 ? <div className="mt-4 border-t border-current/20 pt-3">
         <h5 className="font-bold">確認した政府一次資料</h5>
         <ul aria-label="政府一次資料" className="mt-1 list-disc space-y-1 pl-5 text-sm">
           {explanation.sources.map((source) => (
@@ -64,7 +69,7 @@ export function ChoiceExplanationPanel({
             </li>
           ))}
         </ul>
-      </div>
+      </div> : null}
     </section>
   );
 }

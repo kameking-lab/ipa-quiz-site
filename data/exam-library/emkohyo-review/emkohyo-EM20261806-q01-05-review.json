@@ -1,0 +1,127 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6227,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 25350,
+      "webSearchRequests": 0,
+      "costUSD": 0.3560528,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4384,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261806",
+  "ids": [
+    "emkohyo-EM20261806-q1",
+    "emkohyo-EM20261806-q2",
+    "emkohyo-EM20261806-q3",
+    "emkohyo-EM20261806-q4",
+    "emkohyo-EM20261806-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261806-q1": {},
+    "emkohyo-EM20261806-q2": {},
+    "emkohyo-EM20261806-q3": {},
+    "emkohyo-EM20261806-q4": {},
+    "emkohyo-EM20261806-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261806-q1": {
+      "/exam-library/emkohyo-EM20261806/q1-p2-0.webp": "a44c0eaa0698b8fbb21527275a47217b31e9c8858dc8aaf3edeec8e4e58b3c2d"
+    },
+    "emkohyo-EM20261806-q2": {
+      "/exam-library/emkohyo-EM20261806/q2-p2-1.webp": "b40012bdf4324c8ef31e677ee86f194cbca144046bd5d743bc40b0235b65adab"
+    },
+    "emkohyo-EM20261806-q3": {
+      "/exam-library/emkohyo-EM20261806/q3-p3-0.webp": "8104317f15a2c72d438893b73096580e1a9761ecf51f9a43435ae8572c235a63"
+    },
+    "emkohyo-EM20261806-q4": {
+      "/exam-library/emkohyo-EM20261806/q4-p3-1.webp": "dd4b3a39467ae5387094d05c02e52986f499fa910751b5ed95bf865360b9e7c9"
+    },
+    "emkohyo-EM20261806-q5": {
+      "/exam-library/emkohyo-EM20261806/q5-p4-0.webp": "cdc0d1b983cd9cb54eac259d041e8c2f8d4d5c39c8fd7c60d9d6c334e0604852"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261806-q1": "46f33de930419abdf4a721641dbf8ae32a56d1459122291cb8fa41bf54db1179",
+    "emkohyo-EM20261806-q2": "d798b56fb5cbf82f8161bd821ead2f738a1e41a1d59f3a7b6b7f9d3ee9f2d918",
+    "emkohyo-EM20261806-q3": "1084a8aa558dad30eac5980663d7a682a76e820d71c50b55895df21844f9b04d",
+    "emkohyo-EM20261806-q4": "2f411b5961bb5373855362e741fae635792b807c3ac9b8126e3a7e61e69cbbfe",
+    "emkohyo-EM20261806-q5": "c2645205e4e729de030e123e4029a9258f18b92776ed303ef7241bd36910e172"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261806-q01-05.json",
+  "sourcePackSha256": "6781b424b9b6cb46dea74aae3f57eb274264041b9188f02b4f75a97aca5b4b7c",
+  "assessment": {
+    "emkohyo-EM20261806-q1": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261806-q2": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "唯一の出典（原子力規制委員会 000447909.pdf p.105）で確認できるのはストークス式 V=d²(ρs−ρf)g/18μ だけである。この式で直接説明できるのは肢5（空気力学相当径 da=d√(ρp/ρ0)）の前提に限られる。",
+        "正答理由の核心である遠心加速度 a=rω²（肢1）は、この出典にない。電気移動度・電界強度と移動速度の関係（肢2）、拡散効果の粒径依存（肢3）、拡散係数 D=kTC/(3πηd)（肢4）も同様に出典で確認できず、政府資料が各理由を直接支えていない。",
+        "肢5の da=d√(ρp/ρ0) も出典のストークス式から導くことになるが、空気力学相当径の定義（密度1 g/cm³の球で沈降速度が等しいもの）は出典に書かれていない。"
+      ],
+      "needsExternalCheck": [
+        "肢1の a=rω²、肢2の電気移動度、肢4の拡散係数の式、肢5の空気力学相当径の定義について、出典として使える一次資料または公的テキストを確保すること。"
+      ]
+    },
+    "emkohyo-EM20261806-q3": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261806-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "出典はストークス式の沈降速度一覧（原子力規制委員会 000447909.pdf）で、インパクターを扱った資料ではない。",
+        "正答理由の円形ノズルのストークス数 Stk=ρp·d²·C·U/(9ηW) と d50∝1/√ρp（肢4）は、この出典にない。d50∝√(W/U) とノズル汚れ・流量・流速による分粒粒径の変化（肢2・3・5）、衝突板の過負荷で起きる跳ね返り・再飛散（肢1）も同様で、政府資料が理由を直接支えていない。"
+      ],
+      "needsExternalCheck": [
+        "インパクターのストークス数・50%分粒粒径の関係式、および衝突板の過負荷で測定値が大きくなる点について、公的資料（作業環境測定ガイドブック等の公的テキスト、厚労省・JIS 等）で裏付けること。"
+      ]
+    },
+    "emkohyo-EM20261806-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由は「99.5%以上捕集できるとされ、記述は正しい扱い」と伝聞で結んでおり、何を根拠に正しいのかが書かれていない。公式正答（肢3が誤り）から肢4は正しい記述と確定するので、断定形に直し、捕集機構（拡散・さえぎり・慣性で孔径より小さい粒子も捕集される）と数値の根拠をはっきり書くこと。",
+        "肢3の理由は圧力損失の大きさを主に空隙率の低さで説明している。しかし主因は、孔が微細で流路が細く長いことにある。空隙率の比較は補足にとどめるのが正確である。"
+      ],
+      "sourceIssues": [
+        "厚生労働省「作業環境測定基準」から引いた抜粋は、ろ過捕集方法のろ過材の要件（0.3µm粒子を95%以上捕集）を定めた条文である。圧力損失がメンブランフィルターのほうが大きいこと（肢3＝正答理由）はこの抜粋で確認できない。",
+        "同じ抜粋では、平均孔径0.8µmのメンブランフィルターが0.3µm粒子を99.5%以上捕集すること（肢4）、メンブランフィルターが帯電しやすく質量濃度測定に不向きなこと（肢5）も確認できない。「95%以上」の要件は「99.5%」の数値を支えない。",
+        "肢1・2（単一繊維捕集、拡散効果）もこの出典には記載がない。"
+      ],
+      "needsExternalCheck": [
+        "肢4の「平均孔径0.8µmのメンブランフィルターの0.3µm粒子捕集効率99.5%以上」の数値根拠（メーカー公表値や公的テキスト）。",
+        "肢3のメンブランフィルターと繊維層フィルターの圧力損失比較、肢5の帯電による質量測定への影響について、公的テキストでの裏付け。"
+      ]
+    }
+  }
+}

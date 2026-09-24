@@ -1,0 +1,56 @@
+{
+  "inputHashes": {
+    "draftSha256": "4332b1bfe2ca4938593de31906d81533f945305b77af4494115762454118735e",
+    "candidateSha256": {
+      "27": "53ae0b160035ef6f365cab53840fa34aa89ed6000b047a88038b99071a452e99",
+      "28": "a7518b14234809e26a1e278ee29392de6c2ee47a2e48acb546267c6c3eaf5f0a",
+      "29": "ff764da7cc7e515b9dd311d2b2948a1296222d2060412cc54d25356b2bd5a003"
+    },
+    "rowSha256": {
+      "27": "2046d471e29a2f7dd78295044b62fb9f623a18c3cac69fae3e8a3170a017a258",
+      "28": "7ed62d27ff2832b1d7b882689ef5aa58f7adf40c7cb3f6b301e40c551f367c9c",
+      "29": "be4c33d822baf67a78e572d7cd91d166f2c876bf988d51604b65e30583e3a7f4"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q27-1.png": "9a771acb88775a1afd095ba3ea77805305ed28ecdf3166b377baae38b37ee705"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20241027-q28.json": "da9a1d46daeb60b92b6f8681da244470df440d867801b9622a5d3b380839b341",
+      "docs/evidence/denko2-law/20241027-q29.json": "a920913edd45f5bcfe949a76b270307addf000901533ab980d8d7393d31dbc69"
+    },
+    "sourcePackSha256": {},
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロで、差込み接続器Dの定格範囲が『(100V以上300V以下・50A以下・極数5以下・極数5以下・極数5以下)』となっている。『極数5以下』が3回重複しているため、1回に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

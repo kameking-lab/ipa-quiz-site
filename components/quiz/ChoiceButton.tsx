@@ -9,6 +9,7 @@ import { QuestionBody } from "./QuestionBody";
 interface Props {
   choiceKey: ChoiceKey | `${number}`;
   text: string;
+  imageUrl?: string;
   revealed: boolean;
   selected: boolean;
   correct: boolean;
@@ -27,6 +28,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
   {
     choiceKey,
     text,
+    imageUrl,
     revealed,
     selected,
     correct,
@@ -109,6 +111,11 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       </span>
       <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
         <QuestionBody text={text} />
+        {imageUrl && (
+          // Exact circuit diagrams are cropped from the published paper.
+          // eslint-disable-next-line @next/next/no-img-element
+          <img src={imageUrl} alt={`${text}の回路図`} className="mt-3 h-auto max-h-44 max-w-full rounded border border-border bg-white p-2" loading="lazy" />
+        )}
       </div>
       {state === "revealed-correct" && (
         <Check

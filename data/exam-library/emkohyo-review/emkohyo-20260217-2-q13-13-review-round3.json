@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "anthropic",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3106,
+      "cacheReadInputTokens": 115183,
+      "cacheCreationInputTokens": 21768,
+      "webSearchRequests": 0,
+      "costUSD": 0.2593086,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2411,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q13": {
+      "/exam-library/emkohyo-20260217-2/q13-p9-1.webp": "991b1c9106f142388968a6eafdbd33304547477f70805ce52eff22ad8cc8b254"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q13": "0fd92ff236114705277c8475d3d1ae54bab77910b9d0142b7284af654a04a340"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q13-13.json",
+  "sourcePackSha256": "e46ce651578ad3a0cb53244a54696346082693ba74803ab4873d6b0589e5f988",
+  "assessment": {
+    "emkohyo-20260217-2-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、第20条第1号の対象を「バルブやコックの操作」とだけ書いている。条文の対象は、特定化学設備に原材料を送給するとき、及び製品等を取り出すときに使うバルブ・コック等の操作に限られる。このままでは、すべてのバルブ・コックの操作が規程事項になると誤解される。限定句を加えるべき。",
+        "肢3の理由の「計測装置の監視」は、第3号の「計測装置及び制御装置の監視及び調整」を縮めすぎている。条文に合わせるべき。",
+        "肢3の理由だけ根拠条文（特化則第20条）が書かれていない。他の肢は条番号を示しているので、第20条であることを書くべき。あわせて、問題文の「当該特定化学設備において取り扱う物質」と、条文の「第三類物質等」（特定第二類物質・第三類物質）の対応にも触れるのが望ましい。"
+      ],
+      "sourceIssues": [
+        "sources の「厚生労働省 特定化学物質障害予防規則 第11・20・27条」（mhlw t_doc pageNo=1）では、第20条・第27条・第2条の抜粋は照合できている。しかし第11条（排液処理方式の表）の抜粋は、このページからは照合されていない。第11条の直接証拠は e-Gov API 版だけなので、タイトルと実際の証拠範囲が一致していない。",
+        "mhlw t_doc の2ページは revisionInfo が null で、2026-02-17 時点の施行版かどうかをページ自体からは確認できない。時点の根拠は e-Gov asof 版で担保されていると明記するか、mhlw ページは補助資料という位置づけにするのが望ましい。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

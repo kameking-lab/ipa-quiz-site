@@ -1,0 +1,105 @@
+{
+  "inputHashes": {
+    "draftSha256": "ef72346f9b45114de15352c2ee60299b798d5654c08eddc15dcce25950001186",
+    "rowSha256": {
+      "46": "1983191681022a9d42d1de602b1ba368e3695dc59630ba185ff4b83072f30f7e",
+      "47": "79d2ad79c8fb9e001e754612f7e96e94eef7d6c06fcb1b8b3ac552867eab2751",
+      "48": "a35c0baa53554b4aa7471f789eebfffb0aa691f1cb5d4d4506b85043b2e43666",
+      "49": "f04dfdc3b7d6b385608b4c56041c3b00f2bbbf50c7b49f7996225f722cc03ea3",
+      "50": "17f28f0d8b67b6eb79e75e3333b8d9c944bad114a38812cc3b9161224d98b8cf"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q46-i.png": "e96bed4b0abdf150ef6c91592f2f03660cbc5132379fc310a5a3816895109d69",
+      "public/images/denko2/2024-first/q46-ro.png": "9cb2fc24d68077de95be6991a75a68ad0abc3c47ccf211b2cba961773000aa75",
+      "public/images/denko2/2024-first/q46-ha.png": "642408a9c81ebc77921ab8756d34a4c3c7844153c7c6583231f104dd5624eafe",
+      "public/images/denko2/2024-first/q46-ni.png": "e5e9b8f0669b71d741a7236233677838536881fc0d282613d68b94cc5466ead8",
+      "public/images/denko2/2024-first/q47-i.png": "d4b86d4c1184ed6cab0621a9dcf076e8bafcfd9638c5a99589795728aae0bb82",
+      "public/images/denko2/2024-first/q47-ro.png": "a903622c0dd9e940422ad7d06a160dac21089231ba734025c4b6abcb078c8576",
+      "public/images/denko2/2024-first/q47-ha.png": "2a68f631b8be021bd03167c10effd1f88b37b92806d020cb747d965428bd6f5f",
+      "public/images/denko2/2024-first/q47-ni.png": "ab5752a4b8ecd16a366841e55507b8260e6b14854da326ae2af5b1a61ca067c4",
+      "public/images/denko2/2024-first/q48-i.png": "9d7e3430f344139d056d49f976ec2454afbbd31806c7d9d60f0bea1cee15b334",
+      "public/images/denko2/2024-first/q48-ro.png": "5c144076693588a73fad54f5224e0cf008e255bb22068cd4f0d5d2b906fa06a5",
+      "public/images/denko2/2024-first/q48-ha.png": "7e75f218cf68aabb7e0605dc9c75dee94d212353e54483022b6293cd26232401",
+      "public/images/denko2/2024-first/q48-ni.png": "c1fe482e43d42521961c065080b0b83090a376cd5606f94b100dd42d80158c1f",
+      "public/images/denko2/2024-first/q49-i.png": "242c7b53b0a287c8dd9bff2fb47841ea7629aa86b97149f8af3c9ea1ecdfd804",
+      "public/images/denko2/2024-first/q49-ro.png": "5a58e2e722cd3bbb85466d7e8942f032dfa23c1d48abc32bd9b90c817f9f00ca",
+      "public/images/denko2/2024-first/q49-ha.png": "85d3ddb221e7d0d79a79e334ad610753bf9e34471489e5c4855c1d43c8e692b6",
+      "public/images/denko2/2024-first/q49-ni.png": "f169bf99753455c21ed7fc7ae7f0360789d2bf6d406edab2182feada8068d98b",
+      "public/images/denko2/2024-first/q50-i.png": "93a30e6151a608c7a8c1364d67ce220f2d0a5d69d02bc4460cfceab73f40591f",
+      "public/images/denko2/2024-first/q50-ro.png": "340317a57db5989a9822c0ed50100e06a3aac7db924d3fe514028846c170dcb8",
+      "public/images/denko2/2024-first/q50-ha.png": "e82cc843a9dbbac54e04ee8193c6ed3bfb6bfc844c47d11fabe1e80f0356961b",
+      "public/images/denko2/2024-first/q50-ni.png": "ae0033064020876ea64e106e32b60618a09f016a51f47ad746ec3ab41285cc3f"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説はJIS C 2806の区分を前提にしている。P形は直線重合せ用、E形（リングスリーブ）は終端重合せ用、赤ハンドルは裸圧着スリーブ・端子用、黄ハンドルはリングスリーブ用という区分。画像からは確認できないため、規格原文での確認が必要。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001885918.pdf）は国交省航空局配下のパスで、画像との照合はできない。この問の典拠として適切か、リンク先の中身を確認する必要がある。"
+      ]
+    },
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "『●L』が確認表示灯内蔵スイッチ、『●H』が位置表示灯内蔵スイッチを表すという記号の割当ては、JIS C 0303原文で確認が必要。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001611774.pdf）は国交省航空局配下のパス。典拠として適切か確認が必要。"
+      ]
+    },
+    {
+      "number": 48,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "配線図では、⑱ボックス周辺の『VVF2.0-2C』『VVF2.0-3C』の引出線が、どの枝を指すか読み分けにくい（特に左方向と上辺コンセントへの枝）。解説の枝の割当て（左2C・右3C・下3C・上辺は傍記なし）を前提にすると、計算は正答の中3個と矛盾しない。ただし左の2Cの行き先は、原本の高解像度画像で再確認することを推奨する。"
+      ],
+      "lawNeedsExternalCheck": [
+        "リングスリーブの適用範囲が根拠になっている。中は2.0mm×4本、2.0mm×3本＋1.6mm×1本、2.0mm×2本＋1.6mm×1〜3本を含み、小は2.0mm×2本まで、大は中の範囲を超える組合せ用という前提。JIS C 2806・内線規程の表での確認が必要。",
+        "傍記のない配線の太さ（施工条件で1.6mmと定めているか）は、配線図ページの施工条件の欄が画像にないため確認できない。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001885918.pdf）は典拠として適切か確認が必要。"
+      ]
+    },
+    {
+      "number": 49,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "刻印の区分（1.6mm×2本は『○』、1.6mm×3〜4本は『小』）はJIS C 2806・内線規程での確認が必要。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001885918.pdf）は典拠として適切か確認が必要。"
+      ]
+    },
+    {
+      "number": 50,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "肢ニの黒色コンセントの極配置（3極＋接地極）と電圧定格は写真だけでは断定できない。JSONも『と見られる』『断定しない』と留保しているので、この扱いで妥当。",
+        "20A（2極）とE20A（2極＋接地極の3孔）の刃受け形状の区分は、JIS C 8303での確認が必要。",
+        "officialReferenceUrls（mlit.go.jp/koku/content/001611774.pdf）は典拠として適切か確認が必要。"
+      ]
+    }
+  ]
+}

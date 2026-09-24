@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2860,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 13724,
+      "webSearchRequests": 0,
+      "costUSD": 0.1937064,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2002,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q4": {
+      "/exam-library/emkohyo-20260217-4/q4-p3-1.webp": "6480f34eaabaea992bbaf0f1bdaf30bd7ee489366751721723bbe831b9f3d19e"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q4": "425c15cf96a92cbc00d5e7ff96369b2261b23059301bcf2ab023ca2d2b369913"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q04-04.json",
+  "sourcePackSha256": "fe9e8050bee395db1fd1242bb013f8eb5e27e656e721296cdf7db40a8087f9de",
+  "assessment": {
+    "emkohyo-20260217-4-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "Choice 4: the reason says 2.0 atm comes from doubling the CO₂ moles because an O₂ molecule has two oxygen atoms. That cause does not hold up. CO₂ also has two oxygen atoms, so counting oxygen atoms would still give the same amount, not twice as much. The reason also states this as the cause of the distractor, but nothing supports that. Rewrite it as a condition that doesn't claim a cause, for example: '2.0 atm would need the amount of gas to double. That would only happen if CO were produced (2C+O₂→2CO). The question says all the oxygen becomes CO₂, so C+O₂→CO₂ applies. The gas coefficients are 1 to 1, the volume stays 5.0 L and the temperature stays 25 ℃, so the pressure stays 1.0 atm.'"
+      ],
+      "sourceIssues": [
+        "The environment ministry source (https://www.env.go.jp/content/000126413.pdf) is titled '環境省 理想気体の状態方程式'. That is a label describing the topic, not the document's real title. The file is a 92-page report, and only one passage on p.53 states PV=nRT. The title should be the report's real name, and p.53 should be given as the page.",
+        "The JAEA source (https://fukushima.jaea.go.jp/pamphlet/science/index.html) is the pamphlet's index page. The matched passage is a teaser for a linked article, not the article text. It does support the equation C+O₂→CO₂, but the URL should point to the article itself. The title '炭素の燃焼反応' is also a label, not the page's real title.",
+        "Neither source directly supports the premise used in choice 2: that solid carbon is not counted in the gas moles, or that gas pressure depends only on the moles of gas molecules. This is textbook reasoning and can be derived from the question's condition that carbon's volume is ignored, but the government sources do not state it directly."
+      ],
+      "needsExternalCheck": [
+        "Check the real title of the report at https://www.env.go.jp/content/000126413.pdf (from its cover or colophon) and fix the title in sources.",
+        "Check the URL of the JAEA article page about chemical reaction formulas ('どうして化学反応が起きるのか？'), and whether the article text contains the equation C+O₂→CO₂."
+      ]
+    }
+  }
+}

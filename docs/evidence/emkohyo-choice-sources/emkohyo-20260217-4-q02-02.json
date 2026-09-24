@@ -1,0 +1,69 @@
+{
+  "paperId": "emkohyo-20260217-4",
+  "range": [
+    2,
+    2
+  ],
+  "draftSha256": "1d0303aed8ee6de734d5515cf290dc765c4d2a7794732b7bcffbbb90728f7407",
+  "sources": [
+    {
+      "url": "https://www.jaea.go.jp/04/fugen/about/compilation/report/honbun/303.htm",
+      "status": 200,
+      "finalUrl": "https://www.jaea.go.jp/04/fugen/about/compilation/report/honbun/303.htm",
+      "sha256": "e0a6a5d116526efdb660b476a7dbb5bfba9b80ced2e567a2adaaab36c9c12c7e",
+      "contentType": "text/html",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-20260217-4-q2",
+          "excerpt": "C A ＝Cw･V C /（V A ･ηc）",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "ガスを通気してバブラ内の水に捕捉されるトリチウムを測定するものである。バブラ水中のトリチウム濃度CW（Bq/cm3）から排気中のトリチウム濃度CA（Bq/cm3-air）を求めるには次式によっている。CA＝Cw･VC/（VA･ηc）ここに、VC：バブラに用いた水量（cm3）VA：試料空気量（cm3）ηc：捕集効率（0.9：放出放射能測定指針に記される値）303"
+        }
+      ]
+    },
+    {
+      "url": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_thema/pdf/shiryou1-2.pdf",
+      "status": 200,
+      "finalUrl": "https://www.jfa.maff.go.jp/j/gyoko_gyozyo/g_thema/pdf/shiryou1-2.pdf",
+      "sha256": "94a9d8895760bbc41f177d201220bd66e8afc008de934310e3b17fdd2cc811b4",
+      "contentType": "application/pdf",
+      "pages": 10,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-20260217-4-q2",
+          "excerpt": "（乗・除算）有効数字の桁数を四捨五入によって最も少ないものにそろえてから、乗・除算を行い、その結果も四捨五入によって同じ桁数とする。",
+          "matched": true,
+          "pdfPage": 10,
+          "context": "N/cm2＝340N/cm2例３）（加・減算）有効数字の末位を、四捨五入によって最も高い位にそろえてから、加・減算を行う。7.28＋24.6-0.364＝7.3＋24.6＋0.4＝31.5（m）例４）（乗・除算）有効数字の桁数を四捨五入によって最も少ないものにそろえてから、乗・除算を行い、その結果も四捨五入によって同じ桁数とする。9.8765（N）×2.464（m）/3.21（s）＝9.88（N）×2.46（m）/3.21（s）＝7.57（N･m/s）（参考文献）1)先端建設技術センター：建設事業における国際単位系（SI）移行"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "sha256": "c449a05c096d33015429d43b963e8bd336771483e66cdfa9d6e5eef76f688a87",
+      "contentType": "application/pdf",
+      "pages": 147,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "e96ac4d587e100b2c5dfa9f76af8ca4000f52e5304e414754be59a4cb24d97ed",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-20260217-4-q2",
+          "excerpt": "濃度（μg/L）＝[5（μg）]／[0.040（L/min）・15（min）]",
+          "matched": true,
+          "pdfPage": 43,
+          "context": "よって、定量下限が5μgの分析条件で問題ないことが確認されたことになる。受動型試料採取機器についても同様に、吸引流量をサンプリング速度0.040L/minとして、定量下限の確認を行うことができる。下限濃度（μg/L）＝[5（μg）]／[0.040（L/min）・15（min）]=8.33下限濃度（ppm）＝[8.33（μg/L）]・[24.47(moL／L)/58.1(g/moL)]=3.50アセトンの管理濃度10分の1は50ppmであり、受動型試料採集機器による15分測定"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 3,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0
+}

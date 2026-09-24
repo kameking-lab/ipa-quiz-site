@@ -1,0 +1,40 @@
+```json
+{
+  "emkohyo-EM20261809-q6": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q7": {
+    "status": "FIX",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [
+      "肢5の理由は「²⁴¹Amは59.5keVのγ線を放出する」と「電離箱式サーベイメータは1cm線量当量（率）の測定ができる」を並べ、そこから「²⁴¹Amを測定できる」と結論している。しかし、電離箱式サーベイメータのエネルギー特性が59.5keVの低エネルギーγ線まで及ぶことを直接示す政府資料はない。ATOMICA「サーベイメータ」は用途と相対感度を述べるだけで、エネルギー応答範囲には触れていない。59.5keVの出典であるATOMICA「RIの分析計測機器への応用原理」も、蛍光X線分析の励起源としての記述である。電離箱式サーベイメータの適用エネルギー範囲（例: 約30keV以上）を示す公的資料を追加するか、理由を資料が支える範囲に限定すること。"
+    ],
+    "needsExternalCheck": [
+      "電離箱式サーベイメータの適用γ線エネルギー下限が²⁴¹Amの59.5keVγ線を含むこと（放射線測定器JIS規格、JAEA・原子力規制庁等の公的資料で確認）"
+    ]
+  },
+  "emkohyo-EM20261809-q8": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q9": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  }
+}
+```

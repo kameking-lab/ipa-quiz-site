@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "question": "20241027-q23",
+  "status": "official-source-verified",
+  "sources": [
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+      "sha256": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43",
+      "articleTextSha256": {
+        "159": "92557a5cf9fc85f9382347087f6cc3d849ec82cf7c50d7d890678ee8dfa9666a"
+      },
+      "verifiedClauses": [
+        "第159条: 管相互及び管とボックス",
+        "第159条: ねじ接続その他これと同等以上の効力"
+      ]
+    },
+    {
+      "url": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-21.pdf",
+      "sha256": "4bbf833283820c0b055882bfffc1adcf192817d862c78abc7219efaaf255dbb1",
+      "page": 69,
+      "pageTextSha256": "ece610fa63a12ce5a1c77116c9ca77be43fdaa6015d959232a80e6781e014252",
+      "verifiedClauses": [
+        "同一太さ8mm2以下は内線規程3115-7表を参照",
+        "異なる太さでは被覆断面積合計32%以下。今回の同一太さへの適用値とは扱わない"
+      ]
+    },
+    {
+      "url": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-21.pdf",
+      "sha256": "4bbf833283820c0b055882bfffc1adcf192817d862c78abc7219efaaf255dbb1",
+      "page": 97,
+      "pageTextSha256": "e9a55e7268c27fb7ad1fd17e15c6700c1873731bbac0736b8f16c64128fad4cc",
+      "verifiedClauses": [
+        "電線管1区間の屈曲部4箇所以下、合計曲げ角度270°以内"
+      ]
+    },
+    {
+      "url": "https://www.mlit.go.jp/koku/content/001885918.pdf",
+      "sha256": "f5afca7ec78ed0f5345258a6a346ae9ca52b3105c2937bb7c28a0ff5c228dfec",
+      "page": 96,
+      "renderedSourceImage": "docs/evidence/denko2-independent/20241027-q23-mlit-conduit-table.png",
+      "renderedSourceImageSha256": "4a22d5f772484e3dd5f681f8c8ff8c8b443570e363502f34851cd41a5cdacd67",
+      "verifiedClauses": [
+        "PDF第96ページ表1.2.2を目視: C25薄鋼電線管は内径22.2mm・外径25.4mm"
+      ]
+    },
+    {
+      "url": "https://www.mlit.go.jp/tec/it/denki/densekisankijun/densekisankijuntouunyoH2903.pdf",
+      "sha256": "caf1bf257453e65c835e64ae0ac5ea448be63d5fb5ee5e394627b26af7e63030",
+      "page": 10,
+      "pageTextSha256": "5394140433b10ff77ccc776965ade95ab199aceac2275e20b0e5b07060183c56",
+      "verifiedClauses": [
+        "600V IV 8mm2: 仕上外径6.0mm",
+        "3×(6.0÷22.2)^2×100=21.91%"
+      ]
+    }
+  ],
+  "unresolved": []
+}

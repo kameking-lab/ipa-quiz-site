@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3049,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15876,
+      "webSearchRequests": 0,
+      "costUSD": 0.18825180000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2795,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q04-04-raw-response.txt",
+  "rawResponseSha256": "d1cc3242237acbb81e8269cb0e7f2efeef5926a855c61b31c9e4c3901209ddc8",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q4": {
+      "/exam-library/emkohyo-EM20261809/q4-p3-1.webp": "f14344ece049f731dec7e07b03134d6708842d5407108ecf64fd7917ce7ba910"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q4": "a2d5cf6a091723be0df1c54815a3eac81952db5e919bccc962e5f655aca18101"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q04-04.json",
+  "sourcePackSha256": "d6b001b1a419e13f92f743ca351376e9795213bdf349040f48ce2d94226993bc",
+  "assessment": {
+    "emkohyo-EM20261809-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由「⁶⁰Coの1.33MeVで半値幅2keV以下」は、出典ATOMICAの「1.33MeVに対する半値幅が通常2keV以下である」から「通常」が脱落している。典型値が全Ge検出器に成り立つ絶対的性質のように読めるため、「通常2keV以下」と出典どおりに修正すべき（肢5の理由では「通常2keV以下」と正しく書かれており、候補内でも表記が不一致）。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

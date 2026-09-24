@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1885,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13035,
+      "webSearchRequests": 0,
+      "costUSD": 0.1422438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1244,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q12-12-raw-response.txt",
+  "rawResponseSha256": "fc7d13ef1aa65127f9a291db3208d40ff4150694087eeedd86e5faf1ff4fab52",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q12": {
+      "/exam-library/emkohyo-20260217-4/q12-p7-1.webp": "3ab971411b472d2cf4f82d8a72aedb553aa61bb24b13d28a3545d2902f58e8a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q12": "c59ac6e3166d47c0446ea65a577c148440c836703e5d99997e8db93f37ce2276"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q12-12.json",
+  "sourcePackSha256": "fcc2b9298f12a9374d80b6ef54a01ac63e6b52217f14cd884db814dfc3004505",
+  "assessment": {
+    "emkohyo-20260217-4-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の理由のうち『平衡定数が大きい』部分は、添付の政府資料では直接支えられていない。環境省資料（p.40）が挙げるのは『1)反応が定量的に進行すること。2)反応速度が大きいこと。』までで、平衡定数への言及はない。『定量的に進行する＝平衡が生成側に大きく偏る＝平衡定数が大きい』は化学的には妥当な推論だが、出典の記載ではなく解説者の推論であることが分かる書き方に改めるべき。例: 『定量的に進行するには平衡が生成側に大きく偏る必要があり、これは平衡定数が大きいことに相当する（一般的な化学平衡の考え方による）』。",
+        "肢5の理由の『日本薬局方は滴定を被滴定液と標準液の間の化学量論的な反応を利用する操作と定義し』は出典の要約として不正確。第十九改正日本薬局方 2.50（p.138）の該当文は『滴定とは、容量分析を行うために用いられる方法又はその操作をいい、被滴定液と滴定液（容量分析用標準液）との間に生じる化学量論的な反応の種類又は現象の差異により、酸塩基滴定…などがある』であり、反応の種類による滴定の分類を述べた文である。標定反応が満たすべき条件（平衡定数・反応速度）を定めた規定ではない。この引用は削るか、『化学量論的な反応を利用する』という事実の説明にとどめ、肢5の条件の根拠としては使わないこと。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

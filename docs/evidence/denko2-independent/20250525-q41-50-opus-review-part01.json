@@ -1,0 +1,113 @@
+{
+  "inputHashes": {
+    "draftSha256": "7b35766fcf31d99711a974e8984f303d8050708ebc2167946da2e318671faa80",
+    "rowSha256": {
+      "41": "54f4343cabf4dc1a43353fe0582903538a0c870f88bbd58990b9f51394aeae7e",
+      "42": "d0966102c1d0c8b0dcddba3b2cf0f82a0dc9fd0c78a068425ac44df37ca1cee3",
+      "43": "9bd6187f3b03f00680d44f170e19beba43607dae53b0bb3c2c152e473b735650",
+      "44": "d9356f9bccc9135d894748f094b77fda4aaa7917fd89500d9c16d07a4e74a0e4",
+      "45": "b5a236c9babe90dc930c52ccca51b68974f54b00f8b24865179fd3d3f0fc5963"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q41-i.png": "d53c48ae22fd8abf6a425912faf5d16c406c6bc2ab2bc7455e8c090d510f7588",
+      "public/images/denko2/2025-first/q41-ro.png": "f69de98c7013817a1b1c86c8229cbb42ee302dee4104612da4dc3ea44cce8559",
+      "public/images/denko2/2025-first/q41-ha.png": "c8ec1b74ba3e24aeabd73a176cbb2cbf1fef27ba88fb9f147407a795ec4fe9cd",
+      "public/images/denko2/2025-first/q41-ni.png": "988f7d7146dcec64d8a8ebd8f3f7f6566da562d57d13e873746ba77ce90d9e6d",
+      "public/images/denko2/2025-first/q42-i.png": "ca76c1d4046175a91a453e01738c628faf6d2655725a3915ce5edc8f35b9021e",
+      "public/images/denko2/2025-first/q42-ro.png": "a47558c97318cbcbd9ffa06f637a2094843ad3e7bac61aef72984a64a9ee7511",
+      "public/images/denko2/2025-first/q42-ha.png": "1616a217abb62a2d9e339bd937ecf6120686f2eb7e24802fb20a66f3dd28ffc5",
+      "public/images/denko2/2025-first/q42-ni.png": "e1c8fadad3df886332c107c9ac6b75fc0781f8a8376f8ee3acec266eede219f9",
+      "public/images/denko2/2025-first/q43-i.png": "c90a76604aa70b7b435e0edfb87505a975ed68ff705f7e8fd314c4d1c2a6773e",
+      "public/images/denko2/2025-first/q43-ro.png": "44b77115cb598a6a16cf6ad401c54d985febb92481be39573261a286a9569257",
+      "public/images/denko2/2025-first/q43-ha.png": "9f59a80482aeb45556e1d808062fd85d17f785b6ba66c2bc5a521fe866daad6c",
+      "public/images/denko2/2025-first/q43-ni.png": "3d6ffe67f3bc06475e8881c467c69e5ab61a3f56aecb045bec27bd1411b00455",
+      "public/images/denko2/2025-first/q44-i.png": "935521d6ccb7b441529badfeccb3e8d88757b04ec2739790714c4d7c0367a60c",
+      "public/images/denko2/2025-first/q44-ro.png": "3ff5bb78b2be55281a52bc7c3e7fc82b37d9f6d9d7a24fca63efe35f0efead00",
+      "public/images/denko2/2025-first/q44-ha.png": "b1251c47b15d4737c60661d2f2ef5620fc7b1d4cce1afb06a8a55234b63bca63",
+      "public/images/denko2/2025-first/q44-ni.png": "cc8b89c65af69635c8b713cf3948bb31f51702d98033c1198c2bf10e26120e76",
+      "public/images/denko2/2025-first/q45-i.png": "834e83771feb65eda70d9198432edc084d876ce8e09293e748728b90b9e40acc",
+      "public/images/denko2/2025-first/q45-ro.png": "75bcc77c7fe236ee4ab682ea0f171ae977e382ad703ac7729fc4683e1d9f80be",
+      "public/images/denko2/2025-first/q45-ha.png": "d501f0ce16cc46baf4c342356df6406fed196d7aefa86353abe7ad0e0c675a5c",
+      "public/images/denko2/2025-first/q45-ni.png": "2cc94c3827df032abc057dccecfe13a869470cd704582dc3c256a99f97bef458"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 41,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ニ: 拡大銘板には「定格遮断電流」欄の下にJETマークがある（イ・ロ・ハの肢文と同じ位置）。しかし清書肢文では、ニの銘板表示の列挙だけJETマークが抜けており、4肢の記載が揃っていない。",
+        "ハ: 本体側の小さい銘板の「JIS C 8201-2-1」「AC415V 5kA」「AC200V 25kA」「PUSH TO TRIP」表示は清書にない。判定には影響しないため、欠落として扱うだけで誤りとはしない。"
+      ],
+      "explanationIssues": [
+        "解説とハの肢別理由は「JET認証マークはあるが」を区別の根拠のように書いている。しかし原本写真ではイ・ロ・ハ・ニの4肢すべてにJETマークがあり、区別には使えない。ハを外す根拠は、定格感度電流の表示がないこと（漏電保護なし）と、N表示・1φ3W表示がないことに限定するべき。",
+        "イの理由は「3φ3W用でN端子がない」だけで、⑪の回路側の条件（L-1幹線ⓒが1φ3W 100/200V）との対応を書いていない。配線図のL-1盤上部に「1φ3W 100/200V」とあることを根拠として追記するべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "図記号「BE」が過負荷保護付き漏電遮断器を示すこと（JIS C 0303）は、画像だけでは確定できない。",
+        "「欠相保護付」が単3中性線欠相保護を意味するという読替えの根拠（図記号の傍記の規定）は要確認。"
+      ]
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "電線の役割の説明が向きを誤っている。電源（⑰付近の回路ⓒ）は1階側にあり、⑭の4本は1階から地下へ引き下げる線である。その内訳は、渡り線2本・地下3ア共通端子から1階照明アへ戻る返り線1本・地下照明アへの接地側線1本になる。解説は4本目を「地下の照明アへの返り線」と書いているが、地下照明アは⑫ボックス内で地下3アの共通端子とつながっている。1階へ戻る点滅線がなければ1階照明アは点灯しない。",
+        "解説の中で矛盾している。前半は「地下の照明アへの返り線」、後半の点滅線接続では「1階への返り線」と書いており、同じ電線の向きが食い違う。「1階照明アへの返り線」に統一するべき。",
+        "「1階⑰付近の3アから立ち上がる4本」は向きが逆である。原本では⑫ボックス上部の記号が「○↗」（地下から1階への立上り）で、1階から見れば引下げになる。",
+        "心線数の最少性を検証すると、1階3アの共通端子を電源側にした場合だけ4本になる。地下3アを電源側にすると、非接地側線・渡り線2本・1階3Aからの点滅線・接地側線の5本になる。最少条件の根拠として、この比較を解説に明記するべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "VVF1.6での刻印区分（2本→○、3〜4本→小、5〜6本→中）は、JIS C 2806や圧着工具の規定と照合が必要。"
+      ]
+    },
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [
+        "ハ: 肢文の「ねじなし電線管用ハブ」という種別は、写真だけでは判別できない。配線図の(E19)からの推定であることを明示するほうがよい。"
+      ],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "「(E19)」表記がねじなし電線管を示すこと（JIS C 0303の傍記）は要確認。",
+        "「●F」がフロートスイッチ、「●LF3」がフロートレススイッチ電極を示すという記号の対応は要確認。"
+      ]
+    },
+    {
+      "number": 44,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説とハの肢別理由にある「地下の照明アへの点滅線（返り線）」は向きが逆である。問42と同じ理由で、⑭区間を通る点滅線は、地下3Aの共通端子から1階照明アへ戻る返り線になる。地下照明アへは⑫ボックス内で直接つなぐため、立上り区間に地下照明ア向けの点滅線は通らない。",
+        "4本が最少になる根拠（電源を1階3ア側に置いた場合のみ4本、逆なら5本）が書かれておらず、「最少構成として必要」と断定だけしている。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "接地側線をスイッチに通さず照明器具へ直接つなぐ施工ルール（電技解釈）は要確認。"
+      ]
+    },
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "「(E31)」がねじなし電線管（JIS C 8305）を示すという記号の解釈は要確認。"
+      ]
+    }
+  ]
+}

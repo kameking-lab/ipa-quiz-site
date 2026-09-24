@@ -64,7 +64,11 @@ function runValidator(choiceExplanations: unknown) {
   writeFileSync(join(data, "explanations.json"), "{}");
   writeFileSync(join(data, "choice-explanations.json"), JSON.stringify(choiceExplanations));
   writeFileSync(join(data, "coverage-contract.json"), JSON.stringify({
-    structuredChoiceExplanations: { requiredPaperIds: [paperId] },
+    structuredChoiceExplanations: {
+      requiredPaperIds: [paperId],
+      // The fixture catalog has no EM papers, so the EM two-year target is empty.
+      emkohyoTwoYearTarget: { years: [2025, 2026], expectedQuestions: 0, expectedQuestionsPerPaper: 20, paperIds: [] },
+    },
     consultant: { years: [2021], subjects: ["機械安全"] },
   }));
   // The publication gate checks only the WebP container signature and a non-empty payload.
@@ -99,6 +103,12 @@ describe("safety explanation publication gate", () => {
   it.each([
     ["stale", { ...validOverlay, sourceHash: "0".repeat(64) }, "Stale choice explanation source"],
     ["incomplete", { ...validOverlay, choices: validOverlay.choices.slice(0, 4) }, "must contain five choices"],
+    ["repeated reason", {
+      ...validOverlay,
+      choices: validOverlay.choices.map((choice) => choice.number === 2
+        ? { ...choice, reason: validOverlay.choices[0]!.reason }
+        : choice),
+    }, "Duplicate choice explanation reason"],
   ])("rejects a %s structured overlay even though its question ID exists", (_label, overlay, error) => {
     const result = runValidator({ [questionId]: overlay });
 

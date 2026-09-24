@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4157,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 16095,
+      "webSearchRequests": 0,
+      "costUSD": 0.23779820000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3080,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q1": {
+      "/exam-library/emkohyo-20260217/q1-p2-0.webp": "b4cd9f919c5343709f8ba1b39b9c4070abf3deacbcd1ee79a2180995116bd8a6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q1": "8b4f6b13cd4b5b02068c0388a9bf8db105dfb31001a94ef67abd90ed8e5b2abd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q01-01.json",
+  "sourcePackSha256": "a94d69542e513a781f54ab339f04a2b32a53a2fae0bbde29ca668c176432b3da",
+  "assessment": {
+    "emkohyo-20260217-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3: 理由では、管理濃度と濃度基準値が設定された物質について「それらの値を確認する方法」と書いている。指針8の原文は「業務を洗い出した上で、原則としてアからウまでに即して危険性又は有害性を特定すること」で、イが「管理濃度及び濃度基準値」である。原文どおり「これらに即して危険性又は有害性を特定する」と書くべきで、「確認する」は意味を弱めた言い換えになっている。また原文は「原則として」特定するという書き方なので、それも反映したほうがよい。",
+        "肢4: 理由は根拠を「改正指針9(1)イ」とまとめているが、数理モデルで気中濃度を推定し、濃度基準値又はばく露限界と比較する方法を定めているのは9(1)イ(エ)である。細目まで特定するべき。",
+        "肢4: 設問は、両ツールとも「性状や作業方法等に関する情報」と「濃度基準値又はばく露限界に関する情報」を入力して見積もるという内容である。ところが理由が入力内容を裏付けているのはCREATE-SIMPLE（取扱量、換気条件、作業時間等）だけで、ECETOC-TRAが何を入力するか、ばく露限界等と比較するのかは書かれていない。肢4が正しいと言うには、ECETOC-TRAのほうも別紙3例5の記述で裏付ける必要がある。",
+        "肢2: 理由は施行通達の記述だけを挙げており、元になる指針7(2)イ（「作業環境測定結果等」を必要に応じ入手する情報に挙げる条項）を示していない。指針7(2)の「必要に応じ入手する」とのつながりを明記するべき。"
+      ],
+      "sourceIssues": [
+        "肢4: 抜粋ではp.35のc（CREATE-SIMPLE）とd（ECETOC-TRA）の直前が切れており、この2つが指針9(1)イ(エ)の「数理モデル」の例として挙がっていることを示す見出し部分が証拠に入っていない。理由はこのつながりを前提にしているのに、提示された抜粋では直接確かめられない。",
+        "肢4: p.48の別紙3例5（ECETOC-TRAの情報）は「ECETOC-TRAは、欧州化学物質生…」で切れており、入力する情報とばく露限界等との比較についての記述が証拠に入っていない。設問の「濃度基準値又はばく露限界に関する情報を入力して見積もる」のうち、ECETOC-TRAの部分を政府資料で直接裏付けられていない。"
+      ],
+      "needsExternalCheck": [
+        "001091755.pdfのp.35付近: c・dの前の見出しが指針9(1)イ(エ)（数理モデル）の説明であることを確認する。",
+        "001091755.pdfのp.48付近: 別紙3例5（ECETOC-TRAの情報）の全文で、入力する情報と、ばく露限界等との比較でリスクを見積もる旨を確認する。"
+      ]
+    }
+  }
+}

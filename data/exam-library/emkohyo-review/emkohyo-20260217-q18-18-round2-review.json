@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5053,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 17685,
+      "webSearchRequests": 0,
+      "costUSD": 0.242979,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4099,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q18": {
+      "/exam-library/emkohyo-20260217/q18-p13-0.webp": "b07f89006170466bf75c04c3974928911c946037c805e0c5fc3acd07eedaa8e2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q18-respirator-types-p2.png": "b18e860c7c9b83b6cb1411a1785e23f47239e390ea4ecc7ab6ec939a065de0ea"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q18": "816abe3f41766fa4a5540968d8648fc6de9062d13870f3c11207f8e2d165cc75"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q18-18.json",
+  "sourcePackSha256": "ea74776e849b4a2c220ed16cef2027b05eb4a4a682ea22b57b88a8714695f78f",
+  "assessment": {
+    "emkohyo-20260217-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 理由は法別表第二・第四に同じ3品目が並ぶことだけから「規格対象と型式検定対象が対応する」と結論している。実際の対象範囲は政令で品目ごとに限定されている（防じんマスクは「ろ過材及び面体を有するもの」、防毒マスクはハロゲンガス用・有機ガス用その他省令で定めるもの、電動ファン付き呼吸用保護具も機能別に限定）。「全て」を支えるには、規格側と型式検定側でこの限定範囲が一致することを示す必要がある。法別表の品目名が一致するだけでは、肢1の「全て」は論証されていない。"
+      ],
+      "sourceIssues": [
+        "肢1: 提示された証拠は労働安全衛生法 別表第二・第四の品目名の抜粋だけである。労働安全衛生法施行令（第13条の規格具備対象の限定、第14条の2の型式検定対象の限定）の条文がなく、両者の範囲が一致することを政府資料が直接支えていない。",
+        "肢1: 送気マスク・空気呼吸器などに厚生労働大臣の規格がない（JISのみ）ことを示す一次資料がない。「規格が定められている呼吸用保護具＝上記3品目のみ」という前提が出典で裏付けられていない。",
+        "r100.pdf（呼吸用保護具の選定資料）は revisionInfo が null で、発行時期が不明。原図p2は「防じんマスク、防毒マスク（防じん機能付き防毒マスクを含む）は国家検定品を使用する。その他の呼吸用保護具はJIS規格適用品を使用する」と記載している。これは電動ファン付き呼吸用保護具が型式検定対象になる前の記述とみられ、肢1の根拠と矛盾して読める。肢2の分類図の根拠に限って使うこと、また資料の時点を明示することが必要。"
+      ],
+      "needsExternalCheck": [
+        "労働安全衛生法施行令 第13条（法別表第二の防じんマスク・防毒マスク・電動ファン付き呼吸用保護具の範囲限定）と第14条の2（型式検定対象の範囲限定）の現行条文を取得する。規格対象と型式検定対象の限定範囲（防毒機能を有する電動ファン付き呼吸用保護具の追加後を含む）が一致することを確認する。",
+        "r100.pdf の作成元・発行年を確認し、sources の表題に時点を付すかどうかを判断する。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3160,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 14240,
+      "webSearchRequests": 0,
+      "costUSD": 0.2038344,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2267,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q19": {
+      "/exam-library/emkohyo-EM20261804/q19-p12-0.webp": "c215a446f82906582d462ff965c264fc9a3b419b7706f8b5bdd5639087917897"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q19": "81bcfd8afcf021777a6484ad7513e5956fb245ddf331c0b310931cd304935393"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q19-19.json",
+  "sourcePackSha256": "15ed7e19366d6d88a0779457ad10005b89ad960b69885870d9229d3927fc523d",
+  "assessment": {
+    "emkohyo-EM20261804-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢4の「粗い粉末では照射範囲の微結晶の数が不足し、結晶の向きも偏って回折強度が再現しにくくなる」は、照合済み抜粋に直接の根拠がない。日本薬局方p.35の抜粋が述べるのは、選択配向を最小にする最良の方法は粒子径を小さくすること、微結晶の最適数は装置配置などに依存すること、相の同定には通例50 μm程度で十分なこと、の3点だけ。微結晶数が足りないと強度の再現性が落ちるという記述は抜粋にない。該当する原文を抜粋に加えるか、本文を抜粋で支えられる範囲まで弱める必要がある。",
+        "肢4の根拠の日本薬局方粉末X線回折測定法は、医薬品の結晶相を分析するための試料調製の規定。作業環境測定の遊離けい酸分析（ろ紙に捕集した吸入性粉じんや堆積粉じんの試料）で推奨される粒径を直接示すものではない。「一般に0.1～1 mmは適当でない」という結論の向きは支持するが、作業環境測定の文脈の政府資料（遊離けい酸含有率の測定方法の告示・通達など）が補強として望ましい。",
+        "肢5の「試料層の量が増えると入射X線と回折X線の吸収が変わり、回折強度を単純に質量へ換算できない」という因果は、厚生労働省0000162375.pdf p.9の抜粋では直接支えられていない。この資料が示すのは、基底標準吸収補正法で石英の質量を算出したという手順だけで、捕集量に応じて吸収補正が必要になる理由は書かれていない。理由を直接述べる政府資料の記述が必要。"
+      ],
+      "needsExternalCheck": [
+        "日本薬局方（第十八改正第一追補）粉末X線回折測定法の本文（PDF p.35前後）に、微結晶が大きい・少ない場合に回折強度の再現性が損なわれる旨の記述があるか確認し、あれば抜粋として登録する。",
+        "作業環境測定の遊離けい酸X線回折分析で用いる試料の粒径（吸入性粉じん相当の微細粉末）を示す政府一次資料（告示・通達等）の有無を確認する。"
+      ]
+    }
+  }
+}

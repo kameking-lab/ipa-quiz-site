@@ -1,0 +1,585 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251805",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "厚生労働省 有機溶剤の測定技術に係る資料",
+      "url": "https://www.mhlw.go.jp/shingi/2007/11/dl/s1101-11f.pdf"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 酢酸メチル",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS メタノール",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 酢酸エチル",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/141-78-6.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS トルエン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS テトラヒドロフラン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS n-ヘキサン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS シクロヘキサノン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS シクロヘキサノール",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-93-0.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 2-ブタノール",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS イソプロピルアルコール",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS アセトン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 二硫化炭素",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS エチルエーテル",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-29-7.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS N,N-ジメチルホルムアミド",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251805-q1": {
+      "overlay": {
+        "sourceHash": "f8032879c5073963b06d4ac6aecf9a5865e716789611b2acddd168342e952a0a",
+        "correctChoice": 4,
+        "summary": "モル質量と25℃の蒸気圧の両方で、ⒶがⒷより大きい組合せは酢酸メチルとメタノールだけである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "酢酸エチルのモル質量は88.11g/molで、トルエンの92.14g/molより小さい。設問はモル質量と25℃蒸気圧の両方でⒶが大きいことを求めるため、蒸気圧を調べるまでもなくこの組合せは除外できる。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "テトラヒドロフランのモル質量は72.11g/molで、n-ヘキサンの約86g/molより小さい。蒸気圧を比べる前に、Ⓐのモル質量がⒷより大きいという必要条件を満たさないため除外できる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "シクロヘキサノンのモル質量は98.14g/molで、シクロヘキサノールの100.16g/molより小さい。両方の値が大きいことが条件なので、蒸気圧の大小にかかわらずこの組合せは該当しない。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "酢酸メチルのモル質量74.079g/molはメタノールの32.04g/molより大きい。環境省は酢酸メチル25℃の蒸気圧を実測216mmHgと記載する。消防研究所の表ではメタノールが200mmHgに達するのは34.8℃で、蒸気圧は温度とともに上がるから25℃では200mmHg未満である。よって蒸気圧も酢酸メチルが大きい（大小比較なのでmmHgのままでよい）。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "2-ブタノールのモル質量74.12g/molはイソプロピルアルコールの60.096g/molより大きいが、蒸気圧は逆である。厚労省モデルSDSでは20℃で2-ブタノール1.7kPa（17hPa）、イソプロピルアルコール4.4kPa（44hPa）で約2.6倍の差がある。イソプロピルアルコールの25℃飽和蒸気圧濃度53,762ppmVは約54hPa（0.053762×1013hPa）に当たる。2-ブタノールが25℃でこれを上回るには5℃の昇温で約3.2倍になる必要があるが、消防研究所の表では1-プロパノールも2-プロパノールも蒸気圧が20→60mmHg（3倍）になるのに約18℃（25.3→43.5℃、12.7→30.5℃）を要する。沸点も2-ブタノール100℃がイソプロピルアルコール82.3℃より高い。したがって25℃でもⒶの蒸気圧はⒷより小さい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 モデルSDS 酢酸メチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS メタノール",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 酢酸エチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/141-78-6.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS トルエン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS テトラヒドロフラン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS n-ヘキサン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS シクロヘキサノン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS シクロヘキサノール",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-93-0.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 2-ブタノール",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS イソプロピルアルコール",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html"
+          },
+          {
+            "title": "環境省 酢酸メチルの環境リスク評価（25℃蒸気圧）",
+            "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf"
+          },
+          {
+            "title": "消防研究所報告 第129号 表1 アルコールの性質",
+            "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/141-78-6.html",
+          "excerpt": "C4H8O2 (88.11)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html",
+          "excerpt": "C 7 H 8 （92.14）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html",
+          "excerpt": "C 4 H 8 O　(72.11)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html",
+          "excerpt": "C 6 H 1 4 (86)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html",
+          "excerpt": "C6H10O（98.14）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-93-0.html",
+          "excerpt": "C 6 H 1 2 O (100.16)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html",
+          "excerpt": "CH3CO2CH3　(74.079)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html",
+          "excerpt": "CH4O(32.04)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html",
+          "excerpt": "20794Pa(156mmHg)(20℃）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html",
+          "excerpt": "95.2mmHg (20℃)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-12.pdf",
+          "excerpt": "2.16×102 mmHg (25℃、実測値)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html",
+          "excerpt": "C4H10O  (74.12)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "C3H8O (60.096)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html",
+          "excerpt": "1.7kPa (20℃)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "4.4kPa(20℃）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+          "excerpt": "100 (21.2)\n200 (34.8)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "飽和蒸気圧濃度 (53,762 ppmV (25℃))",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+          "excerpt": "10 (14.7)\n20 (25.3)\n60 (43.5)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://nrifd.fdma.go.jp/publication/houkoku/121-160/files/shoho_129s.pdf",
+          "excerpt": "10 (2.4)\n20 (12.7)\n60 (30.5)",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-92-2.html",
+          "excerpt": "100℃（沸点）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "82.3℃：HSDB（2013）",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251805-q2": {
+      "overlay": {
+        "sourceHash": "f42e268bba134c6f6c979be4c75b8b0e18c7f0caf7cf5218ac186528749a6c9c",
+        "correctChoice": 5,
+        "summary": "1気圧での沸点はアセトン約56℃、二硫化炭素約46℃、エチルエーテル約35℃の順に高い。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "先頭のアセトン（約56℃）は正しい。しかし2番目のエチルエーテル（約35℃）は、3番目の二硫化炭素（約46℃）より沸点が低いため、後ろ2つの順序が逆になっている。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "二硫化炭素の沸点は約46℃で、アセトンの約56℃より低い。二硫化炭素を先頭に置くこの並びは、1気圧で沸点が高い順という条件を満たさず、肢2は誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "3物質中で沸点が最も低いエチルエーテル（約35℃）を先頭に置いている。最も高いアセトンが2番目、二硫化炭素が最後で、高い順の並びになっていない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "二硫化炭素（約46℃）、エチルエーテル（約35℃）、アセトン（約56℃）の並びで、最も沸点が高いアセトンが最後にあり、高い順になっていない。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "アセトン約56℃ > 二硫化炭素約46℃ > エチルエーテル約35℃ で、1気圧における沸点の高い順に正しく並んでいる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 モデルSDS アセトン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS 二硫化炭素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+          },
+          {
+            "title": "厚生労働省 モデルSDS エチルエーテル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-29-7.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 56℃(沸点)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 46℃",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-29-7.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 35℃",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251805-q3": {
+      "overlay": {
+        "sourceHash": "a5db3babb4efcca79edd0f596443d9e8ad4753939361ff53e8fac6545fe46295",
+        "correctChoice": 1,
+        "summary": "DMF（HCON(CH₃)₂）は窒素が一つでカルボニル基をもち、常温常圧で液体の溶剤である。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "消防庁の示性式HCON(CH₃)₂から、窒素原子は一つでC=Oのカルボニル基をもつ。融点は約−61℃、沸点は約153℃で、常温常圧では液体なので、㋑㋺㋩のすべてが合う。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "窒素が一つという㋑は合うが、消防庁が示す示性式HCON(CH₃)₂では窒素がC=Oの炭素に直結したアミド（-CO-N<）である。独立したアミノ基という㋺は合わず、融点−61℃・外観液体なので㋩の固体も誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋺のカルボニル基と㋩の液体は正しい。消防庁の示性式HCON(CH₃)₂と厚労省SDSの分子式C₃H₇NOを合わせると、窒素原子は1個である。N,N-は同じ窒素への置換位置を示し、窒素が2個という㋑は誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋑の窒素を2個とした点は誤りで、厚労省SDSの分子式C₃H₇NOにはNが1個だけ含まれる。さらにDMFの融点は約−61℃、沸点は約153℃なので、常温では液体であり㋩の固体も合わない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋩の液体だけは合う。厚労省SDSの分子式C₃H₇NOでは窒素は1原子で、消防庁の示性式HCON(CH₃)₂ではその窒素がカルボニル炭素に結び付きアミド部分を作る。独立したアミノ基ではないため、㋑と㋺が誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 モデルSDS N,N-ジメチルホルムアミド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html"
+          },
+          {
+            "title": "総務省消防庁 N,N-ジメチルホルムアミド物性詳細・示性式",
+            "url": "https://internal.fdma.go.jp/kiken-info/material/m_00372.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "N,N-ジメチルホルムアミド",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "分子式 (分子量) C 3 H 7 NO (73)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "物理的状態 物理状態 液体",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "融点／凝固点 -61 ℃",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 153 ℃",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://internal.fdma.go.jp/kiken-info/material/m_00372.html",
+          "excerpt": "示性式 HCON(CH3)2",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251805-q4": {
+      "overlay": {
+        "sourceHash": "dd432070a2be9d4d45225fabc9e4005c4a969aaca4fdaee766dfaee81496aa45",
+        "correctChoice": 2,
+        "summary": "固体捕集ではポンプ流量を捕集管を接続した状態で調整するのが原則で、肢2は誤りである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "石けん膜流量計は、既知容積の目盛り間を石けん膜が通過する時間から流量を求める。精度の高い基準流量計として、面積式流量計などの校正に用いられるので、記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "捕集管には通気抵抗があり、管を外して合わせた流量は採取中の流量と一致しない。流量は実際に使う捕集管を接続した状態で調整・確認するのが原則なので、「行ってはならない」は誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "脱着は活性炭と溶媒の間の分配平衡で決まる。活性炭量に比べて脱着溶媒が少ないと、捕集物質が活性炭側に残りやすく脱着率が下がることがあるので、記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "真空捕集瓶は、内部を1.33kPa（約10mmHg）以下まで排気したものを使う。残圧が高いと採取量が減って濃度計算に誤差が出るので、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "グリースは有機溶剤蒸気を吸収・溶解し、グリース由来の成分による汚染の原因にもなる。そのため真空捕集瓶のコックにはグリースを使わないので、記述は正しい。"
+          }
+        ],
+        "sources": []
+      },
+      "reviewIssues": [
+        "【HOLD】肢3（活性炭量に比べ脱着溶媒量が少ないと脱着率が低くなる）と肢5（真空捕集瓶のコックにグリースを使わない）を直接述べた政府一次資料が見つからない（作業環境測定基準・厚労省資料s1101-11f・個人サンプラー報告書000616847・シックハウス中間報告001385599を確認）。肢1も石鹸膜流量計で流量を調整した実施例（2r9852000000wx2a.pdf）のみで『基準流量計』としての校正を直接示さない。肢4の1.33kPaは厚労省検討会資料2r9852000002h1oh.pdfで確認済み。作業環境測定ガイドブック等の政府以外資料に依存するため独立審査に進めない。 第2パス（2026-09-24）: 肢3は安衛研ニュースNo.199コラム（jniosh.johas.go.jp/publication/mail_mag/2025/199-column-1.html『捕集剤の重量が多いほど、脱着溶媒の量を少なくするほど、測定される脱着率は低下の傾向を示します』）、肢1は環境省『大気汚染物質測定法マニュアル』第3章（900402537.pdf：精密膜流量計による基準流量計の校正、石鹸膜流量計での流量確認）で裏付け可能となった。残る不足は肢5（真空捕集瓶のコックにグリースを使わない）のみ。",
+        "政府資料候補のうち作業環境測定基準は捕集方法の種類を定めたもので、流量校正、脱着溶媒量、真空度1.33kPa、グリース不使用といった具体的な手順は確認できないため、sourcesに入れていない。",
+        "候補の「有機溶剤の測定技術に係る資料」（s1101-11f.pdf）は、このセッションで内容を確認できなかったため入れていない。この資料に該当する記載があれば、追加を検討する。",
+        "肢4の1.33kPa以下という数値は作業環境測定ガイドブック等の実務要件に拠るもので、政府ページでの裏付けはまだ取れていない。"
+      ]
+    },
+    "emkohyo-EM20251805-q5": {
+      "overlay": {
+        "sourceHash": "da208d7b0828ac0b31421f983d3e230a1fbc2e9421e33f924da75ce626d2a156",
+        "correctChoice": 2,
+        "summary": "メタノールは活性炭への保持と二硫化炭素による脱着に難があり、肢2の組合せが不適当である。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "キシレンは極性の低い芳香族炭化水素で、活性炭によく吸着され、二硫化炭素で高い脱着率が得られる。固体捕集法の標準的な組合せで、適当である。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "メタノールは極性が強く低分子で、活性炭への保持が弱く破過しやすい。無極性の二硫化炭素では活性炭からの脱着率も低いため、この組合せは不適当である。通常はシリカゲル管など極性物質向けの捕集材を選ぶ。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "イソプロピルアルコールは活性炭で捕集できるが、極性があるため二硫化炭素だけでは脱着が不十分になりやすい。極性の高いN,N-ジメチルホルムアミドに替えて脱着率を確保する組合せで、公式正答上は適当とされる。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "アセトンはカルボニル基をもつ極性溶剤で、極性物質を保持しやすいシリカゲルで捕集できる。極性溶媒のメタノールで脱着する組合せとして、公式正答上は適当とされる。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "公式正答ではクロロベンゼン／シリカゲル管／メタノール脱着も適当側とされ、正答番号2が維持される。ただしクロロベンゼンは極性の低い芳香族塩素化合物で、活性炭管と二硫化炭素でも測定される対象であり、シリカゲルを使う場合は破過容量と脱着率の事前確認が前提となる。"
+          }
+        ],
+        "sources": []
+      },
+      "reviewIssues": [
+        "【HOLD】肢3（イソプロピルアルコール／活性炭管／N,N-ジメチルホルムアミド脱着）、肢4（アセトン／シリカゲル管／メタノール）、肢5（クロロベンゼン／シリカゲル管／メタノール）を適当とする政府一次資料がない。厚労省個人サンプラー報告書（000616847.pdf p44）はイソプロピルアルコール・クロロベンゼンともヤシ殻活性炭＋二硫化炭素としており、公式正答2（メタノールはシリカゲル＋水/イソプロパノール）は支えるが、肢3〜5の組合せの適否は確証できない。 第2パス（2026-09-24）: 安衛研ニュースNo.183・199のコラムも脱着溶媒一般（二硫化炭素、メタノール、アセトン等）を述べるだけで、イソプロピルアルコール／DMF、アセトン・クロロベンゼン／シリカゲル＋メタノールの組合せを示さず、保留を継続する。",
+        "政府資料候補の中に、捕集材（活性炭管かシリカゲル管か）と脱着溶媒の対応を物質ごとに示したページを確認できなかった。作業環境測定基準は固体捕集方法とガスクロマトグラフ分析方法という枠組みを定めるにとどまるため、sourcesに入れていない。",
+        "既存解説は肢4・肢5の適否に全く触れていない。特に肢5のクロロベンゼンは活性炭管・二硫化炭素による測定が一般的で、シリカゲル／メタノールを適当とする根拠は、作業環境測定ガイドブック等で確認する必要がある。",
+        "肢3のDMF脱着が適当である根拠も一次資料では未確認。公式正答（2）との整合を保つために適当側として記述している。"
+      ]
+    }
+  }
+}

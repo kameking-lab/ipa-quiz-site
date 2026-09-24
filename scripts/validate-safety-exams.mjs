@@ -127,7 +127,9 @@ const isGovernmentPrimarySourceUrl = (value) => {
   try {
     const url = new URL(value);
     return url.protocol === 'https:' && !url.username && !url.password && !url.port
-      && url.hostname.endsWith('.go.jp');
+      && url.hostname.endsWith('.go.jp')
+      // J-STAGE hosts journal articles, which are not government primary sources.
+      && url.hostname !== 'jstage.jst.go.jp' && !url.hostname.endsWith('.jstage.jst.go.jp');
   } catch { return false; }
 };
 for (const [id, overlay] of Object.entries(choiceExplanations)) {
@@ -140,7 +142,17 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   const sourceHash = createHash('sha256').update(question.text).digest('hex');
   check(overlay.sourceHash === sourceHash, `Stale choice explanation source: ${id}`);
   check(overlay.correctChoice === question.correctChoice, `Choice explanation answer mismatch: ${id}`);
+  const provisional = overlay.provisionalReview === true;
+  const draftMarker = /HOLD|FIX|TODO|未確認|要確認|確認待ち|準備中|仮置き|根拠不足|調査中|要検索/u;
+  check(overlay.provisionalReview === undefined || provisional, `Invalid provisional flag: ${id}`);
+  check(!provisional || id.startsWith('emkohyo-'), `Provisional overlay outside EM: ${id}`);
+  check(!provisional || /^\d{4}-\d{2}-\d{2}$/u.test(overlay.lastCheckedAt)
+    && !Number.isNaN(Date.parse(`${overlay.lastCheckedAt}T00:00:00Z`))
+    && new Date(`${overlay.lastCheckedAt}T00:00:00Z`).toISOString().slice(0, 10) === overlay.lastCheckedAt,
+    `Invalid provisional check date: ${id}`);
+  check(provisional || overlay.lastCheckedAt === undefined, `Unexpected check date on strict overlay: ${id}`);
   check(typeof overlay.summary === 'string' && overlay.summary.trim().length >= 20, `Short choice explanation summary: ${id}`);
+  check(!provisional || !draftMarker.test(overlay.summary ?? ''), `Internal draft marker in provisional summary: ${id}`);
   check(
     typeof overlay.summary === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(overlay.summary),
     `Choice explanation summary must keep links in sources: ${id}`,
@@ -149,18 +161,21 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   if (Array.isArray(overlay.choices)) {
     const numbers = overlay.choices.map(choice => choice?.number);
     check(new Set(numbers).size === 5 && [1, 2, 3, 4, 5].every(number => numbers.includes(number)), `Choice explanation numbers incomplete: ${id}`);
+    const reasons = overlay.choices.map(choice => typeof choice?.reason === 'string' ? choice.reason.trim() : null);
+    check(new Set(reasons).size === 5, `Duplicate choice explanation reason: ${id}`);
     for (const choice of overlay.choices) {
       check(choice && typeof choice === 'object', `Invalid choice explanation row: ${id}`);
       if (!choice || typeof choice !== 'object') continue;
       check(choice.verdict === (choice.number === question.correctChoice ? 'correct' : 'incorrect'), `Choice explanation verdict mismatch: ${id}/${choice.number}`);
       check(typeof choice.reason === 'string' && choice.reason.trim().length >= 40, `Short choice explanation reason: ${id}/${choice.number}`);
+      check(!provisional || !draftMarker.test(choice.reason ?? ''), `Internal draft marker in provisional reason: ${id}/${choice.number}`);
       check(
         typeof choice.reason === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(choice.reason),
         `Choice explanation reason must keep links in sources: ${id}/${choice.number}`,
       );
     }
   }
-  check(Array.isArray(overlay.sources) && overlay.sources.length > 0, `Choice explanation requires government sources: ${id}`);
+  check(Array.isArray(overlay.sources) && (provisional || overlay.sources.length > 0), `Choice explanation requires government sources: ${id}`);
   if (Array.isArray(overlay.sources)) {
     const urls = [];
     for (const source of overlay.sources) {
@@ -173,6 +188,27 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
 }
 const requiredStructuredPapers = coverageContract.structuredChoiceExplanations?.requiredPaperIds;
 check(Array.isArray(requiredStructuredPapers), 'Missing structured-choice coverage contract');
+const targetStructuredPapers = coverageContract.structuredChoiceExplanations?.targetPaperIds ?? [];
+const targetStructuredByYear = coverageContract.structuredChoiceExplanations?.targetOfficialFiveChoiceByYear ?? {};
+check(Array.isArray(targetStructuredPapers), 'Invalid target structured-choice papers');
+check(new Set(targetStructuredPapers).size === targetStructuredPapers.length, 'Duplicate target structured-choice paper');
+const targetCounts = {};
+for (const paperId of targetStructuredPapers) {
+  check(paperIds.has(paperId), `Unknown target structured-choice paper: ${paperId}`);
+  const year = paperId.match(/^lckohyo-LC(2025|2026)/u)?.[1];
+  check(Boolean(year), `Unexpected target structured-choice paper: ${paperId}`);
+  if (!year) continue;
+  for (const [id, question] of questions) {
+    if (!id.startsWith(`${paperId}-q`) || question.answerAuthority !== 'official' || question.choiceCount !== 5) continue;
+    targetCounts[year] = (targetCounts[year] ?? 0) + 1;
+    if (process.argv.includes('--require-target-choice-coverage')) {
+      check(Object.hasOwn(choiceExplanations, id), `Missing target structured choice explanation: ${id}`);
+    }
+  }
+}
+for (const [year, expected] of Object.entries(targetStructuredByYear)) {
+  check(targetCounts[year] === expected, `Target structured-choice count mismatch: ${year} ${targetCounts[year]} != ${expected}`);
+}
 const requiredStructuredQuestionIds = [];
 for (const paperId of requiredStructuredPapers ?? []) {
   check(paperIds.has(paperId), `Unknown required structured-choice paper: ${paperId}`);
@@ -186,6 +222,72 @@ for (const paperId of requiredStructuredPapers ?? []) {
       check(Object.hasOwn(choiceExplanations, id), `Missing required structured choice explanation: ${id}`);
     }
   }
+}
+
+// Pin every official EM paper from the two latest complete publication years.
+// The target is visible in normal validation; --require-em-two-years closes
+// the publication gate only after every official five-choice row is reviewed.
+const emTarget = coverageContract.structuredChoiceExplanations?.emkohyoTwoYearTarget;
+const emYears = emTarget?.years ?? [];
+const emPaperIds = emTarget?.paperIds ?? [];
+check(Array.isArray(emYears) && emYears.length === 2, 'Missing EM two-year target years');
+check(Array.isArray(emPaperIds) && new Set(emPaperIds).size === emPaperIds.length, 'Invalid EM two-year paper IDs');
+const emCatalog = catalog.filter(paper => paper.group === 'emkohyo' && emYears.includes(Number(paper.date.slice(0, 4))));
+const actualEmPaperIds = new Set(emCatalog.map(paper => paper.id));
+check(emPaperIds.length === emCatalog.length && emPaperIds.every(id => actualEmPaperIds.has(id)), 'EM two-year contract differs from official catalog');
+const emQuestionIds = [];
+let emTextCards = 0;
+let emFigureCrops = 0;
+for (const paper of emCatalog) {
+  const rows = read(`papers/${paper.id}.json`);
+  let presentation;
+  try { presentation = read(`presentation/${paper.id}.json`); }
+  catch (error) { errors.push(`Missing EM text presentation: ${paper.id}: ${error.message}`); continue; }
+  const eligible = rows.filter(row => row.answerAuthority === 'official' && row.choiceCount === 5);
+  check(eligible.length === emTarget?.expectedQuestionsPerPaper, `EM target paper count mismatch: ${paper.id}`);
+  emQuestionIds.push(...eligible.map(row => row.id));
+  check(Object.keys(presentation).length === eligible.length, `EM presentation count mismatch: ${paper.id}`);
+  for (const row of eligible) {
+    const shown = presentation[row.id];
+    check(Boolean(shown), `Missing EM text card: ${row.id}`);
+    if (!shown) continue;
+    emTextCards++;
+    check(shown.sourceHash === createHash('sha256').update(row.text).digest('hex'), `Stale EM text card: ${row.id}`);
+    check(typeof shown.prompt === 'string' && shown.prompt.trim().length > 0, `Empty EM text prompt: ${row.id}`);
+    const cards = shown.choices;
+    check(Array.isArray(cards) && cards.length === 5, `Missing five EM choice cards: ${row.id}`);
+    if (Array.isArray(cards) && cards.length === 5) {
+      check(cards.every((card, index) => card?.number === index + 1
+        && typeof card.text === 'string' && card.text.trim().length > 0), `Invalid EM choice card: ${row.id}`);
+      check(new Set(cards.map(card => card?.text?.trim())).size === 5, `Repeated EM choice card: ${row.id}`);
+    }
+    for (const figure of shown.figures ?? []) {
+      const safe = typeof figure.src === 'string'
+        && figure.src.startsWith(`/exam-library/${paper.id}/`)
+        && figure.src.endsWith('.webp');
+      check(safe, `Invalid EM figure crop path: ${row.id}/${figure.src}`);
+      if (!safe) continue;
+      emFigureCrops++;
+      try {
+        const bytes = fs.readFileSync(path.join(root, 'public', figure.src));
+        check(bytes.length > 12 && bytes.toString('ascii', 0, 4) === 'RIFF'
+          && bytes.toString('ascii', 8, 12) === 'WEBP', `Invalid EM figure crop: ${row.id}/${figure.src}`);
+      } catch { errors.push(`Missing EM figure crop: ${row.id}/${figure.src}`); }
+    }
+  }
+}
+check(emQuestionIds.length === emTarget?.expectedQuestions, 'EM two-year expected question count mismatch');
+const emStructuredCount = emQuestionIds.filter(id => Object.hasOwn(choiceExplanations, id)).length;
+for (const id of emQuestionIds) {
+  const overlay = choiceExplanations[id];
+  if (!overlay) continue;
+  for (const choice of overlay.choices ?? []) {
+    check(typeof choice.reason === 'string' && choice.reason.trim().length >= 55,
+      `Short EM two-year choice reason: ${id}/${choice.number}`);
+  }
+}
+if (process.argv.includes('--require-em-two-years')) {
+  for (const id of emQuestionIds) check(Object.hasOwn(choiceExplanations, id), `Missing EM two-year choice explanation: ${id}`);
 }
 
 const consultantContract = coverageContract.consultant;
@@ -220,6 +322,16 @@ const result = {
   explanationCoverage: Number((explainedQuestionIds.size / questions.size * 100).toFixed(2)),
   structuredChoiceExplanations: Object.keys(choiceExplanations).length,
   requiredStructuredChoiceExplanations: requiredStructuredQuestionIds.length,
+  emTwoYearCoverage: {
+    years: emYears,
+    papers: emCatalog.length,
+    expectedQuestions: emQuestionIds.length,
+    textCards: emTextCards,
+    figureCrops: emFigureCrops,
+    structuredChoiceExplanations: emStructuredCount,
+    complete: emStructuredCount === emQuestionIds.length,
+  },
+  targetStructuredChoiceExplanations: targetCounts,
   consultantCoverage: {
     requiredYears: consultantContract?.years ?? [],
     missingYears: missingConsultantYears,

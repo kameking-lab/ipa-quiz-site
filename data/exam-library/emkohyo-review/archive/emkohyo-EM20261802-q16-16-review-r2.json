@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2207,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 19186,
+      "webSearchRequests": 0,
+      "costUSD": 0.2235262,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1896,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q16": {
+      "/exam-library/emkohyo-EM20261802/q16-p12-0.webp": "ab7110724ee7a408a629ed51450e270c5a50db7f5a0595288012466a4ea43726"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q16": "35b90b4400ae91bf480ae9e668a069ab04980e059cdec05b53249bc99605e53a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q16-16.json",
+  "sourcePackSha256": "61503185403ea2e49c59e3b4cb6e8cea0babe412239c25a4f82223698b0764cb",
+  "assessment": {
+    "emkohyo-EM20261802-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "sources[0].titleの「第3条の2・第4・第18条の5・7・第22条」は「第4」に「条」が抜けています。このままだと「第3条の2第4項」などと誤読されるおそれがあります。「第3条の2・第4条・第18条の5・第18条の7・第22条」のように、条番号を省略せずに書くよう修正してください。条文の中身（第22条、第3条の2、第18条の5第1項第1号、第18条の7、第4条第1項、第54条第1項・第2項、第56条、第58条、第44条第1項第2号・第2項）は、すべて抜粋と照合でき、各肢の正誤判定を直接支えています。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

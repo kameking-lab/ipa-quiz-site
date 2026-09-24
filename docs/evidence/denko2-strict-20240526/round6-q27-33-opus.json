@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "27": "cf41491dcd6b917a9f6f484b80dc16edaeb267c08eaa4fe2d67ae6bd94f4cfb7",
+      "33": "0042a97c061a7344ba7a6d517f52c3af263b89791fbb0bc53eba8edf58278416"
+    },
+    "sourceCropSha256": {
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b"
+    }
+  },
+  "assessment": [
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題PDF https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf の問27（問題文、否定語『誤っているもの』、イ〜ニの4肢、目盛0・50・100・150、V、Vの下の波線、左下の記号と1.0）と候補の本文・4肢・diagramDescriptionが一致した。公開用の切出し q27.png も原図の目盛板と一致している。公式正答はロ（https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf、提示値）。誤りは一つだけなので、本問ではイ（電圧計）、ハ（水平置き）、ニ（交流用）が正しい記述となる。これは公式問題・正答が本問での記号分類を直接裏付けている。解説とロの理由は『永久磁石可動コイル形の記号ではない』とだけ述べており、根拠を超えた主張はない。"
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イ・ロ・ハの理由にある定格（イ=20A 250V系、ロ=15A 125V系、ハ=15A 250V系）は、刃受の形を定格に対応付けた主張。一次資料の図で確認できないため、要外部確認。",
+        "ニの肢文と理由は左の刃受を『縦向きL字』とし、『20A・125V系』に対応するとしている。しかしJIS C 8303 表1には、20A 125V接地極付の刃受として図A.11（専用）と図A.15（刃受のみ、差込プラグは図A.11）の2つがある。ニの原図がどちらの形か（L字か兼用形か）を公式の図で照合できず、『L字』という形状表現が正しいか確定できない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の『縦向きL字刃受け・縦向き平刃受け・接地極を持つニが該当する』は、刃受の形と100V・20A・接地極付の対応をJIS C 8303の図で確認して初めて成り立つ。今回確認できたのは表1の定格一覧（本文）だけで、図の照合ができていない。確認後は、対応する図番号（A.9〜A.12、A.15）を明示して解説を直すこと。",
+        "『E20A』を接地極付き20Aコンセントとする図記号の傍記の意味（JIS C 0303）について、officialReferenceUrlsに裏付けとなる一次資料がない。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.meti.go.jp/policy/consumer/seian/denan/PDF/old_beppyou4.pdf はWebFetchでHTTP 403となり、本文を取得できなかった。官公庁ドメインの検索結果の要約では、この別表第四は刃・刃受の寸法をJIS C 8303に委ねる内容とみられ、極配置の図と定格の対応を直接示す資料とは確認できない。",
+        "添付されたJIS C 8303公式PDFの p.33〜36（図A.9〜A.12）の画像はいずれも白紙で表示され、図の形状を確認できない。抽出本文から分かるのは図の題名と定格（A.9=15A 125V、A.10=15A 250V、A.11=20A 125V、A.12=20A 250V、いずれも2極接地極付）だけで、どの形がどの図に当たるかは裏付けられない。",
+        "20A 125V系で兼用形の刃受となる図A.15（JIS PDF p.10 表1記載）のページが添付されていない。ニの形状がA.11かA.15かを判別する一次資料がない。"
+      ],
+      "verifiedEvidence": "公式問題PDF https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf の問33（問題文と4肢の刃受図）、同PDF 15頁の共通配線図、候補の図切出しを照合した。確認できたのは次の点：③の引出線は右壁の『E20A』コンセントを指し、ⓘ回路に接続する。電灯分電盤結線図でⓘは100V 20A、凡例でⓐ〜ⓘは単相100V回路。q33-i/ro/ha/ni の切出しは原図の4肢と一致する。公式正答ニ（https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf、提示値）。JIS C 8303:2007 表1（公式PDF p.9-10の抽出本文）で、2極接地極付の定格として図A.9〜A.12・A.15〜A.17が存在することを確認した。ただし、図の形状と定格の対応は添付画像が白紙のため未確認。"
+    }
+  ]
+}

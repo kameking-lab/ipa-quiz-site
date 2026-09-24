@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q27-28-29-31-32-opus.json",
+  "upstreamReviewSha256": "97a916bbd3c5bc6f09c9884ec9baf5509928f3e7e9d707028f14c5d3c8f771f9",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "ebc928f708cb59ca5f0e0e04963ca46e29da7807ef9581e2d1855f8f1fe0d6e0",
+    "rowSha256": {
+      "28": "c8f9ada308739b0dacedfde70f2dec9fcc7c1d46e7209aee47233c9731ebd034"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "電気工事士法施行規則（e-Gov API https://laws.e-gov.go.jp/api/1/lawdata/335M50000400097）第2条第2項第1号イ・ロを確認した。イは第1項第1号イ〜ヌ及びヲを引用しており、その中にニ（電線管等に電線を収める）、ヘ（電線管を曲げる）、ヌ（配電盤を造営材に取り付ける）がある。ロは接地極を地面に埋設する作業。これらは軽微な作業から除かれている。電気工事士法施行令（https://laws.e-gov.go.jp/api/1/lawdata/335CO0000000260）第1条では、第1号（600V以下の差込み接続器へのコード接続）、第3号（600V以下の電力量計の取付け）、第5号（電線を支持する柱の設置）、第6号（地中電線用の管の設置）が軽微な工事に当たる。公式正答イと一致する。"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "inputHashes": {
+    "draftSha256": "edebfbd6caa105726b33882494f5f9871dd9ecc3a0ddff18da35cc37b2ffe0de",
+    "candidateSha256": {
+      "26": "89980fdf6d6a00798c43976c805a59c2e7ddac441a29741843c076634e126b28",
+      "28": "6ebb00c6dc3b8f05be458cccce05b42e04fcc7c28c51f1053d16ed3601a3dfb0",
+      "30": "cb6e44d204f8d050eddb0fb2992273ee8664cbe47c48eeaf1a47ba0e87e386ec"
+    },
+    "rowSha256": {
+      "26": "e47921fc6e2c8554c177956434dc2f7e7939b0212f17a5e784cd4f044ffd67ed",
+      "28": "c94a8d57b3680c322ef6ab2c0119eeccececa0462d255efe83f7229471d74de5",
+      "30": "7f51cbbc7041c3d4ec63befdc15a08c8d17e404d186a19d31110f4aab890f55c"
+    },
+    "sourcePackSha256": {
+      "28": "27bc2d0c045102b5c7d79019ae9b7692694533d309e9c59723c885a8d4915206",
+      "30": "d0a06a89878b1884c2a6870547f97c012df7e2835b73892ac6abb608d40e1eb1"
+    },
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 30,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "editorialReviewNotes と照合パックは、火薬類製造事業場などの除外場所を電気事業法施行規則第48条第3項としている。ただしパックに入っているのは要約だけで、原文ではない。2023年改正で小規模事業用電気工作物の規定が加わった後の第48条では、この除外場所の規定が第4項に移っている可能性がある。項番号が正しいかは、ローカルXML(sha256 cf68512f…)の原文で確認する必要がある。",
+        "パックは内燃力発電設備を第48条第2項第4号としているが、これも号番号を示した要約だけで、原文がない。改正後の号の並び(太陽電池・水力・内燃力・燃料電池・スターリングエンジン)で本当に第4号にあたるかは確認できない。原文で確認が必要。出力10kW未満で8kWが範囲内という結論そのものには問題がない。"
+      ]
+    }
+  ]
+}

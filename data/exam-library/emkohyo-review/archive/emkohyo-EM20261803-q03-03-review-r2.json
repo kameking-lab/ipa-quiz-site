@@ -1,0 +1,72 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6718,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13573,
+      "webSearchRequests": 0,
+      "costUSD": 0.24320780000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5663,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q03-03-raw-response.txt",
+  "rawResponseSha256": "599da2b3fd96db3d2a9294931f852b0902bd64e3d493861ab1d532ecc58da845",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q3": {
+      "/exam-library/emkohyo-EM20261803/text-q3-p3-fig1.webp": "a49316d0ba3571ebd77ecb0f9b2eeb5d379d9725913133e58b4d73d6eb49619b",
+      "/exam-library/emkohyo-EM20261803/text-q3-p3-fig2.webp": "5d4a148dae401c88fac1f1f547fffd0a7e5758fbe1c7d481ab075b4e0744b635",
+      "/exam-library/emkohyo-EM20261803/text-q3-p3-fig3.webp": "0a48e5065177b72e72254a95087472a34652fecb9f9a73434790433dbf383d8c",
+      "/exam-library/emkohyo-EM20261803/text-q3-p3-fig4.webp": "d06f03ce490249df36b04f07c43e6d09192637585c117b533991235e4d64982d",
+      "/exam-library/emkohyo-EM20261803/text-q3-p3-fig5.webp": "b6a2dd3d05022fc9f93333aa62af2d96ebf399868947a59fe63c5daf2a7d06e3"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q3": {
+      "/exam-library/emkohyo-EM20261803/q3-p3-0.webp": "0cd6c8dfa5bc346b8f921a2d36fc1eec36600423cc32c4edaad43b3372fe16c6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q3": "719af6dbc3c91dec7f31b759331ecdda241d741553322c2a86f77d75f345db0c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q03-03.json",
+  "sourcePackSha256": "db84a6c67bbb66c70403a85383da989a68feef569cf71b86dab0ee05861501c4",
+  "assessment": {
+    "emkohyo-EM20261803-q3": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.figuresの切出しで図と区域記号の対応が崩れている。fig1(イ)の右端に区域ニの記号「ニ」が、fig3(ロ)の右端に区域ホの記号「ホ」が写り込んでいる。一方、区域ニの図であるfig2と区域ホの図であるfig4には記号が写っていない。",
+        "表示順がイ(fig1)・ニ(fig2)・ロ(fig3)・ホ(fig4)・ハ(fig5)で、altも全件「問3の図表」である。このため利用者はfig2がニ、fig4がホだと判別できず、fig1内の「ニ」を見てfig2をロ等と誤認するおそれがある。各切出しに正しい区域記号を含めるか、altを「区域イ」〜「区域ホ」とし、promptに図の対応を明記する必要がある。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4・肢5のホの説明「基準は線の向きまでは定めておらず」は、引用した基準本文「縦の線と横の線」と文言上食い違う。斜めの線を『縦の線』とみなせる根拠を示さず断定している。単位作業場所の形状に合わせた縦横の線であれば直交を要しない、という趣旨を根拠付きで書くか、断定表現を改める必要がある。",
+        "肢2・肢4・肢5で「公式正答もハ(ホ)を誤りに含めていない」を理由として挙げているが、これは正答からの逆算であって個別の因果説明になっていない。基準に照らした理由だけで各図の適否を説明すべきである。",
+        "要約の「ロは点線の間隔が不揃い」は、縦線が等間隔で横線(下段)の間隔だけが広いことを明示すべきである。縦横どちらも不揃いと読める。"
+      ],
+      "sourceIssues": [
+        "添付の作業環境測定基準第2条は、6m以下の等間隔・交点・困難位置の除外・5点以上の各要件を直接支えている。一方、平行四辺形の区域で斜めの線を縦の線として引くこと(ニ・ホ)の許容は、同条の文言からは直接支えられない。",
+        "ハで交点4点に対角線の交点を5点目として加える配置の適否も、同条は直接支えていない(同条が定めるのは5以上という点数のみ)。"
+      ],
+      "needsExternalCheck": [
+        "斜めの区域で単位作業場所の辺に沿った斜めの線を『縦の線』として引くことが許容されるかを、作業環境測定ガイドブック又は関連通達(作業環境測定基準の施行通達)で確認し、根拠として追記すること。",
+        "5点未満の場合の追加測定点の配置に関する行政解釈(ガイドブック等)の有無を確認し、ハの説明の根拠とすること。"
+      ]
+    }
+  }
+}

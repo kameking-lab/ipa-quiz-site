@@ -1,0 +1,124 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7364,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 38338,
+      "webSearchRequests": 0,
+      "costUSD": 0.4542478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5879,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q01-05-raw-response.txt",
+  "rawResponseSha256": "8b66bdf04d00308ce6165832d1ea052350d9029fae33074375127eb87ed07a86",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q1",
+    "emkohyo-EM20251809-q2",
+    "emkohyo-EM20251809-q3",
+    "emkohyo-EM20251809-q4",
+    "emkohyo-EM20251809-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q1": {},
+    "emkohyo-EM20251809-q2": {},
+    "emkohyo-EM20251809-q3": {},
+    "emkohyo-EM20251809-q4": {},
+    "emkohyo-EM20251809-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q1": {
+      "/exam-library/emkohyo-EM20251809/q1-p2-0.webp": "ec1a01c6ff45a376a98a3fbabd738d55b9ef2357e2a4c5c8f96757c2d5b57abc"
+    },
+    "emkohyo-EM20251809-q2": {
+      "/exam-library/emkohyo-EM20251809/q2-p2-1.webp": "09869283965c4816a52d85eb9d0988a4864791fa30ecd02d56c1a8f48ef2d594"
+    },
+    "emkohyo-EM20251809-q3": {
+      "/exam-library/emkohyo-EM20251809/q3-p3-0.webp": "367df9db08a35db678999984ab443473df121b1502e0847b67ab721ca16d392d"
+    },
+    "emkohyo-EM20251809-q4": {
+      "/exam-library/emkohyo-EM20251809/q4-p3-1.webp": "c89b95e3f44fc95772532dd0d4c72a51ed92eef3ca4c87db157ab66ef8e1eb4c"
+    },
+    "emkohyo-EM20251809-q5": {
+      "/exam-library/emkohyo-EM20251809/q5-p4-0.webp": "a18561f07572f7afdce5d5262ab59ce9113f9da1a39f05e9d17efb81711d387d"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q1": "2acebf893044a91c5fad3211ae63c342f21c6ab4c66e1ad9b3fbcecee569a05f",
+    "emkohyo-EM20251809-q2": "fa32944fd8e226c20903701312711627ed1f511ea43a4123991b93b2fa28b616",
+    "emkohyo-EM20251809-q3": "93d1a70850f55a5392849186cd619de43921629ef6cdc163fde46592cfd71804",
+    "emkohyo-EM20251809-q4": "466556b2f1d2905f32883a146ce5225f2f68e8801f51805b9f3aad21993e4bb5",
+    "emkohyo-EM20251809-q5": "ad369beaac7452ef5632505eafce3c68c16fa4a0ccfef9fa58685b9ce1376de0"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q01-05.json",
+  "sourcePackSha256": "ef1ef047f540ab5509ddcba261b739f55d1e7bffbab1a0ef2d6084cc9bd7f632",
+  "assessment": {
+    "emkohyo-EM20251809-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由の100keV差分「約5%」は、(1.64−1.55)/1.64≒5.5%、1.55基準では≒5.8%となる。「約5〜6%」または「約6%」とするほうが正確。",
+        "肢2の理由は、48〜208keVの3点から「40keV程度以上の光子では両者の差は1割以内」と一般化している。表の最高点は約208keVで、それより高いγ線（例: ¹³⁷Csの662keV、⁶⁰Coの1.17/1.33MeV）については数値の裏付けがない。結論の適用範囲を根拠が示す範囲に限定するか、高エネルギー側の根拠を追加する必要がある。"
+      ],
+      "sourceIssues": [
+        "肢2の根拠である原子力規制庁報告書（JIS Z 4511:2018抜粋）は、NシリーズX線の実効エネルギー33〜208keVの換算係数表にすぎない。「40keV以上のγ線及びX線」全域で差が10%以内であることを直接述べた記載ではない。γ線を含む高エネルギー域を直接支える政府資料がない。",
+        "肢4の理由の「ICRU球（直径30cm）」の直径は、提示されたATOMICA抜粋（09-04-02-05）に含まれていない。記述自体は正しいが、抜粋では裏付けられていない。"
+      ],
+      "needsExternalCheck": [
+        "「40keV以上の光子で70µm線量当量と1cm線量当量の差が10%以内」という基準を明示する一次資料（電離則関係通達、ICRP Publ.74 / ICRU換算係数表など）で、約250keV超〜MeV域のγ線も含めて成立することを確認すること。"
+      ]
+    },
+    "emkohyo-EM20251809-q2": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q3": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由の「2〜3%はNaI(Tl)では得られない値である」は断定が強すぎる。引用しているATOMICAは「662keVに対し通常60keV以下」（≒9%以下）という上限を示すだけで、下限は示していない。農研機構の7.1%も1台の実測値にすぎない。「一般的なNaI(Tl)の分解能（7%前後）と合わない」程度に弱めるべき。"
+      ],
+      "sourceIssues": [
+        "肢1・肢3で2〜3%を否定する根拠として、ATOMICA（通常60keV以下）は上限しか示しておらず、2〜3%を否定する直接の根拠にならない。否定を支えているのは農研機構の単一実測値（7.1%）だけである。",
+        "肢5の理由の「¹³⁷Cs（661.7keV）」の数値は、提示された政府資料抜粋に含まれていない（農研機構は「662keV」と記載）。記述は正しいが、抜粋では裏付けられていない。"
+      ],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q5": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの「一方 ㋑ と\n㋩ は、」の位置に、原図の組版改行に由来する不要な改行が残っている。他問と同様に1行へ連結すべき（「一方 ㋑ と ㋩ は、」）。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

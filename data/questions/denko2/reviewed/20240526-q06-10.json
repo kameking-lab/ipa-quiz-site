@@ -1,0 +1,137 @@
+[
+  {
+    "number": 6,
+    "question": "図のように、電線のこう長8mの配線により、消費電力2000Wの抵抗負荷に電力を供給した結果、負荷の両端の電圧は100Vであった。配線における電圧降下[V]は。ただし、電線の電気抵抗は長さ1000m当たり3.2Ωとする。",
+    "choices": {
+      "イ": "1",
+      "ロ": "2",
+      "ハ": "3",
+      "ニ": "4"
+    },
+    "officialAnswer": "イ",
+    "explanation": "単相2線式のため電線は往復2本、こう長8mなので電線総延長は16m。電線1本の抵抗は3.2Ω/1000m×8m=0.0256Ω、往復2本分で0.0512Ω。負荷電流はI=P/V=2000W/100V=20A。電圧降下v=I×R=20A×0.0512Ω=1.024V≒1V。",
+    "choiceExplanations": {
+      "イ": "計算値1.024Vを四捨五入した値と一致するため正しい。",
+      "ロ": "2Vは正しい計算値1.024Vの約2倍であり、往復16m・20Aの正しい計算と一致しない。",
+      "ハ": "3Vは正しい計算値1.024Vの約3倍で、電線の往復抵抗0.0512Ωと負荷電流20Aを掛けた結果に一致しない。",
+      "ニ": "4Vは正しい計算値1.024Vの約4倍で、単相2線式の電線2本分を数えた抵抗0.0512Ωからは得られない。"
+    },
+    "diagramDescription": "単相2線式電源から抵抗負荷2000Wへ往復2線で接続する回路。各線に電線抵抗を表す抵抗記号があり、それぞれに8mの寸法矢印が付く。負荷両端は100V。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q06.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/q6.png"
+    ]
+  },
+  {
+    "number": 7,
+    "question": "図のような単相3線式回路において、電線1線当たりの抵抗が0.1Ω、抵抗負荷に流れる電流がともに15Aのとき、この配線の電力損失[W]は。",
+    "choices": {
+      "イ": "45",
+      "ロ": "60",
+      "ハ": "90",
+      "ニ": "135"
+    },
+    "officialAnswer": "イ",
+    "explanation": "単相3線式で上下の負荷電流が共に15Aで平衡しているため、中性線には電流が流れない（0A）。電力損失が生じるのは上下2本の電圧線（外線）のみで、各線の抵抗は0.1Ω。電力損失W=I²R×2線=15²×0.1×2=225×0.1×2=45W。",
+    "choiceExplanations": {
+      "イ": "平衡時に中性線電流が0Aとなることを正しく考慮し、外線2本分のみで計算した値と一致するため正しい。",
+      "ロ": "外線は各15²×0.1=22.5W、中性線は0²×0.1=0W。合計は45Wであり、60Wにはならない。",
+      "ハ": "90Wは正しい合計45Wの2倍。外線2本×22.5W=45W、中性線0Wなので、90Wとは一致しない。",
+      "ニ": "上下の外線の損失は各22.5W、中性線は0W。3線すべてを合計しても45Wであり、135Wにはならない。"
+    },
+    "diagramDescription": "単相3線式で、上外線と中性線の間が100V、中性線と下外線の間が100V、外線間が200V。上下外線と中性線の3本すべてに0.1Ωの電線抵抗が描かれ、中性線は上下負荷の接続点へつながる。上下負荷の電流矢印は各15A。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q07.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/q7.png"
+    ]
+  },
+  {
+    "number": 8,
+    "question": "金属管による低圧屋内配線工事で、管内に直径2.0mmの600Vビニル絶縁電線(軟銅線)4本を収めて施設した場合、電線1本当たりの許容電流[A]は。ただし、周囲温度は30℃以下、電流減少係数は0.63とする。",
+    "choices": {
+      "イ": "17",
+      "ロ": "22",
+      "ハ": "30",
+      "ニ": "35"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第146条第2項・146-1表で、直径2.0mmの600Vビニル絶縁電線（軟銅線）の基準許容電流は35A。周囲温度30℃以下では温度補正係数は1.0。設問指定の金属管内4本の電流減少係数0.63を乗じると、35A×1.0×0.63=22.05Aなので22Aとなる。",
+    "choiceExplanations": {
+      "イ": "17Aは直径1.6mmの基準許容電流27Aに0.63を掛けた17.01Aに相当し、設問の直径2.0mmを1.6mmと取り違えた値。",
+      "ロ": "35A×0.63=22.05Aに対応する整数の選択肢であり、正しい。",
+      "ハ": "30Aは35A×0.63=22.05Aより大きく、指定の電流減少係数を適用した値ではない。",
+      "ニ": "35Aは直径2.0mm軟銅線の基準許容電流（電流減少係数を掛ける前）。管内4本の係数0.63を反映していない。"
+    },
+    "diagramDescription": "この問題には回路図や写真は含まれておらず、文章のみで構成されている。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q08.png",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 9,
+    "question": "図のような電熱器Ⓗ1台と電動機Ⓜ2台が接続された単相2線式の低圧屋内幹線がある。この幹線の太さを決定する根拠となる電流I_W[A]と幹線に施設しなければならない過電流遮断器の定格電流を決定する根拠となる電流I_B[A]の組合せとして、適切なものは。ただし、需要率は100%とする。",
+    "choices": {
+      "イ": "I_W 50A / I_B 125A",
+      "ロ": "I_W 50A / I_B 130A",
+      "ハ": "I_W 60A / I_B 130A",
+      "ニ": "I_W 60A / I_B 150A"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第148条第1項第二号・第五号（イ・ロ）による。電動機の定格電流合計ΣI_M=20A+20A=40A、電熱器の定格電流I_H=10A。ΣI_M(40A)>I_H(10A)かつΣI_M≤50Aなので、I_W=1.25×ΣI_M+I_H=1.25×40+10=60A。過電流遮断器の根拠値は3×ΣI_M+I_H=3×40+10=130Aと、2.5×I_W=2.5×60=150Aの小さい方で、I_B=130A。",
+    "choiceExplanations": {
+      "イ": "I_W=50Aは40+10で電動機40Aへの1.25倍を省いた値。I_B=125Aも、その誤った50Aへ上限係数2.5を掛けた値と一致するが、正しくは3×40+10=130A。",
+      "ロ": "I_W=50Aは電動機40Aへの1.25倍を省いた値。I_B=130Aは正しいが、I_Wが60Aではないので組合せとして誤り。",
+      "ハ": "I_W=1.25×40+10=60A、I_B=3×40+10=130Aで、後者は2.5×I_W=150Aも超えない。両方正しい。",
+      "ニ": "I_W=60Aは正しいが、I_B=150Aは2.5×I_Wという上限だけを採った値。3×40+10=130Aの方が小さいので、150Aを根拠値にはできない。"
+    },
+    "diagramDescription": "単相2線式幹線の始端に遮断器B、分岐先に電熱器H（10A）1台と電動機M（各20A）2台がある。電熱器分岐のBと異なり、電動機分岐2か所のB記号には縦線が入っている。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q09.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/q9.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 10,
+    "question": "低圧屋内配線の分岐回路の設計で、配線用遮断器、分岐回路の電線の太さ及びコンセントの組合せとして、適切なものは。ただし、分岐点から配線用遮断器までは3m、配線用遮断器からコンセントまでは8mとし、電線の数値は分岐回路の電線(軟銅線)の太さを示す。また、コンセントは兼用コンセントではないものとする。",
+    "choices": {
+      "イ": "配線用遮断器20A、電線2.0mm、定格電流20Aのコンセント2個",
+      "ロ": "配線用遮断器30A、電線2.0mm、定格電流20Aのコンセント2個",
+      "ハ": "配線用遮断器20A、電線1.6mm、定格電流30Aのコンセント1個",
+      "ニ": "配線用遮断器30A、電線2.6mm、定格電流15Aのコンセント1個"
+    },
+    "officialAnswer": "イ",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第149条第1項第1号と第2項第1号・149-1表、149-3表による。分岐点から遮断器まで3mは第1項の距離条件を満たす。20Aの配線用遮断器で保護する一般の分岐回路は軟銅線の直径1.6mm以上、コンセント定格20A以下が該当する。イは2.0mm、20Aコンセント2個なので両条件に適合する。 配線用遮断器からコンセントまで8mあり3mを超えるため、第149条第2項第一号ハ（イ）及び149-2表による1個のコンセントまでの電線太さの緩和は適用されない。したがって149-1表と149-3表で判定する。",
+    "choiceExplanations": {
+      "イ": "配線用遮断器20A・電線2.0mm・コンセント定格20Aの組合せは、20A分岐回路に必要な電線太さ（1.6mm以上）とコンセント定格（20A以下）の規定を満たすため正しい。",
+      "ロ": "配線用遮断器30Aに対して電線が2.0mmでは、30A分岐回路に必要な電線太さ（2.6mm以上）を満たしておらず、電線が細すぎるため不適切。",
+      "ハ": "20A遮断器に対する1.6mm以上という電線太さは満たすが、30Aコンセントは20A分岐回路の上限20Aを超えるため不適切。",
+      "ニ": "30A遮断器に対する2.6mm以上という電線太さは満たすが、15Aコンセントは30A分岐回路に必要な20A以上30A以下を満たさない。"
+    },
+    "diagramDescription": "イ・ロ・ハ・ニの各図に分岐点、配線用遮断器Bの定格（20Aまたは30A）、遮断器から先の軟銅線の太さ（1.6/2.0/2.6mm）が描かれる。コンセントの定格と個数は図の下に印字されている。3mと8mは各図内ではなく共通の設問条件である。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q10.png",
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q10-i.png",
+      "ロ": "/images/denko2/2024-first/q10-ro.png",
+      "ハ": "/images/denko2/2024-first/q10-ha.png",
+      "ニ": "/images/denko2/2024-first/q10-ni.png"
+    },
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  }
+]

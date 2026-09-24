@@ -1,0 +1,67 @@
+{
+  "inputHashes": {
+    "draftSha256": "177a17e442d1d2b58983cf58c35cc0974d1c03919b42262c561988970213ddf2",
+    "rowSha256": {
+      "11": "c1cdcbf99cd0f28febb7fd822ccd14ccd7c427e3cdca4f7a5d107b2998df2cb6",
+      "12": "00d5325538928196b6c4c1496e855d05f32848614f6738ede6659b3ef51dca0f",
+      "13": "64530b3ccb47c802c9ee093908da223445b4ca461aff1d8bbc24e83bfd07f2fe",
+      "14": "6b68eb7847eec32b6e560b00dcfeceb0ebec165c89b60dad547353ccc9af602b",
+      "15": "737140940f410ba96a568238d321bfbc1635a6aaf53f5ae5c2367bea5223dcbb"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "イの肢別理由にある「屋外用ビニル絶縁電線(OW線)は金属線ぴ工事に使用できない電線として除外されている」は電技解釈の金属線ぴ工事条項に基づく記述。条文で確認が必要",
+        "ロの肢別理由にある「コンクリート床内に埋め込む施工は金属線ぴ工事の施設方法ではない」は、金属線ぴ工事の施設場所の制限(展開した場所・点検できる隠ぺい場所)に依存する。条文で確認が必要",
+        "officialReferenceUrls の METI PDF(20231226-2.pdf)が金属線ぴの記述の根拠になっているかは未検証"
+      ]
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説の「経済産業省の電技解釈解説は、導体に接する部分の温度をポリエチレン絶縁体75℃・ビニル絶縁体60℃・架橋ポリエチレン絶縁体90℃と区別している」は、参照URL(260319-1-2.pdf)の該当箇所で確認が必要",
+        "EM-EEF の絶縁物が非架橋ポリエチレンであるという前提は、JIS/JCS 規格で確認が必要"
+      ]
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

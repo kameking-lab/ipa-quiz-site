@@ -1,0 +1,91 @@
+{
+  "inputHashes": {
+    "draftSha256": "dc0dbf75a658645b3129880664311b3b89474d9844cdab96c8ae9daa3048a031",
+    "rowSha256": {
+      "41": "a51623d4d36ad83d80fa500d1b56595cf8f9f2d5701d5972f8d755555534210a",
+      "42": "5a51a39ef0e99dba3e2f1de7555d4a4a40618cdd87b09701b32b91863d549ddb",
+      "43": "1c3d3de6b16f521aa24bd88829765142487c3e8522966d31aacb45feec15adde",
+      "44": "0ee213dd6774a6324ee958b2aab9fa4ec513378cb02048222c0b58fc7bb12b5f",
+      "45": "0220a970bc41a61d58f8f468630d824b6f136b18446137ff299fae653ee0814a"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-second/wiring-first-floor.png": "88f652f95103f8bcd90c110af995e65046ace5b5f38e9bceeaad6ab64d29534a",
+      "public/images/denko2/2025-second/wiring-second-floor.png": "f1076fbb7d9e11339f58b180c19a36b98f7146254572449b4b342157779a31e9",
+      "public/images/denko2/2025-second/wiring-panel.png": "2ab6ad86eea5b617f06c0619a24488a74b154265518ad9b2863bda3243aa819f"
+    },
+    "commonInstructionsSha256": "e2bb1b00f146246a003a209c7614e3c0e316f6991480b6f82e9ee5e6a18b2a5b",
+    "detailFigureSha256": {
+      "public/images/denko2/2025-second/q41-i.png": "43c1d52f7edb43601e8ac1c107c6400d637a0836bd341ff8a7ebb577af349fa1",
+      "public/images/denko2/2025-second/q41-ro.png": "0608bdbce73f79ce7f7517e61973a1b2bbe0e84e1486246369052a20af9a1a71",
+      "public/images/denko2/2025-second/q41-ha.png": "6de0c750fcff8cc1175c834f5cf77024b719b1154041e1c4bd3e1a5c42feb3eb",
+      "public/images/denko2/2025-second/q41-ni.png": "cb2b6b52bffb3a228b3568d737e2bfaf587b5c5bdb686e957695cf4f5dbe88aa",
+      "public/images/denko2/2025-second/q42-i.png": "cf0fdb18860f517c9d833ead0098914a4e8939f89c91bdfc75403fc8022f19c6",
+      "public/images/denko2/2025-second/q42-ro.png": "7125e815668f93b87fba98e8cfd9303c5f468b2ba8fb53e764d7ea95195e94d9",
+      "public/images/denko2/2025-second/q42-ha.png": "f5422e757a8988915392b82f3ded0c38ec3e899206ef04fc771c6878fc40e3fe",
+      "public/images/denko2/2025-second/q42-ni.png": "f97136297e15c79d1ea51f340ba4023c93ede04531d4078f87c485167b1e3942",
+      "public/images/denko2/2025-second/q43-i.png": "02607b59a8e3da6db11b0200f2cfefef17ce9acf427624b298e967b282b7a770",
+      "public/images/denko2/2025-second/q43-ro.png": "1f68be4a6b5af0f81beb1cdbbab3933292758f2ad4c5053b7bd582deb3f05bd0",
+      "public/images/denko2/2025-second/q43-ha.png": "0330cb1161336cf73d5f69bcef2c852a3dceb51a40dc2cad62c712d3762db53a",
+      "public/images/denko2/2025-second/q43-ni.png": "ea1454c89dcd9af7de84db952ad02539117b5cac024858b78b459932a5067afe",
+      "public/images/denko2/2025-second/q44-i.png": "cd969e79d8effa3cd8114e1782fe9f7e45027ce059572676c83059b4d6cb6ad8",
+      "public/images/denko2/2025-second/q44-ro.png": "9980b3dcd3b9134f35a23abc9d63af22218065ee76442c7a67e7c799ab4a41aa",
+      "public/images/denko2/2025-second/q44-ha.png": "fc6f9bfe59bd156714abfbbaa67aff0d695fc4cbef3827088b8016f5c942f1d1",
+      "public/images/denko2/2025-second/q44-ni.png": "37280ea884e9792864e1461c7e3e9252c48e376f09284e695bdf73d1e58606dc",
+      "public/images/denko2/2025-second/q45-i.png": "038955e005ffd5cb79c0566249544c5ac843fd2b0b182eb2a29378a25169c64f",
+      "public/images/denko2/2025-second/q45-ro.png": "0029e8322953d6361f83894625e2b29e044eeb42eaca185371f640c67b49f823",
+      "public/images/denko2/2025-second/q45-ha.png": "1f596cb660d4d1b4f4421cfa2c20d300626508838cd287a587b8f74c84bc3379",
+      "public/images/denko2/2025-second/q45-ni.png": "7cc72399c6e7089d6526bb04372f18d0d598e76b74c49d9d10cc0955bd46b61d"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-law/20251026-q44.json": "70c55db87323f25e3169017ff196876339288f36daac3974d8882058ce606abb"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 42,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 43,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 45,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

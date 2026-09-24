@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1421,
+      "cacheReadInputTokens": 99060,
+      "cacheCreationInputTokens": 20579,
+      "webSearchRequests": 0,
+      "costUSD": 0.212872,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1339,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q16": {
+      "/exam-library/emkohyo-20260217/q16-p11-1.webp": "512a853a02c96546158ca29609e30ee8954280e1d9156ee4800a713458235a2b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-alpha-decay.png": "50ac4e2623f565d80e6df71f2f0996b5ac7a2c45cac5311129c17f325dc077e5",
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-radiation-impact-classification.png": "c14e00f13961ae1447047606b56d47a19a42d1d339f2341046b81941d6260da2",
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-tissue-sensitivity.png": "16156317513a4811d561fe148d2ba13fef7c5e1312b7ddea6a2afaf9a9dbf8f2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q16": "d2e083690211b38c9ee85fd6c52b2c8add80c570176adc9986517f9c01493971"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q16-16.json",
+  "sourcePackSha256": "7c9873df35dea3d12c96af0c0e35bd26374d3aaf060f418dc63e8201c8e7323f",
+  "assessment": {
+    "emkohyo-20260217-q16": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "inputHashes": {
+    "draftSha256": "a17efa2acd6863ad5e112ec56b4bb24949688d8497e65cc96dc37c57d5717f6f",
+    "rowSha256": {
+      "8": "a302ee8a75a90772189f62830118f57bb89400baf48e774172f91fc320eec7a5",
+      "9": "556146057c5477690dd7f44a384070e525bd60a711702526f0894ba9135652e0",
+      "10": "2f21aa5a477ae99689fd5b7dfc13c73aab5735231a17c4f58ad58a26a7c7d390"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q9.png": "32d1b98000404f451dc3c1af07e90df1510d4cd25c60fc31aa3e1ce90f29cdaa",
+      "public/images/denko2/2025-first/q10-i.png": "55bd4e3ec629f4e07dac0cd7938f411fc04487d205e25c4fd39566c2e60e534d",
+      "public/images/denko2/2025-first/q10-ro.png": "aa40aa3619b8ff57a4f3f8e077da1e65930384230605194b0c8afdec55ae487f",
+      "public/images/denko2/2025-first/q10-ha.png": "4eaeeaba96dde52efa75fb1a6f4c79a7ae0f3254ad66a9626d8e46968136ba51",
+      "public/images/denko2/2025-first/q10-ni.png": "ccf610d56e38afd5bc841a0caae6e724030382204edb760040a23c38837041ca"
+    },
+    "sourcePackSha256": {
+      "8": "2985de6eb114fa091de2c46509bae46f8f10ff7cd6b55a91f94ca75d1e78fbbd",
+      "9": "e3931d3da045130a722c11eea4ab71b694abe53f0e27b56c3d86491e5f704969",
+      "10": "5304e6e9a76fb713adef281e7e3b5b603655df1b3ab6fff962e76c362252e839"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanation は46-2表・146-4表・端数処理をまとめて「第146条・146-2表によると」という1つの出典の下に並べている。一次資料パックで端数処理「小数点以下1位を7捨8入」の出典として示されているのは電気用品関係の別資料（kaiseibun_240601.pdf の備考）で、電技解釈第146条ではない。このため、端数処理の根拠が第146条にあるかのように読める。端数処理の出典を分けて明記すること。",
+        "officialReferenceUrls には電技解釈の PDF しかなく、端数処理の根拠資料（https://www.meti.go.jp/policy/consumer/seian/denan/file/04_cn/ts/240601/kaiseibun_240601.pdf）が入っていない。",
+        "editorialReviewNotes は、49A・37A・61A と7捨8入を「内線規程等の標準的な許容電流表・規定に基づく一般的な値」としている。しかし一次資料パックでは、49A・37A・61A は電技解釈146-2表、0.70 は146-4表で確認できる。記述が一次資料と合っていないため、出典を電技解釈に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "端数処理「小数点以下1位を7捨8入」は、パックに索引の抜粋（indexedExcerpt）があるだけで、原文ページ・条項番号・電技解釈第146条の許容電流算定に適用されるかを確認できない。原文で要確認。なお、計算値（25.9→26、34.3→34、42.7→42）そのものは7捨8入と矛盾しない。"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanation は「分岐回路用の過電流遮断器を分岐点から3m以下の位置に設けることができるとする規定」と書いている。第149条第1項第1号は、分岐点から3m以下の箇所に過電流遮断器を「施設する」とする原則の規定であり、許容の規定ではない。「設けることができる」は規定の性質を取り違えている。",
+        "choiceExplanations.イ は30A分岐回路の電線の下限を「直径2.6mm(断面積5.5mm²)以上」としている。一次資料パックの149-1表の要約にあるのは「直径2.6mm」だけで、断面積5.5mm²と同等とする記載は確認できない。ハ（5.5mm²）がこの電線条件を満たすかどうかも、この同等性に依存している。",
+        "editorialReviewNotes は、1.6mm・2.6mm やコンセント定格の範囲を「電技解釈・内線規程等に基づく一般的な基準」「画像には明記されていない一般的な規定」としている。一次資料パックでは、これらは第149条第2項の149-1表・149-3表、第1項第1号で確認できる。出典が曖昧なままなので、条項・表番号に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "149-1表で、定格電流20A超30A以下の配線用遮断器の場合に断面積5.5mm²（より線）が直径2.6mmと同等に扱われるかを原文で確認すること。パックの要約は「直径2.6mm」だけである。"
+      ]
+    }
+  ]
+}

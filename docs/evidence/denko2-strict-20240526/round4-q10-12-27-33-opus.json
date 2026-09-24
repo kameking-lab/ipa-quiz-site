@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "10": "71d58f26b1cf1cdb722302eb69b0893f8d56160feeea1842618d51dfe185c7d6",
+      "12": "bd6d0a525eb1903258eecea521a1e3fa891c369d488be1681e849cc6d7c680ba",
+      "27": "19572b32260d342254f11c05208f8030f1ba444f74956323304de679d933e74c",
+      "33": "ad692b818289b80a4ca7db960d25a45f032b0c35931f490dc1cace562ff143f9"
+    },
+    "sourceCropSha256": {
+      "10": "b5964a6e3c2589262f1250e773c278f92eb8d782c6c962eb4848bf42c3d7c40c",
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd",
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b"
+    }
+  },
+  "assessment": [
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図・公式正答(イ)を照合。https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf はWebFetchで403のため、SHA256=7ff56485…3b43で固定した公式ローカル抜粋を使用。電技解釈第149条第1項第一号(分岐点から3m以下に過電流遮断器)、149-1表(20A以下の配線用遮断器→直径1.6mm、20A超30A以下→直径2.6mm)、149-3表(20A配線用遮断器→コンセント20A以下、30A→20A以上30A以下)、第2項第一号ハ(イ)(3m以下の部分だけ149-2表で緩和)。イ〜ニの図切出しは原図と一致。"
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イ・ハ・ニの理由が『公式正答が示す60℃ではない』だけで、その肢がなぜ誤りかを説明していない。ロの理由も『公式正答』と答えを言い直しているだけ。146-3表を使って理由を書く。例：75℃は耐熱性ビニル混合物と架橋しないポリエチレン混合物の式√((75−θ)/30)に当たる。90℃は架橋ポリエチレン混合物などの式√((90−θ)/30)に当たる。45℃に当たる区分は表にない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図・公式正答(ロ=60)を照合。https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf はWebFetchで403のため、SHA固定の公式ローカル抜粋を使用。電技解釈第146条146-3表で、耐熱性を有しないビニル混合物の補正係数は√((60−θ)/30)。耐熱性ビニル混合物と架橋しないポリエチレン混合物は75、架橋ポリエチレン混合物は90。"
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の『整流形のように交流を測る方式もある』は、計器の動作方式についての主張だが、一次資料で裏付けられていない。officialReferenceUrlsは空で、公式問題と公式正答からもこの記述は導けない。一次資料を付けるか、この文を削除する。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsが空。公式正答(ロ)から裏付けられるのは『永久磁石可動コイル形ではない』ことと、イ・ハ・ニが正しい記述であることまで。整流形に関する主張を支える官公庁の一次資料が付いていない。"
+      ],
+      "verifiedEvidence": "公式問題原図と公式正答(ロ)を照合。中央のVと波線、左下の動作原理記号、水平置き記号、1.0の表示、目盛0〜150が原図と一致し、図切出しq27.pngも一致。"
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "イ・ロ・ハの理由が主に『公式正答の配置ではない』という循環論法で、各配置が何用なのかを説明していない。一次資料で確認したうえで、イ（横L字）、ロ（縦平刃2本）、ハ（横平刃2本）がそれぞれ何の定格・電圧用の極配置かを示す。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsのhttps://www.meti.go.jp/policy/consumer/seian/denan/file/04_cn/ts/240601/kaiseibun_240601.pdf はWebFetchで403となり、公式ローカル抜粋も添付されていない。このため『100V・20A接地極付きは縦向きL字刃受け』という刃受け配置の主張と、傍記E20Aの意味を、参照URLで確認できない。官公庁ドメインでWebSearchしても、該当する極配置の図表を直接確認できる資料は取得できなかった。"
+      ],
+      "verifiedEvidence": "公式原図と公式正答(ニ)を照合。平面図③は右壁の『E20A』コンセントで、ⓘにつながる。電灯分電盤結線図のⓘは100V・20A。4肢の図切出しq33-i/ro/ha/niは、原図の横L字・縦平刃・横平刃・縦L字と一致。wiring-main.png・wiring-panels.pngの丸数字の位置も公式共通配線図と一致。"
+    }
+  ]
+}

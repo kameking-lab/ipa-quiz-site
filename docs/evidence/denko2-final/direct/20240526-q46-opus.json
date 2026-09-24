@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q36-37-39-46-48-opus.json",
+  "upstreamReviewSha256": "965b793d2b63aee9a21559e483502c07c3ca8ae1d15d05b9a6a9a4bb03b2fcd7",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "12d641bfd5c15238ea9dad4ba8662c4b31c3b3f01e01902408b61414eda187b7",
+    "rowSha256": {
+      "46": "1983191681022a9d42d1de602b1ba368e3695dc59630ba185ff4b83072f30f7e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q46-i.png": "e96bed4b0abdf150ef6c91592f2f03660cbc5132379fc310a5a3816895109d69",
+      "public/images/denko2/2024-first/q46-ro.png": "9cb2fc24d68077de95be6991a75a68ad0abc3c47ccf211b2cba961773000aa75",
+      "public/images/denko2/2024-first/q46-ha.png": "642408a9c81ebc77921ab8756d34a4c3c7844153c7c6583231f104dd5624eafe",
+      "public/images/denko2/2024-first/q46-ni.png": "e5e9b8f0669b71d741a7236233677838536881fc0d282613d68b94cc5466ead8"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 46,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "https://www.shiken.or.jp/construction/upload/point2024.pdf：WebFetchでは本文を抽出できなかったため、SHA256=0b40cdd6…5717で固定された公式抜粋を使用した。p.24で、リングスリーブはJIS C 2806の終端重合せ用スリーブ（E）と確認した。p.25で、リングスリーブ用圧着工具は握りが黄色と確認した。p.26で、赤（オレンジ）色の持ち手は圧着端子用工具と確認した。公式原図15頁で、⑯がE5.5接地線を指すことを確認した。問題の写真は、イ・ロが黄色の工具、ハ・ニが赤色の工具で、スリーブはE/Pの表示どおり。公式正答（20240526_co_second_a01.pdf）はニ。"
+    }
+  ]
+}

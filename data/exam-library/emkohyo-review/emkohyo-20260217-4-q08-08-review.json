@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2373,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13881,
+      "webSearchRequests": 0,
+      "costUSD": 0.1587718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1345,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q08-08-raw-response.txt",
+  "rawResponseSha256": "5af4ab7f6147a4352c0f0440f71de6fa391e64baf53da6d51d032355a4bb3d6f",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q8": {
+      "/exam-library/emkohyo-20260217-4/q8-p5-1.webp": "db2dbf29db66f44cdd7059e9e63d6de94e4311b8312bb1bc7636d37768c481e7"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q8": "90d16f7b99d47fe3b6b002ec8f23901480f1a2a745aacf96e41df76a123a6f8e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q08-08.json",
+  "sourcePackSha256": "4a72fada0bb4d40de0b89486e41b96682c9b19614ef807d4e9413e001ac0db94",
+  "assessment": {
+    "emkohyo-20260217-4-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由「拡散速度は拡散管の長さと断面積で決まる」は言い過ぎ。産総研(8)式では、拡散速度は拡散定数D、全圧Pd、飽和蒸気圧pd、分子量M、温度Tにも依存する。「長さと断面積にも依存する」などに改めるべき。",
+        "肢1の理由「拡散速度を飽和蒸気圧と拡散管の断面積・長さで表す」も、(8)式の他の変数(D・Pd・M・T)を落としている。「これらを含む式で表す」程度に留めるべき。",
+        "肢1の理由の結論「試料液をためる部分と蒸気が通る管からなる構造である」は、「試料を注入した拡散管」という記述からの推論にすぎない。出典の文言からは液体溜めと拡散管の二部構成を直接導けない。",
+        "肢2の理由は、パーミエーションチューブがPTFE等の合成樹脂製であることは示している。しかし、ディフュージョンチューブがガス透過性材料で『できていない』(ガラス製等)ことの直接根拠を示していない。また産総研は『拡散管法の原理はパーミエーションチューブ法とほぼ同じ』とも書いている。材質・拡散経路(壁透過ではなく管口からの分子拡散)の違いを明示した根拠を補うべき。"
+      ],
+      "sourceIssues": [
+        "肢1(液体溜めと拡散管の二部構成)を直接支える記述が、添付の産総研・環境省資料のいずれにも無い。構造を図示・明記した資料(JIS K 0055、作業環境測定ガイドブック等)を追加すべき。",
+        "肢2の正答根拠のうち『ディフュージョンチューブはガス透過性材料ではない(通常ガラス製)』という部分を、添付資料は直接支えていない。産総研の抜粋はパーミエーションチューブの材質のみを述べる。",
+        "肢5(一方の端を開放して使用)を直接支える記述が添付資料に無い。『蒸気が拡散管を通って希釈ガスと混合』と(8)式の断面積・長さの変数からの推論にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "JIS K 0055(ガス分析装置校正方法通則)または作業環境測定ガイドブックで、ディフュージョンチューブがガラス等の非透過性材料による液体溜めと細管(拡散管)からなり、細管の先端を開放して用いることを確認する。",
+        "上記資料で、ディフュージョンチューブ法の濃度が希釈ガス流量とチューブ温度(拡散速度)で調整されることを確認し、肢3の根拠を補強する。"
+      ]
+    }
+  }
+}

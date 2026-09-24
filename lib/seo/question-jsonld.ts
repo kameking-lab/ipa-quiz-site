@@ -70,7 +70,7 @@ export function buildQuestionJsonLd({
         name: "日本ファイナンシャル・プランナーズ協会",
         url: "https://www.jafp.or.jp/",
       }
-    : q.exam === "denken3"
+    : q.exam === "denken3" || q.exam === "denko2"
       ? {
           "@type": "Organization",
           name: "一般財団法人 電気技術者試験センター",
@@ -83,7 +83,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "denken3"
+    : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
       : "https://www.ipa.go.jp/shiken/faq.html";
   const siteAuthor = {

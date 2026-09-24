@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1788,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17721,
+      "webSearchRequests": 0,
+      "costUSD": 0.2054246,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1377,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q7": {
+      "/exam-library/emkohyo-EM20261802/q7-p6-0.webp": "804c71b1303290ee0534283b68fc0c640e7c556f9e3f9a4aa012e9ba0b8ce463"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q7": "57c2136263a1eacb171fc820b0b777f47c9b7ae7f4eb401a464d0273490c0a6a"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q07-07.json",
+  "sourcePackSha256": "fa1341ce4cf5d79530b71305657b90a87ac91ee708bba16a0ff17be6a02a2609",
+  "assessment": {
+    "emkohyo-EM20261802-q7": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.choicesの区切り方が選択肢ごとに違う。肢1「放射性物質の濃度１か月以内ごとに１回 ５年」、肢2「五酸化バナジウムの濃度６か月以内ごとに１回 ３年」、肢5「ナフタレンの濃度６か月以内ごとに１回 30年」は、Ⓐ（測定対象）とⒷ（測定頻度）の間に区切りがなく、つながって読める。肢3・肢4には区切りの空白がある。公式原図ではⒶ・Ⓑ・Ⓒは別々の列に分かれており、ユーザー画面では列の境界が見えなくなる。5肢とも「Ⓐ Ⓑ Ⓒ」の3項目を同じ区切りで揃えること（例：「放射性物質の濃度 １か月以内ごとに１回 ５年」）。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

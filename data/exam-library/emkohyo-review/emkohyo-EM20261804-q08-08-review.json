@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5111,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15926,
+      "webSearchRequests": 0,
+      "costUSD": 0.22989179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4312,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261804-q08-08-raw-response.txt",
+  "rawResponseSha256": "85cd2fa51fd0f79f32fe9c1b0a7d446f214ec770768041c6f0fe724b8e67cfda",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q8": {
+      "/exam-library/emkohyo-EM20261804/q8-p6-1.webp": "386e4b5a6abe3c2e6ef595857e9825ddc49e41a8dbb32ca879079421c05e3d95"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20261804-q8-jniosh-diffusion-cell-p77.png": "b0e392f822484cf2eb4d08a2c03ffb4fb3fdc3e990a43dad28a30031a1e3d092"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q8": "60383ceaa68fee65b840098739e528140ec7aac30deba6ab4cff953afb9d7616"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q08-08.json",
+  "sourcePackSha256": "1d07ad312f41e9bd909fa66f000f2d23dc28b72b23af540ce98b6789a8ed4996",
+  "assessment": {
+    "emkohyo-EM20261804-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3: 式(1)中の T₀ が何を表すか（換算用の基準温度であること）を説明しないまま『D・(T₀/T)』の増減を論じている。T₀ は定数で T のみが変化する旨を一言補うこと。",
+        "肢3: 『Dが約12%増え、T₀/Tの約6%減を上回る』という比較は空気−酸素（気体O₂）の数値でしか裏付けられていない。本問の対象である有機溶剤蒸気の拡散定数について同じ関係が成り立つとは示されていない。空気−酸素の値は代表例にすぎないと明記したうえで、主因は飽和蒸気圧p₀の温度上昇による対数項の増大であると論旨を組み直すこと。検算では、JAEA式から D(293 K)≈1.986×10⁻⁵、D(313 K)≈2.230×10⁻⁵ m²/s（比1.123）、293/313≈0.936 であり、数値自体は正しい。"
+      ],
+      "sourceIssues": [
+        "JAEA-Data/Code 2013-011 が扱うのは空気中の H₂・O₂・Ar の相互拡散係数だけで、有機溶剤蒸気のデータは含まれない。肢4の『拡散係数は化学種ごとに異なる』という一般的な主張の根拠としては足りる。一方、肢3の『有機溶剤で D・(T₀/T) が温度とともに増加する』という比較結論を直接には支えない。",
+        "JOGMEC 用語辞典の URL は https://journal.jogmec.go.jp/oilgas/termsearch/list/shi/vapor-pressure.html へリダイレクトされている。sources の url を finalUrl に更新すること。"
+      ],
+      "needsExternalCheck": [
+        "肢3の温度依存性について、有機溶剤蒸気の空気中拡散係数が温度とともに増加すること（例: D∝T^1.75 程度）を示す政府系一次資料があれば、空気−酸素の代替例の代わりに、または併記して引用できるか確認すること。"
+      ]
+    }
+  }
+}

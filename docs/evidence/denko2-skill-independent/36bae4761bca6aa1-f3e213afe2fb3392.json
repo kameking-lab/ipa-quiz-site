@@ -1,0 +1,31 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "36bae4761bca6aa1dd8a162b62763448bae2fd70b8f7f82f152d823cc1414a7d",
+    "answerPdfSha256": "f3e213afe2fb3392bb5f243c2a02fda0872143dac116079e24cf8f1d9ece9a9a",
+    "extractedRecordSha256": "1473f54503ae16cad62b5c4becee280da4b132df115f54cb93775e3339faea51"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-12-13-skill-03",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "Checked the instruction text (試験時間40分, notes 1–5) against problem page 2. It matches.",
+      "Checked all 14 material items against the original, including the blue sheath, 2.0mm, 1.6mm, 2心/3心, the lengths 250/1650/350/150mm, the green wire and 5 small ring sleeves (予備品を含む). The 2-, 3- and 4-wire push-in connectors are 1 each. Everything matches.",
+      "The PDF text layer adds leader-dot fragments to item 1 ('長さ約 250mm ‥ １本'). This is not a difference from the original.",
+      "Checked 施工条件 1–5 against problem page 3. They match: color rules ①–④ with the four terminals that take white, the A部分 ring sleeve and B部分 push-in connector connections, and the mounting frame used for the outlet.",
+      "The text layer drops the subscripts on S₂ (and the S₁, L₁ symbols in 図2), so they come out as 'S2'. The meaning is unchanged, but showing them as S₂ would match the original.",
+      "The '―・―・―' in instruction 2 stands for the dash-dot line (ー・ー・ー) in the original.",
+      "The 図下注記 (JIS C 0303:2000 and Ⓡ = ランプレセプタクル) match the original.",
+      "The diagramImage shows the whole of 図1 legibly: the 電源1φ2W 100V label, both junction boxes A and B, the TS/イ symbols with 200mm, the ( )/イ fixture, Ⓡ/ロ, the ●/ロ switch, the E outlet, E 1.6, the 100mm dimension, the 施工省略 dash-dot box and E_D. It also shows all cable labels (VVF 2.0-2C, 1.6-3C and 1.6-2C) and every 150mm dimension. Nothing is cut off.",
+      "The secondFigureImage shows all of 図2: the internal wiring (M, the switch, S₁/S₂/L₁) and the terminal block arrangement S₁–S₂–L₁. Nothing is cut off.",
+      "The answer PDF is labeled 令和7年度第二種下期技能試験の解答 候補No.3, so it matches this problem (No.3).",
+      "The concept drawing, wiring diagram and example finished work all match the problem's layout: TS/rosette イ, lamp ロ with switch ロ, the outlet with green E, blue VVF2.0 on the power side, and a 3C cable (black/white/red) between A and B.",
+      "The wiring diagram agrees with the materials list. A uses 3 ring sleeves; B uses one 3-wire connector for black, one 4-wire connector for white and one 2-wire connector for red–black to Ⓡ.",
+      "This review only compares the extracted content with the official PDFs. No actual finished work was graded."
+    ]
+  }
+}

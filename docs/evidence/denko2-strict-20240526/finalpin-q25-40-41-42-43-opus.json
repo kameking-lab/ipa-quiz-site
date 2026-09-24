@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "25": "362743da60d50cc2c289623921592dd0ce3cb6cf7ecef9f6537be3b6f0736f6c",
+      "40": "bacdeb25f95bb8fbf8224623f7f0fbe458d4fa46cb78f94bce1d6cb4d4b870a3",
+      "41": "5ca4a99cafe5b2427bd03b68f169bd7eb5294ade84b2c99a54832b4935355ec9",
+      "42": "0d5e9546cf3acbaf7a1dd7dcb71f3b335937dfc6ce6cc92d0b4efc53d37227e4",
+      "43": "c7fd86a2cd2b0f64206e80890d9adcdc7851c3d3e46e888203b6c3efa6865e19"
+    },
+    "sourceCropSha256": {
+      "25": "71e9945940ce0c0599ed2380db8c1fbd92bd702bc279522d3a6536099df8af77",
+      "40": "11ab6a50bdf06fa5afa47f6df80cc329bbd6b917d8eed7c6db12cc857dd97e96",
+      "41": "b56695a09bf3299e9d38262cae0f600005962c3214ca7e9e8c3b58b2ce719c84",
+      "42": "9bdf5036b52062b923b8c9d599a15ba6179281f036f206bd3c0766602ae27317",
+      "43": "07948aac1410e898f37fff9574a2d62d2f07d73abd32d2b826d8f22e886181a7"
+    }
+  },
+  "assessment": [
+    {
+      "number": 25,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「被測定回路を電路から完全に切り離し」は表現が不正確。被測定回路はそれ自体が電路なので、「開閉器を開いて電源から切り離し、電源電圧が加わっていない状態で測定する」とすべき。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合（問25、正答ニ）。問題文、否定語「誤っているもの」、イ〜ニ全肢の文言が原図と一致することを確認。法令についての主張はない。"
+    },
+    {
+      "number": 40,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001611774.pdf は「令和５年版 航空無線工事標準図面集」（国交省航空局）。三路スイッチの結線や⑩区間の心線数を直接裏付ける資料ではない。WebFetch でも本文を抽出できず、内容を確認できなかった。この問は公式共通配線図と公式正答だけで裏付けが完結するため、この URL は外すべき。"
+      ],
+      "verifiedEvidence": "公式問題15頁の共通配線図と公式正答（ロ）を照合。⑩の引出線は結線点⑲から右壁の三路スイッチ『ア3』への曲線区間を指している。左壁にも『ア3』がある。渡り線2本と右スイッチの共通端子の線1本で最少3心となることを確認。wiring-main.png の⑩⑲の位置は原図と一致。"
+    },
+    {
+      "number": 41,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "q41-i/ro/ha/ni.png の左上端に、隣の肢記号（イ．ロ．ハ．ニ．）の一部が切れ残っている。肢記号を完全に含めるか、完全に除いて切り出し直すべき。"
+      ],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001885918.pdf は「令和７年版 航空無線工事施工管理指針」（国交省航空局）。WebFetch はサイズ上限超過で本文を取得できず、差込形コネクタの差込口数・色などの主張を裏付けるか確認できなかった。本問の分類は公式問題写真と公式正答で直接裏付けられるため、この URL は外すか、該当箇所を特定できる資料に差し替えるべき。"
+      ],
+      "verifiedEvidence": "公式共通配線図⑪（店舗右上の斜線ボックス）と公式正答（ロ）を照合。ボックスに入るのは次の4本。①左：ⓕ系統コンセントからのVVF2.0、②下：コンセント行きVVF2.0、③上：スイッチ『カ』行きVVF1.6、④右：照明『カ』行きVVF1.6。結線は非接地側3本・接地側3本・帰り線2本で、3本用2個と2本用1個になる。公式写真で橙に差込口2つ、水色に3つ、黄緑に4つを確認した。"
+    },
+    {
+      "number": 42,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "q42-*.png の左上端に肢記号の一部が切れ残っている。切り出しを整えるべき。"
+      ],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001885918.pdf（令和７年版 航空無線工事施工管理指針）は、サイズ上限超過で本文を取得できなかった。VE管相互の接続にTSカップリングを使うこと、PF管用・ねじなし管用・コンビネーションカップリングの識別が同資料に書かれているか確認できない。条項や頁を特定できる官公庁の一次資料に差し替えるか、公式問題写真と公式正答だけに依拠するよう整理すべき。"
+      ],
+      "verifiedEvidence": "公式共通配線図下端の⑫（⑬・⑤と共通の引出線）が一点鎖線の『600V CV 5.5-2C（VE28）』を指すことを原図で確認。公式正答ハとあわせ、4肢の公式写真（PF管用樹脂カップリング、ねじなし管用カップリング、灰色のTSカップリング、らせん溝付きのコンビネーションカップリング）と候補の記述が一致することを確認。"
+    },
+    {
+      "number": 43,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "ニの写真説明「青いボンベにバーナーノズルを付けた」は、公式写真から確認できない断定を含む。写真に写っているのは取っ手付きの青い燃料タンク一体型本体で、ガスボンベとは読み取れない。「取っ手付きの青い本体にバーナーノズルを備えたトーチランプ」などに改めるべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "q43-*.png の左上端に肢記号の一部が切れ残っている。切り出しを整えるべき。"
+      ],
+      "sourceIssues": [
+        "officialReferenceUrls の https://www.mlit.go.jp/koku/content/001885918.pdf（令和７年版 航空無線工事施工管理指針）は、サイズ上限超過で本文を取得できなかった。硬質塩ビ管の切断・面取り・加熱曲げに使う工具や、パイプレンチを使わないことについての記述を確認できない。直接裏付ける官公庁の一次資料に差し替えるか、公式問題写真と公式正答だけに依拠するよう整理すべき。"
+      ],
+      "verifiedEvidence": "公式共通配線図の⑬が『（VE28）』の地中管路を指すことを原図で確認。公式正答イとあわせ、4肢の公式写真（パイプレンチ、塩ビ管用カッター、合成樹脂管用面取り器、トーチランプ）を照合した。"
+    }
+  ]
+}

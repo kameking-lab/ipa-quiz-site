@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ChevronRight } from "lucide-react";
 
 import { ExamSourceNotes } from "@/components/exam-library/exam-source-notes";
+import { ExamNoteLinks, collectSubjectNoteLinks } from "@/components/exam-library/exam-note-links";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -162,7 +163,7 @@ export default async function QualificationHubPage({ params }: QualificationHubP
           {subjects.map((subject) => {
             const subjectPapers = papers.filter(({ entry }) => entry.subject === subject);
             return (
-              <section key={subject} aria-labelledby={`subject-${subject}`}>
+              <section key={subject} id={`subject-section-${subject}`} aria-labelledby={`subject-${subject}`} className="scroll-mt-24">
                 <h3 id={`subject-${subject}`} className="text-lg font-semibold">
                   {subject}
                 </h3>
@@ -193,6 +194,13 @@ export default async function QualificationHubPage({ params }: QualificationHubP
                     </li>
                   ))}
                 </ul>
+                <ExamNoteLinks
+                  links={collectSubjectNoteLinks(subjectPapers.map(({ entry }) => entry), hub.group, subject)}
+                  headingId={`subject-note-links-${subject}`}
+                  heading={`${subject}の解説記事`}
+                  headingLevel="h4"
+                  className="mt-4"
+                />
               </section>
             );
           })}

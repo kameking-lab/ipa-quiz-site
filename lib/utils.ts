@@ -22,6 +22,7 @@ export const EXAM_LABELS: Record<string, string> = {
   fp2: "2級FP技能検定",
   fp3: "3級FP技能検定",
   denken3: "第三種電気主任技術者",
+  denko2: "第二種電気工事士",
 };
 
 export function examLabel(exam: string): string {

@@ -5,6 +5,11 @@ import type { Question } from "./types";
 export function hasUnrenderableContent(q: Question): boolean {
   const hasFigures = (q.imageUrls ?? []).some((url) => url.trim().length > 0);
   if (hasFigures) return false;
+  if (q.choiceImageUrls && q.choices && Object.keys(q.choices).every((key) => Boolean(q.choiceImageUrls?.[key as keyof typeof q.choiceImageUrls]))) return false;
+  // A choice may contain a visual symbol while the stem itself is fully readable
+  // as text. Partial choice figures are sufficient in that case.
+  const stemNeedsFigure = /次の図|以下の図|下の図|図のように|図に示す|図中の/.test(q.question);
+  if (!stemNeedsFigure && Object.values(q.choiceImageUrls ?? {}).some(Boolean)) return false;
   const hasTable = /^\s*\|?\s*:?-{2,}:?\s*\|/m.test(q.question);
   if (hasTable) return false;
   if (q.hasImage) return true;

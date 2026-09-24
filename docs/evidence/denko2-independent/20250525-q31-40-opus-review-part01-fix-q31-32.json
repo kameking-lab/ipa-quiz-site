@@ -1,0 +1,48 @@
+{
+  "inputHashes": {
+    "draftSha256": "cd733ab72c41f297aa4efc65daff96670eba30769f7071e6dc05a86f7ddef498",
+    "candidateSha256": {
+      "31": "7a94324ecf250c8db88b1542caccd0173c819ab146474eb8c907324748ea2e3d",
+      "32": "ee289347ec603389354f0bc5359117f8b2257546b84ab2bd84eb0624c481f8ba"
+    },
+    "rowSha256": {
+      "31": "c6da9adf8194f386abcb376bdc819a1c46dbe4539fe0acf2387382c657a5d66b",
+      "32": "73d0c10007ac0fa68fc52330cedf5557c53ed4edc17ffbe220ddf1b5ed524de8"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "sourcePackSha256": {
+      "31": "6999b30ce957224031f6a6d5800b278d820919e95298a98fbb25b803bc61914f",
+      "32": "1d827b34752b5f2ffc2981f95dbc38ba0083d180bf5df424b5a1ee9ef1a10e48"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "editorialReviewNotesに「根拠条項（電技解釈 第116条 等）は画像だけでは判定できないため要確認」が残っている。添付の一次資料（電技解釈 PDF119頁 第116条第1項第六号・116-1表「上記以外」の区分）で、原則は地表上4m、技術上やむを得ず交通に支障がないときは地表上2.5mと確認できた。このため、この要確認メモは現状と食い違っている。確認済みの根拠（第116条第1項第六号・116-1表）へ書き換えること。",
+        "choiceExplanations.ハの「3mは本問の条件に対応する規定値ではない」は正しい。ただし、3mが何の値なのかが書かれていない。116-1表で3mは、道路を横断し技術上やむを得ない場合の路面上高さ、および横断歩道橋上の路面上高さである。誤答の由来として、この区分との取り違えを明記すべき。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionでP-Lを「幹線分電盤」と呼んでいるが、共通配線図にこの名称の表記はない。図のP-Lは、動力用(3φ3W200V)と電灯用(1φ3W100/200V)の2系統をそれぞれWhで受け、P-1・P-2・L-1へ幹線を送る盤として描かれているだけである。図にない名称を付けず、図の表記に沿った記述に改めること。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "editorialReviewNotesに「地中電線路にケーブルを求める規定（電技解釈 第120条 等）と各EM電線記号の正式名称は要確認」が残っている。添付の一次資料で次の2点を確認できたので、このメモは現状と食い違っている。確認済みの根拠へ書き換えること。①電技解釈 PDF121頁 第120条第1項：地中電線路はケーブルを使用する。②国交省 公共建築設備工事標準図 PDF24頁：EM-IEは600V耐燃性ポリエチレン絶縁電線、EM-EEF・EM-EE・EM-CEはシースケーブル。choiceExplanationsの各名称はこの資料と一致している。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

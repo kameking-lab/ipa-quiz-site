@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin6-q16-42-43-opus.json",
+  "upstreamReviewSha256": "76791f72fb4238edaeb998d93c6ccdb7330cf23954a56e9f47039e59b09633c7",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "14a90cab9ed7afe35f6da13f15ce0d4dc7c9faec2f4e9e99d390a9a5cf3628bc",
+    "rowSha256": {
+      "42": "9bdf5036b52062b923b8c9d599a15ba6179281f036f206bd3c0766602ae27317"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q42-i.png": "8e17590a11f6ec5512c42c2e25a13284eeb9811720ddd9ae2bb945ae8426ffc7",
+      "public/images/denko2/2024-first/q42-ro.png": "66fba4b138e166a1d9ad85616383cf4a933c7ce229dbc9b3e118de7fd6df795a",
+      "public/images/denko2/2024-first/q42-ha.png": "211645e61b0b0a2c02c4618fc0c5f4d2e6c00f0b177795f63e0985238139473d",
+      "public/images/denko2/2024-first/q42-ni.png": "64e2aaeb1ded91cd245e4aa60d86f2324d676a95e8fc2e053c25ce94258bfa1d"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 42,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式問題42の原図と公式正答ハを照合。4肢の切出しq42-i/ro/ha/ni.pngは原図の各写真と一致。公式共通配線図（15頁）で、⑫が下端の『600V CV 5.5-2C (VE28)』の管路を指す位置にあり、wiring-main.pngの切出しと一致することを確認。国交省 https://www.mlit.go.jp/gobuild/content/001888825.pdf（SHA bec6ec62…の公式抽出本文）で次を確認: 表1.2.3『硬質ビニル管 (VE) JIS C 8430』、2.4.5(1)『硬質ビニル管相互の接続は、TSカップリングを用い、カップリングには接着剤を塗布し』、2.12.4(4)『管相互の接続は、管内に水が浸入し難いように接続する』。JIS C 8430:2019 6.1（記号VE）も公式抽出本文で確認。ハを滑らかな樹脂製直線継手（TSカップリング形状）と分類する点は、公式問題・正答で直接裏付けられる。"
+    }
+  ]
+}

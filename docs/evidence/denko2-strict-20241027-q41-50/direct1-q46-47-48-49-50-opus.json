@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "draftSha256": "691ce4d055cad140005edd4a87c06cd8159390d8a49176dd2b6e2cf6bae9d4ed",
+    "candidateSha256": {
+      "46": "42a7397434acfc510208a69ffaf674a5a9d78698e5a3659d779e623d2d45a7bd",
+      "47": "e2ce116f02c3cd819723db841a0baef785252caf5ea01bdf7f156db28c574f29",
+      "48": "8477c06dfde0c6bb57dc27969dd4b7346c4f0dd8c5e8549b3315156ced6dac74",
+      "49": "398398a5f59d1a310532d6c692cd2bf9aa26c203b4672a8602c84ebccbd9fe8b",
+      "50": "b4518923b8633165653367375366f5884a3d52e94610863f4036c298372fe2e1"
+    },
+    "rowSha256": {
+      "46": "812227c44f30b5dcd7566477f417199547b6adeeab5af68669fcd4d607c27c3e",
+      "47": "96e580191d0a3ba8035dc5e0134af148fcf1592b0b0eb165f66e120f3971a3ea",
+      "48": "88e91f93570239cfdd049e2031252513b593754c9da04594bff78ca6358e40cc",
+      "49": "3d2ebeeeee30370fdbd72dc01a4c15a60029744a77a934daf0d4a543ccb6e0b1",
+      "50": "669ead54447b60e569cc456647fb136630401ef912189b9d6dd603e2a4d739d3"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/q46-1.png": "dd4bf92422a25037c855f1d4903835c80cacf9be62eb280d22810a5798804411",
+      "public/images/denko2/2024-second/q47-1.png": "38a2fa1d976572a81cb86d4fcadb560ebc22c9b6071515e3e5993aceb87cb54d",
+      "public/images/denko2/2024-second/q48-1.png": "7fca21f1925b5608946fd72420c39097515843dad8c26b39355e59a6cd672a0a",
+      "public/images/denko2/2024-second/q49-1.png": "84aa1e38f80d8c7db30cde670a9c082c50f587752709b970e6c488e8e0e52b2d",
+      "public/images/denko2/2024-second/q50-1.png": "7c75b2671e856995b1112b174ea78bc73bc61b57996daded292a3db5f5e36e27"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32"
+    },
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 46,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation and the ニ choice explanation both state that ニ \"is a CV cable\". The photo only shows a black round sheath, three cores (red, white and black), and filler and tape at the cut end. The official question and answer do not identify ニ, so calling it CV is a guess from appearance. The deciding point is flat VVF versus a round cable. Recommended wording: \"ニ is a round cable (black sheath with filler and tape), not the flat VVF specified for lighting circuits.\" If the text keeps the word CV, mark it as inferred from appearance."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation quotes the booklet note (lighting circuits use VVF and power circuits use CV unless otherwise stated) and uses it as the reason ハ is right and ニ is wrong. That note is not on page 15, and the page with the note was not included in this review. The official question PDF (https://www.shiken.or.jp/construction/upload/20241027_co_second_q01.pdf) could not be extracted as text with WebFetch, so the note was not checked word for word. Pin the page image or crop of the note and confirm the wording before publishing."
+      ],
+      "verifiedEvidence": "Question 46 row, original image: \"⑯で示す部分の配線工事に必要なケーブルは。ただし，心線数は最少とする。\" This matches the candidate, with no negation. Photos: イ is a gray round sheath with white and black cores plus tan filler and white tape. ロ is gray with white and black cores and no filler visible. ハ is gray with red, white and black cores and no filler visible. ニ is a black round sheath with red, white and black cores plus tape and filler. All match the candidate descriptions. Page 15 wiring diagram: ⑯ points to the riser symbol (small circle and arrow) beside the ceiling light labelled ハ on the 1st-floor stairs. The 1st-floor stairs also have a 3-way switch marked \"3 ハ\" (●). On the 2nd floor, the switch group イロハ (●●●) marks ハ with \"3\", and its line runs to the pull-down symbol at the stairs. ① runs from the hatched-circle junction box ⑬ to the switch group. The ⓒ label sits on the line from ⑬ to the L-2 panel, and the L-2 panel diagram shows ⓒ as a 100V 20A circuit. So the cable at ⑯ carries 2 traveler wires plus 1 grounded wire, 3 cores in total. This matches official answer ハ. The official answer, ハ, is as given in the prompt. Answer PDF: https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf (could not be extracted as text)."
+    },
+    {
+      "number": 47,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The parenthetical in the explanation (\"where there is no risk of pressure from vehicles or other heavy objects, covering the top of the cable with a sturdy board or similar is also allowed\") paraphrases 電技解釈 第120条 第4項. The wording has not been checked against the source text, including which voltage classes it applies to and the exact phrase \"堅ろうな板又はとい\". Quote the clause verbatim after checking the source, or delete the parenthetical.",
+        "The イ choice explanation says the warning sheet signals \"at the surface or at a shallow depth\". A buried warning sheet is laid in the soil above the cable and warns people when they dig. It does not signal at the surface, so \"地表\" is wrong. Recommended wording: \"a buried warning sheet laid above the cable to warn during excavation.\"",
+        "The ハ choice explanation states outright that ハ is \"pipe used to build an underground duct run (管路式)\", which is a guess from the photo. The main explanation hedges (\"波付硬質合成樹脂管などの可とう管\"), so the two are inconsistent. Align them by describing ハ as \"a flexible corrugated pipe, not a trough\"."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation makes a regulatory claim based on 電技解釈 第120条 第4項 (direct burial requires a sturdy trough or other protection), but officialReferenceUrls is empty. The METI texts could not be fetched: WebFetch returned HTTP 403 for https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf and https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishakukaisetsu.pdf. The clause number and wording are therefore unchecked. Add the METI URL above and the clause and item number to officialReferenceUrls, and confirm the wording."
+      ],
+      "verifiedEvidence": "Question 47 row, original image: \"⑰で示す部分に使用するトラフは。\" This matches the candidate, with no negation. Photos: イ is a light-orange sheet printed in red with \"危険　注意　この下に低圧電力ケーブルあり\". ロ is a gray U-shaped trough body with a lid resting on part of it. ハ is a black corrugated, spiral flexible pipe. ニ is the end of a black-sheathed cable with 2 cores exposed and tape at the root. All match the candidate descriptions. Page 15 wiring diagram: ⑰ points to the vertical dash-dot line (underground route) between the two handhole ◎ symbols on the right of the parking area, and that route is labelled \"トラフ\". The lower horizontal route (EM-CE5.5) is also labelled \"トラフ\". The official answer, ロ, is as given in the prompt. Official answer PDF: https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf."
+    },
+    {
+      "number": 48,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation for ロ says the meaning of the \"15\" label cannot be determined from the image, which leaves an admitted ambiguity. It also says ロ \"does not have the 3-terminal structure needed for a three-phase 200V power circuit\". The photo shows only the outside of 2 cords, not how many cores each one has, so that claim is not established. Replace it with what can be seen: ロ has no three-phase 3-terminal cover and no \"三相200V\" rating label like イ. Do not make claims about its internal structure or what it is.",
+        "Both explanations state outright that ハ is a molded-case circuit breaker (配線用遮断器). The photo also shows a red indicator or button at the lower right, and the fine print on the rating label cannot be read, so the image does not settle whether ハ is a breaker or a residual-current breaker. The deciding point is that ハ has no capacitor rating. Recommended wording: \"a 3-pole breaker with a 10A rating label; it has no capacitance (μF) rating.\""
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Question 48 row, original image: \"⑱で示す図記号の機器は。\" This matches the candidate. Photos: イ has 3 terminal covers on top and a label reading \"⚠危険 感電危険 触れるな\", \"三相 200V\" and \"40 μF\". ロ is a gray oval cylinder with a \"15\" label and 2 gray cords coming out of the bottom. ハ shows \"BBW-30CM\", a large \"10 A\", 3 poles of terminal screws at top and bottom, a handle, and a red part at the lower right. ニ is a contactor and thermal overload relay combined (magnetic starter). Page 15 wiring diagram: ⑱ points to the capacitor symbol to the right of the 1.5kW motor in the 1st-floor factory. The ■ⓑ switch S above the motor shows it is fed from P-1 circuit b (3P 30A, 1st-floor factory). The legend defines the square-letter circuits a to e as three-phase 200V circuits. The official answer, イ, is as given in the prompt. Official answer PDF: https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf."
+    },
+    {
+      "number": 49,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation calls ring sleeves \"for thin wires\" (細い電線用), which is vague and does not give a size range. State the size range or remove the phrase."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation's reason makes two claims taken from standards: that the yellow-handled crimper is for ring sleeves, and that a ring-sleeve crimper cannot crimp IV 14mm² wire. No official primary source supports either claim, and officialReferenceUrls is empty. The official answer only confirms that イ is not used. Either cite a primary source for the tool's rating and the ring sleeve's size range (for example, the JIS entries at jisc.go.jp), or rewrite the reason as observations only, such as \"a tool for small ring sleeves, not for crimping large sleeves\"."
+      ],
+      "verifiedEvidence": "Question 49 row, original image: \"⑲で示すジョイントボックス内の電線相互の接続作業に使用されることのないものは。\" The negation \"使用されることのないもの\" is in bold, and it matches the candidate. Photos: イ has yellow handles and a black head with several dies. ロ is a cable cutter with blue arms and yellow grips. ハ is an electrician's folding knife with a wooden handle. ニ is a manual hydraulic crimper with 2 long black handles. All match the candidate descriptions. Page 15 wiring diagram: ⑲ points to the small square junction box to the left of the 1st-floor factory. The \"IV14×3 (E31)\" run from the P-2 power panel ends there. The \"CV 14-3C\" leader points to the line in the bundle from the P-1 power panel that runs up to that box. The P-1 panel diagram shows circuit e as 3P 50A to \"P-2, 1st-floor factory\". The official answer, イ, is as given in the prompt. Official answer PDF: https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf."
+    },
+    {
+      "number": 50,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "The イ choice text says the fitting has 2 set screws sticking out. The photo shows 3 screw heads: a tall screw on the left, a screw on a metal strap, and another screw below the strap. The strap and its screws look like an earthing terminal, so \"止めねじが2本\" is inaccurate. Recommended wording: \"has a set screw and screws on a metal strap sticking out\"."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation says ハ and ニ are \"likely\" fittings for different plastic conduits (とみられ), and the choice explanations use the same hedge for PF conduit and one-touch connectors. These identifications are guesses from the photos, which leaves an ambiguity. Rewrite the reason for ハ and ニ using only visible structure: neither has an internal spiral groove that could engage the corrugations of a Type 2 metal flexible conduit. Drop the guessed product types."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "The explanation treats \"(F2 30)\" as meaning Type 2 metal flexible conduit, size 30. That reading comes from the JIS C 0303 drawing symbols. The page 15 legend does not define F2, and officialReferenceUrls is empty. Add a primary source for how the drawing notation reads, or pin a note in the official booklet that defines it."
+      ],
+      "verifiedEvidence": "Question 50 row, original image: \"⑳で示す図記号の電線管をモーターに接続するために使用されるものは。\" The phrase \"使用されるもの\" is in bold, and it matches the candidate. Photos: イ is a metal connector with 3 screw heads, a strap and a male thread with a locknut. ロ is a metal connector with an internal spiral groove on one side and a male thread with a locknut on the other. ハ is a black resin fitting with a corrugated outer surface. ニ is a gray resin fitting with vertical slits around the inner edge. Page 15 wiring diagram: ⑳ points to the solid line labelled \"(F2 30)\" between the 3.7kW motor on the left of the 1st-floor factory and the dashed box ⑩. The official answer, ロ, is as given in the prompt. Official answer PDF: https://www.shiken.or.jp/construction/upload/20241027_co_second_a01.pdf."
+    }
+  ]
+}

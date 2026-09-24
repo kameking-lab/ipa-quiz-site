@@ -392,6 +392,7 @@ export default async function QuestionPage({
           <QuestionAnswerCard
             questionId={q.id}
             choices={q.choices}
+            choiceImageUrls={q.choiceImageUrls}
             answerKey={answerKeys as ChoiceKey[]}
             answerText={answerText}
             exam={q.exam}

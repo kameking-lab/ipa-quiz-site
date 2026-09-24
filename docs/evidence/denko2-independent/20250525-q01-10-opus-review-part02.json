@@ -1,0 +1,80 @@
+{
+  "inputHashes": {
+    "draftSha256": "6ebd5822d981658ae86d2efec537a223a1fa2079b4c03e52c55b1cf8822df420",
+    "rowSha256": {
+      "6": "dd14fbc592b7c45af983cd2d48720bb73bb892f8602356bd5bf8f9f93fc31047",
+      "7": "4f32a8a4c3c0e78b4041a1934063142ba344ab659566c96282ad0d6b2c9e5fe0",
+      "8": "a302ee8a75a90772189f62830118f57bb89400baf48e774172f91fc320eec7a5",
+      "9": "556146057c5477690dd7f44a384070e525bd60a711702526f0894ba9135652e0",
+      "10": "2f21aa5a477ae99689fd5b7dfc13c73aab5735231a17c4f58ad58a26a7c7d390"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q6.png": "7807a87e8f346916c1ff9c0f62711683e4de19daf6df7ca1f0bd94926c232de0",
+      "public/images/denko2/2025-first/q7.png": "4e4281d8deae53ab0d81afaf5eff26365add05c27ee094bd7a20a79bea839df3",
+      "public/images/denko2/2025-first/q9.png": "32d1b98000404f451dc3c1af07e90df1510d4cd25c60fc31aa3e1ce90f29cdaa",
+      "public/images/denko2/2025-first/q10-i.png": "55bd4e3ec629f4e07dac0cd7938f411fc04487d205e25c4fd39566c2e60e534d",
+      "public/images/denko2/2025-first/q10-ro.png": "aa40aa3619b8ff57a4f3f8e077da1e65930384230605194b0c8afdec55ae487f",
+      "public/images/denko2/2025-first/q10-ha.png": "4eaeeaba96dde52efa75fb1a6f4c79a7ae0f3254ad66a9626d8e46968136ba51",
+      "public/images/denko2/2025-first/q10-ni.png": "ccf610d56e38afd5bc841a0caae6e724030382204edb760040a23c38837041ca"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "原本画像には許容電流表が載っていない。49A（5.5mm²）、37A（3.5mm²）、61A（8mm²）という基本の許容電流値と、「小数点以下7捨8入」という端数処理の規定は、内線規程や電技解釈の表で確認する必要がある"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationは「電線長が8m以下(本問は6m)の場合、…35%以上」と書いている。35%が適用されるのは「3mを超え8m以下」の区間だけ。3m以下なら許容電流の制限はない。「3mを超え8m以下」に直す",
+        "choiceExplanations.ロも「距離が8m以内(6m)であるため…35%以上」と書いている。こちらも「3mを超え8m以下」に直す",
+        "choiceExplanations.ハの「この距離区分(8m以内)」も同じ誤りなので、「3mを超え8m以下」に直す"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "次の3つの区分が正しいかは電技解釈（第148条相当）の条文で確認する必要がある：3m以下は制限なし、3mを超え8m以下は35%以上、8mを超える場合は55%以上"
+      ]
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "次の分岐回路の基準は原本画像に載っていないため、電技解釈（第149条相当）や内線規程で確認する必要がある：20A配線用遮断器の分岐回路は電線1.6mm以上・コンセント20A以下、30A分岐回路は電線2.6mm（5.5mm²）以上・コンセント20A以上30A以下",
+        "分岐点から配線用遮断器まで3m以下なら、その間の電線太さに追加の条件はかからないという規定も、条文で確認する必要がある"
+      ]
+    }
+  ]
+}

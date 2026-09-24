@@ -1,0 +1,128 @@
+[
+  {
+    "number": 31,
+    "question": "①で示す部分の工事方法として、適切なものは。",
+    "choices": {
+      "イ": "金属可とう電線管工事",
+      "ロ": "金属線ぴ工事",
+      "ハ": "600V ビニル絶縁ビニルシースケーブル丸形を使用したケーブル工事",
+      "ニ": "金属管工事"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "問題2の共通条件は木造2階建住宅。①は電力量計Whから分電盤へ木造住宅の屋側を通る配線。電技解釈第110条第2項の低圧屋側電線路の施設方法はケーブル工事を挙げ、金属管は木造以外に限る。金属可とう電線管・金属線ぴは同項の方法に挙がらないため、VVRのケーブル工事が適切。",
+    "choiceExplanations": {
+      "イ": "金属可とう電線管工事は第110条第2項に列挙された屋側電線路の施設方法に含まれない。",
+      "ロ": "金属線ぴ工事も同項の屋側電線路の施設方法に含まれない。",
+      "ハ": "正解。600V VVRを用いるケーブル工事は同項第五号に挙げられ、木造の①に適する。",
+      "ニ": "金属管工事は同項第三号で木造以外の造営物に限られるため、この木造住宅の屋側には適さない。"
+    },
+    "diagramDescription": "1階平面図の①は、上部外壁の電力量計Whから建物の屋側を通って電灯分電盤へ至る破線の配線を指す。問題冊子の共通注意に木造2階建住宅とある。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q31.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ]
+  },
+  {
+    "number": 32,
+    "question": "②で示す図記号の器具の種類は。",
+    "choices": {
+      "イ": "接地極付コンセント",
+      "ロ": "接地端子付コンセント",
+      "ハ": "接地極付接地端子付コンセント",
+      "ニ": "漏電遮断器付コンセント"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "②のコンセントの傍記はET。Eは接地極、ETは接地端子、EETは両方、ELは漏電遮断器を表すため、ETだけのロが正しい。",
+    "choiceExplanations": {
+      "イ": "接地極付なら傍記はE。②の傍記はETで、接地極ではなく接地端子を示す。",
+      "ロ": "正解。ETは接地端子付を示し、②の傍記と一致する。",
+      "ハ": "両方を備える接地極付接地端子付ならEET。近くに別のEETがあるが②はET。",
+      "ニ": "漏電遮断器付の傍記はELであり、②のETとは一致しない。"
+    },
+    "diagramDescription": "1階台所右上の②は、傍記ETのあるコンセント記号を指す。近くのEET表記の別コンセントとは異なる。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q32.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ]
+  },
+  {
+    "number": 33,
+    "question": "③で示す部分の小勢力回路で使用できる電圧の最大値[V]は。",
+    "choices": {
+      "イ": "24",
+      "ロ": "30",
+      "ハ": "40",
+      "ニ": "60"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "図の③は押しボタン・変圧器・チャイムにつながる呼鈴回路。電技解釈第181条第1項は呼鈴等に接続する小勢力回路の最大使用電圧を60V以下と定義する。",
+    "choiceExplanations": {
+      "イ": "24Vは小勢力回路で使用できる場合があるが、第181条の上限60Vではない。15V超30V以下の区分に入る。",
+      "ロ": "30Vは第181条181-1表の15V超30V以下の区分の境界であり、上限はさらに高い60V。",
+      "ハ": "40Vは30V超60V以下の区分内に入るが、その区分の最大値60Vではない。",
+      "ニ": "正解。第181条は呼鈴等の小勢力回路を最大使用電圧60V以下とする。"
+    },
+    "diagramDescription": "1階左下の③は門柱側の押しボタンへ向かうVE28傍記の線。屋内には呼鈴用変圧器Tとチャイムの記号がある。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q33.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ],
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf"
+    ]
+  },
+  {
+    "number": 34,
+    "question": "④で示す部分の配線で(VE28)とあるのは。",
+    "choices": {
+      "イ": "内径28 mmの硬質ポリ塩化ビニル電線管",
+      "ロ": "内径28 mmの合成樹脂製可とう電線管",
+      "ハ": "外径28 mmの硬質ポリ塩化ビニル電線管",
+      "ニ": "外径28 mmの合成樹脂製可とう電線管"
+    },
+    "officialAnswer": "イ",
+    "explanation": "④のEM-CE(VE28)のうちVEは硬質ポリ塩化ビニル電線管、28は呼び径で内径の近似値を表す。実寸が正確に28mmという意味ではない。",
+    "choiceExplanations": {
+      "イ": "正解。VEは硬質ポリ塩化ビニル電線管、28はおおむね内径を示す呼び径。",
+      "ロ": "合成樹脂製可とう電線管ならPF管またはCD管と表記する。図のVEとは管種が違う。",
+      "ハ": "VEという管種は合うが、28は外径でなく内径の近似値を表す呼び径。",
+      "ニ": "可とう電線管ならPF/CDでありVEではない。さらに28も外径表示ではない。"
+    },
+    "diagramDescription": "④は1階左側の屋外器具に向かう配線の傍記EM-CE(VE28)の括弧内VE28を指す。③の線にもVE28があるが別箇所。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q34.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ]
+  },
+  {
+    "number": 35,
+    "question": "⑤で示す図記号の名称は。",
+    "choices": {
+      "イ": "600V 耐燃性ポリエチレン絶縁電線",
+      "ロ": "600V 架橋ポリエチレン絶縁耐燃性ポリエチレンシースケーブル",
+      "ハ": "600V 耐燃性架橋ポリエチレン絶縁電線",
+      "ニ": "600V ポリエチレン絶縁耐燃性ポリエチレンシースケーブル平形"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "図の傍記EM-CEは、600V架橋ポリエチレン絶縁耐燃性ポリエチレンシースケーブルを表す。後半のVE28は収める管であり、ケーブルの種類ではない。",
+    "choiceExplanations": {
+      "イ": "耐燃性ポリエチレン絶縁電線はEM-IEで、図のEM-CEというケーブル略号ではない。",
+      "ロ": "正解。EM-CEは架橋ポリエチレン絶縁・耐燃性ポリエチレンシースのケーブル。",
+      "ハ": "耐燃性架橋ポリエチレン絶縁電線はEM-ICで、図のEM-CEとは違う。",
+      "ニ": "平形のポリエチレン絶縁耐燃性ポリエチレンシースケーブルはEM-EEFで、EM-CEとは違う。"
+    },
+    "diagramDescription": "⑤は④と同じ配線の傍記EM-CE(VE28)の前半EM-CEを指す。④は後半のVE28を問う。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20251026/q35.png",
+    "imageUrls": [
+      "/images/denko2/2025-second/wiring-first-floor.png"
+    ]
+  }
+]

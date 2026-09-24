@@ -1,4 +1,8 @@
 import { describe, expect, it } from "vitest";
+import { existsSync } from "node:fs";
+import { join } from "node:path";
+import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
+import { DENKO2_SKILL_PROBLEMS } from "@/lib/denko2/skills";
 import { FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import fp2Practical from "@/data/questions/fp2/practical-2024-2025.json";
@@ -20,6 +24,48 @@ const completePapers = [
 ] as const;
 
 describe("live external qualification two-year publication gate", () => {
+  it("publishes all four electrician academic papers and eight practical days after the release gate", () => {
+    const status = QUALIFICATION_CATALOG.find((item) => item.examCode === "denko2")?.status;
+    expect(status).toBe("live");
+    expect(DENKO2_QUESTIONS).toHaveLength(200);
+    for (const year of [2024, 2025]) {
+      for (const season of ["first", "second"] as const) {
+        const paper = DENKO2_QUESTIONS.filter((item) => item.year === year && item.season === season);
+        expect(paper, `${year}-${season}`).toHaveLength(50);
+        expect(paper.map((item) => item.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+        for (const question of paper) {
+          expect(Object.keys(question.choices ?? {})).toHaveLength(4);
+          expect(Object.keys(question.choiceExplanations ?? {})).toHaveLength(4);
+          expect(Object.values(question.choiceExplanations ?? {}).every((reason) => reason.trim().length > 10)).toBe(true);
+          expect(question.needsReview).toBe(false);
+          expect(question.sourcePdfUrl).toMatch(/^https:\/\/www\.shiken\.or\.jp\/construction\/upload\//);
+          expect(question.sourceAnswerUrl).toMatch(/^https:\/\/www\.shiken\.or\.jp\/construction\/upload\//);
+          for (const image of [...(question.imageUrls ?? []), ...Object.values(question.choiceImageUrls ?? {})]) {
+            expect(existsSync(join(process.cwd(), "public", image!.replace(/^\//, ""))), `${question.id}: ${image}`).toBe(true);
+          }
+        }
+      }
+    }
+    expect(DENKO2_SKILL_PROBLEMS).toHaveLength(104);
+    const dates = [...new Set(DENKO2_SKILL_PROBLEMS.map((item) => item.date))];
+    expect(dates).toHaveLength(8);
+    for (const date of dates) {
+      const day = DENKO2_SKILL_PROBLEMS.filter((item) => item.date === date);
+      expect(day, date).toHaveLength(13);
+      expect(day.map((item) => item.number)).toEqual(Array.from({ length: 13 }, (_, index) => index + 1));
+      for (const problem of day) {
+        expect(problem.instructionText.trim().length).toBeGreaterThan(20);
+        expect(problem.conditionsText.trim().length).toBeGreaterThan(20);
+        expect(problem.questionPdfUrl).toMatch(/^https:\/\/www\.shiken\.or\.jp\/construction\/upload\//);
+        expect(problem.answerPdfUrl).toMatch(/^https:\/\/www\.shiken\.or\.jp\/construction\/upload\//);
+        for (const image of [problem.diagramImage, problem.secondFigureImage, problem.answerConceptImage,
+          problem.answerWiringImage, problem.answerExampleImage].filter((item): item is string => Boolean(item))) {
+          expect(existsSync(join(process.cwd(), "public", image.replace(/^\//, ""))), `${problem.id}: ${image}`).toBe(true);
+        }
+      }
+    }
+  });
+
   it.each(completePapers)("$exam includes every academic choice and independently reviewed reason for two complete years", ({ exam, questions, academic }) => {
     expect(QUALIFICATION_CATALOG.find((item) => item.examCode === exam)?.status).toBe("live");
     expect(new Set(academic.map((paper) => paper.year))).toEqual(new Set([2024, 2025]));
@@ -72,6 +118,43 @@ describe("live external qualification two-year publication gate", () => {
         expect(Object.keys(question.choiceExplanations).sort(), `FP3 Q${question.number}`).toEqual(["ア", "イ", "ウ"]);
         expect(Object.values(question.choiceExplanations).every((reason) => reason.trim().length > 10), `FP3 Q${question.number}`).toBe(true);
         expect(question.needsReview, `FP3 Q${question.number}`).toBe(false);
+      }
+    }
+  });
+
+  it("keeps official answer keys and adjacent figures out of learner-facing FP text", () => {
+    const answerKeyLeak = /(?:^|\n|\\n)\s*(?:正解|解答)\s*[1-5１-５ア-オ]/;
+    const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];
+
+    for (const question of academic) {
+      expect(question.question, question.id).not.toMatch(answerKeyLeak);
+      for (const [key, choice] of Object.entries(question.choices ?? {})) {
+        expect(choice, `${question.id} choice ${key}`).not.toMatch(answerKeyLeak);
+      }
+    }
+
+    expect(JSON.stringify(fp2Practical), "FP2 practical papers").not.toMatch(answerKeyLeak);
+    expect(JSON.stringify(fp3Practical), "FP3 practical papers").not.toMatch(answerKeyLeak);
+  });
+
+  it("uses only the official FP body, answer, and legal-reference hosts", () => {
+    const allowedHosts = new Set([
+      "www.jafp.or.jp",
+      "laws.e-gov.go.jp",
+      "www.hellowork.mhlw.go.jp",
+      "www.meti.go.jp",
+      "www.mhlw.go.jp",
+      "www.mlit.go.jp",
+      "www.nta.go.jp",
+    ]);
+
+    const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];
+    expect(new Set(academic.map((question) => question.id)).size).toBe(academic.length);
+    for (const question of academic) {
+      expect(new URL(question.sourcePdfUrl).hostname, question.id).toBe("www.jafp.or.jp");
+      expect(new URL(question.sourceAnswerUrl!).hostname, question.id).toBe("www.jafp.or.jp");
+      for (const referenceUrl of question.officialReferenceUrls ?? []) {
+        expect(allowedHosts.has(new URL(referenceUrl).hostname), `${question.id}: ${referenceUrl}`).toBe(true);
       }
     }
   });

@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "26": "876ba81dd6a49ca2bcb701ca55c5862f5d50902b0f3e801e51bc5985dc9909b4",
+      "27": "a44a55e178ae660790b55384e62064b54ec8872eac4bb1a627afcb9724ac56ca",
+      "31": "047efe2b3970760832f6c0d862f3ab72aad352988c833773b88dd46854ededac",
+      "33": "9cc4c174414e36bd6037378fb4fcb72336c0b531554c4737c656d613782c2c8a",
+      "35": "b6fc62ab65e69736450e06233519c2f0bee0450864f8e5ae2f5544acfc924e88"
+    },
+    "sourceCropSha256": {
+      "26": "a6f969fb16f19bec5d06d7ef3f24094759195fc92531c21c5ea688c65453d540",
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba",
+      "31": "b580dcd00adf46a8be8ae893fb54cda930b70a0feb12572cf4dd22c7ebf8dde3",
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b",
+      "35": "27e65a19d859afdf2fd176e179e0202a675e8ac11c5338843f60e14202ee5bcb"
+    }
+  },
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the question text, the negation (適合していないもの) and the values in イ–ニ against the official question-image crop; official answer イ matches. Interpretation of the Technical Standards Art. 17(4)(i), from the official local excerpt https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf (SHA256 7ff56485…, PDF p.33; WebFetch returned 403): Class D grounding resistance is 100Ω or less, or 500Ω or less where the circuit is cut automatically within 0.5 s. Ministerial Ordinance Art. 58 table, from https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096 (confirmed via the e-Gov API): circuits of 300V or less with voltage to earth of 150V or less need 0.1MΩ. So イ fails at 600Ω > 500Ω, ロ at 500Ω and ニ at 0.1MΩ are at the limit and comply, and ハ complies."
+    },
+    {
+      "number": 27,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation's reasoning is unsound. It argues that a meter marked for AC cannot be a permanent-magnet moving-coil type (永久磁石可動コイル形) because that type is DC-only. But a rectifier-type meter (整流形) uses a permanent-magnet moving-coil movement and still reads AC, so the AC mark alone does not rule it out. ロ is wrong only because of the operating-principle symbol at lower left. Rewrite the reason for ロ on that basis.",
+        "choiceExplanations.ロ has the same flaw: '永久磁石可動コイル形は直流用で、目盛板の交流記号とも合わないため誤り' treats the AC mark as the reason ロ is wrong."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. No primary source supports reading the lower-left symbol as a moving-iron type (可動鉄片形) or the '1.0' as an accuracy class (階級1.0). The same unsupported claims appear in explanation, choiceExplanations.ロ and diagramDescription. Official answer ロ only proves that the permanent-magnet moving-coil statement is false; it does not prove the symbol means moving-iron. A WebSearch limited to meti.go.jp, shiken.or.jp, jisc.go.jp, mlit.go.jp and e-gov.go.jp found no primary source for this symbol meaning. Either add a verifiable primary source (for example JIS C 1102 via JISC) or limit the text to what the official answer proves.",
+        "No primary source supports the device-spec claim that a permanent-magnet moving-coil meter's torque reverses with current direction, making it DC-only."
+      ],
+      "verifiedEvidence": "Checked the question text, the negation (誤っているもの), イ–ニ and the dial drawing against the official question-image crop. The public crop q27.png matches the original dial: the 0/50/100/150 scale, V with a wave mark, the lower-left symbol, the open-bottom rectangle symbol and 1.0. Because official answer ロ marks ロ as the only false statement, it confirms that イ (voltmeter), ハ (use level) and ニ (AC use) are correct. It does not confirm the moving-iron reading of the symbol."
+    },
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the question and choices イ–ニ against the official question-image crop; official answer イ (リモコンセレクタスイッチ) matches. In the official common wiring diagram (question PDF p.15), marker ① points to the circle-with-cross symbol at the right end of the '分電盤へ' arrow, labelled '6 ⓐ～ⓕ用' with double circles. In the lighting panel diagram, the triangle group is labelled '6' and outputs the double-circled ⓐ～ⓕ, which the legend defines as single-phase 200V circuits. All of this matches the candidate. The crops q31-symbol.png, wiring-main.png and wiring-panels.png match the original drawing and marker positions."
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation is circular. It says ニ is correct because it corresponds to official answer ニ, and never says why ③ needs ニ's blade-slot layout: a 100V, 20A outlet with a grounding pole, fed from circuit ⓘ (100V, 20A). It also does not say what イ, ロ and ハ are rated for. The learner is left without the key point that this is a 100V circuit.",
+        "choiceExplanations.イ gives no substantive reason. It only says イ differs from the vertical layout of official answer ニ, and does not say that イ's horizontal L-shaped slot is not the 100V 20A layout, which is the point that separates it from ニ."
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. If the rewritten explanation states the rated voltage and current of each layout (for example 125V 20A with grounding pole, or 250V 20A with grounding pole), that claim needs a primary source such as the METI Electrical Appliance technical standards or JIS C 8303 via JISC."
+      ],
+      "verifiedEvidence": "Checked the question text and the shapes in イ–ニ against the official question-image crop; official answer ニ matches. The four public choice crops q33-i/ro/ha/ni.png match the original. イ is a horizontal L-shape plus horizontal flat slot, ロ two vertical flat slots, ハ two horizontal flat slots, and ニ a vertical L-shape plus vertical flat slot; all four have a grounding pole. In the official common wiring diagram, marker ③ points to the 'E20A' outlet on the right wall, connected to ⓘ. The lighting panel diagram shows ⓘ as 100V 20A."
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the question and choices イ–ニ (inner/outer diameter, rigid PVC conduit vs flexible synthetic-resin conduit) against the official question-image crop. Official answer ハ, 'inner diameter 28 mm rigid PVC conduit', directly supports reading VE28 as a rigid PVC conduit (硬質ポリ塩化ビニル電線管) with a 28 mm inner diameter. In the official common wiring diagram (p.15), the leader from ⑫⑬⑤ points to the chain-line wiring at the bottom labelled '600V CV 5.5-2C (VE28)'. wiring-main.png matches the original."
+    }
+  ]
+}

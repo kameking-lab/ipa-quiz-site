@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3897,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 14733,
+      "webSearchRequests": 0,
+      "costUSD": 0.196243,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2654,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q15": {
+      "/exam-library/emkohyo-EM20261804/q15-p10-0.webp": "cd2d7842c628894ca12772eddcfe9d93353521c69691614d37ec4001d0bd8eef"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/images/emkohyo-EM20261804-q15-jaea-p23.png": "7fabcbccbf63e3707649e2b7f5d7f9b431b1d638f44cf91ff475f09e98aa679a"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q15": "f6aa8be6b320c233bcf8d902f726c20511af31d74adea45881820cadd9f90f8b"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q15-15.json",
+  "sourcePackSha256": "693155cea8ff36e3cca381f927779d9304ed86e3b24c28be48311e97d8f8c0ce",
+  "assessment": {
+    "emkohyo-EM20261804-q15": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2: 理由が『産総研の原子吸光光度計の機器仕様は』としているが、引用ページの担当窓口は『鳥取県産業技術センター機械素材研究所無機材料グループ』である。これは産総研中国センターの『中国地域公設研究機関の開放機器』一覧に掲載された鳥取県の設備で、産総研の装置ではない。出典名（sources[1].title）とも食い違うので、帰属を『産総研が掲載する中国地域公設研究機関（鳥取県産業技術センター）の開放機器仕様』などに直す必要がある。",
+        "肢2: 理由が『機器仕様と一致する』だけで終わっており、個別因果がない。重水素ランプがなぜバックグラウンド補正に使えるのかを書く必要がある。重水素ランプの連続光は、分子吸収や散乱による広帯域のバックグラウンドには吸収されるが、幅の狭い原子吸収線にはほとんど吸収されない。そのため、中空陰極ランプ光の吸光度から差し引くことで原子吸収分だけを取り出せる。この機構の説明が欠けている。"
+      ],
+      "sourceIssues": [
+        "肢2: 産総研掲載ページは機器仕様の箇条書き（『バックグラウンド補正 連続スペクトル光源補正（重水素ランプ）または自己反転補正』）にすぎない。重水素ランプが補正に用いられるという事実は支持するが、補正原理は支えない。原理を理由に加えるなら、それを直接説明する政府資料（例: 厚労省・環境省の告示試験法や衛生試験法系資料のバックグラウンド補正の説明）を追加すべき。厚労省8e01.pdf p.12は『バックグラウンド補正部を備えたものもある』とするのみで、重水素ランプには言及していない。",
+        "肢3: PNC-TN841-71-36 は1971年の動力炉・核燃料開発事業団（PNC）の技術資料で、JAEAは公開元（承継機関）にあたる。理由の『日本原子力研究開発機構の原子吸光分析報告』は作成主体として厳密でないため、『動燃（現JAEA公開）』などの表記が望ましい。また、この出典の claimedExcerpts は空で、本文テキスト照合は行われていない。根拠は p.23 のページ画像のみである。画像では §3-5 冒頭に『熱解離した原子は大部分基底状態にあるが，一部は励起されたり，イオン化されたりする』と確認でき、内容は肢3を支持している。",
+        "肢4: 食品安全委員会資料の抽出文脈に行番号（15〜22）が混入しており、審議用の評価書（案）である可能性がある。確定版の評価書で同じ記述（炭素管に大電流を流し発生したジュール熱で原子化＝グラファイト炉原子化法）が維持されているか確認が望ましい。記述内容自体は肢4を直接支持している。"
+      ],
+      "needsExternalCheck": [
+        "肢2の補正原理（重水素ランプ連続光による広帯域バックグラウンド吸収の差し引き）を直接説明する政府一次資料の特定",
+        "食品安全委員会 fileId=210（kai20180425ro3）が審議用案か確定評価書かの確認と、確定版での該当記述の有無"
+      ]
+    }
+  }
+}

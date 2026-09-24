@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5025,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13378,
+      "webSearchRequests": 0,
+      "costUSD": 0.2077878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1881,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q13-13-raw-response.txt",
+  "rawResponseSha256": "eaa279811fe00c84b52fe7b5ae101593092cfebaef0433536570c60545f71f39",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q13": {
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig1.webp": "ef4137be3e1ed66501e505088816a4f55b0b8c19522a15d68ab80d14a2240c35",
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig2.webp": "28ed51811120e5541b00d8e33873ffff63b2fd9e44832ea0d7afc60fe2abd0d2",
+      "/exam-library/emkohyo-EM20261807/text-q13-p8-fig3.webp": "f96d811bcd6eabebe0ec7046a1c242987a76fa754cd3e5b07b188767194fec82"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q13": {
+      "/exam-library/emkohyo-EM20261807/q13-p8-0.webp": "ceb036f6e79d86476daf5acf2096d8ada2f9f8a4dd9e94dacb8f156288e1ec2f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q13": "bfc7bbc41de37b750b7c0510baf1cf9637234f9cce7af35b69f73b1adfb6d330"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q13-13.json",
+  "sourcePackSha256": "45411fd51ec451277c362f13c7a81478dc48105d52037bf5a9b3d49e9a43e55d",
+  "assessment": {
+    "emkohyo-EM20261807-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢4の理由は『シアノ基は－C≡N（－CN）』という名称と式の対応を税関資料で裏付けたとしているが、同PDF（sha256 a0f269e4…で再取得・全20頁の抽出テキストを確認）には『シアノ基』という語が一度も出てこない。資料が示すのは『ニトリル RC≡N／-C≡Nで表される基を有する有機化合物をニトリルと呼称する』（p.8）だけで、支えているのは式－C≡Nとニトリルの関係まで。本問で判定対象となる名称『シアノ基』と式－CNの対応は、政府資料では直接支えられていない。シアノ基を名称として明記する政府一次資料を追加するか、理由文を『税関資料はニトリルの基を－C≡Nと示しており、この基をシアノ基と呼ぶ』のように、資料が支える範囲と一般的な化学知識の部分とを分けて書くべき。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3324,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12991,
+      "webSearchRequests": 0,
+      "costUSD": 0.17067179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2476,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q01-01-raw-response.txt",
+  "rawResponseSha256": "6735fdd3dc052f1d43f5ed0bad5bb84de2a63175f11f64c88229f054d439ba2b",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q1": {
+      "/exam-library/emkohyo-EM20251807/q1-p2-0.webp": "a5684c7ff2f67c4be046920940de60b7d7df8c4c9ab61f0d0228324ec54616d4"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q1": "0ad1ee2b640bbfe311ed45043628f7af60f0b4ad2d13abc85da28f44b4dcee9d"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q01-01.json",
+  "sourcePackSha256": "72a5323eb33cfcb93b7f8c5f6efa06b478d84d38fc1af3970b3604669956504d",
+  "assessment": {
+    "emkohyo-EM20251807-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由：医薬部外品原料規格の文言は「タングステンランプ又はハロゲンランプ」であり、肢の「ハロゲンタングステンランプ」とは表記が異なる。理由ではこれを「ハロゲン（タングステン）ランプ」と読み替えているが、その同一視を支える根拠は示されていない。添付済みのタール色素省令（mhlw.go.jp, dataId=81074000, pageNo=5）には「可視部の測定には、光源としてタングステンランプ又はハロゲンタングステンランプを用いる。」とあり、肢の文言とそのまま一致する。肢3の根拠はこの条文を主たる根拠として引用する形に改めるべきである。"
+      ],
+      "sourceIssues": [
+        "肢4の核心は「石英セルはガラスセルより紫外光の吸収が少ない」という比較である。これを直接支えているのはJ-STAGE掲載の「分析化学」7巻1号（1958年）の記述「光学ガラス(350mμまで)かまたは石英(200mμ)」だけで、この論文は日本分析化学会の学会誌記事であり政府一次資料ではない。政府資料側の支えは次の2点にとどまり、ガラスとの比較を直接述べたものはない。(1) 医薬部外品原料規格の「セルは，紫外部の測定に石英製，可視部の測定にガラス製又は石英製を用いる」は使い分けの規定であり、そこから比較を間接的に読み取れるにすぎない。(2) 産総研プレスリリースは微細加工技術の紹介で、石英ガラスが「紫外線に透明な材料」であるとは述べるが、ガラスとの比較はない。",
+        "sources[3]の表題「J-STAGE（科学技術振興機構）・分析化学7巻1号」は、JSTが著者・発行者であるかのように読める。発行者は公益社団法人日本分析化学会、JSTは掲載プラットフォームの運営者である。「日本分析化学会『分析化学』7巻1号『セルとキュベットの取扱い方』（J-STAGE掲載）」のように、著者・発行者を正しく表記すべきである。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

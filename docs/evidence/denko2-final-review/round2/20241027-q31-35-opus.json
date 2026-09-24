@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "d79991f940762f49694d21f7bc4975d4051153dd3ac09786b04349955d52a841",
+    "rowSha256": {
+      "31": "23bc1469ca5d7ae86a28ac73132e1639ae515512ebd8c0a9dcf9ddea26d069ab",
+      "32": "b63b0f807539932f07fa91f403a7004c537853cd4382e340421902a7331435ec",
+      "33": "9310970f1c348c21a54a761e1645cdf50d03220d7c5f2238f60a3f02fec59474",
+      "34": "c2d3754b7c7181b3ff4944766ac55d1f340da41d3df9254d0d503d3bb96802fa",
+      "35": "643a65dd0ad89bdde44e4b3045e719f98f624872f0f215561b81b66ba4676f81"
+    }
+  },
+  "assessment": [
+    {
+      "number": 31,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescriptionに「2階事務室のRC 2台はL-2からⓒの分岐回路により給電される」とあるが、図と異なる。RC(O)は、P-1の三相200V回路「a」(四角囲み)から出るCV5.5-3Cに接続され、開閉器Ⓢを経て給電されている。L-2のⓒは⑬からの照明回路である。記述を削除するか、図の通りに直すこと。",
+        "diagramDescriptionで「⑫はプルボックス」と断定しているが、問31の説明には不要であり、図記号(小さな□)からの根拠も示されていない。⑫は別の設問で問われうる位置なので、根拠なしに断定する記述は削除すること。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanationで、工場側ⓑ回路の保護器を「L-1の配線用遮断器B、100V20A」としているが、L-1結線図でⓑ回路を保護しているのは「BE」(過負荷保護付漏電遮断器、100V 20A)であり、「B」ではない。図記号と名称を直すこと(過負荷保護付なので、第147条の配線用遮断器の条件は満たす、と補足するのがよい)。"
+      ],
+      "visualIssues": [
+        "diagramDescriptionの「L-1の配線用遮断器B(100V20A)がⓑ回路を保護」も同じ誤りである。正しくはBE(過負荷保護付漏電遮断器)100V 20A。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanationの「三相200V回路ⓑ」が誤り。図のS箱の下にあるのは四角囲みの「b」(凡例上は三相200V回路、P-1の3P30A「b 1階工場」)である。丸囲みのⓑは凡例上、単相100V回路を表すので混同を招く。「□b(四角囲みb)」と表記すること。",
+        "choiceExplanations.イでは、圧力スイッチの図記号が●に傍記P(●P)であることを示し、◉Bと比べて違いを具体的に説明することが望ましい。"
+      ],
+      "visualIssues": [
+        "diagramDescriptionの「三相200V回路ⓑ」も同じ誤りである。四角囲みのbに直すこと。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [
+        "diagramDescriptionの「A(6A)の分岐点から」が不正確。A(6A)は自動点滅器(問35の⑤)であり、分岐点ではない。EM-CE5.5は、建物右下隅の□(ボックス)からトラフ(一点鎖線の地中埋設部分)を経て、駐車場の屋外灯へ向かっている。「□からトラフを経て」のように直すこと。"
+      ],
+      "lawIssues": []
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanationの「□(コンセント)の隣に」が誤り。図の□はボックス類の記号であり、コンセントの図記号(◐)ではない。",
+        "explanationで「L-1の配線用遮断器E(200V20A)」としているが、L-1結線図の「E」は漏電遮断器であり、配線用遮断器(B)ではない。",
+        "経路をE→TS→ⓐとしているが、図ではEとTSの間に破線の⑥がある。経路は「E→⑥→TS→ⓐ(二重丸)」と正確に記すこと(⑥の正体を断定する必要はない)。"
+      ],
+      "visualIssues": [
+        "diagramDescriptionの「□(コンセント)の隣」も同じ誤りである。□はコンセントではない。",
+        "diagramDescriptionの「L-1(電灯分電盤1)の配線用遮断器E(200V20A)」も同じ誤りである。Eは漏電遮断器。"
+      ],
+      "lawIssues": []
+    }
+  ]
+}

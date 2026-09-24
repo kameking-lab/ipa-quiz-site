@@ -1,0 +1,71 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3151,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19921,
+      "webSearchRequests": 0,
+      "costUSD": 0.2226518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2653,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q08-09-raw-response.txt",
+  "rawResponseSha256": "97e7e6e8eae02427da12fb3692abd6d494c6ef73f5ab92cc6fcc1a5bc4ecafd4",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q8",
+    "emkohyo-EM20261803-q9"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q8": {},
+    "emkohyo-EM20261803-q9": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q8": {
+      "/exam-library/emkohyo-EM20261803/q8-p6-0.webp": "abf43ed06e55a81c8e132c2d37c2ce495055b74eca41106becfa5d3c1a4b1b0d"
+    },
+    "emkohyo-EM20261803-q9": {
+      "/exam-library/emkohyo-EM20261803/q9-p6-1.webp": "fcd2fce85a56a17333d545fcfa0087641b3ee6bf24882bc2496dfc74d53cc92f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q8": "cdb6c2f7f4ee915cb1125c8e5d711ff6c27ade686602bab5e9073aa92f08edb1",
+    "emkohyo-EM20261803-q9": "c91fe65e2f2b106591d4c45cf4ef09bb05e20e91aa63108a8f6e60c9aeb05545"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q08-09.json",
+  "sourcePackSha256": "17942a940d26a3dd35834f7f9137f3954399e57dba623905dc99265139faba5c",
+  "assessment": {
+    "emkohyo-EM20261803-q8": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261803-q9": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの末尾に表の列見出し「Ⓐ」「Ⓑ」が単独の2行として残っている。figuresが空で表レイアウトも無いため、ユーザー画面では意味のない孤立記号として表示される。これらの行は削除する。表形式を保つ場合は、各選択肢を「Ⓐ アクリロニトリル／Ⓑ 捕集袋」のように書き、見出しと値の対応を明示する。"
+      ],
+      "choiceIssues": [
+        "選択肢5のtextが「水銀グラスファイバーフィルター」となっており、ⒶとⒷの間の区切りが欠落している。公式原図と公式テキストはどちらも「水銀」と「グラスファイバーフィルター」を別の列に置いている。選択肢1〜4と同じく「水銀 グラスファイバーフィルター」と半角スペースで区切る必要がある。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

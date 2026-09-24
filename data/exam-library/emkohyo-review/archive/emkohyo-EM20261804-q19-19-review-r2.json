@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2301,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 17054,
+      "webSearchRequests": 0,
+      "costUSD": 0.2103486,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1772,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q19": {
+      "/exam-library/emkohyo-EM20261804/q19-p12-0.webp": "c215a446f82906582d462ff965c264fc9a3b419b7706f8b5bdd5639087917897"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q19": "6a2d296cf930553f94e22de9af607b54eb2020ea3ec19d7b8fa013f72570af2e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q19-19.json",
+  "sourcePackSha256": "f0ab9637782a612f102eccd1e5e5f505623a9737ff3d63715b0e786696a3c1b0",
+  "assessment": {
+    "emkohyo-EM20261804-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由の後半「ろ紙上の粉じん質量と亜鉛基底標準板・石英の回折強度から補正している」は、審議会資料（PDF9頁）の手順と合っていない。資料の手順は3段階ある。(1)ろ紙上の粉じん質量を秤量する。(2)亜鉛基底標準板と石英の回折強度を測り、基底標準吸収補正法で石英の質量を算出する。(3)算出した石英の質量を粉じん質量で割り、遊離けい酸含有率を求める。粉じん質量は(3)の割り算に使う値で、吸収補正の入力ではない。吸収の程度は、試料が載ったときに亜鉛基底標準板の回折強度がどれだけ弱まるかで評価する。修正文案：「審議会資料でも、捕集後のろ紙について亜鉛基底標準板と石英の回折強度を測り、基底標準吸収補正法で石英の質量を算出している（その後、粉じん質量で割って遊離けい酸含有率を求める）」。あわせて、捕集量（単位面積あたりの試料量）が多いほど吸収が大きくなり、基底標準板の強度の弱まりも大きくなることを一文で示すと、肢の文言「その質量に見合った」との因果がはっきりする。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

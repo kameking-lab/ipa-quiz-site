@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "20": "fc1bda35a48e4e3dcdeced0efca457437cf051faf6ae4888c050643ce57e1b58",
+      "21": "10e25078670e744d08f90ac07454a3ea3f1dc9cdab5f4904ee317a68f4d798fa",
+      "22": "bfb2cc0a958dd4d549bdebd8093a716dff3cc758062cc289614dc97f8ee40c47",
+      "23": "cd531be13bb1f70e565798a4225759cc3f92be51f89785190b93edec72e11953",
+      "26": "6c4a76717f97844f239221d3fe0dbe869d8bb35310e1bfaa6ea3c802a0cf4fa4"
+    },
+    "sourceCropSha256": {
+      "20": "93b922c4ad186e2275926159d0b83a2e6ac9cf47e2b510ef3133309f60ce58a5",
+      "21": "1f8a41efc18e99dcde2d0c5b29246b685292cc4e18dbca329c3714d283acc5af",
+      "22": "fca64f0eedb00f2070df4db00cd46f2a18cdc54d800b2e037163661ed17df4b7",
+      "23": "43207929873fa2835b435a8a512884fdd8f59f4621e1ce9a66fbbedb7a7b2c71",
+      "26": "a6f969fb16f19bec5d06d7ef3f24094759195fc92531c21c5ea688c65453d540"
+    }
+  },
+  "assessment": [
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（20240526_co_second_q01.pdf 問20）および公式正答ニ（20240526_co_second_a01.pdf）と照合済み。問題文、否定語『不適切なもの』、イ〜ニの全肢、1.5m・3.5m・100Vの数値は原図と一致。電気設備の技術基準の解釈 第165条第3項（https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf、SHA固定の公式抜粋 p.161）で次を確認: 第三号 造営材に堅ろうに取付け、第四号 支持点間2m以下、第五号 終端部の閉そく、第六号 開口部は下向き、第七号 造営材を貫通しない、第八号ロ 対地電圧150V以下かつ全長4m以下ならD種接地工事を省略可。条番号が第165条であることは、同条第2項の165-1表で確認（p.160）。"
+    },
+    {
+      "number": 21,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（問21）および公式正答イと照合済み。解釈（20231226-2.pdf の公式抜粋）で次を確認: 第160条第2項第二号 1種金属製可とう電線管は展開した場所又は点検できる隠ぺい場所で、かつ乾燥した場所などの条件に限る（p.156）。第160条第3項第四号 防湿装置は2種を湿気の多い場所に施設する場合の要件（p.156）。第164条第1項第三号 造営材の下面・側面に沿うケーブルの支持点間は2m以下（p.158）。第159条第1項第一号 屋外用ビニル絶縁電線を除く絶縁電線なら金属管に収められる（p.154）。第159条第3項第四号イ 使用電圧300V以下で管長4m以下を乾燥した場所に施設すればD種接地を省略可（p.154）。"
+    },
+    {
+      "number": 22,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の条文番号が誤っている。解説は『第167条第4項』としているが、ケーブル工事などによる低圧配線が弱電流電線又は水管等と接近・交差する場合に『接触しないように施設すること』を定めるのは、解釈第167条第2項（公式抜粋 p.164）である。『第167条第2項』に訂正すること。あわせて、条文の文言に合わせて『弱電流電線等』を『弱電流電線又は水管等』とするのが望ましい。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（問22）の問題文、a〜dの4条件、イ〜ニの組合せ、公式正答ロと照合済み。電気設備の技術基準の解釈 第167条第2項（https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf、公式抜粋 p.164）で、ケーブル工事による低圧配線は弱電流電線と接触しないように施設することを確認。"
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図（問23）および公式正答イと照合済み。解釈 第158条（20231226-2.pdf の公式抜粋 p.153–154）で次を確認: 第3項第三号 支持点間1.5m以下。第3項第二号 差込み深さは管外径の1.2倍以上、接着剤を使う場合は0.8倍以上。第3項第四号 湿気の多い場所では防湿装置。第3項第五号イ 使用電圧300V以下で金属製ボックスに接続する場合はD種接地が原則（省略できるのは乾燥した場所、または対地電圧150V以下で簡易接触防護措置を施す場合）。"
+    },
+    {
+      "number": 26,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "D種接地工事の接地抵抗値に関する主張（原則100Ω以下、0.5秒以内に自動遮断する装置があれば500Ω以下）を一次資料で確認できていない。SHA固定の公式抜粋は第17条のA種・B種部分（p.31–32）だけで、D種を定める第17条第4項を含まない。記載URLの20231226-2.pdf と、METIドメインの他の解釈PDFはWebFetchでいずれもHTTP 403だった。第17条第4項の本文を公式抜粋に追加し、条項番号『第17条第4項』を解説に明記したうえで、再度照合する必要がある。"
+      ],
+      "verifiedEvidence": "公式原図（問26）の問題文（100V、0.1秒遮断、屋外の自動販売機、『適合していないもの』）、イ〜ニのa・b数値、公式正答イと照合済み。電気設備に関する技術基準を定める省令 第58条は、e-Gov法令API（https://laws.e-gov.go.jp/api/1/articles;lawNum=平成九年通商産業省令第五十二号;article=58）で確認した。使用電圧300V以下・対地電圧150V以下の電路の絶縁抵抗は0.1MΩ以上。記載URL https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096 は同じ省令だが、WebFetchでは本文が取得できなかった。解釈 第17条第4項（D種500Ω）は未確認。"
+    }
+  ]
+}

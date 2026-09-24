@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5274,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 24329,
+      "webSearchRequests": 0,
+      "costUSD": 0.3280086,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4232,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q20": {
+      "/exam-library/emkohyo-20260217/q20-p15-0.webp": "7d5c7725b774c8bb4b2aebcc80734d0768544a20bb7492a4ba4c34389d8cf529"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-dust-standard-p1.png": "861f2e8becbd23d356459630e6a46871f5571aa0d1128741cd5dc7f604bd784f",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-classification-p424.png": "257b85d4f4a98720acfe1fec71b92ba300280d08623d6f1d489d82ceeebf5702",
+    "docs/evidence/emkohyo-choice-sources/20260217-q20-jsoh-2019-p1.png": "561b97bfbd386308bf1ebcd55c3735f718b36cf22565b29463b12407ec8eb918"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q20": "f8547d818ee40aa099c56ee411d7d465d7ef5fcd6d0bd78f0f5b4d730cb77d67"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q20-20.json",
+  "sourcePackSha256": "34b5a9854aba066578509d0b5f24ada4bcfa87d8cf35c9109eb72c5cde8dae1b",
+  "assessment": {
+    "emkohyo-20260217-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の根拠に挙がっている『危険性又は有害性等の調査等に関する指針の施行通達』（001393624.pdf p24）は、物理因子のばく露限度の比較先として『法令、通達のほか、ＪＩＳ、日本産業衛生学会等の基準等がある』と一般的に述べるだけです。許容濃度等の勧告そのものが騒音・振動・高温・寒冷の許容基準を含むことは直接示していません。肢5を直接支えるのは勧告2019（000606772.pdf）p1の前文（『有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，寒冷，全身振動，手腕振動，電場・磁場および電磁場，紫外放射の各許容基準』）だけです。この一般資料は根拠から外すか、補足扱いであることを明記してください。",
+        "肢4の根拠は、別の厚生労働省報告書（000748737.pdf）のPDF p424（印刷ページ406）にある『Ⅳ 6 日本産業衛生学会・毒性分類基準』の転載表です。表には第1群『人間に対して明らかに感作性がある物質』から第3群までの分類基準があり、内容は理由と一致します。ただし表の題名は『許容濃度等の勧告』に触れておらず、両者を結ぶ脚注451は証拠に取り込まれていません。『許容濃度等の勧告における』という問題文の前提を直接支えるには、勧告本体（000606772.pdf）の感作性物質の分類基準のページを証拠として加えるべきです。",
+        "勧告2019（000606772.pdf）のclaimedExcerptsが空です。肢5の前文は証拠画像（20260217-q20-jsoh-2019-p1.png）でしか確認できません。スキャンPDFで本文を照合できないなら、画像が唯一の根拠であることを記録してください。本文を照合できるなら、前文の抜粋をpdfPage 1として登録してください。"
+      ],
+      "needsExternalCheck": [
+        "根拠は許容濃度等の勧告の2019年度版と、時期がそれ以降の報告書の転載表です。2026年2月の試験時点で有効な版（2025年度版）でも次の2点が変わらないか確認してください。(a) 前文に騒音・振動・高温・寒冷などの物理的因子の許容基準が列挙されていること。(b) 気道感作性・皮膚感作性がいずれも第1群から第3群に分類されていること。公式正答が2なので肢4・5の正誤結論は変わりませんが、理由文の現行性を確かめるためです。",
+        "出典名『業務上疾病に関する医学的知見の収集に係る報告書 別冊分類基準』が000748737.pdfの正式な表題と一致するか、提示された証拠からは確認できません。PDFの表紙で表題を確認してください。"
+      ]
+    }
+  }
+}

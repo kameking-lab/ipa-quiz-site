@@ -1,0 +1,130 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8307,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 38866,
+      "webSearchRequests": 0,
+      "costUSD": 0.4773318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6352,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q06-10-raw-response.txt",
+  "rawResponseSha256": "6191caba92dc912070838042fae88d64ef711108e6a5893a8fa171e044d582f4",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q6",
+    "emkohyo-EM20251809-q7",
+    "emkohyo-EM20251809-q8",
+    "emkohyo-EM20251809-q9",
+    "emkohyo-EM20251809-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q6": {
+      "/exam-library/emkohyo-EM20251809/text-q6-p5-fig1.webp": "08c8b44fa8e384322352a28c9131854862d4522823effa5cb0bc4eeda253190c"
+    },
+    "emkohyo-EM20251809-q7": {},
+    "emkohyo-EM20251809-q8": {},
+    "emkohyo-EM20251809-q9": {},
+    "emkohyo-EM20251809-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q6": {
+      "/exam-library/emkohyo-EM20251809/q6-p5-0.webp": "0f92b08586d08c7b722cb81d52fcb4b02f5921e3910a550695dbb554c48e25b5"
+    },
+    "emkohyo-EM20251809-q7": {
+      "/exam-library/emkohyo-EM20251809/q7-p6-0.webp": "3efbf0bd190046b4dd350f461a401d0abf9a548db7f21b744acfa72ff1f630fe"
+    },
+    "emkohyo-EM20251809-q8": {
+      "/exam-library/emkohyo-EM20251809/q8-p6-1.webp": "eba2b5f0a42af402bb4ffd23dd2a2e1fec23cb06708590b85338db726ef1a6f6"
+    },
+    "emkohyo-EM20251809-q9": {
+      "/exam-library/emkohyo-EM20251809/q9-p7-0.webp": "b89cc8143d94c8c1360baa02d8450d57efbade5d8b5839c85c03a08513bca566"
+    },
+    "emkohyo-EM20251809-q10": {
+      "/exam-library/emkohyo-EM20251809/q10-p7-1.webp": "cfaefb976851e113d72ce538ffc3835765d1e2f46b7294a8a19ef2ec18fd6f90"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251809-q9-mhlw-net-rate-sigma-p6.png": "c8ceee043b728429e54775c2cc3c8145e04062f4c79ad8454f5c5c03b0246658",
+    "docs/evidence/emkohyo-choice-sources/EM20251809-q10-envraddb-no12-pu-table-p63.png": "cab81a9c818541b109f1c2e8f2c14e7d4ac1dfca97ab5d9ed1f1e5f86e6a419b"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251809-q6": "2bed6869403417e0616c6a20e334486f7355e4eb218f6efb12517d79d8f5116d",
+    "emkohyo-EM20251809-q7": "7ea2a6f32b79ee1b98b1514650f9890db3601fd95cdd5c71f3d6aa7e852c45d9",
+    "emkohyo-EM20251809-q8": "7ae1c1f01419edb83503c0e61aa9db131f36139b1a701eaf880908dfd8a12b2b",
+    "emkohyo-EM20251809-q9": "5d71adeb3c310511f093006e9bc98bd788a9802419f52166df7671ff4a4c2d17",
+    "emkohyo-EM20251809-q10": "f813639234566224119666002c42279e890473cea776d47a881cf85dc20aa822"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q06-10.json",
+  "sourcePackSha256": "7af478c85f2c4e6fdf4f2a47c9f23980dd9f59ef344aed90a5971eb05a2b4f24",
+  "assessment": {
+    "emkohyo-EM20251809-q6": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "summary・肢1・肢2・肢5は、問題文の「0.412MeVからの内部転換電子（ce）の放出率は20％」を「0.412MeV準位からの遷移のうち20％が内部転換」と読み、0.83×0.8＝0.664としている。しかし解説自身が肢3で引く規制庁No.7の定義では、放出率は「1壊変（Bq）当たり放出される割合」である。この定義に従うと、ce放出率は1壊変当たり0.20となり、γ₁放出率は0.83−0.20＝0.63、放射能は200÷0.63≒317Bqになる。どちらの読みでも最も近いのは肢2（3.0×10²Bq）で、正答は変わらない。ただし解説は一方の解釈を前提として断定している。採用した解釈を明示し、もう一方の読みでも肢2になることを付記すべき。",
+        "肢1の理由は「規制庁No.7のとおり内部転換とγ線放出は競合するので0.8を掛ける必要があり」と因果を断定している。No.7が述べているのは「競合過程にある」ことだけで、0.8を掛けること（遷移割合としての解釈）は導けない。断定を弱めるか、上記の解釈の前提として書き直すべき。",
+        "肢3の理由「内部転換の割合20%をγ₁の放出率と取り違え、さらにβ₁→γ₂経由の供給を落とした値」は、200÷(0.67×0.2)という誤答経路の推測にすぎない。どういう誤りなのかも読み取りにくい。推測であることが分かる表現にするか、正しい計算との対比だけを述べる形にすべき。"
+      ],
+      "sourceIssues": [
+        "規制庁No.7の抜粋（内部転換とγ線放出は競合過程）は、ce放出率20%を0.412MeV準位の遷移割合として×0.8する計算を直接支えない。同じNo.7の放出率の定義（1壊変当たり）は、むしろ別の解釈を示唆する。"
+      ],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の「自発核分裂で1壊変当たり3.76個の中性子を放出する」は、全壊変当たり3.76個と誤読されうる。ATOMICAによれば全壊変の3.1%が自発核分裂で、3.76個は自発核分裂1回当たりの平均中性子数である（全壊変当たりでは約0.12個）。「全壊変の3.1%が自発核分裂で、核分裂1回当たり平均3.76個の中性子を放出する」と正確に書くべき。"
+      ],
+      "sourceIssues": [
+        "肢1の「減速材と組み合わせて中性子を測る」は、提示されたATOMICA『ヘリウム３中性子計数管』の抜粋（熱中性子を検出する、³He(n,p)³H反応）に記載がなく、政府資料による直接の裏付けがない。²⁵²Cfの核分裂中性子（平均約2MeV、ATOMICA 1955）を熱中性子用計数管で測るには減速が必要、という因果を資料で支えるか、記述を資料の範囲にとどめるべき。"
+      ],
+      "needsExternalCheck": [
+        "ATOMICA dic_detail_1194（ヘリウム３中性子計数管）の全文に、減速材（ポリエチレン等）と組み合わせて速中性子を測定する旨の記述があるか確認する。"
+      ]
+    },
+    "emkohyo-EM20251809-q8": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q9": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251809-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1・肢3・肢5の㋩の根拠「表面捕集率の高いろ紙が望ましい（低いとろ紙内部での吸収でピークが歪む）」について、提示された政府資料が直接述べているのは一般論だけである。ATOMICA『スペクトロメトリ』の「試料中の自己吸収でスペクトルが低エネルギー側に歪む」「極めて薄い試料を作る」がそれにあたる。ダストサンプリング用ろ紙の表面捕集率とα線ピークの関係を直接述べた政府資料の記述は示されておらず、ろ紙の選択についての結論は推論にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "規制庁 放射能測定法シリーズNo.36『大気中放射性物質測定法』に、α線スペクトル測定用ろ紙として表面捕集率の高い（表面捕集型の）ろ紙を用いる旨の記述があるか確認し、あればその頁を㋩の根拠として引用する。"
+      ]
+    }
+  }
+}

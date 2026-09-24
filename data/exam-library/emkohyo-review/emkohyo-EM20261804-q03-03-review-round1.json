@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1863,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 141373,
+      "webSearchRequests": 0,
+      "costUSD": 1.168252,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 816,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q3": {
+      "/exam-library/emkohyo-EM20261804/q3-p4-0.webp": "dfa5a79e666c5fa36cac3cd572c8eacc99976b355761781a893ebae0cdd8ee66"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q3": "20a76b7db3c0fec2da5f64bc3779ebcaef1d8edb73e118e5d4a8a6889ac2dcd9"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q03-03.json",
+  "sourcePackSha256": "75cb8dac4e6916176818f8d9c3d1162a097f735ab97104d1670b9ca99b3f4eea",
+  "assessment": {
+    "emkohyo-EM20261804-q3": {
+      "status": "FIX",
+      "textIssues": [
+        "文字起こしの選択肢3が「トルエン\\n-CH₃」となっており、化合物名と官能基の間に改行が入っている。公式原図では他の肢と同じく1行（Ⓐ列「トルエン」、Ⓑ列「-CH₃」）なので、他の肢と同じ「トルエン -CH₃」の表記にそろえる。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢4の決め手は「−CHOはアルデヒド基で、ケトンのアセトンは持たない」という点だが、これを直接支える政府資料がない。アセトンSDSで一致した抜粋は「ジメチルケトン」だけで、官能基の定義までは述べていない。",
+        "アセトンSDSの同じ箇所に別名「ジメチルホルムアルデヒド（Dimethylformaldehyde）」が載っている。名前だけ見るとアルデヒドを連想させ、選択肢4の誤答方向に読まれかねない。この資料を根拠に使うなら、別名に「ホルムアルデヒド」を含んでいても構造はケトン（C=Oの両側が炭素）であり、−CHOは持たない、と補足が要る。",
+        "アニリン・アセトニトリル・トルエンのSDSで一致した抜粋は別名（アミノベンゼン／シアノメタン／メチルベンゼン）と分子式（C6H7N、C2H3N、C7H8）だけ。示性式の欄は抜粋の中では空で、解説にあるC₆H₅NH₂・CH₃CN・C₆H₅CH₃は抜粋に出てこない。官能基の対応は別名から推し量れるだけで、直接の記述ではない。",
+        "肢5の根拠にしている環境省報告書p.99はエチレン製造のLCAの記述で、ジエチルエーテルの化学式C2H5OC2H5が途中で出てくるだけ。エーテル結合−O−の説明ではないので、裏付けとしては弱い。ジエチルエーテルの職場のあんぜんサイトSDS（CAS 60-29-7）など、物質そのものの資料に替えることを勧める。"
+      ],
+      "needsExternalCheck": [
+        "アルデヒド基（−CHO）とケトンのカルボニル基（>C=O）を区別して説明している公的資料（文部科学省の学習指導要領解説や教科書相当の公的資料など）を確保するか、SDSの示性式・構造式の欄でアセトンがCH₃COCH₃であることを確かめる。",
+        "ジエチルエーテルについて、厚生労働省の職場のあんぜんサイトのGHSモデルSDS（CAS 60-29-7）が取得できるか、そこに示性式C₂H₅OC₂H₅が載っているかを確かめる。"
+      ]
+    }
+  }
+}

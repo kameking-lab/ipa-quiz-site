@@ -21,6 +21,7 @@ import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types
 interface Props {
   questionId: string;
   choices: Partial<Record<ChoiceKey, string>>;
+  choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
   answerKey: ChoiceKey | ChoiceKey[];
   answerText?: string;
   exam: ExamCode;
@@ -54,6 +55,7 @@ interface Props {
 export function QuestionAnswerCard({
   questionId,
   choices,
+  choiceImageUrls,
   answerKey,
   answerText,
   exam,
@@ -145,6 +147,7 @@ export function QuestionAnswerCard({
             key={key}
             choiceKey={key}
             text={choices[key]!}
+            imageUrl={choiceImageUrls?.[key]}
             revealed={revealed}
             selected={selected === key}
             correct={isAcceptedAnswer(answerKey, key)}

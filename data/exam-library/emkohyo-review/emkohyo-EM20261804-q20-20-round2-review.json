@@ -1,0 +1,53 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1117,
+      "cacheReadInputTokens": 133532,
+      "cacheCreationInputTokens": 14592,
+      "webSearchRequests": 0,
+      "costUSD": 0.1657904,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 919,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q20": {
+      "/exam-library/emkohyo-EM20261804/q20-p12-1.webp": "00e3aab339adb4e257ee824a51c9fe05d0781ec64561f4015aaafa1bc29a383c"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q20": "11bd98118401004effe85d7f0da590089943f49ff68cb4fc43f2e93ec1613c4c"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q20-20.json",
+  "sourcePackSha256": "c73924f91bf95f33c21e0150c5670fdcd70ca1d5b37446ce46c66c0365824650",
+  "assessment": {
+    "emkohyo-EM20261804-q20": {
+      "status": "FIX",
+      "textIssues": [
+        "選択肢2の解説だけが「です・ます」調（「異なります」「違います」「多くなります」）で、summaryと選択肢1・3・4・5の「である」調と揃っていない。「異なる」「違う」「多くなる」に直して文体を統一すること。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

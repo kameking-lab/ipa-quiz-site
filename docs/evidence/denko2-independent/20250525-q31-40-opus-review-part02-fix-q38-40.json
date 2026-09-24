@@ -1,0 +1,46 @@
+{
+  "inputHashes": {
+    "draftSha256": "015305f9037eb04625a1efad049d97955ea9131e99b182b3f60ed7961b187f87",
+    "candidateSha256": {
+      "38": "792e51410ba9e91145dd5383cf67e126fd526d282c7249f5c7f2123bf3e36108",
+      "40": "63f21dd8840191e5613e97d4e3fa29a836a3d936b4c8b6e12612b1615501380b"
+    },
+    "rowSha256": {
+      "38": "fb037c6d4197a72c8e2097d3d5c2713429927403fb1635d35d8cd7a525b98b75",
+      "40": "dd5b217d6d3cf3e61705714d918711c5b1cf3b246fa46f7def9c899b7b124df2"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "sourcePackSha256": {
+      "38": "f44093e6088ee96edd1fe1fb231591034fe8dd48936b297b9e8c78fe61a55695",
+      "40": "e27af158b1ae3a7fd0bca50b8731c83d7f47c22f2bb383767d64c14b55227b4c"
+    },
+    "sourceFigureSha256": {
+      "38": "75835ca92c933dd5483b0a8f2b63fd5cfba61199f985629ebb04359c75162de8"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 38,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 40,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "explanation と diagramDescription が⑩の位置を「1階⑱下のコンセント図記号」と書いているが、読み方が一つに定まらない。原図で文字どおり丸数字⑱の真下にあるのは丸数字⑩のラベルそのものである。⑩の矢印が指す破線枠は、宅配ロッカー右側にある斜線入り丸記号（⑱が指す器具）の右下にある◐コンセントの直下にある。さらに、斜線入り丸記号の左にも傍記「イ」付きの◐があり、「⑱下のコンセント」だけではどちらの◐か特定しにくい。「⑱が指す器具（斜線入り丸記号）の右下にある◐コンセントの直下の破線枠」のように、指す対象と方向を明記すべき。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

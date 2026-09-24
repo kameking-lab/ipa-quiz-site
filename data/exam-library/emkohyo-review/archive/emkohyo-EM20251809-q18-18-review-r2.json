@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1714,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12355,
+      "webSearchRequests": 0,
+      "costUSD": 0.1333838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1332,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q18-18-raw-response.txt",
+  "rawResponseSha256": "ef224c3280de81e9b3d3cc44f89290d86f4317ac0e82d33d45b5aa703c47fd68",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q18": {
+      "/exam-library/emkohyo-EM20251809/q18-p11-1.webp": "7d0e61b7bc133d12432c4b16707e0745641caf4dd6e12be03ab0864bbeebbd5f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251809-q18": "57f0d95cf7801495c9617b13a34ebd0edca9c1b556fbf7fa598cfbf6cebc9403"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q18-18.json",
+  "sourcePackSha256": "1726799a71bec408bcfdaecc6869de211a648fce32a6864d07a07fba0f768b78",
+  "assessment": {
+    "emkohyo-EM20251809-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由「No.36の3.2式では効率は分母で濃度に掛かる形になり」は式の説明として不正確。3.2式 Ct＝Nt/(ε×Vt) では、効率εは積算流量Vtとともに分母にあり、分子は正味計数率である。この式を変形すると Nt＝Ct×ε×Vt となり、効率は濃度に乗じる形になる。「分母」と「濃度に掛かる」が一文に混在しているため、読み手が逆の意味に取りうる。修正案は「3.2式では効率εは分母（積算流量と積）にあるため、変形すると正味計数率＝濃度×効率×積算流量となり、効率で割るのではなく掛けるのが正しい。6.91÷0.25としたのは効率の扱いが逆」。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

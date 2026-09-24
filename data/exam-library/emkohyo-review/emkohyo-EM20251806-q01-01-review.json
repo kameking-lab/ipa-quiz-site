@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1699,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17884,
+      "webSearchRequests": 0,
+      "costUSD": 0.2057648,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1615,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q1": {
+      "/exam-library/emkohyo-EM20251806/q1-p2-0.webp": "bb9d054bfe3624b72127e4846c9530b419cbff07e912eb4b7db4422820970bb7"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/nra-gas-stokes-p6.png": "b1c0583f7b10a96aa3159e20f4562aa2fc9d6bc0996c5e79befbd1895d782ea4"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251806-q1": "08a90f8c2c3230967b0617eb5a4c6575587e64d65dfa6866c89a41661031ce9d"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q01-01.json",
+  "sourcePackSha256": "0750d5249073af76f8eb277170eb11579617db1b31b316608f6caaba037b43c4",
+  "assessment": {
+    "emkohyo-EM20251806-q1": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

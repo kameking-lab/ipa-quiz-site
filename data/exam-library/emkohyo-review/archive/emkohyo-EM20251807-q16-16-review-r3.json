@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2845,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13446,
+      "webSearchRequests": 0,
+      "costUSD": 0.16473179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1764,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q16-16-raw-response.txt",
+  "rawResponseSha256": "e5ea860a6f63c4165fa46a99d3431c7ccd6fb26e8e03efc5d79769389513e70f",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q16": {
+      "/exam-library/emkohyo-EM20251807/q16-p10-0.webp": "e7410b335c9cead50bbf96066f31bfb5d188e2e45cfaa1b674a412db0ada6b51"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q16": "18f5fc2cf2d2690a36565710c1f7e7f0f25d29999b9adc5917cdf4e6c5e9cf68"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q16-16.json",
+  "sourcePackSha256": "44cf00fd998c5567ea9586d9273ba7a14652030c825c1a6ca3d037211e5cf002",
+  "assessment": {
+    "emkohyo-EM20251807-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由は、告示の塩素水の有効塩素測定手順を「チオ硫酸ナトリウム溶液で滴定し、黄色が薄くなってからでんぷん溶液を加えて青色が消える点を終点とする」と要約しているが、これは告示の二つの箇所を混同している。『液の黄色が薄くなってから1～2mlのでんぷん溶液を指示薬として加え』は、チオ硫酸ナトリウム溶液のファクター(f1)標定手順の記述である（ヨウ素酸カリウム系の標準液25mlにヨウ化カリウム2gと硫酸(1+5)5mlを加える操作）。塩素水の有効塩素測定では、手順が次の二通りに分かれる。(a) 原則は、ヨウ化カリウム1g、硫酸(1+5)5ml、でんぷん溶液5mlを最初に加え、生じた青色が消えるまで滴定する。(b) 析出したヨウ素量が多い場合は、先に『褐色が淡黄色になるまで』チオ硫酸ナトリウム溶液を加え、その後でんぷん溶液を加える。この区別に沿って書き直すこと。",
+        "肢1の反応式 ClO⁻＋2I⁻＋2H⁺→Cl⁻＋I₂＋H₂O と、肢3の反応式 I₂＋2S₂O₃²⁻→2I⁻＋S₄O₆²⁻ はいずれも化学的には正しい。ただし文脈上、告示が示す内容と読める書き方になっている。告示にこれらの反応式は無いので、一般的な化学反応式であることが分かる書き方にすること。"
+      ],
+      "sourceIssues": [
+        "厚労省告示の出典タイトルに告示年（平成15年）が無い。また『別表』という位置指定が、引用箇所（標準塩素水の調製・チオ硫酸ナトリウム溶液のファクター）の実際の位置と一致するか、証拠からは確認できない。『平成15年厚生労働省告示第318号』のように年を明記し、該当する項目名（試薬の項の(7)標準塩素水等）を示すこと。",
+        "告示は水道水の残留塩素検査法であり、作業環境測定での塩素濃度測定用の標定を直接定めたものではない。解説では『原理は同じヨウ素滴定』と断っているので結論は支持される。ただし、本問の塩酸酸性条件（告示は硫酸）を直接支える一次資料ではない点に留意すること。"
+      ],
+      "needsExternalCheck": [
+        "mhlw.go.jp の dataId=79aa5327 ページが平成15年厚生労働省告示第318号（遊離残留塩素及び結合残留塩素の検査方法）本体であることを確認し、あわせて引用箇所が本則・別表のどちらにあるかを確認すること。"
+      ]
+    }
+  }
+}

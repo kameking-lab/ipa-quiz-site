@@ -50,7 +50,9 @@ describe("source-reviewed safety repairs", () => {
     expect(get("emkohyo-20260217", 12).prompt).toBe("局所振動障害に関する次の記述のうち、誤っているものはどれか。");
     expect(get("cskohyo-CS20251904", 4).prompt).toContain("1×10¹² Ω");
     expect(get("emkohyo-EM20261801", 12).choices[1]!.text).toContain("aₓ²＋aᵧ²＋a_z²");
-    expect(get("emkohyo-EM20261807", 15).figures[1]!.width).toBe(454);
+    const em15 = get("emkohyo-EM20261807", 15).figures;
+    expect(em15.find((f) => f.src.endsWith("text-q15-p10-fig2.webp"))!.width).toBe(454);
+    expect(em15.map((f) => f.alt)).toEqual(["問15・選択肢1の図表", "問15・選択肢2の図表", "問15・選択肢3の図表", "問15・選択肢5の図表"]);
     expect(get("emkohyo-20260217-4", 16).figures[0]!.height).toBe(390);
     expect(get("lckohyo-LC20260409-1", 34).figures.some((f) => f.src.endsWith("fig2.webp"))).toBe(false);
   });

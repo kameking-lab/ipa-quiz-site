@@ -1,0 +1,63 @@
+{
+  "inputHashes": {
+    "draftSha256": "1aab23e2113db9d414dcb128a41808d7f469c9d1e0a81456adaed0abe92df72f",
+    "rowSha256": {
+      "11": "7d487e31138facad14db76ff9e258525571c84268a28781cf9222fc47ef7e964",
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd",
+      "13": "8e7b8562ed9f4c8d521296dd236f512654ba73906103bcffef480e055638e3a9",
+      "14": "d836f840ad8b404af24c4b62f1323a8b1cc4bd57475441895ee2893f89bd4f7d",
+      "15": "911c8f3ec36ddf3a3990e1db6f124796bc6dd4a6d3ed311ea6125939b74ad047"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "解説では、officialReferenceUrls の経済産業省PDF（300928-5.pdf）が『ビニル絶縁体の導体許容温度を60℃としている』と書いている。このPDFに実際にその記載があるかは画像からは確認できないため、要確認。",
+        "肢ハは75℃を耐熱ビニル絶縁体、肢ニは90℃を架橋ポリエチレン絶縁体の温度区分と結びつけている。この対応が規格上正しいかは要確認。"
+      ]
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

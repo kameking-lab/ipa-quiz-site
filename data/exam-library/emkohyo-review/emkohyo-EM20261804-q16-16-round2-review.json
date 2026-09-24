@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2368,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 155079,
+      "webSearchRequests": 0,
+      "costUSD": 1.288,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1648,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q16": {
+      "/exam-library/emkohyo-EM20261804/q16-p10-1.webp": "71d4c3076f52e8fcd5000f4a5f7075bfe15158be4502b8671443d8ad8b21cb98"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q16": "c17707a75ebbc664d5a2b9e0ba9a8cea1eb12e8c4f22902eae0bd50b31da3435"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q16-16.json",
+  "sourcePackSha256": "78d423e5e2c8f131d1629ae96061716c97ecc858d0d63e70c8f1ad6fa6dcdb6d",
+  "assessment": {
+    "emkohyo-EM20261804-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由の冒頭で「溶存酸素が蛍光物質を消光して測定強度を下げる場合がある」と消光の仕組みを断定しているが、引用した農研機構の資料には「消光」の語も仕組みの説明もない。この資料が示すのは、酸素に反応するよう設計された蛍光センサーで、溶存酸素濃度が下がると蛍光強度が上がるという事実だけである。仕組みの断定を削り、資料が示す事実（溶存酸素濃度の変化で蛍光強度が変わる例）に絞るか、消光を直接説明する出典を加えること。",
+        "肢5の理由では、酸素応答性センサーの例を「溶液中の酸素が蛍光強度に影響する具体例」としている。しかしこれは酸素を検出するために意図して作られたセンサーの応答であり、蛍光光度分析で試料中の溶存酸素が測定値を乱す（妨害する）という肢の文脈とは違う。例として示すなら、この違いを明記すべきである。"
+      ],
+      "sourceIssues": [
+        "農研機構『ヨーネ病検査マニュアル』（MGIT培地の酸素応答性蛍光センサー）は家畜の病気の検査手順書であり、蛍光光度分析法で溶存酸素が消光を起こす妨害要因になることを直接述べていない。肢5の「消光」の根拠としては間接的であり、酸素消光や測定上の注意を直接述べた政府一次資料が必要。"
+      ],
+      "needsExternalCheck": [
+        "厚生労働省PDF（001022457.pdf）の29〜30ページで抽出した本文の途中に、ページ見出しとして「14 一般試験法 2.27近赤外吸収スペクトル測定法」が入っている。出典名の『2.22蛍光光度法』という節番号と見出しが一致するか、PDF原本で確認すること（抜粋した本文自体は照合一致済み）。"
+      ]
+    }
+  }
+}

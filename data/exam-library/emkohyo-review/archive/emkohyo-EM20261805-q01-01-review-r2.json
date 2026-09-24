@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3189,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12979,
+      "webSearchRequests": 0,
+      "costUSD": 0.1678758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2284,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261805-q01-01-raw-response.txt",
+  "rawResponseSha256": "c643abd5c916ccfbf1cec534f1b48b910dca770044eb2a3b30520e158837219c",
+  "paperId": "emkohyo-EM20261805",
+  "ids": [
+    "emkohyo-EM20261805-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261805-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261805-q1": {
+      "/exam-library/emkohyo-EM20261805/q1-p2-0.webp": "fd98039e40b22634f97902fdad1cb1aed50c215c69cd6adc9ea2dffe674a92a9"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261805-q1": "96231dbf4a8bc966fe92b84f93504304becbd9b24701202cbd180f63aca71ead"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261805-q01-01.json",
+  "sourcePackSha256": "b1a62277aa7acc7dab1e8ef87c38338c421b1e8436d9938dd7bbc90413b74d37",
+  "assessment": {
+    "emkohyo-EM20261805-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由にある「これは5物質中で最も大きい値で」「蒸気圧が最も小さいものとは正反対に位置する」は、メチルエチルケトンの25℃蒸気圧が48 kPa未満であることを前提にしている。しかし添付資料にあるメチルエチルケトンの値は10.5 kPa（20℃）だけで、25℃の値はない。肢5の理由も「25℃では10.5 kPa以上」と下限しか示していない。このため「最大」という断定は資料から導けない。結論（最小ではない）には不要なので、当該断定を削除し、「エチレングリコールモノメチルエーテルの1.27 kPa（25℃）の約38倍で、最も小さいものには当たらない」程度にとどめるべき。"
+      ],
+      "sourceIssues": [
+        "肢3の「5物質中で最も大きい」を直接支える政府資料がない。メチルエチルケトンのモデルSDS（78-93-3）の抜粋は20℃の値のみで、25℃の比較を支えない。",
+        "厚生労働省モデルSDS エチレングリコールモノメチルエーテル（109-86-4）の照合済み抜粋は物質名・別名の記載だけで、蒸気圧を支えていない。蒸気圧9.50 mmHg（25℃）の根拠は環境省初期評価PDFのみ。SDSを別名の同定根拠として残すのは可だが、蒸気圧の根拠のように読める位置付けは避けるべき。"
+      ],
+      "needsExternalCheck": [
+        "n-ヘキサンのモデルSDS（110-54-3）に記載の「120/180 mmHg（68 °F/77 °F）」のうち、180 mmHg（≒24 kPa、25℃）は一般的な文献値（25℃で約151 mmHg≒20 kPa）より大きい。また、68 °F→77 °F（約5℃）で1.5倍になる点も通常の温度依存性として過大に見える。そのためSDSの原典記載を確認されたい。比較結論（1.27 kPaより大きい）はどちらの値でも変わらない。ただし肢4の換算値24 kPa、および肢5でこの値を温度依存性の例として用いている部分は、17 kPa（20℃）と「蒸気圧は温度とともに上がる」という一般原理だけで足りるので、置き換えを推奨する。"
+      ]
+    }
+  }
+}

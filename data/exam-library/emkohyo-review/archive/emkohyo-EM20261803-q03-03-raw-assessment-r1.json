@@ -1,0 +1,25 @@
+{
+  "emkohyo-EM20261803-q3": {
+    "status": "FIX",
+    "textIssues": [
+      "The transcription's prompt and choices 1–5 (イ、ロ / イ、ハ / ロ、ニ / ハ、ホ / ニ、ホ) match the official question text. Figure crops: fig1=イ, fig2=ニ, fig3=ロ, fig4=ホ, fig5=ハ, so each figure maps to the correct zone. The crops contain the neighbouring zone's kana (for example, 'ニ' is visible at the right edge of fig1 and 'ホ' at the right edge of fig3), but the figures are not mismatched.",
+      "Choice 3 says ロ is not at '6m以下の『等間隔』'. The question already states that every dotted-line spacing is 6 m or less, so the 6 m condition is met. The only defect is that the spacing is not equal. The current wording could be read as saying the spacing exceeds 6 m, so it should say only 「6m以下という前提は満たすが、等間隔になっていない」."
+    ],
+    "choiceIssues": [
+      "Choice 3 (ロ): the reason says both the vertical and horizontal lines are unequally spaced. In the crop (fig3), the three horizontal lines look roughly evenly spaced, and the visible unevenness is in the vertical lines (left-to-middle is wider than middle-to-right). The figure does not support the claim that both directions are unequal. Either name the direction that is actually unequal, or use the same general wording as choice 1: 「測線の間隔が等間隔でない」.",
+      "The draft never explains why ロ's spacing matters. In ロ the lines appear to have been moved so that the intersections avoid the L-shaped equipment. イ shows the correct approach: draw equal-spaced lines first, then drop any intersection that falls on equipment. Adding this contrast would make the reason for ロ causal. Recommended, not mandatory.",
+      "Choices 1, 2 and 4 support ハ and ホ with visual descriptions only. For ハ, the explanation should give the count: 2 × 2 lines give 4 intersections, and the point where the diagonals cross makes 5. For ホ, it should state that the intersections on the equipment at the upper right are excluded and 7 points remain, which is at least 5. Without these counts the explanation does not show that the 5-point requirement is met."
+    ],
+    "reasonIssues": [
+      "Choices 2 and 4 treat ハ's added point where the diagonals cross as compliant with the standard. The standard (1の2) only requires at least 5 measurement points. It says nothing about where extra points go, such as at the diagonal intersection. The draft's reasoning goes beyond what the standard's text says. Say that the standard supports only the 'at least 5 points' requirement, and treat the diagonal-intersection placement as common practice, with a separate source.",
+      "Choices 4 and 5 say ホ's oblique lines follow the parallelogram and are not an error. The standard says only 「縦の線と横の線」 and does not say the lines may be oblique or non-perpendicular. The source cited does not directly support this reasoning. Either state that the conclusion comes from the official answer (3), or add a source that allows lines drawn along the shape of the work area."
+    ],
+    "sourceIssues": [
+      "The only source is the 作業環境測定基準 (dataId=74087000), and the three matched excerpts support only these points: equal spacing of 6 m or less, excluding positions where equipment makes measurement very difficult, and at least 5 points. They directly support why ロ (unequal spacing) and ニ (point moved instead of excluded) are wrong. They do not directly support why ハ's diagonal-intersection point or ホ's oblique grid are compliant. This gap should be recorded, or a source should be added, such as the 作業環境測定ガイドブック or an official explanatory notice."
+    ],
+    "needsExternalCheck": [
+      "Measure the line spacing in zone ロ on the original official PDF (EM20261803.pdf, p.3), not the webp, to confirm whether the unequal spacing is in the vertical lines, the horizontal lines, or both.",
+      "Check whether an explanatory notice or the 作業環境測定ガイドブック allows adding a point where the diagonals cross when fewer than 5 intersections are available, as in ハ, and allows oblique lines along a parallelogram-shaped work area, as in ホ."
+    ]
+  }
+}

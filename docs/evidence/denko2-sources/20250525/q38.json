@@ -1,0 +1,16 @@
+{
+  "sourceFigurePath": "data/raw_pdfs/denko2/mlit-symbols-p192.png",
+  "officialSources": [{
+    "url": "https://www.qsr.mlit.go.jp/n-youchi/kokyo-youchi/site_files/file/pdf/kyoutuu2022.pdf",
+    "document": "国土交通省九州地方整備局 共通仕様書 図記号表",
+    "localPath": "data/raw_pdfs/denko2/mlit-symbols-2022.pdf",
+    "sha256": "a72d8cf0abbd341de441ffa16b394645acaf2f7f56cb19264e05d343c0e5f7b5",
+    "clauses": ["PDF191頁に◉B＝電磁開閉器用押しボタン（L傍記はパイロットランプ付）、◉F＝フロートスイッチ。PDF192頁に◉LF＝フロートレススイッチ電極（電極数を傍記）、◉P＝圧力スイッチ。添付sourceFigurePathは192頁を原本レンダリングしたもの。"]
+  }, {
+    "url": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+    "document": "JISC公式閲覧 JIS C 0303:2000 構内電気設備の配線用図記号 音声PDF",
+    "localPath": "data/raw_pdfs/denko2/jisc-C0303-2000-audio.pdf",
+    "sha256": "e8db44b6176aa02911893936af93402330736aa06e3404500af152c30f72b359",
+    "clauses": ["PDF14頁 4.4開閉器・計器：圧力スイッチ、フロートスイッチ、フロートレススイッチ電極を別記し、フロートレススイッチ電極は電極数を傍記。原図⑧のLF3と比較する。音声PDFは図記号そのものを示さない。"]
+  }]
+}

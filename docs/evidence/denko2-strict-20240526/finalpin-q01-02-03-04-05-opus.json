@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "1": "9d76314db7125accac5e9cc1c4d4005fc1ce21e9cc7a7b1e14e51f1880beebe7",
+      "2": "d36e8616e05033f35a512048ab86819e7b36cec989641100fd2e9ec93a9b6a72",
+      "3": "e167b367d64f1a07b0bf2641e7d03e6eb0f39bd524be4780175b163261bc5f07",
+      "4": "9e70bd121f3b189a3388c97b9aefc0537514ad27b9d2010b65ed77e7c2a365f7",
+      "5": "f4e6c409496930c8cc3286fdc0469f63c7275369a40c675b9d878fc89b3a0d1f"
+    },
+    "sourceCropSha256": {
+      "1": "ec8d05fa5cf6593dfdb3cf4bc09e71cdd898ca3b575b3ee26a305d80da8e49ea",
+      "2": "a7363db04101acb5f1ab1991d67b1342db1a0337da4a1fae6818c50d7c7b3d6b",
+      "3": "3277d0957dc6725ecfd5570a1196809e1577872646283724cb5f870f293b6389",
+      "4": "b008d0a83a7730a57ad208e4aa119f1edc3ffb358afbd7b7d6cd2e319511d340",
+      "5": "416ca8c0ee369a56acd30921c00401dbef5072d939dbc1214dd7aa1d6eec0ac9"
+    }
+  },
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と選択肢（200/800/1 200/2 000）は原図と一致。図の接続（20Ωと30Ωの並列、その後に8Ωを直列、電源200V）も一致。計算は12+8=20Ω、I=10A、P=10²×8=800Wで公式正答ロと合う。公開用の図切出しq1.pngは原図の回路部分と一致。"
+    },
+    {
+      "number": 2,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と4つの式（イ πDR/(4L×10³)、ロ πD²R/(L²×10⁶)、ハ πD²R/(4L×10⁶)、ニ πDR/(4L²×10³)）は原図と一致。ρ=RA/L、A=π(D×10⁻³)²/4 から得られる式はハで、公式正答ハと合う。各選択肢の誤りの説明も式の差と合っている。本問に図はない。"
+    },
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文（接触抵抗0.2Ω、電流15A、1時間、抵抗値は変化しないという但し書き）と選択肢（11/45/72/162）は原図と一致。Q=15²×0.2×3600=162kJで公式正答ニと合う。誤答の説明もそれぞれ数値で確認した（IRt=10.8kJ、I²R=45W、10Aで計算すると72kJ）。"
+    },
+    {
+      "number": 4,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と4つの式は原図と一致。P×10³=√3VIcosθ を解くと力率[%]=P×10⁵/(√3VI) となり、公式正答イと合う。ロが正しい式の3倍になること、ハとニが分数の上下を逆にしていることも確認した。"
+    },
+    {
+      "number": 5,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の数値が不正確。200/√3=115.47V、115.47/10=11.547Aで、正確な値を小数第1位に丸めると11.5Aになり、正答の11.6とは一致しない。11.6Aになるのは√3≒1.73で計算した場合（200/1.73≒115.6V、115.6/10≒11.56≒11.6A）である。解説では√3≒1.73を使うことを明記するか、正確な値は約11.55Aで、選択肢の中で最も近いのが11.6であることを示す必要がある。現在の「115.5/10≒11.6A」は、丸めた115.5Vをもう一度丸めて答えに合わせた形になっている。",
+        "choiceExplanations.ロの「相電圧=200/√3≒115.5V、相電流=線電流=115.5/10≒11.6A」も同じ丸めの問題がある。√3≒1.73で近似していることを示すよう直す。",
+        "choiceExplanations.イとハの結論「約11.6A」「115.5/10≈11.6A」も同じ近似を前提にしている。表現を総合解説とそろえる（√3≒1.73で約11.6A）。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文と選択肢（8.3/11.6/14.3/20.0）は原図と一致。図は3φ3W電源（上・中線間、中・下線間、上・下線間がいずれも200V）に各10Ωの抵抗をY結線した平衡負荷で、Iは最上段の線の電流。diagramDescriptionは図と一致し、公開用の図切出しq5.pngも原図の回路部分と一致。√3≒1.73で計算すると11.56≒11.6Aとなり、公式正答ロと合う。"
+    }
+  ]
+}
