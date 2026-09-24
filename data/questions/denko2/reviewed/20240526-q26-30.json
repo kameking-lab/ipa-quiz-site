@@ -1,0 +1,140 @@
+[
+  {
+    "number": 26,
+    "question": "使用電圧100Vの低圧電路に、地絡が生じた場合0.1秒で自動的に電路を遮断する装置が施してある。この電路の屋外にD種接地工事が必要な自動販売機がある。その接地抵抗値a[Ω]と電路の絶縁抵抗値b[MΩ]の組合せとして、「電気設備に関する技術基準を定める省令」及び「電気設備の技術基準の解釈」に適合していないものは。",
+    "choices": {
+      "イ": "a 600　b 2.0",
+      "ロ": "a 500　b 1.0",
+      "ハ": "a 100　b 0.2",
+      "ニ": "a 10　b 0.1"
+    },
+    "officialAnswer": "イ",
+    "explanation": "経済産業省『電気設備の技術基準の解釈』第17条第4項ではD種接地の接地抵抗値は原則100Ω以下だが、地絡後0.5秒以内に自動遮断する装置があれば500Ω以下。本問は0.1秒で遮断する。100Vの低圧電路では、絶縁抵抗の基準は0.1MΩ以上（省令第58条）。イは絶縁抵抗2.0MΩを満たす一方、接地抵抗600Ωが500Ωを超えるので不適合。",
+    "choiceExplanations": {
+      "イ": "接地抵抗a=600Ωは、0.5秒以内遮断装置施設時の緩和基準500Ω以下を超過しているため不適合。絶縁抵抗b=2.0MΩは基準0.1MΩ以上を満たす。接地抵抗の超過により本肢が不適合＝正答。",
+      "ロ": "a=500Ωは緩和基準500Ω以下ちょうどで適合。b=1.0MΩは基準0.1MΩ以上を満たすため適合。",
+      "ハ": "a=100Ωは緩和基準500Ω以下を満たし適合。b=0.2MΩは基準0.1MΩ以上を満たすため適合。",
+      "ニ": "a=10Ωは緩和基準500Ω以下を満たし適合。b=0.1MΩは基準0.1MΩ以上ちょうどで適合。"
+    },
+    "diagramDescription": "図表なし。イからニは接地抵抗aと絶縁抵抗bの数値組合せを本文の選択肢として示す。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q26.png",
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+      "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 27,
+    "question": "図は測定器の目盛板を示したものである。この測定器に関する記述として、誤っているものは。",
+    "choices": {
+      "イ": "この測定器は電圧計である。",
+      "ロ": "永久磁石可動コイル形の測定器である。",
+      "ハ": "測定器を水平に置いて測定する。",
+      "ニ": "交流回路用の測定器である。"
+    },
+    "officialAnswer": "ロ",
+    "explanation": "目盛板中央にはV、Vの下には波線、左下には姿勢記号と動作原理記号がある。公式問題原図と公式正答を照合すると、Vを電圧計とするイ、水平置きとするハ、交流回路用とするニは正しく、動作原理を永久磁石可動コイル形とするロが誤り。ロの判定は、原図の動作原理記号が永久磁石可動コイル形の記号ではないことによる。",
+    "choiceExplanations": {
+      "イ": "中央にVの記号があり、電圧計である。",
+      "ロ": "原図左下の動作原理記号は、永久磁石可動コイル形を表す記号とは異なるため誤り。",
+      "ハ": "左下の水平置き記号は、測定器を水平に置いて使うことを示す。",
+      "ニ": "Vの下の波線は交流用の記号であり、交流回路用の測定器である。"
+    },
+    "diagramDescription": "0、50、100、150の目盛を持つ測定器の目盛板。中央にVと波線、左下に動作原理記号、姿勢記号及び『1.0』の表示がある。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q27.png",
+    "imageUrls": [
+      "/images/denko2/2024-first/q27.png"
+    ],
+    "officialReferenceUrls": [],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 28,
+    "question": "「電気工事士法」において、一般用電気工作物に係る工事の作業で、a、bともに電気工事士でなければ従事できないものは。",
+    "choices": {
+      "イ": "a：配電盤を造営材に取り付ける。\nb：電線管を曲げる。",
+      "ロ": "a：地中電線用の管を設置する。\nb：定格電圧100Vの電力量計を取り付ける。",
+      "ハ": "a：電線を支持する柱を設置する。\nb：電線管に電線を収める。",
+      "ニ": "a：接地極を地面に埋設する。\nb：定格電圧125Vの差込み接続器にコードを接続する。"
+    },
+    "officialAnswer": "イ",
+    "explanation": "電気工事士法施行規則第2条は、電線管の曲げ、配電盤の造営材への取付け、電線管への電線の収納、接地極の埋設などを『軽微な作業』から除く。一方、施行令第1条は地中電線用の管の設置、600V以下の電力量計の取付け、600V以下の差込み接続器へのコードの接続などを『軽微な工事』として挙げる。イのa・bは双方とも資格が必要な作業である。",
+    "choiceExplanations": {
+      "イ": "配電盤を造営材へ取り付ける作業も、電線管を曲げる作業も、施行規則第2条で軽微な作業から除かれる。両方とも電気工事士が必要。",
+      "ロ": "地中電線用の管の設置と100Vの電力量計の取付けは、施行令第1条の軽微な工事に当たり、両方必要という条件に合わない。",
+      "ハ": "電線を支持する柱の設置は軽微な工事だが、電線管への電線の収納は施行規則第2条で軽微な作業から除かれる。両方必要ではない。",
+      "ニ": "接地極の埋設は施行規則第2条で軽微な作業から除かれる一方、125Vの差込み接続器へのコードの接続は施行令第1条の軽微な工事。両方必要ではない。"
+    },
+    "diagramDescription": "図表なし。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q28.png",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/335M50000400097/20231228_505M60000400063",
+      "https://laws.e-gov.go.jp/law/335CO0000000260/20230401_504CO0000000365"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 29,
+    "question": "「電気用品安全法」における特定電気用品に関する記述として、誤っているものは。",
+    "choices": {
+      "イ": "電気用品の製造の事業を行う者は、一定の要件を満たせば製造した特定電気用品に菱形PSEの表示を付すことができる。",
+      "ロ": "電線、ヒューズ、配線器具等の部品材料であって構造上表示スペースを確保することが困難な特定電気用品にあっては、特定電気用品に表示する記号に代えて<PS>Eとすることができる。",
+      "ハ": "電気用品の輸入の事業を行う者は、一定の要件を満たせば輸入した特定電気用品に丸形PSEの表示を付すことができる。",
+      "ニ": "電気用品の販売の事業を行う者は、経済産業大臣の承認を受けた場合等を除き、法令に定める表示のない特定電気用品を販売してはならない。"
+    },
+    "officialAnswer": "ハ",
+    "explanation": "特定電気用品の表示は菱形PSEで、丸形PSEは特定電気用品以外の電気用品の表示。輸入した特定電気用品に丸形PSEを付すとしたハが誤り。",
+    "choiceExplanations": {
+      "イ": "特定電気用品の製造・輸入事業者が、技術基準適合、登録検査機関による適合性検査、自主検査等の要件を満たした場合は、菱形PSEを表示できる。",
+      "ロ": "表示スペースを確保しにくい電線・ヒューズ・配線器具等には、菱形PSEの図形に代えて文字表記<PS>Eを使える。",
+      "ハ": "特定電気用品に必要なのは菱形PSE。図中の丸形PSEは特定電気用品以外の表示なので誤り。",
+      "ニ": "法定表示のない特定電気用品は、例外の承認等を除いて販売できない。"
+    },
+    "diagramDescription": "イには菱形枠内にPSとEを上下に配した図記号、ハには丸形枠内にPSとEを上下に配した図記号。ロは図でなく文字表記<PS>E。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q29.png",
+    "choiceImageUrls": {
+      "イ": "/images/denko2/2024-first/q29-diamond-pse.png",
+      "ハ": "/images/denko2/2024-first/q29-circle-pse.png"
+    },
+    "officialReferenceUrls": [
+      "https://www.meti.go.jp/policy/consumer/seian/denan/file/06_guide/hanbai.pdf",
+      "https://laws.e-gov.go.jp/law/336AC0000000234"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  },
+  {
+    "number": 30,
+    "question": "「電気設備に関する技術基準を定める省令」に関する記述として、誤っているものは。",
+    "choices": {
+      "イ": "電圧の種別である低圧、高圧及び特別高圧を規定している。",
+      "ロ": "電気設備は、感電、火災その他人体に危害を及ぼし、又は物件に損傷を与えるおそれがないように施設しなければならないと規定している。",
+      "ハ": "「電気機械器具」とは、電路を構成する機械器具をいうと定義されている。",
+      "ニ": "「電線」とは、通常の使用状態で電気が通じているところをいうと定義されている。"
+    },
+    "officialAnswer": "ニ",
+    "explanation": "電気設備に関する技術基準を定める省令第1条では『通常の使用状態で電気が通じているところ』を電路と定義する。ニはこれを電線の定義と取り違えているため誤り。",
+    "choiceExplanations": {
+      "イ": "同省令第2条で電圧を低圧・高圧・特別高圧の三種に区分し、それぞれの範囲を規定している旨と一致するため正しい記述。",
+      "ロ": "同省令第4条（電気設備における感電、火災等の防止）の趣旨と一致する記述であり正しい。",
+      "ハ": "同省令第1条で「電気機械器具」を「電路を構成する機械器具をいう」と定義している旨と一致するため正しい記述。",
+      "ニ": "『通常の使用状態で電気が通じているところ』は電路の定義。電線は強電流電気の伝送に使用する電気導体等をいうため、定義を取り違えたニが誤り。"
+    },
+    "diagramDescription": "図表なし。",
+    "uncertainty": "",
+    "reviewedFromCrop": "data/raw_pdfs/denko2/review/20240526/q30.png",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096"
+    ],
+    "sourceQuestionPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf",
+    "sourceAnswerPdfUrl": "https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf"
+  }
+]

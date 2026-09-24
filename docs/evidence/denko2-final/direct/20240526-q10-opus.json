@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round4-q10-12-27-33-opus.json",
+  "upstreamReviewSha256": "0f51ce7512d01ff832d8f906171d5a2100de1627b05b3b9012f443d317b76030",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "ac6ea7bcac7e5bb735cf2d9edeece9b011063d21b2298e0471ce747fa81e21a0",
+    "rowSha256": {
+      "10": "b5964a6e3c2589262f1250e773c278f92eb8d782c6c962eb4848bf42c3d7c40c"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q10-i.png": "b6131b6c231d40b36b6f156c0457101afc581aa26af1b68ea9128cb92b75fd0b",
+      "public/images/denko2/2024-first/q10-ro.png": "b92b461fd9652784519a5e0f7a061caee8eae639bb422e052cf71bc8f37b0a44",
+      "public/images/denko2/2024-first/q10-ha.png": "5b4c92ccd478d0c7434feb3a9eb64279f818bfab36ea34f9389617b6b745366a",
+      "public/images/denko2/2024-first/q10-ni.png": "59910ffca2542930ca70b4aee5ea1c54db0e1437be7121962a7a8fe87258075a"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図・公式正答(イ)を照合。https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf はWebFetchで403のため、SHA256=7ff56485…3b43で固定した公式ローカル抜粋を使用。電技解釈第149条第1項第一号(分岐点から3m以下に過電流遮断器)、149-1表(20A以下の配線用遮断器→直径1.6mm、20A超30A以下→直径2.6mm)、149-3表(20A配線用遮断器→コンセント20A以下、30A→20A以上30A以下)、第2項第一号ハ(イ)(3m以下の部分だけ149-2表で緩和)。イ〜ニの図切出しは原図と一致。"
+    }
+  ]
+}

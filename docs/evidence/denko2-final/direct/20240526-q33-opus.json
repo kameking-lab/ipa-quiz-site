@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round7-q33-opus.json",
+  "upstreamReviewSha256": "e14abbcb01d670ce23e4ec3fe6d1fcb075c20a49907b5564e65bfcac2653e5d3",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "bd54241100899e081a994a0bc9f5d11da10aa5486e15d90f86b5897728a6e3aa",
+    "rowSha256": {
+      "33": "04260e9557c5a7b1a32ce99062556ef7862d14a5cb3b3d20a80c96cf0ba5223b"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q33-i.png": "90db5c0eb9186403d8f2b75125afb5962fc193990b9615a300f7d2131f6877a0",
+      "public/images/denko2/2024-first/q33-ro.png": "193e313e13a1cab18b7a19a8f8172e3396e0f879ed544ea758140a3dea9ff965",
+      "public/images/denko2/2024-first/q33-ha.png": "821eb6d5b329684dd5694de55f7f4e5bca45dad869de9afed3651dc1a5c7f2f3",
+      "public/images/denko2/2024-first/q33-ni.png": "d4ad2c650e13cfed89f1186185a21e1bb853f06f9934736da649948fbce8ea56"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 33,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式問題PDF(https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf)の問33本文『③で示す部分に使用するコンセントの極配置（刃受）は。』とイ〜ニの4図を照合した。イは横L字＋横平刃＋接地、ロは縦平刃2本＋接地、ハは横平刃2本＋接地、ニは縦L字＋縦平刃＋接地で、切出し画像q33-i/ro/ha/niは公式の順番と一致する。15頁の共通配線図では、③は右壁の『E20A』コンセントで回路ⓘにつながる。電灯分電盤結線図ではⓘが100V・20A、凡例ではⓐ〜ⓘが単相100V回路である。wiring-main.pngとwiring-panels.pngにも③とⓘの位置が正しく入っている。公式正答PDF(https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf)の問33はニ。刃受の形と定格の対応は二つの資料で確認した。(1)JIS C 8303:2007公式PDF(SHA256=18edc662…7008e)の表1で、2極接地極付の15A125V=図A.9、15A250V=図A.10、20A125V=図A.11、20A250V=図A.12。(2)METI別表第四(https://www.meti.go.jp/policy/consumer/seian/denan/PDF/old_beppyou4.pdf)。WebFetchは403だったため、添付のSHA固定抜粋(99ce3021…9111)を使った。抜粋では縦平刃2本=15A125V(図1又は図2)、横平刃2本=15A250V(図6)、縦L字＋縦平刃=20A125V(図10)、横L字＋横平刃=20A250V(図14)。この対応は全肢理由(イ=20A250V、ロ=15A125V、ハ=15A250V、ニ=20A125V)と合っている。"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "officialSources": [{
+    "url": "https://www.jisc.go.jp/app/jis/general/GnrJISSearch.html",
+    "document": "JISC公式閲覧 JIS C 0303:2000 音声PDF",
+    "localPath": "data/raw_pdfs/denko2/jisc-C0303-2000-audio.pdf",
+    "sha256": "e8db44b6176aa02911893936af93402330736aa06e3404500af152c30f72b359",
+    "clauses": ["PDF11頁4.2コンセント欄は引掛形・抜け止め形・医用を別記し、医用はH傍記と明記。音声PDFに引掛形T・抜止形LKの図記号画像はないため、国交省標準図の画像・文字と併用する。"]
+  }, {
+    "url": "https://www.mlit.go.jp/common/001108579.pdf",
+    "document": "国土交通省 公共建築設備工事標準図（電気設備工事編）平成28年版",
+    "localPath": "data/raw_pdfs/denko2/mlit-electrical-drawings-2016.pdf",
+    "sha256": "6659d47a16814598d7bc1d05eb7b837a81952e58423d1f7f724435755c4584aa",
+    "clauses": ["PDF8頁の壁付コンセント図記号表：2P15A×1（引掛形）はTの傍記、抜止形はLK。原図⑩は傍記の伏字で、問題文が引掛形と明記する。"]
+  }]
+}

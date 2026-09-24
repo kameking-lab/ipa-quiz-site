@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin2-q41-42-43-44-opus.json",
+  "upstreamReviewSha256": "775d5dfb7af42b816bd70e461535f8805c35bf7c7d54d6b84ea2b900e2bd93b4",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "d0891d18b6b267d1c49c2ec5ccdc9bf2ad0b3aace8972351d3ae0186434283c8",
+    "rowSha256": {
+      "41": "b56695a09bf3299e9d38262cae0f600005962c3214ca7e9e8c3b58b2ce719c84"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q41-i.png": "4c52cf6d5869f73805e0ed1c0891718939707956fbdb935547d6a86b113d060b",
+      "public/images/denko2/2024-first/q41-ro.png": "86984f57b010116dd35d47c5ce92ea8ab1c1b65453bbf608c2a0607b655e2aa3",
+      "public/images/denko2/2024-first/q41-ha.png": "806c41e73e404e091a5a32bb246601d4191ac5ed8ee78cb7a1bbf4a95ac73846",
+      "public/images/denko2/2024-first/q41-ni.png": "813d7e4e3cd7ff48a2e7ac99568f584714cea2ba1399b9dfbdd39647e559fc0e"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 41,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題15頁の共通配線図で、⑪のボックスには4本のケーブルが入る。左はコンセント経由の電源側VVF2.0、下はコンセント側VVF2.0、上はスイッチ『カ』へのVVF1.6、右は照明『カ』へのVVF1.6。接続点は、非接地側の3本、接地側の3本、スイッチから照明への帰り線の2本で、3本接続2か所と2本接続1か所になる。問41の公式写真では、橙色の差込口が2つ、水色が3つ、黄緑色が4つ。公式正答ロ（橙1個・水色2個）と一致する。肢の切出しq41-i/ro/ha/ni.pngは、公式写真の個数表記（3個／1個・2個／2個・1個／2個・1個）と一致する。"
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "20": "730556bce658f1ffa4a9368debdd79770a9bfe92ab28a61bbdbdd0966396e275",
+      "21": "ed2bd5576b78b9ed54226c1a9239589091846a9c4c01f9636189f1d547faffd6",
+      "22": "e3524766839143e48ec99e32c4eda00adeffa0cef2e0a932f1fc36b689f1a3d6",
+      "23": "c0bba1265724a75fe6fec069573e83df7697312a57b07dd3a8624197647541e0",
+      "26": "76c47343aae7344ff31c6d83c5677396c2532dcc1e088ecfbc7ba523d18d9803"
+    },
+    "sourceCropSha256": {
+      "20": "93b922c4ad186e2275926159d0b83a2e6ac9cf47e2b510ef3133309f60ce58a5",
+      "21": "1f8a41efc18e99dcde2d0c5b29246b685292cc4e18dbca329c3714d283acc5af",
+      "22": "fca64f0eedb00f2070df4db00cd46f2a18cdc54d800b2e037163661ed17df4b7",
+      "23": "43207929873fa2835b435a8a512884fdd8f59f4621e1ce9a66fbbedb7a7b2c71",
+      "26": "a6f969fb16f19bec5d06d7ef3f24094759195fc92531c21c5ea688c65453d540"
+    }
+  },
+  "assessment": [
+    {
+      "number": 20,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf）をWebFetchしたがHTTP 403で本文を取得できなかった。解説の根拠である『電気設備の技術基準の解釈』第185条（支持点間2m以下、終端部の閉そく、開口部を下向き、造営材を貫通しない、対地電圧150V以下かつ全長4m以下ならD種接地を省略できる）を一次資料で確認できていない。",
+        "meti.go.jpにある解釈の別版PDF（law/files/dengikaishaku.pdf、tsutatsutou/tuuti1/aa566.pdf、oshirase/2016/04/280401-3-5.pdf）もすべてHTTP 403で、代わりの一次資料でも裏付けられなかった。",
+        "参照URLのPDFが解釈の全文なのか改正対照表なのか確認できない。解説に条番号（第185条）がなく、参照URLのどの箇所が裏付けなのかを特定できない。"
+      ],
+      "verifiedEvidence": "公式原図（q20）と照合し、問題文、否定（不適切なもの）、100V、1.5m、3.5m、イロハニ全肢の文言が一致。公式正答ニとも一致。法令条文（解釈第185条）は一次資料にアクセスできず未確認。"
+    },
+    {
+      "number": 21,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（METI 20231226-2.pdf）がHTTP 403で取得できなかった。そのため、解説にある解釈第160条第2項第二号（1種金属製可とう電線管は展開した場所または点検できる隠ぺい場所で、かつ乾燥した場所に限る）と第3項第四号（2種を湿気の多い場所に施設するときの防湿装置）の条番号と文言を一次資料で確認できていない。",
+        "ロの根拠（解釈第164条：造営材に沿うケーブルの支持点間2m以下）、ハの根拠（解釈第159条：金属管工事の電線は絶縁電線でOWを除く）、ニの根拠（解釈第159条：使用電圧300V以下で管長4m以下を乾燥した場所に施設する場合はD種接地を省略できる）も一次資料で確認できていない。meti.go.jpの解釈PDFは別版を含めてすべて403だった。"
+      ],
+      "verifiedEvidence": "公式原図（q21）と照合し、問題文、200V、否定、イロハニ全肢（1種、2m以下、600V、3m）が一致（句読点の『，』と『、』の違いのみ）。公式正答イとも一致。法令条文（解釈第159条・第160条・第164条）は一次資料にアクセスできず未確認。"
+    },
+    {
+      "number": 22,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（METI 20231226-2.pdf）がHTTP 403で取得できず、解説の根拠である解釈第167条（ケーブル工事による低圧配線は弱電流電線等と接触しないように施設する）を一次資料で確認できていない。",
+        "解説に条番号の記載がなく、参照URLのどの規定が主張（接触しないこと、離隔、隔壁の扱い）を直接裏付けるのか特定できない。"
+      ],
+      "verifiedEvidence": "公式原図（q22）と照合し、問題文、a〜dの4記述（3m、10cm、堅ろうな隔壁）、『適切なものを全て選んだ組合せ』、イロハニ全肢が一致。公式正答ロとも一致。法令条文（解釈第167条）は一次資料にアクセスできず未確認。"
+    },
+    {
+      "number": 23,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（METI 20231226-2.pdf）がHTTP 403で取得できず、解説の根拠である解釈第158条を一次資料で確認できていない。未確認の主張は、支持点間1.5m以下、差込み深さが外径の1.2倍以上（接着剤を使う場合は0.8倍以上）、湿気の多い場所での防湿装置、金属製ボックスへのD種接地とその省略条件。",
+        "ニの解説は、簡易接触防護措置による接地省略の条件（対地電圧の要件など）を条文で示していない。三相200Vが省略条件に当たらないことを一次資料で確認できていない。解説に条番号の記載もない。"
+      ],
+      "verifiedEvidence": "公式原図（q23）と照合し、問題文、否定、イロハニ全肢（2m、0.9倍、防湿装置、三相200V、簡易接触防護措置、金属製プルボックス、D種接地）が一致。公式正答イとも一致。法令条文（解釈第158条）は一次資料にアクセスできず未確認。"
+    },
+    {
+      "number": 26,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（METI 20231226-2.pdf）がHTTP 403で取得できず、解説の中心的な根拠である解釈第17条（D種接地は原則100Ω以下、地絡時に0.5秒以内に自動遮断する装置を施設するときは500Ω以下）を一次資料で確認できていない。meti.go.jpの解釈PDFは別版を含めてすべて403だった。",
+        "e-Govの参照URL（laws.e-gov.go.jp/law/409M50000400052/20230320_504M60000400096）は画面が描画されず本文を取得できなかった。そこで同じ省令をe-Gov法令API（laws.e-gov.go.jp/api/1/lawdata/409M50000400052）の現行版で確認した。参照URLが指す版の本文そのものは照合していない。"
+      ],
+      "verifiedEvidence": "公式原図（q26）と照合し、問題文、100V、0.1秒、屋外の自動販売機、D種、『適合していないもの』、イロハニ全肢のa・b数値が一致。公式正答イとも一致。e-Gov法令API（https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052）で電気設備技術基準省令第58条の表を確認：300V以下で対地電圧150V以下は0.1MΩ、300V以下のその他は0.2MΩ、300V超は0.4MΩ。bの判定（0.1MΩ以上）は裏付けられた。解釈第17条の500Ω緩和は未確認。"
+    }
+  ]
+}

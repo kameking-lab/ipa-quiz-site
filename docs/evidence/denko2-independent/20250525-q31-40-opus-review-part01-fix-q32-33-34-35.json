@@ -1,0 +1,76 @@
+{
+  "inputHashes": {
+    "draftSha256": "e8b958de6c8dafab877c00569d75a96bacfc5694a6b8fac637cc705748816de6",
+    "candidateSha256": {
+      "32": "6d1fa814f739836c0e61f38d2f6022d4cf72517080591fd1d11e51a493192498",
+      "33": "44ea2a86e7f41fe57e2c7f2cfcaac21fb39ded6e9352e81502fe7689a6bdd8c0",
+      "34": "a2ab9a49709fdfad3da9d8563984742de791143048d525e7b4e19945832f1326",
+      "35": "4565ac74fedf8a70fe6d2aa10fd2d7e0e280ebd250e546fc24f620b84a837bf3"
+    },
+    "rowSha256": {
+      "32": "73d0c10007ac0fa68fc52330cedf5557c53ed4edc17ffbe220ddf1b5ed524de8",
+      "33": "dcf083e379423a3c397d08800e2514989642bb532e6bdecd6b26c7dd37e571fe",
+      "34": "3fd8f3bc1a35953677bd51115b93da0130451829070d32173b9be3a29ec92932",
+      "35": "e5bf6fa656c6a19a41d350290c2fde70209c139b6d822b69430c84d2cae1c00f"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "sourcePackSha256": {
+      "32": "690659e82dd11facdd67aa1868a3612fbd9703cb31b81ae79e6e0649c1302dd6",
+      "33": "ba16d2e8f56ce2138dab17787be9efd8b5e5382037aefffe8f0b0984342af4a2",
+      "34": "ad8a9f375f793cb51d693cc50d4f9d4285485233e3c5c5abc38f0618edd8204f",
+      "35": "43757424b3b74e50e11a6d56f676cc410a9de10d70567b413c9125eecf50c5e6"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "The explanation's main rule is Article 120 of the METI technical-standard interpretation (電技解釈第120条): underground electric lines (地中電線路) must use cable. But the attached primary-source pack states that the wiring between the garden lights must not be treated as an Article 120 line (庭園灯間の配線を第120条の電線路と同一視しない). That makes the rule used for ② contradict the source pack. The basis needs to be Article 166 or another applicable clause instead.",
+        "The explanation says Article 166 permits cable work for low-voltage outdoor wiring (ケーブル工事を認める). That is only a permission. It does not show that insulated wire (EM-IE) in FEP conduit underground is prohibited. The step from 'EM-IE is not a cable' to 'EM-IE cannot be used' has no supporting clause in the cited sources.",
+        "Choice ニ ends with 地中埋設配線には使用できない (cannot be used for underground buried wiring). This also has no clause cited that directly prohibits it. It rests on the same Article 120 reasoning flagged above."
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "The source pack for Article 166 (PDF pp. 162–163, para. 1 items 1 and 7, Tables 166-1 and 166-2) only summarises the clause text. Check against the original whether outdoor low-voltage wiring laid underground must be cable, and whether the clause points to Article 120 (e.g. 'shall be installed according to Article 120'). Without that, the claim that EM-IE cannot be used is unconfirmed."
+      ]
+    },
+    {
+      "number": 33,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "Choice ロ's explanation says an ammeter-equipped switch needs an A mark to show the ammeter (電流計を表すAの付記が必要). But the source pack says the JIS C 0303 audio PDF (p. 13) does not reproduce the symbol drawings, so the drawing for an ammeter-equipped switch has not been checked. The A-mark requirement is written as fact without support.",
+        "Choice ハ's explanation says there is no mark or circuit showing a starter at ⑤ (始動装置を示す傍記や回路は⑤にない). This assumes a JIS symbol for a starter that has not been checked, so the reason for rejecting ハ is unconfirmed."
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "Check the actual JIS C 0303:2000 symbol drawings (the original PDF with figures, not the audio version) for: the electromagnetic switch (電磁開閉器), the ammeter-equipped switch (電流計付開閉器, including whether an A mark is added), and the motor starter (始動器). Then confirm the reasons given for choices ロ and ハ."
+      ]
+    }
+  ]
+}

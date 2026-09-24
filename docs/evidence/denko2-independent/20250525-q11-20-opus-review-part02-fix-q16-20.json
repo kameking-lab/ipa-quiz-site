@@ -1,0 +1,42 @@
+{
+  "inputHashes": {
+    "draftSha256": "ff18af343fcaf203fff52390a7b8846d1de594ca8f50a83eabf1c171e9ace72c",
+    "rowSha256": {
+      "16": "b418ac16361d499b8c4e3c3e0ecb192497a044ba0214b21019fc49a56f60388a",
+      "20": "441a83294562dd83d7bac1174358b56ccd0016ad84fd4a9c024b94275095988e"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q16.png": "6e0d2229ff6be21d8651fc9269e28eff698ca595900d7d8c659c785a933316ef"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "肢ニの理由と本文の正答理由が根拠になっていない。どちらも「公式正答で適切とされる」と繰り返すだけで、なぜ8倍が適切なのかを説明していない。理由を足すなら、屈曲部の内側半径には下限の倍数があり、8倍はその下限以上だから適切、という因果の形で書く。内線規程の該当条項と具体的な倍数は、外部で確かめた後に記載する。",
+        "uncertainty欄には「規格値の断定を避ける」とあるのに、肢ニの説明は倍数の考え方すら示さず、4肢の中でこの肢だけ判断根拠がない。正答肢だけが循環した説明になっている。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "肢イ: 『電気設備の技術基準の解釈』第164条の支持点間距離について、接触防護措置を施した場所で垂直に取り付ける場合は6m以下とする記述。条番号と数値を原文で確認する必要がある。",
+        "肢ロ: 金属製遮へい層のない弱電流電線を低圧配線と同じ管に収めることを禁止する根拠条項。条番号の特定が必要。",
+        "肢ハ: コンクリート内に直接埋設できるケーブルの種類（コンクリート直埋用ケーブル等に限られる点）について、該当条項の確認が必要。",
+        "肢ニ: 丸形ケーブルの屈曲半径の下限（内線規程の該当条項と倍数）の確認が必要。",
+        "officialReferenceUrls の経済産業省PDF（20241022-2.pdf）が第164条を含む現行版かどうか確認が必要。"
+      ]
+    }
+  ]
+}

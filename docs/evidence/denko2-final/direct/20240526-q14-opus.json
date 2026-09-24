@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q06-07-11-13-14-opus.json",
+  "upstreamReviewSha256": "95241b47016a985da42c6ac8079357ab1f182a920106fd95b5f6834eb5f7b395",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "93f0a4cf7cd42295120f0ec883a546ca56e2875fbf1ee520d5c87b57103a32d4",
+    "rowSha256": {
+      "14": "d836f840ad8b404af24c4b62f1323a8b1cc4bd57475441895ee2893f89bd4f7d"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 14,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文の「全電圧始動(じか入れ始動)と比較して」「正しいものは」と、イ〜ニ全肢の文言は原図と一致。公式正答はロ。Y始動では巻線電圧が1/√3、線電流が1/3、トルクがおおむね1/3になるという説明は正答と整合する。法令主張なし。図表なしの記載も原図と一致。"
+    }
+  ]
+}

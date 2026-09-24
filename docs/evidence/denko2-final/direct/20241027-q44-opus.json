@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct3-q44-45-opus.json",
+  "upstreamReviewSha256": "5bc09dab20ededcb16b5352904c8630c0e8632cb20856e71798b1e9b508ce1b3",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "dea103dd14a73b65c287d9db21c60bd196419e710f7599afd90c2840b917d60c",
+    "rowSha256": {
+      "44": "8836bd96d6f1e29497531e7acfbd1a07f31d01cfa357dc5a67d4934f550cad61"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q44-1.png": "985b3d46dbcbb5dc05ccf0bbc9dae717c77fbc007d140d707b24766444720245"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q44.json": "9f131bee2b3a51d17ccf43795954c50d32f38700b880050654995c98645a075d"
+    }
+  },
+  "assessment": [
+    {
+      "number": 44,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "設問行の原図（問44）と照合。問題文は「⑭で示す点滅器の取付け工事に使用されることのない材料は。」で、否定語「使用されることのない」が候補と一致する。",
+        "公式正答はニで、候補の officialAnswer もニ。公式正答は変更していない。",
+        "公式問題15頁の共通配線図の2階平面図、階段脇を確認。⑭の矢印は、傍記「イロハ」の付いた黒丸点滅器3個を指している。3個目の下には「3」の傍記があり、3路スイッチである（1階階段の「3 ハ」と対応）。これは候補の「3個用点滅器群」と一致する。",
+        "同じ図で、①の矢印は⑬（斜線入りの円＝VVF用ジョイントボックス）と⑭を結ぶ配線を指している。候補の「⑬のVVF用ジョイントボックスから配線①で結ばれている」と一致する。⑭の周辺には電線管の種類・太さの特記がない。",
+        "固定済みの一次資料pack（SHA256=31f160dc…6b2b）で確認。対象は shiken.or.jp/construction/upload/20241027_co_second_q01.pdf のPDF11頁、注意1「屋内配線の工事は，特記のある場合を除き電灯回路は 600 V ビニル絶縁ビニルシースケーブル平形 (VVF)…を用いたケーブル工事である」。候補解説の根拠と一致する。",
+        "写真を照合。イはノックアウト穴が底面と側面にある金属製の四角アウトレットボックス。ロは角の丸い長方形開口の縁が立ち上がった金属製塗代カバーで、開口の上下に小穴、四隅付近に長穴がある。ハは打抜き穴のある連用の配線器具取付枠。ニは角の丸い金属製の露出形スイッチボックスで、上部に電線管接続用ハブがある。4肢とも、選択肢の記述・diagramDescription・各肢の解説と一致する。",
+        "公開用図 q44-1.png は、設問行原図のイ〜ニの写真と同じ順序・内容で、欠けや取り違えはない。"
+      ]
+    }
+  ]
+}

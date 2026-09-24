@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "16": "a187beae6091290f64d106254bf918c5ace98b987811c8108d813f1897aa82fa"
+    },
+    "sourceCropSha256": {
+      "16": "a9a523c997ccd022d3b321c4155de4e9c2a6a53780bc58cb89a424e5e57a7970"
+    }
+  },
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図・公式正答照合: 問題文『写真の矢印で示す材料の名称は。』、イ金属ダクト／ロケーブルラック／ハライティングダクト／ニ2種金属製線ぴ、正答ロが候補と一致。公開用切出しq16.pngは原図の写真部分と同一で、黄矢印の位置（下段の曲がり部分の側面）も同じ。国交省『公共建築工事標準仕様書（電気設備工事編）令和7年版』(https://www.mlit.go.jp/gobuild/content/001888825.pdf, SHA256 bec6ec62…) p.22: 1.2.8(2)『はしご形ケーブルラックは、親げたと子げたを溶接、かしめ又はねじ止めにより…接続したもの』→総合解説・ロの理由を裏付ける。同p.22の1.2.7（金属ダクト。節番号はmlit.go.jpの公式PDFを対象にした検索で確認。表1.2.5『金属ダクトの電線支持物』もこの節にある）: (4)ふたの2分割、表1.2.5ふたの位置、(8)終端部は閉そく（分電盤等に接続する場合を除く）→イの理由を裏付ける。電技解釈(https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf, SHA256 7ff56485…) 第165条第3項第六号: ライティングダクトの開口部は下向きが原則で、同号イ・ロの場合は横向きにできる→ハの理由を裏付ける。第161条第1項第一号・第二号: 金属線ぴ工事の電線は絶縁電線で、『線ぴ内では』接続点を設けない→ニの『内部に絶縁電線を収める』を裏付ける。"
+    }
+  ]
+}

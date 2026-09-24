@@ -1,0 +1,27 @@
+{
+  "inputHashes": {
+    "reviewPromptVersion": "skill-source-v4",
+    "questionPdfSha256": "17927ea8c35a8621069a95e298ff29c6b315c1869d528d009f136c2e9d798ef0",
+    "answerPdfSha256": "5735a3c2b4c69eb291ad92767384810a095080c672e8b7285360359b35210ee6",
+    "extractedRecordSha256": "3a59050f2d388a258bdcc8e44822915db3914c24b64b8581d6f4d8753d2cc7b9"
+  },
+  "reviewModel": "claude-opus-5-5",
+  "sourceItemId": "denko2-2025-07-19-skill-05",
+  "assessment": {
+    "status": "PASS",
+    "textIssues": [],
+    "diagramIssues": [],
+    "modelAnswerIssues": [],
+    "notes": [
+      "The instruction text matches problem PDF page 2, including the 40-minute limit, items 1–5, the dash-dot omission symbol and the VVF joint box / switch box omission.",
+      "All 11 materials match page 1. Items 1–3 are VVF blue 2.0mm 2-core ~350mm, VVF 2.0mm 3-core ~350mm and VVF 1.6mm 2-core ~1650mm, 1 each. Item 4 is a 5-pole terminal block. Items 6–11 are 2 tumbler switches, one 20A250V grounded outlet, one flush outlet, one mounting frame, 5 small ring sleeves (spares included) and one 4-wire push-in connector. The problem-page notes, the exam number tag and the plastic bag are correctly left out.",
+      "The installation conditions match page 3. Condition 1 includes the note that the ロ switch goes in the center of the frame. Condition 3 has the colours white, black and green, and the three terminals that take white: W, the lamp receptacle's screw-shell terminal and N. Condition 4 has ① a push-in connector for 4 wires and ② ring sleeves for all other joints.",
+      "The notes under the figure (1. JIS C 0303:2000 and the omission wording; 2. Ⓡ = lamp receptacle) match the source. The text layer turns the circled R and the dash-dot line into ordinary characters, but they read correctly as Ⓡ and ―・―・―, so no fix is needed.",
+      "diagramImage covers all of Figure 1 with nothing cut off: both 施工省略 dash-dot areas, B/BE/grounding terminal/E_D, 250mm, 100mm, 200mm, both 250mm lengths, VVF 2.0-2C, VVF 1.6-2C (two places), VVF 2.0-3C, VVF 1.6-2C×2, the E mark, 20A 250V, Ⓡ with ロ, switches イ and ロ, the outlet, and the fluorescent light イ. The subscript in E_D is readable in the image.",
+      "secondFigureImage shows all of Figure 2 in readable form: the 100V N/L, 200V and ET labels, and the notes for the circuit breaker (2-pole 1-element), the earth-leakage breaker (2-pole 2-element) and the grounding terminal.",
+      "The model answer is headed 令和7年度第二種上期技能試験の解答 候補No.5. This matches the date 2025-07-19 and number 5. The concept diagram, the wiring diagram and the finished example all show the same layout as this problem: VVF2.0-2C blue sheath, the 200V outlet (VVF2.0-3C), lamp receptacle ロ, switches イ and ロ plus an outlet in one frame, and fluorescent light イ in the omitted area.",
+      "The wiring diagram agrees with the conditions. The 4 white wires meet in one push-in connector. That leaves 3 ring-sleeve joints (black supply, return to イ, return to ロ), which fits 5 sleeves with spares. The white wires to N, W and the screw shell are also consistent.",
+      "This check only compares the extraction with the source PDFs. No physical finished piece was graded."
+    ]
+  }
+}

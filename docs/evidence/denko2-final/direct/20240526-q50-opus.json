@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q49-50-opus.json",
+  "upstreamReviewSha256": "db51ca85c28aa9795dbe8d04981ff02524156e4ab4e3a0b94c13f46fca1434f5",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "f26b3124a9b6fe70067ef99b09110c1dba70c0cb30f9befa3467403d595bd705",
+    "rowSha256": {
+      "50": "17f28f0d8b67b6eb79e75e3333b8d9c944bad114a38812cc3b9161224d98b8cf"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q50-i.png": "93a30e6151a608c7a8c1364d67ce220f2d0a5d69d02bc4460cfceab73f40591f",
+      "public/images/denko2/2024-first/q50-ro.png": "340317a57db5989a9822c0ed50100e06a3aac7db924d3fe514028846c170dcb8",
+      "public/images/denko2/2024-first/q50-ha.png": "e82cc843a9dbbac54e04ee8193c6ed3bfb6bfc844c47d11fabe1e80f0356961b",
+      "public/images/denko2/2024-first/q50-ni.png": "ae0033064020876ea64e106e32b60618a09f016a51f47ad746ec3ab41285cc3f"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 50,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合（公式正答ニ）。15頁の共通配線図で次を確認した。2Eは左上区画、手洗場、冷蔵庫下、店舗下部の2か所にある。LKはカウンターのⓖと②の2か所にある。EETは左上区画の1口にある。屋外の2 LK EET WPは別仕様の器具。ほかに20A（ⓗ）とE20A（③）がある。3極や4差込口の多極コンセントに当たる傍記・図記号はない。図の切出し4枚（イ: 接地極付2口、ロ: 円弧状の抜け止め形1口、ハ: 接地極・接地端子付1口、ニ: 黒色で4差込口）は原図の写真と一致する。本問での写真と図記号の対応は、sourceQuestionPdfUrl/sourceAnswerPdfUrl（試験センター公式問題・正答）を一次資料として確認した。"
+    }
+  ]
+}

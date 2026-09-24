@@ -49,11 +49,15 @@ describe("examTopicPageExists gates /q topic links to resolvable pages", () => {
     }
 
     const mismatch: string[] = [];
+    const checkedPairs = new Set<string>();
     for (const q of ALL_QUESTIONS) {
+      const pair = `${q.exam}::${q.category}`;
+      if (checkedPairs.has(pair)) continue;
+      checkedPairs.add(pair);
       const pageLinks = examTopicPageExists(q.exam, q.category);
-      const hasStatic = staticPairs.has(`${q.exam}::${q.category}`);
+      const hasStatic = staticPairs.has(pair);
       if (pageLinks !== hasStatic) {
-        mismatch.push(`${q.exam}::${q.category} link=${pageLinks} static=${hasStatic}`);
+        mismatch.push(`${pair} link=${pageLinks} static=${hasStatic}`);
       }
     }
     expect(mismatch).toEqual([]);

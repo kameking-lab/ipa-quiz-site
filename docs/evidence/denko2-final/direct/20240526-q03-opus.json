@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin-q01-02-03-04-05-opus.json",
+  "upstreamReviewSha256": "d83f2e6100cd366b62cb135f5df0cdc08a6f1d2d739023b8b165895a491ad262",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "71fa8c799768f2a6766811d52925a2dcc8d86b6a4d565eefe30ab296635e8afc",
+    "rowSha256": {
+      "3": "3277d0957dc6725ecfd5570a1196809e1577872646283724cb5f870f293b6389"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。問題文（接触抵抗0.2Ω、電流15A、1時間、抵抗値は変化しないという但し書き）と選択肢（11/45/72/162）は原図と一致。Q=15²×0.2×3600=162kJで公式正答ニと合う。誤答の説明もそれぞれ数値で確認した（IRt=10.8kJ、I²R=45W、10Aで計算すると72kJ）。"
+    }
+  ]
+}

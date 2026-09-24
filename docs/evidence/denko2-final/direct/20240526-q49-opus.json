@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q49-50-opus.json",
+  "upstreamReviewSha256": "db51ca85c28aa9795dbe8d04981ff02524156e4ab4e3a0b94c13f46fca1434f5",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "2d2c386e36de7cf394d73838eb4abbf7e766c4dc57a48064a4c062c82bddee92",
+    "rowSha256": {
+      "49": "f04dfdc3b7d6b385608b4c56041c3b00f2bbbf50c7b49f7996225f722cc03ea3"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q49-i.png": "242c7b53b0a287c8dd9bff2fb47841ea7629aa86b97149f8af3c9ea1ecdfd804",
+      "public/images/denko2/2024-first/q49-ro.png": "5a58e2e722cd3bbb85466d7e8942f032dfa23c1d48abc32bd9b90c817f9f00ca",
+      "public/images/denko2/2024-first/q49-ha.png": "85d3ddb221e7d0d79a79e334ad610753bf9e34471489e5c4855c1d43c8e692b6",
+      "public/images/denko2/2024-first/q49-ni.png": "f169bf99753455c21ed7fc7ae7f0360789d2bf6d406edab2182feada8068d98b"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 49,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合（公式正答イ）。15頁の共通配線図で、⑲は事務所中央左の斜線入りボックスにある。つながるのは次の4本: 電源ⓑ（2心）、左の●ア3（3心）、⑩の曲線経由の右の●ア3（3心）、照明ア（2心）。接続点は5か所で、中性線、非接地側と3路スイッチ共通端子、渡り線1、渡り線3、3路スイッチ共通端子と照明。各接続点は1.6mmが2本。図の切出し4枚（イ: 小5個すべて○、ロ: 小4個すべて○、ハ: 小5個で上段に『小』1個、ニ: 小4個で上段に『小』1個）は原図と一致する。https://www.shiken.or.jp/construction/upload/point2024.pdf（SHA256 0b40cdd6…）のp.25『リングスリーブ（E形）と電線の組合せ（JIS C 2806準拠）』表で、1.6mm同一2本は小スリーブ・圧着マーク○、1.6mm同一3～4本は小スリーブ・圧着マーク小であることを確認した。"
+    }
+  ]
+}

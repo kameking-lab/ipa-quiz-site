@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q33-34-35-36-37-opus.json",
+  "upstreamReviewSha256": "033fe0b6315a4f26161538ea157973ab7f60d9ba47530ebed37542fb6023a97a",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "4b7c0a8162d407c41ca370231320424cac88dac584b6e6d449615f0df913548e",
+    "rowSha256": {
+      "34": "0a90448670bc7974c2b243ac35c299fe539eb18b8bbe096d24f10498abfe37a1"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe",
+      "public/images/denko2/2024-first/q34-symbol.png": "c4da63ef55a0c3d43fb63c61c5a903e5c1e4d28527ced02638682fcae403654b"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked against the official drawing and official answer. Official question PDF, p.15: ④ points to the symbol above the entrance door frame (a long bar combined with a circle whose opposite sectors are filled). Its lead line runs up to single-circle ⓐ, a single-phase 100V circuit per the legend. The q34-symbol.png crop matches that position. Official answer: Q34 = イ (誘導灯)."
+    }
+  ]
+}

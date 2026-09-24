@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/finalpin3-q05-16-17-40-42-43-opus.json",
+  "upstreamReviewSha256": "6d7bc260e26847cb3c40af61b431554eebcf010b26dac50cad761154538d346e",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "2acafd7bd23b001e45b47e5642b483bd3173e72f07075241528c35c9f1259ed1",
+    "rowSha256": {
+      "17": "7fe09a0490ce0517ab9d363544fffe68c1de51832a0f09d1109ad106f432d651"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q17.png": "7b79b303b67720128ada2b7b4ce285de065ed2fb8b13c554256dfba1f08dace6"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 17,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。吊り鉤付きカバー、ねじ端子部、白・黒の2本線、ねじ込み受け付きのソケット本体が写った写真で、公式正答はロ（線付防水ソケット）。問題文・4肢・図の切出しq17.pngは原図と一致。"
+    }
+  ]
+}

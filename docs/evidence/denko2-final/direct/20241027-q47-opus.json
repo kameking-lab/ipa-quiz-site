@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct4-q47-50-opus.json",
+  "upstreamReviewSha256": "19651f553c8e7fec0f654e6bd7ea41b771b75870358c9cbfe5719047a190146e",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "20977a1c956d14ffac7a350cd4715e9263ba65a7eea516d41aebbc699d2230ea",
+    "rowSha256": {
+      "47": "96e580191d0a3ba8035dc5e0134af148fcf1592b0b0eb165f66e120f3971a3ea"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q47-1.png": "38a2fa1d976572a81cb86d4fcadb560ebc22c9b6071515e3e5993aceb87cb54d"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 47,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "I compared the candidate with the official question row (crop q47.png). The question text matches exactly: 「⑰で示す部分に使用するトラフは。」 It has no negation, number or unit.",
+        "Page 15 of the official common wiring diagram, 1st-floor plan: ⑰ points to the vertical dash-dot underground line in the parking area (駐車場) on the right. That line runs between two handholes (◎), and a 「トラフ」 leader label and trough mark sit at the tip of the ⑰ arrow. The candidate's description, an underground section through the parking lot marked トラフ, matches this.",
+        "Official photos, checked against the public image q47-1.png (same content and order as the official crop): イ is a pale orange strip with red text 「危険　注意／この下に低圧電力ケーブルあり」. ロ is a grey U-section channel with a lid laid over part of it. ハ is a black pipe with a corrugated (ridged) outer surface. ニ is a black-sheathed cable end with two insulated cores exposed. All four choice descriptions match the photos.",
+        "Official answer ロ is kept unchanged. The candidate says ロ is the only choice with a body plus lid, and the photo confirms this.",
+        "The explanations for イ, ハ and ニ rest only on facts visible in the photos: the wording printed on the sheet, the corrugated outer shape and the cable end. There is no separate legal or standards claim, so officialReferenceUrls can stay empty. The explanation, per-choice reasons and diagramDescription do not contradict each other."
+      ]
+    }
+  ]
+}

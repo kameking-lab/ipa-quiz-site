@@ -1,0 +1,106 @@
+{
+  "inputHashes": {
+    "draftSha256": "285d117ca5d84bcca1d085611dc54d97e317cd8de4e56be999e255ddbd67d922",
+    "candidateSha256": {
+      "31": "f44f1be13e6c7d72ebc5677f45dc50b6fb733a06ffed77f90ed3a32200a4bccc",
+      "32": "5b15ef5debf04e43ac94b19c8d648147f29d89d75d6a4938606ae8209f6704ae",
+      "33": "039b1856dffe297d063079e085250e194908d143943bbe887abc883ceb61d4a1",
+      "34": "e76e50485fce11c2d83304cb4a0f3404d8d7e4bc9abddbdf40995a5065adab81",
+      "35": "075079a7df9a22a48a2c4408d77370ed0140e3cd11fc0efa3f539d24ecca814e"
+    },
+    "rowSha256": {
+      "31": "c6da9adf8194f386abcb376bdc819a1c46dbe4539fe0acf2387382c657a5d66b",
+      "32": "73d0c10007ac0fa68fc52330cedf5557c53ed4edc17ffbe220ddf1b5ed524de8",
+      "33": "dcf083e379423a3c397d08800e2514989642bb532e6bdecd6b26c7dd37e571fe",
+      "34": "3fd8f3bc1a35953677bd51115b93da0130451829070d32173b9be3a29ec92932",
+      "35": "e5bf6fa656c6a19a41d350290c2fde70209c139b6d822b69430c84d2cae1c00f"
+    },
+    "sharedFigureSha256": {
+      "public/images/denko2/2025-first/wiring-main.png": "9a24f0c440f8551855249e8768d44fb15bbe7db7aff283ebfffe950cfcae4277"
+    },
+    "sourcePackSha256": {
+      "31": "6999b30ce957224031f6a6d5800b278d820919e95298a98fbb25b803bc61914f",
+      "32": "1d827b34752b5f2ffc2981f95dbc38ba0083d180bf5df424b5a1ee9ef1a10e48",
+      "33": "ba16d2e8f56ce2138dab17787be9efd8b5e5382037aefffe8f0b0984342af4a2",
+      "34": "ad8a9f375f793cb51d693cc50d4f9d4285485233e3c5c5abc38f0618edd8204f"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説は「電線路として地中に施設する場合はケーブルを使用」と電技解釈第120条（地中電線路）だけを根拠にしている。しかし②は同じ敷地内の庭園灯どうしを結ぶ配線で、第120条がそのまま適用される「電線路」ではなく「屋外配線」にあたる。屋外配線を地中に施設するとき第120条に準じる、という接続条項（解釈第166条の屋外配線規定など）を示すか、表現を「地中埋設配線にはケーブルを使用する」に改める必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "屋外配線を地中に施設する場合に第120条（ケーブル使用・管路式等）が準用されることを示す条項の原文が照合パックにない（解釈第166条相当）。",
+        "EM-EEF（平形）を管路式の地中配線に使えることの根拠が照合パックにない。パックの国交省資料はケーブルであるという分類を示すだけ。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説とロの肢別理由は「位置表示灯内蔵点滅器はスイッチがオフのときに点灯」と断定している。ハの肢別理由も「確認表示灯はオンのときに点灯」と断定している。照合パックのreviewScopeは、JIS C 0303の該当箇所に点灯タイミングの記載はないと明記している。一次資料で裏付けられない動作説明なので、削除するか別の出典を付ける必要がある。",
+        "editorialReviewNotesは「画像だけでは確定できないため要確認」のまま残っている。JIS C 0303 PDF12頁（H＝位置表示灯内蔵、L＝確認表示灯内蔵）との照合結果を反映していない。officialReferenceUrlsにもJIS出典が記載されていない。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "イの「遅延スイッチ＝●D」とニの「熱線式自動スイッチ＝●RAS」の傍記文字が照合パックにない。パックはj)遅延スイッチ、k)熱線式自動スイッチという項目名だけで、傍記の文字を示していない。JIS C 0303 PDF12頁の原文で傍記の文字を確認する必要がある。",
+        "位置表示灯＝オフ時点灯、確認表示灯＝オン時点灯という動作仕様の一次資料がない。"
+      ]
+    },
+    {
+      "number": 34,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説・肢別理由・diagramDescriptionの記号表記が誤っている。電磁開閉器用押しボタンを「●B」「●BL」、圧力スイッチを「●P」と書いているが、原図の④と圧力スイッチの記号は丸の中に点がある◉である。●は点滅器の記号（問33の●Hと同じ）なので、押しボタン類を●で書くと点滅器と混同させる。「◉BL」「◉B」「◉P」に直す必要がある。",
+        "editorialReviewNotesは「要確認」のまま残っている。JIS C 0303 PDF14頁（確認表示灯付はL傍記）との照合結果を反映していない。officialReferenceUrlsにもJIS出典が記載されていない。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionでは④を「●BL」と書いているが、原図の記号は◉BL（丸の中に点）であり、●（点滅器）ではない。"
+      ],
+      "lawNeedsExternalCheck": [
+        "ロの遅延スイッチ＝D傍記と、ハの圧力スイッチ＝◉Pの記号定義が照合パックにない。パックはPDF14頁の押しボタンL傍記だけを示している。"
+      ]
+    },
+    {
+      "number": 35,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説とイの肢別理由は、圧力スイッチを「●P」と書いている。原図の記号は◉Pなので、◉Pに直す必要がある。",
+        "ロの肢別理由の後半「制御信号による動作を主機能とする⑤の記号とは構成・機能が異なる」は、正答の結論を前提に使って誤答だと説明する循環論法になっている。記号の違い（電流計付かどうか）だけで誤りを示すべき。",
+        "解説は正答の根拠を、制御配線※1がSから分岐しているという図の状況から推論しているだけで、図記号の定義（JIS C 0303）には触れていない。「図記号の機器は」と問う設問なので、JISでの定義を根拠として示す必要がある。",
+        "editorialReviewNotesは「要確認」のまま、officialReferenceUrlsも未設定で、一次資料での照合がされていない。"
+      ],
+      "figureIssues": [
+        "diagramDescriptionの経路「3P50A→BE 3P30A→S」は、主幹の「B 3P50A」から記号Bが抜けている。原図では、B 3P50Aから分岐した先にBE 3P30A→Sがある。",
+        "diagramDescriptionの「圧力スイッチ●P」は、原図では◉Pである。"
+      ],
+      "lawNeedsExternalCheck": [
+        "⑤のような四角で囲んだS（盤結線図内）が、JIS C 0303で「制御配線の信号により動作する開閉器（電磁開閉器）」を表すことの一次資料がない。",
+        "ロの「電流計付箱開閉器はSにAを付記」という記号定義の一次資料がない。",
+        "ハの電動機始動器（始動装置）とニの低圧進相用コンデンサの記号がSと異なることを示す一次資料がない。"
+      ]
+    }
+  ]
+}

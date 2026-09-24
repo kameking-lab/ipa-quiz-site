@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "candidateSha256": {
+      "8": "6e8fa8bef0c1e89ccae6d6f071e892463d9db572aa7db207d35928ba846faab5",
+      "9": "22d44c23d792cab4df9987b646b40feab5d9288d9399362c9a50f551338af62d",
+      "10": "6f698201c5403090ef38e8fbfe78b2243d1cf0b08d6515e699a0725eb08ad798",
+      "12": "25e5603edc75a08d8b23a3c0f90d3f94fec9eca154083b96833b03cc768f476a",
+      "19": "86b0c2dd8dd745f4ead158e989eb028c371dac1b018ac5ca56a14b9a9ced12b2"
+    },
+    "sourceCropSha256": {
+      "8": "2214cc4ec4414fb81bcd0a6d133de2eea309de817deb8b66263e7da64bef31b6",
+      "9": "191e1d46e9ed9216d10a9c4adf42651dc872f3a0091658b7cffeb586961c12cc",
+      "10": "b5964a6e3c2589262f1250e773c278f92eb8d782c6c962eb4848bf42c3d7c40c",
+      "12": "2c112be12141e18142d149ebb20709e9cc29be6aa82ff964c9bcae5d092fd7cd",
+      "19": "433a205c23e3826c693a0001f88f9dc20f8d902ea351ab0f6f91478bfbedbeca"
+    }
+  },
+  "assessment": [
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説に温度の扱いが書かれていない。周囲温度30℃以下なので、ビニル絶縁体の許容電流補正係数は1.0になる（146-2表の式√((60−θ)/30)で上限1.0）。この一文を足し、35A×1.0×0.63=22.05Aと計算の筋道を書くこと。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（meti.go.jp …/20231226-2.pdf）をWebFetchするとHTTP 403で本文を取得できない。代わりのmeti.go.jpの解釈PDF（law/files/dengikaishaku.pdf、tsutatsutou/tuuti1/aa566.pdf）も403だった。『第146条第2項・146-1表で直径2.0mmは35A』という根拠は一次資料で確認できていない。取得できる一次資料で条項・表番号と35Aを確認するまでPASSにできない。"
+      ],
+      "verifiedEvidence": "公式原図と候補を照合した。問題文、周囲温度30℃以下、係数0.63、選択肢17/22/30/35、公式正答ロは一致。35×0.63=22.05の計算も確認。法令の根拠はhttps://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf がHTTP 403のため未確認。"
+    },
+    {
+      "number": 9,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（meti.go.jp …/20231226-2.pdf）はWebFetchでHTTP 403となり取得できない。代わりのmeti.go.jpの解釈PDFも403だった。次の根拠を一次資料の本文で確認できていない：第148条第二号（電動機等の定格電流合計が50A以下なら1.25倍）、第五号（3倍＋他の機器、許容電流の2.5倍が上限）、それぞれの号番号。"
+      ],
+      "verifiedEvidence": "公式原図と候補を照合した。H 10A×1台、M 20A×2台、需要率100%、選択肢イ〜ニのI_W/I_Bの数値、公式正答ハは一致。計算はI_W=1.25×40+10=60A、I_B=min(3×40+10=130A, 2.5×60=150A)=130Aで整合する。公開用の切出しq9.pngは原図の回路部分（幹線B、分岐B–H、縦線入りB–M×2、定格電流の表記）と一致。法令の根拠はHTTP 403のため未確認。"
+    },
+    {
+      "number": 10,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハの『電線が1.6mmは太さの条件自体は満たし得る』はぼかした言い方になっている。20Aの配線用遮断器なら1.6mm以上という条件は満たすと言い切ること。",
+        "choiceExplanations.ニの『30A分岐回路の規定に適合し得るが』もぼかした言い方になっている。30A遮断器と2.6mm電線は電線太さの条件（2.6mm以上）を満たすと言い切ること。"
+      ],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（meti.go.jp …/20231226-2.pdf）はWebFetchでHTTP 403となり取得できない。解説が挙げる『第149条第1項第1号と第2項第1号・149-1表、149-3表』は、条・項・号・表の番号の対応と表の中身（20A→1.6mm以上・コンセント20A以下、30A→2.6mm以上・コンセント20A以上30A以下）を一次資料で確認できていない。特に149-1表は、この設問の根拠として挙げるのが正しいか確認が要る。"
+      ],
+      "verifiedEvidence": "公式原図と候補を照合した。問題文（3m、8m、軟銅線、兼用コンセントではない）、イ〜ニの図（B 20A/30A、2.0/2.0/1.6/2.6mm）、コンセントの定格と個数、公式正答イは一致。切出しq10-i/ro/ha/ni.pngは原図の各図と一致し、図の下の印字は切出しに含まれず選択肢テキストに入っている。法令の根拠はHTTP 403のため未確認。"
+    },
+    {
+      "number": 12,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（meti.go.jp …/oshirase/2018/09/300928-5.pdf）はWebFetchでHTTP 403となり取得できない。『解説がビニル絶縁体の許容温度を60℃としている』という記述は一次資料で確認できていない。",
+        "参照先は平成30年10月1日改正版の『解釈の解説』で古い。WebSearchでは令和7年11月20日改正版（https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishakukaisetsu.pdf）が見つかったが、これもHTTP 403で取得できなかった。現行版、または解釈本文の146-2表（ビニル混合物の補正式に60℃が入っている）で裏付けるよう差し替えること。"
+      ],
+      "verifiedEvidence": "公式原図と候補を照合した。問題文と選択肢45/60/75/90、公式正答ロは一致し、図表はない。60℃の根拠はmeti.go.jpがHTTP 403のため一次資料で未確認。"
+    },
+    {
+      "number": 19,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [
+        "候補にofficialReferenceUrlsがない（sourceForInternalQcOnlyだけ）。解説の『試験センターのリングスリーブ適用表』を、公開する一次資料URLとしてofficialReferenceUrlsに入れること。",
+        "https://www.shiken.or.jp/construction/upload/point2024.pdf をWebFetchしたが、PDF本文を読み取れなかった。WebSearchの要約（shiken.or.jp『技能試験の概要と注意すべきポイント』）で確認できたのは、d（1.6mm×1＋2.0mm×2）が中・中であることだけ。bとcがいずれも小・小になることは一次資料で確認できていない。"
+      ],
+      "verifiedEvidence": "公式原図と候補を照合した。表a〜d（電線、スリーブ、刻印）、選択肢イ〜ニ、公式正答ロは一致。公開用の切出しq19.pngは原図の表と一致。dの中スリーブ・刻印中は、shiken.or.jpのpoint2024.pdfとpoint2025_2.pdf（技能試験の概要と注意すべきポイント）の検索要約で確認した。bとcの小・小は未確認。"
+    }
+  ]
+}

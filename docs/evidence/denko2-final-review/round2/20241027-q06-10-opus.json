@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "reviewModel": "claude-opus-5-5",
+  "inputHashes": {
+    "reviewedSha256": "a3c19cac4b8a5e7a5ca32f2341f8c2716c25728e87c35195a6c7b98e4f4834a7",
+    "rowSha256": {
+      "6": "bcc2bd9122b481937d934e4fb3c244669e85e73448323d8b119d07bbdf23bb24",
+      "7": "fbc7e8806ec02c53dd40aff859d7ae74a714ea0c89afe8b1bf8acab437387ddb",
+      "8": "4211b49adba44f74f0c3cbb8e29da36e736c96fe3ce540477eb88c8374bb1347",
+      "9": "2e19f593ad5851f2b9323f407e9c0d1d65d917cdef2af890b9bfe1688f0de304",
+      "10": "b1fef79f68688379ebd1e630b5a7748aca4241c8bf9de6d66e448becde8fd981"
+    }
+  },
+  "assessment": [
+    {
+      "number": 6,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロは「電圧降下の合計を4Vとしてしまった値」と書いているが、これは103−99=4を言い換えただけで、誤りの根拠が示されていない。正答の値からの逆算で説明を埋めている。根拠を示すなら次のとおり。b−b'間の電圧は99+10A×0.1Ω×2=101V。103Vになるのは、a−b区間とa'−b'区間の電圧降下を2V(0.5V×2ではなく、電流10A×0.1Ω×2)としてb負荷の10Aを加え忘れた場合、つまり全区間の電流を10Aとして4×1V=4Vとした場合にあたる。このように具体的な計算で書き直すこと。",
+        "choiceExplanations.ハも「5Vとしてしまった値」と差を言い換えただけで、根拠がない。客観的な理由に直すこと。例: b−b'間は101Vなので、104Vになるにはa−b区間とa'−b'区間で合計3Vの降下が必要になる。これは1線あたり15Aの電流にあたり、キルヒホッフの電流則(10A+10A=20A)と矛盾する。",
+        "choiceExplanations.イの誤答由来(上線の往路だけを数え、帰路を無視して3V)は計算上成り立つ。ただし「a-b・b-c区間のみ」を「往路(上側の線)だけを数え、帰路(下側の線)の電圧降下を無視」と明記すること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イは「31Aより大幅に小さく一致しないため誤り」としか書いておらず、不明な点を正答の値だけで埋めている。根拠のある説明の例: 49×0.63×0.63≒19.4で、電流減少係数を2回掛けた値にあたる。または49×0.39≒19.1で、41〜60本の係数を使った値にもあたる。こうした説明にするか、誤答の由来に触れず中立な理由に直すこと。",
+        "choiceExplanations.ロも「31Aと一致しないため誤り」だけで、根拠がない。例: 49×0.49=24.01で、7〜15本の電流減少係数0.49を当てはめた値にあたり、4本の係数0.63とは違う。このように具体的な理由を書くこと。",
+        "explanationの「電流減少係数0.63を1回適用する」の「1回」は不自然な表現。0.63は問題文で与えられた値なので、「与えられた電流減少係数0.63を乗じる」とすること。"
+      ],
+      "visualIssues": [],
+      "lawIssues": [
+        "電流減少係数の表番号を確認すること。現行の電技解釈第146条では、表146-2が許容電流補正係数、表146-3が同一管内の電線数に応じた電流減少係数だと考えられる。そうであれば、解説にある「表146-2により電流減少係数0.63」の表番号は誤り。officialReferenceUrlsの原典で確かめて修正すること。",
+        "「小数点以下1位を7捨8入」の出典が電技解釈第146条のどの条文・備考なのか示されていない。原典で該当箇所を確認し、条項を特定すること。電技解釈に記載がなく内線規程に由来する場合は、出典の表記を直すこと。"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "lawIssues": []
+    }
+  ]
+}

@@ -340,6 +340,16 @@ export default async function ExamTopPage({
           )}
         </section>
 
+        {code === "denko2" && (
+          <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+            <h2 className="text-lg font-bold text-slate-950">技能試験の問題図・完成例</h2>
+            <p className="mt-1 text-sm text-slate-700">試験日と候補No.から、施工条件、公式の概念図・複線図・完成作品例を確認できます。</p>
+            <Button asChild variant="outline" className="mt-4 bg-white">
+              <Link href="/denko2/skill">技能試験を探す <ChevronRight className="h-4 w-4" /></Link>
+            </Button>
+          </section>
+        )}
+
         {/* Browse tabs */}
         <section aria-label="問題を探す" className="mb-8">
           {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".

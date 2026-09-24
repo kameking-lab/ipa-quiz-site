@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round2-q08-09-10-12-19-opus.json",
+  "upstreamReviewSha256": "9598514082e7ca7f3a8dda4da50ac07910b5176bfdbd45cfacedab7f63243db7",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "da6e7ea271a22145d1d7791ba724c25b78c052bcb7720634aafef79a4f7db6f0",
+    "rowSha256": {
+      "8": "2214cc4ec4414fb81bcd0a6d133de2eea309de817deb8b66263e7da64bef31b6"
+    },
+    "detailFigureSha256": {},
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 8,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "Checked the official question and official answer (ロ) at https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf and _a01.pdf. Checked https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf (SHA256 7ff56485…, PDF p.145-146). Interpretation Art. 146(2)(i), Table 146-1: annealed copper wire with a diameter of at least 2.0 mm and less than 2.6 mm is rated at 35 A. Table 146-3: the correction factor for vinyl compounds is √((60−θ)/30), and θ is taken as 30 at 30℃ or below, so the factor is 1.0. Table 146-4: 4 wires in one conduit gives 0.63. 35×1.0×0.63 = 22.05, which gives 22 A. Distractor イ matches 1.6 mm wire (27 A) × 0.63 = 17.01."
+    }
+  ]
+}

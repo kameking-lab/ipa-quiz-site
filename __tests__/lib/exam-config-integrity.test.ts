@@ -46,10 +46,12 @@ describe("EXAM_CONFIGS のデータ整合性", () => {
     expect([...ALL_QUIZ_EXAM_CODES].sort()).toEqual(keys.filter((key) => key !== "denken3").sort());
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp3");
     expect(ALL_QUIZ_EXAM_CODES).not.toContain("denken3");
+    expect(ALL_QUIZ_EXAM_CODES).toContain("denko2");
     expect(ALL_QUIZ_EXAM_CODES).toContain("fp2");
     expect(ALL_EXAM_CODES).not.toContain("fp2");
     expect(ALL_EXAM_CODES).not.toContain("fp3");
     expect(ALL_EXAM_CODES).not.toContain("denken3");
+    expect(ALL_EXAM_CODES).not.toContain("denko2");
     // 各コードは実在キーであり重複しない
     expect(new Set(ALL_EXAM_CODES).size).toBe(ALL_EXAM_CODES.length);
   });

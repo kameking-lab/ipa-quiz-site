@@ -99,6 +99,12 @@ describe("safety explanation publication gate", () => {
   it.each([
     ["stale", { ...validOverlay, sourceHash: "0".repeat(64) }, "Stale choice explanation source"],
     ["incomplete", { ...validOverlay, choices: validOverlay.choices.slice(0, 4) }, "must contain five choices"],
+    ["repeated reason", {
+      ...validOverlay,
+      choices: validOverlay.choices.map((choice) => choice.number === 2
+        ? { ...choice, reason: validOverlay.choices[0]!.reason }
+        : choice),
+    }, "Duplicate choice explanation reason"],
   ])("rejects a %s structured overlay even though its question ID exists", (_label, overlay, error) => {
     const result = runValidator({ [questionId]: overlay });
 

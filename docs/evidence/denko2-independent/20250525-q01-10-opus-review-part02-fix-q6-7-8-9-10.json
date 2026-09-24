@@ -1,0 +1,88 @@
+{
+  "inputHashes": {
+    "draftSha256": "ff76898143f35c49c732021cc9b0671873306fbf01f0e88e001083ba5229bd3b",
+    "candidateSha256": {
+      "6": "81ccc8c8f846bb33769f6eb4667329b096455b06a41792d20ea8593847279012",
+      "7": "bbcf81c773be46d64a210bf378b83efebae5e6c46bebc4dba8a703a56dfce292",
+      "8": "f3a3b41ed24c3183d656340c8e84d91b10ab654dd90cdbb171330ad248970182",
+      "9": "5e894e6cb41f88526e716a9b29c15476006f6bc05edc332852f3c95b3beab6cf",
+      "10": "92f123ae8fc1b058816da9a47129e03ab3040fb187311ea88ace84d15bbd5f31"
+    },
+    "rowSha256": {
+      "6": "dd14fbc592b7c45af983cd2d48720bb73bb892f8602356bd5bf8f9f93fc31047",
+      "7": "4f32a8a4c3c0e78b4041a1934063142ba344ab659566c96282ad0d6b2c9e5fe0",
+      "8": "a302ee8a75a90772189f62830118f57bb89400baf48e774172f91fc320eec7a5",
+      "9": "556146057c5477690dd7f44a384070e525bd60a711702526f0894ba9135652e0",
+      "10": "2f21aa5a477ae99689fd5b7dfc13c73aab5735231a17c4f58ad58a26a7c7d390"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2025-first/q6.png": "7807a87e8f346916c1ff9c0f62711683e4de19daf6df7ca1f0bd94926c232de0",
+      "public/images/denko2/2025-first/q7.png": "4e4281d8deae53ab0d81afaf5eff26365add05c27ee094bd7a20a79bea839df3",
+      "public/images/denko2/2025-first/q9.png": "32d1b98000404f451dc3c1af07e90df1510d4cd25c60fc31aa3e1ce90f29cdaa",
+      "public/images/denko2/2025-first/q10-i.png": "55bd4e3ec629f4e07dac0cd7938f411fc04487d205e25c4fd39566c2e60e534d",
+      "public/images/denko2/2025-first/q10-ro.png": "aa40aa3619b8ff57a4f3f8e077da1e65930384230605194b0c8afdec55ae487f",
+      "public/images/denko2/2025-first/q10-ha.png": "4eaeeaba96dde52efa75fb1a6f4c79a7ae0f3254ad66a9626d8e46968136ba51",
+      "public/images/denko2/2025-first/q10-ni.png": "ccf610d56e38afd5bc841a0caae6e724030382204edb760040a23c38837041ca"
+    },
+    "sourcePackSha256": {
+      "8": "e0fc4d963c54e1eafa4d71376f25421feecca7d2a7ed7a0a9fbda891d0f7695a",
+      "9": "e3931d3da045130a722c11eea4ab71b694abe53f0e27b56c3d86491e5f704969",
+      "10": "5304e6e9a76fb713adef281e7e3b5b603655df1b3ab6fff962e76c362252e839"
+    },
+    "sourceFigureSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "assessment": [
+    {
+      "number": 6,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 7,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 8,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "editorialReviewNotesは「許容電流49A・37A・61A…照合済み」としているが、本文とchoiceExplanationsには37Aも61Aも一度も出てこない。照合記録と解説本文が食い違っている。",
+        "choiceExplanations.イは「26Aは本問の電線太さを用いた結果ではない」、ハは「42Aは本問の電線太さを用いた結果ではない」と否定しているだけで、どの計算から出た値かを書いていない。照合パックの値を使えば由来は計算で示せる。イは3.5mm²の37A×0.70=25.9A、ハは8mm²の61A×0.70=42.7A。いずれも隣接サイズの基底値に係数を掛けた値になる。",
+        "由来を書くと端数処理の説明が必要になる。25.9→26は切上げ、42.7→42は切捨て、34.3→34は切捨てで、単純な四捨五入でも切捨てでも3つが揃わない。本文の「34.3Aとなり、選択肢では34Aが該当する」は端数処理の根拠を示していないため、処理規則を明記する必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "電技解釈第146条による許容電流算出時の端数処理規則（「小数点以下1位を7捨8入」とする規定の有無と条文位置）。添付の照合パックにはこの条文がなく、本監査では確認できない。この規則があれば34.3→34、25.9→26、42.7→42の3つが整合する。"
+      ]
+    },
+    {
+      "number": 9,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round6-q27-33-opus.json",
+  "upstreamReviewSha256": "d36dfe27335829e5f722c68199eb8948b9cc02fee17105b320759f6c8961463d",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "5b97a5662ff69327483740c7d5c9c3b8d454c75398f33e725c2f06b8086e13ed",
+    "rowSha256": {
+      "27": "6baa411f7c1814ccce7e8ed1646bb4c1be4b79dab52fc98343b6206f6cd46fba"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/q27.png": "483f826eb6f538e93604a5db2be34330e6fd11852c460ae3ca31e528ab6a534c"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合。公式問題PDF https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf の問27（問題文、否定語『誤っているもの』、イ〜ニの4肢、目盛0・50・100・150、V、Vの下の波線、左下の記号と1.0）と候補の本文・4肢・diagramDescriptionが一致した。公開用の切出し q27.png も原図の目盛板と一致している。公式正答はロ（https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf、提示値）。誤りは一つだけなので、本問ではイ（電圧計）、ハ（水平置き）、ニ（交流用）が正しい記述となる。これは公式問題・正答が本問での記号分類を直接裏付けている。解説とロの理由は『永久磁石可動コイル形の記号ではない』とだけ述べており、根拠を超えた主張はない。"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "officialSources": [
+    {
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+      "document": "経済産業省 電気設備の技術基準の解釈（令和6年10月22日改正）第147条第1号",
+      "localPath": "data/raw_pdfs/denko2/meti-20241022-2.pdf",
+      "sha256": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb",
+      "page": 147,
+      "clauses": ["第147条第1号：低圧屋内電路の使用電圧が300V以下であって、他の屋内電路（定格電流が15A以下の過電流遮断器又は定格電流が15Aを超え20A以下の配線用遮断器で保護されているものに限る。）に接続する長さ15m以下の電路から電気の供給を受ける場合は引込口開閉器を省略できる。", "公式条文は過負荷保護付漏電遮断器を配線用遮断器と同視できるとは述べていないため、当該同視は本問の解説根拠にしない。"]
+    }
+  ]
+}

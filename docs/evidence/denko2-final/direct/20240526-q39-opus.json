@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20240526",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20240526/round3-q36-37-39-46-48-opus.json",
+  "upstreamReviewSha256": "965b793d2b63aee9a21559e483502c07c3ca8ae1d15d05b9a6a9a4bb03b2fcd7",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "9ae0bdbbee65d881f25b4ca3e0589e258cbae250964f848c77823fb18b736d60",
+    "rowSha256": {
+      "39": "e947e42663d3b4af0edf496907ee42c833fef6531cc0c0d40ded65f03c648fd1"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-first/wiring-main.png": "96f2acfccdeb2327128a8106364d853365146f947233b9b231a3b1a48d4173b7",
+      "public/images/denko2/2024-first/wiring-panels.png": "17d82087689eb0571154d640cc3822ce5a9c3d7355a0ad1ac7a22577d8e986fe"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {}
+  },
+  "assessment": [
+    {
+      "number": 39,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "公式原図と公式正答を照合した（https://www.shiken.or.jp/construction/upload/20240526_co_second_q01.pdf 15頁、https://www.shiken.or.jp/construction/upload/20240526_co_second_a01.pdf 正答イ）。原図では、⑨の引出線が冷蔵庫の右の、四角内に丸囲みSと傍記f20Aがある器具を指すことを確認した。その隣のcは、凡例どおり三相200V回路の冷蔵庫（動力分電盤BE 3P20A）である。解説は公式正答以外の器具仕様を主張していない。"
+    }
+  ]
+}

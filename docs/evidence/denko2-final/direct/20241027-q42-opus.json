@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "receiptKind": "canonicalized-direct-review",
+  "paper": "20241027",
+  "reviewModel": "claude-opus-5-5",
+  "upstreamReviewReceipt": "docs/evidence/denko2-strict-20241027-q41-50/direct2-q41-42-43-44-45-opus.json",
+  "upstreamReviewSha256": "f4fe3c532cb2e6fc49e01b6bbe6aec9c7e262dd260c521af98e91595549d6cb5",
+  "candidateEquivalenceProof": "current per-question candidate hash equals a clean source-aware direct Opus input hash",
+  "inputHashes": {
+    "draftSha256": "ccf5b424a7232a9e00dba4bcec69b916500780a6169083483f2e5b0c896acc66",
+    "rowSha256": {
+      "42": "7e826e9149de5cabe1b0c0b542924839808ebd584451f11ae8ada28b479df89f"
+    },
+    "detailFigureSha256": {
+      "public/images/denko2/2024-second/wiring-diagram.png": "4b4d474a8fde227349db77620ddece4a673956783b85384b48d2247572adcc32",
+      "public/images/denko2/2024-second/q42-1.png": "d91117e59cb8631ab2925a57a18e1876674f4c85c1df9914c03609b0dd16e6fc"
+    },
+    "sharedFigureSha256": {},
+    "legalReceiptSha256": {
+      "docs/evidence/denko2-sources/20241027/q42.json": "9692ac94848bc1a737f549a41310fe45b4d829d685764e9f02fac67eda0dcde6"
+    }
+  },
+  "assessment": [
+    {
+      "number": 42,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "visualIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": "I checked the question line and q42-1.png against the original. The question is: 「⑫で示すジョイントボックス内の接続をすべて圧着接続とする場合，使用するリングスリーブの種類と最少個数の組合せで，正しいものは。」 The choices are イ small ×6, ロ medium ×3, ハ large ×3, ニ small ×3. The sleeves in the photos have no markings.\n\nOfficial p.15, 2F plan: the ⑫ box (about x480, y330) joins three CV 5.5-3C cables. One goes right to the up-riser for circuit a; per the P-1 panel diagram this is P-1 circuit a (3P 30A, to 2F). The other two go to the left and right switches (S) for the RC units. That means three 5.5mm² wires meet in each of the R, S and T phases, giving three joints.\n\nSource checked: Electrical Technician Examination Center, 「技能試験の概要と注意すべきポイント」 (https://www.shiken.or.jp/construction/upload/point2024.pdf, pinned SHA256 0b40cdd6…5717), p.25 table 「リングスリーブ（Ｅ形）と電線の組合せ(JIS C 2806 準拠)」. For identical φ2.6mm or 5.5mm² wires the table gives: small, not allowed; medium, 2 wires; large, 3 wires. I re-fetched the URL with WebFetch, but the PDF text could not be extracted. I therefore used the same text in the SHA-pinned pack you supplied.\n\nThe official answer is ハ (large ×3), which matches. The per-choice reasons for イ, ロ and ニ are all consistent with the same table."
+    }
+  ]
+}

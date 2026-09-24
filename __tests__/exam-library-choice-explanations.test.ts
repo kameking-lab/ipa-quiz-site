@@ -122,6 +122,13 @@ describe("structured choice explanations", () => {
     }, { ...question, correctChoice: 6 }, sourceHash)).toBeNull();
   });
 
+  it("rejects a repeated reason copied across two choices", () => {
+    const choices = valid.choices.map((choice) => choice.number === 2
+      ? { ...choice, reason: valid.choices[0]!.reason }
+      : choice);
+    expect(parseExamChoiceExplanation({ ...valid, choices }, question, sourceHash)).toBeNull();
+  });
+
   it("normalizes unordered complete choices and rejects credentialed or nonstandard-port sources", () => {
     expect(parseExamChoiceExplanation({ ...valid, choices: [...valid.choices].reverse() }, question, sourceHash)?.choices)
       .toEqual(valid.choices);
