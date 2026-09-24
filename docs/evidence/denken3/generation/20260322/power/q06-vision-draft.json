@@ -1,0 +1,94 @@
+{
+  "questionNumber": 6,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，避雷器に関する記述である。\n\n避雷器は，雷又は回路の開閉などに起因する過電圧の [(ア)] がある値を超えた場合，放電により過電圧を抑制して，電気施設の絶縁を保護する装置である。特性要素としては [(イ)] が広く用いられ，その [(ウ)] の抵抗特性により，過電圧に伴う電流のみを大地に放電させ，放電後は [(エ)] を遮断することができる。発変電所用避雷器では， [(イ)] の優れた電圧－電流特性を利用し，放電耐量が大きく，放電遅れのない [(オ)] 避雷器が主に使用されている。\n\n上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 波高値　(イ) ZnO　(ウ) 非線形　(エ) 続流　(オ) ギャップレス",
+        "2": "(ア) 波頭長　(イ) ZnO　(ウ) 非線形　(エ) 制限電圧　(オ) ギャップレス",
+        "3": "(ア) 波高値　(イ) SF₆　(ウ) 線形　(エ) 制限電圧　(オ) 直列ギャップ付き",
+        "4": "(ア) 波高値　(イ) ZnO　(ウ) 線形　(エ) 続流　(オ) 直列ギャップ付き",
+        "5": "(ア) 波頭長　(イ) SF₆　(ウ) 非線形　(エ) 続流　(オ) 直列ギャップ付き"
+      },
+      "officialAnswer": "1",
+      "explanation": "(ア) 波高値：避雷器が動作するかどうかは過電圧の大きさ、すなわち波高値で決まる。波高値がある値を超えると放電して過電圧を抑制する。波頭長は電圧が立ち上がるまでの時間を表す量で、動作の条件を表す語ではない。\n\n(イ) ZnO：避雷器の特性要素には酸化亜鉛（ZnO）素子が広く用いられている。SF₆ は絶縁・消弧に用いるガスであり、非線形抵抗特性を持つ特性要素ではない。\n\n(ウ) 非線形：ZnO 素子は、常時の運転電圧では抵抗が非常に大きく、過電圧が加わると抵抗が急激に小さくなる非線形（非直線）の電圧－電流特性を持つ。これにより過電圧に伴う電流だけを大地に流し、端子電圧を低く抑えられる。抵抗が線形だと、この「高電圧時だけ低抵抗になる」動作ができない。\n\n(エ) 続流：放電が終わった後に、系統の運転電圧によって引き続き流れようとする電流を続流という。避雷器は放電後にこの続流を遮断して元の状態に戻る。制限電圧は放電電流が流れている間に避雷器端子間に残る電圧のことで、遮断する対象ではない。\n\n(オ) ギャップレス：ZnO 素子は非線形性が優れているため、常時の運転電圧で流れる電流が極めて小さく、直列ギャップを設けなくてもよい。ギャップがないので、ギャップの放電に伴う遅れがなく、放電遅れのないギャップレス避雷器が発変電所で主に使われている。\n\nしたがって、(ア) 波高値、(イ) ZnO、(ウ) 非線形、(エ) 続流、(オ) ギャップレス の組合せである (1) が正しい。",
+      "choiceExplanations": {
+        "1": "正しい。(ア) 波高値、(イ) ZnO、(ウ) 非線形、(エ) 続流、(オ) ギャップレス のすべてが記述に当てはまる。",
+        "2": "誤り。(ア) 波頭長は電圧の立ち上がり時間であり、避雷器の動作は過電圧の波高値で決まる。(エ) 制限電圧は放電中に端子間に残る電圧で、放電後に遮断するのは続流である。(イ)(ウ)(オ) は正しい。",
+        "3": "誤り。(イ) SF₆ は絶縁・消弧用ガスで、避雷器の特性要素ではない。(ウ) 線形では高電圧時にだけ低抵抗になる動作ができず、正しくは非線形。(エ) 遮断するのは制限電圧ではなく続流。(オ) ZnO 形の発変電所用避雷器で放電遅れがないのはギャップレス形である。(ア) は正しい。",
+        "4": "誤り。(ウ) ZnO 素子の抵抗特性は線形ではなく非線形である。(オ) 放電遅れがないのはギャップのないギャップレス避雷器であり、直列ギャップ付きではない。(ア)(イ)(エ) は正しい。",
+        "5": "誤り。(ア) 避雷器の動作は波頭長ではなく過電圧の波高値で決まる。(イ) 特性要素は SF₆ ではなく ZnO。(オ) 放電遅れのない避雷器はギャップレス形であり、直列ギャップ付きではない。(ウ)(エ) は正しい。"
+      },
+      "figureDescription": "解答に必要な回路図・構造図はない。問題文の下に、列見出し(ア)(イ)(ウ)(エ)(オ)と行ラベル(1)～(5)からなる選択肢の組合せ表があり、その内容は choices にすべて文字化している。",
+      "officialReferenceUrls": [],
+      "uncertainty": "原本では選択肢(3)(5)の SF₆ の「6」が下付き文字で表記されており、本データでは Unicode の下付き数字「₆」で表記している。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        9
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3377,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.14227579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1274,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bf4f352a39abab4481016d33b06ecac3ab051da1b7dfb00522c486a02190540b",
+  "inputRequestSha256": "43db3944daafec8fc90840a699cbdb5a4cadcf1085d0b01bd5ee298c820a3abf",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p09.png": "50a52a30b5e851090b87c7e17bf02362001f0a1c1c0d26e2340596e43cfa73e5"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3074,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13372,
+          "webSearchRequests": 0,
+          "costUSD": 0.1687198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 963,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "013c2919ff059a4b8ab9ffd25d18973ebc368105ba300126c5ad1a462701b39b",
+      "inputRequestSha256": "e9738b13dbcb27a681779b9839414d0dcd63190d99489de89ecfdb2b36b68a71",
+      "previousDraftSha256": "641a90356035c3060554d147ed2521bec54b1606a6fb2976768a6f3bcb9bcc7a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q06-vision-draft-v1.json",
+      "answeredReviewSha256": "249fb1ea25912940fcf0324ffcb6a6bcd13cb8e6949c896bfe8f73e276704e2f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q06-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q06-opus.json",
+      "answeredStrictReceiptSha256": "3587b208f4549e42e4d38874c01c44cd66e2d1e1fee3b7d242dc1d21d881adfe",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

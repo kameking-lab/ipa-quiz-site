@@ -1,0 +1,94 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "汽力発電設備において，水，蒸気，燃焼ガスが，ボイラ及びタービンを構成する主要設備を通過する一般的な順序の記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "水：給水ポンプ → 節炭器 → 蒸気ドラム",
+        "2": "蒸気：蒸気ドラム → 過熱器 → 高圧タービン",
+        "3": "蒸気：再熱器 → 低圧タービン → 復水器",
+        "4": "燃焼ガス：火炉 → 過熱器 → 節炭器",
+        "5": "燃焼ガス：節炭器 → 電気集じん装置 → 空気予熱器"
+      },
+      "officialAnswer": "5",
+      "explanation": "ドラムボイラをもつ再熱式汽力発電設備の一般的な流れは次のとおりである。\n\n【水・蒸気】復水器 → 復水ポンプ → 低圧給水加熱器 → 脱気器 → 給水ポンプ → 高圧給水加熱器 → 節炭器 → 蒸気ドラム → 降水管・水冷壁（蒸発管）→ 蒸気ドラム → 過熱器 → 高圧タービン → 再熱器 → （中圧タービン →）低圧タービン → 復水器\n\n【燃焼ガス】火炉 → 過熱器 → 再熱器 → 節炭器 → 空気予熱器 → 電気集じん装置 → 煙突（途中に脱硝装置・脱硫装置などが設けられる場合がある）\n\n燃焼ガスは温度の高い側から順に熱を回収していく。空気予熱器は節炭器を出たガスの熱で燃焼用空気を予熱する装置で、節炭器の後段（下流側）に置かれる（脱硝装置を設ける場合は、一般に節炭器と空気予熱器の間に置かれる）。電気集じん装置は熱回収を終えたガスからばいじんを除去する装置で、空気予熱器の後段に置かれる。したがって、燃焼ガスが節炭器 → 電気集じん装置 → 空気予熱器の順に通るとする(5)は、空気予熱器と電気集じん装置の順序が逆であり、誤りである。",
+      "choiceExplanations": {
+        "1": "正しい。給水ポンプで昇圧された給水は、（高圧給水加熱器を経て）節炭器で燃焼ガスの余熱により予熱され、蒸気ドラムへ送られる。",
+        "2": "正しい。蒸気ドラムで分離された飽和蒸気は過熱器で過熱蒸気となり、高圧タービンへ送られる。",
+        "3": "正しい。高圧タービンで仕事をした蒸気は再熱器で再加熱され、低圧側のタービンで仕事をしたのち復水器で水に戻される。中圧タービンをもつ設備では再熱蒸気は中圧タービンを経て低圧タービンへ向かうが、再熱器 → 低圧タービン → 復水器という前後関係は変わらない。",
+        "4": "正しい。火炉で発生した高温の燃焼ガスは、過熱器（さらに再熱器）で熱を与えたのち、より低温側の節炭器へ流れる。",
+        "5": "誤り。燃焼ガスは節炭器を出たのち空気予熱器で燃焼用空気を予熱し、その後に電気集じん装置でばいじんが除去される。一般的な順序は「節炭器 → 空気予熱器 → 電気集じん装置」であり、本肢は空気予熱器と電気集じん装置の順序が逆である。"
+      },
+      "figureDescription": "図はない。選択肢(1)～(5)は、区分（水・蒸気・燃焼ガス）と「設備 → 設備 → 設備」の3段の順序を並べた5行の表で示されており、表の内容はすべて文字で表せる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "空気予熱器より前段（高温側）に電気集じん装置を置く方式（高温電気集じん装置）を採用する設備も存在するが、本問は「一般的な順序」を問うものであり、公式正答は(5)である。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3213,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1389958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1679,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d49007efe5c182a6fe528a6024653d8faab76fc4eb500bf76a2fc162cbc271b9",
+  "inputRequestSha256": "3d04d1a1c7fd22b97a2a7b7cdca28c91dfc773541e4a209f261e1bbdfedc1a73",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p06.png": "526b45598be1425966d727f6d00d8438ea1921665c8c08847a0d14b0915a0aa0"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2541,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11182,
+          "webSearchRequests": 0,
+          "costUSD": 0.1405398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1042,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2f597423dff27184fd2d7c8d0cb0f121779cead02315359f7da0d8d614f58145",
+      "inputRequestSha256": "54baf5a91e4ec1afac91efe5fecbfc25784fb2b33a09de4a9b22f73d87c13a51",
+      "previousDraftSha256": "6690663cf5c44e925385daba5f338e61004df5d02a36faaf222ffcb715d1045f",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "84902175edcaa9d0aaf98db3f73824297ef75f5d2eb52ff4b8698cddd79ff004",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

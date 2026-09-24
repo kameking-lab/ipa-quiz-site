@@ -1,0 +1,94 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "2台の同期発電機を並列運転するためには，両発電機の [(ア)] に加えて，電圧の大きさ及び [(イ)] が一致していなければならない。発電機の並列に際し，これらの条件が一つでも満足されていなければ，並列と同時にじょう乱が発生するので，[(ウ)] を用いてこれらの3条件が一致した同期状態にあることを確認したうえで並列する必要がある。\n\n上記の記述中の空白箇所(ア)～(ウ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 回転速度　(イ) 位相　(ウ) 電流計",
+        "2": "(ア) 力率　(イ) 方向　(ウ) 同期検定器",
+        "3": "(ア) 周波数　(イ) 位相　(ウ) 同期検定器",
+        "4": "(ア) 回転速度　(イ) 方向　(ウ) 電圧計",
+        "5": "(ア) 周波数　(イ) 位相　(ウ) 周波数計"
+      },
+      "officialAnswer": "3",
+      "explanation": "同期発電機を並列運転するための条件は，両発電機の起電力について「周波数」「電圧の大きさ」「位相」が等しいこと（このほか波形が等しいこと，三相機では相回転の向きが一致していることも条件として挙げられる）である。本問の文章では電圧の大きさに加えて (ア) と (イ) を挙げ，これらを「3条件」と呼んでいるので，(ア)＝周波数，(イ)＝位相となる。\n\n条件が満たされないまま並列すると，両機の間に横流（循環電流）が流れる。電圧の大きさが異なると無効横流が，位相が異なると有効横流（同期化電流）が流れ，周波数が異なると位相差が時間とともに変化して横流が変動する。これが本文の「じょう乱」にあたる。\n\n並列（遮断器投入）の直前には，同期検定器（シンクロスコープ）で両系統の電圧の位相差と周波数差を確認する。同期検定器の指針は周波数差に応じた速さで回転し，回転の向きで投入側の周波数が高いか低いかを示し，指針が同期位置で静止に近いときが位相・周波数が一致した状態である。電圧の大きさは電圧計で併せて確認する。したがって (ウ)＝同期検定器 となり，正解は(3)である。",
+      "choiceExplanations": {
+        "1": "誤り。並列条件は発電機の起電力の周波数であり，回転速度そのものではない。周波数は f = pN/120（p：極数，N：回転速度[min⁻¹]）で決まるため，極数が異なる発電機では回転速度が等しくても周波数は一致しない。(イ) 位相は正しいが，(ウ) 電流計は電流の大きさを測る計器であり，並列前の両系統の位相差や周波数差を確認できない。",
+        "2": "誤り。力率は負荷の状態によって決まる量で，並列投入の条件ではない。「方向」も電圧の大きさと並べて一致させる量としては不適切である（三相機の相回転の向きの一致は別の条件であり，本文の3条件にあたる位相ではない）。(ウ) 同期検定器は正しいが，(ア)(イ) が誤っている。",
+        "3": "正しい。並列運転には周波数・電圧の大きさ・位相の一致が必要であり，同期検定器で位相差と周波数差を確認し，同期状態で並列する。",
+        "4": "誤り。(ア) は回転速度ではなく周波数である（極数が異なれば回転速度と周波数は対応しない）。(イ) の「方向」は位相の代わりにならない。(ウ) 電圧計は電圧の大きさしか確認できず，位相差や周波数差の一致は確認できない。",
+        "5": "誤り。(ア) 周波数，(イ) 位相は正しいが，(ウ) 周波数計は周波数を測定するだけで，両系統の電圧の位相差を確認できない。位相と周波数の一致を確認して投入時期を判断するには同期検定器を用いる。"
+      },
+      "figureDescription": "図はない。選択肢は，列見出し(ア)・(イ)・(ウ)の3列と，行見出し(1)～(5)の5行からなる表で示されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題ページには実施年度・試験回・科目名の記載がなく（ページ下部の表記は「-5-」「■T1－K 008」のみ），出典の年度・科目は問題ページ単独では確定できない。出題内容（同期発電機の並列運転）は機械科目の範囲に属する。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        8
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3415,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1430358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1678,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a604174a4677cbc379a8788f9dfe1c43cb7cdbdcf20bf9db7b83e27ecebcc351",
+  "inputRequestSha256": "48fcdc10f92471b0a23cec5527399dcbe40fac0b2fc92101caaf400948243290",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p08.png": "3b28e5c6eef92a0d6bbc18b4c423fff0f3f62cdb22061fd7f345f93dda1cf666"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3495,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12522,
+          "webSearchRequests": 0,
+          "costUSD": 0.17033979999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1764,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2c4cdaccd22c94a1b2da89f2f975a3597e33bc3633e151e285957ea429680884",
+      "inputRequestSha256": "7c93d0ea9f91a6ef18a87fbb31e7cc820f1fa36bd382e5f8623f3bfcc0c4eb40",
+      "previousDraftSha256": "8e8fa89cbe641d573777348e11713f110a85f38e824e3add1f9fc2574e2e615e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "3d7116f65be7e183148c09eba6ea5f12f8ecb5ce9a6e03a4c19187e4f025050b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q05-opus.json",
+      "answeredStrictReceiptSha256": "a26f6ff7410cda8788e03114ff6641cb13f34bd7561b14c98b284bdc6402d51f",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

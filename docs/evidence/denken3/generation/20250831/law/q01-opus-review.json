@@ -1,0 +1,46 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2093,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16077,
+      "webSearchRequests": 0,
+      "costUSD": 0.1707398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1843,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "372253574a727ee62628910f711f95543eb5dab17417b9ed8518c1cb0ff36dfc",
+  "draftSha256": {
+    "1": "c5470843bbf9624dca548d7339a39e16143b3d6c46ca2509866f83f8e0cd95e3"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+  },
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": [
+        "令和7年4月1日時点の電気事業法のe-Gov原文が添付されていないため、要外部確認。確認対象は、推進機関の指示の根拠が「業務規程」で相手方が「会員」であること（草稿は第28条の44と推定）、および経済産業大臣の供給命令の相手方が「電気事業者」であること（草稿は第31条と推定）。本監査では条文の文言と条番号を原文で検証していない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "questionNumber": 13,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "一般のフィードバック制御系においては，制御系の安定性が要求され，制御系の特性を評価するものとして，［(ア)］特性と過渡特性がある。\nサーボ制御系では，目標値の変化に対する追従性が重要であり，過渡特性を評価するものとして，［(イ)］応答の遅れ時間，立上り時間，［(ウ)］などが用いられる。\n上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 定常　(イ) ステップ　(ウ) 定常偏差",
+        "2": "(ア) 追従　(イ) ステップ　(ウ) 定常偏差",
+        "3": "(ア) 定常　(イ) ステップ　(ウ) 行過ぎ量",
+        "4": "(ア) 追従　(イ) インパルス　(ウ) 行過ぎ量",
+        "5": "(ア) 定常　(イ) インパルス　(ウ) 定常偏差"
+      },
+      "officialAnswer": "3",
+      "explanation": "フィードバック制御系の特性は、大きく「定常特性」と「過渡特性」に分けて評価する。\n・定常特性：入力を加えてから十分に時間が経ち、応答が落ち着いた後の性質。代表的な指標は定常偏差（目標値と制御量の最終的なずれ）である。\n・過渡特性：入力が変化してから応答が落ち着くまでの途中経過の性質。\nしたがって(ア)は「定常」である。\n\n過渡特性の指標は、単位ステップ入力（目標値を一定値へ急に切り替える入力）に対する応答、すなわちステップ応答の波形から定義される。主な指標は次のとおり。\n・遅れ時間：応答が最終値の 50% に達するまでの時間\n・立上り時間：応答が最終値の 10% から 90% に達するまでの時間\n・行過ぎ量（オーバーシュート）：応答が最終値を超えて行き過ぎる最大の量。通常は最終値に対する割合〔%〕で表す\n・整定時間：応答が最終値の ±2%（または ±5%）の範囲内に収まるまでの時間\nよって(イ)は「ステップ」、(ウ)は過渡特性の指標である「行過ぎ量」となる。定常偏差は定常特性の指標であり、過渡特性の指標ではないため(ウ)には入らない。\n\n以上より、(ア) 定常、(イ) ステップ、(ウ) 行過ぎ量 の組合せである(3)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。(ア) 定常、(イ) ステップは正しいが、(ウ)の定常偏差は応答が落ち着いた後のずれを表す定常特性の指標であり、過渡特性の指標として遅れ時間・立上り時間と並べるものではない。",
+        "2": "誤り。制御系の特性は定常特性と過渡特性に大別され、(ア)は「追従」ではなく「定常」である。また(ウ)の定常偏差は定常特性の指標であり、過渡特性の指標ではない。",
+        "3": "正しい。制御系の特性は定常特性と過渡特性に分けられ、過渡特性はステップ応答の遅れ時間・立上り時間・行過ぎ量などで評価する。",
+        "4": "誤り。(ア)は「追従」ではなく「定常」である。また遅れ時間・立上り時間は応答が最終値の何%に達するかで定義される、ステップ応答に基づく指標であり、(イ)は「インパルス」ではなく「ステップ」である。(ウ)の行過ぎ量は正しい。",
+        "5": "誤り。(ア)の定常は正しいが、(イ)は遅れ時間・立上り時間を定義するステップ応答であり「インパルス」ではない。さらに(ウ)の定常偏差は定常特性の指標であり、過渡特性の指標ではない。"
+      },
+      "figureDescription": "本問に回路図・波形図などの図はない。選択肢は、列見出し「(ア)」「(イ)」「(ウ)」、行ラベル「(1)」〜「(5)」の表として示されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "遅れ時間を最終値の50%到達時間、立上り時間を10%→90%到達時間、整定時間の許容範囲を±2%または±5%とする定義は一般的な制御工学の定義であり、文献によって細部（例：立上り時間を0%→100%で定義する場合）が異なることがある。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        16
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2972,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.13417579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1210,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0a8d1412f4dc3d0b37a6fba30cc5da9c97965bc0837442979df08870f6f9808f",
+  "inputRequestSha256": "4cce43882d8cec1a5e510eef409c6f807c6590f66a3e21814898e5312532f7f0",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p16.png": "2b3f9dbfeedb6cb8802b91a478127b42af57148ea29e7c4db4b3ae8c42f4cfa0"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3173,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12657,
+          "webSearchRequests": 0,
+          "costUSD": 0.1649798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1525,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "0c6843bc663631f8ff3e79a2c824e4c4baaf59918d381844bf1c8af5d1cc2420",
+      "inputRequestSha256": "3065865cfeda58661bc8bff7915ca96884ce0c8e2674017e0b073a1efd50b380",
+      "previousDraftSha256": "080d3d2999343d476684124dec734f765434bc4c27f960b7b7d2d717d81ea7bf",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q13-vision-draft-v1.json",
+      "answeredReviewSha256": "2ff2990e2495d2f296a81a9232821bb7fed974dc5fd53fb5511165ef4e11379e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q13-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q13-opus.json",
+      "answeredStrictReceiptSha256": "1374e40d9b27829487a6e780bb8538875017e9099c3f901bab7934e77bb53e5e",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

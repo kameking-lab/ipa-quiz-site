@@ -1,0 +1,60 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "水力発電所の水圧管内における単位体積当たりの水が保有している運動エネルギー[J/m³]を表す式として，正しいものを次の(1)～(5)のうちから一つ選べ。\nただし，水の速度は水圧管の同一断面において管路方向に均一とする。また，ρは水の密度[kg/m³]，vは水の速度[m/s]を表す。",
+      "choices": {
+        "1": "(1/2)ρv²",
+        "2": "(1/2)ρ²v",
+        "3": "2ρv",
+        "4": "√(2ρv)",
+        "5": "(1/2)ρ²v²"
+      },
+      "officialAnswer": "1",
+      "explanation": "質量 m[kg] の物体が速度 v[m/s] で運動しているときの運動エネルギーは (1/2)mv² [J] である。体積 1 m³ の水の質量は ρ×1 = ρ[kg] なので、単位体積当たりの運動エネルギーは (1/2)ρv² [J/m³] となる。\n単位で確認すると、ρv² の単位は [kg/m³]×[m²/s²] = [kg/(m·s²)] である。一方、[J/m³] = [N·m/m³] = [(kg·m/s²)·m/m³] = [kg/(m·s²)] であり、両者は一致する。よって正答は(1)である。",
+      "choiceExplanations": {
+        "1": "正しい。単位体積（1 m³）の水の質量は ρ[kg] であり、運動エネルギーの式 (1/2)mv² に m = ρ を代入すると (1/2)ρv² [J/m³] となる。単位も [kg/(m·s²)] = [J/m³] で一致する。",
+        "2": "誤り。運動エネルギーは質量に比例し速度の2乗に比例するが、この式は密度を2乗し速度を1乗している。単位は [kg²/m⁶]×[m/s] = [kg²/(m⁵·s)] となり、[J/m³] = [kg/(m·s²)] と一致しない。",
+        "3": "誤り。ρv は単位体積当たりの運動量（単位 [kg/(m²·s)]）であり、2ρv も同じ単位をもつ。これは [J/m³] = [kg/(m·s²)] と一致せず、エネルギーを表さない。",
+        "4": "誤り。単位は √([kg/m³]×[m/s]) = [kg^(1/2)/(m·s^(1/2))] となり、[J/m³] = [kg/(m·s²)] と一致しない。",
+        "5": "誤り。密度が2乗されており、単位は [kg²/m⁶]×[m²/s²] = [kg²/(m⁴·s²)] となって [J/m³] = [kg/(m·s²)] と一致しない。運動エネルギーは質量（密度）の1乗に比例する。"
+      },
+      "figureDescription": "この問題に図はない。問題文と選択肢の数式のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "原本ページには試験年度・回次・科目名の記載がなく（ページ下部の表記は「- 2 -」および「T2－D 005」のみ）、このページだけでは出典の年度・科目を特定できない。問題文・数式・選択肢の判読に不明瞭な箇所はない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2024,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11521580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 809,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ab51895e303d10cb3a50de425a271691fcf29c19a51110f89a8ea710857ffa1e",
+  "inputRequestSha256": "79f57afc24a8861293dc9199daca706fdb7e5d8b0784bd0c36a0039aab747d19",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p05.png": "9d6c460e542224ba03241ab31d89a0f66ec3b8bee368564f08f9d6608c76e4b9"
+  }
+}

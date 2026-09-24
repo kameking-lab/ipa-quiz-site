@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4684,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16262,
+      "webSearchRequests": 0,
+      "costUSD": 0.22403979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2513,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0ca23b83b0d3708d3fe2984c007db53b59c70df4fcb69ad5ff955772398889fc",
+  "inputRequestSha256": "1c2e55955111ebe386011b56e475f2d52dfeadf9548ccc0ef9dd5d8878175d76",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "687e52ccd044fb8167f0361383d6ff98c07c7e57080b598e56856fedba4f69a9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p08.png": "3503ce5c428638985c9983c2dd57dbe5260a0b72fa1e4b0aa11d7c4b49c645a3",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "caeb954925cf85ccba39004f200aaa8ec7f11a6bf1fa4f7e034cd2c94f81c492",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の冒頭「『電気設備技術基準の解釈』第23条（アークを生じる器具の施設）の規定である」と「23-1表」は、条番号と表番号を断定している。しかし添付の公式問題原図（PDF第8頁）には条番号も表番号も記載がない。添付の公式参考資料にも該当条文の原頁がないため、この断定は添付資料だけでは検証できない。対応は次のいずれかとする。(a) 令和7年4月1日時点で効力のある解釈の該当条の原頁を公式参考資料として添付し、officialReferenceUrls に記録する。(b) 条番号・表番号の断定を削除し、問題文から読み取れる範囲の記述に改める。",
+        "choiceExplanations[3] の「解釈第23条の規定と一致する」も、上記と同じ未検証の条番号に依拠している。総合解説と同時に修正する必要がある。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「本ページからは出題年度を特定できない」とあるが、これはmanifest固定の出典情報と矛盾する（2025年度上期・試験日2025-08-31・法規・問題PDF第8頁）。候補自身の fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution（令和7年度上期）とも矛盾する。公式解答表の表題「令和7年度 第三種電気主任技術者上期試験解答」と照合済みの記述に差し替えること。",
+        "uncertainty は「最新の条文番号・文言は経済産業省が公表する原文で確認すること」として外部確認事項を残している。一方で needsReview=false になっており、両者の状態が不整合である。未検証の外部確認事項が残っている以上、PASSにはできない。",
+        "確認の基準時点の誤り：法規科目注意書き頁の注3によると、本問は『令和7年4月1日現在，効力のある法令（「電気設備の技術基準の解釈」を含む。）』に基づいて作成されている。条文確認の基準は「最新」ではなく令和7年4月1日時点で効力のある版とすべきであり、uncertainty の記述はこの点を反映していない。",
+        "解説は解釈の特定条文（第23条・23-1表）を根拠にしているが、officialReferenceUrls は空配列で、裏付けとなる一次資料の原頁も添付されていない。条番号の主張は現状では外部確認待ちの事項である。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第8頁、頁下部「-5-」「T1-H 008」）と一文ずつ照合した。導入文、開閉器等の定義、a）の隔離規定、b）の離隔距離規定、設問文は、句読点の全角化と文末「。」の付加を除いて一致している。",
+        "表：列見出し『開閉器等の使用電圧の区分｜離隔距離』を確認した。行構成は高圧／特別高圧・35 000 V以下／特別高圧・35 000 V超過で、原図と一致する。空欄の配置も一致する。（イ）は高圧欄と35 000 V以下の括弧書き内の2か所、（ウ）は35 000 V以下の本値と35 000 V超過の2か所である。括弧書きの文言『動作時に生じるアークの方向及び長さを火災が発生するおそれがないように制限した場合にあっては』も原図と一致する。",
+        "選択肢：(1) 可燃性のもの／0.5／1、(2) 造営物／0.5／1、(3) 可燃性のもの／1／2、(4) 造営物／1／2、(5) 造営物／2／3 の5肢すべてが原図の組合せ表と一致する。",
+        "公式正答：試験センター公式解答表〈法規〉の問4は解答3・配点6である。manifest固定の正答単位 {question:4, part:null, answer:\"3\", points:6} と、候補の officialAnswer=\"3\"、scoringPoints=6 は一致する。",
+        "解説の数値の整合：公式正答(3) から（ア）可燃性のもの、（イ）1、（ウ）2 が確定する。解説中の離隔距離（高圧 1 m、特別高圧35 000 V以下 2 m／アーク制限時 1 m、35 000 V超過 2 m）は、表の空欄配置に（イ）=1、（ウ）=2 を代入した結果と矛盾しない。",
+        "各肢の理由：(1) は（イ）（ウ）の数値誤り、(2) は（ア）と数値の誤り、(4) は（ア）のみの誤り、(5) は（ア）と数値の誤りである。いずれも正答(3) との差分として正しく特定されている。（ア）が『造営物』でなく『可燃性のもの』である理由は、問題文の『木製の壁又は天井その他の（ア）』という例示と、a）の耐火性囲いによる隔離という趣旨からも整合的に説明できる。",
+        "図：原図には表以外の図はない。表は question 内に文字で過不足なく再現されている。figureUrls=[] のままでも、公開候補だけで解答に必要な情報が揃う。figureDescription の空欄出現箇所の記述も原図と一致する。",
+        "メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[8]、sourceQuestionPdfUrl=20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=20250831_ch_third_a01.pdf、sourceAttribution『令和7年度上期第三種電気主任技術者試験 法規科目 問4』は、いずれもmanifest固定の出典情報と一致する。",
+        "法令基準日：法規科目注意書き頁の注3（令和7年4月1日現在効力のある法令・解釈に基づき作成）を確認した。"
+      ]
+    }
+  ]
+}

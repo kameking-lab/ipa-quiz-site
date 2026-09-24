@@ -1,0 +1,42 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1428,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13448,
+      "webSearchRequests": 0,
+      "costUSD": 0.1364078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1336,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ba3c60536151b361abb1b40c1382c26f9d928c9ddd1db3bfc32adf7a178c4095",
+  "draftSha256": {
+    "3": "cead22352eac9fda53de7e70db79116235d42073dbaff1a8989e0edb20a10d94"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {},
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "assessment": [
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

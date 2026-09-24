@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5651,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15992,
+      "webSearchRequests": 0,
+      "costUSD": 0.24121979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3383,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "815ad10ca64d77782060e4ae1458be78e6e6aa41b3d4732c03f4e91c15d09edb",
+  "inputRequestSha256": "bbeb80a038cf3768a3f6ac05d84b0f5bfa3c0d89710f9c7e1593345c5430b8e1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "78a21eb467db63e98d88d13a76fc362ea1e2849ec3882964a53782cd59bba879"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p16.png": "e2b6e3bb7bec1a5157f7c8f4c1ba57224e8e1e7d7801f59a9e7633731f3d612f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q13-fig1.png": "dd288283bdbc5ebf6223d7512f3669ab6f3a9bcc423410bf78efa5d41669bb17"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "88626c84eff8b6e21617dcd0a6ad4f317a7811cfe8b4136958bf4ff886fe9a33",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations(1)・(4)・(5)が h_fe の誤りを「h_fe = 80 なら I_B = 40 μA で I_C = 3.2 mA」「h_fe = 200 なら I_C = 8.0 mA」と説明している。これは直流電流増幅率 h_FE（= I_C/I_B）の関係であり、総合解説で定義した小信号 h_fe（= ΔI_C/ΔI_B、V_CE 一定）とは別の量である。本図では V_CE = 6 V 上の各曲線が 2.0/4.0/6.0/8.0 mA と比例するため数値の結論は変わらないが、定義の混同になっている。修正案：『h_fe = 80 なら I_B を 20→60 μA（ΔI_B = 40 μA）変えたとき ΔI_C = 3.2 mA となるはずだが、図の V_CE = 6 V では 2.0→6.0 mA で ΔI_C = 4.0 mA』（(4)・(5)も同様に、h_fe = 200 なら ΔI_C = 8.0 mA となり図と合わない、と書く）。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の式『h_fe = ΔI_C / ΔI_B = (6.0 − 2.0) × 10⁻³ / (60 − 20) × 10⁻⁶ = 4.0 × 10⁻³ / 40 × 10⁻⁶ = 100』は、演算子の優先順位どおりに読むと {(4.0 × 10⁻³)/40} × 10⁻⁶ となり、100 にならない。分母を括弧で囲み『{(6.0 − 2.0) × 10⁻³} / {(60 − 20) × 10⁻⁶} = (4.0 × 10⁻³)/(40 × 10⁻⁶) = 100』とする。直流比の式『I_C / I_B = 4.0 × 10⁻³ / 40 × 10⁻⁶』も同様に修正する。"
+      ],
+      "figureIssues": [
+        "figureDescription が『4本の曲線が I_B = 80 μA，60 μA，40 μA，20 μA とラベルされている』と記述しているが、原図・公開候補図とも『I_B =』の記号が付くのは最上段の『I_B = 80 μA』だけである。他の3本は『60 μA』『40 μA』『20 μA』と数値だけの表記なので、記述を図に合わせる。",
+        "figureDescription 末尾の『問題文の下に(1)〜(5)の表がある』は公式原図ページの説明であり、公開候補図（グラフ部分のみを切り出したもの）には表は含まれない。公開図の説明として誤解のないよう、この一文を削除するか、選択肢は本文 choices に記載している旨へ書き換える。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『本問が収録された試験回（年度）はページ上の表記からは特定できない』とある一方で、sourceAttribution・fiscalYear・examDate は『令和7年度上期』と断定しており、公開メタデータ同士が矛盾している。年度の根拠は manifest 固定の sourceQuestionPdfUrl と、添付の公式解答表（表題『令和7年度 第三種電気主任技術者上期試験解答』で理論 問13 = 2）である。uncertainty のこの一文は削除するか、『問題原図のページ内に年度表記はないが、出典 PDF と公式解答表により令和7年度上期と特定』と書き換える。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図の問13と照合した。I_B = 40 μA、V_CE = 6 V、h_fe（又は β）、1/h_oe（又は r₀）[Ω]、『正しいものを…一つ選べ』まで一致しており、記号・単位の誤りはない。",
+        "選択肢：(1) 80/30 000、(2) 100/10 000、(3) 100/20 000、(4) 200/10 000、(5) 200/20 000 で、公式原図の表と全肢一致する。",
+        "公式正答：公式解答表の理論 問13 は解答 2・配点 5 で、manifest（answer \"2\"、points 5）および候補の officialAnswer \"2\"・scoringPoints 5 と一致する。",
+        "図の読み取り：V_CE = 6 V の格子線上で、20/40/60/80 μA の各曲線はそれぞれ約 2.0/4.0/6.0/8.0 mA を通る。40 μA の曲線は V_CE = 10 V で約 4.4 mA、屈曲点の直後（約 1.2 V）で約 3.5 mA。以上を公式原図と公開候補図の両方で確認した。",
+        "h_fe の検算：ΔI_C/ΔI_B = 4.0 mA / 40 μA = 100。",
+        "1/h_oe の検算：h_oe = 0.4 mA / 4 V = 1.0 × 10⁻⁴ S で、1/h_oe = 10 000 Ω。屈曲点直後から 10 V までで読んでも 0.9 mA / 8.8 V ≒ 1.0 × 10⁻⁴ S となり一致する。以上から正答 (2) と整合する。",
+        "誤答肢の傾きの検算：30 000 Ω なら 3.3 × 10⁻⁵ S で 4 V あたり約 0.13 mA、20 000 Ω なら 5.0 × 10⁻⁵ S で 4 V あたり 0.2 mA となる。いずれも図の 0.4 mA と合わず、各肢の数値計算は正しい。",
+        "公開候補図：公式原図のグラフ部分を欠落なく含んでいる。軸ラベル（I_C [mA]、コレクタ電流、コレクタ・エミッタ間電圧 V_CE [V]）、目盛 0〜10、4本の曲線ラベル、曲線終端（80 μA は 8 V、60 μA は約 9 V、40 μA は 10 V、20 μA は 10 V を少し越える位置）がすべて判読でき、公開図だけで解答できる。",
+        "officialReferenceUrls は空であり、外部参照に基づく独立主張はない。"
+      ]
+    }
+  ]
+}

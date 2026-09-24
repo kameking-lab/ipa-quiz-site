@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4508,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16802,
+      "webSearchRequests": 0,
+      "costUSD": 0.22483979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2814,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3ac9117fe9e97d7a5c9d045e5a9571db1ea0be1d980db2630910f8e4245551aa",
+  "inputRequestSha256": "2613d33c8443a3f5ad27b9ad07fa6292a881a82c5a7b4da073d075da9a3b134d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4162be5a9c849cb335812a998d48930ade4f909ce74542c5f2bdd5a21ef7b823"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p04.png": "884246d34d90d44d6195fd268503ed99ba93288c87403fca4844370d1e945797"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q01-fig1.png": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "10d5afd93743aa0b59bdfdafbe9472a9d67618ae102f53b59f5e2154710369a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「K₁ と K₂ は 2π（n を [min⁻¹] で表す場合は 2π/60）の倍数だけ異なる」は、どちらが何倍かが書かれていない。また「倍数だけ異なる」は整数倍や加算差とも読めるため曖昧である。関係自体は E·I_a = T·ω から導けて正しい。修正案は「n を [s⁻¹] で表すと K₁ = 2πK₂，[min⁻¹] で表すと K₁ = (2π/60)K₂ となる」。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表の原図（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞問1は解答5・配点5である。これは manifest の公式正答単位 {question:1, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "出典情報を manifest と照合した：fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl=…20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[4]。いずれも manifest と一致する。原図の頁は冊子頁番号「-1-」（T2−K 004）であり、PDF第4頁という manifest の指定と矛盾しない。sourceAttribution の「令和7年度下期…機械科目 問1」も一致する。",
+        "問題文を原図と照合し、以下が一字単位で一致することを確認した：前文、設問（直流分巻電動機の速度特性とトルク特性）、ただし書き（負荷電流＝電機子電流＋界磁電流、I₀＝無負荷電流、端子電圧と界磁調整器の抵抗値は一定）。",
+        "原図の5図すべてで、各曲線のラベル（T・n）と形状を照合した。(1) 減少曲線がT、I₀から直線上昇して飽和する曲線がn。(2) 減少曲線がn、上昇曲線がT。(3) 双曲線状の減少曲線がn、I₀から下に凸で急上昇する曲線がT。(4) ほぼ水平でわずかに下降する曲線がT、上昇曲線がn。(5) ほぼ水平でわずかに下降する曲線がn、上昇曲線がT。候補の choices 1〜5 と figureDescription はこれと一致する。",
+        "公開候補図 20260322-machinery-q01-fig1.png を原図と照合した。5グラフの配置（上段(1)(2)(3)、下段(4)(5)）、縦軸ラベル「トルク T，回転速度 n」、横軸ラベル「負荷電流」、I₀、各曲線のラベル位置と形状、交点の位置が一致し、欠落や入れ替わりはない。公開候補図だけで解答に必要な判別ができる。",
+        "I₀ の位置と曲線の立ち上がり位置は、原図・候補図とも全グラフで縦軸との交点よりわずかに右にある。(3) も他の図と同じ描写である。uncertainty の記述は正確で、解答にも影響しない。",
+        "物理を検算した。分巻機は V と界磁抵抗が一定なので I_f が一定、Φ もほぼ一定となる。n = (V − R_a I_a)/(K₁Φ) から、速度はほぼ一定でわずかに下降する。発生トルク T = K₂ΦI_a に対し、無負荷時の損失トルクを K₂Φ(I₀ − I_f) とおくと、軸トルクは K₂Φ(I − I₀) となり I₀ で0になる。電機子反作用による Φ の減少でトルクの増え方が緩やかになる。以上により正答(5)の根拠は成立する。",
+        "誤答肢の理由を検算した。(1) トルクが負荷電流とともに減少する形と、n が I₀ で0になる形が誤り。(2) 速度の双曲線状低下は直巻特性。(3) Φ∝I_a により T∝I_a²、n∝1/I_a となる直巻特性。(4) 形状は分巻に近いがラベルが逆。いずれも各図の固有の誤りを正しく指摘している。",
+        "officialReferenceUrls は空配列であり、外部参照に依存する独立主張はない。"
+      ]
+    }
+  ]
+}

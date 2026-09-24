@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6403,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19711,
+      "webSearchRequests": 0,
+      "costUSD": 0.28601180000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4252,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f444680b8d65721aafd8a293c7fe4282370c7161e0a325920dd5bb2dd8b6ba69",
+  "inputRequestSha256": "30e2a923c7f2edbf3b1200e1661deed64de76bddb2af31cbbbb3b724571da4ad",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "39a682b64804ab4f536193602a591b17f28cec377f57d889088fcf6ad08eccd8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p14.png": "265d0dbdabfa72bec5fa72221b14bd8329db91d2eef1d2c27e000bed8c6703df",
+      "data/raw_pdfs/denken3/review/20260322/theory/p15.png": "f48c519d7fb0f6e8029b4bdf84751498dbb2985f24610ef20e7b054e26f909b7"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q10-fig1.png": "1e2db1c9c4d9bf9b8f1d57df3c0cee4cffb71c4eaa953630450fb7168228d994",
+      "public/images/denken3/20260322/theory/20260322-theory-q10-fig2.png": "fea715a0fab1589441f8a0e4526dca12b4e0e99de6002c782ec0ecac440c9067"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "c83eb91896a89c7fca8fdb17aa54f02edfd40f102e42450597433e4ee2a5e521",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "公開候補図のファイル名と内容が一致していない。20260322-theory-q10-fig1.png には原図の図1（回路図）と図2（R = 1 Ω の波形）の両方が入っている。20260322-theory-q10-fig2.png には図2ではなく選択肢(1)〜(5)のグラフ5枚が入っている。一方で choiceFigureUrls は空である。このため、ファイル名やalt表示で『図2』と扱うと、学習者も保守者も取り違える。選択肢グラフの画像は choiceFigureUrls に割り当てるか、ファイル名を内容に合わせて変更する（例: -fig1-fig2.png / -choices.png）こと。なお、各画像そのものは原図と一致しており、軸・目盛・全ラベルの欠けや切れはない。",
+        "figureDescription が図1の電源の極性に触れていない。原図・公開候補図ともに電池記号は上側が長い極板（正極）で、電流は電源上側→S→R→L の向きに流れる。これは i_L の右向き矢印と整合している。本文だけで接続と向きを追えるよう、『電池記号の長い極板（正極）が上側』と明記すること（補足レベル）。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『出典の試験年度・公式一次資料 URL は本データでは特定していない』とあるが、これは同じレコードの fiscalYear=2025、term=lower、examDate=2026-03-22、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[14,15] と矛盾する。いずれの項目も manifest および添付した公式原図・公式解答表と一致しているため、この一文は古い記述である。削除するか、『出典はmanifest固定の試験センター公式PDFで確認済み』に改めること。"
+      ],
+      "verifiedEvidence": [
+        "出典情報: 公式解答表の見出し『令和7年度 第三種電気主任技術者下期試験解答』は、manifest の2025年度下期・試験日2026-03-22・理論と整合する。候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、両PDF URL、reviewedFromPage=[14,15]（原図ページ下部の -11-/-12-、T2−R 014/015 に対応）、sourceAttribution『令和7年度下期…理論科目 問10』はすべて一致する。",
+        "公式正答: 公式解答表の理論 問10 は解答4・配点5。候補の officialAnswer=\"4\"、scoringPoints=5 と一致する。",
+        "問題文: 原図の問10本文およびただし書きと照合した。V [V]、L [H]、R [Ω]、スイッチS、t = 0、i_L [A]、R = 1 Ω→図2、R = 2 Ω、点線＝図2、実線＝R = 2 Ω のいずれにも欠落や改変はない。",
+        "選択肢: (1)〜(5)の記述を原図の各グラフと照合した。(1) t=1 s で約2.5 A、t≈2 s でほぼ3 A。(2) 約1.2/1.9/2.3 A で上昇が続く。(3) ほぼ直線で t=1 s に約2.6 A の後、3 Aへ漸近する。(4) 約1.3〜1.4 A から1.5 Aで一定。(5) 横軸5 sまで、約0.6/1.0/1.2/1.45 A。いずれも目視読み取りとして妥当である。",
+        "総合解説の検算: V = 1×3 = 3 V。3(1−e^(−1/τ₁)) = 2 から τ₁ = 1/ln3 ≈ 0.910 s、L ≈ 0.91 H。R = 2 Ω のとき I∞ = 1.5 A、τ₂ = τ₁/2 ≈ 0.455 s、i(t) = 1.5(1−(1/3)^(2t)) で、i(1) = 1.5×8/9 ≈ 1.333 A、i(2) = 1.5×80/81 ≈ 1.481 A。初期傾き V/L ≈ 3.30 A/s は R に依存しない。以上はすべて正しい。図2の読み取り値 t=2 s で約2.7 A（計算値2.67）、t=3 s で約2.9 A（計算値2.89）とも整合する。",
+        "肢別解説の検算: (2)の実線は最終値3 A・τ ≈ 1.82 s と仮定すると 1.27/2.00/2.42 A となり図と整合する。最終値が1.5 Aでないこと、初期傾きが小さいことの指摘は妥当。(5)は 1.5(1−e^(−2/τ)) = 1 から τ = 2/ln3 ≈ 1.82 s で τ₁ の約2倍、初期傾き ≈ 0.82 A/s で点線と不一致。これも正しい。(1)(3)は最終値が約3 Aのままという理由で正しく否定されている。(4)が正答となる理由（最終値半減・時定数半減・初期傾き不変）も正しい。",
+        "図: 公開候補図の図1は、接続（電源–S–R–L の直列閉回路）、i_L の右向き矢印、全ラベル（V [V], S, R [Ω], i_L [A], L [H], 図1）が原図と一致する。図2は軸・目盛（1,2,3 / 0,1,2,3）・破線補助線・曲線形状が原図と一致する。選択肢グラフ5枚も軸範囲（(5)のみ0〜5 s）・点線/実線の区別・(1)〜(5)ラベルが原図と一致する。公開候補図だけで解答に必要な情報は判読できる。",
+        "officialReferenceUrls は空で、公式参考資料による独立主張はない。"
+      ]
+    }
+  ]
+}

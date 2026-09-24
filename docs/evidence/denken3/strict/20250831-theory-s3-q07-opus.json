@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4147,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14380,
+      "webSearchRequests": 0,
+      "costUSD": 0.19824379999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2263,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "94715233fcbaa998569dda2ee1381fc53e6e50f96a9474494e0561adee733a8d",
+  "inputRequestSha256": "10ff73b71ea8362b0b5d8e8b6e7825d4bf002cc8ebabcac5df80aaa4b733a254",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "63fac6799180eb6d3ac7c7da66285e753e630fd6c3df85cf10da593599e407fd"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty の記述が添付の公式解答表と矛盾する。uncertainty は「試験年度・期・試験日は…公式正答…にも表記されていない」としている。しかし添付の公式解答表の原図には、表題として「令和7年度 第三種電気主任技術者上期試験解答」が明記されている。したがって年度（令和7年度＝2025）と期（上期）は公式原図で確認できる。この記述は誤りなので修正が必要。",
+        "候補 JSON の内部で矛盾がある。uncertainty は年度・期・試験日を『特定しない』としている。一方で fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution『令和7年度上期…』ではこれらを確定値として記載している。どちらか一方に統一すること。",
+        "examDate=2025-08-31 は添付資料で検証できない。問題原図（印刷ページ「-7-」、フッタ「T1－R 010」）にも、公式解答表の原図にも試験日の記載はない。この値は sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名「20250831_…」から推測したものとみられる。試験日を公告する公式資料の原頁を添付して確認するまでは、外部確認事項として扱う。",
+        "subject=theory は問題原図に科目名が記載されていないため、直接は確認できない。ただし公式解答表の各科目の問7（理論=1、電力=3、機械=3、法規=5）のうち、manifest 固定の正答 1 と一致するのは理論のみである。問題内容も直流回路で理論科目に整合する。この点は許容範囲と判断した（参考記録）。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図の「図のような直流回路において，スイッチSを閉じているとき，2Ωの抵抗を流れる電流は，スイッチSを開いたときの電流の3倍であった。Rの値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」と一字一句一致する。単位 [Ω]、句読点「，」、「3倍」も一致。",
+        "選択肢：原図 (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と、候補の順序・数値が全肢一致する。",
+        "公式正答：公式解答表〈理論〉問7 の解答は 1、配点は 5。manifest の {question:7, part:null, answer:\"1\", points:5}、候補の officialAnswer=\"1\"、scoringPoints=5 といずれも一致する。",
+        "総合解説の検算：S を開いたとき I=E/12。S を閉じたとき R_p=10R/(10+R)、I=E/(2+R_p)。3 倍の条件から 2+R_p=4、R_p=2、10R=20+2R、R=2.5Ω。計算・因果とも正しい。2Ω が電源と直列で回路全体の電流 I に等しいという説明も図と整合する。",
+        "肢(1)：10×2.5/12.5=2.000Ω、全抵抗 4Ω、12/4=3.00 倍。正しい。",
+        "肢(2)：35/13.5=2.593Ω、全抵抗 4.593Ω、12/4.593=2.613 倍（≒2.61）。記載値と一致。",
+        "肢(3)：5/10.5=0.476Ω、全抵抗 2.476Ω、12/2.476=4.846 倍（≒4.85）。記載値と一致。",
+        "肢(4)：15/11.5=1.304Ω、全抵抗 3.304Ω、12/3.304=3.632 倍（≒3.63）。記載値と一致。",
+        "肢(5)：45/14.5=3.103Ω、全抵抗 5.103Ω、12/5.103=2.351 倍（≒2.35）。記載値と一致。",
+        "各誤答肢の理由（3 倍に届かない／超える）は、R が大きいほど電流比が小さくなるという単調性と整合する。",
+        "公開候補図と原図の照合：公開候補図は原図の回路部分を欠落なく切り出したもの。含まれる要素は、E（電池記号、長い極板が上側）、右向き矢印と I、2Ω、上下の接続点（黒丸）、10Ω（上下の接続点間）、開状態のスイッチ S と曲線矢印、右辺の R、下側導線の帰路。接続・向き・全ラベルが一致し、公開候補図だけで S 閉時に R が 10Ω と並列になることを読み取れる。",
+        "figureDescription：接続関係・ラベル位置・スイッチの状態・並列／直列の関係の記述は、いずれも原図と一致する。電源の極性は記載されていないが、解答は電流比のみに依存するため誤りではない。",
+        "officialReferenceUrls は空で、独立主張はない。",
+        "reviewedFromPage=[10]：添付の問題原図（印刷ページ「-7-」）を当該ページとして採用した。"
+      ]
+    }
+  ]
+}

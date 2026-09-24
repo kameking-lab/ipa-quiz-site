@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4768,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21054,
+      "webSearchRequests": 0,
+      "costUSD": 0.2640558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2441,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5042d53f1ed9a38c5f48e963ff7bd6eb09f8ed1bfdfdc1172ce2b9f009b385be",
+  "inputRequestSha256": "025a456e8c0f9f3eb18062fede87de98a4557fe91a183a25aeab7827ce62fe81",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "5ea340583c3ce942c0024c0c5104153cf202d5d5ef3782d688cb8fed10275fc8",
+      "q17b": "7b0bb4f15b8ce9d59430944b1e8b413499dba0fb0d422f2e48455bc20789740d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p22.png": "80bfc312c7f05f1c8f860706237552d2e83b9bcc072a12888eea060d3ff08427",
+      "data/raw_pdfs/denken3/review/20260322/theory/p23.png": "e446e4fbf7f94da7a1ccdf7cf0fb1331263fc730cb650061f8c86ff2126bc9c6"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q17-fig1.png": "d6971af7f80d96e513c3c79b4723f8db87c728435389e7f3bc4d02555e08dd7e"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "28551abf828d55a1034d5e1efefd4cd15fc292d6403268e61bbd136a7d4a8f93",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、問題PDF・解答PDFのURLはmanifestと一致する。reviewedFromPage=[22,23]もmanifestと一致する。原図の印刷ノンブルは「-19-」「-20-」で、管理番号はT2-R 022/023である。PDF頁22・23と矛盾はない。",
+        "公式正答: 解答表の原図で理論 問17(a)の解答は5、配点は5である。候補のofficialAnswer=5、scoringPoints=5と一致する。",
+        "問題文: 原図p.19の本文（d[m]、S[m²]、A・Bの誘電体構成、E_A1〜E_A3、E_B1〜E_B3、端効果・初期電荷・漏れ電流の無視、ε₀[F/m]、上側極板にV[V]の直流電源、下側極板を接地）と、原図p.20の(a)設問文が候補と一致する。冒頭の選択問題注記と「次の(a)及び(b)の問に答えよ。」は省かれているが、小問単位に分割するための整形であり、意味は変わらない。",
+        "選択肢: (1) E_A1<E_A2<E_A3、3V/(5d)。(2) E_A1>E_A2>E_A3、3V/(5d)。(3) E_A1=E_A2=E_A3、V/d。(4) E_A1<E_A2<E_A3、9V/(5d)。(5) E_A1>E_A2>E_A3、9V/(5d)。いずれも原図p.20と不等号の向き・分数まで一致する。",
+        "検算: 直列の各層で電束密度Dは共通である。V = Dd/ε₀·(1/12+1/9+1/12) = 5Dd/(18ε₀) から D = 18ε₀V/(5d) となる。よってE_A1 = 9V/(5d)、E_A2 = 6V/(5d)、E_A3 = 3V/(5d)。各層の電圧は3V/10、4V/10、3V/10で、合計はVになる。E_A1>E_A2>E_A3、最大値は9V/(5d)で、正答(5)と整合する。",
+        "肢別理由: (1)は向きが逆で、値は最小値E_A3である。(2)は向きは正しいが、値が最小値である。(3)のV/dは平均電界にすぎない。(4)は最大値は正しいが、向きが逆である。いずれも計算結果と整合し、各肢に固有の理由になっている。",
+        "図: 公開候補図はp.19の図部分を欠落なく切り出している。コンデンサAの確認点は、V端子が上側極板につながること、層厚d/6・d/3・d/2、E_A1,2ε₀/E_A2,3ε₀/E_A3,6ε₀、幅S、下側極板の接地。コンデンサBの確認点は、d、E_B1 2ε₀/E_B2 3ε₀/E_B3 6ε₀、幅S/6・S/3・S/2、接地。すべて原図と一致する。(a)の解答に必要な層厚と誘電率は、候補図だけで読み取れる。figureDescriptionの記述も図と一致する。",
+        "officialReferenceUrlsは空である。検証が必要な独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: (a)と同じく、年度・期・試験日・科目・PDF URL・reviewedFromPage=[22,23]はmanifestと一致する。sourceAttributionの「令和7年度下期 理論科目 問17(b)」も正しい。",
+        "公式正答: 解答表の原図で理論 問17(b)の解答は4、配点は5である。候補のofficialAnswer=4、scoringPoints=5と一致する。",
+        "問題文・選択肢: (b)の設問文「コンデンサB全体の蓄積エネルギーは、コンデンサA全体の蓄積エネルギーの何倍か」は原図p.20と一致する。選択肢(1) 0.72、(2) 0.83、(3) 1.00、(4) 1.20、(5) 1.38も一致する。",
+        "検算: C_A = 1/[(d/ε₀S)(1/12+1/9+1/12)] = (18/5)ε₀S/d = 3.6ε₀S/d である。C_B = (ε₀S/d)(2/6+3/3+6/2) = (13/3)ε₀S/d である。印加電圧が同じなので、W_B/W_A = C_B/C_A = 65/54 ≈ 1.2037 となり、正答(4) 1.20と整合する。",
+        "肢別理由: (2)の0.83は54/65 ≈ 0.8308で、比の向きが逆である。(5)の1.38は、C_B ≈ 1.38×3.6 ≈ 4.97ε₀S/dを要するという算術が正しい。(1)と(3)の反駁もC_B > C_A、C_A ≠ C_Bにより正しい。",
+        "候補のuncertaintyは、(1)と(5)の出題者想定が不明であることを述べている。公開する肢別解説は出題意図を推測・断定しておらず、各肢が誤りである理由は計算だけで成立する。未検証の主張は公開内容に含まれないため、PASSを妨げない。なお数値上は0.72 ≈ 13/18、1.38 ≈ 18/13となる。ただし出題意図の根拠にはしない。",
+        "図: 公開候補図は原図p.19と一致する。(b)に必要なA側の層厚・誘電率と、B側の領域幅S/6・S/3・S/2・誘電率・極板間隔dは、すべて候補図だけで読み取れる。上側がV、下側が接地という接続も原図と同じである。figureDescriptionの記述も正確である。",
+        "officialReferenceUrlsは空である。検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

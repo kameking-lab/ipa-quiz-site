@@ -101,6 +101,10 @@ def main() -> None:
         grouped[group]["passRawNotInCheckout"] += id_ in raw_elsewhere and id_ not in passed
     total = {field: sum(row[field] for row in grouped.values())
              for field in ("expected", "candidate", "strictPass", "passRawNotInCheckout")}
+    if "--missing" in sys.argv:
+        missing = sorted(f"{d}-{sub} {k}" for (d, sub, k) in expected if (d, sub, k) not in passed and (d, sub, k) not in raw_elsewhere)
+        print("\n".join(missing))
+        return
     print(json.dumps({"total": total, "byPaper": {f"{date}-{subject}": row for (date, subject), row in sorted(grouped.items())}},
                      ensure_ascii=False, indent=2))
 

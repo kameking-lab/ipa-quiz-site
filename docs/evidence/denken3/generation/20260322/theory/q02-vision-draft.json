@@ -1,0 +1,96 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように、真空中の 3 m 離れた 2 点 A、B にそれぞれ 3×10⁻⁷ C の正の点電荷がある。A 点と B 点とを結ぶ線分上の A 点から 1 m 離れた P 点に Q [C] の正の点電荷を置いたとき、その点電荷に B 点の方向に 5×10⁻³ N の力が働いた。この点電荷 Q の値 [C] として、最も近いものを次の (1)〜(5) のうちから一つ選べ。\nただし、真空中の誘電率を ε₀ = 8.85×10⁻¹² F/m とする。",
+      "choices": {
+        "1": "1.2×10⁻⁹",
+        "2": "1.8×10⁻⁸",
+        "3": "2.5×10⁻⁶",
+        "4": "4.4×10⁻⁵",
+        "5": "7.3×10⁻⁵"
+      },
+      "officialAnswer": "3",
+      "explanation": "クーロンの法則 F = Q₁Q₂ / (4πε₀r²) を使う。\n\n比例定数: 1/(4πε₀) = 1/(4π × 8.85×10⁻¹²) ≒ 8.99×10⁹ N·m²/C²\n\nP 点の Q は正電荷なので、A、B の正電荷からそれぞれ反発力を受ける。\n・A からの力（距離 1 m）: P を A から遠ざける向き、つまり B の方向。\n　F_A = 8.99×10⁹ × 3×10⁻⁷ × Q / 1² ≒ 2697Q [N]\n・B からの力（距離 2 m）: P を B から遠ざける向き、つまり A の方向。\n　F_B = 8.99×10⁹ × 3×10⁻⁷ × Q / 2² ≒ 674Q [N]\n\nB 方向を正とした合力:\nF = F_A − F_B = 8.99×10⁹ × 3×10⁻⁷ × Q × (1 − 1/4) ≒ 2023Q [N]\n\nこれが 5×10⁻³ N なので、\nQ = 5×10⁻³ / 2023 ≒ 2.47×10⁻⁶ C ≒ 2.5×10⁻⁶ C\n\nよって正答は (3)。",
+      "choiceExplanations": {
+        "1": "誤り。Q = 1.2×10⁻⁹ C のとき、B 方向の合力は約 2023 × 1.2×10⁻⁹ ≒ 2.4×10⁻⁶ N となり、題意の 5×10⁻³ N より約 3 桁小さい。",
+        "2": "誤り。Q = 1.8×10⁻⁸ C のとき、B 方向の合力は約 2023 × 1.8×10⁻⁸ ≒ 3.6×10⁻⁵ N となり、題意の 5×10⁻³ N より約 2 桁小さい。",
+        "3": "正しい。A からの反発力（B 方向）と B からの反発力（A 方向）の差 F = 8.99×10⁹ × 3×10⁻⁷ × Q × (1 − 1/4) を 5×10⁻³ N とおくと、Q ≒ 2.47×10⁻⁶ C となり、最も近い値である。",
+        "4": "誤り。Q = 4.4×10⁻⁵ C のとき、B 方向の合力は約 2023 × 4.4×10⁻⁵ ≒ 8.9×10⁻² N となり、題意の 5×10⁻³ N より 1 桁以上大きい。",
+        "5": "誤り。Q = 7.3×10⁻⁵ C のとき、B 方向の合力は約 2023 × 7.3×10⁻⁵ ≒ 1.5×10⁻¹ N となり、題意の 5×10⁻³ N より 1 桁以上大きい。"
+      },
+      "figureDescription": "水平な破線上に、左端の点 A、中間の点 P、右端の点 B が並ぶ一次元配置図。A の上に「3×10⁻⁷ C」、B の上に「3×10⁻⁷ C」、P の上に「Q[C]」とラベルがある。P から B の方向（右向き）に矢印が描かれ、「5×10⁻³ N」とラベルされている。下部の寸法線は、A〜P 間が「1 m」、P〜B 間が「2 m」を示す。電荷の配置・距離・力の向きはすべて問題文でも述べられているため、図は位置関係と力の向きを視覚的に確認するための補助である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2808,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1308958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 997,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "511896fd647cda543076aaffe0829627613a70512b9a53cade58e64b3602f22f",
+  "inputRequestSha256": "29f9e8e4cca6abc36cecd2295fca6f6f5dd3f837850fa80b7894e2b39c7ce60d",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p05.png": "402a524edad916b76773f5514176303aefc4d8889d66071ac8e6ae03e998d24a"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2431,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13391,
+          "webSearchRequests": 0,
+          "costUSD": 0.1560118,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 803,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e8202d252ff30098f537335485c00b89d95a2ea211c3f131867aaa152e8fbbdd",
+      "inputRequestSha256": "f8b02746741c23ad0db956b53f8423ce414e98700dd0cfdb0b3e69286bf99a69",
+      "previousDraftSha256": "0cef2465dd6efc56c6a7a33626c771128d24b5e32b1c7915a8023d111cd6f727",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "12ec1084723af9f930600b3f3fd82617b9cdacf238a8ebe6c004b73cb8f1c67f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q02-opus.json",
+      "answeredStrictReceiptSha256": "1354c0d0a03dd14a958f42186a89463b9ad79a316e064551d347478022582466",
+      "figureSha256": {
+        "20260322-theory-q02-fig1": "f72f2e7b4b8b2eec4ece0d76c676ac5ac174d6d40cae6f75db59ecd75be56bc5"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

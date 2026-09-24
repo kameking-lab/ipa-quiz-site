@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2863,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13759,
+      "webSearchRequests": 0,
+      "costUSD": 0.16759580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1495,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c97c81f2fec63c083f1b69b27bfdef96b69e860d3b5fd3533c56c652907f7c93",
+  "inputRequestSha256": "5e68a57b41245c150956d597e6ac483fdcf592b8791e1db1635496a1e03f3ab3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "761550539fbabd1e46fb1b25c87ae2c225a144bf558cbfd9c6dc2718ed2ec4ca"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p05.png": "c0fa4c98a2a52ae27360f1a3b68210977f35515e6032756cb1206b397715ae53"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c270e17a1dbd9dc6565efd78ec73e424a194fad43b56d7f5237350cf0b316048",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述に事実誤りがある。『実施年度・回は公式正答の記載内容から確認できていない』とあるが、添付の公式解答表原図の表題は『令和7年度 第三種電気主任技術者上期試験解答』である。この表題から年度（令和7年度＝2025年度）と回（上期）は確認できる。試験実施日 2025-08-31 は、添付原図の問題頁にも解答表にも記載がないが、manifest 固定の出典情報（公式過去問一覧、PDF ファイル名 20250831_*）と一致する。uncertainty 欄は、年度・回＝解答表表題で確認済み、試験日＝manifest 出典で確認済み、という内容に訂正するか、未解決事項が残らない記述にすること。現状は needsReview=false なのに未確認事項が残っている扱いになっており、両者が矛盾している。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図（頁下部『-2-』『T1－K 005』）の問2本文と逐語照合した。12 V、始動電流 4 A、定格電流 1 A、効率[%]、ただし書き（ブラシ電圧降下・電機子反作用は無視、損失は電機子巻線銅損のみ）の数値・単位・条件はすべて一致した。",
+        "選択肢：原図の (1)80 (2)75 (3)70 (4)65 (5)60 と候補 choices 1〜5 が完全に一致した。",
+        "公式正答：解答表原図の＜機械＞欄で問2＝2、配点＝5 を確認した。manifest 固定正答 {question:2, part:null, answer:'2', points:5} とも一致する。候補の officialAnswer='2'、scoringPoints=5 と一致した。",
+        "総合解説の検算：静止時は逆起電力 E=0 なので Rₐ=12/4=3 Ω。定格時の入力は 12×1=12 W、銅損は 1²×3=3 W、出力は 9 W、η=9/12=75 %。別解 E=12−1×3=9 V、P_out=E·I=9 W も正しい。永久磁石界磁のため電源電流＝電機子電流という因果も正しい。",
+        "誤答肢の理由を検算した（入力 12 W・電流 1 A 前提の逆算）。(1)80 %→出力 9.6 W、損失 2.4 W、Rₐ=2.4 Ω。(3)70 %→8.4 W、3.6 W、3.6 Ω。(4)65 %→7.8 W、4.2 W、4.2 Ω。(5)60 %→7.2 W、4.8 W、4.8 Ω。いずれも算術は正しく、Rₐ=3 Ω と矛盾するという各肢固有の理由として成立している。正答肢 (2) の理由も正しい。",
+        "図：原図に図はない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、sourceQuestionPdfUrl=…20250831_ch_third_q03.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf、reviewedFromPage=[5] は、すべて manifest 固定情報と一致した。sourceAttribution『令和7年度上期…機械科目 問2』も解答表表題および manifest と整合する。",
+        "officialReferenceUrls は空配列であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

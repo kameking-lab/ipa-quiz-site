@@ -1,0 +1,166 @@
+{
+  "questionNumber": 11,
+  "sharedContext": "問11 接地極及び接地抵抗測定について，次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問11 接地極及び接地抵抗測定について，次の(a)及び(b)の問に答えよ。\n\n(a) 図1は大地抵抗率 ρ [Ω・m] の土壌に埋設された棒状接地極の概略図である。この接地極の接地抵抗 R [Ω] は①式で示されるものとする。\n\nR = (ρ / (2πL))・ln(4L / d) ……①\n\nただし，L：接地極の長さ [m]　d：接地極の直径 [m]　π：円周率\nであり，ln(4L / d) は 4L / d の自然対数を示す。\n\nここで，x = 4L / d と置いて①式を書き直すと②式となる。\n\nR = (2ρ / (πd))・(ln(x) / x) ……②\n\n②式中の ln(x) / x は，L ≫ d として 200 ≦ x ≦ 1 000 の範囲で図2の値となる。\n\n今，ρ = 150 Ω・m，d = 14×10⁻³ m の条件で R を 100 Ω 以下としたいとき，これを実現するための L の最小長さ [m] として，最も近いものを次の(1)〜(5)から一つ選べ。ただし，ρ は深さによらず一定とする。",
+      "choices": {
+        "1": "0.7",
+        "2": "1.0",
+        "3": "1.2",
+        "4": "1.5",
+        "5": "2.0"
+      },
+      "officialAnswer": "4",
+      "explanation": "x = 4L / d より L = xd / 4。これを①式に代入すると R = ρ / (2π・xd/4)・ln(x) = (2ρ / (πd))・(ln(x) / x) となり，②式が得られる。\n\n係数を計算する。\n2ρ / (πd) = 2×150 / (π×14×10⁻³) = 300 / 0.04398 ≈ 6 821 Ω\n\nR ≦ 100 Ω とするには\nln(x) / x ≦ 100 / 6 821 ≈ 0.01466\n\n図2のとおり ln(x) / x は x の増加に対して単調に減少するので，x が大きいほど（L が長いほど）R は小さくなる。ln(x) / x = 0.01466 となるのは図2から x ≈ 410（数値計算では x ≈ 410.4）。\n\nしたがって必要な最小長さは\nL = xd / 4 ≈ 410×14×10⁻³ / 4 ≈ 1.44 m\n\nこれに最も近い選択肢は 1.5 m（(4)）である。L = 1.5 m では R ≈ 96 Ω となり，100 Ω 以下の条件も満たす。",
+      "choiceExplanations": {
+        "1": "L = 0.7 m のとき x = 4×0.7 / (14×10⁻³) = 200，ln(x)/x ≈ 0.0265，R ≈ 6 821×0.0265 ≈ 181 Ω。100 Ω を大きく超えるので条件を満たさない。",
+        "2": "L = 1.0 m のとき x ≈ 286，ln(x)/x ≈ 0.0198，R ≈ 135 Ω。100 Ω を超えるので条件を満たさない。",
+        "3": "L = 1.2 m のとき x ≈ 343，ln(x)/x ≈ 0.0170，R ≈ 116 Ω。100 Ω を超えるので条件を満たさない。必要な最小長さ約 1.44 m との差も約 0.24 m あり，(4) より遠い。",
+        "4": "正答。L = 1.5 m のとき x ≈ 429，ln(x)/x ≈ 0.0141，R ≈ 96 Ω で 100 Ω 以下となる。必要な最小長さ約 1.44 m に最も近い。",
+        "5": "L = 2.0 m のとき x ≈ 571，ln(x)/x ≈ 0.0111，R ≈ 76 Ω で条件は満たすが，必要な最小長さ約 1.44 m との差が約 0.56 m あり，最も近い値ではない。"
+      },
+      "figureDescription": "図1：地表面から鉛直に埋設された棒状接地極の断面概略図。点描で示された土壌部分に「大地抵抗率 ρ[Ω・m]」の表記があり，接地極には引出線で「棒状接地極」と記されている。接地極上端の幅に「d[m]」（直径），地表面から先端までの長さに「L[m]」の寸法線がある。接地極の先端はとがった形状。①式の各記号の意味を示す概念図であり，数値は含まない。\n図2：縦軸 ln(x)/x（0〜0.03，主目盛 0.005 刻み），横軸 x（200〜1 000，主目盛 100 刻み）のグラフで，細かい補助目盛の方眼がある。曲線は x = 200 で約 0.0265 から始まり，x の増加とともに単調に減少して x = 1 000 で約 0.007 となる。ln(x)/x = 0.01466 付近に対応する x（約 410）を読み取るために必要な図である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問11 接地極及び接地抵抗測定について，次の(a)及び(b)の問に答えよ。\n\n(b) 直読式接地抵抗計を用いて，接地抵抗を測定する場合，被測定接地極 E に対する，二つの補助接地極 S（電圧用）及び H（電流用）の地表面配置として，最も適切なものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "S を頂点とする三角形配置：S–H 間 10 m，S–E 間 10 m，H–E 間 2 m",
+        "2": "E を頂点とする三角形配置：E–H 間 10 m，E–S 間 10 m，H–S 間 2 m",
+        "3": "一直線上に E，H，S の順：E–H 間 4 m，H–S 間 2 m",
+        "4": "一直線上に E，S，H の順：E–S 間 10 m，S–H 間 10 m",
+        "5": "一直線上に S，E，H の順：S–E 間 10 m，E–H 間 2 m"
+      },
+      "officialAnswer": "4",
+      "explanation": "直読式接地抵抗計は電位降下法を原理とし，被測定接地極 E と電流用補助接地極 H との間に測定電流を流し，E と電圧用補助接地極 S との間の電位差から E の接地抵抗を求める。\n\n電流が流れ込む E と H の周囲には，それぞれ電位が大きく変化する範囲（抵抗区域）がある。E の接地抵抗だけを正しく測るには，E と H を十分離して両者の抵抗区域が重ならないようにし，S を E と H の間の，どちらの抵抗区域にも入りにくい電位のほぼ平坦な位置に置く必要がある。\n\nこのため，E，S，H をほぼ一直線上にこの順で並べ，それぞれの間隔を十分にとる配置が適切である。選択肢のうち E，S，H がこの順に一直線上に並ぶのは (4) だけであり，E–S 間・S–H 間ともに 10 m と，選択肢の中で最も大きな間隔がとられている。",
+      "choiceExplanations": {
+        "1": "E と H の間隔が 2 m しかなく，両者の抵抗区域が重なるため E 周辺の電位分布が H の影響を受ける。また S が E と H の間に位置していない。適切ではない。",
+        "2": "S が H から 2 m の位置にあり，H の抵抗区域内に入るため，S の電位が H 周辺の急な電位変化の影響を強く受ける。E，S，H が一直線上に並んでおらず，S が E と H の間に位置していない。適切ではない。",
+        "3": "間隔が 4 m，2 m と小さく抵抗区域が重なるうえ，S が E から見て H より外側にあり，E と H の間にない。E–S 間の電圧に H 周辺の電位変化が含まれ，E の接地抵抗だけを測定できない。適切ではない。",
+        "4": "正答。E，S，H が一直線上にこの順で並び，E–S 間，S–H 間ともに 10 m の間隔がとられている。S が E と H の間にあり，E–H 間の距離（20 m）も選択肢の中で最も大きいため，両者の抵抗区域の影響を最も受けにくい配置である。",
+        "5": "E と H の間隔が 2 m しかなく，両者の抵抗区域が重なる。また S が E を挟んで H と反対側にあり，E と H の間に位置していない。適切ではない。"
+      },
+      "figureDescription": "選択肢(1)〜(5)はいずれも E，S，H の3点（黒丸）の地表面配置図で，点間は破線で結ばれ，寸法線で距離が示されている。\n(1)：左に S，右上に H，右下に E。S から H へ向かう斜辺に「10 m」，S から E へ向かう斜辺に「10 m」，H と E の間（縦方向）に「2 m」の寸法。\n(2)：左に E，右上に H，右下に S。E–H の斜辺に「10 m」，E–S の斜辺に「10 m」，H と S の間（縦方向）に「2 m」の寸法。\n(3)：横一直線に左から E，H，S。E–H 間「4 m」，H–S 間「2 m」。\n(4)：横一直線に左から E，S，H。E–S 間「10 m」，S–H 間「10 m」。\n(5)：横一直線に左から S，E，H。S–E 間「10 m」，E–H 間「2 m」。\n選択肢そのものが配置図であるため，各点の並び順と距離を読み取るのに必要な図である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9222,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.2757358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5476,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "59202bf5100da669de486b30fd066583f30fe89300e236ab39509ea905330058",
+  "inputRequestSha256": "34dbe1b4f28c2ddec721b069d2b78c462416deb43a92b6c8af6fd7ef0740d444",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p18.png": "293edd44b7d9a4f91a7116e994e555a5751a9c50b25c681e8a5088299bb87df3",
+    "data/raw_pdfs/denken3/review/20260322/law/p19.png": "8f3a361d3ba805fbbf76580833f25d0b14dacad04e1175dad66c03e9ef628723"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5788,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 23619,
+          "webSearchRequests": 0,
+          "costUSD": 0.3049758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2316,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4e564f603e3ebb0b0aa9133ddfd4eed116f4c5cecd8a3e2219e9fa3728022810",
+      "inputRequestSha256": "3f671f438816490dd110d4d609815b48279119c195ac8faa00e69d2ea7a7ce67",
+      "previousDraftSha256": "e206f4698485c2506777428be8bf139cd75b794ce6a374e5deb20736cd97bb71",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q11-vision-draft-v1.json",
+      "answeredReviewSha256": "1ee150a57b42a8e5c65ab04aaf8cbb380a5432df67ceaee8167d83dbe984a712",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q11-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s1-q11a-q11b-opus.json",
+      "answeredStrictReceiptSha256": "3ba05fa74e4a66cb24194893ce4361cbdd23ddd66af531c934a20251b6e22bfb",
+      "figureSha256": {
+        "20260322-law-q11-fig1": "411d59cecbf3fd4c6c5dcbe7ee5233b641155da038fc6796ca311a65a75b7ee4",
+        "20260322-law-q11-fig2": "5b032693784c78282070356c8948ef427b7ac52707bf3d3138f727e1d673ab69",
+        "20260322-law-q11-fig3": "7c0e381861d6ba75d1b36db584a8848d82bf06342d8bd5fc168f20b4fcee11da"
+      },
+      "referenceHashes": {},
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5741,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 23027,
+          "webSearchRequests": 0,
+          "costUSD": 0.2992998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2167,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "52939b56918be379fed58867a0a04fbb645fadd8694c9a547d1aff7370532bbe",
+      "inputRequestSha256": "b8dadf72ae5ac1b18e0be8d721158bff583841b285a843795b36681fdfe50f88",
+      "previousDraftSha256": "ab6ced0a1fb077d95dac1cb1f7a29534af91fc49bb4d3f69a1842367b9a0b496",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q11-vision-draft-v2.json",
+      "answeredReviewSha256": "c032b3c7ca44da678eb81d20fc850fe7dab61c28ecc7b14ef5ed92c1fced9c21",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q11-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s2-q11a-q11b-opus.json",
+      "answeredStrictReceiptSha256": "036a9f423a035f82a19fc3f95b0d8c4588e4dc643d94c501cbe23442a9bbd4bf",
+      "figureSha256": {
+        "20260322-law-q11-fig1": "411d59cecbf3fd4c6c5dcbe7ee5233b641155da038fc6796ca311a65a75b7ee4",
+        "20260322-law-q11-fig2": "5b032693784c78282070356c8948ef427b7ac52707bf3d3138f727e1d673ab69",
+        "20260322-law-q11-fig3": "7c0e381861d6ba75d1b36db584a8848d82bf06342d8bd5fc168f20b4fcee11da"
+      },
+      "referenceHashes": {},
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

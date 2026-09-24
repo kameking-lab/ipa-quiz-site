@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4614,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14877,
+      "webSearchRequests": 0,
+      "costUSD": 0.2115598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3114,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "adce5cb2306e419c5f001d41dcf58756e3ca5812bd8c73e90e00c87362bae084",
+  "inputRequestSha256": "a59196fd2ba1b0d7abe45977c108fe4934567be4ac5733da303a942c016035d9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "623de36ddca62c94ff256b9df3deca59e6c3925009ef86fcad9db1de5bfd6d5f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p11.png": "4ab3530d3c3c359a5b745e1f9b6bfc8acfa907147667f5ab89956f4e0d3600e2"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q08-fig1.png": "0c84ed31d6e802e6d11f5dba278b687179570b34422f6783b1855367c151bf4c"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "4dd5f10bb958691663384bf0945338d80c77a34eb553e04244da8315a1656ac7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の (2) 1.7 と (4) 0.6 は、どちらも「正しい計算では 0.4 になるので該当しない」という同じ趣旨の文になっている。その肢に固有の誤り（どの取り違えでその値になるか）が示されておらず、誤答肢固有の理由として不十分。記述内容自体に誤りはない。たとえば 1.7 ≒ 50/30、0.6 ≒ 30/50 のように、その値が生じる組合せを検算可能な形で示すこと。推測による誤答原因の断定は避けること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の「該当する政府・試験実施機関の一次資料URLを特定できなかった」という記述は、同じ候補に sourceQuestionPdfUrl（https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf）と sourceAnswerPdfUrl（…_a01.pdf）が manifest どおり設定されていることと矛盾する。出典を特定できていないかのように読める不正確な記述なので、削除または「出典は manifest 固定の試験センター公式PDF。officialReferenceUrls は独立主張がないため空」と訂正すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第11頁、頁内表記「-8-」、識別記号 T2−R 011）と照合した。R₁ = 20 Ω、R₂ = 30 Ω、C = 1/(100π) F、L = 1/(4π) H、f = 10 Hz / 10 MHz、実効値 V 一定、電流比 I₁₀Hz / I₁₀MHz の定義はすべて一致する。",
+        "選択肢: (1) 2.5、(2) 1.7、(3) 1.0、(4) 0.6、(5) 0.4 が原図と一致する。",
+        "公式正答: 解答表「令和7年度 第三種電気主任技術者下期試験解答」の理論・問8は解答 5、配点 5。officialAnswer = \"5\"、scoringPoints = 5 と一致する。",
+        "10 Hz の検算: X_C = 1/(2π·10·1/(100π)) = 1/0.2 = 5 Ω、X_L = 2π·10·1/(4π) = 5 Ω。f₀ = 1/(2π√(1/(400π²))) = 10 Hz で並列共振となり、LC 並列部分のアドミタンスは 0。したがって Z = R₁ + R₂ = 50 Ω で、I = V/50。",
+        "10 MHz の検算: X_C = 1/(2×10⁵) = 5×10⁻⁶ Ω、X_L = 5×10⁶ Ω。並列部分はほぼ短絡とみなせるので |Z| ≈ 20 Ω（誤差は無視できる）で、I ≈ V/20。",
+        "電流比: (V/50)/(V/20) = 0.4 で公式正答 (5) と整合する。(1) 2.5 が逆比 50/20 であるという説明も正しい。",
+        "図: 公開候補図 20260322-theory-q08-fig1.png は原図の回路部分と一致する。電源と R₁ が直列で、C・L・R₂ が並列。接続点の黒丸は C と L の上下の計4箇所。ラベル V[V]、f[Hz]、R₁[Ω]、C[F]、L[H]、R₂[Ω] はすべて揃っており、欠落・誤接続はない。図だけで回路構成を理解でき、figureDescription の記述も図と一致する。",
+        "メタデータ: fiscalYear 2025（令和7年度）、term lower、examDate 2026-03-22、subject theory、reviewedFromPage [11]、sourceAttribution「令和7年度下期…理論科目 問8」は manifest と一致する。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3479,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 26005,
+      "webSearchRequests": 0,
+      "costUSD": 0.2778838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3387,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fa988efd67a85ad365a8e73f4abcc1fab8ab1887a755fcb7ba3a061779f61cd4",
+  "draftSha256": {
+    "10": "550982afa0d1d1ac45353a7f71b5dba429ddfbc39022640c0b46653e3baf1479"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+  },
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {
+    "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+    "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+  },
+  "referencePageSha256": {
+    "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+    "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+  },
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 10,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

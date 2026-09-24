@@ -1,0 +1,105 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6451,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16722,
+      "webSearchRequests": 0,
+      "costUSD": 0.2630598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3585,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0f30f5c0a7aedfa7001812c9f22e9be431795a9ac5bd19704c2ffdfea69482c6",
+  "inputRequestSha256": "6d16ddbb7c1278a7199aade2adf178381d5844a9e29d046aaaf48ff11e6104fc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "f2643727e05e89e0069b71a7fe67d83be5cb8bc9625cb2cd7ace5313a375bfb0",
+      "q16b": "fbcb5655fc653540a134210f8ca23c04ea55291f1b49d4e9368da2083ae84c4c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p19.png": "f6fa2f4b8a07190f9b245f99c54b83b9cfcef3ab39f51474c490014459edefac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q16-fig1.png": "9416c7dfd1ae642ef9d7607e42641aac27f1199060819439782b0e4b68d4ed49"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1d143d137faf9a1c6ab836b8f3ed7dc92c4f03b8f2fc9214625e077b12946c47",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は『Q₁ オフ期間は V₁ = 0』を前提に V₁(平均) = E·T_on/T を導いているが、この式は電機子電流が連続していることが条件である。電流が途切れる期間があると、V₁ は 0 ではなく直流機の逆起電力に等しくなり、式が成り立たない。この前提は uncertainty 欄にしか書かれていない。総合解説の本文にも『平滑リアクトルにより電機子電流は連続とする』と明記すること。"
+      ],
+      "figureIssues": [
+        "figureDescription に電源の極性が書かれていない。uncertainty 欄では『極板の長短が判読しにくい』としている。しかし極性は回路の構成から一意に決まる。両ダイオードはカソードが上向きに直列接続されており、下側レールが正なら両ダイオードが順バイアスとなって電源を短絡する。また Q₁ のコレクタは上側にある。したがって上側レールが正極である。figureDescription に『上側レールが電源の正極側』と明記すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄の『原本ページには試験年度・回の表記が含まれておらず、出典の年度は特定できていない』は、fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution『令和7年度上期…機械科目 問16(a)』と矛盾している。年度・回は、添付した公式解答表原図の表題『令和7年度 第三種電気主任技術者上期試験解答』、機械欄の問16(a)=2、および問題PDFのURL(20250831_ch_third_q03)で確認できる。この文言は削除するか、根拠を記した記述に改めること。",
+        "uncertainty 欄の『上側レールを正極側と解している(この解釈で公式正答と一致する)』は、公式正答から逆算して解釈を正当化している。根拠としては不適切である。回路構成による根拠(figureIssues 参照)に置き換えること。",
+        "uncertainty 欄に未解決の留保(極性・出典年度)が残っているのに needsReview=false になっており、整合していない。上記を解消したうえで uncertainty を整理すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図と照合し、E = 200 V、スイッチング周波数 500 Hz、定常状態のみを扱う旨、Q₂ オフで Q₁ をオンオフ制御すること、V₁ 平均 150 V、単位 [ms] が一致した。",
+        "選択肢: (1)1.75 (2)1.50 (3)1.25 (4)1.00 (5)0.7 が原図と一致した(原図でも(5)は『0.7』)。",
+        "公式正答: 公式解答表原図の機械欄 問16(a) は解答 2・配点 5 で、manifest と候補JSON(officialAnswer=2, scoringPoints=5)に一致した。",
+        "計算: T = 1/500 = 2 ms、T_on = 2 × 150/200 = 1.50 ms となり、(2) に一致した。",
+        "誤答肢の検算: 1.75 ms → 175 V、1.25 ms → 125 V、1.00 ms → 100 V、0.7 ms → 70 V。いずれも正しい。",
+        "公開候補図: 原図の回路部分をそのまま切り出したもので、Q₁・Q₂、ダイオード2個(カソード上向き)、平滑リアクトル、M(直流記号付き)、V₁・V の矢印、E = 200 V、接続点の黒丸がすべて一致し、欠落はない。",
+        "出典: 問題PDF(q03 = 機械)と解答PDF(a01)のURLは科目・日付と整合している。原図フッタ『T1−K 019』は reviewedFromPage=[19] と整合している(印刷頁番号は -16-)。officialReferenceUrls は空で、独立した主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説と choiceExplanations(1)(2) は『Q₂ オフ期間は V₁ = E』『V₁ は 0 か E のいずれかの値しかとらない』を前提にしているが、これは電機子電流が連続している場合に限られる。この前提は uncertainty 欄にしか書かれていない。総合解説に『電機子電流は連続とする』と明記すること。",
+        "uncertainty 欄の『電機子回路の抵抗による電圧降下を無視』は不要な前提である。V は電機子の端子電圧として定義されているので、電機子抵抗の有無は V = V₁(平均) の関係に影響しない。この関係に必要なのは、平滑リアクトルの抵抗を無視することと定常状態であることだけである。記述を整理すること。"
+      ],
+      "figureIssues": [
+        "figureDescription に電源の極性が書かれていない。ダイオードのカソード上向き直列接続と Q₁ コレクタの位置から、上側レールが正極であることが一意に決まる。回生時に上側ダイオードを通って電流が電源の正極へ流れ込むことを図だけで理解させるため、極性を明記すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄の『出典の年度は特定できていない』は、fiscalYear=2025、term=upper、sourceAttribution『令和7年度上期…機械科目 問16(b)』と矛盾している。年度・回は公式解答表原図の表題、機械欄の問16(b)=4、問題PDFのURL日付で確認できる。この文言を削除または修正すること。",
+        "uncertainty 欄の『この解釈で公式正答と一致する』は、極性を公式正答から逆算して正当化しており不適切である。回路構成による根拠に置き換えること。",
+        "uncertainty 欄に未解決の留保が残っているのに needsReview=false になっており、整合していない。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図と照合し、Q₁ オフで Q₂ をオンオフ制御すること、電機子電流の向きが(a)と反対になること、発電動作(回生制動)、Q₂ オン時間 0.4 ms、単位 [V] が一致した。",
+        "選択肢: (1)1 000 (2)250 (3)200 (4)160 (5)40 が原図と一致した。",
+        "公式正答: 公式解答表原図の機械欄 問16(b) は解答 4・配点 5 で、manifest と候補JSON(officialAnswer=4, scoringPoints=5)に一致した。",
+        "計算: T = 2 ms、T_off = 1.6 ms、V₁(平均) = 200 × 1.6/2 = 160 V。定常状態ではリアクトルの平均電圧が 0 なので V = 160 V となり、(4) に一致した。",
+        "電流経路: Q₂ オン時は M 上端子 → リアクトル → 中点 → Q₂ → 下側レール → M 下端子。Q₂ オフ時は中点 → 上側ダイオード → 上側レール(正極) → 電源。図の接続と整合している。",
+        "誤答肢の検算: 200×2/0.4 = 1000、200×2/1.6 = 250、T_on = 0 のとき 200、200×0.4/2 = 40。いずれも候補の説明どおりである。",
+        "公開候補図: q16a と同じ図で、原図と全要素・全ラベルが一致した。",
+        "出典: 問題PDF q03(機械)、解答PDF a01、reviewedFromPage=[19](原図フッタ T1−K 019)は整合している。officialReferenceUrls は空。"
+      ]
+    }
+  ]
+}

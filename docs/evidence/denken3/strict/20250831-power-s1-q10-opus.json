@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2898,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13899,
+      "webSearchRequests": 0,
+      "costUSD": 0.1694158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1492,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9e9c7d442f9e4d015e7710e478020daf595edb84fedc9e9f6faf5dcc13ec2cb9",
+  "inputRequestSha256": "f5c77c980b28d78ed596f00e0fdd4d27e12dc1fade9b22029201bc999daca349",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "a4061976dc70c8a0d1fd177a1fdcecbf69cfc04c817f37b1cc5a332bea4d8fae"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p13.png": "b6877762354a3d8f942fc7fe9de0ae9e93f9d5670ca09a44df12435d8616cfc8"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "95638092e114170a332e710f1d4875873d08af6659d2017919978a70ace83047",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドの内容がメタデータと食い違っている。uncertainty は「出題年度・試験回を特定できないため，出典の年度情報は付していない」と述べている。一方で fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution「令和7年度上期第三種電気主任技術者試験 電力科目 問10」はすでに付されており、記述が矛盾する。添付の公式解答表原図（標題「令和７年度 第三種電気主任技術者上期試験解答」、＜電力＞問10＝2、配点5）と manifest 固定正答で年度・試験回・科目は裏付けられる。uncertainty は「年度・試験回・科目は公式解答表および manifest により確認済み」という趣旨に改め、年度情報を付していないという誤った記述は削除すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図の「地中送電線路に使用される各種電力ケーブルに関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一致する（原図の組版上の空白を除去した整形のみ）。",
+        "選択肢(1)〜(5)：全肢の文言を原図と一文ずつ照合し、語句・順序・否定表現に差異はない。(1)油浸紙絶縁・油通路・給油設備、(2)架橋ポリエチレン・立体網目状分子構造・熱可塑性、(3)給油設備不要・水トリー・金属シースや遮水層、(4)トリプレックス形・熱抵抗が小さい・電流容量・接続作業性、(5)油圧常時監視・金属シースや鋼管の欠陥・漏油検知、のいずれも一致する。",
+        "公式正答：添付公式解答表の＜電力＞問10は解答2・配点5で、manifest（answer \"2\", points 5）、候補の officialAnswer \"2\"、scoringPoints 5 と一致する。＜機械＞問10も解答2だが、本問は地中送電線路の電力ケーブルを扱っており電力科目で整合する。＜理論＞問10（3）、＜法規＞問10（5）とは一致しない。",
+        "総合解説：ポリエチレンは熱可塑性樹脂であり、架橋によって立体網目状構造にすると高温でも溶融・変形しにくくなる。向上するのは耐熱性で、熱可塑性は失われる方向に変わる。この因果は正しい。耐熱性の向上により許容導体温度が高くなり許容電流を大きくとれるという帰結も正しい。",
+        "肢別解説：(1)加圧によるボイド抑制と給油設備の必要性、(3)固体絶縁のため給油不要であることと、水トリー（水分と電界による樹枝状劣化）対策としての金属シース・遮水層、(4)3心共通シース形に比べて放熱がよく熱抵抗が小さく許容電流が大きいこと、および各心独立による接続作業性、(5)漏油を油圧低下として検知し絶縁破壊を未然に防止すること。いずれも技術的に正しく、各肢固有の根拠を述べている。(2)の誤り箇所を「熱可塑性」から「耐熱性」への置換として示している点も的確である。",
+        "図：原図に図はない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当で、解答に図は不要である。",
+        "出典：officialReferenceUrls は空配列であり、独立主張の検証対象はない。添付原図のフッターは「-10-」「T1－D 013」で、reviewedFromPage [13] は識別記号末尾の013と整合する。"
+      ]
+    }
+  ]
+}

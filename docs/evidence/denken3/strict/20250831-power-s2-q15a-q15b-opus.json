@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6287,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20206,
+      "webSearchRequests": 0,
+      "costUSD": 0.2876518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3995,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f8241e3d54729692dde8c1cc8fb6ad199a5d9e1f6a981e87e16c495d6c022a9a",
+  "inputRequestSha256": "aef0e8a72e348c50c7af4068394cb84affa6299288da4c6439088c2d96acb1e4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "57370b69359dd81cdb29fc6a538e5430c6c3849bedf74189d2b04089fc843388",
+      "q15b": "2ec4e461d33f4859917efdade4c308fce404b9672026e3c62718606d48702b70"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p18.png": "cacafad1925ec7467ad801b5acce0a4d23f73cf6945d59ad6c3befc49e4e6319",
+      "data/raw_pdfs/denken3/review/20250831/power/p19.png": "85d46b9ff897a25039ee91dc689fedba571f4750fa73a22d944ff0f9deb44670"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/power/20250831-power-q15-fig1.png": "ed7610d8df2b88fea373eae49b0a882578b28eecabd7d1ea3542dd501cfba9d0"
+    },
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "062d7fd05ece9726a1d56b6206c96ca7bb6d1b6cde164ca3d67bbafabc9b868b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの「出題年度・試験回は問題ページ上に記載がなく，本データでは特定していない。」がメタデータと矛盾する。候補はfiscalYear=2025，term=upper，examDate=2025-08-31，sourceAttribution「令和7年度上期…電力科目 問15(a)」として年度・試験回を特定済みである。添付の公式解答表の見出し「令和7年度 第三種電気主任技術者上期試験解答」と manifest 固定の正答単位によって年度・試験回は裏付けられる。この一文は削除し，特定の根拠（manifest・公式解答表）を記載する形に修正すること。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表の原図：＜電力＞問15(a)の解答は5，配点は5。manifestの{question:15, part:a, answer:5, points:5}およびofficialAnswer=5と一致する。理論の問15(a)は2，機械の問15(a)は4であり，(a)5・(b)5の組は電力科目だけに該当する。",
+        "問題文：原図p.15の柱書き「図の流況曲線を持つ河川の全流量を使用できる調整池式水力発電所において…」と，p.16の(a)本文・ただし書き「当該6時間の最大使用流量での運転以外の時間は，水車・発電機を停止して調整池に河川の全流量を貯水する」を照合し，数値（8 m³/s・6時間）と単位[m³/s]・[m³]が逐語で一致した。",
+        "選択肢：原図の表 (1)22.8/410 400，(2)28.8/518 400，(3)34.8/518 400，(4)28.8/410 400，(5)32.0/518 400 と候補の整形文が全肢一致した。",
+        "検算：停止18 hの貯水量は 8×18×3600=518 400 m³。日流入量は 8×86 400=691 200 m³。最大使用流量は 691 200÷21 600=32.0 m³/s。別解は 8+518 400÷21 600=8+24=32.0 で成立する。正答(5)と一致した。",
+        "誤答肢の数値：22.8×21 600=492 480，28.8×21 600=622 080（不足分69 120），34.8×21 600=751 680（流入超過）。いずれも正しく，各肢固有の誤り理由として妥当である。",
+        "図：公開候補図は原図p.15の図の忠実な切り出しである。縦軸0〜45（5刻み），横軸0〜350（50刻み）と右端約365，曲線は約15日・約42 m³/sから右端で8弱まで。破線14→200日，8→355日，特記ラベル14・8・200・355，キャプション「図 流況曲線」がすべて一致した。(a)の解答に必要な8 m³/sは本文に数値で与えられており，図は補助である。figureDescriptionは図と整合する。",
+        "ページ：原図のフッタ「T1−D 018」「T1−D 019」（印刷頁は-15-，-16-）がreviewedFromPage [18,19]と整合する。",
+        "officialReferenceUrlsは空で，独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの「出題年度・試験回は問題ページ上に記載がなく，本データでは特定していない。」がメタデータと矛盾する。候補はfiscalYear=2025，term=upper，examDate=2025-08-31，sourceAttribution「令和7年度上期…電力科目 問15(b)」として年度・試験回を特定済みである。添付の公式解答表の見出し「令和7年度 第三種電気主任技術者上期試験解答」と manifest 固定の正答単位によって裏付けられるため，この一文は削除または根拠記載に修正すること。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表の原図：＜電力＞問15(b)の解答は5，配点は5。manifestの{question:15, part:b, answer:5, points:5}およびofficialAnswer=5と一致する。",
+        "問題文：原図p.16の(b)「上記流況曲線で200日以上発生する流量において，小問(a)の最大使用流量で1日8時間の運転を可能とするための有効貯水容量[m³]として，最も小さいものを…」と逐語で一致した。柱書きも一致した。",
+        "選択肢：原図の並び (1)420 000，(2)500 000，(3)440 000，(4)460 000，(5)520 000（昇順でない原順）が保持されている。単位は原図同様に本文の[m³]で与えられている。",
+        "図の読取：流況曲線の破線で日数200日に対応する流量は14 m³/s。原図・公開候補図ともに縦軸左の特記「14」と横軸下の「200」で明示されており，公開候補図だけで解答に必要な値を読み取れる。",
+        "検算：必要容量は (32.0−14)×8×3600=18×28 800=518 400 m³。日流入量は 14×86 400=1 209 600 m³，8 h使用水量は 32×28 800=921 600 m³，停止16 hの流入量は 14×57 600=806 400 m³ ≥ 518 400 で，いずれも成立する。518 400以上で最小の選択肢は520 000，すなわち(5)。",
+        "誤答肢の不足量：420 000は98 400不足，500 000は18 400不足，440 000は78 400不足，460 000は58 400不足で，全て正しい。(2)の「(1)〜(4)の中では最も大きい」も正しい。",
+        "図：公開候補図は原図p.15と軸・目盛・曲線・破線2組・特記ラベル・キャプションが一致する。figureDescriptionも整合する。",
+        "ページ：原図のフッタ「T1−D 018」「T1−D 019」がreviewedFromPage [18,19]と整合する。officialReferenceUrlsは空で，独立主張はない。"
+      ]
+    }
+  ]
+}

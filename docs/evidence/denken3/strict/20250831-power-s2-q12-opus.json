@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3092,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13476,
+      "webSearchRequests": 0,
+      "costUSD": 0.1699118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1804,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "72b9b5598cba30df5000869d742caa0acb718a4f6f86d1ca3856270fea29c97f",
+  "inputRequestSha256": "b3445ec8706dd558d60968df771539494e09463c8108a8835cc94c7543d2087f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "68955293ec593ef8cb51f7a258e53de0530513db701f2a985c129d57afa9dbc9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p15.png": "fcd58cbc319bebddfa7e49c5100ff69184d787698acabe2649988054749a95a4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（印刷頁 -12-、フッター T1−D 015）と照合。支持点間200 m、たるみ3.0 m、単位長さあたりの重量が同じ、同じ水平方向の引張強さ、支持点間240 m、実長 L[m]、二つの支持点の高さは同一、の各条件が数値・単位・語句まで一致した。候補側で変えたのは全角/半角スペースなど表記の整形だけで、意味の変更はない。",
+        "選択肢: (1)240.04 (2)240.05 (3)240.14 (4)240.21 (5)240.25。原図の全5肢と数値・順序が一致した。",
+        "公式正答: 令和7年度第三種電気主任技術者上期試験解答表の＜電力＞問12は解答4・配点5。manifest の固定単位 {question:12, part:null, answer:\"4\", points:5}、候補の officialAnswer=\"4\"、scoringPoints=5 のいずれとも一致した。",
+        "総合解説の検算: D=wS²/(8T) で w と T が一定なので D∝S²。D₂=3.0×(240/200)²=3.0×1.44=4.32 m。4.32²=18.6624、8×18.6624=149.2992、3×240=720、149.2992/720=0.20736。したがって L=240.2074 m となり、最も近いのは(4)240.21。途中式・因果関係・単位に誤りはない。",
+        "肢(1)の理由: 240.2074−240.04=0.167 m で「約0.17 m短い」は正しい。記述は事実として正しい。",
+        "肢(2)の理由: D=3.0×(200/240)²=2.0833 m。8×2.0833²/720=0.0482 となり、L≒240.048 m で240.05に一致する。誤りの型（たるみを径間の2乗に反比例させた）とその訂正は正しい。",
+        "肢(3)の理由: D=3.0×1.2=3.6 m。8×12.96/720=0.144 となり、L=240.144 m で240.14に一致する。誤りの型（たるみを径間の1乗に比例させた）とその訂正は正しい。",
+        "肢(4)の理由: 総合解説と同じ計算で L≒240.207 m となる。正答理由は正しい。",
+        "肢(5)の理由: 149.2992/600=0.2488 となり、L≒240.249 m で240.25に一致する。誤りの型（実長の式の分母に旧径間200 mを使った）とその訂正は正しい。",
+        "図: 公式原図の問12は文章と選択肢だけで、図はない。figureDescription が「図なし」であること、figureUrls=[]、choiceFigureUrls={} であることは原図と整合する。",
+        "出典: officialReferenceUrls は空で、検証を要する独立主張はない。subject=power、questionNumber=12、fiscalYear=2025、term=upper、sourceAttribution「令和7年度上期…電力科目 問12」は、解答表の表題「令和7年度 第三種電気主任技術者上期試験解答」および電力列と整合する。",
+        "reviewedFromPage=[15]: 添付原図の印刷頁は -12- である。表紙・注意事項の頁を含む PDF の通し頁番号として15は矛盾しない。"
+      ]
+    }
+  ]
+}

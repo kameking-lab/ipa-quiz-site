@@ -1,0 +1,158 @@
+{
+  "questionNumber": 17,
+  "sharedContext": "問17及び問18は選択問題であり、問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n\n（選択問題）\n問17 管径 36 mm の完全拡散性無限長直線光源を床面上 3 m の高さに床面と平行に配置した。光源からは単位長当たり 3 000 lm/m の光束を一様に発散しているものとして、次の(a)及び(b)に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "管径 36 mm の完全拡散性無限長直線光源を床面上 3 m の高さに床面と平行に配置した。光源からは単位長当たり 3 000 lm/m の光束を一様に発散しているものとして、次の(a)及び(b)に答えよ。\n\n(a) 直線光源の光束発散度 M [lm/m²] の値として、最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "83.3×10³",
+        "2": "4.2×10³",
+        "3": "8.4×10³",
+        "4": "26.5×10³",
+        "5": "74.7×10³"
+      },
+      "officialAnswer": "4",
+      "explanation": "光束発散度 M は、光源の発光面の単位面積から発散する光束である。\n\n直線光源は直径 D = 36 mm = 0.036 m の円筒とみなせる。長さ 1 m 当たりの表面積（側面積）は\n  S = πD × 1 = π × 0.036 ≒ 0.1131 m²\n\n長さ 1 m 当たりの光束は F = 3 000 lm なので\n  M = F / S = 3 000 / (π × 0.036) ≒ 26 526 lm/m² ≒ 26.5×10³ lm/m²\n\nよって正答は(4)である。\n\n補足：完全拡散面では輝度 L と光束発散度 M の間に M = πL の関係がある。この光源の輝度は L = M/π ≒ 8.44×10³ cd/m² となり、(b)ではこの関係を利用できる。",
+      "choiceExplanations": {
+        "1": "誤り。83.3×10³ は 3 000 / 0.036 の値である。長さ 1 m 当たりの表面積に、円周 πD ではなく直径 D を用いた値に相当する。発光面は円筒の側面なので面積は πD × 1 m ≒ 0.1131 m² であり、正しい値は約 26.5×10³ lm/m² である。",
+        "2": "誤り。4.2×10³ は M/(2π) ≒ 4.22×10³ に相当し、輝度 L = M/π ≒ 8.44×10³ のさらに半分の値である。光束発散度 M ≒ 26.5×10³ lm/m² とは一致しない。",
+        "3": "誤り。8.4×10³ は M/π ≒ 26.5×10³/π ≒ 8.44×10³ に相当し、完全拡散面の輝度 L [cd/m²] の値である。問われている光束発散度 M [lm/m²] ではない。",
+        "4": "正しい。M = 3 000 / (π × 0.036) ≒ 26.5×10³ lm/m² であり、計算結果と一致する。",
+        "5": "誤り。74.7×10³ は正しい値 26.5×10³ lm/m² の約 2.8 倍である。3 000 lm/m をこの値で割ると、長さ 1 m 当たりの発光面積は 3 000 / (74.7×10³) ≒ 0.0402 m² となる。これは円筒側面積 πD × 1 m ≒ 0.1131 m² とも、直径を用いた D × 1 m = 0.036 m² とも一致しない。定義 M = F/S からは得られない値であり、どのような計算の誤りを想定した値かは特定できない。"
+      },
+      "figureDescription": "図なし。問題は文字情報のみで構成されており、図を用いずに解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "肢(5) 74.7×10³ がどのような計算の誤りを想定した値かは特定できない。その他の誤答肢についても、想定された誤りは公式には示されていない。選択肢解説中の数値関係は、計算上の対応を示したものである。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    },
+    {
+      "part": "b",
+      "question": "管径 36 mm の完全拡散性無限長直線光源を床面上 3 m の高さに床面と平行に配置した。光源からは単位長当たり 3 000 lm/m の光束を一様に発散しているものとして、次の(a)及び(b)に答えよ。\n\n(b) 光源直下の床面の水平面照度 Eₕ [lx] の値として、最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "333",
+        "2": "318",
+        "3": "239",
+        "4": "159",
+        "5": "80"
+      },
+      "officialAnswer": "4",
+      "explanation": "【解法1：輝度と光度から積分する】\n完全拡散性円筒光源の輝度は L = M/π である（(a)より M = 3 000/(πD)）。\n軸に垂直な方向から見た単位長当たりの光度は、投影面積 D × 1 m に輝度を掛けて\n  I′ = L·D = {3 000/(π·πD)}·D = 3 000/π² [cd/m]\n\n光源の高さを h = 3 m とする。光源上で直下点から x の位置にある微小長さ dx を考え、そこから直下点 P を見込む方向が鉛直となす角を α とすると\n  距離 r = h/cos α、x = h tan α、dx = h dα / cos²α\n円筒を α 方向から見た投影面積は D·dx·cos α なので、その方向の光度は dI = I′ cos α dx となる。\nP 点（水平面）への入射角も α であるから\n  dEₕ = dI·cos α / r² = I′ cos²α dα / h\nα = −π/2 〜 π/2 で積分すると ∫cos²α dα = π/2 なので\n  Eₕ = πI′ / (2h) = π·(3 000/π²) / (2 × 3) = 3 000 / (2π × 3) = 500/π ≒ 159.2 lx\n\n【解法2：光束の広がりから求める（検算）】\n無限長直線光源は光束を軸まわりに一様に発散する。そのため光源から距離 h の位置では、半径 h の同軸円筒面（長さ 1 m 当たりの面積 2πh）に 3 000 lm が一様に到達する。直下点ではこの円筒面が床面と接し、両者の法線が一致するので\n  Eₕ = 3 000 / (2π × 3) ≒ 159 lx\n\n両解法の結果は一致し、正答は(4)である。",
+      "choiceExplanations": {
+        "1": "誤り。333 は 3 000 / 3² = 333.3 に相当し、点光源の逆二乗則の形で距離の 2 乗で割った値と一致する。無限長直線光源の直下照度は距離に反比例し、正しくは 3 000/(2π×3) ≒ 159 lx である。",
+        "2": "誤り。318 は 3 000/(π×3) ≒ 318.3 に相当し、正しい値 159 lx のちょうど 2 倍である。解法1の Eₕ = πI′/(2h) で分母の 2 を落として πI′/h = 3 000/(3π) とした場合、または解法2で光束が到達する面積を全周の 2πh ではなく半周の πh とした場合に、この値になる。光束は軸まわりの全周に一様に発散するので、面積は 2πh とする必要がある。",
+        "3": "誤り。239 は正しい値 159 lx の約 1.5 倍である。数値としては 3 000/(4π) ≒ 238.7 と一致するが、この式には光源の高さ h が含まれず、[lm/m] を無次元数で割っただけなので照度 [lx] の次元をもたない。また Eₕ = 3 000/(2πh) で 239 lx となるのは h = 2 m の場合であり、題意の h = 3 m からは得られない。どのような誤りを想定した値かは特定できない。",
+        "4": "正しい。Eₕ = πI′/(2h) = 3 000/(2π × 3) = 500/π ≒ 159 lx であり、計算結果と一致する。",
+        "5": "誤り。80 は 3 000/(4π×3) = 250/π ≒ 79.6 に相当し、正しい値 159 lx の半分である。解法2で光束が到達する面積を 2πh ではなく 4πh とした場合などにこの値になる。無限長直線光源の光束は半径 h の同軸円筒面（長さ 1 m 当たり 2πh）に広がるので、4πh で割るのは誤りである。"
+      },
+      "figureDescription": "図なし。問題は文字情報のみで構成されており、図を用いずに解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "肢(3) 239 がどのような誤りを想定した値かは特定できない。その他の誤答肢についても、想定された誤りは公式には示されていない。選択肢解説中の数値関係や誤りの例は、計算上の対応を示したものである。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        22,
+        23
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5168,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.1946558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2358,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1efceb0ab90fbbb3ef9cae4c27b7bf187d73ff50c7009aec4280c7e369ce513a",
+  "inputRequestSha256": "d6e50c98a66cf65f781418fa90f5e041587f150dd92e12d4440dd1ae04dd1c30",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p22.png": "6da8bb78d3399fd121059b5d7f0bd826370fde4f144e43dc99fa534aa712f0cb",
+    "data/raw_pdfs/denken3/review/20260322/machinery/p23.png": "4d67ed7ad7f7c186234b803e2a40310cede1f0e18a671e9fbcd5194364a805f3"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4776,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16609,
+          "webSearchRequests": 0,
+          "costUSD": 0.22865579999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2051,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "bdb8ab87f1f129bdc6f00256e8b58f13468ce240fff3e712a37357169cebc231",
+      "inputRequestSha256": "b4c0a6b1bef223e86906545c8409b005d28abb8b70fefca88bd88a0001892cc7",
+      "previousDraftSha256": "4c3000ec599ed9401205e41b2eb394c36c82289e42582e1f861ba68fcc34b939",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q17-vision-draft-v1.json",
+      "answeredReviewSha256": "b938705b74cb8d78b5029ff0441cb3939d5da7ff5744c4bafee005c477830aff",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q17-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "a0103cff9f1753810b48c5cfe19f13abb2e162cfffaf17836bdd71f906d65eea",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6364,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16476,
+          "webSearchRequests": 0,
+          "costUSD": 0.2593518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3185,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "bafd9507787a90ce65785300b742d3488745ce0d83c57a9897fcba76097ea2ea",
+      "inputRequestSha256": "02d68505063213657599f54091aafef985d120e54909845b2f460f8ebe752cf1",
+      "previousDraftSha256": "e637c8c180dbe0bcb22f40077af4a51f4782454590984aed10fed2e51fbc2eeb",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q17-vision-draft-v2.json",
+      "answeredReviewSha256": "f81b2214e20428ad486f904b359fa956271783046425f0386af2bb2fb17c80cc",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q17-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s2-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "f840ed3d2c79594ee46746cfd8aad5fedc798559f45de20afb6c8c3de1711487",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

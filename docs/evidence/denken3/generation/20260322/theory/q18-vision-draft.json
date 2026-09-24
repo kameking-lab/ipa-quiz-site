@@ -1,0 +1,164 @@
+{
+  "questionNumber": 18,
+  "sharedContext": "問17及び問18は選択問題であり，問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n\n（選択問題）\n問18　NAND IC を用いたパルス回路について，次の(a)及び(b)の問に答えよ。ただし，高電位を「1」，低電位を「0」と表すことにする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問18　NAND IC を用いたパルス回路について，次の(a)及び(b)の問に答えよ。ただし，高電位を「1」，低電位を「0」と表すことにする。\n\n(a) p チャネル及び n チャネル MOS FET を用いて構成された図1の回路と真理値表が同一となるものを，図2の NAND 回路の接続(イ)，(ロ)，(ハ)から選び，全て列挙したものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(イ)",
+        "2": "(ロ)",
+        "3": "(ハ)",
+        "4": "(イ)，(ロ)",
+        "5": "(イ)，(ハ)"
+      },
+      "officialAnswer": "5",
+      "explanation": "図1の回路は，p チャネル MOS FET と n チャネル MOS FET を直列にしたものである。p チャネルは電源側にあり，n チャネルは接地側にある。両ゲートは共通の入力に接続され，両ドレインの接続点が出力となる。これは CMOS インバータである。\n・入力「0」：p チャネルがオン，n チャネルがオフ → 出力は電源側につながり「1」\n・入力「1」：p チャネルがオフ，n チャネルがオン → 出力は接地側につながり「0」\nしたがって図1の真理値表は NOT（入力 0→出力 1，入力 1→出力 0）である。\n\nNAND の出力は Y = ¬(A·B) である。図2の各接続を調べる。\n・(イ) 二つの入力を短絡して入力 A を加える：Y = ¬(A·A) = ¬A → NOT と同一。\n・(ロ) 一方の入力を「0」に固定：Y = ¬(A·0) = ¬0 = 1 → 入力に関係なく常に「1」で，NOT とは異なる。\n・(ハ) 一方の入力を「1」に固定：Y = ¬(A·1) = ¬A → NOT と同一。\n\nよって図1と真理値表が同一となるのは (イ) と (ハ) であり，正答は (5)。",
+      "choiceExplanations": {
+        "1": "誤り。(イ) は Y = ¬(A·A) = ¬A で NOT と同一である。しかし (ハ) も Y = ¬(A·1) = ¬A で NOT と同一なので，「全て列挙」になっていない。",
+        "2": "誤り。(ロ) は一方の入力が「0」なので Y = ¬(A·0) = 1 となる。出力は入力にかかわらず常に「1」である。入力「1」のときに出力「0」とならないので NOT と一致しない。",
+        "3": "誤り。(ハ) は Y = ¬(A·1) = ¬A で NOT と同一である。しかし (イ) も Y = ¬(A·A) = ¬A で NOT と同一なので，「全て列挙」になっていない。",
+        "4": "誤り。(イ) は NOT と同一である。しかし (ロ) は出力が常に「1」で NOT と一致しないため，含めてはならない。また NOT と同一の (ハ) が欠けている。",
+        "5": "正しい。(イ) は ¬(A·A) = ¬A，(ハ) は ¬(A·1) = ¬A である。いずれも図1の CMOS インバータ（NOT）と同じ真理値表になる。(ロ) は常に「1」なので含まれない。"
+      },
+      "figureDescription": "図1と図2が左右に並んでいる。\n図1：上部に「電源」，下部に接地記号がある。縦に 2 個の MOS FET が直列に接続されている。上側の MOS FET は矢印が外向きで，ソースが電源に接続される。下側の MOS FET は矢印が内向きで，ソースが接地に接続される。2 個のゲートは共通に結ばれ，左側の「入力」へ引き出されている。2 個のドレインの接続点は，右側の「出力」へ引き出されている。図の下に「図1」とある。\n図2：2 入力 NAND ゲートの 3 種類の接続が示されている。\n(イ) 二つの入力端子を短絡し，そこへ「入力」を接続している。出力側は「出力」である。\n(ロ) 上側の入力端子に「入力」，下側の入力端子に「0」を接続している。出力側は「出力」である。\n(ハ) 上側の入力端子に「入力」，下側の入力端子に「1」を接続している。出力側は「出力」である。\n図の下に「図2」とある。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        24,
+        25
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問18　NAND IC を用いたパルス回路について，次の(a)及び(b)の問に答えよ。ただし，高電位を「1」，低電位を「0」と表すことにする。\n\n(b) 図3の三つの回路はいずれもマルチバイブレータの一種であり，これらの回路図において NAND IC の電源及び接地端子は省略している。同図(ニ)，(ホ)，(ヘ)の入力の数がそれぞれ 0，1，2 であることに注意して，これら三つの回路と次の二つの性質を正しく対応づけたものの組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。\n\n性質Ⅰ：出力端子からパルスが連続的に発生し，ディジタル回路の中で発振器として用いることができる。\n性質Ⅱ：「0」や「1」を記憶する機能をもち，フリップフロップの構成にも用いられる。",
+      "choices": {
+        "1": "性質Ⅰ：(ニ)　性質Ⅱ：(ホ)",
+        "2": "性質Ⅰ：(ニ)　性質Ⅱ：(ヘ)",
+        "3": "性質Ⅰ：(ホ)　性質Ⅱ：(ニ)",
+        "4": "性質Ⅰ：(ホ)　性質Ⅱ：(ヘ)",
+        "5": "性質Ⅰ：(ヘ)　性質Ⅱ：(ホ)"
+      },
+      "officialAnswer": "2",
+      "explanation": "入力の数 0，1，2 は，それぞれ次のマルチバイブレータの特徴に対応する。\n・入力 0：無安定（非安定）マルチバイブレータ\n・入力 1：単安定マルチバイブレータ\n・入力 2：双安定マルチバイブレータ\nなお，二つの入力を短絡した NAND は Y = ¬(A·A) = ¬A となるので，NOT として働く。\n\n(ニ) 入力 0：\n2 個の NAND はいずれも入力を短絡しているので，NOT として働く。左を NOT1，右を NOT2 とする。NOT1 の出力はコンデンサを介して NOT2 の入力へつながる。NOT2 の出力は上部配線を通って NOT1 の入力へ直接戻る。さらに，抵抗が NOT2 の出力と入力の間に接続されている。\nNOT2 の出力が「1」のとき，抵抗を通してコンデンサが充電され，NOT2 の入力は徐々に上昇する。入力がしきい値を超えると，NOT2 の出力が「0」に反転する。すると NOT1 の出力が「1」に変わり，その変化がコンデンサを通じて NOT2 の入力を押し上げるので，反転が一気に確定する。次は抵抗を通じて NOT2 の入力が徐々に低下し，しきい値を下回ると再び反転する。\nこの回路には安定状態がない。そのため外部入力なしに反転を繰り返し，出力端子からパルスが連続的に発生する。よって無安定マルチバイブレータであり，性質Ⅰに当たる。\n\n(ホ) 入力 1：\n右の NAND は入力を短絡しているので，NOT（NOT2）として働く。NOT2 の入力は抵抗で接地側に引かれている。そのため通常は，NOT2 の出力が「1」となる状態で安定している。\nこの安定状態では左の NAND の一方の入力が「1」なので，左の NAND の出力は ¬(外部入力) になる。外部入力を「1」に保って待機すると，左の NAND の出力は「0」である。\nここで外部入力を「1」から「0」に下げる（立下りのトリガ）と，左の NAND の出力が「0」から「1」に変わる。この変化がコンデンサを通じて NOT2 の入力を「1」にし，NOT2 の出力は「0」になる。この「0」が左の NAND に戻るので，外部入力が「1」に戻っても左の NAND の出力は「1」に保持される。\nしかしコンデンサが抵抗を通じて充電されるにつれて，NOT2 の入力は低下していく。時定数（抵抗×静電容量）で決まる時間の後，入力がしきい値を下回り，元の安定状態へ戻る。\nつまりトリガ 1 回につきパルスを 1 個出す単安定マルチバイブレータであり，連続発振も状態の保持もしない。\n\n(ヘ) 入力 2：\n2 個の NAND が，互いの出力をもう一方の入力に接続したたすき掛け（交差結合）構成で，外部入力を 2 個もつ。これは NAND 形 RS ラッチ（双安定マルチバイブレータ）である。二つの安定状態のどちらかを入力が変わるまで保持するので，「0」や「1」を記憶できる。フリップフロップの基本構成となるので，性質Ⅱに当たる。\n\nよって性質Ⅰは (ニ)，性質Ⅱは (ヘ) で，正答は (2)。",
+      "choiceExplanations": {
+        "1": "誤り。性質Ⅰ＝(ニ) は正しい。しかし (ホ) は単安定マルチバイブレータで，トリガ後，RC 時定数で決まる時間が経つと元の安定状態に戻る。そのため「0」や「1」を記憶する機能（性質Ⅱ）はもたない。",
+        "2": "正しい。(ニ) は入力 0 の無安定マルチバイブレータで，外部入力なしに連続してパルスを発生する（性質Ⅰ）。(ヘ) は NAND 2 個を交差結合した双安定マルチバイブレータ（RS ラッチ）で，状態を保持する（性質Ⅱ）。",
+        "3": "誤り。(ホ) は入力 1 の単安定マルチバイブレータで，トリガ 1 回につき 1 個のパルスを出すだけである。連続発振しないので性質Ⅰに当たらない。また (ニ) は安定状態をもたずに反転を繰り返すので，状態を記憶する性質Ⅱに当たらない。",
+        "4": "誤り。性質Ⅱ＝(ヘ) は正しい。しかし (ホ) は単安定マルチバイブレータで，連続的にパルスを発生しないので性質Ⅰに当たらない。性質Ⅰに当たるのは (ニ) である。",
+        "5": "誤り。(ヘ) は双安定マルチバイブレータで，入力が変わらない限り状態を保持し，自ら発振しない。そのため性質Ⅰに当たらない。また (ホ) は一定時間後に元の状態へ戻るので，性質Ⅱに当たらない。"
+      },
+      "figureDescription": "図3：NAND ゲートを 2 個ずつ用いた 3 種類の回路 (ニ)，(ホ)，(ヘ) が上から順に示されている。電源・接地端子は省略されている。図の下に「図3」とある。\n(ニ) 外部入力はない。\n・左の NAND は二つの入力を短絡しており，その入力は回路上部を通る配線に接続される。\n・左の NAND の出力はコンデンサを介して接続点に至る。接続点は右の NAND（二つの入力を短絡）の入力に接続される。\n・接続点と上部配線の間に抵抗が接続される。\n・右の NAND の出力は上部配線に接続され，左の NAND の入力へ戻る。\n(ホ) 外部入力は 1 個（「入力」）である。\n・左の NAND の一方の入力が「入力」，もう一方の入力は上部配線に接続される。\n・左の NAND の出力はコンデンサを介して接続点に至る。\n・接続点は抵抗を介して接地されるとともに，右の NAND（二つの入力を短絡）の入力に接続される。\n・右の NAND の出力は上部配線を通って，左の NAND の入力へ戻る。\n(ヘ) 外部入力は 2 個（「入力1」「入力2」）である。\n・左の NAND の一方の入力が「入力1」，もう一方の入力は上部配線に接続される。\n・左の NAND の出力は，右の NAND の一方の入力に接続される。右の NAND のもう一方の入力が「入力2」である。\n・右の NAND の出力は上部配線を通って，左の NAND の入力へ戻る。\n図中に抵抗値・静電容量値の記載はない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        24,
+        25
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8423,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.2597558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3770,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "950f274ce8ed762ff71bd55aed583a4af314fa7fddb9c8d35cdaa2cf0f7e0503",
+  "inputRequestSha256": "6dd7e9f3feef0f9e59f567a4acabae7d0003db6c3f61deed4c6afa2d3a088b2d",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p24.png": "f0248faa43969ff60b60a0df44fe9cea2b7dbc39aacc3a540954b9557909a7b2",
+    "data/raw_pdfs/denken3/review/20260322/theory/p25.png": "619a0b682ebab7ae038c1f6d6228d2301d059041040d931283bbee800837c5cb"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6623,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20503,
+          "webSearchRequests": 0,
+          "costUSD": 0.2967478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2094,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "0acdeaee104cedba35b22685e561b18574badce34caa5ddf48c229a7d2b9874b",
+      "inputRequestSha256": "665031df9dd65de777250b4eb066040462642485d8ce32b8fcbb6ac947dc261d",
+      "previousDraftSha256": "85c67fc188848b70875873a70360e9ab7ee62c7d79cee4adb15dacc971d32ac3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q18-vision-draft-v1.json",
+      "answeredReviewSha256": "8a764ce778386343522440b1fbd03ba04bacd5f977add59229f1dcc4a0f7e556",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q18-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "d8c8b7a49303e084418839eac3d0b346bf4a62fa97ec26a6a494aec73ddf8d21",
+      "figureSha256": {
+        "20260322-theory-q18-fig1": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+        "20260322-theory-q18-fig2": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6532,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20576,
+          "webSearchRequests": 0,
+          "costUSD": 0.2955118,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1723,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "0c3ef27d5875fb0d7cd62b52ca6915436aebd8b17213e86ba4c1f73e03ef3a77",
+      "inputRequestSha256": "f1f3755892862018488bc73cad82134c38ac21e613e9e41da6979bb82f4699a6",
+      "previousDraftSha256": "089a3d960ab5d0a243f069991ac6bafd0e642c08c4c77536299be064cc350ac4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q18-vision-draft-v2.json",
+      "answeredReviewSha256": "e09841e46ad584b4c40c49c9a731ac9669c58a8b2bb45c04ce612dfa6c076afd",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q18-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s2-q18a-q18b-opus.json",
+      "answeredStrictReceiptSha256": "86a88f889d6408108e854cda2f26b731c2073e26fa69d0244085db85efb131f6",
+      "figureSha256": {
+        "20260322-theory-q18-fig1": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+        "20260322-theory-q18-fig2": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3337,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13961,
+      "webSearchRequests": 0,
+      "costUSD": 0.1786918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1600,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b197cf82d6107b79fad32cb61054b99a04aa140c434464182e48e23e33325d73",
+  "inputRequestSha256": "f901eba1b2ede8db6fcc646733a85fae489c52af1cff16de1d0bcfb242029bff",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "195bd892f3f46e5afd2d5ae25778e74d54d916370c71c27971108aef360ab247"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p17.png": "cef08a7bfbffbd610c7403bf88377337cab1328c42bb2466340f2db8d1280a86"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドに「本ページには試験の実施年度・回の表記がなく，出典年度を特定できていない。」とあり，候補メタデータと矛盾している。問題ページ単体に年度表記がないことは事実である。しかし年度は次の2点で確定している。(a) manifest（試験センター公式過去問一覧，2025年度下期，試験日2026-03-22，電力，問題PDF 20260322_ch_third_q02.pdf）。(b) 添付した公式解答表原図の表題「令和7年度 第三種電気主任技術者下期試験解答」。候補の fiscalYear=2025，term=lower，examDate=2026-03-22，sourceAttribution「令和7年度下期…電力科目 問14」はこの確定情報と一致している。uncertainty は古い記述が残ったもので，公開物に残すと出典の信頼性を誤って疑わせる。空文字にするか，「年度は manifest と公式解答表で確定済み」の旨に更新すること。needsReview=false はその修正後であれば妥当。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図 PDF第17頁（ページ下部に「- 14 -」「T2－D 017」）の問14本文「磁性材料に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補 question が一字一句一致する。",
+        "選択肢(1)～(5): 原図の各肢と候補 choices が全文一致する。句読点（，。）、用語（強磁性体，交番磁界，ヒステリシス損，渦電流損，鉄損，軌跡曲線，積層）に脱落・改変はない。",
+        "公式正答: 公式解答表原図〈電力〉の問14は解答3・配点5で、manifest固定単位 {question:14, part:null, answer:\"3\", points:5} と一致する。候補の officialAnswer=\"3\"，scoringPoints=5 も一致する。",
+        "正答の妥当性: 磁束の周りに誘導起電力が生じて渦電流が流れ、ジュール熱となるのは渦電流損の機構である。ヒステリシス損の原因は磁化反転に伴う B-H ループ上の不可逆変化なので、(3)が誤りという判定は物理的に正しい。",
+        "総合解説の検算: 1周期・単位体積あたりのヒステリシス損失エネルギー＝ループ面積 ∮H dB [J/m³] で、毎秒 f 回繰り返すため Pₕ = f∮H dB [W/m³] となり、単位・因果とも正しい。渦電流損 Pₑ ∝ (t·f·Bₘ)² は薄板近似 Pₑ = π²σt²f²Bₘ²/6 の比例関係と整合する（σ の依存は省略されているが、比例関係の記述として誤りではない）。",
+        "肢(1)の解説: Fe・Ni・Co はいずれもキュリー温度が常温より十分高く（Fe約770℃，Ni約358℃，Co約1115℃）、常温で強磁性体である。合金についても「主成分とする合金（例：パーマロイ）も強磁性材料として用いられる」と限定的に述べており、過度な一般化はない。",
+        "肢(2)の解説: 鉄損＝ヒステリシス損＋渦電流損で、損失は熱となる。原文と整合し正しい。",
+        "肢(4)の解説: 原文の「交番磁界の大きさと磁束密度の大きさとの関係を示す軌跡曲線」を H-B ヒステリシスループと正しく同定している。面積と周波数に比例する根拠も示されている。",
+        "肢(5)の解説: 渦電流は磁束に垂直な面内を周回する。絶縁した薄板を磁束方向と平行に積層すると経路が各板内に分断され、損失が t² に比例して低減する。因果は正しく、成層鉄心の例示も適切。",
+        "図: 原図に図・表・数式図はなく、文章のみの問題である。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ: sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest（q02 / a01）と一致する。reviewedFromPage=[17] は manifest の「問14の原図はPDF第17頁」と原図フッター「T2－D 017」に整合する。subject=power は manifest の科目=電力と一致する。",
+        "公式参考URL: officialReferenceUrls は空配列で、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4625,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18016,
+      "webSearchRequests": 0,
+      "costUSD": 0.23689179999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2796,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5f89ce25ae8b43330b2044d890952c4339f32cc121a4d030f2aa72ac6a0e80ca",
+  "inputRequestSha256": "35ca2541604658d8a3e9d745328bb8145b150f22443befabb68a0722b852caa6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "e85a8c57cbc7172e48bc3e1c2d5432c91b51c72d9183bf5e14618e400adfa7c4"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p10.png": "d74965ca8215ab5b5427a785e2d13ca4a33071458e668559675d3db5dbe731bf",
+      "data/raw_pdfs/denken3/review/20260322/law/p11.png": "062fa9bcc86f036d5c10f86e8d3aa22108e5f4b8a6ff7f8fd2d2581b25308a2b",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "ea8b27fe87aaa6e7937b3e7d6ec0fb02c0c6ec1d816822feefcbee473a3963ca",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は根拠を「解釈第111条第2項」と断定しているが、問題の作成基準日（法規冊子 注3：令和7年4月1日現在効力のある法令・解釈）に触れていない。条番号・規定値は基準日時点のものであることを明記すべき（例：「令和7年4月1日時点の電気設備技術基準の解釈 第111条第2項」）。",
+        "「第111条第2項では…次のように定めている」として4項目のみを列挙しており、同項の全規定であるかのように読める。問題文自体が「記述の一部」である以上、解説にも「（抜粋）」等を付して網羅列挙でないことを示すべき。",
+        "uncertainty欄の「問題文には出題年度が記載されていない」は誤導的である。法規冊子の注意書き頁（注3）に効力基準日（令和7年4月1日）が明記されており、出典メタデータ（2025年度下期・2026-03-22）も確定している。当該記述は削除し、基準日を記載すべき。",
+        "uncertainty欄の「学習時は最新版の条文で確認することが望ましい」は、本問の正答が令和7年4月1日時点の解釈に基づくことと緊張関係にある。基準日以降の改正で規定が変わった場合、最新版との照合は本問の正答判断を誤らせうる。「出題基準日（令和7年4月1日）時点の条文に基づく。以降の改正は別途確認」と改めるべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrlsが空配列のまま、総合解説・各肢解説が「解釈第111条第2項」への準拠という独立主張をしている。添付資料は問題冊子原図（PDF第4・10・11頁）と公式解答表のみで、解釈本文の原頁は添付されていない。条番号・項番号・各号の文言（展開した場所／ケーブル限定／接触防護措置／支持点間2m・垂直6m）を添付公式資料で検証できないため、外部確認事項として記録する。監査者の知見では高圧屋側電線路は第111条第2項で内容も整合するが、推測でPASSにはしない。基準日時点の解釈原文（経済産業省公表版）の該当頁をofficialReferenceUrlsまたは添付参考資料として追加し、照合すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：PDF第10頁（頁下 -7-／T2-H 010）の問6本文と照合した。導入文、a)（ア）場所、b)電線は（イ）、c)（イ）には接触防護措置、d)造営材の側面又は下面・支持点間（ウ）m（垂直（エ）m）以下・被覆を損傷しない、および設問文が一致する。句読点（，→、）と括弧の全角化は整形の範囲内。",
+        "選択肢：PDF第11頁（-8-／T2-H 011）の組合せ表と全5肢×4欄を照合し、すべて一致した。(1)点検できる隠蔽/ケーブル/1.5/5、(2)展開した/ケーブル/2/6、(3)展開した/絶縁電線/2.5/6、(4)点検できる隠蔽/絶縁電線/1.5/4、(5)展開した/ケーブル/2/10。単位mは本文d)中にあり、候補の記述とも一致する。",
+        "公式正答：公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜法規＞問6は解答2・配点6。manifest固定単位（answer=2, points=6）、候補のofficialAnswer=\"2\"、scoringPoints=6と一致する。",
+        "各肢解説の正誤判定：正答組合せ（展開した/ケーブル/2/6）との差分を肢ごとに検算した。(1)（イ）のみ正で（ア）（ウ）（エ）誤、(3)（ア）（エ）正で（イ）（ウ）誤、(4)四欄すべて誤、(5)（ア）（イ）（ウ）正で（エ）誤。いずれも候補の記述と一致し、誤答理由は各肢固有の差分を正しく指摘している。",
+        "図：本問に解答上必要な図はない。PDF第11頁は選択肢の組合せ表のみで、figureDescription「図なし／組合せ表はchoicesに記載」、figureUrls=[]、choiceFigureUrls={}は妥当。",
+        "メタデータ：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=law、sourceQuestionPdfUrl／sourceAnswerPdfUrl、reviewedFromPage=[10,11]はいずれもmanifestと一致する。原図の頁下コード T2-H 010／011 もPDF第10・11頁と整合し、注意書き頁は T2-H 004（PDF第4頁）である。sourceAttribution「令和7年度下期…法規科目 問6」も一致する。"
+      ]
+    }
+  ]
+}

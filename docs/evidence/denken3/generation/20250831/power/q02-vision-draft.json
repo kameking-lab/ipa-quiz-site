@@ -1,0 +1,94 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "汽力発電設備において，タービン出力が 175 MW，蒸気タービンの効率が 92 %で，タービン入口における蒸気のエンタルピーが 32 500 kJ/kg，復水器入口における蒸気のエンタルピーが 30 800 kJ/kg であるとき，このタービンの使用蒸気量の値[t/h]として，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "86",
+        "2": "112",
+        "3": "248",
+        "4": "341",
+        "5": "403"
+      },
+      "officialAnswer": "5",
+      "explanation": "蒸気タービンの効率 η は，タービンに入った蒸気が失った熱量に対するタービン出力の割合である。\n\nη = P ÷ {G × (h₁ − h₂)}\n\nP：タービン出力 [kW]（= [kJ/s]），G：使用蒸気量 [kg/s]，h₁：タービン入口蒸気のエンタルピー [kJ/kg]，h₂：復水器入口蒸気のエンタルピー [kJ/kg]\n\n① 1 kg あたりの熱落差\nh₁ − h₂ = 32 500 − 30 800 = 1 700 kJ/kg\n\n② 使用蒸気量（毎秒）\nP = 175 MW = 175 000 kW = 175 000 kJ/s\nG = P ÷ {η × (h₁ − h₂)} = 175 000 ÷ (0.92 × 1 700) = 175 000 ÷ 1 564 ≒ 111.9 kg/s\n\n③ 単位を [t/h] に換算\nG = 111.9 kg/s × 3 600 s/h ≒ 402 800 kg/h ≒ 402.8 t/h\n\nしたがって最も近いのは 403 t/h で，正答は (5) である。\n\n注意点：効率は「出力 ÷ 入力熱量」なので，必要な蒸気量を求めるときは効率で割る（掛けない）。また，kW = kJ/s であるため，求めた kg/s を 3 600 倍して kg/h とし，さらに 1 000 で割って t/h にする。",
+      "choiceExplanations": {
+        "1": "誤り。86 t/h は 86 × 1 000 ÷ 3 600 ≒ 23.9 kg/s であり，このときタービン出力は 23.9 × 0.92 × 1 700 ≒ 37 400 kW ≒ 37 MW にしかならず，175 MW に大きく不足する。正しい使用蒸気量は約 402.8 t/h である。",
+        "2": "誤り。112 は使用蒸気量を毎秒の値 [kg/s]（約 111.9 kg/s）で求めたままの数値に一致する。問われている単位は [t/h] なので，3 600 倍して 1 000 で割る換算が必要で，約 402.8 t/h となる。",
+        "3": "誤り。248 t/h は 248 × 1 000 ÷ 3 600 ≒ 68.9 kg/s であり，このときタービン出力は 68.9 × 0.92 × 1 700 ≒ 107 700 kW ≒ 108 MW にとどまり，175 MW に届かない。正しい使用蒸気量は約 402.8 t/h である。",
+        "4": "誤り。341 は効率 0.92 で割る代わりに掛けた場合の値（175 000 × 0.92 ÷ 1 700 ≒ 94.7 kg/s，94.7 kg/s × 3 600 ÷ 1 000 ≒ 341 t/h）に一致する。タービン効率は出力 ÷ 蒸気の熱落差の総量なので，必要な蒸気量は出力を効率で割って求める。",
+        "5": "正しい。G = 175 000 ÷ (0.92 × 1 700) ≒ 111.9 kg/s，これを t/h に換算すると 111.9 × 3 600 ÷ 1 000 ≒ 402.8 t/h となり，最も近いのは 403 t/h である。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        5
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2652,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1277758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1170,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ecfdec11411e893b67d33d0f85c9bea246c966609b31cd62cbcc4185f79d7658",
+  "inputRequestSha256": "c730ece2526103fed4f1cc31698a900d1e4005c4172788c3df6c8fca3e3df926",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p05.png": "6dc3951d5cf837303bbd7c45930cdfcbfb327cdfe03665bafa2f09ed0fee4f8a"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2880,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11105,
+          "webSearchRequests": 0,
+          "costUSD": 0.1467038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1411,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4144bebacd9d6aa306b33a5a113493d1333d322bc92c76c421140e657dc4140d",
+      "inputRequestSha256": "8541d629f2acf3bde7410fd44bf9ccc0e81e67cf04f71cd855307bc41f7e7311",
+      "previousDraftSha256": "cd3ea2fdebb11bce8b72fbdfa8fc4adc3ae72788ccaf7a8ac5e268006f9f54b4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "c057a0df8632dc331a38464c8c2a035cca649123542e3a540232a5b6a5c3a81d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1156,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13572,
+      "webSearchRequests": 0,
+      "costUSD": 0.13195980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 973,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5f819502becf55ab6e484f582cfe7fb284d44e415146fe0dbcfedcd053083b7c",
+  "draftSha256": {
+    "5": "f714873f0816d070bea2de4afffadaf88b08de9d54b54500f1e1dbd21eb98b5f"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+  },
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "assessment": [
+    {
+      "number": 5,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": [
+        "根拠条文「電気設備に関する技術基準を定める省令 第22条」の条番号と規定値「2 000 分の 1」は、令和7年4月1日時点のe-Gov原文が添付されていないため照合していない。要外部確認。"
+      ]
+    }
+  ]
+}

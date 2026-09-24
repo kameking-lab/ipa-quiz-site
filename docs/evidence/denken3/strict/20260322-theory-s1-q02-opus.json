@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2626,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14604,
+      "webSearchRequests": 0,
+      "costUSD": 0.1696158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 913,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3f05060eb4dfa3b5dc287c515055a4bb027b057675cffa60cc07b7864c974923",
+  "inputRequestSha256": "d5bdea2fc8825145f3aa3144635f1c3a5d4a3d8a6a404bb55bb757c450dc5e9c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "5a043d2bb330f7902ccf91c81bb19f9a50a67271ca69a81e596d9e2e516c5f10"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p05.png": "402a524edad916b76773f5514176303aefc4d8889d66071ac8e6ae03e998d24a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q02-fig1.png": "f72f2e7b4b8b2eec4ece0d76c676ac5ac174d6d40cae6f75db59ecd75be56bc5"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "267d3961b13e32b8a17cbf5f19fa9aa774b6214651d57e08ead9e34ada0d1e4a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「本ページからは出題年度・回次を特定できない」は、同じ候補のメタデータ（fiscalYear=2025, term=lower, examDate=2026-03-22, reviewedFromPage=[5]）とmanifest固定の出典情報に矛盾する。manifestで確定済みなので、この記述を削除する必要がある。",
+        "uncertainty欄の「T2－R 005 は資料側の管理番号と思われる」は、添付の公式資料で意味を検証できない推測である。公開候補に残すべきではないので削除する必要がある。",
+        "uncertainty欄に未解決の記述が残っているのに needsReview=false になっており、候補内部で状態が整合していない。上の2点を削除して uncertainty を解消済みにするか、needsReview を実態に合わせる必要がある。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図（PDF第5頁、冊子頁番号『-2-』）と照合した。3 m、2点A・B、各3×10⁻⁷ Cの正電荷、Aから1 mのP点、正のQ[C]、B方向に5×10⁻³ N、ε₀=8.85×10⁻¹² F/m が一致し、極性・単位・数値の誤りはない。",
+        "選択肢: (1)1.2×10⁻⁹、(2)1.8×10⁻⁸、(3)2.5×10⁻⁶、(4)4.4×10⁻⁵、(5)7.3×10⁻⁵ の全肢が原図と一致する。",
+        "公式正答: 公式解答表（令和7年度下期・理論）の問2は解答3・配点5で、officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "総合解説の検算（係数）: 1/(4π×8.85×10⁻¹²) = 1/(1.1121×10⁻¹⁰) ≒ 8.992×10⁹ N·m²/C²。",
+        "総合解説の検算（各力）: 8.992×10⁹×3×10⁻⁷ ≒ 2697.6 なので F_A ≒ 2697Q（B方向）、F_B = 2697.6Q/4 ≒ 674Q（A方向）。",
+        "総合解説の検算（合力とQ）: 合力 = 2697.6Q×3/4 ≒ 2023Q。Q = 5×10⁻³/2023.2 ≒ 2.471×10⁻⁶ C ≒ 2.5×10⁻⁶ C となり、正答(3)と一致する。反発力の向きの説明も正しい。",
+        "誤答肢(1): 2023×1.2×10⁻⁹ ≒ 2.43×10⁻⁶ N。5×10⁻³ N の約1/2060 なので、「約3桁小さい」は正しい。",
+        "誤答肢(2): 2023×1.8×10⁻⁸ ≒ 3.64×10⁻⁵ N。約1/137 なので、「約2桁小さい」は正しい。",
+        "誤答肢(4): 2023×4.4×10⁻⁵ ≒ 8.9×10⁻² N。約17.8倍なので、「1桁以上大きい」は正しい。",
+        "誤答肢(5): 2023×7.3×10⁻⁵ ≒ 1.48×10⁻¹ N。約29.5倍なので、「1桁以上大きい」は正しい。",
+        "正答肢(3)の理由（反発力の差 = 5×10⁻³ N から Q≒2.47×10⁻⁶ C）は、計算・因果とも正しい。",
+        "公開候補図 20260322-theory-q02-fig1.png: 原図の配置図と照合した。A・P・B の順序、破線、P→B 向きの矢印、ラベル『3×10⁻⁷ C』（A・B）、『Q[C]』、『5×10⁻³ N』、寸法『1 m』『2 m』がすべて一致し、欠落・切れはない。この図だけで位置関係と力の向きを理解できる。",
+        "figureDescription: 公開候補図の内容と一致しており、誤りはない。",
+        "メタデータ: manifest と一致する。問題PDF・解答PDFのURL、fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[5]、sourceAttribution『令和7年度下期…理論科目 問2』。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

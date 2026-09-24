@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5755,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17319,
+      "webSearchRequests": 0,
+      "costUSD": 0.2539158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3832,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "592b920b8d16540eef498951b1cbd70883e75396cd953d756bb0a62594550663",
+  "inputRequestSha256": "2f64898e445b55e225dc35f2f834e3f28a4a8b4c8d29b291aca3dfb5961cbdeb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "8d08e633b0c8f9464a778ad1c4d2ff963fd5d0085325a95ee3620f9f55fbf273"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p13.png": "913046b7ccbe39b9d90d24f57f25148567f0700f8db8675797538d242bde79e2"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q10-fig1.png": "41501651ee4f72c9d5c6c10f785d2b40311ce8251cc8fd9025797474951e8817"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "7cfff1bf2d99d84b89508e9d17e8836361e6a21e12d7e6d683e513c82fb418c0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図の本文（t = 0 s でSを閉じる／電流 i_S[A] の波形として最も適切に表すものを(1)〜(5)から一つ選べ／閉じる直前は定常状態）と候補の問題文が一致。記号 i_S・単位 [A]・t = 0 s に脱落も改変もない。",
+        "公式正答：添付の公式解答表『令和7年度 第三種電気主任技術者上期試験解答』の＜理論＞問10は解答3・配点5。manifest の固定値 {question:10, part:null, answer:'3', points:5} と、候補の officialAnswer='3'・scoringPoints=5 が一致。原図フッタの『T1』も理論科目と整合。",
+        "t=0⁻：定常状態ではコンデンサが直流を阻止するので i_L=0 となり、1 Ω・1 H に電圧降下は生じない。電池記号は上側の長い極板が正極なので、節点（S側）は +1 V、2 F の右側極板は 1 Ω を介して下辺と同電位の 0 V。よって v_C(0⁻)=1 V で、S側の極板が正。候補の記述と一致。",
+        "t≥0 の左ループ（1 V−1 Ω−1 H−S）：i_L(0⁺)=0、τ₁=L/R=1 s、最終値 1 A から i_L=1−e^(−t)。この電流は S を下向きに流れ、i_S の矢印と同じ向き。",
+        "t≥0 の右ループ（2 F−1 Ω−S）：節点が 0 V に固定されるので、右側極板は −1 V。電流は下辺→1 Ω（上向き）→コンデンサ→節点→S（下向き）と流れ、i_S と同じ向きになる。初期値 1 V/1 Ω=1 A、τ₂=RC=2 s から i_C=e^(−t/2)。極性と向きの説明（正極板→S→1 Ω→負極板）を検算で確認。",
+        "合成：i_S=1−e^(−t)+e^(−t/2)。i_S(0⁺)=1 A、i_S(∞)=1 A。t>0 では e^(−t/2)>e^(−t) なので i_S>1 A。di_S/dt=e^(−t)−½e^(−t/2)=e^(−t/2)(e^(−t/2)−½) で、t=0 では +0.5 A/s、t=2ln2≈1.386 s で 0。最大値は 1−¼+½=1.25 A。すべて候補の記述と一致し、波形(3)に対応する。",
+        "選択肢(1)〜(5)の文言記述：公開候補図・原図の各グラフと照合した。(1) 1 A から谷を作って 1 A に漸近、(2) 0 A から単調増加して 1 A に漸近、(3) 1 A から山を作って 1 A に漸近、(4) 0 A から 1 A を超えて山を作り 1 A に漸近、(5) t=0 から 1 A 一定で破線なし。各グラフとも t<0 に i_S=0 の太線がある。いずれも図と一致。",
+        "誤答肢の理由：(1) t>0 で i_S>1 A、初期傾きは +0.5 A/s であり谷を作らない。(2) i_L 成分のみで、コンデンサの放電電流 1 A の即時発生を無視している。(4) 初期値が 0 A になっており、連続量はインダクタ電流とコンデンサ電圧であって i_C ではない。(5) 本問は両枝の振幅がともに 1 A（抵抗がともに 1 Ω）なので、一定になるのは τ₁=τ₂ の場合に限られるが、実際は τ₁=1 s、τ₂=2 s で異なる。いずれも各肢固有の理由として正しい。",
+        "公開候補図 20250831-theory-q10-fig1.png：原図と照合した。電源 1 V（上側が長い極板）、上辺の 1 Ω・1 H・節点（黒丸）、2 F、右辺の 1 Ω、開いたスイッチ S の枝、下向き矢印 i_S、下辺の節点（黒丸）について、接続・向き・ラベルに欠落や相違はない。グラフ(1)〜(5)のラベル・軸名 i_S[A]・t[s]・目盛 1・原点 0・破線（(1)〜(4)のみ）もすべて収録されている。回路図と選択肢波形の両方が必要な問題だが、公開候補図だけで解答できる。",
+        "figureDescription：接続関係、i_S の向き、各グラフの破線の有無、t<0 の太線、時間軸に数値目盛がないことが、原図と一致する。",
+        "出典：officialReferenceUrls は空で、検証すべき独立主張はない。sourceAttribution（令和7年度上期・理論・問10）と fiscalYear=2025、term=upper は添付の公式解答表の表題・科目欄と整合する。reviewedFromPage=[13] は、原図の印刷頁『-10-』と矛盾しない PDF 頁番号として扱った。"
+      ]
+    }
+  ]
+}

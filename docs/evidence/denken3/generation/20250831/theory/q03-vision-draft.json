@@ -1,0 +1,96 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように，環状鉄心に二つのコイルが巻かれている。コイル1の巻数は N であり，その自己インダクタンスは L [H] である。コイル2の巻数は n であり，その自己インダクタンスは 9L [H] である。巻数 n の値を表す式として，正しいものを次の(1)〜(5)のうちから一つ選べ。\nただし，鉄心は均一で一定断面積をもち，コイル及び鉄心の漏れ磁束はなく，鉄心の磁気飽和もないものとする。",
+      "choices": {
+        "1": "N/9",
+        "2": "N/3",
+        "3": "3N",
+        "4": "9N",
+        "5": "81N"
+      },
+      "officialAnswer": "3",
+      "explanation": "鉄心の透磁率を μ，断面積を S，平均磁路長を l とすると，鉄心の磁気抵抗は Rm = l/(μS) [H⁻¹] です。巻数 N のコイルに電流 I を流すと，起磁力 NI により磁束 Φ = NI/Rm が生じ，鎖交磁束数は NΦ = N²I/Rm となります。したがって自己インダクタンスは L = N²/Rm です。\n\nコイル1とコイル2は同じ鉄心に巻かれているため，Rm は共通です。漏れ磁束がなく磁気飽和もないので，自己インダクタンスは巻数の2乗に比例します。\n\nL = N²/Rm\n9L = n²/Rm\n\n両式の比をとると\n9L / L = n² / N²\nn² = 9N²\n\n巻数は正の値なので n = 3N となります。正答は (3) です。",
+      "choiceExplanations": {
+        "1": "誤り。n = N/9 とすると，コイル2の自己インダクタンスは (1/9)² × L = L/81 [H] となり，9L [H] になりません。",
+        "2": "誤り。n = N/3 とすると，コイル2の自己インダクタンスは (1/3)² × L = L/9 [H] となります。係数 1/9 は条件の 9 の逆数であり，9L [H] とは一致しません。",
+        "3": "正しい。自己インダクタンスは巻数の2乗に比例するので，n = 3N ならコイル2の自己インダクタンスは 3² × L = 9L [H] となり，条件と一致します。",
+        "4": "誤り。n = 9N とすると，コイル2の自己インダクタンスは 9² × L = 81L [H] となります。自己インダクタンスが巻数に比例すると考えた場合の誤りです。",
+        "5": "誤り。n = 81N とすると，コイル2の自己インダクタンスは 81² × L = 6561L [H] となり，9L [H] になりません。"
+      },
+      "figureDescription": "灰色で塗られた環状（リング状）の鉄心が中央に1つ描かれ，その下に「鉄心」と表記されている。鉄心の左側にコイル1が巻かれ，2本の引出線が左方向に伸びて端子（白丸）に接続されている。左側に「コイル1 巻数N」と表記されている。鉄心の右側にコイル2が巻かれ，2本の引出線が右方向に伸びて端子（白丸）に接続されている。右側に「コイル2 巻数n」と表記されている。この図は，二つのコイルが同一の環状鉄心に巻かれている配置を示すものである。解答に必要な条件（巻数，自己インダクタンス，漏れ磁束・磁気飽和なし）はすべて問題文に記載されている。巻線の向きや端子の極性は，この問題の解答には関係しない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2101,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11675579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 647,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4e82b5329ad57dec6826f4994655a52c2a98ec7552c5fc4144aa7bbd5ddfade6",
+  "inputRequestSha256": "799dcf6a7ec5558c1f78a8f73d1d3e56409dfdcdea58165b0c663d9eb7d6b242",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p06.png": "013d15e155caa61b759225d013d08b7a8a1c295cdbde14f15411bd917737dfc7"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2550,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12712,
+          "webSearchRequests": 0,
+          "costUSD": 0.1529598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1198,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b1f7ee277af5eaea56555e25e845ced9ce2e81971785ab9531952e6c8ed5b714",
+      "inputRequestSha256": "88ed0a656970bfc64689d4d98677b6666249dc4e620cb006c93865d8db3b7c39",
+      "previousDraftSha256": "43d4802ffc9beac6e267ad23dce136b1065e75bb2e7c0db1e82bf91d4487dd6b",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "951bc9fd22d3ecf0843df694b5f82a095a98fe8e6c4e2ed579354089ad19e442",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q03-opus.json",
+      "answeredStrictReceiptSha256": "83945521fae8f4b422434f438d181c5429d4e7a3fd814d34fcde3ea0634c6e36",
+      "figureSha256": {
+        "20250831-theory-q03-fig1": "852ce25476bb3b87633f5491c8653014ffe4d644f04efe180a6432bb12b6a5ac"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

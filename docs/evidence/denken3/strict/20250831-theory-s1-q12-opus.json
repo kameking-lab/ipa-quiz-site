@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4281,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14799,
+      "webSearchRequests": 0,
+      "costUSD": 0.2042758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2429,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6e6c87162c88d568beb4dfd1bad1c12a140e9e483571e22cdd9182206c255753",
+  "inputRequestSha256": "3e786875499d08604dcb3db39fad572a87c14a1b7ad5d7a64e331bedbad39df3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "5011695d802eb6afb0b5819f18506955a69caaa0647350e082d20da9b6316ed7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionに直流電源（電池記号）の極性が書かれていない。uncertaintyでは「長短の向きが判別しにくい」としているが、極性は公式原図から確定できるはずの図情報である。公式原図の電池記号の長線（正極）と短太線（負極）がどちら向きかを確認し、どちらの電極側が正極かをfigureDescriptionに明記すること。確認の結果、原図が電極P側を正極としていない場合は、問題文の設定（電子がKからPへ到達する）との関係を注記する必要がある。",
+        "figureDescriptionの「電極Kの下端と電極Pの下端はそれぞれ黒丸の接続点から導線で引き出され」「電極P側の接続点の下には接地記号がある」という記述は接続構成を正確に表していない。原図・公開候補図とも、電極P側には黒丸が2つある。1つは電極P下端の黒丸、もう1つはその下の導線上の分岐点の黒丸で、電池からの導線は後者に接続し、接地記号はさらにその下にある。電極K側の黒丸は、コの字形電極の下辺の右寄り（対向板の直下）にある。どの黒丸にどの導線が接続し、接地がどこにあるかを特定できる記述に修正すること。"
+      ],
+      "sourceIssues": [
+        "uncertaintyに未解決の図読取り事項（電池極性）が残っているのに、needsReview=falseになっており整合しない。極性を原図で確定してuncertaintyを解消するか、解消できない場合はneedsReview=trueにすること。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の理論・問12は解答5・配点5。manifest固定の公式正答単位{question:12, part:null, answer:\"5\", points:5}、候補のofficialAnswer=\"5\"、scoringPoints=5と一致する。",
+        "問題文を公式原図と照合した。真空中、間隔6 mm、面積十分広い平行平板、K・P間2 000 Vの直流電圧、(ア) V/m、ヒータ加熱で(イ)が放出、初速度零、運動エネルギーW (ウ) J、電界一様、e=1.6×10⁻¹⁹ C、の各記述が過不足なく一致する。単位・指数表記の誤りもない。",
+        "選択肢(1)〜(5)の(ア)(イ)(ウ)の値・語句を原図の表と全肢照合し、すべて一致した。(1) 3.3×10²／光電子／1.6×10⁻¹⁶、(2) 3.3×10⁵／熱電子／1.6×10⁻¹⁶、(3) 3.3×10²／光電子／3.2×10⁻¹⁶、(4) 3.3×10²／熱電子／1.6×10⁻¹⁶、(5) 3.3×10⁵／熱電子／3.2×10⁻¹⁶。",
+        "計算を検算した。E=V/d=2000/(6×10⁻³)=3.333…×10⁵ V/m≒3.3×10⁵ V/mで正しい。W=eV=1.6×10⁻¹⁹×2000=3.2×10⁻¹⁶ Jで正しい。eEd=eVによる別解の値も一致し、W=eVが電極間隔に依存しないという因果説明も妥当である。",
+        "(イ) 加熱による放出は熱電子、光照射による放出は光電子という区別を確認し、正しいことを確かめた。",
+        "各肢の固有の誤り理由を検算した。(1)の3.3×10²=2000/6（V/mm相当、m換算漏れ）という指摘は正しい。(1)は3要素すべて誤り、(2)は(ウ)のみ誤り、(3)は(ア)(イ)が誤り、(4)は(ア)(ウ)が誤り、(5)は全要素正、という判定はいずれも正しい。",
+        "公開候補図fig1は公式原図の図部分と一致する。ラベル「電極K」「電極P」「ヒータ」「6 mm」、両矢印（Kの対向面とPの対向面の間）、コの字形の電極K、コイル状ヒータ、黒丸、電池記号、接地記号がすべて含まれ、欠落や切れはない。本問は問題文だけで解答でき、図は補助的である。",
+        "officialReferenceUrlsは空で、検証を要する独立主張はない。",
+        "公式原図のページ下部の印刷ページ番号は「- 12 -」である。reviewedFromPage=15はPDFの物理ページ番号とみられ、表紙・注意事項頁を含む冊子構成と矛盾しない。",
+        "sourceAttribution（令和7年度上期・理論・問12）、examDate 2025-08-31、subject theory、term upperは、公式解答表の表題「令和7年度 第三種電気主任技術者上期試験解答」と整合する。"
+      ]
+    }
+  ]
+}

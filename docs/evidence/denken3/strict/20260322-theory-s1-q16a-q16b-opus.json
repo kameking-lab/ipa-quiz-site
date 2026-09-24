@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5196,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18582,
+      "webSearchRequests": 0,
+      "costUSD": 0.2528398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2746,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "129a0f7e9cfcc2d9feddee7636450a49f8336fbefa941e5013fd9bf612bf7aa5",
+  "inputRequestSha256": "42dd89cf9baf64ae64756ad8460e3edc97dd781824ad6b70d6530c13f19a3c4b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "df767e6af81b284ba93a01e1aca0f2e05968c616853acab3e5667d34d7f1a085",
+      "q16b": "57564959faef7e9f257c7863113c5ea632d09b9a13cf080145c78828cbb84aaf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p21.png": "569a0c9ce59199c4bdc00f45ce2fbb5decf766f921afe5989c84eaea431bdb0a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q16-fig1.png": "2ceaab385108eb9debb739c7a78f0f15bb1bad72e91bef8983a2c94a57171c98"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "bdb24e8cdfe181d91bde21aea319c38185dd346cbb8ae6a904d4a845d53df84f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「この問題の試験年度・実施回は、ページ内の表記（右下「T2−R 021」）からは特定できない」とある。しかし候補自身の fiscalYear=2025・term=lower・examDate=2026-03-22・sourceAttribution「令和7年度下期」は manifest 固定情報で確定しており、公式解答表の表題「令和7年度 第三種電気主任技術者下期試験解答」とも一致する。出典の確定度について候補内で自己矛盾しているため、この一文を削除する必要がある。削除すれば出典面の未確認事項は残らない。"
+      ],
+      "verifiedEvidence": [
+        "出典: manifest の問題PDF・解答PDFのURLは sourceQuestionPdfUrl・sourceAnswerPdfUrl と一致する。fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory も一致する。reviewedFromPage=[21] は manifest 指定の PDF 第21頁と一致する。原図の印字頁番号は「-18-」だが、これは冊子内の頁番号であり PDF 頁とは別。",
+        "公式正答: 公式解答表の理論・問16(a)は解答3・配点5で、候補の officialAnswer=3・scoringPoints=5 と一致する。",
+        "問題文: 原図(a)の「図1のように抵抗R[Ω]を端子a，d間に接続したとき，I1=4.5A，I2=0.5Aの電流が流れた。抵抗Rの値[Ω]として，正しいもの」と一致する。柱書きの「E[V]の値は一定で変化しない」も一致する。補足の枝路説明も原図の接続と一致する。",
+        "選択肢: (1)180 (2)160 (3)80 (4)40 (5)20 で、原図と一致する。",
+        "検算: 上下の枝路はともに 16+4=20Ω。I1−I2=4.0A が等分されて 2.0A ずつ流れるので、V_ad=40V。R=40/0.5=80Ω で正答(3)と一致する。E=40V（理想電源・理想導線）。",
+        "誤答肢: 180×0.5=90V、160×0.5=80V、40×0.5=20V、20×0.5=10V。いずれも V_ad=40V と矛盾し、各肢固有の理由として正しい。",
+        "図: 公開候補図は原図の図1・図2を欠落なく切り出している。16Ω・b・4Ω（上段）、R・I2=0.5A右向き矢印（中段）、4Ω・c・16Ω（下段）、端子a・d、I1=4.5A上向き矢印、E[V]・電池記号をすべて確認した。figureDescription の接続関係・矢印の向きも原図と一致し、公開図だけで解答できる。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「この問題の試験年度・実施回は、ページ内の表記（右下「T2−R 021」）からは特定できない」とある。これは manifest で確定済みの fiscalYear=2025・term=lower・examDate=2026-03-22 および sourceAttribution「令和7年度下期」と矛盾する。公式解答表の表題「令和7年度 第三種電気主任技術者下期試験解答」とも一致しているため、この一文を削除する必要がある。"
+      ],
+      "verifiedEvidence": [
+        "出典: manifest の問題PDF・解答PDFのURL、fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[21] がすべて一致する。",
+        "公式正答: 公式解答表の理論・問16(b)は解答4・配点5で、候補の officialAnswer=4・scoringPoints=5 と一致する。",
+        "問題文: 原図(b)の「図1の抵抗R[Ω]を図2のように端子b，c間に接続し直したとき，回路に流れる電流I3の値[A]として，最も近いもの」と一致する。補足した図1条件（I1=4.5A、I2=0.5A）、図2の接続、I3の向き（電源から a へ流れ込む）も原図と一致する。",
+        "選択肢: (1)5.5 (2)4.8 (3)4.5 (4)4.2 (5)4.0 で、原図と一致する。",
+        "ブリッジ判定: 対辺は a-b(16Ω)と c-d(16Ω)、b-d(4Ω)と a-c(4Ω)。積は 256≠16 で不平衡という記述は正しい。",
+        "節点方程式: 節点bの式を80倍して 200−5Vb=21Vb−Vc、すなわち 26Vb−Vc=200。節点cの式を80倍して 800−20Vc=6Vc−Vb、すなわち −Vb+26Vc=800。これを解くと 675Vb=6000 で Vb=80/9V、Vc=280/9V。",
+        "I3 の検算: a 側から (280/9)/16+(80/9)/4=35/18+40/18=75/18≈4.17A。d 側からの流入 Vb/4+Vc/16=40/18+35/18=75/18 とも一致する。合成抵抗は 40/(75/18)=9.6Ω。R の電流は (200/9)/80=5/18≈0.28A で、c→b 向き。最も近い選択肢は 4.2A（差0.03）で、4.0A（差0.17）より近く、正答(4)と一致する。",
+        "誤答肢: 5.5A→7.27Ω、4.8A→8.33Ω はいずれも 9.6Ω と不一致。4.5A は図1の I1 であり、図1の合成抵抗 20∥80∥20=8.89Ω に対応する。4.0A は R に電流が流れない場合の 20∥20=10Ω に対応するが、ブリッジは不平衡なので該当しない。いずれの理由付けも正しい。",
+        "図: 公開候補図の図2に、16Ω・b・4Ω（上段）、b-c 間の縦向き R[Ω]、4Ω・c・16Ω（下段）、端子a・d、I3[A]上向き矢印、E[V]・電池記号をすべて確認し、原図と一致した。R・E の導出に必要な図1も同じ画像に含まれるため、公開図だけで解答できる。figureDescription も原図と一致する。"
+      ]
+    }
+  ]
+}

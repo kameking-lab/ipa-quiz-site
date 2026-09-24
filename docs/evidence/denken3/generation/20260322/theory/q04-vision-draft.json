@@ -1,0 +1,96 @@
+{
+  "questionNumber": 4,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように、点Oを中心とするそれぞれ半径0.5 mと半径1 mの円形導線の1/4と、それらを連結する直線状の導線からなる扇形導線がある。この導線に、図に示す向きに直流電流 I = 16 A を流した場合、点Oにおける磁界の大きさ H の値[A/m]として、最も近いものを次の(1)～(5)のうちから一つ選べ。\nただし、扇形導線は同一平面上にあり、その巻数は一巻きである。また、導線の太さは無視できるものとする。",
+      "choices": {
+        "1": "0.25",
+        "2": "0.5",
+        "3": "0.75",
+        "4": "1.0",
+        "5": "2.0"
+      },
+      "officialAnswer": "5",
+      "explanation": "半径 r の円形導線に電流 I が流れるとき、中心の磁界は H = I/(2r) である。1/4円弧ではその1/4になるので、H = I/(8r) となる。\n\n・内側の1/4円弧（r = 0.5 m）: H₁ = 16/(8 × 0.5) = 4 A/m\n・外側の1/4円弧（r = 1 m）: H₂ = 16/(8 × 1) = 2 A/m\n・2本の直線状導線: どちらも延長線が点Oを通る半径方向の導線である。ビオ・サバールの法則では、電流素片 dl と点Oへ向かう位置ベクトルが平行になるため、点Oに磁界をつくらない。\n\n図の電流の向きをたどると、左の縦の直線を上向きに流れ、外側の円弧を時計回りに進み、下の横の直線を点O側へ戻り、内側の円弧を反時計回りに進む。外側と内側の円弧では、点Oから見た電流の回る向きが逆である。そのため、点Oでの両者の磁界は互いに逆向きになる。\n\nH = H₁ − H₂ = 4 − 2 = 2.0 A/m\n\n合成磁界の向きは大きい H₁（内側円弧、反時計回り）の向きで、右ねじの法則により紙面の裏から表へ向かう向きとなる。したがって正答は(5)である。",
+      "choiceExplanations": {
+        "1": "誤り。典型的な誤りの例として、1/4 を二重に掛け、さらに半径の代わりに直径 d を用いて H = I/(32d) とし、差をとると 16/32 − 16/64 = 0.5 − 0.25 = 0.25 A/m となる。正しくは1/4円弧の中心磁界は I/(8r)（r は半径）であり、H = 4 − 2 = 2.0 A/m となる。",
+        "2": "誤り。典型的な誤りの例として、1/4 を二重に掛けて H = I/(32r) とし、差をとると 16/16 − 16/32 = 1 − 0.5 = 0.5 A/m となる。円形導線の中心磁界 I/(2r) に1/4を一度だけ掛けた I/(8r) が正しく、H = 4 − 2 = 2.0 A/m となる。",
+        "3": "誤り。典型的な誤りの例として、(1)と同じ H = I/(32d) を用いたうえで、逆向きの寄与を足し合わせると 0.5 + 0.25 = 0.75 A/m となる。係数の誤りに加え、内外の円弧は電流の回る向きが逆なので磁界は差をとる必要がある。正しくは H = 4 − 2 = 2.0 A/m である。",
+        "4": "誤り。典型的な誤りの例として、半径の代わりに直径 d を用いて H = I/(8d) とし、差をとると 16/8 − 16/16 = 2 − 1 = 1.0 A/m となる。公式 H = I/(8r) の r は半径であり、正しくは H = 4 − 2 = 2.0 A/m となる。",
+        "5": "正しい。内側円弧による 4 A/m と外側円弧による 2 A/m は互いに逆向きで、直線部分は点Oに磁界をつくらないので、H = 4 − 2 = 2.0 A/m となる。なお外側円弧だけの寄与も 2 A/m で同じ値になるが、正答の根拠は内外の寄与の差である。"
+      },
+      "figureDescription": "点Oを中心とする扇形導線の図である。点Oには円の中に黒点を描いた記号（⊙）がある。この記号は一般に紙面の裏から表へ向かう向きを表す表記だが、問題文に記号の説明はない。点Oから上方向と右方向に破線の補助線が伸び、Oの位置に直角記号がある。導線は次の4部分で構成される。① 上向き破線上にある縦の直線部分（Oから0.5 mの点から1 mの点まで）。この部分に上向きの矢印と「I=16 A」のラベルがある。② 半径1 mの1/4円弧（上端から右端まで）。③ 右向き破線上にある横の直線部分（Oから1 mの点から0.5 mの点まで）。④ 半径0.5 mの1/4円弧（右側の点から上側の点まで）。Oから内側円弧へ向かう矢印に「0.5 m」、外側円弧へ向かう矢印に「1 m」の寸法表示がある。電流の向きは縦の直線部分の矢印で示されており、導線は①〜④で閉じた一巻きのループをなす。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2481,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1243558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 823,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a9b0ea2f09f9958a0e176b594430e34359104cd93f9c49c7c662870793e989a7",
+  "inputRequestSha256": "408292d0a6965e9ab9f44d65c357a3348357f38c91bf4db8c1083e495367e2ee",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p07.png": "1aadb34eeefcae4c86be44266ab5725adb76e43811077631886d53bb83a24485"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3160,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13497,
+          "webSearchRequests": 0,
+          "costUSD": 0.1714398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1186,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "973a85e1071338ebc9f6a0f90e4535c7f79fb958ecdca7844f7a43913b884f7c",
+      "inputRequestSha256": "4b5930d8041e1e288416dd27ae83931a26229a2b908fa7fb9e3b21631882d2b8",
+      "previousDraftSha256": "fdf37f4c9e1b2875cd83500753c2fad1a9a8ebf77631c17a9bff62aae99f2d1c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q04-vision-draft-v1.json",
+      "answeredReviewSha256": "51ebb2f4bb54066a599caf514d1847af64235d2d9e3a0f118efb247cb6c16c8d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q04-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q04-opus.json",
+      "answeredStrictReceiptSha256": "151ab92a0b8310a2050d98a3856dc69ff72eb8d3eb2262551eb3070fe45658de",
+      "figureSha256": {
+        "20260322-theory-q04-fig1": "c467b5f4cfaf4cd3125d8dc24b6acd22c1cac2d33e3ffbfb90fdecd44065a7f8"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

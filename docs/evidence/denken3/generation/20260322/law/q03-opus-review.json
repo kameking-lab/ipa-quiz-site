@@ -1,0 +1,48 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2169,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13736,
+      "webSearchRequests": 0,
+      "costUSD": 0.1535318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1747,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4fc776e7f4252ca9379c3726c8cd3a24424f2a88460d272a72f31a6973662e78",
+  "draftSha256": {
+    "3": "d1c2627cc546ffbb0838629a1342c8bf3c5d56838df01fff76e3ba203dfd4f85"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+  },
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "assessment": [
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": [
+        "電技省令第10条・第11条の e-Gov 原文が添付されていないため、要外部確認。第10条・第11条の引用文、第5条（電路の絶縁）・第14条（過電流からの電線及び電気機械器具の保護対策）の条番号と見出しは、効力基準日時点の原文で照合していない。",
+        "注意書き頁の注3により、問題の基準日は令和7年4月1日と明示されている。uncertainty の「原本ページからは出題年度を特定できない」は、この基準日が特定できる点で不正確である。",
+        "uncertainty は、第10条ただし書の現行文言を「第五条第一項の規定に定めるところにより」と主張しているが、比較対象は現行版の e-Gov である。令和7年4月1日時点で施行されていた版の原文は添付されておらず、この主張は要外部確認。officialReferenceUrls も現行版の法令ページであり、基準日時点版を指していない。"
+      ]
+    }
+  ]
+}

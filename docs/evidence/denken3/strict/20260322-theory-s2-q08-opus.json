@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3926,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15135,
+      "webSearchRequests": 0,
+      "costUSD": 0.19986379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2534,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "75b343c36cb3a8c42fd1ee0fdcbb075b83f18431ffa894e593787e7eff42e20c",
+  "inputRequestSha256": "93b2347eb541854ae94f5395339d58235ed08276b4d0065756d1d414b6bdb56c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "0d7c578e87c14e2b15a905802f0720bc2de21e7ba4118c6d2bad3471234d3ab0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p11.png": "4ab3530d3c3c359a5b745e1f9b6bfc8acfa907147667f5ab89956f4e0d3600e2"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q08-fig1.png": "0c84ed31d6e802e6d11f5dba278b687179570b34422f6783b1855367c151bf4c"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "4dd5f10bb958691663384bf0945338d80c77a34eb553e04244da8315a1656ac7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl=…20260322_ch_third_q01.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[11] が manifest と一致する。原図下部の「- 8 -」は冊子の印刷頁番号で、PDF第11頁という manifest 指定と矛盾しない。sourceAttribution「令和7年度下期…理論科目 問8」も一致する。",
+        "問題文: R₁=20 Ω、R₂=30 Ω、C=1/(100π) F、L=1/(4π) H、f=10 Hz と 10 MHz における R₁ の電流、電流比 I₁₀Hz/I₁₀MHz、「最も近いもの」という問い方を公式原図と照合し、数値・単位・語句のいずれにも相違はない。I₁₀Hz 表記は、Unicode に Hz 用の下付き文字がないため下付きが部分的になっている。ただし本文で定義が明示されているので曖昧さはない。",
+        "選択肢: (1)2.5 (2)1.7 (3)1.0 (4)0.6 (5)0.4 が原図と完全に一致する。",
+        "公式正答: 公式解答表の理論・問8は解答5・配点5。候補の officialAnswer=5、scoringPoints=5 と一致する。",
+        "10 Hz の検算: X_C=1/(2π·10·1/(100π))=1/0.2=5 Ω、X_L=2π·10/(4π)=5 Ω。f₀=1/(2π√(1/(400π²)))=10 Hz で、LC は並列共振となりアドミタンスは0になる。したがって |Z|=R₁+R₂=50 Ω で、説明と一致する。",
+        "10 MHz の検算: X_C=1/(2π·10⁷/(100π))=1/(2×10⁵)=5×10⁻⁶ Ω、X_L=2π·10⁷/(4π)=5×10⁶ Ω。並列部はほぼ短絡とみなせるので |Z|≈R₁=20 Ω で、説明と一致する。",
+        "電流比: R₁ は電源と直列なので R₁ の電流は V/|Z| に等しい。I₁₀Hz/I₁₀MHz=(V/50)/(V/20)=0.4 となり正答(5)と一致する。因果の説明にも誤りはない。",
+        "各肢の理由: (1) 2.5=50/20 は逆数である。(2) 50/30≈1.67 と (4) 30/50=0.6 は、数値の対応関係として正しく記述されたうえで正しい値との差が説明されている。(3) 1.0 はインピーダンスが等しい場合の値で、実際は等しくないことが説明されている。(5) の正答理由も正しい。いずれも計算上の誤りはない。",
+        "公開候補図: 原図と同じく、電源（V[V], f[Hz]）に R₁[Ω] が直列に入り、C[F]・L[H]・R₂[Ω] が並列に接続されている。黒丸の接続点は C と L の上下に計4箇所ある。全ラベルと接続関係が一致しており、候補図だけで解答に必要な回路構成を読み取れる。",
+        "figureDescription: 接続・ラベル・接続点の記述が原図と一致する。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。"
+      ]
+    }
+  ]
+}

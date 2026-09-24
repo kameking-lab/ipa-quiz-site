@@ -1,0 +1,126 @@
+{
+  "questionNumber": 4,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "あるかご形三相誘導電動機を定格電圧でY−Δ始動したところ，始動トルクは49.0 N·mであった。また，Δ結線での全電圧始動時（定格電圧）の始動トルクは定格運転時の210 %である。この電動機の定格運転時のトルクの値［N·m］として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "16.3",
+        "2": "23.3",
+        "3": "28.3",
+        "4": "40.4",
+        "5": "70.0"
+      },
+      "officialAnswer": "5",
+      "explanation": "Y−Δ始動では、始動時に固定子巻線をY結線にする。このとき各相巻線に加わる電圧は、Δ結線での全電圧始動時の1/√3になる。すべりが同じであれば（始動時はすべり1）、誘導電動機のトルクは電圧の2乗に比例する。したがって、Y−Δ始動時の始動トルクは全電圧始動時の (1/√3)² = 1/3 になる。\n\n全電圧始動時の始動トルク T_s は次のとおりである。\nT_s = 3 × 49.0 = 147 N·m\n\nこれは定格運転時のトルク T_n の210 %（= 2.1倍）に当たる。よって\nT_n = T_s ÷ 2.1 = 147 ÷ 2.1 = 70.0 N·m\n\nしたがって正答は(5)である。",
+      "choiceExplanations": {
+        "1": "誤り。16.3 N·m は 49.0 ÷ 3 ≒ 16.3 に相当する。Y−Δ始動時のトルクは全電圧始動時の1/3である。したがって全電圧始動時のトルクは49.0の3倍の147 N·mであり、3で割るのは逆である。さらに、210 %の関係も用いていない。",
+        "2": "誤り。23.3 N·m は 49.0 ÷ 2.1 ≒ 23.3 に相当する。49.0 N·m はY−Δ始動時のトルクであり、定格トルクの210 %に当たる全電圧始動時のトルクではない。まず全電圧始動時のトルク（49.0 × 3 = 147 N·m）に換算し、その値を2.1で割る必要がある。",
+        "3": "誤り。28.3 N·m は 49.0 ÷ √3 ≒ 28.3 に相当する。トルクは電圧の2乗に比例する。そのため、Y−Δ始動と全電圧始動のトルク比は1/√3ではなく1/3である。さらに、この値は210 %の関係も用いていない。",
+        "4": "誤り。40.4 N·m は 49.0 × √3 ÷ 2.1 ≒ 40.4 に相当する。トルクは電圧の2乗に比例する。したがって、全電圧始動時のトルクへの換算係数は√3ではなく3である。",
+        "5": "正しい。Y−Δ始動時の始動トルクは全電圧始動時の1/3である。よって全電圧始動時の始動トルクは 49.0 × 3 = 147 N·m である。これが定格トルクの2.1倍に当たるので、定格トルクは 147 ÷ 2.1 = 70.0 N·m となる。"
+      },
+      "figureDescription": "この問題に図はない。問題文と選択肢だけで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1780,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1103358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 573,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2fe94d9ef30d5b8a413d6dcd65089528a47549434f5d95f6a8a680a15b4192fd",
+  "inputRequestSha256": "3c8fa2b6e038095392410c68fce27c9d966ca8099438e898c6159f4d951a87d5",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p07.png": "08169c166e028cfff1b070a3c500379cfbb104774835db3e0ea30117548a197e"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1738,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11948,
+          "webSearchRequests": 0,
+          "costUSD": 0.1306078,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 540,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ea7dbe6f358b746dacb4fcdbb6a5de9bc04f1baa9b85c810de9e3e1cd31ceb24",
+      "inputRequestSha256": "1d2bbe1b2ed5df8ea187aea4ee72b04dd929aff3f044e4a599217ea78837e689",
+      "previousDraftSha256": "a5c46c572a5e1343ec5193c6b5bca1a3633c1a538b62df70c6d46afe5f07ae4a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q04-vision-draft-v1.json",
+      "answeredReviewSha256": "f143c43ada4e2211478d39ccc11c5e1b7fc4c85fe3a9f26269857a81cb25450c",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q04-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q04-opus.json",
+      "answeredStrictReceiptSha256": "848de8c25a6c76b882afe9e6b1cfd65915e1372cd8807cdbd21db8379a13c6aa",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1785,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 10905,
+          "webSearchRequests": 0,
+          "costUSD": 0.1232038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 514,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a60f1f02ae0399a7d282619458af867c1bea280aaffd4d3cd26fbc9fd4855a67",
+      "inputRequestSha256": "a908d2efc722a5a58c624f51c4750440ae9c794822644be87a8de9e2a4df1701",
+      "previousDraftSha256": "ca2ccaf4dd007400d43f0645f6e5e63dd347fad0e3993793a5ad4375ce1b5f11",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q04-vision-draft-v2.json",
+      "answeredReviewSha256": "174a8d9af65b784827af5d7392567323106f80c3ff726adf4f723d9731e8079d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q04-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

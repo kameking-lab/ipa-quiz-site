@@ -1,0 +1,60 @@
+{
+  "questionNumber": 8,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "ある回路に、i = 4√2 sin 120πt [A] の電流が流れている。この電流の瞬時値が、時刻 t = 0 s 以降に初めて 4 A となるのは、時刻 t = t₁ [s] である。t₁ [s] の値として、正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "1/120",
+        "2": "1/160",
+        "3": "1/240",
+        "4": "1/360",
+        "5": "1/480"
+      },
+      "officialAnswer": "5",
+      "explanation": "瞬時値が 4 A となる条件は 4√2 sin 120πt = 4、すなわち sin 120πt = 4/(4√2) = 1/√2 である。\n\nt = 0 のとき位相 120πt = 0 で i = 0 A。そこから位相が増えると、0 ≦ 120πt ≦ π/2 の範囲で sin 120πt は 0 から 1 へ単調に増加する。この範囲で sin 120πt = 1/√2 となるのは 120πt = π/4 のときだけであり、それより前に 4 A に達することはない。したがって最初に 4 A となるのは\n\n120πt₁ = π/4\nt₁ = (π/4) / (120π) = 1/480 [s]\n\nよって正解は(5)である。\n\n参考: 角周波数 ω = 120π rad/s より周波数は f = ω/(2π) = 60 Hz、周期は T = 1/60 s。t₁ = 1/480 s は周期の 1/8(位相 45°)に相当する。",
+      "choiceExplanations": {
+        "1": "誤り。t = 1/120 s のとき位相は 120π × 1/120 = π で、sin π = 0 より i = 0 A。4 A ではない(半周期の時点で電流がゼロに戻る時刻)。",
+        "2": "誤り。t = 1/160 s のとき位相は 120π × 1/160 = 3π/4 で、sin(3π/4) = 1/√2 より i = 4 A となる。しかしこれは最大値を過ぎて減少する途中で 2 回目に 4 A となる時刻であり、それより前の t = 1/480 s ですでに 4 A に達しているため「初めて」ではない。",
+        "3": "誤り。t = 1/240 s のとき位相は 120π × 1/240 = π/2 で、sin(π/2) = 1 より i = 4√2 ≒ 5.66 A。これは電流の最大値となる時刻であり、4 A ではない。",
+        "4": "誤り。t = 1/360 s のとき位相は 120π × 1/360 = π/3 で、sin(π/3) = √3/2 より i = 4√2 × √3/2 = 2√6 ≒ 4.90 A。4 A を超えており、4 A に初めて達する時刻ではない。",
+        "5": "正しい。t = 1/480 s のとき位相は 120π × 1/480 = π/4 で、sin(π/4) = 1/√2 より i = 4√2 × 1/√2 = 4 A。t = 0 から位相 π/4 までは sin が単調増加するので、これが t = 0 以降に初めて 4 A となる時刻である。"
+      },
+      "figureDescription": "図なし(本問は問題文と数式のみで構成される)。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題文・選択肢の判読および計算に不確実な点はない。原本ページには実施年度・試験回の表記がなく(ページ下部の表記は「- 8 -」「T1−R 011」のみ)、本ページのみから出題年度は特定できない。政府等の一次資料URLは特定できていないため記載していない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        11
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1883,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11239579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 533,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0630d469389d5e24a311c43e7d993f4b07d145de9719ad828ec14c7b7e7275c5",
+  "inputRequestSha256": "0c3ece71c45d99d8eba71a91d6e57f2458b5da8f209ff862ba3bedc841b5e1ae",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p11.png": "efd6e3d71e5b5b3fadca9bbc2198810bebe8925d950b1b88ee9baafdcaea37bd"
+  }
+}

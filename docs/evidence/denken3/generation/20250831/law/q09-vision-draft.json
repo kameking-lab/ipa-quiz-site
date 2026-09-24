@@ -1,0 +1,211 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，「電気設備技術基準の解釈」に基づく低圧屋内配線の金属ダクト工事に関する記述である。\n\na）ダクトに収める絶縁電線の断面積（絶縁被覆の断面積を含む。）の総和は，ダクトの内部断面積の (ア) %以下であること。ただし，電光サイン装置，出退表示灯その他これらに類する装置又は制御回路等（自動制御回路，遠方操作回路，遠方監視装置の信号回路その他これらに類する電気回路をいう。）の配線のみを収める場合は， (イ) %以下とすることができる。\nb）ダクト相互は，堅ろうに，かつ， (ウ) に完全に接続すること。\nc）ダクトを造営材に取り付ける場合は，ダクトの支持点間の距離を3m（取扱者以外の者が出入りできないように措置した場所において，垂直に取り付ける場合は，6m）以下とし，堅ろうに取り付けること。\nd）低圧屋内配線の (エ) 電圧が300V以下の場合は，ダクトには，D種接地工事を施すこと。\ne）低圧屋内配線の (エ) 電圧が300Vを超える場合は，ダクトには，C種接地工事を施すこと。ただし， (オ) 防護措置（金属製のものであって，防護措置を施すダクトと (ウ) に接続するおそれがあるもので防護する方法を除く。）を施す場合は，D種接地工事によることができる。\n\n上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 20　(イ) 50　(ウ) 電気的　(エ) 使用　(オ) 接触",
+        "2": "(ア) 32　(イ) 48　(ウ) 電気的　(エ) 対地　(オ) 簡易接触",
+        "3": "(ア) 32　(イ) 48　(ウ) 機械的　(エ) 使用　(オ) 接触",
+        "4": "(ア) 32　(イ) 48　(ウ) 機械的　(エ) 使用　(オ) 簡易接触",
+        "5": "(ア) 20　(イ) 50　(ウ) 電気的　(エ) 対地　(オ) 簡易接触"
+      },
+      "officialAnswer": "1",
+      "explanation": "法規科目の注意書き注3により、本問は令和7年4月1日現在効力のある「電気設備の技術基準の解釈」に基づく。令和6年10月22日改正版の附則一覧では、その改正（20241004保局第1号）は令和6年10月22日施行とされている。また、令和7年11月20日改正の統合版（試験の基準版より後の版であり、ここでは改正履歴と附則一覧の確認にのみ用いる）では、次の改正（20251104保局第2号）が令和7年11月20日施行とされている。したがって試験の基準版は令和6年10月22日改正版であり、以下はこの版の第162条（金属ダクト工事）による。\n・第1項第一号：電線は絶縁電線（屋外用ビニル絶縁電線を除く。）であること（問題文a)の「絶縁電線」と整合する）。\n・第1項第二号：ダクトに収める電線の断面積（絶縁被覆の断面積を含む。）の総和は、ダクトの内部断面積の20%以下であること。ただし、電光サイン装置、出退表示灯その他これらに類する装置又は制御回路等の配線のみを収める場合は、50%以下とすることができる。→ (ア) 20、(イ) 50\n・第3項第一号：ダクト相互は、堅ろうに、かつ、電気的に完全に接続すること。→ (ウ) 電気的\n・第3項第二号：ダクトを造営材に取り付ける場合は、支持点間の距離を3m（取扱者以外の者が出入りできないように措置した場所において、垂直に取り付ける場合は、6m）以下とし、堅ろうに取り付けること（問題文c)）。\n・第3項第七号：低圧屋内配線の使用電圧が300V以下の場合は、ダクトにD種接地工事を施すこと。→ (エ) 使用\n・第3項第八号：低圧屋内配線の使用電圧が300Vを超える場合は、ダクトにC種接地工事を施すこと。ただし、接触防護措置（金属製のものであって、防護措置を施すダクトと電気的に接続するおそれがあるもので防護する方法を除く。）を施す場合は、D種接地工事によることができる。→ (オ) 接触（e)の括弧内の(ウ)も「電気的」となり、b)と一致する。）\n\nよって、(ア)20、(イ)50、(ウ)電気的、(エ)使用、(オ)接触の組合せである(1)が正しい。",
+      "choiceExplanations": {
+        "1": "正しい。(ア)20、(イ)50、(ウ)電気的、(エ)使用、(オ)接触のすべてが、解釈第162条第1項第二号及び第3項第一号・第七号・第八号の規定と一致する。",
+        "2": "誤り。(ウ)電気的は正しいが、(ア)32、(イ)48は第162条第1項第二号の規定値（20%、50%）ではない。(エ)も誤りで、第3項第七号・第八号で接地工事の区分の基準とされているのは「対地電圧」ではなく「使用電圧」である。(オ)も誤りで、第3項第八号でD種接地工事によることができる条件は「簡易接触防護措置」ではなく「接触防護措置」である。",
+        "3": "誤り。(エ)使用、(オ)接触は正しいが、(ア)32、(イ)48は第162条第1項第二号の規定値（20%、50%）と異なる。(ウ)も誤りで、第3項第一号ではダクト相互を「機械的」ではなく「電気的」に完全に接続することとされている。",
+        "4": "誤り。(エ)使用は正しいが、(ア)32、(イ)48は第162条第1項第二号の規定値（20%、50%）と異なる。(ウ)は「機械的」ではなく「電気的」である（第3項第一号）。(オ)も「簡易接触防護措置」ではなく「接触防護措置」である（第3項第八号）。",
+        "5": "誤り。(ア)20、(イ)50、(ウ)電気的は正しい。しかし(エ)は、第3項第七号・第八号で接地工事の区分の基準とされているのが「対地電圧」ではなく「使用電圧」であるため誤り。(オ)も、D種接地工事によることができる条件は「簡易接触防護措置」ではなく「接触防護措置」であるため誤り（第3項第八号）。"
+      },
+      "figureDescription": "図なし。選択肢(1)～(5)は、行に(1)～(5)、列に(ア)～(オ)を配した表形式で示されている。",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf",
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        13
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3478,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1442958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1316,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ca09ea5a84468fda761f5b1b4e0d211d11c5f82e27f0e9d27e493f67212f421c",
+  "inputRequestSha256": "48b7540f88b607df8a51fc72992398d6f7b5488ee6f1e102c8c6cf96b4081010",
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p13.png": "99f9f280579f40fc38cdbb04b9f0691be4f0c4173c180dd6af791bacc9a7e606"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4166,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 114038,
+          "webSearchRequests": 0,
+          "costUSD": 0.9958878,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1778,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b1e3e2fc6787b2cc4ba49d11e03f1b7929996a808e2ed70ce47cba6d9d7a6e2f",
+      "inputRequestSha256": "aa2e544ec9f24f76622a494141a2d3a19d5ca3344563914e8b202d91ea78d9f4",
+      "previousDraftSha256": "a400c593bfd48490e5bbf37f6f85ce2bfe67348159f08af108d0f28cd8428780",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "bf671c88795eafb56af8643fe05130016cc542b0e17a99df3d20adfbb17d8a0d",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-law-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "811410d4d8475274c49d556aa41eeb534e5f019534d7574bdf4f58ecdfba71eb",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "8ae565cedbdf3315eef21dbc4ec309e9de14cd3603b452582d559e68a7e20312",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "1891e6f9347719abf32ae8b996a33399786837a991c415cd411ebf85ffbc077d",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "4be13bddc05b0b2709d10c655787e2a89927b5ec5008ad811bc3a29e5ecdd406",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p239.png": "a5f0b56fa1217ccfd1294a5feb2df8cc07e0854efb66d245f40d8ea9e85cfb65",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p036.png": "1731a870a9d67e1711de218cd737d61bce2c0c8a929850377b3d1094a714925f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p037.png": "cfa15172d9db47c41b218f2cfdbd456d0b8b8f528ab3eef783912940edb6a0fe",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p038.png": "2e16ff65d55bc89261fc575d414a166146f05f6e80eb20c1e2bee90d8254a83c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p039.png": "c566de610041cabb4d7764654b64708223fe08595289834d0279013bce987f77",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p080.png": "7195dd99c52cd0e0ec7714350389aa9ebb13ec26873f36c8c7d5f20fa0663f47",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p081.png": "203e36d8415245ed5d8b83bb0591a171f0c12c5bff9d425144f505cb52b96588",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p117.png": "f28b8b0c2236a5c470040f064421ded9a158b28095699f8aecc321c8fe9a801b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p118.png": "f37911aa29058224a926503f5965330784be164397507971bfbfcdbb57644fc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p119.png": "48c819d9778ebec10ff39b6d4ded2c890fe3b7328a092607270b7340cfcddf31",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p120.png": "73bb3052f11d472ddb478c2044195ab43bb4669458e0a3b02e37daac48db4400",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p157.png": "11ba3ee957fed2080be9eed97c606b7ed7e1b24c0fa7763038a647117564ce35",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p158.png": "c72a4e0009f96a11fe81c3a8fb2035260442547213d4fb46a65a87030f67a9e6",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p164.png": "d308331d55ad51391eb6aefe6a89a6ba7f78e4f074a982cd49cbb3e0b65433d5",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p165.png": "117afe2d9b750fc6a2fee30883342f939f1e22821ee884f55e856651a2895648",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p205.png": "79790d01c4ec3635837bc709df1fbc2e547e7df37e3de130e5f429dcca6d2fec",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p206.png": "f9fb04325fc9cdee929f2b9b351671093c393972a3fe5356e87aab9aa8bf3c9a",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p216.png": "f75393bddb3362be4619b1aa17de028f5d65974313007f1d401ca17d126cde90",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p217.png": "6feb7fc6958b0ae711f638c3c0b1e301f29e0faab029eef6698204c00b668d9f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p225.png": "a8fdb597e4d8a27ca2b19089e000fd995a043d9e1cb2908d71089b535f47cb06",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p226.png": "025f3198d25cf37b34d832e2926c366fb77197afc68e1632341f63c4746a1f63",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p237.png": "9b5f86d3ee58770d3715ead89a472eb5bf8edf9d95f6fa3e09099e54f07d7722"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6746,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 114778,
+          "webSearchRequests": 0,
+          "costUSD": 1.0534078,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4110,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "c621ca2ffc57e2d91e24cc23642212be15bdb224c4510d9f26be2b9f08e48202",
+      "inputRequestSha256": "2d210d29c12e1c65d81dcdd6fbc5cd481337fdd54ebfdb09eba25164c25c9d94",
+      "previousDraftSha256": "772c0867640abf8a23afe4abed0025e5b18c2b483f8ca4b44d4540fb48c3c5cc",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q09-vision-draft-v2.json",
+      "answeredReviewSha256": "f06654020cef605990fd80342adb4fcf03eea2cc1d838645674f764acd8632a4",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q09-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-law-s2-q09-opus.json",
+      "answeredStrictReceiptSha256": "d59e338d6538a47115017818e8dd33b43b32fc42ea32ee6dab62c2ef6243545d",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "8ae565cedbdf3315eef21dbc4ec309e9de14cd3603b452582d559e68a7e20312",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "1891e6f9347719abf32ae8b996a33399786837a991c415cd411ebf85ffbc077d",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "4be13bddc05b0b2709d10c655787e2a89927b5ec5008ad811bc3a29e5ecdd406",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p239.png": "a5f0b56fa1217ccfd1294a5feb2df8cc07e0854efb66d245f40d8ea9e85cfb65",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p036.png": "1731a870a9d67e1711de218cd737d61bce2c0c8a929850377b3d1094a714925f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p037.png": "cfa15172d9db47c41b218f2cfdbd456d0b8b8f528ab3eef783912940edb6a0fe",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p038.png": "2e16ff65d55bc89261fc575d414a166146f05f6e80eb20c1e2bee90d8254a83c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p039.png": "c566de610041cabb4d7764654b64708223fe08595289834d0279013bce987f77",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p080.png": "7195dd99c52cd0e0ec7714350389aa9ebb13ec26873f36c8c7d5f20fa0663f47",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p081.png": "203e36d8415245ed5d8b83bb0591a171f0c12c5bff9d425144f505cb52b96588",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p117.png": "f28b8b0c2236a5c470040f064421ded9a158b28095699f8aecc321c8fe9a801b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p118.png": "f37911aa29058224a926503f5965330784be164397507971bfbfcdbb57644fc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p119.png": "48c819d9778ebec10ff39b6d4ded2c890fe3b7328a092607270b7340cfcddf31",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p120.png": "73bb3052f11d472ddb478c2044195ab43bb4669458e0a3b02e37daac48db4400",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p157.png": "11ba3ee957fed2080be9eed97c606b7ed7e1b24c0fa7763038a647117564ce35",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p158.png": "c72a4e0009f96a11fe81c3a8fb2035260442547213d4fb46a65a87030f67a9e6",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p164.png": "d308331d55ad51391eb6aefe6a89a6ba7f78e4f074a982cd49cbb3e0b65433d5",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p165.png": "117afe2d9b750fc6a2fee30883342f939f1e22821ee884f55e856651a2895648",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p205.png": "79790d01c4ec3635837bc709df1fbc2e547e7df37e3de130e5f429dcca6d2fec",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p206.png": "f9fb04325fc9cdee929f2b9b351671093c393972a3fe5356e87aab9aa8bf3c9a",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p216.png": "f75393bddb3362be4619b1aa17de028f5d65974313007f1d401ca17d126cde90",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p217.png": "6feb7fc6958b0ae711f638c3c0b1e301f29e0faab029eef6698204c00b668d9f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p225.png": "a8fdb597e4d8a27ca2b19089e000fd995a043d9e1cb2908d71089b535f47cb06",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p226.png": "025f3198d25cf37b34d832e2926c366fb77197afc68e1632341f63c4746a1f63",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p237.png": "9b5f86d3ee58770d3715ead89a472eb5bf8edf9d95f6fa3e09099e54f07d7722"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

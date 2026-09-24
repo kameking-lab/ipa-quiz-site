@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3476,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13377,
+      "webSearchRequests": 0,
+      "costUSD": 0.1767998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2014,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9903f05ef937bdb24b0995ede657f0b10b7f1c6a4509493717c45d58e2738a4d",
+  "inputRequestSha256": "b2e97944cfb96d8d007a27b5763925dc29b6679c9487cd7ad7295ac9e55d8453",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "7cf176f24c05abccd66f8baa0129d367146b52730779cf11b28bb01eafd9490f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p17.png": "8e0ee2c49669b1e19d1d4f008a2a65241946ea30a7856531108698850426d26b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "8d97c58a0e6f88beec827464e29840a768cd04c298cf56986dbf02c95e5d1d5d",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「SF₆は電気陰性度が大きく，電子を捕獲しやすい」は用語が不正確である。電気陰性度は結合中の原子に定義される量で、SF₆分子（気体）の性質を表す用語ではない。正しくは「SF₆は電気的負性気体であり，電子付着性（電子を捕獲して負イオンになる性質）が強い」とする。choiceExplanations(1)は「電子親和性」と書いており、総合解説と用語が揃っていない。両者を「電子付着性（電気的負性）」に統一すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（頁下部「- 14 -」「T1－D 017」）の問14の問題文と照合した。「六ふっ化硫黄(SF₆)ガスに関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」は候補の問題文と一致する。",
+        "選択肢(1)～(5)を原図と一字ずつ照合した。いずれも文言は一致する。(3)の読点が原図の半角「,」から全角「，」に変わっている点は表記の整形にとどまり、意味は変わらない。",
+        "公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞問14は解答2・配点5である。manifestの公式正答単位 {question:14, part:null, answer:\"2\", points:5} と、候補の officialAnswer=\"2\"・scoringPoints=5 はいずれもこれと一致する。",
+        "科目の整合: 問14の公式正答は理論が4、機械が3、電力が2である。法規には問14がない。正答2と一致するのは電力だけであり、SF₆という出題内容も電力科目の典型である。よって subject=power は整合する。",
+        "正答(2)の検算: SF₆は無色・無臭・無毒（純ガスの場合）・不燃性で、化学的に安定している。「特有の臭いがある」は誤りであり、誤りを選ぶ問題の正答となる。前半の比重の記述は正しい。分子量はS 32.06 + F 19.00×6 ≒ 146.1、空気の平均分子量は約28.97で、比は約5.0倍になる。",
+        "誤答肢(1)の検証: 消弧能力が空気より優れるという記述は正しい。遮断器の消弧媒体に用いられることとも整合する。",
+        "誤答肢(3)の検証: SF₆は塩素・臭素を含まないため、オゾン層破壊係数は0である。GWP（100年値）はIPCC AR4で22,800、AR5で23,500、AR6で約24,300であり、「2万倍を超え」はどの版の値でも成り立つ。京都議定書の対象6ガスにも含まれる。",
+        "誤答肢(4)の検証: GCB・GIS・ガス絶縁変圧器の絶縁媒体としての利用は事実どおりで、正しい記述である。",
+        "誤答肢(5)の検証: 同じ圧力での絶縁破壊電圧は空気の約2～3倍である。加圧により絶縁耐力が高まり、機器を小形化できる。いずれも正しい。",
+        "図の確認: 原図に図はなく、文字だけで構成されている。figureDescription・figureUrls=[]・choiceFigureUrls={} は原図と整合する。",
+        "参考資料の確認: officialReferenceUrls は空であり、原頁で裏付けが必要な独立主張はない。uncertainty にある数値（2～3倍、2万倍超）は一般的な参考値で、正誤判定には影響しない。この点は検算で確認した。",
+        "reviewedFromPage=[17] は、原図フッタの通し番号「017」と印刷頁「- 14 -」から見てPDF 17頁と整合する。"
+      ]
+    }
+  ]
+}

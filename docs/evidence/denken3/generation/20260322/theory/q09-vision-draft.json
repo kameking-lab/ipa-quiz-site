@@ -1,0 +1,98 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図1のような抵抗 R [Ω] と誘導性リアクタンス X [Ω] との直列回路がある。この回路に正弦波交流電圧 E＝100 V を加えたとき，回路に流れる電流は 10 A であった。この回路に図2のように，更に抵抗 11 Ω を直列接続したところ，回路に流れる電流は 5 A になった。抵抗 R [Ω] の値として，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "16.7",
+        "2": "5.5",
+        "3": "11.4",
+        "4": "8.6",
+        "5": "8.1"
+      },
+      "officialAnswer": "5",
+      "explanation": "【図1】インピーダンスの大きさは |Z₁| = E / I₁ = 100 / 10 = 10 Ω。R と X の直列なので\n R² + X² = 10² = 100 …①\n\n【図2】11 Ω を直列に追加すると抵抗分は R + 11 となり、|Z₂| = E / I₂ = 100 / 5 = 20 Ω。したがって\n (R + 11)² + X² = 20² = 400 …②\n\n②－①で X² を消去すると\n (R + 11)² − R² = 300\n 22R + 121 = 300\n R = 179 / 22 ≈ 8.14 Ω\n\nよって最も近いのは 8.1 Ω（(5)）。\n\n（検算）丸める前の R = 179/22 を使う。\n X² = 100 − (179/22)² = 16359/484 ≈ 33.80、X ≈ 5.81 Ω。\n (R + 11)² = (421/22)² = 177241/484 ≈ 366.20。\n 図2：(R + 11)² + X² = 193600/484 = 400 となり、|Z₂| = 20 Ω ちょうど、I = 100 / 20 = 5 A で条件と一致する。\n\n（補足）図1で |Z₁| = √(R² + X²) = 10 Ω であり、誘導性リアクタンス X は 0 より大きいので、R は 10 Ω より小さくなければならない（R < 10 Ω）。",
+      "choiceExplanations": {
+        "1": "誤り。R = 16.7 Ω は図1のインピーダンスの大きさ |Z₁| = 10 Ω を上回る。R² + X² = 100 を満たすには X² < 0 が必要となり、成立しない。",
+        "2": "誤り。R = 5.5 Ω とすると ① より X² = 100 − 30.25 = 69.75。図2のインピーダンスは √(16.5² + 69.75) = √342 ≈ 18.5 Ω、電流は 100 / 18.5 ≈ 5.4 A となり、5 A に一致しない。",
+        "3": "誤り。R = 11.4 Ω は |Z₁| = 10 Ω を上回るため、R² + X² = 100 を満たす実数の X が存在せず、成立しない。",
+        "4": "誤り。R = 8.6 Ω とすると ① より X² = 100 − 73.96 = 26.04。図2のインピーダンスは √(19.6² + 26.04) = √410.2 ≈ 20.25 Ω、電流は 100 / 20.25 ≈ 4.94 A となり、選択肢(5)の 8.1 Ω のほうが条件（5 A）により近い。計算上の R = 179/22 ≈ 8.14 Ω に最も近いのも 8.1 である。",
+        "5": "正しい。①②から R = 179 / 22 ≈ 8.14 Ω が得られ、最も近い値は 8.1 Ω である。R = 8.1 Ω で検算すると X² = 100 − 65.61 = 34.39、図2のインピーダンスは √(19.1² + 34.39) = √399.2 ≈ 19.98 Ω、電流は約 5.0 A となり条件を満たす。"
+      },
+      "figureDescription": "図1と図2の2つの回路図が上下に並び、それぞれの下にキャプション「図1」「図2」がある。\n図1：長方形の閉回路。下辺中央に交流電源（丸の中に～記号）があり、その下に「E＝100 V」と表記。上辺には左から順に抵抗記号「R［Ω］」、コイル記号「X［Ω］」が直列に配置されている。上辺左端の導線の上に右向きの矢印と「10 A」の表記があり、回路電流を示す。\n図2：図1と同じ構成の閉回路で、上辺の X［Ω］のコイルの右側に抵抗記号「11 Ω」が追加され、左から R［Ω］・X［Ω］・11 Ω の3素子が直列に並ぶ。下辺中央の交流電源の下に「E＝100 V」と表記。上辺左端の導線の上に右向きの矢印と「5 A」の表記がある。\n各素子がすべて直列に接続されていること、および各回路の電流値は問題文でも述べられている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        12,
+        13
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2693,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11351,
+      "webSearchRequests": 0,
+      "costUSD": 0.1449318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 879,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2bd8a3806db75230df793a6f1474c4f03e9f5b4a0833b04f466916f0aa36f735",
+  "inputRequestSha256": "d4a5956eff9160ac46d5bc7c62bb00cce9eeb211ed61c2b11d7f597cf3257038",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p12.png": "03b86990d644ffa5943cc530e56b1ecb0c82a60e2db653c5211f156e9436f862",
+    "data/raw_pdfs/denken3/review/20260322/theory/p13.png": "ab1bd6daba85b8979bcde3f21178befb196cf1ce6c1114ae9d34bdb7c786ecac"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2778,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16078,
+          "webSearchRequests": 0,
+          "costUSD": 0.1844478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 945,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a3d6d187432cc0a928bb980eeacfcb42e132c97cc91037afb1fa3d0f8512f1d4",
+      "inputRequestSha256": "6a4688e4b067ed678197c999823d18132eb2aade3ba6513fd102ab5f0cc59200",
+      "previousDraftSha256": "c6f2fe90d92fd62d617c2d1b1ea10cfacd19c09cd3df3d92669d44bbb0c0f886",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "cb676f091dff5e7a091ee8dd243c8755c8a275640bd40e21683f981223fb96fc",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "76ecd65a9078201068234fd7c3228e7cf98effd7dc9a51ed2fc6ca9accc59ef9",
+      "figureSha256": {
+        "20260322-theory-q09-fig1": "cf834ef0dba7034ee9681340ae18f05b8b26eff681b7db47edbb28d1b42186b4"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

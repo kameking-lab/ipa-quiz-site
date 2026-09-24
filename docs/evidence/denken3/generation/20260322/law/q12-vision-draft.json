@@ -1,0 +1,170 @@
+{
+  "questionNumber": 12,
+  "sharedContext": "「電気設備技術基準の解釈」に基づいて，最大使用電圧が6.9 kVの電路に接続する，導体断面積100 mm²，長さ800 mの高圧CVケーブル（単心）の絶縁耐力試験を交流で実施する場合について，次の(a)及び(b)に答えよ。\nただし，周波数は50 Hz，ケーブルの対地静電容量は1 km当たり0.45 μFとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "「電気設備技術基準の解釈」に基づいて，最大使用電圧が6.9 kVの電路に接続する，導体断面積100 mm²，長さ800 mの高圧CVケーブル（単心）の絶縁耐力試験を交流で実施する場合について，次の(a)及び(b)に答えよ。\nただし，周波数は50 Hz，ケーブルの対地静電容量は1 km当たり0.45 μFとする。\n\n(a) ケーブルに試験電圧を印加した場合の充電電流[A]の値として，最も近いのは次のうちどれか。",
+      "choices": {
+        "1": "0.78",
+        "2": "1.17",
+        "3": "1.46",
+        "4": "2.34",
+        "5": "3.51"
+      },
+      "officialAnswer": "2",
+      "explanation": "【試験電圧】「電気設備技術基準の解釈」第15条第一号及び15-1表により，最大使用電圧が7,000 V以下の交流の電路の試験電圧は最大使用電圧の1.5倍の交流電圧であり，これを電路と大地との間に連続して10分間加えたとき，これに耐える性能を有することとされている。\n  試験電圧 V = 6.9 kV × 1.5 = 10.35 kV = 10,350 V\n\n【対地静電容量】長さ800 m = 0.8 kmなので\n  C = 0.45 μF/km × 0.8 km = 0.36 μF = 0.36 × 10⁻⁶ F\n\n【充電電流】単心ケーブルでは，試験電圧は導体と金属遮へい層（大地側）の間に加わる。\n  I = ωCV = 2π × 50 × 0.36 × 10⁻⁶ × 10,350\n    ≒ 314.16 × 0.36 × 10⁻⁶ × 10,350\n    ≒ 1.170 A\n\nよって最も近いのは1.17 Aで，正答は(2)。\nなお，導体断面積100 mm²は充電電流の計算には用いない。",
+      "choiceExplanations": {
+        "1": "誤り。0.78 Aは，最大使用電圧6.9 kVをそのまま印加電圧として I = 2π × 50 × 0.36 × 10⁻⁶ × 6,900 ≒ 0.780 A と計算した値に一致する。交流で試験する場合の試験電圧は最大使用電圧の1.5倍の10.35 kVであり，正しい充電電流は約1.17 Aである。",
+        "2": "正しい。試験電圧10.35 kV（6.9 kV × 1.5），静電容量0.36 μF（0.45 μF/km × 0.8 km），周波数50 Hzから，I = 2π × 50 × 0.36 × 10⁻⁶ × 10,350 ≒ 1.17 A となる。",
+        "3": "誤り。1.46 Aは，静電容量を長さ800 mに換算せず，1 km分の0.45 μFのまま I = 2π × 50 × 0.45 × 10⁻⁶ × 10,350 ≒ 1.463 A と計算した値に一致する。ケーブル長は0.8 kmなので静電容量は0.45 μF/km × 0.8 km = 0.36 μFであり，正しい充電電流は約1.17 Aである。",
+        "4": "誤り。2.34 Aは正しい値1.17 Aの2倍で，交流試験電圧の2倍にあたる20.7 kV（第15条第二号でケーブルを使用する交流の電路に認められる直流試験電圧の値）を交流の式 I = ωCV に代入した値に一致する。本問は交流で試験するので印加電圧は10.35 kVであり，充電電流は約1.17 Aである。",
+        "5": "誤り。3.51 Aは正しい値1.17 Aの3倍で，静電容量を3倍の1.08 μFとして計算した値（3心分を合算したような計算）に一致する。本問のケーブルは単心であり，静電容量0.36 μFから求まる充電電流は約1.17 Aである。"
+      },
+      "figureDescription": "",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    },
+    {
+      "part": "b",
+      "question": "「電気設備技術基準の解釈」に基づいて，最大使用電圧が6.9 kVの電路に接続する，導体断面積100 mm²，長さ800 mの高圧CVケーブル（単心）の絶縁耐力試験を交流で実施する場合について，次の(a)及び(b)に答えよ。\nただし，周波数は50 Hz，ケーブルの対地静電容量は1 km当たり0.45 μFとする。\n\n(b) 図のような試験回路でケーブルの絶縁耐力試験を行う場合，試験用変圧器の容量を5 kV·Aとしたとき，補償リアクトルの必要最少の設置台数として，正しいのは次のうちどれか。\nただし，試験電圧を印加したとき，1台の補償リアクトルに流すことができる電流（電流容量）は270 mAとする。",
+      "choices": {
+        "1": "1台",
+        "2": "2台",
+        "3": "3台",
+        "4": "4台",
+        "5": "5台"
+      },
+      "officialAnswer": "3",
+      "explanation": "【試験用変圧器の高圧側定格電流】\n  容量5 kV·A，高圧側11,000 Vより\n  Iₜ = 5,000 / 11,000 ≒ 0.4545 A\n\n【補償が必要な電流】(a)より，試験電圧10,350 V（第15条15-1表による最大使用電圧の1.5倍）を印加したときの充電電流（進み電流）は I_C ≒ 1.170 A。変圧器だけではこれを供給できないため，ケーブルと並列に接続した補償リアクトルの遅れ電流 I_L で進み電流を打ち消し，変圧器が供給する電流を定格以内に収める。\n  I_C − I_L ≦ Iₜ\n  I_L ≧ 1.170 − 0.4545 ≒ 0.716 A\n\n【必要台数】1台あたりの電流容量は270 mA = 0.27 Aなので\n  n ≧ 0.716 / 0.27 ≒ 2.65\n台数は整数なので，必要最少台数は3台。正答は(3)。\n\n（確認）3台のとき I_L = 0.81 A，変圧器電流 = 1.170 − 0.81 = 0.36 A ≦ 0.4545 A で定格以内。2台では 1.170 − 0.54 = 0.63 A となり定格を超える。\n\n※補償リアクトルの電流は純粋な遅れ電流，ケーブルの充電電流は純粋な進み電流とみなし，抵抗分は無視している。なお，変圧器が供給できる電流を試験電圧基準で 5,000 / 10,350 ≒ 0.483 A としても，必要補償電流 ≒ 0.687 A，0.687 / 0.27 ≒ 2.55 となり，必要最少台数は同じく3台である。",
+      "choiceExplanations": {
+        "1": "誤り。1台では補償電流0.27 Aで，変圧器が供給すべき電流は 1.170 − 0.27 ≒ 0.90 A となり，変圧器の定格電流約0.4545 A（5,000 / 11,000）を超える。",
+        "2": "誤り。2台では補償電流0.54 Aで，変圧器が供給すべき電流は 1.170 − 0.54 ≒ 0.63 A となり，変圧器の定格電流約0.4545 Aを超える。",
+        "3": "正しい。必要な補償電流は 1.170 − 0.4545 ≒ 0.716 A，0.716 / 0.27 ≒ 2.65 より3台が必要最少。3台で補償電流0.81 A，変圧器電流 ≒ 0.36 A となり定格以内に収まる。",
+        "4": "誤り。4台（補償電流1.08 A）でも変圧器電流は 1.170 − 1.08 ≒ 0.09 A となり定格以内だが，3台で条件を満たすため必要最少台数ではない。",
+        "5": "誤り。5台（補償電流1.35 A）では補償電流が充電電流を上回り，変圧器電流は差の約0.18 A（遅れ）で定格以内だが，3台で条件を満たすため必要最少台数ではない。"
+      },
+      "figureDescription": "設問(b)の試験回路図（電源から被試験ケーブル端部までの回路全体）。左端に交流電源（円内に～の記号）があり，2本の線が2極の開閉器を経て右へ伸びる。上側の線には電流計（Ⓐ）が直列に入り，その右で2線間に電圧計（Ⓥ）が接続され，試験用変圧器の一次側に至る。試験用変圧器は枠で囲まれた2つのコイル記号で描かれ，上方にラベル「試験用変圧器」「110/11 000 V，5 kV·A」がある。変圧器の枠の左下の点から下方へ線が伸び，接地記号に接続されている。変圧器の二次側上側の端子からの線は右へ水平に伸び，接続点を経て被試験ケーブルの導体に接続される。この接続点から下方へ補償リアクトル（コイル記号の左右に一点鎖線の括弧状の線が描かれ，縦書きのラベル「補償リアクトル」）が接続される。変圧器の二次側下側の端子からの線は右へ出てから下方へ向かい，電流計（Ⓐ）を経て接続点に至り，この接続点に補償リアクトルの下端からの線が接続される。その下に2つ目の電流計（Ⓐ）があり，さらに下の接続点は，下方の接地記号に接続されるとともに，右へ伸びてから斜め上に向かい，被試験ケーブルの金属遮へい層に接続される。右端の被試験ケーブルには，端部の各部を矢印で示すラベル「導体」「絶縁体」「金属遮へい層」と，ケーブル本体を示すラベル「外装」があり，上方に「被試験ケーブル」のラベルがある。",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20241022-2.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5629,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.1875398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1953,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e2d1ee75da56e48e1aed045c32bba8b0468e63406119d0f1721ded77ddfd7ecd",
+  "inputRequestSha256": "6f644c048ca8582b1458766556ddb2d41ad956141e4ab14addb312ec8935c83c",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p20.png": "0b223553a402bf0fd2a64a26125277c0b5fbd97de39a882482b009cbbb0cd6bb"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 9908,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 115316,
+          "webSearchRequests": 0,
+          "costUSD": 1.1209518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 6106,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "0b3be6585f9382a22f1a66236dc1d13540a76017b332615d563cfe6b989ffcf7",
+      "inputRequestSha256": "0095b1f7b756214feec14a52e7f64d278d7a7fc7244dfaf04f85a4bdb6fb07d2",
+      "previousDraftSha256": "4a78de139c926caeca6503a5c2a18ed981189f2359ef8c30b4a2d1e322979ffe",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q12-vision-draft-v1.json",
+      "answeredReviewSha256": "71c2aa5901b3df68903031805ec04713d8f5c41d9ba573605123fd53d79b8e18",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q12-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-law-q12-fig1": "3d85159c0f02bca65b6d1e5be9c198c2dd786594bf759b74a4accaa8678d9836"
+      },
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20251120.pdf": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+          "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p001.png": "25d3a579f08558ed72f0461fcbbda4f13512778ffa6cbf2b94674d8851466dc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p024.png": "8ae565cedbdf3315eef21dbc4ec309e9de14cd3603b452582d559e68a7e20312",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p025.png": "ed107c8588894ba3d3e04b67c5eac902e5363232acc3ac04563296dc9fbcd7cb",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p026.png": "1891e6f9347719abf32ae8b996a33399786837a991c415cd411ebf85ffbc077d",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p031.png": "6a3bc359ec8f6f11508ff1ca4546a266b5c991530e7d50c4b02d03791284f536",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p032.png": "4be13bddc05b0b2709d10c655787e2a89927b5ec5008ad811bc3a29e5ecdd406",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20251120-p239.png": "a5f0b56fa1217ccfd1294a5feb2df8cc07e0854efb66d245f40d8ea9e85cfb65",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p036.png": "1731a870a9d67e1711de218cd737d61bce2c0c8a929850377b3d1094a714925f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p037.png": "cfa15172d9db47c41b218f2cfdbd456d0b8b8f528ab3eef783912940edb6a0fe",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p038.png": "2e16ff65d55bc89261fc575d414a166146f05f6e80eb20c1e2bee90d8254a83c",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p039.png": "c566de610041cabb4d7764654b64708223fe08595289834d0279013bce987f77",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p080.png": "7195dd99c52cd0e0ec7714350389aa9ebb13ec26873f36c8c7d5f20fa0663f47",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p081.png": "203e36d8415245ed5d8b83bb0591a171f0c12c5bff9d425144f505cb52b96588",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p117.png": "f28b8b0c2236a5c470040f064421ded9a158b28095699f8aecc321c8fe9a801b",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p118.png": "f37911aa29058224a926503f5965330784be164397507971bfbfcdbb57644fc4",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p119.png": "48c819d9778ebec10ff39b6d4ded2c890fe3b7328a092607270b7340cfcddf31",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p120.png": "73bb3052f11d472ddb478c2044195ab43bb4669458e0a3b02e37daac48db4400",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p157.png": "11ba3ee957fed2080be9eed97c606b7ed7e1b24c0fa7763038a647117564ce35",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p158.png": "c72a4e0009f96a11fe81c3a8fb2035260442547213d4fb46a65a87030f67a9e6",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p164.png": "d308331d55ad51391eb6aefe6a89a6ba7f78e4f074a982cd49cbb3e0b65433d5",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p165.png": "117afe2d9b750fc6a2fee30883342f939f1e22821ee884f55e856651a2895648",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p205.png": "79790d01c4ec3635837bc709df1fbc2e547e7df37e3de130e5f429dcca6d2fec",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p206.png": "f9fb04325fc9cdee929f2b9b351671093c393972a3fe5356e87aab9aa8bf3c9a",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p216.png": "f75393bddb3362be4619b1aa17de028f5d65974313007f1d401ca17d126cde90",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p217.png": "6feb7fc6958b0ae711f638c3c0b1e301f29e0faab029eef6698204c00b668d9f",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p225.png": "a8fdb597e4d8a27ca2b19089e000fd995a043d9e1cb2908d71089b535f47cb06",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p226.png": "025f3198d25cf37b34d832e2926c366fb77197afc68e1632341f63c4746a1f63",
+          "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p237.png": "9b5f86d3ee58770d3715ead89a472eb5bf8edf9d95f6fa3e09099e54f07d7722"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

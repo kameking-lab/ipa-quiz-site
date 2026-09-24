@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2614,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13273,
+      "webSearchRequests": 0,
+      "costUSD": 0.1587278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1394,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0574066491dcf579b41fadf338a26d7a82308a398db6ea48e49b7f6967404f42",
+  "inputRequestSha256": "c1b3953eb865961275ec3fc32af7fc641ef400c2c7056c444360c3459dca813f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "7da9c27e5d71c1c5527526c0c966bced969772db7cba3b15e3b892ac29bbb338"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p05.png": "c466e827967c8856d73d749c5ccb74156588528cde33984eb9a5a9601363a4e4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "2c985e4e65185f6fb5791ca010448504e5e6808f80365d5ec694786f4f38fe27",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（冊子印刷頁「- 2 -」、フッタ「T1－R 005」）と照合した。『真空中にQ[C]の電荷をもつ半径r[m]の球状導体…比誘電率2の絶縁体の液体で満たしたとすると…無限遠点の電位を零電位とする。』は文言・記号・単位 [C]/[m]・比誘電率2・零電位条件のすべてで一致した。差異は記号前後の空白のみで、sourceAttributionの『読みやすく整形』の範囲に収まる。",
+        "選択肢(1)〜(5): 原図の『電位』『電界の強さ』『電束密度』『電気力線の本数』『静電容量』がいずれも『液体を満たす前の2倍になった。』で終わる5肢と、全文一致した。肢番号の対応も一致した。",
+        "公式正答: 試験センター公式解答表『令和7年度 第三種電気主任技術者上期試験解答』＜理論＞問2の解答は5、配点は5である。候補のofficialAnswer=\"5\"、scoringPoints=5、manifest固定単位 {question:2, part:null, answer:\"5\", points:5} と一致した。",
+        "総合解説の検算（ε_r: 1→2、Q一定）:",
+        "・D=Q/(4πr²) はεに依存しないため不変。",
+        "・E=Q/(4πε₀ε_r r²) は1/2倍。",
+        "・V=Q/(4πε₀ε_r r) は1/2倍。",
+        "・電気力線本数 N=Q/ε=Q/(ε₀ε_r) は1/2倍。",
+        "・C=Q/V=4πε₀ε_r r は2倍。",
+        "以上から正しいのは(5)のみで、公式正答と整合する。V=E·r、C=Q/Vの相互関係にも矛盾はない。",
+        "肢別解説: (1)(2)(4)は1/2倍、(3)は不変（1倍）である。各肢で『2倍ではない』理由を当該量の式から正しく示しており、(4)では電束（Q本、ε非依存）との区別も正確である。(5)の正答理由も式C=4πε₀ε_r rに基づき正しい。",
+        "図: 原図に図はなく、解答に図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は適切。",
+        "出典: officialReferenceUrlsは空で、独立主張はない。sourceQuestionPdfUrl（…_q01.pdf、理論冊子）およびsourceAnswerPdfUrl（…_a01.pdf）は、原図の科目コードT1-R・解答表の年度区分（令和7年度上期）・examDate 2025-08-31と相互に矛盾しない。reviewedFromPage=[5] はPDF頁番号として扱い、印刷頁『- 2 -』との差（表紙等による頁ずれ）は矛盾とみなさない。",
+        "uncertainty=\"なし\" および needsReview=false は、上記検証結果と整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2851,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13192,
+      "webSearchRequests": 0,
+      "costUSD": 0.16281980000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1641,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b5a5187b9504ef956178a6186157aa7c8cdc512f2d0da0616e80e74d0be3b12b",
+  "inputRequestSha256": "2f65dd053aa83bc2f697e2dee605cc05f9a47d8c9f7c17e1544e05acb4eeda7a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "a444f5bd9d81b07c614beafd988557fa1fb6d341d57c6c46915b46464aefc2b1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p06.png": "cacb57b7fb737ea0853f03d389de26f78c09b56355ac570aa4e518bf17d12ef4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a0c22d2fffbf8863bafd0ba0d4cd547765c3a7aa47341166c162c7a5136832a7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（頁下部『- 3 -』、刷番『T1－K 006』）の問3『三相かご形誘導機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』と候補questionが字句・句読点（全角カンマ『，』）まで一致。",
+        "選択肢(1)〜(5): 原図の各肢と候補choices 1〜5が全文一致。改行位置以外の差異なし。数式・単位・極性を含む記述はない。",
+        "公式正答: 試験センター公式解答表原図『令和7年度 第三種電気主任技術者上期試験解答』＜機械＞欄の問3は解答4・配点5。manifest固定単位 {question:3, part:null, answer:'4', points:5} と候補の officialAnswer='4'、scoringPoints=5 が一致。",
+        "総合解説: かご形回転子は導体を両端の端絡環で短絡した構造で、スリップリング・ブラシがない。アルミダイカスト回転子は導体と端絡環をアルミ鋳造で一体成形するもので、主に小〜中容量機に用いる。大容量機では銅・銅合金の棒導体を端絡環にろう付けまたは溶接する構造が一般的。以上の説明はいずれも正しく、(4)を誤りとする因果も正答4と整合する。",
+        "肢(1)解説: 巻線形のようなコイル巻線・スリップリング・ブラシがないため構造が簡単で安価、とする理由付けは妥当。巻線形との対比の文脈なので、『巻線がない』の表現に曖昧さはない。",
+        "肢(2)解説: 誘導発電機の原理を正しく説明している。系統から励磁（遅れ無効電力）の供給を受け、同期速度を超えて駆動すると発電する。単独運転ではコンデンサによる自己励磁が必要。小水力・風力での採用例とも整合する。",
+        "肢(3)解説: s=(Ns−N)/Ns で N>Ns のとき s<0 となる。検算上も正しい。",
+        "肢(4)解説: 誤りの理由（アルミダイカストは小〜中容量が主、大容量は銅系棒導体の接合形）が正答肢固有の理由として適切。",
+        "肢(5)解説: 棒導体かご形回転子は絶縁巻線もスリップリングもなく堅牢であり、過酷な使用に耐えるとする理由は妥当。",
+        "図: 原図に図はない。figureDescription『なし』、figureUrls=[]、choiceFigureUrls={} は整合し、解答に図は不要。",
+        "出典: officialReferenceUrls は空で、検証すべき独立主張はない。reviewedFromPage=[6] は添付原図（印字頁『- 3 -』、刷番末尾『006』）と矛盾しない。印字頁3とPDF頁6の差は表紙・注意事項頁によるものと整合する。sourceAttribution の『機械科目 問3』は解答表の＜機械＞問3と一致する。"
+      ]
+    }
+  ]
+}

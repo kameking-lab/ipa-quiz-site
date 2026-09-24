@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5154,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16268,
+      "webSearchRequests": 0,
+      "costUSD": 0.2334878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3274,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bdd586d3c85c0ac2c993807b934f69566b71b3c75b658b3ad14f0d87d994a786",
+  "inputRequestSha256": "40ea1d118eac3911cd858de0653ebb3c5bb58e4d3a57f8e0e3facf4fde1606ae",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "5646c219c462b16c130d46b1def3ba9f834d9e77bc3bc5011e4c5bd4acd14ec7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p06.png": "de867b00ab15012e279ffd204fb1e2e3f18de673f426f9e5b24887b92e81e3a4",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c28e99d4361c917265cef6b603bb4660b972c8cc97993c6df376d9748bd8d037",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "他者被害の類型を「電気工作物の破損等により他者の物件・公共の施設などに被害を与えた事故」と記載しているが、法令の二つの書き方が混ざっている。「公共の財産に被害を与え、道路、公園、学校その他の公共の用に供する施設…の使用を不可能にさせた事故」は改正前の規定の書き方である。「他の物件に損傷を与え、又はその機能の全部又は一部を損なわせた事故」は改正後の規定の書き方と理解される。注3の効力基準日（令和7年4月1日）時点の電気関係報告規則第3条の原文で要件を確定し、総合解説と(5)の肢別解説を正確な要件表現に揃える必要がある。(5)の報告対象という結論は公式正答(4)と整合する。しかし、根拠となる類型の文言が曖昧なままである。",
+        "(4)の根拠「6.6 kV受電の需要設備は主要電気工作物の破損事故として報告が求められる電圧範囲に該当しない」について、閾値が総合解説にも肢別解説にも書かれていない。閾値はuncertainty欄に「一般に1万V以上とされる」とあるだけで、未照合のまま結論の決め手に使われている。原文で閾値（自家用の需要設備の電圧要件）を確認したうえで、解説本文に明記すべきである。",
+        "波及事故の説明では、供給支障の相手方を「一般送配電事業者」のみとしている。現行規定の相手方には、配電事業者・特定送配電事業者も含まれている可能性がある。基準日時点の原文で照合し、必要なら「一般送配電事業者等」と表記する。本問(2)の結論（報告対象）には影響しない。",
+        "(1)の肢別解説は、電気的要因の例として「過熱」を挙げている。条文上の例示は「漏電、短絡、せん絡その他の電気的要因」である。「過熱」は本問事例（過負荷による高熱）に即した言い換えであることが分かる表現にするか、条文どおりの例示に改めるのが望ましい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "解説の法令上の主張は、添付資料（問題原図・注意書き頁・公式解答表）のいずれでも検証できない。未検証の主張は次の3点である。電気関係報告規則第3条の各事故類型の要件、主要電気工作物の破損事故における自家用需要設備の電圧閾値、波及事故の相手方の範囲。officialReferenceUrlsは空で、公式参考資料の原頁も添付されていない。令和7年4月1日時点の同規則原文（e-Gov法令検索等の一次資料）による照合が必要である。",
+        "uncertainty欄は、未照合事項（条文文言、他者被害類型の厳密な文言、1万V閾値）が残り一次資料確認を推奨すると明記している。それにもかかわらずneedsReview=falseになっており、メタデータが自己矛盾している。照合が完了するまではneedsReview=trueとすべきである。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第6頁、頁下部表記「-3-」「T1－H 006」）の問2本文と一字一句照合し、一致を確認した。",
+        "選択肢：(1)〜(5)の全文を原図と照合し、一致を確認した。数値・単位（6.6 kV、100 V）、語句（高圧負荷開閉器、断路器、受電用真空遮断器、構内第1号柱）に相違はない。",
+        "公式正答：試験センター公式解答表「令和7年度 第三種電気主任技術者上期試験解答」〈法規〉問2の解答は4、配点は6である。候補のofficialAnswer=\"4\"・scoringPoints=6、およびmanifest固定の正答単位と一致する。",
+        "出典メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、sourceQuestionPdfUrl（…_q04.pdf）、sourceAnswerPdfUrl（…_a01.pdf）、reviewedFromPage=[6]がmanifestと一致する。sourceAttribution（令和7年度上期 法規 問2）も整合する。",
+        "問題作成基準：注意書き頁の注3により、令和7年4月1日現在効力のある法令に基づく出題であることを確認した。解説の法令照合はこの基準日で行う必要がある。",
+        "図：原図に図表はなく、figureDescription「図なし」、figureUrls・choiceFigureUrlsが空であることは原図と整合する。",
+        "論理構成：(1)電気火災（半焼）、(2)波及事故（3,000 V以上の自家用電気工作物の破損による供給支障）、(3)誤操作による死傷（入院）、(5)他者物件への損傷を報告対象とし、(4)を人身・火災・供給支障・他者被害のいずれもない設備単独損傷で非該当とする因果は、公式正答(4)と矛盾しない。ただし法令文言は添付資料では未検証である。"
+      ]
+    }
+  ]
+}

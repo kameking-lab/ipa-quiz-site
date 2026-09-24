@@ -1,0 +1,229 @@
+{
+  "questionNumber": 10,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，地絡継電装置付き高圧交流負荷開閉器（区分開閉器）の SOG 機能のうち SO 動作に関する記述である。\n\nGR 付 PAS は負荷電流を遮断することができるが，（ア）電流のような大きな電流は遮断できないため，GR 付 PAS の（イ）側から受電用遮断器の間で（ア）事故が起きた場合は，PAS の（ウ）命令を一時的に保存して待機状態となる。\n\n一般送配電事業者の配電用変電所の遮断器が動作することによって，配電線の停電を検出し，無電圧になった状態を確認してから（ウ）動作を行う。したがって，配電用変電所の遮断器が再投入された場合でも，既に PAS が（ウ）されているため，配電線の再閉路が成功することとなり，（エ）事故として取り扱われない。\n\n上記の記述中の空白箇所（ア）〜（エ）に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "（ア）短絡　（イ）負荷　（ウ）開放　（エ）配電線",
+        "2": "（ア）短絡　（イ）電源　（ウ）遮断　（エ）波及",
+        "3": "（ア）地絡　（イ）電源　（ウ）遮断　（エ）波及",
+        "4": "（ア）地絡　（イ）電源　（ウ）遮断　（エ）配電線",
+        "5": "（ア）短絡　（イ）負荷　（ウ）開放　（エ）波及"
+      },
+      "officialAnswer": "5",
+      "explanation": "SOG は Storage Over Current Ground（過電流蓄勢トリップ付地絡トリップ形）の略である。SOG 動作は二つの動作からなる。一つは G 動作で、地絡事故時に PAS が自動的に開放して事故点を切り離す。このとき電力会社の配電線は停電しない。もう一つは SO 動作で、ロック電流値以上の事故電流が流れた過電流事故時に働く。このとき PAS はその場では開放せず、配電線路が停電して電圧がなくなってから自動的に開放する。そのため配電線は一度は停電する。SO 動作になるかどうかは、事故の種類の名前ではなく、事故電流がロック電流値以上かどうかで決まる。\n\n（ア）短絡：本文は、GR 付 PAS は負荷電流は遮断できるが、「（ア）電流のような大きな電流」は遮断できないとしている。PAS が自ら遮断できない大きな電流の代表が短絡電流である。PAS の負荷側で短絡事故が起きるとロック電流値以上の事故電流が流れ、PAS は開放命令を保存して待機する SO 動作となる。実際の事故事例でも、受電用真空遮断器 2 次側の相間短絡で地絡継電器に「過電流蓄勢」の作動表示が出ていた例が報告されている。一方、PAS が開放できる程度の地絡電流による地絡事故は、G 動作により PAS が自ら開放して事故点を切り離し、配電線は停電しない。なお、事故事例には「短絡や地絡が発生し」SO 動作で区分開閉器が開放した例もある。SO 動作は事故の種類そのものではなく電流の大きさで働くためである。本文の「大きな電流」の例として当てはまるのは短絡であり、（ア）には短絡が入る。\n\n（イ）負荷：区分開閉器（PAS）は、高圧需要家の高圧受電設備で発生した地絡事故・短絡事故を電力会社の配電線へ波及させないために設けられる。配電線（電源）から見ると、需要家の受電用遮断器は PAS より奥にある。したがって、PAS から受電用遮断器までの区間は PAS の負荷側である。\n\n（ウ）開放：PAS は大きな事故電流を検出すると、開放命令を一時的に保存（蓄勢）して待機する。その後、配電用変電所の遮断器が動作して配電線が停電し、電圧がなくなったことを確認してから、PAS が自動的に開放して事故点を切り離す。電圧がなくなった状態で開くので、PAS が事故電流を自ら遮断するわけではない。このため「遮断」ではなく「開放」が入る。\n\n（エ）波及：配電用変電所の遮断器が動作してから再閉路（再投入）するまでの間、配電線は一度停電する。しかし再投入の時点では、事故点を含む需要設備はすでに PAS の開放によって切り離されている。そのため再閉路が成功して配電線の送電が回復する。このように、需要設備の事故が配電線へ波及することが防がれるので、本文のとおり波及事故としては取り扱われない。実際の事故事例でも、過電流蓄勢動作（SO）で区分開閉器が正常に開放し、配電線の再閉路が成功している。ただしその後、事故の原因を十分に調べないまま区分開閉器を投入し、波及事故となった例がある。また、「過電流蓄勢」の作動表示が出ていたのに区分開閉器が閉路状態のままで、波及事故となった例もある。\n\nしたがって、（ア）短絡、（イ）負荷、（ウ）開放、（エ）波及の組合せである(5)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。（ア）短絡、（イ）負荷、（ウ）開放は正しいが、（エ）が誤りである。（エ）の文は、再閉路が成功した結果、その事故がどう扱われるかを述べている。配電用変電所の遮断器が動作してから再閉路するまでの間、配電線は一度停電する。しかし再投入の時点では事故点がすでに PAS で切り離されているので、再閉路が成功して送電が回復する。区分開閉器は需要設備の地絡・短絡事故を配電線へ波及させないために設けられるものであり、その働きによって回避される事故の扱いを表す語は「波及」である。したがって（エ）には「配電線」ではなく「波及」が入る。",
+        "2": "誤り。（ア）短絡と（エ）波及は正しいが、（イ）と（ウ）が誤りである。（イ）について、PAS から受電用遮断器までの区間は、配電線から見て PAS の負荷側であり、電源側ではない。（ウ）について、本文のとおり PAS は短絡電流のような大電流を遮断できない。SO 動作は、配電線が無電圧になったことを確認してから PAS を「開放」する動作であり、PAS が事故電流を遮断するわけではない。",
+        "3": "誤り。（エ）波及のみ正しく、（ア）（イ）（ウ）が誤りである。（ア）について、本文の「（ア）電流のような大きな電流」は PAS が遮断できない電流を指し、これに当たるのは短絡電流である。PAS が開放できる程度の地絡電流による地絡事故は、G 動作により PAS が自ら開放して事故点を切り離し、配電線は停電しない。したがって、大電流の開放命令を保存して配電線の無電圧を待つ SO 動作の説明にある（ア）は、地絡ではなく短絡である。（イ）電源と（ウ）遮断は、(2)と同じ理由で誤りである。",
+        "4": "誤り。（ア）（イ）（ウ）（エ）のすべてが誤りである。（ア）について、本文の「大きな電流」に当たるのは短絡電流である。PAS が開放できる程度の地絡電流による地絡事故は G 動作で PAS が自ら開放して処理されるので、（ア）は地絡ではなく短絡である。（イ）電源と（ウ）遮断は(2)と同じ理由で誤りである。（エ）配電線は(1)と同じ理由で誤りである。正しくは、（ア）短絡、（イ）負荷、（ウ）開放、（エ）波及である。",
+        "5": "正しい。（ア）短絡、（イ）負荷、（ウ）開放、（エ）波及の組合せは、SO 動作の説明と一致する。PAS の負荷側で短絡事故が起きると、短絡電流を遮断できない PAS は開放命令を保存して待機する。配電用変電所の遮断器の動作で配電線が無電圧になったことを確認してから、PAS が開放する。配電線は一度停電するが、再投入の時点では事故点が切り離されているので再閉路が成功し、波及事故としては取り扱われない。"
+      },
+      "figureDescription": "回路図などの図はない。選択肢は表形式で示されている。表の列見出しは（ア）（イ）（ウ）（エ）、行見出しは(1)〜(5)で、各セルに語句が入る。各行の語句は choices と同じである。",
+      "officialReferenceUrls": [
+        "https://www.safety-shikoku.meti.go.jp/03_electric/electric_hyosyo_seminar/electric_seminar/r7_seminar/2025semina.pdf",
+        "https://www.safety-kyushu.meti.go.jp/denki/jiko/R2denkijiko_set.pdf"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3346,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1416558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1357,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "39df8af1e6a39592026329d4f81016d2cf6ddd6f5c9f563346b8f94a893f011c",
+  "inputRequestSha256": "e4af290f27c931736b7bcad861b83c3f049392082e1002389c8f4cd026049d4f",
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p14.png": "c5f77d654f7b8e5a15ad6d5ff27c61a659272605556ec0065cd85294e689a8e0"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6953,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 20911,
+          "webSearchRequests": 0,
+          "costUSD": 0.3066118,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 4204,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b2d9284eb872543333bf06bf7de70d29276e41296d10558e0d34a34eddb51475",
+      "inputRequestSha256": "f4291249c2fb9e0e1f9ffabadd8d19f1bf7f39b0a37b528d9c7fcaee12777313",
+      "previousDraftSha256": "925b395cbee4ce396394bb5ab89f92ef2e55d5b5da57b15083e5812ad889d7c3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-vision-draft-v1.json",
+      "answeredReviewSha256": "5aaace3c0d7279fb023d2c00d65cc3cbab9664ef2d5cb5a234d30c64d6be15c2",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-law-s1-q10-opus.json",
+      "answeredStrictReceiptSha256": "d86a39867cd42bf4b786e6fffc380f39dfac813042501294a6227eadc05502bc",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+          "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+          "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5563,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 21002,
+          "webSearchRequests": 0,
+          "costUSD": 0.2795398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2671,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4b7c7bab41952b7a5dc7e1ce366ade3589b16e4ff342288f4affdfeff47dd18d",
+      "inputRequestSha256": "58f63d3326a69488986b1200f9c0bc26bdf1645c6eb8f2360f2303c0bab1ef1a",
+      "previousDraftSha256": "4b4909b019ebae84917ab4e639fbf63e0ecf20cab7abfa6af9b7f01644680b56",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-vision-draft-v2.json",
+      "answeredReviewSha256": "3f8cd43c5a5ccb5a93dedc574a38f728c4f630e1d6245e6dbd1e76c785f423d5",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+          "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+          "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5702,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 21086,
+          "webSearchRequests": 0,
+          "costUSD": 0.2829918,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2690,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2c685258d294c675f6b848da16aafac0e4eb59d6ae1b01d0df9ddb514d81ff32",
+      "inputRequestSha256": "1f2a0127ad0f7bb4679f29aa8749839c6b91ef7c9813a92cf0fdd73641fc74b4",
+      "previousDraftSha256": "88ef5fd944690cf69257f7d1736b4c6853b9fd0f3bd422d87e4e6e2eed92225e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-vision-draft-v3.json",
+      "answeredReviewSha256": "b3ab77401de230c2a6177b689a2cbc7654a6ccc777d37e7fda4b32757da1ff4e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-opus-review-v3.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+          "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+          "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6546,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 23010,
+          "webSearchRequests": 0,
+          "costUSD": 0.3152638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3258,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ce5e6fdf9ae401f6f7640ec0e8c24a8347aa5d9ed88061c2aadf1db68edc824c",
+      "inputRequestSha256": "c45940154e111fb13603ce9dc76ce3b80173fd8266d61b159bc0b4a729919230",
+      "previousDraftSha256": "ba41d6919b7e4ce189d133339a5801b795f58a4190cab7428a13a16d83d207ed",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-vision-draft-v4.json",
+      "answeredReviewSha256": "fcbc601ff84cd9bd3d4d9a2196bad308563dc742793a8720ff1f3958a3a2be34",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q10-opus-review-v4.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-law-s2-q10-opus.json",
+      "answeredStrictReceiptSha256": "b5c061037ef1c904164e464fb05a622fffbe417e71ca24a8b7eddb64d4c56771",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referencePdfSha256": {
+          "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+          "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+        },
+        "referencePageSha256": {
+          "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+          "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

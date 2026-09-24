@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3710,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13762,
+      "webSearchRequests": 0,
+      "costUSD": 0.1845598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2186,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ad6958e9f86e9ca854c06915aab14299b4bc341d35de09158db6b4828213b41c",
+  "inputRequestSha256": "f01322e6dedd35fa68524b337eb117e182d26dfddf62a04bc4904217fda27c62",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "fe7ba47f3564bd400b7c01e0ce5c2aa1ed83622b16a4dbe3734ccb0fd8420ab2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p09.png": "1fcc892005c7488a7db61b75889701f958a54e0e9e502d13474880bb17ea1ee7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a00f715e830fc0e751323e4e4ca93bcf4c9ac7899018cd3e2cccf138d0b81ef1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "相電圧の数値が誤っている。15.2×10³/√3 = 8775.72… V なので、四捨五入すると ≒8775.7 V になる。候補は総合解説②③と choiceExplanations(1)(3)(4) で「≒8775.8 V」と記載しており、これらすべてを 8775.7 V に修正する必要がある。最終値 Zs = 8775.72/4300 ≒ 2.041 Ω ≒ 2.04 Ω は正しく、結論は変わらない。",
+        "choiceExplanations(2) には誤答肢固有の理由がない。記載は「正しい計算…≒2.04 Ω と一致しない」だけで、6.86 Ω がどの誤りから生じる値か、あるいはどの典型的誤算にも対応しない値なのかを説明していない。検算した範囲では、E/860、15200/4300、E/4300×√3、E/4300×3 のいずれも 6.86 にならない。誤算経路を推測で書かず、そのことを明示した固有の説明が必要。",
+        "choiceExplanations(5) も同様に、誤答肢固有の理由がない。0.55 Ω について、500/860、E/(4300×√3) などの典型的誤算はいずれも 0.55 に一致しない。そのことを踏まえた固有の説明が必要。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述が候補自身のメタデータと矛盾している。uncertainty には「原本ページには試験年度・回を示す記載がなく…出典となる公式PDFのURLを特定できない」とある。しかし sourceQuestionPdfUrl と sourceAnswerPdfUrl には manifest 固定の公式URL（20260322_ch_third_q03.pdf / 20260322_ch_third_a01.pdf）が設定済みで、fiscalYear・term・examDate も特定されている。この記述は古い状態のまま残っており、削除または更新が必要。officialReferenceUrls が空であること自体は、独立主張がないので問題ない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図（PDF第9頁、印刷頁「-6-」、識別記号「T2−K 009」）と照合した。15.2 kV（線間）、界磁電流 500 A、短絡試験の界磁電流 100 A、短絡電流 860 A、問う量は同期インピーダンス[Ω]で、いずれも一致する。全角括弧などの表記整形は許容範囲。",
+        "選択肢：(1)10.2 (2)6.86 (3)3.53 (4)2.04 (5)0.55。原図と完全に一致する。",
+        "公式正答：解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞問6は解答4・配点5。officialAnswer=\"4\"、scoringPoints=5、manifest の q06 単位（answer 4, points 5）と一致する。",
+        "検算：Is = 860×500/100 = 4300 A、E = 15200/√3 = 8775.72 V、Zs = 8775.72/4300 = 2.0409 Ω ≒ 2.04 Ω となり、正答(4)と整合する。",
+        "誤答肢(1)：8775.72/860 = 10.204 Ω で、短絡電流を未換算のまま使った場合の値と一致する。説明は妥当。",
+        "誤答肢(3)：15200/4300 = 3.535 Ω で、線間電圧を相電圧に換算しなかった場合の値と一致する。説明は妥当。",
+        "解法前提：短絡特性が界磁電流に比例する（無飽和で直線）という前提は、電験三種で標準的であり物理的にも妥当。",
+        "メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=machinery、reviewedFromPage=[9] のいずれも manifest と一致する。sourceAttribution も適切。",
+        "図：原図に図はなく、figureUrls=[] と「図なし」の記述は正しい。"
+      ]
+    }
+  ]
+}

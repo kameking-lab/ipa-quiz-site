@@ -1,0 +1,100 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "「電気設備技術基準」では，電気の供給のための低圧電線路の絶縁性能について，次のように規定している。\n\n低圧電線路中絶縁部分の電線と大地との間及び電線の線心相互間の絶縁抵抗は， (ア) に対する漏えい電流が (イ) の (ウ) 分の1を超えないようにしなければならない。\n\n上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 使用電圧　(イ) 最大供給電流　(ウ) 2 000",
+        "2": "(ア) 最大使用電圧　(イ) 供給電流　(ウ) 2 000",
+        "3": "(ア) 使用電圧　(イ) 使用電流　(ウ) 1 000",
+        "4": "(ア) 対地電圧　(イ) 最大供給電流　(ウ) 1 000",
+        "5": "(ア) 対地電圧　(イ) 使用電流　(ウ) 2 000"
+      },
+      "officialAnswer": "1",
+      "explanation": "「電気設備技術基準」は「電気設備に関する技術基準を定める省令」の略である。同省令第22条（低圧電線路の絶縁性能）は，令和7年4月1日時点の条文で「低圧電線路中絶縁部分の電線と大地との間及び電線の線心相互間の絶縁抵抗は、使用電圧に対する漏えい電流が最大供給電流の二千分の一を超えないようにしなければならない。」と定めている。したがって (ア) 使用電圧，(イ) 最大供給電流，(ウ) 2 000 となり，この組合せをもつ選択肢は(1)だけなので，正解は(1)である。\n\n数値例：最大供給電流が 100 A の低圧電線路では，許容される漏えい電流は 100 A × 1/2 000 = 0.05 A = 50 mA 以下となる。",
+      "choiceExplanations": {
+        "1": "正しい。第22条の条文どおり「使用電圧に対する漏えい電流が最大供給電流の2 000分の1を超えない」の組合せである。",
+        "2": "誤り。(ア)は条文では「使用電圧」であり「最大使用電圧」ではない。(イ)も「最大供給電流」であり「供給電流」ではない。(ウ)の2 000は正しい。",
+        "3": "誤り。(ア)の使用電圧は正しいが，(イ)は「最大供給電流」であり「使用電流」ではない。(ウ)も条文の値は2 000であり1 000ではない。",
+        "4": "誤り。(ア)は「使用電圧」であり「対地電圧」ではない。(イ)の最大供給電流は正しいが，(ウ)は2 000であり1 000ではない。",
+        "5": "誤り。(ア)は「使用電圧」であり「対地電圧」ではない。(イ)は「最大供給電流」であり「使用電流」ではない。(ウ)の2 000は正しい。"
+      },
+      "figureDescription": "図なし。問題文中の空欄(ア)(イ)(ウ)は枠囲みで示されている。選択肢は列見出し(ア)(イ)(ウ)，行見出し(1)〜(5)の表で示され，その内容は choices と同一である。解答に図は不要。",
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/409M50000400052?occasion_date=20250401"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2682,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12837579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 890,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6b3ed240021650ffd164c60b01c8d1fe4147b17ede65d1e574e4750a04dd7a74",
+  "inputRequestSha256": "eda161a7c284572a6d2bd0bf3a8a2d98e09068e2beef74182111badc9a82d2e6",
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p07.png": "8bd1b3eb0157c356a111c1bd964bd365b313f9a6a8b20459a3d72163ff7126a5"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2252,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14950,
+          "webSearchRequests": 0,
+          "costUSD": 0.1649038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 928,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "f43ebb2f828b291db4b4a5e79564b033e076905b4824e2efa53984fad310f769",
+      "inputRequestSha256": "c56717c1917ebacecf331cfbc094ad96d2735837c8edb4fbd72f8fb1b3f00fa1",
+      "previousDraftSha256": "ec39def434828f9088ca27bce608bc9a4f6d4c35a85d04cac5a4e09f5b83db84",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "458d63d80f84ad043e790a57c156607fff27085beb5894900376beff4e17a073",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-law-s1-q03-opus.json",
+      "answeredStrictReceiptSha256": "463174e9b9e84455dbd8d9d55a83641a41932745879c0657edc89383710de195",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

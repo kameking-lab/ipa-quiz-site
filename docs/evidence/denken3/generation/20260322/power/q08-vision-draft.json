@@ -1,0 +1,158 @@
+{
+  "questionNumber": 8,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "架空送電線路に関連する設備に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "架空送電線を鉄塔などに固定する絶縁体としてがいしが用いられている。アークホーンをがいしと併設することで，雷撃等をきっかけに発生するアーク放電からがいしを保護することができる。",
+        "2": "架空送電線への雷撃を防止するために架空地線が設けられており，遮へい角が小さいほど雷撃防止の効果が大きい。",
+        "3": "超高圧の架空送電線では，スペーサを用いた多導体化により，コロナ放電の抑制が図られている。スペーサはギャロッピングの防止にも効果的である。",
+        "4": "電線に一様な微風が吹くと，電線の背後に空気の渦が生じて電線が上下に振動するサブスパン振動が発生する。振動エネルギーを吸収するダンパを電線に取り付けることで，この振動による電線の断線防止が図られている。",
+        "5": "鉄塔又は架空地線に直撃雷があると，鉄塔から送電線へ逆フラッシオーバが起こることがある。埋設地線等により鉄塔の接地抵抗を小さくすることで，逆フラッシオーバの抑制が図られている。"
+      },
+      "officialAnswer": "4",
+      "explanation": "誤っているのは(4)である。電線に一様な微風（数 m/s 程度）が直角に当たると、電線の風下側にカルマン渦が交互に発生し、電線が上下に振動する。この現象は「微風振動」と呼ばれ、「サブスパン振動」ではない。微風振動が長時間続くと、支持点（クランプ部）付近で電線が疲労により素線切れ・断線に至るおそれがあるため、ストックブリッジダンパなどのダンパやアーマロッドを取り付けて対策する。一方、サブスパン振動は多導体送電線に特有の現象で、スペーサで区切られた区間（サブスパン）において、風上側の素導体が作る後流（ウェーク）の影響により風下側の素導体が振動するもので、比較的強い風のときに発生する。したがって(4)は振動の名称が誤っている。(1)(2)(5)は架空送電線路の設備に関する正しい記述である。(3)も正しい記述として扱われるが、後半の「スペーサはギャロッピングの防止にも効果的」は、相間スペーサやスペーサダンパを念頭に置いた記述と解される。素導体間を連結する通常のスペーサ単体ではギャロッピング防止効果は限定的であり、かえってギャロッピングを生じやすくする作用もあるとされる点に注意する。",
+      "choiceExplanations": {
+        "1": "正しい。がいしは電線を鉄塔から絶縁して支持する。アークホーンはがいし連の両端に取り付ける金属製の電極で、雷サージ等によるフラッシオーバ時のアークをアークホーン間に導き、がいし表面から離すことで、がいしの熱的損傷・破損を防ぐ。",
+        "2": "正しい。架空地線は送電線の上方に張って、雷が電線に直撃するのを防ぐ（遮へいする）。遮へい角は架空地線と最外側の電線を結ぶ線が鉛直線となす角で、この角が小さいほど電線が架空地線の陰に入り、直撃雷を受けにくくなるため遮へい効果は大きい。",
+        "3": "正しい。多導体方式では1相を複数の素導体で構成するため、等価的な電線半径が大きくなって電線表面の電位の傾き（電界強度）が下がり、コロナ放電が抑制される。スペーサ本来の役割は、素導体の間隔を一定に保って多導体の構成を維持し、素導体どうしの接近・衝突を防ぐことである。ギャロッピングは、着氷雪によって断面が非対称になった電線に風が当たって揚力が生じ、電線が大振幅で上下に振動する現象である。放置すると、相間（異相）の電線が接近・接触して短絡事故につながり、同相の素導体どうしの衝突は電線損傷の原因となる。本肢の「スペーサはギャロッピングの防止にも効果的」は、異なる相の電線どうしを絶縁体で連結して相間距離を保ち相間短絡を防止する相間スペーサや、ダンパ機能をもたせて振動エネルギーを吸収するスペーサダンパを想定した記述と解される。一方、素導体間を連結する通常のスペーサ単体では、素導体のねじれ（回転）が拘束されるため着氷雪が片側に偏って付着し、断面が翼形になりやすい。このため通常のスペーサ単体のギャロッピング防止効果は限定的で、かえってギャロッピングを生じやすくする作用もあるとされる。多導体化に用いるスペーサ一般がギャロッピング防止に効くと理解しないよう注意する。",
+        "4": "誤り（本問の正答）。一様な微風によって電線背後にカルマン渦が生じ、電線が上下に振動する現象は「微風振動」である。サブスパン振動は多導体のスペーサ間の区間で、風上側素導体の後流の影響により生じる振動で、発生のしくみが異なる。なお、ダンパで振動エネルギーを吸収し断線を防ぐという後半の対策の記述自体は、微風振動の対策として妥当である。",
+        "5": "正しい。鉄塔や架空地線に雷が直撃すると、雷電流が鉄塔の接地抵抗を流れて鉄塔の電位が大きく上昇し、鉄塔（アーム）側から電線側へがいし連をフラッシオーバすることがある。これを逆フラッシオーバという。埋設地線（カウンタポイズ）などにより塔脚接地抵抗を小さくすると鉄塔電位の上昇が抑えられ、逆フラッシオーバを抑制できる。"
+      },
+      "figureDescription": "この問題には図はない。問題文と(1)〜(5)の文章のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "(3)の「スペーサはギャロッピングの防止にも効果的である」が、相間スペーサ・スペーサダンパ・素導体間スペーサのうちどの種類のスペーサを想定した記述かは、試験実施機関による解説が公表されておらず断定できない。公式正答が(4)であることから(3)は正しい記述として扱われるが、(3)の解説における相間スペーサ・スペーサダンパを想定したとの解釈、および通常の素導体間スペーサ単体の効果が限定的でかえってギャロッピングを生じやすくする作用もあるとの説明は、一般的な技術的知見に基づくものであり、公式資料では確認できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        11
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2706,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1288558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 768,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d617f5c41490dae6d3b4c933358f99f3026f14b09fd2938a804e57a3b7895b33",
+  "inputRequestSha256": "0a3964ddb8c87c8824c5285ff2217709bb1a63f84da91382fee104ea4a19b484",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p11.png": "b728d81f3ef55bf53e73c18bf505a384fd416c77d4b57449d7375d9972ce37e1"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4061,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13123,
+          "webSearchRequests": 0,
+          "costUSD": 0.18646780000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2028,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4fa3c958d263b41fd882ca0fc7851a6ba5f9278e93fcf17497c0173b2117e2f1",
+      "inputRequestSha256": "99f282f7d5272a1daa72f4c08e19e87b704f4cf2c7f11f81316741de939fee62",
+      "previousDraftSha256": "1e902bb25938ffafdf5831e0dbd29875c6dea98c7e0cafed21ee5cee9946447e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-vision-draft-v1.json",
+      "answeredReviewSha256": "7e16dfcd5f31d6c79250921b8dda549a84e8164afbccc010edcc71a46515e447",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q08-opus.json",
+      "answeredStrictReceiptSha256": "54f5a37b5a2577b81c836f4f76425b3586a0e82b07e431aae59d2187b7e34e98",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3870,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11945,
+          "webSearchRequests": 0,
+          "costUSD": 0.17322379999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1752,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "c396be61f7cf632a55949946dfde79d67ac13b71513fec3131e0169f78ce5241",
+      "inputRequestSha256": "82be3f09054f7503f716c7817508f8e207e5220ebfc6823044cd58b6ebeb151e",
+      "previousDraftSha256": "aedf9515b640a93051bf512ae023aa1884bbd3790153d94fa74a957b9a45fd32",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-vision-draft-v2.json",
+      "answeredReviewSha256": "b5b7e562200e95178b9ecd87ce27fbb19e019999e68c0c365a0e759d8c742024",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4072,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13421,
+          "webSearchRequests": 0,
+          "costUSD": 0.1890718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1675,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7504d6263fd3813d3ceaf6237142067e003d3ba084a3a8726faacd0b0f2542f5",
+      "inputRequestSha256": "f6b745707ab8aed3ba56d8c416b9e15188f78b5eb4d4cbb32348530783589d18",
+      "previousDraftSha256": "fbe676c402ca45881b42075ddea23d4b184d57050db26f1506786b393cd92e2a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-vision-draft-v3.json",
+      "answeredReviewSha256": "e7680dafb404a09e7d0e0c920afb861786bf491aa94305fe8b3273cc6f1c4e20",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q08-opus-review-v3.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s2-q08-opus.json",
+      "answeredStrictReceiptSha256": "31cc50adabbdc5aadf6c9821595122de0fccdbeca157de4635acf88b76afcbe0",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

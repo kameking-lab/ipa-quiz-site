@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3794,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13782,
+      "webSearchRequests": 0,
+      "costUSD": 0.1863998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2127,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4ffc609ac82b25552800f9ed99b465c64c6c5e67050f028e3e2af9b289b091a7",
+  "inputRequestSha256": "9f41c131e63d33ad47877fc0bc0d3dc57742255ab2da12f7e3d1eb3bcc4246a2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "9b7f19ed1eecee00bd1972d59e143f04cdd023521ffb0a037e6c51b23155891c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p15.png": "7aaaadae5e0c9d3dae535e9c335e45cb6039537710cc15cb7e994302ef02793f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "ba616589d9dfd92079db1e503a72eb810c0cd5616fd206b08a1f9715fa947223",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"1\"]：誤答の作り方を「q = λΔT/Δx ではなく ΔT·Δx/λ と式の分子・分母を取り違え」と説明しているが、この表現は誤り。λΔT/Δx の分子と分母を入れ替えると Δx/(λΔT) になり、0.20/(0.94×70) ≈ 0.00304 となって 1 490 は得られない。実際に 1 490 が得られる ΔT·Δx/λ は「熱伝導率 λ と距離 Δx の位置を入れ替えた式」である。計算値 70×20/0.94 ≈ 1 489 ≈ 1 490 そのものは正しい。修正案：「熱伝導率 λ と距離 Δx の位置を取り違えて ΔT·Δx/λ とし、さらに距離を m に換算せず 20 (cm) のまま代入すると…」。",
+        "choiceExplanations[\"4\"]：[\"1\"] と同じく「式の分子・分母を取り違え」という表現が数学的に不正確。ΔT·Δx/λ は λ と Δx を入れ替えた式であり、分子と分母を入れ替えた式ではない。計算値 70×0.20/0.94 ≈ 14.9 は正しい。修正案：「熱伝導率 λ と距離 Δx の位置を取り違えて ΔT·Δx/λ とすると、距離を正しく 0.20 m としても…」。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（印刷頁 -12-、フッター T2－K 015）と一字一句照合した。測定位置は外面から 10 cm と 30 cm、温度は 72 ℃と 142 ℃、熱伝導率は 0.94 W/(m·K)、求める量は単位面積当たりの熱損失[W/m²]、ただし書きは「壁面に垂直な方向の温度こう配は一定」。数値・単位・対応順序はいずれも一致する。「〜」と原図の「～」の字形差は表記上の差にとどまり、意味は変わらない。",
+        "選択肢：(1) 1 490、(2) 329、(3) 165、(4) 14.9、(5) 3.29。5 肢とも原図と一致する。",
+        "公式正答：公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞問12は解答 2・配点 5。候補の officialAnswer=\"2\"、scoringPoints=5 と一致する。",
+        "出典メタデータ：令和7年度は fiscalYear=2025 にあたる。term=lower、examDate=2026-03-22、subject=machinery、問題PDF q03・解答PDF a01 の URL、reviewedFromPage=[15] は manifest と一致する。原図フッターの「015」とも整合する。sourceAttribution も適切。",
+        "総合解説の検算：Δx = 0.30 − 0.10 = 0.20 m、ΔT = 142 − 72 = 70 K、温度こう配 = 70/0.20 = 350 K/m、q = 0.94 × 350 = 329 W/m²。正答(2)と一致する。",
+        "熱流の向き：深い位置ほど高温（30 cm で 142 ℃）なので、熱は炉内側から外面へ流れる。温度こう配が一定（熱伝導率一定の定常一次元伝導）なので熱流束は一様であり、外面からの熱損失と等しい。この因果説明は正しい。",
+        "誤答肢の数値検算：(1) 70×20/0.94 = 1 489.4 ≈ 1 490、(3) 0.94×70/0.40 = 164.5 ≈ 165、(4) 70×0.20/0.94 = 14.89 ≈ 14.9、(5) 0.94×70/20 = 3.29。いずれも各肢の値を再現する。",
+        "100倍関係の注記：1 490/14.9 = 100、329/3.29 = 100。(1)/(4) と (2)/(5) がそれぞれ cm と m の換算有無で対になるという記述は、上の検算と整合する。",
+        "図：原図に図はなく、問題文だけで解答できる。figureDescription・figureUrls=[]・choiceFigureUrls={} は妥当。",
+        "officialReferenceUrls は空のため、外部参照の独立主張はなく、検証を要する事項もない。"
+      ]
+    }
+  ]
+}

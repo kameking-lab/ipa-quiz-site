@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3006,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15383,
+      "webSearchRequests": 0,
+      "costUSD": 0.1834478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1332,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a5cdea4d8ee13b9f799190fb40be616ff1e8dbe875997fd262862378d7eba27a",
+  "inputRequestSha256": "ee952fae3e4ba99e3178c5fd608cb32b8c279150bb17df6b5e8616971f122a23",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "09403f67d763a70cca73407465eeb6d7595da292ff608818f3eaf64e1c134de1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p17.png": "c472ba6bc4468c06d1df8935197e3cf488b38ed9828e8130175ecc371e856db4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q14-fig1.png": "86fe4a492344e7978a2b7453410b5aafa53a31582a02afad8ba64f3aabf777cd"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription は冒頭で「問題文の下にフローチャートが1つ描かれている」と書き、末尾で「図の下に選択肢の表があり…(1) 43・26 … (5) 98・95」と書いている。これは公式原図の頁全体の説明になっている。一方、公開候補図 20260322-machinery-q14-fig1.png はフローチャート部分だけを切り出したもので、問題文も選択肢表も含まない。figureDescription を公開図の代替テキストとして使う場合は内容が図と一致しないため、公開図に写っている範囲（フローチャートのみ）の記述に修正すること。選択肢の数値は choices に正しく転記済みなので、表の記述は削除して差し支えない。"
+      ],
+      "sourceIssues": [
+        "uncertainty 欄は「試験年度・試験科目名が記載されていないため、出題年度と科目は特定できていない」「一次資料のURLは記載していない」と記載している。しかし候補自身は manifest 固定の出典情報（fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl=…20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、sourceAttribution=令和7年度下期 機械科目 問14）を正しく保持しており、uncertainty 欄はそれと矛盾する古い記述である。manifest と公式解答表（見出し「令和7年度 第三種電気主任技術者下期試験解答」、＜機械＞列）で年度・期・科目は確定できるため、uncertainty 欄を現状に合わせて更新すること。未解消の不確実性が残っているかのように読める記述と needsReview=false が併存しており、監査記録として整合していない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図の「次のフローチャートに従って作成したプログラムを実行したとき，印字されるA，Bの値として，正しい組合せを次の(1)〜(5)のうちから一つ選べ。」と一致する。",
+        "問題文中のフローチャート文字化：開始 → A←10, B←2 → A←A+B → 判断 A≦40（YES：B←2B+1 の後、A←A+B の直前へ戻る／NO：A,Bを印字）→ 終了。原図の接続・分岐方向・ラベルと一致する。",
+        "選択肢：(1) 43・26、(2) 51・47、(3) 51・23、(4) 98・47、(5) 98・95。公式原図の表と全肢一致する。",
+        "公式正答：試験センター公式解答表＜機械＞問14 の解答は 3、配点は 5。候補の officialAnswer=\"3\"、scoringPoints=5 と一致し、manifest 固定の正答単位 {question:14, part:null, answer:\"3\", points:5} とも一致する。",
+        "検算：初期値 A=10, B=2。A=12（≦40 YES）→ B=5。A=17（YES）→ B=11。A=28（YES）→ B=23。A=51（NO）→ 印字 A=51, B=23。正答(3)と一致する。",
+        "誤答肢の理由：(1) A は 12→17→28→51 と変化して 43 を取らず、B の更新値は常に奇数なので 26 にならない。(2) B=47=2×23+1 は NO 判定後に更新した場合の値。(4) A=98=51+47 はループを抜けずに継続した場合の値。(5) B=95=2×47+1 も同じくループを継続した場合の値。いずれも正しい。",
+        "公開候補図：開始、A←10/B←2、A←A+B、ひし形 A≦40（下 YES・右 NO）、B←2B+1、左側の戻り線と A←A+B 直前への矢印、書類記号「A,Bを印字」、終了。全記号・全ラベル・接続・矢印向きが公式原図と一致しており、公開図だけで処理順序を理解できる。",
+        "出典メタデータ：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、問題PDF・解答PDF URL はいずれも manifest と一致する。reviewedFromPage=[17] は manifest の PDF 第17頁と一致する（原図下部の「- 14 -」は冊子の印刷頁番号）。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

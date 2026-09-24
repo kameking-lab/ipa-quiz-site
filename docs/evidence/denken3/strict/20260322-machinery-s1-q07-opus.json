@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3513,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14508,
+      "webSearchRequests": 0,
+      "costUSD": 0.1865878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1819,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f7bac262846241e6556e141e27eeca77e35cd1906f24256cfb1f2f634beadd71",
+  "inputRequestSha256": "df536123221109ddaff1486756159f233fc56eb2ade8f50eee8d57dff56f6ad9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "9d021aef1a166de2ea0ca6651d3c1d513bbf37859008182f37ddaa15ee1b1e7e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p10.png": "a98a2df027f9599b4775df365b1839bfda13cd719c09f0d0798d524630e6109d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの記述が誤っています。「原本ページには試験年度・回を示す記載がなく、この問題の出題年度は特定できません」としていますが、出題年度は特定できます。manifestで問題PDF（20260322_ch_third_q03.pdf）と解答PDF（20260322_ch_third_a01.pdf）が固定されています。公式解答表の見出しも「令和7年度 第三種電気主任技術者下期試験解答」です。候補自身も fiscalYear=2025、term=lower、examDate=2026-03-22 とし、sourceAttributionに「令和7年度下期…機械科目 問7」と記載しています。uncertaintyはこれらと矛盾します。原本ページ下部の「T2－K 010」も、PDF第10頁というmanifestの指定と整合します。uncertaintyは「出典はmanifest固定の令和7年度下期機械科目PDF第10頁で確認済み。判読不明箇所なし」といった内容に修正してください。",
+        "uncertaintyでは「出題年度を特定できない」としつつ、needsReview=false になっており、内部で矛盾しています。uncertaintyを上記のとおり修正すれば needsReview=false のままで整合します。",
+        "officialReferenceUrlsが空である点自体は問題ありません。独立した主張の根拠となる参照URLはなく、検証を要するものはありません。ただし、空にした理由として「年度が特定できないため」と書かれているのは誤りなので、上記の修正に含めてください。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl／sourceAnswerPdfUrl、reviewedFromPage=[10] は、いずれもmanifestと一致しています。原本ページ下部の「T2－K 010」（印刷頁 -7-）とも整合します。",
+        "問題文：原図の本文（パルスモータとも呼ばれ…駆動回路に与えられた(ア)に比例する(イ)だけ回転…パルスの(ウ)に比例する回転速度…角度θ[°]を1ステップ…1パルス当たりの回転角度を(エ)…永久磁石形、可変リラクタンス形、ハイブリッド形…無通電状態でも回転子位置を(オ)が働く）と一致しています。語句・記号・単位に脱落や改変はありません。",
+        "選択肢：(1)〜(5)の全肢、および(ア)〜(オ)の全語句が原図の表と一致しています。(1)パルス数/回転速度/周波数/移動角/保持する力、(2)パルス数/回転角度/幅/ステップ角/追従する力、(3)パルス数/回転角度/周波数/ステップ角/保持する力、(4)周波数/回転角度/幅/ステップ角/追従する力、(5)周波数/回転速度/幅/移動角/追従する力。",
+        "公式正答：公式解答表の＜機械＞問7は解答3、配点5です。officialAnswer=\"3\"、scoringPoints=5 と一致しています。",
+        "総合解説の計算：回転角度 = Nθ、回転速度 n = fθ/360 [s⁻¹] = 60fθ/360 [min⁻¹] は正しいです。計算例 θ=1.8°、f=1000 pulse/s のとき 1000×1.8/360 = 5 s⁻¹、5×60 = 300 min⁻¹ も正しいです。",
+        "因果関係：永久磁石形は、無通電時にも永久磁石と固定子鉄心の間の磁気吸引力によってディテントトルクが生じ、これが回転子位置の保持力として働きます。この説明は技術的に正しいです。",
+        "肢別解説の誤り箇所の特定は、いずれも正しいです。(1)は(イ)(エ)が誤り。(2)は(ウ)(オ)が誤り。(4)は(ア)(ウ)(オ)が誤り。(5)は全空白が誤りで、(ア)(イ)は本文の「〜だけ回転する」という回転量の文脈に合わないと説明されています。(3)は全空白が正しいです。各肢で正しいとされた語句も、正答(3)と照合して一致しています。",
+        "図：原図に解答用の図はありません。表はchoicesに完全に文字化されています。figureDescription、figureUrls=[]、choiceFigureUrls={} は妥当です。"
+      ]
+    }
+  ]
+}

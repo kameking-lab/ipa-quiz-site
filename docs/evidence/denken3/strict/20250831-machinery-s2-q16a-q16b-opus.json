@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6324,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16906,
+      "webSearchRequests": 0,
+      "costUSD": 0.2619918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3969,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cb6ef648c226fd3b364e50564e29feaaef6f44233999885d89aaf81a4a190f2d",
+  "inputRequestSha256": "d9796d75a1fe4f753e80330e689a046e31852442c0b81d3b3f8ea246bdff7293",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "c12097abf2fe62c382d4ba380a20ce2cd58f88892b06802c82cc1eebb5d59ae6",
+      "q16b": "1e95122e1c72989d7ce1e1b16221a69b3f77bebf6e18375f33cb3fe9b4845882"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p19.png": "f6fa2f4b8a07190f9b245f99c54b83b9cfcef3ab39f51474c490014459edefac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q16-fig1.png": "9416c7dfd1ae642ef9d7607e42641aac27f1199060819439782b0e4b68d4ed49"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1d143d137faf9a1c6ab836b8f3ed7dc92c4f03b8f2fc9214625e077b12946c47",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・機械）の問16(a)は解答2・配点5。manifest固定の公式正答 {question:16, part:a, answer:2, points:5} と一致し、候補の officialAnswer=2・scoringPoints=5 とも一致する。",
+        "問題文を原図と照合した。共通リード（他励直流機、直流チョッパ、E = 200 V で一定、電機子電圧 V、IGBT Q₁・Q₂、スイッチング周波数 500 Hz、定常状態のみ）は一致する。(a) の条件（電動機として駆動、Q₂ オフ、Q₁ オンオフ制御、V₁ の平均値 150 V、Q₁ のオン時間 [ms] を問う）も一致する。省かれているのは小問分割に伴う「次の(a)及び(b)の問に答えよ。」だけで、意味は変わらない。",
+        "選択肢を原図と照合した。(1)1.75、(2)1.50、(3)1.25、(4)1.00、(5)0.7 で、全肢の数値・桁が一致する（(5)は原図どおり 0.7）。",
+        "総合解説の計算を検算した。T = 1/500 = 2 ms。電流連続の降圧チョッパでは V₁(平均) = E·T_on/T なので、T_on = 2 × 150/200 = 1.50 ms となり、正答(2)と一致する。Q₁ オン時は V₁ = E、オフ時は下側ダイオードで環流して V₁ = 0 となり、図の素子配置と整合する。電流断続時にはその期間の V₁ が逆起電力に等しくなるという注記も物理的に正しい。",
+        "各肢の理由を検算した。1.75 ms → 175 V、1.50 ms → 150 V、1.25 ms → 125 V、1.00 ms → 100 V、0.7 ms → 70 V で、いずれも算術は正しく、各肢に固有の理由になっている。",
+        "公開候補図を原図と照合した。原図の回路部分をそのまま切り出したもので、接続・素子向き・ラベル（Q₁、Q₂、電源電圧 E = 200 V、平滑リアクトル、V₁、V、M）に欠落・改変はない。公開候補図だけで解答に必要な情報が読み取れる。",
+        "figureDescription を検算した。Q₁ はエミッタ矢印が下向きでコレクタが上側レール側である。2個のダイオードはいずれもカソードが上で、各IGBTに逆並列に接続されている。下側レールを正極とすると両ダイオードが順バイアスとなり電源短絡になるため、上側レールが正極という推論は妥当である。V₁ 矢印（下側レール→中点側配線）、V 矢印（下側レール→リアクトル後段配線）、黒丸の位置も原図と一致する。",
+        "出典を確認した。sourceQuestionPdfUrl は q03（機械）、sourceAnswerPdfUrl は a01 である。原図のページ下部表記は「T1−K 019」で、reviewedFromPage=[19] と整合する。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・機械）の問16(b)は解答4・配点5。manifest固定の公式正答 {question:16, part:b, answer:4, points:5} と一致し、候補の officialAnswer=4・scoringPoints=5 とも一致する。",
+        "問題文を原図と照合した。(b) の条件（Q₁ をオフして Q₂ をオンオフ制御、電機子電流の向きを(a)と反対にする、発電動作（回生制動）、Q₂ のオン時間 0.4 ms、V の値 [V] を問う）は一致する。共通リードも(a)と同じく一致する。",
+        "選択肢を原図と照合した。(1)1 000、(2)250、(3)200、(4)160、(5)40 で、全肢一致する。",
+        "総合解説の計算を検算した。T = 2 ms、T_off = 2 − 0.4 = 1.6 ms。電流連続の昇圧（回生）チョッパでは、Q₂ オン時に V₁ = 0、Q₂ オフ時に上側ダイオード経由で正極へ流れ込み V₁ = E となる。よって V₁(平均) = 200 × 1.6/2 = 160 V。リアクトル平均電圧は 0 なので V = 160 V となり、正答(4)と一致する。電流経路（直流機→平滑リアクトル→中点→Q₂→下側レール、オフ時は中点→上側ダイオード→電源正極）も図の素子向きと整合する。",
+        "各肢の理由を検算した。(1) 200 × 2/0.4 = 1000、(2) 200 × 2/1.6 = 250 で、いずれも電流連続時に V₁ は 0 か E しかとらず平均値が E を超えないとして正しく排除している。(3) 200 V はオン時間 0 に相当し、条件に合わない。(4) 160 V は正しい。(5) 200 × 0.4/2 = 40 はオン・オフ時間を取り違えた値である。算術・論理ともに正しく、各肢に固有の理由になっている。",
+        "公開候補図は(a)と同一ファイルで、原図の回路部分と接続・向き・全ラベルが一致する。回生時の電流経路は、公開候補図のダイオード向きと Q₂ の配置だけから追跡できる。",
+        "figureDescription は(a)と同内容で、回生時の Q₂ オフ期間の電流経路（中点→上側ダイオード→電源正極）の記述が追加されている。原図と整合する。",
+        "出典を確認した。q03（機械）、a01、reviewedFromPage=[19] は原図のページ下部表記「T1−K 019」と整合する。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

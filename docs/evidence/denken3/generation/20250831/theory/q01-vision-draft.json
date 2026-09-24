@@ -1,0 +1,94 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "電圧 V[V]に充電された静電容量 C[F]のコンデンサと全く充電されていない静電容量 2C[F]のコンデンサとがある。これら二つのコンデンサを並列に接続したとき，これらのコンデンサに蓄えられる全静電エネルギー[J]の値として，正しいものは次のうちどれか。",
+      "choices": {
+        "1": "(1/9)CV²",
+        "2": "(1/6)CV²",
+        "3": "(2/9)CV²",
+        "4": "(1/3)CV²",
+        "5": "(3/8)CV²"
+      },
+      "officialAnswer": "2",
+      "explanation": "接続前、静電容量 C のコンデンサの電荷は Q = CV [C]、静電容量 2C のコンデンサの電荷は 0 である。\n\n二つを並列に接続しても電荷の総量は保存されるので、総電荷は Q = CV のままである。並列接続の合成静電容量は C + 2C = 3C [F] であり、両コンデンサの端子電圧は共通になる。共通電圧を V' とすると\n\nV' = Q / 3C = CV / 3C = V/3 [V]\n\n全静電エネルギー W は\n\nW = (1/2)·3C·(V/3)² = (1/2)·3C·V²/9 = (1/6)CV² [J]\n\n（別解：W = Q²/(2·3C) = (CV)²/(6C) = (1/6)CV²）\n\n内訳は、C 側が (1/2)·C·(V/3)² = (1/18)CV²、2C 側が (1/2)·2C·(V/3)² = (1/9)CV² で、合計 (1/18 + 2/18)CV² = (1/6)CV² となる。\n\nなお、接続前のエネルギーは (1/2)CV² なので、接続によって (1/2)CV² − (1/6)CV² = (1/3)CV² が失われる。電荷は保存されるが静電エネルギーは保存されない点に注意する。\n\nよって正答は (2) である。",
+      "choiceExplanations": {
+        "1": "誤り。(1/9)CV² は接続後に静電容量 2C のコンデンサ単体に蓄えられるエネルギー (1/2)·2C·(V/3)² に等しく、C 側の (1/18)CV² を含んでいない。全静電エネルギーは (1/6)CV² である。",
+        "2": "正しい。電荷保存より共通電圧は V/3、合成容量 3C に蓄えられるエネルギーは (1/2)·3C·(V/3)² = (1/6)CV² となる。",
+        "3": "誤り。(2/9)CV² は、2C 側のエネルギーを係数 1/2 を付けずに 2C·(V/3)² と計算した値、または C 側の電圧を V/3 ではなく 2V/3 と取り違えて (1/2)·C·(2V/3)² と計算した値に等しい。エネルギーの式 (1/2)CV² と共通電圧 V/3 を正しく用いると、全静電エネルギーは (1/6)CV² である。",
+        "4": "誤り。(1/3)CV² は接続前のエネルギー (1/2)CV² と接続後の全静電エネルギー (1/6)CV² との差、すなわち接続時に失われるエネルギーに等しい。接続後に蓄えられている全静電エネルギーではない。",
+        "5": "誤り。(3/8)CV² は、接続後の共通電圧を接続前の電圧 V と 0 の単純平均 V/2 と誤って、(1/2)·3C·(V/2)² と計算した値に等しい。この場合の総電荷は 3C·V/2 = (3/2)CV となり、接続前の総電荷 CV と一致しないので電荷保存に反する。電荷保存から共通電圧は V/3 であり、全静電エネルギーは (1/6)CV² である。"
+      },
+      "figureDescription": "本問に図はない。問題文のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2354,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1218158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 986,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "05fc9a91df232baa8e53d41667f79e1e9518faec2fbe97cc2948237e5710a8fe",
+  "inputRequestSha256": "9cd7ff1f9e330203f3e079ebec757ba28553d642a08e981e14e9f68c0bb1e564",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p04.png": "c3261add3f9d4c07593bd3319b5b7da51184ee8f0e1b77704bbe839a18f7a93d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3028,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12407,
+          "webSearchRequests": 0,
+          "costUSD": 0.1600798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1614,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6fa30ef066b1055465afa9450b4bdf84cdf9750ff8599f7b3273baa34daae548",
+      "inputRequestSha256": "21c3f09fefb517653080fd9283c74c111d6986fddd4a660e618d8c59f7e4e387",
+      "previousDraftSha256": "38cb934e62e28bd58823a142d16cb4fea51a71ead148b0ce37bc4ec7fbdd0a6b",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "701036e1fdd4afec1ac42f94ff399f38860a3940231907c2c9a075daac18db43",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "449aca01de4d3fe8ab99d3b26de1cb517dc1b5df7bc05464f8ad0f23668daa76",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

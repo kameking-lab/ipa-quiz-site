@@ -1,0 +1,126 @@
+{
+  "questionNumber": 17,
+  "sharedContext": "問17及び問18は選択問題であり，問17又は問18のどちらかを選んで解答すること。両方解答すると採点されません。\n（選択問題）\n問17 熱効率が70 %で一定の電熱装置について，次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "熱効率が70 %で一定の電熱装置について，次の(a)及び(b)の問に答えよ。\n(a) 0 ℃の氷5 kgを加熱したところ30 minですべて0 ℃の水になった。融解熱が334 kJ/kgのとき電熱装置の消費電力の値[kW]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "0.9",
+        "2": "1.4",
+        "3": "1.9",
+        "4": "2.4",
+        "5": "2.9"
+      },
+      "officialAnswer": "2",
+      "explanation": "0 ℃の氷が0 ℃の水になる過程では温度は変化しない。必要な熱は融解熱だけである。\n\n氷を融かすのに必要な熱量 Q は\nQ = 5 kg × 334 kJ/kg = 1670 kJ\n\n加熱時間は t = 30 min = 1800 s である。1 kW = 1 kJ/s なので、単位時間当たりに氷へ与えられる熱量（有効熱出力）P_h は\nP_h = Q ÷ t = 1670 kJ ÷ 1800 s ≒ 0.928 kW\n\n熱効率 η = 0.70 は、消費電力のうち氷に伝わる熱出力の割合である。したがって電熱装置の消費電力 P は\nP = P_h ÷ η = 0.928 kW ÷ 0.70 ≒ 1.33 kW\n\n選択肢のうち最も近いのは 1.4 kW であり、正答は(2)である。",
+      "choiceExplanations": {
+        "1": "誤り。0.9 kW は熱効率を考慮しない場合の値（1670 kJ ÷ 1800 s ≒ 0.93 kW）に近い。この値は氷に伝わる有効熱出力である。消費電力はこれを熱効率0.70で割った約1.33 kWとなる。したがって最も近い値ではない。",
+        "2": "正しい。必要熱量1670 kJを1800 sで与えるための有効熱出力は約0.928 kWである。これを熱効率0.70で割ると消費電力は約1.33 kWとなる。選択肢の中では1.4 kWが最も近い（差約0.07 kW）。",
+        "3": "誤り。計算値の約1.33 kWとの差が約0.57 kWある。1.4 kWとの差約0.07 kWより大きく、最も近い値ではない。",
+        "4": "誤り。計算値の約1.33 kWとの差が約1.07 kWある。最も近い値ではない。",
+        "5": "誤り。計算値の約1.33 kWとの差が約1.57 kWある。選択肢の中で最も離れている。"
+      },
+      "figureDescription": "この問には図はない。問題文のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20,
+        21
+      ]
+    },
+    {
+      "part": "b",
+      "question": "熱効率が70 %で一定の電熱装置について，次の(a)及び(b)の問に答えよ。\n(b) 電熱装置の消費電力が1.7 kWのとき，0 ℃の水5 kgが50 ℃になるのに要する時間[min]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，水の比熱は4.2 kJ/(kg・K)とする。",
+      "choices": {
+        "1": "11",
+        "2": "15",
+        "3": "19",
+        "4": "25",
+        "5": "30"
+      },
+      "officialAnswer": "2",
+      "explanation": "0 ℃の水5 kgを50 ℃まで温めるのに必要な熱量 Q を求める。温度差は50 ℃ = 50 K である。\nQ = 質量 × 比熱 × 温度差 = 5 kg × 4.2 kJ/(kg・K) × 50 K = 1050 kJ\n\n消費電力1.7 kWのうち、熱効率70 %にあたる分が水の加熱に使われる。水に伝わる熱出力（有効熱出力）P_h は\nP_h = 1.7 kW × 0.70 = 1.19 kW\n\n1 kW = 1 kJ/s なので、必要な時間 t は\nt = Q ÷ P_h = 1050 kJ ÷ 1.19 kW ≒ 882 s\n882 s ÷ 60 ≒ 14.7 min\n\n選択肢のうち最も近いのは 15 min であり、正答は(2)である。",
+      "choiceExplanations": {
+        "1": "誤り。11 min は熱効率を考慮しない場合の時間（1050 kJ ÷ 1.7 kW ≒ 618 s ≒ 10.3 min）に近い。実際に水に伝わる熱出力は1.19 kW（= 1.7 kW × 0.70）である。そのため約14.7 minを要し、11 minは最も近い値ではない。",
+        "2": "正しい。必要熱量1050 kJを有効熱出力1.19 kW（= 1.7 kW × 0.70）で与えると約882 sかかる。これは約14.7 minである。選択肢の中では15 minが最も近い（差約0.3 min）。",
+        "3": "誤り。計算値の約14.7 minとの差が約4.3 minある。15 minとの差約0.3 minより大きく、最も近い値ではない。",
+        "4": "誤り。計算値の約14.7 minとの差が約10.3 minある。最も近い値ではない。",
+        "5": "誤り。計算値の約14.7 minとの差が約15.3 minある。選択肢の中で最も離れている。"
+      },
+      "figureDescription": "この問には図はない。問題文のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20,
+        21
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3028,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.15185579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 847,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d3c0aa6bfec89d492445cd9b2353219258accab83c83d3b38f9573548b2adc53",
+  "inputRequestSha256": "20d88be0cea249443a23f9cdf5867f18797450552faf0e3644e0ff5e4d5d6398",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p20.png": "795f41d2757203a455db19d92507862beea273c5542d394f17ba5acd915c8091",
+    "data/raw_pdfs/denken3/review/20250831/machinery/p21.png": "f70f43bae0dfa2a5c7f8b21c48f97b127365792dadb3be51211dedd24e6dea5d"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3717,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16028,
+          "webSearchRequests": 0,
+          "costUSD": 0.2028278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1633,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "29c77fece9700d7850159300efd643e65e250b7990e4a2ddd67977d6eb68b2c7",
+      "inputRequestSha256": "d5017ac63a7af277a0424da42a5b418970d0da0f0c001f9eba4e630659a692c7",
+      "previousDraftSha256": "f8a852c0a8a7afb4f8c77c81c9500e898682967ae4efe826976a8ad783e21c9b",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q17-vision-draft-v1.json",
+      "answeredReviewSha256": "e9659f03f170b02d4593ee7a9fa5081a2c23000f42d43c23bb4a24ec6966cf34",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q17-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q17a-q17b-opus.json",
+      "answeredStrictReceiptSha256": "eae4e9a864533d34ae3a8a11a27bfd8933d7516382341822f49b6c534be23bc7",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

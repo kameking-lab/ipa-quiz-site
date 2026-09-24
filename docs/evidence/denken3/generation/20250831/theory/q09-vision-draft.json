@@ -1,0 +1,96 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図の交流回路において，電源電圧を E = 140 V とする。この電源に抵抗 R₀ [Ω] と誘導性リアクタンス X_L [Ω] とからなる力率 0.8 の誘導性負荷を接続したところ，電源から流れ出る電流の大きさは 30 A であった。次に，スイッチ S を閉じ，誘導性負荷と並列に抵抗 R [Ω] を接続すると，電源から流れ出る電流の大きさが 82 A となった。このとき，抵抗 R [Ω] の大きさとして，最も近いものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "1.5",
+        "2": "2.3",
+        "3": "2.5",
+        "4": "2.9",
+        "5": "3.0"
+      },
+      "officialAnswer": "3",
+      "explanation": "誘導性負荷と抵抗 R はどちらも電源 E = 140 V に直接並列接続される。このため、スイッチ S を閉じても誘導性負荷に加わる電圧は 140 V のままで、負荷に流れる電流は 30 A（力率 0.8，遅れ）のまま変わらない。\n\n【誘導性負荷の電流を有効分・無効分に分解】\n力率 cos θ = 0.8 より sin θ = √(1 − 0.8²) = 0.6\n有効分電流 I_p = 30 × 0.8 = 24 A\n無効分電流（遅れ） I_q = 30 × 0.6 = 18 A\n\n【S を閉じた後の電源電流】\n抵抗 R の電流 I_R = E / R は電源電圧と同相なので、有効分にのみ加わる。無効分は 18 A のまま。\n電源電流 I = √((I_p + I_R)² + I_q²) = 82 A\n(24 + I_R)² + 18² = 82²\n(24 + I_R)² = 6724 − 324 = 6400\n24 + I_R = 80\nI_R = 56 A\n\n【抵抗 R】\nR = E / I_R = 140 / 56 = 2.5 Ω\n\nよって正答は (3) 2.5 Ω である。\n\n（参考：誘導性負荷のインピーダンスは 140 / 30 ≒ 4.67 Ω で、R₀ ≒ 4.67 × 0.8 ≒ 3.73 Ω、X_L ≒ 4.67 × 0.6 = 2.8 Ω となるが、本問の解答には R₀，X_L の個別の値は不要である。）",
+      "choiceExplanations": {
+        "1": "誤り。R = 1.5 Ω とすると I_R = 140 / 1.5 ≒ 93.3 A、電源電流は √((24 + 93.3)² + 18²) ≒ 118.7 A となり、題意の 82 A と一致しない。",
+        "2": "誤り。R = 2.3 Ω とすると I_R = 140 / 2.3 ≒ 60.9 A、電源電流は √((24 + 60.9)² + 18²) ≒ 86.8 A となり、題意の 82 A と一致しない。",
+        "3": "正しい。R = 2.5 Ω とすると I_R = 140 / 2.5 = 56 A、電源電流は √((24 + 56)² + 18²) = √(6400 + 324) = √6724 = 82 A となり、題意と一致する。",
+        "4": "誤り。R = 2.9 Ω とすると I_R = 140 / 2.9 ≒ 48.3 A、電源電流は √((24 + 48.3)² + 18²) ≒ 74.5 A となり、題意の 82 A と一致しない。",
+        "5": "誤り。R = 3.0 Ω とすると I_R = 140 / 3.0 ≒ 46.7 A、電源電流は √((24 + 46.7)² + 18²) ≒ 72.9 A となり、題意の 82 A と一致しない。"
+      },
+      "figureDescription": "交流回路図。左端に交流電源（記号 〜、ラベル「E = 140 V」）がある。電源上端から右へ伸びる上側導線上の接続点（黒丸）から下方へ、四角い枠で囲まれた誘導性負荷が接続されている。枠内には上から抵抗 R₀ とコイル X_L が直列に描かれ、枠の外側左に「力率 0.8」、枠の外側右に縦書きで「誘導性負荷」と記されている。上側導線は接続点からさらに右へ延び、途中にスイッチ S（開いた状態で描画）を経て、右端の縦の枝にある抵抗「R[Ω]」に接続される。下側導線は電源下端・誘導性負荷下端の接続点（黒丸）・抵抗 R 下端を結ぶ。誘導性負荷（R₀ と X_L の直列）と抵抗 R が、スイッチ S を介して電源に対し並列接続される構成である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        12
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2880,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1323358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1002,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fe542c0b2a9969e11eee9708ed4d08d2f0d0c1e00a83c5108eaa3221f9c565f3",
+  "inputRequestSha256": "67671b6c1a64e54001614e4d36f649c304f49dd4c624c9de48de0771316830a2",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p12.png": "ab88770aa5736f907e7488ea692b3f131dcc2dab065ab929ed90abdecaa6f8e1"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2627,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13272,
+          "webSearchRequests": 0,
+          "costUSD": 0.1589798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 869,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6138d29e456a3e6f2c00dbbd3d0c0f3715b143ccbc0bed047271879d461e2148",
+      "inputRequestSha256": "2eeaf571e0eea1c5f9b3685b9bc123076178cf00d78c78fc0ca4d9a5a57121bc",
+      "previousDraftSha256": "dae588439259fe43bd9711de4bf90e37ce02d6a64eb9732da30d9af6a02ba02e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "bcf31c54d052cab090f478947ac4458fe8c442ad40beba214616e61ef0cc53a6",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "39720201244d72962bf6291d0b5339e1629e0fcda602dd100d72702c6521b0b4",
+      "figureSha256": {
+        "20250831-theory-q09-fig1": "dd4e9d188e96c1190a9b87c8f2605a1c2839862705d06fbba63718e325d9bbd6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

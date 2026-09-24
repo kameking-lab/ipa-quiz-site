@@ -1,0 +1,136 @@
+{
+  "questionNumber": 2,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "自家用電気工作物を (ア) する者は，自家用電気工作物において感電死傷事故が発生したときは，「電気関係報告規則」に基づき，事故の発生を知った時から (イ) 時間以内可能な限り速やかに事故の発生の日時及び場所，事故が発生した電気工作物並びに事故の (ウ) について（速報），電話等の方法により行うとともに，事故の発生を知った日から起算して (エ) 日以内に様式第13の報告書（詳報）を所轄産業保安監督部長へ提出して行わなければならない。\n\n上記の記述中の空白箇所(ア)～(エ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 管理　(イ) 12　(ウ) 概要　(エ) 7",
+        "2": "(ア) 設置　(イ) 24　(ウ) 原因　(エ) 7",
+        "3": "(ア) 設置　(イ) 24　(ウ) 概要　(エ) 30",
+        "4": "(ア) 設置　(イ) 48　(ウ) 概要　(エ) 30",
+        "5": "(ア) 管理　(イ) 48　(ウ) 原因　(エ) 60"
+      },
+      "officialAnswer": "3",
+      "explanation": "本問は、問題作成の基準日である令和7年4月1日時点で効力のある電気関係報告規則第3条（事故報告）に基づく。\n\n・報告義務者：同条第1項は、電気事業者（法第38条第4項各号に掲げる事業を営む者に限る。）又は「自家用電気工作物を設置する者」が、表の事故の欄に掲げる事故が発生したときに、報告先の欄に掲げる者に報告しなければならないと定めている。\n・対象事故：表の第一号は「感電又は電気工作物の破損若しくは電気工作物の誤操作若しくは電気工作物を操作しないことにより人が死傷した事故（死亡又は病院若しくは診療所に入院した場合に限る。）」で、報告先は「電気工作物の設置の場所を管轄する産業保安監督部長」である。\n・速報：同条第2項により、事故の発生を知った時から24時間以内可能な限り速やかに、事故の発生の日時及び場所、事故が発生した電気工作物並びに事故の概要について、電話等の方法により行う。\n・詳報：同じく第2項により、事故の発生を知った日から起算して30日以内に様式第十三の報告書を提出する。\n\nしたがって (ア) 設置、(イ) 24、(ウ) 概要、(エ) 30 となり、正しい組合せは (3) である。\n\n覚え方の要点：報告義務者は「設置する者」、速報は「24時間以内・概要」、詳報は「30日以内・様式第13」。",
+      "choiceExplanations": {
+        "1": "誤り。(ウ)「概要」は正しいが、(ア)は「管理」ではなく「設置」、(イ)は「12」ではなく「24」時間、(エ)は「7」ではなく「30」日である。",
+        "2": "誤り。(ア)「設置」、(イ)「24」は正しいが、(ウ)速報で報告する事項は規則上「事故の概要」であり「原因」ではない。また(エ)詳報の提出期限は「7」日ではなく「30」日である。",
+        "3": "正しい。(ア) 設置、(イ) 24、(ウ) 概要、(エ) 30 のすべてが電気関係報告規則第3条第1項・第2項の規定と一致する。",
+        "4": "誤り。(ア)「設置」、(ウ)「概要」、(エ)「30」は正しいが、(イ)速報の期限は「48」時間ではなく「24」時間以内である。",
+        "5": "誤り。(ア)は「管理」ではなく「設置」、(イ)は「48」ではなく「24」時間、(ウ)は「原因」ではなく「概要」、(エ)は「60」ではなく「30」日であり、すべての空欄が誤っている。"
+      },
+      "figureDescription": "図なし。問題文の下に、行(1)～(5)ごとに列(ア)(イ)(ウ)(エ)の語句・数値を示した選択肢の表がある。(1) 管理・12・概要・7、(2) 設置・24・原因・7、(3) 設置・24・概要・30、(4) 設置・48・概要・30、(5) 管理・48・原因・60。",
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/340M50000400054?occasion_date=20250401"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 6,
+      "outputTokens": 129738,
+      "cacheReadInputTokens": 11867,
+      "cacheCreationInputTokens": 124316,
+      "webSearchRequests": 0,
+      "costUSD": 3.5916854000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1166,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8d370a495931ea54bbd603a49ee95464c14e9effa29b0906b2c4fe7bfac004ba",
+  "inputRequestSha256": "c358a458901e72659182e7016f39822d8077b9f6e7daeeccd4c81353829cdffa",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p06.png": "18943a897a17ae9b28ec9e860249ca028c3a0f992ba75860856bd20be82dedf7"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3474,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16649,
+          "webSearchRequests": 0,
+          "costUSD": 0.2029358,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1766,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "76c84fb613baec987a5d9adb4d74831c6ddfafe7005cf1d28556d368044407dc",
+      "inputRequestSha256": "c520644bb9689421476bd28b35424d78f0beca0d05e69e495d405d1b5152838a",
+      "previousDraftSha256": "a187371f3205f08c10734210e25074ff76f64d2dbe2f275955f7a82a731e91c1",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q02-vision-draft-v1.json",
+      "answeredReviewSha256": "5a0bfac05eca64a5ff372a2f4dcb563895af81fec8f7b339b0b6f81ee72a5ab6",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q02-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/340M50000400054-20250401.json": "4cdb08201a4f7653f216d16416f06878f68d87290d508b20e8a70a5abadf64c7"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2612,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18202,
+          "webSearchRequests": 0,
+          "costUSD": 0.1981198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 966,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "64678e40a6c5d181af7d2788a690286ee67f3c2c9225b742509fde60fabe5d35",
+      "inputRequestSha256": "9f72b5877933d3529593673e3762eb0a20db2ba91669f93f5e27dc43218a9286",
+      "previousDraftSha256": "86a46007a565a3b2a13311ac92a88a097f21b1e5d2c8342a030d8766564fa484",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q02-vision-draft-v2.json",
+      "answeredReviewSha256": "966256448ad5a9a98b18fe13e0c576d1fa2987d385805a837f5ce037a5d5534a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q02-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s1-q02-opus.json",
+      "answeredStrictReceiptSha256": "1eefcfd9c4078a6715eb154b9f80df4937f5a620a40c86a6a8ea9b96261e97c0",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/340M50000400054-20250401.json": "4cdb08201a4f7653f216d16416f06878f68d87290d508b20e8a70a5abadf64c7"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

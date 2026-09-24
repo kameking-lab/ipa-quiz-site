@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4264,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13577,
+      "webSearchRequests": 0,
+      "costUSD": 0.1941598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2479,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "129763a6f75ae6ce44d1eeb0fd5e8b4725e425ee8f53218bb329b4f90415295e",
+  "inputRequestSha256": "b5a437ce2d8e6f7ed6a1d1f3476eb98213712934ab1392cd8353bdc9edf8cc76",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "b0c613d8b53e81e29820111bf5cec20039a2e0a6a53f551f04d594f7f0078390"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p09.png": "443bc2f9ac0e5bd6a5d833839d2f54c5f91a2f47af2f32737eb7d3db55878d0d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(3)の解説の後半「また相電圧 3 300/√3 ≈ 1 905 V も数値が近いが、これは電圧であり、持続短絡電流の値ではない」は、電流を問う設問で電圧値[V]と選択肢の電流値[A]の数値の近さを誤答理由に挙げている。単位の異なる量の偶然の一致であり、誤答の成因として根拠がなく学習者を混乱させる。削除し、前半の「短絡比を二重に掛けると 1 312 × 1.2² ≈ 1 890 A」だけを固有の理由として残すべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "問題文は、短絡事故発生時の界磁電流（励磁状態）を明示していない。解説は「無負荷で定格電圧を発生している状態（界磁電流 240 A）で出力端を三相短絡すると」と、これを所与の事実のように書いている。実際は「短絡前は無負荷定格電圧の励磁（界磁電流 240 A）であったとみなす」という本問の前提（短絡比の定義に対応する標準的な解釈）である。前提であることを明示する文言に修正すべき。例：「事故前は無負荷で定格電圧を発生していた（界磁電流 240 A）ものとして考える」。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（- 6 -、T1－K 009）と照合した。定格出力 7 500 kV·A、線間電圧 3 300 V、星形結線、定格電流相当の持続短絡電流に要する界磁電流 200 A、無負荷定格電圧に要する界磁電流 240 A、『巻線に流れる持続短絡電流の実効値[A]』のいずれも一致する。kV·A の中点が全角『・』になっている点は表記上の差にとどまり、意味は変わらない。",
+        "選択肢：(1) 1 100、(2) 1 600、(3) 1 900、(4) 2 700、(5) 3 400 の全肢が原図と一致する。",
+        "公式正答：添付の令和7年度上期解答表〈機械〉問6は解答 2・配点 5 であり、manifest の公式正答単位（answer 2, points 5）、候補の officialAnswer '2'、scoringPoints 5 と一致する。",
+        "定格電流の検算：√3 × 3 300 = 5 715.8。7 500 000 / 5 715.8 = 1 312.2 A。星形結線なので巻線電流 = 線電流で、解説の記述は正しい。",
+        "短絡比の検算：Ks = 240 / 200 = 1.2。定義（無負荷定格電圧時の界磁電流 ÷ 定格電流相当の短絡電流時の界磁電流）の向きも正しい。",
+        "持続短絡電流の検算：短絡特性の直線性から Is = 1 312.2 × 1.2 = 1 574.6 A となり、最も近い肢は(2) 1 600 A。公式正答と整合する。",
+        "別解の検算：Zs = 1/1.2 = 0.833 p.u.、Is = 1/0.833 = 1.2 p.u. = 1 575 A で、本解と一致する。",
+        "肢(1)：1 312.2 × 200/240 = 1 093.5 A ≈ 1 100 A。短絡比の逆数を用いた誤りという固有の理由は正しい。",
+        "肢(3)：1 312.2 × 1.44 = 1 889.6 A ≈ 1 900 A。短絡比の二重適用という理由は数値的に成立する（相電圧に触れた部分は choiceIssues に記載）。",
+        "肢(4)：1 574.6 × √3 = 2 727 A ≈ 2 700 A。これは定格電流を P/V（√3 を落とす）で算出して 2 272.7 × 1.2 = 2 727 A とした場合と同値であり、星形結線での √3 換算の誤りという説明は妥当。",
+        "肢(5)：1 574.6 × 2 = 3 149 A < 3 400 A なので、『2 倍以上』の記述は正しい。明確な誤算経路を示さず数値比較で除外すると述べており、推測で成因を作っていない。",
+        "図：原図に図はなく、解答に図は不要。figureUrls・choiceFigureUrls が空で、figureDescription の記述は正しい。",
+        "出典：officialReferenceUrls は空で、検証を要する独立主張はない。原図フッター『T1－K 009』は reviewedFromPage [9] と整合する（印字頁は 6）。sourceQuestionPdfUrl（third_q03＝機械）と sourceAnswerPdfUrl（third_a01）の命名、試験日 2025-08-31、上期、機械科目の表示は添付資料と矛盾しない。"
+      ]
+    }
+  ]
+}

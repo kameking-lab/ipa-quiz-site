@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3779,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13627,
+      "webSearchRequests": 0,
+      "costUSD": 0.1848598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2402,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ecf8bb62b6ba68a4466cb96e085ae4417fe3e0085b4ca12b7555dd4971a04d65",
+  "inputRequestSha256": "de267cedc910a20bf5c23fb96039ba79ca285ac8c62c4a640f89fa8a70007dda",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "2dbe30226269e073387567db6420f9a65b407dda014f4fb772a990b06f44f867"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p12.png": "2ad4918e6f38127c1a6ceba70b43360a7f258427fc5956228d3a4c278791f88e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「全負荷とは定格電流が流れている状態である」と定義として断定している。一方、uncertainty 欄はこれを「問題文に明記されていない前提」としており、両者の扱いが食い違う。解説は数値・因果とも正しい。ただし前提の位置づけを揃えること。例：解説側に「全負荷＝定格容量（定格電圧・定格電流）での運転とみなす」と前提として明示し、uncertainty 側からは解消済みとして削除する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述が他の出典フィールドと矛盾している。uncertainty 欄には「実施年度・回の記載がないため出典の一次資料URLは特定していない」とある。しかし sourceQuestionPdfUrl・sourceAnswerPdfUrl・sourceAttribution（令和7年度上期 機械 問9）・fiscalYear・term・examDate はすべて特定値で埋まっている。uncertainty 欄を現状に合わせて更新すること。",
+        "添付原図で確認できる範囲は限られる。問題原図の頁下部は「- 9 -」「T1－K 012」のみで、年度・科目名の記載はない。公式解答表で確認できるのは「令和7年度 第三種電気主任技術者上期試験解答」と機械 問9＝3 まで。examDate=2025-08-31 は URL ファイル名の日付接頭辞以外に、添付資料上の根拠がない。また、この問題頁が sourceQuestionPdfUrl（…_q03.pdf）の reviewedFromPage=12 に当たることも、添付原図単体からは検証できない。いずれも manifest 側での確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一致（負荷力率100 %で全負荷効率98 %、負荷力率 80 %での全負荷効率[%]、(1)〜(5)から一つ選べ）。句読点「，」、単位[%]も一致。",
+        "選択肢：(1)78.4 (2)81.6 (3)97.5 (4)98.4 (5)99.6。原図と全肢一致。",
+        "公式正答：公式解答表〈機械〉問9＝3、配点5。manifest の {question:9, part:null, answer:\"3\", points:5} および候補の officialAnswer=\"3\"・scoringPoints=5 と一致。",
+        "総合解説の検算：W = S(1/0.98 − 1) = 0.0204082S。η₂ = 0.8/(0.8 + 0.0204082) = 0.8/0.8204082 = 0.97512 → 97.5 %。(3) と一致。",
+        "因果の検算：同一電圧・同一電流では鉄損・銅損とも不変。力率低下で有効出力のみ減少するため効率は低下する。記述は正しい。",
+        "(1)：98 × 0.8 = 78.4 で一致。誤答理由も妥当。",
+        "(2)：0.8/0.98 = 0.81633 → 81.6 で一致。誤答理由も妥当。",
+        "(4)：0.8/(0.8 + 0.64 × 0.0204082) = 0.8/0.8130612 = 0.98394 → 98.4 で一致。「力率低下で効率は98 %を下回る」という排除理由も正しい。",
+        "(5)：効率は98 %未満になるという排除理由は正しい。",
+        "図：本問に図はない。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で整合。",
+        "officialReferenceUrls は空。独立主張はなく、検証対象もない。"
+      ]
+    }
+  ]
+}

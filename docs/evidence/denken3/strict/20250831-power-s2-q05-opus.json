@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3242,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13937,
+      "webSearchRequests": 0,
+      "costUSD": 0.1765998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1815,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a3ada29cea059bc005b2138c81e3f3971bb207842f7be85ca343f6eb0291d492",
+  "inputRequestSha256": "c60c132a31f30a6d9e49bce6ee0c95bb093f0b5c513ba0c43cd9b8f26c32bd13",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "bc7ad8174ca5dd5a4199faa310e17e1f8b363f626680cc96280b3a4e8876dcf8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p08.png": "f1eda5f2b1aee4d7f3414a0c5b482b06f99ccbadc57b71683358995c8d1f38cd"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図と一字ずつ照合した。「植物等の(ア)物から得られる燃料」「木くずから得られる(イ)やさとうきびから得られるエタノール」「吸収される(ウ)量と発電時の(ウ)発生量を同じとすることができれば，環境に負担をかけないエネルギー源」「設備は，一般的に(エ)である」はすべて原図どおり。(ウ)が2箇所で同一語になる構造も保持されている。設問文「上記の記述中の空白箇所(ア)〜(エ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。」も原図と一致する。",
+        "選択肢: 原図の表と全5行×4列を照合した。(1)無機/固形化燃料/二酸化炭素/小規模分散型、(2)無機/メタン/窒素化合物/小規模分散型、(3)有機/メタン/窒素化合物/大規模集中型、(4)有機/メタン/二酸化炭素/大規模集中型、(5)有機/固形化燃料/二酸化炭素/小規模分散型。すべて候補JSONと一致する。",
+        "公式正答: 公式解答表「令和7年度 第三種電気主任技術者上期試験解答」の＜電力＞列で、問5の解答は5、配点は5。manifestの公式正答単位 {question:5, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "総合解説: 各空欄を検証した。(ア)バイオマス＝生物由来の有機物資源→有機物。(イ)木くず→チップ・ペレット等の固形化燃料で、メタンは家畜排せつ物・食品廃棄物・下水汚泥のメタン発酵が主。(ウ)光合成によるCO2吸収量と燃焼時のCO2発生量が等しい＝カーボンニュートラル。(エ)資源が分散しており、収集・運搬コストと安定確保量の制約から小規模分散型。いずれも技術的に正しい。導かれる組合せ(有機・固形化燃料・二酸化炭素・小規模分散型)は選択肢(5)と一致する。",
+        "肢別解説: 各肢の正誤判定を空欄ごとに検算した。(1)は(ア)のみ誤り。(2)は(ア)(イ)(ウ)が誤りで(エ)のみ正。(3)は(ア)のみ正で(イ)(ウ)(エ)が誤り。(4)は(ア)(ウ)が正で(イ)(エ)が誤り。(5)は全正。各肢解説が挙げる正誤箇所はこの集合と過不足なく一致し、誤答肢ごとの固有の理由も正しい。",
+        "図: 原図に回路図・図版はなく、選択肢は(ア)〜(エ)を列見出し、(1)〜(5)を行見出しとする表形式。figureDescription の記述は原図と一致する。figureUrls と choiceFigureUrls が空であることも妥当で、解答に図は不要。",
+        "出典頁: 添付原図のフッター「T1－D 008」は冊子通し8頁目を示し、reviewedFromPage=[8] と整合する。印刷ノンブル「- 5 -」はPDF頁番号ではないので、混同はない。",
+        "参照URL: officialReferenceUrls は空で、独立主張の検証対象はない。fiscalYear=2025、term=upper は解答表見出し「令和7年度…上期」と一致する。subject=power は解答表＜電力＞列の問5の正答と内容の対応から整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3927,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15395,
+      "webSearchRequests": 0,
+      "costUSD": 0.2019638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2506,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "618a94fe794f5fb1cee91ce46f59c8b6bcfd2c52fea0e3c58752fd4213730b64",
+  "inputRequestSha256": "41951e3fded575d7d8cfd0b9f280cf5f1ff1ebebeff000bcd8a57a38e3939492",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "ca4c3d0fbd4d51a0935a0b9937418bc8b2b2cccd39c52dd53ce6c58e9cb26187"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "電池記号の極性（長線・短線が電極K側と電極P側のどちらにあるか）が figureDescription に記載されておらず、uncertainty でも未確定のまま残っている。添付原図の読み取りでは、左（電極K側）が長い細線、右（電極P側）が短い太線に見える。これが正しければ、JIS 記号の慣例上は電極Kが正極になる。その場合、問題文が前提とする「電子がPへ加速される」（Pが高電位）という設定と図の描画が矛盾する可能性がある。解像度の制約でこの読み取りは断定できないため、高解像度の原図で長線・短線の位置を確定し、確定した極性を figureDescription に明記すること。原図どおり K 側が正極であれば、その事実も併記すること。",
+        "uncertainty に未解決事項が記載されているのに needsReview=false となっており、不整合である。極性を確定して uncertainty を解消するか、needsReview=true にすること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、reviewedFromPage=[15]、問題PDF・解答PDFのURLは manifest と一致する。原図の下部ページ表記は「-12-」だが、manifest 上の PDF 第15頁と矛盾しない。sourceAttribution の「令和7年度上期 理論 問12」も一致する。",
+        "問題文: 原図と照合し、6 mm、2 000 V、V/m、W、J、e=1.6×10⁻¹⁹ C、「電界は一様」の但し書き、空白(ア)〜(ウ)の位置がすべて一致する。",
+        "選択肢: (1) 3.3×10²/光電子/1.6×10⁻¹⁶、(2) 3.3×10⁵/熱電子/1.6×10⁻¹⁶、(3) 3.3×10²/光電子/3.2×10⁻¹⁶、(4) 3.3×10²/熱電子/1.6×10⁻¹⁶、(5) 3.3×10⁵/熱電子/3.2×10⁻¹⁶。原図の表と全肢が一致する。",
+        "公式正答: 令和7年度上期解答表の理論 問12 は 解答5・配点5。officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "検算: E=V/d=2000/(6×10⁻³)=3.33×10⁵ V/m≒3.3×10⁵ V/m。W=eV=1.6×10⁻¹⁹×2000=3.2×10⁻¹⁶ J。eEd による別解も同値になる。加熱による放出は熱電子である。組合せは(5)で、公式正答と整合する。",
+        "肢別理由: (1) 2000/6=333≒3.3×10² は V/mm 相当であり、3項とも誤り。(2) (ウ)のみ誤り。(3) (ア)(イ)が誤り。(4) (ア)(ウ)が誤り。(5) 全項正しい。各肢の説明はいずれも正確である。",
+        "公開候補図: 電極K（左開きのコの字形の板）、内側のヒータ（上下の引出線は左端で開放）、電極P、6 mm の両矢印、K下辺の接続点から電池へ至る配線、P下端の黒丸、分岐点の黒丸、接地記号、全ラベル（電極K・電極P・ヒータ・6 mm）が原図と一致し、欠落はない。解答は問題文の数値のみで導けるため、図の理解は正答に必須ではない。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

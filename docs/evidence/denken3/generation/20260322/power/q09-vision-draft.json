@@ -1,0 +1,94 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "架空送電線路の雷害対策に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "二回線送電線路で，両回線の絶縁に格差を設け，二回線にまたがる事故を抑制する方法を不平衡絶縁方式という。",
+        "2": "架空地線を多条化することで，架空地線と電力線間の結合率が増加し，鉄塔雷撃時に発生するアークホーン間電圧が抑制できるので，逆フラッシオーバの発生が抑制できる。",
+        "3": "鉄塔塔脚の接地抵抗を低減させることで，電力線への雷撃に伴う逆フラッシオーバの発生を抑制できる。",
+        "4": "送電用避雷装置は雷撃時に発生するアークホーン間電圧を抑制できるので，雷による事故を抑制できる。",
+        "5": "直撃雷から架空送電線を遮へいする効果を大きくするためには，架空地線の遮へい角を小さくする。"
+      },
+      "officialAnswer": "3",
+      "explanation": "逆フラッシオーバは、電力線ではなく鉄塔や架空地線に雷撃があったときに起こる現象である。雷電流が鉄塔を通って大地へ流れる際、塔脚接地抵抗と雷電流の積などによって鉄塔の電位が大きく上昇する。その結果、鉄塔側（接地側）と電力線との間、すなわちアークホーン間に過大な電圧がかかり、鉄塔側から電力線側へ向かってフラッシオーバが生じる。これが「逆」フラッシオーバと呼ばれる理由である。塔脚接地抵抗を低減すると鉄塔電位の上昇が抑えられるため、逆フラッシオーバの抑制に有効である。一方、電力線そのものに雷撃があった場合に電力線側からがいしを通してフラッシオーバする現象は、直撃雷によるフラッシオーバであり、逆フラッシオーバではない。したがって(3)は「電力線への雷撃に伴う逆フラッシオーバ」としている点が誤りである。正しくは「鉄塔（または架空地線）への雷撃に伴う逆フラッシオーバ」となる。",
+      "choiceExplanations": {
+        "1": "正しい。二回線送電線路では、一方の回線の絶縁を他方より低くして絶縁に格差を設けることがある。こうすると、雷撃時には絶縁の低い回線が先にフラッシオーバし、二回線にまたがる同時事故を抑制できる。この方式を不平衡絶縁方式という。",
+        "2": "正しい。架空地線を多条化すると、架空地線と電力線との間の結合率が大きくなる。そのため鉄塔雷撃時には、電力線にも同極性の電圧がより大きく誘導される。鉄塔側と電力線側の電位差、つまりアークホーン間電圧が小さくなるので、逆フラッシオーバの発生を抑制できる。",
+        "3": "誤り（正答）。塔脚接地抵抗の低減は、鉄塔雷撃時の鉄塔電位上昇を抑え、逆フラッシオーバを抑制する対策である。逆フラッシオーバは鉄塔や架空地線への雷撃で生じる現象であり、「電力線への雷撃に伴う」とする記述が誤っている。",
+        "4": "正しい。送電用避雷装置は、がいし（アークホーン）と並列に取り付けられる。雷撃時にはアークホーン間電圧をフラッシオーバ電圧未満に制限し、雷過電圧によるフラッシオーバとそれに続く地絡事故を抑制する。",
+        "5": "正しい。遮へい角とは、架空地線を通る鉛直線と、架空地線と電力線を結ぶ直線とがなす角である。遮へい角が小さいほど、電力線が架空地線の真下近くに位置することになる。そのため直撃雷が電力線に到達しにくくなり、遮へい効果が大きくなる。"
+      },
+      "figureDescription": "本問に図はない。問題文と選択肢の文字情報のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        12
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2772,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1301758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1166,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6d4c160d66db7a2e47e009c83dc08fcc6b2c783829015f46fe6ef962b6b66a70",
+  "inputRequestSha256": "3b82d35a09e2f36638072eb87d60cd7277790e317e68eec0c7ba8f32cb5711ce",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p12.png": "a1b75fd03e39d2e4b7bfe46f5be9e63e7281caf039b5ecb9f4412dc2c0c0ccea"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2191,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12550,
+          "webSearchRequests": 0,
+          "costUSD": 0.1444838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 637,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "efc13c30b2db9b07b2258c7d84912b775a84eb1003b18e293f2e0d85d8007667",
+      "inputRequestSha256": "a94b5b2a42f8ef14bafbb6f4490789fb4173263bda4699a2bbaa4572b00cba98",
+      "previousDraftSha256": "6e66ebf1441233c219ce169413a13c2d93aacff2f67fd3371c3c91ad2595e0a6",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "f5308a88cd220b7c7768679bfc4142d2a9d1c7f535e063ef1a5fe197a6480b5a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "b8ff50e76c0d84479853d85a2e51c0bf345995ec7ee79b4a495faa75b0577600",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

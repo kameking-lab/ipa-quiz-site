@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4484,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14455,
+      "webSearchRequests": 0,
+      "costUSD": 0.2055838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2665,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "25db91921971394e11fa41e258ea1052a6d4ed2d93c64129eba1437ad4ddc9ea",
+  "inputRequestSha256": "c3fbd351244d6f281e85abdae91aecd240d0966137ad99da46f3064e119f7c4d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "7744b23322e6ab5d60e473eb1dde4ea88c1a8e2ff81180338f35ec36ca79e839"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p16.png": "3950c1330b7580d33c94ddab18fdc65a33348c7c5757e0cde4d190cde40fc7dc"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q13-fig1.png": "60c2fc52dd6d26de07d6826b214b45daa6c2ad2785acbe97af0ea616f1964bb3"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl=…/20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf、reviewedFromPage=[16] はいずれも manifest と一致する。原図下端の冊子通し番号「T2−K 016」も第16頁と整合する（本文頁番号「- 13 -」とは別物）。公式解答表の表題は「令和7年度 第三種電気主任技術者下期試験解答」で、令和7年度＝2025年度と一致する。sourceAttribution「令和7年度下期…機械科目 問13」も正しい。",
+        "公式正答: 公式解答表の＜機械＞欄で「問13 解答3 配点5」。候補の officialAnswer=\"3\" および scoringPoints=5 と一致する。",
+        "問題文: 原図の「図のブロック線図で示す制御系において，R(jω)とC(jω)間の合成周波数伝達関数 C(jω)/R(jω) を示す式として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」と文言・記号が一致する。",
+        "選択肢: 原図と5肢すべて一致する。(1) G₁G₃/(1+G₁G₂G₃)、(2) G₁G₂/(1+G₁G₂G₃)、(3) (G₁−G₂)/(1+G₁G₃−G₂G₃)、(4) (G₁+G₂+G₁G₂)/(1+G₂+G₁G₂G₃)、(5) G₁/(1+G₁G₂+G₁G₃)。添字・符号・分子分母の配置も一致する。",
+        "図の接続（原図）: R は加え合わせ点1に＋で入る。G₃ 帰還は下から入り、円の右下に−が付いている。加え合わせ点1の出力は分岐点（黒丸）で G₁ と G₂ に並列に分かれる。G₁ の出力は左から＋で、G₂ の出力は下から−で加え合わせ点2に入る。加え合わせ点2の出力が C(jω) となり、分岐点（黒丸）から G₃ を経て加え合わせ点1へ戻る。−記号を下側入力の符号とみなすのはブロック線図の標準的な表記であり、この解釈で公式正答(3)と一致する。候補 uncertainty の符号解釈は検証で解消済み。",
+        "独立検算: E=R−G₃C、C=(G₁−G₂)E を連立すると C(1+G₁G₃−G₂G₃)=(G₁−G₂)R となり、C/R=(G₁−G₂)/(1+G₁G₃−G₂G₃) で(3)に一致する。総合解説の各式変形と、G/(1+GH)（G=G₁−G₂、H=G₃）への対応づけはいずれも正しい。",
+        "肢別理由の検算: (1) 前向き経路は G₃ を通らないので分子に G₃ は現れない。ループ利得は (G₁−G₂)G₃ であって G₁G₂G₃ ではない。記述は正しい。(2) G=G₁G₂、H=G₃ とすると (2) の式に一致するので、直列と誤認した形という説明は正しい。(3) 導出と一致する。(4) ループは2本（G₁→G₃ と G₂→G₃）で、どちらも G₃ を通る。したがって G₃ を含まない単独の G₂ 項が分母に現れないこと、分子に G₁G₂ 項が現れないことはいずれも正しい。(5) G₁/(1+G₁(G₂+G₃)) は、G₁ を前向き要素とし G₂ と G₃ を並列の負帰還とした形に一致し、説明は正しい。",
+        "公開候補図 20260322-machinery-q13-fig1.png: 原図のブロック線図部分と比較し、R(jω)、C(jω)、G₁、G₂、G₃ のラベル、加え合わせ点1・2の＋／−符号4個、分岐点の黒丸2個、全矢印の向き（G₂ と G₃ の出力は上向きで各加え合わせ点に入る）、配線の接続がすべて一致する。欠落やトリミングによる切れはない。解答には符号と並列・帰還構造の読取りが不可欠で、この公開図だけで理解できる。",
+        "figureDescription: 接続・符号・並列結合・負帰還の記述が原図と一致する。",
+        "officialReferenceUrls は空配列で、検証が必要な独立主張はない。候補 uncertainty の出典年度の件は、manifest と公式解答表の表題で解消済み。needsReview=false も妥当。"
+      ]
+    }
+  ]
+}

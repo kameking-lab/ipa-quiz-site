@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3460,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14141,
+      "webSearchRequests": 0,
+      "costUSD": 0.1825918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1626,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "58370064f3704e340236a7f7e5558919b099a5e6f044faf0ebf8e1d233706d56",
+  "inputRequestSha256": "948ea3a595ce84d5e533956e75e7691dcc99a39a207f9389fb69bc27dda8d407",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "bce97c0f920cebcc5f92dc7d0e1a4cf82477507f4beffbee722be773ff4ff14f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p07.png": "83efd92f23a752e9eb04e8caedaed8c5c798cc9e1b86cafcffa43df4b541e52d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d27e5799392ef0be15cdff31498f81715dbfed9956d790d680e09a07857e9ac7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄が他のメタデータと矛盾している。uncertaintyには「実施年度・回を特定できません。そのため一次資料URLは記載していません」とある。しかし同じ候補JSONに、fiscalYear=2025、term=upper、examDate=2025-08-31、sourceQuestionPdfUrl、sourceAnswerPdfUrl、sourceAttribution「令和7年度上期第三種電気主任技術者試験 機械科目 問4」が記載されている。添付の公式解答表原図の表題は「令和7年度 第三種電気主任技術者上期試験解答」で、年度・回は特定できる。uncertainty欄のこの記述は削除するか、実態に合わせて書き直す必要がある。needsReview=false とも整合しない。",
+        "reviewedFromPage=[7] は添付原図から検証できない。原図に印字されているのは頁番号「- 4 -」と「T1－K 007」だけで、PDFの物理ページ番号は確認できない。PDF原本の7ページ目が機械問4であるかを外部で確認する必要がある。",
+        "examDate=2025-08-31、および sourceQuestionPdfUrl（…20250831_ch_third_q03.pdf）・sourceAnswerPdfUrl（…20250831_ch_third_a01.pdf）が本問・本解答表に対応することは、添付原図だけでは検証できない。日付はURLのファイル名から推測できるにとどまり、原図にも解答表原図にも試験日の記載はない。外部確認が必要。"
+      ],
+      "verifiedEvidence": [
+        "公式正答: 添付の公式解答表原図〈機械〉問4の解答は3、配点は5。manifestの公式正答単位 {question:4, part:null, answer:\"3\", points:5} および候補JSONの officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "問題文: 原図と照合し、励磁回路の省略、一次抵抗・漏れリアクタンスの省略、「二次電流≫励磁電流」「二次抵抗による電圧降下≫その他の電圧降下」、トルク一定負荷、電流80 A、電源電圧と周波数を共に5 %低下、「回転速度を少し下げた」、単位[A] がいずれも一致した。改行位置以外に脱落や改変はない。",
+        "選択肢: (1)72、(2)76、(3)80、(4)84、(5)88 が原図と完全に一致した。",
+        "総合解説の検算(1): 励磁回路・一次抵抗・漏れリアクタンスを省略すると I = V/(r₂/s) = sV/r₂。P₂ = 3I²(r₂/s) = 3sV²/r₂。ωₛ = 2πf/(p/2) = 4πf/p（pは極数）。よって T = P₂/ωₛ ∝ sV²/f。いずれも正しい。",
+        "総合解説の検算(2): トルク一定の条件で s′(0.95V)²/(0.95f) = sV²/f から s′ = s/0.95。I′ = (s/0.95)(0.95V)/r₂ = sV/r₂ = I = 80 A。公式正答(3)と一致する。",
+        "総合解説の検算(3): 補足の回転速度 n′ = (1 − s/0.95)·0.95nₛ = (0.95 − s)nₛ で、元の (1 − s)nₛ より 0.05nₛ 低下する。滑り周波数 s′f′ = sf で不変。いずれも正しく、問題文の「回転速度を少し下げた」と因果的に整合する。",
+        "別の見方: V/f 一定なら磁束一定、トルク∝磁束×二次電流有効分。したがってトルク一定なら電流一定となり、励磁電流を省略した本近似の範囲で妥当である。",
+        "誤答肢(1): 80×0.95² = 72.2 A であり、72 A に相当するという記述は正しい。I∝V² の関係が本条件から導かれないという理由付けも妥当。",
+        "誤答肢(2): 80×0.95 = 76 A。滑り一定のままだとトルクが 0.95²/0.95 = 0.95 倍になり、トルク一定の条件に反するという指摘は正しい。",
+        "誤答肢(4): 80/0.95 = 84.2 A であり、84 A に相当するという記述は正しい。I′ = I となるので誤りとする理由は妥当。",
+        "誤答肢(5): 80×1.1 = 88 A。電流が増加する根拠がないという理由は妥当。",
+        "正答肢(3)の解説は総合解説と同一の計算で、整合している。",
+        "図: 原図に図はなく、解答に図は不要。figureDescription、figureUrls=[]、choiceFigureUrls={} はいずれも適切である。",
+        "officialReferenceUrls は空配列で、独立した外部主張はない。"
+      ]
+    }
+  ]
+}

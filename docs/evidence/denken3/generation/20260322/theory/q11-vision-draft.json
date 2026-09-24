@@ -1,0 +1,94 @@
+{
+  "questionNumber": 11,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，それぞれのダイオードについて述べたものである。\n\na．可変容量ダイオードは，通信機器の同調回路などに用いられる。このダイオードは，pn 接合に （ア） 電圧を加えて使用するものである。\n\nb．pn 接合に （イ） 電圧を加え，その値を大きくしていくと，降伏現象が起きる。この降伏電圧付近では，流れる電流が変化しても接合両端の電圧はほぼ一定に保たれる。定電圧ダイオードは，この性質を利用して所定の定電圧を得るようにつくられたダイオードである。\n\nc．レーザダイオードは光通信や光情報機器の光源として利用され，pn 接合に （ウ） 電圧を加えて使用するものである。\n\n上記の記述中の空白箇所(ア)～(ウ)に当てはまる語句として，正しいものを組み合わせたのは次のうちどれか。",
+      "choices": {
+        "1": "(ア) 順方向　(イ) 順方向　(ウ) 逆方向",
+        "2": "(ア) 逆方向　(イ) 逆方向　(ウ) 順方向",
+        "3": "(ア) 逆方向　(イ) 順方向　(ウ) 逆方向",
+        "4": "(ア) 順方向　(イ) 逆方向　(ウ) 順方向",
+        "5": "(ア) 逆方向　(イ) 逆方向　(ウ) 逆方向"
+      },
+      "officialAnswer": "2",
+      "explanation": "正解は (2)。(ア) 逆方向，(イ) 逆方向，(ウ) 順方向。\n\n(ア) 可変容量ダイオード（バラクタダイオード）：pn 接合に逆方向電圧を加えると，接合部に空乏層が生じ，空乏層の両側が平行平板コンデンサの電極のようにはたらく。逆方向電圧を大きくすると空乏層が広がって静電容量は小さくなり，逆方向電圧を小さくすると空乏層が狭まって静電容量は大きくなる。この「電圧で容量を変えられる」性質を同調回路の可変コンデンサとして利用する。順方向電圧を加えると電流が流れてしまい，電圧制御の容量素子として使えないため，逆方向で使用する。\n\n(イ) 定電圧ダイオード（ツェナーダイオード）：pn 接合に逆方向電圧を加えて大きくしていくと，ある電圧で急に大きな逆方向電流が流れ始める（降伏現象）。降伏領域では電流が大きく変化しても端子電圧はほぼ一定に保たれるので，これを定電圧源として利用する。順方向電圧では降伏現象は起きない。\n\n(ウ) レーザダイオード：pn 接合に順方向電圧を加えて電流を流すと，接合部に電子と正孔が注入されて再結合し，光を放出する。電流をしきい値以上にすると誘導放出が支配的になり，位相のそろったレーザ光が得られる。逆方向電圧ではキャリアの注入が起きず発光しない。\n\nしたがって (ア) 逆方向，(イ) 逆方向，(ウ) 順方向 の組合せである (2) が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。(ア) 可変容量ダイオードは逆方向電圧で空乏層容量を変化させて使うので「順方向」は誤り。(イ) 降伏現象は逆方向電圧で起きるので「順方向」は誤り。(ウ) レーザダイオードは順方向電流によるキャリア注入で発光するので「逆方向」は誤り。3 つとも誤っている。",
+        "2": "正しい。(ア) 可変容量ダイオードは逆方向電圧で空乏層の幅を変え静電容量を制御する。(イ) 定電圧ダイオードは逆方向電圧による降伏領域の定電圧特性を利用する。(ウ) レーザダイオードは順方向電圧で電流を流し，注入キャリアの再結合と誘導放出で発光する。",
+        "3": "誤り。(ア) 逆方向は正しいが，(イ) 降伏現象は逆方向電圧で起きるので「順方向」は誤り，(ウ) レーザダイオードは順方向電圧で使用するので「逆方向」は誤り。",
+        "4": "誤り。(イ) 逆方向と (ウ) 順方向は正しいが，(ア) 可変容量ダイオードは逆方向電圧を加えて空乏層容量を利用する素子であり，順方向電圧では電流が流れて電圧制御の容量素子として使えないため「順方向」は誤り。",
+        "5": "誤り。(ア) 逆方向と (イ) 逆方向は正しいが，(ウ) レーザダイオードは逆方向電圧ではキャリアが注入されず発光しないため「逆方向」は誤り。順方向電圧を加えて使用する。"
+      },
+      "figureDescription": "回路図・図版はない。選択肢は，列見出し (ア)・(イ)・(ウ)，行見出し (1)～(5) の 3 列 × 5 行の表で示されており，各セルは「順方向」または「逆方向」である。表の内容は choices と同一である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        16
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2687,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1284758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 697,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "69582410c3cb2edb319cd3f23145de52cf9abd6bca9b0b9af961f9bb7abbf28c",
+  "inputRequestSha256": "167b6fb0c6dee5e2568edf1b77314c55ccba174905e69e5d19af9c584eccecd8",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p16.png": "f5e891d4e2ca3306e36ea0bbfeef1fff1209ad2eb45785cf5aba19fb9fda15a6"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2647,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12796,
+          "webSearchRequests": 0,
+          "costUSD": 0.1555718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 708,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "058560cb1e36c2c45fac40a45cf745a0a46cada8c44420b7a3cf5c24940b4f03",
+      "inputRequestSha256": "6807869d44f495cd34c877fcb499662a55487153d8957794e83832053af4e1d7",
+      "previousDraftSha256": "81e3293e3789cb50b033623b30d04182d475792b8386fbdecac148ab37819f7f",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q11-vision-draft-v1.json",
+      "answeredReviewSha256": "cc5f93b6f55afd7515d26c795170cad82e68a42736d4932ce3918254d58cc58f",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q11-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q11-opus.json",
+      "answeredStrictReceiptSha256": "1a57ce10e575d053ba658385c4ef49ec828b384a088be2b4c457b7e0b6c2ce31",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

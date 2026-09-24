@@ -1,0 +1,126 @@
+{
+  "questionNumber": 13,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "定格容量200 kV·Aの変圧器に，出力Pが120 kW，遅れ力率cosθが0.6の負荷が接続されている。変圧器の定格容量の範囲内で，この負荷と並列に遅れ力率cosθが0.6の負荷を増設すると共に，進相コンデンサを接続して遅れ力率cosθを0.8に改善したい。増設できる負荷(力率cosθが0.6)の皮相電力S′[kV·A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "93.3",
+        "2": "120",
+        "3": "66.7",
+        "4": "160",
+        "5": "40"
+      },
+      "officialAnswer": "3",
+      "explanation": "【考え方】\n「変圧器の定格容量の範囲内」とは、力率改善後の合成皮相電力が200 kV·A以下であることを意味する。合成力率を0.8に保つと、合成皮相電力は合成有効電力÷0.8となる。したがって、増設負荷を大きくするほど合成皮相電力も大きくなる。\nこのため、増設できる負荷の上限は、合成皮相電力がちょうど200 kV·Aになるときに決まる。上限より小さい負荷(例えば40 kV·A)も増設自体は可能である。ただし本問で求めるのは、定格容量を使い切るときの上限値である。\n問題文ではどの力率もcosθと表記している。以下では区別のため、既設負荷をθ₁、改善後の全体をθ₀、増設負荷をθ′とする。\n\n【既設負荷】\n有効電力 P₁ = 120 kW、力率 cosθ₁ = 0.6(遅れ)である。よって sinθ₁ = √(1 − 0.6²) = 0.8。\n皮相電力 S₁ = P₁ ÷ cosθ₁ = 120 ÷ 0.6 = 200 kV·A\n無効電力 Q₁ = S₁ sinθ₁ = 200 × 0.8 = 160 kvar(遅れ)\n既設負荷だけで変圧器は定格容量に達している。負荷を増設するには、コンデンサで力率を改善して皮相電力を減らす必要がある。\n\n【改善後の全体(上限)】\n改善後の力率は cosθ₀ = 0.8(遅れ)なので、sinθ₀ = √(1 − 0.8²) = 0.6。\n合成皮相電力を定格容量200 kV·Aとすると、\n合成有効電力 P = 200 × cosθ₀ = 200 × 0.8 = 160 kW\n合成無効電力 Q = 200 × sinθ₀ = 200 × 0.6 = 120 kvar(遅れ)\n\n【増設負荷】\n進相コンデンサは有効電力を消費しない。そのため、増設負荷の有効電力は次のとおりである。\nP′ = P − P₁ = 160 − 120 = 40 kW\n増設負荷の力率は cosθ′ = 0.6(遅れ)、sinθ′ = 0.8 なので、\nS′ = P′ ÷ cosθ′ = 40 ÷ 0.6 ≒ 66.7 kV·A\n\n【検算】\n増設負荷の無効電力は Q′ = S′ sinθ′ = 66.7 × 0.8 ≒ 53.3 kvar である。\n必要なコンデンサ容量は Qc = (Q₁ + Q′) − Q = (160 + 53.3) − 120 ≒ 93.3 kvar となる。\nこのときの合成は P = 160 kW、Q = 120 kvar、S = √(160² + 120²) = 200 kV·Aである。力率は 160 ÷ 200 = 0.8 となり、条件をすべて満たす。\n\nよって最も近いものは(3) 66.7 kV·Aである。\n\nポイント:\n進相コンデンサは無効電力だけを打ち消し、有効電力には影響しない。\n力率改善後に変圧器が供給できる有効電力の上限は、定格容量×改善後力率で求まる。この上限から既設負荷の有効電力を差し引けば、増設できる負荷の有効電力の上限が決まる。",
+      "choiceExplanations": {
+        "1": "誤り。93.3は、力率を0.8に改善するために必要な進相コンデンサの容量 Qc ≒ 93.3 kvar に相当する値であり、増設負荷の皮相電力ではない。仮に93.3 kV·A(力率0.6)の負荷を増設すると、その有効電力は93.3 × 0.6 ≒ 56 kWで、合成有効電力は約176 kWになる。力率0.8では合成皮相電力が176 ÷ 0.8 = 220 kV·Aとなり、定格容量200 kV·Aを超える。",
+        "2": "誤り。120は、既設負荷の有効電力120 kW、または改善後の合成無効電力120 kvarと同じ値であり、増設負荷の皮相電力ではない。仮に120 kV·A(力率0.6)の負荷を増設すると、有効電力は72 kWで、合成有効電力は192 kWになる。力率0.8では合成皮相電力が240 kV·Aとなり、定格容量を超える。",
+        "3": "正しい。合成皮相電力を定格容量200 kV·Aとする上限では、改善後の合成有効電力は200 × 0.8 = 160 kWとなる。増設負荷の有効電力は160 − 120 = 40 kW。力率0.6なので、皮相電力は40 ÷ 0.6 ≒ 66.7 kV·Aとなる。",
+        "4": "誤り。160は、改善後の合成有効電力160 kW、または既設負荷の無効電力160 kvarと同じ値であり、増設負荷の皮相電力ではない。仮に160 kV·A(力率0.6)の負荷を増設すると、有効電力は96 kWで、合成有効電力は216 kWになる。これは力率を1にしても定格容量200 kV·Aを超える。",
+        "5": "誤り。40は増設負荷の有効電力 P′ = 40 kW と同じ値である。問われているのは皮相電力なので、力率0.6で割る必要がある。40 kV·A(力率0.6)の負荷は、有効電力24 kW・無効電力32 kvarである。これを増設して合成力率を0.8にすると、合成有効電力は144 kW、合成皮相電力は144 ÷ 0.8 = 180 kV·Aとなる。200 kV·A以下なので増設自体は可能である。しかし、定格容量を使い切るときの上限である66.7 kV·Aより小さく、求める値ではない。"
+      },
+      "figureDescription": "本問に図はない。問題文と選択肢のみで解答できる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        16
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2425,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1232358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 805,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9f570aa4d203d6c5cb1114f18f074f55ae02adb1e6d63d6b9284066433a4e1f0",
+  "inputRequestSha256": "db6e57379e8de9d8b41060c416ba223b8ebbf3194e3791b9d2c3c8df6878c817",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p16.png": "c66d410d45a15bc50aa3859442535674fca327511c18428fdb3780d0cf323a08"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3619,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12726,
+          "webSearchRequests": 0,
+          "costUSD": 0.1744518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1330,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3b7a22f0ed3b56c9691b3fbf7e2c4a088e2c9adb1b5164061675e73bb76a0df7",
+      "inputRequestSha256": "cde6d363c801640b6b4319282df95e4900271c3762338563a13cba0c11110526",
+      "previousDraftSha256": "f4e3c9093695316391069c9e7741aa3d101a021a4028c53e13d01988e615c9da",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q13-vision-draft-v1.json",
+      "answeredReviewSha256": "d88d73fec8c12a139685e0046cc81c82caa21e40ee1ffb5306cae252ec33b5b8",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q13-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q13-opus.json",
+      "answeredStrictReceiptSha256": "b6acaf58e44df635a40d8760a2cd0225c432e5fb23810a9d495e9f22b3e21eb3",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3712,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13183,
+          "webSearchRequests": 0,
+          "costUSD": 0.1799678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1291,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "f33de2d43c91e92cbbee78a3730fce24894c1c73a66b37431285e040b017e49e",
+      "inputRequestSha256": "bc3eda60acd7064ccd363b3c6f4f2d5bd510865ff2cc5bdec5ce4d20eea3d82e",
+      "previousDraftSha256": "7b1b7ec2d9d36eabaa264e998c694397876e879a72a312ce931cd989dedabf62",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q13-vision-draft-v2.json",
+      "answeredReviewSha256": "1bbe0ba4c0495391e2e407f5e3045fe53790ca9b16c1c43af06bf8bc144b3f52",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q13-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s2-q13-opus.json",
+      "answeredStrictReceiptSha256": "ad0fb938478e32da243f41146048d3bad02cf0b676829433b83b22ba0871cc97",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

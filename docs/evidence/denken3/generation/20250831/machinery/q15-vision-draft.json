@@ -1,0 +1,123 @@
+{
+  "questionNumber": 15,
+  "sharedContext": "B問題（配点は1問題当たり(a)5点，(b)5点，計10点）\n問15 三相誘導電動機について，次の(a)及び(b)に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "三相誘導電動機について，次の(a)及び(b)に答えよ。\n\n(a) 一次側に換算した二次巻線の抵抗 r₂′ と滑り s の比 r₂′/s が，他の定数（一次巻線の抵抗 r₁，一次巻線のリアクタンス x₁，一次側に換算した二次巻線のリアクタンス x₂′）に比べて十分に大きくなるように設計された誘導電動機がある。この電動機を電圧 V の電源に接続して運転したとき，この電動機のトルク T と滑り s，電圧 V の関係を表す近似式として，正しいものを次の(1)〜(5)のうちから一つ選べ。\nただし，k は定数である。",
+      "choices": {
+        "1": "T = k/(Vs)",
+        "2": "T = k/(V²s)",
+        "3": "T = kV²/s",
+        "4": "T = kV²s",
+        "5": "T = kVs"
+      },
+      "officialAnswer": "4",
+      "explanation": "励磁回路を無視した簡易等価回路で考える。1相の電圧を V/√3 とすると，一次側に換算した二次電流 I₂′ は\nI₂′ = (V/√3) / √{(r₁ + r₂′/s)² + (x₁ + x₂′)²}\nである。r₂′/s が r₁，x₁，x₂′ より十分大きいので\nI₂′ ≈ (V/√3) / (r₂′/s) = Vs / (√3·r₂′)\n二次入力（同期ワット）P₂ は\nP₂ = 3·I₂′²·(r₂′/s) = 3·{V²s²/(3r₂′²)}·(r₂′/s) = V²s / r₂′\nトルクは T = P₂/ω₀（ω₀：同期角速度，一定）なので\nT = {1/(ω₀·r₂′)}·V²s = kV²s\nとなる。したがって，トルクは電圧の2乗と滑りに比例し，正答は(4)である。",
+      "choiceExplanations": {
+        "1": "誤り。上記の近似では T は V²s に比例する。T = k/(Vs) は電圧・滑りの増加でトルクが減る関係であり，導出結果と一致しない。",
+        "2": "誤り。T は V² と s に比例するのであって，V²s に反比例するのではない。",
+        "3": "誤り。T ∝ V²/s は，逆に r₂′/s を含む抵抗分がリアクタンス x₁ + x₂′ に比べて小さい（滑りが大きい）領域で I₂′ ≈ (V/√3)/(x₁ + x₂′) と近似したときに得られる形であり，本問の条件（r₂′/s が十分大きい）には当てはまらない。",
+        "4": "正しい。I₂′ ≈ Vs/(√3·r₂′)，P₂ = V²s/r₂′，T = P₂/ω₀ より T = kV²s となる。",
+        "5": "誤り。トルクは電流の2乗に比例する二次入力から求まるため，電圧については1乗ではなく2乗に比例する。"
+      },
+      "figureDescription": "図なし（本問は文章と数式のみで構成される）。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18
+      ]
+    },
+    {
+      "part": "b",
+      "question": "三相誘導電動機について，次の(a)及び(b)に答えよ。\n〔(a)で示された条件：一次側に換算した二次巻線の抵抗 r₂′ と滑り s の比 r₂′/s が，他の定数（一次巻線の抵抗 r₁，一次巻線のリアクタンス x₁，一次側に換算した二次巻線のリアクタンス x₂′）に比べて十分に大きくなるように設計されている。〕\n\n(b) 上記(a)で示された条件で設計された定格電圧 220 V，同期速度 1200 min⁻¹ の三相誘導電動機がある。この電動機を電圧 220 V の電源に接続して，一定トルクの負荷で運転すると，1140 min⁻¹ の回転速度で回転する。この電動機に供給する電源電圧を 200 V に下げたときの電動機の回転速度 [min⁻¹] の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。\nただし，電源電圧を下げたとき，負荷トルクと二次抵抗は変化しないものとする。",
+      "choices": {
+        "1": "1150",
+        "2": "1127",
+        "3": "1113",
+        "4": "1091",
+        "5": "1000"
+      },
+      "officialAnswer": "2",
+      "explanation": "(a)より T = kV²s（k は二次抵抗が一定なら一定）。\n220 V 運転時の滑り：s₁ = (1200 − 1140)/1200 = 0.05\n負荷トルク一定なので kV₁²s₁ = kV₂²s₂ より\ns₂ = s₁ × (V₁/V₂)² = 0.05 × (220/200)² = 0.05 × 1.21 = 0.0605\n回転速度：N₂ = 1200 × (1 − 0.0605) = 1200 × 0.9395 ≈ 1127 min⁻¹\nしたがって正答は(2)である。電圧を下げると同じトルクを出すために滑りが大きくなり，回転速度は低下する。なお，同期速度は電源周波数と極数で決まるため，電圧を下げても 1200 min⁻¹ のまま変わらない。",
+      "choiceExplanations": {
+        "1": "誤り。1150 min⁻¹ は滑り約 0.042 に相当し，220 V 運転時（1140 min⁻¹）より速い。これは s₁ に (200/220)² を掛けた値（0.05 × 0.826 ≈ 0.0413 → 約 1150 min⁻¹）に相当し，電圧比を逆に用いた結果である。電圧低下時にトルク一定を保つには滑りは増えなければならないため誤り。",
+        "2": "正しい。s₂ = 0.05 × (220/200)² = 0.0605 より N₂ = 1200 × (1 − 0.0605) ≈ 1127 min⁻¹。",
+        "3": "誤り。1113 min⁻¹ は滑り 87/1200 ≈ 0.0725（s₁ の約 1.45 倍）に相当する。T = kV²s でトルク一定のままこの滑りになるには，電圧を 220/√1.45 ≈ 183 V まで下げる必要があり，200 V の条件と合わない。",
+        "4": "誤り。1091 min⁻¹ は 1200 × (200/220) ≈ 1091 に一致し，回転速度（同期速度）が電源電圧に比例すると誤解したときの値である。同期速度は周波数と極数で決まり電圧には依存しない。電圧低下の影響は滑りの増加として現れ，s₂ = 0.0605 となる。",
+        "5": "誤り。1000 min⁻¹ は滑り 200/1200 ≈ 0.167（s₁ の約 3.3 倍）に相当する。T = kV²s でトルク一定のままこの滑りになるには，電圧を 220/√3.33 ≈ 120 V まで下げる必要があり，200 V への低下としては速度低下が過大である。"
+      },
+      "figureDescription": "図なし（本問は文章と数式のみで構成される）。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4406,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.1630798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1822,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d83b6c352892b00f3d3650c155e9215e2a24a4579f1f5c8c4b705583c73aac0a",
+  "inputRequestSha256": "7c08de00343dd161ddaf8396622502b7c59f5a57f57a7581f07470969b21db5a",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p18.png": "4db0ed6265b5436b600bfe69ed973f943759b30daa8de2dabd2aa7a608640e55"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5728,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14109,
+          "webSearchRequests": 0,
+          "costUSD": 0.2276958,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3086,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3482f826b0d82284288bf73435c64303a9b9e49446e87164523be8dcfce9ac2b",
+      "inputRequestSha256": "8fdbff15281cf16ed2c31086cdb6c1ab293ca7ba4ce9169aab2af3df56eae436",
+      "previousDraftSha256": "4a958a994cbefa332fdf16b7d2ef072d0daa25fff0619e665408fbe91876fe9b",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q15-vision-draft-v1.json",
+      "answeredReviewSha256": "d7a76653e62c0a5dcfdc7fc99ae021de89d7603e46be738ec93c15848ee202dc",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q15-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q15a-q15b-opus.json",
+      "answeredStrictReceiptSha256": "497f0289cc78e8c4aedcc8075856b77e5124331c8d1478a0684313fc4bf0784d",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

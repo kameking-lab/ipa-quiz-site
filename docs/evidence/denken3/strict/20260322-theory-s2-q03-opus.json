@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2542,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13573,
+      "webSearchRequests": 0,
+      "costUSD": 0.1596878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 995,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c2694ae12b39871ccf5757d043265a01a7506cab87edaa12bb5533fbe90ea147",
+  "inputRequestSha256": "c0894fbad5ae50999f52a94e3e95e0e47a116daf920dd97a191b4eb72802f70e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "407d7052768d3652d96d672d5937ce708cdafa4a3d2b4eeb31c18fa1f4b900e2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p06.png": "1438fdf54948f9d2059ca270f03ad22ca84021d3f9294244f6fa6ed9d7de57fc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "ab09e59978bc2ceaa18992fc66a0d78ba6d640a8ee332605be6e9b0a8e9f38a3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式問題原図のフッター『T2－R 006』は、manifest 固定の問3原図ページ（PDF第6頁、冊子ノンブル『-3-』）と一致する。候補の reviewedFromPage=[6] と整合する。",
+        "出典メタデータ: 公式解答表の表題は『令和7年度 第三種電気主任技術者下期試験解答』で、fiscalYear=2025、term=lower と一致する。manifest の試験日 2026-03-22 と examDate も一致する。",
+        "出典メタデータ: 候補の subject=theory は解答表の＜理論＞列に対応する。sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest の問題PDF・解答PDFの URL と完全に一致する。sourceAttribution（令和7年度下期・理論科目・問3）も整合する。",
+        "問題文: 原図と一字ずつ照合し、相違はない。照合した要素は、巻数 1 000、直流電流 0.2 A、磁束 6×10⁻⁴ Wb（指数 −4）、『自己インダクタンス[H]』、『最も近いもの』、『(1)〜(5)のうちから一つ選べ』、『漏れ磁束は無視できるものとする』である。句読点の『，』『。』も原図と同じ。",
+        "選択肢: 原図の (1) 1、(2) 2、(3) 3、(4) 4、(5) 5 と、候補 choices の 1〜5 が完全に一致する。単位 [H] は問題文側にあり、選択肢は無単位の数値で表記されている点も原図どおり。",
+        "公式正答: 解答表の理論・問3 は解答 3、配点 5 である。manifest の {question:3, part:null, answer:\"3\", points:5}、候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "計算検算: L = NΦ/I = (1 000 × 6×10⁻⁴)/0.2 = 0.6/0.2 = 3 H で、選択肢 (3) と厳密に一致し、公式正答と整合する。漏れ磁束を無視するので全巻数と鎖交する、という前提の因果も正しい。",
+        "総合解説の補足: N を掛け忘れた場合の Φ/I = 6×10⁻⁴/0.2 = 3×10⁻³ H は数値として正しい。1 H とも 333 倍離れているので、『どの選択肢にも近くならない』という記述は常識的な意味で妥当と判断した。",
+        "誤答肢 (1) の検算: L=1 H には NΦ=0.2 Wb、すなわち N=1 000 で Φ=2×10⁻⁴ Wb が必要で、正しい。",
+        "誤答肢 (2) の検算: L=2 H には NΦ=0.4 Wb、すなわち Φ=4×10⁻⁴ Wb が必要で、正しい。",
+        "誤答肢 (4) の検算: L=4 H には NΦ=0.8 Wb、すなわち Φ=8×10⁻⁴ Wb が必要で、正しい。",
+        "誤答肢 (5) の検算: L=5 H には NΦ=1.0 Wb、すなわち Φ=1×10⁻³ Wb が必要で、正しい。",
+        "各肢解説の共通点: どの肢の解説も実際値 NΦ=0.6 Wb、L=3 H との対比を示しており、計算に誤りはない。",
+        "正答肢 (3) の解説: L = NΦ/I の代入過程と単位の扱い（Wb/A = H）が正しい。",
+        "図: 原図ページに図はない。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={} は妥当で、問題文と選択肢だけで解答できる。",
+        "参照URL: officialReferenceUrls=[] のため、検証が必要な外部主張はない。uncertainty『なし』、needsReview=false と矛盾する事項も見当たらない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "questionNumber": 10,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "開放電圧が V [V] で出力抵抗が十分に低い直流電圧源と，インダクタンスが L [H] のコイルが与えられ，抵抗 R [Ω] が図1のようにスイッチ S を介して接続されている。時刻 t = 0 でスイッチ S を閉じ，コイルの電流 i_L [A] の時間に対する変化を計測して，波形として表す。R = 1 Ω としたところ，波形が図2であったとする。R = 2 Ω であればどのような波形となるか，波形の変化を最も適切に表すものを次の(1)〜(5)のうちから一つ選べ。\nただし，選択肢の図中の点線は図2と同じ波形を表し，実線は R = 2 Ω のときの波形を表している。",
+      "choices": {
+        "1": "（グラフ）実線は t = 0 で 0 A から点線より急に立ち上がり，t = 1 s で約 2.5 A，t = 2 s 付近でほぼ 3 A に達し，以後 3 A で一定となる。",
+        "2": "（グラフ）実線は t = 0 で 0 A から点線より緩やかに立ち上がり，t = 1 s で約 1.2 A，t = 2 s で約 1.9 A，t = 3 s で約 2.3 A と，図の範囲内では上昇を続けている。",
+        "3": "（グラフ）実線は立ち上がり直後は点線とほぼ重なり，その後ほぼ直線的に上昇して t = 1 s で約 2.6 A に達し，以後は緩やかに約 3 A へ近づく。",
+        "4": "（グラフ）実線は立ち上がり直後は点線とほぼ重なり，t = 1 s で約 1.3〜1.4 A，t = 2 s 付近で約 1.5 A に達し，以後 1.5 A で一定となる。",
+        "5": "（グラフ）時間軸は 5 s まで。実線は点線より緩やかに立ち上がり，t = 1 s で約 0.6 A，t = 2 s で約 1.0 A，t = 3 s で約 1.2 A，t = 5 s で約 1.45 A と，約 1.5 A に向かってゆっくり上昇する。"
+      },
+      "officialAnswer": "4",
+      "explanation": "RL 直列回路に直流電圧 V を加えたときのコイル電流は\n　i_L(t) = (V/R)·(1 − e^(−t/τ))，　τ = L/R\nで表される（電圧源の出力抵抗は十分に低いので無視し，コイルは巻線抵抗のない理想インダクタンスとして扱う）。\n\n【R = 1 Ω（図2）から V と L を求める】\n・最終値が 3 A なので V = R·I∞ = 1 × 3 = 3 V。\n・t = 1 s で 2 A なので 3(1 − e^(−1/τ₁)) = 2 → e^(−1/τ₁) = 1/3 → τ₁ = 1/ln3 ≈ 0.91 s。\n・L = R·τ₁ ≈ 1 × 0.91 ≈ 0.91 H。\n\n【R = 2 Ω の場合】\n・最終値：I∞ = V/R = 3/2 = 1.5 A（R = 1 Ω の半分）。\n・時定数：τ₂ = L/2 ≈ 0.46 s（R = 1 Ω の半分）。\n・i_L(t) = 1.5(1 − e^(−2t/τ₁)) = 1.5(1 − (1/3)^(2t)) より\n　t = 1 s：1.5 × (1 − 1/9) ≈ 1.33 A\n　t = 2 s：1.5 × (1 − 1/81) ≈ 1.48 A\n・t = 0 での傾き：di_L/dt = V/L ≈ 3/0.91 ≈ 3.3 A/s。これは R に依存しないため，立ち上がり直後の傾きは R = 1 Ω のときと同じになる。\n\nしたがって，「立ち上がり直後は点線と重なり，最終値は半分の 1.5 A，点線より速く（時定数半分で）一定値に落ち着く」波形である(4)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。点線より速く一定値に落ち着く点は合っているが，最終値が 3 A のままである。R = 2 Ω では最終値は V/R = 3/2 = 1.5 A に半減する。また，t = 0 の傾き V/L は R に依存しないのに，実線の立ち上がりの傾きが点線より大きい。",
+        "2": "誤り。最終値が 3 A 方向に向かっており，1.5 A になっていない。また立ち上がりが点線より遅く，時定数が長くなっているが，実際は τ = L/R が半分になるので速く落ち着くはずである。さらに t = 0 の傾き V/L は R に依存しないのに，実線の初期の傾きが点線より小さい。",
+        "3": "誤り。最終値が約 3 A であり，R = 2 Ω での最終値 1.5 A と一致しない。また，t = 1 s までほぼ直線的に上昇する形は，指数関数的に一定値へ近づく RL 回路の電流の形とも異なる。",
+        "4": "正しい。最終値は V/R = 1.5 A，時定数は L/R が半分の約 0.46 s となり，t = 1 s で約 1.33 A，t = 2 s で約 1.48 A と計算値に合う。t = 0 の傾き V/L も R に依存しないため点線と一致して立ち上がる点も合っている。",
+        "5": "誤り。最終値が約 1.5 A に向かう点は合っているが，立ち上がりが点線よりはるかに遅い。図の読み（t = 2 s で約 1 A）では時定数は約 2/ln3 ≈ 1.8 s となり，R = 1 Ω のときの約 2 倍に相当する。実際は τ = L/R が半分になるので逆である。また t = 0 の傾き V/L が点線と一致していない。"
+      },
+      "choiceExplanations_note_removed": null,
+      "figureDescription": "問題文の理解と選択に図が必要。\n図1（回路図）：左辺に直流電圧源 V [V]（電池記号。長い極板（正極）が上側），上辺左側にスイッチ S，その右に抵抗 R [Ω]，抵抗の右側の上辺に右向き矢印で電流 i_L [A]，右辺にコイル L [H]，下辺は導線で電源に戻る直列閉回路。電流は電源の正極（上側）から S → R → L の向きに流れ，i_L の矢印の向きと一致する。\n図2（R = 1 Ω での波形）：縦軸 i_L [A]（目盛 1, 2, 3），横軸 t [s]（目盛 0, 1, 2, 3），各目盛に破線の補助線。t < 0 では 0 A の水平線，t = 0 から上に凸の曲線で立ち上がり，t = 1 s で 2 A の補助線の交点付近を通り，t = 2 s で約 2.7 A，t = 3 s で約 2.9 A と 3 A に漸近する。\n選択肢(1)〜(5)のグラフ：いずれも縦軸 i_L [A]（目盛 1, 2, 3），横軸 t [s] のグラフで，各目盛に破線の補助線があり，点線は図2と同じ波形，実線は R = 2 Ω のときの候補波形。(1)〜(4) の横軸目盛は 0〜3，(5) のみ 0〜5。各グラフの下に (1)〜(5) の番号が付く。各実線の形状は choices に記載。",
+      "officialReferenceUrls": [],
+      "uncertainty": "図2の「t = 1 s で 2 A」は，曲線が目盛補助線の交点付近を通るように描かれていることからの読み取りであり，これに基づく τ₁ ≈ 0.91 s，L ≈ 0.91 H は概算値である。ただし正答の判断根拠（最終値が 1.5 A に半減，時定数が半分，初期傾きが不変）はこの読み取り値に依存しない。選択肢グラフの各時刻の電流値は図からの目視読み取りによる概略値である。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14,
+        15
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6000,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11351,
+      "webSearchRequests": 0,
+      "costUSD": 0.21107179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3252,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bf3b1ccec6b9bf6612493eabc15070ce22050bf8e1c72fdddf924b7eebabba7d",
+  "inputRequestSha256": "1757026ab53a71bb009d174d0db892826f6737cecadbadd9ef25323619d5f193",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p14.png": "265d0dbdabfa72bec5fa72221b14bd8329db91d2eef1d2c27e000bed8c6703df",
+    "data/raw_pdfs/denken3/review/20260322/theory/p15.png": "f48c519d7fb0f6e8029b4bdf84751498dbb2985f24610ef20e7b054e26f909b7"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7360,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 18975,
+          "webSearchRequests": 0,
+          "costUSD": 0.29926379999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1409,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "e041bc6f267eda6baf6df538fbccc94638c4de9266fd31c0f4c758765de30ab4",
+      "inputRequestSha256": "d002afd8f49f87e666747c5738cc85c319add603702b441e6d1712fae0ae5706",
+      "previousDraftSha256": "45191993f96521bf6cce600dd3577636418e14e8f896691b24ec2740c30ad506",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q10-vision-draft-v1.json",
+      "answeredReviewSha256": "f247d380f77abf30794b13e3e68fad29eccfda0fa44bbd3297262700d4576747",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q10-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q10-opus.json",
+      "answeredStrictReceiptSha256": "2f3d9a3e56c94c80dd24cb222fea53654179ce786b0cd1b3a0c3c0a98941cb08",
+      "figureSha256": {
+        "20260322-theory-q10-fig1": "1e2db1c9c4d9bf9b8f1d57df3c0cee4cffb71c4eaa953630450fb7168228d994",
+        "20260322-theory-q10-fig2": "fea715a0fab1589441f8a0e4526dca12b4e0e99de6002c782ec0ecac440c9067"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

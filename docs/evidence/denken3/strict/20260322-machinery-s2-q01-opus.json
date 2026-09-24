@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4049,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16411,
+      "webSearchRequests": 0,
+      "costUSD": 0.2125318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2333,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ba221ce5425e4d428977fa390f61d5426c8c36755f9225c542721179355896cc",
+  "inputRequestSha256": "e92916ba469b19b9dd4fbddcd14e456a9e5c408fab64d720f568112127a6b863",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "9006da95f09c5724a8546156ad69959de01795bb0ce4165de9ac39472014aa30"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p04.png": "884246d34d90d44d6195fd268503ed99ba93288c87403fca4844370d1e945797"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q01-fig1.png": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "10d5afd93743aa0b59bdfdafbe9472a9d67618ae102f53b59f5e2154710369a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説で E = KΦn と T = KΦ·I_a に同じ比例定数 K を使っている。n を回転速度 [min⁻¹] や [s⁻¹] とすると、2 つの定数は 2π（または 2π/60）倍だけ異なり、同一記号にはできない。同一の K が成り立つのは角速度 ω [rad/s] を用いた E = KΦω の場合だけである。E = K₁Φn、T = K₂Φ·I_a のように定数を分けるか、E = KΦω と表記を改めること。choiceExplanations[4] と [5] も同じ式を引用しており、合わせて整合させること。結論（図(5)が正答）には影響しない。"
+      ],
+      "figureIssues": [
+        "figureDescription の共通記述「横軸の始点（原点位置）に I₀ と記されている」は、図(3)について不正確である。原図・公開候補図とも、(3)では I₀ のラベルが縦軸との交点より右側にずれている。T の曲線はこの I₀ の位置の横軸上（値 0）から立ち上がり、n の曲線は縦軸の上端付近から始まる。(1)(2)(4)(5)では I₀ は縦軸との交点にある。(3)については「I₀ は原点よりやや右に記され、T は I₀ の位置から立ち上がる」と明記すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 解答表の原図の表題は「令和7年度 第三種電気主任技術者下期試験解答」であり、fiscalYear=2025、term=lower、examDate=2026-03-22 と整合する。問題原図の見出しは「第3種 機械」で subject=machinery と整合する。sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest と一致する。reviewedFromPage=[4] は manifest 指定の PDF 第4頁と一致する（原図下部の「-1-」は冊子内の頁番号）。sourceAttribution「令和7年度下期…機械科目 問1」も一致する。",
+        "公式正答: 解答表の〈機械〉欄は「問1 解答5 配点5」である。候補の officialAnswer=\"5\" と scoringPoints=5 は一致する。",
+        "問題文: 原図の本文「直流電動機などの原動機では，…一つ選べ。」と但し書き「ただし，図の負荷電流は電機子電流と界磁電流の和であり，I₀ は無負荷電流の値である。端子電圧と界磁調整器の抵抗値は一定であるとする。」を逐語照合し、欠落・改変はない。",
+        "選択肢(1)〜(5): 各図のラベルと曲線形状を原図と照合した。(1)は T が減少・n が I₀ から直線上昇して飽和、(2)はその逆ラベル、(3)は n が双曲線状に減少・T が下に凸で急上昇、(4)は T がほぼ水平でわずかに下降・n が直線上昇して飽和、(5)はその逆ラベル。候補の choices の記述はすべて一致する。",
+        "物理検算: 分巻電動機は V 一定・界磁回路抵抗一定なので I_f 一定、Φ≈一定。速度 n ∝ (V − R_a I_a)/Φ はわずかに低下するだけの定速度特性となる。軸トルクは発生トルクから無負荷損分を差し引いたもので、I₀ で 0、近似的に (I − I₀) に比例して増加する。大電流域では電機子反作用で Φ が減り、傾きが緩やかになる。以上から図(5)が正しく、公式正答と一致する。",
+        "誤答理由: (1) T が減少し n が 0 から始まる点が不適。(2) n が双曲線状に低下するのは直巻特性。(3) T ∝ I_a²、n ∝ 1/I_a の直巻特性。(4) 形状は分巻に近いがラベルが逆。いずれも各図固有の誤りを正しく指摘している。",
+        "公開候補図: 20260322-machinery-q01-fig1.png は原図の5つのグラフを欠落なく収録している。軸ラベル「トルク T，回転速度 n」「負荷電流」、I₀、各曲線の T/n ラベル、(1)〜(5)の番号がすべて判読でき、原図との食い違いはない。選択肢自体が図のため図は解答に必須であり、公開候補図だけで解答に必要な情報が得られる。",
+        "officialReferenceUrls は空であり、検証すべき外部の独立主張はない。"
+      ]
+    }
+  ]
+}

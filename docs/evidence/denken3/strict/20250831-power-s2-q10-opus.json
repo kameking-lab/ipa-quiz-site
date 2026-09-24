@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2841,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13813,
+      "webSearchRequests": 0,
+      "costUSD": 0.1675878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1157,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "31a52d90b2e78952fbac0f998efc6921cfdc22bab1dd618780263c55c3f052e4",
+  "inputRequestSha256": "1a062b87f4070030e09a4412028d08012b06885fe290c87737e62b4d8cd786ac",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "ab376d240f4551b24556186f86e926c57c07e7f4a06bf7f7c99a4d20e9c4fdf3"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p13.png": "b6877762354a3d8f942fc7fe9de0ae9e93f9d5670ca09a44df12435d8616cfc8"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "95638092e114170a332e710f1d4875873d08af6659d2017919978a70ace83047",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図の問10本文「地中送電線路に使用される各種電力ケーブルに関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補の文言が一致する。候補で変わっているのは『OF ケーブル』→『OFケーブル』などの空白除去だけで、これは sourceAttribution の『読みやすく整形』の範囲に収まり、意味の変化はない。",
+        "選択肢(1): 原図の『油浸紙絶縁ケーブル』『油通路』『絶縁油の加圧によりボイドの発生を抑制』『給油設備が必要』がすべて一致し、欠落も改変もない。",
+        "選択肢(2): 原図の『架橋ポリエチレン』『架橋反応により立体網目状分子構造』『熱可塑性を大幅に向上させた絶縁材料』が一致する。誤り箇所の『熱可塑性』は原図どおりに保持されている。",
+        "選択肢(3): 原図の『給油設備が不要』『保守性に優れている』『水トリーの発生による絶縁劣化』『金属シースや遮水層を設ける場合がある』が一致する。",
+        "選択肢(4): 原図の『単心CVケーブル3条をより合わせたトリプレックス形』『3心共通シース形CVケーブルと比較して』『熱抵抗が小さいため電流容量を大きくできる』『接続作業性がよい』が一致する。",
+        "選択肢(5): 原図の『油圧の常時監視』『金属シースや鋼管の欠陥，外傷など』『漏油を検知』『油圧の異常低下による絶縁破壊事故の未然防止』が一致する。",
+        "公式正答: 添付の公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞欄で、問10は解答2・配点5である。manifest の {question:10, part:null, answer:'2', points:5}、候補の officialAnswer='2'、scoringPoints=5 とすべて一致する。",
+        "総合解説: ポリエチレンは熱可塑性樹脂である。架橋によって立体網目構造になると、高温でも溶融・変形しにくくなる。したがって向上するのは耐熱性であり、熱可塑性はむしろ失われる。この因果が正しく書かれており、誤り肢を(2)と特定する論理は公式正答と整合する。耐熱性の向上によって導体の許容温度が上がり、許容電流が増えるという補足も技術的に正しい。",
+        "肢別解説(1): 油浸紙絶縁の構造、加圧によるボイド抑制、給油設備（油槽等）の必要性の説明は正しい。",
+        "肢別解説(2): 『熱可塑性』を『耐熱性』に正すべきという指摘は正しい。これは正答肢固有の誤り理由として適切である。",
+        "肢別解説(3): 固体絶縁のため給油設備が不要であること、水分と電界の作用で水トリーが進展すること、浸水防止のために金属シース・遮水層を設けることの説明はいずれも正しい。",
+        "肢別解説(4): 3心共通シース形より放熱がよく熱抵抗が小さいため許容電流が大きいこと、各心が独立しているため接続・端末処理がしやすいことの説明は正しい。",
+        "肢別解説(5): 加圧油の油圧低下として漏油を検知し、絶縁破壊を未然に防止するという説明は正しい。",
+        "図: 原図の問10には図がなく、文章のみの問題である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} はこれと整合している。",
+        "出典: officialReferenceUrls は空配列であり、検証を要する独立主張はない。sourceQuestionPdfUrl（20250831_ch_third_q02.pdf）、sourceAnswerPdfUrl（20250831_ch_third_a01.pdf）、examDate=2025-08-31、fiscalYear=2025、term=upper、subject=power は相互に整合し、解答表の表題とも矛盾しない。",
+        "頁: 原図の印刷ノンブルは『-10-』（冊子番号 T1－D 013）である。PDFページとしては reviewedFromPage=[13] を採用した。表紙・注意事項などの前付けがあればこのずれは説明でき、原図との矛盾はない。"
+      ]
+    }
+  ]
+}

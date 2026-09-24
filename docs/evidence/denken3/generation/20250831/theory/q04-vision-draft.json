@@ -1,0 +1,96 @@
+{
+  "questionNumber": 4,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図1のように、無限に長い直線状導体Aに直流電流 I₁ [A] が流れているとき、この導体から a [m] 離れた点Pでの磁界の大きさは H₁ [A/m] であった。一方、図2のように半径 a [m] の一巻きの円形コイルBに直流電流 I₂ [A] が流れているとき、この円の中心点Oでの磁界の大きさは H₂ [A/m] であった。H₁ = H₂ であるときの I₁ と I₂ の関係を表す式として正しいものを、次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "I₁ = π² I₂",
+        "2": "I₁ = (2/π) I₂",
+        "3": "I₁ = I₂ / π²",
+        "4": "I₁ = I₂ / π",
+        "5": "I₁ = π I₂"
+      },
+      "officialAnswer": "5",
+      "explanation": "無限長直線電流が距離 a の点につくる磁界の大きさは、アンペアの周回積分の法則より H₁ = I₁ / (2πa) [A/m]。\n半径 a の一巻き円形コイルの中心の磁界の大きさは、ビオ・サバールの法則より H₂ = I₂ / (2a) [A/m]。\nH₁ = H₂ とおくと\nI₁ / (2πa) = I₂ / (2a)\n両辺に 2πa を掛けて I₁ = π I₂。\nしたがって正答は(5)。なお、この問いは磁界の大きさだけを比べるので、図中の電流の向きは結果に影響しない。",
+      "choiceExplanations": {
+        "1": "誤り。I₁ = π² I₂ を H₁ = I₁/(2πa) に代入すると H₁ = π I₂/(2a) = π H₂ となり、H₁ は H₂ の π 倍になって H₁ = H₂ を満たさない。",
+        "2": "誤り。I₁ = (2/π) I₂ を代入すると H₁ = I₂/(π² a) = (2/π²) H₂ となり、H₁ = H₂ を満たさない。",
+        "3": "誤り。I₁ = I₂/π² を代入すると H₁ = I₂/(2π³ a) = H₂/π³ となり、H₁ = H₂ を満たさない。",
+        "4": "誤り。I₁ = I₂/π を代入すると H₁ = I₂/(2π² a) = H₂/π² となり、H₁ = H₂ を満たさない。係数 π を掛けるべきところで割っている。",
+        "5": "正しい。H₁ = I₁/(2πa) と H₂ = I₂/(2a) を等しいとおくと I₁ = π I₂ が得られる。"
+      },
+      "figureDescription": "図1と図2の2つの図が横に並ぶ。図1（左）：「直線状導体A」と記された縦向きの直線導体に、上向きの矢印とラベル「I₁[A]」が付く。導体の左側に点P（黒丸）があり、Pと導体の間に両矢印とラベル「a[m]」が示される。図2（右）：「一巻き円形コイルB」と記された円があり、円の左側に下向きの矢印とラベル「I₂[A]」が付く（図上で反時計回りの電流を示す）。円の中心に点O（黒丸）があり、Oと円周右端の間に両矢印とラベル「a[m]」が示され、半径が a であることを表す。図は電流の向きと距離・半径の関係を示すが、磁界の大きさの比較に必要な条件（距離 a、半径 a、電流 I₁・I₂）は問題文でも与えられているため、図がなくても解答は可能。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2105,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11683579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 636,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "80af00e05f3b7666f1368134f21e70c8ad8aeb68ad83274fbe372c46e7869074",
+  "inputRequestSha256": "697dc9deb7b2bff97dd85213c909fa8a58a2cb0d6718e3aebcc420cea61d8317",
+  "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/theory/p07.png": "105d962f43171c068ee91991b415b66cf1894b6d25de64bf68a49ea301bd0e89"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2177,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13033,
+          "webSearchRequests": 0,
+          "costUSD": 0.1480678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 854,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a4fc772b3b87f6605f9ae10e8c1360c13e842ec0d932c9b08b6564b378143d46",
+      "inputRequestSha256": "0e3e33defafe914db14c0783bf704aed8312180da30826d297935b20aac85f99",
+      "previousDraftSha256": "e8ac5aaa0ff7fc7d0d26afeb46eca78d81dac2f9921c5f69b85365060573ac6c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/theory/archive/q04-vision-draft-v1.json",
+      "answeredReviewSha256": "b9fdabd4e348ff58b7f2fb107170175e8884109bf9de663152d80359e90ae118",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/theory/archive/q04-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-theory-s1-q04-opus.json",
+      "answeredStrictReceiptSha256": "e3b37f9b7ab017dbfec07d49dfa7d3850e2e07470d975609b7beb49012a38d36",
+      "figureSha256": {
+        "20250831-theory-q04-fig1": "1f22f0a3d26b1ad73bfca0b284f2260bd73ec37fc90ac1079636de3aa8a19fc4"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

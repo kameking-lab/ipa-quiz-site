@@ -1,0 +1,94 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "三相かご形誘導機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "同じ容量の三相巻線形誘導機よりも構造が簡単で，安価である。",
+        "2": "発電機として，一部の水力発電や風力発電に採用されている。",
+        "3": "発電運転中の滑りは負となる。",
+        "4": "大容量の電動機にはアルミダイカスト回転子が広く用いられている。",
+        "5": "回転子に棒状の導体を用いている三相かご形誘導機は，同じ容量の三相巻線形誘導機よりも機械的に過酷な使用に耐えられる。"
+      },
+      "officialAnswer": "4",
+      "explanation": "かご形誘導機の回転子は、スロットに収めた導体を両端の端絡環で短絡した構造です。巻線、スリップリング、ブラシがありません。アルミダイカスト回転子は、導体と端絡環をアルミニウムの鋳造で一体成形します。量産に向くため、主に小容量から中容量の電動機に用いられます。大容量機では、銅または銅合金の棒状導体を端絡環にろう付けや溶接で接合する構造が一般的です。したがって、「大容量の電動機にはアルミダイカスト回転子が広く用いられている」とする(4)が誤りです。",
+      "choiceExplanations": {
+        "1": "正しい。かご形の回転子には、巻線、スリップリング、ブラシがありません。そのため、同容量の巻線形誘導機より構造が簡単で、安価です。",
+        "2": "正しい。誘導機は回転子側に界磁源を持たないため、系統（電源）に接続して励磁電流（遅れ無効電力）の供給を受けた状態で、原動機により同期速度より速く回転させると発電機として動作します。系統から切り離して単独で運転する場合は、コンデンサを接続して自己励磁させる必要があります。この誘導発電機は、一部の小水力発電や風力発電に採用されています。",
+        "3": "正しい。滑りは s = (Ns − N) / Ns で表されます（Ns：同期速度、N：回転速度）。発電運転では N > Ns となるため、s < 0、つまり滑りは負になります。",
+        "4": "誤り。アルミダイカスト回転子は主に小容量から中容量の電動機に用いられます。大容量の電動機では、銅または銅合金の棒状導体を端絡環に接合したかご形回転子が一般的です。",
+        "5": "正しい。棒状導体のかご形回転子は、構造が単純で堅牢です。回転子に絶縁巻線もスリップリングもないため、同容量の巻線形誘導機より機械的に過酷な使用に耐えられます。"
+      },
+      "figureDescription": "なし（本問に図は含まれていない）",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        6
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1542,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1055758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 506,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "76956df2ac3657344f5338719a815e8f574902f4ce13ab556cf27dff9b7f43f4",
+  "inputRequestSha256": "146db1ef082668b1cd824a0f2939cbf2c93e6181e2030f8c2ef814437c19339f",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p06.png": "cacb57b7fb737ea0853f03d389de26f78c09b56355ac570aa4e518bf17d12ef4"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2028,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11766,
+          "webSearchRequests": 0,
+          "costUSD": 0.1349518,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 944,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "acf6281371a8892bd151696a57e6fa2992eb99c4043d871223f9cdb3c32f6e5c",
+      "inputRequestSha256": "2c978b0e352cff271d8eacae157cc94e6554e27764a0b4c36ffc39e9aa8e0771",
+      "previousDraftSha256": "6524f9424099ee9863f6f2ed8f2ca012c27ccc6d319869d829d68fc72f02e7ab",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "5b0a45f8961c7f8af2ac4cea607c8620917802172d811899789da296769ed57e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q03-opus.json",
+      "answeredStrictReceiptSha256": "9aabc7ab7cdd86bf7969210606dcf8c6a22e55b497f9f1ba26731a0668dae76b",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

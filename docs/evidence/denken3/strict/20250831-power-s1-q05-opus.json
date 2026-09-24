@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3484,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14018,
+      "webSearchRequests": 0,
+      "costUSD": 0.1820878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2081,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c560c735d98cb709f7ec6480e76dad9f17efa38c5a90756d29f77433b6ff8bab",
+  "inputRequestSha256": "95db3d4467fb4e9345eaedee38a99cc49037063a7400dd4860cc0a41f996b11a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "c6b7e4703f15488e58abb554b7910905eb587f8470ce52dfb57f2d9c3a39c09b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p08.png": "f1eda5f2b1aee4d7f3414a0c5b482b06f99ccbadc57b71683358995c8d1f38cd"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄とsourceAttributionが食い違っている。uncertainty欄は「本問の出題年度・回はこのページからは特定できていません」としたまま、needsReview=false となっている。一方で sourceAttribution・fiscalYear=2025・term=upper・examDate=2025-08-31・subject=power は確定値として記載されている。問題原図の頁内に年度表記がないのは事実である。ただし年度・回・科目は次の3点で特定できる。(1) manifest固定の sourceQuestionPdfUrl（20250831_ch_third_q02.pdf）、(2) 公式解答表原図の見出し「令和7年度 第三種電気主任技術者上期試験解答」、(3) 内容（バイオマス発電）が電力科目の出題範囲であること。uncertainty欄を、これらを根拠に同定した旨へ書き換えるか、未解決事項がないなら空にして整合させる必要がある。未解決と読める記述を残したままではPASSにできない。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表原図（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞問5：解答5、配点5。manifest固定の公式正答単位 {question:5, part:null, answer:\"5\", points:5} および候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "問題文：原図の本文（植物等の［(ア)］物／木くずから得られる［(イ)］やさとうきびから得られるエタノール／吸収される［(ウ)］量と発電時の［(ウ)］発生量／一般的に［(エ)］である）と一語ずつ照合した。脱字・誤字はない。設問文「上記の記述中の空白箇所(ア)〜(エ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。」も一致する。",
+        "選択肢(1)〜(5)：原図の表の各行（(1)無機/固形化燃料/二酸化炭素/小規模分散型、(2)無機/メタン/窒素化合物/小規模分散型、(3)有機/メタン/窒素化合物/大規模集中型、(4)有機/メタン/二酸化炭素/大規模集中型、(5)有機/固形化燃料/二酸化炭素/小規模分散型）と全セルが一致する。",
+        "総合解説：(ア)有機、(イ)固形化燃料（チップ・ペレット）、(ウ)二酸化炭素（カーボンニュートラル）、(エ)小規模分散型（資源の分散・収集運搬コスト・安定確保量の制約）の各理由は技術的に正しい。結論の(5)は公式正答と一致する。",
+        "肢別解説：(1)は(ア)のみ誤り。(2)は(ア)(イ)(ウ)が誤りで(エ)は正しい。(3)は(ア)のみ正しい。(4)は(ア)(ウ)が正しく(イ)(エ)が誤り。各肢で正誤を判定した空欄の指摘は、表の内容と完全に一致する。(5)の正解理由も妥当である。",
+        "図：本問に回路図・グラフはなく、選択肢表はchoicesに全て文字化されている。figureUrls・choiceFigureUrlsが空でも解答に支障はない。",
+        "officialReferenceUrlsは空で、検証を要する独立主張はない。",
+        "頁：原図の印字頁は「- 5 -」、下部コードは「T1－D 008」である。reviewedFromPage=[8] は表紙等を含むPDF通し頁として整合し、矛盾は認められない。"
+      ]
+    }
+  ]
+}

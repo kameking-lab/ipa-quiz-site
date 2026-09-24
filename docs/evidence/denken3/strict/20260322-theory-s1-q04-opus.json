@@ -1,0 +1,80 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5980,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14481,
+      "webSearchRequests": 0,
+      "costUSD": 0.2357118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4031,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c340d8a7fcc2a917c3e6df93b10cfe1e3299a5ae7a63a7d0457937251d508258",
+  "inputRequestSha256": "d1124d2191a14e76a9d6c85126c0cf23fe0744e6d760ad21c5328e799617ea82",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "cdc85a0d1e9f56f8680dd006f82cf51be6adeebea23719be8df3eca5888c6b58"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p07.png": "1aadb34eeefcae4c86be44266ab5725adb76e43811077631886d53bb83a24485"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q04-fig1.png": "c467b5f4cfaf4cd3125d8dc24b6acd22c1cac2d33e3ffbfb90fdecd44065a7f8"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "82bbc27ee4202160980cc221c64986a18e95e57e8c2b3c96210683a999978ff1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations の誤答肢(1)〜(4)は、いずれも「計算値 2.0 A/m と一致しない。誤り。」という同じ文で、肢ごとの理由がない。各肢がどの誤った考え方で得られる値かを個別に書く必要がある。検算済みの例は次のとおり。ただし出題者の意図とは断定せず、典型的な誤りの例として示すこと。",
+        "(1) 0.25: 1/4 を二重に掛け、さらに半径の代わりに直径 d を用いて H = I/(32d) とし、差をとった値。16/32 − 16/64 = 0.5 − 0.25 = 0.25。",
+        "(2) 0.5: 1/4 を二重に掛けて H = I/(32r) とし、差をとった値。16/16 − 16/32 = 1 − 0.5 = 0.5。",
+        "(3) 0.75: (1)と同じ誤り（H = I/(32d)）に加えて、逆向きの寄与を和にした値。0.5 + 0.25 = 0.75。",
+        "(4) 1.0: 半径の代わりに直径を用いて H = I/(8d) とし、差をとった値。16/8 − 16/16 = 2 − 1 = 1.0。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「出典の試験年度・回は、このページからは特定できない（ページ右下の表示は「T2－R 007」）」と書かれている。これは manifest 固定の出典情報（2025年度下期・試験日2026-03-22・理論）で解消済みの古い記述である。sourceAttribution・fiscalYear・term と矛盾するため、削除または更新が必要。",
+        "uncertainty に「導線が一続きであることを前提にたどった」と書かれている。問題文の「その巻数は一巻きである」と、原図で閉じた扇形ループであることから確定しているため、未解決事項として残すべきではない。needsReview=false とも整合しないため、削除が必要。",
+        "uncertainty の「点Oの円に黒点の記号」の注記は、大きさだけを問う設問の解答に影響しない。未解決の外部確認事項として残さず、削除するか、図の記述として整理すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第[7]頁、ページ下部「- 4 -」「T2－R 007」）と照合した。半径0.5 m・1 m、1/4円弧、連結する直線状導線、I=16 A、H[A/m]、同一平面・一巻き・太さ無視の条件がすべて一致する。句読点の「，」→「、」は整形の範囲内。",
+        "選択肢: (1)0.25 (2)0.5 (3)0.75 (4)1.0 (5)2.0 で、原図と完全に一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜理論＞問4は解答5・配点5。officialAnswer='5'、scoringPoints=5 と一致する。",
+        "計算: 1/4円弧の中心磁界は H = (1/4)·I/(2r) = I/(8r)。内側 16/(8×0.5) = 4 A/m、外側 16/(8×1) = 2 A/m。",
+        "直線部2本: どちらも延長線が点Oを通る半径方向の導線で、dl と位置ベクトルが平行なので寄与0。原図でも上向き破線上と右向き破線上にあることを確認した。",
+        "電流経路: 縦の直線を上向き → 外側円弧を時計回り → 横の直線をO側へ → 内側円弧を反時計回り。原図の矢印と閉ループ形状から確認した。",
+        "合成: 内外円弧の磁界は逆向きなので H = 4 − 2 = 2.0 A/m で、(5)と一致する。合成磁界は内側円弧（反時計回り）の向きで、紙面の裏から表へ向かう。右ねじの法則で正しい。",
+        "注記: 外側円弧だけの寄与も 2 A/m で(5)と同じ値になる。正答の根拠は差 4 − 2 であり、現行の総合解説と(5)の解説はそのとおり記述していて問題ない。",
+        "公開候補図 20260322-theory-q04-fig1.png: 原図の図部分を切り出したもので、欠落はない。縦直線の上向き矢印、「I=16 A」、「0.5 m」「1 m」の寸法矢印、O、⊙記号、直角記号、上方向・右方向の破線がすべて含まれる。接続関係と向きも原図と一致し、この図だけで解答に必要な情報を読み取れる。",
+        "figureDescription: 4部分の構成・端点・ラベル・矢印位置の記述が原図と一致する。",
+        "メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[7]、sourceQuestionPdfUrl、sourceAnswerPdfUrl が manifest と一致する。sourceAttribution「令和7年度下期…理論科目 問4」も正しい。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "questionNumber": 14,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "六ふっ化硫黄（SF₆）ガスに関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "アーク放電の消弧能力は，空気よりも優れている。",
+        "2": "比重は空気よりも大きく，化学的に安定した不燃性のガスであるが，特有の臭いがある。",
+        "3": "オゾン層への影響は無視できるが，地球温暖化への影響が大きいガスである。",
+        "4": "ガス遮断器やガス絶縁変圧器の絶縁媒体として利用される。",
+        "5": "絶縁破壊電圧は，同じ圧力の空気と比較すると高い。"
+      },
+      "officialAnswer": "2",
+      "explanation": "SF₆ガスは，純粋な状態では無色・無臭・無毒で，化学的に安定した不燃性のガスである。したがって「特有の臭いがある」とする(2)が誤りである。比重が空気より大きいという前半部分は正しい。SF₆の分子量は約146で，空気の平均分子量約29の約5倍になる。SF₆は電気的負性気体であり，電子付着性（電子を捕獲して負イオンになる性質）が強い。放電やアークを担う自由電子が取り込まれて動きにくい負イオンになるため，絶縁耐力と消弧能力が空気より優れる。このためガス遮断器（GCB），ガス絶縁開閉装置（GIS），ガス絶縁変圧器などの絶縁・消弧媒体として広く使われている。一方で，温室効果が非常に大きいガスでもある。",
+      "choiceExplanations": {
+        "1": "正しい。SF₆は電子付着性（電気的負性）が強く，アーク中の自由電子を捕獲して負イオンにする。このため電流零点付近でアーク空間の導電性が急速に失われ，消弧能力は空気よりはるかに優れる。遮断器の消弧媒体に用いられるのはこのためである。",
+        "2": "誤り（正答）。比重が空気より大きいこと（分子量約146で空気の約5倍），化学的に安定で不燃性であることは正しい。しかし純粋なSF₆は無色・無臭であり，「特有の臭いがある」という記述が誤っている。",
+        "3": "正しい。SF₆は塩素や臭素を含まないため，オゾン層破壊への影響は無視できる。一方，地球温暖化係数（GWP）は二酸化炭素の2万倍を超え，温暖化への影響が非常に大きいガスである。",
+        "4": "正しい。SF₆は絶縁耐力と消弧能力に優れる。このためガス遮断器，ガス絶縁開閉装置，ガス絶縁変圧器などの絶縁媒体として利用されている。",
+        "5": "正しい。同じ圧力で比べると，SF₆の絶縁破壊電圧は空気よりも高い（一般に空気の2～3倍程度とされる）。さらに加圧すると絶縁耐力が高まるため，機器を小形化できる。"
+      },
+      "figureDescription": "図はない。問題文と選択肢(1)～(5)の文字だけで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        17
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2249,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11971580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 978,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c33d3d6c268292fac8f99bb77bee6223f1a27410e514550a0b3238d0640dfaf6",
+  "inputRequestSha256": "697558d89c2afe04019f2de18ed412d7a0569ca3bc4bb7775cf3d299bc9e9ffb",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p17.png": "8e0ee2c49669b1e19d1d4f008a2a65241946ea30a7856531108698850426d26b"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2329,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12088,
+          "webSearchRequests": 0,
+          "costUSD": 0.1435478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1122,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "68370efe50bed88c18bbb6a330e82c2ccd56345e3f18b186b5678f51f5f04097",
+      "inputRequestSha256": "5699ed34ac5cbf913d58b587834e31805c02ada960f2c36a10d5e32f6c05a187",
+      "previousDraftSha256": "eaa25eb7832549d8e6838d92d158196e94d84cad24b57025e7bf0a1175e47f6a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q14-vision-draft-v1.json",
+      "answeredReviewSha256": "a34d89c71726b4102e595a70cb241ef1c154ef851055aa58cbedb4eb5422c857",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q14-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q14-opus.json",
+      "answeredStrictReceiptSha256": "f8cb1a90f5dfc32687d6369305c6dcfb7b1235ad41127c0367f2637f45689755",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

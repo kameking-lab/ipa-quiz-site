@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2433,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13610,
+      "webSearchRequests": 0,
+      "costUSD": 0.1578038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1056,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "04f0c4f095b0ff10865c667f4c1b43886cd8da0a338691004220d7fbc59ac95a",
+  "inputRequestSha256": "19162e75c841cf3d9b69c87396e666fe7cf9c696374caa78fbaae2f6ca41703f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "330843320462d47eec4d44b9387f9375a8454b55bcc919cffbf30a1e5f020267"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p14.png": "98c97dc005e401ce7b90e0e13bf8c57f3afbdca80facae0d31b171b418564d58"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "264c4d7169ad8a52205da48b78cc7ed71babbb31c1c7a05ae178cdee21d089c9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第14頁、印刷頁番号『- 11 -』、フッタ『T2－D 014』）の「直流送電に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補questionが句読点（全角読点「，」）を含め一致。",
+        "選択肢(1)〜(5): 原図の各肢と候補choices.1〜5が全文一致。(2)『交流の安定度による制約が無いため，電線の許容電流限度まで送電できることから大電力の長距離送電が可能である』、(4)『直流電圧の最大値は同じ実効値の交流電圧より高くなるため，絶縁レベルを増加させる必要がある』、(5)『他励式の場合は変換装置から発生する高調波対策が必要となる』の語句に脱落・改変はない。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞問11は解答4・配点5。manifest固定の正答単位 {question:11, part:null, answer:\"4\", points:5} と、候補のofficialAnswer=\"4\"・scoringPoints=5・part=nullが一致。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[14]は、いずれもmanifestと一致。sourceAttribution『令和7年度下期第三種電気主任技術者試験 電力科目 問11』も整合。",
+        "総合解説の検算: 正弦波交流の最大値は実効値Vの√2倍（≒1.414V）。直流は一定値なので、実効値も最大値もVである。同じ値で比べると直流の最大値は交流の1/√2≒0.707倍で、0.71は正しい丸め。直流の最大値の方が低いので絶縁レベルは低減できる。したがって(4)の『高くなる』『増加させる必要がある』は二重に誤りで、正答4と因果が整合。",
+        "肢別解説: (1) 直流連系では周波数・位相の同期が不要で、50/60 Hz間の連系（周波数変換所）が可能であり、正しい。(2) 直流にはリアクタンスによる相差角制約（安定度制約）がなく、熱的限界まで送電できるので、正しい。(3) 直流には電流零点がなく、アーク消弧が難しいため直流遮断器が課題であり、正しい。(5) 他励式（サイリスタ）変換器は交流系統電圧で転流し、高調波を発生するためフィルタが必要であり、正しい。各肢固有の理由は妥当で、誤答肢の説明に不正確な記述はない。",
+        "図: 原図に図はなく、解答に図は不要。figureDescription=null・figureUrls=[]・choiceFigureUrls={}で適切。",
+        "公式ReferenceUrls: officialReferenceUrlsは空配列で、外部の独立主張はない。検証対象の外部確認事項はない。",
+        "uncertainty欄: 『問題ページ単体では年度・回を特定できない』は事実の記述である。manifest、公式解答表の標題、フッタ『T2－D 014』により年度・回・科目は確定しているため、未解決事項ではない。needsReview=falseと矛盾しない。"
+      ]
+    }
+  ]
+}

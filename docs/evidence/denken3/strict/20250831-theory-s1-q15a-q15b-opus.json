@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8019,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17451,
+      "webSearchRequests": 0,
+      "costUSD": 0.3002518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5131,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c3f920fda7eaab6ebac8cff297b2d6cfcc231b641b60fb8fdb1db9d50b1f814e",
+  "inputRequestSha256": "f8878308b506004e6b825f695fa2a6c90897d980cb3598be6445d0aae6b17bc5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "bbbd37d15f3e7e0ec8319376cc6a6984fd2017b0367612e64e5a1511d51b39d5",
+      "q15b": "46f67271c4cd5ca96237e010edbe7bdb9ee283fd4a1e7bae86a545c33868f3c6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p18.png": "5d6497754eadcd9c47e9435c4a7d0d62e70994d302ecdf3fef6657f5dce19749"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q15-fig1.png": "f557e71f2e9ee846d78933b4c3824505518d8a177f1866e06ddc3672bdd9cec2"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "fdd40eff13ecf390daa1a4dcc3322659b81fbfcac48606a59b3b91a478504445",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "問題文に原文にない補足が原文と区別されずに混在している。『電源はΔ結線で，Ėa = 200∠0 V（b→a の向き），Ėb = …（c→b の向き），Ėc = …（a→c の向き）である。』は公式問題文になく、図から読み取った編集側の解釈である。内容は原図と一致しているが、sourceAttribution は『読みやすく整形』としか述べていない。補足は【図より】等の注記で原文と分離すること。",
+        "『（b→a の向き）』は起電力矢印の向きを指すが、それが電位上昇の向き（矢印先端側が高電位）を意味する規約であることが明示されておらず、極性の解釈に曖昧さが残る。『起電力の矢印は b から a へ向く（a 側が高電位）』のように記すこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "『V̇ab = V̇a − V̇b = Ėa』の V̇a, V̇b が未定義で、相起電力 Ėa と紛らわしい。『節点 a, b の電位を V̇a, V̇b とすると』と定義を加えること。数値・論理の誤りはない。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に『試験年度・公式PDFの公開URLを特定できないため』とあるが、同じ候補に fiscalYear=2025、examDate=2025-08-31、sourceQuestionPdfUrl、sourceAnswerPdfUrl が記入されており、自己矛盾している。年度・期（令和7年度上期）と理論 問15(a)=2・配点5 は添付の公式解答表で確認できたので、uncertainty をそれに合わせて修正すること。",
+        "uncertainty が空でないのに needsReview=false になっており、整合していない。",
+        "sourceQuestionPdfUrl（…/20250831_ch_third_q01.pdf）、sourceAnswerPdfUrl（…/20250831_ch_third_a01.pdf）、examDate=2025-08-31 は、添付の問題原図にも解答表原図にも URL や実施日の記載がなく、検証できない。外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文の数値を原図と照合し一致を確認した：相電圧 200 V、Ż = 5√3 + j5 [Ω]、Y 結線平衡三相負荷。",
+        "選択肢を原図と照合し全肢一致を確認した：(1)20.00∠−π/3 (2)11.55∠−π/3 (3)16.51∠−π/6 (4)20.00∠−π/6 (5)11.55∠−π/6。",
+        "公式解答表『令和7年度 第三種電気主任技術者上期試験解答』＜理論＞問15(a)=2、配点5。officialAnswer=2、scoringPoints=5 と一致する。",
+        "極性を原図で確認した：Ėa の矢印は b→a、Ėb は c→b、Ėc は a→c。矢印先端を高電位とすると V̇ab=200∠0、V̇bc=200∠−2π/3、V̇ca=200∠−4π/3 で、総和は 0。a→b→c の正相順になる。",
+        "検算：V̇a'n = (200/√3)∠−π/6 = 115.47∠−π/6 V。Ż = 10∠π/6 Ω（|Ż| = √(75+25) = 10、偏角 = tan⁻¹(1/√3) = π/6）。İ1 = 11.547∠−π/3 A となり (2) と一致する。",
+        "各肢の理由を確認し、妥当と判断した：(1)(4) の 20.00 は 200/10 に相当する。(5) は大きさは正しいが位相が V̇a'n と同じ −π/6。(3) は大きさ・位相とも不一致。",
+        "公開候補図は原図の回路部分をそのままトリミングしたもので、以下を確認した。",
+        "図の全ラベルが一致する：a, b, c, a', b', c', İ1, İ2, İ3, İab, İbc, İca, Ėa, Ėb, Ėc の各式, Ż = 5√3+j5 [Ω], 他2相の Ż。",
+        "図の接続が一致する：c→c' 線と b→b' 線の交差は接続点なし。",
+        "図の矢印の向きも一致しており、単独で解答可能である。figureDescription も図と一致する。",
+        "reviewedFromPage=[18] は原図下部の『T1−R 018』と整合する。印刷頁番号は -15-。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "問題文に原文にない補足が原文と区別されずに混在している。『電源はΔ結線で，…（b→a の向き，電流 İab）…』と『線電流 İ1 は a から a' へ流れる。』は公式問題文になく、図からの編集補足である。内容は原図と一致しているが、原文と区別できるよう注記すること。",
+        "起電力の『向き』が電位上昇の向きを意味する規約であることが明示されておらず、極性の解釈に曖昧さが残る。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に『試験年度・公式PDFの公開URLを特定できない』とあるが、fiscalYear=2025、examDate、sourceQuestionPdfUrl、sourceAnswerPdfUrl が記入済みで、自己矛盾している。年度・期と問15(b)=2・配点5 は添付の公式解答表で確認できたので、uncertainty を修正すること。",
+        "uncertainty が空でないのに needsReview=false になっており、整合していない。",
+        "sourceQuestionPdfUrl、sourceAnswerPdfUrl、examDate=2025-08-31 は、添付原図に URL や実施日の記載がなく検証できない。外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "選択肢を原図と照合し全肢一致を確認した：(1)20.00∠−π/6 (2)6.67∠−π/6 (3)11.55∠−π/6 (4)6.67∠−π/3 (5)11.55∠−π/3。",
+        "公式解答表＜理論＞問15(b)=2、配点5。officialAnswer=2、scoringPoints=5 と一致する。",
+        "図の電流の向きを確認した：İab は辺 ab を a 向き（節点 a に流入）、İca は辺 ac を c 向き（a から流出）、İ1 は a→a'（流出）。",
+        "KCL は İ1 = İab − İca で、説明と一致する。",
+        "各相電流は起電力と同じ向きに流れ、平衡正相順なので İca = İab∠−4π/3 = İab∠2π/3。",
+        "検算：İ1 = İab(1 − ∠2π/3) = İab·√3∠−π/6。İab = 11.547/√3 ∠(−π/3+π/6) = 6.667∠−π/6 A となり (2) と一致する。",
+        "電力検算を確認した：電源側 3×200×6.667×cos(π/6) ≈ 3464 W、負荷側 3×11.547²×5√3 ≈ 3464 W で一致する。",
+        "誤答肢の理由を確認し、いずれも固有かつ正確と判断した：(3)(5) の 11.55 は線電流の大きさ、(5) は İ1 そのもの、(4) は位相が İ1 と同じ −π/3、(1) の 20.00 は大きさ不一致。",
+        "公開候補図は(a)と同一で、原図と全ラベル・接続・矢印の向きが一致する。節点 a の電流向きが図単独で読み取れる。figureDescription も正確である。"
+      ]
+    }
+  ]
+}

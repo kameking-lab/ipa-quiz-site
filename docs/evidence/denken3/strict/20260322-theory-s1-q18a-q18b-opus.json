@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7283,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22300,
+      "webSearchRequests": 0,
+      "costUSD": 0.32432380000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1edc6972601c7ee997af36e60d19a550b5670ddf6e657f08f5930ca65df01106",
+  "inputRequestSha256": "95f65bf574fe6f5073d0b094f4469e4196ff2fb8144c1acf42039cbef811302d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "7d526c091608eb5f617d5716080e0dc47dc6327856b36a8cdd12445ef6437849",
+      "q18b": "196afec617e057275a758e0ec6c7f5807c7935553b1d65ed8a32ffe2d7953cca"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p24.png": "f0248faa43969ff60b60a0df44fe9cea2b7dbc39aacc3a540954b9557909a7b2",
+      "data/raw_pdfs/denken3/review/20260322/theory/p25.png": "619a0b682ebab7ae038c1f6d6228d2301d059041040d931283bbee800837c5cb"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig1.png": "5e0a6667c08ffaf11f170910763b08f03cb02ad9a2424c2b453860059f524982",
+      "public/images/denken3/20260322/theory/20260322-theory-q18-fig2.png": "7f460ebdc0778aae5c836fc2b6c8b47e36173da5e49ada080aef54b9b2ed67ba"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "cafd9c546d7c8f20aba510fc0eebd9fcc28e7537c08ad37df631a85f7c3c8051",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20260322-theory-q18-fig2.png（図3のみを収録）が含まれている。(a) は図3を参照しないため、(a) の画面に無関係な図3が表示される。(a) の figureUrls は図1・図2を収録した 20260322-theory-q18-fig1.png のみにすべき。あわせて、ファイル名 fig1 に図1・図2、fig2 に図3が入っており図番号と一致しない。取り違えを防ぐため、命名を見直すか対応を注記すべき。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『実施年度・回の記載がなく…本データでは出典年度を特定していない』とあるが、同じレコードの fiscalYear=2025・term=lower・examDate=2026-03-22・sourceAttribution『令和7年度下期…理論科目 問18(a)』で年度・回を明示しており、記述が自己矛盾している。manifest（試験センター公式過去問一覧、問題PDF 20260322_ch_third_q01.pdf 第24頁）と公式解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』で年度・回は確定しているため、この記述を削除または訂正すべき（needsReview=false との整合も取れていない）。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 下期・理論）の問18(a)は解答5・配点5。officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[24,25] は manifest と一致する。(a) の本文は PDF 第24頁（印刷頁『- 21 -』、欄外『T2－R 024』）にあり、第25頁は(b)の頁。",
+        "問題文（柱書き・(a)本文）を原図と照合し、字句の相違はない。冒頭の『問17及び問18は選択問題…』の注意書きは省略されているが、単問化のための整形として許容範囲。",
+        "選択肢(1)〜(5)（(イ)／(ロ)／(ハ)／(イ),(ロ)／(イ),(ハ)）は原図と一致する。",
+        "図1を検証した。上側 MOS FET は矢印が外向きで p チャネル、ソースは電源に接続。下側は矢印が内向きで n チャネル、ソースは接地に接続。ゲートは共通に入力へ、ドレインの接続点は出力へつながる。以上から CMOS インバータ（NOT）で、候補の判読は正しい。",
+        "図2を検算した。(イ) ¬(A·A)=¬A、(ロ) ¬(A·0)=1（常に1）、(ハ) ¬(A·1)=¬A。NOT と同一なのは(イ)と(ハ)で、正答(5)と整合する。",
+        "choiceExplanations 1〜5 の各誤答理由・正答理由に論理・計算の誤りはない。",
+        "公開候補図 fig1.png は原図の図1・図2と、接続・向き・全ラベル（電源、入力、出力、(イ)(ロ)(ハ)、「0」「1」、図1、図2）が一致する。単独で解答可能。",
+        "officialReferenceUrls は空で、検証すべき外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に 20260322-theory-q18-fig1.png（図1・図2）が含まれているが、(b) の問題文は図3のみを参照する。解説の『(a) で確かめたとおり』を補う参考図として残すなら、その旨を示すべき。そうでなければ fig2.png のみにすべき。あわせて、ファイル名 fig2 に図3が入っており図番号と一致しない。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『実施年度・回の記載がなく…本データでは出典年度を特定していない』とあるが、fiscalYear=2025・term=lower・examDate=2026-03-22・sourceAttribution『令和7年度下期…理論科目 問18(b)』と自己矛盾している。manifest（問題PDF 第25頁）と公式解答表見出しで年度・回は確定しているため、この記述を削除または訂正すべき（needsReview=false との整合も取れていない）。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度 下期・理論）の問18(b)は解答2・配点5。officialAnswer=\"2\"、scoringPoints=5 と一致する。",
+        "fiscalYear、term、examDate、subject、PDF URL、reviewedFromPage=[24,25] は manifest と一致する。(b) の本文は PDF 第25頁（印刷頁『- 22 -』、欄外『T2－R 025』）にあり、柱書きは第24頁。",
+        "(b) の本文、性質Ⅰ・性質Ⅱの文言は原図と字句が一致する。",
+        "選択肢の表 (1)ニ/ホ、(2)ニ/ヘ、(3)ホ/ニ、(4)ホ/ヘ、(5)ヘ/ホ は原図と一致する。",
+        "図3(ニ)の接続を確認した。入力短絡 NAND（NOT1）の出力が C を経て接続点へ、接続点は NOT2 の入力へ。R は接続点と上部配線（NOT2 出力＝NOT1 入力）の間にある。これは標準的な CMOS 無安定マルチバイブレータの形である。R による充放電と C 結合による正帰還で反転を繰り返すという解説の動作説明を検算し、正しいことを確認した。",
+        "図3(ホ)の接続を確認した。NAND1 の入力は『入力』と上部帰還配線、出力は C を経て接続点へ。接続点は R を経て接地され、NOT2 の入力にもつながる。安定時は接続点が0、NOT2 出力が1。トリガ後は接続点が R に向けて減衰し、時定数 RC で決まる時間の後に復帰する。解説の単安定動作と一致し、トリガ極性を明示しない点も uncertainty で適切に留保している。",
+        "図3(ヘ)の接続を確認した。左 NAND（入力1、右出力）と右 NAND（左出力、入力2）の交差結合で、NAND 形 RS ラッチ（双安定）である。性質Ⅱに該当する。",
+        "性質Ⅰ＝(ニ)、性質Ⅱ＝(ヘ) で正答(2)と整合する。choiceExplanations 1〜5 の各誤答理由（ホは単安定で記憶・連続発振しない、ニは記憶しない、ヘは自励発振しない）に誤りはない。",
+        "公開候補図 fig2.png は原図の図3と、R・C の位置、接続点の黒丸、帰還配線、接地記号、ラベル（(ニ)(ホ)(ヘ)、入力、入力1、入力2、図3）が一致する。単独で解答可能。figureDescription の記述も図と一致する。",
+        "officialReferenceUrls は空で、検証すべき外部主張はない。"
+      ]
+    }
+  ]
+}

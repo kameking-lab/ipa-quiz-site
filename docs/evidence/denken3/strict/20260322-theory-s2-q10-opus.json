@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5975,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19914,
+      "webSearchRequests": 0,
+      "costUSD": 0.2790758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4143,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a962e8040e024659e750e269e02b3712903f251f6dc0c437bba5507db3cad264",
+  "inputRequestSha256": "555dab124c6cafd7f463f79b55fb5c5d6ea4b8ee9ee29cd250e1e1453a0fc0ab",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "8705c5793fe2fe057715dbd8a046311bba79ddeae1398868a03fb99b539054d8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p14.png": "265d0dbdabfa72bec5fa72221b14bd8329db91d2eef1d2c27e000bed8c6703df",
+      "data/raw_pdfs/denken3/review/20260322/theory/p15.png": "f48c519d7fb0f6e8029b4bdf84751498dbb2985f24610ef20e7b054e26f909b7"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q10-fig1.png": "1e2db1c9c4d9bf9b8f1d57df3c0cee4cffb71c4eaa953630450fb7168228d994",
+      "public/images/denken3/20260322/theory/20260322-theory-q10-fig2.png": "fea715a0fab1589441f8a0e4526dca12b4e0e99de6002c782ec0ecac440c9067"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "c83eb91896a89c7fca8fdb17aa54f02edfd40f102e42450597433e4ee2a5e521",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: manifest（2025年度下期・試験日2026-03-22・理論・問題PDF q01／解答PDF a01・原図PDF第14–15頁）と候補の fiscalYear=2025, term=lower, examDate=2026-03-22, subject=theory, sourceQuestionPdfUrl, sourceAnswerPdfUrl, reviewedFromPage=[14,15] がすべて一致する。原図の印刷頁番号は -11-／-12- だが、reviewedFromPage はPDF頁番号であり manifest と整合する。sourceAttribution『令和7年度下期…理論科目 問10』は令和7年度下期＝2025年度下期と整合する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）＜理論＞問10の解答は4、配点は5。候補の officialAnswer=\"4\"、scoringPoints=5 と一致する。",
+        "問題文: 原図の本文（開放電圧V[V]・出力抵抗が十分に低い直流電圧源、L[H]、R[Ω]、スイッチS、t=0で閉路、i_L[A]、R=1Ωで図2、R=2Ωの波形を(1)〜(5)から選択、ただし書き『点線は図2と同じ波形、実線はR=2Ωのときの波形』）を一語ずつ照合した。脱落・改変はなく、記号・単位も一致する。",
+        "図1: 公開候補図fig1の回路図を原図と照合した。左辺が直流電圧源V[V]、上辺左がスイッチS、その右が抵抗R[Ω]、R右側の上辺に右向き矢印i_L[A]、右辺がコイルL[H]、下辺は導線の直列閉回路で、接続・矢印の向き・全ラベルが一致する。figureDescription の接続・向きの記述もこれと整合する。",
+        "図2: fig1内の図2を原図と照合した。縦軸i_L[A]の目盛は1,2,3、横軸t[s]の目盛は0,1,2,3、破線の補助線がある。t<0は0Aの水平線。曲線はt=1sで2Aの交点を通り、3Aに漸近する。いずれも原図と一致する。figureDescription の t=2s≈2.7A、t=3s≈2.9A は理論値 3(1−1/9)=2.67、3(1−1/27)=2.89 と整合する。",
+        "選択肢図: fig2の(1)〜(5)の配置・番号・軸目盛（(5)のみ横軸0〜5）・点線／実線の区別がすべて原図p.12と一致する。choices の各読み取り値も図と矛盾しない。(1)はt=1sで約2.5A、(2)は1.2/1.9/2.3A、(3)はt=1sで約2.6Aの折れ曲がり形状、(4)はt=1sで約1.3A・最終値1.5A、(5)は0.6/1.0/1.2/1.45A。",
+        "総合解説の検算: 図2より V=R·I∞=3V、e^(−1/τ₁)=1/3、τ₁=1/ln3≈0.910s、L≈0.91H。R=2Ωでは I∞=1.5A、τ₂=L/2≈0.455s、i(t)=1.5(1−(1/3)^(2t))。i(1)=1.5×8/9≈1.33A、i(2)=1.5×80/81≈1.48A。初期傾きは V/L≈3.30A/s でRに依存しない。いずれも正しく、公式正答(4)の形状と整合する。",
+        "肢別理由の検算: (1)は最終値3A・初期傾きが点線より大で誤り。(2)は既にt=2sで約1.9Aと1.5Aを超えており、時定数約2s・最終値3Aの曲線に一致し、初期傾きも小さいので誤り。(3)は最終値約3A・直線的上昇で誤り。(5)は1.5(1−e^(−2/τ))=1からτ=2/ln3≈1.82s（τ₁の約2倍）で、初期傾き約0.82A/sが点線と不一致なので誤り。(4)は計算値と一致し正しい。各理由とも図と計算に整合する。",
+        "解説の前提『出力抵抗は無視、コイルは理想インダクタンス』は、問題文の『出力抵抗が十分に低い』およびL[H]のコイルという設定からの標準的な扱いとして明示されている。uncertainty欄にある読み取り依存の記述も、判断根拠（最終値半減・時定数半減・初期傾き不変）が読み取り値に依存しないことと整合する。",
+        "officialReferenceUrls は空で、検証を要する外部の独立主張はない。choiceExplanations_note_removed は null の残存キーで、表示内容や正誤には影響しない。"
+      ]
+    }
+  ]
+}

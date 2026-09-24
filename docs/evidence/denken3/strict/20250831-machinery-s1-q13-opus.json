@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2828,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13870,
+      "webSearchRequests": 0,
+      "costUSD": 0.1677838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1294,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9d9293bdb1b5ea0c20d32d0c70e14c8a0d4795344763ed25092fd86b299f3ed4",
+  "inputRequestSha256": "ea83b0d7f5b68274955f871453eb7ff39b617988cefcdc3421d00ec1da07f70c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "98d3ef20789dcb542a976fb0e3cec7d779706a37d8121e9868b22a7870e7d689"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p16.png": "2b3f9dbfeedb6cb8802b91a478127b42af57148ea29e7c4db4b3ae8c42f4cfa0"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄が他のメタデータと矛盾している。『出題年度・回はこのページから特定できない』『公式の一次資料URLは記載していない』と書かれている。一方で fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution=令和7年度上期 機械 問13、sourceQuestionPdfUrl、sourceAnswerPdfUrl はすべて設定済みである。年度・回は添付の公式解答表の見出し『令和7年度 第三種電気主任技術者上期試験解答』で確認でき、科目は原図フッタ『T1−K 016』と解答表の機械列の一致で確認できる。uncertainty 欄を実態に合わせて修正すること（例：判読上の不確実性なし。年度・回・科目は公式解答表で確認済み。制御工学の指標定義の流儀差のみ注記）。",
+        "sourceQuestionPdfUrl と sourceAnswerPdfUrl の URL 文字列そのものは、添付原図に URL の記載がないため本監査では照合できていない。添付原図と解答表の内容は候補と一致している。"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図（印刷頁 -13-、フッタ T1−K 016）と照合した。『一般のフィードバック制御系においては，制御系の安定性が要求され，制御系の特性を評価するものとして，(ア)特性と過渡特性がある。』『サーボ制御系では，目標値の変化に対する追従性が重要であり，過渡特性を評価するものとして，(イ)応答の遅れ時間，立上り時間，(ウ)などが用いられる。』および設問文は、候補と字句が一致する（空欄表記［］は整形の範囲）。",
+        "選択肢：原図の表と照合した。(1) 定常/ステップ/定常偏差、(2) 追従/ステップ/定常偏差、(3) 定常/ステップ/行過ぎ量、(4) 追従/インパルス/行過ぎ量、(5) 定常/インパルス/定常偏差。全5肢が候補と一致する。",
+        "公式正答：令和7年度上期解答表の＜機械＞列で問13の解答は3、配点は5。manifest の公式正答単位 {question:13, part:null, answer:'3', points:5}、候補の officialAnswer='3'、scoringPoints=5 のいずれとも一致する。",
+        "総合解説：制御系の特性を定常特性（代表指標は定常偏差）と過渡特性に分ける説明は正しい。過渡特性の指標をステップ応答で定義し、遅れ時間（最終値の50%到達）、立上り時間（10%→90%）、行過ぎ量（最終値超過の最大量、％表示）、整定時間（±2%または±5%以内）とする定義は標準的で誤りはない。(ア)定常、(イ)ステップ、(ウ)行過ぎ量という結論は公式正答(3)と整合する。",
+        "肢別解説：(1) (ウ)定常偏差が定常特性の指標であることを誤りの理由として正しく指摘している。(2) (ア)追従と(ウ)定常偏差の2点を指摘している。(4) (ア)追従と(イ)インパルスの2点を指摘し、(ウ)が正しいことも明記している。(5) (イ)インパルスと(ウ)定常偏差の2点を指摘している。各誤答肢について、誤っている空欄をすべて漏れなく挙げており、正答肢(3)の理由も妥当である。",
+        "図：原図に回路図・波形図はなく、選択肢の表のみである。figureDescription の『図は不要』、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "reviewedFromPage=[16]：原図の印刷頁は13、フッタのシート番号は016である。PDF頁16とする値はシート番号と整合しており矛盾は認められない。"
+      ]
+    }
+  ]
+}

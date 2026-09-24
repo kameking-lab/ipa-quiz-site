@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3364,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13993,
+      "webSearchRequests": 0,
+      "costUSD": 0.17948779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1961,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c32775ae9b158a4847039a80f11db65aed5499b09a6dd169b68f6a6e73a0cf1a",
+  "inputRequestSha256": "3f34e1c3b84f4d7a344077421ddf2e58046fd87033916015abb502df4477eeeb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "0d90e7234f93a3eefe6bb4af017f54e3c3290c51a66faa80ce4cb1902b35ab22"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p07.png": "83efd92f23a752e9eb04e8caedaed8c5c798cc9e1b86cafcffa43df4b541e52d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d27e5799392ef0be15cdff31498f81715dbfed9956d790d680e09a07857e9ac7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（印字頁「- 4 -」、管理番号「T1－K 007」）と照合した。『一般的な三相かご形誘導電動機』『二次電流≫励磁電流』『励磁回路を省略』『二次抵抗による電圧降下≫その他の電圧降下』『一次抵抗と漏れリアクタンスを省略』『トルク一定負荷』『電流 80 A の定格運転』『電源電圧と周波数を共に 5 % 下げて回転速度を少し下げた』『電流の値[A]』の各語句と数値は、原図と一致する。「5％」を「5 %」と表記している点は表記整形の範囲で、意味は変わらない。",
+        "選択肢: 原図の (1) 72、(2) 76、(3) 80、(4) 84、(5) 88 と、候補の choices 1〜5 がすべて一致する。",
+        "公式正答: 試験センター公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞問4は、解答 3・配点 5 である。これは manifest 固定単位 {question:4, part:null, answer:'3', points:5} と一致し、候補の officialAnswer='3'、scoringPoints=5 とも一致する。",
+        "総合解説の検算: 近似等価回路で I=V/(r₂/s)=sV/r₂ となる。P₂=3I²(r₂/s)=3sV²/r₂ である。ωₛ=2π·(2f/p)=4πf/p（p は極数）で、ωₛ∝f。したがって T∝sV²/f。トルク一定の条件は s'(0.95V)²/(0.95f)=sV²/f で、s'·0.95=s より s'=s/0.95。I'=(s/0.95)(0.95V)/r₂=sV/r₂=I=80 A で正しい。",
+        "補足の検算: 滑り周波数は s'f'=(s/0.95)(0.95f)=sf で不変である。n'=(1−s')·0.95nₛ=0.95nₛ−s·nₛ=(0.95−s)nₛ で、元の速度より 0.05nₛ 低い。これは問題文の『回転速度を少し下げた』と整合する。別解の V/f 一定→磁束一定→トルク一定なら電流一定という因果も、近似回路で電流が全て有効分である前提と矛盾しない。",
+        "各肢の理由の検算: 80×0.95²=72.2（肢1）。80×0.95=76 で、s 一定なら T は 0.95²/0.95=0.95 倍となりトルク一定に反する（肢2）。80÷0.95=84.2（肢4）。80×1.1=88（肢5）。いずれも数値と誤りの根拠は正しい。肢3の正答理由も総合解説と一致する。",
+        "図: 原図に図はなく、解答に図は不要である。figureDescription、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典: officialReferenceUrls は空で、独立主張はない。reviewedFromPage=[7] は、原図の管理番号『T1－K 007』（機械科目・7枚目）と整合する。印字頁「- 4 -」との差は表紙・注意事項頁によるものと解され、矛盾はない。fiscalYear=2025（令和7年度）と term=upper（上期）は解答表の標題と一致する。subject=machinery は＜機械＞列と一致する。examDate=2025-08-31 は sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名接頭辞『20250831』と整合する。"
+      ]
+    }
+  ]
+}

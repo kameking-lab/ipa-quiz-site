@@ -1,0 +1,126 @@
+{
+  "questionNumber": 1,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，水力発電所の種類に関する記述である。\n\n水力発電所は　(ア)　を得る方法により分類すると，水路式，ダム式，ダム水路式があり，　(イ)　の利用方法により分類すると，　(ウ)　，調整池式，貯水池式，揚水式がある。\n\n一般的に，水路式はダム式，ダム水路式に比べ　(エ)　。また，貯水ができないので発生電力の調整には適さない。ダム式，ダム水路式発電では，ダムに水を蓄えることで　(イ)　の調整ができるので，電力需要が大きいときにあわせて運転することができる。\n\n河川の自然の流れをそのまま利用して発電する方式を　(ウ)　発電という。貯水池などを持たない水路式発電所がこれに相当する。\n\n1 日又は数日程度の河川流量を調整できる大きさの池を持ち，電力需要が小さいときにその池に蓄え，電力需要が大きいときに放流して発電する方式を　(オ)　発電という。\n\n上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，最も適切なものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 落差　(イ) 流速　(ウ) 自然放流式　(エ) 建設期間が長い　(オ) ダム式",
+        "2": "(ア) 流速　(イ) 落差　(ウ) 自然放流式　(エ) 建設期間が短い　(オ) ダム式",
+        "3": "(ア) 落差　(イ) 流量　(ウ) 流込み式　(エ) 高落差を得にくい　(オ) 調整池式",
+        "4": "(ア) 流量　(イ) 落差　(ウ) 流込み式　(エ) 高落差を得やすい　(オ) 調整池式",
+        "5": "(ア) 落差　(イ) 流量　(ウ) 流込み式　(エ) 建設費が安い　(オ) 貯水池式"
+      },
+      "officialAnswer": "3",
+      "explanation": "水力発電所の分類には次の 2 通りがある。\n\n・落差を得る方法による分類：水路式，ダム式，ダム水路式。よって (ア) は「落差」。\n・河川流量の利用方法による分類：流込み式，調整池式，貯水池式，揚水式。よって (イ) は「流量」，(ウ) は「流込み式」。\n\n流込み式（自流式）は，河川の自然の流れをそのまま利用し，貯水池や調整池を持たない方式である。本文の「貯水池などを持たない水路式発電所がこれに相当する」という記述とも一致する。\n\n調整池式は，1 日〜数日程度の河川流量を調整できる規模の池を持つ方式である。需要の小さい時間帯（夜間や週末など）に水を蓄え，需要の大きい時間帯に放流して発電する。よって (オ) は「調整池式」。これに対し貯水池式は，より大きな貯水池により季節的な流量調整（豊水期の水を渇水期に回すなど）を行う方式であり，「1 日又は数日程度」という記述には当てはまらない。\n\n(ア)「落差」で (2)(4) が外れる。(イ)「流量」で (1) が外れる。(オ)「調整池式」で (5) が外れる。したがって，(ア)(イ)(ウ)(オ) の 4 つの空欄から組合せは (3) に一意に定まり，(エ) には「高落差を得にくい」が入る。\n\n(エ) の考え方：水路式は，河川に低い取水ダム（堰）を設けて取水し，導水路で河川の勾配を利用して落差を得る方式である。ダムで水位を高めることはしないため，得られる落差は導水路が沿う区間の河川の自然な高低差に限られる。一方，ダム式はダムで水位を高めて落差を得る方式であり，ダム水路式はダムによる水位の上昇と導水路による落差を合わせて利用する方式である。この「ダムで水位を高められない」という点から，水路式はダム式・ダム水路式に比べて高落差を得にくいと整理できる。\n\nただし，水路式は急勾配の上流部で長い導水路により大きな落差を得る方式として説明されることも多く，実際の落差の大小は地形条件によって変わる。本問では (ア)(イ)(ウ)(オ) の 4 つの空欄で正答が定まるので，(エ) の語句だけで肢を選ぼうとせず，分類名と定義で判断するのが確実である。",
+      "choiceExplanations": {
+        "1": "誤り。(イ) は「流量」の利用方法による分類であり，「流速」ではない。(ウ) の「自然放流式」は流量の利用方法による分類の名称として用いられない。正しくは「流込み式」。(オ) の「ダム式」は落差を得る方法による分類の名称であり，1 日〜数日程度の流量を調整する池を持つ方式の名称ではない。なお (エ)「建設期間が長い」は，大規模なダムを築かない水路式の特徴としては当てはまりにくい。",
+        "2": "誤り。(ア) の分類は「落差」を得る方法によるものであり，「流速」ではない。(イ) は「流量」の利用方法であり，「落差」ではない。(ウ) の「自然放流式」と (オ) の「ダム式」も，(1) と同じ理由で誤りである。なお (エ)「建設期間が短い」は，大規模なダムを築かない水路式の特徴として挙げられることもある記述だが，他の空欄が誤っているため，この組合せは正答にならない。",
+        "3": "正しい。(ア) 落差，(イ) 流量，(ウ) 流込み式，(オ) 調整池式は，いずれも本文の分類・定義と一致し，この 4 つの空欄で組合せが (3) に定まる。(エ)「高落差を得にくい」は，水路式がダムで水位を高めず，導水路が沿う区間の河川の自然な高低差だけで落差を得る方式であることから，ダムで水位を高めるダム式・ダム水路式に比べた特徴として整理できる。",
+        "4": "誤り。(ア) と (イ) が入れ替わっている。水路式・ダム式・ダム水路式は「落差」を得る方法による分類である。流込み式・調整池式などは「流量」の利用方法による分類である。なお (エ)「高落差を得やすい」は，ダムで水位を高められない水路式を，ダムを用いる方式と比べた記述としては，公式正答の組合せにある「高落差を得にくい」と逆の内容である。",
+        "5": "誤り。(ア) 落差，(イ) 流量，(ウ) 流込み式は正しい。しかし (オ) の「貯水池式」は，季節単位など長期間の流量調整を行う大規模な貯水池を持つ方式である。「1 日又は数日程度の河川流量を調整できる大きさの池」を持つ方式は調整池式である。なお (エ)「建設費が安い」は，大規模なダムを築かない水路式の特徴として挙げられることもある記述だが，(オ) が誤っているため，この組合せは正答にならない。"
+      },
+      "figureDescription": "図なし。選択肢は (1)〜(5) の行と (ア)〜(オ) の列からなる表で示されており，その内容はすべて choices に記載している。",
+      "officialReferenceUrls": [],
+      "uncertainty": "公式正答は正答番号 (3) のみを示しており，(エ)「高落差を得にくい」の出題上の根拠は示されていない。解説では「ダムで水位を高められない」という点から整理したが，水路式は急勾配の上流部で長い導水路により大きな落差を得る方式としても説明されることが多く，落差の大小は地形条件に依存する。このため，この整理が出題者の意図と一致するかは未確認である。また，(2)「建設期間が短い」，(4)「高落差を得やすい」，(5)「建設費が安い」も水路式の説明として見られることがある記述であり，(エ) の語句だけでは肢を一つに絞れない可能性がある。本問の正答は (ア)(イ)(ウ)(オ) の分類名・定義によって定まる。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        4
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3715,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1490358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1522,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "46831e08590f4b00b037bcb8fa22ff3f3d75c2a48f8a52289e050f3d43293800",
+  "inputRequestSha256": "30b7099d3af5905ab34d1fd9fa4e09b7cee42a34edbf0ba2f59dbfd9ce4be68d",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4576,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13599,
+          "webSearchRequests": 0,
+          "costUSD": 0.2005758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2168,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5214650d0c5cf14f565250d64ee86a9db6e120dc6c1be56cbe844cb40706f2cc",
+      "inputRequestSha256": "d822ad3f26102e2f01a81fb90c4c8d06d8c2e86a004104b212a70017795a2c15",
+      "previousDraftSha256": "8d02e51b4a24afd6a670dec2f8375ee7b6da942891a13d442bec3b2891d00ecf",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v1.json",
+      "answeredReviewSha256": "da42249039f913959322c2eb59302dcb87f6597e6feb556bc40d4d4cb9f7587a",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q01-opus.json",
+      "answeredStrictReceiptSha256": "1e7268b01380f4d1fb6e3111ba7316f0c462994aa738464bfc4ad777f5c696fc",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6246,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13215,
+          "webSearchRequests": 0,
+          "costUSD": 0.2309038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3342,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ef88d7438a862bdbd009b719cc4ce70b8b231c9ae3321a9833cecdbe8384886f",
+      "inputRequestSha256": "8fbe62360ab71c0e8e5a5fbd24e5208aaa6834c82deb9b8ad07df837d7fb4039",
+      "previousDraftSha256": "21d257bf8e739ac353514f6b30f79fc0f917f7a0cded14a3de555b8f260e4936",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-vision-draft-v2.json",
+      "answeredReviewSha256": "5a76695379b42f790087090a8d98d4460c2f55d5268c08069c0c9d8839bfbf57",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q01-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s2-q01-opus.json",
+      "answeredStrictReceiptSha256": "e9b0a9534ca5c53caa27abad13dc67b78b1b17294513cecaba70d1a6d2a5ed7d",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

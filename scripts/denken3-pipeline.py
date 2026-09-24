@@ -90,7 +90,13 @@ def drive(date: str, subject: str, number: int, refs: str, note: str = "") -> st
             strict_round += 10
             round_name = f"s{strict_round}"
             receipt = strict_receipt(date, subject, number, round_name)
-        run("scripts/denken3-direct-review.py", date, subject, round_name, *units(date, subject, number))
+        try:
+            run("scripts/denken3-direct-review.py", date, subject, round_name, *units(date, subject, number))
+        except RuntimeError as error:  # malformed review output (e.g. a missing issues key): retry once
+            log.append(f"strict retry: {str(error)[-160:]}")
+            round_name = f"{round_name}r"
+            receipt = strict_receipt(date, subject, number, round_name)
+            run("scripts/denken3-direct-review.py", date, subject, round_name, *units(date, subject, number))
         assessment = json.loads(receipt.read_text(encoding="utf-8"))["assessment"]
         if all(item["status"] == "PASS" for item in assessment):
             return f"q{number}: STRICT PASS ({round_name}) {log}"

@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4204,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14694,
+      "webSearchRequests": 0,
+      "costUSD": 0.20189580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2577,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "dc9a89f9b26845e7d1e868773eca02f8f7c64765aea89d0e20d74a398828d1e1",
+  "inputRequestSha256": "1bd5708f7bd325bd38dfb35fc2f4ebeb6eea389a7419a6e3a2b5c8e812fe70b7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "a2ab139c1965b8966467db927af1236d59123f06086123c7120c4d9e90bf9caf",
+      "q17b": "bb035c69ccf3540afe3942aabe579fdccab2a364afeb85a2bcfc578c748d3306"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p21.png": "7a7b0a824a7be438a4818ae53c74e56b7f22bbeee4c2a02873c531d73e014845"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c35baba67bd6a6ef2eecf935638da314937763c83621b8d7a961d7f35b5fd8dd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表原図（令和７年度 第三種電気主任技術者上期試験解答）の＜電力＞欄 問17(a) は解答4・配点5。manifest の answer=4、points=5 と一致し、候補の officialAnswer=4、scoringPoints=5 とも一致する。",
+        "問題原図（印字頁 -18-、フッタ T1－D 021）の問17柱書を照合した。定格容量750 kV·A、遅れ力率0.9・500 kW、遅れ力率0.8・200 kW、(a)(b)構成の各文言は候補と一致する。(a)の設問文と単位[kvar]も一致する。",
+        "選択肢を原図と照合した。(1)472 (2)525 (3)339 (4)392 (5)610 で、番号・数値とも一致する。",
+        "検算: sinθ₁=√0.19≒0.43589 から Q₁=500×0.43589/0.9≒242.16 kvar、Q₂=200×0.6/0.8=150 kvar。Q≒392.16 kvar となり、最も近いのは(4)392。",
+        "誤答肢の固有理由を検算した。(2)は700×0.6/0.8=525 で成立、(3)は700×0.43589/0.9≒339.0 で成立する。(1)472 と(5)610 は、候補が推測で誤答経路を捏造せず正値との不一致のみを述べており、事実として正しい。",
+        "図の扱い: 原図に図はない。figureUrls=[]、figureDescription の記述とも整合する。",
+        "出典の整合: officialReferenceUrls は空で、検証対象の独立主張はない。sourceQuestionPdfUrl の q02 は電力科目、examDate=2025-08-31 は URL の日付と整合する。reviewedFromPage=[21] は原図フッタ 021 と整合する（監査レシートの p 番号とは別物として扱った）。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表原図の＜電力＞欄 問17(b) は解答4・配点5。manifest の answer=4、points=5 と一致し、候補の officialAnswer=4、scoringPoints=5 とも一致する。",
+        "(b)の設問文を原図と照合した。「この変圧器の過負荷運転を回避するために，変圧器の二次側に設置が必要な最小の電力用コンデンサ容量の値[kvar]」は候補と一致する。",
+        "選択肢を原図と照合した。(1)70 (2)256 (3)203 (4)123 (5)50 で、番号・数値とも一致する。",
+        "検算: 追加後 S=√(700²+392.16²)≒802.4 kV·A で、定格750 kV·Aを超え過負荷になる。許容無効電力 Q'=√(750²−700²)=√72500≒269.26 kvar。Qc≒392.16−269.26≒122.9 kvar となり、最も近いのは(4)123。",
+        "因果の妥当性: コンデンサは有効電力を変えず遅れ無効電力のみを減らす、とする説明は正しい。変圧器損失を無視する前提も明示されている。",
+        "誤答肢の検算: (1)70→S≒770.6 kV·A、(5)50→S≒779.1 kV·A で、いずれも750を超え過負荷が残る。(2)256→S≒713.1 kV·A、(3)203→S≒725.1 kV·A は過負荷を回避するが、最小容量122.9 kvar を上回り「最小」に該当しない。各数値を再計算し、すべて一致した。",
+        "図の扱い: 原図に図はない。figureUrls=[] で、記述とも整合する。",
+        "出典の整合: officialReferenceUrls は空。問題 PDF(q02)、解答 PDF(a01)、reviewedFromPage=[21]、fiscalYear=2025（令和7年度）、term=upper、subject=power は原図・解答表の表題と整合する。"
+      ]
+    }
+  ]
+}

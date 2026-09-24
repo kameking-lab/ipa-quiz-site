@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4797,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16551,
+      "webSearchRequests": 0,
+      "costUSD": 0.22861179999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3215,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c983fcf59ab45020aaae942ea618124a135e63efae12bd0a5891f4e940e89e36",
+  "inputRequestSha256": "4e3cac6969f823df115f5f7662f1bcce4f5a23f6f186c5c269ef3c3a3095e4a2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "4976b187f4b070de332e269df64e7d9a220d5c86e415c69445b88d559dbcea91"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p14.png": "71d8230c53184fc7fd0e059a24e14d34280973195fd2318796ba4dbf979fe9d9",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "b252c3a6fd3da3485959d645da1d9ee5130a710670c3067d63a838a73188bf82",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "c）の解説は条文を引用して「→（ウ）一般用電気工作物」と結論を示すだけで、条番号も理由も書かれていない。他の3記述には条番号と趣旨があり、c）だけ根拠の水準が揃っていない。条番号（候補自身は第45条と推定）を一次資料で確定して付記すること。あわせて、一般用電気工作物には電気主任技術者による保安監督がないため、設置者が運転状態を把握できる表示装置を求めている、という趣旨を加えること。ただし、この趣旨は根拠資料で裏付けてから記載する。",
+        "choiceExplanations の(2)(3)(4)の（ウ）の誤り理由は「条文上『一般用電気工作物』であり『自家用電気工作物』ではない」という文言の相違だけである。自家用ではなく一般用が対象となる理由（上記の保安体制の違い）が示されていない。c）の根拠を確定したうえで、誤答肢固有の理由として補うこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "解説には、電技第21条第1項、第56条第2項、第61条の条番号、条見出し、条文引用が含まれる。これらはいずれも添付の問題原図・注意書き頁・公式解答表のどれにも記載がなく、添付資料だけでは検証できない。officialReferenceUrls も空で、一次資料（e-Gov法令検索等）の原頁が添付されていない。監査者の知識では内容は整合しているが、推測ではPASSにできない。",
+        "注意書き頁の注3によれば、本試験は令和7年4月1日現在で効力のある法令に基づいて作成されている。引用条文と条番号が同日時点の版と一致するかは、添付資料では確認できない。",
+        "c）の規定の所在（条・項）は、候補の uncertainty 自身が「確定できていない」と明記しており、外部確認事項が残っている。",
+        "uncertainty に未確定事項（c の条番号、一次資料URLなし）が記載されているのに needsReview=false になっており、両者が矛盾している。確認が完了するまでは needsReview=true とすべき。"
+      ],
+      "verifiedEvidence": [
+        "問題文：候補の柱書、a）〜d）、設問文は、PDF第14頁（フッター「T2－H 014」、印刷頁番号「-11-」）の原図と語句・句読点・空欄位置まで一致した。（ア）が a）内の2か所にある点も一致した。",
+        "選択肢：原図の表 (1)〜(5) の各行 (ア)(イ)(ウ)(エ) の4列が、候補の choices 1〜5 と全セル一致した。",
+        "公式正答：公式解答表「令和7年度 第三種電気主任技術者下期試験解答」の＜法規＞問8は解答1、配点6である。候補の officialAnswer=\"1\"、scoringPoints=6、manifest の q08 単位 {answer:\"1\", points:6} と一致した。",
+        "出典メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=law、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[14] はすべて manifest と原図フッター「T2－H 014」に一致した。sourceAttribution の年度・期・科目・問番号も一致した。",
+        "総合解説の結論：（ア）感電、（イ）感電又は火災、（ウ）一般用電気工作物、（エ）需要場所以外の場所の組合せは選択肢(1)と一致し、公式正答1と整合した。",
+        "誤答肢の判定：(2)は（ア）（ウ）（エ）が誤り、(3)は（イ）（ウ）が誤り、(4)は（ア）（イ）（ウ）が誤り、(5)は（イ）（エ）が誤りである。各肢の正誤の指摘は表の内容と正答組合せに照らして正しい。",
+        "図：原図に回路図等はなく、選択肢表だけである。figureDescription の記述（列見出し、5行）は原図と一致した。図は解答に不要で、figureUrls と choiceFigureUrls が空であることも妥当。"
+      ]
+    }
+  ]
+}

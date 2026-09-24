@@ -1,0 +1,100 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，「発電用風力設備に関する技術基準を定める省令」における，風車を支持する工作物に関する記述である。\n\na）風車を支持する工作物は，自重，積載荷重，［(ア)］及び風圧並びに地震その他の振動及び［(イ)］に対して構造上安全でなければならない。\nb）発電用風力設備が小規模発電設備である場合には，風車を支持する工作物に取扱者以外の者が容易に［(ウ)］ことができないように適切な措置を講じること。\n\n上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 飛来物　(イ) 衝撃　(ウ) 登る",
+        "2": "(ア) 積雪　(イ) 腐食　(ウ) 接近する",
+        "3": "(ア) 飛来物　(イ) 衝撃　(ウ) 接近する",
+        "4": "(ア) 積雪　(イ) 衝撃　(ウ) 登る",
+        "5": "(ア) 飛来物　(イ) 腐食　(ウ) 接近する"
+      },
+      "officialAnswer": "4",
+      "explanation": "「発電用風力設備に関する技術基準を定める省令」第7条（風車を支持する工作物）からの出題である。本試験の法規科目は，令和7年4月1日現在効力のある法令に基づいて作成されている。同日時点の条文は次のとおりである。\n\n第1項：風車を支持する工作物は，自重，積載荷重，積雪及び風圧並びに地震その他の振動及び衝撃に対して構造上安全でなければならない。\n第2項：発電用風力設備が小規模発電設備である場合には，風車を支持する工作物に取扱者以外の者が容易に登ることができないように適切な措置を講じること。\n\nしたがって (ア) 積雪，(イ) 衝撃，(ウ) 登る となり，正解は (4) である。\n\n覚え方のポイント：第1項の列挙は，「並びに」によって「自重，積載荷重，積雪及び風圧」と「地震その他の振動及び衝撃」の二つのまとまりに区切られている。(ア) は前のまとまり（自重・積載荷重・積雪・風圧）に，(イ) は後のまとまり（地震その他の振動・衝撃）に入る語である。「飛来物」「腐食」はいずれも第1項に列挙されていない。第2項は取扱者以外の者が風車を支持する工作物に容易に登ることができないようにする措置を求める規定で，条文の語は「接近する」ではなく「登る」である。",
+      "choiceExplanations": {
+        "1": "誤り。(イ) 衝撃，(ウ) 登る は条文どおりだが，(ア) は条文では「積雪」であり，「飛来物」は第1項に列挙されていない。",
+        "2": "誤り。(ア) 積雪 は条文どおりだが，(イ) は条文では「衝撃」であり「腐食」ではない。(ウ) も条文では「登る」であり「接近する」ではない。",
+        "3": "誤り。(イ) 衝撃 は条文どおりだが，(ア) は「飛来物」ではなく「積雪」，(ウ) は「接近する」ではなく「登る」である。",
+        "4": "正しい。(ア) 積雪，(イ) 衝撃，(ウ) 登る のすべてが第7条の文言と一致する。",
+        "5": "誤り。条文の文言は (ア) 積雪，(イ) 衝撃，(ウ) 登る であり，この肢の「飛来物」「腐食」「接近する」は三つとも条文と一致しない。"
+      },
+      "figureDescription": "本問に図はない。選択肢は，列見出しを(ア)(イ)(ウ)，行見出しを(1)〜(5)とする語句の表で示されており，その内容は choices に文字で記録している。",
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/409M50000400053?occasion_date=20250401"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        9
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2684,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1284158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1195,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e480ab3ce72a7e2171ac442d5d21e6d9db8b64601699c700f9829e56c24f6652",
+  "inputRequestSha256": "518a22a54fb3ea4321de781c3171b2dcaa6b66cd4a44d8a2af6caf9955dc2116",
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p09.png": "7c7efe462634a91db4f3468807b0248ebd9b76ee17e0b997354e505385d90daa"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2616,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14099,
+          "webSearchRequests": 0,
+          "costUSD": 0.16537580000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1147,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3eecd8aa6a4709cbe36cfcf69b74a1ed9d8dccba0c6f83e94ee377d9ae2e1205",
+      "inputRequestSha256": "712a39bfebc6d294a75e7aebd7f690792c57ab9f51421dd28e2d1395ed6d4c89",
+      "previousDraftSha256": "6de394bea001fe5db80d8ef00ba5a711200c10dce441d1a8f0d9b4f62026b08e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/law/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "8bb03e7f3eddc380f01345eebdf1ce440af3cb841862117f491dc9501997d5e2",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/law/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/409M50000400053-20250401.json": "d7b70dc42ee1cb9603a7d67e8145fcc854b5cbc7adf1ddb4a0ff88dc72cbfe56"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

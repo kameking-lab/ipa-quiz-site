@@ -1,0 +1,46 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 502,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15943,
+      "webSearchRequests": 0,
+      "costUSD": 0.1378478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 430,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7a350bcc84487902fe316b53d3e28a356aa73feea6ea2d65733bec4e9d32b312",
+  "draftSha256": {
+    "3": "256771b9c56cacd31854ad347c6e55d657c333ef3483261541e0abb091280255"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+  },
+  "referenceJsonSha256": {
+    "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+  },
+  "referencePdfSha256": {},
+  "referencePageSha256": {},
+  "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "assessment": [
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

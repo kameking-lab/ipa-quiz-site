@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4681,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16209,
+      "webSearchRequests": 0,
+      "costUSD": 0.22355580000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2979,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "058e0bf44af5e3cc89097ce63c345af457827357a1ec6e638f98ecd729dc745c",
+  "inputRequestSha256": "f0507174d833e660cc658836f1519917cdd902080db77d1f01439ea94f1b6503",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "440dd592754671dac9373d7157c39328164193dd921cbfc0a7f98399d49d004e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p12.png": "df62d210c4372625af97bf47e8d44ecfa9d92d0265881e1f7137fd7e989ac372",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "98e6a90493ec7467a834a9ac1d99eba127f4168614d3418ffab78beb2696cced",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説・肢別解説は条文の効力基準日を示していない。一方、uncertainty欄は『解釈の改正により変わりうる』と基準日のない留保を付けている。法規科目注意書き頁の注3には『令和7年4月1日現在, 効力のある法令（電気設備の技術基準の解釈を含む。）に基づいて作成』と明記されている。解説本文でもこの基準日を根拠時点として明示し、留保をこの時点に固定すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の『試験の実施年度・回は本ページからは特定できない』は、確認済みの事実と矛盾する。manifest（2025年度上期・試験日2025-08-31・法規）、注意書き頁注3（令和7年4月1日基準）、公式解答表表題（令和7年度 第三種電気主任技術者上期試験解答）のいずれとも食い違い、候補自身のfiscalYear=2025・term=upperとも矛盾する。この記述は削除が必要。",
+        "uncertainty欄は条番号『第167条』『第168条』を挙げ、解説本文は次の3点を断定している。(1) 離隔距離を数値で定めるのは『がいし引き工事による低圧配線の場合』である。(2) がいし引き工事以外（ケーブル工事を含む）は『接触しないように』施設する。(3) 高圧屋内配線の工事方法はがいし引き工事（乾燥・展開場所限定）とケーブル工事で、金属管工事は規定されていない。いずれも解釈原文に依拠する独立主張だが、officialReferenceUrlsは空で、添付資料（問題原図・注意書き頁・解答表）にも解釈原文はない。令和7年4月1日時点の解釈原文でこれらを検証できないため、推測でPASSにはできない。解釈原文（令和7年4月1日時点）の該当条項を公式参考資料として添付・照合する必要がある。",
+        "uncertainty欄の『高圧屋内配線に認められる工事方法の追加など』という可能性の示唆は、未検証の外部事項であり、学習者に曖昧さを残す。基準日時点の原文で確認して確定させるか、削除すべき。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第12頁、頁内表記 -9-、T1-H 012）と照合した。導入文、a)、b)、空白(ア)〜(ウ)の位置、設問文はすべて一致する。『弱電流電線又は水管，ガス管若しくはこれらに類するもの（以下，「水管等」という。）』の表記も一致する。",
+        "選択肢(1)〜(5)：原図の表と全セルが一致する。(1) 接触しないように／隠ぺい／ケーブル工事、(2) の離隔距離を10 cm以上となるように／展開／金属管工事、(3) の離隔距離を10 cm以上となるように／隠ぺい／ケーブル工事、(4) 接触しないように／展開／ケーブル工事、(5) 接触しないように／隠ぺい／金属管工事。",
+        "公式正答：公式解答表の法規 問8＝4、配点6。manifest固定正答単位 {question:8, part:null, answer:\"4\", points:6} とも、候補のofficialAnswer=\"4\"・scoringPoints=6とも一致する。",
+        "総合解説の結論 (ア)接触しないように・(イ)展開・(ウ)ケーブル工事 は、公式正答(4)の組合せと一致する。",
+        "肢別解説の正誤判定：各肢の(ア)〜(ウ)の正誤の内訳を正答(4)基準で検算した。(1)は(イ)のみ誤り、(2)は(イ)のみ正しい、(3)は(ウ)のみ正しい、(5)は(ア)のみ正しいとなり、候補の記述と整合する。",
+        "メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[12]、sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf、sourceAttribution（令和7年度上期 法規 問8）は、いずれもmanifestと一致する。",
+        "図：本問に解答上必要な図はない（原図の表は選択肢表で、choicesに転記済み）。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当。"
+      ]
+    }
+  ]
+}
