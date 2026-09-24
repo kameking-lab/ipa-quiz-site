@@ -5562,5 +5562,126 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q10": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q10",
+    "sourceSha256": "a548362e0d46d2c3211612d1e3b7ad6d1f98fb303c704ba579b013bfd78b86f6",
+    "candidateSha256": "5f7aa417c6567d980bddd35e3503b1f0d7845dcca6c24e066f4190b6e70e3376",
+    "evidenceSha256": "eb916b3fa279d45a5fb8bbb78aeab51d3a7f8cd9c51d7edeba43a2d8c7958aa8",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The local files for both cited government URLs (労基則 https://laws.e-gov.go.jp/law/322M40000100023 and 労基法 https://laws.e-gov.go.jp/law/322AC0000000049) are the same 800-byte e-Gov page shell (sha256 b2e5ede6…). They contain no statute text, so neither 労基則18条 nor 労基法36条6項1号 could be checked.",
+        "No local copy of the 労働基準法施行規則 text was found either, so the wording of 労基則18条1〜9号 (暑熱, 低温, じんあい, 振動, etc.) is unconfirmed for choices (1), (2), (4) and (5).",
+        "Choice (3) is correct only because the 18条 list and its 10号 大臣指定業務 do not include this work. The candidate says itself that it did not check 10号, so a key premise of the correct choice is unconfirmed.",
+        "The version of 労基則 and 労基法 in force when the exam was set (published 2025-10) is not specified or checked.",
+        "The official PDF (p.5, 一衛 5/22) marks (3) as correct, which matches the candidate's correctChoice 3. The question text and the image q10-p6-1.webp match the official PDF."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/322M40000100023",
+        "https://laws.e-gov.go.jp/law/322AC0000000049"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 5571,
+        "cacheReadInputTokens": 1129438,
+        "cacheCreationInputTokens": 32169,
+        "webSearchRequests": 0,
+        "costUSD": 0.5947156,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2068,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q8": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q8",
+    "sourceSha256": "76cf7af8063a27621ed36bac3a55828e99e347304030ca59606b9d666fbe7e77",
+    "candidateSha256": "687379753314bb93d4b17ae6df93e947b694a833dc27a4fe186fabf6071325e1",
+    "evidenceSha256": "eb916b3fa279d45a5fb8bbb78aeab51d3a7f8cd9c51d7edeba43a2d8c7958aa8",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Both cited government source files (安衛則 20250401 version and 安衛令) are the same 800-byte e-Gov page shell (sha256 b2e5ede6…). They contain no statute text, so the candidate's cited sources do not support any choice.",
+        "A separate local e-Gov API copy of 安衛則 (law_revision_id 347M50002000032_20250401_505M60000100121, not one of the candidate's cited files) confirms: 587条8号 溶融ガラス成型 and 9号 加硫がま; 607条1項 気温・湿度・ふく射熱, with ふく射熱 only for 1〜8号; 588条6号 ドラムバーカー; 590条1項 等価騒音レベル; 36条34号 焼却灰 (36号 excluded); 592条の2 ダイオキシン類濃度. On that basis (2), (3) and (5) are supported.",
+        "(1): It is confirmed that the required measurements are 気温・湿度・ふく射熱. It is not confirmed that 粉じん濃度 measurement is not required under 粉じん障害防止規則 or 安衛令21条1号. No source for this was provided, so the 'wrong combination' conclusion is not fully supported.",
+        "(4): No source for the 電離放射線障害防止規則 (線量当量率又は線量当量 in 管理区域) was cited, so this choice is unchecked (the candidate also marks it HOLD). The 安衛令21条6号 text is unavailable because the cited file is a shell.",
+        "The exam was published 2025-10 and the 安衛則 revision is in force from 2025-04-01. Whether any revision took effect between that date and the exam, and which versions of 安衛令, 粉じん則 and 電離則 applied, is unchecked.",
+        "The official PDF (p.4, 一衛 4/22) marks (1) as correct, which matches the candidate's correctChoice 1. The question text and the image q8-p5-1.webp match the official PDF."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121",
+        "https://laws.e-gov.go.jp/law/347CO0000000318"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 5571,
+        "cacheReadInputTokens": 1129438,
+        "cacheCreationInputTokens": 32169,
+        "webSearchRequests": 0,
+        "costUSD": 0.5947156,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2068,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
