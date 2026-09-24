@@ -89,7 +89,9 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
             cli.touch()
             rows = [
                 {"type": "assistant", "message": {"model": "claude-opus-5-5"}},
-                {"type": "result", "subtype": "success", "result": '{"qid":{"status":"PASS"}}'},
+                {"type": "result", "subtype": "success", "result": '{"qid":{"status":"PASS"}}',
+                 "resolvedModel": None, "modelUsage": {"claude-opus-5-5": {
+                     "canonicalModel": "claude-opus-5-5", "provider": "firstParty"}}},
             ]
 
             def fake_run(command, **kwargs):
@@ -100,13 +102,21 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
             with patch.dict(MODULE.os.environ, {"APPDATA": temp}), patch.object(
                 MODULE.subprocess, "run", side_effect=fake_run
             ):
-                result, model = MODULE.call_claude("review", Path(temp) / "receipt",
+                result, proof = MODULE.call_claude("review", Path(temp) / "receipt",
                                                    "claude-opus-5-5", return_model=True)
                 self.assertEqual(result["qid"]["status"], "PASS")
-                self.assertEqual(model, "claude-opus-5-5")
-                with self.assertRaisesRegex(RuntimeError, "Unexpected Claude model ID"):
+                self.assertEqual(proof["resolvedModel"], "claude-opus-5-5")
+                self.assertEqual(proof["provider"], "firstParty")
+                self.assertIsNone(proof["rawResolvedModel"])
+                with self.assertRaisesRegex(RuntimeError, "Unexpected Claude model proof"):
                     MODULE.call_claude("review", Path(temp) / "alias",
                                        "opus", return_model=True)
+
+                rows[-1]["modelUsage"]["claude-haiku-4-5-20251001"] = {
+                    "canonicalModel": "claude-haiku-4-5", "provider": "firstParty"}
+                with self.assertRaisesRegex(RuntimeError, "Unexpected Claude model proof"):
+                    MODULE.call_claude("review", Path(temp) / "mixed",
+                                       "claude-opus-5-5", return_model=True)
 
 
 if __name__ == "__main__":

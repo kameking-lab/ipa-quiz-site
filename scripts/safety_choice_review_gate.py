@@ -74,19 +74,34 @@ def validate_assessment(assessment, candidate):
     return errors
 
 
-def make_receipt(question_id, snapshot, candidate, evidence, assessment, model):
+def valid_model_proof(model_proof):
+    if not isinstance(model_proof, dict):
+        return False
+    model = model_proof.get("resolvedModel")
+    usage = model_proof.get("modelUsage")
+    row = usage.get(model, {}) if isinstance(usage, dict) else {}
+    return (model_proof.get("requestedModel") == "claude-opus-5-5"
+            and model == "claude-opus-5-5"
+            and model_proof.get("provider") == "firstParty"
+            and isinstance(usage, dict)
+            and set(usage) == {"claude-opus-5-5"}
+            and row.get("canonicalModel") == "claude-opus-5-5"
+            and row.get("provider") == "firstParty")
+
+
+def make_receipt(question_id, snapshot, candidate, evidence, assessment, model_proof):
     errors = validate_assessment(assessment, candidate)
-    if model != "claude-opus-5-5":
-        errors.append("review model ID is not the verified claude-opus-5-5")
-    return {"schemaVersion": 1, "questionId": question_id,
-            **receipt_key(snapshot, candidate, evidence), "model": model,
+    if not valid_model_proof(model_proof):
+        errors.append("review model proof is not verified firstParty claude-opus-5-5")
+    return {"schemaVersion": 2, "questionId": question_id,
+            **receipt_key(snapshot, candidate, evidence),
             "status": "HOLD" if errors else "PASS", "gateIssues": errors,
-            "assessment": assessment}
+            "assessment": assessment, **model_proof}
 
 
 def receipt_current(receipt, snapshot, candidate, evidence):
-    return (receipt.get("schemaVersion") == 1 and receipt.get("status") == "PASS"
-            and receipt.get("model") == "claude-opus-5-5"
+    return (receipt.get("schemaVersion") == 2 and receipt.get("status") == "PASS"
+            and valid_model_proof(receipt)
             and all(receipt.get(k) == v for k, v in
                     receipt_key(snapshot, candidate, evidence).items())
             and not validate_assessment(receipt.get("assessment"), candidate))

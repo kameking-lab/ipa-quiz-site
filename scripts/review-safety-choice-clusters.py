@@ -254,7 +254,7 @@ def main():
                   + json.dumps(payload, ensure_ascii=False))
         token = digest(batch)[:16]
         # Existing CLI adapter fails closed on limit; no queued retries or paid fallback.
-        review, actual_model = adapter.call_claude(
+        review, model_proof = adapter.call_claude(
             prompt, root / ".cache/safety-full-review" / token,
             args.model, return_model=True)
         if set(review) != {q["id"] for q in batch}:
@@ -262,7 +262,7 @@ def main():
         receipts = {}
         for row in batch:
             receipts[row["id"]] = make_receipt(row["id"], row["snapshot"], row["candidate"],
-                                               row["evidence"], review[row["id"]], actual_model)
+                                               row["evidence"], review[row["id"]], model_proof)
         return token, receipts
 
     failures = []

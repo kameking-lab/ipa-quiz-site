@@ -40,8 +40,12 @@ class FullReviewGateTest(unittest.TestCase):
         self.tmp.cleanup()
 
     def receipt(self):
+        model_proof = {"requestedModel": "claude-opus-5-5",
+                       "resolvedModel": "claude-opus-5-5", "rawResolvedModel": None,
+                       "provider": "firstParty", "modelUsage": {"claude-opus-5-5": {
+                           "canonicalModel": "claude-opus-5-5", "provider": "firstParty"}}}
         return make_receipt("q1", source_snapshot(self.root, self.q, self.paper),
-                            self.candidate, self.evidence, self.assessment, "claude-opus-5-5")
+                            self.candidate, self.evidence, self.assessment, model_proof)
 
     def test_complete_current_review_passes(self):
         self.assertEqual(candidate_issues(self.q, self.candidate, "lckohyo"), [])
@@ -73,8 +77,12 @@ class FullReviewGateTest(unittest.TestCase):
         self.assertEqual(self.receipt()["status"], "HOLD")
 
     def test_alias_cannot_be_recorded_as_verified_model(self):
+        model_proof = {"requestedModel": "opus", "resolvedModel": "opus",
+                       "rawResolvedModel": "opus", "provider": "firstParty",
+                       "modelUsage": {"opus": {"canonicalModel": "opus",
+                                                  "provider": "firstParty"}}}
         receipt = make_receipt("q1", source_snapshot(self.root, self.q, self.paper),
-                               self.candidate, self.evidence, self.assessment, "opus")
+                               self.candidate, self.evidence, self.assessment, model_proof)
         self.assertEqual(receipt["status"], "HOLD")
 
     def test_conflict_and_unchecked_history_hold(self):

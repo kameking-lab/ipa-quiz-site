@@ -140,12 +140,26 @@ def call_claude(prompt, prefix, model, return_model=False):
         raise RuntimeError(f"Claude did not complete successfully: {prefix}")
     content = result_row.get("result", "")
     result = extract_json(content)
-    model_ids = {row.get("message", {}).get("model") for row in responses
-                 if row.get("type") == "assistant" and isinstance(row.get("message"), dict)}
-    model_ids.discard(None)
-    if model_ids != {model}:
-        raise RuntimeError(f"Unexpected Claude model ID {model_ids}; expected {model}")
-    return (result, model) if return_model else result
+    assistant_model_ids = {row.get("message", {}).get("model") for row in responses
+                           if row.get("type") == "assistant"
+                           and isinstance(row.get("message"), dict)}
+    assistant_model_ids.discard(None)
+    model_usage = result_row.get("modelUsage")
+    usage_model_ids = set(model_usage) if isinstance(model_usage, dict) else set()
+    usage = model_usage.get(model, {}) if isinstance(model_usage, dict) else {}
+    if (assistant_model_ids != {model} or usage_model_ids != {model}
+            or usage.get("canonicalModel") != model
+            or usage.get("provider") != "firstParty"):
+        raise RuntimeError(
+            "Unexpected Claude model proof "
+            f"assistant={assistant_model_ids}, usage={usage_model_ids}, "
+            f"canonical={usage.get('canonicalModel')}, provider={usage.get('provider')}; "
+            f"expected firstParty {model}"
+        )
+    model_proof = {"requestedModel": model, "resolvedModel": model,
+                   "rawResolvedModel": result_row.get("resolvedModel"),
+                   "modelUsage": model_usage, "provider": usage["provider"]}
+    return (result, model_proof) if return_model else result
 
 
 def source_hints(batch):
