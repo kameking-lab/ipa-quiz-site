@@ -64,7 +64,11 @@ function runValidator(choiceExplanations: unknown) {
   writeFileSync(join(data, "explanations.json"), "{}");
   writeFileSync(join(data, "choice-explanations.json"), JSON.stringify(choiceExplanations));
   writeFileSync(join(data, "coverage-contract.json"), JSON.stringify({
-    structuredChoiceExplanations: { requiredPaperIds: [paperId] },
+    structuredChoiceExplanations: {
+      requiredPaperIds: [paperId],
+      // The fixture catalog has no EM papers, so the EM two-year target is empty.
+      emkohyoTwoYearTarget: { years: [2025, 2026], expectedQuestions: 0, expectedQuestionsPerPaper: 20, paperIds: [] },
+    },
     consultant: { years: [2021], subjects: ["機械安全"] },
   }));
   // The publication gate checks only the WebP container signature and a non-empty payload.
