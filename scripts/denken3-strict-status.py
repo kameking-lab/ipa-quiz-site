@@ -61,9 +61,10 @@ def main() -> None:
         if usage.get("canonicalModel") != "claude-opus-5-5" or usage.get("provider") != "firstParty":
             continue
         date, subject = receipt["examDate"], receipt["subject"]
-        raw = denken3_cli.raw_file(PRIVATE / date / subject / f"{path.stem}-raw.jsonl")
-        if raw is not None and digest(raw) != receipt.get("rawResponseSha256"):
-            continue
+        raw = denken3_cli.raw_file(PRIVATE / date / subject / f"{path.stem}-raw.jsonl",
+                                   receipt.get("rawResponseSha256"))
+        if raw is not None and not denken3_cli.valid_raw_response(raw, receipt.get("modelUsage")):
+            raw = None
         hashes = receipt["inputHashes"]
         for item in receipt["assessment"]:
             id_ = (date, subject, item["unitKey"])
@@ -74,19 +75,19 @@ def main() -> None:
                 continue
             if (hashes["sourceQuestionPdfSha256"], hashes["sourceAnswerPdfSha256"]) != expected[id_][1:]:
                 continue
-            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+            if any(denken3_cli.evidence_file(ROOT / source, value) is None
                    for source, value in hashes["officialPageSha256"].items()):
                 continue
-            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+            if any(denken3_cli.evidence_file(ROOT / source, value) is None
                    for source, value in hashes["figureSha256"].items()):
                 continue
-            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+            if any(denken3_cli.evidence_file(ROOT / source, value) is None
                    for source, value in hashes.get("referencePdfSha256", {}).items()):
                 continue
-            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+            if any(denken3_cli.evidence_file(ROOT / source, value) is None
                    for source, value in hashes.get("referencePageSha256", {}).items()):
                 continue
-            if any(not (ROOT / source).is_file() or digest(ROOT / source) != value
+            if any(denken3_cli.evidence_file(ROOT / source, value) is None
                    for source, value in hashes.get("referenceJsonSha256", {}).items()):
                 continue
             if item["status"] == "PASS" and all(item.get(issue) == [] for issue in ISSUES):
@@ -107,6 +108,10 @@ def main() -> None:
         return
     print(json.dumps({"total": total, "byPaper": {f"{date}-{subject}": row for (date, subject), row in sorted(grouped.items())}},
                      ensure_ascii=False, indent=2))
+    if "--require-complete" in sys.argv and (total["strictPass"] != total["expected"] or
+                                            total["candidate"] != total["expected"] or
+                                            total["passRawNotInCheckout"]):
+        raise SystemExit("Strict publication gate closed: fewer than 320 portable PASS units")
 
 
 if __name__ == "__main__":

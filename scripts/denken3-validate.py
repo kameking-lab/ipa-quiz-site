@@ -55,7 +55,7 @@ def validate_local_pdfs(data: dict) -> None:
     for session in data["sessions"]:
         for item in [session["officialAnswer"], *session["subjects"]]:
             path = RAW / item["url"].rsplit("/", 1)[-1]
-            if not path.is_file() or sha256(path.read_bytes()).hexdigest() != item["sha256"]:
+            if denken3_cli.evidence_file(path, item["sha256"]) is None:
                 raise ValueError(f"Missing/changed official PDF: {path}")
 
 

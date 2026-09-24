@@ -1,0 +1,129 @@
+{
+  "schemaVersion": 1,
+  "purpose": "既存候補が無い4解答単位の公式入力。本文候補やPASS判定ではない。",
+  "sourceManifest": "scripts/denken3-source-manifest.json",
+  "bundles": [
+    {
+      "status": "HOLD_NEEDS_CANDIDATE_AND_INDEPENDENT_OPUS_5_5_REVIEW",
+      "examDate": "2025-08-31",
+      "subject": "law",
+      "unitKey": "q01",
+      "officialAnswer": "5",
+      "points": 6,
+      "officialQuestionPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q04.pdf",
+        "path": "docs/evidence/denken3/input/20250831_ch_third_q04.pdf",
+        "sha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+        "path": "docs/evidence/denken3/input/20250831_ch_third_a01.pdf",
+        "sha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9"
+      },
+      "sourcePages": [
+        {
+          "pdfPage": 4,
+          "path": "docs/evidence/denken3/input/review/20250831/law/p04.png",
+          "sha256": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe",
+          "extractedText": "■ T1－H 004\n  第 ３ 種          法\n規\n              \n  \n注１ 問題文中に｢電気設備技術基準｣とあるのは，｢電気設備に関する技術基準を定\nめる省令｣の略である。 \n注２ 問題文中に｢電気設備技術基準の解釈｣とあるのは，｢電気設備の技術基準の解\n釈｣における第１章～第６章及び第８章をいう。なお，｢第７章 国際規格の取り\n入れ｣の各規定について問う出題にあっては，問題文中にその旨を明示する。 \n注３ 問題は，令和７年４月１日現在，効力のある法令(「電気設備の技術基準の解\n釈」を含む。)に基づいて作成している。 \n \nＡ問題(配点は1 問題当たり6 点) \n \n問１ 次の文章は，電気の需給状況が悪化した場合における電気事業法に基づく対\n応に関する記述である。 \n電力広域的運営推進機関(OCCTO)は，会員である小売電気事業者，一般送配電\n事業者，配電事業者又は特定送配電事業者の電気の需給の状況が悪化し，又は悪\n化するおそれがある場合において，必要と認めるときは，当該電気の需給の状況\nを改善するために，電力広域的運営推進機関の    (ｱ)    で定めるところにより，\n    (ｲ)    に対し，相互に電気の供給をすることや電気工作物を共用することなど\nの措置を取るように指示することができる。 \nまた，経済産業大臣は，災害等により電気の安定供給の確保に支障が生じたり，\n生じるおそれがある場合において，公共の利益を確保するために特に必要があり，\nかつ適切であると認めるときは    (ｳ)    に対し，電気の供給を他のエリアに行う\nことなど電気の安定供給の確保を図るために必要な措置をとることを命ずること\nができる。 \n \n \n- 1 -\n"
+        },
+        {
+          "pdfPage": 5,
+          "path": "docs/evidence/denken3/input/review/20250831/law/p05.png",
+          "sha256": "d0a3b0e702a7d10c4bc35d51d6ca370b4b1f76dda9b6e09b1edb93cdd0e162ac",
+          "extractedText": "■ T1－H 005\n上記の記述中の空白箇所(ｱ)～(ｳ)に当てはまる組合せとして，適切なものを次\nの(1)～(5)のうちから一つ選べ。 \n \n \n(ｱ) \n(ｲ) \n(ｳ)  \n(1)\n保安規程 \n会員 \n電気事業者 \n(2)\n保安規程 \n事業者 \n一般送配電事業者 \n(3)\n送配電等業務指針\n特定事業者 \n特定自家用電気工作物設置者\n(4)\n業務規程 \n事業者 \n特定自家用電気工作物設置者\n(5)\n業務規程 \n会員 \n電気事業者 \n \n \n \n- 2 -\n"
+        }
+      ],
+      "priorUnacceptedDraft": "docs/evidence/denken3/generation/20250831/law/q01-vision-draft.json",
+      "priorDraftReview": "docs/evidence/denken3/generation/20250831/law/q01-opus-review.json",
+      "reviewFocus": "問題本文はPDF第4頁、選択肢表は第5頁。両頁を一緒に査読する。"
+    },
+    {
+      "status": "HOLD_NEEDS_CANDIDATE_AND_INDEPENDENT_OPUS_5_5_REVIEW",
+      "examDate": "2025-08-31",
+      "subject": "theory",
+      "unitKey": "q12",
+      "officialAnswer": "5",
+      "points": 5,
+      "officialQuestionPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q01.pdf",
+        "path": "docs/evidence/denken3/input/20250831_ch_third_q01.pdf",
+        "sha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+        "path": "docs/evidence/denken3/input/20250831_ch_third_a01.pdf",
+        "sha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9"
+      },
+      "sourcePages": [
+        {
+          "pdfPage": 15,
+          "path": "docs/evidence/denken3/input/review/20250831/theory/p15.png",
+          "sha256": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190",
+          "extractedText": "■ T1－R 015\n問12 真空中において，図のように電極板の間隔が6 mm，電極板の面積が十分広\nい平行平板電極があり，電極K，P 間には2 000 V の直流電圧が加えられてい\nる。このとき，電極K，P 間の電界の強さは約    (ｱ)    V/m である。電極K を\nヒータで加熱すると表面から    (ｲ)    が放出される。ある1 個の電子に着目し\nてその初速度を零とすれば，電子が電極P に達したときの運動エネルギーW は\n    (ｳ)    J となる。 \nただし，電極K，P 間の電界は一様とし，電気素量\n19\n1.6 10\nC\ne\nとする。 \n \n上記の記述中の空白箇所(ｱ)～(ｳ)に当てはまる語句又は数値の組合せとして，正\nしいものを次の(1)～(5)のうちから一つ選べ。 \n \n電極K\n電極P\nヒータ\n6 mm\n \n \n \n(ｱ) \n(ｲ) \n(ｳ) \n(1)\n2\n3.3 10  \n光電子 \n16\n1.6 10\n \n(2)\n5\n3.3 10  \n熱電子 \n16\n1.6 10\n \n(3)\n2\n3.3 10  \n光電子 \n16\n3.2 10\n \n(4)\n2\n3.3 10  \n熱電子 \n16\n1.6 10\n \n(5)\n5\n3.3 10  \n熱電子 \n16\n3.2 10\n \n \n \n \n- 12 -\n"
+        }
+      ],
+      "priorUnacceptedDraft": "docs/evidence/denken3/generation/20250831/theory/q12-vision-draft.json",
+      "priorDraftReview": "docs/evidence/denken3/generation/20250831/theory/q12-opus-review.json",
+      "reviewFocus": "PDF第15頁の電極K/P・ヒータ・6 mm・電源極性の図と5肢表を原図で確認する。"
+    },
+    {
+      "status": "HOLD_NEEDS_CANDIDATE_AND_INDEPENDENT_OPUS_5_5_REVIEW",
+      "examDate": "2026-03-22",
+      "subject": "law",
+      "unitKey": "q04",
+      "officialAnswer": "4",
+      "points": 6,
+      "officialQuestionPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+        "path": "docs/evidence/denken3/input/20260322_ch_third_q04.pdf",
+        "sha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+        "path": "docs/evidence/denken3/input/20260322_ch_third_a01.pdf",
+        "sha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6"
+      },
+      "sourcePages": [
+        {
+          "pdfPage": 8,
+          "path": "docs/evidence/denken3/input/review/20260322/law/p08.png",
+          "sha256": "478f6374560a8e73443cf91531afd8f0fc58b0facf7b13532ac8197fdd03024d",
+          "extractedText": "■ T2－H 008\n問４ 次の文章は，電気設備の接地に関する記述であるが，｢電気設備技術基準の解\n釈｣から判断して不適切なものを次の(1)～(5)のうちから一つ選べ。 \n \n(1) 使用電圧200 V の機械器具の鉄台に施す接地工事の接地抵抗値を90\nとし\nた。 \n(2) 使用電圧100 V の機械器具を屋内の乾燥した場所で使用するので，その機械\n器具の鉄台の接地工事を省略した。 \n(3) 使用電圧440 V の機械器具に電気を供給する電路に動作時間が0.1 秒の漏電\n遮断器が施設されているので，その機械器具の鉄台の接地工事の接地抵抗値を\n300\nとした。 \n(4) 水気のある場所で使用する使用電圧100 V の機械器具に電気を供給する電路\nに動作時間が0.1 秒の漏電遮断器が施設されているので，その機械器具の鉄台\nの接地工事を省略した。 \n(5) 使用電圧3 300 V の機械器具の鉄台に施す接地工事の接地線に，直径2.6 mm\nの軟銅線を使用した。 \n \n- 5 -\n"
+        }
+      ],
+      "priorUnacceptedDraft": "docs/evidence/denken3/generation/20260322/law/q04-vision-draft.json",
+      "priorDraftReview": "docs/evidence/denken3/generation/20260322/law/q04-opus-review.json",
+      "reviewFocus": "PDF第8頁の5肢と試験時点の解釈を照合する。"
+    },
+    {
+      "status": "HOLD_NEEDS_CANDIDATE_AND_INDEPENDENT_OPUS_5_5_REVIEW",
+      "examDate": "2026-03-22",
+      "subject": "power",
+      "unitKey": "q01",
+      "officialAnswer": "3",
+      "points": 5,
+      "officialQuestionPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+        "path": "docs/evidence/denken3/input/20260322_ch_third_q02.pdf",
+        "sha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+        "path": "docs/evidence/denken3/input/20260322_ch_third_a01.pdf",
+        "sha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6"
+      },
+      "sourcePages": [
+        {
+          "pdfPage": 4,
+          "path": "docs/evidence/denken3/input/review/20260322/power/p04.png",
+          "sha256": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96",
+          "extractedText": "■ T2－D 004\n第 ３ 種 \n電\n力\n  \n  \nＡ問題(配点は1 問題当たり5 点) \n問１ 次の文章は，水力発電所の種類に関する記述である。 \n水力発電所は    (ｱ)    を得る方法により分類すると，水路式，ダム式，ダム水\n路式があり，    (ｲ)    の利用方法により分類すると，    (ｳ)    ，調整池式，貯水\n池式，揚水式がある。 \n一般的に，水路式はダム式，ダム水路式に比べ    (ｴ)    。また，貯水ができな\nいので発生電力の調整には適さない。ダム式，ダム水路式発電では，ダムに水を\n蓄えることで    (ｲ)    の調整ができるので，電力需要が大きいときにあわせて運\n転することができる。 \n河川の自然の流れをそのまま利用して発電する方式を    (ｳ)    発電という。貯\n水池などを持たない水路式発電所がこれに相当する。 \n1 日又は数日程度の河川流量を調整できる大きさの池を持ち，電力需要が小さ\nいときにその池に蓄え，電力需要が大きいときに放流して発電する方式を\n(ｵ)    発電という。 \n上記の記述中の空白箇所(ｱ)～(ｵ)に当てはまる組合せとして，最も適切なもの\nを次の(1)～(5)のうちから一つ選べ。 \n(ｱ)\n(ｲ)\n(ｳ) \n(ｴ) \n(ｵ) \n(1)\n落差\n流速\n自然放流式\n建設期間が長い\nダム式 \n(2)\n流速\n落差\n自然放流式\n建設期間が短い\nダム式 \n(3)\n落差\n流量\n流込み式\n高落差を得にくい \n調整池式 \n(4)\n流量\n落差\n流込み式\n高落差を得やすい \n調整池式 \n(5)\n落差\n流量\n流込み式\n建設費が安い \n貯水池式 \n- 1 -\n"
+        }
+      ],
+      "priorUnacceptedDraft": "docs/evidence/denken3/generation/20260322/power/q01-vision-draft.json",
+      "priorDraftReview": "docs/evidence/denken3/generation/20260322/power/q01-opus-review.json",
+      "reviewFocus": "PDF第4頁の空欄と組合せ表を原図で確認する。"
+    }
+  ]
+}
