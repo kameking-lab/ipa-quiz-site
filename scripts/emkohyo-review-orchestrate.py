@@ -51,6 +51,7 @@ def eligible(pack_file: Path, year: str | None, accepted: set[str]) -> tuple | N
     if not pack.get("claimedExcerpts") or not pack.get("sources"):
         return None
     if any(not (urlparse(source.get("url", "")).hostname or "").endswith(".go.jp")
+           or (urlparse(source.get("url", "")).hostname or "").endswith("jstage.jst.go.jp")
            or source.get("status") != 200 for source in pack["sources"]):
         return None
     ids = {f"{paper}-q{number}" for number in range(first, last+1)}

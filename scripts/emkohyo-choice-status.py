@@ -16,8 +16,13 @@ DATA = ROOT / "data/exam-library"
 REVIEW = DATA / "emkohyo-review"
 
 
+# J-STAGE is a journal platform run by JST, not a ministry or agency source.
+NON_PRIMARY_GO_JP_HOSTS = ("jstage.jst.go.jp",)
+
+
 def gov(url: str) -> bool:
-    return bool(re.fullmatch(r"https://(?:[A-Za-z0-9-]+\.)+go\.jp(?:/[^\s]*)?", url))
+    match = re.fullmatch(r"https://((?:[A-Za-z0-9-]+\.)+go\.jp)(?:/[^\s]*)?", url)
+    return bool(match) and not match.group(1).lower().endswith(NON_PRIMARY_GO_JP_HOSTS)
 
 
 def candidate_problems(row: dict, candidate: dict) -> list[str]:

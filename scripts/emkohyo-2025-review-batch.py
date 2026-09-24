@@ -109,7 +109,8 @@ def main() -> None:
             raise ValueError(f"Source pack has no direct excerpts: {source_file}")
         for source in sources.get("sources", []):
             host = urlparse(source.get("url", "")).hostname or ""
-            if not host.endswith(".go.jp") or source.get("status") != 200:
+            if (not host.endswith(".go.jp") or host.endswith("jstage.jst.go.jp")
+                    or source.get("status") != 200):
                 raise ValueError(f"Non-government or unreachable source in {source_file}: {host}")
     else:
         raise ValueError(f"Source pack lacks candidate hash and range pins: {source_file}")

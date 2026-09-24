@@ -127,7 +127,9 @@ const isGovernmentPrimarySourceUrl = (value) => {
   try {
     const url = new URL(value);
     return url.protocol === 'https:' && !url.username && !url.password && !url.port
-      && url.hostname.endsWith('.go.jp');
+      && url.hostname.endsWith('.go.jp')
+      // J-STAGE hosts journal articles, which are not government primary sources.
+      && url.hostname !== 'jstage.jst.go.jp' && !url.hostname.endsWith('.jstage.jst.go.jp');
   } catch { return false; }
 };
 for (const [id, overlay] of Object.entries(choiceExplanations)) {
