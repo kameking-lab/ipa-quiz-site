@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2209,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15105,
+      "webSearchRequests": 0,
+      "costUSD": 0.1929166,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1076,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ffc28d8ff90f8520832a9674f0e50699a0e09513ea0a055dd8ebd23e3d9b6142",
+  "inputRequestSha256": "4cbde8859915cb2b68bd183b0a3d937b5baaac14993a3548b4b3130c97e168f3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "5f64913d4f3f22b39239ec0f800b484ed59ecefe893c373e089e408cabd75c5c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p08.png": "dbbae4689b4603965e1467241704a88bc108ce1766577df6e6e8b7bf696acdb7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "c8caad6503d02d34b3573915492391186e4ca243d509f912b508fedc46eb81f6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: I compared it with the attached official problem image, sentence by sentence. The candidate matches word for word: 地下から取り出した(ア)によってタービンを回して発電する方式であり，発電に適した地熱資源は(イ)に多く存在する / 植物や動物が生成・排出する(ウ)から得られる燃料 / 木くずから作られる固形化燃料や，家畜の糞から作られる(エ). It also keeps the (1)〜(5)一つ選べ instruction. The only changes are removed layout line breaks and the blank boxes written as (ア)〜(エ), which do not change the meaning.",
+        "Choices: I checked all five rows of the image's table against the candidate: (1)蒸気/火山地域/有機物/液体燃料, (2)熱水の流れ/平野部/無機物/気体燃料, (3)蒸気/火山地域/有機物/気体燃料, (4)蒸気/平野部/有機物/気体燃料, (5)熱水の流れ/火山地域/無機物/液体燃料. All five match, and the column order (ア)〜(エ) matches.",
+        "Official answer: the manifest-fixed unit {question:5, part:null, answer:\"3\"} matches the candidate's officialAnswer \"3\". I did not change the official answer.",
+        "Overall explanation: row (3) of the official answer fixes all four blanks as 蒸気, 火山地域, 有機物 and 気体燃料. The explanation's reasons for each blank are consistent with that: steam from the geothermal reservoir drives the turbine, high-temperature resources are concentrated in volcanic areas, biomass is organic matter, and biogas from methane fermentation of livestock manure is a gaseous fuel. There are no calculations, polarities or units to check.",
+        "Wrong-choice explanations: I checked every row against the correct combination. (1) only (エ) is wrong. (2) (ア), (イ) and (ウ) are wrong and only (エ) is right. (4) only (イ) is wrong. (5) (ア), (ウ) and (エ) are wrong and only (イ) is right. Each count of wrong blanks and each blank named as correct matches the table exactly.",
+        "Figure: the original has no diagram, only the table of word combinations. The table is fully carried into choices, and the answer can be worked out without a figure, so empty figureUrls and choiceFigureUrls are appropriate. The figureDescription says the same thing.",
+        "Source: officialReferenceUrls is empty. The explanation makes no independent claim that needs an official reference, and every blank is determined by the official answer (3), so there is nothing to verify externally. The attached image's footer reads 'T2−D 008' while the printed page number is '-5-'. That supports the candidate's reviewedFromPage [8] as the PDF page. sourceAttribution names 令和6年度下期 (R6 lower term), which matches examDate 2025-03-23."
+      ]
+    }
+  ]
+}

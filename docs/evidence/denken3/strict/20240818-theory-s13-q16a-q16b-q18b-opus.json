@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 9333,
+      "cacheReadInputTokens": 310280,
+      "cacheCreationInputTokens": 36595,
+      "webSearchRequests": 0,
+      "costUSD": 0.541492,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6189,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "72c333dda2113f07dc9ed27bffc4cf39340950af0b353e0f54f3dec46dab0937",
+  "inputRequestSha256": "5603e0b499bb25c4046c892af5f726e8976af1ded94a92220f457cb37b25a1ab",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "7accb444c4c519ba3c87cd5e8f0ff71e54f858d204b845246a620cae82b1ed74",
+      "q16b": "fd032cfff3780053945af811e2f67325d792e38557037910b05cb70d10b71ed8",
+      "q18b": "908871c470fa5857f2dcd5742d52c4908af004be031d29f58cf036b10c375671"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p20.png": "a11afeceec51930b1b640c17ba667f052f026eacacff275fe10ae7ef16cac943",
+      "data/raw_pdfs/denken3/review/20240818/theory/p21.png": "73c46d5253fd8b0431a9571e3bad6145485c5d4cfeeabec217d75447e8cae360",
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "1b60959325d72a4c98c93afa329d92b6042c733e78815fc3826bc95a7722f853"
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[2]（144）が選択肢ごとの理由になっていない。『正しい計算結果（約183.3A）と一致しないので誤り』と書いているだけで、ほかの選択肢にもそのまま当てはまる。144は、電流計Ⅰが定格100Aに達した時点（k=100/90）で、電流計ⅠとⅡの2台だけを合計した値 100+40×100/90≒144.4A に一致する。電流計Ⅲの分流（35×100/90≒38.9A）を加え忘れた値として説明するのがよい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "『機器を損傷させずに計測できる上限』という書き方が不正確。最大電流を決めているのは、いずれかの電流計の指示が最大目盛を超えて読み取れなくなること（測定範囲の上限）であり、損傷するかどうかは問題文の条件にない。『いずれかの電流計の指示が最大目盛に達した時点が測定できる上限』と直すべき。",
+        "uncertainty欄に『誤答肢の数値がどの誤った計算手順から出たかまでは断定していない』という未解決の記述が残っている。(1)100=Ⅰの定格、(3)165=指示値の合計、(5)200=定格の合計、(2)144=ⅠとⅡだけの合計（上記）と、4つとも出どころを特定できるので、uncertainty欄はそれに合わせて閉じるべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（最大目盛100/50/50A、指示値90/40/35A、並列接続、『計測できる最大電流の値[A]』）と選択肢(1)100・(2)144・(3)165・(4)183・(5)200を公式原図p20（T1-R 020）と照合し、一致を確認。",
+        "公式解答表（理論 問16(a)=4）とofficialAnswer=\"4\"の一致を確認。",
+        "検算：並列なので電流比90:40:35は一定。定格に達する倍率はⅠ 100/90=1.111、Ⅱ 50/40=1.25、Ⅲ 50/35=1.429で、最小はⅠ。合計は165×100/90=183.33A≒183で(4)。このときⅡ=44.4A<50A、Ⅲ=38.9A<50Aで、どちらも範囲内。",
+        "問題に図がなく、figureUrlsが空であることは原図と一致。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（3台を並列にしたまま別の回路に接続、合計150A、空欄(ア)(イ)(ウ)）と選択肢表(1)〜(5)の全数値・列の並びを公式原図p21（T1-R 021）と照合し、一致を確認。",
+        "公式解答表（理論 問16(b)=5）とofficialAnswer=\"5\"の一致を確認。",
+        "検算：内部抵抗は変わらないので比90:40:35が保たれる。Ⅰ=150×90/165=81.818→81.8、Ⅱ=150×40/165=36.364→36.4、Ⅲ=150×35/165=31.818→31.8で(5)に一致。合計は150.0A。3台とも最大目盛以内。",
+        "誤答肢(1)〜(4)は同じ3つの数値の並べ替えで、各肢の説明にある割り当ての誤りをそれぞれ確認した。",
+        "問題に図がないことは原図と一致。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "区切りの読点が『、』になっている。原文と同じ問16の候補JSONは『，』なので、表記をそろえるべき（内容の誤りではない）。"
+      ],
+      "choiceIssues": [
+        "choiceExplanations[4]（エミッタ）が『(ア)が「エミッタ」で誤り』と書くだけで、選択肢固有の理由がない。図1ではエミッタはE1・E2の接続点に直接つながっており、信号源v2はベース側（変成器二次側の下端とE1の間）に入っている。この点を理由として書くべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "『最大振幅(外側の包絡線間の幅)8V』『最小振幅(…幅)4V』が不正確。図2(b)の8Vは上の包絡線の山から下の包絡線の谷までの幅（=2Vmax、Vmax=4V）で、4Vは上の包絡線の谷から下の包絡線の山までの幅（=2Vmin、Vmin=2V）であり、どちらも振幅そのものではなくピーク間の値。m=(2Vmax−2Vmin)/(2Vmax+2Vmin)=(8−4)/(8+4)は係数2が打ち消し合うので成り立つ、と明記すべき（結果の33%は正しい）。",
+        "v1とv2の役割の説明で、『v2はE1と直列にバイアス回路へ直接入る／v1は変成器による高周波結合』と対比させているが、図1では変成器二次巻線・v2・E1はすべて同じベース－エミッタ間のループに直列に入っている。区別の根拠は『変成器で結合される側が搬送波、バイアス電源と直列でベースの動作点を低周波で動かす側が信号波』という回路上の役割分担であることを正確に書くべき。あわせて、(ア)=ベースの選択肢は(3)と(5)だけで、変調回路の出力v3が無変調波(c)になる(3)は成り立たない、という消去法の根拠も添えると確実になる。",
+        "figureDescriptionでも図2(b)を『包絡線最大幅8V・最小幅4V』としか書いていない。ピーク間の値であることを明記すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（(ア)〜(オ)の空欄、『図2のそれぞれの電圧波形間の位相関係は無視する』というただし書き）と選択肢表(1)〜(5)の全セル（コレクタ/コレクタ/ベース/エミッタ/ベース、図2の割り当て、33/67/50/67/33）を公式原図p24〜p25（T1-R 024/025）と照合し、一致を確認。",
+        "公式解答表（理論 問18(b)=5）とofficialAnswer=\"5\"の一致を確認。",
+        "図1の接続を確認：v1は変成器一次側。二次側の上端はベース、下端はv2を経てE1へ。E1とE2の接続点（黒丸）はエミッタへ。コレクタは上の配線から、C∥L（両端に黒丸）のタンク回路の上端へ。タンク下端はE2へ。v3は出力変成器の二次側端子。figureDescriptionの接続記述と矛盾はない。",
+        "変調率を検算：Vmax=4V、Vmin=2V → m=(4−2)/(4+2)=33.3%→33。誤答肢の値も確認：8/12=66.7→67、(8−4)/8=50。",
+        "公開候補図（20240818-theory-q18-am-circuit-waveforms.png）は図1と図2(a)(b)(c)の全体を含む。v1・v2・v3の矢印、E1・E2、接続点の黒丸、『破線は包絡線を示す』、8V/4Vの寸法線、t[s]、電圧[V]の軸、各キャプションを原図と照合し、欠けや改変がないことを確認。解答に必要な情報はこの図だけで読み取れる。",
+        "officialReferenceUrlsは空で、確認すべき外部の主張はない。"
+      ]
+    }
+  ]
+}

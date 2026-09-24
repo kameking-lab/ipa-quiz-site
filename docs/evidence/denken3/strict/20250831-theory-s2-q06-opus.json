@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5165,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15438,
+      "webSearchRequests": 0,
+      "costUSD": 0.2270678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3764,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fd65942648a130a25351bbb559e88df49f27001bb5c6dea5757e01a0ec05ca6e",
+  "inputRequestSha256": "ae0c170a74920c1c1ecb9b8ff20f8744f3751ef13bae87d59b8c114f432b9854",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "fc3a333856aa52eaead63156897438ed2af700994f1c1f1d54e0bc44a4474df3"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p09.png": "e6797a2124a054d2e52e4c8a187e7793938af0cfbab27c65183d22f6e327755b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q06-fig1.png": "3a011f065dbee57f39a979aa38798d2131fe62d9fac426851b2bdf35c9ee8677"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "f54a6b7f2a8c8cf03afc87bea8677f943a595f0cdc61d70f34b47500927eb0b3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（印刷頁「- 6 -」、頁コード「T1－R 009」）と照合した。a–c間100 V、b–c間10 V、15 Ωを並列追加、b–c間4 V、b–c間を短絡、電流I[A]、「最も近いもの」、(1)〜(5)から一つ選ぶ、の各要素に脱落・改変はない。空白と全角・半角の整形のみ異なる。",
+        "選択肢: (1)0.0 (2)0.44 (3)0.32 (4)0.40 (5)0.10。原図と全肢が一致した。",
+        "公式正答: 公式解答表「令和7年度 第三種電気主任技術者上期試験解答」の＜理論＞問6は解答2・配点5。manifest の {question:6, part:null, answer:\"2\", points:5}、candidate の officialAnswer=\"2\"、scoringPoints=5 と一致した。",
+        "計算検算: 図1から R₁:R₂=90:10 なので R₁=9R₂。図2で Rp=15R₂/(R₂+15)、R₁=24Rp。これを連立すると 9(R₂+15)=360 となり、R₂=25 Ω、R₁=225 Ω。",
+        "逆算: 図1は 100×25/250=10 V、図2は Rp=9.375 Ω で 100×9.375/234.375=4.00 V。どちらも問題文と一致した。",
+        "図3: R₂は短絡線でバイパスされるので I=100/225=0.4444 A。最も近い肢は(2)0.44で、公式正答と整合する。",
+        "極性: 原図と公開候補図の両方で、電源記号の長い極板は上側（端子a側）にある。電流は a→R₁→b→短絡線→c と流れ、図3のIの矢印（b→c、下向き）と同じ向きになる。したがってIは正で、解説の向きの記述は正しい。",
+        "誤答肢(1): 短絡後もR₁を通る閉回路が残り、I≠0。理由は妥当。",
+        "誤答肢(3): 合成抵抗が250 Ωから225 Ωに減るので、電流は0.40 Aより大きくなるはず。0.32 Aはこれに反する。理由は妥当。",
+        "誤答肢(4): 0.40 A は図1の回路電流 100/250 と同じ値。理由は妥当。",
+        "誤答肢(5): 0.10 A は0.40 Aより小さく、電流が増えるという関係に反する。理由は妥当。",
+        "図: 公開候補図 20250831-theory-q06-fig1.png は図1〜図3を欠けなく含む。確認した項目は、端子a/b/c、R₁[Ω]・R₂[Ω]、100 V、10 V、4 V（両向き矢印）、15 Ω（b–c間でR₂と並列）、図3の短絡線、I[A]の下向き矢印、図番号で、接続・向き・ラベルは原図と一致した。問題文と合わせれば、この図だけで解答に必要な回路構成が読み取れる。",
+        "figureDescription: 直列構成、並列15 Ωの位置、短絡線の位置、I矢印の向き（b→c）、電源の極性の各記述が図と一致した。",
+        "出典メタデータ: officialReferenceUrls は空で、検証が必要な独立主張はない。reviewedFromPage=[9] は、原図の頁コード「T1－R 009」と整合する。fiscalYear=2025（令和7年度）、term=upper、subject=theory は、解答表の表題・区分と整合する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6137,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15819,
+      "webSearchRequests": 0,
+      "costUSD": 0.2495558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4036,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bc5748ffd371fad93c709302c2d3ac298750e396ce5d064e53ec5ec2c81f950e",
+  "inputRequestSha256": "2701494ebf40e08becfca66f9b5b8562e628b9b1f9561202e468adf7d3b8beb3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "aea6c31f53290767756b763877dadfbd2737da5ba4b45b6ae034ef1bc8a901cd",
+      "q16b": "9e501fbef6c363c36961f6fe59634bc78acde32a5b99b819fdd1c446568072c2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p20.png": "9a1ebbbf0996360023791e7925fe72721ed3c92bcc5366f9885db55cdfacc0b7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a3749d1b888e8eb442ab7cd340babf4e5b826c7d96b464a99c942f590e5344b7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文照合: 添付原図（印刷頁「- 17 -」、欄外コード「T1−D 020」）と一致。66 kV / 22 kV / 50 MV·A、Y-Y 結線、一次側換算 1 相当たり 0.05 Ω・7 Ω、線路 (0.20＋j0.45) Ω/km、500 m、一次側線路インピーダンス等無視。数値・単位・条件に欠落や改変はない。reviewedFromPage=[20] は欄外コード 020 と整合する",
+        "選択肢照合: (1)21.8 (2)10.5 (3)12.6 (4)6.5 (5)17.3 が原図と一致",
+        "公式正答照合: 公式解答表の〈電力〉問16(a)=3 が manifest {question:16, part:a, answer:3, points:5} および候補 officialAnswer=3、scoringPoints=5 と一致。〈理論〉問16(a)=1、〈機械〉問16(a)=2 とは異なり、電力科目への帰属と矛盾しない",
+        "計算検算: 巻数比 a=3 なので二次側換算で Rt=0.05/9=0.005556 Ω、Xt=7/9=0.77778 Ω。線路は Rl=0.10 Ω、Xl=0.225 Ω。合成 R=0.105556 Ω、X=1.002778 Ω、|Z|²=1.016705、|Z|=1.008318 Ω。E=22000/√3=12701.7 V なので Is=12596.9 A≒12.6 kA となり (3) が正しい",
+        "50 MV·A が不要である理由（インピーダンスがオーム値で与えられているため）の説明は正しい",
+        "肢(1): 22000/1.008318=21818 A、12.597×√3=21.82 kA。相電圧換算漏れで √3 倍になるという説明は正しい",
+        "肢(2): 12702/10500=1.2097 Ω。1 km と仮定した場合は |Z|=√(0.205556²+1.227778²)=1.24487 Ω、I=10.20 kA で、記載値と一致",
+        "肢(4): 12702/6500=1.954 Ω、1.954/1.0083=1.94 倍。『約1.9倍』は妥当",
+        "肢(5): 12702/17300=0.7342 Ω。変圧器単体では |Zt|=0.77780 Ω、I=16.33 kA。直列に線路を加えると電流はこれを超えないという論理は正しい",
+        "図: 原図に図はない。figureUrls=[]、figureDescription の記述とも一致",
+        "出典: officialReferenceUrls=[] のため、検証すべき独立主張はない"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2] の『2.72 kV は (5) の 4.71 kV のちょうど 1/√3 にあたる』は不正確。4.71/√3=2.7193 で、四捨五入すると 2.72 に一致するだけであり『ちょうど』ではない。『約 1/√3 にあたる（4.71 / √3 ≒ 2.72）』に修正すること。肢(5)側は『≒』で記述しており、表現をそろえる必要もある"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文照合: 共通文と (b) の設問文（短絡前に 22 kV に保たれていた母線の線間電圧が三相短絡時に何 kV に低下するか、単位 [kV]）が添付原図と一致",
+        "選択肢照合: (1)8.70 (2)2.72 (3)5.37 (4)1.34 (5)4.71 が原図と一致",
+        "公式正答照合: 公式解答表の〈電力〉問16(b)=3 が manifest {question:16, part:b, answer:3, points:5} および候補 officialAnswer=3、scoringPoints=5 と一致",
+        "計算検算: |Zl|=0.5×√(0.04+0.2025)=0.5×0.49244=0.24622 Ω。Vp=12596.9×0.24622=3101.6 V、V=√3×Vp=5372 V≒5.37 kV となり (3) が正しい。分圧式でも 22×0.24622/1.008318=5.372 kV で一致",
+        "因果: 故障点の電圧が 0 なので、母線の相電圧は線路インピーダンスによる電圧降下に等しい。無負荷のため短絡前の負荷電流はない（その他の値は無視する条件）。いずれも正しい",
+        "肢(1): 1 km と仮定すると |Z|=1.24487 Ω、22×0.49244/1.24487=8.703 kV で 8.70 と一致。誤答原因の特定として妥当",
+        "肢(2): 正答の相電圧 3.10 kV、線間電圧 5.37 kV のいずれとも不一致であることは正しい。『ちょうど』の表現のみ要修正",
+        "肢(4): 1.34/22=0.0609（約6%）、分圧比 0.24622/1.008318=0.2442（約24%）で記載と一致",
+        "肢(5): 2.72×√3=4.711、4.71/22=0.2141 で記載と一致",
+        "図: 原図に図はない。figureUrls=[] と整合",
+        "出典: officialReferenceUrls=[] のため、検証すべき独立主張はない"
+      ]
+    }
+  ]
+}

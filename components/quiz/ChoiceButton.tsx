@@ -8,6 +8,7 @@ import { QuestionBody } from "./QuestionBody";
 
 interface Props {
   choiceKey: ChoiceKey | `${number}`;
+  displayLabel?: string;
   text: string;
   imageUrl?: string;
   revealed: boolean;
@@ -27,6 +28,7 @@ const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, 
 export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function ChoiceButton(
   {
     choiceKey,
+    displayLabel,
     text,
     imageUrl,
     revealed,
@@ -49,7 +51,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
   }
 
   const numberKey = shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
-  const baseLabel = `選択肢 ${choiceKey}: ${text}`;
+  const baseLabel = `選択肢 ${displayLabel ?? choiceKey}: ${text}`;
   const stateLabel = !revealed
     ? `数字キー${numberKey}でも選択できます`
     : state === "revealed-correct"
@@ -107,7 +109,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
                 : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50",
         )}
       >
-        {choiceKey}
+        {displayLabel ?? choiceKey}
       </span>
       <div className="min-w-0 flex-1 pt-1 text-base leading-relaxed">
         <QuestionBody text={text} />

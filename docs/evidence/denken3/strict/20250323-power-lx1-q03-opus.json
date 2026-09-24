@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3526,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14365,
+      "webSearchRequests": 0,
+      "costUSD": 0.18570379999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2174,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f3adfe00d22ed890b14110767884f0f54e00b12cd53ff1761877f368e52c99f9",
+  "inputRequestSha256": "193a32be992b3116916ec9cdf0d25fd94ae073e5a529d25322b652414c27a84a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "6a92e4c52b0cf6cab1659f46e849aab7fa1a42fbc9b01f29244f7d7fd0840778"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p06.png": "af228ec19b8ed8624561c2a17171e003d69fbd1c3b18ffffd9ca177fef29921b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "4414c96a09f308a64b976addb0f5702c995851818bd30490c952687509606a16",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第6頁、頁下部ノンブル『-3-』・『T2-D 006』）の本文と一字ずつ照合した。衝動タービン段落（ア）（イ）（ウ）、反動タービン段落（エ）（オ）、設問文のすべてで語句の欠落・改変はない。句読点も原図どおりで、『衝動タービンは蒸気の圧力が』は読点なし、『反動タービンは，蒸気の圧力が』は読点ありで再現されている。",
+        "選択肢: 原図の組合せ表の(1)〜(5)全行・全列（ア〜オ）と照合し、候補JSONのchoicesと完全一致した。(1)上昇/等しい/高圧/膨張/中低圧、(2)上昇/異なる/中低圧/凝縮/高圧、(3)上昇/等しい/中低圧/膨張/高圧、(4)降下/異なる/中低圧/凝縮/高圧、(5)降下/等しい/高圧/膨張/中低圧。",
+        "公式正答: 試験センター公式解答表（令和6年度下期、＜電力＞欄、問3）は『5』である。manifest固定の公式正答単位 {question:3, part:null, answer:'5'} およびofficialAnswer='5'と一致する。",
+        "総合解説の技術的検算: 衝動タービンはノズル内で蒸気が膨張し、圧力が降下して高速噴流となるので（ア）は降下。動羽根通路の断面積が一様なら羽根内で膨張せず、出入口の圧力は等しいので（イ）は等しい。反動タービンは動羽根内でも蒸気を膨張させて反動力を得るので（エ）は膨張。反動タービンは動羽根前後に圧力差があって翼先端隙間からの漏れが生じ、比体積が小さく翼長が短い高圧段では漏れ損失の割合が大きい。このため衝動は高圧、反動は中低圧に適し、（ウ）は高圧、（オ）は中低圧。因果関係に誤りはない。",
+        "肢別解説: 各肢の空欄ごとの正誤判定を検算した。(1)は（ア）のみ誤り、(2)は5空欄すべて誤り、(3)は（ア）（ウ）（オ）が誤りで（イ）（エ）が正、(4)は（ア）のみ正で他4空欄が誤り、(5)は全空欄正。候補の記述はいずれもこの判定と一致する。(2)の『複数箇所が誤り』は、実際には全空欄が誤りだが、記述として偽ではない。",
+        "図: 原図に回路図・構造図はない。組合せ表は選択肢テキストに完全に転記されており、figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は妥当。解答に図は不要。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[6] はすべてmanifestと一致する。sourceAttributionの『令和6年度下期』は2024年度下期に対応し、公式解答表の表題とも整合する。",
+        "参考資料: officialReferenceUrlsは空で、検証を要する外部の独立主張はない。解説は問題文と公式正答から導ける範囲の一般原理にとどまる。"
+      ]
+    }
+  ]
+}

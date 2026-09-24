@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4906,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15035,
+      "webSearchRequests": 0,
+      "costUSD": 0.2186638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3404,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a6ee41f5e296026cd0657efca76b41bafb30944c5e45caa4bab51a00bad04b12",
+  "inputRequestSha256": "8dc96c40139d59f73412f89a3bbb5a7de55cf8e8c4973dfe74e249e426a32c37",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "910945a1e6ff80bf555f12604fd4ce8e535c4b65aaa9d6dd80faa31c86a7c087"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p04.png": "b5db000e4206d9200a3d5b80001dc23907f06ab38b8c96f60dfae6d1219fab96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a7fe1c20f1fe2d13156ebd8ba1ed6e10dd89989f2411fd92dd3be8b2117e0239",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "正答肢(3)の(エ)「高落差を得にくい」について、choiceExplanations[3]・総合解説とも「根拠は公表されていない」と述べるにとどまり、正答肢の(エ)がなぜ適切かという固有の理由が示されていない。正答肢の全空欄について成立理由を説明できていないため、解説として未完結である。",
+        "uncertainty欄に「水路式を高落差を得る方式とする説明も見られる」とあるが、出典が示されていない（officialReferenceUrlsも空）。添付の公式原図・公式解答表では検証できない外部主張であり、根拠不明の記述が残っている。",
+        "uncertainty欄で(エ)の位置付けを『確定していない』と自認しているのに、needsReviewがfalseになっている。未解決の曖昧さを残したまま公開可と判定しており、フラグと記述が整合しない。needsReviewをtrueにするか、公式参考資料で(エ)の根拠を確定させる必要がある。",
+        "誤答肢(1)(2)(4)(5)の(エ)について、いずれも『判定に用いる必要はない』としか書かれていない。消去法としては正しいが、(エ)の語句自体の当否は各肢で検討されていない。(4)の『高落差を得やすい』は正答肢の(エ)と正反対の記述であり、この対立が解説で整理されていない。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "(エ)「高落差を得にくい」の根拠となる公式資料（試験センターの解説・参考資料等）が添付されておらず、正答肢(エ)の妥当性を公式原頁で検証できない。外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "出典照合: 公式解答表の見出しは『令和7年度 第三種電気主任技術者下期試験解答』。候補のfiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl（q02）、sourceAnswerPdfUrl（a01）はmanifestと一致。",
+        "頁照合: 原図はPDF第4頁（冊子印字頁『-1-』、管理番号T2-D 004）。reviewedFromPage=[4]と一致。",
+        "公式正答: 公式解答表〈電力〉問1の解答は3、配点は5。候補のofficialAnswer='3'、scoringPoints=5と一致。",
+        "問題文: 原図の全5段落（分類の導入、(エ)を含む段落、流込み式の定義、調整池式の定義、設問指示）を逐語照合し、空欄(ア)〜(オ)の位置と、(イ)(ウ)が2回出現する箇所もすべて一致。",
+        "選択肢: (1) 落差/流速/自然放流式/建設期間が長い/ダム式、(2) 流速/落差/自然放流式/建設期間が短い/ダム式、(3) 落差/流量/流込み式/高落差を得にくい/調整池式、(4) 流量/落差/流込み式/高落差を得やすい/調整池式、(5) 落差/流量/流込み式/建設費が安い/貯水池式。いずれも原図の表と一致。",
+        "消去法の検算: (ア)落差で(2)(4)、(イ)流量で(1)(2)(4)、(ウ)流込み式で(1)(2)、(オ)調整池式で(1)(2)(5)が外れ、残るのは(3)のみ。総合解説の記述と一致し、公式正答3とも整合する。",
+        "誤答理由: (4)の(ア)(イ)入替え、(5)の貯水池式（季節的な長期調整）と調整池式（1日〜数日）の区別、(1)(2)のダム式が落差による分類名である点は、いずれも本文の分類定義と整合する。",
+        "図: 原図には表形式の選択肢以外に図はなく、figureUrlsが空であること、figureDescriptionの記述とも整合する。"
+      ]
+    }
+  ]
+}

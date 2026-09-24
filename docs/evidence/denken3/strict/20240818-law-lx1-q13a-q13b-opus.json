@@ -1,0 +1,112 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7096,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 69654,
+      "webSearchRequests": 0,
+      "costUSD": 0.6994157999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4815,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8cc2bd75a8ecb492f56bcc6b4f7983f733829bad64ff2ed40094cb64392273fe",
+  "inputRequestSha256": "4d501c92866c80e4ad47a9b6f45d350e9a10a209b06345ade4fed62beec2efdd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13a": "8059aeff4f0bbf0bd34bdfa5a46eb547ac3133f7392343a8e84169a565ed03de",
+      "q13b": "d33db9280625a48272871f4e148b9345eef544d6b3a2cbb00c34866d8d287e5c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p19.png": "15ca4576f2ca880988dcac833b03c91dd54579b805bf6d2a34b3f50decf6916e",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "2d86aa65e7542b1741807b337af570c53b1b89b34a970b81d9206dc8e52864d5",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p001.png": "3dc4686362bd456e808007aab681dc1c9ab36ec8b2019d88894842417f1daebd",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p024.png": "01e87a5b7e34214cad07f862f68bb8022e06314138d078c8672162b76de5d72e",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p025.png": "f58f4cc6e2f597686aa591861bc14ac9f53fb5a1a828828a1e11c551e37bb98a",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p026.png": "defc1ff010808b22c90fa78a310712ebc70f28989376e85f640207549cf22ac4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p125.png": "6abd7fc7680a529ad67c3a0aa36737e87f3cbd03fd18f8a76595f07e9965e334",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p151.png": "566a61cdd98f642ebc8275faa14900dbbc210aa601b6f03463ea22f3f78a807d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p168.png": "55929b470c08a64af93dd82258ce635c1464cf6ce1b7e37bf68a0b91206ab410",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p192.png": "11d4c1cd17aadcff521ecd8501e7492900f6374cde4162906db1b55c39d512d7",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p221.png": "8004a8254e30cb2866fac97a7c731e012a52121ee02f887f99e3bcb01b4ec821",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p236.png": "c74175415a76295888756a43121997bf32770ff2458de0de0bb3ad0debdbad9d"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13a",
+      "questionNumber": 13,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "法規科目注意書き頁の注3により、問題は「令和6年4月1日現在、効力のある法令（電気設備技術基準の解釈を含む。）」に基づく。一方、officialReferenceUrls（20231226-2.pdf）はPDF第1頁の改正履歴で最終改正が「20231211保局第2号 令和5年12月26日付け」の版である。添付の附則一覧（PDF第236頁）は「20230310保局第2号（令和5年3月20日施行）」で終わっていて、第1頁に掲げられた20231211保局第2号の附則（施行日）が載っていない。このため、同改正の施行日も、令和5年12月26日から令和6年4月1日までの間に追加改正がないことも、添付資料では確認できない。したがって、参照版の第17条第2項・17-1表が試験の基準日に効力を持っていた版であることは未検証である。この点は外部確認事項として残る（17-1表の記載内容そのものはPDF第32頁で照合済み）。uncertaintyは「2023年12月時点」の版で照合したとだけ記載しており、基準日（令和6年4月1日）との差を開示していない。この差を明記し、確認されるまでneedsReviewをtrueにすべきである。"
+      ],
+      "verifiedEvidence": [
+        "PDF第19頁の問題原図（印刷頁「-16-」、T1-H 019）と照合した。問題文は、使用電圧100V、1線地絡電流5A、許容最高限度の1/3、混触時に対地電圧が150Vを超えた場合に0.8秒で高圧電路を自動遮断、の条件で一致し、選択肢(1)10 (2)20 (3)30 (4)40 (5)50も一致する。",
+        "公式解答表<法規>の問13(a)=4と、候補のofficialAnswer \"4\"が一致する。",
+        "fiscalYear 2024、term upper、examDate 2024-08-18、subject law、sourceQuestionPdfUrl/sourceAnswerPdfUrl、reviewedFromPage [19]は、いずれもmanifestと一致する。",
+        "解釈第17条第2項一号・17-1表（PDF第32頁）の区分を確認した。「下記以外の場合 150/Ig」、「高圧又は35,000V以下の特別高圧の電路と低圧電路を結合するもの 1秒を超え2秒以下 300/Ig」、「同 1秒以下 600/Ig」である。0.8秒は1秒以下なので600/Igが適用される。",
+        "検算：600/5=120Ω、120×1/3=40Ωで、正答(4)と一致する。",
+        "誤答肢の検算：(1) 150/5×1/3=10Ω、(2) 300/5×1/3=20Ω、(3) 150/5=30Ω。いずれも候補の説明と一致する。(5) 50Ωは3区分と1/3条件のどの組合せでも得られない。",
+        "問題に図はなく、figureUrls=[]、figureDescription=nullで問題ない。"
+      ]
+    },
+    {
+      "unitKey": "q13b",
+      "questionNumber": 13,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "本問の計算は(a)で求めたB種接地抵抗40Ωに依存しており、その根拠である解釈第17条第2項・17-1表（officialReferenceUrls、20231226-2.pdf#page=32）について、q13aと同じ未検証事項が残る。注3の基準日は令和6年4月1日である。添付の改正履歴（PDF第1頁）の最終改正は20231211保局第2号（令和5年12月26日付け）だが、附則一覧（PDF第236頁）には同改正の施行日が載っておらず、基準日までの追加改正の有無も添付資料では確認できない。よって、参照版が基準日に効力を持っていた版であることは外部確認事項である。uncertaintyの「2023年12月時点」の版で照合したという記載には、基準日との差の開示が必要である。"
+      ],
+      "verifiedEvidence": [
+        "PDF第19頁の問題原図と照合した。問題文は、人体に流れる電流10mA以下、D種接地工事の接地抵抗値の上限値、人体の電気抵抗値6000Ωで一致し、選択肢(1)10 (2)15 (3)20 (4)30 (5)60も一致する。",
+        "公式解答表<法規>の問13(b)=5と、候補のofficialAnswer \"5\"が一致する。",
+        "fiscalYear、term、examDate、subject、出典URL、reviewedFromPage [19]は、いずれもmanifestと一致する。",
+        "等価回路式を検算した。Rp=RdRh/(Rd+Rh)、Ig=100/(Rb+Rp)、Ih=Ig·Rd/(Rd+Rh)から、Ih=100Rd/[Rb(Rd+Rh)+RdRh]となる。Rb=40、Rh=6000を代入すると100Rd/(6040Rd+240000)であり、候補の式と一致する。",
+        "Ih=0.01Aとして解くと、100Rd=60.4Rd+2400、39.6Rd=2400、Rd≒60.6Ωとなり正しい。Rd=60Ωでは6000/602400≒9.96mA（10mA以下）で、正しい。",
+        "人体分流を無視する近似を検算した。100Rd/(40+Rd)≦6000×0.01=60Vから40Rd≦2400となり、Rd≦60Ωで(5)と一致する。",
+        "誤答肢の人体電流を検算した。(1)1000/300400≒3.33mA、(2)1500/330600≒4.54mA、(3)2000/360800≒5.54mA、(4)3000/421200≒7.12mAで、いずれも候補の値と一致する。いずれも条件は満たすが上限値ではない、という理由付けも正しい。",
+        "問題に図はなく、figureUrls=[]、figureDescription=nullで問題ない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2795,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14386,
+      "webSearchRequests": 0,
+      "costUSD": 0.1712518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1585,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9ccca2e6778e08bbcaec82cdc584ace90077cc1b1017554bd0fc8731000a2159",
+  "inputRequestSha256": "f15e8a5b4ecd60c80dee5fd28e265e6b156541a4a3b0047cc27db6f743a003c7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "2b3a71b02c72d476c1181732375739614dcb2788805d060a335c280190af6f68"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p04.png": "7fca54a8a3c64e7f6fc345589ef4a04bd160ed64b330729d909e75fe908585f9"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "f50fdd46498cf67bc8fe692426db828760078cc540f8b5e64e1bfb9bf4773e9b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: manifestと候補が一致。fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=machinery。問題PDF=20240818_ch_third_q03.pdf、解答PDF=20240818_ch_third_a01.pdf。reviewedFromPage=[4]はmanifestの問1原図PDF第[4]頁と一致。原図には冊子頁「-1-」と管理番号「T1－K 004」があり、uncertainty欄の記載とも矛盾しない。",
+        "問題文: 原図の柱書「次の文章は，直流機に関する記述である。」から結びの「（1）～（5）のうちから一つ選べ。」まで、候補と逐語照合した。句読点が「，」から「、」に変わっているだけで、語句・空欄位置（ア）〜（エ）・文意に差異はない。「整形」の旨はsourceAttributionに明記済み。",
+        "選択肢: 原図の組合せ表と5肢すべてが一致。(1)界磁/電気的/火花/補償巻線、(2)界磁/幾何学的/応力/補極、(3)電機子/幾何学的/応力/補償巻線、(4)電機子/電気的/火花/補償巻線、(5)電機子/電気的/火花/補極。",
+        "公式正答: 試験センター公式解答表（令和6年度上期）の＜機械＞列で問1=5。候補officialAnswer=\"5\"、manifest固定の公式正答単位answer=\"5\"とも一致。",
+        "解説の技術的検算: (ア)ブラシ・整流子を持つ直流機で回転子となるのは電機子で、界磁は固定子側にある。(イ)電機子反作用で移動するのは電気的中性軸で、幾何学的中性軸は機械的に固定されている。(ウ)ブラシが電気的中性軸からずれると整流不良が起き、火花が生じて整流子片を損傷する。(エ)補償巻線は主極面に埋め込み電機子と直列に接続する構造で、主に大容量機に用いる。小形機では主極間に置く補極が一般的。以上はいずれも標準的な直流機理論と整合し、因果関係にも誤りはない。",
+        "肢別解説: 各肢について、正しい空欄と誤った空欄の指摘が上記の正解組合せ（電機子/電気的/火花/補極）と完全に一致することを確認した。(1)はア・エが誤り、(2)はア・イ・ウが誤りでエのみ正、(3)はイ・ウ・エが誤り、(4)はエのみ誤り、(5)はすべて正。",
+        "図: 原図に回路図・構造図はなく、あるのは選択肢の組合せ表のみ。その内容は候補choicesにすべて転記済みなので、解答に図は不要。figureUrls=[]・choiceFigureUrls={}は妥当で、figureDescriptionの記述も原図と一致する。",
+        "参考URL: officialReferenceUrls=[]のため、外部で確認すべき独立主張はない。"
+      ]
+    }
+  ]
+}

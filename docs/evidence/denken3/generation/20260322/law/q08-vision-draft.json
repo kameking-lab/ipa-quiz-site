@@ -1,0 +1,136 @@
+{
+  "questionNumber": 8,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，「電気設備技術基準」に基づく感電，火災等の防止に関する記述である。\n\na）低圧又は高圧の架空電線には，（ア）のおそれがないよう，使用電圧に応じた絶縁性能を有する絶縁電線又はケーブルを使用しなければならない。ただし，通常予見される使用形態を考慮し，（ア）のおそれがない場合は，この限りでない。\n\nb）移動電線を電気機械器具と接続する場合は，接続不良による（イ）のおそれがないように施設しなければならない。\n\nc）燃料電池発電設備が（ウ）である場合には，運転状態を表示する装置を施設しなければならない。\n\nd）常用電源の停電時に使用する非常用予備電源（需要場所に施設するものに限る。）は，（エ）に施設する電路であって常用電源側のものと電気的に接続しないように施設しなければならない。\n\n上記の記述中の空白箇所(ア)～(エ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 感電　(イ) 感電又は火災　(ウ) 一般用電気工作物　(エ) 需要場所以外の場所",
+        "2": "(ア) 感電又は火災　(イ) 感電又は火災　(ウ) 自家用電気工作物　(エ) 需要場所",
+        "3": "(ア) 感電　(イ) 火災　(ウ) 自家用電気工作物　(エ) 需要場所以外の場所",
+        "4": "(ア) 感電又は火災　(イ) 火災　(ウ) 自家用電気工作物　(エ) 需要場所以外の場所",
+        "5": "(ア) 感電　(イ) 火災　(ウ) 一般用電気工作物　(エ) 需要場所"
+      },
+      "officialAnswer": "1",
+      "explanation": "問題文中の「電気設備技術基準」は「電気設備に関する技術基準を定める省令」（電技）の略であり，本試験は令和7年4月1日現在で効力のある法令に基づいて作成されている。各記述は同日時点の電技の次の条文に対応する。\n\na）電技第21条（架空電線及び地中電線の感電の防止）第1項：「低圧又は高圧の架空電線には，感電のおそれがないよう，使用電圧に応じた絶縁性能を有する絶縁電線又はケーブルを使用しなければならない。ただし，通常予見される使用形態を考慮し，感電のおそれがない場合は，この限りでない。」→（ア）感電。条見出しのとおり，この規定は感電の防止を定めたもので，条文に「火災」の語はない。\n\nb）電技第56条（配線の感電又は火災の防止）第2項：「移動電線を電気機械器具と接続する場合は，接続不良による感電又は火災のおそれがないように施設しなければならない。」→（イ）感電又は火災。\n\nc）電技第59条（電気使用場所に施設する電気機械器具の感電，火災等の防止）第2項：「燃料電池発電設備が一般用電気工作物である場合には，運転状態を表示する装置を施設しなければならない。」→（ウ）一般用電気工作物。運転状態を表示する装置の施設は，燃料電池発電設備が一般用電気工作物である場合について義務付けられている。\n\nd）電技第61条（非常用予備電源の施設）：「常用電源の停電時に使用する非常用予備電源（需要場所に施設するものに限る。）は，需要場所以外の場所に施設する電路であって，常用電源側のものと電気的に接続しないように施設しなければならない。」→（エ）需要場所以外の場所。需要場所に施設する非常用予備電源を，需要場所の外に施設する常用電源側の電路と電気的に接続しないことを求めている。\n\nしたがって，（ア）感電，（イ）感電又は火災，（ウ）一般用電気工作物，（エ）需要場所以外の場所の組合せである(1)が正しい。",
+      "choiceExplanations": {
+        "1": "正しい。（ア）感電（電技第21条第1項），（イ）感電又は火災（電技第56条第2項），（ウ）一般用電気工作物（電技第59条第2項），（エ）需要場所以外の場所（電技第61条）の4つがすべて条文と一致する。",
+        "2": "誤り。（イ）感電又は火災は正しいが，（ア）は電技第21条第1項の「感電」の防止規定であって「感電又は火災」ではない。（ウ）は電技第59条第2項が運転状態を表示する装置の施設を「一般用電気工作物である場合」に義務付けており，「自家用電気工作物」ではない。（エ）は電技第61条で「需要場所以外の場所」であり，非常用予備電源自体が施設される「需要場所」ではない。",
+        "3": "誤り。（ア）感電と（エ）需要場所以外の場所は正しいが，（イ）は電技第56条第2項で接続不良による「感電又は火災」の両方を防止対象としており，「火災」だけではない。（ウ）は電技第59条第2項が運転状態を表示する装置の施設を「一般用電気工作物である場合」に義務付けており，「自家用電気工作物」ではない。",
+        "4": "誤り。（エ）需要場所以外の場所は正しいが，（ア）は電技第21条第1項で「感電」のみであり「感電又は火災」ではなく，（イ）は電技第56条第2項で「感電又は火災」であり「火災」だけではない。さらに（ウ）は電技第59条第2項で「一般用電気工作物」であり「自家用電気工作物」ではない。",
+        "5": "誤り。（ア）感電と（ウ）一般用電気工作物は正しいが，（イ）は電技第56条第2項で「感電又は火災」であり「火災」だけではない。（エ）は電技第61条で「需要場所以外の場所」であり，非常用予備電源自体が施設される「需要場所」ではない。"
+      },
+      "figureDescription": "図はない。設問末尾に選択肢の表があり，列見出しは(ア)(イ)(ウ)(エ)，行は(1)～(5)の5行。各行の語句は選択肢(1)～(5)のとおり。",
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/409M50000400052?occasion_date=20250401"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4872,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1721758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2732,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "53a67e01ad730b7d3b5bae4c7f022fc84700a5867e056f0f123d85a18112427a",
+  "inputRequestSha256": "6e275d2ffb8eeae4e048e2eb08dd26cfb2b84c3a37ac8f918b76fe2e3c4db803",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p14.png": "71d8230c53184fc7fd0e059a24e14d34280973195fd2318796ba4dbf979fe9d9"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4009,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17200,
+          "webSearchRequests": 0,
+          "costUSD": 0.2180438,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1558,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "f8b1aad9b3a430b35321371efa989e285a016649d283b62fe21cca6b746fe50a",
+      "inputRequestSha256": "b5db06831f0f86ef550fe67e79885f49b421a65e21302bda48d3c23116b442b2",
+      "previousDraftSha256": "532c34eaad77cd5d227f0b690a8ee938f9d1aab911f7668c8424930e791e962c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q08-vision-draft-v1.json",
+      "answeredReviewSha256": "c4cfd32e11c8468de9191c864040787f7d6c0e085e3013142c4d0c2369ff08ab",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q08-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-law-s1-q08-opus.json",
+      "answeredStrictReceiptSha256": "76cc24bd4af2c92f339dd8db0df82954f504fda7549a1b419d68f5de51ff9b08",
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3581,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16201,
+          "webSearchRequests": 0,
+          "costUSD": 0.2014918,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1298,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3ed6caac0dd7e45abfeac8c28d7869a5d758af5d1edc484d80683e09f188d2d9",
+      "inputRequestSha256": "3f9883b6112cc241f1443e2e415882a2c860af66e9f47d654dbe9143637b378f",
+      "previousDraftSha256": "73fcdd06daf934d1eb904cf8d7063fe1c8778a0bd7dcbba6144252c6ca3afce9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q08-vision-draft-v2.json",
+      "answeredReviewSha256": "a15f5851a80e34bce7b44013b4f422653120049df94979f120bfdc6cca9bb622",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q08-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。"
+    }
+  ]
+}

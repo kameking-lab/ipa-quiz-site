@@ -75,10 +75,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     administrator: "電気技術者試験センター",
     officialQuestionsUrl: "https://www.shiken.or.jp/chief/third/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
-    status: "ready-to-ingest",
+    status: "live",
     reuseSummary: "教育目的での過去問題利用は許諾・使用料不要。出典明記が必要。",
     attributionTemplate: "出典：令和○年度○期第三種電気主任技術者試験 ○○科目",
-    remainingWork: ["直近2年分の4科目を追加", "数式・図をSVGまたはアクセシブルなテキストへ変換", "全問の正答・全肢解説を独立監査"],
+    remainingWork: ["一般解説のみの2問について全肢解説を独立確認", "数式・図のアクセシビリティを継続改善"],
   },
   {
     slug: "denko2",

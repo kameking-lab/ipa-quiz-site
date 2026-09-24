@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2717,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 85054,
+      "webSearchRequests": 0,
+      "costUSD": 0.73478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1511,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2612f0ab467822373862f0f9962090d3d737562ae33a6d0be3c70b781cb82d7a",
+  "inputRequestSha256": "02df6bb2fdec6369ba2d66416773544311c4f46cfebb839625ff77e9827c8c10",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "615c57db0375f2cdc3ed0b28bcbfd4af2cfedc8206da43610ed8947ebff96fed"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p05.png": "ef19004c029a52a7e9f5d3e55129b9931cc97a52dfc53869f39dd0d3ee4a0f81"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "e7ec82631490ca53cc72fca622cf5fd252fdb8243298d6500a584abacb476fe3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the attached official page for 問2 word for word: 「汽力発電において，熱効率の向上を図る方法として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」. The only differences are punctuation normalization (「，」→「、」) and line-break joining, which sourceAttribution discloses as 「読みやすく整形」.",
+        "All five choices match the original word for word: (1)「高温高圧の蒸気を使用する。」(2)「復水器の真空度を高める。」(3)「再熱サイクルを利用する。」(4)「給水加熱器で抽気温度を上げる。」(5)「節炭器で排ガス温度を下げる。」",
+        "The official answer unit fixed in the manifest is {question:2, part:null, answer:\"4\"}. The candidate's officialAnswer=\"4\" and the explanation's conclusion \"正答は(4)\" both match it, and the answer was not changed.",
+        "Overall explanation, cause and effect: raising the average heat-addition temperature through (1) high-temperature, high-pressure steam and (3) reheat improves Rankine-cycle efficiency. (2) Higher condenser vacuum lowers the exhaust pressure and saturation temperature, which lowers the heat-rejection temperature. (5) The economizer recovers exhaust-gas heat, lowering exhaust loss and raising boiler efficiency. These are all standard statements and correct.",
+        "Reason (4) is wrong: in the regenerative cycle, a feedwater heater uses extracted steam as its heat source to raise the feedwater temperature. The extracted steam gives up heat and condenses. So the claim that it \"raises the extraction temperature\" reverses the direction of heat flow, and it cannot be an efficiency-improvement method. Both the overall explanation and choiceExplanations[4] give this reason consistently.",
+        "Each choice has its own specific reason. (1): higher average heat-addition temperature. (2): lower exhaust pressure and saturation temperature, so lower heat-rejection temperature. (3): reheating HP turbine exhaust raises the average heat-addition temperature and reduces exhaust wetness. (5): exhaust-gas heat recovery reduces exhaust loss. None of them contradicts the correct choice. Choice (3)'s description as \"high-pressure exhaust → low-pressure turbine\" is a simplification commonly used at the 3rd-class level and is not an error.",
+        "The attached original page has no figures, tables or graphs. This matches figureDescription (\"文章のみ\"), figureUrls=[] and choiceFigureUrls={}. No figure is needed to answer.",
+        "officialReferenceUrls=[], and the explanation relies on no external claim that needs verification. Nothing needs to go in sourceIssues.",
+        "The attached image carries printed page number \"-2-\" and the booklet code \"T2－D 005\", which is consistent with the power booklet (20250323_ch_third_q02.pdf). reviewedFromPage=[5] is treated as the PDF page, and no evidence in the attached image contradicts it."
+      ]
+    }
+  ]
+}

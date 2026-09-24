@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6283,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17892,
+      "webSearchRequests": 0,
+      "costUSD": 0.2690598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4077,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "89f4a5979e6cd333409316fc517c37e428fee074294e73627c6b0e93d4f46772",
+  "inputRequestSha256": "03f731fa07eee8232ac386080cc536c66c37fb67550c3a0f0dcda28f0978b82e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "f5bd2bc889e6296ed89b675e1f2c08e4caf10718a0a424caa24bdfc9dc0ddd67",
+      "q17b": "b3687b71a3e69ebc3eff0939c17351eb3a9ff968d60b02f582a76c731aa5b519"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p20.png": "20e16e9ab09a70c05700dbd1c2c4e3feedbcc063db6609c6f0bf39ed8aca2313",
+      "data/raw_pdfs/denken3/review/20250831/theory/p21.png": "2039165de350f1b64fe5f0b4a455955da7a4a4d06224d107183f46e6fdedb4de"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "723f804e39b6cc35155267f08de69882b8683939c8065af5cda0e16fee07fb00",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（印字頁-17-、頁コードT1-R 020）の問17本文と(a)を照合した。電荷+4×10⁻⁸ C／+6×10⁻⁸ C、中心間距離0.3 m、反発力2.4×10⁻⁴ N、単位[N·m²/C²]、ただし書き（初期電荷零、大きさは0.3 mに比べて極めて小さい）がすべて一致する。符号・指数の欠落はない。冒頭の選択問題注記（問17/問18どちらか選択）は省かれているが、解答内容に影響しない。",
+        "選択肢: (1)3×10⁹、(2)4×10⁹、(3)9×10⁹、(4)12×10⁹、(5)15×10⁹。原図と完全に一致する。",
+        "公式正答: 公式解答表（令和7年度上期・理論）の問17(a)は3、配点は5。manifest固定値、officialAnswer=3、scoringPoints=5と一致する。",
+        "総合解説の検算: Q_A·Q_B=2.4×10⁻¹⁵ C²、F·r²=2.4×10⁻⁴×0.09=2.16×10⁻⁵ N·m²、k=2.16×10⁻⁵/2.4×10⁻¹⁵=9×10⁹ N·m²/C²。誤りはない。1/(4πε₀)≒9×10⁹との一致に触れた付記も事実として正しい。",
+        "各肢の逆算を検算した。(1)k=3×10⁹ならF=8.0×10⁻⁵ N（測定値の1/3）。(2)k=4×10⁹ならF≒1.07×10⁻⁴ N。(4)k=12×10⁹ならF=3.2×10⁻⁴ N。(5)k=15×10⁹ならF=4.0×10⁻⁴ N。いずれも正しい数値で、測定値2.4×10⁻⁴ Nとの大小関係の記述も正しい。",
+        "図: 原図に図はない。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={}は適切である。",
+        "出典: officialReferenceUrlsは空で、検証を要する独立主張はない。reviewedFromPage=[20,21]は原図の頁コード020/021と整合する。(a)の本文は020頁で完結している。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（印字頁-18-、頁コードT1-R 021）の(b)本文を照合した。電荷を保持したまま0.3 mで固定すること、同じ大きさで無電荷のCをまずA、次にBに接触させること、A–B間の直線上で力が釣り合う位置をAとの中心間距離で表すこと、単位[m]が一致する。単独表示用に(a)の条件を〔(a)の条件〕として要約再掲している点も、原文の数値と一致する。",
+        "選択肢: (1)0.062、(2)0.095、(3)0.105、(4)0.115、(5)0.124。原図と完全に一致する。",
+        "公式正答: 公式解答表の問17(b)は5、配点は5。officialAnswer=5、scoringPoints=5と一致する。",
+        "電荷の推移を検算した。CをAに接触させると(4+0)/2=2×10⁻⁸ Cとなり、A=C=2×10⁻⁸ C。次にBに接触させると(6+2)/2=4×10⁻⁸ Cとなり、B=C=4×10⁻⁸ C。A自身の電荷が2×10⁻⁸ Cに減った点も正しく反映されている。",
+        "釣り合いを検算した。A・B・Cはすべて正電荷なので、Aからの斥力はB向き、Bからの斥力はA向きで、極性・向きの因果は正しい。2/x²=4/(0.3−x)²から(0.3−x)²=2x²となり、0<x<0.3の範囲でx=0.3/(1+√2)=0.12426 m≒0.124 m。もう一つの根は負で、範囲外として除外されている。kとQ_Cによらないという付記も正しい。",
+        "各肢の数値を検算した。(1)x=0.062: 5.20×10⁻⁶ 対 7.06×10⁻⁷（比は約7.4、合力はB向き）。(2)x=0.095: 2.22×10⁻⁶ 対 9.52×10⁻⁷。(3)x=0.105: 1.81×10⁻⁶ 対 1.05×10⁻⁶。(4)x=0.115: 1.51×10⁻⁶ 対 1.17×10⁻⁶。(5)x=0.124: 1.30×10⁻⁶ 対 1.29×10⁻⁶。いずれも記載値と一致し、誤答肢はすべてA側の斥力が過大で釣り合わないという判定も正しい。",
+        "uncertainty欄の記述（等大導体球の接触による等分配、周囲導体の誘導影響は無視）は、問題文の前提（大きさは中心間距離に比べて極めて小さい）に基づく標準的な理想化の説明である。公式正答5とも整合しており、解答を左右する曖昧さではない。",
+        "図: 原図に図はない。figureDescription（図なし）、figureUrls=[]、choiceFigureUrls={}は適切である。",
+        "出典: officialReferenceUrlsは空で、検証を要する独立主張はない。reviewedFromPage=[20,21]は、(a)条件のある020頁と(b)本文のある021頁の双方をカバーしている。"
+      ]
+    }
+  ]
+}

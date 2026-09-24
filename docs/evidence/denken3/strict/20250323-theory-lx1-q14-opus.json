@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2946,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13405,
+      "webSearchRequests": 0,
+      "costUSD": 0.1664238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1668,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d10643c859a699f863d8fb48de956c2f8ea1e16b24b573d0e10114d2c0e711bb",
+  "inputRequestSha256": "d70682ed61d0505482d1d44f86fe204aa23432f13fc9ec84abbe7d3927940f1a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "f3f3df716ee70b0aa9300836245ed8d3947abf7353eeb800728f4084fa857685"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p18.png": "40916b55ca75a1675f785510e5e46e2faf1301cfa3e0b95356383e1e9802729a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "abae014873f54b81393784f60fa0af011dc762aeb75a2bfcf497871d24b60ab8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "全肢で記号と他の表し方の区切りに全角スラッシュ「／」を使っている（例: \"Wb ／ V/s\"）。本問は「/」が除算を意味するかどうかそのものを問う単位の問題であり、区切りの「／」と除算の「/」が同じ行に並ぶ。フォントやモバイル表示によっては両者の見分けがつきにくく、「Wb/V/s」のように読み違えるおそれがある。区切りを除算と紛れない表記に改めること（例: \"F：C/V\"、\"F（他の表し方: C/V）\" など）。原図の各肢の内容（(1) F–C/V, (2) Wb–V/s, (3) S–A/V, (4) T–Wb/m², (5) W–J/s）自体は正しく転記されている。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の「固有の名称をもつ SI 組立単位の記号と，これと同じ内容を表す他の表し方の組合せとして，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補 question が句読点・全角記号を含めて一致する。",
+        "原図の表は (1) F / C/V、(2) Wb / V/s、(3) S / A/V、(4) T / Wb/m²、(5) W / J/s。候補 choices 1〜5 の内容と一致し、単位記号・上付き2・スラッシュの向きも一致する。",
+        "公式解答表（令和6年度 下期 第三種電気主任技術者試験解答）の＜理論＞問14は 2。manifest 固定の正答単位 {question:14, part:null, answer:\"2\"} および候補 officialAnswer=\"2\" と一致する。",
+        "検算(1): C=Q/V より F=C/V で正しい。",
+        "検算(2): e=−dΦ/dt より [V]=[Wb]/[s]、よって Wb=V·s。表の V/s は誤りで、正答(2)と整合する。",
+        "検算(3): G=I/V より S=A/V で正しい。",
+        "検算(4): B=Φ/A より T=Wb/m² で正しい。",
+        "検算(5): P=W/t より W=J/s で正しい。",
+        "explanation と choiceExplanations の各肢固有の理由は上の検算と一致し、因果・符号の扱いにも誤りはない。e=−dΦ/dt の負号は向きを表すだけで次元には影響しない、という説明も妥当。",
+        "図: 原図には表のみがあり回路図等はない。表の内容は choices に完全に転記されているため、figureUrls=[] でも解答に支障はない。",
+        "メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl が manifest と一致する。reviewedFromPage=[18] は manifest の原図頁 PDF第18頁と一致する（原図の冊子頁番号は「-15-」、フッターは「T2-R 018」で矛盾なし）。sourceAttribution の「令和6年度下期」は2024年度下期に該当し、解答表の見出しとも一致する。",
+        "officialReferenceUrls は空配列で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

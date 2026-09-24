@@ -7,6 +7,7 @@ import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
 import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
+import { redirect } from "next/navigation";
 
 // /quiz is the interactive quiz player (app shell), not an SEO landing.
 // next.config.ts 308-redirects bare /quiz to "/" (no `mode` query), so the
@@ -87,6 +88,12 @@ export default async function QuizPage({
     : undefined;
 
   const exam: ExamCode = ALL_QUIZ_EXAM_CODES.includes(sp.exam as ExamCode) ? sp.exam as ExamCode : "ap";
+  if (exam === "denken3" && (
+    mode !== "year" ||
+    !["2024", "2025"].includes(sp.year ?? "") ||
+    !["first", "second"].includes(sp.season ?? "") ||
+    !["riron", "denryoku", "kikai", "houki"].includes(sp.session ?? "")
+  )) redirect("/denken3");
   const isSearchPool = sp.source === "search";
   const session = isSearchPool
     ? undefined
@@ -132,7 +139,7 @@ export default async function QuizPage({
           ? "検索結果から選んだ過去問演習"
           : `${EXAM_CONFIGS[exam].nameFull} ${MODE_LABELS[mode]}過去問演習`}
       </h1>
-      {!isSearchPool && <QuizModeTabs active={mode} exam={exam} />}
+      {!isSearchPool && exam !== "denken3" && <QuizModeTabs active={mode} exam={exam} />}
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}

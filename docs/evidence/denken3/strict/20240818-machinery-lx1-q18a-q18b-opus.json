@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4595,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18492,
+      "webSearchRequests": 0,
+      "costUSD": 0.24009980000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2681,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8ce2afb301ecad789e619e8a2d3e3b24d54ad41f143475a82747641e34f8a897",
+  "inputRequestSha256": "7dccd1f59e0d6942f885eaf2fddd2c818059dbda22d27204a79c90610397d81b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "b236600c6a849cf14c3422ac05ab3ce640b9477cd5b6def9be00518e6c6715ce",
+      "q18b": "1b0fcd1a2a77b248b2f549547b04ac5dd946c1a16d81b2101055791c4e2d1c36"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p26.png": "52974657db65a66e1e5313928844e3093b7bb0ea4ea358c87a21ef72c02aeef4",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p27.png": "110969505c8d0293429202c00d561d870789a5a6d3ffa954790c2c4b9c3b777b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "730785a8d71cad3ba42fcd85a70fa5c60f3300776c46c020d13baa0fcb2089f5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024・term=upper・examDate=2024-08-18・subject=machinery・問題PDF q03・解答PDF a01・reviewedFromPage=[26,27] がmanifestと一致。原図のページ下部識別子 T1−K 026 / T1−K 027 もPDF第26・27頁と整合する（冊子上の頁番号は -23- / -24-）。sourceAttribution『令和6年度上期 機械 問18(a)』も整合する。",
+        "問題文: 選択問題の注意書き、問18の導入文、Nの展開式 N=a_n r^n+a_{n-1}r^{n-1}+…+a_1 r+a_0、条件『a_iは整数、0≦a_i<r (i=0,1,…,n)』、表記 (a_n a_{n-1}…a_2 a_1 a_0)_r、および等式 (122)_r−(42)_r=(40)_r が原図（冊子p.23）と一致する。rの条件『10進法の2以上の整数』も一致する。",
+        "選択肢: (1)5 (2)6 (3)7 (4)8 (5)9 が原図と一致する。",
+        "公式正答: 公式解答表の機械・問18(a)=2 と officialAnswer='2' が一致する。",
+        "総合解説の検算: (r²+2r+2)−(4r+2)=r²−2r=4r から r²−6r=0、r(r−6)=0 となる。r≧2 より r=6。使用数字は0,1,2,4で、いずれも <6 を満たす。10進検算は 50−26=24=(40)_6 で正しい。",
+        "各肢の検算: r=5は37−22=15≠20、r=7は65−30=35≠28、r=8は82−34=48≠32、r=9は101−38=63≠36。いずれの数値も正しく、各肢固有の不成立理由が示されている。r=6は両辺24で成立する。",
+        "図: 本小問に図はなく、figureDescription=null・figureUrls=[] で妥当。officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: q18aと同一で、manifestと一致する（PDF第26・27頁、原図識別子 T1−K 026/027）。sourceAttribution『問18(b)』も整合する。",
+        "問題文: 原図（冊子p.24）の(b)本文と照合した。導入文、①絶対値表示方式（MSB=0正、MSB=1負、−8→(ア)）、②7ビット長の正の数nに対し−nをnの8ビット2の補数で表す方式（−8→(イ)、MSB=1負／MSB=0正、減算に適する）、③オフセット・バイナリ（(1000 0000)₂→0.0000V、正でMSB=1・負でMSB=0、(0000 0000)₂→−5.0000V、(0111 1000)₂→(ウ)V）が、数値・極性・単位ともに一致する。",
+        "選択肢: 原図の表と照合し、5肢すべての(ア)(イ)(ウ)が一致する。(1) 1000 1000 / 1000 0111 / −0.2734、(2) 1111 1000 / 1000 1000 / −0.3125、(3) 1111 1000 / 1000 0111 / −0.3125、(4) 1000 1000 / 1111 1000 / −0.3125、(5) 1000 1000 / 1111 1000 / −0.2734。",
+        "公式正答: 公式解答表の機械・問18(b)=4 と officialAnswer='4' が一致する。",
+        "総合解説の検算(ア): 符号1＋絶対値0001000 で (1000 1000)₂。",
+        "総合解説の検算(イ): 00001000 を反転すると 11110111、これに+1 で (1111 1000)₂。",
+        "総合解説の検算(ウ): 2点 (D=0, −5V) と (D=128, 0V) から k=5/128 V/LSB。(0111 1000)₂=120 なので V=(120−128)×5/128=−0.3125V。いずれも正しい。",
+        "各肢解説: (1)は(ア)のみ一致、(2)は(ア)(イ)が互いに入れ替わり(ウ)のみ一致、(3)は(ウ)のみ一致、(5)は(ウ)のみ不一致、(4)は3項目すべて一致。いずれも誤り箇所と正しい値が肢ごとに具体的に示され、判定に誤りはない。",
+        "図: 本小問に図はなく、選択肢表はchoicesに正しく転記済み。figureDescription=null・figureUrls=[] で妥当。officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

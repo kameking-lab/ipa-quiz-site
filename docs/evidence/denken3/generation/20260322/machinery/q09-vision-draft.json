@@ -1,0 +1,94 @@
+{
+  "questionNumber": 9,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "単相変圧器の一次側に電流計，電圧計及び電力計を接続して，短絡試験を行う。二次側を短絡し，一次側に定格周波数の電圧を供給し，電流計が 30 A を示すように一次側の電圧を調整したところ，電圧計は 150 V，電力計は 1 350 W を示した。この変圧器の一次側からみた漏れリアクタンスの値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。\nただし，変圧器の励磁回路のインピーダンスは無視し，電流計，電圧計及び電力計は理想的な計器であるものとする。",
+      "choices": {
+        "1": "1.50",
+        "2": "3.50",
+        "3": "4.77",
+        "4": "5.00",
+        "5": "5.22"
+      },
+      "officialAnswer": "3",
+      "explanation": "励磁回路のインピーダンスを無視するので、短絡試験時に一次側からみた回路は、一次側に換算した等価（合成）巻線抵抗 R と等価（合成）漏れリアクタンス X の直列回路（インピーダンス Z = R + jX）とみなせる。ここで R は一次巻線抵抗と二次巻線抵抗の一次側換算値の和（r1 + a²r2）、X は一次漏れリアクタンスと二次漏れリアクタンスの一次側換算値の和（x1 + a²x2）である（a は巻数比）。\n\n① インピーダンスの大きさ\n|Z| = V / I = 150 / 30 = 5.00 Ω\n\n② 等価抵抗\n励磁回路を無視するので、電力計の指示はすべて等価抵抗 R で消費される電力（銅損）とみなせる。\nP = I²R より R = P / I² = 1 350 / 30² = 1 350 / 900 = 1.50 Ω\n\n③ 等価漏れリアクタンス\n|Z|² = R² + X² より\nX = √(|Z|² − R²) = √(5.00² − 1.50²) = √(25 − 2.25) = √22.75 ≒ 4.77 Ω\n\nよって、最も近いものは (3) 4.77 Ω である。",
+      "choiceExplanations": {
+        "1": "誤り。1.50 Ω は P / I² = 1 350 / 900 で求まる一次側換算の等価巻線抵抗 R の値であり、漏れリアクタンスではない。",
+        "2": "誤り。3.50 Ω は |Z| − R = 5.00 − 1.50 の単純な差に等しい。R と X は直交する成分なので、X は √(|Z|² − R²) で求める必要があり、単純な引き算では得られない。",
+        "3": "正しい。X = √(|Z|² − R²) = √(5.00² − 1.50²) = √22.75 ≒ 4.77 Ω となる。",
+        "4": "誤り。5.00 Ω は V / I = 150 / 30 で求まる一次側換算の等価インピーダンスの大きさ |Z| であり、抵抗分を含んでいるため漏れリアクタンスではない。",
+        "5": "誤り。5.22 Ω は √(5.00² + 1.50²) = √27.25 ≒ 5.22 に等しい。X は |Z|² から R² を差し引いて求めるものであり、加えると正しい値にならない。"
+      },
+      "figureDescription": "図なし。本問は問題文のみで条件（電流 30 A、電圧 150 V、電力 1 350 W）が与えられており、図を必要としない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        12
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1802,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11077580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ea28fc8ef32fdc7f4d6cbd40d65297e694f52bd3c976a0a78b0d03df3747ab92",
+  "inputRequestSha256": "44b4b10ada4805f75326cb41858a06767563d0735af7c5270b640dcd77fd8bce",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p12.png": "72ce32d2d06018903c10572b94c5f3f20a19a29bf8bb74cae164246c56ba2240"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2055,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11999,
+          "webSearchRequests": 0,
+          "costUSD": 0.1373558,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 727,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "beae6f9197cf35ae6f08244c2c42d40521d866e6b2e43b078615a2946d309a6f",
+      "inputRequestSha256": "80da71e4d5f0b0bfe3ef1efaaa275a325c873e5cbd84e8629fd0ee5c93f4a795",
+      "previousDraftSha256": "6e6675323760a0e7693a2c7adc5189eb2111d4748a98572482fd169af9441e0d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q09-vision-draft-v1.json",
+      "answeredReviewSha256": "9e5d21b2472d7a34b728e34695bc4b6c425ebb6f44efb79691b04165da964b09",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q09-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q09-opus.json",
+      "answeredStrictReceiptSha256": "521c154e25ef00a1e1fd91cf07bd0f84ecf644e594cfaf409266350be948053e",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

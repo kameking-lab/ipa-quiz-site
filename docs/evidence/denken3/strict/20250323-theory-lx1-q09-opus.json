@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2742,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13629,
+      "webSearchRequests": 0,
+      "costUSD": 0.1641358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1446,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1f3e84b32d074d0265a9ad2094d98db522a00e9975ad3c8e375f1ca72d2c5809",
+  "inputRequestSha256": "734188688b7d7e81285f89a8b99ba9543328e061a73a050fa387d2002725af19",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "68755c3581f84875c85051a6e81a3682df8c59a337a299691ae24b6f81cca049"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p12.png": "25fbc130a13264f29ed53f0908a6945ef14605ecd7ada65140e91b599241a2ee"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "3f0f70f2daa36cb734c81e521ff1c9d9f1e7749db46dfb307185a0d6d6f2815a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（冊子印刷頁「- 9 -」、フッタ「T2−R 012」＝PDF第12頁）と照合。4 Ω、C [F]、直列 RC 回路、50 Hz・100 V で 20 A、60 Hz・100 V 時の電流 [A]、「最も近いもの」、(1)〜(5)から一つ選べ、のいずれも一致。候補との差異は句読点（，→、）と空白だけで、これは sourceAttribution の「読みやすく整形」の範囲内。",
+        "選択肢: (1)16.7 (2)18.6 (3)21.2 (4)24.0 (5)25.6 の5肢すべてが原図と一致。単位 [A] も一致。",
+        "公式正答: 解答表原図「令和6年度 下期 第三種電気主任技術者試験解答」の理論 問9 は 3。manifest の単位 answer=\"3\" とも、候補の officialAnswer=\"3\" とも一致。",
+        "総合解説の検算: Z₅₀=100/20=5 Ω、Xc₅₀=√(25−16)=3 Ω。Xc は f に反比例するので Xc₆₀=3×50/60=2.5 Ω。Z₆₀=√(16+6.25)=√22.25≒4.717 Ω、I=100/4.717≒21.20 A で (3) と一致。因果（周波数上昇→Xc 減少→電流増加）も正しい。",
+        "(1)の検算: Z=100/16.7≒5.988 Ω、Xc=√(35.86−16)≒4.46 Ω。60 Hz では Xc が減少し I>20 A になるため、20 A 未満は成立しないという理由は正しい（20×50/60≒16.7 の誤り型に相当）。",
+        "(2)の検算: Z=100/18.6≒5.376 Ω、Xc=√(28.90−16)≒3.59≒3.6 Ω。Xc を f に比例させる誤り（3×60/50=3.6 Ω→I≒18.58 A）に相当し、Xc が 3 Ω より大きくなるのは周波数関係に反するという理由は正しい。",
+        "(4)の検算: Z=100/24≒4.167 Ω、Xc=√(17.36−16)≒1.17 Ω。実際の Xc₆₀=2.5 Ω と一致しないという理由は正しい（20×60/50=24 の誤り型に相当）。",
+        "(5)の検算: Z=100/25.6≒3.906 Ω<R=4 Ω。直列 RC では Z≧R なので I≦25 A となり、成立しないという理由は正しい。",
+        "図: 原図に回路図・図版はない。figureDescription の「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当。解答に図は不要。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl・sourceAnswerPdfUrl、reviewedFromPage=[12] がいずれも manifest と一致。sourceAttribution の「令和6年度下期 理論 問9」も解答表見出しと整合。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

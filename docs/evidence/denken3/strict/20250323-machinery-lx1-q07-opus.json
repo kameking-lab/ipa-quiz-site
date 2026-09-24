@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3942,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14025,
+      "webSearchRequests": 0,
+      "costUSD": 0.1913038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2192,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3a96034507e8b455b54731ffa9131796a5dc4ca63d6b33e2a264d7273612caf1",
+  "inputRequestSha256": "0814c32c7caf49a085a5e6ddaaa51bed64ce43827de40f0355cd6015ffe3a906",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "05b23b7a7590d21c8bfc22b979ab6e649384677fe9c3145201a655e77e115452"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p10.png": "b7760501bd32bc6dfd5a79126da17fcefdca19d987176bd1e0df5fb39d2916b1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "198d0a502bfdaf7c5d3ba3d228ccb14bc4960fa6683f4800347f98df645b2ad0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「極ピッチ（磁極の幅に相当する間隔）」は不正確。極ピッチは隣り合う磁極の中心間距離（電気角π）であり、磁極の幅（極弧）とは異なる。極弧は通常、極ピッチより小さい。「隣り合う磁極の中心間距離（電気角180°）」に修正すること。",
+        "総合解説の「短節巻ではコイル辺の起電力に位相差が生じ」は因果説明として不正確。全節巻でも両コイル辺の起電力は180°の位相差を持ち、コイルとしては算術和で加わる。短節巻で合成起電力が小さくなるのは、両コイル辺の起電力の位相差が180°からずれ、ベクトル和が算術和を下回るためである。例えば「短節巻では両コイル辺の起電力の位相差が180°からずれるため、合成した誘導起電力は全節巻より小さくなる」と修正すること。",
+        "総合解説の「分布巻では各極各相のスロット数が2以上となる（1なら集中巻）」は、整数スロット巻を前提とした教科書的整理である。各極各相のスロット数qが1<q<2となる分数スロット巻（例：q=1.5）も分布巻として実在するため、無条件の断定は厳密でない。「（整数スロット巻の場合）2以上」などの限定を付け、本問は教科書的定義に基づくことを明示すること。choiceExplanations(1)と(3)の「分布巻では各極各相のスロット数は2以上」も同じ扱いとする。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第[10]頁、印刷頁「-7-」、版下記号 T2-K 010）の本文と照合した。(ア)〜(オ)の空欄位置、「1相のコイルをいくつかのスロットに分けて配置する」「コイルピッチを極ピッチよりも短くした」「コイル端を短くできることや」「一般的によく用いられている」の文言に欠落・改変はない。句読点の全角化は整形の範囲内。",
+        "選択肢：原図の組合せ表の(1)〜(5)全行を列(ア)〜(オ)ごとに照合し、全て一致した。(1)分布巻/2未満/短節巻/励磁電流/電圧波形、(2)分散巻/2未満/全節巻/励磁電流/力率、(3)分布巻/2未満/短節巻/励磁電流/力率、(4)分布巻/2以上/短節巻/誘導起電力/電圧波形、(5)分散巻/2以上/全節巻/誘導起電力/力率。",
+        "公式正答：解答原図「令和6年度 下期 第三種電気主任技術者試験解答」の＜機械＞問7は4。manifest固定値 answer=\"4\"、候補 officialAnswer=\"4\" と一致した。",
+        "技術的検算：(ア)分布巻（集中巻と対比）、(ウ)短節巻（コイルピッチ<極ピッチ）、(エ)短節により誘導起電力が低下（短節係数 kp=sin(βπ/2)<1）、(オ)高調波低減による電圧波形の改善。いずれも標準的理論と整合し、(4)が唯一全空欄を満たす。β=5/6 のとき第5・第7高調波の短節係数は sin(25π/12)=sin(35π/12 の等価角)≈0.259 となり、解説の例示「第5・第7高調波」は妥当。",
+        "各肢解説：(1)(イ)(エ)誤り、(2)全空欄誤り、(3)(イ)(エ)(オ)誤り、(4)全正、(5)(ア)(ウ)(オ)誤り・(イ)(エ)正。原図の表と正解組合せから導いた正誤と全て一致し、誤答肢固有の誤り箇所に漏れはない。",
+        "図：原図は文章と組合せ表のみで、回路図・構造図はない。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl=…/20250323_ch_third_q03.pdf、sourceAnswerPdfUrl=…/2024_3_2.pdf、reviewedFromPage=[10] は manifest と一致した。sourceAttribution「令和6年度下期…機械科目 問7」も一致した。",
+        "officialReferenceUrls は空で、公式資料に依拠する独立主張もないため、外部確認を要する事項はない。"
+      ]
+    }
+  ]
+}

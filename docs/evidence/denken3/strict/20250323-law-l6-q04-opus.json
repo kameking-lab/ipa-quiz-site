@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4335,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 37724,
+      "webSearchRequests": 0,
+      "costUSD": 0.4165048,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2801,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4fcf34a28d1f327e4fce3f46581a4ff0fbcbd38f97bc8046ec04313c4a80e02b",
+  "inputRequestSha256": "f60865c74286e93f3ce8b3cc3a3538ea94f93e57d724b2b8eabfc85064b303bb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "3c1b10a31595bf759742f5d49b98361f467cbd3cb2f83458a9bb23d3d6c8330e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p07.png": "f8a273b680a96828cf3681b1d69cfede77a6e55eb528ae43ffa40eaaefddc979"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "1690691575ebe4330ad6a395b865fad8356df22c41370c6341472f8c359753a7",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（冊子印刷頁「-4-」、「T2－H 007」、reviewedFromPage=7と整合）と照合した。公称電圧6 600 V、三相3線式中性点非接地方式の架空配電線路（電線はケーブル以外）、こう長20 km、柱上変圧器の低圧電路側のB種接地工事、150 V超過時に1秒以内で自動遮断する条件、式 I₁=1+((V/3)L−100)/150 [A]、Vの定義（公称電圧を1.1で割った値[kV]）、Lの定義（同一母線に接続される架空配電線路の電線延長[km]）は、いずれも欠落も変更もない。候補の「(V/3)×L」は、原図の分数表記（V/3にLを掛ける）と同じ意味である。",
+        "選択肢：(1)75 (2)150 (3)225 (4)300 (5)600 は原図と完全に一致する。",
+        "公式正答：manifest固定の公式正答単位は answer=4 で、候補の officialAnswer=4 と一致する。",
+        "計算の検算：V=6.6/1.1=6 kV、L=20 km×3線=60 km、I₁=1+(2×60−100)/150=1+20/150≈1.133 A。小数点以下を切り上げると2 Aで、2 A未満の下限にも当たらないので Ig=2 A。R≤600/2=300 Ω となり(4)に一致する。仮にLをこう長の20 kmと読み違えても、第2項が負になって0とされ Ig=2 A、結論は同じ300 Ωになる。答えは読み方によって変わらない。",
+        "17-1表：公式参考資料PDFの第32頁で確認した。変圧器の区分「高圧又は35,000V以下の特別高圧の電路と低圧電路を結合するもの」のうち、遮断時間「1秒以下」は600/Ig、「1秒を超え2秒以下」は300/Ig、「下記以外の場合」は150/Ig。備考に「Igは当該変圧器の高圧側の1線地絡電流（単位A）」とある。",
+        "端数処理：同じ第32頁の第17条第2項第二号ロに「計算結果は、小数点以下を切り上げ、2A未満となる場合は2Aとする」とある。解説中の条項番号も内容も正しい。17-2表（中性点非接地式電路・下記以外のもの）の第2項は問題文の式と同じ形で、備考「V'は電路の公称電圧を1.1で除した電圧(kV)」も確認した。第17条の見出しは第31頁で確認した。",
+        "誤答肢：(1)75=150/2（自動遮断装置を設けない場合＝「下記以外の場合」の係数150）、(2)150=300/2（1秒超2秒以下の係数300）、(5)600=600/1（Igを1 Aと誤った値）の説明は、いずれも17-1表と第二号ロに照らして正しい。(3)225はどう計算しても出ない、という主張も検算した。Ig=2 Aなら75・150・300、1 Aなら150・300・600、1.133 Aなら約132・265・529で、225はどの組合せにも現れない。",
+        "図：原図には図がない。figureUrls=[] と figureDescription「図はなし」は妥当で、解答に図は要らない。",
+        "出典：officialReferenceUrls の経済産業省PDFについて、解説で根拠にしている第17条第2項（17-1表、第二号ロ）と17-2表を、添付の原頁（第31〜32頁）で確かめた。外部確認の残りはない。添付のうち第1条（第4頁）、第21条（第35頁）、第117条（第120頁）、第150条（第150頁）、第229条（第224〜225頁）は本問の解説では使われておらず、根拠にない主張も含まれていない。sourceAttribution の「令和6年度下期・法規・問4」、試験日2025-03-23、fiscalYear=2024/term=lower は互いに矛盾しない。"
+      ]
+    }
+  ]
+}

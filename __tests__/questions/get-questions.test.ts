@@ -42,15 +42,15 @@ describe("getQuestionsForExam", () => {
 });
 
 describe("getRegisteredExamCodes", () => {
-  it("公開済み試験コードだけを列挙する（IPA 13区分＋FP2級・FP3級・第二種電気工事士）", () => {
+  it("公開済み試験コードだけを列挙する（IPA 13区分＋FP2級・FP3級・電験三種・第二種電気工事士）", () => {
     const codes = getRegisteredExamCodes();
     expect(codes).toContain("ap");
     expect(codes).toContain("ip");
     expect(codes).toContain("fp2");
     expect(codes).toContain("fp3");
     expect(codes).toContain("denko2");
-    expect(codes).not.toContain("denken3");
-    expect(codes.length).toBe(16);
+    expect(codes).toContain("denken3");
+    expect(codes.length).toBe(17);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

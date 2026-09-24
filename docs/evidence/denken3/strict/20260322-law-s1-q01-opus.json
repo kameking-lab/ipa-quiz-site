@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3381,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20777,
+      "webSearchRequests": 0,
+      "costUSD": 0.2340998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1841,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4108df197c1085a2d2fe99546b765ba8280261b8d0e57bcc628c09070ba915e2",
+  "inputRequestSha256": "274f01ab9a49e85addf7fa3fef43046a5c02dac3e8bd0487c467e607d1ab79df",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "f159e7a51bcb52cc53d33115540ce615f01e3b57e89a9fc2e42b1c3118140994"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366",
+      "data/raw_pdfs/denken3/review/20260322/law/p05.png": "6ac1c60cf3d68558438be321bea7b92ea5cd81cf36f0a622c0ed9855cc6510f0"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "c98c3800e2485a6fe3ab2f0e50a30ac3808618cdda96a7241de506e92857a39c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=law はmanifestと一致。sourceQuestionPdfUrl=20260322_ch_third_q04.pdf、sourceAnswerPdfUrl=20260322_ch_third_a01.pdf もmanifestと一致。reviewedFromPage=[4,5] はmanifest指定のPDF頁と一致し、添付原図（冊子ノンブル -1-／-2-、T2-H 004／005）と対応する。sourceAttribution『令和7年度下期第三種電気主任技術者試験 法規科目 問1』も一致。",
+        "問題文: 原図-1-の問1本文と照合した。導入文『次の文章は，「電気事業法」における，電気の使用制限等に関する記述である。』、空欄(ア)〜(エ)の位置、『（以下「小売電気事業者等」という。）』、『電気の使用を制限すべきこと，又は (オ) 電力の容量の限度を定めて』、『小売電気事業者等からの (オ) を制限すべきことを命じ，又は勧告することができる。』まで一字一句一致する。(オ)が2箇所で同一空欄である点も原図どおり。設問文『上記の記述中の空白箇所(ア)～(オ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。』は原図-2-と一致する。",
+        "選択肢: 原図-2-の表と全5行×5列を照合し、すべて一致した。(1) 経済産業大臣/使用電力量/使用最大電力/区域/受電、(2) 内閣総理大臣/供給電力量/供給最大電力/区域/送電、(3) 経済産業大臣/供給電力量/供給最大電力/区域/送電、(4) 内閣総理大臣/使用電力量/使用最大電力/日時/受電、(5) 経済産業大臣/使用電力量/使用最大電力/日時/受電。",
+        "公式正答: 公式解答表＜法規＞で問1の解答は5、配点は6。候補のofficialAnswer=\"5\"、scoringPoints=6、part=null は公式正答単位と一致する。",
+        "条文照合: 解説中の引用条文は、添付したe-Gov法令API（施行時点2025-04-01）の電気事業法第34条の2第1項と一字一句一致する。これにより(ア)経済産業大臣、(イ)使用電力量、(ウ)使用最大電力、(エ)日時、(オ)受電が確認でき、条文から一意に(5)が導かれる。問題文注3『令和7年4月1日現在，効力のある法令』とe-Govのoccasion_date=20250401は整合する。",
+        "解説の論理: (イ)(ウ)は供給を受ける者の『使用』を制限する趣旨であり、『供給電力量』『供給最大電力』は第34条の2の文言ではない。(オ)は供給を受ける者側の『受電』であり『送電』ではない。いずれの説明も条文と整合する。",
+        "肢別解説: (1)は(エ)のみ誤り、(2)は全空欄誤り、(3)は(ア)のみ正しく他は誤り、(4)は(ア)のみ誤り、(5)は全空欄正しい。表と正解組合せを列ごとに突合した結果と一致する。",
+        "図: 本問に回路図などの図はなく、選択肢は表形式のみ。表の内容はchoicesに完全に転記されているため、figureUrls=[]、choiceFigureUrls={} で理解に支障はない。figureDescriptionの記述も正確。",
+        "参考URL: officialReferenceUrlsはe-Gov電気事業法（occasion_date=20250401）の1件のみ。解説の独立主張（第34条の2第1項の文言）は添付した公式条文テキストで検証済み。添付資料のうち第28条の44・第31条は本候補では参照されておらず、主張との齟齬もない。"
+      ]
+    }
+  ]
+}

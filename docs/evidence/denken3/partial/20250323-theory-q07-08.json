@@ -1,0 +1,63 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 2,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "78d2bfba46b135ed5772ca79c47684c92c686cc8ae98b68a2d56248d98f0cd5e",
+  "questions": [
+    {
+      "number": 7,
+      "sourceDraftSha256": "fb4a020ef55ca85f53414eb4b773bfe031af5309b3a5844cd98cc550c1e7ff13",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q07-08-opus-review.json",
+      "opusReceiptSha256": "fd732b498ccd9fdfc43ae13ba62856e25ee17fd3ec94e486760e402736ee537d",
+      "assessment": {
+        "number": 7,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q07-resistor-network": "f1318014ae48891938ddfb0bbceda2fcd5788de8529fe555a99b450b232c5da2"
+      }
+    },
+    {
+      "number": 8,
+      "sourceDraftSha256": "8e214c7beb0f484eb134edc4440ac423f54c97af7d10c6945dcb6e18c2154e4f",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q08-opus-review.json",
+      "opusReceiptSha256": "5f1405d25195f9d93f72563bf2b6c1fca369ffab8243b8831384461f0c7ff770",
+      "assessment": {
+        "number": 8,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q08-ac-source-sum": "c47c6665ada5a2536cf751b2baea900e89f599a539a5f3054903633cbd325c5e"
+      }
+    }
+  ],
+  "strictReview": {
+    "q07": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t8-q07-q08-opus.json",
+      "sha256": "b762b7bdb6a1098000946cae229f52e74c971317dd5739f19439911b5d9d1005",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q08": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t11-q08-opus.json",
+      "sha256": "83a8c1b3c43dba97dc9c08982e5ea559dcf92c62f1951aed44d2469a622d1125",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

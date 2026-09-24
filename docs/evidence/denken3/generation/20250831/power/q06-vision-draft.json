@@ -1,0 +1,60 @@
+{
+  "questionNumber": 6,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "ガス絶縁開閉装置に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "絶縁性能の高いガスを用いることで装置を小形化でき，気中絶縁の装置を用いた変電所と比較して，変電所の体積と面積を大幅に縮小できる。",
+        "2": "我が国では，ガス絶縁開閉装置の保守や廃棄の際，絶縁ガスの大部分は回収されている。",
+        "3": "ガス絶縁開閉装置の絶縁ガスは，大気圧以下のSF₆ガスである。",
+        "4": "ガス絶縁開閉装置の金属容器内部に，金属異物が混入すると，絶縁性能が低下することがあるため，製造時や据え付け時には，金属異物が混入しないよう，細心の注意が払われる。",
+        "5": "ガス絶縁開閉装置の充電部を支持するスペーサにはエポキシ等の樹脂が用いられる。"
+      },
+      "officialAnswer": "3",
+      "explanation": "ガス絶縁開閉装置（GIS）は、遮断器・断路器・母線・変流器などの充電部を接地された金属容器に収め、その内部に絶縁ガスとしてSF₆（六ふっ化硫黄）ガスを封入した開閉装置である。SF₆ガスは同じ圧力の空気より絶縁耐力が高く、さらに圧力を高めるほど絶縁耐力が増す。このためGISでは、SF₆ガスを大気圧より高い圧力に加圧して封入し、充電部と容器の間の絶縁距離を短くして装置を小形化している。したがって「大気圧以下のSF₆ガス」とする(3)が誤りである。",
+      "choiceExplanations": {
+        "1": "正しい。SF₆ガスは空気より絶縁耐力が高く、加圧して用いることで絶縁距離を大幅に短縮できる。充電部を金属容器に収めるため機器同士も近接配置でき、気中絶縁の変電所に比べて変電所の占有面積・体積を大幅に縮小できる。",
+        "2": "正しい。SF₆ガスは地球温暖化係数が非常に大きい温室効果ガスであるため、我が国では機器の点検（保守）時や廃棄時にSF₆ガスを回収する取組みが行われており、その大部分が回収されている。",
+        "3": "誤り。GISの絶縁ガスはSF₆ガスであるが、大気圧以下ではなく、大気圧より高い圧力に加圧して封入される。SF₆ガスの絶縁耐力は圧力とともに高くなるため、加圧することで装置の小形化が可能になる。",
+        "4": "正しい。金属容器内に金属異物（金属粉など）が混入すると、異物の先端で局部的に電界が集中したり、異物が電界によって動いたりして、絶縁破壊電圧が低下するおそれがある。そのため製造時や現地での据付け時には、異物が混入しないよう清浄度の管理に細心の注意が払われる。",
+        "5": "正しい。スペーサは、金属容器内で高電圧の充電部（導体）を絶縁しながら機械的に支持する絶縁物であり、絶縁性能と機械的強度に優れたエポキシ樹脂などの樹脂（注形品）が用いられる。"
+      },
+      "figureDescription": "図なし。本問は文章のみで構成されており、解答に図は不要である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "問題ページには出題年度・試験回・科目名の記載がなく、ページ下部の識別記号「T1－D 009」とページ番号「6」のみが確認できるため、出典の年度・回はこのページからは特定できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        9
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2235,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.11943580000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 846,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3bec55e26eb7bd8241cc1b6a879ba65818c58fc385315abe9cb2fae15ea0a520",
+  "inputRequestSha256": "39634b23feb6ff7789d3d769b09834aaffe33045b507a7fe33f71c98cdded4f4",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p09.png": "1ccb1e0d57f816b77b0880a603e1eb02cccae71454dbbf248871b2f939b08868"
+  }
+}

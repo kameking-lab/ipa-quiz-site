@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6944,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 28605,
+      "webSearchRequests": 0,
+      "costUSD": 0.395745,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4426,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c79f4fda106cb95dcfb92141fbe76e51b1bba86c2855b80a89d10cc6d95116a1",
+  "inputRequestSha256": "a6a4daf5031738c36a886c86a95a877e89cdf420746a000a03d675976b4a347e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "c373f035657f3e81c3d0fc3daf79826c6e95209dba65f55b397001bff9c334ee",
+      "q18b": "0368b0af6267a5eceed886b1eae7519f1f4f0185e4f9dfff383599cd599b36a9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p20.png": "a11afeceec51930b1b640c17ba667f052f026eacacff275fe10ae7ef16cac943",
+      "data/raw_pdfs/denken3/review/20240818/theory/p21.png": "73c46d5253fd8b0431a9571e3bad6145485c5d4cfeeabec217d75447e8cae360",
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a315ce267b6a5e56b5a096fc36d39e359e743791803b4610584b1758a593f14e"
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図(T1-R 020)と照合済み。最大目盛はⅠ100A・Ⅱ50A・Ⅲ50A、指示値はⅠ90A・Ⅱ40A・Ⅲ35A、3台を並列接続、求めるのは計測できる最大電流[A]。いずれも一致",
+        "選択肢(1)100 (2)144 (3)165 (4)183 (5)200は原図と一致",
+        "公式解答表の理論 問16(a)は4で、officialAnswer=4と一致",
+        "検算: 3台は並列で端子電圧が共通なので、電流の比90:40:35は一定に保たれる。各計器が最大目盛に達する倍率はk_I=100/90≈1.111、k_II=50/40=1.25、k_III=50/35≈1.429。最小はk_IなのでI=165×100/90≈183.3Aとなり、(4)と一致",
+        "誤答肢の検算: (1)100はⅠの最大目盛そのもの。(2)100+40×100/90≈144.4はⅢ分の38.9Aを加えていない値。(3)165は現在の指示値の合計。(5)200は最大目盛の単純合計で、実際にはⅠが先に振り切れる。いずれも正しい",
+        "図は不要。原図のこの小問部分に図はなく、figureUrlsが空であることとも整合",
+        "reviewedFromPage 20はPDFのページ番号(T1-R 020、紙面ノンブル-17-)と対応",
+        "officialReferenceUrlsは空で、独立した外部主張はない"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "記号Vmax・Vminの定義が総合解説と誤答肢解説で食い違っている。総合解説では「振幅そのものはVmax=4V、Vmin=2V」(ピーク間8Vは2Vmax、4Vは2Vmin)と定義している。一方、choiceExplanations(2)は「分子を…Vmaxのままとして 8/(8+4)」、(3)は「(Vmax−Vmin)/Vmax×100=(8−4)/8×100」、(5)は「m=(Vmax−Vmin)/(Vmax+Vmin)×100=(8−4)/(8+4)×100」と書き、Vmax=8、Vmin=4を代入している。比なので数値結果(33/50/67)は変わらないが、同じ記号に2通りの値を与えており、学習者を混乱させる。修正案: (2)(3)(5)の式をピーク間値で書き直す。例: (5)は「m=(2Vmax−2Vmin)/(2Vmax+2Vmin)×100=(8−4)/(8+4)×100≒33」。(2)は「分子を(2Vmax−2Vmin)ではなく2Vmax(=8)のままとして8/(8+4)×100≒67」。(3)は「分母を2Vmax(=8)のみとして(8−4)/8×100=50」",
+        "choiceExplanations(2)の(オ)67について、「8/(8+4)と計算した場合に得られる」と誤答の経路を一つに断定している。しかし67%は、ピーク間差4Vを搬送波のピーク間値6V((8+4)/2)で割る誤り(4/6≈67%)でも出る。数値は正しいので致命的ではないが、断定を避けて「例えば…とすると67%になる」などの表現にするのが望ましい"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図(T1-R 024〜025)と照合済み。(ア)はトランジスタの端子、(イ)〜(エ)はv1・v2・v3の波形、(オ)は変調率[%]。ただし書き「図2のそれぞれの電圧波形間の位相関係は無視する」も一致。読点の「、」と「，」が混在しているが、意味には影響しない",
+        "選択肢(1)〜(5)の5項目の組合せは、原図の表と全行一致(例: (5)ベース/図2(c)/図2(a)/図2(b)/33)",
+        "公式解答表の理論 問18(b)は5で、officialAnswer=5と一致",
+        "図1の接続を原図で確認した。v1は変成器で結合され、二次巻線の上端がベースへつながる。二次巻線の下端とE1の間にv2が直列に入る。エミッタ(矢印付きの端子)はE1とE2の接続点(黒丸)へつながる。コレクタは上側の配線を通ってLC並列回路の上端の節点へ、LC回路の下端はE2へつながり、LC回路から別の変成器を介してv3を取り出す。候補の説明とfigureDescriptionは、この接続・向き・ラベルと一致",
+        "回路動作の検算: バイアス電源E1と直列のv2はベース・エミッタ間の動作点を低周波で動かす信号波で、図2(a)に当たる。変成器で結合されるv1は高周波の搬送波で、図2(c)に当たる。コレクタ側の同調回路の出力v3は振幅変調波で、図2(b)に当たる。(ア)はベースで、ベース変調方式になる",
+        "変調率の検算: 図2(b)で8Vは外側の包絡線のピーク間値、4Vは内側(最も振幅が小さい部分)のピーク間値。m=(8−4)/(8+4)=33.3%で、(オ)33に当たり、公式正答(5)と一致",
+        "誤答肢の検算: (1)は(ア)コレクタのみが誤り。(2)は(ア)と(ウ)(エ)の割当てと(オ)67が誤り。(3)は(イ)と(エ)が入れ替わり、(オ)50=(8−4)/8。(4)は(ア)エミッタ、(イ)(ウ)(エ)のすべて、(オ)67が誤り。各誤答肢の解説が挙げる誤り箇所は、選択肢表と一致",
+        "公開候補図20240818-theory-q18-am-circuit-waveforms.pngは原図p.22の図1と図2(a)〜(c)を切り出したもの。v1・v2・v3、矢印の向き、E1・E2、接続点の黒丸、トランジスタの矢印、8V・4Vの寸法線、「破線は包絡線を示す」、t[s]軸、図の表題まで欠落なく含まれており、この図だけで解答に必要な判断ができる",
+        "reviewedFromPage 24・25はT1-R 024/025と対応",
+        "officialReferenceUrlsは空で、独立した外部主張はない"
+      ]
+    }
+  ]
+}

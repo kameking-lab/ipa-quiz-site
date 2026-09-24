@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3672,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14475,
+      "webSearchRequests": 0,
+      "costUSD": 0.1895038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2257,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "acb242f69b3704d4032cc9c73c5c4b365a569083947d2d28c8da8913603462dc",
+  "inputRequestSha256": "fbd0ffb1e0f103f5dc576894140f383e921ec37ef2245373fc59f98b7127547e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "3c285408be021f3eb5e956099618f1fcd56ec9d85b2285a196ad80e6a0279d3e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p19.png": "8c9b996e94978927f49273c81a417c493746a4e223b97f9de11d0a5e2eaf6d80"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q14-fig1.png": "fada36d722d29a59ae6ee1e4f0b60e61b3a87b122d7340a6436f66761e871f6b"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97d49bef9f28bb2cc1753dcd38e0cda70e3580d1c533e752778d504fab108739",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: manifest（2025年度下期・試験日2026-03-22・理論・問題PDF 20260322_ch_third_q01.pdf・解答PDF 20260322_ch_third_a01.pdf・原図PDF第19頁）と、候補の fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[19] が一致する。原図の印字頁「-16-」は冊子の頁番号であり、PDF頁番号とは別物なので矛盾しない。sourceAttribution の「令和7年度下期…理論科目 問14」も一致する（令和7年度=2025年度）。",
+        "問題文: 原図の「目盛が正弦波交流に対する実効値になる整流形の電圧計(全波整流形)がある。この電圧計で図のような周期 20 ms の繰り返し波形電圧を測定した。このとき，電圧計の指示の値 [V]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」と、文言・単位 [V]・ms・読点まで一致する。",
+        "選択肢: 原図の (1)5.66 (2)5.14 (3)4.62 (4)4.44 (5)4.00 と5肢すべて一致する。",
+        "公式正答: 公式解答表の＜理論＞問14 は解答4・配点5である。候補の officialAnswer=\"4\" と scoringPoints=5 はこれと一致する。",
+        "総合解説の検算: 平均値 = (8×10 + 0×10)/20 = 4 V。正弦波の波形率 π/(2√2) ≈ 1.1107。指示値 = 4 × 1.1107 ≈ 4.443 V で、選択肢(4)4.44 に一致する。真の実効値 = √(64×10/20) = √32 ≈ 5.657 V も正しい。『波形が負にならないので全波整流で不変』『可動コイル形は整流後の平均値に応答する』という因果も正しい。",
+        "肢別理由: (1)は真の実効値 √32≈5.66 V に一致し、理由は正しい。(2)は 5.14−4.44=0.70 V、中点 (4.44+5.66)/2≈5.05 V でいずれも正しく、どの正しい計算値とも一致しないという記述も正しい。(3)は 4×2/√3≈4.619 V で数値上の一致は正しい。出題意図とは断定せず、uncertainty 欄でも限定されている。(4)の正答理由は正しい。(5)は平均値そのものであり、理由は正しい。",
+        "図の照合: 公開候補図 20260322-theory-q14-fig1.png は原図の該当部分を切り出したものである。V [V]・上向き矢印、縦軸の 8、原点の 0、横軸の 10/20/30/40、→ t [ms]、末尾の『…』というラベルをすべて保持している。波形の接続（0〜10 ms: 8 V、10〜20 ms: 0 V、20〜30 ms: 8 V、30〜40 ms: 0 V、40 ms で立ち上がり）も原図と一致する。この図だけで平均値の計算に必要な電圧値と時間区間を読み取れる。",
+        "figureDescription: 図の内容（0 V と 8 V の間で変化、周期 20 ms、デューティ比 50 %、負の値なし、以後繰り返し）を正確に記述しており、図が解答に必要という判定も妥当である。",
+        "外部参照: officialReferenceUrls は空であり、未検証の独立主張はない。"
+      ]
+    }
+  ]
+}

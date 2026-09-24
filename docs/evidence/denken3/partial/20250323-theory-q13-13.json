@@ -1,0 +1,40 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "18bad9d3f829b67b24063731bfa40172d8500b43d5b369b294c3f31b93235d08",
+  "questions": [
+    {
+      "number": 13,
+      "sourceDraftSha256": "b871405d92be46763ed511d419e591b3d074c71ae5f25b208fa497344a0e737b",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q13-opus-review.json",
+      "opusReceiptSha256": "5e0f8886ae5f65ff628c94ae298d20a49fb491d66cb5d0ce01f8d0daf2cda84c",
+      "assessment": {
+        "number": 13,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q13-transistor-circuit": "faf547eb0b991e722d5b7a4b3ecf503e78f20c21d91e505cc564ac2fc0407be6",
+        "20250323-theory-q13-output-characteristics": "0c3abfed5b3bf0f8895b95540bada69d6167bf173b07db2e4f9798fa6d213016"
+      }
+    }
+  ],
+  "strictReview": {
+    "q13": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t18-q13-opus.json",
+      "sha256": "9f37adcd88801d66c162231039eb2c3dfb68cf440add4bae9f05b69c730f4376",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

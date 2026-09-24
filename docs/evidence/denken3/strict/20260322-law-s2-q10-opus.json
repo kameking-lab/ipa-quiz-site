@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7363,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20271,
+      "webSearchRequests": 0,
+      "costUSD": 0.3096918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5512,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a3b6fba21a63e6f19e6d29b9a90e208165c032b7bf9fc074f134fcbbc636b77d",
+  "inputRequestSha256": "5dc948d31ab27228049acf934938d2bb1ec6985fdd5ddd7d41521ed6daba5341",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "43f127e17c51de22aaa1d86934d5238616329fb7e57c203fbd070f0e232128fa"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p16.png": "56f0da401c073fd5b9b47af6552abae49a6110df6c334cd9f8b4df190b520ea5",
+      "data/raw_pdfs/denken3/review/20260322/law/p17.png": "e561760291030e8f517c8b91800ed16e9811575b3eb939c617c49776630f24fe",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/law/20260322-law-q10-fig1.png": "6369bc70e6ddf3c535a30c296facd7eb0c0bcda4e92c4995868a3375c9b705ad"
+    },
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "54153b5a719e7c6661b9372493142473cb6ef20527e4ba77b99992a1fd68197c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(ア)の判定根拠が不完全。原図・公開候補図では、(ア)には零相変流器の二次側に加えて、枠内のコンデンサ回路から分岐した変圧器記号（二つの円）の出力も入っている。つまり(ア)には電圧系の入力もある。総合解説と選択肢(2)の解説は零相変流器の入力だけで「過電圧継電器ではない」としており、この第二入力に触れていない。そのため、(ア)に電圧入力があるので過電圧継電器ではないか、という自然な疑問に答えられていない。修正案：(ア)にはコンデンサと変圧器記号からなる回路（接地側へ接続）の出力も入ることを明記する。そのうえで、零相変流器の零相電流入力を持ち受電点開閉器を引き外す以上、選択肢中で該当するのは地絡継電器（零相電圧も用いる場合は地絡方向継電器に相当）であり、零相電流を入力としない過電圧継電器は該当しない、と説明する。この第二入力の役割を断定できない場合は、断定しない形で記述する。",
+        "uncertainty 欄には、変圧器記号の役割（零相電圧検出か、制御電源・電圧入力用VTか）が特定できないという未解決事項が残っている。それにもかかわらず needsReview=false となっている。上記のとおり解説本文で第二入力の扱いを明示して uncertainty 欄と整合させるか、needsReview を見直す必要がある。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：問題PDF・解答PDFのURL、fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=law、reviewedFromPage=[16,17] は manifest と一致する。原図の冊子頁番号 -13-/-14- は T2-H 016/017 に対応する。",
+        "公式解答表（令和7年度 第三種電気主任技術者下期試験解答、法規）：問10 解答5・配点6。候補の officialAnswer=5、scoringPoints=6 と一致する。",
+        "問題文：原図の「図は，高圧受電設備の単線結線図の一部である。」「図の空白箇所(ア)〜(ウ)に設置する機器又は計器として，正しいものを組み合わせたのは次のうちどれか。」と一致する。",
+        "選択肢(1)〜(5)：原図の表と全肢一致する。(1)地絡継電器/過電圧継電器/周波数計、(2)過電圧継電器/過電流継電器/周波数計、(3)過電流継電器/地絡継電器/周波数計、(4)過電流継電器/地絡継電器/力率計、(5)地絡継電器/過電流継電器/力率計。",
+        "(イ)：×印付き開閉器（遮断器）の下の変流器（//付き）の二次側が(イ)に入り、遮断器から(イ)へ破線が引かれている。過電流継電器とする判断と、過電圧継電器はVT入力であるとの誤答理由は正しい。",
+        "(ウ)：変流器二次回路が (イ)→W→(ウ)→AS→A と直列に接続されている。VT二次側の接続点（VS手前）から下へ延びた線が、接続点で W と (ウ) に分岐して入る。電流・電圧の両入力を持つので力率計であり、周波数計は電圧のみを入力とする、との説明は正しい。",
+        "(ア)：枠内の斜線・添字「3」付き円形記号（零相変流器）の二次側（//）が右へ延び、下へ折れて(ア)に接続している。開閉器（接点上部に小円）から(ア)へ破線が引かれている。これに加えて、コンデンサ・変圧器記号の回路出力も(ア)に接続されている。コンデンサの右側は枠右辺上の黒丸を経て接地記号に至る。",
+        "選択肢別解説：(1)〜(4)の誤り指摘と(5)の正当性は、上記接続関係と矛盾しない。(4)の「(ア)と(イ)が入れ替わっている」も表と一致する。",
+        "公開候補図 20260322-law-q10-fig1.png：原図から問題番号・本文を除いた切り出しである。3φ3W 6 600 V、「3」、(ア)(イ)(ウ)、Wh、VS、AS、V、A、W、高圧母線の全ラベルが判読できる。ZCT・開閉器・コンデンサ・変圧器・接地・破線引外し線・ケーブル端末・VCT・Wh・断路器・PF・VT・避雷器分岐・遮断器・CT の接続と向きは原図と一致し、公開候補図だけで解答に必要な接続関係を読み取れる。",
+        "figureDescription：①〜⑨の構成・接続順・破線の起終点は原図と整合する。",
+        "officialReferenceUrls は空であり、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

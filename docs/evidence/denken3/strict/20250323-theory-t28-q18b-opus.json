@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3667,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 18081,
+      "webSearchRequests": 0,
+      "costUSD": 0.2438862,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1958,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b4114edc3e672ed58093735aeeb8745b82164085a9e832255375d194f6434ff0",
+  "inputRequestSha256": "af126c17816f1e9b0d3626d9d8a62d3ffe8fa944c5c0877d6fe304ca66cde171",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18b": "db91b32e8390a14ad6861233ccf22f0e0adf9699c5b862be4650ea35d843fe6f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p24.png": "405f2a5753c5abf546b0b8ac13bc8c9bbcf354346fb686573b038e20d6872bbe",
+      "data/raw_pdfs/denken3/review/20250323/theory/p25.png": "b74c08845a39e2e36fb2f28c741b80980e73b9f26be230e4a1c3289c0dddb2a9"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-1.png": "7c97c06ecab5c4d359a55724576681ba410d1f324ab98c3c6a54a56b72211265",
+      "public/images/denken3/20250323/theory/20250323-theory-q18-opamp-circuit-2.png": "3071295684759173abe617193bfbc53d6ac7853ff515a57942ca57100768d9fb"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "26678d4a5f2d8005dc998b3fede87a98d17206192b69bdc4590334bc0fe07eae",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図の印刷頁 -21- にある問18柱書きと(b)を照合した。『図1及び図2のような直流増幅回路』『出力電圧Vo1，Vo2の値[V]の組合せ』『演算増幅器は理想的なもの』『Vi1=0.6 V及びVi2=0.45 Vは直流の入力電圧』の文言・数値・単位が一致する。選択問題の注記と柱書き『次の(a)及び(b)の問に答えよ』も原文どおり入っている。",
+        "選択肢：公式原図の印刷頁 -22- の表と照合した。(1) 6.6/−3.0、(2) 6.6/3.0、(3) −6.6/3.0、(4) −4.5/9.0、(5) 4.5/−9.0 で、全肢の数値と符号が一致する。表の各値には単位が付いていないため、候補の選択肢に単位がないのは原文どおりである。",
+        "公式正答：manifest に固定された正答単位 {question:18, part:b, answer:'1'} と、候補の officialAnswer '1' が一致する。",
+        "図1の結線：原図で確認した。上側入力端子（Vi1）の水平配線は、半円の跨ぎ記号で縦配線を飛び越えて +端子に直結している。縦配線は下側共通線の接続点（黒丸）から立ち上がり、10 kΩを経て −端子へつながる。100 kΩと1 μFは −端子と出力の間に並列に入っている。以上から非反転増幅回路と確定した。",
+        "図1の検算：V− = V+ = 0.6 V。10 kΩの電流は 0.6/10k = 0.06 mA で、同じ電流が100 kΩを流れる。電圧降下は 0.06 mA×100 kΩ = 6 V なので、Vo1 = 0.6 + 6 = (1+100/10)×0.6 = 6.6 V。",
+        "図2の結線：原図で確認した。Vi2 は30 kΩを経て −端子へつながる。+端子は下側共通線の接続点に接続されている。200 kΩと1 μFは −端子と出力の間に並列に入っている。以上から反転増幅回路である。",
+        "図2の検算：V− = 0 V。30 kΩの電流は 0.45/30k = 0.015 mA。Vo2 = −0.015 mA×200 kΩ = −(200/30)×0.45 = −3.0 V。",
+        "コンデンサの扱い：入力が直流のため、定常状態では1 μFを開放として扱える。解説の前提は正しい。",
+        "誤答肢の理由：肢ごとに原因を確認した。(2) は Vo2 の極性だけが誤り。(3) は Vo1・Vo2 とも極性が逆。(4) は2値とも大きさ・極性が計算値と合わない。(5) は Vo2 の極性は合うが大きさが違い、Vo1 も違う。どの記述も計算結果と矛盾しない。",
+        "公開候補図1：原図の図1と照合した。1 μF、100 kΩ、10 kΩ、▷∞、−/+ 端子表示、Vi1 = 0.6 V、Vo1 [V]、半円の跨ぎ記号、3か所の接続点黒丸、『図1』の表記がすべて欠けずに残っている。",
+        "公開候補図2：原図の図2と照合した。1 μF、200 kΩ、30 kΩ、▷∞、−/+ 端子表示、Vi2 = 0.45 V、Vo2 [V]、接続点黒丸、+端子から共通線への接地線、『図2』の表記がすべて残っている。",
+        "図の必要性：解答には両図の結線（特に図1の跨ぎ記号）が必要である。公開候補図2枚だけで反転・非反転を判別でき、figureDescription の結線記述とも一致する。",
+        "極性基準：両図とも入力・出力の電圧矢印は、下側共通線から上側端子へ向いている。上側端子を正とする基準で、figureDescription の記述と一致する。",
+        "出典：officialReferenceUrls は空である。候補には外部参考資料に依存する独立した主張がなく、未検証の外部確認事項はない。",
+        "頁：添付原図の印刷頁は -21-（T2−R 024）と -22-（T2−R 025）である。PDF の実ページ番号は添付画像だけでは確認できないので、reviewedFromPage [24,25] は照合していない。"
+      ]
+    }
+  ]
+}

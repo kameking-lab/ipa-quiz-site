@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6169,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20658,
+      "webSearchRequests": 0,
+      "costUSD": 0.2889078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3938,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "095e6c3c3352f0592e37c4d53d1b72b0ff4d8d7502d2ee4e7fac3134ab064672",
+  "inputRequestSha256": "8998d972db3dd320c0711ced140702bf6b1615a5bd274fe7060698a13bc9b661",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "9ce9d3cf3986cc0fb66362c37a10f1d23ed8cb49b1efc4f0f1d182b88a20b006",
+      "q18b": "b3a0229a841b2aec7a6d48a084974ed6179cf516e415c91122f0a5a31c09287a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p22.png": "d593ba1982a20ab338fddb7770923567b8b68cbff632c96fb759ec150247166b",
+      "data/raw_pdfs/denken3/review/20250831/theory/p23.png": "2419acf01bb613dae3019dbf561cdeb296f98e8868a0683e5d8f2b1daae6076a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q18-fig1.png": "cdd5be0830205019b6944d3fec900a0e1e00637e20185504ced750d713968aad",
+      "public/images/denken3/20250831/theory/20250831-theory-q18-fig2.png": "ebfcb62a2b2bcdccd45ed0ebc203925d9119d6ebf38aed985591a3f0a015cfda"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "d3251e676823903af9fc1ef94e0f100a589b049aade12ecf2914fd706b604fa3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図(頁フッタ T1−R 022, 印刷頁 -19-)の問18柱書・(a)本文と照合。VCC=9 V, R1=3 kΩ, R2=6 kΩ, IE=2 mA, ベース電流無視(R2 の直流電流より十分小), VBE=0.7 V, 単位[kΩ]がすべて一致。欠落も改変もない。冒頭の「問17及び問18は選択問題…」注記は省略されているが、sourceAttribution に整形と明記されており、解答内容には影響しない。",
+        "選択肢: (1)0.36 (2)1.5 (3)2.7 (4)4.7 (5)7.5 が原図と一致。",
+        "公式正答: 公式解答表の理論 問18(a)=3・配点5 と、manifest の answer=3・points=5 が一致。candidate の officialAnswer=3、scoringPoints=5 も一致。",
+        "総合解説の検算: VB=9×6/(3+6)=6.0 V、VE=6.0−0.7=5.3 V、RE=5.3/2=2.65 kΩ で、最も近い選択肢は 2.7 kΩ → (3)。計算も因果も正しい。",
+        "各肢の検算: 5.3/0.36≈14.72 mA(差2.29)、5.3/1.5≈3.53 mA(差1.15)、5.3/2.7≈1.963 mA(差0.05)、5.3/4.7≈1.128 mA(差2.05)、5.3/7.5≈0.707 mA(差4.85)。いずれも記載値と一致。",
+        "公開候補図 fig1: 原図 図1 と照合。C1・C2・R1・R2・RE・vi・vo・VCC・図1 のラベルがすべて揃っている。接続は次のとおりで欠落はない: ベース節点で R1/R2 分圧、NPN のエミッタ矢印は外向き、コレクタは上側配線に直結、エミッタは RE を介して共通線へ、C2 経由で出力端子、電池は上下配線間。電池の長線側は上側配線にあり、NPN の順バイアス極性と整合する。",
+        "figureDescription: 接続・向き・ラベルの記述が原図と一致。figureUrls に fig2 を含むが、description で「図2は(b)用で本小問では用いない」と明示しているため曖昧さはない。",
+        "出典: officialReferenceUrls は空で、検証を要する独立主張はない。reviewedFromPage [22,23] は原図フッタ T1−R 022/023 と整合。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図(フッタ T1−R 023, 印刷頁 -20-)の(b)本文と照合。二つのコンデンサのインピーダンスが十分小、hie=2.5 kΩ, hfe=300, RE は小問(a)の値, 入力インピーダンス vi/ii [kΩ], vi・ii は図2の入力電圧・入力電流、がすべて一致。冒頭の(a)条件の括弧書きは補足と明示された追加で、原文の改変ではない。",
+        "選択肢: (1)2.0 (2)15 (3)80 (4)300 (5)750 が原図と一致。",
+        "公式正答: 公式解答表の理論 問18(b)=1・配点5 と、manifest の answer=1・points=5 が一致。candidate の officialAnswer=1、scoringPoints=5 も一致。",
+        "図2の極性: 電流源の上端は右側配線を経て下側配線(交流接地)に接続し、下端はエミッタ節点に接続している。矢印は下向きなので、hfe·ib はエミッタ節点へ流入し、RE の電流は (1+hfe)ib となる。解説の因果と一致する。",
+        "総合解説の検算: RB=3×6/9=2.0 kΩ。Zb=hie+(1+hfe)RE=2.5+301×2.7=815.2 kΩ(RE=2.65 なら 800.15 kΩ)。vi/ii=2.0×815.2/817.2≈1.9951 kΩ(RE=2.65 なら 1600.3/802.15≈1.9950 kΩ)。いずれも最も近い選択肢は 2.0 → (1)。",
+        "各肢の理由: RB が入力端子に直接並列に入るため vi/ii<2.0 kΩ となり、(2)(3)(4)(5)を否定する論拠は正しい。(5)の「Zb 単独なら 750 が近い」も、815(800)kΩ に最も近い選択肢が 750 であることと一致する。",
+        "uncertainty の記載(RE に 2.7 と 2.65 のどちらを用いるか)は原問題の表現に由来する。解説は両方の値で検算しており、正答が不変であることを示しているので、未解決の曖昧さは残らない。",
+        "公開候補図 fig2: 原図 図2 と照合。ii・ib の右向き矢印、hie、電流源と下向き矢印 hfe·ib、R1R2/(R1+R2)、RE、vi・vo の上向き矢印、図2 のラベルがすべて揃っている。接続も一致する: 出力分岐点はエミッタ節点と同電位、vo 下端は下側配線へ接続。fig1 も原図と一致する。",
+        "figureDescription: 並列構成・電流源の向き・各接続の記述が原図と一致。",
+        "出典: officialReferenceUrls は空で、検証を要する独立主張はない。reviewedFromPage [22,23] は原図フッタ T1−R 022/023 と整合。"
+      ]
+    }
+  ]
+}

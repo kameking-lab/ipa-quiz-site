@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5127,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21231,
+      "webSearchRequests": 0,
+      "costUSD": 0.2726518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3013,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b2f27302d8dd5264fb67bef151896ff3db043cb37b57368cc762ec17cccc0b63",
+  "inputRequestSha256": "67a7dd0ce5e7254dc58c64f6117a6848ffcd73d5942517f316450a1c2fb29b03",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12a": "daf6bd10a3b90dc093cb74201ccb5fb5e41b2a8147893cc870f905bd4f10c4c8",
+      "q12b": "82a02768129179dfd54c72f3fdc2b90f73685f8d71e8797a83a9538ce759ca8a"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p16.png": "8d310dd7793f3f6ca908911063bbcf5666855d788c1aad4a7a02fd0e96250dce",
+      "data/raw_pdfs/denken3/review/20250831/law/p17.png": "69fbe5998ca360ddd3395156383faeb1c750db81bad106fd34337bd21910f880",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/law/20250831-law-q12-fig1.png": "5520ab14c8d72a9e96566a39aac0fd19742e84b410e7707a3caa46564bcc181d"
+    },
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "b4e835125460ce46d81c57b8778de2b1019ecefd17d8270a1bc686c7a4581e2f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12a",
+      "questionNumber": 12,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（前文・ただし書き・インピーダンス条件・(a)設問）を原図 PDF第16・17頁（頁下部 T1−H 016 / 017、本文頁番号 -13- / -14-）と照合した。数値（6 600 V、500 kV·A、6 %、15 %、10 MV·A、j6×n [%]、j50×(6×n−100/n) [%]、第5調波）、単位、表現はすべて一致する。",
+        "選択肢 (1)1.3 (2)6.6 (3)11.4 (4)32.8 (5)43.7 は原図第17頁と一致する。",
+        "公式解答表（令和7年度上期・法規）の問12(a)は解答2・配点6。候補の officialAnswer=\"2\"・scoringPoints=6 と一致する。",
+        "検算: I = 500×10³/(√3×6 600) = 500 000/11 431.5 ≒ 43.74 A、I₅ = 0.15×43.74 ≒ 6.56 A ≒ 6.6 A → (2)。総合解説の計算と結論は正しい。",
+        "誤答肢の検算: (1) 6.56/5 ≒ 1.31。(3) 500 000/6 600 ≒ 75.76 A、その15 %は ≒ 11.36 A（6.56×√3 ≒ 11.36 と同値）。(4) 6.56×5 ≒ 32.8。(5) 定格電流 ≒ 43.74 A。いずれも数値として正しい。「相当する」という表現にとどめており、出題者の意図と断定していない。",
+        "公開候補図 20250831-law-q12-fig1.png を原図第16頁の等価回路と照合した。以下はすべて一致し、欠落や改変はない。交流電源記号と「配電系統」、インダクタと「j6×n」、「受電点」矢印と2つの接続点、破線枠内の直列リアクトル＋コンデンサ、枠上の「j50×(6×n−100/n)」、枠下の「直列リアクトル付き コンデンサ設備」、下方分岐の電流源記号（円内縦線）と「高調波電流源」。",
+        "figureDescription の接続・向き・ラベル記述は図と一致する。(a) は定格電流と15 %の条件だけで解けるため、図が不要という記述は妥当である。",
+        "メタデータ: fiscalYear=2025, term=upper, examDate=2025-08-31, subject=law, reviewedFromPage=[16,17]、問題PDF・解答PDFのURLは manifest と一致する。sourceAttribution（令和7年度上期 法規 問12(a)）も整合する。",
+        "officialReferenceUrls は空のため、外部で確認すべき主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q12b",
+      "questionNumber": 12,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（共通前文と(b)設問「受電点から配電系統に流出する第5調波電流[A]の値として，最も近いのは次のうちどれか。」）を原図 PDF第16・17頁と照合し、一致を確認した。",
+        "選択肢 (1)1.2 (2)6.2 (3)10.8 (4)30.9 (5)41.2 は原図第17頁と一致する。",
+        "公式解答表の問12(b)は解答2・配点7。候補の officialAnswer=\"2\"・scoringPoints=7 と一致する。",
+        "検算: Z_s = j6×5 = j30 %、Z_c = j50×(30−20) = j500 %（同一の10 MV·A基準）。I_s = I₅×Z_c/(Z_s+Z_c) = 6.561×500/530 ≒ 6.19 A ≒ 6.2 A → (2)。分流式（インピーダンスの逆比）の向きも正しい。",
+        "因果記述の確認: 第5調波では 6×5 = 30 > 100/5 = 20 となり、コンデンサ設備は誘導性（j500 %）になる。系統側も誘導性なので、並列共振による拡大は生じない。この記述は正しい。",
+        "誤答肢の検算: (1) 6.19/5 ≒ 1.24。(3) 11.4×500/530 ≒ 10.75、11.36×500/530 ≒ 10.72 で、いずれも選択肢中では10.8が最も近い（記述どおり）。(4) 6.189×5 ≒ 30.95 → 30.9。(5) 43.7×500/530 ≒ 41.23 → 41.2（未丸めの43.74を用いると ≒41.26。候補は43.7を明示して計算しており、記述と整合する）。",
+        "公開候補図は原図第16頁の等価回路と全ラベル・接続・分岐方向が一致する。図だけで、電流源から見て系統側 j6×n とコンデンサ設備 j50×(6n−100/n) が並列の2経路になることを読み取れる。",
+        "figureDescription は図と一致する。(b) で分流構成を読むために図が必要という記述も妥当である。",
+        "メタデータ（fiscalYear, term, examDate, subject, reviewedFromPage=[16,17], sourceQuestionPdfUrl, sourceAnswerPdfUrl, sourceAttribution 問12(b)）は manifest と一致する。",
+        "officialReferenceUrls は空のため、外部で確認すべき主張はない。"
+      ]
+    }
+  ]
+}

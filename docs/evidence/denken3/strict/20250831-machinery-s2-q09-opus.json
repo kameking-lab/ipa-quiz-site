@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2557,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13606,
+      "webSearchRequests": 0,
+      "costUSD": 0.1602518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1222,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e2f797cb7b4c46744dbcbe7ca1062f0855720082d9383547b7123a8ac83b7ca5",
+  "inputRequestSha256": "6846612ed9cc21fef3ee5a9e582eccf78d51f52577b0a3f784d69127cb4cdb54",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "3b3a36eadf3b5dc0b35baee784abdece4803b153c01b3eaea0ca6b3e7dd7f493"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p12.png": "2ad4918e6f38127c1a6ceba70b43360a7f258427fc5956228d3a4c278791f88e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付した公式問題原図（印刷頁「- 9 -」、頁下部「T1−K 012」）と照合した。「ある変圧器の負荷力率100 %における全負荷効率は98 %である。この変圧器の負荷力率 80 %における全負荷効率[%]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」と一字一句一致する。数値（100 %、98 %、80 %）と単位[%]にも齟齬はない。",
+        "選択肢：原図の(1) 78.4、(2) 81.6、(3) 97.5、(4) 98.4、(5) 99.6 と、候補の choices 1〜5 が完全に一致する。",
+        "公式正答：試験センター公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞列で、問9 の解答は 3、配点は 5 である。manifest 固定の公式正答単位 {question:9, part:null, answer:\"3\", points:5}、候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "科目の整合：問題PDFのファイル名 q03 は第3科目の機械に当たる。頁下部の「T1−K」表記、subject=machinery、sourceAttribution の「機械科目 問9」とも矛盾しない。examDate 2025-08-31 は URL 中の 20250831 と一致する。",
+        "総合解説の検算：全損失 W = S(1/0.98 − 1) = 0.0204082 S となる。η₂ = 0.8/(0.8 + 0.0204082) = 0.8/0.8204082 = 0.97512 で、97.5 % に一致する。因果の説明（全負荷なので電圧・電流は定格のまま、鉄損と銅損は不変、出力だけが力率倍に減るので効率が下がる）は標準的な解釈で、誤りはない。",
+        "肢(1)の理由を検算した：98 × 0.8 = 78.4 で、記述は正しい。",
+        "肢(2)の理由を検算した：0.8 ÷ 0.98 = 0.81633 で 81.6 % となり、記述は正しい。",
+        "肢(3)の理由を検算した：0.8 ÷ 0.820408 = 0.9751 で、正答の根拠として正しい。",
+        "肢(4)の理由を検算した：0.64 × 0.020408 = 0.013061、0.8 ÷ 0.813061 = 0.98394 で、98.4 % に一致する。「98 %超はあり得ない」という論理と、負荷率と負荷力率を取り違えた場合との対比も正しい。",
+        "肢(5)の理由：損失が不変で出力が減るので効率は98 %未満になる、という論理は正しく、99.6 % を否定する根拠として十分である。",
+        "図：原図に図はなく、解答にも図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で整合している。",
+        "参考URL：officialReferenceUrls は空で、検証を要する独立の主張はない。",
+        "頁：reviewedFromPage=[12] は PDF の頁番号であり、原図の印刷頁「- 9 -」とは別の番号体系である。表紙と注意事項の頁が前に付くことを考えると矛盾しない。",
+        "uncertainty=\"なし\"、needsReview=false は、上記の検証結果と整合する。"
+      ]
+    }
+  ]
+}

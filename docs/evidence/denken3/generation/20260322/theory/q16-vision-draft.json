@@ -1,0 +1,125 @@
+{
+  "questionNumber": 16,
+  "sharedContext": "問16 図の直流回路において、次の(a)及び(b)に答えよ。\nただし、電源電圧 E [V] の値は一定で変化しないものとする。\n\n【図1】端子 a、d 間に三つの枝路が並列に接続されている。上側の枝路は a − 16 Ω − b − 4 Ω − d、中央の枝路は抵抗 R [Ω]、下側の枝路は a − 4 Ω − c − 16 Ω − d である。電源 E [V] は a、d 間に接続されている。電源から端子 a へ流れ込む電流を I₁ = 4.5 A、抵抗 R を a から d の向きに流れる電流を I₂ = 0.5 A とする。\n【図2】図1の抵抗 R を a、d 間から外し、端子 b、c 間に接続し直した回路である。上側の枝路は a − 16 Ω − b − 4 Ω − d、下側の枝路は a − 4 Ω − c − 16 Ω − d で、b と c の間に R [Ω] がある。電源 E [V] は a、d 間に接続されており、電源から端子 a へ流れ込む電流を I₃ [A] とする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "問16 図の直流回路において、次の(a)及び(b)に答えよ。ただし、電源電圧 E [V] の値は一定で変化しないものとする。\n\n図1の回路では、端子 a、d 間に三つの枝路が並列に接続されている。上側の枝路は a − 16 Ω − b − 4 Ω − d、中央の枝路は抵抗 R [Ω]、下側の枝路は a − 4 Ω − c − 16 Ω − d であり、電源 E [V] が a、d 間に接続されている。\n\n(a) 図1のように抵抗 R [Ω] を端子 a、d 間に接続したとき、I₁ = 4.5 A、I₂ = 0.5 A の電流が流れた。抵抗 R の値 [Ω] として、正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "180",
+        "2": "160",
+        "3": "80",
+        "4": "40",
+        "5": "20"
+      },
+      "officialAnswer": "3",
+      "explanation": "図1では、a、d 間に次の三つの枝路が並列に接続されている。\n・上側の枝路：16 Ω + 4 Ω = 20 Ω\n・中央の枝路：R [Ω]\n・下側の枝路：4 Ω + 16 Ω = 20 Ω\n\n電源から流れ込む電流は I₁ = 4.5 A、そのうち R を流れる電流は I₂ = 0.5 A である。したがって、上側と下側の枝路に流れる電流の合計は\nI₁ − I₂ = 4.5 − 0.5 = 4.0 A\nとなる。上側と下側の枝路はどちらも 20 Ω で等しいため、この電流は 2.0 A ずつに分かれる。\n\nよって、a、d 間の電圧は\nV_ad = 20 Ω × 2.0 A = 40 V\nである。電源は a、d 間に直接接続されているので、E = 40 V となる。\n\n抵抗 R には同じ 40 V が加わり、0.5 A が流れているので\nR = 40 V ÷ 0.5 A = 80 Ω\n\n正答は (3) 80 である。",
+      "choiceExplanations": {
+        "1": "誤り。R = 180 Ω に 0.5 A が流れると、R の両端電圧は 180 × 0.5 = 90 V になる。上側と下側の 20 Ω の枝路から求めた a、d 間電圧 40 V と一致しない。",
+        "2": "誤り。R = 160 Ω に 0.5 A が流れると、R の両端電圧は 160 × 0.5 = 80 V になり、a、d 間電圧 40 V と一致しない。",
+        "3": "正しい。a、d 間電圧は 20 Ω × 2.0 A = 40 V である。R = 40 ÷ 0.5 = 80 Ω となり、条件を満たす。",
+        "4": "誤り。R = 40 Ω に 0.5 A が流れると、R の両端電圧は 40 × 0.5 = 20 V になり、a、d 間電圧 40 V と一致しない。",
+        "5": "誤り。R = 20 Ω に 0.5 A が流れると、R の両端電圧は 20 × 0.5 = 10 V になり、a、d 間電圧 40 V と一致しない。"
+      },
+      "figureDescription": "図は左に「図1」、右に「図2」の二つの直流回路が並べて描かれている。\n\n図1：a、d 間に三つの枝路が並列に接続された直流回路である。\n・上側の枝路：a から 16 Ω、節点 b、4 Ω を経て d に至る。\n・中央の枝路：a から抵抗 R [Ω] を経て d に至る。R の上に「I₂ = 0.5 A」と右向き（a→d）の矢印が描かれている。\n・下側の枝路：a から 4 Ω、節点 c、16 Ω を経て d に至る。\n・a の左側の導線と d の右側の導線が下に延び、回路下部の電源 E [V]（電池記号）に接続されている。\n・左側の導線に上向き（電源から a へ向かう）の矢印と「I₁ = 4.5 A」が記されている。\n\n図2：上側の枝路 a − 16 Ω − b − 4 Ω − d、下側の枝路 a − 4 Ω − c − 16 Ω − d があり、節点 b と節点 c の間に縦向きに抵抗 R [Ω] が接続されている。a、d 間に電源 E [V]（電池記号）が接続され、左側の導線に上向きの矢印と「I₃ [A]」が記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "電源の内部抵抗と導線の抵抗は、図に記載がないため 0 として扱っている（a、d 間電圧 = E）。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        21
+      ]
+    },
+    {
+      "part": "b",
+      "question": "問16 図の直流回路において、次の(a)及び(b)に答えよ。ただし、電源電圧 E [V] の値は一定で変化しないものとする。\n\n図1の回路では、端子 a、d 間に三つの枝路が並列に接続されている。上側の枝路は a − 16 Ω − b − 4 Ω − d、中央の枝路は抵抗 R [Ω]、下側の枝路は a − 4 Ω − c − 16 Ω − d であり、電源 E [V] が a、d 間に接続されている。このとき、I₁ = 4.5 A（電源から a へ流れ込む電流）、I₂ = 0.5 A（R を a から d へ流れる電流）であった。\n\n(b) 図1の抵抗 R [Ω] を図2のように端子 b、c 間に接続し直したとき、回路に流れる電流 I₃ の値 [A] として、最も近いものを次の(1)〜(5)のうちから一つ選べ。\n（図2：上側の枝路 a − 16 Ω − b − 4 Ω − d、下側の枝路 a − 4 Ω − c − 16 Ω − d、b と c の間に R [Ω]。電源 E [V] は a、d 間に接続され、電源から a へ流れ込む電流が I₃ [A]。）",
+      "choices": {
+        "1": "5.5",
+        "2": "4.8",
+        "3": "4.5",
+        "4": "4.2",
+        "5": "4.0"
+      },
+      "officialAnswer": "4",
+      "explanation": "(a) の結果から、E = 40 V、R = 80 Ω である。\n\n図2はブリッジ回路である。対辺の抵抗の積は 16 × 16 = 256 と 4 × 4 = 16 で等しくない。したがってブリッジは平衡しておらず、R にも電流が流れる。\n\n節点電位で解く。d を基準（0 V）とすると V_a = 40 V である。b、c の電位を V_b、V_c とし、各節点でキルヒホッフの電流則を立てる。\n\n節点 b：(40 − V_b)/16 = V_b/4 + (V_b − V_c)/80\n両辺を 80 倍すると 200 − 5V_b = 21V_b − V_c となり\n26V_b − V_c = 200 …①\n\n節点 c：(40 − V_c)/4 = V_c/16 + (V_c − V_b)/80\n両辺を 80 倍すると 800 − 20V_c = 6V_c − V_b となり\n−V_b + 26V_c = 800 …②\n\n①より V_c = 26V_b − 200 である。これを②に代入すると\n−V_b + 26(26V_b − 200) = 800\n675V_b = 6000\nV_b = 80/9 V ≈ 8.89 V\nV_c = 26 × 80/9 − 200 = 280/9 V ≈ 31.11 V\n\n電源から a に流れ込む電流 I₃ は、a から 16 Ω と 4 Ω に流れ出る電流の和である。\nI₃ = (40 − 80/9)/16 + (40 − 280/9)/4\n  = (280/9)/16 + (80/9)/4\n  = 35/18 + 40/18\n  = 75/18 ≈ 4.17 A\n\n参考として、a、d 間の合成抵抗は 40 ÷ (75/18) = 9.6 Ω である。また、R には c から b の向きに (280/9 − 80/9)/80 = 5/18 ≈ 0.28 A が流れている。\n\n最も近い値は (4) 4.2 A である。",
+      "choiceExplanations": {
+        "1": "誤り。I₃ = 5.5 A とすると、合成抵抗は 40 ÷ 5.5 ≈ 7.27 Ω になる。図2の合成抵抗は 9.6 Ω（I₃ ≈ 4.17 A）なので一致しない。",
+        "2": "誤り。I₃ = 4.8 A とすると、合成抵抗は 40 ÷ 4.8 ≈ 8.33 Ω になり、図2の合成抵抗 9.6 Ω と一致しない。",
+        "3": "誤り。4.5 A は図1の電流 I₁ の値である。図2では R が b、c 間に移り、合成抵抗は図1の 40 ÷ 4.5 ≈ 8.89 Ω から 9.6 Ω に変わる。そのため I₃ ≈ 4.17 A となり、4.5 A にはならない。",
+        "4": "正しい。節点電位法で解くと I₃ = 75/18 ≈ 4.17 A となり、選択肢の中で最も近いのは 4.2 A である。",
+        "5": "誤り。4.0 A は合成抵抗 10 Ω に相当する。これは b、c 間に電流が流れない場合、すなわち 20 Ω の枝路 2 本の並列に相当する値である。図2のブリッジは平衡していないため R に約 0.28 A が流れ、合成抵抗は 9.6 Ω、I₃ ≈ 4.17 A となる。"
+      },
+      "figureDescription": "図は左に「図1」、右に「図2」の二つの直流回路が並べて描かれている。\n\n図2：図1の抵抗 R を b、c 間に移したブリッジ回路である。\n・上側の枝路：a から 16 Ω、節点 b、4 Ω を経て d に至る。\n・下側の枝路：a から 4 Ω、節点 c、16 Ω を経て d に至る。\n・節点 b と節点 c の間に、縦向きに抵抗 R [Ω] が接続されている。\n・a の左側の導線と d の右側の導線が下に延び、回路下部の電源 E [V]（電池記号）に接続されている。\n・左側の導線に上向き（電源から a へ向かう）の矢印と「I₃ [A]」が記されている。\n16 Ω と 4 Ω は上側と下側で左右逆の位置に配置されている。\n\n図1：a、d 間に、上側の枝路 a − 16 Ω − b − 4 Ω − d、中央の抵抗 R [Ω]（上に「I₂ = 0.5 A」と右向き矢印）、下側の枝路 a − 4 Ω − c − 16 Ω − d が並列に接続され、a、d 間に電源 E [V]（電池記号）が接続されている。左側の導線に上向きの矢印と「I₁ = 4.5 A」が記されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "電源の内部抵抗と導線の抵抗は、図に記載がないため 0 として扱い、E = 40 V を図2でもそのまま用いている（問題文の「E は一定で変化しない」に基づく）。計算値 I₃ = 75/18 ≈ 4.17 A を、選択肢の中で最も近い 4.2 A に対応させている。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        21
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6734,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9337,
+      "webSearchRequests": 0,
+      "costUSD": 0.20963980000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2223,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b8ff495532b07380a032469c15bf698728fb35e2d788023d1f21791ec3949e7a",
+  "inputRequestSha256": "711e2855a7e651f127bf3abdff9c03c47cd9a0499a7060ed29ec5abe74620d95",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p21.png": "569a0c9ce59199c4bdc00f45ce2fbb5decf766f921afe5989c84eaea431bdb0a"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6076,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17392,
+          "webSearchRequests": 0,
+          "costUSD": 0.2609198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1569,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "5514215343bad17a544041d0e96bc73fcd7f101de7b71a9a4b7c4bc87acc3fb4",
+      "inputRequestSha256": "749ca56c9239e090ed04b5dc555bbde5d9ca9947b723ef46a8b5ef8e1fa0d917",
+      "previousDraftSha256": "dc0c87455217fa2f1dd832734f2f93be825496b2c3a954be9311800e20318734",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q16-vision-draft-v1.json",
+      "answeredReviewSha256": "fc4d1a0e9c622a1c6b40de8e74ffb70d57e63f2c2271ef3b2dbdd3e5c7f60149",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q16-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-theory-s1-q16a-q16b-opus.json",
+      "answeredStrictReceiptSha256": "df72df3f09514c837e8c5d23e9a84f10a1d559a794f6a0013a019d422e7fc321",
+      "figureSha256": {
+        "20260322-theory-q16-fig1": "2ceaab385108eb9debb739c7a78f0f15bb1bad72e91bef8983a2c94a57171c98"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3954,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14164,
+      "webSearchRequests": 0,
+      "costUSD": 0.1926558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2223,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "52add8d5ba604310326ac7d919216bb49eea5e0c7619d7822752cbbe6a9e732b",
+  "inputRequestSha256": "d11d5902db4a71bf4bce4dc3d114cba57782c97e6de96773f77fd714abd09fdc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "0262c16e27795b94129b0e5f9cbc844d84108cd80d1e1ad9f5675fbbfe2906f6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q12-fig1.png": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2]: 「(5000/50) × √2 ≒ 141」は物理的な根拠のない式です。√2 を掛けることは cos θ で割ることに当たり、1 灯分だけを数えることとも組み合わさっていて、誤算の経路として説明がつきません。数値が一致するだけの式を、誤答の根拠として示しています。",
+        "choiceExplanations[2]: 「いずれの式も全光束 5 000 lm を 4π で割らずに光度として扱った形」と、共通の誤算経路を断定しています。しかし uncertainty 欄には「特定の誤算経路は断定していない」とあり、両者が矛盾しています。また「283 のほぼ半分」は式ではありません。これを「いずれの式も」に含めるのは不正確です。",
+        "choiceExplanations[2]: 141 に一致する計算は他にもあります。たとえば I = F/2 として 4 灯を合計する方法（4 × 2500/50 × 1/√2 ≒ 141.4）や、対角 2 灯分だけ I = F で数える方法（2 × 100 × 1/√2 ≒ 141.4）です。したがって特定の経路は確定できません。修正案は次のとおりです。√2 の式と「いずれの式も〜」の断定を削除します。そのうえで「141 は正しい値約 22.5 lx と一致しない。正しくは I = F/(4π) ≒ 397.9 cd、1 灯あたり I/r² × cos θ ≒ 5.63 lx、4 灯合計で約 22.5 lx」と、正解との差だけを示します。",
+        "uncertainty 欄に未解消の事項が残っているのに needsReview=false になっています。上記の修正で uncertainty を解消するか、needsReview=true にしてください。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期）の＜機械＞欄で、問12の解答は 4、配点は 5 です。manifest の {question:12, part:null, answer:\"4\", points:5}、および候補の officialAnswer=\"4\"・scoringPoints=5 と一致します。他科目の問12（理論5・電力4・法規12(a)2）の欄とは取り違えていません。",
+        "問題文は原図と一致します。幅 6 m・奥行き 8 m、四隅の柱、地上 5 m、全光束 5 000 lm、中心 O の水平面照度[lx]、均等光源のいずれも原文どおりで、表記の改変はありません。",
+        "選択肢 (1)283、(2)141、(3)31.8、(4)22.5、(5)5.6 は原図と完全に一致します。",
+        "検算の結果は次のとおりです。I = 5000/(4π) = 397.89 cd。半対角 = 10/2 = 5 m、r² = 5² + 5² = 50 m²、cos θ = 5/√50 = 0.70711。E1 = 397.89/50 × 0.70711 = 5.627 lx、E = 4 × 5.627 = 22.51 lx で、(4) 22.5 に一致します。総合解説の計算と因果関係に誤りはありません。",
+        "誤答肢の検算: (1) 4 × (5000/50) × 0.70711 = 282.8 → 283 で一致します。(3) 4 × 397.89/50 = 31.83 は法線照度の合計で、説明は妥当です。(5) 1 灯分 5.63 → 5.6 で、説明は妥当です。(4) 正答肢の説明も正しいです。",
+        "公開候補図を原図と照合しました。左上 D・右上 C・左下 A・右下 B、下辺の寸法「6m」、右辺の寸法「8m」、破線の対角線 A–C と B–D、交点の黒点と下側のラベル「O」が一致し、欠落や切れもありません。平面図に必要な情報は候補図だけで読み取れます。高さ 5 m は問題文で与えられます。",
+        "figureDescription を検証しました。「左下から反時計回りに A・B・C・D」は配置（A 左下→B 右下→C 右上→D 左上）と整合します。寸法線の位置、破線の対角線、O の記述も正確です。",
+        "原図のフッターは「- 12 -」「T1−K 015」で、reviewedFromPage [15] と矛盾しません。officialReferenceUrls は空で、検証が必要な独立主張はありません。sourceQuestionPdfUrl（q03 = 機械）と sourceAnswerPdfUrl（a01）は、subject=machinery・examDate 2025-08-31 と整合します。"
+      ]
+    }
+  ]
+}

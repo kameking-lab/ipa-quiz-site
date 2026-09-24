@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4010,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13839,
+      "webSearchRequests": 0,
+      "costUSD": 0.1911758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2539,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "afe5da612bd04adf4ba85a41ef479b96c70aa3527dd8e4ab4c70eac78deb01bc",
+  "inputRequestSha256": "a133ee6d8072531fef5121796fba0de80830658bd4775cc417e757d356fdb3f6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "aa7c19b84233626e84c67c2568314527e131121569d06b643f3cce2e2140bc30"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p08.png": "3b28e5c6eef92a0d6bbc18b4c423fff0f3f62cdb22061fd7f345f93dda1cf666"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9caccf2fd122a97218bf3ac96a785d070c620e4be7cc9c5f1ddb43533263025e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の本文（両発電機の(ア)に加えて電圧の大きさ及び(イ)が一致／じょう乱が発生／(ウ)を用いてこれらの3条件が一致した同期状態を確認）と候補の本文を突き合わせた。語句・語順・空欄位置・設問文（(ア)～(ウ)の組合せを(1)～(5)から一つ選べ）はすべて一致した。差異は「2 台」の字間空白だけで、意味は変わらない。",
+        "選択肢: 原図の表と5行×3列を照合し、すべて一致した。(1) 回転速度/位相/電流計、(2) 力率/方向/同期検定器、(3) 周波数/位相/同期検定器、(4) 回転速度/方向/電圧計、(5) 周波数/位相/周波数計。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞問5は解答3、配点5である。manifest単位 {question:5, part:null, answer:\"3\", points:5}、候補の officialAnswer=\"3\"、scoringPoints=5 と一致した。",
+        "科目の裏付け: 同じ解答表の問5は、理論=5、電力=5、機械=3、法規=4 である。本問の内容で正答になりうる(3)（周波数・位相・同期検定器）は機械の解答3とだけ整合し、URLの q03（第3科目）とも矛盾しない。したがって subject=machinery は解答表から裏付けられる。",
+        "総合解説: 並列運転条件（起電力の周波数・大きさ・位相の一致に加え、波形と相回転の一致）を確認した。電圧の大きさの差で無効横流、位相差で有効横流（同期化電流）が流れ、周波数差では位相差が時間変化して横流が変動する、という因果は正しい。同期検定器の指針は周波数差に応じた速さで回転し、回転の向きで周波数の高低を示し、同期位置付近で静止に近いときに投入する、という説明も正しい。電圧の大きさを電圧計で併せて確認するという補足も適切である。",
+        "誤答肢解説: 各肢の誤り箇所を検算し、いずれも正しかった。(1) f=pN/120 により、極数が異なれば回転速度が等しくても周波数は一致しない。電流計では位相差・周波数差を確認できない。(2) 力率は負荷で決まる量で、「方向」は位相の代わりにならない。相回転の向きは別の条件である。(4) (ア)と(イ)が誤りで、電圧計では電圧の大きさしか確認できない。(5) 周波数計は位相差を確認できない。いずれの肢も、正しい空欄と誤った空欄の指摘が表の内容と一致した。",
+        "図: 原図に回路図・図版はなく、選択肢は表形式である。figureUrls=[] と choiceFigureUrls={}、および figureDescription（(ア)(イ)(ウ)の3列×(1)～(5)の5行の表）は原図と一致する。解答に図は不要である。",
+        "出典頁: 原図の頁下部は「-5-」と「■T1－K 008」である。reviewedFromPage=[8] は通し番号008と整合する。候補の uncertainty に書かれた頁表記の記述も原図どおりである。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）と term=upper（上期）は解答表の表題で確認した。examDate=2025-08-31 は manifest 固定のURL（20250831_ch_third_q03.pdf / _a01.pdf）の日付部分と一致する。ただし添付した原図・解答表の画像には試験日の記載がない。",
+        "officialReferenceUrls は空なので、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

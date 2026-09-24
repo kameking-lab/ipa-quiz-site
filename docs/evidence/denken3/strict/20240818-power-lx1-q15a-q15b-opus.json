@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6279,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21657,
+      "webSearchRequests": 0,
+      "costUSD": 0.2990998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4387,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "058a3e15e080dc5f0f50e7b00d453a54a1268e1d3f76f6e6870bd56f066dbd24",
+  "inputRequestSha256": "95b7bd202356b0636195e3beabf034093656a2247b9fd1df711d7b6ed7e56baa",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "2f9ed47bf81bbd640a50ffb0898d605fbddf4beb3b691145bdbf8095a652d7aa",
+      "q15b": "78e6575467090a83232f80685c15e1393a6cafca32cb302f3b453dbafe80394e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p20.png": "3f728cf05119aade2a533e25e716520c6464ae499a0eaf846ec26756e6e79fea"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "03ed5ba7e3884f7e9cda02c5f7d2143f05aafc103e93da4818c4907201251b86",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 問題原図フッタ「T1－D 020」・頁「-17-」はmanifestのPDF第20頁と一致し、reviewedFromPage=[20]は正しい。公式解答表の見出し「令和6年度 上期」は、fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power、sourceAttributionとすべて整合する。",
+        "問題文: 原図(a)の「有効落差200 m，水車出力85 000 kW」「比速度が100 m・kW」「最も適切なものを(1)〜(5)のうちから一つ選べ」と一致する。数値・単位の誤転記はない。",
+        "選択肢: 原図の表と全5肢が一致する。(1)フランシス217、(2)カプラン217、(3)カプラン258、(4)フランシス258、(5)ペルトン258で、単位はmin⁻¹。",
+        "公式正答: 解答表<電力>問15(a)=4で、候補officialAnswer='4'と一致する。",
+        "計算検算: 200^0.25≈3.7606、200^1.25≈752.1、√85000≈291.55。N=100×752.1/291.55≈257.97≈258 min⁻¹で、解説の式変形・数値は正しい。",
+        "JICA p.294(12.1.2): 本文に「フランシス水車は中・高落差で適用される」「ペルトン水車は高落差、小流量」「プロペラ水車は低落差、大流量」とあり、解説の引用と一致する。",
+        "JICA p.295(図12-17): 横軸85,000kW付近で、フランシス(青)領域は下限約30m・上限約700mで、200mはこの範囲内にある。ペルトン(赤)領域の下限はこの出力帯で約250m水平なので、200mは領域外である。カプラン(緑)領域の上限は約70mなので、200mは領域外である。choiceExplanations(2)(3)(5)の種類判定理由は、添付原頁の図で検証できる。",
+        "図12-17の軸が「基準有効落差」「最高水車出力」である点は、候補の本文とuncertaintyで明示済み。85,000kW前後で出力が多少変動しても、200mがペルトン下限約250mを下回りフランシス領域内にあるという判定は変わらないため、結論に曖昧さはない。",
+        "図: 選択肢表は全内容をchoicesに文字化済みで、解答に別図は不要。figureUrls空は妥当である。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 原図PDF第20頁（フッタT1－D 020）で、reviewedFromPage=[20]、fiscalYear・term・examDate・subject・sourceAttributionはmanifestと一致する。",
+        "問題文: 原図(b)の「同期発電機と直結し，50 Hzの電力系統に接続」「有効落差200 m，水車出力85 000 kW」「小問(a)の回転速度に最も近い回転速度で運転できる同期発電機の磁極数とそのときの回転速度による比速度の組合せ」と一致する。補足した「小問(a)の条件」は(a)の与条件の正確な再掲で、改変はない。",
+        "選択肢: 原図の表と全5肢が一致する。(1)28/83、(2)28/97、(3)26/89、(4)24/83、(5)24/97で、単位はm・kW。",
+        "公式正答: 解答表<電力>問15(b)=5で、候補officialAnswer='5'と一致する。",
+        "同期速度の検算: Ns=120×50/pより、p=28で214.29、p=26で230.77、p=24で250.00、p=22で272.73 min⁻¹。258との差は43.7、27.2、8.0、14.7で、最近接はp=24。解説と一致する。",
+        "比速度の検算: ns=N×291.55/752.1より、N=250で96.9≈97、N=214.29で83.1≈83、N=230.77で89.5≈89。各肢解説の「83はp=28相当」「89はp=26相当」「97はp=24相当」はすべて正しい。",
+        "誤答理由: (1)(3)は磁極数が最近接でない。(2)(4)は磁極数と比速度の対応が不整合。正答(5)は磁極数・比速度とも整合する。各肢固有の理由は正確である。",
+        "officialReferenceUrlsは空で、外部資料に依存する独立主張はない。同期速度式・磁極数偶数の記述は標準的な電気機器の関係で、選択肢数値とも完全に整合する。",
+        "図: 選択肢表は全内容をchoicesに文字化済みで、別図は不要。figureUrls空は妥当である。"
+      ]
+    }
+  ]
+}

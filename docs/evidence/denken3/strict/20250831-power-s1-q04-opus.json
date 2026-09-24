@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5086,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14196,
+      "webSearchRequests": 0,
+      "costUSD": 0.21555180000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3532,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "27bb654d8908c23f728a6f6a6d45554e66ee785a072d60f593524f5d90f36f43",
+  "inputRequestSha256": "8a0ed5fa794e3e9f12393536b55207c404158b71f1c9f99acff533c6a0bb0af9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "c8431ca0becf7f855846ff1f32809d69327d72d6614ce894a857daa7a75fdd0f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p07.png": "f0168d556515e9698aab706177e796257e786c5e3056eecb725b60e45567d47d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "edcc814ebf7b9578ec8156036a640a88df7802e21d376c6278e8e3ccefa50678",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "メタデータが食い違っている。uncertainty欄は「出題年度と科目はこのページからは特定できない」という未解決の記述を残しているのに、needsReview=false であり、sourceAttribution・fiscalYear・term・subject は「令和7年度上期 電力 問4」と断定している。科目は照合で確定できる。本文は原子燃料サイクルで電力科目の範囲にあり、公式解答表の各科目の問4（理論5・電力1・機械3・法規3）のうち manifest 固定の正答1と一致するのは電力だけである。年度・期は解答表見出しの「令和7年度 第三種電気主任技術者上期試験解答」で確認できる。一方、問題原図には年度・科目の表記がない（「- 4 -」「T1－D 007」のみ）。このため、この問題頁が令和7年度上期の冊子であることは sourceQuestionPdfUrl（manifest）に依拠している。examDate=2025-08-31 も URL 文字列「20250831」由来で、添付した原図（問題頁・解答表とも日付表記なし）からは検証できない。uncertainty欄は上記の根拠を記した解決済みの注記に置き換えるか削除し、needsReview と整合させること。examDate の根拠が manifest/URL であることも明記すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と一字ずつ照合し、一致を確認した。対象は「質量数 235 と 238」「0.7 %程度」「製錬，転換」「遠心分離法」「再転換，加工」「ウラン 238 から派生する核分裂性物質」「プルサーマル」「軽水炉の転換比は 0.6 程度」「高速中性子によるウラン 238 のプルトニウムへの変換」「消費される核分裂性物質よりも多くの量の新たな核分裂性物質」と、空白(ア)〜(エ)の位置・設問文である。",
+        "選択肢：原図の表と(1)〜(5)全行を照合し、一致を確認した。(1) 3〜5/再処理/MOX燃料/高速増殖炉、(2) 3〜5/再処理/イエローケーキ/高速増殖炉、(3) 3〜5/再加工/イエローケーキ/新型転換炉、(4) 10〜20/再処理/イエローケーキ/高速増殖炉、(5) 10〜20/再加工/MOX燃料/新型転換炉。",
+        "公式正答：解答表 電力 問4 は解答1・配点5である。candidate の officialAnswer=1、scoringPoints=5 と一致する。",
+        "総合解説：内容は正確である。軽水炉用低濃縮ウランは3〜5%程度、使用済燃料からU・Puを分離回収する工程は再処理、U・Pu混合酸化物燃料はMOX燃料でその軽水炉利用がプルサーマル、高速中性子でU-238をPu-239に変換し消費量以上の核分裂性物質を得る炉は高速増殖炉（転換比>1）である。組合せ(1)の結論は正答と一致する。",
+        "誤答肢の理由：各肢の誤り項目を過不足なく指摘している。(2)は(ウ)のみが誤りで、イエローケーキ＝製錬で得るウラン精鉱（転換・濃縮前）。(3)は(イ)(ウ)(エ)が誤りで、新型転換炉は熱中性子炉。(4)は(ア)(ウ)が誤り。(5)は(ア)(イ)(エ)が誤りで、(ウ)MOX燃料は正しいので指摘対象外。",
+        "図：問題は文章と語句の組合せ表のみで、解答に必要な図はない。figureUrls=[]、choiceFigureUrls={}、表内容を choices に文字化した figureDescription は妥当である。",
+        "参照URL：officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "頁：reviewedFromPage=[7] は、添付原図（冊子印字頁「- 4 -」、フッター「T1－D 007」）と矛盾しない。"
+      ]
+    }
+  ]
+}

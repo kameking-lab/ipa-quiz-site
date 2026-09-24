@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5081,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21594,
+      "webSearchRequests": 0,
+      "costUSD": 0.2746358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2600,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9485c8cad6f893b471fe556e0d7f15425db811b70e96831a9d9b91d860c1f8ba",
+  "inputRequestSha256": "1596ad1bb5c24a9351066950b75b8be800e84986ecfb5694ecc6c73c21983f07",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "aacbf518f393ee3bdfdc57687b2096e59f1fc3fd64a00a33dc8808770d998eba",
+      "q18b": "b8cf892822d9ed5c97d4f70c16db7dc753f0a04e14564b0187411f864e8afbe1"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p22.png": "7ec657641f9e38c07b2118f3183aac3f85e2c5bb5cb433836606e5ab031395d6",
+      "data/raw_pdfs/denken3/review/20250831/machinery/p23.png": "28e8c131d06089ebf00e9f54f3787d6a656a5a649762d6e91c6d8286a8b3e06f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q18-fig1.png": "3ec2f12551841ebdc2e01f71c469510f0363c9abf95800153bac22b8f3ceb658",
+      "public/images/denken3/20250831/machinery/20250831-machinery-q18-fig2.png": "f3bec6dd57af3b37a73c6e963a3d292399a2635fcb089635e1cbbe09901da093"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c719c2442d371fb0a86c966a249ae9636ea72d0121d79e284d939235b5735621",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 解答PDF見出し『令和7年度 第三種電気主任技術者上期試験解答』から fiscalYear=2025・term=upper を確認。examDate=2025-08-31、subject=machinery、問題/解答PDF URL は manifest と一致。reviewedFromPage=[22,23] は原図頁の冊子管理番号 T1−K 022/023（印刷頁 -19-/-20-）と整合。sourceAttribution『令和7年度上期…機械科目 問18(a)』も一致。",
+        "問題文: 柱書『図は，出力信号 y を入力信号 x に一致させるように動作するフィードバック制御系のブロック線図である。次の(a)及び(b)の問に答えよ。』と(a)本文『K = 2，T = 0.5 として，入力信号からフィードバック信号までの一巡伝達関数(開ループ伝達関数)を表す式を計算し…』を原図と逐語照合し一致。冒頭の選択問題注記（問17/問18択一）の省略は内容に影響しない。",
+        "選択肢: (1) 2/(1−jω0.5)、(2) 2/(1+jω0.5)、(3) 1/(1+jω0.5)、(4) 2/(3−jω0.5)、(5) 2/(3+jω0.5) を原図と照合。分子・分母・符号はすべて一致。",
+        "公式正答: 解答表の機械 問18(a)=2、配点5。候補 officialAnswer=2、scoringPoints=5 と一致。",
+        "総合解説の検算: 内側ループは {1/(jωT)}/{1+1/(jωT)} = 1/(1+jωT)。外側フィードバック要素は1なので一巡伝達関数は K/(1+jωT) となり、K=2、T=0.5 を代入すると 2/(1+jω0.5)。候補の計算と一致。",
+        "肢別理由の検算: (1) 虚数項の符号が逆で、負帰還の内側ループ結果と矛盾する。(3) K を掛けていない。(4) ω=0 で 2/3 となり 2 と不一致、符号も逆。(5) G₀/(1+G₀) = 2/(1+jω0.5+2) = 2/(3+jω0.5) で閉ループ伝達関数になる。いずれも正しい。",
+        "公開候補図 fig1: 原図 p.22 のブロック線図と照合。『入力信号』x、第1加え合わせ点（+左上/−左下）、制御器破線枠内の K、制御対象破線枠内の第2加え合わせ点（+/−）、1/(jωT) を確認。枠内分岐点から第2加え合わせ点の − へ入る内側帰還、枠外分岐点から第1加え合わせ点の − へ入る外側帰還、『出力信号』y を確認。接続・向き・全ラベルに欠落や改変はない。",
+        "figureDescription: 接続・分岐点位置・符号・ラベルの記述が公開候補図と一致。公開図だけで解答に必要な構造を理解できる。",
+        "officialReferenceUrls は空で、外部確認を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、PDF URL、reviewedFromPage=[22,23]（(b)は T1−K 023 頁）が manifest・原図と整合。sourceAttribution『…問18(b)』も一致。",
+        "問題文: (b)本文『(a)で求めた一巡伝達関数において，ω を変化させることで得られるベクトル軌跡はどのような曲線を描くか，最も近いものを次の(1)～(5)のうちから一つ選べ。』を原図 p.23 と照合し一致。",
+        "選択肢テキスト化の照合: (1) 上半面・実軸2.0・ω=2 rad/s、(2) 上半面・0.67・ω=6 rad/s、(3) 下半面・2.0・ω=2 rad/s、(4) 下半面・0.67・ω=2 rad/s、(5) 下半面・0.67・ω=6 rad/s。いずれも ω=∞ で原点、45°破線付き。原図の各図と一致。",
+        "公式正答: 解答表の機械 問18(b)=3、配点5。候補 officialAnswer=3、scoringPoints=5 と一致。",
+        "総合解説の検算: G₀ = 2(1−j0.5ω)/(1+0.25ω²) から Re = 2/(1+0.25ω²)、Im = −ω/(1+0.25ω²) を得る。ω=0 で 2、ω→∞ で原点（位相→−90°）。ω=2 で位相 −45°、|G₀| = √2、点 (1,−1)。a=0.25ω² として (Re−1)²+Im² = {(1−a)²+4a}/(1+a)² = 1 となり、中心(1,0)・半径1の下半円。すべて正しい。",
+        "肢別理由の検算: (1) 2/(1−jω0.5) は Im>0 で、ω=2 に +45° の上半円。(2) 2/(3−jω0.5) は ω=0 で 2/3、0.5ω=3（ω=6）で +45°。(4) 始点 0.67 が G₀(j0)=2 と不一致。(5) 閉ループ 2/(3+jω0.5) は ω=0 で 2/3、ω=6 で −45°。いずれも正しい。",
+        "公開候補図 fig1: (a)と同一の原図ブロック線図と一致。",
+        "公開候補図 fig2: 原図 p.23 の(1)～(5)の5図と照合。軸ラベル『虚軸(j)』『実軸(+)』、原点の『0』『ω = ∞』、実軸上の値 2.0/0.67、ω=0 の矢印、半円上の黒丸の ω 値（2 または 6 rad/s）、45°円弧矢印、破線、半円の上下の向き、原点への到達矢印がすべて一致。欠落や改変はない。",
+        "figureDescription: 2図の構成と各選択肢の上下・数値・ω値の記述が公開候補図と一致。公開図だけで選択に必要な情報を判別できる。",
+        "officialReferenceUrls は空で、外部確認を要する独立主張はない。"
+      ]
+    }
+  ]
+}

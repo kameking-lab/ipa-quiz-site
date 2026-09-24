@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1848,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13672,
+      "webSearchRequests": 0,
+      "costUSD": 0.1465998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 628,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "eeb306636f6689833589a4b7656c68760189d206d2e16dab585da43ae1fbe5e6",
+  "inputRequestSha256": "b3fc8d222b4bd99d7f63aa3ca6033929f5b306dc911828105ef7b681508aec47",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "020e1bc203bc8db10b5478a865ffb6f2b9542ace81494fb5f8324740ac06be68"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p05.png": "c0fa4c98a2a52ae27360f1a3b68210977f35515e6032756cb1206b397715ae53"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c270e17a1dbd9dc6565efd78ec73e424a194fad43b56d7f5237350cf0b316048",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第5頁、冊子頁「-2-」、T1−K 005）の問2本文と照合し、数値・単位・語句が一致する。確認した数値は電源電圧 定格12 V、静止状態の始動電流 4 A、定格電流 1 A、効率[%]。ただし書き（ブラシ電圧降下・電機子反作用は無視、損失は電機子巻線銅損のみ）も欠落や改変なく一致する。",
+        "選択肢: (1)80 (2)75 (3)70 (4)65 (5)60 が原図と完全に一致する。原図でも単位は付いていない。",
+        "公式正答: 令和7年度第三種電気主任技術者上期試験解答表の＜機械＞欄で、問2の解答は2、配点は5。manifest固定値 {question:2, part:null, answer:\"2\", points:5} と、候補の officialAnswer=\"2\"・scoringPoints=5 が一致する。",
+        "総合解説の検算: 静止時は逆起電力E=0なので、Rₐ=12/4=3 Ω。定格時の各値は以下のとおりで、すべて正しい。\n  - 入力 12×1=12 W\n  - 銅損 1²×3=3 W\n  - 出力 12−3=9 W\n  - 別解 E=12−1×3=9 V、出力 E×I=9 W で一致\n  - 効率 9/12=75 %\n永久磁石界磁のため電源電流＝電機子電流とした因果説明も妥当である。",
+        "誤答肢の理由を検算した。いずれも Rₐ=3 Ω と矛盾し、計算も正しい。\n  - (1) 80%: 出力9.6 W、損失2.4 W、Rₐ=2.4 Ω\n  - (3) 70%: 出力8.4 W、損失3.6 W、Rₐ=3.6 Ω\n  - (4) 65%: 出力7.8 W、損失4.2 W、Rₐ=4.2 Ω\n  - (5) 60%: 出力7.2 W、損失4.8 W、Rₐ=4.8 Ω",
+        "正答肢(2)の理由は総合解説と整合しており、正しい。",
+        "図: 原図に図はなく、解答に図は不要。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ: manifest固定値と一致する。\n  - fiscalYear=2025（令和7年度）、term=upper、examDate=2025-08-31、subject=machinery\n  - sourceQuestionPdfUrl=20250831_ch_third_q03.pdf、sourceAnswerPdfUrl=20250831_ch_third_a01.pdf\n  - reviewedFromPage=[5]\nsourceAttribution「令和7年度上期第三種電気主任技術者試験 機械科目 問2」も正しい。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。uncertainty=なし、needsReview=false と、監査結果は矛盾しない。"
+      ]
+    }
+  ]
+}

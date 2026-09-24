@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3518,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13510,
+      "webSearchRequests": 0,
+      "costUSD": 0.17870379999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2397,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e23ee7bb5c858046e95582eb70e869c988b870b8c72d2fe9e8fa96ecd6fbb49c",
+  "inputRequestSha256": "dd1e6ac7acb4d5a83fc7d9db65ecfcbf900e0e8f49524704b463b3c94130e536",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "cf1c7023a484afc3a483282c50330c66f2cff5540ee7e08481389e51eecba302"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p11.png": "07ccab2755f141106c264dce51995b89023cfa4999ab41a6344c3bcb79c7999d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "19d92cd4686ca39ccf85879d5a0c4d2ac7d97eb9fe4b7be17d74feebe4221f2b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図「問８ 架空送電線路の構成部品に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と候補questionが一致（「～」→「〜」の表記差のみ）。",
+        "選択肢(1)〜(5): 添付原図の全肢と候補choicesを一字ずつ照合し、文言・句読点に脱落や改変なし。",
+        "公式正答: 添付の公式解答表「令和７年度 第三種電気主任技術者上期試験解答」〈電力〉問８の解答は2、配点は5。manifest固定の公式正答単位 {question:8, part:null, answer:\"2\", points:5}、および候補の officialAnswer=\"2\"、scoringPoints=5 と一致。同表の他科目の問８（理論5／機械3／法規4）とは一致しないため、subject=power とも整合する。",
+        "総合解説: がいしは貫通破壊電圧がフラッシオーバ電圧より高くなるよう設計され、異常電圧による放電はがいし外部の空気中で起こる。内部が破壊されると絶縁が回復しない、という因果は正しく、(2)が誤りとする結論が公式正答と整合する。アークホーンの補足も正確。",
+        "肢(1): ACSRは中心の亜鉛めっき鋼線と周囲の硬アルミ線をより合わせた電線で、アルミの軽量性と引張強さの不足を鋼心で補う、とする理由は正しい。",
+        "肢(2): 誤りの理由は、内部の貫通破壊では絶縁が回復しないため外部フラッシオーバとなるよう設計される、というもので正確。",
+        "肢(3): ねん架は各相の作用インダクタンスと作用静電容量を平衡させるもので、ねん架鉄塔でジャンパ線により相配置を入れ替える、とする説明は正しい。",
+        "肢(4): 微風振動にはストックブリッジダンパ、ギャロッピングには相間スペーサやねじれ防止ダンパなどを用いる、とする説明は技術的に妥当で、肢を正しいとする判断と整合する。",
+        "肢(5): 架空地線は鉄塔頂部に張る遮へい線で、OPGW（光ファイバ複合架空地線）が通信線を兼ねる、とする説明は正しい。",
+        "図: 添付原図に図はなく、figureDescription「この問題に図はありません。」、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "出典頁: 添付原図のフッターは印刷頁「- 8 -」、管理番号「T1－D 011」。reviewedFromPage=[11] と矛盾しない。",
+        "officialReferenceUrls は空配列のため、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

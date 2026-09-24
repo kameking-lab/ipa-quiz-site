@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4169,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22394,
+      "webSearchRequests": 0,
+      "costUSD": 0.2627958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2266,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a2488952d66f1f9cd35b382c9fe092841546f05f0de0d13eb9227aadcb4123de",
+  "inputRequestSha256": "651d8e5645959ed3411ac439c914a410f5dba43fc69e33721048785a8d50bb72",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "4bc718262960cd13799c4eb8436b5fab45e73ba5a32177a2c8a8964422078ffa"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe",
+      "data/raw_pdfs/denken3/review/20250831/law/p05.png": "d0a3b0e702a7d10c4bc35d51d6ca370b4b1f76dda9b6e09b1edb93cdd0e162ac"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c98c3800e2485a6fe3ab2f0e50a30ac3808618cdda96a7241de506e92857a39c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[4,5]、sourceQuestionPdfUrl=…20250831_ch_third_q04.pdf、sourceAnswerPdfUrl=…20250831_ch_third_a01.pdf は、いずれもmanifestと一致する。sourceAttributionの「令和7年度上期」も2025年度上期と一致する。scoringPoints=6は公式解答表の法規問1の配点6と一致する。",
+        "問題文: 原図PDF第4頁（T1-H 004）の問1本文と照合した。第1段落（OCCTO、会員である小売電気事業者／一般送配電事業者／配電事業者／特定送配電事業者、(ア)で定めるところにより、(イ)に対し、相互に電気の供給をすることや電気工作物を共用することなどの措置、指示）は字句が一致する。第2段落（経済産業大臣、災害等により、公共の利益を確保するために特に必要があり、かつ適切であると認めるとき、(ウ)に対し、電気の供給を他のエリアに行うことなど、命ずる）も字句が一致する。第5頁（T1-H 005）の設問文「空白箇所(ア)〜(ウ)に当てはまる組合せとして，適切なものを…一つ選べ」も一致する。候補は「～」を「〜」と表記し段落を整形しているが、sourceAttributionの整形注記の範囲内である。",
+        "選択肢: 原図第5頁の表と5行×3列すべてを照合し、一致を確認した。(1)保安規程/会員/電気事業者、(2)保安規程/事業者/一般送配電事業者、(3)送配電等業務指針/特定事業者/特定自家用電気工作物設置者、(4)業務規程/事業者/特定自家用電気工作物設置者、(5)業務規程/会員/電気事業者。",
+        "公式正答: 公式解答表の＜法規＞問1は解答5・配点6である。候補のofficialAnswer=5と一致し、変更していない。",
+        "(ア)(イ): e-Gov（施行時点2025-04-01。法規冊子の注3にある令和7年4月1日現在の法令基準と一致）の電気事業法第28条の44第1項に「業務規程で定めるところにより、会員に対し、次に掲げる事項を指示することができる」とある。これにより(ア)=業務規程、(イ)=会員を確認した。問題文にある「相互に電気の供給」は同項第1号・第3号に、「電気工作物を共用」は第4号に対応する。解説の各号の要約とただし書（第1号は送電事業者、第2号は小売・発電・特定卸供給、第3号は送電・発電・特定卸供給である会員に指示不可）の記載も条文と一致する。",
+        "(ウ): 電気事業法第31条第1項に「経済産業大臣は…公共の利益を確保するため特に必要があり、かつ、適切であると認めるときは電気事業者に対し、次に掲げる事項を命ずることができる」とある。これにより(ウ)=電気事業者を確認した。第1号〜第5号とただし書の要約も条文と一致する。第2項は、特定自家用電気工作物設置者に対する「勧告」の規定であって「命令」ではない。この点の説明（肢3・肢4の誤りの理由）も条文と一致する。",
+        "解説冒頭の第28条の4（目的）の引用は、提示された条文と字句が一致する。",
+        "肢別解説: (1)は(ア)のみ誤り、(2)は(ア)(イ)(ウ)すべて誤り、(3)は(ア)(イ)(ウ)すべて誤り、(4)は(イ)(ウ)が誤り、(5)は全て正しい。各肢の誤りの箇所の特定は表と整合する。各誤答の理由もいずれも条文の文言に基づいており、事実の誤りはない。",
+        "図: 問1に回路図・図版はなく、選択肢表の内容はchoicesに全て収録されている。figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は妥当である。",
+        "officialReferenceUrls: 独立した主張（第28条の4、第28条の44、第31条の内容）はすべて、添付されたe-Gov施行時点2025-04-01の条文で検証済みである。未検証の主張はない。",
+        "uncertainty欄: 「電力広域的運営推進機関(OCCTO)」という名称と条文上の「広域的運営推進機関」との対応が条文の文言では確認できない、という記載である。この名称は候補が独自に主張したものではなく、原図の問題文に書かれた前提である。候補の解説も、名称ではなく要件・指示内容が第28条の44第1項と一致することから同項を特定しており、(ア)〜(ウ)と正答5はこの名称の対応に依存しない。よって外部確認事項には当たらないと判断し、needsReview=falseとの整合も確認した。"
+      ]
+    }
+  ]
+}

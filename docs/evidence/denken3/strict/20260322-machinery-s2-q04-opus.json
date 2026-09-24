@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2234,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13608,
+      "webSearchRequests": 0,
+      "costUSD": 0.1538078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 918,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b3e745f97278f46a1ca93fa872644439207453c61c0f6ebb842e1e74eb3a86ed",
+  "inputRequestSha256": "47ce846e581ff5ac1218ed9984b6258d028710e632f62feb7a270071f18618ce",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "5dfa9def5d64236826f5e16fb372fbb4865a89455e4256832e570e78d3e0612e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p07.png": "08169c166e028cfff1b070a3c500379cfbb104774835db3e0ea30117548a197e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "82bbc27ee4202160980cc221c64986a18e95e57e8c2b3c96210683a999978ff1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第7頁、印刷頁『- 4 -』、T2－K 007）の問4本文と照合し、候補の本文は一致している。照合箇所は、かご形三相誘導電動機、定格電圧でのY－Δ始動、始動トルク49.0 N・m、Δ結線での全電圧始動時（定格電圧）の始動トルクが定格運転時の210 %であること、定格運転時のトルクの値［N・m］を問うこと。差異は記号表記（−/－、·/・）の整形だけで、意味は変わらない。",
+        "選択肢: 原図の(1)16.3、(2)23.3、(3)28.3、(4)40.4、(5)70.0と候補のchoices 1〜5が完全に一致する。",
+        "公式正答: 公式解答表（令和７年度 第三種電気主任技術者下期試験解答）の＜機械＞問4は解答5・配点5である。候補のofficialAnswer=\"5\"、scoringPoints=5、manifestのq04 {answer:\"5\", points:5} と一致する。",
+        "総合解説の検算: Y結線時の相電圧は全電圧Δ結線時の1/√3である。同一すべり（始動時s=1）ではトルクが電圧の2乗に比例するので、Y−Δ始動トルクは全電圧始動トルクの1/3になる。T_s=49.0×3=147 N·m、T_n=147÷2.1=70.0 N·m。計算と因果関係はともに正しく、正答(5)と整合する。",
+        "誤答肢(1)の検算: 49.0÷3=16.33≒16.3。3倍すべきところを3で割り、210 %の関係も使っていない、という誤答理由は正しい。",
+        "誤答肢(2)の検算: 49.0÷2.1=23.33≒23.3。Y−Δ始動トルクを全電圧始動トルクに換算していない、という誤答理由は正しい。",
+        "誤答肢(3)の検算: 49.0÷√3=28.29≒28.3。トルク比を1/3ではなく1/√3とし、210 %の関係も使っていない、という誤答理由は正しい。",
+        "誤答肢(4)の検算: 49.0×√3÷2.1=84.87÷2.1=40.41≒40.4。換算係数を3ではなく√3とした、という誤答理由は正しい。",
+        "正答肢(5)の理由: 49.0×3=147、147÷2.1=70.0 N·m であり、正しい。",
+        "図: 原図の問4に図はない。figureDescriptionの『図はない』、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=machinery、reviewedFromPage=[7]、sourceQuestionPdfUrl=…/20260322_ch_third_q03.pdf、sourceAnswerPdfUrl=…/20260322_ch_third_a01.pdf の各値がmanifestと一致する。sourceAttributionの『令和7年度下期 第三種電気主任技術者試験 機械科目 問4』も公式解答表の表題と整合する。",
+        "参考URL: officialReferenceUrlsは空配列である。検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

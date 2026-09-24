@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5110,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17754,
+      "webSearchRequests": 0,
+      "costUSD": 0.24449579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2920,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "618483bb2ea1cd194b09c53917e938b5fbec8e6e09d648d219104386b31aea44",
+  "inputRequestSha256": "6d0101cc3414071bd1f9ccd519aaeb339e57d6af37d8ec5342eca41e418c361e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "09f5a7e8e8fd754b1a98c1e7bdd723e474a5ca5bcad9bb1aa77363e678f81b4d",
+      "q17b": "605bfbde8741893f9464db6b796638a4fa0a503afdc1bae43e94e6c51bd64db6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p20.png": "36d5835cf9cf7fbfe60e0dbea0e74aac99e127d7fe3920d1b413f7bff1033e25"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/power/20260322-power-q17-fig1.png": "314a001ab23942d5cff2a3917ab6dba490f998682a17965fc9c7f661f604339b"
+    },
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "960c15f04204b41d1b37e548f53283fff78a5b1c6e6183cc828689c7cb8cda1a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式解答表の表題は「令和7年度 第三種電気主任技術者下期試験解答」で、fiscalYear=2025・term=lower・examDate=2026-03-22・subject=power と一致する。問題原図の頁下部は「- 17 -」「T2-D 020」で、manifest の PDF 第20頁と reviewedFromPage=[20] は一致する。sourceQuestionPdfUrl・sourceAnswerPdfUrl も manifest と一致する。",
+        "問題文: 共通前文の要素はすべて原図と一致する。A点及びB点に負荷、三相3線式高圧配電線、電源側S点の線間電圧 6 600 V、1線当たりの抵抗及びリアクタンスがそれぞれ 0.3 Ω/km。(a) の設問文「S-A間に流れる電流の有効成分の値[A]として、正しいものを次の(1)〜(5)のうちから一つ選べ」も原図と一致する。",
+        "選択肢: (1)160、(2)240、(3)220、(4)200、(5)140 は原図の順序・数値と一致する。",
+        "公式正答: 公式解答表の電力・問17(a) は解答3・配点5。候補の officialAnswer=3、scoringPoints=5 と一致する。",
+        "総合解説の検算: A点負荷は 200×0.8=160 A、無効分 200×0.6=120 A。B点負荷は 100×0.6=60 A、無効分 100×0.8=80 A。S-A間の有効成分は 160+60=220 A で (3) となる。A・B両負荷がS-A区間より負荷側にあるという因果も図と整合する。位相差を無視する前提も明示されている。",
+        "誤答肢の検算: (1)160 はA点負荷の有効分のみ。(2)240 は 160+100×0.8。(4)200 は無効成分の和 120+80 で、A点負荷電流の大きさとも一致する。(5)140 は 60+80。いずれも算術は正しい。解説は「一致する」という表現にとどめ、出題意図とは断定していない。",
+        "図: 公開候補図は原図の配電線図を過不足なく切り出している。S・A・B の3点と黒丸、各区間の両矢印寸法線と「2 km」×2、A・B からの下向き矢印、「負荷電流 200A／力率(遅れ)0.8」「負荷電流 100A／力率(遅れ)0.6」がすべて一致する。公開候補図だけで (a) を解答できる。figureDescription も接続・向き・全ラベルと一致する。",
+        "officialReferenceUrls は空で、検証対象となる独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025・term=lower・examDate=2026-03-22・subject=power・reviewedFromPage=[20]・両PDF URL は manifest および原図の頁表記（T2-D 020）と一致する。",
+        "問題文: 共通前文は原図と一致する。(b) の設問文「B点における線間電圧の値[V]として、最も近いものを次の(1)〜(5)のうちから一つ選べ」も原図と一致する。",
+        "選択肢: (1)6 020、(2)5 770、(3)6 460、(4)6 130、(5)6 260 は原図の順序・数値と一致する。",
+        "公式正答: 公式解答表の電力・問17(b) は解答1・配点5。候補の officialAnswer=1、scoringPoints=5 と一致する。",
+        "総合解説の検算（区間インピーダンス）: 各区間は 2 km なので R=X=0.3×2=0.6 Ω。",
+        "総合解説の検算（電圧降下）: S-A 区間は √3×(0.6×220+0.6×200)=√3×252≒436.5 V。A-B 区間は √3×(0.6×60+0.6×80)=√3×84≒145.5 V。合計は √3×336≒582.0 V。",
+        "総合解説の検算（B点電圧）: V_B=6 600−582.0≒6 018 V で、最も近い選択肢は (1)6 020 となる。近似式 v≒√3(R I cosθ + X I sinθ) の適用も正しい。",
+        "誤答肢(2)の検算: √3×1.2×300+√3×1.2×100=√3×480≒831.4 V で、6 600−831.4≒5 769 V となり 5 770 に最も近い。別計算の √(220²+200²)≒297.3 A を用いた場合も、√3×1.2×297.3≒618.0 V と 207.8 V の合計から約5 774 V となり、やはり 5 770 に最も近い。",
+        "誤答肢(3)〜(5)の検算: (3) は 6 600−145.5≒6 454.5 で、最も近いのは 6 460。(4) は 6 600−436.5≒6 163.5 で、選択肢中最も近いのは 6 130（差33.5、6 260 との差は96.5）。(5) は 6 600−336=6 264 で、最も近いのは 6 260。いずれも記述どおりで、解説は出題意図を断定していない。",
+        "図: 公開候補図は原図と接続・向き・全ラベル・区間長が一致する。(b) に必要な区間長 2 km×2、負荷位置、電流、力率は公開候補図だけで読み取れる。figureDescription の「区間ごとの電流値は図に記されていない」も原図と一致する。",
+        "officialReferenceUrls は空で、検証対象となる独立主張はない。"
+      ]
+    }
+  ]
+}

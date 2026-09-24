@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4357,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14433,
+      "webSearchRequests": 0,
+      "costUSD": 0.2028678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2793,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d1a079b2c77f46c2c4bfae8633d3023e085a1d79978abefcf06c92f0a1b298c1",
+  "inputRequestSha256": "35a24a1720a4035b4e9162c1ba821adfb28841f5fc5267047a2d3b5ba25e300d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "c6fb5c40ed1b828f08ddbc1683e7fdac1805c5c296396cbb93ddaed04f0e98a9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p12.png": "ab88770aa5736f907e7488ea692b3f131dcc2dab065ab929ed90abdecaa6f8e1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q09-fig1.png": "dd4e9d188e96c1190a9b87c8f2605a1c2839862705d06fbba63718e325d9bbd6"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyフィールドの記述が候補JSON自身の内容と矛盾している。uncertaintyには「このページからは実施年度・回を特定できないため、出典の一次資料URLは記載していない」とある。一方でsourceQuestionPdfUrl／sourceAnswerPdfUrl（20250831_ch_third_q01.pdf／a01.pdf）、fiscalYear=2025、term=upper、examDate=2025-08-31、sourceAttribution「令和7年度上期…理論科目 問9」はすべて記入済みである。uncertaintyを実態に合わせて書き換えるか、年度・回の特定根拠を明記する必要がある。",
+        "年度・回（令和7年度上期）と科目・問番号・正答は、添付の公式解答表見出し「令和7年度 第三種電気主任技術者上期試験解答」の理論欄 問9と照合できる。ただし次の2点は添付資料では検証できないため、外部確認事項として残る：(a) examDate=2025-08-31 と両PDF URLのファイル名（問題原図にも解答表にも試験日・URLの記載がない）、(b) reviewedFromPage=[12] がPDFの12頁目であること（原図の印字頁は「- 9 -」で、表紙等を含めたPDF頁位置は単頁画像からは確定できない）。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図と全文一致。E=140 V、R₀[Ω]、X_L[Ω]、力率0.8、30 A、スイッチS、並列抵抗R[Ω]、82 A、「最も近いもの」「(1)～(5)のうちから一つ選べ」まで確認した。数値・単位・添字の誤りはない。",
+        "選択肢：(1)1.5 (2)2.3 (3)2.5 (4)2.9 (5)3.0 が原図と一致する。",
+        "公式正答：添付の公式解答表（令和7年度上期・理論）の問9は解答3・配点5で、manifest単位 {question:9, part:null, answer:\"3\", points:5}、候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "総合解説の検算：cosθ=0.8 から sinθ=0.6。I_p=24 A、I_q=18 A（遅れ）。理想電圧源なので、Sを閉じても負荷電流は不変。I_R は電源電圧と同相で、有効分にのみ加算される。(24+I_R)²+18²=82² → (24+I_R)²=6400 → I_R=56 A → R=140/56=2.5 Ω。計算・因果とも正しい。",
+        "参考値の検算：|Z|=140/30≒4.667 Ω、R₀≒3.733 Ω、X_L=2.8 Ω。正しい。",
+        "各肢の検算：(1) I_R≒93.33 A、I≒√(117.33²+18²)≒118.7 A。(2) I_R≒60.87 A、I≒86.8 A。(3) I_R=56 A、I=√6724=82 A。(4) I_R≒48.28 A、I≒74.5 A。(5) I_R≒46.67 A、I≒72.9 A。いずれも候補記載値と一致し、正答肢・誤答肢それぞれの固有の理由として妥当である。",
+        "公開候補図：原図の回路部分と照合した。交流電源 E=140 V、上下の接続点の黒丸、枠内の R₀ と X_L の直列（上から R₀、X_L の順）、枠左の「力率 0.8」、枠右の縦書き「誘導性負荷」、上側導線上の開いたスイッチS、右枝の R[Ω] まで、全ラベルと接続・向きに欠落・切れ・改変はない。図単体で回路構成を理解できる。",
+        "figureDescription：接続関係、S の位置と開状態、ラベル配置（「力率0.8」と「誘導性負荷」は枠の外側左右）の記述が原図・公開候補図と一致する。",
+        "officialReferenceUrls は空配列で、独立主張の検証対象はない。"
+      ]
+    }
+  ]
+}

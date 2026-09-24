@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2645,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14190,
+      "webSearchRequests": 0,
+      "costUSD": 0.1666838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1307,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4784124c40aba2878a2444e99b91d5627429844c012c5c9f9e7c7d9ce072204f",
+  "inputRequestSha256": "c2729799a9df1bebe906a56b674053268e4650493d60c45eb71bbbfad0716a61",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "24a196604b9ed9827ff0ef21c3b63cc3927ea52e15613f91490da01eff4c5f72"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p05.png": "0bdccad05e205f9085e15fbdca7c9016263d02ca04d2ee2feac995c0b5018d3b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "e7ec82631490ca53cc72fca622cf5fd252fdb8243298d6500a584abacb476fe3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: manifestは2024年度上期・試験日2024-08-18・電力科目。問題PDF=20240818_ch_third_q02.pdf、解答PDF=20240818_ch_third_a01.pdf、原図はPDF第5頁（冊子の印刷頁番号は「-2-」、T1−D 005）。候補のfiscalYear=2024・term=upper・examDate=2024-08-18・subject=power・sourceQuestionPdfUrl・sourceAnswerPdfUrl・reviewedFromPage=[5]はいずれも一致する。sourceAttribution「令和6年度上期 電力科目 問2」も一致する。",
+        "問題文: 総落差200 m、ポンプ水車・発電電動機1台、流量100 m³/s（揚水・発電共通）、損失水頭は総落差の2.5 %、ポンプ効率・水車効率85 %、発電効率・電動機効率98 %、損失水頭と4種の効率は一定、という条件を原図と照合した。設問文も含め、数値・単位・条件の欠落や改変はない。",
+        "選択肢: 原図の表（電動機入力[MW]／発電機出力[MW]）を照合した。(1)235/163、(2)235/159、(3)241/163、(4)241/159、(5)229/167 の全5行が候補choicesと一致する。単位MWも各肢に正しく付されている。",
+        "公式正答: 公式解答表（令和6年度上期・電力）の問2は4。候補のofficialAnswer=\"4\"と一致する。",
+        "正答の検算: 損失水頭は200×0.025=5 m。揚水時の全揚程は205 m で、水動力は9.8×100×205=200,900 kW=200.9 MW。これを0.85で割ると236.35 MW、さらに0.98で割ると241.18 MW となり、≒241 MW。発電時の有効落差は195 m で、水動力は9.8×100×195=191,100 kW=191.1 MW。これに0.85を掛けると162.435 MW、さらに0.98を掛けると159.19 MW となり、≒159 MW。よって(4)。総合解説の計算値・因果（揚水は損失を加算、発電は損失を減算）はすべて正しい。",
+        "誤答肢の理由の検算（総落差200 mを使った場合）: 揚水時は9.8×100×200=196 MW を0.85、0.98で順に割って235.29 MW となり≒235。発電時は196×0.85×0.98=163.27 MW となり≒163。(1)(2)(3)の235/163の由来説明は正しい。(2)の159、(3)の241が正値と一致するという記述も正しい。",
+        "誤答肢(5)の理由の検算（揚程と落差を逆にした場合）: 揚程を195 mとすると191.1 MW を0.85、0.98で割って229.41 MW となり≒229。落差を205 mとすると200.9×0.85×0.98=167.35 MW となり≒167。損失水頭の加減を逆にしたという説明は数値的に正しい。",
+        "図: 原図は図を含まず、選択肢表のみ。figureDescription「図はなく表のみ」は正確で、figureUrls=[]・choiceFigureUrls={}で解答に支障はない。表の内容はchoicesに完全に転記されている。",
+        "参考URL: officialReferenceUrls=[]で、外部の独立主張がないため追加の検証事項はない。"
+      ]
+    }
+  ]
+}

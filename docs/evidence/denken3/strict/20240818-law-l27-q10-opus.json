@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 5439,
+      "cacheReadInputTokens": 303718,
+      "cacheCreationInputTokens": 27866,
+      "webSearchRequests": 0,
+      "costUSD": 0.39246759999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3402,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b1d883b228cb1b8effe2fd1eada79f0be813c56c5868638bca01922538ddb8fc",
+  "inputRequestSha256": "46ebac9e6c4d3dc37fa8d2745966f8f28554b47adef3745a448a4986105fa80d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "700bdbaf21a9b81043378f4937ecd57c6a230ecd52be07cc7485e67ac742cc01"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p16.png": "2ec70f87bfb0acb5efb980b29067515c029c9b622e37a5bb13ce0d69d1ac535c"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/law/20240818-law-q10-sog-network.png": "51db79a33946f23040bbe3af8c748cbde176545c3dfb655568d30b666d51a454"
+    },
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "645fce39114d52abdbc2a3630bb35d137618e4f31628a2adb8c76f40542005aa",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+      "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+      "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付した公式問題原図（印刷頁 -13-、帳票コード T1−H 016）と照合した。本文、分散型電源が無いという条件、SOG機能付PASの定義（過電流蓄勢トリップ付地絡トリップ形トリップ装置付過電流ロック形高圧気中負荷開閉器）が一致する。句読点を「，」から「、」に変えたこと、太字の✕記号を「×印」と書いたことは表記上の整形で、意味は変わらない。reviewedFromPage=[16] は原図フッターの「016」と矛盾しない。",
+        "選択肢(1)〜(5)：五つとも公式原図と一語一句一致する。(4)の「(Bは開路しない。)」と(5)の「(Aは開路しない。)」の括弧書きも含めて一致する。",
+        "公式正答：試験センター解答表で、令和6年度上期・法規・問10の正答は1。候補の officialAnswer=1 と manifest の固定値 answer=1 の両方と一致する。",
+        "図：公開候補図は公式原図の単線結線図を切り出したもので、記号とラベルが漏れなく残っている。左から、配電用変電所送り出し遮断器（×記号と開閉器記号、矢印A）、一点鎖線の境界（左が一般送配電事業者側、右が自家用設置者側）、3φ3W・6.6kV の表示、区分開閉器（SOG機能付PAS）（○記号と開閉器記号、矢印B）、太字✕の短絡事故点、主遮断器の順に並ぶ。接続の順序と向きは原図と一致する。解答に必要な位置関係、すなわち事故点がBの負荷側かつ主遮断器の電源側にあることは、公開候補図だけで読み取れる。figureDescription の並び順と線路表示の記述も正しい。",
+        "総合解説の因果：分散型電源が無いので、事故点へ流れ込む短絡電流はA→Bの経路だけを通り、主遮断器には流れない。したがって主遮断器では遮断できない。Bは負荷開閉器で、過電流ロック機能により通電中は開路しないので、上位のAが先に遮断する。Aの開路で配電線の電圧が消えると、Bは蓄勢しておいたトリップで開路し、事故区間を切り離す。そのうえでAが再閉路して健全区間の送電が戻る。この流れは筋が通っており、選択肢(1)と一致する。",
+        "公式参考資料①：経済産業省九州産業保安監督部 R2 電気事故資料の PDF 第9頁（添付原頁）で、「地絡継電器の過電流蓄勢動作（SO）により区分開閉器は正常に開放動作し、電力会社配電線の再閉路は成功した」という記述を確認した。解説の「B開路→Aの再閉路で健全区間が復旧する」を裏付ける。",
+        "公式参考資料②：四国産業保安監督部の講習資料 PDF 第124頁（添付原頁、戸上電機製作所のスライド）で、「過電流事故時（ロック電流値以上の事故電流）：電力側変電所の動作により配電線路が停電して電圧がなくなると、PASは自動的に開放し、事故点を切り離す。（配電線は一度は停電）（SO動作）」という記述と、SOG＝過電流蓄勢トリップ付地絡トリップ形という対応を確認した。解説と各肢の理由のうち「A先行開路」「電圧消失後のB開路」「過電流ロック」はこの頁で検証できる。この資料は出題後の公開だが、uncertainty 欄にその旨が正しく書かれている。",
+        "各肢の理由：(2)はBが先に開路するとしているが、過電流ロックにより通電中はBが開路できないので順序が逆で誤り。(3)は同時開路としているが、Bは電圧消失を待って開路するため時間差があり誤り。(4)はBが開路しないとしているが、SO動作ではBが開路して事故区間を切り離すので誤り。(5)はBだけが開路しAは開路しないとしているが、Bは通電中に開路できず、短絡電流はAを通るのでAの過電流保護が動作するため誤り。いずれも各肢に固有の理由で、正しい。(4)の説明にある「再閉路したときに事故区間が残っていればAが再びトリップする」は、永久事故を前提とした補足としてとして妥当である。",
+        "用語：解説中の「トリップ用エネルギーを蓄えておき」は、問題文自身が定義する「過電流蓄勢トリップ」の語義（蓄勢＝勢いを蓄える）を言い換えたものである。公式参考資料の外にある独立した主張には当たらないと判断した。"
+      ]
+    }
+  ]
+}

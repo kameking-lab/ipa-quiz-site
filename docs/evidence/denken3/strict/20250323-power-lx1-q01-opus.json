@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3492,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13559,
+      "webSearchRequests": 0,
+      "costUSD": 0.1785758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2083,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d0d0758e4858c49aa48240fe01f1578f5ab749d1cd736268416e1dd24a3eab41",
+  "inputRequestSha256": "e4287ab36848eb1891bdd064910a7940c72323707ad290f30da56c7bf7663488",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "9b2347b8e4b77112205eecb637c0716d70387a025faab91ea941511887f37978"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p04.png": "0ee65124f19f5da1b3b5cbb4a0e1fb30e23eee3c893f9620cdfce9bf95ee8142"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "dec1fc8f040da0d081293d374bbb5d81bc964c442bcfc5ad9cd4f35fe93b9cd6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の『問題文の(3)は結線の組合せが逆になっている』は、指す対象が問題文（柱書）か選択肢かで紛らわしい。誤っているのは選択肢(3)の記述なので、『選択肢(3)の記述は結線の組合せが逆になっている』のように修正すること。技術内容（発電機側Δ・系統側Y、中性点接地による絶縁低減、Δ結線内での第3調波電流の循環）自体は正しい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に『政府の一次資料URLは特定できていない』という未解決事項が残っているが、needsReview=false と矛盾する。本問の一次資料は試験センター公式の問題PDF（第4頁）と解答PDFであり、どちらも照合済みで、officialReferenceUrls も空なので未確認の独立主張はない。この一文は削除し、『問題文・選択肢・正答は試験センター公式PDF（問題PDF第4頁、解答PDF電力問1）と照合済み。解説は公式解説ではなく一般的な電力工学知識に基づく』という内容に改めること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（PDF第4頁、冊子ノンブル -1-、T2-D 004）の問1柱書『水力発電に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。』と一字一句一致。",
+        "選択肢(1)〜(5)：原図と全文一致。(3)の『発電機側にY結線，系統側にΔ結線』も原図どおりで、極性・結線の転記誤りはない。",
+        "公式正答：解答PDF『令和6年度 下期 第三種電気主任技術者試験解答』の電力・問1＝3。manifest の answer=\"3\" と候補の officialAnswer=\"3\" が一致。",
+        "メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl／sourceAnswerPdfUrl、reviewedFromPage=[4]（manifest 指定の PDF第4頁）はすべて manifest と一致。sourceAttribution の『令和6年度下期 電力科目 問1』も正しい。",
+        "正答の理由：昇圧用の主変圧器は発電機側Δ・系統側Yが一般的。Y側の中性点を接地すると段絶縁で絶縁を低減でき、Δ巻線内で第3調波励磁電流が還流するので誘起電圧のひずみを抑えられる。したがって(3)は結線が逆で誤り。解説のこの記述は正しい。",
+        "誤答肢(1)：AVRが励磁を調整して端子電圧を、調速機（ガバナ）が流入水量を調整して回転速度（周波数）を制御する。記述は正しく、解説も妥当。",
+        "誤答肢(2)：カプラン水車は可動羽根をもつプロペラ水車で、流量に応じて羽根角度を調整するため部分負荷でも効率が落ちにくい。記述は正しく、解説も妥当。",
+        "誤答肢(4)：ペルトン水車はノズルからの噴流をバケットに当てる衝動水車。記述は正しく、解説も妥当。",
+        "誤答肢(5)：N=120f/p [min⁻¹] より、同じ周波数では低速の水車発電機ほど磁極数pが多くなる。記述は正しく、式・単位・因果関係の説明も正しい。",
+        "図：原図に図表はなく文字だけで解ける問題なので、figureUrls=[]・choiceFigureUrls={}・figureDescription の内容は妥当。"
+      ]
+    }
+  ]
+}

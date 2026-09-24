@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5717,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14906,
+      "webSearchRequests": 0,
+      "costUSD": 0.2338518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3625,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7ac76ba56d4ba1b23f2d0c6136f76f7ecc797a297f00b4e6ab3570cf82200620",
+  "inputRequestSha256": "0971984abab5336bdba54bb7923e7c96c8a5b65fe796511716ea0803b2328dac",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "bf47b5a84b85d74e8dfbe214cc99147c0b29dfca4c3edc95e109b0247eec31eb",
+      "q15b": "c189968f95303734c3ae09aaf946966aedc3cc6fc9be7c5894224f661140b555"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p18.png": "4db0ed6265b5436b600bfe69ed973f943759b30daa8de2dabd2aa7a608640e55"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "65233ca3687c0be05d2a0300582d1c22d9588b5d22ba50390b5f2837e8d36978",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「掲載ページからは実施年度・回を特定できない」は、同じ候補の fiscalYear=2025・term=upper・sourceAttribution「令和7年度上期」と矛盾する。年度・回は添付の公式解答表見出し「令和7年度 第三種電気主任技術者上期試験解答」で確認できる。問題原図のフッター「T1－K」と sourceQuestionPdfUrl の q03 も機械科目と整合する。uncertainty欄を修正すること。修正例：「年度・回は公式解答表見出しで確認済み。examDate 2025-08-31 は公式PDFのファイル名(20250831)に基づく。本問には外部参照を要する独立主張がないため officialReferenceUrls は空」。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・機械）で問15(a)の解答は4、配点は5。manifest固定の公式正答 answer=4, points=5 と一致し、候補の officialAnswer=4、scoringPoints=5 とも一致する。",
+        "問題原図（印刷頁「- 15 -」、フッター「T1－K 018」）と照合し、問題文は語句・記号まで一致した（r₂′/s、r₁、x₁、x₂′、電圧V、トルクT、滑りs、「ただし，kは定数である。」）。",
+        "選択肢(1) T=k/(Vs)、(2) T=k/(V²s)、(3) T=kV²/s、(4) T=kV²s、(5) T=kVs は原図と一致した。",
+        "総合解説を検算した。I₂′≈(V/√3)/(r₂′/s)=Vs/(√3r₂′) より P₂=3I₂′²(r₂′/s)=V²s/r₂′ となり、T=P₂/ω₀=kV²s は正しい。",
+        "誤答肢(3)の理由を検算した。r₂′/s≪x₁+x₂′ ならば I₂′ は s にほぼ依存しない。r₁ は定数なので分母は一定となり、P₂∝V²/s となる。記述は正しい。",
+        "誤答肢(1)(2)(5)の理由（V・s への依存の向きと、電流2乗による電圧2乗依存）は妥当である。",
+        "原図に図はない。figureDescription「図なし」、figureUrls=[] は正しい。",
+        "reviewedFromPage=[18] は、原図フッターの「018」（印刷頁は15）と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "誤答肢(4)の解説は「滑り0.0908に相当し一致しない」とだけ述べており、この肢に固有の誤りの理由を示していない。1091 min⁻¹ は 1200×(200/220)≈1091 と一致する。つまり「同期速度（回転速度）が電圧に比例する」と誤解したときの値である。同期速度は周波数と極数で決まり、電圧に依存しない。この点を理由として明記すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「掲載ページからは実施年度・回を特定できない」は、fiscalYear=2025・term=upper・sourceAttribution「令和7年度上期」と矛盾する。年度・回は公式解答表見出し「令和7年度 第三種電気主任技術者上期試験解答」で確認できる。examDate 2025-08-31 の根拠は公式PDFのファイル名(20250831)である。これらを明記するよう修正すること。"
+      ],
+      "verifiedEvidence": [
+        "公式解答表（令和7年度上期・機械）で問15(b)の解答は2、配点は5。manifest固定の公式正答 answer=2, points=5 と一致し、候補の officialAnswer=2、scoringPoints=5 とも一致する。",
+        "問題原図と照合し、問題文は一致した（定格電圧220 V、同期速度1 200 min⁻¹、220 V・一定トルクで1 140 min⁻¹、200 Vに下げたときの回転速度、負荷トルクと二次抵抗は不変）。冒頭の〔(a)の条件〕は括弧で区別した補足であり、原文の改変ではない。",
+        "選択肢(1)1150、(2)1127、(3)1113、(4)1091、(5)1000 は原図と一致した。",
+        "総合解説を検算した。s₁=(1200−1140)/1200=0.05、s₂=0.05×(220/200)²=0.05×1.21=0.0605、N₂=1200×0.9395=1127.4≈1127 min⁻¹ となり、正答(2)である。s₂=0.0605 でも r₂′/s は十分大きく、(a)の近似条件を保つ。",
+        "誤答肢(1)を検算した。0.05×(200/220)²≈0.0413 から N≈1150.4 となる。(1200−1150)/1200≈0.042 であり、比を逆にした誤りという説明は正しい。",
+        "誤答肢(3)(4)(5)の滑り換算を検算した。87/1200≈0.0725、109/1200≈0.0908、200/1200≈0.167 はいずれも正しい。",
+        "原図に図はない。figureDescription「図なし」、figureUrls=[] は正しい。",
+        "reviewedFromPage=[18] は、原図フッターの「018」（印刷頁は15）と整合する。"
+      ]
+    }
+  ]
+}

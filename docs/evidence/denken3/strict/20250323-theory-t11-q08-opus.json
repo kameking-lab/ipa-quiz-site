@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2864,
+      "cacheReadInputTokens": 294553,
+      "cacheCreationInputTokens": 16900,
+      "webSearchRequests": 0,
+      "costUSD": 0.25140660000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1295,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bc85202a8862a5d8054f5d3a918a21a98d5b0b705dd3f6379d9bd9015ac6238b",
+  "inputRequestSha256": "3284083d9443e8fb6dd1110396a1f45dd998396f76b466758e860fc9b34ad8f0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "d656244ee23589af75bcff6b2f6c95ebf10aa17df4abf26ca81e6aa5371946bb"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p11.png": "3acc5c70774343b05d13aeb0f019bb01c639a043dd42eefdcea01fbd99944e40"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q08-ac-source-sum.png": "c47c6665ada5a2536cf751b2baea900e89f599a539a5f3054903633cbd325c5e"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official original (問8, printed page -8-, T2-R 011). The wording matches, including e₁[V], e₂[V], the series connection, the combined voltage v[V], blanks (ア) to (ウ), 'the maximum value of e₁', 'with e₁ as the reference' and [rad]. Only the punctuation was reformatted. The formulas for e₁ and e₂ appear only in the figure, and the published candidate figure includes them.",
+        "Choices (1) to (5): checked against the original table. (1) 1/2, π/3, leading; (2) 1+√3, π/6, lagging; (3) 2, π/3, leading; (4) √3, π/6, lagging; (5) 2, 2π/3, leading. All match exactly.",
+        "Official answer: officialAnswer='3' matches the manifest-pinned answer unit {question: 8, part: null, answer: '3'}.",
+        "Recalculation: take ωt+θ as the reference. Then e₁ = E∠0 and e₂ = √3E∠(π/2), so v = E(1 + j√3). The magnitude is √(1+3)·E = 2E, which gives (ア)=2. The angle satisfies tan φ = √3 with a positive real part and a positive imaginary part, so φ = π/3, which gives (イ)=π/3 and (ウ)=leading. Therefore v = 2E sin(ωt+θ+π/3), which matches the official answer (3).",
+        "Polarity assumption: the original figure has no polarity marks (+/−) on either source, and v is drawn as a double-headed arrow. The explanation states the premise v = e₁ + e₂ explicitly, and that premise is the only reading consistent with the official answer. It is not a candidate error.",
+        "Choice explanations: (1) Correctly identifies only (ア) as wrong and correctly says (イ) and (ウ) are right. (2) The reason 1+√3 is wrong is correct: it is a simple sum of maximum values, not valid for a π/2 phase difference. The point that π/6 lagging is wrong is also correct. (3) The reason it is correct is right. (4) Correct that √3 is the ratio of the maxima of e₂ and e₁, and that π/6 lagging is wrong. (5) Correctly identifies only (イ) as wrong. tan(2π/3) = −√3, and an angle of 2π/3 would need a negative real part, which contradicts the phasor 1 + j√3 (positive real and imaginary parts).",
+        "Figure: compared the published candidate figure with the original. Both show two AC sources (〜) connected vertically in series, with e₁ = E sin(ωt+θ) [V] on the upper source and e₂ = √3E sin(ωt+θ+π/2) [V] on the lower source. v[V] is shown as a double-headed arrow between the two open terminals (○) on the right. All connections, orientations and labels match, with nothing missing or added. The question can be understood from the published figure alone.",
+        "figureDescription: its content matches the original figure, including the absence of polarity marks.",
+        "Source: officialReferenceUrls is an empty array, so there are no independent claims needing verification. reviewedFromPage=[11] is the PDF page number; the printed page number on the original is 8. The difference is consistent with front matter (cover and instructions), and nothing contradicts the attached original. The attribution (2024 lower session, theory 問8) matches examDate 2025-03-23."
+      ]
+    }
+  ]
+}

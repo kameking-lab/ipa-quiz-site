@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8040,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 33568,
+      "webSearchRequests": 0,
+      "costUSD": 0.4296078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5736,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3c3db6f03eeaa07a4f55fddc6479c8ae68bda5e068e5c93b7ad8c3dc2eab1161",
+  "inputRequestSha256": "6ed86040dd50e910b8684e005b9f7091123db6524783b8d5bf827d768384706c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13a": "b3d13535e5463d0b587592b3593c69e60c7fa829cc6acfddb17e4c99ec3fda28",
+      "q13b": "db7ab419226a13e1d11925a371e86ee54112b385cf35e52b02e040302250c185"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p17.png": "56357ad9495c336b7b7f24020c5fed69f0664c2c900e1c3ab508644cdf75f6fa"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "2ff25859c4a63808bb9cb23ac40b7ea1eeeee8b5196deeec714539ccafe2bd5f",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13a",
+      "questionNumber": 13,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の因果が不正確。現行文は「最大使用電圧は6 900 V（7,000 V以下）で、50 Hzの交流電源を使用するので試験電圧 = 1.5 × 6 900」としており、1.5倍になる理由を試験電源が交流であることに置いている。15-1表で行を決めるのは『電路の種類』（交流の電路／直流の電路）である。試験電源が交流であることは行選択の根拠にならない。7,000 V以下の直流の電路でも交流電源で試験する場合は『1倍の交流電圧』になるので、現行の因果は一般には成り立たない。試験電源が交流であることの役割は、第二号（ケーブルの場合の15-1表試験電圧の2倍の直流電圧）ではなく第一号の交流試験を適用することにある。修正案：『本問の高圧電路は受電電圧6 kVの交流の電路で、最大使用電圧は6 900 V（7,000 V以下）である。50 Hzの交流電源で試験するので第一号が適用され、15-1表「最大使用電圧が7,000 V以下の電路・交流の電路」の「最大使用電圧の1.5倍の交流電圧」から V = 1.5 × 6 900 = 10 350 V』"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図（ページ番号 -14-、T2－H 017）と照合した。受電電圧6 kV、契約電力500 kW、50 Hz、最大使用電圧6 900 V、3線一括対地静電容量0.2 μF、(a)の設問文がすべて一致する（句読点の整形のみ）。",
+        "選択肢：(1)0.32 (2)0.43 (3)0.54 (4)0.65 (5)0.71 が原図と一致する。",
+        "公式正答：公式解答表〈法規〉問13(a)=4 が候補の officialAnswer=4 と一致する。",
+        "計算：2π×50×0.2×10⁻⁶ = 6.2832×10⁻⁵ S。×10 350 V = 0.6503 A で、(4)が最も近い。",
+        "誤答肢の検算：(1) 0.32/6.2832×10⁻⁵ ≒ 5 093 V、6 900倍率では約0.738倍で、15-1表のどの倍率とも一致しない。(2) 6 900 V → 0.4335 A。(3) 8 625 V → 0.5419 A。(5) 0.71/6.2832×10⁻⁵ ≒ 11 300 V ≒ 1.638倍、0.71/0.650 ≒ 1.092（約9 %大）。いずれも記載どおり。",
+        "解釈原文：PDF第1頁の改正履歴最終行「改正 20241004保局第1号 令和6年10月22日付け」を確認した。第24頁末尾で第15条の見出し【高圧又は特別高圧の電路の絶縁性能】と柱書を確認した。第25頁で第一号（15-1表の試験電圧を電路と大地との間に連続して10分間）、第二号（ケーブル交流電路は2倍の直流電圧）、15-1表（7,000 V以下の交流の電路は1.5倍の交流電圧、直流の電路は1.5倍の直流電圧又は1倍の交流電圧、7,000 V超60,000 V以下の上記以外は1.25倍で10,500 V未満は10,500 V）を確認した。第26頁で16-1表（7,000 V以下は1.5倍、500 V未満は500 V、試験方法※1）を確認した。解説・各肢理由の引用はすべて原文と一致する。",
+        "図：原図ページに図はない。figureDescription『図なし』および figureUrls=[] は適切。"
+      ]
+    },
+    {
+      "unitKey": "q13b",
+      "questionNumber": 13,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図と照合した。共通本文と、(b)『この試験に使用する試験装置に必要な容量[kV·A]の値として、最も近いのは次のうちどれか。』が一致する。",
+        "選択肢：(1)3 (2)5 (3)7 (4)9 (5)11 が原図と一致する。",
+        "公式正答：公式解答表〈法規〉問13(b)=3 が候補の officialAnswer=3 と一致する。",
+        "計算：P = 10 350 V × 0.6503 A ≒ 6 731 V·A ≒ 6.73 kV·A。ωCV² = 6.2832×10⁻⁵ × 10 350² ≒ 6 731 V·A でも同値。10 350 × 0.65 = 6 727.5 V·A ≒ 6.73 kV·A。(3) 7 kV·A が最も近い。",
+        "誤答肢の検算：(1) 6 900 × 0.4335 ≒ 2 991 V·A。(2) 8 625 × 0.5419 ≒ 4 674 V·A。(4) 9 000/10 350 ≒ 0.870 A、|9 − 6.73| ≒ 2.27。(5) 11 000/10 350 ≒ 1.063 A、1.063/0.650 ≒ 1.64倍。いずれも記載どおり。",
+        "解釈原文：15-1表（PDF第25頁、7,000 V以下の交流の電路は1.5倍の交流電圧、7,000 V以下の直流の電路は1.5倍の直流電圧又は1倍の交流電圧、1.25倍は7,000 V超の区分）と16-1表（PDF第26頁、7,000 V以下は1.5倍）を原文で確認した。解説・各肢理由の規定引用は正確。",
+        "uncertainty 欄の改正範囲（作業者メモ）は未検証と明示されており、解答根拠には使われていない。解答根拠は施行版本文の15-1表・16-1表で直接確認できるため、残る外部確認事項はない。",
+        "図：原図ページに図はない。figureDescription『図なし』および figureUrls=[] は適切。"
+      ]
+    }
+  ]
+}

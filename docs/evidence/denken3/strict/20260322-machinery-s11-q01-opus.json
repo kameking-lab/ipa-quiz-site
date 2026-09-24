@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4710,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16746,
+      "webSearchRequests": 0,
+      "costUSD": 0.2284318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3045,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "29a52c53102e3a4703563265c6f74af1a4f60ccab70355b1bd16edbf0b0d7cfb",
+  "inputRequestSha256": "5b2773452fb2d0ec36c2a447a743e7452f7df8f5c000f5a07b21c59ffa7a51df",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "f530e851931fd1810911f0336b9a8931736b34defc8abf3ffbac327c04ee38b5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p04.png": "884246d34d90d44d6195fd268503ed99ba93288c87403fca4844370d1e945797"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q01-fig1.png": "41f349c14a80838e35591bec17866a5c5ba02b692b596d46bb9dc0f9fcb55546"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "10d5afd93743aa0b59bdfdafbe9472a9d67618ae102f53b59f5e2154710369a5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図（機械冊子 -1- 頁、T2-K 004）の問1本文と一字一句照合した。ただし書き（負荷電流＝電機子電流＋界磁電流、I₀＝無負荷電流、端子電圧・界磁調整器抵抗一定）も含めて一致する。表記差は「～」→「〜」、I0→I₀ の整形のみで、意味の差はない。",
+        "出典メタデータ：解答表の表題「令和7年度 第三種電気主任技術者下期試験解答」から、fiscalYear=2025（令和7年度）・term=lower・examDate=2026-03-22・subject=machinery・sourceAttribution と整合する。問題PDF・解答PDFのURLは manifest と一致する。reviewedFromPage=[4] は manifest の原図頁 PDF第4頁と一致する（冊子内ノンブル -1- とは別物であることを確認済み）。",
+        "公式正答：解答表＜機械＞問1の解答は 5、配点は 5。候補の officialAnswer=\"5\"・scoringPoints=5 と一致する。",
+        "選択肢：原図(1)〜(5)の曲線形状とラベルを照合し、候補 choices の文章記述と全肢一致することを確認した。(1) T が減少、n が I₀ から直線上昇して飽和。(2) (1)のラベルを入れ替えたもの。(3) n が双曲線状に減少、T が I₀ から下に凸で急上昇。(4) T がほぼ水平でわずかに下降、n が I₀ から直線上昇して飽和。(5) (4)のラベルを入れ替えたもの。",
+        "公開候補図：原図の選択肢グラフ部分と照合した。5枚の配置（上段3・下段2）、縦軸ラベル「トルク T，回転速度 n」、横軸ラベル「負荷電流」、I₀ の位置、曲線ラベル T/n の位置、(1)〜(5)の番号がすべて原図と一致する。欠落・反転・ラベルの取り違えはない。公開候補図だけで解答に必要な情報が揃っている。",
+        "figureDescription：各図の曲線形状、交点位置（(1)(2)は中央付近、(3)は右寄り、(4)(5)は右端付近）、I₀ が縦軸との交点よりわずかに右にあることを原図・候補図の両方で確認した。記述は正確である。",
+        "速度特性：分巻電動機は I_f=V/R_f が一定なので Φ もほぼ一定である。n=(V−R_a·I_a)/(K₁Φ) となり、R_a·I_a ≪ V のため速度はほぼ一定でわずかに低下する。この点を確認した。",
+        "定数関係：E·I_a=T·ω に E=K₁Φn、T=K₂ΦI_a を代入すると K₁n=K₂ω となる。n[s⁻¹] では ω=2πn より K₁=2πK₂、n[min⁻¹] では ω=2πn/60 より K₁=(2π/60)K₂ となる。どちらも正しいことを検算した。",
+        "トルク特性：無負荷時の電機子電流 I₀−I_f による発生トルク K₂Φ(I₀−I_f) が損失トルクに等しいとすると、軸トルクは K₂Φ(I_a−(I₀−I_f))=K₂Φ(I−I₀) となる。I₀ で 0 から直線的に増加する説明と、図の T が I₀ で 0 から始まる形状が整合することを検算した。大電流域の傾きの鈍化を電機子反作用による減磁で説明している点も妥当である。",
+        "誤答肢の理由：(1) T が減少する点と、n が I₀ で 0 から始まる点がどちらも分巻特性に反する。(2) 大きく低下する速度特性は直巻電動機の特性である。(3) Φ∝I_a から T∝I_a²、n∝1/I_a となり直巻電動機の特性全体に当たる。(4) 曲線形状は正しいがラベルが逆である。いずれも肢固有の理由として正確である。(5) の正答理由も解説本文と一致する。",
+        "外部参照：officialReferenceUrls は空配列であり、検証を要する独立主張はない。uncertainty=\"なし\"、needsReview=false は監査結果と矛盾しない。"
+      ]
+    }
+  ]
+}

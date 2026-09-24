@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5025,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 20295,
+      "webSearchRequests": 0,
+      "costUSD": 0.29087280000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3509,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "052aa4584f2ccd01989f49389c173b490de48989077e42ff1b3c23dd7131d4ad",
+  "inputRequestSha256": "b7216e09d921b51736419e48684ef9580cfb68529d483f870dc14e4eca2dbb76",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "eb944c6683ee804f494b1b2696cc697c84d59430a40f331650b31967c96b7a21"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p20.png": "049becd19a8aa16e6c6687049a209a53f63b9242766d14b85bd77959e9ab4f71",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p21.png": "756ce9ca77ecc285000ec08c9223712afd3c5d6fa462497562cc64321b913ef7"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-circuit.png": "7797b2fba5e1b8bb6c6f696545816842ad56ea95045fc24fc025dc29599d9906",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-waveform.png": "84027d21f549c1d4ac6f841e8525f8f99ff016dc08eef67c30668b4412752d62",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-current-paths.png": "026ad5536b9f38d2474ae5a1602a26904dc4501a1e22360aa640891de0657aa4"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "3ad11dd0371b5013d0c4af63258dbaa6a9723ce047032cdb178c179b53f6d542",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 冒頭の共通文（E、S、D、L、R、図2のv_Dとi_R）と(a)の文（図3〜図5、実線のループと方向、時刻t₁・t₂、(1)〜(5)から一つ選ぶ）は、原図17頁と一致する。変えたのは(a)ラベルの省略と表記の整形だけで、意味は変わっていない。",
+        "選択肢: (1) C/B、(2) A/C、(3) B/A、(4) B/C、(5) A/B の5肢すべてが、原図の表の時刻t₁列・時刻t₂列と一致する。",
+        "公式正答: manifestで固定された公式正答(5)と候補のofficialAnswer=5は一致し、変更していない。",
+        "時刻の位置: 原図の図2では、目盛りの点線は0、T/4、T/2、3T/4、T…の位置にある。t₁の矢印は0〜T/2の間（約T/4）で、v_D=Eの区間にある。t₂の矢印はT/2〜Tの間（約3T/4）で、v_D=0Vの区間にある。i_RはE区間で増え、0V区間で減り、0Aより上にとどまるので電流連続モードである。候補の読み取りと一致する。",
+        "極性: 図1のDは三角が上向きで、上側の棒（カソード）がSとLの接続点、アノードが下側の共通線につながる。v_Dの矢印は下から上へ向いており、上側ノードが正の基準になる。したがって、Sオン時にv_D=E、Sオフ時にv_D≈0という解説の因果は正しい。",
+        "経路(A)（図3）: 実線の太いループが上辺で右向き、下辺で左向きなので、E→S→L→R→Eの順になる。Dは点線。解説と一致する。",
+        "経路(B)（図4）: 上辺はLに沿って右向き、下辺はDの下側ノードへ左向きなので、D（アノードからカソードへ上向き）→L→R→Dの順になる。EとSは点線。Sオフ時の還流経路として正しい。",
+        "経路(C)（図5）: E・S・Dを通るループで、上辺は左向き、下辺は右向き。LとRは点線。Sオン時はDに−Eがかかって逆バイアスになり、Sオフ時はSが遮断されるので成立しない、という誤答理由は正しい。",
+        "肢ごとの理由: (1)はt₂の(B)だけが正しい、(2)はt₁の(A)だけが正しい、(3)は組合せが逆、(4)はt₁・t₂とも誤り、(5)が正しい、という各肢固有の理由を検算し、いずれも正しい。",
+        "公開候補図 circuit.png: E、S（エミッタ矢印付き）、D、v_Dの矢印、L、i_Rの矢印、R、接続点の黒丸2つ、キャプション「図1 降圧チョッパ」が欠けずに入っており、接続・向きとも原図と一致する。",
+        "公開候補図 waveform.png: t₁・t₂の矢印、E[V]、0V、I_R[A]、0A、v_D、i_R、0・T・2T、t[s]、点線の目盛り、キャプション「図2 動作波形」がすべて入っており、原図と一致する。",
+        "公開候補図 current-paths.png: 図3〜図5の実線・点線の区別、ループ矢印の向き、S・L・D・R・Eの全ラベル、キャプションが原図と一致する。この問題は公開図だけで解ける。",
+        "出典: reviewedFromPage=[20,21]は、原図フッターの「T2－K 020」「T2－K 021」（印刷頁は-17-、-18-）と整合する。試験日2025-03-23、令和6年度下期、機械、問16(a)という表記も正しい。officialReferenceUrlsは空で、独立した主張がないため、外部で確認すべき事項はない。"
+      ]
+    }
+  ]
+}

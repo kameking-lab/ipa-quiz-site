@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5186,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17561,
+      "webSearchRequests": 0,
+      "costUSD": 0.2444718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3006,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "258d992492fb9310c389a19d6d644600c109d042225730ad6caf77c06bb919b1",
+  "inputRequestSha256": "2adedcd164853c5b2be7b1d4faf98ff86a9464a393f669814acc7651d0612202",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "c373f035657f3e81c3d0fc3daf79826c6e95209dba65f55b397001bff9c334ee",
+      "q16b": "fd032cfff3780053945af811e2f67325d792e38557037910b05cb70d10b71ed8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p20.png": "a11afeceec51930b1b640c17ba667f052f026eacacff275fe10ae7ef16cac943",
+      "data/raw_pdfs/denken3/review/20240818/theory/p21.png": "73c46d5253fd8b0431a9571e3bad6145485c5d4cfeeabec217d75447e8cae360"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "8c12a2cc6bf4449d33c5072b5919fdabd881e6977a3beee0fa4e8c0459a48d6e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "問16の柱書「直流電流の測定範囲の拡大について，次の(a)及び(b)の問に答えよ。」（PDF第20頁冒頭）が候補のquestionに含まれていない。(a)本文と選択肢は原図と一致するが、出題の主題（測定範囲の拡大）を示す共通柱書が欠落しており、原典の忠実な転記になっていない。question冒頭に柱書を補うか、共通柱書を保持するフィールドで(a)(b)の両方に表示すること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの「p20」は、印刷頁（-17-）と、査読回次タグとしてのp番号の両方と混同されうる。「PDF第20頁（印刷頁-17-）」のように表記を明確化すること。原図に回路図が無く、figureUrlsが空であるという記述内容自体は正しい。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図PDF第20頁の(a)本文と照合し、最大目盛100A/50A/50A、指示値90A/40A/35A、「最大電流の値[A]」「最も近いもの」の文言が一致することを確認した。",
+        "選択肢：(1)100 (2)144 (3)165 (4)183 (5)200 が原図と一致することを確認した。",
+        "公式正答：公式解答表の理論・問16(a)=4 が、候補のofficialAnswer \"4\" と一致することを確認した。",
+        "計算：並列接続により端子電圧が共通なので、電流比は90:40:35で一定になる。各計器の上限倍率は k≤100/90≈1.111、50/40=1.25、50/35≈1.429 で、最小は電流計Ⅰ。したがって I=(100/90)×165≈183.3A となり、(4)が最も近い。検算で一致した。",
+        "誤答肢の理由：(2)は 100+40×100/90≈144.4 で電流計Ⅲの分 35×100/90≈38.9A を欠く。(3)は現指示値の合計165で、このとき全計器が目盛未満（90<100、40<50、35<50）。(5)は目盛の合計200。いずれも数値的に妥当であることを確認した。",
+        "メタデータ：fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=theory、問題PDF・解答PDFのURL、reviewedFromPage=[20,21] が manifest と一致することを確認した。",
+        "officialReferenceUrlsは空で、検証を要する外部主張は無い。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "問16の柱書「直流電流の測定範囲の拡大について，次の(a)及び(b)の問に答えよ。」が欠落している。",
+        "(b)は(a)の測定条件（指示値90A/40A/35Aから得られる分流比）が無いと解けない。しかし候補のquestionは「次に，…」で始まり、(a)の条件を含まず、参照もしていない。(b)を単独で表示すると解答不能になる。柱書と(a)の条件を併記するか、(a)と必ず同時に表示されるデータ構造にすること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「(a)で求めたとおり…90:40:35の比率」について：比率は(a)の問題文で与えられた指示値そのもので、(a)で計算して求めた値ではない。「(a)の指示値90A・40A・35Aより、分流比は90:40:35で一定」と表現を正すこと。計算自体に誤りは無い。"
+      ],
+      "figureIssues": [
+        "figureDescriptionの「p21」は、印刷頁（-18-）や査読回次タグと混同されうる。「PDF第21頁（印刷頁-18-）」と明記すること。選択肢表の内容については、choicesへの文字列化で欠落・入替えが無いことを確認済み。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図PDF第21頁の(b)本文と照合し、「別の回路に接続」「150A」、空欄(ア)(イ)(ウ)の位置が一致することを確認した。",
+        "選択肢：原図の表と照合し、(1)31.8/36.4/81.8、(2)31.8/81.8/36.4、(3)36.4/31.8/81.8、(4)81.8/31.8/36.4、(5)81.8/36.4/31.8 が(ア)(イ)(ウ)の列順どおり一致することを確認した。",
+        "公式正答：公式解答表の理論・問16(b)=5 が、候補のofficialAnswer \"5\" と一致することを確認した。",
+        "計算：Ⅰ=90×150/165≈81.818→81.8A、Ⅱ=40×150/165≈36.364→36.4A、Ⅲ=35×150/165≈31.818→31.8A。合計は150Aで、(5)と一致することを検算した。",
+        "誤答肢の理由：全5肢は同じ3数値の並べ替えなので、割当ての誤りだけが判定根拠になる。(1)はⅠとⅢが逆、(2)はⅡに最大値、(3)はⅢに最大値、(4)はⅡとⅢが入替え。各肢の記述が、実際の割当てと一致することを確認した。",
+        "メタデータ：fiscalYear・term・examDate・subject・問題PDF/解答PDFのURL・reviewedFromPage=[20,21]（(b)は第20頁の(a)条件に依存するため妥当）が manifest と一致することを確認した。",
+        "officialReferenceUrlsは空で、検証を要する外部主張は無い。"
+      ]
+    }
+  ]
+}

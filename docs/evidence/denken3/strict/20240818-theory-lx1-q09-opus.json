@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3060,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13666,
+      "webSearchRequests": 0,
+      "costUSD": 0.1707918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1784,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c70bbe22067c97a8678bd1e85d2408e997080c044a3b849f936f4596600e799b",
+  "inputRequestSha256": "4fa0009ad8bb22c331053a3a314b111089bec95abed6a994e5db6eabaf128655",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "cf51022e22aef759b20fe80cb35a29770369a2224b3e40ccaa7695f8cd057980"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p13.png": "1b40742a8a2da60aa76e615b689fe82d479f05ec14329a6bbec7e95707cb909b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a238be2ab01c15ea1b22801a7d1f4025c86bfad1116569afbe7256d0ceab0948",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の「次式に示す電圧e[V]及び電流i[A]による電力の値[kW]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」と候補の文言が一致する。句読点を「，」から「、」に変えた整形のみで、意味の変化はない。",
+        "数式: 原図 e = 100 sin ωt + 50 sin(3ωt − π/6) [V]、i = 20 sin(ωt − π/6) + 10√3 sin(3ωt + π/6) [A] と、候補の係数・位相の符号・次数・単位がすべて一致する。",
+        "選択肢: 原図 (1)0.95 (2)1.08 (3)1.16 (4)1.29 (5)1.34 と、候補の5肢の値・順序が一致する。単位は問題文の[kW]に従う。",
+        "公式正答: 公式解答表（令和6年度上期・理論）は問9=2。manifest固定の正答単位 answer=\"2\" および候補 officialAnswer=\"2\" と一致する。",
+        "基本波の検算: 実効値の積は (100/√2)(20/√2) = 1000。電圧位相0、電流位相−π/6なので θ1 = π/6。P1 = 1000 × cos(π/6) = 866.0 W。",
+        "第3高調波の検算: 実効値の積は (50/√2)(10√3/√2) = 250√3 ≒ 433.0。θ3 = −π/6 − π/6 = −π/3。cos は偶関数なので cos(−π/3) = cos(π/3) = 0.5 となり、候補が cos(π/3) と書いた式展開は正しい。P3 = 125√3 ≒ 216.5 W。",
+        "合計: P = 866.0 + 216.5 = 1082.5 W ≒ 1.08 kW で、(2) と一致する。異なる次数どうしの積の1周期平均が0になるという説明も正しい。",
+        "各肢の差分を1.0825 kW基準で検算した。(1) 0.1325（約0.13 kW小さい）、(3) 0.0775（約0.08大きい）、(4) 0.2075（約0.21大きい）、(5) 0.2575（約0.26大きい、全肢中最大の乖離）。いずれも候補の記述と一致する。",
+        "図表: 原図には数式と選択肢しかなく、回路図・波形図はない。figureDescription の「図表はなく」と、figureUrls・choiceFigureUrls が空であることは妥当。",
+        "出典メタデータ: fiscalYear=2024、term=upper、examDate=2024-08-18、subject=theory、問題・解答PDFのURLが manifest と一致する。reviewedFromPage=[13] は manifest 指定のPDF第13頁と一致する。原図下部の印字頁番号「-10-」は冊子内の頁番号で、PDF頁番号とは別物のため矛盾しない。",
+        "sourceAttribution の「令和6年度上期第三種電気主任技術者試験 理論科目 問9」は、2024年度上期・理論・問9と整合する。",
+        "officialReferenceUrls は空で、外部参照に依存する独立主張はない。このため外部確認事項は生じない。"
+      ]
+    }
+  ]
+}

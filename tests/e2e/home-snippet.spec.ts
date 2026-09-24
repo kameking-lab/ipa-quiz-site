@@ -54,10 +54,11 @@ test.describe("home SERP snippet", () => {
       return data["@graph"] ?? [data];
     }));
     const list = nodes.find(node => node["@type"] === "ItemList");
-    expect(list?.numberOfItems).toBe(16);
-    expect(list?.itemListElement).toHaveLength(16);
+    expect(list?.numberOfItems).toBe(17);
+    expect(list?.itemListElement).toHaveLength(17);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken3"))).toBe(true);
   });
 });

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2737,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17374,
+      "webSearchRequests": 0,
+      "costUSD": 0.1939958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1302,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fadead4f8af53132640ac833f079282a6659927d06d907884d29d51abbfb94f4",
+  "inputRequestSha256": "965f9dfaaacdea1ab2970305481f97482126d96339125b03fef7841fed854dcc",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "8b7250a2b288ccc98674d295bca68c670bcc4ddf68e2c084dffb7119d6ea329f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p07.png": "8bd1b3eb0157c356a111c1bd964bd365b313f9a6a8b20459a3d72163ff7126a5",
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "487f078b8ce8b62552fb22f8810f36d63914e995ab92ac8c9a63339a54c948fc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第7頁、印字頁「-4-」、T1-H 007）の問3本文と照合した。『「電気設備技術基準」では，電気の供給のための低圧電線路の絶縁性能について，次のように規定している。』、空欄(ア)(イ)(ウ)の位置と順序（(ア)に対する漏えい電流が(イ)の(ウ)分の1を超えない）、および設問文『(1)〜(5)のうちから一つ選べ』が一致する。欠落・改変はない。",
+        "選択肢: 原図の表の全5行を照合した。(1)使用電圧/最大供給電流/2 000、(2)最大使用電圧/供給電流/2 000、(3)使用電圧/使用電流/1 000、(4)対地電圧/最大供給電流/1 000、(5)対地電圧/使用電流/2 000。候補の choices 1〜5 と語句・数値・順序がすべて一致する。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者上期試験解答）の＜法規＞列で、問3の解答は1、配点は6である。manifest固定単位 {question:3, part:null, answer:\"1\", points:6}、候補の officialAnswer=\"1\"、scoringPoints=6 と一致する。",
+        "条文根拠: 注意書き頁の注1により、「電気設備技術基準」は「電気設備に関する技術基準を定める省令」の略である。注3により、問題の基準日は令和7年4月1日現在である。e-Gov法令API v2（occasion_date=20250401）の同省令第22条「低圧電線路中絶縁部分の電線と大地との間及び電線の線心相互間の絶縁抵抗は、使用電圧に対する漏えい電流が最大供給電流の二千分の一を超えないようにしなければならない。」から、(ア)使用電圧、(イ)最大供給電流、(ウ)2 000 が確定する。この組合せをもつのは(1)だけである。",
+        "総合解説: 省令名の略称説明、基準日、第22条の引用文言が添付資料と一字単位で整合する。数値例 100 A × 1/2 000 = 0.05 A = 50 mA は検算して正しい。",
+        "各肢解説: (2)は(ア)(イ)が誤りで(ウ)は正しい。(3)は(ア)が正しく(イ)(ウ)が誤り。(4)は(ア)(ウ)が誤りで(イ)は正しい。(5)は(ア)(イ)が誤りで(ウ)は正しい。各肢の正誤の切り分けは条文と照合してすべて正しく、(1)の正答理由も条文どおりである。",
+        "図: 原図に回路図などの図はなく、枠囲み空欄と選択肢表だけである。figureDescription の記述は原図と一致し、figureUrls=[] と choiceFigureUrls={} で解答に支障はない。",
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、reviewedFromPage=[7] は manifest（問題PDF 20250831_ch_third_q04.pdf、解答PDF 20250831_ch_third_a01.pdf、問3はPDF第7頁）と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl も一致する。sourceAttribution の年度・期・科目・問番号も正しい。",
+        "参照URL: officialReferenceUrls の e-Gov URL（409M50000400052?occasion_date=20250401）は、添付したe-Gov法令API v2の第22条原文で内容を検証済みである。未検証の独立主張はない。"
+      ]
+    }
+  ]
+}

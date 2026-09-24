@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4611,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14179,
+      "webSearchRequests": 0,
+      "costUSD": 0.20591579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2837,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "899bc03e8db25b04ffd26e3d180becb607f88a073f65137a3982b880059a3b61",
+  "inputRequestSha256": "53846b9f677ae51981832bbc8f73560942dc14f083549ace3786054ed7627aa1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "84b18cfb46e7747c2c2dc2298dc304ec5ca688fa9859598e59f311de364dca6c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q12-fig1.png": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2]: 「141 は正解の約 2π 倍（約 6.3 倍）」は数値として正しい（22.5 × 2π ≒ 141.4、すなわち (1) 283 の 1/2）。ただしこの書き方では「2π に関する誤り」で 141 が生じるように読める。候補の uncertainty では誤答過程を特定していないとしており、説明と整合しない。誤答過程を示さないなら、「正しい値 22.5 lx と一致しない」という数値比較だけに留めること。2π 倍という因果を示唆する表現は削除または中立化すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty に「本問の実施年度・試験回・科目名を特定できる記載が確認できないため、出典の年度情報は付していない。一次資料の URL も特定できていない」とある。しかし同じ候補の fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、sourceAttribution（令和7年度上期 機械科目 問12）、sourceQuestionPdfUrl、sourceAnswerPdfUrl には、年度・科目・URL がすべて記入されている。レコード内で自己矛盾しているので、uncertainty を実態に合わせて修正すること。",
+        "subject=machinery の根拠が添付原図だけでは完結しない。原図には科目名がなく、フッター識別記号は「T1－K 015」だけである。公式解答表の問12 は機械=4、電力=4 で、正答値だけでは科目を区別できない。照明計算は機械科目の出題範囲であり、機械=4 とも整合するが、科目の確定には問題冊子表紙または sourceQuestionPdfUrl（…_q03.pdf）が機械科目冊子であることの原頁確認が要る。",
+        "needsReview=false だが、uncertainty には未解決事項が記載されている。uncertainty を解消して記述を削除するか、needsReview を実態と整合させること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図と照合した。幅 6 m、奥行き 8 m、四隅の柱、地上 5 m の頂点、全光束 5 000 lm、中心 O の水平面照度 [lx]、均等光源の但し書きがすべて一致し、脱字・数値の誤りはない。",
+        "選択肢: (1) 283、(2) 141、(3) 31.8、(4) 22.5、(5) 5.6 が原図と一致する。",
+        "公式正答: 令和7年度 第三種電気主任技術者上期試験解答の機械・問12 は解答 4、配点 5。manifest 固定単位（answer=4, points=5）および候補の officialAnswer=4、scoringPoints=5 と一致する。",
+        "総合解説を検算した。I = 5000/(4π) ≒ 397.9 cd。対角線 √(36+64) = 10 m で、O までの水平距離は 5 m、r² = 5² + 5² = 50 m²。cosθ = 5/(5√2) = 1/√2。1 灯あたり 397.9/50 × 0.7071 ≒ 5.63 lx、4 灯で ≒ 22.5 lx となり、(4) と一致する。",
+        "(1) の誤答過程: 光度を 5000 cd とみなした場合、4 × 100 × 0.7071 ≒ 282.8 ≒ 283 となり、説明は正しい。",
+        "(3) の誤答過程: 4 × 397.9/50 ≒ 31.8 lx は法線照度の 4 灯合計で、cosθ を掛け忘れた値である。説明は正しい。",
+        "(5) の誤答過程: 1 灯分の水平面照度 5.63 lx ≒ 5.6 である。説明は正しい。",
+        "公開候補図: 原図と照合した。四隅のラベル A（左下）、B（右下）、C（右上）、D（左上）、破線の対角線 A–C・B–D、交点の黒点と O、下辺の寸法 6m、右辺の寸法 8m がすべて一致し、欠落・歪みはない。候補図だけで柱位置と O の位置を理解できる。高さ 5 m は原図でも図中になく、問題文で与えられている。",
+        "figureDescription: 反時計回りのラベル配置、寸法線の位置、対角線と O の記述は図と一致する。",
+        "officialReferenceUrls は空で、独立した外部主張はない。",
+        "頁情報: 添付原図の印刷ページ番号は「- 12 -」である。reviewedFromPage=[15] は PDF ページ番号として表紙等の前付けを含めれば矛盾しないが、添付原図だけでは PDF ページ 15 であることを直接確認できない。"
+      ]
+    }
+  ]
+}

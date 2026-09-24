@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5886,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 23083,
+      "webSearchRequests": 0,
+      "costUSD": 0.30264779999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3145,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0b6ce9d1529dae4189686ab7be2b494abad9fc9499de1e46f3fef99892dc6ff4",
+  "inputRequestSha256": "55ec2e39f58eee4fb514f30b99374b92a70926f8836ed568b447c18b71c2d8d7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "97ce308712627274f1bf493ba9668ac0114c5efac829d916b26f15298f16e73a",
+      "q11b": "faee1eda172e33129583eb079a209cd1da4ebd4aa3a5f208f282a9f70569c4e4"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/law/p18.png": "293edd44b7d9a4f91a7116e994e555a5751a9c50b25c681e8a5088299bb87df3",
+      "data/raw_pdfs/denken3/review/20260322/law/p19.png": "8f3a361d3ba805fbbf76580833f25d0b14dacad04e1175dad66c03e9ef628723",
+      "data/raw_pdfs/denken3/review/20260322/law/p04.png": "4e55d96c3f339921b9301997fede371d8891bc2fd296b7ad5c0cbdf5bb675366"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/law/20260322-law-q11-fig1.png": "411d59cecbf3fd4c6c5dcbe7ee5233b641155da038fc6796ca311a65a75b7ee4",
+      "public/images/denken3/20260322/law/20260322-law-q11-fig2.png": "5b032693784c78282070356c8948ef427b7ac52707bf3d3138f727e1d673ab69",
+      "public/images/denken3/20260322/law/20260322-law-q11-fig3.png": "7c0e381861d6ba75d1b36db584a8848d82bf06342d8bd5fc168f20b4fcee11da"
+    },
+    "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "e923b45d160c52a9453a74e7bdfe0f653184973814f5482e7a9421971bd127d7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower（下期）、examDate=2026-03-22、subject=law、sourceQuestionPdfUrl=…_q04.pdf、sourceAnswerPdfUrl=…_a01.pdf、reviewedFromPage=[18,19] がmanifestと一致する。原図の頁下部識別「T2-H 018」「T2-H 019」とも整合する。",
+        "問題文: 原図第18頁と照合した。①式 R=ρ/(2πL)·ln(4L/d)、L・d・πの定義、x=4L/d、②式 R=(2ρ/(πd))·(ln(x)/x)、「L≫d として 200≦x≦1 000」、ρ=150 Ω・m、d=14×10⁻³ m、R≦100 Ω、「ρは深さによらず一定」がすべて一致する。単位と数式の構造にも誤りはない。",
+        "選択肢: (1)0.7 (2)1.0 (3)1.2 (4)1.5 (5)2.0 が原図と一致する。",
+        "公式正答: 解答表の法規 問11(a) は解答4・配点6。候補の officialAnswer=4、scoringPoints=6 と一致する。",
+        "総合解説の検算(1): L=xd/4 を①式に代入すると 2ρ·ln(x)/(πxd) となり、②式の導出は正しい。2ρ/(πd)=300/0.0439823≈6 820.9 Ω。",
+        "総合解説の検算(2): ln(x)/x≦100/6 820.9≈0.014661 となる。x=410 で 6.0162/410≈0.014674、x=411 で 0.014644 なので、x≈410.4 は正しい。",
+        "総合解説の検算(3): L=410.4×0.014/4≈1.436 m であり、≈1.44 m は妥当。ln(x)/x は x>e で単調減少するので、x が大きいほど R が小さくなるという因果は正しい。",
+        "各肢の検算(1) L=0.7: x=200、ln200/200≈0.02649、R≈180.7 Ω（候補値181 Ω、正しい）。",
+        "各肢の検算(2) L=1.0: x≈285.7、ln/x≈0.01979、R≈135.0 Ω（候補値135 Ω、正しい）。",
+        "各肢の検算(3) L=1.2: x≈342.9、ln/x≈0.01703、R≈116.1 Ω（候補値116 Ω、正しい）。",
+        "各肢の検算(4) L=1.5: x≈428.6、ln/x≈0.01414、R≈96.5 Ω（候補値96 Ω、正しい）。",
+        "各肢の検算(5) L=2.0: x≈571.4、ln/x≈0.01111、R≈75.8 Ω（候補値76 Ω、正しい）。",
+        "最近接の判定: 1.44 m との差は (3)0.24 m、(4)0.06 m、(5)0.56 m であり、(4) が最も近いという記述は正しい。",
+        "図1（公開候補図fig1）: 原図第18頁と照合した。点描の土壌、「大地抵抗率ρ[Ω・m]」、引出線付きの「棒状接地極」、上端幅の「d[m]」寸法、地表面から先端までの「L[m]」寸法、尖った先端、キャプション「図1」がすべて保持されている。figureDescription とも一致する。",
+        "図2（公開候補図fig2）: 原図第19頁と照合した。縦軸 ln(x)/x（0〜0.03、0.005刻み）、横軸 x（200〜1 000、100刻み）、補助方眼、単調減少曲線（x=200で≈0.0265、x=1 000で≈0.0069）が保持されている。公開図だけで x≈410 を読み取れる。",
+        "officialReferenceUrls は空であり、検証すべき外部主張はない。法規注意書き頁の注3（令和7年4月1日現在の法令）は、本問の計算内容には影響しない。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=lower、examDate=2026-03-22、subject=law、両PDF URL、reviewedFromPage=[18,19] がmanifestと一致する。(b) の本文と選択肢図は原図第19頁（T2-H 019）にある。",
+        "問題文: 原図第19頁と照合した。「直読式接地抵抗計」「被測定接地極E」「補助接地極S(電圧用)及びH(電流用)」「地表面配置として，最も適切なもの」が一致する。",
+        "選択肢(1)(2): 原図と照合した。(1) S頂点、S–H 10 m、S–E 10 m、H–E 2 m。(2) E頂点、E–H 10 m、E–S 10 m、H–S 2 m。いずれも点配置と寸法線の対応が正しく文章化されている。",
+        "選択肢(3)(4)(5): 原図と照合した。(3) E,H,S順、4 m・2 m。(4) E,S,H順、10 m・10 m。(5) S,E,H順、10 m・2 m。いずれも正しく文章化されている。",
+        "公式正答: 解答表の法規 問11(b) は解答4・配点7。候補の officialAnswer=4、scoringPoints=7 と一致する。",
+        "総合解説: 電流をE–H間に流し、E–S間の電位差を測る原理を正しく述べている。E・Hの抵抗区域を分離し、Sを中間の電位平坦部に置くためにE,S,Hを一直線上に十分な間隔で配置する、という因果も正しい。",
+        "総合解説の事実確認: E,S,Hの順に一直線上に並ぶのは(4)のみ、という記述は正しい。E–H間距離は(1)2 m、(2)10 m、(3)4 m、(4)20 m、(5)2 m であり、(4)が最大という記述も正しい。",
+        "誤答肢の理由(1): E–H 2 m、SがE–H間にない。原図と整合する。",
+        "誤答肢の理由(2): S–H 2 mでHの抵抗区域内、非一直線、SがE–H間にない。原図と整合する。",
+        "誤答肢の理由(3): 間隔が小さく、SがHの外側にある。原図と整合する。",
+        "誤答肢の理由(5): E–H 2 m、SがEを挟んでHの反対側にある。原図と整合する。",
+        "公開候補図fig3: 原図第19頁の選択肢図(1)〜(5)と照合した。全点ラベル（E/S/H）、破線接続、全寸法（10 m・2 m・4 m）、寸法線の端点が欠落・誤転記なく保持されている。figureDescription とも一致する。選択肢テキストだけでも配置は一意に理解できる。",
+        "officialReferenceUrls は空であり、検証すべき外部主張はない。本問は法令条文を問わないため、注意書き頁の注3（令和7年4月1日現在の法令）の影響はない。"
+      ]
+    }
+  ]
+}

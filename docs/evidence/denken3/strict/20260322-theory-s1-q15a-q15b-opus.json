@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6126,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17290,
+      "webSearchRequests": 0,
+      "costUSD": 0.2611038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3640,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6e300e41b0d450d0ed41407a764bab99c6b8ce28cb97f4334f011d03ac619588",
+  "inputRequestSha256": "48eb19d0849aae8acf4221f5a72b7bc0934ad84101b94be741be0241505fcbd0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "4597c6ae077e8146d1d9334f6517d9e5b613c7509e2012498e4ad2154d61d36b",
+      "q15b": "5bde223242537c798a6c50b4fb14ee8ae2c8b7cf918926107949b11ea4e58ecd"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p20.png": "c427a0a2647ca64f3b09acc8409a50181b0ac8099f9a51e6938f2999eb18b9c4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q15-fig1.png": "d036e13d4ec825e3de682280ceac8ec48c0afd3ae3050a5caf32f6d16829902c"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "8d83c5dea6f88c638eedf5cb361cf503e5ccd10affdb0834d3519bb0fb2b6363",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の(2)(4)(5)が同一の定型文（『…11.5 A と一致しない』）で、肢ごとの固有の理由になっていない。各数値が正答値とどう違うのかを肢ごとに示すこと。7.00／14.0／22.5 に典型的な誤算との対応が確認できない場合は、その旨を明記する。確認できない誤算経路を推測で書き加えてはならない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の『右側の電源からの線は左側の線と交差して右下の枝へ接続されている』は、交差点で両線が接続しているとも読める。原図・公開図ともに交差点に接続黒丸はない。『交差するが接続点（黒丸）はなく電気的に非接続』と明記すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『ページ上には試験の実施年度・回が明記されていないため，出典年度は本ページのみからは特定できない。』が残っている。一方、sourceAttribution は令和7年度下期と断定している。年度・回は manifest（2026-03-22 実施、理論冊子 q01、PDF第20頁）と公式解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』で確定済みなので、この記述は古く、帰属と矛盾する。削除するか、確定根拠を記した内容に更新すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：線間電圧200 V、50 Hz、対称三相、R=10 Ω、ωL=20 Ω、1/(ωC)=20 Ω、(a)の設問文が原図と一致（共通指示『次の(a)及び(b)の問に答えよ』の省略は単位分割上妥当）。",
+        "選択肢：(1)5.77 (2)7.00 (3)11.5 (4)14.0 (5)22.5 が原図と一致。",
+        "公式正答：解答表 理論 問15(a)=3、配点5。候補の officialAnswer=3、scoringPoints=5 と一致。",
+        "検算：Y = 1/10 + 1/(j20) + j/20 = 0.1 − j0.05 + j0.05 = 0.1 S（純抵抗）。E = 200/√3 ≒ 115.47 V、I = E/R ≒ 11.55 A で(3) 11.5 に最も近い。",
+        "(1)の理由：115.47/20 ≒ 5.77 A は L（または C）単独の枝電流で、逆位相で相殺されるという説明は正しい。",
+        "負荷中性点は電源中性点と非接続だが、平衡負荷のため各相電圧は200/√3 V となり、解説の前提と整合する。",
+        "図：公開候補図は原図の回路部分を欠落なく切り出している。I と右向き矢印、上枝 R∥L∥C、左下枝 C・L・R の3並列、右下枝 R・L・C の3並列、負荷中性点の黒丸、電源Y結線、非接続交差（黒丸なし）がすべて原図と一致。公開図だけで解答に必要な構造が読み取れる。",
+        "メタデータ：fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[20]（原図フッタ『T2−R 020』と整合、印字頁『-17-』は冊子頁）、sourceQuestionPdfUrl／sourceAnswerPdfUrl が manifest と一致。",
+        "officialReferenceUrls は空で、検証対象となる独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の(1)(4)が同一の定型文（『…4.0 kW と一致しない』）で、肢固有の理由になっていない。数値上は (1) 2.6 kW ≒ 2相分（2×1.33 kW）、(4) 3.5 kW ≒ √3×200×10 W ≒ 3.46 kW と対応し得る。ただしいずれも出題意図は未確認である。採用するなら『〜に相当する値』と数値関係として記述し、断定を避けること。確認できない場合はその旨を肢ごとに明記する。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の『右側の電源からの線は左側の線と交差して右下の枝へ接続されている』は、交差点で接続しているとも読める。原図・公開図ともに交差点に接続黒丸はない。『交差するが接続点（黒丸）はなく電気的に非接続』と明記すること。"
+      ],
+      "sourceIssues": [
+        "uncertainty に『出典年度は本ページのみからは特定できない』が残っており、sourceAttribution（令和7年度下期）と矛盾する。年度・回は manifest と公式解答表見出し『令和7年度 第三種電気主任技術者下期試験解答』で確定済みなので、削除するか確定根拠を記した内容に更新すること。"
+      ],
+      "verifiedEvidence": [
+        "問題文：共通条件と(b)『三相負荷の有効電力 P の値[kW]』が原図と一致。",
+        "選択肢：(1)2.6 (2)1.3 (3)4.0 (4)3.5 (5)12 が原図と一致。",
+        "公式正答：解答表 理論 問15(b)=3、配点5。候補の officialAnswer=3、scoringPoints=5 と一致。",
+        "検算：P = 3×(200/√3)²/10 = 3×(40000/3)/10 = 4000 W = 4.0 kW で(3)に一致。別解 3I²R = 3×11.547²×10 ≒ 4000 W、√3×200×11.547×1 ≒ 4000 W も一致。L・C が有効電力を消費しない旨も正しい。",
+        "(2)の理由：1相分 (200/√3)²/10 ≒ 1333 W ≒ 1.3 kW で正しい。",
+        "(5)の理由：3×200²/10 = 12000 W = 12 kW（相電圧に線間電圧を用いた誤り）で正しい。",
+        "図：公開候補図は原図と接続・向き・全ラベル（I、矢印、R・L・C 各3組、黒丸、非接続交差）が一致。(b)も同一図で解答に必要な構造が読み取れる。",
+        "メタデータ：fiscalYear=2025、term=lower、examDate=2026-03-22、subject=theory、reviewedFromPage=[20]、出典PDF URL が manifest と一致。",
+        "officialReferenceUrls は空で、検証対象となる独立主張はない。"
+      ]
+    }
+  ]
+}

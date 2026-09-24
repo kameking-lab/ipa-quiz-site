@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4332,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 22968,
+      "webSearchRequests": 0,
+      "costUSD": 0.298409,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3023,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cc92247b4597750003941786c5ba9fbe922b3543ca59040414457a0d93d9fd6e",
+  "inputRequestSha256": "5800858500bd42f7603f3e2bec03782ed8a7b0337026f65692e995da36159925",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18b": "2066f3762ae3dd254a0f070e90ef33df78a42ae895223b6b30ffa745e2302c42"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p24.png": "8a6dad9542b6b51fd4f923ecddb22ee0f4531fb02fda441375139b79d0068d33",
+      "data/raw_pdfs/denken3/review/20240818/theory/p25.png": "619d2ae5a3f2fdb36ed1f6f69db70975fb8efe983c88ec17afaca826617f80ba"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q18-am-circuit-waveforms.png": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "c4d4bf7f605baa6a528def9c57696a066297d3b763ae2b068a2e21736f06d7b4"
+  },
+  "assessment": [
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official page 22. The labels v1, v2 and v3 and blanks (ア) to (オ) match, as does the note that phase relationships between the waveforms are ignored. The only changes are commas and line breaks, which the attribution note ('読みやすく整形') covers.",
+        "All five options match the official table row for row: (1) コレクタ/c/a/b/33, (2) コレクタ/c/b/a/67, (3) ベース/b/a/c/50, (4) エミッタ/b/c/a/67, (5) ベース/c/a/b/33.",
+        "The official answer table (令和6年度上期, 理論) gives 問18(b) = 5. This matches officialAnswer=5.",
+        "Figure 1 connections checked against the official original. v1 couples through a transformer, and the top of the transformer's secondary winding connects to the base. v2 sits in series between the bottom of that secondary winding and E1. The node between E1 and E2 connects to the emitter (the arrow terminal, lower right). The collector goes up to the top of the LC parallel tank. E2 connects to the bottom of the tank, and v3 is taken off through a second transformer. The explanation and figureDescription match all of this.",
+        "Figure 2: (a) is a low-frequency sine wave with constant amplitude, (b) is an AM wave with dashed envelope lines, 8 V peak-to-peak at maximum and 4 V at minimum, and (c) is a high-frequency sine wave with constant amplitude. This matches the original.",
+        "Modulation index check: m = (2Vmax − 2Vmin)/(2Vmax + 2Vmin) = (8 − 4)/(8 + 4) = 4/12 ≈ 0.333, which gives about 33%. This matches option (オ)=33. Converting peak-to-peak to amplitude gives Vmax = 4 V and Vmin = 2 V, which is also correct.",
+        "The waveform assignments are correct. v1 is the transformer-coupled high-frequency carrier, (c). v2 is the low-frequency signal wave in series with bias supply E1, (a). v3 is the tuned-tank output, the AM wave (b). The circuit applies the signal wave to the base, so (ア) is ベース and this is a base modulation circuit.",
+        "Option-by-option errors checked. (1) Only (ア) is wrong. (2) (ア) is wrong, (ウ) and (エ) are swapped, and 8/12 ≈ 67%. (3) (イ) and (エ) are swapped, and (8 − 4)/8 = 50%. (4) (ア) is wrong, and all three of v1, v2 and v3 differ from the correct assignment (b≠c, c≠a, a≠b). Each option's explanation matches these errors and is consistent with the arithmetic.",
+        "The published candidate figure is a crop of the official page 22 containing Figure 1 and Figure 2(a)–(c). It includes every label: v1, v2, v3, E1, E2, the arrows, 8 V, 4 V, '破線は包絡線を示す', and both captions. The candidate figure alone is enough to understand and answer the question.",
+        "Source URLs: the question file q01 and the answer file a01 match the 2024-08-18 session. reviewedFromPage [24, 25] matches the T1-R 024/025 markers on the original pages. There are no officialReferenceUrls, so no separate primary source needed checking."
+      ]
+    }
+  ]
+}

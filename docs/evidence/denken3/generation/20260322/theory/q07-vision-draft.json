@@ -1,0 +1,60 @@
+{
+  "questionNumber": 7,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように，可変抵抗 R₁ [Ω]，R₂ [Ω]，抵抗 Rₓ [Ω]，電源 E [V] からなる直流回路がある。次に示す条件1のときの Rₓ [Ω] に流れる電流 I の値[A]と条件2のときの電流 I の値[A]は等しくなった。このとき，Rₓ の値[Ω]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。\n条件1：R₁ = 90 Ω，R₂ = 6 Ω\n条件2：R₁ = 70 Ω，R₂ = 3 Ω",
+      "choices": {
+        "1": "1.5",
+        "2": "2.4",
+        "3": "4.0",
+        "4": "8.5",
+        "5": "11.6"
+      },
+      "officialAnswer": "2",
+      "explanation": "R₂ と Rₓ は並列で、その並列回路に R₁ が直列に接続され、電源 E につながっています。E は両条件で共通です。\n\n合成抵抗は R₁ + R₂Rₓ/(R₂ + Rₓ) なので、電源から流れる全電流は\nI₀ = E / {R₁ + R₂Rₓ/(R₂ + Rₓ)} = E(R₂ + Rₓ) / {R₁(R₂ + Rₓ) + R₂Rₓ}\n\n分流の式より、Rₓ に流れる電流は\nI = I₀ × R₂/(R₂ + Rₓ) = E·R₂ / {R₁(R₂ + Rₓ) + R₂Rₓ}\n\n条件1（R₁ = 90 Ω，R₂ = 6 Ω）：\nI = 6E / {90(6 + Rₓ) + 6Rₓ} = 6E / (540 + 96Rₓ)\n\n条件2（R₁ = 70 Ω，R₂ = 3 Ω）：\nI = 3E / {70(3 + Rₓ) + 3Rₓ} = 3E / (210 + 73Rₓ)\n\n両者が等しいので\n6(210 + 73Rₓ) = 3(540 + 96Rₓ)\n1260 + 438Rₓ = 1620 + 288Rₓ\n150Rₓ = 360\nRₓ = 2.4 Ω\n\n検算：Rₓ = 2.4 Ω のとき、条件1は I = 6E/770.4 = E/128.4、条件2は I = 3E/385.2 = E/128.4 となり一致します。よって正答は(2)です。",
+      "choiceExplanations": {
+        "1": "誤り。Rₓ = 1.5 Ω とすると、条件1は I = 6E/(540 + 144) = 6E/684 = E/114、条件2は I = 3E/(210 + 109.5) = 3E/319.5 = E/106.5 です。条件2のほうが電流が大きくなり、両者は等しくなりません。",
+        "2": "正しい。Rₓ = 2.4 Ω とすると、条件1は I = 6E/(540 + 230.4) = 6E/770.4 = E/128.4、条件2は I = 3E/(210 + 175.2) = 3E/385.2 = E/128.4 です。両条件の電流が一致し、方程式 6(210 + 73Rₓ) = 3(540 + 96Rₓ) の解 Rₓ = 2.4 Ω とも合います。",
+        "3": "誤り。Rₓ = 4.0 Ω とすると、条件1は I = 6E/(540 + 384) = 6E/924 = E/154、条件2は I = 3E/(210 + 292) = 3E/502 ≒ E/167.3 です。条件1のほうが電流が大きくなり、両者は等しくなりません。",
+        "4": "誤り。Rₓ = 8.5 Ω とすると、条件1は I = 6E/(540 + 816) = 6E/1356 = E/226、条件2は I = 3E/(210 + 620.5) = 3E/830.5 ≒ E/276.8 です。条件1のほうが電流が大きくなり、両者は等しくなりません。",
+        "5": "誤り。Rₓ = 11.6 Ω とすると、条件1は I = 6E/(540 + 1113.6) = 6E/1653.6 = E/275.6、条件2は I = 3E/(210 + 846.8) = 3E/1056.8 ≒ E/352.3 です。条件1のほうが電流が大きくなり、両者は等しくなりません。"
+      },
+      "figureDescription": "直流回路図。回路の上辺左側に可変抵抗 R₁[Ω]（抵抗記号に斜め矢印付き）が直列に入っている。その右側の接続点（黒丸）から回路が上下2本の枝に分かれ、右側の接続点（黒丸）で再び合流する。上の枝には可変抵抗 R₂[Ω]（斜め矢印付き）、下の枝には固定抵抗 Rₓ[Ω] がある。下の枝の Rₓ の左下に右向きの矢印と「I[A]」の表記があり、I は Rₓ を左から右へ流れる電流を示す。回路の下辺中央に直流電源 E[V] の電池記号がある。回路構成（R₁ と、R₂・Rₓ の並列回路との直列接続）と、I が Rₓ に流れる電流であることを読み取るために、この図が必要となる。",
+      "officialReferenceUrls": [],
+      "uncertainty": "電源 E の電池記号の長短の極板の向き（極性）は、画像からは明確に判読しにくい。ただし、本問は両条件で I の値が等しくなる Rₓ を求めるものであり、E の極性は解答に影響しない。また、本ページ内には出題年度の明示がなく、実施年度・回はこのページだけからは特定できない。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        10
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3787,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1504758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1680,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2a306da0fd3cc8dc7a4a32346c3047da7fb9d2ff98e440f5e669d5f622927cf6",
+  "inputRequestSha256": "78cd1b1064bd38588f0a6e6084c7ec34718598dc4b73ba508fea64a6a257069f",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p10.png": "9439d9398f2561502a81f1893da217f32c65be8151b2e827d47d7929a7078e35"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2292,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 38645,
+      "webSearchRequests": 0,
+      "costUSD": 0.3552638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2200,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "564ca91b388304a6ca59a5c64050ba656a8bd5fcce8cee0e0dee42e30f120639",
+  "draftSha256": {
+    "1": "434f866756b2a19d8ee82f4480ef7bb5adecca54e57e4feaa95615b9d2be7d18"
+  },
+  "figureSha256": {},
+  "basisPageSha256": {},
+  "referenceJsonSha256": {},
+  "referencePdfSha256": {
+    "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+  },
+  "referencePageSha256": {
+    "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p015.png": "810848fc35bf2936b6b6413679db686d29b4d4261be5923284fd5bc6eb3869c4",
+    "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p016.png": "0ab2e93d9e998a3ed45198c273346251288178db2092e7d92c13f33c78d99d02",
+    "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p017.png": "5e328125993dda765d3387f91bd4b6a3dfa8a18880e0c4f7ff66690b246887d1",
+    "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+    "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+  },
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "externalSourceIssues": []
+    }
+  ]
+}

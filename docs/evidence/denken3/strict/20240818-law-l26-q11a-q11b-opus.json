@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6356,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 22454,
+      "webSearchRequests": 0,
+      "costUSD": 0.33464859999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4120,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "542675482f703a6f1f658eba83d648b16c8138e7caddbee551ed45cdc237d399",
+  "inputRequestSha256": "3509fec51bb65a03be6d0ac27479cfafec2a6abf7eb1001a5fcb120bd9da525c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "181c003279147435bf58d5956177ea676d875e2b68abe21fbfabef892a8e3149",
+      "q11b": "b25ff0187c4657554c0d2bfd8e62e2015d7f9326d0a8ad5f1d2dcca7c6e6199b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p17.png": "110a50ed2bb4d4ff1b416262d4ab1faa4870a395cc8c4b8a692616e18f6ef6a3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "0d2092454c2c0a2758a8f8d1a91bc9a9f4411a6af1227a2f69f7e3b9e3f5f910",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/maff-voltage-drop.pdf": "4bbf833283820c0b055882bfffc1adcf192817d862c78abc7219efaaf255dbb1"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/maff-voltage-drop-p040.png": "efdb78266d54f138a333d1e2933ae943082b9650cf055b619a8ea3c8ea0f2813"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（公式問題原図の問11本文と(a)）: 三相3線式1回線の専用配電線、電線1条当たりR=3Ω・X=5Ω、使用電力8000kW、力率0.8（遅れ）、受電電圧20kV、変電所引出口電圧[kV]を問う点がすべて原図と一致した。候補は原文の「であるとき，」を「である。」に言い換えているが、意味は変わらない。",
+        "選択肢: (1)21.6 (2)22.2 (3)22.7 (4)22.9 (5)23.1。原図と一致した。",
+        "公式正答: 公式解答表の法規 問11(a)は3。候補のofficialAnswer=\"3\"と一致した。",
+        "近似式による検算: √3·I = 8,000,000/(20,000×0.8) = 500 A、I ≒ 288.675 A、Rcosφ+Xsinφ = 3×0.8+5×0.6 = 5.4 Ω。ΔV = 500×5.4 = 2700.0 V なので、Vs = 22.70 kV で(3)になる。",
+        "フェーザによる厳密計算: Er = 11,547.0 V、I = 230.94−j173.21 A、I(R+jX) = 1558.85+j635.10 V、|Es| ≒ 13,121.2 V で、線間に換算すると ≒ 22.73 kV。こちらでも(3)に最も近い。",
+        "(1)の理由: √3を落とすと ΔV = 288.675×5.4 ≒ 1558.8 V、20 kVに加えて ≒ 21.56 kV。候補の記述と一致した。",
+        "(4)の理由: |Z| = √34 ≒ 5.831 Ω をそのまま使うと ΔV = 500×5.831 ≒ 2915.5 V、送電端 ≒ 22.92 kV。候補の記述と一致した。",
+        "(2)の差 2.70−2.20 = 0.50 kV、(5)の差 3.10−2.70 = 0.40 kV。どちらも候補の数値と一致した。",
+        "参考資料: 農林水産省資料の原頁（PDF第40頁、印刷頁4-40）の式4.3-2 ΔV = K×I×L(Rcosθ+Xsinθ) と、三相3線式の K=√3 を確認した。本問では1条当たりの定数がすでに与えられているので、L を掛けずに適用できる。",
+        "図: 問11に図はない。figureUrlsが空であることは原図と整合する。",
+        "reviewedFromPage=[17]: 原図の管理番号「T1－H 017」と整合する（印刷頁は-14-）。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（公式問題原図の(b)とただし書き）: 力率0.95（遅れ）への改善、設置後の電圧降下[V]が設置前の電圧降下[V]に対して何[%]か、受電電圧は設置前と同じ20kV、という条件がすべて原図と一致した。",
+        "選択肢: (1)66.6 (2)68.8 (3)75.5 (4)81.7 (5)97.0。原図と一致した。",
+        "公式正答: 公式解答表の法規 問11(b)は2。候補のofficialAnswer=\"2\"と一致した。",
+        "近似式による検算: 設置後は √3·I₂ = 8,000,000/(20,000×0.95) ≒ 421.053 A、I₂ ≒ 243.094 A、sinφ₂ = √0.0975 ≒ 0.312250、Rcosφ₂+Xsinφ₂ = 4.41125 Ω、ΔV₂ ≒ 1857.4 V。設置前 ΔV₁ = 2700.0 V との比は ≒ 68.79 % で(2)になる。",
+        "有効電力8000kWが設置前後で変わらない前提（コンデンサは無効電力だけを補償する）は、原図の条件と整合する。",
+        "解説中の「直交成分を含めると約70%」の検証: 設置後は I₂(R+jX) = 1072.35+j926.98 V、|Es| ≒ 12,653.4 V で、相電圧の降下は ≒ 1106.4 V。設置前の相電圧の降下 ≒ 1574.2 V との比は ≒ 70.3 %。「約70%で、最も近い選択肢は(2)のまま」という記述は正しい（|70.3−68.8| = 1.5、|75.5−70.3| = 5.2）。",
+        "(4)の理由: 4.41125/5.4 ≒ 81.69 % で、電流比 0.8/0.95 を落とした値になる。候補の記述と一致した。",
+        "(1)の差 68.79−66.6 ≒ 2.2、(3)の差 75.5−68.79 ≒ 6.7、(5)の差 97.0−68.79 ≒ 28.2 ポイント。いずれも候補の数値と一致した。",
+        "参考資料: 農林水産省資料の原頁（PDF第40頁、印刷頁4-40）の式4.3-2と三相3線式の K=√3 を確認した。同じ式を設置前と設置後の両方に適用しており、資料の範囲内の使い方である。",
+        "「式は直交成分を省く」という近似の性質は、参考資料の頁には書かれていない。ただし上のフェーザ計算で独立に検証したので、外部確認が必要な事項は残らない。",
+        "図: 問11に図はない。figureUrlsが空であることは原図と整合する。",
+        "reviewedFromPage=[17]: 原図の管理番号「T1－H 017」と整合する。"
+      ]
+    }
+  ]
+}

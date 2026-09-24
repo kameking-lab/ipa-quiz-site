@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5599,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 25686,
+      "webSearchRequests": 0,
+      "costUSD": 0.3453646,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2803,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1e13af47231582d7671a4292e839acee244c6f3f60a93300635306397a541162",
+  "inputRequestSha256": "82212250671f70c28b6a08339229837c06dc0a7a6f773efabc146eb63fb44a53",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "8da1555e825559738645a1328fa0429b439af7e7d655a1f8c4e233344572a45d",
+      "q11": "263b5a9a9f01648cd5a6422fbc56d4671d24d7e5675123f3496066983b2a15dd",
+      "q13": "d1e42e19a56f0ce2536beaf3dab0b139bf648e4a369d3357f98e104dd169475b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p13.png": "5245f2dc6a130762a3e0fac1a1520e5f28bbdbc8f487721316360fe575bd7914",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p16.png": "b67aaa13016acb5d64b2c3c8cf6bf772333700c7da5b602e821b66e023245f6c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p18.png": "1c2c9a494dbab8d359d3b51154f2b797ae50b2bd72a6371b3f09da8c6ab02162"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "1fb32945779caa6506a7548e4643a4b6d3032fcd31d66aab47008a6dafd61970",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[3]の末尾「Z の値をそのまま X としてしまう誤りに対応する選択肢と考えられる」は推測の言い回しで、検証できない出題者の意図を述べている。検証できる事実だけに書き換えること。例: 「2.00Ω は Z=V/I そのもの。R=P/I²=0.75Ω>0 なので X=√(Z²−R²) は Z より必ず小さく、2.00Ω にはならない」。",
+        "choiceExplanations[1]の理由は「正しい値より0.57Ω小さい」と「測定値を満たさない」だけで、この肢に固有の反証になっていない。X=1.28Ω だと仮定すると R=√(2.0²−1.28²)=√2.3616≒1.537Ω、P=I²R=1600×1.537≒2459W となり、実測 1200W と矛盾する。この形の具体的な反証を書くこと。",
+        "uncertainty欄に「誤答選択肢がどのような計算過程の誤りに対応するかは…推測であり、その点のみ確実性が低い」とある。この記述は未解決の確認事項が残っていることを意味する。誤答の理由を上の検証可能な形に直したうえで、この記述を削除すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を添付原図(印字頁-10-、T1-K 013)と照合し、一致を確認した。確認項目は、一次側に電流計・電圧計・電力計、二次側短絡、定格周波数、40A、80V、1200W、一次側からみた漏れリアクタンス[Ω]、理想計器のただし書き。",
+        "選択肢(1)1.28 (2)1.85 (3)2.00 (4)2.36 (5)2.57 が原図と一致する。",
+        "公式解答表の機械 問9 は 2。候補の officialAnswer=2 と一致する。",
+        "検算: Z=80/40=2.0Ω、R=1200/40²=0.75Ω、cosθ=1200/3200=0.375、X=√(4−0.5625)=√3.4375≒1.854Ω。したがって(2)1.85。sinθ≒0.92702 と X=Z·sinθ の別解も一致する。",
+        "(4)2.36 と (5)2.57 は Z=2.0Ω を超え、Z²=R²+X² の関係上ありえない。この理由付けは正しい。",
+        "reviewedFromPage=[13] は原図のフッター T1-K 013 と整合する。図なし・参考URLなしで、外部に確認すべき主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "原図では読点が「，」だが、候補の問題文は「、」に置き換えている(「ただし、機械効率は98%、重力加速度は9.8m/s²、ロープ…」など)。問9・問13は「，」を保持しているので、表記を原図どおり「，」に揃えること。意味は変わらない。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「電動機の出力(入力側)はこの負荷動力を効率で割った値」は、「入力側」が電動機の入力を指すようにも読めて曖昧。「電動機出力(=巻上機の機械部分への入力)」のように、何の入力かを明記すること。",
+        "choiceExplanations[2]は「3.528kWに効率0.98を誤って掛けた3.457kW」だけを挙げており、最も直接的な誤り方を書いていない。効率を考慮せず荷重側出力 mgv=3.528kW をそのまま答えても 3.5 になる。この経路を主な理由として加えること。",
+        "choiceExplanations[4]は「3.6kWよりわずかに大きく、一致しない」だけで、この肢に固有の理由がない。例えば「効率で2回割ると 3.528/0.98²≒3.67kW≒3.7」のように、検証できる誤答経路を示すこと。示せない場合は、正しい値 3.600kW との差が丸め誤差の範囲を超えることを定量的に書くこと。",
+        "uncertainty欄の「原本PDFの実ファイルと突き合わせた確認は行っていない」は外部確認事項が残っているという記述である。今回添付の原図と照合し、数値が一致することを確認したので、この記述を更新すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を添付原図(印字頁-13-、T1-K 016)と照合し、数値と条件の一致を確認した。確認項目は、質量1200kg、0.3m/s一定速度、電動機出力[kW]、機械効率98%、重力加速度9.8m/s²、ロープの質量及び加速に要する動力は考慮しない。",
+        "選択肢(1)3.4 (2)3.5 (3)3.6 (4)3.7 (5)3.8 が原図と一致する。",
+        "公式解答表の機械 問11 は 3。候補の officialAnswer=3 と一致する。",
+        "検算: P_L=1200×9.8×0.3=3528W、P=3528/0.98=3600W=3.6kW。したがって(3)。",
+        "(1)の「荷重側出力 3.528kW より小さいので不可」、(5)の「3.6kW より 0.2kW 大きい」という指摘は正しい。",
+        "reviewedFromPage=[16] はフッター T1-K 016 と整合する。図なし・参考URLなし。"
+      ]
+    },
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文4段落と設問文を添付原図(印字頁-15-、T1-K 018)と照合し、一致を確認した。確認項目は、自動制御の定義、シーケンス制御と(ア)制御、電磁リレーを用いた(イ)シーケンス制御、2個のリレーのコイルに相手のb接点を直列接続する(ウ)、横軸時間・縦軸動作状態の(エ)。",
+        "選択肢表(1)〜(5)の(ア)〜(エ)の語が原図と完全に一致する。確認した語は、フィードフォワード/フィードバック、無接点/有接点、ブロック/インタロック、フローチャート/タイムチャート。",
+        "公式解答表の機械 問13 は 2。候補の officialAnswer=2 と一致する。",
+        "正答(2)の組合せ(フィードバック/有接点/インタロック/タイムチャート)に対する解説の因果は正しい。フィードバック制御はシーケンス制御と並ぶ分類であり、電磁リレーによる制御は有接点で、相互のb接点直列による同時動作阻止はインタロック、時間軸と動作状態の図はタイムチャートである。",
+        "誤答肢ごとの誤り箇所の指摘が表と一致する。(1)は4箇所すべて、(3)はウとエ、(4)はアのみ、(5)はイとウが誤りで、いずれも正しい。",
+        "reviewedFromPage=[18] はフッター T1-K 018 と整合する。図なし・参考URLなし。uncertainty 欄にも未解決事項はない。"
+      ]
+    }
+  ]
+}

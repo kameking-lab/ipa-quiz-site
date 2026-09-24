@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5982,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18293,
+      "webSearchRequests": 0,
+      "costUSD": 0.26624780000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3828,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "37d8949b659047ad921f391a5756b039704182328b777a83ff14662a12212e0b",
+  "inputRequestSha256": "d039d490cfb5b65345d51339eea68aa426748395c2845facfd95f7aeee0829ce",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "91ab813fff49f648e17921a3e83931e13c59fec99db89d002ddf9a9187c7ae8f",
+      "q15b": "ba08be1f7f9765a93a0fc03668f66da9e69e8226c1be18caca3b166f9c5bdb8f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p18.png": "5d6497754eadcd9c47e9435c4a7d0d62e70994d302ecdf3fef6657f5dce19749"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q15-fig1.png": "f557e71f2e9ee846d78933b4c3824505518d8a177f1866e06ddc3672bdd9cec2"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "fdd40eff13ecf390daa1a4dcc3322659b81fbfcac48606a59b3b91a478504445",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の「相電圧 200V の対称三相交流電源」「Ż=5√3+j5[Ω]」「Y 結線された平衡三相負荷」と一致する。小問ごとに分割したため「次の(a)及び(b)の問に答えよ」を省いているが、単位分割に伴う整形の範囲である。",
+        "【図より】の補足: 公式原図と照合した。Ėa の矢印は a–b 辺上で a 向き、Ėb の矢印は c–b 辺の下で b 向き、Ėc の矢印は a–c 辺上で c 向き、İ1 は a→a' 向きで、いずれも一致する。「矢印の先端側が高電位」とする解釈は起電力矢印の標準的な表記慣例に沿っている。",
+        "選択肢: (1)20.00∠−π/3、(2)11.55∠−π/3、(3)16.51∠−π/6、(4)20.00∠−π/6、(5)11.55∠−π/6。公式原図と全肢一致する。",
+        "公式正答: 令和7年度上期解答表の〈理論〉問15(a)は解答2・配点5で、manifest の answer=2, points=5 および候補の officialAnswer=2, scoringPoints=5 と一致する。",
+        "検算: V̇ab=200∠0、V̇bc=200∠−2π/3、V̇ca=200∠−4π/3（=200∠2π/3）で総和は0、正相順。V̇a'n=(200/√3)∠−π/6=115.47∠−π/6 V。|Ż|=√(75+25)=10 Ω、偏角 tan⁻¹(1/√3)=π/6。İ1=115.47∠−π/6 ÷ 10∠π/6 = 11.547∠−π/3 A となり(2)と一致する。",
+        "誤答肢の理由: (1)と(4)の 20.00 は 200/10 に相当する。(3)と(5)の位相 −π/6 は負荷相電圧の位相で、負荷偏角 π/6 の遅れが反映されていない。(3)の 16.51 は不一致とだけ述べ、根拠のない導出を主張していない。いずれも正確である。",
+        "公開候補図: 公式原図の回路部分を欠落なく切り出している。a,b,c（黒丸）、a',b',c'（白丸）、Ėa/Ėb/Ėc の値と矢印の向き、İab/İbc/İca/İ1/İ2/İ3 の矢印、Ż=5√3+j5[Ω] および他2相の Ż 表記、c'縦線と b–b'横線の非接続交差まで、すべて一致する。図だけで解答に必要な情報が読み取れる。",
+        "figureDescription: 各ラベルの位置、矢印の向き、配線経路、交差点に接続点がないことの記述が、公開候補図と一致する。",
+        "出典: 原図フッター「T1−R 018」が reviewedFromPage=[18] と整合する（印字頁は -15-）。試験日 2025-08-31、理論、上期の表記は解答表タイトルと一致する。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図と一致する。【図より】の補足にある電流の向き（İab は a 向き、İbc は b 向き、İca は c 向き）は、公式原図の電流矢印と一致する。",
+        "選択肢: (1)20.00∠−π/6、(2)6.67∠−π/6、(3)11.55∠−π/6、(4)6.67∠−π/3、(5)11.55∠−π/3。公式原図と全肢一致する。",
+        "公式正答: 解答表の〈理論〉問15(b)は解答2・配点5で、manifest の answer=2, points=5 および候補の officialAnswer=2 と一致する。",
+        "検算(KCL): 節点 a では、İab が流入し、İca（a→c）と İ1（a→a'）が流出する。よって İ1=İab−İca。",
+        "検算(相電流): 各相電流は起電力と同じ向きを正にとっている（İab: b→a、İbc: c→b、İca: a→c）。平衡条件では İca=İab∠−4π/3=İab∠2π/3。İ1=İab(1−1∠2π/3)=İab(3/2−j√3/2)=İab·√3∠−π/6。",
+        "検算(結果): İab=11.547/√3∠(−π/3+π/6)=6.667∠−π/6 A となり(2)と一致する。",
+        "有効電力の検算: 電源側 3×200×6.667×cos(π/6)≈3464 W、負荷側 3×11.547²×5√3≈3464 W で一致し、解説の記述は正しい。",
+        "誤答肢の理由: (1)の 20.00 は 200/10 に相当する。(3)は大きさが線電流のままで、位相は正しい。(4)は大きさは正しいが位相が İ1 と同じ。(5)は İ1 そのもの。いずれも正確である。",
+        "公開候補図と figureDescription は(a)と同一で、公式原図と全ラベル・接続・向きが一致する。İab の向きは図だけで確認できる。",
+        "出典: reviewedFromPage=[18] は原図フッター「T1−R 018」と整合する。officialReferenceUrls は空で、外部確認事項はない。"
+      ]
+    }
+  ]
+}

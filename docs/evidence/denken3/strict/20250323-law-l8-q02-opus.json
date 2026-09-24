@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 3952,
+      "cacheReadInputTokens": 297043,
+      "cacheCreationInputTokens": 19689,
+      "webSearchRequests": 0,
+      "costUSD": 0.29597660000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2492,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a572b72469a5a8b1c8b1451c828969411006562c5ee285c1a97573df847a9ac6",
+  "inputRequestSha256": "a17d8579b50b9fbe89b365a0781fc003e4296836d22ad0b5c51c033f24cbacfd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "3446ab01cf08104f2b013d0dbcf095c4b0ca22ccf1084b08dcf85b28ecbb4e5f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p05.png": "eb4eab232b0c500b22258e7646f170deb63df2022f466861a909f80b07062969"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "2257137014b6ea730aed7156ecba37cda1b24041c6f58a085c69f5293ee0c4cc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/335AC0000000139-20240401.json": "960efcdef40a3173d5b276a79fca9ab57ab35834febac3928cc1cb338e401c76",
+      "data/raw_pdfs/denken3/review/egov/335M50000400097-20240401.json": "0b6445a9404315c6a7cd95900e4427c56c21b24b9b587d6985cf88507cb365e9"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem matches the attached original figure (問2, printed page -2-, footer T2−H 005, consistent with reviewedFromPage [5]) word for word, except that the original's full-width comma「，」is written as「、」. The meaning is unchanged.",
+        "All five options (1)–(5) match the original in wording and numbers: 250 kW, 3 kW, 250 kW / 50 kW, and 200 V. The units kW and V are correct.",
+        "The official answer is (3), which matches the manifest-fixed answer {question:2, part:null, answer:'3'}. The candidate's officialAnswer is also '3'. No change was made.",
+        "Law Article 2(2) (effective 2024-04-01) removes demand facilities with maximum demand of 500 kW or more from 自家用電気工作物 as the law uses the term. A 250 kW facility is therefore in scope. This supports the reasoning for (1), (3) and (5).",
+        "Law Article 3(1) says only a first-class electrician (第一種電気工事士) may work on 自家用電気工作物. It removes Paragraph 3 work (特殊電気工事) from that rule. This matches the explanation's claims that (1) is permitted and that (3) falls outside Paragraph 1.",
+        "Law Article 3(2) lets both first-class and second-class electricians (第一種・第二種電気工事士) work on 一般用電気工作物等, and sets no output limit. This matches (2), where the option itself says the equipment is installed in a 一般用電気工作物, and (4). It also supports the note in the (2) explanation that the second-class license has no separate output cap.",
+        "Law Article 3(3) and Enforcement Regulation Article 2-2(1)(ii) make work on the generator and related parts of an 非常用予備発電装置 a 特殊電気工事. That work requires a 特種電気工事資格者 certificate, and the regulation sets no output condition. A first-class license alone is not enough, so (3) is the incorrect statement. This matches the answer and explanation.",
+        "Enforcement Regulation Article 2-2(1)(i) makes ネオン工事 a special work only for 自家用電気工作物. A neon distribution board installed in a 一般用電気工作物 falls under Article 3(2), so a second-class electrician may do the work. The reasoning for (4) matches.",
+        "Law Article 3(4) and Enforcement Regulation Article 2-3 define 簡易電気工事 as work on 自家用電気工作物 used at 600 V or less, excluding line (電線路) work. An 認定電気工事従事者 may do this work. Grounding work on a 200 V motor falls within that scope, so (5) is correct. The reasoning matches.",
+        "The explanation says (3) is the only incorrect option. It gives a specific reason for each option: the answer choice and the four correct statements. There are no calculations, and the cause-and-effect reasoning is consistent.",
+        "The problem is text only and has no figure. figureDescription, figureUrls=[] and choiceFigureUrls={} are all consistent.",
+        "officialReferenceUrls points to e-Gov versions of the law and enforcement regulation effective 2024-04-01. Every legal claim in the explanation was checked against the attached text of Law Articles 2 and 3 and Enforcement Regulation Articles 2-2 and 2-3. No claims depend on outside sources that were not attached.",
+        "The metadata is consistent: exam date 2025-03-23, which is FY2024 (Reiwa 6) lower-half, subject law, problem 2."
+      ]
+    }
+  ]
+}

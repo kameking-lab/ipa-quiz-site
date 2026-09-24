@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2882,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13847,
+      "webSearchRequests": 0,
+      "costUSD": 0.1686798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1801,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b80272bfd4e1d308de8f06f194ce4c0bdccd59af757c68826d8906388077166c",
+  "inputRequestSha256": "e52817464eea57fbcb4f40b0df596910091f5a5521376c78a37672c39c7fbf9d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "93b566eb75f114a7730e0fbaafabb04599423818676ef0b0f65fdd4dad97a638"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p16.png": "f07eab8e9134d3bd709d5db2be11c1270a53cbe830621c0405f8959c21497cac"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q13-span-sag.png": "f51149e529cb216e502d91d40a7864436f169570d5a769ae51a2d7b845a1644c"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "84f7db1bad4b3b8730a19849a04607326073f6561014cf4661987a2cdb08aeb9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl・sourceAnswerPdfUrl は manifest と一致。原図フッター『T2−D 016』は PDF 第16頁を示し、reviewedFromPage=[16] と一致する（印刷頁番号は -13-）。",
+        "問題文: 原図と照合した。高低差のない支持点A, B、径間S=100 m、30 ℃でたるみD=2 m、60 ℃時のDの値[m]、線膨張係数1 ℃につき1.5×10⁻⁵、張力による伸びは無視、の各条件が数値・単位・指数とも一致する。",
+        "選択肢: (1)2.05 (2)2.14 (3)2.39 (4)2.66 (5)2.89。原図の全5肢と一致する。",
+        "公式正答: 公式解答表の＜電力＞問13は3。候補の officialAnswer='3' と一致する。",
+        "総合解説の検算: L₁=100+8×2²/(3×100)=100.10667 m。ΔL=100.10667×1.5×10⁻⁵×30=0.045048 m。L₂=100.15171 m。D'²=3×100×0.15171/8=5.6893、D'=2.3852 m ≒ 2.39 m で(3)となる。ΔLをS基準（0.045 m）で求めても D'=2.3848 m となり、結論は変わらない。放物線近似の実長式 L=S+8D²/(3S) は電験三種の標準的な扱いで、因果関係（温度上昇→実長増加→たるみ増加）も正しい。",
+        "各肢解説の検算: (1) 2.385−2.05=0.335 m。2+0.045≒2.05 とする誤答の指摘も数値的に成立する。(2) 2.385−2.14=0.245≒0.25 m。(4) 2.66−2.385=0.275≒0.28 m。(5) 2.89−2.385=0.505≒0.5 m。いずれも記載どおりで、正答肢(3)の理由も正しい。",
+        "公開候補図: 原図と照合した。上部の寸法線『S=100 m』、左端A・右端Bの黒丸支持点、両者を結ぶ水平破線、下方に垂れる電線曲線、中央の縦寸法矢印『D=2 m』がそろっており、接続・向き・全ラベルが一致する。公開候補図だけで問題の幾何条件を理解できる。figureDescription の記述も図と整合する。",
+        "参照URL: officialReferenceUrls は空のため、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

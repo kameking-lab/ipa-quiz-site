@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3897,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14330,
+      "webSearchRequests": 0,
+      "costUSD": 0.1928438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2423,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c6dbbeabb73a2389afa04fe1916a8e06cd1ceee8192c8c14f9049383fb999ead",
+  "inputRequestSha256": "22ccf7ce82e07f75247f2df50e2a5093ee89ff41071e764b3980fcb2bf82cc2b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "2d0261153ab6cd2a304dc0881a45290ec23a5bf6519b3dc11a835318f394fac8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p10.png": "6dfdba488e2d253d508595df3695e2a4bd3eaba8960e7b00933a82dd882225d5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q07-fig1.png": "f5f4265f2e4377beadf69b9ea13c8b4c9d786f54b68e9f7fad963f4809587aa4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "9a5cbdec7f18539027226f8bbaae0f1be131e67b15b2b1ed459765dc3e52aa61",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドは『試験年度・回は…ここに示した資料からは確定できない』としているが、sourceAttribution・fiscalYear・term は『令和7年度上期』と断定しており、候補内部で矛盾している。一方、添付の公式解答表原図の見出しは『令和7年度 第三種電気主任技術者上期試験解答』で、理論 問7=1 は manifest 固定の公式正答単位と一致する。年度・期の記述は根拠と整合させるべきで、uncertainty の現記述は不正確。",
+        "examDate '2025-08-31' は添付の問題原図にも解答表原図にも記載がなく、PDF の URL ファイル名（20250831_ch_third_q01/a01）からの推定にとどまる。添付資料からは検証できない外部確認事項である。",
+        "needsReview=false だが、上記のとおり uncertainty に未解消事項が残っており、フラグと整合しない。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 原図『図のような直流回路において，スイッチSを閉じているとき，2Ωの抵抗を流れる電流は，スイッチSを開いたときの電流の3倍であった。Rの値[Ω]として，最も近いものを次の(1)～(5)のうちから一つ選べ。』と候補の文言が一致（〜/～の字形差のみ）。単位 [Ω] も一致。",
+        "選択肢: 原図 (1)2.5 (2)3.5 (3)0.5 (4)1.5 (5)4.5 と候補の全5肢が一致。",
+        "公式正答: 公式解答表 <理論> 問7 の解答欄は 1、配点は 5。候補の officialAnswer='1'・scoringPoints=5 と一致。",
+        "総合解説の検算: S開のとき I=E/12。S閉のとき R_p=10R/(10+R)、I=E/(2+R_p)。3倍条件から 2+R_p=4、R_p=2、10R=20+2R、R=2.5Ω。計算・因果とも正しい。電流比のみで決まるため E の値と極性に依存しないという記述も正しい。",
+        "誤答肢の検算: R=3.5 → R_p=2.593, 全抵抗4.593, 比2.613（≒2.61）。R=0.5 → R_p=0.476, 全抵抗2.476, 比4.846（≒4.85）。R=1.5 → R_p=1.304, 全抵抗3.304, 比3.632（≒3.63）。R=4.5 → R_p=3.103, 全抵抗5.103, 比2.351（≒2.35）。各肢の数値と『届かない／超える』の判定はすべて正しい。",
+        "公開候補図と原図の照合: E（電池記号、左辺、上側が長線）、右向き矢印 I、2Ω、上下2つの接続点（黒丸）、10Ω（左ラベル）、開いた状態のスイッチと曲線矢印、S（スイッチ下方）、R（右ラベル）がすべて揃っている。接続・向き・ラベルの欠落や改変はない。回路トポロジー（S閉で R∥10Ω、それに 2Ω が直列）は候補図だけで読み取れる。",
+        "figureDescription: 接続、I の位置と向き、全ラベルの配置が原図と一致する。電池の極性（上側が長線＝正極）は記述されていないが、I の向きが明記されており、解答にも影響しないため問題なしと判断した。",
+        "officialReferenceUrls は空で、検証すべき独立主張はない。",
+        "reviewedFromPage=[10]: 原図の印刷ページは『-7-』、フッタは『T1－R 010』。PDF ページ 10 とは矛盾しないが、添付資料だけでは PDF ページ番号を確定できない。問題内容の正否には影響しない。"
+      ]
+    }
+  ]
+}

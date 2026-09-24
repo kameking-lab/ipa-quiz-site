@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6105,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 32972,
+      "webSearchRequests": 0,
+      "costUSD": 0.41377260000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3291,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "56458df59432b229acc63e0c9fa29f2d299097df38a326670db0cf442de6d3b1",
+  "inputRequestSha256": "346483fa7bae86d07aecc6695e643766da948ba04912464f0f6876ad45b65f88",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "97421ad7e6b19dcf78acbc9b148e7be883a9d646b52924c08efe2fb6ce2bcccf",
+      "q07": "3d3cb14a3e627629073768f59beedc6be2fd0ccca7c91f3b2fe281e05595364c",
+      "q08": "65447e9d78de5987028b46f89a761c3872b40453173eeb9f9696056ef1f57135",
+      "q09": "812b9d732003eaf3de38c8c5623ad2a82af83305114cc8b27740284564691de6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p09.png": "cdfc0e3719fc869cb9c4e34cc1e899eb499a7b8a58966c98b252d64804332e45",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p10.png": "da19b4b6f0308d29e01e1e25627621cac2aa2be99792ca58411a7cd0a3263116",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p11.png": "ec51608fe3c44917a7dc851345b512b68068de72ca760c367d1307cca7db6d7f",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p12.png": "6d1d584394c15bba56e9a3a4d3a623820e6f4b3631af0aba394bd84018c5505c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p13.png": "5245f2dc6a130762a3e0fac1a1520e5f28bbdbc8f487721316360fe575bd7914"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "92fc941fb56893d1be47178cef2c6f8049158bd20cf1e67140b6ccc734e44c55",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1]には、誤答(1)130 V特有の理由が書かれていない。『正しい合成結果240 Vと一致しない』は結論を言い直しただけである。『どの値を単独で使っても130Vは導かれない』は検証できない全否定の主張で、根拠も示されていない。修正案：力率1.0の同期電動機ではE=√(V_p²+(I·x_s)²)となる。V_p≈207.8 Vとリアクタンス降下120 Vは直交するため、Eは必ず相電圧207.8 Vより大きい。したがって、相電圧を下回る130 Vにはなり得ない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（T1-K 009、印刷頁-6-）で問題文を照合した。線間電圧360 V、電機子電流20 A、cosθ=1.0、Y結線、x_s=6 Ω、巻線抵抗無視、一相の誘導起電力E[V]がすべて候補と一致する。",
+        "選択肢(1)130、(2)220、(3)240、(4)370、(5)380は原図と一致する。",
+        "公式解答表の機械・問6は3。候補のofficialAnswerとmanifestの値（3）に一致する。",
+        "検算：V_p=360/√3≈207.8 V、I·x_s=20×6=120 V。電動機の関係式V_p=E+jIx_sからE=V_p−jIx_s。|E|=√(43200+14400)=√57600=240 V。",
+        "誤答肢(2)を検算した：√(207.8²+69.3²)=√48000≈219.1 V。",
+        "誤答肢(4)を検算した：√(360²+69.3²)=√134400≈366.6 V。",
+        "誤答肢(5)を検算した：√(360²+120²)=√144000≈379.5 V。",
+        "reviewedFromPage [9]は、原図のT1-K 009（機械問題PDFの第9頁）と整合する。",
+        "解答に図は不要。figureUrlsが空であることも妥当。"
+      ]
+    },
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（T1-K 010、011）で問題文を照合した。文a・b・cの本文と空白（ア）〜（エ）の配置は候補と一致する。aは（ア）と（イ）、bは（イ）と（ウ）、cは（ア）と（エ）。",
+        "選択肢表の各行を原図と照合し、すべて候補と一致した：(1)誘導機/直流機/変圧器/同期機、(2)同期機/直流機/変圧器/誘導機、(3)直流機/誘導機/同期機/変圧器、(4)同期機/直流機/誘導機/変圧器、(5)直流機/誘導機/変圧器/同期機。",
+        "公式解答表の機械・問7は5。officialAnswerと一致する。",
+        "論理検算：文aから（ア）（イ）は{直流機,誘導機}、文bから（イ）（ウ）は{誘導機,変圧器}、文cから（ア）（エ）は{直流機,同期機}。よって（ア）=直流機、（イ）=誘導機、（ウ）=変圧器、（エ）=同期機で、組合せは(5)に一意に決まる。",
+        "各誤答肢で少なくとも1つの条件違反が正しく指摘されている：(1)は（ア）誘導機が文cに不適合、(2)は（ア）同期機が文aに不適合、(3)は（ウ）同期機が文b、（エ）変圧器が文cに不適合、(4)は（ア）が文a、（エ）が文cに不適合。",
+        "reviewedFromPage [10,11]は、原図のT1-K 010、011と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（T1-K 012、印刷頁-9-）で問題文を照合した。前文、a=N₁/N₂、V̇₂′・İ₂′・r₂′・x₂′・Ż_L′の5つの定義式と空白（ア）〜（オ）、ダッシュ記号の注記は候補と一致する。",
+        "選択肢表の5行を原図と照合し、すべて候補と一致した：(1)1/a,a,1/a²,1/a²,a²、(2)1/a,a,a²,a²,a、(3)a,1/a,1/a²,1/a²,1/a²、(4)a,1/a,a²,a²,a²、(5)1/a,a,1/a²,1/a²,1/a²。",
+        "公式解答表の機械・問8は4。officialAnswerと一致する。",
+        "検算：V₁/V₂=a、I₁/I₂=1/a。インピーダンスの換算はZ′=(a·Z·I₂)/(I₂/a)=a²Z。したがって（ア）=a、（イ）=1/a、（ウ）（エ）（オ）=a²で、(4)と一致する。",
+        "各誤答肢で、電圧と電流の換算係数の入れ替わり、およびインピーダンス換算係数の誤りが正しく指摘されている。",
+        "figureDescriptionが記述しているのは原図の数式配置と表だけで、回路図がないことも原図と整合する。",
+        "reviewedFromPage [12]は、原図のT1-K 012と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（T1-K 013、印刷頁-10-）で問題文を照合した。二次側短絡、定格周波数、電流40 A、電圧80 V、電力1 200 W、一次側からみた漏れリアクタンス[Ω]、理想計器のただし書きは候補と一致する。",
+        "選択肢(1)1.28、(2)1.85、(3)2.00、(4)2.36、(5)2.57は原図と一致する。",
+        "公式解答表の機械・問9は2。officialAnswerと一致する。",
+        "検算：Z=80/40=2.0 Ω、R=P/I²=1200/1600=0.75 Ω、X=√(4−0.5625)=√3.4375≈1.854 Ω。cosθ=0.375、sinθ≈0.92702からも同値になる。",
+        "誤答肢(1)を検算した：X=1.28 ΩならR≈1.537 Ω、P≈2459 Wとなり、実測の1200 Wと矛盾する。",
+        "誤答肢(3)はZ全体の値であり、R>0なのでX<Zとなって成り立たない。",
+        "誤答肢(4)(5)はZ=2.0 Ωを超えるため成り立たない。",
+        "reviewedFromPage [13]は、原図のT1-K 013と整合する。"
+      ]
+    }
+  ]
+}

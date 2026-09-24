@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2654,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13942,
+      "webSearchRequests": 0,
+      "costUSD": 0.1648798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1185,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d9bd699f66372fad9d3150ef4aab0545df03914c7a1b7fdda78c5c02e07d0a27",
+  "inputRequestSha256": "47bc9e11bfa433aa060f92073e7a759f4ac34b15c34ed0b72f55377a46f18559",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "416a13b7614a0a396b67789be1300a90a073e89dd3399b02381b38a42c1d3381"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p10.png": "187fccd634b02c2d065a6f9028ec847913da2e1e9f5b0d158ae214262a9002c5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q07-resistor-network.png": "f1318014ae48891938ddfb0bbceda2fcd5788de8529fe555a99b450b232c5da2"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "198d0a502bfdaf7c5d3ba3d228ccb14bc4960fa6683f4800347f98df645b2ad0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図『図の抵抗回路において，端子 a, b 間の合成抵抗 R_ab の値[Ω]は 1.8R[Ω]であった。このとき，抵抗 R_x の値[Ω]として，正しいものを次の(1)〜(5)のうちから一つ選べ。』と候補は語句・数値(1.8R)・記号(R_ab, R_x)・単位[Ω]まで一致。句読点の全角化などの整形のみ。",
+        "選択肢: 原図 (1) R (2) 2R (3) 3R (4) 4R (5) 5R と候補 choices 1〜5 が完全一致。",
+        "公式正答: 公式解答表 理論 問7 = 4。manifest固定単位 {question:7, part:null, answer:'4'} と候補 officialAnswer='4' が一致。変更なし。",
+        "総合解説の計算: R_ab = R + R·R_x/(R+R_x) = 1.8R → R·R_x/(R+R_x) = 0.8R → R_x/(R+R_x) = 0.8 → R_x = 0.8R + 0.8R_x → 0.2R_x = 0.8R → R_x = 4R。独立に検算し正しい。検算 R·4R/5R = 0.8R, R + 0.8R = 1.8R も正しい。直列→並列の因果説明は原図の接続と整合。",
+        "肢別解説: (1) R∥R = 0.5R, R_ab = 1.5R ≠ 1.8R ✓ / (2) R∥2R = 2R/3 ≒ 0.667R, R_ab ≒ 1.667R ✓ / (3) R∥3R = 0.75R, R_ab = 1.75R ✓ / (4) R∥4R = 0.8R, R_ab = 1.8R 一致 ✓ / (5) R∥5R = 5R/6 ≒ 0.833R, R_ab ≒ 1.833R ✓。各肢に固有の数値根拠があり、正誤判定も正しい。",
+        "図: 公開候補図は原図と同一構成。端子a(左・白丸)→直列 R[Ω]→左節点(黒点)で上下分岐、上枝 R[Ω]・下枝 R_x[Ω]→右節点(黒点)で合流→端子b(右・白丸)。全ラベル a, b, R[Ω]×2, R_x[Ω] の位置・添字が一致し、欠落・余分な要素なし。figureDescription の記述とも一致。直列/並列の区別は図なしでは確定できないため図必須の判断は妥当であり、公開候補図単独で解答に必要な情報が読み取れる。",
+        "出典メタデータ: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=theory が manifest(2024年度下期・試験日2025-03-23・理論)と一致。解答表見出し『令和6年度 下期』とも一致。sourceQuestionPdfUrl / sourceAnswerPdfUrl は manifest の URL と完全一致。reviewedFromPage=[10] は manifest の問7原図 PDF第10頁と一致(原図の印刷ページ番号『-7-』は冊子頁、フッタ『T2−R 010』は PDF第10頁と整合)。sourceAttribution『令和6年度下期第三種電気主任技術者試験 理論科目 問7』も一致。",
+        "参照URL: officialReferenceUrls は空で、解説は問題文・図のみから導ける計算で完結しており、外部資料に依存する独立主張はない。検証を要する外部確認事項なし。uncertainty 欄の『一次資料URLは確実に特定できていない』は補足参考URLに関する記述であり、出典PDF URLは manifest と一致しているため公開内容への影響はない。"
+      ]
+    }
+  ]
+}

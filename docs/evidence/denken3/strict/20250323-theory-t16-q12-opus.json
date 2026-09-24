@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3338,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 16487,
+      "webSearchRequests": 0,
+      "costUSD": 0.2265526,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1861,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6ca03a12b8ed46d4f5a490533e5e11c7a8a221ff9ca743ee80fe860f16bb8d4a",
+  "inputRequestSha256": "7393b4bfa552472225ba687defb75097b3e6477353608e142d8aeec0efee1bdd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "5884056580183def7fede9f942af490e1d7e8dde5f6dc18962dde35a984e2846"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p15.png": "7f1fda75c2604da992ccdf9dcfd6776524c07777003691dd513ccbc6f70052f8"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q12-magnetron-electron-path.png": "272c74e5912a1ed2277f956603c49e6732c5faae0b6052afd459400d27f75d99"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "fb503a33fbecc6b3069511f9480ee982fb83e790ef373d195866374c85f18ff0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text matches the official original page (footer '- 12 -', sheet mark 'T2−R 015', consistent with reviewedFromPage [15]). The candidate writes ⊙ where the original uses a dotted-circle symbol, and it keeps the meaning 'z軸の正の向き, 紙面に垂直かつ手前'. Checked E[V/m], B[T], charge −e[C], initial velocity zero, 'y軸の(ア)の向き', 'x軸の正の向きに移動', 'ただし，電子は紙面と平行な平面上を移動し，重力の影響は無視' and the (ア)–(オ) blank positions. Differences are only punctuation (，/、).",
+        "Choices (1)–(5): all five items of each row match the original table: (1) 正/比例/ローレンツ/正/サイクロイド, (2) 正/反比例/アンペール/正/ヒステリシス, (3) 負/比例/アンペール/負/リサジュー, (4) 負/比例/ローレンツ/負/サイクロイド, (5) 負/反比例/ローレンツ/負/リサジュー.",
+        "The official answer in the manifest-fixed unit is {question:12, part:null, answer:'4'}. It matches the candidate's officialAnswer '4'.",
+        "Recheck of (ア): the anode (+) is on top and the cathode (−) is on the bottom, so E points toward −y. The electron's force −eE points toward +y, which is toward the anode. So (ア) = 負 is correct.",
+        "Recheck of (イ)(ウ): the force a moving charge receives from a magnetic field is the Lorentz force with magnitude evB (v⊥B), which is proportional to B. So 比例 and ローレンツ are correct.",
+        "Recheck of (エ): with v=+vŷ and B=+Bẑ, F=−e(v×B)=−evB x̂, which points toward −x. With B=−Bẑ, F=+evB x̂, which points toward +x. The E×B drift gives the same result: (−Eŷ)×(−Bẑ)=+EB x̂. So (エ) = 負 is correct.",
+        "Recheck of (オ): a charge starting from rest in uniform crossed E and B fields traces a cycloid, which is a circular motion combined with an E×B drift. The cusps touch the cathode, and above a certain B the electron does not reach the anode. This matches the figure. The descriptions of Lissajous (a combination of perpendicular simple harmonic motions) and hysteresis (a history-dependent phenomenon such as magnetization) are accurate.",
+        "Per-choice explanations: every correct and incorrect item was checked against each row of the table, with no contradictions. (1) (ア)(エ) wrong. (2) (ア)(イ)(ウ)(エ)(オ) all wrong. (3) (ウ)(オ) wrong. (5) (イ)(オ) wrong. (4) all items correct.",
+        "Public candidate figure: compared with the original, it matches on the coordinate axes (y up, x right, z ⊙ at the origin), anode on top and cathode on bottom (both hatched with labels), E and B labels stacked vertically on the left, point P at the left end on the cathode with its label, three consecutive arcs (the third one partial) each with a right-pointing arrow, and a path that does not reach the anode. There is no electric-field arrow, the same as in the original. The figure contains all the layout information needed to answer, and figureDescription matches it.",
+        "officialReferenceUrls is empty, so there are no independent claims that need verification. The uncertainty field matches the original, which has no direction arrows for E or B, and it leaves no unverified external items. needsReview=false is appropriate.",
+        "Metadata: examDate 2025-03-23, fiscalYear 2024, term lower, subject theory and the attribution 令和6年度下期 理論 問12 are all consistent with each other."
+      ]
+    }
+  ]
+}

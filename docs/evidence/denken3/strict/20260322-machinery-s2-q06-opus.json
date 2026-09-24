@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4103,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13858,
+      "webSearchRequests": 0,
+      "costUSD": 0.1931878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2506,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "93345b30321cdc9ec02126077732550aff74a650c7f17644afbeac73cb3c6adc",
+  "inputRequestSha256": "a413be68d83bddfee70ff3c0b2883548049239f30723bdfc5c09657133ea9170",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "4f3444c70d8bb27dbbd6e90892b6840b547c81876673d011d9095886abbf54c5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p09.png": "1fcc892005c7488a7db61b75889701f958a54e0e9e502d13474880bb17ea1ee7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a00f715e830fc0e751323e4e4ca93bcf4c9ac7899018cd3e2cccf138d0b81ef1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[\"5\"]: 「0.55 Ω はその約4分の1にすぎない」は比率表現が粗い。0.55 / 2.041 ≒ 0.27 なので、4分の1（0.25）とは約8％ずれる。「約0.27倍（約3.7分の1）」など実値に合わせるべき。同じ候補の肢2では「約3.4倍」（実値3.36）と精密に書いており、表現の精度が揃っていない。",
+        "choiceExplanations[\"5\"]: 「界磁電流と短絡電流の比 500 / 860 は ≒0.58」は A/A の無次元量で、[Ω] の値と並べて誤算例として比較するのは次元的に不適切。単位のない比を Ω 候補と同列に扱わない表現に改めるか、この例を削除すべき。",
+        "choiceExplanations[\"2\"]: 「相電圧を3倍した場合は ≒6.12 Ω」は算術としては正しい（3 × 2.041 ≒ 6.12）。しかし実際の誤り方は「線間電圧を √3 で割らずに √3 倍した」（15200 × √3 / 4300 ≒ 6.12）であり、「相電圧を3倍」という記述では誤りの原因が学習者に伝わらない。原因が分かる記述に改めるべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第9頁、印刷頁「- 6 -」、T2−K 009）と照合した。15.2 kV（線間）、界磁電流 500 A、短絡試験時の界磁電流 100 A、短絡電流 860 A、単位[Ω]、「最も近いもの」がすべて一致する。差異は全角・半角の括弧と読点の整形のみで、sourceAttribution の「読みやすく整形」の範囲内。",
+        "選択肢: (1)10.2 (2)6.86 (3)3.53 (4)2.04 (5)0.55 が原図と完全に一致する。",
+        "公式正答: 解答PDFの原図（令和7年度 第三種電気主任技術者下期試験解答、<機械> 問6）は解答4・配点5。manifest の q06 単位（answer=4, points=5）、候補の officialAnswer=4、scoringPoints=5 と一致する。",
+        "総合解説の検算: 短絡電流 Is = 860 × 500/100 = 4300 A。相電圧 E = 15200/√3 = 8775.7 V。Zs = 8775.7/4300 = 2.0409 Ω ≒ 2.04 Ω で、(4) と一致する。短絡特性をほぼ直線とみなす前提、同一界磁電流で比をとる前提、星形1相換算の前提は、いずれも電験三種の標準的な扱いに沿っている。",
+        "肢1の検算: 8775.7/860 = 10.204 ≒ 10.2 で、短絡電流を換算しない誤りと正しく対応している。",
+        "肢3の検算: 15200/4300 = 3.535 ≒ 3.53 で、線間電圧のまま計算する誤りと正しく対応している。",
+        "肢4の検算: 正答の根拠記述は総合解説と一致する。",
+        "肢2の数値: 6.86/2.041 ≒ 3.36（約3.4倍）、10.2・3.53・6.12 の各数値はいずれも正しい。6.86 が典型的な誤算と一致しないという主張は、検算した範囲では反証されない。",
+        "肢5の数値: 8775.7/√3/4300 ≒ 1.178（≒1.18）、500/860 ≒ 0.581 は算術として正しい。",
+        "図: 原図に図はない。figureDescription「図なし」、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=machinery、問題PDF URL（q03）、解答PDF URL（a01）、reviewedFromPage=[9] が manifest と一致する。",
+        "officialReferenceUrls は空で、検証を要する独立の外部主張はない。"
+      ]
+    }
+  ]
+}

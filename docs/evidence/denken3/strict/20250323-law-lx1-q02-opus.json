@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5777,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17595,
+      "webSearchRequests": 0,
+      "costUSD": 0.2565638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3961,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cfe2067cb94e0beaca25773099c7a338c652892274bbbed878cde02bec7373a8",
+  "inputRequestSha256": "25c07bc34a6aeccfdc34cfd3a1e817517cc5fa038776c79ec4d6b16a2a11fe81",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "3446ab01cf08104f2b013d0dbcf095c4b0ca22ccf1084b08dcf85b28ecbb4e5f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p05.png": "eb4eab232b0c500b22258e7646f170deb63df2022f466861a909f80b07062969",
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "2257137014b6ea730aed7156ecba37cda1b24041c6f58a085c69f5293ee0c4cc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/335AC0000000139-20240401.json": "960efcdef40a3173d5b276a79fca9ab57ab35834febac3928cc1cb338e401c76",
+      "data/raw_pdfs/denken3/review/egov/335M50000400097-20240401.json": "0b6445a9404315c6a7cd95900e4427c56c21b24b9b587d6985cf88507cb365e9"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[5] が法的根拠の要を欠いている。現行文は、電気工事士法第2条第2項で250 kWの需要設備が対象の自家用電気工作物に入ること、そして施行規則第2条の3の簡易電気工事の範囲に当たることしか述べていない。認定電気工事従事者が簡易電気工事に従事できるという許可規定（電気工事士法第3条第4項「第一項の規定にかかわらず、認定電気工事従事者は、その作業に従事することができる」）が書かれていないため、『簡易電気工事に該当する → 認定電気工事従事者が従事できる』という因果がつながらない。修正例：『適切。電気工事士法第2条第2項で250 kWの需要設備は対象の自家用電気工作物に入る。施行規則第2条の3により、電圧600 V以下で使用する自家用電気工作物に係る電気工事（電線路に係るものを除く）は簡易電気工事であり、200 V電動機の接地工事はこれに当たる。同法第3条第4項により、認定電気工事従事者は簡易電気工事の作業に従事できる。』",
+        "句読点の表記が揃っていない。choiceExplanations[3]・[4] は読点に「、」を使い、explanation と choiceExplanations[1]・[2]・[5] は「，」を使っている。どちらか一方に統一すること（内容上の誤りではない）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（PDF第5頁、頁内表記 -2-／T2-H 005）の問2本文と照合し、語句・数値の一致を確認した。句読点の「，」は「、」に整形されており、この整形は sourceAttribution に明記されている。",
+        "選択肢(1)〜(5)：原図と照合し、数値（250 kW、3 kW、250 kW／50 kW、200 V）、単位、資格名、工作物区分の全文一致を確認した。",
+        "公式正答：試験センター公式解答表（令和6年度下期、法規 問2＝3）と officialAnswer \"3\" の一致を確認した。manifest の公式正答単位 {question:2, part:null, answer:\"3\"} とも一致する。",
+        "メタデータ：fiscalYear=2024（令和6年度）、term=lower、examDate=2025-03-23、subject=law、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[5] が manifest と一致することを確認した。",
+        "法令の効力基準日：法規注意書き頁の注3（令和6年4月1日現在の法令に基づき作成）と、officialReferenceUrls の occasion_date=20240401 が一致することを確認した。",
+        "officialReferenceUrls：335AC0000000139 は電気工事士法、335M50000400097 は電気工事士法施行規則。いずれも添付の e-Gov 条文（法第2条・第3条、規則第2条の2・第2条の3）で内容を検証でき、未検証の独立主張はない。",
+        "総合解説：以下の記述を、添付条文の文言と照合して正しいことを確認した。法第2条第2項で500 kW以上の需要設備が除外されること。法第3条第1項の括弧書きで第3項の電気工事（特殊電気工事）が除外されること。規則第2条の2第1項第2号で非常用予備発電装置として設置される発電機等の工事が特殊電気工事に当たること。法第3条第3項で特種電気工事資格者でなければ従事できないこと。以上から(3)が不適切とする結論は公式正答と整合する。",
+        "choiceExplanations[1]：250 kW＜500 kW で法第2条第2項の自家用電気工作物に該当し、法第3条第1項により第一種電気工事士が従事できる。記述は正しい。",
+        "choiceExplanations[2]：法第3条第2項は、第二種電気工事士の範囲を一般用電気工作物等という工作物区分で定めている。第二種電気工事士資格そのものに独立した出力上限はないため、記述は正しい。",
+        "choiceExplanations[3]：非常用予備発電装置の発電機に係る工事は、需要設備の規模や出力（50 kW）に関係なく特殊電気工事に当たり、第一種電気工事士免状だけでは従事できない。記述は正しい。",
+        "choiceExplanations[4]：規則第2条の2は『法第三条第三項の自家用電気工作物に係る電気工事のうち』と限定しているため、一般用電気工作物のネオン用分電盤の工事は特殊電気工事に当たらず、法第3条第2項により第二種電気工事士が従事できる。記述は正しい。",
+        "figureDescription：原図は文章のみで、図・表・回路図はない。figureUrls=[]、choiceFigureUrls={} と整合する。"
+      ]
+    }
+  ]
+}

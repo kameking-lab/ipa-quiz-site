@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2478,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14131,
+      "webSearchRequests": 0,
+      "costUSD": 0.1628718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1059,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "829f353f6118332231f614fabd4e39d08c7daf70946bcdc57e00548918594682",
+  "inputRequestSha256": "b7d4f2ba55c68886cc73cf0a668846c2c6a8654654df9908e15e7c26d1a9ffc1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "3e76a04c8ef7ac09fba725032f00e9f6a4c22f5b496845447ce7fc93861c2db2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p07.png": "f0168d556515e9698aab706177e796257e786c5e3056eecb725b60e45567d47d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "edcc814ebf7b9578ec8156036a640a88df7802e21d376c6278e8e3ccefa50678",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付の公式問題原図（印刷頁「-4-」、管理記号 T1−D 007）と照合した。リード文、第1〜3段落（質量数 235・238、0.7 %程度、製錬・転換・遠心分離法・濃縮、再転換・加工、使用済燃料・分離抽出、プルサーマルの定義、軽水炉の転換比 0.6 程度、高速中性子によるウラン 238 のプルトニウムへの変換）、設問文の字句と数値はすべて一致した。空欄(ア)〜(エ)の位置も一致した。",
+        "選択肢: 原図の表を行ごとに照合した。(1) 3〜5/再処理/MOX 燃料/高速増殖炉、(2) 3〜5/再処理/イエローケーキ/高速増殖炉、(3) 3〜5/再加工/イエローケーキ/新型転換炉、(4) 10〜20/再処理/イエローケーキ/高速増殖炉、(5) 10〜20/再加工/MOX 燃料/新型転換炉。5肢とも choices と一致した。",
+        "公式正答: 公式解答表原図（令和7年度 第三種電気主任技術者上期試験解答）の＜電力＞列で、問4 の解答は 1、配点は 5 である。manifest の公式正答単位 {question:4, part:null, answer:\"1\", points:5}、候補の officialAnswer=\"1\"、scoringPoints=5 と一致した。",
+        "総合解説: 次の4点が技術的に正しく、正答 (1) を導いていることを確認した。(ア) 軽水炉用の低濃縮ウランは 3〜5 %程度。(イ) 使用済燃料からウラン・プルトニウムを分離回収する工程は再処理。(ウ) ウラン・プルトニウム混合酸化物燃料が MOX 燃料で、軽水炉で利用するのがプルサーマル。(エ) U-238 から Pu-239 を生成し、転換比（増殖比）が 1 を超える炉が高速増殖炉。計算を要する箇所はない。",
+        "肢別解説(2): 誤りの箇所は (ウ) だけである。解説はイエローケーキを製錬で得るウラン精鉱（濃縮前の物質）と説明しており、正しい。",
+        "肢別解説(3): 誤りの箇所は (イ)(ウ)(エ) の3つで、解説は3つすべてを指摘している。新型転換炉が熱中性子炉（重水減速）であるという記述も正しい。",
+        "肢別解説(4): 誤りの箇所は (ア)(ウ) の2つで、解説は2つとも指摘している。",
+        "肢別解説(5): 誤りの箇所は (ア)(イ)(エ) の3つで、解説は3つすべてを指摘している。(ウ) MOX 燃料は正しい語句なので、指摘していないのは適切である。",
+        "図: 原図の問4 に回路図などの図はない。表は選択肢の表示形式にすぎず、choices に文字で完全に再現されている。figureUrls・choiceFigureUrls が空であることと figureDescription の記述は妥当である。",
+        "出典: officialReferenceUrls は空で、検証すべき独立主張はない。reviewedFromPage=[7] は PDF の頁番号である。添付原図の印刷頁は「-4-」であり、表紙・注意事項の頁が先行する構成と矛盾しない。sourceAttribution（令和7年度上期 電力 問4）、examDate 2025-08-31、fiscalYear 2025、term upper、subject power は、公式解答表の標題と科目区分に一致した。"
+      ]
+    }
+  ]
+}

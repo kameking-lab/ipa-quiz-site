@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5089,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 23537,
+      "webSearchRequests": 0,
+      "costUSD": 0.2903398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2744,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2231caab76c01651f827a8fd8373ad5324ae1050c24e91822e18998f4d8164ef",
+  "inputRequestSha256": "c1c645db93df1c2503873bf7bfa848b3817e0c331da3744091688ed2f5e6a5a9",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "c6fcd55626ce63c137c3940bf1f11e5b66d23fbb0786bef8631c5973850e166a",
+      "q18b": "5b8e5321693ac66e3ef1cb5e9653c0bbc0bed081642b48dadd22e9b059386663"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p24.png": "fbad2e053d66270dc6ac53748effe871fcaebffeef4457b8e6095984de633683",
+      "data/raw_pdfs/denken3/review/20260322/machinery/p25.png": "496b3fc79f4b7a96f5133ad5ad04b4ca09cf7590f68a377c76b4402d1575a289"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q18-fig1.png": "2f5d4f3568b91d63786bb502a45da0faa1a29aa3929feb98600e96ad2c59d2e1",
+      "public/images/denken3/20260322/machinery/20260322-machinery-q18-fig2.png": "b4ab12673ee5fe7a0d9789630c87adf8e83479a549352189cd2a8817fde2f81d"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a730a4b325c5de6ebba661a13c1af83a5627189cdb14806e7cbfdf7ef7a94159",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に (b) の選択肢であるボード線図 20260322-machinery-q18-fig2.png が含まれている。(a) の解答に必要なのはブロック線図 fig1 だけである。fig2 の各図には (1)〜(5) のラベルが付いており、(a) の数式選択肢 (1)〜(5) と同じ番号になる。このため (a) の画面では、どちらが選択肢なのか学習者が取り違えるおそれがある。原本でも (a) は第24頁（冊子 -21-）で完結し、ボード線図は第25頁（-22-）の (b) にだけ属する。(a) の figureUrls を fig1 のみにし、figureDescription の括弧書き（ボード線図は(b)の選択肢である旨）もそれに合わせて簡潔にすること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図 PDF 第24頁（冊子 -21-, T2-K 024）と照合した。「T=0.2 s, K=10」「ωは角周波数[rad/s]」「入力R(jω)、出力C(jω)、全体の周波数伝達関数W(jω)」が一致する。冒頭の「問17及び問18は選択問題…両方解答すると採点されません」と「(選択問題)」は試験運営上の注記なので、省略しても設問内容に影響しない。",
+        "選択肢: (1) 1/(1+j0.2ω)、(2) 10/(1+j0.2ω)、(3) 1/(1+j5ω)、(4) 50ω/(1+j5ω)、(5) j2ω/(1+j0.2ω) の5肢すべてが原図と一致する。",
+        "公式正答: 解答 PDF の機械・問18(a) は 2、配点は 5 で、候補の officialAnswer=2、scoringPoints=5 と一致する。",
+        "検算: E=R−Y、Y=E/(jωT) から Y=R/(1+jωT)、C=KY となり、W=K/(1+jωT)=10/(1+j0.2ω) で (2) になる。別解の G/(1+G)×K も同じ結果になる。",
+        "誤答肢の理由を検算した。(1) は K が欠落している。(3) は分母係数が 1/T=5 で、ω→0 の値は 1 になる。(4) は ω→0 で 0 になる。(5) は 10·j0.2ω=j2ω で、K·jωT/(1+jωT)=K·E/R に一致する。いずれも正しい。",
+        "図 fig1: 原図と照合した。R(jω) は「＋」で白丸の加え合わせ点に入る。そこから 1/(jωT) ブロックを経て黒丸の分岐点に至り、K を経て C(jω) に出る。分岐点からは伝達要素なしで下を回り、「−」で加え合わせ点の下側に戻る。接続・向き・全ラベルが一致し、figureDescription の記述も正確である。",
+        "メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=machinery、問題 PDF q03・解答 PDF a01 の URL、reviewedFromPage=[24,25] がすべて manifest と一致する。officialReferenceUrls は空なので、検証対象となる独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図 PDF 第25頁（冊子 -22-, T2-K 025）と照合した。実線は正確なゲイン特性、破線は折線近似である。横軸に折れ点角周波数を示す点、対数軸である点、−20[dB/dec] の定義も一致する。",
+        "選択肢: 原図のボード線図 (1)〜(5) と照合した。(1) は 20 dB で折れ点 0.2、0 dB 軸と交差する。(2) は 20 dB で折れ点 5、0 dB 軸と交差する。(3) は 0 dB で折れ点 0.2、(4) は 0 dB で折れ点 5、(5) は 0 dB で折れ点 0.5。いずれも −20 dB/dec であり、テキスト化した記述と一致する。",
+        "公式正答: 解答 PDF の機械・問18(b) は 2、配点は 5 で、候補と一致する。",
+        "検算: |W|=10/√(1+0.04ω²)、g=20−10log₁₀(1+0.04ω²) である。低域は 20 dB、折れ点は ω=1/T=5 rad/s、高域は 50/ω で −20 dB/dec となる。ω=5 のとき g=20−10log₁₀2≈17.0 dB で、折線より約 3 dB 低い。g=0 となるのは ω=√2475≈49.7 rad/s。以上から (2) になる。",
+        "誤答肢の理由を検算した。(1) は折れ点を T の値 0.2 と取り違えている。(3) は 1/(1+j5ω) の特性で、0 dB、折れ点 0.2 になる。(4) は 1/(1+j0.2ω) の特性で、0 dB、折れ点 5 になる。(5) は 0 dB かつ折れ点 0.5 で不一致。いずれの対応関係も正しい。",
+        "図 fig1: ブロック線図は原図と接続・符号・ラベルが一致する。fig2: ボード線図 5 枚の配置、番号 (1)〜(5)、縦軸 |W(jω)|[dB]、横軸 ω[rad/s]、目盛り 20/0、折れ点表記 0.2/5/0.2/5/0.5、実線と破線の区別、(1)(2) の破線縦線、「−20[dB/dec]」表記が原図と一致する。公開候補図だけで (b) を解答できる。",
+        "メタデータ: fiscalYear・term・examDate・subject・問題 PDF と解答 PDF の URL・reviewedFromPage=[24,25]・sourceAttribution が manifest と一致する。officialReferenceUrls は空である。"
+      ]
+    }
+  ]
+}

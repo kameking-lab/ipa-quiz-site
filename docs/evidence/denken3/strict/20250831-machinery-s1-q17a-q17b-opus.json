@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4600,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16506,
+      "webSearchRequests": 0,
+      "costUSD": 0.2243118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2224,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "86de495e2ab6e170e70c57036f4083230a0f38e65b05492bdbcbadba827426df",
+  "inputRequestSha256": "44e7ecd716102f240c55d1cf30f27df3dc11b1e740647f59604bbd0943e47fca",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "26e35054bf6fec9788274bee89469563406b34041d57dc2da944859a39768e95",
+      "q17b": "dffd6b141fa3764b121349d0d0c5852bd55adb775d37bacd0fa5cced28ca1270"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p20.png": "795f41d2757203a455db19d92507862beea273c5542d394f17ba5acd915c8091",
+      "data/raw_pdfs/denken3/review/20250831/machinery/p21.png": "f70f43bae0dfa2a5c7f8b21c48f97b127365792dadb3be51211dedd24e6dea5d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "e7797a4caffa0bfe25d7b29274608358240c3ac745a7bcc4a154fd35a4673795",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「氷に実際に与えられた熱の割合（有効電力）」で「割合」は誤用。1670 kJ ÷ 1800 s は比率ではなく単位時間当たりの熱量（熱出力[kW]）である。「単位時間当たりに氷へ与えられる熱量（有効熱出力）」などに修正すること。",
+        "『有効電力』『P_有効』という語は電験では交流の有効電力（active power）を指す専門用語で、ここでの『水・氷に有効に伝わる熱出力』と意味が衝突する。装置の消費電力1.33 kW自体も有効電力に当たるため、学習者が混同しうる。『有効熱出力』『有効加熱出力』等に置換すること（総合解説および肢(2)の解説）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyが「問題ページ内に試験年度・科目名の表記がないため、出典の年度と科目は本データ内では特定していない」としている一方、fiscalYear=2025・subject=machinery・sourceAttribution「令和7年度上期…機械科目 問17(a)」で年度と科目を特定しており、フィールド間で自己矛盾している。添付の公式解答表の見出しは『令和7年度 第三種電気主任技術者上期試験解答』で、機械列の問17(a)=2・(b)=2が本問の正答と一致する。理論列（3/5）・電力列（4/4）とは一致しない。原図の頁コード『T1−K』も機械科目と整合する。以上から年度・科目は照合済みとして、uncertaintyの該当記述を削除または修正すること。",
+        "examDate=2025-08-31 は添付の問題原図・解答表のいずれにも記載がなく、PDFファイル名（20250831_…）からの推定にとどまる。公式の試験日程資料で確認するまで外部確認事項として残る。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（印刷頁 -17-、頁コード T1−K 020）と照合し、柱書『熱効率が70 %で一定の電熱装置について…』、(a)本文、数値0 ℃・5 kg・30 min・334 kJ/kg、単位[kW]がすべて一致。",
+        "選択肢：(1)0.9 (2)1.4 (3)1.9 (4)2.4 (5)2.9 が原図と一致。",
+        "公式正答：解答表の機械 問17(a)=2（配点5）が、manifestのanswer=2・points=5および候補のofficialAnswer=2・scoringPoints=5と一致。",
+        "検算：Q=5×334=1670 kJ、1670/1800=0.9278 kW、0.9278/0.70=1.325 kW≒1.33 kW。最も近いのは1.4（差0.075）で、次は0.9（差0.425）。正答(2)を確認。",
+        "誤答肢の検算：(1) 効率を無視した値0.93 kWに近い点を確認。(3)差0.57、(4)差1.07、(5)差1.57 はいずれも計算と一致。",
+        "図：原図に図はなく、figureUrls・choiceFigureUrlsが空でfigureDescriptionが『図はない』となっている点は正しい。",
+        "reviewedFromPage=[20,21] は原図の頁コード T1−K 020/021 と整合する（印刷頁は17/18）。",
+        "officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の『有効電力 P_有効 = 1.7 kW × 0.70 = 1.19 kW』と、肢(1)・(2)の解説の『有効電力は1.19 kW』は、電験の専門用語である有効電力（active power）と意味が衝突する。1.7 kW自体が消費される有効電力であり、1.19 kWは水に伝わる熱出力である。『有効熱出力』『水に伝わる熱出力』等に置換すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyが「出典の年度と科目は本データ内では特定していない」としている一方、fiscalYear=2025・subject=machinery・sourceAttribution「令和7年度上期…機械科目 問17(b)」で年度と科目を特定しており、自己矛盾している。公式解答表の機械列 問17(b)=2 との一致と、原図の頁コード T1−K により年度・科目は照合済みである。uncertaintyの該当記述を修正すること。",
+        "examDate=2025-08-31 は添付原図に記載がなく、PDFファイル名からの推定にとどまる。公式日程資料での確認が必要な外部確認事項である。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図（印刷頁 -18-、頁コード T1−K 021）と照合し、『電熱装置の消費電力が1.7 kWのとき，0 ℃の水5 kgが50 ℃になるのに要する時間[min]』、比熱4.2 kJ/(kg・K)、単位[min]がすべて一致。柱書は原図の頁17から正しく補完されている。",
+        "選択肢：(1)11 (2)15 (3)19 (4)25 (5)30 が原図と一致。",
+        "公式正答：解答表の機械 問17(b)=2（配点5）が、manifestのanswer=2・points=5および候補のofficialAnswer=2・scoringPoints=5と一致。",
+        "検算：Q=5×4.2×50=1050 kJ、熱出力 1.7×0.70=1.19 kW、t=1050/1.19=882.4 s=14.71 min。最も近いのは15（差0.29）。正答(2)を確認。",
+        "誤答肢の検算：(1) 効率を無視した場合 1050/1.7=617.6 s=10.29 min で11に近い点を確認。(3)差4.3、(4)差10.3、(5)差15.3 はいずれも計算と一致。",
+        "図：原図に図はなく、figure系フィールドが空であることは正しい。",
+        "reviewedFromPage=[20,21] は頁コード T1−K 020/021 と整合する。",
+        "officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4803,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15032,
+      "webSearchRequests": 0,
+      "costUSD": 0.2165798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3068,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "79cb34b052ff72fd033fe6ce575001259f91ef1af513529ff9eb40e81fe83f10",
+  "inputRequestSha256": "fb1805f9bfd88f5c98e4b0d378ab41fae7a2def74e13bd463546d483d42f20ed",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "69c820dcd1f424f232cf0e92130bee4d4535e75285663e495792e87595bbb91d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の電極K側接続点の位置記述が原図と一致しない。候補は黒丸を「コの字形電極の下辺の右寄り、対向する縦辺の直下」としている。しかし原図・公開候補図とも、黒丸は下辺外縁上にあり、電極Pに対向する縦辺（右側の縦部材）より左側に位置する。位置は下辺のほぼ中央からやや右寄りで、縦辺の直下ではない。『下辺（外縁）の中央やや右寄りにあり、そこから導線が下へ伸びて右へ折れ…』などに修正すること。接続関係（K→電池左端、電池右端→P下端からの導線上の分岐点、分岐点の下に接地）自体は原図と一致している。",
+        "電池記号の極性（長線・短線の左右）が uncertainty に未確定事項として残っているのに、needsReview=false となっており整合しない。監査側でも、添付原図・公開候補図の解像度では長線・短線の左右を確定的に判定できなかった。原図の高解像度版で極性を確定して figureDescription に記載するか、未確定のまま残す場合は needsReview=true とすること。問題文の設定（K から放出された電子が P に達する）からは P が高電位と推論できる。ただし図の直接読み取りと混同して記載しないこと。なお解答は問題文の数値のみで確定し、極性には依存しない。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図 問12 と照合。『真空中』『電極板の間隔が6 mm』『面積が十分広い平行平板電極』『電極K，P間には2 000 Vの直流電圧』『約(ア) V/m』『ヒータで加熱すると表面から(イ)が放出』『初速度を零』『運動エネルギーW は(ウ) J』『電界は一様』『e = 1.6×10⁻¹⁹ C』、設問文『(ア)〜(ウ)に当てはまる語句又は数値の組合せ…(1)〜(5)のうちから一つ選べ』はすべて一致。数値・単位・指数に誤りなし。",
+        "選択肢: 原図の表と照合。(1) 3.3×10²/光電子/1.6×10⁻¹⁶、(2) 3.3×10⁵/熱電子/1.6×10⁻¹⁶、(3) 3.3×10²/光電子/3.2×10⁻¹⁶、(4) 3.3×10²/熱電子/1.6×10⁻¹⁶、(5) 3.3×10⁵/熱電子/3.2×10⁻¹⁶。全肢一致。",
+        "公式正答: 試験センター公式解答表『令和７年度 第三種電気主任技術者上期試験解答』の＜理論＞問12は解答5・配点5。manifest の answer=5、points=5、候補の officialAnswer=5、scoringPoints=5 と一致。",
+        "検算(ア): E = V/d = 2000 / (6×10⁻³) = 3.333…×10⁵ V/m ≒ 3.3×10⁵ V/m。",
+        "検算(イ): 加熱による電子放出は熱電子放出であり、光電子は光照射による。解説の因果説明は正しい。",
+        "検算(ウ): W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J。別解 eEd も同値となる。『電極間隔によらず電圧だけで決まる』は、真空中・初速零の条件下で正しい。",
+        "誤答肢理由を検算した。(1) 2000÷6 = 333 ≒ 3.3×10²（mm 未換算）で、ア・イ・ウすべて誤り。(2) ウのみ誤り。(3) ア・イが誤り、ウは正しい。(4) ア・ウが誤り、イは正しい。いずれも各肢固有の理由として正確。(5) の正答理由も正確。",
+        "公開候補図 20250831-theory-q12-fig1.png は原図の図部分を欠落なく含む。ラベル『電極K』『電極P』『ヒータ』『6 mm』、両矢印、コの字形電極K、ヒータコイル、黒丸3個、電池記号、接地記号をすべて確認した。本問は図なしでも解答可能であり、公開候補図のみでも構成は理解できる。",
+        "原図右下のページ識別『T1－R 015』（印刷ページ番号『- 12 -』）は reviewedFromPage=[15] と整合する。officialReferenceUrls は空で、検証対象となる独立主張はない。"
+      ]
+    }
+  ]
+}

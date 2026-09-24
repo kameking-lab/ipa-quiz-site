@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7146,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 20351,
+      "webSearchRequests": 0,
+      "costUSD": 0.30599180000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4207,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d781b3c0de0a4eee46401e43094638804e22786b8a98635e0945cc2954594e0d",
+  "inputRequestSha256": "7a365f54f62e2b78b77cb9cba75637615b7e6728bf092b4701a8446c8c844ed8",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "181c003279147435bf58d5956177ea676d875e2b68abe21fbfabef892a8e3149",
+      "q11b": "b25ff0187c4657554c0d2bfd8e62e2015d7f9326d0a8ad5f1d2dcca7c6e6199b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p17.png": "110a50ed2bb4d4ff1b416262d4ab1faa4870a395cc8c4b8a692616e18f6ef6a3",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "0d2092454c2c0a2758a8f8d1a91bc9a9f4411a6af1227a2f69f7e3b9e3f5f910",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/maff-voltage-drop.pdf": "4bbf833283820c0b055882bfffc1adcf192817d862c78abc7219efaaf255dbb1"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/maff-voltage-drop-p040.png": "efdb78266d54f138a333d1e2933ae943082b9650cf055b619a8ea3c8ea0f2813"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(2)の誤答理由で、R cosφ + X sinφ = 5.4Ω を「等価抵抗」と呼んでいる。この量は抵抗とリアクタンスを力率角で合成した電圧降下用の係数で、抵抗ではない。「等価抵抗」は変圧器の等価抵抗などと紛らわしい。「R cosφ + X sinφ = 5.4Ω」と書くか、「電圧降下に効く線路定数の合成値」などに改めること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄は、式を「線路インピーダンスの直交成分を省く実務上の電圧降下計算法」と説明している。しかし添付の農林水産省資料p.4-40では、式4.3-2 ΔV=K×I×L(Rcosθ+Xsinθ) が「②配電設計のように電圧降下を厳密に算出する必要のある場合」の式として示されている。直交成分を省く近似であるという記述は原頁のどこにもない。近似式であること自体は、監査側のフェーザ厳密計算（22.73kV、近似22.70kV）で物理的に正しいと確認できた。ただし出典の記述とは食い違うため、出典に基づく主張としては検証できない。出典の帰属と独自補足を区別して書き直すこと。"
+      ],
+      "verifiedEvidence": [
+        "PDFページ照合: 注意書き頁は印刷頁「-1-」でPDF第4頁（T1-H 004）、問11原図は印刷頁「-14-」でPDF第17頁（T1-H 017）。reviewedFromPage=[17] と一致する。",
+        "fiscalYear=2024、term=upper、examDate=2024-08-18、subject=law、問題PDF q04、解答PDF a01 はmanifestと一致する。sourceAttributionの「令和6年度上期 法規 問11(a)」も一致する。",
+        "問題文は原図と照合した。1条当たり抵抗3Ω・リアクタンス5Ω、8 000kW、力率0.8(遅れ)、受電電圧20kV、変電所引出口電圧[kV]がすべて一致する。原文「〜であるとき，次の(a)及び(b)の問に答えよ。」を「〜である。」と単問向けに整形しているが、意味は変わらない。",
+        "選択肢は原図と一致: (1)21.6 (2)22.2 (3)22.7 (4)22.9 (5)23.1。",
+        "公式解答表 法規 問11(a)=3、候補officialAnswer=3 で一致する。",
+        "検算: I=8×10^6/(√3×20000×0.8)=288.675A、√3·I=500。Rcosφ+Xsinφ=2.4+3.0=5.4Ω。ΔV=500×5.4=2700V。Vs=22.70kV で、肢(3)に最も近い。",
+        "厳密フェーザ検算: 相電圧11547.0V、同相成分I(Rcosφ+Xsinφ)=1558.8V、直交成分I(Xcosφ−Rsinφ)=288.675×2.2=635.1V。|Vs相|≈13121.2V で、線間換算22.73kV。この計算でも肢(3)が正答となる。",
+        "誤答肢の検算: (1) √3なし 288.675×5.4=1558.8V → 21.56kV。(4) |Z|=√34=5.831Ω → 500×5.831=2915.5V → 22.92kV。(2) ΔV=2.2kVは計算値より0.50kV小。(5) ΔV=3.1kVは計算値より0.40kV大。記述はすべて数値的に正しい。",
+        "参考資料p.4-40で、三相3線式の定数K=√3と式4.3-2の形を確認した。資料のR,Xは[Ω/km]×L[km]の形で、本問の1条当たり総抵抗・総リアクタンス[Ω]はL·R、L·Xに相当するので適用は妥当。",
+        "図は不要な計算問題で、figureUrls=[]、figureDescription=null は適切。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢(1)の「等価抵抗」と肢(4)の「等価抵抗の比4.41125/5.4」は、R cosφ + X sinφ を抵抗と呼んでおり用語として不正確で紛らわしい。「R cosφ + X sinφ の比」などに改めること。肢(4)の数値分析（81.7%、電流比0.8/0.95の見落とし）自体は正しい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「式は線路インピーダンスの直交成分を省く実務上の電圧降下計算法である」は、添付の農林水産省資料p.4-40の記述（式4.3-2は「電圧降下を厳密に算出する必要のある場合」の式）と食い違う。原頁では検証できない。総合解説末尾の「直交成分も含めて電圧フェーザの大きさで計算すると比率は約70 %」も、引用資料にはない独自主張である。監査側の厳密計算（約70.3%）で数値は確認できたが、出典に帰属させず独自検算として明示すること。"
+      ],
+      "verifiedEvidence": [
+        "PDF第17頁（印刷頁-14-、T1-H 017）の原図と照合した。reviewedFromPage=[17]、年度・期・試験日・科目・PDF URLはmanifestと一致する。sourceAttributionの「問11(b)」も一致する。",
+        "問題文は原図と照合した。力率0.95(遅れ)への改善、電圧降下[V]の設置前に対する比率[%]、受電電圧は設置前と同一の20kV、という条件がすべて一致する。前提文の整形で意味は変わらない。",
+        "選択肢は原図と一致: (1)66.6 (2)68.8 (3)75.5 (4)81.7 (5)97.0。",
+        "公式解答表 法規 問11(b)=2、候補officialAnswer=2 で一致する。",
+        "検算（近似式）: I₂=8×10^6/(√3×20000×0.95)=243.094A、√3·I₂=421.053。sinφ₂=√0.0975=0.31225。3×0.95+5×0.31225=4.41125Ω。ΔV₂=421.053×4.41125=1857.4V。ΔV₂/ΔV₁=1857.4/2700.0=68.79%。別式 (0.8/0.95)×(4.41125/5.4)=0.8421×0.8169=0.6879 とも一致し、肢(2)68.8が正答。",
+        "厳密フェーザ検算: 設置後の同相成分は1072.35V、直交成分はI₂(Xcosφ₂−Rsinφ₂)=243.094×3.81325=926.98V。|Vs相|≈12653.4V で、相電圧降下は1106.4V。設置前の相電圧降下1574.2Vとの比は70.3%。最も近い選択肢は依然として(2)68.8（差1.5ポイント。次点(3)75.5は差5.2ポイント）。解説の「約70 %、最も近いのは(2)」は正しい。",
+        "誤答肢の差分検算: (1) 68.79−66.6=2.2ポイント、(3) 75.5−68.79=6.7ポイント、(4) 4.41125/5.4=81.69%、(5) 97.0−68.8=28.2ポイント。記述はすべて数値的に正しい。",
+        "コンデンサは無効電力のみを補償し有効電力8000kWは不変、受電電圧20kV一定という前提は、問題文の但し書きと整合する。",
+        "参考資料p.4-40で、三相3線式K=√3と式4.3-2の形を確認した。",
+        "図は不要な計算問題で、figureUrls=[]、figureDescription=null は適切。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9714,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 29222,
+      "webSearchRequests": 0,
+      "costUSD": 0.45606880000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6791,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bc672162e7aaae7611f7e8bf0d3bd0abc418bdfefa6b8e618306838a49835fba",
+  "inputRequestSha256": "75f6470d1799802ddc72e456d252b03508675a91ef1f1494959f7032436518db",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "d6510902c584e19423f4254bf1da8c76ba1e83a09fc8fdcdc6c12116dfc38e4d",
+      "q14": "d2c7854ade8f74298da003333eeb7832d5816a57a39a1c7e1468decadba69e9a",
+      "q15a": "e51954accfef982f7ea2ef06dbae3e5e22fbb9c8e1cde8260bc47bf978d2d99a",
+      "q15b": "6ee9ceeae3b1e84447e7bee70cf996bd539241aa5583c5446d7c7a983102a8b5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p16.png": "2a49c882d0eb81126e2caee05ba53c675bb738c04580d33e0a733fbe157561bc",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p17.png": "b72dba494ccd6ffa84c857323a72b621a51ca1949e58db014e27d1e0a4efe292",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p18.png": "721d0bb1e6c0a15a990ae278dde12226c50925c7b4f6867ffd12aa330935fedb",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p19.png": "c4a73b694816d1db93a4e29deeff74ce09e5c4c0f0e4252078f99045ab7d6884"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-logic-circuit.png": "8b26facc733cbed9f9c9bd2dbecff411aa1c421c0d83d0dfe7c5c867ea2ab33b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-input-chart.png": "b1c976a5736a3fad4f9df25da69115c756c86fbdf4a999c008bc2d797b100970",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-1.png": "3e1f2f45d2fa22ebaa4c0330a2637df8932e41cbf2c776c3fc93757a10e9167b",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-2.png": "e3fa9226cd854994e877850715f66ee14ead52b2710c512253e129dd6853f531",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-3.png": "a57c670a1f9adf0b5a7d74acbf14de5047c7c2d583bba8fb70e5b323739ab30c",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-4.png": "33e5bb39b4d84c7e3cac9ec83c87d3bdf23b5428e5d8e8caa504ea26fddefcf2",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q14-choice-5.png": "a12d99354e65a8384ef865d4c61e3497560e802b1ff5b2e4bdb03d5793b2587c"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "83528305456ad9db4c64070625eb8e0b15b312cf72ec31de03d937ed95330fe4",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official page image (page 13 of the paper, footer T2-K 016): the stem, the three blanks (ア)(イ)(ウ), and the prompt all match the candidate. The only differences are formatting.",
+        "All five choices match the official table: (1) 定常/過渡/加算, (2) 定常/過渡/比例, (3) 過渡/定常/比例, (4) 過渡/定常/加算, (5) 定常/過渡/減算.",
+        "The official answer in the manifest is 2, and officialAnswer=2 matches it.",
+        "The explanation is correct. Integral action removes steady-state offset, so it improves the steady-state characteristic. Derivative action acts on the rate of change of the error, so it improves the transient characteristic. Proportional action improves both to some degree, and the explanation correctly says it cannot fully remove offset.",
+        "Each wrong choice gets its own correct reason. Choices 1 and 5 fail because 加算 and 減算 are not PID actions. Choice 3 swaps ア and イ. Choice 4 has both the swap and 加算.",
+        "No figure is needed. figureUrls is empty. reviewedFromPage=[16] is consistent with footer T2-K 016. officialReferenceUrls is empty, and no claim in the candidate needs an outside source."
+      ]
+    },
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "Choice text (1), (3), (4) and (5) says 「C=0区間終盤の1個」. The chart has two C=0 intervals: from the start until C first rises, and from C's first fall until it rises again. The first pulse also sits near the end of the first C=0 interval, so the phrase can point to either pulse. It should name the second interval, for example 「2回目のC=0区間（Cが再び0になった区間）の終盤の1個」. choiceExplanations (1) and (2) use the same wording and need the same fix.",
+        "Choice text (5) says 「B単独の1個（C=1区間内）」. There are two C=1 intervals, so it should say 「最初のC=1区間内」. The B-only pulse is the one in the first C=1 interval, while B is 1 and A is 0."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription says 「図は2つある」 and describes the timing chart as one figure with the inputs and outputs (1) to (5) together. The published figures are split into 7 images: the circuit, the input chart, and one image per choice (choice-1 to choice-5). The description should match the published structure. It should also say that the choice images use the same horizontal time scale as the input chart, so they can be read by lining them up."
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The circuit in the official image (T2-K 017) matches the published circuit figure. A and C, taken from the branch at the black dot, feed the upper AND. B and C through a NOT gate feed the lower AND. Both AND outputs go into an OR gate, which gives output X. The B line crosses C's vertical line without a dot, so they are not connected. This gives X = A·C + B·C̄: when C=1, X=A, and when C=0, X=B.",
+        "The input waveforms were read from the official image, using that image's horizontal pixel positions. A pulses: 300, 358, 414, 528, 698, 756. B pulses: 300, 358, 471, 585, 641, 698. C is 0 before 342, 1 from 342 to 512, 0 from 512 to 625, and 1 after 625. The published input chart matches.",
+        "Working through the intervals gives X pulses at 300, 358, 414, 585, 698 and 756, six pulses in total. This matches official output (3) exactly and matches the official answer, 3.",
+        "The other outputs were checked the same way. (1) has 300, 358, 414, 585, 756, so it is missing 698. (2) has 300, 358, 414, 698, so it is missing 585 and 756. (4) has 300, 358, 585, 698, so it is missing 414 and 756. (5) has 300, 358, 471, 585, 698, so it includes the B-only pulse at 471 and is missing 414 and 756. Each choiceExplanation matches these missing and extra pulses.",
+        "The published choice figures choice-1 to choice-5 show the same pulse positions as the official outputs (1) to (5). They share a time axis with the input chart, and each can be matched to the correct choice number.",
+        "reviewedFromPage=[17] is consistent with footer T2-K 017. officialReferenceUrls is empty, and no claim in the candidate needs an outside source."
+      ]
+    },
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation says 「一相分は 6 600/√3」 without first stating why, and only mentions Y connection afterwards, for the current. The problem does not state the winding connection. The explanation should say up front that the machine is treated as Y-connected (a per-phase equivalent), so that the phase voltage is 6600/√3 and the phase current is 800 A. The numbers and the answer are correct."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official image (T2-K 018): the conditions (6600 V, 8 MV·A, field current 200 A, no-load 6600 V, short-circuit current 800 A, saliency and losses ignored) and the choices 2.75, 4.76, 8.25, 19.1, 33.0 all match the candidate.",
+        "Recalculation: Zs = (6600/√3)/800 = 3810.5/800 = 4.763 Ω. That makes (2) correct, which matches the official answer, 2.",
+        "Each wrong choice is traced to a specific wrong calculation. 2.75 = 6600/(3×800) = 4.763/√3. 8.25 = 6600/800. 19.1 ≈ 3810.5/200 = 19.05. 33.0 = 6600/200. All of these are correct.",
+        "No figure is needed. reviewedFromPage=[18,19] includes the stem page, T2-K 018. officialReferenceUrls is empty, and nothing in the candidate needs an outside source."
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official image (T2-K 019): the conditions (terminal voltage 6600 V, power factor 1.0, load angle 30°) and the choices 1.76, 3.05, 5.28, 6.08, 15.9 all match the candidate.",
+        "Recalculation: V = 3810.5 V. At power factor 1, E = V/cos30° = 4400 V, Xs·I = E·sin30° = 2200 V, and I = 2200/4.763 = 461.9 A. Then P = 3VI = 5.280 MW. As a cross-check, 3V²tan30°/Xs = 6600×800 = 5.28 MW exactly. So (3) is correct, which matches the official answer, 3.",
+        "The wrong choices check out. 1.76 = 5.28/3 is a per-phase value. 3.05 = √3·V·I = 5.28/√3 = 3.048. For 6.08, the candidate honestly says the derivation cannot be identified. 15.9 is well above the 8 MV·A rating. None of these reasons is wrong.",
+        "No figure is needed. officialReferenceUrls is empty, and nothing in the candidate needs an outside source."
+      ]
+    }
+  ]
+}

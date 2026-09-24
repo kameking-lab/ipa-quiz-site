@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3958,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14188,
+      "webSearchRequests": 0,
+      "costUSD": 0.19292779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2385,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8510a57f33bcfc03ad45afb8f73b9dfdd2d9793e59212a81a1748d29986c1efe",
+  "inputRequestSha256": "d96f3513c0200ae64124b4943bc17c4acfa64594fac53a31e31d16483bb0b7a7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "bc94c4dc07d9c8a75c4c0f9b94b51fb5796e2f65977ec78f7b6165ab5d383fcf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p07.png": "105d962f43171c068ee91991b415b66cf1894b6d25de64bf68a49ea301bd0e89"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q04-fig1.png": "1f22f0a3d26b1ad73bfca0b284f2260bd73ec37fc90ac1079636de3aa8a19fc4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "82bbc27ee4202160980cc221c64986a18e95e57e8c2b3c96210683a999978ff1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription の図2の記述が不正確。『Oから円周右端まで矢印』とあるが、公式原図と公開候補図では図1と同じく両端に矢じりのある寸法線（両矢印）であり、半径 a を示す。図1では『両矢印』と書いているので、図2も『Oと円周右端の間に両矢印とラベル「a[m]」』に揃えるべき。"
+      ],
+      "sourceIssues": [
+        "uncertainty の記述がメタデータおよび添付公式資料と矛盾している。uncertainty は『試験年度・回は特定できない』『理論科目のものと推定されるが確定情報ではない』『公式URLを確実に特定できない』としている。一方で fiscalYear=2025、term=upper、subject=theory、sourceQuestionPdfUrl/sourceAnswerPdfUrl、sourceAttribution（令和7年度上期 理論 問4）はいずれも断定値で、needsReview=false になっている。公式解答表の原図には『令和7年度 第三種電気主任技術者上期試験解答』＜理論＞問4＝5 と明記されており、年度・回・科目は確認できる。したがって uncertainty を現状に合わせて更新するか削除する必要がある。",
+        "examDate=2025-08-31 と、sourceQuestionPdfUrl/sourceAnswerPdfUrl の URL 文字列そのものは、添付した問題原図・解答表原図のどちらにも記載がない。この監査では検証できないため、外部確認事項として残る。",
+        "reviewedFromPage=[7] は PDF ページ番号の主張だが、添付原図に記載されているのは印刷頁『- 4 -』と識別記号『T1−R 007』だけであり、PDF 7 ページ目であることは添付資料から確定できない（表紙等3頁が前置されていれば整合するが、未検証）。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 公式原図と照合し、直線状導体A・直流電流I₁[A]・距離a[m]・点P・H₁[A/m]、半径a[m]の一巻き円形コイルB・I₂[A]・中心点O・H₂[A/m]、条件H₁=H₂、設問文末がすべて一致した。欠落・改変はない。",
+        "選択肢: (1) I₁=π²I₂、(2) I₁=(2/π)I₂、(3) I₁=I₂/π²、(4) I₁=I₂/π、(5) I₁=πI₂。公式原図と一致した。",
+        "公式正答: 公式解答表（令和7年度上期 ＜理論＞ 問4 解答5・配点5）、manifest の {answer:'5', points:5}、候補の officialAnswer='5'・scoringPoints=5 がすべて一致した。",
+        "総合解説の検算: H₁=I₁/(2πa)（アンペアの周回積分の法則）、H₂=I₂/(2a)（ビオ・サバールの法則）。等置して両辺に2πaを掛けると I₁=πI₂ となり(5)で正しい。『向きは大きさの比較に影響しない』とする因果も正しい。",
+        "誤答肢の検算: (1) π²I₂/(2πa)=πI₂/(2a)=πH₂。(2) (2/π)I₂/(2πa)=I₂/(π²a)=(2/π²)H₂。(3) I₂/(2π³a)=H₂/π³。(4) I₂/(2π²a)=H₂/π²。いずれも記載どおりで、各肢固有の理由として妥当。(5) の理由も正しい。",
+        "公開候補図: 公式原図の図1・図2の全体を欠けなく含む。ラベル『直線状導体A』『I₁[A]』『a[m]』『P』『一巻き円形コイルB』『I₂[A]』『O』『a[m]』『図1』『図2』がすべて判読でき、I₁の上向き矢印と、円の左側の下向き矢印（反時計回り）も原図と一致した。解答に必要な条件は問題文にもあり、公開候補図だけで理解可能。",
+        "officialReferenceUrls は空で、独立主張はない。"
+      ]
+    }
+  ]
+}

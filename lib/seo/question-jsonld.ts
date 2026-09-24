@@ -1,5 +1,6 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 
@@ -26,6 +27,9 @@ export function sessionLabel(session: string): string {
     "kamoku-b": "科目B",
     gakka: "学科",
     riron: "理論",
+    denryoku: "電力",
+    kikai: "機械",
+    houki: "法規",
   };
   return map[session] ?? session.toUpperCase();
 }
@@ -96,7 +100,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.choices?.[answerKey as ChoiceKey] ? `${answerKey}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
@@ -188,7 +192,7 @@ export function buildQuestionJsonLd({
           {
             "@type": "ListItem",
             position: 4,
-            name: `問${q.qNumber}`,
+            name: `問${questionNumberLabel(q)}`,
             item: pageUrlAbs,
           },
         ],

@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "46416adb02dbade8378aeb7890202696c69bef79692cdc68205be406fe73bac5",
+  "questions": [
+    {
+      "number": 16,
+      "sourceDraftSha256": "add0d7b06d0d00565b16d293c3a239becc955aae89adf3600060419c39e72f24",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q16-opus-review.json",
+      "opusReceiptSha256": "cfd4ac53ea5599feb133a935263cc50f45e1825ae00c0b2fa8ef5b4e47b36023",
+      "assessment": {
+        "number": 16,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q16-bridge-circuit": "cee8edd83316f3d571e0cbb72e05953def9f81af6bd7026c745d5e2934409419"
+      }
+    }
+  ],
+  "strictReview": {
+    "q16a": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t23-q16a-q16b-opus.json",
+      "sha256": "3cac96d5cc9d5c154bdb8b2877e0f707c7c9bef7106df66379c69d7c7be16e64",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q16b": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t23-q16a-q16b-opus.json",
+      "sha256": "3cac96d5cc9d5c154bdb8b2877e0f707c7c9bef7106df66379c69d7c7be16e64",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

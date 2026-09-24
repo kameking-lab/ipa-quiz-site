@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5578,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15657,
+      "webSearchRequests": 0,
+      "costUSD": 0.2370798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3850,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "87fbce79ad4e90b36a28b62bcc0b60e80b776e3990f6c329efc85f0d8d1d5551",
+  "inputRequestSha256": "a1edb6dcadc4042c0d42d2c622e172b35214e78adbf4a8c2adbaccb5708552b7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "5884056580183def7fede9f942af490e1d7e8dde5f6dc18962dde35a984e2846"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p15.png": "7f1fda75c2604da992ccdf9dcfd6776524c07777003691dd513ccbc6f70052f8"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q12-magnetron-electron-path.png": "272c74e5912a1ed2277f956603c49e6732c5faae0b6052afd459400d27f75d99"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "fb503a33fbecc6b3069511f9480ee982fb83e790ef373d195866374c85f18ff0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "句読点が混在している。冒頭の2文は原文どおり全角カンマ「，」を使っているが、「作り、」以降は読点「、」に変わっている。原文（PDF第15頁）は全文「，」で統一されている。どちらかに統一すること。語句・記号・単位（E[V/m]、B[T]、−e[C]、⊙、空欄(ア)〜(オ)の位置）は原文と一致しており、内容上の誤りはない。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2] の括弧書き「アンペール力は電流が磁界から受ける力(あるいはアンペールの法則の名称)」が不正確。アンペール力はアンペールの法則の名称ではなく、この書き方では「アンペール力＝アンペールの法則」と読める。括弧書きを削除するか、「電流が磁界から受ける力（電磁力）を指す語」のように言い切る形に修正すること。「運動する電子が受ける力はローレンツ力である」という結論は正しい。"
+      ],
+      "figureIssues": [
+        "公開候補図の本体に問題はない（下記 verifiedEvidence 参照）。ただし figureDescription の「3つほどの山形の弧、各弧に右向きの矢印」は曖昧である。実際の図は、陰極に接する完全な弧が2つと、陰極から立ち上がって右向き矢印で途切れる3つ目の途中の弧から成る。「3つほど」をやめて、この構成を正確に書くこと。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータを manifest と照合し、すべて一致した。fiscalYear=2024（令和6年度）、term=lower、examDate=2025-03-23、subject=theory、reviewedFromPage=[15]。原図フッター「T2－R 015」も第15頁と整合する。sourceQuestionPdfUrl と sourceAnswerPdfUrl は manifest と完全に一致する。",
+        "公式解答表（令和6年度下期・理論）で問12の正答は4。候補の officialAnswer=\"4\" と一致し、part=null と scoringPoints=null も公式正答単位（part null、points null）と一致する。",
+        "選択肢(1)〜(5)の(ア)〜(オ)の組合せ25項目を、原図の表と1項目ずつ照合し、すべて一致した。",
+        "(ア)を検算した。陽極が上、陰極が下なので、電界 E は −y 向きである。電子の受ける力 −eE は +y 向きで、問題文の「陽極に向かって動き始める」と整合する。よって(ア)=負。",
+        "(イ)(ウ)を検算した。速度は xy 平面内、B は z 方向で常に直交するため、|F| = evB となり B に比例する。力の名称はローレンツ力。",
+        "(エ)を検算した。B = −Bẑ、v = vŷ のとき、F = −e(v×B) = −e·(−vB x̂) = +evB x̂ で、+x 向きになる。B = +Bẑ の場合は −x 向きになるという explanation の記述も正しい。E×B ドリフト (−Eŷ)×(−Bẑ) = +EB x̂ も +x 向きで、問題文と整合する。よって(エ)=負。",
+        "(オ)を確認した。直交する平等電界・平等磁界の中を初速零で出発した荷電粒子の軌跡はサイクロイドである。リサジュー（直交する単振動の合成図形）とヒステリシス（履歴現象）の説明も妥当。",
+        "choiceExplanations 1・3・4・5 を確認した。各肢の正誤判定と、誤りとされた項目の特定はすべて正しい。choiceExplanations 2 の「全5項目が誤り」という判定も正しい（問題は上記の括弧書きのみ）。",
+        "公開候補図を原図と照合し、一致した。確認項目は、座標軸（y 上向き、x 右向き、z は⊙）、斜線付きの陽極（上）と陰極（下）、左側に縦に並ぶ E・B のラベル、陰極上の点P、陽極に届かない右向き矢印付きの弧の連なり。欠落や改変したラベルはなく、この図だけで(ア)(エ)(オ)の判断に必要な情報がそろう。",
+        "uncertainty の記載内容を原図で確認した。原図には E・B の向きを示す矢印がなく、候補の記載は事実どおりである。(ア)(エ)は問題文と図の配置から一意に決まり、外部確認を要する事項はない。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

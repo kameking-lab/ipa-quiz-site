@@ -1,0 +1,99 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4942,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17097,
+      "webSearchRequests": 0,
+      "costUSD": 0.23587980000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2748,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0a485516fc23712c268c1833f37a5fa3858db4b87a3933b18d2ce5d70b83dc6d",
+  "inputRequestSha256": "2d96166d4028d9a143b98322d643293889f0c4329b1b55843696a616c8384f3e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "2a75fb65e4fb7941b7cbae989191eec144588d0c09898f714981972ee2b0108b",
+      "q15b": "6b7a43dee91ce95ecfec42726a94c5793097c0fc1972d3ea720aa3da08c07233"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p20.png": "7bb5b70469ef38e970059d7fa82f141a4c91dd31e4dcef1297bced8e24ee906d",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p21.png": "b97f38f6cf673a45ee0f21b4ba1cb7b19fdf24ec73a2192dde5b090ba49c5d6f"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "cd0092bb9693b02adf790886b696768d1ff92b7511409b91123c3db8edcaec57",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "リード文の読点が原図と異なり、同じ問題文の中で混在している。リード文（「60Hz、6極」「あり、二次」「ついて、次の」「ただし、電動機」「一定のとき、滑り」）は「、」だが、小問文は「，」である。原図はすべて「，」なので、「，」に統一すること。意味は変わらない。",
+        "小問文の前にあった小問ラベル「(a)」が削除されている。リード文には「次の(a)及び(b)の問に答えよ」と残っているため、本文冒頭に「(a)」を残すと原図との対応が明確になる。part フィールドで識別はできるので、軽微な整形指摘である。"
+      ],
+      "choiceIssues": [
+        "choiceExplanations[4]（0.03）に、この誤答肢固有の誤り方が書かれていない。現状は「計算結果0.02と一致しない」という一般的な記述だけである。0.03は、滑りとトルクを反比例と取り違えて s = s0 / 0.8 = 0.025 / 0.8 ≒ 0.031 と計算した場合に最も近くなる値である。この典型的誤りを明記すべき。",
+        "choiceExplanations[1]（0.015）は「0.02と一致しない」を言い換えて繰り返しているだけで、固有の理由になっていない。標準的な一段階計算からこの値に至る経路は確認できない。そうであれば、(b)(1) と同様に「導出根拠は確認できない」と明記する方がよい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題原図の頁フッタは「T1−K 020」（頁番号 -17-）と「T1−K 021」（頁番号 -18-）で、問15(a) は第20頁、問15(b) は第21頁にある。reviewedFromPage [20, 21] と manifest は一致する。",
+        "fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、問題PDF URL（q03）、解答PDF URL（a01）は、いずれも manifest と一致する。sourceAttribution の「令和6年度上期 機械 問15(a)」も整合する。",
+        "公式解答表「令和6年度 上期」機械の問15(a) は 2 で、officialAnswer=\"2\" と一致する。",
+        "問題文の数値・単位（60 Hz、6極、1 170 min⁻¹、二次抵抗一定で滑りとトルクは比例、80 %トルク、二次短絡）は原図と一致する。",
+        "5肢（0.015 / 0.02 / 0.025 / 0.03 / 0.04）は原図と一致する。",
+        "検算：Ns = 120×60/6 = 1200 min⁻¹。s0 = (1200−1170)/1200 = 0.025。s = 0.025×0.8 = 0.02 で (2) となり、解説の計算・因果は正しい。",
+        "(3) 0.025 は定格時の滑り s0 そのものであり、(5) 0.04 は 0.02 の2倍である。いずれの記述も正しい。",
+        "図は不要で、figureUrls が空・figureDescription が null であることは妥当。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "リード文の読点「、」と小問文の「，」が混在している（q15a と同じ）。原図に合わせて「，」に統一すること。",
+        "小問ラベル「(b)」が本文から削除されている。リード文の「(a)及び(b)」との対応を示すため、本文冒頭に残すことを推奨する。軽微な指摘である。"
+      ],
+      "choiceIssues": [
+        "choiceExplanations[2]（1110）に、この誤答肢固有の誤り方が書かれていない。1110 は、(a) で反比例と誤認して得た s = 0.03（0.025/0.8 ≒ 0.031）に 2.5 を掛けた場合に生じる値である。すなわち s' = 0.03×2.5 = 0.075、N = 1200×(1−0.075) = 1110 となる。(a) の誤りを引き継いだ典型的誤答として明記すべき。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問15(b) は第21頁（フッタ「T1−K 021」、頁番号 -18-）にある。reviewedFromPage [20, 21] と manifest は一致し、書誌項目（年度・期・試験日・科目・PDF URL）もすべて manifest と一致する。",
+        "公式解答表の機械 問15(b) は 3 で、officialAnswer=\"3\" と一致する。",
+        "小問文（80 %トルク、二次巻線端子に三相抵抗器を接続、1相当たりの抵抗値を短絡時の2.5倍、回転速度[min⁻¹]）は原図と一致する。",
+        "5肢（980 / 1 110 / 1 140 / 1 170 / 1 200）は原図と一致する。",
+        "検算：小滑り域の近似 T ∝ s/r2（比例推移）より、T一定では s ∝ r2 となる。s' = 0.02×2.5 = 0.05、N = 1200×0.95 = 1140 min⁻¹ で (3) となり、解説の計算・因果は正しい。",
+        "(1) 980 は s ≒ 0.183 である。一段階の導出根拠が確認できないとする記述は妥当。",
+        "(4) 1170 は初期条件の s0 = 0.025 に対応し、(5) 1200 は同期速度（s = 0）で負荷運転では不成立である。いずれの記述も正しい。",
+        "図は不要で、figureUrls が空であることは妥当。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    }
+  ]
+}

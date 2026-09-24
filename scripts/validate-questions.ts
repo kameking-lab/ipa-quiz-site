@@ -54,10 +54,11 @@ function parseCliOptions(): CliOptions {
 const QuestionSchema = z.object({
   id: z.string().min(1),
   exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denko2"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron"]),
+  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki"]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "may", "september", "january"]),
   qNumber: z.number().int().min(1),
+  part: z.enum(["a", "b"]).optional(),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
@@ -185,7 +186,7 @@ function validate(questions: Question[]): ValidationResult {
   let fail = 0;
   let warn = 0;
   const seenIds = new Set<string>();
-  const seenQNumbers = new Map<string, Set<number>>(); // "exam-year-season-session" → Set<qNumber>
+  const seenQNumbers = new Map<string, Set<string>>(); // "exam-year-season-session" → Set<qNumber+part>
   const byExam: ValidationResult["byExam"] = {};
   const issues: ValidationResult["issues"] = [];
 
@@ -219,14 +220,15 @@ function validate(questions: Question[]): ValidationResult {
     const groupKey = `${q.exam}-${q.year}-${q.season}-${q.session}`;
     if (!seenQNumbers.has(groupKey)) seenQNumbers.set(groupKey, new Set());
     const numSet = seenQNumbers.get(groupKey)!;
-    if (numSet.has(q.qNumber)) {
+    const answerUnit = `${q.qNumber}${q.part ?? ""}`;
+    if (numSet.has(answerUnit)) {
       fail++;
       byExam[examKey].fail++;
       issues.push({ id: q.id, level: "error", message: `qNumber 重複: ${groupKey} #${q.qNumber}` });
       console.error(`[FAIL] ${q.id}: qNumber ${q.qNumber} duplicated in ${groupKey}`);
       continue;
     }
-    numSet.add(q.qNumber);
+    numSet.add(answerUnit);
 
     // Multiple-choice specific checks
     if (q.type === "multiple-choice") {
@@ -266,7 +268,8 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        if (!q.choiceExplanations || !q.sourceAnswerUrl || !q.sourceAttribution) {
+        const officialSummary = q.exam === "denken3" && q.explanationCoverage === "official-summary";
+        if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;
           issues.push({

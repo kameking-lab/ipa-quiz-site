@@ -1,0 +1,298 @@
+{
+  "questionNumber": 16,
+  "sharedContext": "問16　次の図は，パワー半導体デバイスとしてダイオードを用いた三相整流装置の回路を示す。\n平滑リアクトルのインダクタンス Ld [H] は十分に大きく，直流電流 Id [A] は一定になっているものとする。\n交流側にリアクタンス XL [Ω] のリアクトルがあると転流時に重なり角が生じ，直流電圧が降下する。また，ダイオードの順電圧降下 VF [V] によっても直流電圧が降下する。これら以外の電圧降下は無視する。入力交流電圧が VL [V] のときのこの整流装置の出力電圧 Vd [V] は次式で求められる。\n\nVd = (3√2/π)·VL − (3/π)·XL·Id − 2VF\n\n［図：三相ダイオード整流装置の回路］\n\nこの整流装置の入力交流電圧は VL = 200 V，周波数は f = 50 Hz で，直流電流は Id = 36 A である。交流側のリアクトルのインダクタンスは LL = 5.56×10⁻⁴ H で，その抵抗値は平滑リアクトルの抵抗値とともに無視できるものとする。また，各ダイオードの順電圧降下は VF = 1.0 V で一定とする。次の(a)及び(b)の問に答えよ。",
+  "units": [
+    {
+      "part": "a",
+      "question": "【共通条件】\n次の図は，パワー半導体デバイスとしてダイオードを用いた三相整流装置の回路を示す。\n平滑リアクトルのインダクタンス Ld [H] は十分に大きく，直流電流 Id [A] は一定になっているものとする。\n交流側にリアクタンス XL [Ω] のリアクトルがあると転流時に重なり角が生じ，直流電圧が降下する。また，ダイオードの順電圧降下 VF [V] によっても直流電圧が降下する。これら以外の電圧降下は無視する。入力交流電圧が VL [V] のときのこの整流装置の出力電圧 Vd [V] は次式で求められる。\n\nVd = (3√2/π)·VL − (3/π)·XL·Id − 2VF\n\n［図：三相ダイオード整流装置の回路］\n\nこの整流装置の入力交流電圧は VL = 200 V，周波数は f = 50 Hz で，直流電流は Id = 36 A である。交流側のリアクトルのインダクタンスは LL = 5.56×10⁻⁴ H で，その抵抗値は平滑リアクトルの抵抗値とともに無視できるものとする。また，各ダイオードの順電圧降下は VF = 1.0 V で一定とする。\n\n【(a)】\nダイオードでは，電流の通電によって損失が発生する。一つのダイオードの損失の平均値は，通電する期間が 1 サイクルの 1/3 であるとして計算できる。\n一つのダイオードで発生する損失[W]の平均値に最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "72",
+        "2": "36",
+        "3": "24",
+        "4": "18",
+        "5": "12"
+      },
+      "officialAnswer": "5",
+      "explanation": "ダイオードが通電している間は，順電圧降下 VF = 1.0 V が一定で，直流電流 Id = 36 A がそのまま流れる。したがって通電中の瞬時損失は\nVF·Id = 1.0 × 36 = 36 W\nである。\n問題文の条件より，一つのダイオードが通電する期間は 1 サイクルの 1/3 なので，1 サイクル平均の損失は\nP = VF·Id × (1/3) = 36 × 1/3 = 12 W\nとなる。よって最も近いものは (5) 12 である。",
+      "choiceExplanations": {
+        "1": "誤り。72 W は 2VF·Id = 2 × 1.0 × 36 W にあたり，ダイオード 2 個分の順電圧降下で全期間通電したとした値である。一つのダイオードの損失は VF 1 個分で，通電期間は 1/3 なので平均損失は 12 W となる。",
+        "2": "誤り。36 W は通電中の瞬時損失 VF·Id そのものであり，1 サイクル全期間通電した場合の値にあたる。実際の通電期間は 1/3 なので平均値は 12 W となる。",
+        "3": "誤り。24 W は 2VF·Id × 1/3 にあたり，直流電流の経路に直列に入る正側・負側のダイオード 2 個分の損失を合計した値である。問われているのは一つのダイオードの損失なので 12 W となる。",
+        "4": "誤り。18 W は VF·Id × 1/2 にあたり，通電期間を 1 サイクルの 1/2 とした値である。問題文の条件は通電期間 1/3 なので平均損失は 12 W となる。",
+        "5": "正しい。P = VF·Id × 1/3 = 1.0 × 36 × 1/3 = 12 W。"
+      },
+      "figureDescription": "三相ダイオード整流装置の回路図。図の範囲は，上端が破線枠の上辺（破線枠内の「Ld[H]」，破線枠外の「Id[A]」のラベルを含む），下端が破線枠の下辺，左端が入力線とラベル「交流電圧(線間)」「VL[V]」，右端が破線枠の外側に接続された「負荷」までである。回路は破線枠で囲まれている。左側から三相の入力線 3 本が破線枠左辺上の端子（白丸）を通って入り，各線に交流側リアクトルが直列に接続される。リアクトル群の上側に「LL[H]」，下側に「XL[Ω]」のラベルがある。ブリッジはダイオード 6 個で，縦 3 列に各列上下 1 個ずつ配置され，全ダイオードは下側（負側）母線から上側（正側）母線へ向かう向きが順方向となるように描かれている。入力線は上から順に左・中・右の列の上下ダイオード間の接続点（黒丸）に接続される。上側の母線は平滑リアクトル「Ld[H]」を経て破線枠右辺上の出力端子（白丸）に至り，端子の外側に右向きの電流矢印と「Id[A]」のラベルがある。下側の母線も破線枠右辺上の出力端子（白丸）に至る。破線枠内の出力端子のすぐ左に，下側母線から上側母線へ向かう上向きの矢印と「Vd[V]」のラベルがある。破線枠の外側で上下の出力端子間に「負荷」と記された箱が接続されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20,
+        21
+      ]
+    },
+    {
+      "part": "b",
+      "question": "【共通条件】\n次の図は，パワー半導体デバイスとしてダイオードを用いた三相整流装置の回路を示す。\n平滑リアクトルのインダクタンス Ld [H] は十分に大きく，直流電流 Id [A] は一定になっているものとする。\n交流側にリアクタンス XL [Ω] のリアクトルがあると転流時に重なり角が生じ，直流電圧が降下する。また，ダイオードの順電圧降下 VF [V] によっても直流電圧が降下する。これら以外の電圧降下は無視する。入力交流電圧が VL [V] のときのこの整流装置の出力電圧 Vd [V] は次式で求められる。\n\nVd = (3√2/π)·VL − (3/π)·XL·Id − 2VF\n\n［図：三相ダイオード整流装置の回路］\n\nこの整流装置の入力交流電圧は VL = 200 V，周波数は f = 50 Hz で，直流電流は Id = 36 A である。交流側のリアクトルのインダクタンスは LL = 5.56×10⁻⁴ H で，その抵抗値は平滑リアクトルの抵抗値とともに無視できるものとする。また，各ダイオードの順電圧降下は VF = 1.0 V で一定とする。\n\n【(b)】\n出力電圧 Vd の値[V]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "270",
+        "2": "264",
+        "3": "263",
+        "4": "262",
+        "5": "251"
+      },
+      "officialAnswer": "4",
+      "explanation": "① 交流側リアクタンス XL を求める。\nXL = 2πf·LL = 2π × 50 × 5.56×10⁻⁴ ≒ 314.16 × 5.56×10⁻⁴ ≒ 0.1747 Ω\n\n② 与えられた式の各項を計算する。\n・第 1 項：(3√2/π)·VL ≒ 1.3505 × 200 ≒ 270.1 V\n・重なり角による降下：(3/π)·XL·Id ≒ 0.9549 × 0.1747 × 36 ≒ 6.00 V\n・ダイオードの順電圧降下：2VF = 2 × 1.0 = 2.0 V（三相ブリッジでは直流電流の通電経路に正側と負側のダイオードが直列に入るため 2 個分となる）\n\n③ 出力電圧\nVd ≒ 270.1 − 6.00 − 2.0 ≒ 262.1 V\n\nよって最も近いものは (4) 262 である。",
+      "choiceExplanations": {
+        "1": "誤り。270 V は第 1 項 (3√2/π)·VL ≒ 270.1 V のみの値で，重なり角による降下約 6.0 V とダイオードの順電圧降下 2.0 V が差し引かれていない。",
+        "2": "誤り。264 V は 270.1 − 6.0 ≒ 264.1 V にあたり，ダイオードの順電圧降下 2VF = 2.0 V が差し引かれていない。",
+        "3": "誤り。263 V は 270.1 − 6.0 − 1.0 ≒ 263.1 V にあたり，順電圧降下をダイオード 1 個分しか差し引いていない値となる。式では 2VF = 2.0 V を差し引く。",
+        "4": "正しい。Vd ≒ 270.1 − 6.00 − 2.0 ≒ 262.1 V で，最も近い。",
+        "5": "誤り。251 V は計算値 262.1 V より約 11 V 低く，与えられた式と数値から得られる値と一致しない。"
+      },
+      "figureDescription": "三相ダイオード整流装置の回路図。図の範囲は，上端が破線枠の上辺（破線枠内の「Ld[H]」，破線枠外の「Id[A]」のラベルを含む），下端が破線枠の下辺，左端が入力線とラベル「交流電圧(線間)」「VL[V]」，右端が破線枠の外側に接続された「負荷」までである。回路は破線枠で囲まれている。左側から三相の入力線 3 本が破線枠左辺上の端子（白丸）を通って入り，各線に交流側リアクトルが直列に接続される。リアクトル群の上側に「LL[H]」，下側に「XL[Ω]」のラベルがある。ブリッジはダイオード 6 個で，縦 3 列に各列上下 1 個ずつ配置され，全ダイオードは下側（負側）母線から上側（正側）母線へ向かう向きが順方向となるように描かれている。入力線は上から順に左・中・右の列の上下ダイオード間の接続点（黒丸）に接続される。上側の母線は平滑リアクトル「Ld[H]」を経て破線枠右辺上の出力端子（白丸）に至り，端子の外側に右向きの電流矢印と「Id[A]」のラベルがある。下側の母線も破線枠右辺上の出力端子（白丸）に至る。破線枠内の出力端子のすぐ左に，下側母線から上側母線へ向かう上向きの矢印と「Vd[V]」のラベルがある。破線枠の外側で上下の出力端子間に「負荷」と記された箱が接続されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        20,
+        21
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6160,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.2144958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2094,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5b4ffba3d67fbd78ca6818a033361717b6990b934b044d1785734cc3f3dccff4",
+  "inputRequestSha256": "3b94de41fba36a7064b9e690ee92d02ab8db3c01828c078b5821423af8ef57c0",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p20.png": "e229c32afc1db85c3b5786426b86182c0f45a1e7d5312772975f124e8d26ac67",
+    "data/raw_pdfs/denken3/review/20260322/machinery/p21.png": "faa09743a14bf2dc5787079e55955b28f306e236f6c19196381efd2847e11bea"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 7333,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16983,
+          "webSearchRequests": 0,
+          "costUSD": 0.28278780000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 3181,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "60f3b1dd69d3c90029f7f02e814b0d62800054ae879d5809eeea05d81f216df9",
+      "inputRequestSha256": "743a9481e8475b565afac84d017f0c850b90c5fec5e3e7d2ff45092bf1e7bf05",
+      "previousDraftSha256": "7181b1751c24a94dd07b080471faedfa00a190e0d1ab3e8bb6b9eb0ac1a68b78",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v1.json",
+      "answeredReviewSha256": "f961af88cd03776b781e4bc32e59cdb7021e6aaeee290168d5996c608ffc9138",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "2fc051dd8e31575d77093dbbd6a51843bee9e8ad306998d6beb094efba1571c6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6226,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17131,
+          "webSearchRequests": 0,
+          "costUSD": 0.2618318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2027,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "b04abdb6cf9d104834b485e0a70fafc2bab28e943f11e0256ff73605cc5454e6",
+      "inputRequestSha256": "bdb65c03b6a77fa98a119289083a6d754d2262861105abde0c71d62ab517daec",
+      "previousDraftSha256": "91c0697d120b52bdfc8684c5ac133f793032190c12ba45e060055ab33a8febf8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v2.json",
+      "answeredReviewSha256": "aaeb3e94cb73a44d3823cd25e04637dc7b8452c192c20699d0dd625071d571f9",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "2fc051dd8e31575d77093dbbd6a51843bee9e8ad306998d6beb094efba1571c6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6568,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17150,
+          "webSearchRequests": 0,
+          "costUSD": 0.2688238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2349,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "631db90ac2085ed666fdb3140511c2ac8e756ca47a633911b51095ec667a53f2",
+      "inputRequestSha256": "4da1f325a862bb96bc3a9a56e87ab85df3ef71dca7ae083f35d935b222359783",
+      "previousDraftSha256": "dfdd32d5d8e3ce3cdb4c1bd14bdbc6631f0f45c611ebe06d1aa915a24e8aee4d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v3.json",
+      "answeredReviewSha256": "160bcfa0aad7554c386128fb1e2819e6bcdb85ecf74358645918f6cb98517814",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v3.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "2fc051dd8e31575d77093dbbd6a51843bee9e8ad306998d6beb094efba1571c6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 6937,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17177,
+          "webSearchRequests": 0,
+          "costUSD": 0.2764198,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2577,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "864873c10b945d18950b31d86b55b61f2a71349b99df34a8c2ad8f470d22e066",
+      "inputRequestSha256": "65cb67db8570ffffcf26e27ddcc6b341a30a2db7b38f5d205629658035ef4c2b",
+      "previousDraftSha256": "1a38b8a618cdc94087213d4d88987637ba5477fce153d29b1239c9a14c97b377",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v4.json",
+      "answeredReviewSha256": "f21003e037ebae5fad862c2c3338f77f5ee6e32ef95ddca09db07cf6497dfd8e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v4.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "2fc051dd8e31575d77093dbbd6a51843bee9e8ad306998d6beb094efba1571c6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 5,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5782,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 17072,
+          "webSearchRequests": 0,
+          "costUSD": 0.2524798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1438,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "88330128d530fb2f045337320831a437e7550426cc371e4e12adbd5c6037c8fe",
+      "inputRequestSha256": "a7428d1c00991672de1d3522d39b6d3939f5fa8bdb975549ce52089994b48856",
+      "previousDraftSha256": "c000cbaec64bd8273a2111bc318fd98960cd01738eac76846003e64c7dcafdf6",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v5.json",
+      "answeredReviewSha256": "cdda236623e2d8da91557126bd8cdf246fc48e1945e9061aa82ecabe5e4cad50",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v5.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "2fc051dd8e31575d77093dbbd6a51843bee9e8ad306998d6beb094efba1571c6"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 6,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 5471,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 16995,
+          "webSearchRequests": 0,
+          "costUSD": 0.2456438,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1253,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "1be3b625daf884f7187d625a73a0f5062385c51d116514f69c690fafeb3b3ff5",
+      "inputRequestSha256": "f9c624932407ff1359567d1cfc929787c0d8ca9f2ce98d28e34abbeb0e9ce655",
+      "previousDraftSha256": "801731741e016cac7618ed4ed193580a06545b692cfac8880ec638d37540a1d7",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-vision-draft-v6.json",
+      "answeredReviewSha256": "d28bb49824e31927531313842dd4b76382f120e55e1da91d8f15733ab0f8ce37",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q16-opus-review-v6.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-machinery-q16-fig1": "5187fc7c2ecddd886ba4f5106bbe7d6875f247b35ff6981c364e51cc51956059"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

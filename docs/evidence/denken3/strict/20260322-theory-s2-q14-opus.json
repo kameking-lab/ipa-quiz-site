@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3390,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14448,
+      "webSearchRequests": 0,
+      "costUSD": 0.1836478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2108,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "862229d490fcfab48b69e81a71513ea84028892e5744e3e0d659ac80dd299bc7",
+  "inputRequestSha256": "b34dd79e27eb39e99f6158ba67d503337d8543b82c8eeec71d46f64532ed7246",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "e26684a58adcf0762f4dce80bbd8293c976229e197fb0604adc6d692fe322bc7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/theory/p19.png": "8c9b996e94978927f49273c81a417c493746a4e223b97f9de11d0a5e2eaf6d80"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/theory/20260322-theory-q14-fig1.png": "fada36d722d29a59ae6ee1e4f0b60e61b3a87b122d7340a6436f66761e871f6b"
+    },
+    "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97d49bef9f28bb2cc1753dcd38e0cda70e3580d1c533e752778d504fab108739",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[2] の「指示値 4.44 V と真の実効値 5.66 V の中間にある値である」は、両者の中点と読める。中点は (4.44+5.66)/2 ≈ 5.05 V で、5.14 V とは一致しない。「4.44 V と 5.66 V の間にある値」のように、範囲内にあるだけだと明確にする必要がある。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付原図（PDF第19頁、印刷頁番号「-16-」、頁下端「T2－R 019」）と候補 question を照合し、文言・句読点「，」・単位 [V]・周期 20 ms が一致した。",
+        "選択肢: 原図の (1)5.66 (2)5.14 (3)4.62 (4)4.44 (5)4.00 と候補 choices が全肢一致した。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜理論＞問14は解答4・配点5である。manifest固定単位 {question:14, part:null, answer:\"4\", points:5}、候補 officialAnswer=\"4\"、scoringPoints=5 と一致した。",
+        "出典メタ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=theory、sourceQuestionPdfUrl／sourceAnswerPdfUrl、reviewedFromPage=[19] はいずれも manifest と一致した。sourceAttribution「令和7年度下期…理論科目 問14」も整合する。",
+        "計算検算: 波形は 0〜10 ms が 8 V、10〜20 ms が 0 V で、負の値をとらないため全波整流しても不変である。平均値は (8×10)/20 = 4 V。正弦波の波形率は π/(2√2) = 1.11072 で、指示値は 4×1.11072 = 4.443 V ≈ 4.44 V となり、(4) と一致する。",
+        "誤答肢検算: (1) 真の実効値 √(8²×10/20) = √32 = 5.657 ≈ 5.66 V で、記述は正しい。(3) 4×2/√3 = 4.619 ≈ 4.62 V は三角波の波形率との数値一致として正しく述べられており、出題意図を断定していない。(5) 4.00 V は平均値そのもので、記述は正しい。(2) 5.14−4.44 = 0.70 V の差分記述は正しい（上記の「中間」表現のみ要修正）。",
+        "図: 公開候補図は原図の波形部分を欠落なく切り出している。接続・向き・全ラベルを原図と照合し、いずれも一致した。対象は V [V] と上向き矢印、縦軸目盛 8・原点 0、横軸目盛 10/20/30/40、→ t [ms]、40 ms での立ち上がりと「…」、各立ち上がり・立ち下がり位置である。数値読み取りに必要な情報はすべて公開候補図だけで得られる。",
+        "figureDescription: 振幅 8 V・周期 20 ms・デューティ比 50 %・非負の方形波という記述は原図と一致する。",
+        "officialReferenceUrls は空配列で、検証が必要な外部独立主張はない。"
+      ]
+    }
+  ]
+}

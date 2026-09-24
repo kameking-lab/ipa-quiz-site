@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2990,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14268,
+      "webSearchRequests": 0,
+      "costUSD": 0.1742078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1661,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "125a1a15a0b79c3fbb12b6f9f4c67c99754553c257ea9bb579b05dd66081a3d6",
+  "inputRequestSha256": "507cadf008ea1e1d584ba132514aba663b73c573b50834e2c3f3e73c2b0d97be",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "6c9673e543abbca8dfcf8e079629ee95ade79818be87c9ab171c81b766c1b141"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p13.png": "2207604bde9f2b1a13049008c97ae6afdafe8fd6c5a6d3cd757c58397e60c441"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "7cfff1bf2d99d84b89508e9d17e8836361e6a21e12d7e6d683e513c82fb418c0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄に「出題年度は本データでは特定していない」とあるが、同じ候補の fiscalYear=2025・term=lower・examDate=2026-03-22・subject=machinery・sourceAttribution（令和7年度下期 機械科目 問10）は年度を特定している。記録内で矛盾しているため、uncertainty 欄を修正する必要がある。修正例：「年度・期・科目は manifest 固定の出典（試験センター公式過去問一覧、問題PDF 20260322_ch_third_q03.pdf、解答PDF 20260322_ch_third_a01.pdf のヘッダ『令和7年度 第三種電気主任技術者下期試験解答』）で確定。原図頁自体には年度表記がない。」"
+      ],
+      "verifiedEvidence": [
+        "問題文：添付原図（印字頁 -10-、識別記号 T2－K 013、manifest 上の PDF 第13頁）の柱書と一字一句照合し、一致を確認した。「誤っているものを」の指示語も一致している。",
+        "選択肢(1)〜(5)：原図の全文と照合し、IGBT／逆並列ダイオード、ダイオード、サイリスタ、パワーMOSFET（ボディーダイオード）、IGBT の各記述が語句・順序とも一致することを確認した。",
+        "公式正答：解答原図のヘッダ「令和7年度 第三種電気主任技術者下期試験解答」の＜機械＞列で、問10＝解答3・配点5を確認した。候補の officialAnswer=\"3\"、scoringPoints=5 と一致し、manifest の q10 公式正答単位とも一致する。",
+        "総合解説：ダイオードは印加極性で導通・非導通が決まり、電流値は外部回路で決まる非可制御デバイスである。サイリスタはゲートでターンオンした後、ゲートを除いても保持電流以上なら導通を継続（自己保持）するが、電流が保持電流未満になるとターンオフして逆阻止となり、逆方向電流は流せない。IGBT／MOSFET はゲート電圧で制御する自己消弧形デバイスである。MOSFET のボディーダイオードは逆並列の向きに内蔵される。逆回復電流は過渡現象であり、定常動作ではない。以上いずれも技術的に正しく、結論(3)と整合する。",
+        "肢別解説：(1) 順方向電流の期間はゲート電圧で決まり、逆方向電流は逆並列ダイオードに流れる（正）。(2) 非可制御で、電流は外部条件で決まる（正）。(3) 自己保持はするが逆方向電流は流せない（誤＝正答）。(4) ボディーダイオードで逆方向電流が流れる（正）。(5) ゲート除去でターンオフし、自己保持はしない（正）。各肢固有の理由が妥当で、公式正答と整合することを確認した。",
+        "図：原図に図はなく、解答に図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} で妥当。",
+        "出典メタデータ：sourceQuestionPdfUrl・sourceAnswerPdfUrl・reviewedFromPage=[13]・fiscalYear=2025・term=lower・examDate=2026-03-22・subject=machinery が manifest と一致することを確認した。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4060,
+      "cacheReadInputTokens": 130093,
+      "cacheCreationInputTokens": 20131,
+      "webSearchRequests": 0,
+      "costUSD": 0.26827460000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2207,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ebd729096119b3f5cfc65444982ac9add93b0fd61aba186a168bed2b63be6eac",
+  "inputRequestSha256": "73722cf149057a5645423becd922a6ee470c7826b386281a086bf1354e1033ed",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "b5f2f3a1a22983e66002ed3eb9f579ddcc683cf21b64f2a819fd47fc0fbbe2fe",
+      "q06": "67ccd3a29a3536df6cffb2f5a48707c2f55f16b5868c28f9979f8c9e8a3bf9f9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p07.png": "c2d48ba70a829c601d4843212f6d1c64fa5b6fb39f89be6e3520349fc1d3c148",
+      "data/raw_pdfs/denken3/review/20240818/power/p09.png": "7a11c5556d7e3f98f645b27734ddd54e8d131b60d71436ece65c2b10fe4d0fd2"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a3a0158a1b36d2852b1b9b6278b6aeace9ddcd0202de95ed9dd1957cdaeda1ab"
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official problem image (PDF page 7, footer T1-D 007, 問4) word for word. That covers 1 g, ウラン235, 0.09 %の質量欠損, the unit [kg], 最も近いもの, and 石炭の発熱量 25 000 kJ/kg.",
+        "All five choices match the original: (1)32, (2)320, (3)1 600, (4)3 200, (5)6 400.",
+        "The official answer table for 令和6年度上期 電力 問4 gives 4. The candidate's officialAnswer is also 4.",
+        "Recalculated: Δm = 1 g × 0.0009 = 9×10⁻⁴ g = 9×10⁻⁷ kg. E = 9×10⁻⁷ × (3×10⁸)² = 8.1×10¹⁰ J = 8.1×10⁷ kJ. Coal needed = 8.1×10⁷ ÷ 25 000 = 3 240 kg, so choice (4) is correct. With c = 2.998×10⁸ m/s the result is about 3 236 kg, and the answer is still (4).",
+        "Checked the ratio stated for each wrong choice: 3 240/32 ≈ 101 (about 1/100), 3 240/320 ≈ 10.1 (about 1/10), 3 240/1 600 ≈ 2.03 (about half), 6 400/3 240 ≈ 1.98 (about 2×). Every ratio matches its explanation.",
+        "The original gives no value for the speed of light. The explanation says it uses the standard approximation c ≈ 3×10⁸ m/s, so the missing value is handled and nothing is ambiguous.",
+        "The original has no figure, so figureUrls being empty and the figureDescription are correct. officialReferenceUrls is empty, so no primary source needed checking."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "The official original writes the chemical formula with a subscript: SF₆ ガス. The candidate writes it on the baseline as \"SF6ガス\" in choices 1, 2 and 5. Change it to \"SF₆ガス\" to match the original, the same way the Q4 unit already uses Unicode superscripts."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation and choiceExplanations also write \"SF6ガス\" / \"SF6\" without the subscript. Change every instance to \"SF₆\".",
+        "The explanation says \"金属容器を開放してガスを回収・排出し\". SF₆ is a powerful greenhouse gas, so in practice it is recovered and not released to the atmosphere. \"排出\" can be read as releasing it into the air, which is ambiguous. Change the wording to \"ガスを回収し\", or say plainly that the gas is recovered and not released."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official problem image (PDF page 9, footer T1-D 009, 問6). This includes 金属容器に遮断器，断路器，母線などを収納, 絶縁耐力及び消弧能力の優れた(ア), スペーサなどの絶縁物には，主に(イ), statements ① to ④, and blanks (ウ) and (エ). The only differences are that the full-width comma \"，\" became \"、\" and the line breaks were rearranged. Both changes fall within the declared reformatting for readability.",
+        "Checked every row of the choice table against the original: (1) SF₆/エポキシ樹脂/低い/短い, (2) SF₆/エポキシ樹脂/高い/長い, (3) 窒素ガス/磁器がいし/低い/長い, (4) 窒素ガス/エポキシ樹脂/高い/短い, (5) SF₆/磁器がいし/高い/短い. Apart from the subscript, the combinations match exactly.",
+        "The official answer table for 令和6年度上期 電力 問6 gives 2. The candidate's officialAnswer is also 2.",
+        "The technical content is correct. GIS is filled with SF₆, spacers are mainly epoxy resin, the enclosed structure protects against contamination so reliability is high, and an internal fault requires opening the enclosure, recovering the gas, inspecting, and refilling, so recovery takes longer.",
+        "Checked which blanks each wrong choice gets right and wrong. (1) is wrong in ウ and エ. (3) is wrong in ア, イ and ウ, with エ correct. (4) is wrong in ア and エ. (5) is wrong in イ and エ. Every choice explanation matches.",
+        "The figure is only the choice table, and it has been fully transcribed into choices. No figure is needed to answer, so figureUrls being empty is correct. officialReferenceUrls is empty, so no primary source needed checking."
+      ]
+    }
+  ]
+}

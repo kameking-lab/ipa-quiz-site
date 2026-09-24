@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2544,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14416,
+      "webSearchRequests": 0,
+      "costUSD": 0.1664718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1103,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4a3d4daed01fc885c197b8e60b7fc8331d1d05953c1daf3efaf4db69a00d346c",
+  "inputRequestSha256": "bf68307378c52e9c864c8fc327cfd5c85ff4b8afbc3705d781fede597eac4d44",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "6677e837a8786797ce46f65201e5f17d36813a70a6a8caf35fde41e15ead7a97"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p15.png": "f1d7cd8aa55019e2d74c10897bdf029dd9d24ed6ab4e187d83bbfa58928d6a12"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q12-fig1.png": "892104fc4744097fab40eab152560cc65a5e50ee3fccc62babd78effb2982c3d"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "bcc1652930f4fa8d416837cb3f6297397bfb88ad0044ea461ecfde42ce2c71cd",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第15頁、冊子下部の頁表記は「- 12 -」）と照合した。幅 6 m、奥行き 8 m、四隅の柱、地上 5 m の頂点、全光束 5 000 lm、中心 O の水平面照度[lx]、「最も近いもの」、「各ランプは均等光源とする」が、数値・単位・語句ともに一致する。",
+        "選択肢: (1) 283、(2) 141、(3) 31.8、(4) 22.5、(5) 5.6 が公式原図と完全に一致する。",
+        "公式正答: 解答表 <機械> 問12 の解答は 4、配点は 5。manifest の正答単位（answer=4, points=5）とも、候補の officialAnswer=4・scoringPoints=5 とも一致する。",
+        "総合解説の検算（光度）: I = 5000/(4π) = 397.887 cd。",
+        "総合解説の検算（距離）: 対角線 √(36+64) = 10 m で、半対角線は 5 m。r² = 5² + 5² = 50 m²、r = 5√2 m、cos θ = 5/(5√2) = 0.70711。",
+        "総合解説の検算（照度）: 1灯あたり 397.887/50 × 0.70711 = 5.627 lx。4灯が O から等距離にあるので、合計は 22.51 lx となり (4) 22.5 と一致する。因果の説明（等距離なので各灯の寄与が等しい）も正しい。",
+        "肢(1)の誤答理由: 4 × (5000/50) × (1/√2) = 282.8 ≒ 283 で、光度と全光束を混同した場合の値として成立する。",
+        "肢(2)の誤答理由: 2 × 100 × 0.70711 = 141.4 と、100 ÷ 0.70711 = 141.4 のどちらも 141 に一致する。解説は「数値上一致する」と限定的に述べており、断定的な誤りはない。",
+        "肢(3)の誤答理由: 4 × 397.887/50 = 31.83 ≒ 31.8 で、法線照度の4灯合計値である。cos θ を掛けて 22.5 に至るという説明も正しい。",
+        "肢(4)の正答理由: 総合解説と同じ計算手順・数値で整合している。",
+        "肢(5)の誤答理由: 1灯分の水平面照度は 5.63 ≒ 5.6 で、4灯合計を忘れた値として正しい。",
+        "図説明: A=左下、B=右下、C=右上、D=左上（左下から反時計回り）で原図と一致する。寸法線は A–B 下側に「6m」、B–C 右側に縦書きの「8m」。対角線 A–C・B–D は破線、交点に黒点、その下に「O」があり、原図と一致する。柱の高さ 5 m が図中にない点の記述も正しい。",
+        "公開候補図: 原図の図部分のみを欠落なく切り出している。四隅ラベル A/B/C/D、寸法 6m/8m と矢印付き寸法線、破線の対角線、点 O とラベルをすべて保持しており、問題文と併せて単独で理解できる。",
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=machinery、reviewedFromPage=[15]、問題PDF=20250831_ch_third_q03.pdf、解答PDF=20250831_ch_third_a01.pdf が manifest と一致する。sourceAttribution の「令和7年度上期 機械科目 問12」も 2025年度上期と一致する。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5864,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 22190,
+      "webSearchRequests": 0,
+      "costUSD": 0.32081440000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3580,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "072ee853625afdfbe10c8ffe29a3126ff67dce071daaec8aebaf753543c0b260",
+  "inputRequestSha256": "5df81cc9ebaf138d6526a8b19b716874f348e4615cbbf3a931c0a81ec6bc58b4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "b32fae9ea316f1dca76320f6886c24e17e63d111380de0ea593470f96a204712",
+      "q09": "e955ff6c98b8ebe9dc93d38309782c5a0e5a1c1b03cbeac72f1a25db89d66565",
+      "q10": "97f0ecde0cdb12d45435dc5f4f596a447c870a100e004c41d3a5c7aeb7e565a0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p11.png": "c07453578f871084ce1e2a0863cd669be1e2388a27228aed3a48d88d9fcab2aa",
+      "data/raw_pdfs/denken3/review/20250323/power/p12.png": "1ac09fc4288e46111cc156ff703dae78ff40a9f2e18c6cd9137dac1f942f4265",
+      "data/raw_pdfs/denken3/review/20250323/power/p13.png": "d3302c0d2d23152ad716eb74242faecf10f3e9df73cb76c38829064b7fe44adc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "1c1ea9eba7613fa9f2aaec60d74dffe2314cb67fa614bcd9b4f43c48620e76b9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The only reason the (4) explanation gives is that insulated wire is 'not common' as a salt-damage measure. That is a vague general impression, not a verified reason. Insulated wire does help in coastal areas (less bare-wire corrosion, fewer short circuits between conductors), so it should not be described as 'not a salt-damage measure' in general. Rewrite the reason to say what insulated wire actually does not do: it covers the conductor and does not remove salt deposits from the insulator surface, so it does not lower the risk of a surface flashover across a contaminated insulator. This is how the item differs from the insulator-side measures (washing, water-repellent coating, longer creepage distance). The wording must stay consistent with the official answer (4).",
+        "The overall explanation ends with 'なお、本問は知識問題で計算は伴わず、各記述は電気設備の一般的な知識に基づいて判断した'. This is a note about how the review was done and does not belong in published learner-facing text. Delete it.",
+        "The candidate's own uncertainty field says that the details for (2) and (5) have not been checked against a primary source: how insoluble matter affects contamination, and the reclosing failure rate. It also says the reason (4) is wrong rests only on general knowledge. With these items still open, the unit cannot pass."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls is empty. There is no attached official reference document that confirms the reason (4) is wrong, or the explanations for (2) and (5). Either confirm these from an official commentary or a primary reference, or rewrite the explanations as limited claims that do not go beyond what the question text itself supports."
+      ],
+      "verifiedEvidence": [
+        "Checked against the official problem image (page footer -8- / T2-D 011). The stem ('…誤っているものを…一つ選べ') and all five choices, (1) to (5), match the candidate text exactly. 塵埃 carries the ruby reading じんあい in the original; writing it as 塵埃（じんあい） is correct.",
+        "The official answer is 4, and the candidate's officialAnswer is 4. They match; the answer has not been changed.",
+        "No figures or tables. figureUrls is empty, which is correct.",
+        "reviewedFromPage [11] is consistent with the footer code T2-D 011 on the original page."
+      ]
+    },
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The (ア)(イ) explanation says the fault current is kept small to suppress '事故時の電位上昇'. The question stem itself says a large voltage rise on the healthy phases is not a problem, so a reader could take this phrase to mean the healthy-phase voltage rise and see a contradiction. Name the potential rise specifically, for example: the rise in earth potential at the fault point or grounding point (touch voltage and step voltage)."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official problem image (page footer -9- / T2-D 012). The three paragraphs of the stem and the placement of blanks (ア) to (オ) match the candidate text.",
+        "Checked every row of the combination table: (1) 小さく/非接地/同位相/高圧カットアウト/二次; (2) 大きく/接地/逆位相/ケッチヒューズ/一次; (3) 大きく/非接地/逆位相/高圧カットアウト/二次; (4) 小さく/非接地/逆位相/高圧カットアウト/一次; (5) 小さく/接地/同位相/ケッチヒューズ/一次. All rows match the original.",
+        "The official answer is 4, and the candidate's officialAnswer is 4. They match.",
+        "Checked the right and wrong blanks listed in each choice explanation against the table. (1): (ウ) and (オ) wrong. (2): (ア), (イ), (エ) wrong. (3): (ア) and (オ) wrong. (5): (イ), (ウ), (エ) wrong. All are correct.",
+        "(ウ): the zero-sequence current in the faulted feeder flows opposite to the current in the healthy feeders. The explanation of this is technically correct.",
+        "reviewedFromPage [12] is consistent with T2-D 012."
+      ]
+    },
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official problem image (page footer -10- / T2-D 013). Voltage 6.6 kV, frequency 60 Hz, line length 2 km, three-phase three-wire underground line, 0.5 μF/km per core, unit [kV·A]. Choices: 5.5 / 8.2 / 16.4 / 28.4 / 49.3. All match. The only difference is that the original's full-width commas are written as '、', which is just formatting.",
+        "Recalculated the answer: C = 0.5 × 2 = 1 μF. Q = ωCV² = 2π×60 × 1×10⁻⁶ × (6.6×10³)² = 376.99 × 43.56 ≈ 16,421.7 V·A ≈ 16.4 kV·A. This matches the official answer (3).",
+        "Checked where each wrong choice comes from. (1) 16.42/3 ≈ 5.47 is the single-phase value ωCE². (2) Using the capacitance for 1 km: ω × 0.5 μF × V² ≈ 8.21. (4) 16.42 × √3 ≈ 28.44. (5) 3ωCV² ≈ 49.27. Each choice explanation's numbers and reasoning agree with these.",
+        "The official answer is 3, and the candidate's officialAnswer is 3. They match. No figure. reviewedFromPage [13] is consistent with T2-D 013.",
+        "The explanation makes no claim that depends on an outside source, so the empty officialReferenceUrls causes no problem."
+      ]
+    }
+  ]
+}

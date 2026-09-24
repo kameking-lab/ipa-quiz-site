@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3539,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 16368,
+      "webSearchRequests": 0,
+      "costUSD": 0.2296206,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1882,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e1d73a17be28bd0d0be192c681c3d5e0efa4f8a0a7b3aaa93660d3b58f2a6528",
+  "inputRequestSha256": "8037c55c34484c43d5ae5e9bf0f2ee90a405ed362eb577606a5c863b1ba50601",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "08a5db3321df490f097a60c3dcb740c73c3a218183e396ecc240edac19fdc263"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p08.png": "1abcb0fb3b6c6b31a726ca92737a54c7f69767547cf9c4e524ce0abfa2d38b8b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q05-energy-circuit.png": "81f6caf7a309ef9d8407116dfa53dcaa92814e537eab05713e3dbbfce5b7d258"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "94ce3aef5a76a15e036713f1c30faaaee0c2e160e915d1414a742bc6013acbab",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 候補JSONの問題文を公式問題原図の問5と照合した。R₁=20 Ω、R₂=30 Ω、L₁=20 mH、L₂=40 mH、C₁=400 μF、C₂=600 μF、E=100 V、『定常状態において』、『L₁，L₂，C₁及びC₂に蓄えられるエネルギーの総和の値[J]』はすべて原図と一致する。数値・単位・添字の誤りはない。",
+        "選択肢: (1)0.12、(2)1.20、(3)1.32、(4)1.40、(5)1.52 の5肢すべてが原図と一致する。",
+        "公式正答: 候補JSONの officialAnswer は 5 である。manifest固定の公式正答単位 {question:5, part:null, answer:'5'} と一致する。",
+        "回路の接続(原図): 黒丸は左側接続点、右中央接続点、下側接続点の3つである。E は左側接続点と下側配線の間にある。L₁−R₁ の直列は左側接続点から右中央接続点へ接続する。C₁ は左側接続点から上へ回って右中央接続点に至る配線上にあり、L₁+R₁ と並列である。L₂−R₂ の直列は右中央接続点から下側接続点へ接続する。C₂ は右中央接続点から右へ出て下側配線へ降りる配線上にあり、L₂+R₂ と並列である。",
+        "電源の極性: 原図・公開候補図ともに E の上側極板が長い。したがって上側端子が正で、figureDescription の記述と一致する。なお、極性はエネルギー値に影響しない。",
+        "総合解説の検算: 定常状態ではコイルを短絡、コンデンサを開放として扱う。I=100/(20+30)=2 A。W_L1=½×0.020×2²=0.04 J、W_L2=½×0.040×2²=0.08 J。V_C1=V_(L1+R1)=0+2×20=40 V、V_C2=V_(L2+R2)=0+2×30=60 V。W_C1=½×400×10⁻⁶×40²=0.32 J、W_C2=½×600×10⁻⁶×60²=1.08 J。総和は 1.52 J で、公式正答(5)と一致する。",
+        "誤答肢(1): 0.12 J はコイルのみの和 0.04+0.08 と一致する。コンデンサ分を落としたことを誤りの理由とする説明は正しい。",
+        "誤答肢(2): 0.12+1.08=1.20 J(C₁ 分の 0.32 J が欠落)と一致する。電圧を入れ替えた場合の ½×400μ×60²=0.72 J と ½×600μ×40²=0.48 J の和 1.20 J(コイル分が欠落)とも一致する。どちらの算出経路の記述も数値的に正しい。",
+        "誤答肢(3): 0.72+0.48+0.12=1.32 J と一致する。C₁/C₂ の電圧を逆に割り当てた誤りとする説明は、原図の並列関係(C₁ は 40 V、C₂ は 60 V)に照らして正しい。",
+        "誤答肢(4): 0.32+1.08=1.40 J はコンデンサのみの和と一致する。コイル分 0.12 J の欠落を指摘する説明は正しい。",
+        "正答肢(5): 各素子の値 0.04/0.08/0.32/1.08 J と総和 1.52 J は検算結果と一致する。",
+        "公開候補図: 原図の回路部分を切り出した図で、C₁、L₁、R₁、L₂、R₂、E、C₂ の全ラベル、3つの黒丸、配線経路、E の極板の長短がすべて原図と一致する。問題文の外にある選択肢や頁番号は含まれていない。この図だけで接続関係を一意に読み取れ、解答に必要な情報を満たしている。",
+        "出典: officialReferenceUrls は空で、公式参考資料の主張に依拠する独立主張はない。原図の頁番号は『- 5 -』、頁コードは『T2−R 008』で、reviewedFromPage=[8] と整合する。試験日 2025-03-23 は令和6年度下期にあたり、fiscalYear=2024、term=lower、sourceAttribution の記載と整合する。"
+      ]
+    }
+  ]
+}

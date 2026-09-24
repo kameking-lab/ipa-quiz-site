@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8916,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 36746,
+      "webSearchRequests": 0,
+      "costUSD": 0.5001846000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5276,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f83d7956c842fb09b2842a10c759d3b38af5f9f37b675605c9a2333933924795",
+  "inputRequestSha256": "c2b15e32280455648c32873cc32a2abf16085fb0435830c4e8da25eebe0be785",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "0226bc4fe1eb6e157e62c8234b786bc142c298d6e340ca43cf882febd58a84f8",
+      "q10": "14c3f07a8ace995a886af02109efa01a5b9bf2cac7364b09f778f2e41635c9cd",
+      "q12": "ecdabc30c53cdc94a5ae15c85a6bc0e31de4a7c236fb44111d0c67c2e3b07f83",
+      "q14": "254c1535df8174f10eb4d31c641efd57ff38e1c5c8c0c769d0d820271c44bc92"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p12.png": "6d1d584394c15bba56e9a3a4d3a623820e6f4b3631af0aba394bd84018c5505c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p14.png": "b0ae106924c3d36d8af3fbc3810c721661c1529fbca941e674c7993917ae1bd9",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p15.png": "832c30c7eda5c6a314c6d8c6630508200d4971b75d247f620bbed3539afc63ac",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p17.png": "0830b3d68a791fc31a4c0f034310e4457a7c2ea8d266a6a5c5f3cf84606594d3",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p19.png": "4081a455b0fab972bb4733b49918e166698a1a65f2abb5bfd085105905d257fc"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-half-wave-circuit.png": "d98fb450f453116500ce9b4ca680dd99b81f736ea81e78ea20b7d6ea1a6d5c9c",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q10-five-waveforms.png": "c07940fbe1a02a9a0d0cb79dccdd77f5b2c7f2c4eedfa27b9b2946605382dabc"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "13bf8f08f2044dcc80e522424b87490c328686af5b676fe68a7363b0682d0d0a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "問題文と定義式5行（V̇₂′=(ア)・V̇₂、İ₂′=(イ)・İ₂、r₂′=(ウ)・r₂、x₂′=(エ)・x₂、Ż_L′=(オ)・Ż_L）、a=N₁/N₂、ダッシュ記号の注記は原図と一致する。本文の修正は不要。",
+        "uncertainty欄に「分数・べき乗表記の判読に僅かな不確実性が残る」とある。原図と照合し、(1)〜(5)全肢のa、1/a、a²、1/a²の区別はすべて確定した。未解消の曖昧さが残っているように読めるため、この欄を更新する必要がある。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は Z₂′ = V̇₂′/İ₂′ = a²・(V̇₂/İ₂) で導いている。しかし本文の定義では V̇₂ は二次端子電圧なので、V̇₂/İ₂ は負荷インピーダンス Ż_L にしかならない。そこから「よって r₂′=a²r₂、x₂′=a²x₂」とするのは、r₂ や x₂ が V̇₂/İ₂ であるかのように読める飛躍である。各インピーダンス要素 Z の電圧降下 Z・İ₂ は一次換算で a 倍、電流は 1/a 倍になるので Z′ = a²Z となる、という形の一般的な導出に直すべきである（結論 ウ=エ=オ=a² は正しい）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図の選択肢表：(1) 1/a, a, 1/a², 1/a², a²／(2) 1/a, a, a², a², a／(3) a, 1/a, 1/a², 1/a², 1/a²／(4) a, 1/a, a², a², a²／(5) 1/a, a, 1/a², 1/a², 1/a²。候補JSONのchoicesと完全に一致する。",
+        "公式解答表の機械・問8は4。officialAnswer '4' と一致する。",
+        "検算：V₁/V₂=a、I₁/I₂=1/a。インピーダンスの換算は a÷(1/a)=a²。よって(ア,イ,ウ,エ,オ)=(a,1/a,a²,a²,a²)で(4)が正しい。",
+        "各誤答肢の理由を確認した。(1)はア・イが逆でウ・エが1/a²（オa²は正しいという記述も正しい）。(2)はア・イが逆でオがa。(3)はウ・エ・オが1/a²。(5)はア・イが逆でウ・エ・オが1/a²。いずれも正確である。",
+        "原図ページ下部のT1-K 012とreviewedFromPage [12]は整合する。図は不要で、figureUrlsが空なのは妥当。"
+      ]
+    },
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "S閉の段落の「e_dはv_sの正の半波に追随して山を描いた後，v_sの正の半波でv_sに追随して滑らかにゼロ点に達し」は、同じ内容が重複して文が崩れている。「v_s>0の間はe_d=v_sとして正弦半波を描き、v_sのゼロ点以降の負の半周期はe_d=0を保つ」と整理すべきである。",
+        "(エ)の段落の「電流が0まで減衰しきる前に環流ループへ移行でき」は因果が不正確である。環流ダイオードへの転流はv_sのゼロ点で必ず起きる。通流期間が長くなる理由は次の通りで、そう書き直すべきである。S開では負荷に負の電圧（e_d=v_s<0）が加わり、電流が急速に減衰する。S閉では負荷電圧が0にクランプされ、電流はL/Rの時定数でゆっくり減衰する（L di/dt = −R i）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文の(ア)〜(エ)の空欄位置と「負荷力率に応じて」などの文言は原図と一致する。選択肢の組合せも一致する：(1)2,4,3,長くなる／(2)1,5,3,短くなる／(3)1,5,2,長くなる／(4)1,4,2,長くなる／(5)2,5,3,短くなる。",
+        "公式解答表の機械・問10は3。officialAnswer '3' と一致する。",
+        "図1の原図を確認した。上辺に右向きの主ダイオード、接続点からスイッチSと環流ダイオードの直列枝が下辺へつながる。環流ダイオードは下辺側がアノード、接続点側がカソードで、下から上へ導通する。負荷はLとRの直列で、e_dは下から上向きの矢印、i_dは右向きの矢印。公開候補図はこれらの接続、向き、ラベル（v_s, S, L, R, e_d, i_d, 図1）をすべて保持している。",
+        "図2の原図を確認した。波形1はe_dがv_sのゼロ点を越えて負へ追随し、その後急峻に0へ戻る。波形2は負の半周期でe_d=0、波形3は全波整流形、波形4は電流がv_sと同相で終わる、波形5は電流が遅れてゼロ点の後まで流れる。公開候補図は5波形とe_d、v_s、i_d、ωtのラベルを保持しており、公開図だけで解答できる。",
+        "回路動作を検算した。S開では(ア)波形1・(イ)波形5、S閉では(ウ)波形2、(エ)長くなる。(3)と一致する。",
+        "各誤答肢の固有理由（(1)ア波形2・イ波形4・ウ波形3、(2)ウ波形3・エ短くなる、(4)イ波形4、(5)ア波形2・ウ波形3・エ短くなる）は技術的に正しい。",
+        "T1-K 014/015とreviewedFromPage [14,15]は整合する。"
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations['4']は、(ア)(イ)の入替えと(エ)[J/W]しか指摘していない。(ウ)が[J/K]となっている誤り（熱抵抗は θ/Φ で[K/W]）が抜けているので、この肢固有の誤りとして追記すべきである。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄に「試験実施年度・回は添付画像からは特定できない」とある。これはsourceQuestionPdfUrl、fiscalYear=2024、term=upper、sourceAttributionと矛盾する記述である。出典は令和6年度上期・機械（T1-K 017）と特定できているので、この欄を更新すべきである。"
+      ],
+      "verifiedEvidence": [
+        "対応表を原図と照合した：電圧V[V]↔(ア)[K]、電気量Q[C]↔熱量Q[J]、電流I[A]↔(イ)[W]、導電率σ[S/m]↔熱伝導率λ[W/(m・K)]、電気抵抗R[Ω]↔熱抵抗R_T(ウ)、静電容量C[F]↔熱容量C(エ)。候補JSONと一致する。",
+        "選択肢表は原図と一致する：(1)温度差θ,熱流Φ,[K/W],[J/K]／(2)熱流Φ,温度差θ,[J/K],[K/W]／(3)温度差θ,熱流Φ,[K/J],[J/K]／(4)熱流Φ,温度差θ,[J/K],[J/W]／(5)温度差θ,熱流Φ,[K/W],[J/W]。",
+        "公式解答表の機械・問12は1。officialAnswer '1' と一致する。",
+        "検算：R_T=θ/Φ で[K/W]、熱容量 C=Q/θ で[J/K]。(1)が正しい。",
+        "T1-K 017とreviewedFromPage [17]は整合する。図は不要。"
+      ]
+    },
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（1101と1011、ExOR=(ア)、NOR=(イ)、(ア)OR(イ)=(ウ)、1011 ExOR (ウ) を16進数で表すと(エ)）は原図と一致する。",
+        "選択肢表は原図と一致する：(1)1001,0110,1001,9／(2)0110,0000,1111,D／(3)1001,1111,1001,F／(4)0110,1111,1001,9／(5)0110,0000,0110,D。",
+        "公式解答表の機械・問14は5。officialAnswer '5' と一致する。",
+        "検算：1101 XOR 1011=0110。1101 OR 1011=1111 なので NOR=0000。0110 OR 0000=0110。1011 XOR 0110=1101 で16進数D。(5)と一致する。",
+        "誤答肢の理由を確認した。(2)の「1011 XOR 1111=0100（16進数4）」は正しい。(1)(3)(4)で指摘している不一致の値もすべて正確である。",
+        "T1-K 019とreviewedFromPage [19]は整合する。図は不要。"
+      ]
+    }
+  ]
+}

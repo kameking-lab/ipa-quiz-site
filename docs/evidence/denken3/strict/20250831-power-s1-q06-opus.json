@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3264,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13495,
+      "webSearchRequests": 0,
+      "costUSD": 0.17350379999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1807,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "706b8728082f349ae8c345c8f0cbbfa7c5e7896b82e43948dfcce84a6b6f955f",
+  "inputRequestSha256": "f0ae3fea93659836336d29731d24bb447094c7f4afd763f21e378884a3d8b1ea",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "fbc23f4d455c22bd398eac058a4a37db16cab110c9d2d1e07624d43b15bd25c6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p09.png": "1ccb1e0d57f816b77b0880a603e1eb02cccae71454dbbf248871b2f939b08868"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "2f8e38e0fd5d298e348d24e63b0ca773e9d3e23915dcf321b2577de4196ee7ca",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の「ガス絶縁開閉装置に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」と一字一句一致する。",
+        "選択肢(1): 原図の「絶縁性能の高いガスを用いることで装置を小形化でき，気中絶縁の装置を用いた変電所と比較して，変電所の体積と面積を大幅に縮小できる。」と一致する。",
+        "選択肢(2): 原図の「我が国では，ガス絶縁開閉装置の保守や廃棄の際，絶縁ガスの大部分は回収されている。」と一致する。",
+        "選択肢(3): 原図の「ガス絶縁開閉装置の絶縁ガスは，大気圧以下のSF₆ガスである。」と一致する。SF₆の下付き6も正しく表記されている。",
+        "選択肢(4): 原図の「据え付け時」を含め、全文が一致する。",
+        "選択肢(5): 原図の「ガス絶縁開閉装置の充電部を支持するスペーサにはエポキシ等の樹脂が用いられる。」と一致する。",
+        "公式正答: 解答表原図（令和7年度 第三種電気主任技術者上期試験解答）の電力・問6は解答3・配点5である。manifestの{answer:\"3\", points:5}、候補のofficialAnswer=\"3\"、scoringPoints=5とすべて一致する。",
+        "科目の同定: 問6の解答は理論=2、電力=3、機械=2、法規=2で、3は電力だけである。内容上の正答(3)とも整合するため、subject=power、sourceQuestionPdfUrl(q02)、sourceAttributionの「電力科目 問6」は裏付けられる。",
+        "総合解説: GISは接地金属容器内にSF₆ガスを大気圧より高い圧力で封入して絶縁し、小形化を図る装置である。この説明は技術的に正しい。(3)を「大気圧以下」の誤りとして否定する論理も正しい。",
+        "肢別解説(1): SF₆の高い絶縁耐力、加圧による絶縁距離短縮、機器の近接配置による占有面積・体積の縮小という因果は正しい。",
+        "肢別解説(2): SF₆は地球温暖化係数が大きく、国内では点検時・廃棄時に回収され、その大部分が回収されている。この記述は正しく、公式正答により(2)が正しい記述である点とも整合する。",
+        "肢別解説(3): 加圧封入が正しく、大気圧以下は誤りとする理由は、正答肢固有の理由として適切である。",
+        "肢別解説(4): 金属異物による局部電界集中・異物の挙動で絶縁破壊電圧が低下すること、および製造・据付け時の清浄度管理の説明は正しい。",
+        "肢別解説(5): スペーサが充電部を絶縁しつつ機械的に支持する部材であり、エポキシ樹脂注形品が用いられるという説明は正しい。",
+        "図: 原図は文章のみで図はない。figureUrls=[]、choiceFigureUrls={}、figureDescriptionの「図なし」は妥当である。",
+        "出典参照: officialReferenceUrlsは空で、検証を要する独立主張はない。",
+        "頁: 添付原図の印字頁は「- 6 -」（識別記号 T1－D 009）で、表紙等を含むPDF頁としてreviewedFromPage=[9]と矛盾しない。",
+        "uncertainty欄: 問題頁単体では年度・科目を特定できないという記述は事実として正確である。年度・回・科目は解答表原図とmanifestで確定できるため、needsReview=falseと矛盾しない。"
+      ]
+    }
+  ]
+}

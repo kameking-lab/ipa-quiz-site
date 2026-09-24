@@ -1,0 +1,130 @@
+{
+  "questionNumber": 11,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図に示すように，電動機が減速機と組み合わされて負荷を駆動している。このときの電動機の回転速度 n_m が 1 200 min⁻¹，トルク T_m が 100 N·m であった。減速機の減速比が 6，効率が 0.96 のとき，負荷の回転速度 n_L [min⁻¹]，軸トルク T_L [N·m] 及び軸入力 P_L [kW] の値として，最も近いものを組み合わせたのは次のうちどれか。",
+      "choices": {
+        "1": "n_L = 7 200 min⁻¹，T_L = 576 N·m，P_L = 4 147 kW",
+        "2": "n_L = 7 200 min⁻¹，T_L = 16.0 N·m，P_L = 12.1 kW",
+        "3": "n_L = 7 200 min⁻¹，T_L = 16.0 N·m，P_L = 4 147 kW",
+        "4": "n_L = 200 min⁻¹，T_L = 16.0 N·m，P_L = 12.1 kW",
+        "5": "n_L = 200 min⁻¹，T_L = 576 N·m，P_L = 12.1 kW"
+      },
+      "officialAnswer": "5",
+      "explanation": "減速比 6 の減速機では，出力側（負荷側）の回転速度は入力側の 1/6 になり，トルクは損失がなければ 6 倍になる。効率 0.96 を考慮すると次のとおり。\n\n【負荷の回転速度】\nn_L = n_m ÷ 6 = 1 200 ÷ 6 = 200 min⁻¹\n\n【負荷の軸トルク】\n減速機の入力動力 P_m と出力動力 P_L の関係は P_L = 0.96 × P_m。動力は P = ωT = (2πn/60)·T なので，\n(2π·n_L/60)·T_L = 0.96 × (2π·n_m/60)·T_m\nT_L = 0.96 × (n_m / n_L) × T_m = 0.96 × 6 × 100 = 576 N·m\n\n【負荷の軸入力】\nP_L = (2π × 200 / 60) × 576 ≒ 20.94 rad/s × 576 N·m ≒ 12 064 W ≒ 12.1 kW\n\n（検算）電動機の出力 P_m = (2π × 1 200 / 60) × 100 ≒ 125.66 rad/s × 100 N·m ≒ 12 566 W。これに効率 0.96 を掛けると 12 566 × 0.96 ≒ 12 064 W ≒ 12.1 kW となり，一致する。\n\nしたがって，n_L = 200 min⁻¹，T_L = 576 N·m，P_L = 12.1 kW の組合せ (5) が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。n_L = 7 200 min⁻¹ は 1 200 × 6 であり，減速ではなく増速として計算した値である（正しくは 1 200 ÷ 6 = 200 min⁻¹）。T_L = 576 N·m は正しいが，P_L = 4 147 kW は正しい値 12.1 kW と一致しない。数値上 4 147 は 7 200 × 576 ÷ 1 000 ≒ 4 147 に等しく，回転速度 [min⁻¹] を角速度 [rad/s] に換算（×2π/60）せずに掛け合わせた値に相当する。",
+        "2": "誤り。n_L = 7 200 min⁻¹ は減速比を掛けて増速として扱った値である。T_L = 16.0 N·m は 100 ÷ 6 × 0.96 = 16.0 であり，トルクを減速比で割っている点で誤り（減速機ではトルクは減速比倍に増える）。P_L = 12.1 kW 自体は正しい値だが，回転速度とトルクが誤っているため組合せとして不適。",
+        "3": "誤り。n_L = 7 200 min⁻¹（増速として計算），T_L = 16.0 N·m（トルクを減速比で割っている）はいずれも誤り。P_L = 4 147 kW も，電動機出力 約 12.6 kW に効率 0.96 を掛けた正しい値 12.1 kW と一致しない。この肢の n_L と T_L から求めても (2π × 7 200 / 60) × 16.0 ≒ 12 064 W であり，4 147 kW とは整合しない。",
+        "4": "誤り。n_L = 200 min⁻¹ と P_L = 12.1 kW は正しいが，T_L = 16.0 N·m は 100 ÷ 6 × 0.96 であり，トルクを減速比で割っている点で誤り。実際に (2π × 200 / 60) × 16.0 ≒ 335 W となり，P_L = 12.1 kW とも整合しない。正しくは T_L = 100 × 6 × 0.96 = 576 N·m。",
+        "5": "正しい。n_L = 1 200 ÷ 6 = 200 min⁻¹，T_L = 100 × 6 × 0.96 = 576 N·m，P_L = (2π × 200 / 60) × 576 ≒ 12 064 W ≒ 12.1 kW であり，3 つの値がすべて一致する。"
+      },
+      "figureDescription": "電動機・減速機・負荷の構成図。左下に「電動機」と書かれた横長の箱があり，その右側の軸に小さい歯車が付いている。この小歯車は，上側にある大きい歯車とかみ合っている。大歯車の軸は右へ延び，右上の「負荷」と書かれた箱につながっている。電動機の下には記号 n_m と T_m が，負荷の上には記号 n_L，T_L，P_L が記されている。電動機側が小歯車，負荷側が大歯車であり，減速機を介して負荷を駆動する構成を示している。解答に必要な数値はすべて問題文にあるが，各記号がどちらの軸の量を表すかを示す図として意味がある。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        14
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3459,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.14391579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1234,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d145dc1be8b3a342c834718d2438b76ca891eaab9c737fc83c7a25b8e5fa3b36",
+  "inputRequestSha256": "1038e8da9588fe3fa6888e54707cee5b1d8cf0afbdbb5485c00754c40315f1cd",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p14.png": "8d50c1279a9f792d1cfa85d2ca877e638886b5b9a3a87bf02d0668da2eb385c8"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3165,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13830,
+          "webSearchRequests": 0,
+          "costUSD": 0.1742038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 932,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "99ebb1856bf8ef48764cb8bdfe047ff0a04af3be404e19aee7f66f34f7d83e45",
+      "inputRequestSha256": "962eb1e8e007b422af5e1489e43f38406e3a82c1fade4116b99f6a1b92a935af",
+      "previousDraftSha256": "9b966dfb6500853a2f109789325552b157e71c0a2101b4738a179d9034ce5f2d",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q11-vision-draft-v1.json",
+      "answeredReviewSha256": "7ef75f19517c5387849f624fc8387d9e94d04d820a25b3171c423d15ee92bd46",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q11-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s1-q11-opus.json",
+      "answeredStrictReceiptSha256": "64def6fda94ab53f39c6bbcf386240e3d276cd05e5c3241eb2520606af38dc52",
+      "figureSha256": {
+        "20260322-machinery-q11-fig1": "c5a7aa2a708f008da6e11d7f64d168ba957e4b692606477df0d3868a2a361a5a"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2802,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13525,
+          "webSearchRequests": 0,
+          "costUSD": 0.1645038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 666,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "3047cb04d2c791b066c84fcd155d332756d3b740ce22749f886217b4bd105483",
+      "inputRequestSha256": "ba095e6f89cd213ef2ad7adc663c9bd072d9f347dcf99e7dfcd97058524289ef",
+      "previousDraftSha256": "f229478648b9ad2689994ebcbb4f66ce246084f0be6fc673b3774859f0071e5c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q11-vision-draft-v2.json",
+      "answeredReviewSha256": "5720b7c66f8acd89ee55fa2f91809ef841d4d9a96960b7b0c6cbb1f920238c1b",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q11-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-machinery-s2-q11-opus.json",
+      "answeredStrictReceiptSha256": "86f3308c222bbf81724b2a3c28adee1549cdd6b3844be5e8756e82d5950aebf0",
+      "figureSha256": {
+        "20260322-machinery-q11-fig1": "c5a7aa2a708f008da6e11d7f64d168ba957e4b692606477df0d3868a2a361a5a"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

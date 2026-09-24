@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6236,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 28790,
+      "webSearchRequests": 0,
+      "costUSD": 0.3809382,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3580,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fefeb7cf017fa63985cef703346a0adea45f6918d2050cbc283b3a8dd3ead0fb",
+  "inputRequestSha256": "a1317f616bfbc369f601854b7374af036d94520aec97e4ff2e884da9a5ae64ca",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "4a575a9c80d33a9712c4002ec7b82d8cfbe78ce5ecde93de67ef6a45067f5ee6",
+      "q17b": "7570c29abd7fe082c3d4c562060c4ebc38efebd8318354d0756594c9302b2bf9",
+      "q18a": "b236600c6a849cf14c3422ac05ab3ce640b9477cd5b6def9be00518e6c6715ce",
+      "q18b": "1b0fcd1a2a77b248b2f549547b04ac5dd946c1a16d81b2101055791c4e2d1c36"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p24.png": "75ed25a700c3497342e203b50a04d637b9e221fa4a4f8209b3d1fddb9fda691e",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p25.png": "f7ca2c56c43cab3bd4c44a87855190ba3e9f3a6319b18638a218f331bf8a9da4",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p26.png": "52974657db65a66e1e5313928844e3093b7bb0ea4ea358c87a21ef72c02aeef4",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p27.png": "110969505c8d0293429202c00d561d870789a5a6d3ffa954790c2c4b9c3b777b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "65a5e78c4112650c37c3459a68087d2443e29ebc71fd1337ac228365c636d285",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The candidate text matches the official problem image (footer T1-K 024, printed page 21) word for word. This covers the preamble that says Q17 and Q18 are optional, 均等放射, a sphere of diameter 30 cm, a height of 3 m from the floor to the centre of the sphere, a total luminous flux of 12 000 lm, the illuminance [lx] directly below the source, and the condition that there is no reflected light.",
+        "All five choices match the original: (1) 35, (2) 106, (3) 142, (4) 212, (5) 425.",
+        "The official answer table (令和6年度上期, 機械, 問17(a)) gives 2, and the candidate's officialAnswer is also 2.",
+        "Independent check: I = 12000/(4π) = 954.93 cd, and E = I/3² = 106.10 lx, so the closest choice is (2). A uniformly radiating sphere gives an exact I/r² at a distance r from its centre, so measuring the distance from the centre is correct.",
+        "Checked how each wrong choice's value was reached: (1) 954.93/27 = 35.37; (4) 12000/(2π)/9 = 212.2; (5) 12000/(π×9) = 424.4. All three match the numbers stated. For (3), 142 does not match the correct value of 106.1, and the explanation's point that the diameter is only used for the luminance calculation is correct.",
+        "reviewedFromPage [24,25] matches the original's footers T1-K 024 and 025. The question can be solved without a figure, so figureUrls being empty is appropriate. officialReferenceUrls is empty, so there were no independent claims to check."
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The common stem and part (b) match the official problem images (T1-K 024 and 025), which ask for the combination of luminous intensity [cd] and luminance [cd/m²].",
+        "The choices match the original table: (1) 955/13 500, (2) 955/3 380, (3) 1 910/1 010, (4) 1 910/27 000, (5) 3 820/13 500. Converting the table into text loses no information.",
+        "The official answer table (機械, 問17(b)) gives 1, and the candidate's officialAnswer is also 1.",
+        "Independent check: I = 12000/(4π) = 954.93 cd. The projected area is A = π×0.15² = 0.070686 m², so L = 954.93/0.070686 = 13 509 cd/m², which is about 13 500. That makes (1) correct. A sphere with uniform intensity has the same projected area from every direction, so its luminance is uniform.",
+        "Checked the values behind each wrong choice: (2) 954.93/(4π×0.15²) = 954.93/0.28274 = 3 377; (3) and (4) 12000/(2π) = 1 909.9; (4) 1 909.9/0.070686 = 27 019; (5) 12000/π = 3 819.7. All match the numbers stated. For (3), it is also correct that a luminance of 1 010 does not match the correct 13 500.",
+        "No figure is needed. reviewedFromPage [24,25] is consistent with the original's footers."
+      ]
+    },
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The text matches the official problem image (T1-K 026, printed page 23). It includes the definition N = a_n r^n + … + a_1 r + a_0, the condition 0 ≦ a_i < r (i = 0, 1, …, n), the notation (a_n a_{n-1} … a_2 a_1 a_0)_r, and the equation (122)_r − (42)_r = (40)_r.",
+        "The choices (1) 5, (2) 6, (3) 7, (4) 8, (5) 9 match the original.",
+        "The official answer table (機械, 問18(a)) gives 2, and the candidate's officialAnswer is also 2.",
+        "Independent check: (r²+2r+2) − (4r+2) = 4r gives r² − 6r = 0. Since r ≧ 2, r = 6. Substituting back: 50 − 26 = 24 = (40)_6. The digit 4 is used, so r > 4, and every choice satisfies this.",
+        "Substituted each wrong value and confirmed the equation fails: r=5 gives 37−22 = 15 ≠ 20; r=7 gives 65−30 = 35 ≠ 28; r=8 gives 82−34 = 48 ≠ 32; r=9 gives 101−38 = 63 ≠ 36. All match the candidate.",
+        "No figure is needed. reviewedFromPage [26,27] matches the original's footers T1-K 026 and 027."
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Statements ① to ③ match the official problem image (T1-K 027, printed page 24) word for word. This covers the sign-magnitude method (MSB 0 is positive, 1 is negative), the two's complement of a 7-bit positive number n, the (1000 0000)₂ = 0.0000 V reference, the (0000 0000)₂ = −5.0000 V condition, and the input (0111 1000)₂.",
+        "All five combinations match the original table: (1) 10001000/10000111/−0.2734, (2) 11111000/10001000/−0.3125, (3) 11111000/10000111/−0.3125, (4) 10001000/11111000/−0.3125, (5) 10001000/11111000/−0.2734.",
+        "The official answer table (機械, 問18(b)) gives 4, and the candidate's officialAnswer is also 4.",
+        "Independent check for (ア): sign bit 1 plus 8 as 0001000 gives 1000 1000. For (イ): 00001000 inverted is 11110111, plus 1 gives 1111 1000. For (ウ): k = 5/128 = 0.0390625 V/LSB, (0111 1000)₂ = 120, and (120−128)×5/128 = −0.3125 V. Only (4) matches all three.",
+        "The reasons given for each wrong choice are correct: (1) has the wrong (イ) and (ウ); (2) has (ア) and (イ) swapped; (3) has the wrong (ア) and (イ); (5) has the wrong (ウ), since −0.2734 = −7×5/128 does not equal −0.3125.",
+        "The choice table is fully converted to text and no figure is needed. reviewedFromPage [26,27] is consistent with the original's footers."
+      ]
+    }
+  ]
+}

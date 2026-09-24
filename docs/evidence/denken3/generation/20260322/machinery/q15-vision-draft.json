@@ -1,0 +1,126 @@
+{
+  "questionNumber": 15,
+  "sharedContext": "B問題（配点は1問題当たり(a)5点，(b)5点，計10点）\n問15 定格容量 50 kV·A の単相変圧器がある。この変圧器を定格電圧，力率 100 %，全負荷の 3/4 の負荷で運転したとき，鉄損と銅損が等しくなり，そのときの効率は 98.2 % であった。この変圧器について，次の(a)及び(b)に答えよ。\nただし，鉄損と銅損以外の損失は無視できるものとする。",
+  "units": [
+    {
+      "part": "a",
+      "question": "定格容量 50 kV·A の単相変圧器がある。この変圧器を定格電圧，力率 100 %，全負荷の 3/4 の負荷で運転したとき，鉄損と銅損が等しくなり，そのときの効率は 98.2 % であった。この変圧器について，次の(a)及び(b)に答えよ。\nただし，鉄損と銅損以外の損失は無視できるものとする。\n\n(a) この変圧器の鉄損[W]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "536",
+        "2": "472",
+        "3": "425",
+        "4": "382",
+        "5": "344"
+      },
+      "officialAnswer": "5",
+      "explanation": "3/4 負荷・力率 100 % のときの出力 P は\nP = 50 kV·A × 3/4 × 1.0 = 37.5 kW = 37 500 W\n\n鉄損を Pᵢ とする。このとき 3/4 負荷時の銅損は鉄損 Pᵢ に等しいので，全損失は Pᵢ + Pᵢ = 2Pᵢ。効率の式\nη = P / (P + 2Pᵢ) = 0.982\nより\nP + 2Pᵢ = 37 500 / 0.982 ≒ 38 187.4 W\n2Pᵢ ≒ 38 187.4 − 37 500 = 687.4 W\nPᵢ ≒ 343.7 W\n\nよって最も近いのは 344 W，正答は(5)。",
+      "choiceExplanations": {
+        "1": "誤り。Pᵢ = 536 W とすると 3/4 負荷時の全損失は 2 × 536 = 1 072 W、効率は 37 500 / (37 500 + 1 072) ≒ 97.2 % となり、与えられた 98.2 % と一致しない。",
+        "2": "誤り。Pᵢ = 472 W とすると全損失は 944 W、効率は 37 500 / 38 444 ≒ 97.5 % となり、98.2 % と一致しない。",
+        "3": "誤り。Pᵢ = 425 W とすると全損失は 850 W、効率は 37 500 / 38 350 ≒ 97.8 % となり、98.2 % と一致しない。",
+        "4": "誤り。Pᵢ = 382 W とすると全損失は 764 W、効率は 37 500 / 38 264 ≒ 98.0 % となり、98.2 % と一致しない。",
+        "5": "正しい。η = P / (P + 2Pᵢ) に P = 37 500 W、η = 0.982 を代入すると Pᵢ ≒ 343.7 W となり、344 W が最も近い。"
+      },
+      "figureDescription": "図なし。本問は文章と数値のみで構成されており、図は掲載されていない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    },
+    {
+      "part": "b",
+      "question": "定格容量 50 kV·A の単相変圧器がある。この変圧器を定格電圧，力率 100 %，全負荷の 3/4 の負荷で運転したとき，鉄損と銅損が等しくなり，そのときの効率は 98.2 % であった。この変圧器について，次の(a)及び(b)に答えよ。\nただし，鉄損と銅損以外の損失は無視できるものとする。\n\n(b) この変圧器を全負荷，力率 100 % で運転したときの銅損[W]の値として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "712",
+        "2": "611",
+        "3": "579",
+        "4": "453",
+        "5": "325"
+      },
+      "officialAnswer": "2",
+      "explanation": "全負荷銅損を Pcn とする。銅損は負荷電流の 2 乗に比例するので、負荷率 α のときの銅損は α²Pcn で表される。\n\n(a)より、3/4 負荷時の銅損 (3/4)²Pcn は鉄損 Pᵢ ≒ 343.7 W に等しい。したがって\n(3/4)² × Pcn = 343.7 W\nPcn = 343.7 × (4/3)² = 343.7 × 16/9 ≒ 611.0 W\n\nよって最も近いのは 611 W，正答は(2)。",
+      "choiceExplanations": {
+        "1": "誤り。全負荷銅損が 712 W なら 3/4 負荷時の銅損は (3/4)² × 712 ≒ 400.5 W となり、(a) で求めた鉄損 343.7 W と等しくならない。",
+        "2": "正しい。3/4 負荷時の銅損 343.7 W を (4/3)² = 16/9 倍すると ≒ 611.0 W となる。",
+        "3": "誤り。全負荷銅損が 579 W なら 3/4 負荷時の銅損は (3/4)² × 579 ≒ 325.7 W となり、鉄損 343.7 W と等しくならない。",
+        "4": "誤り。全負荷銅損が 453 W なら 3/4 負荷時の銅損は (3/4)² × 453 ≒ 254.8 W となり、鉄損 343.7 W と等しくならない。",
+        "5": "誤り。全負荷銅損が 325 W なら 3/4 負荷時の銅損は (3/4)² × 325 ≒ 182.8 W となり、鉄損 343.7 W と等しくならない。"
+      },
+      "figureDescription": "図なし。本問は文章と数値のみで構成されており、図は掲載されていない。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        18,
+        19
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3406,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11379,
+      "webSearchRequests": 0,
+      "costUSD": 0.1594158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1027,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1e19a456fd550c6a0bf763b5f807ef70667bea8902dfb616d8326f484f4e67f3",
+  "inputRequestSha256": "5abb9af1819725f1d50d5d08cab1857d5b919e707c6f8f2db301bc925686881a",
+  "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/machinery/p18.png": "cd23d5878fbcb880e744ca1c40e60db25739506e4777ed57216661aaaa57f58e",
+    "data/raw_pdfs/denken3/review/20260322/machinery/p19.png": "88f5adcc1e009ae7dd6046c4beba6b8cad47b7406a1c83dc2bd53842d431cfa9"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4121,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 14369,
+          "webSearchRequests": 0,
+          "costUSD": 0.19763579999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1886,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "7a933c48659debe5d1bbae50eb4b55527eb70b6a0a3d61960f321f1afa1a6b3d",
+      "inputRequestSha256": "0d95b33a0b224d5a6581adfc99e3bac27453e505661174c1d8d9099d26fa2871",
+      "previousDraftSha256": "4d82e310c2183962274e3e310f5dda93083ef2c69fce300e62f55085097bf76e",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q15-vision-draft-v1.json",
+      "answeredReviewSha256": "c236d52ea6d7fd232484605f86e6c412a007a7027eab9c6afdb4cf9795e18de5",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/machinery/archive/q15-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

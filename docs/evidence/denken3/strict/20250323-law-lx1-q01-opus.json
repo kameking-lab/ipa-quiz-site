@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6000,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18269,
+      "webSearchRequests": 0,
+      "costUSD": 0.2664158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4024,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0a9db6bb4c5a9b16e87af555070aeed818255391d910ba56f901c1da3cd34a59",
+  "inputRequestSha256": "be3e959ddb8aefef3b18cdd5884ed064ce4b198221169d9ae2e464502ef73f04",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "381571ef3af1530351e1386dc531a2a1db1b2b757e56df20866d2d0cc3641ba2"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f50fdd46498cf67bc8fe692426db828760078cc540f8b5e64e1bfb9bf4773e9b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20240401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77",
+      "data/raw_pdfs/denken3/review/egov/407M50000400077-20240401.json": "258957a7ca8ddf0cdc704b85fe13ef9dd39e7683968f566bb87b05f8f105dd52"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "選択肢(4)の除外理由があいまいで、選択肢(2)と同じ理由で構内全体が除外されると読める。風力15 kWは施行規則第48条第2項第2号により20 kW未満の小規模発電設備に当たる。太陽電池7 kWと合わせても22 kWで、同項ただし書の50 kW以上にならない。したがって電気事業法第38条第1項ただし書（小規模発電設備以外の発電用電気工作物と同一構内に設置するものの除外）は適用されない。公民館の受電側の設備と太陽電池7 kWは、それぞれ第1号・第2号の一般用に当たりうる。(4)が正答にならない理由は、風力15 kWが第48条第4項第2号の閾値0 kWにより第38条第1項第2号イを満たさないことにある。その結果、風力15 kWは第38条第3項第1号の小規模事業用電気工作物（事業用電気工作物）となる。設問の『公民館の電気工作物』は事業用の部分を含むため、全体として一般用とはいえない。choiceExplanations[4] と総合解説で、ただし書が適用されないことと、この論理を明示すべき。",
+        "総合解説の『(1)(3)は6.6 kV受電で除外』は、第38条第1項ただし書による『除外』と混同しやすい。正しくは、6.6 kVは施行規則第48条第1項の600 V以下（低圧）を超える。そのため低圧受電電線路以外の電線路で構外と接続されることになり、第38条第1項第1号の要件をそもそも満たさない。『除外』ではなく『第1号に該当しない』と書くべき。",
+        "選択肢(5)の正答理由が足りない。太陽電池5 kWが一般用（第38条第1項第2号）であるためには、まず小規模発電設備でなければならない。その要件は、発電電圧100 Vが600 V以下の低圧であること、および施行規則第48条第2項第1号の50 kW未満を満たすことである。そのうえで第48条第4項第1号の10 kW未満を満たす。現行の説明は第4項第1号の10 kW未満だけに触れており、小規模発電設備に当たることの確認が抜けている。",
+        "句読点が混在している。総合解説と選択肢(1)〜(4)の解説は『，』、選択肢(5)の解説は『、』を使っている。どちらかに統一すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：添付原図（PDF第4頁、頁下部『-1-』『T2-H 004』）の問1本文と、候補の問題文が一致する（句読点の整形を除く）。",
+        "選択肢(1)〜(5)：受電電圧・受電電力・発電電圧・出力・発電方式・用途（店舗／病院／事務所／公民館／事務所）の数値と単位がすべて原図と一致する。",
+        "公式正答：公式解答表『令和6年度 下期』の＜法規＞問1は5。候補の officialAnswer '5' と一致する。",
+        "メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=law、reviewedFromPage=[4]、sourceQuestionPdfUrl、sourceAnswerPdfUrl が manifest と一致する。sourceAttribution『令和6年度下期…法規科目 問1』も整合している。",
+        "法令基準日：原図の注3『令和6年4月1日現在』と、officialReferenceUrls の occasion_date=20240401 が一致する。",
+        "電気事業法第38条第1項・第3項（添付e-Gov本文）で、一般用・小規模事業用の定義、ただし書の除外、第2号イの出力要件を確認した。",
+        "施行規則第48条第1項（600 V）、第2項第1号（太陽電池50 kW未満）、第2項第2号（風力20 kW未満）、第2項第4号（内燃力10 kW未満）、第2項ただし書（合計50 kW以上の除外）、第4項第1号（太陽電池10 kW）、第4項第2号（風力0 kW）を添付本文で確認した。",
+        "選択肢(1)(3)：6.6 kV > 600 V で低圧受電に当たらず、一般用ではない。受電電力には法定上限がないという候補の記述も正しい。",
+        "選択肢(2)：内燃力15 kW ≥ 10 kW で小規模発電設備に当たらない。第38条第1項ただし書により同一構内の病院全体が一般用から除外される。候補の結論は正しい。",
+        "選択肢(4)：風力15 kWは小規模発電設備（20 kW未満。太陽電池と合わせて22 kW < 50 kW）である。一般用の閾値は0 kWなので、小規模事業用電気工作物となる。候補の結論（一般用ではない）は正しいが、論理の説明に上記の不足がある。",
+        "選択肢(5)：受電200 V ≤ 600 V。太陽電池は発電電圧100 V、5 kW < 50 kW で小規模発電設備に当たり、5 kW < 10 kW で一般用に当たる。公式正答5と整合する。",
+        "図：原図に図はない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={} は正しい。"
+      ]
+    }
+  ]
+}

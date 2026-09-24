@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4050,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14023,
+      "webSearchRequests": 0,
+      "costUSD": 0.1934478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2597,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "dca3db0de89e441c4ca6d5df9d700b90e7f16c05f25edb8ee56393ec835f63a5",
+  "inputRequestSha256": "8c80a69a217e1e18bb15b1297b24163430ec60b2711986652179bb713cd1d8fd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "7fee41d9f9dcb55853de39fef4c25f15803611c2f2c36d096161eed88ca82255"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p11.png": "27d5995042dfb34575c27bbd9eef1ef18e684126c7ebff32c4031cf8e7037e1b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5afb14eda25be23a2790bfc590815aa5f61eb80863a5d493ead2015ebdfb77e9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The problem statement was compared with the official original page (footer '-8-', 'T2-K 011'). It is title '問8 次の文章は，単相単巻変圧器に関する記述である。' followed by three paragraphs, from 巻線の一部が… through 電圧変動率が(オ)。 The candidate text matches it character for character. The only difference is that the heading '問8' was removed. Punctuation (，。), the blank labels (ア)〜(オ) and the instruction sentence '上記の記述中の空白箇所(ア)〜(オ)に当てはまる組合せとして，正しいものを次の(1)〜(5)のうちから一つ選べ。' all match.",
+        "All choices (1)–(5) were checked cell by cell against the original combination table. (1) 分路巻線/直列巻線/負荷容量/多く/小さい, (2) 直列巻線/分路巻線/自己容量/少なく/小さい, (3) 分路巻線/直列巻線/負荷容量/少なく/小さい, (4) 分路巻線/直列巻線/定格容量/多く/大きい, (5) 直列巻線/分路巻線/定格容量/多く/大きい. There are no omissions or transpositions.",
+        "In the official answer table (令和6年度 下期), the <機 械> column for 問8 is 3. This matches manifest q08 answer='3' and the candidate officialAnswer='3'.",
+        "Explanation checked. Common part = shunt winding (分路巻線) and non-common part = series winding (直列巻線), which is standard terminology. With the problem-text connection (shunt terminals on the primary side, series terminals on the secondary side), this is a step-up connection. So the self-capacity is the series-winding voltage (V₂−V₁) × series-winding current I₂ = (V₂−V₁)I₂, and the candidate's step-up assumption agrees with the problem text. Secondary terminal voltage × secondary current V₂I₂ = load capacity (線路容量/通過容量), so (ウ)=負荷容量. Because part of the winding is shared, leakage flux is small, so leakage reactance is small and voltage regulation is small: (エ)=少なく, (オ)=小さい. The causal chain is correct.",
+        "The per-choice reasons were checked against how the choices discriminate. (1) differs from (3) only in (エ), and the explanation correctly flags 多く as the error. (2) is identified by the swapped (ア)(イ) and by (ウ)=自己容量. For (4) and (5), the explanation calls (エ)(オ) the decisive errors and treats the 定格容量 point as secondary. So even if the 定格容量 vs 負荷容量 distinction is read in terms of rated conditions, no choice is decided by (ウ) alone, and there is no ambiguity. (3) is correctly stated as the only choice that matches every blank.",
+        "Figure: the original page contains only the problem text and the combination table, with no circuit or connection diagram. figureDescription='図なし…組合せ表のみ', figureUrls=[] and choiceFigureUrls={} are all appropriate. No figure is needed to answer.",
+        "Source metadata checked against the manifest. fiscalYear=2024 and term=lower (令和6年度下期), examDate=2025-03-23, subject=machinery, sourceQuestionPdfUrl=…/20250323_ch_third_q03.pdf, sourceAnswerPdfUrl=…/2024_3_2.pdf and reviewedFromPage=[11] all match. The original footer 'T2-K 011' is consistent with page 11. The sourceAttribution '令和6年度下期第三種電気主任技術者試験 機械科目 問8' is correct.",
+        "officialReferenceUrls=[], so there are no independent claims that need checking against external sources, and no items need confirmation elsewhere."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2244,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14165,
+      "webSearchRequests": 0,
+      "costUSD": 0.1584638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 911,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2524f69693f58959c40a8d452e5d9acee770ce67400ac8c33307dede8d1ab1a3",
+  "inputRequestSha256": "c9fa5a55646ead46a2c246d55f45ff917cb002d0fd2e22289afe89ba74b8f77a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "73ee7b0f4907cec4043da526ea6a4065c72fe6924b490df31d9638dd35c31497"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p06.png": "06ec4f515574e303d77ce758ad0fd8cf731129025a516098261c1a7168d43c0b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "a0c22d2fffbf8863bafd0ba0d4cd547765c3a7aa47341166c162c7a5136832a7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 柱書と a)〜e) の5記述を公式原図（PDF第6頁、印刷頁番号『-3-』、冊子コード T2-D 006）と一字ずつ照合し、一致を確認した。『非常調速機』『燃料遮断弁』『蒸気加減弁』『トリップ装置』『比率差動継電器』などの用語、および『定格を超える一定値以上』『一定限度を超えたとき』などの条件表現に脱落・改変はない。括弧の全角→半角化は sourceAttribution の『読みやすく整形』の範囲に収まり、意味は変わらない。",
+        "選択肢: 原図の組合せ表（行(1)〜(5)×列a〜e）と choices 1〜5 を全25セルで照合し、一致を確認した。(1) 適/適/不/適/不、(2) 不/不/適/適/不、(3) 不/不/不/不/適、(4) 適/適/不/適/適、(5) 不/適/適/不/適。",
+        "公式正答: 公式解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜電力＞問3は解答4・配点5。manifest の公式正答単位 {question:3, part:null, answer:'4', points:5}、候補の officialAnswer='4'・scoringPoints=5 のいずれとも一致する。",
+        "総合解説: 5記述の判定は a 適切、b 適切、c 不適切（過圧時に蒸気を放出するのは安全弁で、蒸気加減弁はタービン流入蒸気量の調整弁）、d 適切、e 適切。この組合せは肢(4)と一致し、公式正答と矛盾しない。各記述の保護目的と因果（過速度→止弁閉止、循環不良→管過熱焼損防止のための燃料遮断、油圧低下→軸受焼損防止のためのトリップ、差電流による内部短絡検出と比率特性による外部事故時誤動作の抑制）も技術的に正しい。",
+        "肢別解説: 各誤答肢について、正しい判定の組（適/適/不/適/適）と一致する記述・一致しない記述の列挙を検算し、すべて正確であることを確認した。(1) は a〜d が一致し、e のみ誤り。(2) は d のみ一致し、a・b・c・e が誤り。(3) は c・e が一致し、a・b・d が誤り。(5) は b・e が一致し、a・c・d が誤り。正答肢(4)の理由付けも適切である。",
+        "図: 原図には問題図がなく、組合せ表のみである。figureDescription の記述（表の構成と choices が同一内容であること）は正確で、figureUrls=[]・choiceFigureUrls={} で解答に支障はない。",
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=power、sourceQuestionPdfUrl=…20260322_ch_third_q02.pdf、sourceAnswerPdfUrl=…20260322_ch_third_a01.pdf、reviewedFromPage=[6] は、いずれも manifest 固定値と一致する。sourceAttribution の年度・期・科目・問番号も一致する。",
+        "参考資料: officialReferenceUrls は空で、外部の独立主張に依拠する記述はない。uncertainty='なし'、needsReview=false は監査結果と整合する。"
+      ]
+    }
+  ]
+}

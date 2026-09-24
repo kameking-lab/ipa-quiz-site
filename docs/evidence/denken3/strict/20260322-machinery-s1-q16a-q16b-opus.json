@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6786,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19910,
+      "webSearchRequests": 0,
+      "costUSD": 0.2952638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4807,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b176c88e87958d4f5ed5b3104b657366e05a18f95c7b3afe62d49de61ed1b458",
+  "inputRequestSha256": "eee90532b8a78329bfdc44fadfb89f8c95042fb78b19df9d37a53e259ce3c360",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "5fc615a7de81899f84174d7ee51dc1772415af5914c6845658e651613c9a0fba",
+      "q16b": "289523521fc00e5c2b7895115b579800397695868d6bc9ed4b08f839dde27894"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/machinery/p20.png": "e229c32afc1db85c3b5786426b86182c0f45a1e7d5312772975f124e8d26ac67",
+      "data/raw_pdfs/denken3/review/20260322/machinery/p21.png": "faa09743a14bf2dc5787079e55955b28f306e236f6c19196381efd2847e11bea"
+    },
+    "figureSha256": {
+      "public/images/denken3/20260322/machinery/20260322-machinery-q16-fig1.png": "5187fc7c2ecddd886ba4f5106bbe7d6875f247b35ff6981c364e51cc51956059"
+    },
+    "sourceQuestionPdfSha256": "a89c7dc2b9a305f9db83f2f78195f0df8a0da5aeec6b8e66cfd40fb028d146fb",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "6b8a2548652c5f09d028ffae9987733e8f0b222a6dd3219fbe6a58270d213c7e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025（令和7年度）、term=lower、examDate=2026-03-22、subject=machinery、sourceQuestionPdfUrl/sourceAnswerPdfUrl、reviewedFromPage=[20,21] はすべて manifest と一致する。原図の印字頁「-17-」「-18-」は冊子の頁番号で、PDF頁20・21と矛盾しない。",
+        "公式正答: 解答表（令和7年度 第三種電気主任技術者下期試験解答）の＜機械＞列で問16(a)=5、配点5。候補の officialAnswer=5、scoringPoints=5 と一致する。",
+        "問題文: 共通条件（平滑リアクトル、Id一定、XLによる重なり角、VFによる降下、式 Vd=(3√2/π)VL−(3/π)XL·Id−2VF、VL=200V、f=50Hz、Id=36A、LL=5.56×10⁻⁴H、抵抗無視、VF=1.0V一定）と(a)の設問文（通電期間は1サイクルの1/3）は、原図と文言・数値・単位まで一致する。末尾の「次の(a)及び(b)の問に答えよ。」は解答単位ごとに分割したため省かれているが、意味は変わらない。",
+        "選択肢: (1)72 (2)36 (3)24 (4)18 (5)12 は原図と一致する。",
+        "総合解説の検算: P=VF·Id×1/3=1.0×36/3=12W。ダイオード1個の平均電流は、重なり角の有無にかかわらず Id/3 になる。VFは一定なので平均損失は厳密に12Wで、解説の結論は正しい。通電中の電流をIdとする表現は、問題文が与えた理想化条件に沿ったもの。",
+        "誤答肢の理由: 72=2VF·Id、36=VF·Id（全期間通電）、24=2VF·Id/3（正側と負側の2個分）、18=VF·Id/2（通電期間を1/2とした値）。すべて数値の成立を確認した。",
+        "公開候補図: 原図の回路部分（破線枠、三相入力3本と白丸端子、LL[H]/XL[Ω]、ダイオード6個、Ld[H]、Id[A]の矢印、Vd[V]の上向き矢印、負荷）を欠落なく含む。接続とラベルは原図と一致する。",
+        "figureDescription: 全ダイオードが下側母線から上側母線へ向かう順方向であること、入力線が上から左・中・右の列の中点に接続されること、Ld[H]が枠内でId[A]が枠外にあること、Vd矢印が上向きであることは、いずれも原図と一致する。",
+        "officialReferenceUrls は空で、検証を要する外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear・term・examDate・subject・PDF URL・reviewedFromPage=[20,21] は manifest と一致する。sourceAttribution の「令和7年度下期…機械科目 問16(b)」も正しい。",
+        "公式正答: 解答表の＜機械＞列で問16(b)=4、配点5。候補の officialAnswer=4、scoringPoints=5 と一致する。",
+        "問題文: 共通条件は(a)と同じく原図と一致する。(b)の設問文「出力電圧Vdの値[V]として，最も近いものを…」も原図と一致する。",
+        "選択肢: (1)270 (2)264 (3)263 (4)262 (5)251 は原図と一致する。",
+        "総合解説の検算: XL=2π×50×5.56×10⁻⁴=0.17467Ω。第1項は 3√2/π×200=1.35047×200=270.09V。重なり降下は 3/π×0.17467×36=6.005V。2VF=2.0V。Vd=270.09−6.005−2.0=262.09V で、(4)262 が最も近い。途中値（0.1747Ω、270.1V、6.00V、262.1V）の丸めも妥当。2VFの根拠（正側と負側のダイオード2個が直列に通電経路に入る）も正しい。",
+        "誤答肢の理由: 270=第1項のみ、264=270.1−6.0（VF降下なし）、263=270.1−6.0−1.0（VF1個分）。いずれも数値の成立を確認した。(5)251 は計算値より約11V低く式と一致しない、という記述は事実として正しい。推測の誤計算経路を断定していない点も適切。",
+        "公開候補図: (a)と同じ fig1 で、原図の回路図部分を接続・向き・全ラベルとも忠実に含む。(b)の解答に必要な記号（VL、XL、LL、Ld、Id、Vd）はすべて図と本文で確認できる。",
+        "officialReferenceUrls は空で、検証を要する外部主張はない。"
+      ]
+    }
+  ]
+}

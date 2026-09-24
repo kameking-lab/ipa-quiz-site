@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6605,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 21106,
+      "webSearchRequests": 0,
+      "costUSD": 0.30121180000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4210,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ef59868761cacb8b502923dacc335e85d7321343c13c02c40ffc2ffac4a2237c",
+  "inputRequestSha256": "af97593b8f8035551664b6a18ab0df1fbf9c040840a90efa47874423a4c775a1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "55345dbee5127b00a4396583f70e5ae1eccf32320290958eeebb1ee99798b551",
+      "q18b": "f72f7149f2ed52402d8452120f3950fe693fc234532df4eb9dcec461cc2d6d14"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p24.png": "9614215a074298b9f21e581c903b23cfcacab09ed1bdbd6796912ea860098925",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p25.png": "e1414a64641a36168a564aacbf3c39d4042a9556b43d5d50d9fee5a607fc469c"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q18-half-adder.png": "32443842ed35968e69939b52d8a92c6a7b253114b5b1b4a5acbecfd71d28bddc",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q18-two-stage-circuit.png": "41ff7bdfd19b40e0515488edd10665899934c201bbc3700d989414b02caf6d7e"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "3f8cc99cb69a4202ff40b92b9718eff1fc533ff690f23c98e54e517b4b3639a9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "question文字列に「答えよ。\\\\n図1に示す」とエスケープ済みの `\\\\n` が入っている。JSONとしてデコードすると改行ではなく、バックスラッシュ＋n の2文字がそのまま表示される。改行にしたいなら `\\n`（デコード後に改行1文字）へ直すこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanation冒頭の「AND回路の出力はA・Bで、これがそのままT1になる」について。図1にはAND回路が2個ある（下側の前段ANDと、S1を出す後段AND）。この時点ではどちらを指すか特定できない。「下側（前段）のAND回路の出力はA・B」のように位置を明記すること。後文ではすでに「後段のAND回路」と区別しているので、前段側も表記をそろえる。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式原図PDF第24頁（冊子p.21、T2-K 024）の図1を読み取った。Aの横線上の黒丸から下へ分岐し、下側ANDの上入力に入る。Bの横線上の黒丸から上へ分岐し、ORの下入力に入る。したがって OR=A+B、下側AND=A・B である。下側AND出力の黒丸は右のT1と上のNOTに分かれ、NOT出力は後段ANDの下入力に入る。後段ANDのもう一方の入力はOR出力である。",
+        "式は S1=(A+B)・¬(A・B)=A⊕B、T1=A・B。全4行を検算した結果、(0,0)→(0,0)、(0,1)→(1,0)、(1,0)→(1,0)、(1,1)→(0,1) となり、選択肢(3)と一致する。",
+        "公式解答表（令和6年度下期、機械、問18(a)=3）と候補のofficialAnswer=3は一致する。",
+        "選択肢(1)〜(5)の真理値表を原図の表と1セルずつ照合し、20行×4列すべて一致した。",
+        "各choiceExplanationを確認した。(1) 01/10行でS1=0とする誤り、(2) 00行でT1=1とする誤りとS1列の誤り、(4) 10行でS1=0とする誤り、(5) 00行でT1=1とする誤り。いずれの指摘も正しい。",
+        "公開候補図 half-adder.png は原図と比べて、ゲート種別、黒丸（分岐点）2箇所、NOTの向き（左→右）、ラベルA・B・S1・T1・図1がすべて一致する。この図だけで解答できる。",
+        "メタデータを確認した。fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、reviewedFromPage=[24,25]、問題PDF・解答PDFのURL、sourceAttribution（令和6年度下期）はmanifestと一致する。",
+        "officialReferenceUrlsは空で、外部の独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "question文字列に「答えよ。\\\\n図1に示す」とエスケープ済みの `\\\\n` が入っており、デコード後にバックスラッシュ＋n がリテラル表示される。(a)と同様に `\\n` へ直すこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[1]の「A=B=C=0では、すべての内部信号が0になる。」は事実誤り。A=B=0のとき、前段のNOT出力は ¬(A・B)=1 である。後段もS1=0・C=0なので、NOT出力は ¬(S1・C)=1 になる。「OR出力・AND出力・S1・T1・後段桁上げはすべて0（NOT出力は1）」のように直すこと。結論（S2=0, T2=0で肢(1)は誤り）は正しい。"
+      ],
+      "figureIssues": [
+        "figureDescriptionの末尾文の先頭に余分な半角スペースがある（「無い。 T1から」）。削除すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式原図PDF第25頁（冊子p.22、T2-K 025）の図2を読み取った。前段の枠の出力S1は、後段の枠の上側入力に入る。その上側入力は黒丸でORとANDの両方へ分岐する。入力Cは、横線→縦に上昇→横線→後段の枠の下側入力（黒丸）に入り、ORとANDの両方へ分岐する。後段AND出力の黒丸は、NOTと外部ORの上入力に分かれる。前段のT1端子は、横線→縦に上昇して外部ORの下入力に入る。外部ORの出力がT2、後段の枠の上側ANDの出力がS2である。",
+        "T1の横線とCの縦線は、前段の枠の右外側、後段の枠の左下で交差する。交差点に黒丸はなく、接続されていない。候補の記述と一致する。",
+        "式は S2=A⊕B⊕C、T2=A・B+(A⊕B)・C（全加算器）。各肢を検算した。(1) 000→S2=0, T2=0。(2) 010→S2=1, T2=0。(3) 001→S2=1, T2=0。(4) 101→S2=0, T2=1。(5) 110→S2=0, T2=1。記述と一致するのは(2)だけである。",
+        "公式解答表（機械 問18(b)=2）と候補のofficialAnswer=2は一致する。",
+        "選択肢(1)〜(5)の入力値と出力値を原図と照合し、すべて一致した。",
+        "explanation本文と、choiceExplanations[2]〜[5]の計算・理由はすべて正しい。",
+        "公開候補図 two-stage-circuit.png は原図と比べて、ゲート配置、黒丸（前段2・後段3）、無接続の交差、後段の枠の破線の切り欠き（外部ORは枠外）、ラベルA・B・C・S1・T1・S2・T2・図2がすべて一致する。この図だけで解答できる。",
+        "メタデータ（年度・期・試験日・科目・頁・PDF URL・出典表記）はmanifestと一致する。",
+        "officialReferenceUrlsは空で、外部の独立主張はない。"
+      ]
+    }
+  ]
+}

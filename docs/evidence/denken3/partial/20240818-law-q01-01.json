@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "6caeb6fddd110c13028e9314b92151d9b09823debd9e7f70f2dc4fe883a4e6ac",
+  "questions": [
+    {
+      "number": 1,
+      "sourceDraftSha256": "2c05f082b13b70f7d9e1520019cead08d8e0eef3807787b244103f30be225f2d",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q01-opus-review.json",
+      "opusReceiptSha256": "466af4687893f311fbd18bd711cdbc811d325c2ff987d2278564ad501758020f",
+      "assessment": {
+        "number": 1,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "解説で引用している電気事業法第39条第1項・第2項第2号・第40条の文言と条番号は、問題PDFには書かれていない。注3により令和6年4月1日時点で効力のある法令と照合する必要があり、e-Gov法令検索などの一次資料で要外部確認。officialReferenceUrlsは空のままでよく、架空のURLは補わないこと。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q01": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l5-q01-opus.json",
+      "sha256": "4088b665b743b8034a01fc26516bd920afdc30576ce6a02d0f2c207ecc4e64c3",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

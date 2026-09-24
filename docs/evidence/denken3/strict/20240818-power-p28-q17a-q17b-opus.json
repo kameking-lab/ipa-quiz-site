@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 5810,
+      "cacheReadInputTokens": 300414,
+      "cacheCreationInputTokens": 25493,
+      "webSearchRequests": 0,
+      "costUSD": 0.3802428,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4049,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "156a4bcfc547fd746e809572449cef747f2ba9d9e52dc84f6f773c12a3e2c976",
+  "inputRequestSha256": "8b409b8d4372bcace7f33df7d364edf710621e6aaf08db8efe075c6af273e17f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "7fa8c59874fe00c7c1e21c4927c4e3c9ab9c762e7492561ed44a75d5bfdefe7a",
+      "q17b": "6267cd0bc9913a99c2b124a48891143499af197522bdfc1b1581b3df33cfdcdd"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p22.png": "67c1036ceb0a00a6f9c9533698a99ec121e6615aea4fafe0e026faa4f4eb8d9f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/power/20240818-power-q17-distribution-network.png": "40e36350b62c67d34af88cf4b1a14a04b3e544d5967fc274e0592c3ae11fdf79"
+    },
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "682735e478304a3426131804b0b9d00527f79ab61c09eb425c329bb0f190e087"
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図（印刷ページ-19-）と照合した。三相3線式、S開、負荷はB40A・C30A・D60Aで一定、力率100%、こう長はA-B1.5km・B-S1.0km・S-C0.5km・C-D1.5km・D-A2.0km、0.2Ω/km、リアクタンス無視、線間電圧、の条件がすべて一致する。",
+        "選択肢(1)41.6、(2)45.0、(3)57.2、(4)77.9、(5)90.0は原図と一致する。",
+        "公式解答表の電力 問17(a)は4で、candidate officialAnswer=4と一致する。",
+        "検算：Sが開いているため、CへはA→D→Cの経路でしか給電されない。R_AD=0.4Ω、R_DC=0.3Ω、I_AD=90A、I_DC=30Aで、ΔV=√3(90×0.4+30×0.3)=√3×45=77.94V。(4)と一致する。",
+        "誤答肢も検算した。(1)√3×60×0.4=41.57、(2)45.0（√3を掛け忘れ）、(3)√3×(24+9)=57.16、(5)2×45=90.0（単相2線式の往復式）。どれも記載の理由どおりに再現できる。",
+        "公開候補図を原図と照合した。ラベル（電源、A、B、C、D、40A↑、60A↓、30A→、1.5km×2、1.0km、0.5km、2.0km、i[A]↓、S(開閉器)）と接続・向きはすべて一致し、欠落はない。この図だけで解答できる。",
+        "figureDescriptionの内容（iの矢印がSの左側・環路の内側で下向き、など）は図と整合する。",
+        "officialReferenceUrlsは空で、外部の主張を確認する必要はない。reviewedFromPage=22は、表紙・注意ページのぶんを見込めば印刷ページ19と整合する。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（S投入時にSを流れる電流iを問う）と選択肢(1)20.0、(2)25.4、(3)27.5、(4)43.8、(5)65.4は原図と一致する。",
+        "公式解答表の電力 問17(b)は2で、candidate officialAnswer=2と一致する。",
+        "検算：x=I_ABとおく。R_AB=0.3、R_BSC=0.3、R_CD=0.3、R_DA=0.4Ω、I_BC=x−40、I_DC=70−x、I_AD=130−x。ループの式は0.3x+0.3(x−40)−0.3(70−x)−0.4(130−x)=1.3x−85=0で、x=65.38A、i=25.38A≒25.4Aとなり(2)と一致する。C点でも25.38+4.62=30.0Aで電流保存が成り立つ。",
+        "iの向きは図の下向き矢印（B側からS経由でCへ）と一致し、計算結果も正なので、この向きで整合する。",
+        "誤答肢も検算した。(1)D-Aを1.5kmとすると1.2x−72=0でx=60、i=20.0。(3)B-S-C間を1.0kmとすると1.2x−81=0でx=67.5、i=27.5。(4)x=83.8を代入すると1.3x−85=23.94≠0で成り立たない（出典の特定できない値である旨も正直に書かれている）。(5)65.4はI_ABであってiではない。いずれも記載の理由どおりに再現できる。",
+        "√3が両辺で相殺されて単線の直流網と同じ扱いにできるのは、力率100%・リアクタンス無視という条件があるからで、その限定も正しく書かれている。",
+        "公開候補図は(a)と同じ図で、原図と完全に一致する。S投入時のループ構成とiの向きもこの図だけで読み取れる。",
+        "officialReferenceUrlsは空で、外部の主張を確認する必要はない。"
+      ]
+    }
+  ]
+}

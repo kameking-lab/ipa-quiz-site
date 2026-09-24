@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4519,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13784,
+      "webSearchRequests": 0,
+      "costUSD": 0.20091579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2967,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9aa596452c6b1c87af4ff540455d990c0e5baa5ac97aa16076d05ef32b0fc953",
+  "inputRequestSha256": "f0754665f6c21ca63220f857f1f652c216b7b9b72e4ea6f9106b4e00253b684f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "15bd244ebc3a9c6997d9d9478a0b64c0eab60cd9bfba4ac5ffe6c7c9267a0dd8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p10.png": "f539c838989a385777853e5a43ec6f1419a1ceb91469c87c953b3d1ce05fdb6e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "957fa42f644482c35715d6e7b88d63ff23aaaad1ad79be7ee18b45b19689c5a8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「出題年度・科目の公式資料URLは特定できていない」は、sourceQuestionPdfUrl（…_q03.pdf）とsourceAnswerPdfUrl（…_a01.pdf）が記入済みである事実と矛盾して読める。空なのはofficialReferenceUrls（解説の裏付けとなる公式参考資料）だけである。紛らわしいので「解説の根拠となる公式参考資料URLは未登録のためofficialReferenceUrlsは空」などに改めること。",
+        "examDate=2025-08-31、sourceQuestionPdfUrl、sourceAnswerPdfUrlの各URL文字列は、添付原図のどこにも記載がなく、添付資料だけでは検証できない。公式解答表で確認できるのは「令和7年度 第三種電気主任技術者上期試験」までで、日付は確認できない。問題原図にも年度・日付・URLの記載はない。いずれもmanifest側または公式サイトの原本で照合が必要な外部確認事項として残す。"
+      ],
+      "verifiedEvidence": [
+        "問題文を添付原図と照合した。SRMの構造（固定子の巻線(ア)、回転子の形状(イ)）、スイッチ切替で(イ)の回転子が固定子磁極に引き付けられること、「回転子の構造が簡単で強固であるため(ウ)に適している」、「ネオジムなどの(エ)を使用せず、鉄心と巻線のみで磁気回路を構成」、設問文の末尾まで、語句・句読点（，）・空欄の位置と重複する(イ)が原図と一致する。",
+        "全肢を原図の表と照合した。(1)集中巻/円筒形/低速回転/軟磁性体、(2)分布巻/突極形/低速回転/希土類磁石、(3)集中巻/突極形/高速回転/希土類磁石、(4)分布巻/円筒形/高速回転/希土類磁石、(5)集中巻/突極形/低速回転/軟磁性体。5肢とも一致する。",
+        "公式正答を照合した。公式解答表の＜機械＞列は問7＝3、配点5で、manifest（answer \"3\", points 5）、candidateのofficialAnswer=\"3\"、scoringPoints=5と一致する。",
+        "科目を照合した。問題原図のフッタ「T1−K 010」のKは機械科目と整合する。subject=machineryと矛盾しない。",
+        "頁を照合した。原図の印字頁は「- 7 -」で、フッタの通番010はreviewedFromPage=[10]（PDF頁）と整合する。前付3頁を含む構成と見て矛盾はない。",
+        "総合解説を検算した。SRMは二重突極形である。固定子は集中巻、回転子は巻線も永久磁石も持たない積層鉄心の突極形である。回転子は磁気抵抗が最小となる位置へ引き付けられ、リラクタンストルクで回転する。円筒形の回転子では回転位置による磁気抵抗の変化がなく、トルクが生じない。簡単で強固な回転子は遠心力に強く、高速回転に適する。希土類（ネオジム）磁石は不要である。以上の因果はいずれも正しく、結論(3)は公式正答と一致する。",
+        "肢別解説を検証した。(1)は(イ)(ウ)(エ)の誤りを指摘し、鉄心自体が軟磁性材料なので「軟磁性体を使用せず」が成り立たない点も正しく述べている。(2)は(ア)(ウ)、(4)は(ア)(イ)、(5)は(ウ)(エ)の誤りを指摘しており、正誤の切り分けは各肢の組合せと一致する。(3)の正答理由も正しい。",
+        "図の有無を確認した。原図に回路図・構造図はなく、表は選択肢そのものである。figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は妥当である。",
+        "officialReferenceUrlsは空で、検証すべき独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "questionNumber": 12,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "定格容量 20 MV·A，一次側定格電圧 77 kV，二次側定格電圧 6.6 kV，百分率インピーダンス 10.6 %（基準容量 20 MV·A）の三相変圧器がある。三相変圧器の一次側は 77 kV の電源に接続され，二次側は負荷のみが接続されている。三相変圧器の一次側から見た電源の百分率インピーダンスは，1.1 %（基準容量 20 MV·A）である。抵抗分及びその他の定数は無視する。三相変圧器の二次側に設置する遮断器の定格遮断電流の値[kA]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "260.0",
+        "2": "6.0",
+        "3": "20.0",
+        "4": "2.6",
+        "5": "1.5"
+      },
+      "officialAnswer": "3",
+      "explanation": "遮断器の定格遮断電流は、設置点で起こりうる三相短絡電流以上でなければならない。そこで、変圧器二次側（6.6 kV 側）で三相短絡が起きたときの短絡電流を求める。\n\n1. 合成百分率インピーダンス\n電源と変圧器の百分率インピーダンスはどちらも基準容量 20 MV·A で与えられているので、そのまま加算できる。\n%Z = 1.1 + 10.6 = 11.7 %\n\n2. 二次側の基準電流（定格電流）\nIn = Pn / (√3 × Vn) = 20 × 10⁶ / (√3 × 6.6 × 10³) ≒ 20 × 10⁶ / 11 431.5 ≒ 1 749.5 A\n\n3. 三相短絡電流\nIs = In × 100 / %Z = 1 749.5 × 100 / 11.7 ≒ 14 953 A ≒ 15.0 kA\n\n4. 遮断器の定格遮断電流の選定\n遮断器は短絡電流約 15.0 kA を遮断できなければならないため、定格遮断電流は 15.0 kA 以上が必要となる。選択肢のうちこの条件を満たし、かつ最も近いのは 20.0 kA である。また、単純に数値の差で比べても、20.0 kA（差 5.0 kA）は 6.0 kA（差 9.0 kA）より 15.0 kA に近く、どちらの見方でも (3) に定まる。よって正答は (3)。",
+      "choiceExplanations": {
+        "1": "誤り。二次側の三相短絡電流は約 15.0 kA であり、260.0 kA はその 17 倍以上に当たる。遮断能力としては足りるが、必要な値から大きく離れており「最も近いもの」に当たらない。",
+        "2": "誤り。6.0 kA は選択肢の中では 20.0 kA に次いで 15.0 kA に近いが、差は 9.0 kA で 20.0 kA（差 5.0 kA）より遠い。しかも短絡電流約 15.0 kA を下回るため、この定格では短絡電流を遮断できない。",
+        "3": "正しい。合成百分率インピーダンス 11.7 % から、二次側の三相短絡電流は Is = In × 100 / %Z ≒ 1 749.5 × 100 / 11.7 ≒ 15.0 kA。これを遮断でき、かつ最も近い定格遮断電流が 20.0 kA である。",
+        "4": "誤り。2.6 kA は二次側の三相短絡電流（約 15.0 kA）の 6 分の 1 程度しかなく、この定格では短絡電流を遮断できない。",
+        "5": "誤り。1.5 kA は二次側の三相短絡電流（約 15.0 kA）の 10 分の 1 程度しかない。一次側の 77 kV で基準電流を計算すると（In ≒ 150 A、Is ≒ 150 × 100 / 11.7 ≒ 1.28 kA）この程度の値になるが、遮断器は二次側に設置するので 6.6 kV で計算しなければならない。"
+      },
+      "figureDescription": "この問題には図・表はない。問題文と選択肢(1)〜(5)のみで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        15
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2282,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1203758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 866,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "78ee84cf81a306e125e72ee71572555d5739ab8c10bde6e586012d3688ba92ba",
+  "inputRequestSha256": "1b843ee8913dd91ead7f60a9074f6538e885eb8832f12daf3a88fe12b7a13316",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p15.png": "a12a25dfb1b6632b2364b47d9a9c9809c929bffef1a5b82d489e1871ff1089b1"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2608,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12092,
+          "webSearchRequests": 0,
+          "costUSD": 0.1491598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1102,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "96110b807f4ba5b3e0f9a7c4fa75b298eb15876cf4ea64a92df3cab470f4a52f",
+      "inputRequestSha256": "9a4f4c30233c08cea73c8d69272a1f9275984731ffee288de9e214e2214a6363",
+      "previousDraftSha256": "3d9fee7f131f1f2aac4f652222ce0f5573332a0cd3a5334a535a26a6b927b308",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q12-vision-draft-v1.json",
+      "answeredReviewSha256": "8cb298aad0f63eb0f697713420b05763af904770a680b5f523899ba7662dcdb0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q12-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q12-opus.json",
+      "answeredStrictReceiptSha256": "41b9a8a88376350e5476815ffbb48b9fb03b66e34205130e70c3e958ebac3e20",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

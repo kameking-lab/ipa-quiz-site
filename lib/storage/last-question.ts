@@ -7,6 +7,7 @@ export interface LastQuestionState {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: "a" | "b";
   answeredAt: number;
 }
 
@@ -22,6 +23,7 @@ export function readLastQuestion(): LastQuestionState | null {
       typeof parsed.season !== "string" ||
       typeof parsed.session !== "string" ||
       typeof parsed.qNumber !== "number" ||
+      (parsed.part !== undefined && parsed.part !== "a" && parsed.part !== "b") ||
       typeof parsed.answeredAt !== "number"
     ) {
       return null;

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2537,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13609,
+      "webSearchRequests": 0,
+      "costUSD": 0.1598758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1154,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9dbeece6ef82451a00dd08b0fdd8121d6513dd0040a2071f7f182297f276b770",
+  "inputRequestSha256": "9453d7fbabf4506ed41e15c1ca4141f2659c671837cfda8027c7e2496d038a1f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "15ca7c3562cc9d70b037fb0904695a8bc31dfed88a737834a3c806c4e0031f01"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p08.png": "2209bfa8bfee2ca1eb18b03eeb3a141acfc3154f8481decc488ecb0f9ff2a705"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "3ddabaf180f237f7f2d69e951425a938e262cb6fe8b89a22c0605baed5e35375",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[5]:「天然ガスやメタノールなどの炭化水素系燃料」は化学的に不正確。メタノール(CH3OH)は酸素を含むアルコールであり、炭化水素(C と H のみから成る化合物)ではない。例えば「天然ガス(主成分メタン)やメタノールなどの燃料を改質器で水蒸気改質して水素を取り出す」のように、メタノールを炭化水素と呼ばない表現へ修正すること。",
+        "choiceExplanations[4]:「空調(暖房)や給湯に利用する」は空調を暖房に限定しているが、燃料電池コージェネレーションの排熱は吸収式冷凍機を介して冷房にも利用できる。肢(4)の『空調』を暖房のみと読ませる注記は範囲を狭めて誤解を招くため、「空調(暖房、吸収式冷凍機による冷房)や給湯」など限定しない表現へ修正すること。正誤判定(正しい記述)は変わらない。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題原図(PDF第8頁、フッタ『T1−D 008』、紙面頁『-5-』)の問5本文「燃料電池の原理と特徴に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と候補questionが一字一句一致(読点『，』含む)。",
+        "肢(1)〜(5)の文言を原図と照合し、全肢一致。(1)燃料は外部から供給され，直接，交流電力を発生する。(2)電解質により，りん酸形，溶融炭酸塩形，固体高分子形などに分類される。(3)水の電気分解と逆の化学反応を利用した発電方式である。(4)発電時の排熱を空調や給湯に活用できる。(5)天然ガスやメタノールを改質して発生させた水素を燃料として利用できる。",
+        "公式解答表原図『令和6年度 上期 第三種電気主任技術者試験解答』の＜電力＞欄で問5=1を確認。manifest固定の正答単位 answer=\"1\" と候補officialAnswer=\"1\" が一致。",
+        "総合解説の因果を検算:燃料電池の電気化学反応で得られる出力は直流であり、交流化にはインバータ(パワーコンディショナ)が必要。『直接，交流電力を発生する』が誤りで正答(1)とする論理は正しい。",
+        "肢(3)解説の反応式を検算:電気分解 2H2O→2H2+O2、燃料電池 2H2+O2→2H2O は係数・原子数とも釣り合っており、逆反応の関係の記述は正しい。",
+        "肢(2)解説:電解質による分類(PAFC/MCFC/PEFC/SOFC)は正しく、肢の3種はいずれも実在する分類。",
+        "原図に図版・グラフ・回路図はなく、figureDescription『図はない』、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "メタデータ照合:fiscalYear=2024、term=upper、examDate=2024-08-18、subject=power、sourceQuestionPdfUrl=…20240818_ch_third_q02.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[8] はいずれもmanifestと一致。sourceAttributionの『令和6年度上期 電力科目 問5』も一致。",
+        "officialReferenceUrls=[] のため、外部独立主張の検証対象なし。"
+      ]
+    }
+  ]
+}

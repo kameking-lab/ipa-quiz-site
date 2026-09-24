@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2888,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13629,
+      "webSearchRequests": 0,
+      "costUSD": 0.1670558,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1477,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "140d4d2d6f612857ddf84ade8bcd5561c6a0464db3b3d44a15448c885fbe546a",
+  "inputRequestSha256": "af135f595e07499d0b9bd8a794cd746a53ee424cc310c4bbe63b460c0efdc85c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "bd0e47a82f840d50dab86b7be8599822b568fbced67f71934d4ef9b40bc7dc22"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p05.png": "6dc3951d5cf837303bbd7c45930cdfcbfb327cdfe03665bafa2f09ed0fee4f8a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "2c985e4e65185f6fb5791ca010448504e5e6808f80365d5ec694786f4f38fe27",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文照合: 添付の公式問題原図（印刷頁「- 2 -」、フッタ「T1－D 005」）の問2本文と一字一句照合した。数値（175 MW、92 %、32 500 kJ/kg、30 800 kJ/kg）、単位（MW、%、kJ/kg、[t/h]）、用語（タービン入口／復水器入口、使用蒸気量）、設問形式（最も近いものを(1)～(5)から一つ選べ）はすべて一致した。",
+        "選択肢照合: 原図は (1) 86、(2) 112、(3) 248、(4) 341、(5) 403 で、候補 choices 1〜5 と完全一致した。",
+        "公式正答照合: 公式解答表原図「令和7年度 第三種電気主任技術者上期試験解答」の＜電力＞問2は解答5・配点5である。manifest固定値 {question:2, part:null, answer:\"5\", points:5}、候補の officialAnswer=\"5\"、scoringPoints=5 といずれも一致した。",
+        "科目判定: 汽力発電の内容であり、電力科目に該当する。電力列問2の正答5および配点5とも整合する。",
+        "総合解説の検算: 熱落差は h₁−h₂ = 32 500−30 800 = 1 700 kJ/kg。η×Δh = 0.92×1 700 = 1 564 kJ/kg。G = 175 000 kJ/s ÷ 1 564 kJ/kg = 111.89 kg/s。×3 600 = 402 813 kg/h ≒ 402.8 t/h。最も近い肢は403で、(5)と一致する。",
+        "解説の因果・定義: η = P/{G(h₁−h₂)} は本問の出題意図（正答403）と整合する定義である。『効率で割る（掛けない）』『kW = kJ/s、kg/s→×3 600→÷1 000 で t/h』の注意点も正しい。",
+        "肢(1)の検算: 86 t/h = 23.89 kg/s。×1 564 = 37 360 kW ≒ 37 MW で、175 MW に不足する。記述は正しい。",
+        "肢(2)の検算: 111.9 kg/s を単位換算せずに読んだ値112と一致する。誤答理由（kg/s のまま t/h と取り違え）は妥当である。",
+        "肢(3)の検算: 248 t/h = 68.89 kg/s。×1 564 = 107 740 kW ≒ 108 MW で、175 MW に届かない。記述は正しい。",
+        "肢(4)の検算: 175 000×0.92÷1 700 = 94.71 kg/s。×3.6 = 340.9 t/h ≒ 341 で、効率を掛けた誤りの値と一致する。誤答理由は妥当である。",
+        "肢(5)の検算: 111.9×3 600÷1 000 = 402.8 t/h ≒ 403。正答理由は正しい。",
+        "図: 原図に図はなく、解答に図は不要である。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は適切である。",
+        "出典: officialReferenceUrls=[] で、検証を要する独立主張はない。sourceQuestionPdfUrl（…_q02.pdf）、sourceAnswerPdfUrl（…_a01.pdf）、examDate 2025-08-31、fiscalYear 2025、term upper は添付原図の年度・期表記と矛盾しない。",
+        "reviewedFromPage=[5]: 原図フッタの通し番号「005」と整合する。印刷頁番号「- 2 -」とは別物として扱った。"
+      ]
+    }
+  ]
+}

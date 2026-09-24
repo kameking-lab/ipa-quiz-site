@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5441,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 20292,
+      "webSearchRequests": 0,
+      "costUSD": 0.2990526,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3190,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8a7628c04ea7dba14c384c279c67c35fd03fb67cd43f09c425b6ecd7c2cd8523",
+  "inputRequestSha256": "a0d617b00e86fef2d7d4dea49be7780a19c3ee8df4a81717a962491f92c7ce25",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "42a098d3a0395a69c72c1f1fb811b98251e1a3aca20c5945f9c42b8fc486f721"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p16.png": "ca87061604fb4f096f8aa216f90e0c708d6e4ead11104d7e8abc1b02562b57b7",
+      "data/raw_pdfs/denken3/review/20250323/theory/p17.png": "388b75842d45766fdb427ef3c114b58db05f0d84bd9b5deb0072b7450bf96d6e"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q13-transistor-circuit.png": "faf547eb0b991e722d5b7a4b3ecf503e78f20c21d91e505cc564ac2fc0407be6",
+      "public/images/denken3/20250323/theory/20250323-theory-q13-output-characteristics.png": "0c3abfed5b3bf0f8895b95540bada69d6167bf173b07db2e4f9798fa6d213016"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a005b6c80d3cfafce1793b0e054fff5b3f2757024ee0fdfd2804adc8ef398ed0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the attached original pages printed as -13- and -14- (sheet codes T2-R 016 and T2-R 017). The candidate matches the original: fixed-bias circuit, R_B unknown, common-emitter amplifier, only five I_B curves in Figure 2, the R_L load line overlaid, measured V_CE = 3.0 V, R_B asked in MΩ, V_BE = 0.7 V, C₁ and C₂ are coupling capacitors, and V_CC is a DC voltage source. The symbols, subscripts and units all match. The only differences are punctuation (the hyphen style and the use of 、).",
+        "Choices: the original has (1) 0.5, (2) 0.9, (3) 1.5, (4) 3.0 and (5) 6.0. All five candidate choices match.",
+        "Official answer: the manifest answer is 2 and the candidate's officialAnswer is also 2. It is not changed.",
+        "Reading Figure 2: the DC load line runs from (V_CE, I_C) = (0 V, 3 mA) to (5 V, 0 mA). With no emitter resistor, V_CE = V_CC − R_L·I_C. So V_CC = 5 V and R_L = 5 V / 3 mA = 5/3 kΩ ≒ 1.67 kΩ.",
+        "Operating point: I_C = (5 − 3.0) / (5/3 kΩ) = 1.2 mA. In the figure, the load line crosses the I_B = 4 μA curve at about V_CE = 3.33 V and the 6 μA curve at about 2.5 V. V_CE = 3.0 V lies between those two crossings, which agrees with the calculation.",
+        "h_FE: the flat parts of the curves sit at about 0.5, 1.0, 1.5, 2.0 and 2.5 mA for I_B = 2 to 10 μA, so I_C/I_B ≒ 250 throughout. That gives I_B = 1.2 mA / 250 = 4.8 μA, the same value as linear interpolation between the 4 μA and 6 μA curves.",
+        "R_B: from the base loop of Figure 1 (V_CC → R_B → base → emitter → common line), V_CC = R_B·I_B + V_BE. So R_B = 4.3 V / 4.8 μA = 8.958×10⁵ Ω ≒ 0.9 MΩ. C₁ blocks DC, so it does not enter the calculation. Choice (2) is confirmed.",
+        "Choice (1) check: 4.3 / 0.5 MΩ = 8.6 μA, I_C = 2.15 mA and V_CE = 5 − (5/3)×2.15 = 1.42 V. This lies between the load-line crossings of the 8 μA curve (≒ 1.67 V) and the 10 μA curve (≒ 0.83 V), so the candidate's reasoning is consistent.",
+        "Choice (2) check: 4.3 / 0.9 MΩ = 4.78 μA, I_C = 1.194 mA and V_CE = 5 − (5/3)×1.194 = 3.01 V, which matches the measured value.",
+        "Choice (3) check: 4.3 / 1.5 MΩ = 2.87 μA, I_C = 0.717 mA and V_CE = 5 − 1.194 = 3.81 V ≒ 3.8 V. Correct.",
+        "Choice (4) check: 4.3 / 3.0 MΩ = 1.43 μA, which is below the 2 μA curve. Because I_C increases with I_B, I_C < about 0.5 mA, so V_CE > 5 − (5/3)×0.5 = 4.17 V ≒ 4.2 V. The inequality points the right way and the conclusion is correct.",
+        "Choice (5) check: 4.3 / 6.0 MΩ = 0.717 μA, which is below the 2 μA curve, so V_CE > about 4.2 V. Correct.",
+        "Public candidate figure (Figure 1): compared connection by connection with the original. The top rail connects V_CC, the top of R_B and the top of R_L. The bottom of R_B, the right side of C₁ and the NPN base share one node. The collector goes to the node below R_L, and from there through C₂ to the output terminal. The emitter goes to the lower common line, which connects to the negative side of V_CC and the lower input and output terminals. The battery's long plate is on top, so the top rail is positive. All directions match: I_B flows right into the base, I_C flows down into the collector, the V_BE curved arrow runs from the emitter side to the base, and the V_CE, input-voltage and output-voltage arrows point up. All labels are present with nothing missing or misplaced: R_B, R_L, C₁, C₂, I_B, I_C, V_BE, V_CE, V_CC, 入力電圧, 出力電圧 and 図1.",
+        "Public candidate figure (Figure 2): compared with the original. The axes are I_C [mA] from 0 to 3 and V_CE [V] from 0 to 6. The five curves are labelled I_B = 10, 8, 6, 4 and 2 μA. The line labelled 直流負荷線, its arrow and its endpoints (0, 3) and (5, 0), the dashed grid and 図2 are all present, with no cropping loss. With only the public figures, a reader can obtain the V_CC, R_L and I_B values needed to solve the question.",
+        "figureDescription: the connections, the load-line endpoints and the curve values are consistent with the original. It also correctly states that the figure is required and cannot be replaced by text.",
+        "Sources: officialReferenceUrls is empty, and the explanation relies on no outside claim that would need an external source. It is a self-contained calculation from the question text and the figures. reviewedFromPage [16, 17] matches the sheet codes on the attached original pages. sourceAttribution (R6 lower session, theory, Q13) matches examDate 2025-03-23.",
+        "uncertainty: the curve values and h_FE are readings taken off the graph. As the candidate states, the choices are far enough apart that this reading error does not change which choice is correct. This is not an ambiguity."
+      ]
+    }
+  ]
+}

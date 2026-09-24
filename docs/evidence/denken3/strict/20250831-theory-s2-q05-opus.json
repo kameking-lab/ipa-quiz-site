@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3723,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14332,
+      "webSearchRequests": 0,
+      "costUSD": 0.1893798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2308,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "73e6b4bed938f5286c31e3a00e34bd356391904145508c703a3cfa7bbb9842f1",
+  "inputRequestSha256": "6d1ba88e93f843378886052190c7fd7a5e5ed870bc2a7302f7ec85ecd34c40f2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "c4a076a35f6172591fd0f65db26d43a7c7e9f3c19ba25040c48a88834c4cbbc6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q05-fig1.png": "834d9c40099a65dcbdb9bc2954bc1f97da086330cbd50699ffc283bc0a722359"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "examDate=2025-08-31 cannot be verified from the attached official materials. The problem page shows no year, session or exam date; its footer carries only '- 5 -' and 'T1－R 008'. The answer-table header gives '令和7年度 第三種電気主任技術者上期試験解答' with no date. The date appears only in the filenames of sourceQuestionPdfUrl and sourceAnswerPdfUrl (20250831), which is not the same as confirming it from an official page.",
+        "The candidate's uncertainty field records an unresolved item: the year and exam date cannot be confirmed from the problem page. needsReview is still set to false. An open confirmation item requires either confirming the date from an official page (the exam notice or the cover of the question booklet) or setting needsReview=true.",
+        "The problem page has no year marker of its own. Linking this page to 令和7年度上期 理論 depends on the manifest and the URL, and the page itself does not show it."
+      ],
+      "verifiedEvidence": [
+        "Official answer: row 問5 of the <理論> column in the official answer table has 解答=5 and 配点=5. This matches the manifest's official answer unit {question:5, part:null, answer:'5', points:5}, and officialAnswer='5' and scoringPoints=5 both agree.",
+        "Question text: matches the official problem page on RLC circuit, C[F], V[V], closing switch S, final capacitor terminal voltage of zero, energy W[J] consumed in R[Ω], and 'choose one from (1)–(5)'. No differences in symbols or units.",
+        "All choices: (1) 1/2·C²V, (2) 1/2·LV², (3) 1/2·L²V, (4) 1/2·V²/R and (5) 1/2·CV² match the official page, including exponents and positions.",
+        "Overall explanation: the energy balance d/dt{CvC²/2 + Li²/2} = −Ri² is correct. Initially the inductor keeps i=0, so the stored energy is CV²/2. Finally vC=0, and because R>0 the current also decays to i=0, so the stored energy is 0. W = CV²/2 then follows, independent of R and L and of whether the response is oscillatory. This agrees with official answer (5).",
+        "Choice (1): F·V = C = A·s, so F²·V = F·A·s, which is not V·A·s. The dimensional mismatch reason is correct.",
+        "Choice (2): H·V² = V³·s/A, which is not J. The explanation correctly notes that inductor energy is LI²/2 and that its initial and final stored energies are both 0.",
+        "Choice (3): H²·V is not J. The dimensional mismatch reason is correct.",
+        "Choice (4): V²/Ω = V·A = W, which is a unit of power. The explanation also correctly notes that the resistor voltage is not constant and is 0 immediately after closing, because the inductor keeps i=0.",
+        "Choice (5): the reason that all of the initial electrostatic energy CV²/2 is consumed in R is correct.",
+        "Figure: the public figure matches the official diagram. It is a single series loop with C[F] on the left side and S (drawn open), R[Ω] and L[H] in order from left to right along the top, returning through the right and bottom wires. Every label is present, and the question can be understood from the public figure alone. figureDescription matches, including its note that the capacitor polarity is not shown.",
+        "Source metadata: fiscalYear=2025 and term=upper agree with the answer-table header '令和7年度…上期'. subject=theory agrees with the answer-table column and the problem content. reviewedFromPage=[8] is consistent with printed page '- 5 -' and footer code 'T1－R 008'. officialReferenceUrls is empty, so there are no independent claims to check."
+      ]
+    }
+  ]
+}

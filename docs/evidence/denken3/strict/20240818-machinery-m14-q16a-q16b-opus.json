@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6317,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 26099,
+      "webSearchRequests": 0,
+      "costUSD": 0.36302860000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4145,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "7b099b2641b20f2cae9a7f19564ca080cc1008ee6b15698dda9b655c3352deb6",
+  "inputRequestSha256": "87f2a92e981044e72e14908bb150b20b29c66e7a6ce2c5df6c52f9a12882e05e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "5e6ee6a9932b454b58454274b9c8f63f3ca6ca375fdbd41ccc72dc794b34d558",
+      "q16b": "001eca18a69ce61cf0f00d22b3b683421f4b97169ea1ff9f8356f90b9f281ae6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p22.png": "c26606cae91acdca88de7470ef0d62542468a3965ac4c41f03d180eec351c38c",
+      "data/raw_pdfs/denken3/review/20240818/machinery/p23.png": "7a80704b9bce767025e5a36dc0f02b9c1c414054694195aaf65a825badccd9e1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-circuit.png": "3b0bd667e5ee7feea55ce672d7b23928e89f7b9ccdba8578513d2d48cbfb63a1",
+      "public/images/denken3/20240818/machinery/20240818-machinery-q16-inverter-waveform.png": "6dec55ebdd7a6a90642fb7ee8881743b66f6c0e6b39e041051f19968bc39c883"
+    },
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "41d8345ba0c00be234741c15e0ca7f8fc5e821bbe2f41d013c5f3de76979371e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official problem images (printed pages 19 and 20, T1-K 022/023). The common stem and the (a) wording match. Only punctuation changed, such as a dropped 「，」. Ed[V], L[H], R[Ω], v0, i0, the ①〜④ modes, the period T[s] and the dead-time condition are all present.",
+        "Choices: the table in the original image gives (1) D2-D3/Q2-Q3/D1-D4/Q1-Q4, (2) Q2-Q3/Q2-Q3/Q1-Q4/Q1-Q4, (3) Q1-Q4/Q1-Q4/Q2-Q3/Q2-Q3, (4) Q1-D3/Q1-Q4/Q2-D4/Q2-Q3 and (5) D1-D4/Q1-Q4/D2-D3/Q2-Q3. All five match the candidate, cell by cell.",
+        "Official answer: the machinery answer table lists 問16(a)=5. This matches both the manifest unit and officialAnswer.",
+        "Circuit and polarity: in Figure 1 the midpoint of the left leg (Q1 upper, Q2 lower) connects to the upper output terminal, and the midpoint of the right leg (Q3 upper, Q4 lower) connects to the lower terminal. The v0 arrow points to the upper terminal as positive. The i0 arrow points downward, from the upper terminal through L and then R. So v0 = V(left midpoint) − V(right midpoint). Q1+Q4 gives +Ed and Q2+Q3 gives −Ed. Each IGBT conducts from collector (top) to emitter (bottom), and each diode is anti-parallel with its cathode on the upper side.",
+        "Current paths: positive i0 flows through Q1 and Q4, or through D2 and D3. Negative i0 flows through Q2 and Q3, or through D1 and D4. In Figure 2, interval ① has v0=+Ed with i0 rising from −Ip toward 0, so D1-D4 conducts. Interval ② has v0=+Ed with i0>0, so Q1-Q4 conducts. Interval ③ has v0=−Ed with i0 falling from +Ip toward 0, so D2-D3 conducts. Interval ④ has v0=−Ed with i0<0, so Q2-Q3 conducts. This matches choice (5), and the explanation's reasoning is correct.",
+        "Wrong choices: (1) swaps the diagonal pairs. In (2), the same pair conducts through each half-cycle and no diode ever conducts. In (3), an IGBT would carry reverse current in ① and ③. In (4), Q1-D3 ties the load to the + bus (v0=0, i0>0 only) and Q2-D4 ties it to the − bus (v0=0, i0<0 only). This conflicts with v0=±Ed and with the current direction in ① and ③. Each choice explanation states this correctly.",
+        "Candidate figures: the circuit image matches the original Figure 1 in wiring, device placement and diode direction. All labels are present: Ed, the capacitor, Q1–Q4, D1–D4, 出力端子, L, i0, R, v0 and 図1. The waveform image matches the original Figure 2 in all its labels: ①〜④, Ed/0/−Ed, T[s], t[s], Ip/0/−Ip, τ[s], v0[V], i0[A] and 図2. The published figures alone are enough to understand the question.",
+        "Source: officialReferenceUrls is empty, so there are no independent claims to verify. The pages are printed 19 and 20 with T1-K 022/023. This is consistent with reviewedFromPage [22,23]."
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: the (b) wording matches the original: Ed=100 V, L=2 mH, R=1 Ω, the current in intervals ①② rising from −Ip [A] to Ip [A] with time constant τ [s], and the closest-value instruction.",
+        "Choices: (1) 0.001, (2) 0.002, (3) 0.0032, (4) 0.0063 and (5) 0.02 all match the original.",
+        "Official answer: the machinery answer table lists 問16(b)=2. This matches both the manifest unit and officialAnswer.",
+        "Calculation: in intervals ①② v0=+Ed is constant, so the circuit equation is Ed = L·di0/dt + R·i0 and τ = L/R = 2×10⁻³ H / 1 Ω = 0.002 s. The time constant depends only on L and R, not on the start value −Ip or the end value +Ip. The explanation's reasoning and cause-and-effect are correct.",
+        "Wrong choices: 0.001 is half of 0.002. 0.0032 is 0.0012 s larger than L/R. 0.0063/0.002 ≈ 3.15, which the explanation correctly states. 0.02 is ten times the correct value, and the mH-to-H conversion gives L = 0.002 H. None of these statements is factually wrong.",
+        "Candidate figures: these are the same two images as in (a). They match the original Figures 1 and 2 in wiring, polarity and every label. The drawing of τ as the tangent at the start of the i0 rise is also reproduced, so the published figures alone are enough to understand the question.",
+        "Source: officialReferenceUrls is empty, so there are no independent claims to verify. The pages are printed 19 and 20 with T1-K 022/023. This is consistent with reviewedFromPage [22,23]."
+      ]
+    }
+  ]
+}

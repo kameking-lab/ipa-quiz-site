@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2387,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13518,
+      "webSearchRequests": 0,
+      "costUSD": 0.1561478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1272,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b778d5bfb6f833fa1fe2e8f8e917d6d0951ba0a6e915fa2f31ed935584b8a6d6",
+  "inputRequestSha256": "bb97643ff880aa921539035c00d38245ec375259805550d9585cd8ccb372991e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "615c57db0375f2cdc3ed0b28bcbfd4af2cfedc8206da43610ed8947ebff96fed"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p05.png": "ef19004c029a52a7e9f5d3e55129b9931cc97a52dfc53869f39dd0d3ee4a0f81"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "e7ec82631490ca53cc72fca622cf5fd252fdb8243298d6500a584abacb476fe3",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "表記の不統一（内容の誤りではない）：explanation の前半（(1)〜(5)の説明部分）は読点に「、」を使っているが、「一方，(4)は」以降は全角コンマ「，」を使っている。choiceExplanations も同様で、\"4\" だけが「，」、\"1\"\"2\"\"3\"\"5\" は「、」になっている。question 欄は「、」に整形済みなので、explanation と choiceExplanations の「，」を「、」に揃えること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図の「汽力発電において，熱効率の向上を図る方法として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と一致する。読点を「，」から「、」に変えた整形のみで、語句の脱落や改変はない。",
+        "選択肢：(1)高温高圧の蒸気を使用する。(2)復水器の真空度を高める。(3)再熱サイクルを利用する。(4)給水加熱器で抽気温度を上げる。(5)節炭器で排ガス温度を下げる。5肢とも原図と一字一句一致する。",
+        "公式正答：公式解答表「令和6年度 下期 第三種電気主任技術者試験解答」の電力 問2 は 4。manifest の正答単位 {question:2, part:null, answer:\"4\"} とも候補の officialAnswer \"4\" とも一致する。",
+        "正答の理由：給水加熱器は、タービンからの抽気蒸気を熱源にして給水温度を上げる装置である。抽気蒸気は熱を渡して凝縮する側であり、加熱器が抽気温度を上げることはない。したがって(4)が誤りとする説明は正しい。",
+        "誤答肢の理由：(1)は平均受熱温度の上昇、(2)は背圧低下による放熱温度の低下、(3)は再加熱による平均受熱温度の上昇と湿り度の低減、(5)は排ガス損失の回収によるボイラ効率の向上。いずれも熱効率を上げる方策であり、各肢固有の理由として正確である。",
+        "図：原図に図・表・グラフはなく文章のみ。figureDescription、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[5] は manifest と一致する。原図下部の印字頁番号「-2-」は冊子内の頁番号であり、PDF第5頁とする manifest と矛盾しない。",
+        "外部参照：officialReferenceUrls は空配列で、独立した主張はない。sourceIssues は該当なし。"
+      ]
+    }
+  ]
+}

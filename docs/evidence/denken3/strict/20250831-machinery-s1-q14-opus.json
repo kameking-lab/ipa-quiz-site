@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5505,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16165,
+      "webSearchRequests": 0,
+      "costUSD": 0.2396838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3684,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "020c9e5dbdba2bcad360e74969db9aad1469b28df2ba8cdc99edfee7ca43c695",
+  "inputRequestSha256": "16bbc66b13963f48d9c21068a767839ed6b3c593ea461d7c16b809457bed4b11",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "61bd60eb486decd6437d6e5060980942258d675795bf91b126976588bdd13f3e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p17.png": "e2a5c65116db7a8b183d673f6943a0733a543c4eaa6585e701e20733e1a10645"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/machinery/20250831-machinery-q14-fig1.png": "52944839483df2bc36cf155d16f64583d9f79d35a1ef5dd3d8b72c9a33319a5a"
+    },
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "750989bea9cca378a8b76af6e3fda7861878ab9b9f2775221bb07cacc14e9837",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty の記述が他のメタデータと矛盾している。uncertainty は「試験の実施年度・回、科目名はこのページだけからは特定できないため、公式の一次資料 URL は記載していない」としている。一方で sourceQuestionPdfUrl と sourceAnswerPdfUrl には公式 URL が記載され、sourceAttribution は「令和7年度上期第三種電気主任技術者試験 機械科目 問14」、subject は machinery と断定している。添付の公式解答表（見出し「令和7年度 第三種電気主任技術者上期試験解答」）では、機械 問14 の正答が 3 で、manifest の正答 3 および回路から検算した正答 (3) と一致する。理論 問14 は 4、電力 問14 は 2 でいずれも不一致である。このため年度・回・科目は添付資料で裏付けられる。uncertainty の該当文は削除するか、上記根拠に基づく記述に改めること。",
+        "uncertainty に残す注記は「区間番号は説明用で原図にない」「C の切替位置が区間途中にあるが A = B = 0 のため結論不変」の 2 点に限定するのが適当。"
+      ],
+      "verifiedEvidence": [
+        "公式正答: 添付の公式解答表 <機械> 問14 = 3、配点 5。manifest の {question:14, part:null, answer:\"3\", points:5}、候補の officialAnswer \"3\"、scoringPoints 5 と一致する。",
+        "問題文: 原図の「図の論理回路に，図に示す入力A，B及びCを加えたとき，出力Xとして正しいものを次の(1)〜(5)のうちから一つ選べ。」と候補の question は一字一句一致する。",
+        "回路接続（原図・公開候補図とも）: 上側 AND の入力は A と C（C は黒丸の分岐点から上方へ伸び、B 線とは黒丸なしで交差するのみ）。下側 AND の入力は B と NOT C。両 AND の出力は OR ゲートに入り、その出力が X。よって X = A·C + B·C̄ となり、解説の論理式とセレクタ動作の説明（C=1 で A、C=0 で B を出力）は正しい。",
+        "入力波形（原図・公開候補図とも、パルス幅単位で左端から区間1〜19）: A=1 は区間 2,4,6,10,16,18。B=1 は区間 2,4,8,12,14,16。C は区間3途中で立上り、区間9途中で立下り、区間13途中で再び立上る。切替区間 3・9・13 はいずれも A=B=0 で、解説の注記どおり切替位置は出力に影響しない。",
+        "出力の検算: 区間2（C=0,B=1）→1、区間4・6（C=1,A=1）→1、区間8（C=1,A=0）→0、区間10（C=0,B=0）→0、区間12（C=0,B=1）→1、区間14（C=1,A=0）→0、区間16・18（C=1,A=1）→1。X=1 の区間は 2,4,6,12,16,18 で、波形(3)と一致する。",
+        "各肢の波形読取り（原図・公開候補図とも）: (1) 2,4,6,12,18。(2) 2,4,6,16。(3) 2,4,6,12,16,18。(4) 2,4,12,16。(5) 2,4,8,12,16。候補の choices の区間列挙はすべて一致する。",
+        "誤答肢の理由: (1) は区間16（A=B=C=1）が欠落。(2) は区間12（A=0,B=1,C=0）と区間18（A=1,B=0,C=1）が欠落。(4) は区間6・18（A=1,C=1）が欠落。(5) は区間8（A=0,B=1,C=1 で X=0）が余分で、区間6・18 も欠落。choiceExplanations の記述はすべて入力値・論理とも正しい。",
+        "公開候補図 20250831-machinery-q14-fig1.png: 原図の論理回路とタイムチャートを欠落なく収録している。ラベル（入力, A, B, C, 出力X, 時間→, 各段の 1/0, (1)〜(5), 出力）、接続、NOT の丸、分岐黒丸、C 切替位置の破線、出力側の区間破線がすべて原図と一致する。解答に必要な情報は公開候補図だけで判読できる。",
+        "figureDescription の接続・向き・ラベル・破線の説明は原図と整合する。区間番号が原図にない説明用番号である旨も明記されている。",
+        "officialReferenceUrls は空配列で、検証を要する独立主張はない。reviewedFromPage [17] は原図右下の「T1－K 017」と整合する。印刷頁番号「- 14 -」とは異なるが、PDF 頁としては矛盾しない。"
+      ]
+    }
+  ]
+}

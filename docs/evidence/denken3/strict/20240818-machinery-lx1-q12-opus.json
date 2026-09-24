@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2741,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13898,
+      "webSearchRequests": 0,
+      "costUSD": 0.16626780000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1134,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9dbf2f58bf1c3246284ac260b3190d28cf232fb19673c74b2062203ae8f136a2",
+  "inputRequestSha256": "dc2873b113e566409427048c6028831aa158b61b52f9f1a5b8d8dbd945edb21e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "ccf1449838fb6634ddca9e38932b42d4951b7b577345184b38a20d373932c808"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p17.png": "0830b3d68a791fc31a4c0f034310e4457a7c2ea8d266a6a5c5f3cf84606594d3"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "f438cc681bb16f48d79bfcf1fbd3a182d4f1e8cc7404145d5a214b11f960a8c5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2]の「これに伴い（ウ）（エ）の単位も入れ替わっている」は、存在しない因果関係を示している。（ウ）（エ）は（ア）（イ）とは独立した空欄である。仮に温度差と熱流を入れ替えて熱抵抗をΦ/θと定義しても、単位は［W/K］になり、［J/K］にはならない。したがって(2)の（ウ）［J/K］と（エ）［K/W］は、（ア）（イ）の入替えから導かれた結果ではない。正答の（ウ）［K/W］と（エ）［J/K］を入れ替えた誤りとして、独立に説明するよう修正が必要。例：「（ア）（イ）は電圧⇔温度差θ・電流⇔熱流Φの対応と逆である。また（ウ）［J/K］は熱容量の単位であり、熱抵抗R_T＝θ/Φの単位［K/W］ではない。（エ）［K/W］は熱抵抗の単位であり、熱容量C＝Q/θの単位［J/K］ではない。誤り。」",
+        "choiceExplanations[4]だけ表記と結論の書式が他肢と異なる。括弧が半角の(ア)(イ)(ウ)(エ)・[ ]で、他肢の全角（ア）・［ ］と不統一である。また文末に「誤り。」の判定がない。全角括弧に統一し、「誤り。」を追記すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第17頁、印字頁-14-、T1-K 017）の問12本文・対応表6行・設問文を照合した。電圧V［V］⇔（ア）［K］、電気量Q［C］⇔熱量Q［J］、電流I［A］⇔（イ）［W］、導電率σ［S/m］⇔熱伝導率λ［W/(m・K)］、電気抵抗R［Ω］⇔熱抵抗R_T（ウ）、静電容量C［F］⇔熱容量C（エ）で、候補と一致した。",
+        "選択肢：原図の選択肢表(1)〜(5)と一致した。(1)温度差θ/熱流Φ/［K/W］/［J/K］、(2)熱流Φ/温度差θ/［J/K］/［K/W］、(3)温度差θ/熱流Φ/［K/J］/［J/K］、(4)熱流Φ/温度差θ/［J/K］/［J/W］、(5)温度差θ/熱流Φ/［K/W］/［J/W］。",
+        "公式正答：解答表原図「令和6年度 上期」機械欄の問12は1で、manifestの公式正答単位およびofficialAnswer=\"1\"と一致した。",
+        "総合解説の検算：単位［K］の量は温度差θ、単位［W］＝［J/s］の量は熱流Φで、電流I＝dQ/dtに対応する。R_T＝θ/Φ→［K/W］、C＝Q/θ→［J/K］となり、R＝V/I［Ω］、C＝Q/V［F］との類比も正しい。総合解説に誤りはない。",
+        "誤答肢の検算：(3)の［K/J］はθ/Qの次元であり、熱抵抗θ/Φ［K/W］とは異なる。(5)の［J/W］はQ/Φ＝時間［s］の次元であり、熱容量［J/K］とは異なる。(4)は（ア）（イ）の逆転、（ウ）［J/K］、（エ）［J/W］の3点が誤りである。いずれの内容も正しい。",
+        "図：解答に必要な対応表は問題文中にテキストで完全に転記されており、図なしで理解できる。figureDescription=null、figureUrls=[]で問題ない。",
+        "出典：fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、問題PDF…q03.pdf、解答PDF…a01.pdf、reviewedFromPage=[17]は、いずれもmanifestと一致した。sourceAttributionの令和6年度上期・機械・問12も一致した。officialReferenceUrlsは空で、検証対象となる独立主張はない。"
+      ]
+    }
+  ]
+}

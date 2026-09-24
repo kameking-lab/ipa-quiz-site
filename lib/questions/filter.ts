@@ -65,7 +65,7 @@ export function filterQuestions(
   if (filter.mode === "random") {
     shuffle(pool);
   } else if (filter.inOrder) {
-    pool.sort((a, b) => a.qNumber - b.qNumber);
+    pool.sort((a, b) => a.qNumber - b.qNumber || (a.part ?? "").localeCompare(b.part ?? ""));
   }
 
   return pool;

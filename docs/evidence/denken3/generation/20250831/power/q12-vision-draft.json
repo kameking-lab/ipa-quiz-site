@@ -1,0 +1,94 @@
+{
+  "questionNumber": 12,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "ある架空電線路の支持点間は200 m，たるみは3.0 m である。この架空電線路の電線と単位長さあたりの重量が同じ電線を用い，この架空電線路と同じ水平方向の引張強さで支持点間240 m を架線する。このときの電線の実長 L[m]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。ただし，いずれの架空電線路においても二つの支持点の高さは同一とする。",
+      "choices": {
+        "1": "240.04",
+        "2": "240.05",
+        "3": "240.14",
+        "4": "240.21",
+        "5": "240.25"
+      },
+      "officialAnswer": "4",
+      "explanation": "支持点の高さが等しい架空電線路では、電線がつくる曲線を放物線とみなした次の2式を使います。\n\n・たるみ：D = wS² / (8T)\n・電線の実長：L = S + 8D² / (3S)\n\nここで w は電線の単位長さあたりの重量、S は径間（支持点間距離）、T は水平方向の引張強さです。\n\n【手順1：新しい径間でのたるみ】\n2つの線路は w と T が同じなので、たるみ D は径間の2乗 S² に比例します。\nD₂ = D₁ × (S₂ / S₁)² = 3.0 × (240 / 200)² = 3.0 × 1.2² = 3.0 × 1.44 = 4.32 m\n\n【手順2：実長】\nL = S₂ + 8D₂² / (3S₂)\n　= 240 + 8 × 4.32² / (3 × 240)\n　= 240 + 8 × 18.6624 / 720\n　= 240 + 149.2992 / 720\n　≒ 240 + 0.2074\n　≒ 240.21 m\n\nしたがって、最も近いのは(4) 240.21 です。",
+      "choiceExplanations": {
+        "1": "誤り。正しく計算すると L ≒ 240.207 m です。240.04 m はこれより約 0.17 m 短く、正しい値に最も近い選択肢ではありません。",
+        "2": "誤り。たるみを径間の2乗に反比例させて D = 3.0 × (200/240)² ≒ 2.08 m とすると、L ≒ 240 + 8 × 2.08² / 720 ≒ 240.05 m となります。しかし実際には、w と T が一定のときたるみは径間の2乗に比例します（D = wS²/(8T)）。正しいたるみは 4.32 m です。",
+        "3": "誤り。たるみを径間の1乗に比例させて D = 3.0 × 240/200 = 3.6 m とすると、L = 240 + 8 × 3.6² / 720 = 240.144 m となり、この値に一致します。しかしたるみは径間の2乗に比例するので、正しいたるみは 4.32 m です。",
+        "4": "正しい。w と T が同じなので D ∝ S² となり、D₂ = 3.0 × (240/200)² = 4.32 m です。これを実長の式に代入すると L = 240 + 8 × 4.32² / (3 × 240) ≒ 240.207 m となり、240.21 m に最も近くなります。",
+        "5": "誤り。正しいたるみ 4.32 m を使っても、実長の式の分母に旧径間 200 m を入れると L = 240 + 8 × 4.32² / (3 × 200) ≒ 240.249 m となり、この値になります。実長の式 L = S + 8D²/(3S) の S には、実長を求める線路の径間 240 m を使います。"
+      },
+      "figureDescription": "図なし。問題文と選択肢だけで構成されている。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        15
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2410,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12293579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 970,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "15d2b7e2c53bb4acbb7e31c8768b3e5aaa98c5e514bb945d8f6a6d4ea56a40da",
+  "inputRequestSha256": "48256a3221ae327ee067b5205b2a93076ed890c2441e9b28e75c143e9a6e612a",
+  "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/power/p15.png": "fcd58cbc319bebddfa7e49c5100ff69184d787698acabe2649988054749a95a4"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2697,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12215,
+          "webSearchRequests": 0,
+          "costUSD": 0.1519238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1327,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "25da2358e0231512ac69c4e1242a0ddef49180dac8a10572f1c2eadccb170d8e",
+      "inputRequestSha256": "9d2b36bd09d64f4bae73c305ce91c87341a2fedf4c6552923692f01f9a647fc6",
+      "previousDraftSha256": "c015ad36640bf815abbc988dba6f2bbcca8a261f7d07a4ca27318856c2ba1903",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/power/archive/q12-vision-draft-v1.json",
+      "answeredReviewSha256": "8a23503da83ae1ec8c9c0589adfdd8a07881d0f2963a48ebd271b2b70ad1408e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/power/archive/q12-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-power-s1-q12-opus.json",
+      "answeredStrictReceiptSha256": "d3af04988e0519b9bacbac7be77061b954eb689f81d2850bd5fd50d1688d8a38",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

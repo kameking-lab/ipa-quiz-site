@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4291,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18900,
+      "webSearchRequests": 0,
+      "costUSD": 0.2372838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2744,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "180eecbc6d23a07895ed7b79795e4f1ed395f6096dc4960cdff0ca2d3a6c4fb1",
+  "inputRequestSha256": "4e1099de5b65fb9204c9584502ebe8b31752660ebf64c4dfda53ad2ba789e293",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3b6e0f04e215c9107f3e9d0be3e17c5304448abd17a7dc54996af4e206db111d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p07.png": "12d649ab652780529d7e5a1700bee191bcafbf9d2087c57285fd12db1e9d916c",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ba2912083993a611087d59243f807c5ed48dbd08d47532d46648719d22a3f120",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-technical-2012.pdf": "83faa87b011a2be7f322ed49b4f64ca3b0453e55c656fd48d98f360f92865d14"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-technical-2012-p001.png": "65394a8cddcf7793cf9d864e4c4e7b35d09d197bb76626f88741ee1a07971ac2"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024・term=upper・examDate=2024-08-18・subject=law・sourceQuestionPdfUrl(20240818_ch_third_q04.pdf)・sourceAnswerPdfUrl(20240818_ch_third_a01.pdf)はmanifestと一致。reviewedFromPage=[7]はmanifest指定のPDF第7頁と一致（原図下部の「- 4 -」は冊子印刷頁で、PDF頁ではない）。sourceAttribution「令和6年度上期第三種電気主任技術者試験 法規科目 問3」も整合。",
+        "問題文: 公式原図の問3と照合した。前文、a)「光信号の伝送に使用する伝送媒体であって，保護 (ア) で保護したものをいう」、b)「光ファイバケーブル及びこれを (イ) し，又は保蔵する工作物(造営物の屋内又は (ウ) に施設するものを除く。)をいう」、設問文はいずれも字句が一致する。差異は読点「，」→「、」の表記整形のみで、意味は変わらない。",
+        "選択肢: 原図表の(1)装置・収納・屋外、(2)装置・収納・屋上、(3)被覆・支持・屋側、(4)被覆・保護・屋上、(5)器具・支持・屋側と、choices 1〜5および問題文中の表は全肢一致する。",
+        "公式正答: 試験センター公式解答表<法規>問3=3。officialAnswer=\"3\"と一致し、manifest固定の公式正答単位（question 3, part null, answer \"3\", points null）およびscoringPoints=nullとも整合する。",
+        "総合解説: 注1により「電気設備技術基準」＝「電気設備に関する技術基準を定める省令」であり、解説の呼称と一致する。(ア)被覆・(イ)支持・(ウ)屋側を挿入した定義文は、公式問題文と公式正答(3)から一意に復元でき、選択肢(3)との対応も正しい。条番号「第1条（用語の定義）」は添付公式参考資料PDF第1頁の見出し「第1条【用語の定義】」の下に光ファイバケーブルの解説があることで確認した。",
+        "公式参考資料: 経済産業省掲載「電気設備に関する技術基準を定める省令の解説」（平成24年6月1日 原子力安全・保安院 電力安全課）PDF第1頁に次の記述がある。「『光ファイバケーブル』とは、光信号の伝送に使用する伝送媒体であって保護被覆で保護したものであり、これを支持又は保蔵する工作物を合わせて『光ファイバケーブル線路』として規定している。」これで(ア)被覆・(イ)支持を独立に確認した。(ウ)屋側を含む除外句は同頁に存在しない。uncertaintyはこの点を正確に記載し、屋側の根拠を公式問題原図と公式正答に置いているので、参照URLへの過大帰属はない。",
+        "誤答肢の理由: 各肢の正誤判定を語句ごとに検算した。(1)は装置・収納・屋外の3語とも誤り。(2)は装置・収納・屋上の3語とも誤り。(4)は被覆が正、保護・屋上が誤り（定義文は「支持し，又は保蔵する」で「保護する工作物」はない）。(5)は器具が誤り、支持・屋側が正。いずれの記述も正答語句（被覆・支持・屋側）と矛盾しない。(3)の正答理由も定義文と整合する。",
+        "図: 本問は文章と語句表のみで、解答に図は不要。figureDescription=null、figureUrls=[]、choiceFigureUrls={}は妥当。",
+        "効力基準日: 法規科目注意書き頁の注3（令和6年4月1日現在効力のある法令に基づき作成）を確認した。解説は公式問題文・公式正答に依拠しており、基準日と矛盾する記述はない。"
+      ]
+    }
+  ]
+}

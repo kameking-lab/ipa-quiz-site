@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2843,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14243,
+      "webSearchRequests": 0,
+      "costUSD": 0.1710678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1483,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ba36939130c59e9d08445cd6bf6d46490b4bd88cad5065ca44e50e6196f42123",
+  "inputRequestSha256": "07fc741af9521eb0e6478f9d9e7421a7eae2c30f54b952847d55e872cb7c4637",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "e29461164e05c0f6263ba21f82b1b8d46f854c643c489e14feb6a5569f182f7f"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p08.png": "797f131ba4217622fc70a7bbb7f71deec050e936ce9276a4554fab649566cc89"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q05-fig1.png": "834d9c40099a65dcbdb9bc2954bc1f97da086330cbd50699ffc283bc0a722359"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "1042d224d762b9a6826cae3f4f7efcc1aa21b3f05ea736a4de5e887bb730a999",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（印刷頁 -5-、フッタ T1-R 008）と照合した。RLC 回路、C[F] を V[V] に充電、S を閉じる、十分時間経過後に端子電圧が零、R[Ω] で消費された W[J]、(1)〜(5) から一つ選べ、の各要素が一致する。句読点・空白の整形以外に差異はない。",
+        "選択肢: 原図 (1) (1/2)C²V、(2) (1/2)LV²、(3) (1/2)L²V、(4) (1/2)·V²/R、(5) (1/2)CV² と候補 1〜5 を照合した。係数・指数・変数はすべて一致する。",
+        "公式正答: 公式解答表『令和7年度 第三種電気主任技術者上期試験解答』の理論・問5は解答 5、配点 5 である。manifest 固定値 answer=5, points=5、候補 officialAnswer=5, scoringPoints=5 と一致する。",
+        "総合解説の検算: 直列ループのエネルギー収支 d/dt{(1/2)Cv_C²+(1/2)Li²} = −Ri² は正しい。初期状態は S が開放なので i=0、S を閉じた直後もインダクタ電流の連続性から i=0 で、初期エネルギーは (1/2)CV² である。最終状態は v_C=0、R>0 により i→0 で、蓄積エネルギーは 0 である。よって W=(1/2)CV² となる。この結果は減衰様式・R・L の値に依存しないという記述も正しい。",
+        "肢(1): F·V = C = A·s より F²·V = F·A·s となり、J = V·A·s と一致しない。次元不整合の理由は正しい。",
+        "肢(2): H = V·s/A より H·V² = V³·s/A で、J ではない。インダクタの蓄積エネルギーは (1/2)LI² であり、本問では初期・最終とも 0 である。いずれの理由も正しい。",
+        "肢(3): H²·V = V³·s²/A² で J ではない。次元不整合の理由は正しい。",
+        "肢(4): V²/Ω = V·A = W で電力の次元である。S を閉じた直後は i=0 なので R の端子電圧も 0 で、一定値 V ではない。いずれの理由も正しい。",
+        "肢(5): コンデンサの初期静電エネルギー (1/2)CV² が全量 R で消費される。正答理由は総合解説と整合する。",
+        "図: 公開候補図 20250831-theory-q05-fig1.png は原図の回路部分と一致する。左辺に縦向きの C[F]、上辺に左から S（開）・R[Ω]・L[H]、右辺と下辺の導線で閉ループとなる。ラベル S, R[Ω], L[H], C[F] は欠落・誤記がない。接続は単一の直列ループで、公開候補図だけで C・R・L の直列関係を理解できる。",
+        "figureDescription: 素子配置・接続順・S の開状態・充電極性が図示されていない点のいずれも原図と一致する。極性は解答（エネルギー量）に影響しない。",
+        "出典: reviewedFromPage=[8] は、原図の印刷頁 -5- とフッタ T1-R 008 に整合する。officialReferenceUrls は空で、検証を要する独立主張はない。sourceAttribution の年度・期・科目・問番号は、解答表見出しおよび原図と一致する。"
+      ]
+    }
+  ]
+}

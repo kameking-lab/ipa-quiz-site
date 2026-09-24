@@ -1,0 +1,130 @@
+{
+  "questionNumber": 10,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のような直流チョッパがある。\n直流電源電圧 E = 400 V、平滑リアクトル L = 1 mH、負荷抵抗 R = 10 Ω、スイッチ S の動作周波数 f = 10 kHz、通流率 d = 0.6 で回路が定常状態になっている。D はダイオードである。このとき負荷抵抗に流れる電流の平均値 [A] として最も近いものを次の (1)〜(5) のうちから一つ選べ。",
+      "choices": {
+        "1": "40.0",
+        "2": "24.0",
+        "3": "16.0",
+        "4": "3.8",
+        "5": "2.5"
+      },
+      "officialAnswer": "2",
+      "explanation": "この回路は降圧チョッパです。以下では、スイッチ S とダイオード D を理想素子（オン抵抗 0、順方向電圧降下 0）とみなします。\n\nS がオンの期間は、電源 E から S と L を通って R に電流が流れます。S がオフの期間は、L に蓄えられたエネルギーによって電流がダイオード D を通って還流し、R に流れ続けます。\n\n定常状態では、L の両端電圧の 1 周期平均は 0 になります。平均電圧が 0 でなければ、電流が周期ごとに増減し続けて定常にならないためです。したがって、D の両端電圧（S と L の接続点と下側線路の間の電圧）の平均値が、そのまま R の両端電圧の平均値になります。\n\n電流が連続している場合、D の両端電圧は、S がオンの期間（1 周期のうち割合 d）は E、S がオフで D が導通している期間は 0 です。よって負荷電圧の平均値は\nVo = d × E = 0.6 × 400 = 240 V\n\n負荷電流の平均値は\nIo = Vo / R = 240 / 10 = 24.0 A\n\n【電流連続の確認】周期 T = 1/f = 1/(10×10³) = 100 μs、オン期間 = d × T = 60 μs です。オン期間中に L にかかる電圧はおよそ E − Vo = 400 − 240 = 160 V なので、電流の変化幅（リプル）はおよそ\nΔI ≈ (E − Vo) × dT / L = 160 × 60×10⁻⁶ / (1×10⁻³) = 9.6 A\nです。電流の最小値はおよそ 24 − 9.6/2 = 19.2 A > 0 となり、電流は途切れません（連続モード）。したがって Vo = dE の関係が成り立ち、答えは 24.0 A の (2) です。",
+      "choiceExplanations": {
+        "1": "誤り。40.0 A は E/R = 400/10 で、通流率を 1（S が常時オン）とした場合の値です。この問題では d = 0.6 なので、負荷電圧の平均値は 400 V ではなく 240 V になります。",
+        "2": "正しい。降圧チョッパの負荷電圧の平均値は Vo = dE = 0.6 × 400 = 240 V です。負荷電流の平均値は Vo/R = 240/10 = 24.0 A になります。電流は連続しているため、この関係がそのまま成り立ちます。",
+        "3": "誤り。16.0 A は (1 − d)E/R = 0.4 × 400/10 で、S のオフ期間の割合を使ったときの値です。D の両端に E が現れるのは S がオンの期間（割合 d）なので、平均電圧は (1 − d)E ではなく dE です。",
+        "4": "誤り。電流が連続している本問の条件では、定常状態で L の平均電圧が 0 になり、負荷電圧の平均値は dE = 240 V で決まります。したがって負荷電流の平均値は Vo/R = 240/10 = 24.0 A で、L の値によりません。3.8 A は、240 V を L のリアクタンス 2πfL ≈ 62.8 Ω で割った値（約 3.82 A）、または √(R² + (2πfL)²) ≈ 63.6 Ω で割った値（約 3.77 A）と考えられます（推測）。いずれにしても、周波数 f に対するリアクタンスは直流成分である平均電流の計算には使わないため、これらの値は負荷電流の平均値になりません。",
+        "5": "誤り。負荷電流の平均値は Vo/R = 24.0 A で、2.5 A にはなりません。2.5 という数値は 1/(1 − d) = 1/0.4 = 2.5 と一致するため、これに由来すると考えられます（推測）。ただし 1/(1 − d) は昇圧チョッパの出力電圧と入力電圧の比で、単位のない量です。図の回路は降圧チョッパなのでこの式は当てはまりません。仮に当てはめても得られるのは電圧比であり、電流 [A] の値にはなりません。"
+      },
+      "figureDescription": "直流チョッパの回路図。左端に直流電源 E（電池記号）があり、上側の極板が長く描かれています（上側が正極）。E の上端からの線路はスイッチ S を経て、黒丸で示された接続点に至ります。この接続点から平滑リアクトル L を経て、右端の負荷抵抗 R の上端につながります。接続点と下側線路の間には、ダイオード D が縦向きに接続されています（下側線路側の接続点も黒丸）。D はカソードが上側（S と L の接続点側）、アノードが下側の向きです。下側線路は E の下端、D のアノード、R の下端に共通です。ラベルは E、S、D、L、R です。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        13
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2838,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1314958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 970,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a4ef5b7c48c9068ecbe26ee0fbc0025654fcbd528681a7eeed306b9a109ded74",
+  "inputRequestSha256": "00045fef0c331e334f3de7b54631b5de9cf7c241b38d3d7c2acf12857002c860",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p13.png": "1cb2bd6a22c5769315b87c84cee28a068ad372ec999daa27a2fa074abfb085d3"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 4060,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13494,
+          "webSearchRequests": 0,
+          "costUSD": 0.18941580000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2182,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "a4ed720e444f8033e7d13d66529689ad412c6dc264f18a0a0ddf45e1e1dd46f3",
+      "inputRequestSha256": "61d3fb5216d42aa6b727ee045a0e622bc6c9eba25cef037de6494bd797907e0b",
+      "previousDraftSha256": "42c5c160ad912899daf1bcc6ead30fde8df14e8580f5e753a5647efeb3b696a9",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q10-vision-draft-v1.json",
+      "answeredReviewSha256": "3737ac0f0f50fc61a0109d6b4407d0c8318f5a8168d00ea2638055de4eee33ea",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q10-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q10-opus.json",
+      "answeredStrictReceiptSha256": "524218cf4eedf3ab250ce26169c1117ff62be836d7fe3ccf52791ba332bfe22d",
+      "figureSha256": {
+        "20250831-machinery-q10-fig1": "01abbf7e34b16b0915465273656a013ec3f6a29d08337f46e2408b8c93573cbd"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3242,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 13265,
+          "webSearchRequests": 0,
+          "costUSD": 0.1712238,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1211,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "32be4a6af6bd497de72642ebfc8d92815a59939c194dd0cde2ab320570cbe2f7",
+      "inputRequestSha256": "3ea2c9027e97a281519ebcc4b2901db4cbea6cd43b28c38e747e67006290d904",
+      "previousDraftSha256": "1244c328149dad2cbcae81e6a8f32c8cf7fdbf5bab6faf02310fd6e41e7dd40f",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q10-vision-draft-v2.json",
+      "answeredReviewSha256": "3bcefd7ac2d9afe6a820d7fbc4f73c631e7c493ef35fc52922483345663b7340",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q10-opus-review-v2.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s2-q10-opus.json",
+      "answeredStrictReceiptSha256": "6d63f39a06d301c86f7e05397065d4f0862c0cbf4ec52c2da17931e76b705962",
+      "figureSha256": {
+        "20250831-machinery-q10-fig1": "01abbf7e34b16b0915465273656a013ec3f6a29d08337f46e2408b8c93573cbd"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

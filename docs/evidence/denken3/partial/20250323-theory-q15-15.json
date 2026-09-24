@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "4bbdb91937932de0db9f218fd693eafa4d92477543484226e7ce82be06444a05",
+  "questions": [
+    {
+      "number": 15,
+      "sourceDraftSha256": "dcb25df19ff38d139136e8c1cd7323bedfecb18317417617b23244aebbc1dfd0",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q15-opus-review.json",
+      "opusReceiptSha256": "ef90ae8e07fa608aaeb3936ba79e913ac6daaf56ab5c108407f5814d050be59f",
+      "assessment": {
+        "number": 15,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q15-three-phase-source-load": "33a9bf3966fbd468b49981fd23af86ac5ced4558b732281d6260aaabe3407336"
+      }
+    }
+  ],
+  "strictReview": {
+    "q15a": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t22-q15a-q15b-opus.json",
+      "sha256": "e79a7afb5db488f2161f8d83df6e0b54fe972a8474e538523ca8e5b4bf7897fa",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q15b": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t22-q15a-q15b-opus.json",
+      "sha256": "e79a7afb5db488f2161f8d83df6e0b54fe972a8474e538523ca8e5b4bf7897fa",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

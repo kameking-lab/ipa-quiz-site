@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3591,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 131590,
+      "webSearchRequests": 0,
+      "costUSD": 1.124548,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1583,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d52a4b439b843749143b204fdcc2a6a3d6d6b9e7e7fabcbd95091d01f0fd703f",
+  "inputRequestSha256": "962fab4b2ccab28159dd76524454cb92969309bec580a11f8a980ba9bade9332",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "3f1ec1922f82586451f946f62c6408e77ad5a420f7e94bd6159466ce4098a764",
+      "q14": "b5c3da55f937e2ae24ff2504582701dccf73f478cd6390fcb275232533570569"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p17.png": "f6aea8619b55ee48bd70c4cbd5a066479b262bb6451d4f0826e9e60789af6c4b",
+      "data/raw_pdfs/denken3/review/20240818/theory/p18.png": "b484dd4e07cea07919760c6b1cb2650f5799145e2a293fa9cf40d2e479f8b5e5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q13-equivalent-circuits.png": "0c141134fa8994907c0decfa4b38945e9c276ac3364bfac965a305d303747358"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ea9454aee1b494c3d28dcd2c8260a3610e7b2ce4fc9ca4b65edf92c90038f5da"
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（p.14, T1-R 017）と照合した。C[F], r[Ω], L[H], ωL[Ω], Rp[Ω], Ic[A] の記号と単位、条件『r が ωL に比べて十分小さい』、ただし書き『Ic[A]は電流源の電流』まで一致する。読点を一つ省いた整形だけで、意味は変わらない。",
+        "選択肢: (1) ωL/r、(2) r/(ωL)^2、(3) (ωL)^2/r、(4) r^2/ωL、(5) r(ωL)^2。いずれも原図の分子・分母・指数と一致する。",
+        "公式正答: 公式解答表の令和6年度上期・理論・問13 = 3。manifest の正答単位 {question:13, part:null, answer:'3'} と候補の officialAnswer '3' が一致する。",
+        "総合解説を検算した: Y = 1/(r+jωL) = (r−jωL)/(r^2+(ωL)^2)。実部から 1/Rp = r/(r^2+(ωL)^2)、虚部から 1/(ωLp) = ωL/(r^2+(ωL)^2)。条件 r≪ωL により分母は (ωL)^2 で近似できるので、Rp ≈ (ωL)^2/r、Lp ≈ L となる。図2でインダクタンスが L のまま据え置かれている理由とも整合する。虚部の符号（誘導性サセプタンス −1/(ωLp)）も正しい。",
+        "各肢の理由を確認した: (1) Ω/Ω で無次元になり、抵抗にならない。(2) 単位は S で、近似後の 1/Rp そのもの。(3) 導出結果と一致し、単位も Ω。(4) 単位は Ω だが、(ωL)^2/r と比べて r と ωL の立場が入れ替わっている。(5) 単位が Ω^3。どれも正しく、各肢固有の理由になっている。",
+        "公開候補図: 原図と要素・接続・ラベルが一致する。図1は Ic[A]（電流源）、C[F]、L[H] と r[Ω] の直列枝の3枝並列で、上下の接続点は C の枝にある。図2は Ic[A]、C[F]、Rp[Ω]、L[H] の4枝並列で、接続点は C と Rp の枝にある。図1・図2のキャプション、添字 c と p も一致する。電流源の向きの矢印は原図にもなく、解答にも不要。figureDescription の枝の順序・接続の記述も図と一致する。公開候補図だけで変換の対応を理解できる。",
+        "出典: 独立した外部主張はなく、officialReferenceUrls が空であることは妥当。問題PDF・解答PDFの URL は令和6年8月18日実施分（20240818_ch_third_q01 / a01）を指している。"
+      ]
+    },
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（p.15, T1-R 018）の『電気計器に関する記述として，正しいものを次の(1)〜(5)のうちから一つ選べ。』と一致する。",
+        "選択肢: (1) クランプメータ（磁界が打ち消し合うように電線1本のみ）、(2) 電子電圧計（増幅器＋可動コイル形、内部抵抗が小さく、数μVから100V程度）、(3) ホイートストンブリッジ、(4) 接地抵抗計→絶縁抵抗、(5) 絶縁抵抗計→接地電極と大地間。5肢とも原図の語句・数値・単位（μV, V）と一致する。",
+        "公式正答: 公式解答表の令和6年度上期・理論・問14 = 3。manifest の正答単位 {question:14, part:null, answer:'3'} と候補の officialAnswer '3' が一致する。",
+        "総合解説・各肢の理由を確認した: (1) 1本だけをクランプするのは磁界を打ち消さないためであり、『打ち消し合うように』という理由付けが誤り。往復線を一括してクランプすると磁界が相殺され、漏れ電流の検出に使われる、という補足も正しい。(2) 電子電圧計は増幅器を前置するため入力インピーダンスが大きく、『内部抵抗が小さく』が誤り。(3) ブリッジの平衡条件から未知抵抗を精密に測れるので正しい。(4)(5) 接地抵抗計と絶縁抵抗計の役割が入れ替わっているので誤り。各肢固有の誤り箇所を特定できており、正答肢の理由とも矛盾しない。",
+        "図: 原図に図はない。候補も figureUrls が空で、figureDescription も『図なし』と記述しており整合する。",
+        "出典: 解説は標準的な計器原理の範囲で、独立した外部主張はない。officialReferenceUrls が空であることは妥当。問題PDF・解答PDFの URL は令和6年8月18日実施分を指している。"
+      ]
+    }
+  ]
+}

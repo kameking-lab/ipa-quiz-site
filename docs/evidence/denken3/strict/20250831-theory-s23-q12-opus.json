@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4200,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15318,
+      "webSearchRequests": 0,
+      "costUSD": 0.20680779999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2624,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "eeb7cbefa4c1419ca7db5d6d4db262a79f69e8526c2d27d75b32a720a16bd7ad",
+  "inputRequestSha256": "b020401068c355710250ef297a55f9c8cc73cb7d59197a7aa2e34f8b2884804c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "8a5b630fc717ecfb907e83268f891ef02fed76927132f9b587238708010cd500"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "401249874076d5a2b6ea42e6a4f28accedfd38698fb6a010b958397cb2f32262"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "(ウ)の解説は「電極Pは電極Kより2000V高電位である」と書いている。これは問題文の前提（初速度0の電子がPに達する）から導いたもので、推論としては正しい。ただし図中の直流電源記号の極性（長線・短線がK側とP側のどちらにあるか）と照合した記述がない。figureDescriptionにも極性が書かれていないため、図と解説の整合を候補JSONの中で検証できない。原図で極性を確認し、図の向きと一致すると明記する必要がある。W=eVの値（3.2×10⁻¹⁶ J）は電位差の大きさだけで決まるため、正答と数値には影響しない。"
+      ],
+      "figureIssues": [
+        "figureDescriptionは直流電源を「2本の平行な縦線による電池記号」とだけ書いており、どちらの縦線が長いか（正極・負極の向き）を記述していない。電池記号の極性は図の向きに関わる情報で、解説の「P側が高電位」という主張と対応する。原図・公開候補図で長線と短線の位置を確認し、どちらの極が電極K側・電極P側につながるかを記述に加えること。確認できない場合はuncertaintyに記録すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図（PDF第15頁、印刷頁-12-）と照合し、6 mm、2 000 V、V/m、運動エネルギーW、J、e=1.6×10⁻¹⁹ C、電界一様の但し書き、設問文がすべて一致した。",
+        "選択肢：原図の表と照合し、(1)3.3×10²・光電子・1.6×10⁻¹⁶、(2)3.3×10⁵・熱電子・1.6×10⁻¹⁶、(3)3.3×10²・光電子・3.2×10⁻¹⁶、(4)3.3×10²・熱電子・1.6×10⁻¹⁶、(5)3.3×10⁵・熱電子・3.2×10⁻¹⁶ の5肢すべてが一致した。",
+        "公式正答：令和7年度上期解答表の理論・問12は解答5、配点5。候補のofficialAnswer=5、scoringPoints=5と一致した。",
+        "検算：E=2000/(6×10⁻³)=3.33×10⁵ V/m≒3.3×10⁵ V/m。W=eV=1.6×10⁻¹⁹×2000=3.2×10⁻¹⁶ J。eEdによる別解も同じ値になる。加熱で放出されるのは熱電子。よって(5)が唯一の正しい組合せ。",
+        "各肢の解説：(1)は3要素とも誤り（2000÷6=333はV/mm相当）、(2)は(ウ)のみ誤り、(3)は(ア)(イ)が誤り、(4)は(ア)(ウ)が誤り。いずれも正しく、各肢に固有の理由が書かれている。",
+        "公開候補図：原図の回路図部分を過不足なく切り出している。電極K、電極P、ヒータ、6 mmのラベル、両矢印、黒丸3個、電池記号、接地記号がすべて含まれ、選択肢の表は写り込んでいない。",
+        "figureDescription：電極Kは左に開いたコの字形で、ヒータは内側にあり、引出線2本は開放端。6 mmは対向面間の寸法。K側の黒丸は下辺中央付近（右縦辺より左）にあり、そこから導線が下へ伸び右へ折れて電池の左端に接続する。P側は下端の黒丸から導線が下へ伸び、分岐点で電池の右端と接地に接続する。以上の接続・位置関係はすべて原図と一致した（電池の極性記述だけが欠けている）。",
+        "メタデータ：fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory、reviewedFromPage=[15]、問題PDF・解答PDFのURL、sourceAttribution（令和7年度上期 理論 問12）がmanifestと一致した。",
+        "officialReferenceUrlsは空で、検証が必要な外部の独立主張はない。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3324,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14759,
+      "webSearchRequests": 0,
+      "costUSD": 0.18481579999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1575,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "358e536c79e48b3187b42d5632ec7ff032832903cfba3b472f10542017f78180",
+  "inputRequestSha256": "3e6f897b7982586b6fbf0a66bec38aa1e08b9e9241f62e445f80e3e7bddc516b",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "65447e9d78de5987028b46f89a761c3872b40453173eeb9f9696056ef1f57135"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p12.png": "6d1d584394c15bba56e9a3a4d3a623820e6f4b3631af0aba394bd84018c5505c"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "25d7fdab42d5616f44a79c30bcfcde29933af83724a3ec307daf663d686b873b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[4] の「V̇₂′=a・V̇₂（ア=a），İ₂′=(1/a)・İ₂（イ=1/a）は理想変圧器の巻数比の定義そのもの」は因果として不正確。巻数比の定義は a=N₁/N₂ だけである。V̇₁/V̇₂=a は、両巻線が同一の主磁束と鎖交し誘導起電力が巻数に比例すること（ファラデーの法則）から導かれる。İ₁/İ₂=1/a は、起磁力の平衡 N₁İ₁=N₂İ₂（励磁電流を無視）から導かれる。総合解説の「理想変圧器の関係から」と整合するよう、『巻数比 a=N₁/N₂ と理想変圧器の電圧・起磁力の関係から導かれる』などに修正すること。",
+        "choiceExplanations[4] 末尾の「すべての項が電磁気的な導出と整合するため，これが公式解答である」は、正誤の根拠と公式正答の事実を混同している。『すべての空欄が導出結果と一致するので正しい。公式正答も(4)である。』のように、両者を分けて記述すること。",
+        "総合解説の第2段落だけが読点「、」を使い、語間の表記も詰まっている（例:「任意の二次側インピーダンス要素Zを流れる電流İ₂に」）。他の段落は「，」を使っているため、句読点と表記を統一すること（内容上の誤りではない）。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（問題PDF第12頁、ページ下部の印字は『T1-K 012』と『- 9 -』）の問8本文と候補の question を照合した。導入文、巻数比 a=N₁/N₂ の定義、V̇₂′・İ₂′・r₂′・x₂′・Ż_L′ の5定義式と空欄(ア)〜(オ)の位置、ダッシュ記号の但し書き、設問文が一致した。ドット記号（V̇, İ, Ż）と添字 L の表記も一致した。",
+        "選択肢表を原図と行ごとに照合した。(1) 1/a, a, 1/a², 1/a², a²、(2) 1/a, a, a², a², a、(3) a, 1/a, 1/a², 1/a², 1/a²、(4) a, 1/a, a², a², a²、(5) 1/a, a, 1/a², 1/a², 1/a²。いずれも候補 choices と一致した。",
+        "公式解答表（令和6年度上期、〈機械〉列）の問8は『4』。これは manifest 固定の公式正答単位 answer=\"4\" および候補の officialAnswer=\"4\" と一致する。",
+        "総合解説の計算を検算した。V̇₂′=aV̇₂、İ₂′=İ₂/a であるから、Z′=V̇′/İ′=(a·Z·İ₂)/(İ₂/a)=a²Z となる。r₂′=a²r₂、x₂′=a²x₂、Ż_L′=a²Ż_L であり、(a, 1/a, a², a², a²) は選択肢(4)と一致する。計算に誤りはない。",
+        "誤答肢(1)(2)(3)(5)の固有理由を検証した。(1)はア・イの入替えとウ・エ=1/a²が誤りで、オ=a²は正しい。(2)はア・イの入替えとオ=aが誤りで、ウ・エ=a²は正しい。(3)はア・イは正しく、ウ・エ・オ=1/a²が誤り。(5)はア・イの入替えとウ・エ・オ=1/a²が誤り。いずれも原図の表記と整合し、正しく記述されている。",
+        "図の要否を確認した。原図に回路図はなく、穴埋め式と選択肢表のみである。問題は候補のテキストだけで解答可能なので、figureUrls=[] と choiceFigureUrls={} は妥当である。figureDescription の『回路図などは本ページに存在しない』も原図と一致する。",
+        "出典メタデータを manifest と照合した。fiscalYear=2024、term=upper、examDate=2024-08-18、subject=machinery、reviewedFromPage=[12]、問題PDF URL（20240818_ch_third_q03.pdf）、解答PDF URL（20240818_ch_third_a01.pdf）、sourceAttribution（令和6年度上期 機械科目 問8）がすべて一致した。",
+        "officialReferenceUrls は空配列である。外部参考資料に依拠する独立主張はなく、外部確認事項はない。"
+      ]
+    }
+  ]
+}

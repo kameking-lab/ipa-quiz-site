@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20260322",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3990,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13955,
+      "webSearchRequests": 0,
+      "costUSD": 0.19170379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2277,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5ac2fed4486916e1285b8dbe67395b23e2894b0b1d710f470df3607d4c628e9a",
+  "inputRequestSha256": "fed9a6f8bbc8dd326b9ddd0085d1b2c33fdd91e28ffaefd1267c304bc6d77da3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "f82f9462d39ab800800ca5255272e2ed7d36beef8477d42c4c1c284f310d4575"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20260322/power/p16.png": "c66d410d45a15bc50aa3859442535674fca327511c18428fdb3780d0cf323a08"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+    "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+    "officialAnswerUnitsSha256": "97c21f64d6ba5cd59a0c133ece2b936489e9a07824b47e37615dc3e2aa9088c1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[5]は「40は増設負荷の有効電力P′であり皮相電力ではない」とだけ述べている。しかし40 kV·A(力率0.6)の負荷は、コンデンサで合成力率0.8にすれば合成P=144 kW、合成S=180 kV·A≦200 kV·Aとなり、実際に増設可能である。したがって(5)が誤りになる根拠は「単位の取り違え」だけでは不十分である。本問の「増設できる負荷」は定格容量まで使い切る最大値を問うている、という読みを明示し、40 kV·Aは可能ではあるが最大値ではない、と理由を補う必要がある。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「変圧器の定格容量200 kV·Aまで負荷をかけ」ると天下り的に置いており、「増設できる負荷」を最大増設量と解釈する理由を本文で示していない。この前提はuncertaintyにしか書かれていない。解説本文に次の2点を明記すべき。(a)定格容量の範囲内で増設できる上限は、合成皮相電力=200 kV·Aのときに決まる。(b)この上限を下回る値(例: 40 kV·A)も物理的には増設可能だが、問われているのは最大値である。",
+        "改善後の無効電力を Q = 200 × 0.6 としているが、sinθ = √(1 − 0.8²) = 0.6 の導出が省かれている。既設負荷側では sinθ を明示しているので、これと対称に明記するのが望ましい(計算結果自体は正しい)。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの「原本ページからは試験年度・科目名を特定できないため、一次資料URLは記載していない」は、候補自身のメタデータと矛盾する。候補にはsourceQuestionPdfUrl・sourceAnswerPdfUrlが記載済みで、fiscalYear/term/examDate/subjectもmanifest(2025年度下期・2026-03-22・電力)で確定している。古い記述が残っていると判断されるため、削除または修正が必要。",
+        "上記の矛盾する記述と最大値前提の曖昧さの注記がuncertaintyに残っているにもかかわらず、needsReview=falseになっている。修正後に整合させること。"
+      ],
+      "verifiedEvidence": [
+        "問題文: 添付原図(印刷頁 -13-、フッタ T2-D 016)と一字一句照合した。数値200 kV·A・120 kW・遅れ力率0.6・改善後0.8、記号P・cosθ・S′、単位[kV·A]はいずれも一致した。「最大」の語が原文にないことも確認した。",
+        "選択肢: (1)93.3 (2)120 (3)66.7 (4)160 (5)40 が原図と一致した。",
+        "公式正答: 公式解答表「令和7年度 第三種電気主任技術者下期試験解答」の電力列・問13は解答3・配点5である。候補のofficialAnswer=\"3\"、scoringPoints=5と一致した。",
+        "メタデータ: fiscalYear=2025(令和7年度)、term=lower、examDate=2026-03-22、subject=power、問題/解答PDF URL、reviewedFromPage=[16]はいずれもmanifestと一致した。原図の印刷頁番号13とPDF第16頁が異なることはmanifestの記載どおりで、問題はない。sourceAttributionの記載も整合する。",
+        "計算の検算: 既設負荷は S₁=120/0.6=200 kV·A、Q₁=200×0.8=160 kvar。改善後の合成は P=200×0.8=160 kW、Q=200×0.6=120 kvar。増設分は P′=40 kW、S′=40/0.6=66.67 kV·A、Q′=53.33 kvar。必要なコンデンサ容量は Qc=160+53.33−120=93.33 kvar。合成は √(160²+120²)=200 kV·A、力率0.8。すべて正しい。",
+        "誤答肢の由来: (1)93.3=Qc、(2)120=既設P・改善後Q、(4)160=改善後P・既設Q₁、(5)40=P′。いずれの数値関係も正しいことを確認した。(1)の93.3 kV·Aを増設すると P=176 kW>160 kWとなり、定格を超えるため不可である。",
+        "図: 原図頁に図はなく、figureDescription・figureUrls空・choiceFigureUrls空は妥当。officialReferenceUrlsは空で、独立主張はない。"
+      ]
+    }
+  ]
+}

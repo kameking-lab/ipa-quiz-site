@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3252,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14025,
+      "webSearchRequests": 0,
+      "costUSD": 0.1775038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1781,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "cf1a5a6afa5bbbbbf1865a8a413a904a56c99beedd7598f5d7f6b41bf01faf3e",
+  "inputRequestSha256": "ff7300d0521d4dc64804aa611dd19ea01a7c956e70dff3dfc23fa160e2a2664c",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "154de8e9cdd41dab575fa8559e6782b9a8d69ce0064786ed13cc9ce8a5959b45"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p04.png": "72bc4af39cf6dc628296f245bfd4ca4b925ff68a272c2831603070a87c95354b"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "ede5a6c9b946b89ca7e631c8cee0d4d3531929f8ffbb96c1c4e69ce7b4cc71d8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty フィールドがメタデータと矛盾している。uncertainty は「問題原図には試験の実施年度・回および試験日の記載がなく，本データでは年度・回・試験日を特定していない」と述べる。しかし同じ JSON 内で fiscalYear=2025、term=upper、examDate=2025-08-31 を設定し、sourceAttribution も「令和7年度上期」と明記している。年度・回は添付した公式解答表原図の表題「令和7年度 第三種電気主任技術者上期試験解答」（電力 問1=2）で裏付けられる。そのため、uncertainty の記述を実態に合わせて修正する必要がある。",
+        "examDate=2025-08-31 は、添付した問題原図にも公式解答表原図にも記載がない。根拠は sourceQuestionPdfUrl／sourceAnswerPdfUrl のファイル名接頭辞「20250831」だけであり、添付原頁では検証できない。試験日を記載した公式資料の原頁で確認するか、未検証である旨を uncertainty に残すこと。"
+      ],
+      "verifiedEvidence": [
+        "問題文：原図の問1本文（P=ρgQH、H[m] 有効落差、Q[m³/s] 流量、g=9.8 m/s²、ρ=1 000 kg/m³、Pa/N/W/J の定義、単位積 kg/m³·m/s²·m³/s·m、空白（ア）〜（オ）の配置と反復箇所、P=9.8QH[（オ）]、設問文）と、語句・数式・単位が一致する。",
+        "選択肢：原図の表の全25セルと一致する。(1) kg·m/Pa/W/J/kJ、(2) kg·m/s²/N/J/W/kW、(3) kg·m/s²/Pa/J/W/kW、(4) kg·m/N/J/W/kW、(5) kg·m/s²/N/W/J/kJ。",
+        "公式正答：公式解答表原図の＜電力＞列で問1=2・配点5。manifest 固定値 {question:1, part:null, answer:\"2\", points:5} と officialAnswer=\"2\"、scoringPoints=5 が一致する。",
+        "総合解説の検算：m の指数 −3+1+3+1=2、s の指数 −2−1=−3 から kg·m²/s³ となる。これは (kg·m/s²)·(m/s) なので（ア）=kg·m/s²。F=ma より（イ）=N、N·m=J より（ウ）=J、J/s=W より（エ）=W。ρg=9 800 から P=9 800QH[W]=9.8QH[kW] となり（オ）=kW。以上から正答は (2) で、公式正答と整合する。",
+        "肢別解説：(1) kg·m では kg·m²/s となり不一致。Pa は圧力、W と J は取り違え、kJ は不適。(3) は（イ）Pa のみ誤り。(4) は（ア）kg·m のみ誤りで、（イ）〜（オ）は正しい。(5) は（ウ）（エ）の入れ替えと（オ）kJ が誤り。いずれも表の内容と単位の関係に照らして正確である。",
+        "図：解答に必要な回路図はない。figureDescription の「5行×5列の表（列見出し（ア）〜（オ）、行見出し(1)〜(5)）」は原図と一致し、表の全内容が choices に反映されている。figureUrls・choiceFigureUrls が空であることに問題はない。",
+        "出典：問題原図の見出しは「第3種 電力 A問題」で、印刷頁は「-1-」。フッターの「T1−D 004」は reviewedFromPage=[4] と整合する。ただし PDF の頁番号そのものは原図上で直接確認できない。officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

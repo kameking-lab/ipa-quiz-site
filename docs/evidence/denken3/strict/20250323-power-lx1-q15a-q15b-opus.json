@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4663,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14661,
+      "webSearchRequests": 0,
+      "costUSD": 0.2108118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2858,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "397a961ba808813021954b72eea1cbffdcb6ead05cb604756c5775f236b2a3cf",
+  "inputRequestSha256": "ecb80ae2383b662017026b33a017086a554cc6f775a74ce2ecd9d314012843ec",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "2d9a70eb6129b90f150cbed928334545aed81e2d6e84cf89b8f6aae808f9e508",
+      "q15b": "41bc9713a4784f8dd2ab96b15a2a897756aa5698a7057f84357cd6ab8ef84355"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p18.png": "2fe923b923dd1b8f7825942c5bf27b7769977294de13fb8763c750f8e9df7076"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "07beb363b58936874ea20e5d8da716d6b8021f33948135ba7d3563ed0d7cc2d8",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "選択肢(2)『80』の解説が他の誤答肢と同じ『約199.6 t/hと一致しない』という一般的な理由しか書いておらず、この肢に固有の誤りを示していない。80 t/h は発電端効率を考慮せず、出力をそのまま入熱量とみなした場合の値で、1 000×10³ kW × 3 600 s/h ÷ 44 000 kJ/kg ≒ 81.8 t/h となる。『効率41 %で割り忘れた値。実際の入熱量は出力の1/0.41倍必要』という固有の理由に差し替えるべき。選択肢(1)(3)(5)は誤算経路を一意に特定できないため、現行の一般的な説明は誤りではない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図(PDF第18頁、印刷頁『-15-』、フッタ『T2-D 018』)と照合した。問題文の数値はすべて原図と一致する: 1 000 MW、発電端効率41 %、重油発熱量44 000 kJ/kg、炭素85 %・水素15 %、C=12、O=16、単位[t/h]。リード文の『次の(a)及び(b)の問に答えよ』の省略と、(a)単独の設問への再構成は、意味を変えない整形である。",
+        "選択肢(1)50、(2)80、(3)120、(4)200、(5)250 が原図と一致する。",
+        "公式解答表(令和6年度下期、電力、問15(a))の正答は4。候補のofficialAnswer=4 と一致し、manifest固定の正答単位とも一致する。",
+        "検算: 1 000 MW ÷ 0.41 = 2 439.0 MW = 2.439×10⁶ kJ/s。これに3 600 s を掛けて 8.780×10⁹ kJ/h。44 000 kJ/kg で割ると 1.9956×10⁵ kg/h ≒ 199.6 t/h となり、最も近い選択肢は(4)200。総合解説と選択肢(4)の解説の数値・因果は正しい。",
+        "fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、両PDFのURL、reviewedFromPage=[18] はいずれもmanifestと一致する。図は原図にもなく、figureDescription『図なし』は正しい。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "原図(PDF第18頁)と照合した。問題文の条件(1 000 MW、41 %、44 000 kJ/kg、C 85 %・H 15 %、C=12、O=16)と、設問『1日に発生する二酸化炭素の重量の値[t]』は原図と一致する。",
+        "選択肢(1)9.5×10³、(2)12.8×10³、(3)15.0×10³、(4)17.6×10³、(5)28.0×10³ が原図と一致する。",
+        "公式解答表(電力、問15(b))の正答は3。候補のofficialAnswer=3 と一致し、manifest固定の正答単位とも一致する。",
+        "検算: 1 000×10³ kW × 3 600 s/h = 3.6×10⁹ kJ/h。これを 0.41×44 000 = 18 040 kJ/kg で割って 199.6×10³ kg/h。炭素は 199.6×0.85 = 169.6 t/h。CO₂ は 169.6×44/12 = 622.0 t/h。24 h で 14.93×10³ t となり、最も近い選択肢は(3)15.0×10³。水素がCO₂を生じないという記述も正しい。",
+        "誤答肢の検算: (1) 169.6×28/12×24 = 9.50×10³ で、COとして計算した値に一致する。(4) 199.6×44/12×24 = 17.56×10³ で、炭素比率0.85を掛け忘れた値に一致する。(2) 12.8/14.93 ≒ 0.857 で、『約14 %小さい』は正しい。誤算経路を断定しない記述は誠実で、断定できる経路は見当たらない(0.85を二重に掛けると12.7×10³となり一致しない)。(5) 28.0/14.93 ≒ 1.88 で、『約1.9倍』は正しい。",
+        "fiscalYear、term、examDate、subject、両PDFのURL、reviewedFromPage=[18] はいずれもmanifestと一致する。図はなく、officialReferenceUrls は空。"
+      ]
+    }
+  ]
+}

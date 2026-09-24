@@ -1,0 +1,94 @@
+{
+  "questionNumber": 4,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "日本において将来に向けた検討がなされている新型炉に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "高速増殖炉では，ウラン238が速度の遅い熱中性子を吸収して核分裂を起こし，プルトニウム239に転換される。",
+        "2": "高速増殖炉では，燃料の核分裂により消費したプルトニウム239の量より多くのプルトニウム239が生成される。",
+        "3": "高温ガス炉では，不活性なヘリウムガスを冷却材，黒鉛を減速材として使用する。",
+        "4": "核融合炉では，ウランなどの核分裂物質ではなく，軽い原子である水素やヘリウムの核融合反応を利用する。",
+        "5": "核融合炉では，プラズマ状態にした重水素の原子核をきわめて高速で衝突させて，核融合反応を利用する。"
+      },
+      "officialAnswer": "1",
+      "explanation": "誤っているのは(1)である。高速増殖炉は、その名のとおり減速材を用いず、速度の速い「高速中性子」を利用する原子炉である。ウラン238がプルトニウム239に転換される過程は核分裂ではなく中性子捕獲であり、次のように進む。\n\n²³⁸U + n → ²³⁹U →(β⁻崩壊)→ ²³⁹Np →(β⁻崩壊)→ ²³⁹Pu\n\nしたがって(1)は、「熱中性子」という中性子の種類と、「核分裂を起こし」という反応の種類の2点で誤っている。核分裂を起こした原子核は分裂して別の核種になるため、その原子核がプルトニウム239に転換されることもない。\n\n(2)〜(5)は、高速増殖炉の増殖、高温ガス炉の冷却材・減速材、核融合炉の原理について、いずれも正しい記述である。",
+      "choiceExplanations": {
+        "1": "誤り（正答）。高速増殖炉で利用するのは減速されていない高速中性子であり、熱中性子ではない。また、ウラン238は中性子を吸収（捕獲）してウラン239となり、2回のβ⁻崩壊（ウラン239→ネプツニウム239→プルトニウム239）を経てプルトニウム239に転換される。この転換は核分裂ではない。",
+        "2": "正しい。高速増殖炉では、プルトニウム239の核分裂で生じた高速中性子を、炉心周囲などに配置したウラン238に吸収させてプルトニウム239を生成する。消費した核分裂性物質より多くの核分裂性物質を生成できる（増殖比が1を超える）ことが「増殖炉」の名の由来である。",
+        "3": "正しい。高温ガス炉は、化学的に不活性なヘリウムガスを冷却材に、黒鉛を減速材に用いる。ヘリウムは燃料や炉心材料と反応しにくく、黒鉛は耐熱性が高いため、高温の出口ガス温度が得られる。",
+        "4": "正しい。核融合炉は、重い原子核が分裂する核分裂反応ではなく、軽い原子核どうしが融合する核融合反応で生じるエネルギーを利用する。燃料の中心は水素の同位体（重水素・三重水素）であり、重水素とヘリウム3の反応なども研究対象となっている。",
+        "5": "正しい。原子核どうしは正電荷で反発し合うため、燃料を超高温のプラズマ状態にし、重水素などの原子核をきわめて高速で衝突させて反発力に打ち勝たせることで核融合反応を起こす。"
+      },
+      "figureDescription": null,
+      "officialReferenceUrls": [],
+      "uncertainty": "選択肢(4)の「水素やヘリウムの核融合反応」について補足する。主な燃料として検討されている重水素・三重水素（D-T）反応では、ヘリウム4は燃料ではなく生成物である。燃料としてのヘリウムはヘリウム3（D-³He反応）を指すと解される。公式正答では、(4)は正しい記述として扱われている。",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q02.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2723,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.1291958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1152,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "dba89ef18444bce93c361c5b8e80e78b2823cac522cc80ef5283b8371fc6faf5",
+  "inputRequestSha256": "524b5bbfafc381b9ef61826bd2c8fc60b3e62db67fb40a96e7ac2c29cd0bd927",
+  "sourceQuestionPdfSha256": "9733341a0f293f068c9a665d5a9a90f1aabf3a2db5d79cd530643cdea241f7b7",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/power/p07.png": "1a1cdc6be1ccc3ffe7c87f55e8935a978725d7913304a13c36c02819e8579151"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2098,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12243,
+          "webSearchRequests": 0,
+          "costUSD": 0.1401678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 639,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6fa8d5b84cb5d304dfe330fdac033076d70309854ccb871c2c1e24fde0f2b6c2",
+      "inputRequestSha256": "0a3d4164d512f7440fd1eb344f43f2fcce2af0e23e618845afc9e706b7d1331f",
+      "previousDraftSha256": "9d3a12f582daff728260f5c934dbf1459c56c06a22e3749897b87438dd1598df",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/power/archive/q04-vision-draft-v1.json",
+      "answeredReviewSha256": "0b054743b2f69f708a1c4e5e566cc060a9f326503462a9ea2700002cf2bea71e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/power/archive/q04-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20260322-power-s1-q04-opus.json",
+      "answeredStrictReceiptSha256": "23226f0d7e73681baf177e34789197e0d0bce4bb7e4f52743b3620d8930643da",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

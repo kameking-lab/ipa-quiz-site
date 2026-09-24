@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1910,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13650,
+      "webSearchRequests": 0,
+      "costUSD": 0.1476638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 678,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5f3f3720566560e7b95f0af954de8862699b26a6ba44d3ab9dd22467e2abea22",
+  "inputRequestSha256": "eafb477a8a61ed96097072c226b5b0ed2b35a2c196288cc21505c52c79c85c01",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "d6510902c584e19423f4254bf1da8c76ba1e83a09fc8fdcdc6c12116dfc38e4d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p16.png": "2a49c882d0eb81126e2caee05ba53c675bb738c04580d33e0a733fbe157561bc"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a005b6c80d3cfafce1793b0e054fff5b3f2757024ee0fdfd2804adc8ef398ed0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 公式原図のフッター「T2−K 016」と manifest の PDF 第16頁が一致し、reviewedFromPage=[16] と合っている（冊子の印刷頁番号は「-13-」）。fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery は manifest と一致する。sourceQuestionPdfUrl と sourceAnswerPdfUrl も manifest の URL と一致する。sourceAttribution の「令和6年度下期 機械科目 問13」も正しい。",
+        "問題文: 原図の柱書と本文（PID制御、積分動作は主として（ア）特性の改善に、微分動作は（イ）特性の改善に有効、（ウ）動作は両方の特性をともにある程度改善、ディジタル処理の一文）を照合した。設問文「空白箇所(ア)〜(ウ)に当てはまる組合せとして、正しいものを次の(1)〜(5)のうちから一つ選べ」まで全文が一致する。違いは句読点「，」を「、」に変えた整形だけで、意味は変わらない。",
+        "選択肢: 原図の表と全5肢を照合し、すべて一致した。(1) 定常/過渡/加算、(2) 定常/過渡/比例、(3) 過渡/定常/比例、(4) 過渡/定常/加算、(5) 定常/過渡/減算。",
+        "公式正答: 公式解答表（令和6年度下期）の〈機械〉問13は「2」。officialAnswer=\"2\" は公式正答単位 {question:13, part:null, answer:\"2\"} と一致する。",
+        "総合解説: 積分動作は定常偏差を除去するので定常特性の改善、微分動作は変化率に応じた先行補正で振動を抑えるので過渡特性の改善、比例動作は定常偏差を低減し応答を速めるので両特性をある程度改善、という因果はいずれも正しい。PID の式 u = Kp·e + Ki∫e dt + Kd·de/dt も標準的な並列形として正しい。結論の（ア）定常・（イ）過渡・（ウ）比例 → (2) は公式正答と一致する。",
+        "各肢の解説: (1) と (5) は（ウ）の「加算」「減算」が PID を構成する制御動作ではないことを誤りの理由としており、正しい。(3) は（ア）と（イ）が逆である点を指摘し、（ウ）の比例は正しいと区別しており、正確である。(4) は（ア）（イ）の逆転と（ウ）の誤りの二重誤りとしており、正確である。(2) は3つの空欄それぞれの根拠を示していて妥当。",
+        "図: 原図には選択肢表しかなく、回路図やブロック線図はない。figureUrls=[] と choiceFigureUrls={} は妥当で、選択肢表はテキスト化された choices で完全に再現されている。",
+        "参照: officialReferenceUrls は空。解説は設問内の PID 制御の一般論だけで完結しており、外部参照で検証すべき独立した主張はない。"
+      ]
+    }
+  ]
+}

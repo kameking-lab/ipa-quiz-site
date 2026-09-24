@@ -30,7 +30,10 @@ export type Session =
   | "kamoku-a"
   | "kamoku-b"
   | "gakka"
-  | "riron";
+  | "riron"
+  | "denryoku"
+  | "kikai"
+  | "houki";
 
 export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "may" | "september" | "january";
 
@@ -47,6 +50,14 @@ export interface Question {
   year: number;
   season: Season;
   qNumber: number;
+  /** 枝問。問番号と併せて一意のURL・復帰位置を構成する。 */
+  part?: "a" | "b";
+  /** 電験三種の公式公表単位。画面の年度・期と検証台帳を照合する。 */
+  fiscalYear?: number;
+  term?: "upper" | "lower";
+  examDate?: string;
+  subject?: string;
+  officialAnswerNumber?: string;
   type: QuestionType;
   category: string;
   topicTags: string[];
@@ -57,6 +68,8 @@ export interface Question {
   explanation: string;
   /** 正解・不正解を各選択肢ごとに説明する。公開パイロットでは必須。 */
   choiceExplanations?: Partial<Record<ChoiceKey, string>>;
+  /** 全肢解説と公式正答のみの一般解説を区別する。 */
+  explanationCoverage?: "full" | "official-summary";
   /** 図を含む選択肢。文字起こしした選択肢と同じキーに結び付ける。 */
   choiceImageUrls?: Partial<Record<ChoiceKey, string>>;
   modelAnswer?: string;

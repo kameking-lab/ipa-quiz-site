@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4293,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16141,
+      "webSearchRequests": 0,
+      "costUSD": 0.2152518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2843,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3f0c5a04f92f4be32b1d5f869b2bf160204ac3095220b2297247bb8c6cde8679",
+  "inputRequestSha256": "d6ba485355f2307628e325c4d1b7322799c86670c8e9347a3f7ea6ec0ec537de",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "af757344efb3ba7f3f12c1bece2198bedf1a2f7f1404cb63a3e7bdec9a1784eb"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p16.png": "e2b6e3bb7bec1a5157f7c8f4c1ba57224e8e1e7d7801f59a9e7633731f3d612f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q13-fig1.png": "dd288283bdbc5ebf6223d7512f3669ab6f3a9bcc423410bf78efa5d41669bb17"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "88626c84eff8b6e21617dcd0a6ad4f317a7811cfe8b4136958bf4ff886fe9a33",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図の問13本文（I_B = 40 μA，V_CE = 6 V，h_fe（又はβ），出力インピーダンス 1/h_oe（又は r0）の値[Ω]，組合せとして正しいもの）と候補の文言・記号・単位が一致する。",
+        "選択肢: 原図の表 (1) 80/30 000，(2) 100/10 000，(3) 100/20 000，(4) 200/10 000，(5) 200/20 000 と候補の choices 1〜5 が全肢一致する。",
+        "公式正答: 令和7年度上期解答表の理論 問13 は解答 2・配点 5。manifest 単位 {question:13, part:null, answer:'2', points:5}、候補の officialAnswer '2' と scoringPoints 5 が一致する。",
+        "図の読み取り: V_CE = 6 V の格子線上で 20/40/60/80 μA の曲線はそれぞれ約 2.0/4.0/6.0/8.0 mA を通る。I_B = 40 μA の曲線は屈曲点直後（V_CE ≒ 1.2 V）で約 3.5 mA、V_CE = 10 V で約 4.4 mA を通る。原図・公開候補図の両方で確認した。",
+        "h_fe の検算: ΔI_C/ΔI_B = (6.0−2.0) mA / (60−20) μA = 100。40→60 μA でも (6.0−4.0) mA / 20 μA = 100 となり一致する。直流比 I_C/I_B = 4.0 mA / 40 μA = 100 と明記した補足も正しい。",
+        "1/h_oe の検算: I_B = 40 μA の直線部分で h_oe = (4.4−4.0) mA / 4 V = 1.0×10⁻⁴ S なので、1/h_oe = 10 000 Ω。1.2 V→10 V の区間では 0.9 mA / 8.8 V ≒ 1.02×10⁻⁴ S となり一致する。20 000 / 30 000 Ω とは明確に区別できる。",
+        "誤答肢理由の検算: (1) 80×40 μA = 3.2 mA、1/30 000 ≒ 3.3×10⁻⁵ S で 4 V あたり約 0.13 mA。(3) 1/20 000 = 5.0×10⁻⁵ S で 4 V あたり 0.2 mA。(4)(5) 200×40 μA = 8.0 mA。いずれも数値が正しく、各肢固有の不一致点（h_fe 側か 1/h_oe 側か、または両方か）を正しく指摘している。",
+        "公開候補図: 原図のグラフ部分を欠落なく切り出している。軸ラベル I_C[mA]、コレクタ電流（縦書き）、コレクタ・エミッタ間電圧 V_CE[V]、目盛 0〜10、4本の曲線とラベル（I_B = 80 μA、60 μA、40 μA、20 μA）を含む。曲線の終端（80 μA は 8 V、60 μA は約 9 V、40 μA は 10 V、20 μA は 10 V 超）も原図と一致し、解答に必要な読み取りは公開候補図だけで完結する。選択肢表は choices に記載されている。",
+        "figureDescription: 軸・格子・ラベル・各曲線の立ち上がりと直線部分の読み取り値が図と整合する。補助破線の本数を断定していない点は uncertainty に明記されている。",
+        "出典: 原図フッター『T1－R 016』は reviewedFromPage [16] と整合する（印刷頁番号 -13- は PDF 頁ではない）。officialReferenceUrls は空で、検証を要する独立主張はない。"
+      ]
+    }
+  ]
+}

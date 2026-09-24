@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6037,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 18172,
+      "webSearchRequests": 0,
+      "costUSD": 0.29412879999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3976,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "52b679ca5eab59f1d7bd6c8eedd01a8564ae29e163afa162432afeec70cc2b3a",
+  "inputRequestSha256": "0f3fe537c6f63774d9ae10cb5dbcee061c444d3c62f1fda9e15c4d88fa6b3bdb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q14": "122628ebf1cf1203b5f310a89f6031914e87e32d193d9bc5e01442ccbfa24c6e",
+      "q15b": "18bb98e3d1e2cd90d5ee733e8773590e85efbfa374eff0b4ef9dccd6af670232"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p17.png": "0040151e41162e286f2a62c75a51919c0d1fca8cd8816f3e96a0cac10c76b8eb",
+      "data/raw_pdfs/denken3/review/20250323/power/p18.png": "2fe923b923dd1b8f7825942c5bf27b7769977294de13fb8763c750f8e9df7076"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "124ee7b70d47b105f07f354e24854788aa6ac1aa92c34e7ed90fd242c5d0cf4a",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The stem matches the official original page word for word: 送電線路及び配電線路で導電材料として利用される銅に関する記述として，誤っているものを…一つ選べ. The polarity is negative (asks for the incorrect statement), and the explanation states this.",
+        "Choices (1) to (5) match the original page word for word, including 20 ℃, 100 %, 電気銅を精製, 焼きなます, 可とう性, and CV ケーブル／架空送電線. The only difference is typography: ％ is full-width instead of half-width %.",
+        "officialAnswer=4 matches the manifest's official answer unit {question:14, part:null, answer:\"4\"}.",
+        "Technical check: hard-drawn copper is work-hardened by cold drawing, which lowers its conductivity to about 97 %IACS. Annealing removes the strain and brings conductivity back to about 100 %IACS. So '導電率は低くなる' in (4) is reversed, and (4) is the incorrect statement. The explanation's causal chain is correct.",
+        "The explanations for (1), (2), (3), and (5) each give a specific reason why the statement is correct. These are: silver is first and copper second; the basis is %IACS against annealed standard copper; high-purity copper is used; and flexibility favors soft copper while tensile strength favors hard copper. None contradicts the original text.",
+        "No figure is needed. figureUrls=[] and figureDescription ('no figure') are consistent with the original page.",
+        "officialReferenceUrls=[], so there are no external claims to check. The original page footer reads T2-D 017, which matches reviewedFromPage=[17]."
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "The candidate stem leaves out the premise of the official common stem, 重油専焼火力発電所が…運転しており. The numeric conditions are copied correctly, but 'burns heavy oil only' is what justifies assuming all CO2 comes from the heavy oil. Add this premise to the conditions.",
+        "The punctuation style (、 and half-width parentheses) differs from Q14 in the same batch (， and full-width ％). Consider unifying it. This is minor."
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The explanation only quotes the fuel consumption as '(a)より約199.6 t/h' and gives no derivation. Because this unit is shown as a standalone question, add the derivation: 1 000×10³ kW × 3 600 s/h ÷ (0.41 × 44 000 kJ/kg) = 3.6×10⁹ kJ/h ÷ 18 040 kJ/kg ≒ 199.6×10³ kg/h = 199.6 t/h.",
+        "The explanations for wrong choices (1), (2), (4), and (5) only say 'does not match about 14.9×10³ t' and give no reason specific to each choice. Checking against the calculation identifies the following. (1) 9.5×10³ t matches the result of using CO (12+16=28) instead of CO2: 169.6 × 28/12 × 24 ≒ 9.50×10³ t. (4) 17.6×10³ t matches the result of treating all the heavy oil as carbon and dropping the 85 % carbon fraction: 199.6 × 44/12 × 24 ≒ 17.56×10³ t. Rewrite these two with those specific reasons.",
+        "(2) 12.8×10³ t matches 199.6 × 32/12 × 24 ≒ 12.77×10³ t numerically, but the intended mistake cannot be identified uniquely. For (5) 28.0×10³ t, the source of the mistake could not be confirmed. Do not invent a mistake that cannot be verified. Instead, give the quantitative difference, for example '(5) is about 1.9 times the correct value' or '(2) is about 14 % below the correct value', and state that it does not follow from C + O₂ → CO₂."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Sub-question (b) matches the original page: 1 日に発生する二酸化炭素の重量の値[t]として，最も近いものを…一つ選べ. The common conditions also match: 1 000 MW, 41 %, 44 000 kJ/kg, C 85 %, H 15 %, C=12, O=16.",
+        "Choices (1) 9.5×10³, (2) 12.8×10³, (3) 15.0×10³, (4) 17.6×10³, and (5) 28.0×10³ match the original page exactly.",
+        "officialAnswer=3 matches the manifest's official answer unit {question:15, part:\"b\", answer:\"3\"}.",
+        "Recalculation: fuel = 3.6×10⁹/18 040 ≒ 199.56 t/h. Carbon = 199.56×0.85 ≒ 169.62 t/h. CO2 = 169.62×44/12 ≒ 621.9 t/h. Over 24 h this is ≒ 14.93×10³ t, closest to (3) 15.0×10³. The numbers and causal chain in the explanation are correct.",
+        "The explanation correctly states that hydrogen becomes H2O and produces no CO2.",
+        "No figure is needed. figureUrls=[] is consistent with the original page. The original page footer reads T2-D 018, which matches reviewedFromPage=[18].",
+        "officialReferenceUrls=[], so there are no external claims to check."
+      ]
+    }
+  ]
+}

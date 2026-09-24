@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4183,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15066,
+      "webSearchRequests": 0,
+      "costUSD": 0.2044518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2377,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "e04a98f42246302298f7d2170e1b00771249fffaa5c6099f609bf75cff1469f2",
+  "inputRequestSha256": "3532d921fd9c8d5b2904e7af499b31acc35f341e2ce2b41f028df3d3298adc42",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "4bf8dedd980ae7ddb9a2c269dc1b5f67de49ab215f2ce711a71f8095b7cacd9d",
+      "q15b": "71716ea2687dae0fce63515f4bd0777ed0afc535ca303ad39895a44f2f79c1c9"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p18.png": "4db0ed6265b5436b600bfe69ed973f943759b30daa8de2dabd2aa7a608640e55"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "65233ca3687c0be05d2a0300582d1c22d9588b5d22ba50390b5f2837e8d36978",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：公式問題原図（印刷頁 -15-，頁下コード T1－K 018）の問15本文・(a)と照合し一致。条件は『r₂′/s が r₁，x₁，x₂′ に比べて十分に大きい』。求めるのは T，s，V の関係を表す近似式。『ただし，k は定数である。』も一致。記号 r₂′，r₁，x₁，x₂′ の表記・定義も一致。",
+        "選択肢：(1) T=k/(Vs)，(2) T=k/(V²s)，(3) T=kV²/s，(4) T=kV²s，(5) T=kVs。いずれも原図と一致。",
+        "公式正答：解答表原図の＜機械＞問15(a)は解答4・配点5。manifest の answer=4，points=5 および候補の officialAnswer=4，scoringPoints=5 と一致。",
+        "総合解説の検算：1相電圧を V/√3 とし，r₂′/s が支配的な場合は I₂′≈Vs/(√3r₂′)。P₂=3I₂′²(r₂′/s)=3·V²s²/(3r₂′²)·r₂′/s=V²s/r₂′。T=P₂/ω₀ より T=kV²s（k=1/(ω₀r₂′)）。代数・因果とも正しい。",
+        "誤答肢(3)の理由を検算：リアクタンスが支配的な場合は I₂′≈V/(√3X)。P₂=V²r₂′/(X²s) となり T∝V²/s。本問の条件とは逆の領域として正しく説明されている。",
+        "誤答肢(1)(2)(5)の理由：いずれも導出結果 T∝V²s との不一致（V・s への反比例、または V の1乗）を具体的に指摘しており、正しい。",
+        "図：原図に図はなく、解答にも図は不要。figureDescription『図なし』，figureUrls=[] は妥当。",
+        "出典：officialReferenceUrls=[] のため、検証を要する独立主張はない。reviewedFromPage=[18] は原図の頁下コード『K 018』と整合する（印刷頁番号は -15-）。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図の(b)と照合し一致。条件は定格電圧 220 V、同期速度 1 200 min⁻¹。220 V・一定トルクで 1 140 min⁻¹、電源電圧を 200 V に下げたときの回転速度を問う。ただし書き『負荷トルクと二次抵抗は変化しない』も一致。冒頭の〔(a)の条件〕要約は原文(a)の条件を正確に転記しており、独立表示用の整形として内容の改変はない。",
+        "選択肢：(1)1150，(2)1127，(3)1113，(4)1091，(5)1000。いずれも原図の『1 150／1 127／1 113／1 091／1 000』と一致。",
+        "公式正答：解答表原図の＜機械＞問15(b)は解答2・配点5。manifest の answer=2，points=5 および候補の officialAnswer=2，scoringPoints=5 と一致。",
+        "総合解説の検算：s₁=60/1200=0.05。s₂=0.05×(220/200)²=0.05×1.21=0.0605。N₂=1200×0.9395=1127.4≈1127。同期速度が電圧に依存しない点、電圧低下で滑りが増える因果も正しい。",
+        "(1)の検算：(1200−1150)/1200=0.0417≈0.042。0.05×(200/220)²=0.0413 から N=1150.4 となり、電圧比を逆に用いた値として正しい。",
+        "(3)の検算：87/1200=0.0725 で s₁ の 1.45 倍。220/√1.45=182.7≈183 V となり、記述は正しい。",
+        "(4)の検算：1200×200/220=1090.9≈1091。速度が電圧に比例すると誤解した値として正しい。",
+        "(5)の検算：200/1200=0.167 で s₁ の 3.33 倍。220/√3.33=120.5≈120 V となり、記述は正しい。",
+        "図：原図に図はなく、解答にも図は不要。figureDescription『図なし』は妥当。",
+        "出典：officialReferenceUrls=[] のため、検証を要する独立主張はない。reviewedFromPage=[18] は原図の頁下コード『K 018』と整合する。"
+      ]
+    }
+  ]
+}

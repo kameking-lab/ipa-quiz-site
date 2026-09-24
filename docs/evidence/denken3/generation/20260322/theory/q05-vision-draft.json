@@ -1,0 +1,334 @@
+{
+  "questionNumber": 5,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "図のように，三つの抵抗 R₁ = 5 Ω，R₂ = 4 Ω，R₃ = 8 Ω と電圧 V [V] の直流電源からなる回路がある。抵抗 R₁，R₂，R₃ の消費電力をそれぞれ P₁ [W]，P₂ [W]，P₃ [W] とするとき，その大きさの大きい順として，正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "P₁ > P₂ > P₃",
+        "2": "P₁ > P₃ > P₂",
+        "3": "P₂ > P₁ > P₃",
+        "4": "P₂ > P₃ > P₁",
+        "5": "P₃ > P₁ > P₂"
+      },
+      "officialAnswer": "1",
+      "explanation": "R₂ と R₃ は並列で，その合成抵抗に R₁ が直列に接続されている。\n\n並列部分の合成抵抗: R₂₃ = (4 × 8)/(4 + 8) = 32/12 = 8/3 Ω\n回路全体の合成抵抗: R = 5 + 8/3 = 23/3 Ω\n電源電流（R₁ を流れる電流）: I = V ÷ (23/3) = 3V/23 [A]\n\nP₁ = R₁I² = 5 × (3V/23)² = 45V²/529 [W]\n\n並列部分の電圧: V₂₃ = I × R₂₃ = (3V/23) × (8/3) = 8V/23 [V]\nP₂ = V₂₃²/R₂ = (64V²/529)/4 = 16V²/529 [W]\nP₃ = V₂₃²/R₃ = (64V²/529)/8 = 8V²/529 [W]\n\nよって P₁ : P₂ : P₃ = 45 : 16 : 8 となり，V の値（V ≠ 0）によらず P₁ > P₂ > P₃ である。正答は(1)。\n\n（補足）並列部分では電圧が共通なので，電力は抵抗に反比例し P₂ = 2P₃ となる。また R₁ の電流 I = 3V/23 は R₂ の電流 I₂ = V₂₃/4 = 2V/23 の 1.5 倍であり，P₁/P₂ = (5 × 1.5²)/4 = 45/16 > 1 と確かめられる。",
+      "choiceExplanations": {
+        "1": "正しい。P₁ = 45V²/529，P₂ = 16V²/529，P₃ = 8V²/529 であり，P₁ > P₂ > P₃ となる。",
+        "2": "誤り。P₁ が最大である点は正しいが，R₂ と R₃ は並列で電圧が等しいため電力は抵抗に反比例し，P₂ = 16V²/529 は P₃ = 8V²/529 の 2 倍である。したがって P₃ > P₂ は成り立たない。",
+        "3": "誤り。P₂ = 16V²/529 に対し P₁ = 45V²/529 であり，P₂ > P₁ は成り立たない。R₁ には全電流 3V/23 が流れ，R₂ の電流 2V/23 より大きいことに注意する。",
+        "4": "誤り。P₂ > P₃ は正しいが，P₁ = 45V²/529 は三つの中で最大であり，P₁ を最小とする順序は成り立たない。",
+        "5": "誤り。P₃ = 8V²/529 は三つの中で最小であり，P₃ を最大とする順序は成り立たない。また P₁ > P₂ の関係自体は正しいが，全体の順序が誤っている。"
+      },
+      "figureDescription": "問題文と選択肢の間に置かれた回路図（回路のみで，選択肢は含まない）。図の範囲は，左端の電源ラベル「V[V]」から右端の抵抗ラベル「R₃ = 8 Ω」までである。左側の縦の導線上に直流電源（電池記号）があり，その左にラベル「V[V]」が付されている。電源の上側から導線が上へ伸びて上辺を右へ進み，右側の縦の枝に置かれた抵抗 R₁（ラベル「R₁ = 5 Ω」）の上端に接続される。R₁ の下端は接続点（黒丸）で，そこから真下に抵抗 R₂（ラベル「R₂ = 4 Ω」）が接続され，同じ接続点から右へ分岐した導線が下に折れて縦向きの抵抗 R₃（ラベル「R₃ = 8 Ω」）に接続される。R₂ の下端は下辺の導線上の接続点（黒丸）に，R₃ の下端は下辺の導線の右端につながり，下辺の導線は左へ進んで電源の下側へ戻る。すなわち R₂ と R₃ の並列回路に R₁ が直列に接続された構成である。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q01.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        8
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2345,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12163579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 503,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a6eb72155c79fd941e423fbfded250c51371a6b5916beca6a34989e4ce697c99",
+  "inputRequestSha256": "2b691614fe8aa36f836e3779db19ba7395ecdff5c1b8b22cd56bea51937859be",
+  "sourceQuestionPdfSha256": "c83e7c7350d98b65f5d8da0b93e4a2581a19dd250be320fb7fc492c9b34a29c1",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/theory/p08.png": "49c728a57ea4026e6274ed59a15f65d80783d9921966dd0cf910102c63867b39"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2912,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11844,
+          "webSearchRequests": 0,
+          "costUSD": 0.1532558,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1251,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "2af297c093a00e8153b9203ba9dd5d376b6a59266dd050d52318a819dfb6652c",
+      "inputRequestSha256": "86bf58a0298c058989a87c2482a84bfe37fc8c2c868a3b8b3c5107fbca0927a9",
+      "previousDraftSha256": "9df76221c213b6e8017f161682c91fafef81be4cd908ba835003f1e2e1a2fed4",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v1.json",
+      "answeredReviewSha256": "ccaa04c6a72adfa8d252f29b5658b63148f94e2cef8421ea4854a80bd41a90f2",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 2,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2691,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11675,
+          "webSearchRequests": 0,
+          "costUSD": 0.1474838,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1003,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "ce6ef802186f41b55fadf65dd76b084a100aa01666e9152a83b4db3545a07514",
+      "inputRequestSha256": "84b1387598948937616e75a0557c605b84cc3f53ecf8b6bc77a5526cf64e79d3",
+      "previousDraftSha256": "0ae0a117e15dbbf64955f528b1ee5c0c5229a43ef806fe0292bce309911303a3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v2.json",
+      "answeredReviewSha256": "63a160a53efb2fce1b4f035ca2c7c741c14ea875f2a03f288dba0f1ddb7c5c72",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v2.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 3,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2790,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11750,
+          "webSearchRequests": 0,
+          "costUSD": 0.1500638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1039,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "09e08b9aac39c18ea6d263f0e34ea2360872b776e08b86f16abdc67a109067d5",
+      "inputRequestSha256": "deb1bfb47cd60e0ab8153150969546db2a779a70f8556810b5e1d2d150c6bd14",
+      "previousDraftSha256": "2ea7046f0b6c2a799312f33a4fdc5a968ea6790ed2e336ce32f03d38cc99a86a",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v3.json",
+      "answeredReviewSha256": "64dc4a52ef4bef3a96e35c41cfc31e9ad0715c5d28da7d0fa9483504b14b884e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v3.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 4,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3022,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11746,
+          "webSearchRequests": 0,
+          "costUSD": 0.1546718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1271,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "1a856619696707011f5f34f7d8bfbb0d9c90798ace8e705651a8cc4871c64d24",
+      "inputRequestSha256": "67770a5e718bf40dc9130eefda06c04a9a5c15ec1d2d7e1e15359ffe94c4e268",
+      "previousDraftSha256": "4fdb79a646cb5d174a6815124f402a8b72745eda520614716a0458fd7b15c2f8",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v4.json",
+      "answeredReviewSha256": "7b66fbcfca2b638dbfd609a84213e3e8da41d6e2ac437a9e8f7d2c38c89a68d0",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v4.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 5,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2629,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11782,
+          "webSearchRequests": 0,
+          "costUSD": 0.1470998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 878,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "4da872432a50f136d2ae2279f4e6d473f6bc68a842bfffb3856342ca3d5a5e93",
+      "inputRequestSha256": "3698420f741c64a8fdda2638a8a613602b174ffd5fb0c6c85d85c2a2eb2583d6",
+      "previousDraftSha256": "378900e195aa11ea4e1a3be6cb2d989f93d0ac9618ba045581a8f30ae6d8fb74",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v5.json",
+      "answeredReviewSha256": "113d72a3f414014c5b2d0f6e366fe73c040b049861f7e9c7063ecc2200c666b1",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v5.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 6,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3124,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11745,
+          "webSearchRequests": 0,
+          "costUSD": 0.1567038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1302,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6d203138a96eebabcce0bae3958a5d71b6b16404d51a09e58a22daba1a003c8c",
+      "inputRequestSha256": "500781231f344d7fa965aaa9aa1224a797a1d1a3b7e485edb95910c7563ac61d",
+      "previousDraftSha256": "721172aef8862bee0fc8704ed8d7be1224e3e07a1498ba44cfa38ca8c6cc3305",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v6.json",
+      "answeredReviewSha256": "1eda1b314331cc6702e1c017ac53854cc48c4b000b6d4975d2886efc067cf6ba",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v6.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 7,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2956,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11932,
+          "webSearchRequests": 0,
+          "costUSD": 0.1548398,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1193,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6e848e156d4a1955a3ceb168a4b9b594e24aaf25293089fa0a321611474e777a",
+      "inputRequestSha256": "180aedb8d2db53b73258f894b4fdb540787f0ef9b4a87d9f0d848a6b85376971",
+      "previousDraftSha256": "95219e0f9b4697110f64e508354fa81c37036d2f649a7518d31cdb7318ae7a0c",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v7.json",
+      "answeredReviewSha256": "eab08bd3bc2933d613bde935612d1c5d878e2c2fa1ef7b3896c902fce3935316",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v7.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    },
+    {
+      "version": 8,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3187,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 11919,
+          "webSearchRequests": 0,
+          "costUSD": 0.1593558,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1377,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "6963bdef6ad71df38d4f5a62cdbe415d5ca1ee055d38dc97f1ef73bcd803feef",
+      "inputRequestSha256": "41f52f13b3840b1c2443b98216f07425468bfe1984b3906d5407a6cde2853798",
+      "previousDraftSha256": "e02ea9db35bc6ed2a98c6854d193bc2b48a88af7cee0c0ba42ab5970ecec9390",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-vision-draft-v8.json",
+      "answeredReviewSha256": "b3c12b32cfba576c2fbfb960204ab8a0f7b995c02cec0e7c6f0715a38f83b49e",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/theory/archive/q05-opus-review-v8.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {
+        "20260322-theory-q05-fig1": "331c31e1d2d82cbd49ad31e1d6da3ce2dc408937964c1e67e255fa886d082f93"
+      },
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

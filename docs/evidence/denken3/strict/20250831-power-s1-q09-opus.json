@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5160,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14944,
+      "webSearchRequests": 0,
+      "costUSD": 0.2230158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3354,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "fdd969e457ee5c47245086326b96ac5b8717df9ff9615df30f2846f7462c101c",
+  "inputRequestSha256": "4428abe72216af05aa9cb05ee35407ddecd940bb742d89a663047d532f3681b4",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "cf56bfc41d85ac5dc1d6b118bd1d5eb6a1017fde30bbf9ba33d59f4be3c4680b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/power/p12.png": "c11da27465f7c455d64e7b0a4a906fe3726e9ceb4214091c3c5cc5b187eaee92"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "567aac1df6dc0c0950d04e90a1ad03231427c518eede92559effe01e2b97a2c9",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "92f80b2c8107abde786e8ae42c1215b00cf9791c7ea0854a0986b008387c9c38",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1] の(エ)の理由「平常時に0になるのはベクトルの和であり、大きさの差ではない。」は、大きさの差も0にならないと読める。しかし平衡時は各相の電圧・電流の大きさが等しいので、大きさ同士の差は0になる。したがって、この書き方は誤解を招き、誤答理由として成立していない。誤りの本当の理由は次のとおり。誘導電圧は各相の寄与の重ね合わせ、つまり位相を含むベクトル和で決まる。大きさの差は位相情報を捨てた量なので、誘導電圧を表す量ではない。この趣旨に書き換えること。修正例:『(エ)：通信線の誘導電圧は各相からの寄与を位相も含めて重ね合わせたもの（ベクトルの和）で決まる。平衡時は各相の大きさが等しいため大きさの差も0になるが、大きさの差は位相を無視した量であり、誘導電圧を表さない。』",
+        "choiceExplanations[5] の(エ)の理由「ベクトルの差ではない」は結論の断定だけで、根拠がない。例えば Va − Vb の大きさは √3|V| であり、0にならない。また、誘導電圧は重ね合わせなので和で表される。この根拠を1文追記すること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式問題原図（印刷頁「- 9 -」、T1-D 012）と照合した。導入文、①②、ねん架の段落、末尾の設問文が一字一句一致する。［(ア)］等は原図の空欄枠を表している。全角読点「，」も原図どおり。",
+        "選択肢: 原図の表の(1)〜(5)×(ア)〜(オ)の全25セルを照合し、すべて一致した。(1) 磁気誘導/誘導リアクタンス/ファラデー/大きさの差/三相短絡、(2) 静電誘導/自己インダクタンス/電磁誘導/大きさの和/1線地絡、(3) 静電誘導/相互インダクタンス/電磁誘導/ベクトルの和/1線地絡、(4) 磁気誘導/相互インダクタンス/電荷誘導/ベクトルの和/三相短絡、(5) 磁気誘導/誘導リアクタンス/ファラデー/ベクトルの差/2線地絡。",
+        "公式正答: 公式解答表の原図「令和7年度 第三種電気主任技術者上期試験解答」＜電力＞欄で、問9の解答は3、配点は5である。manifest の {question:9, part:null, answer:\"3\", points:5}、および候補の officialAnswer=\"3\"、scoringPoints=5 と一致する。",
+        "総合解説の検算(静電誘導): Vs = (CaVa+CbVb+CcVc)/(Ca+Cb+Cc+C0) は標準式として正しい。Ca=Cb=Cc=C のとき Vs = C(Va+Vb+Vc)/(3C+C0) となるので、Vs ∝ Va+Vb+Vc も正しい。",
+        "総合解説の検算(電磁誘導): Em = jωl(MaIa+MbIb+McIc) について、単位は M[H/m]×l[m]=[H] で整合する。Ma=Mb=Mc=M のとき Em = jωMl(Ia+Ib+Ic) となり正しい。平衡時は大きさが等しく120°ずつ位相がずれているので、和は0になる。",
+        "総合解説の(オ): 1線地絡時は Ia+Ib+Ic = 3I0 ≠ 0 となり、零相電圧も生じる。地絡電流による電磁誘導電圧が大きくなりやすいという記述も正しい。三相短絡は対称故障なので零相分が生じず、選択肢(1)(4)の誤答理由も妥当である。",
+        "選択肢(2)の理由（自己インダクタンスではなく相互インダクタンスであること、大きさの和は常に正で0にならないこと）、選択肢(3)(4)の理由、選択肢(5)の(ア)〜(ウ)と2線地絡に関する注記は、いずれも正確である。",
+        "図: 原図には回路図がなく、選択肢の表しかない。figureDescription の記述、および figureUrls と choiceFigureUrls が空であることは妥当である。",
+        "出典: officialReferenceUrls は空なので、独立主張の検証対象はない。sourceQuestionPdfUrl（q02＝電力）と sourceAnswerPdfUrl（a01）は、subject=power、examDate=2025-08-31 と整合する。原図の印刷頁は9で、reviewedFromPage=[12] は表紙等を含むPDFページ番号として矛盾しない。"
+      ]
+    }
+  ]
+}

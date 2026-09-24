@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4756,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14223,
+      "webSearchRequests": 0,
+      "costUSD": 0.2091678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3310,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "495ddf9848a3dbacecf5339aa8e09cb98096f071d737207401c86963f4096a3f",
+  "inputRequestSha256": "0430486d0c04a07626f3785bd07d34318265cbd5aaf50f86a5882adc69c73f1a",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "0b21741f8d178c2cb41a85a90d13f6adb31a7d96407c1c6f65755d860943d711"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p12.png": "1ac09fc4288e46111cc156ff703dae78ff40a9f2e18c6cd9137dac1f942f4265"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "d019a92c9387a6b1ff239fa86094464920a140db8e5bbfe682357868e231da8e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: manifest（2024年度下期・試験日2025-03-23・電力・問題PDF 20250323_ch_third_q02.pdf・解答PDF 2024_3_2.pdf）と候補の fiscalYear=2024, term=lower, examDate=2025-03-23, subject=power, sourceQuestionPdfUrl, sourceAnswerPdfUrl が一致。sourceAttribution の『令和6年度下期』は2024年度下期に相当。",
+        "頁: reviewedFromPage=[12] は manifest 指定のPDF第12頁と一致。原図下部の冊子頁『-9-』と整理番号『T2-D 012』とも矛盾しない。",
+        "問題文: 原図の3段落（6.6 kV配電線路と60 kV以上の送電線路の比較、1線地絡電流を(ア)するため(イ)方式、多回線配電線路の地絡方向継電器と(ウ)、低圧短絡保護の(エ)と柱上変圧器の(オ)側）と設問文を一字一句照合した。数値・単位（6.6 kV、60 kV）、語句、空欄記号(ア)〜(オ)に脱落や改変はない。",
+        "選択肢: 原図の組合せ表の全5行×5列を照合し、すべて一致した。(1)小さく/非接地/同位相/高圧カットアウト/二次、(2)大きく/接地/逆位相/ケッチヒューズ/一次、(3)大きく/非接地/逆位相/高圧カットアウト/二次、(4)小さく/非接地/逆位相/高圧カットアウト/一次、(5)小さく/接地/同位相/ケッチヒューズ/一次。",
+        "公式正答: 公式解答表の電力列で問9=4。manifest固定の正答単位 answer='4' および候補の officialAnswer='4' と一致。",
+        "総合解説: (ア)小さく・(イ)非接地は、6.6 kV系統が非接地方式で1線地絡電流を抑制するという定説と整合する。(ウ)逆位相は、地絡方向継電器が零相電圧と零相電流の位相関係で判定し、故障回線と健全回線とで零相電流の向きが逆になることを利用するという原理と整合する。(エ)高圧カットアウト・(オ)一次は、高圧カットアウトが柱上変圧器の高圧側（一次側）に設置されるという事実と整合する。結論(4)は公式正答と一致。",
+        "肢別解説: 各誤答肢の誤り箇所を検算し、すべて正確であることを確認した。(1)は(ウ)(オ)が誤り。(2)は(ア)(イ)(エ)が誤り、(ウ)(オ)は正。(3)は(ア)(オ)が誤り。(5)は(イ)(ウ)(エ)が誤り、(ア)(オ)は正。正誤の指摘に過不足はない。",
+        "ケッチヒューズの扱い: 解説はケッチヒューズを低圧側（引込線分岐など）のヒューズとし、一次側の保護装置とは組み合わないと説明している。表中で(エ)と(オ)の対応を入れ替えた誤答構成とも論理的に整合し、断定的な誤りは含まない。",
+        "図: 原図に回路図や解答に必要な図はなく、存在するのは組合せ表のみで、その内容は choices に完全に転記されている。figureUrls=[] と figureDescription『図なし』は妥当で、表の列順(ア)〜(オ)の記述も正確。",
+        "参照URL: officialReferenceUrls=[] で独立主張がないため、未検証の外部参照はない。uncertainty の記述も実態と矛盾しない。"
+      ]
+    }
+  ]
+}

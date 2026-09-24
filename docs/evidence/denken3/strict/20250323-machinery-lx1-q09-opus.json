@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2827,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13509,
+      "webSearchRequests": 0,
+      "costUSD": 0.16487580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1319,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b928d4f7840386ae841e28830f3de7671760d1a296591c31f20ae5c11cfded8a",
+  "inputRequestSha256": "dfafd51f2f97c9e309e100d1757b176c05aa26319ad3b168138515139d76c0b5",
+  "inputHashes": {
+    "candidateSha256": {
+      "q09": "f8c1203fddf23a9599e2223139a6467b86186a358a4f4a3c8c404982685e7419"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p12.png": "bfd79ed73b2dae25ef681db4fb97f5bcca8fb819f00a2fcae8bb3c305333dd8d"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "d019a92c9387a6b1ff239fa86094464920a140db8e5bbfe682357868e231da8e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q09",
+      "questionNumber": 9,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: 候補の fiscalYear=2024, term=lower, examDate=2025-03-23, subject=machinery, sourceQuestionPdfUrl=…/20250323_ch_third_q03.pdf, sourceAnswerPdfUrl=…/2024_3_2.pdf, reviewedFromPage=[12] は manifest と一致する。添付原図の下部に「T2-K 012」とあり、PDF第12頁と整合する（冊子上の印字頁は「-9-」）。解答表の表題「令和6年度 下期 第三種電気主任技術者試験解答」は2024年度下期と一致する。sourceAttribution「令和6年度下期…機械科目 問9」も整合する。",
+        "問題文: 原図と照合した。定格容量 100 kV·A、定格一次電圧 6.3 kV、特性の等しい単相変圧器2台、定格負荷時の負荷損 1 600 W、V-V結線、一次電圧 6.3 kV、90 kW の三相平衡負荷、2台の負荷損の合計値[W]、力率1の各条件は、数値・単位とも原図どおり。読点「，」→「、」の置換と改行の除去は整形の範囲で、意味は変わらない。",
+        "選択肢: 原図の (1)324 (2)432 (3)648 (4)864 (5)1 440 と、候補 choices の5肢はすべて一致する。",
+        "公式正答: 解答表の〈機械〉欄で問9は 4。manifest固定単位 {question:9, part:null, answer:\"4\"} とも、候補 officialAnswer=\"4\" とも一致する。",
+        "総合解説の検算: V結線では各変圧器の巻線電流が線電流に等しい。I=90×10³/(√3×6 300)=8.248 A、定格電流 I_n=100×10³/6 300=15.873 A、α=I/I_n=90/(√3×100)=0.5196、α²=8 100/30 000=0.27。1台あたりの負荷損は 1 600×0.27=432 W、2台合計は 864 W → (4)。因果（負荷損は電流の2乗、すなわち負荷率の2乗に比例する）も正しい。一次電圧が定格の 6.3 kV なので、電圧補正は不要。",
+        "誤答肢(1)の検算: 90/200=0.45、0.45²=0.2025、1 600×0.2025=324 W。「負荷率を合計容量で算出し、かつ1台分のみ」という誤りの説明は数値と合っている。",
+        "誤答肢(2)の検算: 432 W は正しい1台分の値で、合計を問う設問に対しては不適。説明は正しい。",
+        "誤答肢(3)の検算: 2×1 600×0.45²=2×324=648 W。説明は正しい。",
+        "誤答肢(5)の検算: 2×1 600×0.45=1 440 W で、「二乗しなかった」誤りとして成立する。「負荷損は負荷率の二乗に比例し、正しい負荷率は約0.520」という反駁も正しい。",
+        "正答肢(4)の説明: α≒0.520、α²=0.27、432 W×2=864 W で、総合解説と一致する。",
+        "図: 原図の頁には問題文と選択肢しかなく、図・回路図・表はない。figureDescription（図は不要）と figureUrls=[]、choiceFigureUrls={} は妥当。解答に図は不要。",
+        "参考資料: officialReferenceUrls=[] で、検証を要する独立主張はない。uncertainty・needsReview=false の記述は、上記の検算結果と矛盾しない。",
+        "付記（誤りではない）: choiceExplanations の(1)(3)(5)は全角「，」で空白なし、(2)(4)と総合解説は「、」で空白ありと、句読点・空白の表記が混在している。意味・正確性に影響しないため FIX 事由とはしない。"
+      ]
+    }
+  ]
+}

@@ -4,6 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
@@ -79,8 +80,8 @@ export function ExplanationCard({
             {isCorrect ? "正解!" : "不正解"}
           </span>
           <span className="text-xs text-zinc-700 dark:text-zinc-300">
-            正解: {Array.isArray(question.answer) ? question.answer.join(", ") : question.answer}
-            {selected ? ` / あなた: ${selected}` : ""}
+            正解: {Array.isArray(question.answer) ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join(", ") : choiceDisplayLabel(question.exam, question.answer as ChoiceKey)}
+            {selected ? ` / あなた: ${choiceDisplayLabel(question.exam, selected as ChoiceKey)}` : ""}
           </span>
         </div>
         <div className="flex items-start gap-1.5">
@@ -103,6 +104,12 @@ export function ExplanationCard({
           <BookmarkButton question={question} />
         </div>
       </div>
+
+      {question.explanationCoverage === "official-summary" && (
+        <p className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
+          公式正答と一般解説を掲載しています。選択肢ごとの解説は掲載していません。
+        </p>
+      )}
 
       {!isCorrect && onAnalyzeWrong && (
         <button
@@ -132,7 +139,7 @@ export function ExplanationCard({
                   : "mx-0.5 text-red-700 dark:text-red-300"
               }
             >
-              {Array.isArray(question.answer) ? question.answer.join("・") : question.answer}
+              {Array.isArray(question.answer) ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・") : choiceDisplayLabel(question.exam, question.answer as ChoiceKey)}
             </span>
             です。
           </p>
@@ -145,7 +152,7 @@ export function ExplanationCard({
           aria-label="あなたが選んだ誤答の理由"
           className="mb-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm leading-relaxed text-red-950 dark:border-red-800 dark:bg-red-950/40 dark:text-red-100"
         >
-          <h3 className="mb-1 font-semibold">あなたが選んだ「{selected}」が違う理由</h3>
+          <h3 className="mb-1 font-semibold">あなたが選んだ「{choiceDisplayLabel(question.exam, selected as ChoiceKey)}」が違う理由</h3>
           <p>{selectedChoiceExplanation}</p>
         </section>
       )}
@@ -167,7 +174,7 @@ export function ExplanationCard({
                     : undefined,
                 )}
               >
-                <dt className="font-bold text-zinc-900 dark:text-zinc-100">{key}</dt>
+                <dt className="font-bold text-zinc-900 dark:text-zinc-100">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
                 <dd className="text-zinc-700 dark:text-zinc-300">{explanation}</dd>
               </div>
             ))}

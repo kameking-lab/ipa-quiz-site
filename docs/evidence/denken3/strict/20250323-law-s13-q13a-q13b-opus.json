@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8778,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 85525,
+      "webSearchRequests": 0,
+      "costUSD": 0.8600238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5735,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "13917344d9c62c4d3fb6c7cc0f28b33ced2e0dcca736ed533a1ff571854ce198",
+  "inputRequestSha256": "75cdea818da6ba642823342634ef2a32d8d36392d174615a0954fc9270263c20",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13a": "dda3bd7abd6f5afbf7f73b1b2dfff52462f65b6396bb595389a1fc4d57061571",
+      "q13b": "2576636bc1d592eb7069b1654a7427554e4f9d1da4f9d7fc964c877f87bcd1a7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p17.png": "56357ad9495c336b7b7f24020c5fed69f0664c2c900e1c3ab508644cdf75f6fa",
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "2ff25859c4a63808bb9cb23ac40b7ea1eeeee8b5196deeec714539ccafe2bd5f",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43",
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20241022.pdf": "36e17607076ed99d7eaf3b503093c03276018f6797a2edd2bf3df28038fcb6bb"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p001.png": "3dc4686362bd456e808007aab681dc1c9ab36ec8b2019d88894842417f1daebd",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p024.png": "01e87a5b7e34214cad07f862f68bb8022e06314138d078c8672162b76de5d72e",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p025.png": "f58f4cc6e2f597686aa591861bc14ac9f53fb5a1a828828a1e11c551e37bb98a",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p026.png": "defc1ff010808b22c90fa78a310712ebc70f28989376e85f640207549cf22ac4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p031.png": "344d29b99f18c6f6b320defbdb781e35eeef581039155a49309548b6e11f7787",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p032.png": "2c4f847af1edf4e145047129b40452ff0b0e8a6e4b7236564f63cf4f9944d82d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p125.png": "6abd7fc7680a529ad67c3a0aa36737e87f3cbd03fd18f8a76595f07e9965e334",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p150.png": "ad5c9495cffc4f7448c50c0595e67284aaf8b159a11aba9b825b637efdaec994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p151.png": "566a61cdd98f642ebc8275faa14900dbbc210aa601b6f03463ea22f3f78a807d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p168.png": "55929b470c08a64af93dd82258ce635c1464cf6ce1b7e37bf68a0b91206ab410",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p192.png": "11d4c1cd17aadcff521ecd8501e7492900f6374cde4162906db1b55c39d512d7",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p221.png": "8004a8254e30cb2866fac97a7c731e012a52121ee02f887f99e3bcb01b4ec821",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p224.png": "b817d46e9cba75eb0dd97f10478db04cfb3bf46424cbe2db5e7a3cb174ec1e6d",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p225.png": "ee6c622f1f2e6d801473f7db3c704d0e8812ad5554b5254e1679700aa05b8a72",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p001.png": "e64019c681c6cc325beb0664a147140aa060ae3e7190ec54e3a3724e3c60667c",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p024.png": "3da40fc702fc25235afca8968c3013463e6a4339c0c492b80685509551d05a23",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p025.png": "08745f2224f21a8da0466bc7eeb04ecd07ea8768eca49fa99a6695d28be81a0b",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p026.png": "dd4a1bf3471fe64dd94fa95c510f4532fe8ac63bab9e537b2b5d72da313eb295",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p031.png": "0fe2689718a3d17aba7224c5a92d39dce17fcb15ed018e9eadc89a9d146fc3d4",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20241022-p032.png": "7d63f5c353ca89aa07a6d518495c103d5e80caeab816cd8c3fa8f30c5bd2f850"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13a",
+      "questionNumber": 13,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説本文が「この版が基準日時点で施行されていた版かどうかは…確定できない」と述べており、試験電圧1.5倍の法的根拠が基準日（令和6年4月1日）時点の版で確認されていない。計算・結論は正しいが、根拠条文の版が未確定のまま公開用解説になっている。基準日時点の版で15-1表の該当行を確認してから、この留保文を解消する必要がある。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "注3の基準日（令和6年4月1日）時点で効力のあった「電気設備の技術基準の解釈」の版を、添付資料から確定できない。20231226-2.pdf・20241022-2.pdf の改正履歴（各PDF第1頁）には「令和5年12月26日付け」という付け日しかなく、施行期日の記載がない。解説の第15条・15-1表（20231226-2.pdf 第25頁）と第16条・16-1表（同第26頁）が基準日時点の条文であることは未検証の外部確認事項である。",
+        "基準日より後に施行された場合の代替版（令和5年3月20日付け 20230310保局第2号による版）の15-1表・16-1表は、添付資料に含まれていない。uncertainty欄の「最大使用電圧7,000 V以下・交流の電路は1.5倍」という前提は、その版については未検証である。",
+        "20241022-2.pdf（令和6年10月22日付け改正）は基準日より後の版であり、基準日時点の条文の根拠にはならない。添付資料から検証できたのは、同版の改正履歴で令和5年12月26日付けの次が令和6年10月22日付けであること、および15-1表・16-1表の該当行が20231226-2.pdfと同一であることだけである。",
+        "uncertainty欄に未解消の根拠不確定を記載しているのに needsReview=false となっており、両者が矛盾する。基準日時点の版を確認できるまでは needsReview=true とすべきである。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（printed -14-／T2－H 017）と照合し、受電電圧6 kV、契約電力500 kW、「電気設備の技術基準の解釈」、周波数50 Hzの交流電源、最大使用電圧6 900 V、3線一括対地静電容量0.2 μF、(a)の設問文が一致。",
+        "選択肢：(1)0.32 (2)0.43 (3)0.54 (4)0.65 (5)0.71 が原図と一致。単位[A]も一致。",
+        "頁：注意書き頁が printed -1-／T2－H 004 なので、printed -14-／T2－H 017 は PDF第17頁に当たる。reviewedFromPage=[17] と整合。",
+        "公式正答：解答表＜法規＞問13(a)=4 と officialAnswer=4 が一致。",
+        "計算：2π×50×0.2×10⁻⁶=6.2832×10⁻⁵ S。これに10 350 Vを掛けて0.6503 A となり、(4)0.65と一致。",
+        "誤答肢の検算：(1) 0.32/6.2832×10⁻⁵≒5 093 V（6 900 Vの約0.738倍）。(2) 6 900 V→0.4335 A。(3) 8 625 V→0.5419 A。(5) 0.71 A→≒11 300 V（約1.64倍）、0.650 Aより約9.2%大。いずれも記述と一致。",
+        "15-1表（20231226-2.pdf PDF第25頁）：最大使用電圧7,000 V以下の交流の電路は「1.5倍の交流電圧」、直流の電路は「1.5倍の直流電圧又は1倍の交流電圧」。1.25倍が現れるのは、7,000 V超60,000 V以下の「上記以外」（10,500 V未満は10,500 V）と、60,000 V超・整流器に接続する以外のものの「中性点非接地式電路」。いずれも解説と一致。",
+        "第15条柱書（20231226-2.pdf PDF第24頁末尾）が「次条に規定するもの」を除いていること、第一号・第二号（第25頁）の内容を確認。解説の要約は多心ケーブルの括弧書きを省略しているが、趣旨は一致。",
+        "16-1表（20231226-2.pdf PDF第26頁）：最大使用電圧7,000 V以下のものは「1.5倍の電圧（500 V未満となる場合は500 V）」、試験方法は※1（試験される巻線と他の巻線、鉄心及び外箱との間に連続して10分間）。解説と一致。",
+        "20241022-2.pdf の PDF第1頁の改正履歴、第25頁の15-1表、第26頁の16-1表の該当行が20231226-2.pdfと同一であることを確認。",
+        "図：原図に図はなく、figureDescription・figureUrls=[] と整合。"
+      ]
+    },
+    {
+      "unitKey": "q13b",
+      "questionNumber": 13,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説本文が「この版が基準日時点で施行されていた版かどうかは…確定できない」と述べており、試験電圧10 350 V（1.5倍）の法的根拠が基準日（令和6年4月1日）時点の版で確認されていない。計算・結論は正しいが、根拠条文の版が未確定のまま公開用解説になっている。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "注3の基準日（令和6年4月1日）時点で効力のあった「電気設備の技術基準の解釈」の版を、添付資料から確定できない。20231226-2.pdf・20241022-2.pdf の改正履歴（各PDF第1頁）には令和5年12月26日付け改正の付け日しかなく、施行期日の記載がない。第15条・15-1表（20231226-2.pdf 第24〜25頁）と第16条・16-1表（同第26頁）が基準日時点の条文であることは未検証の外部確認事項である。",
+        "代替版（令和5年3月20日付け 20230310保局第2号による版）の15-1表・16-1表は、添付資料に含まれず未検証である。",
+        "20241022-2.pdf は基準日より後の版（令和6年10月22日付け）であり、基準日時点の条文の根拠にはならない。",
+        "uncertainty欄に未解消の根拠不確定を記載しているのに needsReview=false となっており、両者が矛盾する。needsReview=true とすべきである。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図と照合し、共通前文と(b)の設問文「この試験に使用する試験装置に必要な容量[kV・A]の値として、最も近いのは次のうちどれか」が一致（原図の[kV·A]は中点表記の差のみ）。",
+        "選択肢：(1)3 (2)5 (3)7 (4)9 (5)11 が原図と一致。",
+        "公式正答：解答表＜法規＞問13(b)=3 と officialAnswer=3 が一致。",
+        "計算：P=10 350×0.6503≒6 731 V・A≒6.73 kV・A。P=ωCV²=6.2832×10⁻⁵×10 350²≒6 731 V・A でも同じ。(3)7と一致。選択肢値0.65 Aを用いても6.73 kV・A。",
+        "誤答肢の検算：(1) 6 900 V×0.4335 A≒2.99 kV・A。(2) 8 625 V×0.5419 A≒4.67 kV・A。(4) 9 000/10 350≒0.87 A、6.73との差≒2.27 kV・A。(5) 11 000/10 350≒1.06 A（0.650 Aの約1.63倍）。いずれも記述と一致。",
+        "15-1表（20231226-2.pdf PDF第25頁）の交流1.5倍・直流1倍交流の区分、および16-1表（同第26頁）の7,000 V以下1.5倍の記述が、解説と一致。",
+        "頁：printed -14-／T2－H 017 は PDF第17頁に当たり、reviewedFromPage=[17] と整合。",
+        "図：原図に図はなく、figureDescription・figureUrls=[] と整合。"
+      ]
+    }
+  ]
+}

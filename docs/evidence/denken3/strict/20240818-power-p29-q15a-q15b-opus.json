@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5750,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 25502,
+      "webSearchRequests": 0,
+      "costUSD": 0.3469126,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3739,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9a987220e2c7785c3b1f0bf5bdbc758e7a00d53f733b19f9b03d642fe3fdc26d",
+  "inputRequestSha256": "91d7f8f49baadf34550da779eaf93b10d04d432a5dfe58cb6a8ec80a98f76b06",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "d7b0750eab9a6d79fc22fafb31333fe28c3ba5801a7c3d6e9712cbfceab201eb",
+      "q15b": "78e6575467090a83232f80685c15e1393a6cafca32cb302f3b453dbafe80394e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p20.png": "3f728cf05119aade2a533e25e716520c6464ae499a0eaf846ec26756e6e79fea"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "03ed5ba7e3884f7e9cda02c5f7d2143f05aafc103e93da4818c4907201251b86",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/jica-hydro-guide-0000256044_01.pdf": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p294.png": "e0df26a9f8a81ef87b5c695078de89084da7a2c0aed4c6b708948d2a2d3a03c8",
+      "data/raw_pdfs/denken3/review/references/jica-hydro-guide-0000256044_01-p295.png": "d2efaee49bbb5325dc486caa15bba27233d7094866270e3cdf726cef70775be6"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[2]の「カプラン水車の適用領域ではないであり、水車の種類の対応も適切でない」は文法が崩れている。「カプラン水車の適用領域ではなく、水車の種類の対応も適切でない」のように直す必要がある。",
+        "explanation・choiceExplanations[4]・choiceExplanations[5]は、水車の種類を決める根拠の一つに「比速度100 m・kWもフランシス水車に整合する」を挙げている。しかし、これを裏付ける比速度の適用範囲は、問題原図にも添付の公式参考資料（JICA PDF第294・295頁）にも載っていない。この記述を削るか、原頁で確認できる公式資料を追加して引用する必要がある。水車の種類は、図12-17の出力・落差による判定と、第294頁本文の「フランシス水車は中・高落差で適用される」だけで説明できる。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "「比速度100 m・kWはフランシス水車に整合する」は独立した主張だが、添付の公式参考資料で検証できない。図12-17の軸は基準有効落差[m]と最高水車出力[kW]で、比速度は扱っていない。第294頁本文も落差・流量の定性的な説明だけで、比速度の範囲には触れていない。",
+        "officialReferenceUrlsには#page=295（図12-17）しか入っていない。explanationが依拠する適用範囲の本文（第294頁 12.1.2）も参照先に加えるのが望ましい。",
+        "図12-17の軸は「基準有効落差」と「最高水車出力[基準有効落差時]」で、問題にある運転点（有効落差200 m・出力85,000 kW）とは定義が完全には同じではない。uncertaintyで目安にすぎないと断っているので致命的ではないが、図の軸定義に合わせた書き方にするのが望ましい。"
+      ],
+      "verifiedEvidence": [
+        "問題原図（第17頁、PDF第20頁）: 問題文は有効落差200 m、水車出力85 000 kW、比速度100 m·kW。候補の問題文と一致する。",
+        "問題原図の表: (1)フランシス217、(2)カプラン217、(3)カプラン258、(4)フランシス258、(5)ペルトン258。候補のchoicesと全肢一致する。",
+        "公式解答表（令和6年度上期・電力）: 問15(a)=4。officialAnswer=4と一致する。",
+        "検算: 200^1.25=e^(1.25·ln200)=e^6.6229≈752.1、√85000≈291.55、N=100×752.1/291.55≈257.97≈258 min⁻¹。",
+        "図12-17（JICA PDF第295頁）の読み取り: 85,000 kWの位置では、ペルトン（赤）領域の下限は約250 m超。カプラン（緑）領域の上限は約70 m。デリア（水色）領域の上限は約120 m。落差200 mはフランシス（青）領域の内側に入るため、フランシス水車という判定は図で裏付けられる。",
+        "JICA PDF第294頁本文: 「ペルトン水車は高落差、小流量」「プロペラ水車は低落差、大流量」「フランシス水車は中・高落差で適用される」。",
+        "各誤答肢の理由を確認した。(1)と(2)は回転速度が不一致、(2)(3)(5)は水車の種類が不一致で、いずれも正しい。"
+      ]
+    },
+    {
+      "unitKey": "q15b",
+      "questionNumber": 15,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題原図（第17頁、PDF第20頁）: 同期発電機に直結、50 Hz系統、有効落差200 m、出力85 000 kW、小問(a)の回転速度に最も近い回転速度。候補の問題文と一致する。冒頭に補った「小問(a)の条件」は原文の数値と一致し、問題の意味を変えていない。",
+        "問題原図の表: (1)28/83、(2)28/97、(3)26/89、(4)24/83、(5)24/97。候補のchoicesと全肢一致する。",
+        "公式解答表（令和6年度上期・電力）: 問15(b)=5。officialAnswer=5と一致する。",
+        "検算（Ns=120f/p=6000/p）: p=28→214.29、p=26→230.77、p=24→250.00、p=22→272.73。258との差は43.7、27.2、8.0、14.7で、最も近いのはp=24。",
+        "検算（ns=N√P/H^1.25、√P/H^1.25=291.55/752.1=0.38765）: p=24→96.9≈97、p=26→89.5≈89、p=28→83.1≈83。",
+        "各肢の理由を確認した。(1)と(3)は極数が不適切（比速度は各自の回転速度と整合）、(2)と(4)は極数と比速度の組合せが食い違い、(5)は両方とも整合。いずれも正しい。",
+        "外部参考資料には依拠していない（officialReferenceUrlsは空）。式はすべて標準式で、選択肢の数値と一致することを確認した。"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "kamoku-a", "kamoku-b", "gakka", "riron"];
+export const PRACTICE_SESSIONS: readonly Session[] = ["am", "am1", "am2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
@@ -17,7 +17,7 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session): string {
-  return ({ am: "午前", am1: "午前I（共通）", am2: "午前II（専門）", "kamoku-a": "科目A", "kamoku-b": "科目B", pm: "午後", pm1: "午後I", pm2: "午後II", gakka: "学科", riron: "理論" })[session];
+  return ({ am: "午前", am1: "午前I（共通）", am2: "午前II（専門）", "kamoku-a": "科目A", "kamoku-b": "科目B", pm: "午後", pm1: "午後I", pm2: "午後II", gakka: "学科", riron: "理論", denryoku: "電力", kikai: "機械", houki: "法規" })[session];
 }
 
 export function quizBackHref({ exam, mode, returnTo }: { exam: string; mode?: string; returnTo?: string }): string {

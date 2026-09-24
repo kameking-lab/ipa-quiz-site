@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2561,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13694,
+      "webSearchRequests": 0,
+      "costUSD": 0.1610358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1410,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c8f259616a8919c589bff2116529dfe3b70e9ab472768429abc7b6acb5bec643",
+  "inputRequestSha256": "dc7a342c83a651735880efb6f59d4727ecd346d2efc1dc0d7ea43b8bdbb0b0fd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "5f64913d4f3f22b39239ec0f800b484ed59ecefe893c373e089e408cabd75c5c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p08.png": "dbbae4689b4603965e1467241704a88bc108ce1766577df6e6e8b7bf696acdb7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "c8caad6503d02d34b3573915492391186e4ca243d509f912b508fedc46eb81f6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータはmanifestと一致する: fiscalYear=2024, term=lower, examDate=2025-03-23, subject=power。sourceQuestionPdfUrl=https://www.shiken.or.jp/chief/upload/20250323_ch_third_q02.pdf、sourceAnswerPdfUrl=https://www.shiken.or.jp/chief/upload/2024_3_2.pdf。",
+        "reviewedFromPage=[8] はmanifestの「問5原図はPDF第8頁」と一致する。原図の冊子頁番号は「-5-」、フッタは「T2-D 008」で、PDF第8頁と整合する。",
+        "問題文は原図と全文一致する。対象は冒頭文、(ア)蒸気/熱水の流れの空欄文、(イ)の地熱資源所在の文、(ウ)「植物や動物が生成・排出する」、(エ)「木くずから作られる固形化燃料や，家畜の糞から作られる」、および設問指示文。空欄記号(ア)〜(エ)の位置も一致する。",
+        "選択肢(1)〜(5)の各4語は原図の表と行・列とも一致する。(1)蒸気/火山地域/有機物/液体燃料。(2)熱水の流れ/平野部/無機物/気体燃料。(3)蒸気/火山地域/有機物/気体燃料。(4)蒸気/平野部/有機物/気体燃料。(5)熱水の流れ/火山地域/無機物/液体燃料。",
+        "公式解答表<電力>問5=3。候補のofficialAnswer='3' およびq05公式正答単位 answer='3' と一致する。",
+        "総合解説の各空欄の理由は技術的に正しく、結論(3)と因果が整合する。(ア)地熱貯留層から取り出した蒸気でタービンを駆動する。(イ)高温地熱資源は火山地域に偏在する。(ウ)バイオマスは生物由来の有機物である。(エ)家畜糞尿のメタン発酵で得るバイオガスは気体燃料である。",
+        "誤答肢固有の理由は、表との差分と一致する。(1)は(エ)のみ誤り。(2)は(ア)(イ)(ウ)が誤りで(エ)のみ正しい。(4)は(イ)のみ誤り。(5)は(ア)(ウ)(エ)が誤りで(イ)のみ正しい。誤り箇所数の記述も正確である。",
+        "原図には回路図・構成図がなく、語句組合せ表のみである。表は選択肢に完全転記されているため、figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は妥当である。",
+        "officialReferenceUrlsは空で、検証を要する外部独立主張はない。解説は設問の語句選択を支える標準的技術知識の範囲に留まる。"
+      ]
+    }
+  ]
+}

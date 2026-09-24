@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5292,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14419,
+      "webSearchRequests": 0,
+      "costUSD": 0.22145579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3525,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "53e703be19e93860d18ec7bd8bde23dca2a6c126bad7d9bd0a2905ee3f90a1a9",
+  "inputRequestSha256": "562020bd5482eee7b116610eb8133f44147118257dcce661fc432287b7f4b7d7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "52f19aa1b2fe840cbbca3f03b0fe7e3b2ea9c6199bf1d9ef6b148f8780a02120"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p17.png": "3bb2fbb86a18de82f4e4cf9576b2cc77797719ce35d1942ba55b9bc603f3bbf5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/power/20240818-power-q12-sag-tension.png": "a076e70d32ca0b6dce941fe7364266f1202c0c272ee5ab34cdcf4657a27045b6"
+    },
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "fb503a33fbecc6b3069511f9480ee982fb83e790ef373d195866374c85f18ff0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription が、原図に記号も説明もない外側斜め上方の矢印を「電線方向の張力の向きを示す」と断定している。原図から直接読み取れるのは、支持点A・Bから外側斜め上方へ向かう無記号の矢印があり、電線の支持点での接線方向とほぼ一直線上にあることだけである。修正案は「A点・B点から外側斜め上方へ、支持点における電線の接線方向に沿った記号のない矢印が描かれている」。張力と解釈する場合は、その解釈であることを明記する。",
+        "figureDescription 末尾の「この図は…関係(D = wS²/(8T))を視覚的に表現するためのもの」は、原図に存在しない式と出題意図を図の説明に混入している。原図に式の記載はない。この一文は、図に描かれている量（支持点A・B、径間長S、たるみD、水平張力T）の位置関係の記述に留めるべきで、式は総合解説側にのみ置く。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の問12本文と照合。候補の問題文は句読点（，→、）、全角/半角、「10 %」→「10%」、「(1)～(5)」→「(1)~(5)」の表記整形を除き、語句・記号(A, B, S, T, D)・条件文（ただし，両側の鉄塔は十分な強度があるものとする）がすべて一致。",
+        "選択肢: 原図 (1) 0.9²T、(2) 0.9T、(3) T/√0.9、(4) T/0.9、(5) T/0.9² と候補 choices 1〜5 が完全一致。上付き・根号・分数の意味も保持されている。",
+        "公式正答: 試験センター解答表（令和6年度 上期 第三種電気主任技術者試験解答）の＜電力＞列で問12=4。manifest固定の公式正答単位 answer=\"4\"、候補 officialAnswer=\"4\" と一致。",
+        "総合解説の検算: 高低差なし・放物線近似で D = wS²/(8T)。w, S 不変で D' = 0.9D とすると T' = wS²/(8×0.9D) = T/0.9 ≈ 1.111T。選択肢(4)と一致し、因果も正しい。",
+        "肢別解説(1)の検算: 0.9²T = 0.81T、D'/D = 1/0.81 ≈ 1.235 でたるみ増加。「張力減→たるみ増で逆方向」は正しい。",
+        "肢別解説(2)の検算: 0.9T で D'/D = 1/0.9 ≈ 1.111 でたるみ増加。正しい。",
+        "肢別解説(3)の検算: T/√0.9 ≈ 1.0541T、D'/D = √0.9 ≈ 0.9487 で約5.1%減。記載値と一致。",
+        "肢別解説(4)の検算: T ∝ 1/D より T' = T/0.9。正しい。",
+        "肢別解説(5)の検算: T/0.81 ≈ 1.2346T、D'/D = 0.81 で19%減（過大）。記載値と一致。",
+        "公開候補図: 原図の問題図部分と照合。支持点A・B（黒丸、同一高さ）、A・B間の水平線、寸法線Sと両端の立ち上がり線、放物線状の電線、中央の鉛直一点鎖線、たるみD（水平線から最下点までの両端矢印）、両端外向き水平矢印T、外側斜め上方の無記号矢印が、接続・向き・ラベルともすべて一致。欠落・追加要素はない。",
+        "公開候補図の自己完結性: 本問の解答に図の情報は必須ではない（文章だけで解ける）。それでも候補図だけで S・D・T の定義位置は理解可能。",
+        "出典メタデータ: fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=power（電力）、sourceQuestionPdfUrl=…20240818_ch_third_q02.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[17] が manifest と一致。原図下部の「- 14 -」は冊子内のノンブルで、PDF頁番号ではないため矛盾しない。sourceAttribution「令和6年度上期第三種電気主任技術者試験 電力科目 問12」も一致。",
+        "officialReferenceUrls は空配列で、独立主張の外部参照はない。D = wS²/(8T) は放物線近似の前提を明示した標準式として解説内で扱われており、外部確認事項は生じていない。"
+      ]
+    }
+  ]
+}

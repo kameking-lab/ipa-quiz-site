@@ -1,0 +1,59 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "theory",
+  "questionCount": 2,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "a1451d171224bf785102295535b598d13b8155f2bfe3ca87ede413f5702ba7b5",
+  "questions": [
+    {
+      "number": 11,
+      "sourceDraftSha256": "520c257d59a04d6442cd862237f39b333072a69741cdc24a1cfc0f91bab995a7",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/theory/q10-11-opus-review.json",
+      "opusReceiptSha256": "b6e9587dc2d0b0ab92d683ffb442d81c689173e111f96afb05313d992c6b79de",
+      "assessment": {
+        "number": 11,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    },
+    {
+      "number": 12,
+      "sourceDraftSha256": "edc4e9011b27193ecd8b4ba1fefbe850ee7e893db48be2e3e4ad1ca985ba5e0b",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/theory/q10-11-12-opus-review.json",
+      "opusReceiptSha256": "085d773c62e7ffea9bf89373129e66880b6428cab3faf02cc3b4f80a3e58c3f3",
+      "assessment": {
+        "number": 12,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q11": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s11-q07-q08-q11-opus.json",
+      "sha256": "3be48e8761ce711185c301cba371979ee85bfc2504d2f41fb31bc37a1abd8676",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q12": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s10-q11-q12-opus.json",
+      "sha256": "245a17a5a4aaf51c4adc0c9d5256d3486fa9eacba2e27c98012b61e4b4e39f5d",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

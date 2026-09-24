@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3342,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13691,
+      "webSearchRequests": 0,
+      "costUSD": 0.1766318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1882,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0067660cc7adda4655c2eaed6df03930df48f43ba8b3d8b1662fc637bf7809f0",
+  "inputRequestSha256": "54dbd28e0600094cdc07be191c67755429d2ceff94bc16e69427dbef57e792c6",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "46956b854dc44d78d69d59f2ece0b6131f7821ef32357267dda8142c615d3dbf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p10.png": "a799640eff94d8e3ff160bbf410fb3f26fb3d7f592647da490cf10d6d8d27c96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "198d0a502bfdaf7c5d3ba3d228ccb14bc4960fa6683f4800347f98df645b2ad0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "explanation および choiceExplanations[2][3][4] は ΔV ≒ √3・I・(R・cosθ + X・sinθ) を「配電線路における電圧降下」の一般式として示しているが、これは三相3線式の線間電圧降下の近似式である。単相2線式なら係数は2、単相3線式の平衡時は片側 I・(R・cosθ + X・sinθ) となり、係数が変わる。choiceExplanations[5] が扱う低圧配電線は単相3線式が一般的なので、無条件に掲げると適用範囲を誤解させる。「三相3線式の場合」と適用条件を明記するか、係数を省いた比例関係 ΔV ∝ I・(R・cosθ + X・sinθ) で説明を統一すべき。",
+        "choiceExplanations[5] は、柱上変圧器を負荷の中心に置くと「低圧引込線・低圧配電線のこう長が全体として短くなり」と述べている。しかし低圧引込線は低圧配電線の最寄り支持物から需要家までの区間であり、その長さは変圧器の位置ではほとんど変わらない。短縮されるのは主に変圧器から各需要家方向へ延びる低圧配電線（低圧幹線）のこう長なので、「低圧配電線のこう長が短くなり」と限定すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式問題原図（電力冊子 PDF第10頁、頁下部の印字「-7-」「T1−D 010」）で問7を確認した。問題文「配電線路の電圧維持に有効な対策として，誤っているものを次の(1)～(5)のうちから一つ選べ。」は候補と一致する。波ダッシュ「～」→「〜」は整形の範囲。",
+        "選択肢(1)〜(5)の全文を原図と照合した。(1) 負荷時タップ切換変圧器や負荷時電圧調整器で変電所の送り出し電圧を調整する。(2) 力率改善用コンデンサを設置する。(3) 太い配電線に張り替える。(4) 配電線のこう長を延長する。(5) 柱上変圧器を負荷の中心に設置する。いずれも候補と一字一句一致する。",
+        "公式解答表原図（令和6年度 上期 第三種電気主任技術者試験解答、＜電 力＞列）の問7は「4」。manifest の q07 公式正答単位 answer=\"4\"、候補 officialAnswer=\"4\" と一致する。",
+        "メタデータを照合した。fiscalYear=2024（令和6年度）、term=upper（上期）、examDate=2024-08-18、subject=power、sourceQuestionPdfUrl=…20240818_ch_third_q02.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[10]。いずれも manifest と一致する。sourceAttribution の年度・期・科目・問番号も一致する。",
+        "原図第10頁に図・表はなく、問題文と五肢のテキストのみである。figureDescription の記述、および figureUrls=[]・choiceFigureUrls={} は妥当。解答に図は不要。",
+        "正答理由の因果を検算した。こう長を延長すると R・X がこう長にほぼ比例して増え、電圧降下が拡大するので(4)は電圧維持対策として誤り。(1) LRT/LRA（LDC併用）による送り出し電圧の調整、(2) 進相コンデンサによる線路無効電流の低減、(3) 太線化による R の低減、(5) 負荷中心配置による低圧線こう長の短縮は、いずれも有効な対策として正しい。",
+        "officialReferenceUrls は空配列で、外部の独立主張はない。検証を要する参照資料もない。"
+      ]
+    }
+  ]
+}

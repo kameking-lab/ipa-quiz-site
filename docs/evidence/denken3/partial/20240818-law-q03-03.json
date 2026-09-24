@@ -1,0 +1,40 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "18db49e69ff11dc7bacc4efe968d08149e7cf1e6dcd99742366a3ac48fdd25c5",
+  "questions": [
+    {
+      "number": 3,
+      "sourceDraftSha256": "2dc3d01113bd5681b34d11beaff129b5906d3afae7c2147c53dacf0bee5e7c8a",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q03-opus-review.json",
+      "opusReceiptSha256": "a216165be52fe07c9bc2220b80f8adbb4ffcf67b9e2bf616ed57926a62dd715a",
+      "assessment": {
+        "number": 3,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "解説は定義の根拠を「電気設備に関する技術基準を定める省令」第1条としている。条文番号と、現行の定義文言（保護被覆／支持し、又は保蔵する工作物／造営物の屋内又は屋側に施設するものを除く）は、問題画像だけでは確定できない。e-Gov 法令検索などで外部確認が必要。",
+          "uncertainty 欄には「経済産業省の同省令解説で参照した」とあるが、officialReferenceUrls は空配列で、参照した資料を特定できない。架空の URL は補わず、実際に参照した資料の URL を記載するか、この記述を削除する必要がある。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q03": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l4-q03-opus.json",
+      "sha256": "ee8a9f75def4b0e904e554ea2624c0bb42c3fdd5bc58c7741bb025b57fe74a12",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

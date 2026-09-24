@@ -1,0 +1,100 @@
+{
+  "questionNumber": 3,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は、「電気設備技術基準」における、電気設備の保安原則に関する記述の一部である。\n\na) 電気設備の必要な箇所には、異常時の [(ア)]、高電圧の侵入等による感電、火災その他人体に危害を及ぼし、又は物件への損傷を与えるおそれがないよう、[(イ)] その他の適切な措置を講じなければならない。ただし、電路に係る部分にあっては、この基準の別の規定に定めるところによりこれを行わなければならない。\n\nb) 電気設備に [(イ)] を施す場合は、電流が安全かつ確実に [(ウ)] ことができるようにしなければならない。\n\n上記の記述中の空白箇所(ア)〜(ウ)に当てはまる組合せとして、正しいものを次の(1)〜(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 電位上昇　(イ) 絶縁　(ウ) 遮断される",
+        "2": "(ア) 過熱　(イ) 接地　(ウ) 大地に通ずる",
+        "3": "(ア) 過電流　(イ) 絶縁　(ウ) 遮断される",
+        "4": "(ア) 電位上昇　(イ) 接地　(ウ) 大地に通ずる",
+        "5": "(ア) 過電流　(イ) 接地　(ウ) 大地に通ずる"
+      },
+      "officialAnswer": "4",
+      "explanation": "本問は、問題の作成基準日である令和7年4月1日時点で効力のある「電気設備に関する技術基準を定める省令」（電気設備技術基準）に基づきます。a) は第10条（電気設備の接地）、b) は第11条（電気設備の接地の方法）の条文です。\n\n第10条：「電気設備の必要な箇所には、異常時の電位上昇、高電圧の侵入等による感電、火災その他人体に危害を及ぼし、又は物件への損傷を与えるおそれがないよう、接地その他の適切な措置を講じなければならない。ただし、電路に係る部分にあっては、第五条第一項の規定に定めるところによりこれを行わなければならない。」\n第11条：「電気設備に接地を施す場合は、電流が安全かつ確実に大地に通ずることができるようにしなければならない。」\n\nしたがって (ア) 電位上昇、(イ) 接地、(ウ) 大地に通ずる となり、正解は (4) です。\n\n補足：(イ) は a)・b) の両方に入る共通の語です。b) の「(イ)を施す場合は、電流が安全かつ確実に(ウ)ことができるように」という文脈からも、(イ) は電流を大地へ流すための措置である「接地」、(ウ) は「大地に通ずる」と判断できます。なお、問題文 a) のただし書「この基準の別の規定に定めるところにより」は、条文では「第五条第一項の規定に定めるところにより」と規定されている部分です。「絶縁」は、同省令では第21条（架空電線及び地中電線の感電の防止）や第22条（低圧電線路の絶縁性能）など電線の絶縁性能に関する規定で用いられる語であり、第10条・第11条で求められる措置ではありません。",
+      "choiceExplanations": {
+        "1": "誤り。(ア)「電位上昇」は第10条の語句と一致しますが、(イ)「絶縁」と(ウ)「遮断される」が誤りです。第10条で講じるべき措置は「接地その他の適切な措置」であり、第11条は接地を施す場合に電流が「大地に通ずる」ようにすることを求めています。電流を遮断することを求める規定ではありません。",
+        "2": "誤り。(イ)「接地」、(ウ)「大地に通ずる」は正しいですが、(ア)「過熱」が誤りです。第10条が想定する異常は「異常時の電位上昇、高電圧の侵入等」であり、「過熱」ではありません。",
+        "3": "誤り。(ア)「過電流」、(イ)「絶縁」、(ウ)「遮断される」のすべてが誤りです。第10条・第11条の正しい語句はそれぞれ「電位上昇」「接地」「大地に通ずる」であり、この肢は一つも条文と一致しません。",
+        "4": "正しい。第10条「異常時の電位上昇、高電圧の侵入等による感電……接地その他の適切な措置」、第11条「接地を施す場合は、電流が安全かつ確実に大地に通ずることができるように」と、(ア)〜(ウ)のすべてが条文どおりです。",
+        "5": "誤り。(イ)「接地」、(ウ)「大地に通ずる」は正しいですが、(ア)「過電流」が誤りです。第10条の文言は「異常時の電位上昇」であり、接地は電位上昇や高電圧の侵入による感電・火災等を防ぐための措置として規定されています。"
+      },
+      "figureDescription": "図なし。問題文の下に、列見出し (ア)・(イ)・(ウ)、行見出し (1)〜(5) の語句の組合せ表がある。表の内容は選択肢 (1)〜(5) と同一。",
+      "officialReferenceUrls": [
+        "https://laws.e-gov.go.jp/law/409M50000400052?occasion_date=20250401"
+      ],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_q04.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20260322_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        7
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5887,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.19247579999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1579,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "298cf8b6ea967d36db721cb0b43ebb18be1c19f6c15979e14e3516b6c9179bd3",
+  "inputRequestSha256": "f2316fde9789812654ebe2839e189b1baa94bf67e636e88869931ef55eb825c4",
+  "sourceQuestionPdfSha256": "945e325f0fe221645f898efebe0dbcac32e1605a962a6850493895a67df0885e",
+  "sourceAnswerPdfSha256": "cc2890296d06a4823df5697a78a1c01ddfd39f041c51f48c87984daa3a5707c6",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20260322/law/p07.png": "1a58e09a5e520f5fc6610c4ce193c6fef690fd17ddec3a7b3a78d77e4c58e045"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 3414,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 15786,
+          "webSearchRequests": 0,
+          "costUSD": 0.1948318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1531,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "28bb5b9f2bfa68d0a116f2afcb334b0d587181f638cf6928655f759be665167c",
+      "inputRequestSha256": "cf1df26126de4c5d32a454032e30060f1ca6b94a9812fb5c2e795d742d54e19d",
+      "previousDraftSha256": "d1c2627cc546ffbb0838629a1342c8bf3c5d56838df01fff76e3ba203dfd4f85",
+      "previousDraft": "data/raw_pdfs/denken3/review/20260322/law/archive/q03-vision-draft-v1.json",
+      "answeredReviewSha256": "7c1ddeb8277c47cd2456c953bf4a007d4cf939002dbd094552a2b3983a105482",
+      "answeredReview": "data/raw_pdfs/denken3/review/20260322/law/archive/q03-opus-review-v1.json",
+      "answeredStrictReceipt": null,
+      "answeredStrictReceiptSha256": null,
+      "figureSha256": {},
+      "referenceHashes": {
+        "referenceJsonSha256": {
+          "data/raw_pdfs/denken3/review/egov/409M50000400052-20250401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+        }
+      },
+      "operatorNote": "法令の基準日：添付の法規科目注意書き注3は『令和7年4月1日現在、効力のある法令（「電気設備の技術基準の解釈」を含む）』とする。法令はe-Gov法令API v2の2025-04-01時点の条文で確認する。電気設備技術基準の解釈は、令和6年10月22日改正版（20241022-2.pdf）第237頁の附則一覧で20241004保局第1号が令和6年10月22日施行、令和7年11月20日改正版（dengikaishaku.pdf、2026-09-24取得のSHA固定版。URLは最新版に差し替わる）第239頁で次の20251104保局第2号が令和7年11月20日施行と確認できるので、令和7年4月1日時点の施行版は令和6年10月22日改正版であり、条文の引用・頁番号はこの版に揃える。根拠が確定している事項について版の留保を書かない。 officialReferenceUrlsには添付されたSHA固定URL（occasion_date付きのe-Gov URL等）だけを使い、日付のない一般URLは使わない。"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6220,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17215,
+      "webSearchRequests": 0,
+      "costUSD": 0.2623838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4171,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "1e746a42ab1380d9964630a9053d3179a06b5312ad44bbb0e6ee4a92a982ac4f",
+  "inputRequestSha256": "91f9a126050b0f1dfae755143408df52826b0e9a67baca2ecec34b43bd81d3ae",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "71d483fe3fcc12b209e53a9525364e9a09fa53a78e57488b529b27996ba28cd8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "7915d8dd7e08f32a5a18289f79a80df38eedbc6bfe9a2e30356eddc98d171aac",
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig2.png": "985fa7376cec08729b12a31d221083135937d34b4c021d817e1520e6c4683259"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025・term=upper・examDate=2025-08-31・subject=theory・sourceQuestionPdfUrl・sourceAnswerPdfUrl はすべて manifest と一致する。sourceAttribution の「令和7年度上期 理論科目 問12」も、解答表見出し「令和７年度 第三種電気主任技術者上期試験解答」と一致する。reviewedFromPage=[15] も manifest 固定の PDF 第15頁と一致する。原図の印刷頁番号は「-12-」、原図下部の識別は「T1-R 015」で、どちらも PDF 第15頁と矛盾しない。",
+        "問題文: 原図と一語ずつ照合した。電極間隔 6 mm、面積が十分広い平行平板、直流電圧 2 000 V、「約 (ア) V/m」、ヒータ加熱による (イ) の放出、初速度零、運動エネルギー W「(ウ) J」を確認した。ただし書きの「電界は一様」「e = 1.6×10⁻¹⁹ C」、設問文「(ア)～(ウ)…(1)～(5)のうちから一つ選べ」も確認した。数値・単位・指数の符号に脱落や改変はない。",
+        "選択肢: 原図の表と全肢を照合し、一致を確認した。(1) 3.3×10²/光電子/1.6×10⁻¹⁶、(2) 3.3×10⁵/熱電子/1.6×10⁻¹⁶、(3) 3.3×10²/光電子/3.2×10⁻¹⁶、(4) 3.3×10²/熱電子/1.6×10⁻¹⁶、(5) 3.3×10⁵/熱電子/3.2×10⁻¹⁶。",
+        "公式正答: 解答表〈理論〉問12の解答は 5、配点は 5 である。候補の officialAnswer=\"5\" と scoringPoints=5 はこれと一致する。",
+        "計算の検算(ア): E = V/d = 2000 / (6×10⁻³ m) = 3.333…×10⁵ V/m ≒ 3.3×10⁵ V/m。",
+        "計算の検算(ウ): W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J。別解 eEd = 1.6×10⁻¹⁹ × (2000/6×10⁻³) × 6×10⁻³ = 3.2×10⁻¹⁶ J とも一致する。初速度が零で真空中なら W は電圧だけで決まり間隔によらない、という記述も正しい。",
+        "(イ)の因果: ヒータ加熱による放出は熱電子放出であり、光照射による光電子とは区別される。この説明は正しい。",
+        "総合解説: (ア)(イ)(ウ)の結論 3.3×10⁵ / 熱電子 / 3.2×10⁻¹⁶ は (5) と一致し、公式正答と整合する。",
+        "肢別解説(1): 3.3×10² は 2000÷6、すなわち V/mm 相当の値である。「m に換算していない」という誤りの指摘は正しい。光電子と 1.6×10⁻¹⁶ の誤りも正しく指摘されている。",
+        "肢別解説(2)(3)(4): 各肢の正誤成分の切り分けを確認した。(2) は (ウ) のみ誤り、(3) は (ウ) のみ正しい、(4) は (イ) のみ正しい。いずれも選択肢表と一致する。",
+        "肢別解説(5): 3要素すべてが正しいとする記述は、検算結果と一致する。",
+        "極性と物理の整合: 公開図2で電池記号の縦線の長さを確認した。左（電極K側）の線は短く、右（電極P・接地側）の線は長い。長い線を正極とする標準記号に従えば、P は正、K は負となる。P は接地されているので 0 V、K は −2000 V である。したがって電子は K から P へ加速され、問題文の「電子が電極Pに達した」と整合する。解説の極性記述もこれと一致する。",
+        "公開図1: 原図と全要素を照合し、欠落・改変はない。照合した要素は、ラベル「電極K」「電極P」「ヒータ」「6 mm」、左側が開いたコの字形の電極K、コイル状ヒータと左方向への開放引出線2本である。さらに、K対向面とP対向面の間の両矢印、K下辺上の接続点黒丸、P下端の黒丸、分岐点の黒丸、分岐点下の接地記号、電池の配置も確認した。",
+        "公開図2: 図1の電源・接地付近を約1.34倍に拡大した部分図である。黒丸間隔・電池線位置・接地位置の比率が図1と整合し、改変はない。電池極性の判読補助として機能している。",
+        "figureDescription: 図1・図2の記述を公開図と照合し、実物と一致することを確認した。確認した記述は、接続点の位置（K下辺の中央からやや右寄り）、電池の長短と極性、P側黒丸2つと接地の位置、図2にラベルが含まれないことである。解答に図は必須ではないが、公開候補図だけで回路構成と極性を理解できる。",
+        "officialReferenceUrls は空で、外部参照に依拠する独立主張はない。sourceIssues の対象となる外部確認事項もない。"
+      ]
+    }
+  ]
+}

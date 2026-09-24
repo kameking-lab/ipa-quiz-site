@@ -1,0 +1,71 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2850,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13321,
+      "webSearchRequests": 0,
+      "costUSD": 0.1638318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1511,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8be201b5747decee699a9750c234810ea1e2376c65954074e5b1ee96e402994b",
+  "inputRequestSha256": "3fc4aa68b0a3d0160f5b1cc5bbb8e073c13c4057f37e423a4dfc9fac083099c7",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "26f2ca176d464485101f692b59942d8b5cb52cac341904d4cead77ea824a3f1b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/machinery/p16.png": "b67aaa13016acb5d64b2c3c8cf6bf772333700c7da5b602e821b66e023245f6c"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "ff8ff270bbe1ea125e92f213d011afde969d0d2b9fa2e17a7caa2b5cd6673e2a",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a8e095946113c9b3777414985cf15919d05720f0b3801c059671cdbd01cc66ef",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "句読点が原図と一致せず、同じ問題文の中で混在している。原図は全文で全角カンマ「，」を使う（「…の値として，最も近いものを…」「ただし，機械効率は 98 %，重力加速度は 9.8m/s²，ロープの…」）。候補は第1文で「の値として、最も近いもの」と読点「、」を使い、第2文では「，」を使っている。原図どおり「の値として，最も近いもの」に統一すること。数値・単位・条件・文意の転記に誤りはない。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文の数値と条件を原図と照合した。質量1 200 kg、一定速度0.3 m/s、電動機出力の単位[kW]、機械効率98 %、重力加速度9.8 m/s²、ロープの質量と加速に要する動力は考慮しない。いずれも候補と一致する。",
+        "選択肢を原図と照合した。(1)3.4、(2)3.5、(3)3.6、(4)3.7、(5)3.8。全肢が候補と一致する。",
+        "公式正答を照合した。令和6年度上期の解答表の＜機械＞欄で、問11の正答は3。候補の officialAnswer=\"3\" および manifest の正答単位 {question:11, part:null, answer:\"3\"} と一致する。",
+        "総合解説の計算を検算した。負荷動力 P_L = mgv = 1200×9.8×0.3 = 3528 W = 3.528 kW。電動機出力 P = 3.528/0.98 = 3.600 kW で、(3)3.6に一致する。効率で割る向き（入力＝出力÷効率）も正しい。",
+        "(1)の理由を検算した。3.4 kW は荷重側出力3.528 kW より小さい。電動機出力は荷重側出力より大きくなければならないという論拠は正しい。",
+        "(2)の理由を検算した。効率を考慮しない mgv = 3.528 kW は約3.5に丸まるので、記述は妥当である。",
+        "(3)の理由を検算した。3528/0.98 = 3600 W = 3.6 kW で正しい。",
+        "(4)の理由を検算した。3.528/0.98² = 3.528/0.9604 ≈ 3.673 kW で約3.7となり、記述どおり。効率は一度だけ適用するという指摘も正しい。",
+        "(5)の理由を検算した。3.8 − 3.6 = 0.2 kW の差があり、98 %効率からは導けないという記述は正しい。",
+        "図を確認した。原図に図はなく、解答に図は不要。figureDescription=null、figureUrls=[]、choiceFigureUrls={} は妥当である。",
+        "出典メタデータを照合した。fiscalYear=2024（令和6年度）、term=upper、examDate=2024-08-18、subject=machinery、sourceQuestionPdfUrl=…20240818_ch_third_q03.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf。いずれも manifest と一致する。",
+        "原図頁を照合した。原図は印刷頁「- 13 -」、冊子番号「T1－K 016」で、manifest の PDF第16頁と整合する。reviewedFromPage=[16] は正しい。",
+        "officialReferenceUrls は空で、検証が必要な独立主張はない。sourceAttribution の年度・期・科目・問番号も正しい。"
+      ]
+    }
+  ]
+}

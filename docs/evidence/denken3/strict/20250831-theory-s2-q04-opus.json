@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3028,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14101,
+      "webSearchRequests": 0,
+      "costUSD": 0.1736318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1487,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "5831b0245aee579b19d517589160a63e2bdee516152c6b48ed346198d1e2d10e",
+  "inputRequestSha256": "8f6072b5c71fcc9a963d5e7fd749739f684fa5d8bc79ae540716ec23bd6b58a2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "d42dec3eb227a2cdac0d14cf83d3166ca3adb72b4525f87a10573c924f1f327c"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p07.png": "105d962f43171c068ee91991b415b66cf1894b6d25de64bf68a49ea301bd0e89"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q04-fig1.png": "1f22f0a3d26b1ad73bfca0b284f2260bd73ec37fc90ac1079636de3aa8a19fc4"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "82bbc27ee4202160980cc221c64986a18e95e57e8c2b3c96210683a999978ff1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の問4（印刷頁 -4-）と照合。無限長直線状導体A・直流電流I₁[A]・距離a[m]の点P・磁界H₁[A/m]、半径a[m]の一巻き円形コイルB・直流電流I₂[A]・中心点O・磁界H₂[A/m]、条件H₁=H₂、I₁とI₂の関係を問う点、(1)〜(5)から一つ選ぶ指示まで、語句・記号・単位はすべて一致。",
+        "選択肢: 原図の(1) I₁=π²I₂、(2) I₁=(2/π)I₂、(3) I₁=I₂/π²、(4) I₁=I₂/π、(5) I₁=πI₂ と候補の5肢が係数・分子分母・指数まで一致。",
+        "公式正答: 試験センター公式解答表「令和7年度 第三種電気主任技術者上期試験解答」の＜理論＞問4は解答5・配点5。manifest固定の公式正答単位 {question:4, part:null, answer:\"5\", points:5}、候補のofficialAnswer=\"5\"、scoringPoints=5 と一致。",
+        "総合解説の検算: H₁=I₁/(2πa)（アンペアの周回積分の法則）、H₂=I₂/(2a)（ビオ・サバールの法則による円形コイル中心磁界）。I₁/(2πa)=I₂/(2a) の両辺に2πaを掛けると I₁=πI₂ となり、正答(5)と一致。適用法則の名称も正しい。磁界の大きさのみを比較するため電流の向きが結果に影響しないという記述も正しい。",
+        "肢(1)の検算: H₁=π²I₂/(2πa)=πI₂/(2a)=πH₂。候補の記述と一致。",
+        "肢(2)の検算: H₁=(2/π)I₂/(2πa)=I₂/(π²a)=(2/π²)·I₂/(2a)=(2/π²)H₂。候補の記述と一致。",
+        "肢(3)の検算: H₁=(I₂/π²)/(2πa)=I₂/(2π³a)=H₂/π³。候補の記述と一致。",
+        "肢(4)の検算: H₁=(I₂/π)/(2πa)=I₂/(2π²a)=H₂/π²。候補の記述と一致。「πを掛けるべきところで割っている」という誤りの指摘も正しい。",
+        "肢(5): 正答の導出と一致。",
+        "公開候補図と原図の照合: 図1の縦向き直線導体、上向き矢印、ラベル「直線状導体A」「I₁[A]」、導体左側の点P（黒丸）とラベル「P」、Pと導体を結ぶ両矢印とラベル「a[m]」、キャプション「図1」を確認。図2の円、ラベル「一巻き円形コイルB」、円左側の下向き矢印とラベル「I₂[A]」、中心の点O（黒丸）とラベル「O」、Oと円周右端を結ぶ両矢印とラベル「a[m]」、キャプション「図2」を確認。接続・向き・全ラベルに欠落や改変はない。",
+        "figureDescription: 左側で下向きの矢印は図上の反時計回りに相当し、記述は正しい。距離・半径・電流の条件は問題文でもすべて与えられているため、図がなくても解答できるという判断も妥当。公開候補図だけで図の内容は理解できる。",
+        "出典: officialReferenceUrlsは空で、独立した主張はない。sourceQuestionPdfUrl／sourceAnswerPdfUrl（20250831_ch_third_q01／a01）と、fiscalYear=2025・term=upper・examDate=2025-08-31・subject=theory・sourceAttributionの記載は互いに整合している。reviewedFromPage=[7]は指示どおりPDFページとして扱った（原図の印刷頁は -4-）。"
+      ]
+    }
+  ]
+}

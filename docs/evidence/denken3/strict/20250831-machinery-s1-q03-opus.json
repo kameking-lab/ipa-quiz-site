@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4233,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13144,
+      "webSearchRequests": 0,
+      "costUSD": 0.1900758,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2858,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "17a665caca5fa118a59dc8e0e060523ab6a2816a158412ce5e8c3c0e3f21a4ae",
+  "inputRequestSha256": "4e05ba552e1eee982cdcfe57e1c16e6ef06b199d79ac5abc7097999b003c0fd0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "ab54a4445fe849285ba349133097d1ef5d280323e8d9eccd3f2fdc502a90a245"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/machinery/p06.png": "cacb57b7fb737ea0853f03d389de26f78c09b56355ac570aa4e518bf17d12ef4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "a0c22d2fffbf8863bafd0ba0d4cd547765c3a7aa47341166c162c7a5136832a7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"2\"]「誘導機は、同期速度より速く回転させると発電機として動作します」は発電の成立条件が抜けている。誘導機は回転子側に界磁源がないため、励磁電流（遅れ無効電力）を系統から受けるか、自己励磁用コンデンサを接続する必要がある。単に同期速度を超えて回転させるだけでは発電しない。修正案:「誘導機は、系統（電源）に接続して励磁を受けた状態で、原動機により同期速度より速く回転させると発電機として動作します（単独運転ではコンデンサによる自己励磁が必要）。」"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表原図（令和7年度 第三種電気主任技術者上期試験解答）の＜機械＞問3は解答4・配点5。manifest の公式正答単位 {question:3, part:null, answer:\"4\", points:5}、候補の officialAnswer=\"4\"、scoringPoints=5 と一致する。",
+        "問題原図の問3柱書「三相かご形誘導機に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」は候補の question と一致する。差異は読点の「，」→「、」だけ。",
+        "(1)〜(5) の全肢を原図と一字ずつ照合した。候補の choices 1〜5 は読点の置換を除いて完全一致し、脱字・語順の差異はない。",
+        "総合解説の検証: アルミダイカスト回転子は導体と端絡環を鋳造で一体成形する量産向け構造で、主に小〜中容量機に用いられる。大容量機では銅または銅合金の棒状導体を端絡環にろう付け・溶接する構造が一般的である。よって(4)が誤りという結論は公式正答4と整合し、因果も妥当。",
+        "(1)の理由（巻線・スリップリング・ブラシがなく、構造が簡単で安価）は正しい。",
+        "(3)の理由を検算した。s=(Ns−N)/Ns で、発電運転では N>Ns なので Ns−N<0 となり s<0。記号の定義と極性は正しい。",
+        "(5)の理由（棒状導体のかご形回転子は構造が単純で堅牢、絶縁巻線とスリップリングがない）は正しい。",
+        "(2)の理由のうち「一部の小水力発電や風力発電に採用」は、原文「一部の水力発電や風力発電」の範囲内の具体化であり、事実として誤りではない。問題は発電条件の欠落だけで、explanationIssues に記録した。",
+        "原図に図はなく、解答に図は不要。figureDescription=\"なし\"、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "officialReferenceUrls は空で、検証を要する独立主張はない。",
+        "問題原図の下部表記は「■T1－K 006」と印字ページ「- 3 -」。reviewedFromPage=[6] は PDF ページ番号であり、表紙等を含む冊子で印字ページ3がPDF6頁目にあることと矛盾はない。",
+        "年度・回の特定は、sourceQuestionPdfUrl（20250831_ch_third_q03）、examDate、解答表原図の表題「令和7年度 第三種電気主任技術者上期試験」、機械問3正答4と本問内容（(4)が誤り）の整合による。uncertainty 欄の記述は問題原頁単体についての注記であり、manifest による紐付けと矛盾しない。"
+      ]
+    }
+  ]
+}

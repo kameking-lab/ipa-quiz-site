@@ -1,0 +1,94 @@
+{
+  "questionNumber": 7,
+  "sharedContext": null,
+  "units": [
+    {
+      "part": null,
+      "question": "次の文章は，スイッチトリラクタンスモータ(SRM)に関する記述である。\n一般に，SRMの構造は，固定子の巻線が［(ア)］，回転子の形状が［(イ)］となっている。固定子の巻線に流す電流をスイッチで切り替えると，［(イ)］の回転子が，固定子の磁極に引き付けられて回転する。\nこのモータは，回転子の構造が簡単で強固であるため，［(ウ)］に適している。また，ネオジムなどの［(エ)］を使用せず，鉄心と巻線のみで磁気回路を構成できる特長を有する。\n\n上記の記述中の空白箇所(ア)～(エ)に当てはまる組合せとして，正しいものを次の(1)～(5)のうちから一つ選べ。",
+      "choices": {
+        "1": "(ア) 集中巻　(イ) 円筒形　(ウ) 低速回転　(エ) 軟磁性体",
+        "2": "(ア) 分布巻　(イ) 突極形　(ウ) 低速回転　(エ) 希土類磁石",
+        "3": "(ア) 集中巻　(イ) 突極形　(ウ) 高速回転　(エ) 希土類磁石",
+        "4": "(ア) 分布巻　(イ) 円筒形　(ウ) 高速回転　(エ) 希土類磁石",
+        "5": "(ア) 集中巻　(イ) 突極形　(ウ) 低速回転　(エ) 軟磁性体"
+      },
+      "officialAnswer": "3",
+      "explanation": "SRMは固定子・回転子とも突極構造をもつ二重突極形のモータである。\n(ア) 固定子の各突極に巻線を個別に巻き付ける集中巻が用いられる。\n(イ) 回転子は巻線も永久磁石ももたない積層鉄心だけの突極形である。固定子の巻線を励磁すると、磁気抵抗（リラクタンス）が最小となる位置へ回転子の突極が引き付けられ、リラクタンストルクが発生する。回転子が円筒形だと回転位置による磁気抵抗の変化がなく、このトルクは生じない。\n(ウ) 回転子が鉄心のみの簡単で強固な構造であり、遠心力に対して強いため、高速回転に適している。\n(エ) ネオジム磁石に代表される希土類磁石（永久磁石）を使わず、鉄心と巻線だけで磁気回路を構成できる。\nしたがって、集中巻・突極形・高速回転・希土類磁石の組合せである(3)が正しい。",
+      "choiceExplanations": {
+        "1": "誤り。(ア)集中巻は正しいが、(イ)円筒形の回転子では回転位置による磁気抵抗の変化がなくリラクタンストルクが得られない。(ウ)回転子が簡単で強固なことから適しているのは高速回転である。(エ)ネオジムは希土類磁石の例であり、軟磁性体ではない。SRMの鉄心自体が軟磁性材料であるため「軟磁性体を使用せず」は記述と合わない。",
+        "2": "誤り。(イ)突極形と(エ)希土類磁石は正しいが、(ア)SRMの固定子巻線は各突極に巻く集中巻であり分布巻ではない。また(ウ)強固な回転子構造が生かされるのは高速回転である。",
+        "3": "正しい。固定子は集中巻、回転子は突極形で、回転子が簡単・強固なため高速回転に適し、ネオジムなどの希土類磁石を使わずに鉄心と巻線のみで磁気回路を構成できる。",
+        "4": "誤り。(ウ)高速回転と(エ)希土類磁石は正しいが、(ア)固定子巻線は分布巻ではなく集中巻、(イ)回転子は円筒形ではなく突極形である。",
+        "5": "誤り。(ア)集中巻と(イ)突極形は正しいが、(ウ)強固な回転子構造が生かされるのは高速回転である。(エ)ネオジムは希土類磁石の例であり、軟磁性体ではない。"
+      },
+      "figureDescription": "本問には回路図・構造図などの図はない。選択肢は(ア)～(エ)の語句の組合せを示す表であり、その内容はchoicesにすべて記載している。",
+      "officialReferenceUrls": [],
+      "uncertainty": "なし",
+      "needsReview": true,
+      "sourceQuestionPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_q03.pdf",
+      "sourceAnswerPdfUrl": "https://www.shiken.or.jp/chief/upload/20250831_ch_third_a01.pdf",
+      "reviewedFromPage": [
+        10
+      ]
+    }
+  ],
+  "draftModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2459,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 9309,
+      "webSearchRequests": 0,
+      "costUSD": 0.12391579999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 783,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a38513b3c33bfd83156c805c661e996352d954d98bfc5cbbf813e0edc7962526",
+  "inputRequestSha256": "ca715215e8c138d0f4894dd8d85111d3e8fc4f0b79fbb3e7e6ee78af5912c453",
+  "sourceQuestionPdfSha256": "2a73a24594cc2b8bb7504b9a0ff15e001b2bb56b830572ce2be853f7116f26d8",
+  "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+  "sourcePageImageSha256": {
+    "data/raw_pdfs/denken3/review/20250831/machinery/p10.png": "f539c838989a385777853e5a43ec6f1419a1ceb91469c87c953b3d1ce05fdb6e"
+  },
+  "revisionHistory": [
+    {
+      "version": 1,
+      "model": "claude-opus-5-5",
+      "resolvedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2532,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 12597,
+          "webSearchRequests": 0,
+          "costUSD": 0.1516798,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 967,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "rawResponseSha256": "54662767420ad4a525cc434b67d2b1802981b097d7e56e259dc8ae16852c85cb",
+      "inputRequestSha256": "aa0145da27c44c4a79e5ae591c5b0adb457b0167c5919a287610461150bd2e7d",
+      "previousDraftSha256": "477b32461f1c90711eb6ff01e91442fdc3498cfe47120f1a6dd729de55f851a3",
+      "previousDraft": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q07-vision-draft-v1.json",
+      "answeredReviewSha256": "65ea8b8d5600a9c8ac94a55e4784fbb45bcf3416d7780629e7b54453e20e9591",
+      "answeredReview": "data/raw_pdfs/denken3/review/20250831/machinery/archive/q07-opus-review-v1.json",
+      "answeredStrictReceipt": "docs/evidence/denken3/strict/20250831-machinery-s1-q07-opus.json",
+      "answeredStrictReceiptSha256": "a2ad954b2bfc69429f12ca14be18b5f22f534079461ee3a72eb726eeec4b5032",
+      "figureSha256": {},
+      "referenceHashes": {},
+      "operatorNote": ""
+    }
+  ]
+}

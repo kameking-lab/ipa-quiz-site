@@ -1,0 +1,44 @@
+{
+  "status": "partial-accepted",
+  "date": "20240818",
+  "subject": "law",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+  "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+  "reviewedDataSha256": "235c086a65eb8963f463fa2e2a39cf667488425b7d86f2d02073c10a37488807",
+  "questions": [
+    {
+      "number": 2,
+      "sourceDraftSha256": "12f33767411245139df679ca1458cf0ed3a64a78c922faf04c2c06ff8f486bb6",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20240818/law/q02-opus-review.json",
+      "opusReceiptSha256": "29938508514b3b0f003a22167f2f264daadf5dcfd92959cf82a5f372443ecca3",
+      "assessment": {
+        "number": 2,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": [
+          "要外部確認: 電気関係報告規則第3条第1項表の号番号（第1号 感電等死傷、第2号 電気火災、第3号 他の物件の損傷、第4号・第5号 主要電気工作物破損事故、第12号 波及事故）が2024年4月15日改正後の条文と一致するかは、原図だけでは確認できない。現行条文（e-Gov）と経済産業省の運用資料240415houkoku3zyou.pdfで照合すること。",
+          "要外部確認: 自家用需要設備の主要電気工作物破損事故が「電圧1万V以上」に限られること、および波及事故の要件（接続先3000V以上、需要家数・時間の下限なし）は、改正後の条文と運用資料の該当頁（草稿の#page=6,8,9,11,21）で確認すること。"
+        ]
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q02": {
+      "path": "docs/evidence/denken3/strict/20240818-law-l11-q02-q05-opus.json",
+      "sha256": "dc4d32bf585f27fd5ab81d5ac07b73126b620b12906aa2101bf232fb97f1b689",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  },
+  "reviewedDataSha256Repair": {
+    "previous": "792bb0723363c310acc5e4d2d487b9f10f448f745b697e50c7fa8d00f331784d",
+    "reason": "Recorded file digest matched no committed revision under LF or CRLF; every row's canonical JSON still equals the candidateSha256 of its bound strict PASS receipt, so only the byte-level file digest is re-pinned (LF checkout)."
+  }
+}
