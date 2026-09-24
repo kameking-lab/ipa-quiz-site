@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3813,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22319,
+      "webSearchRequests": 0,
+      "costUSD": 0.25507579999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2049,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "05808a5ef451a9b50c9086fde19e36df73d4e05c4903d221df8625e8bd4c409c",
+  "inputRequestSha256": "952ef30b5013920c6848b46f5311b7e505883c9827ed0d66e68ebb42c3feff0f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "2ff7f9bbd1e33f001cd26d0ead17ac23a2d2671311ebd71f27e8da8339339cad"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/law/p04.png": "38045ec67d58396f98ae270d13322f49aa0291474ec50e346ecabbd47a85dfbe",
+      "data/raw_pdfs/denken3/review/20250831/law/p05.png": "d0a3b0e702a7d10c4bc35d51d6ca370b4b1f76dda9b6e09b1edb93cdd0e162ac"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "51aeb8f1cbfe8e6d3667c2848a3d9fccff40a967f48aafc292fa13a13a6efbb0",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "c98c3800e2485a6fe3ab2f0e50a30ac3808618cdda96a7241de506e92857a39c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20250401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "解説は冒頭で「問題文の前半は，この推進機関が行う電気の供給の指示…に対応する」と述べ、問題文の「電力広域的運営推進機関(OCCTO)」を電気事業法上の「推進機関」と同一視している。しかし添付の条文（第28条の4）で確認できるのは「広域的運営推進機関（以下「推進機関」という。）」という文言だけで、「電力広域的運営推進機関」という固有名称は条文上確認できない。候補自身もuncertaintyでこの点を未確認としているのに、needsReviewはfalseのままで矛盾している。対応は次のいずれか。(a) 固有名称と推進機関の対応を示す公式資料の原頁を添付して検証する。(b) 解説の該当箇所を「問題文前半の要件・指示内容が第28条の44第1項と一致することから、同項の推進機関の指示に関する記述と判断できる」という推論の形に改め、uncertaintyを解消する。いずれでも解消できない場合はneedsReview=trueにする。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls（e-Gov 電気事業法、occasion_date=20250401）に依拠した主張のうち、「電力広域的運営推進機関(OCCTO)が同法の『推進機関』である」という名称の対応は、添付の条文（第28条の4、第28条の44、第31条、第34条の2）でも添付原図でも検証できない。候補のuncertaintyにも未確認の外部確認事項として残っているため、PASSにはできない。"
+      ],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2025、term=upper、examDate=2025-08-31、subject=law、問題PDF=20250831_ch_third_q04.pdf、解答PDF=20250831_ch_third_a01.pdf、reviewedFromPage=[4,5] は manifest と一致する。原図の頁下部コード「T1−H 004」「T1−H 005」とも整合する。",
+        "問題文: 原図第4頁の問1本文（OCCTOの指示に関する段落、経済産業大臣の命令に関する段落）と第5頁の設問文は、空欄(ア)(イ)(ウ)の位置、句読点、「かつ適切であると認めるときは」「相互に電気の供給をすることや電気工作物を共用することなど」を含め、候補と文言が一致する。",
+        "選択肢: 原図第5頁の表(1)〜(5)の(ア)(イ)(ウ)各列（保安規程/会員/電気事業者、保安規程/事業者/一般送配電事業者、送配電等業務指針/特定事業者/特定自家用電気工作物設置者、業務規程/事業者/特定自家用電気工作物設置者、業務規程/会員/電気事業者）は、候補choicesと全肢一致する。",
+        "公式正答: 試験センター公式解答表の＜法規＞問1は解答5、配点6。候補のofficialAnswer=\"5\"、scoringPoints=6と一致する。",
+        "法令の基準日: 注意書き頁の注3は「令和7年4月1日現在，効力のある法令」を基準としており、添付条文の施行時点2025-04-01と一致する。",
+        "第28条の44第1項: 「業務規程で定めるところにより、会員に対し」は、(ア)=業務規程、(イ)=会員の根拠として条文と一致する。第1号〜第5号の引用と、ただし書の要約（第1号は送電事業者、第2号は小売・発電・特定卸供給事業者、第3号は送電・発電・特定卸供給事業者である会員に指示不可）も原文どおりである。",
+        "第31条第1項: 「電気事業者に対し、次に掲げる事項を命ずることができる」は、(ウ)=電気事業者の根拠として条文と一致する。第1号〜第5号とただし書の要約は原文どおりである。第2項が特定自家用電気工作物設置者に対する「勧告」規定であるとの説明も条文と一致する。",
+        "第28条の4の引用文は添付条文と一致する。",
+        "choiceExplanations: (1)〜(4)が誤りとされる理由（(ア)の保安規程・送配電等業務指針、(イ)の事業者・特定事業者、(ウ)の一般送配電事業者・特定自家用電気工作物設置者）は、いずれも第28条の44第1項・第31条第1項及び第2項の文言で裏付けられる。(5)が正しいとする説明も条文と一致する。",
+        "図: 問1に回路図等の図はない。選択肢表の内容はchoicesに全て反映されており、figureUrls=[]、choiceFigureUrls={} で解答に支障はない。"
+      ]
+    }
+  ]
+}

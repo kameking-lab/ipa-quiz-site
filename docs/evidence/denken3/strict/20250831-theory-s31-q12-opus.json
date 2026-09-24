@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250831",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4343,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16837,
+      "webSearchRequests": 0,
+      "costUSD": 0.2218198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2549,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "984edba14bd44cc100d56b60d79c4c1e67936c062e5c90ed6f0d5e1b262b7014",
+  "inputRequestSha256": "c8e80c4a6de45e654c4133b1b8d85152e65ca30cc441abee5f4fdf3b2ba81a80",
+  "inputHashes": {
+    "candidateSha256": {
+      "q12": "7eb4bedf1667b518530b2b48980dd2d3ce6223f133faeef073dbeac8f02550f5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250831/theory/p15.png": "634999524efd70de1cfb1048f422273f4125a7b9fffc7761e52a620d12134190"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig1.png": "7915d8dd7e08f32a5a18289f79a80df38eedbc6bfe9a2e30356eddc98d171aac",
+      "public/images/denken3/20250831/theory/20250831-theory-q12-fig2.png": "985fa7376cec08729b12a31d221083135937d34b4c021d817e1520e6c4683259"
+    },
+    "sourceQuestionPdfSha256": "11a75ffd5dd2b5309ad75370bb963c4fda9e12a812174cfa2c2237383c3a964d",
+    "sourceAnswerPdfSha256": "76fd3715ed487d19a56b387fb402de20ee09474e9fa55b0413f9037b96af06c9",
+    "officialAnswerUnitsSha256": "219e536a730d8971e180344786240e6d57210b9b13b250f598dde7f8b5db139f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureUrls に2枚の図が登録されているが、figureDescription は1枚の回路図しか説明していない。fig2 が何を示す図で、fig1 とどう関係するのかが候補データのどこにも書かれていない。",
+        "fig2（20250831-theory-q12-fig2.png）は、fig1 の電源・接地付近を切り出した部分図である。上端では電極Kの下辺と電極Pの下端が途中で切れており、『電極K』『電極P』『ヒータ』『6 mm』のラベルが一つもない。これが問題図として単独で公開されると、学習者には別の回路の断片なのか、fig1 の拡大なのかが判別できない。",
+        "対応案は次のどちらか。(a) fig1 だけで電池記号の長短（左＝短＝負極、右＝長＝正極）が十分に読み取れるなら、fig2 を figureUrls から削除する。(b) 極性確認のために残すなら、fig2 に『fig1 の電源・接地部分の拡大図（左が電極K側、右が電極P側）』などの説明を付け、figureDescription にも fig2 の役割を追記する。なお、解答自体は問題文だけで導ける（W = eV は電圧の大きさで決まり、電子が P に達することは本文に明示されている）。fig2 の扱いは可読性・曖昧さの問題であり、正答には影響しない。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典: manifest の問題PDF 20250831_ch_third_q01.pdf、解答PDF 20250831_ch_third_a01.pdf と候補の sourceQuestionPdfUrl／sourceAnswerPdfUrl が一致する。fiscalYear=2025、term=upper、examDate=2025-08-31、subject=theory も manifest（2025年度上期・試験日2025-08-31・理論）と一致する。sourceAttribution の『令和7年度上期第三種電気主任技術者試験 理論科目 問12』も整合する。",
+        "reviewedFromPage=[15] は manifest の PDF第15頁と一致する。原図下部の『-12-』は冊子ページ番号であり、PDFページ番号ではないので矛盾しない。",
+        "公式正答: 解答表の理論・問12 は解答5・配点5。候補の officialAnswer=\"5\"、scoringPoints=5 と一致する。",
+        "問題文: 原図と照合し、以下が一致する。真空中、間隔 6 mm、面積十分広い平行平板、2 000 V 直流、(ア) V/m、ヒータ加熱で (イ) 放出、初速度零、運動エネルギー W、(ウ) J、電界一様、e = 1.6×10⁻¹⁹ C、設問文。",
+        "選択肢: 原図の表と全肢が一致する。(1) 3.3×10²/光電子/1.6×10⁻¹⁶、(2) 3.3×10⁵/熱電子/1.6×10⁻¹⁶、(3) 3.3×10²/光電子/3.2×10⁻¹⁶、(4) 3.3×10²/熱電子/1.6×10⁻¹⁶、(5) 3.3×10⁵/熱電子/3.2×10⁻¹⁶。",
+        "検算(ア): E = 2000 / (6×10⁻³) = 3.333…×10⁵ ≒ 3.3×10⁵ V/m。",
+        "検算(イ): 加熱による電子放出は熱電子放出であり、光電子は光照射による。",
+        "検算(ウ): W = eV = 1.6×10⁻¹⁹ × 2000 = 3.2×10⁻¹⁶ J。eEd でも同値になる。2 keV は非相対論の範囲なので、『電圧だけで決まる』という記述は妥当。",
+        "誤答肢の理由: (1) の『3.3×10² は 2000÷6（V/mm 相当）』は正しい。(1)〜(4) について、各肢で誤っている空欄の指摘がすべて正確である。(5) の正答理由も正確。",
+        "極性: 原図とfig2では、電池記号の左（電極K側）が短線＝負極、右（電極P側）が長線＝正極である。電極P側は接地されており、P が K より 2000 V 高電位となる。電子は K→P に加速され、解説・figureDescription の記述と一致する。",
+        "figureDescription の記述は原図・fig1 と一致する。確認した要素は、電極K（左開きコの字形）、ヒータの開放引出線2本とラベル位置、6 mm 両矢印の位置、K側黒丸の位置、P側黒丸2つ、分岐点下の接地記号、全ラベル。",
+        "officialReferenceUrls は空であり、検証が必要な外部主張はない。"
+      ]
+    }
+  ]
+}

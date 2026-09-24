@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5444,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19326,
+      "webSearchRequests": 0,
+      "costUSD": 0.2637518,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3218,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f15292fc060e911156949c7bf454c37fb4eabe18cf4bdcff5eab317cb310e9fa",
+  "inputRequestSha256": "f38c201051987f7b284a3b23d7555fb7e3dd7d7875102883a7eab709cdfc0ffd",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "23654dbf079f5b338a179281291fe4ba1233fba24493b9737856a8665ba14cfd",
+      "q16b": "19980c55ff6b09ec63b3611027a19d413152735c7b5c871545b4209b2876624b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p20.png": "bea562c8fed5fb25fecd812041d5eed51e1bc29c08c6dafbfaf4fac327b08415",
+      "data/raw_pdfs/denken3/review/20250323/theory/p21.png": "41e4fa7290d142a73f6eee919fedcf3f83e1f9a7092c99881947001703fd7c4b"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q16-bridge-circuit.png": "cee8edd83316f3d571e0cbb72e05953def9f81af6bd7026c745d5e2934409419"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "ce98d57b37fbcbfec07706eb108ac8ffc5f165350c17c5937badca5fa6526b2e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "添字表記が統一されていない。共通問題文では R₁・Rₓ のように Unicode 下付きを使い、同じ文中の R_ac・R_bc はアンダースコア表記になっている。小問文と解説では Rx・Rac・Rbc のプレーン表記である。Markdown/LaTeX として描画されない場合、『R_ac』はアンダースコア付きのまま表示される。表記を一方式（例: R_ac→Rₐc 相当の表記、または全体を Rac 形式）に統一すること。原図の数値・語句（接点C の大文字を含む）との一致に問題はない。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄の記述が自己矛盾している。『なし』としながら『公式の出典URLは確実に特定できていない』と書いている。一方で sourceQuestionPdfUrl と sourceAnswerPdfUrl には manifest と一致する公式PDFが正しく入っている。officialReferenceUrls が空である理由の説明として不正確であり、出典未特定と誤読される。uncertainty の該当文を削除または修正すること。必要なら officialReferenceUrls に manifest の公式PDF URL を入れる。"
+      ],
+      "verifiedEvidence": [
+        "問題文: PDF第20頁（冊子 -17-）の原図と照合した。R1=3 kΩ、R2=2 kΩ、R4=3 kΩ、R3=6 kΩ、接点Cは中央、Rac=Rbc=3 kΩ、6 V、電流計内部抵抗は無視、の各条件が一致する。",
+        "小問(a)の文と選択肢: PDF第21頁（冊子 -18-）と照合した。(1)0.1 (2)0.5 (3)1.0 (4)1.5 (5)2.0 が一致する。",
+        "公式正答: 解答PDF（令和6年度下期・理論）の問16(a)=3 と一致する。officialAnswer='3' に変更はない。",
+        "図の接続: 左節点P から R1 が上節点T へ、R2 が下節点B へつながる。T から R4 を経て a、B から Rx を経て b へつながる。a–b 間が R3 で、接触子c は電流計と 6 V 電源を経て P へ戻る。検流計は T–B 間にある。候補の解説・figureDescription と一致する。",
+        "検算: 平衡条件は R1(Rx+Rbc)=R2(R4+Rac) で、3(Rx+3)=2×6=12 から Rx=1.0 kΩ。分圧による別解も P–T 間 = 6×3/9 = 2 V、2/(2+Rx+3)=1/3 から Rx=1 となり一致する。",
+        "誤答肢の検算: 3×3.1=9.3、3×3.5=10.5、3×4.5=13.5、3×5=15 はいずれも 12 と一致しない。記述は正しい。",
+        "公開候補図: 原図の回路部と詳細図を欠落なく切り出している。R1〜R4, Rx[kΩ], a, b, c, 検流計（↑）, 電流計A, 6 V, Rac/Rbc 付き詳細図の全ラベルと接続・向きが原図と一致し、図だけで接続を理解できる。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、問題PDF/解答PDF の URL、reviewedFromPage=[20,21] が manifest と一致する。officialReferenceUrls は空で、検証すべき独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "q16a と同じ添字表記の不統一がある（Rₓ / R_ac・R_bc / Rx・Rac）。R_ac のアンダースコアが生表示される恐れがあるため統一すること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty 欄が『なし』としながら『公式の出典URLは確実に特定できていない』と記載しており、manifest と一致する sourceQuestionPdfUrl/sourceAnswerPdfUrl が設定済みであることと矛盾する。記述を修正すること。"
+      ],
+      "verifiedEvidence": [
+        "小問(b)の文と選択肢: PDF第21頁（冊子 -18-）と照合した。『平衡時の電流計の指示値[mA]』と、(1)0 (2)0.4 (3)1.5 (4)1.7 (5)2.0 が一致する。",
+        "公式正答: 解答PDF の問16(b)=4 と一致する。officialAnswer='4' に変更はない。",
+        "検算: 平衡時は検流計電流が 0 なので、P–c 間 6 V に上枝 R1+R4+Rac=9 kΩ と下枝 R2+Rx+Rbc=2+1+3=6 kΩ が並列に接続される。I=6/9+6/6=0.667+1.0≒1.667 mA≒1.7 mA。並列合成 9×6/15=3.6 kΩ、6/3.6≒1.667 mA も一致する。",
+        "電流計の位置: 原図で電流計は 6 V 電源と直列で、接触子c–左節点P 間にあり、全電流を測る。候補の記述と一致する。",
+        "誤答肢の理由: (1) 0 は検流計の平衡指示との混同であることを示している。(2) 0.4 は一方の枝電流のどちらよりも小さい。(3) は差0.17、(5) は差0.33 で、(4) の差0.03 より遠い。数値はすべて正しい。",
+        "公開候補図: q16a と同一の図で、原図と完全に一致する。電流計が主回路に直列であることを図から判読できる。",
+        "出典メタデータ: q16a と同様に manifest と一致する。"
+      ]
+    }
+  ]
+}

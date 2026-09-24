@@ -1,0 +1,90 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4886,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15713,
+      "webSearchRequests": 0,
+      "costUSD": 0.2236878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2742,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "f042c6a8983bcb6fb4fc01171efb32d2bda6cc6ef01af1e33dd3885438c082bc",
+  "inputRequestSha256": "5701a3f110f3816827b80766647d6fb3b2141525fbd075bc2c4aa49480e6c556",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "93693273fc1cf44fdb6e11f414283807252633623a0ef44715b961357549e171",
+      "q17b": "187a24f931b87fba34695a31a9a59e126d134463d44220ca10b741c8c0cdebc8"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p20.png": "8cf37a02453885efee12ba6420f44186ae496f98df6578c9c0a65e5548355c7d"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/power/20250323-power-q17-feranti-pi-circuit.png": "b0a8aaf091ed77ad3e2045be3aca501018e90dfcb7cd2ffde5c612b0b5f909a5"
+    },
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "22f7d0e3e987dea7836aabdef1fd347639d8710d8006f5eaacb4faaf131622f5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[\"3\"] の「本問の π 形回路では受電端側の容量は B/2」は用語が不正確。B/2 は容量(キャパシタンス[F])ではなくサセプタンス(アドミタンス[S])で、容量は B/(2ω) に当たる。「受電端側の並列アドミタンスは jB/2」と直すべき。",
+        "choiceExplanations[\"3\"] の「XB/2 = 0.080 ではなく 0.16 を使った場合」は誤答の成因が曖昧。0.16 は B/2 ではなく B をそのまま使った XB = 200×0.800×10⁻³ の値なので、「B/2 の代わりに B を用いて 1−XB = 0.84 とした場合（66.0/0.84 ≈ 78.6）」と明記すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第20頁、冊子ページ表記 -17-、フッタ T2−D 020）の本文と一致する。確認した値は jX=j200 Ω、jB=j0.800 mS、送電端線間電圧 66.0 kV、受電端無負荷。設問(a)の文言も一致する。",
+        "選択肢: (1)66.0 (2)71.7 (3)78.6 (4)114 (5)132 で、原図と全肢一致。",
+        "公式正答: 解答PDF 2024_3_2.pdf（令和6年度下期）の電力 問17(a)=2 で、候補 officialAnswer=\"2\" と一致。",
+        "計算: XB/2 = 200×0.800×10⁻³/2 = 0.080。受電端の jB/2 電流 j(B/2)Er が jX を通るので、Es = Er + jX·j(B/2)Er = Er(1−0.080) = 0.92Er。係数が正の実数なので線間電圧比を直接使え、Er = 66.0/0.92 = 71.739 ≈ 71.7 kV。受電端電圧の上昇はフェランチ現象であり、因果の説明も正しい。",
+        "誤答肢の数値: (1)は送電端電圧そのもので正しい。(3)は 66.0/0.84 = 78.57 で正しい。(4)は 66.0×√3 = 114.3 で正しい。(5)は 66.0×2 = 132 で正しい。",
+        "図: 公開候補図は公式原図と一致する。接続は 送電端○—●—jX(コイル)—●—○受電端 で、両●から jB/2 コンデンサを介して接地されている。ラベル（送電端・受電端・jX・j B/2 ×2）の位置と向きも一致し、図だけで回路構成を理解できる。",
+        "書誌: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、reviewedFromPage=[20]、問題・解答PDFのURLは manifest と一致する。sourceAttribution の「令和6年度下期 電力科目 問17(a)」も一致する。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（PDF第20頁）の共通前文と一致する。設問(b)「1 線当たりの送電端電流の値[A]として，最も近いものを次の(1)〜(5)のうちから一つ選べ。」も一致する。",
+        "選択肢: (1)15.2 (2)16.6 (3)28.7 (4)31.8 (5)55.1 で、原図と全肢一致。",
+        "公式正答: 解答PDF 2024_3_2.pdf の電力 問17(b)=4 で、候補 officialAnswer=\"4\" と一致。",
+        "計算: Er(線間) = 66.0/0.92 = 71.739 kV。送電端相電圧 Es = 66.0/√3 = 38.105 kV、受電端相電圧 Er = 71.739/√3 = 41.419 kV。Es = 0.92Er で両者は同相なので、Is = j(B/2)(Es+Er) の大きさを大きさの和で計算でき、0.400×10⁻³×79.524×10³ = 31.81 ≈ 31.8 A。送電端電流が「送電端側 B/2 電流 + 線路電流(=受電端側 B/2 電流)」になるという因果も正しい。",
+        "誤答肢の数値: (1)は 0.400 mS×38.105 kV = 15.24 A で送電端側分のみ、正しい。(2)は 0.400 mS×41.419 kV = 16.57 A で受電端側分(線路電流)のみ、正しい。(3)は 0.400 mS×71.74 kV = 28.70 A で線間電圧を用い受電端側のみ、正しい。(5)は 31.81×√3 = 55.09 A で、0.400 mS×(66.0+71.74) kV = 55.10 A とも一致し、正しい。",
+        "図: 公開候補図は公式原図と接続・向き・全ラベルが一致する。送電端電流が両端 jB/2 の電流の和になる構成を、公開図だけで読み取れる。",
+        "書誌: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、reviewedFromPage=[20]、両PDFのURLは manifest と一致する。sourceAttribution の「令和6年度下期 電力科目 問17(b)」も一致する。officialReferenceUrls は空で、独立主張はない。"
+      ]
+    }
+  ]
+}

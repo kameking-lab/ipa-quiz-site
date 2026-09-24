@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7880,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22718,
+      "webSearchRequests": 0,
+      "costUSD": 0.3396078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5288,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0350e9dc229717995e8f3dd4e987bedd5af5a6d9b71bb5f7e4c4057c325db3a2",
+  "inputRequestSha256": "15e06a7bf84a1abe88ce8ce865826012df9b2c160e8172944ce2b7cca9869374",
+  "inputHashes": {
+    "candidateSha256": {
+      "q16a": "eb944c6683ee804f494b1b2696cc697c84d59430a40f331650b31967c96b7a21",
+      "q16b": "65f92c6cc4cd9840d8901e27e48197929ba44ea7c84d2f56c4055d6f6c186be5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p20.png": "049becd19a8aa16e6c6687049a209a53f63b9242766d14b85bd77959e9ab4f71",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p21.png": "756ce9ca77ecc285000ec08c9223712afd3c5d6fa462497562cc64321b913ef7"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-circuit.png": "7797b2fba5e1b8bb6c6f696545816842ad56ea95045fc24fc025dc29599d9906",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-waveform.png": "84027d21f549c1d4ac6f841e8525f8f99ff016dc08eef67c30668b4412752d62",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q16-current-paths.png": "026ad5536b9f38d2474ae5a1602a26904dc4501a1e22360aa640891de0657aa4"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "41d8345ba0c00be234741c15e0ca7f8fc5e821bbe2f41d013c5f3de76979371e",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q16a",
+      "questionNumber": 16,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [
+        "question 文字列内の改行が \"\\\\n\"（JSONデコード後はバックスラッシュ＋n の2文字）として格納されており、実改行にならず画面に「\\n」がそのまま表示される。共通リード文と(a)設問文の区切りは実改行 \"\\n\" にすること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度 下期 第三種電気主任技術者試験解答、<機械>列）の問16(a)は5。候補のofficialAnswer=\"5\"、manifest公式正答単位{question:16, part:\"a\", answer:\"5\"}と一致する。",
+        "問題文（共通リード文と(a)設問文）を原図PDF第20頁（頁下端 -17-、T2-K 020）と照合した。改行表記を除き、語句・記号（E、S、D、L、R、v_D、i_R、t₁、t₂）は一致する。",
+        "選択肢(1)〜(5)を原図の表と照合し、全肢一致を確認した。(1) C/B、(2) A/C、(3) B/A、(4) B/C、(5) A/B。",
+        "図2（原図第21頁）の波形を確認した。v_Dは0〜T/2でE、T/2〜Tで0Vの矩形波で、通流率50%。t₁の矢印は約T/4の破線上でv_D=E区間、t₂の矢印は約3T/4の破線上でv_D=0V区間にある。i_RはE区間で増加、0V区間で減少しており、Sオン/オフと整合する。",
+        "図1の極性を確認した。Dは上がカソード（S–L接続点）、下がアノード（下側共通線）。v_Dの矢印は下から上で、上側が正。Sオンでv_D=E、Sオフ（D還流）でv_D≈0 となり、解説と一致する。",
+        "図3(A)は E→S→L→R→E の時計回りループで、Dは点線。図4(B)は D（アノード→カソード）→L→R→D で、E・Sは点線。図5(C)は上辺左向き・下辺右向きで、D順方向→Sを逆向き（エミッタ→コレクタ）→E正極へ流入するループで、L・Rは点線。いずれも候補のfigureDescriptionの記述と一致する。",
+        "(C)が成立しない理由を検算した。Sオン時はDが逆バイアス、Sオフ時はSが遮断されるため、候補の説明は妥当である。",
+        "総合解説と各肢解説を検算した。t₁=(A)、t₂=(B)で正答(5)が導かれる。(1)〜(4)の誤り箇所（どちらの時刻が誤りか）の指摘は各肢とも正確である。",
+        "公開候補図3点（circuit / waveform / current-paths）を原図と照合した。接続・向き・点線/実線の区別・全ラベル（S, L, D, R, E, i_R, v_D, E[V], 0V, I_R[A], 0A, 0, T, 2T, t₁, t₂, 図番号とキャプション）が一致し、欠落・改変はない。公開図だけで解答可能である。",
+        "出典情報を確認した。fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl、sourceAnswerPdfUrl、reviewedFromPage=[20,21]（原図フッタ T2-K 020/021 と整合）はmanifestと一致する。sourceAttributionの「令和6年度下期…機械科目 問16(a)」も正しい。officialReferenceUrlsは空で、検証を要する独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q16b",
+      "questionNumber": 16,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [
+        "question 文字列内の改行が \"\\\\n\"（JSONデコード後はバックスラッシュ＋n の2文字）として格納されており、実改行にならず画面に「\\n」がそのまま表示される。実改行 \"\\n\" にすること。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations(3)の誤答理由が肢固有になっていない。「50/√2 ≈ 35.4 に当たる数値」という算術上の一致を示すだけで、誤答の由来を説明していない。35.4 A は v_D の実効値 E√(通流率)=100×√0.5≈70.7 V を R=2Ω で割った値（平均値と実効値の取り違え）として説明するのが適切である。",
+        "choiceExplanations(5)も同様に肢固有の理由になっていない。70.7 は v_D の実効値 E√0.5≈70.7 V と同じ数値であり、「実効電圧を電流値と取り違える」誤りとして説明するほうが肢固有の理由になる。現行の「100/√2」も算術上は正しいが、回路上の意味づけがない。",
+        "総合解説の「通流率をDutyとして」は英語表記が混在している。本文と同じ「通流率α」などの表記に統一することが望ましい。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度 下期、<機械>列）の問16(b)は2。候補のofficialAnswer=\"2\"、manifest公式正答単位{question:16, part:\"b\", answer:\"2\"}と一致する。",
+        "(b)設問文を原図PDF第20頁と照合した。E=100V、通流率50%、R=2Ω、周期Tの高周波スイッチング、Lの平滑作用でi_Rのリプルは十分小さい、平均値I_R[A]、の各条件が一致する。",
+        "選択肢を原図と照合し、全肢一致を確認した。(1) 17.7、(2) 25.0、(3) 35.4、(4) 50.1、(5) 70.7。",
+        "計算を検算した。v_D平均＝E×0.5＝50V。定常状態でLの1周期平均電圧は0なので、R端電圧の平均は50V。I_R＝50/2＝25.0A で(2)となり、公式正答と一致する。",
+        "誤答肢の数値を検算した。25/√2≈17.68、50/√2≈35.36、100/2＝50（通流率100%相当）、100/√2≈70.71。候補の算術はすべて正しい。",
+        "公開候補図3点が原図第20・21頁の図1〜図5と同一内容であることを確認した。(b)は問題文の数値だけで解けるとするfigureDescriptionの記述も妥当である。",
+        "出典情報を確認した。fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、両PDF URL、reviewedFromPage=[20,21]はmanifestと一致する。sourceAttributionの「問16(b)」も正しい。officialReferenceUrlsは空で、独立主張はない。"
+      ]
+    }
+  ]
+}

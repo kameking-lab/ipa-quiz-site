@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2405,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13666,
+      "webSearchRequests": 0,
+      "costUSD": 0.1576918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1003,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "24742df0375e2adae6ddb48dbb5816793e915af88f3fcd51499710e1eaf1d9c6",
+  "inputRequestSha256": "d39fb683ef23506b12ebd8cce88c6228b4289f8163c41350f2871ef0db4021ed",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "5ca0de5d43781f7d70a2a4ca31aefbe2efa962a35118a46dd740f18a708bc777"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p05.png": "23b1b2809a9e3026ceb6b108a08fbdfa201451c1650083c58b68f35902c4f98e"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "e480698d1b5457979638bd88a09f6e09a774ee91ab3a97f2221f9bc513da8538",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=machinery、sourceQuestionPdfUrl=…/20250323_ch_third_q03.pdf、sourceAnswerPdfUrl=…/2024_3_2.pdf はいずれもmanifestと一致する。sourceAttribution『令和6年度下期…機械科目 問2』も2024年度下期と整合する。",
+        "reviewedFromPage=[5] はmanifestの『問2の原図はPDF第[5]頁』と一致する。原図下端の印刷頁番号は『-2-』だが、冊子コード『T2−K 005』は5頁目であることと整合し、PDF頁5と矛盾しない。",
+        "問題文: 界磁磁束一定、電機子電圧24 V、電機子電流3.0 A、一定速、回転数1 500 min⁻¹、出力トルク0.4 N·m、求める量は電機子巻線抵抗[Ω]。ただし書きの3条件（ブラシ電圧降下無視、電機子反作用無視、損失は電機子銅損のみ）を原図と逐語照合し、数値・単位・条件に欠落や改変はない。原図では2段落に分かれているが、候補では1段落に結合されている。これは整形の範囲であり、意味は変わらない。",
+        "選択肢: (1)1.0 (2)2.3 (3)3.1 (4)4.5 (5)6.9 は原図と完全に一致する。",
+        "公式正答: 解答表<機械>問2=1。candidate.officialAnswer='1' および公式正答単位 answer='1' と一致する。",
+        "総合解説の検算: P_in=24×3.0=72 W。ω=2π×1500/60=50π≒157.08 rad/s。P_out=0.4×157.08≒62.83 W。銅損≒72−62.83=9.17 W。Ra=9.17/9≒1.019 Ω≒1.0 Ω。別解は E=62.83/3.0≒20.94 V、Ra=(24−20.94)/3.0≒1.02 Ω。いずれも正しい。損失が銅損のみなので、電磁トルクと出力トルクが一致するという因果も正しい。",
+        "肢(1)の検算: 銅損3.0²×1.0=9.0 W、出力63.0 W。T·ω≒62.8 Wとほぼ一致し、正しい。",
+        "肢(2)の検算: 銅損20.7 W、出力51.3 W、トルク51.3/157.1≒0.327≒0.33 N·m。正しい。",
+        "肢(3)の検算: 銅損27.9 W、出力44.1 W、トルク≒0.281≒0.28 N·m。正しい。",
+        "肢(4)の検算: 銅損40.5 W、出力31.5 W、トルク≒0.200≒0.20 N·m。正しい。",
+        "肢(5)の検算: 銅損62.1 W、出力9.9 W、トルク≒0.063≒0.06 N·m。正しい。",
+        "各誤答肢には、その抵抗値を代入した場合のトルクを示す固有の理由があり、与条件0.4 N·mとの不一致で否定している。論理は妥当である。",
+        "図: 原図は問題文と選択肢のみで、図・回路図・グラフはない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={} は正しい。解答に図は不要である。",
+        "officialReferenceUrls=[] であり、検証を要する独立主張はない。uncertaintyの記述も計算結果と公式正答に整合している。"
+      ]
+    }
+  ]
+}

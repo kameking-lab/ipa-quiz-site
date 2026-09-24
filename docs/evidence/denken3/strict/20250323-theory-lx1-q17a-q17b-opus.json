@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6799,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 19178,
+      "webSearchRequests": 0,
+      "costUSD": 0.28966780000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4647,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "593aded722aa74d682ccffc9352071172a081db9d6135dde776ff1c6ef955ece",
+  "inputRequestSha256": "9f49f0e49eeea6d967524206730d24f83fa8c3e1f4fba9d7f1787dc69bca7f09",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "f80faf083d62990a4767dc025a9f55e97b37d7622e15371fe211181e7445b2df",
+      "q17b": "3c82c4800d93eb332ba57db040ebd4898425c75eb1a71670ae0ff1a1490ca0a6"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p22.png": "6cc47825e2dd4aebd07957a968a4c052619cc1a90fac9b887129487d0096d15c",
+      "data/raw_pdfs/denken3/review/20250323/theory/p23.png": "ffd2503d0e39a615e189b9cf014a3988320991962260477137740c00101c1ef2"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q17-two-floor-capacitors.png": "1e687b3872eb8c597e016fe907de0fff954b6e7562725968c4d62418a94101bc"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "5e3f6fba641e579458caf02cdc2fcb1ee50df55bdf05ded8eb25eec8616ddda5",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1] は誤答の由来を二つ挙げている。一つ目は直列と誤読した場合（Q≈8.05×10⁻⁹ C）、二つ目は左側だけの電荷（8.85×10⁻⁹ C）である。しかし反駁は『並列なので合成容量はC₁+C₂』だけで、直列の誤りにしか対応していない。左側だけとみなす誤りへの反駁（右側電極にもC₂V₀=8.85×10⁻⁸ Cが蓄えられ、問われているのは二枚の合計電荷であること）が欠けており、この肢固有の理由が曖昧になっている。どちらか一つの由来に絞るか、両方をそれぞれ反駁すること。",
+        "choiceExplanations[1] に『原図の二つの電極は…』とある。利用者に見えるのは公開候補図なので、『図の』に改めるのが望ましい。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：manifestと一致する（2024年度下期、試験日2025-03-23、理論、問題PDF 20250323_ch_third_q01.pdf、解答PDF 2024_3_2.pdf）。reviewedFromPage [22,23] もmanifestと一致する。原図の印刷頁番号は -19-・-20- で、PDF頁番号とは異なる。",
+        "公式正答：解答表『令和6年度 下期』理論 問17(a)=3。officialAnswer='3' と一致する。",
+        "問題文：前文、A₁=10⁻³ m²、A₂=10⁻² m²、d=10⁻³ m、V₀=1000 V、ε=8.85×10⁻¹² F/m、端効果無視、(a)の設問文を原図と照合し、一致した。『(選択問題)』見出しの省略と『ただし』段落の結合は、整形の範囲内と判断した。",
+        "選択肢：(1)8.0×10⁻⁹、(2)1.6×10⁻⁸、(3)9.7×10⁻⁸、(4)1.9×10⁻⁷、(5)1.6×10⁻⁶。原図と一致する。",
+        "検算：C₁=8.85×10⁻¹²×10⁻³/10⁻³=8.85×10⁻¹² F。C₂=8.85×10⁻¹²×10⁻²/10⁻³=8.85×10⁻¹¹ F。C=9.735×10⁻¹¹ F。Q=9.735×10⁻⁸ C≒9.7×10⁻⁸ C となり、(3)と一致する。",
+        "誤答肢の数値：直列時の容量は 8.045×10⁻¹² F で Q≈8.05×10⁻⁹ C。比率は 9.735/1.6≈6.08（約1/6）、19/9.735≈1.95（約2倍）、160/9.735≈16.4（約16倍）。いずれも正しい。",
+        "公開候補図：原図と照合した。電源V₀[V]（上側の長線、下側の短線）、上辺配線上のS、節点（黒丸）から左電極A₁[m²]と右電極A₂[m²]への分岐、d[m]とx[m]の両矢印、斜線の金属床、電源下端と床の接続を確認した。全ラベルと接続が一致し、図単体で並列構成を理解できる。"
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations[1] の『1000×(10⁻³/3×10⁻³)』は、演算順序どおりに読むと (10⁻³/3)×10⁻³=3.3×10⁻⁷ となり、≈333 V と矛盾する。『1000×10⁻³/(3.0×10⁻³)』のように括弧を付けて分母を明示すること。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典：manifestと一致する（2024年度下期、試験日2025-03-23、理論、問題・解答PDFのURL、reviewedFromPage [22,23]）。",
+        "公式正答：解答表の理論 問17(b)=2。officialAnswer='2' と一致する。",
+        "問題文：(b)の設問文（x=3.0×10⁻³ m、左側の電極と床との間の火花放電、空隙の絶縁破壊電圧V）を原図と照合し、一致した。ルビ『くうげき』の省略は問題ない。",
+        "選択肢：(1)3.3×10²、(2)2.5×10³、(3)3.0×10³、(4)5.1×10³、(5)3.0×10⁴。原図と一致する。",
+        "検算：S開放後はQ=9.735×10⁻⁸ Cが保存される。C₂'=8.85×10⁻¹⁴/3.0×10⁻³=2.95×10⁻¹¹ F。C'=3.835×10⁻¹¹ F。V=Q/C'≈2538 V≒2.5×10³ V となり、(2)と一致する。xを徐々に増やすとVは単調に上がるので、放電時の電圧を絶縁破壊電圧とみなす因果は妥当。",
+        "誤答肢の数値：V₀d/x≈333 V。右側だけに電荷が保存されるとみなすと V₀x/d=3000 V。比率は 5100/2538≈2.01（約2倍）、30000/2538≈11.8（約12倍）。いずれも正しい。",
+        "公開候補図：(a)と同一の図で、原図と接続・ラベルが一致する。(b)で必要な並列関係は図だけで読み取れる。"
+      ]
+    }
+  ]
+}

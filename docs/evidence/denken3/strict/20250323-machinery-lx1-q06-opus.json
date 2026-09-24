@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3434,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13438,
+      "webSearchRequests": 0,
+      "costUSD": 0.1764478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1766,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3b1d7668a23897b40d42da293cb8479077a5b4a2d5954bf242658e36c11feaae",
+  "inputRequestSha256": "8ed2c2cf5e40b16dd744e378bcf3650d5523c7de7bec6abea8d160e4ef42a13e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q06": "d0a51c04d0d7d250408b8717277f3e9e23467c087ecdd9415395cab34a1b87ef"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p09.png": "2adc07cf39865f6ae3eddc5c6516034aa6404eb505a5400fd42466845140aab7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "8f048241dfea414bc8ceb31eacd1ada87b1ffe90694e652f02c567888a3e22a1",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ: manifest固定情報と一致。fiscalYear=2024（令和6年度）、term=lower（下期）、examDate=2025-03-23、subject=machinery（機械）。sourceQuestionPdfUrl=https://www.shiken.or.jp/chief/upload/20250323_ch_third_q03.pdf、sourceAnswerPdfUrl=https://www.shiken.or.jp/chief/upload/2024_3_2.pdf も一致。reviewedFromPage=[9] は manifest の『問6原図はPDF第9頁』と一致する。添付原図のフッター『T2−K 009』とも整合する（ページ下部の『-6-』は冊子の頁番号）。sourceAttribution『令和6年度下期第三種電気主任技術者試験 機械科目 問6』も一致。",
+        "問題文: 添付原図と照合し、数値・単位・語句はすべて一致した。確認した項目は、定格出力11 000 kV·A、定格電圧6 600 V、三相同期発電機、三相短絡電流750 A、界磁電流54 A、『定格電流に等しい三相短絡電流を流すのに必要な界磁電流[A]』、『最も近いもの』、『(1)〜(5)のうちから一つ選べ』。候補の『kV·A』は原図『kV・A』の中黒を表記上正規化したもので、意味上の差異はない。",
+        "選択肢: 原図の(1)69、(2)96、(3)120、(4)208、(5)289 と候補 choices 1〜5 が完全一致。単位はすべて A（問題文の[A]による）。",
+        "公式正答: 公式解答表（令和6年度下期、機械列）で問6=1。q06公式正答単位 answer=\"1\" と一致し、候補 officialAnswer=\"1\" も一致する。",
+        "定格電流の検算: √3×6 600=11 431.5、11 000×10³÷11 431.5=962.25 A。候補の≒962.3 Aは正しい。",
+        "界磁電流の検算: 短絡特性曲線は直線とみなせるので、If=54×962.25÷750=69.28 A≒69 A。(1)が最も近く、次に近い(2)96 Aとの差は大きいので一意に定まる。候補の69.3 Aは正しい。",
+        "総合解説の因果: 短絡時の電機子電流はほぼ90°遅れとなり、電機子反作用が減磁作用として働く。そのため合成磁束は小さく、磁気飽和が生じにくく、短絡特性は直線になる。この説明は同期機理論として正しい。",
+        "誤答肢(2)の検算: 750×96÷54=1 333.3 A。候補の『≈1 333 A』は正しい。96 Aに対応する短絡電流が定格電流962.3 Aと一致しないことを示す、この肢固有の否定理由になっている（参考: 96は定格電流962.3の1/10に近い数値でもあるが、候補記述の誤りではない）。",
+        "誤答肢(3)の検算: √3を落とした場合、11 000×10³÷6 600=1 666.7 A、54×1 666.7÷750=120.0 A。候補の誤り経路の説明は数値・因果とも正しい。",
+        "誤答肢(4)の検算: √3を掛けた場合、11 000×10³×1.7321÷6 600=2 886.8 A、54×2 886.8÷750=207.9 A≒208 A。候補の説明は正しい。",
+        "誤答肢(5)の検算: 750×289÷54=4 013.9 A。候補の『≈4 014 A』は正しい。定格電流962.3 Aと一致しないことを示す、この肢固有の否定理由になっている。",
+        "図: 添付原図に図はなく、問題文と選択肢だけで構成されている。候補の figureDescription『図はなし』、figureUrls=[]、choiceFigureUrls={} は正しい。解答に図は不要。",
+        "参考資料: officialReferenceUrls=[] のため、検証を要する独立主張はない。",
+        "uncertainty: 短絡特性の直線性を前提とする旨の注記は、第三種電気主任技術者試験の標準的な前提と整合する。問題の一意性を損なう曖昧さではない。needsReview=false、scoringPoints=null（公式単位の points=null と一致）も妥当。"
+      ]
+    }
+  ]
+}

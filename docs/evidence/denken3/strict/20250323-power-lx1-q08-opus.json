@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3010,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13647,
+      "webSearchRequests": 0,
+      "costUSD": 0.1696398,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1749,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b74388e4ec7472d992eb7891e926f1945b09156d15ce3c1c202601fb2019c8b9",
+  "inputRequestSha256": "6fd12f947fd0fce9874ea37941865a4c6587efb2dc35af079bd6fff72ffbdd64",
+  "inputHashes": {
+    "candidateSha256": {
+      "q08": "f054fe6e6751e5c5bae6c3789dc1b0f54c46059982a2e4eb455d993e3e9f799d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p11.png": "c07453578f871084ce1e2a0863cd669be1e2388a27228aed3a48d88d9fcab2aa"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "25d7fdab42d5616f44a79c30bcfcde29933af83724a3ec307daf663d686b873b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図の「送配電線路や変電所におけるがいしの塩害とその対策に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」と一字一句一致。",
+        "肢(1)(3)(4)(5): 公式原図と一字一句一致。",
+        "肢(2): 公式原図は『塵埃』に『じんあい』のルビを振っている。候補の『塵埃（じんあい）』はルビを括弧書きにしたもので、意味の改変はない。sourceAttributionの『読みやすく整形』の範囲内。",
+        "公式正答: 試験センター解答表（令和6年度 下期、＜電力＞欄）の問8は4。manifest固定単位 answer=\"4\" と候補 officialAnswer=\"4\" が一致。",
+        "出典メタデータ: fiscalYear=2024、term=lower、examDate=2025-03-23、subject=power、問題PDF URL、解答PDF URLがmanifestと一致。reviewedFromPage=[11]はmanifestのPDF第11頁と一致する。原図下部の『- 8 -』は冊子の印刷ノンブルで、PDF頁番号とは別物のため矛盾しない。",
+        "総合解説: 誤りを(4)と特定しており、公式正答と整合する。問題はがいしの塩害対策を問うており、塩害対策として沿面距離の延長（耐塩・耐霧がいし）、連結個数の増加（過絶縁）、はっ水性物質（シリコーンコンパウンド等）の塗布、洗浄を挙げている点は妥当。絶縁電線は導体の被覆であり、がいし表面の汚損による沿面フラッシオーバを抑える措置ではないという誤り理由も、問題の限定（『がいしの塩害対策として』）に沿っている。",
+        "肢別解説(1): 汚損湿潤時の沿面絶縁の確保と、連結個数の増加による総沿面距離の増加を説明しており、正しい。",
+        "肢別解説(2): 水溶性成分（等価塩分付着密度）と不溶性物質付着密度の両方を汚損度評価に用いることを説明しており、正しい。",
+        "肢別解説(3): 汚損がいしでの漏れ電流・部分放電によって、フラッシオーバに至らなくても可聴雑音や電波障害が生じるという因果は妥当。",
+        "肢別解説(4): 誤りの理由がこの肢に固有のものであり、同じ肢に並ぶ正しい対策（洗浄・はっ水性物質の塗布）との区別も明確。",
+        "肢別解説(5): 雷害では雷サージが消えれば絶縁が回復するが、塩害では汚損が残るため再閉路後に再びフラッシオーバしやすいという対比は正しい。",
+        "図: 公式原図は文章のみで図・表・回路図がない。figureDescription、figureUrls=[]、choiceFigureUrls={} と整合する。",
+        "参照URL: officialReferenceUrlsは空で、検証が必要な外部の独立主張はない。uncertaintyの記述も定量値に踏み込んでおらず、未確認事項は残っていない。"
+      ]
+    }
+  ]
+}

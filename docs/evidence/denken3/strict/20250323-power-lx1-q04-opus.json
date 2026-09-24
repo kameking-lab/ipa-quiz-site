@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3597,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13476,
+      "webSearchRequests": 0,
+      "costUSD": 0.1800118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2307,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "0c1b95d4aa23627329ba0b3b4ba1d17ee3db78d8bbc5c55862fc357f6800ac0c",
+  "inputRequestSha256": "da755c35a0dedf8746b24bfda908f6fec98754e56043e273977c973c7931d3a3",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "bb3055d2b36ccd02a75706cde0af0a4ca264b85c76955da501b28448e0b67bc5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p07.png": "0a07fa40a9acd36e013cc2189679d538b7dbaff652e6e9fc5e40a9ad9d9e86f6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f2d4a4d03b9f17eb371a9f247e5e97b5b175a41e68237db2bd13653b60deb960",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「誤りは濃縮度の数値ではなく分類名である」と、肢(1)解説の「軽水炉燃料の濃縮度の数値自体でなく，『高濃縮』という分類が誤り」は、2〜4％という数値が軽水炉燃料の濃縮度として正しいと断定している。添付の公式資料で確認できるのは、問題原図（PDF第7頁）の文言と公式正答「1」だけである。解答表には誤りの箇所も理由も示されていない。この断定は添付資料では検証できない。",
+        "軽水炉燃料の濃縮度は一般に「3〜5％程度」と説明されることも多い。国内の現行燃料は5％未満の上限近くまで使われている。このため「2〜4％という数値は正しい」という含意は、外部確認なしには曖昧さを残す。",
+        "修正案（総合解説）：「(1)は，ウラン235の濃縮度が数％程度の燃料を『高濃縮ウラン』と呼んでいる点が誤り。軽水炉で使う燃料は濃縮度数％程度の低濃縮ウランであり，高濃縮ウラン（一般に濃縮度20％以上）ではない。」",
+        "修正案（肢(1)解説）：「誤りであり正答。原子力発電所（軽水炉）で使う燃料は濃縮度数％程度の低濃縮ウランであり，『高濃縮ウラン』ではない。」",
+        "上記の修正案では、数値の正否を断定する文言を削除している。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文：原図（PDF第7頁，頁下部『- 4 -』『T2−D 007』）の『原子力発電に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』と一致した。",
+        "肢(1)〜(5)：原図と逐語で一致した。相違は全角『％』と原図の半角『%』の表記差のみで、意味に影響しない。『ウラン235』『2〜4％』『α線，β線，γ線』『1個以上の熱中性子』も一致した。",
+        "公式正答：解答表原図『令和6年度 下期 第三種電気主任技術者試験解答』の＜電力＞問4は『1』。manifest固定の正答単位 answer=\"1\" および候補の officialAnswer=\"1\" と一致した。",
+        "出典メタデータ：fiscalYear=2024，term=lower，examDate=2025-03-23，subject=power，sourceQuestionPdfUrl，sourceAnswerPdfUrl，reviewedFromPage=[7] はすべて manifest と一致した。sourceAttribution『令和6年度下期…電力科目 問4』も整合している。",
+        "肢(2)〜(5)の解説：放射線・放射能・放射性物質の定義、熱中性子によるウラン235の核分裂、連鎖反応、減速材による高速中性子の減速の説明は、原図の各肢の内容と整合する。誤答肢はいずれも『正しい記述』であり、その理由付けにも誤りはない。",
+        "図：原図は文章のみで、図・表・数式はない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={} は妥当。",
+        "officialReferenceUrls は空配列で、独立主張の参照はない。"
+      ]
+    }
+  ]
+}

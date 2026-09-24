@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3464,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17143,
+      "webSearchRequests": 0,
+      "costUSD": 0.20668779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1976,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8373ff1b7829cb73df856511854e231fe5a5e72e61f5ce6637657d824c62e034",
+  "inputRequestSha256": "b6566d91ad01fad69e3659f18f256f8b0b49e04638cdde02acb10d66852cdba2",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "3f8493eaae1319b12129b735fe0162fc70da887632df105adaf4c95ec369326b"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p06.png": "a83ce8932f7b0ce02eb299f107358b569001ac21ea76ff78b122009749d94727",
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "ba2912083993a611087d59243f807c5ed48dbd08d47532d46648719d22a3f120",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/409M50000400052-20240401.json": "fc3f322dccf59132c0267e8d9fe62d33eb62f4a8cd382cf5b9e084746f6bafe2"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「混触（高圧と低圧の電路が接触すること）」は定義が狭すぎる。混触は電圧の異なる電路どうしの接触を指し、特別高圧と低圧の混触なども含む（例：変圧器内部で高圧側・特別高圧側の巻線が低圧側に接触）。省令第5条の文言も「混触による高電圧の侵入」であり、高圧に限定していない。「高圧又は特別高圧の電路と低圧電路など、電圧の異なる電路が接触すること」のように修正すべき。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertainty欄の「公式原図の文中に示された絶縁原則と例外の語句…を照合済み」は事実と異なる。公式原図（PDF第6頁）では(ア)〜(ウ)は空欄で、語句そのものは原図に示されていない。語句の根拠は、公式正答(3)の選択肢の語と、添付のe-Gov条文（電気設備に関する技術基準を定める省令 第5条第1項、施行時点2024-04-01）である。根拠の記述をこの内容に改めるべき。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（PDF第6頁、頁下部に『-3-』『T2-H 006』）の本文と候補JSONのquestionが一字一句一致している（全角句読点「，」「。」を含む）。空欄(ア)(イ)(ウ)の位置と末尾の指示文も一致。",
+        "選択肢：原図の組合せ表と候補JSONのchoices (1)〜(5) が全肢一致。(1)離隔・事故・遮断、(2)離隔・短絡・遮断、(3)絶縁・混触・接地、(4)絶縁・短絡・離隔、(5)遮断・混触・接地。",
+        "公式正答：解答表原図の＜法規＞問3は3。manifest固定の正答単位 {question:3, part:null, answer:'3'} および候補のofficialAnswer '3' と一致。",
+        "条文照合：添付のe-Gov条文（省令第5条第1項、occasion_date=20240401）は『電路は、大地から絶縁しなければならない。ただし、…又は混触による高電圧の侵入等の異常が発生した際の危険を回避するための接地その他の保安上必要な措置を講ずる場合は、この限りでない。』であり、(ア)絶縁・(イ)混触・(ウ)接地を裏付ける。",
+        "効力基準日：法規科目の注意書き頁の注3『令和6年4月1日現在、効力のある法令』が、officialReferenceUrlsのoccasion_date=20240401と整合する。",
+        "参照URL：officialReferenceUrlsは法令全体のURLで、特定の条番号の主張はない。解説の内容は添付の第5条原文で検証できる。添付された第27条の2・第56条・第66条は本問と無関係で、候補の記述とも矛盾しない。",
+        "誤答肢の理由：(1)は3か所とも誤り、(2)は3か所とも誤り、(4)は(イ)(ウ)が誤り、(5)は(ア)のみ誤り。各choiceExplanationsの判定は正しい。",
+        "図：原図は文章と組合せ表のみで、回路図などの図はない。figureUrls=[]、choiceFigureUrls={}、figureDescriptionの記述は適切。",
+        "メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=law、reviewedFromPage=[6]、sourceQuestionPdfUrl・sourceAnswerPdfUrl、sourceAttribution『令和6年度下期…法規科目 問3』は、いずれもmanifestと一致。reviewedFromPage=[6]は、注意書き頁がT2-H 004で『-1-』、問3の頁がT2-H 006で『-3-』であることとも整合する。"
+      ]
+    }
+  ]
+}

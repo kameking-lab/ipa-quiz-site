@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5475,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18768,
+      "webSearchRequests": 0,
+      "costUSD": 0.2599078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3400,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ffc2038b15a6430a9117d082c3dc29fcab262145e933fa1c9c05af31c1a61d9f",
+  "inputRequestSha256": "2c9410d10fa1c6acfffe43af4aabfd8dc4d8eca14e403f723dfe1cf35d0372c0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "42a098d3a0395a69c72c1f1fb811b98251e1a3aca20c5945f9c42b8fc486f721"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p16.png": "ca87061604fb4f096f8aa216f90e0c708d6e4ead11104d7e8abc1b02562b57b7",
+      "data/raw_pdfs/denken3/review/20250323/theory/p17.png": "388b75842d45766fdb427ef3c114b58db05f0d84bd9b5deb0072b7450bf96d6e"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q13-transistor-circuit.png": "faf547eb0b991e722d5b7a4b3ecf503e78f20c21d91e505cc564ac2fc0407be6",
+      "public/images/denken3/20250323/theory/20250323-theory-q13-output-characteristics.png": "0c3abfed5b3bf0f8895b95540bada69d6167bf173b07db2e4f9798fa6d213016"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a005b6c80d3cfafce1793b0e054fff5b3f2757024ee0fdfd2804adc8ef398ed0",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "choiceExplanations の表記が肢ごとに統一されていない。肢(1)〜(3)は読点「、」・近似記号「≒」・数値と記号の間に空白あり（例: 'R_B = 0.5 MΩ'）だが、肢(4)(5)は全角コンマ「，」・近似記号「≈」・空白なし（例: 'R_B=3.0 MΩでは'）になっている。問題文本体は原文の「，」を「、」に正規化しているので、肢(4)(5)も「、」「≒」と空白付きの表記に揃えること。数値と論理には誤りがない。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "書誌情報: 候補の fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、reviewedFromPage=[16,17]、sourceQuestionPdfUrl、sourceAnswerPdfUrl は manifest とすべて一致する。原図の頁フッタ 'T2−R 016' 'T2−R 017'（冊子の -13-/-14- 頁）とも整合する。",
+        "問題文: 原図 p.13 の本文と照合した。固定バイアス回路、R_B が未知、図2は五つの I_B のみに対する静特性で負荷線を重ねてある、V_CE=3.0 V、R_B[MΩ] を問う、V_BE=0.7 V、C₁・C₂ は結合コンデンサ、V_CC は直流電圧源、の各点が一致する。句読点を「，」から「、」に変えた以外に改変はない。",
+        "選択肢: 原図 p.14 と照合した。(1)0.5 (2)0.9 (3)1.5 (4)3.0 (5)6.0 で全肢が一致する。",
+        "公式正答: 解答表の令和6年度下期・理論・問13 は 2 で、officialAnswer='2' と一致する。",
+        "負荷線: 図2で直流負荷線は (0 V, 3 mA) と (5 V, 0 mA) を結ぶ。よって V_CC=5 V、R_L=5/3 kΩ≒1.67 kΩ となり、解説と一致する。",
+        "動作点: V_CE=3.0 V のとき I_C=(5−3)/(5/3 kΩ)=1.2 mA。この点は負荷線上で 4 μA 曲線(約1.0 mA)と 6 μA 曲線(約1.5 mA)の間にあり、図と整合する。",
+        "h_FE と I_B: 各曲線は I_B=2,4,6,8,10 μA に対し I_C≒0.5,1.0,1.5,2.0,2.5 mA なので h_FE≒250。I_B=1.2 mA/250=4.8 μA（4 μA と 6 μA 曲線の線形補間でも 4.8 μA になる）。",
+        "R_B: 入力側直流ループ V_CC=R_B·I_B+V_BE（C₁ が入力側の直流を遮断）より、R_B=4.3 V/4.8 μA=8.96×10⁵ Ω≒0.9 MΩ。正答(2)と一致する。",
+        "肢別検算(1): I_B=8.6 μA、I_C≒2.15 mA、V_CE=5−1.667×2.15≒1.42 V で、活性領域内にあり 3.0 V と不一致。記載どおり。",
+        "肢別検算(2): I_B≒4.78 μA、I_C≒1.19 mA、V_CE≒3.01 V で一致。記載どおり。",
+        "肢別検算(3): I_B≒2.87 μA、I_C≒0.717 mA、V_CE≒3.81 V。記載どおり。",
+        "肢別検算(4): I_B≒1.43 μA は 2 μA 曲線未満。負荷線と 2 μA 曲線の交点は I_C≒0.5 mA・V_CE≒4.17 V なので、I_C<0.5 mA なら V_CE>4.2 V。不等号の向きも正しい（h_FE=250 で外挿すると V_CE≒4.4 V）。",
+        "肢別検算(5): I_B≒0.72 μA で、同じ論理から V_CE>約4.2 V（外挿すると約4.7 V）。記載どおり。",
+        "公開候補図1: 原図の図1と接続・ラベルを照合した。R_B は V_CC 上側レールとベース節点の間、R_L は上側レールとコレクタ節点の間にある。C₁ は入力端子とベース節点、C₂ はコレクタ節点と出力端子の間にある。エミッタは下側共通線に接続され、V_CC は右辺に配置されている。I_B（ベースへ右向き）、I_C（コレクタへ下向き）、V_BE・V_CE の矢印、入力電圧・出力電圧、図番号 '図1' がすべて欠落なく一致する。",
+        "公開候補図2: 原図の図2と照合した。軸（I_C[mA] 0〜3、V_CE[V] 0〜6）、目盛、補助破線、'直流負荷線' の引出し、I_B=10/8/6/4/2 μA のラベル、負荷線端点 (0,3)・(5,0) がすべて一致する。この図だけで V_CC・R_L・I_B の読み取りに必要な情報が揃う。",
+        "figureDescription: 図1・図2の接続、向き、ラベル、数値の記述に誤りはない。",
+        "参考資料: officialReferenceUrls は空で、解説に外部資料依存の独立主張はない。検証不能な外部主張もない。"
+      ]
+    }
+  ]
+}
