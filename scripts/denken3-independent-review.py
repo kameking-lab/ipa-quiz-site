@@ -76,7 +76,7 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
                                                        "data": b64encode(path.read_bytes()).decode("ascii")}})
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
     process = subprocess.run(
-        [str(CLI), "-p", "--model", "opus", "--effort", "medium", "--input-format", "stream-json",
+        [str(CLI), "-p", "--model", "claude-opus-5-5", "--effort", "medium", "--input-format", "stream-json",
          "--output-format", "stream-json", "--verbose", "--tools", ""],
         input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
         capture_output=True, cwd=ROOT, timeout=600,
@@ -87,6 +87,10 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
         raise ValueError(f"No successful Claude result: {process.stdout[-1000:]}")
+    model_usage = final.get("modelUsage") or {}
+    models = [name for name in model_usage if name.startswith("claude-")]
+    if models != ["claude-opus-5-5"] or model_usage["claude-opus-5-5"].get("canonicalModel") != "claude-opus-5-5" or model_usage["claude-opus-5-5"].get("provider") != "firstParty":
+        raise ValueError(f"Cannot prove first-party claude-opus-5-5: {models}")
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
     start, end = value.find("["), value.rfind("]")
     if start < 0 or end < start:
@@ -94,7 +98,13 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
     assessment = json.loads(value[start:end + 1])
     if len(assessment) != len(numbers) or {item.get("number") for item in assessment} != set(numbers):
         raise ValueError("Opus omitted or added a question")
-    out.write_text(json.dumps({"reviewModel": "claude-opus-5-5", "draftSha256": draft_hashes,
+    raw_out = folder / f"{stamp}-opus-review-raw.jsonl"
+    if raw_out.exists():
+        raise FileExistsError(raw_out)
+    raw_out.write_text(process.stdout, encoding="utf-8")
+    out.write_text(json.dumps({"reviewModel": "claude-opus-5-5", "resolvedModel": "claude-opus-5-5",
+                               "modelUsage": model_usage, "rawResponseSha256": sha256(raw_out.read_bytes()).hexdigest(),
+                               "draftSha256": draft_hashes,
                                "figureSha256": figure_hashes,
                                "sourceQuestionPdfSha256": paper["sha256"],
                                "sourceAnswerPdfSha256": session["officialAnswer"]["sha256"],

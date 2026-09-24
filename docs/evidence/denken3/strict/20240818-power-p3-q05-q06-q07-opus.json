@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 3632,
+      "cacheReadInputTokens": 304948,
+      "cacheCreationInputTokens": 26820,
+      "webSearchRequests": 0,
+      "costUSD": 0.34820560000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1827,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "39cdf2265704128694a3f4445ec4e5da844bd8c053f7ccacaa0316b53594d136",
+  "inputRequestSha256": "d0628ebc247e2478b8c13382268664268cb210f85678d2ce693a5cee613e2f54",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "15ca7c3562cc9d70b037fb0904695a8bc31dfed88a737834a3c806c4e0031f01",
+      "q06": "6f7f5e6541f7ef2fa39835e4639665e4c0ee8bf4cce569e89f3835869de89c9b",
+      "q07": "46956b854dc44d78d69d59f2ece0b6131f7821ef32357267dda8142c615d3dbf"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/power/p08.png": "2209bfa8bfee2ca1eb18b03eeb3a141acfc3154f8481decc488ecb0f9ff2a705",
+      "data/raw_pdfs/denken3/review/20240818/power/p09.png": "7a11c5556d7e3f98f645b27734ddd54e8d131b60d71436ece65c2b10fe4d0fd2",
+      "data/raw_pdfs/denken3/review/20240818/power/p10.png": "a799640eff94d8e3ff160bbf410fb3f26fb3d7f592647da490cf10d6d8d27c96"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "0bc54a85819b9d9c80d1574c5b8c02a3c28976565d8c9068a3dd0344a3db5700",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "529d67b94b5c1664ed342ff3bf003b452bd0603ac6b2e2a800e1511d3b22e6a2"
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text and all five options (1) to (5) match the official original page (T1-D 008, printed page 5) word for word, including the full-width commas.",
+        "The official answer table (令和6年度上期, 電力, 問5) gives 1, which matches officialAnswer=\"1\".",
+        "Option (1) is the false statement: a fuel cell's electrochemical reaction produces DC power, and an inverter is needed to get AC. The explanation gets this cause right and also says correctly that the first half, fuel supplied from outside, is true.",
+        "Options (2) to (5) are all true statements. Phosphoric acid, molten carbonate and polymer electrolyte are real electrolyte-based types. The fuel cell reaction is the reverse of water electrolysis (2H₂+O₂→2H₂O). Exhaust heat can be used through cogeneration. Hydrogen can come from reforming natural gas or methanol. Each option's explanation gives a reason specific to that option.",
+        "The original page has no figure, so figureUrls=[] and figureDescription are consistent with it.",
+        "officialReferenceUrls is empty, so there is no independent claim that needs a primary source. reviewedFromPage=[8] matches the page code T1-D 008."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original page (T1-D 009, printed page 6), including blanks (ア) to (エ) and items ① to ④. The only differences are formatting: full-width commas changed to 、, which the attribution discloses.",
+        "All five rows of the options table (ア/イ/ウ/エ) match the original: (1) SF₆ガス/エポキシ樹脂/低い/短い, (2) SF₆ガス/エポキシ樹脂/高い/長い, (3) 窒素ガス/磁器がいし/低い/長い, (4) 窒素ガス/エポキシ樹脂/高い/短い, (5) SF₆ガス/磁器がいし/高い/短い.",
+        "The official answer table (電力 問6) gives 2, which matches officialAnswer=\"2\".",
+        "The explanation is consistent throughout: SF₆ gas as the fill gas, epoxy resin spacers, high reliability because the equipment is sealed from outside air, and long restoration after an internal fault because the gas must be recovered, the enclosure opened and inspected, and the gas refilled.",
+        "For each wrong option, the explanation correctly identifies which blanks are right and which are wrong: (1) ウ and エ wrong; (3) ア, イ and ウ wrong with only エ right; (4) ア and エ wrong; (5) イ and エ wrong.",
+        "The only table is the options table, and it is fully transcribed into choices. There is no other figure needed to answer the question. officialReferenceUrls is empty. reviewedFromPage=[9] matches the page code T1-D 009."
+      ]
+    },
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text and all five options (1) to (5) match the official original page (T1-D 010, printed page 7) word for word.",
+        "The official answer table (電力 問7) gives 4, which matches officialAnswer=\"4\".",
+        "The voltage-drop approximation ΔV≒√3·I·(R cosθ+X sinθ) is the standard form for a three-phase line, and the cause-and-effect reasoning is correct. Extending the line length (4) increases R and X roughly in proportion to length, which makes the voltage drop larger, so it is not a voltage-maintenance measure.",
+        "The reasons given for the correct statements are specific to each option and correct: (1) sending-end voltage adjustment with LRT/LRA, combined with LDC where needed; (2) a phase-advancing capacitor reduces reactive current, and with the active current I·cosθ unchanged, the I·X·sinθ component falls; (3) a thicker conductor lowers R; (5) placing the transformer at the load center shortens the low-voltage lines.",
+        "The original page has no figure, so figureUrls=[] and figureDescription are consistent with it. officialReferenceUrls is empty. reviewedFromPage=[10] matches the page code T1-D 010."
+      ]
+    }
+  ]
+}

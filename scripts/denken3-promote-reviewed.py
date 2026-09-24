@@ -34,6 +34,12 @@ def current_review(folder: Path, number: int, draft_hash: str, figure_hashes: di
     if not candidates:
         raise ValueError(f"No independent review: {folder} q{number}")
     _, path, receipt, assessment = max(candidates, key=lambda item: item[0])
+    usage = (receipt.get("modelUsage") or {}).get("claude-opus-5-5") or {}
+    raw_path = path.with_name(f"{path.stem}-raw.jsonl")
+    if (receipt.get("resolvedModel") != "claude-opus-5-5" or
+            usage.get("canonicalModel") != "claude-opus-5-5" or usage.get("provider") != "firstParty" or
+            not raw_path.is_file() or sha(raw_path) != receipt.get("rawResponseSha256")):
+        raise ValueError(f"Cannot prove exact Opus review/raw response: {path}")
     if assessment["status"] != "PASS":
         raise ValueError(f"Latest independent review is not PASS: {path} q{number}")
     if receipt["draftSha256"][str(number)] != draft_hash:
