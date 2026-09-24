@@ -25700,5 +25700,151 @@
         "url": "https://www.env.go.jp/content/000329963.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261809-q1": {
+    "sourceHash": "819b23148a5abc911da2f7a6cd04117a6414407f312394c6054042ece800a117",
+    "correctChoice": 4,
+    "summary": "空気カーマは、X線・γ線などの非荷電放射線が空気の微小質量中で生じさせた電子などの二次荷電粒子の初期運動エネルギーの合計を、その質量で除した量である。α線・β線の運動エネルギーの総和とする肢4が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "告示第93号は「皮膚の等価線量の算定は、七十マイクロメートル線量当量(中性子線の場合にあつては、一センチメートル線量当量)によつて行う」と定める。X線やβ線による皮膚の等価線量に70µm線量当量を用いるという記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "電離則第4条第1項は実効線量を5年間につき100mSv、かつ1年間につき50mSvを超えないよう定め、同条第2項の3月5mSvの特例は妊娠する可能性がないと診断された者を除く女性だけに掛かる。男性とその女性に5年100mSv・1年50mSvとする記述は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "電離則第5条は、眼の水晶体に受ける等価線量を「五年間につき百ミリシーベルト及び一年間につき五十ミリシーベルト」を超えないよう定める。眼の水晶体の等価線量限度を5年100mSv・1年50mSvとする記述は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "カーマは K＝dEtr/dm で、dEtr は一次放射線が微小質量中に生じた全荷電粒子の初期運動エネルギーの合計である。X線・γ線が空気中で生じるのは空気分子から追い出された電子であり、α線やβ線（原子核から放出される放射線）ではない。また質量で除さず「総和」とする点も定義と異なるため、この記述が誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "実効線量は、各臓器・組織の平均吸収線量に放射線加重係数を乗じた等価線量を、組織加重係数で重み付けして足し合わせた量である。吸収線量→放射線加重係数→等価線量→組織加重係数の加重和という記述は定義どおりで正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 昭和63年労働省告示第93号（電離則第3条第3項等に基づく限度及び方法）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 電離放射線障害防止規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「カーマ（Kerma）」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「照射線量に関する単位」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「被ばく管理のための種々の線量」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q2": {
+    "sourceHash": "e43f45e43abe9caf409788c8552c5d3d43d4b32e51af6b8fae3a67b651532e2d",
+    "correctChoice": 2,
+    "summary": "照射線量は、X線・γ線が空気の単位質量中で生じさせた電子が空気中で止まるまでに作る一方の符号のイオンの全電荷で、単位はC/kgである。媒質を「水」とする肢2が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "告示第93号の別表は、空気中の放射性物質の濃度に関する限度の単位を「Bq／cm3」としている。作業環境の空気中放射能濃度をBq･cm⁻³で表すという記述は、法令の表示と一致しており正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "照射線量Xは、質量dmの空気中でX線・γ線が空気分子から追い出した電子が完全に止められるまでに生じる片側符号のイオンの全電荷dQを用いてX＝dQ/dmと定義され、単位はC/kgである。定義の媒質は空気であり、「水の単位質量当たり」とするこの記述が誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "吸収線量は、放射線に照射された物質や人体が単位質量当たりに吸収するエネルギーで定義され、単位はジュール毎キログラム（J/kg、特別名称グレイ）である。記述は定義と単位の両方で正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電離則は放射性物質の表面密度を別表第三の限度と比較し、その表の限度の単位を「Bq／cm2（ベクレル毎平方センチメートル）」としている。表面密度を単位面積当たりの放射能とし、単位をBq･cm⁻²とする記述は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "電離則は「一センチメートル線量当量率が二十マイクロシーベルト毎時を超えない」のように、1cm線量当量率をシーベルト毎時の単位系で表している。1cm線量当量率の単位をSv･h⁻¹とする記述は正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 昭和63年労働省告示第93号（電離則第3条第3項等に基づく限度及び方法）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 電離放射線障害防止規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「照射線量に関する単位」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「吸収線量率」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_830.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q3": {
+    "sourceHash": "ecbf03c8ed45382a7a3d3adfbc33b8056aaa20435ddce805f1c58acf34b257bd",
+    "correctChoice": 2,
+    "summary": "半減期は³H約12.3年、¹⁴C 5730年、⁶⁰Co 約5.27年（1925.1日）、¹³⁷Cs 約30年、²⁴¹Am 432年であり、最も長いのは¹⁴Cである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "³Hの半減期は12.33年である。¹⁴Cの5730年や²⁴¹Amの432年と比べてはるかに短く、選択肢の中で最も長い半減期ではないため、この選択肢は該当しない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "¹⁴Cの半減期は5730年で、²⁴¹Am（432年）、¹³⁷Cs（30.07年）、³H（12.33年）、⁶⁰Co（1925.1日≒5.27年）のいずれよりも長い。したがって半減期が最も長い核種は¹⁴Cであり、これが正解である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "⁶⁰Coの半減期は1925.1日、すなわち約5.27年である。選択肢の5核種の中では最も短い部類であり、5730年の¹⁴Cには遠く及ばないため該当しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "¹³⁷Csの半減期は30.07年（約30年）である。³Hや⁶⁰Coよりは長いが、¹⁴Cの5730年や²⁴¹Amの432年より短いため、最も長い核種ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "²⁴¹Amはα壊変して²³⁷Npになり、その半減期は432年である。³H・⁶⁰Co・¹³⁷Csより長いものの、¹⁴Cの5730年の10分の1未満であり、最も長い核種ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「半減期」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-04.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「超ウラン元素（TRU）の生成と特性」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_04-07-01-06.html"
+      }
+    ]
   }
 }
