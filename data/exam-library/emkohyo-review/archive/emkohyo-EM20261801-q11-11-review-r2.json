@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2526,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 16877,
+      "webSearchRequests": 0,
+      "costUSD": 0.21143420000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1744,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q11"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q11": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q11": {
+      "/exam-library/emkohyo-EM20261801/q11-p8-0.webp": "dd3039bc4693064facdfe78306b0b4acfe295312833040c6456f3eb175fabd8c"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q11": "2216c746cefe1a85fbafe6584ce14d6e8ab6a34e5ae993b9464eef1fc07fc137"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q11-11.json",
+  "sourcePackSha256": "95f800b68e29b6b129cd853ff0f38edc6cbecc0d0b52738208720feb9052678f",
+  "assessment": {
+    "emkohyo-EM20261801-q11": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由は、消防庁の山岳救助マニュアルが「心拍・呼吸が非常に遅く」と説明していると書いている。原文で「非常に遅く」とされているのは心拍だけで（p.198「心拍は非常に遅く、脈も弱くなり」）、呼吸は「呼吸も遅く浅くなる」（p.199）である。資料の表現をそのまま使い、「心拍は非常に遅く脈も弱くなり、呼吸も遅く浅くなる」と直すこと。",
+        "肢4の理由の結びにある「実際の心肺蘇生は心停止を確認して判断する」は、肢の正誤（一見死亡したように見えるか）とは関係がない。しかも資料が推奨する搬送・モニタリングの趣旨を不正確に要約している。削るか、「生存兆候の確認が困難である」ことに言い換えること。"
+      ],
+      "sourceIssues": [
+        "肢4の核心は「一見死亡したかのように見えることがある」だが、添付の消防庁 山岳救助マニュアル（kento175_26_shiryo-1.pdf p.198-199）はこれを直接述べていない。資料にあるのは、生存兆候を見つけるのが困難なこと、心拍が非常に遅く脈が弱く触診が困難なこと、呼吸が遅く浅いこと、心停止の診断が困難なことである。理由も「この観察に合う」という推論にとどまり、政府資料による直接の裏付けがない。",
+        "肢4の「呼吸数が極端に少なくなり」についても、添付資料の記載は「呼吸も遅く浅くなる」だけで、「極端に」という程度は直接支えられていない。"
+      ],
+      "needsExternalCheck": [
+        "重度の低体温症で「一見死亡したように見える（仮死状態に見える）」ことを直接記す政府一次資料（厚生労働省、消防庁の応急手当資料など）があるか確認し、あれば肢4の根拠を差し替えるか補うこと。"
+      ]
+    }
+  }
+}

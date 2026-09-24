@@ -24516,5 +24516,55 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa6787&dataType=0&pageNo=1"
       }
     ]
+  },
+  "emkohyo-EM20261801-q11": {
+    "sourceHash": "988101125ec55aaf4a38a0df3e6afde108be5751b9038c1a7724d262435dd1c1",
+    "correctChoice": 5,
+    "summary": "低体温症の人に温かいアルコール飲料を飲ませる対応は不適切なので（5）が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "体温調節のための温熱性発汗は、手のひらと足の裏を除く全身の汗腺から出る。手のひらと足の裏は、緊張したときに汗が出る精神性発汗の部位である。この区別に合っており、記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "厚生労働省の暑さ指数のページに「熱へのばく露が中断すると４日後には順化の顕著な喪失が始まり、３～４週間後には完全に失われる」とある。4日、3～4週間という数値も本文と一致しており、正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "WBGT基準値は、身体作業強度を安静・低代謝率・中程度代謝率・高代謝率・極高代謝率の5区分に分け、区分ごとに熱に順化している人と順化していない人の値を定めている。5区分×順化の有無という構造で正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "消防庁の山岳救助マニュアルは、低体温症では心拍が非常に遅く、脈が弱く、呼吸も遅く浅くなり、生存兆候を見つけるのが難しいと記す。一般的な死の指標は当てにならず、現場で死亡を診断するのが難しいとも明記するため、一見死亡したように見えることがあるという記述は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "消防庁資料は、意識のある低体温症者に乾いた衣服、温かい飲み物と保温を勧める一方、「アルコール、タバコは厳禁」と明記する。毛布でくるむ点はよいが、温かくてもアルコール飲料を与える点が誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 職場における熱中症予防情報「暑さ指数について」",
+        "url": "https://neccyusho.mhlw.go.jp/heat_index/"
+      },
+      {
+        "title": "国立障害者リハビリテーションセンター 温熱性発汗",
+        "url": "https://www.rehab.go.jp/achievements/japanese/20th/paper37.html"
+      },
+      {
+        "title": "消防庁 山岳救助マニュアル",
+        "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf"
+      },
+      {
+        "title": "消防庁 浸水区域における傷病者の特性及び対応",
+        "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento221_18_shiryo8.pdf"
+      }
+    ]
   }
 }

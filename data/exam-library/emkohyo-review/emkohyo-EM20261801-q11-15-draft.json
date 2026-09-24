@@ -32,22 +32,39 @@
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "重度の低体温症では呼吸数と脈拍が極端に減って弱くなり、触っても分かりにくくなるため、一見死亡したように見えることがある。見た目だけで死亡と判断せず、救急要請や蘇生を続けるべきとされるのはこのためで、記述は正しい。"
+            "reason": "消防庁の山岳救助マニュアルは、低体温症では心拍が非常に遅く、脈が弱く、呼吸も遅く浅くなり、生存兆候を見つけるのが難しいと記す。一般的な死の指標は当てにならず、現場で死亡を診断するのが難しいとも明記するため、一見死亡したように見えることがあるという記述は正しい。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "アルコールは皮膚の血管を広げて体の熱を逃がしやすくし、判断力も落とすため、低体温症の人に飲ませてはならない。保温したうえで、重症なら温まるのを待たずに救急搬送すべきである。温かい飲酒を勧める点が誤り。"
+            "reason": "消防庁資料は、意識のある低体温症者に乾いた衣服、温かい飲み物と保温を勧める一方、「アルコール、タバコは厳禁」と明記する。毛布でくるむ点はよいが、温かくてもアルコール飲料を与える点が誤りである。"
           }
         ],
         "sources": [
           {
             "title": "厚生労働省 職場における熱中症予防情報「暑さ指数について」",
             "url": "https://neccyusho.mhlw.go.jp/heat_index/"
+          },
+          {
+            "title": "国立障害者リハビリテーションセンター 温熱性発汗",
+            "url": "https://www.rehab.go.jp/achievements/japanese/20th/paper37.html"
+          },
+          {
+            "title": "消防庁 山岳救助マニュアル",
+            "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf"
+          },
+          {
+            "title": "消防庁 浸水区域における傷病者の特性及び対応",
+            "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento221_18_shiryo8.pdf"
           }
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://www.rehab.go.jp/achievements/japanese/20th/paper37.html",
+          "excerpt": "温熱性発汗は手掌・足底を除く全身に分布し視床下部が 体温調節中枢である。",
+          "choiceNumbers": [1]
+        },
         {
           "url": "https://neccyusho.mhlw.go.jp/heat_index/",
           "excerpt": "熱へのばく露が中断すると４日後には順化の顕著な喪失が始まり",
@@ -61,15 +78,54 @@
           "choiceNumbers": [
             3
           ]
+        },
+        {
+          "url": "https://neccyusho.mhlw.go.jp/heat_index/",
+          "excerpt": "2 中程度代謝率",
+          "choiceNumbers": [3]
+        },
+        {
+          "url": "https://neccyusho.mhlw.go.jp/heat_index/",
+          "excerpt": "3 高代謝率",
+          "choiceNumbers": [3]
+        },
+        {
+          "url": "https://neccyusho.mhlw.go.jp/heat_index/",
+          "excerpt": "4 極高代謝率",
+          "choiceNumbers": [3]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf",
+          "excerpt": "心拍は非常に遅く、脈も弱くなり、触診が困難で",
+          "choiceNumbers": [4]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf",
+          "excerpt": "低体温症患者の生存兆候を見つけるのは非常に困難である。",
+          "choiceNumbers": [4]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf",
+          "excerpt": "一般的な「死」の指標の多くはあてにならない。",
+          "choiceNumbers": [4]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf",
+          "excerpt": "現場では低体温症患者が死亡していると診断を下すのが難しい",
+          "choiceNumbers": [4]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento175_26_shiryo-1.pdf",
+          "excerpt": "呼吸も遅く浅くなるが、触診可能な脈が",
+          "choiceNumbers": [4]
+        },
+        {
+          "url": "https://www.fdma.go.jp/singi_kento/kento/items/kento221_18_shiryo8.pdf",
+          "excerpt": "温かい飲み物と保温により回復を待つ。アルコール、タバコ",
+          "choiceNumbers": [5]
         }
       ],
-      "reviewIssues": [
-        "正答肢（5）の直接の根拠（低体温症者に飲酒させないこと）を、.go.jp の一次資料の本文で確認できなかった。e-ヘルスネットは本文を取得できず、政府広報オンラインは403で閲覧できなかったため、sourceEvidenceに入れていない。正答の根拠となる政府資料の抜粋はまだない。",
-        "肢1（温熱性発汗の部位）と肢4（重度低体温症の外観）は一般的な生理学の知識で判断しており、.go.jp の抜粋では確認していない。",
-        "肢3の欄名は、厚労省ページでは『熱に順化している人／していない人』と表記されている。設問の『暑熱順化者／非順化者』とは表記が違うが、意味は同じ。",
-        "旧『職場における熱中症予防基本対策要綱』（t_doc dataId=00tc5874）はエラーで本文を取得できなかった。後継のガイドラインPDF（001676299.pdf）はPDFを解析できず本文を読めなかったため、採用していない。",
-        "提示された候補『作業環境測定基準』は本問の判断根拠にならないため、採用していない。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261801-q12": {
       "overlay": {
