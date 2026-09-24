@@ -525,7 +525,7 @@
     "questionId": "lckohyo-LC20252115-q12",
     "sourceSha256": "d1d52a3b034fe466c3bdafdfa079f639e6f45e80c1943ace807a44209d516e53",
     "candidateSha256": "dd152dcc38991ffd070bf15f1446d2a10ee97f575685ad9bbd69c153e2bcb0ea",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "HOLD",
     "gateIssues": [
       "not a clean PASS",
@@ -535,11 +535,16 @@
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "肢(1)：北向きの窓は直射日光がほとんど入らず、一年中平均した明るさが得られるという内容は、事務所衛生基準規則10条2項にも情報機器作業ガイドラインにも書かれていない。解説は、公式正答が(2)であることと、趣旨の方向が合うことだけを根拠にしており、政府資料による裏付けがない。",
-        "肢(3)：「おおむね30°以上」という数値は、解説自身が政府資料にないと認めているとおり、どの政府資料にもない。",
-        "肢(4)：あらゆる方向からの均一な光で影が消えて立体感がなくなるという内容は、事務所衛生基準規則にも情報機器作業ガイドラインにも根拠がない。",
-        "肢(5)：解説自身が同規則に色彩の具体的な指定はないと認めているとおり、目の高さ以下を濁色とする配色の内容に政府資料の根拠がない。",
-        "肢(2)：『10分の1以下』が誤りであることは、事務所衛生基準規則10条2項（明暗の対照が著しくない）と情報機器作業ガイドライン4(1)イ・ロ（周辺の明るさとの差をなるべく小さく）で方向が確認でき、公式正答(2)とも一致する。ただし『10分の1』という比率そのものは、どの政府資料にもない。"
+        "公式問題PDF（sha256 8e2c9a9a…、PDF7頁＝二衛6/15）と画像q12-p7-1.webpを確認した。問12の本文・5肢はsnapshotと一致し、公式正答は○印の(2)で、candidate.correctChoice=2と矛盾しない。",
+        "e-Govのテキスト（law_revision_id 347M50002000043_20221201_503M60000100188、amendment_enforcement_date 2022-12-01、current_revision_status CurrentEnforced）で事務所衛生基準規則第10条第2項「明暗の対照が著しくなく、かつ、まぶしさを生じさせない方法」を確認した。この版は実施期間（2025-01-01〜2025-06-30）の前に施行され、取得時点でも現行版なので、出題時に適用されていた版と判断した。",
+        "governmentSourceFilesのe-Gov項目の見出しとlocatorsは『第6条・第9条・第9条の2』で、candidateが根拠にする第10条が入っていない。第10条はテキストを直接Grepして確認した。",
+        "情報機器作業ガイドライン（基発0712第3号、令和3年12月1日一部改正）で次の箇所を確認した。4(1)イ（明暗の対照・まぶしさ）、4(1)ロ（周辺の明るさとの差をなるべく小さく）、4(1)ニ・ホ（グレア防止）、解説4(1)イ（事務所衛生基準規則第10条第2項を参照）。",
+        "肢(2)：明暗差を小さくするという方向性は、第10条第2項とガイドライン4(1)ロで裏付けられる。ただし『全般照明は局部照明の1/10以上』という数値基準はどちらの政府資料にもない。",
+        "肢(1)：北向きの窓は直射日光が入りにくく一年中平均した明るさが得られる、という内容はどちらの政府資料にも書かれていない。candidateの『10条2項とも方向が合う』は条文にない推論で、根拠として示せていない。",
+        "肢(3)：おおむね30°以上という数値は政府資料にない（candidate自身もそう書いている）。肢として誤りでないことは公式正答からしか言えず、記述の中身は一次資料で確認できていない。",
+        "肢(4)：光があらゆる方向から均等に当たると影ができず立体感がなくなる、という記述はどちらの政府資料にもない。candidateの説明（凹凸が見分けにくくなる作業がある等）も出典に基づいていない。",
+        "肢(5)：目の高さ以下を濁色、上方を明るい色にするという色彩の指定は政府資料にない（candidate自身もそう書いている）。記述の中身は一次資料で確認できていない。",
+        "以上のとおり肢(1)(3)(4)(5)は、公式正答から『誤りではない』とは言えるが、説明の実質的な内容を政府一次資料で裏付けられない。このためsourceSupportCheckedはfalseとし、HOLDとした。"
       ],
       "choiceChecks": {
         "1": "HOLD",
@@ -561,17 +566,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
+    "rawResponseSha256": "0fb490daf57355395f27c0a52d5937dadbdc5039f9d9e544fe88f27340541998",
+    "resultSha256": "f5a2487e2a25fa09669cda4225489ebef1aaf0de6bea7b6230e252f5985080eb",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 62,
-        "outputTokens": 19329,
-        "cacheReadInputTokens": 6530424,
-        "cacheCreationInputTokens": 118178,
+        "inputTokens": 16,
+        "outputTokens": 9242,
+        "cacheReadInputTokens": 439620,
+        "cacheCreationInputTokens": 160993,
         "webSearchRequests": 0,
-        "costUSD": 2.6383368000000003,
+        "costUSD": 1.560772,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 7687,
+        "thinkingTokens": 5113,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -640,19 +648,23 @@
     "questionId": "lckohyo-LC20252115-q15",
     "sourceSha256": "fbbfe26af300ca321a5c3da69131fdef404dbaa8bfaa663eb23ed06b95a37530",
     "candidateSha256": "ec573a9cda9239a98a1627a112287fff80861755ee5bd20d98076f2d98ba9588",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "HOLD",
     "gateIssues": [
       "not a clean PASS",
       "one or more choice checks did not pass",
-      "historicalApplicabilityChecked missing"
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
     ],
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "固定済みの政府資料PDF（sha256 eb8a032d…）は、表題に『改正 令和８年２月10日 健康保持増進のための指針公示第12号』と記された版で、2025年10月の出題より後の改正版である。出題時に適用されていた版（令和5年3月31日公示第11号による改正版）の本文は取得も確認もできておらず、各肢の根拠が出題時点でも同じ文言だったかは確認できていない。",
-        "現行版との照合結果：肢1は2①、肢2は3(3)と5(1)、肢3は4(2)イ(ロ)、肢4は3、肢5は4(2)イ(イ)と5(3)（健康保険法150条2項・3項、個人情報保護法27条1項1号）の文言と一致し、公式正答(5)とも矛盾しない。",
-        "肢3の解説は根拠箇所を『4(2)イ』としているが、健康指導の5項目が並ぶのは現行版では4(2)イ(ロ)である（軽微）。"
+        "公式問題PDF（PDF9頁＝二衛8/15）と画像q15-p9-0.webpを確認した。問15の本文・5肢はsnapshotと一致し、公式正答は○印の(5)で、candidate.correctChoice=5と矛盾しない。",
+        "snapshotの本文で、肢(3)のルビ『くう』が『メンタルヘルスケ\\nくう\\nア』のように『ケア』の途中に入っている。原本と画像では、このルビは『口腔』の『腔』に振られたもの。抽出時のずれで、表示すると『メンタルヘルスケくうア』になる。",
+        "提出された政府資料（mhlw 001080091.pdf、sha256 eb8a032d…）は改正履歴の末尾が『令和８年２月10日 健康保持増進のための指針公示第12号』で、実施期間（2025-01-01〜2025-06-30）より後の版である。本文にも令和8年2月10日の高年齢者労災防止指針への言及や、フレイルチェック・ロコモ度テストといった追記がある。",
+        "出題時に適用されていたのは令和5年3月31日の公示第11号の版と考えられるが、その版の原本は根拠資料に入っていない。candidateが引く2①、3、3(3)、4(2)イ(イ)(ロ)、5(1)、5(3)が当時の版にも同じ文言であったかを原本で確かめられず、出題時の適用を判断できない。inForceOnも空である。",
+        "参考として、令和8年版では各肢の根拠を確認した。肢(1)は2①と同じ文言、肢(2)は3(3)と5(1)で合う、肢(3)は4(2)イ(ロ)と2の5項目が一致、肢(4)は3と同じ文言。肢(5)は4(2)イ(イ)『医療保険者に共有することが必要』と5(3)（健康保険法150条2項・3項、個人情報保護法27条1項1号の『法令に基づく場合』）に反し、『提供してはならない』が適切でないことを確認した。ただし、いずれも出題時点より後の版での確認にとどまる。",
+        "肢(5)の説明で挙げる健康保険法150条と個人情報保護法27条は、指針の記載として確認しただけで、e-Govの条文そのものには当たっていない。"
       ],
       "choiceChecks": {
         "1": "HOLD",
@@ -668,22 +680,25 @@
       "originalTextChecked": true,
       "imagesChecked": true,
       "historicalApplicabilityChecked": false,
-      "sourceSupportChecked": true
+      "sourceSupportChecked": false
     },
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
+    "rawResponseSha256": "0fb490daf57355395f27c0a52d5937dadbdc5039f9d9e544fe88f27340541998",
+    "resultSha256": "f5a2487e2a25fa09669cda4225489ebef1aaf0de6bea7b6230e252f5985080eb",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 62,
-        "outputTokens": 19329,
-        "cacheReadInputTokens": 6530424,
-        "cacheCreationInputTokens": 118178,
+        "inputTokens": 16,
+        "outputTokens": 9242,
+        "cacheReadInputTokens": 439620,
+        "cacheCreationInputTokens": 160993,
         "webSearchRequests": 0,
-        "costUSD": 2.6383368000000003,
+        "costUSD": 1.560772,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 7687,
+        "thinkingTokens": 5113,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -5839,6 +5854,428 @@
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
         "thinkingTokens": 2068,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q37",
+    "sourceSha256": "8940a92c5695dc985afb1c94c049b3d6391ff3c56d06c721f360625996f9d82d",
+    "candidateSha256": "e7a0a736dce8da2f925e587a6a3585617adbfc7307d321ebc494e658ff926933",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "5d407640ff24390560f4d7b783fc7acaa5b22155e4dc99f2534a8abb187948ad",
+    "resultSha256": "6bc13462a52d4ab2d88bd9793c6898f8eae75627092300d6f92823ffbde2fede",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 6304,
+        "cacheReadInputTokens": 577083,
+        "cacheCreationInputTokens": 89076,
+        "webSearchRequests": 0,
+        "costUSD": 0.9541846,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3484,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q34": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q34",
+    "sourceSha256": "7fdbec3963d0b8358cc1507b5e0f11425c44aa66061ccea287125209bb03855f",
+    "candidateSha256": "6faaf9f771692bae9a37d253f48a10b2c44889bb859b9a8f9d341c194b8ce468",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（1）を原本で照合していない。",
+        "ローカル画像 q34-p16-0.webp は目視し、snapshot の問題文（木質バイオマス温水ボイラーではない旨のただし書を含む）と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
+        "施行令第1条第3号・第4号（小型ボイラーの温水は8m²以下・2m²以下）、第20条第3号、同条第5号イ〜ニ（750mm×1300mm以下、蒸気3m²以下、温水14m²以下、貫流30m²以下〔気水分離器の制限は有する場合のみ〕）は、2024-11-18施行版・2025-04-01施行版で同文だった。規則第2条第4号（電気ボイラーは60kWを1m²とみなす）、第23条第1項・第2項も規則の両版で同文だった。",
+        "19m²の温水ボイラーだけが第5号ハを超え、小型ボイラーにも当たらない。このため規則第23条第1項によりボイラー技士が必要で、候補の正答（1）と一致する。肢2〜5の理由（上限値と等しい場合を含む、圧力要件なし、気水分離器なし、75kW＝1.25m²）も条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない（施行令2025年版は 2025-10、規則2023年版は 2024-10 と表示）。施行日は原本ヘッダで確認し、試験期間内の改正前後の両版で同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20241118_506CO0000000342",
+        "https://laws.e-gov.go.jp/law/347CO0000000318/20250401_505CO0000000265",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q31": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q31",
+    "sourceSha256": "c74c46d5f796f70f2105593a34a5126985ac51a404fc2930dfb16adb9b46cf78",
+    "candidateSha256": "dc70484d0572cf1bced5bc6655f411ad409c6faa847ee3131af08f3f94a8f21d",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（official-pdfs/35c7aaf1…ecfe9.pdf）をこの環境で読めなかった。pdftoppm が未インストールでページを描画できず、本文ストリームも FlateDecode 圧縮のため Grep できない。このため、原本の問題文と公式正答（5）を原本で照合していない。",
+        "ローカル画像 q31-p15-0.webp は目視し、snapshot の問題文・5肢と一致した。ただし画像が当該PDFの p15 から切り出されたものかは確認していない（sha256 も照合していない）。",
+        "規則第2条（第1号＝本体面〔煙管・炉筒〕、第2号イ＝水管・管寄せ、第3号＝貫流は過熱器入口までの水管）と第7条第1項（附属設備＝過熱器・節炭器）は、2023-12-21施行版・2025-04-01施行版で同文だった。過熱器管を算入する号はなく、候補の正答（5）と全肢の理由は条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn（2024-10 / 2025-10）は、このセットの examWindow（2025-01-01〜2025-06-30）の境界日と合っていない。各版の施行日は原本ヘッダ（2023-12-21 / 2025-04-01）で確認し、試験期間内の改正前後の両版で該当条文が同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q32": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q32",
+    "sourceSha256": "149d5f773d5c5083b6c3620a576fd9a605c37c475c059ddc141d77333f1be536",
+    "candidateSha256": "d71e62d7d87c8db0b3b993015bbb12656972ddb9149a72aa4d8b7d1458888246",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（2）を原本で照合していない。",
+        "ローカル画像 q32-p15-1.webp は目視し、snapshot の問題文と A・B の組合せ5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
+        "規則第5条第2項（溶接によるボイラーは、第7条第1項の検査〔溶接検査〕に合格した後でなければ構造検査を受けられない）と第7条第2項（溶接作業に着手する前に申請）は、2023-12-21施行版・2025-04-01施行版で同文だった。A＝溶接、B＝構造で、候補の正答（2）と全肢の理由は条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q33": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q33",
+    "sourceSha256": "e394d5478afce78216740739e9145ebaf02137439ed7ef54ed681f231cba6100",
+    "candidateSha256": "01a234a1176234b8b51cb5c3c5b805b30c0f3e7ba6ac68619655e9f1112c64c5",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（2）を原本で照合していない。",
+        "ローカル画像 q33-p15-2.webp は目視し、snapshot の問題文（内径500mm・長さ1000mm、本体を被覆していないボイラー）と5肢（0.15/0.30/0.45/1.20/2.00m）に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
+        "両版で同文だった条文：規則第20条第1項（上部の構造物まで1.2m）、第2項本文（側部の構造物まで0.45m）、同項ただし書（内径500mm以下かつ長さ1000mm以下なら0.3m）、第21条第1項（可燃物との距離0.15m）、第21条第2項（燃料を2m〔固体燃料は1.2m〕離す）。候補の正答（2）と全肢の理由は条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q35": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q35",
+    "sourceSha256": "46ef55b4528e9622252ce96e367a0ddf164dbfb93e18d698f994cb83c127b181",
+    "candidateSha256": "144f0adcdb8c290a3cd8bfb90cf55288d089096ee21e8b51d53390e12abbf03e",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（4）を原本で照合していない。",
+        "ローカル画像 q35-p16-1.webp は目視し、snapshot の A〜D の表と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
+        "規則第32条第1項の表は両版で同文だった。ボイラー本体は損傷の有無のみ。燃焼装置はストレーナ・バーナタイル及び炉壁・煙道を含む。自動制御装置は火炎検出装置を含む。附属装置及び附属品は給水装置・蒸気管及び弁・空気予熱器・水処理装置。一致するのは B・C だけで、候補の正答（4）と全肢の理由は条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252103-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252103-q36",
+    "sourceSha256": "1c4763d6008bf6bcd3070fef5a82484dccf71a6d5f4d9eae4572b95fa9935e3c",
+    "candidateSha256": "321427584fff649158da86c3efdf49b1b40949a278e47b5e8e278d0365bae462",
+    "evidenceSha256": "f8828b5736f39486fd36fcb704010a55bd0bbbc62f44e33c014bf4798f65a809",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "officialAnswerChecked missing",
+      "originalTextChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFを描画・抽出できない（pdftoppm 未インストール、本文ストリームは圧縮）。このため、原本の問題文と公式正答（3）を原本で照合していない。",
+        "ローカル画像 q36-p17-0.webp は目視し、snapshot の問題文（監督署長が不要と認めたボイラーではない旨のただし書を含む）と5肢に一致した。ただし画像がPDFから切り出されたものかは確認していない。",
+        "両版で同文だった条文：規則第41条各号（胴等の本体部分／附属設備／燃焼装置／据付基礎）、第42条第1項（変更検査）、第7条第1項（附属設備は過熱器及び節炭器に限る。以下この章において同じ）、第12条第1項第2号（構造検査後1年以上〔保管状況良好と認められたものは2年以上〕設置されなかったもの）、同項第3号（使用を廃止したボイラーの再設置・再使用）。第12条の2つは使用検査の対象になる。",
+        "候補の正答（3）と全肢の理由は条文で裏付けられる。",
+        "governmentSourceFiles の inForceOn は examWindow の境界日と合っていない。施行日は原本ヘッダで確認し、両版で同文であることを確認した。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000033/20231221_505M60000100157",
+        "https://laws.e-gov.go.jp/law/347M50002000033/20250401_506M60000100080"
+      ],
+      "officialAnswerChecked": false,
+      "originalTextChecked": false,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "e25d8fb287493c79e8dde8ad4f862f8ff27ba5ad4f9500634193019fa58e2235",
+    "resultSha256": "b2dad3e821e9e11eee1e8d555a11c9f29fccaa2b5aafd0322b080ded8c52e9e5",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13352,
+        "cacheReadInputTokens": 833754,
+        "cacheCreationInputTokens": 80465,
+        "webSearchRequests": 0,
+        "costUSD": 1.0776388,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 5122,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"

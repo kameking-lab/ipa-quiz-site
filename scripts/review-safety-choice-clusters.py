@@ -218,8 +218,16 @@ def candidates(root, published, selections):
     conflicts = set()
     matched = set()
     private = []
-    for file in (root / ".cache/safety-choice-lckohyo").glob("*.candidate.json"):
-        private.extend((qid, overlay, file.name) for qid, overlay in read(file).items())
+    seen_files = set()
+    # The committed mirror keeps held candidates reproducible after the private
+    # cache is gone; identical copies in both places are the same candidate.
+    for folder in (root / ".cache/safety-choice-lckohyo",
+                   root / "docs/evidence/lckohyo-choice-candidates"):
+        for file in sorted(folder.glob("*.candidate.json")):
+            if file.name in seen_files:
+                continue
+            seen_files.add(file.name)
+            private.extend((qid, overlay, file.name) for qid, overlay in read(file).items())
     for file in (root / "data/exam-library/emkohyo-review").glob("*-draft.json"):
         private.extend((qid, row.get("overlay"), file.name)
                        for qid, row in read(file).get("questions", {}).items())
@@ -262,6 +270,8 @@ def main():
                     help="Publish only questions with current full five-choice PASS receipts")
     ap.add_argument("--retry-holds", action="store_true",
                     help="Retry unchanged full-review HOLD receipts")
+    ap.add_argument("--retry-ids", default="",
+                    help="Comma-separated IDs whose unchanged HOLD may be retried (e.g. tool failure)")
     ap.add_argument("--workers", type=int, default=3)
     ap.add_argument("--max-batches", type=int, default=1)
     ap.add_argument("--batch-size", type=int, default=6)
@@ -276,6 +286,7 @@ def main():
     if args.review and args.promote_reviewed:
         ap.error("review and promotion are separate resume checkpoints")
     root = args.root.resolve()
+    retry_ids = {x.strip() for x in args.retry_ids.split(",") if x.strip()}
     data = root / "data/exam-library"
     selection_file = root / f"docs/evidence/{args.group}-choice-candidate-selections.json"
     selections = read(selection_file) if selection_file.exists() else {}
@@ -352,7 +363,7 @@ def main():
             if (previous.get("status") == "HOLD"
                     and all(previous.get(k) == v for k, v in
                             receipt_key(snapshot, candidate, relevant).items())
-                    and not args.retry_holds):
+                    and not args.retry_holds and qid not in retry_ids):
                 counts["reviewHold"] += 1
                 continue
             counts["reviewPending"] += 1
@@ -427,6 +438,13 @@ def main():
             for item in row["evidence"]:
                 for source in item["content"].get("sources", []):
                     known = source_records.get(source.get("url"))
+                    if (known is not None and known.get("retrieval", {}).get("sha256")
+                            == source.get("retrieval", {}).get("sha256")):
+                        # Same bytes pinned by several packs: show every window date.
+                        known = dict(known, inForceOn=sorted(set(known.get("inForceOn", []))
+                                                             | set(source.get("inForceOn", []))))
+                        source_records[source.get("url")] = known
+                        continue
                     # Same display URL pinned twice: review the fuller bytes (API text,
                     # not an 800-byte e-Gov page shell).
                     if known is None or (source.get("retrieval", {}).get("bytes", 0)
@@ -489,6 +507,13 @@ def main():
                                   "questionIds": [row["id"] for row in pending[future]]},
                                  ensure_ascii=False), flush=True)
                 continue
+            history = ledger_path.with_name(f"{args.group}-review-hold-history.jsonl")
+            with history.open("a", encoding="utf-8") as out:
+                for qid in receipts:
+                    if ledger.get(qid, {}).get("status") == "HOLD":
+                        # A superseded HOLD is kept verbatim, never silently lost.
+                        out.write(json.dumps(ledger[qid], ensure_ascii=False,
+                                             sort_keys=True) + "\n")
             ledger.update(receipts)
             write(ledger_path, ledger)
             print(json.dumps({"batch": token, "results": {qid: row["status"]

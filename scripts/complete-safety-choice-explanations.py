@@ -24,6 +24,7 @@ from egov_law_text import text_view  # noqa: E402
 DATA = ROOT / "data/exam-library"
 LOG = ROOT / ".cache/safety-choice-lckohyo"
 EVIDENCE = ROOT / "docs/evidence/lckohyo-choice-batches"
+MIRROR = ROOT / "docs/evidence/lckohyo-choice-candidates"
 OUTPUT = DATA / "choice-explanations.json"
 CONTRACT = DATA / "coverage-contract.json"
 FORBIDDEN = re.compile(r"準備中|今後追加|解説を作成できません|https?://|\[[^]]+\]\([^)]+\)|<a\b", re.I)
@@ -206,8 +207,12 @@ def source_hints(batch):
                           (ROOT / ".cache/safety-full-review/government-sources").glob(
                               f"{digest_value}.*")), None)
             if local:
-                if item["url"] in hints_by_url and item["retrieval"].get("bytes", 0) < \
-                        hints_by_url[item["url"]].get("bytes", 0):
+                known = hints_by_url.get(item["url"])
+                if known and known.get("retrievalSha256") == digest_value:
+                    known["inForceOn"] = sorted(set(known.get("inForceOn", []))
+                                                | set(item.get("inForceOn", [])))
+                    continue
+                if known and item["retrieval"].get("bytes", 0) < known.get("bytes", 0):
                     continue  # keep the fuller pinned copy (e.g. API text over a page shell)
                 hints_by_url[item["url"]] = {"title": item["title"], "url": item["url"],
                     "locators": item.get("locators", []), "retrievalSha256": digest_value,
@@ -347,7 +352,7 @@ def main():
     narratives = read(DATA / "explanations.json")
     overlays = read(OUTPUT)
     cached_candidate_ids = set()
-    for path in LOG.glob("*.candidate.json"):
+    for path in [*LOG.glob("*.candidate.json"), *MIRROR.glob("*.candidate.json")]:
         cached_candidate_ids.update(read(path))
     for qid, q in question_map.items():
         if qid in overlays:
