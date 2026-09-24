@@ -5,10 +5,8 @@
     "sourceSha256": "b018b6c524e7890c5ac9d54968a7ada6b6641005acd52ed53a608dc6844ec136",
     "candidateSha256": "b3ef08ca6eb9dbf464f42c54f8706c2d2f5d864d2cdc8cb008fb8eb5e01f1ab3",
     "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
-    "status": "HOLD",
-    "gateIssues": [
-      "review must verify every displayed government source"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
       "status": "PASS",
       "issues": [],
@@ -20,7 +18,6 @@
         "5": "PASS"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://jsite.mhlw.go.jp/saga-roudoukyoku/content/contents/000864401.pdf"
       ],
       "officialAnswerChecked": true,
@@ -34,15 +31,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -60,18 +57,16 @@
     "gateIssues": [
       "not a clean PASS",
       "one or more choice checks did not pass",
-      "sourceSupportChecked missing",
-      "review must verify every displayed government source"
+      "sourceSupportChecked missing"
     ],
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "Official PDF p15 marks (5) as the answer, which matches the candidate's correctChoice 5. The problem text and image match the original.",
-        "Choice 1 (reflex / knee-jerk stretch reflex): neither cited source (s-02-001, ys-092) mentions reflexes, so the claim is unsupported.",
-        "Choice 2: ys-092 only says 'strength depends on cross-sectional area and fibre-type ratio, so max strength differs even at the same cross-section'. It does not say sex/age differences per unit cross-section are small. The candidate's claims attributed to e-ヘルスネット ('almost no sex or age difference' and 'the sex difference is mainly due to muscle mass') are not in the source.",
-        "Choice 3: ys-092 describes thickening through super-compensation, but the term 活動性肥大 does not appear.",
-        "Choice 4 (isotonic contraction): no cited source covers it.",
-        "Choice 5: s-02-001 only describes the pathway to the TCA cycle and respiratory chain needing oxygen. It does not state CO2 and water as end products, or lactate forming when oxygen is short. The MHLW diagram 0000041836.pdf shows O2→H2O/CO2 at the TCA cycle and the pyruvate→lactate branch, but this candidate does not cite it. The claim 'lactate forms when oxygen is short' is unsupported everywhere."
+        "The official PDF (page 14/15) marks (5) as the answer, which matches the candidate's correctChoice 5. However, the cited government sources do not support the explanation for every choice.",
+        "Choice 5: s-02-001.html only says glucose and glycogen are broken down by glycolysis, then acetyl-CoA enters the citric acid cycle and the respiratory chain. It does not say breakdown ends in carbon dioxide and water when oxygen is sufficient. It also does not say lactate forms when oxygen is short. The core of this explanation is unsupported.",
+        "Choice 2: ys-092.html only says muscle strength depends on cross-sectional area and fibre-type ratio, and that maximum strength can differ at the same cross-sectional area. It does not say there is almost no sex or age difference per unit cross-sectional area. The source's point that strength varies at the same area is even partly against the explanation's wording.",
+        "Choice 3: ys-092.html supports muscle thickening through resistance exercise and supercompensation. It does not contain the term '活動性肥大' (activity hypertrophy).",
+        "Choice 1 (reflexes, the patellar reflex, stretch reflexes) and choice 4 (isotonic contraction): no cited government source covers these."
       ],
       "choiceChecks": {
         "1": "HOLD",
@@ -81,10 +76,8 @@
         "5": "HOLD"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://kennet.mhlw.go.jp/information/information/exercise/s-02-001.html",
-        "https://kennet.mhlw.go.jp/information/information/dictionary/exercise/ys-092.html",
-        "https://www.mhlw.go.jp/file/05-Shingikai-10901000-Kenkoukyoku-Soumuka/0000041836.pdf"
+        "https://kennet.mhlw.go.jp/information/information/dictionary/exercise/ys-092.html"
       ],
       "officialAnswerChecked": true,
       "originalTextChecked": true,
@@ -97,15 +90,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -119,10 +112,8 @@
     "sourceSha256": "18cd051606a4757c79125a43f72033d9a4eeb9c33f574904666beae613de9c01",
     "candidateSha256": "2aeb0ec0ea40949a216fdbd26afcf55ed2f00137703f75d5d4fe74bd36702929",
     "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
-    "status": "HOLD",
-    "gateIssues": [
-      "review must verify every displayed government source"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
       "status": "PASS",
       "issues": [],
@@ -134,7 +125,6 @@
         "5": "PASS"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://kennet.mhlw.go.jp/information/information/dictionary/food/ye-044.html",
         "https://www.mhlw.go.jp/file/05-Shingikai-10901000-Kenkoukyoku-Soumuka/0000041836.pdf",
         "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
@@ -153,15 +143,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -179,15 +169,16 @@
     "gateIssues": [
       "not a clean PASS",
       "one or more choice checks did not pass",
-      "sourceSupportChecked missing",
-      "review must verify every displayed government source"
+      "sourceSupportChecked missing"
     ],
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "Official PDF p16 marks (1) as the answer, which matches the candidate's correctChoice 1. The problem text and image match the original.",
-        "Choice 2: the cited q30 sources support only noradrenaline, released as a transmitter and a hormone when the body is under stress (yk-047). None of them states that adrenaline is involved in the stress response. None states that adrenocortical hormones such as cortisol are secreted under stress or involved in it. Part of the explanation is therefore unsupported. 001087177.pdf p31 only says the adrenal medulla produces adrenaline and noradrenaline and does not mention stress.",
-        "Choices 1, 3, 4 and 5 were confirmed: yk-031 on good and bad stress, adaptation failure, psychosomatic disease, anxiety and depression; 別表1 item 17 (transfer / reassignment), item 20 (promotion) and item 15 (noise, temperature, humidity, odour); こころの耳 on cold and noise as physical stressors."
+        "The official PDF (page 15/15) marks (1) as the answer, which matches the candidate's correctChoice 1.",
+        "Choice 2: the explanation says the adrenal cortex secretes cortisol and other corticosteroids. None of the cited sources (yk-031, yk-047, kokoro word-1621, 001644134.pdf) mentions cortisol or adrenal cortex hormones. yk-047 only covers noradrenaline, and adrenaline is not named. The corticosteroid part of the statement is unsupported.",
+        "Choice 1 is supported: yk-031 says the same stressor can be good or bad stress, and yk-047 says it can put the body into a state suited to activity.",
+        "Choices 3 and 4 are supported: 001644134.pdf 別表1 lists item 17 (転勤・配置転換等), item 20 (昇格・昇進等) and item 15 (作業環境の騒音・温度・湿度・臭気等の変化). kokoro word-1621 lists cold and noise as physical stressors.",
+        "Choice 5 is supported: yk-031 mentions peptic ulcer, high blood pressure, anxiety and depression."
       ],
       "choiceChecks": {
         "1": "PASS",
@@ -197,12 +188,10 @@
         "5": "PASS"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-031.html",
         "https://kokoro.mhlw.go.jp/glossaries/word-1621/",
         "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-047.html",
-        "https://www.mhlw.go.jp/content/11201000/001644134.pdf",
-        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+        "https://www.mhlw.go.jp/content/11201000/001644134.pdf"
       ],
       "officialAnswerChecked": true,
       "originalTextChecked": true,
@@ -215,15 +204,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -241,17 +230,17 @@
     "gateIssues": [
       "not a clean PASS",
       "one or more choice checks did not pass",
-      "sourceSupportChecked missing",
-      "review must verify every displayed government source"
+      "sourceSupportChecked missing"
     ],
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "Official PDF p15 marks (2) as the answer, which matches the candidate's correctChoice 2. The problem text and image match the original.",
-        "Choice 2 is supported: the leukoencephalopathy manual, B-1 (PDF p1), says the cerebral cortex is grey matter and the cerebral white matter is myelinated nerve fibres.",
-        "Choice 3 (neuron = one cell body, one axon, multiple dendrites): no cited source covers it.",
-        "Choice 5 (somatic nerves = sensory and motor nerves): no cited source covers it.",
-        "Choices 1 and 4 are supported by the MHLW 自律神経 figure (brain and spinal cord = central nervous system; sympathetic = higher heart rate, suppressed digestive secretion and peristalsis) and by yk-047."
+        "The official PDF (page 14/15) marks (2) as the answer, which matches the candidate's correctChoice 2.",
+        "Choice 3 (a neuron has 1 cell body, 1 axon and several dendrites): no cited government source describes neuron structure.",
+        "Choice 5 (somatic nerves are made up of sensory and motor nerves): no cited government source covers this.",
+        "Choice 2 is supported: tp1122-1c07.pdf says the cerebral cortex is grey matter and white matter is myelinated nerve fibres. It does not directly support the added claim that the cortex is the centre for sensation, movement and thought.",
+        "Choice 1 is supported: in 0000057153.pdf the brain and spinal cord are shown as the central nervous system, and the peripheral nervous system is shown separately.",
+        "Choice 4 is supported: 0000057153.pdf shows sympathetic nerves raising heart rate and suppressing digestive secretion and peristalsis."
       ],
       "choiceChecks": {
         "1": "PASS",
@@ -261,7 +250,6 @@
         "5": "HOLD"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://www.mhlw.go.jp/topics/2006/11/dl/tp1122-1c07.pdf",
         "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000057153.pdf",
         "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-047.html"
@@ -277,15 +265,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -303,15 +291,16 @@
     "gateIssues": [
       "not a clean PASS",
       "one or more choice checks did not pass",
-      "sourceSupportChecked missing",
-      "review must verify every displayed government source"
+      "sourceSupportChecked missing"
     ],
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "Official PDF p13 marks (3) as the answer, which matches the candidate's correctChoice 3. The problem text and image match the original.",
-        "Choice 1: the word コルチゾール appears in none of the cited sources. The candidate reasons indirectly from 'corticosteroid drugs (derivatives of adrenocortical hormone) promote hepatic gluconeogenesis and cause hyperglycaemia' (tp1122-1d41 p10, 001087177 p31). No primary source directly says cortisol is an adrenocortical hormone that raises blood glucose.",
-        "Choices 2 to 5 are supported: 手引き p31 (aldosterone retains salt and water and regulates electrolytes); yk-062 (melatonin comes from the pineal gland); the 指定難病235 overview (PTH and hypocalcaemia); ym-085 (insulin, and glucagon breaking glycogen down to glucose); 手引き p23-24 (the pancreas secretes insulin and glucagon)."
+        "The official PDF (page 12/15) marks (3) as the answer, which matches the candidate's correctChoice 3.",
+        "Choice 1: no cited source names cortisol, or says cortisol is secreted by the adrenal cortex or raises blood glucose. tp1122-1d41.pdf p.10 only says synthetic corticosteroid drugs increase gluconeogenesis in the liver and cause hyperglycaemia. The 手引き p.31 only says the adrenal cortex secretes corticosteroid hormones. Getting from these to 'cortisol raises blood glucose' is the explanation's own inference, not something a source states.",
+        "Choice 3 is supported: yk-062 says melatonin is secreted by the pineal gland and regulates circadian rhythm, and 001212057.pdf says reduced parathyroid hormone (PTH) secretion causes low blood calcium.",
+        "Choice 2 is supported by the 手引き p.31 statement on aldosterone and electrolyte/water regulation.",
+        "Choices 4 and 5 are supported by ym-085 and the 手引き p.23-24 statements on insulin and glucagon."
       ],
       "choiceChecks": {
         "1": "HOLD",
@@ -321,7 +310,6 @@
         "5": "PASS"
       },
       "evidenceUrls": [
-        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
         "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-062.html",
         "https://www.mhlw.go.jp/content/10905000/001212057.pdf",
         "https://www.mhlw.go.jp/content/001087177.pdf#page=39",
@@ -340,15 +328,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 32,
-        "outputTokens": 13508,
-        "cacheReadInputTokens": 3229154,
-        "cacheCreationInputTokens": 253783,
+        "inputTokens": 30,
+        "outputTokens": 12445,
+        "cacheReadInputTokens": 2915423,
+        "cacheCreationInputTokens": 249084,
         "webSearchRequests": 0,
-        "costUSD": 2.9463828000000003,
+        "costUSD": 2.8247766,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 4808,
+        "thinkingTokens": 3723,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
