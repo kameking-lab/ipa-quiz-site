@@ -1,0 +1,505 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251808",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+    },
+    {
+      "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+      "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+    },
+    {
+      "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+      "url": "https://www.env.go.jp/content/900402514.pdf"
+    },
+    {
+      "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+      "url": "https://www.env.go.jp/content/900403678.pdf"
+    },
+    {
+      "title": "国立医薬品食品衛生研究所 第15回医薬品品質フォーラム ICP-OESおよびICP-MSによる金属分析法概論",
+      "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf"
+    },
+    {
+      "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+      "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+    },
+    {
+      "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+      "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定ガイドブックに準じた形式による手順書（別紙）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "環境省 底質調査方法",
+      "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251808-q6": {
+      "overlay": {
+        "sourceHash": "6a6578996d159cfde755a391b9ecf154546f76a6f6e162e7a8a657fad96d9e8a",
+        "correctChoice": 2,
+        "summary": "ジフェニルカルバジドはアセトンに溶かして試薬溶液とする。『精製水に溶解して用いる』とした肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "産総研の測定手順書は、Cr(VI)によってジフェニルカルバジドが酸化されてジフェニルカルバゾンに変わると説明している。ジフェニルカルバジドがクロム（Ⅵ）により酸化されるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "ジフェニルカルバジドは水に溶けにくく、環境省マニュアルでは0.5 gをアセトン25 mLに溶かしてから水で50 mLとし、産総研の手順書でも1.0 gを100 mLのアセトンに溶かす。精製水に溶解するというこの記述が誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "ジフェニルカルバジド溶液は分解しやすいため、環境省マニュアルは冷暗所に保存し1週間以内に使用するとし、産総研の手順書も調製後は暗色瓶で冷蔵保存するとしている。褐色ガラス瓶・冷蔵庫保存という記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "生成したジフェニルカルバゾンとクロム（Ⅲ）が錯体を作り、540 nm付近の光を吸収して溶液が赤紫色になる。環境省マニュアルも『生成する赤紫の錯体の吸光度を測定』としており、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "環境省マニュアルの方法は試験液を硫酸酸性として発色させ、モリブデン、水銀、バナジウム等が妨害するとしている。バナジウムについては発色後10～15分待てば影響を無視できるとしており、バナジウムも発色する点で記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+            "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+            "url": "https://www.env.go.jp/content/900402514.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf",
+          "excerpt": "Cr(VI)によってジフェニルカルバジドが酸化され、ジフェニルカルバゾンに変わる。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf",
+          "excerpt": "ジフェニルカルバジド1.0gを100mLのアセトンに溶解する。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "ジフェニルカルバジド0.5gを取り、アセトン25mLを加えて溶かし、全量フラスコ（50mL）に移し､水を加えて定容とし、ジフェニルカルバジド溶液とする。冷暗所に保存し、1週間以内に使用する。",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf",
+          "excerpt": "調製後は暗色瓶で冷蔵保存する。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf",
+          "excerpt": "このジフェニルカルバゾンと３価クロム（Cr(III)）とが複合して錯体を形成し、540nm付近の光を吸収するため無色の抽出液が赤紫色になる",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "第２節の前処理方法で調製した試験液を硫酸酸性とした後、クロム（Ⅲ）は過マンガン酸カリウムで酸化してクロム（Ⅵ）とし、1,5-ジフェニルカルボノヒドラジド（ジフェニルカルバジド）を加え、生成する赤紫の錯体の吸光度を測定し",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "モリブデン、水銀、バナジウム等が妨害する。ただし、モリブデンは0.1mgまで影響しない。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "バナジウムは発色後、10～15分間経過してから吸光度を測定すれば、その影響は無視できる。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q7": {
+      "overlay": {
+        "sourceHash": "bf88449eb4d9ad33b960767f2296e6389298c8fbe882ee1901bb4460fd8edbfe",
+        "correctChoice": 4,
+        "summary": "吸光度A＝kclは液層の長さ（光路長）に比例するので、同じ溶液で光路長を1.0 cmから2.0 cmにすると0.24×2＝0.48になる。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "0.06は0.24の1/4で、光路長を2倍にしたのに吸光度を1/4にした値である。吸光度は液層の長さに比例し、A＝0.24×(2.0/1.0)＝0.48になる。長さが増えて吸光度が減るとした計算は誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "0.12は0.24÷2で、吸光度が光路長に反比例すると考えた値である。ランベルト・ベールの法則では吸光度A＝kclは液層の長さlに比例するので、濃度が同じなら0.24×2＝0.48となり、0.12は誤りである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "0.36は0.24の1.5倍で、光路長の比2.0/1.0＝2と合わない。吸光度は光路長に比例し、濃度3.0×10⁻⁵ mol/Lと波長550 nmは変わらないので、0.24×2＝0.48が正しい値である。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "吸光度は液の濃度c及び液層の長さlに比例する（A＝kcl）。濃度と波長は同じで光路長だけが1.0 cmから2.0 cmと2倍になるので、A＝0.24×2.0/1.0＝0.48となる。これが正しい値である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "0.60は0.24の2.5倍で、光路長の比2と一致しない。吸光度は光路長に比例するので、2.0 cmセルでは0.24×2＝0.48である。0.60になるには光路長2.5 cm相当が必要で、誤りである。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "吸光度(A)は，液の濃度(c)及び液層の長さ(l)に比例する。A＝kcl(kは定数)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q8": {
+      "overlay": {
+        "sourceHash": "035269cc608face2de1e45efde06c4f4916cc0a54651850eda980454f0232064",
+        "correctChoice": 4,
+        "summary": "亜酸化窒素（一酸化二窒素）はフレームの助燃ガスで、燃料ガスはアセチレン。『フレームの燃料』とした肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "中空陰極ランプは、陰極を目的元素の金属で作り、減圧した不活性ガス中で陽極との間にグロー放電を起こして、その元素に固有の光を放出させる光源である。組合せは正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "電気加熱原子化法では、黒鉛などで作った小さな管に大電流を流し、電気抵抗による発熱（ジュール熱）で高温にして試料を原子化する。組合せは正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "アトマイザー（噴霧器）は試料溶液を霧状にしてフレームへ導入する部分で、予混合型バーナーでは試料溶液が噴霧室内で霧状になり、細かい霧だけが燃料や空気と一緒にフレームに入る。組合せは正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "亜酸化窒素（一酸化二窒素、N₂O）は、アセチレンを燃料ガスとするときの助燃ガスである。環境省マニュアルも燃料ガスはアセチレン、クロムの助燃ガスは一酸化二窒素としており、『フレームの燃料』とするこの組合せが誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ゼーマン方式は、原子吸光分析装置のバックグラウンド補正方式の一つで、連続スペクトル光源方式などと並んで挙げられている。『ゼーマン効果 バックグラウンド補正』の組合せは正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "J-STAGE 公害と対策 日色和夫（大阪工業技術試験所）『わかり易い公害分析・計測基礎講座(第3講) 原子吸光法』",
+            "url": "https://www.jstage.jst.go.jp/article/jriet1972/8/6/8_6_611/_pdf"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+            "url": "https://www.env.go.jp/content/900402514.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 一酸化二窒素（別名 亜酸化窒素）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10024-97-2.html"
+          },
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jriet1972/8/6/8_6_611/_pdf",
+          "excerpt": "別の陽極との間にグロー放電をさせると陰極を構成している金属元素の光が放出される",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jriet1972/8/6/8_6_611/_pdf",
+          "excerpt": "黒鉛などで作った小さな管を用い,これに高電流を流して高温に加熱してこの管の中に小量の試料溶液を入れて原子化を行う方法である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jriet1972/8/6/8_6_611/_pdf",
+          "excerpt": "試料溶液はまずバーナーの噴霧室内に入り,ここで霧状となり",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "a)燃料ガスアセチレン。b)助燃ガスクロムでは一酸化二窒素",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10024-97-2.html",
+          "excerpt": "一酸化二窒素 (別名: 亜酸化窒素)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "方式には連続スペクトル光源方式，ゼーマン方式，非共鳴近接線方式，自己反転方式がある。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢3の用語『アトマイザー』と『試料溶液の霧化』の対応を直接述べる政府一次資料を見つけられていない。取得できた資料（J-STAGE掲載の大阪工業技術試験所・日色和夫の講座、環境省マニュアル）は『噴霧室内で霧状』『ネブライザ』『霧化装置』とは書くが、『アトマイザー』という語を定義していない。肢1・2・4・5は抜粋で支持できる。"
+      ]
+    },
+    "emkohyo-EM20251808-q9": {
+      "overlay": {
+        "sourceHash": "b9f389b983abbb655878fc2288c83c6b93978f7e2f5bd4d0961faa800a4008d0",
+        "correctChoice": 3,
+        "summary": "同位体比の測定は質量で元素を分けるICP-MSの利点で、発光波長で測るICP-AESではできない。肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "国立医薬品食品衛生研究所の資料はICP-MSの利点として『ICP-OESに比して高感度』を挙げ、厚労省資料でも同じ物質の定量下限がICP-AESで5 µg/m³、ICP-MSで0.01 µg/m³とされている。ICP-AESの定量下限の方が高いという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "ICPは表皮効果によりドーナツ構造をとり、中心部から試料が導入される。国立医薬品食品衛生研究所の資料は、中心部の温度は外側より低いと注意しており、側面部が中心部より高温という記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ICP-AESは原子やイオンの発光スペクトル線の強度を測る方法で、同位体を質量で区別しない。同位体比測定は、国立医薬品食品衛生研究所の資料がICP-OESに比べたICP-MSの利点として挙げるものである。ICP-AESで同位体比を調べられるとするこの記述が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ICP-AESの測光方向には、プラズマを軸方向から観測する方式と、横（直交）方向から観測する方式がある。厚労省資料の装置条件にも『測光方向 軸方向および直交方向の両方』とあり、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ICP-AESでは近接する発光線などによる分光干渉があるため、元素ごとに分析線波長を選ぶ。環境省マニュアルは紫外領域の波長ではバックグラウンドや分光干渉に十分注意するよう求め、別の分析線波長も示しており、記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "国立医薬品食品衛生研究所 第15回医薬品品質フォーラム ICP-OESおよびICP-MSによる金属分析法概論",
+            "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf"
+          },
+          {
+            "title": "厚生労働省 作業環境測定の手法に関する科学的知見収集のための調査研究報告書",
+            "url": "https://www.mhlw.go.jp/content/11300000/001096482.pdf"
+          },
+          {
+            "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+            "url": "https://www.env.go.jp/content/900402514.pdf"
+          },
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf",
+          "excerpt": "ICP-MS●利点（ICP-OESに比して）１．高感度２．幅広いダイナミックレンジ３．多元素定量４．同位体比測定",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001096482.pdf",
+          "excerpt": "定量下限5µg/m3（ICP-AES）0.01µg/m3（ICP-MS）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf",
+          "excerpt": "表皮効果によるドーナツ構造をとるため、中心部に試料が",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf",
+          "excerpt": "ただし中心部の温度は外側より低いことに注意",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "誘導結合プラズマ(ICP)により原子化し，及び励起し，これらにより得られた原子発光スペクトル線の発光強度から被検元素量(濃度)を測定する方法である。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf",
+          "excerpt": "測光方向軸方向および直交方向の両方",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "測定波長が紫外領域であるので、カルシウムやマグネシウム等のバックグランド及びその他の分光干渉に十分注意する。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "クロムの分析線波長としては、この他に206.149nm等がある。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q10": {
+      "overlay": {
+        "sourceHash": "b8fe91ef7926d26a4d380e61c0a1ced2075fc8b4aa206d3ddd5fab5bac18c952",
+        "correctChoice": 3,
+        "summary": "蛍光は溶液のpHなどの影響を受けるので、『蛍光スペクトルの形は試料のpHによらず一定』とした肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "農研機構の解説は、物質に可視・紫外領域の光を照射すると照射光より長波長の光を放射する場合があると説明する。励起光に紫外部又は可視部の光を用いるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "日本薬局方の蛍光光度法は、光源としてキセノンランプ、レーザーなど励起光を安定に放射するものを用いるとしている。光源にキセノンランプを用いるという記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "日本薬局方は、蛍光強度は溶液の濃度、温度、pH、溶媒などによって影響されることが多いと注意している。蛍光はpHで変わりうるので、蛍光スペクトルの形が試料のpHによらず一定と言い切るこの記述が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "希薄溶液の蛍光強度はF＝kI₀φεclで表され、I₀は励起光の強さである。濃度などの条件が同じなら蛍光強度は励起光の強さに比例するので、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "物質は励起光を吸収していったん励起状態となり、エネルギーの一部を失ってから蛍光を放射するため、蛍光は照射した光よりも長波長になる。蛍光の波長が励起光の波長より長いという記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "農研機構 動物衛生研究部門 II.蛍光分光光度計",
+            "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/fs_genri/index.html"
+          },
+          {
+            "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+            "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/fs_genri/index.html",
+          "excerpt": "物質に可視・紫外領域の光を照射すると、照射した光よりも長波長の光を放射する場合があります。",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "光源としてはキセノンランプ，レーザー，アルカリハライドランプなど励起光を安定に放射するものを用いる．",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "蛍光強度は溶液の濃度，温度，pH，溶媒又は試薬の種類及びそれらの純度などによって影響されることが多い．",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "蛍光強度Fは，希薄溶液では，溶液中の蛍光物質の濃度c及び層長lに比例する．F＝kI0φεcl",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "I0：励起光の強さ",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

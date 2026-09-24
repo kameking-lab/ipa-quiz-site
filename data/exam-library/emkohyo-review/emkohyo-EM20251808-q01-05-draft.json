@@ -1,0 +1,426 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251808",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+    },
+    {
+      "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+      "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+    },
+    {
+      "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+      "url": "https://www.env.go.jp/content/900402514.pdf"
+    },
+    {
+      "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+      "url": "https://www.env.go.jp/content/900403678.pdf"
+    },
+    {
+      "title": "国立医薬品食品衛生研究所 第15回医薬品品質フォーラム ICP-OESおよびICP-MSによる金属分析法概論",
+      "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf"
+    },
+    {
+      "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+      "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+    },
+    {
+      "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+      "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定ガイドブックに準じた形式による手順書（別紙）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "環境省 底質調査方法",
+      "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251808-q1": {
+      "overlay": {
+        "sourceHash": "81e9586dd8a1261081a22654e10f8c1531b28ef52fcc78325ce9e089836a8f48",
+        "correctChoice": 1,
+        "summary": "原子半径は同じ周期では左から右へ小さくなる傾向があり、『しだいに増大する』とした肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "同じ周期では左から右へ原子番号とともに核電荷が増え、同じ電子殻の電子がより強く引き付けられるため、原子半径は小さくなる傾向がある。『しだいに増大する』は向きが逆で、これが誤りの記述である。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "アルカリ土類金属の二価イオン（Be²⁺、Mg²⁺、Ca²⁺、Sr²⁺、Ba²⁺）は、族を下るほど電子殻が1つずつ増えるため、イオン半径はしだいに大きくなる。記述は周期表の一般的な傾向どおりで正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "アルカリ金属は族を下るほど最外殻電子が原子核から遠くなり、取り去るのに必要なエネルギーが小さくなる。第1イオン化エネルギーはLiからCs、Frに向かって減少する傾向があり、記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "金属元素は電子を失って陽イオンになりやすいため、酸化物・塩化物・硫酸塩など多くの化合物で金属の酸化数は正の値をとる。したがって『多くは酸化数が正』という記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "同じ金属の酸化物では、酸化数が大きくなるほど酸性を示す傾向がある。例えばクロムではCrO（+2）が塩基性、Cr₂O₃（+3）が両性、CrO₃（+6）が酸性酸化物となり、記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 プレス発表 用語説明（イオン化エネルギー）",
+            "url": "https://www.jaea.go.jp/02/press2015/p15040901/03.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.jaea.go.jp/02/press2015/p15040901/03.html",
+          "excerpt": "このイオン化エネルギーは元素の周期表上では、右上に当たる第18族のヘリウムから左下の第1族のアルカリ金属であるフランシウムに向かって、低くなる傾向が見られる。",
+          "choiceNumbers": [
+            3
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】政府一次資料で確認できたのは肢3（イオン化エネルギーが周期表の左下に向かって低くなる傾向、日本原子力研究開発機構）のみ。肢1の原子半径の周期内傾向、肢2のアルカリ土類二価イオンの半径、肢4の金属化合物の酸化数、肢5の酸化数と酸化物の酸性度（CrO/Cr₂O₃/CrO₃）を直接述べる*.go.jp上の本文を取得できていないため、独立審査に回さない。"
+      ]
+    },
+    "emkohyo-EM20251808-q2": {
+      "overlay": {
+        "sourceHash": "87417f69ea1a68ab808486447ec407664547cac0cb95b6ad817d178bf7afd0b1",
+        "correctChoice": 5,
+        "summary": "ニッケルは濃硝酸中で不動態となり溶けにくいので、『濃硝酸に溶ける』とした肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "クロムは希硝酸のような低濃度の硝酸では腐食されて溶けるが、高濃度の硝酸では不動態となって腐食が減少する。『希硝酸に溶ける』という記述は、この低濃度側の挙動に合っており正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "コバルトは塩酸などの希酸に水素を発生しながら溶ける卑金属である。『コバルトは塩酸に溶ける』という記述は正しく、本問の誤りの肢ではない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "カドミウムは硝酸に溶けて硝酸カドミウムを生じる。作業環境測定でもカドミウムを硝酸で溶解して試料液とすることから、『硝酸に溶ける』という記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "鉛は塩酸や硫酸では難溶性の塩化鉛・硫酸鉛の皮膜ができて溶けにくいが、硝酸には可溶性の硝酸鉛を作って溶ける。『鉛は硝酸に溶ける』という記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "ニッケルは鉄やクロムと同様に、低濃度の硝酸では激しく腐食されるが、高濃度の硝酸では表面が不動態化して腐食がかえって減少する。『濃硝酸に溶ける』とするこの記述が誤りである。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "科学技術振興機構 金属の硝酸中での不動態と腐食 FAQ",
+            "url": "https://jrecin.jst.go.jp/html/compass/e-learning/36-549/data/1-%E6%BA%B6%E6%8E%A5/faq/naiyou.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS コバルト",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-48-4.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://jrecin.jst.go.jp/html/compass/e-learning/36-549/data/1-%E6%BA%B6%E6%8E%A5/faq/naiyou.html",
+          "excerpt": "Q28 低濃度の硝酸で激しく腐食され、高濃度でかえって腐食が減少する現象は鉄のほかにどんな材料があるのでしょうか。 A28 クロムやニッケルにも認められます。",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7440-48-4.html",
+          "excerpt": "希酸（希硝酸）：溶ける",
+          "choiceNumbers": [
+            2
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢1・肢5は科学技術振興機構FAQ（低濃度硝酸で腐食、高濃度で不動態化する現象はクロムやニッケルにも認められる）で支持できるが、肢2（コバルトが塩酸に溶ける：厚労省モデルSDSは『希酸（希硝酸）：溶ける』のみで塩酸の記載なし）、肢3（カドミウムが硝酸に溶ける）、肢4（鉛が硝酸に溶ける）を直接述べる政府一次資料本文を取得できていない。環境省の関連資料はアクセス拒否（403）で取得できなかった。"
+      ]
+    },
+    "emkohyo-EM20251808-q3": {
+      "overlay": {
+        "sourceHash": "52a9bd3bf41b8eb13356bceb91909a1614a1a041f0861794eca6556058454274",
+        "correctChoice": 3,
+        "summary": "白銅は銅とニッケルの合金で、主成分Ⓐは銀ではなく銅。『白銅 銀 ニッケル』とした肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "アマルガムは水銀の合金のことで、金アマルガムは金と水銀の合金である。環境省資料は、金鉱石を水銀と混ぜると微細な金粒子がアマルガムとなって溶け出すと説明している。Ⓐ金・Ⓑ水銀の組合せは正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "洋銀（洋白）は銅・ニッケル・亜鉛の合金である。国立国会図書館の資料は洋銀を『銅・ニッケル・亜鉛の合金』とし、税関の関税率表も洋白を銅・ニッケル・亜鉛合金としている。Ⓐ銅・Ⓑニッケルは主成分として正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "白銅は銅とニッケルの合金で、税関の関税率表も『銅・ニッケル合金（白銅）』と分類している。主成分Ⓐは銅であり、銀ではない。『白銅 銀 ニッケル』とするこの組合せが誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "MK鋼（MK磁石）は三島徳七が発明した磁石鋼で、鉄・ニッケル・アルミニウム系の合金である。三島自身の論文も『Fe-Ni-Al系合金(MK磁石)』と記している。Ⓐ鉄・Ⓑニッケルの組合せは正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ステンレス鋼は鉄を主成分とし、クロム（とニッケルなど）を添加して耐食性を高めた合金である。NITEの資料も、ステンレスは鉄が主成分で、ニッケル、クロームなどの添加量で等級が分かれると説明する。Ⓐ鉄・Ⓑクロムは正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省『不思議な水銀の話』アマルガムの功罪",
+            "url": "https://www.env.go.jp/content/900414877.pdf"
+          },
+          {
+            "title": "国立国会図書館 レファレンス協同データベース（銀杯の材質・洋銀）",
+            "url": "https://crd.ndl.go.jp/reference/entry/index.php?page=ref_view&id=1000288401"
+          },
+          {
+            "title": "財務省税関 実行関税率表 第74類（白銅・洋白）",
+            "url": "https://www.customs.go.jp/tariff/2011_8/data/i201108j_74.htm"
+          },
+          {
+            "title": "J-STAGE 鉄と鋼 三島徳七・牧野昇『MT磁石の工業化に関する実験(I)』",
+            "url": "https://www.jstage.jst.go.jp/article/tetsutohagane1955/43/5/43_5_556/_pdf"
+          },
+          {
+            "title": "製品評価技術基盤機構 金属食器材料",
+            "url": "https://www.nite.go.jp/chem/shiryo/product/dish/dish3.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/content/900414877.pdf",
+          "excerpt": "水銀の合金は特に「アマルガム」と呼ばれている",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900414877.pdf",
+          "excerpt": "金アマルガムを用いた金の製錬である。金鉱石を細かく砕いてそれを水銀と混ぜ合わせると、微細な金粒子がアマルガムとなって溶け出し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://crd.ndl.go.jp/reference/entry/index.php?page=ref_view&id=1000288401",
+          "excerpt": "銅・ニッケル・亜鉛の合金である「洋銀」",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tariff/2011_8/data/i201108j_74.htm",
+          "excerpt": "銅・ニッケル合金（白銅）及び銅・ニッケル・亜鉛合金（洋白）",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/tetsutohagane1955/43/5/43_5_556/_pdf",
+          "excerpt": "その磁性はFe-Ni-Al系合金(MK磁石)より劣る",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.nite.go.jp/chem/shiryo/product/dish/dish3.html",
+          "excerpt": "ステンレスは、鉄が主成分で、添加されるニッケル、クローム、炭素の量によって等級や用途が分かれています。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q4": {
+      "overlay": {
+        "sourceHash": "809ae742998b35072b7894c07a8d4e9bf76757048f71691d732da2f3717c16c5",
+        "correctChoice": 1,
+        "summary": "吸光光度分析法は試料が特定波長の光を吸収する度合を測る。溶液に見える色の光は吸収されずに残った光なので、肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "吸光光度分析法は、試料が一定の狭い波長範囲の光を吸収する度合を測る方法である。溶液に見える色は、吸収されずに透過・反射して残った波長の光の色であり、吸収される光はその色の光ではない。『溶液色の波長光の吸収』とするこの組合せが誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "蛍光光度分析法は、蛍光物質の溶液に励起光を当てたときに放射される蛍光の強さを測る方法である。原理の基礎が『物質による蛍光の発生』にあるという組合せは正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "原子吸光分析法は、光が原子蒸気層を通るとき、基底状態の原子がその元素に特有の波長の光を吸収する現象を利用する。『原子固有の光の吸収』という組合せは正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ICP発光分析法（ICP-AES）は、試料中の元素を誘導結合プラズマで原子化・励起し、そこから出る発光スペクトル線の強度で定量する。『励起された原子及びイオンの発光』という組合せは正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ICP質量分析法（ICP-MS）は、プラズマ中で生成した測定対象元素のイオンを質量分析計で分離・定量する。『イオン化された原子の質量』という組合せは正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          },
+          {
+            "title": "農研機構 野菜花き研究部門 色素の基礎知識",
+            "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
+          },
+          {
+            "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+            "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+          },
+          {
+            "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+            "url": "https://www.env.go.jp/content/900403678.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "紫外可視吸光度測定法は，試料が一定の狭い波長範囲の光を吸収する度合を測定する方法である。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html",
+          "excerpt": "吸収された残りの波長の光が反射し、人間の目に色として映ります。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
+          "excerpt": "蛍光光度法は，蛍光物質の溶液に特定波長域の励起光を照射するとき，放射される蛍光の強度を測定する方法である．",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "原子吸光光度法は，光が原子蒸気層を通過するとき，基底状態の原子が特有波長の光を吸収する現象を利用し",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "誘導結合プラズマ(ICP)により原子化し，及び励起し，これらにより得られた原子発光スペクトル線の発光強度から被検元素量(濃度)を測定する方法である。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900403678.pdf",
+          "excerpt": "プラズマ中で生成する測定対象元素のイオン種を質量分析計で分離・定量するもの。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251808-q5": {
+      "overlay": {
+        "sourceHash": "549f83527d639211a42597c95d38a5f2bccbe9f2255eb1de539386663e1efa07",
+        "correctChoice": 3,
+        "summary": "MIBKは水に約1.9 g/100 mL（20℃）溶けるので、『水に溶解しない』とした肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "APDCなどで生成した金属キレートはMIBKによく溶けるため、水溶液中の微量金属をMIBK層へ抽出・濃縮できる。溶媒抽出－原子吸光分析法でMIBKが使われる理由の一つであり、記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "MIBKは水と混ざりにくく水より軽いので、振り混ぜて静置すると上層に有機溶媒層が分かれ、分取しやすい。『有機溶媒層の分離が容易』という記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "厚労省モデルSDSでは、MIBKの水への溶解度は1.91 g/100 mL（20℃）である。わずかではあるが水に溶けるので、『水に溶解しない』と言い切るこの記述が誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "MIBKはフレーム中で燃えやすく、噴霧しても炎が乱れにくいため、比較的安定なフレームが得られる。有機溶媒としてフレームに直接噴霧できる点も利点であり、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "MIBKは炭素・水素・酸素だけからなるケトンで、クロロホルムなどの塩素系溶媒のように燃焼で塩化水素やホスゲンを生じない。出題の趣旨では記述は正しいとされる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS メチルイソブチルケトン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-10-1.html"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+            "url": "https://www.env.go.jp/content/900402514.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-10-1.html",
+          "excerpt": "水:1.91g/100ml（20℃）（ICSC(1997)）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "次にMIBK20mLを加えて1～2分間激しく振り混ぜ、分離するまで静置した後、水層を分取し",
+          "choiceNumbers": [
+            2
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢3（水への溶解度1.91 g/100 mL）は厚労省モデルSDSで直接支持できるが、肢1（金属キレートのMIBKへの溶解度が大きい）、肢4（比較的安定な炎が得られる）、肢5（燃焼時に有害ガスを発生しない）を直接述べる政府一次資料本文が見つからない。特に肢5は、SDSの燃焼生成物記載（一酸化炭素等）と出題の趣旨の関係を一次資料で確認できていない。"
+      ]
+    }
+  }
+}

@@ -1,0 +1,343 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251808",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 食品添加物公定書 B 一般試験法（原子吸光光度法・紫外可視吸光度測定法・ヒ素試験法・誘導結合プラズマ発光強度測定法）",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+    },
+    {
+      "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
+      "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+    },
+    {
+      "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+      "url": "https://www.env.go.jp/content/900402514.pdf"
+    },
+    {
+      "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+      "url": "https://www.env.go.jp/content/900403678.pdf"
+    },
+    {
+      "title": "国立医薬品食品衛生研究所 第15回医薬品品質フォーラム ICP-OESおよびICP-MSによる金属分析法概論",
+      "url": "https://www.nihs.go.jp/drug/PhForum/15thRecord/15Forum6.pdf"
+    },
+    {
+      "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+      "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+    },
+    {
+      "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+      "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定ガイドブックに準じた形式による手順書（別紙）",
+      "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "環境省 底質調査方法",
+      "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251808-q11": {
+      "overlay": {
+        "sourceHash": "25352001d48ce28fad0d49af4c5bb08853e31fff9da31f3b65fa4a201e06e8c5",
+        "correctChoice": 4,
+        "summary": "ベリリウムの蛍光光度分析ではモリンを蛍光試薬に用いる。ベリロンⅢは吸光光度分析法の発色試薬で、肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "一般に蛍光物質の測定は、分光光度計で吸光度を測る方法よりも高感度で特異性が高い。ベリリウムのモリン蛍光法も吸光光度分析法より高感度であり、記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "モリンとベリリウムの蛍光反応はアルカリ性で行い、蛍光強度は反応液のアルカリ濃度によって大きく変わる。このため水酸化ナトリウム濃度を厳密にそろえる必要があり、記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "ベリリウム標準液は、硫酸ベリリウム四水和物を水（酸性）に溶かして調製する。標準液の調製に硫酸ベリリウム（四水和物）を用いるという記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "ベリロンⅢはベリリウムの吸光光度分析法で用いる発色試薬であり、蛍光光度分析法ではモリンを用いる。蛍光光度分析法の試薬をベリロンⅢとするこの記述が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "モリンは亜鉛とも反応して蛍光を発するため、シアン化カリウムを加えて亜鉛をシアノ錯体としてマスキングし、妨害を抑える。記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "農研機構 動物衛生研究部門 II.蛍光分光光度計",
+            "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/fs_genri/index.html"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/fs_genri/index.html",
+          "excerpt": "一般に蛍光物質では、分光光度計により吸光度を測定する方法よりも高感度で特異性の高い測定が可能となります。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "ベリリウム及びその化合物 ろ過捕集方法 吸光光度分析方法、原子吸光分析方法、蛍光光度分析方法又は誘導結合プラズマ質量分析方法",
+          "choiceNumbers": [
+            1
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】ベリリウムのモリン蛍光法の試薬（モリン）、アルカリ濃度の影響（肢2）、標準液に硫酸ベリリウム四水和物を用いること（肢3）、ベリロンⅢが吸光光度法用であること（肢4）、シアン化カリウムによる亜鉛のマスキング（肢5）を直接述べる政府一次資料本文を取得できていない。作業環境測定基準は蛍光光度分析方法が法定分析方法であることしか示さない。"
+      ]
+    },
+    "emkohyo-EM20251808-q12": {
+      "overlay": {
+        "sourceHash": "7fb395a2fef2c1d00c79cdf97396418b28e804d1a5d8a76642eda91e191c5a84",
+        "correctChoice": 1,
+        "summary": "カドミウムのAPDC錯体は酸性溶液からMIBKに抽出する。『アルカリ性溶液から抽出』とした肢1が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "APDC（ピロリジンジチオカルバミン酸アンモニウム）とカドミウムの錯体は、酸性（pH数程度）の溶液からMIBKに抽出する。アルカリ性溶液から抽出するというこの記述が誤りである。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "溶媒抽出で目的金属の錯体だけをMIBK層に移すと、分子吸収などの分光干渉の原因となる塩化ナトリウムは水層に残り除去される。記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "有機溶媒を噴霧する場合は、溶媒自身が燃料として働くので、燃料ガスを絞って青白い酸化炎となるよう燃料と助燃ガスの流量を調節する。記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ICP-AESでは試料の粘性や塩濃度の差が噴霧効率を変えて誤差となるため、イットリウムなどの内標準元素との強度比を用いる内標準法で補正できる。記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ICP-MSでスズが多く共存すると、カドミウムの質量数114などにスズの同重体干渉が生じうる。出題の趣旨では、この場合にロジウムを用いた補正が有効とされ、記述は正しいとされる。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "J-STAGE 公害と対策 日色和夫（大阪工業技術試験所）『わかり易い公害分析・計測基礎講座(第3講) 原子吸光法』",
+            "url": "https://www.jstage.jst.go.jp/article/jriet1972/8/6/8_6_611/_pdf"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第5部第1章 大気粉じん中の重金属類の測定方法",
+            "url": "https://www.env.go.jp/content/900402514.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/content/900402514.pdf",
+          "excerpt": "塩類の濃度が高い試料では、標準添加法又は内標準法（クロムでは内標準法）を用いる。",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】正答肢1（Cd-APDC錯体の抽出pH）、肢2（NaClの除去）、肢3（青白い酸化炎への調節）、肢5（スズ共存時のロジウム補正）を直接述べる政府一次資料本文を取得できていない。肢5はスズ114による同重体干渉の補正法として、ロジウム補正が有効とする根拠が不明で、出題の趣旨を一次資料で確認する必要がある。"
+      ]
+    },
+    "emkohyo-EM20251808-q13": {
+      "overlay": {
+        "sourceHash": "62275ed91fae29fd110446e56ce5f466ca56cc04c59438d57c41889e4bfb40b4",
+        "correctChoice": 4,
+        "summary": "ろ過捕集したクロム酸及びその塩は硝酸ではなく抽出液（緩衝液など）で抽出するとされ、肢4が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "クロム酸及びその塩の液体捕集法では、水溶性のクロム酸塩を精製水を入れたミゼットインピンジャーで捕集する。作業環境測定基準も液体捕集方法を認めており、記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "液体捕集法では、捕集後の液のpHを一定に保って発色や分析を安定させるため、酢酸－酢酸ナトリウム溶液を緩衝液として用いる。記述は正しいとされる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "ろ過捕集法では、クロム酸塩を吸着・還元しにくいテフロン（PTFE）メンブランフィルターを用いる。記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "フィルター上のクロム酸及びその塩を硝酸で抽出すると、六価クロムの状態や抽出条件が変わってしまう。硝酸で抽出するというこの記述が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "クロムは酸化物を作りやすく、原子吸光分析では酸化炎より燃料の多い還元性の多燃料炎の方が原子が多く残り、測光感度が高い。記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "クロム酸及びその塩 液体捕集方法又はろ過捕集方法 吸光光度分析方法又は原子吸光分析方法",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】作業環境測定基準はクロム酸及びその塩に液体捕集方法又はろ過捕集方法と吸光光度・原子吸光分析方法を定めることしか示さない。捕集液が精製水（肢1）、緩衝液が酢酸－酢酸ナトリウム（肢2）、テフロンメンブランフィルター（肢3）、ろ紙上のクロム酸塩の抽出液（正答肢4の正しい抽出液が何か）、多燃料炎の感度（肢5）を直接述べる政府一次資料本文を取得できていない。"
+      ]
+    },
+    "emkohyo-EM20251808-q14": {
+      "overlay": {
+        "sourceHash": "d9eb2a26dfd66937790655d8171a46c51478958d0586e29e87e6a324635bd180",
+        "correctChoice": 2,
+        "summary": "五酸化バナジウムのNBPHA吸光光度法の前処理に関する出題で、公式正答は肢2（湿式灰化に硝酸と過酸化水素水を用いる）が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "リン酸はNBPHAとバナジウム（Ⅴ）の錯体生成を妨げないとされ、共存しても干渉は起こらない。出題の趣旨では記述は正しいとされる。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "公式正答によれば、試料の湿式灰化に硝酸と過酸化水素水を用いるというこの記述が誤りである。過酸化水素はバナジウム（Ⅴ）とペルオキソ錯体を作り呈色するなど、NBPHA法の前処理に適さないと考えられる。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "NBPHA（N－ベンゾイル－N－フェニルヒドロキシルアミン）は、バナジウム（Ⅴ）と錯体を作る抽出・発色試薬である。記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "バナジウム（Ⅴ）のNBPHA錯体は、強い酸性の溶液からクロロホルム層に抽出され、有機層の吸光度を測定する。記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "五酸化バナジウムは粒子状であり、作業環境測定基準はろ過捕集方法を定めている。メンブランフィルターで捕集するという記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "五酸化バナジウム ろ過捕集方法 吸光光度分析方法、原子吸光分析方法又は誘導結合プラズマ質量分析方法",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】NBPHA吸光光度法の前処理（湿式灰化の酸の種類：正答肢2の誤りの理由）、リン酸共存時の干渉（肢1）、NBPHAとV(Ⅴ)の錯体生成（肢3）、クロロホルム抽出の液性（肢4）を直接述べる政府一次資料本文を取得できていない。作業環境測定基準は五酸化バナジウムがろ過捕集方法であることしか示さない。"
+      ]
+    },
+    "emkohyo-EM20251808-q15": {
+      "overlay": {
+        "sourceHash": "8d7af1454a00fa6b31f3030424fc186d8edd9abdc9fdec62258fe6c6fd405413",
+        "correctChoice": 5,
+        "summary": "抽出に用いる塩酸と硝酸の混酸は分解・変質するため用時調製し、余剰分を保管して再利用しない。肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "マンガンの測定法を検証した厚労省資料では、ブランク値の観点から石英のフィルターが用いられている。試料の捕集に石英繊維フィルターを用いるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "厚労省資料のICP-MS条件では、測定イオン55Mn、内標準元素としてスカンジウム（Sc）とガリウム（Ga）を添加している。内標準にスカンジウム又はガリウムを用いるという記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "マンガンは質量数55の単核種元素であり、厚労省資料も『測定イオン 55Mn』としている。⁵⁵Mn⁺（m/z＝55）の信号強度を測定するという記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "検量線用の標準液は、国家計量標準にトレーサブルな濃度保証値のある標準液を用いる。環境省の測定法も国家計量標準にトレーサブルな標準液を用いるとしており、記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "塩酸と硝酸の混酸は塩素や塩化ニトロシルを生じて組成が変わり、また一度使った余剰分は汚染のおそれがある。冷暗所で保管して再利用するというこの記述が誤りである。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 資料 労働安全衛生総合研究所『マンガン及びマンガン化合物の新たな測定法の検討結果報告書』",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf"
+          },
+          {
+            "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
+            "url": "https://www.env.go.jp/content/900403678.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf",
+          "excerpt": "測定イオン55Mn内標準元素Sc,Ga10ng/mLオフライン添加",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000149437.pdf",
+          "excerpt": "石英1種QR-100",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900403678.pdf",
+          "excerpt": "国家計量標準にトレーサブルな標準液またはこれと同等のものを用いる。",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】正答肢5（塩酸：硝酸＝2：1の混酸の余剰分を保管・再利用してはならない理由）を直接述べる政府一次資料本文を取得できていない。厚生労働省『ICP-MSに係る物質別検討結果報告書等について①〜③』（001181907〜001181909.pdf）はスキャン画像のみで本文テキストを照合できない。肢1〜4は労働安全衛生総合研究所のマンガン報告書と環境省ICP-MS測定法で支持できる見込み。"
+      ]
+    }
+  }
+}
