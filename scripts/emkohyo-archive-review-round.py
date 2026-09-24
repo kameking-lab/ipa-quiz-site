@@ -7,8 +7,11 @@ source pack to their archive folders with the next free -rN suffix. Nothing is
 deleted, so every FIX verdict stays auditable next to the accepted round.
 """
 
+import json
 from pathlib import Path
 import sys
+
+from emkohyo_portable_hash import matches_text_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -26,6 +29,12 @@ def main() -> None:
     present = [move for move in moves if move[0].exists()]
     if not present:
         raise FileNotFoundError(f"No current review round for {stem}")
+    receipt_file, pack_file = review_files[0][0], PACKS / f"{stem}.json"
+    if receipt_file.exists() and pack_file.exists():
+        # Archive before rebuilding: the pack must still be the one this receipt reviewed.
+        pinned = json.loads(receipt_file.read_text(encoding="utf-8")).get("sourcePackSha256", "")
+        if pinned and not matches_text_sha256(pack_file, pinned):
+            raise ValueError(f"{pack_file} was rebuilt after its review; restore the reviewed pack first")
     round_number = 1
     while any((folder / f"{name}-r{round_number}{suffix}").exists() for _, folder, name, suffix in moves):
         round_number += 1
