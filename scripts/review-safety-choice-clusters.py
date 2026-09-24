@@ -270,7 +270,6 @@ def main():
     target_prefixes = tuple(paper["id"] + "-q" for paper in catalog)
     target_drafts = {qid: candidate for qid, candidate in drafts.items()
                      if qid.startswith(target_prefixes)}
-    packs.append(pin_candidate_sources(root, target_drafts, packs, args.group))
     refresh_folder = root / f"docs/evidence/{args.group}-current-source-pins"
     for path in refresh_folder.glob("*.json"):
         value = read(path)
@@ -280,6 +279,9 @@ def main():
         refreshed = refresh_question_sources(root, target_drafts, refresh_ids, args.group)
         if all(pack["path"] != refreshed["path"] for pack in packs):
             packs.append(refreshed)
+    # Question-scoped packs must be visible before extending the shared candidate
+    # pack, otherwise adding one candidate invalidates unrelated receipts.
+    packs.append(pin_candidate_sources(root, target_drafts, packs, args.group))
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
