@@ -1310,7 +1310,7 @@
     "questionId": "lckohyo-LC20252115-q25",
     "sourceSha256": "b39f717dcd12b56ab225881a11012c392743e152bfec8c56f1beb4be67d1e5d7",
     "candidateSha256": "1e48927c97b7edb5f5dcdddb05ec57ad66366484d36923e97c4902deb4066617",
-    "evidenceSha256": "fd3b5a950261bacdf774c0b003959cb622ad499c0cdbad936987e3f0993d308e",
+    "evidenceSha256": "a12088d8ad3ece4b6448d463c18c10c619d2e1feccbfdbf1057cbb6b6eca064e",
     "status": "HOLD",
     "gateIssues": [
       "not a clean PASS",
@@ -1320,9 +1320,9 @@
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "Choice (2): the guidance (PDF pp.30-33, printed pp.22-25) never says that inorganic salts or vitamins are absorbed as they are, without enzymatic breakdown. The candidate treats the statement as correct only because the text names carbohydrates, proteins and lipids as the enzyme-digested nutrients. That is an inference from silence, so the source does not affirmatively support the statement.",
-        "Choice (2): the candidate points to electrolyte absorption in the large intestine (printed p.25) and fat-soluble vitamins taken up with lipids (printed p.23). Neither supports the claim that no enzymatic breakdown occurs, so choice (2) is still unconfirmed.",
-        "The official PDF p.14 (Q25) marks (3) with ○, which matches correctChoice=3. Choices 1, 3, 4 and 5 are supported by PDF pp.30-33."
+        "Choice 2 is only indirectly supported. On printed pages 23 and 25 of the MHLW guide, the source says carbohydrates and proteins are broken down by enzymes, fats by lipase, fat-soluble vitamins are taken in along with fats, and electrolytes are absorbed in the large intestine. It never states that minerals and vitamins are absorbed without being broken down by enzymes, and it does not mention water-soluble vitamins at all. The reason infers the choice from what is missing in the source, so the choice is unconfirmed.",
+        "Source titles do not match. candidate.sources calls #page=33 '(g) 大腸（印刷25頁）', but governmentSourceFiles calls it 'iii) 生体物質の産生'. For #page=31, only one of the two titles has the '登録販売者' prefix. PDF page 33 does contain both sections, but the titles should be made consistent.",
+        "Checked and confirmed: PDF page 30 (printed 22) says pepsinogen becomes pepsin through gastric acid (choice 4). PDF page 31 (printed 23) says pancreatic juice is weakly alkaline, neutralises acidic stomach contents and flows into the duodenum through the pancreatic duct, that trypsinogen in pancreatic juice becomes trypsin, and that villi make the lining velvety while microvilli raise absorption efficiency (choices 1, 3 and 5). PDF page 32 (printed 24) says bile salts aid fat digestion and lists no enzymes such as trypsin (choice 3). The official answer is (3), marked ○ on PDF page 14. These are physiological facts, so the source's date has no effect on the exam."
       ],
       "choiceChecks": {
         "1": "PASS",
@@ -1348,15 +1348,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 16,
-        "outputTokens": 7278,
-        "cacheReadInputTokens": 1606891,
-        "cacheCreationInputTokens": 110165,
+        "inputTokens": 32,
+        "outputTokens": 11327,
+        "cacheReadInputTokens": 3073265,
+        "cacheCreationInputTokens": 66778,
         "webSearchRequests": 0,
-        "costUSD": 1.3483222000000001,
+        "costUSD": 1.3755450000000005,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 3007,
+        "thinkingTokens": 4534,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -1504,6 +1504,125 @@
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
         "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q18": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q18",
+    "sourceSha256": "fbe8b81aa81d4d099b6b340d2ce79a33ca2b405178eb6c91de38b1190c9d3757",
+    "candidateSha256": "05f62a03b9eb1d61304857ae7cbad8e12816aad591243ad12b64ef7edae8a234",
+    "evidenceSha256": "01a788d97b2dd1d4ae8ce7a36faf8e6fc3807cdb558947b1e143a7f63244f5ed",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Choice 2 is unconfirmed. None of the provided government sources directly says that a compound (open) fracture is prone to infection and slow to heal. On printed page 37 (PDF page 38) of the FDMA handbook, the only related instructions are to cover a protruding bone with clean gauze or cloth and not to wash the wound.",
+        "Choice 5 is unconfirmed. The fracture signs on FDMA printed page 37 are intense pain, swelling or deformity, cold sweat or chills, bone that feels displaced when touched, and bone end visible in the wound. Grating sound (軋轢音) is not listed, and no provided government source mentions it.",
+        "The reason texts for choices 2 and 5 contain the internal note 'HOLD：'. They cannot be published as they are.",
+        "Checked and confirmed: in the synonym table on PDF page 51 of the MHLW notice, 複雑骨折 and 開放性骨折 map to 開放骨折 (code 8291005). 単純骨折, 皮下骨折 and 非開放性骨折 map to 閉鎖性骨折 (8290045). 不完全骨折 maps to 不全骨折 (8290035). FDMA printed page 37 says to fix the splint where it does not hurt, make it longer than the joints above and below the break, and not push a protruding bone back. The official answer is (4), marked ○ on PDF page 10."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://kouseikyoku.mhlw.go.jp/kyushu/iryo_shido/documents/2016033035.pdf",
+        "https://www.fdma.go.jp/relocation/html/life/survival/pdf/h29/survival2903.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 11327,
+        "cacheReadInputTokens": 3073265,
+        "cacheCreationInputTokens": 66778,
+        "webSearchRequests": 0,
+        "costUSD": 1.3755450000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4534,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q19": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q19",
+    "sourceSha256": "393d9387c697f82882e6c382a9a71f93f701a07b4817cf4a2c42f02df5f104db",
+    "candidateSha256": "7d4b5f8a51be5910ca81590ba6fe7942d44ae201cf2efefafa63c6b635b43816",
+    "evidenceSha256": "01a788d97b2dd1d4ae8ce7a36faf8e6fc3807cdb558947b1e143a7f63244f5ed",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Choice 5 is unconfirmed. None of the provided government sources defines the sickness absence frequency rate (病休度数率) as sickness absence cases per 1,000,000 total actual working hours of enrolled workers.",
+        "Choice 1 is not fully supported. The MHLW 2007 survey page does define 有所見率 as 有所見者数 ÷ 受診者数 × 100 (formula table around lines 219–224; confirmed by byte-level search of the Shift_JIS text). But no source defines 発生率 or says that 有所見率 differs from it. The candidate itself leaves a 'HOLD注記' on this point.",
+        "The reason texts for choices 1 and 5 contain the internal notes 'HOLD注記' and 'HOLD：'. They cannot be published as they are.",
+        "Checked and confirmed: the Statistics Bureau page chirabari.html says that A, B and C all have a mean of 5 yet different spreads and so different characteristics, and that a larger variance means a larger spread (choice 2). The same page says an average is generally used as the representative value, but the mode or median may be used depending on the shape of the distribution (choice 3). The Data StaRt keyword page says that a large correlation coefficient does not mean the two variables are causally related (choice 4; confirmed by byte-level search). The official answer is (1), marked ○ on PDF page 11."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/toukei/itiran/roudou/saigai/anzen/kenkou07/j1.html",
+        "https://www.stat.go.jp/naruhodo/10_tokucho/chirabari.html",
+        "https://www.stat.go.jp/dstart/point/keyword/"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 11327,
+        "cacheReadInputTokens": 3073265,
+        "cacheCreationInputTokens": 66778,
+        "webSearchRequests": 0,
+        "costUSD": 1.3755450000000005,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4534,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
