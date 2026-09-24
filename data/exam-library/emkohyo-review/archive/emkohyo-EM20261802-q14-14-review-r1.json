@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1754,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 14591,
+      "webSearchRequests": 0,
+      "costUSD": 0.1797046,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1103,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q14"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q14": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q14": {
+      "/exam-library/emkohyo-EM20261802/q14-p10-1.webp": "1940ba52e8114ae99fca69ba5b9ab57751717161b641cb3669dac3a44c33ba7b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q14": "4be6d8fecce48d5de2f155190c1bedb062505940638cd9c684d865d377211bd0"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q14-14.json",
+  "sourcePackSha256": "166b2d693d0b8b8ba68699f88525bd0cbff967117c1bba85ee7d8a7ec24c9244",
+  "assessment": {
+    "emkohyo-EM20261802-q14": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの末尾に表の列見出し「第１種有機溶剤等 第２種有機溶剤等 第３種有機溶剤等」が区切りなしで本文に続いている。figuresは空なので、利用者には表の構造が見えない。本文と列見出しの間に改行を入れるなどして、各選択肢の3つの％値が第1種・第2種・第3種の順であることが読み取れる形にすべき。"
+      ],
+      "choiceIssues": [
+        "肢3のchoices.textが「３％\\n３％ ３％」となっており、1つ目の値の後に余分な改行が入っている。原図と公式問題文はいずれも「３％ ３％ ３％」の1行で、他の肢（例:「２％ ２％ ２％」）とも形式がそろっていない。「３％ ３％ ３％」に直す必要がある。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "有機則第1条第4号ハの条文は「イに掲げる物又は前号イに掲げる物を当該混合物の重量の五パーセントを超えて含有するもの」である。第1種と第2種の含有量を「合計」して5%超かどうかで判定するという読み方は、条文には直接書かれていない。解説の肢1〜4はこの合計判定に依拠している（特に肢3の3%+3%=6%で第2種）。合計で判定することを明示した行政通達などの一次資料を追加するか、条文の解釈であることを明記すべき。なお公式正答が4であることは合計解釈と整合し、結論は支持される。"
+      ],
+      "needsExternalCheck": [
+        "第1種・第2種成分の含有量を合算して5%超かどうかで判定することを明示した厚生労働省の施行通達（有機則改正時の基発など）の該当箇所を確認し、sourcesに追加するか検討する。"
+      ]
+    }
+  }
+}

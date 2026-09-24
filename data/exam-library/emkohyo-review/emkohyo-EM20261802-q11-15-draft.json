@@ -207,7 +207,7 @@
       "overlay": {
         "sourceHash": "a2237f73ba80507d22169241096aea5a415219088aaf4e51c4abddf9d48861ae",
         "correctChoice": 4,
-        "summary": "第1種と第2種の合計が5%以下で、有機溶剤全体が5%を超えるものが第3種有機溶剤等になる",
+        "summary": "有機則第1条は有機溶剤含有物を総量5%超と定義。第1種が5%超なら第1種、第1種と第2種の合計が5%超なら第2種、それら以外なら第3種。2%+2%+2%の肢4が該当。",
         "choices": [
           {
             "number": 1,
@@ -235,13 +235,72 @@
             "reason": "第1種・第2種が0%で第3種4%だけを含む混合物は、有機溶剤の合計含有量が4%で5%を超えない。そのため有機溶剤等（有機溶剤含有物）にそもそも該当せず、第3種有機溶剤等にもならない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省・有機溶剤中毒予防規則第1条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000"
+          },
+          {
+            "title": "厚生労働科学研究成果報告書・有機溶剤混合物の区分（PDF134頁）",
+            "url": "https://mhlw-grants.niph.go.jp/system/files/report_pdf/202123001B-sougou.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "第1種・第2種・第3種有機溶剤等と有機溶剤含有物（5%超）の定義を定める有機則第1条の本文は、一次資料packに含まれていない。厚生労働省法令等データベースで検索して確認する必要がある。",
-        "5肢すべてを独立に検算した（第1種等：第1種>5%、第2種等：第1種＋第2種>5%、有機溶剤等：合計>5%）。判定は公式正答4と一致する。ただし「5%を超える」の境界（肢1の第1種ちょうど5%）の扱いは、条文の文言で最終確認していない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "有機溶剤と有機溶剤以外の物との混合物で、有機溶剤を当該混合物の重量の五パーセントを超えて含有するもの",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "イに掲げる物を当該混合物の重量の五パーセントを超えて含有するもの",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "イに掲げる物又は前号イに掲げる物を当該混合物の重量の五パーセントを超えて含有するもの(前号ハに掲げる物を除く。)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000",
+          "excerpt": "五　第三種有機溶剤等　有機溶剤等のうち第一種有機溶剤等及び第二種有機溶剤等以外の物をいう。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://mhlw-grants.niph.go.jp/system/files/report_pdf/202123001B-sougou.pdf",
+          "excerpt": "第二種有機溶剤と第一種有機溶剤の合計が5％を超えた場合、第一種有機溶剤として取り扱われる場合を除き、第二種有機溶剤として取り扱われる旨規定されていること",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261802-q15": {
       "overlay": {
