@@ -3249,5 +3249,177 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q31": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q31",
+    "sourceSha256": "adad7af0aabcdf8dcdc240438910d428f53b676cfc499e3007166362b0b4d774",
+    "candidateSha256": "559ba95e0f94f83f7e6792b75ddb73e17d1fae1ad6e9843a4e326799e1cd1c16",
+    "evidenceSha256": "df608db3c2049e3e4023dc7b8ef8864b07e82156129c5c857d2a28045f51d254",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 17, printed 一衛 16/22) marks (1) with ○, which matches correctChoice 1. The image q31-p17-0.webp matches the original text.",
+        "Choice 1: Printed page 12 of 救急蘇生法の指針2015 (PDF page 21) says only that 脳梗塞 happens when a brain artery is blocked by 動脈硬化 or a clot (血栓). It does not define 脳血栓症 and 脳塞栓症 separately. So the sources cannot show that the choice swapped the two definitions, which is why it is the error.",
+        "Choice 2: None of the three sources describe 高血圧性脳症 as brain swelling triggered by a sharp rise in blood pressure, or list headache, nausea, vomiting, impaired consciousness, vision problems and seizures as its symptoms. The sources cannot show that this statement is correct.",
+        "Choice 3: e-ヘルスネット m-05-005 describes 狭心症 as narrowed coronary arteries with poor blood flow, and 心筋梗塞 as a blocked vessel where heart muscle cells are destroyed. This supports the choice.",
+        "Choice 4: e-ヘルスネット says a 狭心症 attack subsides within a few minutes and that 心筋梗塞 destroys heart muscle cells. Printed page 11 of 救急蘇生法の指針2015 (PDF page 20) says 'すでに死んでしまった心筋は元に戻すことはできません'. Together these support the reversible vs. irreversible split.",
+        "Choice 5: e-ヘルスネット ym-013 says the exercise stress ECG is used to diagnose heart disease such as 狭心症 and 心筋梗塞 that does not show up at rest. This supports the choice.",
+        "The candidate's page numbers for 救急蘇生法の指針2015 (printed pages 10–12 = PDF pages 19–21) are correct. Because choices 1 and 2 have no source support, the question cannot be PASS."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-013.html",
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 22,
+        "outputTokens": 6367,
+        "cacheReadInputTokens": 1859108,
+        "cacheCreationInputTokens": 60218,
+        "webSearchRequests": 0,
+        "costUSD": 0.9809935999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1901,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q35": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q35",
+    "sourceSha256": "1c7ebeee293b1a61e5a45c9a873d27c1108dfd4ce14130496bab842ef489e66d",
+    "candidateSha256": "f5f718ad356b615e249bbb3f76eeb733f8d27b6915f8afb128bab11f2e780a44",
+    "evidenceSha256": "df608db3c2049e3e4023dc7b8ef8864b07e82156129c5c857d2a28045f51d254",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF (page 19, printed 一衛 18/22) marks (4) with ○, which matches correctChoice 4. The image q35-p19-1.webp matches the original text.",
+        "Choice 1: None of the sources address whether stimulus strength and felt sensation are directly proportional. The sources cannot show that this choice is wrong.",
+        "Choice 2: The handbook (PDF page 43, printed 35) lists 触覚・圧覚・痛覚・温度感覚 as skin senses but says nothing about how densely sensory points are spread. The sources cannot show that 'cold points are denser than other points' is wrong.",
+        "Choice 3: None of the sources say visceral sensation is dull and hard to pinpoint. The sources cannot show that this choice is wrong.",
+        "Choice 4: The handbook (PDF pages 40–41, printed 32–33) says only that there are 視細胞 that tell colours apart and 視細胞 that react to very faint light. It never uses the terms 錐状体 or 杆状体, so it cannot confirm which cell does which. This choice is the official answer but the sources do not fully support it.",
+        "Choice 5: The handbook (PDF pages 42–43, printed 34–35) says 中耳 consists of 鼓膜・鼓室・耳小骨・耳管, while 内耳 consists of 蝸牛 and 前庭, with 前庭 divided into 耳石器官 and 半規管. This supports calling the choice wrong.",
+        "The handbook is the MHLW 試験問題の作成に関する手引き for the 登録販売者 exam (cover dated 令和4年3月), not a source written for occupational health. The candidate's source title '令和4年3月作成、令和4年3月' repeats the date and needs tidying."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=41",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=42",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=43"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 22,
+        "outputTokens": 6367,
+        "cacheReadInputTokens": 1859108,
+        "cacheCreationInputTokens": 60218,
+        "webSearchRequests": 0,
+        "costUSD": 0.9809935999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1901,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q33": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q33",
+    "sourceSha256": "2c75aa3659c19183b7f39e73ec6ab18cf598a544f238019b8549b2aed650d0a1",
+    "candidateSha256": "6d79763fc0583ddfcfae4ca5911032295b7c5b1ed8149496e4db35f46808f354",
+    "evidenceSha256": "df608db3c2049e3e4023dc7b8ef8864b07e82156129c5c857d2a28045f51d254",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001104962.pdf#page=79"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 22,
+        "outputTokens": 6367,
+        "cacheReadInputTokens": 1859108,
+        "cacheCreationInputTokens": 60218,
+        "webSearchRequests": 0,
+        "costUSD": 0.9809935999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1901,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
