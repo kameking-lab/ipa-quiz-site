@@ -7,6 +7,7 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import re
+import sys
 
 from emkohyo_portable_hash import matches_text_sha256
 
@@ -102,6 +103,22 @@ def current_direct_review(paper: str, number: int, candidate: dict) -> bool:
     return pack.exists() and matches_text_sha256(pack, receipt.get("sourcePackSha256", ""))
 
 
+def publication_integrity(expected_ids: set[str], reviewed: dict[str, dict],
+                          published: dict[str, dict]) -> dict:
+    """Bind each visible overlay to a reviewed candidate by ID and exact bytes."""
+    published_ids = set(published) & expected_ids
+    missing = sorted(expected_ids - published_ids)
+    without_review = sorted(published_ids - set(reviewed))
+    stale = sorted(id_ for id_ in published_ids & set(reviewed)
+                   if published[id_] != reviewed[id_])
+    verified = published_ids - set(without_review) - set(stale)
+    return {"verifiedPublicOverlays": len(verified),
+            "publishedWithoutCurrentReview": without_review,
+            "publishedCandidateMismatch": stale,
+            "missingPublicOverlays": missing,
+            "complete": not missing and not without_review and not stale}
+
+
 def main() -> None:
     catalog = json.loads((DATA / "official-catalog.json").read_text(encoding="utf-8"))
     selected = [item for item in catalog if item["group"] == "emkohyo"
@@ -110,6 +127,9 @@ def main() -> None:
     receipt = {"expectedPapers": len(selected), "expectedQuestions": 0,
                "drafted": 0, "candidateStaticValid": 0, "candidateWithReviewIssues": 0,
                "publicOverlays": 0, "reviewedPassCurrentHash": 0, "papers": []}
+    expected_ids: set[str] = set()
+    reviewed: dict[str, dict] = {}
+    published: dict[str, dict] = {}
     for paper in selected:
         rows = json.loads((DATA / "papers" / f"{paper['id']}.json").read_text(encoding="utf-8"))
         rows = [row for row in rows if row["answerAuthority"] == "official" and row["choiceCount"] == 5]
@@ -118,6 +138,7 @@ def main() -> None:
                    "expected": len(rows), "drafted": 0, "staticValid": 0,
                    "publicOverlays": 0, "blockedIds": []}
         for row in rows:
+            expected_ids.add(row["id"])
             first = (row["number"] - 1) // 5 * 5 + 1
             draft_file = REVIEW / f"{paper['id']}-q{first:02}-{first+4:02}-draft.json"
             candidate = None
@@ -133,6 +154,7 @@ def main() -> None:
                     receipt["candidateStaticValid"] += 1
                     if current_direct_review(paper["id"], row["number"], candidate):
                         receipt["reviewedPassCurrentHash"] += 1
+                        reviewed[row["id"]] = candidate["overlay"]
                 if candidate.get("reviewIssues"):
                     receipt["candidateWithReviewIssues"] += 1
                     issues.append("reviewIssues")
@@ -141,9 +163,12 @@ def main() -> None:
             if row["id"] in overlays:
                 counter["publicOverlays"] += 1
                 receipt["publicOverlays"] += 1
+                published[row["id"]] = overlays[row["id"]]
         receipt["papers"].append(counter)
-    receipt["complete"] = receipt["publicOverlays"] == receipt["expectedQuestions"]
+    receipt.update(publication_integrity(expected_ids, reviewed, published))
     print(json.dumps(receipt, ensure_ascii=False, indent=2))
+    if "--require-complete" in sys.argv and not receipt["complete"]:
+        raise SystemExit(1)
 
 
 if __name__ == "__main__":
