@@ -48,37 +48,45 @@
       "overlay": {
         "sourceHash": "3ffa07957b12ddcca41aa3076b478ee4ca0be3d28618795d0d04f53687ab6067",
         "correctChoice": 4,
-        "summary": "ヨウ化カリウムと塩化スズ(Ⅱ)でヒ素を予備還元し、亜鉛でアルシン（ヒ化水素）を発生させ、原子化したヒ素の193.7 nmの吸光度を測る。組合せは肢4。",
+        "summary": "ヨウ化カリウムと塩化スズ（Ⅱ）で予備還元した後に亜鉛で水素化ヒ素（アルシン）を発生させ、原子吸光法なので193.7 nmの吸光度を測る。組合せは肢4。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "水素化ホウ素ナトリウム（公定書ではテトラヒドロホウ酸ナトリウム）は、加えるとそれ自体が水素化ヒ素を発生させる試薬で、亜鉛末を使わない方法で用いる。本文は㋑を加えて30分静置した後に亜鉛末でアルシンを発生させる構成なので、㋑は亜鉛の前にヨウ化カリウムと組む予備還元剤の塩化スズ（Ⅱ）である。㋺・㋩は合うが㋑が誤り。"
+            "reason": "㋑が誤り。農林水産消費安全技術センター（FAMIC）の肥料分析法（アルゴン－水素フレーム法）では、ヨウ化カリウム液と塩化スズ（Ⅱ）液を加えて放置した後に亜鉛粉末を加えて水素化ヒ素を発生させる。水素化ホウ素ナトリウム（別名テトラヒドロホウ酸ナトリウム）は、同分析法では亜鉛粉末の代わりに水素化ヒ素を発生させる側の試薬（加熱吸収セル法）であり、亜鉛末の前にヨウ化カリウムと加える㋑には当たらない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "㋑は上記のとおり亜鉛末の前に加える予備還元剤で、水素化物を発生させる水素化ホウ素ナトリウムではなく塩化スズ（Ⅱ）である。また㋩の193.7 nmは、水素化ヒ素を炎や加熱セルで原子化し、生じたヒ素原子による光の吸収（吸光度）を測る原子吸光の波長なので、発光強度も誤りである。"
+            "reason": "㋑は肢1のとおり塩化スズ（Ⅱ）であり、水素化ホウ素ナトリウムは誤り。㋩も誤りである。本問は『水素化物発生原子吸光分析法』で、原子吸光光度法は基底状態の原子が特有波長の光を吸収する現象を利用する方法（食品添加物公定書）なので、測定量は吸光度になる。FAMICの肥料分析法も、ガスをアルゴン－水素フレームに導き波長193.7 nmの吸光度を測定するとしている。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "㋑水素化ホウ素ナトリウムと㋩発光強度の誤りに加え、㋺も誤りである。スチビンは水素化アンチモン（分子式H₃Sb）で、アンチモンの水素化物である。As（Ⅲ）を還元して発生するのはヒ素の水素化物、すなわちアルシン（ヒ化水素、AsH₃）である。"
+            "reason": "㋑水素化ホウ素ナトリウムと㋩発光強度は肢2と同じ理由で誤り（原子吸光法なので測るのは吸光度）。さらに㋺も誤りで、スチビンは水素化アンチモン（分子式H3Sb）である。ヒ素から発生させるのは水素化ヒ素、すなわちアルシン（AsH3）である。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "食品添加物公定書のヒ素試験法（装置A・Bによる比色の方法）では、ヨウ化カリウム試液と酸性塩化第一スズ試液（塩化スズ（Ⅱ））を加えて放置した後に亜鉛を加え、ヒ化水素（アルシン）を発生させる。これが㋑・㋺の根拠である。㋩は、同公定書の原子吸光による方法（発生剤はテトラヒドロホウ酸ナトリウム）でも水素化ヒ素を原子化して193.7 nmの指示値（吸光）を読むことが根拠となる。よって㋑塩化スズ（Ⅱ）・㋺アルシン・㋩吸光度が正しい。"
+            "reason": "正しい組合せ。FAMICの肥料分析法（アルゴン－水素フレーム法）は、試料液に塩酸・ヨウ化カリウム液・塩化スズ（Ⅱ）液を加えて放置し、亜鉛粉末で水素化ヒ素を発生させ、アルゴン－水素フレームに導いて波長193.7 nmの吸光度を測定する。水素化ヒ素の別名がアルシン（AsH3）である。作業環境測定基準も砒素及びその化合物の分析に原子吸光分析方法を定めている。よって㋑塩化スズ（Ⅱ）・㋺アルシン・㋩吸光度。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "㋑塩化スズ（Ⅱ）と㋩吸光度は合うが、㋺のスチビンは水素化アンチモン（分子式H₃Sb）でアンチモンの水素化物である。ヒ素の分析でAs（Ⅲ）を亜鉛で還元して発生させるのはアルシン（ヒ化水素、AsH₃）なので、この組合せは誤りである。"
+            "reason": "㋑塩化スズ（Ⅱ）と㋩吸光度は合うが、㋺が誤り。スチビンは水素化アンチモン（分子式H3Sb）でアンチモンの水素化物である。ヒ素を亜鉛で還元して発生させるのは水素化ヒ素（別名アルシン、AsH3）なので、この組合せは誤りである。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省掲載 食品添加物公定書 B 一般試験法",
+            "title": "農林水産消費安全技術センター 肥料分析法（農林水産省農業環境技術研究所法） 5.24 ヒ素",
+            "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html"
+          },
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省掲載 食品添加物公定書 B 一般試験法（原子吸光光度法）",
             "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
           },
           {
@@ -86,47 +94,67 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html"
           },
           {
+            "title": "消防庁 危険物規制関係 物性情報 水素化ヒ素",
+            "url": "https://internal.fdma.go.jp/kiken-info/material/m_01597.html"
+          },
+          {
             "title": "厚生労働省 職場のあんぜんサイト モデルSDS スチビン（別名 水素化アンチモン）",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7803-52-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 水素化ホウ素ナトリウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/16940-66-2.html"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
-          "excerpt": "塩酸(1→2)5ml及びヨウ化カリウム試液5mlを加え，2～3分間放置した後，酸性塩化第一スズ試液5mlを加えて10分間放置する。次に水を加えて40mlとし，無ヒ素亜鉛2gを加え",
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "これに８Ｍ塩酸１０ｍｌ，ヨウ化カリウム液１ｍｌ及び塩化スズ（Ⅱ）液１ｍｌを加えて振り混ぜ約１５分間放置する。",
           "choiceNumbers": [
             1,
             2,
-            4,
-            5
+            4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
-          "excerpt": "Cの細管部の端はあらかじめヒ化水素吸収液5mlを入れた吸収管Dの底に達するように入れておく。",
-          "choiceNumbers": [
-            3,
-            4,
-            5
-          ]
-        },
-        {
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
-          "excerpt": "テトラヒドロホウ酸ナトリウム試液を，定量ポンプAを用いてそれぞれ1～10ml/分の適当な流量で連続的に装置内に導入して順々に混合させ，水素化ヒ素を発生させる。",
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "亜鉛粉末（ヒ素分析用）１．０ｇを手早く反応容器中に加え，マグネチックスターラーでかき混ぜ水素化ヒ素及び水素を発生させ，その一定量を捕集する。",
           "choiceNumbers": [
             1,
-            2
+            4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
-          "excerpt": "水素化ヒ素を含む気体を加熱吸収セルを取り付けた原子吸光度測定装置に導入し，波長193.7nmの指示値を読む",
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "原子吸光分析装置と接続するコックを開き発生したガスをアルゴン－水素フレームに導き， 波長１９３．７ｎｍの吸光度を 測定する。",
           "choiceNumbers": [
             2,
             3,
-            4,
-            5
+            4
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "ＪＩＳＫ０１０２の６１．２に示された亜鉛粉末を用いる装置，あるいはテトラヒドロホウ酸ナトリウムを用いる装置。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html",
+          "excerpt": "試料液（Ａｓとして１～５０ｎｇ／ｍｌがよい），テトラヒドロホウ酸ナトリウム液及び塩酸（１＋５）をそれぞれペリスタポンプで反応容器中に連続的に送り込み，発生する水素化ヒ素を含むガスを１０００℃前後に加熱した吸収セルに導き",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/16940-66-2.html",
+          "excerpt": "水素化ホウ素ナトリウム別名ナトリウムボロハイドライド、四水素化ホウ素ナトリウム、テトラヒドロホウ酸ナトリウム",
+          "choiceNumbers": [
+            1,
+            2,
+            3
           ]
         },
         {
@@ -139,11 +167,16 @@
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html",
-          "excerpt": "アルシン(Arsine)、(別名：ヒ化水素）",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1",
+          "excerpt": "砒素及びその化合物(アルシン及び砒化ガリウムを除く。)ろ過捕集方法吸光光度分析方法、原子吸光分析方法又は誘導結合プラズマ質量分析方法",
           "choiceNumbers": [
-            1,
-            2,
+            4
+          ]
+        },
+        {
+          "url": "https://internal.fdma.go.jp/kiken-info/material/m_01597.html",
+          "excerpt": "水素化ヒ素アルシン",
+          "choiceNumbers": [
             3,
             4,
             5
@@ -175,9 +208,7 @@
           ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】独立審査2回（2026-09-24 round1・round2とも FIX）。本問の手順（1%ヨウ化カリウム＋塩化スズ(Ⅱ)で30分静置→亜鉛末懸濁液でアルシン発生→アルゴン‐水素炎→193.70 nmの吸光度）を直接記述した政府一次資料がなく、食品添加物公定書のヒ素試験法（比色の装置A・B法と、テトラヒドロホウ酸ナトリウム・加熱吸収セルの原子吸光法）からの類推にとどまると指摘された。『塩化第一スズ＝塩化スズ(Ⅱ)』『水素化ホウ素ナトリウム＝テトラヒドロホウ酸ナトリウム』の同一性も政府資料で未確認。作業環境測定ガイドブック相当の政府公開手順書が必要。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20251808-q17": {
       "overlay": {
