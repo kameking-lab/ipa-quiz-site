@@ -1,0 +1,111 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 7685,
+      "cacheReadInputTokens": 218104,
+      "cacheCreationInputTokens": 136250,
+      "webSearchRequests": 0,
+      "costUSD": 1.2873368,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4833,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "b573fbf7d4b0d6a88cefdca09a049fd3742407edeba57a8797401ca47ef8e387",
+  "inputRequestSha256": "8639d78e19419c4ddf1c3521710a82d0bf0c16b4f5c281cbdf65488830725aea",
+  "inputHashes": {
+    "candidateSha256": {
+      "q02": "5ecc1baf043da91de2feaadcf881d6d56ee0c437452589a6bf37be44944d9023",
+      "q05": "74202f500dfafaaec607a711e1484b4b4d2c4319e712a48f4870bb54cadd2472"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p06.png": "45285660e7e34b4fd323061b0e142882867f63ca41a026afcdda298889e5258f",
+      "data/raw_pdfs/denken3/review/20240818/law/p09.png": "27de758ce0308b26cb09cbda5016d174d958d73f6463fcbace99d331a770a1c4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "dec5ce43447cf6763189a0d5e0d1dd45c62798421390d2d6b8119bab3f82bbd1",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-houkoku-rule-240415.pdf": "b355e08002ea585205bdf6b96b74be16ffd49de1aedac4a4273a011b4eee7f78",
+      "data/raw_pdfs/denken3/review/meti-wind-standards-guide.pdf": "e2a7df24343994ebf6e118fbc5afe3780d911d832bcf4821d83f0a98c2c7d29d"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p001.png": "65f090dda9f1278a0cdef291aeebdab66f2bde38ef7ca6afe7c4df27b5ae00a4",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p006.png": "2400ca67cc63afe5b6d74465ac4f38466073e78035551a69b9e4088562f1ca57",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p008.png": "18b97c532988523abbf5274f65a8f2c719d018d634333e16011d0eef95d73202",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p009.png": "af135fa48fb513ed63195d72b4dd2c5b67a98ca7fa23880a55aaf3755a516922",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p011.png": "22dd1333e978a422c35cfaa2134e3a134b328dfd183081881cec9c0ad9039f01",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p012.png": "53b97524ccc68faf87baa738f54318783dcc93a0c5287a07d346f00ef4853315",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p021.png": "697947616c9fc40dfb26b8cfb781dd9cdbd4e2031cf86a93acc6ba5bb807bf94",
+      "data/raw_pdfs/denken3/review/references/meti-houkoku-rule-240415-p022.png": "57d1d31a092cf61337c8d58e2c7fd1670544c16a813af278ef61d45eb805cf0f",
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p006.png": "b1179d7ba69edb02fdfa55ae1d01230e29546023c1c64dbe7235de654da46d26",
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p007.png": "e6cccb1274130391466c343386a78573f5ec7a2994c8f55eb9b9c214d893d892"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文（受電電圧6 600 V、「事故報告に該当しないもの」）を公式問題原図（印刷頁-3-、T1-H 006）と照合した。句読点の「，」を「、」に変えた整形だけで、原文との差異はない。reviewedFromPage=[6] は T1-H 006 と整合する。",
+        "(1)〜(5)の全肢の文言（構内1号柱、低圧200 V、電圧100 V、高圧の誘導電動機、高圧負荷開閉器・一般送配電事業者・供給支障）を原図と一字ずつ照合した。choices とも一致する。",
+        "公式解答表の法規・問2の正答は4で、officialAnswer=4 と一致する。",
+        "第1号（感電等の死傷事故。死亡または病院・診療所への入院に限る）を運用資料PDF第6頁の枠内で確認した。(2)の根拠になる。",
+        "第2号（電気火災事故。工作物は半焼以上に限る）と、「半焼」の定義（延床面積の20%以上70%未満）、漏電による発火の例示をPDF第8頁で確認した。(3)の根拠になる。",
+        "第3号（他の物件への損傷）と、例示ロ「支持物の傾斜、折損等による家屋等の損壊」をPDF第9頁で確認した。(1)の根拠になる。③の除外（落雷が電路を通過し、直接機器の異常に至ったもの等）も同頁で確認した。",
+        "第4号ヌ「電圧一万ボルト以上の需要設備（自家用電気工作物を設置する者に限る。）」をPDF第11頁で確認した。第5号がイ〜ハ（900MW以上の水力、300kV以上の変電所、300kV以上の送電線路）だけで、需要設備の区分を持たないことも同頁で確認した。(4)の根拠になる。",
+        "第12号（一般送配電事業者等と電気的に接続された電圧3000V以上の自家用電気工作物の破損・誤操作等により、供給支障を発生させた事故）をPDF第21頁で確認した。条文に需要家数・時間の下限はない。",
+        "自動再閉路が成功した場合の除外をPDF第21頁の①で、地域独立系統での除外をPDF第22頁の③で確認した。第10〜12号の項（PDF第21〜22頁）には落雷起因の除外がないことを全文で確認した。(5)の解説と整合する。",
+        "運用資料が令和6年4月15日の一部改正版であることをPDF第1頁で確認した。試験日（2024-08-18）時点で有効な版である。",
+        "総合解説・各肢解説の因果（(4)は1万V未満の需要設備の自社機器破損にとどまり、死傷・半焼以上の火災・第三者物件の損傷・供給支障のいずれも示されない）に誤りがないことを確認した。",
+        "図はない問題で、figureUrls が空・figureDescription が null である点も適切。"
+      ]
+    },
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "question に本文が入っていない。導入文「次の文章は、「発電用風力設備に関する技術基準を定める省令」に基づく風車の安全な状態の確保に関する記述である。」がなく、空白(ア)〜(エ)を含む a)〜c) の記述もない。欠けている記述は a)①「(ア)が著しく上昇した場合」②「風車の(イ)の機能が著しく低下した場合」、b)「一般用電気工作物又は小規模事業用電気工作物…読み替えて適用」、c)「最高部の(ウ)からの高さが20 mを超える発電用風力設備には、(エ)から風車を保護するような措置…ただし、周囲の状況によって(エ)が風車を損傷するおそれがない場合においては、この限りでない。」である。現状は「空白箇所(ア)〜(エ)に当てはまる組合せ…」と表しかなく、利用者は問題を解けない。公式問題原図（印刷頁-6-、T1-H 009）のとおり全文を補うこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は「(a項)」「(c項)」を参照している。しかし保存されている question には a)〜c) の記述がないため、参照先が画面に存在しない。textIssues を修正すれば解消するので、本文の補完とあわせて整合を取ること。"
+      ],
+      "figureIssues": [
+        "figureDescription が「図表(表形式)」として選択肢の表を説明している。一方で figureUrls は空で、表の内容は question と choices に文字で収録済みのため、図は不要である。図がないのに図の説明だけが表示されるのを防ぐため、figureDescription は null にすることを推奨する。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "選択肢の表（5行×4列）を公式問題原図と全セル照合した。(1)回転速度/制御装置/ロータ最低部/雷撃、(2)発電電圧/圧油装置/地表/雷撃、(3)回転速度/制御装置/地表/雷撃、(4)発電電圧/制御装置/ロータ最低部/強風、(5)回転速度/圧油装置/ロータ最低部/強風。question 内の表とも choices とも一致する。",
+        "公式解答表の法規・問5の正答は3で、officialAnswer=3 と一致する。reviewedFromPage=[9] は T1-H 009 と整合する。",
+        "省令第5条第1項第1号「回転速度が著しく上昇した場合」と第2号「風車の制御装置の機能が著しく低下した場合」を逐条解説PDF第6頁の[省令]枠内で確認した。(ア)回転速度、(イ)制御装置となる。",
+        "省令第5条第2項（一般用電気工作物または小規模事業用電気工作物での読み替え）をPDF第6頁で確認した。問題文 b) と一致する。",
+        "省令第5条第3項「最高部の地表からの高さが二十メートルを超える発電用風力設備には、雷撃から風車を保護するような措置…周囲の状況によって雷撃が風車を損傷するおそれがない場合においては、この限りでない」をPDF第6〜7頁で確認した。(ウ)地表、(エ)雷撃となる。",
+        "(2)の各肢解説にある「圧油装置は制御装置を構成する場合がある」は、解釈第7条第3項「風車の制御用圧油装置の油圧…が著しく低下した場合」（PDF第7頁）で裏付けられる。",
+        "各肢解説の誤りの指摘を検算した。(1)は(ウ)、(2)は(ア)(イ)、(4)は(ア)(ウ)(エ)、(5)は(イ)(ウ)(エ)が誤りで、いずれも表と省令に照らして正しい。",
+        "b) の「小規模事業用電気工作物」という文言は、逐条解説の収録条文と問題文で一致する。したがって試験時点の条文と照合できている。"
+      ]
+    }
+  ]
+}

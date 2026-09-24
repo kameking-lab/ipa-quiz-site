@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5652,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 36165,
+      "webSearchRequests": 0,
+      "costUSD": 0.4302566,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2843,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3cdafa729cf7785f7299c212cf8769695f6b4dde4587f9b57fe4bd02b0b49011",
+  "inputRequestSha256": "81e110c2d3ef732d45aa233fd1ae239acbcaa914c411514c37f0e4e676aac943",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "35ab01ff71d6a8682ee04ba76e87a9e0c54d134612c85cdc123ac1af7805e044",
+      "q05": "aa237cddcbaa3878914b47f3f7638a0ec1d900bd84e7863c67e511f531fb5f11"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p08.png": "63a7aa755dcb5d43ca770dabeed90625f812ffc59b540ab5b65a576ed288d9e7",
+      "data/raw_pdfs/denken3/review/20240818/law/p09.png": "27de758ce0308b26cb09cbda5016d174d958d73f6463fcbace99d331a770a1c4"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "b17dac91303d14ed324208e143df2086ca189a4c8609c7ecd445beb774b06191",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-wind-standards-guide.pdf": "e2a7df24343994ebf6e118fbc5afe3780d911d832bcf4821d83f0a98c2c7d29d",
+      "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p006.png": "b1179d7ba69edb02fdfa55ae1d01230e29546023c1c64dbe7235de654da46d26",
+      "data/raw_pdfs/denken3/review/references/meti-wind-standards-guide-p007.png": "e6cccb1274130391466c343386a78573f5ec7a2994c8f55eb9b9c214d893d892",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p004.png": "402d8c15127dcfa17da93c61138d44f644a1768f03d445233677240716850d20",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p035.png": "30fb3e3df4d90ccc71c8cb273da74fe1b2e4d2c73425c1553f9dddb8c96be994",
+      "data/raw_pdfs/denken3/review/references/meti-denki-interpretation-20231226-p120.png": "d1ebf5a32b74f27487b31ee7b7bd31fead63219c962e4fc733a326754c4e18c3"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 候補の問題文を公式問題原図（T1-H 008、印刷頁-5-）と照合し、一致を確認した。照合箇所は、括弧書き「これに附属する高圧電線であってケーブル以外のものを含む。以下同じ。」、除外場所の列挙「発電所、蓄電所又は変電所、開閉所若しくはこれらに準ずる場所以外の場所」、問いの向き「誤っているものを…一つ選べ」の3点。",
+        "選択肢: (1)〜(5)の全文を原図と照合し、一致を確認した。(1)は「5m以上」、(4)は「D種接地工事」、(5)は「接近又は接触しないよう、さく、へい等」を含めて一致している。",
+        "正答: 公式解答表の原図（令和6年度上期・法規・問4）は3。候補のofficialAnswer=3と一致する。",
+        "総合解説: 解釈第21条（公式参考資料PDF第35頁）で検証した。本文は「次の各号のいずれかにより施設すること」。第2号「ただし、工場等の構内においては、ロ及びハの規定によらないことができる」により、工場等の構内で省けるのはロ（高さと距離の和5m以上）とハ（危険表示）だけで、イ（周囲に適当なさく、へい等を設ける）は残る。(3)は表示だけでさく・へい等を設けないので、どの号にも当たらず誤り。この因果は正しい。",
+        "(1)の解説: 第21条第2号イ・ロ・ハの全要件に当たることを原頁で確認した。",
+        "(2)の解説: 第21条第1号「屋内であって、取扱者以外の者が出入りできないように措置した場所」に当たることを原頁で確認した。",
+        "(4)の解説: 第21条第4号（コンクリート製の箱又はD種接地工事を施した金属製の箱に収め、充電部分が露出しない）に当たることを原頁で確認した。",
+        "(5)の解説: 第21条第5号イ「簡易接触防護措置を施すこと」と、第1条第37号ロ「設備に人が接近又は接触しないよう、さく、へい等を設け…」（公式参考資料PDF第4頁。三十六〜三十八の直後に第2条が始まるので、第1条の定義規定と判断できる）を原頁で確認した。第5号イに当たるという論理は正しい。",
+        "図: 原図は文章だけで、図表はない。figureDescriptionと空のfigureUrlsは正しい。",
+        "出典: officialReferenceUrlsの独立主張は2つ（#page=4の第1条第37号、#page=35の第21条）。どちらも添付された公式参考資料の原頁で検証できた。",
+        "頁番号: reviewedFromPage=[8]は、原図の管理番号T1-H 008と整合する。",
+        "参考（誤りではない）: uncertaintyにはPDF第35頁の照合しか書かれていない。PDF第4頁（第1条第37号）も照合したと書き足すと、監査記録がより正確になる。"
+      ]
+    },
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "問いの指示文が2回続いている。問題文末尾の「上記の記述中の空白箇所(ア)〜(エ)に当てはまる組合せとして、正しいものを次の(1)〜(5)のうちから一つ選べ。」の直後に、「空白箇所(ア)〜(エ)に当てはまる組合せとして、正しいものを次の(1)〜(5)のうちから一つ選べ。」がもう一度入っている。原図にこの指示文は1回しかない。重複した2文目を削除すること。",
+        "問題文の中に組合せ表（(1)〜(5)の行）を文字で埋め込んでいる。choicesにも同じ内容があるため、画面上で選択肢が二重に表示されるおそれがある。表の内容は原図と一致しているので、表示仕様に合わせて片方に寄せることを推奨する。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「(a項)」「(c項)」は、問題文の a) と c) を指している。ただ、文脈上は省令の条項名にも読めるので、省令第5条の「項」と取り違えるおそれがある。「省令第5条第1項第1号・第2号（問題文a)）」「同条第3項（問題文c)）」のように、条項番号と問題文の記号を分けて書くこと。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 問題文 a)・b)・c) を公式問題原図（T1-H 009、印刷頁-6-）と照合した。重複した指示文を除けば一致している。a)は「①(ア)が著しく上昇した場合」「②風車の(イ)の機能が著しく低下した場合」。b)は一般用電気工作物・小規模事業用電気工作物の読替え規定。c)は「最高部の(ウ)からの高さが20mを超える…(エ)から風車を保護する…ただし…この限りでない」。",
+        "選択肢: 5行の組合せを原図の表と照合し、一致を確認した。(1) 回転速度/制御装置/ロータ最低部/雷撃、(2) 発電電圧/圧油装置/地表/雷撃、(3) 回転速度/制御装置/地表/雷撃、(4) 発電電圧/制御装置/ロータ最低部/強風、(5) 回転速度/圧油装置/ロータ最低部/強風。",
+        "正答: 公式解答表の原図（令和6年度上期・法規・問5）は3。候補のofficialAnswer=3と一致する。",
+        "省令の本文: 逐条解説PDF第6頁の省令第5条第1項で、第一号「回転速度が著しく上昇した場合」、第二号「風車の制御装置の機能が著しく低下した場合」を確認した。同頁の第2項は読替え規定で、小規模事業用電気工作物を含む現行の条文であることも確認した。第3項「最高部の地表からの高さが二十メートルを超える発電用風力設備には、雷撃か」は同頁から始まり、PDF第7頁の「ら風車を保護するような措置を講じなければならない。ただし、周囲の状況によって雷撃が風車を損傷するおそれがない場合においては、この限りでない。」へ続く。よって(ア)=回転速度、(イ)=制御装置、(ウ)=地表、(エ)=雷撃。",
+        "(2)の解説: 「圧油装置は制御装置を構成する場合がある」は、PDF第7頁の解釈第7条第3項「風車の制御用圧油装置の油圧…が著しく低下した場合」で裏付けられる。",
+        "各誤答肢の解説: (1)(2)(4)(5)で誤りとした語句は、いずれも省令の文言と照合して正しいことを確認した。(1)はウ、(2)はア・イ、(4)はア・ウ・エ、(5)はイ・ウ・エ。",
+        "図: 原図は本文と組合せ表だけで、解答に図は要らない。figureDescription=nullと空のfigureUrlsは妥当。",
+        "出典: officialReferenceUrls（逐条解説の#page=6と#page=7）の主張は、どちらも添付された原頁で検証できた。",
+        "頁番号: reviewedFromPage=[9]は、原図の管理番号T1-H 009と整合する。"
+      ]
+    }
+  ]
+}
