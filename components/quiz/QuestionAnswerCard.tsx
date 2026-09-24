@@ -70,6 +70,7 @@ export function QuestionAnswerCard({
 }: Props) {
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
+  const [shortcutsReady, setShortcutsReady] = React.useState(false);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -132,7 +133,11 @@ export function QuestionAnswerCard({
       }
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    setShortcutsReady(true);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      setShortcutsReady(false);
+    };
   }, [revealed, keys, onSelect]);
 
   const isCorrect = isAcceptedAnswer(answerKey, selected);
@@ -144,6 +149,7 @@ export function QuestionAnswerCard({
     <div className="space-y-4">
       <div
         role="radiogroup"
+        data-shortcuts-ready={shortcutsReady}
         aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
         className="flex flex-col gap-2.5"
       >
