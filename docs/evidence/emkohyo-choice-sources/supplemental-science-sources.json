@@ -275,6 +275,33 @@
           "excerptSha256": "52dd30ed03cf898e4c98733baeb3d5d85b0138fb5b99e45d033599019c264e17"
         }
       ]
+    },
+    {
+      "title": "経済産業省 鉱山における粉じん濃度測定マニュアル（平成22年8月）",
+      "url": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+      "subject": "鉱物性粉じん",
+      "status": 200,
+      "finalUrl": "https://www.meti.go.jp/policy/tsutatsutou/tuuti1/aa822.pdf",
+      "rawSha256": "18482fdeab6bee869bad6ffecc8f474df293c42f63b16cfa48c41d38f8745df6",
+      "contentType": "application/pdf",
+      "pageCount": 97,
+      "matchedKeywords": 2,
+      "missingKeywords": [],
+      "facts": [
+        {
+          "keyword": "遊離けい酸",
+          "page": 40,
+          "exactExcerpt": "粉じん濃度の測定時に分粒装置付ローボリウムエアサンプラー等でろ紙に採取された吸入性粉じん中のQ 値をX 線回折法で測定することが基本である",
+          "excerptSha256": "9e5481c678060753039f0bb2aadacc9c659538cedf9b03c794d86b434f57433c"
+        },
+        {
+          "keyword": "電子天秤",
+          "page": 85,
+          "exactExcerpt": "デシケーターから取り出した直後の秤量は避けること",
+          "excerptSha256": "d691ef9b5b5e61d3446ef8bb3220c395fbeb0bc5a8f0fb0e7b3c9d181a96bf08"
+        }
+      ],
+      "fetchNote": "www.meti.go.jp returns HTTP 403 to non-browser User-Agents (including the verifier UA); fetched 2026-09-24 with a browser User-Agent and pinned by raw SHA256. Text cache pages are PyMuPDF get_text() of that exact file."
     }
   ],
   "acceptance": "none; research excerpts require choice-specific direct review"
