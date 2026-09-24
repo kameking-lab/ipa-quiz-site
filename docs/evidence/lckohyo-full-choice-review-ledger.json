@@ -2575,5 +2575,551 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q21": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q21",
+    "sourceSha256": "dcbb903215e52d9378fafa3626f9884ee774c927b7e6ec5d3785b2c9fab7e633",
+    "candidateSha256": "27f57f92928027dc8677f921bc446cf51cadc048b469805bc0a39813c264362e",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷11/15頁（PDF12頁）の○印で正答が(4)であることを確認した。候補の正答(4)と一致する。",
+        "肢(1)について：刺激量と感覚強度の関係（非直線的な関係）を記した政府資料が提示資料にない。手引きPDF40〜47頁にも記載がなく、未確認。",
+        "肢(2)について：手引き印刷35頁（PDF43頁）には、皮膚に触覚・圧覚・痛覚・温度感覚の感覚器としての機能があるとしか書かれていない。感覚点の密度を比べた記述はなく、冷覚点の密度が高いという記述が誤りであることは確認できない。",
+        "肢(3)について：内臓感覚が部位を特定しにくい鈍い感覚であることを記した政府資料が提示資料にない。未確認。",
+        "肢(4)について：手引き印刷33頁（PDF41頁）には、視細胞に「色を識別する細胞」と「わずかな光でも敏感に反応する細胞」の二種類があるとだけ書かれている。錐状体・杆状体という名称との対応は資料では確認できない。正しい記述であることは公式正答で担保されている。",
+        "肢(5)について：候補の理由は「体の傾きを感じる耳石器官と回転を感じる半規管」としているが、手引き印刷35頁（PDF43頁）では、耳石器官は「水平・垂直方向の加速度」を、半規管は「体の回転や傾き」を感知すると書かれている。候補は傾きの感知を耳石器官に誤って割り当てており、資料と一致しない。「中耳ではなく内耳」という結論自体は資料（印刷34〜35頁）で確認できる。",
+        "出題時の適用性について：根拠資料は厚生労働省の登録販売者試験向け『試験問題の作成に関する手引き（令和4年3月）』で、第二種衛生管理者試験（2026年4月公表）の出題基準や根拠資料ではない。この試験への適用性と、公表時点の最新版かどうかを確認できていない。",
+        "スナップショットの問題文には、ふりがなの抽出ノイズ（「すい かん」が独立した行になっている）が混入している。本文の内容自体は、公式PDFおよび画像と一致する。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=40",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=41",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=42",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=43"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 5861,
+        "cacheReadInputTokens": 630479,
+        "cacheCreationInputTokens": 51804,
+        "webSearchRequests": 0,
+        "costUSD": 0.6577798,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2256,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q28": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q28",
+    "sourceSha256": "b79aae09f8e81e2e707d9129d649d2a505a2948175d74c0ff848a7744d170679",
+    "candidateSha256": "158c8daaf0068c307b9a207d13ba1e96d12cfdc570d430a57cfcc367b46efce8",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷14/15頁（PDF15頁）の○印で正答が(4)であることを確認した。候補の正答(4)と一致する。",
+        "肢(1)について：体重70kgの人から水分100gが蒸発すると約1℃下がるという計算値は、提示資料に記載がない。未確認。",
+        "肢(2)について：恒常性（ホメオスタシス）の定義は、提示資料（PDF43〜44頁）に記載がない。未確認。",
+        "肢(3)について：体温調節中枢が間脳の視床下部にあることは、提示資料（PDF43〜44頁）に記載がない。手引き印刷38頁に視床下部の記述はあるが、候補の出典には含まれておらず、体温調節中枢であるとも明記されていない。未確認。",
+        "肢(4)について：手引き印刷35〜36頁（PDF43〜44頁）は「汗腺から汗を分泌」「汗はエクリン腺から分泌され、体温調節のための発汗は全身の皮膚に生じる」と記している。ただし「発汗」を定義しているわけではない。さらに、不感蒸泄（皮膚と呼気からの水分喪失）の定義が誤っているという、肢の後半の誤りは資料で未確認であり、候補自身もHOLDとしている。誤りの根拠は一部しか裏付けられていない。",
+        "肢(5)について：手引き印刷35頁（PDF43頁）には「体温が下がり始めると血管は収縮して、放熱を抑える」とあり、肢の内容と一致する。",
+        "出題時の適用性について：根拠資料は登録販売者試験向けの手引き（令和4年3月）で、第二種衛生管理者試験への適用性と、公表時点で最新版かどうかを確認できていない。",
+        "スナップショットの問題文には、ふりがなの抽出ノイズ（「せつ」が独立した行になっている）が混入している。本文は公式PDFと一致する。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=43",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=44"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 5861,
+        "cacheReadInputTokens": 630479,
+        "cacheCreationInputTokens": 51804,
+        "webSearchRequests": 0,
+        "costUSD": 0.6577798,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2256,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q23": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q23",
+    "sourceSha256": "0dfc1abc66e4f98c9913d977111e63b08892862e9226e78cbbcd2e6d4c7bfab8",
+    "candidateSha256": "30e2d2914be0f07e6f1de956c927a19163883652eb16acda9694045d4ebeaa3c",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷12/15頁（PDF13頁）の○印で正答が(1)であることを確認した。候補の正答(1)と一致する。",
+        "肢(1)について：神経細胞の細胞体の集まりを、中枢神経系では神経核、末梢神経系では神経節と呼ぶことは、提示資料（PDF46〜47頁）に記載がない。肢(1)が呼び名を逆にしているという誤りの根拠は資料で確認できない。解答であることは公式正答でのみ担保されている。",
+        "肢(2)について：手引き印刷38頁（PDF46頁）に「中枢神経系は脳と脊髄から構成される」と明記されており、確認できた。",
+        "肢(3)について：有髄神経線維の方が無髄神経線維より伝導速度が速いこと（跳躍伝導）は、提示資料に記載がない。未確認。",
+        "肢(4)について：手引き印刷39頁（PDF47頁）の、自律神経系による二重支配、交感・副交感神経が通常互いに拮抗して働くという記述、および対比表により確認できた。",
+        "肢(5)について：手引き印刷38頁には脳の働き（知覚・運動・記憶・情動・意思決定等）が書かれているが、大脳皮質がその中枢であるという部位の記述はない。未確認。",
+        "出題時の適用性について：根拠資料は登録販売者試験向けの手引き（令和4年3月）で、第二種衛生管理者試験への適用性と、公表時点で最新版かどうかを確認できていない。",
+        "スナップショットの問題文には、ふりがなの抽出ノイズ（「しょう」が独立した行になっている）が混入している。本文は公式PDFと一致する。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=46",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=47"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 5861,
+        "cacheReadInputTokens": 630479,
+        "cacheCreationInputTokens": 51804,
+        "webSearchRequests": 0,
+        "costUSD": 0.6577798,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2256,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q29": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q29",
+    "sourceSha256": "1294b8b171ce7f88f8f958012b52b93bccb08d88ff46214b1be471b9f5e88890",
+    "candidateSha256": "9d38682644123186b81b1a029af639a0b29cd339cdde7e3950eeec03116bc75e",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（二衛15/15）の○は(5)で、正答5と一致する。問題文と画像q29-p16-0.webpも原本と一致する。",
+        "(1)：抗原の定義（免疫に関係する細胞が異物として認識する物質）は、手引きのどこにも記載がなく未確認。",
+        "(2)：蛋白質や糖質が抗原になるという点は、手引きに記載がなく未確認。",
+        "(3)：印刷5頁（PDF13頁）で確認できるのは、アレルギーが免疫機構の過敏な反応だという点と、症状として結膜症状・鼻炎症状・蕁麻疹・湿疹・かぶれ・血管性浮腫が挙がっている点までである。疾患名の気管支ぜんそく・アトピー性皮膚炎は未確認。",
+        "(4)：印刷29頁（PDF37頁）で確認できるのは、好中球が白血球の約60％を占め、血管壁を通り抜けて組織に入り、食作用で細菌等を取り込むという点である。偽足を出すアメーバ様運動という表現は未確認。",
+        "(5)：印刷29頁で確認できるのは、B細胞リンパ球が抗体を産生し、T細胞リンパ球が異物を認識する点までである。「細胞性免疫」「体液性免疫」の定義がないため、名称が入れ替わっていることを一次資料で直接照合できない。正答肢の誤りの根拠が未確認。",
+        "根拠資料は登録販売者試験の『試験問題の作成に関する手引き』（厚労省、令和4年3月）であり、衛生管理者試験の出題範囲を定めた資料ではない。生理学的事実の裏付けとしてのみ使える。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=13",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q22": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q22",
+    "sourceSha256": "5ba29a5c74271fa585f97a7e1ba3544f8f0b3897c7a6ab7e2302c3b87db81793",
+    "candidateSha256": "648f3e9ba351f88239c5649d84ad3e20c3a3a69f600ecc4c1c1186bf83cf86b1",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（二衛11/15）の○は(4)で、正答4と一致する。問題文と画像q22-p12-2.webpも原本と一致する。",
+        "(1)：無機塩とビタミン類が酵素で分解されずにそのまま吸収されるという点は、手引きに直接の記載がない。印刷23頁の記載は脂溶性ビタミンが脂質と一緒に取り込まれること、印刷25頁の記載は大腸での電解質吸収だけである。未確認。",
+        "(2)：印刷22頁（PDF30頁）で、唾液がデンプンをデキストリンや麦芽糖に分解する酵素（プチアリン）を含むことは確認できた。「唾液の成分のほとんどが水」は未確認。",
+        "(3)：印刷22頁で、ペプシノーゲンが胃酸によってタンパク質を消化するペプシンになることを確認した。PASS。",
+        "(4)：印刷24頁（PDF32頁）で確認できるのは、胆汁酸塩が脂質の消化を容易にするという点だけである。胆汁がアルカリ性であることも、消化酵素を含まないことも記載がない。正答肢の誤り（「酸性」）の根拠が未確認。",
+        "(5)：印刷23頁（PDF31頁）で、小腸の粘膜表面が絨毛に覆われてビロード状になり、微絨毛が吸収効率を高めていることを確認した。PASS。",
+        "candidate.sourcesのpage=33の表題は『(g)大腸（印刷25頁）』、governmentSourceFilesの表題は『(f)肝臓 iii)生体物質の産生』で食い違う。どちらも印刷25頁にあり、内容の誤りではない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=30",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q24": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q24",
+    "sourceSha256": "cefb20ecd19769423294d37d5ef99ad48db986caa97805b1b6732c0244d0bc2a",
+    "candidateSha256": "88f0128fc66bfd28bf1e629a2fcf8a5de5d801be9c885c3a5e0e6c1b58ccd6c5",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q26": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q26",
+    "sourceSha256": "266a08000090a675648f66354162250be9ca82675420a4c08f3d79dcdf44a305",
+    "candidateSha256": "e023251c2e232b52751a326c8b737e338e37dabc7b0d2a694f353d30ecb67a4e",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（二衛13/15）の○は(2)で、正答2と一致する。問題文と画像q26-p14-1.webpも原本と一致する。",
+        "(1)：印刷28頁（PDF36頁）で、血液が血漿と血球から成り、血漿がアルブミンやグロブリン等のタンパク質を含むことを確認した。PASS。",
+        "(2)：印刷28頁に、赤血球は血液全体の約40％を占めるとあり、「約60％」は誤り。PASS。",
+        "(3)：印刷29～30頁（PDF37～38頁）で確認できるのは、血小板が損傷部位に粘着・凝集し、放出される酵素で凝固反応が起きるという点までである。「核を持たない不定形の細胞」は未確認。",
+        "(4)：印刷30頁で、フィブリノーゲンがフィブリンになり、赤血球や血小板が絡まって血餅になることを確認した。PASS。",
+        "(5)：ABO式血液型の分類と、A型の血清が抗B抗体を持つ点は、手引きに記載がない。確認できたのは脚注xxxの血清の定義だけで、未確認。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=38"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q25": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q25",
+    "sourceSha256": "8a1ceb4c01751c1673e1cf9699cc377a16f4d65edb47ad3ba0f5c8e80c82e1e2",
+    "candidateSha256": "86cbbf7ea7e19eb73dd9d6d39527b7e074a996e7b8e7e00d5ad7b335d0fa12e7",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（二衛13/15）の○は(5)で、正答5と一致する。問題文と画像q25-p14-0.webpも原本と一致する。",
+        "(1)：印刷31頁（PDF39頁）に書かれているのは、尿のほとんどが水分で、尿素などの老廃物を含むという点だけである。尿の液性（通常は弱酸性）の記載はなく、「弱アルカリ性」が誤りであることを一次資料で確認できない。",
+        "(2)：印刷31頁に「血球やタンパク質以外の血漿成分も、腎小体で濾過される」とあり、蛋白質は濾過されないので本肢は誤り。PASS。",
+        "(3)：印刷31頁によれば、老廃物は腎小体（糸球体とボウマン嚢）で濾過されて尿細管へ入る。尿細管からボウマン嚢へとする本肢は誤り。PASS。",
+        "(4)：印刷31頁によれば、水分は尿細管で再吸収され、老廃物は濃縮される。大部分がそのまま排出されるとする本肢は誤り。PASS。",
+        "(5)：印刷31頁で、電解質が尿細管で再吸収されることを確認した。PASS。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q27": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q27",
+    "sourceSha256": "f388102f8f35ede8b36b8ed697f7aed657905c0173768bd8dbb16d9569c129b6",
+    "candidateSha256": "c2f0e66a1da8559e5955875147b98a5c4cf3deb473c018e605ada37bffb647b9",
+    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDF（二衛14/15）の○は(2)で、正答2と一致する。問題文と画像q27-p15-0.webpも原本と一致する。",
+        "(1)：遠見視力の検査を5mの距離で行う点は、手引きに記載がなく未確認。",
+        "(2)：印刷32頁（PDF40頁）で、焦点調節は水晶体の厚みの変化で行われ、硝子体は透明なゼリー状の組織であることを確認した。印刷33頁（PDF41頁）では、毛様体の疲労で疲れ目が起こることを確認した。「硝子体の厚み」は誤り。PASS。",
+        "(3)：乱視の定義は手引きに記載がなく未確認。",
+        "(4)：視野の角度の数値（上方・鼻側約60度、下方約70度、耳側約100度）は手引きに記載がなく未確認。",
+        "(5)：暗順応の語と、暗い所で徐々に見えるようになる経過は、手引きに記載がない。印刷33頁にあるのは、わずかな光に反応する視細胞がある点だけで、未確認。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=40",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=41"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 8910,
+        "cacheReadInputTokens": 888847,
+        "cacheCreationInputTokens": 56269,
+        "webSearchRequests": 0,
+        "costUSD": 0.8061614000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3440,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
