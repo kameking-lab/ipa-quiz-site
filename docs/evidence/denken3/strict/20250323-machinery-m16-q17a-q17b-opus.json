@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2949,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 19229,
+      "webSearchRequests": 0,
+      "costUSD": 0.2388264,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1401,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "2e6a3fa9f229f327f7d9b5732566af52aa31e651e014875c895ef66178a33d80",
+  "inputRequestSha256": "b541c65114998581d5897510dd24251487baa1cb5f0800c758e2163eb7ea528f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q17a": "55579d9f39fc6ac2862b41f6d5d84987447f736fb5ec708fbf3b9cfebbb54f48",
+      "q17b": "7cb3957faa6e76720a37c621eed4466d952330621d8deb8fed37101f6a10941d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p22.png": "9f120b8be0fcdd74d5c09e5ca02a4311873eba085a046b85b08c8a5b8efc0432",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p23.png": "239ac28dafbe198054b07a08f56175e3276fda8626c59cc7e7ca6ce70014b668"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q17-light-geometry.png": "8aedddacdb6342a9fde9428668186500f2a6f88a4c42c5b50167313819f68b2e"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "b43bb818252fec0c9fcda49f57b5a55ce30b08588c5851c418eac6d03ecbc40b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q17a",
+      "questionNumber": 17,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Problem text checked against the official original page (printed p.19, footer T2-K 022). The selection-question notice for Q17/Q18, the uniform-radiation point source, total luminous flux 3 000 lm, height 2 m, and A–B distance 1.5 m all match. The notice is paraphrased but keeps its meaning.",
+        "Part (a) text checked against the official original page (printed p.20, footer T2-K 023). The wording 'この点光源の平均光度[cd]として，最も近いもの' and the unit [cd] match.",
+        "All five options match the original: (1)191, (2)239, (3)318, (4)477, (5)955.",
+        "The official answer is (2), and the candidate's officialAnswer is also '2'.",
+        "Overall calculation re-checked: I = F/(4π) = 3000/12.566 ≈ 238.7 cd, which is closest to 239. The candidate's reasoning is correct.",
+        "Each wrong-option reason was recalculated. 3000/(5π) ≈ 191.0, 3000/(3π) ≈ 318.3, 3000/(2π) ≈ 477.5 (the hemisphere solid angle), and 3000/π ≈ 954.9. All of these values are correct, and each one correctly differs from the 4π result.",
+        "The published candidate figure matches the original figure. It shows the 'Uniform radiation point source' label, the black dot, the 2 m dimension line, the vertical dashed line to A with a right-angle mark, the dashed line from the source to B, the 1.5 m dimension line between A and B, and the labels A and B, with nothing missing. It fully shows the geometry that part (b) needs.",
+        "reviewedFromPage [22,23] is consistent with the footer codes T2-K 022 and T2-K 023 on the original pages. officialReferenceUrls is empty, so no independent claims needed checking."
+      ]
+    },
+    {
+      "unitKey": "q17b",
+      "questionNumber": 17,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Part (b) text checked against the official original page (printed p.20). The wording '水平面 B 点における水平面照度の値[lx]として，最も近いもの' and the unit [lx] match. The shared problem text also matches p.19.",
+        "All five options match the original: (1)10, (2)24, (3)31, (4)61, (5)122.",
+        "The official answer is (3), and the candidate's officialAnswer is also '3'.",
+        "Overall calculation re-checked: r = √(2²+1.5²) = 2.5 m and cosθ = 2/2.5 = 0.8 (θ is the angle from the vertical). The horizontal illuminance is E_h = I·cosθ/r² = 238.7×0.8/6.25 ≈ 30.6 lx, which is closest to 31.",
+        "The normal illuminance I/r² ≈ 38.2 lx is also correct. Using 239 cd instead still gives 239×0.8/6.25 ≈ 30.6 lx, which confirms the uncertainty field's note.",
+        "The wrong-option reasons were recalculated. Squaring cosθ gives 238.7×0.64/6.25 ≈ 24.4, which correctly explains option (2) as an error. The ratios 61/30.6 ≈ 2.0 and 122/30.6 ≈ 4.0 confirm the 'about 2×' and 'about 4×' statements. Options (1) and (4) are correctly rejected because they do not match the calculated value.",
+        "The published candidate figure matches the original and includes every element the solution needs: height 2 m, A–B distance 1.5 m, the right angle at A, and the dashed ray from the source to B. The dimensions, orientation, and labels are complete, so the problem can be solved from this figure alone.",
+        "officialReferenceUrls is empty, so no independent claims needed checking."
+      ]
+    }
+  ]
+}

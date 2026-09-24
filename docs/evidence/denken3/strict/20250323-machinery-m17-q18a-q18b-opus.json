@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7319,
+      "cacheReadInputTokens": 99641,
+      "cacheCreationInputTokens": 21230,
+      "webSearchRequests": 0,
+      "costUSD": 0.3361562,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4924,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a7d0d24cf948459e14b3a92e9b2fc7fdc39a212b1511ae8c42c3c1e8e7048b90",
+  "inputRequestSha256": "7c4a74a1e61b2807151f6d4c6787f6100bea72b2f52ff5f2a919a10e1ebbfb7e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q18a": "55345dbee5127b00a4396583f70e5ae1eccf32320290958eeebb1ee99798b551",
+      "q18b": "f72f7149f2ed52402d8452120f3950fe693fc234532df4eb9dcec461cc2d6d14"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p24.png": "9614215a074298b9f21e581c903b23cfcacab09ed1bdbd6796912ea860098925",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p25.png": "e1414a64641a36168a564aacbf3c39d4042a9556b43d5d50d9fee5a607fc469c"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/machinery/20250323-machinery-q18-half-adder.png": "32443842ed35968e69939b52d8a92c6a7b253114b5b1b4a5acbecfd71d28bddc",
+      "public/images/denken3/20250323/machinery/20250323-machinery-q18-two-stage-circuit.png": "41ff7bdfd19b40e0515488edd10665899934c201bbc3700d989414b02caf6d7e"
+    },
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "3f8cc99cb69a4202ff40b92b9718eff1fc533ff690f23c98e54e517b4b3639a9",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q18a",
+      "questionNumber": 18,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official page (-21-, T2-K 024). The candidate shortens the selection note to 「どちらかを選んで解答する。両方解答すると採点されない」 and rewrites it in plain form. The meaning is unchanged. sourceAttribution says the text was reformatted, so this is acceptable. The (a) question matches the original: 「図1に示す論理回路の真理値表として，正しいものを次の(1)〜(5)のうちから一つ選べ」.",
+        "Circuit wiring from the official Figure 1: A has a junction dot and goes both to the upper OR input and to the upper input of the lower AND gate. B has a junction dot and goes both to the lower OR input and to the lower AND input. The lower AND output has a junction dot. From there it goes right to T1 and up through the NOT gate to the lower input of the output AND gate. The OR output feeds the upper input of the output AND gate, whose output is S1. Where the branch lines cross (for example the vertical line from A's junction and the line from B to the OR input), there is no junction dot, so they are not connected.",
+        "Calculation: S1=(A+B)·¬(A·B)=A⊕B and T1=A·B. So (0,0)→(0,0), (0,1)→(1,0), (1,0)→(1,0), (1,1)→(0,1).",
+        "Each row of choices (1)–(5) matches the official tables. (1): 00/00/00/01. (2): 01/00/00/01. (3): 00/10/10/01. (4): 00/10/00/01. (5): 01/10/10/01. All 4 rows × 2 columns were compared, and there are no transcription errors.",
+        "Only (3) matches the calculated table, which agrees with the fixed official answer 3.",
+        "Wrong-answer reasons: (1) S1=0 in rows 01 and 10, which is wrong; T1 is correct. (2) T1=1 in row 00 and S1=0 in rows 01 and 10, both wrong. (4) S1=0 in row 10, which is wrong. (5) T1=1 in row 00 is wrong, while the S1 column is correct. Each reason names that choice's own mismatch and is accurate.",
+        "Explanation: the steps from the OR, AND and NOT signals to the XOR are logically correct, and calling the circuit a half adder (S1 = sum, T1 = carry) is correct.",
+        "Public figure half-adder.png: compared with the official Figure 1 for terminals A, B, S1 and T1, the three junction dots, the gate types (OR, AND, NOT, AND), the NOT gate's direction, and the caption 図1. It matches, and the answer can be derived from this figure alone.",
+        "figureUrls also includes Figure 2 (two-stage-circuit.png). It is not needed for (a), but it carries the caption 図2, the (a) question refers only to Figure 1, and there is no contradiction or risk of misreading.",
+        "officialReferenceUrls is empty, so there are no independent claims needing external checks. reviewedFromPage [24,25] is consistent with the original page codes T2-K 024 and 025."
+      ]
+    },
+    {
+      "unitKey": "q18b",
+      "questionNumber": 18,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: checked against the official page (-22-, T2-K 025). 「図1に示す論理回路を2組用いて図2に示すように接続して構成したとき，A，B及びCの入力に対する出力S2及びT2の記述として…」 matches. The shared stem is shortened the same way as in (a), which is acceptable.",
+        "Choices checked against the original: (1) A=0,B=0,C=0→S2=0,T2=1. (2) 0,1,0→S2=1,T2=0. (3) 0,0,1→S2=0,T2=1. (4) 1,0,1→S2=1,T2=0. (5) 1,1,0→S2=1,T2=1. Input and output values match in all five choices.",
+        "Wiring from the official Figure 2: the left block's S1 feeds the right block's upper input. The dot at S1 branches to both the OR and the AND. C feeds the right block's lower input, and its dot also branches to both the OR and the AND. The right block's AND output has a dot, feeds the NOT gate, and also feeds the upper input of the external OR gate. The OR gate sits outside the right block's notched dashed frame. The left block's T1 goes through its terminal, runs below the right block, and enters the lower input of the external OR gate, whose output is T2. The right block's output AND gives S2. The vertical C line crosses the horizontal T1 line with no junction dot, so they are not connected.",
+        "Logic: S2=A⊕B⊕C and T2=A·B+(A⊕B)·C, which is a full adder. Recalculated each choice: (1) S2=0,T2=0. (2) S2=1,T2=0. (3) S2=1,T2=0. (4) S2=0,T2=1. (5) S2=0,T2=1. Only (2) matches its statement, which agrees with the fixed official answer 2.",
+        "Wrong-answer reasons: (1) T2 is wrong. (3) S2 and T2 are both reversed. (4) S2 and T2 are both reversed. (5) T2 is correct but S2 is wrong. Each reason and its intermediate values (S1, T1, second-stage carry) were recalculated and are correct.",
+        "figureDescription: the crossing point is described as 「左枠の右外側・右枠の下方」. Strictly, it lies between the two frames, to the lower left of the right frame. This is the only external wire crossing in the figure, so the location cannot be mistaken, and the key fact (no junction dot, not connected) is correct.",
+        "Public figure two-stage-circuit.png: compared with the official Figure 2 for terminals A, B, C, S1, T1, S2 and T2, all six junction dots, the no-dot crossing of T1 and C, the right frame's notched shape with the OR gate outside it, the NOT gate's direction, and the caption 図2. It matches. The question cites 図1, and half-adder.png is also included, so the question can be understood from the public figures alone.",
+        "officialReferenceUrls is empty, so there are no independent claims needing external checks. reviewedFromPage [24,25] is consistent with the original page codes T2-K 024 and 025."
+      ]
+    }
+  ]
+}
