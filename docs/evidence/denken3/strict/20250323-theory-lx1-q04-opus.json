@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3129,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14374,
+      "webSearchRequests": 0,
+      "costUSD": 0.1778358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1524,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "6d11df434bd049919c199b13c13bf7fb67b5772d923d49ead7cc1265a8902578",
+  "inputRequestSha256": "9f23e1d3e95b4009a9b1b7053c066d3b7e195b9c25ded9941cd8be8fa2951c06",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "36320157c0c1270ee3615a58de15db1fb37b4de93623508fbc4dd0d156b95c26"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p07.png": "aed50f63915af6d55ada3b212947cb7fc3f6cf28bdb9438edc26db9d2c423e74"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q04-parallel-conductors.png": "bf68a9ad4a6604fb32966730b3840021266aac44a4372b0aa7159984a904bb37"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "19f3654f191a50d7d52e9fd361fc6034c3a6c989da02a16379451c8408565017",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescription が公開候補図 20250323-theory-q04-parallel-conductors.png の内容と一致しない。公開候補図には導体A・Bの断面図と座標定義枠しかなく、選択肢の表は含まれていない。ところが説明文は冒頭を「問題全体の設定を示す図。上部の図は…」とし、末尾で「選択肢(1)〜(4)は…表形式で、(5)は表の最終行（結合された行）に…」と、図に存在しない表を図の構成要素として記述している。代替テキストとして読むと、図に表があると誤認させる。修正案：「上部の図は」を「図は」に改め、選択肢表に関する最終文を削除する。表の記述を残す場合は、原典冊子のレイアウト説明であり公開図には含まれない旨を明記する。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "出典メタデータ：fiscalYear=2024、term=lower、examDate=2025-03-23、subject=theory、sourceQuestionPdfUrl=20250323_ch_third_q01.pdf、sourceAnswerPdfUrl=2024_3_2.pdf、reviewedFromPage=[7] は manifest と一致。原図の頁フッタ『-4-』『T2−R 007』もPDF第7頁と整合する。sourceAttribution『令和6年度下期第三種電気主任技術者試験 理論科目 問4』も一致。",
+        "公式正答：解答表（令和6年度 下期 第三種電気主任技術者試験解答、＜理論＞問4＝2）と manifest 固定正答 '2' と候補 officialAnswer '2' が一致。",
+        "問題文：原図の文面（直線導体A及びBがy方向に平行、同じ大きさの電流Iが共に+y方向、力の方向、xyz座標は破線枠内の定義）と一致。読点の全角カンマから『、』への変換以外に差異はない。極性『+y』も一致。",
+        "選択肢：原図の表 (1) A:+x／B:+x、(2) A:+x／B:−x、(3) A:−x／B:+x、(4) A:−x／B:−x、(5) どちらの導体にも力は働かない、と候補の5肢が完全に一致。",
+        "座標系の検算：画面右=e1、画面上=e2、紙面手前=e3 とすると、x=e1、z=e2、y=−e3（⊗）。x×y=e1×(−e3)=e2=z となり右手系。したがって y×z=+x、y×(−z)=−x の演算は正しい。",
+        "総合解説の検算：電流は⊗（+y）なので、右ねじの法則により手前から見て時計回りの磁界ができる。BはAの右側にあり、そこでの磁界は−z。F=IL×B より y×(−z)=−x で、Bは−x方向。AはBの左側にあり、そこでの磁界は+z。y×z=+x で、Aは+x方向。同方向電流の吸引、作用・反作用（等大逆向き）、単位長さあたりの大きさ μ0I²/(2πd) も正しい。結論(2)は公式正答と一致する。",
+        "肢別解説：(1) Bが+x（Aから遠ざかる向き）である点と、作用・反作用に反して同向きである点の指摘は正しい。(2) 正答理由は正しい。(3) 反発は逆向き電流の場合であるという指摘は正しい。(4) Aは+xであるべき点と、両者が同向きで作用・反作用に反する点の指摘は正しい。(5) 非零電流かつ有限距離なら力は0でないという指摘は正しい。いずれも各肢固有の理由になっている。",
+        "公開候補図：原図と照合し、破線上に左から導体A（⊗、上にI、下に『導体A』）と導体B（⊗、上にI、下に『導体B』）が並ぶこと、右の破線枠内の座標定義（z上向き、x右向き、⊗にyラベル）がすべて一致。接続・向き・ラベルに欠落や反転はない。解答に必要なA左・B右の位置関係、電流の向き、座標の定義は公開候補図だけで判読できる。",
+        "officialReferenceUrls は空のため、独立主張の外部検証事項はない。"
+      ]
+    }
+  ]
+}

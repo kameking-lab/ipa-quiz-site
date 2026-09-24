@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2066,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13025,
+      "webSearchRequests": 0,
+      "costUSD": 0.14578380000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 932,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "c7b799ccabfd242b1f335babaae7449ff0f4c38bb4f1dd381a420dae879e8af9",
+  "inputRequestSha256": "d48591db8bf70b956c83f648c66a8c8eccac20520835c833f23aa76aa4a6b41f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q03": "ec12310d32dd49a09ff7c8ec83308fce51faf8962b61ecf05da84945dc88155d"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p06.png": "5377ea6a69c2146e02ce02468f83b29c8e12c330a6c0fb0d9a7260317ed52ad1"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "bd5b7a1137528dc7e49478027b0347f4e4f44d2219ad0c003e0e9fc0e8a6c81c",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 公式原図（フッター『T2－R 006』、頁番号『- 3 -』）の問3本文『巻数 30 のコイルを貫通している磁束が 0.1 秒間に 1 Wb の割合で直線的に変化するとき，コイルに発生する起電力の大きさ[V]として，最も近いものを次の(1)～(5)のうちから一つ選べ。』と候補questionが一致。数値30・0.1秒・1 Wbと単位[V]、『直線的に』『大きさ』の語も一致する。",
+        "選択肢: 原図の(1)250 (2)300 (3)350 (4)400 (5)450の5肢と、候補choicesの1〜5が値・順序とも一致する。",
+        "公式正答: 公式解答表『令和6年度 下期 第三種電気主任技術者試験解答』の＜理論＞欄は問3=2。manifestのq03単位(answer \"2\")とも一致し、候補officialAnswer \"2\" と一致する。",
+        "計算検算: ファラデーの法則により e = N·|ΔΦ/Δt| = 30 × (1 Wb / 0.1 s) = 30 × 10 Wb/s = 300 V。これは(2)と厳密に一致する。『直線的に変化』なので変化率は一定で、瞬時値と平均値は等しく一意に定まる。『大きさ』を問うため極性（レンツの法則の負号）は不要で、解説の絶対値表記は適切。",
+        "肢別解説: 正答肢(2)の導出は正しい。誤答肢(1)(3)(4)(5)は、いずれも一意の計算値300 Vと一致しないことを理由としており正しい。250・350・400・450はN·ΔΦ·Δtの典型的な取り違え（N/Δt=300、N·ΔΦ·Δt=3、ΔΦ/Δt=10など）のどれにも対応しないため、不一致以外の固有の誤り原因は存在せず、この理由で十分と判断した。",
+        "図: 原図の当該頁は問題文と選択肢のみで、図・表はない。figureDescription『図なし』、figureUrls=[]、choiceFigureUrls={}は正確で、解答に図は不要。",
+        "出典メタデータ: fiscalYear=2024(令和6年度)、term=lower(下期)、examDate=2025-03-23、subject=theory(理論)、sourceQuestionPdfUrl・sourceAnswerPdfUrl、reviewedFromPage=[6]は、manifestおよび原図フッター『R 006』と一致する。sourceAttributionの年度・期・科目・問番号も正しい。",
+        "参照URL: officialReferenceUrlsは空配列で、候補の本文・解説に外部資料に依拠した独立主張はない。検証を要する外部確認事項はない。"
+      ]
+    }
+  ]
+}
