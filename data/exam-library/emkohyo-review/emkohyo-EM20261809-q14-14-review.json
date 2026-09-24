@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3135,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17402,
+      "webSearchRequests": 0,
+      "costUSD": 0.20217980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2154,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q14-14-raw-response.txt",
+  "rawResponseSha256": "a752cbb4ea0b232979961aac7f29bf9072c8534f29b8126800f68bda8366c9da",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q14"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q14": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q14": {
+      "/exam-library/emkohyo-EM20261809/q14-p8-1.webp": "33a254158af5b773cf1ac04354b2a0423077fe915b1e4fe4c62cd375441a9677"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q14": "382229ad923cb1e2a54dcead87b44bd07756ca68b3f998327a084c56a0b09fa2"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q14-14.json",
+  "sourcePackSha256": "92c32ff375010cf9af5da309af527a0fa7517ef475c4917724ecc6e5cabdc430",
+  "assessment": {
+    "emkohyo-EM20261809-q14": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由にある「表面付近とはα線が抜け出せる深さの部分を指す」は、引用資料に書かれていない解釈を事実として述べている。No.36の定義は「ろ紙の表面付近で捕らえられた粒子の割合」までで、問題文の「α線の平均飛程以内」とは一致しない。推論であることを明示するか、平均飛程で定義した一次資料に差し替える必要がある。",
+        "肢4の理由にある「α線の飛程は紙中で数十µm程度」は、ATOMICAの仮定例（空気中の飛程が50mmの場合、紙・生体中で50µm）から導いている。仮定例からの近似であることを書くべき。ただし数十µmというオーダー自体と、表面捕集率が重要であるという結論は支持される。"
+      ],
+      "sourceIssues": [
+        "肢3：告示第93号の引用は第2号（核種既知・複数の場合は割合の和が1）と第3号（核種不明の場合は最も低い限度）である。「既知・複数の場合に最小限度の核種が全放射能を占めるとしてよい」という記述を直接認める文言は告示にない。ΣCi/Lmin ≥ Σ(Ci/Li) による安全側評価の導出は理由側の推論であり、政府ページがこの結論を直接支えていないことを明記すべき。",
+        "肢4：放射能測定法シリーズNo.36（原子力規制庁）の表面捕集率の定義は「表面付近」までで、「α線の平均飛程以内のろ紙表面部分」という定義文言を直接は支えない。",
+        "肢1・肢5の根拠はATOMICA（JAEAの解説用百科）だけで、規制当局の一次資料ではない。さらに肢1の典拠ページは「セルロース・アスベスト」製の活性炭濾紙を挙げており、記述が旧い。現行の捕集法を示す資料（例：放射能測定法シリーズNo.36の放射性ヨウ素捕集の章）で補強することが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定ガイドブック（放射性物質関係）または電離則関連の測定基準解説で、表面捕集率が「α線の平均飛程以内のろ紙表面部分に捕集された粉じんの全捕集粉じんに対する割合」と定義されているか確認する。",
+        "作業環境測定ガイドブック等で、核種既知・複数存在の場合に最小濃度限度の核種で全放射能を評価してよい（安全側評価として許容される）旨の記載があるか確認する。"
+      ]
+    }
+  }
+}
