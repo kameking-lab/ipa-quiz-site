@@ -20,6 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 MODEL = "claude-opus-5-5"
 PRIVATE_RAW = ROOT / "data/raw_pdfs/denken3/review"
 TRACKED_RAW = ROOT / "docs/evidence/denken3/raw"
+TRACKED_INPUT = ROOT / "docs/evidence/denken3/input"
 # Parent-session variables that make the child CLI share or report into the
 # caller's session; nonessential traffic would add non-Opus background calls.
 _DROP_ENV = (
@@ -91,10 +92,34 @@ def tracked_raw_path(private_path: Path) -> Path:
     return TRACKED_RAW / private_path.relative_to(PRIVATE_RAW)
 
 
-def raw_file(private_path: Path) -> Path | None:
-    """Private raw response, else its tracked mirror, else None."""
+def raw_file(private_path: Path, expected_sha256: str | None = None) -> Path | None:
+    """Find a raw response, preferring only exact bytes when a pin is supplied."""
     for path in (private_path, tracked_raw_path(private_path)):
-        if path.is_file():
+        if path.is_file() and (expected_sha256 is None or sha256(path.read_bytes()).hexdigest() == expected_sha256):
+            return path
+    return None
+
+
+def valid_raw_response(path: Path, model_usage: dict) -> bool:
+    """Reject empty, incomplete and failed model streams even if a receipt pins them."""
+    try:
+        events = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.startswith("{")]
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return False
+    result = next((event for event in reversed(events) if event.get("type") == "result"), None)
+    return bool(result and result.get("subtype") == "success" and not result.get("is_error")
+                and result.get("result") and result.get("modelUsage") == model_usage)
+
+
+def evidence_file(source_path: Path, expected_sha256: str) -> Path | None:
+    """Find exact pinned input bytes in a checkout or its tracked mirror."""
+    paths = [source_path]
+    try:
+        paths.append(TRACKED_INPUT / source_path.relative_to(ROOT / "data/raw_pdfs/denken3"))
+    except ValueError:
+        pass
+    for path in paths:
+        if path.is_file() and path.stat().st_size > 0 and sha256(path.read_bytes()).hexdigest() == expected_sha256:
             return path
     return None
 
