@@ -49,8 +49,8 @@
     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
     "localPdf": "data/raw_pdfs/denken3/review/meti-denki-interpretation-20231226.pdf",
     "sha256": "7ff56485cb405ecef67c5f81181370396e2cbb245e6fee41b926c0f5f1a73b43",
-    "pages": [4, 35, 120, 150, 224, 225],
-    "purpose": "経済産業省・電気設備の技術基準の解釈第1条、第21条、第117条、第150条、第229条"
+    "pages": [4, 31, 32, 35, 120, 150, 224, 225],
+    "purpose": "経済産業省・電気設備の技術基準の解釈第1条、第17条、第21条、第117条、第150条、第229条"
   },
   {
     "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/furyoku_chikujoukaisetsu.pdf",
@@ -72,5 +72,40 @@
     "sha256": "69372b4939f111086609bd29d53fbbd7fb66131ef29996e7b732091d51211447",
     "pages": [14],
     "purpose": "e-Gov公式資料・電気設備技術基準省令第58条全文と絶縁抵抗表"
+  },
+  {
+    "url": "https://www.safety-kyushu.meti.go.jp/denki/jiko/R2denkijiko_set.pdf",
+    "localPdf": "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf",
+    "sha256": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+    "pages": [9],
+    "purpose": "経済産業省九州産業保安監督部・過電流蓄勢動作で区分開閉器が開放し、配電線再閉路成功した事故事例"
+  },
+  {
+    "url": "https://www.safety-shikoku.meti.go.jp/03_electric/electric_hyosyo_seminar/electric_seminar/r7_seminar/2025semina.pdf",
+    "localPdf": "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf",
+    "sha256": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6",
+    "pages": [124],
+    "purpose": "四国産業保安監督部の公開講習資料に収録された戸上電機製作所のスライド・SOGのSO動作、配電線電圧消失後PAS開放の説明"
+  },
+  {
+    "url": "https://openjicareport.jica.go.jp/pdf/11775236_03.pdf",
+    "localPdf": "data/raw_pdfs/denken3/review/jica-distribution-voltage.pdf",
+    "sha256": "07057ecbe1995204283b2bc9db26a2fc1e041971972add067babb0ca9ef28aec",
+    "pages": [72],
+    "purpose": "JICA公式報告書・配電線の電圧降下式と等価抵抗Rcosφ＋Xsinφ"
+  },
+  {
+    "url": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/denkisetsubi_koutei-21.pdf",
+    "localPdf": "data/raw_pdfs/denken3/review/maff-voltage-drop.pdf",
+    "sha256": "4bbf833283820c0b055882bfffc1adcf192817d862c78abc7219efaaf255dbb1",
+    "pages": [40],
+    "purpose": "農林水産省・電気設備工事の電圧降下式および三相3線式係数√3"
+  },
+  {
+    "url": "https://www.maff.go.jp/j/nousin/seko/kyotu_siyosyo/kikaisisin/attach/pdf/kikaisisin-4.pdf",
+    "localPdf": "data/raw_pdfs/denken3/review/maff-capacitor-table.pdf",
+    "sha256": "36f4d45f48d456f240c4a9805fb8ece7bda4b229d51a5d3cdf739fa256b92412",
+    "pages": [107],
+    "purpose": "農林水産省・高圧進相コンデンサに直列リアクトルを併設し容量6%を標準とする説明"
   }
 ]
