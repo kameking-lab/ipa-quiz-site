@@ -3902,5 +3902,290 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q36",
+    "sourceSha256": "c50f92c8539a555f0a9564a75f8b25f60411d6d89d898b63b8d4d5912a76501d",
+    "candidateSha256": "dea126c4deee40351cdf26d04f247b08a369f4081458f47a4f311465fb08c276",
+    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDF p.19（一衛 18/22）の○は(4)で、candidate.correctChoice=4と一致する。問題文と画像も原本と一致している。",
+        "肢(1)：無機塩とビタミン類が酵素で分解されずに吸収されることは、提示された手引きpage=30〜32のどこにも書かれていない。page=31にあるのは『脂溶性ビタミンも一緒に取り込まれる』だけである。候補の理由は大腸での電解質吸収を根拠に挙げているが、その記載はpage=33にあり、本問のsourcesに含まれていない。",
+        "肢(2)：page=30③には唾液にプチアリン（唾液アミラーゼ）が含まれるとある。しかし『成分のほとんどが水である』は記載がなく、肢の前半が確認できない。",
+        "肢(4)：page=32(f)で確認できるのは『胆汁酸塩は脂質の消化を容易にし』までである。胆汁が酸性でない（アルカリ性である）こと、消化酵素を含まないことは記載がない。page=31にある『弱アルカリ性』は膵液についての記述で、胆汁の話ではない。したがって、誤りの肢である理由を政府資料で確認できない。",
+        "肢(3)はpage=30(c)の『ペプシノーゲンは胃酸によって…ペプシンとなり』と一致する。肢(5)はpage=31(d)の絨毛・ビロード状・微絨毛・吸収効率の記述と一致する。",
+        "根拠資料は登録販売者試験用の『試験問題の作成に関する手引き（令和4年3月）』である。衛生管理者試験の出題基準そのものではないが、2026年4月の出題より前に作られた生理学の記述で、時期によって内容が変わる性質のものではないことは確認した。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=30",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 6878,
+        "cacheReadInputTokens": 652368,
+        "cacheCreationInputTokens": 46055,
+        "webSearchRequests": 0,
+        "costUSD": 0.6365056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2638,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q38": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q38",
+    "sourceSha256": "2e014af4c709d08ae434ee4b88a380cb52ab47a76bbdd78a25989b8b0cac5c6d",
+    "candidateSha256": "6781eb7938ba17d99695d77778381678752a1ced6ad12f88010b50448e9393c5",
+    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 6878,
+        "cacheReadInputTokens": 652368,
+        "cacheCreationInputTokens": 46055,
+        "webSearchRequests": 0,
+        "costUSD": 0.6365056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2638,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q40": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q40",
+    "sourceSha256": "b1a630f62b1b91784656b13b8e0973e58877f484a31256ab061d2eb93285a766",
+    "candidateSha256": "d9fd44315768e97d4e1acddf0aec103f70b5e8a51869a6b3633469ffa369336a",
+    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDF p.21（一衛 20/22）の○は(2)で、candidate.correctChoice=2と一致する。問題文と画像も原本と一致している。",
+        "肢(3)：page=37〜38で確認できるのは、血小板が損傷部位に粘着・凝集して凝固反応に関わることだけである。『核を持たない不定形の細胞』という形態は記載がない。",
+        "肢(5)：page=38の脚注xxxにあるのは血清の定義（血漿からフィブリノゲンを除いたもの）だけである。ABO式血液型や、A型の血清が抗B抗体を持つことは記載がない。",
+        "肢(2)はpage=36の『血液全体の約40％を占め』と食い違っており、誤りの肢であることを確認できる。肢(1)はpage=36の血漿（アルブミン、グロブリン等）と一致する。肢(4)はpage=38のフィブリノゲン→フィブリン→血餅と一致する。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=38"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 6878,
+        "cacheReadInputTokens": 652368,
+        "cacheCreationInputTokens": 46055,
+        "webSearchRequests": 0,
+        "costUSD": 0.6365056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2638,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q39": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q39",
+    "sourceSha256": "a5f4f5f722c49aa57002a06b8b140a24d69c4b9033b280316f6b6e55b04e9a15",
+    "candidateSha256": "a2af0057887fae94cac9600a06e8a79852099f72dd66f0f6f4e4d78b8f1f68ba",
+    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDF p.21（一衛 20/22）の○は(5)で、candidate.correctChoice=5と一致する。問題文と画像も原本と一致している。",
+        "肢(1)：page=39(b)にあるのは『尿のほとんどが水分で、尿素、尿酸等の老廃物、その他微量の電解質、ホルモン等を含む』までである。尿の色、臭気、液性（弱酸性であり弱アルカリ性ではないこと）は記載がない。この肢が誤りである根拠を政府資料で確認できない。候補自身もHOLDとしている。",
+        "肢(2)(3)(5)はpage=39(a)と一致する。(2)は『血球やタンパク質以外の血漿成分も、腎小体で濾過される』、(3)は腎小体で濾過された原尿が尿細管へ入ること、(5)は尿細管で電解質が再吸収されることである。肢(4)は、尿細管で必要な水分が再吸収され『余分な水分』とともに尿になるという記述と合わない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 6878,
+        "cacheReadInputTokens": 652368,
+        "cacheCreationInputTokens": 46055,
+        "webSearchRequests": 0,
+        "costUSD": 0.6365056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2638,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q37",
+    "sourceSha256": "297a4ffc34ce6a513ab8b095e9e2c34d29cd0fc5836a5d186385f72eb05f1c26",
+    "candidateSha256": "6d3e1881bb81f012d5788b18e7cd008d508f687ef10de3a19723431055cf1d81",
+    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDF p.20（一衛 19/22）の○は(1)で、candidate.correctChoice=1と一致する。問題文と画像も原本と一致している。",
+        "肢(1)：page=46〜47には『神経節』『神経核』の定義が書かれていない。呼び方が中枢と末梢で逆になっているという誤りの理由を、政府資料で確認できない。候補自身もHOLDとしている。",
+        "肢(3)：有髄神経線維と無髄神経線維の違いや伝導速度の比較は、page=46〜47に記載がない。",
+        "肢(5)：page=46にあるのは『脳は…知覚、運動、記憶、情動、意思決定等の働きを行っている』までである。大脳の外側の皮質が感覚や思考の中枢であることは記載がない。",
+        "肢(2)はpage=46の『中枢神経系は脳と脊髄から構成される』と一致する。肢(4)はpage=47の二重支配と『互いに拮抗して働き』に一致する。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=46",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=47"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 8,
+        "outputTokens": 6878,
+        "cacheReadInputTokens": 652368,
+        "cacheCreationInputTokens": 46055,
+        "webSearchRequests": 0,
+        "costUSD": 0.6365056,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2638,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
