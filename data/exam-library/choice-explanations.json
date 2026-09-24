@@ -28338,5 +28338,55 @@
         "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html"
       }
     ]
+  },
+  "emkohyo-EM20261809-q15": {
+    "sourceHash": "b6b2fb55b3915cf19287aa63846e1ecb481701d36cc34e4abbff6dba5e3e2045",
+    "correctChoice": 5,
+    "summary": "揮発性物質である水銀蒸気（²⁰³Hg）は活性炭カートリッジ、粒子状物質（²³⁹PuO₂）は集塵ろ紙（セルロース・ガラス繊維系ろ紙）、水蒸気状のHTOはコールドトラップ（冷却凝縮法）で捕集するので、肢5が正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "㋺の¹⁴CO₂はガス状物質で、集塵ろ紙（セルロース・ガラス繊維系ろ紙）は粒子状の放射性物質を捕集するものであり捕集できない。㋩のCH₃¹³¹I（有機ヨウ素）は添着炭濾紙やカートリッジで捕集するもので、コールドトラップではない。組合せとして誤り。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "㋑のCH₃¹³¹Iの活性炭カートリッジ、㋺の²³⁹PuO₂のセルロース・ガラス系ろ紙は適合するが、㋩のコールドトラップ（冷却凝縮法）は水蒸気状の放射性物質（トリチウム）の捕集法である。酸化物の⁶⁰Co₂O₃は粒子状物質としてろ紙で捕集するので誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "㋺のHTOは水蒸気状の放射性物質で、シリカゲル・モレキュラシーブやコールドトラップで捕集するものであり、粒子状物質用のセルロース・ガラス系ろ紙では捕集できない。組合せとして誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "㋩のHTOのコールドトラップは適合するが、㋺の¹⁴CO₂はガス状物質で、粒子状物質を捕集するセルロース・ガラス系ろ紙では捕集できない。組合せとして誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "作業環境測定基準はガス状の放射性物質を固体捕集方法・冷却凝縮捕集方法等で、粒子状のものをろ過捕集方法等で採取するとする。揮発性の放射性物質（水銀蒸気の²⁰³Hg）は活性炭カートリッジ等で捕集し（㋑）、粒子状物質はセルロース・ガラス繊維系濾紙（㋺²³⁹PuO₂）、トリチウムは冷却凝縮法（㋩HTO）で捕集する。正しい組合せ。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタリング」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+      },
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      }
+    ]
   }
 }
