@@ -4,7 +4,7 @@
     "questionId": "lckohyo-LC20252115-q11",
     "sourceSha256": "b018b6c524e7890c5ac9d54968a7ada6b6641005acd52ed53a608dc6844ec136",
     "candidateSha256": "b3ef08ca6eb9dbf464f42c54f8706c2d2f5d864d2cdc8cb008fb8eb5e01f1ab3",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -45,7 +45,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q28": {
     "schemaVersion": 2,
@@ -111,7 +117,7 @@
     "questionId": "lckohyo-LC20252115-q24",
     "sourceSha256": "18cd051606a4757c79125a43f72033d9a4eeb9c33f574904666beae613de9c01",
     "candidateSha256": "2aeb0ec0ea40949a216fdbd26afcf55ed2f00137703f75d5d4fe74bd36702929",
-    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidenceSha256": "a42f813f3cbf16656262dfaf46aa7f115b70e659480d31f11858504a8a5f2b28",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -157,7 +163,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q30": {
     "schemaVersion": 2,
@@ -349,7 +361,7 @@
     "questionId": "lckohyo-LC20252115-q6",
     "sourceSha256": "48fdc331b7e7fef2cec426493141c628e76a566d58ad9e47110a13e8da0bf72d",
     "candidateSha256": "c73f3305b74ceef6e3925df9c0b5822228c0648f153c2f45b93fac9f9b385cc9",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -391,14 +403,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q7": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q7",
     "sourceSha256": "0c8336f878046c5f62f290db97fdfe8f63c16f0219d296d8cafa8eddfd450e17",
     "candidateSha256": "42970faa28107425c5cefb8f81e8de09ddb1f210df61e326dc9a95d150751dcd",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -440,14 +458,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q8": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q8",
     "sourceSha256": "e0c8f660f655a4dcad65171bf878ad99b58bd444d1d197d0aeabce3dd34a3f31",
     "candidateSha256": "153eff530001781f6f687a31bebf21301e3f29e4ea1a368dcf77e234f4335d13",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -488,7 +512,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q12": {
     "schemaVersion": 2,
@@ -666,7 +696,7 @@
     "questionId": "lckohyo-LC20252115-q20",
     "sourceSha256": "6fc2291166e93cd6a6887d5a6315998bb20b6434107b7fd09fc5a1f62d21c7a4",
     "candidateSha256": "e77a61b3626232d56f0dc08bdcf4d3feafde2466ea6a5ad03d4047a4088bea5b",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -708,14 +738,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q17": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q17",
     "sourceSha256": "7a761c71a876f712dcb4370d2ea7f8507a1c061717b3fa4fe6df12026afc86f2",
     "candidateSha256": "16bd198882d74e94318e920ac2476a7b5f4248ab12c3f256d92fc5a3b8c50ec6",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -758,14 +794,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q21": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q21",
     "sourceSha256": "03528292f9444ef5e93acf08af5f6c2ac0d13c0cf78471dc2ceb168f4dc3ea52",
     "candidateSha256": "fa87447410bfbbc9af0c8f0f224531dab7330380faf66aabebd40d30ee03a75c",
-    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidenceSha256": "a42f813f3cbf16656262dfaf46aa7f115b70e659480d31f11858504a8a5f2b28",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -809,14 +851,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q22": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q22",
     "sourceSha256": "e56f7a01cfb46062e200cba41417d383a3958e6df58cf9d9a41eeaf51214d909",
     "candidateSha256": "26c9e72b94db3ff6b3ef134920e3ccdd49be8a43eef857e05d4d053d08e4fabd",
-    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidenceSha256": "a42f813f3cbf16656262dfaf46aa7f115b70e659480d31f11858504a8a5f2b28",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -859,14 +907,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q26": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q26",
     "sourceSha256": "a9adf12dbffad446f2f42eea984378ddc0990b00055e19a39eda63d4c6d20d15",
     "candidateSha256": "891509d209edcc03efe559d1ce3c09bbb4e309c2c91ec072bb1af521b394574c",
-    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidenceSha256": "a42f813f3cbf16656262dfaf46aa7f115b70e659480d31f11858504a8a5f2b28",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -912,14 +966,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q10": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q10",
     "sourceSha256": "3c7e05a19b8499900abe10d03321968a514b4d405a9fe1b97dc0898d077e59c8",
     "candidateSha256": "d62f1e355d1a008b717326474b2c226756d905f84605b7ac132da80cd657d1d6",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -961,14 +1021,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q9": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q9",
     "sourceSha256": "4463c16414fac3340b601f2cbca35147ccd4ed7b41c819072642aadc39b88d86",
     "candidateSha256": "81ae93453eb63187e4b26c3b3c645fab88abff32f7b6cbb21e6a82c95cca8174",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1010,14 +1076,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q1": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q1",
     "sourceSha256": "423cb4eccfa75e141c4cd69f14e6066de77b63d934dbd8758bc6a9e7ed96a982",
     "candidateSha256": "b3eb53283304fd200d1f8412bd99d5cfd346301f64b003f2bf857a73efcccc9e",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1059,14 +1131,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q2": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q2",
     "sourceSha256": "be537dacfe7177e5d0eaeb99905de57402ecab4c145c2b1bd4c1aaa4677f3fff",
     "candidateSha256": "b38d95c2a6d4534ef783e8ef9302aa089ae0894dc01466093b49932fd08e5110",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1108,14 +1186,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q3": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q3",
     "sourceSha256": "f6e6ae521008601c86e5eeaef6b9c2c1252de8746c57b3cce86d40b69280befe",
     "candidateSha256": "bac7127c980319a923f71614f979d2ee15a28dc22b6a87477b306b74b140ff66",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1157,14 +1241,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q5": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q5",
     "sourceSha256": "2bc2d101c57b82bc2a16db2f2bd13876ce2d442a9e6c9ac1f71dfd52f3b214f7",
     "candidateSha256": "20cde0ba237f84ebc680e5e2d8bc57511d6c09b17aef5ea7b0404de8890b1abd",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1207,14 +1297,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q4": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q4",
     "sourceSha256": "844b38e42c557d7995d0558724b4784cb07cebc10b5297fc109c263ea9fb5c0b",
     "candidateSha256": "148a14022bfc779939157ad85f2ad9c13593107350d542124925da35d68507e1",
-    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidenceSha256": "ca76c69d6fb39a274e3758b00a9f9bf1552c4d8e9272cfadae2bafd41e8630dd",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1255,14 +1351,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20260414-1-q15": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20260414-1-q15",
     "sourceSha256": "9409c3d9ef6d79b08d73a506c17875fe8d3c7ce968bfaba7370542d75582b4f6",
     "candidateSha256": "ec573a9cda9239a98a1627a112287fff80861755ee5bd20d98076f2d98ba9588",
-    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidenceSha256": "3d5f9626fd189bc8782630bb03254d8357666a82a42ad5f1da80f120d9432201",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1303,7 +1405,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q25": {
     "schemaVersion": 2,
@@ -1369,7 +1477,7 @@
     "questionId": "lckohyo-LC20252115-q13",
     "sourceSha256": "0f86f8c8f2b2d9faa4875f74ce9862ba6ae9204575fa4869fe5de39331d0b455",
     "candidateSha256": "0545af14ace0e8974cb30a8cca77e0e723139b50d02cc219476c48b8051bac04",
-    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidenceSha256": "3d5f9626fd189bc8782630bb03254d8357666a82a42ad5f1da80f120d9432201",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1410,14 +1518,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q14": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q14",
     "sourceSha256": "14dbff3847fbff8b76d01ddecd3e49359ebc5a9e5381d99ce5ae8ae841323daf",
     "candidateSha256": "a0a1e0b6d035ea3e7f535b47c4f5086637910d604234d7a75ae42bf0f3b1c727",
-    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidenceSha256": "3d5f9626fd189bc8782630bb03254d8357666a82a42ad5f1da80f120d9432201",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1458,14 +1572,20 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q16": {
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q16",
     "sourceSha256": "d73505c7066d8176fb3aa596c77208fa2bd5052b5931a6b79bbcbaf2cf49182a",
     "candidateSha256": "682ebe926ddde9c2ac1b1da1b08fd1b28ea2248c768e0b0e5469941e9f3f2e40",
-    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidenceSha256": "3d5f9626fd189bc8782630bb03254d8357666a82a42ad5f1da80f120d9432201",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -1509,7 +1629,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252115-q18": {
     "schemaVersion": 2,
@@ -2416,7 +2542,7 @@
     "questionId": "lckohyo-LC20260414-1-q19",
     "sourceSha256": "dd94ecb84c7164bddac26f0f5f5b05bb629adcc615ee35739d9bd20c46304896",
     "candidateSha256": "04752752e77531a858f1cd2f55f7502703a8495afb0486baf3a2c225e51835da",
-    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "evidenceSha256": "72974ca709ddad9f8548ef9f3e5177dd7b93b16c4d4d3d68d106c2fea3001659",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -2457,7 +2583,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20260414-1-q13": {
     "schemaVersion": 2,
@@ -2896,7 +3028,7 @@
     "questionId": "lckohyo-LC20260414-1-q24",
     "sourceSha256": "cefb20ecd19769423294d37d5ef99ad48db986caa97805b1b6732c0244d0bc2a",
     "candidateSha256": "88f0128fc66bfd28bf1e629a2fcf8a5de5d801be9c885c3a5e0e6c1b58ccd6c5",
-    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "evidenceSha256": "9c01c5ae4f15cecdd1e5a7eb466e513f524f4cfa1e1560fa42698e1c11cdb3a0",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -2940,7 +3072,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20260414-1-q26": {
     "schemaVersion": 2,
@@ -3379,7 +3517,7 @@
     "questionId": "lckohyo-LC20260415-1-q33",
     "sourceSha256": "2c75aa3659c19183b7f39e73ec6ab18cf598a544f238019b8549b2aed650d0a1",
     "candidateSha256": "6d79763fc0583ddfcfae4ca5911032295b7c5b1ed8149496e4db35f46808f354",
-    "evidenceSha256": "df608db3c2049e3e4023dc7b8ef8864b07e82156129c5c857d2a28045f51d254",
+    "evidenceSha256": "783a5be8709fa378aa955c464178386714885bb3dd7df3679872fd868af4ca81",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -3420,7 +3558,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "df608db3c2049e3e4023dc7b8ef8864b07e82156129c5c857d2a28045f51d254",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20260415-1-q22": {
     "schemaVersion": 2,
@@ -3969,7 +4113,7 @@
     "questionId": "lckohyo-LC20260415-1-q38",
     "sourceSha256": "2e014af4c709d08ae434ee4b88a380cb52ab47a76bbdd78a25989b8b0cac5c6d",
     "candidateSha256": "6781eb7938ba17d99695d77778381678752a1ced6ad12f88010b50448e9393c5",
-    "evidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "evidenceSha256": "37714a99aadbf241328352bb391a2ccd8301dcb01eedc285f089f24083c9f209",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -4012,7 +4156,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "a243812611a5b2feed7c3f5881352f6be4825247e11db547454de9a7b16c4613",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20260415-1-q40": {
     "schemaVersion": 2,
@@ -4439,7 +4589,7 @@
     "questionId": "lckohyo-LC20252114-q34",
     "sourceSha256": "daf6ce0e76d3232e2ce27760091c97d8719c77c759d443f27a1b06a5109434e4",
     "candidateSha256": "bef5636776225152550d553b3f4e50c212a053972fa4d2c50106c4178b2d0f9a",
-    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "evidenceSha256": "0325981e84e7ddb1fa6a258ae41bc31ac76e51d826179d02de6b7e0a4b660448",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -4481,7 +4631,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252114-q31": {
     "schemaVersion": 2,
@@ -4607,7 +4763,7 @@
     "questionId": "lckohyo-LC20252114-q30",
     "sourceSha256": "720ce2f270fbf84200dab72c76e577f83fbff6265eab0e52d7374c6308779725",
     "candidateSha256": "3f80dcd3443d9ae145841e66c72ded6cc12d9f4b83c446160abecc0968f7f10e",
-    "evidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "evidenceSha256": "0325981e84e7ddb1fa6a258ae41bc31ac76e51d826179d02de6b7e0a4b660448",
     "status": "PASS",
     "gateIssues": [],
     "assessment": {
@@ -4651,7 +4807,13 @@
         "costBasis": "list"
       }
     },
-    "provider": "firstParty"
+    "provider": "firstParty",
+    "legacyEvidenceSha256": "a119b743e5f145e67c3bb13e0b56edaad6b87ecc2063afbf61a7926714775c53",
+    "evidencePathMigration": {
+      "legacyRoot": "C:\\Users\\kanet\\20260522\\ipa-lckohyo-choices-20260923",
+      "reason": "evidence digest previously embedded the absolute checkout path",
+      "verified": "legacy digest reproduced byte-for-byte from current pack contents"
+    }
   },
   "lckohyo-LC20252114-q33": {
     "schemaVersion": 2,

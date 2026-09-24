@@ -19,6 +19,7 @@ from urllib.parse import urlparse
 
 import requests
 
+from egov_law_text import text_view
 from safety_choice_review_gate import (candidate_issues, digest, make_receipt, receipt_current,
                                       receipt_key, reuse_candidate_key, source_snapshot)
 
@@ -32,6 +33,21 @@ def write(path, value):
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     temp.replace(path)
+
+
+def pack_path(root, path):
+    """Root-relative POSIX path: evidence digests must not depend on the checkout location."""
+    return Path(path).resolve().relative_to(Path(root).resolve()).as_posix()
+
+
+def exam_window(paper):
+    """Association index: 2025-10 publication = exams 2025-01..06, 2026-04 = 2025-07..12;
+    the special boiler paper is a single October sitting of the previous year."""
+    if paper["subject"] == "特級ボイラー技士":
+        year = int(paper["date"][:4]) - 1
+        return {"start": f"{year}-10-01", "end": f"{year}-10-31"}
+    return {"2025-10": {"start": "2025-01-01", "end": "2025-06-30"},
+            "2026-04": {"start": "2025-07-01", "end": "2025-12-31"}}.get(paper["date"])
 
 
 def verified_official_pdf(root, paper):
@@ -127,11 +143,16 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
         cache = root / ".cache/safety-full-review/government-sources" / f"{receipt['sha256']}{suffix}"
         cache.parent.mkdir(parents=True, exist_ok=True)
         cache.write_bytes(payload)
-    value = {"retrievedOn": date.today().isoformat(),
+    rows = [pinned[url] for url in sorted(pinned)]
+    # Keep the pack byte-stable when nothing new was pinned; a date-only rewrite
+    # would silently invalidate every receipt that cites this pack.
+    stamp = (previous.get("retrievedOn") if previous.get("sources") == rows
+             and previous.get("retrievedOn") else date.today().isoformat())
+    value = {"retrievedOn": stamp,
              "notice": "Candidate evidence only; question-level Opus review is still required.",
-             "sources": [pinned[url] for url in sorted(pinned)]}
+             "sources": rows}
     write(path, value)
-    return {"path": str(path), "sha256": digest(value), "content": value}
+    return {"path": pack_path(root, path), "sha256": digest(value), "content": value}
 
 
 def refresh_question_sources(root, drafts, question_ids, group):
@@ -147,7 +168,7 @@ def refresh_question_sources(root, drafts, question_ids, group):
     path = root / f"docs/evidence/{group}-current-source-pins/{token}.json"
     if path.exists():
         value = read(path)
-        return {"path": str(path), "sha256": digest(value), "content": value}
+        return {"path": pack_path(root, path), "sha256": digest(value), "content": value}
     sources = []
     for url, references in sorted(rows.items()):
         parsed = urlparse(url)
@@ -177,7 +198,7 @@ def refresh_question_sources(root, drafts, question_ids, group):
              "notice": "Question-scoped current source bytes; no applicability is inferred.",
              "sources": sources}
     write(path, value)
-    return {"path": str(path), "sha256": digest(value), "content": value}
+    return {"path": pack_path(root, path), "sha256": digest(value), "content": value}
 
 
 def evidence_for_question(packs, question_id, urls):
@@ -219,6 +240,12 @@ def candidates(root, published, selections):
         else:
             result[qid] = overlay
     for qid, selected in selections.items():
+        # The private cache is not committed; published bytes with the selected
+        # digest are the selected candidate itself.
+        if (qid not in matched and qid in published
+                and digest(published[qid]) == selected.get("sha256")):
+            matched.add(qid)
+            result[qid] = published[qid]
         if qid not in matched:
             conflicts.add(qid)
     for qid in conflicts:
@@ -266,14 +293,14 @@ def main():
             # Keep only source records, not audit summaries/hold indexes.
             value = read(path)
             if isinstance(value, dict) and ("sources" in value or "evidence" in value):
-                packs.append({"path": str(path), "sha256": digest(value), "content": value})
+                packs.append({"path": pack_path(root, path), "sha256": digest(value), "content": value})
     target_prefixes = tuple(paper["id"] + "-q" for paper in catalog)
     target_drafts = {qid: candidate for qid, candidate in drafts.items()
                      if qid.startswith(target_prefixes)}
     refresh_folder = root / f"docs/evidence/{args.group}-current-source-pins"
     for path in refresh_folder.glob("*.json"):
         value = read(path)
-        packs.append({"path": str(path), "sha256": digest(value), "content": value})
+        packs.append({"path": pack_path(root, path), "sha256": digest(value), "content": value})
     if args.refresh_source_questions:
         refresh_ids = [qid.strip() for qid in args.refresh_source_questions.split(",") if qid.strip()]
         refreshed = refresh_question_sources(root, target_drafts, refresh_ids, args.group)
@@ -396,19 +423,30 @@ def main():
         shared_evidence = {item["sha256"]: item for row in batch for item in row["evidence"]}
         questions = []
         for row in batch:
-            source_records = {source.get("url"): source
-                              for item in row["evidence"]
-                              for source in item["content"].get("sources", [])}
+            source_records = {}
+            for item in row["evidence"]:
+                for source in item["content"].get("sources", []):
+                    known = source_records.get(source.get("url"))
+                    # Same display URL pinned twice: review the fuller bytes (API text,
+                    # not an 800-byte e-Gov page shell).
+                    if known is None or (source.get("retrieval", {}).get("bytes", 0)
+                                         > known.get("retrieval", {}).get("bytes", 0)):
+                        source_records[source.get("url")] = source
             local_sources = []
             for cited in row["candidate"].get("sources", []):
                 source = source_records.get(cited.get("url"))
                 if source is None:
                     raise ValueError(f"No SHA-pinned source bytes for {row['id']}: {cited.get('url')}")
+                local = verified_government_source(root, source)
                 local_sources.append({"url": cited["url"], "title": source.get("title"),
                                       "locators": source.get("locators", []),
+                                      "inForceOn": source.get("inForceOn", []),
                                       "sha256": source["retrieval"]["sha256"],
-                                      "localPath": str(verified_government_source(root, source))})
+                                      "localPath": str(local)})
+                if text_view(local):
+                    local_sources[-1]["textPath"] = text_view(local)
             questions.append(dict({k: v for k, v in row.items() if k != "evidence"},
+                                  examWindow=exam_window(row["snapshot"]["paper"]),
                                   officialPdfLocalPath=str(pdf_paths[row["snapshot"]["paper"]["id"]]),
                                   governmentSourceFiles=local_sources))
         payload = {"questions": questions, "sharedEvidence": list(shared_evidence.values())}
@@ -421,6 +459,9 @@ def main():
                   "sourceSupportChecked(真偽値)。すべて確認した場合だけtrue。"
                   "evidenceUrlsにはcandidate.sourcesの全URLをそのまま含め、公式問題PDFのexam.or.jp URLは"
                   "governmentSourceFilesではないため含めない。"
+                  "textPathはlocalPathと同一の取得バイトから機械生成した検索用テキストで、条項はGrepで探してよい。"
+                  "examWindowは協会が示す実施期間。inForceOnはその法令版が施行中だった境界日。"
+                  "期間の両端で版が異なれば両方の版で該当条項を確認し、出題時の適用を判断できなければHOLD。"
                   "根拠パックは探索の補助であり信頼せず原本を確認。ファイル編集禁止。\n"
                   + json.dumps(payload, ensure_ascii=False))
         token = digest(batch)[:16]

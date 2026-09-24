@@ -11,12 +11,16 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
+import sys
 from urllib.parse import urlparse
 
 import requests
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from egov_law_text import text_view  # noqa: E402
 DATA = ROOT / "data/exam-library"
 LOG = ROOT / ".cache/safety-choice-lckohyo"
 EVIDENCE = ROOT / "docs/evidence/lckohyo-choice-batches"
@@ -122,12 +126,16 @@ def extract_json(content, expected_ids=None):
 
 def call_claude(prompt, prefix, model, return_model=False,
                 tools=("Read", "Glob", "Grep", "WebSearch", "WebFetch")):
-    cli = Path(os.environ["APPDATA"]) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe"
+    cli = Path(os.environ.get("CLAUDE_CLI") or shutil.which("claude") or
+               Path(os.environ.get("APPDATA", "")) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe")
     if not cli.exists():
         raise RuntimeError(f"Claude CLI missing: {cli}")
     prefix.parent.mkdir(parents=True, exist_ok=True)
     prefix.with_suffix(".prompt.txt").write_text(prompt, encoding="utf-8")
-    env = dict(os.environ, CLAUDE_CODE_MAX_OUTPUT_TOKENS="64000")
+    # Non-essential traffic (titles, tips) would otherwise add a second model to
+    # modelUsage and make the single-model review proof unverifiable.
+    env = dict(os.environ, CLAUDE_CODE_MAX_OUTPUT_TOKENS="64000",
+               CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC="1")
     tool_list = ",".join(tools)
     command = [str(cli), "-p", "--model", model, "--effort", "high", "--output-format", "stream-json",
                "--verbose", "--allowedTools", tool_list, "--tools", tool_list]
@@ -161,6 +169,9 @@ def call_claude(prompt, prefix, model, return_model=False,
         )
     model_proof = {"requestedModel": model, "resolvedModel": model,
                    "rawResolvedModel": result_row.get("resolvedModel"),
+                   "rawResponseSha256": sha256(raw.encode("utf-8")).hexdigest(),
+                   "resultSha256": sha256(content.encode("utf-8")).hexdigest(),
+                   "sessionId": result_row.get("session_id"),
                    "modelUsage": model_usage, "provider": usage["provider"]}
     return (result, model_proof) if return_model else result
 
@@ -185,6 +196,8 @@ def source_hints(batch):
                    "locators": item["locators"], "retrievalSha256": digest_value}
             if local:
                 row["localPath"] = str(local)
+                if text_view(local):
+                    row["textPath"] = text_view(local)
             hints_by_url[item["url"]] = row
     for current_path in (ROOT / "docs/evidence/lckohyo-current-source-pins").glob("*.json"):
         for item in read(current_path).get("sources", []):
@@ -193,9 +206,16 @@ def source_hints(batch):
                           (ROOT / ".cache/safety-full-review/government-sources").glob(
                               f"{digest_value}.*")), None)
             if local:
+                if item["url"] in hints_by_url and item["retrieval"].get("bytes", 0) < \
+                        hints_by_url[item["url"]].get("bytes", 0):
+                    continue  # keep the fuller pinned copy (e.g. API text over a page shell)
                 hints_by_url[item["url"]] = {"title": item["title"], "url": item["url"],
                     "locators": item.get("locators", []), "retrievalSha256": digest_value,
+                    "bytes": item["retrieval"].get("bytes", 0),
+                    "inForceOn": item.get("inForceOn", []),
                     "localPath": str(local)}
+                if text_view(local):
+                    hints_by_url[item["url"]]["textPath"] = text_view(local)
     hold_path = ROOT / "docs/evidence/lckohyo-choice-hold-source-index-20260923.json"
     if hold_path.exists():
         holds = read(hold_path).get("questions", {})
@@ -223,12 +243,23 @@ def source_hints(batch):
     return list(hints_by_url.values())
 
 
+def exam_window(paper):
+    """Association index: 2025-10 publication = exams 2025-01..06, 2026-04 = 2025-07..12;
+    the special boiler paper is a single October sitting of the previous year."""
+    if paper["subject"] == "特級ボイラー技士":
+        year = int(paper["date"][:4]) - 1
+        return {"start": f"{year}-10-01", "end": f"{year}-10-31"}
+    return {"2025-10": {"start": "2025-01-01", "end": "2025-06-30"},
+            "2026-04": {"start": "2025-07-01", "end": "2025-12-31"}}[paper["date"]]
+
+
 def batch_prompt(batch):
     hints = source_hints(batch)
     return f"""あなたは日本の免許試験教材の執筆者です。次の{len(batch)}問についてJSONだけを返してください。既存のplainExplanationは草稿であり、正誤の正本はquestion.textとcorrectChoiceおよび公式PDFの○印です。
 各問は {{"question-id": {{"correctChoice": 数値, "summary": 20字以上, "choices": [{{"number":1,"verdict":"correctまたはincorrect","reason":"各肢固有の40字以上の理由"}}を1～5], "sources":[{{"title":"政府資料の正確なタイトル","url":"https://...go.jp/..."}}]}} }} の形。sourceHashは付けず、採用時に原文から機械計算します。
 verdictは『その肢を解答として選ぶと正解か』であり、『誤っているもの』を選ぶ設問の正答肢もcorrectです。残り4肢それぞれについて、なぜ選ばないかをその肢の語句・数値・条件に即して説明します。丸写し、理由の使い回し、未確認条文、架空URL、一般論は不可。
 根拠URLはe-Gov、厚生労働省等の日本政府のHTTPS *.go.jpに限定。協会PDFは設問と正答の確認用でありsourcesに入れません。法令は出題時点と現行を混同せず、条・項・号を一次資料で確認してください。図表参照の問題では添付されたimagesや公式PDF原図を確認してください。全件のIDを返し、不確かな事項は最後に別文でなく該当reasonに慎重な確定事実だけを書いてください。確認できない問があれば空欄で量産せずJSONの外で理由を報告してください。ファイル編集・投稿・コミットは禁止。
+textPathはlocalPathと同一の取得バイトから機械生成した検索用テキストで、条番号・号・別表はGrepで探す。inForceOnはその法令版が施行中だった出題期間の境界日。各問のexamWindowの始期と終期で版が異なる場合は、両方の版で該当条項が同じ内容か確認し、異なれば出題時点の扱いをreasonに正確に書くか確認不能としてHOLD理由を返す。
 同一資格の既検証source-pack候補（取得ハッシュは同一資料を探すためのもので、この問題への適用を保証しない）。localPathがある資料はReadで実体を確認する。該当条文・頁・出題時点が一致するものだけを使う。Webツールは使えないため、提示資料で全5肢を直接裏付けられない問は返答JSONから省略せず、各reasonを推測で埋めずに明示的なHOLD理由として返すこと。JIS固有の数値を法令だけで代用しない: {json.dumps(hints, ensure_ascii=False)}
 入力JSON: {json.dumps(batch, ensure_ascii=False)}
 """
@@ -282,6 +313,8 @@ def main():
     parser.add_argument("--workers", type=int, default=3)
     parser.add_argument("--model", default="claude-opus-5-5")
     parser.add_argument("--paper-id", help="Author one complete paper at a time; global coverage still audited")
+    parser.add_argument("--question-ids", type=Path,
+                        help="JSON array file restricting authoring to source-ready question IDs")
     args = parser.parse_args()
     if not 5 <= args.batch_size <= 8 or not 1 <= args.workers <= 3 or args.max_batches < 0 or args.skip_first < 0:
         parser.error("batch-size must be 5..8, workers 1..3, max-batches nonnegative")
@@ -304,7 +337,8 @@ def main():
         paper = catalog[paper_id]
         for q in read(path):
             if q["answerAuthority"] == "official" and q["choiceCount"] == 5:
-                question_map[q["id"]] = dict(q, subject=paper["subject"], pdfUrl=paper["pdfUrl"])
+                question_map[q["id"]] = dict(q, subject=paper["subject"], pdfUrl=paper["pdfUrl"],
+                                             examWindow=exam_window(paper))
                 paper_counts[year] += 1
     if paper_counts != target_counts:
         raise SystemExit(f"Target paper counts drifted: {paper_counts} != {target_counts}")
@@ -322,8 +356,11 @@ def main():
                 raise SystemExit("; ".join(issues))
     selected_ids = [qid for qid in question_map if not args.paper_id or qid.startswith(args.paper_id + "-q")]
     missing = []
+    only = set(read(args.question_ids)) if args.question_ids else None
     for qid, q in question_map.items():
         if args.paper_id and not qid.startswith(args.paper_id + "-q"):
+            continue
+        if only is not None and qid not in only:
             continue
         if qid not in overlays and qid not in cached_candidate_ids:
             image_paths = []
