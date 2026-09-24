@@ -365,45 +365,79 @@
       "overlay": {
         "sourceHash": "f8f0208fdf3ca465b9afa7e4b51eab41dff024bfc2c421ada95bf09671ff66f1",
         "correctChoice": 2,
-        "summary": "対数正規分布の幾何平均値は正の値のみをとり、−∞～∞をとるのは対数変換後の平均である。",
+        "summary": "対数正規分布の幾何平均値は対数の平均を指数で戻した値なので常に正（0〜∞）であり、−∞〜∞とする肢2が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "正規分布で上側に5％だけ残る片側95％点は、標準正規分布の上側5％点1.645を用いてμ＋1.645σとなるので、この記述は正しい。両側95％区間で使う1.96とは用途が異なり、作業環境評価基準の第一評価値の式にも1.645が用いられている。"
+            "reason": "正規分布で上側に5％だけが残る値（95％上限値）は μ＋1.645σ である。厚労省の専門家委員会資料も、対数値の平均と標準偏差を使って上側95％値を log(X95)=log(GM)+1.645log(GSD) と求めており、平均＋1.645×標準偏差の形になっている。記述は正しい。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "幾何平均値は対数値の平均を指数変換で元の尺度に戻した値であり、濃度のように正の値だけをとる対数正規分布では必ず0より大きい。−∞～∞の範囲をとるのは対数変換後の変数の平均の側で、幾何平均の範囲は0～∞であるため、この記述が誤りである。"
+            "reason": "対数正規分布は、確率変数の対数値が正規分布をする分布で、変数は正の値だけをとる。産総研資料の式 GM＝exp［…］のとおり幾何平均値は指数関数の値なので必ず0より大きく、範囲は0〜∞である。−∞〜∞をとるのは対数値の平均のほうであり、記述は誤りで、これが正答。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "幾何標準偏差は対数値の標準偏差sを元の尺度に戻した10^s（またはe^s）であり、s≧0なので値は必ず1以上になる。全データが同じ値でばらつきがないときにちょうど1となり、1未満にはならないので、この記述は正しい。"
+            "reason": "産総研資料の式 GSD=exp［ln{(AM²+ASD²)/AM²}］^(1/2) では、(AM²+ASD²)/AM² は1以上なので ln は0以上となり、GSD＝exp(0以上)は必ず1以上になる。ばらつきがない（ASD＝0）ときにちょうど1で、1未満にはならないので記述は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "作業環境中の有害物質濃度は負にならず、高濃度側に長く裾を引く分布を示すため、対数正規分布で近似される。作業環境評価基準の評価値もA測定値の幾何平均値と幾何標準偏差から計算しており、この前提と整合するので記述は正しい。"
+            "reason": "作業環境評価基準は、A測定値の幾何平均値と幾何標準偏差の対数を使って第一評価値を計算する。厚労省の専門家委員会資料は、第1評価値に相当する値を「対数正規分布の上側95%値」とし、その計算は作業環境測定と同じとしている。濃度分布を対数正規分布で近似する前提であり、記述は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "対数正規分布では幾何標準偏差が同程度なら変動係数（標準偏差÷算術平均）もほぼ一定となり、濃度の算術平均が高い作業場ほど標準偏差も比例して大きくなる。作業環境濃度で一般にみられる傾向として、この記述は正しい。"
+            "reason": "産総研資料の式では、幾何標準偏差GSDは算術標準偏差と算術平均の比（ASD/AM）だけで決まる。濃度のばらつき方（GSD）が同程度なら、算術平均が高いほど標準偏差もそれに比例して大きくなる。厚労省資料もGSDが典型値2〜3ならX95/AMがほぼ一定（2.5〜3.3）としており、記述は正しい。"
           }
         ],
         "sources": [
           {
+            "title": "厚生労働省 個人サンプラーを活用した作業環境管理のための専門家委員会 資料",
+            "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf"
+          },
+          {
             "title": "厚生労働省 作業環境評価基準",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "産業技術総合研究所 暴露の個人差 幾何標準偏差値（GSD）の推定方法",
+            "url": "https://unit.aist.go.jp/riss/crm/exposurefactors/documents/variability/calculation_method.pdf"
+          },
+          {
+            "title": "エネルギー・金属鉱物資源機構 用語辞典 対数正規分布",
+            "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/tachi/lognormal.html"
           }
         ]
       },
       "sourceEvidence": [
         {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf",
+          "excerpt": "対数正規分布の上側95%値：X95[第1評価値に相当]",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf",
+          "excerpt": "X95の計算は作業環境測定と同じ。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf",
+          "excerpt": "log(X95)=log(GM)+1.645log(GSD)（GM：幾何平均値），GSD：幾何標準偏差）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
-          "excerpt": "＝logM 1 ＋1.645√(log 2 σ 1 ＋0.084)",
+          "excerpt": "logEA1＝logM1＋1.645√(log2σ1＋0.084)",
           "choiceNumbers": [
             1,
             4
@@ -411,24 +445,42 @@
         },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
-          "excerpt": "M 1 A測定の測定値の幾何平均値",
+          "excerpt": "M1A測定の測定値の幾何平均値σ1A測定の測定値の幾何標準偏差",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
-          "excerpt": "σ 1 A測定の測定値の幾何標準偏差",
+          "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/tachi/lognormal.html",
+          "excerpt": "確率変数の対数値が正規分布をするような統計分布を対数正規分布という。",
           "choiceNumbers": [
-            4
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/exposurefactors/documents/variability/calculation_method.pdf",
+          "excerpt": "GM＝exp［ln（AM）－{ln（GSD）}2／2］1/2",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/riss/crm/exposurefactors/documents/variability/calculation_method.pdf",
+          "excerpt": "GSD=exp［ln{（AM2+ASD2）／AM2}］1/2",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf",
+          "excerpt": "対数正規分布で「幾何標準偏差(GSD)」が典型的な値（2～3）の場合、「X95/AM」は2.5～3.3程度の値を取る",
+          "choiceNumbers": [
+            5
           ]
         }
       ],
-      "reviewIssues": [
-        "正答肢2（幾何平均値の値域が0～∞であること）を直接述べる政府資料の本文は確認できていない。数学的性質に基づく判断であり、正答理由を直接支える抜粋が不足している。検索が必要。",
-        "肢3（幾何標準偏差≧1）と肢5（平均が高いほど標準偏差も大きい）も統計的性質に基づく判断で、政府資料での直接確認は未了（検索が必要）。",
-        "作業環境評価基準は幾何平均値・幾何標準偏差を用いた評価式を定めるのみで、『濃度分布は対数正規分布で近似される』と明記した本文は抜粋に含まれない。肢4の根拠としては間接的であり、明記した政府資料の検索が必要。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-20260217-3-q19": {
       "overlay": {
