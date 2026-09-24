@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1652,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 12662,
+      "webSearchRequests": 0,
+      "costUSD": 0.1345998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 936,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-4-q12-12-raw-response.txt",
+  "rawResponseSha256": "4f2fddebd62b2bc91a263e9f357725f0f53de1fd11397b810525e43521cf62a4",
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q12"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q12": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q12": {
+      "/exam-library/emkohyo-20260217-4/q12-p7-1.webp": "3ab971411b472d2cf4f82d8a72aedb553aa61bb24b13d28a3545d2902f58e8a5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q12": "716410acba715abbafd88eaff7e9e5d7b54afcac14685377545a9fa6794dcbf2"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q12-12.json",
+  "sourcePackSha256": "49ee074629403b5996fbf6cfa99856ac621519a340de38f5cc1b89c0943a1e8a",
+  "assessment": {
+    "emkohyo-20260217-4-q12": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢2: 根拠として添付された抜粋「又はガラスろ過器(G3又はG4)を用いてろ過し，次の標定を行う．標定アミド硫酸(標準試薬)」（pdfPage 273）は、context上「調製水酸化カリウム65gを水950mLに溶かし…」に続く文で、水酸化カリウム液の標定手順です。水酸化ナトリウム液の標定ではありません。もう一つの抜粋（pdfPage 274）は1 mol/L水酸化ナトリウム液の見出しと調製の冒頭だけで、標定に何を使うかは含みません。このため、解説の「日本薬局方の1 mol/L水酸化ナトリウム液は、調製後の標定にアミド硫酸（標準試薬）を用いると規定している」という記述を、添付証拠は直接支えていません。水酸化ナトリウム液の項にある『標定　アミド硫酸(標準試薬)…』の該当箇所を抜粋として差し替える必要があります。",
+        "肢5: 環境省教材（pdfPage 40）が滴定の条件として挙げるのは「反応が定量的に進行すること」「反応速度が大きいこと」です。「平衡定数が大きい」という語は含まれていません。解説は「定量的に進行する＝平衡定数が大きい」という推論で橋渡ししており、化学的には妥当ですが、平衡定数の部分を政府資料が直接支えているわけではありません。"
+      ],
+      "needsExternalCheck": [
+        "第十九改正日本薬局方 9.21 容量分析用標準液の「1 mol/L水酸化ナトリウム液」の項で、標定がアミド硫酸(標準試薬)を用いると明記されていることを、該当ページ（pdfPage 274付近）で確認すること"
+      ]
+    }
+  }
+}
