@@ -3421,5 +3421,302 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q22": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q22",
+    "sourceSha256": "88357047b9dca256e1bae8657c2d8dd563e87d6508a1409a952eb650544fbca3",
+    "candidateSha256": "3141891fdafb152999bad56aa5894a92c025ef3f7d04a38a90cdf46937ddac69",
+    "evidenceSha256": "8681528607a76c212beeb8835ddbcabcc3515504da5ab129a1fb95d3a322ba31",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの12ページ（一衛11/22）では、○印が(5)に付いています。候補の正答5と一致します。本文と画像 q22-p12-1.webp も公式PDFと一致しました。",
+        "candidate.sources の e-Gov URL の取得ファイル（sha256 b2e5ede6…）は、条文のない SPA 外枠 HTML（800 bytes）でした。安衛法81条2項、83条、84条1項、85条2項、85条の2、86条2項のいずれも、政府一次資料で確認できていません。",
+        "governmentSourceFiles の title は『第66条の8・第66条の8の3』となっており、本問の条項（81条～86条）と一致しません。",
+        "肢(1)の試験区分（保健衛生・労働衛生工学）と肢(2)の登録事項（生年月日）は省令事項です。根拠の省令（労働安全コンサルタント及び労働衛生コンサルタント規則）が出典に入っておらず、未確認です。候補自身も HOLD としています。",
+        "肢(5)は、記録・3年保存の義務が存在しないことの確認が必要です。省令を含めた不存在を一次資料で確認できていません。候補も HOLD 注記付きです。",
+        "令和8年4月1日施行版が出題時点で適用されるかも、確認できていません。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347AC0000000057/20260401_507AC0000000033"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 5958,
+        "cacheReadInputTokens": 904052,
+        "cacheCreationInputTokens": 104424,
+        "webSearchRequests": 0,
+        "costUSD": 1.1354104,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1533,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q24": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q24",
+    "sourceSha256": "4ed8a042f66bbfaff3459256c3ac47ceabd67dac185dfe78daf93aaf83cfa1fb",
+    "candidateSha256": "49c82cca0796ead3cd04288d407ca7ef0d0941b8051e65b7a90429967cc9244b",
+    "evidenceSha256": "8681528607a76c212beeb8835ddbcabcc3515504da5ab129a1fb95d3a322ba31",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの13ページ（一衛12/22）では、○印が(1)に付いています。候補の正答1と一致します。本文と画像 q24-p13-1.webp も公式PDFと一致しました。",
+        "candidate.sources の2つの e-Gov URL の取得ファイルは、どちらも同じハッシュ（b2e5ede6…）の SPA 外枠 HTML（800 bytes）で、条文は入っていません。",
+        "安衛則52条の2第1項（月80時間超かつ疲労の蓄積）、52条の3第1項（申出）、52条の6第1項（5年保存）、52条の7（遅滞なく意見聴取）、52条の7の3第1項（客観的な方法）の文言は、政府一次資料で確認できていません。安衛法66条の8第2項ただし書と66条の8の3も同様に未確認です。",
+        "安衛則の governmentSourceFiles の title は『第13条・第14条の3・第15条』で、本問の条項と一致しません。",
+        "安衛則は令和7年4月1日施行版、安衛法は令和8年4月1日施行版と、版がそろっていません。出題時点での適用版を確認できていません。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121",
+        "https://laws.e-gov.go.jp/law/347AC0000000057/20260401_507AC0000000033"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 5958,
+        "cacheReadInputTokens": 904052,
+        "cacheCreationInputTokens": 104424,
+        "webSearchRequests": 0,
+        "costUSD": 1.1354104,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1533,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q21": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q21",
+    "sourceSha256": "c53d5c25fe770de679243a87652b5aad0a7afbbb4df862c7370ec18f000d0490",
+    "candidateSha256": "1c23205ddd9240cbdc64932b9cb70d693939a3879a03681ce0e8d2eb0a6eec69",
+    "evidenceSha256": "8681528607a76c212beeb8835ddbcabcc3515504da5ab129a1fb95d3a322ba31",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの12ページ（一衛11/22）では、○印が(2)に付いています。候補の正答2と一致します。本文と画像 q21-p12-0.webp も公式PDFと一致しました。",
+        "candidate.sources の e-Gov URL の取得ファイル（sha256 b2e5ede6…）は、e-Gov の SPA 外枠 HTML（800 bytes、<div id=\"app\"></div> のみ）でした。法令の条文は入っていません。",
+        "そのため、安衛則13条1項1号（14日以内）、13条1項4号（3,000人超で2人以上）、13条4項（辞任・解任の報告）、14条の3第2項（勧告の記録と3年保存）、15条（2か月に1回の巡視）の文言は、政府一次資料で確認できていません。",
+        "ピン留めされた版は令和7年4月1日施行版です。2026年4月公表の問題に対して、出題時点で適用される版かどうかを確認できていません。",
+        "この取得ファイルは労働安全衛生法の URL と同じハッシュです。governmentSourceFiles の title も各問で使い回されており、出典の同一性を確認できません。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 5958,
+        "cacheReadInputTokens": 904052,
+        "cacheCreationInputTokens": 104424,
+        "webSearchRequests": 0,
+        "costUSD": 1.1354104,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1533,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q23": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q23",
+    "sourceSha256": "27e977f8cc431e4192881225d6ffa2d0f58e3288a5fe475365a2c0aaaeea2681",
+    "candidateSha256": "5e75eadedb7e655dd72c01445b463c08e72ddf9cafa6aa05a4b48dc95048854e",
+    "evidenceSha256": "8681528607a76c212beeb8835ddbcabcc3515504da5ab129a1fb95d3a322ba31",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの13ページ（一衛12/22）では、○印が(1)に付いています。候補の正答1と一致します。本文と画像 q23-p13-0.webp も公式PDFと一致しました。",
+        "candidate.sources の e-Gov URL の取得ファイル（sha256 b2e5ede6…）は、条文のない SPA 外枠 HTML（800 bytes）でした。安衛則44条1項の各号（1号 業務歴、3号 腹囲、4号 胸部X線、6号 貧血、11号 心電図）と、同条2項の省略対象号は、政府一次資料で確認できていません。",
+        "肢(2)の腹囲は、省略の可否が大臣告示の基準によります。その告示が出典に含まれておらず、未確認です。",
+        "governmentSourceFiles の title は『第13条・第14条の3・第15条』で、本問の44条と一致しません。",
+        "令和7年4月1日施行版が、2026年4月公表の問題の出題時点で適用されるかを確認できていません。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 5958,
+        "cacheReadInputTokens": 904052,
+        "cacheCreationInputTokens": 104424,
+        "webSearchRequests": 0,
+        "costUSD": 1.1354104,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1533,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q25": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q25",
+    "sourceSha256": "ae67da59be0ce391deef8e2f2777390c83ef2417170a25e197dd0b83b0320875",
+    "candidateSha256": "1d8355d1f411e0d5bae4619a6d8e75c70c01e1c1503179e929a1095cad2457c8",
+    "evidenceSha256": "8681528607a76c212beeb8835ddbcabcc3515504da5ab129a1fb95d3a322ba31",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの14ページ（一衛13/22）では、○印が(5)に付いています。候補の正答5と一致します。画像 q25-p14-0.webp も公式PDFと一致しました。",
+        "snapshot 本文の肢(3)に『が が』という行が混入しています。これは『臥床』のルビ（が）を誤って抽出したものです。原文の意味は変わりませんが、本文に抽出の不備があります。",
+        "candidate.sources の e-Gov URL の取得ファイル（sha256 b2e5ede6…）は、条文のない SPA 外枠 HTML（800 bytes）でした。安衛則600条（4m超を除いて1人10㎥）、601条1項（開口部1/20以上）、604条（照度 300/150/70ルクス）、618条（常時50人以上又は女性30人以上）、630条15号（炊事場専用の履物）の文言は、政府一次資料で確認できていません。",
+        "governmentSourceFiles の title は『第13条・第14条の3・第15条』で、本問の条項と一致しません。",
+        "令和7年4月1日施行版が出題時点で適用されるかを確認できていません。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 12,
+        "outputTokens": 5958,
+        "cacheReadInputTokens": 904052,
+        "cacheCreationInputTokens": 104424,
+        "webSearchRequests": 0,
+        "costUSD": 1.1354104,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1533,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
