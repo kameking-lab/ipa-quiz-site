@@ -63,9 +63,10 @@ for (const c of cases) {
   });
 }
 
-test("denken3 remains unreachable until its content acceptance is complete", async ({ page }) => {
+test("denken3 is reachable after content acceptance", async ({ page }) => {
   const response = await page.goto("/denken3");
-  expect(response?.status()).toBe(404);
+  expect(response?.status()).toBe(200);
+  await expect(page.getByRole("heading", { level: 1 })).toContainText("電験三種の過去問");
 });
 
 test("denko2 publishes four full sittings with wrong-choice explanations and return progress", async ({ page }) => {
