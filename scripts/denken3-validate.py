@@ -7,6 +7,9 @@ from pathlib import Path
 import sys
 from urllib.parse import urlparse
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
@@ -106,7 +109,7 @@ def validate_partial(data: dict) -> None:
     for receipt_path in sorted(PARTIAL.glob("*.json")):
         receipt = json.loads(receipt_path.read_text(encoding="utf-8"))
         data_path = REVIEWED / receipt_path.name
-        if not data_path.is_file() or sha256(data_path.read_bytes()).hexdigest() != receipt["reviewedDataSha256"]:
+        if not data_path.is_file() or receipt["reviewedDataSha256"] not in denken3_cli.text_digests(data_path):
             raise ValueError(f"Partial data changed after receipt: {data_path}")
         rows = json.loads(data_path.read_text(encoding="utf-8"))
         if receipt["status"] != "partial-accepted" or len(rows) != receipt["answerUnitCount"]:

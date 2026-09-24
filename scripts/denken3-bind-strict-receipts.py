@@ -7,6 +7,10 @@ The raw Claude response must still exist in the ignored private review tree.
 from hashlib import sha256
 import json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -31,8 +35,8 @@ def receipt_is_valid(path: Path, receipt: dict) -> bool:
         return False
     stem = path.stem.removesuffix("-opus")
     date, subject = stem.split("-", 2)[:2]
-    raw = RAW / date / subject / f"{stem}-opus-raw.jsonl"
-    return raw.is_file() and digest(raw.read_bytes()) == receipt.get("rawResponseSha256")
+    raw = denken3_cli.raw_file(RAW / date / subject / f"{stem}-opus-raw.jsonl")
+    return raw is not None and digest(raw.read_bytes()) == receipt.get("rawResponseSha256")
 
 
 def main() -> None:
@@ -73,10 +77,14 @@ def main() -> None:
             _, path, _ = max(matched, key=lambda item: item[0])
             binding = {"path": path.relative_to(ROOT).as_posix(), "sha256": digest(path.read_bytes()),
                        "status": "PASS", "resolvedModel": "claude-opus-5-5"}
+            previous = mapping.get(key) or {}
+            if previous.get("path") == binding["path"] and previous.get("sha256") in denken3_cli.text_digests(path):
+                continue  # same receipt, hashed under the other line-ending convention
             if mapping.get(key) != binding:
                 mapping[key] = binding
                 attached += 1
-        evidence["reviewedDataSha256"] = digest(candidate_path.read_bytes())
+        if evidence.get("reviewedDataSha256") not in denken3_cli.text_digests(candidate_path):
+            evidence["reviewedDataSha256"] = digest(candidate_path.read_bytes())
         evidence["strictReview"] = mapping
         evidence_path.write_text(json.dumps(evidence, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"strict bindings updated={attached}; pending={len(pending)}")

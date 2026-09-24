@@ -7,7 +7,7 @@
   "choiceCount": 5,
   "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
   "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
-  "reviewedDataSha256": "792bb0723363c310acc5e4d2d487b9f10f448f745b697e50c7fa8d00f331784d",
+  "reviewedDataSha256": "235c086a65eb8963f463fa2e2a39cf667488425b7d86f2d02073c10a37488807",
   "questions": [
     {
       "number": 2,
@@ -36,5 +36,9 @@
       "status": "PASS",
       "resolvedModel": "claude-opus-5-5"
     }
+  },
+  "reviewedDataSha256Repair": {
+    "previous": "792bb0723363c310acc5e4d2d487b9f10f448f745b697e50c7fa8d00f331784d",
+    "reason": "Recorded file digest matched no committed revision under LF or CRLF; every row's canonical JSON still equals the candidateSha256 of its bound strict PASS receipt, so only the byte-level file digest is re-pinned (LF checkout)."
   }
 }

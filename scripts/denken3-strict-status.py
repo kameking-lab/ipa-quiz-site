@@ -3,6 +3,10 @@
 from hashlib import sha256
 import json
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,6 +50,9 @@ def main() -> None:
                 raise ValueError(f"Unrecognized/wrong official answer: {id_}")
             candidates[id_] = row
     passed = {}
+    # Units whose every pinned hash matches but whose raw response exists only in
+    # another operator's private tree. Reported separately; never counted as strict.
+    raw_elsewhere = {}
     for path in sorted(STRICT.glob("*-opus.json")):
         receipt = json.loads(path.read_text(encoding="utf-8"))
         if receipt.get("resolvedModel") != "claude-opus-5-5":
@@ -54,8 +61,8 @@ def main() -> None:
         if usage.get("canonicalModel") != "claude-opus-5-5" or usage.get("provider") != "firstParty":
             continue
         date, subject = receipt["examDate"], receipt["subject"]
-        raw = PRIVATE / date / subject / f"{path.stem}-raw.jsonl"
-        if not raw.is_file() or digest(raw) != receipt.get("rawResponseSha256"):
+        raw = denken3_cli.raw_file(PRIVATE / date / subject / f"{path.stem}-raw.jsonl")
+        if raw is not None and digest(raw) != receipt.get("rawResponseSha256"):
             continue
         hashes = receipt["inputHashes"]
         for item in receipt["assessment"]:
@@ -83,15 +90,17 @@ def main() -> None:
                    for source, value in hashes.get("referenceJsonSha256", {}).items()):
                 continue
             if item["status"] == "PASS" and all(item.get(issue) == [] for issue in ISSUES):
-                passed[id_] = str(path.relative_to(ROOT)).replace("\\", "/")
+                (passed if raw is not None else raw_elsewhere)[id_] = str(path.relative_to(ROOT)).replace("\\", "/")
     grouped = {}
     for id_ in expected:
         group = id_[0], id_[1]
-        grouped.setdefault(group, {"expected": 0, "candidate": 0, "strictPass": 0})
+        grouped.setdefault(group, {"expected": 0, "candidate": 0, "strictPass": 0, "passRawNotInCheckout": 0})
         grouped[group]["expected"] += 1
         grouped[group]["candidate"] += id_ in candidates
         grouped[group]["strictPass"] += id_ in passed
-    total = {field: sum(row[field] for row in grouped.values()) for field in ("expected", "candidate", "strictPass")}
+        grouped[group]["passRawNotInCheckout"] += id_ in raw_elsewhere and id_ not in passed
+    total = {field: sum(row[field] for row in grouped.values())
+             for field in ("expected", "candidate", "strictPass", "passRawNotInCheckout")}
     print(json.dumps({"total": total, "byPaper": {f"{date}-{subject}": row for (date, subject), row in sorted(grouped.items())}},
                      ensure_ascii=False, indent=2))
 

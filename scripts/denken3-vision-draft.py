@@ -10,27 +10,15 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from hashlib import sha256
 import json
 from pathlib import Path
-import re
-import subprocess
 import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
 REVIEW = ROOT / "data/raw_pdfs/denken3/review"
-CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
-
-
-def parse_json_result(stdout: str) -> dict:
-    events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
-    final = next((event for event in reversed(events) if event.get("type") == "result"), None)
-    if final is None or final.get("is_error"):
-        raise ValueError(f"No successful Claude result: {stdout[-1000:]}")
-    value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
-    start, end = value.find("{"), value.rfind("}")
-    if start < 0 or end < start:
-        raise ValueError(f"No JSON object in Claude result: {value[-1000:]}")
-    return json.loads(value[start:end + 1])
 
 
 def draft(date: str, subject: str, number: int) -> None:
@@ -64,15 +52,8 @@ def draft(date: str, subject: str, number: int) -> None:
         blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                    "data": b64encode(path.read_bytes()).decode("ascii")}})
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
-    process = subprocess.run(
-        [str(CLI), "-p", "--model", "sonnet", "--effort", "medium", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", ""],
-        input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
-        capture_output=True, cwd=ROOT, timeout=420,
-    )
-    if process.returncode:
-        raise RuntimeError(f"Claude exit {process.returncode}: {(process.stderr or process.stdout)[-1000:]}")
-    result = parse_json_result(process.stdout)
+    stdout, model_usage, text = denken3_cli.run(request, "high", 900)
+    result = denken3_cli.extract_json(text, "{")
     if result.get("questionNumber") != number or len(result.get("units", [])) != len(units):
         raise ValueError(f"Vision result omitted/added answer units: {date} {subject} q{number}")
     expected = {(item["part"], item["answer"]) for item in units}
@@ -88,7 +69,12 @@ def draft(date: str, subject: str, number: int) -> None:
         row["sourceQuestionPdfUrl"] = paper["url"]
         row["sourceAnswerPdfUrl"] = session["officialAnswer"]["url"]
         row["reviewedFromPage"] = info["pdfPages"]
-    result["draftModel"] = "claude-sonnet-4-6"
+    raw_out = REVIEW / date / subject / f"q{number:02}-vision-draft-raw.jsonl"
+    result["draftModel"] = denken3_cli.MODEL
+    result["resolvedModel"] = denken3_cli.MODEL
+    result["modelUsage"] = model_usage
+    result["rawResponseSha256"] = denken3_cli.save_raw(raw_out, stdout)
+    result["inputRequestSha256"] = sha256((json.dumps(request, ensure_ascii=False) + "\n").encode("utf-8")).hexdigest()
     result["sourceQuestionPdfSha256"] = paper["sha256"]
     result["sourceAnswerPdfSha256"] = session["officialAnswer"]["sha256"]
     result["sourcePageImageSha256"] = {path: sha256((ROOT / path).read_bytes()).hexdigest() for path in info["images"]}

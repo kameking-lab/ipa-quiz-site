@@ -8,11 +8,12 @@ from base64 import b64encode
 from hashlib import sha256
 import json
 from pathlib import Path
-import re
-import subprocess
 import sys
 
 import fitz
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,6 @@ MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
 REVIEW = ROOT / "data/raw_pdfs/denken3/review"
 FIGURE_SPECS = ROOT / "scripts/denken3-figure-crops.json"
 REFERENCE_MANIFEST = ROOT / "scripts/denken3-reference-manifest.json"
-CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 
 
 def egov_article(snapshot: dict, number: str) -> str:
@@ -147,35 +147,14 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
             blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
                                                        "data": b64encode(path.read_bytes()).decode("ascii")}})
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
-    process = subprocess.run(
-        [str(CLI), "-p", "--model", "claude-opus-5-5", "--effort", "medium", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", ""],
-        input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
-        capture_output=True, cwd=ROOT, timeout=600,
-    )
-    if process.returncode:
-        raise RuntimeError(f"Claude exit {process.returncode}: {(process.stderr or process.stdout)[-1000:]}")
-    events = [json.loads(line) for line in process.stdout.splitlines() if line.startswith("{")]
-    final = next((event for event in reversed(events) if event.get("type") == "result"), None)
-    if final is None or final.get("is_error"):
-        raise ValueError(f"No successful Claude result: {process.stdout[-1000:]}")
-    model_usage = final.get("modelUsage") or {}
-    models = [name for name in model_usage if name.startswith("claude-")]
-    if models != ["claude-opus-5-5"] or model_usage["claude-opus-5-5"].get("canonicalModel") != "claude-opus-5-5" or model_usage["claude-opus-5-5"].get("provider") != "firstParty":
-        raise ValueError(f"Cannot prove first-party claude-opus-5-5: {models}")
-    value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
-    start, end = value.find("["), value.rfind("]")
-    if start < 0 or end < start:
-        raise ValueError(f"No JSON array: {value[-1000:]}")
-    assessment = json.loads(value[start:end + 1])
+    stdout, model_usage, text = denken3_cli.run(request, "high", 900)
+    assessment = denken3_cli.extract_json(text, "[")
     if len(assessment) != len(numbers) or {item.get("number") for item in assessment} != set(numbers):
         raise ValueError("Opus omitted or added a question")
     raw_out = folder / f"{stamp}-opus-review-raw.jsonl"
-    if raw_out.exists():
-        raise FileExistsError(raw_out)
-    raw_out.write_text(process.stdout, encoding="utf-8")
+    raw_sha = denken3_cli.save_raw(raw_out, stdout)
     out.write_text(json.dumps({"reviewModel": "claude-opus-5-5", "resolvedModel": "claude-opus-5-5",
-                               "modelUsage": model_usage, "rawResponseSha256": sha256(raw_out.read_bytes()).hexdigest(),
+                               "modelUsage": model_usage, "rawResponseSha256": raw_sha,
                                "draftSha256": draft_hashes,
                                "figureSha256": figure_hashes,
                                "referenceJsonSha256": reference_hashes,

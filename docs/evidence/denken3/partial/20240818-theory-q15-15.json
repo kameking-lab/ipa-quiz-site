@@ -7,7 +7,7 @@
   "choiceCount": 10,
   "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
   "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
-  "reviewedDataSha256": "da672d2495a76743d611a711fb5db933b43928257725fb2a3953c472839192cc",
+  "reviewedDataSha256": "2a2c838998ef0f46b22f0576fe4b7591b5aad526caf4cf73be744ed0ad822a9d",
   "strictReview": {
     "q15a": {
       "path": "docs/evidence/denken3/strict/20240818-theory-strict4-q15a-opus.json",
@@ -41,5 +41,9 @@
         "20240818-theory-q15-ac-circuit": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02"
       }
     }
-  ]
+  ],
+  "reviewedDataSha256Repair": {
+    "previous": "da672d2495a76743d611a711fb5db933b43928257725fb2a3953c472839192cc",
+    "reason": "Recorded file digest matched no committed revision under LF or CRLF; every row's canonical JSON still equals the candidateSha256 of its bound strict PASS receipt, so only the byte-level file digest is re-pinned (LF checkout)."
+  }
 }

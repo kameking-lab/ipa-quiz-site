@@ -11,10 +11,12 @@ from hashlib import sha256
 import json
 from pathlib import Path
 import re
-import subprocess
 import sys
 
 import fitz
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import denken3_cli  # noqa: E402
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,7 +26,6 @@ PRIVATE = ROOT / "data/raw_pdfs/denken3/review"
 ANSWER_DIR = ROOT / "data/raw_pdfs/denken3"
 OUT = ROOT / "docs/evidence/denken3/strict"
 REFERENCE_MANIFEST = ROOT / "scripts/denken3-reference-manifest.json"
-CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
 ISSUES = ("textIssues", "choiceIssues", "answerIssues", "explanationIssues", "figureIssues", "sourceIssues")
 
 
@@ -79,26 +80,6 @@ def parse_token(token: str) -> tuple[int, str | None]:
     if not match:
         raise ValueError(f"Invalid unit token: {token}")
     return int(match.group(1)), match.group(2)
-
-
-def parse_result(stdout: str) -> tuple[list[dict], dict]:
-    events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
-    final = next((event for event in reversed(events) if event.get("type") == "result"), None)
-    if final is None or final.get("is_error"):
-        raise ValueError(f"No successful Claude result: {stdout[-1500:]}")
-    model_usage = final.get("modelUsage") or {}
-    models = [name for name in model_usage if name.startswith("claude-")]
-    if models != ["claude-opus-5-5"]:
-        raise ValueError(f"Cannot prove requested model from Claude modelUsage: {models}")
-    usage = model_usage["claude-opus-5-5"]
-    if usage.get("canonicalModel") != "claude-opus-5-5" or not usage.get("provider"):
-        raise ValueError(f"Claude modelUsage lacks canonical model/provider: {usage}")
-    value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
-    start, end = value.find("["), value.rfind("]")
-    if start < 0 or end < start:
-        raise ValueError(f"No JSON array: {value[-1500:]}")
-    result, _ = json.JSONDecoder().raw_decode(value[start:])
-    return result, model_usage
 
 
 def main() -> None:
@@ -212,15 +193,8 @@ def main() -> None:
             blocks += [{"type": "text", "text": f"{key} 公開候補図 {Path(url).name}:"},
                        image(ROOT / "public" / url.lstrip("/"))]
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
-    process = subprocess.run(
-        [str(CLI), "-p", "--model", "claude-opus-5-5", "--effort", "high", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", ""],
-        input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
-        capture_output=True, cwd=ROOT, timeout=900,
-    )
-    if process.returncode:
-        raise RuntimeError((process.stderr or process.stdout)[-2000:])
-    result, model_usage = parse_result(process.stdout)
+    stdout, model_usage, text = denken3_cli.run(request, "high", 900)
+    result = denken3_cli.extract_json(text, "[")
     for item in result:
         if item.get("questionNumber") is not None:
             item["unitKey"] = unit_key(int(item["questionNumber"]), item.get("part") or None)
@@ -242,13 +216,11 @@ def main() -> None:
     raw_out = PRIVATE / date / subject / f"{date}-{subject}-{round_name}-{stamp}-opus-raw.jsonl"
     if out.exists():
         raise FileExistsError(out)
-    if raw_out.exists():
-        raise FileExistsError(raw_out)
-    raw_out.write_text(process.stdout, encoding="utf-8")
+    raw_sha = denken3_cli.save_raw(raw_out, stdout)
     out.write_text(json.dumps({"schemaVersion": 1, "examDate": date, "subject": subject,
                                "reviewModel": "claude-opus-5-5", "resolvedModel": "claude-opus-5-5",
                                "modelUsage": model_usage,
-                               "rawResponseSha256": raw_digest(raw_out),
+                               "rawResponseSha256": raw_sha,
                                "inputRequestSha256": sha256((json.dumps(request, ensure_ascii=False) + "\n").encode("utf-8")).hexdigest(),
                                "inputHashes": hashes,
                                "assessment": result}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
