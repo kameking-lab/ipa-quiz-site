@@ -348,6 +348,8 @@ def main():
                   "choiceChecks({1:PASS/HOLD,...,5:PASS/HOLD}), evidenceUrls(確認した政府URL配列), "
                   "officialAnswerChecked, originalTextChecked, imagesChecked, historicalApplicabilityChecked, "
                   "sourceSupportChecked(真偽値)。すべて確認した場合だけtrue。"
+                  "evidenceUrlsにはcandidate.sourcesの全URLをそのまま含め、公式問題PDFのexam.or.jp URLは"
+                  "governmentSourceFilesではないため含めない。"
                   "根拠パックは探索の補助であり信頼せず原本を確認。ファイル編集禁止。\n"
                   + json.dumps(payload, ensure_ascii=False))
         token = digest(batch)[:16]

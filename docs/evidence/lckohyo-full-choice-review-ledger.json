@@ -1,0 +1,359 @@
+{
+  "lckohyo-LC20252115-q11": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q11",
+    "sourceSha256": "b018b6c524e7890c5ac9d54968a7ada6b6641005acd52ed53a608dc6844ec136",
+    "candidateSha256": "b3ef08ca6eb9dbf464f42c54f8706c2d2f5d864d2cdc8cb008fb8eb5e01f1ab3",
+    "evidenceSha256": "894f97909269007674b0fe03da89aeac61ee59b57b3c2d25ace4cf7e25adda19",
+    "status": "HOLD",
+    "gateIssues": [
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://jsite.mhlw.go.jp/saga-roudoukyoku/content/contents/000864401.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q28": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q28",
+    "sourceSha256": "4b638f790aaca5956d7c24fd2c045c0b3c86dd28b0ca96d852d4230fe233ee49",
+    "candidateSha256": "9e4d49b8485eb5ed023ecd60ae0800a7b9a35d313e9c140a18f0cff5490858c5",
+    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing",
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Official PDF p15 marks (5) as the answer, which matches the candidate's correctChoice 5. The problem text and image match the original.",
+        "Choice 1 (reflex / knee-jerk stretch reflex): neither cited source (s-02-001, ys-092) mentions reflexes, so the claim is unsupported.",
+        "Choice 2: ys-092 only says 'strength depends on cross-sectional area and fibre-type ratio, so max strength differs even at the same cross-section'. It does not say sex/age differences per unit cross-section are small. The candidate's claims attributed to e-ヘルスネット ('almost no sex or age difference' and 'the sex difference is mainly due to muscle mass') are not in the source.",
+        "Choice 3: ys-092 describes thickening through super-compensation, but the term 活動性肥大 does not appear.",
+        "Choice 4 (isotonic contraction): no cited source covers it.",
+        "Choice 5: s-02-001 only describes the pathway to the TCA cycle and respiratory chain needing oxygen. It does not state CO2 and water as end products, or lactate forming when oxygen is short. The MHLW diagram 0000041836.pdf shows O2→H2O/CO2 at the TCA cycle and the pyruvate→lactate branch, but this candidate does not cite it. The claim 'lactate forms when oxygen is short' is unsupported everywhere."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://kennet.mhlw.go.jp/information/information/exercise/s-02-001.html",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/exercise/ys-092.html",
+        "https://www.mhlw.go.jp/file/05-Shingikai-10901000-Kenkoukyoku-Soumuka/0000041836.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q24": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q24",
+    "sourceSha256": "18cd051606a4757c79125a43f72033d9a4eeb9c33f574904666beae613de9c01",
+    "candidateSha256": "2aeb0ec0ea40949a216fdbd26afcf55ed2f00137703f75d5d4fe74bd36702929",
+    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "status": "HOLD",
+    "gateIssues": [
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/food/ye-044.html",
+        "https://www.mhlw.go.jp/file/05-Shingikai-10901000-Kenkoukyoku-Soumuka/0000041836.pdf",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/bunya/shakaihosho/iryouseido01/pdf/info03k-04-06.pdf#page=13"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q30": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q30",
+    "sourceSha256": "cd83e2fe979ee7d6e402a3c086e93ab66fc5e5acb5c717eb3a0f3d0de50ee3ca",
+    "candidateSha256": "df5e2b03ec81ad26caa3ea67eb97d4b1c8099b559c52fa9a554c9d185cb5047d",
+    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing",
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Official PDF p16 marks (1) as the answer, which matches the candidate's correctChoice 1. The problem text and image match the original.",
+        "Choice 2: the cited q30 sources support only noradrenaline, released as a transmitter and a hormone when the body is under stress (yk-047). None of them states that adrenaline is involved in the stress response. None states that adrenocortical hormones such as cortisol are secreted under stress or involved in it. Part of the explanation is therefore unsupported. 001087177.pdf p31 only says the adrenal medulla produces adrenaline and noradrenaline and does not mention stress.",
+        "Choices 1, 3, 4 and 5 were confirmed: yk-031 on good and bad stress, adaptation failure, psychosomatic disease, anxiety and depression; 別表1 item 17 (transfer / reassignment), item 20 (promotion) and item 15 (noise, temperature, humidity, odour); こころの耳 on cold and noise as physical stressors."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-031.html",
+        "https://kokoro.mhlw.go.jp/glossaries/word-1621/",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-047.html",
+        "https://www.mhlw.go.jp/content/11201000/001644134.pdf",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q27": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q27",
+    "sourceSha256": "75c885be89896e5860c0de38ddeb2d9c0605efcc4e08da90b1cb8a35f123e46b",
+    "candidateSha256": "6b85d32c1c58bc9047ead026019740a97ff97c03eebd301dffcdbc18fae5ab40",
+    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing",
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Official PDF p15 marks (2) as the answer, which matches the candidate's correctChoice 2. The problem text and image match the original.",
+        "Choice 2 is supported: the leukoencephalopathy manual, B-1 (PDF p1), says the cerebral cortex is grey matter and the cerebral white matter is myelinated nerve fibres.",
+        "Choice 3 (neuron = one cell body, one axon, multiple dendrites): no cited source covers it.",
+        "Choice 5 (somatic nerves = sensory and motor nerves): no cited source covers it.",
+        "Choices 1 and 4 are supported by the MHLW 自律神経 figure (brain and spinal cord = central nervous system; sympathetic = higher heart rate, suppressed digestive secretion and peristalsis) and by yk-047."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://www.mhlw.go.jp/topics/2006/11/dl/tp1122-1c07.pdf",
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000057153.pdf",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-047.html"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q23": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q23",
+    "sourceSha256": "066ad74be381dcad104953a8ef6265888742565f4b28a7a419b8a49998f43f83",
+    "candidateSha256": "90a9b335e3c0dbc2f588f212efd82747b10edcfa217cabf2a90072371f41c3f2",
+    "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing",
+      "review must verify every displayed government source"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Official PDF p13 marks (3) as the answer, which matches the candidate's correctChoice 3. The problem text and image match the original.",
+        "Choice 1: the word コルチゾール appears in none of the cited sources. The candidate reasons indirectly from 'corticosteroid drugs (derivatives of adrenocortical hormone) promote hepatic gluconeogenesis and cause hyperglycaemia' (tp1122-1d41 p10, 001087177 p31). No primary source directly says cortisol is an adrenocortical hormone that raises blood glucose.",
+        "Choices 2 to 5 are supported: 手引き p31 (aldosterone retains salt and water and regulates electrolytes); yk-062 (melatonin comes from the pineal gland); the 指定難病235 overview (PTH and hypocalcaemia); ym-085 (insulin, and glucagon breaking glycogen down to glucose); 手引き p23-24 (the pancreas secretes insulin and glucagon)."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252115.pdf",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/heart/yk-062.html",
+        "https://www.mhlw.go.jp/content/10905000/001212057.pdf",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-085.html",
+        "https://www.mhlw.go.jp/topics/2006/11/dl/tp1122-1d41.pdf#page=11"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 32,
+        "outputTokens": 13508,
+        "cacheReadInputTokens": 3229154,
+        "cacheCreationInputTokens": 253783,
+        "webSearchRequests": 0,
+        "costUSD": 2.9463828000000003,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4808,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  }
+}
