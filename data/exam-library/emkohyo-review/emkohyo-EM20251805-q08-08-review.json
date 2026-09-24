@@ -1,27 +1,51 @@
 {
   "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1520,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 16621,
+      "webSearchRequests": 0,
+      "costUSD": 0.1912646,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1436,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
   "paperId": "emkohyo-EM20251805",
   "ids": [
     "emkohyo-EM20251805-q8"
   ],
-  "candidateSha256": {
-    "emkohyo-EM20251805-q8": "6634ecbe44ddf7e3afcc805143598f052ecdff5247ae6081d7b2f358ae41afc7"
+  "figureSha256": {
+    "emkohyo-EM20251805-q8": {}
   },
-  "sourcePackSha256": "4e396a002562ff380f2a1fcb669e89cf3684f69ebb747d98c9bf72ffe4958fc9",
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q8": {
+      "/exam-library/emkohyo-EM20251805/q8-p5-1.webp": "8f0302db6514fa6bbf839f698d371d663fd1188fdb6d130ce47e9e3e9b06d6d6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q8": "3fab2edb9563c95426413543dc013811c6a66f079a736123694a90794337b150"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q08-08.json",
+  "sourcePackSha256": "f5c1fbcab2c7b1b1111df9921e5f65af030573125b189a74e5b96b620219bd2f",
   "assessment": {
     "emkohyo-EM20251805-q8": {
-      "status": "FIX",
-      "textIssues": [
-        "summaryの「揮発性の低い（沸点が高い）成分ほど保持が長く」は、例外のない規則のように書かれている。メチルシリコン系の無極性カラムでは、保持はおおむね沸点順に並ぶが、極性物質には当てはまらないことがある。たとえばイソプロピルアルコール（沸点82.3℃）は、一般にn-ヘキサン（沸点69℃）より先に溶出する。「揮発性＝沸点」と言い切らず、「無極性カラムでは保持はおおむね沸点順で、沸点が他の候補より70℃以上高いシクロヘキサノンが最長」のように、差の大きさで結論を支える書き方に直すこと。"
-      ],
+      "status": "PASS",
+      "textIssues": [],
       "choiceIssues": [],
       "reasonIssues": [],
-      "sourceIssues": [
-        "添付の政府資料は厚生労働省モデルSDS 5件だけで、支えているのは各物質の沸点値（155.6℃、82.3℃、69℃、56.8℃、56℃）に限られる。どれも抜粋と一致した。一方、「無極性のメチルシリコン系固定相では保持時間がおおむね沸点順になる」というガスクロマトグラフィーの原理は、どの政府資料にも書かれていない。この原理はsummaryと全選択肢の理由で、正誤判定の中心となる因果関係である。それを直接支える一次資料がない。"
-      ],
-      "needsExternalCheck": [
-        "無極性（メチルシリコン系）固定相で保持がおおむね沸点順になるという原理について、根拠として引ける資料を確認すること（例：JIS K 0114 ガスクロマトグラフィー通則、作業環境測定ガイドブック（有機溶剤）の該当節）。"
-      ]
+      "sourceIssues": [],
+      "needsExternalCheck": []
     }
   }
 }
