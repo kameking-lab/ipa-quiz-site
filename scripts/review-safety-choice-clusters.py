@@ -207,7 +207,10 @@ def main():
             value = read(path)
             if isinstance(value, dict) and ("sources" in value or "evidence" in value):
                 packs.append({"path": str(path), "sha256": digest(value), "content": value})
-    packs.append(pin_candidate_sources(root, drafts, packs, args.group))
+    target_prefixes = tuple(paper["id"] + "-q" for paper in catalog)
+    target_drafts = {qid: candidate for qid, candidate in drafts.items()
+                     if qid.startswith(target_prefixes)}
+    packs.append(pin_candidate_sources(root, target_drafts, packs, args.group))
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
