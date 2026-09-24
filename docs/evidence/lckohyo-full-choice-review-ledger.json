@@ -5011,5 +5011,313 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q40": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q40",
+    "sourceSha256": "f2c89e2384c0c39ec53366b4ef6e668403f51a553cb9557c14877ef9a44f648a",
+    "candidateSha256": "d6cd438b9426831c8ed24d199b35fff134ae28043264f280365c25d528b3e432",
+    "evidenceSha256": "7b78a49d4c2dd09962c36d3c422d65fada96d6db92c3f35a8ca9043a931aae75",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷20/22頁で正答が(5)であることを確認した。候補の正答5と一致し、設問文と画像もPDF原文と一致する。",
+        "根拠の手引きPDF（mhlw 001087177）は登録販売者試験の『試験問題の作成に関する手引き（令和4年3月）第2章 人体の働きと医薬品』である。衛生管理者試験の出題根拠ではない。出典名にもその点が示されていない。",
+        "肢1：印刷28頁（赤血球は血液全体の約40%）と印刷29頁（赤血球は骨髄で産生）は確認できた。寿命約120日と血球中で最も多い点は資料にない。",
+        "肢2：『ヘマトクリット』の語と、貧血でその値が低下する点は資料にない。",
+        "肢3：印刷29頁で、好中球が白血球の約60%を占め、組織に入り込み細菌等を食作用で取り込むことを確認した。偽足・アメーバ様運動は資料にない。",
+        "肢4：印刷29頁で、リンパ球が約1/3を占め、T細胞とB細胞が免疫を担うことを確認した。候補自身がHOLDとしている（約30%と約1/3の表現差）。",
+        "肢5（正答）：ABO式血液型が赤血球の抗原による分類であることも、A型血清が抗B抗体をもつことも資料にない。誤りの根拠を一次資料で確定できない。",
+        "候補の表題『（令和4年3月作成、令和4年3月）』は日付が重複している。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 7012,
+        "cacheReadInputTokens": 1191564,
+        "cacheCreationInputTokens": 60965,
+        "webSearchRequests": 0,
+        "costUSD": 0.8663288,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1965,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q43": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q43",
+    "sourceSha256": "d39cad6d9cf87dc28cae9f87356324d3ab6f76caa23ec5586238bb8a9971cffe",
+    "candidateSha256": "2fb97ec1a16cc9122b53d8a45c9b81b9c2f365c579d493a1134e3772cb184823",
+    "evidenceSha256": "7b78a49d4c2dd09962c36d3c422d65fada96d6db92c3f35a8ca9043a931aae75",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷22/22頁で正答が(5)であることを確認した。候補の正答5と一致し、設問文と画像もPDF原文と一致する。",
+        "根拠の手引きPDFは登録販売者試験の手引きであり、衛生管理者試験の出題根拠ではない。",
+        "肢1：印刷35頁『体温が上がり始めると…血管が開き』『下がり始めると血管は収縮して、放熱を抑える』で、寒冷時に血管が拡張するという記述が誤りであると裏付けられる。",
+        "肢2：印刷35頁は皮膚血流と汗による放熱を記載する。内臓血流の増加や代謝の亢進を否定する記述はない。",
+        "肢3：恒常性（ホメオスタシス）の語と、それを担う神経系・内分泌系は資料にない。",
+        "肢4：印刷38頁は視床下部が調節機能を担うと記載するが、体温調節中枢であるとは明記していない。",
+        "肢5（正答）：甲状腺ホルモンの記載が資料にない。正しい記述であることを一次資料で確定できない。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=43",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=46"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 7012,
+        "cacheReadInputTokens": 1191564,
+        "cacheCreationInputTokens": 60965,
+        "webSearchRequests": 0,
+        "costUSD": 0.8663288,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1965,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q42": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q42",
+    "sourceSha256": "772c71c1eb2c30aa75ea0babbba3bb9b961f345a3578565e44c1b2248b10851d",
+    "candidateSha256": "35f6a9ed72ac0e69b82fafb1c25e9752fe4b7716df4a2eef8874cf1691374188",
+    "evidenceSha256": "7b78a49d4c2dd09962c36d3c422d65fada96d6db92c3f35a8ca9043a931aae75",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷21/22頁で正答が(5)であることを確認した。候補の正答5と一致し、設問文と画像もPDF原文と一致する。",
+        "根拠の手引きPDFは登録販売者試験の手引きであり、衛生管理者試験の出題根拠ではない。",
+        "肢1：印刷39頁で脊髄反射の記載を確認した。伸張反射・膝蓋腱反射が最も単純な反射である点は資料にない。",
+        "肢2：単位断面積当たりの最大筋力に性差・年齢差がほとんどない点は、印刷37〜38頁の筋組織の項に記載がない。",
+        "肢3：『活動性肥大』の用語は資料にない。",
+        "肢4：等張性収縮など収縮様式の記載は資料にない。",
+        "肢5（正答）：印刷38頁は、疲労時にグリコーゲンの代謝に伴い乳酸が蓄積すると記載するのみである。酸素が十分なときの最終産物（二酸化炭素と水）は資料にない。誤りの根拠を確定できない。",
+        "候補の出典のうち、印刷38頁（page=46）は筋組織の記述の後半を含む。一方、筋組織の項の冒頭は印刷37頁（page=45）にあり、出典として示されていない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=46",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=47"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 7012,
+        "cacheReadInputTokens": 1191564,
+        "cacheCreationInputTokens": 60965,
+        "webSearchRequests": 0,
+        "costUSD": 0.8663288,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1965,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q41": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q41",
+    "sourceSha256": "b9adb840cfd6a57f6be5c2d0084428236f10a7be855ca98c46791950d6829298",
+    "candidateSha256": "4f3e54fb58f64e1706578717c54160261ae5a52061583367ec3b05ec05d0c811",
+    "evidenceSha256": "7b78a49d4c2dd09962c36d3c422d65fada96d6db92c3f35a8ca9043a931aae75",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷21/22頁で正答が(2)であることを確認した。候補の正答2と一致し、設問文と画像もPDF原文と一致する。",
+        "根拠の手引きPDFは登録販売者試験の手引きであり、衛生管理者試験の出題根拠ではない。出典名にもその点が示されていない。",
+        "肢1：印刷38頁『中枢神経系と末梢神経系とに大別』『中枢神経系は脳と脊髄から構成』で裏付けられる。",
+        "肢2（正答）：印刷38〜40頁には、大脳の皮質・髄質や灰白質・白質の記載がない。誤りの根拠を一次資料で確定できない。",
+        "肢3：印刷38頁は『細胞体から伸びる細長い突起（軸索）を神経線維という』と記載するのみである。1本の軸索、複数の樹状突起、ニューロンという語は資料にない。",
+        "肢4：印刷39頁の表で心臓の『心拍数増加』を、印刷40頁の表で腸の『運動低下』を確認した。",
+        "肢5：印刷39頁は、体性神経系が随意運動・知覚等を担うと記載する。感覚神経と運動神経の区分は明記されていない。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=46",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=47",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=48"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 7012,
+        "cacheReadInputTokens": 1191564,
+        "cacheCreationInputTokens": 60965,
+        "webSearchRequests": 0,
+        "costUSD": 0.8663288,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1965,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q44": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q44",
+    "sourceSha256": "ffa3c69bcd4ff856e212cfa6b68ef564d07c0aae4f3f28bf518873edbfbe5303",
+    "candidateSha256": "d26298990de55eaabc84bbe48a20a8f2fb9f4c91e76cf9adb2cddde48c9ea2cf",
+    "evidenceSha256": "7b78a49d4c2dd09962c36d3c422d65fada96d6db92c3f35a8ca9043a931aae75",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式問題PDFの印刷22/22頁で正答が(1)であることを確認した。候補の正答1と一致し、設問文と画像もPDF原文と一致する。",
+        "心の健康指針（平成27年11月30日改正版、全14頁）を通読した。令和7年10月の出題時点でこの版が現行であったかは、改正履歴を確認していない。",
+        "肢1（正答）：ストレッサーの程度による反応の違いや、自律神経系・内分泌系を介した反応は指針に記載がない。誤りの根拠を確定できない。",
+        "肢2：カテコールアミンと副腎皮質ホルモンの関与は指針にない。",
+        "肢3：指針2③『職場配置、人事異動、職場の組織等の人事労務管理と密接に関係する要因によって、大きな影響を受ける』を確認した。『昇進』は明記されていない。",
+        "肢4：指針6(2)は作業環境等が心の健康に影響すると記載する。騒音・気温・湿度・悪臭は個別に挙げられていない。",
+        "肢5：自律神経系・内分泌系の失調による精神神経科的疾患や内科的疾患は、指針に記載がない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/hourei/doc/kouji/K151130K0020.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 7012,
+        "cacheReadInputTokens": 1191564,
+        "cacheCreationInputTokens": 60965,
+        "webSearchRequests": 0,
+        "costUSD": 0.8663288,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1965,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
