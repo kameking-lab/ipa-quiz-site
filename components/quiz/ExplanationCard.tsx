@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
-import type { Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
@@ -39,6 +39,10 @@ export function ExplanationCard({
   onAskAI,
   onAnalyzeWrong,
 }: Props) {
+  const selectedChoiceExplanation = selected
+    ? question.choiceExplanations?.[selected as ChoiceKey]
+    : undefined;
+
   return (
     <div
       role="region"
@@ -136,6 +140,16 @@ export function ExplanationCard({
         </div>
       )}
 
+      {!isCorrect && selected && selectedChoiceExplanation && (
+        <section
+          aria-label="あなたが選んだ誤答の理由"
+          className="mb-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm leading-relaxed text-red-950 dark:border-red-800 dark:bg-red-950/40 dark:text-red-100"
+        >
+          <h3 className="mb-1 font-semibold">あなたが選んだ「{selected}」が違う理由</h3>
+          <p>{selectedChoiceExplanation}</p>
+        </section>
+      )}
+
       {question.choiceExplanations && (
         <section aria-label="選択肢ごとの解説" className="mb-4 rounded-xl border border-zinc-200 bg-white/70 p-3 dark:border-zinc-700 dark:bg-zinc-950/40">
           <h3 className="mb-2 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
@@ -143,7 +157,16 @@ export function ExplanationCard({
           </h3>
           <dl className="space-y-2 text-sm leading-relaxed">
             {Object.entries(question.choiceExplanations).map(([key, explanation]) => (
-              <div key={key} className="grid grid-cols-[1.75rem_1fr] gap-2">
+              <div
+                key={key}
+                data-selected-choice={key === selected ? "true" : undefined}
+                className={cn(
+                  "grid grid-cols-[1.75rem_1fr] gap-2 rounded-lg px-2 py-1",
+                  key === selected && !isCorrect
+                    ? "bg-red-100 ring-1 ring-red-300 dark:bg-red-950/50 dark:ring-red-800"
+                    : undefined,
+                )}
+              >
                 <dt className="font-bold text-zinc-900 dark:text-zinc-100">{key}</dt>
                 <dd className="text-zinc-700 dark:text-zinc-300">{explanation}</dd>
               </div>

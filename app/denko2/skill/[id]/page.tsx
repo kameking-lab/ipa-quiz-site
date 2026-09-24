@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `第二種電気工事士 技能 ${skillDateLabel(problem)} No.${problem.number}`,
     description: "公式試験の問題図・施工条件・概念図・複線図・完成例を一画面で確認できます。",
+    alternates: { canonical: `/denko2/skill/${problem.id}` },
   };
 }
 

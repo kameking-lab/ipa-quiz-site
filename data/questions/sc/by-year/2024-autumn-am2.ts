@@ -41,9 +41,9 @@ export const SC_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     "difficulty": 3,
     "question": "AI による画像認識において、認識させる画像の中に人間には知覚できないノイズや微小な変化を含めることによって、AI アルゴリズムの特性を悪用し、誤認識させる攻撃はどれか。",
     "choices": {
-      "ア": "Adaptively Chosen Message 攻擊",
-      "イ": "Adversarial Examples 攻擊",
-      "ウ": "Distributed Reflection Denial of Service 攻擊",
+      "ア": "Adaptively Chosen Message 攻撃",
+      "イ": "Adversarial Examples 攻撃",
+      "ウ": "Distributed Reflection Denial of Service 攻撃",
       "エ": "Model Inversion 攻撃"
     },
     "answer": "イ",
@@ -210,7 +210,7 @@ export const SC_QUESTIONS_2024_AUTUMN_AM2: Question[] = [
     "question": "量子暗号の特徴として、適切なものはどれか。",
     "choices": {
       "ア": "暗号化と復号の処理を、量子コンピュータを用いて行うことができるので、従来のコンピュータでの処理に比べて大量のデータの秘匿を短時間で実現できる。",
-      "イ": "共通鍵暗号方式であり、従来の情報の取扱量の最小単位であるビットの代わりにビットを用いることによって、高速なデータ送受信が実現できる。",
+      "イ": "共通鍵暗号方式であり、従来の情報の取扱量の最小単位であるビットの代わりに量子ビットを用いることによって、高速なデータ送受信が実現できる。",
       "ウ": "量子雑音を用いて共通鍵を生成し、公開鍵暗号方式で共有することによって、解読が困難な秘匿通信が実現できる。",
       "エ": "量子通信路を用いて安全に共有した乱数列を使い捨ての暗号鍵として用いることによって、原理的に第三者に解読されない秘匿通信が実現できる。"
     },

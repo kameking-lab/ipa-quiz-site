@@ -63,16 +63,36 @@ for (const c of cases) {
   });
 }
 
-test("denken3 remains unreachable until the required usage notification is complete", async ({ page }) => {
+test("denken3 remains unreachable until its content acceptance is complete", async ({ page }) => {
   const response = await page.goto("/denken3");
   expect(response?.status()).toBe(404);
 });
 
-test("denko2 remains unreachable until the required usage notification is complete", async ({ page }) => {
+test("denko2 publishes four full sittings with wrong-choice explanations and return progress", async ({ page }) => {
   const response = await page.goto("/denko2");
-  expect(response?.status()).toBe(404);
+  expect(response?.status()).toBe(200);
+  for (const sitting of ["2024-first", "2024-second", "2025-first", "2025-second"]) {
+    await expect(page.locator(`a[href='/denko2/${sitting}']`)).toBeVisible();
+  }
+  await expect(page.locator("a[href='/denko2/skill']")).toBeVisible();
+  await page.locator("a[href='/denko2/2024-first']").click();
+  await page.locator("a[href='/q/denko2/2024-first/gakka/q1']").click();
+  // Official answer is ロ (site label イ); choose ア to exercise a wrong answer.
+  await page.getByRole("radiogroup", { name: /選択肢/ }).getByRole("radio").first().click();
+  const explanations = page.getByRole("heading", { name: "各選択肢の解説" });
+  await expect(explanations).toBeVisible();
+  await expect(explanations.locator("..").locator("dd")).toHaveCount(4);
+  await page.goBack();
+  await expect(page).toHaveURL(/\/denko2\/2024-first$/);
+  await expect(page.locator("a[href='/q/denko2/2024-first/gakka/q1']")).toBeVisible();
+  await page.goBack();
+  await expect(page).toHaveURL(/\/denko2$/);
+  await expect(page.getByRole("region", { name: "進捗", exact: true })).toContainText(/1\s*\/\s*200 問/);
+});
+
+test("denko2 partial 2026 pilot remains unpublished", async ({ page }) => {
   await page.goto("/q/denko2/2026-first/gakka/q10");
-  await expect(page.getByRole("heading", { name: "お探しのページが見つかりませんでした" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "お探しのページが見つかりませんでした" })).toBeVisible({ timeout: 20_000 });
   await expect(page.getByText("低圧屋内配線の分岐回路の設計で")).toHaveCount(0);
 });
 

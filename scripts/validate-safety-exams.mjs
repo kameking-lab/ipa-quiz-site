@@ -151,6 +151,8 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   if (Array.isArray(overlay.choices)) {
     const numbers = overlay.choices.map(choice => choice?.number);
     check(new Set(numbers).size === 5 && [1, 2, 3, 4, 5].every(number => numbers.includes(number)), `Choice explanation numbers incomplete: ${id}`);
+    const reasons = overlay.choices.map(choice => typeof choice?.reason === 'string' ? choice.reason.trim() : null);
+    check(new Set(reasons).size === 5, `Duplicate choice explanation reason: ${id}`);
     for (const choice of overlay.choices) {
       check(choice && typeof choice === 'object', `Invalid choice explanation row: ${id}`);
       if (!choice || typeof choice !== 'object') continue;
@@ -175,6 +177,27 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
 }
 const requiredStructuredPapers = coverageContract.structuredChoiceExplanations?.requiredPaperIds;
 check(Array.isArray(requiredStructuredPapers), 'Missing structured-choice coverage contract');
+const targetStructuredPapers = coverageContract.structuredChoiceExplanations?.targetPaperIds ?? [];
+const targetStructuredByYear = coverageContract.structuredChoiceExplanations?.targetOfficialFiveChoiceByYear ?? {};
+check(Array.isArray(targetStructuredPapers), 'Invalid target structured-choice papers');
+check(new Set(targetStructuredPapers).size === targetStructuredPapers.length, 'Duplicate target structured-choice paper');
+const targetCounts = {};
+for (const paperId of targetStructuredPapers) {
+  check(paperIds.has(paperId), `Unknown target structured-choice paper: ${paperId}`);
+  const year = paperId.match(/^lckohyo-LC(2025|2026)/u)?.[1];
+  check(Boolean(year), `Unexpected target structured-choice paper: ${paperId}`);
+  if (!year) continue;
+  for (const [id, question] of questions) {
+    if (!id.startsWith(`${paperId}-q`) || question.answerAuthority !== 'official' || question.choiceCount !== 5) continue;
+    targetCounts[year] = (targetCounts[year] ?? 0) + 1;
+    if (process.argv.includes('--require-target-choice-coverage')) {
+      check(Object.hasOwn(choiceExplanations, id), `Missing target structured choice explanation: ${id}`);
+    }
+  }
+}
+for (const [year, expected] of Object.entries(targetStructuredByYear)) {
+  check(targetCounts[year] === expected, `Target structured-choice count mismatch: ${year} ${targetCounts[year]} != ${expected}`);
+}
 const requiredStructuredQuestionIds = [];
 for (const paperId of requiredStructuredPapers ?? []) {
   check(paperIds.has(paperId), `Unknown required structured-choice paper: ${paperId}`);
@@ -297,6 +320,7 @@ const result = {
     structuredChoiceExplanations: emStructuredCount,
     complete: emStructuredCount === emQuestionIds.length,
   },
+  targetStructuredChoiceExplanations: targetCounts,
   consultantCoverage: {
     requiredYears: consultantContract?.years ?? [],
     missingYears: missingConsultantYears,

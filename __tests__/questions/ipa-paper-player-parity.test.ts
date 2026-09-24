@@ -109,7 +109,9 @@ describe("IPA paper listing and quiz pool parity", () => {
     for (const qNumber of figureQuestions) {
       const q = questions.find((candidate) => candidate.qNumber === qNumber);
       expect(q?.imageUrls, `q${qNumber} imageUrls`).toEqual([
-        `/questions/ipa/2025-spring-am2/q${qNumber}-figure.png`,
+        qNumber === 10
+          ? "/questions/ipa-audit-20260924/st-2025h-am2-q10.png"
+          : `/questions/ipa/2025-spring-am2/q${qNumber}-figure.png`,
       ]);
       expect(
         existsSync(join(process.cwd(), "public", q!.imageUrls![0].slice(1))),
