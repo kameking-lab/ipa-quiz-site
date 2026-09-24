@@ -263,54 +263,92 @@
       "overlay": {
         "sourceHash": "17d5ffacd35d88ad968ab0af0ad09d819e944f72c5a3cf28d26a450663a33e60",
         "correctChoice": 2,
-        "summary": "標準液とのピーク面積比から試料液濃度を求め、定容後25mLを掛けて捕集量約2.0µgを得る。これを吸引空気10Lで割ると約0.20mg/m³になる。",
+        "summary": "試料液濃度＝0.25×1700/5300≒0.0802µg/mL、捕集量＝0.0802×25mL≒2.0µg、吸引空気量＝1.0L/min×10min＝10L。2.0µg÷10L＝0.20µg/L＝0.20mg/m³で肢2。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "0.1mg/m³は10L中の捕集量1.0µgに相当し、正しい捕集量約2.0µgの半分しかない。定容前の捕集液の合計20mLで誤って計算しても約0.16mg/m³で、0.1より0.2に近いため、0.1が最も近い値になることはない。"
+            "reason": "誤り。0.1mg/m³は正しい値約0.20mg/m³の半分である。標準液とのピーク面積比から試料液濃度0.0802µg/mLを求め、定容後の全量25mLを掛けた2.0µgを吸引空気量10Lで割れば0.20mg/m³となり、0.1にはならない。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "試料液濃度は0.25µg/mL×1700/5300≒0.0802µg/mLで、定容後の25mLを掛けると捕集量は約2.00µg。吸引量は1.0L/min×10min=10L=0.010m³なので、2.00µg÷0.010m³≒200µg/m³=0.20mg/m³となり、選択肢2が最も近い。"
+            "reason": "正しい。試料液濃度＝0.25µg/mL×1700/5300≒0.0802µg/mL、捕集量＝0.0802µg/mL×25mL≒2.0µg。吸引空気量は1.0L/min×10min＝10Lなので、濃度＝2.0µg÷10L＝0.20µg/L＝0.20mg/m³となる。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "0.4mg/m³は捕集量4.0µgに相当し、正しい値の約2倍である。直列の2本のインピンジャーの液はすでに合わせて25mLに定容しているため、本数分を掛けて2倍にする処理は不要で、正しい捕集量は約2.0µg、濃度は約0.2mg/m³にとどまる。"
+            "reason": "誤り。0.4mg/m³は正しい値0.20mg/m³の2倍で、インピンジャー2本分として液量を二重に数えた（50mL）ような計算に相当する。2本の捕集液は合わせて25mLに定容しているので、捕集量は約2.0µg、濃度は0.20mg/m³である。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "0.6mg/m³は捕集量6.0µgに相当し、正しい約2.0µgの3倍である。試料液のピーク面積1700は標準液の5300の約0.32倍なので、試料液濃度は標準液0.25µg/mLより低い約0.080µg/mLとなり、25mL全体でも約2.0µgしかない。"
+            "reason": "誤り。0.6mg/m³は、ピーク面積比1700/5300を掛けずに標準液濃度0.25µg/mL×25mL÷10L≒0.63mg/m³とした値に近い。試料液のピーク面積は標準液の約0.32倍なので、濃度は約0.20mg/m³になる。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "0.8mg/m³は0.8µg/Lすなわち10L中8.0µgを意味し、正しい値の4倍である。試料液25mL全体の量は0.080µg/mL×25mL≒2.0µgで、10Lで割ると0.20µg/L（=0.20mg/m³）にしかならず、0.8には届かない。"
+            "reason": "誤り。0.8mg/m³は正しい値約0.20mg/m³の4倍であり、面積比・定容量25mL・吸引空気量10Lのいずれを正しく用いても得られない。0.0802µg/mL×25mL÷10L＝0.20mg/m³が正しい。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書（定量下限と下限濃度の計算式）",
+            "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+          },
+          {
+            "title": "PMDA 日本薬局方 2.00 クロマトグラフィー総論（外部標準法）",
+            "url": "https://www.pmda.go.jp/files/000242610.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "液体捕集方法にあつては、吸光光度分析方法又はガスクロマトグラフ分析方法",
+          "url": "https://www.pmda.go.jp/files/000242610.pdf",
+          "excerpt": "標準物質の濃度を横軸に",
           "choiceNumbers": [
-            2
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.pmda.go.jp/files/000242610.pdf",
+          "excerpt": "ーク面積又はピーク高さを縦軸にプロットして検量線を得る．",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "溶液濃度に液量を乗じて求めた絶対量",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "下限濃度（μg/L）＝[定量下限（μg）]／[吸引流量（L/min）・D 測定の吸引時間（min）]",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
           ]
         }
       ],
-      "reviewIssues": [
-        "数値の判断は独立検算（(1700/5300)×0.25µg/mL×25mL÷0.010m³＝約0.2005mg/m³）に基づく。作業環境測定基準の抜粋はパラ―ニトロクロルベンゼンを液体捕集方法＋ガスクロマトグラフ分析方法で測定できるという前提を支えるのみで、0.2mg/m³という数値そのものを直接支える政府資料ではない。",
-        "捕集効率100%・破過なしを前提に計算している。25℃・1気圧の条件はmg/m³表示ではppm換算が不要なため計算に使っていない。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261807-q12": {
       "overlay": {
@@ -369,6 +407,7 @@
         }
       ],
       "reviewIssues": [
+        "【HOLD】作業環境測定基準別表第一で確認できるのは、アルファ-ナフチルアミンを液体捕集方法で採取し吸光光度分析方法又は蛍光光度分析方法で分析することまで。蛍光光度分析法の具体手順（インピンジャー捕集、エチルエーテル抽出、薄層クロマトグラフによる単離、エタノール標準液）と、亜硝酸ナトリウム・スルファニル酸による誘導体化が吸光光度法側の操作であること（肢3）を記した政府一次資料が見つからないため保留。",
         "作業環境測定基準は、α-ナフチルアミンを液体捕集方法で採取し、吸光光度分析方法と蛍光光度分析方法という別々の方法で分析することまでしか示していない。亜硝酸ナトリウム＋スルファニル酸によるジアゾ化・カップリングが吸光光度分析法の操作だという点（肢3）は、政府資料の本文では確認できていない。作業環境測定ガイドブック等の検索・確認が必要。",
         "肢2のエチルエーテル抽出、肢4の薄層クロマトグラフ法による単離と蛍光測定、肢5のエタノール標準液は、どれも蛍光光度分析法の具体的な手順で、提示された一次資料には記載がない。捕集液の組成、抽出時のpH、TLC条件などを含め、手順書の検索・照合が必要。"
       ]
@@ -377,120 +416,324 @@
       "overlay": {
         "sourceHash": "6aa27c22c4017384da4006af08eee4dac2a2b5e70d5ff03397cbe6811e75cb35",
         "correctChoice": 1,
-        "summary": "フェニル基はC6H5−で酸素を含まないが、選択肢1の式には酸素原子が入っておりフェノキシ基の形になっているので、この組合せが誤り。",
+        "summary": "フェニル基は芳香族炭化水素（ベンゼン）から水素原子1個を除いた原子団C₆H₅－で酸素を含まない。肢1の図はベンゼン環が－O－を介して結合した形（フェノキシ基）なので誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "フェニル基はベンゼンから水素1個を除いたC6H5−で、結合手は環の炭素から直接出るため酸素を含まない。選択肢1の式には酸素原子Oが描かれ、O原子を介して環が結合するC6H5O−（フェノキシ基）の形になっており、名称と一致しない。"
+            "reason": "これが誤りの組合せ。税関の官能基解説ではフェニル基はアリール基（芳香族炭化水素から水素原子1個を除いた原子団）の一種で、C₆H₅－に酸素は含まれない。原図の式はベンゼン環がエーテル結合－O－を介して結合した形（フェノキシ基）であり、フェニル基を表していない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "アミド基は−CONH2で、カルボニル炭素（C＝O）に窒素のNH2が直接結合した構造である。選択肢2の式はOとNH2が同じ炭素Cに付いた形で示されており、名称と式が一致する正しい組合せなので、誤りを選ぶ本問の正答ではない。"
+            "reason": "正しい組合せ。原図の式は炭素がC＝Oの二重結合とNH₂を持つ－CONH₂で、税関の官能基解説の第1アミド『－CONH2』と一致する。アミノ基が酸基と結合した形がアミドであり、アミド基を表す式として適切である。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "カルボニル基は炭素と酸素の二重結合＞C＝Oで、アルデヒド、ケトン、カルボン酸誘導体に共通する部分構造である。選択肢3の式はCとOの結合として描かれており、名称と一致する正しい組合せなので不正解となる。"
+            "reason": "正しい組合せ。原図の式は炭素に酸素が二重結合し、残る2本の結合手が他の原子団につながる＞C＝Oで、税関の官能基解説の『カルボニル基　＞C＝O』と一致する。ケトンやアルデヒドに含まれる基である。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "シアノ基は炭素と窒素の三重結合−C≡Nで、アクリロニトリルなどニトリル類の官能基である。選択肢4の−CNは三重結合を省略して書いたもので名称と一致し、正しい組合せなので、誤りを選ぶ本問の正答ではない。"
+            "reason": "正しい組合せ。シアノ基は炭素と窒素が三重結合した－C≡N（－CN）で、税関の官能基解説も『-C≡Nで表される基を有する有機化合物をニトリル』と説明している。アクリロニトリルなどに含まれる基であり、式と名称は一致する。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ニトロ基は窒素に酸素2個が結合した−NO2で、p-ニトロクロロベンゼンのように窒素側で芳香環などに結合する。選択肢5の−NO2はこれと一致しており、亜硝酸エステルの−ONOとも区別される正しい組合せである。"
+            "reason": "正しい組合せ。ニトロ基は窒素に酸素2個が結合した－NO₂で、税関の官能基解説も『ニトロ基 -NO2』（例：CH₃-NO₂ ニトロメタン）と示している。名称と式の対応は適切で、誤りを選ぶ本問の正答ではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "税関 関税率表第29類の概要（代表的な官能基）",
+            "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "アリール基（芳香族炭化水素から水素原子1個を除いた原子団）の一種",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "エーテル結合　-O-",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "2個の炭化水素基が酸素原子と結合した化合物",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "第１アミド　－CONH2",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "カルボニル基　＞C＝O",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "-C≡Nで表される基を有する有機化合物をニトリルと呼称する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf",
+          "excerpt": "ニトロ基 -NO2 CH3-NO2 ニトロメタン",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "官能基の構造式を直接示す政府資料が候補になく、提示された抜粋（特化則・作業環境測定基準）にも構造式は載っていないため、sourcesとsourceEvidenceは空にした。化学の基礎知識に基づく判断である。",
-        "原文は画像の構造式で、抽出テキストでは選択肢1に「O」しか残っていない。ベンゼン環がO原子を介して結合した形（フェノキシ基）であることと、選択肢3のC＝O二重結合の表記は、原図を見て確認する必要がある。"
+        "【HOLD】解説と税関資料の根拠は用意したが、利用者に表示される文字起こし（presentation）の肢2・肢3が『アミド基\\nO\\nC\\nNH₂』『カルボニル基\\nC\\nO』と構造式の断片のままで、肢1も図表切出しのみ。独立審査で文字起こしの不備（textIssues）が指摘されるのが確実なため、presentationの構造式カード化（組合せ表と同様のキュレーション）が済むまで審査・公開を保留。"
       ]
     },
     "emkohyo-EM20261807-q14": {
       "overlay": {
         "sourceHash": "eb9e1e8c8898693155cbe16085ceec63129a3251f46976689446973cc9455132",
         "correctChoice": 2,
-        "summary": "全量が気化したときの圧力を理想気体で求め、飽和蒸気圧と比べて小さいほうを分圧とすると、PB約21.0＞PA15＞PC約8.6kPaになる。",
+        "summary": "1gを全量気化させたときの圧力をPV＝nRTで求め、飽和蒸気圧を超える物質は飽和蒸気圧で頭打ちになる。PA＝15kPa（計算23.0kPa）、PB≒21.0kPa、PC≒8.6kPaでPB＞PA＞PC、肢2。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "PA＞PC＞PBの順は誤り。1gが全量気化したときの圧力は、Bが約21.0kPaで飽和蒸気圧59kPa未満なので全量が気化し、飽和の15kPaで頭打ちになるAより大きい。Cは約8.6kPaで最小なので、PBを最小とするこの並びは成り立たない。"
+            "reason": "誤り。PAを最大としているが、アクリロニトリルは全量気化すると約23.0kPaとなり飽和蒸気圧15kPaを超えるため、液が残って分圧は15kPaにとどまる。酸化プロピレンの約21.0kPaより小さく、PA＞PC＞PBの順にはならない。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "p=(1/M)RT/Vで全量気化時の圧力を求めると、Aが約23.0、Bが約21.0、Cが約8.6kPa。飽和蒸気圧15kPaを超えるのはAだけなので、Aは液が残りPA=15kPaになる。したがってPB約21.0＞PA15＞PC約8.6の順となる。"
+            "reason": "正しい。T＝293.15K、V＝2.0×10⁻³m³でP＝(m/M)RT/Vを計算すると、A：(1/53)×8.314×293.15/0.002≒23.0kPa＞15kPaなのでPA＝15kPa、B：(1/58)×…≒21.0kPa＜59kPa、C：(1/142)×…≒8.6kPa＜54kPa。よってPB＞PA＞PCとなる。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "飽和蒸気圧の大小（59＞54＞15kPa）だけで並べた順である。Cはモル質量142g/molと大きく、1gでは約0.0070molしかないため、全量が気化しても約8.6kPaで飽和の54kPaに届かず、PA=15kPaより小さくなる。"
+            "reason": "誤り。PBが最大である点は正しいが、ヨウ化メチルはモル質量142と大きく1gでは約0.0070molしかないため、全量気化しても約8.6kPaである。PAの15kPaより小さく、PC＞PAとする並びは誤り。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "PCを最大とする点が誤り。Cは1gあたりの物質量が1/142molと最も少なく、全量が気化しても約8.6kPaで3物質中最小である。さらにBは約21.0kPaでAの15kPaより大きいので、PA＞PBも成り立たない。"
+            "reason": "誤り。飽和蒸気圧の大きさだけでなく物質量が効く。ヨウ化メチル1gは約0.0070molで分圧は約8.6kPaと3物質中最小であり、PCを最大とするこの並びは成り立たない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "モル質量の大きい順（142＞58＞53）に並べた形で誤り。同じ1gなら分圧は物質量に比例するので、モル質量が大きいCほど小さく約8.6kPaになる。Aは飽和の15kPaで頭打ちになるがCよりは大きく、最小はPCである。"
+            "reason": "誤り。ヨウ化メチルは飽和蒸気圧54kPaでも1gを全量気化させて約8.6kPaにしかならないため最小である。一方アクリロニトリルは飽和蒸気圧15kPaで頭打ちとなるがPCより大きく、PC＞PB＞PAにはならない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "科学技術振興機構 科学の甲子園・筆記競技解答例（理想気体の状態方程式）",
+            "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+          },
+          {
+            "title": "国立環境研究所 酸素の観測を支える標準ガス（質量と物質量）",
+            "url": "https://cger.nies.go.jp/cgernews/202209/382001.html"
+          },
+          {
+            "title": "産総研計量標準総合センター 国際単位系（SI）",
+            "url": "https://unit.aist.go.jp/nmij/library/si-units/"
+          },
+          {
+            "title": "JOGMEC 用語辞典 蒸気圧",
+            "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "物性値（モル質量・20℃の飽和蒸気圧）は問題文の表の値をそのまま使っており、SDS等の政府資料とは照合していない。分圧の大小を直接支える政府資料が候補にないため、sourcesは空にした。",
-        "独立検算：T=293.15K、V=2L、R=8.314J/(mol·K)で全量気化時の圧力はA約22.99kPa、B約21.01kPa、C約8.58kPa。Aは飽和蒸気圧15kPaで頭打ちになり、約0.65gが気化して約0.35gが液として残る。理想気体を仮定し、残った液の体積による気相容積の減少は無視した。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf",
+          "excerpt": "PV＝nRT",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://cger.nies.go.jp/cgernews/202209/382001.html",
+          "excerpt": "ガスの質量をモル質量で割るとガスの物質量が求まる",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+          "excerpt": "t /°C = T /K － 273.15",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html",
+          "excerpt": "液体と平衡状態にある蒸気の圧力をいう。",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261807-q15": {
       "overlay": {
         "sourceHash": "359e300fb632a8471856ba1711a5f605b34fa86f90265ae456b7c08c80f8561d",
         "correctChoice": 1,
-        "summary": "ベンゾトリクロリドはC6H5CCl3だが、選択肢1の図は環に塩素が直接3個付いたトリクロロベンゼンの形なので、この組合せが誤り。",
+        "summary": "ベンゾトリクロリドは(トリクロロメチル)ベンゼンC₇H₅Cl₃で、塩素3個は側鎖のメチル炭素に付く。肢1の図は環に塩素が直接3個付いたトリクロロベンゼン（C₆H₃Cl₃）なので誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "ベンゾトリクロリドは、ベンゼン環にトリクロロメチル基−CCl3が1つ結合したC6H5CCl3である。選択肢1の図は環に塩素3個が直接結合した形で側鎖の炭素がなく、トリクロロベンゼンの構造になっているため、名称と一致しない。"
+            "reason": "これが誤りの組合せ。厚労省モデルSDSではベンゾトリクロリドは別名（トリクロロメチル）ベンゼン、分子式C₇H₅Cl₃で、塩素3個はベンゼン環に付いたメチル炭素上にある。原図はベンゼン環に塩素が直接3個結合した形（C₆H₃Cl₃）で、炭素数も合わない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "エチレンオキシドは、酸素1個とCH2 2個からなる3員環のエーテルC2H4Oである。選択肢2はOを頂点としてH2C−CH2と結ばれた3員環で描かれており、名称と構造式が一致する正しい組合せなので正答ではない。"
+            "reason": "正しい組合せ。原図は酸素1個とCH₂2個からなる三員環で、分子式C₂H₄Oとなる。厚労省モデルSDSはエチレンオキシドの別名をエポキシエタン、分子式をC₂H₄O(44)としており、構造式と一致する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "p-ジメチルアミノアゾベンゼンは、アゾ基−N＝N−で2つのベンゼン環を結び、一方の環のパラ位にジメチルアミノ基−N(CH3)2が付いた化合物である。選択肢3の式はアゾ結合とN上の2個のCH3を示しており、名称と一致する。"
+            "reason": "正しい組合せ。原図はベンゼン環2個が－N＝N－（アゾ基）で結ばれ、一方の環のパラ位にN(CH₃)₂が付いた形で、分子式C₁₄H₁₅N₃となる。厚労省モデルSDSの別名N,N-ジメチル-4-(フェニルアゾ)-ベンゼン、分子式C₁₄H₁₅N₃と一致する。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "クロロメチルメチルエーテルは、メチル基CH3と塩素の付いたクロロメチル基CH2Clが酸素で結ばれたCH3−O−CH2Clである。選択肢4のCH3OCH2Clはこの結合順どおりで、名称と一致する正しい組合せである。"
+            "reason": "正しい組合せ。原図のCH₃－O－CH₂Clはメトキシ基が付いたクロロメタンで、分子式C₂H₅ClOとなる。厚労省モデルSDSはクロロメチルメチルエーテルの別名をクロロメトキシメタン、分子式をC₂H₅ClOとしており一致する。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "β-プロピオラクトンは、3-ヒドロキシプロピオン酸が分子内でエステル化した4員環のラクトンで、−CH2−CH2−C(＝O)−O−の環をもつ。選択肢5の式はCH2 2個とC＝O、環内のOからなる環状エステルとして描かれており、名称と一致する。"
+            "reason": "正しい組合せ。原図はC＝O、CH₂2個、環内の酸素からなる四員環のラクトンで、分子式C₃H₄O₂となる。厚労省モデルSDSはβ-プロピオラクトンの別名を3－ヒドロキシプロピオン酸ラクトン、分子式をC₃H₄O₂としており一致する。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS ベンゾトリクロリド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS エチレンオキシド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-21-8.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS p-ジメチルアミノアゾベンゼン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-11-7.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS クロロメチルメチルエーテル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-30-2.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS β-プロピオラクトン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/57-57-8.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html",
+          "excerpt": "（トリクロロメチル）ベンゼン",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html",
+          "excerpt": "C 7 H 5 Cl 3 (195)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-21-8.html",
+          "excerpt": "エポキシエタン",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-21-8.html",
+          "excerpt": "C 2 H 4 O (44)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-11-7.html",
+          "excerpt": "N,N-ジメチル-4-(フェニルアゾ)-ベンゼン",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-11-7.html",
+          "excerpt": "C 1 4 H 1 5 N 3 (225.29)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-30-2.html",
+          "excerpt": "クロロメトキシメタン",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-30-2.html",
+          "excerpt": "C2H5ClO（80.51）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/57-57-8.html",
+          "excerpt": "３－ヒドロキシプロピオン酸ラクトン",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/57-57-8.html",
+          "excerpt": "C 3 H 4 O 2 (72)",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
       "reviewIssues": [
-        "提示された政府資料（特化則別表・作業環境測定基準）には物質名が載っているだけで、構造式を支える記載はない。化合物の構造を直接示す政府資料が候補にないため、sourcesとsourceEvidenceは空にした。構造の判断は化学知識による。",
-        "原文は画像の構造式で、抽出テキストでは選択肢1に「Cl」が3個あることしか読み取れない。塩素が環に直接結合していて側鎖の炭素がないこと、選択肢3でジメチルアミノ基がパラ位にあること、選択肢5の4員環の結合順は、原図を見て確認する必要がある。"
+        "【HOLD】解説と厚労省モデルSDSの根拠は用意したが、利用者に表示される文字起こし（presentation）が崩れている。肢1が『ベンゾトリクロリド\\nO』、肢4に『CH₂\\nO C CH₂』（β-プロピオラクトンの断片）が混入し、肢2・肢5の構造式は図表切出しがなく断片文字のみ。独立審査でtextIssuesが確実に出るため、presentationの構造式カード化・図表切出しの補修が済むまで審査・公開を保留。"
       ]
     }
   }
