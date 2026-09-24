@@ -392,7 +392,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "正しい。厚労省モデルSDSの皮膚腐食性・刺激性の分類は、o-トルイジンが「区分外」、MOCAが「区分に該当しない」である。両物質は経皮吸収による障害のおそれがあるとして保護衣等の使用が義務付けられた特定化学物質に含まれ、GHS分類の発がん性はo-トルイジンが区分1A、MOCAが区分1Bである。"
+            "reason": "正しい。厚労省モデルSDSのGHS分類では、皮膚腐食性・刺激性はo-トルイジンが「区分外」、MOCAが「区分に該当しない」で、刺激性物質には分類されていない。一方、両物質は経皮吸収による障害のおそれがあり保護衣等の使用が義務となる特定化学物質に挙げられ、発がん性はo-トルイジンが区分1A、MOCAが区分1Bである。"
           },
           {
             "number": 4,
@@ -402,7 +402,7 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "正しい。食品安全委員会によると、吸収された鉛は骨に最も多く蓄積し、生物学的半減期は血液と軟組織で約40日、骨で約20年である。骨からの排泄は極めて遅く、半減期が年単位で10年を超えることから、「生物学的半減期は10年に及ぶ」という記述と矛盾しない。"
+            "reason": "正しい。食品安全委員会によると、吸収された鉛は骨に最も多く蓄積し、生物学的半減期は血液と軟組織で約40日、骨で約20年である。骨に蓄積した鉛もいずれは排泄されるが、半減期が約20年と長いことから排泄は極めて遅いといえ、「生物学的半減期は10年に及ぶ」という記述と矛盾しない。"
           }
         ],
         "sources": [
@@ -433,6 +433,10 @@
           {
             "title": "食品安全委員会「鉛」の評価書に関するQ&A",
             "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html"
+          },
+          {
+            "title": "厚生労働省 オルト－トルイジンに対する今後の対応（リスク評価書）",
+            "url": "https://www.mhlw.go.jp/file/04-Houdouhappyou-11305000-Roudoukijunkyokuanzeneiseibu-Kagakubushitsutaisakuka/0000131502.pdf"
           }
         ]
       },
@@ -551,6 +555,20 @@
           ]
         },
         {
+          "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf",
+          "excerpt": "日本産業衛生学会において、皮膚と接触することにより経皮的に吸収される量が全身への健康影響または吸収量からみて無視できない程度に達することがあると考えられると勧告がなされている物質",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/file/04-Houdouhappyou-11305000-Roudoukijunkyokuanzeneiseibu-Kagakubushitsutaisakuka/0000131502.pdf",
+          "excerpt": "オルト-トルイジンは皮膚吸収が大きく",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
           "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
           "excerpt": "インジウム化合物(これをその重量の一パーセントを超えて含有する製剤その他の物を含む。)血清インジウムの量",
           "choiceNumbers": [
@@ -574,6 +592,13 @@
         {
           "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html",
           "excerpt": "鉛の生物学的半減期は血液及び軟組織（肝臓、肺、脾臓、腎臓及び骨髄）で約40日、骨で約20年とされています。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html",
+          "excerpt": "一旦吸収され、蓄積された鉛も、いずれは排泄されます。",
           "choiceNumbers": [
             5
           ]
