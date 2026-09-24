@@ -146,45 +146,102 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "全体換気は、吸気口から入った新鮮な空気で作業場全体の有害物質を薄め、排気口から外へ出す方式である。発散源で直接捕まえる局所排気とは違い、希釈が原理であるという説明は正しい。"
+            "reason": "厚生労働省の換気装置解説では、全体換気装置を希釈換気装置とも呼び、外気の清浄空気と作業場の汚染空気が混ざって薄まり、最後に換気扇等で排気されると説明する。発散源付近の有害物質を希釈するという肢の説明は正しい。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "外付け式フードでは、熱による上昇気流がない場合、上方吸引型だと汚染空気が作業者の顔の前を通って吸い上げられやすい。下方吸引型の方が一般に有効とされ、この記述は正しい。"
+            "reason": "有機則第16条は下方吸引型に0.5 m/s、上方吸引型に1.0 m/sの制御風速を求め、上方型では同じ捕捉のためより大きい風速を要する。厚生労働省の対策例は、払拭作業では側方・下方吸引を勧め、開放式洗浄槽では上方吸引を避ける。肢は温熱上昇気流の場合を例外とし、有機則にもその気流を利用する規定があるため整合する。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "有機則の定義では、制御風速は囲い式フードなら開口面での最小風速、外付け式フードならフードの開口面から最も離れた作業位置の風速である。「作業者の呼吸位置で必要な最小風速」ではないので、この肢が誤り。"
+            "reason": "有機溶剤中毒予防規則第16条は、囲い式フードなら開口面の最小風速、外付け式フードなら開口面から最も離れた作業位置の風速を制御風速の基準位置とする。作業者の呼吸位置で測る最小風速という定義ではないため、この肢が誤りである。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "告示では、捕捉面を16以上の四辺形に分け、各中心点で測った捕捉面に垂直な方向の風速の平均が毎秒0.2m以上であることを求めている。各点の風速のばらつきにも条件がある。記述は正しい。"
+            "reason": "有機則第16条の2に基づく告示は、密閉式と開放式の両方で捕捉面を原則16以上の等面積四辺形に分ける。各四辺形の中心点で捕捉面に垂直な風速を測り、その平均が0.2 m/s以上という式を置くため、この肢は正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "特化則第10条の表には、排ガス処理の方式として吸収方式、吸着方式、直接燃焼方式、酸化・還元方式が物質ごとに挙がっている。これらを排ガス処理装置の方式として並べた記述は正しい。"
+            "reason": "特定化学物質障害予防規則の排ガス処理装置の表は、吸収方式、直接燃焼方式、酸化・還元方式、吸着方式を物質別の処理方式として挙げる。これらの方式が存在するという肢の列挙は正しい。"
           }
         ],
         "sources": [
           {
-            "title": "厚生労働省 有機溶剤中毒予防規則",
+            "title": "厚生労働省・換気装置の技術解説",
+            "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf"
+          },
+          {
+            "title": "厚生労働省・洗浄・払拭作業のばく露防止対策",
+            "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html"
+          },
+          {
+            "title": "厚生労働省・有機溶剤中毒予防規則",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1"
           },
           {
-            "title": "厚生労働省 有機溶剤中毒予防規則第十六条の二の規定に基づく厚生労働大臣が定める構造及び性能",
+            "title": "厚生労働省・プッシュプル型換気装置の構造・性能告示",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1"
           },
           {
-            "title": "厚生労働省 特定化学物質障害予防規則",
+            "title": "厚生労働省・特定化学物質障害予防規則",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=1"
           }
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf",
+          "excerpt": "全体換気装置は、希釈換気装置とも呼ばれており",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/001240051.pdf",
+          "excerpt": "最終的には換気扇等により屋外に排気される",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html",
+          "excerpt": "側方又は下方吸引型の外付け式フード",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/horei/hor1-29/hor1-29-32-1-3.html",
+          "excerpt": "上方吸引型フードは使用しない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "下方吸引型 〇・五",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "上方吸引型 一・〇",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
+          "excerpt": "温熱により生ずる上昇気流を利用",
+          "choiceNumbers": [
+            2
+          ]
+        },
         {
           "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=1",
           "excerpt": "フードの開口面から最も離れた作業位置の風速",
@@ -197,6 +254,41 @@
           "excerpt": "囲い式フードにあつては、フードの開口面における最小風速",
           "choiceNumbers": [
             3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "捕捉面を十六以上の等面積の四辺形",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "≧0.2",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "四辺形の中心点における捕捉面に垂直な方向の風速",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "密閉式プッシュプル型換気装置の性能",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74997368&dataType=0&pageNo=1",
+          "excerpt": "開放式プッシュプル型換気装置の性能",
+          "choiceNumbers": [
+            4
           ]
         },
         {
@@ -214,11 +306,7 @@
           ]
         }
       ],
-      "reviewIssues": [
-        "肢4の告示本文は読めたが、平均風速0.2以上の条件は数式（Σ Vi/n ≧ 0.2）で書かれている。取得したテキストでは記号の正確な表記を再現できなかったため、sourceEvidenceには抜粋を入れていない。",
-        "肢2（外付け式フードは上方吸引より下方吸引が有効）を直接書いた政府資料は本文で確認できていない。",
-        "肢1（全体換気の原理）は一般的な換気工学の知識によるもので、政府資料の抜粋はない。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261801-q18": {
       "overlay": {
