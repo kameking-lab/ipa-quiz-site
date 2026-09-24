@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7061,
+      "cacheReadInputTokens": 130032,
+      "cacheCreationInputTokens": 22400,
+      "webSearchRequests": 0,
+      "costUSD": 0.34643440000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4283,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "57a758f1da760100f972d2fb098cefd7ec1759241b9c8770853d168853a846cd",
+  "inputRequestSha256": "1a703af3122f68aa2d61539265edee23c8aa55734759739e2fc849d5376da582",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "381571ef3af1530351e1386dc531a2a1db1b2b757e56df20866d2d0cc3641ba2",
+      "q02": "ba47db178a8135af6397ca8a9255afd701e28bfb43e58eada7df6c042614ceab"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p04.png": "77f750bb7c61f444f973bec2034dc21cb28a5ddc2851ac7857d8867b4d6efa0a",
+      "data/raw_pdfs/denken3/review/20250323/law/p05.png": "eb4eab232b0c500b22258e7646f170deb63df2022f466861a909f80b07062969"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f399c0c7096b260a0bc28a97535175eaeb4c1f59aaddd5c4bc902733c822b32f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {
+      "data/raw_pdfs/denken3/review/egov/335AC0000000139-20240401.json": "960efcdef40a3173d5b276a79fca9ab57ab35834febac3928cc1cb338e401c76",
+      "data/raw_pdfs/denken3/review/egov/335M50000400097-20240401.json": "0b6445a9404315c6a7cd95900e4427c56c21b24b9b587d6985cf88507cb365e9",
+      "data/raw_pdfs/denken3/review/egov/339AC0000000170-20240401.json": "55f64ea6eb17ad9b55658807bbe1699cfaec03f85398c50e70c83e1ee737fe77",
+      "data/raw_pdfs/denken3/review/egov/407M50000400077-20240401.json": "258957a7ca8ddf0cdc704b85fe13ef9dd39e7683968f566bb87b05f8f105dd52"
+    }
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official problem page (PDF page 4, footer T2-H 004). The stem and choices (1)-(5) match the original, including every voltage, power, output, generation type and building use (6.6 kV/60 kW shop, 200 V/30 kW + 200 V/15 kW internal-combustion emergency generator at a hospital, 6.6 kV/45 kW office, 200 V/30 kW + 100 V/7 kW solar + 100 V/15 kW wind at a community hall, 200 V/35 kW + 100 V/5 kW solar at an office). The candidate only changes punctuation.",
+        "officialAnswer=5 matches the manifest official answer {question:1, answer:'5'}. The answer was not changed.",
+        "Electricity Business Act Art. 38(1) proviso: electrical works on the same premises as a power-generating facility that is not a small-scale generating facility are excluded, and 'low voltage' is defined by ministerial ordinance. Enforcement Regulations Art. 48(1) sets 600 V. The explanation's statement that low voltage is 600 V or less is supported by the attached e-Gov text.",
+        "Choices (1) and (3): power is received at 6.6 kV, so it does not come through a low-voltage receiving line (600 V or less), and Art. 38(1)(i) is not met. The choice explanations correctly add that received power of 60 kW or 45 kW is not a separate statutory ceiling.",
+        "Choice (2): Enforcement Regulations Art. 48(2)(iv) treats internal-combustion generation only under 10 kW as a small-scale generating facility. At 15 kW this unit is not one, so the Art. 38(1) proviso excludes the whole premises. This reasoning checks out.",
+        "Choice (4): 7+15=22 kW is under 50 kW, so the Art. 48(2) proviso (combined output of 50 kW or more) does not apply, and both units are small-scale generating facilities (wind under 20 kW per Art. 48(2)(ii)). Art. 48(4)(ii) sets the general-use threshold for wind at 0 kW, so under Art. 38(1)(ii)(a) (output below the threshold) no wind unit can be general-use. The wind unit is a small-scale business-use electrical work under Art. 38(3)(i), so the installation as a whole is not general-use. This matches the explanation.",
+        "Choice (5): power is received at 200 V (600 V or less). The 5 kW solar unit is below the 10 kW threshold in Art. 48(4)(i), so Art. 38(1)(ii)(a) is met. It is also a small-scale generating facility under Art. 48(2)(i) (under 50 kW), so the proviso does not apply, and the premise of the question satisfies Art. 38(1)(ii)(b). It is therefore general-use, consistent with the official answer.",
+        "Both officialReferenceUrls (Electricity Business Act, and its Enforcement Regulations at the 2024-04-01 enforcement point) were checked against the attached e-Gov API text for Art. 38 and Art. 48. The explanation relies on no independent claim that falls outside those texts.",
+        "The original has no figure, so figureDescription='図なし' and empty figureUrls are appropriate."
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「一般用電気工作物等は第一種・第二種電気工事士が扱える。ただし、非常用予備発電装置の発電機に係る工事は特殊電気工事に当たり、その工事の特種電気工事資格者の認定が必要である。」は、「ただし」が直前の一般用電気工作物等の文に掛かるため、一般用電気工作物等の非常用予備発電装置工事にも特種電気工事資格者が必要と読めてしまう。電気工事士法第3条第3項・施行規則第2条の2第1項の特殊電気工事は「自家用電気工作物に係る電気工事のうち」のものに限られる。修正案：「一方、自家用電気工作物に係る電気工事のうち、非常用予備発電装置として設置される発電機等に係る工事は特殊電気工事（施行規則第2条の2第1項第2号）に当たり、第3条第1項の対象から除かれ、同条第3項により当該特殊電気工事に係る特種電気工事資格者認定証の交付を受けた者でなければ従事できない。」と、自家用に限ることと、第3条第1項の括弧書きで除かれることを明示する。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked against the official problem page (PDF page 5, footer T2-H 005). The stem and choices (1)-(5) match the original, including 250 kW, 3 kW, 50 kW and 200 V, plus the terms 'neon distribution board', 'grounding work' and 'certified electrical work engineer (認定電気工事従事者)'. The candidate only changes punctuation.",
+        "officialAnswer=3 matches the manifest official answer {question:2, answer:'3'}. The answer was not changed.",
+        "Choice (1): Electrical Work Act Art. 2(2) removes demand facilities of 500 kW or more from the covered private-use installations, so 250 kW is covered. Art. 3(1) lets a first-class electrician do this work. Appropriate.",
+        "Choice (2): a 3 kW solar unit is under the 10 kW threshold in Electricity Business Act Enforcement Regulations Art. 48(4)(i), so it is general-use. Electrical Work Act Art. 3(2) lets a second-class electrician work on general-use installations. The choice explanation's note that there is no separate qualification limit is also correct. Appropriate.",
+        "Choice (3): Electrical Work Act Enforcement Regulations Art. 2-2(1)(ii) makes work on emergency backup generators (engine, generator, switchboard, etc.) special electrical work. Art. 3(1) excludes 'work specified in paragraph 3' in parentheses, and Art. 3(3) requires a special electrical work qualification holder. A first-class electrician's licence alone is not enough, so this choice is inappropriate, matching the official answer. The choice explanation is correct.",
+        "Choice (4): neon work under Enforcement Regulations Art. 2-2(1)(i) is limited to private-use installations under Act Art. 3(3). Neon work on a general-use installation falls under Art. 3(2), so a second-class electrician may do it. Appropriate, and the choice explanation is correct.",
+        "Choice (5): 250 kW is a covered private-use installation. Enforcement Regulations Art. 2-3 defines simple electrical work as work on private-use installations used at 600 V or less, excluding lines. Grounding work on a 200 V motor falls in that range, and Act Art. 3(4) lets a certified electrical work engineer do it. Appropriate, and the choice explanation is correct.",
+        "Both officialReferenceUrls (Electrical Work Act, and its Enforcement Regulations at the 2024-04-01 enforcement point) were checked against the attached e-Gov text for Art. 2, Art. 3, Art. 2-2 and Art. 2-3. The 10 kW figure for choice (2) comes from the Electricity Business Act Enforcement Regulations Art. 48(4)(i), which was also verified in the attached text.",
+        "The original has no figure, so figureDescription and empty figureUrls are appropriate."
+      ]
+    }
+  ]
+}

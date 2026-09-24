@@ -36,6 +36,35 @@ def canonical(value: object) -> str:
     return sha256(json.dumps(value, ensure_ascii=False, sort_keys=True).encode("utf-8")).hexdigest()
 
 
+def egov_article(snapshot: dict, number: str) -> str:
+    """Render only the main-provision article from an as-of e-Gov law snapshot."""
+    body = next(child for child in snapshot["law_full_text"]["children"]
+                if isinstance(child, dict) and child.get("tag") == "LawBody")
+    main = next(child for child in body["children"]
+                if isinstance(child, dict) and child.get("tag") == "MainProvision")
+    pending = [main]
+    articles = []
+    while pending:
+        node = pending.pop()
+        if not isinstance(node, dict):
+            continue
+        if node.get("tag") == "Article" and node.get("attr", {}).get("Num") == number:
+            articles.append(node)
+        pending.extend(node.get("children", []))
+    if len(articles) != 1:
+        raise ValueError(f"e-Gov article {number}: found {len(articles)} main-provision matches")
+
+    def flatten(node: object) -> str:
+        if isinstance(node, str):
+            return node
+        if not isinstance(node, dict):
+            return ""
+        parts = [flatten(child) for child in node.get("children", [])]
+        return ("\n" if node.get("tag") in {"Article", "Paragraph", "Item", "Subitem1"} else "").join(parts)
+
+    return flatten(articles[0])
+
+
 def image(path: Path) -> dict:
     return {"type": "image", "source": {"type": "base64", "media_type": "image/png",
             "data": b64encode(path.read_bytes()).decode("ascii")}}
@@ -116,6 +145,7 @@ def main() -> None:
         "officialAnswerUnitsSha256": canonical([official[key] for key in selected_keys]),
         "referencePdfSha256": {},
         "referencePageSha256": {},
+        "referenceJsonSha256": {},
     }
 
     prompt = (
@@ -144,6 +174,21 @@ def main() -> None:
         if url not in reference_manifest:
             raise ValueError(f"Official reference lacks pinned source pages: {url}")
         entry = reference_manifest[url]
+        if "localJson" in entry:
+            snapshot_path = ROOT / entry["localJson"]
+            if raw_digest(snapshot_path) != entry["sha256"]:
+                raise ValueError(f"Official e-Gov snapshot hash changed: {url}")
+            snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+            if (snapshot["law_info"]["law_id"] != entry["lawId"] or
+                    snapshot["revision_info"]["law_revision_id"] != entry["revisionId"]):
+                raise ValueError(f"e-Gov law/revision changed: {url}")
+            hashes["referenceJsonSha256"][entry["localJson"]] = entry["sha256"]
+            for number in entry["articles"]:
+                excerpt = egov_article(snapshot, str(number))
+                blocks.append({"type": "text", "text":
+                               f"e-Gov法令API v2 施行時点={entry['asof']} {snapshot['revision_info']['law_title']} "
+                               f"第{number}条 公式URL={url}\n{excerpt}"})
+            continue
         pdf = ROOT / entry["localPdf"]
         if raw_digest(pdf) != entry["sha256"]:
             raise ValueError(f"Official reference PDF hash changed: {url}")

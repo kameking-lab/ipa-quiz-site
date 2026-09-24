@@ -12,12 +12,43 @@ import re
 import subprocess
 import sys
 
+import fitz
+
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "scripts/denken3-source-manifest.json"
 REVIEW = ROOT / "data/raw_pdfs/denken3/review"
 FIGURE_SPECS = ROOT / "scripts/denken3-figure-crops.json"
+REFERENCE_MANIFEST = ROOT / "scripts/denken3-reference-manifest.json"
 CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+
+
+def egov_article(snapshot: dict, number: str) -> str:
+    body = next(child for child in snapshot["law_full_text"]["children"]
+                if isinstance(child, dict) and child.get("tag") == "LawBody")
+    main = next(child for child in body["children"]
+                if isinstance(child, dict) and child.get("tag") == "MainProvision")
+    pending = [main]
+    articles = []
+    while pending:
+        node = pending.pop()
+        if not isinstance(node, dict):
+            continue
+        if node.get("tag") == "Article" and node.get("attr", {}).get("Num") == number:
+            articles.append(node)
+        pending.extend(node.get("children", []))
+    if len(articles) != 1:
+        raise ValueError(f"e-Gov article {number}: found {len(articles)} main-provision matches")
+
+    def flatten(node: object) -> str:
+        if isinstance(node, str):
+            return node
+        if not isinstance(node, dict):
+            return ""
+        parts = [flatten(child) for child in node.get("children", [])]
+        return ("\n" if node.get("tag") in {"Article", "Paragraph", "Item", "Subitem1"} else "").join(parts)
+
+    return flatten(articles[0])
 
 
 def review(date: str, subject: str, numbers: list[int]) -> None:
@@ -28,6 +59,10 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
     page_map = json.loads((folder / "question-page-map.json").read_text(encoding="utf-8"))
     drafts = {}
     draft_hashes = {}
+    reference_hashes = {}
+    reference_pdf_hashes = {}
+    reference_page_hashes = {}
+    reference_manifest = {entry["url"]: entry for entry in json.loads(REFERENCE_MANIFEST.read_text(encoding="utf-8"))}
     figure_specs = json.loads(FIGURE_SPECS.read_text(encoding="utf-8")) if FIGURE_SPECS.exists() else []
     relevant_figures = [item for item in figure_specs if item["examDate"] == date and item["subject"] == subject
                         and item["questionNumber"] in numbers]
@@ -53,7 +88,7 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
         "公式正答、解説の計算と因果、正答肢と誤答肢すべての理由を独立に検算。問題画像に次の問が写っていても無視。"
         "単なる『出典不足』や文体差はFIXにしないが、本文から選択肢の図形を理解できないなら必ず figureIssues に記す。"
         "図だけの切り出し画像があれば原図と比較し、必要な図・ラベルが全て入り、本文が混入せず、文字や線が欠けていないか検査する。"
-        "草稿に出典URLが空なら架空の出典を補わない。規則条文や最新法令は画像だけでは確定しないので要外部確認とする。"
+        "草稿に出典URLが空なら架空の出典を補わない。規則条文は添付された施行時点のe-Gov原文で検証し、原文がなければ要外部確認とする。"
         "JSON配列のみを出力。各要素は number, status(PASS/FIX), textIssues, choiceIssues, explanationIssues,"
         "figureIssues, externalSourceIssues を持ち、issuesは具体的な差分だけを文字列配列にする。"
         "問題番号ごと必ず1件、細部に問題がなければ全issues空配列でPASS。"
@@ -62,6 +97,43 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
     for number in numbers:
         official = [item for item in paper["answerUnits"] if item["question"] == number]
         blocks.append({"type": "text", "text": f"問{number}の公式正答: {json.dumps(official, ensure_ascii=False)}\n別モデル草稿: {json.dumps(drafts[number], ensure_ascii=False)}"})
+        for url in {url for unit in drafts[number]["units"] for url in unit.get("officialReferenceUrls", [])}:
+            entry = reference_manifest.get(url)
+            if not entry:
+                continue
+            if "localPdf" in entry:
+                pdf_path = ROOT / entry["localPdf"]
+                digest = sha256(pdf_path.read_bytes()).hexdigest()
+                if digest != entry["sha256"]:
+                    raise ValueError(f"Official reference PDF changed: {url}")
+                reference_pdf_hashes[entry["localPdf"]] = digest
+                pdf = fitz.open(pdf_path)
+                for page_number in entry["pages"]:
+                    rendered = REVIEW / "references" / f"{pdf_path.stem}-p{page_number:03}.png"
+                    rendered.parent.mkdir(parents=True, exist_ok=True)
+                    if not rendered.exists():
+                        pdf[page_number - 1].get_pixmap(matrix=fitz.Matrix(2, 2), alpha=False).save(rendered)
+                    reference_page_hashes[rendered.relative_to(ROOT).as_posix()] = sha256(rendered.read_bytes()).hexdigest()
+                    blocks.append({"type": "text", "text": f"問{number} 公式参考資料 {entry['purpose']} URL={url} PDF第{page_number}頁"})
+                    blocks.append({"type": "image", "source": {"type": "base64", "media_type": "image/png",
+                                                               "data": b64encode(rendered.read_bytes()).decode("ascii")}})
+                continue
+            if "localJson" not in entry:
+                continue
+            snapshot_path = ROOT / entry["localJson"]
+            digest = sha256(snapshot_path.read_bytes()).hexdigest()
+            if digest != entry["sha256"]:
+                raise ValueError(f"e-Gov snapshot changed: {url}")
+            snapshot = json.loads(snapshot_path.read_text(encoding="utf-8"))
+            if (snapshot["law_info"]["law_id"] != entry["lawId"] or
+                    snapshot["revision_info"]["law_revision_id"] != entry["revisionId"]):
+                raise ValueError(f"e-Gov law/revision changed: {url}")
+            reference_hashes[entry["localJson"]] = digest
+            for article in entry["articles"]:
+                blocks.append({"type": "text", "text":
+                               f"問{number} e-Gov法令API v2 施行時点={entry['asof']} "
+                               f"{snapshot['revision_info']['law_title']} 第{article}条 URL={url}\n"
+                               + egov_article(snapshot, str(article))})
         for image_path in page_map["questions"][str(number)]["images"]:
             path = ROOT / image_path
             blocks.append({"type": "text", "text": f"問{number} 公式PDF p{path.stem[1:]}"})
@@ -106,6 +178,9 @@ def review(date: str, subject: str, numbers: list[int]) -> None:
                                "modelUsage": model_usage, "rawResponseSha256": sha256(raw_out.read_bytes()).hexdigest(),
                                "draftSha256": draft_hashes,
                                "figureSha256": figure_hashes,
+                               "referenceJsonSha256": reference_hashes,
+                               "referencePdfSha256": reference_pdf_hashes,
+                               "referencePageSha256": reference_page_hashes,
                                "sourceQuestionPdfSha256": paper["sha256"],
                                "sourceAnswerPdfSha256": session["officialAnswer"]["sha256"],
                                "assessment": assessment}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
