@@ -28254,5 +28254,47 @@
         "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/mortar/dl/1_0004.pdf"
       }
     ]
+  },
+  "emkohyo-EM20251809-q16": {
+    "sourceHash": "507bfbd32e0023fa387c951ffc82a023c4ff90bb4368c18b26e0983ea9ac874b",
+    "correctChoice": 4,
+    "summary": "48時間は半減期8時間の6倍なので、採取時の放射能は3Bq×2⁶＝192Bq。採取試料1.1L＝1100cm³で割ると192÷1100≒0.175Bq/cm³＝1.7×10⁻¹Bq･cm⁻³となり、肢4が正しい。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1.6×10⁻²Bq･cm⁻³は、正しい値1.7×10⁻¹Bq･cm⁻³より約1桁小さい。放射能の減衰はN＝N₀exp(−λt)に従い、48時間(半減期8時間の6倍)前の採取時の放射能は3×2⁶＝192Bq、これを採取試料1.1L＝1100cm³で割ると約0.17Bq/cm³となる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "1.9×10⁻²Bq･cm⁻³は、正しい計算値0.175Bq/cm³と桁が合わない。半減期8時間の核種は48時間で2⁻⁶＝1/64に減衰するので、採取時の放射能は3Bq×64＝192Bq、これを採取試料1.1L（1100cm³）で割って濃度を求めると1.7×10⁻¹Bq/cm³となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "2.0×10⁻²Bq･cm⁻³は、正しい計算値0.175Bq/cm³と桁が合わない。測定時3Bqから48時間(半減期8時間の6倍)さかのぼって減衰補正すると3×2⁶＝192Bqで、1100cm³で割った濃度は約0.17Bq/cm³である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ATOMICAのとおり放射性核種の数（放射能）は半減期ごとに半分になる。48÷8＝6半減期なので採取時の放射能は3Bq×2⁶＝192Bq。直接捕集法の採取試料1.1L＝1100cm³で割ると192÷1100≒0.1745Bq/cm³≒1.7×10⁻¹Bq･cm⁻³となり正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "2.1×10⁻¹Bq･cm⁻³は、正しい値0.1745Bq/cm³より約2割大きい。減衰補正係数は2^(48/8)＝64、採取時の放射能は192Bq、1100cm³で割って0.17Bq/cm³であり、最も近い選択肢は1.7×10⁻¹Bq･cm⁻³である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 半減期",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-04.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 直接捕集法",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html"
+      }
+    ]
   }
 }
