@@ -285,22 +285,22 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "正しい組合せ。Cr₂O₇²⁻は酸素7個で−14、イオン全体が−2なので、クロム2原子で＋12、1原子あたり＋6となる。厚生労働省のモデルSDSは二クロム酸カリウムを水溶性Cr(VI)としており、＋6と一致する。"
+            "reason": "正しい組合せ。Cr₂O₇²⁻は酸素7個で−14、イオン全体が−2なので、クロム2原子で＋12、1原子あたり＋6となる。厚生労働省のモデルSDSも二クロム酸カリウムを水溶性Cr(VI)（6価クロム）として扱っており、＋6と一致する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "正しい組合せ。MnO₄⁻は酸素4個で−8、イオン全体が−1なので、マンガンは−1−(−8)＝＋7となる。化学と教育の解説も過マンガン酸イオンを「Mn7＋でd0」と記載しており、＋7は正しい。"
+            "reason": "正しい組合せ。MnO₄⁻は酸素4個で−8、イオン全体が−1なので、マンガンは−1−(−8)＝＋7となる。厚生労働省の過マンガン酸カリウムのモデルSDSも、毒性値をVII価（7価）のマンガンとして換算して示しており、＋7と整合する。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "正しい組合せ。配位子のアンモニアは非共有電子対を金属に与えて配位結合する中性分子で、電荷は0である。テトラアンミン亜鉛(Ⅱ)イオンなどと同様に、[Ni(NH₃)₆]²⁺の全電荷＋2がそのままニッケルの酸化数＋2となる。"
+            "reason": "正しい組合せ。配位子のアンモニアNH₃は電荷をもたない中性分子である。日本薬局方のペンタシアノアンミン鉄(Ⅱ)酸ナトリウムNa₃[Fe(CN)₅NH₃]も、鉄(＋2)とCN⁻5個(−5)で錯イオンが−3となりNH₃を0と数える。同様に[Ni(NH₃)₆]²⁺の全電荷＋2がニッケルの酸化数となる。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "これが誤りの組合せ。Hg₂Cl₂は塩素2個で−2、中性化合物なので水銀2原子の合計が＋2、1原子あたり＋1である。厚生労働省のモデルSDSも名称を塩化水銀（I）とし、化学と教育の解説も水銀(Ⅰ)をHg₂²⁺として扱う。＋2ではない。"
+            "reason": "これが誤りの組合せ。Hg₂Cl₂は塩素2個で−2、中性化合物なので水銀2原子の合計が＋2、1原子あたり＋1である。厚生労働省のモデルSDSも化学物質名を塩化水銀（I）（塩化第一水銀）とし、光で分解すると塩化水銀(II)と水銀を生じると記載する。＋2ではない。"
           }
         ],
         "sources": [
@@ -313,16 +313,16 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7778-50-9.html"
           },
           {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 過マンガン酸カリウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7722-64-7.html"
+          },
+          {
+            "title": "厚生労働省 第十八改正日本薬局方 試薬・試液",
+            "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf"
+          },
+          {
             "title": "厚生労働省 職場のあんぜんサイト モデルSDS 塩化第一水銀",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10112-91-1.html"
-          },
-          {
-            "title": "J-STAGE 化学と教育 65巻4号 金属錯体の形と色",
-            "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf"
-          },
-          {
-            "title": "J-STAGE 化学と教育 65巻9号 化学の理論を高校でどう教えるか",
-            "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/9/65_436/_pdf"
           }
         ]
       },
@@ -342,29 +342,15 @@
           ]
         },
         {
-          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
-          "excerpt": "クロム酸イオンは6価のクロムであるため，d0（d電子をもたない）である",
-          "choiceNumbers": [
-            2
-          ]
-        },
-        {
-          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
-          "excerpt": "MnO4－（過マンガン酸イオン，Mn7＋でd0）は濃い紫色を呈する",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7722-64-7.html",
+          "excerpt": "甲殻類（オオミジンコ）の48時間EC50=0.084mg/L（CERIハザードデータ集、2002）（過マンガン酸カリウム（VII（濃度換算値：0.242mg/L）",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
-          "excerpt": "アンモニアは窒素上の非共有電子対を亜鉛に提供（配位結合）することにより，テトラアンミン亜鉛（Ⅱ）イオンを形成する",
-          "choiceNumbers": [
-            4
-          ]
-        },
-        {
-          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
-          "excerpt": "4つのアンミン配位子を有する2価の亜鉛と銅の錯イオンが記載されている",
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "ペンタシアノアンミン鉄(Ⅱ)酸ナトリウムn水和物Na3[Fe(CN)5NH3]・xH2O",
           "choiceNumbers": [
             4
           ]
@@ -377,8 +363,8 @@
           ]
         },
         {
-          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/9/65_436/_pdf",
-          "excerpt": "17族のフッ素を除くハロゲン化物イオンと沈殿をつくるのはAg＋,Pb2＋,Hg22＋である",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10112-91-1.html",
+          "excerpt": "光により分解し、塩化水銀(II)、水銀を生じる。",
           "choiceNumbers": [
             5
           ]
@@ -507,7 +493,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】全肢（1〜5）の根拠がJ-STAGE掲載の学術記事（化学教育・元素の周期表を用いた化学教育・有機合成化学協会誌・実務表面技術）のみで、政府一次資料がない。肢1・5（同周期で原子半径は右ほど小さい、Na＞Mg）、肢2（アルカリ金属のイオン化エネルギーは原子番号とともに減少）、肢3（フッ素の電気陰性度が最大）、正答肢4（遷移元素はすべて金属）を示すmhlw・env・aist・jaea等の政府資料が必要。"
+      ]
     },
     "emkohyo-EM20261808-q3": {
       "overlay": {
@@ -746,7 +734,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】肢1（ベリロンⅢ-ベリリウム）、肢2（ジチゾン-カドミウム）、肢4（N-ベンゾイル-N-フェニルヒドロキシルアミン-バナジウム）、肢5（モリブデン酸アンモニウム-ヒ素：モリブデン青法）の根拠がJ-STAGE（分析化学）の学術記事のみで、政府一次資料がない。正答肢3は厚生労働省 平成28年度第1回管理濃度等検討会議事録（作業環境測定でマンガンの吸光光度法試薬としてホルムアルドキシムが指定されている）で確認できる。"
+      ]
     },
     "emkohyo-EM20261808-q5": {
       "overlay": {
