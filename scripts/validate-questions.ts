@@ -20,7 +20,11 @@ import { z } from "zod";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
-const VALIDATION_QUESTIONS = [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS];
+const VALIDATION_QUESTIONS = [
+  ...new Map(
+    [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS].map((question) => [question.id, question]),
+  ).values(),
+];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 

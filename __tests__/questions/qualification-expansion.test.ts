@@ -25,11 +25,11 @@ describe("official-source qualification pilot data", () => {
     expect(DENKO2_QUESTIONS).toHaveLength(200);
   });
 
-  it("keeps Denken3 behind the notification-required publication gate", () => {
-    expect(getQualificationByExamCode("denken3")?.status).toBe("notification-required");
+  it("keeps incomplete Denken3 out while publishing the complete electrician set", () => {
+    expect(getQualificationByExamCode("denken3")?.status).toBe("ready-to-ingest");
     expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
-    expect(getQualificationByExamCode("denko2")?.status).toBe("notification-required");
-    expect(QUESTIONS_BY_EXAM.denko2).toBeUndefined();
+    expect(getQualificationByExamCode("denko2")?.status).toBe("live");
+    expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(200);
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(250);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(120);
   });
@@ -107,6 +107,7 @@ describe("official-source qualification pilot data", () => {
     [FP2_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
     [FP3_QUESTIONS[0]!, "日本ファイナンシャル・プランナーズ協会", "exam_riyou.pdf"],
     [DENKEN3_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
+    [DENKO2_QUESTIONS[0]!, "一般財団法人 電気技術者試験センター", "faq08/000082.html"],
   ] as const)("$0.id identifies the official author and reuse terms in JSON-LD", (q, author, license) => {
     const graph = buildQuestionJsonLd({
       question: q,
@@ -121,7 +122,7 @@ describe("official-source qualification pilot data", () => {
     expect(String(resource.license)).toContain(license);
   });
 
-  it.each([FP2_QUESTIONS[0]!, FP3_QUESTIONS[0]!, DENKEN3_QUESTIONS[0]!])(
+  it.each([FP2_QUESTIONS[0]!, FP3_QUESTIONS[0]!, DENKEN3_QUESTIONS[0]!, DENKO2_QUESTIONS[0]!])(
     "$id keeps answer text and each-choice explanations aligned after shuffling",
     (q) => {
       const originalAnswer = (Array.isArray(q.answer) ? q.answer[0]! : q.answer) as ChoiceKey;
