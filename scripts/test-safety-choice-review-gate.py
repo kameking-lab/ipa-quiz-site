@@ -148,12 +148,25 @@ class FullReviewGateTest(unittest.TestCase):
                         "headers": {"Content-Type": "text/html"},
                         "raise_for_status": lambda self: None})()
         with patch.object(REVIEW.requests, "get", return_value=response):
-            pack = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            pack, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+        self.assertEqual(unpinnable, {})
         source = pack["content"]["sources"][0]
         self.assertEqual(source["retrieval"]["retrievalUrl"],
                          "https://www.mhlw.go.jp/new.html")
         self.assertEqual(source["retrieval"]["sha256"], sha256(payload).hexdigest())
         self.assertEqual(source["relevantQuestionIds"], ["q1"])
+
+    def test_dead_candidate_citation_is_reported_not_fatal(self):
+        drafts = {"q1": {"sources": [{"url": "https://www.mhlw.go.jp/missing.pdf",
+                                        "title": "mistyped"}]}}
+        def fail(self):
+            raise REVIEW.requests.HTTPError("404 Client Error")
+        response = type("Response", (), {"content": b"", "headers": {},
+                        "raise_for_status": fail})()
+        with patch.object(REVIEW.requests, "get", return_value=response):
+            pack, unpinnable = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+        self.assertIn("https://www.mhlw.go.jp/missing.pdf", unpinnable)
+        self.assertEqual(pack["content"]["sources"], [])
 
     def test_refreshed_pack_is_scoped_to_named_questions(self):
         packs = [{"path": "old", "sha256": "a", "content": {"sources": [

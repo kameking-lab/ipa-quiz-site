@@ -112,6 +112,7 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
     path = root / f"docs/evidence/{group}-candidate-source-pins.json"
     previous = read(path) if path.exists() else {"sources": []}
     pinned = {source["url"]: source for source in previous.get("sources", [])}
+    unpinnable = {}
     known = {source.get("url") for pack in existing_packs
              for source in pack["content"].get("sources", [])}
     grouped = defaultdict(lambda: {"titles": set(), "questionIds": set()})
@@ -126,16 +127,23 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
         if (parsed.scheme != "https" or parsed.hostname is None
                 or not parsed.hostname.endswith(".go.jp")
                 or parsed.username or parsed.password or parsed.port is not None):
-            raise ValueError(f"Cannot pin non-government candidate source: {url}")
+            unpinnable[url] = "non-government"
+            continue
         retrieval_url = parsed._replace(fragment="").geturl()
         current = pinned.get(url)
         if current and current.get("retrieval", {}).get("retrievalUrl") == retrieval_url:
             continue
-        response = requests.get(retrieval_url, timeout=90, headers=HEADERS)
-        response.raise_for_status()
+        try:
+            response = requests.get(retrieval_url, timeout=90, headers=HEADERS)
+            response.raise_for_status()
+        except requests.RequestException as exc:
+            # A mistyped or dead citation holds only the candidates citing it.
+            unpinnable[url] = str(exc)[:200]
+            continue
         payload = response.content
         if len(payload) < 300 or len(payload) > 32 * 1024 * 1024:
-            raise ValueError(f"Candidate source is not substantive: {url}")
+            unpinnable[url] = "not substantive"
+            continue
         content_type = response.headers.get("Content-Type", "application/octet-stream")
         receipt = {"retrievalUrl": retrieval_url, "retrievedOn": date.today().isoformat(),
                    "sha256": sha256(payload).hexdigest(), "bytes": len(payload),
@@ -156,7 +164,7 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
              "notice": "Candidate evidence only; question-level Opus review is still required.",
              "sources": rows}
     write(path, value)
-    return {"path": pack_path(root, path), "sha256": digest(value), "content": value}
+    return {"path": pack_path(root, path), "sha256": digest(value), "content": value}, unpinnable
 
 
 def refresh_question_sources(root, drafts, question_ids, group):
@@ -323,7 +331,8 @@ def main():
             packs.append(refreshed)
     # Question-scoped packs must be visible before extending the shared candidate
     # pack, otherwise adding one candidate invalidates unrelated receipts.
-    packs.append(pin_candidate_sources(root, target_drafts, packs, args.group))
+    candidate_pack, unpinnable = pin_candidate_sources(root, target_drafts, packs, args.group)
+    packs.append(candidate_pack)
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
@@ -345,6 +354,9 @@ def main():
                 continue
             candidate = drafts[qid]
             problems = candidate_issues(question, candidate, args.group)
+            problems += [f"unpinnable source {url}: {unpinnable[url]}"
+                         for url in sorted({x.get("url", "") for x in candidate.get("sources", [])})
+                         if url in unpinnable]
             if problems:
                 counts["staticHold"] += 1
                 static_holds.append({"questionId": qid, "issues": problems})
