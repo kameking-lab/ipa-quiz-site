@@ -1,0 +1,75 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2427,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15813,
+      "webSearchRequests": 0,
+      "costUSD": 0.20294060000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1006,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9d7318397c47baedfdef909fcd69e726f46d2519f194381bcd14591dc9940d70",
+  "inputRequestSha256": "c8bce7066d4228434f48ba13a7bd768abc72527d4e4e553e44636ceb0bf721fb",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "b2426e59284758d186c7e7250520ec8e9add511486b97bde4bccb83f8e82cea7"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p13.png": "b5d04d5e7e431a0b8a5a5caae8d5e5c49bb122cec7dace22859b90a1d6228c6f"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q10-switch-rc-network.png": "38c907d539717313edbb769db84d90c263b4f384c0dee740c1b3c30eb5630597"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "d21b233ae17741c69fbe9f2345a20308d79fe9e9b03e94f4cac2adbe2ce4fc5b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 原図と照合して一致。確認した要素は、スイッチ S を閉じた瞬間 (t=0) の点 A の電流 I₀[A]、定常状態の点 A の電流 I[A]、電流比 I₀/I、「最も近いもの」、ただし書き「コンデンサの初期電荷は零」。原図で別段落のただし書きは一文に統合されているが、意味は変わっていない。",
+        "選択肢: (1)0.5、(2)1.0、(3)1.5、(4)2.0、(5)2.5。5肢とも原図と一致。",
+        "公式正答: 正答単位 {question:10, part:null, answer:'4'} と候補の officialAnswer '4' が一致。",
+        "t=0 の検算: コンデンサの初期電荷は零なので端子電圧は連続して 0 V となり、短絡とみなせる。並列部は 4∥12=48/16=3Ω、全体は 6+3=9Ω で、I₀=E/9。",
+        "定常状態の検算: 直流の定常状態ではコンデンサに電流が流れず、開放とみなせる。電流は 12Ω の枝だけを通り、全体は 6+12=18Ω で、I=E/18。",
+        "電流比の検算: I₀/I=(E/9)/(E/18)=2.0 で、正答は(4)。E はどちらにも掛かるので約分でき、比は電源電圧にも極性にも依存しない。",
+        "点 A の位置: 点 A は 6Ω と分岐点の間の直列区間にあるので、点 A の電流は回路全体の電流に等しい。原図と公開候補図の両方で確認した。",
+        "誤答肢(1)の理由: 0.5 は I/I₀ に当たる値である。確認済み。",
+        "誤答肢(2)の理由: 1.0 は I₀=I を意味するが、実際は E/9≠E/18 である。確認済み。",
+        "誤答肢(3)の理由: 比が 1.5 になるには t=0 の全抵抗が 18/1.5=12Ω でなければならないが、実際は 9Ω である。確認済み。",
+        "誤答肢(5)の理由: 比が 2.5 になるには全抵抗が 18/2.5=7.2Ω、したがって並列部が 7.2−6=1.2Ω でなければならないが、実際は 3Ω である。確認済み。",
+        "公開候補図: 原図の回路部分と照合して一致。素子と接続は、左上の 6Ω、その右の点 A と分岐点、上の枝の C[F] と 4Ω の直列、下の枝の 12Ω、右側の合流点、下辺のスイッチ S と電源 E[V]。ラベル C[F], 4Ω, 6Ω, A, 12Ω, S, E[V] はすべて判読できる。電池記号の長短の極板の向きも原図と同じ。",
+        "図の必要性: 並列と直列の構成と点 A の位置を知るには図が必要である。公開候補図だけで回路を再構成できる。",
+        "figureDescription: 公開候補図と矛盾はない。",
+        "reviewedFromPage: [13] は、原図右下のページ識別 'T2−R 013' と整合する。紙面に印字されたページ番号 '-10-' は PDF のページ番号ではない。",
+        "出典表記: 試験日 2025-03-23、令和6年度下期、理論科目 問10 で一致。",
+        "officialReferenceUrls: 空である。公式参考資料で検証が必要な独立主張は含まれていない。",
+        "uncertainty 欄: 極性を特定していないという記載は電流比に影響しないため、問題にならない。"
+      ]
+    }
+  ]
+}

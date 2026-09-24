@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3996,
+      "cacheReadInputTokens": 109052,
+      "cacheCreationInputTokens": 18861,
+      "webSearchRequests": 0,
+      "costUSD": 0.25262640000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1907,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "8daf53a7729e87fcdbaaeffb8de68f83755d4217cc759b1b8666f187deaeb3e3",
+  "inputRequestSha256": "1c3d3921fb755fa22a6854a74d499cd1a05557791f44d8a051593bb51df9856f",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "416a13b7614a0a396b67789be1300a90a073e89dd3399b02381b38a42c1d3381",
+      "q08": "bc70e669b32be32444907ba0b39ebb5fb06c8e91c9416ee92919f3cc2ba14fd4"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p10.png": "187fccd634b02c2d065a6f9028ec847913da2e1e9f5b0d158ae214262a9002c5",
+      "data/raw_pdfs/denken3/review/20250323/theory/p11.png": "3acc5c70774343b05d13aeb0f019bb01c639a043dd42eefdcea01fbd99944e40"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q07-resistor-network.png": "f1318014ae48891938ddfb0bbceda2fcd5788de8529fe555a99b450b232c5da2",
+      "public/images/denken3/20250323/theory/20250323-theory-q08-ac-source-sum.png": "c47c6665ada5a2536cf751b2baea900e89f599a539a5f3054903633cbd325c5e"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "a757bdffddbf5e3d5786e47237e02c796edab83c2c6bc150036a68b25cc0ae5b",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は原図の文面と一致する。端子a, b間の合成抵抗はR_ab、その値は1.8R[Ω]、求めるのは抵抗R_x[Ω]で、(1)〜(5)から一つ選ぶ形式。",
+        "選択肢(1)R、(2)2R、(3)3R、(4)4R、(5)5Rは原図と一致する。",
+        "公式正答(4)は、manifestの{question:7, part:null, answer:'4'}と一致する。",
+        "計算を検算した。R_ab = R + R·R_x/(R+R_x) = 1.8R から R·R_x/(R+R_x) = 0.8R となり、0.2R_x = 0.8R より R_x = 4R。R_x = 4Rを代入すると並列部分は4R²/5R = 0.8Rで、R_ab = 1.8Rとなり条件と一致する。",
+        "各選択肢の値を代入して検算した。(1)は0.5Rで1.5R、(2)は2R/3で約1.667R、(3)は0.75Rで1.75R、(5)は5R/6で約1.833R。いずれも1.8Rと一致しない。(4)だけが1.8Rと一致する。",
+        "公開候補図を確認した。a─R[Ω]─節点のあと、上の枝がR[Ω]、下の枝がR_x[Ω]で、両端の節点(黒丸)を経てbにつながる。接続関係と全ラベルは原図と一致し、欠落もない。",
+        "figureDescriptionは原図と一致する(直列のR＋RとR_xの並列)。公開候補図だけで解答に必要な接続が理解できる。",
+        "原図の頁の下部はT2−R 010で、reviewedFromPage [10]と整合する。令和6年度下期(2025-03-23)、理論科目という表記も整合する。",
+        "officialReferenceUrlsは空で、検証が必要な独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説は冒頭で『直列接続なので v = e₁ + e₂』と書いているが、直列接続という事実だけでは加算になるとは言えない。原図には電源の極性記号がなく、vの矢印も両矢印なので、向きは図から決まらない。修正案：『図には極性の指定がないため、e₁・e₂・v の基準の向きがそろっている(加わり合う)ものとして v = e₁ + e₂ とする』と前提を明記する。",
+        "肢(4)の理由『√3 は e₂ 単独の最大値（√3E）との比であり』は、何と何の比なのかが不正確。修正案：『√3 は e₂ の最大値 √3E と e₁ の最大値 E の比であり、合成電圧の最大値の比ではない』。"
+      ],
+      "figureIssues": [
+        "figureDescriptionは『合成電圧 v[V] が矢印で示されている』としているが、原図の矢印は上下両端に矢じりがある両矢印で、vの極性を示していない。修正案：『両矢印で示されている(極性の指定はない)』と明記する。公開候補図の内容そのものは原図と一致しており、修正は不要。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は原図の文面と一致する。二つの正弦波交流電圧源e₁[V]とe₂[V]の直列回路で、合成電圧vの最大値がe₁の最大値の(ア)倍、位相がe₁を基準として(イ)[rad]の(ウ)となる。",
+        "選択肢の表を原図と照合し、一致を確認した。(1)1/2・π/3・進み、(2)1+√3・π/6・遅れ、(3)2・π/3・進み、(4)√3・π/6・遅れ、(5)2・2π/3・進み。",
+        "公式正答(3)は、manifestの{question:8, part:null, answer:'3'}と一致する。",
+        "フェーザで検算した(加算を前提とする)。e₁はE∠0、e₂は√3E∠π/2なので、v = E(1+j√3) となる。大きさは√(1+3)E = 2E、偏角はarctan√3 = π/3で正。したがってv = 2E sin(ωt+θ+π/3) となり、(ア)2・(イ)π/3・(ウ)進みで(3)と一致する。",
+        "誤答肢の理由を検算した。(1)は大きさが誤り。(2)は単純加算の誤り。(5)について、tan(2π/3) = −√3 で2π/3は第2象限にあたり、実部が正・虚部が正の合成とは矛盾する。いずれの記述も正しい。",
+        "公開候補図を確認した。二つの交流電源(〜記号)が縦に直列につながり、e₁ = E sin(ωt+θ)[V]、e₂ = √3E sin(ωt+θ+π/2)[V]と書かれ、右側の開放端子間にv[V]の両矢印がある。式・ラベル・接続は原図と一致し、図だけで解答に必要な情報がそろう。",
+        "原図の頁の下部はT2−R 011で、reviewedFromPage [11]と整合する。令和6年度下期(2025-03-23)、理論科目という表記も整合する。",
+        "officialReferenceUrlsは空で、検証が必要な独立主張はない。"
+      ]
+    }
+  ]
+}

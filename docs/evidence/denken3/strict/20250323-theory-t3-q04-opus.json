@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2659,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 15861,
+      "webSearchRequests": 0,
+      "costUSD": 0.2079646,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1368,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "9461eb404509c3b0cd3f3b5c32b9b64a13913274fc2889806f2b65f754a3ad65",
+  "inputRequestSha256": "b9cd4c7efa22b20c0d39439007037163da74b8606dba9ed7b3ce5e15495170a0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "36320157c0c1270ee3615a58de15db1fb37b4de93623508fbc4dd0d156b95c26"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p07.png": "aed50f63915af6d55ada3b212947cb7fc3f6cf28bdb9438edc26db9d2c423e74"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/theory/20250323-theory-q04-parallel-conductors.png": "bf68a9ad4a6604fb32966730b3840021266aac44a4372b0aa7159984a904bb37"
+    },
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "19f3654f191a50d7d52e9fd361fc6034c3a6c989da02a16379451c8408565017",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original figure word for word, apart from normalized punctuation: straight conductors A and B lie parallel to the y direction, equal currents I both flow in +y, the question asks for the direction of the force on each conductor, and the xyz coordinates are defined in the dashed box.",
+        "Choices (1)-(5) match the original table row by row: (1) A +x, B +x; (2) A +x, B −x; (3) A −x, B +x; (4) A −x, B −x; (5) どちらの導体にも力は働かない。 The pairing of A and B values and every sign are correct.",
+        "officialAnswer=2 matches the manifest-fixed official answer unit {question:4, part:null, answer:\"2\"}. It has not been changed.",
+        "Coordinate check: in the dashed box, x points right, z points up and y points into the page (⊗). With right=(1,0,0), up=(0,1,0) and into-page=(0,0,−1), x×y=(0,1,0)=z, so the system is right-handed. The explanation's cross products are therefore valid.",
+        "Field check: a current flowing into the page (+y) makes a field that runs clockwise when viewed from the front. To the right of the wire (where B sits relative to A) that field points down (−z). To the left of the wire (where A sits relative to B) it points up (+z). The explanation states both correctly.",
+        "Force check: on B, F ∝ y×(−z) = −x. On A, F ∝ y×z = +x. The forces are equal in size and opposite in direction, so the conductors attract. This agrees with the official answer (2), and the explanation reaches it by the same derivation.",
+        "Magnitude check: the force per unit length is μ0I²/(2πd), where d is the spacing and is introduced in the explanation as 導体間距離. This is the standard formula for infinitely long parallel conductors in vacuum or air. The medium does not affect the direction, and in any medium the force is not zero, so the argument that choice (5) is wrong still holds.",
+        "Reasons given for each wrong choice: (1) correctly says only B's direction is wrong and that equal, same-direction forces break action–reaction. (3) correctly says the choice describes repulsion, which occurs only when the currents are opposite. (4) correctly says only A's direction is wrong and again cites action–reaction. (5) correctly says a nonzero current and a finite spacing give a nonzero force. Each reason is specific to its choice and accurate.",
+        "The candidate figure 20250323-theory-q04-parallel-conductors.png matches the original figure in every element: the horizontal dashed line, A on the left and B on the right both marked ⊗, the I label above each conductor, the 導体A and 導体B labels below them, and the dashed box with the z-up arrow, x-right arrow, y label and ⊗. Nothing is missing, reversed or relabeled.",
+        "The candidate figure alone shows the A-left/B-right layout, the current direction and the coordinate definitions, so the question can be solved from it. figureDescription matches the figure, including y being into the page.",
+        "The original page footer reads '- 4 -' and T2−R 007, which is consistent with reviewedFromPage=[7]. The exam date 2025-03-23 matches the attribution 令和6年度下期 (fiscal year 2024, lower term). officialReferenceUrls is empty, so there are no independent claims to verify against an outside source."
+      ]
+    }
+  ]
+}
