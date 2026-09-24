@@ -265,8 +265,8 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 昭和63年労働省告示第93号（電離則第3条第3項等に基づく限度及び方法）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+            "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
           },
           {
             "title": "日本原子力研究開発機構 ATOMICA「中性子放射化分析−原理と応用」",
@@ -276,14 +276,21 @@
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
-          "excerpt": "空気中の放射性物質の濃度に関する限度(Bq／cm3)",
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "計測に用いた試料採取量とから測定対象ごとに計測値［cps又はＡ］を試料放射能濃度［Bq/立方cm］へ換算するための換算係数を定めるものとする",
           "choiceNumbers": [
             1,
             2,
             3,
             4,
             5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "採取空気量は、放射能計測装置の性能を考慮し、測定下限濃度の測定が可能な量とする",
+          "choiceNumbers": [
+            4
           ]
         },
         {

@@ -4,7 +4,7 @@
     15,
     15
   ],
-  "draftSha256": "83803125d888ce755dc9b09d0b69442b67430364fce9129781bdc7e675c0f331",
+  "draftSha256": "c2e5ba0b18f6ee17f662b7882d0106c43b166057bc3fb96109528773d9034507",
   "sources": [
     {
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html",
@@ -35,13 +35,6 @@
           "matched": true,
           "pdfPage": 1,
           "context": "放射能濃度が異常に上昇し、この設定値を超えた場合は警報を発生し、作業者や関係者に遅滞なくその状況を知らせることができる。ダストモニタは、放射線の測定対象線種に応じてβ線ダストモニタ、α線ダストモニタ、プルトニウムダストモニタおよびヨウ素モニタ等に分類される。放射能検出器としてはβ線ダストモニタには、ＧＭ計数管又はプラスチックシンチレーション検出器が、α線ダストモニタにはZnS（Ag）シンチレーション検出器が一般に使用され"
-        },
-        {
-          "questionId": "emkohyo-EM20261809-q15",
-          "excerpt": "揮発性の放射性物質に対してはセルロース・アスベストにヤシガラ炭を付加した活性炭濾紙を用い、高い濃度が予想される場合は、活性炭カートリッジを併用する",
-          "matched": true,
-          "pdfPage": 1,
-          "context": "ダーには、円形の濾紙（通常直径60mmφ、集塵有効径50mmφ）を装着し捕集を行う。図１に移動型ダストモニタの一例を示す。粒子状の放射性物質に対してはセルロース・ガラス繊維系濾紙のHE-40Tを、また揮発性の放射性物質に対してはセルロース・アスベストにヤシガラ炭を付加した活性炭濾紙を用い、高い濃度が予想される場合は、活性炭カートリッジを併用する。有機ヨウ素に対しては、添着炭濾紙やカートリッジを使用する。通常のダストモニタリングよりさらに精密なデータが必要なときは、ダストモニタリングを行った後、濾紙は天然に存在するラドンおよびトロン娘核種が減"
         }
       ]
     },
@@ -96,20 +89,40 @@
       ]
     },
     {
-      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf",
       "status": 200,
-      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
-      "sha256": "e5ec1a68d408f4e7e97bf27b76617794f50d7dfb5b2f1fdebfcc375915c90199",
-      "contentType": "text/html;charset=UTF-8",
-      "pages": 1,
+      "finalUrl": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf",
+      "sha256": "f457b6311d060b0cda07aa7b5ecd5c11b3e9b2db09dc67077b0728f2a20de365",
+      "contentType": "application/pdf",
+      "pages": 81,
       "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261809-q15",
-          "excerpt": "203Hg蒸気",
+          "excerpt": "検出器面を水銀、酸等の蒸気にさらさないようにし",
+          "matched": true,
+          "pdfPage": 44,
+          "context": "をよくするように注意する。・ただし、空調器などの風が直接あたらないようにする。（7）機械的なショックを与えないようにするとともに検出器部分を遮光し、また、真空ポンプの振動が伝わらないようにする。（8）検出器面を水銀、酸等の蒸気にさらさないようにし、特に指定のあるものを除き、手等を触れさせてはいけない。（9）シリコン半導体検出器の特性・劣化は、薄いα線源を用いてエネルギー分解能を定期的に測定することで知ることができる。-41-9．2測定（1）測"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+      "sha256": "4c60bea99e6466f8ef0132e2e132d4a2ccb97760a295bff7f6bd4243765d168b",
+      "contentType": "text/html;charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "55fd2bfb96933a503aa927645eddc8f1881e4fee336a05e3500f44c1418cc1d9",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261809-q15",
+          "excerpt": "水銀及びその無機化合物(硫化水銀を除く。)液体捕集方法又は固体捕集方法",
           "matched": true,
           "pdfPage": 1,
-          "context": ".2×10-84×10-1199mHgメチル水銀〔経口摂取〕2.8×10-8199mHgメチル水銀以外の有機化合物〔経口摂取〕3.1×10-8199mHgすべての有機化合物2.7×10-88×10-1203Hg蒸気7.0×10-63×10-3203Hgすべての無機化合物〔経口摂取〕5.4×10-7203Hg無機化合物の硫酸塩5.9×10-74×10-2203Hg無機化合物の酸化物、水酸化物、ハロゲン化物、硝酸塩"
+          "context": "集方法一液体捕集方法にあつては、吸光光度分析方法二固体捕集方法又は直接捕集方法にあつては、ガスクロマトグラフ分析方法重クロム酸及びその塩液体捕集方法又はろ過捕集方法吸光光度分析方法又は原子吸光分析方法水銀及びその無機化合物(硫化水銀を除く。)液体捕集方法又は固体捕集方法一液体捕集方法にあつては、吸光光度分析方法又は原子吸光分析方法二固体捕集方法にあつては、原子吸光分析方法スチレン液体捕集方法、固体捕集方法又は直接捕集方法一液体捕集方法にあつては、吸光光度分析方法二固"
         }
       ]
     }

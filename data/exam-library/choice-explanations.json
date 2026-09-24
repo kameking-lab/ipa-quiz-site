@@ -27598,5 +27598,329 @@
         "url": "https://www.mhlw.go.jp/houdou/0107/h0724-1c.html"
       }
     ]
+  },
+  "emkohyo-EM20261809-q12": {
+    "sourceHash": "096602c911f96a9edf769f1ad31d686a8f4e7ed6583cc059f5f6e7ec4271beee",
+    "correctChoice": 3,
+    "summary": "γ線エネルギー分析装置の校正には代表的なγ線を放出する核種を用いる。⁵⁴Mn・²⁴¹Amは標準線源の核種として挙げられ、¹⁰⁹Cd（88.0keV）もGe検出器の校正用混合線源に含まれるので、肢3が適切である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "¹⁴C・³⁵Sはβ線のみを放出する代表的なβ線放出核種で、²⁰⁴Tlもβ線厚さ計の線源として使われるβ線源の核種である。γ線エネルギー分析装置の校正には代表的なγ線を放出する核種を用いるので、この組合せは適切でなく誤り。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "¹³⁷Csは662keVのγ線を出しγ線スペクトロメトリーの標準線源に使えるが、⁹⁰Srはβ線のみを出すβ線放出核種、²⁵²Cfは自発核分裂による中性子源である。適切な核種のみの組合せではないので誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "γ線スペクトロメトリーの標準線源には代表的なγ線を放出する²⁴¹Am、⁵⁴Mn等が用いられ、¹⁰⁹Cd（88.0keV）もGe検出器の効率校正用の混合線源に⁵⁴Mn等とともに含まれる。3核種ともγ線エネルギー分析装置の校正用線源として適切で、これが正解。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "¹²⁴Sb-Be、²²⁶Ra-Be、²⁴¹Am-Beは、ベリリウムとα線又は高エネルギーγ線（¹²⁴Sb）との核反応で中性子を発生させるRI中性子源である。γ線エネルギー分析装置の校正用線源ではないので誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "³²Pはβ線のみを放出する代表的なβ線放出核種、⁹⁰Yはγ線を放出せずβ線を計測して放射能を求める核種、²¹⁰Biもβ線を出す核種である。少なくとも³²Pと⁹⁰Yはγ線の校正用線源に使えず、適切な核種のみの組合せではないので誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「ベータ線放出核種」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1184.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「RIの工業計測機器への応用原理」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-02.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「ラジオアイソトープ（RI）中性子源」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-03-16.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「標準線源」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「ストロンチウムの放射化学分析と測定」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-26.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q16": {
+    "sourceHash": "c624a935d2af899e89c2a7687c16f861397d1a1d7a59e577412aa2d5f6f6df3b",
+    "correctChoice": 1,
+    "summary": "半減期12時間の核種は48時間（4半減期）で1/16に減衰するので、採取時の放射能は4Bq×2⁴＝64Bq。これを採取量1.2L＝1200cm³で割ると約0.053Bq/cm³（5.3×10⁻²Bq･cm⁻³）となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "48時間は半減期12時間の4倍なので、測定時の4Bqは採取時の(1/2)⁴＝1/16である。採取時の放射能は4×16＝64Bqで、直接捕集した試料空気1.2L＝1200cm³で割ると64÷1200≒0.0533Bq/cm³＝5.3×10⁻²Bq･cm⁻³となり、これが正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "8.2×10⁻²Bq･cm⁻³は、正しい計算値64Bq÷1200cm³≒5.3×10⁻²Bq･cm⁻³の約1.5倍で一致しない。48時間（4半減期）の減衰補正は2⁴＝16倍であり、この値にはならないので誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "1.3×10⁻¹Bq･cm⁻³は、正しい値5.3×10⁻²Bq･cm⁻³の約2.5倍で一致しない。採取時の放射能4×2⁴＝64Bqを1.2L＝1200cm³で割れば0.053Bq/cm³であり、誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "2.7×10⁻¹Bq･cm⁻³は、正しい値5.3×10⁻²Bq･cm⁻³の約5倍で一致しない。48時間後の4Bqを採取時に戻す係数は2^(48/12)＝16で、64Bq÷1200cm³≒0.053Bq/cm³となるので誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "6.4×10⁻¹Bq･cm⁻³は、採取時の放射能64Bqを1200cm³ではなく100cm³で割った値に相当し、正しい値の12倍である。採取試料1.2Lは1200cm³なので、正しくは64÷1200≒5.3×10⁻²Bq･cm⁻³で誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「半減期」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-04.html"
+      },
+      {
+        "title": "環境省 放射線による健康影響等に関する統一的な基礎資料（令和7年度版）半減期と放射能の減衰",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q17": {
+    "sourceHash": "20ebdc199c96f81584f2144d9064411ba6f26704c2bedacb86956cd19845de32",
+    "correctChoice": 4,
+    "summary": "トリチウム（HTO・HT等）はガス捕集用電離箱に試料空気を直接捕集し、その微小な電離電流を振動容量電位計で測定できる。ろ紙・Si検出器・外部からのプラスチックシンチレーション・NaI(Tl)はトリチウムの捕集・検出に適さない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "セルローズ・ガラス系ろ紙は粒子状の放射性物質を捕集するもので、気体・水蒸気状のトリチウムは捕集できない。また³Hは最大18keVの低エネルギーβ線しか出さず、試料を検出器の外側に置く方法ではほとんど検出できないので、電離箱式サーベイメータでも測れない。誤り。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "コールドトラップはトリチウムの捕集に使えるが、³Hのβ線は最大18keVと弱く、捕集した水はシンチレータに溶かし液体シンチレーション計数装置で計測する。α線用サーベイメータ等に使われる表面障壁型Si半導体検出器で測る組合せではないので誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "モレキュラシーブは水蒸気状放射性物質の固体捕集材として使えるが、³Hのβ線は物質透過力が極めて弱く、試料を検出器の外側に置くとほとんど検出できない。トリチウムの計測は液体シンチレーション計数装置等で行うので、この組合せは誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "気体状の放射性物質は電離箱を用いた直接捕集法でも捕集でき、トリチウムは試料を気体状にして電離箱内で測定する方法が室内モニタ等に使われる。電離箱の電離電流は振動容量電位計で測定する（ラジウム分析法でも電離箱を振動容量電位計にセットして測る）。正しい組合せ。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "NaI(Tl)シンチレーション検出器はγ線測定装置であるが、³Hはβ線のみを放出する代表的なβ線放出核種でγ線を出さない。捕集用ガス容器に取った試料をNaI(Tl)で測っても³Hは検出できないので誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタリング」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「トリチウムの液体シンチレーション法による測定」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「サーベイメータ（α線、β線、γ線、中性子等）」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-04.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.19 ラジウム分析法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No19.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「NaI(Tl)シンチレーション検出器」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1626.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「ベータ線放出核種」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1184.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q19": {
+    "sourceHash": "c8bff3d3ade750757878c2ed6818b5f3f1cd06e7e91e9e2dbef5d0122f04fff3",
+    "correctChoice": 2,
+    "summary": "集中（セントラル）モニタリングは多数の作業室の空気を配管で一括又は作業室単位で集めて空気汚染を監視する方法で、配管への沈着もあるため、部屋ごとの濃度を「正確に採取・測定する方式」とする肢2が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "一般（ゼネラル）モニタリングは、作業室の排気グリル近傍や排気ダクト内の空気をサンプリングして室内全体の空気汚染を監視する方法である。室全体の汚染の検出が目的で、発生源の位置の確認を目的としないという記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "集中（セントラル）モニタリングは、作業室が多数ある場合に各室の空気を一括し又は必要に応じ作業室単位でサンプリングし、全室又は作業室単位の空気汚染を監視する方法である。試料採取配管では放射性物質が配管に沈着するため短く屈曲を少なくすることが求められ、各室の濃度を正確に採取・測定する方式とするこの記述が誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "局所（ローカル）モニタリングは、作業室等のサンプリング端にろ紙を装着して集塵し、局所的に発生する空気汚染の分布状況を連続して監視する方法である。局所的な空気汚染の検出と室内の濃度分布の把握を目的とする記述は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "個人（パーソナル）モニタリングは、空気汚染のある作業環境で作業する作業者の呼吸する空気中の濃度を、パーソナルエアサンプラでサンプリングし測定する方法である。作業者の呼吸域で携帯型の個人サンプラによりモニタするという記述は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "エリアモニタは人の常時立ち入る、線量率が高くなる恐れがある作業環境の放射線レベルを知る上で最も有効な箇所に設置し、サーベイメータでは定期的な頻度で測定する。1cm線量当量率は原則として最も適した箇所で測定する。記述はこれに合致し正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタリング」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「外部放射線モニタリング」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-02.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261809-q20": {
+    "sourceHash": "33f186d65d5b487020b48b89ef48ac06a83af88831d5bf0de92c8be021b1c4dd",
+    "correctChoice": 1,
+    "summary": "ろ紙試料の放射能は自然計数（バックグラウンド）とラドン・トロン娘核種の影響を除いて求め（㋑）、多量のじん埃があるとα線は自己吸収するので補正する（㋺）。捕集効率は粒子の物理的・化学的性状に依存し、長い配管では沈着で過小評価となるので㋩㋥は誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "正味の計数値は試料の計数値からバックグラウンドを差し引いて求め、ろ紙は天然のラドン・トロン娘核種が減衰して無視できる3日後に測定するなどその影響を除く（㋑正）。α線は物質透過力が小さく試料中での自己吸収が問題になるので、多量のじん埃の自己吸収補正を行う（㋺正）。正しい組合せ。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "㋑は正しいが、㋩は誤りである。集塵ろ紙は粒子状物質の物理的・化学的性状、粒径分布、ろ過速度等を考慮して適切な捕集効率のものを選ぶとされ、捕集効率は化学的性状にも依存する。組合せとして誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "㋑は正しいが、㋥は誤りである。試料採取配管は放射性物質の配管への沈着を避けるため、できるだけ短く急激な屈曲部を少なくすることが求められる。長い配管や曲折の多い配管では沈着により濃度を過小評価するのであって、過大評価ではない。組合せとして誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "㋺は正しいが、㋩は誤りである。集塵ろ紙は粒子状物質の物理的・化学的性状、粒径分布等を考慮して捕集効率の適切なものを選択するとされ、捕集効率が化学的性状に依存しないとする記述は誤っている。組合せとして誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "㋩も㋥も誤りである。捕集効率は粒子状物質の物理的・化学的性状、粒径分布、ろ過速度等に左右され、長い配管や屈曲の多い配管では放射性物質が配管に沈着して濃度を過小評価する。誤った記述どうしの組合せで誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「スペクトロメトリ（α線、β線、γ線、中性子）」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+      }
+    ]
+  },
+  "emkohyo-EM20251809-q11": {
+    "sourceHash": "9a96071c93a51cc17fc35c6e7d9353e635956dfe6504c9fec0f0d3d4861bb331",
+    "correctChoice": 2,
+    "summary": "β⁺放射性核種は陽電子（β線）と、その消滅で生じる511keVの消滅放射線を出す。³He比例計数管は熱中性子を検出する計数管であり、β⁺核種の放射能測定には適さない。肢2が答え。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは比例計数管を「電離箱では十分な感度を得ることのできないβ線の測定に適している」とする。試料をガス流通型の計数管内に置くガスフロー比例計数管で、β⁺核種の放出する陽電子（β⁺線）を計数して放射能を測定することは適切である。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ATOMICAは³He中性子計数管を「熱中性子を検出するための計数管」とし、³He(n,p)³H反応で中性子を検出すると説明する。サーベイメータでも³He比例計数管は熱中性子の測定用である。β⁺核種は中性子を放出しないため、その放射能測定に³He比例計数管を用いるのは適切でない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "陽電子は電子と衝突すると電磁波を出して消滅し、PETでは陽電子放出核種から出る消滅放射線（511keV）を検出する。NaI(Tl)シンチレーション検出器はγ線（光子）の測定に用いられるため、511keVの消滅放射線を計測してβ⁺核種の放射能を測定するのは適切である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ATOMICAはβ線スペクトロメトリの検出器として「有機シンチレータ（液体、プラスチック、アントラセン）」を挙げている。プラスチックシンチレーション検出器で陽電子（β⁺線）を計数してβ⁺核種の放射能を測定するのは適切である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ATOMICAは液体シンチレーションカウンタを「β線、α線等の荷電粒子の計測に適している」検出器とし、試料をシンチレータに溶かして測るため自己吸収が少ないとしている。β⁺核種の陽電子を液体シンチレーション検出器で測定するのは適切である。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 比例計数管",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1018.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 陽電子",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_691.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA ポジトロンＣＴ",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1280.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 液体シンチレーションカウンタ",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+      }
+    ]
   }
 }

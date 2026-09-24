@@ -1,0 +1,45 @@
+{
+  "emkohyo-EM20261809-q16": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q17": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q18": {
+    "status": "FIX",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [
+      "厚生労働省 昭和63年労働省告示第93号の照合抜粋は「空気中の放射性物質の濃度に関する限度(Bq／cm3)」という表の見出しと、³Hの限度値の行だけである。解説の計算の要素を直接支えていない。計算の要素とは、平均流量(100+87)/2＝93.5L/min、吸引量9.4248×10⁸cm³、濃度限度の1/10＝7.0×10⁻⁸Bq/cm³、計数率＝放射能×計数効率の4つである。濃度限度7.0×10⁻⁷Bq･cm⁻³は問題文で与えられており、告示の表からは導かれない。見出しだけの根拠として出典から外すか、計算の根拠を直接記した一次資料に差し替えること。",
+      "計算を実質的に支えているのはATOMICA「中性子放射化分析」の式 C＝D·e·b だけである（Bq入力で計数率cpsが出る、eは検出効率）。この資料は放射化分析の文脈で、空気捕集試料の検出下限計数率の算定を直接扱ってはいない。政府の一次資料で直接支えている箇所は無い。"
+    ],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q19": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  },
+  "emkohyo-EM20261809-q20": {
+    "status": "PASS",
+    "textIssues": [],
+    "choiceIssues": [],
+    "reasonIssues": [],
+    "sourceIssues": [],
+    "needsExternalCheck": []
+  }
+}
