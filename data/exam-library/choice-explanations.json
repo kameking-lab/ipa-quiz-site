@@ -27352,5 +27352,79 @@
         "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261809-q11": {
+    "sourceHash": "1756d62a7e9b5da8bad0b0750e0f492c83b19c871bb7c11b39b8e2787e98450c",
+    "correctChoice": 5,
+    "summary": "⁹⁰Srと子孫核種⁹⁰Yはγ線を出さないβ線放出核種であり、β線の計測にはガスフロー型比例計数装置、GM計数装置、液体シンチレーション、プラスチックシンチレーションが使えるが、γ線測定用のNaI(Tl)シンチレーション検出器は不適当である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "⁹⁰Yは2.26MeVのβ線を出しγ線を放出しないためβ線を計測し、その計測にはβ線の高感度測定が可能な2πガスフロー型比例計数器が使われる。放射能測定法シリーズNo.2も測定に原則として低バックグラウンド2πガスフロー計数装置を用いる。適当であり、該当しない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "放出放射性物質の測定指針は、ストロンチウム89及びストロンチウム90を放射化学的に分離しGM計数装置等で計測するとしている。管の端に薄い窓を設けβ線を測定できるようにした端窓式のGM管は⁹⁰Srの放射能測定に使えるので適当で、該当しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "液体シンチレーションカウンタはβ線等の荷電粒子の計測に適した検出器で、⁹⁰Srは代表的なβ線放出核種である。液体シンチレーション検出器は⁹⁰Srの放射能測定に使えるため適当であり、該当しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "β線の検出器には液体・プラスチック等の有機シンチレータが広く用いられ、β線ダストモニタにもGM計数管又はプラスチックシンチレーション検出器が使われる。β線放出核種の⁹⁰Srの測定に使えるので適当であり、該当しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "NaI(Tl)シンチレーション検出器はγ線測定装置である。⁹⁰Srは純粋なβ放射体で、その子孫核種⁹⁰Yもγ線を放出せずβ線を計測して放射能を求める。γ線を利用できない⁹⁰Srの放射能測定にNaI(Tl)シンチレーション検出器は不適当で、これが正解。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「ストロンチウムの放射化学分析と測定」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-26.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.2 放射性ストロンチウム分析法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No2.pdf"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「環境放射線の測定法」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-01-05-03.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「液体シンチレーションカウンタ」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「ベータ線放出核種」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1184.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「スペクトロメトリ（α線、β線、γ線、中性子）」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「NaI(Tl)シンチレーション検出器」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1626.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「人工放射線による被ばく」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-01-05-06.html"
+      }
+    ]
   }
 }
