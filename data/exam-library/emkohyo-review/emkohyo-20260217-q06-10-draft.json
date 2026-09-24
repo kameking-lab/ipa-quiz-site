@@ -50,7 +50,7 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10102-44-0.html"
           },
           {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {
@@ -74,8 +74,8 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html"
           },
           {
-            "title": "e-Gov法令検索 労働基準法施行規則",
-            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
           }
         ]
       },
@@ -256,7 +256,7 @@
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "ベンゾトリクロライドにさらされる業務による肺がん",
           "choiceNumbers": [
             5
@@ -276,7 +276,7 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "この組合せは正しい。労働基準法施行規則別表第一の二は「オーラミンを製造する工程における業務による尿路系腫瘍」を職業がんとし、膀胱は尿路系に含まれる。厚労省モデルSDSも、オーラミンの製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられたとの報告を記載している。"
+            "reason": "この組合せは正しい。労働基準法施行規則別表第一の二第七号は「オーラミンを製造する工程における業務による尿路系腫瘍」を業務上の疾病と定めており、膀胱がんは尿路系腫瘍に含まれる。厚労省モデルSDSも製造従事者での膀胱腫瘍の過剰発生を記載するが、他の膀胱がん物質との同時ばく露の可能性という留保付きである。"
           },
           {
             "number": 2,
@@ -286,7 +286,7 @@
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "これが誤り。告示はニトログリコールによる疾病を頭痛、めまい、嘔吐等の自覚症状又は狭心症様発作としており、主な障害は血管拡張による循環器症状である。厚労省モデルSDSでも発がん性は「データなし」で、労働基準法施行規則の職業がんの規定にもニトログリコールはないため、肝臓がんとの組合せは誤り。"
+            "reason": "これが誤り。告示はニトログリコールによる疾病を頭痛、めまい、嘔吐等の自覚症状又は狭心症様発作と定めており、モデルSDSも主な中毒症状を血管拡張による頭痛等とする。ヒトに生じる主要な障害は循環器系であり、肝臓がんではない。なお同SDSの発がん性欄は「データなし」で、肝臓がんを示す記載はない。"
           },
           {
             "number": 4,
@@ -301,12 +301,12 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {
-            "title": "e-Gov法令検索 労働基準法施行規則",
-            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
           },
           {
             "title": "厚生労働省 モデルSDS オーラミン",
@@ -331,7 +331,7 @@
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "オーラミンを製造する工程における業務による尿路系腫瘍",
           "choiceNumbers": [
             1
@@ -339,7 +339,7 @@
         },
         {
           "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/492-80-8.html",
-          "excerpt": "本物質の製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられた",
+          "excerpt": "本物質の製造に従事した作業者の集団で膀胱腫瘍の過剰発生がみられたが、1-、2-ナフチルアミンやベンジジンなどの膀胱がん発生物質に同時ばく露された作業者を含めた統計解析の可能性が指摘されている",
           "choiceNumbers": [
             1
           ]
@@ -380,14 +380,14 @@
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "無機砒ひ素化合物を製造する工程における業務による肺がん又は皮膚がん",
           "choiceNumbers": [
             4
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "ベリリウムにさらされる業務による肺がん",
           "choiceNumbers": [
             5
@@ -458,8 +458,8 @@
             "url": "https://www.mhlw.go.jp/content/11201250/001640056.pdf"
           },
           {
-            "title": "e-Gov法令検索 労働基準法施行規則",
-            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
           }
         ]
       },
@@ -528,14 +528,14 @@
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "石綿にさらされる業務による肺がん又は中皮腫",
           "choiceNumbers": [
             5
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "石綿にさらされる業務による良性石綿胸水又はびまん性胸膜肥厚",
           "choiceNumbers": [
             5
@@ -578,7 +578,7 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {
@@ -594,8 +594,8 @@
             "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html"
           },
           {
-            "title": "e-Gov法令検索 労働基準法施行規則",
-            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023"
+            "title": "e-Gov法令検索 労働基準法施行規則（2026年2月17日時点の版）",
+            "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17"
           },
           {
             "title": "厚生労働省 モデルSDS コバルト",
@@ -690,7 +690,7 @@
           ]
         },
         {
-          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023",
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/322M40000100023?asof=2026-02-17",
           "excerpt": "クロム酸塩又は重クロム酸塩を製造する工程における業務による肺がん又は上気道のがん",
           "choiceNumbers": [
             3
@@ -782,7 +782,7 @@
         ],
         "sources": [
           {
-            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づき厚生労働大臣が指定する化学物質及び疾病（平成25年告示第316号）",
+            "title": "厚生労働省 労働基準法施行規則別表第一の二第四号の規定に基づく厚生労働大臣が指定する単体たる化学物質及び化合物（合金を含む。）並びに厚生労働大臣が定める疾病（平成25年厚生労働省告示第316号）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73ab3583&dataType=0&pageNo=1"
           },
           {

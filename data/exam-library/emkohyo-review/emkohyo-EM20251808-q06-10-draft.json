@@ -437,7 +437,7 @@
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "日本薬局方は、蛍光強度は溶液の濃度、温度、pH、溶媒などによって影響されることが多いと注意している。蛍光はpHで変わりうるので、蛍光スペクトルの形が試料のpHによらず一定と言い切るこの記述が誤りである。"
+            "reason": "日本薬局方は、蛍光強度が溶液の濃度、温度、pH、溶媒などに影響されることが多いと注意している。さらに、プロトン化した分子と脱プロトン化した分子で発光スペクトルが異なる場合、両者の割合はpHで決まるので、観測される蛍光スペクトルの形もpHで変わる。pHによらず一定とするこの記述が誤りである。"
           },
           {
             "number": 4,
@@ -458,6 +458,10 @@
           {
             "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
             "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+          },
+          {
+            "title": "J-STAGE 分光研究 太田信廣『生命科学を理解するための蛍光の基礎―環境との相互作用による蛍光の変化―』",
+            "url": "https://www.jstage.jst.go.jp/article/bunkou/63/3/63_111/_pdf/-char/ja"
           }
         ]
       },
@@ -480,6 +484,20 @@
         {
           "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
           "excerpt": "蛍光強度は溶液の濃度，温度，pH，溶媒又は試薬の種類及びそれらの純度などによって影響されることが多い．",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunkou/63/3/63_111/_pdf/-char/ja",
+          "excerpt": "平衡反応において複数の発光種が存在し，しかもお互いの発光スペクトルが異なる場合を考える",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunkou/63/3/63_111/_pdf/-char/ja",
+          "excerpt": "MH，および脱プロトン化したもの（M-）いずれも発光を示すと仮定する．",
           "choiceNumbers": [
             3
           ]
