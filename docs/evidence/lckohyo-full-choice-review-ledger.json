@@ -3718,5 +3718,189 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q28": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q28",
+    "sourceSha256": "87c4a6f29927a48387bc41b8a4bfe92871c3fb8dc24942d1c084c52b224e52e1",
+    "candidateSha256": "beb6df306cf80cbeb020c054012d969944d3212e7e14b2fabd6944d52a91ac4b",
+    "evidenceSha256": "0f4ffd07ab060e4905e3156ca4188fd1da3834a2a0639a4ee543ab95bc306c5d",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer matches the candidate. The official PDF (page 14/22 of the 一衛 paper, PDF page 15) marks (5) with ○, and the candidate's correctChoice is 5.",
+        "The question text in the snapshot and the image q28-p15-1.webp both match the official PDF.",
+        "Choice (1) cannot be checked. The only source provided is the workplace heatstroke prevention outline (職場における熱中症予防基本対策要綱, Saga Labour Bureau copy, 14 pages). It never says that temperature sensation depends on four factors: air temperature, humidity, air movement and radiant heat.",
+        "Choice (2) cannot be checked. The outline does not define effective temperature (実効温度) anywhere. The candidate cites a research report (研究報告書, page 77), but that report is not in candidate.sources and no local file for it was provided.",
+        "Choice (3) cannot be checked. The outline mentions relative humidity only in Table 2 (WBGT against air temperature and relative humidity) and in a note to Table 1-2. It does not define relative humidity. The candidate's reference to the research report (page 77) is also outside the provided sources.",
+        "Choice (4) is supported. Section 第1の1 of the outline calls the WBGT value 'a heat index for evaluating heat stress in hot environments' and gives formula ② as 0.7 × natural wet-bulb temperature + 0.2 × globe temperature + 0.1 × air temperature (dry-bulb).",
+        "Choice (5) is supported as the wrong statement. Section 第1の2 says the WBGT reference value is set at a level where almost no one suffers harmful effects. Section 第1の3 requires prevention measures when WBGT 'exceeds, or may exceed' the reference value. Saying risk rises when WBGT is below the reference value contradicts this.",
+        "The source has no date. Neither the Saga Labour Bureau copy's date nor its revision history is shown, so I could not confirm that this version applied when the exam was set or administered."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://jsite.mhlw.go.jp/saga-roudoukyoku/content/contents/000864401.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 7678,
+        "cacheReadInputTokens": 1841116,
+        "cacheCreationInputTokens": 80734,
+        "webSearchRequests": 0,
+        "costUSD": 1.1677351999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3112,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q30": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q30",
+    "sourceSha256": "4bd638437da398727739b038ec91462af4cbade2ce1936885f74c61285b12c72",
+    "candidateSha256": "8e8bc5be644fa9cad740e71e368263baa8c4c621d77ed9ee6a602b2e1bc62c3a",
+    "evidenceSha256": "0f4ffd07ab060e4905e3156ca4188fd1da3834a2a0639a4ee543ab95bc306c5d",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer matches the candidate. The official PDF (page 15/22, PDF page 16) marks (4) with ○, and the candidate's correctChoice is 4.",
+        "The question text in the snapshot and the image q30-p16-1.webp both match the official PDF.",
+        "Choice (1) cannot be checked. Page 37 of the FDMA handbook (わたしの防災サバイバル手帳, PDF page 38) covers how to recognise a fracture, first aid and splinting. It does not define a simple fracture (単純骨折) or a crack.",
+        "Choice (2) cannot be checked. Page 37 lists signs of a fracture, such as swelling, deformity and bones shifting when touched. It does not distinguish complete from incomplete fractures and does not mention crepitus (軋轢音).",
+        "Choice (3) is supported as a wrong statement. The note on page 37 says a fractured part should be firmly fixed and not moved, which contradicts moving it to judge severity.",
+        "Choice (4) is only partly supported. Page 37 says the splint should be longer than the joints above and below the fracture, which supports the length condition. Nothing on the page supports 'a wide splint' (幅の広いもの). The candidate itself marks that part HOLD.",
+        "Choice (5) cannot be checked. Pages 37–38 cover only limb fractures, sprains and improvised stretchers. There is nothing on moving a person with a suspected spinal cord injury or on using a hard board.",
+        "The source is a general disaster-preparedness booklet for the public (2017 edition, h29). It is not an occupational first-aid standard, so its applicability to this workplace exam question when set was not confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.fdma.go.jp/relocation/html/life/survival/pdf/h29/survival2903.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 7678,
+        "cacheReadInputTokens": 1841116,
+        "cacheCreationInputTokens": 80734,
+        "webSearchRequests": 0,
+        "costUSD": 1.1677351999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3112,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q29": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q29",
+    "sourceSha256": "168abec016cc505e557e3cc02bea6e98cb75ea8fd05227bcc8549524b9425f3e",
+    "candidateSha256": "f20c888c47c4999406397477c8618efac6bd86607c7cd032c3a088801ab23693",
+    "evidenceSha256": "0f4ffd07ab060e4905e3156ca4188fd1da3834a2a0639a4ee543ab95bc306c5d",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "historicalApplicabilityChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer matches the candidate. The official PDF (page 15/22, PDF page 16) marks (5) with ○, and the candidate's correctChoice is 5.",
+        "The question text in the snapshot and the image q29-p16-0.webp both match the official PDF.",
+        "The only source file is the guideline as revised on 2026-02-10 (令和8年2月10日, 公示第12号). The paper was published in April 2026, and questions on that paper may have been administered before 2026-02-10. The version in force before that date (revised 2023-03-31, 令和5年3月31日, 公示第11号) was not provided, so I could not confirm that each choice's supporting text was the same at the time the exam was administered.",
+        "Choice (1) is supported. Section 2 ① of the current guideline says the same thing word for word.",
+        "Choice (2) is supported. Section 5(1) says it is desirable to use figures that objectively show workers' health status, and section 3(3) says the same.",
+        "Choice (3) is supported. Section 4(2)イ(ロ) lists exercise guidance, mental health care, nutrition guidance, oral health guidance and health guidance. Section 2 lists the same items. The question says 'health guidance based on health measurement results', while the current guideline says guidance 'based on the assessment of workers' health status'. Section (イ) also says health status is assessed through health measurement and guidance is based on the results, so the wording difference does not change the meaning.",
+        "Choice (4) is supported. Section 3 says the same thing word for word, including using the health committee made up of labour and management, the industrial physician and health officers (衛生委員会等).",
+        "Choice (5) is supported as the inappropriate statement. Section 4(2)イ(イ) says objective data, such as regular health check-up records, must be shared with medical insurers. Section 5(3) says employers must provide copies of the records when a medical insurer asks for them. The choice says the data must not be provided, which is the opposite."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001080091.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 7678,
+        "cacheReadInputTokens": 1841116,
+        "cacheCreationInputTokens": 80734,
+        "webSearchRequests": 0,
+        "costUSD": 1.1677351999999999,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3112,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
