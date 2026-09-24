@@ -1,0 +1,79 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6508,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 22706,
+      "webSearchRequests": 0,
+      "costUSD": 0.3120718,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4524,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "24c6599e34991efac8aa248a45d22fe07ed61b774ed2272231ef9a0797af4d19",
+  "inputRequestSha256": "18fe5ab8355e124eec6859d1780e7abc2729a5395ca7925dc50c97fbbab9afde",
+  "inputHashes": {
+    "candidateSha256": {
+      "q10": "700bdbaf21a9b81043378f4937ecd57c6a230ecd52be07cc7485e67ac742cc01"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/law/p16.png": "2ec70f87bfb0acb5efb980b29067515c029c9b622e37a5bb13ce0d69d1ac535c",
+      "data/raw_pdfs/denken3/review/20240818/law/p04.png": "0ac887459630a5c0c2df2467c4d93b5fadc651a9001ea1230c14caa8f8b4c9d1"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/law/20240818-law-q10-sog-network.png": "51db79a33946f23040bbe3af8c748cbde176545c3dfb655568d30b666d51a454"
+    },
+    "sourceQuestionPdfSha256": "5dbba8b8e4ec681d2d5f0645a3895a6e218d936519ddd18ac544ddc461a1ae78",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "645fce39114d52abdbc2a3630bb35d137618e4f31628a2adb8c76f40542005aa",
+    "referencePdfSha256": {
+      "data/raw_pdfs/denken3/review/meti-sog-kyushu-2020.pdf": "a4da55c913f54db669d2477cccb7792be5be43a3f629dc49e40eec93dc53c313",
+      "data/raw_pdfs/denken3/review/meti-sog-shikoku-2025.pdf": "61cdbaa35f0a9934fa1798a7ba589ae7d4e04c2274d088133deb75c963c14ff6"
+    },
+    "referencePageSha256": {
+      "data/raw_pdfs/denken3/review/references/meti-sog-kyushu-2020-p009.png": "7770ee11f190272f5dcfc1ba48d255bd1552feef862f7dc9e52bdd3d3a67ce52",
+      "data/raw_pdfs/denken3/review/references/meti-sog-shikoku-2025-p124.png": "6949bad69a24de47fa7361827dd0e917e506836a05906ae54df2b44cf0e2422f"
+    },
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q10",
+      "questionNumber": 10,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "総合解説の「停電後に開路するためのトリップ用エネルギーを蓄えておき」は、添付の公式問題原図・公式解答表・添付した公式参考資料の原頁（九州産業保安監督部PDF第9頁、四国産業保安監督部PDF第124頁）のいずれにも明示がない機構上の独立主張である。四国資料のスライドで確認できるのは、名称「Storage Over Current Ground（過電流蓄勢トリップ付地絡トリップ形）」と「ロック電流値以上の事故電流が流れた場合、電力側変電所の動作で配電線路が停電して電圧がなくなると、PASは自動的に開放し事故点を切り離す（配電線は一度は停電）」という動作までである。トリップ用エネルギーを蓄える内部機構は確認できない。修正案は二つある。一つは、記述を原頁で確認できる範囲（例:「ロック電流値以上の過電流を検出すると開路をロックしてその動作を記憶（蓄勢）し、配電線の停電で電圧がなくなると自動的に開放する」）に改めること。もう一つは、蓄勢エネルギーの機構を示す公式資料の原頁を追加して照合することである。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "officialReferenceUrls の範囲外にある機構主張（トリップ用エネルギーの蓄積）が総合解説に含まれる。添付した公式参考資料の原頁ではこの主張を検証できず、外部確認事項として残る（explanationIssues 参照）。推測で PASS にはしない。"
+      ],
+      "verifiedEvidence": [
+        "問題文：公式原図（問題PDF第16頁、下部表記「-13-」「T1-H 016」）と照合し、本文・ただし書き（分散型電源なし）・なお書き（SOG機能付PASの定義「過電流蓄勢トリップ付地絡トリップ形トリップ装置付過電流ロック形高圧気中負荷開閉器」）が一致する。原図の太字✕記号は候補で「×印」と表記しているが、意味は同じ。",
+        "選択肢：(1)〜(5)の全文が原図と一致する。",
+        "公式正答：公式解答表の令和6年度上期・法規・問10の正答は1。候補の officialAnswer=\"1\" と一致する。",
+        "出典メタデータ：fiscalYear=2024、term=upper、examDate=2024-08-18、subject=law、sourceQuestionPdfUrl=…20240818_ch_third_q04.pdf、sourceAnswerPdfUrl=…20240818_ch_third_a01.pdf、reviewedFromPage=[16] は manifest と一致する。sourceAttribution の「令和6年度上期第三種電気主任技術者試験 法規科目 問10」も一致する。",
+        "法令基準日：注意書き頁の注3（令和6年4月1日現在の法令に基づく）を確認した。本問は機器動作の問題で、法令条文の改正による影響はない。",
+        "図：公開候補図は原図の結線図部分を切り出したもので、境界の一点鎖線、左の「一般送配電事業者側」と右の「自家用設置者側」、配電用変電所送り出し遮断器A、3φ3W・6.6kV、区分開閉器B（SOG機能付PAS、○記号付き）、短絡事故点✕、主遮断器を確認した。これらの並び順・接続・線の切れ目・矢印（A、B）は原図と一致し、ラベルに欠落はない。図だけで事故点がBの負荷側かつ主遮断器の電源側にあると判読できる。figureDescription も図と整合する。",
+        "解説の因果（主遮断器の電源側の事故なので主遮断器では遮断できない／PASは負荷開閉器で短絡電流を遮断できず、過電流ロックが働く／Aが先に開路する→電圧消失後にBが開路する→Aの再閉路で健全区間が復旧する）は、四国産業保安監督部PDF第124頁の戸上電機製作所スライドの記述と整合する。確認した記述は「SO動作：電力側変電所の動作により配電線路が停電して電圧がなくなると、PASは自動的に開放し事故点を切り離す（配電線は一度は停電）」「設置目的：短絡・地絡事故を電力会社配電線へ波及させない」である。同スライドの印刷頁番号は122で、PDF頁は指定どおり第124頁。",
+        "九州産業保安監督部PDF第9頁の「地絡継電器の過電流蓄勢動作（SO）により区分開閉器は正常に開放動作し、電力会社配電線の再閉路は成功した」で、「B開路→A再閉路成功」の順序を確認した。",
+        "各肢の理由：(2) Bが先に開路することはない（過電流ロック）。(3) 同時には開路しない（Bは電圧消失後に開路）。(4) Bが開路しないとする点が誤り。(5) Aが開路しないとする点、およびBが単独で開路するとする点が誤り。いずれも上記の原頁と整合し、誤りは見当たらない。",
+        "uncertainty 欄の注記（四国資料は2025年の出題後に公開された機構説明資料で、公式解答そのものではない）は、スライドの Copyright(C)2025 表記と整合する。"
+      ]
+    }
+  ]
+}
