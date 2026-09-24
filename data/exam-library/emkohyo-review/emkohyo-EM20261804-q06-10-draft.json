@@ -262,41 +262,62 @@
       "overlay": {
         "sourceHash": "2b6a8da0cfc4834f9486f27ff045c34bee0c96329fa888fc59865c2999b67b51",
         "correctChoice": 3,
-        "summary": "平衡時はH₂とBr₂が各0.4 mol、HBrが1.2 molなので、K=9と求まる。",
+        "summary": "H₂とBr₂が各0.6 mol反応して各0.4 mol残り、HBrは1.2 molなので、K=[HBr]²/([H₂][Br₂])=9となる。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "K=3と仮定してH₂の消費量xを逆算すると、(2x/(1−x))²=3より2x/(1−x)=√3≈1.73、x≈0.464 molとなる。このときHBrは約0.93 molで、題意の1.2 molに合わない。1.2/0.4=3のように二乗と片方の反応物を落とすと、この値になる。"
+            "reason": "平衡定数は生成物濃度の係数乗の積を反応物濃度の係数乗の積で割った値で、本反応ではK=[HBr]²/([H₂][Br₂])となる。K=3と仮定して逆算すると、2x/(1−x)=√3≈1.73からx≈0.464 molとなる。HBrは約0.93 molにとどまり、題意の1.2 molに合わない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "K=6なら2x/(1−x)=√6≈2.45、x≈0.551 molで、HBrの生成量は約1.10 molにとどまり1.2 molに届かない。1.2²/(0.4×0.6)=6のように、残存量0.4と消費量0.6を取り違えるとこの値になる。"
+            "reason": "K=[HBr]²/([H₂][Br₂])でK=6とすると、2x/(1−x)=√6≈2.45よりH₂の反応量x≈0.551 molとなる。生成するHBrは2x≈1.10 molで題意の1.2 molに届かないため、6は与えられた平衡組成から求まる値ではない。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "HBrが1.2 mol生成すると、H₂とBr₂は各0.6 mol消費され、各0.4 mol残る。10 L中の濃度は0.12、0.04、0.04 mol/Lなので、K=0.12²/(0.04×0.04)=9となる。Δn=0なので容積は約分され、物質量の比で計算しても同じ値になる。"
+            "reason": "H₂1 molとBr₂1 molから2 molのHBrができる量関係なので、HBr 1.2 molの生成でH₂とBr₂は各0.6 mol消費され各0.4 mol残る。10 L中の濃度は0.12、0.04、0.04 mol/Lで、K=0.12²/(0.04×0.04)=9となる。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "K=12なら2x/(1−x)=√12≈3.46、x≈0.634 molで、HBrは約1.27 molとなり、題意の1.2 molより多く生成する計算になる。与えられた平衡組成から求まる値としては過大である。"
+            "reason": "K=[HBr]²/([H₂][Br₂])でK=12とすると、2x/(1−x)=√12≈3.46よりx≈0.634 molとなり、HBrは約1.27 mol生成する計算になる。題意の1.2 molより多いので、与えられた平衡組成に対しては過大な値である。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "K=15なら2x/(1−x)=√15≈3.87、x≈0.660 molで、HBrは約1.32 molとなる。残存するH₂とBr₂も各約0.34 molまで減り、題意のHBr 1.2 mol、残存各0.4 molと矛盾する。"
+            "reason": "K=[HBr]²/([H₂][Br₂])でK=15とすると、2x/(1−x)=√15≈3.87よりx≈0.660 molとなり、HBrは約1.32 mol、残るH₂とBr₂は各約0.34 molとなる。題意のHBr 1.2 mol、残存各0.4 molと合わない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "科学技術振興機構J-STAGE掲載 化学と教育69巻10号「化学平衡を考える①」",
+            "url": "https://www.jstage.jst.go.jp/article/kakyoshi/69/10/69_424/_pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提供された政府資料候補3件には、化学平衡の質量作用則や平衡定数の定義を記した箇所がない。正答理由を直接支える政府資料の抜粋を付けられないため、検索が必要。",
-        "全5肢は、K=(2x/(1−x))²からHBr生成量を逆算して独立に検算した。K=3→約0.93 mol、K=6→約1.10 mol、K=9→1.20 mol、K=12→約1.27 mol、K=15→約1.32 mol。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/69/10/69_424/_pdf",
+          "excerpt": "K＝［P］ p［Q］ q…/［X］ x［Y］ y…",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/69/10/69_424/_pdf",
+          "excerpt": "H 2 1 mol とI 2 1 mol からHI が2 mol 生成する",
+          "choiceNumbers": [
+            3
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q7": {
       "overlay": {
@@ -378,53 +399,61 @@
       "overlay": {
         "sourceHash": "afa8f647bcb921ba57c4f69a72038567ac9abb6e5bb4ee85bf05885991548a5a",
         "correctChoice": 4,
-        "summary": "拡散セルの発生量は蒸気圧だけでなく拡散定数や管の形状にも依存するので、4が誤り。",
+        "summary": "同じ拡散セル・希釈気流量なら管の形状は共通でも、物質ごとに拡散定数Dが異なるため、蒸気圧が同じでも濃度は等しくならない。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "記述は正しい。フィックの拡散法則では拡散量は拡散面積Aに比例する。拡散チューブの内径が大きいほど断面積が増えて発生量が増すので、同じ希釈ガス流量なら発生濃度は高くなる。"
+            "reason": "記述は正しい。産業医学総合研究所の拡散セル報告の式(1)では拡散速度vが拡散管の有効断面積Aに比例し、濃度はv/Fで表される。内径が大きいほどAが増えてvが大きくなるので、同じ希釈気流量Fなら発生濃度は高くなる。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "記述は正しい。有機溶剤を入れたセル全体を一定時間ごとに秤量すれば、質量の減少から蒸発（拡散）速度が分かる。これを希釈ガス流量で割れば、発生する標準ガスの濃度を計算できる。"
+            "reason": "記述は正しい。同報告は、拡散セルから出る蒸気量をセルの重量減少から測定し、外側を流れる希釈気流量を求めれば濃度が算出されると述べる。産総研も拡散管法の濃度決定に拡散管の質量減少速度と希釈ガス流量を挙げている。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "記述は正しい。温度が上がると、有機溶剤の飽和蒸気圧と気相中の拡散係数がともに増大するため、拡散速度は大きくなる。このため拡散セルは恒温槽で一定温度に保って使用する。"
+            "reason": "記述は正しい。式(1)の拡散速度はD・(T₀/T)と飽和蒸気圧p₀を含む対数項に比例する。気相の拡散係数は絶対温度の約1.8乗に比例するのでD/Tは温度とともに増え、蒸気圧も温度が高いほど高くなるため、拡散速度は大きくなる。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "誤り。産業医学総合研究所の拡散セル報告は、拡散速度の計算に管の形状、試料の蒸気圧、拡散定数が必要と記す。蒸気圧が同じでも、異なる物質の拡散定数まで同一とは限らないため、同一セル・流量で発生濃度が必ず等しいとはいえない。"
+            "reason": "誤り。式(1)の拡散速度は管の形状A/Lと飽和蒸気圧のほか、物質ごとの拡散定数Dにも比例する。同じセル・同じ希釈気流量で蒸気圧が同じでも、拡散定数が異なる物質では拡散速度が変わり、発生濃度v/Fは等しくならない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "記述は正しい。拡散量は拡散長Lに反比例する。拡散チューブの有効長が長いほど単位時間あたりの拡散量が減るので、同じ希釈ガス流量なら発生する標準ガスの濃度は低くなる。"
+            "reason": "記述は正しい。式(1)では拡散速度vがA/Lに比例し、Lは拡散管の有効長さである。有効長が長いほどvが小さくなるので、同じ希釈気流量Fなら濃度v/Fは低くなる。"
           }
         ],
         "sources": [
+          {
+            "title": "産業医学総合研究所 昭和53年度年報・拡散セルの拡散速度と稀釈気流の流量",
+            "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf"
+          },
           {
             "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
             "url": "https://www.mhlw.go.jp/content/000616847.pdf"
           },
           {
-            "title": "産業医学総合研究所 昭和53年度年報・拡散セルの拡散速度",
-            "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf"
-          },
-          {
             "title": "産業技術総合研究所 標準ガスの調製方法",
             "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf"
+          },
+          {
+            "title": "エネルギー・金属鉱物資源機構 用語辞典「蒸気圧」",
+            "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
+          },
+          {
+            "title": "科学技術振興機構J-STAGE掲載 化学工学論文集 物性定数・拡散係数",
+            "url": "https://www.jstage.jst.go.jp/article/kakoronbunshu1953/32/9/32_9_862/_pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "物質の拡散係数D（cm2/min）、拡散面積A(cm2)、拡散長L(cm)",
+          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
+          "excerpt": "A及びLほ拡散管の有効断面放と長さである",
           "choiceNumbers": [
             1,
             4,
@@ -432,31 +461,54 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "拡散係数（D）と受動型試料採取機器の形状（A、L）",
+          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
+          "excerpt": "拡散セルの拡散管の幾何学的大きさ，試料液体のその湿度における蒸気圧及び拡散定数等がわかれば拡散速度の計箕が可能である",
           "choiceNumbers": [
+            3,
             4
           ]
         },
         {
           "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
-          "excerpt": "拡散セルの拡散管の幾何学的大きさ",
-          "choiceNumbers": [1, 4, 5]
+          "excerpt": "拡散七ルから流出するセル中液体の蒸気批をセルの直批減少から測定し，セルの外側を流れる稀釈気流を求めれば，その時の混度から涙度が尊出される",
+          "choiceNumbers": [
+            2
+          ]
         },
         {
           "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
-          "excerpt": "蒸気圧及び拡散定数等がわかれば拡散速度の計箕が可能である",
-          "choiceNumbers": [3, 4]
+          "excerpt": "Poはその混度における飽和蒸気圧であり",
+          "choiceNumbers": [
+            3
+          ]
         },
         {
-          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
-          "excerpt": "A及びLほ拡散管の有効断面放と長さである",
-          "choiceNumbers": [1, 5]
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "物質の拡散係数D（cm2/min）、拡散面積A(cm2)、拡散長L(cm)",
+          "choiceNumbers": [
+            4
+          ]
         },
         {
           "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf",
           "excerpt": "拡散管の質量減少速度",
-          "choiceNumbers": [2]
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html",
+          "excerpt": "蒸気圧は一般に温度が高いほど高くなる。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakoronbunshu1953/32/9/32_9_862/_pdf",
+          "excerpt": "温度については絶対温度の約1 .8乗に比例する",
+          "choiceNumbers": [
+            3
+          ]
         }
       ],
       "reviewIssues": []
@@ -465,81 +517,138 @@
       "overlay": {
         "sourceHash": "298d46c97de5ed098a279d393ff877b815d4f4c9e4a1cc7a22e808eb02218a96",
         "correctChoice": 2,
-        "summary": "メチルイソブチルケトンはキレート滴定の試薬ではないので、2が誤った組合せ。",
+        "summary": "キレート滴定はEDTA等のキレート化剤と金属指示薬を用いる方法で、溶剤・抽出剤のメチルイソブチルケトンは用いないため2が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "組合せは正しい。フェノールフタレインは酸性から中性では無色、塩基性側（pH約8.3〜10）で赤紫色に変わる酸塩基指示薬で、中和滴定の終点判定などにpH指示薬として用いられる。"
+            "reason": "組合せは正しい。食品添加物公定書の一般試験法は、塩酸による中和滴定で指示薬としてフェノールフタレイン試液を用い、炭酸塩の溶液ではこの試液で液が著しく紅色を呈すると記す。酸塩基（pH）の変化で変色する指示薬である。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "誤った組合せ。キレート滴定は、EDTA等のキレート剤が金属イオンと錯体を作る反応を利用し、終点判定にはEBT等の金属指示薬を使う。メチルイソブチルケトンは有機溶剤で、金属錯体の溶媒抽出や測定対象物質として扱われ、滴定試薬ではない。"
+            "reason": "誤った組合せ。キレート滴定は、EDTAのようなキレート化剤が金属イオンと1:1で安定なキレート化合物をつくる反応を用い、終点を金属指示薬で判定する。メチルイソブチルケトンは溶剤や抽出剤として使われるケトンで、キレート化剤でも指示薬でもない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "組合せは正しい。ヤシ殻活性炭などの活性炭管は有機溶剤蒸気を吸着する固体捕集剤である。厚労省報告書の表3-3でも、ケトン類等の固体捕集方法の捕集剤としてヤシ殻活性炭100/50mgが示されている。"
+            "reason": "組合せは正しい。厚生労働省の報告書は、固体捕集方法の捕集管の捕集剤として無極性の有機溶剤には通常活性炭が用いられ、ヤシ殻炭などが使われてきたと記す。表3-3でもケトン類の捕集剤としてヤシ殻活性炭100/50mgが挙がる。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "組合せは正しい。活性炭に吸着させた有機溶剤は二硫化炭素で脱着して溶液にし、ガスクロマトグラフで分析する。報告書の表3-3でも、活性炭捕集の脱着溶媒として二硫化炭素1mLが挙げられている。"
+            "reason": "組合せは正しい。同報告書の表3-3では、アセトン、シクロヘキサノン、メチルイソブチルケトンなどをヤシ殻活性炭100/50mgで捕集する方法の脱着溶媒が二硫化炭素1mLとされ、活性炭に捕集した有機溶剤を二硫化炭素で脱着する。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "組合せは正しい。トルエン-d₈は水素8個を重水素に置き換えた化合物で、分子量が約100とトルエン（約92）より8大きいため質量分析で区別できる。挙動も対象物質に近いので、GC/MS分析の内標準物質に用いられる。"
+            "reason": "組合せは正しい。環境省の容器採取－ガスクロマトグラフ質量分析法マニュアルは、内標準物質としてトルエン-d8などを用い、入手可能なら対象物質の同位体が望ましいとする。トルエンの重水素置換体はGC/MSの内標準に使われる。"
           }
         ],
         "sources": [
+          {
+            "title": "厚生労働省 食品添加物公定書 B 一般試験法",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          },
+          {
+            "title": "税関中央分析所報 講座 キレート滴定の基礎（Ⅰ）",
+            "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf"
+          },
+          {
+            "title": "環境省 PRTRファクトシート メチルイソブチルケトン",
+            "url": "https://www.prtr.env.go.jp/factsheet/factsheet/pdf/fc00737.pdf"
+          },
           {
             "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
             "url": "https://www.mhlw.go.jp/content/000616847.pdf"
           },
           {
-            "title": "厚生労働省 作業環境測定基準",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "環境省 有害大気汚染物質測定方法マニュアル 第2章 大気中のベンゼン等VOCsの測定方法",
+            "url": "https://www.env.go.jp/content/000037122.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "表3-3 有機溶剤の固体捕集方法について 物質名等 捕集方法 脱着溶媒",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "過量の水酸化カリウムを0.5mol/L塩酸で滴定する(指示薬 フェノールフタレイン試液2～3滴)",
           "choiceNumbers": [
-            3,
-            4
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "炭酸塩の溶液は，フェノールフタレイン試液を加えるとき，液は著しく紅色を呈する",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf",
+          "excerpt": "金属イオンとキレート化剤とが1：1 のモル比で反応して，水溶性の安定なキレート化合物をつくる，これがキレート滴定の根本である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.customs.go.jp/ccl_search/info_search/inorganicss/r_01_13_j.pdf",
+          "excerpt": "滴定終点の決定法として，金属指示薬の使用による眼視法",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.prtr.env.go.jp/factsheet/factsheet/pdf/fc00737.pdf",
+          "excerpt": "メチルイソブチルケトンは、合成樹脂などの溶剤、塗料や接着剤の成分、他の化学物質の原料や医薬品の抽出剤などとして使われています。",
+          "choiceNumbers": [
+            2
           ]
         },
         {
           "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "ヤシ殻活性 炭100/50mg 0.01～0.2 L/min",
+          "excerpt": "捕集管に使用される捕集剤には、通常、無極性の有機溶剤には活性炭が",
           "choiceNumbers": [
             3
           ]
         },
         {
           "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "1～10L（その他） 二硫化炭 素1mL Method No.1300",
+          "excerpt": "捕集剤に用いられる活性炭は、ヤシ殻炭が用いられてきた",
           "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "アセトン、シクロヘキサノン、メチルイソブチルケトンなど ヤシ殻活性炭100/50mg 0.01～0.2 L/min 0.5～3L(アセトン） 1～10L（その他） 二硫化炭素1mL Method No.1300",
+          "choiceNumbers": [
+            3,
             4
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "メチルイソブチルケトン 液体捕集方法、固体捕集方法又は直接捕集方法",
+          "url": "https://www.env.go.jp/content/000037122.pdf",
+          "excerpt": "容器採取－ガスクロマトグラフ質量分析法",
           "choiceNumbers": [
-            2
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/000037122.pdf",
+          "excerpt": "トルエン-d8（ρ=0.943）、フルオロベンゼン（ρ=1.024）、クロロベンゼン-d5（ρ=1.157）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/000037122.pdf",
+          "excerpt": "内標準物質としては、入手可能であれば、当該対象物質の同位体を使用することが望ましい。",
+          "choiceNumbers": [
+            5
           ]
         }
       ],
-      "reviewIssues": [
-        "肢2の抜粋は、メチルイソブチルケトンが作業環境測定の測定対象物質であることを示すだけで、キレート滴定の試薬ではないことを直接示すものではない。キレート滴定の試薬（EDTA等）や、MIBKの溶媒抽出での用途を記した政府資料は検索が必要。",
-        "肢1（フェノールフタレインの変色域）と肢5（トルエン-d₈のGC/MS内標準としての使用）を直接支える政府資料は、候補中にない。検索が必要。",
-        "報告書の表3-3の抜粋はPDFテキスト抽出による語中の空白を含む。行と列の対応（捕集剤＝ヤシ殻活性炭、脱着溶媒＝二硫化炭素）は、表の原本レイアウトで確認するのが望ましい。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q10": {
       "overlay": {
@@ -590,6 +699,7 @@
         }
       ],
       "reviewIssues": [
+        "【HOLD】肢2「検知剤の変色層の長さは担体粒子径の影響を受ける」を直接支える政府一次資料が見つからない。厚労省『検知管を用いた化学物質のリスクアセスメントガイドブック』（anzeninfo.mhlw.go.jp/user/anzen/kag/pdf/kenchi-guidebook.pdf）は肢1（温度補正）・肢3（共存ガス、完全な特異的反応ではない）・肢4（斜め部分の中間を読む）・肢5（冷蔵庫でも0℃以下にしない）を支え、高知産業保健総合支援センター頁と埼玉産保センター資料は20℃校正を支えるが、担体粒径と変色層長の関係はメーカー資料（非政府）にしかない。",
         "肢3の抜粋は作業環境測定基準（第10条第2項・第13条第2項）のただし書で、検知管方式の適用を除外する法令上の規定である。検知剤が化学的に非選択的であることを直接記述したものではない。",
         "肢1（20℃校正と温度補正）、肢2（担体粒子径の影響）、肢4（斜め変色層の読取り）、肢5（冷凍保存の可否と理由）を支える政府資料は、候補中にない。JIS K 0804やメーカー取扱説明書は本文を未確認で、検索が必要。",
         "肢5で冷凍保存を避ける具体的な理由（結露、検知剤の変質等）は一般的な説明で、公式根拠による確認が必要。"

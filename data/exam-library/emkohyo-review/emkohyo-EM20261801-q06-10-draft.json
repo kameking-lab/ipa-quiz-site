@@ -22,7 +22,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "正しい。厚労省モデルSDSは、TDIを眼刺激性区分2、呼吸器感作性区分1とし、喘息を発症させ呼吸器刺激性と呼吸器感作性を示すと記す。感作が成立すると喘息症状を繰り返すため、喘息症状を示した者は以後接触しないよう求めており、ばく露が続くとぜんそく様発作を呈するという記述と合う。"
+            "reason": "正しい。厚労省モデルSDS（トリレンジイソシアネート）は、眼・鼻・咽頭・気管等への刺激を挙げ、呼吸器感作性区分1とする。臭気や刺激を感じない濃度でも敏感な人は喘息様症状を起こすことがあるとし、喘息様の急性発作の報告も記すため、低濃度ばく露でぜんそく様発作を呈するという記述と合う。"
           },
           {
             "number": 3,
@@ -32,7 +32,7 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "誤り。厚労省モデルSDSは、フッ素が骨と歯に蓄積し、フッ化水素への慢性ばく露で骨フッ素症が起こるとする。歯の斑状歯も食品安全委員会の評価書に記載がある。しかし同SDSは発がん性を「データ不足のため分類できない」とし、同評価書もヒトの発がん性を示す証拠は不十分としており、がんを生じるとする部分が誤り。"
+            "reason": "誤り。厚労省モデルSDSは、フッ素が骨と歯芽に蓄積し、フッ化水素への慢性ばく露で骨フッ素症（骨の硬化などの骨格変化）が起こるとし、反復ばく露の標的臓器を歯と骨とする。一方、同SDSは発がん性を「データ不足のため分類できない」としており、慢性中毒でがんを生じるとする部分が誤り。"
           },
           {
             "number": 5,
@@ -46,8 +46,8 @@
             "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf"
           },
           {
-            "title": "職場のあんぜんサイト モデルSDS トリレン-2,4-ジイソシアネート",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html"
+            "title": "職場のあんぜんサイト モデルSDS トリレンジイソシアネート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html"
           },
           {
             "title": "山元修「化学熱傷：誰もが知っておきたい知識」熱傷46巻1号（J-STAGE）",
@@ -58,16 +58,14 @@
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html"
           },
           {
-            "title": "食品安全委員会 清涼飲料水評価書 フッ素（2012年11月 案）",
-            "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130"
-          },
-          {
             "title": "職場のあんぜんサイト モデルSDS 硫酸",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-93-9.html"
           }
         ]
       },
-      "reviewIssues": [],
+      "reviewIssues": [
+        "【HOLD】肢3（フェノールの蛋白変性作用、はじめ疼痛・灼熱感を生じ知覚神経末端の局所麻酔作用で無感覚になる）と肢5（濃硫酸の脱水・炭化作用による受傷面の黒褐色化）は、本文どおりの記述が日本熱傷学会誌の総説（J-STAGE）にしかなく、政府一次資料では確認できない。環境省初期評価（フェノール：無痛の漂白作用〜深部の壊死、局部麻酔剤用途）と厚労省モデルSDS（硫酸：白化後に茶色から黒色へ変色）は一部しか支えない。独立審査r1（FIX）もこの点をsourceIssuesに挙げた。肢1・2・4の根拠は政府資料で揃っている。"
+      ],
       "sourceEvidence": [
         {
           "url": "https://www.env.go.jp/council/toshin/t07-h1503/mat_02-1.pdf",
@@ -84,22 +82,22 @@
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
-          "excerpt": "眼に対する重篤な損傷性／眼刺激性区分2呼吸器感作性区分1",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "眼、鼻、咽頭、気管等に対する刺激は、ＴＤＩの蒸気が空気中に存在する事を示す。",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
-          "excerpt": "喘息を発症させ、呼吸器刺激性と呼吸器感作性を示し、慢性気管支炎、限局性呼吸器疾患などを生じる",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "刺激あるいは臭気を感じない濃度でも、敏感な人は、喘息様症状を起こすことがある。",
           "choiceNumbers": [
             2
           ]
         },
         {
-          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/584-84-9.html",
-          "excerpt": "この物質により喘息の症状を示した者は、以後この物質に接触しないこと。",
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/0208.html",
+          "excerpt": "喘息様の急性発作、重篤な気管支痙攣を伴った気管支炎、肺水腫、肺炎を生じるなどの報告が見られる。",
           "choiceNumbers": [
             2
           ]
@@ -140,20 +138,6 @@
           ]
         },
         {
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130",
-          "excerpt": "飲料水中フッ化物濃度が1.0ppmの時の斑状歯の罹患率は48％",
-          "choiceNumbers": [
-            4
-          ]
-        },
-        {
-          "url": "https://www.fsc.go.jp/fsciis/attachedFile/download?retrievalId=kai20121127ka1&fileId=130",
-          "excerpt": "ヒトの発がん性を示す証拠は不十分であり、実験動物における発がん性の証拠も明らかではない",
-          "choiceNumbers": [
-            4
-          ]
-        },
-        {
           "url": "https://www.jstage.jst.go.jp/article/jburn/46/1/46_1/_pdf",
           "excerpt": "まず激痛を伴い白色〜黄褐色の痂皮を形成し，濃硫酸ではその脱水・炭化作用により受傷面が黒褐色調を示す",
           "choiceNumbers": [
@@ -165,6 +149,13 @@
           "excerpt": "皮膚：熱傷のように急速に現れる腐食性損傷（最初は白化、その後茶色から黒色の変色、後に潰瘍、化膿性炎症）",
           "choiceNumbers": [
             5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7664-39-3.html",
+          "excerpt": "区分1（歯、呼吸器、骨、神経系）とした。",
+          "choiceNumbers": [
+            4
           ]
         }
       ]
