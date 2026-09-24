@@ -22788,5 +22788,83 @@
         "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html"
       }
     ]
+  },
+  "emkohyo-20260217-q18": {
+    "sourceHash": "4a0fd9395886800bf9b4dfd79d69bd87214bf254a71eb08f86ff5388d913e79f",
+    "correctChoice": 2,
+    "summary": "送気マスクを自給式呼吸器とした肢2が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "厚労省は呼吸用保護具を、健康障害のおそれがある「環境空気中」で着用する保護具と定義します。水中で使う潜水器には別の構造規格がありますが、この呼吸用保護具とは区別されます。防じんマスク、防毒マスク、電動ファン付き呼吸用保護具に厚生労働大臣の規格があり、法・施行令・安衛則の規格対象と型式検定対象は、対象ガスなどの限定も含め一致します。送気マスクと自給式呼吸器は同法の規格対象リストにはなく、この肢は正しいです。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "厚生労働省サイトに掲載された平成21年度の報告書表16は、送気マスクが離れた場所の空気源からホース等で送気を受けるのに対し、自給式呼吸器は着用者が携行する高圧空気・高圧酸素ボンベ等から供給すると区別しています。この給気方式の違いは現在の厚労省通達とも一致し、送気マスクを自給式とした部分が誤りです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "厚生労働省の「職場のあんぜんサイト」は、両者ともバッテリー駆動のファンで送風すると説明しています。一方、PAPRは面体内を陽圧に保ち、吸気補助具付き防じんマスクは常に陽圧が保たれるものではないと明記します。送風の仕組みが共通でも陽圧要件は異なるため、この肢は正しいです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "厚生労働省の化学防護手袋の選択に関する通達は、平均標準破過点検出時間を指標として耐透過性をクラス1（10分以上）からクラス6（480分以上）までの6区分に分けています。番号が大きいほど高い耐透過性を示すので、この肢は正しいです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "厚生労働省の騒音障害防止ガイドラインは、聴覚保護具に耳栓と耳覆い（イヤーマフ）があり、非常に強烈な騒音では両者の併用が有効と明記しています。併用してよいという記述は正しく、誤りを選ぶ本問の正答ではありません。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 潜水器構造規格（労働省告示第148号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74061000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 呼吸用保護具の分類",
+        "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo16_1.html"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生法 別表第二・別表第四",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生法施行令 第13条第5項・第14条の2",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生規則 第26条・第26条の2・第29条の2・第29条の3",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"
+      },
+      {
+        "title": "厚生労働省掲載・中央労働災害防止協会「平成21年度 屋外のアーク溶接作業等に係る粉じんばく露防止対策等報告書」表16（2010年3月、PDF96頁・印刷頁90。問2の給気式分類のみ参照）",
+        "url": "https://www.mhlw.go.jp/content/11303000/001373168.pdf"
+      },
+      {
+        "title": "厚生労働省 送気マスクの適正な使用等について",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9667&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト 電動ファン付き呼吸用保護具",
+        "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo93_1.html"
+      },
+      {
+        "title": "厚生労働省 機械等検定規則の一部を改正する省令の施行及び防じんマスクの規格の適用について",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc3389&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 化学防護手袋の選択、使用等について",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2426&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 騒音障害防止のためのガイドライン改訂について",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=2"
+      }
+    ]
   }
 }
