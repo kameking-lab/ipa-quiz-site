@@ -26522,5 +26522,63 @@
         "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
       }
     ]
+  },
+  "emkohyo-20260217-q13": {
+    "sourceHash": "13483e4798be86d45686654786067deed00f15aad1ef5b06c92ce973744bd4ef",
+    "correctChoice": 2,
+    "summary": "点音源の音は球面状に拡がり、音の強さは距離の2乗に反比例するので、距離が2倍になると強さは1/4、音圧レベルは約6dB下がる。音圧レベルが1/2になるとした肢2が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "この記述は正しい。農林水産省の資料は、音の速さは大気中で約340m/s、水中で約1,470m/sと媒質により大きく異なり、同じ媒質でも温度で変わるとする。総務省の資料も空気中の音速を c=331.45+0.6t と気温だけの式で示しており、気温が高いほど速く、式に波長や振幅は含まれない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "これが誤り。総務省の資料では、点音源の音は球面状に拡がり、音の強さは球の表面積に反比例するので、距離が2倍になると強さは1/4になる。10×log10(1/4)≒-6dB で「倍距離当たり6dBの減衰」となる。騒音ガイドラインの推計式 Lp=Lw-20log10r-8 でも距離2倍で約6dB下がるだけで、音圧レベルが1/2になるわけではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この記述は正しい。厚労省の騒音障害防止ガイドラインの評価表では、B測定が85dB未満かつA測定平均値が85dB未満のときだけ第Ⅰ管理区分となる。B測定が85dB以上90dB未満なら第Ⅱ又は第Ⅲ管理区分、90dB以上なら第Ⅲ管理区分であり、A測定の結果にかかわらず第Ⅰ管理区分にはならない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この記述は正しい。厚労省のe-ヘルスネットは、内耳の蝸牛内部にある有毛細胞が音を感受し、騒音などの影響で傷つき壊れると音を感じ取りにくくなって難聴を引き起こし、一旦壊れた有毛細胞は元には戻らないとする。厚労省広報誌も、騒音性難聴で聴力が失われるとその回復は難しいとしている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "この記述は正しい。厚労省広報誌は、騒音性難聴は4000Hz付近の比較的高い音から難聴が進行するが、通常の生活には支障がないため聞こえにくさの自覚がないことがあり、500Hz～2000Hzの会話域に難聴が及んではじめて聞こえにくさを自覚するようになると説明している。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "農林水産省 騒音の基礎 音波の屈折",
+        "url": "https://www.maff.go.jp/j/nousin/noukan/eikyou_hyouka/attach/pdf/souon-12.pdf"
+      },
+      {
+        "title": "総務省 音響の基礎：音の発生と伝搬",
+        "url": "https://www.soumu.go.jp/main_content/000674398.pdf"
+      },
+      {
+        "title": "厚生労働省 騒音障害防止のためのガイドラインの改訂について（基発0420第2号）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1"
+      },
+      {
+        "title": "厚生労働省 騒音障害防止のためのガイドライン パンフレット",
+        "url": "https://www.mhlw.go.jp/content/001195349.pdf"
+      },
+      {
+        "title": "厚生労働省 e-ヘルスネット 有毛細胞",
+        "url": "https://kennet.mhlw.go.jp/information/information/dictionary/sensory-organ/ys-01.html"
+      },
+      {
+        "title": "厚生労働省 広報誌 騒音性難聴",
+        "url": "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202411_004.html"
+      }
+    ]
   }
 }

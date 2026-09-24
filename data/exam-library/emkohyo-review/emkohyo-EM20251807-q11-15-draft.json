@@ -358,42 +358,116 @@
       "overlay": {
         "sourceHash": "fe504d019214c08358bf4514c49ed33de6144b7a810e0b1849cb469a8b588e33",
         "correctChoice": 2,
-        "summary": "α-ナフチルアミンは1位（α位）にアミノ基をもつ。図の構造がこれと一致しない肢2が誤り。",
+        "summary": "図の肢2はナフタレン環の2位（β位）にNH₂があり、環境省資料の2-ナフチルアミン（β-ナフチルアミン）の構造式と同じなので、α-ナフチルアミンとの組合せが誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "対応は正しい。ニトログリコールはエチレングリコールジニトラートで、O₂N–O–CH₂–CH₂–O–NO₂と2個の硝酸エステル基（–O–NO₂）をもつ。抽出テキストに見える原子の並び（O₂N、O、CH₂、NO₂）もこの構造と整合する。"
+            "reason": "対応は正しい。環境省資料のニトログリコール（別名 二硝酸エチレングリコール、エチレングリコールジニトラート、分子式C₂H₄N₂O₆）の構造式は、CH₂–O–NO₂が2つつながった形である。図のO₂N–O–CH₂–CH₂–O–NO₂と同じ構造なので、この肢は正答ではない。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "この組合せが誤りで正答。α-ナフチルアミン（1-ナフチルアミン）は、ナフタレンの縮合部に隣接する1位にNH₂をもつ。既存解説によれば図のNH₂はβ位（2位）にあり、その場合はβ-ナフチルアミンの構造となって名称と一致しない。"
+            "reason": "この組合せが誤り。図はナフタレン環の2位（β位）にNH₂が付いた構造で、環境省資料の2-ナフチルアミン（別の呼称：β-ナフチルアミン）の構造式と同じである。これはβ-ナフチルアミンの構造であり、α-ナフチルアミンの構造式ではないので、名称と構造式が対応しない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "対応は正しい。アクリロニトリルはCH₂=CH–C≡Nで、ビニル基にニトリル基（–C≡N）が結合した分子式C₃H₃Nの化合物である。抽出テキストのH₂C=C(H)–C≡Nという並びとも一致する。"
+            "reason": "対応は正しい。環境省資料のアクリロニトリル（分子式C₃H₃N、別の呼称 2-プロペンニトリル、ビニルシアニド）の構造式はCH₂=CH–C≡Nである。図のH₂C=CH–C≡N（二重結合とニトリル基の三重結合）と一致するので、この肢は正答ではない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "対応は正しい。o-トルイジン（2-メチルアニリン）はベンゼン環の隣り合う位置（オルト位）にアミノ基とメチル基をもつ。図でNH₂とCH₃が隣接していれば名称と一致し、m-体・p-体とは置換位置で区別される。"
+            "reason": "対応は正しい。環境省資料のo-トルイジン（別の呼称：2-メチルアニリン、2-アミノトルエン）の構造式は、ベンゼン環の隣り合う位置にNH₂とCH₃が付いた形である。図もNH₂とCH₃が隣接（オルト位）しており一致するので、この肢は正答ではない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "対応は正しい。ペンタクロロフェノール（PCP）は、フェノールのOH以外の環上の水素5個をすべて塩素に置き換えたC₆Cl₅OHである。図に示されたOH1個とCl5個の置換配置はこれに対応する。"
+            "reason": "対応は正しい。環境省資料のペンタクロロフェノール（別の呼称 PCP、分子式C₆Cl₅OH）の構造式は、ベンゼン環にOH1個とCl5個が付いた形である。図もOHと5個のClが環の残りすべての位置に付いており一致するので、この肢は正答ではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "環境省・化学物質の環境リスク評価 第7巻 ニトログリコール（構造式）",
+            "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-36.pdf"
+          },
+          {
+            "title": "環境省・化学物質の環境リスク評価 第19巻 2-ナフチルアミン（構造式）",
+            "url": "https://www.env.go.jp/content/900411489.pdf"
+          },
+          {
+            "title": "環境省・化学物質の環境リスク評価 第2巻 アクリロニトリル（構造式）",
+            "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/01.pdf"
+          },
+          {
+            "title": "環境省・化学物質の環境リスク評価 第1巻 o-トルイジン（構造式）",
+            "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/23.pdf"
+          },
+          {
+            "title": "環境省・化学物質の環境リスク評価 第1巻 ペンタクロロフェノール（構造式）",
+            "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/36.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "設問本文の構造式は画像で、テキスト抽出では結合や置換位置が崩れている。肢2のアミノ基が実際にβ位に描かれているか、肢4でNH₂とCH₃が隣接しているかは、原本PDFの図で確認する必要がある。肢2の判断は既存解説の記述と公式正答に依拠しており、図は未確認。",
-        "特定化学物質障害予防規則の健康診断の項目（別表）には「ベータ―ナフチルアミン及びその塩」「アルフア―ナフチルアミン及びその塩」「オルト―トルイジン」が別々の物質として挙がっているが、構造式は示されていない。構造の判断を支えないので sourceEvidence に含めなかった。",
-        "各化合物の構造式を示す政府資料（職場のあんぜんサイトのモデルSDSなど）を検索して本文を確認する必要がある。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-36.pdf",
+          "excerpt": "二硝酸エチレングリコール、エチレングリコールジニトラート",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h21-01/pdf/chpt2/2-2-2-36.pdf",
+          "excerpt": "C2H4N2O6",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900411489.pdf",
+          "excerpt": "物質名：2-ナフチルアミン （別の呼称：β-ナフチルアミン）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/01.pdf",
+          "excerpt": "（別の呼称：シアノエチレン、2-プロペンニトリル、ビニルシアニド、カーボアクリル）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/01.pdf",
+          "excerpt": "分子式：C3H3N",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/23.pdf",
+          "excerpt": "（別の呼称：2-メチルアニリン、2-アミノトルエン",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/36.pdf",
+          "excerpt": "（別の呼称：PCP、五塩化石炭酸）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/36.pdf",
+          "excerpt": "分子式：C6Cl5OH",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20251807-q14": {
       "overlay": {
