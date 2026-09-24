@@ -1,0 +1,267 @@
+{
+  "paperId": "emkohyo-EM20261803",
+  "range": [
+    17,
+    19
+  ],
+  "draftSha256": "0a61c0cf0c02af95c94fde0beceb580fc323b08753c3965b07acba36edf55da0",
+  "sources": [
+    {
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+      "status": 200,
+      "finalUrl": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+      "sha256": "ab3862c032dedc56a0740f45b52d4e189ca5c403bfbb0fc250378f06359208e6",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q17",
+          "excerpt": "ここで、eは測定する放射線に対する測定器の 検出効率",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "tiは、長くても分析に用いる放射性核種の半減期の2〜3倍程度にとどめるのが効率的である。3.2放射能測定NAAで実際に測定される放射能強度Ｃは次式で表される；Ｃ＝Ｄeb・exp(-λtc)・・・（2）ここで、eは測定する放射線に対する測定器の検出効率、bは1壊変あたりの放射線の放出率、tcは試料を中性子照射した直後から放射能測定を行う間までの時間をそれぞれ表す。Ｃの単位はＤのそれに準じて決まり、Ｄにベクレル（Bq；1秒あたりの壊変率（dps））を"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q17",
+          "excerpt": "Ｄにベクレル（Bq；1秒あたりの壊変率（dps））を用いれば、Ｃはcps（1秒あたりの計数率）で与えられる",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "）ここで、eは測定する放射線に対する測定器の検出効率、bは1壊変あたりの放射線の放出率、tcは試料を中性子照射した直後から放射能測定を行う間までの時間をそれぞれ表す。Ｃの単位はＤのそれに準じて決まり、Ｄにベクレル（Bq；1秒あたりの壊変率（dps））を用いれば、Ｃはcps（1秒あたりの計数率）で与えられる。3.3定量値の計算式（1）と式（2）を組み合わせると、定量値を算出する際の基本式である次式を得る。Ｃ＝fσmNθeb{1-exp(-λti)}{exp(-λtc)}・・・（3）中性子束fの照射場で時"
+        }
+      ]
+    },
+    {
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
+      "status": 200,
+      "finalUrl": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1188.html",
+      "sha256": "2c527dd540d882e5e226144faf554ddfd44813e4e554e8c811e1a520a7ec409e",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q17",
+          "excerpt": "単位時間（１秒間）内に原子核が崩壊する数を表す",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "ベクレル-ATOMICA-ベクレルベクレルべくれるＢｑ。放射能の強さを表す単位で、単位時間（１秒間）内に原子核が崩壊する数を表す。したがってＳＩ単位系では（ｓ-１）となるが、放射能の単位として使用する場合、特別な名称として「ベクレル」（略号Ｂｑ、即ち１Ｂｑ＝１ｓ-１）が用いられる。歴史的には「キュリー」（Ｃｉ）が使用されてきた"
+        }
+      ]
+    },
+    {
+      "url": "https://cger.nies.go.jp/cgernews/201606/306003.html",
+      "status": 200,
+      "finalUrl": "https://cger.nies.go.jp/cgernews/201606/306003.html",
+      "sha256": "2d3ed93d679ced8ab5971a81e1d437ab39e33ca843138a46a77036892a18acd1",
+      "contentType": "text/html",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "ppmはparts per millionを省略したもので百万分の一であることを表します",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "気分子が100万個ありそのうち400個がCO2とすると、CO2の混合比は400÷1000000=0.0004となります。でも、これでは値が小さすぎて不便なので、100万倍して400ppmと表記します。ppmはpartspermillionを省略したもので百万分の一であることを表します。さて酸素ですが、先ほどの百万個の空気分子のうちきっちり20万個が空気分子とすると、その混合比は200000ppmとなります。ここまでは何の問題もありません。それでは、この百万個の空気分子にCO2を１"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "一般に、大気成分の濃度を表すには空気を構成する全分子に対する混合比が用いられます",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "表すか？さて、これまではあまり深く考えずに酸素濃度を%やppmという単位を使って表してきました。しかし、厳密にいうと、酸素という大気中の「主成分」の濃度変化を表す場合には、かなり厄介な問題があります。一般に、大気成分の濃度を表すには空気を構成する全分子に対する混合比が用いられます。CO2の場合であれば、空気を構成する全分子数に対するCO2の分子数の割合（CO2分子数÷空気の全分子数）のことです。仮に、容器の中に空気分子が100万個ありそのうち400個がCO2とすると、CO2の"
+        }
+      ]
+    },
+    {
+      "url": "https://crd.ndl.go.jp/reference/entry/index.php?id=1000049652&page=ref_view",
+      "status": 200,
+      "finalUrl": "https://crd.ndl.go.jp/reference/entry/index.php?id=1000049652&page=ref_view",
+      "sha256": "b449396bc23ca283e31cfa0d0d29fd7d98b0559df27eb4653f828b3e9404e178",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "100万分の1の体積・重さの割合を表します。",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "ーピーエム〉に「ppm（100万分の1、partspermillion）、100万分の1の比率（濃度）のことでいわゆる単位ではない…」とあり。『身近な単位がわかる絵事典』〈ピーピーエム（ppm）〉に「100万分の1の体積・重さの割合を表します。」とあり。『広辞苑』〈ピーピーエム〉に「ppm（partspermillion）百万分の幾つかに当たるかを示す語。」とあり。『ニューワイド学習百科事典6』〈ピーピーエムppm〉に「百万分率。parts"
+        }
+      ]
+    },
+    {
+      "url": "https://unit.aist.go.jp/nmij/library/si-units/",
+      "status": 200,
+      "finalUrl": "https://unit.aist.go.jp/nmij/library/si-units/",
+      "sha256": "5057ea6524e768202bbec4195ea72e19d0153f3b59db0c7f9b189ba2b25036b3",
+      "contentType": "text/html",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q17",
+          "excerpt": "1 l = 1 L = 1 dm 3 = 10 3 cm 3",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "相角度°1°=(π/180)rad分′1′=(1/60)°=(π/10800)rad秒″1″=(1/60)′=(π/648000)rad面積ヘクタールha1ha=1hm2=104m2体積リットルl,L1l=1L=1dm3=103cm3=10-3m3質量トンt1t=103kgダルトンDa1Da=1.66053906660(50)×10-27kgエネルギー電子ボルトeV1eV=1.602176634×10-19J比の対数ネーパNpベル"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q17",
+          "excerpt": "1 h = 60 min = 3600 s",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "、日本語訳はこちら）の4章に定義されています。原子物理学及び天文学で用いる3個の単位も、SI単位との換算関係と共に下記の通り定義されています。量名称記号SI単位による値時間分min1min=60s時h1h=60min=3600s日d1d=24h=86400s長さ天文単位au1au=149597870700m平面角および位相角度°1°=(π/180)rad分′1′=(1/60)°=(π/10800)rad秒″1″=(1/60)"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc7618&dataType=1&pageNo=1",
+      "sha256": "6bc91b2dc50c2290e0801a8062d026003ee171366ac80b22c07e3972e11e0879",
+      "contentType": "text/html;charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "「A測定平均値」の算定には、80dB未満の測定値は含めないこと。",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "管理区分第Ⅱ管理区分第Ⅲ管理区分85dB以上90dB未満第Ⅱ管理区分第Ⅱ管理区分第Ⅲ管理区分90dB以上第Ⅲ管理区分第Ⅲ管理区分第Ⅲ管理区分備考1「A測定平均値」は、測定値を算術平均して求めること。2「A測定平均値」の算定には、80dB未満の測定値は含めないこと。3A測定のみを実施した場合は、表中のB測定の欄は85dB未満の欄を用いて評価を行うこと。3評価結果に基づく措置事業者は、2による評価の結果に基づき、管理区分ごとに、それぞれ次の措置を講ずること。なお、"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "B測定 85dB未満 85dB以上90dB未満 90dB以上 A測定平均値 85dB未満 第Ⅰ管理区分",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "は、作業が定常的に行われている時間帯に、1測定点について10分間以上継続して行うこと。2測定結果の評価事業者は、1による作業環境測定を行った後、単位作業場所ごとに、次の表により、結果の評価を行うこと。B測定85dB未満85dB以上90dB未満90dB以上A測定平均値85dB未満第Ⅰ管理区分第Ⅱ管理区分第Ⅲ管理区分85dB以上90dB未満第Ⅱ管理区分第Ⅱ管理区分第Ⅲ管理区分90dB以上第Ⅲ管理区分第Ⅲ管理区分第Ⅲ管理区分備考1「A測定平均値」は、測定値を算術平均して求めること。2「A測定"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1",
+      "sha256": "b17b5f35170b4c4dd71a14cbd3c7b75b9ab0b0f728f35ba239325be90b1c2225",
+      "contentType": "text/html;charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "1 ジクロルベンジジン及びその塩 ― 3 塩素化ビフェニル(別名PCB) 0.01mg／m 3",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "については30年間。イ有機溶剤等に係る測定については3年間。ただし、特別有機溶剤に係る測定については30年間。別紙1管理濃度1個人サンプリング法対象特化物法令番号(※)物の種類管理濃度令別表第3第1号1ジクロルベンジジン及びその塩―3塩素化ビフェニル(別名PCB)0.01mg／m34オルト―トリジン及びその塩―5ジアニシジン及びその塩―6ベリリウム及びその化合物ベリリウムとして0.001mg／m3令別表第3第2号1アクリルアミド0.1mg／m32アクリロニトリル2ppm3の2イ"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000&dataType=0&pageNo=1",
+      "sha256": "ed47da3eba1aaad86af2fb82865f357079cdb04f6271147a1aca89d582c5b99d",
+      "contentType": "text/html;charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "五　中央管理方式の空気調和設備(空気を浄化し、その温度、湿度及び流量を調節して供給することができる設備をいう。)を設けている建築物の室で、事務所の用に供されるもの",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "る屋内作業場で、厚生労働省令で定めるもの二暑熱、寒冷又は多湿の屋内作業場で、厚生労働省令で定めるもの三著しい騒音を発する屋内作業場で、厚生労働省令で定めるもの四坑内の作業場で、厚生労働省令で定めるもの五中央管理方式の空気調和設備(空気を浄化し、その温度、湿度及び流量を調節して供給することができる設備をいう。)を設けている建築物の室で、事務所の用に供されるもの六別表第二に掲げる放射線業務を行う作業場で、厚生労働省令で定めるもの七別表第三第一号若しくは第二号に掲げる特定化学物質(同号34の2に掲げる物及び同号37に掲げる物で同号34の2に係るものを除く。)を"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+      "sha256": "4c60bea99e6466f8ef0132e2e132d4a2ccb97760a295bff7f6bd4243765d168b",
+      "contentType": "text/html;charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "55fd2bfb96933a503aa927645eddc8f1881e4fee336a05e3500f44c1418cc1d9",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "区分 測定機器 気温及び湿度 〇・五度目盛のアスマン通風乾湿計",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "の測定点は、熱源ごとに、作業場所で熱源に最も近い位置とすること。三測定は、次の表の上欄に掲げる区分に応じて、それぞれ同表の下欄に掲げる測定機器又はこれと同等以上の性能を有する測定機器を用いて行うこと。区分測定機器気温及び湿度〇・五度目盛のアスマン通風乾湿計ふく射熱〇・五度目盛の黒球寒暖計(騒音の測定)第四条令第二十一条第三号の屋内作業場(労働安全衛生規則第五百八十八条各号に掲げる屋内作業場に限る。)における等価騒音レベルの測定は、次に定めるところによら"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "一酸化炭素の含有率 検知管方式による一酸化炭素検定器 炭酸ガスの含有率 検知管方式による炭酸ガス検定器",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "。二測定は、建築物の室の通常の使用時間中に行うこと。三測定は、次の表の上欄に掲げる区分に応じて、それぞれ同表の下欄に掲げる測定機器又はこれと同等以上の性能を有する測定機器を用いて行うこと。区分測定機器一酸化炭素の含有率検知管方式による一酸化炭素検定器炭酸ガスの含有率検知管方式による炭酸ガス検定器室温及び外気温〇・五度目盛の温度計相対湿度〇・五度目盛の乾湿球の湿度計(線量当量率等の測定)第七条令第二十一条第六号の作業場(電離放射線障害防止規則(昭和四十七年労働省令第四十一号)第五十三条各号に掲"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "測定点は、当該作業場における空気中の酸素及び硫化水素の濃度の分布の状況を知るために適当な位置に、五以上とすること",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "五厚労告一七四・令六厚労告一八七・一部改正)(酸素及び硫化水素の濃度の測定)第十二条令第二十一条第九号の作業場における空気中の酸素及び硫化水素の濃度の測定は、次に定めるところによらなければならない。一測定点は、当該作業場における空気中の酸素及び硫化水素の濃度の分布の状況を知るために適当な位置に、五以上とすること。二測定は、次の表の上欄に掲げる区分に応じて、それぞれ同表の下欄に掲げる測定機器又はこれと同等以上の性能を有する測定機器を用いて行うこと。区分測定機器酸素の濃度酸素計又は検知管方式による酸素検定器硫化"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q18",
+          "excerpt": "ベータ線　七十マイクロメートル線量当量率又は七十マイクロメートル線量当量を適切に測定できるもの",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "害防止規則第五十三条第一号に掲げる作業場における外部放射線による線量当量率又は線量当量の測定に用いる機器は、次の各号に掲げる区分に応じ、それぞれ当該各号に定める測定機器を用いて行わなければならない。一ベータ線七十マイクロメートル線量当量率又は七十マイクロメートル線量当量を適切に測定できるもの二中性子線一センチメートル線量当量率又は一センチメートル線量当量を適切に測定できるもの三ガンマ線又はエックス線一センチメートル線量当量率若しくは一センチメートル線量当量又は七十マイクロメートル線量当量"
+        }
+      ]
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+      "sha256": "177cb72291b761959121baaf93fd517088233e55a0e329f07623ce6289587275",
+      "contentType": "text/html",
+      "pages": 1,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "b5f643ec5af2e8f92a574aef7fbf485276c8ffaa66ba4ddd40eaa5ad70d121ab",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "三十五　アセトン 五〇〇ppm",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "本毎立方センチメートル三十二硫化水素一ppm三十三硫酸ジメチル〇・一ppm三十三の二石綿五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル三十四鉛及びその化合物鉛として〇・〇五mg／m3三十五アセトン五〇〇ppm三十六イソブチルアルコール五〇ppm三十七イソプロピルアルコール二〇〇ppm三十八イソペンチルアルコール(別名イソアミルアルコール)一〇〇ppm三十九エチルエーテル四〇〇ppm四十エチレングリコールモ"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "七十一　メチル―ノルマル―ブチルケトン 五ppm",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "十五一―ブタノール二五ppm六十六二―ブタノール一〇〇ppm六十七メタノール二〇〇ppm六十八メチルエチルケトン二〇〇ppm六十九メチルシクロヘキサノール五〇ppm七十メチルシクロヘキサノン五〇ppm七十一メチル―ノルマル―ブチルケトン五ppm備考この表の下欄の値は、温度二十五度、一気圧の空気中における濃度を示す。附則１この告示は、昭和六十三年十月一日から適用する。ただし、別表第二十七号から第三十四号まで、第三十七号、第四十号から第四十六号"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "リフラクトリーセラミックファイバー 五マイクロメートル以上の繊維として〇・三本毎立方センチメートル",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "ェノールとして〇・五mg／m3二十九の二ホルムアルデヒド〇・一ppm三十マンガン及びその化合物マンガンとして〇・〇五mg／m3三十の二メチルイソブチルケトン二〇ppm三十一沃化メチル二ppm三十一の二リフラクトリーセラミックファイバー五マイクロメートル以上の繊維として〇・三本毎立方センチメートル三十二硫化水素一ppm三十三硫酸ジメチル〇・一ppm三十三の二石綿五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル三十四鉛及びその化合物鉛として〇・〇五mg／m3三十五アセトン五〇〇p"
+        },
+        {
+          "questionId": "emkohyo-EM20261803-q19",
+          "excerpt": "石綿 五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "〇ppm三十一沃化メチル二ppm三十一の二リフラクトリーセラミックファイバー五マイクロメートル以上の繊維として〇・三本毎立方センチメートル三十二硫化水素一ppm三十三硫酸ジメチル〇・一ppm三十三の二石綿五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル三十四鉛及びその化合物鉛として〇・〇五mg／m3三十五アセトン五〇〇ppm三十六イソブチルアルコール五〇ppm三十七イソプロピルアルコール二〇〇ppm三十八イソペンチルアルコール(別名イソアミルアルコ"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 20,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0
+}

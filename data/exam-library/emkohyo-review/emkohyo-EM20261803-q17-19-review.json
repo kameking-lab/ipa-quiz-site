@@ -1,0 +1,94 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5205,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 24233,
+      "webSearchRequests": 0,
+      "costUSD": 0.29822780000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3984,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q17-19-raw-response.txt",
+  "rawResponseSha256": "8b45fcdafb48efd6a79560f96521b06cd126b8c2b9b0f1bb38811ef909bbc1ba",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q17",
+    "emkohyo-EM20261803-q18",
+    "emkohyo-EM20261803-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q17": {},
+    "emkohyo-EM20261803-q18": {},
+    "emkohyo-EM20261803-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q17": {
+      "/exam-library/emkohyo-EM20261803/q17-p10-1.webp": "e0fe423b6560e7587f106d4d0117e81a1ea4eef382bae6d953da122cc610656f"
+    },
+    "emkohyo-EM20261803-q18": {
+      "/exam-library/emkohyo-EM20261803/q18-p11-0.webp": "21c98ffde33ae3017702eba4b7b601aba904a7cf1250cd5c28c427996f5a0479"
+    },
+    "emkohyo-EM20261803-q19": {
+      "/exam-library/emkohyo-EM20261803/q19-p11-1.webp": "8f17613e0bfa2bed44335e7f85b48e9079ee224f607c4bbb7709a7add45d93f9"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q17": "af7ba4ca834e3d7daed9bf79a8ecb4f25e3b3a5a824be347a7779f5c147d9e81",
+    "emkohyo-EM20261803-q18": "cde83cc5ae5d78c6bbdcccf92d6eb6fdffa3b9409771ce3fbc243a1d9bfa40eb",
+    "emkohyo-EM20261803-q19": "1d26513741ff2005e9557c0de21ffd29e2fc5eb10ba68e1222bfb795132f5a93"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q17-19.json",
+  "sourcePackSha256": "037ec2ac2618607e2200cbdbeccf162968645985a590bf9a222437aa7bb82f12",
+  "assessment": {
+    "emkohyo-EM20261803-q17": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261803-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由と summary は、単位作業場所の範囲を定めた規定を示していない。挙げているのは「A測定平均値の算定に80dB未満の測定値は含めない」という評価段階の備考と、85dB・90dBの管理区分だけである。そこから「単位作業場所の目安は70dBではない」と推論している。評価計算から除外する値の下限と、単位作業場所を設定する区域の目安は別の概念であり、この推論では誤りの直接の因果になっていない。",
+        "「70dBを目安に単位作業場所を定めることを示した規定はない」は不存在の主張で、根拠資料からは検証できない。肢2の誤りの核心は「おおむね70dB以上」の数値であり、正しい数値（一般に『おおむね80dB以上の区域』とされるもの）を示す規定・解説を直接引用して書き直すべきである。"
+      ],
+      "sourceIssues": [
+        "騒音障害防止のためのガイドライン（基発0420第2号）から取った抜粋は、評価表と A測定平均値の算定方法（備考2）だけで、単位作業場所の定義や設定範囲（dB の目安）を述べた箇所を含まない。肢2の理由を直接支える記述になっていない。",
+        "作業環境測定基準第4条（騒音の測定）の単位作業場所に関する条文も、根拠抜粋に含まれていない。"
+      ],
+      "needsExternalCheck": [
+        "騒音障害防止のためのガイドライン本文・別紙・解説、または作業環境測定基準第4条に、単位作業場所を『おおむね80dB以上の区域』とする旨の記述があるか確認し、該当箇所を根拠として差し替えること。"
+      ]
+    },
+    "emkohyo-EM20261803-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は「ppmは気体では構成分子数に対する割合の百万分率で、体積の割合を表す百万分率である」と述べるが、分子数比と体積比を同一視する根拠（同温・同圧の気体ではアボガドロの法則により分子数比＝体積比となること）が示されていない。国立環境研究所の抜粋は分子数の混合比しか述べず、体積分率である点を直接支えていない。"
+      ],
+      "sourceIssues": [
+        "肢2の根拠の一つである国立国会図書館レファレンス協同データベースは、児童向け絵事典の「100万分の1の体積・重さの割合」という記述を孫引きした二次資料である。しかも重量比も含む一般的な定義なので、管理濃度の ppm が体積分率であることを直接支えない。",
+        "代わりに、証拠内で既に取得済みの作業環境評価基準別表の備考『この表の下欄の値は、温度二十五度、一気圧の空気中における濃度を示す』を併用し、気体の体積基準の濃度であることを示すのが適切である。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

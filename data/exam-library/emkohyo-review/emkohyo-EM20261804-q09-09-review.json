@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1649,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16328,
+      "webSearchRequests": 0,
+      "costUSD": 0.1638678,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1548,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261804-q09-09-raw-response.txt",
+  "rawResponseSha256": "a9c9e9e0d2d0cd74d03594689d3657719bd3b8b140b9603e3ad4eae44f34f43e",
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q9"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q9": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q9": {
+      "/exam-library/emkohyo-EM20261804/q9-p7-0.webp": "84f642d38b06216533585b0e35ab3062c53491b5a58219edd0c52f3a3ffd0f04"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20261804-q9-mhlw-solid-sorbent-table3-3-p43.png": "ff7c14df677267b0cd8c06ccdd92d8332d5cb1f414fc6e7d7f088fe0b029e131"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261804-q9": "50e6587d2c8acc131260967fe0ec09acf0f33b13ece85b9700cbb3f293f96622"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q09-09.json",
+  "sourcePackSha256": "b86e7ce928cfcdd84e1fa9e4d91ff35bc30d1d0c42b9e6c0ea8a912039eafbc1",
+  "assessment": {
+    "emkohyo-EM20261804-q9": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -23,6 +23,10 @@
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html"
     },
     {
+      "title": "日本原子力研究開発機構 ATOMICA 1センチメートル線量当量",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html"
+    },
+    {
       "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html"
     },
@@ -63,12 +67,8 @@
       "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_807.html"
     },
     {
-      "title": "農研機構 農村工学研究所技報214号 NaI(Tl)シンチレーション検出器による屋外測定での放射性セシウム計数の解析法",
-      "url": "https://www.naro.go.jp/publicity_report/publication/archive/files/nkk_technicalreport214_13.pdf"
-    },
-    {
-      "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
-      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+      "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
     },
     {
       "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
@@ -98,7 +98,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "原子力規制庁委託報告書に抜粋されたJIS Z 4511のNシリーズ換算係数(Sv/Gy)では、実効エネルギー48keVでH*(10)=1.59・H'(0.07)=1.48（差約7%）、100keVで1.64・1.55（約5%）、208keVで1.39・1.34（約4%）となる。40keV程度以上の光子では両者の差は1割以内に収まり、正しい記述。"
+            "reason": "規制庁委託報告書のJIS Z 4511抜粋(Sv/Gy)では実効エネルギー48keVでH*(10)=1.59・H'(0.07)=1.48（差約7%）、100keVで1.64・1.55（約5.5%）、208keVで1.39・1.34（約3.6%）。同報告書の図2.2.1-3・2.2.1-4に示すICRP74換算係数でも、0.2〜10MeVでは両曲線がほぼ重なり（おおむね1.1〜1.4Sv/Gy）、40keV以上の差は1割以内となる。正しい記述。"
           },
           {
             "number": 3,
@@ -136,6 +136,10 @@
           {
             "title": "日本原子力研究開発機構 ATOMICA 被ばく管理のための種々の線量",
             "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 1センチメートル線量当量",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html"
           },
           {
             "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
@@ -180,6 +184,27 @@
           ]
         },
         {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "図2.2.1-3 光子 周辺線量当量（1 cm 線量当量）と周辺線量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "黒線 ICRP74 換算係数：H*(10) Sv/Gy",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "黒線 ICRP74 換算係数：H´(0.07) Sv/Gy",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
           "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html",
           "excerpt": "γ線 、 中性子線 等の非荷電粒子に適用される概念である",
           "choiceNumbers": [
@@ -210,6 +235,13 @@
         {
           "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html",
           "excerpt": "推奨されているdの値は10mm（1cm）であり",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html",
+          "excerpt": "人体組成を模擬した元素組成値をもつ直径30cmの球体（ICRU球）を放射線場に置き、その球表面から1cmの深さの点での線量の値を言う",
           "choiceNumbers": [
             4
           ]
@@ -460,42 +492,38 @@
       "overlay": {
         "sourceHash": "ab08b359f3e6df97c269eb1dd5888412b88144e2a8e83333b420834113b2ad49",
         "correctChoice": 2,
-        "summary": "662keVに光電ピークを示すのは¹³⁷Cs、NaI(Tl)の662keVでの分解能は7%前後、約185keVの幅広いピークは662keVのγ線が180度散乱した後方散乱ピークである。",
+        "summary": "662keVに光電ピークを示すのは¹³⁷Cs、2〜3インチNaI(Tl)の662keVでの分解能は一般に7〜9%程度、約185keVの幅広いピークは662keVのγ線が約180度散乱した後方散乱ピークである。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "㋑の¹³⁷Csと㋩の後方散乱は正しいが、㋺の2〜3%が誤り。ATOMICAはNaI(Tl)の分解能（半値幅）を662keVに対し通常60keV以下とし、農研機構の実測でも半値幅47keV・分解能7.1%である。2〜3%はNaI(Tl)では得られない値である。"
+            "reason": "㋑の¹³⁷Csと㋩の後方散乱は正しいが、㋺の2〜3%が誤り。規制庁の放射能測定法シリーズNo.6は、2〜3インチ円筒形NaI(Tl)の分解能を¹³⁷Cs（662keV）に対し「7〜9%程度が一般的」としており、2〜3%はこの一般的な値と合わない。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "㋑¹³⁷Cs：農研機構の¹³⁷Cs測定で全吸収ピークは662keV。㋺：農研機構の実測でNaI(Tl)の662keVピークの分解能は7.1%。㋩：後方散乱端はEγ/(1+2Eγ/m0c²)=662/(1+2×662/511)≈184keVで、同報告も200keV付近に後方散乱ピークを示す。すべて一致し正しい組合せ。"
+            "reason": "㋑：¹³⁷Csは662keVのγ線のみを放出する。㋺：No.6は2〜3インチNaI(Tl)の662keVでの分解能を7〜9%程度とし、6〜8%程度と整合する。㋩：後方散乱の散乱γ線最小エネルギーはEγ/(1+2Eγ/m0c²)=662/(1+2×662/511)≈184keVで、約185keVのピークと一致する。正しい組合せ。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVの光電ピークは生じない。分解能2〜3%もNaI(Tl)の実測7.1%と合わない。消滅γ線は陽電子消滅による511keVで、約185keVの幅広いピークとは一致しない。㋑㋺㋩いずれも誤りである。"
+            "reason": "⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVに光電ピークを生じない。㋺の2〜3%は2〜3インチNaI(Tl)で一般的な7〜9%程度と合わない。消滅γ線（電子対消滅光子）は511keVで、約185keVの幅広いピークの原因ではない。㋑㋺㋩いずれも誤り。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "㋺の6〜8%はNaI(Tl)の分解能として妥当だが、⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVに光電ピークを作らない。㋩の消滅γ線は511keVの陽電子消滅放射線であり、約185keVの幅広いピークの原因ではない。㋑㋩が誤り。"
+            "reason": "㋺の6〜8%はNaI(Tl)の一般的な分解能と整合するが、⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVに光電ピークを作らない。㋩の消滅γ線は511keVの電子対消滅光子で、約185keVの幅広いピークの原因ではない。㋑㋩が誤りである。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "㋺の6〜8%と㋩の後方散乱は正しいが、㋑の⁶⁰Coが誤り。⁶⁰Coのγ線は1173.2keVと1332.5keVのカスケードで、662keVに光電ピークを作るのは¹³⁷Cs（661.7keV）である。662/(1+2×662/511)≈184keVの後方散乱ピークも¹³⁷Csの662keVに対応する。"
+            "reason": "㋺の6〜8%と㋩の後方散乱は正しいが、㋑の⁶⁰Coが誤り。⁶⁰Coのγ線は1173.2keVと1332.5keVのカスケードで、662keVのγ線のみを放出するのは¹³⁷Csである。約185keVの後方散乱ピークも662/(1+2×662/511)≈184keVとして¹³⁷Csの662keVに対応する。"
           }
         ],
         "sources": [
           {
-            "title": "農研機構 農村工学研究所技報214号 NaI(Tl)シンチレーション検出器による屋外測定での放射性セシウム計数の解析法",
-            "url": "https://www.naro.go.jp/publicity_report/publication/archive/files/nkk_technicalreport214_13.pdf"
-          },
-          {
-            "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
-            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+            "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
           },
           {
             "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
@@ -505,16 +533,16 @@
       },
       "sourceEvidence": [
         {
-          "url": "https://www.naro.go.jp/publicity_report/publication/archive/files/nkk_technicalreport214_13.pdf",
-          "excerpt": "全吸収ピークが662keVに見られる",
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "137Cs（662keVのγ線のみを放出）",
           "choiceNumbers": [
             2,
             5
           ]
         },
         {
-          "url": "https://www.naro.go.jp/publicity_report/publication/archive/files/nkk_technicalreport214_13.pdf",
-          "excerpt": "NaI(Tl)シンチレーション検出器では47keV，分解能はそれぞれ0.24％，7.1％であった",
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "2～3インチの円筒形NaI(Tl)の場合、137Cs（662keV）に対して7～9%程度が一般的である",
           "choiceNumbers": [
             1,
             2,
@@ -523,31 +551,23 @@
           ]
         },
         {
-          "url": "https://www.naro.go.jp/publicity_report/publication/archive/files/nkk_technicalreport214_13.pdf",
-          "excerpt": "200keV付近には後方散乱によるピーク（BS）が見られる",
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "散乱角が90度以上の後方散乱の寄与が多いため、後方散乱ピークと呼ばれる",
           "choiceNumbers": [
             2,
             5
           ]
         },
         {
-          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
-          "excerpt": "分解能（半値幅）は662keVに対し、通常60keV以下である",
-          "choiceNumbers": [
-            1,
-            3
-          ]
-        },
-        {
-          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
-          "excerpt": "散乱γ線の最小エネルギーは散乱角180度の場合に相当し（図3.1のピークBS）",
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "スペクトル上では散乱γ線の最小エネルギーに相当する位置にピーク状の形状が現れる",
           "choiceNumbers": [
             2
           ]
         },
         {
           "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
-          "excerpt": "BS:後方散乱スペクトル",
+          "excerpt": "散乱γ線の最小エネルギーは散乱角180度の場合に相当し（図3.1のピークBS）",
           "choiceNumbers": [
             2
           ]

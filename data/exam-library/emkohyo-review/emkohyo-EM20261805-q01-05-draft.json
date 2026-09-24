@@ -262,42 +262,121 @@
       "overlay": {
         "sourceHash": "7602e8e73a27078ed772627f69690b7bb80ff3f97c81e4d37f5d36e748bef80c",
         "correctChoice": 1,
-        "summary": "水素結合を作り沸点が約124 ℃と最も高いエチレングリコールモノメチルエーテルが、25 ℃の飽和蒸気圧も最も小さい。",
+        "summary": "25℃の飽和蒸気圧はエチレングリコールモノメチルエーテルが9.50 mmHg（1.27 kPa）で、他の4物質（10 kPa超）よりはるかに小さい。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "エチレングリコールモノメチルエーテル（CH₃OCH₂CH₂OH）は末端にヒドロキシ基を持ち、分子間で水素結合を作る。沸点は約124 ℃で5物質中最も高く、25 ℃の飽和蒸気圧は最も小さい。"
+            "reason": "正しい。環境省の初期評価はエチレングリコールモノメチルエーテル（別名2-メトキシエタノール）の蒸気圧を9.50 mmHg（1.27×10³ Pa、25℃）とする。他の4物質は25℃で16 kPa以上、または20℃の時点で既に10.5 kPa以上あり、本物質が最も小さい。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "1,1,1-トリクロロエタンは沸点約74 ℃の塩素系溶剤で、水素結合を作るヒドロキシ基を持たない。25 ℃では揮発しやすく、飽和蒸気圧は沸点約124 ℃の選択肢1よりはるかに大きいため最小ではない。"
+            "reason": "誤り。モデルSDSは1,1,1-トリクロロエタンの蒸気圧を1.24×10² mmHg（25℃）とする。124 mmHg×0.1333≒16.5 kPaで、エチレングリコールモノメチルエーテルの1.27 kPa（25℃）の約13倍あり、最も小さいものには当たらない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "二硫化炭素は沸点約46 ℃で、5物質中最も低い。25 ℃では最も揮発しやすく、飽和蒸気圧は最大級になる。最も小さいものを問う本問では、正答とは反対側の端に位置する物質である。"
+            "reason": "誤り。モデルSDSは二硫化炭素の蒸気圧を48 kPa（25℃）とする。エチレングリコールモノメチルエーテルの1.27 kPa（25℃）の約38倍もあり、25℃で非常に揮発しやすい物質で、飽和蒸気圧が最も小さいものには当たらない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "n-ヘキサンは極性基を持たない炭素数6の飽和炭化水素で、分子間力はファンデルワールス力だけ。沸点は約69 ℃と低く、25 ℃の飽和蒸気圧はヒドロキシ基を持つ選択肢1より明らかに大きい。"
+            "reason": "誤り。モデルSDSはn-ヘキサンの蒸気圧を20℃で17 kPaとする。飽和蒸気圧は温度が上がると大きくなるので、25℃では17 kPa以上となり、エチレングリコールモノメチルエーテルの1.27 kPa（25℃）よりはるかに大きい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "メチルエチルケトンはカルボニル基による極性を持つが、水素結合供与体となるOHはなく、沸点は約80 ℃にとどまる。25 ℃の飽和蒸気圧は、沸点約124 ℃のエチレングリコールモノメチルエーテルより大きい。"
+            "reason": "誤り。モデルSDSはメチルエチルケトンの蒸気圧を20℃で10.5 kPaとする。飽和蒸気圧は温度が上がると大きくなるので、25℃では10.5 kPa以上となり、エチレングリコールモノメチルエーテルの1.27 kPa（25℃）の8倍を超える。最小ではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "環境省 化学物質の環境リスク初期評価 エチレングリコールモノメチルエーテル（物理化学的性状）",
+            "url": "https://www.env.go.jp/chemi/report/h17-21/pdf/chpt1/1-2-2-02.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS エチレングリコールモノメチルエーテル（別名の同定）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-86-4.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 1,1,1-トリクロロエタン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/71-55-6.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 二硫化炭素",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS ヘキサン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS メチルエチルケトン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-93-3.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "添付の政府資料候補3件（個人サンプラー報告書、有機溶剤中毒予防規則、作業環境測定基準）の抜粋には、各物質の25 ℃飽和蒸気圧も沸点も載っていない。正答理由を直接支える一次資料抜粋がないため、sources/sourceEvidenceは空にした。職場のあんぜんサイトのモデルSDSなどで各物質の蒸気圧と沸点を調べる必要がある。",
-        "解説中の沸点（約124/74/46/69/80 ℃）は一般的な文献値の概数で、今回の作業では一次資料による確認をしていない。SDSでの数値確認が必要。",
-        "沸点の順序と25 ℃蒸気圧の順序は一般に対応するが、厳密に一致するとは限らない。25 ℃の蒸気圧の実測値でも、選択肢1が最小であることを確認する必要がある。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/chemi/report/h17-21/pdf/chpt1/1-2-2-02.pdf",
+          "excerpt": "物質名：エチレングリコールモノメチルエーテル",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h17-21/pdf/chpt1/1-2-2-02.pdf",
+          "excerpt": "蒸気圧9.50mmHg(=1.27×103Pa)(25℃)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-86-4.html",
+          "excerpt": "化学名又は一般名 エチレングリコールモノメチルエーテル 別名 ２－メトキシエタノール",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/71-55-6.html",
+          "excerpt": "蒸気圧 1.24×10 + 2 mmHg （25℃）",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-15-0.html",
+          "excerpt": "蒸気圧 48 kPa (25℃)",
+          "choiceNumbers": [
+            1,
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html",
+          "excerpt": "蒸気圧 17 kPa（20℃）",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/78-93-3.html",
+          "excerpt": "蒸気圧 10.5kPa (20℃)",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261805-q2": {
       "overlay": {

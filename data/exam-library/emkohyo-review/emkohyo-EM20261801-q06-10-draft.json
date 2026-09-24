@@ -327,7 +327,7 @@
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "誤り。労働安全衛生総合研究所は、ISO 7708に基づく区分を、鼻孔または口を通過する吸引性粉じん（100μm以下）、咽頭を通過し肺に向かう咽頭通過性粉じん（10μm以下）、肺胞まで達する吸入性粉じん（4μm以下）と説明する。3区分は大小の範囲を順に切り分けたものではなく、粒径の数値も本肢と合わない。"
+            "reason": "誤り。労働安全衛生総合研究所の2017年資料は、吸引性粉じん（鼻孔または口を通過、100μm以下）、咽頭通過性粉じん（咽頭を通過し肺に向かう、10μm以下）、吸入性粉じん（肺胞まで達する、4μm以下）に分ける。同所の2013年コラム（ISO 7708に基づく）は、吸引性の中に咽頭通過性、その中に吸入性が含まれると説明しており、本肢の区分と粒径は誤り。"
           },
           {
             "number": 2,
@@ -337,7 +337,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "正しい。岡山労働局資料は、溶接ヒュームを蒸気が空気中で凝固した固体の粒子とし、IARCがグループ1に分類したと記す。粉じん則は「金属をアーク溶接する作業」を粉じん作業とし、厚労省検討会報告書も溶接ヒュームは疫学研究で発がん性が示されたが、じん肺を機序とする原発性肺がんとの区別がついていないとする。"
+            "reason": "正しい。岡山労働局資料は、溶接ヒュームを蒸気が空気中で凝固した固体の粒子とし、IARCがグループ1に分類したと記す。じん肺法はじん肺にかかるおそれがある作業を粉じん作業とし、同法施行規則別表は「金属をアーク溶接する作業」を掲げる。厚労省検討会報告書も溶接ヒュームの発がん性が疫学研究で示されたとする。"
           },
           {
             "number": 4,
@@ -368,20 +368,22 @@
             "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf"
           },
           {
-            "title": "粉じん障害防止規則（別表第一 粉じん作業）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"
-          },
-          {
             "title": "じん肺法施行規則（e-Gov法令API・現行版本文）",
             "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006"
           },
           {
             "title": "厚生労働省 アスベスト問題に関する厚生労働省の過去の対応の検証（追加）平成17年9月29日",
             "url": "https://www.mhlw.go.jp/new-info/kobetu/roudou/sekimen/topics/dl/050929-1f.pdf"
+          },
+          {
+            "title": "じん肺法（第2条 定義）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
           }
         ]
       },
-      "reviewIssues": [],
+      "reviewIssues": [
+        "【HOLD】肢2「ヒュームの一次粒子の粒径は、一般に、１μm以下」を、ヒューム一般について直接述べた政府一次資料が見つからない。手元の政府資料は溶接ヒュームの粒径0.1～1μm（岡山労働局）と、溶接ヒューム対策に1μm以下の試験粒子が必要とする経産省通知に限られ、独立審査r1（FIX）もヒューム一般への一般化を指摘した。r1の他の指摘（ISO 7708の帰属、入れ子構造の出典、じん肺との因果）は本改稿で対応済みだが未再審査。"
+      ],
       "sourceEvidence": [
         {
           "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2017/pdf_109/siryou_5.pdf",
@@ -393,6 +395,13 @@
         {
           "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
           "excerpt": "「咽頭通過性粉じん」は、吸引性粉じんの中で咽頭を通過して肺に向かう粒子であり、さらにその中で肺胞まで到達する粒子を「吸入性粉じん」といいます。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2013/58-column.html",
+          "excerpt": "国際基準であるISO7708で粉じんは、吸入した場合の呼吸器への到達の程度に応じて",
           "choiceNumbers": [
             1
           ]
@@ -421,15 +430,22 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
-          "excerpt": "二十の二金属をアーク溶接する作業",
+          "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf",
+          "excerpt": "溶接ヒュームは、疫学研究によって発がん性があることが示されたが、原因物質は特定されず、じん肺を機序とする原発性肺がんとの区別もついていない",
           "choiceNumbers": [
             3
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/content/11302000/000593564.pdf",
-          "excerpt": "溶接ヒュームは、疫学研究によって発がん性があることが示されたが、原因物質は特定されず、じん肺を機序とする原発性肺がんとの区別もついていない",
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "三粉じん作業当該作業に従事する労働者がじん肺にかかるおそれがあると認められる作業をいう",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://laws.e-gov.go.jp/api/2/law_data/335M50002000006",
+          "excerpt": "二十の二金属をアーク溶接する作業",
           "choiceNumbers": [
             3
           ]
