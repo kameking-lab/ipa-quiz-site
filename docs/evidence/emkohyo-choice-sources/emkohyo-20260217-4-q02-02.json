@@ -4,23 +4,23 @@
     2,
     2
   ],
-  "draftSha256": "7f4441f0abb5ccaac5d2eb532d75ffe8b68f15ab9da52e0026a8c1a3dbb07263",
+  "draftSha256": "1d0303aed8ee6de734d5515cf290dc765c4d2a7794732b7bcffbbb90728f7407",
   "sources": [
     {
-      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+      "url": "https://www.jaea.go.jp/04/fugen/about/compilation/report/honbun/303.htm",
       "status": 200,
-      "finalUrl": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
-      "sha256": "e887aca18e2960bb8de718c86db071baa93cdb9e1c8e167ad197b82400261fa0",
-      "contentType": "application/pdf",
-      "pages": 214,
+      "finalUrl": "https://www.jaea.go.jp/04/fugen/about/compilation/report/honbun/303.htm",
+      "sha256": "e0a6a5d116526efdb660b476a7dbb5bfba9b80ced2e567a2adaaab36c9c12c7e",
+      "contentType": "text/html",
+      "pages": 1,
       "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-20260217-4-q2",
-          "excerpt": "必要に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。",
+          "excerpt": "C A ＝Cw･V C /（V A ･ηc）",
           "matched": true,
-          "pdfPage": 42,
-          "context": "40(6)放射能濃度の計算①α線又はβ線を測定するダストモニタ1時間ごとの全α放射能濃度又は全β放射能濃度（Bq/m3）を、3.2式を用いて、ろ紙送りからの経過時間までの平均放射能濃度として算出する。必要に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。6時間ろ紙送りの場合に計算に使用する1時間ごとの正味計数率と積算流量の考え方を、図3-4に示す。Ct＝Nt𝜀×Vt（3.2式）Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）"
+          "pdfPage": 1,
+          "context": "ガスを通気してバブラ内の水に捕捉されるトリチウムを測定するものである。バブラ水中のトリチウム濃度CW（Bq/cm3）から排気中のトリチウム濃度CA（Bq/cm3-air）を求めるには次式によっている。CA＝Cw･VC/（VA･ηc）ここに、VC：バブラに用いた水量（cm3）VA：試料空気量（cm3）ηc：捕集効率（0.9：放出放射能測定指針に記される値）303"
         }
       ]
     },

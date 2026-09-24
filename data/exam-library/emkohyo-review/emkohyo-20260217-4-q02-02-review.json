@@ -6,14 +6,14 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 2183,
-      "cacheReadInputTokens": 133532,
-      "cacheCreationInputTokens": 13302,
+      "outputTokens": 1393,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 14402,
       "webSearchRequests": 0,
-      "costUSD": 0.17679040000000001,
+      "costUSD": 0.1709726,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 1221,
+      "thinkingTokens": 1309,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
@@ -34,30 +34,18 @@
   "officialPageImageSha256": {},
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-20260217-4-q2": "bce7ce946a98447ba6a94617aeb530cc7bef8c738cd10cb7520646d43ee2be30"
+    "emkohyo-20260217-4-q2": "42294c88df03ef6244b34e519fbf6101b88585bb0b1234d79395c6fc26344bec"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q02-02.json",
-  "sourcePackSha256": "4c7cd4a956a992ac14bf0ccbe2a4314503cb42ecdb61af3b15e63bd72421cead",
+  "sourcePackSha256": "54823a2af85d572ec974723ecb6e1bcec661d540d41c5ffad4ad6efeb0897453",
   "assessment": {
     "emkohyo-20260217-4-q2": {
-      "status": "FIX",
-      "textIssues": [
-        "公式原図とprompt・選択肢1〜5の文字起こしは一致する。図表の切出しはなく、figures:[]で問題ない。ただし肢1・2の理由は「である」調、肢3〜5は「です・ます」調で、文体が混在している。統一が必要。"
-      ],
+      "status": "PASS",
+      "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [
-        "肢3の「実際に通過した物質量は50.30 µg÷0.75」という表現は誤解を招く。捕集材を通過した物質は、捕集されずに抜けた25％分（破過分）とも読める。「通気した試料空気中に含まれていた物質量（捕集量÷捕集効率）」のように言い換えるべき。",
-        "肢3〜5は、有効数字の最少桁を「75％の2桁」で決めている。しかし流量「100 mL･min-1」は、表記上1桁とも3桁とも読める。1桁と解すると、同じ規則で結果は約1×10になり、11にならない。流量100は2桁以上（3桁）として扱う、または最少桁を決める因子は捕集効率75％だと明記する前提を示すべき。",
-        "計算値は正しい：6000 mL＝6.00 L、50.30÷0.75＝67.07 µg、67.07÷6.00＝11.18 µg/L。肢1は50.30×0.75÷6.00＝6.2875で6.3になる。いずれも検算で一致した。正答3は公式正答と一致する。"
-      ],
-      "sourceIssues": [
-        "環境省『大気中放射性物質測定法』の抜粋は「必要に応じて捕集効率等…補正を行う」という一般的な記述にとどまる。捕集量を捕集効率で『割る』という補正の向きを直接には示していない。さらに3.2式Ct＝Nt/(ε×Vt)のεは、文脈上検出効率とみられる。捕集効率の割戻しの根拠として引用するなら、この差を明記するか、捕集効率による補正式を直接示す資料に差し替えるべき。",
-        "厚生労働省『個人サンプラーを用いた測定法の基盤整備報告書』p.43の抜粋が支えるのは、濃度＝捕集量÷(流量×時間)という通気量計算だけ。捕集効率の補正と有効数字の扱いは支えていない。",
-        "農林水産省資料p.10の乗除算の有効数字規則は、2桁表示の根拠として妥当である。ただしこの資料は漁業分野の換算係数資料で、作業環境測定の文脈の資料ではない。流量100の有効桁数の解釈も支えていない。"
-      ],
-      "needsExternalCheck": [
-        "環境省No36_R408 p.42の3.2式のεが捕集効率か検出効率かを原典で確認する。"
-      ]
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
     }
   }
 }
