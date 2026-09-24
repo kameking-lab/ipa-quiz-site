@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2105,
+      "cacheReadInputTokens": 109052,
+      "cacheCreationInputTokens": 14518,
+      "webSearchRequests": 0,
+      "costUSD": 0.1800624,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1154,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "ce0ea1bcd6059b90d55506034e3556fa14d77c6ec518e8bfc5864586a60311b3",
+  "inputRequestSha256": "697d579dcd9dc75280d0806700065292e7ac367924d7b439639bb85b616ef92d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "b6a59ee24edcb9c98b4a41886fa44db35faa4e4424711fd590f6cfbcd276b13e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/theory/p14.png": "8149ad8e4c9a6ae2ddcbad1aa4c15b98031c87afce2d3643e8c16050d032f6cb"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "115486afc5942e956fabaa13788292995ae47d04a7e21cce160a1356fa4f5afc",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original image word for word: 「電界効果トランジスタ(FET)に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。」. The only difference is full-width versus half-width parentheses, which is a formatting normalization.",
+        "All five choices match the original word for word: (1) 接合形とMOS形に分類することができる。 (2) ドレーンとソースとの間の電流の通路には，n形とp形がある。 (3) MOS形はデプレション形とエンハンスメント形に分類できる。 (4) ゲート電圧で自由電子又は正孔の移動を制御できる。 (5) エンハンスメント形はゲート電圧に関係なくチャネルができる。 The original's spellings ドレーン and デプレション are kept.",
+        "officialAnswer is 5, which matches the manifest-fixed official answer unit {question:11, part:null, answer:\"5\", points:null}. scoringPoints is null, which also matches.",
+        "The logic holds. Choice (5) describes the depletion type, which has a channel when V_GS=0. An enhancement type has no channel at V_GS=0 and forms one only once V_GS passes the threshold voltage in the correct polarity: positive for n-channel, negative for p-channel. That makes (5) the false statement. Choices (1) through (4) match standard FET classification (junction/MOS, n-/p-channel, depletion/enhancement) and the operating principle that the gate's electric field controls the carriers (electrons or holes).",
+        "Each choice explanation gives its own specific reason, and none contradicts the overall explanation or the answer. The overall explanation takes points (a) through (d) in order and correctly concludes that (1) through (4) are true and (5) is the answer.",
+        "There is no figure. The original page is text-only, with no figures, tables, or circuit diagrams, so empty figureUrls and choiceFigureUrls are correct.",
+        "reviewedFromPage=[14] matches the original's footer 「T2−R 014」. The printed page number 「- 11 -」 in the same footer is the page number within the question booklet, not the PDF page number.",
+        "officialReferenceUrls is empty, so there are no independent claims to verify. The uncertainty field states plainly that the explanation is based on standard textbook knowledge and does not quote an official explanation.",
+        "The source details are consistent with each other: exam date 2025-03-23, fiscal-year 2024 lower term (令和6年度下期), and the question PDF filename 20250323_ch_third_q01.pdf."
+      ]
+    }
+  ]
+}

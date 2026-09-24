@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2164,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 14991,
+      "webSearchRequests": 0,
+      "costUSD": 0.1911046,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1194,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "30ee9aee9d3dfc68d574dba0b2f5c9508c8ce31897307d7d5513f2bb8d829335",
+  "inputRequestSha256": "c26cbaf3267759d89da1618380ca4d9acca0462c5314d91beea34c5f8cfc72b8",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "9b2347b8e4b77112205eecb637c0716d70387a025faab91ea941511887f37978"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p04.png": "0ee65124f19f5da1b3b5cbb4a0e1fb30e23eee3c893f9620cdfce9bf95ee8142"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "dec1fc8f040da0d081293d374bbb5d81bc964c442bcfc5ad9cd4f35fe93b9cd6",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the attached original, character for character: 「水力発電に関する記述として，誤っているものを次の(1)～(5)のうちから一つ選べ。」",
+        "All five choices (1)–(5) match the original, including wording, punctuation and line breaks. Choice (3) reads 「発電機側にY結線，系統側にΔ結線」 in both, so no Y/Δ swap was introduced in transcription.",
+        "officialAnswer=3 matches the manifest-fixed official answer unit {question:1, part:null, answer:\"3\"}.",
+        "The overall explanation is correct. A main transformer is usually Δ on the generator side and Y on the system side. The Y neutral can be grounded, which helps reduce insulation. The Δ winding lets third-harmonic current circulate inside the delta, which keeps the voltage waveform from distorting. Choice (3) has the two windings reversed, so it is the wrong statement. This matches the official answer.",
+        "Reason for (1) is correct: the automatic voltage regulator (AVR) controls terminal voltage through excitation, and the governor controls speed and frequency by adjusting water flow into the turbine.",
+        "Reason for (2) is correct: a Kaplan turbine is a propeller turbine with adjustable runner blades, so efficiency drops little at partial load.",
+        "Reason for (4) is correct: a Pelton turbine is an impulse turbine driven by a nozzle jet striking the buckets.",
+        "Reason for (5) is correct. With N = 120f/p, at a fixed frequency f, a lower speed N means more poles p. Hydro generators run slower than thermal (steam turbine) generators, so they have more poles.",
+        "The question is text only. The original has no figure, so figureUrls=[] and choiceFigureUrls={} are correct, and no public candidate figure is needed.",
+        "officialReferenceUrls=[]. The explanation relies only on general power-engineering principles, so there is no independent claim that needs an external check. The uncertainty field only states that the explanation is not the official one; it does not leave anything unresolved.",
+        "The original's footer reads '-1-' and 'T2-D 004'. That fits the power booklet's first question page, and reviewedFromPage=[4] is consistent with it.",
+        "sourceAttribution '令和6年度下期 電力 問1' matches examDate 2025-03-23, fiscalYear 2024, term lower and subject power."
+      ]
+    }
+  ]
+}

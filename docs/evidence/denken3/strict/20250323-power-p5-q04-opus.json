@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "power",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2605,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 14890,
+      "webSearchRequests": 0,
+      "costUSD": 0.1991166,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1601,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "4f13096ed7218900c32b30fc9047e5edaf858406b1ced3745cb2acbd3715b2cc",
+  "inputRequestSha256": "3357d1481736086779d0aef1fa6b42aef7a0443bebdeb9fd23fdbdef6edc82df",
+  "inputHashes": {
+    "candidateSha256": {
+      "q04": "bb3055d2b36ccd02a75706cde0af0a4ca264b85c76955da501b28448e0b67bc5"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/power/p07.png": "0a07fa40a9acd36e013cc2189679d538b7dbaff652e6e9fc5e40a9ad9d9e86f6"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "f2d4a4d03b9f17eb371a9f247e5e97b5b175a41e68237db2bd13653b60deb960",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文: 添付した公式原図の本文『原子力発電に関する記述として，誤っているものを次の(1)〜(5)のうちから一つ選べ。』と一字一句一致する。",
+        "肢(1): 原図の『ウラン235を2〜4％まで濃縮した高濃縮ウランを使い，エネルギーを取り出している。』と一致する。数値2〜4と単位％も一致する。",
+        "肢(2): 原図のα線・β線・γ線、放射能、放射性物質の定義文と一致する。",
+        "肢(3): 原図の『エネルギー値が低く速度の遅い中性子を衝突させると，核分裂を起こす。』と一致する。",
+        "肢(4): 原図の『1個以上の熱中性子が，別の原子核を分裂させる反応が連続的に持続する現象を連鎖反応という。』と一致する。",
+        "肢(5): 原図の減速材に関する記述（高速中性子のエネルギーの一部を吸収させて、低速の熱中性子を得る）と一致する。",
+        "公式正答: manifestで固定した正答単位 {question:4, part:null, answer:'1'} と、候補の officialAnswer='1' が一致する。",
+        "総合解説の論理: 濃縮度2〜4％は低濃縮ウランの範囲（高濃縮はおおむね20％以上）なので、『高濃縮ウラン』という分類名が誤りになる。これは設問が『誤っているもの』を問う構成と整合し、数値そのものは正しいという切り分けも正確である。",
+        "肢(2)〜(5)の個別解説: いずれも各肢固有の正しい理由を述べており、事実誤認はない。(3)はウラン235の熱中性子による核分裂、(4)は連鎖反応の定義、(5)は減速材の役割を説明している。",
+        "図: 原図は文章だけの選択問題で、図・表・数式はない。figureUrls=[] と figureDescription の内容は原図と整合する。",
+        "出典: 試験日2025-03-23は令和6年度下期に当たり、fiscalYear=2024、term=lower、subject=power と整合する。原図の印刷ページは『-4-』で、reviewedFromPage=[7]（前付けを含むPDFページ）と矛盾しない。",
+        "officialReferenceUrls は空配列で、外部資料に依拠した独立主張はない。解説の内容はいずれも原図と基本事項だけで検証できる。"
+      ]
+    }
+  ]
+}

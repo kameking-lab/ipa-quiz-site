@@ -1,0 +1,39 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "theory",
+  "questionCount": 1,
+  "answerUnitCount": 1,
+  "choiceCount": 5,
+  "sourceQuestionPdfSha256": "8817012cb55eed9c83bb1e68df138909b1e03a81f7ed48a9893a219e1d2a76ca",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "6ff37cf0e3ed82073f2242645e57ca1ff5d6b6a43e5167c5da084b226cf67b12",
+  "questions": [
+    {
+      "number": 12,
+      "sourceDraftSha256": "e0fa279b4cadd5a89adf0eb7f73892aa1a36a18fed30a9d7baef263b36a3d38f",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/theory/q12-opus-review.json",
+      "opusReceiptSha256": "a720636fc55183b6e592677d6db20ed35681048c7835435b09288619aa7a6dce",
+      "assessment": {
+        "number": 12,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-theory-q12-magnetron-electron-path": "272c74e5912a1ed2277f956603c49e6732c5faae0b6052afd459400d27f75d99"
+      }
+    }
+  ],
+  "strictReview": {
+    "q12": {
+      "path": "docs/evidence/denken3/strict/20250323-theory-t16-q12-opus.json",
+      "sha256": "79a2b48a7b4a640b1dd26a87ed4e7e52672a30a14a8722a7e7ffbe2f55c674ec",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

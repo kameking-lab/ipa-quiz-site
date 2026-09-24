@@ -1,0 +1,59 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "power",
+  "questionCount": 2,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "8ab75d883b6aa3dbc51faff00c5a504910dc44ddafc006ff15b24de09de09432",
+  "questions": [
+    {
+      "number": 1,
+      "sourceDraftSha256": "1a2a3d26c64e749a46aea18fd91e2e9c6fbd9c9ab879ef37d98679d513ea2a7e",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/power/q01-opus-review.json",
+      "opusReceiptSha256": "737eed412e644f94707e23db54ae28a916943e35689ef6075058ea44eee2d8bc",
+      "assessment": {
+        "number": 1,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    },
+    {
+      "number": 2,
+      "sourceDraftSha256": "de6b9ad15d853b23d7524315a139064c1920d6274791fab74ab62255694920f1",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/power/q02-opus-review.json",
+      "opusReceiptSha256": "d5dbb1209e10257210c2a509173041b4e019b98d9daba20d63487f8475940eac",
+      "assessment": {
+        "number": 2,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {}
+    }
+  ],
+  "strictReview": {
+    "q01": {
+      "path": "docs/evidence/denken3/strict/20250323-power-p1-q01-opus.json",
+      "sha256": "2627f93f5599b58cd861eedcbb1c0e49b34298b2e241c972306930459dcd1312",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q02": {
+      "path": "docs/evidence/denken3/strict/20250323-power-p1-q02-opus.json",
+      "sha256": "ed89c62864a3407bd68dc5b56b0333b848031739f6977f75a2c6e18ac7c5bb3b",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}

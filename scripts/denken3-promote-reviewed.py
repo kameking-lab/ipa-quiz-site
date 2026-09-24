@@ -92,7 +92,8 @@ def promote(date: str, subject: str, numbers: list[int]) -> None:
             row["subject"] = subject
             row["scoringPoints"] = answer["points"]
             row["sourceAttribution"] = f"出典：令和{session['fiscalYear'] - 2018}年度{'上期' if session['term'] == 'upper' else '下期'}第三種電気主任技術者試験 {paper['label']}科目 問{number}" + (f"({row['part']})" if row["part"] else "") + "。問題文・選択肢を読みやすく整形。"
-            row["figureUrls"] = [copied[item["id"]] for item in figures if "choice-" not in item["id"]]
+            row["figureUrls"] = [copied[item["id"]] for item in figures
+                                 if "choice-" not in item["id"] and item.get("part") in (None, row["part"])]
             row["choiceFigureUrls"] = {item["id"].rsplit("choice-", 1)[-1]: copied[item["id"]]
                                       for item in figures if "choice-" in item["id"]}
             row["needsReview"] = False
