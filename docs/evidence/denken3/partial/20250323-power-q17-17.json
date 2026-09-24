@@ -1,0 +1,45 @@
+{
+  "status": "partial-accepted",
+  "date": "20250323",
+  "subject": "power",
+  "questionCount": 1,
+  "answerUnitCount": 2,
+  "choiceCount": 10,
+  "sourceQuestionPdfSha256": "892785e0f1035bcb239eb30fa903d4c88adbcfdaa1b5b0edea2d1907fd887114",
+  "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+  "reviewedDataSha256": "9e77f69cf912bb1f1e0de973904bc15ed6d222edc73a50b3f68b8071c65fd278",
+  "questions": [
+    {
+      "number": 17,
+      "sourceDraftSha256": "5dc2e8db2b297de5bef14ffe56f1737df3d3a331a6d21256553266ea8f7a0337",
+      "opusReceipt": "data/raw_pdfs/denken3/review/20250323/power/q17-opus-review.json",
+      "opusReceiptSha256": "5bf0a1f28d9823cf9585698b639e30dffb864bb6b5a9648d589d97cc0305b726",
+      "assessment": {
+        "number": 17,
+        "status": "PASS",
+        "textIssues": [],
+        "choiceIssues": [],
+        "explanationIssues": [],
+        "figureIssues": [],
+        "externalSourceIssues": []
+      },
+      "figureSha256": {
+        "20250323-power-q17-feranti-pi-circuit": "b0a8aaf091ed77ad3e2045be3aca501018e90dfcb7cd2ffde5c612b0b5f909a5"
+      }
+    }
+  ],
+  "strictReview": {
+    "q17a": {
+      "path": "docs/evidence/denken3/strict/20250323-power-p19-q17a-q17b-opus.json",
+      "sha256": "0984b8a4ff8e96dcca32f053d585f8b140c450b8f725cb17896f33b90bd069e0",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q17b": {
+      "path": "docs/evidence/denken3/strict/20250323-power-p22-q17b-opus.json",
+      "sha256": "7cd0d8932079ae159a3fe481114c20a0b1e70351ec026dacc985faa30ffb74dc",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
+}
