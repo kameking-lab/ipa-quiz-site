@@ -27922,5 +27922,63 @@
         "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
       }
     ]
+  },
+  "emkohyo-EM20261809-q13": {
+    "sourceHash": "5ada53c4cf344b19509e99e5f405763b6aa0c794b4b690235ebff615f442b131",
+    "correctChoice": 1,
+    "summary": "液体シンチレーション測定は試料をシンチレータに溶解・乳化して行い（㋑）、γ線外部標準線源による外部標準チャネル比から計数効率を求められる（㋩）。化学発光は計数値を増加させ（過大評価）、β線波高分布の違いを使えば³Hと¹⁴Cも同時測定できるので㋺㋥は誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "試料を液体シンチレータの溶媒に溶かして測定し、水試料には界面活性剤を加えた乳化シンチレータが広く使われる（㋑正）。γ線源（¹³⁷Cs等）で試料を照射し、コンプトン電子の波高スペクトルから外部標準チャネル比を求めて計数効率を補正できる（㋩正）。正しい組合せで、これが正解。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "㋑は正しいが㋥は誤りである。β線スペクトルは連続でも、β線波高分布の違いを利用しチャネルごとの効率から核種ごとの放射能を決める同時定量法があり、³Hと¹⁴Cのダブルラベル試料もチャネル設定により同時測定されている。組合せとして誤り。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "㋩は正しいが、㋺が誤りである。化学ルミネセンスは試料調製直後に擬似計数を生じ、計数値が増加する（異常に高い計数値が得られる）現象であり、放射能を過小評価ではなく過大評価させる。組合せとして誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "㋺は誤りで、化学ルミネセンスは擬似計数により計数値を増加させ過大評価をもたらす。㋥も誤りで、β線波高分布の違いを利用したチャネル設定により³Hと¹⁴Cは同時測定できる。両方とも誤った記述の組合せである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "㋩は正しい（γ線外部標準線源による外部標準チャネル比で計数効率を求める）が、㋥は誤りである。³Hと¹⁴Cのダブルラベル試料は、¹⁴Cチャネルを³HのEmax付近から¹⁴CのEmax付近に設定するなどして同時測定されている。組合せとして誤り。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "日本原子力研究開発機構 ATOMICA 用語辞書「液体シンチレーションカウンタ」",
+        "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+      },
+      {
+        "title": "日本原子力研究開発機構 ATOMICA「トリチウムの液体シンチレーション法による測定」",
+        "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.9 トリチウム分析法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No9.pdf"
+      },
+      {
+        "title": "原子力規制庁 放射能測定法シリーズNo.23 液体シンチレーションカウンタによる放射性核種分析法",
+        "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No23.pdf"
+      },
+      {
+        "title": "日本薬学会『薬学雑誌』88巻5号（J-STAGE）液体シンチレーション計数装置による生体試料中の14Cの測定法および3H,14Cの同時測定法",
+        "url": "https://www.jstage.jst.go.jp/article/yakushi1947/88/5/88_5_635/_article/-char/ja/"
+      },
+      {
+        "title": "日本アイソトープ協会『RADIOISOTOPES』15巻5号（J-STAGE）液体シンチレーションスペクトロメーターによるダブルラベルサンプル測定時のチャンネル設定条件と測定精度の関係",
+        "url": "https://www.jstage.jst.go.jp/article/radioisotopes1952/15/5/15_5_280/_pdf/-char/ja"
+      }
+    ]
   }
 }
