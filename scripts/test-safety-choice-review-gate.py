@@ -165,6 +165,39 @@ class FullReviewGateTest(unittest.TestCase):
         self.assertEqual([p["path"] for p in REVIEW.evidence_for_question(
             packs, "q2", {"https://www.mhlw.go.jp/shared"})], ["refresh"])
 
+    def test_unchanged_candidate_pack_keeps_hash_across_midnight(self):
+        payload = b"government source body" * 30
+        drafts = {"q1": {"sources": [{"url": "https://www.mhlw.go.jp/new.html",
+                                        "title": "new source"}]}}
+        response = type("Response", (), {"content": payload,
+                        "headers": {"Content-Type": "text/html"},
+                        "raise_for_status": lambda self: None})()
+        with patch.object(REVIEW, "date") as clock:
+            clock.today.return_value.isoformat.return_value = "2026-09-24"
+            with patch.object(REVIEW.requests, "get", return_value=response):
+                original = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            clock.today.return_value.isoformat.return_value = "2026-09-25"
+            with patch.object(REVIEW.requests, "get") as fetched:
+                resumed = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            fetched.assert_not_called()
+        self.assertEqual(resumed, original)
+        self.assertEqual(resumed["content"]["retrievedOn"], "2026-09-24")
+
+    def test_new_candidate_source_still_changes_evidence_hash(self):
+        payload = b"government source body" * 30
+        response = type("Response", (), {"content": payload,
+                        "headers": {"Content-Type": "text/html"},
+                        "raise_for_status": lambda self: None})()
+        drafts = {"q1": {"sources": [{"url": "https://www.mhlw.go.jp/one.html",
+                                        "title": "first source"}]}}
+        with patch.object(REVIEW.requests, "get", return_value=response):
+            original = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+            drafts["q1"]["sources"].append({"url": "https://www.mhlw.go.jp/two.html",
+                                            "title": "second source"})
+            changed = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+        self.assertNotEqual(changed["sha256"], original["sha256"])
+        self.assertEqual(len(changed["content"]["sources"]), 2)
+
 
 if __name__ == "__main__":
     unittest.main()

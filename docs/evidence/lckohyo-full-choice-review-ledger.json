@@ -553,23 +553,17 @@
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20252115-q29",
     "sourceSha256": "101d0c82c5803e5be395a62ee525ffdbb354a53175a38a833dc4fa829680095f",
-    "candidateSha256": "bc597ef2dba480c5d3cfed98c9b832beb81ef1b4c59f17f226ca9e4b86d7b1ef",
+    "candidateSha256": "a822cb3b36b966d0e349ffdd01f7a522b5ae7a39d66887eedc12cb4b77b38649",
     "evidenceSha256": "c76a0937f3d7724b140b11d66ade234c05c13ed6f743df1d2a1b77009b8bd6fa",
-    "status": "HOLD",
-    "gateIssues": [
-      "not a clean PASS",
-      "one or more choice checks did not pass"
-    ],
+    "status": "PASS",
+    "gateIssues": [],
     "assessment": {
-      "status": "HOLD",
-      "issues": [
-        "肢(3)：解説が『「筋肉と神経系だけ」とする点も不十分である』と、原文を引用する形をとっているが、公式問題の原文は『筋肉と神経系により調整されている』で、『だけ』という語はない。原文にない語を引用符に入れて問題文を言い換えている。要点の『同調性ではなく恒常性（ホメオスターシス）』は、厚生労働省資料『生理』の52頁で裏付けられる。同資料は、神経系を介して血管・筋肉・内分泌器官に刺激を送ると記している。",
-        "その他の肢は資料で裏付けられる。肢1は『生理』54頁の『環境温度が低下したときは、末梢血管を収縮させ皮膚からの熱の発散を防ぐ』、肢2は熱中症予防対策マニュアル印刷5頁の『皮膚表面に多く流れる』血流と発汗、肢4は同マニュアル印刷4頁の『視床下部の視束前野及び前視床下部』、肢5は働く女性の心とからだの応援サイト（bosei-navi）の甲状腺ページの『新陳代謝が活発になりすぎて、体温の上昇』である。"
-      ],
+      "status": "PASS",
+      "issues": [],
       "choiceChecks": {
         "1": "PASS",
         "2": "PASS",
-        "3": "HOLD",
+        "3": "PASS",
         "4": "PASS",
         "5": "PASS"
       },
@@ -589,15 +583,15 @@
     "rawResolvedModel": null,
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 62,
-        "outputTokens": 19329,
-        "cacheReadInputTokens": 6530424,
-        "cacheCreationInputTokens": 118178,
+        "inputTokens": 6,
+        "outputTokens": 2154,
+        "cacheReadInputTokens": 258878,
+        "cacheCreationInputTokens": 156047,
         "webSearchRequests": 0,
-        "costUSD": 2.6383368000000003,
+        "costUSD": 1.3432556,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 7687,
+        "thinkingTokens": 993,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"

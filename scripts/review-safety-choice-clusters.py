@@ -127,10 +127,16 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
         cache = root / ".cache/safety-full-review/government-sources" / f"{receipt['sha256']}{suffix}"
         cache.parent.mkdir(parents=True, exist_ok=True)
         cache.write_bytes(payload)
-    value = {"retrievedOn": date.today().isoformat(),
-             "notice": "Candidate evidence only; question-level Opus review is still required.",
-             "sources": [pinned[url] for url in sorted(pinned)]}
-    write(path, value)
+    sources = [pinned[url] for url in sorted(pinned)]
+    # A read-only resume does not retrieve new bytes. Preserve its exact pack
+    # (including retrieval date) so midnight alone cannot invalidate reviews.
+    if previous.get("sources") == sources and path.exists():
+        value = previous
+    else:
+        value = {"retrievedOn": date.today().isoformat(),
+                 "notice": "Candidate evidence only; question-level Opus review is still required.",
+                 "sources": sources}
+        write(path, value)
     return {"path": str(path), "sha256": digest(value), "content": value}
 
 
