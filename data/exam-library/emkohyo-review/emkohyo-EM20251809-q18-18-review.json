@@ -6,21 +6,21 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 2691,
+      "outputTokens": 1714,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 11439,
+      "cacheCreationInputTokens": 12355,
       "webSearchRequests": 0,
-      "costUSD": 0.1455958,
+      "costUSD": 0.1333838,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 1768,
+      "thinkingTokens": 1332,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
   "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q18-18-raw-response.txt",
-  "rawResponseSha256": "0c73756631f8dda483322692fb63f7b1be7d2aa969c6f43ebf5a444c76d68348",
+  "rawResponseSha256": "ef224c3280de81e9b3d3cc44f89290d86f4317ac0e82d33d45b5aa703c47fd68",
   "paperId": "emkohyo-EM20251809",
   "ids": [
     "emkohyo-EM20251809-q18"
@@ -36,26 +36,19 @@
   "officialPageImageSha256": {},
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-EM20251809-q18": "5c097d4975dc90b762198c996b8f4638e51483e1354a7211b6189d9702a42398"
+    "emkohyo-EM20251809-q18": "57f0d95cf7801495c9617b13a34ebd0edca9c1b556fbf7fa598cfbf6cebc9403"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q18-18.json",
-  "sourcePackSha256": "0c8d1e75fd7de0a3d084573b3a8bf1664cd03d373d0265ede46cf7e69e7d5ebb",
+  "sourcePackSha256": "1726799a71bec408bcfdaecc6869de211a648fce32a6864d07a07fba0f768b78",
   "assessment": {
     "emkohyo-EM20251809-q18": {
       "status": "FIX",
-      "textIssues": [
-        "summary冒頭の「管理濃度は5.0×10⁻⁷÷10＝5.0×10⁻⁸Bq/cm³」は用語が不正確。「管理濃度」は作業環境評価基準で有害物質ごとに定められた法令用語で、放射性物質には用いない。問題文どおり「濃度限度の1/10＝5.0×10⁻⁸Bq/cm³（管理目標濃度）」などに改める必要がある。"
-      ],
+      "textIssues": [],
       "choiceIssues": [],
       "reasonIssues": [
-        "肢3のreasonも冒頭で「管理濃度5.0×10⁻⁸Bq/cm³」としており、summaryと同じ用語誤用がある。「濃度限度の1/10」と表記すべき。",
-        "肢3・肢4のreasonにある「No.7のε＝N/(A･Iγ)」は、利用者画面では『No.7』が何を指すか分からない内部参照になっている。出典名を明記するか、参照を外す必要がある。",
-        "肢3・肢4は、ゲルマニウムγ線スペクトロメトリーの式を持ち出してIγ＝1とみなす説明になっており、本問に対して回りくどく、誤解を招く。本問の計数効率25％は「1壊変あたり0.25カウント」と読むのが題意なので、計数率＝放射能(Bq＝s⁻¹)×計数効率と端的に説明すれば足りる。「Iγ＝1とみなす」は出典にない独自の仮定である。"
+        "肢5の理由「No.36の3.2式では効率は分母で濃度に掛かる形になり」は式の説明として不正確。3.2式 Ct＝Nt/(ε×Vt) では、効率εは積算流量Vtとともに分母にあり、分子は正味計数率である。この式を変形すると Nt＝Ct×ε×Vt となり、効率は濃度に乗じる形になる。「分母」と「濃度に掛かる」が一文に混在しているため、読み手が逆の意味に取りうる。修正案は「3.2式では効率εは分母（積算流量と積）にあるため、変形すると正味計数率＝濃度×効率×積算流量となり、効率で割るのではなく掛けるのが正しい。6.91÷0.25としたのは効率の扱いが逆」。"
       ],
-      "sourceIssues": [
-        "原子力規制庁 放射能測定法シリーズNo.7はゲルマニウム半導体検出器によるγ線スペクトロメトリーの資料で、式もγ線放出率Iγを含む形で定義されている。作業環境空気中の放射能濃度測定（ろ紙捕集試料の計数）で、計数効率を1壊変あたりの計数として扱う本問の前提を直接支えていない。『Iγ＝1とみなせば』という橋渡しは資料の記述ではなく起草者の仮定である。",
-        "濃度限度の1/10を管理の目安とすること、ならびに吸引量×濃度で捕集放射能を求めることを支える政府資料（電離放射線障害防止規則、作業環境測定基準、放射性物質の濃度に係る作業環境測定の告示・通達など）が示されていない。政府資料で直接裏付けられているのはBqの定義のみである。"
-      ],
+      "sourceIssues": [],
       "needsExternalCheck": []
     }
   }

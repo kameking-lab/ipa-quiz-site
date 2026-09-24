@@ -4,23 +4,44 @@
     18,
     18
   ],
-  "draftSha256": "8b762838da914e915b69f94d859a3ca5c98f7bc9cea98377083ff237bb4affb5",
+  "draftSha256": "b2eb8a03e6c4bc321fc070b3a6fc0ce7b1290e4afb3ad1c7a053f6dbe3e24354",
   "sources": [
     {
-      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
       "status": 200,
-      "finalUrl": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
-      "sha256": "051bcf0f9d8597bb33e65ac954303838b3c32c175a2c23bbf8993c11babc1375",
+      "finalUrl": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+      "sha256": "e887aca18e2960bb8de718c86db071baa93cdb9e1c8e167ad197b82400261fa0",
       "contentType": "application/pdf",
-      "pages": 314,
+      "pages": 214,
       "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20251809-q18",
-          "excerpt": "放射能を𝐴（Bq）、測定する放射線の放出率を𝐼𝛾、正味計数率を𝑁（s-1）とすると計数効率𝜀は𝜀=𝑁𝐴∙𝐼𝛾",
+          "excerpt": "（3.2式）",
           "matched": true,
-          "pdfPage": 10,
-          "context": "体窒素温度に冷却して使うため、ゲルマニウム結晶はクライオスタット内に保持されている。計数効率（countingefficiency）測定値（計数率）から放射能または放射線強度を決定するため用いる定数。放射能を𝐴（Bq）、測定する放射線の放出率を𝐼𝛾、正味計数率を𝑁（s-1）とすると計数効率𝜀は𝜀=𝑁𝐴∙𝐼𝛾(2.4)この関係には、幾何学的効率が含まれているが、検出器のみの効率（検出効率ともいう）をいうときは幾何学的効率を含まない場合がある。6計数に係る不確かさ（uncertaintyduetocount"
+          "pdfPage": 42,
+          "context": "出する。必要に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。6時間ろ紙送りの場合に計算に使用する1時間ごとの正味計数率と積算流量の考え方を、図3-4に示す。Ct＝Nt𝜀×Vt（3.2式）Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）Nt：ろ紙送りからt時間後の時点での正味計数率（s-1）𝜀：機器効率Vt：ろ紙送りからt時間後までの積算流量（m3）正味計数率"
+        },
+        {
+          "questionId": "emkohyo-EM20251809-q18",
+          "excerpt": "Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）",
+          "matched": true,
+          "pdfPage": 42,
+          "context": "に応じて、捕集効率等の測定値に影響を及ぼすファクターを考慮した補正を行う。6時間ろ紙送りの場合に計算に使用する1時間ごとの正味計数率と積算流量の考え方を、図3-4に示す。Ct＝Nt𝜀×Vt（3.2式）Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）Nt：ろ紙送りからt時間後の時点での正味計数率（s-1）𝜀：機器効率Vt：ろ紙送りからt時間後までの積算流量（m3）正味計数率の求め方に関する補足事項正味計数率は、あらかじめ測定したバックグラウンド計"
+        },
+        {
+          "questionId": "emkohyo-EM20251809-q18",
+          "excerpt": "Nt：ろ紙送りからt時間後の時点での正味計数率（s-1）",
+          "matched": true,
+          "pdfPage": 42,
+          "context": "6時間ろ紙送りの場合に計算に使用する1時間ごとの正味計数率と積算流量の考え方を、図3-4に示す。Ct＝Nt𝜀×Vt（3.2式）Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）Nt：ろ紙送りからt時間後の時点での正味計数率（s-1）𝜀：機器効率Vt：ろ紙送りからt時間後までの積算流量（m3）正味計数率の求め方に関する補足事項正味計数率は、あらかじめ測定したバックグラウンド計数率を差し引いて算出する。ろ紙送りからt時間後の時点にお"
+        },
+        {
+          "questionId": "emkohyo-EM20251809-q18",
+          "excerpt": "Vt：ろ紙送りからt時間後までの積算流量（m3）",
+          "matched": true,
+          "pdfPage": 42,
+          "context": "の考え方を、図3-4に示す。Ct＝Nt𝜀×Vt（3.2式）Ct：ろ紙送りからt時間後の全α放射能濃度又は全β放射能濃度（Bq/m3）Nt：ろ紙送りからt時間後の時点での正味計数率（s-1）𝜀：機器効率Vt：ろ紙送りからt時間後までの積算流量（m3）正味計数率の求め方に関する補足事項正味計数率は、あらかじめ測定したバックグラウンド計数率を差し引いて算出する。ろ紙送りからt時間後の時点における正味計数率をできるだけ正確に評価することが原則である。本"
         }
       ]
     },
@@ -45,7 +66,7 @@
       ]
     }
   ],
-  "claimedExcerpts": 2,
+  "claimedExcerpts": 5,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0
 }
