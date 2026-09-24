@@ -55,40 +55,141 @@
       "overlay": {
         "sourceHash": "3c70842e737b7af37803fe939c48f417422590c5dc86ed5352f07696618c726a",
         "correctChoice": 4,
-        "summary": "寒冷で誘発されるレイノー現象を把握するため、振動障害の健診で冬季を避けるという記述は誤り",
+        "summary": "振動障害の特殊健康診断は通達上、定期健診のうち1回（又は年1回）を冬期に行うとされるので、冬季を避けるとした肢4が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "手腕振動が人体に与える影響は周波数によって違います。周波数補正の重み付けは十数Hz付近が最大で、それより高い周波数でも低い周波数でも重みは小さくなります。12Hz前後で最も大きいとする記述は、公式正答上も正しい肢として扱われています。"
+            "reason": "基発0710第3号は、振動の周波数などで手腕への影響を評価するとし、手腕振動の周波数補正係数Whを示しています。係数は12.5Hzで0.958と最大で、10Hzで0.951、16Hzで0.896と、それより高くても低くても小さくなります。12Hz前後で影響が最大とする記述は正しいです。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "チェーンソーやさく岩機などの振動工具を使い続けると振動障害が起こります。主な症状は、手指のしびれや感覚低下などの末梢神経障害と、白指発作などの末梢循環障害です。したがって記述は正しいです。"
+            "reason": "職場のあんぜんサイトは、振動障害をチェーンソー、グラインダー、刈払機などの振動工具の使用で起こる末梢循環障害、末梢神経障害及び運動器障害の総称としています。チェーンソーなどの振動工具で起こり、末梢神経障害や末梢循環障害がみられるという記述は正しいです。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "振動障害によるレイノー現象（白指発作）は、寒冷にさらされることなどをきっかけに、手指の血管が発作的に収縮して蒼白になる現象です。血流が戻るときに、しびれや痛み、赤みを伴うことがあります。記述は正しいです。"
+            "reason": "振動障害の認定基準（昭和52年基発第307号）は、レイノー現象を、全身が寒冷にさらされ冷感を覚えたとき等に手指が発作的に蒼白となる現象とし、回復の過程で痛みやしびれを伴うのが通例としています。記述はこれと一致しており正しいです。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "振動障害の末梢循環障害は、寒冷によって誘発されるレイノー現象として現れやすい特徴があります。寒冷の影響を避けて冬季の健診を控えると、症状を見落とすおそれがあります。冬季に実施しないようにするという考え方は誤りです。"
+            "reason": "振動工具の特殊健康診断は、神奈川労働局の一覧で「6月毎に1回（内1回は冬期）」「1年毎に1回（冬期）」とされ、林野庁資料も刈払機使用者の健診を1年以内ごとに1回（冬期）行うとしています。冬期に行うべきものであり、冬季を避けるとした記述が誤りです。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "独立に検算すると、A(8)=a_hv×√(T/8)=5.0×√(T/8)≦2.5 から √(T/8)≦0.5 となります。よって T/8≦0.25、つまり T≦2時間です。作業時間を2時間以下にする必要があるという記述は正しいです。"
+            "reason": "基発0710第2号の指針は、3軸合成値aと1日の振動ばく露時間Tから日振動ばく露量A(8)を求め、日振動ばく露対策値を2.5m/s2としています。5.0×√(T/8)≦2.5 から √(T/8)≦0.5、T/8≦0.25 で T≦2時間となるので、記述は正しいです。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 振動工具の「周波数補正振動加速度実効値の3軸合成値」の測定、表示等について（基発0710第3号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト 安全衛生キーワード 振動障害",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo97_1.html"
+          },
+          {
+            "title": "厚生労働省 振動障害の認定基準について（昭和52年基発第307号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1"
+          },
+          {
+            "title": "神奈川労働局 健康診断を行うべき有害な業務と健診項目一覧",
+            "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf"
+          },
+          {
+            "title": "林野庁中部森林管理局 林業労働における安全衛生確保のための遵守事項等",
+            "url": "https://www.rinya.maff.go.jp/chubu/nansin/HP/attach/pdf/R4jigyou-3.pdf"
+          },
+          {
+            "title": "宮崎労働局 チェーンソー以外の振動工具の取扱い業務に係る振動障害予防対策指針",
+            "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "【HOLD】正答肢4（振動障害の健康診断を冬季に避けるという記述が誤りである理由。通達上は定期健診のうち1回を冬期に行うとされる）を定めた通達本文（昭和49年基発第45号、昭和50年基発第609号等）を政府サイト上で確認できなかった。平成21年基発0710第2号・第0710005号の本文には冬期実施の記述がない。肢1の『12Hz前後で影響が最大』も政府資料で確認できない。肢5はA(8)=5.0×√(T/8)≦2.5よりT≦2時間で、基発0710第2号の式と対策値2.5m/s2で裏付け可能。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "振動の周波数、振動の強さ、振動ばく露時間により、手腕への影響を評価し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "周波数制限a)を伴う手腕振動の周波数補正係数Whi",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb5545&dataType=1&pageNo=1",
+          "excerpt": "9 8 0.873 10 10 0.951 11 12.5 0.958 12 16 0.896 13 20 0.782",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo97_1.html",
+          "excerpt": "振動障害は、チェーンソー、グラインダー、刈払機などの振動工具の使用により発生する手指等の末梢循環障害、末梢神経障害及び運動器（骨、関節系）障害の3つの障害の総称です。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1",
+          "excerpt": "レイノー現象は、全身が寒冷にさらされ、冷感を覚えたとき等に、手指血管の攣縮発作により、手指が発作的に蒼白となる現象をいい",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc0353&dataType=1&pageNo=1",
+          "excerpt": "その多くは10分ないし20分程度で発作前の状態に回復するが、その過程で痛みやしびれを伴うのが通例である。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf",
+          "excerpt": "(1)以下の工具使用業務は6月毎に1回 (内1回は冬期)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/kanagawa-roudoukyoku/var/rev0/0118/7874/20171592525.pdf",
+          "excerpt": "(2) (1)以外の工具使用業務は1年毎に1回(冬期)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.rinya.maff.go.jp/chubu/nansin/HP/attach/pdf/R4jigyou-3.pdf",
+          "excerpt": "刈払機の使用者の特殊健康診断は、雇入れの際、当該業務への配置換えの際及び１年以内ごとに１回（冬期）、定期に行うこととされています。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf",
+          "excerpt": "T[時間]は１日の振動ばく露時間）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://jsite.mhlw.go.jp/miyazaki-roudoukyoku/content/contents/001882206.pdf",
+          "excerpt": "日振動ばく露対策値（2.5m/s2）を超える場合には振動ばく露時間の抑制",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-20260217-q13": {
       "overlay": {

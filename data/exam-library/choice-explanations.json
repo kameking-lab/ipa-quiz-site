@@ -28530,5 +28530,67 @@
         "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/57-57-8.html"
       }
     ]
+  },
+  "emkohyo-EM20251808-q16": {
+    "sourceHash": "3ffa07957b12ddcca41aa3076b478ee4ca0be3d28618795d0d04f53687ab6067",
+    "correctChoice": 4,
+    "summary": "ヨウ化カリウムと塩化スズ（Ⅱ）で予備還元した後に亜鉛で水素化ヒ素（アルシン）を発生させ、原子吸光法なので193.7 nmの吸光度を測る。組合せは肢4。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "㋑が誤り。農林水産消費安全技術センター（FAMIC）の肥料分析法（アルゴン－水素フレーム法）では、ヨウ化カリウム液と塩化スズ（Ⅱ）液を加えて放置した後に亜鉛粉末を加えて水素化ヒ素を発生させる。水素化ホウ素ナトリウム（別名テトラヒドロホウ酸ナトリウム）は、同分析法では亜鉛粉末の代わりに水素化ヒ素を発生させる側の試薬（加熱吸収セル法）であり、亜鉛末の前にヨウ化カリウムと加える㋑には当たらない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "㋑は肢1のとおり塩化スズ（Ⅱ）であり、水素化ホウ素ナトリウムは誤り。㋩も誤りである。本問は『水素化物発生原子吸光分析法』で、原子吸光光度法は基底状態の原子が特有波長の光を吸収する現象を利用する方法（食品添加物公定書）なので、測定量は吸光度になる。FAMICの肥料分析法も、ガスをアルゴン－水素フレームに導き波長193.7 nmの吸光度を測定するとしている。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "㋑水素化ホウ素ナトリウムと㋩発光強度は肢2と同じ理由で誤り（原子吸光法なので測るのは吸光度）。さらに㋺も誤りで、スチビンは水素化アンチモン（分子式H3Sb）である。ヒ素から発生させるのは水素化ヒ素、すなわちアルシン（AsH3）である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "正しい組合せ。FAMICの肥料分析法（アルゴン－水素フレーム法）は、試料液に塩酸・ヨウ化カリウム液・塩化スズ（Ⅱ）液を加えて放置し、亜鉛粉末で水素化ヒ素を発生させ、アルゴン－水素フレームに導いて波長193.7 nmの吸光度を測定する。水素化ヒ素の別名がアルシン（AsH3）である。作業環境測定基準も砒素及びその化合物の分析に原子吸光分析方法を定めている。よって㋑塩化スズ（Ⅱ）・㋺アルシン・㋩吸光度。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "㋑塩化スズ（Ⅱ）と㋩吸光度は合うが、㋺が誤り。スチビンは水素化アンチモン（分子式H3Sb）でアンチモンの水素化物である。ヒ素を亜鉛で還元して発生させるのは水素化ヒ素（別名アルシン、AsH3）なので、この組合せは誤りである。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "農林水産消費安全技術センター 肥料分析法（農林水産省農業環境技術研究所法） 5.24 ヒ素",
+        "url": "https://www.famic.go.jp/ffis/fert/sub6_data/bunsekihou4.html"
+      },
+      {
+        "title": "厚生労働省 作業環境測定基準",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省掲載 食品添加物公定書 B 一般試験法（原子吸光光度法）",
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS アルシン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7784-42-1.html"
+      },
+      {
+        "title": "消防庁 危険物規制関係 物性情報 水素化ヒ素",
+        "url": "https://internal.fdma.go.jp/kiken-info/material/m_01597.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS スチビン（別名 水素化アンチモン）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7803-52-3.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS 水素化ホウ素ナトリウム",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/16940-66-2.html"
+      }
+    ]
   }
 }

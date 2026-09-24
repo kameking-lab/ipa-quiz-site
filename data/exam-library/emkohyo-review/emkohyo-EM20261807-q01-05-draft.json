@@ -263,12 +263,12 @@
       "overlay": {
         "sourceHash": "e1b33745c4b5ac62242a865de5d7e4916918002ee4c8b3555dc4b602a28dbf4d",
         "correctChoice": 1,
-        "summary": "シアン化水素は酸性で気体として発生・揮散するため、アルカリ性の水酸化ナトリウム溶液で捕集する。硫酸含浸ろ紙での捕集とする肢1が誤り。",
+        "summary": "シアン化水素は非常に弱い酸で、酸性側では分子のまま気体として出ていくため、水酸化ナトリウム等のアルカリ性溶液に捕集する。硫酸を含浸したろ紙で捕集するとした肢1が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "これが誤りの記述。環境省の底質調査方法では、りん酸で酸性にして加熱し発生させたシアン化水素を水酸化ナトリウム溶液に捕集している。酸性側で気体として出ていくシアン化水素を硫酸含浸ろ紙で保持することはできず、作業環境測定基準も試料採取を液体捕集・固体捕集（又は液体捕集とろ過捕集の併用）としている。"
+            "reason": "これが誤りの記述。シアン化水素はpKa9.22の非常に弱い酸で、シアン化物は酸に触れるとシアン化水素を発生する。このため環境試料中のシアン化物は通常、水酸化ナトリウムや水酸化カリウムの溶液（アルカリ性）に捕集する。硫酸という酸でシアン化水素を塩として固定することはできず、硫酸含浸ろ紙での捕集は成り立たない。"
           },
           {
             "number": 2,
@@ -283,7 +283,7 @@
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "正しい記述。捕集後の水酸化ナトリウム溶液はアルカリ性なので、フェノールフタレインを指示薬として酢酸(1+8)で中和した後、りん酸塩緩衝液を加えてpHを整えてからクロラミンTを加える。中和と緩衝液によるpH調整は発色前の必要な操作である。"
+            "reason": "正しい記述。捕集後の水酸化ナトリウム溶液はpH約13のアルカリ性なので、ピリジン－ピラゾロン法では酢酸(1+8)で中和した後、りん酸塩緩衝液(pH6.8)を加えてpH6.8に整えてからクロラミンTを加える。中和と緩衝液によるpH調整は発色前の必要な操作である。"
           },
           {
             "number": 5,
@@ -293,26 +293,40 @@
         ],
         "sources": [
           {
-            "title": "環境省『底質調査方法』Ⅱ4.11 シアン化合物（ピリジン－ピラゾロン吸光光度法）",
-            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+            "title": "国立医薬品食品衛生研究所 国際簡潔評価文書（CICAD）No.61 シアン化水素およびシアン化物（日本語訳）",
+            "url": "https://www.nihs.go.jp/hse/cicad/full/no61/full61.pdf"
           },
           {
-            "title": "厚生労働省 作業環境測定基準 別表第一",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+            "title": "環境省『底質調査方法』Ⅱ4.11 シアン化合物（ピリジン－ピラゾロン吸光光度法）",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
-          "excerpt": "りん酸及びEDTA 溶液を加えて加熱蒸留し、発生したシアン化水素を水酸化ナトリウム溶液に捕集する",
+          "url": "https://www.nihs.go.jp/hse/cicad/full/no61/full61.pdf",
+          "excerpt": "シアン化水素は非常に弱い酸性で、pKa は9.22(25℃)である",
           "choiceNumbers": [
             1
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
-          "excerpt": "シアン化水素 液体捕集方法、固体捕集方法又は液体捕集方法及びろ過捕集方法",
+          "url": "https://www.nihs.go.jp/hse/cicad/full/no61/full61.pdf",
+          "excerpt": "酸や酸性塩に触れると、シアン化水素を発生する",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nihs.go.jp/hse/cicad/full/no61/full61.pdf",
+          "excerpt": "環境媒体中のシアン化物は、通常水酸化ナトリウムや水酸化カリウムの溶液中で採集し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "りん酸及びEDTA 溶液を加えて加熱蒸留し、発生したシアン化水素を水酸化ナトリウム溶液に捕集する",
           "choiceNumbers": [
             1
           ]
@@ -340,14 +354,14 @@
         },
         {
           "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
-          "excerpt": "酢酸(1+8)を滴加して中和した後、りん酸塩緩衝液(pH7.2)10mL",
+          "excerpt": "前処理して得られたシアン化物イオン溶液のpH は約13 になっており",
           "choiceNumbers": [
             4
           ]
         },
         {
           "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
-          "excerpt": "前処理して得られたシアン化物イオン溶液のpH は約13 になっており",
+          "excerpt": "これにりん酸塩緩衝液（pH6.8） 10mL を加えるとpH6.8 になる",
           "choiceNumbers": [
             4
           ]
@@ -367,9 +381,7 @@
           ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】独立審査1回目（emkohyo-EM20261807-q01-01-review.json）でFIX。肢2〜5（KCN標準液、硝酸銀滴定、中和・緩衝液、クロラミンT→ピリジン-ピラゾロン）は環境省『底質調査方法』と整合と判定された。しかし肢1の核心（作業環境空気中のシアン化水素をアルカリ性の捕集液で捕集し、硫酸含浸ろ紙では保持できないこと）を作業環境測定の文脈で直接述べる政府一次資料がない。作業環境測定基準別表第一は捕集方法の区分名のみ、底質調査方法は蒸留液の吸収操作で傍証にとどまると指摘された。厚労省2008年審議会資料『現行の作業環境測定基準による測定方法』はスキャン画像でテキスト照合できないため保留。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261807-q2": {
       "overlay": {
