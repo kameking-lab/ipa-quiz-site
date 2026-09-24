@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2851,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11862,
+      "webSearchRequests": 0,
+      "costUSD": 0.15217979999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q16-16-raw-response.txt",
+  "rawResponseSha256": "da0b38e125e8a056bf25b2b3a31bb9f26824e96b247f8abd2a97acce3e65fbab",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q16": {
+      "/exam-library/emkohyo-EM20251807/q16-p10-0.webp": "e7410b335c9cead50bbf96066f31bfb5d188e2e45cfaa1b674a412db0ada6b51"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q16": "83301f3b3f8c8b9d9eb7bda4c66be66fe80de2e6a92b19144145f33ae31a3012"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q16-16.json",
+  "sourcePackSha256": "98c2a5f433826fbca82248d1c5dcee0ba1c2eb2cfaaf52086b1bff588a0ab5f7",
+  "assessment": {
+    "emkohyo-EM20251807-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2・3・5でグルコースを否定する理由が、告示の手順に依拠するだけで化学的な因果を示していない。肢2の『液の青色が消える点を終点とする方法なので、指示薬はでんぷんでなければならない』は、なぜ青色が出るのかを述べておらず循環的である。でんぷん（アミロースのらせん構造）がI₂（I₃⁻）を包接して青〜青紫色の錯体をつくること、グルコース（単糖）はこの呈色を示さないため終点指示薬にならないこと、の2点を明記すべき。",
+        "summary は『でんぷんの青色』、問題文は『青紫色』と書いており、表記がずれている。告示の『青色』を引くのであれば、ヨウ素でんぷん反応の青〜青紫色が問題文の『青紫色』に当たることを添えて整合させるべき。",
+        "肢3・5の『硫酸は液を酸性にするための試薬』は告示の記述としては正しい。ただし本問の記述では酸性化に塩酸を用いている。告示では硫酸、本問では塩酸がこの役割を担うことを明記しないと、利用者が問題文と取り違えるおそれがある。あわせて、㋺に入るのは I₂ を還元して滴定する滴定液（チオ硫酸ナトリウム：I₂＋2S₂O₃²⁻→2I⁻＋S₄O₆²⁻）であり、酸では I₂ を定量できない、という因果を示すことが望ましい。",
+        "肢1・summary の『ヨウ化カリウムから析出したヨウ素』は、次亜塩素酸（有効塩素）が酸性下でI⁻を酸化してI₂を生成する（ClO⁻＋2I⁻＋2H⁺→Cl⁻＋I₂＋H₂O）という因果が省かれている。㋑がI₂でありHIでないことの根拠としてこの反応式を示すべき（肢4・5のHI否定も同様）。"
+      ],
+      "sourceIssues": [
+        "添付資料は水道法に基づく遊離残留塩素・結合残留塩素の検査方法（標準液調製のための塩素水の有効塩素測定）である。作業環境測定における塩素濃度測定用の次亜塩素酸ナトリウム溶液の標定を直接定めた資料ではない。ヨウ素滴定の原理は共通なので結論は支持されるが、出典が本問の文脈と異なることを明示すべき。",
+        "告示の手順は酸に硫酸(1＋5)を用い、でんぷん溶液を最初から加える（ヨウ素が多い場合のみ淡黄色まで滴定してから加える）方式である。本問の『塩酸』『終点で溶液にでんぷんを加える』とは細部が一致しない。解説がこの差異を示さずに『告示の方法』を本問と同一視している。",
+        "グルコースが指示薬にならない理由、およびHIが滴定対象でない理由は、添付の政府資料では直接支えられていない（資料はでんぷん・チオ硫酸ナトリウムの使用を示すのみ）。化学的根拠を示す資料の追加が必要。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定ガイドブック（塩素）等、作業環境測定の分野で次亜塩素酸ナトリウム溶液の有効塩素濃度を標定する手順（塩酸酸性・終点付近でのでんぷん添加）を記した一次資料で、本問の記述との一致を確認すること。"
+      ]
+    }
+  }
+}

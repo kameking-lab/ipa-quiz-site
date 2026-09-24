@@ -4,33 +4,8 @@
     13,
     13
   ],
-  "draftSha256": "103732b7c65c146bba6b583591a17319a93b4d2f332f422abcaa966688a61d24",
+  "draftSha256": "4318800288bdab9aa68faec7c0cfb45f4bd0b2f5597f1475d7796a1923ef46fe",
   "sources": [
-    {
-      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1015.html",
-      "status": 200,
-      "finalUrl": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1015.html",
-      "sha256": "820ae34af50b3c9f936463bd06892d8336cd4bf232f044c689dba74b3917e69d",
-      "contentType": "text/html",
-      "pages": 1,
-      "revisionInfo": null,
-      "claimedExcerpts": [
-        {
-          "questionId": "emkohyo-EM20251807-q13",
-          "excerpt": "１－ナフチルアミン(1-Naphthylamine)",
-          "matched": true,
-          "pdfPage": 1,
-          "context": "や容器を、都道府県知事の許可を受けた専門の廃棄物処理業者に業務委託すること。国/地域情報３．組成、成分情報物質化学名又は一般名：アルファ-ナフチルアミン(alpha-Naphthylamine)別名：１-ナフチルアミン(1-Naphthylamine)１-アミノナフタレン(1-Aminonaphthalene)α-ナフチルアミン化学式：C10H9N化学特性（化学式又は構造式）：ＣＡＳ番号：134-32-7官報公示整理番号（化審法・安衛法）：(4)-"
-        },
-        {
-          "questionId": "emkohyo-EM20251807-q13",
-          "excerpt": "１－アミノナフタレン(1-Aminonaphthalene)",
-          "matched": true,
-          "pdfPage": 1,
-          "context": "業者に業務委託すること。国/地域情報３．組成、成分情報物質化学名又は一般名：アルファ-ナフチルアミン(alpha-Naphthylamine)別名：１-ナフチルアミン(1-Naphthylamine)１-アミノナフタレン(1-Aminonaphthalene)α-ナフチルアミン化学式：C10H9N化学特性（化学式又は構造式）：ＣＡＳ番号：134-32-7官報公示整理番号（化審法・安衛法）：(4)-321分類に寄与する不純物及び安定化添加物：情報なし濃度又は"
-        }
-      ]
-    },
     {
       "url": "https://www.env.go.jp/chemi/report/h14-05/chap01/03/23.pdf",
       "status": 200,
@@ -143,7 +118,7 @@
       ]
     }
   ],
-  "claimedExcerpts": 10,
+  "claimedExcerpts": 8,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0,
   "sourcePageImages": [
@@ -171,11 +146,6 @@
       "path": "docs/evidence/emkohyo-choice-sources/EM20251807-q13-pcp-structure-p1.png",
       "description": "環境省 化学物質の環境リスク評価 第1巻 ペンタクロロフェノール p1：OH1個とCl5個の構造式。原PDF https://www.env.go.jp/chemi/report/h14-05/chap01/03/36.pdf SHA256=3d14200e2c3b46977d1f38674e56372edbfeb4fe5eb8d58d9ad3ba17c084e2a7",
       "sha256": "110e2dc2c4bf646c83ccbf3ed388725032cbc866d11307afb53a88136a760fa4"
-    },
-    {
-      "path": "docs/evidence/emkohyo-choice-sources/EM20251807-q13-1-naphthylamine-sds-structure.png",
-      "description": "厚生労働省 職場のあんぜんサイト モデルSDS アルファ－ナフチルアミン（別名 1-ナフチルアミン）の「化学式又は構造式」画像：ナフタレン1位（α位）にNH2。原画像 https://anzeninfo.mhlw.go.jp/anzen/gmsds/kozosiki/gmsds-01015-1.gif SHA256=182cf4ba6e08ea0799712f4f1684927ce1e5fe0d2f1e4bf9b07c8d06c47f60f9（GIFをRGBのPNGへ変換したもの）",
-      "sha256": "5a3b917405e06cede35e714723075344371e6a8534334f71ae6ae960403c77f7"
     }
   ]
 }
