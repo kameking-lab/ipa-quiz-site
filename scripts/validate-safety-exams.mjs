@@ -142,7 +142,17 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
   const sourceHash = createHash('sha256').update(question.text).digest('hex');
   check(overlay.sourceHash === sourceHash, `Stale choice explanation source: ${id}`);
   check(overlay.correctChoice === question.correctChoice, `Choice explanation answer mismatch: ${id}`);
+  const provisional = overlay.provisionalReview === true;
+  const draftMarker = /HOLD|FIX|TODO|未確認|要確認|確認待ち|準備中|仮置き|根拠不足|調査中|要検索/u;
+  check(overlay.provisionalReview === undefined || provisional, `Invalid provisional flag: ${id}`);
+  check(!provisional || id.startsWith('emkohyo-'), `Provisional overlay outside EM: ${id}`);
+  check(!provisional || /^\d{4}-\d{2}-\d{2}$/u.test(overlay.lastCheckedAt)
+    && !Number.isNaN(Date.parse(`${overlay.lastCheckedAt}T00:00:00Z`))
+    && new Date(`${overlay.lastCheckedAt}T00:00:00Z`).toISOString().slice(0, 10) === overlay.lastCheckedAt,
+    `Invalid provisional check date: ${id}`);
+  check(provisional || overlay.lastCheckedAt === undefined, `Unexpected check date on strict overlay: ${id}`);
   check(typeof overlay.summary === 'string' && overlay.summary.trim().length >= 20, `Short choice explanation summary: ${id}`);
+  check(!provisional || !draftMarker.test(overlay.summary ?? ''), `Internal draft marker in provisional summary: ${id}`);
   check(
     typeof overlay.summary === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(overlay.summary),
     `Choice explanation summary must keep links in sources: ${id}`,
@@ -158,13 +168,14 @@ for (const [id, overlay] of Object.entries(choiceExplanations)) {
       if (!choice || typeof choice !== 'object') continue;
       check(choice.verdict === (choice.number === question.correctChoice ? 'correct' : 'incorrect'), `Choice explanation verdict mismatch: ${id}/${choice.number}`);
       check(typeof choice.reason === 'string' && choice.reason.trim().length >= 40, `Short choice explanation reason: ${id}/${choice.number}`);
+      check(!provisional || !draftMarker.test(choice.reason ?? ''), `Internal draft marker in provisional reason: ${id}/${choice.number}`);
       check(
         typeof choice.reason === 'string' && !/https?:\/\/|\[[^\]]+\]\([^)]+\)|<a\b/iu.test(choice.reason),
         `Choice explanation reason must keep links in sources: ${id}/${choice.number}`,
       );
     }
   }
-  check(Array.isArray(overlay.sources) && overlay.sources.length > 0, `Choice explanation requires government sources: ${id}`);
+  check(Array.isArray(overlay.sources) && (provisional || overlay.sources.length > 0), `Choice explanation requires government sources: ${id}`);
   if (Array.isArray(overlay.sources)) {
     const urls = [];
     for (const source of overlay.sources) {

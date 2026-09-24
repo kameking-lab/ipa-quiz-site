@@ -74,6 +74,10 @@ export interface ExamChoiceExplanation {
   summary: string;
   choices: ExamChoiceExplanationItem[];
   sources: ExamExplanationSource[];
+  /** Source-limited learning aid pending a direct independent content review. */
+  provisionalReview?: true;
+  /** Date when source question, official answer and display structure were last checked. */
+  lastCheckedAt?: string;
 }
 
 export interface ExamQuestion {

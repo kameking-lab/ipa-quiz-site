@@ -7,6 +7,8 @@ import type {
 const SHA256_PATTERN = /^[a-f0-9]{64}$/u;
 const MIN_SUMMARY_LENGTH = 20;
 const MIN_REASON_LENGTH = 40;
+const CHECK_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/u;
+const DRAFT_MARKER_PATTERN = /HOLD|FIX|TODO|未確認|要確認|確認待ち|準備中|仮置き|根拠不足|調査中|要検索/u;
 
 function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -30,7 +32,9 @@ export function isGovernmentPrimarySourceUrl(value: unknown): value is string {
       !url.username &&
       !url.password &&
       !url.port &&
-      url.hostname.endsWith(".go.jp")
+      url.hostname.endsWith(".go.jp") &&
+      url.hostname !== "jstage.jst.go.jp" &&
+      !url.hostname.endsWith(".jstage.jst.go.jp")
     );
   } catch {
     return false;
@@ -62,7 +66,23 @@ export function parseExamChoiceExplanation(
     !Array.isArray(value.choices) ||
     value.choices.length !== question.choiceCount ||
     !Array.isArray(value.sources) ||
-    value.sources.length === 0
+    (value.sources.length === 0 && value.provisionalReview !== true)
+  ) {
+    return null;
+  }
+
+  const provisionalReview = value.provisionalReview === true;
+  if (
+    (value.provisionalReview !== undefined && !provisionalReview) ||
+    (provisionalReview && !question.id.startsWith("emkohyo-")) ||
+    (provisionalReview && (
+      typeof value.lastCheckedAt !== "string" ||
+      !CHECK_DATE_PATTERN.test(value.lastCheckedAt) ||
+      Number.isNaN(Date.parse(`${value.lastCheckedAt}T00:00:00Z`)) ||
+      new Date(`${value.lastCheckedAt}T00:00:00Z`).toISOString().slice(0, 10) !== value.lastCheckedAt
+    )) ||
+    (!provisionalReview && value.lastCheckedAt !== undefined) ||
+    (provisionalReview && DRAFT_MARKER_PATTERN.test(value.summary as string))
   ) {
     return null;
   }
@@ -77,7 +97,8 @@ export function parseExamChoiceExplanation(
       item.number > question.choiceCount ||
       (verdict !== "correct" && verdict !== "incorrect") ||
       !substantiveString(item.reason, MIN_REASON_LENGTH) ||
-      containsEmbeddedLink(item.reason)
+      containsEmbeddedLink(item.reason) ||
+      (provisionalReview && DRAFT_MARKER_PATTERN.test(item.reason))
     ) {
       return [];
     }
@@ -125,5 +146,9 @@ export function parseExamChoiceExplanation(
     summary: value.summary.trim(),
     choices,
     sources,
+    ...(provisionalReview ? {
+      provisionalReview: true as const,
+      lastCheckedAt: value.lastCheckedAt as string,
+    } : {}),
   };
 }

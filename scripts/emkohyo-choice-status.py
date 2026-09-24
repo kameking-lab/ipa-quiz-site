@@ -8,8 +8,10 @@ import json
 from pathlib import Path
 import re
 import sys
+from copy import deepcopy
 
 from emkohyo_portable_hash import matches_text_sha256
+from emkohyo_choice_launch_gate import candidate_launch_issues, government_sources
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -124,12 +126,15 @@ def main() -> None:
     selected = [item for item in catalog if item["group"] == "emkohyo"
                 and item["date"][:4] in {"2025", "2026"}]
     overlays = json.loads((DATA / "choice-explanations.json").read_text(encoding="utf-8"))
+    held = {item["id"]: item for item in json.loads((ROOT / "docs/evidence/emkohyo-choice-sources/hold-ledger-20260924.json").read_text(encoding="utf-8"))["items"]}
+    release_date = json.loads((ROOT / "docs/evidence/emkohyo-provisional-launch-20260925.json").read_text(encoding="utf-8"))["checkedAt"]
     receipt = {"expectedPapers": len(selected), "expectedQuestions": 0,
                "drafted": 0, "candidateStaticValid": 0, "candidateWithReviewIssues": 0,
                "publicOverlays": 0, "reviewedPassCurrentHash": 0, "papers": []}
     expected_ids: set[str] = set()
     reviewed: dict[str, dict] = {}
     published: dict[str, dict] = {}
+    provisional: set[str] = set()
     for paper in selected:
         rows = json.loads((DATA / "papers" / f"{paper['id']}.json").read_text(encoding="utf-8"))
         rows = [row for row in rows if row["answerAuthority"] == "official" and row["choiceCount"] == 5]
@@ -163,11 +168,35 @@ def main() -> None:
             if row["id"] in overlays:
                 counter["publicOverlays"] += 1
                 receipt["publicOverlays"] += 1
-                published[row["id"]] = overlays[row["id"]]
+                overlay = overlays[row["id"]]
+                published[row["id"]] = overlay
+                if (overlay.get("provisionalReview") is True and candidate is not None
+                        and held.get(row["id"], {}).get("category") == "missingGovernmentSource"
+                        and overlay.get("lastCheckedAt") == release_date):
+                    expected = deepcopy(candidate["overlay"])
+                    expected["sources"] = government_sources(expected.get("sources", []))
+                    expected["provisionalReview"] = True
+                    expected["lastCheckedAt"] = release_date
+                    if overlay == expected and not candidate_launch_issues(row, overlay):
+                        provisional.add(row["id"])
         receipt["papers"].append(counter)
     receipt.update(publication_integrity(expected_ids, reviewed, published))
+    strict_ids = {id_ for id_, overlay in published.items()
+                  if id_ in reviewed and overlay == reviewed[id_] and not overlay.get("provisionalReview")}
+    launch_ids = strict_ids | provisional
+    receipt["strictReviewed"] = len(strict_ids)
+    receipt["provisionalReview"] = len(provisional)
+    receipt["launchReady"] = len(launch_ids)
+    receipt["publishedNotLaunchReady"] = sorted(set(published) - launch_ids)
+    receipt["missingLaunchReady"] = sorted(expected_ids - launch_ids)
+    receipt["strictComplete"] = len(strict_ids) == len(expected_ids)
+    receipt["launchComplete"] = len(launch_ids) == len(expected_ids)
+    # Historical `complete` and `--require-complete` mean fully strict-reviewed.
+    receipt["complete"] = receipt["strictComplete"]
     print(json.dumps(receipt, ensure_ascii=False, indent=2))
-    if "--require-complete" in sys.argv and not receipt["complete"]:
+    if ("--require-complete" in sys.argv or "--require-strict-complete" in sys.argv) and not receipt["strictComplete"]:
+        raise SystemExit(1)
+    if "--require-launch-complete" in sys.argv and not receipt["launchComplete"]:
         raise SystemExit(1)
 
 

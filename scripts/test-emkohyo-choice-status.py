@@ -51,9 +51,15 @@ class PublicationIntegrityTest(unittest.TestCase):
             text=True,
         )
         status = json.loads(output)
-        self.assertEqual(status['publishedWithoutCurrentReview'], [])
+        self.assertEqual(len(status['publishedWithoutCurrentReview']), status['provisionalReview'])
         self.assertEqual(status['publishedCandidateMismatch'], [])
-        self.assertEqual(status['publicOverlays'], status['verifiedPublicOverlays'])
+        self.assertEqual(status['strictReviewed'], status['verifiedPublicOverlays'])
+        self.assertEqual(status['publicOverlays'], status['launchReady'])
+        self.assertEqual(status['publishedNotLaunchReady'], [])
+        self.assertEqual(status['strictReviewed'] + status['provisionalReview'], status['launchReady'])
+        self.assertEqual(len(status['missingLaunchReady']), 11)
+        self.assertFalse(status['strictComplete'])
+        self.assertFalse(status['launchComplete'])
 
 
 if __name__ == '__main__':
