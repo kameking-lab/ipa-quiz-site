@@ -1629,5 +1629,951 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q5": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q5",
+    "sourceSha256": "86459e4bea33b29e668ba2f648d03b0f330cfc98c12399fa4ecd20d6a1aff615",
+    "candidateSha256": "993fae7305fd23a8a9c68e938a22cb384677eaba7c1556d0eecb1541ebb8beb7",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Both pinned government source files have the same sha256 (b2e5ede6…) and are only the 800-byte e-Gov SPA shell. They contain no text of Industrial Safety and Health Act Art. 66-8(2)/(4) or Art. 66-8-3, or of Ordinance Arts. 52-2, 52-3, 52-6, 52-7 or 52-7-3.",
+        "The source titles say '第3条の2・第11条' and '第10条・第12条'. Neither matches the articles cited on the interview-guidance provisions. The locators are empty.",
+        "The ○ mark in the official PDF (page 3) is on (1), which matches correctChoice=1. The image, the question text and the question's premises (research and development work, highly skilled professionals, physicians) match the original.",
+        "The unpinned cached e-Gov API JSON (Ordinance, 2025-04-01 version) confirms '一月当たり八十時間を超え、かつ、疲労の蓄積が認められる者' and '面接指導の結果の記録を作成して、これを五年間保存'. Arts. 52-3, 52-7 and 52-7-3 and the Act's articles were not checked against pinned bytes.",
+        "The Act source URL has no date. Applicability when the exam was held could not be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121",
+        "https://laws.e-gov.go.jp/law/347AC0000000057"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q6": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q6",
+    "sourceSha256": "fb19395ad7a236858330b4dfd0ac8e10608ba07e31778290ea20b8c799c7b938",
+    "candidateSha256": "07dce3ff6044d321b555d41a1f7d9a82010a7cb9642dcdd18df6bf4fe0fc417c",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Both pinned government source files are only the e-Gov SPA shell (sha256 b2e5ede6…). They contain no text of Industrial Safety and Health Act Art. 17(4) (as applied by Art. 18(4)), Art. 18(2)(iii) or Art. 18(3), or of Ordinance Art. 22(xii) or Art. 23(1)/(3)/(4).",
+        "The source titles ('第10条・第12条' and '第3条の2・第11条') do not match the health committee articles (Arts. 17, 18, 22 and 23). The locators are empty.",
+        "The ○ mark in the official PDF (page 3) is on (4), which matches correctChoice=4. The image and the question text match the original.",
+        "The unpinned cached e-Gov API JSON (Ordinance, 2025-04-01 version) confirms Art. 22(xii) ('…文書により命令、指示、勧告又は指導を受けた事項のうち、労働者の健康障害の防止に関すること') and Art. 23(4)(ii) ('委員会における議事で重要なもの'). The Act's articles were not checked against pinned bytes.",
+        "Applicability when the exam was held could not be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347AC0000000057",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q8": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q8",
+    "sourceSha256": "323d07c3a4e1166bf4771f09c15b1d281f70724195ce27030dc798bb53601623",
+    "candidateSha256": "f971c3d29b1cf3b0897f8837fa408284c0708d562cf19072b2b18ce4761cffbe",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Both pinned government source files (the Office Health Standards Ordinance and the Enforcement Order of the Industrial Safety and Health Act) are only the e-Gov SPA shell (sha256 b2e5ede6…). They contain no text of Office Health Standards Ordinance Arts. 6, 7, 9, 9-2 or 10, or of Enforcement Order Art. 21(v).",
+        "The source titles ('第6条・第9条・第9条の2' and '第2条') do not include Art. 7 or Art. 10, which the explanation relies on, or Art. 21 of the Enforcement Order. The locators are empty.",
+        "The ○ mark in the official PDF (page 4) is on (3), which matches correctChoice=3. The image and the question text match the original.",
+        "The unpinned cached e-Gov API JSON (Office Health Standards Ordinance, 2022-12-01 version) confirms Art. 7 (two months, measurement), Art. 9 ('機械による換気のための設備…二月以内ごとに一回'), Art. 9-2(v) (one year) and Art. 10 (lighting, six months). The daily inspection in Art. 6(2) was not checked, and the cited pinned bytes support none of these.",
+        "Both source URLs have no date. Applicability when the exam was held could not be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000043",
+        "https://laws.e-gov.go.jp/law/347CO0000000318"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q7": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q7",
+    "sourceSha256": "f088650f610d5193cc6618e883c34212ef3e3fe72e6cbe4fc3ee2414ea1b3ba7",
+    "candidateSha256": "eb0e438f0fa983b076e04a83066136abbddd1eb15bad58561580bfc1c31349ec",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The pinned government source file (sha256 b2e5ede6…) is only the e-Gov SPA shell. It contains no text of Industrial Safety and Health Ordinance Arts. 600, 601, 604, 618 or 630(xv).",
+        "The source title ('第43条・第51条・第51条の2・第52条') does not match the health-standard articles the explanation relies on (Arts. 600–630). The locators are empty.",
+        "The source URL has no date and points to the current version. Its bytes do not identify which version applied when the exam was held. The unpinned cache holds both a 2025-04-01 and a 2026-08-01 version.",
+        "The ○ mark in the official PDF (page 4) is on (5), which matches correctChoice=5. The image (including the furigana on 臥床) and the question text match the original.",
+        "The unpinned cached e-Gov API JSON confirms Art. 600 ('四メートルをこえる…十立方メートル以上'), Art. 601 ('二十分の一以上'), Art. 618 ('常時五十人以上又は常時女性三十人以上') and Art. 630 ('炊事場専用のはき物を備え、土足のまま立ち入らせない'). The numbers in the Art. 604 illuminance table were not checked, and the cited pinned bytes support none of these."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q2": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q2",
+    "sourceSha256": "0bf609cc9d50b866ffc93d11933cc0abcc63f7036a671896b8554371c3c03a81",
+    "candidateSha256": "810db12c55411d2714520a13b712101cd62d58b200811cabd7bafeaf3ec32ac6",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The pinned government source file (sha256 b2e5ede6…, 800 bytes) is only the e-Gov SPA HTML shell (<div id=\"app\"></div>). It contains no text of the Industrial Safety and Health Ordinance, so the cited source does not show Art. 13(1)(i)/(iv), Art. 13(4), Art. 14-3(2) or Art. 15(1).",
+        "The source title says '第3条の2・第11条' and the locators are empty. The title does not match the articles the explanation relies on (Arts. 13, 14-3 and 15).",
+        "The ○ mark in the official PDF (page 2) is on (2), which matches correctChoice=2. The image and the question text match the original.",
+        "A spot check of the cached e-Gov API JSON for the Ordinance (2025-04-01 version, not pinned to this question) confirmed the wording '常時三千人をこえる…二人以上の産業医'. The other articles were not checked against pinned bytes.",
+        "The pinned bytes cannot confirm which version was in force when the paper was published (2026-04) or when the exam was held. A 2026-08-01 version of the Ordinance also exists, and whether that amendment affects this question was not checked."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q4": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q4",
+    "sourceSha256": "e684a6362a97948b0f3435035285ec95cdf06e72d4f7293936790b10e9fd811b",
+    "candidateSha256": "5235e64e35c2313e773a33f90849ee50746892e66489d9ae9807ad88964bc1fc",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The pinned government source file (sha256 b2e5ede6…) is only the e-Gov SPA shell. It does not contain the text of Industrial Safety and Health Ordinance Art. 44(1) (items) or Art. 44(2) (omission).",
+        "The source title says '第3条の2・第11条' and does not match Art. 44, which the explanation relies on. The locators are empty.",
+        "The ○ mark in the official PDF (page 3) is on (1), which matches correctChoice=1. The image and the question text match the original.",
+        "The unpinned cached e-Gov API JSON (2025-04-01 version) confirms '第一項第三号、第四号、第六号から第九号まで及び第十一号に掲げる項目については…省略することができる'. This is not support from the cited pinned bytes.",
+        "Whether the pinned version was in force when the exam was held could not be confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 9365,
+        "cacheReadInputTokens": 1760416,
+        "cacheCreationInputTokens": 61269,
+        "webSearchRequests": 0,
+        "costUSD": 1.0296152,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3041,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q14": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q14",
+    "sourceSha256": "7fdff6bdcbcb4b6ffd8a492a35b69ed45b2b50a0dbd8ff74dc80d39009038cbf",
+    "candidateSha256": "94323ae55e12dd055c76de7b20b519742a0a6c40a5447a9b586bfde0c2abe6fc",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (5): the ○ mark on PDF page 8 (二衛 7/15) matches candidate.correctChoice=5. The image q14-p8-1.webp and the PDF text match the snapshot text.",
+        "Choices (1)–(3): the only pinned government source, 熱中症予防基本対策要綱 (000864401.pdf), does not describe the environmental factors behind temperature sensation (気温・湿度・気流・ふく射熱), or define 実効温度 or 相対湿度. It only says 相対湿度 is to be used as a reference for heat-stress evaluation. The candidate marks these three choices HOLD as well, so there is no government-source support.",
+        "Choice (4): 要綱 第1の1 gives formula ① without solar radiation (0.7×自然湿球温度＋0.3×黒球温度) and formula ② with it (＋0.1×気温（乾球温度）). It also calls the value an index for evaluating heat stress. This is consistent with the choice.",
+        "Choice (5): 要綱 第1の3 and 第2 frame the need for countermeasures as cases where the value 'WBGT基準値を超え、又は超えるおそれのある場合'. This supports the conclusion that the '未満' wording is wrong.",
+        "The pinned 要綱 PDF (Saga Labour Bureau copy, 14 pages) has no issue date or notice number on the pages checked (1–7). Workplace heat-stroke measures were strengthened in 2025, so it is unconfirmed which version of the 要綱 applied at the time of the exam. The exam date itself is not given either (the paper has only a 2026-04 publication date)."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://jsite.mhlw.go.jp/saga-roudoukyoku/content/contents/000864401.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q17": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q17",
+    "sourceSha256": "103c26e44a49f8b60e5b65d3575885e29a74691f2b2261bdfb2328e8ed5f4d9b",
+    "candidateSha256": "3621fbebe4bd22c82ffbcd6e508a2e5c486ad941f6c6537f8c8d4ff0b8183f98",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (1): the ○ mark on PDF page 10 (二衛 9/15) matches candidate.correctChoice=1. The image q17-p10-0.webp matches the question text. The snapshot text has ruby readings (ちょう・おう・え) mixed into the body text as extraction noise.",
+        "Choice (1), the correct answer: 救急蘇生法の指針2015 printed p.12 (PDF p.21) only says '脳梗塞は脳の動脈が動脈硬化や血の塊（血栓）などで詰まって…'. It does not define 脳血栓症 or 脳塞栓症 as subtypes. There is no government source showing that the definitions were swapped, so the basis for the correct answer is unverified.",
+        "Choice (2): none of the three pinned sources describes the pathology or symptoms of 高血圧性脳症. The candidate marks it HOLD as well.",
+        "Choice (3): e-ヘルスネット m-05-005 says 狭心症 is a narrowing of the 冠動脈 that reduces blood flow, and 心筋梗塞 is a blocked vessel that stops blood flow and destroys heart-muscle cells. This is consistent with the choice.",
+        "Choice (4): the same page says '虚血性心疾患には、狭心症や心筋梗塞があります', that angina attacks subside within minutes, and that 心筋梗塞 destroys heart-muscle cells. 指針 printed p.11 says 'すでに死んでしまった心筋は元に戻すことはできません'. Together these support the reversible/irreversible distinction.",
+        "Choice (5): e-ヘルスネット ym-013 says the test is used to diagnose '安静時では認められない不整脈や狭心症・心筋梗塞などの心疾患'. This is consistent with the choice.",
+        "It is unconfirmed which version of the e-ヘルスネット pages was current at the time of the exam (the exam date is not given)."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html",
+        "https://kennet.mhlw.go.jp/information/information/dictionary/metabolic/ym-013.html",
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q10": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q10",
+    "sourceSha256": "a7a54bc2977bf3988a1579cec7e3898874b5759acbf5053bc8327c8f96465935",
+    "candidateSha256": "ffa695d4e0f4b8c5c29d016d075070a0c1dd912079f9e056587c033d260c9ed1",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (3): the ○ mark on PDF page 6 (二衛 5/15) matches candidate.correctChoice=3. The image q10-p6-1.webp and the PDF text match the snapshot text.",
+        "The pinned local file for the only government source, e-Gov 労働基準法 (sha256 b2e5ede6…, 800 bytes), is just the e-Gov SPA shell HTML: '<div id=\"app\"></div>' and nothing else. The text of 第36条第4項・第5項・第6項 is not in it. None of the values for A–D (45, 360, 100, 720) or the wrong values (270, 80, 960, 120) could be checked against the statute.",
+        "The version of 第36条 in force at the time of the exam (the exam date is unknown; the paper has only a 2026-04 publication date) has not been identified with a version-pinned e-Gov URL.",
+        "The source title lists '第32条の3・第33条・第34条・第36条・第41条・第60条'. The pinned bytes are identical to the 労基則, 安衛法, 安衛令 and 安衛則 files, so the content cannot be told apart."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/322AC0000000049"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q9": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q9",
+    "sourceSha256": "7810bdbefec2286ef56bfd0c183c53acf0a7051e0da9282c9fbdde3d1a0ace69",
+    "candidateSha256": "4ca04973197fadd2096b589b6ef5ea28f8b55360d478f2082407bd052a576ef3",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (2): the ○ mark on PDF page 6 (二衛 5/15) matches candidate.correctChoice=2. The image q9-p6-0.webp and the PDF text match the snapshot text.",
+        "Both pinned sources (労基則 322M40000100023 and 労基法 322AC0000000049) have the same sha256, b2e5ede6…, and are the 800-byte e-Gov SPA shell. There is no text of 労基則第24条の3 (the pro-rata leave table and the 30-hour / 4-day thresholds) or 労基法第39条第3項, so no value from 5 to 9 days could be checked.",
+        "The 労基則 source title is '（第18条）', which does not match the provision the candidate relies on (第24条の3). No source locator points to the article actually cited.",
+        "The choice (2) reasoning says '週所定労働時間20時間は同条第1項の30時間を下回る'. '同条' has no antecedent there, so the citation is ambiguous: the 30-hour threshold is in 労基則第24条の3第1項.",
+        "No version-pinned e-Gov text has confirmed which table was in force at the time of the exam (the exam date is unknown)."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/322M40000100023",
+        "https://laws.e-gov.go.jp/law/322AC0000000049"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q1": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q1",
+    "sourceSha256": "29bc2ff502676ec4702576659a8284318a0b7fa31334c024b88851e12c43c122",
+    "candidateSha256": "5b1b92b31c785bd29e62313ad18df540f496dffe1bb997a3266ab8d0f2f2dea3",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (3): the ○ mark on PDF page 2 (二衛 1/15) matches candidate.correctChoice=3. The image q1-p2-0.webp and the PDF text match the snapshot text.",
+        "All three pinned sources (安衛令 347CO0000000318, 安衛則 347M50002000032/20250401_505M60000100121, 労基則 322M40000100023) have the same sha256, b2e5ede6…, and are the 800-byte e-Gov SPA shell with no statute text. None of the provisions could be checked: 安衛令第2条 (各種商品小売業, 300 or more workers), 安衛則第7条第1項第3号・第4号・第5号, 安衛則第13条第1項第3号 (1,000 or more workers; 深夜業 is ヌ) or 労基則第18条 (whether 深夜業 is listed).",
+        "The source titles ('安衛則（第3条の2・第11条）', '労基則（第18条）', '安衛令（第2条）') do not include 安衛則第7条 or 第13条, which are central to the candidate's reasoning. The citations and sources do not match.",
+        "The 安衛則 URL is pinned to the version in force from 2025-04-01. Because the exam date is unknown, it has not been confirmed that this was the version applicable at the time of the exam."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347CO0000000318",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121",
+        "https://laws.e-gov.go.jp/law/322M40000100023"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q3": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q3",
+    "sourceSha256": "7b942dc8974eb606f81b2c3833c018796859131787465e419201704edac18f58",
+    "candidateSha256": "8556da52948f2ab82c4af12fb7e27c55bc5904812012d5c232f91d6f72d0419f",
+    "evidenceSha256": "24c51514d57083226316f632aa8347edb7cbd2c9b88bae6d24ce3ce9c83e097a",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (5): the ○ mark on PDF page 3 (二衛 2/15) matches candidate.correctChoice=5. The image q3-p3-0.webp and the PDF text match the snapshot text.",
+        "Both pinned sources (安衛法 347AC0000000057 and 安衛則 347M50002000032/20250401_505M60000100121) have the same sha256, b2e5ede6…, and are the 800-byte e-Gov SPA shell with no statute text. None of the provisions could be checked: 安衛法第81条第2項, 第83条, 第84条, 第85条第2項, 第85条の2 or 第86条第2項.",
+        "Choice (1): the candidate itself marks it HOLD. The ministerial ordinance that sets the two exam categories, 保健衛生 and 労働衛生工学 (労働安全コンサルタント及び労働衛生コンサルタント規則), is not among the sources.",
+        "Choice (5): the conclusion that no provision requires the employer to keep a record 'for 3 years' is an argument from absence. It has not been checked against the full text of 安衛法 第81–87条 or the コンサルタント則, so the absence is not established.",
+        "The source title '安衛法（第10条・第12条）' does not include the コンサルタント provisions (第81条 onward) that the candidate cites. The citations and sources do not match.",
+        "Because the exam date is unknown, it has not been confirmed which version applied at the time of the exam."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347AC0000000057",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 9939,
+        "cacheReadInputTokens": 2187746,
+        "cacheCreationInputTokens": 77782,
+        "webSearchRequests": 0,
+        "costUSD": 1.2586812,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 2778,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q16": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q16",
+    "sourceSha256": "b9baa5462618da50832d1a5f0d0c758bc9ad972c70be657d69fbc811e1b505a1",
+    "candidateSha256": "1b58b4f95855605dbd5ad7fe16e2364227165077022107bc982e95c8a288b4ba",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The ○ on page 8/15 of the official PDF (PDF page 9) marks (4), which matches the original correct answer of 4. The image q16-p9-1.webp matches the question text.",
+        "(1) The provided government sources (the 2015 civic edition of the resuscitation guideline and the Fire and Disaster Management Agency (FDMA) survival handbook) never define a simple fracture, and never separate it from a crack (an incomplete fracture). The statement cannot be confirmed from a primary source.",
+        "(2) The FDMA handbook p.37 only lists signs of a fracture, such as swelling or deformity and bone ends that feel displaced. Neither source says whether grating sounds (軋轢音) or deformity belong to complete or to incomplete fractures. This cannot be confirmed.",
+        "(3) The guideline p.51 (PDF p.60) says to immobilise a deformed limb and that it does not need to be returned to its original shape. The handbook p.37 says to fix the fractured part firmly and not move it. Both contradict 'move it well to judge the extent', so this choice is confirmed as false.",
+        "(4) The handbook p.37 says 'make it longer than the joints above and below the fracture', which supports the length requirement. The 'wide' requirement (幅の広いもの) is not stated in either source, so only part of the statement is confirmed.",
+        "(5) Neither source says whether a suspected spinal-cord injury should or should not be carried on a hard board. The guideline p.51-52 (PDF p.60-61) only says to hold the head with both hands and keep the neck still. This cannot be confirmed.",
+        "The first governmentSourceFiles entry has the guideline's URL and hash, but its title reads 'IV ... printed pp.10-12'. That does not match the section actually cited, VII First Aid 11-12 on printed pp.51-52.",
+        "The sources are the 2015 guideline and the FDMA handbook (H29). Neither confirms that the content is the current standard when the paper was published (April 2026)."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf",
+        "https://www.fdma.go.jp/relocation/html/life/survival/pdf/h29/survival2903.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 8577,
+        "cacheReadInputTokens": 2278362,
+        "cacheCreationInputTokens": 101264,
+        "webSearchRequests": 0,
+        "costUSD": 1.4374204000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3541,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q19": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q19",
+    "sourceSha256": "dd94ecb84c7164bddac26f0f5f5b05bb629adcc615ee35739d9bd20c46304896",
+    "candidateSha256": "04752752e77531a858f1cd2f55f7502703a8495afb0486baf3a2c225e51835da",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001104962.pdf#page=79"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 8577,
+        "cacheReadInputTokens": 2278362,
+        "cacheCreationInputTokens": 101264,
+        "webSearchRequests": 0,
+        "costUSD": 1.4374204000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3541,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q13": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q13",
+    "sourceSha256": "3176d5a100b7d5e93cb01d452f41d0c936f03e059d45d9fad2b7e332453d23e8",
+    "candidateSha256": "104c2b837dce3a5effd91c88ac5d820e8efc5995fb777c05c63e880a58024c30",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "historicalApplicabilityChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The ○ on page 7/15 of the official PDF (PDF page 8) marks (3), which matches the original correct answer of 3. The image q13-p8-0.webp matches the question text.",
+        "Each choice matches the 2015 guideline. (1) matches printed p.20 (shout for help). (2) matches pp.22-23 (no chest or abdominal movement, or unsure, means start compressions). (3) matches p.23 (compress the lower half of the sternum) and p.24 (about 5 cm, 100-120 per minute), so 'upper half' is the error. (4) matches p.27 (head-tilt chin-lift). (5) matches p.34 (resume compressions right after a shock or a 'no shock advised' message).",
+        "The only source is the 2015 civic edition of the guideline (救急蘇生法の指針 2015（市民用）). For a paper published in April 2026 the current edition should apply. The 2020 edition may have superseded it, but no primary copy was provided, so I could not confirm the content applied when the paper was set.",
+        "The governmentSourceFiles entry has the correct URL and hash, but its title reads 'IV ... printed pp.10-12'. That does not match the section actually cited, V Basic Life Support on pp.20-34."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/file/06-Seisakujouhou-10800000-Iseikyoku/0000123021.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 8577,
+        "cacheReadInputTokens": 2278362,
+        "cacheCreationInputTokens": 101264,
+        "webSearchRequests": 0,
+        "costUSD": 1.4374204000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3541,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q12": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q12",
+    "sourceSha256": "6084986bed4c16dc390ea6b1df746c967e56514c5baa4f9c063683893e8730f7",
+    "candidateSha256": "4d736e2fc2a816951c0e0cca9aff768a965e834cfec7ff398b82daff44ec1e57",
+    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The ○ on page 6/15 of the official PDF (PDF page 7) marks (1), which matches the original correct answer of 1. The image q12-p7-1.webp matches the question text.",
+        "(1) Slide 1 of the MHLW food-poisoning classification material lists Campylobacter jejuni/coli as an infection-type bacterium, and lists Clostridium botulinum and Staphylococcus aureus as toxin-type. So calling Campylobacter an example of toxin-type poisoning is confirmed false.",
+        "(2) The source only classifies C. botulinum as a food-borne toxin type. Nothing in the provided sources says its toxin is a neurotoxin, so this cannot be confirmed.",
+        "(3) The source only classifies S. aureus as a food-borne toxin type. Nothing in the provided sources says its toxin is heat-stable, so this cannot be confirmed.",
+        "(4) The source only lists Vibrio parahaemolyticus as an infection-type bacterium. Nothing in the provided sources gives the alternative name 'pathogenic halophilic bacterium' (病原性好塩菌), so this cannot be confirmed.",
+        "(5) The MHLW norovirus Q&A says norovirus is fully inactivated by sodium hypochlorite, chlorous acid water or heat, and that heating in hot water at 85 °C or above for at least 1 minute is effective. This supports the choice.",
+        "The classification material is an old 2007 information-session handout (its data runs to H18, i.e. 2006). The classification it states is basic and does not change, so this does not block applicability."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 24,
+        "outputTokens": 8577,
+        "cacheReadInputTokens": 2278362,
+        "cacheCreationInputTokens": 101264,
+        "webSearchRequests": 0,
+        "costUSD": 1.4374204000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3541,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }

@@ -6,14 +6,28 @@
   ],
   "counts": {
     "target": 1344,
-    "candidateMissing": 1313,
-    "fullReviewCurrent": 21,
-    "reviewHold": 10
+    "candidateMissing": 1295,
+    "reviewHold": 25,
+    "staticHold": 2,
+    "fullReviewCurrent": 22
   },
   "clusterBatches": 0,
   "candidateConflicts": [],
   "sourceHolds": [],
-  "staticHolds": [],
+  "staticHolds": [
+    {
+      "questionId": "lckohyo-LC20260414-1-q11",
+      "issues": [
+        "sources missing"
+      ]
+    },
+    {
+      "questionId": "lckohyo-LC20260414-1-q18",
+      "issues": [
+        "sources missing"
+      ]
+    }
+  ],
   "exactTextReuseCandidates": [
     [
       "lckohyo-LC20260403-q6",
