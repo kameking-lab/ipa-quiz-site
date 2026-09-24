@@ -24068,5 +24068,59 @@
         "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
       }
     ]
+  },
+  "emkohyo-EM20261803-q7": {
+    "sourceHash": "c9497d18853345b80ffd2f9ab8edcca02db20e20f2c530caf2824347caac2aca",
+    "correctChoice": 5,
+    "summary": "25℃の飽和蒸気圧が最大なのはホルムアルデヒド。厚労省SDSは20℃ですでに約438～442 kPaと記載し、25℃より低い温度でもほかの選択肢を大きく上回る。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アクリルアミドは25℃で蒸気圧約0.9 Paの固体である。厚労省SDSの実測値はホルムアルデヒドの20℃で約438～442 kPaより桁違いに低く、最大にならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アセトンのSDSにある20℃の蒸気圧は239.5 hPa（約24 kPa）。25℃では上がるが、沸点56℃未満なので大気圧には達しない。20℃ですでに約438～442 kPaのホルムアルデヒドが上回る。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "クロロホルムはSDSの25℃の蒸気圧が197 mmHg（約26 kPa）である。同じ25℃でホルムアルデヒドは沸点−20℃を大きく超えており、この値を上回る。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "テトラヒドロフランはSDSで20℃の蒸気圧が145 mmHg（約19 kPa）、沸点は約65℃である。25℃でも沸点未満なので大気圧以下で、ホルムアルデヒドより低い。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ホルムアルデヒドのSDSには20℃で4378～4420 hPa（約438～442 kPa）の蒸気圧と、−20℃の沸点が記されている。25℃では沸点を超え、ほかの4物質より蒸気圧が高い。ホルマリン水溶液とは区別する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省・職場のあんぜんサイト SDS（acrylamide）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
+      },
+      {
+        "title": "厚生労働省・職場のあんぜんサイト SDS（acetone）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+      },
+      {
+        "title": "厚生労働省・職場のあんぜんサイト SDS（chloroform）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html"
+      },
+      {
+        "title": "厚生労働省・職場のあんぜんサイト SDS（thf）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+      },
+      {
+        "title": "厚生労働省・職場のあんぜんサイト SDS（formaldehyde）",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"
+      }
+    ]
   }
 }

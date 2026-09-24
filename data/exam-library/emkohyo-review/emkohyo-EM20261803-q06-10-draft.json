@@ -62,41 +62,123 @@
       "overlay": {
         "sourceHash": "c9497d18853345b80ffd2f9ab8edcca02db20e20f2c530caf2824347caac2aca",
         "correctChoice": 5,
-        "summary": "ホルムアルデヒドは沸点が約−19℃なので、25℃での飽和蒸気圧は1気圧を超え、5物質の中で最も高くなります。",
+        "summary": "25℃の飽和蒸気圧が最大なのはホルムアルデヒド。厚労省SDSは20℃ですでに約438～442 kPaと記載し、25℃より低い温度でもほかの選択肢を大きく上回る。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "アクリルアミドは融点が約84℃で、常温では固体の単量体です。25℃での飽和蒸気圧はPa程度と非常に小さく、選択肢中の液体の溶剤類や、常温で気体のホルムアルデヒドよりはるかに低いです。"
+            "reason": "アクリルアミドは25℃で蒸気圧約0.9 Paの固体である。厚労省SDSの実測値はホルムアルデヒドの20℃で約438～442 kPaより桁違いに低く、最大にならない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "アセトンは沸点が約56℃の揮発性の液体で、25℃での飽和蒸気圧は約31 kPaです。選択肢の液体の中では最も高い値ですが、大気圧（101.3 kPa）より低いため、25℃で気体のホルムアルデヒドには及びません。"
+            "reason": "アセトンのSDSにある20℃の蒸気圧は239.5 hPa（約24 kPa）。25℃では上がるが、沸点56℃未満なので大気圧には達しない。20℃ですでに約438～442 kPaのホルムアルデヒドが上回る。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "クロロホルムは沸点が約61℃の液体で、25℃での飽和蒸気圧は約26 kPaです。アセトンより沸点が高いため蒸気圧はやや低く、沸点が約−19℃のホルムアルデヒドと比べると大幅に低くなります。"
+            "reason": "クロロホルムはSDSの25℃の蒸気圧が197 mmHg（約26 kPa）である。同じ25℃でホルムアルデヒドは沸点−20℃を大きく超えており、この値を上回る。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "テトラヒドロフランは沸点が約66℃の環状エーテルで、25℃での飽和蒸気圧は約22 kPaです。アセトンやクロロホルムよりさらに低く、25℃では液体です。飽和蒸気圧が1気圧を超えるホルムアルデヒドには及びません。"
+            "reason": "テトラヒドロフランはSDSで20℃の蒸気圧が145 mmHg（約19 kPa）、沸点は約65℃である。25℃でも沸点未満なので大気圧以下で、ホルムアルデヒドより低い。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "ホルムアルデヒドは1気圧での沸点が約−19℃なので、25℃は沸点を大きく上回っています。沸点では飽和蒸気圧がちょうど1気圧になるため、25℃での飽和蒸気圧は101.3 kPaを超え、5物質の中で最も高くなります。水溶液であるホルマリンの性質と混同しないように注意します。"
+            "reason": "ホルムアルデヒドのSDSには20℃で4378～4420 hPa（約438～442 kPa）の蒸気圧と、−20℃の沸点が記されている。25℃では沸点を超え、ほかの4物質より蒸気圧が高い。ホルマリン水溶液とは区別する。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（acrylamide）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（acetone）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（chloroform）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（thf）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html"
+          },
+          {
+            "title": "厚生労働省・職場のあんぜんサイト SDS（formaldehyde）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "5物質の沸点と25℃での飽和蒸気圧を示す政府の一次資料（職場のあんぜんサイトのモデルSDS、NITEの化学物質情報など）がpackに含まれていません。物質別SDSも空です。検索して各物質の数値を確認する必要があります。",
-        "肢ごとの説明に書いた蒸気圧（アセトン約31 kPa、クロロホルム約26 kPa、THF約22 kPa、アクリルアミドはPa程度）は、一般的な文献値の概数で、政府資料で照合していません。正答の判断は、ホルムアルデヒドの沸点が常温より低いこと（約−19℃）だけで成り立ちますが、その沸点についても一次資料の抜粋が必要です。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-06-1.html",
+          "excerpt": "蒸気圧 0.9 Pa（25℃）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "蒸気圧 239.5hPa(239.5mber)(20℃）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "56℃(沸点)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html",
+          "excerpt": "197 mm Hg（25℃）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html",
+          "excerpt": "蒸気圧 145mmHg(20℃) [換算値 19328Pa(20℃)]",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/109-99-9.html",
+          "excerpt": "65℃ (沸点）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html",
+          "excerpt": "蒸気圧 4378～4420 hPa（20℃）",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/50-00-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 -20 ℃",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261803-q8": {
       "overlay": {
