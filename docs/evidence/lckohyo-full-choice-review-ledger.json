@@ -4711,5 +4711,305 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q36": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q36",
+    "sourceSha256": "9f180bc7878054722746a51f7e46e47478d8dcb1feda2201d18d58c3ca3e2367",
+    "candidateSha256": "85a101d44feabef5e6ea32d016726b4f65a37b8d3876034ac6c759d370d7b8c3",
+    "evidenceSha256": "fceb635397686d032607e819b44ca51618be73ac3fd003e36d9f9b4816c5b425",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの18/22頁で(4)に○が付いており、正答4と一致する。問題文と画像q36-p19-2.webpも原本と一致する。",
+        "(4)：手引き印刷27頁の定義（心臓から出る血液を送るのが動脈、心臓へ戻る血液を送るのが静脈）と、右心から肺へ送られ左心に戻るという記述から、肺静脈と肺動脈が逆であると確認できた。",
+        "(1)：提示資料に洞結節（洞房結節）と刺激伝導系の記述がなく、正しい記述であることを確認できない。",
+        "(3)：右心房へ戻り左心室から全身へ出る経路は印刷27頁で確認できる。ただし『大動脈』『静脈血』の語は提示資料になく、未確認。",
+        "(5)：印刷27頁の脚注xxv（コレステロールが蓄積して弾力性が損なわれ、もろくなる）と、e-ヘルスネット（冠動脈が狭くなる・詰まる、血流が悪くなる）で大筋は裏付けられる。しかし『動脈壁の肥厚・硬化』は明記がなく、脚注の表現は『もろくなる』なので、完全には一致しない。",
+        "(2)：印刷39頁の表（心臓：交感神経で心拍数増加、副交感神経で心拍数減少）で確認できた。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "PASS",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=35",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=47",
+        "https://kennet.mhlw.go.jp/information/information/metabolic/m-05-005.html"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 6965,
+        "cacheReadInputTokens": 840077,
+        "cacheCreationInputTokens": 49541,
+        "webSearchRequests": 0,
+        "costUSD": 0.7036834000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1904,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q39": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q39",
+    "sourceSha256": "5e6425650aff02cb57e870d76f7330cb949723fbd8d473dd5f59366cdc4feefc",
+    "candidateSha256": "6395c1b36ace42f69e543397df689974d0cff3ad495f4333e6ad7bee257d0256",
+    "evidenceSha256": "fceb635397686d032607e819b44ca51618be73ac3fd003e36d9f9b4816c5b425",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの20/22頁で(3)に○が付いており、正答3と一致する。問題文と画像q39-p21-0.webpも原本と一致する。",
+        "(3)：印刷24頁が挙げる胆汁の成分（胆汁酸塩、ビリルビン、コレステロール等）に消化酵素はない。トリプシンは印刷23頁で膵液のトリプシノーゲンから変わる酵素とされ、膵臓が消化酵素のすべてを供給するとも書かれている。以上から本肢が誤りであることを確認できた。胆汁がアルカリ性かどうかは未確認だが、正誤の判断には影響しない。",
+        "(2)：無機塩とビタミン類が酵素による分解を受けずに吸収されるという記述が提示資料にない。印刷23頁にあるのは、炭水化物とタンパク質が分解されて吸収されることと、脂溶性ビタミンが脂質と一緒に取り込まれることだけ。",
+        "(1)：印刷23頁（弱アルカリ性の膵液が、胃で酸性になった内容物を中和する）で確認できた。(4)：印刷22頁（ペプシノーゲンが胃酸でペプシンになる）で確認できた。(5)：印刷23頁（絨毛でビロード状、微絨毛が吸収効率を高める）で確認できた。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=30",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 6965,
+        "cacheReadInputTokens": 840077,
+        "cacheCreationInputTokens": 49541,
+        "webSearchRequests": 0,
+        "costUSD": 0.7036834000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1904,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q38": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q38",
+    "sourceSha256": "8b909316f1adc064b748f8189c7599573168b297db813e9d6ca2938f1a830b89",
+    "candidateSha256": "b0696b4ec84e434bd1ab1a03f9bdee1be063612bf17ca51c3ef848714473f640",
+    "evidenceSha256": "fceb635397686d032607e819b44ca51618be73ac3fd003e36d9f9b4816c5b425",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの19/22頁で(2)に○が付いており、正答2と一致する。問題文と画像q38-p20-1.webpも原本と一致する。",
+        "(2)：印刷23頁でリパーゼは脂質を分解する酵素とされ、タンパク質の分解はトリプシンとエレプシン（アミノ酸まで分解）が担う。膵リパーゼでアミノ酸に分解するという記述が誤りであることを確認できた。",
+        "(1)：印刷25頁の脚注xxiは必須アミノ酸9種を挙げているだけ。約20種類のアミノ酸、内臓・筋肉・皮膚の主成分という記述は提示資料にない。",
+        "(3)：吸収されたアミノ酸が各組織で蛋白質に再合成されるという記述が提示資料にない。",
+        "(4)：アルブミンとフィブリノゲンが肝臓で産生されること（印刷25頁）、血漿タンパク質であること（印刷28頁・30頁）は確認できた。ただし『アミノ酸から』合成されることは明記されていない。",
+        "(5)：印刷24頁にあるのはグリコーゲンがブドウ糖に分解される記述だけ。アミノ酸などからの糖新生の記述がない。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=36",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=38"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 6965,
+        "cacheReadInputTokens": 840077,
+        "cacheCreationInputTokens": 49541,
+        "webSearchRequests": 0,
+        "costUSD": 0.7036834000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1904,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q37",
+    "sourceSha256": "950917b35f17a6284cfcdb435344d79e16be93944a4f74853b9deee73c142ef2",
+    "candidateSha256": "83aedac58faa4b3fa8eb7eec4a919c9b2d36dd2cc08729a7c09c1b5f52a3827d",
+    "evidenceSha256": "fceb635397686d032607e819b44ca51618be73ac3fd003e36d9f9b4816c5b425",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの19/22頁で(3)に○が付いており、正答3と一致する。問題文と画像q37-p20-0.webpも原本と一致する。",
+        "(3)：メラトニンの分泌器官と、副甲状腺のホルモンによるカルシウム調節について、提示資料に記述がない。正答肢が誤りである根拠を政府資料で確認できない。",
+        "(1)：印刷31頁が副腎皮質ホルモンの例として挙げているのはアルドステロンだけ。コルチゾールと血糖量増加の記述がない。",
+        "(4)(5)：印刷23〜24頁で確認できるのは『膵臓がインスリン及びグルカゴン等、血糖値を調節するホルモンを分泌する』まで。血糖量を下げるか上げるかという作用の向きの記述がない。",
+        "(2)：印刷31頁の、副腎皮質で産生されるアルドステロンが塩分と水を貯留し、カリウムの排泄を促して電解質と水分の排出を調節するという記述で確認できた。"
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 6965,
+        "cacheReadInputTokens": 840077,
+        "cacheCreationInputTokens": 49541,
+        "webSearchRequests": 0,
+        "costUSD": 0.7036834000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1904,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q35": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q35",
+    "sourceSha256": "ecb110f85d5882f28690726f5628c979f5dbd5f2581e4465bce57fa5453413e7",
+    "candidateSha256": "fcd1e3b37dc94b07df7bf1c833a2cc270a4a85793a07dc65cbc1106b0cc06dec",
+    "evidenceSha256": "fceb635397686d032607e819b44ca51618be73ac3fd003e36d9f9b4816c5b425",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "公式PDFの18/22頁で(5)に○が付いており、正答5と一致する。問題文と画像q35-p19-1.webpも原本と一致する。",
+        "(4)：手引き印刷31頁の尿の説明は成分だけ（ほとんどが水分で、尿素・尿酸等の老廃物、微量の電解質、ホルモン等）。淡黄色・固有の臭気・弱アルカリ性か弱酸性かを示す政府資料がないため、誤りの根拠を確認できない。",
+        "(3)：手引き印刷31頁にあるのは『血液の維持に必要な水分が尿細管で再吸収され、余分な水分が尿になる』までで、再吸収される割合がない。『大部分がそのまま尿になる』が誤りであることを数量で裏付けられない。",
+        "(1)(2)(5)は手引き印刷31頁の腎小体での濾過（血球やタンパク質以外の血漿成分）、原尿として尿細管へ入る流れ、電解質の再吸収、尿中の電解質は微量という記述で確認できた。"
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 10,
+        "outputTokens": 6965,
+        "cacheReadInputTokens": 840077,
+        "cacheCreationInputTokens": 49541,
+        "webSearchRequests": 0,
+        "costUSD": 0.7036834000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1904,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
