@@ -370,7 +370,7 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "正規分布で上側に5％だけが残る値（95％上限値）は μ＋1.645σ である。厚労省の専門家委員会資料も、対数値の平均と標準偏差を使って上側95％値を log(X95)=log(GM)+1.645log(GSD) と求めており、平均＋1.645×標準偏差の形になっている。記述は正しい。"
+            "reason": "産総研の標準正規分布表では、上側確率は z＝1.64 で0.0505、z＝1.65 で0.0495となり、上側5％点は約1.645である。したがって正規分布の95％上限値（上側に5％だけ残る値）は μ＋1.645σ となる。作業環境評価基準も、高濃度側5％に当たる第一評価値を対数値の平均＋1.645×標準偏差で求めており、記述は正しい。"
           },
           {
             "number": 2,
@@ -380,7 +380,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "産総研資料の式 GSD=exp［ln{(AM²+ASD²)/AM²}］^(1/2) では、(AM²+ASD²)/AM² は1以上なので ln は0以上となり、GSD＝exp(0以上)は必ず1以上になる。ばらつきがない（ASD＝0）ときにちょうど1で、1未満にはならないので記述は正しい。"
+            "reason": "幾何標準偏差は、対数値の標準偏差を指数で元の尺度に戻した値である。産総研資料の式は GSD＝exp[{ln(1＋ASD²/AM²)}^(1/2)] の意味で、1＋ASD²/AM² は1以上なので ln は0以上、GSD＝exp(0以上)は必ず1以上になる。ばらつきがない（ASD＝0）ときにちょうど1で、1未満にはならないので記述は正しい。"
           },
           {
             "number": 4,
@@ -390,13 +390,17 @@
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "産総研資料の式では、幾何標準偏差GSDは算術標準偏差と算術平均の比（ASD/AM）だけで決まる。濃度のばらつき方（GSD）が同程度なら、算術平均が高いほど標準偏差もそれに比例して大きくなる。厚労省資料もGSDが典型値2〜3ならX95/AMがほぼ一定（2.5〜3.3）としており、記述は正しい。"
+            "reason": "濃度分布を対数正規分布とみなすと（肢4）、産総研資料の式のとおり幾何標準偏差GSDは算術標準偏差と算術平均の比（ASD/AM）だけで決まる。ばらつき方（GSD）が同程度の作業場なら、ASDはAMに比例するので、算術平均が高いほど標準偏差も大きくなる。厚労省資料でも上側95%値はAMの2.5〜3.3倍程度とされ、平均に比例して大きくなる。記述は正しい。"
           }
         ],
         "sources": [
           {
             "title": "厚生労働省 個人サンプラーを活用した作業環境管理のための専門家委員会 資料",
             "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について（基発第605号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
           },
           {
             "title": "厚生労働省 作業環境評価基準",
@@ -409,10 +413,36 @@
           {
             "title": "エネルギー・金属鉱物資源機構 用語辞典 対数正規分布",
             "url": "https://journal.jogmec.go.jp/oilgas/termsearch/list/tachi/lognormal.html"
+          },
+          {
+            "title": "産業技術総合研究所 標準正規分布表",
+            "url": "https://unit.aist.go.jp/mcml/rg-orgp/uncertainty_lecture/normsdist.html"
           }
         ]
       },
       "sourceEvidence": [
+        {
+          "url": "https://unit.aist.go.jp/mcml/rg-orgp/uncertainty_lecture/normsdist.html",
+          "excerpt": "1.6 0.054799 0.053699 0.052616 0.051551 0.050503 0.049471",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/mcml/rg-orgp/uncertainty_lecture/normsdist.html",
+          "excerpt": "すなわち 1 − NORMSDIST(z) が表の値となります。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1",
+          "excerpt": "「第一評価値」とは、単位作業場所において考え得るすべての測定点の作業時間における気中有害物質の濃度の実現値のうち、高濃度側から五％に相当する濃度の推定値をいうものであること。",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
         {
           "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000192208.pdf",
           "excerpt": "対数正規分布の上側95%値：X95[第1評価値に相当]",
