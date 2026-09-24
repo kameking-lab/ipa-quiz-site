@@ -28434,5 +28434,101 @@
         "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261807-q13": {
+    "sourceHash": "6aa27c22c4017384da4006af08eee4dac2a2b5e70d5ff03397cbe6811e75cb35",
+    "correctChoice": 1,
+    "summary": "フェニル基は芳香族炭化水素（ベンゼン）から水素原子1個を除いた原子団C₆H₅－で酸素を含まない。肢1の図はベンゼン環が－O－を介して結合した形（フェノキシ基）なので誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "これが誤りの組合せ。税関の官能基解説ではフェニル基はアリール基（芳香族炭化水素から水素原子1個を除いた原子団）の一種で、C₆H₅－に酸素は含まれない。原図の式はベンゼン環がエーテル結合－O－を介して結合した形（フェノキシ基）であり、フェニル基を表していない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図の式は炭素がC＝Oの二重結合とNH₂を持つ－CONH₂で、税関の官能基解説の第1アミド『－CONH2』と一致する。アミノ基が酸基と結合した形がアミドであり、アミド基を表す式として適切である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図の式は炭素に酸素が二重結合し、残る2本の結合手が他の原子団につながる＞C＝Oで、税関の官能基解説の『カルボニル基　＞C＝O』と一致する。ケトンやアルデヒドに含まれる基である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。産総研の用語説明ではシアノ基を「炭素－窒素三重結合からなる官能基。-CNと表記される」とし、ニトリル化合物をシアノ基を有する有機化合物の総称としている。税関の官能基解説も－C≡Nの基を持つ有機化合物をニトリルと呼んでおり、式－CNと名称シアノ基は一致する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。ニトロ基は窒素に酸素2個が結合した－NO₂で、税関の官能基解説も『ニトロ基 -NO2』（例：CH₃-NO₂ ニトロメタン）と示している。名称と式の対応は適切で、誤りを選ぶ本問の正答ではない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "税関 関税率表第29類の概要（代表的な官能基）",
+        "url": "https://www.customs.go.jp/tetsuzuki/bunruijirei/organic-chemicals/bunrui.pdf"
+      },
+      {
+        "title": "産業技術総合研究所 プレスリリース（用語の説明：シアノ基・ニトリル化合物）",
+        "url": "https://www.aist.go.jp/aist_j/press_release/pr2016/pr20160323_2/pr20160323_2.html"
+      }
+    ]
+  },
+  "emkohyo-EM20261807-q15": {
+    "sourceHash": "359e300fb632a8471856ba1711a5f605b34fa86f90265ae456b7c08c80f8561d",
+    "correctChoice": 1,
+    "summary": "ベンゾトリクロリドは(トリクロロメチル)ベンゼンC₇H₅Cl₃で、塩素3個は側鎖のメチル炭素に付く。肢1の図は環に塩素が直接3個付いたトリクロロベンゼン（C₆H₃Cl₃）なので誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "これが誤りの組合せ。厚労省モデルSDSではベンゾトリクロリドは別名（トリクロロメチル）ベンゼン、分子式C₇H₅Cl₃で、塩素3個はベンゼン環に付いたメチル炭素上にある。原図はベンゼン環に塩素が直接3個結合した形（C₆H₃Cl₃）で、炭素数も合わない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図は酸素1個とCH₂2個からなる三員環で、分子式C₂H₄Oとなる。厚労省モデルSDSはエチレンオキシドの別名をエポキシエタン、分子式をC₂H₄O(44)としており、構造式と一致する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図はベンゼン環2個が－N＝N－（アゾ基）で結ばれ、一方の環のパラ位にN(CH₃)₂が付いた形で、分子式C₁₄H₁₅N₃となる。厚労省モデルSDSの別名N,N-ジメチル-4-(フェニルアゾ)-ベンゼン、分子式C₁₄H₁₅N₃と一致する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図のCH₃－O－CH₂Clはメトキシ基が付いたクロロメタンで、分子式C₂H₅ClOとなる。厚労省モデルSDSはクロロメチルメチルエーテルの別名をクロロメトキシメタン、分子式をC₂H₅ClOとしており一致する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい組合せ。原図はC＝O、CH₂2個、環内の酸素からなる四員環のラクトンで、分子式C₃H₄O₂となる。厚労省モデルSDSはβ-プロピオラクトンの別名を3－ヒドロキシプロピオン酸ラクトン、分子式をC₃H₄O₂としており一致する。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS ベンゾトリクロリド",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/98-07-7.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS エチレンオキシド",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/75-21-8.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS p-ジメチルアミノアゾベンゼン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/60-11-7.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS クロロメチルメチルエーテル",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/107-30-2.html"
+      },
+      {
+        "title": "厚生労働省 職場のあんぜんサイト モデルSDS β-プロピオラクトン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/57-57-8.html"
+      }
+    ]
   }
 }
