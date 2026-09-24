@@ -321,56 +321,119 @@
       "overlay": {
         "sourceHash": "350e9556e05ec5321b3bf9cec3226d07df28900df3001ff1835b4bae839e2ec2",
         "correctChoice": 1,
-        "summary": "遠心加速度はrω²で角速度の2乗に比例する。「角速度に比例」とした肢1が誤り。",
+        "summary": "遠心加速度は回転数（角速度）の2乗に比例する（G＝1118×R×N²×10⁻⁸）。「角速度に比例」とした肢1が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "遠心加速度はa=rω²で、回転半径rが同じなら角速度ωの2乗に比例する。ωを2倍にすると加速度は4倍になるので、「角速度に比例する」とした記述が誤りであり、この肢が正答になる。"
+            "reason": "環境省マニュアルの遠心加速度の計算式はG＝1118×R×N²×10⁻⁸（R：回転半径cm、N：回転数rpm）で、Rが同じなら加速度は回転数の2乗に比例する。角速度ω＝2πN/60は回転数に比例するので、加速度は角速度の2乗に比例する。「角速度に比例」は誤りで、この肢が正答。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "帯電粒子は反対極性の電極へ移動し、その速度は電気力qEと粘性抵抗の釣り合いで決まる。帯電量qが同じなら電界強度Eが大きいほど移動速度は大きくなる。記述は正しいので、誤りを選ぶ本問の正答ではない。"
+            "reason": "産総研の報告は、粒子に働く静電気力はqE（q：電荷、E：電界強度）で、空気抵抗と釣り合う速度vは電界強度Eに比例し、v＝ZE（Z：電気移動度）と述べる。帯電粒子は静電気力で反対の電荷の側へ引き寄せられ、帯電量が同じなら電界が強いほど速く動く。記述は正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "ブラウン運動による拡散の効果は、0.1µm未満の粒子で粒径が小さいほど顕著になる。1µmを超える粒子では慣性や重力沈降が支配的で、拡散はほぼ無視できる。記述は正しいので正答ではない。"
+            "reason": "環境省資料は、拡散は0.5µm以下の粒子で沈着の主な原因となり、特に0.1µm以下で重要と述べる。一方、約0.2～1.0µmの粒子は大きすぎて拡散の影響も少ないとされ、1µmを超える粒子では拡散はほとんど働かない。記述は正しく、正答ではない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "ブラウン運動する粒子の拡散係数はD=kTC/(3πηd)で表され、粒径dが小さいほど大きくなる。すべり補正係数Cも小粒径で増えるので、この傾向はさらに強まる。記述は正しく正答ではない。"
+            "reason": "日本薬局方3.07は、並進拡散係数Dと粒子径xがストークス・アインシュタイン式x＝kT/(3πηD)で結ばれ、大きな粒子は動きが遅いと述べる。Dは粒子径に反比例するので、粒径が小さいほど拡散係数は大きい。記述は正しく、誤りの肢ではない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "空気力学相当径は、沈降速度が同じになる密度1g/cm³の球の直径である。すべり補正を無視するとda=d√(ρp/ρ0)=1µm×√(4/1)=2µmとなる。記述は正しいので誤りの肢ではない。"
+            "reason": "環境省資料は空気力学的直径をAED＝Deq(ρp/ρ0χ)^1/2（Deq：幾何学径、ρp：粒子の比重、χ：形状係数）と示す。球形（χ＝1）で比重4、直径1µmなら、AED＝1µm×√4＝2µmとなる。記述は正しく、正答ではない。"
           }
         ],
         "sources": [
           {
-            "title": "原子力規制委員会 沈降速度（遠心沈降法）結果一覧・ストークスの式",
-            "url": "https://www.nra.go.jp/data/000447909.pdf"
+            "title": "環境省 産業廃棄物の検定方法に係る分析操作マニュアル（平成25年5月、遠心加速度の計算式）",
+            "url": "https://www.env.go.jp/recycle/misc/sanpai_kentei/ao_manual.pdf"
+          },
+          {
+            "title": "産総研計量標準報告 Vol.9 No.3（2016）気中粒子の粒径分布測定（DMAの原理、電気移動度）",
+            "url": "https://unit.aist.go.jp/nmij/public/report/bulletin/Vol9/3/V9N3P381.pdf"
+          },
+          {
+            "title": "環境省 微小粒子状物質健康影響評価検討会 資料「生体内沈着と体内動態に関する知見の整理」",
+            "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_3.pdf"
+          },
+          {
+            "title": "厚生労働省 第十九改正日本薬局方 一般試験法3.07 動的光散乱法による液体中の粒子径測定法",
+            "url": "https://www.mhlw.go.jp/content/11120000/001689414.pdf"
           }
         ]
       },
       "sourceEvidence": [
         {
-          "url": "https://www.nra.go.jp/data/000447909.pdf",
-          "excerpt": "ｄ2（ρｓ―ρｆ）ｇ 18μ No.22122929 ストークスの式：V＝",
+          "url": "https://www.env.go.jp/recycle/misc/sanpai_kentei/ao_manual.pdf",
+          "excerpt": "G＝1118×R×N 2×10-8 G：遠心加速度（G） R：回転半径（cm） N：回転数（rpm）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/public/report/bulletin/Vol9/3/V9N3P381.pdf",
+          "excerpt": "外力が静電気力の場合は, v は電界強度E に比例し, 係数Z を電気移動度と呼ぶ.",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/public/report/bulletin/Vol9/3/V9N3P381.pdf",
+          "excerpt": "粒子の持つ電荷がq のとき,粒子に働く静電気力はqE であり",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/public/report/bulletin/Vol9/3/V9N3P381.pdf",
+          "excerpt": "帯電粒子はシース流によって下向きに流されながら, 静電気力によって内筒に引きつけられる.",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_3.pdf",
+          "excerpt": "拡散は0.5µm 以下の粒子において沈着の主な原因となるが、特に0.1µm 以下の粒子では",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_3.pdf",
+          "excerpt": "サイズが約0.2～1.0µm の粒子は衝突や沈降における影響を受けない一方、大きすぎて拡散の影響も少ないとされており",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001689414.pdf",
+          "excerpt": "並進拡散係数と球相当粒子径は，ストークス・アインシュタイン式によって関係づけられている．",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/001689414.pdf",
+          "excerpt": "大きな粒子は動きが遅いので，大きな粒子による散乱光強度の揺らぎは緩やかであり",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_3.pdf",
+          "excerpt": "AED = Deq（ρр/ρoχ）1/2 Deq:幾何学径 ρр：粒子の比重 χ：形状係数",
           "choiceNumbers": [
             5
           ]
         }
       ],
-      "reviewIssues": [
-        "【HOLD】肢1の根拠となる遠心加速度a＝rω²（角速度の2乗に比例）を述べた政府一次資料（*.go.jp、J-STAGE掲載論文を除く）が見つからない。肢2（電気移動度v＝Be・E）と肢4（ブラウン拡散係数の粒径依存）はJ-STAGE掲載論文（エアロゾル研究）でしか確認できず、独立審査はJ-STAGE単独の根拠を政府資料と認めない（q20第1回審査のsourceIssues参照）。肢5は環境省資料（AED＝Deq(ρp/ρ0χ)^1/2）、肢3は環境省資料の沈着機構の記述で一部支持できるのみ。",
-        "正答肢1の根拠である遠心加速度a=rω²（角速度の2乗に比例）を直接示す政府資料の抜粋がない。NRA資料は表題に遠心沈降法とあるが、確認できた抜粋にはgの式しかなくrω²の記載はない。検索が必要。",
-        "肢2（電気移動度と電界強度）、肢3（拡散効果が効く粒径域0.1µm/1µm）、肢4（ストークス・アインシュタイン式）を裏付ける政府資料は未確認。検索が必要。",
-        "肢5はストークス式で沈降速度がd²と密度の積に依存することからの導出で、NRA抜粋は間接的な支持にとどまる。空気力学相当径の定義そのものを示した一次資料は未確認。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261806-q3": {
       "overlay": {

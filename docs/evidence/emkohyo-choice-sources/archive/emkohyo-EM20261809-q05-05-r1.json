@@ -4,13 +4,13 @@
     5,
     5
   ],
-  "draftSha256": "c224be36cc69e28002eb2a60a7df503e2b3999e56e2bf958cabab05bbee01912",
+  "draftSha256": "3278ca21c543f043e51bb7de5a82d02cad3382243bbacb5bcd7c258ab64f5467",
   "sources": [
     {
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_03-06-03-06.html",
       "status": 200,
       "finalUrl": "https://atomica.jaea.go.jp/data/detail/dat_detail_03-06-03-06.html",
-      "sha256": "6df2a5046f59c794b56539a9310a84fafd82fb830d47cf2af725f77325d72dbc",
+      "sha256": "cffeb8a144ac185afaca0401b8afe52cfd624e1ef1bd79c319d110c0faae8ad3",
       "contentType": "text/html; charset=UTF-8",
       "pages": 1,
       "revisionInfo": null,
@@ -42,7 +42,7 @@
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-02-02.html",
       "status": 200,
       "finalUrl": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-02-02.html",
-      "sha256": "1865d1482be2ed0103d7731e45a9a10a7ced51c0e83dc97e9b5b7c65eb2b80c8",
+      "sha256": "624226736539c5e0d6e788c80fe76b0d5cd560236bdfb83a43c56306ff8a849b",
       "contentType": "text/html; charset=UTF-8",
       "pages": 1,
       "revisionInfo": null,
@@ -60,7 +60,7 @@
       "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-02-06.html",
       "status": 200,
       "finalUrl": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-02-06.html",
-      "sha256": "8b6f5a90d714bd772ead23091da027a2d9ef108ba550087a8c2169c3a0936b87",
+      "sha256": "42906fe3e7b8e9112306b83d1e475968961d446cef6c33587157b38559fbee40",
       "contentType": "text/html; charset=UTF-8",
       "pages": 1,
       "revisionInfo": null,
@@ -82,20 +82,20 @@
       ]
     },
     {
-      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1050.html",
       "status": 200,
-      "finalUrl": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html",
-      "sha256": "24c2d77329cf0e0c32e979d054ab399086d87c6684b64e84b895567040357291",
+      "finalUrl": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1050.html",
+      "sha256": "9108711134021c568080a6b50584333d102b4aa90a8b774dd828c363474e1ed7",
       "contentType": "text/html; charset=UTF-8",
       "pages": 1,
       "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261809-q5",
-          "excerpt": "中性子線には水、パラフィン等原子番号の小さい物質が一般的に用いられている",
+          "excerpt": "次に熱中性子に対する吸収断面積の大きな物質（ホウ素、カドミウム、ガドリニウム、軽水など）を利用して吸収させる",
           "matched": true,
           "pdfPage": 1,
-          "context": "を低減する上で重要な項目の1つである。遮へいの対象となる放射線は、主に物質の透過能力が高いガンマ線、エックス線および中性子線で、遮へい材としては、ガンマ線、エックス線は鉛、鉄等原子番号の大きい物質が、中性子線には水、パラフィン等原子番号の小さい物質が一般的に用いられている。＜更新年月＞2001年03月（本データは原則として更新対象外とします。）＜本文＞1）放射線防護上の遮へい放射線防護上の遮へいとは、放射線源と防護の対象となる人体との間に放射線を減弱させる物体を置く事"
+          "context": "質中での散乱と吸収を利用する必要がある。高速中性子はほとんど吸収されないので、まず原子量の小さな物質（軽水、重水、ベリリウム、黒鉛、パラフィンなど）内での散乱によりエネルギ-を減少させて熱中性子とし、次に熱中性子に対する吸収断面積の大きな物質（ホウ素、カドミウム、ガドリニウム、軽水など）を利用して吸収させる。この中性子捕獲反応の際にガンマ線が放出される場合には、ガンマ線をコンクリ-トなどで遮蔽する必要もある。したがって中性子遮蔽体としてはこれらの組合せが必要である。＜登録年月＞2012年05月＜用語辞書"
         }
       ]
     },
@@ -143,32 +143,115 @@
       ]
     },
     {
-      "url": "https://www.fdma.go.jp/pressrelease/houdou/items/h23/2303/230318_2houdou/sankousiryou/03.pdf",
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/Fe000.intern",
       "status": 200,
-      "finalUrl": "https://www.fdma.go.jp/pressrelease/houdou/items/h23/2303/230318_2houdou/sankousiryou/03.pdf",
-      "sha256": "955b8dbc19c62f4574c1dda38d3acf1fe45b2ce7abc04263cca1af49d4cdc504",
-      "contentType": "application/pdf",
-      "pages": 12,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/Fe000.intern",
+      "sha256": "3ba8ab6c13aa6b62f631f8d186eb625d21a0f404baea26eb73f9dc6b9eac6265",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
       "revisionInfo": null,
       "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261809-q5",
-          "excerpt": "中性子線を減弱させるのには、一般的に原子番号の小さい元素（水など水素を多く含有するもの）が有効です",
+          "excerpt": "(n,total) 13.90 (b)",
           "matched": true,
           "pdfPage": 1,
-          "context": "しては、鉛、鉄のほか、コンクリート（ガンマ線の遮へい能力を高めるために、磁鉄鉱や鉄片を混合した重コンクリートなどが使われている場合もあります。）、大量の水（使用済み燃料プール等）が利用されています。▶中性子線を減弱させるのには、一般的に原子番号の小さい元素（水など水素を多く含有するもの）が有効です。中性子線の遮へい材としては、水、コンクリート（水を多く含んでいる。）のほか、パラフィンが利用されています。鉛や鉄などでも減衰しますが、効率は良くありません。▶アルファ線の実体はヘリウムの原子核で、2"
-        },
+          "context": "26-Fe-0)26-Fe-0MTReaction0.0253-eVMaxwellianAverageg-factorResonanceIntegral14-MeVFiss.Spec.Average1(n,total)13.90(b)15.37(b)1.105-2.590(b)3.287(b)2(n,elastic)11.34(b)12.80(b)1.129-1.198(b)2.616(b)4(n,inelastic)(E-thr"
+        }
+      ]
+    },
+    {
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/H000.intern",
+      "status": 200,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/H000.intern",
+      "sha256": "c7da74107cb0f8f86e863029216bd02422d0067e3c316f35179388c9e39f51c5",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
         {
           "questionId": "emkohyo-EM20261809-q5",
-          "excerpt": "鉛や鉄などでも減衰しますが、効率は良くありません",
+          "excerpt": "(n,total) 30.60 (b)",
           "matched": true,
           "pdfPage": 1,
-          "context": "線を減弱させるのには、一般的に原子番号の小さい元素（水など水素を多く含有するもの）が有効です。中性子線の遮へい材としては、水、コンクリート（水を多く含んでいる。）のほか、パラフィンが利用されています。鉛や鉄などでも減衰しますが、効率は良くありません。▶アルファ線の実体はヘリウムの原子核で、2価のプラスの電荷を持っており、また、ベータ線の本質は電子で、1価のマイナスの電荷を持っています。このような電荷を持った放射線は、空気など物質中で原子に作用し"
+          "context": "ble(1-H-0)1-H-0MTReaction0.0253-eVMaxwellianAverageg-factorResonanceIntegral14-MeVFiss.Spec.Average1(n,total)30.60(b)33.15(b)1.083-687.8(mb)3.928(b)2(n,elastic)30.27(b)32.81(b)1.084-687.8(mb)3.928(b)16(n,2n)(E-thr=3.3"
+        }
+      ]
+    },
+    {
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/O000.intern",
+      "status": 200,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/Tab80WWW.cgi?/data/JENDL/JENDL-4-prc/intern/O000.intern",
+      "sha256": "b169a0167eeed2fdc112e76b6fc85f1ac2eebf6df171f4017d936d7855d2f9e9",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261809-q5",
+          "excerpt": "(n,total) 3.955 (b)",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "ble(8-O-0)8-O-0MTReaction0.0253-eVMaxwellianAverageg-factorResonanceIntegral14-MeVFiss.Spec.Average1(n,total)3.955(b)4.463(b)1.129-1.607(b)2.757(b)2(n,elastic)3.955(b)4.463(b)1.129-895.7(mb)2.745(b)4(n,inelastic)(E-th"
+        }
+      ]
+    },
+    {
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?01",
+      "status": 200,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?01",
+      "sha256": "9eedced18e46e75e2b85c5257df1c19fa4ffb32ae104302a6cf013de202380d0",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261809-q5",
+          "excerpt": "H-nat 1.00794",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "----------------------------------------------------------------------------------------------------H-nat1.00794+-0.00007XXXH-11.00782503223+-0.000000000091/2+99.9885stableXXXXXXXXXH-22.01410177812+-0.00000000012"
+        }
+      ]
+    },
+    {
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?08",
+      "status": 200,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?08",
+      "sha256": "cd5e73ca99d35f552194ad2d86810db3c8f985e5b8d59730b368b8712747d0ed",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261809-q5",
+          "excerpt": "O-nat 15.9994",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "----------------------------------------------------------------------------------------------------O-nat15.9994+-0.0003XXXO-1313.024814683+-0.000010226(3/2-)8.58MS5O-1414.008596359+-0.0000001170+70.606S18O-1515."
+        }
+      ]
+    },
+    {
+      "url": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?26",
+      "status": 200,
+      "finalUrl": "https://wwwndc.jaea.go.jp/cgi-bin/nucltab14?26",
+      "sha256": "11b3062a68861285ec7df13c9108c0edb421408d877cb3e47d46f02811295ef3",
+      "contentType": "text/html; charset=UTF-8",
+      "pages": 1,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261809-q5",
+          "excerpt": "Fe-nat 55.845",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "----------------------------------------------------------------------------------------------------Fe-nat55.845+-0.002XXXXXXFe-4545.014807+-0.0002114.0MS+3-1Fe-4646.000810+-0.0003800+13.0MS20Fe-4746.992900+-0.00"
         }
       ]
     }
   ],
-  "claimedExcerpts": 12,
+  "claimedExcerpts": 16,
   "missingEvidenceQuestions": [],
   "unverifiedExcerpts": 0
 }

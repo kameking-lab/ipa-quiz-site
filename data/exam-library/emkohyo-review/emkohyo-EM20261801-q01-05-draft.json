@@ -646,7 +646,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "正しい記述。蒸気密度は分子量に比例し、クロロホルムは119.4÷29≒4.1、キシレンは106.2÷29≒3.7でクロロホルムが大きい。25℃の蒸気圧も、クロロホルム約26kPa（197mmHg）に対してキシレンは約1kPaで、クロロホルムが大きい。"
+            "reason": "正しい記述。厚労省モデルSDSでは、クロロホルムの相対ガス密度は4.12（空気＝1）、キシレンの蒸気密度は3.66で、クロロホルムが大きい。25℃の蒸気圧もクロロホルム197mmHg（約26kPa）に対し、m-キシレン8.29mmHg、p-キシレン1.19kPaで、クロロホルムが大きい。"
           },
           {
             "number": 4,
@@ -656,21 +656,122 @@
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "誤っている記述なので、これが正答。クレゾールはベンゼン環にメチル基とフェノール性水酸基をもつメチルフェノールで、水酸基の水素イオンがわずかに解離する弱酸（pKa約10）である。水に溶けて示すのは弱酸性で、アルカリ性ではない。"
+            "reason": "誤っている記述なので、これが正答。厚労省モデルSDSはクレゾールのpHを「飽和溶液では中性；或いは(リトマス紙）弱酸性」とし、環境省の初期評価もp-クレゾールの解離定数をpKa10.26とする。フェノール性水酸基がわずかに解離する弱酸で、水溶液はアルカリ性を示さない。"
           }
         ],
         "sources": [
           {
             "title": "職場のあんぜんサイト：クロロホルム（モデルSDS）",
             "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト：キシレン（モデルSDS）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1330-20-7.html"
+          },
+          {
+            "title": "職場のあんぜんサイト：m-キシレン（モデルSDS）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-38-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト：p-キシレン（モデルSDS）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/106-42-3.html"
+          },
+          {
+            "title": "職場のあんぜんサイト：クレゾール（モデルSDS）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1319-77-3.html"
+          },
+          {
+            "title": "環境省 化学物質の環境リスク初期評価 p-クレゾール",
+            "url": "https://www.env.go.jp/chemi/report/h18-12/pdf/chpt1/1-2-2-08.pdf"
+          },
+          {
+            "title": "環境省 微小粒子状物質 粒子状物質の特性に関する知見の整理（資料1-1）",
+            "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_1-1.pdf"
+          },
+          {
+            "title": "環境省 基礎技術編（沈殿の基本技術）",
+            "url": "https://www.env.go.jp/earth/coop/coop/document/male2_j/006.pdf"
+          },
+          {
+            "title": "厚生労働省 室内空気中化学物質の採取方法と測定方法",
+            "url": "https://www.mhlw.go.jp/www1/houdou/1206/h0629-2_b_13.html"
           }
         ]
       },
       "reviewIssues": [
-        "【HOLD】肢1（ストークス沈降と密度）・肢2（ボイル・シャルルの法則）・肢4（THFとテトラクロロエチレンの極性比較）を直接述べる政府一次資料が見つからない。肢3はクロロホルムのモデルSDSで分子量・蒸気圧を確認できるが、キシレンのモデルSDSの蒸気圧、肢5のクレゾール水溶液の液性（弱酸性）の政府資料抜粋が未取得。今回のセッションではWeb検索上限に達し追加探索できなかった。",
-        "クロロホルムのモデルSDSで分子量119.38、蒸気密度4.12、蒸気圧197mmHg（25℃）は読めた。ただし同じページの20℃の値は「212 kPa」と読み取られていて、21.2kPaの誤読の可能性がある。",
-        "キシレン（1330-20-7、95-47-6）とクレゾール（1319-77-3）のモデルSDSは文字化けで蒸気圧・pH・酸性度を判読できず、確認済みの根拠にできなかった。キシレンの蒸気圧（約1kPa）、クレゾールのpKa（約10）、THF・テトラクロロエチレンの極性は、一般的な化学知識によるもので、政府一次資料での本文確認はできていない。",
-        "肢1・2・4の物理法則（ストークスの式、気体の状態方程式、分子の極性）を直接説明する政府ページは見つけられなかった。"
+        "【HOLD】肢4（テトラヒドロフランの極性がテトラクロロエチレンより大きい）を直接述べた政府一次資料が見つからない（2026-09-24再探索：mhlw/env/nite/nies/aist等で「極性」「無極性」「双極子モーメント」を検索、該当なし。Web検索上限に到達）。肢3（モデルSDSのクロロホルム・キシレン各異性体の蒸気密度・蒸気圧）と肢5（クレゾールSDSの「弱酸性」、p-クレゾールpKa10.26）は政府資料で確認済み。肢1は環境省資料（沈降速度は粒子の大きさと密度で決まる、空気動力学径の定義）、肢2は厚労省測定法の採気量換算式（×293/(273+t)×P/101.3）による間接的な裏付けにとどまり、ストークスの式・ボイル・シャルルの法則を明記した政府資料は未取得。"
+      ],
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/earth/coop/coop/document/male2_j/006.pdf",
+          "excerpt": "液体中の固体粒子の沈降速度を決定する上で最も重要なものは、粒子の大きさと密度、液体の粘性と密度である。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/air/info/mpmhea_kentou/06/mat01_1-1.pdf",
+          "excerpt": "空気動力学径は密度が１で終末沈降速度が問題とする粒子と同じ球形粒子径として定義される等価粒径である。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/www1/houdou/1206/h0629-2_b_13.html",
+          "excerpt": "ｖ×V×293/(273+t)×P/101.3Ｃ：20℃における空気中の各測定対象物質の濃度(mg/m3)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html",
+          "excerpt": "197mmHg（25℃）（PubChem(2022)）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-66-3.html",
+          "excerpt": "相対ガス密度4.12（空気＝1）",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1330-20-7.html",
+          "excerpt": "蒸気密度3.66：計算値",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-38-3.html",
+          "excerpt": "蒸気圧(8.29mmHg(25℃)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/106-42-3.html",
+          "excerpt": "蒸気圧1.19kPa(25℃)(NITE総合検索(2015))",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1319-77-3.html",
+          "excerpt": "ｐＨ飽和溶液では中性；或いは(リトマス紙）弱酸性",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h18-12/pdf/chpt1/1-2-2-08.pdf",
+          "excerpt": "解離定数(pKa)10.26(25℃)",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ]
     }
   }
