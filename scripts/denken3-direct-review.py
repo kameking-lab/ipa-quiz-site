@@ -117,7 +117,8 @@ def main() -> None:
         "あなたは第三種電気主任技術者試験の最終独立監査者。候補JSONを、添付した試験センター公式問題原図、"
         "manifest固定の公式正答、公開候補図と解答単位ごとに照合する。問題文・数式・極性・単位、(1)〜(5)全肢、"
         "公式正答、総合解説の計算・因果、正答肢と各誤答肢固有の理由、図の接続・向き・全ラベルを検算する。"
-        "図が解答に必要なら公開候補図だけで理解できるかも検査する。公式ReferenceUrlsに独立主張がある場合は一次資料を確認する。"
+        "図が解答に必要なら公開候補図だけで理解できるかも検査する。公式ReferenceUrlsに独立主張がある場合、"
+        "添付原図だけで検証できなければsourceIssuesに記録し、推測でPASSにしない。"
         "status=PASSは誤り・曖昧さ・外部確認事項が一つもない場合だけ。出力はJSON配列のみ。各要素は"
         "unitKey,questionNumber,part,status(PASS/FIX),textIssues,choiceIssues,answerIssues,explanationIssues,"
         "figureIssues,sourceIssues,verifiedEvidenceを持つ。issuesは必ず配列。公式正答は変更しない。"
@@ -141,7 +142,7 @@ def main() -> None:
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
     process = subprocess.run(
         [str(CLI), "-p", "--model", "claude-opus-5-5", "--effort", "high", "--input-format", "stream-json",
-         "--output-format", "stream-json", "--verbose", "--tools", "WebFetch,WebSearch"],
+         "--output-format", "stream-json", "--verbose", "--tools", ""],
         input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
         capture_output=True, cwd=ROOT, timeout=900,
     )
