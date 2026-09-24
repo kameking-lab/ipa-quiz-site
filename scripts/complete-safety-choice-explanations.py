@@ -14,6 +14,8 @@ import re
 import subprocess
 from urllib.parse import urlparse
 
+import requests
+
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
 LOG = ROOT / ".cache/safety-choice-lckohyo"
@@ -169,13 +171,39 @@ def source_hints(batch):
         raise ValueError("A batch must stay within one qualification subject")
     subject = next(iter(subjects))
     path = DATA / "source-packs" / f"lckohyo-subject-{sha256(subject.encode()).hexdigest()[:12]}.json"
-    if not path.exists():
-        return []
-    pack = read(path)
-    if pack["subject"] != subject:
-        raise ValueError(f"Source pack subject mismatch: {path}")
-    return [{"title": item["title"], "url": item["url"], "locators": item["locators"],
-             "retrievalSha256": item["retrieval"]["sha256"]} for item in pack["sources"][:24]]
+    hints = []
+    if path.exists():
+        pack = read(path)
+        if pack["subject"] != subject:
+            raise ValueError(f"Source pack subject mismatch: {path}")
+        hints.extend({"title": item["title"], "url": item["url"], "locators": item["locators"],
+                      "retrievalSha256": item["retrieval"]["sha256"]}
+                     for item in pack["sources"][:24])
+    hold_path = ROOT / "docs/evidence/lckohyo-choice-hold-source-index-20260923.json"
+    if hold_path.exists():
+        holds = read(hold_path).get("questions", {})
+        for question in batch:
+            if not question["id"].startswith("lckohyo-LC20252115-q"):
+                continue
+            number = int(question["id"].rsplit("q", 1)[1])
+            for source in holds.get(f"Q{number}", []):
+                url = source["url"]
+                response = requests.get(url.split("#", 1)[0], timeout=90)
+                response.raise_for_status()
+                payload = response.content
+                actual = sha256(payload).hexdigest()
+                if actual != source["sha256"] or len(payload) != source["bytes"]:
+                    raise ValueError(f"Held government source bytes changed: {url}")
+                content_type = source.get("contentType", "").lower()
+                suffix = ".pdf" if "pdf" in content_type else ".json" if "json" in content_type else ".html"
+                local = ROOT / ".cache/safety-author-sources" / f"{actual}{suffix}"
+                local.parent.mkdir(parents=True, exist_ok=True)
+                if not local.exists():
+                    local.write_bytes(payload)
+                hints.append({"title": source["name"], "url": url,
+                              "locators": [source.get("locatorCandidate", "")],
+                              "retrievalSha256": actual, "localPath": str(local)})
+    return hints
 
 
 def batch_prompt(batch):
@@ -184,7 +212,7 @@ def batch_prompt(batch):
 各問は {{"question-id": {{"correctChoice": 数値, "summary": 20字以上, "choices": [{{"number":1,"verdict":"correctまたはincorrect","reason":"各肢固有の40字以上の理由"}}を1～5], "sources":[{{"title":"政府資料の正確なタイトル","url":"https://...go.jp/..."}}]}} }} の形。sourceHashは付けず、採用時に原文から機械計算します。
 verdictは『その肢を解答として選ぶと正解か』であり、『誤っているもの』を選ぶ設問の正答肢もcorrectです。残り4肢それぞれについて、なぜ選ばないかをその肢の語句・数値・条件に即して説明します。丸写し、理由の使い回し、未確認条文、架空URL、一般論は不可。
 根拠URLはe-Gov、厚生労働省等の日本政府のHTTPS *.go.jpに限定。協会PDFは設問と正答の確認用でありsourcesに入れません。法令は出題時点と現行を混同せず、条・項・号を一次資料で確認してください。図表参照の問題では添付されたimagesや公式PDF原図を確認してください。全件のIDを返し、不確かな事項は最後に別文でなく該当reasonに慎重な確定事実だけを書いてください。確認できない問があれば空欄で量産せずJSONの外で理由を報告してください。ファイル編集・投稿・コミットは禁止。
-同一資格の既検証source-pack候補（取得ハッシュは同一資料を探すためのもので、この問題への適用を保証しない）。該当条文・頁・出題時点が一致するものだけを使い、足りなければ政府一次資料を新規探索すること。JIS固有の数値を法令だけで代用しない: {json.dumps(hints, ensure_ascii=False)}
+同一資格の既検証source-pack候補（取得ハッシュは同一資料を探すためのもので、この問題への適用を保証しない）。localPathがある資料はReadで実体を確認する。該当条文・頁・出題時点が一致するものだけを使う。Webツールは使えないため、提示資料で全5肢を直接裏付けられない問は返答JSONから省略せず、各reasonを推測で埋めずに明示的なHOLD理由として返すこと。JIS固有の数値を法令だけで代用しない: {json.dumps(hints, ensure_ascii=False)}
 入力JSON: {json.dumps(batch, ensure_ascii=False)}
 """
 
@@ -206,7 +234,8 @@ def author_candidate(item, model):
     if candidate_file.exists():
         candidate = read(candidate_file)
     else:
-        raw = call_claude(batch_prompt(batch), prefix.with_name(token + "-author"), model)
+        raw = call_claude(batch_prompt(batch), prefix.with_name(token + "-author"), model,
+                          tools=("Read", "Glob", "Grep"))
         if set(raw) != expected:
             raise ValueError(f"{token}: incomplete IDs")
         candidate = {}
@@ -266,6 +295,9 @@ def main():
         parser.error("paper-id must name a 2025/2026 lckohyo paper")
     narratives = read(DATA / "explanations.json")
     overlays = read(OUTPUT)
+    cached_candidate_ids = set()
+    for path in LOG.glob("*.candidate.json"):
+        cached_candidate_ids.update(read(path))
     for qid, q in question_map.items():
         if qid in overlays:
             issues = validate_overlay(q, overlays[qid])
@@ -276,8 +308,16 @@ def main():
     for qid, q in question_map.items():
         if args.paper_id and not qid.startswith(args.paper_id + "-q"):
             continue
-        if qid not in overlays:
-            missing.append(dict(q, plainExplanation=narratives[qid]))
+        if qid not in overlays and qid not in cached_candidate_ids:
+            image_paths = []
+            for url in q.get("images", []):
+                image = (ROOT / "public" / url.lstrip("/")).resolve()
+                if not image.is_relative_to(ROOT / "public") or not image.is_file():
+                    raise SystemExit(f"Missing/unsafe official question image: {qid} {url}")
+                image_paths.append({"url": url, "localPath": str(image),
+                                    "sha256": sha256(image.read_bytes()).hexdigest()})
+            missing.append(dict(q, plainExplanation=narratives[qid],
+                                officialQuestionImageFiles=image_paths))
     structured_count = sum(qid in overlays for qid in question_map)
     selected_structured = sum(qid in overlays for qid in selected_ids)
     print(json.dumps({"officialChoiceQuestions": len(question_map), "structured": structured_count,

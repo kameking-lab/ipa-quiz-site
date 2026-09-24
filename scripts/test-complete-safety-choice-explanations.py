@@ -82,6 +82,19 @@ class ChoiceAuthoringGateTest(unittest.TestCase):
             self.assertEqual(output.read_text(encoding="utf-8"), "{}\n")
             self.assertFalse((log / "test-batch.accepted.json").exists())
 
+    def test_authoring_disables_web_tools(self):
+        with tempfile.TemporaryDirectory() as temp:
+            log = Path(temp) / "drafts"
+            candidate = dict(self.overlay)
+            candidate.pop("sourceHash")
+            with (patch.object(MODULE, "LOG", log),
+                  patch.object(MODULE, "source_hints", return_value=[]),
+                  patch.object(MODULE, "call_claude",
+                               return_value={self.question["id"]: candidate}) as called):
+                MODULE.author_candidate(([dict(self.question, subject="第二種衛生管理者")],
+                                         "local-only"), "claude-opus-5-5")
+            self.assertEqual(called.call_args.kwargs["tools"], ("Read", "Glob", "Grep"))
+
     def test_model_receipt_uses_actual_cli_model_id(self):
         with tempfile.TemporaryDirectory() as temp:
             cli = Path(temp) / "npm/node_modules/@anthropic-ai/claude-code/bin/claude.exe"
