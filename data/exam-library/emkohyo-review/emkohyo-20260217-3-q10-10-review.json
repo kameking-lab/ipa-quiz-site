@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3564,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14938,
+      "webSearchRequests": 0,
+      "costUSD": 0.1910478,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2361,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-3-q10-10-raw-response.txt",
+  "rawResponseSha256": "4dd4462141ba7c9cbcedd123d2a7338e97c456958d2fc9f68b15ce1c78a3e913",
+  "paperId": "emkohyo-20260217-3",
+  "ids": [
+    "emkohyo-20260217-3-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-3-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-3-q10": {
+      "/exam-library/emkohyo-20260217-3/q10-p7-0.webp": "e8926573f92b0510f39103934864108d625927d0eee22eb8e130eb22e0c5bf68"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-3-q10": "20f072c8810e9eb7e9af4844868985f5cabb14d4418ec1fc9c1e4ffd5ed21304"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-3-q10-10.json",
+  "sourcePackSha256": "bb5cb3956d2c009dd85a100620d20331f348fefcfa166f8b40ab443972431a99",
+  "assessment": {
+    "emkohyo-20260217-3-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由は、環境省マニュアルの1つの校正例（排気側接続）と逆だから誤り、と述べるだけです。上流側（吸引側）に接続してはいけない理由が書かれていません。例えば、ポンプ吸引側に置くとメーター内が負圧になり、封液の水位や計量体積が変わって誤差が生じる、といった因果を補ってください。なお同じ資料の③は、精密膜流量計や基準流量計を『装置の吸引側』に取り付ける校正例を示しています。そのため『校正例と逆＝誤り』という論法だけでは、湿式ガスメーター固有の理由になりません。",
+        "肢5の理由は、資料が④ルーツメータ基準と⑤ルーツメータで校正したオリフィス基準の2つの校正例を示すことだけを根拠に『記述に合い、正しい』としています。しかし肢5の要素のうち、(a) 設置型ルーツメーターなら精度よく行えること、(b) 測定現場ではオリフィスを二次的な基準流量計として用いることが多いこと、の2点はこの根拠で支えられていません。理由の表現を『資料に示される校正体系と整合する』程度に弱めるか、別の根拠を補ってください。"
+      ],
+      "sourceIssues": [
+        "有害大気汚染物質測定方法マニュアル p.42 の該当箇所は『②中容量以下の試料採取装置に用いられるフロート型面積流量計の校正例』です。湿式ガスメーターの接続位置を一般規則として定めたり、上流側接続を不可としたりする記述ではありません。正答肢3の『なぜ上流側は誤りか』を政府資料は直接支えていません。",
+        "肢5の『設置型のルーツメーターを用いると精度よく行うことができる』『測定現場では…二次的な基準流量計として用いることが多い』について、添付の政府資料には精度の比較や現場での使用頻度の記述がありません。資料が支えるのは、ルーツメータで校正したオリフィスを基準とする校正例が存在することだけです。",
+        "肢2・肢4の根拠 900542160.pdf は『排水流量計』（液体用）の章です。面積式・差圧式の原理自体は気体にも共通しますが、作業環境測定の試料空気用流量計を直接扱う資料ではありません。肢2の比例関係は Q＝C･A･√(…) で流出係数Cと√項が一定とみなせる前提に依存しており、抽出テキストの式も文字化けしています（『2･g･Vf･(ρf-ρAf･ρo』）。"
+      ],
+      "needsExternalCheck": [
+        "肢3：湿式ガスメーターをポンプ下流側（排気側）に接続すべき理由を、作業環境測定ガイドブック（日本作業環境測定協会）または JIS B 7554 以外の湿式ガスメーター関連規格（JIS B 7552 等）で確認し、理由文に反映すること。",
+        "肢5：ハイボリウムエアサンプラーの現場校正で、ルーツメーター校正済みオリフィスを二次基準として用いるのが一般的である旨を、作業環境測定ガイドブック等の一次に近い資料で確認すること。"
+      ]
+    }
+  }
+}
