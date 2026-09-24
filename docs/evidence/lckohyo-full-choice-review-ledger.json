@@ -5319,5 +5319,248 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q3": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q3",
+    "sourceSha256": "4557b3896f58001a70a9997d0811a010a2bed0ef0a0b37ecdc31de05dbcecf13",
+    "candidateSha256": "c950feec2c9debde778ba24315b4ef4676e93b876ece73f5ccd4589e81d9e104",
+    "evidenceSha256": "daa0d6bd8b8bae11c26aaaf029aae63abfd4349833b6e3fa21b06fda791f8599",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF, page 2/22, marks (4) アンモニア用防毒マスク as correct. This matches correctChoice 4.",
+        "The question text and all 5 choices match the official PDF and the local image q3-p3-0.webp.",
+        "All three government source files are the same file (sha256 b2e5ede6…, 800 bytes). That file is an empty e-Gov page shell with only <div id=\"app\"></div> and no law text. None of the cited provisions can be checked against it: 安衛法42条・別表第二第9号, 安衛令13条5項の表, 安衛則26条2号.",
+        "No source confirms that 騒音計, 放射線測定器, 検知管式一酸化炭素検定器 or 化学防護服 are absent from 安衛法別表第二 and 安衛令13条. Each choice's 'not listed' reasoning is unsupported.",
+        "The 安衛法 and 安衛令 URLs are unversioned current text. The 安衛則 URL is the 2025-04-01 version. None of the sources confirms the text in force on the exam date (the paper was published 2025-10 and the sitting date is unknown).",
+        "Every locator is empty. The source titles give articles, but no provision is pinned."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347AC0000000057",
+        "https://laws.e-gov.go.jp/law/347CO0000000318",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 7947,
+        "cacheReadInputTokens": 468378,
+        "cacheCreationInputTokens": 27540,
+        "webSearchRequests": 0,
+        "costUSD": 0.47295960000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4617,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q2": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q2",
+    "sourceSha256": "036ba53c2386a03e24f7504a2a4d3e0a6b3def10392214406b059c986aea8ca5",
+    "candidateSha256": "117170cacf8341e84db6912ba14416db769529a8910a1a390349c27d657d0da6",
+    "evidenceSha256": "daa0d6bd8b8bae11c26aaaf029aae63abfd4349833b6e3fa21b06fda791f8599",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF, page 1/22, marks (5) C, D as correct. This matches correctChoice 5.",
+        "The question text, items A–D and choices (1)–(5) match the official PDF and the local image q2-p2-1.webp.",
+        "The only government source file is the empty e-Gov page shell (sha256 b2e5ede6…, 800 bytes) and contains no law text. None of the cited provisions can be checked against it: 安衛令6条1号 (高圧室内作業), 6条21号, 別表第六第5号 (石炭等を入れてあるホッパー等), 20条9号 (潜水業務の就業制限).",
+        "The source file is titled '安衛令（第13条）', but the candidate cites 6条, 20条 and 別表第六. The file metadata does not match the cited provisions, and the locators are empty.",
+        "Choice (4) claims that 別表第六's ドライアイスによる水セメントのあく抜き is the only place in 安衛令 that mentions cement. This exhaustive claim is not backed by any source.",
+        "The 安衛令 URL is unversioned current text. The text in force on the exam date has not been confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347CO0000000318"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 7947,
+        "cacheReadInputTokens": 468378,
+        "cacheCreationInputTokens": 27540,
+        "webSearchRequests": 0,
+        "costUSD": 0.47295960000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4617,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q1": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q1",
+    "sourceSha256": "60c6098d0ff2f81ca02596b14604f6bb97cf80a12d223f575c5d2824d80b0a61",
+    "candidateSha256": "f91dfabb0b448efe45d3db34a06acadef40ac9212fe11d2dd0cc9bf824db6ac6",
+    "evidenceSha256": "daa0d6bd8b8bae11c26aaaf029aae63abfd4349833b6e3fa21b06fda791f8599",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF, page 1/22, marks (2) as correct. This matches correctChoice 2.",
+        "The question text, the premises (深夜業200人・高熱物体50人・塩素試験研究30人) and all 5 choices match the official PDF and the local image q1-p2-0.webp.",
+        "Both government source files are the empty e-Gov page shell (sha256 b2e5ede6…, 800 bytes) and contain no law text. None of the cited provisions can be checked against them: 安衛令2条2号, 6条18号, 別表第三第二号7, 安衛則7条1項3号イ・5号・6号, 13条1項3号.",
+        "The source file titles ('安衛則（第26条）' and '安衛令（第13条）') do not match the articles the candidate relies on (7条, 13条, 2条, 6条). The locators are empty.",
+        "Choice (2) cites 労基則18条各号, but 安衛則7条1項5号ロ covers only specific items of 労基則18条 (1号, 3号から5号, 9号). This wording is imprecise and has not been checked against the source.",
+        "The 安衛令 URL is unversioned current text and the 安衛則 URL is the 2025-04-01 version. The text in force on the exam date has not been confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121",
+        "https://laws.e-gov.go.jp/law/347CO0000000318"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 7947,
+        "cacheReadInputTokens": 468378,
+        "cacheCreationInputTokens": 27540,
+        "webSearchRequests": 0,
+        "costUSD": 0.47295960000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4617,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252114-q5": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252114-q5",
+    "sourceSha256": "78b3e81561cffc9248e96a8a42fe1feec7140fdda2a99ffdd3728deffb36b4aa",
+    "candidateSha256": "d3602e2790d09b0ba18f5e93e10070129bf05057cecef5e4e548a7d323abb637",
+    "evidenceSha256": "daa0d6bd8b8bae11c26aaaf029aae63abfd4349833b6e3fa21b06fda791f8599",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official PDF, page 3/22, marks (1) as correct. This matches correctChoice 1.",
+        "The question text and all 5 choices match the official PDF and the local image q5-p4-0.webp.",
+        "The government source file is the empty e-Gov page shell (sha256 b2e5ede6…, 800 bytes) and contains no law text. None of the cited provisions can be checked against it: 安衛則584条, 587条11号, 607条 (the ふく射熱 limit to 1号–8号), 608条1項, 611条 and its proviso, 614条 and its proviso.",
+        "The source file is titled '安衛則（第26条）', but the candidate cites 584条 to 614条. The file metadata does not match, and the locators are empty.",
+        "The key reasoning for (1) is that the ドライアイス workplace falls under 587条11号 while ふく射熱 measurement is limited to 1号–8号. The item numbering has not been confirmed against any source.",
+        "The 安衛則 URL is the 2025-04-01 version. Whether this text was in force on the exam date, including any amendments up to the exam, has not been confirmed."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 6,
+        "outputTokens": 7947,
+        "cacheReadInputTokens": 468378,
+        "cacheCreationInputTokens": 27540,
+        "webSearchRequests": 0,
+        "costUSD": 0.47295960000000004,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 4617,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
