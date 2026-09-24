@@ -1,0 +1,60 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3091,
+      "cacheReadInputTokens": 139443,
+      "cacheCreationInputTokens": 19749,
+      "webSearchRequests": 0,
+      "costUSD": 0.2477086,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2291,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q16": {
+      "/exam-library/emkohyo-20260217/q16-p11-1.webp": "512a853a02c96546158ca29609e30ee8954280e1d9156ee4800a713458235a2b"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-alpha-decay.png": "50ac4e2623f565d80e6df71f2f0996b5ac7a2c45cac5311129c17f325dc077e5",
+    "docs/evidence/emkohyo-choice-sources/20260217-q16-radiation-impact-classification.png": "c14e00f13961ae1447047606b56d47a19a42d1d339f2341046b81941d6260da2"
+  },
+  "candidateSha256": {
+    "emkohyo-20260217-q16": "744858356bf6aca6c1860d45425271c00e0fb78d6248ea38dea4ba35b19300f2"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q16-16.json",
+  "sourcePackSha256": "fbc8aaf10b0a87b9a9a00b6e8111dea26cf0440e617293a5c5e389cb7f9fac9e",
+  "assessment": {
+    "emkohyo-20260217-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3: 解説の理由付けがずれている。解説は『細胞分裂が盛んで未分化な細胞ほど感受性が高い』という一般則を使い、リンパ組織を造血系に含めて、神経組織より感受性が高いと結論している。しかしリンパ組織の高い感受性の中心は成熟した小リンパ球にあり、分裂していなくても間期死を起こす。これは分裂頻度・分化度の一般則に当てはまらない代表的な例外である。『リンパ組織を含む造血系』とまとめて分裂の一般則から導くのは、因果として不正確である。リンパ組織（リンパ球）が臓器・組織の放射線感受性で最も高い群に、神経組織が低い群に分類されることを直接の根拠にし、結論の書き方を改めるべきである。"
+      ],
+      "sourceIssues": [
+        "肢3: 引用した環境省『臓器・組織の放射線感受性』(03-02-06) の本文抜粋2件は、造血幹細胞・未分化造血細胞・消化管上皮・神経組織・筋組織にしか触れていない。『リンパ組織』『リンパ球』の語はなく、問題文の比較対象であるリンパ組織の感受性を直接支えていない。同ページの図に感受性順の臓器表（リンパ組織・造血組織＝最も高い、神経組織＝低い）がある可能性はあるが、その図は sourcePageImages に取り込まれていないため確認できない。該当図を取得・保存し、リンパ組織の記載を示すか、リンパ組織の高感受性を直接述べた政府一次資料に差し替える必要がある。"
+      ],
+      "needsExternalCheck": [
+        "環境省 令和7年度基礎資料 03-02-06『臓器・組織の放射線感受性』のページ図に、リンパ組織が最も感受性の高い群、神経組織が低い群として載っているかを原図で確認する。載っていれば、その図を docs/evidence/emkohyo-choice-sources に保存し、SHA256 とともに sourcePageImages に登録する。"
+      ]
+    }
+  }
+}

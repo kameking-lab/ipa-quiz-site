@@ -142,7 +142,8 @@ def main() -> None:
         "物性値の温度・単位が出典と整合するか、近似であるなら比較結論が支持されるか検査する。"
         "政府ページが理由を直接支えない場合sourceIssuesに記す。見出しのみの一般資料を根拠として通さない。"
         "出力はJSONオブジェクトのみ。キーは問題ID、値はstatus(PASS/FIX),textIssues,choiceIssues,reasonIssues,sourceIssues,needsExternalCheck。"
-        "全issue項目は文字列配列。PASSなら全配列空。疑義は具体的に記す。"
+        "textIssues、choiceIssues、reasonIssues、sourceIssues、needsExternalCheckは、いずれも必ず文字列配列で出力する。"
+        "特にneedsExternalCheckをfalseやnullにしない。PASSなら5配列すべて[]。疑義は具体的に記す。"
     )
     payload = (prompt + "\n公式試験日・原典: " + json.dumps(
                    {key: paper_meta[key] for key in ("id", "label", "date", "pdfUrl", "pdfSha256")},

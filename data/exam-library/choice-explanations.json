@@ -22726,5 +22726,67 @@
         "url": "https://www.mhlw.go.jp/content/11201000/000606772.pdf"
       }
     ]
+  },
+  "emkohyo-20260217-q16": {
+    "sourceHash": "fa54b7e3ca4fee9efe61dc8e845d86d0d0cf3148c90f5c2bef782045a0cfcd6d",
+    "correctChoice": 1,
+    "summary": "α崩壊で質量数は4減るのに、2減るとした肢1が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "α粒子は陽子2個と中性子2個からなるヘリウム原子核です。α崩壊では陽子数が2、中性子数も2減るため、原子番号は2、質量数は合計4減ります。質量数が2減るとした記述が誤りで、この肢が正答です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "厚生労働省掲載の放射線用語集は、γ線の生物に影響を与える電離作用はα線・β線に比べて小さいと説明しています。したがってβ線の方がγ線より電離作用が大きいという記述は正しく、誤りを選ぶ本問の正答ではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "環境省の臓器・組織別の感受性図では、リンパ組織（脾臓・胸腺・リンパ節）を造血系の高感受性群に、神経を感受性の低い伝達系に置いています。両組織を直接比較するとリンパ組織の方が高く、この記述は正しいです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "環境省の報告書は、身体的影響のうち急性効果と発がん以外の晩発効果を確定的影響と明記しています。これらはしきい線量を超えると線量に応じて障害の重篤度が増す一方、がん・白血病は確率的影響です。この分類に沿うため、記述は正しいです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "環境省の分類図では、遺伝性影響を子孫に現れる影響として、潜伏期間では晩発影響、機序では確率的影響側に置いています。ただしヒトで被ばく由来の遺伝性疾患の増加が確認されたという意味ではありません。分類を述べたこの肢は正しいです。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 放射線はどこで生まれる？",
+        "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+      },
+      {
+        "title": "厚生労働省掲載 放射線関連用語集",
+        "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/housya/dl/houkokusho22.pdf"
+      },
+      {
+        "title": "環境省 臓器・組織の放射線感受性",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html"
+      },
+      {
+        "title": "環境省 放射線影響の分類",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html"
+      },
+      {
+        "title": "環境省 確定的影響（組織反応）と確率的影響",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-01-04.html"
+      },
+      {
+        "title": "環境省 被ばくと健康影響について（その2）報告書",
+        "url": "https://www.env.go.jp/content/900481428.pdf"
+      },
+      {
+        "title": "環境省 影響の種類",
+        "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html"
+      }
+    ]
   }
 }

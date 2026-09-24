@@ -21,37 +21,134 @@
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "α粒子は陽子2個と中性子2個から成るヘリウム4の原子核です。α崩壊では原子番号が2減りますが、質量数は4減ります。質量数も2減るとした部分が誤りなので、この肢が正答です。"
+            "reason": "α粒子は陽子2個と中性子2個からなるヘリウム原子核です。α崩壊では陽子数が2、中性子数も2減るため、原子番号は2、質量数は合計4減ります。質量数が2減るとした記述が誤りで、この肢が正答です。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "電離作用の強さは一般にα線、β線、γ線の順です。荷電粒子のβ線は、電荷を持たない光子であるγ線より電離作用が大きいので、この記述は正しく、誤りを選ぶ本問の正答ではありません。"
+            "reason": "厚生労働省掲載の放射線用語集は、γ線の生物に影響を与える電離作用はα線・β線に比べて小さいと説明しています。したがってβ線の方がγ線より電離作用が大きいという記述は正しく、誤りを選ぶ本問の正答ではありません。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "細胞分裂が盛んな組織ほど放射線感受性が高くなります。リンパ組織は感受性が最も高い部類に入り、分裂の少ない神経組織は低い部類です。したがってこの記述は正しく、正答ではありません。"
+            "reason": "環境省の臓器・組織別の感受性図では、リンパ組織（脾臓・胸腺・リンパ節）を造血系の高感受性群に、神経を感受性の低い伝達系に置いています。両組織を直接比較するとリンパ組織の方が高く、この記述は正しいです。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "身体的影響のうち、白血病やがんなどの悪性腫瘍は確率的影響です。それ以外は確定的影響（組織反応）で、しきい値を超えると線量に応じて重篤度が増すとされています。この記述は正しいので正答ではありません。"
+            "reason": "環境省の報告書は、身体的影響のうち急性効果と発がん以外の晩発効果を確定的影響と明記しています。これらはしきい線量を超えると線量に応じて障害の重篤度が増す一方、がん・白血病は確率的影響です。この分類に沿うため、記述は正しいです。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "遺伝的影響は、被ばくした本人ではなく子孫に現れる影響です。本問はこれを晩発影響に含む分類で出題されており、公式正答は肢1です。そのため、この肢は正しい記述として扱われています。"
+            "reason": "環境省の分類図では、遺伝性影響を子孫に現れる影響として、潜伏期間では晩発影響、機序では確率的影響側に置いています。ただしヒトで被ばく由来の遺伝性疾患の増加が確認されたという意味ではありません。分類を述べたこの肢は正しいです。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "環境省 放射線はどこで生まれる？",
+            "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html"
+          },
+          {
+          "title": "厚生労働省掲載 放射線関連用語集",
+            "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/housya/dl/houkokusho22.pdf"
+          },
+          {
+            "title": "環境省 臓器・組織の放射線感受性",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html"
+          },
+          {
+            "title": "環境省 放射線影響の分類",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html"
+          },
+        {
+          "title": "環境省 確定的影響（組織反応）と確率的影響",
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-04.html"
+        },
+        {
+          "title": "環境省 被ばくと健康影響について（その2）報告書",
+          "url": "https://www.env.go.jp/content/900481428.pdf"
+        },
+          {
+            "title": "環境省 影響の種類",
+            "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "科目別packの2資料（職場における労働衛生対策、労働安全衛生法）には、α崩壊の質量数変化、放射線の電離作用、組織の感受性、確定的影響と確率的影響の区別を直接述べた本文がありません。正答理由を支える一次資料の抜粋を用意できていないため、検索が必要です（例: 原子力規制委員会・環境省の放射線基礎資料、電離放射線障害防止規則関係の通達）。",
-        "肢5で遺伝的影響を『晩発影響』に分類する扱いは、教科書によって異なります（晩発影響を身体的影響の下位区分に限るものもあります）。公式正答から正しい記述として扱いましたが、根拠資料での確認には検索が必要です。",
-        "既存解説には、肢2（β線とγ線の電離作用の比較）への具体的な言及がありません。本overlayで補いました。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-03-01.html",
+          "excerpt": "α線とは、陽子２個と中性子２個からなるヘリウム原子核",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/housya/dl/houkokusho22.pdf",
+          "excerpt": "生物に影響を与える電離作用はα線、β線に比べて",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html",
+          "excerpt": "細胞分裂が盛んで、分化の程度の低い細胞ほど、放射線感受性が高い傾向",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-02-06.html",
+          "excerpt": "細胞分裂をしない神経組織や筋組織は放射線に強い",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "一方、「確率的影響」は、がんや遺伝性影響",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-04.html",
+          "excerpt": "症状の重症度は重くなります",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900481428.pdf",
+          "excerpt": "身体的影響のうち、急性効果と、発がん以外の晩発効果は、あるしきい値を超える線量に応じて障害の重篤度が変化します",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "子供や孫等子孫に出る遺伝性影響",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-03.html",
+          "excerpt": "数か月後以降に現れる「晩発影響」",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/03-01-02.html",
+          "excerpt": "ヒトでは、動物実験の結果と同じような頻度で放射線による遺伝性疾患が出現することは、確認されていません",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-20260217-q17": {
       "overlay": {
@@ -208,26 +305,26 @@
           }
         ],
         "sources": [
-        {
-          "title": "厚生労働省 作業環境評価基準の適用について（基発第605号）",
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
-        },
-        {
-          "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号・別表）",
-          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000"
-        },
+          {
+            "title": "厚生労働省 作業環境評価基準の適用について（基発第605号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2166&dataType=1&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号・別表）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000"
+          },
           {
             "title": "厚生労働省 管理濃度・抑制濃度等一覧 参考資料2-2",
             "url": "https://www.mhlw.go.jp/file/05-Shingikai-11201000-Roudoukijunkyoku-Soumuka/0000080701.pdf"
           },
           {
-          "title": "厚生労働省掲載 業務上疾病に関する医学的知見の収集に係る調査研究（化学物質等による疾病）報告書",
+            "title": "厚生労働省掲載 業務上疾病に関する医学的知見の収集に係る調査研究（化学物質等による疾病）報告書",
             "url": "https://www.mhlw.go.jp/content/11201000/000748737.pdf"
           },
           {
             "title": "厚生労働省掲載 日本産業衛生学会 許容濃度等の勧告（2019年度）",
             "url": "https://www.mhlw.go.jp/content/11201000/000606772.pdf"
-        }
+          }
         ]
       },
       "sourceEvidence": [
@@ -294,10 +391,26 @@
         "sha256": "11c12c8fd05a180cf5b56eee100e8821cf3e392e6c929c86bc0fc2ccd9975fd4",
         "publication": "日本産業衛生学会 許容濃度等の勧告（2025年度）, 産業衛生学雑誌 67(5)",
         "checks": [
-          {"pdfPage": 1, "excerpt": "ここに述べる有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，", "purpose": "騒音・振動・高温・寒冷を含む前文の現行性"},
-          {"pdfPage": 18, "excerpt": "感作性物質を，反応の場としての気道と皮膚に分けて", "purpose": "気道と皮膚の分類を2025年度版で確認"},
-          {"pdfPage": 18, "excerpt": "物質（第3 群）", "purpose": "第1〜第3群の分類を2025年度版で確認"},
-          {"pdfPage": 10, "excerpt": "III．発がん性分類", "purpose": "発がん性分類の章が現行勧告に存在することを確認"}
+          {
+            "pdfPage": 1,
+            "excerpt": "ここに述べる有害物質の許容濃度，生物学的許容値，騒音，衝撃騒音，高温，",
+            "purpose": "騒音・振動・高温・寒冷を含む前文の現行性"
+          },
+          {
+            "pdfPage": 18,
+            "excerpt": "感作性物質を，反応の場としての気道と皮膚に分けて",
+            "purpose": "気道と皮膚の分類を2025年度版で確認"
+          },
+          {
+            "pdfPage": 18,
+            "excerpt": "物質（第3 群）",
+            "purpose": "第1〜第3群の分類を2025年度版で確認"
+          },
+          {
+            "pdfPage": 10,
+            "excerpt": "III．発がん性分類",
+            "purpose": "発がん性分類の章が現行勧告に存在することを確認"
+          }
         ]
       },
       "reviewIssues": []
