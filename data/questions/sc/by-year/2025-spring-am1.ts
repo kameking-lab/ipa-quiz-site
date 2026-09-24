@@ -114,12 +114,12 @@ export const SC_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "サービスマネジメント",
     "topicTags": [],
     "difficulty": 3,
-    "question": "二つのシステム A, B の稼働率をそれぞれ (0<a<1), α8 (0<a<1), MTBFをそれぞれ MTBFA, MTBFB, MTTR をそれぞれ MTTRA, MTTR』としたとき,これらの関係として、常に成り立つものはどれか。",
+    "question": "二つのシステムA、Bの稼働率をそれぞれαA（0<αA<1）、αB（0<αB<1）、MTBFをそれぞれMTBFA、MTBFB、MTTRをそれぞれMTTRA、MTTRBとしたとき、これらの関係として、常に成り立つものはどれか。",
     "choices": {
-      "ア": "₁=Bならば、MTBFA=MTBF』であり,かつ MTTRA=MTTR』である。",
-      "イ": "A=Bならば、MTTRA / MTBFA=MTTRB / MTBF』である。",
-      "ウ": "> Bならば、 MTBFA > MTBFBであり,かつ MTTRA MTTRである。",
-      "エ": "CA > Bならば, MTTRA / MTBFA > MTTRB / MTBFBである。"
+      "ア": "αA=αBならば、MTBFA=MTBFBであり、かつMTTRA=MTTRBである。",
+      "イ": "αA=αBならば、MTTRA/MTBFA=MTTRB/MTBFBである。",
+      "ウ": "αA>αBならば、MTBFA>MTBFBであり、かつMTTRA>MTTRBである。",
+      "エ": "αA>αBならば、MTTRA/MTBFA>MTTRB/MTBFBである。"
     },
     "answer": "イ",
     "explanation": "稼働率は α = MTBF / (MTBF + MTTR) = 1 / (1 + MTTR/MTBF) です。αA = αBなら、MTTRA/MTBFA = MTTRB/MTBFBとなり、イが必ず成り立ちます。\n\nアは誤りです。MTBFとMTTRが同じ比率で増えても稼働率は変わりません。ウも必ずしも成り立ちません。稼働率の大小で分かるのはMTTR/MTBFという比の大小で、両方の値それぞれの大小は決まりません。エは不等号が逆です。αA > αBならMTTRA/MTBFA < MTTRB/MTBFBです。",
@@ -138,7 +138,7 @@ export const SC_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "category": "コンピュータシステム",
     "topicTags": [],
     "difficulty": 3,
-    "question": "仮想記憶管理におけるページ置換えアルゴリズムとしてLRU方式を採用する。主記憶のページ枠が, 4000, 5000, 6000, 7000番地 (いずれも16進数)の4ページ分で、プログラムが参照するページ番号の順が、1→2→3→4→25→3→1→6→5→4のとき、最後の参照ページ4は何番地にページインされているか。ここで、最初の1→2→3→4の参照で、それぞれのページは4000, 5000, 6000, 7000番地にページインされるものとする。",
+    "question": "仮想記憶管理におけるページ置換えアルゴリズムとしてLRU方式を採用する。主記憶のページ枠が、4000、5000、6000、7000番地（いずれも16進数）の4ページ分で、プログラムが参照するページ番号の順が、1→2→3→4→2→5→3→1→6→5→4のとき、最後の参照ページ4は何番地にページインされているか。ここで、最初の1→2→3→4の参照で、それぞれのページは4000、5000、6000、7000番地にページインされるものとする。",
     "choices": {
       "ア": "4000",
       "イ": "5000",
@@ -264,7 +264,7 @@ export const SC_QUESTIONS_2025_SPRING_AM1: Question[] = [
     "question": "無線LANのアクセスポイントやIP電話機などに、LANケーブルを利用して給電も行う仕組みはどれか。",
     "choices": {
       "ア": "PLC",
-      "イ": "POE",
+      "イ": "PoE",
       "ウ": "UPS",
       "エ": "USB"
     },
