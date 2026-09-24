@@ -1,0 +1,93 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "machinery",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3481,
+      "cacheReadInputTokens": 140024,
+      "cacheCreationInputTokens": 18965,
+      "webSearchRequests": 0,
+      "costUSD": 0.24935279999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1703,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bbe5c2e4a849c6ed6656dc151c98cf42255a9c383dfab45fbbe8d8fff8aaf4a2",
+  "inputRequestSha256": "c23bc94d4dc76ee4eb7b423e8be2c84e0e8ac507fcc32075d14d11155c0c0de0",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "afe88d655ea3e28d3160d77573f38086ac169643df837d879bc10d1f50c25207",
+      "q06": "d0a51c04d0d7d250408b8717277f3e9e23467c087ecdd9415395cab34a1b87ef"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/machinery/p08.png": "adc484a243f59f13e7ba8811a6129ad443438a5a24033ebad5c3dcef79d87df4",
+      "data/raw_pdfs/denken3/review/20250323/machinery/p09.png": "2adc07cf39865f6ae3eddc5c6516034aa6404eb505a5400fd42466845140aab7"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "66e8b0070a314cd78ed9b9f3edd3d75eeaf442b258fd0aacab0e7d9620c75b9f",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "2dd0f5c3b501d886569a425e66a6297f93c11cf88554c812bc99baf5e71c323f",
+    "referencePdfSha256": {},
+    "referencePageSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original page, printed page -5-, in every sentence. The candidate text contains the opening line, both paragraphs, all blanks (ア)–(オ), and the final instruction to choose from (1)–(5).",
+        "The (1)–(5) choice table matches the original row by row. (1) 小さい/小さく/大きく/大きい/大きく, (2) 小さい/大きく/大きく/大きい/小さく, (3) 小さい/大きく/大きく/小さい/大きく, (4) 大きい/大きく/小さく/大きい/小さく, (5) 大きい/小さく/小さく/小さい/大きく.",
+        "officialAnswer=2 matches the manifest's official answer (question 5, answer \"2\").",
+        "The general explanation is correct. From N=120f/p, a low-speed water turbine at fixed frequency needs many poles, so (ア) is 小さい and (イ) is 大きく. With many poles, the rotor diameter is large compared with its axial length, so (ウ) is 大きく. The turbine generator runs at high speed with 2 or 4 poles, so (エ) is 大きい. Centrifugal force limits the rotor diameter, giving a long, thin rotor, so (オ) is 小さく. The chain of reasoning is consistent.",
+        "Each choice explanation names the correct and incorrect blanks accurately. (1): イ and オ are wrong. (3): エ and オ are wrong. (4): ア and ウ are wrong. (5): all five blanks are wrong. No explanation contradicts the table.",
+        "There is no figure. figureUrls is empty, which is appropriate because the question is a word-combination table only.",
+        "officialReferenceUrls is empty, and the explanation makes no independent claim that depends on an external source. It uses only the basic relation N=120f/p and general structural facts.",
+        "reviewedFromPage=[8] is consistent with printed page -5- and footer T2-K 008. The offset from question 6 (page 9) is also consistent.",
+        "The attribution is consistent. 2025-03-23 was the lower-term exam of Reiwa 6, fiscalYear=2024, and machinery is the third subject, matching the q03 file."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original page, printed page -6-. The numbers and units match: 11 000 kV·A, 6 600 V, 750 A, 54 A, and the unit [A].",
+        "The choices match the original: (1) 69, (2) 96, (3) 120, (4) 208, (5) 289.",
+        "officialAnswer=1 matches the manifest's official answer (question 6, answer \"1\").",
+        "Recalculated rated current: In = 11 000×10³/(√3×6 600) = 11 000 000/11 431.5 ≈ 962.3 A. The candidate's figure is correct.",
+        "Recalculated field current: If = 54×962.3/750 ≈ 69.3 A. The closest choice is (1) 69. The candidate's figure is correct.",
+        "The reason given for treating the three-phase short-circuit curve as a straight line is correct: the armature current lags by about 90°, its demagnetizing effect weakens the resultant flux, and the core does not saturate.",
+        "Choice (2) check: 750×96/54 ≈ 1 333 A, which does not equal the rated current of about 962.3 A. Correct.",
+        "Choice (3) check: 11 000×10³/6 600 ≈ 1 666.7 A, and 54×1 666.7/750 = 120.0 A. This correctly reproduces the error of dropping √3.",
+        "Choice (4) check: multiplying by √3 gives about 2 886.8 A, and 54×2 886.8/750 ≈ 207.8 A. This correctly reproduces the error of multiplying by √3 instead of dividing.",
+        "Choice (5) check: 750×289/54 ≈ 4 014 A, which does not equal the rated current. Correct.",
+        "The uncertainty field states that the question does not explicitly say the short-circuit characteristic is linear. This is standard for this exam and not an ambiguity, and the calculation is the same under the official answer.",
+        "There is no figure, and figureUrls is empty, which is appropriate. officialReferenceUrls is empty, and there are no external claims that would need verification.",
+        "reviewedFromPage=[9] is consistent with printed page -6- and footer T2-K 009."
+      ]
+    }
+  ]
+}
