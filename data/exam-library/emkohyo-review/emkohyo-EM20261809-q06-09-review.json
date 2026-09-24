@@ -1,0 +1,101 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4309,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 29297,
+      "webSearchRequests": 0,
+      "costUSD": 0.3208198,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3529,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q06-09-raw-response.txt",
+  "rawResponseSha256": "50e98687c368c0cca52832316deb6ebd3a8999c0a114720103c08626c484ed01",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q6",
+    "emkohyo-EM20261809-q7",
+    "emkohyo-EM20261809-q8",
+    "emkohyo-EM20261809-q9"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q6": {
+      "/exam-library/emkohyo-EM20261809/text-q6-p4-fig1.webp": "c661aa2666de896c1800f57b9fd9b5af65efea125fbde0571254da5ceef46cf9"
+    },
+    "emkohyo-EM20261809-q7": {},
+    "emkohyo-EM20261809-q8": {},
+    "emkohyo-EM20261809-q9": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q6": {
+      "/exam-library/emkohyo-EM20261809/q6-p4-1.webp": "5f28e0740e6ca3cd2d0ba5698eacf62bc72b720ebe76a10c225e75ba5a5ae87e"
+    },
+    "emkohyo-EM20261809-q7": {
+      "/exam-library/emkohyo-EM20261809/q7-p5-0.webp": "3f4f849195ee891ab28f0d27426006465561d66ae38812863dd5025f7fab5e83"
+    },
+    "emkohyo-EM20261809-q8": {
+      "/exam-library/emkohyo-EM20261809/q8-p5-1.webp": "1f403326a981917ff8183de3b55eaca332caae8bfb501b01625bb1dc33688083"
+    },
+    "emkohyo-EM20261809-q9": {
+      "/exam-library/emkohyo-EM20261809/q9-p6-0.webp": "eb97e955f7a99617f4042d02c9f212939bc14e9dd51d8a0040fcaf37326ad2f6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q6": "71ebd0aeb08cc8a4a337a1c29a0fd4426b8f11ed25c9833509376c24f2f271b5",
+    "emkohyo-EM20261809-q7": "5a2d97c283147e6a07da85f8cf91d9baea1d14df7d9c5cf45bf5137757299647",
+    "emkohyo-EM20261809-q8": "5a7a6ec442c18220dfdb7aa5d8c03adb66b5767bed6a0bcc6116c18d1a50aa18",
+    "emkohyo-EM20261809-q9": "0bf458710a966824b9bc234d29e1d090baf147fe420ab173bdad7fcd4703fc98"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q06-09.json",
+  "sourcePackSha256": "692a12fed4fa0dd9e465b1fac167251aae09321605ab1699da7b9f430f42acfc",
+  "assessment": {
+    "emkohyo-EM20261809-q6": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢5の理由は「²⁴¹Amは59.5keVのγ線を放出する」と「電離箱式サーベイメータは1cm線量当量（率）の測定ができる」を並べ、そこから「²⁴¹Amを測定できる」と結論している。しかし、電離箱式サーベイメータのエネルギー特性が59.5keVの低エネルギーγ線まで及ぶことを直接示す政府資料はない。ATOMICA「サーベイメータ」は用途と相対感度を述べるだけで、エネルギー応答範囲には触れていない。59.5keVの出典であるATOMICA「RIの分析計測機器への応用原理」も、蛍光X線分析の励起源としての記述である。電離箱式サーベイメータの適用エネルギー範囲（例: 約30keV以上）を示す公的資料を追加するか、理由を資料が支える範囲に限定すること。"
+      ],
+      "needsExternalCheck": [
+        "電離箱式サーベイメータの適用γ線エネルギー下限が²⁴¹Amの59.5keVγ線を含むこと（放射線測定器JIS規格、JAEA・原子力規制庁等の公的資料で確認）"
+      ]
+    },
+    "emkohyo-EM20261809-q8": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q9": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}
