@@ -30,6 +30,7 @@ import {
   getLastUpdatedISO,
 } from "@/lib/questions/last-updated";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   findQuestionByRoute,
@@ -73,7 +74,7 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
     exam: q.exam,
     yearSeason: `${q.year}-${q.season}`,
     section: q.session,
-    qnum: `q${q.qNumber}`,
+    qnum: `q${q.qNumber}${q.part ?? ""}`,
   }));
 }
 
@@ -124,7 +125,7 @@ function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
   const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
-  const qMatch = /^q(\d+)$/.exec(p.qnum);
+  const qMatch = /^q(\d+)([ab])?$/.exec(p.qnum);
   if (!qMatch) return undefined;
   const qNumber = Number(qMatch[1]);
 
@@ -134,7 +135,8 @@ function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
       q.year === year &&
       q.season === yearSeasonMatch[2] &&
       q.session === p.section &&
-      q.qNumber === qNumber,
+      q.qNumber === qNumber &&
+      q.part === qMatch[2],
   );
 }
 
@@ -290,7 +292,7 @@ export default async function QuestionPage({
             /
           </li>
           <li aria-current="page" className="font-medium text-foreground">
-            問{q.qNumber}
+            問{questionNumberLabel(q)}
           </li>
         </ol>
       </nav>
@@ -304,7 +306,8 @@ export default async function QuestionPage({
             </Badge>
             <Badge variant="soft">{questionSourceEdition(q)}</Badge>
             <Badge variant="outline">{sessionLabel(q.session)}</Badge>
-            <Badge variant="outline">問 {q.qNumber}</Badge>
+            <Badge variant="outline">問 {questionNumberLabel(q)}</Badge>
+            {q.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
           <div className="print:hidden">
@@ -313,7 +316,7 @@ export default async function QuestionPage({
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {questionSourceEdition(q)} {questionSourceExam(q)}{" "}
-          {sessionLabel(q.session)} 問{q.qNumber}
+          {sessionLabel(q.session)} 問{questionNumberLabel(q)}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {topicPageExists ? (
@@ -400,6 +403,7 @@ export default async function QuestionPage({
             season={q.season}
             session={q.session}
             qNumber={q.qNumber}
+            part={q.part}
             nextHref={next ? questionPagePath(next) : undefined}
           />
         </section>
@@ -440,7 +444,7 @@ export default async function QuestionPage({
                   <dl className="space-y-3 text-sm leading-relaxed">
                     {Object.entries(q.choices).map(([key, choice]) => (
                       <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                        <dt className="font-bold text-primary">{key}</dt>
+                        <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
                         <dd>
                           <p className="font-medium text-foreground">{choice}</p>
                           <p className="mt-1 text-muted-foreground">
@@ -592,7 +596,7 @@ export default async function QuestionPage({
                 <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   前の問題
                 </span>
-                <span className="truncate">問 {prev.qNumber}</span>
+                      <span className="truncate">問 {questionNumberLabel(prev)}</span>
               </span>
             </Button>
           </Link>
@@ -615,7 +619,7 @@ export default async function QuestionPage({
                 <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   次の問題
                 </span>
-                <span className="truncate">問 {next.qNumber}</span>
+                      <span className="truncate">問 {questionNumberLabel(next)}</span>
               </span>
               <ChevronRight className="h-4 w-4 shrink-0" />
             </Button>
@@ -655,7 +659,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -696,7 +700,7 @@ export default async function QuestionPage({
                       {questionSourceExam(r)}
                     </Badge>
                     <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceEdition(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -733,7 +737,7 @@ export default async function QuestionPage({
                       {questionSourceEdition(r)}
                     </Badge>
                     <span>
-                      {questionSourceExam(r)} {sessionLabel(r.session)} 問{r.qNumber}
+                      {questionSourceExam(r)} {sessionLabel(r.session)} 問{questionNumberLabel(r)}
                     </span>
                   </div>
                   <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
@@ -794,7 +798,7 @@ export default async function QuestionPage({
             <Link href={questionPagePath(prev)} className="block">
               <Button variant="outline" size="md" className="w-full">
                 <ChevronLeft className="h-4 w-4" />
-                <span className="text-xs">問 {prev.qNumber}</span>
+                <span className="text-xs">問 {questionNumberLabel(prev)}</span>
               </Button>
             </Link>
           ) : (
@@ -805,7 +809,7 @@ export default async function QuestionPage({
           {next ? (
             <Link href={questionPagePath(next)} className="block">
               <Button variant="primary" size="md" className="w-full">
-                <span className="text-xs">問 {next.qNumber}</span>
+                <span className="text-xs">問 {questionNumberLabel(next)}</span>
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </Link>

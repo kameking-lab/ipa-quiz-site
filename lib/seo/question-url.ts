@@ -7,8 +7,8 @@ export interface QuestionRouteParams {
   qnum: string;
 }
 
-export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber">): string {
-  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/q${q.qNumber}`;
+export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber"> & Partial<Pick<Question, "part">>): string {
+  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/q${q.qNumber}${q.part ?? ""}`;
 }
 
 export function parseQuestionRoute(params: QuestionRouteParams): {
@@ -17,15 +17,18 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: "a" | "b";
 } | null {
   const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|may|september|january)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;
 
-  const qMatch = /^q(\d+)$/.exec(params.qnum);
+  const qMatch = /^q(\d+)([ab])?$/.exec(params.qnum);
   if (!qMatch) return null;
   const qNumber = Number(qMatch[1]);
+  const part = qMatch[2] as "a" | "b" | undefined;
+  if (part && params.exam !== "denken3") return null;
 
   return {
     exam: params.exam as ExamCode,
@@ -33,6 +36,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
     season,
     session: params.section as Session,
     qNumber,
+    ...(part ? { part } : {}),
   };
 }
 
@@ -42,8 +46,9 @@ function routeKey(
   season: string,
   session: string,
   qNumber: number,
+  part?: "a" | "b",
 ): string {
-  return `${exam}/${year}-${season}/${session}/q${qNumber}`;
+  return `${exam}/${year}-${season}/${session}/q${qNumber}${part ?? ""}`;
 }
 
 // O(1) route lookup. The /q/* page resolves the question twice per request
@@ -59,7 +64,7 @@ function getRouteIndex(pool: Question[]): Map<string, Question> {
   if (!index) {
     index = new Map();
     for (const q of pool) {
-      index.set(routeKey(q.exam, q.year, q.season, q.session, q.qNumber), q);
+      index.set(routeKey(q.exam, q.year, q.season, q.session, q.qNumber, q.part), q);
     }
     routeIndexByPool.set(pool, index);
   }
@@ -73,6 +78,6 @@ export function findQuestionByRoute(
   const parsed = parseQuestionRoute(params);
   if (!parsed) return undefined;
   return getRouteIndex(pool).get(
-    routeKey(parsed.exam, parsed.year, parsed.season, parsed.session, parsed.qNumber),
+    routeKey(parsed.exam, parsed.year, parsed.season, parsed.session, parsed.qNumber, parsed.part),
   );
 }

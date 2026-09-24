@@ -312,15 +312,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "第三種電気主任技術者試験",
     urlSlug: "denken3",
     level: "advanced",
-    sessions: [{
-      session: "riron",
-      urlSlug: "riron",
-      expectedQuestions: 17,
-      label: "理論",
-      categories: ["電気理論", "電子理論", "電気計測", "電子計測"],
-    }],
-    seasons: ["first"],
-    yearRange: { start: 2025, end: 2025 },
+    sessions: [
+      { session: "riron", urlSlug: "riron", expectedQuestions: 20, label: "理論", categories: ["電気理論", "電子理論", "電気計測", "電子計測"] },
+      { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 20, label: "電力", categories: ["発電", "変電", "送配電", "電気材料"] },
+      { session: "kikai", urlSlug: "kikai", expectedQuestions: 20, label: "機械", categories: ["電気機器", "パワーエレクトロニクス", "照明", "情報"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["電気事業法", "電気設備技術基準", "電気施設管理"] },
+    ],
+    seasons: ["first", "second"],
+    yearRange: { start: 2024, end: 2025 },
   },
   denko2: {
     code: "denko2",

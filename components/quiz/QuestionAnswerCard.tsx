@@ -16,6 +16,7 @@ import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 
 
 interface Props {
@@ -29,6 +30,7 @@ interface Props {
   season: Season;
   session: Session;
   qNumber: number;
+  part?: "a" | "b";
   /** /q path of the next question in the same session, if any. */
   nextHref?: string;
 }
@@ -63,6 +65,7 @@ export function QuestionAnswerCard({
   season,
   session,
   qNumber,
+  part,
   nextHref,
 }: Props) {
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
@@ -84,14 +87,14 @@ export function QuestionAnswerCard({
         if (readSettings().recordHistory) {
           createHistoryStore().record({ id: questionId, selected: key, correct, at: now });
         }
-        writeLastQuestion({ exam, year, season, session, qNumber, answeredAt: now });
+        writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
         recordReview(questionId, correct);
       } catch {
         /* ignore storage errors */
       }
     },
-    [answerKey, questionId, exam, year, season, session, qNumber],
+    [answerKey, questionId, exam, year, season, session, qNumber, part],
   );
 
   const onSelect = React.useCallback(
@@ -133,7 +136,9 @@ export function QuestionAnswerCard({
   }, [revealed, keys, onSelect]);
 
   const isCorrect = isAcceptedAnswer(answerKey, selected);
-  const answerLabel = formatAcceptedAnswers(answerKey);
+  const answerLabel = exam === "denken3"
+    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
+    : formatAcceptedAnswers(answerKey);
 
   return (
     <div className="space-y-4">
@@ -146,6 +151,7 @@ export function QuestionAnswerCard({
           <ChoiceButton
             key={key}
             choiceKey={key}
+            displayLabel={choiceDisplayLabel(exam, key)}
             text={choices[key]!}
             imageUrl={choiceImageUrls?.[key]}
             revealed={revealed}
@@ -191,7 +197,10 @@ export function QuestionAnswerCard({
             {selected === undefined ? (
               <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
             ) : isCorrect ? (
-              <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
+              <>
+                <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
+                {exam === "denken3" && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
+              </>
             ) : (
               <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>
             )}

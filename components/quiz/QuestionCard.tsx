@@ -3,6 +3,7 @@ import { QuestionFigures } from "./QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import { Badge } from "@/components/ui/badge";
 import type { Question } from "@/lib/questions/types";
+import { questionNumberLabel } from "@/lib/questions/display";
 import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { QuestionBody } from "./QuestionBody";
 import { TTSButton } from "./TTSButton";
@@ -20,7 +21,8 @@ export function QuestionCard({
         <Badge variant="outline">
           {questionSourceExam(question)} {questionSourceEdition(question)}
         </Badge>
-        <Badge variant="default">問{question.qNumber}</Badge>
+        <Badge variant="default">問{questionNumberLabel(question)}</Badge>
+        {question.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
         <Badge variant="default">{question.category}</Badge>
         {question.topicTags.slice(0, 3).map((t) => (
           <Badge key={t} variant="outline">

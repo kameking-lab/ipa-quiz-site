@@ -5,6 +5,7 @@ import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKey
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
@@ -177,6 +178,7 @@ export function QuizPlayer({
         season: question.season,
         session: question.session,
         qNumber: question.qNumber,
+        part: question.part,
         answeredAt: now,
       });
       recordSessionAnswer({
@@ -347,7 +349,9 @@ export function QuizPlayer({
     );
   }
 
-  const answerKey = formatAcceptedAnswers(question.answer);
+  const answerKey = question.exam === "denken3"
+    ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
+    : formatAcceptedAnswers(question.answer);
   const isCorrect = isAcceptedAnswer(question.answer, selected);
 
   return (
@@ -430,6 +434,7 @@ export function QuizPlayer({
                   <ChoiceButton
                     key={key}
                     choiceKey={key}
+                    displayLabel={choiceDisplayLabel(question.exam, key)}
                     text={question.choices![key]!}
                     imageUrl={question.choiceImageUrls?.[key]}
                     revealed={revealed}

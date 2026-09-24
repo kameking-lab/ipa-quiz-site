@@ -21,13 +21,13 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_QUESTIONS).toHaveLength(250);
     expect(FP2_PILOT).toHaveLength(10);
     expect(FP3_QUESTIONS).toHaveLength(120);
-    expect(DENKEN3_QUESTIONS).toHaveLength(2);
+    expect(DENKEN3_QUESTIONS).toHaveLength(320);
     expect(DENKO2_QUESTIONS).toHaveLength(200);
   });
 
-  it("keeps incomplete Denken3 out while publishing the complete electrician set", () => {
-    expect(getQualificationByExamCode("denken3")?.status).toBe("ready-to-ingest");
-    expect(QUESTIONS_BY_EXAM.denken3).toBeUndefined();
+  it("publishes complete Denken3 and electrician papers", () => {
+    expect(getQualificationByExamCode("denken3")?.status).toBe("live");
+    expect(QUESTIONS_BY_EXAM.denken3).toHaveLength(320);
     expect(getQualificationByExamCode("denko2")?.status).toBe("live");
     expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(200);
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(250);
@@ -40,7 +40,12 @@ describe("official-source qualification pilot data", () => {
 
     expect(choiceKeys.length).toBeGreaterThanOrEqual(2);
     expect(choiceKeys.length).toBeLessThanOrEqual(5);
-    expect(explanationKeys).toEqual([...choiceKeys].sort());
+    if (q.explanationCoverage === "official-summary") {
+      expect(q.exam).toBe("denken3");
+      expect(explanationKeys).toEqual([]);
+    } else {
+      expect(explanationKeys).toEqual([...choiceKeys].sort());
+    }
     expect(choiceKeys).toContain(q.answer);
     expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
     expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);

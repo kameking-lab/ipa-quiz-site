@@ -29,7 +29,7 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
-  it("answers a gated five-choice Denken3 pilot question in component validation", () => {
+  it("answers a public five-choice Denken3 question with official labels and keyboard 5", () => {
     const q = DENKEN3_QUESTIONS[0]!;
     render(
       <QuestionAnswerCard
@@ -42,11 +42,14 @@ describe("QuestionAnswerCard — solve in place", () => {
         season={q.season}
         session={q.session}
         qNumber={q.qNumber}
+        part={q.part}
       />,
     );
     expect(screen.getAllByRole("radio")).toHaveLength(5);
-    fireEvent.click(screen.getByRole("radio", { name: /選択肢 オ/ }));
+    expect(screen.getByRole("radio", { name: /選択肢 \(5\)/ })).toBeTruthy();
+    fireEvent.keyDown(window, { key: "5" });
     expect(screen.getByText("正解！")).toBeTruthy();
+    expect(createHistoryStore().getAllEntries()[0]).toMatchObject({ id: q.id, selected: "オ", correct: true });
   });
   it("renders a table in the revealed answer without raw Markdown", () => {
     const table = "| 店 |\n| --- |\n| B |";

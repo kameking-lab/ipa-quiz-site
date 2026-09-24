@@ -56,7 +56,7 @@ export function getSessionNeighbors(
         x.session === current.session &&
         isPracticeReadyQuestion(x),
     )
-    .sort((a, b) => a.qNumber - b.qNumber);
+    .sort((a, b) => a.qNumber - b.qNumber || (a.part ?? "").localeCompare(b.part ?? ""));
   const idx = sessionPool.findIndex((x) => x.id === current.id);
   return {
     prev: idx > 0 ? sessionPool[idx - 1] : null,

@@ -9,6 +9,7 @@ import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKey
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { createHistoryStore } from "@/lib/storage/history";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
@@ -202,7 +203,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
             {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            問{question.qNumber}
+            問{questionNumberLabel(question)}
           </span>
           <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
             {question.category}
@@ -246,7 +247,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
                             : "bg-white/10"
                     }`}
                   >
-                    {key}
+                    {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {revealed && isCorrect && (
@@ -376,7 +377,7 @@ function ReviewOverlay({
             {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
           <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
-            問{question.qNumber}
+            問{questionNumberLabel(question)}
           </span>
           <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
             {question.category}
@@ -402,7 +403,7 @@ function ReviewOverlay({
                   className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug ${cls}`}
                 >
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
-                    {key}
+                    {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-300" />}

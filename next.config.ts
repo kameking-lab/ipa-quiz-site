@@ -121,6 +121,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
+    // Large static question corpus: bound prerender workers so Windows CI does
+    // not exhaust memory while generating thousands of /q pages.
+    cpus: 4,
     optimizePackageImports: [
       "lucide-react",
       "@radix-ui/react-dialog",

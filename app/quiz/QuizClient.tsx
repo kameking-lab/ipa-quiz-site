@@ -8,6 +8,7 @@ import { startSession } from "@/lib/motivation/session";
 import { orderByPriority } from "@/lib/learning/spaced-repetition";
 import { aggregateByCategory } from "@/lib/learning/analytics";
 import { Loader2 } from "lucide-react";
+import Link from "next/link";
 
 const MAX_POOL = 80;
 const WEAKNESS_THRESHOLD = 0.6;
@@ -102,6 +103,8 @@ export function QuizClient({
   const [sessionIds, setSessionIds] = React.useState<string[] | null>(null);
   const [index, setIndex] = React.useState(0);
   const [current, setCurrent] = React.useState<Question | null>(null);
+  const [loadError, setLoadError] = React.useState(false);
+  const [retryCount, setRetryCount] = React.useState(0);
   const cache = React.useRef<Map<string, Question>>(new Map());
 
   // Derive session pool once on mount (needs localStorage for history modes).
@@ -109,6 +112,7 @@ export function QuizClient({
      
     setSessionIds(deriveSessionPool(poolIds, mode, categoryById));
     setIndex(0);
+    setLoadError(false);
     cache.current.clear();
     startSession(mode);
   }, [poolIds, mode, categoryById]);
@@ -130,13 +134,14 @@ export function QuizClient({
       try {
         const q = await fetchQuestion(id, shuffle);
         cache.current.set(id, q);
-        if (setActive && !cancelled) setCurrent(q);
+        if (setActive && !cancelled) { setCurrent(q); setLoadError(false); }
       } catch {
-        // leave current as null; UI shows spinner until navigation
+        if (setActive && !cancelled) setLoadError(true);
       }
     };
 
     setCurrent(cache.current.get(currentId) ?? null);
+    setLoadError(false);
     void loadInto(currentId, true);
     const nextId = sessionIds[index + 1];
     if (nextId) void loadInto(nextId, false);
@@ -144,7 +149,7 @@ export function QuizClient({
     return () => {
       cancelled = true;
     };
-  }, [sessionIds, index, mode]);
+  }, [sessionIds, index, mode, retryCount]);
 
   const handleNext = React.useCallback(() => {
     setIndex((i) => i + 1);
@@ -156,6 +161,16 @@ export function QuizClient({
         <Loader2 className="h-5 w-5 animate-spin text-sky-500" />
       </div>
     );
+  }
+
+  if (loadError) {
+    return <div role="alert" className="mx-auto max-w-xl space-y-4 px-4 py-10 text-center">
+      <p className="font-semibold">問題を読み込めませんでした。</p>
+      <div className="flex flex-wrap justify-center gap-3">
+        <button type="button" onClick={() => setRetryCount((count) => count + 1)} className="min-h-11 rounded-xl bg-primary px-5 py-2 font-semibold text-primary-foreground">再読み込み</button>
+        <Link href={backHref} className="inline-flex min-h-11 items-center rounded-xl border border-border px-5 py-2 font-semibold">科目選択へ戻る</Link>
+      </div>
+    </div>;
   }
 
   return (
