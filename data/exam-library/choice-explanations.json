@@ -28942,5 +28942,83 @@
         "url": "https://www.env.go.jp/content/900400286.pdf"
       }
     ]
+  },
+  "emkohyo-EM20261801-q4": {
+    "sourceHash": "72ec292cc2a89d7349c363a83883d2e19acbd9062fa3e24519f8bff78851f149",
+    "correctChoice": 2,
+    "summary": "尿中のトリクロル酢酸・総三塩化物はトリクロロエチレン等の指標で、1,2-ジクロロエタンの生物学的モニタリング指標ではないので（2）が誤り",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "正しい。職場のあんぜんサイトは、生物学的モニタリングを有害物やその代謝物の濃度を測るものと説明し、N,N-ジメチルホルムアミドの項目に「尿中のN―メチルホルムアミドの量」を挙げる。環境省のファクトシートは、DMFが主に肝臓で代謝物に変わり主に尿中に排せつされるとする（代謝物名はこの表による）。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "誤り。生物学的モニタリング表で「尿中のトリクロル酢酸又は総三塩化物の量」が挙がるのはトリクロロエチレン、テトラクロロエチレン、1,1,1-トリクロルエタンで、1,2-ジクロロエタンの行は皮膚所見とGOT等の検査のみである。食品安全委員会の評価書（案）でも、1,2-ジクロロエタンはCYPによる2-クロロアセトアルデヒド・2-クロロエタノールへの酸化とグルタチオン抱合で代謝され、ラットの主な尿中代謝物はチオ二酢酸とそのスルホキシドとされ、トリクロル酢酸は挙がっていない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "正しい。厚労省モデルSDSのGHS分類で、皮膚腐食性・刺激性はo-トルイジンが「区分外」、MOCAが「区分に該当しない」とされ、皮膚刺激性物質には分類されない（o-トルイジンは閉塞適用などで刺激所見の記載もあり、分類上の整理である）。経皮吸収は、リスク評価書が「オルト-トルイジンは皮膚吸収が大きく」とし、MOCAのSDSはACGIHの「Skin」表記を示す。特化則44条3項の施行通達（基発1130第4号）は、産衛学会の経皮吸収勧告又はACGIHの皮膚吸収勧告がある物質として両物質を挙げ、現行の同項も両物質（令別表第三第二号8の2・19）を掲げている。発がん性はo-トルイジン区分1A、MOCA区分1Bである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "正しい。職場のあんぜんサイトの生物学的モニタリング表では、インジウム化合物の項目として「血清インジウムの量」が挙げられている。特化則の特殊健康診断でも、インジウム化合物の業務について「血清インジウムの量の測定」が定められている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "正しい。食品安全委員会によると、吸収された鉛は骨に最も多く蓄積し、生物学的半減期は血液と軟組織で約40日、骨で約20年である。骨に蓄積した鉛もいずれは排泄されるが、半減期が約20年と長いことから排泄は極めて遅いといえ、「生物学的半減期は10年に及ぶ」という記述と矛盾しない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "職場のあんぜんサイト 生物学的モニタリング",
+        "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html"
+      },
+      {
+        "title": "環境省 PRTRファクトシート N,N-ジメチルホルムアミド",
+        "url": "https://www.prtr.env.go.jp/factsheet/factsheet/pdf/fc00232.pdf"
+      },
+      {
+        "title": "特定化学物質障害予防規則（別表第三 健康診断項目）",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS o-トルイジン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/95-53-4.html"
+      },
+      {
+        "title": "職場のあんぜんサイト モデルSDS 3,3'-ジクロロ-4,4'-ジアミノジフェニルメタン",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html"
+      },
+      {
+        "title": "食品安全委員会「鉛」の評価書に関するQ&A",
+        "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html"
+      },
+      {
+        "title": "厚生労働省 オルト－トルイジンに対する今後の対応（リスク評価書）",
+        "url": "https://www.mhlw.go.jp/file/04-Houdouhappyou-11305000-Roudoukijunkyokuanzeneiseibu-Kagakubushitsutaisakuka/0000131502.pdf"
+      },
+      {
+        "title": "食品安全委員会 化学物質・汚染物質評価書 1,2-ジクロロエタン（案）",
+        "url": "https://www.fsc.go.jp/iken-bosyu/pc2_kagaku_osen_12cletan_200925.pdf"
+      },
+      {
+        "title": "厚生労働省 労働安全衛生法施行令の一部を改正する政令及び特定化学物質障害予防規則及び労働安全衛生規則の一部を改正する省令の施行について（平成28年11月30日基発1130第4号）",
+        "url": "https://www.mhlw.go.jp/content/11300000/001409249.pdf"
+      },
+      {
+        "title": "特定化学物質障害予防規則（e-Gov法令API）",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000039"
+      },
+      {
+        "title": "労働安全衛生法施行令（e-Gov法令API）",
+        "url": "https://laws.e-gov.go.jp/api/2/law_data/347CO0000000318"
+      }
+    ]
   }
 }
