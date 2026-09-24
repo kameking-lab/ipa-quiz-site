@@ -399,42 +399,147 @@
       "overlay": {
         "sourceHash": "e91f01c6531c67f10eb96252ea4a966b67e5036d50a070b246d4f7fa62d07447",
         "correctChoice": 3,
-        "summary": "ヨウ化メチルは光で分解してヨウ素を遊離し着色するため、両物質とも光に安定とする肢3が誤り。",
+        "summary": "ヨウ化メチルは光照射下で分解が進む（水中光分解半減期13.1日）ため、両物質とも光に安定とする肢3が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "記述は正しい。臭化メチル・ヨウ化メチルはどちらも極性の小さいハロゲン化メチルで、アセトン、エタノール、エーテルなどの有機溶媒によく溶ける。水への溶解度はそれより小さい。"
+            "reason": "記述は正しい。厚生労働省のヨウ化メチルのモデルSDSは溶解度として「アセトン、四塩化炭素：可溶」と記載する。臭化メチルについても消防庁の危険物データベースが「水に微溶，有機溶媒に易溶」としており、アセトンのような有機溶媒によく溶ける。誤りを選ぶ設問なので正答ではない。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "記述は正しい。モル質量は臭化メチル約94.9g/mol、ヨウ化メチル約141.9g/molで、空気の平均モル質量約29g/molより大きい。同温同圧の気体密度はモル質量に比例するので、両者とも空気より重い。"
+            "reason": "記述は正しい。厚生労働省のモデルSDSでは、臭化メチルの相対ガス密度は3.3（空気=1）、ヨウ化メチルの蒸気密度は4.9（空気=1）である。どちらも空気を1とした値が1より大きいので、両物質の気体は空気より重い。この肢は正答ではない。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "この記述が誤りなので正答。ヨウ化メチルは光で分解しやすく、C–I結合が切れて遊離したヨウ素により黄色〜褐色に着色するため、遮光して保存する。両物質とも光に安定とはいえない。"
+            "reason": "この記述が誤り。食品安全委員会の評価書では、ヨウ化メチルはキセノンランプ照射の水中光分解試験で半減期13.1日（25℃、pH5）と分解が進み、光を当てない加水分解の半減期105日（25℃、pH4）よりずっと速い。光で分解が進むので「両物質とも光に安定」とはいえない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "記述は正しい。沸点は臭化メチル約3.6℃、ヨウ化メチル約42℃である。臭化メチルは25℃で1気圧を超える蒸気圧をもち、気体として存在する。沸点の低い臭化メチルの方が常温での蒸気圧は大きい。"
+            "reason": "記述は正しい。モデルSDSによると臭化メチルは沸点4℃で、蒸気圧は20℃ですでに1420mmHgあり、温度が高い25℃ではさらに大きい。ヨウ化メチルは沸点42.5℃で、25℃の蒸気圧は405mmHgにとどまる。したがって常温（25℃）での蒸気圧は臭化メチルの方が大きい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "記述は正しい。融点は臭化メチル約−94℃、ヨウ化メチル約−66℃で、分子量が大きく分子間力の強いヨウ化メチルの方が高い。ハロゲン化メチルでは、原子量の大きいハロゲンほど融点・沸点が高くなる傾向がある。"
+            "reason": "記述は正しい。厚生労働省のモデルSDSでは、臭化メチルの融点は−93.66℃（ICSCでは−94℃）、ヨウ化メチルの融点は−66.5℃である。ヨウ化メチルの方が約27℃高いので、この記述は正しく、誤りを選ぶ設問の正答ではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト・臭化メチル（ブロモメタン）モデルSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-83-9.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト・ヨウ化メチル モデルSDS",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html"
+          },
+          {
+            "title": "消防庁 危険物データベース・臭化メチル 物性詳細",
+            "url": "https://internal.fdma.go.jp/kiken-info/material/m_00072.html"
+          },
+          {
+            "title": "食品安全委員会・農薬評価書 ヨウ化メチル（第3版案）水中動態試験",
+            "url": "https://www.fsc.go.jp/iken-bosyu/iken-kekka/kekka.data/pc1_no_methyliodide_060604.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "添付抜粋は特定化学物質障害予防規則の燻蒸作業・健康診断の条文で、臭化メチルが規制対象であることは示すが、溶解性・蒸気密度・光安定性・蒸気圧・融点といった物性の記述を含まない。そのため sources と sourceEvidence は空にした。",
-        "肢に挙げた物性値（臭化メチル：沸点約3.6℃・融点約−94℃、ヨウ化メチル：沸点約42℃・融点約−66℃、ヨウ化メチルの光分解性、アセトンへの溶解性）は一般的な化学便覧の値によるもので、一次資料での確認は未了。職場のあんぜんサイトのモデルSDS（臭化メチル、ヨウ化メチル）やICSCを検索し、本文を確認する必要がある。",
-        "臭化メチルの光安定性（肢3の片方）を明示する資料も未確認。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "アセトン、四塩化炭素 : 可溶 : HSDB (2005)",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://internal.fdma.go.jp/kiken-info/material/m_00072.html",
+          "excerpt": "水溶性 水に微溶，有機溶媒に易溶。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-83-9.html",
+          "excerpt": "相対ガス密度 3.3 （空気=1）（ICSC(2009)）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "蒸気密度 4.9 (空気 = 1) : HSDB (2005)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/iken-bosyu/iken-kekka/kekka.data/pc1_no_methyliodide_060604.pdf",
+          "excerpt": "pH 4(酢酸緩衝液) メタノール 3.3 日(50℃) 105 日(25℃)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/iken-bosyu/iken-kekka/kekka.data/pc1_no_methyliodide_060604.pdf",
+          "excerpt": "14C-ヨウ化メチルを用いて、水中光分解試験が実施された。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/iken-bosyu/iken-kekka/kekka.data/pc1_no_methyliodide_060604.pdf",
+          "excerpt": "11 mg/L、25℃、キセノンランプ(光強度：393 W/m2)、15 日間照射 pH 5(酢酸緩衝液) メタノール、ホルムアルデヒド 13.1 日",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-83-9.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 4 ℃（GESTIS(2023)、ICSC(2009)）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-83-9.html",
+          "excerpt": "1420 mmHg（20℃）（Merck(2013)）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 42.5℃ : HSDB(2014)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "蒸気圧 405mmHg (25℃) : SRC (Access on april. 2009)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-83-9.html",
+          "excerpt": "融点／凝固点 -93.66 ℃（GESTIS(2023)） -94 ℃（ICSC(2009)）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/74-88-4.html",
+          "excerpt": "融点・凝固点 -66.5℃ : HSDB(2014)",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20251807-q15": {
       "overlay": {

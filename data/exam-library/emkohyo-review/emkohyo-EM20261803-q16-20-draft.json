@@ -287,7 +287,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】独立審査（2026-09-24、17-19）でFIX。正答肢2の核心である『騒音の単位作業場所はおおむね80dB以上の区域とする』旨を直接述べた政府一次資料が見つからない。騒音障害防止のためのガイドライン（令和5年4月20日基発0420第2号）本文と解説はA測定平均値の算定で80dB未満の値を除くことと85・90dBの管理区分を定めるだけで、単位作業場所の範囲の目安を示していない。作業環境測定基準第4条にも区域のdB目安はない。単位作業場所の範囲の目安を示す政府資料が得られるまで保留する。肢1・3・4・5は作業環境測定基準第3・6・8・12条と施行令第21条第5号で支えられる。"
+      ]
     },
     "emkohyo-EM20261803-q19": {
       "overlay": {
@@ -303,7 +305,7 @@
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "正しい。作業環境評価基準の別表で、アセトン500ppmからメチル―ノルマル―ブチルケトン5ppmまで、有機溶剤の管理濃度はすべてppmで示されている。ppmは気体では構成分子数に対する割合の百万分率で、体積の割合を表す百万分率であるから、体積分率での表示である。"
+            "reason": "正しい。作業環境評価基準の別表は、アセトン500ppmからメチル―ノルマル―ブチルケトン5ppmまで有機溶剤の管理濃度をすべてppmで示し、備考で温度25度・1気圧の空気中の濃度としている。ppmは全分子数に対する混合比の百万分率で、同じ温度・圧力の気体ではPV＝nRTにより体積が物質量に比例するから、この値は体積の割合（体積分率）にあたる。"
           },
           {
             "number": 3,
@@ -335,8 +337,12 @@
             "url": "https://cger.nies.go.jp/cgernews/201606/306003.html"
           },
           {
-            "title": "国立国会図書館 レファレンス協同データベース ppmとはどんな単位か",
-            "url": "https://crd.ndl.go.jp/reference/entry/index.php?id=1000049652&page=ref_view"
+            "title": "科学技術振興機構 科学の甲子園 筆記競技 解答例と解説（理想気体の状態方程式）",
+            "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf"
+          },
+          {
+            "title": "環境省 化学物質の環境リスク評価 1,4-ジオキサン（ppm換算係数）",
+            "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/09.pdf"
           }
         ]
       },
@@ -354,13 +360,6 @@
           "excerpt": "一般に、大気成分の濃度を表すには空気を構成する全分子に対する混合比が用いられます",
           "choiceNumbers": [
             1,
-            2
-          ]
-        },
-        {
-          "url": "https://crd.ndl.go.jp/reference/entry/index.php?id=1000049652&page=ref_view",
-          "excerpt": "100万分の1の体積・重さの割合を表します。",
-          "choiceNumbers": [
             2
           ]
         },
@@ -397,6 +396,27 @@
           "excerpt": "石綿 五マイクロメートル以上の繊維として〇・一五本毎立方センチメートル",
           "choiceNumbers": [
             5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "備考　この表の下欄の値は、温度二十五度、一気圧の空気中における濃度を示す。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://koushien.jst.go.jp/koushien/pastexam/2013/files/1-3.A-hikki.pdf",
+          "excerpt": "理想気体は，PV＝nRT（S1）の式にしたがう",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/report/h15-01/pdf/chap01/02-2/09.pdf",
+          "excerpt": "換算係数1ppm=3.60mg/m3at25℃,気体",
+          "choiceNumbers": [
+            2
           ]
         }
       ],
