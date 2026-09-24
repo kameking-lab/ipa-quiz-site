@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3783,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14949,
+      "webSearchRequests": 0,
+      "costUSD": 0.19551580000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2807,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-3-q18-18-raw-response.txt",
+  "rawResponseSha256": "1ed4cc1c6e7ef2f63688a9931ce93a7ca29eab63275de04a18b5796ce651cc4f",
+  "paperId": "emkohyo-20260217-3",
+  "ids": [
+    "emkohyo-20260217-3-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-3-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-3-q18": {
+      "/exam-library/emkohyo-20260217-3/q18-p11-0.webp": "48515258ce2c7850f9dc0c4e4b1369229c67393f33fc2c8293a3730d5ddcfcfa"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-3-q18": "3cf8ab0eb9d9d7ae9ba7f33092f30b7559282ba68ba0e7dc1b48ce8a246f8247"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-3-q18-18.json",
+  "sourcePackSha256": "0553bcca6857fa2ee88d0c597cd685e5c54c440c47167ec6d571895fdfa528eb",
+  "assessment": {
+    "emkohyo-20260217-3-q18": {
+      "status": "FIX",
+      "textIssues": [
+        "肢1の文字起こしに原図に無い半角空白が混入している。「μ、σ とすると」は原図では「μ、σとすると」、「μ ＋1.645 σ」は原図では「μ＋1.645σ」。意味は変わらないが表示上の不整合なので除去すべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の冒頭「ばらつきを平均に対する比で捉えるのがこの近似の前提である」は根拠なしの断定であり、添付資料のどれもこれを述べていない。",
+        "肢5の論証は「GSDが同程度の作業場なら ASD は AM に比例する」という条件付きの数式変形にとどまる。肢5が述べているのは、実測で濃度が高い作業場ほど標準偏差も大きいという経験的事実であり、それを支える根拠（作業場間でGSDがおおむね一定である、すなわち変動が乗法的であるという知見）が示されていない。このため、仮定を置いて記述を言い換えただけで、循環的な説明になっている。数式 ASD/AM＝√(exp(ln²GSD)−1) 自体は産総研の式から正しく導けている。"
+      ],
+      "sourceIssues": [
+        "肢5：添付の政府・公的資料には、作業環境中の有害物質濃度の算術平均値が高くなるにしたがって標準偏差も大きくなる（変動係数またはGSDが濃度水準によらずおおむね一定である）ことを直接述べたものが無い。産総研 calculation_method.pdf は、報告値からGSDやGMを換算する式を示す資料にすぎず、この経験則の根拠にはならない。",
+        "肢2：産総研資料の抜粋「GM＝exp［ln（AM）－{ln（GSD）}2／2］1/2」は末尾に「1/2」が付いており、抽出に崩れがあるとみられる。解説は「exp［…］」と省略して引用しているため結論（GM＞0）に影響はない。ただし式の正確な形は原PDFで確認すべき。"
+      ],
+      "needsExternalCheck": [
+        "肢5：『作業環境測定ガイドブック（日本作業環境測定協会）』など、作業環境濃度の変動が乗法的でGSDが濃度水準によらずおおむね一定であること（平均が高いほど標準偏差も大きいこと）を明記した資料で根拠を補強し、解説を経験則ベースに書き直す必要がある。",
+        "肢2：産総研 calculation_method.pdf の原PDFで、GMの換算式の正確な表記（末尾の1/2の有無）を確認する。"
+      ]
+    }
+  }
+}

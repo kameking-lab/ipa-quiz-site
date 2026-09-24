@@ -6,21 +6,21 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 988,
+      "outputTokens": 1743,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 11491,
+      "cacheCreationInputTokens": 11481,
       "webSearchRequests": 0,
-      "costUSD": 0.11195179999999999,
+      "costUSD": 0.1269718,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 904,
+      "thinkingTokens": 1447,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
   "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261806-q18-18-raw-response.txt",
-  "rawResponseSha256": "6095f5eebf6f1f011bc96ca59430b82efefafebc67a0298f0d27ad96541b5dcc",
+  "rawResponseSha256": "816f22adba24d4cdd6c1b68f3b2e8ec8022ce011f2b3894112c75d1e5fd97356",
   "paperId": "emkohyo-EM20261806",
   "ids": [
     "emkohyo-EM20261806-q18"
@@ -36,16 +36,18 @@
   "officialPageImageSha256": {},
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-EM20261806-q18": "4f0b6f6508a04331a7389a22b5ee8ffa85569d0881173e8e52ae74d00392b17a"
+    "emkohyo-EM20261806-q18": "64c08aa893ec3d2cf51cc03190fa4ee69021350ee73426cec8d070efb95eb03c"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261806-q18-18.json",
-  "sourcePackSha256": "8c44260263e0a6a1ce43bea5975da7f3fd911d1744b0ceaa1fa4a41382c7b439",
+  "sourcePackSha256": "b3b90d9a2fe028955e19a56a70464e0c8e7aee82d0a9d006851004e7fbedab0a",
   "assessment": {
     "emkohyo-EM20261806-q18": {
-      "status": "PASS",
+      "status": "FIX",
       "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [],
+      "reasonIssues": [
+        "選択肢1の理由は「3.2 %はこの計算結果と一致しない」とだけ書いており、この誤答が生じる原因を説明していない。3.2 %は、補正係数1.25を掛けない誤りと、有効面積を掛けない誤りを両方犯した場合の値である。計算は280÷7000＝0.04 mg・cm⁻²、これを石英量0.04 mgとみなして0.04÷1.26≈3.17 %≈3.2 %となる。選択肢2・4と同じ水準で原因を明記すべきである。"
+      ],
       "sourceIssues": [],
       "needsExternalCheck": []
     }

@@ -317,7 +317,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】独立審査1回目FIX。平衡定数の定義式K=[生成物]^係数/[反応物]^係数と量関係を直接示す政府一次資料が見つからない。候補にした『化学と教育』69巻10号（J-STAGE掲載、日本化学会発行）は政府資料ではないと審査で指摘された。計算自体（HBr 1.2 mol生成→H₂・Br₂各0.4 mol残存、K=0.12²/(0.04×0.04)=9）は公式正答3と一致するが、政府資料による裏付けが得られるまで公開保留。"
+      ]
     },
     "emkohyo-EM20261804-q7": {
       "overlay": {
@@ -414,7 +416,7 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "記述は正しい。式(1)の拡散速度はD・(T₀/T)と飽和蒸気圧p₀を含む対数項に比例する。気相の拡散係数は絶対温度の約1.8乗に比例するのでD/Tは温度とともに増え、蒸気圧も温度が高いほど高くなるため、拡散速度は大きくなる。"
+            "reason": "記述は正しい。式(1)の拡散速度は、その温度における飽和蒸気圧p₀を含む対数項ln[(P−p)/(P−p₀)]に比例する。蒸気圧は一般に温度が高いほど高くなるので、温度が上がるとp₀とともに対数項が大きくなり、拡散速度は大きくなる。"
           },
           {
             "number": 4,
@@ -443,10 +445,6 @@
           {
             "title": "エネルギー・金属鉱物資源機構 用語辞典「蒸気圧」",
             "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
-          },
-          {
-            "title": "科学技術振興機構J-STAGE掲載 化学工学論文集 物性定数・拡散係数",
-            "url": "https://www.jstage.jst.go.jp/article/kakoronbunshu1953/32/9/32_9_862/_pdf"
           }
         ]
       },
@@ -499,13 +497,6 @@
         {
           "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html",
           "excerpt": "蒸気圧は一般に温度が高いほど高くなる。",
-          "choiceNumbers": [
-            3
-          ]
-        },
-        {
-          "url": "https://www.jstage.jst.go.jp/article/kakoronbunshu1953/32/9/32_9_862/_pdf",
-          "excerpt": "温度については絶対温度の約1 .8乗に比例する",
           "choiceNumbers": [
             3
           ]

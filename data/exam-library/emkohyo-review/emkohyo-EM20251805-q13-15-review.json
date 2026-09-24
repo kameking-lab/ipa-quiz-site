@@ -6,21 +6,21 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 4121,
+      "outputTokens": 1803,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 24697,
+      "cacheCreationInputTokens": 25370,
       "webSearchRequests": 0,
-      "costUSD": 0.2802598,
+      "costUSD": 0.2392838,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 2392,
+      "thinkingTokens": 1569,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
   "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251805-q13-15-raw-response.txt",
-  "rawResponseSha256": "3976b804bb1f2486090d15a13ea80d3f5d7d7b04df6df3214002aec85cd114f9",
+  "rawResponseSha256": "120b4eb715550a52fb419c90c5487936ef42fdd577e0ca9686cf7316c2895172",
   "paperId": "emkohyo-EM20251805",
   "ids": [
     "emkohyo-EM20251805-q13",
@@ -46,27 +46,20 @@
   "officialPageImageSha256": {},
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-EM20251805-q13": "c38c67138a246f5299414dde40a40ac94ef4d007be7d766ab605d4af56e48895",
+    "emkohyo-EM20251805-q13": "ed019322631ca16698649691e6d8963a7c96e77cf33bbfc81e160af83b36212e",
     "emkohyo-EM20251805-q14": "794bc6027fc7361cce6b2ffdfc852907c8030c27e793ad71c458ceb13777af36",
-    "emkohyo-EM20251805-q15": "02d71490105d334a8653b8f8fc9141a93b880e739294a507b20f83a21d314bbd"
+    "emkohyo-EM20251805-q15": "9392d9d687a433133dc121495789788675b3363d7c1656d4d9353e21396f2c46"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q13-15.json",
-  "sourcePackSha256": "4beb0031a2b19284f7247d85652f582a8935b049c6d4a09e6631d2ef82b88d75",
+  "sourcePackSha256": "e6e69f15bdcaf4dbcf35ec1b1a91354fa3dd553dc8e6f39dc36d2cb0c40fdec6",
   "assessment": {
     "emkohyo-EM20251805-q13": {
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [
-        "肢4の理由は、GC-MSの定性分析の根拠として日本薬局方2.01液体クロマトグラフィー（pdfPage 109）の確認試験の記述を使っている。この記述は、化学構造の知見が得られる検出器を使う場合に保持時間の一致に加えて構造情報の一致で確認する、という内容である。これはLCの確認試験であり、GC-MSで標準物質とマススペクトルを比較する定性とは別の場面である。理由文の結論（肢4は正しい）は妥当だが、根拠を2.02ガスクロマトグラフィーまたは2.62質量分析法の定性に関する記述に差し替えるか、LCの記述は類推にすぎないと明記すること。",
-        "肢4の理由にある『EI法のマススペクトルはライブラリー同定にも使われる』（p157）は、データベースとの照合を述べたものである。『測定対象物質と標準物質のマススペクトルを比較』するという肢の文言を直接支えるものではない。補助的な根拠であることを明確にすること。"
-      ],
-      "sourceIssues": [
-        "肢4に対応する抜粋（pdfPage 109の『保持時間の一致に加えて，化学構造に関する情報が一致することにより…』と『電気伝導度検出器(導電率検出器)及び質量分析計などがあり』）は、どちらも2.01液体クロマトグラフィーの節にある。GC-MSの定性分析を直接支える政府資料の抜粋になっていない。"
-      ],
-      "needsExternalCheck": [
-        "第十九改正日本薬局方（https://www.mhlw.go.jp/content/11120000/001689414.pdf）の2.02ガスクロマトグラフィーの確認試験、または2.62質量分析法の定性に関する項に、標準物質（標準被検成分）とのマススペクトル・保持時間の一致で確認する旨の記述があるか確認し、該当ページの抜粋に差し替えること。"
-      ]
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
     },
     "emkohyo-EM20251805-q14": {
       "status": "PASS",
@@ -77,20 +70,12 @@
       "needsExternalCheck": []
     },
     "emkohyo-EM20251805-q15": {
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [
-        "肢1の理由は、2010年審議会資料の『ｂ 対象分析法により分析を行い検量線を作成する』を『定量下限確認に先立つ分析手法の確認』の手順と説明している。しかし抜粋の文脈では、これは（ⅰ）検量線の直線性（相関係数r）の確認手法の一部である。（ⅱ）定量下限の確認手順ではない。『直線性確認の手順として検量線を作成する』と正確に書くこと。",
-        "肢5の理由は、2010年審議会資料の記述を『本肢はこれと同じ内容である』としている。しかし同資料の基準は、有害性評価に基づく『評価値』の1/10であり、作業環境測定の『管理濃度』の1/10ではない。趣旨は同じだが基準濃度の名称と制度上の位置付けが異なるため、『同じ内容』は言い過ぎである。『評価値を管理濃度に読み替えた同趣旨の記述』などと限定すること。",
-        "肢3の理由は、報告書と審議会資料について『5回の繰返し分析を規定しており、5回以上とする本肢と矛盾しない』としている。この結論自体は妥当だが、出典が定めているのは『繰り返し5回』であり、『5回以上』という文言は出典にない。出典は5回と定め、本肢の『5回以上』はそれを満たす、という関係が分かるように書くこと。"
-      ],
-      "sourceIssues": [
-        "肢5の直接の根拠（『…かなり高い場合には、検量線作成時の最低濃度の標準溶液を用いて定量下限値を求めることが望ましい』）は、評価値ベースの2010年審議会資料にしかない。管理濃度ベースの個人サンプラー報告書（000616847.pdf p41）では、同じ趣旨の記述が抜粋されていない。"
-      ],
-      "needsExternalCheck": [
-        "個人サンプラー報告書（https://www.mhlw.go.jp/content/000616847.pdf）のpdfPage 41前後に、管理濃度の1/10濃度で得た最終試料液濃度が定量下限よりかなり高い場合に最低濃度の標準液で定量下限を求める旨の記述があるか確認すること。あれば、肢5の根拠を管理濃度ベースの抜粋に差し替えること。"
-      ]
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
     }
   }
 }
