@@ -15,8 +15,12 @@
       "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
     },
     {
-      "title": "日本原子力研究開発機構 ATOMICA カリホルニウム252",
-      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1955.html"
+      "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
     },
     {
       "title": "日本原子力研究開発機構 ATOMICA 中性子モニタ",
@@ -49,6 +53,10 @@
     {
       "title": "原子力規制庁 放射能測定法シリーズNo.12 プルトニウム分析法",
       "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No12.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 放射線防護上の遮へい",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html"
     }
   ],
   "questions": {
@@ -150,7 +158,7 @@
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "²⁵²Cfは全壊変の3.1%が自発核分裂で、核分裂1回当たり平均3.76個の中性子を放出する中性子源である。³He計数管は³He(n,p)³H反応で熱中性子を検出し、速中性子はパラフィン等で覆って減速させて計測する。中性子を出す²⁵²Cfの測定に³He比例計数管を用いる組合せは適切である。"
+            "reason": "ATOMICAは²⁵²Cfを自発核分裂による中性子源（原子炉の起動用中性子源等に利用）としている。³He計数管は³He(n,p)³H反応で熱中性子を検出し、速中性子はこの比例計数管をパラフィン等の減速材で覆って熱中性子化して測定する。中性子を出す²⁵²Cfの測定に³He比例計数管を用いる組合せは適切である。"
           },
           {
             "number": 2,
@@ -179,8 +187,12 @@
             "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
           },
           {
-            "title": "日本原子力研究開発機構 ATOMICA カリホルニウム252",
-            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1955.html"
+            "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
           },
           {
             "title": "日本原子力研究開発機構 ATOMICA 中性子モニタ",
@@ -214,8 +226,15 @@
       },
       "sourceEvidence": [
         {
-          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1955.html",
-          "excerpt": "全壊変のうちの3.1％が自発核分裂（96.9％はα壊変）であるが、1壊変あたり3.76個の中性子を放出する",
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html",
+          "excerpt": "人工の自発核分裂性核種の 252 Cf（カリホルニウム252）は、原子炉の起動用中性子源や中性子ラジオグラフィなど各種の用途に広く用いられる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html",
+          "excerpt": "熱中性子の測定にはBF3ガス、またはＨｅ−3ガスを充填した比例計数管式が用いられ、速中性子の測定にはこの比例計数管を中性子減速材（パラフィン、プラスチックなど）で覆い、速中性子を熱中性子化して測定する",
           "choiceNumbers": [
             1
           ]
@@ -269,6 +288,13 @@
             2,
             3,
             5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "ゲルマニウム半導体検出器等を用いてγ線スペクトルを測定する技術およびスペクトルを解析して放射能を決定する方法",
+          "choiceNumbers": [
+            2
           ]
         },
         {
@@ -497,32 +523,32 @@
       "overlay": {
         "sourceHash": "0ca68c32f456b93215f16e6f43600502de3bdccdb2754a471557bd5660a84d6d",
         "correctChoice": 1,
-        "summary": "Si半導体検出器によるα線スペクトル分析で、²³⁹Puの約5MeV（5.16MeV等）の領域をラドン・トロン子孫核種（6.0〜8.8MeV）と分けて計数する。自己吸収を避けるため表面捕集率の高いろ紙を使う。肢1が正しい。",
+        "summary": "Si半導体検出器によるα線スペクトル分析で、²³⁹Puの約5MeV（5.16MeV等）の領域をラドン・トロン壊変生成物（6.0〜8.8MeV）と分けて計数する。α線放出核種の直接測定では表面捕集率の高いろ紙を使う。肢1が正しい。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "規制庁No.36は、シリコン半導体検出器のスペクトルでプルトニウムとラドン・トロン壊変生成物のα線エネルギーが異なりピークで弁別できるとする。No.12の核データで²³⁹Puのα線は5.16MeV等（約5MeV）。α線は試料中の自己吸収でスペクトルが低エネルギー側に歪むため、No.36もα線を主に測る場合はメンブレンろ紙等を使うとしており、粒子を表面で捕える表面捕集率の高いろ紙が望ましい。正しい組合せ。"
+            "reason": "規制庁No.36は、Si半導体検出器のスペクトルでPuとラドン・トロン壊変生成物のα線をピークとして弁別できるとする。No.12の核データで²³⁹Puのα線は5.16MeV等（約5MeV）。No.36参考Aは、α線放出核種の直接測定ではろ紙の表面捕集率が重要で、ろ材内に入り込んだ粒子は計数できない等の可能性があるとする。正しい組合せ。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "㋑Si半導体と㋩高いは正しいが、㋺の8MeVが誤り。²³⁹Puのα線は5.16MeV・5.14MeV・5.11MeVで約5MeVである。8MeV付近はトロン子孫のPo-212(8.8MeV)やラドン子孫のPo-214(7.7MeV)の領域で、弁別すべき自然核種側のエネルギーである。"
+            "reason": "㋑Si半導体と㋩高いは正しいが、㋺の8MeVが誤り。²³⁹Puのα線は5.16MeV・5.14MeV・5.11MeVで約5MeVである。8MeV付近はトロン壊変生成物のPo-212(8.8MeV)やラドン壊変生成物のPo-214(7.7MeV)の領域で、弁別すべき自然核種側のエネルギーである。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "NaI(Tl)は潮解性のため密閉容器に入れて使うγ線用検出器で、飛程の短いα線のスペクトル分析には用いない。㋺8MeVはPo-214(7.7MeV)・Po-212(8.8MeV)等の自然核種側で²³⁹Pu（約5MeV）ではなく、㋩表面捕集率の低いろ紙ではろ紙内部での吸収でピークが歪む。すべて誤り。"
+            "reason": "NaI(Tl)は潮解性のため密閉容器に入れて使う結晶で、紙程度で止まるα線は容器を透過して結晶に届きにくく、α線スペクトル分析には向かない（ATOMICAはα線用にSi半導体等を挙げる）。㋺8MeVはPo-214・Po-212側で²³⁹Pu（約5MeV）ではなく、㋩表面捕集率の低いろ紙はろ材内の粒子のα線を計数できない。すべて誤り。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "㋺5MeVと㋩高いは正しいが、㋑のGe半導体検出器が誤り。ATOMICAはα線スペクトロメトリの検出器としてグリッド付電離箱や表面障壁型・イオン注入型のSi半導体を挙げ、Ge半導体検出器はγ線スペクトロメトリ用である。"
+            "reason": "㋺5MeVと㋩高いは正しいが、㋑のGe半導体検出器が誤り。規制庁No.7はGe半導体検出器を用いてγ線スペクトルを測定・解析する方法を示しており、ATOMICAはα線スペクトロメトリの検出器としてグリッド付電離箱や表面障壁型・イオン注入型のSi半導体を挙げている。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "Ge半導体検出器はγ線用でα線スペクトル分析に用いない。8MeVは²³⁹Pu（5.16MeV等）ではなくPo-212(8.8MeV)等の自然核種側のエネルギーである。表面捕集率の低いろ紙では自己吸収でα線ピークが低エネルギー側に歪む。㋑㋺㋩すべて誤り。"
+            "reason": "Ge半導体検出器はγ線スペクトロメトリ用で、α線スペクトル分析にはSi半導体等を用いる。8MeVは²³⁹Pu（5.16MeV等）ではなくPo-212(8.8MeV)等の自然核種側のエネルギーである。No.36は表面捕集率が低いろ紙ではろ材内の粒子のα線が計数できない等の可能性を指摘する。㋑㋺㋩すべて誤り。"
           }
         ],
         "sources": [
@@ -541,6 +567,14 @@
           {
             "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
             "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 放射線防護上の遮へい",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
           }
         ]
       },
@@ -599,24 +633,6 @@
         },
         {
           "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
-          "excerpt": "検出器の系外でα線エネルギーの一部を損失すると、スペクトルが低エネルギー側に歪み、同定、定量の障害になるので",
-          "choiceNumbers": [
-            1,
-            3,
-            5
-          ]
-        },
-        {
-          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
-          "excerpt": "試料中でのα線の自己吸収を小さくするために、試料中の不純物を除き、比放射能を高めた極めて薄い試料を作る",
-          "choiceNumbers": [
-            1,
-            3,
-            5
-          ]
-        },
-        {
-          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
           "excerpt": "検出器にはグリッド付電離箱、表面障壁型又はイオン注入型のシリコン（Si）半導体が用いられる",
           "choiceNumbers": [
             1,
@@ -632,12 +648,50 @@
           ]
         },
         {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-10-03.html",
+          "excerpt": "アルファ線は、物質の透過能力が極めて弱く紙程度で遮へいできる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "ゲルマニウム半導体検出器等を用いてγ線スペクトルを測定する技術およびスペクトルを解析して放射能を決定する方法",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
           "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
-          "excerpt": "α線を主に測定する場合はメンブレンろ紙等、β線を主に測定する場合はセルロース・ガラス繊維ろ紙等を使用する",
+          "excerpt": "α線放出核種を対象として捕集、測定する場合は、ろ材の中に粒子が入り込んで計数できない等の可能性があり",
           "choiceNumbers": [
             1,
             3,
             5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "α 線放出核種の直接測定においては、ろ紙の表面捕集率*が重要な要素である。",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "ろ紙に捕集された粒子のうち、ろ紙の表面付近で捕らえられた粒子の割合",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "高い表面捕集率と低い圧力損失の製品があり、α 線ダストモニタでの使用に適している",
+          "choiceNumbers": [
+            1
           ]
         }
       ],
