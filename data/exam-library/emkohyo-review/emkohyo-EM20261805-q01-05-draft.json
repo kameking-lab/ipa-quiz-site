@@ -343,41 +343,117 @@
       "overlay": {
         "sourceHash": "955d791e015d2f8c311ad842353ffc50638cd3ff568cc88ec2d72eaef2014cc7",
         "correctChoice": 1,
-        "summary": "酸素原子数はアセトン1、セロソルブアセテート3、キシレン0、酢酸イソブチル2、DMF1で、合計7個。",
+        "summary": "厚生労働省モデルSDSの分子式から酸素原子数はアセトン1、エチレングリコールモノエチルエーテルアセテート3、キシレン0、酢酸イソブチル2、DMF1で、合計7個。",
         "choices": [
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "酸素原子数はアセトンC₃H₆Oが1、エチレングリコールモノエチルエーテルアセテートC₆H₁₂O₃が3（エーテル1＋エステル2）、キシレンが0、酢酸イソブチルC₆H₁₂O₂が2、DMF C₃H₇NOが1。1+3+0+2+1=7で正しい。"
+            "reason": "正しい。モデルSDSの分子式は、アセトンC3H6O（O1）、エチレングリコールモノエチルエーテルアセテートC6H12O3（O3）、キシレンC8H10（O0）、酢酸イソブチルCH3COOCH2CH(CH3)2（O2）、DMF C3H7NO（O1）。合計は1＋3＋0＋2＋1＝7個である。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "8は正解より1個多い。DMF（HCON(CH₃)₂）の窒素原子を酸素と取り違えると8になりやすい。しかしDMFの酸素はホルミル基C=Oの1個だけで、5物質の合計は7個である。"
+            "reason": "誤り。8は正しい合計7より1個多い。N,N-ジメチルホルムアミドの分子式C3H7NOに含まれる酸素は1個だけで、窒素を酸素と数えるなどしない限り8にはならない。5物質の酸素は1＋3＋0＋2＋1＝7個である。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "9は正しい合計7より2個多い。分子式はアセトンC₃H₆O、セロソルブアセテートC₆H₁₂O₃、キシレンC₈H₁₀、酢酸イソブチルC₆H₁₂O₂、DMF C₃H₇NOで、酸素は1+3+0+2+1=7個しかない。"
+            "reason": "誤り。9は合計7より2個多い。分子式はアセトンC3H6O、エチレングリコールモノエチルエーテルアセテートC6H12O3、キシレンC8H10、酢酸イソブチルCH3COOCH2CH(CH3)2、DMF C3H7NOで、酸素は1＋3＋0＋2＋1＝7個しかない。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "10は3個多い値である。酸素を含まない芳香族炭化水素のキシレン（C₈H₁₀）に酸素を割り当てたり、エステルやエーテルの酸素を重複して数えたりしない限り得られない。分子式から数えた合計は7個である。"
+            "reason": "誤り。10は合計7より3個多い。芳香族炭化水素のキシレンは分子式C8H10で酸素を含まず、酢酸イソブチル（示性式CH3COOCH2CH(CH3)2）の酸素もエステル部分の2個だけである。分子式から数えた合計は7個である。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "11は4個多い値である。セロソルブアセテートCH₃COOCH₂CH₂OC₂H₅の酸素は3個、酢酸イソブチルCH₃COOCH₂CH(CH₃)₂は2個が上限で、他の3物質を足しても合計は7個を超えない。"
+            "reason": "誤り。11は合計7より4個多い。酸素が最も多いエチレングリコールモノエチルエーテルアセテートでもC6H12O3の3個で、残り4物質はアセトン1、キシレン0、酢酸イソブチル2、DMF1にとどまり、合計は7個を超えない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS アセトン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS エチレングリコールモノエチルエーテルアセタート",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/111-15-9.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS キシレン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1330-20-7.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 酢酸イソブチル",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-19-0.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS N,N-ジメチルホルムアミド",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "添付の作業環境測定基準や有機溶剤中毒予防規則の抜粋は物質名を列挙しているだけで、分子式・構造式は載っていない。酸素原子数の判断を直接支える一次資料がないため、sources/sourceEvidenceは空にした。各物質の分子式をモデルSDSなどで検索して確認し、引用する必要がある。",
-        "計算は5物質とも分子式から独立に検算した（1+3+0+2+1=7）。選択肢2〜5（8〜11）はいずれもこの合計と一致しない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "分子式 (分子量) C3H6O",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/111-15-9.html",
+          "excerpt": "化学名又は一般名 エチレングリコールモノエチルエーテルアセタート 慣用名又は別名 セロソルブアセテート",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/111-15-9.html",
+          "excerpt": "分子式 (分子量) C 6 H 1 2 O 3 (132)",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1330-20-7.html",
+          "excerpt": "分子式 (分子量) C8H10 (106.17)",
+          "choiceNumbers": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-19-0.html",
+          "excerpt": "分子式 (分子量) CH3COOCH2CH(CH3)2",
+          "choiceNumbers": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/68-12-2.html",
+          "excerpt": "分子式 (分子量) C 3 H 7 NO (73)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261805-q4": {
       "overlay": {
