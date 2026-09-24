@@ -378,7 +378,7 @@
       "overlay": {
         "sourceHash": "afa8f647bcb921ba57c4f69a72038567ac9abb6e5bb4ee85bf05885991548a5a",
         "correctChoice": 4,
-        "summary": "拡散による発生量は物質固有の拡散係数や分子量に依存するので、4が誤り。",
+        "summary": "拡散セルの発生量は蒸気圧だけでなく拡散定数や管の形状にも依存するので、4が誤り。",
         "choices": [
           {
             "number": 1,
@@ -398,7 +398,7 @@
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "誤り。拡散速度は飽和蒸気圧だけでなく、物質固有の拡散係数や分子量にも依存する。蒸気圧が同じでも物質が異なればこれらの値が異なるので、同じセル・同じ流量でも発生濃度は一般に等しくならない。"
+            "reason": "誤り。産業医学総合研究所の拡散セル報告は、拡散速度の計算に管の形状、試料の蒸気圧、拡散定数が必要と記す。蒸気圧が同じでも、異なる物質の拡散定数まで同一とは限らないため、同一セル・流量で発生濃度が必ず等しいとはいえない。"
           },
           {
             "number": 5,
@@ -410,6 +410,14 @@
           {
             "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
             "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+          },
+          {
+            "title": "産業医学総合研究所 昭和53年度年報・拡散セルの拡散速度",
+            "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf"
+          },
+          {
+            "title": "産業技術総合研究所 標準ガスの調製方法",
+            "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf"
           }
         ]
       },
@@ -429,12 +437,29 @@
           "choiceNumbers": [
             4
           ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
+          "excerpt": "拡散セルの拡散管の幾何学的大きさ",
+          "choiceNumbers": [1, 4, 5]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
+          "excerpt": "蒸気圧及び拡散定数等がわかれば拡散速度の計箕が可能である",
+          "choiceNumbers": [3, 4]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf",
+          "excerpt": "A及びLほ拡散管の有効断面放と長さである",
+          "choiceNumbers": [1, 5]
+        },
+        {
+          "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf",
+          "excerpt": "拡散管の質量減少速度",
+          "choiceNumbers": [2]
         }
       ],
-      "reviewIssues": [
-        "採用した抜粋（PDF 39頁）は受動型試料採取機器へのフィックの拡散法則の適用を説明したもので、拡散セルによる標準ガス発生そのものを記述したものではない。肢1・4・5の根拠は、同じ拡散原理からの類推にとどまる。",
-        "拡散セルの発生速度式（飽和蒸気圧・温度・分子量の項を含む式）、セルを秤量して蒸発量を求める手順（肢2）、温度依存性（肢3）を直接示す政府資料は未確認で、検索が必要。"
-      ]
+      "reviewIssues": []
     },
     "emkohyo-EM20261804-q9": {
       "overlay": {
