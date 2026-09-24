@@ -1,0 +1,101 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5093,
+      "cacheReadInputTokens": 130093,
+      "cacheCreationInputTokens": 21654,
+      "webSearchRequests": 0,
+      "costUSD": 0.3011186,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3013,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "35487b0786a7b91f4d3ba793195e362e6f7cfd4e99a9a937e7d4ce11c468439c",
+  "inputRequestSha256": "520c10b711e76bf13e83a2baaa08b65101941157230c474bbafae945846f1b3e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "0a4a926ee15c128d5e49dddc7b8e6966d5de93ff926bf21c4253a3c150c0aa3e",
+      "q08": "d46decc9946f5d388e6f6eb5b043ed7177887e95e206d478df85a1e0f24cecf0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p11.png": "8adfe6bf40401a6a4b0cddd87071912ad55ae37f684bf547ccf135b4674f1ccd",
+      "data/raw_pdfs/denken3/review/20240818/theory/p12.png": "c497c07748cfe015eb46adcff33d893da533a1853102ce9d75865353d5a3ee24"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q08-circuits.png": "fd0e7c87a02f2cf1aebd3d2c1a0eef7c80100a006059a0cc958da540da4aa651"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "fc8be0c07398c8c266d193790c0bc583d3ebf8ecec1902b2c959c1214391bb40"
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "原図の『起電力が E[V]で内部抵抗が r[Ω]の電池がある。』が、候補では『起電力が E [V] ，内部抵抗が r [Ω] の電池がある。』に言い換えられている。意味は同じだが、原文どおり『で』に戻すこと。",
+        "句読点が混在している。『つないだとき，』では全角カンマ『，』、『表す式として、』では読点『、』を使っている。原図は『，』で統一しているので、どちらかに揃えること。"
+      ],
+      "choiceIssues": [
+        "肢(2)の解説の『R2=R1は一般にこの値と一致しない』は弱すぎる。r>0 かつ R1>0 なら常に rR1/(r+R1) < min(r, R1) なので、R2=R1 が最適値と一致することは一度もない。『一般に』を外し、『r∥R1 は常に R1 より小さいので一致しない』のように、どの値でも成り立つ理由として書くこと。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "乗算の中黒が混在している。『E·R1』と『V_th²・R2』ではU+00B7『·』、『r・R1』ではU+30FB『・』を使っている。どちらか一方に統一すること。"
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度上期・理論）で問7の正答は3。manifestの answer=3、候補の officialAnswer=3 と一致した。",
+        "原図のフッターは『T1−R 011』で、reviewedFromPage=[11] と矛盾しない。",
+        "(1)〜(5)の5式（R2=r, R2=R1, rR1/(r+R1), rR1/(R1−r), rR1/(r−R1)）が原図と完全に一致することを確認した。",
+        "原図ページに回路図はない。figureUrls=[] と figureDescription の記述はこれと一致する。",
+        "検算：R2を外したときの開放電圧は V_th=E·R1/(r+R1)、電源を短絡したときの抵抗は R_th=r∥R1=rR1/(r+R1)。P=V_th²R2/(R_th+R2)² は R2=R_th で最大になるので、正答(3)が導ける。",
+        "肢(2)の特例の検算：R1=r のとき必要な値は r²/(2r)=R1/2 で、記述どおり。",
+        "肢(4)で分母が0以下になる条件（R1≤r）と、肢(5)で r<R1 のとき負になる点を確認した。どちらも記述どおり正しい。",
+        "officialReferenceUrls は空で、解説は外部資料に依存する主張を含まない。"
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "『LC(A) = 1LC』『f_A(LC=1)』のように、記号LC（L×C の積）を回路ラベルや比較用の数値にも使い回しているため読みにくい。『A: L×C、AB: 1.5LC、B: 2LC』のように、LCの何倍かで表記を統一すること。",
+        "肢(2)の解説も、同じように単位のない『LC(A)=1』という書き方になっている。全体の表記に揃えること。"
+      ],
+      "figureIssues": [
+        "figureDescription の『上端子から下端子まで開いた一本の枝』は、『開いた』が開放（断線）とも読めて曖昧。『上端子と下端子の間に4素子を一列に直列接続した2端子回路』のように言い換えること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "公式解答表（令和6年度上期・理論）で問8の正答は3。manifestの answer=3、候補の officialAnswer=3 と一致した。",
+        "原図のフッターは『T1−R 012』で、reviewedFromPage=[12] と矛盾しない。",
+        "(1)〜(5)の不等式5本が、添字A、B、ABを含めて原図と完全に一致することを確認した。",
+        "公開候補図を原図と比べた。回路A（L[H]→C[F]）、回路B（2L[H]→C[F]）、直列回路（L[H]→C[F]→黒丸→2L[H]→C[F]）の3回路で、端子の丸、全ラベル、下部の3キャプションが欠落・改変なく残っている。この図だけで問題を理解できる。",
+        "黒丸の位置は回路AのCの下端と回路Bの2Lの上端をつなぐ点で、直列の中間接続点である。分岐や接地を表すものではない。",
+        "検算：L_AB=3L、C_AB=C/2（1/C+1/C=2/C）なので、L_AB×C_AB=1.5LC となる。",
+        "f=1/(2π√(LC)) で並べると f_A=1/(2π√(LC)) > f_AB=1/(2π√(1.5LC)) > f_B=1/(2π√(2LC)) となり、正答(3)の f_B<f_AB<f_A が導ける。",
+        "数値の検算：LC=1 として 0.15915、0.12995、0.11254 となり、記載の 0.159、0.130、0.113 と一致する。",
+        "誤答肢(1)(2)(4)(5)の理由（どれも f_AB が中間にあることと矛盾するか、大小が逆）を1肢ずつ確認し、すべて正しかった。",
+        "officialReferenceUrls は空で、解説は外部資料に依存する主張を含まない。"
+      ]
+    }
+  ]
+}

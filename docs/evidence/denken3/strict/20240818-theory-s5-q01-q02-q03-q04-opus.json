@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7862,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 32929,
+      "webSearchRequests": 0,
+      "costUSD": 0.448697,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 5313,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "d44fbd73f148ad522f779106ed9fa89941b6ba7e8b18fc0aa26facd5c8da40e2",
+  "inputRequestSha256": "4a11daf739db39434c0dce4cd8c831b3af7440a048a69efaa89949128b326a95",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "f157624c6e025c18a6f92b7c19134f42fa6703ec2d59a1761a5824dc45a2ce8a",
+      "q02": "e26a1507b3cbd64f353a14bf9e6345ae29af1a23b2b95cb9fa1539a322e6f28c",
+      "q03": "3a6ccbe1c5b97355f5eb6c4972b7056524c2f56a9e9aa545736f55d4c1e0320a",
+      "q04": "3f3a4ca29b5b69a146b095b483c06af0da0c45ee229f7a22c44521eb0ce6b655"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p04.png": "04f91f67c32d658e6f37a2ccb478b476d00df25fdda82dbf2e75acdc2ad70ba8",
+      "data/raw_pdfs/denken3/review/20240818/theory/p05.png": "154ef918117898605602a26e4952d91780a4899c8d160a9ec4cc09036a0cf309",
+      "data/raw_pdfs/denken3/review/20240818/theory/p06.png": "e7ff1759cb8fb193aa44392b84c2579d2b77086fe0522e04ed51146f03d35cba",
+      "data/raw_pdfs/denken3/review/20240818/theory/p07.png": "650156086ad86f940aee3d163eb826e52775792d9b6ba835174adb4877c172a1",
+      "data/raw_pdfs/denken3/review/20240818/theory/p08.png": "c84f44521346845f4314330700cf85a214d78179096553a955fc1c6c4ddf305a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q01-context.png": "891fb34761aa1426b41e7bfa468723b4502e20c367a046319fd2d27fe6d49c05",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-1.png": "022a3825df766d0047c64be87c5ee283db185d821d65ce3b7a564bec4230e1f3",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-2.png": "5b7e77ff76f3891d2693ef62cf7d99674de79c8664b7ab10b8bce55f95078210",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-3.png": "332e159c38b9123725397aa199357645bf0b6ccf284eb0e6c95a5757a6ab4d22",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-4.png": "39f0f144c285da036a2020aff3d877020e459637990d410fa462ea69df2d95af",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-5.png": "4b8d6b4ad83a54fd9dec0e62502816dcabaaaef806506b3f8a2e6ff43845b86c",
+      "public/images/denken3/20240818/theory/20240818-theory-q04-layout.png": "d1b7fb44426c8d1a90133dabf58dad10c4b57c6b66bb7bf369b0e1be5bd80519"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "94f300c1f82e3f21ee276cdefcc50735c4bcfdb3ffbc3b1f3f4cf401ea918bf9"
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "選択肢文の書式が揃っていない。(1)(3)(5)は「図（等電位線分布の断面図）：」で始まり、(2)(4)は「図：」で始まる。同じ形式に統一すること。",
+        "選択肢(5)の文に「境界部分で間隔が不連続に変化している」とある。しかし原図(5)の枠内には誘電体の境界線が描かれていない。これは図から読み取れる事実ではなく解釈である。選択肢文は図の見たままに限ること。例：「上半分に等電位線が密に集まり、下半分には線が1本だけある」。境界との対応づけは解説で行うこと。"
+      ],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "figureDescriptionの末尾「図版の切り出しが必要」と、uncertaintyの「公開時は図1・図2と各選択肢の図のみ原本から切り出す必要がある」は、作業時点の未完了メモが残ったもの。figureUrlsとchoiceFigureUrlsはすでに設定済み。context.pngは原図の図1・図2と一致し、choice-1〜5.pngも原図(1)〜(5)と一致する。この2つの記述は削除または更新すること。"
+      ],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文と（注）「図2と同様に下側を接地電極とする」は、原図T1-R 004/005と一致する。",
+        "公式正答は解答表の理論 問1＝5で、officialAnswer=5と一致する。",
+        "原図の選択肢：(1)一様、(2)疎・密・疎、(3)上半分に1本で下半分が密、(4)密・疎・密、(5)上半分が密で下半分に1本。いずれも公開候補図と一致する。",
+        "物理的な検算：D連続からε₁E₁=ε₂E₂、したがってE₁=6E₂。図1の二層はほぼ同じ厚さ(約56px対55px)なので、空気層が全電圧の6/7、固体層が1/7を分担する。(5)では上半分に約12区間の密な線、下半分の中央付近に1本の線があり、6:1の分担と整合する。(3)はその上下逆である。",
+        "解説のE=-dV/dxによる線間隔の議論と、各誤答肢の否定理由に誤りはない。"
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "記号表記が混在している。問題文・選択肢・解説は「Em」「ε0」、choiceExplanations(1)は「Eₘ」「ε₀」を使う。原図の表記は下付きのE_mとε_0。「Em」を下付きなしで書くとE×mとも読めるので、単元全体で「Eₘ」「ε₀」に統一すること。"
+      ],
+      "choiceIssues": [
+        "choiceExplanations(2)の理由は「aの次数が合わない」だけで不十分。実際にはEₘ/(4πε₀a)は、Q=4πε₀a²Eₘに対してε₀とaが分母側に反転している。単位もV²/(C·m)でCにならない。(1)と同じ粒度で、反転していることと単位が合わないことを書くこと。"
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文と選択肢(1)〜(5)は原図T1-R 006と一致する。",
+        "公式正答は理論 問2＝4で、officialAnswer=4と一致する。",
+        "検算：球表面の電界E=Q/(4πε₀a²)をEₘとおくと、Q_max=4πε₀a²Eₘ［F/m·m²·V/m＝F·V＝C］となり、(4)と一致する。",
+        "(3)は正答よりaの次数が1つ少なく、(5)は1つ多い。(1)は単位がCにならない。"
+      ]
+    },
+    {
+      "unitKey": "q03",
+      "questionNumber": 3,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文と表の5行(Wb/A, V/s, A/m, H⁻¹, H/m)は原図T1-R 007と一致する。",
+        "公式正答は理論 問3＝2で、officialAnswer=2と一致する。",
+        "検算：L=Φ/I→Wb/A、e=dΦ/dt→Wb=V·s(V/sは誤り)、H→A/m。Rm=NI/Φ→A/Wbで、Wb=H·AよりA/Wb=H⁻¹。B=μH→(Wb/m²)/(A/m)=Wb/(A·m)=H/m。いずれも解説と一致する。",
+        "表だけの問題で図版は不要。figureUrlsが空であることは妥当。"
+      ]
+    },
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "uncertaintyの「出典の一次資料URLは本セッションでは確実に特定できないため空配列とした」は、確認が済んでいない事項が残っているように読める。実際にはsourceQuestionPdfUrlとsourceAnswerPdfUrlは設定済みで、本問には独立した外部主張もない。officialReferenceUrlsが空であることは正しい。この文は「独立した外部主張がないため参照URLは不要」の趣旨に書き換えること。"
+      ],
+      "verifiedEvidence": [
+        "問題文・数値(1.2 A、3 A、0.3 m)と選択肢0.24/0.45/0.54/0.75/1.05は、原図T1-R 008と一致する。",
+        "公式正答は理論 問4＝2で、officialAnswer=2と一致する。",
+        "公開候補図layout.pngは原図と一致する：Aは上向き1.2 A、Bは下向き3 A、並びはP—0.3 m—A—l—B。",
+        "向きの検算：Aの電流(+y)が左側の点Pにつくる磁界はŷ×(−x̂)=+ẑ、Bの電流(−y)がPにつくる磁界は(−ŷ)×(−x̂)=−ẑで、互いに逆向き。1.2/0.3=3/(0.3+l)からl=0.45 m。",
+        "誤答肢の数値：3/0.54≒5.56、3/0.84≒3.57、3/1.05≒2.86、3/1.35≒2.22。いずれもchoiceExplanationsの値と一致する。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7963,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 31092,
+      "webSearchRequests": 0,
+      "costUSD": 0.436021,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4837,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "a487347bbab91471da2049de19909c5e43fb6cd0644a7d12d382dbbae24d9aba",
+  "inputRequestSha256": "ed6e400abc97fff01de0aa6e6e3dc39dc8eb2a43ae17f304620417d72d2ca1b1",
+  "inputHashes": {
+    "candidateSha256": {
+      "q05": "e5a111ebaad238fe00db1a34c08af786c17e5fc3f8fa931cdb693159e3e48c67",
+      "q06": "98991e42ea49b3d6286601df049670e0a0627bce5960adc03150cc9e50ac9bd1",
+      "q07": "06353a009e8418fbf21b030682e943b2e2acd04980779a6cf573217d643cd64b",
+      "q08": "adca900227f13cc883c0cb18b2dcf3a81cb07e2d8d0eef76341378ca955f6010"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p09.png": "6865b11d8b65849353e6be09a4f74a34350692de15850f0692023d5441e758e0",
+      "data/raw_pdfs/denken3/review/20240818/theory/p10.png": "9ad602c7534241edd457d84898c573ffdd7fa1c4f938c0af2a98fb4dac8d5a5a",
+      "data/raw_pdfs/denken3/review/20240818/theory/p11.png": "8adfe6bf40401a6a4b0cddd87071912ad55ae37f684bf547ccf135b4674f1ccd",
+      "data/raw_pdfs/denken3/review/20240818/theory/p12.png": "c497c07748cfe015eb46adcff33d893da533a1853102ce9d75865353d5a3ee24"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q05-circuit.png": "3f0a086e94e0b2a514a6089de626e086c5f1e96f16674c7862f2a68889a2610a",
+      "public/images/denken3/20240818/theory/20240818-theory-q06-circuit.png": "dc403bcc5a2baea4a638caec74ac208c924d0d6bcb4d3527a00600258320f943",
+      "public/images/denken3/20240818/theory/20240818-theory-q08-circuits.png": "fd0e7c87a02f2cf1aebd3d2c1a0eef7c80100a006059a0cc958da540da4aa651"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "9287ed0c466708b005e271d09d5db5c270b978fed00479e7e68198761a7c90ba"
+  },
+  "assessment": [
+    {
+      "unitKey": "q05",
+      "questionNumber": 5,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the official original. It asks for the power [W] dissipated in R=10 Ω.",
+        "Choices (1) 0.28, (2) 1.89, (3) 3.79, (4) 5.36 and (5) 7.62 all match the original.",
+        "The official answer table lists 理論 問5 as 1, which matches officialAnswer=\"1\".",
+        "Node equations: 6VA−4VB=60 gives 3VA−2VB=30, and 8VB−6VA=80 gives 4VB−3VA=40. Adding them gives 2VB=70, so VB=35 V and VA=100/3 V.",
+        "I_R=(100/3−35)/10=−1/6 A, so the current flows from B to A with magnitude 1/6 A. P=(1/6)²×10=10/36≈0.2778 W, which rounds to 0.28 W, choice (1).",
+        "The KCL check at A gives −0.667+0.833−0.167=0. The KCL check at B gives −0.75+0.583+0.167=0. Both balance.",
+        "Reversing either source gives about 13.6 W, which is not among the choices. This supports reading both long plates as the top (positive) terminals.",
+        "Each wrong choice has its own back-calculation: 1.89 W needs 0.435 A, 3.79 W needs 0.616 A, 5.36 W needs 0.732 A and 7.62 W needs 0.873 A. All of these are correct and none equals 1/6 A.",
+        "The public candidate figure keeps every label (60 V, 40 Ω×2, R=10 Ω, 60 Ω×2, 80 V), the junction dots and both source polarities. It is enough on its own to solve the problem."
+      ]
+    },
+    {
+      "unitKey": "q06",
+      "questionNumber": 6,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "The question text matches the original: 0.3 A flows through R [Ω], and the task is to find R.",
+        "Choices (1) 2.0, (2) 2.8, (3) 3.7, (4) 4.9 and (5) 25 all match the original.",
+        "The official answer table lists 理論 問6 as 1, which matches officialAnswer=\"1\".",
+        "Branch equations with V=V_P−V_Q: 9 V branch V=9−6I₁, R branch V=0.3R−3 (3 V positive on the Q side), 1 Ω branch V=I₃−4 (4 V positive on the Q side). The directions and signs are correct.",
+        "KCL: (9−V)/6=0.3+V+4 gives 7V=−16.8, so V=−2.4 V. Then R=(−2.4+3)/0.3=2.0 Ω. Check: I₁=1.9 A, I₃=1.6 A and 1.9=0.3+1.6 holds.",
+        "If both 3 V and 4 V were reversed, 7V=31.2 gives V≈4.457 V and R≈4.86 Ω. This matches the distractor (4), so the explanation of choice (4) correctly names the specific mistake behind it.",
+        "Back-calculated voltages: (2) gives −2.16 V, (3) gives −1.89 V, (4) gives −1.53 V and (5) gives 4.5 V. None equals −2.4 V, and each calculation is correct.",
+        "The public candidate figure keeps 9 V, 6 Ω, 3 V, 0.3 A with its rightward arrow, R [Ω], 4 V, 1 Ω, both junction dots and the return wiring. It is enough on its own to solve the problem."
+      ]
+    },
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [
+        "The candidate text uses '、' as the clause separator. The official original and the other units (q05, q06) use '，'. Unify it to '，' to match the original and the rest of the set."
+      ],
+      "choiceIssues": [
+        "Subscript notation is inconsistent. Only choiceExplanations[2] uses Unicode subscripts (R₂, R₁, r∥R₁). The question, choices, explanation and choiceExplanations 1, 3, 4 and 5 all use R1/R2. Use one notation throughout."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The uncertainty field says the exam year and sitting cannot be identified from this image, so no source URL could be identified. This contradicts sourceQuestionPdfUrl, sourceAnswerPdfUrl, reviewedFromPage=[11], sourceAttribution (令和6年度上期 理論 問7) and the manifest-pinned official answer. Rewrite it to state that the source is identified. Separately, officialReferenceUrls=[] is justified because the explanation does not rely on any external independent claim."
+      ],
+      "verifiedEvidence": [
+        "The question text matches the original: E [V], internal resistance r [Ω], R1 [Ω] and variable R2 [Ω] in parallel, find R2 that maximises Joule heat. The original page has no circuit diagram, so figureUrls=[] is correct.",
+        "Choices (1) R2=r, (2) R2=R1, (3) rR1/(r+R1), (4) rR1/(R1−r) and (5) rR1/(r−R1) all match the original.",
+        "The official answer table lists 理論 問7 as 3, which matches officialAnswer=\"3\".",
+        "Thevenin equivalent seen from R2: V_th=E·R1/(r+R1) and R_th=r∥R1=rR1/(r+R1). Maximising P=V_th²R2/(R_th+R2)² gives R2=R_th, choice (3).",
+        "Choice (2): when R1=r the required value is r∥R1=R1/2≠R1, which is correct. Choice (5): r<R1 makes R2 negative, which is correct. Choice (4): the denominator can be 0 or negative, and the expression is not the parallel combination. Choice (1): R1 is ignored. All of these are correct."
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The uncertainty field still hedges. It says the meaning of the dot rests on visual interpretation of the original figure and that other wiring topologies are judged unlikely, yet needsReview=false. In both the original and the public figure, the dot is clearly just the junction joining the lower end of C in circuit A to the upper end of 2L in circuit B, forming a two-terminal series circuit, and the text '回路Aと回路Bの直列回路' leaves no room for doubt. Replace the hedge with a definitive confirmation."
+      ],
+      "verifiedEvidence": [
+        "The question text matches the original: two LC series resonant circuits A and B with resonant frequencies f_A and f_B, and f_AB after connecting them in series.",
+        "Choices (1) f_A<f_B<f_AB, (2) f_A<f_AB<f_B, (3) f_B<f_AB<f_A, (4) f_AB<f_A<f_B and (5) f_AB<f_B<f_A all match the original.",
+        "The official answer table lists 理論 問8 as 3, which matches officialAnswer=\"3\".",
+        "LC products: A=LC, B=2LC. In series, L=3L and C=C/2, so the product is 1.5LC, which agrees with the zero-reactance condition ω²·3L=2/C. Since f∝1/√(LC), f_B<f_AB<f_A.",
+        "Numerical check with LC=1: f_A=0.159, f_AB=0.1299≈0.130, f_B=0.1125≈0.113. All correct.",
+        "Each wrong choice has a specific reason. (1) makes f_A the smallest and f_AB the largest. (2) reverses the order. (4) and (5) make f_AB the smallest. All of these explanations are correct.",
+        "The public candidate figure keeps circuits A (L, C), B (2L, C) and the series circuit (L, C, dot, 2L, C), with all terminals and all labels. It is enough on its own to solve the problem."
+      ]
+    }
+  ]
+}

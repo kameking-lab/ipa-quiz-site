@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 4946,
+      "cacheReadInputTokens": 301183,
+      "cacheCreationInputTokens": 24120,
+      "webSearchRequests": 0,
+      "costUSD": 0.3521326,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2890,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "02a735e5af18fc28e5bc0212b2a9c379880f85f64b2a8dd9601e367cbfb6ac0f",
+  "inputRequestSha256": "dfd082d40cfdcafd8e81f21211d9b3234df173966cf04849e963b79f23b4b43e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11": "aa7d41b34a4a03ee23a901fb48c833899b1c7697db3035454701f6ce7c895c22",
+      "q12": "4e37fe68803e7fbea4195f5dcde525ac5ddb7dc7fd089c8e39a39e0403989e69"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p15.png": "61d54b6ef24d9c63814c1b653a02639732c93d46ab2bff87796c2da9d5ab88b6",
+      "data/raw_pdfs/denken3/review/20240818/theory/p16.png": "b41cb1143445d5f842b26034b9bffc40d254b8c57b0b6b0eccbcf2fed578c8fb"
+    },
+    "figureSha256": {},
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "e4046bb1c245518950aeb4be7cb16e10ee8bf777b5c886a97a28cc6abaf6ecda"
+  },
+  "assessment": [
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [
+        "choiceExplanations[1]: The text marks the choice 正しい, then ends with 「素子内部の損失大小は定格・動作条件にもよるため一律には断定しない」. That undercuts the verdict it just gave, so a learner can't tell whether (1) counts as correct. Fix: keep the premise that this is the exam's general comparison, and state plainly that it is correct because a bipolar transistor needs base current all the time (drive power), while an FET gate draws almost no current. Either delete the hedging sentence or recast it as a side note that doesn't weaken the verdict.",
+        "choiceExplanations[2]: The causal link in 「接合形でも逆バイアスのpn接合を介して制御するため、全FETを酸化膜構造とは言わない」 is unclear. The 「でも」 suggests JFETs are just as vulnerable to static, but the sentence gives no reason why. In practice, static vulnerability (gate-oxide breakdown) is mainly a MOS-type problem, and JFETs, whose gate is a pn junction, are less sensitive than MOSFETs. Fix: say the exam statement is a general comparison dominated by MOS-type FETs, and drop the wording that treats JFETs as equally vulnerable or imply it through the connective.",
+        "choiceExplanations[5]: 「キャリアの多数・少数はnpn/pnpの領域によって変わるため一律に割り当てない」 reads like an editing note and doesn't explain the choice. Replace it with the actual reason the statement is correct: bipolar = two carrier types (the origin of the name 'bipolar'), FET = one carrier type (unipolar)."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official page (printed page -12-, T1-R 015). It matches: バイポーラトランジスタと電界効果トランジスタ(FET)に関する記述として，誤っているものを….",
+        "All five choices (1)–(5) match the official text word for word, including the spelling 「ドレーン電流」. The only difference is 「，」 normalized to 「、」.",
+        "The official answer table (令和6年度上期 理論 問11) gives 4, which matches the candidate's officialAnswer=4.",
+        "Main explanation: bipolar = current-controlled (base current → collector current), FET = voltage-controlled (gate voltage → drain current). Choice (4) swaps the two, so it is the incorrect statement. The reasoning is sound.",
+        "choiceExplanations[3] (bipolar has lower input impedance; MOS-type uses an insulating film and JFETs a reverse-biased pn junction, keeping gate current small) and choiceExplanations[4] contain no factual errors.",
+        "The question has no figure, so figureUrls=[] is appropriate. reviewedFromPage=[15] matches the page code T1-R 015.",
+        "officialReferenceUrls=[]. The explanation makes no claim that needs an outside source."
+      ]
+    },
+    {
+      "unitKey": "q12",
+      "questionNumber": 12,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Checked the question stem against the official page (printed page -13-, T1-R 016). The following all match: 直流電圧V[V], 平等電界E[V/m], 陰極板, 初速零, 陽極板, 速さv[m/s], 1/2 mv² = (ア), 電気素量e[C], 質量m[kg], 速さv[m/s]は(イ). Only punctuation and one comma were normalized.",
+        "All five table rows match the official table: (1) eV / √(4eV/m), (2) eV / √(2eV/m), (3) 2eV / √(4eV/m), (4) eE / √(2eE/m), (5) eE / √(4eE/m).",
+        "The official answer table (令和6年度上期 理論 問12) gives 2, which matches the candidate's officialAnswer=2.",
+        "Recalculated: work done by the field is W = eV (e is the magnitude of the charge, so the electron's negative sign is handled correctly). From 1/2 mv² = eV, v² = 2eV/m and v = √(2eV/m). Answer (2) confirmed.",
+        "(1): the coefficient 4 is wrong. (3): 1/2 mv² = 2eV gives v = √(4eV/m), so that row is internally consistent but (ア) is wrong. Both explanations are correct.",
+        "Dimensions for (4)/(5): eE is a force [N]; energy needs eEd = eV. eE/m is an acceleration [m/s²], and √(m/s²) is not m/s. The explanations are correct.",
+        "The table is fully captured as text in the choices, so no figure is needed and figureUrls=[] is appropriate. The page has no electrode diagram, which matches the candidate's figureDescription. reviewedFromPage=[16] matches the page code T1-R 016.",
+        "officialReferenceUrls=[]. The explanation relies only on the basic work–energy relation and makes no claim that needs an outside source."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 2748,
+      "cacheReadInputTokens": 157609,
+      "cacheCreationInputTokens": 158996,
+      "webSearchRequests": 0,
+      "costUSD": 1.3584658,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1364,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "3a591beeaea0cc0ae072cfca4657825bbbc75c07e4382dae5fc274987c031d9d",
+  "inputRequestSha256": "dda43496557eea2cc6e1ffd2a7872ee38a0ccfb1051e777562d27b59c7ecf978",
+  "inputHashes": {
+    "candidateSha256": {
+      "q15a": "519085b26dd5a41d479b541e5e997c8557e149e22d7c630ec673754499e253e0"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p19.png": "7dd8b5e9903630242b620cff2d52909aa9e2389354731235d185d1b755ce1c08"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q15-ac-circuit.png": "3c017b72e88229b876cc59eff777c6a35f495f27fae0d39f50cccc78a09dae02"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "fdff63a71b7ad457916a1b6b9c83b59e816e254417effca1eebadddee9942f66"
+  },
+  "assessment": [
+    {
+      "unitKey": "q15a",
+      "questionNumber": 15,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "Question text: matches the official figure. v = 500 sin(1000t) [V], i = −50 cos(1000t) [A], and the condition that the element is either a coil L or a capacitor C are all copied correctly. The only changes are formatting, such as dropping the comma after 「回路素子は」 and not keeping the thin-space digit grouping in 1 000.",
+        "Choices: (1) C=10 nF, (2) C=100 nF, (3) C=10 μF, (4) L=10 mH and (5) L=100 mH match the official figure, including units and prefixes.",
+        "Official answer: the R6 upper-term Theory answer table lists 問15(a)=4, which matches officialAnswer=\"4\".",
+        "Polarity: in the official figure, the i arrow on the top wire points right into the element and the v arrow under the source points left. Under the Japanese convention that the arrowhead marks the positive side, the left terminal of the source is positive. The current leaves that positive terminal and enters the element, so the given v and i can be compared directly using the passive sign convention. If the opposite polarity is assumed, the current leads by 90°, the element becomes a capacitor, and this contradicts the official answer 4. The explanation's polarity reading is therefore consistent.",
+        "Phase: −cosθ = sin(θ−π/2), so i = 50 sin(1000t−π/2). The current lags the voltage by 90°, which identifies an inductor.",
+        "Magnitude: |Z| = 500/50 = 10 Ω, and L = X_L/ω = 10/1000 = 0.01 H = 10 mH. This gives choice (4).",
+        "Wrong-choice checks: (1) X_C = 1/(1000×10×10⁻⁹) = 1×10⁵ Ω. (2) X_C = 1×10⁴ Ω. (3) X_C = 1/(1000×10×10⁻⁶) = 100 Ω. (5) X_L = 1000×0.1 = 100 Ω. Each value is calculated correctly. The explanations for (1)–(3) are also right that a capacitor would make the current lead, which contradicts the given phase. The explanation for (5) is right that the element type fits but the value is too large by a factor of 10.",
+        "Published figure: it matches the official figure in element connections, the directions of the i and v arrows, and every label (i, v, 回路素子, and the AC source symbol). The polarity needed to answer can be read from the published figure alone. figureDescription also matches the figure, including arrow directions and the high-potential terminal.",
+        "Sources: sourceQuestionPdfUrl, sourceAnswerPdfUrl and sourceAttribution are consistent with R6 upper-term Theory question 15(a). officialReferenceUrls is empty, so there is no independent claim that needs checking against a primary source. The attached official page is printed as page 16. reviewedFromPage=[19] is consistent with that page being PDF page 19 once the front matter is counted."
+      ]
+    }
+  ]
+}

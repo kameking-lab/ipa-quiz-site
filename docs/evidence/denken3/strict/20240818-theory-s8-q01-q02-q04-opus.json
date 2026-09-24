@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9769,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 30165,
+      "webSearchRequests": 0,
+      "costUSD": 0.46472500000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7242,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "46acf350f7b4449e2cdffcf38e7d1226c178f10db9480f511f1e29c70a3a5169",
+  "inputRequestSha256": "b5f1e9c89322f5e15d1c44b712a0ce62c7bf515df1383d83f0d8ecee2ce3ce2d",
+  "inputHashes": {
+    "candidateSha256": {
+      "q01": "95f0f84882fc3cd13f574463b03325359dfc8bc13190f39db2b345a9340ee2fa",
+      "q02": "c3599e2086447c666b4916e3138135b1b7619c2055636164d58b00f7b5fe88cf",
+      "q04": "4fe0b7dea32a76f33e8015b0aa9c992eede47f56fac02e541e82c47c1f569cdb"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p04.png": "04f91f67c32d658e6f37a2ccb478b476d00df25fdda82dbf2e75acdc2ad70ba8",
+      "data/raw_pdfs/denken3/review/20240818/theory/p05.png": "154ef918117898605602a26e4952d91780a4899c8d160a9ec4cc09036a0cf309",
+      "data/raw_pdfs/denken3/review/20240818/theory/p06.png": "e7ff1759cb8fb193aa44392b84c2579d2b77086fe0522e04ed51146f03d35cba",
+      "data/raw_pdfs/denken3/review/20240818/theory/p08.png": "c84f44521346845f4314330700cf85a214d78179096553a955fc1c6c4ddf305a"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q01-context.png": "891fb34761aa1426b41e7bfa468723b4502e20c367a046319fd2d27fe6d49c05",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-1.png": "022a3825df766d0047c64be87c5ee283db185d821d65ce3b7a564bec4230e1f3",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-2.png": "5b7e77ff76f3891d2693ef62cf7d99674de79c8664b7ab10b8bce55f95078210",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-3.png": "332e159c38b9123725397aa199357645bf0b6ccf284eb0e6c95a5757a6ab4d22",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-4.png": "39f0f144c285da036a2020aff3d877020e459637990d410fa462ea69df2d95af",
+      "public/images/denken3/20240818/theory/20240818-theory-q01-choice-5.png": "4b8d6b4ad83a54fd9dec0e62502816dcabaaaef806506b3f8a2e6ff43845b86c",
+      "public/images/denken3/20240818/theory/20240818-theory-q04-layout.png": "d1b7fb44426c8d1a90133dabf58dad10c4b57c6b66bb7bf369b0e1be5bd80519"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "a29c1d893aafb72eacefc0e02b8ac11b02b1011942e880ff1bb41f16b293f1e2"
+  },
+  "assessment": [
+    {
+      "unitKey": "q01",
+      "questionNumber": 1,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図 p.1（T1-R 004）の本文と但し書き（導電性・端効果を無視する条件、図2を参考に示す旨）に一致する。選択肢ページ p.2（T1-R 005）の注記「図2と同様に下側を接地電極とする」も問題文に入っている。",
+        "公式解答表（令和6年度上期・理論）では問1の正答は5。manifest の固定正答5とも候補の officialAnswer とも一致する。",
+        "図1: 上部電極の下にε1=1（空気）、その下にε2=6（固体・灰色）、最下部に接地した下部電極がある。公開図 context.png で測ると空気層は約85px、固体層は約83px で、二層はほぼ同じ厚さ。図2（空気だけ・等間隔の等電位面・『等電位面』の矢印ラベル）と、両図のキャプションも切れずに入っている。",
+        "選択肢の図を原図と照合した。(1)は全体が等間隔、(2)は疎・密・疎、(3)は上が疎（線1本）で下半分が密、(4)は密・疎・密、(5)は上半分が密で下半分が疎。choices の文章説明と figureDescription はこれと一致する。公開用の5枚の画像はそれぞれ対応する原図だけを切り出しており、注記の混入や欠けはない。",
+        "計算の確認: 境界に自由電荷はないので D1=D2 → ε1E1=ε2E2 → E1=6E2。二層が同じ厚さなので電圧の配分は空気6/7・固体1/7、等電位線の間隔の比は空気:固体=1:6 になる。",
+        "(5)の原図を定量測定した。電極の間隔は約113px で、密な線の帯は電極間の中点（二層の境界）で終わる。空気層は約4.7px 間隔で12区間、固体層は約28px 間隔で2区間。間隔比≈1:6、電圧比12/14=6/7 で理論と一致する。候補の uncertainty に書かれた『距離の比は定量測定していない』は、ここで確認できたので未解決事項は残っていない。",
+        "各誤答肢の理由を確認した。(1)は一様な電界で単一誘電体の場合、(2)(4)は三帯構造で、各層で電界が一様な二層構造とは合わない。(3)は粗密の上下が逆。どれも物理的に正しく、選択肢ごとの理由になっている。",
+        "sourceQuestionPdfUrl/sourceAnswerPdfUrl（20240818_ch_third_q01/a01）と reviewedFromPage [4,5] は、原図フッターの T1-R 004・005 と矛盾しない。独立した外部主張はないので、officialReferenceUrls が空で問題ない。"
+      ]
+    },
+    {
+      "unitKey": "q02",
+      "questionNumber": 2,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図 p.3（T1-R 006）と一致する。半径 a[m]、電荷[C]、絶縁耐力 Em[V/m]、誘電率 ε0[F/m] の定義に誤りはない。",
+        "選択肢は原図と一致する。(1)Em/(4πε0a²)、(2)Em/(4πε0a)、(3)4πε0aEm、(4)4πε0a²Em、(5)4πε0a³Em。",
+        "公式解答表では問2の正答は4。manifest の固定正答とも officialAnswer とも一致する。",
+        "計算の確認: 球外の電界は E(r)=Q/(4πε0r²) で、r が大きいほど弱いので最大は表面 r=a。E(a)=Em とおくと Qmax=4πε0a²Em で、選択肢(4)になる。",
+        "各肢の単位を確認した。(4)は F/m·m²·V/m=F·V=C。(1)は V²/(C·m²)、(2)は V²/(C·m)、(3)は C/m、(5)は C·m で、どれも[C]にならない。誤答理由（式の変形の取り違え・a の次数の過不足・単位の不一致）はどれも正しい。",
+        "図はない問題で、figureUrls/choiceFigureUrls が空なのは原図と整合する。reviewedFromPage [6] は T1-R 006 と一致する。"
+      ]
+    },
+    {
+      "unitKey": "q04",
+      "questionNumber": 4,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は公式原図 p.5（T1-R 008）と一致する。A=1.2A、B は反対向きに3A、PA=0.3m、AB=l[m]、無限長、P は同じ平面上。選択肢 0.24/0.45/0.54/0.75/1.05 も一致する。",
+        "公式解答表では問4の正答は2。manifest の固定正答とも officialAnswer とも一致する。",
+        "公開図 layout.png を原図と照合した。左に A（上向き矢印・1.2 A）、右に B（下向き矢印・3 A）があり、P は A の左にある。P–A 間は0.3 m、A–B 間は l[m] で、寸法矢印・全ラベルとも原図と同じで、欠けや混入はない。この図だけで配置と電流の向きを理解できる。",
+        "向きの確認: 電流の向きを dl×r̂ で調べると、A（+y）による P（A から −x 方向）の磁界は +z、B（−y）による P（B から −x 方向）の磁界は −z で、互いに逆向き。したがって合成磁界が零になる条件は大きさが等しいことだけである。",
+        "計算の確認: 1.2/(2π·0.3)=3/(2π(0.3+l)) → 4=3/(0.3+l) → 0.3+l=0.75 → l=0.45 m で、選択肢(2)になる。",
+        "誤答肢の数値を確認した。l=0.24 では 3/0.54≈5.56、0.54 では 3/0.84≈3.57、0.75 では 3/1.05≈2.86、1.05 では 3/1.35≈2.22 で、どれも H_A 側の 4 と一致しない。記載の値はすべて正しい。",
+        "reviewedFromPage [8] は T1-R 008 と一致する。独立した外部主張はないので、officialReferenceUrls が空で問題ない。"
+      ]
+    }
+  ]
+}

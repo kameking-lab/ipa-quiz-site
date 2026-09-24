@@ -30,3 +30,10 @@
 - 新規 `scripts/denken3-direct-review.py` は解答単位キーごとにcurrent candidate SHA、公式問題頁SHA、公開図SHA、公式問題PDF/解答PDF SHA、公式正答単位SHAを固定してOpus highで審査する。
 - strict2の5単位はQ17(a)、Q17(b)、Q18(a)がPASS、Q15(a)、Q15(b)がFIX。次回はQ15両候補へ大問共通文（素子L/C、`v=500 sin(1000t)`, `i=-50 cos(1000t)`）を追加し、Q15(a)に原図のv/i基準方向と受動符号規約を明記してtargeted再審査する。
 - `docs/evidence/denken3/strict/` の旧巡を保持する。旧partial acceptanceはstrictへ継承せず、全候補を現内容と原図から再審査する。現在のstrict cleanは3/80、非公開候補は22/80。
+
+## 2026-09-24更新
+
+- 2024年度上期理論の非公開候補22解答単位を、実 `claude-opus-5-5` / firstParty の現候補・原図・公式正答・図のSHA付き直接審査で22/22 PASSにした。旧巡のFIXはそのまま残し、現候補のPASSレシートを各部分受入レシートへ結び直した。
+- `py -3.12 scripts/denken3-strict-status.py` は原稿SHA、公式資料SHA、公開図SHA、モデル実IDと生応答SHA、全issue空を再照合し、現ブランチの厳格PASSが22/320と出る。`py -3.12 scripts/denken3-validate.py --local-pdfs --partial` もPASS。
+- 2024年度上期の残り3科目と下期4科目は未受入。2025年度は別worktreeで進行中。全16科目・320公開解答単位と画面品質のゲートを満たすまで公開しない。
+- ユーザーは試験センターへの利用状況連絡等を完了済みとして公開まで進めるよう指示した。送信日時や受付番号は未提示のため作成しない。

@@ -49,21 +49,28 @@ def parse_token(token: str) -> tuple[int, str | None]:
     return int(match.group(1)), match.group(2)
 
 
-def parse_result(stdout: str) -> list[dict]:
+def parse_result(stdout: str) -> tuple[list[dict], dict]:
     events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
         raise ValueError(f"No successful Claude result: {stdout[-1500:]}")
+    model_usage = final.get("modelUsage") or {}
+    models = [name for name in model_usage if name.startswith("claude-")]
+    if models != ["claude-opus-5-5"]:
+        raise ValueError(f"Cannot prove requested model from Claude modelUsage: {models}")
+    usage = model_usage["claude-opus-5-5"]
+    if usage.get("canonicalModel") != "claude-opus-5-5" or not usage.get("provider"):
+        raise ValueError(f"Claude modelUsage lacks canonical model/provider: {usage}")
     value = re.sub(r"^```(?:json)?\s*|\s*```$", "", final.get("result", "").strip(), flags=re.I)
     start, end = value.find("["), value.rfind("]")
     if start < 0 or end < start:
         raise ValueError(f"No JSON array: {value[-1500:]}")
     result, _ = json.JSONDecoder().raw_decode(value[start:])
-    return result
+    return result, model_usage
 
 
 def main() -> None:
-    if len(sys.argv) < 6:
+    if len(sys.argv) < 5:
         raise SystemExit(__doc__)
     date, subject, round_name = sys.argv[1:4]
     selected = [parse_token(value) for value in sys.argv[4:]]
@@ -133,14 +140,14 @@ def main() -> None:
                        image(ROOT / "public" / url.lstrip("/"))]
     request = {"type": "user", "message": {"role": "user", "content": blocks}}
     process = subprocess.run(
-        [str(CLI), "-p", "--model", "opus", "--effort", "high", "--input-format", "stream-json",
+        [str(CLI), "-p", "--model", "claude-opus-5-5", "--effort", "high", "--input-format", "stream-json",
          "--output-format", "stream-json", "--verbose", "--tools", "WebFetch,WebSearch"],
         input=json.dumps(request, ensure_ascii=False) + "\n", text=True, encoding="utf-8",
         capture_output=True, cwd=ROOT, timeout=900,
     )
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-2000:])
-    result = parse_result(process.stdout)
+    result, model_usage = parse_result(process.stdout)
     for item in result:
         if item.get("questionNumber") is not None:
             item["unitKey"] = unit_key(int(item["questionNumber"]), item.get("part") or None)
@@ -159,10 +166,18 @@ def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
     stamp = "-".join(selected_keys)
     out = OUT / f"{date}-{subject}-{round_name}-{stamp}-opus.json"
+    raw_out = PRIVATE / date / subject / f"{date}-{subject}-{round_name}-{stamp}-opus-raw.jsonl"
     if out.exists():
         raise FileExistsError(out)
+    if raw_out.exists():
+        raise FileExistsError(raw_out)
+    raw_out.write_text(process.stdout, encoding="utf-8")
     out.write_text(json.dumps({"schemaVersion": 1, "examDate": date, "subject": subject,
-                               "reviewModel": "claude-opus-5-5", "inputHashes": hashes,
+                               "reviewModel": "claude-opus-5-5", "resolvedModel": "claude-opus-5-5",
+                               "modelUsage": model_usage,
+                               "rawResponseSha256": raw_digest(raw_out),
+                               "inputRequestSha256": sha256((json.dumps(request, ensure_ascii=False) + "\n").encode("utf-8")).hexdigest(),
+                               "inputHashes": hashes,
                                "assessment": result}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     passed = sum(item["status"] == "PASS" for item in result)
     print(f"{out.name}: PASS={passed} FIX={len(result)-passed}")

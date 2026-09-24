@@ -7,7 +7,21 @@
   "choiceCount": 10,
   "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
   "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
-  "reviewedDataSha256": "583978c69d5bf1092e5d6cd47ffb67428666fd920a7835d443e053657bd075ad",
+  "reviewedDataSha256": "da672d2495a76743d611a711fb5db933b43928257725fb2a3953c472839192cc",
+  "strictReview": {
+    "q15a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-strict4-q15a-opus.json",
+      "sha256": "fc718b41f41c9ccc6223ae26aa80e8c12568e5277e6c923766106828c213dd07",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q15b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-strict3-q15a-q15b-opus.json",
+      "sha256": "b159dfac4c8f63615d6f18c68d3751d201da43baf45fd146a4bd84cf52e0db28",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  },
   "questions": [
     {
       "number": 15,

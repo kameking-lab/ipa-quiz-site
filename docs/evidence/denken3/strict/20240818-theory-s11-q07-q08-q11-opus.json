@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4543,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 26057,
+      "webSearchRequests": 0,
+      "costUSD": 0.327341,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2154,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "33acafab2f90ee7abc1c611cbd26450febc51c5752d3e950fb78542442fe1d83",
+  "inputRequestSha256": "860aff3e8e31bd0f5855745b520f64c37c2e76f046bcb7786a640ba35768748e",
+  "inputHashes": {
+    "candidateSha256": {
+      "q07": "0953138776c81675fabc44fc51c4746ed4735444bbceb56d139baaece4bb99dc",
+      "q08": "c854adf86a3337b98b041eae6e7e3ddf588a226834aa105b9c28ff5d7d8aa03e",
+      "q11": "55fd1b750efd0186918f5c4ac0ed4fa9fd1620b710242f16a463d62f6d6bff0e"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p11.png": "8adfe6bf40401a6a4b0cddd87071912ad55ae37f684bf547ccf135b4674f1ccd",
+      "data/raw_pdfs/denken3/review/20240818/theory/p12.png": "c497c07748cfe015eb46adcff33d893da533a1853102ce9d75865353d5a3ee24",
+      "data/raw_pdfs/denken3/review/20240818/theory/p15.png": "61d54b6ef24d9c63814c1b653a02639732c93d46ab2bff87796c2da9d5ab88b6"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q08-circuits.png": "fd0e7c87a02f2cf1aebd3d2c1a0eef7c80100a006059a0cc958da540da4aa651"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "5a7927fa60218a0446b064d9cf56734cf41fd44cc94e57a9de60185ef2d212d0"
+  },
+  "assessment": [
+    {
+      "unitKey": "q07",
+      "questionNumber": 7,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図（-8-、T1-R 011）と照合した。E[V]、r[Ω]、R1[Ω]、R2[Ω]、「並列につないだとき」「ジュール熱が最大」の記述は、記号・単位とも一致する。",
+        "(1)R2=r、(2)R2=R1、(3)rR1/(r+R1)、(4)rR1/(R1−r)、(5)rR1/(r−R1) の5肢を原図と照合した。分子・分母・符号はすべて一致する。",
+        "公式解答表では、理論の問7の正答は3。manifest の answer=3 および候補の officialAnswer=3 と一致する。",
+        "テブナン等価回路で検算した。R2 を外すと E-r-R1 の直列閉回路になり、V_th=E·R1/(r+R1)。E を短絡すると R_th=r∥R1=rR1/(r+R1)。P=V_th²R2/(R_th+R2)² は R2=R_th のとき最大になる。これは dP/dR2 ∝ (R_th−R2) からも確認できる。したがって正答は(3)。",
+        "各肢の理由を確認した。(1)は R1 を無視した条件。(2)は、r,R1>0 なら r∥R1<R1 が常に成り立つので不一致。(4)(5)は分母が並列合成の形ではない。(5)は r<R1 で R2 が負になる。いずれも正しい記述である。",
+        "原本ページに回路図はない。解答に図は不要で、figureUrls が空であることも妥当。reviewedFromPage=[11] は原図のページ識別子 T1-R 011 と一致する。独立した外部主張はないため、ReferenceUrls なしで問題ない。"
+      ]
+    },
+    {
+      "unitKey": "q08",
+      "questionNumber": 8,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図（-9-、T1-R 012）と照合した。「二つのLC直列共振回路A、B」「f_A[Hz]、f_B[Hz]」「さらに直列に接続」「f_AB[Hz]」は一致する。",
+        "5肢の不等号の向きと添字を原図と照合した。(1)f_A<f_B<f_AB、(2)f_A<f_AB<f_B、(3)f_B<f_AB<f_A、(4)f_AB<f_A<f_B、(5)f_AB<f_B<f_A で、すべて一致する。",
+        "公式解答表では、理論の問8の正答は3。manifest の answer=3 および候補の officialAnswer=3 と一致する。",
+        "LC積を検算した。A は LC、B は 2LC。直列回路は L_total=3L、C_total=C/2 なので 3L·C/2=1.5LC。f∝1/√(LC) だから f_A>f_AB>f_B、つまり(3)。LC=1 と置いた数値 0.159、0.130、0.113 も 1/(2π)=0.15915 を √1.5 と √2 で割った値と一致する。",
+        "誤答肢(1)(2)(4)(5)の理由を確認した。f_AB が f_A と f_B の中間にあり、f_A が最大、f_B が最小であることと、各肢の順序の食い違いが正しく説明されている。",
+        "公開候補図を公式原図と照合した。回路A（L[H]、C[F]）、回路B（2L[H]、C[F]）、直列回路（L[H]、C[F]、黒丸、2L[H]、C[F]）の素子順、端子の○、ラベル、3つのキャプションがすべて一致する。欠落や切れはない。",
+        "黒丸は、回路AのC下端と回路Bの2L上端を結ぶ接続点である。分岐線はなく、2端子の直列回路として公開候補図だけで理解できる。figureDescription の内容も図と一致する。",
+        "reviewedFromPage=[12] は T1-R 012 と一致する。独立した外部主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q11",
+      "questionNumber": 11,
+      "part": null,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文を公式原図（-12-、T1-R 015）と照合した。「バイポーラトランジスタと電界効果トランジスタ(FET)に関する記述として、誤っているもの」は一致する。",
+        "5肢の文言を原図と照合した。(1)消費電力がFETより大きい、(2)静電気に対してFETより破壊されにくい、(3)入力インピーダンスはFETより低い、(4)バイポーラは電圧制御素子・FETは電流制御素子、(5)コレクタ電流は自由電子及び正孔、ドレーン電流は自由電子又は正孔。表記『ドレーン』を含めて一致する。",
+        "公式解答表では、理論の問11の正答は4。manifest の answer=4 および候補の officialAnswer=4 と一致する。",
+        "(4)が誤りであることを確認した。バイポーラはベース電流でコレクタ電流を制御する電流制御素子、FETはゲート電圧でドレーン電流を制御する電圧制御素子で、本肢は対応が逆になっている。",
+        "正しい肢の理由を確認した。(1)はベース駆動電流による電力。(2)はMOSゲート酸化膜の静電破壊。(3)は、MOS形が絶縁膜、接合形が逆バイアスpn接合でゲート電流が小さく高入力インピーダンスであること。(5)はバイポーラ（両キャリア）とユニポーラ（nチャネルは電子、pチャネルは正孔）の区別。いずれも標準的な記述である。(1)(2)は『本問の一般的な比較では』と前提が明示されていて、断定しすぎていない。",
+        "原本ページに図はなく、figureUrls が空であることは妥当。reviewedFromPage=[15] は T1-R 015 と一致する。独立した外部主張はない。"
+      ]
+    }
+  ]
+}

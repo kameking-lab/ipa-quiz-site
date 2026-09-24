@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20240818",
+  "subject": "theory",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5025,
+      "cacheReadInputTokens": 140085,
+      "cacheCreationInputTokens": 22487,
+      "webSearchRequests": 0,
+      "costUSD": 0.308421,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2903,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "07ed1cd487e3804f6890e0de52c90defef5d345de37008360c2016a6043d5701",
+  "inputRequestSha256": "6bb92d916e773f82ae184be98f624ddd9c044f7460cae8ebeddbee15b26dd7bf",
+  "inputHashes": {
+    "candidateSha256": {
+      "q13": "32f1fa3f4cc1f822fe0de9e333552910e68b886912f32b00f309aa41037b6e5c",
+      "q14": "62d04179104e9bb00c61d1eafb400eeaa350b2faaf60ea3d86031008489ec1f3"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20240818/theory/p17.png": "f6aea8619b55ee48bd70c4cbd5a066479b262bb6451d4f0826e9e60789af6c4b",
+      "data/raw_pdfs/denken3/review/20240818/theory/p18.png": "b484dd4e07cea07919760c6b1cb2650f5799145e2a293fa9cf40d2e479f8b5e5"
+    },
+    "figureSha256": {
+      "public/images/denken3/20240818/theory/20240818-theory-q13-equivalent-circuits.png": "0c141134fa8994907c0decfa4b38945e9c276ac3364bfac965a305d303747358"
+    },
+    "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
+    "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
+    "officialAnswerUnitsSha256": "ea9454aee1b494c3d28dcd2c8260a3610e7b2ce4fc9ca4b65edf92c90038f5da"
+  },
+  "assessment": [
+    {
+      "unitKey": "q13",
+      "questionNumber": 13,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The uncertainty field is out of date and contradicts the rest of the record. It says the year and sitting (「どの年度・回」) cannot be pinned down from the image alone (「この画像単体からは確定できない」), yet sourceQuestionPdfUrl and sourceAnswerPdfUrl already point to the official 20240818 PDFs, sourceAttribution names 令和6年度上期 理論 問13, and the official answer table (問13=3) matches. Suggested replacement text: 「令和6年度上期理論問13として公式問題PDF・公式解答表(問13=3)と照合済み。転記・計算に未解決事項なし」. An empty officialReferenceUrls is fine for this question, because the explanation relies only on circuit theory and makes no separate claim that would need an outside source."
+      ],
+      "verifiedEvidence": [
+        "The question text matches the official figure word for word: C[F], L[H], r[Ω], Rp[Ω], Ic[A], the condition that r is much smaller than ωL, and the note on the current source. The only differences are line breaks and punctuation.",
+        "Choices (1) to (5) match the original: ωL/r, r/(ωL)^2, (ωL)^2/r, r^2/ωL and r(ωL)^2. Every subscript and exponent is correct.",
+        "The official answer table (令和6年度上期 理論) gives 問13 = 3, which matches officialAnswer.",
+        "Check of the calculation: Y = 1/(r + jωL) = (r − jωL)/(r² + (ωL)²). The real part is 1/Rp = r/(r² + (ωL)²), which becomes r/(ωL)² when r is much smaller than ωL, so Rp ≈ (ωL)²/r. The imaginary part gives 1/(ωLp) ≈ 1/(ωL), so Lp ≈ L. This is consistent with Figure 2 keeping the inductance labelled L.",
+        "Wrong choices checked by dimensions: (1) has no unit, (2) is in siemens and is actually the formula for 1/Rp, (5) is in Ω³, and (4) is in Ω but has r and ωL swapped. Each reason given in the explanation is correct.",
+        "The public candidate figure matches the original Figures 1 and 2. In Figure 1, Ic, C and a branch of L in series with r (L on top) are connected in parallel. In Figure 2, Ic, C, Rp and L are all in parallel. The connection dots and every label (Ic[A], C[F], L[H], r[Ω], Rp[Ω], 図1, 図2) are present. The figure can be understood on its own, and figureDescription matches it."
+      ]
+    },
+    {
+      "unitKey": "q14",
+      "questionNumber": 14,
+      "part": null,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "Choices (1), (2), (4) and (5) use the half-width comma \",\" as the Japanese comma, while the question stem uses \"、\". The punctuation should be made consistent, either all 「，」 as in the original or all 「、」 as in the stem. The wording itself matches the original exactly."
+      ],
+      "answerIssues": [],
+      "explanationIssues": [
+        "The overall explanation of choice (1) only says the field is not something that cancels (「打ち消し合う」のではなく) and that a single magnetic flux appears in the core (「単一の磁束として現れ」). It never states the correct version of the statement, so the wrong part of the choice is not clear. It should say this: clamping both the outgoing and return conductors together makes their magnetic fields cancel, so the load current cannot be measured. That is why you clamp only one conductor, so the fields do not cancel (「打ち消し合わないように」). The per-choice explanation choiceExplanations[1] does state this correctly, but the overall explanation should be brought into line with it."
+      ],
+      "figureIssues": [],
+      "sourceIssues": [
+        "The uncertainty field describes μV as having a subscript (「μVの下付き」), which is wrong: μ is an ordinary unit prefix, not a subscript. The field also hedges that fine font differences are not guaranteed (「フォントの微細な差異までは保証できない」), even though this has now been checked against the official original and the answer (問14=3) is confirmed. Suggested replacement: 「公式問題原図と全文照合済み、未解決事項なし」. An empty officialReferenceUrls is fine, because the explanation relies only on standard textbook facts about measuring instruments."
+      ],
+      "verifiedEvidence": [
+        "The question stem and choices (1) to (5) match the official figure word for word, including 「電線1本のみ」, 「数μVから100V程度」, 「抵抗を精密に測定できる」, and the swapped descriptions of the two resistance meters in choices (4) and (5). The only exception is the punctuation noted above.",
+        "The official answer table (令和6年度上期 理論) gives 問14 = 3, which matches officialAnswer.",
+        "(1) is wrong: you clamp only one conductor precisely so that the fields do not cancel. Clamping both conductors is the principle behind leakage-current clamp meters. choiceExplanations states this correctly.",
+        "(2) is wrong: putting an amplifier in front of the meter makes the input impedance (internal resistance) high, so the statement that it is low (「内部抵抗が小さく」) is the error. The explanation's point is correct.",
+        "(3) is correct: a Wheatstone bridge finds an unknown resistance precisely from the balance condition, when the galvanometer reads zero.",
+        "(4) and (5) are wrong: they swap what an earth-resistance tester and an insulation-resistance tester each measure. Both explanations are correct.",
+        "The question has no figure, and figureUrls = [] matches this."
+      ]
+    }
+  ]
+}

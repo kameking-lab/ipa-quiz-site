@@ -7,7 +7,7 @@
   "choiceCount": 20,
   "sourceQuestionPdfSha256": "236be905e93a023cf3c65c1e22c45c24dc42b910151c51f8ed023247793d1d29",
   "sourceAnswerPdfSha256": "f72ecbc3a477e64948388b69cf78cb931032c9f0c688639836c8d533a949cd0f",
-  "reviewedDataSha256": "89158494999ee16a94c0cb4fb916fb8a5799096aeb95125c4734e787c5ae6f7a",
+  "reviewedDataSha256": "7a15b07c64522b2e632999640d9bc69e843247a1290a9e6a9b92011e36b3fca5",
   "questions": [
     {
       "number": 17,
@@ -45,5 +45,31 @@
         "20240818-theory-q18-am-circuit-waveforms": "27d643514d4dc897f88d431bf620d534aa8d08f45b62c459909a6a543bb49fa9"
       }
     }
-  ]
+  ],
+  "strictReview": {
+    "q17a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q17b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q18a": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s16-q17a-q17b-q18a-opus.json",
+      "sha256": "9990b7f5cf1d8ad772d67df7795230d545625a87b4ae884a34b86bda201485b2",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    },
+    "q18b": {
+      "path": "docs/evidence/denken3/strict/20240818-theory-s17-q18b-opus.json",
+      "sha256": "5533dd00bbb3c54cc2ad11c4badb05ccc1132e7805ed4a94eaeea49b03a94902",
+      "status": "PASS",
+      "resolvedModel": "claude-opus-5-5"
+    }
+  }
 }
