@@ -377,61 +377,207 @@
       "overlay": {
         "sourceHash": "72ec292cc2a89d7349c363a83883d2e19acbd9062fa3e24519f8bff78851f149",
         "correctChoice": 2,
-        "summary": "尿中トリクロロ酢酸・総三塩化物はトリクロロエチレン等の指標で、1,2-ジクロロエタンの指標ではない。",
+        "summary": "尿中のトリクロル酢酸・総三塩化物はトリクロロエチレン等の指標で、1,2-ジクロロエタンの生物学的モニタリング指標ではないので（2）が誤り",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "正しい記述。有機則の健康診断の別表は、N,N-ジメチルホルムアミドの業務について、肝機能検査と「尿中のN-メチルホルムアミドの量の検査」を定めている。DMFが代謝されてN-メチルホルムアミドとして尿に出ることを前提にした項目である。"
+            "reason": "正しい。職場のあんぜんサイトは、生物学的モニタリングを有害物やその代謝物の濃度を測るものと説明し、N,N-ジメチルホルムアミドの項目に「尿中のN―メチルホルムアミドの量」を挙げる。環境省のファクトシートも、DMFは主に肝臓で代謝物に変わり、主に尿中に排せつされるとしている。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "誤っている記述なので、これが正答。特化則別表第三で「尿中のトリクロル酢酸又は総三塩化物の量の測定」があるのは、トリクロロエチレンとテトラクロロエチレン。1,2-ジクロロエタンの項はGOT・GPT・γ-GTPの肝機能検査だけで、尿中代謝物の指標はない。"
+            "reason": "誤り。職場のあんぜんサイトの生物学的モニタリング表で「尿中のトリクロル酢酸又は総三塩化物の量」が挙がるのは、1,1,1-トリクロルエタン、テトラクロロエチレン、トリクロロエチレンである。1,2-ジクロロエタンの行には代謝物の検査がなく、皮膚所見とGOT・GPT・γ-GTPの検査のみである。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "公式正答の上では正しい記述として扱う。o-トルイジンとMOCAはどちらも経皮吸収が問題になる発がん物質。特化則別表第三では、医師が必要と認める場合に、尿中のo-トルイジンや尿中のMOCAの量を測定するよう定めている。"
+            "reason": "正しい。厚労省モデルSDSの皮膚腐食性・刺激性の分類は、o-トルイジンが「区分外」、MOCAが「区分に該当しない」である。両物質は経皮吸収による障害のおそれがあるとして保護衣等の使用が義務付けられた特定化学物質に含まれ、GHS分類の発がん性はo-トルイジンが区分1A、MOCAが区分1Bである。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "正しい記述。特化則別表第三は、インジウム化合物の健康診断項目として「血清インジウムの量の測定」を定めている。血清KL-6の測定とあわせて、吸入による肺障害のリスクをつかむ生物学的モニタリング指標として使われる。"
+            "reason": "正しい。職場のあんぜんサイトの生物学的モニタリング表では、インジウム化合物の項目として「血清インジウムの量」が挙げられている。特化則の特殊健康診断でも、インジウム化合物の業務について「血清インジウムの量の測定」が定められている。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "正しい記述。吸収された鉛の大部分は骨に蓄積する。食品安全委員会は生物学的半減期を、血液・軟組織で約40日、骨で約20年としている。骨からの排泄は極めて遅く、「半減期が10年に及ぶ」という本肢の趣旨と矛盾しない。"
+            "reason": "正しい。食品安全委員会によると、吸収された鉛は骨に最も多く蓄積し、生物学的半減期は血液と軟組織で約40日、骨で約20年である。骨からの排泄は極めて遅く、半減期が年単位で10年を超えることから、「生物学的半減期は10年に及ぶ」という記述と矛盾しない。"
           }
         ],
         "sources": [
+          {
+            "title": "職場のあんぜんサイト 生物学的モニタリング",
+            "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html"
+          },
+          {
+            "title": "環境省 PRTRファクトシート N,N-ジメチルホルムアミド",
+            "url": "https://www.prtr.env.go.jp/factsheet/factsheet/pdf/fc00232.pdf"
+          },
           {
             "title": "特定化学物質障害予防規則（別表第三 健康診断項目）",
             "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3"
           },
           {
-            "title": "有機溶剤中毒予防規則（健康診断の別表）",
-            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74090000&dataType=0&pageNo=2"
+            "title": "厚生労働省 特定化学物質障害予防規則（特化則）等の改正について－オルト－トルイジン、三酸化二アンチモン－（意見交換会資料）",
+            "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS o-トルイジン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/95-53-4.html"
+          },
+          {
+            "title": "職場のあんぜんサイト モデルSDS 3,3'-ジクロロ-4,4'-ジアミノジフェニルメタン",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html"
           },
           {
             "title": "食品安全委員会「鉛」の評価書に関するQ&A",
             "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html"
-          },
-          {
-            "title": "職場のあんぜんサイト：3,3'-ジクロロ-4,4'-ジアミノジフェニルメタン（モデルSDS）",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html"
-          },
-          {
-            "title": "職場のあんぜんサイト：o-トルイジン（モデルSDS）",
-            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/95-53-4.html"
           }
         ]
       },
-      "reviewIssues": [
-        "肢3の「皮膚刺激性はない」について：厚労省モデルSDSのGHS分類では、o-トルイジン・MOCAともに皮膚刺激性は区分2とされていて、文字どおりには支持されない。試験の趣旨は「刺激で気づきにくいまま経皮吸収される発がん物質」と読めるので、公式正答（2）は変えないが、解説では断定を避けるべき。",
-        "肢5の半減期について：食品安全委員会は骨中の鉛の半減期を約20年としている。本肢の「10年に及ぶ」は下限の表現として矛盾はしないが、数値は資料によって違う。",
-        "特化則・有機則の別表は、e-GovではなくMHLW法令等データベース（t_doc）の本文で確認した。"
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.prtr.env.go.jp/factsheet/factsheet/pdf/fc00232.pdf",
+          "excerpt": "N,N-ジメチルホルムアミドは容易に吸収され、主に肝臓で代謝物に変化し、主に尿中に含まれて比較的迅速に排せつされる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "１N・N―ジメチルホルムアミド２前号に掲げる有機溶剤をその重量の五パーセントを超えて含有する物尿中のN―メチルホルムアミドの量",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "作業者の尿、血液等の生体試料中の有害物の濃度、その有害物の代謝物の濃度",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "一・二―ジクロロエタン(これをその重量の一パーセントを超えて含有する製剤その他の物を含む。)皮膚炎等の皮膚所見の有無、血清グルタミツクオキサロアセチツクトランスアミナーゼ(GOT)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "トリクロロエチレン(これをその重量の一パーセントを超えて含有する製剤その他の物を含む。)尿中のトリクロル酢酸又は総三塩化物の量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "テトラクロロエチレン(これをその重量の一パーセントを超えて含有する製剤その他の物を含む。)尿中のトリクロル酢酸又は総三塩化物の量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "１一・一・一―トリクロルエタン２前号に掲げる有機溶剤をその重量の五パーセントを超えて含有する物尿中のトリクロル酢酸又は総三塩化物の量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3",
+          "excerpt": "五皮膚炎等の皮膚所見の有無の検査六血清グルタミツクオキサロアセチツクトランスアミナーゼ(GOT)、血清グルタミツクピルビツクトランスアミナーゼ(GPT)及び血清ガンマ―グルタミルトランスペプチダーゼ(γ―GTP)の検査(三十五)三・三′―ジクロロ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/95-53-4.html",
+          "excerpt": "半閉塞適用において刺激性がみられなかったことから区分外とした",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/95-53-4.html",
+          "excerpt": "IARC及びNTPを優先し区分1Aとした",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html",
+          "excerpt": "皮膚腐食性及び皮膚刺激性【分類根拠】(1)、(2)より、区分に該当しないとした。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/101-14-4.html",
+          "excerpt": "発がん性区分1B",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf",
+          "excerpt": "経皮吸収による障害のおそれがある場合に、保護衣等の使用が義務となる特定化学物質",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf",
+          "excerpt": "特定化学物質障害予防規則（特化則）等の改正について-オルト-トルイジン、三酸化二アンチモン-",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf",
+          "excerpt": "オルト―トルイジンオルト―フタロジニトリル",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11303000/001414208.pdf",
+          "excerpt": "３，３′―ジクロロ―４，４′―ジアミノジフェニルメタン（MOCA）ジクロロメタン",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo21_1.html",
+          "excerpt": "インジウム化合物(これをその重量の一パーセントを超えて含有する製剤その他の物を含む。)血清インジウムの量",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74097000&dataType=0&pageNo=3",
+          "excerpt": "五血清インジウムの量の測定",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html",
+          "excerpt": "中でも骨に最も多く蓄積されます。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.fsc.go.jp/osirase/lead_and_health_assessment_faq.html",
+          "excerpt": "鉛の生物学的半減期は血液及び軟組織（肝臓、肺、脾臓、腎臓及び骨髄）で約40日、骨で約20年とされています。",
+          "choiceNumbers": [
+            5
+          ]
+        }
       ]
     },
     "emkohyo-EM20261801-q5": {
