@@ -23788,5 +23788,67 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
       }
     ]
+  },
+  "emkohyo-EM20261802-q5": {
+    "sourceHash": "fcf3c94498437ba602e0ebd4e9995c65f5bc71657079ae3e97bfbed046cc36bc",
+    "correctChoice": 4,
+    "summary": "作業主任者の氏名・担当事項は安衛則第18条に基づき掲示等で周知する。就業制限業務の免許証等携帯義務と混同した肢4が誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "酸素欠乏症等防止規則第26条は酸素欠乏危険作業主任者技能講習を学科と実技で行うと定め、実技科目に救急そ生の方法と酸素濃度の測定方法を挙げる。肢1は講習内容を正しく述べている。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "作業環境測定法施行令第1条は安衛令第21条第6号の一部を指定作業場に含め、測定法施行規則別表第2号は放射性物質取扱作業室を挙げる。一方、主任者を要する安衛令第6条第5号はエックス線装置を使用する放射線業務等、第5号の2はガンマ線照射装置による透過写真撮影であり、同作業室での放射性物質取扱い一般は別の範囲。肢2は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "安衛則第17条は、同じ場所で同一区分の作業主任者を2人以上選任したとき、それぞれの職務分担を定める義務を課す。複数選任できることも規定の前提であり、肢3は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "安衛則第18条は、作業主任者の氏名と担当事項を掲示等で関係労働者に周知するよう事業者に求める。安衛法第61条第3項の免許証等携帯は、同条第1項の就業制限業務に従事する者への規定で、作業主任者を選任したというだけで全区分に携帯義務は生じない。肢4が誤り。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "安衛則第2条第2項・第4条第3項・第7条第3項・第13条第2項は、総括安全衛生管理者・安全管理者・衛生管理者・産業医それぞれの監督署への選任報告を定める。作業主任者を定める第16〜18条には対応する選任報告規定がなく、氏名等の周知を求める。肢5は正しい。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省・酸素欠乏症等防止規則第26条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省・労働安全衛生法施行令第6条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+      },
+      {
+        "title": "厚生労働省・作業環境測定法施行規則別表",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3"
+      },
+      {
+        "title": "厚生労働省・作業環境測定法施行令第1条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省・労働安全衛生規則第16～18条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
+      },
+      {
+        "title": "厚生労働省・労働安全衛生法第61条",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+      },
+      {
+        "title": "厚生労働省・管理者等の選任報告案内",
+        "url": "https://www.mhlw.go.jp/stf/newpage_09979.html"
+      }
+    ]
   }
 }

@@ -410,45 +410,195 @@
       "overlay": {
         "sourceHash": "fcf3c94498437ba602e0ebd4e9995c65f5bc71657079ae3e97bfbed046cc36bc",
         "correctChoice": 4,
-        "summary": "作業主任者に求められるのは氏名等の掲示による周知で、区分を問わない資格証携帯義務はない",
+        "summary": "作業主任者の氏名・担当事項は安衛則第18条に基づき掲示等で周知する。就業制限業務の免許証等携帯義務と混同した肢4が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "酸素欠乏危険作業主任者技能講習は、学科講習に加えて、酸素濃度の測定方法や救急そ生の方法などの実技講習で行われる。記述は正しい。"
+            "reason": "酸素欠乏症等防止規則第26条は酸素欠乏危険作業主任者技能講習を学科と実技で行うと定め、実技科目に救急そ生の方法と酸素濃度の測定方法を挙げる。肢1は講習内容を正しく述べている。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "放射性物質取扱作業室は作業環境測定を行う指定作業場である。しかし作業主任者を選任すべき作業に挙がっているのはエックス線装置やガンマ線照射装置による透過写真撮影の作業であり、放射性物質取扱作業室の作業自体は含まれない。記述は正しい。"
+            "reason": "作業環境測定法施行令第1条は安衛令第21条第6号の一部を指定作業場に含め、測定法施行規則別表第2号は放射性物質取扱作業室を挙げる。一方、主任者を要する安衛令第6条第5号はエックス線装置を使用する放射線業務等、第5号の2はガンマ線照射装置による透過写真撮影であり、同作業室での放射性物質取扱い一般は別の範囲。肢2は正しい。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "同一の場所で同一区分の作業を行う場合に、作業主任者を2人以上選任することは認められている。その場合は、それぞれの作業主任者の職務の分担を定めることとされており、記述は正しい。"
+            "reason": "安衛則第17条は、同じ場所で同一区分の作業主任者を2人以上選任したとき、それぞれの職務分担を定める義務を課す。複数選任できることも規定の前提であり、肢3は正しい。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "事業者に求められるのは、作業主任者の氏名と行わせる事項を作業場の見やすい箇所に掲示するなどして関係労働者に周知することである。資格証の携帯義務は就業制限業務に就く者の免許証等に関する規定であり、区分を問わず携帯義務があるとする点が誤りである。"
+            "reason": "安衛則第18条は、作業主任者の氏名と担当事項を掲示等で関係労働者に周知するよう事業者に求める。安衛法第61条第3項の免許証等携帯は、同条第1項の就業制限業務に従事する者への規定で、作業主任者を選任したというだけで全区分に携帯義務は生じない。肢4が誤り。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "総括安全衛生管理者・衛生管理者・産業医は、選任したときに所轄労働基準監督署長へ選任報告を提出する。作業主任者の選任には報告義務が定められておらず、記述は正しい。"
+            "reason": "安衛則第2条第2項・第4条第3項・第7条第3項・第13条第2項は、総括安全衛生管理者・安全管理者・衛生管理者・産業医それぞれの監督署への選任報告を定める。作業主任者を定める第16〜18条には対応する選任報告規定がなく、氏名等の周知を求める。肢5は正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省・酸素欠乏症等防止規則第26条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生法施行令第6条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
+          },
+          {
+            "title": "厚生労働省・作業環境測定法施行規則別表",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3"
+          },
+          {
+            "title": "厚生労働省・作業環境測定法施行令第1条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生規則第16～18条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生法第61条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000"
+          },
+          {
+            "title": "厚生労働省・管理者等の選任報告案内",
+            "url": "https://www.mhlw.go.jp/stf/newpage_09979.html"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "【正答根拠が未確認】正答肢4の根拠となる安衛則第18条（作業主任者の氏名等の掲示）と安衛法第61条第3項（就業制限業務の免許証等携帯）の本文は、科目別packの抜粋に含まれていない。packにあるのは目次「第五節 作業主任者(第十六条―第十八条の二)」だけで、判断を支えないため採用していない。検索が必要。",
-        "肢1の技能講習の実技講習の内容（酸素濃度測定、救急そ生）は、技能講習規程の本文を確認していない。検索が必要。",
-        "肢2の、作業主任者を選任すべき作業の一覧（施行令第6条）と指定作業場（施行令第21条）の本文は未確認。検索が必要。",
-        "肢3の職務分担（安衛則第17条）の本文は未確認。検索が必要。",
-        "既存解説の「全ての区分で資格証明書の携帯義務が一律に生じるわけではありません」は、一部の区分に携帯義務があるかのように読める。作業主任者に一般的な携帯義務はないため、表現の修正が必要。",
-        "既存解説には根拠URLがない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "酸素欠乏危険作業主任者技能講習は、学科講習及び実技講習によつて行う",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74105000&dataType=0&pageNo=1",
+          "excerpt": "実技講習は、次の科目について行なう。 一　救急そ生の方法 二　酸素の濃度の測定方法",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "二　電離放射線障害防止規則第五十三条第二号に掲げる放射性物質取扱作業室",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74158000&dataType=0&pageNo=3",
+          "excerpt": "別表　作業場の種類(第三条―第五条、第六条、第十六条、第十七条、第五十一条の八、第五十二条、第五十四条、第五十九条、第六十一条関係)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1",
+          "excerpt": "労働安全衛生法施行令(昭和四十七年政令第三百十八号)第二十一条第一号、第七号、第八号及び第十号に掲げる作業場",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74157000&dataType=0&pageNo=1",
+          "excerpt": "第二十一条第六号に掲げる作業場のうち厚生労働省令で定めるもの",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "五　別表第二第一号又は第三号に掲げる放射線業務に係る作業",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "五の二　ガンマ線照射装置を用いて行う透過写真の撮影の作業",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "一　エツクス線装置の使用又はエツクス線の発生を伴う当該装置の検査の業務",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000",
+          "excerpt": "三　エツクス線管若しくはケノトロンのガス抜き又はエツクス線の発生を伴うこれらの検査の業務",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "第十七条　事業者は、別表第一の上欄に掲げる一の作業を同一の場所で行なう場合において、当該作業に係る作業主任者を二人以上選任したときは、それぞれの作業主任者の職務の分担を定めなければならない",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "第十八条　事業者は、作業主任者を選任したときは、当該作業主任者の氏名及びその者に行なわせる事項を作業場の見やすい箇所に掲示する等により関係労働者に周知させなければならない",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74001000",
+          "excerpt": "第一項の規定により当該業務につくことができる者は、当該業務に従事するときは、これに係る免許証その他その資格を証する書面を携帯していなければならない",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/newpage_09979.html",
+          "excerpt": "総括安全衛生管理者・安全管理者・衛生管理者・産業医は選任すべき事由が発生した日から14日以内に選任",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "２　事業者は、総括安全衛生管理者を選任したときは、遅滞なく",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "３　事業者は、安全管理者を選任したときは、遅滞なく",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "３　事業者は、衛生管理者を選任したときは、遅滞なく",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=1",
+          "excerpt": "２　事業者は、法第十三条第一項の規定により産業医を選任したときは、遅滞なく",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     }
   }
 }
