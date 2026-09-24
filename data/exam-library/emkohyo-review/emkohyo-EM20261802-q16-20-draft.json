@@ -81,7 +81,7 @@
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "誤りの記述であり、これが正答。常時特定粉じん作業を行う屋内作業場の粉じん濃度測定は、6か月以内ごとに1回、定期に行う。第1管理区分が2年以上続いたことを理由に測定周期を1年以内ごとに1回へ延ばす規定は、粉じん則にない。しかも本問は適用除外・特例がない前提なので、測定方法に関する許可特例なども使えない。"
+            "reason": "誤りの記述であり、これが正答。粉じん則第26条第1項は対象屋内作業場の粉じん濃度を6か月以内ごとに1回測定すると定める。同条第3項は第1管理区分が2年以上続き所轄署長の許可を得た場合に、測定方法を別に大臣が定める方法へ変更できる規定であり、測定周期を1年に延長する規定ではない。本問では特例もない。"
           },
           {
             "number": 4,
@@ -94,14 +94,94 @@
             "reason": "正しい記述。じん肺法では、じん肺管理区分が管理4と決定された者は療養を要するものとされている。なお、管理4はじん肺健康診断の結果による区分であり、作業環境測定結果の評価による第1〜第3管理区分とは別の体系である。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省・粉じん障害防止規則第17・18・22・26条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省・労働安全衛生規則第38条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2"
+          },
+          {
+            "title": "厚生労働省・じん肺法第8・23条",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "科目別一次資料packに粉じん障害防止規則・じん肺法・労働安全衛生規則の特別教育記録の条文本文がない。肢1〜5（局所排気装置の定期自主検査、特別教育記録3年、粉じん濃度測定6か月ごと、じん肺健診の頻度、管理4の療養）の根拠は、e-Gov法令検索などで条文を検索して確認する必要がある。",
-        "肢3に関連して、所轄署長の許可を受けて測定方法を変えられる特例がある可能性がある。ただし本文未確認のため、理由では具体的な内容を断定していない。本問は「適用除外及び特例はない」との前提なので、正答判断への影響はない。",
-        "packにある作業環境測定基準第2条（粉じん濃度の測定点）の抜粋は、測定の方法を定めたもので測定頻度の根拠にならない。そのため、sourcesにもsourceEvidenceにも採用していない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "一年以内ごとに一回、定期に、次の各号に掲げる装置の種類に応じ、当該各号に掲げる事項について自主検査を行わなければならない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "ただし、一年を超える期間使用しない同項の装置の当該使用しない期間においては、この限りでない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "前条第二項又は第三項の自主検査を行つたときは、次の事項を記録して、これを三年間保存しなければならない。",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "常時特定粉じん作業に係る業務に労働者を就かせるときは、当該労働者に対し、次の科目について特別の教育を行わなければならない。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=2",
+          "excerpt": "特別教育の受講者、科目等の記録を作成して、これを三年間保存しておかなければならない。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "六月以内ごとに一回、定期に、当該作業場における空気中の粉じんの濃度を測定しなければならない。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "測定結果の評価が二年以上行われ、その間、当該評価の結果、第一管理区分に区分されることが継続した単位作業場所",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74107000&dataType=0&pageNo=1",
+          "excerpt": "所轄労働基準監督署長」という。)の許可を受けた場合には、当該粉じんの濃度の測定は、別に厚生労働大臣の定めるところによることができる。",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "常時粉じん作業に従事する労働者でじん肺管理区分が管理二又は管理三であるもの　一年",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74164000&dataType=0&pageNo=1",
+          "excerpt": "管理四と決定された者及び合併症にかかつていると認められる者は、療養を要するものとする。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261802-q18": {
       "overlay": {
