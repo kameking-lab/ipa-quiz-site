@@ -6,8 +6,10 @@ Usage: py -3.12 scripts/emkohyo-2025-review-batch.py emkohyo-EM20251805 1 3
 import base64
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 from urllib.parse import urlparse
@@ -18,11 +20,14 @@ from emkohyo_portable_hash import matches_text_sha256, text_sha256
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
 REVIEW = DATA / "emkohyo-review"
-CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+WINDOWS_CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+CLI = WINDOWS_CLI if WINDOWS_CLI.exists() else Path(shutil.which("claude") or "claude")
+# Auxiliary background calls would add a second model to modelUsage.
+CLI_ENV = {**os.environ, "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"}
 MODEL_ID = "claude-opus-5-5"
 
 
-def parse(stdout: str) -> tuple[object, str, dict]:
+def parse(stdout: str) -> tuple[object, str, dict, str]:
     events = [json.loads(line) for line in stdout.splitlines() if line.startswith("{")]
     final = next((event for event in reversed(events) if event.get("type") == "result"), None)
     if final is None or final.get("is_error"):
@@ -35,14 +40,16 @@ def parse(stdout: str) -> tuple[object, str, dict]:
     usage = final["modelUsage"][resolved_model]
     if usage.get("canonicalModel") != MODEL_ID or not usage.get("provider"):
         raise ValueError(f"Claude modelUsage lacks exact canonical model and provider: {usage}")
-    return json.loads(value[value.find("{"):value.rfind("}") + 1]), resolved_model, final["modelUsage"]
+    return (json.loads(value[value.find("{"):value.rfind("}") + 1]), resolved_model,
+            final["modelUsage"], final.get("result", ""))
 
 
 def main() -> None:
     paper, first, last = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
     out = REVIEW / f"{paper}-q{first:02}-{last:02}-review.json"
     raw_out = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-assessment.json"
-    if out.exists() or raw_out.exists():
+    response_out = REVIEW / f"{paper}-q{first:02}-{last:02}-raw-response.txt"
+    if out.exists() or raw_out.exists() or response_out.exists():
         raise FileExistsError(f"Archive the previous review before rerunning: {out}")
     batch_first = (first - 1) // 5 * 5 + 1
     batch_last = batch_first + 4
@@ -159,11 +166,13 @@ def main() -> None:
         [str(CLI), "-p", "--model", MODEL_ID, "--effort", "high", "--input-format", "stream-json",
          "--output-format", "stream-json", "--verbose", "--tools", ""],
         input=json.dumps({"type": "user", "message": {"role": "user", "content": content}}, ensure_ascii=False) + "\n",
-        text=True, encoding="utf-8", capture_output=True, cwd=ROOT, timeout=900,
+        text=True, encoding="utf-8", capture_output=True, cwd=ROOT, env=CLI_ENV, timeout=900,
     )
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-1000:])
-    result, resolved_model, model_usage = parse(process.stdout)
+    result, resolved_model, model_usage, raw_response = parse(process.stdout)
+    # The verbatim model text is kept so the receipt's response hash is checkable.
+    response_out.write_bytes(raw_response.encode("utf-8"))
     raw_out.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     if set(result) != set(ids):
         raise ValueError("Review omitted or added question IDs")
@@ -178,6 +187,8 @@ def main() -> None:
                "canonicalModel": usage_record.get("canonicalModel", resolved_model),
                "provider": usage_record.get("provider"),
                "modelUsage": model_usage,
+               "rawResponsePath": response_out.relative_to(ROOT).as_posix(),
+               "rawResponseSha256": sha256(raw_response.encode("utf-8")).hexdigest(),
                "paperId": paper, "ids": ids,
                "figureSha256": figure_hashes, "officialRowImageSha256": row_image_hashes,
                "officialPageImageSha256": official_page_image_hashes,

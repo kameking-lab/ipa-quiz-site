@@ -6,8 +6,10 @@ Candidates stay outside the public overlay until source-aware review.
 
 from hashlib import sha256
 import json
+import os
 from pathlib import Path
 import re
+import shutil
 import subprocess
 import sys
 
@@ -17,7 +19,10 @@ from emkohyo_source_retrieval import retrieve
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data/exam-library"
 REVIEW = DATA / "emkohyo-review"
-CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+WINDOWS_CLI = Path.home() / "AppData/Roaming/npm/claude.cmd"
+CLI = WINDOWS_CLI if WINDOWS_CLI.exists() else Path(shutil.which("claude") or "claude")
+# Auxiliary background calls would add a second model to modelUsage.
+CLI_ENV = {**os.environ, "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1"}
 MODEL_ID = "claude-opus-5-5"
 MEASUREMENT = {"title": "厚生労働省 作業環境測定基準", "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"}
 ORGANIC_METHOD = {"title": "厚生労働省 有機溶剤の測定技術に係る資料", "url": "https://www.mhlw.go.jp/shingi/2007/11/dl/s1101-11f.pdf"}
@@ -143,7 +148,7 @@ def main() -> None:
          "--tools", "WebSearch,WebFetch" if web else ""],
         input=json.dumps({"type": "user", "message": {"role": "user", "content": [{"type": "text", "text": payload}]}},
                          ensure_ascii=False) + "\n",
-        text=True, encoding="utf-8", capture_output=True, cwd=ROOT, timeout=900,
+        text=True, encoding="utf-8", capture_output=True, cwd=ROOT, env=CLI_ENV, timeout=900,
     )
     if process.returncode:
         raise RuntimeError((process.stderr or process.stdout)[-1000:])
