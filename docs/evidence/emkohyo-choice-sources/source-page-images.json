@@ -254,5 +254,19 @@
       "sha256": "2c46baa8f91636d8020d6c2280dab6e32c62464578febce63f3d871cc4017162",
       "description": "厚生労働省『分析方法の原理と分析機器の取扱方法(2)エックス線回折装置の基礎知識』p37 基底標準吸収補正の石英計算例（亜鉛基底R0=sin21.61°/sin13.32°、F=[R ln(IZn/IZn0)]/((IZn/IZn0)^R−1)、ISC=F×IS）と『基底吸収補正曲線』：元データは捕集量増加で頭打ち、吸収補正後は11 mgまで直線。原PDF SHA256=ba50ab28ef5173ff1ca0733ad659dbf2468c5514529c0efb31ee5be25b2cf9cf"
     }
+  ],
+  "emkohyo-EM20251806-q06-06": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/EM20251806-q06-env-filter-mechanisms-p8.png",
+      "sha256": "de74b3ffb2a7c93e2d9112420debbff4b031e19db4d0203dee711221090a6d8a",
+      "description": "環境省 災害廃棄物安全対策検討資料5「粒子のろ過のメカニズムについて」（大谷吉生）PDF8頁の図「粒子径，繊維径，ろ過速度の単一繊維捕集効率への影響」。慣性はろ過速度大で、重力・拡散はろ過速度小で効率が上がる矢印、拡散は粒子径が小さいほど、さえぎり・慣性・重力は粒子径が大きいほど高い曲線。原PDF(https://www.env.go.jp/jishin/rmp/conf/waste_safety02/mat05.pdf) SHA256=56d012875fb613b77cf3a919a344f4924e68049b82cc9ff159499514040e63b6"
+    }
+  ],
+  "emkohyo-EM20251806-q07-07": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/EM20251806-q07-env-area-flowmeter-p16.png",
+      "sha256": "bb106c0132d5b18c7314df851d6a651eee61dc966c887524bf5d76db75fdb5b6",
+      "description": "環境省「６．流量計」PDF16頁（印刷142頁）6.5面積式排水流量計の原理と関係式 Q=C・A・√(2・g・Vf・(ρf−ρo)/(Af・ρo))（ρo：測定状態における流体の密度）の切出し。原PDF(https://www.env.go.jp/content/900542160.pdf) SHA256=6ba41ab6f718e9dc23f86654b1e5cb51f47012ae7ae10c35a0e56f91d1b4b4d4"
+    }
   ]
 }
