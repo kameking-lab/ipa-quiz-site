@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3086,
+      "cacheReadInputTokens": 80711,
+      "cacheCreationInputTokens": 12649,
+      "webSearchRequests": 0,
+      "costUSD": 0.1790622,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1829,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q18": {
+      "/exam-library/emkohyo-EM20251807/q18-p11-0.webp": "832d827ae4a20349b88a0e7616dba38040c923de739386b0082a4ba388840000"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q18": "df836226536901ba1fbbad48aa43ee093352b42c718fdf47cd7dacf3d34ca30f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q18-18.json",
+  "sourcePackSha256": "16f1c508418a1f902b6360f292b5ca45162759f1c63aaddf8f0ce342846f4251",
+  "assessment": {
+    "emkohyo-EM20251807-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の解説の理由付けが誤解を招く。『用いる標準ガス濃度cを変えれば結果も変わってしまう』を誤りの根拠にしているが、10σのσも分析に用いる試料の濃度によって変わる。参考資料3のPDF23頁にも、評価値の1/10の濃度では定量下限値よりかなり高くなる場合、検量線の最低濃度の標準溶液で求め直すことが望ましいとあり、σが濃度に依存することを前提にしている。『cに依存するから不適』という理屈はそのまま10σにも当てはまってしまい、正解の肢2と区別できない。誤りの根拠は、出典の定義(定量下限=10σで、平均値cは式に入らない)に絞るべき。",
+        "肢2の解説にある『問題の条件と一致する』は言い過ぎ。出典の条件は『評価値(1次評価値)の1/10』で、問題の条件は『管理濃度の1/10』。基準値が違うので、『出典と同じ考え方(1/10濃度の標準試料を5回繰り返し分析し、その標準偏差の10倍を定量下限とする)』のような表現に改めるべき。",
+        "肢5の『σがc/10を超えれば負の濃度にもなり得る』は、数式としては正しい補足にすぎず、定義を示さなければ誤りの根拠にならない。本文の『定量下限は10σそのもの』が主な理由であることは維持してよいが、補足の部分が主な根拠に見えないよう書き方を整えることを推奨する。"
+      ],
+      "sourceIssues": [
+        "厚労省の参考資料3(kentou29_1_sankou3_1.pdf、PDF23頁)は、化学物質リスク評価(ばく露評価)で使う測定分析法の要件を定めた資料で、基準は『評価値(1次評価値)』になっている。作業環境測定の『管理濃度』の1/10を定めた資料ではない。定量下限=10σという定義は直接支えるが、作業環境測定の文脈にそのまま当てはまるかは類推にとどまる。管理濃度を基準にした作業環境測定側の政府資料(作業環境測定基準の関連通達など)があれば追加するか、類推であることを明記すべき。",
+        "出典の表題『労働者の有害物によるばく露評価ガイドライン・参考資料3』が、実際のPDFの表題と一致するか確認できていない。このファイルは平成29年度の検討会の参考資料3で、ガイドライン本体の名称をそのまま付けてよいかは要確認。",
+        "チオ尿素の測定法資料(000358481.pdf、PDF7頁)の検出下限=3SD・定量下限=10SDは、液体の標準系列液をHPLCで分析した個別物質の事例。ガスクロマトグラフ・標準試料ガスという問題の条件とは分析法も試料も違うので、肢1で3σを検出下限とする根拠としては一般化した引用になっている。"
+      ],
+      "needsExternalCheck": [
+        "kentou29_1_sankou3_1.pdfの正式な表題(表紙・ヘッダー)を確認し、出典のtitleを実際の表記に合わせること。",
+        "作業環境測定(管理濃度基準)の文脈で、定量下限を10σと定めている政府一次資料(告示・通達・厚労省公表資料)があるか確認すること。"
+      ]
+    }
+  }
+}
