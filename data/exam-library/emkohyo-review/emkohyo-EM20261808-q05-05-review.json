@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3371,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14380,
+      "webSearchRequests": 0,
+      "costUSD": 0.1827238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2183,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q05-05-raw-response.txt",
+  "rawResponseSha256": "7d41b0736bd987feb93adf0dd953db490d16720807891d2d327310332fdfa016",
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q5": {
+      "/exam-library/emkohyo-EM20261808/q5-p4-0.webp": "dcbdc7ca00b93d9d7031f2798491d6e529f3d9a318c2d319bce5842c5d957de3"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q5": "970e7cfbcf835576b578c0bfed5351c03f3e08d8c26f4994f36f6d82156b2b2f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q05-05.json",
+  "sourcePackSha256": "3440d084e1252547ff08921bd9c58a369328d8826a83a18ee2b2c832f031adb0",
+  "assessment": {
+    "emkohyo-EM20261808-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "summaryと肢5の理由は「加熱した試料は冷却して標準系列と温度条件をそろえてから測るのが公定法の手順」と一般則として書いている。しかし根拠は医薬部外品原料規格の総糖類定量と日本薬局方の一酵素試験という個別条文の2例だけであり、作業環境測定または吸光光度分析一般の公定手順として示したものではない。「公定法の手順」は「公定法の個別試験でも、加熱後は冷却してから定容・測定する例がある」程度に弱めるか、一般則を直接述べた出典に差し替えるべき。",
+        "肢5の理由にある「吸光度は発色温度等で変動するため」は、環境省底質調査方法の「一定濃度の吸光度は、発色温度等により多少変動するが、概ね同じ値を示す」を根拠にしていると読める。この出典箇所は検量線の傾きを日常管理する文脈で、変動は「多少」「概ね同じ値」と控えめに書かれている。「直ちに測定してはならない」理由を積極的に支える記述ではない。誤りである理由（高温のままだと発色の温度依存・溶媒蒸発による体積変化・気泡やシュリーレンで吸光度が不安定になり、室温の標準系列と条件が合わない）を、直接支える出典つきで具体的に書くべき。",
+        "肢5の理由で日本薬局方の例を「加熱後に流水中で冷却してから次の操作・測定に進む手順」と紹介している。しかしこの3分間加熱は発色操作ではなく反応を止める工程で、発色は冷却後に37±0.5℃で20分放置して行い、その後の冷却なしで吸光度を測っている。「加熱発色→冷却→測定」の例としては不適切なので、削除するか位置付けを正確にすべき。"
+      ],
+      "sourceIssues": [
+        "J-STAGE『分析化学』ベリロンIII論文は政府資料ではない。さらに抜粋の「感度0.00043μgベリリウム/cm3」はサンデル型の感度表示で、値が小さいほど高感度になる。肢3の「モル吸光係数が大きいほど感度が高い」を直接述べた箇所ではない。肢3は日本薬局方2.24のA＝kcl・モル吸光係数の定義で支えられるため、この出典は外すか、補助資料と明記すべき。",
+        "環境省底質調査方法（p.32）の抜粋は、検量線の傾きを管理する文脈の記述である。加熱発色後に冷却してから測定すべき理由を直接支えていない。",
+        "肢5の核心（加熱発色した試料は冷却してから測定する）を一般則として直接述べた政府資料が添付されていない。PMDA医薬部外品原料規格・日本薬局方の個別条文は事例にとどまる。"
+      ],
+      "needsExternalCheck": [
+        "JIS K 0115（吸光光度分析通則）または作業環境測定ガイドブック（吸光光度分析法）に、加熱発色後の冷却・測定温度の扱いに関する一般規定があるか確認し、肢5の理由の直接根拠に差し替えられるか検討すること。"
+      ]
+    }
+  }
+}

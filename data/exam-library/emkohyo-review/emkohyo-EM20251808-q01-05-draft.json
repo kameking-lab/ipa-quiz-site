@@ -260,7 +260,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】独立審査（2026-09-24 round1, FIX）で、肢4のMK鋼の組成根拠がJ-STAGE掲載論文（政府資料ではない、しかもMT磁石論文での付随的言及）のみ、肢2の洋銀の根拠が国立国会図書館レファレンス協同データベースの新聞記事引用（二次的記述）で、税関資料の『洋白』と『洋銀』の同一性も直接示されていないと指摘された。MK鋼が鉄・ニッケル（・アルミニウム）を主成分とすること、洋銀＝洋白が銅を主とする銅・ニッケル・亜鉛合金であることを直接定義する政府一次資料を取得できていない（特許庁『十大発明家』の三島徳七ページは削除済みで取得不可）。表形式の文字起こしは改善済み。"
+      ]
     },
     "emkohyo-EM20251808-q4": {
       "overlay": {
@@ -271,7 +273,7 @@
           {
             "number": 1,
             "verdict": "correct",
-            "reason": "吸光光度分析法は、試料が一定の狭い波長範囲の光を吸収する度合を測る方法である。溶液に見える色は、吸収されずに透過・反射して残った波長の光の色であり、吸収される光はその色の光ではない。『溶液色の波長光の吸収』とするこの組合せが誤りである。"
+            "reason": "吸光光度分析法は、試料が一定の狭い波長範囲の光を吸収する度合を測る方法である。溶液に見える色は吸収されずに残った光の色で、吸収される光の色とは異なる。例えばクロムのジフェニルカルバジド錯体は540 nm付近の光を吸収して赤紫色に見える。『溶液色の波長光の吸収』とするこの組合せが誤りである。"
           },
           {
             "number": 2,
@@ -286,7 +288,7 @@
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "ICP発光分析法（ICP-AES）は、試料中の元素を誘導結合プラズマで原子化・励起し、そこから出る発光スペクトル線の強度で定量する。『励起された原子及びイオンの発光』という組合せは正しい。"
+            "reason": "ICP発光分析法（ICP-AES）は、試料中の元素を誘導結合プラズマで原子化・励起し、そこから出る発光スペクトル線の強度で定量する。環境省の底質調査方法ではICP発光の測定波長に中性原子線(I)とイオン線(II)の両方が示されており、『励起された原子及びイオンの発光』という組合せは正しい。"
           },
           {
             "number": 5,
@@ -300,12 +302,20 @@
             "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
           },
           {
+            "title": "産業技術総合研究所 計量標準総合センター 測定手順書（試案）クロメート皮膜中の6価クロムの測定",
+            "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf"
+          },
+          {
             "title": "農研機構 野菜花き研究部門 色素の基礎知識",
             "url": "https://www.naro.go.jp/laboratory/nivfs/kiso/color_shikiso/index.html"
           },
           {
             "title": "厚生労働省告示 第十八改正日本薬局方第一追補 一般試験法 2.22 蛍光光度法",
             "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf"
+          },
+          {
+            "title": "環境省 底質調査方法",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
           },
           {
             "title": "環境省 無機元素の多元素同時測定法（酸分解／ICP-MS法）",
@@ -329,6 +339,13 @@
           ]
         },
         {
+          "url": "https://unit.aist.go.jp/nmij/collab/bb_kai/cr6.pdf",
+          "excerpt": "540nm付近の光を吸収するため無色の抽出液が赤紫色になる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
           "url": "https://www.mhlw.go.jp/content/11120000/001022457.pdf",
           "excerpt": "蛍光光度法は，蛍光物質の溶液に特定波長域の励起光を照射するとき，放射される蛍光の強度を測定する方法である．",
           "choiceNumbers": [
@@ -345,6 +362,13 @@
         {
           "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
           "excerpt": "誘導結合プラズマ(ICP)により原子化し，及び励起し，これらにより得られた原子発光スペクトル線の発光強度から被検元素量(濃度)を測定する方法である。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "波長の後に示した(I)は中性原子線、(II)はイオン線であることを示す。",
           "choiceNumbers": [
             4
           ]
