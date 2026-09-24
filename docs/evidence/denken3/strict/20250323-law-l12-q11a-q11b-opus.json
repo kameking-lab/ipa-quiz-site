@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "examDate": "20250323",
+  "subject": "law",
+  "reviewModel": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 5075,
+      "cacheReadInputTokens": 297885,
+      "cacheCreationInputTokens": 20883,
+      "webSearchRequests": 0,
+      "costUSD": 0.32815700000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3130,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponseSha256": "bf567430ad2af6699d3e7ea52d6cd4ba55ff25f498179dba690481a17b5c51f4",
+  "inputRequestSha256": "e68b39fa42c27718dffa675f1be223d74378af4b8c673a909dc4c76e7c7100ee",
+  "inputHashes": {
+    "candidateSha256": {
+      "q11a": "b63634b004f1d114b47ccf792fdb0a3db8afa6971e03ad8e81acbee0b892af37",
+      "q11b": "0d3abad5863c65e5564c4776afc9da304ee8d313d408be08ebc6c4e114ff9628"
+    },
+    "officialPageSha256": {
+      "data/raw_pdfs/denken3/review/20250323/law/p15.png": "15d0eecbc87517edcf84f246024027427d2943f13d4e13340cc4b1be63d7b1f4"
+    },
+    "figureSha256": {
+      "public/images/denken3/20250323/law/20250323-law-q11-annual-flow.png": "2c6ab23fda953361ba074e9aef1c34b4f67b46440fb7af1c8eb23f92ed0ae44a"
+    },
+    "sourceQuestionPdfSha256": "6b47d422b7fb05b949f366b2c550a00365e1bdffa5c2800368fab9f29d79c84e",
+    "sourceAnswerPdfSha256": "4c3b38fcf1405766fafaa78b1b05b867a3d48307a670b9d354476bc6b32acd4c",
+    "officialAnswerUnitsSha256": "854692e0ef22a6de27b8f9ef8460bcd9367bae3dae32c3d144a5c2372e74d4e7",
+    "referencePdfSha256": {},
+    "referencePageSha256": {},
+    "referenceJsonSha256": {}
+  },
+  "assessment": [
+    {
+      "unitKey": "q11a",
+      "questionNumber": 11,
+      "part": "a",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "問題文は原図と一致する。最大使用水量15 m³/s、有効落差20 m、流込式、Q＝−0.05d＋25 [m³/s]（d≧100）、水車効率90 %、発電機効率95 %、流量によって変化しない、の各条件を確認した。(a)の設問文と溢水の定義も原図と一致する。",
+        "選択肢(1)180、(2)190、(3)200、(4)210、(5)220は原図と一致する。",
+        "公式正答は(3)で、候補のofficialAnswer=3と一致する。",
+        "検算: −0.05d＋25＝15 から d＝200。流況曲線は右下がりなので、Q>15となるのはd<200の200日。d<100の破線部はQ>20で、15を超える。したがって溢水日数は200日で、(3)と合う。",
+        "誤答肢の代入値を検算した。d＝180→16、d＝190→15.5、d＝210→14.5、d＝220→14 [m³/s]で、いずれも正しい。",
+        "公開候補図は原図の流況曲線を欠けなく切り出している。軸ラベル「流量Q[m³/s]」「日数d[日]」、目盛0・100・200・300・365とQ＝20、Q＝20の水平破線、d＝100の垂直破線、d<100の破線曲線、d≧100の実線、注記「Q=−0.05d+25」と実線への矢印、d＝365の右端縦線をすべて確認した。解答に要る情報は公開図と問題文の式だけで足りる。",
+        "figureDescriptionは図と一致する。6.75 m³/sを式から求める値と明記している点も正確である。",
+        "原図は法規科目のB問題ヘッダ（問11・12は(a)6点・(b)7点、問13は各7点）を持ち、印刷頁は-12-。reviewedFromPage=[15]はPDF頁として扱った。令和6年度下期＝2025-03-23の対応は整合する。officialReferenceUrlsは空で、独立主張はない。"
+      ]
+    },
+    {
+      "unitKey": "q11b",
+      "questionNumber": 11,
+      "part": "b",
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "answerIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "sourceIssues": [],
+      "verifiedEvidence": [
+        "(b)の設問文「この発電所の年間可能発電電力量[GW·h]の値として，最も近いのは次のうちどれか。」は原図と一致する。共通の前文も原図と一致する。",
+        "選択肢(1)19.3、(2)20.3、(3)21.4、(4)22.0、(5)22.5は原図と一致する。",
+        "公式正答は(1)で、候補のofficialAnswer=1と一致する。",
+        "検算: η＝0.9×0.95＝0.855。9.8×20×0.855＝167.58 kW/(m³/s)。d<200は15 m³/sに制限され、15×200＝3000。Q(365)＝6.75で、200〜365日の台形面積は(15＋6.75)/2×165＝1794.375。合計4794.375 m³/s·日。W＝167.58×4794.375×24＝19,282,593 kW·h≒19.28 GW·h→(1)19.3。",
+        "誤答肢の誤り方を再計算し、いずれも各選択肢値に一致した。(2)は水車効率のみで176.4×4794.375×24≒20.30。(3)は発電機効率のみで186.2×4794.375×24≒21.43。(4)は通年15 m³/sとして167.58×15×8760≒22.02。(5)は効率なしで196×4794.375×24≒22.55。",
+        "流量制限（d<200）と台形積分（200〜365日）の因果は、(a)の結果および流況曲線の定義と整合する。",
+        "公開候補図は(a)と同じ原図切り出しで、全ラベル・目盛・破線・注記矢印を欠かず含む。Q＝15、d＝200、Q(365)＝6.75は図の目盛にない値で、式から計算する必要がある。figureDescriptionもその旨を正しく記述している。",
+        "officialReferenceUrlsは空で、外部確認が必要な独立主張はない。出典表記「令和6年度下期 法規科目 問11(b)」は原図・examDateと整合する。"
+      ]
+    }
+  ]
+}
