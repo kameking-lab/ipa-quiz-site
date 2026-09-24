@@ -6,21 +6,21 @@
   "modelUsage": {
     "claude-opus-5-5": {
       "inputTokens": 2,
-      "outputTokens": 2959,
+      "outputTokens": 1640,
       "cacheReadInputTokens": 1279,
-      "cacheCreationInputTokens": 11946,
+      "cacheCreationInputTokens": 11927,
       "webSearchRequests": 0,
-      "costUSD": 0.1550118,
+      "costUSD": 0.1284798,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 2030,
+      "thinkingTokens": 1556,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
     }
   },
   "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q09-09-raw-response.txt",
-  "rawResponseSha256": "545546a7124081cb78b663b60d4fc108c62269b383746abc79570b98cc164957",
+  "rawResponseSha256": "835c5b9afdbccfa9f24e4c445aaf5005eacf755f9e2128d2298a6358b5b2ba29",
   "paperId": "emkohyo-EM20261808",
   "ids": [
     "emkohyo-EM20261808-q9"
@@ -36,26 +36,18 @@
   "officialPageImageSha256": {},
   "governmentSourceImageSha256": {},
   "candidateSha256": {
-    "emkohyo-EM20261808-q9": "bdc90bedc523748094d8bfa3bc78a8c9425e4763c14b0243f48b63f0df3654f3"
+    "emkohyo-EM20261808-q9": "48f774b3dc9e8f4bd9b4ad389e68b03eecb8f0ab1dc8105e7b97fe22a486e0c6"
   },
   "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q09-09.json",
-  "sourcePackSha256": "bd1efec1ab04a68a5f3bdd3c5deba29fefef2560b7b3615c6e17da32bbdb40fe",
+  "sourcePackSha256": "f4370b02a7db50b6cafc944a524766b70327419fc2eef4e50d57a93d94a757a1",
   "assessment": {
     "emkohyo-EM20261808-q9": {
-      "status": "FIX",
+      "status": "PASS",
       "textIssues": [],
       "choiceIssues": [],
-      "reasonIssues": [
-        "肢3の理由と summary に単位の混在がある。ベリリウムは無次元の『比重1.85』、鉛・水銀は g/cm³ で示している。さらにカドミウム（出典は『比重（相対密度）8.65（25℃）』）とクロム（出典は『密度及び／又は相対密度 7.14（20℃）』）にも括弧で『（g/cm³）』を付けて並べているが、出典は相対密度として記載している。水の密度が約1 g/cm³なので数値はほぼ一致し、Be≪Cr<Cd<Pb<Hg という比較結論は支持される。ただし『相対密度（比重）で約○○』などと出典どおりの表記に揃えるか、近似換算であることを明記すべき。",
-        "肢3の理由は『その成形体は比重1.85』という出典の表現をそのまま金属ベリリウムの密度として使っている。出典は成形体の値で、温度条件もない。問題文の『常温、常圧』での金属単体の密度として示すなら、温度条件付きの単体の物性値に差し替えるのが望ましい。数値自体は一般的な Be の密度（約1.85 g/cm³）と整合しており、正誤判定には影響しない。"
-      ],
-      "sourceIssues": [
-        "正答肢3（ベリリウム1.85）の根拠は J-STAGE 掲載の学会誌『真空』の記事で、政府一次資料ではない。他の4金属は環境省・厚生労働省の資料で裏付けられているが、正答の核心であるベリリウムの値だけが政府資料で直接支えられていない。",
-        "水銀のモデルSDSの抜粋『密度 13.5956g/cm3 (Ullmanns)』には温度条件がない。この数値は0℃付近の値に相当する可能性があり、常温の値とは厳密には一致しない可能性がある。候補は温度を付けずに引用しているので出典とは矛盾しないが、summary の『約13.6』は近似値として扱うのが妥当。比較結論には影響しない。"
-      ],
-      "needsExternalCheck": [
-        "厚生労働省 職場のあんぜんサイト モデルSDS ベリリウム（CAS 7439-41-7 ではなく 7440-41-7）のページを取得し、密度・相対密度の記載値と温度条件を確認のうえ、J-STAGE 記事の代わりに（または併記で）肢3の根拠として差し替えられるか確認すること。"
-      ]
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
     }
   }
 }
