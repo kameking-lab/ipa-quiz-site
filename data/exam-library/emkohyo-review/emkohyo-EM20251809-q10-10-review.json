@@ -1,0 +1,64 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 44912,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 18505,
+      "webSearchRequests": 0,
+      "costUSD": 1.0465438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2304,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251809-q10-10-raw-response.txt",
+  "rawResponseSha256": "7bfe3a5755515a16736b8391f38ec7b250a5464a79a28bf5394bfff92147f112",
+  "paperId": "emkohyo-EM20251809",
+  "ids": [
+    "emkohyo-EM20251809-q10"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251809-q10": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251809-q10": {
+      "/exam-library/emkohyo-EM20251809/q10-p7-1.webp": "cfaefb976851e113d72ce538ffc3835765d1e2f46b7294a8a19ef2ec18fd6f90"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251809-q10-envraddb-no12-pu-table-p63.png": "cab81a9c818541b109f1c2e8f2c14e7d4ac1dfca97ab5d9ed1f1e5f86e6a419b"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251809-q10": "5d2c5a2acb8f6fb2ed6ed9c0ae20e2eaa7841cdfd460b49d34e2aa8eb9c4fbdd"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251809-q10-10.json",
+  "sourcePackSha256": "64c49a8c9b2e48c665477d2f4b926e9758589602d8451420395c619406f140ed",
+  "assessment": {
+    "emkohyo-EM20251809-q10": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由は「No.36は表面捕集率が低いとろ材内の粒子のα線が計数できない等の可能性を指摘し」と書いているが、No.36 PDF p188の該当箇所はセルロース・ガラス繊維ろ紙について「α線放出核種を対象として捕集、測定する場合は、ろ材の中に粒子が入り込んで計数できない等の可能性があり」と述べているだけで、「表面捕集率が低いと」という条件の形では書いていない。No.36の記述として引用するなら原文どおり「ろ材の中に粒子が入り込むと計数できない等の可能性がある」とし、「表面捕集率が低い＝ろ材内部に入り込む粒子の割合が大きい」という対応は、同頁の定義（＊ろ紙の表面付近で捕らえられた粒子の割合）から導いた説明であると区別して書くこと。肢3の同趣旨の記述も同じ扱いにすること。",
+        "㋩の個別因果（問題文は「α線ピーク面積を正確に測定することが重要であるため」）への対応が弱い。肢1・3・5の理由は「計数できない」ことしか挙げておらず、ピーク形状との関係に触れていない。No.36 p189 表参A-3の注＊1は、表面捕集効率を「トロン壊変生成物のα線スペクトルの広がり具合から評価した値」としている。これを根拠に、ろ材内部に入った粒子のα線はエネルギーを失ってピークが低エネルギー側に広がり（テーリング）、²³⁹Puのエネルギー領域のピーク面積が正確に求まらない、という因果を一文加えるのが望ましい。"
+      ],
+      "sourceIssues": [
+        "No.12の出典表記「文部科学省 放射能測定法シリーズNo.12 プルトニウム分析法（平成2年改訂…）」は年代が合わない。文部科学省の発足は2001年（平成13年）で、平成2年（1990年）改訂時の発行主体は科学技術庁である。「科学技術庁 放射能測定法シリーズNo.12 プルトニウム分析法（平成2年改訂）」とし、「原子力規制庁 環境放射線データベース掲載」と併記する形に直すこと。",
+        "ATOMICA（日本原子力研究開発機構）は政府機関そのものではなく国立研究開発法人の解説ページである。肢4・5で「α線スペクトル分析にはSi半導体を用いる」ことの根拠は、No.36 表3-6（α線検出器：ZnS(Ag)シンチレーション検出器／シリコン半導体検出器）とNo.12 p4（シリコン半導体検出器によるα線スペクトル測定）で直接示せる。これらを主根拠とし、ATOMICAは補助資料の位置づけにすることを推奨する。",
+        "No.7から引用している抜粋（Ge半導体検出器等を用いたγ線スペクトロメトリーの定義）は「Geはγ線用」を示すにとどまり、「Geはα線スペクトル分析に用いない」ことを直接は支えない。肢4・5の否定は、Si半導体を挙げる資料（No.36 表3-6、No.12 p4）との組合せによる推論であると分かる書き方にすること。"
+      ],
+      "needsExternalCheck": [
+        "No.12 PDF（SHA256=f457b6311d…）の表紙・奥付に記載された発行主体名（科学技術庁か否か）と改訂年を原本で確認すること。今回の査読ではPDFを取得して表紙の画像化とOCRを試みたが、発行主体の記載を確定できなかった。"
+      ]
+    }
+  }
+}
