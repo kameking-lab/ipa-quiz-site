@@ -140,6 +140,21 @@ class FullReviewGateTest(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "Government source content mismatch"):
                 REVIEW.verified_government_source(self.root, source)
 
+    def test_candidate_sources_are_pinned_with_exact_bytes(self):
+        payload = b"government source body" * 30
+        drafts = {"q1": {"sources": [{"url": "https://www.mhlw.go.jp/new.html#part",
+                                        "title": "new source"}]}}
+        response = type("Response", (), {"content": payload,
+                        "headers": {"Content-Type": "text/html"},
+                        "raise_for_status": lambda self: None})()
+        with patch.object(REVIEW.requests, "get", return_value=response):
+            pack = REVIEW.pin_candidate_sources(self.root, drafts, [], "lckohyo")
+        source = pack["content"]["sources"][0]
+        self.assertEqual(source["retrieval"]["retrievalUrl"],
+                         "https://www.mhlw.go.jp/new.html")
+        self.assertEqual(source["retrieval"]["sha256"], sha256(payload).hexdigest())
+        self.assertEqual(source["relevantQuestionIds"], ["q1"])
+
 
 if __name__ == "__main__":
     unittest.main()

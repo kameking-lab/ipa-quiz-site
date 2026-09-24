@@ -7,6 +7,7 @@ target worktree's --root to inspect lckohyo or emkohyo without cherry-picking da
 import argparse
 from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
+from datetime import date
 from hashlib import sha256
 import importlib.util
 import json
@@ -86,6 +87,53 @@ def verified_government_source(root, source):
     return cache
 
 
+def pin_candidate_sources(root, drafts, existing_packs, group):
+    """Persist byte receipts for candidate citations absent from accepted packs."""
+    path = root / f"docs/evidence/{group}-candidate-source-pins.json"
+    previous = read(path) if path.exists() else {"sources": []}
+    pinned = {source["url"]: source for source in previous.get("sources", [])}
+    known = {source.get("url") for pack in existing_packs
+             for source in pack["content"].get("sources", [])}
+    grouped = defaultdict(lambda: {"titles": set(), "questionIds": set()})
+    for qid, candidate in drafts.items():
+        for source in candidate.get("sources", []):
+            grouped[source.get("url")]["titles"].add(source.get("title", ""))
+            grouped[source.get("url")]["questionIds"].add(qid)
+    for url, references in sorted(grouped.items()):
+        if url in known:
+            continue
+        parsed = urlparse(url)
+        if (parsed.scheme != "https" or parsed.hostname is None
+                or not parsed.hostname.endswith(".go.jp")
+                or parsed.username or parsed.password or parsed.port is not None):
+            raise ValueError(f"Cannot pin non-government candidate source: {url}")
+        retrieval_url = parsed._replace(fragment="").geturl()
+        current = pinned.get(url)
+        if current and current.get("retrieval", {}).get("retrievalUrl") == retrieval_url:
+            continue
+        response = requests.get(retrieval_url, timeout=90)
+        response.raise_for_status()
+        payload = response.content
+        if len(payload) < 300 or len(payload) > 32 * 1024 * 1024:
+            raise ValueError(f"Candidate source is not substantive: {url}")
+        content_type = response.headers.get("Content-Type", "application/octet-stream")
+        receipt = {"retrievalUrl": retrieval_url, "retrievedOn": date.today().isoformat(),
+                   "sha256": sha256(payload).hexdigest(), "bytes": len(payload),
+                   "contentType": content_type}
+        pinned[url] = {"url": url, "title": sorted(references["titles"])[0],
+                       "locators": [], "relevantQuestionIds": sorted(references["questionIds"]),
+                       "retrieval": receipt}
+        suffix = ".pdf" if "pdf" in content_type.lower() else ".json" if "json" in content_type.lower() else ".html"
+        cache = root / ".cache/safety-full-review/government-sources" / f"{receipt['sha256']}{suffix}"
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(payload)
+    value = {"retrievedOn": date.today().isoformat(),
+             "notice": "Candidate evidence only; question-level Opus review is still required.",
+             "sources": [pinned[url] for url in sorted(pinned)]}
+    write(path, value)
+    return {"path": str(path), "sha256": digest(value), "content": value}
+
+
 def candidates(root, published, selections):
     result = dict(published)
     conflicts = set()
@@ -159,6 +207,7 @@ def main():
             value = read(path)
             if isinstance(value, dict) and ("sources" in value or "evidence" in value):
                 packs.append({"path": str(path), "sha256": digest(value), "content": value})
+    packs.append(pin_candidate_sources(root, drafts, packs, args.group))
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
