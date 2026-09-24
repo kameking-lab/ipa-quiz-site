@@ -24026,5 +24026,47 @@
         "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74002000"
       }
     ]
+  },
+  "emkohyo-EM20261803-q1": {
+    "sourceHash": "79bd6d9ae67373fb3ab789ef8bfb711f6a5bf7787b848678b9bc5fa34972b88b",
+    "correctChoice": 2,
+    "summary": "25℃・1気圧のモル体積24.45 L/molとメタノールのモル質量32.04 g/molで換算すると約99 ppmになり、最も近いのは100 ppmである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "50 ppmを25℃・1気圧で質量濃度に戻すと、50×32.04÷24.45≒65.5 mg/m³になる。問題の130 mg/m³の約半分しかないため、最も近い値ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ppm＝130×24.45÷32.04≒99.2 ppmとなる。逆に100 ppmを戻すと約131.0 mg/m³で、条件とほぼ一致する。0℃の22.4 Lを使っても約90.9 ppmで最寄りは同じだが、指定された25℃の24.45 Lで計算するのが正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "200 ppmは200×32.04÷24.45≒262 mg/m³に当たり、130 mg/m³の約2倍になる。換算式を逆にして130×32.04÷24.45とすると約170 ppmとなり200に近づくが、その式自体が誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "300 ppmを質量濃度に戻すと300×32.04÷24.45≒393 mg/m³で、問題の130 mg/m³の約3倍となる。換算した約99 ppmに最も近い値ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "400 ppmは400×32.04÷24.45≒524 mg/m³に当たり、与えられた130 mg/m³の約4倍になる。計算値の約99 ppmとの差は最も大きく、最も近い値にはならない。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省・室内空気中化学物質の濃度換算式",
+        "url": "https://www.mhlw.go.jp/houdou/0107/h0724-1c.html"
+      },
+      {
+        "title": "厚生労働省・職場のあんぜんサイト、メタノールSDS",
+        "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-56-1.html"
+      }
+    ]
   }
 }
