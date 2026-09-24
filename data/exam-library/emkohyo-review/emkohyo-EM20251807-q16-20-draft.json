@@ -328,7 +328,9 @@
           ]
         }
       ],
-      "reviewIssues": []
+      "reviewIssues": [
+        "【HOLD】独立審査1回目（現行receipt）FIX。指摘はpresentationのみ（textIssues 1件）：presentation.promptの「生成した\\n㋑ を」に原図組版の改行が残り、空欄を［㋑］等の表記にそろえることが望ましい。overlay（解説・出典）はreason/source/choiceの各issueとも空。presentation/emkohyo-EM20251807.jsonの修正は本担当の手順外で、table-choice-curation等の固定hashに影響しうるため未実施。presentation修正後に同一overlayで再審査すればPASS見込み。"
+      ]
     },
     "emkohyo-EM20251807-q17": {
       "overlay": {

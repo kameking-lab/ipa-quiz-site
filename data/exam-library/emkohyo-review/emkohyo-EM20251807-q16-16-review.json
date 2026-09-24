@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1530,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 11862,
+      "webSearchRequests": 0,
+      "costUSD": 0.1257598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1236,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q16-16-raw-response.txt",
+  "rawResponseSha256": "40f08799b803d310c9348530f5ae1ac370e801a7b7acfc91675916cb3de30f14",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q16": {
+      "/exam-library/emkohyo-EM20251807/q16-p10-0.webp": "e7410b335c9cead50bbf96066f31bfb5d188e2e45cfaa1b674a412db0ada6b51"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251807-q16": "83301f3b3f8c8b9d9eb7bda4c66be66fe80de2e6a92b19144145f33ae31a3012"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q16-16.json",
+  "sourcePackSha256": "98c2a5f433826fbca82248d1c5dcee0ba1c2eb2cfaaf52086b1bff588a0ab5f7",
+  "assessment": {
+    "emkohyo-EM20251807-q16": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.prompt の「生成した\\n㋑ を」に改行が残っている。原図の組版上の折返しを写したもので、文の途中で改行が表示される。「生成した㋑を…」と改行なしの一続きの文にすること。原図では㋑・㋺・㋩が空欄枠（□）で示されているので、本文中でも「［㋑］を［㋺］溶液で…［㋩］を加え」のように空欄と分かる表記にそろえることが望ましい（冒頭の「［　］に入る」との対応が取れる）。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}
