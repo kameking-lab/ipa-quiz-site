@@ -3121,5 +3121,133 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q2": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q2",
+    "sourceSha256": "374d1c222c261fb2d3ed08f1d4776ecb745a64cc6be3b30e5d943ad8f9af4d57",
+    "candidateSha256": "47150da52b7bda94424b89a3dd6e7b7f7922b8dc872cc18de468a1e0ae054793",
+    "evidenceSha256": "d4a1683a94010ea91e59739edf250c89ee54db84aa366c1d325f6049e1c9d137",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The three pinned governmentSourceFiles (安衛法, 施行令, 安衛則) all have the same sha256 (b2e5ede6…, 800 bytes). Opening the file shows only the empty e-Gov SPA shell: <div id=\"app\"></div>. It contains no law text, so no candidate.sources URL can be confirmed to support the explanation from the pinned bytes.",
+        "I had no web tool in this session, so I could not open the candidate URLs themselves. I checked the text only against separately cached e-Gov API law data that is not part of the candidate's governmentSourceFiles: 施行令 347CO0000000318_20260401 and 安衛法 347AC0000000057_20260401 as auxiliary copies, and 安衛則 347M50002000032_20250401 (the same revision as the candidate URL).",
+        "Choice 2 is supported: 安衛則26条 lists only 一酸化炭素用, アンモニア用 and 亜硫酸ガス用防毒マスク, and I found no hazard-specific 硫化水素用 designation in that data.",
+        "Choice 3 is supported: 施行令13条5項 excludes only the 'ハロゲンガス用又は有機ガス用の防毒機能を有する電動ファン付き呼吸用保護具その他厚生労働省令で定めるもの以外の防毒機能を有する…'. The '防じん機能を有する電動ファン付き呼吸用保護具' is listed in the 令 data.",
+        "Choices 1, 4 and 5 (防振手袋, 検知管方式一酸化炭素検定器, 放射線測定器) are explained by their absence from 法別表第二 and 施行令13条. I did not check every item of both lists, so the claimed absence is not verified.",
+        "The official PDF shows only a publication date (2026-04), not the exam date. I could not establish which revision was in force when the exam was held. The 安衛則 URL is pinned to the 2025-04-01 revision, and I did not check whether a later revision was in force at the exam date.",
+        "The official PDF p.2 marks ○ on (3), matching correctChoice 3. The image q2-p2-1.webp matches the question text."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347AC0000000057",
+        "https://laws.e-gov.go.jp/law/347CO0000000318",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 6212,
+        "cacheReadInputTokens": 1139791,
+        "cacheCreationInputTokens": 31780,
+        "webSearchRequests": 0,
+        "costUSD": 0.6064942,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1670,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260415-1-q1": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260415-1-q1",
+    "sourceSha256": "c177a162b73873489a2773192f918bfbcb025b8b8709cd986827e6cbdbe5f95a",
+    "candidateSha256": "7fa6086d1c4f4812491dfc903cb204cfb3821c95f44971bf488ca9ff508da092",
+    "evidenceSha256": "d4a1683a94010ea91e59739edf250c89ee54db84aa366c1d325f6049e1c9d137",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "historicalApplicabilityChecked missing",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The pinned governmentSourceFiles (施行令, 安衛則) both have sha256 b2e5ede6… (800 bytes). The file is the empty e-Gov SPA shell with no law text, so neither candidate.sources URL can be confirmed from the pinned bytes.",
+        "The governmentSourceFiles title for 施行令 says '第13条', but the candidate cites 施行令2条・6条. The 安衛則 title says '第26条・第26条の2', but the candidate cites 7条・13条. The pin metadata does not match the provisions cited.",
+        "I had no web tool in this session, so I could not open the candidate URLs themselves. I checked the text only against separately cached e-Gov API data: 施行令 (2026-04-01 revision, as an auxiliary copy) and 安衛則 (2025-04-01 revision, the same as the candidate URL).",
+        "Choice 2 is supported: 安衛則7条1項5号 reads '常時千人を超える労働者を使用する事業場' and '常時五百人を超える労働者を使用する事業場で、坑内労働又は労働基準法施行規則第十八条各号に掲げる業務に常時三十人以上…'. A workplace of 400 does not meet either condition.",
+        "Choice 5 is supported: I found the exclusion text '試験研究のため取り扱う作業を除く' in the 施行令 data. I did not confirm by locator that it sits in 6条18号.",
+        "Choice 1: '製造業（物の加工業を含む。）' appears in the 施行令 data, but I did not confirm the 令2条2号 threshold of '常時三百人以上'.",
+        "Choice 3: I did not check the text of 安衛則7条1項3号イ or 10条.",
+        "Choice 4: I confirmed the 13条1項3号 main text, '常時千人以上…又は次に掲げる業務に常時五百人以上'. I did not check that the listed items include 深夜業 and 多量の高熱物体.",
+        "The official PDF shows only a publication date (2026-04), and I could not establish which revision was in force when the exam was held.",
+        "The official PDF p.2 marks ○ on (2), matching correctChoice 2. The image q1-p2-0.webp matches the question text, including 200人, 50人 and 30人."
+      ],
+      "choiceChecks": {
+        "1": "HOLD",
+        "2": "PASS",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://laws.e-gov.go.jp/law/347CO0000000318",
+        "https://laws.e-gov.go.jp/law/347M50002000032/20250401_505M60000100121"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 14,
+        "outputTokens": 6212,
+        "cacheReadInputTokens": 1139791,
+        "cacheCreationInputTokens": 31780,
+        "webSearchRequests": 0,
+        "costUSD": 0.6064942,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1670,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
