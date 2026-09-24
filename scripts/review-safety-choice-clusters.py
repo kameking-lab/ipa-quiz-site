@@ -134,6 +134,64 @@ def pin_candidate_sources(root, drafts, existing_packs, group):
     return {"path": str(path), "sha256": digest(value), "content": value}
 
 
+def refresh_question_sources(root, drafts, question_ids, group):
+    """Create an immutable current-byte pack scoped to explicitly named questions."""
+    rows = defaultdict(lambda: {"titles": set(), "questionIds": set()})
+    for qid in question_ids:
+        if qid not in drafts:
+            raise ValueError(f"Cannot refresh missing candidate: {qid}")
+        for source in drafts[qid].get("sources", []):
+            rows[source["url"]]["titles"].add(source.get("title", ""))
+            rows[source["url"]]["questionIds"].add(qid)
+    token = digest(sorted(question_ids))[:16]
+    path = root / f"docs/evidence/{group}-current-source-pins/{token}.json"
+    if path.exists():
+        value = read(path)
+        return {"path": str(path), "sha256": digest(value), "content": value}
+    sources = []
+    for url, references in sorted(rows.items()):
+        parsed = urlparse(url)
+        if (parsed.scheme != "https" or parsed.hostname is None
+                or not parsed.hostname.endswith(".go.jp")
+                or parsed.username or parsed.password or parsed.port is not None):
+            raise ValueError(f"Cannot refresh non-government source: {url}")
+        retrieval_url = parsed._replace(fragment="").geturl()
+        response = requests.get(retrieval_url, timeout=90)
+        response.raise_for_status()
+        payload = response.content
+        if len(payload) < 300 or len(payload) > 32 * 1024 * 1024:
+            raise ValueError(f"Refreshed source is not substantive: {url}")
+        content_type = response.headers.get("Content-Type", "application/octet-stream")
+        receipt = {"retrievalUrl": retrieval_url, "retrievedOn": date.today().isoformat(),
+                   "sha256": sha256(payload).hexdigest(), "bytes": len(payload),
+                   "contentType": content_type}
+        sources.append({"url": url, "title": sorted(references["titles"])[0],
+                        "locators": [], "relevantQuestionIds": sorted(references["questionIds"]),
+                        "retrieval": receipt})
+        suffix = ".pdf" if "pdf" in content_type.lower() else ".json" if "json" in content_type.lower() else ".html"
+        cache = root / ".cache/safety-full-review/government-sources" / f"{receipt['sha256']}{suffix}"
+        cache.parent.mkdir(parents=True, exist_ok=True)
+        cache.write_bytes(payload)
+    value = {"schemaVersion": 1, "group": group,
+             "questionIds": sorted(question_ids), "retrievedOn": date.today().isoformat(),
+             "notice": "Question-scoped current source bytes; no applicability is inferred.",
+             "sources": sources}
+    write(path, value)
+    return {"path": str(path), "sha256": digest(value), "content": value}
+
+
+def evidence_for_question(packs, question_id, urls):
+    result = []
+    for pack in packs:
+        sources = pack["content"].get("sources", [])
+        if any(source.get("url") in urls
+               and (not source.get("relevantQuestionIds")
+                    or question_id in source["relevantQuestionIds"])
+               for source in sources):
+            result.append(pack)
+    return result
+
+
 def candidates(root, published, selections):
     result = dict(published)
     conflicts = set()
@@ -181,6 +239,8 @@ def main():
     ap.add_argument("--max-batches", type=int, default=1)
     ap.add_argument("--batch-size", type=int, default=6)
     ap.add_argument("--model", default="claude-opus-5-5")
+    ap.add_argument("--refresh-source-questions",
+                    help="Comma-separated question IDs for one immutable current-byte source pack")
     ap.add_argument("--ledger", type=Path)
     ap.add_argument("--plan", type=Path)
     args = ap.parse_args()
@@ -211,6 +271,15 @@ def main():
     target_drafts = {qid: candidate for qid, candidate in drafts.items()
                      if qid.startswith(target_prefixes)}
     packs.append(pin_candidate_sources(root, target_drafts, packs, args.group))
+    refresh_folder = root / f"docs/evidence/{args.group}-current-source-pins"
+    for path in refresh_folder.glob("*.json"):
+        value = read(path)
+        packs.append({"path": str(path), "sha256": digest(value), "content": value})
+    if args.refresh_source_questions:
+        refresh_ids = [qid.strip() for qid in args.refresh_source_questions.split(",") if qid.strip()]
+        refreshed = refresh_question_sources(root, target_drafts, refresh_ids, args.group)
+        if all(pack["path"] != refreshed["path"] for pack in packs):
+            packs.append(refreshed)
     counts = Counter()
     groups = defaultdict(list)
     duplicates = defaultdict(list)
@@ -237,7 +306,7 @@ def main():
                 static_holds.append({"questionId": qid, "issues": problems})
                 continue
             urls = sorted({x.get("url", "") for x in candidate.get("sources", [])})
-            relevant = [p for p in packs if any(url and url in json.dumps(p["content"], ensure_ascii=False) for url in urls)]
+            relevant = evidence_for_question(packs, qid, urls)
             try:
                 snapshot = source_snapshot(root, question, paper)
             except ValueError as exc:

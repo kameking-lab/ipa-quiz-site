@@ -155,6 +155,16 @@ class FullReviewGateTest(unittest.TestCase):
         self.assertEqual(source["retrieval"]["sha256"], sha256(payload).hexdigest())
         self.assertEqual(source["relevantQuestionIds"], ["q1"])
 
+    def test_refreshed_pack_is_scoped_to_named_questions(self):
+        packs = [{"path": "old", "sha256": "a", "content": {"sources": [
+            {"url": "https://www.mhlw.go.jp/shared", "relevantQuestionIds": ["q1"]}]}},
+                 {"path": "refresh", "sha256": "b", "content": {"sources": [
+            {"url": "https://www.mhlw.go.jp/shared", "relevantQuestionIds": ["q2"]}]}}]
+        self.assertEqual([p["path"] for p in REVIEW.evidence_for_question(
+            packs, "q1", {"https://www.mhlw.go.jp/shared"})], ["old"])
+        self.assertEqual([p["path"] for p in REVIEW.evidence_for_question(
+            packs, "q2", {"https://www.mhlw.go.jp/shared"})], ["refresh"])
+
 
 if __name__ == "__main__":
     unittest.main()
