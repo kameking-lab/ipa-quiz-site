@@ -1,0 +1,712 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251809",
+  "governmentSourceCandidates": [
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 比例計数管",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1018.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 陽電子",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_691.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA ポジトロンＣＴ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1280.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 液体シンチレーションカウンタ",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 標準線源",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+    },
+    {
+      "title": "厚生労働省 放射性医薬品基準（平成25年厚生労働省告示第83号）",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 中性子源",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.9 トリチウム分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA トリチウムの液体シンチレーション法による測定",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html"
+    },
+    {
+      "title": "文部科学省 放射能測定法シリーズNo.23 液体シンチレーションカウンタによる放射性核種分析法（環境放射能・放射線データベース掲載）",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No23.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA トリチウム",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1126.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 直接捕集法",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 空気汚染モニタ",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 空気汚染モニタリング",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251809-q11": {
+      "overlay": {
+        "sourceHash": "9a96071c93a51cc17fc35c6e7d9353e635956dfe6504c9fec0f0d3d4861bb331",
+        "correctChoice": 2,
+        "summary": "β⁺放射性核種は陽電子（β線）と、その消滅で生じる511keVの消滅放射線を出す。³He比例計数管は熱中性子を検出する計数管であり、β⁺核種の放射能測定には適さない。肢2が答え。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは比例計数管を「電離箱では十分な感度を得ることのできないβ線の測定に適している」とする。試料をガス流通型の計数管内に置くガスフロー比例計数管で、β⁺核種の放出する陽電子（β⁺線）を計数して放射能を測定することは適切である。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "ATOMICAは³He中性子計数管を「熱中性子を検出するための計数管」とし、³He(n,p)³H反応で中性子を検出すると説明する。サーベイメータでも³He比例計数管は熱中性子の測定用である。β⁺核種は中性子を放出しないため、その放射能測定に³He比例計数管を用いるのは適切でない。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "陽電子は電子と衝突すると電磁波を出して消滅し、PETでは陽電子放出核種から出る消滅放射線（511keV）を検出する。NaI(Tl)シンチレーション検出器はγ線（光子）の測定に用いられるため、511keVの消滅放射線を計測してβ⁺核種の放射能を測定するのは適切である。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ATOMICAはβ線スペクトロメトリの検出器として「有機シンチレータ（液体、プラスチック、アントラセン）」を挙げている。プラスチックシンチレーション検出器で陽電子（β⁺線）を計数してβ⁺核種の放射能を測定するのは適切である。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは液体シンチレーションカウンタを「β線、α線等の荷電粒子の計測に適している」検出器とし、試料をシンチレータに溶かして測るため自己吸収が少ないとしている。β⁺核種の陽電子を液体シンチレーション検出器で測定するのは適切である。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 比例計数管",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1018.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ヘリウム３中性子計数管",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA サーベイメータ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 陽電子",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_691.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ポジトロンＣＴ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1280.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA スペクトロメトリ（α線、β線、γ線、中性子）",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 液体シンチレーションカウンタ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1018.html",
+          "excerpt": "電離箱では十分な感度を得ることのできないβ線の測定に適していること",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html",
+          "excerpt": "熱中性子を検出するための計数管である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1194.html",
+          "excerpt": "熱中性子が通過すると、 3 He（n,p） 3 Hの核反応が起こり",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1397.html",
+          "excerpt": "熱中性子の測定にはBF3ガス、またはＨｅ−3ガスを充填した比例計数管式が用いられ",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_691.html",
+          "excerpt": "不安定な原子核のβ ＋ 壊変で放出される",
+          "choiceNumbers": [
+            1,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_691.html",
+          "excerpt": "陽電子は、電子と衝突すると電磁波を出して消滅する",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1280.html",
+          "excerpt": "陽電子と付近に存在する陰電子との反応により放出される消滅放射線（511keV）を同時計数法によって検出し",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "沃化ナトリウム（NaI）か、沃化セシウム（CsI）のシンチレーション検出器、ゲルマニウム（Ge）半導体検出器などが用いられる",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "検出器には 有機シンチレータ （液体、プラスチック、アントラセン）、リチウムドリフト型シリコン（Si（Li））半導体検出器などが広く用いられている",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html",
+          "excerpt": "β線、α線等の荷電粒子の計測に適している",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q12": {
+      "overlay": {
+        "sourceHash": "dbcbbd43ed03e9d5a95ee1c4e49e6b7f80449c46ee9d370b37f62500f2515b27",
+        "correctChoice": 2,
+        "summary": "γ線エネルギー分析装置の校正には、単色のγ線・X線を出し半減期が十分長い²²Na、¹⁰⁹Cd、¹³⁷Cs等が使われる。純β線核種、短半減期の¹⁸F、自発核分裂中性子源の²⁵²Cfを含む組合せは不適切。肢2が正しい。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "³H・¹⁴C・¹⁴⁷Pmはいずれもγ線を出さない純β線放出核種で、ATOMICAの標準線源の解説でもβ線放出核種用の標準線源として挙げられている。γ線エネルギー分析装置のエネルギー校正に使える光電ピークを作らないので、組合せとして適切でない。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "ATOMICAはγ線スペクトロメトリのエネルギー校正用標準線源として²²Na、¹³⁷Cs等を挙げ、X線用に¹⁰⁹Cdの特性X線を挙げる。規制庁No.7も校正用線源に¹⁰⁹Cd(88.0keV)を含めている。²²Na・¹⁰⁹Cd・¹³⁷Csはいずれもγ線分析装置の校正用線源として適切な組合せである。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "¹³⁷Csと²⁴¹Amは校正用に使われるが、¹⁸Fは不適切。厚労省の放射性医薬品基準はフルデオキシグルコース(¹⁸F)の半減期を105〜115分とし、γ線は0.511MeVの消滅放射線のみである。半減期約110分では放射能値が急速に変わり、繰り返し使う校正用線源に適さない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "¹⁰⁹Cdと²⁴¹Amは適切だが、²⁵²Cfは自発核分裂による中性子源として原子炉の起動用中性子源等に用いられる核種である。ATOMICAが挙げるγ線スペクトロメトリ用のエネルギー校正用標準線源には含まれず、γ線分析装置の校正用線源として適切でない。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "⁴⁰K・⁶⁰Coはγ線を出すが、³²Pはγ線を放出しない純β線放出核種（ATOMICAがβ線のみを放出する核種の代表例に挙げる）であり、γ線エネルギー分析装置の校正用線源にはならない。したがって組合せ全体として適切でない。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 標準線源",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA β線放出核種",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          },
+          {
+            "title": "厚生労働省 放射性医薬品基準（平成25年厚生労働省告示第83号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 自発核分裂",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 中性子源",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html",
+          "excerpt": "γ線スペクトロメトリーにおいては、代表的なγ線を放出する複数の核種（ 241 Am、 57 Co、 60 Co、 137 Cs、 51 Cr、 54 Mn、 22 Na、 85 Sr、 88 Ｙ等）",
+          "choiceNumbers": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html",
+          "excerpt": "Ｘ線 については、 55 Fe、 109 Cd等の壊変に伴う 特性Ｘ線 が使用される",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-02.html",
+          "excerpt": "β線放出核種については、 3 Ｈ、 14 Ｃ、 147 Pm、 204 TI、 90 Sr、 90 Ｙ、 106 Ru、 106 Rh等の核種が",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1185.html",
+          "excerpt": "一般的にはβ線のみを放出する核種を指し、代表的なものとして 3 Ｈ、 14 Ｃ、 32 Ｐ、 35 Ｓ、 90 Sr、 99 Tc等が挙げられる",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "109Cd(88.0keV)",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3",
+          "excerpt": "2フルデオキシグルコース(18F)注射液本品は、水性の注射剤で、フッ素18をフルデオキシグルコースの形で含む",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=81ab3309&dataType=0&pageNo=3",
+          "excerpt": "0.511MeVにピークを認める。また、定量法の項により適当な時間間隔をあけて2回試験を行い、測定時間間隔と2回の放射能の測定値から半減期を測定するとき、その値は105～115分である",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_332.html",
+          "excerpt": "人工の自発核分裂性核種の 252 Cf（カリホルニウム252）は、原子炉の起動用中性子源や中性子ラジオグラフィなど各種の用途に広く用いられる",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1049.html",
+          "excerpt": "自発核分裂中性子源では、Ｃｆ−２５２の酸化物をステンレス鋼カプセルに密封しており",
+          "choiceNumbers": [
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q13": {
+      "overlay": {
+        "sourceHash": "db53ce137abab15618fc726ad3b004bcb4f5bdf8b6dbae4ae42f7a730300dfc5",
+        "correctChoice": 4,
+        "summary": "化学・色クエンチングはいずれも発光量を減らし計数効率を下げる（補正しなければ過小評価）。γ線外部標準で効率を求め、2本の光電子増倍管の同時計数で雑音を除く。³Hと¹⁴Cもエネルギー領域を分けて同時定量できる。㋺㋥の肢4。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑は誤り。No.9はクエンチングを「シンチレータの発光量が減少すること」とし化学クエンチング・色クエンチングを含め、ATOMICAも消光による効率の低下を挙げる。どちらも計数効率を下げ補正しなければ過小評価となり、色クエンチングで過大評価になるわけではない。㋩も誤りで、この組合せは誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑は誤り（化学・色クエンチングはいずれも発光量を減らし効率を下げる）。㋥の同時計数は正しいが、㋑を含むのでこの組合せは誤りである。No.9は化学・色いずれもシンチレータの発光量が減少する現象として扱っている。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋺は正しいが、㋩は誤り。規制庁No.23は、化学分離できない複数核種について「β線波高分布」の違いを利用し、異なるチャネルにおける効率から核種ごとに放射能を決める同時定量法を示している。最大エネルギーが18.6keVの³Hと157keVの¹⁴Cも同様にチャネルを分けて同時測定できる。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "㋺：No.9は試料を一定強度のγ線源（¹³⁷Cs等）で照射してクエンチングの指標値を得、計数効率と指標値の関係（クエンチング補正曲線）から効率を求める。㋥：ATOMICAは試料を挟んで2本の光電子増倍管を対向させ同時計数して熱雑音を除くと説明する。㋺㋥とも正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋥は正しいが㋩が誤り。β線スペクトルは連続でも、³H（最大18.6keV）と¹⁴C（最大157keV）では波高分布が異なるため、No.23が示すように異なるチャネルの効率を用いた連立方程式で核種ごとに同時定量できる。したがってこの組合せは誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.9 トリチウム分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 液体シンチレーションカウンタ",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA トリチウムの液体シンチレーション法による測定",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html"
+          },
+          {
+            "title": "文部科学省 放射能測定法シリーズNo.23 液体シンチレーションカウンタによる放射性核種分析法（環境放射能・放射線データベース掲載）",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No23.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA トリチウム",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1126.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf",
+          "excerpt": "消光作用。様々な要因によってシンチレータの発光量が減少すること。化学クエンチング、色クエンチング、酸素クエンチング、濃度クエンチングがある",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_200.html",
+          "excerpt": "消光現象による効率の低下がある",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf",
+          "excerpt": "試料を一定強度のγ線源(137Cs、226Ra、133Ba等)で照射し、シンチレータとの相互作用で発生するコンプトン電子の波高スペクトルを用いて、その異なるエネルギー領域で観測される計数の比をクエンチングレベルの指標値として得ることにより",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf",
+          "excerpt": "トリチウム計数効率とクエンチングレベルの指標値との関係曲線であるクエンチング補正曲線を作成する必要がある",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html",
+          "excerpt": "試料（シンチレータ）をはさんで2本の光電子増倍管を対向させ、2つの出力を同時計数することによって、熱雑音を除去する",
+          "choiceNumbers": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No23.pdf",
+          "excerpt": "異なるチャネルにおける効率よりそれぞれ個別に放射能を決める方法が用いられる",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No23.pdf",
+          "excerpt": "連立方程式による複合核種の同時定量法",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1126.html",
+          "excerpt": "半減期12.3年の放射性同位体で、18.6keVのβ線を放出する",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "C-14 \n5700 年 \n157",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q14": {
+      "overlay": {
+        "sourceHash": "419c84349bfd43207b10c7b5958c0364beb5f6db280af0bf9745a864d35ad804",
+        "correctChoice": 2,
+        "summary": "JIS Z 4601（放射性ダストサンプラ）のろ紙性能は「粒径0.3μmの粒子に対し95%以上」であり、「0.5μmの粒子を90%以上」とする肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "作業環境測定基準第9条は、空気中の放射性物質の試料採取方法を、粒子状は液体捕集方法又はろ過捕集方法、ガス状は液体捕集方法・固体捕集方法・直接捕集方法又は冷却凝縮捕集方法と定める。ATOMICAも直接捕集法を気体状の放射性物質の測定方法としており、直接捕集法はガス状物質にのみ適用される。正しい記述。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "規制庁No.36は、JIS Z 4601:2009「放射性ダストサンプラ」のろ紙性能を「捕集効率は、粒径0.3μmの粒子に対し95％以上のものとする。」と引用している。「0.5μmの粒子を90%以上」は粒径・捕集効率の両方がこの規格値と異なり、誤った記述である。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "ラドン・トロンは壊変して固体の壊変生成物（Po-218、Pb-214等の粒子状物質）を生じ、これが電離箱内壁に付着して汚染を残す。一方、放射性アルゴン（⁴¹Ar）は安定なカリウムに壊変する。正しい記述とされるが、電離箱内壁汚染の比較を直接述べた政府資料は未確保。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "空気流通型電離箱は試料空気を連続的に電離箱内に流して電離電流を測るため、空気中に常に存在する天然のラドン・トロンとその壊変生成物の寄与も測定値に含まれる。正しい記述とされるが、この点を電離箱について直接述べた政府資料は未確保。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "1.5L程度の電離箱ではβ線の飛程が電離箱の寸法より長く、β線はエネルギーの一部だけを箱内で失って壁に達するため、1壊変当たりの電離量はエネルギーによらずほぼ一定となり、電離効率はβ線エネルギーにほぼ反比例する。正しい記述とされるが、直接の政府資料は未確保。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 直接捕集法",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 空気汚染モニタ",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "放射性物質の状態試料採取方法粒子状液体捕集方法又はろ過捕集方法ガス状液体捕集方法、固体捕集方法、直接捕集方法又は冷却凝縮捕集方法",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html",
+          "excerpt": "空気中の気体状の放射性物質濃度を測定する場合、測定しようとする気体からサンプリングして試料ガスを取り、その試料ガスを、前以って真空にしておいた電離箱内に封入して電離電流を測定して気体状の放射性物質濃度を測定する方法が、直接捕集法である",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "JIS Z 4601:2009「放射性ダストサンプラ」[7]においてろ紙の性能は、「捕集効率は、粒径0.3 μm の粒子に対し95 ％以上のものとする。」と記載されており",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html",
+          "excerpt": "通気型電離箱式ガスモニタの検出感度は、一般に 3 Ｈ、 14 Ｃ、 41 Ar、 85 Kr、 133 Xeに対して3.7E−1〜3.7E−3Bq/cm 3 である",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": [
+        "【HOLD】肢3（ラドン・トロンが放射性アルゴンより電離箱内壁の放射能汚染を生じやすい）、肢4（空気流通型電離箱の測定値に天然ラドンと子孫核種の影響が含まれる）、肢5（1.5L程度のガス捕集用電離箱の電離効率がβ線エネルギーにほぼ反比例する）の理由を直接支える政府一次資料（厚労省・原子力規制庁・JAEA等）を確保できていない。ATOMICAの直接捕集法・空気汚染モニタ、規制庁No.36は電離箱の方式や検出感度を述べるのみで、内壁汚染の比較や電離効率のエネルギー依存性を記載しない。独立審査は未実施。"
+      ]
+    },
+    "emkohyo-EM20251809-q15": {
+      "overlay": {
+        "sourceHash": "051872269718b2a14d0550a6e1a218e1b9bd6cfedd5a9edb6eb4f9aa81ec4e23",
+        "correctChoice": 4,
+        "summary": "水蒸気状トリチウム(HTO)はシリカゲル等、ガス状トリチウム(HT)は酸化触媒で水に変えてから捕集する。ガス状ヨウ素は活性炭含浸ろ紙、粒子状のPuO₂はろ過捕集、希ガスの¹³³Xeは捕集用電離箱による直接捕集。㋺㋥の肢4。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑は誤り。規制庁No.9は、HTOはシリカゲル等の吸湿法で捕集するが、HT（水素ガス状トリチウム）はHTOを除いた空気をパラジウム酸化触媒に通して水に変換してから捕集するとしている。HTをそのままシリカゲルで捕集することはできない。㋺は正しいが、組合せとして誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑は誤り（HTは触媒で酸化して水に変えないとシリカゲル等に捕集できない）。㋩も誤りで、PuO₂は粒子状物質でありろ過捕集法（ろ紙）で捕集する。コールドトラップは水蒸気を冷却凝縮して捕集する方法である。この組合せは誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋺は正しいが㋩が誤り。No.36の表参A-1は、粒子状の放射性物質（Cs-137、U、Pu）はセルロース・ガラス繊維ろ紙やメンブレンろ紙によるろ過捕集としている。コールドトラップ（冷却凝縮法）は水蒸気状物質を捕集する方法で、²³⁹PuO₂の捕集には用いない。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "㋺：No.36表参A-1はガス状（揮発性）のI-131等を活性炭含浸ろ紙等で固体捕集するとしており、H¹³¹IO₄の捕集に活性炭含浸ろ紙は適切。㋥：ATOMICAは直接捕集法（ガス捕集用電離箱）で希ガス（Rn、Ar、Kr、Xe）を測定するとしており、¹³³Xeに捕集用電離箱は適切。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋥は正しいが㋩が誤り。²³⁹PuO₂は粒子状の放射性物質で、ATOMICAの空気汚染モニタリングの解説では粒子状物質は繊維系ろ紙を用いたろ過捕集法、コールドトラップを用いた冷却凝縮法は水蒸気状物質などに用いる方法として区別されている。この組合せは誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.9 トリチウム分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.36 大気中放射性物質測定法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 空気汚染モニタリング",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 直接捕集法",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf",
+          "excerpt": "（2）シリカゲルによる吸湿法:捕集精度が少し悪いものの吸湿能力が変色により一目で分かる",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No09_R510.pdf",
+          "excerpt": "前段でモレキュラーシーブを通してHTOを除いた乾燥空気に、無トリチウム水素ガスを担体として加えたのち、パラジウム酸化触媒を通して水に変換し、得られた水をモレキュラーシーブに捕集する方法",
+          "choiceNumbers": [
+            1,
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "粒子状 \nろ過捕集 \n・セルロース、 \nガラス繊維ろ紙 \n・メンブレンろ紙 \nCs-137, \nU, Pu",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2022/06/No36_R408.pdf",
+          "excerpt": "固体捕集 \n・活性炭含浸ろ紙 \n・活性炭カートリッジ \n・活性炭素繊維ろ紙 \nI-131",
+          "choiceNumbers": [
+            1,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "（1）粒子状の放射性物質は繊維系ろ紙を用いた ろ過捕集法",
+          "choiceNumbers": [
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "（4）水蒸気状の放射性物質はシリカゲルやモレキュラシーブ等を用いいた固体捕集法、（5） コールドトラップ を用いた冷却凝縮法",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html",
+          "excerpt": "この方法によって、希ガス（Ｒｎ、Ａｒ、Ｋｒ、Ｘｅ）、トリチウム（水素ガス状、水蒸気状）、ＣＯ２等が測定される",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1069.html",
+          "excerpt": "この電離箱をガス捕集用電離箱と呼んでいる",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

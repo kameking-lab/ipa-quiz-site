@@ -1,0 +1,530 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20261809",
+  "governmentSourceCandidates": [
+    {
+      "title": "日本原子力研究開発機構 原子力百科事典ATOMICA",
+      "url": "https://atomica.jaea.go.jp/"
+    },
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20261809-q16": {
+      "overlay": {
+        "sourceHash": "c624a935d2af899e89c2a7687c16f861397d1a1d7a59e577412aa2d5f6f6df3b",
+        "correctChoice": 1,
+        "summary": "半減期12時間の核種は48時間（4半減期）で1/16に減衰するので、採取時の放射能は4Bq×2⁴＝64Bq。これを採取量1.2L＝1200cm³で割ると約0.053Bq/cm³（5.3×10⁻²Bq･cm⁻³）となる。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "48時間は半減期12時間の4倍なので、測定時の4Bqは採取時の(1/2)⁴＝1/16である。採取時の放射能は4×16＝64Bqで、直接捕集した試料空気1.2L＝1200cm³で割ると64÷1200≒0.0533Bq/cm³＝5.3×10⁻²Bq･cm⁻³となり、これが正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "8.2×10⁻²Bq･cm⁻³は、正しい計算値64Bq÷1200cm³≒5.3×10⁻²Bq･cm⁻³の約1.5倍で一致しない。48時間（4半減期）の減衰補正は2⁴＝16倍であり、この値にはならないので誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "1.3×10⁻¹Bq･cm⁻³は、正しい値5.3×10⁻²Bq･cm⁻³の約2.5倍で一致しない。採取時の放射能4×2⁴＝64Bqを1.2L＝1200cm³で割れば0.053Bq/cm³であり、誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "2.7×10⁻¹Bq･cm⁻³は、正しい値5.3×10⁻²Bq･cm⁻³の約5倍で一致しない。48時間後の4Bqを採取時に戻す係数は2^(48/12)＝16で、64Bq÷1200cm³≒0.053Bq/cm³となるので誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "6.4×10⁻¹Bq･cm⁻³は、採取時の放射能64Bqを1200cm³ではなく100cm³で割った値に相当し、正しい値の12倍である。採取試料1.2Lは1200cm³なので、正しくは64÷1200≒5.3×10⁻²Bq･cm⁻³で誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境測定基準",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「半減期」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-04.html"
+          },
+          {
+            "title": "環境省 放射線による健康影響等に関する統一的な基礎資料（令和7年度版）半減期と放射能の減衰",
+            "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000",
+          "excerpt": "直接捕集方法試料空気を溶解、反応、吸着等をさせないで、直接、捕集袋、捕集びん等に捕集する方法をいう",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-04.html",
+          "excerpt": "放射性核種の単位時間当りの壊変数は、その時の原子数に比例し",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/chemi/rhm/current/01-02-07.html",
+          "excerpt": "半減期分の時間が経過するたびに放射能が半分となるため、半減期の２倍の時間が経過すると、最初の状態の４分の１に減ることになります",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261809-q17": {
+      "overlay": {
+        "sourceHash": "20ebdc199c96f81584f2144d9064411ba6f26704c2bedacb86956cd19845de32",
+        "correctChoice": 4,
+        "summary": "トリチウム（HTO・HT等）はガス捕集用電離箱に試料空気を直接捕集し、その微小な電離電流を振動容量電位計で測定できる。ろ紙・Si検出器・外部からのプラスチックシンチレーション・NaI(Tl)はトリチウムの捕集・検出に適さない。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "セルローズ・ガラス系ろ紙は粒子状の放射性物質を捕集するもので、気体・水蒸気状のトリチウムは捕集できない。また³Hは最大18keVの低エネルギーβ線しか出さず、試料を検出器の外側に置く方法ではほとんど検出できないので、電離箱式サーベイメータでも測れない。誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "コールドトラップはトリチウムの捕集に使えるが、³Hのβ線は最大18keVと弱く、捕集した水はシンチレータに溶かし液体シンチレーション計数装置で計測する。α線用サーベイメータ等に使われる表面障壁型Si半導体検出器で測る組合せではないので誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "モレキュラシーブは水蒸気状放射性物質の固体捕集材として使えるが、³Hのβ線は物質透過力が極めて弱く、試料を検出器の外側に置くとほとんど検出できない。トリチウムの計測は液体シンチレーション計数装置等で行うので、この組合せは誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "気体状の放射性物質は電離箱を用いた直接捕集法でも捕集でき、トリチウムは試料を気体状にして電離箱内で測定する方法が室内モニタ等に使われる。電離箱の電離電流は振動容量電位計で測定する（ラジウム分析法でも電離箱を振動容量電位計にセットして測る）。正しい組合せ。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "NaI(Tl)シンチレーション検出器はγ線測定装置であるが、³Hはβ線のみを放出する代表的なβ線放出核種でγ線を出さない。捕集用ガス容器に取った試料をNaI(Tl)で測っても³Hは検出できないので誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタリング」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「トリチウムの液体シンチレーション法による測定」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「サーベイメータ（α線、β線、γ線、中性子等）」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-04.html"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.19 ラジウム分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No19.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 用語辞書「NaI(Tl)シンチレーション検出器」",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1626.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 用語辞書「ベータ線放出核種」",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1184.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html",
+          "excerpt": "粒子状の放射性物質に対してはセルロース・ガラス繊維系濾紙のHE-40Tを",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html",
+          "excerpt": "トリチウムは、最大エネルギー18keVの低エネルギーβ線放出核種であり、このβ線の物質透過力が極めて弱いため、測定試料を放射線検出器の外側に置く方法ではほとんど検出できない",
+          "choiceNumbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "（3）電離箱を用いた直接捕集法、（4）水蒸気状の放射性物質はシリカゲルやモレキュラシーブ等を用いいた固体捕集法、（5）コールドトラップを用いた冷却凝縮法",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "トリチウムは、試料を液体シンチレーション計数装置を用いて計測するものとする",
+          "choiceNumbers": [
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-04.html",
+          "excerpt": "α線用は表面障壁型半導体検出器を用いたタイプおよび硫化亜鉛シンチレータを用いたシンチレーション式のタイプが多い",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-25.html",
+          "excerpt": "試料を気体状にし、 電離箱 や比例計数管内で測定する方法と、液体シンチレータに溶かし込んで測定する液体シンチレーション法がある。前者は主に室内モニタや排気中トリチウム濃度測定などに使用される",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No19.pdf",
+          "excerpt": "電離箱を振動容量電位計にセットし",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1626.html",
+          "excerpt": "ガンマ（γ）線測定装置として、微量のタリウム（Tl）を含むヨウ化ナトリウム（NaI）の結晶からなるシンチレーション検出器",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1184.html",
+          "excerpt": "一般的にはβ線のみを放出する核種を指し、代表的なものとして3Ｈ、14Ｃ、32Ｐ、35Ｓ、90Sr、99Tc等が挙げられる",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261809-q18": {
+      "overlay": {
+        "sourceHash": "9aff30552dbbc95edc8c640c01970349b7b292fd3cabf36e1ceeafb3c0c3a45d",
+        "correctChoice": 4,
+        "summary": "平均流量(100＋87)/2＝93.5L/minで168時間吸引すると9.4248×10⁸cm³。濃度限度の1/10（7.0×10⁻⁸Bq/cm³）で捕集される放射能は約66Bq、計数効率22％を掛けた約14.5s⁻¹が必要な検出下限計数率となる。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "0.24s⁻¹は正しい値14.5s⁻¹の約1/60で、毎秒と毎分の換算を取り違えた場合の値に当たる。7.0×10⁻⁸Bq/cm³×9.4248×10⁸cm³≒66Bq（毎秒66壊変）に計数効率0.22を掛けると14.5s⁻¹となるので誤り。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "0.97s⁻¹は、捕集放射能66Bq×計数効率0.22＝14.5s⁻¹の約1/15で一致しない。吸引量は93.5L/min×168h×60min/h＝942,480L＝9.4248×10⁸cm³と大きく、必要な計数率は14s⁻¹程度になるので誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "8.3s⁻¹は、正しい値14.5s⁻¹の約0.57倍で一致しない。流量を平均93.5L/minとして9.4248×10⁸cm³を吸引し、濃度7.0×10⁻⁸Bq/cm³なら捕集放射能は約66Bq、計数率は66×0.22≒14.5s⁻¹なので誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "流量は直線的に変化するので平均(100＋87)/2＝93.5L/min、吸引量93.5×168×60＝942,480L＝9.4248×10⁸cm³。濃度限度7.0×10⁻⁷の1/10で捕集放射能7.0×10⁻⁸×9.4248×10⁸≒66Bq、計数率＝放射能×計数効率0.22（捕集効率100％）≒14.5s⁻¹で、14s⁻¹が正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "60s⁻¹は、正しい値14.5s⁻¹の約4倍で一致しない。捕集放射能約66Bq（1Bqは毎秒1壊変）に計数効率22％を掛ける必要があり、計数効率を考慮すると66×0.22≒14.5s⁻¹となるので誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 昭和63年労働省告示第93号（電離則第3条第3項等に基づく限度及び方法）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「中性子放射化分析−原理と応用」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
+          "excerpt": "空気中の放射性物質の濃度に関する限度(Bq／cm3)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+          "excerpt": "Ｃ＝Ｄeb・exp(−λtc)",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+          "excerpt": "ここで、eは測定する放射線に対する測定器の検出効率",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-01-27.html",
+          "excerpt": "Ｄにベクレル（Bq；1秒あたりの壊変率（dps））を用いれば、Ｃはcps（1秒あたりの計数率）で与えられる",
+          "choiceNumbers": [
+            1,
+            4,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261809-q19": {
+      "overlay": {
+        "sourceHash": "c8bff3d3ade750757878c2ed6818b5f3f1cd06e7e91e9e2dbef5d0122f04fff3",
+        "correctChoice": 2,
+        "summary": "集中（セントラル）モニタリングは多数の作業室の空気を配管で一括又は作業室単位で集めて空気汚染を監視する方法で、配管への沈着もあるため、部屋ごとの濃度を「正確に採取・測定する方式」とする肢2が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "一般（ゼネラル）モニタリングは、作業室の排気グリル近傍や排気ダクト内の空気をサンプリングして室内全体の空気汚染を監視する方法である。室全体の汚染の検出が目的で、発生源の位置の確認を目的としないという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "集中（セントラル）モニタリングは、作業室が多数ある場合に各室の空気を一括し又は必要に応じ作業室単位でサンプリングし、全室又は作業室単位の空気汚染を監視する方法である。試料採取配管では放射性物質が配管に沈着するため短く屈曲を少なくすることが求められ、各室の濃度を正確に採取・測定する方式とするこの記述が誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "局所（ローカル）モニタリングは、作業室等のサンプリング端にろ紙を装着して集塵し、局所的に発生する空気汚染の分布状況を連続して監視する方法である。局所的な空気汚染の検出と室内の濃度分布の把握を目的とする記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "個人（パーソナル）モニタリングは、空気汚染のある作業環境で作業する作業者の呼吸する空気中の濃度を、パーソナルエアサンプラでサンプリングし測定する方法である。作業者の呼吸域で携帯型の個人サンプラによりモニタするという記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "エリアモニタは人の常時立ち入る、線量率が高くなる恐れがある作業環境の放射線レベルを知る上で最も有効な箇所に設置し、サーベイメータでは定期的な頻度で測定する。1cm線量当量率は原則として最も適した箇所で測定する。記述はこれに合致し正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタリング」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「外部放射線モニタリング」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-02.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "作業室又は実験室の排気グリル近傍や同室の排気ダクト内の空気をサンプリングして、室内全体の空気汚染を監視する一般（ゼネラル）モニタリング",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "作業室又は実験室が多数ある場合に、各室の空気を一括し又は必要に応じて作業室単位でサンプリングし、全室又は作業室単位の空気汚染を監視する集中（セントラル）モニタリング",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "試料採取配管は、放射性物質の配管への沈着を避けるため、できるだけ短く、また、急激な屈曲部を少なくし",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "作業室や実験室に設置されたサンプリング端にろ紙を装着して集塵し、局所的に発生する空気汚染の分布状況を連続して監視する局所（ローカル）モニタリング",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-03.html",
+          "excerpt": "空気汚染のある作業環境で作業をする作業者の呼吸する空気中の濃度をパーソナルエアサンプラによりサンプリングし測定する個人（パーソナル）モニタリング",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-02.html",
+          "excerpt": "人の常時立ち入る、線量率が高くなる恐れがある作業環境の放射線レベルを知る上で最も有効な箇所に検出器を設置して",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-02.html",
+          "excerpt": "定期的な頻度で測定した結果や放射線管理基準との比較等を行い",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-06-02.html",
+          "excerpt": "原則として最も適した箇所の1cm線量当量率",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20261809-q20": {
+      "overlay": {
+        "sourceHash": "33f186d65d5b487020b48b89ef48ac06a83af88831d5bf0de92c8be021b1c4dd",
+        "correctChoice": 1,
+        "summary": "ろ紙試料の放射能は自然計数（バックグラウンド）とラドン・トロン娘核種の影響を除いて求め（㋑）、多量のじん埃があるとα線は自己吸収するので補正する（㋺）。捕集効率は粒子の物理的・化学的性状に依存し、長い配管では沈着で過小評価となるので㋩㋥は誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "correct",
+            "reason": "正味の計数値は試料の計数値からバックグラウンドを差し引いて求め、ろ紙は天然のラドン・トロン娘核種が減衰して無視できる3日後に測定するなどその影響を除く（㋑正）。α線は物質透過力が小さく試料中での自己吸収が問題になるので、多量のじん埃の自己吸収補正を行う（㋺正）。正しい組合せ。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋑は正しいが、㋩は誤りである。集塵ろ紙は粒子状物質の物理的・化学的性状、粒径分布、ろ過速度等を考慮して適切な捕集効率のものを選ぶとされ、捕集効率は化学的性状にも依存する。組合せとして誤り。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋑は正しいが、㋥は誤りである。試料採取配管は放射性物質の配管への沈着を避けるため、できるだけ短く急激な屈曲部を少なくすることが求められる。長い配管や曲折の多い配管では沈着により濃度を過小評価するのであって、過大評価ではない。組合せとして誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋺は正しいが、㋩は誤りである。集塵ろ紙は粒子状物質の物理的・化学的性状、粒径分布等を考慮して捕集効率の適切なものを選択するとされ、捕集効率が化学的性状に依存しないとする記述は誤っている。組合せとして誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋩も㋥も誤りである。捕集効率は粒子状物質の物理的・化学的性状、粒径分布、ろ過速度等に左右され、長い配管や屈曲の多い配管では放射性物質が配管に沈着して濃度を過小評価する。誤った記述どうしの組合せで誤り。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「発電用軽水型原子炉施設における放出放射性物質の測定に関する指針」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「空気汚染モニタ」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA「スペクトロメトリ（α線、β線、γ線、中性子）」",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "正味の計数値は、放射能計測装置から得られる試料の計数値から、バックグラウンド値を差し引いて求めるものとする",
+          "choiceNumbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-09.html",
+          "excerpt": "濾紙は天然に存在するラドンおよびトロン娘核種が減衰して無視できる3日後にカウンタで測定する",
+          "choiceNumbers": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "α線は電離能力が高く、物質中をほぼ直進し、物質透過力が小さい",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-03-19.html",
+          "excerpt": "試料中でのα線の自己吸収を小さくするために",
+          "choiceNumbers": [
+            1,
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "集塵ろ紙は、粒子状物質の物理的・化学的性状、粒径分布、ろ過速度等を考慮して特別な補正を必要としないような補集効率を有するものを選択するものとする",
+          "choiceNumbers": [
+            2,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_11-03-01-09.html",
+          "excerpt": "試料採取配管は、放射性物質の配管への沈着を避けるため、できるだけ短く、また、急激な屈曲部を少なくし",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}
