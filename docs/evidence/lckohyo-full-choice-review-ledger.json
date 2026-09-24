@@ -2630,8 +2630,8 @@
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20260414-1-q12",
     "sourceSha256": "6084986bed4c16dc390ea6b1df746c967e56514c5baa4f9c063683893e8730f7",
-    "candidateSha256": "4d736e2fc2a816951c0e0cca9aff768a965e834cfec7ff398b82daff44ec1e57",
-    "evidenceSha256": "f6fd6fa16de9d9bb50322c2c5af5dee8f5133c5e4f2b450e90e4463097c97d64",
+    "candidateSha256": "af6bbfe6f4bad2499cb2b8dc8c2a7c07debf54d9f8606bc5af242befb2ae8b73",
+    "evidenceSha256": "4522e30b573aa28edd96f1e1c2e88f85b6895a5b14a2e735834f8281e15cc454",
     "status": "HOLD",
     "gateIssues": [
       "not a clean PASS",
@@ -2641,23 +2641,26 @@
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "The ○ on page 6/15 of the official PDF (PDF page 7) marks (1), which matches the original correct answer of 1. The image q12-p7-1.webp matches the question text.",
-        "(1) Slide 1 of the MHLW food-poisoning classification material lists Campylobacter jejuni/coli as an infection-type bacterium, and lists Clostridium botulinum and Staphylococcus aureus as toxin-type. So calling Campylobacter an example of toxin-type poisoning is confirmed false.",
-        "(2) The source only classifies C. botulinum as a food-borne toxin type. Nothing in the provided sources says its toxin is a neurotoxin, so this cannot be confirmed.",
-        "(3) The source only classifies S. aureus as a food-borne toxin type. Nothing in the provided sources says its toxin is heat-stable, so this cannot be confirmed.",
-        "(4) The source only lists Vibrio parahaemolyticus as an infection-type bacterium. Nothing in the provided sources gives the alternative name 'pathogenic halophilic bacterium' (病原性好塩菌), so this cannot be confirmed.",
-        "(5) The MHLW norovirus Q&A says norovirus is fully inactivated by sodium hypochlorite, chlorous acid water or heat, and that heating in hot water at 85 °C or above for at least 1 minute is effective. This supports the choice.",
-        "The classification material is an old 2007 information-session handout (its data runs to H18, i.e. 2006). The classification it states is basic and does not change, so this does not block applicability."
+        "The official answer is (1): the ○ mark is on (1) on p.7 of the official PDF (二衛 6/15). The question text, the image q12-p7-1.webp and the PDF all match.",
+        "Choice (1): The MHLW classification slide (070713-2b_0003.pdf, p.1) lists カンピロバクター ジェジュニ／コリ as 感染型食中毒菌 and lists only ボツリヌス菌 and 黄色ブドウ球菌 as 食物内毒素型. That makes (1) the incorrect statement, which matches the official answer.",
+        "Choice (2): The botulism notification page (01-04-32.html) defines the disease as 'ボツリヌス毒素…により発症する神経、筋の麻痺性疾患'. It also says the toxin blocks acetylcholine release and causes 弛緩性麻痺. This supports '神経毒'.",
+        "Choice (3): The 202407_005.html article says 'エンテロトキシンは熱に強いため、一度つくられると、通常の加熱調理（煮沸した程度）では無毒化されません'. This supports the choice.",
+        "Choice (4) is not confirmed: 060531-1.html only says that Vibrio species generally grow well at 2–8% salt. None of the cited government sources contains the name '病原性好塩菌'. A search of every textPath under government-sources for '好塩' found no relevant hit. The candidate's own reason also says the name could not be confirmed.",
+        "Choice (5): The norovirus Q&A (040204-1.html, Q17) says that 次亜塩素酸ナトリウム, 亜塩素酸水 and heat fully inactivate the virus. It adds that a household chlorine bleach can be used instead and that 85℃ or hotter water for at least 1 minute is effective. This supports both 煮沸 and 塩素系.",
+        "Historical applicability: this question is about scientific facts, not a law or guideline version. None of the cited statements depends on the exam window (2025-07-01 to 2025-12-31)."
       ],
       "choiceChecks": {
         "1": "PASS",
-        "2": "HOLD",
-        "3": "HOLD",
+        "2": "PASS",
+        "3": "PASS",
         "4": "HOLD",
         "5": "PASS"
       },
       "evidenceUrls": [
         "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf",
+        "https://www.mhlw.go.jp/bunya/kenkou/kekkaku-kansenshou11/01-04-32.html",
+        "https://www.mhlw.go.jp/stf/houdou_kouhou/kouhou_shuppan/magazine/202407_005.html",
+        "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/qa/060531-1.html",
         "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html"
       ],
       "officialAnswerChecked": true,
@@ -2669,17 +2672,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
+    "rawResponseSha256": "df84c75ad26fd854dc16b6823d91ee3d4137deaaecfc33599327f9ec633ef7f5",
+    "resultSha256": "9f102c47363b4d80de6290d745b5ca24ca320af5401dd32a5fa845e0df92dc45",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 24,
-        "outputTokens": 8577,
-        "cacheReadInputTokens": 2278362,
-        "cacheCreationInputTokens": 101264,
+        "inputTokens": 20,
+        "outputTokens": 13265,
+        "cacheReadInputTokens": 757982,
+        "cacheCreationInputTokens": 108259,
         "webSearchRequests": 0,
-        "costUSD": 1.4374204000000002,
+        "costUSD": 1.2830484000000002,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 3541,
+        "thinkingTokens": 6090,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -3124,8 +3130,8 @@
     "schemaVersion": 2,
     "questionId": "lckohyo-LC20260414-1-q25",
     "sourceSha256": "8a1ceb4c01751c1673e1cf9699cc377a16f4d65edb47ad3ba0f5c8e80c82e1e2",
-    "candidateSha256": "86cbbf7ea7e19eb73dd9d6d39527b7e074a996e7b8e7e00d5ad7b335d0fa12e7",
-    "evidenceSha256": "2dbfb5ee21448e7b6c57fec6fa024db5794899509c768524b4f715499386a61b",
+    "candidateSha256": "0d01e96ef58bd59633ef3572a36a8e814d8a9a8f07aed05d2f8c57c7f22c0748",
+    "evidenceSha256": "ccf23c02bf726e8c013ea7d2892ce4f257d5c0e81fde1d40218dd67df425759b",
     "status": "HOLD",
     "gateIssues": [
       "not a clean PASS",
@@ -3135,22 +3141,26 @@
     "assessment": {
       "status": "HOLD",
       "issues": [
-        "公式問題PDF（二衛13/15）の○は(5)で、正答5と一致する。問題文と画像q25-p14-0.webpも原本と一致する。",
-        "(1)：印刷31頁（PDF39頁）に書かれているのは、尿のほとんどが水分で、尿素などの老廃物を含むという点だけである。尿の液性（通常は弱酸性）の記載はなく、「弱アルカリ性」が誤りであることを一次資料で確認できない。",
-        "(2)：印刷31頁に「血球やタンパク質以外の血漿成分も、腎小体で濾過される」とあり、蛋白質は濾過されないので本肢は誤り。PASS。",
-        "(3)：印刷31頁によれば、老廃物は腎小体（糸球体とボウマン嚢）で濾過されて尿細管へ入る。尿細管からボウマン嚢へとする本肢は誤り。PASS。",
-        "(4)：印刷31頁によれば、水分は尿細管で再吸収され、老廃物は濃縮される。大部分がそのまま排出されるとする本肢は誤り。PASS。",
-        "(5)：印刷31頁で、電解質が尿細管で再吸収されることを確認した。PASS。"
+        "The official answer is (5): the ○ mark is on (5) on p.14 of the official PDF (二衛 13/15). The question wording matches the image q25-p14-0.webp and the PDF.",
+        "The snapshot's question.text contains stray furigana fragments ('たん のう こ', 'のう こ', 'こ') on separate lines before choices (2)–(5). This is a text-extraction problem; the question's meaning is unchanged.",
+        "Source: the file is 試験問題の作成に関する手引き (令和4年3月); both the PDF header and the table of contents give that date. PDF p.39 (printed p.31) covers 4) 泌尿器系 (a) 腎臓, and PDF p.210 (printed p.202) covers (f) 食事等の影響. Both page references are correct.",
+        "Choice (1): p.210 says '通常、尿は弱酸性であるが、食事その他の影響で中性～弱アルカリ性に傾く'. That alone makes '通常、弱アルカリ性' false. The source does not cover 淡黄色 or the odor, but that does not change the verdict.",
+        "Choice (2): p.39 says '血球やタンパク質以外の血漿成分も、腎小体で濾過される', so protein is not filtered. The statement is false.",
+        "Choice (3): p.39 says waste products are filtered in the renal corpuscle (glomerulus and Bowman's capsule) and then enter the tubule as primary urine. The choice has the direction backwards, so it is false.",
+        "Choice (4) is not confirmed: p.39 only says qualitatively that the tubule reabsorbs '血液の維持に必要な水分', leaving '余分な水分' to become urine. The choice is false only because of the quantity '大部分', and no cited source gives a reabsorption rate or percentage. The candidate reason itself says no figures are given.",
+        "Choice (5) is not confirmed: p.39 supports reabsorption of electrolytes from the tubule into the blood, but only qualitatively. The quantity '多く' has no numeric support, which is the same gap as choice (4). The choice does not contradict the official answer.",
+        "Historical applicability: this question is about physiology facts, not a law or guideline version. The exam window does not affect it."
       ],
       "choiceChecks": {
-        "1": "HOLD",
+        "1": "PASS",
         "2": "PASS",
         "3": "PASS",
-        "4": "PASS",
-        "5": "PASS"
+        "4": "HOLD",
+        "5": "HOLD"
       },
       "evidenceUrls": [
-        "https://www.mhlw.go.jp/content/001087177.pdf#page=39"
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=39",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=210"
       ],
       "officialAnswerChecked": true,
       "originalTextChecked": true,
@@ -3161,17 +3171,20 @@
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5",
     "rawResolvedModel": null,
+    "rawResponseSha256": "df84c75ad26fd854dc16b6823d91ee3d4137deaaecfc33599327f9ec633ef7f5",
+    "resultSha256": "9f102c47363b4d80de6290d745b5ca24ca320af5401dd32a5fa845e0df92dc45",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
     "modelUsage": {
       "claude-opus-5-5": {
-        "inputTokens": 10,
-        "outputTokens": 8910,
-        "cacheReadInputTokens": 888847,
-        "cacheCreationInputTokens": 56269,
+        "inputTokens": 20,
+        "outputTokens": 13265,
+        "cacheReadInputTokens": 757982,
+        "cacheCreationInputTokens": 108259,
         "webSearchRequests": 0,
-        "costUSD": 0.8061614000000001,
+        "costUSD": 1.2830484000000002,
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
-        "thinkingTokens": 3440,
+        "thinkingTokens": 6090,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
@@ -36494,6 +36507,137 @@
         "contextWindow": 1000000,
         "maxOutputTokens": 128000,
         "thinkingTokens": 1922,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252117-q37": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252117-q37",
+    "sourceSha256": "39ba53dc01cf57bfc963906a30db4dd58810057b888da5b7118f41fd700c5732",
+    "candidateSha256": "8c0742648f5292699e7159f58652b66d83f77b6dd50e669861718371def5a30c",
+    "evidenceSha256": "24d4b0d51a8779d922900b7bacb13f62b7d83da1306a92b95c888942d0be749b",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Official PDF (LC20252117.pdf, local copy page 21, printed 'エックス線 20/21') has the ○ mark on (1) for 問37. This matches correctChoice 1 in the snapshot and the candidate.",
+        "The question text and all five choices in the snapshot match the official PDF wording. The local image public/exam-library/lckohyo-LC20252117/q37-p21-0.webp is a crop of the same question and matches visually. The sha256 values of the image and PDF were not recomputed because no hashing tool was available.",
+        "Choice (1) is supported. The MHLW 手引き (令和4年3月), printed p.29 (PDF p.37), links too few red blood cells with 貧血症状. It says 白血球 are 'cells that defend against foreign bodies such as bacteria and viruses'. Printed pp.29–30 (PDF pp.37–38) say 血小板 play the important role in hemostasis. MOE 基礎資料 R6 Ch.3 P95 labels 造血器障害 as '感染・出血'. So linking white blood cell decrease to reduced hemostasis is the error, which agrees with the official answer (1).",
+        "Choice (2) is HOLD. No cited government source states that blood cell counts decrease from about 250 mGy. MOE P94 is a band chart only: the 末梢血中のリンパ球減少 band starts near the '200' mark on the ミリグレイ axis. MOE P97 gives the bone-marrow 造血能低下 threshold as about 0.5 Gy (1% incidence). The 250 mGy figure is not directly supported, so we cannot confirm that this choice is correct, as the official answer implies.",
+        "The shared evidence locator for MOE P94 says '1,000mGy以下でも血中リンパ球が減少することがある'. That sentence does not appear on the P94 slide. The text file (…903c9bc9….txt) contains only running headers and page numbers, so every MOE page was checked by viewing the PDF pages directly.",
+        "Choice (3) is HOLD. MOE P92 ranks 造血系 (骨髄, リンパ組織) as most radiosensitive, and P94 shows lymphocyte decrease at the lowest dose among whole-body effects. No cited source says lymphocytes are more radiosensitive than other blood components. None says their decrease appears immediately after exposure.",
+        "Choice (4) is HOLD. No cited government source describes a temporary rise in non-lymphocyte white blood cells (such as neutrophils) right after exposure. MHLW printed p.29 mentions only that total white blood cell counts rise with infection or inflammation, which has nothing to do with radiation.",
+        "Choice (5) is HOLD. No cited source compares when red cells, white cells and platelets start to decrease after exposure, and none gives cell lifespans. MOE P97 gives only a 3–7 day latency for bone-marrow 造血能低下, and MHLW p.29 says only that red cells are made in 骨髄. The statement that red cells decrease last is not directly supported.",
+        "Historical applicability: this question covers physiology and radiobiology facts, not law, so no dated statute version applies and inForceOn is empty. The MHLW 手引き is dated 令和4年3月 and the MOE 基礎資料 is the 令和6年度版 (FY2024). Both predate or cover the exam window 2025-01-01 to 2025-06-30. The cited content is not the kind that changes over time.",
+        "The candidate's own reasons for choices 2–5 already mark them HOLD because the sources do not support them. Only choice (1) is verified from the government sources, so the question as a whole stays HOLD."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "HOLD",
+        "4": "HOLD",
+        "5": "HOLD"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=37",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=38",
+        "https://www.env.go.jp/content/000301964.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "27d46b8e9aa2bce6eedeabcba603c756b60418223287d9f93612bee829662d06",
+    "resultSha256": "be368fcc6a4bdda0c41f0eec1fb3a150a26929cfdb11d000edcba4f0fbb5434b",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 4640,
+        "cacheReadInputTokens": 229936,
+        "cacheCreationInputTokens": 41866,
+        "webSearchRequests": 0,
+        "costUSD": 0.4737792,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 1521,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q18": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q18",
+    "sourceSha256": "5efe280c87e961fbd266d7bc079a60e2e4e4c82b618c72e61cbaa5f5a06092ee",
+    "candidateSha256": "d70c7657aeae83f9557f141ab95f1652148cd593f53e2a8040536d3a89817aa3",
+    "evidenceSha256": "89ed9bfa8c3eb0248fcd73b5497e1e9651cc99d1aa78b7a039ded2c9cf0bbefe",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "historicalApplicabilityChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "The official answer is (2): the ○ mark is on (2) on p.10 of the official PDF (二衛 9/15). The question text, the image q18-p10-1.webp and the PDF all match.",
+        "Choice (1): Section 別紙Ⅰ3(3) (PDF p.6) reads '著しく重心の偏っている荷物は、その旨を明示すること'. The choice matches.",
+        "Choice (2): Main text 2(6)ハ (PDF p.3) says '一律に使用するのではなく、個人毎に効果を確認してから使用の適否を判断すること'. 別紙Ⅰ6(1) (PDF p.7) says the same thing. The 解説 in the same PDF (txt lines 678-685 and 1037-1043) covers the rebound pain when the belt is removed and the pelvic-floor strain for women. The choice is false, which matches the official answer.",
+        "Choice (3): Section 別紙Ⅰ2(2) (PDF p.6) says '満18歳以上の男子労働者が人力のみにより取り扱う物の重量は、体重のおおむね40%以下となるように努めること'. The choice matches.",
+        "Choice (4): Section 別紙Ⅰ4(3) (PDF p.6-7) matches the choice word for word.",
+        "Choice (5): Main text 4(1) (PDF p.3) says '当該作業に配置する際及びその後6月以内ごとに1回、定期に…医師による腰痛の健康診断'. The choice matches.",
+        "Wrong locators in the evidence pack: it cites '2(4)ハ' and '5(2)', but the correct sections are main text 2(6)ハ and 別紙Ⅰ2(2). The candidate reasons use the correct numbers. As instructed, I checked the original rather than the pack.",
+        "Historical applicability not confirmed: the retrieved PDF (001376471.pdf, retrieved 2026-09-24) contains only the 別添 and the 解説. It has no issue date, notice number (基発 number) or amendment history. So I cannot confirm from a primary source that this is the version in force during the exam window (2025-07-01 to 2025-12-31). The exam wording matches the current text word for word, but that is only circumstantial."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/11303000/001376471.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": false,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "rawResponseSha256": "df84c75ad26fd854dc16b6823d91ee3d4137deaaecfc33599327f9ec633ef7f5",
+    "resultSha256": "9f102c47363b4d80de6290d745b5ca24ca320af5401dd32a5fa845e0df92dc45",
+    "sessionId": "e0b982c7-3889-59c3-ad96-65f4270156fb",
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 20,
+        "outputTokens": 13265,
+        "cacheReadInputTokens": 757982,
+        "cacheCreationInputTokens": 108259,
+        "webSearchRequests": 0,
+        "costUSD": 1.2830484000000002,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 6090,
         "canonicalModel": "claude-opus-5-5",
         "provider": "firstParty",
         "costBasis": "list"
