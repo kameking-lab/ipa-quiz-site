@@ -275,205 +275,566 @@
       "overlay": {
         "sourceHash": "3b561f757cf977f4532a2f3232fcc92fc9f113efdb23c0e9a0ca20bc6c9f4e2b",
         "correctChoice": 5,
-        "summary": "Hg2Cl2中の水銀は＋1であり、＋2とする組合せが誤り。",
+        "summary": "Hg₂Cl₂（塩化水銀(Ⅰ)）中の水銀の酸化数は＋1であり、＋2とした組合せが誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "V2O5は中性の化合物で、酸素5個の酸化数の合計は−10である。これをバナジウム2原子で＋10として打ち消すため、1原子あたり＋5となる。表の＋5は正しい組合せなので正答ではない。"
+            "reason": "正しい組合せ。V₂O₅は中性で、酸素5個の合計は−10なので、バナジウム2原子で＋10、1原子あたり＋5となる。厚生労働省のモデルSDSも五酸化バナジウムの別名を酸化バナジウム（Ｖ）と記載し、＋5と一致する。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "二クロム酸イオンCr2O7²⁻は酸素7個で−14、イオン全体の電荷は−2である。したがってクロム2原子の合計は＋12、1原子あたり＋6となり、表の＋6は正しい組合せである。"
+            "reason": "正しい組合せ。Cr₂O₇²⁻は酸素7個で−14、イオン全体が−2なので、クロム2原子で＋12、1原子あたり＋6となる。厚生労働省のモデルSDSは二クロム酸カリウムを水溶性Cr(VI)としており、＋6と一致する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "過マンガン酸イオンMnO4⁻は酸素4個で−8、イオン全体の電荷は−1である。マンガンの酸化数は−1−(−8)＝＋7となり、表の＋7は正しい組合せなので正答にはならない。"
+            "reason": "正しい組合せ。MnO₄⁻は酸素4個で−8、イオン全体が−1なので、マンガンは−1−(−8)＝＋7となる。化学と教育の解説も過マンガン酸イオンを「Mn7＋でd0」と記載しており、＋7は正しい。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "[Ni(NH3)6]²⁺の配位子NH3は電荷をもたない中性分子である。そのため錯イオン全体の電荷＋2がそのままニッケルの酸化数となり、表の＋2は正しい組合せである。"
+            "reason": "正しい組合せ。配位子のアンモニアは非共有電子対を金属に与えて配位結合する中性分子で、電荷は0である。テトラアンミン亜鉛(Ⅱ)イオンなどと同様に、[Ni(NH₃)₆]²⁺の全電荷＋2がそのままニッケルの酸化数＋2となる。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "Hg2Cl2は塩素2個で−2、中性化合物なので水銀2原子の合計は＋2、1原子あたり＋1である。Hg2²⁺を含む塩化水銀(Ⅰ)であり、水銀が＋2となるのはHgCl2である。＋2とする表のこの行が誤りで、正答となる。"
+            "reason": "これが誤りの組合せ。Hg₂Cl₂は塩素2個で−2、中性化合物なので水銀2原子の合計が＋2、1原子あたり＋1である。厚生労働省のモデルSDSも名称を塩化水銀（I）とし、化学と教育の解説も水銀(Ⅰ)をHg₂²⁺として扱う。＋2ではない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 五酸化バナジウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1314-62-1.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 二クロム酸カリウム",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7778-50-9.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 塩化第一水銀",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10112-91-1.html"
+          },
+          {
+            "title": "J-STAGE 化学と教育 65巻4号 金属錯体の形と色",
+            "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf"
+          },
+          {
+            "title": "J-STAGE 化学と教育 65巻9号 化学の理論を高校でどう教えるか",
+            "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/9/65_436/_pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提示された候補資料（JST金属の不動態FAQ、特定化学物質障害予防規則、作業環境測定基準）はいずれも酸化数の算出規則やHg2Cl2中の水銀の酸化数を記載しておらず、正答理由を直接支える抜粋がない。そのためsourcesとsourceEvidenceは空とした。",
-        "酸化数の定義（O＝−2、Cl＝−1、中性配位子の扱い）と塩化水銀(Ⅰ)がHg2²⁺を含むことを示す公的資料は、検索が必要。",
-        "各肢の検算は独立に実施済み：V＋5、Cr＋6、Mn＋7、Ni＋2、Hg＋1。既存解説の数値と一致する。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/1314-62-1.html",
+          "excerpt": "五酸化バナジウム 慣用名又は別名 五酸化二バナジウム 酸化バナジウム（Ｖ）",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7778-50-9.html",
+          "excerpt": "本物質は水溶性Cr (VI)のため",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
+          "excerpt": "クロム酸イオンは6価のクロムであるため，d0（d電子をもたない）である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
+          "excerpt": "MnO4－（過マンガン酸イオン，Mn7＋でd0）は濃い紫色を呈する",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
+          "excerpt": "アンモニアは窒素上の非共有電子対を亜鉛に提供（配位結合）することにより，テトラアンミン亜鉛（Ⅱ）イオンを形成する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/4/65_198/_pdf",
+          "excerpt": "4つのアンミン配位子を有する2価の亜鉛と銅の錯イオンが記載されている",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/10112-91-1.html",
+          "excerpt": "化学物質等の名称 塩化水銀（I）",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kakyoshi/65/9/65_436/_pdf",
+          "excerpt": "17族のフッ素を除くハロゲン化物イオンと沈殿をつくるのはAg＋,Pb2＋,Hg22＋である",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261808-q2": {
       "overlay": {
         "sourceHash": "a2ef4dde0d85ea291c8da6b586f87c772d4b30d062156c5a0422de553a9a2f3f",
         "correctChoice": 4,
-        "summary": "遷移元素はすべて金属元素であり、非金属を含むとする記述が誤り。",
+        "summary": "遷移元素はすべて金属元素であり、「金属元素でないものがある」とした肢4が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "同一周期では左から右へ陽子数が増えて有効核電荷が大きくなるため、原子半径は概して減少する。『しだいに増大するわけではない』という記述は正しいので、誤りを選ぶ本問の正答ではない。"
+            "reason": "文自体は正しい。長周期型周期表では、同じ周期内でⅠ族からⅦ族へ進むにつれて原子半径は一般に小さくなる。左から右へ増大するわけではないという記述は、この周期性と一致する。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "アルカリ金属はLi→Na→K→Rb→Csと原子番号が大きいほど最外殻のs電子が核から遠くなり、内殻による遮蔽も増える。そのため第一イオン化エネルギーは減少する傾向にあり、記述は正しい。"
+            "reason": "文自体は正しい。同一族の元素では原子番号が大きいほど原子半径が大きく、第一イオン化エネルギーは小さくなる。アルカリ金属もLi→Na→K…と原子番号が増すにつれてイオン化エネルギーが減少する傾向を示す。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "電気陰性度はフッ素が全元素中で最大（ポーリング値約4.0）である。金属元素はいずれもこれより小さい値をとるため記述は正しく、誤っている肢には当たらない。"
+            "reason": "文自体は正しい。フッ素の電気陰性度は全元素の中で最大である。したがって、どの金属元素の電気陰性度もフッ素の値より小さく、「すべての金属元素でフッ素より小さい」という記述は正しい。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "遷移元素は第3族〜第11族（第12族を含める定義もある）の元素で、どの定義でもすべて金属元素である。非金属元素を含むのは典型元素の側であり、『金属元素ではないものがある』とするこの記述が誤りで正答となる。"
+            "reason": "これが誤りの記述。遷移元素は金属と非金属の中間ではなく、完全に金属的な性質をもつ元素で、すべて金属である。硬く融点が高いなどの典型的な金属の性質をもち、金属元素でない遷移元素はない。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "NaとMgはいずれも第3周期の元素である。原子番号の大きいMgは有効核電荷が大きく電子を強く引き寄せるため、原子半径はNaより小さい。記述は正しく、誤っている肢ではない。"
+            "reason": "文自体は正しい。ナトリウムとマグネシウムは同じ第3周期にあり、Ⅰ族からⅡ族へ進むと原子半径は小さくなる。原子半径の表でもNa（1.57・1.54・1.86 Å）よりMg（1.36・1.30・1.60 Å）の方が小さい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "J-STAGE 元素の周期表を用いた化学教育（原子半径）",
+            "url": "https://www.jstage.jst.go.jp/article/formersjst/27/1/27_57/_pdf/-char/ja"
+          },
+          {
+            "title": "J-STAGE 化学教育 イオン化エネルギー・電子親和力・電気陰性度",
+            "url": "https://www.jstage.jst.go.jp/article/kagakukyouiku/17/1/17_KJ00003479451/_pdf/-char/ja"
+          },
+          {
+            "title": "J-STAGE 有機合成化学協会誌 フッ素の特性の機能化と分析化学的応用",
+            "url": "https://www.jstage.jst.go.jp/article/yukigoseikyokaishi1943/45/6/45_6_561/_pdf"
+          },
+          {
+            "title": "J-STAGE 実務表面技術 講座 遷移元素",
+            "url": "https://www.jstage.jst.go.jp/article/sfj1970/24/7/24_7_355/_pdf/-char/ja"
+          },
+          {
+            "title": "J-STAGE 化学教育 遷移元素の一般的特徴",
+            "url": "https://www.jstage.jst.go.jp/article/kagakukyouiku/16/3/16_KJ00003479338/_pdf/-char/ja"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "提示された候補資料には、周期表上の原子半径・イオン化エネルギー・電気陰性度の傾向や遷移元素の定義を記載したものがない。正答理由を直接支える抜粋がないため、sourcesとsourceEvidenceは空とした。周期律と遷移元素の定義を示す公的資料の検索が必要。",
-        "遷移元素に第12族を含めるかどうかは定義で分かれるが、第12族（Zn・Cd・Hg）も金属なので正答4の判断は変わらない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.jstage.jst.go.jp/article/formersjst/27/1/27_57/_pdf/-char/ja",
+          "excerpt": "長周期型周期表では、I族からVIl族に向うに従って一般に原子半径は小さくなり、周期の進行とともに同一族内では大きくなることが簡単に読み取れる",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kagakukyouiku/17/1/17_KJ00003479451/_pdf/-char/ja",
+          "excerpt": "最外殻の電子配置が等しい原子を比較すると原子番号が大きく原子半径が大ぎいほうがイオン化エネルギーは小さい",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kagakukyouiku/17/1/17_KJ00003479451/_pdf/-char/ja",
+          "excerpt": "各周期の極大点には希ガス元素があり，極小点にはアルカリ金属元素がある",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/yukigoseikyokaishi1943/45/6/45_6_561/_pdf",
+          "excerpt": "共有結合しているフッ素の電気陰性度は最大であり",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/sfj1970/24/7/24_7_355/_pdf/-char/ja",
+          "excerpt": "むしろ完全に金属的な性質をもつ元素といえます",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/sfj1970/24/7/24_7_355/_pdf/-char/ja",
+          "excerpt": "遷移元素はすべて金属で",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/kagakukyouiku/16/3/16_KJ00003479338/_pdf/-char/ja",
+          "excerpt": "これらの遷移元素の一般的特徴としては，（1）すべて金属である。",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/formersjst/27/1/27_57/_pdf/-char/ja",
+          "excerpt": "11Na1.571.541.86",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/formersjst/27/1/27_57/_pdf/-char/ja",
+          "excerpt": "l2Mg1.361.301.60",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261808-q3": {
       "overlay": {
         "sourceHash": "60c58a4932c43d490b3a31e941872897d3532924be1f1aec3e1ce8ddd1487c42",
         "correctChoice": 2,
-        "summary": "蛍光は励起状態からの発光であり、基底状態の発光とする組合せが誤り。",
+        "summary": "蛍光は励起状態の分子・イオンが基底状態に戻るときの発光であり、「基底状態の分子、イオンの発光」とした肢2が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "吸光光度分析法は、基底状態にある分子やイオン（発色錯体など）が特定波長の光を吸収する現象を測る。濃度はランベルト・ベールの法則で求めるので、この組合せは正しく、正答ではない。"
+            "reason": "正しい組合せ。吸光光度（紫外可視吸光度）分析法は、紫外・可視域の光が溶液中の物質（分子やイオン）に吸収される度合いを測る方法である。光を吸収するのは基底状態にある分子・イオンであり、組合せは原理と一致する。"
           },
           {
             "number": 2,
             "verdict": "correct",
-            "reason": "蛍光は、分子やイオンが光を吸収していったん励起状態となり、そこから基底状態へ戻るときに放出される光である。発光の起点は励起状態なので、『基底状態の分子、イオンの発光』とするこの組合せが誤りで正答となる。"
+            "reason": "これが誤りの組合せ。蛍光光度分析法は、溶液に励起光を照射して励起状態にした物質が、基底状態へ戻るときに放射する蛍光の強度を測る。発光するのは励起状態の分子・イオンであり、基底状態の発光ではない。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "原子吸光分析法は、フレーム等で原子化した基底状態の原子が中空陰極ランプの共鳴線を吸収する量から濃度を求める。『基底状態の原子の光吸収』という組合せは正しい。"
+            "reason": "正しい組合せ。日本薬局方は原子吸光光度法を、光が原子蒸気層を通過するとき基底状態の原子が特有波長の光を吸収する現象を利用して被検元素量を測る方法と定義しており、組合せは一致する。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "ICP-AESは、高温のアルゴンプラズマ中で励起された原子・イオンが低いエネルギー準位へ戻るときに放出する元素固有の発光線を測定する。『励起状態の発光』という組合せは正しい。"
+            "reason": "正しい組合せ。ICP発光分光分析法では、プラズマ中で原子が励起され、励起状態の原子（イオン線ではイオン）が基底状態に戻る際に光を放出する。その発光スペクトルの波長と強度を測るので、励起状態の原子・イオンの発光で正しい。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ICP-MSは、プラズマで試料中の原子をイオン化し、生じたイオンを質量分析計で質量電荷比ごとに分離・計数する方法である。原理の基礎は原子のイオン化なので、この組合せは正しい。"
+            "reason": "正しい組合せ。ICPは良い励起源であると同時に良いイオン化源でもあり、ICP質量分析法はICPでイオン化された元素をm/z値ごとに分離してイオン強度を測る。原理の基礎は原子のイオン化であり、組合せは正しい。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 第十八改正日本薬局方 一般試験法 2.22〜2.24・2.63",
+            "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf"
+          },
+          {
+            "title": "環境省 底質調査方法（平成24年8月）",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "作業環境測定基準の別表では、金属の分析方法として吸光光度分析方法・原子吸光分析方法・誘導結合プラズマ質量分析方法が挙がっていることを抜粋で確認できる。ただし各分析法の原理（蛍光が励起状態からの発光であること等）は記載されておらず、正答理由を支えないため不採用とした。",
-        "蛍光光度分析法・原子吸光分析法・ICP-AES・ICP-MSの原理を示す公的資料（JIS通則等）は、検索が必要。本文を読んでいないため、現時点では確認済みとして扱わない。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "紫外可視吸光度測定法は，通例，波長200nmから800nmまでの範囲の光が，物質により吸収される度合いを測定し",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "蛍光光度法は，蛍光物質の溶液に特定波長域の励起光を照射するとき，放射される蛍光の強度を測定する方法である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "原子に外部から高エネルギーを与えると，最外殻電子が軌道遷移を起こし，励起状態になる．この励起状態の原子は，基底状態に戻る際に励起によって得られたエネルギーを光として放出する",
+          "choiceNumbers": [
+            2,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "原子吸光光度法は，光が原子蒸気層を通過するとき，基底状態の原子が特有波長の光を吸収する現象を利用し",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "このプラズマ中に試料溶液を噴霧導入すると，試料溶液中に含有される原子が励起され，このとき生じる原子発光スペクトルの波長及び強度を測定して",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "波長の後に示した(I)は中性原子線、(II)はイオン線であることを示す",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "ICPは良い励起源であると同時に良いイオン化源でもあることから，検出器として質量分析計を用い，ICPによりイオン化された元素をm/z値ごとに分離してイオンのピーク強度を測定する",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261808-q4": {
       "overlay": {
         "sourceHash": "564c9a0483863ed37ca8b995abba49a605c1600f1dabe4a2e6a33c05373d82e8",
         "correctChoice": 3,
-        "summary": "ホルムアルドキシムはマンガンの発色試薬であり、ニッケル用とする記述が誤り。",
+        "summary": "ホルムアルドキシムはマンガンの発色試薬であり、ニッケルの発色試薬とした肢3が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "ベリロンⅢはアルカリ性でベリリウムと呈色錯体をつくる発色試薬で、ベリリウムの吸光光度分析に用いられる。記述は正しいので、誤りを選ぶ本問の正答ではない。"
+            "reason": "文自体は正しい。ベリロンⅢはpH10〜11のアルカリ性でベリリウムと青紫色の錯体をつくり、その吸収極大525 nmの吸光度からベリリウムを定量する吸光光度法の発色試薬として報告されている。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "ジチゾンはカドミウムと赤色の錯体をつくり、クロロホルム等へ抽出して測光できる。鉛・亜鉛・水銀とも反応するが、カドミウムの発色試薬として用いるという記述は正しい。"
+            "reason": "文自体は正しい。カドミウムのジチゾン化合物は赤色を呈し、pH10〜12で抽出される。クロロホルムや四塩化炭素で抽出して515 nm付近で吸光度を測るジチゾン法がカドミウムの吸光光度法として挙げられている。"
           },
           {
             "number": 3,
             "verdict": "correct",
-            "reason": "ホルムアルドキシムはアルカリ性でマンガンと橙赤色の錯体をつくる、マンガンの発色試薬である。ニッケルの吸光光度分析には一般にジメチルグリオキシムを用いるので、ニッケル用とするこの記述が誤りで正答となる。"
+            "reason": "これが誤りの記述。ホルムアルドキシムはマンガンの吸光光度法の呈色試薬で、作業環境測定のマンガン分析でも指定されてきた。ニッケルは同法でむしろ妨害となる元素で、ニッケルの吸光光度法にはジメチルグリオキシム法などが用いられる。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "N-ベンゾイル-N-フェニルヒドロキシルアミン（BPHA）は、強酸性溶液でバナジウム(Ⅴ)と紫色の錯体をつくる。これをクロロホルムに抽出して測光するので、記述は正しい。"
+            "reason": "文自体は正しい。バナジウム(5価)は塩酸濃度5〜9 NでN-ベンゾイル-N-フェニルヒドロキシルアミンのクロロホルム溶液と振り混ぜると紫赤色に発色し、530 nm付近で吸光度を測るバナジウムの吸光光度法がある。"
           },
           {
             "number": 5,
             "verdict": "incorrect",
-            "reason": "ヒ素はヒ酸としてモリブデン酸アンモニウムとヘテロポリ酸をつくり、これを還元したモリブデン青を測光する。モリブデン酸アンモニウムをヒ素の発色試薬とする記述は正しい。"
+            "reason": "文自体は正しい。ヒ素はリンやケイ素と同様にモリブデン酸塩と反応してヘテロポリ化合物をつくり、還元するとモリブデン青の青色を呈する。840 nm付近で測るモリブデン青法として、モリブデン酸アンモニウムはヒ素の発色試薬になる。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "J-STAGE 分析化学 ベリロンIIIによる亜鉛合金中のベリリウムの吸光光度定量",
+            "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/5/18_5_604/_pdf"
+          },
+          {
+            "title": "J-STAGE 分析化学 無機吸光光度法（後藤秀弘・柿田八千代）",
+            "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf"
+          },
+          {
+            "title": "厚生労働省 平成28年度第1回管理濃度等検討会議事録",
+            "url": "https://www.mhlw.go.jp/stf/shingi2/0000139139.html"
+          },
+          {
+            "title": "J-STAGE 分析化学 ホルムアルドキシム吸光光度法による水中のマンガンと鉄の同時定量",
+            "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/13/6/13_6_529/_pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "作業環境測定基準の別表では、カドミウム・マンガン・砒素等の分析方法に吸光光度分析方法が挙がっていることは読める。しかし発色試薬名は記載されておらず、正答理由を直接支えないため、sourcesとsourceEvidenceは空とした。",
-        "ベリロンⅢ・ジチゾン・ホルムアルドキシム・BPHA・モリブデン酸アンモニウムの対応元素を示す公的資料（JIS K0102等）は、検索が必要。",
-        "ホルムアルドキシムはニッケル・鉄・銅とも呈色し、マンガン定量の妨害になりうる。ニッケル定量用の試薬とはされない、という整理で正答3としたが、根拠資料による確認が必要。",
-        "呈色の色（橙赤色、紫色、赤色）は一般的な記載に基づくもので、一次資料では未確認。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/5/18_5_604/_pdf",
+          "excerpt": "pH10～11のアルカリ性溶液中において,共存する多量の亜鉛,アルミニウムおよび銅の妨害を,EDTAおよびシアン化カリウムを用いていんぺいし,ベリロンIIIを加え,生成する青紫色のベリリウム錯体の吸収極大波長525mμにおける吸光度を測定して",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "カドミウムのジチゾン化合物は赤色を呈しpH10～12で抽出される.クロロホルムまたは四塩化炭素で抽出して515mμ付近の波長で測定する.",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "2・21マンガン*4Mn2・21・1過マンガン酸法",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "ベンジジン,4,4'-テトラメチルジアミノトリフェニルメタン,ホルムアルドキシムなどによる呈色も利用される.",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/shingi2/0000139139.html",
+          "excerpt": "作業環境測定で測ることのできる試薬として指定しているのは、ホルムアルドキシムというホルムアルデヒドを使わなくてはいけない方法が指定されており",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/13/6/13_6_529/_pdf",
+          "excerpt": "ニッケルおよびコバルトが共存しているときには,妨害が認められた.",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "2・24ニッケル*2Ni2・24・1ジメチルグリオキシム法",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "バナジウム(5価)は塩酸濃度5～9NにおいてN-ベンゾイルフェニルヒドロキシルアミン-クロロホルム溶液を加え振り混ぜると発色しクロロホルムに抽出され紫赤色を呈する.",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/6/18_6_788/_pdf",
+          "excerpt": "ヒ素はリンやケイ素と同様にモリブデン酸塩と反応してヘテロポリ化合物を生成し,これを硫酸ヒドラジンや塩化第一スぎなどで還元するとモリブデン青の青色を呈する.",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     },
     "emkohyo-EM20261808-q5": {
       "overlay": {
         "sourceHash": "4ef5ec5259a25613cc8526f7e2453a2c7a5a3c300045cf1a4227ca63f2c65584",
         "correctChoice": 5,
-        "summary": "加熱発色した試料は室温まで放冷してから測定すべきで、直ちに測定は誤り。",
+        "summary": "加熱して発色させた試料は、検量線作成時と同じ温度（室温）に戻してから測定すべきで、「発色後直ちに測定する」とした肢5が誤り。",
         "choices": [
           {
             "number": 1,
             "verdict": "incorrect",
-            "reason": "石英セルは紫外部から可視部まで光を透過するため、ガラスセルが使えない紫外域も含め、紫外可視吸光光度分析の波長域全体で使える。この意味で記述は正しいとされ、正答ではない。"
+            "reason": "文自体は正しい。吸光光度分析では、紫外部の測定に石英製、可視部の測定にガラス製又は石英製のセルを用いる。ガラスセルは紫外部に使えないが、石英セルは紫外部・可視部のどちらの測定波長にも使える。"
           },
           {
             "number": 2,
             "verdict": "incorrect",
-            "reason": "可視部（おおむね350nm以上）の測定ではタングステンランプ（ハロゲンランプ）を光源とし、紫外部では重水素放電管を用いる。記述は正しく、誤っている肢ではない。"
+            "reason": "文自体は正しい。吸光光度計の光源は、可視部の測定にタングステンランプ、紫外部の測定に重水素放電管を用いる。測定波長が可視部にある場合にタングステンランプを使うという記述は一致する。"
           },
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "ランベルト・ベールの法則A＝εclより、同じ濃度・光路長ならモル吸光係数εが大きいほど吸光度が大きく、より低い濃度まで測定できる。感度が高いとする記述は正しい。"
+            "reason": "文自体は正しい。吸光度Aは濃度cと層長lに比例し（A＝εcl）、その比例定数がモル吸光係数εである。同じ濃度・層長ならεが大きいほど吸光度が大きく、より低い濃度まで測れるので感度は高い。"
           },
           {
             "number": 4,
             "verdict": "incorrect",
-            "reason": "モル吸光係数は物質ごと・測定波長ごとに異なる値をとり、その波長依存性が吸収スペクトルそのものである。極大吸収波長で測定するのはこのためで、記述は正しい。"
+            "reason": "文自体は正しい。溶液に光を通すとき吸光度は光の波長によって異なり、波長と吸光度の関係が吸収スペクトルとなる。そのためモル吸光係数も波長ごとに値が変わり、吸収極大波長での値をεmaxで表す。"
           },
           {
             "number": 5,
             "verdict": "correct",
-            "reason": "加熱で発色を促した試料を液温が高いまま測ると、液の膨張や発色平衡・退色の変化で吸光度がずれる。室温まで放冷し、標準液と条件をそろえてから測定する必要がある。『直ちに測定する』が誤りで正答となる。"
+            "reason": "これが誤りの記述。一定濃度の吸光度は発色温度などにより変動するため、測定は検量線作成時と同じ発色温度で行う。加熱して発色を促進した試料は、室温まで放冷し標準系列と温度をそろえてから測定し、熱いまま直ちに測定しない。"
           }
         ],
-        "sources": []
+        "sources": [
+          {
+            "title": "厚生労働省 第十八改正日本薬局方 一般試験法 2.24紫外可視吸光度測定法",
+            "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf"
+          },
+          {
+            "title": "厚生労働省 食品添加物等の規格基準 一般試験法（吸光度測定法）",
+            "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf"
+          },
+          {
+            "title": "J-STAGE 分析化学 ベリロンIIIによる亜鉛合金中のベリリウムの吸光光度定量",
+            "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/5/18_5_604/_pdf"
+          },
+          {
+            "title": "環境省 底質調査方法（平成24年8月）",
+            "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf"
+          }
+        ]
       },
-      "sourceEvidence": [],
-      "reviewIssues": [
-        "既存解説には『本問は正答が公表されていない』とあるが、入力の公式正答は5であり矛盾する。この一文は削除または修正が必要。",
-        "肢1について：石英は約190nm未満の真空紫外や中赤外域では使えないため、厳密には『全ての波長領域』とは言えない。紫外可視域に限った解釈で正しい記述とされる点に注意が必要。",
-        "提示された候補資料には、吸光光度分析のセル材質・光源・モル吸光係数・加熱後の放冷操作を記載したものがない。正答理由を支える抜粋がないため、sourcesとsourceEvidenceは空とした。JIS K0115等の公的資料の検索が必要。"
-      ]
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "紫外部の吸収測定には石英製，可視部の吸収測定にはガラス製又は石英製のセルを用い",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuten/dl/8e01.pdf",
+          "excerpt": "光源としては，可視吸収測定にはタングステンランプ，紫外吸収測定には重水素放電管を用いる。",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "吸光度Aは溶液の濃度c及び層長lに比例する．A＝kcl(kは定数)lを1cm，cを吸光物質の濃度1mol/Lの溶液に換算したときの定数をモル吸光係数εという",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/bunsekikagaku1952/18/5/18_5_604/_pdf",
+          "excerpt": "本法の感度は,0.00043μ9ベリリウム/cm3,見かけの分子吸光係数は2.0×104",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "物質の溶液に光を通すとき，吸光度はその光の波長によって異なる．",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/11120000/000788359.pdf",
+          "excerpt": "吸収極大波長におけるモル吸光係数はεmaxで表す．",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "一定濃度の吸光度は、発色温度等により多少変動するが、概ね同じ値を示す。",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/water/teishitsu-chousa/00_full.pdf",
+          "excerpt": "注(4)検量線作成時と同じ発色温度となるようにする。",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
     }
   }
 }

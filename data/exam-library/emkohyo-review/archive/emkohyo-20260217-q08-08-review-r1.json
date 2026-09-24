@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1542,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 16181,
+      "webSearchRequests": 0,
+      "costUSD": 0.16055180000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1161,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-20260217-q08-08-raw-response.txt",
+  "rawResponseSha256": "01c7973eeb03d0b7e1715d8e5bb6fad0137682cfe326a523ba8d45c81cce6a9a",
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q8"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q8": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q8": {
+      "/exam-library/emkohyo-20260217/q8-p6-1.webp": "9f6f025c1e5fcebb44e1bd9052c0351f16089f0b8a55bc99217a84814983938e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q8": "2d33f32d84596678af4b76401fbaf190c98cedc711e9d884f318d18433b38e51"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q08-08.json",
+  "sourcePackSha256": "f5403a35c7a66eaf4c37941bdd783e31c601009b520df33e841b6fb96a5efb5f",
+  "assessment": {
+    "emkohyo-20260217-q8": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [
+        "肢1の文字起こしで上付き指数が崩れている。presentationは「その粒子と同じ終末沈降速度をもつ\\n-₃密度１g・cm の球形粒子の直径である。」だが、公式原図・公式問題本文では「その粒子と同じ終末沈降速度をもつ密度１g・cm-３の球形粒子の直径である。」である。『-₃』が『密度』の前に、しかも下付き文字で置かれ、『cm』の後の指数が欠落している。このままでは単位 g・cm⁻³ を読み取れない。原文PDFの改行由来の『\\n』も除去し、「その粒子と同じ終末沈降速度をもつ密度１g・cm⁻³の球形粒子の直径である。」（または『cm-3』表記）に修正すること。"
+      ],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}
