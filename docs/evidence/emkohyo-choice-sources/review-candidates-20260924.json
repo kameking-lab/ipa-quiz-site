@@ -1,0 +1,133 @@
+{
+  "mode": "read-only",
+  "model": "claude-opus-5-5",
+  "limit": 20,
+  "counts": {
+    "accepted": 109,
+    "noDraft": 60,
+    "draftReviewIssues": 186,
+    "staticInvalid": 0,
+    "noCurrentCompletePack": 2,
+    "currentHashFixHold": 3,
+    "selectable": 0
+  },
+  "selected": [],
+  "holds": [
+    {
+      "id": "emkohyo-EM20261804-q8",
+      "candidateSha256": "5f011fd958198735ab5c9dfd1e7d5fb910cd6b81c8327cea8e2d3983c7eb4012",
+      "sourcePacks": [
+        "emkohyo-EM20261804-q08-08.json"
+      ],
+      "receipts": [
+        {
+          "receipt": "emkohyo-EM20261804-q08-08-review.json",
+          "reviewModel": "claude-opus-5-5",
+          "modelUsage": [
+            "claude-opus-5-5"
+          ],
+          "status": "FIX",
+          "issueCounts": {
+            "textIssues": 0,
+            "choiceIssues": 0,
+            "reasonIssues": 2,
+            "sourceIssues": 3,
+            "needsExternalCheck": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "emkohyo-EM20251807-q5",
+      "candidateSha256": "67b02c521ebaae37757fed1fe46e884093050630597769580ddd08d2921c2735",
+      "sourcePacks": [
+        "emkohyo-EM20251807-q05-05.json"
+      ],
+      "receipts": [
+        {
+          "receipt": "emkohyo-EM20251807-q05-05-review.json",
+          "reviewModel": "claude-opus-5-5",
+          "modelUsage": [
+            "claude-opus-5-5"
+          ],
+          "status": "FIX",
+          "issueCounts": {
+            "textIssues": 0,
+            "choiceIssues": 0,
+            "reasonIssues": 5,
+            "sourceIssues": 3,
+            "needsExternalCheck": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "emkohyo-EM20251807-q7",
+      "candidateSha256": "5b1b96a6605a2e02d23742911e192662e6fac434b06e9cc5e0969f52d1d11536",
+      "sourcePacks": [
+        "emkohyo-EM20251807-q07-07.json"
+      ],
+      "receipts": [
+        {
+          "receipt": "emkohyo-EM20251807-q07-07-review.json",
+          "reviewModel": "claude-opus-5-5",
+          "modelUsage": [
+            "claude-opus-5-5"
+          ],
+          "status": "FIX",
+          "issueCounts": {
+            "textIssues": 0,
+            "choiceIssues": 0,
+            "reasonIssues": 3,
+            "sourceIssues": 4,
+            "needsExternalCheck": 2
+          }
+        }
+      ]
+    }
+  ],
+  "packGaps": [
+    {
+      "id": "emkohyo-EM20251805-q1",
+      "packs": [
+        {
+          "pack": "emkohyo-EM20251805-q01-01.json",
+          "missing": [
+            "draftSha256 stale"
+          ]
+        },
+        {
+          "pack": "emkohyo-EM20251805-q01-03.json",
+          "missing": [
+            "draftSha256 stale"
+          ]
+        },
+        {
+          "pack": "emkohyo-EM20251805-q01-05.json",
+          "missing": [
+            "batch missingEvidenceQuestions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emkohyo-EM20251807-q1",
+      "packs": [
+        {
+          "pack": "emkohyo-EM20251807-q01-01.json",
+          "missing": [
+            "draftSha256 stale"
+          ]
+        },
+        {
+          "pack": "emkohyo-EM20251807-q01-05.json",
+          "missing": [
+            "draftSha256 stale",
+            "missingEvidenceQuestions"
+          ]
+        }
+      ]
+    }
+  ],
+  "blocker": "no unaccepted source-complete candidate without a current-hash receipt"
+}
