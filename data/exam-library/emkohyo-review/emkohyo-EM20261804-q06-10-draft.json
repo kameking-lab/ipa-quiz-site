@@ -416,12 +416,12 @@
           {
             "number": 3,
             "verdict": "incorrect",
-            "reason": "記述は正しい。式(1)の拡散速度は、その温度における飽和蒸気圧p₀を含む対数項ln[(P−p)/(P−p₀)]に比例する。蒸気圧は一般に温度が高いほど高くなるので、温度が上がるとp₀とともに対数項が大きくなり、拡散速度は大きくなる。"
+            "reason": "記述は正しい。式(1)で温度に関わるのはD・(T₀/T)と飽和蒸気圧p₀の対数項である。原子力機構の空気−酸素の温度式ではDが293 Kで約1.99、313 Kで約2.23×10⁻⁵ m²/sと約12%増え、T₀/Tの約6%減を上回る。蒸気圧も温度が高いほど高くなるので、拡散速度は大きくなる。"
           },
           {
             "number": 4,
             "verdict": "correct",
-            "reason": "誤り。式(1)の拡散速度は管の形状A/Lと飽和蒸気圧のほか、物質ごとの拡散定数Dにも比例する。同じセル・同じ希釈気流量で蒸気圧が同じでも、拡散定数が異なる物質では拡散速度が変わり、発生濃度v/Fは等しくならない。"
+            "reason": "誤り。式(1)の拡散速度は管の形状A/Lと飽和蒸気圧のほか、拡散定数Dにも比例する。相互拡散係数は化学種の組合せごとに異なる温度式で与えられ、物質で値が違う。同じセル・希釈気流量で蒸気圧が同じでも、Dが異なれば拡散速度と濃度v/Fは等しくならない。"
           },
           {
             "number": 5,
@@ -435,16 +435,16 @@
             "url": "https://www.jniosh.johas.go.jp/publication/doc/ar_saniken/ar_1978.pdf"
           },
           {
-            "title": "厚生労働省 個人サンプラーを用いた測定法の基盤整備報告書",
-            "url": "https://www.mhlw.go.jp/content/000616847.pdf"
-          },
-          {
             "title": "産業技術総合研究所 標準ガスの調製方法",
             "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf"
           },
           {
             "title": "エネルギー・金属鉱物資源機構 用語辞典「蒸気圧」",
             "url": "https://oilgas-info.jogmec.go.jp/termlist/1000843/1000965.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 JAEA-Data/Code 2013-011（化学種別相互拡散係数の温度関数）",
+            "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf"
           }
         ]
       },
@@ -481,13 +481,6 @@
           ]
         },
         {
-          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
-          "excerpt": "物質の拡散係数D（cm2/min）、拡散面積A(cm2)、拡散長L(cm)",
-          "choiceNumbers": [
-            4
-          ]
-        },
-        {
           "url": "https://unit.aist.go.jp/nmij/nmijclub/gas/StdGasClub_2016FY_NMIJ1.pdf",
           "excerpt": "拡散管の質量減少速度",
           "choiceNumbers": [
@@ -499,6 +492,29 @@
           "excerpt": "蒸気圧は一般に温度が高いほど高くなる。",
           "choiceNumbers": [
             3
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+          "excerpt": "各化学種成分の相互拡散係数は、以下の多項式近似（温度関数）を文献値21)から算出した。",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+          "excerpt": "・空気(air)-酸素（O2） Dair-o2=-2.23214×10-6+(2.71463×10-8)T+(1.81706×10-10)T2+(-6.25863×10-14)T3 +(1.59942×10-17)T4[m2/s]",
+          "choiceNumbers": [
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+          "excerpt": "・空気(air)－水素（H2） Dair-h2=-4.08794×10-6+(7.93989×10-8)T+(7.04391×10-10)T2+(-1.76119×10-13)T3 +(4.38448×10-17)T4[m2/s]",
+          "choiceNumbers": [
+            4
           ]
         }
       ],
