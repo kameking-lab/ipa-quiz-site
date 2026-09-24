@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4773,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 114980,
+      "webSearchRequests": 0,
+      "costUSD": 1.015308,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3821,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q20": {
+      "/exam-library/emkohyo-EM20251805/q20-p11-1.webp": "d803ae721a26e043a8f7b0366492468bde66fb31c851c3b19863275d933baba6"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q20": "c0c90b93db21b94bf1fad7f82948ced5e9b19a332e2bad8df53a15f7cfd8c866"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q20-20.json",
+  "sourcePackSha256": "b39ae7b36363c831fa7f1391519e291c119141379696699611ed00081ad9403a",
+  "assessment": {
+    "emkohyo-EM20251805-q20": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢2の核心は『正確な体積が要る標準液の調製にメスシリンダーは不適切』という主張だが、挙げた環境省の講演資料 lectureR04-03.pdf（p.24）は、水中PFOA分析の統一精度管理調査1件について、希釈容器別に室間精度CVを比べた観察結果（メスフラスコ＜メスシリンダー、平均値に有意差なし）にすぎない。メスシリンダーが正確な定容に向かないと直接述べた箇所ではない。器具の許容誤差や用途区分を直接示す公的記述（JISの許容差や公定法の器具規定など）を補うか、本文で『間接的な傍証』と位置付けを弱めること。",
+        "肢1の『試料の抽出…に二硫化炭素を使う』について、照合済みの抜粋に試料抽出溶媒の記述がない。抜粋が支えているのは『標準原液の一定量を二硫化炭素で10倍に希釈』の部分だけである。しかも同資料の標準原液はメタノールで作っているので、『脱着溶媒で希釈する』手順の例としては純粋ではない。抽出にも二硫化炭素を使うと明記した箇所の抜粋を加えること。",
+        "肢4の『ヘキサン中のチオベンカルブ原液は180日を限度』について、照合抜粋『この原液は調製後、直ちに冷凍保存する。保存期間は180日を限度とする。』の全文一致は、直前のシマジン標準原液（アセトン）の項で成立している。チオベンカルブの項は context が『保存期間は180日を』で途切れており、チオベンカルブの項としての一致は確認できていない。"
+      ],
+      "needsExternalCheck": [
+        "https://www.mhlw.go.jp/houdou/0107/h0724-1c1.html に、試料捕集管からの抽出溶媒を二硫化炭素とする記述があるか確認する。",
+        "https://www.env.go.jp/kijun/wt_a05.html のチオベンカルブ標準原液の項が『保存期間は180日を限度とする。』で終わっているか確認する。",
+        "https://www.env.go.jp/hourei/05/000106.html の実際の文書名を確認する。ホルムアルデヒドは水質環境基準の項目ではないので、出典タイトル『水質汚濁に係る環境基準の測定方法』が内容と合っているか、要監視項目等の測定方法を別名で記していないかを確かめる。"
+      ]
+    }
+  }
+}
