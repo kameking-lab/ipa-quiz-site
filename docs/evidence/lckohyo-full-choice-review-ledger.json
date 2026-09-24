@@ -1256,5 +1256,259 @@
       }
     },
     "provider": "firstParty"
+  },
+  "lckohyo-LC20260414-1-q15": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20260414-1-q15",
+    "sourceSha256": "9409c3d9ef6d79b08d73a506c17875fe8d3c7ce968bfaba7370542d75582b4f6",
+    "candidateSha256": "ec573a9cda9239a98a1627a112287fff80861755ee5bd20d98076f2d98ba9588",
+    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001080091.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 7278,
+        "cacheReadInputTokens": 1606891,
+        "cacheCreationInputTokens": 110165,
+        "webSearchRequests": 0,
+        "costUSD": 1.3483222000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q25": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q25",
+    "sourceSha256": "b39f717dcd12b56ab225881a11012c392743e152bfec8c56f1beb4be67d1e5d7",
+    "candidateSha256": "1e48927c97b7edb5f5dcdddb05ec57ad66366484d36923e97c4902deb4066617",
+    "evidenceSha256": "fd3b5a950261bacdf774c0b003959cb622ad499c0cdbad936987e3f0993d308e",
+    "status": "HOLD",
+    "gateIssues": [
+      "not a clean PASS",
+      "one or more choice checks did not pass",
+      "sourceSupportChecked missing"
+    ],
+    "assessment": {
+      "status": "HOLD",
+      "issues": [
+        "Choice (2): the guidance (PDF pp.30-33, printed pp.22-25) never says that inorganic salts or vitamins are absorbed as they are, without enzymatic breakdown. The candidate treats the statement as correct only because the text names carbohydrates, proteins and lipids as the enzyme-digested nutrients. That is an inference from silence, so the source does not affirmatively support the statement.",
+        "Choice (2): the candidate points to electrolyte absorption in the large intestine (printed p.25) and fat-soluble vitamins taken up with lipids (printed p.23). Neither supports the claim that no enzymatic breakdown occurs, so choice (2) is still unconfirmed.",
+        "The official PDF p.14 (Q25) marks (3) with ○, which matches correctChoice=3. Choices 1, 3, 4 and 5 are supported by PDF pp.30-33."
+      ],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "HOLD",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=30",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=31",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=32",
+        "https://www.mhlw.go.jp/content/001087177.pdf#page=33"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": false
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 7278,
+        "cacheReadInputTokens": 1606891,
+        "cacheCreationInputTokens": 110165,
+        "webSearchRequests": 0,
+        "costUSD": 1.3483222000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q13": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q13",
+    "sourceSha256": "0f86f8c8f2b2d9faa4875f74ce9862ba6ae9204575fa4869fe5de39331d0b455",
+    "candidateSha256": "0545af14ace0e8974cb30a8cca77e0e723139b50d02cc219476c48b8051bac04",
+    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/content/001104962.pdf#page=79"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 7278,
+        "cacheReadInputTokens": 1606891,
+        "cacheCreationInputTokens": 110165,
+        "webSearchRequests": 0,
+        "costUSD": 1.3483222000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q14": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q14",
+    "sourceSha256": "14dbff3847fbff8b76d01ddecd3e49359ebc5a9e5381d99ce5ae8ae841323daf",
+    "candidateSha256": "a0a1e0b6d035ea3e7f535b47c4f5086637910d604234d7a75ae42bf0f3b1c727",
+    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/hourei/doc/kouji/K151130K0020.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 7278,
+        "cacheReadInputTokens": 1606891,
+        "cacheCreationInputTokens": 110165,
+        "webSearchRequests": 0,
+        "costUSD": 1.3483222000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
+  },
+  "lckohyo-LC20252115-q16": {
+    "schemaVersion": 2,
+    "questionId": "lckohyo-LC20252115-q16",
+    "sourceSha256": "d73505c7066d8176fb3aa596c77208fa2bd5052b5931a6b79bbcbaf2cf49182a",
+    "candidateSha256": "682ebe926ddde9c2ac1b1da1b08fd1b28ea2248c768e0b0e5469941e9f3f2e40",
+    "evidenceSha256": "16e39cf164df58601e9052bf015d33723684b43302b7b554ba5085407da4bb30",
+    "status": "PASS",
+    "gateIssues": [],
+    "assessment": {
+      "status": "PASS",
+      "issues": [],
+      "choiceChecks": {
+        "1": "PASS",
+        "2": "PASS",
+        "3": "PASS",
+        "4": "PASS",
+        "5": "PASS"
+      },
+      "evidenceUrls": [
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000130677.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/kanren/yobou/040204-1.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000177609.html",
+        "https://www.mhlw.go.jp/topics/bukyoku/iyaku/syoku-anzen/iken/dl/070713-2b_0003.pdf"
+      ],
+      "officialAnswerChecked": true,
+      "originalTextChecked": true,
+      "imagesChecked": true,
+      "historicalApplicabilityChecked": true,
+      "sourceSupportChecked": true
+    },
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "rawResolvedModel": null,
+    "modelUsage": {
+      "claude-opus-5-5": {
+        "inputTokens": 16,
+        "outputTokens": 7278,
+        "cacheReadInputTokens": 1606891,
+        "cacheCreationInputTokens": 110165,
+        "webSearchRequests": 0,
+        "costUSD": 1.3483222000000001,
+        "contextWindow": 1000000,
+        "maxOutputTokens": 128000,
+        "thinkingTokens": 3007,
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "costBasis": "list"
+      }
+    },
+    "provider": "firstParty"
   }
 }
