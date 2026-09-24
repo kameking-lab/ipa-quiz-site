@@ -1,0 +1,66 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1758,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 23002,
+      "webSearchRequests": 0,
+      "costUSD": 0.21943980000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1657,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251807-q13-13-raw-response.txt",
+  "rawResponseSha256": "d7bef5b11c6b69a5ea6b0a68ebdf6784463756809011b9008dfdb75be33b1568",
+  "paperId": "emkohyo-EM20251807",
+  "ids": [
+    "emkohyo-EM20251807-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251807-q13": {
+      "/exam-library/emkohyo-EM20251807/text-q13-p8-fig4.webp": "5c370844ac698e4157bcedf1d2107a435e3f954f63a41a3835b8507d74ee2552",
+      "/exam-library/emkohyo-EM20251807/text-q13-p8-fig1.webp": "f21b183955f8b19941e8ba2e0654b9c6e080302082a05e8f89c9b1a15be11d96",
+      "/exam-library/emkohyo-EM20251807/text-q13-p8-fig5.webp": "aae9849e07dd93f2cb072cb1a91f266d66f6fa391e3bfe293eb5e7e43afac59e",
+      "/exam-library/emkohyo-EM20251807/text-q13-p8-fig2.webp": "aea65951b9d2f02e053523ca69fcb9ea4709dc59068bffbae62150d6586df3f4",
+      "/exam-library/emkohyo-EM20251807/text-q13-p8-fig3.webp": "25e17673c6c05ed286533d637cd765e29692e660d4335705756a3c213f981bf6"
+    }
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251807-q13": {
+      "/exam-library/emkohyo-EM20251807/q13-p8-0.webp": "9c1e3d03b8534401883f27bbae9b2bea0400d61d805f4695937600ae7b940441"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-nitroglycol-structure-p1.png": "28dba3bc73fd8b43cb2ffae0fd75bc65bbc8f18a0473bb6dbae46eff9984d98c",
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-2-naphthylamine-structure-p1.png": "00da95c3067cbf95a0ce3a6ff7fe88b8f287cb7d55178bd203ca9a0a2a65ee40",
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-acrylonitrile-structure-p1.png": "67e46f064100a8e62773769b51407018dd8d68ca6c7ff77017ed8335fcf3afb3",
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-o-toluidine-structure-p1.png": "de387d58d171f2e3e0ec301b991b83928cac033bdf30d70f6c5f50eb301f7cb2",
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-pcp-structure-p1.png": "110e2dc2c4bf646c83ccbf3ed388725032cbc866d11307afb53a88136a760fa4",
+    "docs/evidence/emkohyo-choice-sources/EM20251807-q13-1-naphthylamine-sds-structure.png": "5a3b917405e06cede35e714723075344371e6a8534334f71ae6ae960403c77f7"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251807-q13": "2b823d0a15e43ee8727e442da02f02c1914ab2c09c3db35aa2bad1dd815aa1a5"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251807-q13-13.json",
+  "sourcePackSha256": "692082aea38907a8c35abe967f002d633fc85527e5c088cbdbfcfaa746fd601e",
+  "assessment": {
+    "emkohyo-EM20251807-q13": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "paperId": "emkohyo-EM20261807",
+  "range": [
+    11,
+    11
+  ],
+  "draftSha256": "9bfde4c9db93aed2d0f531be37361a6d3060be7c2e6d11d6b5ec52f1d6a13df7",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/000616847.pdf",
+      "sha256": "c449a05c096d33015429d43b963e8bd336771483e66cdfa9d6e5eef76f688a87",
+      "contentType": "application/pdf",
+      "pages": 147,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "c04a41f6954aaafd1ce417ea4cdd07af93948a37a2459bca720e8ac0b9b3345c",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261807-q11",
+          "excerpt": "溶液濃度に液量を乗じて求めた絶対量",
+          "matched": true,
+          "pdfPage": 41,
+          "context": "際に使用する分析機器の定量下限をもとに15分測定のD測定で管理濃度の1/10の測定が可能であるかについて行う。吸光光度分析法においては、検量線上で吸光度0.03に相当する分析対象物質の溶液濃度（または溶液濃度に液量を乗じて求めた絶対量）を定量下限とする。ガスクロマトグラフ分析法や原子吸光分析法など吸光光度分析法以外の分析法においては、管理濃度の１/10に相当する試料ガスを標準的な吸引流量で、10分間捕集して得られる最終試料液濃度（"
+        },
+        {
+          "questionId": "emkohyo-EM20261807-q11",
+          "excerpt": "下限濃度（μg/L）＝[定量下限（μg）]／[吸引流量（L/min）・D 測定の吸引時間（min）]",
+          "matched": true,
+          "pdfPage": 42,
+          "context": "効性の確認方法①）アセトン（分子量58.1）の管理濃度500ppmの10分の1での15分測定のD測定の可否を確認するために、5μgを定量下限として、次式により下限濃度を求めると、0.70ppmとなる。下限濃度（μg/L）＝[定量下限（μg）]／[吸引流量（L/min）・D測定の吸引時間（min）]下限濃度（μg/L）＝[5（μg）]／[0.2（L/min）・15（min）]=0.6下限濃度（ppm）＝[下限濃度（μg/L）]・[24.47(moL／L)/分子量(g/moL)]下限濃度（ppm）"
+        }
+      ]
+    },
+    {
+      "url": "https://www.pmda.go.jp/files/000242610.pdf",
+      "status": 200,
+      "finalUrl": "https://www.pmda.go.jp/files/000242610.pdf",
+      "sha256": "70243f86dbf10a6344c94242c7a9b1303d9e8ec1ff5ad3c222841bd3bd6fbe40",
+      "contentType": "application/pdf",
+      "pages": 9,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261807-q11",
+          "excerpt": "標準物質の濃度を横軸に",
+          "matched": true,
+          "pdfPage": 8,
+          "context": "適用605される．6065.1.外部標準法607検量線法608被検成分の標準物質を用いて，直線性が示される範囲内で複609数濃度の標準溶液を調製し，一定量を注入する．610得られたクロマトグラムから，標準物質の濃度を横軸に，ピ611ーク面積又はピーク高さを縦軸にプロットして検量線を得る．612検量線は通例直線回帰で得られる．次に，試料溶液を医薬品各613条に規定された方法で調製する．検量線を得た方法と同じ操作614条件"
+        },
+        {
+          "questionId": "emkohyo-EM20261807-q11",
+          "excerpt": "ーク面積又はピーク高さを縦軸にプロットして検量線を得る．",
+          "matched": true,
+          "pdfPage": 8,
+          "context": "外部標準法607検量線法608被検成分の標準物質を用いて，直線性が示される範囲内で複609数濃度の標準溶液を調製し，一定量を注入する．610得られたクロマトグラムから，標準物質の濃度を横軸に，ピ611ーク面積又はピーク高さを縦軸にプロットして検量線を得る．612検量線は通例直線回帰で得られる．次に，試料溶液を医薬品各613条に規定された方法で調製する．検量線を得た方法と同じ操作614条件下で，クロマトグラフィーを行い，被検成分のピーク面積615又はピー"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 4,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0
+}

@@ -1,0 +1,63 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2617,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13805,
+      "webSearchRequests": 0,
+      "costUSD": 0.1630438,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1585,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261807-q01-01-raw-response.txt",
+  "rawResponseSha256": "f2efd6bdd6424d17803b4343e4616ccbc710c20eaebb49f42692b361b9a77190",
+  "paperId": "emkohyo-EM20261807",
+  "ids": [
+    "emkohyo-EM20261807-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261807-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261807-q1": {
+      "/exam-library/emkohyo-EM20261807/q1-p2-0.webp": "19e9fda9993d17204d18160074602006fbe95ed62357bb4450a8d7a7069b4a6e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261807-q1": "9cc9780edfee3fb86fa87f3d73387ec2c71a4223da83005eba9a1bc9e3c40b4e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261807-q01-01.json",
+  "sourcePackSha256": "c3b98984740c869338c811f27f467bf36ab10c0996f77b4bb51648b269a38942",
+  "assessment": {
+    "emkohyo-EM20261807-q1": {
+      "status": "FIX",
+      "textIssues": [
+        "choices[4].text が「クロラミンT を加えた後」になっており、「T」と「を」の間に原図にない半角スペースがある。原図・公式問題文どおり「クロラミンTを加えた後」に修正する。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由が「pKa9.22」と温度なしで書いている。出典（CICAD No.61 p.9）は「pKa は9.22(25℃)」と温度を付けているので、「pKa 9.22（25℃）」と温度条件を明記する。比較結論（非常に弱い酸なので酸性側では分子のまま揮散する）自体は出典で支持される。",
+        "肢4の理由の「捕集後の水酸化ナトリウム溶液はpH約13」は、底質調査方法で蒸留したシアン化水素を水酸化ナトリウム溶液に吸収した後の液についての注(10)の記述である。作業環境空気の試料溶液に一般化した書き方になっているので、「環境省底質調査方法では、水酸化ナトリウム溶液に捕集したシアン化物イオン溶液（pH約13）を酢酸(1+8)で中和し…」のように、出典の方法の記述であることを明示する。"
+      ],
+      "sourceIssues": [
+        "肢2〜5の根拠にしている環境省『底質調査方法』Ⅱ4.11は底質試料の分析法であり、作業環境空気中のシアン化水素の測定法（作業環境測定基準・作業環境測定ガイドブック）ではない。標準液の調製、硝酸銀滴定による標定、中和と緩衝液によるpH調整、クロラミンT→ピリジン-ピラゾロン発色という操作は共通なので肢2〜5の正誤判定は支持されるが、作業環境測定の方法そのものを示す一次資料ではない。",
+        "肢1の「硫酸含浸ろ紙での捕集は成り立たない」を直接述べる政府資料はない。CICAD No.61 p.12「環境媒体中のシアン化物は、通常水酸化ナトリウムや水酸化カリウムの溶液中で採集」とp.9のpKa・酸で発生する旨の記述から化学的に推論している。推論は妥当だが、作業環境測定での捕集法（アルカリ性捕集液またはアルカリ含浸ろ紙）を直接示す資料ではない。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定ガイドブック（シアン化水素の吸光光度分析法）で、捕集法がアルカリ（水酸化ナトリウム等）含浸ろ紙またはアルカリ性吸収液であり、酸含浸ろ紙ではないことを確認する。確認できれば肢1の理由の根拠として追記を検討する。"
+      ]
+    }
+  }
+}

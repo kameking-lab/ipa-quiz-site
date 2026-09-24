@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2284,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14070,
+      "webSearchRequests": 0,
+      "costUSD": 0.1585038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1569,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q03-03-raw-response.txt",
+  "rawResponseSha256": "5a78820889b822f5105beb3f11b8addee2137076aad0554b6d44c645524d15b1",
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q3": {
+      "/exam-library/emkohyo-EM20261808/q3-p3-0.webp": "b09c5b77ee43eb15aa4487bf2240236cdb212d23f9f09e7f09a89589458ab46f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q3": "baa150b7d58c6d73affad9a2379bdeba0c4374eed7766ff4ed60b0249553a7a5"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q03-03.json",
+  "sourcePackSha256": "340026f0416b8f32043b365e7bfe3c55f45a3204694d2feea665a1f8c22dc677",
+  "assessment": {
+    "emkohyo-EM20261808-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1: 正誤判定の鍵は「基底状態」だが、添付資料はこの点を直接支えていない。政府資料の日本薬局方2.24（p.112）が述べるのは「光が物質により吸収される度合いを測定する」までで、吸収の始状態が基底状態であるとは書いていない。補助のJ-STAGE『金属錯体の形と色』（政府資料ではない）も「ある軌道の電子がエネルギーの高い空軌道に遷移する」とするだけである。したがって「吸収の出発点は基底状態の分子・イオンである」は解説側の推論にとどまる。吸光の始状態が基底状態であることを明示する政府資料の記述を追加するか、推論であることが分かる書き方に改めること。",
+        "肢2: 正答肢の核心は「蛍光を発するのは励起状態の分子・イオンである」という点だが、政府資料で直接裏付けられていない。日本薬局方2.22（p.110）は「励起光を照射するとき、放射される蛍光の強度を測定する」とするのみで、発光主体が励起状態であるとは書いていない。定義の根拠にしているJ-STAGE『原子分光分析法の原理と発展』（p.2）は政府資料ではないうえ、原子蛍光分析法の文脈の記述であり、本問の分子・イオンを対象とする蛍光光度分析法の直接の根拠にならない。日本薬局方2.63（p.150）の「励起状態の原子は基底状態に戻る際に光を放出する」も原子発光の記述である。分子蛍光が励起状態から放射されることを明示する政府資料（例: 分子蛍光の原理を記した公定法）を添えるか、原子の場合の記述から類推していることを解説中で明確にすること。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6660,
+      "cacheReadInputTokens": 125175,
+      "cacheCreationInputTokens": 34872,
+      "webSearchRequests": 0,
+      "costUSD": 0.437219,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4185,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261801",
+  "ids": [
+    "emkohyo-EM20261801-q16",
+    "emkohyo-EM20261801-q17",
+    "emkohyo-EM20261801-q18",
+    "emkohyo-EM20261801-q19",
+    "emkohyo-EM20261801-q20"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261801-q16": {},
+    "emkohyo-EM20261801-q17": {},
+    "emkohyo-EM20261801-q18": {},
+    "emkohyo-EM20261801-q19": {
+      "/exam-library/emkohyo-EM20261801/text-q19-p12-fig1.webp": "5ea8a80238922017147adfc36fc773bd7ae2db5ef2cc5d2a38c68ce2f1be553a"
+    },
+    "emkohyo-EM20261801-q20": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261801-q16": {
+      "/exam-library/emkohyo-EM20261801/q16-p11-0.webp": "0e6c4cb0183638aee5667f7ca0cc75fd271e94572f5985682f06b912f696e321"
+    },
+    "emkohyo-EM20261801-q17": {
+      "/exam-library/emkohyo-EM20261801/q17-p11-1.webp": "85d9e7c60a62d38adc344af3f89d80013bd585bd665e04fd6d224ab2320938f5"
+    },
+    "emkohyo-EM20261801-q18": {
+      "/exam-library/emkohyo-EM20261801/q18-p12-0.webp": "d25aa903d986c801e14a101c6948db11d6feb3cb52da87c997f49a8c0fecec1a"
+    },
+    "emkohyo-EM20261801-q19": {
+      "/exam-library/emkohyo-EM20261801/q19-p12-1.webp": "a47e7cb4a0641c171e7790de0e7c51bfc9263f452fa49ef045128bcbbe416a74"
+    },
+    "emkohyo-EM20261801-q20": {
+      "/exam-library/emkohyo-EM20261801/q20-p13-0.webp": "d2ca5c4301026eba0988f0bbd3e68b2e1c15d2ae448283e5a5a0a2d0c11aa59b"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261801-q16": "93902bcdb4893cb031adcee31ffc082c0aaf68d9f1a59ef30a1a41dffa315717",
+    "emkohyo-EM20261801-q17": "6dd092bc752734d240fed9054cafb150b2e6667c02b02408a14fdfb3ff04ec1e",
+    "emkohyo-EM20261801-q18": "8ddabe9cc11cf51f3dfc2bd8ff287c2590a5e61b5ad9bdd7e33d4f0d0dbf7e90",
+    "emkohyo-EM20261801-q19": "f4ff12fe0a636c038d03db9c803f85c8461493580cbc2ae786e75abb5b5dbb61",
+    "emkohyo-EM20261801-q20": "04dc13e09649bac24ac000d80bf39de64ffeeece3d569809e2eba7210a6a0689"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261801-q16-20.json",
+  "sourcePackSha256": "d96b39999d7bbdeacfd5386c7bb2d7a0ad036175faccf2671924cc4b6c4e73db",
+  "assessment": {
+    "emkohyo-EM20261801-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の「α線は体表の角質層で止まり（数十μm）」は、添付の抜粋にこの数値がない。引用した環境省ページで透過距離の数値を確認して合わせるか、数値を外す。"
+      ],
+      "sourceIssues": [
+        "肢3（X線回折で固体試料の同定・定量ができる）を支える資料が1件もない。この肢の根拠は未提示のまま。",
+        "環境省ページ01-03-10の検証済み抜粋は、γ線が体の奥まで届くという部分だけである。α線・β線の透過距離（数十μm・数mm）の記述は照合できていない。",
+        "物理学的半減期と確定的・確率的影響の根拠はATOMICA（日本原子力研究開発機構）である。省庁の一次資料ではなく、独立行政法人の用語解説である。肢1の「温度に依存しない」は、抜粋の「放射性核種にそれぞれ固有」から推論しているだけで、温度非依存を直接述べた記述はない。"
+      ],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261801-q17": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由は定性的な説明（汚染空気が顔の前を通る）だけで、公的な根拠を使っていない。有機則第16条の制御風速表では、外付け式の下方吸引型が0.5m/s、上方吸引型が1.0m/sである。上方吸引型の方が大きな制御風速を要することを根拠に加えるべき。"
+      ],
+      "sourceIssues": [
+        "肢1（全体換気は希釈が原理）を支える資料がない。",
+        "肢2（下方吸引型の方が有効）について、有機則の制御風速表を根拠として明示的に使っていない。抜粋の文脈には「上方吸引型一・〇」が出てくるが、該当箇所の抜粋として登録されていない。",
+        "肢4の根拠とした告示（dataId=74997368）の検証済み抜粋が0件である。「16以上の四辺形」「捕捉面に垂直な方向の風速の平均0.2m/s以上」「ばらつき条件」はどれも照合できていない。"
+      ],
+      "needsExternalCheck": [
+        "告示の原文で、捕捉面の分割条件（16以上の等面積の四辺形、一辺2m以下）と、各点風速の平均値に対する許容範囲（ばらつき条件）を確認する。"
+      ]
+    },
+    "emkohyo-EM20261801-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の「手のひら側の緩衝材で振動を吸収する」「手と工具の間の条件が変わる」は、根拠のない推測に基づく説明である。",
+        "肢5のHML法の説明（C特性とA特性の差を使って予測遮音量を計算する）は、添付資料では支えられていない。"
+      ],
+      "sourceIssues": [
+        "肢1の要求フィットファクタの数値（全面形500、半面形100）と、FF＝外側濃度÷内側濃度という式が抜粋にない。抜粋は定義の一文だけである。",
+        "肢2の漏れ率の数値（S級0.1%、A級1.0%、B級5.0%）が抜粋にない。抜粋は区分名だけである。",
+        "肢4（防振手袋に他の手袋を重ねると性能が損なわれるおそれ）を支える政府資料がない。",
+        "肢5の根拠とした騒音障害防止ガイドラインの抜粋は、「JIS T8161-1の遮音値を目安に選定する」という内容だけである。H・M・L値から計算した値を環境騒音から差し引くという肢の内容を直接支えていない。"
+      ],
+      "needsExternalCheck": [
+        "防振手袋に他の手袋を重ねた場合の注意を述べた公的資料（振動障害予防対策指針、JIS T8114等）を確認する。",
+        "HML法による装着時の音の大きさの算出方法を述べた公的資料（ガイドラインの解説、JIS T8161-1、ISO 4869-2準拠の説明）を確認する。"
+      ]
+    },
+    "emkohyo-EM20261801-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "原図と図表切出しでは、標章が「国（'26）検／第＊＊＊＊＊号／DR 直 RS3」と明確に読める。それなのに肢2は「図の区分記号がRで始まる（既存解説ではRS3）なら」と条件付きで書いており、図を読まずに推測したような表現になっている。「RS3と表示されているから取替え式である」と断定し、「直」（直結式。取替え式の一種）にも触れるべき。",
+        "肢3も「図の標章に「補」の表示がなければ」と条件付きである。図の種類欄は「直」で、「補」はない。図に基づいて断定すべき。",
+        "肢1の「型式検定に関する西暦年の表示」は曖昧である。様式第11号でこの年が何を示すのか（型式検定合格の年か、製造年か等）を特定して書くべき。",
+        "標章の「DR」が品名（防じんマスク）を示すことが説明されていない。"
+      ],
+      "sourceIssues": [
+        "肢1の抜粋が支えるのは「(年)に西暦年の下2桁の略号を認めた」ことだけである。その年が何を意味するか、使用期限ではないことは、直接には支えられていない。",
+        "防じんマスクの規格（dataId=74041000）の検証済み抜粋が0件である。肢2の取替え式／使い捨て式の区分（RS・RL／DS・DL）、肢4のS区分が塩化ナトリウム・L区分がフタル酸ジオクチルで試験されること、肢5の捕集効率（80.0%、95.0%、99.9%）は、どれも照合できていない。",
+        "標章の「DR」「直」の意味を支える資料が提示されていない。"
+      ],
+      "needsExternalCheck": [
+        "機械等検定規則の様式第11号(3)(甲)の備考を確認する。「国(年)検」の年が何を表すか、品名「DR」と種類「直」の表示規定の2点。",
+        "防じんマスクの規格の原文で、RS・RL・DS・DLの区分、試験粒子、区分ごとの粒子捕集効率の数値を確認する。"
+      ]
+    },
+    "emkohyo-EM20261801-q20": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

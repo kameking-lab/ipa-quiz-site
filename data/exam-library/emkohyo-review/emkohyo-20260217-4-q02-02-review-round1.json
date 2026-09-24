@@ -1,0 +1,56 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2364,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 14370,
+      "webSearchRequests": 0,
+      "costUSD": 0.1909528,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1535,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q2"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q2": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q2": {
+      "/exam-library/emkohyo-20260217-4/q2-p2-1.webp": "4cc91ed2e218427dd7806c50dae743e1af5e71922cd5d2a28e1fa82d2d26ac25"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q2": "b7335192371a41c0a04683bc200ae6da12180ea524eaa63a934d8192f8092245"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q02-02.json",
+  "sourcePackSha256": "3f23823a82d262add770e3ed6874b0e6320f5396f717c4ba22fe76b8f6ca6fdd",
+  "assessment": {
+    "emkohyo-20260217-4-q2": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3・肢4・肢5の理由は、有効数字を2桁にする根拠を『最も精度の低い条件は75％（2桁）』としている。しかし問題文の流量『100 mL･min⁻¹』は末尾が0なので、有効数字が1桁・2桁・3桁のどれかは表記からは決まらない。肢3の理由は流量を『0.100 L/min』と書き換え、問題文にない3桁の精度を暗黙に与えている。100を1桁と読むと結果は1×10となり、11（2桁）の根拠が崩れる。100 mLを少なくとも2桁の精度をもつ設定値として扱う前提（60.0 min・50.30 µgの表記と整合し、公式正答11もこの前提を支える）を明記するか、書き換えは『0.1 L/min（=100 mL/min）』程度にとどめ、律速を75％とする理由を補う必要がある。"
+      ],
+      "sourceIssues": [
+        "捕集効率で『割る』補正（捕集量÷捕集効率）を直接支える政府資料がない。農林水産省 jigyou-147.pdf の抜粋『平均回収率が95％未満の場合は平均回収率で補正した』は、農薬ばく露評価の野外添加回収試験における回収率補正である。空気捕集材の捕集効率とは概念が異なるうえ、補正の算術方向（除算）も書かれていない。肢1・肢2の『掛けると補正が逆向き』という因果説明は、この抜粋だけでは裏付けられない。",
+        "厚生労働省 000616847.pdf の抜粋（濃度＝捕集量／(流量×時間)）は通気量から濃度を出す式を支えるが、捕集効率補正には触れていない。",
+        "水産庁 shiryou1-2.pdf（SI移行資料の有効数字規則）は乗除算の桁数規則を直接支えており、問題なし。ただしこの規則の手順（先に各値を最少桁に丸めてから計算する：50→50、6.00→6.0、50/0.75/6.0≈11）は、解説の手順（全桁で計算してから最後に丸める）と異なる。結論は同じ11だが、引用規則と解説手順の差を注記するのが望ましい。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

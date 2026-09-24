@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3435,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14205,
+      "webSearchRequests": 0,
+      "costUSD": 0.18260379999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3135,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q19-19-raw-response.txt",
+  "rawResponseSha256": "f4adf33a005107c1151021a1166b0568d95cf5dbdc919f0c637266579a08d038",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q19"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q19": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q19": {
+      "/exam-library/emkohyo-EM20261803/q19-p11-1.webp": "8f17613e0bfa2bed44335e7f85b48e9079ee224f607c4bbb7709a7add45d93f9"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q19": "23d6cf134103053fcdfe7a092660876117cab4fc0750c87a10a8ac3ca841451f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q19-19.json",
+  "sourcePackSha256": "4057d3103f3cbd29cebe7845989c3630d0e1d3d45e6f4069b2355f3018c962d4",
+  "assessment": {
+    "emkohyo-EM20261803-q19": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "sources に挙げた「環境省 化学物質の環境リスク評価 1,4-ジオキサン（ppm換算係数）」は、どの肢の解説本文でも参照されていない。抜粋「換算係数1ppm=3.60mg/m3 at25℃,気体」は照合済みだが、この値は1,4-ジオキサン個別の換算係数である。肢2の「有機溶剤の管理濃度は体積分率で表される」という理由を直接支えていない。肢2の解説で「25℃・1気圧の気体としてppmとmg/m³を換算する前提」として明示的に使うか、sources から削除すること。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

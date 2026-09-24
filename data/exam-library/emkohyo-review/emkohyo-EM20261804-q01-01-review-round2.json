@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1570,
+      "cacheReadInputTokens": 125175,
+      "cacheCreationInputTokens": 15156,
+      "webSearchRequests": 0,
+      "costUSD": 0.177691,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 982,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261804",
+  "ids": [
+    "emkohyo-EM20261804-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261804-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261804-q1": {
+      "/exam-library/emkohyo-EM20261804/q1-p2-0.webp": "f1e8cc487179eff1712fb705cbcbd67fa9566db7ba483005bbaa19b7e90e02df"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261804-q1": "d5437cb61950acc08226bacd704700199873fc084f4b81246a1eb6e55f07cfd2"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261804-q01-01.json",
+  "sourcePackSha256": "0326f9bf26bbf73811787915aa0c5df7df59e6ba401fc04730c968a5b7bda3cd",
+  "assessment": {
+    "emkohyo-EM20261804-q1": {
+      "status": "FIX",
+      "textIssues": [
+        "選択肢の書式が揃っていない。肢1・2・4は「物理量 単位」と半角スペースで区切っているが、肢3は「圧力\\nmkgs⁻²」、肢5は「電荷\\nsA」と改行で区切っている。公式原図ではどの肢も同じ行に Ⓐ列と Ⓑ列が並んでいるので、肢3・5も「圧力 mkgs⁻²」「電荷 sA」のように1行に統一すべき。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1の根拠として示した抜粋「ケルビン (K)」は、定義定数表の文脈（ボルツマン定数と並ぶ箇所）から取られている。「熱力学温度（絶対温度）の単位が K である」という対応関係を直接述べていない。同じページの基本単位表にある「熱力学温度 ケルビン K」の行を抜粋に使うべき。",
+        "肢2の理由にある「物質量1 mol当たりの粒子数」という定義は、抜粋（NA=6.02214076×10²³/mol の数値のみ）では直接裏付けられていない。単位 mol⁻¹ の正しさは抜粋で支えられるので結論には影響しないが、定義を述べる部分の出典は弱い。"
+      ],
+      "needsExternalCheck": [
+        "産総研 SI ページ（https://unit.aist.go.jp/nmij/library/si-units/）の基本単位表に「熱力学温度 ケルビン K」の記載があるか確認し、その部分を肢1の抜粋に差し替える。"
+      ]
+    }
+  }
+}

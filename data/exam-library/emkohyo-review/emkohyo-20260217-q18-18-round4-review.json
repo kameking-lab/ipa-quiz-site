@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5226,
+      "cacheReadInputTokens": 2155,
+      "cacheCreationInputTokens": 21167,
+      "webSearchRequests": 0,
+      "costUSD": 0.27429499999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4045,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217",
+  "ids": [
+    "emkohyo-20260217-q18"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-q18": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-q18": {
+      "/exam-library/emkohyo-20260217/q18-p13-0.webp": "b07f89006170466bf75c04c3974928911c946037c805e0c5fc3acd07eedaa8e2"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-q18": "fe31743e1a5bcb210f55869c26708d9e0396708661c4f4a70a1c02ce5229e089"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-q18-18.json",
+  "sourcePackSha256": "ac94baa8c863a7cbb0436d8123a75c7d23f857cbd9a19f43b0084f5698f733d5",
+  "assessment": {
+    "emkohyo-20260217-q18": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由は、法別表第二（規格具備）と別表第四（型式検定）、令第13条第5項と第14条の2を突き合わせて「規格対象＝型式検定対象」と結論している。しかし法第42条の規格具備対象には、別表第二に加えて令第13条第3項各号の機械等もある。証拠の規則第27条の文脈にも「法別表第二に掲げる機械等及び令第十三条第三項各号に掲げる機械等については、法第四十二条の厚生労働大臣が定める規格」とある。「全て」という全称命題を支えるには、令第13条第3項各号に呼吸用保護具が含まれないことに触れる必要があるが、理由はこれに言及していない。別表第二と別表第四の比較だけでは網羅性の論証として不完全なので、令第13条第3項に呼吸用保護具が掲げられていない旨を一文補うこと。"
+      ],
+      "sourceIssues": [
+        "施行令ページ（dataId=74002000）の抜粋は、第13条第5項の表と第14条の2だけである。令第13条第3項各号の列挙（呼吸用保護具を含まないこと）を示す抜粋がないため、肢1の「全て型式検定の対象」という網羅性は証拠上で直接確認できない。令第13条第3項の条文抜粋を追加すること。"
+      ],
+      "needsExternalCheck": [
+        "現行の労働安全衛生法施行令第13条第3項各号（第1号〜最終号）に、防じんマスク・防毒マスク・電動ファン付き呼吸用保護具その他の呼吸用保護具が掲げられていないことを、e-Gov法令検索または厚生労働省法令等データベースの現行条文で確認すること。"
+      ]
+    }
+  }
+}

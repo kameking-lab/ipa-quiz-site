@@ -1,0 +1,18 @@
+{
+  "emkohyo-20260217-2-q7": {
+    "status": "FIX",
+    "textIssues": [
+      "The transcription does not preserve the table's column structure. The prompt ends with the headers Ⓐ, Ⓑ and Ⓒ on separate lines. The choices have no consistent separator between columns: choice 1 has no spaces at all (「空気中の鉛の濃度１年以内ごとに１回３年」), while choices 2, 4 and 5 have a space only before the retention period and choice 3 has a space only before 「３年」. The official image is a three-column table (Ⓐ 対象 / Ⓑ 頻度 / Ⓒ 保存期間). Each choice should separate the three values with the same delimiter, or label them as Ⓐ, Ⓑ and Ⓒ, so readers can tell which value belongs to which column. The wording and numbers themselves match the official image for all choices 1–5, and there is no image-only information because the whole table can be written as text, so figures: [] is fine."
+    ],
+    "choiceIssues": [],
+    "reasonIssues": [
+      "Choices 3 and 4: the reasons say that being listed as an organic solvent in 施行令別表第6の2 is why 有機則第28条 applies. That link is incomplete. Under 有機則第28条第1項, the measurement duty covers only organic solvent work involving substances in 別表第6の2 items 1 to 47 (Type 1 and Type 2 organic solvents), and it excludes work covered by 第3条第1項. Type 3 organic solvents (items 48 onward) are also in 別表第6の2 but have no measurement duty. The reasons should say explicitly that 二硫化炭素 is item 38 and メチルエチルケトン is item 44, both within items 1 to 47. The evidence context already contains 「令別表第六の二第一号から第四十七号までに掲げる有機溶剤に係る有機溶剤業務」."
+    ],
+    "sourceIssues": [
+      "The e-Gov sources pinned to the exam date (asof=2026-02-17) cover only 鉛則 and 有機則. The sources for choices 2 and 5 (特化則第36条, covering both the 6-month frequency and the 30-year retention list in 第3項) and for the item numbers in 施行令別表第3 and 別表第6の2 are mhlw.go.jp t_doc pages with no revision information (revisionInfo=null). Nothing shows that these texts were in force on 2026-02-17. In particular, the 30-year list in 特化則第36条第3項 (「23の2から24まで」「30」) and the item numbering in 施行令別表第3 第2号 (23の3 ニツケル化合物, 30 ベンゼン) should be checked against a source pinned to the exam date."
+    ],
+    "needsExternalCheck": [
+      "Using e-Gov with asof=2026-02-17, check that 特化則第36条第3項 (30-year retention list) includes 23の3 and 30 of 令別表第3第2号, and that 施行令別表第3 item 23の3 is ニツケル化合物 (powdered forms only) and item 30 is ベンゼン, and that 別表第6の2 item 38 is 二硫化炭素 and item 44 is メチルエチルケトン, all as of the exam date."
+    ]
+  }
+}

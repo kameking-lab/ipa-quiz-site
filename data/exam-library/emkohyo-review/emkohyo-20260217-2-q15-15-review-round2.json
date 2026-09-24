@@ -1,0 +1,67 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7541,
+      "cacheReadInputTokens": 115183,
+      "cacheCreationInputTokens": 22788,
+      "webSearchRequests": 0,
+      "costUSD": 0.3561686,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6163,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-2",
+  "ids": [
+    "emkohyo-20260217-2-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-2-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-2-q15": {
+      "/exam-library/emkohyo-20260217-2/q15-p10-1.webp": "b1cb2b53501cb819c29f7a3f05c3f912754c7b6670414c9d8a0136288972510b"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-2-q15": "9ab47f49bb2e6050ed6796fda38c727798c353e1926bbd8ca431a52c3da4d360"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-2-q15-15.json",
+  "sourcePackSha256": "6e881009c0b75046aeff71f6f22632bdec60290b6b30f26afe3f1552736f3d8d",
+  "assessment": {
+    "emkohyo-20260217-2-q15": {
+      "status": "FIX",
+      "textIssues": [
+        "Choice 1 in the transcription says \"0.4 m / s\", with spaces around the slash. The original figure says \"0.4 m/s\" with no spaces, so the transcription should match the original."
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "Choice 1: this is the only reason written in plain form (である調). The reasons for choices 2–5 use polite form (です・ます調). The wording should be made consistent.",
+        "Choice 1: the reason does not name the article that sets the control air velocity (有機則第16条). The other choices name their articles. \"第16条\" should be stated here as well.",
+        "Choice 3: the reason calls the cases \"タンク等の内部での業務など\", which is too vague. Article 32(1)(i) covers the work in Article 1(1)(vi)(ヲ), meaning inside a tank that has held organic solvents. Article 32(1)(ii) covers work inside \"tanks etc.\" done without the equipment, under the Article 9(2) exemption. Neither case applies when the premise says there are no exemptions or special rules, so the reason should state that directly. It should also cover Article 33, which requires respiratory protective equipment in other cases and lets the employer choose a supplied-air mask or an organic gas mask. That shows there is no across-the-board duty to use a supplied-air mask specifically.",
+        "Choice 4: the step from \"第3種 = everything other than 第1種・第2種\" to \"so not subject to Article 28 measurement\" is not proven. Article 28 covers organic solvent work involving Nos. 1–47 of the Cabinet Order's Appended Table 6-2. A 第3種 mixture can still contain some of those solvents at low levels. The reason needs to state that 第3種 is centred on Nos. 48–55 (gasoline and similar), and that the measurement duty is limited to work with 第1種・第2種有機溶剤等. Only then does the conclusion follow.",
+        "Choice 4: the reason does not explain why \"even where ventilation is inadequate\" makes no difference. The rules apply to 第3種 in tanks and similar confined spaces, but the measurement duty still does not extend to 第3種. The reason should say so briefly."
+      ],
+      "sourceIssues": [
+        "The 0.4 m/s control air velocity for enclosing hoods (Article 16) is supported only by the current MHLW page. The e-Gov text as of the exam date (2026-02-17) does not include Article 16, and its source title also omits it. The value should be confirmed in the as-of-exam-date text.",
+        "The MHLW page for the ordinance shows an Article 28 amendment history that includes 令八厚労令三. It may therefore be a version later than the exam date. Evidence tied to the exam date should come mainly from the e-Gov text as of 2026-02-17.",
+        "The evidence does not include the text of Article 1(1)(vi)(ヲ), Article 9(2), the definition of \"tanks etc.\" (タンク等の内部), or Article 33. The specific cases in choice 3's reason are therefore not directly supported by the evidence.",
+        "For choice 4, the only Cabinet Order evidence is the excerpt \"四十八ガソリン\". Nothing shown directly supports the claim that 第3種有機溶剤等 is outside the measurement duty, such as a government circular or the definitions."
+      ],
+      "needsExternalCheck": [
+        "Check which article of the ordinance defines \"tanks etc.\" (タンク等の内部), and whether that definition includes basements and other poorly ventilated indoor workplaces. This decides how choice 3's reason should be worded.",
+        "Check the text of Article 16 in the e-Gov version of the ordinance as of 2026-02-17.",
+        "Check an MHLW circular or other government material stating that work environment measurement for organic solvents is limited to work with 第1種・第2種有機溶剤等."
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2091,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13214,
+      "webSearchRequests": 0,
+      "costUSD": 0.1477958,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1308,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261805-q17-17-raw-response.txt",
+  "rawResponseSha256": "317d228e9e291498a3418cc5b1d1272ea4ae9df6ce6a20cc110cc10b57d078a3",
+  "paperId": "emkohyo-EM20261805",
+  "ids": [
+    "emkohyo-EM20261805-q17"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261805-q17": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261805-q17": {
+      "/exam-library/emkohyo-EM20261805/q17-p10-0.webp": "9373ce2e4539c12b67187a8f08b66759e94ace281a4f3d9b8ecab1fb2c4ae717"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261805-q17": "23abacb169e2c89bdfb104ed7c40c20d6fa6a60afd6d52d371cd380577c48b82"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261805-q17-17.json",
+  "sourcePackSha256": "8613948c44e366969f71e859fbb8239ebba131eb9032256430fc4685c0e37050",
+  "assessment": {
+    "emkohyo-EM20261805-q17": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢2・3・4の㋺の根拠（「回折格子などの分散素子からなる分光器（モノクロメータ）で単色光とする」「スリットは幅を設定する部品で、単独では単色光を作れない」）に対応する抜粋は、いずれも第十九改正日本薬局方 2.23 原子吸光光度法（PDF117頁）のものである。「分光部には回折格子又は干渉フィルターを用いる」「分光器を…分析線波長に合わせた後、…スリット幅に設定する」がそれに当たる。本問の対象である2.24 紫外可視吸光度測定法の記述ではない。",
+        "上記の2.23の抜粋は分光部として干渉フィルターも併記している。このため「回折格子などの分散素子＝モノクロメータ」という説明を直接には支えない。また、どの政府資料にも「モノクロメータ」という語や「スリット単独では単色光にならない」という趣旨の記述は無い。㋺の正誤理由は政府資料で直接裏付けられていない。",
+        "㋑（重水素放電管＝紫外部、タングステン／ハロゲンランプ＝可視部）と㋩（紫外部は石英製、可視部はガラス製又は石英製）は、医薬部外品原料規格2021 一般試験法32（PDF65頁）と日本薬局方2.24（PDF119頁）の抜粋で直接裏付けられている。300 nmが紫外部であることは、農研機構の可視領域380～780 nmの記述で補えている。問題は無い。"
+      ],
+      "needsExternalCheck": [
+        "紫外可視分光光度計の分光部（モノクロメータ）が、プリズムや回折格子などの分散素子とスリットで構成され、スリットだけでは単色光が得られないことを直接述べる一次資料を確認し、出典に差し替える、又は追加すること。例：JIS K 0115 吸光光度分析通則の装置構成の条項、又は日本薬局方2.24の装置の記述。"
+      ]
+    }
+  }
+}

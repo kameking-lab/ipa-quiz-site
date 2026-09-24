@@ -1,0 +1,706 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251809",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 改正電離放射線障害防止規則リーフレット（令和3年4月施行・増補版）",
+      "url": "https://www.mhlw.go.jp/content/11300000/000753878.pdf"
+    },
+    {
+      "title": "原子力規制庁 令和元年度 放射線管理に係る実用量の測定等の実態調査 報告書",
+      "url": "https://www.nra.go.jp/data/000319356.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA カーマ（Kerma）",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 電離放射線",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 被ばく管理のための種々の線量",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 1センチメートル線量当量",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html"
+    },
+    {
+      "title": "厚生労働省 電離放射線障害防止規則",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 照射線量に関する単位",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html"
+    },
+    {
+      "title": "厚生労働省 昭和63年労働省告示第93号（電離則に基づく限度及び方法）",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+    },
+    {
+      "title": "産業技術総合研究所 計量標準総合センター 試験・校正の種類（依頼試験一覧）",
+      "url": "https://unit.aist.go.jp/qualmanmet/metrolqual/calibration/service/doc/iraishiken_241202.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 軌道電子捕獲",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA α壊変",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-05.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA β壊変",
+      "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-06.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 核異性体",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1321.html"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA γ線",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_807.html"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+    },
+    {
+      "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+      "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+    },
+    {
+      "title": "日本原子力研究開発機構 ATOMICA 中性子遮へい",
+      "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1549.html"
+    },
+    {
+      "title": "原子力規制委員会 放射線の基礎知識（原子力災害医療 基礎研修資料）",
+      "url": "https://www.nra.go.jp/data/000186586.pdf"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251809-q1": {
+      "overlay": {
+        "sourceHash": "10df536f8be3632c7072aaab187210fe6a9d9b0eea581d5ac731d969d216e2d5",
+        "correctChoice": 3,
+        "summary": "カーマはγ線・X線・中性子線などの非荷電粒子（間接電離放射線）に適用される量であり、「直接電離放射線によって」とする肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の改正電離則リーフレットは「眼の水晶体に受ける等価線量は、３mm線量当量の測定による算定を原則とします」と明記している。1cm・70μm線量当量で代替できるのは管理上差し支えない場合に限られ、X線を含め原則は3mm線量当量なので正しい記述。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "規制庁報告書の図2.2.1-3・2.2.1-4はICRP74のH*(10)とH´(0.07)を0.01〜10MeVで示し、約0.04MeV以上では両曲線の差は1割未満で0.2MeV以上はほぼ重なる。同報告書のJIS Z 4511抜粋表（70μm列の見出しは「H*(0.07)」と印字）でも、H*(10)基準の差は33keVで約6%、48keVで約7%、最大の65keVで1.73と1.60の約7.5%、208keVで約4%に収まる。正しい記述。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ATOMICAはカーマを「γ線、中性子線等の非荷電粒子に適用される概念」とし、非荷電粒子が生じた2次荷電粒子の初期運動エネルギーの和を質量で割った量と定義する。γ線・X線は荷電粒子を介して電離する間接電離放射線であり、「直接電離放射線」とするこの記述は誤りである。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは周辺線量を、ICRU球（直径30cm）を置き放射線が「ICRU球全体に一様にかつ一方向から入射した場合」に整列場の方向に対向する半径上の深さdで生ずる線量とし、推奨されるdは10mm（1cm）と説明する。作業環境の場の測定に用いる1cm線量当量の定義として正しい記述。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは吸収線量について「電離放射線の照射による物質1kg当り1ジュールの吸収エネルギーを単位に取り、これを1グレイ」と説明し、SI単位はJ/kgである。放射線の種類や物質を問わない物理量であり、1Gy=1J/kgとするこの記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 改正電離放射線障害防止規則リーフレット（令和3年4月施行・増補版）",
+            "url": "https://www.mhlw.go.jp/content/11300000/000753878.pdf"
+          },
+          {
+            "title": "原子力規制庁 令和元年度 放射線管理に係る実用量の測定等の実態調査 報告書",
+            "url": "https://www.nra.go.jp/data/000319356.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA カーマ（Kerma）",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 電離放射線",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 被ばく管理のための種々の線量",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 1センチメートル線量当量",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/11300000/000753878.pdf",
+          "excerpt": "眼の水晶体に受ける等価線量は、３mm線量当量の測定による算定を原則とします",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "N シリーズに対する線量当量換算係数（Sv/Gy）JIS Z 4511：2018 より抜粋",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "N-40 33 1.18 1.25",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "N-60 48 1.59 1.48",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "N-80 65 1.73 1.60",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "N-250 208 1.39 1.34",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "図2.2.1-3 光子 周辺線量当量（1 cm 線量当量）と周辺線量",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "黒線 ICRP74 換算係数：H*(10) Sv/Gy",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000319356.pdf",
+          "excerpt": "黒線 ICRP74 換算係数：H´(0.07) Sv/Gy",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html",
+          "excerpt": "γ線 、 中性子線 等の非荷電粒子に適用される概念である",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-05.html",
+          "excerpt": "非荷電粒子が物質内で反応を起こし生じる２次荷電粒子の初期運動エネルギーの和を、物質の質量で割った量でカーマは定義される",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html",
+          "excerpt": "エックス線や 中性子線 のように、いったん原子の束縛電子や 原子核 と相互作用して荷電粒子線を発生させ、二次的に発生した荷電粒子線が物質に電離作用を及ぼす間接電離（性）放射線がある",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html",
+          "excerpt": "ICRU球全体に一様にかつ一方向から入射した場合）、整列場の方向に対向する半径上の深さdにおいて生ずる線量である",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-05.html",
+          "excerpt": "推奨されているdの値は10mm（1cm）であり",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_09-04-02-06.html",
+          "excerpt": "人体組成を模擬した元素組成値をもつ直径30cmの球体（ICRU球）を放射線場に置き、その球表面から1cmの深さの点での線量の値を言う",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html",
+          "excerpt": "電離放射線 の 照射 による物質1kg当り1ジュールの吸収エネルギーを単位に取り、これを1 グレイ （Gyと表す）と呼ぶ",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q2": {
+      "overlay": {
+        "sourceHash": "02e020a1386f808ba9877d9086e0d74e135bf6e886b56c8abfa7ec8c863531b4",
+        "correctChoice": 3,
+        "summary": "照射線量は空気の単位質量当たりに生じる電荷（C/kg）で定義されるため、照射線量率の単位はC･kg⁻¹･s⁻¹となる。単位をC･s⁻¹とする肢3が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "電離則は放射線装置室の遮へい基準などで「一センチメートル線量当量率が二十マイクロシーベルト毎時」のように、1cm線量当量率をシーベルト毎時で規定している。作業環境測定の1cm線量当量率をSv･h⁻¹で表すのは正しい記述。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは吸収線量を物質の単位質量に与えられたエネルギーとし、「国際単位系（SI）による吸収線量の単位はＪkg−1」と説明する。空気吸収線量は物質を空気とした吸収線量なので、単位J･kg⁻¹とするこの記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "correct",
+            "reason": "ATOMICAは照射線量を「空気１kgにつき１クーロンの電気量に相当する正または負のイオン群を生じさせる照射線量を１Ｃ/kg」とし、SI単位はC/kgと説明する。照射線量率は単位質量の空気当たりの電荷を時間で割った量でC･kg⁻¹･s⁻¹となり、C･s⁻¹とする記述は誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "電離則告示（昭和63年労働省告示第93号）別表第一は「空気中の放射性物質の濃度に関する限度(Bq／cm3)」と規定し、産総研の校正試験一覧も放射性ガスの放射能濃度をBq･cm⁻³で表す。空気中放射能濃度の単位をBq･cm⁻³とする記述は正しい。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "産総研の依頼試験一覧は中性子源校正試験の「中性子放出率範囲：1.0×10³s⁻¹以上3.0×10⁷s⁻¹以下（252Cf）」とs⁻¹で表示している。中性子放出率は単位時間当たりに線源から放出される中性子数なので、単位をs⁻¹とする記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 電離放射線障害防止規則",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 吸収線量に関する単位",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 照射線量に関する単位",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html"
+          },
+          {
+            "title": "厚生労働省 昭和63年労働省告示第93号（電離則に基づく限度及び方法）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "産業技術総合研究所 計量標準総合センター 試験・校正の種類（依頼試験一覧）",
+            "url": "https://unit.aist.go.jp/qualmanmet/metrolqual/calibration/service/doc/iraishiken_241202.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74101000",
+          "excerpt": "一センチメートル線量当量率が二十マイクロシーベルト毎時を超えないように遮へいされた構造",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html",
+          "excerpt": "放射線と物質の相互作用の結果、その物質の単位質量に与えられたエネルギーを吸収線量という",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-04.html",
+          "excerpt": "国際単位系 （SI）による吸収線量の単位はＪkg −1 である",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html",
+          "excerpt": "空気１kgにつき１クーロンの電気量に相当する正または負のイオン群を生じさせる照射 線量 を１Ｃ/kgとする",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_18-04-02-03.html",
+          "excerpt": "国際単位系 で照射線量の単位はＣ/kgである",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74102000&dataType=0&pageNo=1",
+          "excerpt": "空気中の放射性物質の濃度に関する限度(Bq／cm3)",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/qualmanmet/metrolqual/calibration/service/doc/iraishiken_241202.pdf",
+          "excerpt": "放射能濃度（放射性ガス）1Bq･cm-3以上2kBq･cm-3以下",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://unit.aist.go.jp/qualmanmet/metrolqual/calibration/service/doc/iraishiken_241202.pdf",
+          "excerpt": "中性子放出率範囲：1.0×103s-1以上3.0×107s-1以下（252Cf）",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q3": {
+      "overlay": {
+        "sourceHash": "46d026bd7c95c249db89fe3419250283635e10505b7fb7bb115e0bc0d56137c0",
+        "correctChoice": 5,
+        "summary": "電子捕獲では核内の陽子が軌道電子を取り込んで中性子に変わるため、原子番号は1つ減少する。「1つ増加する」とする肢5が誤り。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは軌道電子捕獲を「原子番号が一つ小さい、つまり陽子の数が一つ少なく」なる現象と説明しており、原子番号が原子核中の陽子数と一致することを示している。原子番号＝陽子数とするこの記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは「陽子 2個、 中性子 2個からできているα粒子が飛び出していったあとには、陽子が2個減って、原子番号が2だけ小さい原子核が残る」と説明している。α崩壊で陽子2個・中性子2個が放出され原子番号が2減るという記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "ATOMICAはβ壊変について「β − 壊変では原子番号は１だけ増加し、β ＋ 壊変や軌道電子捕獲では原子番号が１だけ減少する」とし、電子とともに反ニュートリノ、陽電子とともにニュートリノが放出されると説明する。記述は正しい（反ニュートリノを含めニュートリノと総称）。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "ATOMICAは核異性体について「同じ原子番号と質量数をもった原子核でも、異なったエネルギー状態をもつ」とし、励起状態のものはγ崩壊して低いエネルギー状態に遷移すると説明する。γ線は励起状態からの遷移で出る電磁波で原子番号は変わらず、正しい記述。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "ATOMICAは軌道電子捕獲を、核内の陽子が軌道電子と反応して中性子に変わり「原子番号が一つ小さい」別の原子核になる現象と説明する。特性X線が放出される点は正しいが、原子番号は1つ減少するので「1つ増加する」とするこの記述は誤りである。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 軌道電子捕獲",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA α壊変",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-05.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA β壊変",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-06.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 核異性体",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1321.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA γ線",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_807.html"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html",
+          "excerpt": "原子番号が一つ小さい、つまり陽子の数が一つ少なく質量数の同じ別種の原子核に変わる現象",
+          "choiceNumbers": [
+            1,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-05.html",
+          "excerpt": "陽子 2個、 中性子 2個からできているα粒子が飛び出していったあとには、陽子が2個減って、原子番号が2だけ小さい原子核が残る",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-06.html",
+          "excerpt": "β − 壊変では原子番号は１だけ増加し、β ＋ 壊変や軌道電子捕獲では原子番号が１だけ減少する",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-06.html",
+          "excerpt": "電子とともに放出される粒子を反ニュートリノ、陽電子とともに放出される粒子をニュートリノと名付けた",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1321.html",
+          "excerpt": "同じ原子番号と質量数をもった原子核でも、異なったエネルギー状態をもつことができる。しかし、高いエネルギー状態（励起状態）のものは、通常極めて短い半減期でγ崩壊して低いエネルギー状態に遷移する",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_807.html",
+          "excerpt": "励起エネルギー状態にある原子核がより低い状態または基底状態に移るとき、もしくは粒子が消滅するときに放出する電磁波",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html",
+          "excerpt": "核内の陽子がこれと反応して中性子に変わり",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_821.html",
+          "excerpt": "余剰エネルギーをそれらの電子に特有のＸ線として放出し",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q4": {
+      "overlay": {
+        "sourceHash": "ab08b359f3e6df97c269eb1dd5888412b88144e2a8e83333b420834113b2ad49",
+        "correctChoice": 2,
+        "summary": "662keVに光電ピークを示すのは¹³⁷Cs、2〜3インチNaI(Tl)の662keVでの分解能は一般に7〜9%程度（選択肢では6〜8%が該当）、約185keVの幅広いピークは662keVのγ線が約180度散乱した後方散乱ピークである。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑¹³⁷Csは正しいが、㋺と㋩が誤り。放射能測定法シリーズNo.6は2〜3インチ円筒形NaI(Tl)の分解能を662keVで「7〜9%程度が一般的」とし、2〜3%はこれと大きく離れる。㋩の消滅γ線は511keVの電子対消滅光子で、約185keVのピークは662/(1+2×662/511)≈184keVの後方散乱に当たる。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "㋑：¹³⁷Csは662keVのγ線のみを放出する。㋺：No.6の一般値7〜9%程度と範囲が重なり、選択肢中で妥当なのは6〜8%である。㋩：後方散乱の散乱γ線最小エネルギーはEγ/(1+2Eγ/m0c²)=662/(1+2×662/511)≈184keVで、約185keVのピークと一致する。正しい組合せ。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVに光電ピークを生じない。㋺の2〜3%は2〜3インチNaI(Tl)で一般的な7〜9%程度と合わない。消滅γ線（電子対消滅光子）は511keVで、約185keVの幅広いピークの原因ではない。㋑㋺㋩いずれも誤り。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋺の6〜8%はNo.6の一般値7〜9%程度と範囲が重なり妥当だが、⁶⁰Coのγ線は1173.2keVと1332.5keVで662keVに光電ピークを作らない。㋩の消滅γ線は511keVの電子対消滅光子で、約185keVの幅広いピークの原因ではない。㋑㋩が誤りである。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "㋺の6〜8%（一般値7〜9%程度と重なる）と㋩の後方散乱は妥当だが、㋑の⁶⁰Coが誤り。⁶⁰Coのγ線は1173.2keVと1332.5keVのカスケードで、662keVのγ線のみを放出するのは¹³⁷Csである。約185keVの後方散乱ピークも662/(1+2×662/511)≈184keVとして¹³⁷Csの662keVに対応する。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.6 NaI(Tl)シンチレーションスペクトロメータ機器分析法",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf"
+          },
+          {
+            "title": "原子力規制庁 放射能測定法シリーズNo.7 ゲルマニウム半導体検出器によるγ線スペクトロメトリー",
+            "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "137Cs（662keVのγ線のみを放出）",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "2～3インチの円筒形NaI(Tl)の場合、137Cs（662keV）に対して7～9%程度が一般的である",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "散乱角が90度以上の後方散乱の寄与が多いため、後方散乱ピークと呼ばれる",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/No6_202606.pdf",
+          "excerpt": "スペクトル上では散乱γ線の最小エネルギーに相当する位置にピーク状の形状が現れる",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "散乱γ線の最小エネルギーは散乱角180度の場合に相当し（図3.1のピークBS）",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "𝐸′𝑚𝑖𝑛=𝐸𝛾/1+2𝐸𝛾/𝑚0𝑐2",
+          "choiceNumbers": [
+            2,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "1173.2keVγ線と1332.5keVγ線はカスケードの関係にある",
+          "choiceNumbers": [
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.envraddb.go.jp/wp-content/uploads/2020/12/No7.pdf",
+          "excerpt": "電子対消滅放射線（511.0keV）",
+          "choiceNumbers": [
+            1,
+            3,
+            4
+          ]
+        }
+      ],
+      "reviewIssues": []
+    },
+    "emkohyo-EM20251809-q5": {
+      "overlay": {
+        "sourceHash": "733f703858eb1197ee011726a11dccd7b9267dc3fdc3d08fc739cd62414e874d",
+        "correctChoice": 5,
+        "summary": "電荷をもつのはα線・β線、電荷をもたないのはγ線と中性子線で、水素を含む物質で遮蔽するのは中性子線である。㋑γ線・㋺β線・㋩中性子線の肢5が正しい。",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "㋑にα線、㋩にγ線を入れると誤り。α線は荷電粒子（直接電離放射線）で「電荷を持たない」に当たらない。また規制庁資料は水の遮蔽が有効なのは中性子線、γ線には鉛や鉄が有効としており、㋩の遮蔽の記述にγ線は合わない。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "㋺にα線を入れる点は荷電粒子として成り立つが、㋑のβ線は電荷をもつ荷電粒子線であり、「電荷を持たないので物質を透過しやすい」㋑に当てはまらない。ATOMICAはα線・β線を荷電粒子として直接電離放射線に分類している。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "㋑のβ線は荷電粒子で電荷をもたない放射線ではない。㋺の中性子線は電荷をもたないため「それ自身が電荷を持っており」に反する。㋩のγ線は水より鉛や鉄の厚い板で遮蔽するのが有効とされ、水素を含む物質が有効とする記述とも合わない。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "㋑γ線・㋺α線までは成り立つが、㋩のβ線は荷電粒子であり「電荷を持たないので物質を透過しやすい」に当たらない。水素を含む物質（水・パラフィン等）で減速させて遮蔽するのは中性子線であり、β線には当てはまらない。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "ATOMICAはγ線と中性子線を電荷をもたない放射線（間接電離）、α線・β線を荷電粒子線とする。中性子は水・パラフィン等「水素を多く含む物質」との弾性散乱で減速して遮蔽する。㋑γ線、㋺β線（荷電・短飛程）、㋩中性子線で文意がすべて成り立つ。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 電離放射線",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html"
+          },
+          {
+            "title": "日本原子力研究開発機構 ATOMICA 中性子遮へい",
+            "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1549.html"
+          },
+          {
+            "title": "原子力規制委員会 放射線の基礎知識（原子力災害医療 基礎研修資料）",
+            "url": "https://www.nra.go.jp/data/000186586.pdf"
+          }
+        ]
+      },
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html",
+          "excerpt": "直接電離（性）放射線とは、荷電をもつ粒子線（アルファ線、ベータ線など）であって",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html",
+          "excerpt": "エックス（Ｘ）線、 ガンマ線 などの電磁波",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-01-01-01.html",
+          "excerpt": "あるいは電荷を持たない 中性子 線は",
+          "choiceNumbers": [
+            3,
+            5
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/dic/detail/dic_detail_1549.html",
+          "excerpt": "原子番号の小さい元素（水、パラフィン、普通コンクリートなど水素を多く含む物質）の原子核との弾性散乱によってさらに減速させる",
+          "choiceNumbers": [
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.nra.go.jp/data/000186586.pdf",
+          "excerpt": "γ線の遮蔽には、鉛や鉄の厚い板が有効。中性子線の遮蔽には、水やコンクリートが有効。",
+          "choiceNumbers": [
+            1,
+            3,
+            5
+          ]
+        }
+      ],
+      "reviewIssues": []
+    }
+  }
+}

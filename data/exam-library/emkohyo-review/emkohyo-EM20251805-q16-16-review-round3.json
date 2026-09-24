@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3493,
+      "cacheReadInputTokens": 129451,
+      "cacheCreationInputTokens": 16937,
+      "webSearchRequests": 0,
+      "costUSD": 0.23125420000000002,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2590,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q16"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q16": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q16": {
+      "/exam-library/emkohyo-EM20251805/q16-p9-1.webp": "4932fd7214da96aea6251f2b02563f2b002b4f32407da347ffb4ac769ebe79d5"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q16": "33f2d5fc4183d47fb1eac85d0bcd956bfcb76a7f8a2b0d68d8788eaee2e7810f"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q16-16.json",
+  "sourcePackSha256": "e56a9605152c8172d165c4d494e0578a281ca8b76b0341535e85883b9bed6883",
+  "assessment": {
+    "emkohyo-EM20251805-q16": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1: 原子力規制委員会の資料を『紫外可視分光光度計の装置仕様』の実例として挙げているが、この資料は『蛍光吸光度分光測定装置』の仕様書である。200-1000 nm はその『(2)吸光度測定部』の波長範囲にすぎない。『原子力規制委員会の蛍光吸光度分光測定装置の仕様では、吸光度測定部の波長範囲を200～1000 nmとしている』のように、装置名と該当部位を正しく書くこと。また産総研の仕様は『200～1,100㎚の範囲を満たすこと』という最低限の要件であり、装置の範囲そのものを定めたものではない。『指定している』より『満たすことを要件としている』と書く方が正確である。",
+        "肢4: 『これらの範囲を合わせると本問の約200～1000 nmに対応する』は言い過ぎである。FAMIC の成分規格は『紫外部』『可視部』に使うセルの材質を定めているだけで、nm の数値は示していない。そのため紫外域の下端が約200 nm で、そこまで石英製セルが使えるという点は、引用した資料からは直接言えない。『紫外部・可視部(FAMIC)と750 nm以上の近赤外域(日本薬局方)のいずれでも石英製セルが規定されており、紫外から近赤外まで広く使える』のように、資料が支える範囲にとどめて書き直すこと。"
+      ],
+      "sourceIssues": [
+        "肢4: 石英製セルが200 nm付近まで使えること(石英が紫外域の短波長側で光を通すこと)を直接示す政府資料が無い。FAMIC の資料は『紫外部』と書くだけで波長の数値は無く、日本薬局方の近赤外の節は750～2500 nmしか扱っていない。下端を200 nmと結びつけるなら、それを数値で示す資料を追加する。追加しない場合は、上記のとおり本文から数値の対応づけを外すこと。",
+        "肢1: 産総研と原子力規制委員会の調達仕様は、どちらも特定の1台の装置の要件である。『通常200～1000 nm』という一般的な範囲を直接示す資料ではない。本文は『実例』と限定して書いているので致命的ではないが、根拠としては弱いことを認識しておくこと。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

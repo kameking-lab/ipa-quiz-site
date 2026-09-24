@@ -1,0 +1,59 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 4,
+      "outputTokens": 3620,
+      "cacheReadInputTokens": 296717,
+      "cacheCreationInputTokens": 19749,
+      "webSearchRequests": 0,
+      "costUSD": 0.2897514,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2514,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20261802",
+  "ids": [
+    "emkohyo-EM20261802-q13"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261802-q13": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261802-q13": {
+      "/exam-library/emkohyo-EM20261802/q13-p10-0.webp": "85065dd6daa4ce90f316dba536d383caa008698ef1f9870dad3c62fda7c0120e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261802-q13": "ab40df11bb2f4b22d3e84bcf29135c8d7beb0fe07191f3ea701d70892207e681"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261802-q13-13.json",
+  "sourcePackSha256": "8ec27da988cfb2174cb7be2017320f8e8635932e4c483904c79208f120c5c9c2",
+  "assessment": {
+    "emkohyo-EM20261802-q13": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の解説は、第1類物質の製造が特別教育の対象でないという結論を安衛則第36条の列挙から除外されていることだけで説明している。安衛法第59条第3項は、特別教育の義務を『厚生労働省令で定める危険又は有害な業務』に限っている。解説にこの点を加え、特化則にも第1類物質の製造について特別教育の規定が無いことを明記すべきである。そうすれば、法律上の仕組みとして誤りである理由が因果的に閉じる。"
+      ],
+      "sourceIssues": [
+        "安衛則第36条について固定した抜粋は柱書『法第五十九条第三項の厚生労働省令で定める危険又は有害な業務は、次のとおりとする。』だけである。肢2の核心は『第1類物質の製造一般が列挙に無い』という不存在の主張である。見出しと第1・2号だけでは、この主張を直接支えられない。第36条各号を最終号まで取得したテキストにハッシュを固定し、特定化学物質の製造・取扱いに当たる号が無いことを確認した記録を証拠に加える必要がある。化学物質関係で列挙されている号（四アルキル鉛等業務、酸素欠乏危険作業、石綿等）を対照に挙げてもよい。",
+        "『厚生労働省・労働安全衛生法第56・59条』(https://www.mhlw.go.jp/web/t_doc?dataId=74001000) は、claimedExcerpts が0件である。肢2で使う第56条（製造の許可）も第59条第3項（特別教育）も、条文の照合が取れていない。URLはページ番号の無い1ページ分である。このページが第56条・第59条を収録しているかも証拠上確認できない。該当条文を含むページを指定し、第56条第1項と第59条第3項の抜粋を固定すべきである。"
+      ],
+      "needsExternalCheck": [
+        "mhlw法令等データベースの安衛則(dataId=74003000) pageNo=2 に、第36条の全号（最新の改正後）が1ページ内に収まっているか。収まっている場合、特定化学物質・第1類物質の製造に当たる号が無いことを確認する。",
+        "mhlw法令等データベースの安衛法(dataId=74001000) で、ページ番号の無いURLが第56条・第59条を含むページを返すか。含まない場合は、正しい pageNo 付きのURLに差し替える。"
+      ]
+    }
+  }
+}

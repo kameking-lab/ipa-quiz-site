@@ -1,0 +1,127 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 8207,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 35866,
+      "webSearchRequests": 0,
+      "costUSD": 0.45133180000000006,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 6340,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q01-05-raw-response.txt",
+  "rawResponseSha256": "fc305ddd8b5a9f687471e91fe00568942798fa743417de7d5bb81b6adbec5a63",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q1",
+    "emkohyo-EM20261809-q2",
+    "emkohyo-EM20261809-q3",
+    "emkohyo-EM20261809-q4",
+    "emkohyo-EM20261809-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q1": {},
+    "emkohyo-EM20261809-q2": {},
+    "emkohyo-EM20261809-q3": {},
+    "emkohyo-EM20261809-q4": {},
+    "emkohyo-EM20261809-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q1": {
+      "/exam-library/emkohyo-EM20261809/q1-p2-0.webp": "8b2f8baf0a5616b560d7779fbb5c9079ff669c5983d251f90e688fe6eacb44c4"
+    },
+    "emkohyo-EM20261809-q2": {
+      "/exam-library/emkohyo-EM20261809/q2-p2-1.webp": "0061300bcec7941fa51b876d1dcd67d7ce9d19bbe0e62e34436db3b1e924d21d"
+    },
+    "emkohyo-EM20261809-q3": {
+      "/exam-library/emkohyo-EM20261809/q3-p3-0.webp": "8e25260cd74b08bf2903ed9089443d75e38eef32cb0d4a2602837760f6089ba5"
+    },
+    "emkohyo-EM20261809-q4": {
+      "/exam-library/emkohyo-EM20261809/q4-p3-1.webp": "f14344ece049f731dec7e07b03134d6708842d5407108ecf64fd7917ce7ba910"
+    },
+    "emkohyo-EM20261809-q5": {
+      "/exam-library/emkohyo-EM20261809/q5-p4-0.webp": "ae20eb7cac94879f39a5b6d512f384b18bfb2cae7310a9b1b1f47fcfa3553ce3"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q1": "0be796088693c8af129394cf0d63b29c56fd85d7d53ce49110c50b9f14263619",
+    "emkohyo-EM20261809-q2": "5d725d08b620a729019d72ab5fdc1a277c84261ff87be3a6ea2445fe04d5f247",
+    "emkohyo-EM20261809-q3": "36306a68923d44d9571d7272eafc39601f0523992a54d3b47a5b4bcbb5aa1575",
+    "emkohyo-EM20261809-q4": "e938524d9549fca676e15611c19b4782b62a38ad4c22bdf30a91485b07d5edb9",
+    "emkohyo-EM20261809-q5": "c0dff207cb3915d456c22322db63f08844a83a20e4c338385bef8bfb4d34981e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q01-05.json",
+  "sourcePackSha256": "802b0a4da121c8729ee99a90f09e634adce1899d75005e9e07351373fb38bb4d",
+  "assessment": {
+    "emkohyo-EM20261809-q1": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q2": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q3": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20261809-q4": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.promptの冒頭「㋑から㋥の に入る語句」で、原図の空欄枠（□）が半角スペースになっている。これでは何を埋めるのか読み取りにくい。「㋑から㋥の［　　］に入る語句」のように、空欄を明示する記号で表記すべき。本文中の「には ㋑ が最適」などの空欄箇所も同じ扱いにそろえるとよい。",
+        "presentation.promptの引用閉じ括弧が半角「｣」になっている。原図は全角「」」なので修正する（開き括弧は全角「「」で、表記も不統一）。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "肢1・肢2・肢5の理由では「㋑はCZTではない」「㋑はSiではない」を、Ge検出器が最適であることから導いている。しかし根拠のATOMICA抜粋が述べるのは、Geの分解能がNaI(Tl)より優れること（1.33MeVで半値幅2keV以下）だけである。CZT半導体検出器の分解能がGeより劣ることを直接示す政府資料は添付されていない。",
+        "肢5の理由にある「⁶⁰Coの1.17/1.33MeVのγ線」の1.17MeVは、添付資料の抜粋では確認できない（抜粋にあるのは1.33MeVのみ）。"
+      ],
+      "needsExternalCheck": [
+        "CZT半導体検出器のエネルギー分解能がGe半導体検出器より劣り、高エネルギーγ線の高分解能分析にはGeが最適であることを直接述べる政府・公的機関資料（放射能測定法シリーズ等）を確認し、出典に追加する。"
+      ]
+    },
+    "emkohyo-EM20261809-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1：空気密度1.226mg/cm³を条件なしで使っている。出典では「標準状態の乾燥空気の密度」とされているので、条件を併記すべき。なお1.226mg/cm³は約15℃・1気圧の値に相当し、0℃・1気圧なら約1.293mg/cm³である。1.293mg/cm³で計算しても飛程は約3.1mとなり、80cmより大幅に長いという結論は変わらない。",
+        "肢4：「空気中で同エネルギーのβ粒子の約1000倍のイオン対を作る」は出典に直接の記載がない。出典の値はα粒子(5〜10)×10⁶個/m、β粒子(3〜30)×10³個/mで、比は約170〜3300倍になる。「数百〜数千倍（出典値の比）」のように、出典から導ける表現に改めるべき。",
+        "肢5：問題文は「熱中性子線」についての記述である。しかし理由は、高速中性子が軽水素との弾性衝突で最もエネルギーを失うという減速の説明だけで、熱中性子に対して水が鉄より遮へい効果が大きい理由を個別に説明していない。熱中性子の場合は、水素の大きな散乱断面積と¹H(n,γ)捕獲による除去が働くことなど、熱中性子に即した因果を書く必要がある。"
+      ],
+      "sourceIssues": [
+        "肢5：ATOMICA「放射線の遮へい」の抜粋は、高速中性子の減速（軽水素によるエネルギー損失最大）と、遮へい材の一般的な選定（水・パラフィン）を述べるにとどまる。熱中性子線について鉄と水の遮へい効果を比較する記述ではなく、肢5の正誤判断を直接には支えていない。",
+        "肢4：「約1000倍」という数値は、添付のATOMICA「原子核物理の基礎（6）」の抜粋に存在しない。"
+      ],
+      "needsExternalCheck": [
+        "熱中性子線の遮へいにおいて、水（含水素物質）が鉄より遮へい効果が大きいことを直接述べる政府・公的機関資料を確認し、肢5の根拠として追加する。",
+        "ATOMICA「放射線の遮へい」の「標準状態の乾燥空気の密度1.226mg/cm³」について、温度・圧力条件（0℃か15℃か）を確認し、理由中の密度表記に条件を明記する。"
+      ]
+    }
+  }
+}

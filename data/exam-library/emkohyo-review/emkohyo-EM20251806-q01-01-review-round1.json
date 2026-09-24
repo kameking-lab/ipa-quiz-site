@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5042,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 17377,
+      "webSearchRequests": 0,
+      "costUSD": 0.26856879999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3550,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q1"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q1": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q1": {
+      "/exam-library/emkohyo-EM20251806/q1-p2-0.webp": "bb9d054bfe3624b72127e4846c9530b419cbff07e912eb4b7db4422820970bb7"
+    }
+  },
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/aist-stokes-air-p5.png": "5cf4a6674dc9b1a30908b2adc97a824bc4270ce9b6619c468d0edadb4f365333"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251806-q1": "8614bf6d88e1a88ebfeefbbbfd18e384b90af5fecf5aa102e4995dcff492a926"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q01-01.json",
+  "sourcePackSha256": "3f341c6ec038181f7a5ae261f309f88a8a31b0eb6bb43381b6509eaa24b272c5",
+  "assessment": {
+    "emkohyo-EM20251806-q1": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢3の理由「(ρp−ρa)≈ρpで終末速度は空気密度にほぼ依存せず」は、µを空気の粘性係数（Pa·s）とし、空気密度とは別の独立変数として扱う場合にしか成り立たない。この前提が本文に書かれていない。候補が引用するAIST資料はµを動粘性係数（m²/s）とし、分母を18·ρ·µとしている。これを文字どおり読むと、終末速度は(ρp−ρ)/ρ、つまり空気密度にほぼ反比例することになり、候補の主張と食い違って見える。理由文に次を書き足す必要がある。①式中のµは粘性係数（Pa·s）である。②粘性係数は空気密度にほぼ依存しない。③動粘性係数νを使う表記ではµ=ρ·νになる。",
+        "肢5の理由の『空気の粘性係数µ』とAIST資料の『µ＝動粘性係数』は、同じ記号で別の物理量を指している。粘性係数（Pa·s）と明記し、出典側の記号とは違うことを示すべき。"
+      ],
+      "sourceIssues": [
+        "AIST PDF p5（原図で確認済み）の式はVs=r²(ρp−ρ)g/(18·ρ·µ)で、µを『空気の動粘性係数1.5×10⁻⁵[m²/s]』としている。数値は候補の式と一致する（ρ·µ=1.25×1.5×10⁻⁵=1.875×10⁻⁵ Pa·s。d=10µm、ρp=1000で再計算すると約2.9×10⁻³ m/sとなり、資料の3.0×10⁻³ m/sと合う）。ただし変数の取り方が候補と違う。この表記は肢3（空気密度への依存）と肢5（粘性係数への反比例）を直接は支えず、読み方によっては逆の結論を示唆する。出典として使うなら、表記の換算（µ_dyn=ρ·ν）を明示する必要がある。",
+        "AIST資料は『r は粒径』（直径）としたうえでr²を使っており、d²と同じ意味である。ただし記号rは半径と誤読されやすい。『ρpは粒子の比重1000[kg/m3]』も、比重（無次元）と密度（kg/m³）が混同された表記である。",
+        "AIST資料の空気の値（ρ=1.25 kg/m³、ν=1.5×10⁻⁵ m²/s）には温度が書かれていない。1.25 kg/m³は約10℃、ν=1.5×10⁻⁵は約20℃の値に近く、条件がそろっていない。比例関係の結論には影響しないが、物性値を出典として示す際の温度根拠にはならない。",
+        "NRA PDF p96は、液体中での遠心沈降法の結果一覧に付けられたストークス式である（ρf：液体密度）。空気中の落下を扱った資料ではない。抜粋ではµの定義と単位が切れていて確認できない。式の構造（d²、(ρs−ρf)、g、1/µ）から肢1・2・4・5の比例関係を支えることはできるが、『空気中・5µm程度でストークス域が成り立つ』ことは、どちらの資料も直接には支えていない。",
+        "肢3の核心である『空気の粘性係数は空気密度（圧力）にほぼ依存しない』は、添付の政府資料のどちらにも書かれていない。"
+      ],
+      "needsExternalCheck": [
+        "NRA PDF p96でのµの定義と単位（粘性係数Pa·s／g/(cm·s)か、それ以外か）を原PDFの紙面で確認する。",
+        "空気の粘性係数が密度（圧力）にほぼ依存しないことを示す一次資料（政府資料または理科年表などの物性表）を補う。",
+        "粒径5µm程度の粒子が空気中でストークス域（Re≪1）にあり、カニンガム補正が無視できることを示す根拠を補う（任意。本問の正誤判定には影響しない）。"
+      ]
+    }
+  }
+}

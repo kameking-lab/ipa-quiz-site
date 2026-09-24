@@ -1,0 +1,27 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q7"
+  ],
+  "candidateSha256": {
+    "emkohyo-EM20251805-q7": "4e374c3e337f0b63d87eeee9c064abe88a1ad7cfef09cabcb7796082b0a72376"
+  },
+  "sourcePackSha256": "2f7717cfd1eb5e2d5302f1964f502e9e6ab07e03fefa6bf5ab73256b0888b25b",
+  "assessment": {
+    "emkohyo-EM20251805-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "sources[2]（作業環境測定基準、dataId=74087000）は取得できている（status 200）が、claimedExcerpts が0件。問題の前提（許可を受けた場合に混合有機溶剤で検知管方式を使えること）を支える条文の抜粋が一つも照合されていない。条番号の『第13条第3項』も原文で確かめられていない。該当条文の抜粋を付けて照合するか、根拠として使わないなら sources から外すこと。",
+        "どの選択肢の理由文も作業環境測定基準に触れていないため、sources[2] は解説の因果を直接支えていない。見出しだけの参照になっている。"
+      ],
+      "needsExternalCheck": [
+        "作業環境測定基準のうち、混合有機溶剤について許可を受けて検知管方式を使えるとする規定の正確な条・項番号（第13条第3項か第4項か）と、許可を出す主体の表記を原文で確認すること。",
+        "基発第462号の正式な件名・発出年月日が、sources[1] の title の表記と一致するかを確認すること。本文中の換算値変換係数の式は抜粋で照合済み。"
+      ]
+    }
+  }
+}

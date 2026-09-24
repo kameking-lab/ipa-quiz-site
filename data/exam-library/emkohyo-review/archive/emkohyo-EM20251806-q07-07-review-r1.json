@@ -1,0 +1,65 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4040,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14656,
+      "webSearchRequests": 0,
+      "costUSD": 0.1983118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2794,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q07-07-raw-response.txt",
+  "rawResponseSha256": "cd718d84730bd365168848540e3771d63d2883407339b0040d71f36f093262b0",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q7": {
+      "/exam-library/emkohyo-EM20251806/q7-p5-0.webp": "ccccc1c7a34d92f647e953c63745faaa83161f78f2434610c8b9b4d0ff996537"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251806-q07-env-area-flowmeter-p16.png": "bb106c0132d5b18c7314df851d6a651eee61dc966c887524bf5d76db75fdb5b6"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251806-q7": "b880184f01e1a917980cea922b2cc751173391dd1e39a269bb193c965cb5ebd8"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q07-07.json",
+  "sourcePackSha256": "f136dd1019a63e8f95544c5f889659a1b6e725361efcaade4c340babb693f152",
+  "assessment": {
+    "emkohyo-EM20251806-q7": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4: 「管路に取り付けたしぼり機構の前後の差圧を差圧伝送器で測る構成を示している」と書いているが、提示された抜粋（6.4見出し、6.4.1原理）には「差圧伝送器」「しぼり機構の前後」の記述がない。未検証の主張なので削除すること。残すなら6.4.2構成の該当文を抜粋に加えること。肢4の正しさ自体は、6.4.1の「管路の流れの中に絞り（抵抗）を設けると…」と見出しの「（オリフィス、ベンチュリー管）」の組合せで支えられるので、根拠文はそれに絞るべき。",
+        "肢5: 出典式 Q=C·A·√(2gVf(ρf−ρo)/(Af·ρo)) から「Q∝1/√ρo」を導くには、ρf≫ρo（気体ではρf−ρo≈ρf）と、流出係数Cが一定という近似が要る。解説にはこの近似の明記がない。近似を置けば結論（約23 L/min）は支持されるので、近似条件を一文足すこと。",
+        "肢5: 「大気圧101.3kPaで目盛付けした」「校正時と測定時の温度がともに25℃」は問題文にない前提である。前提として明示すること（例: 標準大気圧・25℃で目盛付けされた流量計と仮定）。数値検算: 101.3/76.3=1.3277、√=1.1522、×20=23.04 L/min で結論は正しい。ただし「26.6×√(76.3/101.3)」は丸め後の値で計算すると23.08になる。「≒」でつなぐか、未丸め値26.55を使うこと。"
+      ],
+      "sourceIssues": [
+        "環境省「６．流量計」(900542160.pdf)は排水（液体）流量計の資料で、試料空気（気体）用の流量計を直接扱っていない。肢1・3・4の原理説明には流用できる。一方、肢5の気体密度補正に使う点は、式が流体一般に成り立つことに依拠した推論なので、その旨を解説に明記するのが望ましい。",
+        "肢5: 理想気体の状態方程式の出典（000126413.pdf、廃棄物処理システム実証事業報告書）は一般式の記載のみで、流量計の圧力損失補正を直接支えない。直接根拠としては、01_chpt1-1.pdf p.42の「捕集剤とポンプの間に流量計があるものでは…圧力損失を測定して、流量計の流量補正を行う必要がある」の方が適切。抜粋は照合済みなので、肢5の出典に加えること。",
+        "肢2: 01_chpt1-1.pdf p.42の出典は有害大気汚染物質測定の「中容量以下の試料採取装置」のフロート型面積流量計の校正例で、作業環境測定用ローボリウムエアサンプラーそのものではない。排気側接続（押し込み方式）で湿式ガスメータを使える根拠としては十分だが、対象装置が異なることを解説で断っておくのが望ましい。"
+      ],
+      "needsExternalCheck": [
+        "環境省900542160.pdf PDF14〜15頁の6.4.2構成に「差圧伝送器」「しぼり機構の前後の差圧」という記述が実在するか確認すること（肢4の解説の主張）。"
+      ]
+    }
+  }
+}

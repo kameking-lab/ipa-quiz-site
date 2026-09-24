@@ -1,0 +1,81 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1803,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 25370,
+      "webSearchRequests": 0,
+      "costUSD": 0.2392838,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1569,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251805-q13-15-raw-response.txt",
+  "rawResponseSha256": "120b4eb715550a52fb419c90c5487936ef42fdd577e0ca9686cf7316c2895172",
+  "paperId": "emkohyo-EM20251805",
+  "ids": [
+    "emkohyo-EM20251805-q13",
+    "emkohyo-EM20251805-q14",
+    "emkohyo-EM20251805-q15"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251805-q13": {},
+    "emkohyo-EM20251805-q14": {},
+    "emkohyo-EM20251805-q15": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251805-q13": {
+      "/exam-library/emkohyo-EM20251805/q13-p8-0.webp": "6897f152fa534e6e2b5a42d122ee567cce4efbee129cf430618a1315c1dc078e"
+    },
+    "emkohyo-EM20251805-q14": {
+      "/exam-library/emkohyo-EM20251805/q14-p8-1.webp": "41bd4613d4c741201004b6e8c97908844181dde5c5894c0b2c389f7511dde380"
+    },
+    "emkohyo-EM20251805-q15": {
+      "/exam-library/emkohyo-EM20251805/q15-p9-0.webp": "232ff3db2a44f6f0a84bec0d8fd10e2511dbe1c76612d4b6cb1cb9bc27b0cd11"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20251805-q13": "ed019322631ca16698649691e6d8963a7c96e77cf33bbfc81e160af83b36212e",
+    "emkohyo-EM20251805-q14": "794bc6027fc7361cce6b2ffdfc852907c8030c27e793ad71c458ceb13777af36",
+    "emkohyo-EM20251805-q15": "9392d9d687a433133dc121495789788675b3363d7c1656d4d9353e21396f2c46"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251805-q13-15.json",
+  "sourcePackSha256": "e6e69f15bdcaf4dbcf35ec1b1a91354fa3dd553dc8e6f39dc36d2cb0c40fdec6",
+  "assessment": {
+    "emkohyo-EM20251805-q13": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251805-q14": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    },
+    "emkohyo-EM20251805-q15": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

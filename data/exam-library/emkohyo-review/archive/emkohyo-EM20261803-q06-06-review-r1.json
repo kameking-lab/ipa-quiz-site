@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1267,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14501,
+      "webSearchRequests": 0,
+      "costUSD": 0.1416118,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 968,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q06-06-raw-response.txt",
+  "rawResponseSha256": "21c69c7ad9aa04b096257a0189df235ff63b9d530c9f0c3cfb3c535d694ea6b8",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q6"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q6": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q6": {
+      "/exam-library/emkohyo-EM20261803/q6-p5-0.webp": "cae23f05d95ca5ba9ef82d278f3fcfcffa7b19f8cf5e94c48145ab5d433b2761"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q6": "99612bc01f0b017f6e86589215ad0d9f3b850be201b487b8ab36679f131efb7e"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q06-06.json",
+  "sourcePackSha256": "8b01319ccc47358b892a5e436f6a5473be0c21ddca76d1c09e8e8c537d45b179",
+  "assessment": {
+    "emkohyo-EM20261803-q6": {
+      "status": "FIX",
+      "textIssues": [
+        "presentation.choices[0]（肢1）の「C 測定において」と choices[1]（肢2）の「C 測定とD測定は」「C 測定に係る」には、原図にない半角スペースが「C」と「測定」の間に入っている。原図はいずれも「C測定」で、同じ肢2の中でも「D測定」はスペースなしなので表記が揃っていない。「C測定」に統一すること。公式テキストの「Ⅾ」（U+216E、ローマ数字）を「D」に正規化した点は原図の表示と一致しており問題ない。"
+      ],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2783,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13950,
+      "webSearchRequests": 0,
+      "costUSD": 0.1675238,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2382,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261803-q05-05-raw-response.txt",
+  "rawResponseSha256": "b93a4c053fb8f96215be931f62b2da26605fd11df72276c1e3af27bf88187e9e",
+  "paperId": "emkohyo-EM20261803",
+  "ids": [
+    "emkohyo-EM20261803-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261803-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261803-q5": {
+      "/exam-library/emkohyo-EM20261803/q5-p4-1.webp": "7e36ab7a61d0c11c1ef3d0ea5644b69cc72a5290e0bb311ecba7d2728b903c3e"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261803-q5": "ed21531817531b7b8da95b29d971a997d0f97fb0fbfe9f4f5959903663cae7cc"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261803-q05-05.json",
+  "sourcePackSha256": "bc5b240369ad86c69c7f7f3a085c0f6783cc120d3b836d2f07b32b63e21b425b",
+  "assessment": {
+    "emkohyo-EM20261803-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [
+        "sources[0]の表題に通達番号「基発0410第2号」とあるが、提出された政府資料証拠のどの抜粋・文脈にもこの番号は現れない。証拠で確認できるのは、同ページの[別添2]が「令和2年2月17日／改正 令和5年4月17日／改正 令和6年4月10日 個人サンプリング法による作業環境測定及びその結果の評価に関するガイドライン」であることまでである。通達番号を実ページの記載で確認して一致させるか、番号を外して「令和6年4月10日改正版」とする必要がある。"
+      ],
+      "needsExternalCheck": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00tc8503&dataType=1&pageNo=1 の通達冒頭で、発出日と通達番号が「令和6年4月10日 基発0410第2号」であることを確認する。"
+      ]
+    }
+  }
+}

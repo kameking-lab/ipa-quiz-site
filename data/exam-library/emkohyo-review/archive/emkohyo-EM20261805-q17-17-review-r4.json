@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2398,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 13739,
+      "webSearchRequests": 0,
+      "costUSD": 0.1581358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1554,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261805-q17-17-raw-response.txt",
+  "rawResponseSha256": "39501afa25bd4f381fe8a32ee46afba7f1c573d3e19547f96b9cc1c27714f645",
+  "paperId": "emkohyo-EM20261805",
+  "ids": [
+    "emkohyo-EM20261805-q17"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261805-q17": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261805-q17": {
+      "/exam-library/emkohyo-EM20261805/q17-p10-0.webp": "9373ce2e4539c12b67187a8f08b66759e94ace281a4f3d9b8ecab1fb2c4ae717"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261805-q17": "0813a81eff5b86449297fc90fd583d2e6fd30557d14d6ee681602dd51c60387b"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261805-q17-17.json",
+  "sourcePackSha256": "7449942b05d15db7b1a97a240e0ccfe80f727b2d6e20b33eca7dcdf177a7c396",
+  "assessment": {
+    "emkohyo-EM20261805-q17": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢4の理由「㋺スリットは…モノクロメーター出口で不要な光を除く部品にとどまる」は、日本薬局方2.28円偏光二色性測定法の「モノクロメーター出口のスリットで，異常光を排除する」を一般化したものと読める。しかしこの箇所は、水晶プリズムを装備したダブルモノクロメーターで偏光を作る円二色性分光光度計の記述である。ここでの「異常光」は複屈折による異常光線を指すと解され、一般の吸光光度計のスリットの機能（入口・出口スリットで光束幅と波長帯域幅を規定する）を説明するものではない。また、スリットは出口だけでなく入口にも置かれる。「出口で不要な光を除く部品にとどまる」との限定は不正確なので、「スリットは光束の幅を制限する部品で、単独では光を波長ごとに分光できず、単色光を得るにはモノクロメーター（分光素子）が必要」といった表現に改めるべき。"
+      ],
+      "sourceIssues": [
+        "肢3・肢4の理由「スリットは光の通る幅を絞るだけで単独では光を分光できない」を直接支える記述が、添付の政府資料に見当たらない。環境省マニュアルp.55は波長選択部を「モノクロメータ又は光学フィルタ」とするのみで、抜粋はスリットの機能に触れる前に途切れている。日本薬局方p.125は円二色性分光光度計に固有の記述であり、紫外可視吸光度測定の装置構成の根拠としては適合しない。スリットの役割を明示する一次資料の箇所を示すか、理由の文言を資料の記載範囲（モノクロメーターが波長選択部であること）にとどめる必要がある。",
+        "日本薬局方p.125（2.28円偏光二色性測定法）は、肢2のモノクロメーターがプリズム等で分光するとの説明を傍証しうる。ただし、測定法が異なる（キセノンランプ光源・偏光変調）ため、300 nm吸光度測定の一般的装置構成の根拠として主に用いるのは避け、補助的位置づけとすべき。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

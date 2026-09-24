@@ -1,0 +1,50 @@
+{
+  "paperId": "emkohyo-EM20261808",
+  "range": [
+    20,
+    20
+  ],
+  "draftSha256": "068af637d944a50d8fdc0bc41110bdb020825f41f7e3add17506148dd1a61e9b",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/content/11300000/001096484.pdf",
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/content/11300000/001096484.pdf",
+      "sha256": "26a09bc67e978812871a238a53e5b8f6ac6dbb3eb893244da03efe15906af195",
+      "contentType": "application/pdf",
+      "pages": 26,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20261808-q20",
+          "excerpt": "C：環境気中の鉛濃度(ⅿg/㎥) \n    C：試料液中の鉛濃度(ng/ⅿL) \n    ｑ：試料液量(ⅿL) \n    Ｑ：吸引試料空気量(L)",
+          "matched": true,
+          "pdfPage": 24,
+          "context": "/Lから８０μg/Lの標準系列を調製する。ICP-MSで測定して得られたイオン強度を内部標準法にて検量線を作成した結果、良好な直線性（r=0.9999）が得られた。(３)計算C＝c×ｑ×ଵொ×10-3C：環境気中の鉛濃度(ⅿg/㎥)C：試料液中の鉛濃度(ng/ⅿL)ｑ：試料液量(ⅿL)Ｑ：吸引試料空気量(L)１．１．６定量下限検量線作成で調製した標準液の最小濃度(4μg/L)を5回繰り返し分析して標準偏差(σ)を求め、検出下限値(３σ)及び定量下限値(１０σ)を算出した結果、4.0L/minで10分間捕集"
+        },
+        {
+          "questionId": "emkohyo-EM20261808-q20",
+          "excerpt": "作業環境測定ガイドブック(出版：(公社)日本作業環境測定\n協会)に準じた形式による手順書",
+          "matched": true,
+          "pdfPage": 1,
+          "context": "別紙作業環境測定ガイドブック(出版：(公社)日本作業環境測定協会)に準じた形式による手順書-57-４０１１ベリリウムおよびその化合物（CAS登録番号：７４４０―４１―７、１３０４―５６―９、７７８７―４９―７ほか）１．１ろ過捕集法―誘導結合プラズマ質量分析法（ICP―MS法）１．１．１原理"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 2,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/mhlw-lead-method-title-p1.png",
+      "sha256": "a7e67662b7420cfa94e446a1f2715b403e76e3ced59eea47fcab716ac0110fd2",
+      "description": "厚労省公開PDF p1の正式な表題"
+    },
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/mhlw-lead-air-concentration-p24.png",
+      "sha256": "b60d34dc39ab7513805ed6ad387b6c5a06461983eea7ac0f40b9654adeb4caff",
+      "description": "厚労省 鉛の気中濃度式 C=c×q/Q×10^-3、分析液量・吸引空気量の定義、PDF p24"
+    }
+  ]
+}

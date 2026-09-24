@@ -1,0 +1,61 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4665,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17763,
+      "webSearchRequests": 0,
+      "costUSD": 0.23566779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3393,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q05-05-raw-response.txt",
+  "rawResponseSha256": "56be8dbcda64e704328a1f8a84c3e2d1ea2b39b3dc8ae2dd0cfb7aea9f61ac0a",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q5": {
+      "/exam-library/emkohyo-EM20261809/q5-p4-0.webp": "ae20eb7cac94879f39a5b6d512f384b18bfb2cae7310a9b1b1f47fcfa3553ce3"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q5": "308830eb602a14342d7b5356786f75335ceffcfa5365d0075479d1cbaf5f6011"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q05-05.json",
+  "sourcePackSha256": "3d8a9eefa9124e938ecab70d352fb64d2d2f5c3ca600ed34c7d2b42c9241b817",
+  "assessment": {
+    "emkohyo-EM20261809-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5: 比較指標にJENDL-4.0の0.0253eV全断面積を使っているが、H-natの30.60bのうち30.27bは弾性散乱（(n,elastic)）で、吸収（捕獲）はごく一部にすぎない。熱中性子はすでに熱平衡エネルギーにあるため、弾性散乱だけでは減速も消滅も起きない。全断面積で比較できるのは狭いビームの減弱（ビームから外れること）という意味に限られる。この前提を明記しないまま『散乱と吸収で除かれる』と書くと、吸収による除去と誤読される。",
+        "肢5: 吸収断面積だけで比べると、単位体積あたりではFe（σa≈2.56b、原子数密度≈0.0849×10²⁴/cm³で約0.22cm⁻¹）が水（H 2×0.332b、約0.022cm⁻¹）を上回る。現行の説明は『吸収に使う物質に軽水を挙げている』というATOMICAの記述と全断面積の計算を並べて因果をつないでいるが、この部分は物理的に不正確。水が有利とされる根拠（水素による散乱・拡散と吸収の組合せ、狭いビームでの全断面積減弱）を区別して書き直すべき。",
+        "肢5: 比較が1gあたり（質量基準）だけで示されている。遮へいは通常厚さ（体積）基準で比べるため、体積基準のマクロ全断面積も併記すべき。水≈65.2b×0.0334×10²⁴/cm³≈2.18cm⁻¹、Fe≈13.9b×0.0849×10²⁴/cm³≈1.18cm⁻¹で、体積基準でも水が約1.8倍となり結論は維持される。なお、質量基準の数値（65.2b、3.62、0.249、約14.5倍）は検算で一致した。",
+        "肢1（軽微）: 資料の1.226mg/cm³は『標準状態』と書かれているが、この値は15℃・1気圧の空気密度に相当する（0℃・1気圧なら約1.293mg/cm³）。1.293を使っても0.4g/cm²÷1.293mg/cm³≈3.1mとなり、『3m以上で80cm程度は誤り』という結論は変わらない。ただし約3.3mは近似値であることを示すのが望ましい。また、g/cm²単位の飛程が物質によらずほぼ一定であるという換算の前提を一言添えるべき。"
+      ],
+      "sourceIssues": [
+        "肢5: 政府資料（JENDL-4.0の断面積表、原子量表、ATOMICA用語辞書『中性子遮蔽体』）のいずれも『熱中性子に対して鉄より水の遮へい効果が大きい』ことを直接には述べていない。JENDLは数値の出典にとどまり、比較結論は解説側の独自計算である。ATOMICA『中性子遮蔽体』も軽水を吸収材の一例として挙げるだけで、鉄との比較はしていない。",
+        "肢1: ATOMICA『放射線の遮へい』の『1MeVのベータ線の飛程はおよそ0.4g/cm²』は、アルミニウム板による遮へいの文脈で書かれている。空気中の飛程に換算してよいこと（質量飛程が物質によらずほぼ一定であること）は資料が直接支えていない。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

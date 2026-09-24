@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1861,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 17463,
+      "webSearchRequests": 0,
+      "costUSD": 0.1771878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1777,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q07-07-raw-response.txt",
+  "rawResponseSha256": "305ea3377f786f992b74bab0415b0d43e402e13a3ef787873a476e4224affac6",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q7": {
+      "/exam-library/emkohyo-EM20261809/q7-p5-0.webp": "3f4f849195ee891ab28f0d27426006465561d66ae38812863dd5025f7fab5e83"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/atomica-09-04-03-04-fig1-survey-energy.png": "ab82f52e6b94235f79c6a6d8a071913dc020185aa210a3b31934e972fa4c162f"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20261809-q7": "d998752a3a43db2e4598891f54d338275b16bb5c357e304084cc2bd9095ff834"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q07-07.json",
+  "sourcePackSha256": "223afeb826d4bb4153a513f4b68c121db14673bdcd52f5d8d7b1b523ff3a9dad",
+  "assessment": {
+    "emkohyo-EM20261809-q7": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

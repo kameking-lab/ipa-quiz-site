@@ -1,0 +1,58 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2067,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14022,
+      "webSearchRequests": 0,
+      "costUSD": 0.1537798,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1405,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261808-q03-03-raw-response.txt",
+  "rawResponseSha256": "d4413e37b5728209bb866bda3b2b4b9426fb06558716557f21677289b0ef58a5",
+  "paperId": "emkohyo-EM20261808",
+  "ids": [
+    "emkohyo-EM20261808-q3"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261808-q3": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261808-q3": {
+      "/exam-library/emkohyo-EM20261808/q3-p3-0.webp": "b09c5b77ee43eb15aa4487bf2240236cdb212d23f9f09e7f09a89589458ab46f"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261808-q3": "bcd5727b1aaf5b9e27c454f02c84edd75a372e94ac7da26a51d16217ff2c56fb"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261808-q03-03.json",
+  "sourcePackSha256": "db00b033d26e78a6cc8759a752f15014072d29e328cc0146c9895474de2da1c3",
+  "assessment": {
+    "emkohyo-EM20261808-q3": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢1の理由は、蛍光物質についての農研機構の記述（励起光を吸収して一旦励起状態となる）を、吸光光度分析法一般へ「農研機構の解説のとおり」として転用している。この転用から「吸収する側は基底状態の分子・イオン」と導いている。結論自体は正しい。ただし出典の記述対象は蛍光物質であり、吸光光度分析法の原理を述べたものではない。この文言では出典の範囲を超えた帰属に読める。「一般に光吸収は基底状態から励起状態への遷移であり（蛍光の解説でも同様に説明される）」のように、推論であることが分かる書き方に改めるべき。"
+      ],
+      "sourceIssues": [
+        "肢1の核心である「吸光光度分析法で光を吸収するのは基底状態の分子・イオン」を直接述べた政府資料が無い。日本薬局方2.24の抜粋は「波長200nmから800nmまでの範囲の光が、物質により吸収される度合いを測定し」までで、基底状態への言及が無い。補助のJ-STAGE（化学と教育、政府資料ではない）の抜粋も「電子がエネルギーの高い空軌道に遷移する」とあるだけで、基底状態とは明言していない。吸光の始状態を基底状態と明記する資料を追加するか、推論である旨を理由中に明示する必要がある。",
+        "肢1の理由にある「分子やイオン」は日本薬局方2.24では「物質」とのみ記載されており、分子・イオンという限定は出典に直接の記述が無い（肢の文言に合わせた補足にとどまる）。"
+      ],
+      "needsExternalCheck": []
+    }
+  }
+}

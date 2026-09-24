@@ -1,0 +1,65 @@
+{
+  "paperId": "emkohyo-EM20251806",
+  "range": [
+    1,
+    1
+  ],
+  "draftSha256": "4c76815afd8379ea50d908082e2897a03ecf481e8475e59f404221352189aeeb",
+  "sources": [
+    {
+      "url": "https://www.nra.go.jp/data/000269726.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nra.go.jp/data/000269726.pdf",
+      "sha256": "a85d3a0167f3c3f5ec506d712b7b64dad7510e507404d53208b46e4824470bb0",
+      "contentType": "application/pdf",
+      "pages": 30,
+      "revisionInfo": null,
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251806-q1",
+          "excerpt": "ここで、μ は気体の粘性係数、D は粒子直径、u は粒子速度である",
+          "matched": true,
+          "pdfPage": 6,
+          "context": "はどれか。気体中の微小な球状粒子が自由落下するときの沈降速度は、粒子にかかる重力と粒子周囲の気流による抵抗力との釣り合いによって決まると考えられ、ストークス近似によれば、抵抗力は3μDuと与えられる。ここで、μは気体の粘性係数、Dは粒子直径、uは粒子速度である。なお、粒子の密度は気体密度よりも十分に大きく、浮力の影響は無視できるものとする。このとき、同じ材質の粒子では直径が10倍になると、沈降速度はあああ倍となる。１．1/100２．1/10３．1４．10５"
+        },
+        {
+          "questionId": "emkohyo-EM20251806-q1",
+          "excerpt": "粒子の密度は気体密度よりも十分に大きく、浮力の影響は無視できる",
+          "matched": true,
+          "pdfPage": 6,
+          "context": "にかかる重力と粒子周囲の気流による抵抗力との釣り合いによって決まると考えられ、ストークス近似によれば、抵抗力は3μDuと与えられる。ここで、μは気体の粘性係数、Dは粒子直径、uは粒子速度である。なお、粒子の密度は気体密度よりも十分に大きく、浮力の影響は無視できるものとする。このとき、同じ材質の粒子では直径が10倍になると、沈降速度はあああ倍となる。１．1/100２．1/10３．1４．10５．100-4-【No.6】次の図のように磁束密度B（N/A･m）の一様"
+        }
+      ]
+    },
+    {
+      "url": "https://www.nra.go.jp/data/000447909.pdf",
+      "status": 200,
+      "finalUrl": "https://www.nra.go.jp/data/000447909.pdf",
+      "sha256": "9666b04c6c780b5b575bcc5b742f156adee1b91569a3c6d66c8d39484a8713bc",
+      "contentType": "application/pdf",
+      "pages": 108,
+      "revisionInfo": null,
+      "sourceMode": "sha-pinned-text-cache",
+      "cachedTextSha256": "83e186f2728a6b1b72545f5691ddc6ab5d215829ed1ae2205c1b924eac359673",
+      "claimedExcerpts": [
+        {
+          "questionId": "emkohyo-EM20251806-q1",
+          "excerpt": "ストークスの式：V＝ ｄ2（ρｓ―ρｆ）ｇ 18μ",
+          "matched": true,
+          "pdfPage": 96,
+          "context": "240.9991.11110.0000802.6240.9991.1110.70.0000392.6240.9991.1110.50.0000202.6240.9991.11165.1820.3383ストークスの式：V＝ｄ2（ρｓ―ρｆ）ｇ18μNo.22122991No.22122991484950515253545556沈降速度（遠⼼沈降法）結果⼀覧V：沈降速度（cm/s)d：粒⼦径（cm）ρs：粒⼦密度（g/cm3）ρf：液体密度（g/"
+        }
+      ]
+    }
+  ],
+  "claimedExcerpts": 3,
+  "missingEvidenceQuestions": [],
+  "unverifiedExcerpts": 0,
+  "sourcePageImages": [
+    {
+      "path": "docs/evidence/emkohyo-choice-sources/nra-gas-stokes-p6.png",
+      "sha256": "b1c0583f7b10a96aa3159e20f4562aa2fc9d6bc0996c5e79befbd1895d782ea4",
+      "description": "原子力規制庁2016年度専門試験 PDF p6：気体中の微粒子と浮力無視の前提。印刷の抗力係数にはπの欠落があるため、ここでは比例関係だけに用いる。原PDF SHA256=a85d3a0167f3c3f5ec506d712b7b64dad7510e507404d53208b46e4824470bb0"
+    }
+  ]
+}

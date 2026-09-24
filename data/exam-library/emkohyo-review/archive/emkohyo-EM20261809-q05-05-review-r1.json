@@ -1,0 +1,62 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 3514,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 15638,
+      "webSearchRequests": 0,
+      "costUSD": 0.19564779999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2584,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20261809-q05-05-raw-response.txt",
+  "rawResponseSha256": "cd4d7ca74dc81f9f0dd34a3d141ea2f3b08d7915c4bcd10de36a125ff93ee24a",
+  "paperId": "emkohyo-EM20261809",
+  "ids": [
+    "emkohyo-EM20261809-q5"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20261809-q5": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20261809-q5": {
+      "/exam-library/emkohyo-EM20261809/q5-p4-0.webp": "ae20eb7cac94879f39a5b6d512f384b18bfb2cae7310a9b1b1f47fcfa3553ce3"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-EM20261809-q5": "bedefc2689c3fc9662234ec94e6977568ae0e861a6ca3abe4ec4222e7a17f130"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20261809-q05-05.json",
+  "sourcePackSha256": "3723523431708adf791dd6ce49a04353de2f148dc73a6293d6ebf814bb1727f4",
+  "assessment": {
+    "emkohyo-EM20261809-q5": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢5の理由に熱中性子線に固有の因果説明がない。引用している根拠（水素を多く含む軽元素が有効、鉛や鉄は効率が良くない）は中性子線一般、主に高速中性子の減速についての説明である。問題文は「熱中性子線に対しては」と限定している。熱中性子では遮へいの機序が減速ではなく散乱と吸収による除去になる。水が鉄より遮へい効果が大きい理由を、この機序に沿って書く必要がある。具体的には、水素の熱中性子散乱断面積が約20 bと大きく、水の巨視的全断面積が鉄より大きいことを示す。現状はその因果が欠けている。",
+        "肢5の結論が「正しい記述として扱われる」という伝聞調で終わっている。記述が正しい根拠を断定的に示していない。",
+        "summaryの「空気中の最大飛程は数m」は資料から直接導かれていない。資料が支えるのは1MeVで約0.4g/cm²（約3.3m）という下限側の値だけである。2.28MeVの⁹⁰Yは概算で約1.1g/cm²、空気中で約9mになり、「数m」はやや過小寄りである。肢1が誤りという結論には影響しないが、「3m以上（概算で約9m）」など、資料と整合する表現にするのが望ましい。"
+      ],
+      "sourceIssues": [
+        "肢5の根拠資料2点は、いずれも熱中性子線について直接述べていない。消防庁「参考資料3 Q&A」とATOMICA「放射線防護上の遮へい」は、どちらも中性子線一般の遮へい材の説明である。熱中性子線で水が鉄より遮へい効果が大きいことを直接支える政府・公的資料がない。"
+      ],
+      "needsExternalCheck": [
+        "熱中性子（0.0253 eV）に対する水と鉄の巨視的全断面積（散乱＋吸収）を公的な核データで確認する。候補はJAEA核データ（JENDL）等。参考値は、水素の散乱断面積約20 b・吸収0.33 b、鉄の散乱断面積約11 b・吸収2.56 b。確認したうえで肢5の理由を書き直す。",
+        "熱中性子の遮へい・除去に言及した公的資料（ATOMICAの中性子遮へい・減速材関連ページ等）を探し、肢5の根拠を差し替えるか追加する。"
+      ]
+    }
+  }
+}

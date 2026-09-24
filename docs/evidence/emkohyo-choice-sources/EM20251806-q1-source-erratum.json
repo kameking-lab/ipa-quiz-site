@@ -1,0 +1,12 @@
+{
+  "questionId": "emkohyo-EM20251806-q1",
+  "sourceUrl": "https://www.nra.go.jp/data/000269726.pdf",
+  "sourcePdfSha256": "a85d3a0167f3c3f5ec506d712b7b64dad7510e507404d53208b46e4824470bb0",
+  "sourcePage": 6,
+  "sourcePageImage": "docs/evidence/emkohyo-choice-sources/nra-gas-stokes-p6.png",
+  "sourcePageImageSha256": "b1c0583f7b10a96aa3159e20f4562aa2fc9d6bc0996c5e79befbd1895d782ea4",
+  "issue": "The printed formula gives 3μDu for Stokes drag; the usual coefficient is 3πμDu. The original is useful for the gas-particle context, variable definitions and proportionality, but its numerical coefficient must not be taught as correct.",
+  "candidateTreatment": "The accepted explanation gives only drag proportional to viscosity, particle diameter and speed. It does not repeat the printed numerical coefficient.",
+  "reviewReceipt": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q01-01-review.json",
+  "acceptance": "Independent claude-opus-5-5 PASS with zero issues at the accepted candidate/source hashes."
+}

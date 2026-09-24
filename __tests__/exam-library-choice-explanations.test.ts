@@ -73,6 +73,7 @@ describe("structured choice explanations", () => {
       "https:///www.mhlw.go.jp/example",
       "https://www.exam.or.jp/example.pdf",
       "https://www.jaish.gr.jp/example",
+      "https://www.jstage.jst.go.jp/example",
       "https://webdesk.jsa.or.jp/example.pdf",
       "https://go.jp.example.com/phishing",
       "https://go.jp/",
@@ -135,5 +136,25 @@ describe("structured choice explanations", () => {
     for (const url of ["https://user:pass@www.mhlw.go.jp/", "https://www.mhlw.go.jp:8443/", "javascript:alert(1)"]) {
       expect(isGovernmentPrimarySourceUrl(url)).toBe(false);
     }
+  });
+
+  it("renders source-limited EM drafts only with explicit provisional metadata", () => {
+    const emQuestion = { ...question, id: "emkohyo-TEST-q1" };
+    const provisional = {
+      ...valid,
+      sources: [],
+      provisionalReview: true,
+      lastCheckedAt: "2026-09-25",
+    };
+    expect(parseExamChoiceExplanation(provisional, emQuestion, sourceHash)).toMatchObject({
+      provisionalReview: true,
+      lastCheckedAt: "2026-09-25",
+      sources: [],
+    });
+    expect(parseExamChoiceExplanation(provisional, question, sourceHash)).toBeNull();
+    expect(parseExamChoiceExplanation({ ...provisional, lastCheckedAt: "2026-02-31" }, emQuestion, sourceHash)).toBeNull();
+    expect(parseExamChoiceExplanation({ ...provisional, provisionalReview: false }, emQuestion, sourceHash)).toBeNull();
+    expect(parseExamChoiceExplanation({ ...provisional, summary: `${valid.summary} 要確認` }, emQuestion, sourceHash)).toBeNull();
+    expect(parseExamChoiceExplanation({ ...provisional, sources: [{ title: "学術誌", url: "https://www.jstage.jst.go.jp/example" }] }, emQuestion, sourceHash)).toBeNull();
   });
 });

@@ -1,0 +1,485 @@
+{
+  "candidateModel": "claude-opus-5-5",
+  "paperId": "emkohyo-EM20251805",
+  "governmentSourceCandidates": [
+    {
+      "title": "厚生労働省 作業環境測定基準",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74087000"
+    },
+    {
+      "title": "厚生労働省 有機溶剤の測定技術に係る資料",
+      "url": "https://www.mhlw.go.jp/shingi/2007/11/dl/s1101-11f.pdf"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 酢酸メチル",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS 酢酸エチル",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/141-78-6.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS トルエン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-88-3.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS n-ヘキサン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS シクロヘキサノン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS イソプロピルアルコール",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html"
+    },
+    {
+      "title": "厚生労働省 モデルSDS アセトン",
+      "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+    }
+  ],
+  "questions": {
+    "emkohyo-EM20251805-q6": {
+      "overlay": {
+        "sourceHash": "b4f4976754177c3b79331b6f2c5b68817b0964dc06dbb0b8548f42a3b78fec95",
+        "correctChoice": 4,
+        "summary": "理論サンプリング速度はSR＝D×A/Lで、拡散長Lには反比例するため、比例とした4が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の報告書はDを捕集対象物質の拡散係数と定義する。日本原子力研究開発機構の技術資料も空気中の水素・酸素・アルゴンについて化学種ごとの相互拡散係数を扱っており、Dは対象気体や条件で変わる。物質によって値が異なるという記述は正しい。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の報告書は理論的なサンプリング速度をD・A/Lと示している。Dはこの式の分子にあり、AとLを一定にすればDを2倍にしたとき速度も2倍になる。拡散係数に比例するという記述は正しい。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の図はAを拡散面積と示す。問題文の拡散面断面積（A）を2倍にし、Dと拡散長Lを一定にすると、理論式D・A/Lから速度も2倍となる。これは式から導く比例関係であり、問題の記述は正しい。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "厚生労働省の図はLを拡散長と示す。同報告書の理論式D・A/LではLが分母なので、DとAを一定にしてLを2倍にすると速度は半分になる。これは式から導く反比例関係であり、『比例する』とした記述は誤り。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "厚生労働省の報告書は理論値D・A/Lと実際のサンプリング速度には若干の差があり、実験値があればそれを優先すると明記している。したがって理論値と実験値が異なる場合があるという記述は正しい。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 個人サンプラー測定法の基盤整備報告書",
+            "url": "https://www.mhlw.go.jp/content/000616847.pdf"
+          },
+          {
+            "title": "日本原子力研究開発機構 気体の拡散係数に関する技術報告",
+            "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf"
+          }
+        ]
+      },
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "サンプリング速度（D・A/L）は",
+          "choiceNumbers": [
+            2,
+            3,
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "拡散長（L）",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "拡散面積(A)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/000616847.pdf",
+          "excerpt": "実際のサンプリング速度は、この値と若干異なる",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://jopss.jaea.go.jp/pdfdata/JAEA-Data-Code-2013-011.pdf",
+          "excerpt": "空気中の水素ガス、酸素、アルゴン拡散係数",
+          "choiceNumbers": [
+            1
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20251805-q7": {
+      "overlay": {
+        "sourceHash": "4ce4c86ce6c80987df3e11ee9874acf7dd5ef249e6a1a5f839506793f250605f",
+        "correctChoice": 4,
+        "summary": "換算値C＝Σ(Ci/Ei)＝0.69を併行測定点の検知管指示値15ppmで割り、0.0460ppm⁻¹となる",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "0.0058に指示値15ppmを掛けると約0.087になり、換算値0.69（10/20＋14/200＋8/200＋4/50）と合いません。正しい0.0460のほぼ1/8で、換算値÷指示値の定義式からは出ない値です。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "0.0115×15ppm＝約0.17で、正しい換算値0.69の1/4にしかなりません。4成分それぞれを管理濃度で割った比の和を分子にすれば、この値にはならないので誤りです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "0.0230×15ppm＝0.345で、換算値0.69のちょうど半分です。トルエン0.50、酢酸エチル0.07、1,1,1-トリクロロエタン0.04、キシレン0.08の和を正しく取れば、この値にはなりません。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "作業環境評価基準の式C＝C1/E1＋C2/E2＋…からC＝0.50＋0.07＋0.04＋0.08＝0.69です。基発第462号の式により0.69÷15ppm＝0.0460ppm⁻¹となり、これが公式正答です。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "0.0920×15ppm＝1.38で、換算値0.69の2倍になってしまいます。換算値変換係数は、併行測定点の換算値を同じ点の検知管指示値で割って求めるもので、この値にはなりません。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "厚生労働省 作業環境評価基準（昭和63年労働省告示第79号）第2条第4項 換算値の式",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1"
+          },
+          {
+            "title": "厚生労働省 相対濃度指示方法による測定において使用する質量濃度変換係数及び妨害物質がある場合における検知管方式による測定の具体的方法について（平成2年基発第462号）",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2159&dataType=1&pageNo=1"
+          }
+        ]
+      },
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74088000&dataType=0&pageNo=1",
+          "excerpt": "C＝(C 1 ／E 1 )＋(C 2 ／E 2 )＋……",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tb2159&dataType=1&pageNo=1",
+          "excerpt": "換算値／併行測定点における検知管の指示値",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20251805-q8": {
+      "overlay": {
+        "sourceHash": "5084293910d40aa29d2e95b76541745407efd260b0d9022f16dec7b9f92aab59",
+        "correctChoice": 4,
+        "summary": "国立環境研究所のメチルシリコンカラムの測定例は沸点順の溶出を示す。候補のモデルSDSの沸点を比較すると155.6℃のシクロヘキサノンが最も高い",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "酢酸メチルの沸点は厚生労働省モデルSDSで56.8℃です。国立環境研究所のメチルシリコンカラムの実験例では沸点順に溶出しました。155.6℃のシクロヘキサノンより約99℃低く、本問の最長保持には当たりません。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "イソプロピルアルコールの沸点はモデルSDSで82.3℃です。国立環境研究所のメチルシリコンカラムでの沸点順溶出という測定例に照らし、155.6℃のシクロヘキサノンより最長保持となる根拠はありません。極性による細かな順序は断定しません。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "n-ヘキサンの沸点はモデルSDSで69℃、シクロヘキサノンは155.6℃です。国立環境研究所のメチルシリコンカラムの沸点順溶出という測定例と合わせると、この約87℃低い成分を最長保持とする選択はできません。"
+          },
+          {
+            "number": 4,
+            "verdict": "correct",
+            "reason": "シクロヘキサノンの沸点は厚生労働省モデルSDSで155.6℃、他の4候補は56～82.3℃です。国立環境研究所のメチルシリコンカラムでは沸点順の溶出が観察されており、本問で最後に出ると判断する肢4は公式正答と一致します。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "アセトンの沸点はモデルSDSで56℃です。国立環境研究所のメチルシリコンカラムでは沸点順の溶出が観察されています。酢酸メチルとの細かな順番は断定しませんが、155.6℃のシクロヘキサノンより最長保持になるとは判断できません。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "国立環境研究所特別研究報告 SR-39-2001 メチルシリコンカラムにおける沸点順の溶出（PDF 19ページ）",
+            "url": "https://www.nies.go.jp/kanko/tokubetu/pdf/sr39.pdf"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS シクロヘキサノン（沸点155.6℃）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS イソプロピルアルコール（沸点82.3℃）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS n-ヘキサン（沸点69℃）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS 酢酸メチル（沸点56.8℃）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html"
+          },
+          {
+            "title": "厚生労働省 職場のあんぜんサイト モデルSDS アセトン（沸点56℃）",
+            "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html"
+          }
+        ]
+      },
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://www.nies.go.jp/kanko/tokubetu/pdf/sr39.pdf",
+          "excerpt": "メチルシリコンでは，スチレンと１，２",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://www.nies.go.jp/kanko/tokubetu/pdf/sr39.pdf",
+          "excerpt": "沸点順に溶出するため",
+          "choiceNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/79-20-9.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 56.8℃",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-63-0.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 82.3℃",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/110-54-3.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 69 ℃",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/108-94-1.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 155.6℃",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://anzeninfo.mhlw.go.jp/anzen/gmsds/67-64-1.html",
+          "excerpt": "沸点、初留点及び沸騰範囲 56℃",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ]
+    },
+    "emkohyo-EM20251805-q9": {
+      "overlay": {
+        "sourceHash": "2c8a2d0945a6d0b3a09a4cea1aae0e98cfbeff435ac3e1b44d4e33008852ae0d",
+        "correctChoice": 5,
+        "summary": "ECDではキャリヤーガス・メイクアップガスとして窒素が標準的に使われるため、使用できないとする5が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "水素は粘性が低く、溶質の拡散も速いため、高い線速度でも段高さが増えにくいです。引火性への安全対策を前提に、ヘリウムや窒素とともにキャリアガスとして使われます。記述は正しく正答ではありません。"
+          },
+          {
+            "number": 2,
+            "verdict": "incorrect",
+            "reason": "渦流拡散はvan Deemter式のA項で、充填剤粒子の間をガスが長さの異なる経路で流れ、成分帯が広がる現象です。ピーク幅に影響するという記述は正しいです（開管キャピラリーではほぼ無視できます）。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "理論段高さは、縦拡散項や物質移動項を通じて、キャリアガス中の溶質の拡散係数に左右されます。窒素・ヘリウム・水素では最適線速度や実用流速での段高さが異なるため、理論段数はガス種と関係します。記述は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "環境省付表5は、内径0.2～約0.5mmのカラムで線速度を毎秒20～40cmとしています。内径0.3mmでは断面積約7.1×10⁻⁴cm²から約0.85～1.7mL/minとなり、1～3mL/minと同じ桁で整合します。記述は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "correct",
+            "reason": "環境省付表5は、キャリヤーガスをヘリウム又は窒素（JIS K1107の1級）とし、電子捕獲型検出器のメイクアップガスに窒素を指定しています。窒素はECDで普通に使われるガスで、使用できないとする記述が誤りの公式正答です。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "環境省 付表5 シマジン及びチオベンカルブの測定方法（キャリヤーガス・キャピラリーカラム線速度・電子捕獲型検出器の窒素）",
+            "url": "https://www.env.go.jp/kijun/wt_a05.html"
+          }
+        ]
+      },
+      "reviewIssues": [
+        "【HOLD】肢2（溶出ピーク幅がキャリアガスの渦流拡散の影響を受ける）と肢4（内径0.3mmキャピラリーで1〜3mL/min）を直接述べた政府一次資料がない。日本薬局方（JP19 001689414.pdf）は理論段数が移動相等で変化すること（肢3）と検出器の種類は述べるが、渦流拡散・適正流量の記述はない。環境省付表の線速度20〜40cm/sからの換算は約0.85〜1.7mL/minで設問の数値と一致しない。JIS K 0114 等は政府サイト上で本文照合できない。 第2パス（2026-09-24）: 農研機構のGC解説（naro.go.jp）もキャリヤーガス種と注入法を述べるのみで、渦流拡散や内径0.3mmカラムの適正流量には触れず、保留を継続する。",
+        "肢5の判断根拠（ECDで窒素を使用できること）と、肢4の流量の目安は、環境省付表5の本文で確認した。肢4の流量は、付表5の線速度20～40cm/sから内径0.3mmで約0.85～1.7mL/minと自前で換算したもので、1～3mL/minという数値そのものを記載した政府資料は確認できていない。",
+        "肢1（水素キャリア）、肢2（渦流拡散）、肢3（理論段数とガス種）を直接述べた政府一次資料の本文は確認できなかった。これらはGCの一般理論（van Deemter式）に依拠している。"
+      ]
+    },
+    "emkohyo-EM20251805-q10": {
+      "overlay": {
+        "sourceHash": "b50b9762ddfdf2eab63e486842c88ce6e597f81dca6021c6e41bcb4779fc8da0",
+        "correctChoice": 2,
+        "summary": "FIDは炭化水素などを高感度で検出する一方、水・二酸化炭素などの無機ガスには通常応答しない。『ほとんどの無機化合物を検出できる』とする2が誤り",
+        "choices": [
+          {
+            "number": 1,
+            "verdict": "incorrect",
+            "reason": "日本原子力研究開発機構の解説では、ECDセル内のβ線源で生じる電流がハロゲン化合物による電子捕獲で減少すること、線源には63Niが多く使われることを示しています。設問の原理と高感度対象は一致し、誤りの肢ではありません。"
+          },
+          {
+            "number": 2,
+            "verdict": "correct",
+            "reason": "環境省の水素炎方式の実証資料では、炭化水素は高感度に検出する一方、H2・NO・CO・CO2・H2Oなどの無機ガスは検出の妨害をしないと記されています。水や二酸化炭素など代表的な無機ガスまで広く検出できるという本肢の後半が誤りです。"
+          },
+          {
+            "number": 3,
+            "verdict": "incorrect",
+            "reason": "設問にあるTCDの熱伝導度差という検出原理は、特定の元素だけと反応させる方式ではありません。農研機構はTCDを『比較的汎用性の高い』検出器に分類し、厚生労働省の規格も窒素を導入してTCDの感度を確認しています。特定物質への選択性がないという本肢は正しいです。"
+          },
+          {
+            "number": 4,
+            "verdict": "incorrect",
+            "reason": "国立環境研究所はGCと高分解能MSを組み合わせた装置について、分子量測定、元素組成、構造解析などの定性分析が可能と説明しています。得られる質量分析の情報を未知成分の同定に使えるという本肢の趣旨は正しいです。"
+          },
+          {
+            "number": 5,
+            "verdict": "incorrect",
+            "reason": "労働安全衛生総合研究所はPIDが紫外線で化学物質をイオン化し、電流値から濃度を見積もると説明します。環境省の有害大気汚染物質測定方法マニュアルも、PIDは芳香族炭化水素類や不飽和炭化水素類に高感度と記し、有機化合物の多くを検出する本肢と整合します。"
+          }
+        ],
+        "sources": [
+          {
+            "title": "日本原子力研究開発機構 ATOMICA ECDの原理",
+            "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html"
+          },
+          {
+            "title": "環境省 VOC測定技術実証報告書 実証対象のFID方式装置の特長",
+            "url": "https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf"
+          },
+          {
+            "title": "農研機構 ガスクロマトグラフの汎用検出器",
+            "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/gc_genri/index.html"
+          },
+          {
+            "title": "厚生労働省 食品、添加物等の規格基準 窒素のTCD測定",
+            "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=102"
+          },
+          {
+            "title": "国立環境研究所 ガスクロマトグラフ高分解能質量分析装置",
+            "url": "https://www.nies.go.jp/pr/publications/news/8/8-4/8-4-11.html"
+          },
+          {
+            "title": "労働安全衛生総合研究所 PIDによる化学物質測定",
+            "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2020/139-column-1.html"
+          },
+          {
+            "title": "環境省 有害大気汚染物質測定方法マニュアル PIDの対象物質",
+            "url": "https://www.env.go.jp/content/900402504.pdf"
+          }
+        ]
+      },
+      "reviewIssues": [],
+      "sourceEvidence": [
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html",
+          "excerpt": "ハロゲン化合物などの親電子性化合物の分子が流入すると、電子を捕獲して負イオンが出来る",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://atomica.jaea.go.jp/data/detail/dat_detail_08-04-03-03.html",
+          "excerpt": "RI線源には、63Niの370MBq程度のβ線源が多く用いられている",
+          "choiceNumbers": [
+            1
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/policy/etv/pdf/list/h21/02_ib04.pdf",
+          "excerpt": "炭化水素以外の無機ガス(H2、NO、NO2、CO、CO2 及びH2O など)は検出の妨害をしない",
+          "choiceNumbers": [
+            2
+          ]
+        },
+        {
+          "url": "https://www.naro.go.jp/laboratory/niah/disease/biochem/gc_genri/index.html",
+          "excerpt": "比較的汎用性の高い熱伝導度型(TCD)",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.mhlw.go.jp/web/t_doc?dataId=78334000&dataType=0&pageNo=102",
+          "excerpt": "0.02vol％の窒素を含む水素又はヘリウム4mLを導入したとき",
+          "choiceNumbers": [
+            3
+          ]
+        },
+        {
+          "url": "https://www.nies.go.jp/pr/publications/news/8/8-4/8-4-11.html",
+          "excerpt": "分子量測定，元素組成，構造解析等の定性分析",
+          "choiceNumbers": [
+            4
+          ]
+        },
+        {
+          "url": "https://www.jniosh.johas.go.jp/publication/mail_mag/2020/139-column-1.html",
+          "excerpt": "このPIDは、紫外線を化学物質に照射してイオン化させ電流値から濃度を見積もる手法です",
+          "choiceNumbers": [
+            5
+          ]
+        },
+        {
+          "url": "https://www.env.go.jp/content/900402504.pdf",
+          "excerpt": "PIDは芳香族炭化水素類や不飽和炭化水素類に対して高感度である",
+          "choiceNumbers": [
+            5
+          ]
+        }
+      ]
+    }
+  }
+}

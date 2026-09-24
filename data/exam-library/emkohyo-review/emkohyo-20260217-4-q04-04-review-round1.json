@@ -1,0 +1,52 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1410,
+      "cacheReadInputTokens": 143524,
+      "cacheCreationInputTokens": 14122,
+      "webSearchRequests": 0,
+      "costUSD": 0.1698888,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 993,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "paperId": "emkohyo-20260217-4",
+  "ids": [
+    "emkohyo-20260217-4-q4"
+  ],
+  "figureSha256": {
+    "emkohyo-20260217-4-q4": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-20260217-4-q4": {
+      "/exam-library/emkohyo-20260217-4/q4-p3-1.webp": "6480f34eaabaea992bbaf0f1bdaf30bd7ee489366751721723bbe831b9f3d19e"
+    }
+  },
+  "governmentSourceImageSha256": {},
+  "candidateSha256": {
+    "emkohyo-20260217-4-q4": "8bec49a65968afcd55936fcb4f67000a1536f6c92861720fc28fe5b32c6c9ef6"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-20260217-4-q04-04.json",
+  "sourcePackSha256": "3c4fbc66e3a81027c98a434e1853dc84c4f73bad5b827817292782956c4e3b8d",
+  "assessment": {
+    "emkohyo-20260217-4-q4": {
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [
+        "肢2の理由にある『炭素は固体で体積も無視できるため、気体の全mol数は変わらない』は、2つの別々の理由を1つの因果にまとめてしまっている。気体のmol数が変わらないのは、反応式C＋O₂→CO₂で気体の係数が1対1であり、固体の炭素は気体のmol数に数えないからである。炭素の体積を無視できることは、気体が使える容積がずっと5.0 Lであること（Vが一定であること）の根拠である。mol数が変わらない理由にはならない。そこで、例えば『固体の炭素は気体のmol数に数えず、O₂ 1 molからCO₂ 1 molが生じるので、気体のmol数は変わらない。炭素の体積は無視できるので、気体の容積は5.0 Lのまま』のように、nが一定である理由とVが一定である理由を分けて書き直す必要がある。"
+      ],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}

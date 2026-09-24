@@ -1,0 +1,55 @@
+{
+  "reviewModel": "claude-opus-5-5",
+  "requestedModel": "claude-opus-5-5",
+  "canonicalModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2395,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 14762,
+      "webSearchRequests": 0,
+      "costUSD": 0.1662598,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2311,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "rawResponsePath": "data/exam-library/emkohyo-review/emkohyo-EM20251806-q07-07-raw-response.txt",
+  "rawResponseSha256": "cefc7d7059a0f33b949070d0749df4ff6253ceb4e01500799cef949262d3dc7b",
+  "paperId": "emkohyo-EM20251806",
+  "ids": [
+    "emkohyo-EM20251806-q7"
+  ],
+  "figureSha256": {
+    "emkohyo-EM20251806-q7": {}
+  },
+  "officialRowImageSha256": {
+    "emkohyo-EM20251806-q7": {
+      "/exam-library/emkohyo-EM20251806/q7-p5-0.webp": "ccccc1c7a34d92f647e953c63745faaa83161f78f2434610c8b9b4d0ff996537"
+    }
+  },
+  "officialPageImageSha256": {},
+  "governmentSourceImageSha256": {
+    "docs/evidence/emkohyo-choice-sources/EM20251806-q07-env-area-flowmeter-p16.png": "bb106c0132d5b18c7314df851d6a651eee61dc966c887524bf5d76db75fdb5b6"
+  },
+  "candidateSha256": {
+    "emkohyo-EM20251806-q7": "f0e525c11a9405b0ffc4e19471559a4ee85acb06c81be2fb6a64177071ab30cc"
+  },
+  "sourcePackPath": "docs/evidence/emkohyo-choice-sources/emkohyo-EM20251806-q07-07.json",
+  "sourcePackSha256": "08e955e13bed43362445c70ea479cb399e2f776c068cbb94685bb217459ead1a",
+  "assessment": {
+    "emkohyo-EM20251806-q7": {
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "reasonIssues": [],
+      "sourceIssues": [],
+      "needsExternalCheck": []
+    }
+  }
+}
