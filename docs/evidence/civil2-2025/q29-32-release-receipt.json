@@ -1,0 +1,46 @@
+{
+  "scope": "2025 October civil2 first exam, 土木, No.29-32 only",
+  "officialQuestionSha256": "594b2771831021cf84a0d06039d66889f7870cf9b57abf39314b5c264253e28b",
+  "officialAnswerSha256": "62008080111808123eeddacb15747be7da35e2392983cbd63ae8a9bbdf69ce5e",
+  "questionPagesVisuallyChecked": [
+    12
+  ],
+  "answerPageVisuallyChecked": 1,
+  "questionNumbers": [
+    29,
+    30,
+    31,
+    32
+  ],
+  "officialAnswerNumbers": [
+    2,
+    1,
+    2,
+    2
+  ],
+  "figuresRequired": 0,
+  "canonicalQuestionsSha256": "7ace5206d0012f8f9acca426aa180e8b0b307bb6bc263223f47f7d17d17e89c1",
+  "ocr": {
+    "rawSha256": "0bd0fe378cf0ebffa1936d9349b1fa59057c06315fadd50e371d463d4a92c442",
+    "requestedModel": "gemini-3.1-pro-high",
+    "resolvedModelReportedByCli": null,
+    "status": "SUCCESS",
+    "conversationId": "fe6e4b5f-2432-4e79-ae80-59d296c8eda1",
+    "usage": {
+      "input_tokens": 13889,
+      "output_tokens": 6684,
+      "thinking_tokens": 6115,
+      "cache_read_tokens": 0,
+      "total_tokens": 20573
+    },
+    "purpose": "Furigana cleanup only; every published text and choice independently checked against rendered official page"
+  },
+  "modelReview": {
+    "rawSha256": "09c5a3ca3698b820b556401c461afdca16c3955640ccfc8e3082ea095a04e3e5",
+    "verdict": "PASS 4/4",
+    "resolvedModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "listCostUsd": 0.11083860000000001
+  },
+  "remaining2025Questions": 39
+}
