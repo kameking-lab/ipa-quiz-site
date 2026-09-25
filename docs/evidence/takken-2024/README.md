@@ -7,4 +7,4 @@
 - 初稿は5バッチで `claude-opus-5-5` を指定して生成。5バッチの独立監査で46問PASS、問3・34・40・41をHOLD。修正後の別応答による再監査で4問PASS。全12 receiptの `resolvedModel` と `modelUsage` に `claude-opus-5-5` / `firstParty` を記録。
 - `takken-2024-build-data.py` は50問と全12 receiptの受入を必須にし、HOLD稿を出力しない。生成した `data/questions/takken/2024.ts` は50問すべて正答・主解説・ア〜エ個別解説を含む。問50のルビ改行だけを表示用に正規化。
 - 2025年度の既存50問は `2025.ts` に分離し、`index.ts` で両年度を統合。法令基準日を年度ごとに保持。
-- ローカル検証: typecheck PASS、問題検証15,523問 fail=0、宅建年度別テスト5件PASS、全テスト3,966件PASS（`--maxWorkers=2`）。本番ビルドは確認中。
+- ローカル検証: typecheck PASS、問題検証15,523問 fail=0、宅建年度別テスト5件PASS、全テスト3,966件PASS（`--maxWorkers=2`）。ローカルwebpackビルドは別ドライブの既存 `node_modules` へのジャンクション参照を解決できず失敗したため、独立依存環境で動くPRのVercel本番ビルド結果を受入基準とする。
