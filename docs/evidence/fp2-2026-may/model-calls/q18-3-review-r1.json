@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問18\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n損害保険の税金に関する次の記述のうち、最も適切なものはどれか。なお、いずれも契約者（＝保険料負担者）および被保険者は個人であるものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 契約者と被保険者が同一人である普通傷害保険において、ケガの治療のために入院した被保険者が受け取った入院保険金は、一時所得として所得税の課税対象となる。\nイ. 保険期間10年の積立傷害保険において、契約者が受け取った満期返戻金は、一時所得として所得税の課税対象となる。\nウ. 被保険自動車を運転中に誤って電柱に衝突し、契約者が受け取った自動車保険の車両保険の保険金は、当該車両の修理をしない場合、一時所得として所得税の課税対象となる。\nエ. 自宅建物が火災で焼失したことにより、契約者が受け取った火災保険の保険金は、保険金の額が当該建物の時価額よりも多い場合、一時所得として所得税の課税対象となる。\n\n【解説案】\n{\n \"explanation\": \"損害保険の満期返戻金を保険料負担者（契約者）本人が受け取ると、一時所得として所得税の課税対象になります（所得税基本通達34-1）。一時所得の金額は「満期返戻金等 − 払込保険料の総額 − 特別控除額（最高50万円）」で計算し、その2分の1をほかの所得と合算して課税します。保険期間が5年以内などの要件を満たす一時払の損害保険（金融類似商品）の差益は20.315％の源泉分離課税になりますが、本問は保険期間10年なので当てはまりません。一方、身体の傷害を原因として受け取る保険金や、突発的な事故による資産の損害を補う保険金は、所得税法施行令30条により非課税です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。ケガの治療のための入院で被保険者本人が受け取る傷害保険の入院保険金は、身体の傷害に基因して支払われる保険金なので、所得税は非課税です。一時所得にはなりません。\",\n  \"イ\": \"適切な記述で、本問の正解です。積立傷害保険の満期返戻金を契約者（保険料負担者）が受け取ると一時所得になり、「満期返戻金 − 払込保険料 − 特別控除（最高50万円）」の2分の1が総合課税の対象です。保険期間10年の契約は、金融類似商品として源泉分離課税になる保険期間5年以内などの要件に当たりません。\",\n  \"ウ\": \"誤りです。自損事故で受け取る車両保険の保険金は、突発的な事故で資産に生じた損害を補うものなので、所得税は非課税です。車両を修理するかどうかで扱いは変わりません。\",\n  \"エ\": \"誤りです。火災で自宅建物が損害を受けて受け取る火災保険の保険金は、資産の損害を補うものなので、所得税は非課税です。保険金の額が建物の時価額を上回っても、一時所得として課税されることはありません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1700.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 76737,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.45218279999999994,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 9905,
+    "cache_read_input_tokens": 16314,
+    "output_tokens": 3064,
+    "output_tokens_details": {
+      "thinking_tokens": 1023
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9905,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 48620,
+      "outputTokens": 7260,
+      "cacheReadInputTokens": 16314,
+      "cacheCreationInputTokens": 9905,
+      "webSearchRequests": 3,
+      "costUSD": 0.45218279999999994,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1161,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "基本通達34-1(4)と所得税法施行令30条（身体の傷害・資産の損害に対する保険金の非課税）に照らすと、本文と4肢の解説はどれも正しいです。問題は参照URLの1つだけです。\n\n```json\n{\"verdict\": \"FIX\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": false,\n \"issues\": [\n  \"参照URLのタックスアンサーNo.1700は「加害者から治療費、慰謝料及び損害賠償金などを受け取ったとき」のページで、加害者から受け取る損害賠償金を扱っている。本問の論点は、自分で掛けた損害保険（傷害保険・車両保険・火災保険）の保険金の非課税なので、このページは論点と合わない。損害保険の保険金の非課税（建物の焼失や身体の傷害を原因とする保険金）を説明している国税庁の「保険と税」のページに差し替える。\",\n  \"本文と4肢の解説は、所得税基本通達34-1(4)（損害保険契約等に基づく満期返戻金等は一時所得）、所得税法施行令30条（身体の傷害に基因する保険金や、突発的な事故による資産の損害に対する保険金は非課税）、金融類似商品の要件のいずれにも合っているため、修正しない。\"\n ],\n \"correctedExplanation\": \"損害保険の満期返戻金を保険料負担者（契約者）本人が受け取ると、一時所得として所得税の課税対象になります（所得税基本通達34-1）。一時所得の金額は「満期返戻金等 − 払込保険料の総額 − 特別控除額（最高50万円）」で計算し、その2分の1をほかの所得と合算して課税します。保険期間が5年以内などの要件を満たす一時払の損害保険（金融類似商品）の差益は20.315％の源泉分離課税になりますが、本問は保険期間10年なので当てはまりません。一方、身体の傷害を原因として受け取る保険金や、突発的な事故による資産の損害を補う保険金は、所得税法施行令30条により非課税です。\",\n \"correctedChoiceExplanations\": {\n  \"ア\": \"誤りです。ケガの治療のための入院で被保険者本人が受け取る傷害保険の入院保険金は、身体の傷害に基因して支払われる保険金なので、所得税は非課税です。一時所得にはなりません。\",\n  \"イ\": \"適切な記述で、本問の正解です。積立傷害保険の満期返戻金を契約者（保険料負担者）が受け取ると一時所得になり、「満期返戻金 − 払込保険料 − 特別控除（最高50万円）」の2分の1が総合課税の対象です。保険期間10年の契約は、金融類似商品として源泉分離課税になる保険期間5年以内などの要件に当たりません。\",\n  \"ウ\": \"誤りです。自損事故で受け取る車両保険の保険金は、突発的な事故で資産に生じた損害を補うものなので、所得税は非課税です。車両を修理するかどうかで扱いは変わりません。\",\n  \"エ\": \"誤りです。火災で自宅建物が損害を受けて受け取る火災保険の保険金は、資産の損害を補うものなので、所得税は非課税です。保険金の額が建物の時価額を上回っても、一時所得として課税されることはありません。\"\n },\n \"correctedOfficialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm\",\n  \"https://www.nta.go.jp/publication/pamph/koho/kurashi/html/04_2.htm\"\n ]\n}\n```\n\nSources:\n- [No.1700 加害者から治療費、慰謝料及び損害賠償金などを受け取ったとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1700.htm)\n- [法第34条《一時所得》関係｜国税庁](https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm)\n- [No.1490 一時所得｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)\n- [保険と税｜国税庁](https://www.nta.go.jp/publication/pamph/koho/kurashi/html/04_2.htm)",
+  "ttft_ms": 9441,
+  "type": "result",
+  "duration_ms": 64499,
+  "uuid": "ad6443df-e90f-4f6e-9ffa-b0f211d5b623",
+  "ttft_stream_ms": 1759,
+  "time_to_request_ms": 91,
+  "first_content_frame_ms": 1760,
+  "time_to_request_from_spawn_ms": 602572,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329987561.2043,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

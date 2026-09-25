@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問26\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の〈Ｘ社のデータ〉に基づき算出される投資指標に関する次の記述のうち、最も不適切なものはどれか。〈Ｘ社のデータ〉・株価        ：1,800円・発行済株式数    ：２億株・売上高       ：2,500億円・営業利益      ：180億円・当期純利益     ：120億円・自己資本（＝純資産）：2,000億円・配当金総額     ：36億円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ＲＯＥは、６％である。\nイ. ＰＥＲは、20倍である。\nウ. ＰＢＲは、1.8倍である。\nエ. 配当利回りは、１％である。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 8091,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0319996,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2089,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 745,
+    "output_tokens_details": {
+      "thinking_tokens": 160
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2089,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 745,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2089,
+      "webSearchRequests": 0,
+      "costUSD": 0.0319996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 160,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"PERは株価を1株当たり当期純利益（EPS）で割って求めます。EPSは当期純利益120億円÷発行済株式数2億株＝60円なので、PERは1,800円÷60円＝30倍です。よって「PERは20倍」は不適切で、これが本問の正解です。ほかの指標の式も押さえておきましょう。ROE＝当期純利益÷自己資本、PBR＝株価÷1株当たり純資産（BPS）、配当利回り＝1株当たり配当金÷株価です。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。ROE＝当期純利益120億円÷自己資本2,000億円×100＝6％となります。\",\n  \"イ\": \"不適切な記述で、本問の正解です。EPS＝120億円÷2億株＝60円なので、PER＝1,800円÷60円＝30倍です。20倍ではありません。\",\n  \"ウ\": \"適切な記述です。BPS＝純資産2,000億円÷2億株＝1,000円なので、PBR＝1,800円÷1,000円＝1.8倍となります。\",\n  \"エ\": \"適切な記述です。1株当たり配当金＝36億円÷2億株＝18円なので、配当利回り＝18円÷1,800円×100＝1％となります。\"\n },\n \"topicTags\": [\"株式投資指標\", \"PER・PBR・ROE\", \"配当利回り\"],\n \"isCalculation\": true,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [],\n \"concerns\": []}\n```",
+  "ttft_ms": 3223,
+  "type": "result",
+  "duration_ms": 8197,
+  "uuid": "1898e3cd-d60b-497d-b17d-88384eb7add2",
+  "ttft_stream_ms": 1790,
+  "time_to_request_ms": 100,
+  "first_content_frame_ms": 1790,
+  "time_to_request_from_spawn_ms": 683048,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330068028.7996,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

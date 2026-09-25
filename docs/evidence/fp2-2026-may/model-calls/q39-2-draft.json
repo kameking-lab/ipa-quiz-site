@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問39\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n消費税の簡易課税制度に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 簡易課税制度の適用を受けた場合、仕入れに係る消費税額は、課税売上高に従業員数に応じて定められたみなし仕入率を乗じて計算する。\nイ. 新たに事業を開始した事業者は、事業を開始した日の属する課税期間内に「消費税簡易課税制度選択届出書」を納税地の所轄税務署長に提出することで、当該課税期間から簡易課税制度の適用を受けることができる。\nウ. 簡易課税制度を選択した事業者は、事業を廃止した場合等を除き、原則として、簡易課税制度の適用を２年間継続しなければならない。\nエ. 簡易課税制度の選択を取りやめる場合、原則として、その適用を取りやめようとする課税期間の初日の前日までに、「消費税簡易課税制度選択不適用届出書」を納税地の所轄税務署長に提出しなければならない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 32240,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1570624,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4378,
+    "cache_read_input_tokens": 6012,
+    "output_tokens": 1626,
+    "output_tokens_details": {
+      "thinking_tokens": 210
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4378,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 12219,
+      "outputTokens": 3098,
+      "cacheReadInputTokens": 6012,
+      "cacheCreationInputTokens": 4378,
+      "webSearchRequests": 1,
+      "costUSD": 0.1570624,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 292,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"簡易課税制度では、仕入れに係る消費税額は、課税売上高に係る消費税額に「事業区分」に応じたみなし仕入率を掛けて計算します。事業区分は第1種（卸売業）90%〜第6種（不動産業）40%の6つです。従業員数で率が決まるわけではないので、アの記述が不適切で、本問の正解です。このほか、選択届出書の提出期限（原則は適用を受けたい課税期間の初日の前日まで、新規開業の場合は開業した課税期間内）、2年間の継続適用、不適用届出書の提出期限も押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。みなし仕入率は従業員数ではなく、卸売業・小売業・製造業などの事業区分に応じて決まります（第1種90%〜第6種40%）。また、この率を掛ける対象は課税売上高そのものではなく、課税売上高に係る消費税額です。\",\n  \"イ\": \"適切な記述です。選択届出書は、原則として適用を受けたい課税期間の初日の前日までに出す必要があります。ただし、新たに事業を始めた事業者は、事業を開始した日の属する課税期間内に提出すれば、その課税期間から簡易課税制度を適用できます。\",\n  \"ウ\": \"適切な記述です。簡易課税制度を選んだ事業者は、事業を廃止した場合を除き、2年間は継続して適用しなければなりません。そのため、適用開始から2年を経過する日の属する課税期間の初日以後でなければ、不適用届出書を提出できません。\",\n  \"エ\": \"適切な記述です。簡易課税制度の適用をやめるには、原則として、やめようとする課税期間の初日の前日までに「消費税簡易課税制度選択不適用届出書」を所轄税務署長に提出する必要があります。\"\n },\n \"topicTags\": [\"消費税の簡易課税制度\", \"みなし仕入率\", \"選択届出・不適用届出\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm\",\n  \"https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_13.htm\"\n ],\n \"concerns\": [\n  \"検索結果の要約によると、国税庁のタックスアンサーNo.6505は令和8年4月1日現在の法令等に更新されており、2割特例に関する経過措置や、将来予定されている飲食料品の税率引下げに伴う簡易課税の特例にも触れています。ただし、要約でしか確認しておらず本文は読んでいません。また、どれも本問の各選択肢の正誤には影響しないと判断し、lawDateNoteには記載していません。\",\n  \"ウの「2年間継続適用」は、実際には不適用届出書を提出できる時期の制限として定められています。さらに、調整対象固定資産などを取得した場合には、選択届出書の提出そのものが制限される特例もあります。解説ではどちらも原則のみを説明しています。\"\n ]\n}\n```\n\nSources:\n- [No.6505 簡易課税制度｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm)\n- [D1-22 消費税簡易課税制度選択届出手続｜国税庁](https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_13.htm)",
+  "ttft_ms": 3257,
+  "type": "result",
+  "duration_ms": 32362,
+  "uuid": "8b89ff79-04a5-41bb-8871-465e4dfcea7f",
+  "ttft_stream_ms": 1782,
+  "time_to_request_ms": 104,
+  "first_content_frame_ms": 1783,
+  "time_to_request_from_spawn_ms": 811811,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330196782.6733,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

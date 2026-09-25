@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問27\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の〈条件〉で、円貨を米ドルに交換して米ドル建定期預金に10,000米ドルを預け入れ、満期時に元利金の米ドルを円貨に交換して受け取る場合における利回り（単利・年率）として、最も適切なものはどれか。なお、税金については考慮しないものとし、計算結果は表示単位の小数点以下第３位を四捨五入するものとする。〈条件〉・預入期間：１年・預金金利：3.00％（年率）・為替予約なし・為替レート（米ドル／円）預入時…ＴＴＳ：140.00円 ＴＴＢ：139.00円満期時…ＴＴＳ：145.00円 ＴＴＢ：144.00円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 5.94％\nイ. 6.68％\nウ. 6.71％\nエ. 7.45％\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 12235,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.04055160000000001,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2153,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 1147,
+    "output_tokens_details": {
+      "thinking_tokens": 267
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2153,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1147,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2153,
+      "webSearchRequests": 0,
+      "costUSD": 0.04055160000000001,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 267,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "正答「ア」（5.94％）は計算で確認できました。誤りの3つの選択肢は、それぞれ預入時か満期時（または両方）で為替レートを取り違えた場合の数値と一致します。純粋な計算問題なので、公式参照URLは付けていません。\n\n```json\n{\"explanation\": \"円を米ドルに換えるときはTTS、米ドルを円に戻すときはTTBを使います。預入時に必要な円は10,000米ドル×140.00円＝1,400,000円です。満期時の元利金は10,000米ドル×（1＋0.03）＝10,300米ドルで、これを円に戻すと10,300米ドル×144.00円＝1,483,200円になります。利回りは（1,483,200円－1,400,000円）÷1,400,000円÷1年×100≒5.942…％で、小数点以下第3位を四捨五入して5.94％です。\", \"choiceExplanations\": {\"ア\": \"正しい計算結果で、本問の正解です。預入時はTTS 140.00円で1,400,000円を払い、満期時はTTB 144.00円で10,300米ドルを1,483,200円に換えるので、（1,483,200円－1,400,000円）÷1,400,000円≒5.94％です。\", \"イ\": \"誤りです。6.68％は、満期時の円への交換にTTBではなくTTS 145.00円を使った場合の数値です（10,300米ドル×145.00円＝1,493,500円、93,500円÷1,400,000円≒6.68％）。正しくはTTB 144.00円を使い、5.94％になります。\", \"ウ\": \"誤りです。6.71％は、預入時の米ドルへの交換にTTSではなくTTB 139.00円を使った場合の数値です（元本1,390,000円、93,200円÷1,390,000円≒6.71％）。正しくは預入時にTTS 140.00円を使い、5.94％になります。\", \"エ\": \"誤りです。7.45％は、預入時にTTB 139.00円、満期時にTTS 145.00円と、両方で逆のレートを使った場合の数値です（103,500円÷1,390,000円≒7.45％）。正しくは預入時にTTS、満期時にTTBを使い、5.94％になります。\"},\n \"topicTags\": [\"外貨預金の利回り計算\", \"TTSとTTB\", \"為替差損益\"], \"isCalculation\": true, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [], \"concerns\": []}\n```",
+  "ttft_ms": 4542,
+  "type": "result",
+  "duration_ms": 12339,
+  "uuid": "d5ce9791-30fd-483b-9677-b0d6334eb151",
+  "ttft_stream_ms": 1884,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 1884,
+  "time_to_request_from_spawn_ms": 693933,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330078876.133,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

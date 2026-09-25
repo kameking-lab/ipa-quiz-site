@@ -1,0 +1,189 @@
+{
+  "question": 17,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 10,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "1a4caed616b5dd87ca8f140e789925e96afe41d9c55f4d09804e83b4bf10731f",
+    "choicesSha256": "bf96fe4cffa41c2bf8d600a4b1272eb1673ba3244e8c491ff941c0f652c34feb",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "WebSearchで確認した範囲では、消防活動による水濡れ損害、落雷、経年劣化の免責、保険金額の自動復元の各論点を直接説明した政府公式ページ（*.go.jp）が見つからなかったため、officialReferenceUrlsは空欄にしています。",
+      "解説の内容は一般的な住宅用火災保険の約款の考え方に基づいています。保険会社や商品によって細かな扱いが異なる場合があります（例：1回の事故で保険金額の一定割合以上が支払われると契約が終了する商品もあります）。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q17-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 400,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1555,
+          "webSearchRequests": 0,
+          "costUSD": 0.0207038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0207038,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q17-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11016,
+          "outputTokens": 2260,
+          "cacheReadInputTokens": 5955,
+          "cacheCreationInputTokens": 3976,
+          "webSearchRequests": 1,
+          "costUSD": 0.132263,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 329,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.132263,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q17-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1502,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2615,
+          "webSearchRequests": 0,
+          "costUSD": 0.05134760000000001,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 466,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.05134760000000001,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q17-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11595,
+          "outputTokens": 3606,
+          "cacheReadInputTokens": 6477,
+          "cacheCreationInputTokens": 5284,
+          "webSearchRequests": 1,
+          "costUSD": 0.1720674,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 730,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1720674,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q17-3-review-r3.json",
+      "stage": "3-review-r3",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 561,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2753,
+          "webSearchRequests": 0,
+          "costUSD": 0.0336316,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 343,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0336316,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

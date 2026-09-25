@@ -1,0 +1,156 @@
+{
+  "question": 33,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 20,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "77682bbef4cf68afb4081b24744f593d8e273e92fc4fc4a361dc96560d095e59",
+    "choicesSha256": "672ca94c05eda98306c6530d811d4edd2bd7638097daa35169e4c72c2f91afd1",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "エ（85万円）がどんな誤りから出た数値かは推測です。二重控除という説明は、数値を再現できる一つの解釈にすぎません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.2250 損益通算｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1490 一時所得｜国税庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm",
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q33-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 463,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1480,
+          "webSearchRequests": 0,
+          "costUSD": 0.0213638,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 68,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0213638,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q33-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 32533,
+          "outputTokens": 3785,
+          "cacheReadInputTokens": 5881,
+          "cacheCreationInputTokens": 5914,
+          "webSearchRequests": 2,
+          "costUSD": 0.27432019999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 405,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.27432019999999996,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q33-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 16946,
+          "outputTokens": 3422,
+          "cacheReadInputTokens": 6563,
+          "cacheCreationInputTokens": 5781,
+          "webSearchRequests": 1,
+          "costUSD": 0.19378459999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 477,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.19378459999999997,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

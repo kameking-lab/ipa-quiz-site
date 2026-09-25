@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問37\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n法人税の益金に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、法人は内国法人（普通法人）であるものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 法人が法人税の還付を受けた場合、還付加算金は益金の額に算入し、還付金は益金不算入となる。\nイ. 法人が完全支配関係のある法人の株式（完全子法人株式等）に係る配当を受け取った場合、その全額が益金不算入となる。\nウ. 法人が行った資産の販売または譲渡に係る収益の額は、原則として、その資産の引渡しの時における価額により、引き渡した日の属する事業年度の益金の額に算入する。\nエ. 法人がその有する棚卸資産の評価換えをしてその帳簿価額を増額した場合、その増額した部分の金額は、原則として、益金の額に算入する。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 6094,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0211038,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1560,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 418,
+    "output_tokens_details": {
+      "thinking_tokens": 76
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1560,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 418,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1560,
+      "webSearchRequests": 0,
+      "costUSD": 0.0211038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 76,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"法人税の還付金は、納付時に損金不算入だったため益金不算入となる。還付加算金は利息の性質を持つため益金に算入される。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"完全子法人株式等に係る受取配当等は、負債利子控除なしで全額が益金不算入となる。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"法人税法22条の2により、資産の販売等に係る収益は、原則として引渡し日の属する事業年度の益金に算入する。その額は引渡し時の価額（時価）による。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"法人税法25条により、資産の評価換えによる評価益は原則として益金不算入となる。会社更生等の例外を除き、益金には算入されない。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 2790,
+  "type": "result",
+  "duration_ms": 6221,
+  "uuid": "9d51875b-3e01-462c-b786-813e14c74517",
+  "ttft_stream_ms": 1905,
+  "time_to_request_ms": 120,
+  "first_content_frame_ms": 1906,
+  "time_to_request_from_spawn_ms": 793758,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330178759.3103,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

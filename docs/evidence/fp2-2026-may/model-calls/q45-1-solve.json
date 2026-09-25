@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問45\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n都市計画法に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 市街化区域は、既に市街地を形成している区域およびおおむね10年以内に優先的かつ計画的に市街化を図るべき区域とされている。\nイ. 市街化区域内で行う開発行為で、その規模が1,000㎡未満（三大都市圏の一定の区域内では500㎡未満）であるものは、原則として、都道府県知事等の開発許可を受ける必要はない。\nウ. 土地の分筆は、その行為が建築物の建築または特定工作物の建設を目的としていなくても、開発行為に該当する。\nエ. 開発許可を受けた開発区域内の土地においては、開発行為に関する工事完了の公告があるまでの間は、原則として、建築物を建築することができない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5383,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.020927800000000003,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1538,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 418,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1538,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 418,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1538,
+      "webSearchRequests": 0,
+      "costUSD": 0.020927800000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ウ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"都市計画法7条2項により、市街化区域は既に市街地を形成している区域およびおおむね10年以内に優先的かつ計画的に市街化を図るべき区域とされる。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"市街化区域内の開発行為は原則1,000㎡未満（三大都市圏の既成市街地等では500㎡未満）であれば開発許可は不要である。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"開発行為とは、主として建築物の建築または特定工作物の建設の用に供する目的で行う土地の区画形質の変更をいう。建築等を目的としない単なる土地の分筆（権利区画の変更）は開発行為に該当しない。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"都市計画法37条により、開発許可を受けた開発区域内では工事完了公告があるまでの間、原則として建築物の建築や特定工作物の建設はできない（工事用仮設建築物等の例外あり）。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5400,
+  "type": "result",
+  "duration_ms": 5495,
+  "uuid": "13a651b6-f90f-4e18-920c-dcb9eb46aea6",
+  "ttft_stream_ms": 1882,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 1883,
+  "time_to_request_from_spawn_ms": 879140,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330264128.383,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

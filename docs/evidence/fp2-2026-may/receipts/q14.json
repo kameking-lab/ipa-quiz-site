@@ -1,0 +1,147 @@
+{
+  "question": 14,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 8,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "488b0685295db64448c706102e0d5e15e8b09c24c8fc50cb8c22a509689ee172",
+    "choicesSha256": "81949093135dc086e1cc6afe4cebeac12bac31c16fa41fd4f80879067c241462",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 3)",
+    "key": "ウ"
+  },
+  "figure": {
+    "pageVectorDrawings": 56,
+    "pageRasterImages": 0,
+    "required": true,
+    "imageUrls": [
+      "/fp2/academic/202605/q14-1.webp"
+    ],
+    "transcribedFromRender": true,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ウ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "国税庁タックスアンサーNo.1140の現在の掲載版は令和8年4月1日現在の法令等に基づいています。本解説では、令和7年分の計算方法（旧制度の上限5万円、新旧合算の上限4万円、合計の上限12万円）が改正前と同じであることを前提にしています。"
+    ],
+    "draftLawDateNote(unpublished)": "令和7年度税制改正で、令和8年分以後は23歳未満の扶養親族がいる人について、新制度の一般生命保険料控除の上限が4万円から6万円に引き上げられました。新旧両方の一般生命保険料を合算するときの上限も6万円になります。本問は旧制度の一般生命保険料と個人年金保険料だけの計算で、2025年分の所得税が対象のため、この改正は正答に影響しません。"
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1140.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1140 生命保険料控除｜国税庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q14-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 656,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1568,
+          "webSearchRequests": 0,
+          "costUSD": 0.0259278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 130,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0259278,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q14-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 15278,
+          "outputTokens": 3176,
+          "cacheReadInputTokens": 5968,
+          "cacheCreationInputTokens": 4506,
+          "webSearchRequests": 1,
+          "costUSD": 0.1718736,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 365,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1718736,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q14-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1086,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2937,
+          "webSearchRequests": 0,
+          "costUSD": 0.0456036,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 508,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0456036,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

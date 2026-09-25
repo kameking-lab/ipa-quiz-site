@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問44\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n借地借家法に関する次の記述のうち、最も不適切なものはどれか。なお、本問においては、定期建物賃貸借契約を定期借家契約という。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 定期借家契約は、賃貸借期間を６カ月未満とすることができる。\nイ. 定期借家契約を締結する場合、賃貸人は、あらかじめ、賃借人に対し、契約の更新がなく、期間の満了により賃貸借が終了する旨を記載した公正証書を交付して説明しなければならない。\nウ. 建物の賃借人は、建物の賃借権の登記がなくても、建物の引渡しを受けていれば、その後その建物の物権を取得した者に対して賃借権を対抗することができる。\nエ. 定期借家契約において期間が１年以上である場合、賃貸人は、原則として、期間満了の１年前から６カ月前までの間に賃借人に対して期間満了により契約が終了する旨の通知をしなければ、その終了を賃借人に対抗することができない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 7488,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0251878,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1603,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 605,
+    "output_tokens_details": {
+      "thinking_tokens": 126
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1603,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 605,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1603,
+      "webSearchRequests": 0,
+      "costUSD": 0.0251878,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 126,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"イ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"定期借家契約では期間1年未満の建物賃貸借を期間の定めがないものとみなす規定（借地借家法29条1項）が適用されない（38条1項後段）。そのため6カ月未満の期間も定めることができる。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"事前説明は、更新がなく期間満了で終了する旨を記載した『書面』を交付して行えばよく、公正証書である必要はない。賃借人の承諾があれば電磁的方法による提供も可能である（38条3項・4項）。なお、公正証書等の書面が必要なのは契約締結そのものについてであり、2022年改正後は電磁的記録も認められる。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"建物の賃貸借は、登記がなくても建物の引渡しがあれば、その後その建物について物権を取得した者に対抗できる（借地借家法31条）。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"期間1年以上の定期借家契約では、賃貸人は期間満了の1年前から6カ月前までの通知期間内に終了の通知をしなければ、終了を賃借人に対抗できない（38条6項）。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 3165,
+  "type": "result",
+  "duration_ms": 7628,
+  "uuid": "a5618375-b13c-4b9f-b2f2-835a4b8760b4",
+  "ttft_stream_ms": 1839,
+  "time_to_request_ms": 136,
+  "first_content_frame_ms": 1840,
+  "time_to_request_from_spawn_ms": 878516,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330263444.3125,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

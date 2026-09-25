@@ -1,0 +1,156 @@
+{
+  "question": 29,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 18,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "3b2a821953196c795592285c2e00162d9aa46db2393dd9b32cbcaa8e87f4aa40",
+    "choicesSha256": "1d78ecd0a9a192b0feff0a7cbb2c764b1c13b443b4b114157a6136edc0049065",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "ウの「譲渡益と配当等を別々に申告するかどうか選べる」という点は、確認できた国税庁の説明（No.1476）では「口座ごとに選択できる」「譲渡損失を申告する場合は配当等もあわせて申告する」という書き方でした。どちらか一方だけの申告が可能であることは、根拠条文（租税特別措置法37条の11の5・8条の5）の構造と一般的な解説をもとに書いており、条文そのものは直接確認していません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1474 上場株式等に係る譲渡損失の損益通算及び繰越控除｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1476.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1476 特定口座制度｜国税庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm",
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1476.htm"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q29-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 547,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1718,
+          "webSearchRequests": 0,
+          "costUSD": 0.0249478,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 191,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0249478,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q29-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 35655,
+          "outputTokens": 5072,
+          "cacheReadInputTokens": 6117,
+          "cacheCreationInputTokens": 7396,
+          "webSearchRequests": 2,
+          "costUSD": 0.3244514,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 507,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3244514,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q29-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 36032,
+          "outputTokens": 5036,
+          "cacheReadInputTokens": 6766,
+          "cacheCreationInputTokens": 8299,
+          "webSearchRequests": 2,
+          "costUSD": 0.3325932,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 550,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3325932,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

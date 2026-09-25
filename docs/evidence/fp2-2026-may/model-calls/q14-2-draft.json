@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ウ」です（原典の正解 3) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問14\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における生命保険料控除の対象となる2025年中に支払った保険料が下記の〈資料〉のとおりである場合、生命保険料控除の控除額として、最も適切なものはどれか。なお、〈資料〉において、旧制度は2011年12月31日以前に締結した保険契約等に基づく生命保険料控除とし、新制度は2012年１月１日以後に締結した保険契約等に基づく生命保険料控除とする。\n〈資料〉所得税における生命保険料控除の対象となる保険料\n・旧制度の対象：一般の生命保険料 10万円／介護医療保険料 （対象外・斜線）／個人年金保険料 10万円\n・新制度の対象：一般の生命保険料 ―／介護医療保険料 ―／個人年金保険料 10万円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ８万円\nイ. ９万円\nウ. 10万円\nエ. 12万円\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 34100,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1718736,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4506,
+    "cache_read_input_tokens": 5968,
+    "output_tokens": 1840,
+    "output_tokens_details": {
+      "thinking_tokens": 353
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4506,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 15278,
+      "outputTokens": 3176,
+      "cacheReadInputTokens": 5968,
+      "cacheCreationInputTokens": 4506,
+      "webSearchRequests": 1,
+      "costUSD": 0.1718736,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 365,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答のウ（10万円）は計算で確認できました。旧制度の一般の生命保険料10万円で控除額は5万円、個人年金保険料は旧制度分だけで計算するほうが有利で5万円、合わせて10万円です。どちらも国税庁タックスアンサーNo.1140の計算方法と一致します。\n\n```json\n{\"explanation\": \"旧制度の保険料は、年間支払額が10万円を超えると控除額が一律5万円になります。支払額が5万円超10万円以下のときは「支払額×1/4＋2万5,000円」で計算するため、一般の生命保険料10万円の控除額は、10万円×1/4＋2万5,000円＝5万円です。個人年金保険料は旧制度と新制度の両方を支払っています。両方を合算して計算すると控除額の上限は4万円ですが、旧制度分だけで計算すれば上限は5万円です。本問では旧制度の10万円だけで計算して5万円とするのが有利になります。控除額は5万円＋5万円＝10万円で、合計の上限12万円の範囲内です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。8万円は、個人年金保険料を新旧合算で計算して上限の4万円とし、一般の生命保険料も4万円とした場合などの金額です。実際には、一般の生命保険料（旧制度10万円）の控除額は5万円です。個人年金保険料も旧制度分だけで計算すれば5万円になるため、控除額は10万円になります。\",\n  \"イ\": \"誤りです。9万円は、一般の生命保険料の5万円に、個人年金保険料を新旧合算で計算した上限の4万円を足した金額です。個人年金保険料は旧制度の10万円だけで計算するほうが有利で、控除額は5万円になります。そのため控除額は5万円＋5万円＝10万円です。\",\n  \"ウ\": \"正しい計算結果で、本問の正解です。一般の生命保険料（旧制度10万円）の控除額は、10万円×1/4＋2万5,000円＝5万円です。個人年金保険料は旧制度の10万円だけで計算するのが有利で、控除額は5万円です。したがって控除額は5万円＋5万円＝10万円です。\",\n  \"エ\": \"誤りです。12万円は生命保険料控除全体の上限額です。本問の控除額は一般の生命保険料5万円と個人年金保険料5万円の合計10万円で、上限に達しません。なお、介護医療保険料は支払っていないため、その分の控除はありません。\"\n },\n \"topicTags\": [\"生命保険料控除\", \"新旧制度の併用\", \"個人年金保険料控除\"],\n \"isCalculation\": true,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"令和7年度税制改正で、令和8年分以後は23歳未満の扶養親族がいる人について、新制度の一般生命保険料控除の上限が4万円から6万円に引き上げられました。新旧両方の一般生命保険料を合算するときの上限も6万円になります。本問は旧制度の一般生命保険料と個人年金保険料だけの計算で、2025年分の所得税が対象のため、この改正は正答に影響しません。\",\n \"officialReferenceUrls\": [\"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1140.htm\"],\n \"concerns\": [\"国税庁タックスアンサーNo.1140の現在の掲載版は令和8年4月1日現在の法令等に基づいています。本解説では、令和7年分の計算方法（旧制度の上限5万円、新旧合算の上限4万円、合計の上限12万円）が改正前と同じであることを前提にしています。\"]}\n```\n\nSources:\n- [No.1140 生命保険料控除｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1140.htm)",
+  "ttft_ms": 6243,
+  "type": "result",
+  "duration_ms": 34222,
+  "uuid": "60b7c9c6-81fd-4de1-9239-3c332c731977",
+  "ttft_stream_ms": 1824,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1824,
+  "time_to_request_from_spawn_ms": 569973,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329954888.7302,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

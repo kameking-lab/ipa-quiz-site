@@ -1,0 +1,62 @@
+{
+  "question": 60,
+  "status": "HOLD",
+  "holdReasons": [
+    "blind solve missing",
+    "draft missing",
+    "review missing",
+    "choice explanations incomplete",
+    "general explanation missing"
+  ],
+  "released": false,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 34,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "75f1c0fd9bc40cafd35fde3c512d6a491d396aca2632e613e5e1a99c12b40ae6",
+    "choicesSha256": "0215b0f76e1531360bfcd99794acd1e347be06971ef8fb7f5f3befccf10da555",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 62,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": "page 34 graphics are Q59's table"
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": null
+  },
+  "judgment": {
+    "blindSolveAnswer": null,
+    "blindSolveAgrees": false,
+    "reviewVerdicts": [],
+    "finalReviewIssues": [],
+    "draftConcerns": [],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": []
+}

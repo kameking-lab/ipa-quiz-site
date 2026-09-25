@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問29\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n上場株式等の譲渡および配当等（一定の大口株主等が受けるものを除く）に係る所得に対する所得税の課税等に関する次の記述のうち、最も適切なものはどれか。なお、本問においては、特定口座のうち、源泉徴収がされない口座を簡易申告口座といい、源泉徴収がされる口座を源泉徴収選択口座という。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 上場株式等に係る配当所得について、総合課税を選択して確定申告をした場合、上場株式等に係る譲渡損失の金額と損益通算することはできない。\nイ. 上場株式等に係る配当所得等の金額と損益通算してもなお控除しきれない上場株式等に係る譲渡損失の金額は、確定申告をすることにより、翌年以後５年間にわたって繰り越すことができる。\nウ. 源泉徴収選択口座内における上場株式等の譲渡益と、当該口座に受け入れた上場株式等の配当等に係る配当所得について、いずれかのみを申告することはできない。\nエ. 簡易申告口座では、源泉徴収選択口座とは異なり、その年中における口座内の取引内容が記載された「特定口座年間取引報告書」が作成されないため、投資家自身でその年中の上場株式等に係る譲渡所得等の金額を計算する必要がある。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 52347,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3244514,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7396,
+    "cache_read_input_tokens": 6117,
+    "output_tokens": 1871,
+    "output_tokens_details": {
+      "thinking_tokens": 468
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7396,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 35655,
+      "outputTokens": 5072,
+      "cacheReadInputTokens": 6117,
+      "cacheCreationInputTokens": 7396,
+      "webSearchRequests": 2,
+      "costUSD": 0.3244514,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 507,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"上場株式等の配当所得について総合課税を選んで確定申告すると、配当控除は受けられますが、上場株式等の譲渡損失と損益通算することはできません。譲渡損失と損益通算できるのは、申告分離課税を選んだ配当所得等に限られます。このため、正解はアです。あわせて、損益通算しても残った譲渡損失は翌年以後3年間繰り越せること、特定口座年間取引報告書は源泉徴収の有無にかかわらず交付されることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。上場株式等の譲渡損失と損益通算できるのは申告分離課税を選んだ配当所得等に限られるため、総合課税を選んだ配当所得とは損益通算できません。\",\n  \"イ\": \"誤りです。上場株式等の配当所得等と損益通算しても控除しきれない譲渡損失は、確定申告をすることで繰り越せますが、その期間は翌年以後5年間ではなく3年間です。\",\n  \"ウ\": \"誤りです。源泉徴収選択口座では、口座内の譲渡益と、口座に受け入れた配当等を、それぞれ別々に申告するかどうか選べます。このため、どちらか一方だけを申告することもできます。ただし、口座内の譲渡損失を申告する場合は、その口座に受け入れた配当等もあわせて申告しなければなりません。\",\n  \"エ\": \"誤りです。特定口座年間取引報告書は、簡易申告口座でも源泉徴収選択口座でも金融商品取引業者等が作成して交付します。簡易申告口座では、この報告書を使って簡単に確定申告できます。\"\n },\n \"topicTags\": [\"上場株式等の損益通算・繰越控除\", \"特定口座（簡易申告口座・源泉徴収選択口座）\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1476.htm\"\n ],\n \"concerns\": [\"ウの「譲渡益と配当等を別々に申告するかどうか選べる」という点は、確認できた国税庁の説明（No.1476）では「口座ごとに選択できる」「譲渡損失を申告する場合は配当等もあわせて申告する」という書き方でした。どちらか一方だけの申告が可能であることは、根拠条文（租税特別措置法37条の11の5・8条の5）の構造と一般的な解説をもとに書いており、条文そのものは直接確認していません。\"]\n}\n```\n\nSources:\n- [No.1474 上場株式等に係る譲渡損失の損益通算及び繰越控除｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1474.htm)\n- [No.1476 特定口座制度｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1476.htm)",
+  "ttft_ms": 5626,
+  "type": "result",
+  "duration_ms": 36724,
+  "uuid": "67c4939b-22ab-4bd6-a681-55edf35d680b",
+  "ttft_stream_ms": 1871,
+  "time_to_request_ms": 84,
+  "first_content_frame_ms": 1872,
+  "time_to_request_from_spawn_ms": 712155,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330097118.507,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

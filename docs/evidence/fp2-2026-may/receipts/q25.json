@@ -1,0 +1,185 @@
+{
+  "question": 25,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 14,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "6bb7e5683efd5a86ee83f24dcc23da2ceb4f130656e2046e8c6a7b02c306d936",
+    "choicesSha256": "bc107733021c7733fe6de69207def6701ce38b468dd9c0d4e076c95b53235486",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "30％と30万円の規定がある府令第3条の条文は、検索結果の要約で確認しただけで、e-Govの本文ページは直接表示できていません。e-GovのURLは2023年1月10日時点の版なので、基準日（2025-04-01）時点でも同じ内容かは念のため確認してください。",
+      "レバレッジ型ETFなどには30％より高い保証金率が定められています。選択肢の『原則として』はこの例外を踏まえた表現と考えられます。",
+      "japaneselawtranslation.go.jp は法務省が運営する日本法令外国語訳DBで、政府サイトとして扱いました。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/328M50000040075",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "金融商品取引法第百六十一条の二に規定する取引及びその保証金に関する内閣府令",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.japaneselawtranslation.go.jp/ja/laws/view/4378/ja",
+      "host": "www.japaneselawtranslation.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "金融商品取引法第百六十一条の二に規定する取引及びその保証金に関する内閣府令 - 日本語 - 日本法令外国語訳DBシステム"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.japaneselawtranslation.go.jp/ja/laws/view/4378/ja",
+    "https://laws.e-gov.go.jp/law/328M50000040075",
+    "https://www.fsa.go.jp/news/r3/shouken/20211026/20211026-2.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q25-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 388,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1605,
+          "webSearchRequests": 0,
+          "costUSD": 0.020863800000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 65,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.020863800000000002,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q25-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 27768,
+          "outputTokens": 4422,
+          "cacheReadInputTokens": 6006,
+          "cacheCreationInputTokens": 6487,
+          "webSearchRequests": 2,
+          "costUSD": 0.2726092,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 739,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2726092,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q25-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 22899,
+          "outputTokens": 5411,
+          "cacheReadInputTokens": 6668,
+          "cacheCreationInputTokens": 6823,
+          "webSearchRequests": 2,
+          "costUSD": 0.2757336,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1671,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2757336,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q25-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 34604,
+          "outputTokens": 4907,
+          "cacheReadInputTokens": 15427,
+          "cacheCreationInputTokens": 8783,
+          "webSearchRequests": 3,
+          "costUSD": 0.33990539999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 928,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.33990539999999997,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

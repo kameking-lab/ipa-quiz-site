@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問27\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の〈条件〉で、円貨を米ドルに交換して米ドル建定期預金に10,000米ドルを預け入れ、満期時に元利金の米ドルを円貨に交換して受け取る場合における利回り（単利・年率）として、最も適切なものはどれか。なお、税金については考慮しないものとし、計算結果は表示単位の小数点以下第３位を四捨五入するものとする。〈条件〉・預入期間：１年・預金金利：3.00％（年率）・為替予約なし・為替レート（米ドル／円）預入時…ＴＴＳ：140.00円 ＴＴＢ：139.00円満期時…ＴＴＳ：145.00円 ＴＴＢ：144.00円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 5.94％\nイ. 6.68％\nウ. 6.71％\nエ. 7.45％\n\n【解説案】\n{\n \"explanation\": \"円を米ドルに換えるときはTTS、米ドルを円に戻すときはTTBを使います。預入時に必要な円は10,000米ドル×140.00円＝1,400,000円です。満期時の元利金は10,000米ドル×（1＋0.03）＝10,300米ドルで、これを円に戻すと10,300米ドル×144.00円＝1,483,200円になります。利回りは（1,483,200円－1,400,000円）÷1,400,000円÷1年×100≒5.942…％で、小数点以下第3位を四捨五入して5.94％です。\",\n \"choiceExplanations\": {\n  \"ア\": \"正しい計算結果で、本問の正解です。預入時はTTS 140.00円で1,400,000円を払い、満期時はTTB 144.00円で10,300米ドルを1,483,200円に換えるので、（1,483,200円－1,400,000円）÷1,400,000円≒5.94％です。\",\n  \"イ\": \"誤りです。6.68％は、満期時の円への交換にTTBではなくTTS 145.00円を使った場合の数値です（10,300米ドル×145.00円＝1,493,500円、93,500円÷1,400,000円≒6.68％）。正しくはTTB 144.00円を使い、5.94％になります。\",\n  \"ウ\": \"誤りです。6.71％は、預入時の米ドルへの交換にTTSではなくTTB 139.00円を使った場合の数値です（元本1,390,000円、93,200円÷1,390,000円≒6.71％）。正しくは預入時にTTS 140.00円を使い、5.94％になります。\",\n  \"エ\": \"誤りです。7.45％は、預入時にTTB 139.00円、満期時にTTS 145.00円と、両方で逆のレートを使った場合の数値です（103,500円÷1,390,000円≒7.45％）。正しくは預入時にTTS、満期時にTTBを使い、5.94％になります。\"\n },\n \"officialReferenceUrls\": []\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 6548,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.033139600000000005,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2784,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 524,
+    "output_tokens_details": {
+      "thinking_tokens": 308
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2784,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 524,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2784,
+      "webSearchRequests": 0,
+      "costUSD": 0.033139600000000005,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 308,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```",
+  "ttft_ms": 4991,
+  "type": "result",
+  "duration_ms": 6654,
+  "uuid": "79d1502c-1f12-4059-b4ef-add6faf2f604",
+  "ttft_stream_ms": 1879,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1880,
+  "time_to_request_from_spawn_ms": 706825,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330091777.881,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

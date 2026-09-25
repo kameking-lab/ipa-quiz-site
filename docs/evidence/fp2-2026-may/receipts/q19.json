@@ -1,0 +1,148 @@
+{
+  "question": 19,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 11,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "bb476380ea0d826ceb32b50bdb01e93af7fa56dce42221e1fb902135ca6788d3",
+    "choicesSha256": "349cbdc15d8f4264a000f7dd9ee6cd3b4df1dd9045c1a53d9631d1574bcad47b",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "リビング・ニーズ特約の上限額（通算3,000万円）や差し引かれる金額は保険会社の約款によって異なる場合があるため、「一般に」と書きました。",
+      "リビング・ニーズ特約の商品性は各社の約款で決まっており、政府の公式ページでは確認できません。そのため、参照URLは先進医療（厚生労働省）の1件だけです。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/sensiniryo/index.html",
+      "host": "www.mhlw.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "先進医療の概要について｜厚生労働省"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/sensiniryo/index.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q19-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 352,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1575,
+          "webSearchRequests": 0,
+          "costUSD": 0.0199038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0199038,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q19-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 15190,
+          "outputTokens": 2791,
+          "cacheReadInputTokens": 5976,
+          "cacheCreationInputTokens": 4362,
+          "webSearchRequests": 1,
+          "costUSD": 0.1626712,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 101,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1626712,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q19-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 15208,
+          "outputTokens": 2362,
+          "cacheReadInputTokens": 6717,
+          "cacheCreationInputTokens": 5158,
+          "webSearchRequests": 1,
+          "costUSD": 0.16067940000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 354,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.16067940000000003,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

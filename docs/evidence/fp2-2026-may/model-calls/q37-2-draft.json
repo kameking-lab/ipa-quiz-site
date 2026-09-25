@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問37\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n法人税の益金に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、法人は内国法人（普通法人）であるものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 法人が法人税の還付を受けた場合、還付加算金は益金の額に算入し、還付金は益金不算入となる。\nイ. 法人が完全支配関係のある法人の株式（完全子法人株式等）に係る配当を受け取った場合、その全額が益金不算入となる。\nウ. 法人が行った資産の販売または譲渡に係る収益の額は、原則として、その資産の引渡しの時における価額により、引き渡した日の属する事業年度の益金の額に算入する。\nエ. 法人がその有する棚卸資産の評価換えをしてその帳簿価額を増額した場合、その増額した部分の金額は、原則として、益金の額に算入する。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 54230,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.250768,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6176,
+    "cache_read_input_tokens": 5960,
+    "output_tokens": 1856,
+    "output_tokens_details": {
+      "thinking_tokens": 331
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6176,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21882,
+      "outputTokens": 4632,
+      "cacheReadInputTokens": 5960,
+      "cacheCreationInputTokens": 6176,
+      "webSearchRequests": 2,
+      "costUSD": 0.250768,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 677,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答「エ」と矛盾しない解説を作成しました。棚卸資産などを評価換えして帳簿価額を増額しても、その評価益は原則として益金に算入しません（法人税法25条1項）。このため、エが「最も不適切」になります。\n\n```json\n{\"explanation\": \"法人が有する資産の評価換えをして帳簿価額を増額しても、その増額部分（評価益）は原則として益金の額に算入しません（法人税法25条1項）。会社更生法による評価換えや、再生計画認可の決定に伴う資産評定などは例外として益金に算入されますが、通常の棚卸資産の評価換えによる評価益は益金不算入です。このため、「原則として益金の額に算入する」とする記述が最も不適切です。あわせて、法人税の還付金は益金不算入で還付加算金は益金算入になること、完全子法人株式等に係る受取配当は全額が益金不算入になること、収益は引渡し時の価額で引渡し日の属する事業年度に計上すること（法人税法22条の2）も押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。法人税は損金不算入の税金なので、その還付金は益金不算入です（法人税法26条）。一方、還付金に付される還付加算金は利息の性質を持つため、益金の額に算入します。\",\n  \"イ\": \"適切な記述です。完全子法人株式等に係る配当等は、全額（100％）が益金不算入となります（法人税法23条）。なお、関連法人株式等、その他の株式等、非支配目的株式等では、益金不算入の割合や計算方法が異なります。\",\n  \"ウ\": \"適切な記述です。資産の販売や譲渡に係る収益の額は、原則として引渡しの時の価額で、引渡しの日の属する事業年度の益金の額に算入します（法人税法22条の2）。\",\n  \"エ\": \"不適切な記述で、本問の正解です。資産の評価換えにより帳簿価額を増額した場合、その増額部分は原則として益金の額に算入しません（法人税法25条1項）。益金に算入されるのは、会社更生法による評価換えなど法令で定められた例外の場合に限られます。\"\n },\n \"topicTags\": [\"資産の評価益\", \"受取配当等の益金不算入\", \"還付金・還付加算金\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.mof.go.jp/tax_policy/summary/corporation/c02_1.pdf\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/hojin/03/03_01_01.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01_02.htm\"\n ],\n \"concerns\": [\"e-Gov法令検索の法人税法の条文ページは、検索結果に直接出てこず実在を確認できなかったため、officialReferenceUrlsに入れていません。代わりに財務省と国税庁のページを載せています。\"]\n}\n```\n\nSources:\n- [財務省 受取配当等の益金不算入制度](https://www.mof.go.jp/tax_policy/summary/corporation/c02_1.pdf)\n- [国税庁 法人税基本通達 第1節 受取配当等の益金不算入](https://www.nta.go.jp/law/tsutatsu/kihon/hojin/03/03_01_01.htm)\n- [国税庁 法人税基本通達 第2款 有価証券の評価益](https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01_02.htm)\n- [国税庁 資産の評価益に関する解説（PDF）](https://www.nta.go.jp/law/joho-zeikaishaku/hojin/130627/pdf/01.pdf)",
+  "ttft_ms": 5375,
+  "type": "result",
+  "duration_ms": 38069,
+  "uuid": "b586a972-b261-4292-912a-45b57c076d39",
+  "ttft_stream_ms": 2746,
+  "time_to_request_ms": 111,
+  "first_content_frame_ms": 2746,
+  "time_to_request_from_spawn_ms": 800510,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330185464.337,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問18\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n損害保険の税金に関する次の記述のうち、最も適切なものはどれか。なお、いずれも契約者（＝保険料負担者）および被保険者は個人であるものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 契約者と被保険者が同一人である普通傷害保険において、ケガの治療のために入院した被保険者が受け取った入院保険金は、一時所得として所得税の課税対象となる。\nイ. 保険期間10年の積立傷害保険において、契約者が受け取った満期返戻金は、一時所得として所得税の課税対象となる。\nウ. 被保険自動車を運転中に誤って電柱に衝突し、契約者が受け取った自動車保険の車両保険の保険金は、当該車両の修理をしない場合、一時所得として所得税の課税対象となる。\nエ. 自宅建物が火災で焼失したことにより、契約者が受け取った火災保険の保険金は、保険金の額が当該建物の時価額よりも多い場合、一時所得として所得税の課税対象となる。\n\n【解説案】\n{\n \"explanation\": \"損害保険の満期返戻金を保険料負担者（契約者）本人が受け取ると、一時所得として所得税の課税対象になります（所得税基本通達34-1）。一時所得の金額は「満期返戻金等 − 払込保険料の総額 − 特別控除額（最高50万円）」で計算し、その2分の1をほかの所得と合算して課税します。保険期間が5年以内などの要件を満たす一時払の損害保険（金融類似商品）の差益は20.315％の源泉分離課税になりますが、本問は保険期間10年なので当てはまりません。一方、身体の傷害を原因として受け取る保険金や、突発的な事故による資産の損害を補う保険金は、所得税法施行令30条により非課税です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。ケガの治療のための入院で被保険者本人が受け取る傷害保険の入院保険金は、身体の傷害に基因して支払われる保険金なので、所得税は非課税です。一時所得にはなりません。\",\n  \"イ\": \"適切な記述で、本問の正解です。積立傷害保険の満期返戻金を契約者（保険料負担者）が受け取ると一時所得になり、「満期返戻金 − 払込保険料 − 特別控除（最高50万円）」の2分の1が総合課税の対象です。保険期間10年の契約は、金融類似商品として源泉分離課税になる保険期間5年以内などの要件に当たりません。\",\n  \"ウ\": \"誤りです。自損事故で受け取る車両保険の保険金は、突発的な事故で資産に生じた損害を補うものなので、所得税は非課税です。車両を修理するかどうかで扱いは変わりません。\",\n  \"エ\": \"誤りです。火災で自宅建物が損害を受けて受け取る火災保険の保険金は、資産の損害を補うものなので、所得税は非課税です。保険金の額が建物の時価額を上回っても、一時所得として課税されることはありません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm\",\n  \"https://www.nta.go.jp/publication/pamph/koho/kurashi/html/04_2.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 51329,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.33798100000000003,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 8670,
+    "cache_read_input_tokens": 6785,
+    "output_tokens": 1315,
+    "output_tokens_details": {
+      "thinking_tokens": 933
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8670,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 37966,
+      "outputTokens": 4270,
+      "cacheReadInputTokens": 6785,
+      "cacheCreationInputTokens": 8670,
+      "webSearchRequests": 3,
+      "costUSD": 0.33798100000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1118,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```",
+  "ttft_ms": 12406,
+  "type": "result",
+  "duration_ms": 35557,
+  "uuid": "5c9dbe4a-b132-487a-b5d1-d5e848dc3fb7",
+  "ttft_stream_ms": 1755,
+  "time_to_request_ms": 119,
+  "first_content_frame_ms": 1755,
+  "time_to_request_from_spawn_ms": 667607,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330052589.7317,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

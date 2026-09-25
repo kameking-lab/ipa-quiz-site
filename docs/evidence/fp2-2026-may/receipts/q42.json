@@ -1,0 +1,87 @@
+{
+  "question": 42,
+  "status": "HOLD",
+  "holdReasons": [
+    "draft missing",
+    "review missing",
+    "choice explanations incomplete",
+    "general explanation missing"
+  ],
+  "released": false,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 25,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "927c36ab68356c844d12b6c7424b22a2457a07b3d37d474b9b3b06ae7f848e47",
+    "choicesSha256": "6b6fed71b051f89f69c502b15a36a4af7f94cbdec4d6dc495d6d2c393a34b69b",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": null
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [],
+    "finalReviewIssues": [],
+    "draftConcerns": [],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q42-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 499,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1557,
+          "webSearchRequests": 0,
+          "costUSD": 0.0226998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 110,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0226998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問33\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\nＡさんの各種所得の金額が下記のとおりであった場合の所得税における総所得金額として、最も適切なものはどれか。なお、▲が付された所得の金額は、その所得に損失が発生していることを意味するものとする。〈Ａさんの各種所得の金額〉・不動産所得の金額：60万円・事業所得の金額 ：▲100万円（飲食店の経営により生じた損失の金額）・一時所得の金額 ：100万円（養老保険の満期保険金を受け取ったことによる所得の金額）\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 10万円\nイ. 30万円\nウ. 60万円\nエ. 85万円\n\n【解説案】\n{\n \"explanation\": \"損益通算では、事業所得の損失▲100万円をまず経常所得グループの不動産所得60万円と通算し、残った損失▲40万円を一時所得100万円と通算します。通算後の一時所得の金額60万円は、その2分の1が総所得金額に算入されます。式は、(60万円－100万円)＝▲40万円、(100万円－40万円)×1/2＝30万円で、総所得金額は30万円です。「2分の1にするのは損益通算の後」「一時所得の金額は特別控除50万円を差し引いた後の金額」という2点を押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。10万円は、一時所得100万円を先に2分の1にした50万円を使って60万円－100万円＋50万円と計算した結果です。正しくは損益通算を済ませてから2分の1にするので、(100万円－40万円)×1/2＝30万円になります。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。事業所得の損失▲100万円を不動産所得60万円と通算すると▲40万円が残り、これを一時所得100万円と通算した60万円の2分の1である30万円が総所得金額です。\",\n  \"ウ\": \"誤りです。60万円は、通算後の一時所得60万円を2分の1にしていない金額です。総所得金額に算入されるのは一時所得の2分の1なので、正しくは60万円×1/2＝30万円です。\",\n  \"エ\": \"誤りです。85万円は、事業所得の損失を通算せず、すでに特別控除後である一時所得からさらに50万円を差し引いて、60万円＋(100万円－50万円)×1/2と計算した結果と考えられます。事業所得の損失は損益通算の対象で、特別控除の二重控除もしないため、正しくは30万円です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 36114,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.19378459999999997,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5781,
+    "cache_read_input_tokens": 6563,
+    "output_tokens": 1312,
+    "output_tokens_details": {
+      "thinking_tokens": 465
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5781,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 16946,
+      "outputTokens": 3422,
+      "cacheReadInputTokens": 6563,
+      "cacheCreationInputTokens": 5781,
+      "webSearchRequests": 1,
+      "costUSD": 0.19378459999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 477,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "判定は PASS です。解説案は正しく、そのまま公開できます。\n\n- **計算：** 事業所得の損失▲100万円を、まず不動産所得60万円と通算すると▲40万円が残ります。これを一時所得100万円と通算して60万円になり、その2分の1の30万円が総所得金額です。公式正答「イ」と一致します。\n- **ア・エの誤答の由来：** アの10万円（60−100+50）、エの85万円（60+(100−50)×1/2）は、どちらも解説どおりの計算で再現できました。\n- **基準日：** この論点で2025-04-01以後に改正はなく、答えは一つに決まります。国税庁の一時所得のページにある令和9年からの税率改正は、源泉分離課税となる一時払養老保険等（保険期間5年以内など）の差益に関するものです。本問の満期保険金は総合課税の一時所得なので、この改正は関係しません。\n- **参照URL：** 2つとも国税庁タックスアンサーの実在するページで、論点に合っています。No.2250は損益通算、No.1490は一時所得で、特別控除50万円と総所得金額に2分の1を算入することが書かれています。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": {\"ok\": true, \"issue\": \"\"}, \"ウ\": {\"ok\": true, \"issue\": \"\"}, \"エ\": {\"ok\": true, \"issue\": \"\"}},\n \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [No.2250 損益通算｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/2250.htm)\n- [No.1490 一時所得｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)",
+  "ttft_ms": 7800,
+  "type": "result",
+  "duration_ms": 36226,
+  "uuid": "ce066de5-3ea0-47fd-a02b-6f7546f03e6c",
+  "ttft_stream_ms": 1970,
+  "time_to_request_ms": 94,
+  "first_content_frame_ms": 1971,
+  "time_to_request_from_spawn_ms": 763911,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330148926.4578,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問35\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における住宅借入金等特別控除（以下、「住宅ローン控除」という）に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 住宅ローン控除の適用を受けている者が、住宅ローンの一部繰上げ返済を行い、借入金の返済期間が最初に返済した月から10年未満となった場合であっても、残りの控除期間について住宅ローン控除の適用を受けることができる。\nイ. 住宅ローン控除の適用を受けていた者が、転勤に伴う転居等のやむを得ない事由により、住宅を居住の用に供しなくなった場合に、翌年以降に再び当該住宅を居住の用に供したときは、原則として、再入居した年以後の控除期間内について住宅ローン控除の適用を受けることができる。\nウ. 年末調整の対象となる給与所得者であっても、住宅ローン控除の適用を受ける最初の年分は、一定の書類を添付した確定申告書を納税地の所轄税務署長に提出しなければならない。\nエ. 住宅ローン控除の控除額が所得税額から控除しきれない場合、その残額が、一定額を限度として翌年度分の住民税額から控除される。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 62941,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.4439018,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 8972,
+    "cache_read_input_tokens": 6109,
+    "output_tokens": 1711,
+    "output_tokens_details": {
+      "thinking_tokens": 93
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8972,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 55486,
+      "outputTokens": 5948,
+      "cacheReadInputTokens": 6109,
+      "cacheCreationInputTokens": 8972,
+      "webSearchRequests": 3,
+      "costUSD": 0.4439018,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 190,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"住宅ローン控除の対象になるのは、償還期間が10年以上の割賦償還の方法で返済する借入金です。繰上げ返済をした場合は返済後の償還期間で判定し、当初の契約で最初に返済した月から、短くなった償還期間の最終返済月までが10年未満になると、その年分以後は控除を受けられません（租税特別措置法関係通達41-19）。したがって「10年未満になっても残りの控除期間は適用できる」とする記述が不適切です。ほかに、転勤などで住まなくなった後に再入居したときの再適用、給与所得者でも最初の年分は確定申告が必要なこと、所得税から控除しきれない分は住民税から控除されることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。繰上げ返済をしても、最初に返済した月から最終返済月までの償還期間が10年以上残っていれば控除を続けられます。しかし10年未満になった場合は、その年分以後は住宅ローン控除を受けられません。\",\n  \"イ\": \"適切な記述です。転勤命令などのやむを得ない事由で住まなくなり、転居前に所定の届出をしていれば、再入居した年（その年に賃貸していた場合は翌年）以後の残りの控除期間について再び控除を受けられます。なお、控除期間は延長されません。\",\n  \"ウ\": \"適切な記述です。住宅ローン控除を受ける最初の年分は、年末調整の対象となる給与所得者であっても、計算明細書などの書類を添付した確定申告書を提出する必要があります。2年目以後は年末調整で控除を受けられます。\",\n  \"エ\": \"適切な記述です。所得税額から控除しきれなかった分は、翌年度分の個人住民税額から控除されます。上限は、所得税の課税総所得金額等の5%（最高9万7,500円）です。\"\n },\n \"topicTags\": [\"住宅ローン控除\", \"繰上げ返済と償還期間\", \"転勤後の再適用\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/law/shitsugi/shotoku/06/10.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1234.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1211-1.htm\"\n ],\n \"concerns\": [\"住民税から控除する上限額（課税総所得金額等の5%、最高9万7,500円）は、令和4年以後に居住を始めた場合の内容です。今回の検索では、国税庁のページでこの金額までは直接確認していません。上限額は総務省・自治体の案内に基づくものです。\"]\n}\n```\n\nSources:\n- [繰上返済等をした場合の償還期間｜国税庁](https://www.nta.go.jp/law/shitsugi/shotoku/06/10.htm)\n- [No.1234 転勤と住宅借入金等特別控除等｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1234.htm)\n- [No.1211-1 住宅の新築等をし、令和4年以降に居住の用に供した場合｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1211-1.htm)",
+  "ttft_ms": 2157,
+  "type": "result",
+  "duration_ms": 33825,
+  "uuid": "bf29031a-34f9-4abe-8c37-713b372a3464",
+  "ttft_stream_ms": 1868,
+  "time_to_request_ms": 91,
+  "first_content_frame_ms": 1869,
+  "time_to_request_from_spawn_ms": 747258,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330132274.1677,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

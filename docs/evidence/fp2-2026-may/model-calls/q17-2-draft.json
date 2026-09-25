@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問17\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n住宅用建物および家財を対象とする火災保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 火災保険では、隣家の火災の消火活動により住宅用建物に収容されている家財に水濡れによる損害が生じた場合、補償の対象となる。\nイ. 火災保険では、経年劣化による腐食で住宅用建物に損害が生じた場合、補償の対象となる。\nウ. 火災保険では、落雷により住宅用建物に収容されている家財に異常電圧による損害が生じた場合、補償の対象とならない。\nエ. 住宅用建物の保険金額が2,000万円（保険価額と同額）の火災保険において、1,000万円の保険金が支払われた場合、その後の保険金額が1,000万円に減額される。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 27216,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.132263,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3976,
+    "cache_read_input_tokens": 5955,
+    "output_tokens": 1124,
+    "output_tokens_details": {
+      "thinking_tokens": 236
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3976,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 11016,
+      "outputTokens": 2260,
+      "cacheReadInputTokens": 5955,
+      "cacheCreationInputTokens": 3976,
+      "webSearchRequests": 1,
+      "costUSD": 0.132263,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 329,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"住宅用火災保険では、消火活動で撒かれた水による水濡れや、消防のための破壊によって生じた損害も「火災」による損害に含まれ、補償の対象になります。隣家から出た火の消火活動で自宅の家財が濡れた場合も同じです。このほか、基本補償に落雷があること、経年劣化による損害は補償の対象外であること、一般的な商品では保険金が支払われても保険金額が減らない（自動復元）ことも押さえておきましょう。\", \"choiceExplanations\": {\"ア\": \"適切な記述で、本問の正解です。消火活動による水濡れや破壊で生じた損害は火災による損害として扱われ、隣家の火災の消火活動で家財に水濡れ損害が生じた場合も補償されます。\", \"イ\": \"誤りです。経年劣化による腐食・さび・摩耗など、時間の経過で自然に生じる損害は、偶然な事故による損害ではないため補償の対象外です。\", \"ウ\": \"不適切です。落雷は火災保険の基本補償に含まれるため、落雷の異常電圧によって家財（電化製品など）に生じた損害は補償の対象になります。\", \"エ\": \"誤りです。一般的な火災保険では、1回の事故で支払われた保険金が保険金額に満たなければ保険金額は減らず、元の2,000万円のまま契約が続きます（自動復元）。\"}, \"topicTags\": [\"火災保険の補償範囲\", \"消防活動による損害\", \"保険金額の自動復元\"], \"isCalculation\": false, \"difficulty\": 2, \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\", \"officialReferenceUrls\": [], \"concerns\": [\"WebSearchで確認した範囲では、消防活動による水濡れ損害、落雷、経年劣化の免責、保険金額の自動復元の各論点を直接説明した政府公式ページ（*.go.jp）が見つからなかったため、officialReferenceUrlsは空欄にしています。\", \"解説の内容は一般的な住宅用火災保険の約款の考え方に基づいています。保険会社や商品によって細かな扱いが異なる場合があります（例：1回の事故で保険金額の一定割合以上が支払われると契約が終了する商品もあります）。\"]}\n```",
+  "ttft_ms": 3587,
+  "type": "result",
+  "duration_ms": 27439,
+  "uuid": "edc33656-4cf9-4ecf-b589-967d9e904411",
+  "ttft_stream_ms": 1947,
+  "time_to_request_ms": 206,
+  "first_content_frame_ms": 1948,
+  "time_to_request_from_spawn_ms": 566628,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329951435.3435,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,136 @@
+{
+  "question": 37,
+  "status": "HOLD",
+  "holdReasons": [
+    "review missing"
+  ],
+  "released": false,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 22,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "8a5895a08067f5fac65cee82b4d7f18edfa790019690e64cd01f90cd3a9994f5",
+    "choicesSha256": "423f3da6c26bbe663055405db8b93573e04b66dfeba0d452c60538f474a24824",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 4)",
+    "key": "エ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": null
+  },
+  "judgment": {
+    "blindSolveAnswer": "エ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "e-Gov法令検索の法人税法の条文ページは、検索結果に直接出てこず実在を確認できなかったため、officialReferenceUrlsに入れていません。代わりに財務省と国税庁のページを載せています。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mof.go.jp/tax_policy/summary/corporation/c02_1.pdf",
+      "host": "www.mof.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "application/pdf",
+      "title": "(PDF)"
+    },
+    {
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/03/03_01_01.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "第1節 受取配当等の益金不算入｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01_02.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "第2款 有価証券の評価益｜国税庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q37-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 418,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1560,
+          "webSearchRequests": 0,
+          "costUSD": 0.0211038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 76,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0211038,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q37-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21882,
+          "outputTokens": 4632,
+          "cacheReadInputTokens": 5960,
+          "cacheCreationInputTokens": 6176,
+          "webSearchRequests": 2,
+          "costUSD": 0.250768,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 677,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.250768,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

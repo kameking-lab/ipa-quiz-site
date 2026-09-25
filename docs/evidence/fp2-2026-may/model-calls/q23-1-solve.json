@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問23\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n上場不動産投資信託（Ｊ-ＲＥＩＴ）の一般的な仕組みに関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. Ｊ-ＲＥＩＴは、投資家から集めた資金を不動産投資法人が不動産等に投資し、その賃貸収入や売買益を投資家に分配する投資信託である。\nイ. Ｊ-ＲＥＩＴは、証券取引所の立会取引において、成行注文や指値注文によって売買を行うことができる。\nウ. Ｊ-ＲＥＩＴは、一般に、発行体がいつでも買戻しに応じるオープン・エンド型の投資信託として設定されている。\nエ. Ｊ-ＲＥＩＴの分配金に係る配当所得は、税法上、配当控除の対象とならない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5168,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0198278,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1553,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 357,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1553,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 357,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1553,
+      "webSearchRequests": 0,
+      "costUSD": 0.0198278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ウ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"J-REITは投資家から集めた資金で不動産投資法人が不動産等に投資し、賃貸収入や売買益を分配する仕組みであり、記述は適切。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"J-REITは上場株式と同様に証券取引所で売買され、成行注文・指値注文が可能であり、記述は適切。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"J-REITは投資口の払戻しに応じないクローズド・エンド型である。換金は市場での売却によるため、オープン・エンド型とする記述は不適切。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"J-REITの分配金は配当所得となるが、投資法人段階で実質的に法人税が課されない仕組みのため、配当控除の対象外である。記述は適切。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5174,
+  "type": "result",
+  "duration_ms": 5298,
+  "uuid": "bd4187dd-8336-47a7-b0f4-f344d4439c33",
+  "ttft_stream_ms": 1731,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 1732,
+  "time_to_request_from_spawn_ms": 657956,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330042930.6287,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

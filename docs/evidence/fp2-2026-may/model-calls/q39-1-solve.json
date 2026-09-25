@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問39\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n消費税の簡易課税制度に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 簡易課税制度の適用を受けた場合、仕入れに係る消費税額は、課税売上高に従業員数に応じて定められたみなし仕入率を乗じて計算する。\nイ. 新たに事業を開始した事業者は、事業を開始した日の属する課税期間内に「消費税簡易課税制度選択届出書」を納税地の所轄税務署長に提出することで、当該課税期間から簡易課税制度の適用を受けることができる。\nウ. 簡易課税制度を選択した事業者は、事業を廃止した場合等を除き、原則として、簡易課税制度の適用を２年間継続しなければならない。\nエ. 簡易課税制度の選択を取りやめる場合、原則として、その適用を取りやめようとする課税期間の初日の前日までに、「消費税簡易課税制度選択不適用届出書」を納税地の所轄税務署長に提出しなければならない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 6048,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.022135799999999997,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1614,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 448,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1614,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 448,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1614,
+      "webSearchRequests": 0,
+      "costUSD": 0.022135799999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"簡易課税制度のみなし仕入率は、従業員数ではなく事業区分（第1種〜第6種事業）に応じて90%〜40%の率が定められており、課税売上高に係る消費税額にこれを乗じて仕入控除税額を計算する。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"原則は適用を受けようとする課税期間の初日の前日までに提出するが、新たに事業を開始した場合は、事業開始日の属する課税期間中に提出すれば、その課税期間から適用を受けられる。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"簡易課税制度を選択した場合、事業を廃止した場合を除き、2年間は継続適用した後でなければ選択不適用届出書を提出できない（2年間の継続適用義務）。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"簡易課税制度の適用をやめる場合は、原則として適用をやめようとする課税期間の初日の前日までに「消費税簡易課税制度選択不適用届出書」を所轄税務署長に提出する必要がある。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 6031,
+  "type": "result",
+  "duration_ms": 6139,
+  "uuid": "e7756314-a348-46f5-813f-a1677ed623d1",
+  "ttft_stream_ms": 1964,
+  "time_to_request_ms": 81,
+  "first_content_frame_ms": 1965,
+  "time_to_request_from_spawn_ms": 805107,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330190175.592,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

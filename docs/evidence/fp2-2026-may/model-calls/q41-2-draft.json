@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問41\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n土地の価格に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 地価公示の公示価格は、毎年１月１日を価格判定の基準日として国土交通省の土地鑑定委員会により公表されるもので、当該価格は更地としての価格である。\nイ. 都道府県地価調査の基準地標準価格は、毎年７月１日を価格判定の基準日として各都道府県により公表されるもので、当該価格は公示価格を補う役割を果たしている。\nウ. 相続税路線価は、各国税局が毎年１月１日を評価時点として決定するもので、当該価格は公示価格等を基にした価格の80％程度をめどに定められている。\nエ. 固定資産税評価額は、固定資産課税台帳に登録された価格で、５年に一度評価替えが行われ、当該評価額は前年の公示価格等を基にした価格の70％程度をめどに定められている。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 41666,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2644948,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6128,
+    "cache_read_input_tokens": 5974,
+    "output_tokens": 1436,
+    "output_tokens_details": {
+      "thinking_tokens": 64
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6128,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 28924,
+      "outputTokens": 3929,
+      "cacheReadInputTokens": 5974,
+      "cacheCreationInputTokens": 6128,
+      "webSearchRequests": 2,
+      "costUSD": 0.2644948,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 147,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"固定資産税評価額の評価替えは、原則として3年ごと（基準年度ごと）に行われます（地方税法第409条等）。5年に一度ではないため、エの記述が不適切で、本問の正解です。なお、宅地の固定資産税評価額は、基準年度の前年1月1日の地価公示価格等の70％程度をめどに決められており、この部分は正しい内容です。公的な土地評価は4種類あり、それぞれの基準日、決める機関、評価水準をまとめて覚えておきましょう。地価公示は1月1日・国土交通省土地鑑定委員会、都道府県地価調査は7月1日・都道府県知事、相続税路線価は1月1日・国税局・公示価格の80％程度、固定資産税評価額は3年ごと・市町村・公示価格の70％程度です。\", \"choiceExplanations\": {\"ア\": \"適切な記述です。地価公示の公示価格は、国土交通省の土地鑑定委員会が毎年1月1日時点の標準地の正常な価格として決め、公表するものです。その土地に建物などがなく、使用や収益を制限する権利もない状態を前提とした価格（更地としての価格）です。\", \"イ\": \"適切な記述です。都道府県地価調査の基準地標準価格は、毎年7月1日を基準日として都道府県知事が調べて公表するものです。基準日が半年ずれることや調査地点の違いによって、公示価格を補う役割を果たしています。\", \"ウ\": \"適切な記述です。相続税路線価は、各国税局長が毎年1月1日を評価時点として決め、7月ごろに公表します。評価水準は公示価格等の80％程度がめどです。\", \"エ\": \"不適切な記述で、本問の正解です。固定資産税評価額の評価替えは原則として3年に一度で、5年に一度ではありません。なお、評価額が前年の公示価格等の70％程度をめどに決められている点は正しい内容です。\"}, \"topicTags\": [\"公的土地評価\", \"固定資産税評価額\", \"相続税路線価\"], \"isCalculation\": false, \"difficulty\": 1, \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\", \"officialReferenceUrls\": [\"https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000042.html\", \"https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/149767_08.html\", \"https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000043.html\"], \"concerns\": [\"選択肢イは「各都道府県により公表」と書いています。法令上の実施主体は都道府県知事ですが、趣旨は同じなので適切な記述として扱いました。\"]}\n```\n\nSources:\n- [国土交通省：主な公的土地評価一覧](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000042.html)\n- [総務省：固定資産税の概要](https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/149767_08.html)\n- [国土交通省：地価公示](https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000043.html)",
+  "ttft_ms": 3467,
+  "type": "result",
+  "duration_ms": 29161,
+  "uuid": "c49140ed-d139-4710-82f4-a2ba07978121",
+  "ttft_stream_ms": 2111,
+  "time_to_request_ms": 181,
+  "first_content_frame_ms": 2111,
+  "time_to_request_from_spawn_ms": 841324,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330226003.9783,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

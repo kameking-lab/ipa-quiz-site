@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問26\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の〈Ｘ社のデータ〉に基づき算出される投資指標に関する次の記述のうち、最も不適切なものはどれか。〈Ｘ社のデータ〉・株価        ：1,800円・発行済株式数    ：２億株・売上高       ：2,500億円・営業利益      ：180億円・当期純利益     ：120億円・自己資本（＝純資産）：2,000億円・配当金総額     ：36億円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ＲＯＥは、６％である。\nイ. ＰＥＲは、20倍である。\nウ. ＰＢＲは、1.8倍である。\nエ. 配当利回りは、１％である。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5286,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.020851799999999997,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1486,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 435,
+    "output_tokens_details": {
+      "thinking_tokens": 111
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1486,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 435,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1486,
+      "webSearchRequests": 0,
+      "costUSD": 0.020851799999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 111,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"イ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"ROE＝当期純利益120億円÷自己資本2,000億円×100＝6％で正しい。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"EPS＝120億円÷2億株＝60円なので、PER＝株価1,800円÷60円＝30倍となる。20倍ではない。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"BPS＝2,000億円÷2億株＝1,000円なので、PBR＝1,800円÷1,000円＝1.8倍で正しい。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"1株当たり配当金＝36億円÷2億株＝18円なので、配当利回り＝18円÷1,800円×100＝1％で正しい。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 2918,
+  "type": "result",
+  "duration_ms": 5394,
+  "uuid": "57916821-bb0d-4f4a-8378-09cdcdafcbd8",
+  "ttft_stream_ms": 1866,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1867,
+  "time_to_request_from_spawn_ms": 677133,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330062089.7249,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

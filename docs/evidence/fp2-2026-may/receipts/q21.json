@@ -1,0 +1,165 @@
+{
+  "question": 21,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 12,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "36a4ad024b4585de1909cff646760606d53c93061e4a55e253202d5be2853464",
+    "choicesSha256": "376a7b3cc296a722fad48c154516487e54ccec9b98e61c339eb7296b5b835c3a",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 4)",
+    "key": "エ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "エ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "2026年7月に第22回景気動向指数研究会が開催されていますが、採用系列の改定（第14次改定）が決まったかどうかは確認できませんでした。ただし、「山または谷ごとに見直す」という原則自体は本問の正誤に影響しません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.esri.cao.go.jp/jp/stat/di/di3.html",
+      "host": "www.esri.cao.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "景気動向指数の利用の手引 : 経済社会総合研究所 - 内閣府"
+    },
+    {
+      "url": "https://www.esri.cao.go.jp/jp/stat/di/menu_di.html",
+      "host": "www.esri.cao.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "景気動向指数 : 経済社会総合研究所 - 内閣府"
+    },
+    {
+      "url": "https://www.esri.cao.go.jp/jp/sna/menu.html",
+      "host": "www.esri.cao.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "国民経済計算（GDP統計） : 経済社会総合研究所 - 内閣府"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.esri.cao.go.jp/jp/stat/di/di3.html",
+    "https://www.esri.cao.go.jp/jp/stat/di/menu_di.html",
+    "https://www.esri.cao.go.jp/jp/stat/di/220719shiryou1.pdf"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q21-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 419,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1554,
+          "webSearchRequests": 0,
+          "costUSD": 0.0210758,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 39,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0210758,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q21-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 150451,
+          "outputTokens": 5065,
+          "cacheReadInputTokens": 5954,
+          "cacheCreationInputTokens": 10563,
+          "webSearchRequests": 6,
+          "costUSD": 0.8487988,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 184,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.8487988,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q21-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11398,
+          "outputTokens": 2393,
+          "cacheReadInputTokens": 6680,
+          "cacheCreationInputTokens": 5048,
+          "webSearchRequests": 1,
+          "costUSD": 0.145172,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 118,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.145172,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

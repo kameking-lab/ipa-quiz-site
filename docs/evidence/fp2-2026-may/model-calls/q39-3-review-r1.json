@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問39\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n消費税の簡易課税制度に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 簡易課税制度の適用を受けた場合、仕入れに係る消費税額は、課税売上高に従業員数に応じて定められたみなし仕入率を乗じて計算する。\nイ. 新たに事業を開始した事業者は、事業を開始した日の属する課税期間内に「消費税簡易課税制度選択届出書」を納税地の所轄税務署長に提出することで、当該課税期間から簡易課税制度の適用を受けることができる。\nウ. 簡易課税制度を選択した事業者は、事業を廃止した場合等を除き、原則として、簡易課税制度の適用を２年間継続しなければならない。\nエ. 簡易課税制度の選択を取りやめる場合、原則として、その適用を取りやめようとする課税期間の初日の前日までに、「消費税簡易課税制度選択不適用届出書」を納税地の所轄税務署長に提出しなければならない。\n\n【解説案】\n{\n \"explanation\": \"簡易課税制度では、仕入れに係る消費税額は、課税売上高に係る消費税額に「事業区分」に応じたみなし仕入率を掛けて計算します。事業区分は第1種（卸売業）90%〜第6種（不動産業）40%の6つです。従業員数で率が決まるわけではないので、アの記述が不適切で、本問の正解です。このほか、選択届出書の提出期限（原則は適用を受けたい課税期間の初日の前日まで、新規開業の場合は開業した課税期間内）、2年間の継続適用、不適用届出書の提出期限も押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。みなし仕入率は従業員数ではなく、卸売業・小売業・製造業などの事業区分に応じて決まります（第1種90%〜第6種40%）。また、この率を掛ける対象は課税売上高そのものではなく、課税売上高に係る消費税額です。\",\n  \"イ\": \"適切な記述です。選択届出書は、原則として適用を受けたい課税期間の初日の前日までに出す必要があります。ただし、新たに事業を始めた事業者は、事業を開始した日の属する課税期間内に提出すれば、その課税期間から簡易課税制度を適用できます。\",\n  \"ウ\": \"適切な記述です。簡易課税制度を選んだ事業者は、事業を廃止した場合を除き、2年間は継続して適用しなければなりません。そのため、適用開始から2年を経過する日の属する課税期間の初日以後でなければ、不適用届出書を提出できません。\",\n  \"エ\": \"適切な記述です。簡易課税制度の適用をやめるには、原則として、やめようとする課税期間の初日の前日までに「消費税簡易課税制度選択不適用届出書」を所轄税務署長に提出する必要があります。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm\",\n  \"https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_13.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 46576,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2515054,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7245,
+    "cache_read_input_tokens": 6727,
+    "output_tokens": 1436,
+    "output_tokens_details": {
+      "thinking_tokens": 436
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7245,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21735,
+      "outputTokens": 4263,
+      "cacheReadInputTokens": 6727,
+      "cacheCreationInputTokens": 7245,
+      "webSearchRequests": 2,
+      "costUSD": 0.2515054,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 703,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "査読の結果、この解説はそのまま公開して問題ありません（PASS）。国税庁の2ページ（タックスアンサーNo.6505、届出手続D1-22）で、6つの事業区分とみなし仕入率（卸売業90%〜不動産業40%）、および計算式「売上げに係る消費税額×みなし仕入率」を確認しました。届出期限・2年継続・不適用届出の各要件は、D1-22のページ本文までは開いておらず、法令の知識と照らして確認しています。\n\n- **ア（正答）:** みなし仕入率は従業員数ではなく事業区分で決まり、率を掛ける対象は課税売上高そのものではなくその消費税額です。解説の指摘は2点とも正しいです。\n- **イ・ウ・エ:** 新規開業時の届出期限の特例、2年間の継続適用と不適用届出の提出時期の制限、不適用届出の提出期限は、いずれも基準日時点の法令に合っています。\n- **基準日:** 2025-04-01より後にこれらの要件が変わった形跡は見当たらず、答えは一つに決まります。\n- **参照URL:** どちらも実在する国税庁の公式ページで、解説の論点に対応しています。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": {\"ok\": true, \"issue\": \"\"}, \"ウ\": {\"ok\": true, \"issue\": \"\"}, \"エ\": {\"ok\": true, \"issue\": \"\"}},\n \"explanationOk\": true, \"referenceUrlsOk\": true, \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null, \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [No.6505 簡易課税制度｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shohi/6505.htm)\n- [D1-22 消費税簡易課税制度選択届出手続｜国税庁](https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_13.htm)\n- [D1-23 消費税簡易課税制度選択不適用届出手続｜国税庁](https://www.nta.go.jp/taxes/tetsuzuki/shinsei/annai/shohi/annai/1461_14.htm)",
+  "ttft_ms": 7209,
+  "type": "result",
+  "duration_ms": 33204,
+  "uuid": "068a4d6c-fcee-442a-b12a-bb6bb50acdd8",
+  "ttft_stream_ms": 1787,
+  "time_to_request_ms": 112,
+  "first_content_frame_ms": 1788,
+  "time_to_request_from_spawn_ms": 844736,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330229679.165,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

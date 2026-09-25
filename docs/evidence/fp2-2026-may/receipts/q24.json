@@ -1,0 +1,154 @@
+{
+  "question": 24,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 13,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "74553f1416058e1a15c07d5b437dfd6eb5fc2dbfe1b7eb9711582722e6f7c7a7",
+    "choicesSha256": "283851996db4a6b2514d899cbd79ac1097b3f7db6da08b7139a3ee78764b9d59",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/guide/",
+      "host": "www.mof.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "知る｜個人向け国債｜財務省"
+    },
+    {
+      "url": "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/qa/answer_qd.html",
+      "host": "www.mof.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "個人向け国債の中途換金についてのよくある質問 : 財務省"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/qa/answer_qd.html",
+    "https://www.mof.go.jp/jgbs/individual/kojinmuke/main/guide/"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q24-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 521,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1523,
+          "webSearchRequests": 0,
+          "costUSD": 0.0228678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 151,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0228678,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q24-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 13400,
+          "outputTokens": 2342,
+          "cacheReadInputTokens": 5924,
+          "cacheCreationInputTokens": 4024,
+          "webSearchRequests": 1,
+          "costUSD": 0.1438168,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 243,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1438168,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q24-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 14315,
+          "outputTokens": 2536,
+          "cacheReadInputTokens": 6522,
+          "cacheCreationInputTokens": 4867,
+          "webSearchRequests": 1,
+          "costUSD": 0.15822039999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 347,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.15822039999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

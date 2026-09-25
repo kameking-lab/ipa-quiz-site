@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問30\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n金融サービスの提供及び利用環境の整備等に関する法律（以下、「金融サービス提供法」という）に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 金融サービス提供法において、金融サービス仲介業者の登録を受けた事業者は、銀行業・金融商品取引業・保険業・貸金業に係る金融サービスのうち、顧客に対し高度に専門的な説明を必要とする金融サービスを仲介することが認められている。\nイ. 金融サービス提供法では、金融商品販売業者等は、業として行う金融商品の販売等に係る勧誘をしようとするときは、原則として、あらかじめ勧誘方針を策定して公表することが義務付けられている。\nウ. 金融サービス提供法では、顧客が金融商品販売業者等の説明義務違反に基づき損害賠償を請求する場合、顧客が払い込んだ元本の総額が損害額と推定される。\nエ. 金融サービス提供法では、金融商品販売業者等は、顧客の属性にかかわらず、すべての顧客に対して公平になるように、同じ方法および程度によって重要事項を説明しなければならないとされている。\n\n【解説案】\n{\n \"explanation\": \"金融サービス提供法では、金融商品販売業者等が業として金融商品の販売等の勧誘をしようとするときは、原則として、勧誘に関する方針（勧誘方針）をあらかじめ定め、速やかに公表しなければなりません。例外は、金融商品販売業者等自身が国・地方公共団体その他政令で定める者である場合や、特定顧客のみを顧客とする場合です。勧誘方針には、勧誘の対象となる者の知識・経験・財産の状況・契約締結の目的に照らして配慮すべき事項、勧誘の方法・時間帯に関して配慮すべき事項などを定めます。あわせて、説明義務は顧客の属性に応じた方法・程度で尽くす必要があること、説明義務に違反したときは元本欠損額が損害額と推定されることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。金融サービス仲介業者は、1つの登録で銀行・証券・保険・貸金の各分野の金融サービスを仲介できます。ただし、顧客に対して高度に専門的な説明を必要とする金融サービスは、仲介できない範囲として除かれています。\",\n  \"イ\": \"適切な記述で、本問の正解です。金融商品販売業者等は、業として行う金融商品の販売等の勧誘をしようとするときは、原則として、あらかじめ勧誘方針を定めて公表しなければなりません。金融商品販売業者等自身が国・地方公共団体その他政令で定める者である場合や、特定顧客のみを顧客とする場合は例外です。\",\n  \"ウ\": \"誤りです。説明義務違反によって損害賠償を請求する場合に損害額と推定されるのは、顧客が払い込んだ元本の総額ではなく「元本欠損額」です。\",\n  \"エ\": \"不適切です。重要事項の説明は、全顧客に同じ方法・程度で行うのではなく、顧客の知識・経験・財産の状況・契約締結の目的に照らして、その顧客に理解されるために必要な方法と程度で行わなければなりません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/412AC0000000101\",\n  \"https://www.fsa.go.jp/common/diet/201/index.html\",\n  \"https://www.fsa.go.jp/common/law/guide/kinsa/index.html\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 62260,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3616298,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 9439,
+    "cache_read_input_tokens": 6849,
+    "output_tokens": 2098,
+    "output_tokens_details": {
+      "thinking_tokens": 832
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9439,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 35402,
+      "outputTokens": 5657,
+      "cacheReadInputTokens": 6849,
+      "cacheCreationInputTokens": 9439,
+      "webSearchRequests": 3,
+      "costUSD": 0.3616298,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1232,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**確認結果**\n- **イ（正答）**：金融サービス提供法第10条を確認しました。勧誘方針はあらかじめ定める義務があり（第1項）、定めたときは速やかに公表する義務があります（第3項）。例外は「国・地方公共団体その他政令で定める者」の場合と「特定顧客のみを顧客とする」場合で、解説案の記載と合っています。勧誘方針に書く事項（知識・経験・財産の状況・契約目的に照らした配慮、勧誘の方法・時間帯）も正確です。2024年12月15日施行の改正では施行令第14条が変わり、公表の方法にインターネット掲載が加わりました。ただし策定・公表の義務そのものは変わっていないため、基準日（2025-04-01）でも答えは一つに決まります。\n- **ア**：金融サービス仲介業者は、1つの登録で預金等・保険・有価証券等・貸金業貸付の各媒介業務を行えます。ただし、高度に専門的な説明が必要なサービスは仲介できません。したがって、この選択肢は「誤り」とする解説で正しいです。\n- **ウ**：損害額と推定されるのは「元本欠損額」です（損害額の推定規定）。解説は正しいです。\n- **エ**：重要事項の説明は、顧客の知識・経験・財産の状況・契約目的に照らして、その顧客に理解されるのに必要な方法と程度で行う必要があります（適合性の原則の考え方）。解説は正しいです。\n- **参照URL**：3つとも政府の公式ページで、論点に対応しています。e-Govの法令本文、金融庁の第201回国会提出法律案（仲介業を創設した令和2年改正）のページ、金融庁の金融サービス仲介業者向け監督指針です。\n\nSources:\n- [金融サービスの提供及び利用環境の整備等に関する法律（e-Gov）](https://laws.e-gov.go.jp/law/412AC0000000101)\n- [金融商品の販売等に係る勧誘方針の公表の方法に関する内閣府令（e-Gov）](https://laws.e-gov.go.jp/law/506M60000002102)\n- [令和５年金融商品取引法等改正に係る政令・内閣府令案等のパブコメ結果（金融庁）](https://www.fsa.go.jp/news/r6/sonota/20241120/20241120.html)\n- [金融サービス仲介業者向けの総合的な監督指針（金融庁）](https://www.fsa.go.jp/common/law/guide/kinsa/index.html)",
+  "ttft_ms": 11108,
+  "type": "result",
+  "duration_ms": 47856,
+  "uuid": "96e2d472-2923-4987-adf5-c594c4e453db",
+  "ttft_stream_ms": 2193,
+  "time_to_request_ms": 126,
+  "first_content_frame_ms": 2194,
+  "time_to_request_from_spawn_ms": 830779,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330215699.5908,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

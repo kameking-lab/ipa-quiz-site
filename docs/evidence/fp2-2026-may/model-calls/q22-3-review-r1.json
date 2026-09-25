@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問22\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n銀行等の金融機関で取り扱う預金の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. デリバティブを組み込んだ仕組預金には、金融機関の判断によって満期日が繰り上がる商品がある。\nイ. 総合口座において、紙の通帳の代わりにオンライン上で入出金の明細や残高を確認することができるサービスを提供しているのは、ネット専業銀行に限られる。\nウ. 自動積立定期預金は、各指定日に普通預金口座からの口座振替等により、指定金額を預入することができる定期預金である。\nエ. 直近10年以上、入出金等の取引のない普通預金は、休眠預金として預金保険機構に移管され、民間公益活動に活用される。\n\n【解説案】\n{\n \"explanation\": \"通帳を発行しない代わりにインターネットバンキングやアプリで入出金明細・残高を確認できる「通帳レス（Web通帳）」サービスは、ネット専業銀行に限られません。メガバンク、地方銀行、ゆうちょ銀行などの店舗型の金融機関も広く提供しています。「限られる」とする記述は不適切で、これが本問の正解です。あわせて、仕組預金の早期償還（満期繰上げ）特約、自動積立定期預金の仕組み、休眠預金等活用法の対象となる「10年」という期間も押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。デリバティブを組み込んだ仕組預金には、金融機関の判断で満期日を繰り上げる（早期償還する）特約が付いた商品があります。この場合、預金者は満期を選べず、中途解約すると元本割れになることもあります。\",\n  \"イ\": \"不適切な記述で、本問の正解です。紙の通帳の代わりにオンラインで明細や残高を確認できるサービスは、メガバンクや地方銀行などの店舗型の金融機関でも提供されており、ネット専業銀行に限られません。\",\n  \"ウ\": \"適切な記述です。自動積立定期預金は、毎月の指定日などに普通預金口座から口座振替で指定金額を定期預金として積み立てていく商品です。\",\n  \"エ\": \"適切な記述です。休眠預金等活用法では、2009年1月1日以降の取引から10年以上入出金などの異動がない預金等を休眠預金等とし、預金保険機構に移管したうえで民間公益活動に活用します。休眠預金等になった後でも、取引のあった金融機関で引き出すことができます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html\",\n  \"https://www8.cao.go.jp/kyumin_yokin/seido/seido.html\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 43356,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2910194,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7142,
+    "cache_read_input_tokens": 6577,
+    "output_tokens": 1404,
+    "output_tokens_details": {
+      "thinking_tokens": 338
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7142,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 31822,
+      "outputTokens": 4264,
+      "cacheReadInputTokens": 6577,
+      "cacheCreationInputTokens": 7142,
+      "webSearchRequests": 2,
+      "costUSD": 0.2910194,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 390,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**判定：PASS**\n\n- **正答イ：** 公式正答と合っています。紙の通帳の代わりにオンラインで明細や残高を見られるサービス（通帳レス、Web通帳）は、メガバンク、地方銀行、ゆうちょ銀行などの店舗型の金融機関でも一般に提供されています。ネット専業銀行だけのサービスではないので、「限られる」は不適切です。\n- **ア・ウ：** 仕組預金の早期償還特約、中途解約で元本割れになりうる点、自動積立定期預金の仕組みは、どれも一般的な商品性の説明として正しいです。\n- **エ：** 金融庁と内閣府の公式ページで確認し、次の点がすべて合っていました。\n  - 対象は2009年1月1日以降に取引があった預金等です。\n  - 10年以上異動がないと休眠預金等になります。\n  - 休眠預金等は預金保険機構に移され、民間公益活動に使われます。\n  - 休眠預金等になった後も、取引のあった金融機関で引き出せます。\n- **基準日：** 2025-04-01の時点で答えが1つに決まります。この問題に関係する改正はありません。\n- **参照URL：** 2つとも実在する政府の公式ページで、エの論点（休眠預金制度）に対応しています。イの通帳レスは法令ではなく民間の商品の話なので、公式URLがなくても問題ありません。\n\nSources:\n- [金融庁「長い間、お取引のない預金等はありませんか？」](https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html)\n- [内閣府「休眠預金等活用制度について」](https://www8.cao.go.jp/kyumin_yokin/seido/seido.html)\n- [金融庁 休眠預金等活用法Q&A](https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokinQA.pdf)",
+  "ttft_ms": 4605,
+  "type": "result",
+  "duration_ms": 30490,
+  "uuid": "94ca0ccd-dd13-4f36-a3c7-c157905618eb",
+  "ttft_stream_ms": 1816,
+  "time_to_request_ms": 94,
+  "first_content_frame_ms": 1816,
+  "time_to_request_from_spawn_ms": 688210,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330073187.8906,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,157 @@
+{
+  "question": 20,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 11,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "0751200506afa90d30c7bcd01e841eaea10aac335bb705c66de45e549392d9ab",
+    "choicesSha256": "dde00e462e944f71fed0c1123712f66e9876bc8843309c1d735018bf063a01af",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "2件の金融庁ページは、公的保険と民間保険の関係や、保険加入時の一般的な注意点を説明するものです。定期保険・ファミリーバイク特約・個人賠償責任補償特約それぞれの仕組みを直接説明する政府ページは見つかりませんでした。",
+      "ファミリーバイク特約と個人賠償責任補償特約の補償範囲（別居の未婚の子を含むかどうかなど）は、保険会社や約款によって細部が異なる場合があります。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.fsa.go.jp/ordinary/insurance-portal.html",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "公的保険ポータル： 金融庁"
+    },
+    {
+      "url": "https://www.fsa.go.jp/ordinary/hokenkeiyaku/index.html",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "「保険契約にあたっての手引」について ： 金融庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.fsa.go.jp/ordinary/insurance-portal.html",
+    "https://www.fsa.go.jp/ordinary/hokenkeiyaku/index.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q20-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 354,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1545,
+          "webSearchRequests": 0,
+          "costUSD": 0.0197038,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0197038,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q20-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 14600,
+          "outputTokens": 2746,
+          "cacheReadInputTokens": 5946,
+          "cacheCreationInputTokens": 4198,
+          "webSearchRequests": 1,
+          "costUSD": 0.1580932,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 143,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1580932,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q20-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 25577,
+          "outputTokens": 3666,
+          "cacheReadInputTokens": 6612,
+          "cacheCreationInputTokens": 6475,
+          "webSearchRequests": 2,
+          "costUSD": 0.2487504,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 581,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2487504,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}
