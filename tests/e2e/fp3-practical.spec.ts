@@ -1,13 +1,14 @@
 import { expect, test } from "@playwright/test";
 
-test("FP3 offers two complete practical years with readable choices and explanations", async ({ page }) => {
+test("FP3 offers three complete practical years with readable choices and explanations", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fp3");
   await expect(page.getByRole("link", { name: /学科を解く/ })).toBeVisible();
-  await page.getByRole("link", { name: /実技の問題と模範解答（40問）/ }).click();
+  await page.getByRole("link", { name: /実技の問題と模範解答（60問）/ }).click();
   await expect(page.getByRole("heading", { name: "FP3級 実技の過去問" })).toBeVisible();
   await expect(page.getByRole("link", { name: /2024年5月公表/ })).toBeVisible();
   await expect(page.getByRole("link", { name: /2025年5月公表/ })).toBeVisible();
+  await expect(page.getByRole("link", { name: /2026年5月公表/ })).toBeVisible();
 
   await page.getByRole("link", { name: /2024年5月公表/ }).click();
   await expect(page.getByRole("heading", { name: "2024年5月公表 実技20問" })).toBeVisible();
