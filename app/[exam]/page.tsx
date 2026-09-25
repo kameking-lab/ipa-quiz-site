@@ -307,7 +307,7 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
-          {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定（土木）全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
+          {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定（土木）全66問と令和7年度10月実施分のNo.6〜10を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では公開済みの問題を自由に解けます。</p>}
         </header>
 
         {/* Big CTA */}
