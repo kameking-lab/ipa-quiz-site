@@ -1,4 +1,5 @@
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { examLabel, formatYearSeason } from "@/lib/utils";
@@ -158,7 +159,7 @@ const EXAM_META_DESC_DIVERSE: Record<
   au: (c, y, k) =>
     `内部統制・J-SOX・IT全般統制を評価するシステム監査技術者試験は、論述で監査人としての判断力を問う高度試験。${c}問・${y}期分・${k}分野をAI解説で対策。財務・情報システムのリスクベースドアプローチによる実務監査力を体系的に習得。`,
   fp2: (c, y, k) =>
-    `2級FP技能検定の公式公表問題を${c}問・${y}期分・${k}分野収録。全選択肢の解説、公式根拠リンク、法令基準日付き。2026年5月公表60問のうち問1〜10を先行収録しています。`,
+    `2級FP技能検定の公式公表問題を${c}問・${y}期分・${k}分野収録。全選択肢の解説、公式根拠リンク、法令基準日付き。2026年5月公表分は${fp2May2026CoverageLabel()}を収録しています。`,
   fp3: (c, y, k) =>
     `3級FP技能検定の公式公表問題を${c}問・${y}期分・${k}分野収録。全選択肢の解説と日本FP協会の問題・模範解答リンクを確認しながら、家計・年金・保険・金融・税・不動産・相続の基礎を学べます。`,
   denken3: (c, y, k) =>

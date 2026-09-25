@@ -1,7 +1,8 @@
 import type { Question } from "@/lib/questions/types";
 import academic2024And2025 from "./academic-2024-2025.json";
+import academic2026May from "./academic-2026-05.json";
 
-/** 2026年5月公表・学科の問1〜10。全60問中のライフプラン分野先行セット。 */
+/** 2026年5月公表・学科の問1〜10（ライフプラン分野）。 */
 const FP2_2026_PILOT_QUESTIONS: Question[] = [
   {
     "id": "fp2-2026-published-gakka-q1",
@@ -410,8 +411,23 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
   }
 ];
 
-/** 2024・2025年の公式公開4回は学科240問、2026年公表分は問1〜10のみ。 */
-export const FP2_QUESTIONS: Question[] = [
+/** 2026年5月公表・学科のうち公開済みの問（問1から連続）。問11以降は review-ledger の検収範囲だけ。 */
+export const FP2_2026_MAY_QUESTIONS: Question[] = [
   ...FP2_2026_PILOT_QUESTIONS,
+  ...academic2026May as Question[],
+];
+
+/** 2026年5月公表分の全問数（公式PDFの表紙「四答択一式60問」）。 */
+export const FP2_2026_MAY_TOTAL = 60;
+
+/** 画面表示用。公開済みの問から導出し、手書きの範囲表記を持たない。 */
+export function fp2May2026CoverageLabel(): string {
+  const last = FP2_2026_MAY_QUESTIONS.length;
+  return last >= FP2_2026_MAY_TOTAL ? `全${FP2_2026_MAY_TOTAL}問` : `問1〜${last}`;
+}
+
+/** 2024・2025年の公式公開4回は学科240問、2026年公表分は問1から連続する公開済み範囲のみ。 */
+export const FP2_QUESTIONS: Question[] = [
+  ...FP2_2026_MAY_QUESTIONS,
   ...academic2024And2025 as Question[],
 ];
