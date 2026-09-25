@@ -11,6 +11,7 @@ import { FP2_2026_MAY_QUESTIONS, FP2_2026_MAY_TOTAL, fp2May2026CoverageLabel } f
 const KEYS = ["ア", "イ", "ウ", "エ"] as const;
 const PAPER_URL = "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf";
 const reviewed = FP2_2026_MAY_QUESTIONS.filter((q) => q.qNumber >= 11);
+const holds = coverage.holds as { number: number; reason: string }[];
 const ledgerRows = ledger.questions as Record<string, { status: string }>;
 const receipts = receiptIndex as Record<string, { kind: string; questions: number[]; requestedModel: string; receiptSha256: string }>;
 
@@ -34,7 +35,7 @@ describe("FP2 2026年5月公表 学科", () => {
     expect(coverage.publishedCount).toBe(reviewed.length);
     expect(coverage.publishedRange?.[1] ?? 10).toBe(numbers.length);
     expect(fp2May2026CoverageLabel()).toBe(numbers.length >= FP2_2026_MAY_TOTAL ? "全60問" : `問1〜${numbers.length}`);
-    if (coverage.holds.length) expect(numbers.length + 1).toBe(coverage.holds[0]!.number);
+    if (holds.length) expect(numbers.length + 1).toBe(holds[0]!.number);
   });
 
   it.each(reviewed)("$id matches the official stem, choices, answer and figure", (q) => {
