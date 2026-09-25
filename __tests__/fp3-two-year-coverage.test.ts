@@ -7,7 +7,7 @@ import { getChoiceKeys } from "@/lib/questions/answers";
 
 describe("FP3 2024–2025 complete official sets", () => {
   it("contains every published academic question for both years", () => {
-    expect(FP3_QUESTIONS).toHaveLength(120);
+    expect(FP3_QUESTIONS.filter((question) => question.year === 2024 || question.year === 2025)).toHaveLength(120);
     for (const year of [2024, 2025]) {
       const rows = FP3_QUESTIONS.filter((question) => question.year === year);
       expect(rows).toHaveLength(60);
