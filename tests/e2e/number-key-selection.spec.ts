@@ -16,7 +16,7 @@ async function numberKeySelectsFirst(page: Page, url: string): Promise<void> {
   await expect(first).toBeVisible();
   // Honest advertisement: the button claims number-key 1 as a shortcut…
   await expect(first).toHaveAttribute("aria-keyshortcuts", "1");
-  if (url === "/challenge") {
+  if (url === "/challenge" || url.startsWith("/q/")) {
     // The server can paint the choices before the client installs its key listener.
     await expect(page.getByRole("radiogroup")).toHaveAttribute("data-shortcuts-ready", "true");
   }

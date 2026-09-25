@@ -116,6 +116,9 @@ export function QuestionAnswerCard({
 
   // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
+  // Set once the key listener is installed, so number keys pressed right after
+  // the server-rendered choices appear are not silently lost before hydration.
+  const [shortcutsReady, setShortcutsReady] = React.useState(false);
   React.useEffect(() => {
     if (revealed) return;
     const handler = (e: KeyboardEvent) => {
@@ -132,7 +135,11 @@ export function QuestionAnswerCard({
       }
     };
     window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    setShortcutsReady(true);
+    return () => {
+      window.removeEventListener("keydown", handler);
+      setShortcutsReady(false);
+    };
   }, [revealed, keys, onSelect]);
 
   const isCorrect = isAcceptedAnswer(answerKey, selected);
@@ -145,6 +152,7 @@ export function QuestionAnswerCard({
       <div
         role="radiogroup"
         aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
+        data-shortcuts-ready={shortcutsReady}
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (
