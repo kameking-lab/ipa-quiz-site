@@ -2,7 +2,8 @@
   "question": 60,
   "status": "HOLD",
   "holdReasons": [
-    "review missing"
+    "review not PASS after 1 round(s): ['FIX']",
+    "final review flags choice explanations ['イ'] as unsupported or wrong"
   ],
   "released": false,
   "source": {
@@ -41,13 +42,17 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "ア",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
-    "finalReviewIssues": [],
+    "reviewVerdicts": [
+      "FIX"
+    ],
+    "finalReviewIssues": [
+      "選択肢イの解説で、特別決議が必要な理由の説明が不正確（売主追加請求権との関係の書き方が誤っている）"
+    ],
     "draftConcerns": [
       "取締役解任の決議要件（普通決議。ただし定款で要件を加重することは可能）や、特定の株主からの自己株式取得の条文番号は、会社法の条文に基づいて書いています。e-Govの本文そのものは、今回の検索では表示を確認できていません。",
       "e-Govには2026年6月24日施行の会社法改正版がありますが、本問の論点（2025-04-01時点の制度）への影響は確認していません。"
@@ -113,6 +118,31 @@
         }
       },
       "total_cost_usd": 0.1295886,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q60-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 2370,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2616,
+          "webSearchRequests": 0,
+          "costUSD": 0.0687156,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 960,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0687156,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
