@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 10656,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 19417,
+      "webSearchRequests": 0,
+      "costUSD": 0.3688364,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 9394,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "02d996df0a66965f2a2a9acd4850b71fcaaccf8e663191cb2fb7fcea2e0e62f0",
+  "rawStreamSha256": "4c86da2c4023035986b2b88f151c4b574c6ad6826494d8e2154a1cc82c5d2ebf",
+  "result": "{\"items\": [{\"qNumber\": 41, \"verdict\": \"HOLD\", \"issues\": [\"choiceExplanationsのキー「ア」〜「エ」は選択肢1〜4（一つ／二つ／三つ／なし）を指すが、問題文の記述ア〜エと同じ記号である。そのため学習者には、誤りである記述アに対して「正答」と表示されているように読める。個数問題では取り違えのリスクが高い。\", \"choiceExplanations「イ」（選択肢2「二つ」）の理由付けが論理的に不足している。アとエが誤りというだけでは、残るイ・ウの二つが正しい可能性を否定できない。ウも誤りであることに触れなければ「二つにはならない」は導けない。\", \"主解説の法的内容（35条1項1号、施行令3条1項の急傾斜地法7条1項、規則16条の4の3柱書・6号・13号）は正確で、公式正解1とも整合している。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {\"ア\": \"正答（選択肢1「一つ」）。記述アは誤り、イは正しい、ウは誤り、エは誤りで、正しい記述はイの一つだけである。\", \"イ\": \"誤答（選択肢2「二つ」）。正しい記述はイのみである。記述ア（抹消予定でも登記された抵当権は説明対象）、ウ（住宅性能評価を受けた新築住宅である旨は建物の売買・交換のみの説明事項で、貸借は対象外）、エ（急傾斜地崩壊危険区域内の行為制限の概要も説明対象）はいずれも誤りなので、二つにはならない。\", \"ウ\": \"誤答（選択肢3「三つ」）。正しい記述はイの一つだけなので、三つにはならない。\", \"エ\": \"誤答（選択肢4「なし」）。記述イ（宅地の貸借で、契約終了時の建物取壊しに関する事項を定めようとするときはその内容を説明）は正しいので、「なし」ではない。\"}}, {\"qNumber\": 42, \"verdict\": \"PASS\", \"issues\": [\"軽微（非ブロッキング）：肢1の根拠は47条の2第1項の文言そのものである。施行規則16条の11は47条の2第3項の委任に基づく別の禁止行為（将来の環境・交通等の断定的判断など）の規定なので、併記は不要。法律効果の説明に誤りはない。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 43, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 44, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 45, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 46, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 47, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 48, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 49, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 50, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}]}",
+  "is_error": false
+}

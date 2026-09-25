@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 7424,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 15024,
+      "webSearchRequests": 0,
+      "costUSD": 0.26905239999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 7209,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "8dced0933acd5aa2fbdf7b9bf86df6705f1f25d1353f3caf05750118e71d44c2",
+  "rawStreamSha256": "af51691eb045723946992bcb0d78bc1afedb15f130652e46973b6236d28950e6",
+  "result": "{\"items\": [{\"qNumber\": 3, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 34, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 40, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 41, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}]}",
+  "is_error": false
+}

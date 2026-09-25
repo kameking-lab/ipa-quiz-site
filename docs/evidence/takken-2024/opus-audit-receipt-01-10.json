@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 4739,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 18555,
+      "webSearchRequests": 0,
+      "costUSD": 0.2436004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 3597,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "e2b13e88d8c0e5176ae6e34c45e9efdac531ca1604e2d1fc28550f26f5eaf14d",
+  "rawStreamSha256": "2f94b996d9147ca66e62106db003ad7ab66fb35e1c72fe4fba1cb41dcb23e2a6",
+  "result": "{\"items\": [{\"qNumber\": 1, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 2, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 3, \"verdict\": \"HOLD\", \"issues\": [\"根拠条項の誤り: 資材置場としての土地の賃貸借は民法252条4項2号（樹木の栽植・伐採目的の山林以外の土地の賃借権等・5年以内）に当たる。候補の主解説・肢ウが引用する252条4項3号は『建物の賃借権等・3年以内』の規定であり、該当しない。\", \"『民法602条2号以外の土地』『期間3年以内の土地の賃貸借は短期賃貸借』という記述は誤り。602条2号がまさに『前号（山林）以外の土地・5年』の規定であり、土地の短期賃貸借の上限は5年である。本件の3年は5年以内であるため管理行為となる、と説明すべきである。\", \"結論（正答3）と肢ア・イ・エの法律効果は正しい。修正が必要なのは条項番号と期間の説明のみ。\"], \"correctedExplanation\": \"共有物に、樹木の栽植又は伐採を目的とする山林以外の土地の賃借権等を期間5年以内で設定することは、管理行為に当たる。管理行為は、各共有者の持分の価格に従い、その過半数で決することができる（民法252条1項・4項2号）。資材置場としての期間3年の土地賃貸借は、建物所有目的ではないため借地借家法の適用はなく、5年以内に収まる。A・B・Cの持分合計は4分の3で過半数であるから、3人の同意で締結できる。よって選択肢3が正しい。\", \"correctedChoiceExplanations\": {\"ウ\": \"正しい。樹木の栽植・伐採目的の山林以外の土地の賃借権等は、期間5年以内であれば管理行為として、持分価格の過半数で設定できる（民法252条1項・4項2号、602条2号）。期間3年の資材置場用賃貸借はこれに当たる。A・B・Cの持分は合計4分の3なので、締結できる。\"}}, {\"qNumber\": 4, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 5, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 6, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 7, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 8, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 9, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 10, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}]}",
+  "is_error": false
+}

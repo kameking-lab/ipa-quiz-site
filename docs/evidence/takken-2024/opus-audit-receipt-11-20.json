@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 10274,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 18828,
+      "webSearchRequests": 0,
+      "costUSD": 0.35648440000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 8867,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "3cf37c2c1fb7acf4117be2d37e598d3af922337928c4588d5d28fea376c6255b",
+  "rawStreamSha256": "c14414e164256a75aa0260368de9265ea9e2949f6adbe1a4a7e473305412996d",
+  "result": "{\"items\": [{\"qNumber\": 11, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 12, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 13, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 14, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 15, \"verdict\": \"PASS\", \"issues\": [\"軽微（PASS維持）: 地区整備計画を定めることを要しない根拠が「同条」と曖昧です。正しくは都市計画法12条の5第8項です。\", \"軽微（PASS維持）: 肢イの「準都市計画区域では、定められる都市計画は一部の地域地区等に限られます（8条2項）」はやや過大です。8条2項が限定しているのは地域地区の種類です。準都市計画区域でも都市施設は11条1項後段により定め得ます。結論の直接根拠は12条1項（市街地開発事業は「都市計画区域について」定める）です。\"], \"correctedExplanation\": \"地区計画は、用途地域が定められている区域だけでなく、用途地域が定められていない区域のうち一定の要件を満たす区域にも定められます（都市計画法12条の5第1項2号）。また、地区整備計画を定めることができない特別の事情があるときは、地区整備計画を定めることを要しません（同条8項）。したがって4が誤りです。\", \"correctedChoiceExplanations\": {\"イ\": \"正しい。都市計画法12条1項により、市街地開発事業は「都市計画区域について」定めるものです。準都市計画区域は都市計画区域外の区域です。そのため、用途地域が定められていても、市街地開発事業に関する都市計画は定められません（なお、準都市計画区域で定められる地域地区も8条2項により一部に限られます）。\", \"エ\": \"誤り（本問の正解）。用途地域外でも一定の区域には地区計画を定められます（12条の5第1項2号）。また、特別の事情があるときは地区整備計画を定めることを要しません（同条8項）。\"}}, {\"qNumber\": 16, \"verdict\": \"PASS\", \"issues\": [\"軽微（PASS維持）: 肢イの「市街化調整区域等に関する43条」について、43条1項の対象は市街化調整区域のうち開発許可を受けた開発区域以外の区域に限られます。「等」は不正確です。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {\"イ\": \"誤り。29条の許可の対象は開発行為です。開発行為を伴わない建築物の建築について都道府県知事の許可を要するのは、市街化調整区域のうち開発許可を受けた開発区域以外の区域に関する43条1項の規定です。市街化区域には、床面積による建築許可の制度はありません。\"}}, {\"qNumber\": 17, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 18, \"verdict\": \"PASS\", \"issues\": [\"軽微（PASS維持）: 肢エの根拠が「53条の適用除外規定」と項番号なしです。2024-04-01時点では建築基準法53条6項1号です。\"], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {\"エ\": \"誤り。建蔽率の限度が10分の8とされている地域内で、かつ防火地域内にある耐火建築物等には、建蔽率の制限自体が適用されません（建築基準法53条6項1号）。特定行政庁の許可は不要です。\"}}, {\"qNumber\": 19, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 20, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}]}",
+  "is_error": false
+}
