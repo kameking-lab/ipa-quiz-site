@@ -26,6 +26,19 @@ test("FP2 CBT published practical paper exposes its final model answer", async (
   await expect(page.getByRole("link", { name: /公式問題PDF/ })).toHaveAttribute("href", /j2_202505_q\.pdf#page=29$/);
 });
 
+test("FP2 2026 practical calendar and all combination reasons remain readable on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto("/fp2/practical/202605/38");
+  await expect(page.getByRole("heading", { name: "2026年5月公表 実技 問38" })).toBeVisible();
+  await expect(page.getByRole("img", { name: /問38 の図表/ })).toHaveAttribute("src", /q38-complete-calendar\.webp/);
+  await expect(page.getByLabel("選択肢").locator(":scope > div")).toHaveCount(4);
+  await page.getByText("公式模範解答を見る").click();
+  await expect(page.getByRole("heading", { name: "各選択肢の理由" })).toBeVisible();
+  await expect(page.getByLabel("解法と各肢の理由").locator("p.rounded-lg")).toHaveCount(4);
+  await expect(page.getByRole("link", { name: /公式問題PDF/ })).toHaveAttribute("href", /j2_202605_q\.pdf#page=31$/);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
+});
+
 test("FP2 numeric practical choices are separate cards and the answer includes the choice text", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/fp2/practical/202405/40");

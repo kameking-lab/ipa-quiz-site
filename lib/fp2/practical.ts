@@ -41,7 +41,7 @@ const FIGURES = figures as Record<string, Record<string, PracticalPanel[]>>;
 const SOLUTIONS = explanations as Record<string, Record<string, PracticalSolution>>;
 const SHARED_CASES = sharedCases as Record<string, Record<string, PracticalSharedContext>>;
 
-export const FP2_PRACTICAL_EDITIONS = ["202405", "202409", "202501", "202505"] as const;
+export const FP2_PRACTICAL_EDITIONS = ["202405", "202409", "202501", "202505", "202605"] as const;
 
 export function practicalEditionLabel(edition: string): string {
   const labels: Record<string, string> = {
@@ -49,6 +49,7 @@ export function practicalEditionLabel(edition: string): string {
     "202409": "2024年9月試験",
     "202501": "2025年1月試験",
     "202505": "2025年5月公表",
+    "202605": "2026年5月公表",
   };
   return labels[edition] ?? edition;
 }
