@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問47\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n建物の区分所有等に関する法律に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 管理者は、少なくとも毎年１回、集会を招集しなければならない。\nイ. 集会の招集の通知は、原則として、開催日の少なくとも１カ月前までに、会議の目的たる事項を示して、各区分所有者に発しなければならない。\nウ. 区分所有者は、敷地利用権が数人で有する所有権である場合、規約に別段の定めがない限り、敷地利用権を専有部分と分離して処分することができる。\nエ. 集会の決議は、当該決議後に区分所有権を譲り受けた者に対し、その効力を有しない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 53120,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.25759119999999996,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6499,
+    "cache_read_input_tokens": 5896,
+    "output_tokens": 2072,
+    "output_tokens_details": {
+      "thinking_tokens": 412
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6499,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 22330,
+      "outputTokens": 4755,
+      "cacheReadInputTokens": 5896,
+      "cacheCreationInputTokens": 6499,
+      "webSearchRequests": 2,
+      "costUSD": 0.25759119999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 864,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答「ア」と矛盾しない解説を作成しました。根拠は区分所有法34条2項（管理者は毎年1回以上集会を招集）、35条1項（招集通知は1週間前）、22条1項（敷地利用権の分離処分禁止）、46条1項（決議の効力は特定承継人にも及ぶ）です。基準日（2025-04-01）より後に行われた改正（令和7年法律第47号、2026年4月1日施行）については、検索で分かった範囲をlawDateNoteに書き、確認できていない点はconcernsに残しました。\n\n```json\n{\"explanation\": \"区分所有法34条2項は、管理者は少なくとも毎年1回、集会を招集しなければならないと定めています。そのため、アが最も適切な記述です。招集通知は原則として会日の少なくとも1週間前に発します（35条1項）。敷地利用権が数人で有する所有権などの場合は、規約に別段の定めがない限り専有部分と分離して処分できません（22条1項）。規約と集会の決議は、決議後に区分所有権を譲り受けた者などの特定承継人にも効力を持ちます（46条1項）。「1週間」「分離処分の禁止」「特定承継人への効力」は頻出の論点なので、まとめて押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。区分所有法34条2項により、管理者は少なくとも毎年1回、集会を招集しなければなりません。\",\n  \"イ\": \"誤りです。集会の招集通知は、会日より少なくとも「1週間前」までに、会議の目的たる事項を示して各区分所有者に発しなければなりません（区分所有法35条1項）。「1カ月前」ではありません。\",\n  \"ウ\": \"誤りです。敷地利用権が数人で有する所有権その他の権利である場合、区分所有者は、規約に別段の定めがない限り、専有部分とその専有部分に係る敷地利用権とを分離して処分することはできません（区分所有法22条1項）。\",\n  \"エ\": \"誤りです。規約と集会の決議は、区分所有者の特定承継人に対しても効力を持ちます（区分所有法46条1項）。そのため、決議後に区分所有権を譲り受けた者もその決議に拘束されます。\"\n },\n \"topicTags\": [\"区分所有法の集会\", \"敷地利用権の分離処分禁止\", \"決議の特定承継人への効力\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": true,\n \"lawDateNote\": \"令和7年法律第47号（老朽化マンション等の管理及び再生の円滑化等を図るための建物の区分所有等に関する法律等の一部を改正する法律。2026年4月1日施行）で集会の手続きが変わりました。国土交通省の資料によると、改正後は、招集通知で会議の目的たる事項に加えて議案の要領も示すことになり、招集通知の期間（1週間）は規約で短縮できなくなりました。基準日（2025-04-01）時点では、期間は「少なくとも1週間前（規約で伸縮可）」です。管理者が毎年1回集会を招集する義務、分離処分の禁止、決議の特定承継人への効力は、本問の正誤を左右する形では変わっていないと考えられます。\",\n \"officialReferenceUrls\": [\"https://laws.e-gov.go.jp/law/337AC0000000069\", \"https://www.moj.go.jp/MINJI/minji07_00375.html\"],\n \"concerns\": [\"改正後の35条・34条の条文そのものは、e-Govの本文で直接照合できていません。改正内容は国土交通省の説明資料に基づいて記載しています。\", \"改正後に条番号の移動や項番号の変更がないかは確認できていません。\"]}\n```\n\nSources:\n- [建物の区分所有等に関する法律（e-Gov法令検索）](https://laws.e-gov.go.jp/law/337AC0000000069)\n- [法務省：区分所有法等の一部を改正する法律について](https://www.moj.go.jp/MINJI/minji07_00375.html)\n- [国土交通省：令和７年マンション関係法改正とこれからのマンション管理](https://www.mlit.go.jp/jutakukentiku/house/content/001971529.pdf)",
+  "ttft_ms": 6790,
+  "type": "result",
+  "duration_ms": 39842,
+  "uuid": "9634c412-cab0-4ab8-a398-b3f9b8e895b2",
+  "ttft_stream_ms": 1884,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1884,
+  "time_to_request_from_spawn_ms": 897840,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330282737.5693,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

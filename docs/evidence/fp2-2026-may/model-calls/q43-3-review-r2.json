@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「エ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問43\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n借地借家法に関する次の記述のうち、最も適切なものはどれか。なお、本問においては、同法第22条の借地権を一般定期借地権といい、第23条の借地権を事業用定期借地権等という。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 一般定期借地権を設定する場合、その存続期間を30年とすることができる。\nイ. 事業の用に供する建物の所有を目的として、一般定期借地権を設定することはできない。\nウ. 事業用定期借地権等の設定を目的とする契約は、書面によってなされたものであれば有効であり、公正証書によってする必要はない。\nエ. 第三者が賃借権の目的である土地の上の建物を取得した場合において、借地権設定者が賃借権の譲渡または転貸を承諾しないときは、その第三者は、借地権設定者に対し、当該建物の買取りを請求することができる。\n\n【解説案】\n{\n \"explanation\": \"借地借家法第14条では、第三者が借地上の建物を取得したのに、借地権設定者（地主）が賃借権の譲渡や転貸を承諾しないとき、その第三者は地主に対して建物をその時の時価で買い取るよう請求できるとしています（建物買取請求権）。よって「エ」が正解です。あわせて押さえておきたい点は3つあります。一般定期借地権は存続期間が50年以上で、建物の用途は問いません。事業用定期借地権等は事業用建物（居住用を除く）の所有を目的とし、存続期間は10年以上50年未満です。事業用定期借地権等の契約は公正証書でしなければなりません。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。一般定期借地権は存続期間を50年以上として設定するものなので、30年とすることはできません。\",\n  \"イ\": \"誤りです。一般定期借地権には建物の用途の制限がないため、事業用の建物の所有を目的として設定することもできます。\",\n  \"ウ\": \"誤りです。事業用定期借地権等の設定を目的とする契約は公正証書によってしなければならず（借地借家法第23条第3項）、公正証書でない書面で結んでも事業用定期借地権等としては成立しません。\",\n  \"エ\": \"適切な記述で、本問の正解です。第三者が借地上の建物を取得し、借地権設定者が賃借権の譲渡・転貸を承諾しない場合、その第三者は借地権設定者に対して建物を時価で買い取るよう請求できます（借地借家法第14条）。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/document?law_unique_id=403AC0000000090\",\n  \"https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000104.html\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 45070,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2377436,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6698,
+    "cache_read_input_tokens": 6538,
+    "output_tokens": 1771,
+    "output_tokens_details": {
+      "thinking_tokens": 529
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6698,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21023,
+      "outputTokens": 3938,
+      "cacheReadInputTokens": 6538,
+      "cacheCreationInputTokens": 6698,
+      "webSearchRequests": 2,
+      "costUSD": 0.2377436,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 556,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nすべての項目で問題が見つからなかったため、PASSと判定しました。\n\n- **ア**：一般定期借地権は、存続期間を50年以上とすることが要件です（借地借家法第22条）。30年とすることはできないので、「誤り」とした解説は正しいです。\n- **イ**：一般定期借地権は建物の用途を制限していません。事業用建物の所有を目的として設定することもできるので、「誤り」とした解説は正しいです。\n- **ウ**：事業用定期借地権等の契約は公正証書でしなければなりません（第23条第3項）。条文番号も合っています。期間は「10年以上50年未満」、対象は「居住用を除く事業用建物」で、どちらも条文どおりです。\n- **エ**：第14条の建物買取請求権（第三者が建物を取得し、地主が譲渡・転貸を承諾しないときに時価で買い取るよう請求できる権利）の内容と一致します。公式正答「エ」とも合っています。\n- **基準日**：2025-04-01時点でこれらの条文に影響する改正はありません。答えは「エ」に一意に定まります。\n- **参照URL**：\n  - e-Govのリンクは借地借家法（平成3年法律第90号）の法令ページです。\n  - 国土交通省のリンクは、国土交通省の「定期借地権の解説」というページとして実在を確認しました。ただし、このURL（tk5_000104）は解説の導入部分で、主に歴史的な背景を扱っています。3種類の定期借地権の要件や公正証書が必要な点は、同じ解説の別ページ（[tk5_000106](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)）に載っています。導入ページも関連する政府の公式ページなので、このままで問題ないと判断しました。より直接の根拠を示したい場合は、tk5_000106に差し替えることもできます。\n\nSources:\n- [国土交通省 定期借地権の解説（tk5_000104）](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000104.html)\n- [国土交通省 定期借地権の解説（tk5_000106）](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)\n- [国土交通省 定期借地権の概要](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000159.html)",
+  "ttft_ms": 7620,
+  "type": "result",
+  "duration_ms": 32874,
+  "uuid": "77b6af0c-154d-4ddf-b0bd-795f9b8f10a9",
+  "ttft_stream_ms": 1967,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 1967,
+  "time_to_request_from_spawn_ms": 948141,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330333089.5376,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

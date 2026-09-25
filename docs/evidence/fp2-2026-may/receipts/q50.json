@@ -2,11 +2,7 @@
   "question": 50,
   "status": "HOLD",
   "holdReasons": [
-    "blind solve missing",
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -48,15 +44,86 @@
     "reviewerLawDateClear": null
   },
   "judgment": {
-    "blindSolveAnswer": null,
-    "blindSolveAgrees": false,
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "参照先の不動産鑑定評価基準（mlit.go.jpのPDF）は平成26年改正版です。DCF法の定義（純収益と復帰価格を現在価値に割り引く）はこの版の内容に基づいていますが、2025-04-01時点の最新版の本文そのものはWebSearchで確認できていません。国土交通省のページでは、最新版の本文は日本不動産鑑定士協会連合会のサイトに案内されています。",
+      "NPV法・レバレッジ効果・NOI利回りの説明は、FP試験で一般的に使われる定義に基づいています。これらを直接定義した政府の公式資料は確認していません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "土地・不動産・建設業：法令・不動産鑑定評価基準等 - 国土交通省"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001204083.pdf",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "application/pdf",
+      "title": "(PDF)"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
-  "modelCalls": []
+  "modelCalls": [
+    {
+      "file": "model-calls/q50-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 535,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1603,
+          "webSearchRequests": 0,
+          "costUSD": 0.023787799999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 85,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.023787799999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q50-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 18523,
+          "outputTokens": 2724,
+          "cacheReadInputTokens": 6002,
+          "cacheCreationInputTokens": 4418,
+          "webSearchRequests": 1,
+          "costUSD": 0.1751164,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 110,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1751164,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
 }

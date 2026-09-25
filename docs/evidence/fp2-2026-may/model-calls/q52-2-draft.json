@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問52\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n贈与税の配偶者控除（以下、「本控除」という）に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 本控除の適用を受けるためには、贈与を受けた時点で、贈与者である配偶者との婚姻期間が20年以上でなければならない。\nイ. 本控除の適用を受けるにあたって、配偶者から贈与を受ける財産の種類や金額に制限はない。\nウ. 過去に本控除の適用を受けたことがある場合、その後、同一の配偶者から贈与を受けても、再び本控除の適用を受けることはできない。\nエ. 本控除の適用を受ける場合、贈与税額の計算上、贈与税の課税価格から、基礎控除額と合わせて最高で2,110万円を控除することができる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 27057,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.16281079999999998,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4342,
+    "cache_read_input_tokens": 5934,
+    "output_tokens": 1281,
+    "output_tokens_details": {
+      "thinking_tokens": 177
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4342,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 16077,
+      "outputTokens": 2629,
+      "cacheReadInputTokens": 5934,
+      "cacheCreationInputTokens": 4342,
+      "webSearchRequests": 1,
+      "costUSD": 0.16281079999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 191,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"贈与税の配偶者控除を受けるには、婚姻期間が20年以上の配偶者から贈与を受けることが条件です。対象になる財産は、国内の居住用不動産（家屋やその敷地、借地権を含む）と、居住用不動産を取得するための金銭に限られます。さらに、贈与を受けた年の翌年3月15日までに実際に住み、その後も住み続ける見込みであることも必要です。控除額は最高2,000万円で基礎控除110万円と併用でき、同じ配偶者からの贈与については一生に一度しか使えません。財産の種類に制限がないとする記述は誤りなので、これが本問の正解です。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。贈与税の配偶者控除は、贈与を受けた時点で婚姻期間が20年以上になっていることが適用要件の一つです。\",\n  \"イ\": \"不適切な記述で、本問の正解です。対象になる財産は、居住用不動産（国内の居住用家屋やその敷地）と、居住用不動産を取得するための金銭に限られます。控除額にも最高2,000万円という上限があります。\",\n  \"ウ\": \"適切な記述です。贈与税の配偶者控除は、同じ配偶者からの贈与については一生に一度しか適用を受けることができません。\",\n  \"エ\": \"適切な記述です。配偶者控除の最高2,000万円と暦年課税の基礎控除110万円を合わせて、贈与税の課税価格から最高2,110万円を控除できます。\"\n },\n \"topicTags\": [\"贈与税の配偶者控除\", \"居住用不動産\", \"基礎控除\"],\n \"isCalculation\": false,\n \"difficulty\": 1,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4455.htm\"\n ],\n \"concerns\": []\n}\n```\n\n各記述の正誤と参照URLは、国税庁のタックスアンサーNo.4452・No.4455の検索結果で確認しました。公式正答「イ」と矛盾はありません。\n\nSources:\n- [No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)\n- [No.4455 配偶者控除の対象となる居住用不動産の範囲｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4455.htm)",
+  "ttft_ms": 4898,
+  "type": "result",
+  "duration_ms": 27161,
+  "uuid": "2fd79e18-a7e4-4a6a-aa90-f314ec0da5ca",
+  "ttft_stream_ms": 1788,
+  "time_to_request_ms": 91,
+  "first_content_frame_ms": 1788,
+  "time_to_request_from_spawn_ms": 987308,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330372318.5046,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

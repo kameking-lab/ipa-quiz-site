@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問42\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n宅地建物取引業法に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 専任媒介契約を締結した宅地建物取引業者は、一定の期間内に当該契約の目的物である宅地または建物に関する一定の事項を指定流通機構に登録しなければならない。\nイ. 専任媒介契約の有効期間は、３カ月を超えることができず、これより長い期間を定めた場合、当該契約は無効となる。\nウ. 専任媒介契約の有効期間は、依頼者の申出により更新することができるが、当初の契約締結時にあらかじめ自動更新する旨の特約を定めた場合、その特約も有効である。\nエ. 専任媒介契約を締結した宅地建物取引業者は、依頼者に対し、当該契約に係る業務の処理状況を、１カ月に１回以上報告しなければならない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 61534,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3270276,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7123,
+    "cache_read_input_tokens": 5958,
+    "output_tokens": 2201,
+    "output_tokens_details": {
+      "thinking_tokens": 377
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7123,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 32208,
+      "outputTokens": 6001,
+      "cacheReadInputTokens": 5958,
+      "cacheCreationInputTokens": 7123,
+      "webSearchRequests": 2,
+      "costUSD": 0.3270276,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 724,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"宅地建物取引業法第34条の2では、専任媒介契約を結んだ宅地建物取引業者は、物件の所在・規模・形質・売買すべき価額などを、国土交通省令で定める期間内に指定流通機構（レインズ）へ登録しなければなりません。期間は、専任媒介が契約締結日の翌日から7日以内、専属専任媒介が5日以内で、いずれも業者の休業日を含みません。あわせて押さえる論点は次の4つです。①有効期間は3カ月が上限で、長く定めた場合は3カ月に短縮される。②更新は依頼者の申出がある場合に限られ、自動更新の特約は無効。③業務処理状況の報告は、専任媒介が2週間に1回以上、専属専任媒介が1週間に1回以上。④宅建業法のルールより依頼者に不利な特約は無効。\", \"choiceExplanations\": {\"ア\": \"適切な記述で、本問の正解です。専任媒介契約を結んだ宅地建物取引業者は、契約締結日の翌日から7日以内（休業日を含まない）に、物件に関する一定の事項を指定流通機構に登録しなければなりません。専属専任媒介契約の場合は5日以内です。\", \"イ\": \"不適切です。専任媒介契約の有効期間の上限は3カ月です。ただし、3カ月より長い期間を定めても契約全体が無効になるわけではなく、有効期間が3カ月に短縮されます。\", \"ウ\": \"不適切です。専任媒介契約の有効期間は依頼者の申出があれば更新できます（更新後も3カ月が上限）。一方、あらかじめ自動更新すると定めた特約は、依頼者の申出という要件に反するため無効です。\", \"エ\": \"不適切です。専任媒介契約を結んだ宅地建物取引業者は、業務処理状況を2週間に1回以上、依頼者に報告しなければなりません。1週間に1回以上の報告が求められるのは専属専任媒介契約です。1カ月に1回以上では足りません。\"}, \"topicTags\": [\"専任媒介契約\", \"指定流通機構への登録\", \"媒介契約の有効期間\"], \"isCalculation\": false, \"difficulty\": 2, \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\", \"officialReferenceUrls\": [\"https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html\", \"https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000266.html\"], \"concerns\": [\"e-Gov法令検索の宅地建物取引業法の条文ページは、検索では出てきませんでした。そのため officialReferenceUrls には入れていません。第34条の2の各項の番号（報告義務が第9項、特約の無効が第10項など）は解説文に書いていません。\", \"参照している国土交通省の通達『標準媒介契約約款の運用』は古い通達で、条番号が現行と異なります（報告義務を『第五項』と表記）。内容の根拠として使う場合は、現行条文と突き合わせてください。\"]}\n```\n\n**確認したこと**\n- 国土交通省の通達で、専任媒介の報告頻度（専任媒介は2週間に1回以上、専属専任媒介は1週間に1回以上）と、登録期限（締結日の翌日から専任媒介は7日以内、専属専任媒介は5日以内。休業日を含まない）を確かめました。\n- e-Gov法令検索の条文ページは検索に出てきませんでした。そのため、選択肢イ（3カ月を超える期間は3カ月に短縮され、契約全体は無効にならない）と選択肢ウ（自動更新の特約は無効）の根拠は、法律の条文そのものでは確認できていません。解説サイトと、宅建業法についての一般的な知識に基づいています。\n\nSources:\n- [標準媒介契約約款の運用（国土交通省）](https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html)\n- [建設産業・不動産業：宅地建物取引業法関係（国土交通省）](https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000266.html)\n- [宅地建物取引業法第34条の2 - Wikibooks](https://ja.wikibooks.org/wiki/%E5%AE%85%E5%9C%B0%E5%BB%BA%E7%89%A9%E5%8F%96%E5%BC%95%E6%A5%AD%E6%B3%95%E7%AC%AC34%E6%9D%A1%E3%81%AE2)",
+  "ttft_ms": 4422,
+  "type": "result",
+  "duration_ms": 42919,
+  "uuid": "5bddc38b-aa6e-46fb-ac6a-1df3e5663a63",
+  "ttft_stream_ms": 2051,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 2052,
+  "time_to_request_from_spawn_ms": 866255,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330251199.655,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

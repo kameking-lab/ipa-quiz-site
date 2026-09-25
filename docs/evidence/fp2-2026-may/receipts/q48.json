@@ -2,11 +2,7 @@
   "question": 48,
   "status": "HOLD",
   "holdReasons": [
-    "blind solve missing",
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -48,15 +44,85 @@
     "reviewerLawDateClear": null
   },
   "judgment": {
-    "blindSolveAnswer": null,
-    "blindSolveAgrees": false,
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "表題登記が非課税である点は、登録免許税法別表第一で課税対象が権利に関する登記に限られていることによる一般的な理解に基づいています。条文そのものはWebSearchで直接確認していません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.7191 登録免許税の税額表｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7190.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.7190 登録免許税のあらまし｜国税庁"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
-  "modelCalls": []
+  "modelCalls": [
+    {
+      "file": "model-calls/q48-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 331,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1490,
+          "webSearchRequests": 0,
+          "costUSD": 0.018803800000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.018803800000000002,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q48-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 15574,
+          "outputTokens": 2908,
+          "cacheReadInputTokens": 5891,
+          "cacheCreationInputTokens": 4350,
+          "webSearchRequests": 1,
+          "costUSD": 0.16643420000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 329,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.16643420000000003,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
 }

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ウ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問45\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n都市計画法に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 市街化区域は、既に市街地を形成している区域およびおおむね10年以内に優先的かつ計画的に市街化を図るべき区域とされている。\nイ. 市街化区域内で行う開発行為で、その規模が1,000㎡未満（三大都市圏の一定の区域内では500㎡未満）であるものは、原則として、都道府県知事等の開発許可を受ける必要はない。\nウ. 土地の分筆は、その行為が建築物の建築または特定工作物の建設を目的としていなくても、開発行為に該当する。\nエ. 開発許可を受けた開発区域内の土地においては、開発行為に関する工事完了の公告があるまでの間は、原則として、建築物を建築することができない。\n\n【解説案】\n{\n \"explanation\": \"開発行為とは、主として建築物の建築または特定工作物の建設の用に供する目的で行う土地の区画形質の変更をいいます（都市計画法4条12項）。建築等の目的がない土地の区画形質の変更は開発行為に該当しません。また、国土交通省の開発許可制度運用指針では、単なる分合筆は規制の対象とならないとされています。そのため、建築等を目的としない土地の分筆も開発行為に該当するとする記述が最も不適切です。開発行為の定義に加えて、市街化区域の定義、開発許可が不要となる規模、工事完了公告前の建築制限もあわせて押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。市街化区域は、すでに市街地を形成している区域と、おおむね10年以内に優先的かつ計画的に市街化を図るべき区域です（都市計画法7条2項）。\",\n  \"イ\": \"適切な記述です。市街化区域内の開発行為は、規模が原則1,000㎡未満（三大都市圏の一定の区域では500㎡未満）であれば、開発許可は不要です。なお、この面積は都道府県等の条例で300㎡まで引き下げられることがあります。\",\n  \"ウ\": \"不適切な記述で、本問の正解です。開発行為は、主として建築物の建築または特定工作物の建設を目的とする土地の区画形質の変更をいいます。建築等を目的としない単なる分筆は、開発行為に該当しません。\",\n  \"エ\": \"適切な記述です。開発許可を受けた開発区域内の土地では、工事完了の公告があるまで、原則として建築物の建築や特定工作物の建設はできません（都市計画法37条）。例外として、工事用の仮設建築物や都道府県知事等が支障がないと認めたものなどは建築できます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html\",\n  \"https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 36545,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.20151019999999997,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6016,
+    "cache_read_input_tokens": 6631,
+    "output_tokens": 1232,
+    "output_tokens_details": {
+      "thinking_tokens": 329
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6016,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 19329,
+      "outputTokens": 2737,
+      "cacheReadInputTokens": 6631,
+      "cacheCreationInputTokens": 6016,
+      "webSearchRequests": 2,
+      "costUSD": 0.20151019999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 433,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "I checked all four choices. The official answer (ウ) is correct and the explanation holds up, so the verdict is PASS. Both reference URLs exist on the MLIT site and cover the right topic.\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nWhat I checked for each choice:\n- **ア:** Article 7(2) of the City Planning Act matches the stated definition of an urbanization promotion area (市街化区域).\n- **イ:** The size threshold is correct: 1,000㎡ in general, 500㎡ in parts of the three major metropolitan areas. A prefecture or city can lower it to 300㎡ by ordinance, and that is also correct.\n- **ウ:** The definition of development activity in Article 4(12) is summarized correctly. Also correct: land change done without the purpose of building is not development activity, and a simple subdivision (分筆) is not covered. This is the \"most inappropriate\" statement, so it matches the official answer.\n- **エ:** The building restriction before the completion notice (Article 37) and its main exceptions are correct. The explanation says \"など\" (etc.), so it doesn't need to list every exception, such as landowners who did not consent to the development.\n\nI didn't find any errors in amounts, areas or requirements, and the answer doesn't depend on law changes after 2025-04-01.\n\nSources:\n- [都市計画：開発許可制度の概要 - 国土交通省](https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html)\n- [都市計画：開発許可制度 - 国土交通省](https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html)",
+  "ttft_ms": 4884,
+  "type": "result",
+  "duration_ms": 25869,
+  "uuid": "b28e6d41-7aad-4a07-8f0a-bcd6e6a4fd4e",
+  "ttft_stream_ms": 1881,
+  "time_to_request_ms": 118,
+  "first_content_frame_ms": 1881,
+  "time_to_request_from_spawn_ms": 936385,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330321355.8574,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

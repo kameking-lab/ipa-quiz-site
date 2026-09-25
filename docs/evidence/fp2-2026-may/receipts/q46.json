@@ -1,12 +1,7 @@
 {
   "question": 46,
-  "status": "HOLD",
-  "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
-  ],
+  "status": "VERIFIED",
+  "holdReasons": [],
   "released": false,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
@@ -44,19 +39,54 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "エ",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
+    "reviewVerdicts": [
+      "PASS"
+    ],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "e-Govの条文本文（建築基準法52条2項・3項・6項、施行令2条1項4号・3項）は検索結果で本文を直接確認できていないため、条項番号は知識に基づく記載です。",
+      "平成30年改正で、地階の住宅部分・共用廊下等の不算入の対象に老人ホーム等が加わり、昇降路（エレベーターシャフト）の部分も不算入になりました。いずれも基準日前の改正で、本問の正誤には影響しません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
-  "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/325AC0000000201",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "建築基準法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/325CO0000000338",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "建築基準法施行令",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.mlit.go.jp/notice/noticedata/sgml/105/81000275/81000275.html",
+      "host": "www.mlit.go.jp",
+      "ok": false,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "",
+      "reason": "HTTP status, empty title or not-found page"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.mlit.go.jp/notice/noticedata/sgml/105/81000275/81000275.html"
+  ],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/notice/noticedata/sgml/105/81000275/81000275.html"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q46-1-solve.json",
@@ -79,6 +109,56 @@
         }
       },
       "total_cost_usd": 0.0235278,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q46-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 22420,
+          "outputTokens": 4689,
+          "cacheReadInputTokens": 6092,
+          "cacheCreationInputTokens": 6255,
+          "webSearchRequests": 2,
+          "costUSD": 0.2547184,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 454,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2547184,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q46-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 9620,
+          "outputTokens": 2451,
+          "cacheReadInputTokens": 6885,
+          "cacheCreationInputTokens": 5277,
+          "webSearchRequests": 1,
+          "costUSD": 0.141093,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 717,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.141093,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

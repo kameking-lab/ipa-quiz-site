@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問46\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n建築基準法における容積率に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 敷地の前面道路の幅員が15ｍ未満である建築物の容積率は、都市計画で定められた数値および当該前面道路の幅員に10分の４または10分の６を乗じた数値以下でなければならない。\nイ. 共同住宅の共用の廊下および階段の用に供する部分の床面積は、当該共同住宅の住宅の用途に供する部分の床面積の合計の３分の１を限度として、建築物の容積率の算定の基礎となる延べ面積に算入されない。\nウ. 専ら自動車または自転車の停留または駐車のための施設の用途に供する部分（自動車車庫等部分）の床面積は、その敷地内の建築物の各階の床面積の合計の３分の１を限度として、建築物の容積率の算定の基礎となる延べ面積に算入されない。\nエ. 建築物の地階でその天井が地盤面からの高さ１ｍ以下にあるものの住宅の用途に供する部分の床面積は、原則として、当該建築物の住宅の用途に供する部分の床面積の合計の３分の１を限度として、建築物の容積率の算定の基礎となる延べ面積に算入されない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 52000,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2547184,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6255,
+    "cache_read_input_tokens": 6092,
+    "output_tokens": 1926,
+    "output_tokens_details": {
+      "thinking_tokens": 274
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6255,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 22420,
+      "outputTokens": 4689,
+      "cacheReadInputTokens": 6092,
+      "cacheCreationInputTokens": 6255,
+      "webSearchRequests": 2,
+      "costUSD": 0.2547184,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 454,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "エが正解です。容積率の限度にかかわる数値（前面道路の幅員12ｍ、駐車場は5分の1、地階は3分の1）と、共用廊下・階段には上限がない点に沿って解説を書きました。条文そのもののページまでは開いていないので、各数値は私の知識と検索結果によるものです。何が未確認かは `concerns` に書いています。\n\n```json\n{\"explanation\": \"建築基準法52条3項により、地階でその天井が地盤面からの高さ1ｍ以下にあるもののうち、住宅（老人ホーム等を含む）の用途に供する部分の床面積は、建築物の住宅等の用途に供する部分の床面積の合計の3分の1を限度として、容積率算定の基礎となる延べ面積に算入されません。容積率の緩和では、次の3つの違いを押さえておきましょう。共同住宅の共用廊下・階段は上限なく全部が不算入です。自動車車庫等部分は床面積の合計の5分の1が限度です。住宅の地階は3分の1が限度です。あわせて、前面道路の幅員による容積率の制限は、幅員が12ｍ未満の場合に適用されます。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。前面道路の幅員による容積率の制限が適用されるのは、前面道路の幅員が15ｍ未満ではなく「12ｍ未満」の場合です。この場合、都市計画で定めた数値と、幅員に原則として10分の4（住居系用途地域）または10分の6（その他の地域）を掛けた数値のうち、いずれか低いほうが容積率の上限になります。\",\n  \"イ\": \"誤りです。共同住宅の共用の廊下や階段の用に供する部分の床面積は、「3分の1を限度」とするものではなく、その全部が容積率算定の基礎となる延べ面積に算入されません。\",\n  \"ウ\": \"誤りです。自動車車庫等部分の床面積は、敷地内の建築物の各階の床面積の合計の「5分の1」を限度として、容積率算定の基礎となる延べ面積に算入されません。3分の1ではありません。\",\n  \"エ\": \"適切な記述で、本問の正解です。地階でその天井が地盤面からの高さ1ｍ以下にあるもののうち、住宅の用途に供する部分の床面積は、原則として、住宅の用途に供する部分の床面積の合計の3分の1を限度として、容積率算定の基礎となる延べ面積に算入されません。\"\n },\n \"topicTags\": [\"容積率\", \"延べ面積の不算入\", \"前面道路幅員による制限\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://laws.e-gov.go.jp/law/325AC0000000201/\", \"https://laws.e-gov.go.jp/law/325CO0000000338\", \"https://www.mlit.go.jp/notice/noticedata/sgml/105/81000275/81000275.html\"],\n \"concerns\": [\"e-Govの条文本文（建築基準法52条2項・3項・6項、施行令2条1項4号・3項）は検索結果で本文を直接確認できていないため、条項番号は知識に基づく記載です。\", \"平成30年改正で、地階の住宅部分・共用廊下等の不算入の対象に老人ホーム等が加わり、昇降路（エレベーターシャフト）の部分も不算入になりました。いずれも基準日前の改正で、本問の正誤には影響しません。\"]}\n```\n\nSources:\n- [建築基準法 | e-Gov法令検索](https://laws.e-gov.go.jp/law/325AC0000000201/)\n- [建築基準法施行令 | e-Gov法令検索](https://laws.e-gov.go.jp/law/325CO0000000338)\n- [国土交通省 通知（共同住宅の共用廊下等の容積率不算入）](https://www.mlit.go.jp/notice/noticedata/sgml/105/81000275/81000275.html)\n- [国土交通省 共同住宅の共用の廊下に宅配ボックス等](https://www.mlit.go.jp/common/001237312.pdf)",
+  "ttft_ms": 4469,
+  "type": "result",
+  "duration_ms": 37529,
+  "uuid": "0803c265-64e7-479b-9ce2-d5ca9dc41bbf",
+  "ttft_stream_ms": 1742,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1743,
+  "time_to_request_from_spawn_ms": 892857,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330277853.6394,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

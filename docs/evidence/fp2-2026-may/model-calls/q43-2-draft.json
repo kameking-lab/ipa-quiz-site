@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問43\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n借地借家法に関する次の記述のうち、最も適切なものはどれか。なお、本問においては、同法第22条の借地権を一般定期借地権といい、第23条の借地権を事業用定期借地権等という。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 一般定期借地権を設定する場合、その存続期間を30年とすることができる。\nイ. 事業の用に供する建物の所有を目的として、一般定期借地権を設定することはできない。\nウ. 事業用定期借地権等の設定を目的とする契約は、書面によってなされたものであれば有効であり、公正証書によってする必要はない。\nエ. 第三者が賃借権の目的である土地の上の建物を取得した場合において、借地権設定者が賃借権の譲渡または転貸を承諾しないときは、その第三者は、借地権設定者に対し、当該建物の買取りを請求することができる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 25004,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1325854,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 3940,
+    "cache_read_input_tokens": 5947,
+    "output_tokens": 1279,
+    "output_tokens_details": {
+      "thinking_tokens": 112
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 3940,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 11174,
+      "outputTokens": 2259,
+      "cacheReadInputTokens": 5947,
+      "cacheCreationInputTokens": 3940,
+      "webSearchRequests": 1,
+      "costUSD": 0.1325854,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 125,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"借地借家法第14条では、第三者が借地上の建物を取得したのに、借地権設定者（地主）が賃借権の譲渡や転貸を承諾しないとき、その第三者は地主に対して建物をその時の時価で買い取るよう請求できるとしています（建物買取請求権）。よって「エ」が正解です。あわせて押さえておきたい点は3つあります。一般定期借地権は存続期間が50年以上で、建物の用途は問いません。事業用定期借地権等は事業用建物（居住用を除く）の所有を目的とし、存続期間は10年以上50年未満です。事業用定期借地権等の契約は公正証書でしなければなりません。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。一般定期借地権は存続期間を50年以上として設定するものなので、30年とすることはできません。\",\n  \"イ\": \"誤りです。一般定期借地権には建物の用途の制限がないため、事業用の建物の所有を目的として設定することもできます。\",\n  \"ウ\": \"誤りです。事業用定期借地権等の設定を目的とする契約は公正証書によってしなければならず（借地借家法第23条第3項）、公正証書でない書面で結んでも事業用定期借地権等としては成立しません。\",\n  \"エ\": \"適切な記述で、本問の正解です。第三者が借地上の建物を取得し、借地権設定者が賃借権の譲渡・転貸を承諾しない場合、その第三者は借地権設定者に対して建物を時価で買い取るよう請求できます（借地借家法第14条）。\"\n },\n \"topicTags\": [\"定期借地権\", \"建物買取請求権\", \"借地権の譲渡・転貸\"],\n \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://laws.e-gov.go.jp/document?law_unique_id=403AC0000000090\", \"https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html\", \"https://www.moj.go.jp/MINJI/minji07_00304.html\"],\n \"concerns\": [\"一般定期借地権の特約を書面で結ぶ要件は、令和3年法律第37号（令和4年5月18日施行）で電磁的記録でもよいことになりました。基準日の2025-04-01より前の改正なので、本問の正誤には影響しません。\"]}\n```\n\nSources:\n- [借地借家法 | e-Gov 法令検索](https://laws.e-gov.go.jp/document?law_unique_id=403AC0000000090)\n- [国土交通省：定期借地権の解説](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html)\n- [法務省：借地借家法等の改正（定期借地権・定期建物賃貸借関係）について](https://www.moj.go.jp/MINJI/minji07_00304.html)",
+  "ttft_ms": 4331,
+  "type": "result",
+  "duration_ms": 25141,
+  "uuid": "98b91755-924d-4cb2-a75e-94b19c1b9ef7",
+  "ttft_stream_ms": 1810,
+  "time_to_request_ms": 125,
+  "first_content_frame_ms": 1811,
+  "time_to_request_from_spawn_ms": 883815,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330268743.8503,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

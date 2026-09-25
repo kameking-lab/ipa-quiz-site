@@ -1,10 +1,8 @@
 {
   "question": 37,
-  "status": "HOLD",
-  "holdReasons": [
-    "review missing"
-  ],
-  "released": false,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
@@ -41,12 +39,15 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "エ",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
     "finalReviewIssues": [],
     "draftConcerns": [
       "e-Gov法令検索の法人税法の条文ページは、検索結果に直接出てこず実在を確認できなかったため、officialReferenceUrlsに入れていません。代わりに財務省と国税庁のページを載せています。"
@@ -71,16 +72,20 @@
       "title": "第1節 受取配当等の益金不算入｜国税庁"
     },
     {
-      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01_02.htm",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01.htm",
       "host": "www.nta.go.jp",
       "ok": true,
       "status": 200,
       "contentType": "text/html",
-      "title": "第2款 有価証券の評価益｜国税庁"
+      "title": "第1款 通則｜国税庁"
     }
   ],
   "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "finalReviewWebSources": [
+    "https://www.mof.go.jp/tax_policy/summary/corporation/c02_1.pdf",
+    "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/03/03_01_01.htm",
+    "https://www.nta.go.jp/law/tsutatsu/kihon/hojin/04/04_01.htm"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q37-1-solve.json",
@@ -128,6 +133,56 @@
         }
       },
       "total_cost_usd": 0.250768,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q37-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 47459,
+          "outputTokens": 8675,
+          "cacheReadInputTokens": 27493,
+          "cacheCreationInputTokens": 11592,
+          "webSearchRequests": 4,
+          "costUSD": 0.5015706,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1690,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.5015706,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q37-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 60319,
+          "outputTokens": 8062,
+          "cacheReadInputTokens": 26533,
+          "cacheCreationInputTokens": 13103,
+          "webSearchRequests": 5,
+          "costUSD": 0.5626465999999999,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1282,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.5626465999999999,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

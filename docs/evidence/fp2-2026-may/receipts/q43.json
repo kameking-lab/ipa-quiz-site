@@ -1,12 +1,7 @@
 {
   "question": 43,
-  "status": "HOLD",
-  "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
-  ],
+  "status": "VERIFIED",
+  "holdReasons": [],
   "released": false,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
@@ -44,19 +39,45 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "エ",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "一般定期借地権の特約を書面で結ぶ要件は、令和3年法律第37号（令和4年5月18日施行）で電磁的記録でもよいことになりました。基準日の2025-04-01より前の改正なので、本問の正誤には影響しません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
-  "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/document?law_unique_id=403AC0000000090",
+      "host": "laws.e-gov.go.jp",
+      "ok": false,
+      "reason": "no e-Gov law id"
+    },
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000104.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "建設産業・不動産業：定期借地権の解説 - 国土交通省"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://laws.e-gov.go.jp/document?law_unique_id=403AC0000000090"
+  ],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000104.html",
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000106.html",
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk5_000159.html"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q43-1-solve.json",
@@ -79,6 +100,81 @@
         }
       },
       "total_cost_usd": 0.021615799999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q43-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11174,
+          "outputTokens": 2259,
+          "cacheReadInputTokens": 5947,
+          "cacheCreationInputTokens": 3940,
+          "webSearchRequests": 1,
+          "costUSD": 0.1325854,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 125,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1325854,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q43-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 28674,
+          "outputTokens": 4119,
+          "cacheReadInputTokens": 6566,
+          "cacheCreationInputTokens": 6968,
+          "webSearchRequests": 3,
+          "costUSD": 0.2841332,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 608,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2841332,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q43-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21023,
+          "outputTokens": 3938,
+          "cacheReadInputTokens": 6538,
+          "cacheCreationInputTokens": 6698,
+          "webSearchRequests": 2,
+          "costUSD": 0.2377436,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 556,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2377436,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

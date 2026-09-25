@@ -2,11 +2,7 @@
   "question": 49,
   "status": "HOLD",
   "holdReasons": [
-    "blind solve missing",
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -48,15 +44,83 @@
     "reviewerLawDateClear": null
   },
   "judgment": {
-    "blindSolveAnswer": null,
-    "blindSolveAgrees": false,
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
     "draftConcerns": [],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.3302 マイホームを売ったときの特例｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.3305 マイホームを売ったときの軽減税率の特例｜国税庁"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
-  "modelCalls": []
+  "modelCalls": [
+    {
+      "file": "model-calls/q49-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 365,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1643,
+          "webSearchRequests": 0,
+          "costUSD": 0.0207078,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0207078,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q49-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 35060,
+          "outputTokens": 3979,
+          "cacheReadInputTokens": 6045,
+          "cacheCreationInputTokens": 6403,
+          "webSearchRequests": 2,
+          "costUSD": 0.292253,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 185,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.292253,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
 }

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問49\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n「居住用財産を譲渡した場合の3,000万円の特別控除」（以下、「3,000万円特別控除」という）および「居住用財産を譲渡した場合の長期譲渡所得の課税の特例」（以下、「軽減税率の特例」という）に関する次の記述のうち、最も適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 3,000万円特別控除は、譲渡した居住用財産の所有期間の長短にかかわらず、適用を受けることができる。\nイ. 3,000万円特別控除は、居住用財産で居住の用に供さなくなったものを譲渡する場合、居住の用に供さなくなった日の属する年の翌年の12月31日までに譲渡しなければ、適用を受けることができない。\nウ. 軽減税率の特例は、譲渡した居住用財産の所有期間が、譲渡した日の属する年の１月１日において５年を超えていれば、適用を受けることができる。\nエ. 3,000万円特別控除と軽減税率の特例は、重複して適用を受けることができない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 4535,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0207078,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1643,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 365,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1643,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 365,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1643,
+      "webSearchRequests": 0,
+      "costUSD": 0.0207078,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"3,000万円特別控除には所有期間要件がなく、短期譲渡所得・長期譲渡所得のいずれであっても適用を受けることができる。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"居住の用に供さなくなった日から3年を経過する日の属する年の12月31日までに譲渡すれば適用を受けられる。翌年の12月31日までではない。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"軽減税率の特例は、譲渡した年の1月1日における所有期間が10年を超えていることが要件である。5年超では足りない。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"3,000万円特別控除と軽減税率の特例は重複して適用を受けることができる。控除後の課税長期譲渡所得のうち6,000万円以下の部分に軽減税率が適用される。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 4560,
+  "type": "result",
+  "duration_ms": 4662,
+  "uuid": "6b144dea-726c-4545-8489-0f6bf622360f",
+  "ttft_stream_ms": 1819,
+  "time_to_request_ms": 121,
+  "first_content_frame_ms": 1820,
+  "time_to_request_from_spawn_ms": 961525,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330346466.551,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

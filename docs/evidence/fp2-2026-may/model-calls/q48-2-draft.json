@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問48\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n登録免許税に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 相続により建物を取得し、所有権移転登記を行う場合、登録免許税は課されない。\nイ. 個人が所有する土地の上に新築した家屋について、所在、家屋番号、構造、床面積などが記録される表題登記を行う場合、登録免許税は課されない。\nウ. 不動産に抵当権設定登記を行う際の登録免許税の課税標準は、当該不動産の固定資産税評価額である。\nエ. 贈与により取得した土地の所有権移転登記を行う際の登録免許税の課税標準は、当該土地の相続税評価額である。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 32775,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.16643420000000003,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4350,
+    "cache_read_input_tokens": 5891,
+    "output_tokens": 1201,
+    "output_tokens_details": {
+      "thinking_tokens": 114
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4350,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 15574,
+      "outputTokens": 2908,
+      "cacheReadInputTokens": 5891,
+      "cacheCreationInputTokens": 4350,
+      "webSearchRequests": 1,
+      "costUSD": 0.16643420000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 329,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"登録免許税は不動産の権利に関する登記（所有権保存登記・所有権移転登記・抵当権設定登記など）にかかります。表示に関する登記である表題登記（建物表題登記）は、原則として課税されません。そのため、新築家屋の所在、家屋番号、構造、床面積などを記録する表題登記には登録免許税がかからず、「イ」が正解です。あわせて、課税標準を確認しておきましょう。所有権の登記は不動産の価額（原則として固定資産課税台帳の登録価格）、抵当権設定登記は債権金額が課税標準です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。相続による所有権移転登記にも登録免許税は課されます。本則の税率は0.4%です。なお、土地の価額が100万円以下の場合などの免税措置はありますが、建物にはこの措置は適用されません。\",\n  \"イ\": \"適切な記述で、本問の正解です。建物の所在、家屋番号、構造、床面積などを記録する表題登記は表示に関する登記です。原則として登録免許税は課されません。\",\n  \"ウ\": \"誤りです。抵当権設定登記の登録免許税の課税標準は債権金額です。本則の税率は0.4%です。固定資産税評価額が課税標準になるのは、所有権の保存・移転登記などの場合です。\",\n  \"エ\": \"誤りです。贈与による所有権移転登記の登録免許税の課税標準は、固定資産課税台帳に登録された価格（固定資産税評価額）です。相続税評価額ではありません。本則の税率は2%です。\"\n },\n \"topicTags\": [\"登録免許税\", \"表題登記\", \"課税標準\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7190.htm\"\n ],\n \"concerns\": [\"表題登記が非課税である点は、登録免許税法別表第一で課税対象が権利に関する登記に限られていることによる一般的な理解に基づいています。条文そのものはWebSearchで直接確認していません。\"]\n}\n```\n\nSources:\n- [No.7191 登録免許税の税額表｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm)\n- [No.7190 登録免許税のあらまし｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7190.htm)",
+  "ttft_ms": 3390,
+  "type": "result",
+  "duration_ms": 32932,
+  "uuid": "5081dc6f-9879-4214-95b1-32568c4a617a",
+  "ttft_stream_ms": 1821,
+  "time_to_request_ms": 140,
+  "first_content_frame_ms": 1822,
+  "time_to_request_from_spawn_ms": 949451,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330334364.369,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

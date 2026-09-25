@@ -2,10 +2,8 @@
   "question": 42,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review not PASS after 1 round(s): ['FIX']",
+    "final review flags the reference URLs"
   ],
   "released": false,
   "source": {
@@ -44,19 +42,52 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "ア",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
-    "finalReviewIssues": [],
-    "draftConcerns": [],
+    "reviewVerdicts": [
+      "FIX"
+    ],
+    "finalReviewIssues": [
+      "参照URL https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html は国交省の旧建設省系通達『標準媒介契約約款の運用』（平成2年通知を前提とする運用通達）であり、2025-04-01時点の宅建業法34条の2の要件（登録期限・報告頻度・更新・無効特約）を直接根拠づけるページではないため、e-Gov法令検索の宅地建物取引業法本文に差し替える。",
+      "本文・各肢解説の内容は宅建業法34条の2第3項〜第10項及び施行規則15条の10に照らして正確であり、修正不要（全文は同一内容で再掲）。"
+    ],
+    "draftConcerns": [
+      "e-Gov法令検索の宅地建物取引業法の条文ページは、検索では出てきませんでした。そのため officialReferenceUrls には入れていません。第34条の2の各項の番号（報告義務が第9項、特約の無効が第10項など）は解説文に書いていません。",
+      "参照している国土交通省の通達『標準媒介契約約款の運用』は古い通達で、条番号が現行と異なります（報告義務を『第五項』と表記）。内容の根拠として使う場合は、現行条文と突き合わせてください。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
-  "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html",
+      "host": "www.mlit.go.jp",
+      "ok": false,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "",
+      "reason": "HTTP status, empty title or not-found page"
+    },
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000266.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "建設産業・不動産業：宅地建物取引業法関係 - 国土交通省"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html"
+  ],
+  "finalReviewWebSources": [
+    "https://laws.e-gov.go.jp/law/327AC1000000176",
+    "https://www.mlit.go.jp/totikensangyo/const/1_6_bt_000266.html",
+    "https://www.mlit.go.jp/notice/noticedata/sgml/016/74000466/74000466.html",
+    "https://www.mlit.go.jp/totikensangyo/const/content/001881261.pdf"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q42-1-solve.json",
@@ -79,6 +110,56 @@
         }
       },
       "total_cost_usd": 0.0226998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 32208,
+          "outputTokens": 6001,
+          "cacheReadInputTokens": 5958,
+          "cacheCreationInputTokens": 7123,
+          "webSearchRequests": 2,
+          "costUSD": 0.3270276,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 724,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3270276,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 54286,
+          "outputTokens": 5953,
+          "cacheReadInputTokens": 15888,
+          "cacheCreationInputTokens": 9588,
+          "webSearchRequests": 5,
+          "costUSD": 0.4660856,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1138,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.4660856,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
