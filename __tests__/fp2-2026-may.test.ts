@@ -65,7 +65,8 @@ describe("FP2 2026年5月公表 学科", () => {
       for (const kind of ["solve", "explain"]) {
         const name = Object.keys(receipts).find((file) => receipts[file]!.kind === kind && receipts[file]!.questions.includes(q.qNumber));
         expect(name, `Q${q.qNumber} ${kind}`).toBeDefined();
-        const text = readFileSync(join(process.cwd(), "docs/evidence/fp2-2026-may/receipts", name!), "utf8");
+        // Git may check out the raw one-line CLI receipt with CRLF on Windows.
+        const text = readFileSync(join(process.cwd(), "docs/evidence/fp2-2026-may/receipts", name!), "utf8").replace(/\r\n/g, "\n");
         expect(createHash("sha256").update(text).digest("hex")).toBe(receipts[name!]!.receiptSha256);
         const raw = JSON.parse(text) as { modelUsage: Record<string, { provider: string; outputTokens: number }> };
         expect(raw.modelUsage["claude-opus-5-5"]?.provider).toBe("firstParty");
