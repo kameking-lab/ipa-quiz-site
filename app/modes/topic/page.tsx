@@ -49,6 +49,7 @@ const VALID_EXAMS: ExamCode[] = [
   "sc",
   "sm",
   "au",
+  "takken",
 ];
 
 function isExamCode(s: unknown): s is ExamCode {
