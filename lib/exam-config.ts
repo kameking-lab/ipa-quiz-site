@@ -349,7 +349,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       categories: ["権利関係", "法令上の制限", "税・価格評定", "宅建業法", "免除科目"],
     }],
     seasons: ["october"],
-    yearRange: { start: 2025, end: 2025 },
+    yearRange: { start: 2024, end: 2025 },
   },
   civil2: {
     code: "civil2",
