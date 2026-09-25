@@ -361,7 +361,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       urlSlug: "gakka",
       expectedQuestions: 66,
       label: "第一次検定（前期・土木）",
-      categories: ["土工・建設機械", "土質試験", "盛土", "軟弱地盤", "コンクリート材料", "コンクリート施工", "基礎工", "土留め"],
+      categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）", "施工管理（必須）"],
     }],
     seasons: ["early"],
     yearRange: { start: 2026, end: 2026 },

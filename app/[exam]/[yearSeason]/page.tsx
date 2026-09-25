@@ -31,6 +31,14 @@ interface RouteParams {
   yearSeason: string;
 }
 
+const CIVIL2_EXAM_SECTIONS = [
+  { id: "civil2-required-basic", label: "土木一般・必須 1〜5", first: 1, last: 5 },
+  { id: "civil2-select-basic", label: "土木一般・9問選択 6〜16", first: 6, last: 16 },
+  { id: "civil2-select-specialized", label: "専門土木・6問選択 17〜36", first: 17, last: 36 },
+  { id: "civil2-select-law", label: "法規・6問選択 37〜47", first: 37, last: 47 },
+  { id: "civil2-required-management", label: "施工管理・必須 48〜66", first: 48, last: 66 },
+] as const;
+
 export async function generateStaticParams(): Promise<RouteParams[]> {
   const out: RouteParams[] = [];
   for (const exam of getAvailableExams()) {
@@ -114,7 +122,7 @@ export default async function ExamYearSeasonPage({
     if (!sessionMap.has(q.session)) sessionMap.set(q.session, []);
     sessionMap.get(q.session)!.push(q);
   }
-  const sessionGroups: SessionGroup[] = [...sessionMap.entries()].map(
+  let sessionGroups: SessionGroup[] = [...sessionMap.entries()].map(
     ([session, items]) => ({
       session,
       items: items.map((q) => ({
@@ -131,6 +139,17 @@ export default async function ExamYearSeasonPage({
       })),
     }),
   );
+  const civil2Sections = code === "civil2" && parsed.year === 2026 && parsed.season === "early"
+    ? CIVIL2_EXAM_SECTIONS
+    : null;
+  if (civil2Sections) {
+    const allItems = sessionGroups.flatMap((group) => group.items);
+    sessionGroups = civil2Sections.map((section) => ({
+      session: section.label,
+      id: section.id,
+      items: allItems.filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
+    }));
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -231,7 +250,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections} />
       </div>
     </main>
   );
