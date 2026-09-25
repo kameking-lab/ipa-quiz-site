@@ -22,6 +22,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   denken3: async () => (await import("@/data/questions/denken3")).DENKEN3_QUESTIONS,
   takken: async () => (await import("@/data/questions/takken")).TAKKEN_QUESTIONS,
   denko2: async () => isExamPublished("denko2") ? (await import("@/data/questions/denko2")).DENKO2_QUESTIONS : [],
+  civil2: async () => isExamPublished("civil2") ? (await import("@/data/questions/civil2")).CIVIL2_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

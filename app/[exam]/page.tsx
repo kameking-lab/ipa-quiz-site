@@ -307,6 +307,7 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
+          {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定（土木）全66問中、選択問題群No.6〜16の11問を収録しています。この11問は本試験では9問を選んで解答する区分です。</p>}
         </header>
 
         {/* Big CTA */}
