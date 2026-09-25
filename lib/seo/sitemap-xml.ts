@@ -18,6 +18,8 @@ import { getHubTopics } from "./topics";
 import { KEYWORD_PAGES } from "@/data/keywords";
 import { FEATURE_LANDING_PAGES } from "@/data/features";
 import { getAllEssayQuestions } from "@/lib/essay/load";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import {
   QUALIFICATION_HUBS,
@@ -194,6 +196,32 @@ function getExamHubRoutes(): UrlEntry[] {
   return entries;
 }
 
+function getFpPracticalRoutes(): UrlEntry[] {
+  const entries: UrlEntry[] = [];
+  const append = (
+    exam: "fp2" | "fp3",
+    editions: readonly string[],
+    getEdition: (edition: string) => { questions: { number: number }[] } | null,
+  ) => {
+    entries.push({ url: `${SITE_BASE_URL}/${exam}/practical`, changeFrequency: "yearly", priority: 0.7 });
+    for (const edition of editions) {
+      const data = getEdition(edition);
+      if (!data) throw new Error(`Missing ${exam} practical edition: ${edition}`);
+      entries.push({ url: `${SITE_BASE_URL}/${exam}/practical/${edition}`, changeFrequency: "yearly", priority: 0.6 });
+      for (const question of data.questions) {
+        entries.push({
+          url: `${SITE_BASE_URL}/${exam}/practical/${edition}/${question.number}`,
+          changeFrequency: "yearly",
+          priority: 0.5,
+        });
+      }
+    }
+  };
+  append("fp2", FP2_PRACTICAL_EDITIONS, getFp2PracticalEdition);
+  append("fp3", FP3_PRACTICAL_EDITIONS, getFp3PracticalEdition);
+  return entries;
+}
+
 function getTopicHubRoutes(): UrlEntry[] {
   return getHubTopics(80, 4).map((t) => ({
     url: `${SITE_BASE_URL}/topics/${encodeURIComponent(t.slug)}`,
@@ -251,6 +279,7 @@ export function renderSitemapIndexXml(): string {
   const entries: string[] = [
     `${SITE_BASE_URL}/sitemap/main.xml`,
     `${SITE_BASE_URL}/sitemap/exams.xml`,
+    `${SITE_BASE_URL}/sitemap/fp-practical.xml`,
     `${SITE_BASE_URL}/sitemap/topics.xml`,
     `${SITE_BASE_URL}/sitemap/blog.xml`,
     `${SITE_BASE_URL}/sitemap/books.xml`,
@@ -288,6 +317,10 @@ export function renderMainSitemapXml(): string {
 export function renderExamsSitemapXml(): string {
   // Exam routes already carry per-entry lastModified from getExamHubRoutes().
   return renderUrlSet(getExamHubRoutes());
+}
+
+export function renderFpPracticalSitemapXml(): string {
+  return renderUrlSet(getFpPracticalRoutes());
 }
 
 export function renderTopicsSitemapXml(): string {
