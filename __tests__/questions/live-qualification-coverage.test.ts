@@ -8,6 +8,7 @@ import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import fp2Practical from "@/data/questions/fp2/practical-2024-2025.json";
 import fp2PracticalExplanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import fp3Practical from "@/data/questions/fp3/practical-2024-2025.json";
+import fp3Practical2026 from "@/data/questions/fp3/practical-2026-05.json";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
 const completePapers = [
@@ -20,6 +21,7 @@ const completePapers = [
   { exam: "fp3", questions: FP3_QUESTIONS, academic: [
     { prefix: "fp3-2024-published-gakka-", year: 2024, count: 60 },
     { prefix: "fp3-2025-published-gakka-", year: 2025, count: 60 },
+    { prefix: "fp3-2026-published-gakka-", year: 2026, count: 60 },
   ] },
 ] as const;
 
@@ -66,9 +68,9 @@ describe("live external qualification two-year publication gate", () => {
     }
   });
 
-  it.each(completePapers)("$exam includes every academic choice and independently reviewed reason for two complete years", ({ exam, questions, academic }) => {
+  it.each(completePapers)("$exam includes every complete academic choice and independently reviewed reason", ({ exam, questions, academic }) => {
     expect(QUALIFICATION_CATALOG.find((item) => item.examCode === exam)?.status).toBe("live");
-    expect(new Set(academic.map((paper) => paper.year))).toEqual(new Set([2024, 2025]));
+    expect(new Set(academic.map((paper) => paper.year))).toEqual(new Set(exam === "fp3" ? [2024, 2025, 2026] : [2024, 2025]));
     for (const paper of academic) {
       const published = questions.filter((question) => question.id.startsWith(paper.prefix));
       expect(published, paper.prefix).toHaveLength(paper.count);
@@ -108,9 +110,10 @@ describe("live external qualification two-year publication gate", () => {
     }
   });
 
-  it("covers both FP3 practical papers with the official answer and all three option reasons", () => {
+  it("covers all three FP3 practical papers with the official answer and all three option reasons", () => {
     expect(Object.keys(fp3Practical).sort()).toEqual(["202405", "202505"]);
-    for (const edition of Object.values(fp3Practical)) {
+    expect(Object.keys(fp3Practical2026)).toEqual(["202605"]);
+    for (const edition of [...Object.values(fp3Practical), ...Object.values(fp3Practical2026)]) {
       expect(edition.questions).toHaveLength(20);
       expect(edition.questions.map((question) => question.number)).toEqual(Array.from({ length: 20 }, (_, index) => index + 1));
       for (const question of edition.questions) {
@@ -135,6 +138,7 @@ describe("live external qualification two-year publication gate", () => {
 
     expect(JSON.stringify(fp2Practical), "FP2 practical papers").not.toMatch(answerKeyLeak);
     expect(JSON.stringify(fp3Practical), "FP3 practical papers").not.toMatch(answerKeyLeak);
+    expect(JSON.stringify(fp3Practical2026), "FP3 practical 2026").not.toMatch(answerKeyLeak);
   });
 
   it("uses only the official FP body, answer, and legal-reference hosts", () => {
@@ -146,6 +150,7 @@ describe("live external qualification two-year publication gate", () => {
       "www.mhlw.go.jp",
       "www.mlit.go.jp",
       "www.nta.go.jp",
+      "www.jfc.go.jp",
     ]);
 
     const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];

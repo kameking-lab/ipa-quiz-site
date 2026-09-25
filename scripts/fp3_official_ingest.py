@@ -71,18 +71,19 @@ def extract_gakka(edition: str, doc: fitz.Document) -> list[dict]:
             choices = ["正しい（○）", "誤っている（×）"]
             answer = 1 if answer_match.group(1) in {"○", "〇"} else 2
         else:
-            markers = list(re.finditer(r"(?m)^\s*([1-3])\)", body))
-            if len(markers) != 3:
-                raise ValueError(f"{edition} academic Q{number}: expected 3 choices, got {len(markers)}")
-            stem = tidy(body[: markers[0].start()])
-            choices = []
-            for i, marker in enumerate(markers):
-                end = markers[i + 1].start() if i + 1 < len(markers) else len(body)
-                choice = re.sub(r"\s*正解\s*[1-3]\)\s*$", "", body[marker.end() : end])
-                choices.append(tidy(choice))
             answer_match = re.search(r"正解\s*([1-3])\)", body)
             if not answer_match:
                 raise ValueError(f"{edition} academic Q{number}: missing official answer")
+            choice_body = body[: answer_match.start()]
+            markers = list(re.finditer(r"(?m)^\s*([1-3])\)", choice_body))
+            if len(markers) != 3:
+                raise ValueError(f"{edition} academic Q{number}: expected 3 choices, got {len(markers)}")
+            stem = tidy(choice_body[: markers[0].start()])
+            choices = []
+            for i, marker in enumerate(markers):
+                end = markers[i + 1].start() if i + 1 < len(markers) else len(choice_body)
+                choice = choice_body[marker.end() : end]
+                choices.append(tidy(choice))
             answer = int(answer_match.group(1))
         result.append({
             "number": number,

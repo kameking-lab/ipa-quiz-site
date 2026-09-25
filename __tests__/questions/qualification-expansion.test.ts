@@ -21,7 +21,7 @@ describe("official-source qualification pilot data", () => {
     expect(FP2_QUESTIONS).toHaveLength(240 + FP2_2026_MAY_QUESTIONS.length);
     expect(FP2_PILOT).toEqual(FP2_2026_MAY_QUESTIONS);
     expect(FP2_PILOT.length).toBeGreaterThanOrEqual(10);
-    expect(FP3_QUESTIONS).toHaveLength(130);
+    expect(FP3_QUESTIONS).toHaveLength(180);
     expect(DENKEN3_QUESTIONS).toHaveLength(320);
     expect(DENKO2_QUESTIONS).toHaveLength(200);
   });
@@ -32,7 +32,7 @@ describe("official-source qualification pilot data", () => {
     expect(getQualificationByExamCode("denko2")?.status).toBe("live");
     expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(200);
     expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(240 + FP2_2026_MAY_QUESTIONS.length);
-    expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(130);
+    expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(180);
   });
 
   it.each(EXTERNAL_QUESTIONS)("$id has 2–5 choices, one explanation per choice, and a valid answer", (q) => {

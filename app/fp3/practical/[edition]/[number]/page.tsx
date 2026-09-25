@@ -25,7 +25,6 @@ export default async function Fp3PracticalQuestion({ params }: { params: Promise
   if (!data || !q) notFound();
   const source = practicalSourceUrls(edition);
   const sourcePdfPage = `${source.question}#page=${q.sourcePage}`;
-  const needsLayout = q.panels.length > 0;
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp3" className="hover:underline">FP3級</Link> / <Link href="/fp3/practical" className="hover:underline">実技</Link> / <Link href={`/fp3/practical/${edition}`} className="hover:underline">{data.label}</Link> / 問{q.number}</nav>
@@ -33,19 +32,18 @@ export default async function Fp3PracticalQuestion({ params }: { params: Promise
       <section aria-label="問題文" className="mt-6 rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-lg font-semibold">問題</h2>
         <p className="whitespace-pre-wrap text-base leading-[1.9] text-foreground">{q.stem}</p>
+        {q.panels.length > 0 && <div aria-label="原典の図表" className="mt-4 space-y-3">
+          <p className="text-xs text-muted-foreground">表や系図は公式問題のレイアウトで確認できます。横長の表は左右に動かし、タップで原寸表示できます。</p>
+          {q.panels.map((panel) => <div key={panel.url} className="overflow-x-auto rounded border border-border">
+            <a href={panel.url} target="_blank" rel="noopener noreferrer" aria-label={`問${q.number}の図表を原寸で開く`}>
+              <Image src={panel.url} alt={`${data.label} 実技 問${q.number} 原典の資料（PDF ${panel.pdfPage}ページ）。タップで拡大`} width={panel.width} height={panel.height} unoptimized className={`h-auto ${panel.width >= 800 ? "min-w-[680px]" : "w-full"}`} />
+            </a>
+          </div>)}
+        </div>}
         <ol className="mt-5 space-y-3">
           {q.choices.map((choice, index) => <li key={`${index}-${choice}`} className="rounded-xl border border-border bg-background px-4 py-3"><span className="mr-2 font-semibold text-primary">{index + 1}.</span>{choice}</li>)}
         </ol>
       </section>
-      {q.panels.length > 0 && <section aria-label="原典の図表" className="mt-4">
-        <details open={needsLayout} className="rounded-2xl border border-border bg-card p-4 sm:p-5">
-          <summary className="cursor-pointer font-semibold">原典の図表・資料を表示</summary>
-          <p className="my-3 text-xs text-muted-foreground">図表部分だけ原典画像で確認できます。問題文と選択肢は上のテキストで読めます。</p>
-          <div className="space-y-3">
-            {q.panels.map((panel) => <Image key={panel.url} src={panel.url} alt={`${data.label} 実技 問${q.number} 原典の資料（PDF ${panel.pdfPage}ページ）`} width={panel.width} height={panel.height} unoptimized className="h-auto w-full rounded border border-border" />)}
-          </div>
-        </details>
-      </section>}
       <details className="mt-5 rounded-2xl border border-primary/30 bg-card p-5 sm:p-6">
         <summary className="cursor-pointer text-lg font-bold text-primary">公式模範解答を見る</summary>
         <p className="mt-4 whitespace-pre-wrap text-xl font-bold leading-relaxed text-foreground">{q.answer}. {q.choices[q.answer - 1]}</p>

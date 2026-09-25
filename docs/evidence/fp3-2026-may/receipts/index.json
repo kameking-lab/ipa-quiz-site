@@ -1,4 +1,28 @@
 {
+  "gakka-20-resolution.json": {
+    "kind": "source-grounded-resolution",
+    "promptSha256": "b9fdc31354c57207b995f8e459c1a964d3b1aba52d96a2879e3796bfc15d3664",
+    "provider": "firstParty",
+    "questions": [
+      20
+    ],
+    "receiptSha256": "56ff7fc3add77e3d1adbad069f416dd104e7167acb1a7a622838acefa2b360c3",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "sourceUrl": "https://www.nta.go.jp/users/gensen/2025kiso/"
+  },
+  "gakka-35-resolution.json": {
+    "kind": "source-grounded-resolution",
+    "promptSha256": "4ff0090d853748706d4d8728bac2f87dc2ead5fa93e71f3df02e0e954af84b8d",
+    "provider": "firstParty",
+    "questions": [
+      35
+    ],
+    "receiptSha256": "121675eda056091086b81936deadb5ce0675cb23ff5ec0c9bfecaa4fb9ae8766",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "sourceUrl": "https://www.jfc.go.jp/n/finance/ippan/pdf/kyouiku_maruwakari.pdf"
+  },
   "gakka-q01-10-explain.json": {
     "kind": "explain",
     "promptSha256": "095f339506477c1669a7f9e738b29a9414f171c855dad58fd3eec3a61fa3a191",
@@ -15,7 +39,7 @@
       9,
       10
     ],
-    "receiptSha256": "4a6a02ec0cb38d50c421ac5b50e7cb7fc70062b5cfa0ad721302fa726145002e",
+    "receiptSha256": "975547219ce70893fdb6fc5a0d4a2d5853cb7e9844e56568b9f3dd499e65a36f",
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5"
   },
@@ -35,7 +59,299 @@
       9,
       10
     ],
-    "receiptSha256": "226026ef3eeda0894c130a030f08f0bab3f2d8613db1ea39df311feeac0dc3a4",
+    "receiptSha256": "17f0acc6e0f17b7562177ab47cedaeee48544655c4057b4653ef82e092f6e6d9",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q11-20-explain.json": {
+    "kind": "explain",
+    "promptSha256": "76d80d79fc197bce1b3d52eb652c7aa6222cb478a751fbfd2fd14028f10104a6",
+    "provider": "firstParty",
+    "questions": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "receiptSha256": "e3c5c9c14ebd086ecd8494bf4498b1e4b221b594b5645f1ea6940106d6b688f3",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q11-20-solve.json": {
+    "kind": "solve",
+    "promptSha256": "3126dc3d4fc7cc8760dedc08cf3631fd44833c873be364be75ae982864d2f123",
+    "provider": "firstParty",
+    "questions": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "receiptSha256": "14423ce84c6ba55a2343564ea4f2df509ac9a62173dd82af4d5a886771058197",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q21-30-explain.json": {
+    "kind": "explain",
+    "promptSha256": "238f283ee9f7058dc6877c25b483c910b1c3142af61b4e7e01b4aefcecd8a419",
+    "provider": "firstParty",
+    "questions": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "receiptSha256": "793a32e47eaea1c16e9f155eca0eae2d95c8c6b127b705ffb5f0f7f0e841e073",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q21-30-solve.json": {
+    "kind": "solve",
+    "promptSha256": "3afad500d750c8669f706dccaf5f6bd97988f072f43ee0dda2cb6e70685c5e2c",
+    "provider": "firstParty",
+    "questions": [
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "receiptSha256": "525af3ea599c61a914140830c769c1ae333e884d86e2a3e69a5f93cd15627c13",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q31-40-explain.json": {
+    "kind": "explain",
+    "promptSha256": "4e82f164505e680e920634429d460832735a8d03520d91ccc479e61224caae50",
+    "provider": "firstParty",
+    "questions": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "receiptSha256": "403f66235d119f79ae89cfcbe1b1104eaea752269088c71956415997769183fa",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q31-40-solve.json": {
+    "kind": "solve",
+    "promptSha256": "abff5657dd943a65f781ff699056be30c47eb1bb71db354d8f38d50672412606",
+    "provider": "firstParty",
+    "questions": [
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "receiptSha256": "a443faaee76d2a8962fc9a3e26f911cb2c7f8a0be7d24d5f98659e64b7e898af",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q41-50-explain.json": {
+    "kind": "explain",
+    "promptSha256": "b22dca9d6d175322849a466c60b13bceee50b7712441e8c64d424babe5c58c48",
+    "provider": "firstParty",
+    "questions": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "receiptSha256": "4bf575dc29dd5c79ae35a883613e5256d891a7c8979d74727acddc75ddfe8577",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q41-50-solve.json": {
+    "kind": "solve",
+    "promptSha256": "4190bf69b0a47c338e98dba61a30197cc371d19cfec70658648d8253924b2e09",
+    "provider": "firstParty",
+    "questions": [
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50
+    ],
+    "receiptSha256": "6d0e7f41018f47fefee8fee6e1c929da258ac337b54b9158d1f5dad75de6b0a8",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q51-60-explain.json": {
+    "kind": "explain",
+    "promptSha256": "aedb5fe96470ac032598fc585192388df64fc3e30c9dbdecd3a2b4ba67df7ab5",
+    "provider": "firstParty",
+    "questions": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "receiptSha256": "0bd0ff108a97f3855a35fd123306d81a70ac42c9563bb4e40f1664ebd5057b90",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "gakka-q51-60-solve.json": {
+    "kind": "solve",
+    "promptSha256": "2ded0948541a397634d70f9f2314ca65d7dc2935e529cb895fdc7c3887a07d13",
+    "provider": "firstParty",
+    "questions": [
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60
+    ],
+    "receiptSha256": "659b8c4fd679f8d73957f84a3ead9e7abaaec903f3ed602499bc3c06d6d7f169",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "jitsugi-2-resolution.json": {
+    "kind": "source-grounded-resolution",
+    "promptSha256": "b9be8af1cf85849cf98dcc8f4602c93efdc06306ffb0ed4b9f0ddea8b13e5556",
+    "provider": "firstParty",
+    "questions": [
+      2
+    ],
+    "receiptSha256": "95daa75e36cd49e6ff5b193fcbea4689419e148c68e3b0a0715785a02a9d649e",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "sourceUrl": "https://www.jafp.or.jp/exam/mohan/files/j3_202605_q.pdf"
+  },
+  "jitsugi-q01-10-explain.json": {
+    "kind": "explain",
+    "promptSha256": "87ee17f3b23745fafd7cd289ec4e024cff40ae249aed3fadc66e671a7302f0bf",
+    "provider": "firstParty",
+    "questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "receiptSha256": "c44d160883f24bb885d8f5723148111e199bce38420747ad0ef93b1abcf8c3ed",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "jitsugi-q01-10-solve.json": {
+    "kind": "solve",
+    "promptSha256": "3a19d9c2522c147504ab56a59e7efa91ad0747b7111f4a4ff5363517c3ad363d",
+    "provider": "firstParty",
+    "questions": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "receiptSha256": "dab020657b984811e7791e62ee556a44fc8913885ac065491d1d2a2ce2b4b385",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "jitsugi-q11-20-explain.json": {
+    "kind": "explain",
+    "promptSha256": "be09a75ee397e6c4732436232c352c4aa359ee4dccec36ebe909240565ad0e6b",
+    "provider": "firstParty",
+    "questions": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "receiptSha256": "11c8b2fe44db5c3560ab204558b71d16f9cd588adc1ed45c5d96b3e3bc63f395",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5"
+  },
+  "jitsugi-q11-20-solve.json": {
+    "kind": "solve",
+    "promptSha256": "624b7a901af9fcf8a5be7c5457894f4cddd00aa4b59e49f7b0a283ad8f439e9e",
+    "provider": "firstParty",
+    "questions": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "receiptSha256": "acf51ec16efa287c79a7be8c2ec6ace14c33626211089613c68295f740de3788",
     "requestedModel": "claude-opus-5-5",
     "resolvedModel": "claude-opus-5-5"
   }
