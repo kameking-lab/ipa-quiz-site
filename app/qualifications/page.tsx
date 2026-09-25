@@ -46,7 +46,7 @@ export default function QualificationsPage() {
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
             {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の学科240問と2026年5月公表の学科{fp2May2026CoverageLabel()}、実技は2024～2026年の{FP2_PRACTICAL_EDITIONS.length}セット{fp2PracticalCount}問を収録。</p></>}
-            {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024・2025年の学科120問と実技40問を収録。</p>}
+            {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024・2025年の学科120問・実技40問に、2026年5月公表の学科問1〜10を追加。2026年分は全問収録ではありません。</p>}
             <Button asChild variant="primary" className="w-full">
               <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>

@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import published2026 from "./academic-2026-05.json";
 
 // Generated from official Japan FP Association 2024/2025 published sets.
 // Run scripts/fp3_official_ingest.py and scripts/fp3_build_academic.py to reproduce.
@@ -4311,5 +4312,6 @@ export const FP3_QUESTIONS: Question[] = [
     "needsReview": false,
     "lastUpdated": "2026-09-23",
     "lawReferenceDate": "2024-04-01"
-  }
+  },
+  ...(published2026 as Question[]),
 ];
