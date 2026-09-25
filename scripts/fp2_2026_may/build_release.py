@@ -156,6 +156,8 @@ def main() -> None:
                           "is_error": record.get("is_error"), "opusOnly": ok})
             if not ok:
                 holds.append(f"{stage}: {reason}")
+            if q["stem"] not in record.get("request", {}).get("prompt", ""):
+                holds.append(f"{stage}: stale call — its prompt does not contain the current transcribed stem")
         solve = parse_json((records["1-solve"] or {}).get("result"))
         draft = parse_json((records["2-draft"] or {}).get("result"))
         reviews = [(stage, parse_json(records[stage]["result"])) for stage in stages[2:] if records[stage]]

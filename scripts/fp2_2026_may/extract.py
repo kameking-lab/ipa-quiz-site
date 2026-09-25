@@ -158,9 +158,11 @@ def main() -> None:
         figure = FIGURE_TRANSCRIPTIONS.get(number)
         stem_raw = a["stem"]
         if figure:
-            marker_at = stem_raw.find(figure["marker"].replace("〈資料〉", "〈資料〉"))
+            # The stem can name the figure before the figure itself (Q55: 「下記の〈親族関係図〉において…」),
+            # so cut at the last occurrence — the figure caption — never the first.
+            marker_at = stem_raw.rfind(figure["marker"])
             if marker_at < 0:
-                marker_at = norm(stem_raw).find(norm(figure["marker"]))
+                marker_at = norm(stem_raw).rfind(norm(figure["marker"]))
                 if marker_at < 0:
                     sys.exit(f"問{number}: figure marker not found")
                 stem_prefix = squash(stem_raw)[:marker_at]
@@ -171,6 +173,9 @@ def main() -> None:
             if missing:
                 sys.exit(f"問{number}: figure cells not in text layer: {missing}")
             stem = f"{stem_prefix}\n{figure['text']}"
+            # Every non-figure character of the text layer's stem must survive the figure substitution.
+            if not norm(squash(stem_raw)).startswith(norm(stem_prefix)) or len(norm(stem_prefix)) < 30:
+                sys.exit(f"問{number}: stem prefix before the figure looks truncated: {stem_prefix!r}")
         else:
             stem = squash(stem_raw)
         checks = {

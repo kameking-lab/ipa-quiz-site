@@ -2,19 +2,19 @@
   "request": {
     "model": "claude-opus-5-5",
     "tools": "WebSearch",
-    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問55\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の\n〈親族関係図〉\n・被相続人Ａさん＝妻Ｂさん\n・Ａさん夫婦の子：実子Ｃさん（相続放棄）、養子Ｄさん\n・実子Ｃさん＝配偶者、その子：孫Ｅさん、孫Ｆさん\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 4,200万円\nイ. 4,800万円\nウ. 5,400万円\nエ. 6,000万円\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問55\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の〈親族関係図〉において、Ａさんの相続が開始した場合の相続税における遺産に係る基礎控除額として、最も適切なものはどれか。なお、Ｃさんは相続の放棄をしている。また、Ｄさんは、Ａさん夫婦の普通養子（特別養子縁組以外の縁組による養子）である。\n〈親族関係図〉\n・被相続人Ａさん＝妻Ｂさん\n・Ａさん夫婦の子：実子Ｃさん（相続放棄）、養子Ｄさん\n・実子Ｃさん＝配偶者、その子：孫Ｅさん、孫Ｆさん\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 4,200万円\nイ. 4,800万円\nウ. 5,400万円\nエ. 6,000万円\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
   },
-  "duration_api_ms": 37863,
+  "duration_api_ms": 34242,
   "stop_reason": "end_turn",
   "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
-  "total_cost_usd": 0.19216599999999998,
+  "total_cost_usd": 0.1669702,
   "usage": {
     "input_tokens": 4,
-    "cache_creation_input_tokens": 4783,
-    "cache_read_input_tokens": 5810,
-    "output_tokens": 1824,
+    "cache_creation_input_tokens": 4490,
+    "cache_read_input_tokens": 5931,
+    "output_tokens": 1595,
     "output_tokens_details": {
-      "thinking_tokens": 316
+      "thinking_tokens": 109
     },
     "server_tool_use": {
       "web_search_requests": 0,
@@ -22,7 +22,7 @@
     },
     "service_tier": "standard",
     "cache_creation": {
-      "ephemeral_1h_input_tokens": 4783,
+      "ephemeral_1h_input_tokens": 4490,
       "ephemeral_5m_input_tokens": 0
     },
     "inference_geo": "not_available",
@@ -31,15 +31,15 @@
   },
   "modelUsage": {
     "claude-opus-5-5": {
-      "inputTokens": 17515,
-      "outputTokens": 3634,
-      "cacheReadInputTokens": 5810,
-      "cacheCreationInputTokens": 4783,
+      "inputTokens": 13621,
+      "outputTokens": 3269,
+      "cacheReadInputTokens": 5931,
+      "cacheCreationInputTokens": 4490,
       "webSearchRequests": 1,
-      "costUSD": 0.19216599999999998,
+      "costUSD": 0.1669702,
       "contextWindow": 1000000,
       "maxOutputTokens": 128000,
-      "thinkingTokens": 331,
+      "thinkingTokens": 191,
       "canonicalModel": "claude-opus-5-5",
       "provider": "firstParty",
       "costBasis": "list"
@@ -77,17 +77,17 @@
   "num_turns": 2,
   "subtype": "success",
   "api_error_status": null,
-  "result": "```json\n{\"explanation\": \"相続税の遺産に係る基礎控除額は「3,000万円＋600万円×法定相続人の数」で計算します。ここでいう法定相続人の数は、相続放棄がなかったものとした場合の人数なので、放棄した実子Ｃさんも数に入ります。一方、相続放棄は代襲相続の原因にならないため、孫Ｅさん・孫Ｆさんは相続人になりません。養子Ｄさんは、実子がいるので1人まで数えられる範囲に収まります。法定相続人は妻Ｂさん・実子Ｃさん・養子Ｄさんの3人となり、基礎控除額は3,000万円＋600万円×3人＝4,800万円です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。4,200万円は相続放棄したＣさんを除いて法定相続人を2人（3,000万円＋600万円×2人）とした金額です。基礎控除の計算では放棄がなかったものとして数えるため、Ｃさんを含めた3人で計算します。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。法定相続人は妻Ｂさん・実子Ｃさん（放棄がなかったものとして数える）・養子Ｄさんの3人なので、3,000万円＋600万円×3人＝4,800万円となります。\",\n  \"ウ\": \"誤りです。5,400万円は法定相続人を4人（3,000万円＋600万円×4人）とした金額で、たとえばＣさんの代わりに孫Ｅさん・孫Ｆさんを数えた場合の金額です。相続放棄は代襲相続の原因にならないので孫は相続人にならず、正しい人数は3人（4,800万円）です。\",\n  \"エ\": \"誤りです。6,000万円は法定相続人を5人（3,000万円＋600万円×5人）とした金額で、Ｃさんに加えて孫Ｅさん・孫Ｆさんまで数えています。孫2人は相続人ではないため、正しい人数は3人（4,800万円）です。\"\n },\n \"topicTags\": [\"遺産に係る基礎控除額\", \"法定相続人の数（相続放棄・養子）\", \"代襲相続\"],\n \"isCalculation\": true, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4170.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm\"\n ],\n \"concerns\": [\"問題文が途中で切れているため、問いの内容を「相続税の計算における遺産に係る基礎控除額として、最も適切なもの」と推定して解説しました。選択肢が600万円刻みで並んでいること、法定相続人3人で計算すると正答の4,800万円になることから、この推定は妥当と考えます。\", \"養子Ｄさんが特別養子や配偶者の連れ子など「実子とみなされる養子」かどうかは不明です。ただ、今回は養子が1人だけなので、どちらでも人数（3人）と金額は変わりません。\"]}\n```\n\nSources:\n- [No.4152 相続税の計算｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm)\n- [No.4170 相続人の中に養子がいるとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4170.htm)\n- [第15条《遺産に係る基礎控除》関係｜国税庁](https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm)",
-  "ttft_ms": 6674,
+  "result": "```json\n{\"explanation\": \"相続税の遺産に係る基礎控除額は「3,000万円＋600万円×法定相続人の数」で計算します。この「法定相続人の数」は、相続放棄がなかったものとして数えます。そのため、放棄した実子Ｃさんも1人として数え、Ｃさんの子である孫Ｅさん・孫Ｆさんは数えません（放棄では代襲相続が起こらないため）。実子がいる場合、普通養子は1人まで数えられるので、法定相続人の数は妻Ｂさん・実子Ｃさん・養子Ｄさんの3人となり、3,000万円＋600万円×3人＝4,800万円です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。4,200万円は法定相続人を2人（3,000万円＋600万円×2人）とした場合の金額です。相続放棄をした実子Ｃさんを人数から除いてしまうとこの金額になりますが、基礎控除の計算では放棄がなかったものとして数えるため、人数は3人になります。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。相続放棄がなかったものとして、妻Ｂさん・実子Ｃさん・普通養子Ｄさんの3人を法定相続人の数とし、3,000万円＋600万円×3人＝4,800万円となります。\",\n  \"ウ\": \"誤りです。5,400万円は法定相続人を4人（3,000万円＋600万円×4人）とした場合の金額です。Ｃさんは相続放棄をしただけで生きているため代襲相続は起こらず、孫Ｅさん・孫Ｆさんは法定相続人の数に入りません。\",\n  \"エ\": \"誤りです。6,000万円は法定相続人を5人（3,000万円＋600万円×5人）とした場合の金額で、放棄したＣさんに加えて孫Ｅさん・孫Ｆさんまで数えてしまっています。基礎控除の計算での人数は妻・実子Ｃさん・養子Ｄさんの3人で、正しくは4,800万円です。\"\n },\n \"topicTags\": [\"遺産に係る基礎控除額\", \"法定相続人の数（相続放棄・養子）\"],\n \"isCalculation\": true,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm\"\n ],\n \"concerns\": [\"親族関係図は文章に置き換えたものです。原典の図にほかの親族（Ａさんの親など）が描かれていても、子がいるので結論は変わりません。\"]\n}\n```\n\n補足：\n- 法定相続人は妻・実子Ｃさん・養子Ｄさんの3人で、合計は4,800万円になり、公式正答「イ」と一致します。\n- 計算式と人数の数え方（相続放棄があっても人数は減らない、代襲相続人の扱い、養子の数の上限）は、国税庁のタックスアンサーと相続税法基本通達15条関係のページで確認しました。どちらも上のJSONに載せています。\n- 相続放棄をしても代襲相続が起こらないことは民法887条2項の規定ですが、e-Govのページは検索で確認していないため、参照URLには入れていません。\n\nSources:\n- [No.4152 相続税の計算｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm)\n- [第15条《遺産に係る基礎控除》関係｜国税庁](https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm)",
+  "ttft_ms": 4675,
   "type": "result",
-  "duration_ms": 37987,
-  "uuid": "397cefc6-81bc-4735-9823-e11bd38105eb",
-  "ttft_stream_ms": 1823,
-  "time_to_request_ms": 103,
-  "first_content_frame_ms": 1824,
-  "time_to_request_from_spawn_ms": 1028723,
+  "duration_ms": 34391,
+  "uuid": "268528ab-f7cc-4919-a9f3-34476d605cb4",
+  "ttft_stream_ms": 2279,
+  "time_to_request_ms": 137,
+  "first_content_frame_ms": 2280,
+  "time_to_request_from_spawn_ms": 1827236,
   "warm_spare_claimed": false,
-  "time_origin_ms": 1790330413698.756,
+  "time_origin_ms": 1790331212135.819,
   "queued_turn_count": 0,
   "result_index": 0
 }

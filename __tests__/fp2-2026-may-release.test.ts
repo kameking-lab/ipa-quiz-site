@@ -7,6 +7,7 @@ import released from "@/data/questions/fp2/academic-2026-may.json";
 import figures from "@/data/questions/fp2/academic-figures-2026-may.json";
 import extraction from "@/docs/evidence/fp2-2026-may/extraction.json";
 import summary from "@/docs/evidence/fp2-2026-may/summary.json";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 const ROOT = path.resolve(__dirname, "..");
 const EVIDENCE = path.join(ROOT, "docs/evidence/fp2-2026-may");
@@ -64,6 +65,8 @@ describe("FP2 2026年5月公表 Q11–60 release gate", () => {
   it.each(released)("$id matches the official stem, four choices, answer and figure", (q) => {
     const source = sourceByNumber.get(q.qNumber)!;
     expect(q.question).toBe(source.stem);
+    // The question sentence precedes any figure transcription and is never cut at a figure mention.
+    expect(q.question.split("\n")[0]).toMatch(/どれか。/);
     expect(Object.keys(q.choices)).toEqual([...KEYS]);
     expect(Object.values(q.choices)).toEqual(source.choices);
     expect(q.answer).toBe(KEYS[source.answer - 1]);
@@ -93,6 +96,8 @@ describe("FP2 2026年5月公表 Q11–60 release gate", () => {
     const stages = r.modelCalls.map((c) => c.stage);
     expect(stages.slice(0, 3)).toEqual(["1-solve", "2-draft", "3-review-r1"]);
     for (const call of r.modelCalls) {
+      const prompt = (JSON.parse(readFileSync(path.join(EVIDENCE, call.file), "utf8")) as { request: { prompt: string } }).request.prompt;
+      expect(prompt, `${call.file} judged the current stem`).toContain(q.question);
       const raw = JSON.parse(readFileSync(path.join(EVIDENCE, call.file), "utf8")) as {
         request: { model: string };
         modelUsage: Record<string, { outputTokens: number }>;
@@ -111,5 +116,11 @@ describe("FP2 2026年5月公表 Q11–60 release gate", () => {
     const may2026 = FP2_QUESTIONS.filter((q) => q.year === 2026 && q.season === "published");
     expect(may2026.map((q) => q.qNumber)).toEqual(Array.from({ length: FP2_2026_MAY_COVERAGE.count }, (_, i) => i + 1));
     expect(FP2_QUESTIONS).toHaveLength(240 + FP2_2026_MAY_COVERAGE.count);
+  });
+
+  it("keeps the catalog's remaining-work note consistent with the released range", () => {
+    const work = getQualificationByExamCode("fp2")?.remainingWork.join(" ") ?? "";
+    if (FP2_2026_MAY_COVERAGE.complete) expect(work).not.toMatch(/問\d+〜60の追加/);
+    else expect(work).toContain("2026年5月公表");
   });
 });

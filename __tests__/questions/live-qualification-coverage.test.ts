@@ -146,6 +146,15 @@ describe("live external qualification two-year publication gate", () => {
       "www.mhlw.go.jp",
       "www.mlit.go.jp",
       "www.nta.go.jp",
+      // FP2 2026年5月公表 問11〜60: fetched and title-checked government pages (see reference-url-checks.json).
+      "www.fsa.go.jp",
+      "www.esri.cao.go.jp",
+      "www8.cao.go.jp",
+      "www.mof.go.jp",
+      "www.soumu.go.jp",
+      "www.courts.go.jp",
+      "guardianship.mhlw.go.jp",
+      "www.japaneselawtranslation.go.jp",
     ]);
 
     const academic = [...FP2_QUESTIONS, ...FP3_QUESTIONS];

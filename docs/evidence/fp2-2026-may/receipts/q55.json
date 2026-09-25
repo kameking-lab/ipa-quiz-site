@@ -13,7 +13,7 @@
     }
   },
   "transcription": {
-    "stemSha256": "d7560e2c6939df082778af5d0e544ee2d92bd3fca63ab8546bd4231bdfefdf34",
+    "stemSha256": "483de9d8b728b7ad01d8c361f2b0fc82bbe8827fd3cc347432c2601aafc7f70c",
     "choicesSha256": "3ae3dc1deef18dfd87813718b4d28a8ade2972efaf7ce1c61b66d2e3daa442b6",
     "extractorChecks": {
       "stemAgrees": true,
@@ -49,14 +49,9 @@
     "reviewVerdicts": [
       "PASS"
     ],
-    "finalReviewIssues": [
-      "参考（解説修正は不要）：掲載された問題文は親族関係図の途中で切れており、『遺産に係る基礎控除額として、最も適切なものはどれか』に当たる設問文が抜けている。選択肢と公式正答から基礎控除額を問う計算問題だと判断して検証した。公開前に問題文の転記漏れがないか確認すること。",
-      "検証結果：基礎控除額は3,000万円＋600万円×法定相続人の数（相続税法15条1項）。法定相続人の数は、放棄がなかったものとした人数で数える（同条2項）。被相続人に実子がいるので、養子は1人まで数える。相続放棄は代襲相続の原因にならない（民法887条2項）。以上から、法定相続人は妻Ｂ・実子Ｃ・養子Ｄの3人で、基礎控除額は4,800万円となり、公式正答『イ』と一致する。ア・ウ・エの誤答の人数設定（2人・4人・5人）も、金額との対応に誤りはない。",
-      "参照URLは3つとも国税庁の公式ページで、実在を確認した。4152（相続税の計算。放棄者を数える点と養子の数の制限を含む）、4170（相続人の範囲と法定相続分。代襲相続の論点）、相続税法基本通達 第15条関係は、いずれも解説の論点に対応している。"
-    ],
+    "finalReviewIssues": [],
     "draftConcerns": [
-      "問題文が途中で切れているため、問いの内容を「相続税の計算における遺産に係る基礎控除額として、最も適切なもの」と推定して解説しました。選択肢が600万円刻みで並んでいること、法定相続人3人で計算すると正答の4,800万円になることから、この推定は妥当と考えます。",
-      "養子Ｄさんが特別養子や配偶者の連れ子など「実子とみなされる養子」かどうかは不明です。ただ、今回は養子が1人だけなので、どちらでも人数（3人）と金額は変わりません。"
+      "親族関係図は文章に置き換えたものです。原典の図にほかの親族（Ａさんの親など）が描かれていても、子がいるので結論は変わりません。"
     ],
     "draftLawDateNote(unpublished)": ""
   },
@@ -70,14 +65,6 @@
       "title": "No.4152 相続税の計算｜国税庁"
     },
     {
-      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4170.htm",
-      "host": "www.nta.go.jp",
-      "ok": true,
-      "status": 200,
-      "contentType": "text/html",
-      "title": "No.4170 相続人の中に養子がいるとき｜国税庁"
-    },
-    {
       "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm",
       "host": "www.nta.go.jp",
       "ok": true,
@@ -88,8 +75,8 @@
   ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [
-    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm",
-    "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm"
+    "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm",
+    "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/01.htm"
   ],
   "modelCalls": [
     {
@@ -99,20 +86,20 @@
       "modelUsage": {
         "claude-opus-5-5": {
           "inputTokens": 2,
-          "outputTokens": 667,
+          "outputTokens": 644,
           "cacheReadInputTokens": 1279,
-          "cacheCreationInputTokens": 1413,
+          "cacheCreationInputTokens": 1530,
           "webSearchRequests": 0,
-          "costUSD": 0.0249078,
+          "costUSD": 0.025383799999999998,
           "contextWindow": 1000000,
           "maxOutputTokens": 128000,
-          "thinkingTokens": 131,
+          "thinkingTokens": 116,
           "canonicalModel": "claude-opus-5-5",
           "provider": "firstParty",
           "costBasis": "list"
         }
       },
-      "total_cost_usd": 0.0249078,
+      "total_cost_usd": 0.025383799999999998,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
@@ -123,21 +110,21 @@
       "requestedModel": "claude-opus-5-5",
       "modelUsage": {
         "claude-opus-5-5": {
-          "inputTokens": 17515,
-          "outputTokens": 3634,
-          "cacheReadInputTokens": 5810,
-          "cacheCreationInputTokens": 4783,
+          "inputTokens": 13621,
+          "outputTokens": 3269,
+          "cacheReadInputTokens": 5931,
+          "cacheCreationInputTokens": 4490,
           "webSearchRequests": 1,
-          "costUSD": 0.19216599999999998,
+          "costUSD": 0.1669702,
           "contextWindow": 1000000,
           "maxOutputTokens": 128000,
-          "thinkingTokens": 331,
+          "thinkingTokens": 191,
           "canonicalModel": "claude-opus-5-5",
           "provider": "firstParty",
           "costBasis": "list"
         }
       },
-      "total_cost_usd": 0.19216599999999998,
+      "total_cost_usd": 0.1669702,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
@@ -148,21 +135,21 @@
       "requestedModel": "claude-opus-5-5",
       "modelUsage": {
         "claude-opus-5-5": {
-          "inputTokens": 24108,
-          "outputTokens": 4100,
-          "cacheReadInputTokens": 6617,
-          "cacheCreationInputTokens": 7062,
-          "webSearchRequests": 2,
-          "costUSD": 0.2562514,
+          "inputTokens": 12237,
+          "outputTokens": 2991,
+          "cacheReadInputTokens": 6702,
+          "cacheCreationInputTokens": 5536,
+          "webSearchRequests": 1,
+          "costUSD": 0.1643964,
           "contextWindow": 1000000,
           "maxOutputTokens": 128000,
-          "thinkingTokens": 879,
+          "thinkingTokens": 713,
           "canonicalModel": "claude-opus-5-5",
           "provider": "firstParty",
           "costBasis": "list"
         }
       },
-      "total_cost_usd": 0.2562514,
+      "total_cost_usd": 0.1643964,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
