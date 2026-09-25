@@ -49,7 +49,7 @@ function readSolvedMap(): SolvedMap {
   }
 }
 
-export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
+export function QuestionListWithFilter({ groups, showSectionNavigation = false }: { groups: SessionGroup[]; showSectionNavigation?: boolean }) {
   const [solved, setSolved] = React.useState<SolvedMap>({});
   const [hydrated, setHydrated] = React.useState(false);
   const [filter, setFilter] = React.useState<Filter>("all");
@@ -86,6 +86,10 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
     return true;
   }
 
+  const visibleSectionGroups = showSectionNavigation
+    ? groups.filter((group) => group.id && group.items.some(shouldShow))
+    : [];
+
   return (
     <div>
       {hydrated && answered > 0 && (
@@ -116,6 +120,19 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
             {answered} / {total} 解答済み
           </span>
         </div>
+      )}
+
+      {visibleSectionGroups.length > 0 && (
+        <nav aria-label="出題区分へ移動" className="mb-6 rounded-2xl border border-border bg-card p-4">
+          <p className="mb-3 text-sm font-semibold">見たい区分へ移動</p>
+          <div className="grid gap-2 sm:grid-cols-2">
+            {visibleSectionGroups.map((group) => (
+              <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+                {group.session}
+              </a>
+            ))}
+          </div>
+        </nav>
       )}
 
       {groups.map(({ session, id, items }) => {

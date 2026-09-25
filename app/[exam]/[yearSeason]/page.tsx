@@ -250,19 +250,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        {civil2Sections && (
-          <nav aria-label="出題区分へ移動" className="mb-6 rounded-2xl border border-border bg-card p-4">
-            <p className="mb-3 text-sm font-semibold">見たい区分へ移動</p>
-            <div className="grid gap-2 sm:grid-cols-2">
-              {civil2Sections.map((section) => (
-                <a key={section.id} href={`#${section.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                  {section.label}
-                </a>
-              ))}
-            </div>
-          </nav>
-        )}
-        <QuestionListWithFilter groups={sessionGroups} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections} />
       </div>
     </main>
   );

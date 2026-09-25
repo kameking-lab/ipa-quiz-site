@@ -75,4 +75,20 @@ describe("QuestionListWithFilter — 解答状況フィルター A11y", () => {
       screen.getByRole("button", { name: /全て/ }).getAttribute("aria-pressed"),
     ).toBe("false");
   });
+
+  it("分野ジャンプはフィルター後に問題が残る区分だけを示す", () => {
+    window.localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "ap-2024a-am-q1", correct: true }] }));
+    const [first, second] = makeGroups()[0]!.items;
+    render(<QuestionListWithFilter showSectionNavigation groups={[
+      { session: "必須 1〜5", id: "required", items: [first!] },
+      { session: "選択 6〜16", id: "optional", items: [second!] },
+    ]} />);
+    expect(screen.getByRole("navigation", { name: "出題区分へ移動" }).querySelectorAll("a")).toHaveLength(2);
+    fireEvent.click(screen.getByRole("button", { name: /未解答のみ/ }));
+    const links = screen.getByRole("navigation", { name: "出題区分へ移動" }).querySelectorAll("a");
+    expect(links).toHaveLength(1);
+    expect(links[0]?.getAttribute("href")).toBe("#optional");
+    fireEvent.click(screen.getByRole("button", { name: /不正解のみ/ }));
+    expect(screen.queryByRole("navigation", { name: "出題区分へ移動" })).toBeNull();
+  });
 });
