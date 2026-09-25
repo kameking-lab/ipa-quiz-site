@@ -11,13 +11,14 @@ const officialAnswers: Record<number, string> = {
 };
 
 describe("令和8年度 2級土木施工管理・前期第一次検定の初回収録", () => {
-  it("公式正答のNo.6〜16だけを前期・学科として公開する", () => {
+  it("初回収録No.6〜16の本文・正答・4肢解説を全66問追加後も保持する", () => {
     expect(isExamPublished("civil2")).toBe(true);
-    expect(CIVIL2_QUESTIONS).toHaveLength(11);
+    const firstWave = CIVIL2_QUESTIONS.filter((q) => q.qNumber >= 6 && q.qNumber <= 16);
+    expect(firstWave).toHaveLength(11);
     expect(defaultPracticeSession("civil2")).toBe("gakka");
     expect(formatYearSeason(2026, "early")).toContain("前期");
-    expect(CIVIL2_QUESTIONS.map((q) => q.qNumber)).toEqual(Object.keys(officialAnswers).map(Number));
-    for (const q of CIVIL2_QUESTIONS) {
+    expect(firstWave.map((q) => q.qNumber)).toEqual(Object.keys(officialAnswers).map(Number));
+    for (const q of firstWave) {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(CIVIL2_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
       expect(q.answer, q.id).toBe(officialAnswers[q.qNumber]);

@@ -1,0 +1,86 @@
+{
+  "startedAt": "2026-09-25T15:11:10.283Z",
+  "finishedAt": "2026-09-25T15:12:04.844Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5590,
+      "cacheReadInputTokens": 0,
+      "cacheCreationInputTokens": 155301,
+      "webSearchRequests": 0,
+      "costUSD": 1.3542159999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2000,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "correctModel": true,
+  "stderr": "",
+  "questionNumbers": [
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47
+  ],
+  "statuses": [
+    [
+      37,
+      "PASS"
+    ],
+    [
+      38,
+      "PASS"
+    ],
+    [
+      39,
+      "PASS"
+    ],
+    [
+      40,
+      "PASS"
+    ],
+    [
+      41,
+      "PASS"
+    ],
+    [
+      42,
+      "PASS"
+    ],
+    [
+      43,
+      "PASS"
+    ],
+    [
+      44,
+      "PASS"
+    ],
+    [
+      45,
+      "PASS"
+    ],
+    [
+      46,
+      "PASS"
+    ],
+    [
+      47,
+      "PASS"
+    ]
+  ],
+  "globalIssues": []
+}

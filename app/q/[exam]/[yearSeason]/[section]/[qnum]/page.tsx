@@ -220,7 +220,8 @@ export default async function QuestionPage({
   const { questions: crossExamByTopic, mode: crossExamMode } =
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
-  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags]);
+  const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
+    .filter((post) => q.exam !== "civil2" || post.exam === "civil2");
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
