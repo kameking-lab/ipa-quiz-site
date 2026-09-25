@@ -19,6 +19,7 @@ export interface QuestionListItem {
 
 export interface SessionGroup {
   session: string;
+  id?: string;
   items: QuestionListItem[];
 }
 
@@ -117,11 +118,11 @@ export function QuestionListWithFilter({ groups }: { groups: SessionGroup[] }) {
         </div>
       )}
 
-      {groups.map(({ session, items }) => {
+      {groups.map(({ session, id, items }) => {
         const filtered = items.filter(shouldShow);
         if (filtered.length === 0) return null;
         return (
-          <section key={session} aria-label={session} className="mb-8">
+          <section key={session} id={id} aria-label={session} className="mb-8 scroll-mt-6">
             <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold uppercase tracking-wider text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
               {session.toUpperCase()}
