@@ -104,9 +104,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期の第一次検定（土木）から選択問題11問を収録。全66問中の一部です。",
+    reuseSummary: "令和8年度前期の第一次検定（土木）全66問と各選択肢の解説を収録。",
     attributionTemplate: "出典：全国建設研修センター 令和8年度2級土木施工管理技術検定 第一次検定（前期・土木）",
-    remainingWork: ["令和8年度前期の残り55問と他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
+    remainingWork: ["他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
   },
   {
     slug: "sekou-kenchiku1",
