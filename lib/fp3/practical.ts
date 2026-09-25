@@ -1,5 +1,7 @@
 import extracted from "@/data/questions/fp3/practical-2024-2025.json";
 import figures from "@/data/questions/fp3/practical-figures-2024-2025.json";
+import extracted2026 from "@/data/questions/fp3/practical-2026-05.json";
+import figures2026 from "@/data/questions/fp3/practical-figures-2026-05.json";
 
 export interface PracticalPanel {
   url: string;
@@ -22,11 +24,11 @@ export interface PracticalQuestion {
   panels: PracticalPanel[];
 }
 
-type RawEdition = { lawReferenceDate: string; questions: Omit<PracticalQuestion, "panels">[] };
-const DATA = extracted as Record<string, RawEdition>;
-const FIGURES = figures as Record<string, Record<string, PracticalPanel[]>>;
+type RawEdition = { lawReferenceDate: string; questions: (Omit<PracticalQuestion, "panels"> & { panels?: PracticalPanel[] })[] };
+const DATA = { ...extracted, ...extracted2026 } as Record<string, RawEdition>;
+const FIGURES = { ...figures, ...figures2026 } as Record<string, Record<string, PracticalPanel[]>>;
 
-export const FP3_PRACTICAL_EDITIONS = ["202405", "202505"] as const;
+export const FP3_PRACTICAL_EDITIONS = ["202605", "202505", "202405"] as const;
 
 export function practicalEditionLabel(edition: string): string {
   const labels: Record<string, string> = {
@@ -34,6 +36,7 @@ export function practicalEditionLabel(edition: string): string {
     
     
     "202505": "2025年5月公表",
+    "202605": "2026年5月公表",
   };
   return labels[edition] ?? edition;
 }
@@ -45,7 +48,7 @@ export function getPracticalEdition(edition: string): { label: string; lawRefere
   return {
     label: practicalEditionLabel(edition),
     lawReferenceDate: data.lawReferenceDate,
-    questions: data.questions.map((q) => ({ ...q, panels: panels[String(q.number)] ?? [] })),
+    questions: data.questions.map((q) => ({ ...q, panels: q.panels ?? panels[String(q.number)] ?? [] })),
   };
 }
 

@@ -5,7 +5,7 @@ import { FP3_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp3/practical
 
 export const metadata: Metadata = {
   title: "FP3級 実技試験の過去問と模範解答",
-  description: "日本FP協会公表のFP3級実技試験を2024年・2025年の2年分、40問収録。設問と公式模範解答を回ごとに確認できます。",
+  description: "日本FP協会公表のFP3級実技試験を2024年から2026年までの3年分、60問収録。設問と公式模範解答を回ごとに確認できます。",
   alternates: { canonical: "/fp3/practical" },
 };
 
@@ -14,8 +14,8 @@ export default function Fp3PracticalHome() {
     <main className="mx-auto w-full max-w-3xl px-4 py-8 sm:py-12">
       <nav className="mb-5 text-sm text-muted-foreground"><Link href="/fp3" className="hover:underline">FP3級</Link> / 実技</nav>
       <h1 className="text-3xl font-bold text-foreground">FP3級 実技の過去問</h1>
-      <p className="mt-3 leading-relaxed text-muted-foreground">日本FP協会が公表した2024年・2025年の全2セット、各20問。計算、複数の空欄、○×問題も公式模範解答の単位と組合せを保って掲載しています。</p>
-      <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted-foreground"><span>2年分</span><span>・</span><span>40問</span></div>
+      <p className="mt-3 leading-relaxed text-muted-foreground">日本FP協会が公表した2024年・2025年・2026年の全3セット、各20問。計算、複数の空欄、○×問題も公式模範解答の単位と組合せを保って掲載しています。</p>
+      <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted-foreground"><span>3年分</span><span>・</span><span>60問</span></div>
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
         {FP3_PRACTICAL_EDITIONS.map((edition) => {
           const data = getPracticalEdition(edition)!;

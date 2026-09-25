@@ -10,6 +10,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, buildOrgNode } from "@/lib/seo/structured-data";
 import { EXAM_STATS } from "@/lib/seo/exam-stats";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import {
   EXAM_DESCRIPTIONS,
   examFullName,
@@ -68,6 +69,9 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 export const dynamicParams = false;
 const fp2PracticalCount = FP2_PRACTICAL_EDITIONS.reduce(
   (sum, edition) => sum + (getPracticalEdition(edition)?.questions.length ?? 0), 0,
+);
+const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
+  (sum, edition) => sum + (getFp3PracticalEdition(edition)?.questions.length ?? 0), 0,
 );
 
 interface RouteParams {
@@ -314,7 +318,7 @@ export default async function ExamTopPage({
               </Button>
               <Button asChild variant="outline" size="lg" className="w-full font-semibold">
                 <Link href={`/${code}/practical`}>
-                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : 40}問）
+                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
                 </Link>
               </Button>
             </div>

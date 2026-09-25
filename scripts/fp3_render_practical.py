@@ -81,7 +81,8 @@ def main() -> None:
     RECEIPT.write_text(json.dumps(entries, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     referenced = {ROOT / "public" / panel["url"].lstrip("/")
                   for by_edition in entries.values() for panels in by_edition.values() for panel in panels}
-    for old in OUTPUT.rglob("*.webp"):
+    for edition in entries:
+      for old in (OUTPUT / edition).rglob("*.webp"):
         if old not in referenced:
             old.unlink()
     prompts = sum(1 for by_edition in entries.values() for panels in by_edition.values() if panels)
