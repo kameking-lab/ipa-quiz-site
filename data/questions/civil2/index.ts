@@ -11,6 +11,7 @@ import source2025i from "./2025-october-batch-37-39.json";
 import source2025j from "./2025-october-batch-40-43.json";
 import source2025k from "./2025-october-batch-44-47.json";
 import source2025l from "./2025-october-batch-48-49.json";
+import source2025m from "./2025-october-batch-50-51.json";
 import source2026 from "./2026-early.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
@@ -78,7 +79,7 @@ function toQuestions(source: Civil2Source): Question[] {
   });
 }
 
-/** 令和8年度前期は全66問、令和7年度10月実施は照合済みNo.6〜49を公開。 */
+/** 令和8年度前期は全66問、令和7年度10月実施は照合済みNo.6〜51を公開。 */
 export const CIVIL2_2026_QUESTIONS = toQuestions(source2026 as Civil2Source);
 export const CIVIL2_2025_QUESTIONS = [
   ...toQuestions(source2025 as Civil2Source),
@@ -93,5 +94,6 @@ export const CIVIL2_2025_QUESTIONS = [
   ...toQuestions(source2025j as Civil2Source),
   ...toQuestions(source2025k as Civil2Source),
   ...toQuestions(source2025l as Civil2Source),
+  ...toQuestions(source2025m as Civil2Source),
 ];
 export const CIVIL2_QUESTIONS: Question[] = [...CIVIL2_2026_QUESTIONS, ...CIVIL2_2025_QUESTIONS];
