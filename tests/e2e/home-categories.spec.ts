@@ -11,7 +11,7 @@ for (const width of [390, 1280]) {
     const safety = choices.getByRole("link", { name: /^安全/ });
     await expect(ipa).toBeInViewport();
     await expect(safety).toBeInViewport();
-    const other = page.getByRole("link", { name: /^FP2級・FP3級/ });
+    const other = page.locator('main a[href="/qualifications"]');
     await expect(other).toBeVisible();
     await expect(page.locator("main").getByRole("link")).toHaveCount(3);
     await ipa.click();
@@ -37,6 +37,7 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole("heading", { name: "FP2級" })).toBeVisible();
     await expect(page.locator('a[href="/fp3"]')).toBeVisible();
     await expect(page.locator('a[href="/fp2"]')).toBeVisible();
+    await expect(page.locator('a[href="/civil2"]')).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

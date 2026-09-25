@@ -80,6 +80,12 @@ export function buildQuestionJsonLd({
           name: "一般財団法人 不動産適正取引推進機構",
           url: "https://www.retio.or.jp/",
         }
+    : q.exam === "civil2"
+      ? {
+          "@type": "Organization",
+          name: "一般財団法人全国建設研修センター",
+          url: "https://www.jctc.jp/",
+        }
     : q.exam === "denken3" || q.exam === "denko2"
       ? {
           "@type": "Organization",
@@ -93,7 +99,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken"
+    : q.exam === "takken" || q.exam === "civil2"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
@@ -162,6 +168,7 @@ export function buildQuestionJsonLd({
       name: SITE_NAME,
       url: SITE_BASE_URL,
     },
+    // Neither RETIO nor JCTC supplies a public reusable-content license URL.
     ...(licenseUrl ? { license: licenseUrl } : {}),
     creator: questionAuthor,
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and

@@ -10,7 +10,18 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   if (!links && !qualification) return null;
 
   if (qualification) {
-    const items = [
+    const items = exam === "civil2" ? [
+      {
+        label: "全国建設研修センター 公式問題",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_mondai.pdf",
+        description: "令和8年度前期・第一次検定（土木）の問題PDF。",
+      },
+      {
+        label: "全国建設研修センター 公式正答",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
+        description: "同じ試験回の正答肢PDF。",
+      },
+    ] : [
       {
         label: `${qualification.administrator} 公式問題・正答`,
         href: qualification.officialQuestionsUrl,

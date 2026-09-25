@@ -351,11 +351,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["october"],
     yearRange: { start: 2025, end: 2025 },
   },
+  civil2: {
+    code: "civil2",
+    nameFull: "2級土木施工管理技術検定",
+    urlSlug: "civil2",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 66,
+      label: "第一次検定（前期・土木）",
+      categories: ["土工・建設機械", "土質試験", "盛土", "軟弱地盤", "コンクリート材料", "コンクリート施工", "基礎工", "土留め"],
+    }],
+    seasons: ["early"],
+    yearRange: { start: 2026, end: 2026 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2",
 );
 
 /** Every exam playable in the application, including external qualifications. */
