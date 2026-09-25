@@ -2,6 +2,8 @@
 import { describe, expect, it } from "vitest";
 
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import {
   getSitemapQuestions,
   getSitemapChunkCount,
@@ -11,6 +13,7 @@ import {
   renderBlogSitemapXml,
   renderBooksSitemapXml,
   renderExamsSitemapXml,
+  renderFpPracticalSitemapXml,
   renderMainSitemapXml,
   renderQuestionsSitemapChunkXml,
   renderSitemapIndexXml,
@@ -27,6 +30,7 @@ const ALL_RENDERERS: ReadonlyArray<[string, () => string]> = [
   ["index", renderSitemapIndexXml],
   ["main", renderMainSitemapXml],
   ["exams", renderExamsSitemapXml],
+  ["fp-practical", renderFpPracticalSitemapXml],
   ["topics", renderTopicsSitemapXml],
   ["blog", renderBlogSitemapXml],
   ["books", renderBooksSitemapXml],
@@ -55,6 +59,7 @@ describe("sitemap XML well-formedness", () => {
     for (const render of [
       renderMainSitemapXml,
       renderExamsSitemapXml,
+      renderFpPracticalSitemapXml,
       renderBooksSitemapXml,
     ]) {
       const xml = render();
@@ -76,9 +81,26 @@ describe("renderSitemapIndexXml", () => {
     expect(xml).toContain(
       '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     );
-    for (const name of ["main", "exams", "topics", "blog", "books"]) {
+    for (const name of ["main", "exams", "fp-practical", "topics", "blog", "books"]) {
       expect(indexLocs).toContain(`/sitemap/${name}.xml`);
     }
+  });
+
+  it("lists each public FP practical hub, edition and question once", () => {
+    const practicalLocs = locs(renderFpPracticalSitemapXml());
+    const expected = [
+      ...(["fp2", "fp3"] as const).map((exam) => `/${exam}/practical`),
+      ...FP2_PRACTICAL_EDITIONS.flatMap((edition) => [
+        `/fp2/practical/${edition}`,
+        ...(getFp2PracticalEdition(edition)?.questions ?? []).map((q) => `/fp2/practical/${edition}/${q.number}`),
+      ]),
+      ...FP3_PRACTICAL_EDITIONS.flatMap((edition) => [
+        `/fp3/practical/${edition}`,
+        ...(getFp3PracticalEdition(edition)?.questions ?? []).map((q) => `/fp3/practical/${edition}/${q.number}`),
+      ]),
+    ];
+    expect(practicalLocs.toSorted()).toEqual(expected.toSorted());
+    expect(new Set(practicalLocs).size).toBe(practicalLocs.length);
   });
 
   it("lists exactly one question chunk per getSitemapChunkCount()", () => {

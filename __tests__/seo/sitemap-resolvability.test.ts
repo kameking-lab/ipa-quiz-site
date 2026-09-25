@@ -15,6 +15,7 @@ import type { EssayExamCode } from "@/lib/essay/load";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import {
   renderExamsSitemapXml,
+  renderFpPracticalSitemapXml,
   renderBlogSitemapXml,
   renderBooksSitemapXml,
   renderMainSitemapXml,
@@ -22,6 +23,8 @@ import {
   renderTopicsSitemapXml,
 } from "@/lib/seo/sitemap-xml";
 import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
+import { getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
+import { getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
 import type { ExamCode } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { GONE_PATHS } from "@/middleware";
@@ -43,6 +46,14 @@ const blogSlugs = new Set(getAllBlogSummaries().map((p) => p.slug));
  * a URL that the route would 404.
  */
 function isResolvable(path: string): boolean {
+  const practical = /^\/(fp2|fp3)\/practical(?:\/(\d{6}))?(?:\/(\d+))?$/.exec(path);
+  if (practical) {
+    const [, exam, edition, number] = practical;
+    if (!edition) return true;
+    const data = exam === "fp2" ? getFp2PracticalEdition(edition) : getFp3PracticalEdition(edition);
+    if (!data) return false;
+    return !number || data.questions.some((question) => question.number === Number(number));
+  }
   const safetyExam = /^\/e-learning\/exams\/([^/]+)$/.exec(path);
   if (safetyExam) return Boolean(loadExamPaper(safetyExam[1])?.length);
   // /q/{exam}/{year-season}/{section}/{qnum}
@@ -114,6 +125,12 @@ describe("sitemap data-driven URLs all resolve (no 404s emitted)", () => {
     expect(bad).toEqual([]);
   });
 
+  it("every FP practical hub, edition and question URL resolves", () => {
+    const paths = locs(renderFpPracticalSitemapXml());
+    expect(paths.length).toBeGreaterThan(0);
+    expect(paths.filter((path) => !isResolvable(path))).toEqual([]);
+  });
+
   it("every topic and blog URL resolves", () => {
     const bad = [
       ...locs(renderTopicsSitemapXml()),
@@ -144,6 +161,7 @@ describe("sitemap never lists a retired (301/410) URL", () => {
   const allSitemapPaths: string[] = [
     ...locs(renderMainSitemapXml()),
     ...locs(renderExamsSitemapXml()),
+    ...locs(renderFpPracticalSitemapXml()),
     ...locs(renderTopicsSitemapXml()),
     ...locs(renderBlogSitemapXml()),
     ...locs(renderBooksSitemapXml()),
