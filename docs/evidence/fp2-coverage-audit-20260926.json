@@ -1,0 +1,54 @@
+{
+  "auditedAt": "2026-09-26T03:11:00+09:00",
+  "scope": "FP2 published corpus and evidence index; no question regeneration",
+  "counts": {
+    "academic": 300,
+    "practical": 200,
+    "academic2024To2025": 240,
+    "practical2024To2025": 160,
+    "academic2026May": 60,
+    "practical2026May": 40
+  },
+  "production": [
+    { "url": "https://www.kakomon-ai.jp/fp2", "status": 200, "observed": "300問" },
+    { "url": "https://www.kakomon-ai.jp/fp2/practical", "status": 200, "observed": "5セット・200問" },
+    { "url": "https://www.kakomon-ai.jp/fp2/practical/202605", "status": 200, "observed": "全40問" }
+  ],
+  "claudeIndependentReview": {
+    "sessionId": "2d7c7f19-60b7-45e9-bba8-ee436270576f",
+    "requestedModel": "claude-opus-5-5",
+    "resolvedModel": "claude-opus-5-5",
+    "provider": "firstParty",
+    "terminalReason": "completed",
+    "durationApiMs": 86553,
+    "outputTokens": 8257,
+    "thinkingTokens": 2802,
+    "cacheReadInputTokens": 419773,
+    "cacheCreationInputTokens": 72973,
+    "costUsd": 0.8329506,
+    "verdict": "REQUIRES_FIXES",
+    "acceptedFindings": [
+      "The qualification ledger understated FP2 as zero questions.",
+      "The two-year STATUS file still described the academic corpus as unpublished.",
+      "The primary source evidence index had no FP2 section.",
+      "The 2026 academic Opus receipt gate covers Q11-Q60, not the pre-existing Q1-Q10 pilot."
+    ]
+  },
+  "antigravityIndependentReview": {
+    "conversationId": "7a4d0211-6d32-455a-8c28-73028a29f193",
+    "status": "SUCCESS",
+    "durationSeconds": 20.8388582,
+    "inputTokens": 12575,
+    "outputTokens": 2567,
+    "thinkingTokens": 2272,
+    "totalTokens": 15142,
+    "verdict": "HOLD",
+    "resolvedByThisChange": [
+      "qualification ledger is updated",
+      "two-year STATUS is updated",
+      "primary evidence index gains an FP2 section",
+      "2026 practical receipts were already present and cover all 40 questions"
+    ],
+    "remainingScopeNote": "The 2026 academic Q1-Q10 pilot predates the Q11-Q60 Opus receipt workflow. Do not describe those ten questions as Opus-receipt-reviewed. Official source, answer, four-choice explanation, and corpus tests remain the acceptance evidence."
+  }
+}

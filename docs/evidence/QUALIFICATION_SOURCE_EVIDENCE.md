@@ -48,6 +48,25 @@
 - 実装上の表記: `出典：令和7年度上期第三種電気主任技術者試験 理論科目`
 - 収録範囲: 理論科目の問2・問14の2問だけ。他科目・他年度を収録済みとは扱わない。
 
+## 2級ファイナンシャル・プランニング技能検定
+
+- 公開元: 日本FP協会「試験問題・模範解答」
+  - https://www.jafp.or.jp/exam/mohan/
+  - 2024年5月・9月、2025年1月のペーパー試験と、2025年5月・2026年5月のCBT公表セットを収録した。
+- 利用条件: 日本FP協会「FP技能検定の試験問題の利用について」
+  - https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf
+  - 2級学科・実技の著作権者を明記し、利用申請は不要、出典明記と加工時の加工明記が必要とする条件を2026-09-26に再確認した。
+- 2024〜2025年公表分
+  - 学科4回・各60問（計240問）と実技4回・各40問（計160問）。問題・正答PDFのURL、取得日相当の公表情報、SHA-256、ページ数、法令基準日は `fp2-two-year/manifest.json` に固定した。
+  - 学科全240問は4肢すべての理由を収録し、`academic-coverage.json` の review queue は0件。実技は択一・○×・複数空欄・記述の形式に応じた解説を収録し、`practical-explanation-coverage.json` と独立レビュー群で検収した。
+- 2026年5月公表分
+  - 学科問題・正答: https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf （60問、法令基準日2025-04-01）。PDFハッシュと全問抽出は `fp2-2026-may/extraction.json`、問11〜60の `claude-opus-5-5` solve/explain実応答は `fp2-2026-may/receipts/` に保存した。問1〜10は既存パイロットで、同形式のOpus receipt対象外であることを明示して過大表示を防ぐ。
+  - 実技問題: https://www.jafp.or.jp/exam/mohan/files/j2_202605_q.pdf
+  - 実技正答: https://www.jafp.or.jp/exam/mohan/files/j2_202605_a.pdf
+  - 実技40問のSHA-256・ページ数は `fp2-2026-may-practical/manifest.json`、全40問のfirst-party `claude-opus-5-5`検収は `review-coverage.json` と5件のreceiptに保存した。HOLDは0件。
+- 公開収録数: 学科300問、実技200問。2026-09-26に匿名本番 `/fp2`（学科300問）、`/fp2/practical`（5セット200問）、`/fp2/practical/202605`（40問）がHTTP 200で件数表示と一致することを確認した。
+- 今回の独立監査receipt: `fp2-coverage-audit-20260926.json`。AntigravityのHOLDのうち、古い台帳・STATUS・一次証拠欠落は本変更で解消する。2026年学科問1〜10のOpus receipt非対象は問題品質のHOLDではなく、モデル監査範囲の限定として保持する。
+
 ## 再取得とハッシュ照合
 
 第二種電気工事士の2024・2025年度学科200問・技能104課題と公開前連絡ゲートの証拠は [DENKO2_FULL_YEAR_PLAN.md](./DENKO2_FULL_YEAR_PLAN.md)、[DENKO2_REUSE_NOTICE.md](./DENKO2_REUSE_NOTICE.md) に記録した。令和8年度上期の未公開10問は [DENKO2_2026_FIRST.md](./DENKO2_2026_FIRST.md) に分離している。
