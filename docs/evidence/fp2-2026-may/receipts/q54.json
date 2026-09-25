@@ -2,10 +2,7 @@
   "question": 54,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -51,11 +48,44 @@
     "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "基準日（2025-04-01）より後に、公正証書の作成手続をデジタル化する公証人法等の改正（2025年10月施行予定とされていたもの）が施行されたと記憶していますが、施行日と内容は確認できていません。この改正でも、民法969条の「証人2人以上」という要件は変わらないと理解しています。",
+      "法制審議会で検討されていた遺言制度の見直し（デジタル技術を使った遺言方式など）が2026年までに法改正として成立したかどうかは確認できていません。ただし、基準日時点の法令で解答する本問の正誤には影響しません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
-  "referenceUrlsDropped": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/129AC0000000089",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "民法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.moj.go.jp/MINJI/minji07_00240.html",
+      "host": "www.moj.go.jp",
+      "ok": false,
+      "status": 403,
+      "contentType": "text/html",
+      "title": "ERROR: The request could not be satisfied",
+      "reason": "HTTP status, empty title or not-found page"
+    },
+    {
+      "url": "https://www.moj.go.jp/MINJI/03.html",
+      "host": "www.moj.go.jp",
+      "ok": false,
+      "status": 403,
+      "contentType": "text/html",
+      "title": "ERROR: The request could not be satisfied",
+      "reason": "HTTP status, empty title or not-found page"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.moj.go.jp/MINJI/minji07_00240.html",
+    "https://www.moj.go.jp/MINJI/03.html"
+  ],
   "finalReviewWebSources": [],
   "modelCalls": [
     {
@@ -79,6 +109,31 @@
         }
       },
       "total_cost_usd": 0.0193878,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q54-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21956,
+          "outputTokens": 4370,
+          "cacheReadInputTokens": 5885,
+          "cacheCreationInputTokens": 5518,
+          "webSearchRequests": 2,
+          "costUSD": 0.24054499999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 560,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.24054499999999998,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

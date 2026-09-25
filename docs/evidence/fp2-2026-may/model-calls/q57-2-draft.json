@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問57\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\nＸ年４月７日（月）に死亡した被相続人が所有していた上場株式Ｙを相続により取得した場合、下記の〈資料〉に基づき、上場株式Ｙの１株当たりの相続税評価額として、最も適切なものはどれか。なお、記載のない事項については考慮しないものとする。〈資料〉上場株式Ｙの価格・Ｘ年１月の毎日の最終価格の月平均額：1,140円・Ｘ年２月の毎日の最終価格の月平均額：1,150円・Ｘ年３月の毎日の最終価格の月平均額：1,180円・Ｘ年４月の毎日の最終価格の月平均額：1,240円・Ｘ年４月４日（金）の最終価格   ：1,230円・Ｘ年４月７日（月）の最終価格   ：1,210円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 1,140円\nイ. 1,150円\nウ. 1,210円\nエ. 1,240円\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 28494,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1596904,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4420,
+    "cache_read_input_tokens": 5992,
+    "output_tokens": 1267,
+    "output_tokens_details": {
+      "thinking_tokens": 237
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4420,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 14953,
+      "outputTokens": 2666,
+      "cacheReadInputTokens": 5992,
+      "cacheCreationInputTokens": 4420,
+      "webSearchRequests": 1,
+      "costUSD": 0.1596904,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 282,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答「イ（1,150円）」は、上場株式の評価ルール（国税庁タックスアンサー No.4632）と一致しています。死亡日の終値と、死亡月・前月・前々月の月平均額の4つのうち、最も低い2月の1,150円が評価額になります。\n\n```json\n{\"explanation\": \"上場株式は、原則として課税時期（相続では被相続人の死亡の日）の最終価格で評価します。ただし、その価格が「課税時期の属する月」「前月」「前々月」のそれぞれの毎日の最終価格の月平均額のうち最も低いものを超える場合は、その最も低い価額で評価します。本問では、4月7日の最終価格1,210円、4月の月平均額1,240円、3月の月平均額1,180円、2月の月平均額1,150円の4つから最も低いものを選びます。min(1,210円, 1,240円, 1,180円, 1,150円)＝1,150円となります。3か月より前の1月の月平均額と、死亡日の前の取引日（4月4日）の最終価格は比べる対象に入らない点が論点です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。1,140円は1月の月平均額です。死亡日（4月7日）から見て前々月より前の月にあたるため、比べる対象になりません。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。死亡日の最終価格1,210円、4月の月平均額1,240円、3月の月平均額1,180円、2月（前々月）の月平均額1,150円の4つのうち、最も低い1,150円が評価額になります。\",\n  \"ウ\": \"誤りです。1,210円は死亡日の最終価格です。前々月（2月）の月平均額1,150円のほうが低いため、1,210円は評価額になりません。\",\n  \"エ\": \"誤りです。1,240円は死亡した月（4月）の月平均額です。4つの価額の中で最も高く、最も低い価額（1,150円）を選ぶというルールに合いません。\"\n },\n \"topicTags\": [\"上場株式の相続税評価\", \"最終価格と月平均額\"],\n \"isCalculation\": true,\n \"difficulty\": 1,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4632.htm\"],\n \"concerns\": []}\n```\n\nSources:\n- [No.4632 上場株式の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4632.htm)",
+  "ttft_ms": 5090,
+  "type": "result",
+  "duration_ms": 28618,
+  "uuid": "4b70fc9e-b911-48dd-b906-3647612f26b5",
+  "ttft_stream_ms": 1871,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 1871,
+  "time_to_request_from_spawn_ms": 1048590,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330433523.1401,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

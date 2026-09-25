@@ -2,10 +2,7 @@
   "question": 53,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -51,11 +48,42 @@
     "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "令和6年4月から、法制審議会民法（成年後見等関係）部会で成年後見制度の見直しが話し合われています。後見と保佐の類型をなくして補助に一本化する案も出ています（厚生労働省資料、令和8年1月）。今回の調べでは、改正法が成立・施行されたかどうかは確認できませんでした。基準日（2025-04-01）時点では現行の3類型なので正答には影響しませんが、公開後に改正が成立した場合は、lawDateNoteに書き足す必要があります。",
+      "difficultyは基本知識の問題と考えて1にしました。サイトの難易度基準が指定の2なら、2に直してください。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
-  "referenceUrlsDropped": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.moj.go.jp/MINJI/a02.html",
+      "host": "www.moj.go.jp",
+      "ok": false,
+      "status": 403,
+      "contentType": "text/html",
+      "title": "ERROR: The request could not be satisfied",
+      "reason": "HTTP status, empty title or not-found page"
+    },
+    {
+      "url": "https://guardianship.mhlw.go.jp/personal/type/legal_guardianship/",
+      "host": "guardianship.mhlw.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html; charset=UTF-8",
+      "title": "法定後見制度とは（手続の流れ、費用） | 成年後見はやわかり"
+    },
+    {
+      "url": "https://www.courts.go.jp/saiban/koukenp00/koukenp1/index.html",
+      "host": "www.courts.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "成年後見制度（後見・保佐・補助）の概要を知りたい方へ | 裁判所"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.moj.go.jp/MINJI/a02.html"
+  ],
   "finalReviewWebSources": [],
   "modelCalls": [
     {
@@ -79,6 +107,31 @@
         }
       },
       "total_cost_usd": 0.0205198,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q53-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21215,
+          "outputTokens": 3478,
+          "cacheReadInputTokens": 5967,
+          "cacheCreationInputTokens": 4533,
+          "webSearchRequests": 1,
+          "costUSD": 0.20187739999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 163,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.20187739999999998,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

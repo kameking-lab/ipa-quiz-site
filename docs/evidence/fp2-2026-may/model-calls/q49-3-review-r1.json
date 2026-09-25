@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問49\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n「居住用財産を譲渡した場合の3,000万円の特別控除」（以下、「3,000万円特別控除」という）および「居住用財産を譲渡した場合の長期譲渡所得の課税の特例」（以下、「軽減税率の特例」という）に関する次の記述のうち、最も適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 3,000万円特別控除は、譲渡した居住用財産の所有期間の長短にかかわらず、適用を受けることができる。\nイ. 3,000万円特別控除は、居住用財産で居住の用に供さなくなったものを譲渡する場合、居住の用に供さなくなった日の属する年の翌年の12月31日までに譲渡しなければ、適用を受けることができない。\nウ. 軽減税率の特例は、譲渡した居住用財産の所有期間が、譲渡した日の属する年の１月１日において５年を超えていれば、適用を受けることができる。\nエ. 3,000万円特別控除と軽減税率の特例は、重複して適用を受けることができない。\n\n【解説案】\n{\n \"explanation\": \"3,000万円特別控除（租税特別措置法35条）は、居住用財産の所有期間の長短に関係なく適用できるため、「ア」が正解です。一方、軽減税率の特例（同法31条の3）は、譲渡した年の1月1日時点で家屋・敷地の所有期間がともに10年を超えていることが要件です。以前住んでいた家屋を譲渡する場合は、住まなくなった日から3年を経過する日の属する年の12月31日までに譲渡する必要があります。両特例は重複して適用でき、3,000万円を控除した後の課税長期譲渡所得のうち6,000万円以下の部分に軽減税率（所得税10%・住民税4%）が適用されます。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。3,000万円特別控除は、譲渡した居住用財産の所有期間の長短に関係なく適用を受けることができます。\",\n  \"イ\": \"誤りです。居住の用に供さなくなった居住用財産の譲渡に3,000万円特別控除を適用するには、住まなくなった日から3年を経過する日の属する年の12月31日までに譲渡すればよく、「翌年の12月31日まで」ではありません。\",\n  \"ウ\": \"誤りです。軽減税率の特例を適用するには、譲渡した年の1月1日において、家屋と敷地の所有期間がともに10年を超えている必要があります。5年超の要件は、通常の長期譲渡所得に該当するかどうかの基準です。\",\n  \"エ\": \"誤りです。3,000万円特別控除と軽減税率の特例は重複して適用を受けることができ、3,000万円を控除した後の課税長期譲渡所得金額に軽減税率が適用されます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 35644,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.18779579999999998,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5606,
+    "cache_read_input_tokens": 6699,
+    "output_tokens": 1391,
+    "output_tokens_details": {
+      "thinking_tokens": 375
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5606,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 17157,
+      "outputTokens": 3149,
+      "cacheReadInputTokens": 6699,
+      "cacheCreationInputTokens": 5606,
+      "webSearchRequests": 1,
+      "costUSD": 0.18779579999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 445,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "判定はPASSです。4つの選択肢の解説はどれも国税庁タックスアンサーの内容と一致しており、公式正答「ア」とも整合しています。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": {\"ok\": true, \"issue\": \"\"}, \"ウ\": {\"ok\": true, \"issue\": \"\"}, \"エ\": {\"ok\": true, \"issue\": \"\"}},\n \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**確認した内容（国税庁タックスアンサーで検証）:**\n- **ア（3,000万円控除と所有期間）:** 所有期間の長短に関係なく適用できます（No.3302）。正答として正しいです。\n- **イ（住まなくなった家屋の譲渡期限）:** 期限は「住まなくなってから3年を経過する日の属する年の12月31日まで」です（No.3302）。「翌年の12月31日まで」とする選択肢は誤りで、解説もそのとおり説明しています。\n- **ウ（軽減税率の所有期間要件）:** 要件は、売った年の1月1日時点で家屋と敷地の所有期間がともに10年を超えていることです（No.3305）。5年超は通常の長期譲渡所得の基準で、解説の説明は正しいです。\n- **エ（両特例の重複適用）:** 2つの特例は重ねて受けられると明記されています（No.3305）。3,000万円を控除した後の金額のうち6,000万円以下の部分に所得税10%・住民税4%がかかるという説明も正しいです。復興特別所得税に触れていないのは、問題の論点から外れるので不備とはしませんでした。\n- **基準日:** 2025年4月1日時点で、これらの要件に影響する改正はありません。答えは1つに決まります。\n- **参照URL:** 2つとも実在する国税庁の公式ページで、解説の論点に合っています。\n\nSources:\n- [No.3302 マイホームを売ったときの特例｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm)\n- [No.3305 マイホームを売ったときの軽減税率の特例｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm)",
+  "ttft_ms": 9424,
+  "type": "result",
+  "duration_ms": 35745,
+  "uuid": "dee5cc77-0df0-4ca1-b4bb-5eddb0651e4d",
+  "ttft_stream_ms": 1771,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1771,
+  "time_to_request_from_spawn_ms": 995483,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330380479.482,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -2,7 +2,6 @@
   "question": 58,
   "status": "HOLD",
   "holdReasons": [
-    "blind solve missing",
     "draft missing",
     "review missing",
     "choice explanations incomplete",
@@ -48,8 +47,8 @@
     "reviewerLawDateClear": null
   },
   "judgment": {
-    "blindSolveAnswer": null,
-    "blindSolveAgrees": false,
+    "blindSolveAnswer": "エ",
+    "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
     "draftConcerns": [],
@@ -58,5 +57,31 @@
   "referenceUrlChecks": [],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
-  "modelCalls": []
+  "modelCalls": [
+    {
+      "file": "model-calls/q58-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 395,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1583,
+          "webSearchRequests": 0,
+          "costUSD": 0.0208278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0208278,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
 }

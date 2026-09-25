@@ -1,10 +1,8 @@
 {
   "question": 50,
-  "status": "HOLD",
-  "holdReasons": [
-    "review missing"
-  ],
-  "released": false,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
@@ -41,12 +39,14 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "イ",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
+    "reviewVerdicts": [
+      "PASS"
+    ],
     "finalReviewIssues": [],
     "draftConcerns": [
       "参照先の不動産鑑定評価基準（mlit.go.jpのPDF）は平成26年改正版です。DCF法の定義（純収益と復帰価格を現在価値に割り引く）はこの版の内容に基づいていますが、2025-04-01時点の最新版の本文そのものはWebSearchで確認できていません。国土交通省のページでは、最新版の本文は日本不動産鑑定士協会連合会のサイトに案内されています。",
@@ -73,7 +73,11 @@
     }
   ],
   "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html",
+    "https://www.mlit.go.jp/common/001204083.pdf",
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000031.html"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q50-1-solve.json",
@@ -121,6 +125,31 @@
         }
       },
       "total_cost_usd": 0.1751164,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q50-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 24708,
+          "outputTokens": 3911,
+          "cacheReadInputTokens": 13516,
+          "cacheCreationInputTokens": 6837,
+          "webSearchRequests": 2,
+          "costUSD": 0.2544512,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 542,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2544512,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問50\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n不動産の投資判断の手法等に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ＤＣＦ法は、連続する複数の期間に発生する総収入および復帰価格を、その発生時期に応じて現在価値に割り引き、それぞれを合計して対象不動産の収益価格を求める手法である。\nイ. ＮＰＶ法（正味現在価値法）による投資判断においては、対象不動産から得られる収益の現在価値の合計額が投資額の現在価値の合計額を上回っている場合、その投資は投資適格であると判定することができる。\nウ. 借入金併用型投資では、対象不動産の収益率が借入金の金利を下回っている場合、レバレッジ効果により、投下した自己資金に対する収益率の向上を期待することができる。\nエ. ＮＯＩ利回り（純利回り）は、対象不動産から得られる年間の総収入を総投資額で除して算出される利回りであり、不動産の収益性を測る指標である。\n\n【解説案】\n{\n \"explanation\": \"NPV法（正味現在価値法）では、対象不動産から得られる収益の現在価値の合計額から投資額の現在価値の合計額を差し引いた額（正味現在価値）がプラスであれば、その投資は投資適格と判断します。DCF法で割り引くのは総収入ではなく「純収益」と復帰価格です。レバレッジ効果が得られるのは、収益率が借入金利を上回る場合です。NOI利回りは総収入ではなく「純収益（NOI）」を総投資額で割って求めます。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。DCF法は、連続する複数の期間に発生する「純収益」と復帰価格を、それぞれの発生時期に応じて現在価値に割り引き、合計して収益価格を求める手法です。割り引く対象は総収入ではありません。\",\n  \"イ\": \"適切な記述で、本問の正解です。NPV法では、収益の現在価値の合計額が投資額の現在価値の合計額を上回っていれば（正味現在価値がプラスなら）、投資適格と判定できます。\",\n  \"ウ\": \"誤りです。借入金を併用した投資で、自己資金に対する収益率がレバレッジ効果によって上がると期待できるのは、対象不動産の収益率が借入金の金利を「上回っている」場合です。収益率が金利を下回ると、逆に自己資金に対する収益率は下がります（逆レバレッジ）。\",\n  \"エ\": \"誤りです。NOI利回り（純利回り）は、年間の総収入から諸経費を差し引いた「純収益（NOI）」を総投資額で割って求める利回りです。年間の総収入を総投資額で割ったものは単純利回り（表面利回り）です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html\",\n  \"https://www.mlit.go.jp/common/001204083.pdf\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 48552,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2544512,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 6837,
+    "cache_read_input_tokens": 13516,
+    "output_tokens": 1507,
+    "output_tokens_details": {
+      "thinking_tokens": 328
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6837,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 24708,
+      "outputTokens": 3911,
+      "cacheReadInputTokens": 13516,
+      "cacheCreationInputTokens": 6837,
+      "webSearchRequests": 2,
+      "costUSD": 0.2544512,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 542,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n判定はPASSです。そのまま公開できます。\n\n- **ア（誤り）：** 解説どおりです。DCF法で現在価値に割り引くのは「純収益」と復帰価格で、総収入ではありません。これは不動産鑑定評価基準の収益還元法の定義と一致しています。\n- **イ（正答）：** 公式正答「イ」と一致します。問われ方は「最も適切」で、正答肢を「適切」、残り3肢を「誤り」と表示しているのも正しいです。NPVがプラスなら投資適格、という判定基準も正確です。\n- **ウ（誤り）：** 解説どおりです。自己資金に対する収益率が上がるのは、収益率が借入金利を「上回る」場合です。下回ると逆レバレッジになる、という説明も正確です。\n- **エ（誤り）：** 解説どおりです。NOI利回りは純収益を総投資額で割ったもので、総収入を割ったものは表面利回り（単純利回り）です。\n- **基準日：** 投資判断手法の一般論なので、2025-04-01時点の法令改正の影響はありません。答えは一意に定まります。\n- **参照URL：** どちらも実在する国土交通省の公式ページです。\n  - `tk4_000024` は「法令・不動産鑑定評価基準等」のページです。\n  - `001204083.pdf` は不動産鑑定評価基準（平成26年5月1日一部改正までを反映した版）です。\n  - PDFは最新版ではない可能性がありますが、DCF法の定義は変わっていないので、差し替えは不要と判断しました。\n\nSources:\n- [国土交通省 法令・不動産鑑定評価基準等](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html)\n- [不動産鑑定評価基準（平成26年5月1日一部改正）](https://www.mlit.go.jp/common/001204083.pdf)\n- [不動産鑑定評価基準等：過去に制定・改正したもの](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000031.html)",
+  "ttft_ms": 4559,
+  "type": "result",
+  "duration_ms": 48718,
+  "uuid": "fb1bf49f-ae1d-4436-ba83-44c88ecaf9f8",
+  "ttft_stream_ms": 2000,
+  "time_to_request_ms": 121,
+  "first_content_frame_ms": 2000,
+  "time_to_request_from_spawn_ms": 1000051,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330384994.0608,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

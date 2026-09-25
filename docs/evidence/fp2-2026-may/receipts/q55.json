@@ -2,11 +2,7 @@
   "question": 55,
   "status": "HOLD",
   "holdReasons": [
-    "blind solve missing",
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -50,15 +46,94 @@
     "reviewerLawDateClear": null
   },
   "judgment": {
-    "blindSolveAnswer": null,
-    "blindSolveAgrees": false,
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "問題文が途中で切れているため、問いの内容を「相続税の計算における遺産に係る基礎控除額として、最も適切なもの」と推定して解説しました。選択肢が600万円刻みで並んでいること、法定相続人3人で計算すると正答の4,800万円になることから、この推定は妥当と考えます。",
+      "養子Ｄさんが特別養子や配偶者の連れ子など「実子とみなされる養子」かどうかは不明です。ただ、今回は養子が1人だけなので、どちらでも人数（3人）と金額は変わりません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.4152 相続税の計算｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4170.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.4170 相続人の中に養子がいるとき｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "第15条《遺産に係る基礎控除》関係｜国税庁"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
-  "modelCalls": []
+  "modelCalls": [
+    {
+      "file": "model-calls/q55-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 667,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1413,
+          "webSearchRequests": 0,
+          "costUSD": 0.0249078,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 131,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0249078,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q55-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 17515,
+          "outputTokens": 3634,
+          "cacheReadInputTokens": 5810,
+          "cacheCreationInputTokens": 4783,
+          "webSearchRequests": 1,
+          "costUSD": 0.19216599999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 331,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.19216599999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
 }

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問58\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n相続により取得した宅地の相続税評価に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 貸家建付地の価額は、「自用地価額×（１－借地権割合×借家権割合×賃貸割合）」の算式により計算した金額によって評価する。\nイ. 被相続人が、所有する宅地の上に店舗用建物を建築し、当該建物を賃貸借契約により第三者に賃貸していた場合、その宅地は貸家建付地として評価する。\nウ. 被相続人が、所有する宅地に建物の所有を目的とする賃借権を設定し、借地人がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\nエ. 被相続人が、所有する宅地を使用貸借により子に貸し付け、その子がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5762,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0208278,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1583,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 395,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1583,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 395,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1583,
+      "webSearchRequests": 0,
+      "costUSD": 0.0208278,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"貸家建付地の評価額は「自用地価額×（1－借地権割合×借家権割合×賃貸割合）」で計算する。記述の算式は正しい。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"自己所有の宅地に建物を建て、それを第三者に賃貸していれば、その宅地は貸家建付地として評価する。建物の用途が店舗でも居住用でも扱いは変わらない。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"建物所有目的で賃借権（借地権）を設定し、借地人が建物を建てている宅地は、貸宅地（底地）として評価する。算式は「自用地価額×（1－借地権割合）」。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"使用貸借では借地権が発生しない。そのため使用貸借で子に貸している宅地は、貸宅地ではなく自用地として評価する。よって記述は不適切。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5790,
+  "type": "result",
+  "duration_ms": 5882,
+  "uuid": "e05cfe92-5fd3-416f-9470-993ac5bce0d6",
+  "ttft_stream_ms": 1790,
+  "time_to_request_ms": 114,
+  "first_content_frame_ms": 1791,
+  "time_to_request_from_spawn_ms": 1046204,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330431173.564,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

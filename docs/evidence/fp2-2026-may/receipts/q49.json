@@ -1,10 +1,8 @@
 {
   "question": 49,
-  "status": "HOLD",
-  "holdReasons": [
-    "review missing"
-  ],
-  "released": false,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
@@ -41,12 +39,14 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "ア",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
+    "reviewVerdicts": [
+      "PASS"
+    ],
     "finalReviewIssues": [],
     "draftConcerns": [],
     "draftLawDateNote(unpublished)": ""
@@ -70,7 +70,10 @@
     }
   ],
   "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "finalReviewWebSources": [
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm",
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q49-1-solve.json",
@@ -118,6 +121,31 @@
         }
       },
       "total_cost_usd": 0.292253,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q49-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 17157,
+          "outputTokens": 3149,
+          "cacheReadInputTokens": 6699,
+          "cacheCreationInputTokens": 5606,
+          "webSearchRequests": 1,
+          "costUSD": 0.18779579999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 445,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.18779579999999998,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

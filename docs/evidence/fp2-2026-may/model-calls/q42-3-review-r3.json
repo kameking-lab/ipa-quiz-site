@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問42\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n宅地建物取引業法に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 専任媒介契約を締結した宅地建物取引業者は、一定の期間内に当該契約の目的物である宅地または建物に関する一定の事項を指定流通機構に登録しなければならない。\nイ. 専任媒介契約の有効期間は、３カ月を超えることができず、これより長い期間を定めた場合、当該契約は無効となる。\nウ. 専任媒介契約の有効期間は、依頼者の申出により更新することができるが、当初の契約締結時にあらかじめ自動更新する旨の特約を定めた場合、その特約も有効である。\nエ. 専任媒介契約を締結した宅地建物取引業者は、依頼者に対し、当該契約に係る業務の処理状況を、１カ月に１回以上報告しなければならない。\n\n【解説案】\n{\n \"explanation\": \"宅地建物取引業法第34条の2では、専任媒介契約を結んだ宅地建物取引業者は、物件の所在・規模・形質・売買すべき価額などを、国土交通省令で定める期間内に指定流通機構（レインズ）へ登録しなければなりません。期間は、専任媒介が契約締結日の翌日から7日以内、専属専任媒介が5日以内で、いずれも業者の休業日を含みません。あわせて押さえる論点は次の4つです。①有効期間は3カ月が上限で、長く定めた場合は3カ月に短縮される。②更新は依頼者の申出がある場合に限られ、自動更新の特約は無効。③業務処理状況の報告は、専任媒介が2週間に1回以上、専属専任媒介が1週間に1回以上。④宅建業法のルールより依頼者に不利な特約は無効。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。専任媒介契約を結んだ宅地建物取引業者は、契約締結日の翌日から7日以内（休業日を含まない）に、物件に関する一定の事項を指定流通機構に登録しなければなりません。専属専任媒介契約の場合は5日以内です。\",\n  \"イ\": \"不適切です。専任媒介契約の有効期間の上限は3カ月です。ただし、3カ月より長い期間を定めても契約全体が無効になるわけではなく、有効期間が3カ月に短縮されます。\",\n  \"ウ\": \"不適切です。専任媒介契約の有効期間は依頼者の申出があれば更新できます（更新後も3カ月が上限）。一方、あらかじめ自動更新すると定めた特約は、依頼者の申出という要件に反するため無効です。\",\n  \"エ\": \"不適切です。専任媒介契約を結んだ宅地建物取引業者は、業務処理状況を2週間に1回以上、依頼者に報告しなければなりません。1週間に1回以上の報告が求められるのは専属専任媒介契約です。1カ月に1回以上では足りません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/327AC1000000176\",\n  \"https://www.mlit.go.jp/common/001213683.pdf\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 29416,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1394684,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4851,
+    "cache_read_input_tokens": 6702,
+    "output_tokens": 1563,
+    "output_tokens_details": {
+      "thinking_tokens": 572
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4851,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 11175,
+      "outputTokens": 2231,
+      "cacheReadInputTokens": 6702,
+      "cacheCreationInputTokens": 4851,
+      "webSearchRequests": 1,
+      "costUSD": 0.1394684,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 650,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**判定：PASS（そのまま公開できます）**\n\n解説の事実は、2025-04-01時点の法令と一致しています。ただし、今回WebSearchで確認したのは参照URLの実在だけです。法令の内容は、条文を開いて確かめたものではなく、既存の知識で照合しました。\n\n- **ア（正答）：** 専任媒介契約を結んだ業者は、指定流通機構に物件を登録しなければなりません（宅建業法34条の2第5項）。期限は専任媒介が7日以内、専属専任媒介が5日以内で、休業日は数えません（施行規則15条の10）。問題文は「最も適切なもの」を問うので、アを正解とする表示で合っています。\n- **イ：** 3カ月を超える有効期間を定めても、契約は無効になりません。有効期間が3カ月に短くなります（同条第3項）。\n- **ウ：** 更新できるのは依頼者の申出がある場合だけです（同条第4項）。自動更新の特約は、同条の規定に反する特約として無効です（同条第10項）。\n- **エ：** 業務処理状況の報告は、専任媒介が2週間に1回以上、専属専任媒介が1週間に1回以上です（同条第9項）。\n- **解説の④「依頼者に不利な特約は無効」：** 条文の書き方は「規定に反する特約は、無効とする」で、「不利な」という言葉はありません。ただ、記述自体は誤りではないので、修正までは求めません。\n- **参照URL：** e-Govのページは宅地建物取引業法の本文です（昭和27年法律第176号）。国交省のPDFは、WebSearchで実在を確認しました。題名は「宅地建物取引業法施行規則の規定による標準媒介契約約款」で、最終改正は令和4年です。どちらも政府の公式ページで、解説の論点に対応しています。\n\nSources:\n- [宅地建物取引業法施行規則の規定による標準媒介契約約款（国土交通省）](https://www.mlit.go.jp/common/001213683.pdf)",
+  "ttft_ms": 8835,
+  "type": "result",
+  "duration_ms": 29531,
+  "uuid": "6f172c22-387c-4c5b-8ac5-8b16b2be6e13",
+  "ttft_stream_ms": 1812,
+  "time_to_request_ms": 105,
+  "first_content_frame_ms": 1813,
+  "time_to_request_from_spawn_ms": 1034991,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330419972.5999,
+  "queued_turn_count": 0,
+  "result_index": 0
+}
