@@ -1,4 +1,4 @@
-"""Build the 2025 takken set only after all fifty official items pass review."""
+"""Build the 2024 takken set only after all fifty official items pass review."""
 
 from __future__ import annotations
 
@@ -7,8 +7,8 @@ import json
 import re
 from pathlib import Path
 
-SOURCE_SHA = "829cde5778e22d1a8f0050ce2ff8b4b8089749bcab5456fbde6d1d843a3ed8ed"
-SOURCE_URL = "https://www.retio.or.jp/wp-content/uploads/2025/12/R7_question_answer.pdf"
+SOURCE_SHA = "82a95815f991567ebc4982b05a15a71f6ec942bd6794c3bafe3bcf9c2e985bae"
+SOURCE_URL = "https://www.retio.or.jp/wp-content/uploads/2025/03/R6_question_answer.pdf"
 ANSWER_KEYS = "アイウエ"
 REVIEW_BATCHES = ("01-10", "11-20", "21-30", "31-40", "41-50")
 
@@ -40,13 +40,16 @@ LAW_URLS = (
 
 def receipt_items(path: Path) -> list[dict]:
     receipt = json.loads(path.read_text(encoding="utf-8-sig"))
-    if receipt.get("is_error") or "claude-opus-5-5" not in receipt.get("modelUsage", {}):
+    usage = receipt.get("modelUsage", {}).get("claude-opus-5-5", {})
+    if (receipt.get("is_error") or receipt.get("resolvedModel") != "claude-opus-5-5"
+            or usage.get("provider") != "firstParty" or usage.get("canonicalModel") != "claude-opus-5-5"):
         raise ValueError(f"first-party claude-opus-5-5 receipt missing: {path}")
     value = receipt["result"].strip().removeprefix("```json").removesuffix("```").strip()
     return json.loads(value)["items"]
 
 
 def clean(text: str, *, preserve_statements: bool = False) -> str:
+    text = text.replace("梁\nはり\n", "梁")
     result = ""
     for line in text.splitlines():
         line = line.strip()
@@ -89,15 +92,14 @@ def main() -> None:
             candidates[item["qNumber"]] = item
         for item in receipt_items(report / f"opus-audit-receipt-{batch}.json"):
             audits[item["qNumber"]] = item
-    revisions = {item["qNumber"]: item for item in json.loads(
-        (report / "revisions-12-19-26-48.json").read_text(encoding="utf-8")
-    )["items"]}
+    revisions = {item["qNumber"]: item for item in receipt_items(
+        report / "opus-revision-receipt-03-34-40-41.json"
+    )}
     reaudited = {item["qNumber"]: item for item in receipt_items(
-        report / "opus-revision-audit-receipt.json"
+        report / "opus-revision-audit-receipt-03-34-40-41.json"
     )}
-    final = {item["qNumber"]: item for item in receipt_items(
-        report / "opus-final-audit-receipt.json"
-    )}
+    if set(revisions) != {3, 34, 40, 41} or set(reaudited) != set(revisions):
+        raise ValueError("all four HOLD revisions require independent review")
     if set(candidates) != set(range(1, 51)) or set(audits) != set(range(1, 51)):
         raise ValueError("not all 50 items have generation and independent review")
 
@@ -105,7 +107,7 @@ def main() -> None:
     for raw in official:
         number = raw["qNumber"]
         candidate = revisions.get(number, candidates[number])
-        audit = final.get(number, reaudited.get(number, audits[number]))
+        audit = reaudited.get(number, audits[number])
         if candidate["verdict"] != "PASS" or audit["verdict"] != "PASS":
             raise ValueError(f"Q{number} is on HOLD")
         reasons = candidate["choiceExplanations"]
@@ -120,35 +122,20 @@ def main() -> None:
         for name, url in LAW_URLS:
             if any(name in value for value in candidate["legalBasis"]) and url not in references:
                 references.append(url)
-        if number == 25:
-            references.append("https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html")
-        if number == 49:
-            references.extend([
-                "https://www.mlit.go.jp/notice/noticedata/sgml/098/81000075/81000075.html",
-                "https://www.mlit.go.jp/toshi/toshi_tobou_tk_000038.html",
-            ])
-        if number == 50:
-            references.extend([
-                "https://www.mlit.go.jp/tagengo-db/common/001781276.pdf",
-                "https://www.mlit.go.jp/pubcom/03/kekka/pubcomk23_.html",
-            ])
         if SOURCE_URL not in references:
             references.insert(0, SOURCE_URL)
         references = [
-            url.split("?", 1)[0] + "?occasion_date=20250401"
+            url.split("?", 1)[0] + "?occasion_date=20240401"
             if url.startswith("https://laws.e-gov.go.jp/law/") else url
             for url in references
         ]
         references = list(dict.fromkeys(references))
         explanation = candidate["explanation"].strip()
-        if number == 17:
-            # The validator treats the legal term "建築確認が必要" as an uncertainty phrase.
-            explanation = explanation.replace("建築確認が必要になった", "建築確認を受ける義務が生じた")
         q = {
-            "id": f"takken-2025-october-gakka-q{number}",
+            "id": f"takken-2024-october-gakka-q{number}",
             "exam": "takken",
             "session": "gakka",
-            "year": 2025,
+            "year": 2024,
             "season": "october",
             "qNumber": number,
             "officialAnswerNumber": str(answer_number),
@@ -165,12 +152,12 @@ def main() -> None:
             "hasImage": False,
             "sourcePdfUrl": SOURCE_URL,
             "sourceAnswerUrl": SOURCE_URL,
-            "sourceAttribution": "出典：一般財団法人不動産適正取引推進機構 令和7年度宅地建物取引士資格試験 問題・正解番号表。原文の行折りと選択肢番号をWeb表示向けに整えています。",
+            "sourceAttribution": "出典：一般財団法人不動産適正取引推進機構 令和6年度宅地建物取引士資格試験 問題・正解番号表。原文の行折りと選択肢番号をWeb表示向けに整えています。",
             "officialReferenceUrls": references,
             "license": "RETIO-reuse",
             "needsReview": False,
-            "lastUpdated": "2026-09-25",
-            "lawReferenceDate": "2025-04-01",
+            "lastUpdated": "2026-09-26",
+            "lawReferenceDate": "2024-04-01",
         }
         if not q["question"] or any(not choice for choice in q["choices"].values()):
             raise ValueError(f"Q{number} has empty source content")
@@ -178,9 +165,9 @@ def main() -> None:
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(
         'import type { Question } from "@/lib/questions/types";\n\n'
-        f"// Source: RETIO 2025 question/answer PDF, SHA256 {SOURCE_SHA}.\n"
-        "// Generated by scripts/takken-2025-build-data.py after first-party Opus review.\n"
-        "export const TAKKEN_2025_QUESTIONS: Question[] = "
+        f"// Source: RETIO 2024 question/answer PDF, SHA256 {SOURCE_SHA}.\n"
+        "// Generated by scripts/takken-2024-build-data.py after first-party Opus review.\n"
+        "export const TAKKEN_2024_QUESTIONS: Question[] = "
         + json.dumps(questions, ensure_ascii=False, indent=2)
         + ";\n",
         encoding="utf-8",
