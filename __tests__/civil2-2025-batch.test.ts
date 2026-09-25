@@ -31,8 +31,8 @@ const receipt = JSON.parse(readFileSync(path.join(evidenceDir, "q06-10-release-r
 describe("2025年10月2級土木施工管理・照合済みNo.6〜10", () => {
   it("publishes a distinct five-question edition with exact official keys", () => {
     expect(CIVIL2_2026_QUESTIONS).toHaveLength(66);
-    expect(CIVIL2_2025_QUESTIONS).toHaveLength(27);
-    expect(CIVIL2_QUESTIONS).toHaveLength(93);
+    expect(CIVIL2_2025_QUESTIONS).toHaveLength(31);
+    expect(CIVIL2_QUESTIONS).toHaveLength(97);
     expect(EXAM_CONFIGS.civil2.yearRange).toEqual({ start: 2025, end: 2026 });
     expect(EXAM_CONFIGS.civil2.seasons).toContain("october");
     expect(candidate.questions.map((question) => question.number)).toEqual([6, 7, 8, 9, 10]);
@@ -71,6 +71,68 @@ describe("2025年10月2級土木施工管理・照合済みNo.6〜10", () => {
     expect(result.overallVerdict).toBe("PASS");
     expect(result.reviews.map((review) => review.number)).toEqual([6, 7, 8, 9, 10]);
     expect(result.reviews.every((review) => review.verdict === "PASS" && review.issues.length === 0)).toBe(true);
+  });
+});
+
+describe("2025年10月2級土木施工管理・照合済みNo.33〜36", () => {
+  const batches = ([
+    { label: "33-35", numbers: [33, 34, 35], answers: [4, 1, 3], pages: [13, 13, 13], offset: 27, figures: 0 },
+    { label: "36", numbers: [36], answers: [4], pages: [14], offset: 30, figures: 1 },
+  ] as const).map((config) => ({
+    ...config,
+    data: JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/civil2/2025-october-batch-${config.label}.json`), "utf8")) as {
+      questionSha256: string;
+      answerSha256: string;
+      questionUrl: string;
+      answerUrl: string;
+      questions: { number: number; pdfPage: number; officialAnswerNumber: number; choices: string[]; choiceExplanations: string[]; imageUrl?: string }[];
+    },
+    review: JSON.parse(readFileSync(path.join(evidenceDir, `q${config.label}-opus-review-final-raw.json`), "utf8")) as typeof finalReview,
+    receipt: JSON.parse(readFileSync(path.join(evidenceDir, `q${config.label}-release-receipt.json`), "utf8")) as typeof receipt & {
+      figure?: { publicPath: string; sha256: string; clipRectPdfPoints: number[] };
+    },
+  }));
+
+  for (const batch of batches) {
+    it(`maps No.${batch.label} to the official source and Opus 5.5 receipt`, () => {
+      expect(batch.data.questions.map((item) => item.number)).toEqual(batch.numbers);
+      expect(batch.data.questions.map((item) => item.officialAnswerNumber)).toEqual(batch.answers);
+      expect(batch.data.questions.map((item) => item.pdfPage)).toEqual(batch.pages);
+      expect(batch.data.questions.map((item) => item.number)).toEqual(batch.receipt.questionNumbers);
+      expect(batch.data.questions.map((item) => item.officialAnswerNumber)).toEqual(batch.receipt.officialAnswerNumbers);
+      expect(batch.receipt.figuresRequired).toBe(batch.figures);
+      expect(batch.data.questionUrl).toBe(sourceMap.questionUrl);
+      expect(batch.data.answerUrl).toBe(sourceMap.answerUrl);
+      expect(batch.data.questionSha256).toBe("594b2771831021cf84a0d06039d66889f7870cf9b57abf39314b5c264253e28b");
+      expect(batch.data.answerSha256).toBe("62008080111808123eeddacb15747be7da35e2392983cbd63ae8a9bbdf69ce5e");
+      expect(createHash("sha256").update(JSON.stringify(batch.data.questions)).digest("hex")).toBe(batch.receipt.canonicalQuestionsSha256);
+      for (const [index, record] of batch.data.questions.entries()) {
+        const question = CIVIL2_2025_QUESTIONS[batch.offset + index]!;
+        expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
+        expect(question.qNumber).toBe(record.number);
+        expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
+        expect(Object.values(question.choices ?? {})).toEqual(record.choices);
+        expect(Object.values(question.choiceExplanations ?? {})).toEqual(record.choiceExplanations);
+        expect(record.choiceExplanations.every((reason) => reason.trim().length > 15)).toBe(true);
+        expect(question.hasImage).toBe(Boolean(record.imageUrl));
+        const [, , exam, yearSeason, section, qnum] = questionPagePath(question).split("/");
+        expect(findQuestionByRoute(CIVIL2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(question.id);
+      }
+      expect(Object.keys(batch.review.modelUsage)).toEqual(["claude-opus-5-5"]);
+      expect(batch.review.modelUsage["claude-opus-5-5"]).toMatchObject({ canonicalModel: "claude-opus-5-5", provider: "firstParty" });
+      const result = JSON.parse(batch.review.result) as { overallVerdict: string; reviews: { number: number; verdict: string; issues: string[] }[] };
+      expect(result.overallVerdict).toBe("PASS");
+      expect(result.reviews.map((item) => item.number)).toEqual(batch.numbers);
+      expect(result.reviews.every((item) => item.verdict === "PASS" && item.issues.length === 0)).toBe(true);
+    });
+  }
+
+  it("keeps the official No.36 diagram available and byte-pinned", () => {
+    const figure = batches[1]!.receipt.figure!;
+    expect(figure.publicPath).toBe("/questions/civil2/2025-october/q36-official-figure.png");
+    expect(figure.clipRectPdfPoints).toEqual([60, 210, 550, 310]);
+    expect(createHash("sha256").update(readFileSync(path.join(process.cwd(), "public", figure.publicPath.slice(1)))).digest("hex")).toBe(figure.sha256);
+    expect(CIVIL2_2025_QUESTIONS[30]?.imageUrls).toEqual([figure.publicPath]);
   });
 });
 
