@@ -1,5 +1,7 @@
 import { test, expect, type Page } from "@playwright/test";
 
+import { FP2_2026_MAY_QUESTIONS } from "../../data/questions/fp2";
+
 interface QualificationCase {
   exam: "fp2" | "fp3";
   yearSeason: "2025-published" | "2026-published";
@@ -11,7 +13,7 @@ interface QualificationCase {
 }
 
 const cases: QualificationCase[] = [
-  { exam: "fp2", yearSeason: "2026-published", questionCount: 10, questionPath: "/q/fp2/2026-published/gakka/q1", correctIndex: 2, choiceCount: 4, answerUrl: "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf" },
+  { exam: "fp2", yearSeason: "2026-published", questionCount: FP2_2026_MAY_QUESTIONS.length, questionPath: "/q/fp2/2026-published/gakka/q1", correctIndex: 2, choiceCount: 4, answerUrl: "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf" },
   {
     questionCount: 60,
     exam: "fp3",

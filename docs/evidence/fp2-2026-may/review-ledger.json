@@ -1,0 +1,54 @@
+{
+  "reviewer": "Claude Code session (claude-opus-5-5) — per-question manual check of the official PDF text, official answer, Opus blind solve and Opus explanation draft",
+  "policy": "accepted = official stem/choices/answer re-read against extraction.json, Opus blind answer matches official answer, explanation checked for law as of 2025-04-01. Anything unresolved is hold.",
+  "questions": {
+    "11": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致。Opusのneeds-review指摘は肢エの基準日後の規制移行（ESR）に関する補足の要否のみで、正答に影響しない。解説末尾を基準日時点と明示する中立表現に修正。",
+      "overrides": {
+        "explanation": "保険法と保険業法の基本を問う問題。保険法は名称を問わず、保険契約と同等の内容をもつ共済契約にも適用される。保険金の支払時期などの規定は片面的強行規定で、受取人に不利な約款の定めは無効となる。保険期間1年以内の契約はクーリング・オフの対象外である。早期是正措置の発動基準は、基準日（2025年4月1日）時点ではソルベンシー・マージン比率200％未満である。なお、その後は経済価値ベースのソルベンシー規制（ESR）への移行が進められている。"
+      }
+    },
+    "12": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "13": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "14": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致。図表（表）は原典画像と文字起こしを照合。肢アの解説が誤った計算（併用時の額）を挙げていたため修正。",
+      "overrides": {
+        "choiceExplanations": {
+          "ア": "不適切。一般の生命保険料（旧）10万円の控除額は10万円×1/4＋2.5万円＝5万円、個人年金保険料は旧制度のみ適用で5万円となり、合計10万円である。8万円にはならない。"
+        }
+      }
+    },
+    "15": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "16": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "17": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "18": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "19": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    },
+    "20": {
+      "status": "accepted",
+      "reason": "公式正答と独立解答一致・解説確認済み"
+    }
+  }
+}

@@ -48,6 +48,7 @@ def fetch(name: str) -> bytes:
 def join_lines(lines: list[str]) -> str:
     """Join PDF-wrapped lines; keep official paragraph and bullet breaks."""
     out: list[str] = []
+    previous = ""
     for raw in lines:
         line = raw.rstrip()
         if not line.strip():
@@ -55,6 +56,12 @@ def join_lines(lines: list[str]) -> str:
                 out.append("\n")
             continue
         starts_paragraph = line.startswith((" ", "　", "・"))
+        # A short bullet/caption line (e.g. "・為替レート（米ドル／円）") is followed by its own sub-lines.
+        after_short_item = previous.startswith(("・", "〈")) and len(previous) < 30
+        # Parallel "預入時…／満期時…" rows under such an item stay one per line.
+        after_short_item = after_short_item or ("…" in previous and "…" in line and len(previous) < 30)
+        previous = line.strip()
+        starts_paragraph = starts_paragraph or after_short_item
         if out and out[-1] != "\n" and starts_paragraph:
             out.append("\n")
         out.append(line.strip())
