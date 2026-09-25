@@ -40,7 +40,7 @@ export default function HomePage() {
       <Link href="/qualifications" className="flex items-center gap-4 rounded-2xl border border-amber-300 bg-amber-50 px-5 py-4 shadow-sm transition hover:border-amber-500 hover:shadow-md focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary dark:border-amber-700 dark:bg-amber-950/40">
         <Landmark className="h-8 w-8 shrink-0 text-amber-700 dark:text-amber-300" aria-hidden="true" />
         <span className="min-w-0 flex-1">
-          <span className="block font-bold">FP・電気・2級土木施工管理</span>
+          <span className="block font-bold">FP・電気・宅建・施工管理</span>
           <span className="block text-sm text-muted-foreground">公式公開問題と正答・学習用解説を確認</span>
         </span>
         <span className="inline-flex shrink-0 items-center gap-1 text-sm font-semibold text-amber-700 dark:text-amber-300">一覧へ<ArrowRight className="h-4 w-4" aria-hidden="true" /></span>
