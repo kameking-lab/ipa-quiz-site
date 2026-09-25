@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問59\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n「小規模宅地等についての相続税の課税価格の計算の特例」（以下、「本特例」という）に関する下記の表の空欄（ア）～（ウ）にあてはまる語句の組合せとして、最も適切なものはどれか。なお、宅地等の適用面積の調整は考慮しないものとする。\n〈表〉宅地等の区分／本特例の対象となる限度面積／減額割合\n・特定事業用宅地等：（ ア ）／80％\n・特定居住用宅地等：330㎡／（ イ ）\n・特定同族会社事業用宅地等：（ ウ ）／80％\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. （ア）400㎡ （イ）80％ （ウ）400㎡\nイ. （ア）330㎡ （イ）80％ （ウ）200㎡\nウ. （ア）400㎡ （イ）50％ （ウ）200㎡\nエ. （ア）330㎡ （イ）50％ （ウ）400㎡\n\n【解説案】\n{\n \"explanation\": \"本特例（租税特別措置法69条の4）の限度面積と減額割合は、特定事業用宅地等が400㎡・80％、特定居住用宅地等が330㎡・80％、特定同族会社事業用宅地等が400㎡・80％、貸付事業用宅地等が200㎡・50％です。つまり（ア）400㎡、（イ）80％、（ウ）400㎡となります。特定事業用宅地等と特定同族会社事業用宅地等は、合わせて400㎡が上限です。貸付事業用宅地等を含まない場合、事業用の400㎡と居住用の330㎡は併用でき、最大730㎡まで適用できます。「200㎡・50％」は貸付事業用宅地等の数値なので、ほかの区分と混同しないことが大切です。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。特定事業用宅地等は400㎡、特定居住用宅地等の減額割合は80％、特定同族会社事業用宅地等は400㎡です。\",\n  \"イ\": \"誤りです。特定居住用宅地等の減額割合80％は正しいです。しかし、特定事業用宅地等の限度面積は330㎡ではなく400㎡、特定同族会社事業用宅地等の限度面積は200㎡ではなく400㎡です。\",\n  \"ウ\": \"誤りです。特定事業用宅地等の限度面積400㎡は正しいです。しかし、特定居住用宅地等の減額割合は50％ではなく80％、特定同族会社事業用宅地等の限度面積は200㎡ではなく400㎡です。200㎡・50％は貸付事業用宅地等の数値です。\",\n  \"エ\": \"誤りです。特定同族会社事業用宅地等の限度面積400㎡は正しいです。しかし、特定事業用宅地等の限度面積は330㎡ではなく400㎡、特定居住用宅地等の減額割合は50％ではなく80％です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 29352,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.18638039999999997,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5515,
+    "cache_read_input_tokens": 6682,
+    "output_tokens": 1112,
+    "output_tokens_details": {
+      "thinking_tokens": 232
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5515,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 19086,
+      "outputTokens": 2729,
+      "cacheReadInputTokens": 6682,
+      "cacheCreationInputTokens": 5515,
+      "webSearchRequests": 1,
+      "costUSD": 0.18638039999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 382,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n判定はPASSです。解説案の数値と要件はすべて、2025-04-01時点の租税特別措置法69条の4と一致しています。\n\n- **3区分の数値：** 特定事業用宅地等は400㎡・80％、特定居住用宅地等は330㎡・80％、特定同族会社事業用宅地等は400㎡・80％です。貸付事業用宅地等は200㎡・50％です。この組合せに当たるのは「ア」だけなので、公式正答と一致し、答えは1つに決まります。\n- **併用のルール：** 特定事業用と特定同族会社事業用は合わせて400㎡までです。特定居住用の330㎡はこれと別に使えるため、貸付事業用を含まなければ最大730㎡になります。国税庁の申告要否判定コーナーの判定式でも確認できました。\n- **基準日後の改正：** 本特例の限度面積と減額割合を変える改正はありません。\n- **参照URL：** 国税庁タックスアンサーNo.4124は、この論点を説明している政府の公式ページです。\n\nSources:\n- [No.4124 相続した事業の用や居住の用の宅地等の価額の特例（小規模宅地等の特例）｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm)\n- [相続税の申告要否判定コーナー－小規模宅地等の特例｜国税庁](https://www.keisan.nta.go.jp/oshirase/sozoku/yohihantei/yohihantei/shokibo.html)",
+  "ttft_ms": 5672,
+  "type": "result",
+  "duration_ms": 29466,
+  "uuid": "cdf9d418-f852-4f7f-ac19-823c1a306170",
+  "ttft_stream_ms": 1845,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1845,
+  "time_to_request_from_spawn_ms": 1086984,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330471912.407,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

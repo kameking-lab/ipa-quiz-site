@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問17\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n住宅用建物および家財を対象とする火災保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 火災保険では、隣家の火災の消火活動により住宅用建物に収容されている家財に水濡れによる損害が生じた場合、補償の対象となる。\nイ. 火災保険では、経年劣化による腐食で住宅用建物に損害が生じた場合、補償の対象となる。\nウ. 火災保険では、落雷により住宅用建物に収容されている家財に異常電圧による損害が生じた場合、補償の対象とならない。\nエ. 住宅用建物の保険金額が2,000万円（保険価額と同額）の火災保険において、1,000万円の保険金が支払われた場合、その後の保険金額が1,000万円に減額される。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5824,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0207038,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1555,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 400,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1555,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 400,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1555,
+      "webSearchRequests": 0,
+      "costUSD": 0.0207038,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"消防活動（消火活動）による水濡れ損害は、火災による損害として火災保険の補償対象となる。隣家の火災の消火活動による損害も同様に補償される。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"経年劣化・腐食・さび・自然の消耗などによる損害は、偶然な事故ではないため火災保険の補償対象外である。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"落雷による損害は火災保険の基本補償に含まれ、落雷に伴う異常電圧（過電流）による家財の損害も補償対象となる。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"一般的な住宅用火災保険では、1回の事故で支払われた損害保険金が保険金額の80%未満であれば、保険金額は減額されず、契約時の保険金額のまま継続する（自動復元）。1,000万円は2,000万円の50%なので、保険金額は減額されない。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 6090,
+  "type": "result",
+  "duration_ms": 6205,
+  "uuid": "e379aed6-125d-430d-b28c-cb5c9bf7265d",
+  "ttft_stream_ms": 2039,
+  "time_to_request_ms": 388,
+  "first_content_frame_ms": 2039,
+  "time_to_request_from_spawn_ms": 560019,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329943591.1404,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

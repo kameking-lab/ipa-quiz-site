@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問25\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n株式の信用取引の一般的な仕組みに関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 信用取引では、売買が成立した後に相場が変動し、その日の終値を基に計算される委託保証金率が、証券会社が定める最低委託保証金維持率を下回った場合、追加保証金を差し入れるなどの方法により、委託保証金の不足を解消しなければならない。\nイ. 信用取引では、現物株式を所有していない場合、その株式の買建てを行うことはできるが、売建てを行うことはできない。\nウ. 金融商品取引法等によれば、原則として、株式の信用取引を行う際の委託保証金の額は30万円以上で、かつ、当該信用取引に係る株式の約定価額に100分の30を乗じた金額以上でなければならないとされている。\nエ. 証券取引所の規則等に基づく制度信用取引で始めた取引を、途中で証券会社との契約に基づく一般信用取引に変更することはできない。\n\n【解説案】\n{\n \"explanation\": \"信用取引では、証券会社から資金を借りて株式を買う「買建て」だけでなく、株式を借りて売る「売建て（空売り）」もできます。現物株式を持っていなくても売建てはできるので、「売建てを行うことはできない」とする記述が不適切で、これが本問の正解です。委託保証金の最低額は法令上、約定価額の30％以上かつ最低30万円です。また、制度信用取引と一般信用取引は、建玉を持っている途中で互いに切り替えることはできません。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。相場が動いて、その日の終値で計算した委託保証金率が証券会社の定める最低委託保証金維持率を下回ると、追加保証金（追証）が発生します。投資家は追加保証金を差し入れる、または建玉を決済するなどの方法で、保証金の不足を解消しなければなりません。\",\n  \"イ\": \"不適切な記述で、本問の正解です。信用取引では、現物株式を持っていなくても、証券会社から株式を借りて売る「売建て（空売り）」ができます。株価の下落局面でも利益を狙えるのが、信用取引の特徴の一つです。\",\n  \"ウ\": \"適切な記述です。金融商品取引法第161条の2と、これに基づく内閣府令（金融商品取引法第百六十一条の二に規定する取引及びその保証金に関する内閣府令）により、信用取引の委託保証金は約定価額の100分の30以上とされています。この金額が30万円に満たない場合は30万円が必要となるため、原則として委託保証金は30万円以上で、かつ約定価額の30％以上でなければなりません。\",\n  \"エ\": \"適切な記述です。取引所の規則に基づく制度信用取引と、証券会社との契約に基づく一般信用取引は別の取引です。建玉を持っている途中で制度信用から一般信用へ（またはその逆へ）変更することはできません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/328M50000040075/20230110_503M60000002072\",\n  \"https://www.japaneselawtranslation.go.jp/ja/laws/view/4378/ja\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 59107,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.33990539999999997,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 8783,
+    "cache_read_input_tokens": 15427,
+    "output_tokens": 1882,
+    "output_tokens_details": {
+      "thinking_tokens": 748
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8783,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 34604,
+      "outputTokens": 4907,
+      "cacheReadInputTokens": 15427,
+      "cacheCreationInputTokens": 8783,
+      "webSearchRequests": 3,
+      "costUSD": 0.33990539999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 928,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n判定はPASSです。事実の誤りも、要件の不正確さも、URLの誤りもありませんでした。\n\n- **ア**：その日の終値で計算した委託保証金率が証券会社の最低維持率を下回ると、追加保証金が発生します。取引開始後の維持率は府令ではなく取引所の規則と各証券会社が定めるもので、解説の記述はこれに合っています。\n- **イ**（公式正答）：信用取引では、現物株式を持っていなくても株式を借りて売建てができます。したがって「売建てはできない」とする記述は不適切で、「最も不適切なもの」を問う設問として正答イと合っています。\n- **ウ**：保証金府令（昭和28年大蔵省令第75号）で確認しました。保証金は約定価額の百分の三十を乗じた額で、「その額が三十万円に満たないとき…は、三十万円」と定められており、解説と一致します。\n- **エ**：制度信用取引の建玉を、途中で一般信用取引へ変更することはできません。これは一般的な仕組みとして正しい内容です。\n- **基準日**：この府令の最終改正は令和3年内閣府令第72号で、e-GovのURLにある時点（20230110）の版と対応します。2025-04-01時点で、30％・30万円の要件に変更はありません。\n- **参照URL**：2つとも、この論点の根拠となる保証金府令の政府公式ページ（e-Gov法令検索と、法務省の日本法令外国語訳データベース）です。\n\nSources:\n- [日本法令外国語訳DB 保証金府令（日本語）](https://www.japaneselawtranslation.go.jp/ja/laws/view/4378/ja)\n- [e-Gov法令検索 保証金府令](https://laws.e-gov.go.jp/law/328M50000040075)\n- [金融庁 保証金府令改正案の公表](https://www.fsa.go.jp/news/r3/shouken/20211026/20211026-2.html)",
+  "ttft_ms": 8444,
+  "type": "result",
+  "duration_ms": 48847,
+  "uuid": "8cb33396-8256-49fb-8a82-da4dee21b421",
+  "ttft_stream_ms": 1790,
+  "time_to_request_ms": 99,
+  "first_content_frame_ms": 1791,
+  "time_to_request_from_spawn_ms": 755831,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330140828.7385,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

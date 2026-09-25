@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問24\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n個人向け国債に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 個人向け国債は、最低額面金額である５万円から１万円単位で購入することができる。\nイ. 個人向け国債には、「３年満期」「５年満期」「10年満期」の３種類があり、いずれも毎月発行されている。\nウ. 個人向け国債のうち、「５年満期」と「10年満期」は固定金利型であり、いずれも半年ごとに利払いがある。\nエ. 個人向け国債は、原則として第２期利子支払日（発行から１年経過）以降、中途換金することができ、その換金金額は、額面金額に経過利子相当額を加えた金額から換金手数料および中途換金調整額を差し引いた金額となる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 27164,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1438168,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4024,
+    "cache_read_input_tokens": 5924,
+    "output_tokens": 1242,
+    "output_tokens_details": {
+      "thinking_tokens": 226
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4024,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 13400,
+      "outputTokens": 2342,
+      "cacheReadInputTokens": 5924,
+      "cacheCreationInputTokens": 4024,
+      "webSearchRequests": 1,
+      "costUSD": 0.1438168,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 243,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"個人向け国債には「変動10年」「固定5年」「固定3年」の3種類があり、いずれも毎月（年12回）募集・発行されているため、「イ」が適切です。そのほかに押さえておきたい点は3つあります。最低購入額は1万円で、1万円単位で購入できます。金利は10年満期が変動金利型、3年・5年満期が固定金利型です。中途換金は原則として発行から1年経過後（第2期利子支払日以降）に可能で、換金金額は「額面金額＋経過利子相当額−中途換金調整額（直前2回分の各利子（税引前）相当額×0.79685）」となり、換金手数料はかかりません。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。個人向け国債の最低額面金額は1万円で、1万円単位で購入できます。5万円からではありません。\",\n  \"イ\": \"適切な記述で、本問の正解です。個人向け国債には「変動10年」「固定5年」「固定3年」の3種類があり、いずれも毎月発行（年12回募集）されています。\",\n  \"ウ\": \"誤りです。利払いが半年ごとである点は正しいものの、固定金利型は「3年満期」と「5年満期」です。「10年満期」は半年ごとに適用利率が見直される変動金利型です。\",\n  \"エ\": \"不適切です。原則として第2期利子支払日（発行から1年経過）以降に中途換金できる点は正しいです。ただし、換金金額は「額面金額＋経過利子相当額−中途換金調整額」で計算し、換金手数料は差し引かれません。\"\n },\n \"topicTags\": [\"個人向け国債\", \"中途換金\", \"変動金利型・固定金利型\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.mof.go.jp/jgbs/individual/kojinmuke/main/guide/\",\n  \"https://www.mof.go.jp/jgbs/individual/kojinmuke/main/qa/answer_qd.html\"\n ],\n \"concerns\": []\n}\n```\n\nSources:\n- [知る｜個人向け国債｜財務省](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/guide/)\n- [個人向け国債の中途換金についてのよくある質問 : 財務省](https://www.mof.go.jp/jgbs/individual/kojinmuke/main/qa/answer_qd.html)",
+  "ttft_ms": 5481,
+  "type": "result",
+  "duration_ms": 27303,
+  "uuid": "96cb4429-1f93-46ef-b014-620c92f74a53",
+  "ttft_stream_ms": 1755,
+  "time_to_request_ms": 124,
+  "first_content_frame_ms": 1756,
+  "time_to_request_from_spawn_ms": 666385,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330051332.978,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

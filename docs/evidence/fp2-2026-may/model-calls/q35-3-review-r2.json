@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問35\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における住宅借入金等特別控除（以下、「住宅ローン控除」という）に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 住宅ローン控除の適用を受けている者が、住宅ローンの一部繰上げ返済を行い、借入金の返済期間が最初に返済した月から10年未満となった場合であっても、残りの控除期間について住宅ローン控除の適用を受けることができる。\nイ. 住宅ローン控除の適用を受けていた者が、転勤に伴う転居等のやむを得ない事由により、住宅を居住の用に供しなくなった場合に、翌年以降に再び当該住宅を居住の用に供したときは、原則として、再入居した年以後の控除期間内について住宅ローン控除の適用を受けることができる。\nウ. 年末調整の対象となる給与所得者であっても、住宅ローン控除の適用を受ける最初の年分は、一定の書類を添付した確定申告書を納税地の所轄税務署長に提出しなければならない。\nエ. 住宅ローン控除の控除額が所得税額から控除しきれない場合、その残額が、一定額を限度として翌年度分の住民税額から控除される。\n\n【解説案】\n{\n \"explanation\": \"住宅ローン控除の対象になるのは、償還期間が10年以上の割賦償還の方法で返済する借入金です。繰上げ返済をした場合は返済後の償還期間で判定し、当初の契約で最初に返済した月から、短くなった償還期間の最終返済月までが10年未満になると、その年分以後は控除を受けられません（租税特別措置法関係通達41-19）。したがって「10年未満になっても残りの控除期間は適用できる」とする記述が不適切です。ほかに、転勤などで住まなくなった後に再入居したときの再適用、給与所得者でも最初の年分は確定申告が必要なこと、所得税から控除しきれない分は住民税から控除されることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。繰上げ返済をしても、最初に返済した月から最終返済月までの償還期間が10年以上残っていれば控除を続けられます。しかし10年未満になった場合は、その年分以後は住宅ローン控除を受けられません。\",\n  \"イ\": \"適切な記述です。転勤命令などのやむを得ない事由で住まなくなり、転居前に所定の届出をしていれば、再入居した年（その年に賃貸していた場合は翌年）以後の残りの控除期間について再び控除を受けられます。なお、控除期間は延長されません。\",\n  \"ウ\": \"適切な記述です。住宅ローン控除を受ける最初の年分は、年末調整の対象となる給与所得者であっても、計算明細書などの書類を添付した確定申告書を提出する必要があります。2年目以後は年末調整で控除を受けられます。\",\n  \"エ\": \"適切な記述です。所得税額から控除しきれなかった分は、翌年度分の個人住民税額から控除されます。令和4年以後に住み始めた場合、上限は原則として所得税の課税総所得金額等の5%（最高9万7,500円）です。なお、住み始めた時期や契約時期によっては7%（最高13万6,500円）になる場合もあります。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/law/shitsugi/shotoku/06/10.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1234.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1211-1.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 50770,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2743272,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7711,
+    "cache_read_input_tokens": 6916,
+    "output_tokens": 2181,
+    "output_tokens_details": {
+      "thinking_tokens": 938
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7711,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 24259,
+      "outputTokens": 4711,
+      "cacheReadInputTokens": 6916,
+      "cacheCreationInputTokens": 7711,
+      "webSearchRequests": 2,
+      "costUSD": 0.2743272,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 962,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**確認したこと**\n\n- **ア（正答肢）：** 公式正答「ア」と合っています。国税庁の質疑応答事例「繰上返済等をした場合の償還期間」では、償還期間は繰上返済後の期間で判定します。10年要件を満たさなくなった年分以後は、控除を受けられません（措通41-19）。当初の最初の償還月から短くなった最終償還月までが10年以上なら、控除を続けられます。解説案の記述はこの内容と一致しています。\n- **イ：** タックスアンサーNo.1234の内容と合っています。転居前に「転任の命令等により居住しないこととなる旨の届出書」の提出が必要です。再入居した年に賃貸していた場合は、翌年以後から再適用されます。控除期間は延長されません。\n- **ウ：** 最初の年分は確定申告が必要で、2年目以後は年末調整で控除を受けられます。これは制度どおりの正しい記述です。\n- **エ：** 令和4年以後に住み始めた場合、住民税から控除できる上限は原則として課税総所得金額等の5%（最高9万7,500円）です。令和4年に住み始めた人でも、特例取得・特別特例取得に当たる場合は7%（最高13万6,500円）になります。解説案の説明はこれと合っていて、正確です。\n- **参照URL：** 3つとも国税庁の公式ページで、実在を確認しました。06/10.htmは繰上返済（ア）、1234.htmは転勤後の再適用（イ）、1211-1.htmは控除の全体要件と初年度の確定申告（ウ）に対応しています。\n\nSources:\n- [繰上返済等をした場合の償還期間｜国税庁](https://www.nta.go.jp/law/shitsugi/shotoku/06/10.htm)\n- [No.1234 転勤と住宅借入金等特別控除等｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1234.htm)\n- [No.1211-1 住宅の新築等をし、令和4年以降に居住の用に供した場合｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1211-1.htm)\n- [住宅借入金等特別控除の再適用を受けるための手続1｜国税庁](https://www.nta.go.jp/law/shitsugi/shotoku/06/52.htm)",
+  "ttft_ms": 10813,
+  "type": "result",
+  "duration_ms": 38630,
+  "uuid": "f1e57489-e4df-4db8-9a5e-2eca9d6a625d",
+  "ttft_stream_ms": 1836,
+  "time_to_request_ms": 123,
+  "first_content_frame_ms": 1837,
+  "time_to_request_from_spawn_ms": 846706,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330231625.8376,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

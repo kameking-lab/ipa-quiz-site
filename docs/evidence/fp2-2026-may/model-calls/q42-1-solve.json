@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問42\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n宅地建物取引業法に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 専任媒介契約を締結した宅地建物取引業者は、一定の期間内に当該契約の目的物である宅地または建物に関する一定の事項を指定流通機構に登録しなければならない。\nイ. 専任媒介契約の有効期間は、３カ月を超えることができず、これより長い期間を定めた場合、当該契約は無効となる。\nウ. 専任媒介契約の有効期間は、依頼者の申出により更新することができるが、当初の契約締結時にあらかじめ自動更新する旨の特約を定めた場合、その特約も有効である。\nエ. 専任媒介契約を締結した宅地建物取引業者は、依頼者に対し、当該契約に係る業務の処理状況を、１カ月に１回以上報告しなければならない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 6530,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0226998,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1557,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 499,
+    "output_tokens_details": {
+      "thinking_tokens": 110
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1557,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 499,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1557,
+      "webSearchRequests": 0,
+      "costUSD": 0.0226998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 110,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"専任媒介契約を結んだ宅建業者は、契約締結の日から7日以内（休業日を除く）に、物件の所在・規模・価格などを指定流通機構（レインズ）に登録しなければならない。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"専任媒介契約の有効期間は3カ月が上限である。これより長い期間を定めても契約全体が無効になるのではなく、有効期間が3カ月に短縮される。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"更新は依頼者の申出がある場合に限って認められる。あらかじめ自動更新とする特約は無効である。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"専任媒介契約では、業務の処理状況を2週間に1回以上報告する義務がある。1週間に1回以上とされるのは専属専任媒介契約であり、1カ月に1回以上という記述は誤りである。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 3040,
+  "type": "result",
+  "duration_ms": 6627,
+  "uuid": "e2f3ca23-fd2d-4839-aeaf-5dafe9593d1b",
+  "ttft_stream_ms": 1798,
+  "time_to_request_ms": 90,
+  "first_content_frame_ms": 1799,
+  "time_to_request_from_spawn_ms": 859060,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330244007.2463,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

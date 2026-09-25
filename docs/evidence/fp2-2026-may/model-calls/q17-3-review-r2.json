@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問17\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n住宅用建物および家財を対象とする火災保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 火災保険では、隣家の火災の消火活動により住宅用建物に収容されている家財に水濡れによる損害が生じた場合、補償の対象となる。\nイ. 火災保険では、経年劣化による腐食で住宅用建物に損害が生じた場合、補償の対象となる。\nウ. 火災保険では、落雷により住宅用建物に収容されている家財に異常電圧による損害が生じた場合、補償の対象とならない。\nエ. 住宅用建物の保険金額が2,000万円（保険価額と同額）の火災保険において、1,000万円の保険金が支払われた場合、その後の保険金額が1,000万円に減額される。\n\n【解説案】\n{\n \"explanation\": \"住宅用火災保険では、消火活動で撒かれた水による水濡れや、消防のための破壊によって生じた損害も「火災」による損害に含まれ、補償の対象になります。隣家から出た火の消火活動で自宅の家財が濡れた場合も同じです。このほか、次の点も押さえておきましょう。基本補償には落雷が含まれます。経年劣化による損害は補償の対象外です。一般的な商品では、1回の事故で支払われた保険金が保険金額の80%未満であれば、保険金額は減らずに元の額のまま続きます（自動復元）。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。消火活動による水濡れや破壊で生じた損害は火災による損害として扱われ、隣家の火災の消火活動で家財に水濡れ損害が生じた場合も補償されます。\",\n  \"イ\": \"不適切です。経年劣化による腐食・さび・摩耗など、時間の経過で自然に生じる損害は、偶然な事故による損害ではないため補償の対象外です。\",\n  \"ウ\": \"不適切です。落雷は火災保険の基本補償に含まれるため、落雷の異常電圧によって家財（電化製品など）に生じた損害は補償の対象になります。\",\n  \"エ\": \"不適切です。一般的な火災保険では、1回の事故で支払われた保険金が保険金額の80%未満であれば、保険金額は減りません（自動復元）。本問の1,000万円は保険金額2,000万円の50%なので、その後も保険金額は2,000万円のまま契約が続きます。\"\n },\n \"officialReferenceUrls\": []\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 39149,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1720674,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5284,
+    "cache_read_input_tokens": 6477,
+    "output_tokens": 2245,
+    "output_tokens_details": {
+      "thinking_tokens": 710
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5284,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 11595,
+      "outputTokens": 3606,
+      "cacheReadInputTokens": 6477,
+      "cacheCreationInputTokens": 5284,
+      "webSearchRequests": 1,
+      "costUSD": 0.1720674,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 730,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"FIX\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": false, \"issue\": \"自動復元の条件を「保険金額の80%未満」としているが、約款の一般的な定めは「1回の事故で支払う損害保険金が保険金額の80%に相当する額を超えない限り（＝80%以下）」保険金額は減額されない、というもの。境界値の80%ちょうどの扱いが不正確。また、80%を超えた場合は保険金額が減額されるのではなく契約が終了する点を補うと正確になる。\"}\n },\n \"explanationOk\": false,\n \"referenceUrlsOk\": true,\n \"issues\": [\n  \"自動復元の要件が「80%未満」と書かれているが、正しくは「80%以下（80%を超えない限り）」。explanationと選択肢エの解説の両方に同じ誤りがある。\",\n  \"80%を超えた場合の扱い（保険金額が減るのではなく契約が終了する）が書かれていない。選択肢エの「減額される」という記述がなぜ誤りかを示すため、補足した。\",\n  \"参照URLは空欄で、誤ったURLは含まれていない。火災保険の約款上の扱いを直接説明した政府の公式ページは見つからなかったため、URLは追加していない。\"\n ],\n \"correctedExplanation\": \"住宅用火災保険では、消火活動で撒かれた水による水濡れや、消防のための破壊によって生じた損害も「火災」による損害に含まれ、補償の対象になります。隣家から出た火の消火活動で自宅の家財が濡れた場合も同じです。このほか、次の点も押さえておきましょう。基本補償には落雷が含まれます。経年劣化による損害は補償の対象外です。一般的な商品では、1回の事故で支払われた損害保険金が保険金額の80%以下（80%を超えない）であれば、保険金額は減らずに元の額のまま続きます（自動復元）。80%を超えた場合は、保険金額が減るのではなく、契約が終了します。\",\n \"correctedChoiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。消火活動による水濡れや破壊で生じた損害は火災による損害として扱われ、隣家の火災の消火活動で家財に水濡れ損害が生じた場合も補償されます。\",\n  \"イ\": \"不適切です。経年劣化による腐食・さび・摩耗など、時間の経過で自然に生じる損害は、偶然な事故による損害ではないため補償の対象外です。\",\n  \"ウ\": \"不適切です。落雷は火災保険の基本補償に含まれるため、落雷の異常電圧によって家財（電化製品など）に生じた損害は補償の対象になります。\",\n  \"エ\": \"不適切です。一般的な火災保険では、1回の事故で支払われた損害保険金が保険金額の80%以下であれば、保険金額は減りません（自動復元）。本問の1,000万円は保険金額2,000万円の50%なので、その後も保険金額は2,000万円のまま契約が続きます。なお、80%を超えた場合は、保険金額が減るのではなく契約が終了します。\"\n },\n \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [損保ジャパン FAQ（保険金支払後の保険金額）](https://faq.sompo-japan.jp/sumai/faq_detail.html?menu=9300&category=9301&id=80051)\n- [日新火災 FAQ（損害保険金支払後の契約）](https://faq.nisshinfire.co.jp/faq/show/17126?category_id=1696&site_domain=customer)\n- [三井住友海上 保険金ご請求のポイント](https://www.ms-ins.com/contractor/emergency/kasai/insurance.html)\n- [日本損害保険協会 損害保険Q&A 問61](https://soudanguide.sonpo.or.jp/home/q061.html)",
+  "ttft_ms": 10024,
+  "type": "result",
+  "duration_ms": 39305,
+  "uuid": "056a0a79-997c-461d-b6fe-b52a7e3a6375",
+  "ttft_stream_ms": 1847,
+  "time_to_request_ms": 146,
+  "first_content_frame_ms": 1847,
+  "time_to_request_from_spawn_ms": 610270,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329995070.0864,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「エ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問58\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n相続により取得した宅地の相続税評価に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 貸家建付地の価額は、「自用地価額×（１－借地権割合×借家権割合×賃貸割合）」の算式により計算した金額によって評価する。\nイ. 被相続人が、所有する宅地の上に店舗用建物を建築し、当該建物を賃貸借契約により第三者に賃貸していた場合、その宅地は貸家建付地として評価する。\nウ. 被相続人が、所有する宅地に建物の所有を目的とする賃借権を設定し、借地人がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\nエ. 被相続人が、所有する宅地を使用貸借により子に貸し付け、その子がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\n\n【解説案】\n{\n \"explanation\": \"使用貸借による使用借権は対価を伴わず、貸主と借主の人的なつながりだけに基づく弱い権利です。このため価額はゼロとして扱われ、使用貸借で貸している宅地は自用地としての価額で評価します（昭和48年11月1日付直資2-189「使用貸借に係る土地についての相続税及び贈与税の取扱いについて」）。したがって、子に使用貸借で貸した宅地を貸宅地として評価するという記述は不適切です。宅地の評価区分は、利用状況によって自用地、貸宅地（借地権の目的となっている宅地）、貸家建付地（貸家の敷地）に分かれます。この区分と、貸家建付地の算式「自用地価額×（1－借地権割合×借家権割合×賃貸割合）」を押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。貸家建付地の価額は、財産評価基本通達26により「自用地としての価額－自用地としての価額×借地権割合×借家権割合×賃貸割合」で求めます。この式は「自用地価額×（1－借地権割合×借家権割合×賃貸割合）」と同じ意味です。\",\n  \"イ\": \"適切な記述です。被相続人が自分の宅地に建物を建てて第三者に賃貸している場合、その宅地は貸家の敷地にあたり、貸家建付地として評価します。建物が住宅ではなく店舗であっても、賃貸借で貸していれば借家権の目的となるため、扱いは変わりません。\",\n  \"ウ\": \"適切な記述です。建物の所有を目的とする賃借権（借地権）を設定し、借地人が建物を建てている宅地は、借地権の目的となっている宅地です。この宅地は貸宅地として評価し、自用地価額から借地権の価額を差し引いて求めます。\",\n  \"エ\": \"不適切な記述で、本問の正解です。使用貸借による使用借権の価額はゼロとして扱われるため、子に使用貸借で貸し、子が自宅を建てている宅地であっても自用地として評価します。貸宅地として評価するわけではありません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4613.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/731101/01.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 48364,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3720524,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 8471,
+    "cache_read_input_tokens": 6822,
+    "output_tokens": 1566,
+    "output_tokens_details": {
+      "thinking_tokens": 191
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8471,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 43040,
+      "outputTokens": 5038,
+      "cacheReadInputTokens": 6822,
+      "cacheCreationInputTokens": 8471,
+      "webSearchRequests": 3,
+      "costUSD": 0.3720524,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 232,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "判定はPASSです。解説案の4肢はどれも2025-04-01時点の法令と通達に合っており、公式正答「エ」とも一致しています。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n**確認した内容**\n- **ア（適切）**：財産評価基本通達26とタックスアンサーNo.4614の算式「自用地としての価額－自用地としての価額×借地権割合×借家権割合×賃貸割合」は、選択肢の式と同じ意味です。\n- **イ（適切）**：No.4614は貸家建付地を「アパートやビルなどを他に貸し付けている場合の敷地」と定めています。店舗を賃貸借で貸している場合も貸家建付地にあたります。\n- **ウ（適切）**：No.4613のとおり、借地権の目的となっている宅地は貸宅地で、評価額は「自用地価額－自用地価額×借地権割合」です。\n- **エ（不適切、正答）**：昭和48年11月1日付直資2-189（令和3年一部改正）では、使用貸借による使用権の価額はゼロです。この通達の第3項により、使用貸借で貸している宅地は自用地として評価します。タックスアンサーNo.4552にも同じ記載があります。\n- **基準日**：この使用貸借通達は令和8年8月31日にも一部改正されていますが、基準日（2025-04-01）より後なので本問の判断には影響しません。改正の中身は確認できていません。解説案もこの改正には触れていないため、修正は不要です。\n- **参照URL**：3件とも国税庁の公式ページとして実在し、それぞれ貸家建付地、貸宅地、使用貸借の論点に対応しています。\n\nSources:\n- [No.4614 貸家建付地の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm)\n- [No.4613 貸宅地の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4613.htm)\n- [使用貸借に係る土地についての相続税及び贈与税の取扱いについて｜国税庁](https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/731101/01.htm)\n- [No.4552 親の土地に子供が家を建てたとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4552.htm)\n- [使用貸借通達 一部改正通達｜国税庁](https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/kaisei/kaisei3.htm)",
+  "ttft_ms": 3092,
+  "type": "result",
+  "duration_ms": 33001,
+  "uuid": "4bb094f5-37a8-4154-acf0-a7da0f4ece77",
+  "ttft_stream_ms": 1751,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 1752,
+  "time_to_request_from_spawn_ms": 1085268,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330470205.0796,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

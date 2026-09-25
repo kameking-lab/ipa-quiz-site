@@ -1,0 +1,187 @@
+{
+  "question": 11,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 7,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "868626877e424755cadeef8ce629990bc2ae3e61e0db903257e9f3c02f134feb",
+    "choicesSha256": "346c53619b0056495ed5350ff293c547579e1370cc65a132b67b0f1a72eec79c",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [
+      "修正不要の補足（ア）：保険法2条1号は、保険契約を「保険契約、共済契約その他いかなる名称であるかを問わず」と定めています。解説の記述はこの条文と一致します。",
+      "修正不要の補足（イ）：支払時期の規定は、損害保険が21条、生命保険が52条、傷害疾病定額保険が81条です。これらを片面的強行規定とする条文は26条・53条・82条で、条番号はすべて正しいです。",
+      "修正不要の補足（ウ）：1年以内の契約を適用除外とする規定は、厳密には保険業法309条1項6号を受けた保険業法施行令45条1号に置かれています。解説の『保険業法309条によるクーリング・オフでは…適用除外』という書き方でも、事実としては誤りではありません。『書面を受け取った日と申込日のうち遅い方の日から起算して8日以内』も309条1項1号の内容と合っています。",
+      "修正不要の補足（エ）：経済価値ベースのソルベンシー比率（ESR）は、基準日（2025-04-01）より後に導入が予定されている制度です。基準日時点ではソルベンシー・マージン比率200%を基準とする早期是正措置が施行されているので、解説の記述は正しいです。",
+      "修正不要の補足（URL）：420AC0000000056は保険法（平成20年法律第56号）、407AC0000000105は保険業法（平成7年法律第105号）のe-Gov法令検索ページで、どちらも論点に対応しています。保険法のURLは2021-02-15時点の版を指定していますが、解説で引用している条文はその後改正されていないため、支障はありません。"
+    ],
+    "draftConcerns": [
+      "ESRの適用が始まった時期と、根拠となる改正法令の正式名称は、検索結果の概要からの記載です。一次資料の条文では細部を確認していません。",
+      "保険業法の条文ページ（e-Gov）のURLは検索で確認できなかったため、officialReferenceUrlsに入れていません。",
+      "保険法のe-Gov URLは検索結果に出たとおり、occasion_date=20210215（2021年2月15日時点の条文）の指定が付いたままです。付いていない最新版のURLは推測にとどまるため採用しませんでした。"
+    ],
+    "draftLawDateNote(unpublished)": "基準日（2025-04-01）の時点では、ソルベンシー・マージン比率（SMR）が200%を下回ると早期是正措置の対象になります。その後、2025年の保険業法改正などで経済価値ベースのソルベンシー規制（ESR）が導入され、2026年3月期からはESRが100%を下回った場合が早期是正措置の対象となりました。どちらの制度でも「300%」という基準はないため、選択肢エが誤りであることは変わりません。"
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/420AC0000000056",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "保険法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/407AC0000000105",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "保険業法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q11-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 466,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1556,
+          "webSearchRequests": 0,
+          "costUSD": 0.0220318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 130,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0220318,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q11-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 28395,
+          "outputTokens": 4729,
+          "cacheReadInputTokens": 5957,
+          "cacheCreationInputTokens": 6327,
+          "webSearchRequests": 2,
+          "costUSD": 0.2799674,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 635,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2799674,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q11-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 31619,
+          "outputTokens": 7068,
+          "cacheReadInputTokens": 15803,
+          "cacheCreationInputTokens": 9322,
+          "webSearchRequests": 3,
+          "costUSD": 0.3755726,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1829,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3755726,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q11-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 1645,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2775,
+          "webSearchRequests": 0,
+          "costUSD": 0.0554876,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 844,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0554876,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

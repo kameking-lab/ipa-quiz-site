@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問12\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n生命保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 養老保険では、保険金の支払事由が発生せずに保険期間満了を迎えた場合、死亡・高度障害保険金と同額の満期保険金を受け取ることができる。\nイ. こども保険（学資保険）では、契約者（＝保険料負担者）が死亡した場合、あらかじめ指定された受取人に既払込保険料相当額の死亡給付金が支払われる。\nウ. 変額保険（終身型）では、契約時に定められた保険金額（基本保険金額）は保証されておらず、運用実績によっては、死亡保険金額が基本保険金額を下回る。\nエ. 終身保険の１回当たりの保険料は、他の契約条件が同一であれば、保険料払込期間が有期払込みであるほうが、終身払込みであるよりも低くなる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 34318,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1722532,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4437,
+    "cache_read_input_tokens": 5986,
+    "output_tokens": 1569,
+    "output_tokens_details": {
+      "thinking_tokens": 309
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4437,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 16640,
+      "outputTokens": 2950,
+      "cacheReadInputTokens": 5986,
+      "cacheCreationInputTokens": 4437,
+      "webSearchRequests": 1,
+      "costUSD": 0.1722532,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 397,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "正答は「ア」で、公式正答と矛盾しない解説にしています。金融庁のサイトを検索しましたが、変額保険（終身型）の死亡保険金に最低保証があることを直接説明する政府の公式ページは見つかりませんでした。そのため `officialReferenceUrls` は空にしています。\n\n```json\n{\"explanation\": \"養老保険は、保険期間中に死亡・高度障害になれば死亡・高度障害保険金が、ならずに満期を迎えれば同じ額の満期保険金が支払われる「生死混合保険」です。あわせて押さえたい論点が3つあります。学資保険は契約者が死亡すると以後の保険料の払込みが免除されます。変額保険の死亡保険金には基本保険金額の最低保証があります。有期払込みは払込回数が少ないため、1回当たりの保険料が高くなります。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。養老保険は、保険期間中に死亡・高度障害になれば死亡・高度障害保険金が、ならずに満期を迎えれば同じ額の満期保険金が支払われます。\",\n  \"イ\": \"不適切です。こども保険（学資保険）では、契約者（＝保険料負担者）が死亡すると以後の保険料の払込みが免除されますが、祝金や満期保険金はそのまま受け取れます。既払込保険料相当額の死亡給付金が支払われるのは、被保険者であるこどもが死亡した場合です。\",\n  \"ウ\": \"不適切です。変額保険（終身型）の死亡保険金は、運用実績にかかわらず基本保険金額が最低保証されています。一方、解約返戻金には最低保証がありません。\",\n  \"エ\": \"不適切です。他の条件が同じなら、有期払込みは終身払込みより払込期間が短く払込回数が少ないため、1回当たりの保険料は高くなります。\"\n },\n \"topicTags\": [\"養老保険\", \"学資保険\", \"変額保険\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [],\n \"concerns\": [\"変額保険（終身型）の死亡保険金に基本保険金額の最低保証があることを直接説明した政府の公式ページは、WebSearchでは見つかりませんでした。そのため officialReferenceUrls は空にしています。見つかった金融庁の資料（変額年金保険の最低保証、保険会社向けの総合的な監督指針）は変額年金保険が中心で、本肢の根拠としては間接的です。\", \"学資保険の保険料払込免除や死亡給付金の扱いは、一般的な商品性に基づいて説明しています。商品によって細部が異なる場合があります。\"]}\n```\n\n参照した検索結果（間接的なもので、URL欄には入れていません）:\n- [変額年金保険等の最低保証リスクに係る責任準備金積立ルール等（金融庁）](https://www.fsa.go.jp/news/newsj/16/hoken/f-20041021-1.html)\n- [保険会社向けの総合的な監督指針 II-4（金融庁）](https://www.fsa.go.jp/common/law/guide/ins/02d.html)",
+  "ttft_ms": 5683,
+  "type": "result",
+  "duration_ms": 34500,
+  "uuid": "89717d75-aa73-4267-982c-d107b8084824",
+  "ttft_stream_ms": 1952,
+  "time_to_request_ms": 180,
+  "first_content_frame_ms": 1952,
+  "time_to_request_from_spawn_ms": 566922,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329951595.4058,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

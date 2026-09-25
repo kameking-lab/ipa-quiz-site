@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問54\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n民法上の遺言に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 遺言者の相続人が、自宅で発見した自筆証書遺言を家庭裁判所の検認を受けずに開封した場合、その遺言は無効となる。\nイ. 遺言者が自筆証書遺言に添付する財産目録をパソコンで作成する場合、当該目録への署名・押印は不要である。\nウ. 公正証書遺言を作成する際には、証人３人以上の立会いが必要である。\nエ. 公正証書遺言を作成した遺言者は、その遺言を自筆証書遺言によって撤回することができる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 48295,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.24054499999999998,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5518,
+    "cache_read_input_tokens": 5885,
+    "output_tokens": 2027,
+    "output_tokens_details": {
+      "thinking_tokens": 394
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5518,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21956,
+      "outputTokens": 4370,
+      "cacheReadInputTokens": 5885,
+      "cacheCreationInputTokens": 5518,
+      "webSearchRequests": 2,
+      "costUSD": 0.24054499999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 560,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "本問の正解は**エ**です。民法1022条では、遺言は「遺言の方式に従って」撤回でき、撤回に使う遺言は元の遺言と同じ方式でなくてもよいとされています。そのため、公正証書遺言を自筆証書遺言で撤回できます。\n\n```json\n{\"explanation\": \"民法1022条により、遺言者はいつでも遺言の方式に従って遺言の全部または一部を撤回できます。撤回する遺言は、撤回される遺言と同じ方式である必要はありません。そのため、公正証書遺言を自筆証書遺言や秘密証書遺言で撤回することもできます。あわせて、次の3点を押さえておきましょう。①検認を受けなくても遺言は無効にならない（民法1004条・1005条）。②自書しない財産目録には全ページへの署名押印が必要（民法968条2項）。③公正証書遺言の証人は2人以上（民法969条）。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。封印のある遺言書を家庭裁判所外で開封した場合や検認を怠った場合は5万円以下の過料の対象になります（民法1005条）。ただし、それによって遺言が無効になるわけではありません。検認は遺言書の状態を確認して偽造・変造を防ぐための手続であり、遺言が有効かどうかを判断する手続ではありません。\",\n  \"イ\": \"誤りです。自筆証書遺言に添付する財産目録はパソコンで作成したり、通帳のコピーなどで代えたりできます。ただし、その目録の各ページ（両面に記載がある場合は両面）に遺言者が署名し、押印しなければなりません（民法968条2項）。\",\n  \"ウ\": \"誤りです。公正証書遺言の作成に必要な証人は2人以上であり、3人以上ではありません（民法969条1号）。なお、秘密証書遺言でも必要な証人は2人以上です。\",\n  \"エ\": \"適切な記述で、本問の正解です。遺言者はいつでも遺言の方式に従って遺言を撤回でき、撤回する遺言は元の遺言と同じ方式である必要はありません（民法1022条）。そのため、公正証書遺言を自筆証書遺言で撤回できます。\"\n },\n \"topicTags\": [\"遺言の撤回\", \"自筆証書遺言の方式\", \"公正証書遺言の証人\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://laws.e-gov.go.jp/law/129AC0000000089\", \"https://www.moj.go.jp/MINJI/minji07_00240.html\", \"https://www.moj.go.jp/MINJI/03.html\"],\n \"concerns\": [\"基準日（2025-04-01）より後に、公正証書の作成手続をデジタル化する公証人法等の改正（2025年10月施行予定とされていたもの）が施行されたと記憶していますが、施行日と内容は確認できていません。この改正でも、民法969条の「証人2人以上」という要件は変わらないと理解しています。\", \"法制審議会で検討されていた遺言制度の見直し（デジタル技術を使った遺言方式など）が2026年までに法改正として成立したかどうかは確認できていません。ただし、基準日時点の法令で解答する本問の正誤には影響しません。\"]}\n```\n\n**確認できたこと**\n- 民法の条文と財産目録の署名押印の要件は、e-Gov法令検索と法務省のページで確認しました。\n\n**確認できていないこと**\n- concerns に書いた基準日より後の制度改正2点は、検索で確認していません。\n- どちらの改正があったとしても、基準日時点で判断する本問の正解は変わりません。\n\nSources:\n- [民法 | e-Gov法令検索](https://laws.e-gov.go.jp/law/129AC0000000089)\n- [法務省：自筆証書遺言に関するルールが変わります。](https://www.moj.go.jp/MINJI/minji07_00240.html)\n- [法務省：遺言書の様式等についての注意事項](https://www.moj.go.jp/MINJI/03.html)",
+  "ttft_ms": 3131,
+  "type": "result",
+  "duration_ms": 36429,
+  "uuid": "24ced744-40c2-45d3-9643-5d627fa2024b",
+  "ttft_stream_ms": 1765,
+  "time_to_request_ms": 126,
+  "first_content_frame_ms": 1766,
+  "time_to_request_from_spawn_ms": 1004998,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330389944.3025,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

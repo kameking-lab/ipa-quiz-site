@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問11\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n保険法および保険業法に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 生命保険契約および損害保険契約は保険法の適用対象となるが、共済契約は、その保障内容にかかわらず、保険法の適用対象とならない。\nイ. 保険金の支払時期に関して、保険法の規定よりも保険金受取人にとって不利な内容である保険約款の定めは無効となる。\nウ. 保険業法によれば、保険期間が１年以内の保険契約の申込みをした者は、申込みをした日から８日以内であれば、書面または電磁的記録によりその保険契約の申込みの撤回等をすることができるとされている。\nエ. 保険会社の経営の健全性を示すソルベンシー・マージン比率が300％を下回った場合、監督当局による業務改善命令などの早期是正措置の対象となる。\n\n【解説案】\n{\n \"explanation\": \"保険法は、保険金の支払時期（損害保険は21条、生命保険は52条、傷害疾病定額保険は81条）などの規定について、保険金受取人や保険契約者側に不利な約款の定めは無効とする「片面的強行規定」を設けています（26条・53条・82条）。このため、支払時期について法律より不利な約款の定めは無効となり、正しい記述です。あわせて、共済にも保険法が適用されること、1年以内の契約はクーリング・オフの対象外であること、早期是正措置の基準が200%であることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。保険法は、名称にかかわらず保険契約と実質的に同じ内容の契約に適用されます（保険法2条1号）。そのため、保障内容が保険と同じ共済契約にも保険法が適用されます。\",\n  \"イ\": \"適切な記述で、本問の正解です。保険金の支払時期に関する規定は片面的強行規定です。法律の定めより保険金受取人等に不利な約款の定めは無効となります（保険法26条・53条・82条）。\",\n  \"ウ\": \"誤りです。保険業法309条によるクーリング・オフでは、保険期間が1年以内の保険契約は適用除外とされています。なお、撤回できる期間は、契約内容などを記載した書面を受け取った日と申込日のうち、遅い方の日から起算して8日以内です。\",\n  \"エ\": \"誤りです。早期是正措置の対象となるのは、ソルベンシー・マージン比率が300%ではなく200%を下回った場合です。200%以上であれば、健全性の一つの基準を満たしているとされます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/420AC0000000056?occasion_date=20210215\",\n  \"https://www.fsa.go.jp/policy/economic_value-based_solvency/10.pdf\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 79015,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3755726,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 9322,
+    "cache_read_input_tokens": 15803,
+    "output_tokens": 3902,
+    "output_tokens_details": {
+      "thinking_tokens": 1702
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 9322,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 31619,
+      "outputTokens": 7068,
+      "cacheReadInputTokens": 15803,
+      "cacheCreationInputTokens": 9322,
+      "webSearchRequests": 3,
+      "costUSD": 0.3755726,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1829,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "判定は **FIX** です。4肢の解説と総合解説は、2025-04-01時点の法令に照らして正しく、公式正答「イ」とも合っています。一方、参照URLの1つが本問の論点に合っていないため、差し替えが必要です。\n\n- **正答イ**：損害保険は21条・26条、生命保険は52条・53条、傷害疾病定額保険は81条・82条です。いずれも保険金の支払時期の規定と、それより受取人等に不利な約款を無効とする規定の組合せで、条文番号も合っています。\n- **ア**：保険法2条1号は、共済契約を含め名称を問わず適用されると定めています。解説は正しいです。\n- **ウ**：保険業法309条のクーリング・オフは、保険期間1年以内の契約には適用されません。8日の起算点（書面交付日と申込日のうち遅い方）の説明も正しいです。\n- **エ**：2025-04-01時点では、早期是正措置の基準はソルベンシー・マージン比率200%です。解説は正しいです。\n- **差し替えが必要なURL**：金融庁の `10.pdf` は2026年7月付けの「経済価値ベースのソルベンシー規制の概要」です。これは基準日より後に始まる新しい制度（ESR）の資料で、この制度では早期是正措置の基準がESRになります。「基準日時点でソルベンシー・マージン比率200%」という説明の根拠にはならず、読者が誤解するおそれがあります。代わりに、ウ（309条）とエ（早期是正措置）の根拠になる保険業法のe-Govページを使います。このページはWebSearchで実在を確認しました。\n- **そのまま使えるURL**：保険法のe-Govページ（2021-02-15時点版）もWebSearchで実在を確認しました。関係する条文の内容は基準日時点と変わらないため、このままで問題ありません。\n\n本文には誤りがないため、修正版は原文のまま載せています。\n\n```json\n{\"verdict\": \"FIX\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": false,\n \"issues\": [\n  \"参照URL https://www.fsa.go.jp/policy/economic_value-based_solvency/10.pdf は2026年7月付けの『経済価値ベースのソルベンシー規制の概要』（ESRにもとづく新しい制度の資料）です。基準日2025-04-01時点のソルベンシー・マージン比率200%による早期是正措置の根拠にはならず、誤解を招くため、保険業法（309条のクーリング・オフ、早期是正措置の根拠規定を収録）のe-Govページに差し替えます。\",\n  \"本文（explanation・4肢の解説）に事実誤りはありません。保険法2条1号・21条/26条・52条/53条・81条/82条、保険業法309条（1年以内の契約は対象外、8日の起算点）、ソルベンシー・マージン比率200%の説明はいずれも正しいです。\"\n ],\n \"correctedExplanation\": \"保険法は、保険金の支払時期（損害保険は21条、生命保険は52条、傷害疾病定額保険は81条）などの規定について、保険金受取人や保険契約者側に不利な約款の定めは無効とする「片面的強行規定」を設けています（26条・53条・82条）。このため、支払時期について法律より不利な約款の定めは無効となり、正しい記述です。あわせて、共済にも保険法が適用されること、1年以内の契約はクーリング・オフの対象外であること、早期是正措置の基準が200%であることも押さえておきましょう。\",\n \"correctedChoiceExplanations\": {\n  \"ア\": \"誤りです。保険法は、名称にかかわらず保険契約と実質的に同じ内容の契約に適用されます（保険法2条1号）。そのため、保障内容が保険と同じ共済契約にも保険法が適用されます。\",\n  \"イ\": \"適切な記述で、本問の正解です。保険金の支払時期に関する規定は片面的強行規定です。法律の定めより保険金受取人等に不利な約款の定めは無効となります（保険法26条・53条・82条）。\",\n  \"ウ\": \"誤りです。保険業法309条によるクーリング・オフでは、保険期間が1年以内の保険契約は適用除外とされています。なお、撤回できる期間は、契約内容などを記載した書面を受け取った日と申込日のうち、遅い方の日から起算して8日以内です。\",\n  \"エ\": \"誤りです。早期是正措置の対象となるのは、ソルベンシー・マージン比率が300%ではなく200%を下回った場合です。200%以上であれば、健全性の一つの基準を満たしているとされます。\"\n },\n \"correctedOfficialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/420AC0000000056?occasion_date=20210215\",\n  \"https://laws.e-gov.go.jp/law/407AC0000000105\"\n ]}\n```\n\nSources:\n- [経済価値ベースのソルベンシー規制の概要（金融庁 10.pdf）](https://www.fsa.go.jp/policy/economic_value-based_solvency/10.pdf)\n- [保険業法 | e-Gov 法令検索](https://laws.e-gov.go.jp/law/407AC0000000105)\n- [保険法 | e-Gov 法令検索](https://laws.e-gov.go.jp/law/420AC0000000056?occasion_date=20210215)",
+  "ttft_ms": 17544,
+  "type": "result",
+  "duration_ms": 67799,
+  "uuid": "dbbd8a6d-2225-4298-aec5-6883feaeac83",
+  "ttft_stream_ms": 2094,
+  "time_to_request_ms": 490,
+  "first_content_frame_ms": 2094,
+  "time_to_request_from_spawn_ms": 560481,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329943585.5703,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

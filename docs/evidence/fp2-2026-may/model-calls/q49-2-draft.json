@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ア」です（原典の正解 1) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問49\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n「居住用財産を譲渡した場合の3,000万円の特別控除」（以下、「3,000万円特別控除」という）および「居住用財産を譲渡した場合の長期譲渡所得の課税の特例」（以下、「軽減税率の特例」という）に関する次の記述のうち、最も適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 3,000万円特別控除は、譲渡した居住用財産の所有期間の長短にかかわらず、適用を受けることができる。\nイ. 3,000万円特別控除は、居住用財産で居住の用に供さなくなったものを譲渡する場合、居住の用に供さなくなった日の属する年の翌年の12月31日までに譲渡しなければ、適用を受けることができない。\nウ. 軽減税率の特例は、譲渡した居住用財産の所有期間が、譲渡した日の属する年の１月１日において５年を超えていれば、適用を受けることができる。\nエ. 3,000万円特別控除と軽減税率の特例は、重複して適用を受けることができない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 40886,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.292253,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6403,
+    "cache_read_input_tokens": 6045,
+    "output_tokens": 1294,
+    "output_tokens_details": {
+      "thinking_tokens": 92
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6403,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 35060,
+      "outputTokens": 3979,
+      "cacheReadInputTokens": 6045,
+      "cacheCreationInputTokens": 6403,
+      "webSearchRequests": 2,
+      "costUSD": 0.292253,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 185,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"3,000万円特別控除（租税特別措置法35条）は、居住用財産の所有期間の長短に関係なく適用できるため、「ア」が正解です。一方、軽減税率の特例（同法31条の3）は、譲渡した年の1月1日時点で家屋・敷地の所有期間がともに10年を超えていることが要件です。以前住んでいた家屋を譲渡する場合は、住まなくなった日から3年を経過する日の属する年の12月31日までに譲渡する必要があります。両特例は重複して適用でき、3,000万円を控除した後の課税長期譲渡所得のうち6,000万円以下の部分に軽減税率（所得税10%・住民税4%）が適用されます。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。3,000万円特別控除は、譲渡した居住用財産の所有期間の長短に関係なく適用を受けることができます。\",\n  \"イ\": \"誤りです。居住の用に供さなくなった居住用財産の譲渡に3,000万円特別控除を適用するには、住まなくなった日から3年を経過する日の属する年の12月31日までに譲渡すればよく、「翌年の12月31日まで」ではありません。\",\n  \"ウ\": \"誤りです。軽減税率の特例を適用するには、譲渡した年の1月1日において、家屋と敷地の所有期間がともに10年を超えている必要があります。5年超の要件は、通常の長期譲渡所得に該当するかどうかの基準です。\",\n  \"エ\": \"誤りです。3,000万円特別控除と軽減税率の特例は重複して適用を受けることができ、3,000万円を控除した後の課税長期譲渡所得金額に軽減税率が適用されます。\"\n },\n \"topicTags\": [\"居住用財産の3,000万円特別控除\", \"居住用財産の軽減税率の特例\", \"所有期間要件\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm\"\n ],\n \"concerns\": []\n}\n```\n\nSources:\n- [No.3302 マイホームを売ったときの特例｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3302.htm)\n- [No.3305 マイホームを売ったときの軽減税率の特例｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3305.htm)",
+  "ttft_ms": 3351,
+  "type": "result",
+  "duration_ms": 28260,
+  "uuid": "f2b33e62-c8b2-460a-9d64-39bddb500b07",
+  "ttft_stream_ms": 1837,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 1838,
+  "time_to_request_from_spawn_ms": 966711,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330351672.1592,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

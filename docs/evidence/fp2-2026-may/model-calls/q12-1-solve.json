@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問12\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n生命保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 養老保険では、保険金の支払事由が発生せずに保険期間満了を迎えた場合、死亡・高度障害保険金と同額の満期保険金を受け取ることができる。\nイ. こども保険（学資保険）では、契約者（＝保険料負担者）が死亡した場合、あらかじめ指定された受取人に既払込保険料相当額の死亡給付金が支払われる。\nウ. 変額保険（終身型）では、契約時に定められた保険金額（基本保険金額）は保証されておらず、運用実績によっては、死亡保険金額が基本保険金額を下回る。\nエ. 終身保険の１回当たりの保険料は、他の契約条件が同一であれば、保険料払込期間が有期払込みであるほうが、終身払込みであるよりも低くなる。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5283,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.021227799999999998,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1588,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 413,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1588,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 413,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1588,
+      "webSearchRequests": 0,
+      "costUSD": 0.021227799999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"養老保険は保険期間中に死亡・高度障害となれば死亡・高度障害保険金が、満期まで生存すれば同額の満期保険金が支払われる生死混合保険である。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"こども保険では契約者（親）が死亡した場合、以後の保険料の払込みが免除され、祝金・満期保険金は契約どおり受け取れる。既払込保険料相当額の死亡給付金が支払われるのは被保険者である子が死亡した場合である。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"変額保険（終身型）では、死亡・高度障害保険金について基本保険金額が最低保証されている。運用実績によって死亡保険金額が基本保険金額を下回ることはない。解約返戻金には最低保証がない。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"有期払込みは終身払込みより払込期間が短い。その分、1回当たりの保険料は高くなる。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5592,
+  "type": "result",
+  "duration_ms": 5708,
+  "uuid": "c678d144-8c64-457b-9197-3179be54c648",
+  "ttft_stream_ms": 2080,
+  "time_to_request_ms": 426,
+  "first_content_frame_ms": 2080,
+  "time_to_request_from_spawn_ms": 560709,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329943577.2544,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

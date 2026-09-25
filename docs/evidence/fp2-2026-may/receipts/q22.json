@@ -1,0 +1,159 @@
+{
+  "question": 22,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 12,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "34546acb9ec262e8767f6cd98138f3231be55a5e49ff9cdc6c009393c8a30539",
+    "choicesSha256": "419c3a02700c3da452691e7fbedf0354abbb27f72ffa41c91cfd683123dfbbae",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "エの記述は「普通預金」に限っていますが、実際には定期預金や定期積金なども休眠預金等の対象になり、外貨預金や仕組預金、財形貯蓄は対象外です。記述自体は正しいものの、補足しておくと理解が深まります。",
+      "エについて：預金保険機構に移管された資金は、全額がすぐに活用されるわけではありません。引出しに備えて一部を準備金として積み立て（当面5割）、残りが指定活用団体を通じて民間公益活動に使われます。",
+      "イの根拠（店舗型の銀行も通帳レスサービスを提供していること）は各銀行の商品情報によるもので、これを直接示す政府の公式ページは見つけていません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "長い間、お取引のない預金等はありませんか？：金融庁"
+    },
+    {
+      "url": "https://www8.cao.go.jp/kyumin_yokin/seido/seido.html",
+      "host": "www8.cao.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "休眠預金等活用制度について ：民間公益活動促進のための休眠預金等活用 - 内閣府"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html",
+    "https://www8.cao.go.jp/kyumin_yokin/seido/seido.html",
+    "https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokinQA.pdf"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q22-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 526,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1530,
+          "webSearchRequests": 0,
+          "costUSD": 0.023023799999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 84,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.023023799999999997,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q22-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 30868,
+          "outputTokens": 4272,
+          "cacheReadInputTokens": 5930,
+          "cacheCreationInputTokens": 6208,
+          "webSearchRequests": 2,
+          "costUSD": 0.279762,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 196,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.279762,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q22-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 31822,
+          "outputTokens": 4264,
+          "cacheReadInputTokens": 6577,
+          "cacheCreationInputTokens": 7142,
+          "webSearchRequests": 2,
+          "costUSD": 0.2910194,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 390,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2910194,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

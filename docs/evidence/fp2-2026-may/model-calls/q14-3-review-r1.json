@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ウ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問14\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における生命保険料控除の対象となる2025年中に支払った保険料が下記の〈資料〉のとおりである場合、生命保険料控除の控除額として、最も適切なものはどれか。なお、〈資料〉において、旧制度は2011年12月31日以前に締結した保険契約等に基づく生命保険料控除とし、新制度は2012年１月１日以後に締結した保険契約等に基づく生命保険料控除とする。\n〈資料〉所得税における生命保険料控除の対象となる保険料\n・旧制度の対象：一般の生命保険料 10万円／介護医療保険料 （対象外・斜線）／個人年金保険料 10万円\n・新制度の対象：一般の生命保険料 ―／介護医療保険料 ―／個人年金保険料 10万円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ８万円\nイ. ９万円\nウ. 10万円\nエ. 12万円\n\n【解説案】\n{\n \"explanation\": \"旧制度の保険料は、年間支払額が10万円を超えると控除額が一律5万円になります。支払額が5万円超10万円以下のときは「支払額×1/4＋2万5,000円」で計算するため、一般の生命保険料10万円の控除額は、10万円×1/4＋2万5,000円＝5万円です。個人年金保険料は旧制度と新制度の両方を支払っています。両方を合算して計算すると控除額の上限は4万円ですが、旧制度分だけで計算すれば上限は5万円です。本問では旧制度の10万円だけで計算して5万円とするのが有利になります。控除額は5万円＋5万円＝10万円で、合計の上限12万円の範囲内です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。8万円は、個人年金保険料を新旧合算で計算して上限の4万円とし、一般の生命保険料も4万円とした場合などの金額です。実際には、一般の生命保険料（旧制度10万円）の控除額は5万円です。個人年金保険料も旧制度分だけで計算すれば5万円になるため、控除額は10万円になります。\",\n  \"イ\": \"誤りです。9万円は、一般の生命保険料の5万円に、個人年金保険料を新旧合算で計算した上限の4万円を足した金額です。個人年金保険料は旧制度の10万円だけで計算するほうが有利で、控除額は5万円になります。そのため控除額は5万円＋5万円＝10万円です。\",\n  \"ウ\": \"正しい計算結果で、本問の正解です。一般の生命保険料（旧制度10万円）の控除額は、10万円×1/4＋2万5,000円＝5万円です。個人年金保険料は旧制度の10万円だけで計算するのが有利で、控除額は5万円です。したがって控除額は5万円＋5万円＝10万円です。\",\n  \"エ\": \"誤りです。12万円は生命保険料控除全体の上限額です。本問の控除額は一般の生命保険料5万円と個人年金保険料5万円の合計10万円で、上限に達しません。なお、介護医療保険料は支払っていないため、その分の控除はありません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1140.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 12504,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0456036,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2937,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 1086,
+    "output_tokens_details": {
+      "thinking_tokens": 508
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2937,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 1086,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2937,
+      "webSearchRequests": 0,
+      "costUSD": 0.0456036,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 508,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答「ウ」（10万円）は、2025-04-01現在の所得税法の計算方法で正しいと確認しました。事実の誤りも参照URLの誤りもないため、判定はPASSです。\n\n- **一般の生命保険料（旧制度10万円）:** 支払額が5万円超10万円以下の区分なので、10万円×1/4＋2万5,000円＝5万円です。\n- **個人年金保険料:** 旧制度と新制度の両方を適用すると、旧制度分5万円＋新制度分4万円（8万円超は一律4万円）＝9万円ですが、上限の4万円までになります。旧制度分だけで計算すれば5万円なので、こちらが有利です。\n- **合計:** 5万円＋5万円＝10万円で、全体の上限12万円の範囲内です。\n\nWebSearchは使っていません。各数値は既知の制度内容と照合しました。参照URL（国税庁タックスアンサー No.1140「生命保険料控除」）も、既知のページとの照合で論点に合うと判断しました。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```",
+  "ttft_ms": 7199,
+  "type": "result",
+  "duration_ms": 12608,
+  "uuid": "ce840788-d283-41d8-9e65-f1654f5ddeb1",
+  "ttft_stream_ms": 1719,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 1720,
+  "time_to_request_from_spawn_ms": 604721,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329989694.3171,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

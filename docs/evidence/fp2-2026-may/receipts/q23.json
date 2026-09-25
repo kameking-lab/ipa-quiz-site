@@ -1,0 +1,166 @@
+{
+  "question": 23,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 13,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "7e8532a8c8760f10b32a7d7d48d013b5b059877fcbfd8b12b79c9dcd282be779",
+    "choicesSha256": "4e0adf1e2c2291bf19b7aea51088f579629a2de2b59c3b4860495ef3f8e3a454",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 3)",
+    "key": "ウ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ウ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "法律上、J-REITは投資法人（会社型）であり、投資信託（契約型）とは区別されます。選択肢アの「投資信託である」という表現は試験上の一般的な言い方なので、そのまま適切な記述として扱いました。",
+      "配当控除の対象外とする根拠として、国税庁タックスアンサーNo.1331の注記（「投資法人から支払を受ける配当等」は配当控除の対象外）を検索結果で確認しました。No.1250の除外一覧の本文は、検索結果では確認できていません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1250.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1250 配当所得があるとき(配当控除)｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1331.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.1331 上場株式等の配当等に係る申告分離課税制度｜国税庁"
+    },
+    {
+      "url": "https://laws.e-gov.go.jp/law/326AC0100000198",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "投資信託及び投資法人に関する法律",
+      "verifiedBy": "e-Gov API v2 law_data"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1250.htm",
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1331.htm",
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1330.htm"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q23-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 357,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1553,
+          "webSearchRequests": 0,
+          "costUSD": 0.0198278,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0198278,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q23-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 29760,
+          "outputTokens": 3810,
+          "cacheReadInputTokens": 5953,
+          "cacheCreationInputTokens": 6203,
+          "webSearchRequests": 2,
+          "costUSD": 0.2660546,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 302,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2660546,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q23-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 29262,
+          "outputTokens": 3825,
+          "cacheReadInputTokens": 6574,
+          "cacheCreationInputTokens": 6788,
+          "webSearchRequests": 2,
+          "costUSD": 0.2691668,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 587,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2691668,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

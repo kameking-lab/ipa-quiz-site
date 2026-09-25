@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問30\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n金融サービスの提供及び利用環境の整備等に関する法律（以下、「金融サービス提供法」という）に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 金融サービス提供法において、金融サービス仲介業者の登録を受けた事業者は、銀行業・金融商品取引業・保険業・貸金業に係る金融サービスのうち、顧客に対し高度に専門的な説明を必要とする金融サービスを仲介することが認められている。\nイ. 金融サービス提供法では、金融商品販売業者等は、業として行う金融商品の販売等に係る勧誘をしようとするときは、原則として、あらかじめ勧誘方針を策定して公表することが義務付けられている。\nウ. 金融サービス提供法では、顧客が金融商品販売業者等の説明義務違反に基づき損害賠償を請求する場合、顧客が払い込んだ元本の総額が損害額と推定される。\nエ. 金融サービス提供法では、金融商品販売業者等は、顧客の属性にかかわらず、すべての顧客に対して公平になるように、同じ方法および程度によって重要事項を説明しなければならないとされている。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 56450,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.26778559999999996,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7014,
+    "cache_read_input_tokens": 6068,
+    "output_tokens": 2405,
+    "output_tokens_details": {
+      "thinking_tokens": 709
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7014,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21995,
+      "outputTokens": 5124,
+      "cacheReadInputTokens": 6068,
+      "cacheCreationInputTokens": 7014,
+      "webSearchRequests": 2,
+      "costUSD": 0.26778559999999996,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 910,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"金融サービス提供法では、金融商品販売業者等が業として金融商品の販売等の勧誘をしようとするときは、原則として、勧誘の適正の確保に関する方針（勧誘方針）をあらかじめ定め、公表しなければなりません。例外は、国や地方公共団体などを相手とする場合や、特定顧客だけを相手とする場合です。勧誘方針には、勧誘の対象となる者の知識・経験・財産の状況・契約締結の目的に照らして配慮すべき事項、勧誘の方法・時間帯に関して配慮すべき事項などを定めます。あわせて、説明義務は顧客の属性に応じた方法・程度で尽くす必要があること、説明義務に違反したときは元本欠損額が損害額と推定されることも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。金融サービス仲介業者は、1つの登録で銀行・証券・保険・貸金の各分野の金融サービスを仲介できます。ただし、顧客に対して高度に専門的な説明を必要とする金融サービスは、仲介できない範囲として除かれています。\",\n  \"イ\": \"適切な記述で、本問の正解です。金融商品販売業者等は、業として行う金融商品の販売等の勧誘をしようとするときは、原則として、あらかじめ勧誘方針を定めて公表しなければなりません。国・地方公共団体等や特定顧客だけを相手とする場合は例外です。\",\n  \"ウ\": \"誤りです。説明義務違反によって損害賠償を請求する場合に損害額と推定されるのは、顧客が払い込んだ元本の総額ではなく「元本欠損額」です。\",\n  \"エ\": \"不適切です。重要事項の説明は、全顧客に同じ方法・程度で行うのではなく、顧客の知識・経験・財産の状況・契約締結の目的に照らして、その顧客に理解されるために必要な方法と程度で行わなければなりません。\"\n },\n \"topicTags\": [\"金融サービス提供法\", \"勧誘方針\", \"説明義務と損害額の推定\"],\n \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.mof.go.jp/application-contact/procedure/disclosure_etc/tuuhou/laws/kinyuservice.html\",\n  \"https://www.fsa.go.jp/common/diet/201/01/setsumei.pdf\",\n  \"https://www.fsa.go.jp/common/law/guide/kinsa/index.html\"\n ],\n \"concerns\": [\n  \"法律名の変更と条番号の移動があるため、条番号は解説に書いていません。法律名は、令和2年改正で「金融サービスの提供に関する法律」に、令和5年法律第79号で現在の名称に変わりました。現在の名称になった施行日は、検索結果では確認しきれていません。\",\n  \"e-Gov法令検索の現行条文ページ（https://laws.e-gov.go.jp/law/412AC0000000101）は検索結果に直接出てこなかったため、URL欄には入れていません。\",\n  \"検索結果では、令和6年法律第52号による改正（2026年12月13日施行予定）の存在が確認できました。基準日時点の内容には影響しませんが、勧誘方針・説明義務の規定に変更があるかどうかは確認していません。\"\n ]}\n```\n\nSources:\n- [金融サービスの提供及び利用環境の整備等に関する法律：財務省](https://www.mof.go.jp/application-contact/procedure/disclosure_etc/tuuhou/laws/kinyuservice.html)\n- [金融商品販売法等改正法案 説明資料（2020年3月 金融庁）](https://www.fsa.go.jp/common/diet/201/01/setsumei.pdf)\n- [金融サービス仲介業者向けの総合的な監督指針：金融庁](https://www.fsa.go.jp/common/law/guide/kinsa/index.html)\n- [パブリックコメント回答（2021年6月 金融庁）](https://www.fsa.go.jp/news/r2/sonota/20210602/01.pdf)\n- [日本法令索引（国立国会図書館）](https://hourei.ndl.go.jp/simple/detail?lawId=0000087093&current=-1)",
+  "ttft_ms": 9305,
+  "type": "result",
+  "duration_ms": 41941,
+  "uuid": "e8d8f484-9aeb-4b60-bbf7-488f8ab3c067",
+  "ttft_stream_ms": 1755,
+  "time_to_request_ms": 108,
+  "first_content_frame_ms": 1756,
+  "time_to_request_from_spawn_ms": 713168,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330098129.0066,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問34\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における医療費控除に関する次の記述のうち、最も不適切なものはどれか。なお、「特定一般用医薬品等購入費を支払った場合の医療費控除の特例」は考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. その年中に実際に支払った医療費が医療費控除の対象となり、未払いとなっている医療費は実際に支払われるまで医療費控除の対象とならない。\nイ. 給与所得者は、年末調整により医療費控除の適用を受けることができる。\nウ. 医師等による診療等を受けるために電車、バス等の公共交通機関を利用した場合に支払った通院費で通常必要なものは、医療費控除の対象となる。\nエ. 医療費控除の控除額の計算上、医療費の補填として受け取った保険金は、その補填の対象となった医療費の金額を限度として、医療費の金額から差し引く必要がある。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 4611,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0198358,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1564,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 353,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1564,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 353,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1564,
+      "webSearchRequests": 0,
+      "costUSD": 0.0198358,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"イ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"医療費控除の対象となるのはその年中に実際に支払った医療費であり、未払いの医療費は実際に支払った年の控除対象となる。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"医療費控除は年末調整の対象外であり、給与所得者でも適用を受けるには確定申告が必要である。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"診療等を受けるための電車・バス等の公共交通機関の通院費で通常必要なものは医療費控除の対象となる（自家用車のガソリン代・駐車場代等は対象外）。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"保険金等で補填される金額は、その補填対象となった医療費を限度として差し引く。補填対象の医療費を超える部分は他の医療費から差し引かない。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 4645,
+  "type": "result",
+  "duration_ms": 4738,
+  "uuid": "822beb3d-49ac-4f15-a84d-7d54f4003f7b",
+  "ttft_stream_ms": 1695,
+  "time_to_request_ms": 121,
+  "first_content_frame_ms": 1696,
+  "time_to_request_from_spawn_ms": 728879,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330113845.2476,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

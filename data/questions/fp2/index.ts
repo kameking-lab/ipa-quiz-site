@@ -1,7 +1,8 @@
 import type { Question } from "@/lib/questions/types";
 import academic2024And2025 from "./academic-2024-2025.json";
+import academic2026May from "./academic-2026-may.json";
 
-/** 2026年5月公表・学科の問1〜10。全60問中のライフプラン分野先行セット。 */
+/** 2026年5月公表・学科の問1〜10（ライフプラン分野）。2026-09-23 照合。 */
 const FP2_2026_PILOT_QUESTIONS: Question[] = [
   {
     "id": "fp2-2026-published-gakka-q1",
@@ -410,8 +411,33 @@ const FP2_2026_PILOT_QUESTIONS: Question[] = [
   }
 ];
 
-/** 2024・2025年の公式公開4回は学科240問、2026年公表分は問1〜10のみ。 */
-export const FP2_QUESTIONS: Question[] = [
+/**
+ * 2026年5月公表・学科。問1〜10に、問11以降で照合済みの連続範囲（academic-2026-may.json）を続ける。
+ * 照合記録は docs/evidence/fp2-2026-may/receipts/。HOLD以降は収録しない。
+ */
+const FP2_2026_MAY_QUESTIONS: Question[] = [
   ...FP2_2026_PILOT_QUESTIONS,
+  ...academic2026May as Question[],
+];
+
+/** 2026年5月公表 学科（全60問）のうち収録済みの範囲。表示文言は必ずここから作る。 */
+export const FP2_2026_MAY_COVERAGE = (() => {
+  const numbers = FP2_2026_MAY_QUESTIONS.map((q) => q.qNumber);
+  const last = numbers.length;
+  if (numbers.some((n, index) => n !== index + 1)) {
+    throw new Error(`FP2 2026年5月公表の収録範囲が連続していません: ${numbers.join(",")}`);
+  }
+  return {
+    total: 60,
+    count: numbers.length,
+    last,
+    complete: last === 60,
+    label: last === 60 ? "全60問" : `60問のうち問1〜${last}`,
+  };
+})();
+
+/** 2024・2025年の公式公開4回は学科240問、2026年5月公表分は FP2_2026_MAY_COVERAGE の範囲。 */
+export const FP2_QUESTIONS: Question[] = [
+  ...FP2_2026_MAY_QUESTIONS,
   ...academic2024And2025 as Question[],
 ];

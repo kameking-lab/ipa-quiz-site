@@ -1,0 +1,164 @@
+{
+  "question": 47,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 27,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "ac576a6da5fb7d74af30b210c6ed51d060286e85acd1f8de66a459efcfe60d6c",
+    "choicesSha256": "05e6cb8002b4f47f3c690fb50acb817b671ccfba3a1137432c063955503c62a2",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [
+      "指摘ではなく参考: 基準日2025-04-01時点の区分所有法（34条2項、35条1項、22条1項、46条1項）に照らして、4肢の解説はすべて正しく、公式正答アと一致します。",
+      "参考: 区分所有法は令和7年法律第47号で改正されており、施行日は2026-04-01で基準日より後です。このため本問の答えは一意に決まります。e-Gov（337AC0000000069）は現在、改正後の条文を表示していると考えられます。招集通知の期間は改正で2週間に延びたと理解していますが、今回の検索では確認していません。いずれにしても、イの『1カ月前』は改正の前後どちらでも誤りです。",
+      "参考: moj.go.jp/MINJI/minji07_00375.html は、法務省による令和7年区分所有法改正の公式ページです（令和7年5月23日成立、区分所有法の部分は令和8年4月1日施行）。政府の公式ページで区分所有法に関係するため、参照先として問題ありません。ただし改正法の説明ページなので、基準日時点の条文そのものを確かめるための根拠ではありません。"
+    ],
+    "draftConcerns": [
+      "改正後の35条・34条の条文そのものは、e-Govの本文で直接照合できていません。改正内容は国土交通省の説明資料に基づいて記載しています。",
+      "改正後に条番号の移動や項番号の変更がないかは確認できていません。"
+    ],
+    "draftLawDateNote(unpublished)": "令和7年法律第47号（老朽化マンション等の管理及び再生の円滑化等を図るための建物の区分所有等に関する法律等の一部を改正する法律。2026年4月1日施行）で集会の手続きが変わりました。国土交通省の資料によると、改正後は、招集通知で会議の目的たる事項に加えて議案の要領も示すことになり、招集通知の期間（1週間）は規約で短縮できなくなりました。基準日（2025-04-01）時点では、期間は「少なくとも1週間前（規約で伸縮可）」です。管理者が毎年1回集会を招集する義務、分離処分の禁止、決議の特定承継人への効力は、本問の正誤を左右する形では変わっていないと考えられます。"
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/337AC0000000069",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "建物の区分所有等に関する法律",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.moj.go.jp/MINJI/minji07_00375.html",
+      "host": "www.moj.go.jp",
+      "ok": false,
+      "status": 403,
+      "contentType": "text/html",
+      "title": "ERROR: The request could not be satisfied",
+      "reason": "HTTP status, empty title or not-found page"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.moj.go.jp/MINJI/minji07_00375.html"
+  ],
+  "finalReviewWebSources": [
+    "https://www.moj.go.jp/MINJI/minji07_00375.html",
+    "https://laws.e-gov.go.jp/law/337AC0000000069"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q47-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 487,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1496,
+          "webSearchRequests": 0,
+          "costUSD": 0.0219718,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 134,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0219718,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q47-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 22330,
+          "outputTokens": 4755,
+          "cacheReadInputTokens": 5896,
+          "cacheCreationInputTokens": 6499,
+          "webSearchRequests": 2,
+          "costUSD": 0.25759119999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 864,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.25759119999999996,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q47-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11454,
+          "outputTokens": 3031,
+          "cacheReadInputTokens": 6515,
+          "cacheCreationInputTokens": 5434,
+          "webSearchRequests": 1,
+          "costUSD": 0.161211,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1036,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.161211,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

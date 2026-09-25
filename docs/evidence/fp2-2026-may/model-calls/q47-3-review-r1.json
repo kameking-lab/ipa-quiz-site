@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問47\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n建物の区分所有等に関する法律に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 管理者は、少なくとも毎年１回、集会を招集しなければならない。\nイ. 集会の招集の通知は、原則として、開催日の少なくとも１カ月前までに、会議の目的たる事項を示して、各区分所有者に発しなければならない。\nウ. 区分所有者は、敷地利用権が数人で有する所有権である場合、規約に別段の定めがない限り、敷地利用権を専有部分と分離して処分することができる。\nエ. 集会の決議は、当該決議後に区分所有権を譲り受けた者に対し、その効力を有しない。\n\n【解説案】\n{\n \"explanation\": \"区分所有法34条2項は、管理者は少なくとも毎年1回、集会を招集しなければならないと定めています。そのため、アが最も適切な記述です。招集通知は原則として会日の少なくとも1週間前に発します（35条1項）。敷地利用権が数人で有する所有権などの場合は、規約に別段の定めがない限り専有部分と分離して処分できません（22条1項）。規約と集会の決議は、決議後に区分所有権を譲り受けた者などの特定承継人にも効力を持ちます（46条1項）。「1週間」「分離処分の禁止」「特定承継人への効力」は頻出の論点なので、まとめて押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。区分所有法34条2項により、管理者は少なくとも毎年1回、集会を招集しなければなりません。\",\n  \"イ\": \"誤りです。集会の招集通知は、会日より少なくとも「1週間前」までに、会議の目的たる事項を示して各区分所有者に発しなければなりません（区分所有法35条1項）。「1カ月前」ではありません。\",\n  \"ウ\": \"誤りです。敷地利用権が数人で有する所有権その他の権利である場合、区分所有者は、規約に別段の定めがない限り、専有部分とその専有部分に係る敷地利用権とを分離して処分することはできません（区分所有法22条1項）。\",\n  \"エ\": \"誤りです。規約と集会の決議は、区分所有者の特定承継人に対しても効力を持ちます（区分所有法46条1項）。そのため、決議後に区分所有権を譲り受けた者もその決議に拘束されます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/337AC0000000069\",\n  \"https://www.moj.go.jp/MINJI/minji07_00375.html\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 35566,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.161211,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5434,
+    "cache_read_input_tokens": 6515,
+    "output_tokens": 1840,
+    "output_tokens_details": {
+      "thinking_tokens": 1016
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5434,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 11454,
+      "outputTokens": 3031,
+      "cacheReadInputTokens": 6515,
+      "cacheCreationInputTokens": 5434,
+      "webSearchRequests": 1,
+      "costUSD": 0.161211,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1036,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [\n  \"指摘ではなく参考: 基準日2025-04-01時点の区分所有法（34条2項、35条1項、22条1項、46条1項）に照らして、4肢の解説はすべて正しく、公式正答アと一致します。\",\n  \"参考: 区分所有法は令和7年法律第47号で改正されており、施行日は2026-04-01で基準日より後です。このため本問の答えは一意に決まります。e-Gov（337AC0000000069）は現在、改正後の条文を表示していると考えられます。招集通知の期間は改正で2週間に延びたと理解していますが、今回の検索では確認していません。いずれにしても、イの『1カ月前』は改正の前後どちらでも誤りです。\",\n  \"参考: moj.go.jp/MINJI/minji07_00375.html は、法務省による令和7年区分所有法改正の公式ページです（令和7年5月23日成立、区分所有法の部分は令和8年4月1日施行）。政府の公式ページで区分所有法に関係するため、参照先として問題ありません。ただし改正法の説明ページなので、基準日時点の条文そのものを確かめるための根拠ではありません。\"\n ],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [法務省：老朽化マンション等の管理及び再生の円滑化等を図るための建物の区分所有等に関する法律等の一部を改正する法律について](https://www.moj.go.jp/MINJI/minji07_00375.html)\n- [e-Gov法令検索：建物の区分所有等に関する法律](https://laws.e-gov.go.jp/law/337AC0000000069)",
+  "ttft_ms": 8841,
+  "type": "result",
+  "duration_ms": 35671,
+  "uuid": "b245694b-ef0c-4bcf-a603-1bc0499d4af7",
+  "ttft_stream_ms": 1735,
+  "time_to_request_ms": 93,
+  "first_content_frame_ms": 1736,
+  "time_to_request_from_spawn_ms": 938226,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330323183.6123,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

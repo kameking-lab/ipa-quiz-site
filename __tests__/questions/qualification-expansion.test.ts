@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
 
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
-import { FP2_QUESTIONS } from "@/data/questions/fp2";
+import { FP2_2026_MAY_COVERAGE, FP2_QUESTIONS } from "@/data/questions/fp2";
 import { FP3_QUESTIONS } from "@/data/questions/fp3";
 import { DENKO2_2026_PILOT, DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import { getOfficialAnswerPdfUrl } from "@/lib/exam-config";
@@ -11,6 +11,7 @@ import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { ChoiceKey } from "@/lib/questions/types";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import fp2MayExtraction from "@/docs/evidence/fp2-2026-may/extraction.json";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 const EXTERNAL_QUESTIONS = [...FP2_QUESTIONS, ...FP3_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS];
@@ -18,8 +19,8 @@ const FP2_PILOT = FP2_QUESTIONS.filter((q) => q.year === 2026);
 
 describe("official-source qualification pilot data", () => {
   it("contains the transcribed FP sets and the complete gated electrician academic papers", () => {
-    expect(FP2_QUESTIONS).toHaveLength(250);
-    expect(FP2_PILOT).toHaveLength(10);
+    expect(FP2_QUESTIONS).toHaveLength(240 + FP2_2026_MAY_COVERAGE.count);
+    expect(FP2_PILOT).toHaveLength(FP2_2026_MAY_COVERAGE.count);
     expect(FP3_QUESTIONS).toHaveLength(120);
     expect(DENKEN3_QUESTIONS).toHaveLength(320);
     expect(DENKO2_QUESTIONS).toHaveLength(200);
@@ -30,7 +31,7 @@ describe("official-source qualification pilot data", () => {
     expect(QUESTIONS_BY_EXAM.denken3).toHaveLength(320);
     expect(getQualificationByExamCode("denko2")?.status).toBe("live");
     expect(QUESTIONS_BY_EXAM.denko2).toHaveLength(200);
-    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(250);
+    expect(QUESTIONS_BY_EXAM.fp2).toHaveLength(240 + FP2_2026_MAY_COVERAGE.count);
     expect(QUESTIONS_BY_EXAM.fp3).toHaveLength(120);
   });
 
@@ -56,17 +57,25 @@ describe("official-source qualification pilot data", () => {
   it("keeps FP2 explanation sources government-only and separates the mathematical question's source PDF", () => {
     expect(FP2_PILOT[0]!.officialReferenceUrls ?? []).toHaveLength(0);
     expect(FP2_PILOT[0]!.sourcePdfUrl).toContain("jafp.or.jp");
-    for (const q of FP2_PILOT.slice(1)) {
+    for (const q of FP2_PILOT.slice(1, 10)) {
       expect(q.officialReferenceUrls?.length).toBeGreaterThan(0);
       for (const url of q.officialReferenceUrls ?? []) {
         expect(new URL(url).hostname).toMatch(/\.(?:mhlw|nta|meti|mlit)\.go\.jp$/);
       }
     }
+    // 問11以降は実在を確認できた政府ページ（e-Gov法令検索を含む）だけを載せる。商品性・計算の問題は0件もある。
+    for (const q of FP2_PILOT.slice(10)) {
+      for (const url of q.officialReferenceUrls ?? []) {
+        expect(new URL(url).hostname).toMatch(/\.go\.jp$/);
+      }
+    }
   });
 
   it("matches the official FP2 answer sequence and 2025 law reference date", () => {
-    expect(FP2_PILOT.map((q) => q.qNumber)).toEqual([1,2,3,4,5,6,7,8,9,10]);
-    expect(FP2_PILOT.map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
+    expect(FP2_PILOT.map((q) => q.qNumber)).toEqual(Array.from({ length: FP2_2026_MAY_COVERAGE.count }, (_, i) => i + 1));
+    expect(FP2_PILOT.slice(0, 10).map((q) => q.answer)).toEqual(["ウ","エ","エ","ウ","ウ","エ","ウ","ア","イ","ウ"]);
+    const official = new Map(fp2MayExtraction.questions.map((q) => [q.number, "アイウエ"[q.answer - 1]]));
+    for (const q of FP2_PILOT.slice(10)) expect(q.answer, q.id).toBe(official.get(q.qNumber));
     expect(FP2_PILOT.every((q) => q.lawReferenceDate === "2025-04-01")).toBe(true);
   });
 

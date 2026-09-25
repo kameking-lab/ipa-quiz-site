@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問22\n【分野】金融資産運用\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n銀行等の金融機関で取り扱う預金の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. デリバティブを組み込んだ仕組預金には、金融機関の判断によって満期日が繰り上がる商品がある。\nイ. 総合口座において、紙の通帳の代わりにオンライン上で入出金の明細や残高を確認することができるサービスを提供しているのは、ネット専業銀行に限られる。\nウ. 自動積立定期預金は、各指定日に普通預金口座からの口座振替等により、指定金額を預入することができる定期預金である。\nエ. 直近10年以上、入出金等の取引のない普通預金は、休眠預金として預金保険機構に移管され、民間公益活動に活用される。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 45588,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.279762,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6208,
+    "cache_read_input_tokens": 5930,
+    "output_tokens": 1513,
+    "output_tokens_details": {
+      "thinking_tokens": 134
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6208,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 30868,
+      "outputTokens": 4272,
+      "cacheReadInputTokens": 5930,
+      "cacheCreationInputTokens": 6208,
+      "webSearchRequests": 2,
+      "costUSD": 0.279762,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 196,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"通帳を発行しない代わりにインターネットバンキングやアプリで入出金明細・残高を確認できる「通帳レス（Web通帳）」サービスは、ネット専業銀行に限られません。メガバンク、地方銀行、ゆうちょ銀行などの店舗型の金融機関も広く提供しています。「限られる」とする記述は不適切で、これが本問の正解です。あわせて、仕組預金の早期償還（満期繰上げ）特約、自動積立定期預金の仕組み、休眠預金等活用法の対象となる「10年」という期間も押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。デリバティブを組み込んだ仕組預金には、金融機関の判断で満期日を繰り上げる（早期償還する）特約が付いた商品があります。この場合、預金者は満期を選べず、中途解約すると元本割れになることもあります。\",\n  \"イ\": \"不適切な記述で、本問の正解です。紙の通帳の代わりにオンラインで明細や残高を確認できるサービスは、メガバンクや地方銀行などの店舗型の金融機関でも提供されており、ネット専業銀行に限られません。\",\n  \"ウ\": \"適切な記述です。自動積立定期預金は、毎月の指定日などに普通預金口座から口座振替で指定金額を定期預金として積み立てていく商品です。\",\n  \"エ\": \"適切な記述です。休眠預金等活用法では、2009年1月1日以降の取引から10年以上入出金などの異動がない預金等を休眠預金等とし、預金保険機構に移管したうえで民間公益活動に活用します。休眠預金等になった後でも、取引のあった金融機関で引き出すことができます。\"\n },\n \"topicTags\": [\"預金の商品性\", \"仕組預金\", \"休眠預金等活用法\"],\n \"isCalculation\": false,\n \"difficulty\": 1,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html\",\n  \"https://www8.cao.go.jp/kyumin_yokin/seido/seido.html\"\n ],\n \"concerns\": [\n  \"エの記述は「普通預金」に限っていますが、実際には定期預金や定期積金なども休眠預金等の対象になり、外貨預金や仕組預金、財形貯蓄は対象外です。記述自体は正しいものの、補足しておくと理解が深まります。\",\n  \"エについて：預金保険機構に移管された資金は、全額がすぐに活用されるわけではありません。引出しに備えて一部を準備金として積み立て（当面5割）、残りが指定活用団体を通じて民間公益活動に使われます。\",\n  \"イの根拠（店舗型の銀行も通帳レスサービスを提供していること）は各銀行の商品情報によるもので、これを直接示す政府の公式ページは見つけていません。\"\n ]}\n```\n\nSources:\n- [長い間、お取引のない預金等はありませんか？（金融庁）](https://www.fsa.go.jp/policy/kyuminyokin/kyuminyokin.html)\n- [休眠預金等活用制度について（内閣府）](https://www8.cao.go.jp/kyumin_yokin/seido/seido.html)",
+  "ttft_ms": 3391,
+  "type": "result",
+  "duration_ms": 32539,
+  "uuid": "95b6e39c-1669-42b9-acc4-4f132fdc92bf",
+  "ttft_stream_ms": 1699,
+  "time_to_request_ms": 92,
+  "first_content_frame_ms": 1699,
+  "time_to_request_from_spawn_ms": 655140,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330040121.6763,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

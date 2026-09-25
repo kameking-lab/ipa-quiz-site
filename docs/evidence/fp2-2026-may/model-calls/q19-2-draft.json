@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問19\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n第三分野の保険および特約の一般的な商品性に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. リビング・ニーズ特約は、被保険者の余命が６カ月以内と判断された場合に、所定の範囲内で死亡保険金の一部または全部を生前に受け取ることができる特約である。\nイ. 保険契約にリビング・ニーズ特約を付加する場合、契約者（＝保険料負担者）は特約保険料を負担する必要がある。\nウ. 先進医療特約で先進医療給付金の支払対象とされている先進医療は、療養を受けた時点において厚生労働大臣によって定められているものである。\nエ. 特定（三大）疾病保障定期保険では、被保険者が特定（三大）疾病に罹患し、特定（三大）疾病保険金を受け取った場合、その後被保険者が死亡しても死亡保険金は支払われない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 29409,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1626712,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4362,
+    "cache_read_input_tokens": 5976,
+    "output_tokens": 1323,
+    "output_tokens_details": {
+      "thinking_tokens": 87
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4362,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 15190,
+      "outputTokens": 2791,
+      "cacheReadInputTokens": 5976,
+      "cacheCreationInputTokens": 4362,
+      "webSearchRequests": 1,
+      "costUSD": 0.1626712,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 101,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"リビング・ニーズ特約は特約保険料が不要（無料）で付加できる特約のため、「契約者は特約保険料を負担する必要がある」とする記述は不適切で、これが正解です。リビング・ニーズ特約は余命6カ月以内と判断されたときに、死亡保険金の一部または全部（一般に通算3,000万円が上限）を生前に受け取れる特約で、受取額からは6カ月分の利息と保険料相当額が差し引かれます。あわせて、先進医療特約の対象は療養を受けた時点で厚生労働大臣が定めている先進医療であること、特定（三大）疾病保障定期保険では特定疾病保険金を受け取ると契約が消滅し、その後の死亡保険金は支払われないことも押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。リビング・ニーズ特約は、被保険者の余命が6カ月以内と判断された場合に、所定の範囲内（一般に通算3,000万円が上限）で死亡保険金の一部または全部を生前に請求できる特約です。\",\n  \"イ\": \"不適切な記述で、本問の正解です。リビング・ニーズ特約は特約保険料が不要（無料）で付加できる特約であり、契約者が特約保険料を負担する必要はありません。なお、受け取る際には6カ月分の利息と保険料相当額が差し引かれます。\",\n  \"ウ\": \"適切な記述です。先進医療特約の対象となる先進医療は、契約した時点ではなく、療養を受けた時点で厚生労働大臣が定めているものです。そのため、契約後に新たに承認された技術も対象になり、療養時までに対象から外れた技術は対象外となります。\",\n  \"エ\": \"適切な記述です。特定（三大）疾病保障定期保険では、がん・急性心筋梗塞・脳卒中で所定の状態になり特定疾病保険金を受け取ると契約が終了します。そのため、その後に被保険者が死亡しても死亡保険金は支払われません。\"\n },\n \"topicTags\": [\"リビング・ニーズ特約\", \"先進医療特約\", \"特定（三大）疾病保障定期保険\"],\n \"isCalculation\": false,\n \"difficulty\": 1,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/sensiniryo/index.html\"],\n \"concerns\": [\"リビング・ニーズ特約の上限額（通算3,000万円）や差し引かれる金額は保険会社の約款によって異なる場合があるため、「一般に」と書きました。\", \"リビング・ニーズ特約の商品性は各社の約款で決まっており、政府の公式ページでは確認できません。そのため、参照URLは先進医療（厚生労働省）の1件だけです。\"]}\n```\n\nSources:\n- [先進医療の概要について｜厚生労働省](https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/iryouhoken/sensiniryo/index.html)",
+  "ttft_ms": 3623,
+  "type": "result",
+  "duration_ms": 29518,
+  "uuid": "2f5ecdc2-0042-4821-84ec-ec28fb7c056a",
+  "ttft_stream_ms": 1792,
+  "time_to_request_ms": 93,
+  "first_content_frame_ms": 1792,
+  "time_to_request_from_spawn_ms": 619060,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330004025.345,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

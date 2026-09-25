@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
+import fp2May2026Released from "../../data/questions/fp2/academic-2026-may.json";
 
 test("FP2 academic papers expose four complete official sessions and preserve the 2026 pilot label", async ({ page }) => {
   await page.goto("/fp2");
-  await expect(page.getByText("収録 250 問")).toBeVisible();
+  await expect(page.getByText(`収録 ${250 + fp2May2026Released.length} 問`)).toBeVisible();
   await expect(page.getByRole("link", { name: /2024年5月試験/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /2024年9月試験/ }).first()).toBeVisible();
   await expect(page.getByRole("link", { name: /2025年1月試験/ }).first()).toBeVisible();

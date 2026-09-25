@@ -5,6 +5,7 @@ import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { FP2_2026_MAY_COVERAGE } from "@/data/questions/fp2";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
 export const metadata: Metadata = {
@@ -40,7 +41,7 @@ export default function QualificationsPage() {
               <Badge variant="outline">{item.slug === "fp2" ? `学科 ${questionCounts.fp2}問・実技 160問` : item.slug === "fp3" ? `学科 ${questionCounts.fp3}問・実技 40問` : `収録 ${questionCounts[item.slug]}問`}</Badge>
             </div>
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
-            {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の公式公開4回を、学科240問・実技160問すべて収録。</p><p className="mb-4 mt-2 text-xs text-muted-foreground">追加セット：2026年5月公表の学科は問1〜10を先行収録。</p></>}
+            {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の公式公開4回を、学科240問・実技160問すべて収録。</p><p className="mb-4 mt-2 text-xs text-muted-foreground">追加セット：2026年5月公表の学科は{FP2_2026_MAY_COVERAGE.label}を収録。</p></>}
             {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024・2025年の学科120問と実技40問を収録。</p>}
             <Button asChild variant="primary" className="w-full">
               <Link href={`/${item.examCode}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>

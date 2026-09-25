@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問12\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n生命保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 養老保険では、保険金の支払事由が発生せずに保険期間満了を迎えた場合、死亡・高度障害保険金と同額の満期保険金を受け取ることができる。\nイ. こども保険（学資保険）では、契約者（＝保険料負担者）が死亡した場合、あらかじめ指定された受取人に既払込保険料相当額の死亡給付金が支払われる。\nウ. 変額保険（終身型）では、契約時に定められた保険金額（基本保険金額）は保証されておらず、運用実績によっては、死亡保険金額が基本保険金額を下回る。\nエ. 終身保険の１回当たりの保険料は、他の契約条件が同一であれば、保険料払込期間が有期払込みであるほうが、終身払込みであるよりも低くなる。\n\n【解説案】\n{\n \"explanation\": \"養老保険は、保険期間中に死亡・高度障害になれば死亡・高度障害保険金が、ならずに満期を迎えれば同じ額の満期保険金が支払われる「生死混合保険」です。あわせて押さえたい論点が3つあります。学資保険は契約者が死亡すると以後の保険料の払込みが免除されます。変額保険の死亡保険金には基本保険金額の最低保証があります。有期払込みは払込回数が少ないため、1回当たりの保険料が高くなります。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述で、本問の正解です。養老保険は、保険期間中に死亡・高度障害になれば死亡・高度障害保険金が、ならずに満期を迎えれば同じ額の満期保険金が支払われます。\",\n  \"イ\": \"不適切です。こども保険（学資保険）では、契約者（＝保険料負担者）が死亡すると以後の保険料の払込みが免除されますが、祝金や満期保険金はそのまま受け取れます。既払込保険料相当額の死亡給付金が支払われるのは、被保険者であるこどもが死亡した場合です。\",\n  \"ウ\": \"不適切です。変額保険（終身型）の死亡保険金は、運用実績にかかわらず基本保険金額が最低保証されています。一方、解約返戻金には最低保証がありません。\",\n  \"エ\": \"不適切です。他の条件が同じなら、有期払込みは終身払込みより払込期間が短く払込回数が少ないため、1回当たりの保険料は高くなります。\"\n },\n \"officialReferenceUrls\": []\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 10784,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0404356,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2701,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 922,
+    "output_tokens_details": {
+      "thinking_tokens": 275
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2701,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 922,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2701,
+      "webSearchRequests": 0,
+      "costUSD": 0.0404356,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 275,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [\n  \"PASSのため修正は不要です。4肢とも生命保険の一般的な商品性として正しく書けています。アは養老保険の満期保険金が死亡・高度障害保険金と同額であること、イは契約者が死亡すると以後の保険料の払込みが免除され、祝金・満期保険金は受け取れること、ウは死亡保険金に最低保証があり解約返戻金にはないこと、エは有期払込みのほうが1回当たりの保険料が高くなること、をそれぞれ正しく説明しています。\",\n  \"解説は公式正答アと合っており、『最も適切なもの』という問われ方に対する正誤の表示も正しいです。\",\n  \"問われているのは保険商品の一般的な性質で、2025-04-01以後の法令改正によって答えが変わる論点ではありません。\",\n  \"officialReferenceUrlsは空です。個々の保険会社の商品性を定めた政府の公式ページはないため、空のままでも不備ではありません。誤ったURLも含まれていません。\",\n  \"補足（修正は不要）：イの『既払込保険料相当額の死亡給付金』は、学資保険の一般的な仕組みとして正しい説明です。ただし、給付の細かい内容は商品によって異なります。\"\n ],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```",
+  "ttft_ms": 4591,
+  "type": "result",
+  "duration_ms": 10919,
+  "uuid": "8b69e345-16df-4c6e-9d98-b1ebb9a7be4a",
+  "ttft_stream_ms": 1791,
+  "time_to_request_ms": 131,
+  "first_content_frame_ms": 1792,
+  "time_to_request_from_spawn_ms": 601845,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329986840.3657,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

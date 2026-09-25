@@ -1,0 +1,143 @@
+{
+  "question": 12,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 7,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "a7e0ff443acf04c76c74e39d7223975be78b6dc71c30b3edb7b88ebe091780c2",
+    "choicesSha256": "139638f599a8f709fa1cc6f27695fc91046cda53c6928a3ea45c509acbd123ef",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [
+      "PASSのため修正は不要です。4肢とも生命保険の一般的な商品性として正しく書けています。アは養老保険の満期保険金が死亡・高度障害保険金と同額であること、イは契約者が死亡すると以後の保険料の払込みが免除され、祝金・満期保険金は受け取れること、ウは死亡保険金に最低保証があり解約返戻金にはないこと、エは有期払込みのほうが1回当たりの保険料が高くなること、をそれぞれ正しく説明しています。",
+      "解説は公式正答アと合っており、『最も適切なもの』という問われ方に対する正誤の表示も正しいです。",
+      "問われているのは保険商品の一般的な性質で、2025-04-01以後の法令改正によって答えが変わる論点ではありません。",
+      "officialReferenceUrlsは空です。個々の保険会社の商品性を定めた政府の公式ページはないため、空のままでも不備ではありません。誤ったURLも含まれていません。",
+      "補足（修正は不要）：イの『既払込保険料相当額の死亡給付金』は、学資保険の一般的な仕組みとして正しい説明です。ただし、給付の細かい内容は商品によって異なります。"
+    ],
+    "draftConcerns": [
+      "変額保険（終身型）の死亡保険金に基本保険金額の最低保証があることを直接説明した政府の公式ページは、WebSearchでは見つかりませんでした。そのため officialReferenceUrls は空にしています。見つかった金融庁の資料（変額年金保険の最低保証、保険会社向けの総合的な監督指針）は変額年金保険が中心で、本肢の根拠としては間接的です。",
+      "学資保険の保険料払込免除や死亡給付金の扱いは、一般的な商品性に基づいて説明しています。商品によって細部が異なる場合があります。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [],
+  "modelCalls": [
+    {
+      "file": "model-calls/q12-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 413,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1588,
+          "webSearchRequests": 0,
+          "costUSD": 0.021227799999999998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.021227799999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q12-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 16640,
+          "outputTokens": 2950,
+          "cacheReadInputTokens": 5986,
+          "cacheCreationInputTokens": 4437,
+          "webSearchRequests": 1,
+          "costUSD": 0.1722532,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 397,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1722532,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q12-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 922,
+          "cacheReadInputTokens": 1898,
+          "cacheCreationInputTokens": 2701,
+          "webSearchRequests": 0,
+          "costUSD": 0.0404356,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 275,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0404356,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

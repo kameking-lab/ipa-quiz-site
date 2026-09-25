@@ -1,0 +1,193 @@
+{
+  "question": 41,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 24,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "b374ac0ddee7a96b9dbf29865d3fd85fbf1c948c7a6ccc730a3e6e5dee0cb8eb",
+    "choicesSha256": "4f792a738571eb55f72ccdeef88853831cc92c245b4b834b5ded701d4fef1e68",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 4)",
+    "key": "エ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "エ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "選択肢イは「各都道府県により公表」と書いています。法令上の実施主体は都道府県知事ですが、趣旨は同じなので適切な記述として扱いました。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000042.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "土地・不動産・建設業：主な公的土地評価一覧 - 国土交通省"
+    },
+    {
+      "url": "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/149767_08.html",
+      "host": "www.soumu.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "総務省｜地方税制度｜固定資産税の概要"
+    },
+    {
+      "url": "https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000043.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "地価・不動産鑑定：地価公示 - 国土交通省"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000042.html",
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000043.html",
+    "https://www.mlit.go.jp/totikensangyo/totikensangyo_fr4_000044.html",
+    "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/149767_08.html",
+    "https://www.soumu.go.jp/main_sosiki/jichi_zeisei/czaisei/czaisei_seido/149767_09.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q41-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 466,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1573,
+          "webSearchRequests": 0,
+          "costUSD": 0.0221678,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 92,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0221678,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q41-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 28924,
+          "outputTokens": 3929,
+          "cacheReadInputTokens": 5974,
+          "cacheCreationInputTokens": 6128,
+          "webSearchRequests": 2,
+          "costUSD": 0.2644948,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 147,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2644948,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q41-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 33787,
+          "outputTokens": 6037,
+          "cacheReadInputTokens": 6754,
+          "cacheCreationInputTokens": 9250,
+          "webSearchRequests": 3,
+          "costUSD": 0.36123879999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 869,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.36123879999999997,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q41-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 31268,
+          "outputTokens": 4811,
+          "cacheReadInputTokens": 6760,
+          "cacheCreationInputTokens": 8303,
+          "webSearchRequests": 3,
+          "costUSD": 0.31906799999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 739,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.31906799999999996,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

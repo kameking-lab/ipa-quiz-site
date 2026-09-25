@@ -1,0 +1,149 @@
+{
+  "question": 40,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 24,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "801e2aa754769dd245bec5686884c7d87aec5cf0ee1aad604f683f42b70909e7",
+    "choicesSha256": "e3e6d0b1860e83d7c8f65c17230987d61c251b6ffb3253f035ef3d5f00395637",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 4)",
+    "key": "エ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "エ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "【分野】はタックスプランニングとされていますが、問題の内容は法人の決算書（キャッシュ・フロー計算書）です。分野の分類が正しいか確認してください。",
+      "当座借越を負の現金同等物として扱う点は、企業会計審議会の作成基準の本文ではなく、日本公認会計士協会の実務指針に基づく取扱いです。実務指針は民間団体の資料のため、公式参照URLには入れていません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.fsa.go.jp/p_mof/singikai/kaikei/tosin/1a909b2.htm",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "1a909b2"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.fsa.go.jp/p_mof/singikai/kaikei/tosin/1a909b2.htm",
+    "https://www.fsa.go.jp/p_mof/singikai/kaikei/tosin/1a909b1.htm"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q40-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 449,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1586,
+          "webSearchRequests": 0,
+          "costUSD": 0.0219318,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0219318,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q40-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 12963,
+          "outputTokens": 3730,
+          "cacheReadInputTokens": 5985,
+          "cacheCreationInputTokens": 4861,
+          "webSearchRequests": 1,
+          "costUSD": 0.176537,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 306,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.176537,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q40-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 12469,
+          "outputTokens": 3065,
+          "cacheReadInputTokens": 6690,
+          "cacheCreationInputTokens": 5412,
+          "webSearchRequests": 1,
+          "costUSD": 0.16581,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 709,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.16581,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

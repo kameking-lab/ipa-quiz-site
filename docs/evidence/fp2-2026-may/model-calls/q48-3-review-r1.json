@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問48\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n登録免許税に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 相続により建物を取得し、所有権移転登記を行う場合、登録免許税は課されない。\nイ. 個人が所有する土地の上に新築した家屋について、所在、家屋番号、構造、床面積などが記録される表題登記を行う場合、登録免許税は課されない。\nウ. 不動産に抵当権設定登記を行う際の登録免許税の課税標準は、当該不動産の固定資産税評価額である。\nエ. 贈与により取得した土地の所有権移転登記を行う際の登録免許税の課税標準は、当該土地の相続税評価額である。\n\n【解説案】\n{\n \"explanation\": \"登録免許税は不動産の権利に関する登記（所有権保存登記・所有権移転登記・抵当権設定登記など）にかかります。表示に関する登記である表題登記（建物表題登記）は、原則として課税されません。そのため、新築家屋の所在、家屋番号、構造、床面積などを記録する表題登記には登録免許税がかからず、「イ」が正解です。あわせて、課税標準を確認しておきましょう。所有権の登記は不動産の価額（原則として固定資産課税台帳の登録価格）、抵当権設定登記は債権金額が課税標準です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。相続による所有権移転登記にも登録免許税は課されます。本則の税率は0.4%です。なお、土地の価額が100万円以下の場合などの免税措置はありますが、建物にはこの措置は適用されません。\",\n  \"イ\": \"適切な記述で、本問の正解です。建物の所在、家屋番号、構造、床面積などを記録する表題登記は表示に関する登記です。原則として登録免許税は課されません。\",\n  \"ウ\": \"誤りです。抵当権設定登記の登録免許税の課税標準は債権金額です。本則の税率は0.4%です。固定資産税評価額が課税標準になるのは、所有権の保存・移転登記などの場合です。\",\n  \"エ\": \"誤りです。贈与による所有権移転登記の登録免許税の課税標準は、固定資産課税台帳に登録された価格（固定資産税評価額）です。相続税評価額ではありません。本則の税率は2%です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7190.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 35166,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1657274,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5388,
+    "cache_read_input_tokens": 6497,
+    "output_tokens": 1649,
+    "output_tokens_details": {
+      "thinking_tokens": 671
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5388,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 12881,
+      "outputTokens": 2990,
+      "cacheReadInputTokens": 6497,
+      "cacheCreationInputTokens": 5388,
+      "webSearchRequests": 1,
+      "costUSD": 0.1657274,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 683,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\n判定はPASSで、このまま公開できます。4肢すべての解説が、2025-04-01時点の法令で正しいことを確認しました。\n\n- **ア（誤り）**：相続による所有権移転登記には課税され、本則の税率は0.4%です。租税特別措置法84条の2の3の免税措置（土地の価額が100万円以下の場合など）は土地だけが対象で、建物には適用されません。解説はこの点を正しく書いています。\n- **イ（正答）**：表題登記は表示に関する登記なので、登録免許税は課されません。表示に関する登記でも分筆・合筆などは課税されるため、解説の「原則として」という書き方は適切です。\n- **ウ（誤り）**：抵当権設定登記の課税標準は債権金額で、本則の税率は0.4%です。\n- **エ（誤り）**：贈与による所有権移転登記の課税標準は、固定資産課税台帳の登録価格です。本則の税率は2%で、売買と違って土地の軽減措置はありません。\n\n**公式正答との整合**：「最も適切なもの」を選ぶ問題で、正答肢はイの1つだけです。公式正答と一致しています。\n\n**基準日で答えが一つに決まるか**：決まります。この論点について、基準日後に正答が変わるような改正はありません。\n\n**参照URL**：No.7190（登録免許税のあらまし）とNo.7191（登録免許税の税額表）は、どちらも実在する国税庁のページで、解説の論点に対応しています。No.7191には課税標準の「不動産の価額」の説明と、相続登記の免税措置が載っています。\n\nSources:\n- [No.7190 登録免許税のあらまし｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7190.htm)\n- [No.7191 登録免許税の税額表｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/inshi/7191.htm)",
+  "ttft_ms": 10533,
+  "type": "result",
+  "duration_ms": 35278,
+  "uuid": "a35edbae-3c7a-448a-861b-43ddb43bd9ad",
+  "ttft_stream_ms": 2250,
+  "time_to_request_ms": 92,
+  "first_content_frame_ms": 2250,
+  "time_to_request_from_spawn_ms": 982840,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330367853.8691,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

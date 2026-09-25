@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問57\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\nＸ年４月７日（月）に死亡した被相続人が所有していた上場株式Ｙを相続により取得した場合、下記の〈資料〉に基づき、上場株式Ｙの１株当たりの相続税評価額として、最も適切なものはどれか。なお、記載のない事項については考慮しないものとする。〈資料〉上場株式Ｙの価格・Ｘ年１月の毎日の最終価格の月平均額：1,140円・Ｘ年２月の毎日の最終価格の月平均額：1,150円・Ｘ年３月の毎日の最終価格の月平均額：1,180円・Ｘ年４月の毎日の最終価格の月平均額：1,240円・Ｘ年４月４日（金）の最終価格   ：1,230円・Ｘ年４月７日（月）の最終価格   ：1,210円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 1,140円\nイ. 1,150円\nウ. 1,210円\nエ. 1,240円\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5195,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0204318,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1591,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 372,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1591,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 372,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1591,
+      "webSearchRequests": 0,
+      "costUSD": 0.0204318,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"イ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"1,140円は1月の月平均額であり、課税時期の属する月以前3か月（2月・3月・4月）の範囲外のため選択できない。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"上場株式は、課税時期の最終価格（1,210円）、課税時期の属する月の月平均額（4月1,240円）、前月の月平均額（3月1,180円）、前々月の月平均額（2月1,150円）のうち最も低い価格で評価する。最も低いのは2月の1,150円。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"1,210円は課税時期（4月7日）の最終価格だが、2月の月平均額1,150円の方が低いため評価額にはならない。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"1,240円は4月の月平均額で、候補の中で最も高く、評価額にはならない。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5242,
+  "type": "result",
+  "duration_ms": 5340,
+  "uuid": "8315bf95-1427-43a6-a746-857661cef8b2",
+  "ttft_stream_ms": 1783,
+  "time_to_request_ms": 160,
+  "first_content_frame_ms": 1784,
+  "time_to_request_from_spawn_ms": 1042733,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330427383.765,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

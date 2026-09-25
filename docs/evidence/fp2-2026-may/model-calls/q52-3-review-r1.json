@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問52\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n贈与税の配偶者控除（以下、「本控除」という）に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 本控除の適用を受けるためには、贈与を受けた時点で、贈与者である配偶者との婚姻期間が20年以上でなければならない。\nイ. 本控除の適用を受けるにあたって、配偶者から贈与を受ける財産の種類や金額に制限はない。\nウ. 過去に本控除の適用を受けたことがある場合、その後、同一の配偶者から贈与を受けても、再び本控除の適用を受けることはできない。\nエ. 本控除の適用を受ける場合、贈与税額の計算上、贈与税の課税価格から、基礎控除額と合わせて最高で2,110万円を控除することができる。\n\n【解説案】\n{\n \"explanation\": \"贈与税の配偶者控除を受けるには、婚姻期間が20年以上の配偶者から贈与を受けることが条件です。対象になる財産は、国内の居住用不動産（家屋やその敷地、借地権を含む）と、居住用不動産を取得するための金銭に限られます。さらに、贈与を受けた年の翌年3月15日までに実際に住み、その後も住み続ける見込みであることも必要です。控除額は最高2,000万円で基礎控除110万円と併用でき、同じ配偶者からの贈与については一生に一度しか使えません。財産の種類に制限がないとする記述は誤りなので、これが本問の正解です。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。贈与税の配偶者控除は、贈与を受けた時点で婚姻期間が20年以上になっていることが適用要件の一つです。\",\n  \"イ\": \"不適切な記述で、本問の正解です。対象になる財産は、居住用不動産（国内の居住用家屋やその敷地）と、居住用不動産を取得するための金銭に限られます。控除額にも最高2,000万円という上限があります。\",\n  \"ウ\": \"適切な記述です。贈与税の配偶者控除は、同じ配偶者からの贈与については一生に一度しか適用を受けることができません。\",\n  \"エ\": \"適切な記述です。配偶者控除の最高2,000万円と暦年課税の基礎控除110万円を合わせて、贈与税の課税価格から最高2,110万円を控除できます。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4455.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 42927,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3041276,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7009,
+    "cache_read_input_tokens": 6518,
+    "output_tokens": 1445,
+    "output_tokens_details": {
+      "thinking_tokens": 351
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7009,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 35553,
+      "outputTokens": 4227,
+      "cacheReadInputTokens": 6518,
+      "cacheCreationInputTokens": 7009,
+      "webSearchRequests": 2,
+      "costUSD": 0.3041276,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 546,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "判定はPASSです。国税庁タックスアンサーNo.4452・No.4455（どちらも令和7年4月1日現在法令等）と照らし合わせ、解説案の内容に事実誤りはありませんでした。\n\n- **ア（適切）**：「婚姻期間が20年を過ぎた後に贈与が行われたこと」が要件です。解説は正しいです。\n- **イ（不適切＝正答）**：対象となる財産は、国内の居住用不動産か、居住用不動産を取得するための金銭に限られます。控除額にも最高2,000万円の上限があります。解説はこの点を正しく説明しており、公式正答「イ」とも合っています。\n- **ウ（適切）**：同じ配偶者からの贈与には、一生に一度しか適用できません。\n- **エ（適切）**：基礎控除110万円に、配偶者控除の最高2,000万円を加え、合計2,110万円を控除できます。\n- **解説本文**：翌年3月15日までに住み、その後も住み続ける見込みがあるという要件も、敷地に借地権を含むという点も、国税庁の記載と一致します。\n- **基準日**：2025年4月1日以降、この制度に関わる改正は確認していません。答えはイに一つに決まります。\n- **参照URL**：No.4452（制度の概要と要件）とNo.4455（対象となる居住用不動産の範囲）は、どちらも実在する国税庁の公式ページです。論点にも合っています。\n\n```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": {\"ok\": true, \"issue\": \"\"}, \"ウ\": {\"ok\": true, \"issue\": \"\"}, \"エ\": {\"ok\": true, \"issue\": \"\"}},\n \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm)\n- [No.4455 配偶者控除の対象となる居住用不動産の範囲｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4455.htm)",
+  "ttft_ms": 5789,
+  "type": "result",
+  "duration_ms": 30694,
+  "uuid": "69b28868-d7cc-4013-b3f0-eca6dc49ef86",
+  "ttft_stream_ms": 1842,
+  "time_to_request_ms": 95,
+  "first_content_frame_ms": 1843,
+  "time_to_request_from_spawn_ms": 1014959,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330399981.865,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

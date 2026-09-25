@@ -1,0 +1,157 @@
+{
+  "question": 45,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 26,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "28ac716feaf77078cebfc270e05e27218d4f987ae489869fc0267993d8b51ef8",
+    "choicesSha256": "7bbe09d2e7210559fdf380121d206d7f6b0743a4c2c9df2ffc64cefdc1ad3432",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 3)",
+    "key": "ウ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ウ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "e-Gov法令検索の都市計画法本体のURL（https://laws.e-gov.go.jp/law/343AC0000000100 と推定）は、検索結果で実在を確認できなかったため掲載していません。",
+      "市街化区域の開発許可が不要となる規模を条例で300㎡まで引き下げられる点は、確立した制度知識として書いています。今回の検索では条文を直接確認していません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "都市計画：開発許可制度の概要 - 国土交通省"
+    },
+    {
+      "url": "https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "都市計画：開発許可制度 - 国土交通省"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html",
+    "https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q45-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 418,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1538,
+          "webSearchRequests": 0,
+          "costUSD": 0.020927800000000003,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 0,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.020927800000000003,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q45-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 45852,
+          "outputTokens": 6017,
+          "cacheReadInputTokens": 14189,
+          "cacheCreationInputTokens": 8367,
+          "webSearchRequests": 3,
+          "costUSD": 0.4035218,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 283,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.4035218,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q45-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 19329,
+          "outputTokens": 2737,
+          "cacheReadInputTokens": 6631,
+          "cacheCreationInputTokens": 6016,
+          "webSearchRequests": 2,
+          "costUSD": 0.20151019999999997,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 433,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.20151019999999997,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

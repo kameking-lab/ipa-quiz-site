@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問57\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\nＸ年４月７日（月）に死亡した被相続人が所有していた上場株式Ｙを相続により取得した場合、下記の〈資料〉に基づき、上場株式Ｙの１株当たりの相続税評価額として、最も適切なものはどれか。なお、記載のない事項については考慮しないものとする。〈資料〉上場株式Ｙの価格・Ｘ年１月の毎日の最終価格の月平均額：1,140円・Ｘ年２月の毎日の最終価格の月平均額：1,150円・Ｘ年３月の毎日の最終価格の月平均額：1,180円・Ｘ年４月の毎日の最終価格の月平均額：1,240円・Ｘ年４月４日（金）の最終価格   ：1,230円・Ｘ年４月７日（月）の最終価格   ：1,210円\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 1,140円\nイ. 1,150円\nウ. 1,210円\nエ. 1,240円\n\n【解説案】\n{\n \"explanation\": \"上場株式は、原則として課税時期（相続では被相続人の死亡の日）の最終価格で評価します。ただし、その価格が「課税時期の属する月」「前月」「前々月」のそれぞれの毎日の最終価格の月平均額のうち最も低いものを超える場合は、その最も低い価額で評価します。本問では、4月7日の最終価格1,210円、4月の月平均額1,240円、3月の月平均額1,180円、2月の月平均額1,150円の4つから最も低いものを選びます。min(1,210円, 1,240円, 1,180円, 1,150円)＝1,150円となります。3か月より前の1月の月平均額と、死亡日の前の取引日（4月4日）の最終価格は比べる対象に入らない点が論点です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。1,140円は1月の月平均額です。死亡日（4月7日）から見て前々月より前の月にあたるため、比べる対象になりません。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。死亡日の最終価格1,210円、4月の月平均額1,240円、3月の月平均額1,180円、2月（前々月）の月平均額1,150円の4つのうち、最も低い1,150円が評価額になります。\",\n  \"ウ\": \"誤りです。1,210円は死亡日の最終価格です。前々月（2月）の月平均額1,150円のほうが低いため、1,210円は評価額になりません。\",\n  \"エ\": \"誤りです。1,240円は死亡した月（4月）の月平均額です。4つの価額の中で最も高く、最も低い価額（1,150円）を選ぶというルールに合いません。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4632.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 27174,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1562212,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4976,
+    "cache_read_input_tokens": 6586,
+    "output_tokens": 1280,
+    "output_tokens_details": {
+      "thinking_tokens": 405
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4976,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 14169,
+      "outputTokens": 2421,
+      "cacheReadInputTokens": 6586,
+      "cacheCreationInputTokens": 4976,
+      "webSearchRequests": 1,
+      "costUSD": 0.1562212,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 420,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [],\n \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nPASSです。直すべき点は見つかりませんでした。\n\n- **評価ルール**：国税庁タックスアンサーNo.4632で確認しました。上場株式は、次の4つのうち最も低い価額で評価します。\n  - 課税時期（死亡日）の最終価格\n  - 課税時期の属する月の月平均額\n  - 前月の月平均額\n  - 前々月の月平均額\n\n  解説案はこのルールどおりです。本問では、1,210円・1,240円・1,180円・1,150円のうち最も低い1,150円が評価額となり、公式正答「イ」と一致します。\n- **比べる対象に入らない価格**：1月は前々月より前の月なので対象外です。4月4日の終値も対象外です。死亡日の4月7日に終値があり、課税時期に最終価格がない場合の修正も不要だからです。解説案はこの点も正しく説明しています。\n- **基準日**：このルールは2025-04-01時点で施行されています。参照したページは令和8年4月1日現在の法令等で書かれていますが、同じ内容です。基準日後に解説へ影響する改正はなく、答えは一つに決まります。\n- **参照URL**：国税庁の公式ページで、実在を確認しました。本問の論点に直接対応しています。\n\n本文の「3か月より前の1月」は少しあいまいな言い方です。ただ、事実の誤りではないので、修正対象にはしていません。\n\nSources:\n- [No.4632 上場株式の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4632.htm)",
+  "ttft_ms": 7114,
+  "type": "result",
+  "duration_ms": 27297,
+  "uuid": "170003de-0109-4904-82f6-2a6a97f31415",
+  "ttft_stream_ms": 1843,
+  "time_to_request_ms": 107,
+  "first_content_frame_ms": 1844,
+  "time_to_request_from_spawn_ms": 1077776,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330462707.7354,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

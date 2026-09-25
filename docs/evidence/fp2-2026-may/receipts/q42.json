@@ -1,0 +1,208 @@
+{
+  "question": 42,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 25,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "927c36ab68356c844d12b6c7424b22a2457a07b3d37d474b9b3b06ae7f848e47",
+    "choicesSha256": "6b6fed71b051f89f69c502b15a36a4af7f94cbdec4d6dc495d6d2c393a34b69b",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 1)",
+    "key": "ア"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "ア",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "e-Gov法令検索の宅地建物取引業法の条文ページは、検索では出てきませんでした。そのため officialReferenceUrls には入れていません。第34条の2の各項の番号（報告義務が第9項、特約の無効が第10項など）は解説文に書いていません。",
+      "参照している国土交通省の通達『標準媒介契約約款の運用』は古い通達で、条番号が現行と異なります（報告義務を『第五項』と表記）。内容の根拠として使う場合は、現行条文と突き合わせてください。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/327AC1000000176",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "宅地建物取引業法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001213683.pdf",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "application/pdf",
+      "title": "(PDF)"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://www.mlit.go.jp/common/001213683.pdf"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q42-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 499,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1557,
+          "webSearchRequests": 0,
+          "costUSD": 0.0226998,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 110,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0226998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 32208,
+          "outputTokens": 6001,
+          "cacheReadInputTokens": 5958,
+          "cacheCreationInputTokens": 7123,
+          "webSearchRequests": 2,
+          "costUSD": 0.3270276,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 724,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3270276,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 54286,
+          "outputTokens": 5953,
+          "cacheReadInputTokens": 15888,
+          "cacheCreationInputTokens": 9588,
+          "webSearchRequests": 5,
+          "costUSD": 0.4660856,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1138,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.4660856,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 35642,
+          "outputTokens": 6750,
+          "cacheReadInputTokens": 15717,
+          "cacheCreationInputTokens": 10028,
+          "webSearchRequests": 3,
+          "costUSD": 0.3909354,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 672,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3909354,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q42-3-review-r3.json",
+      "stage": "3-review-r3",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11175,
+          "outputTokens": 2231,
+          "cacheReadInputTokens": 6702,
+          "cacheCreationInputTokens": 4851,
+          "webSearchRequests": 1,
+          "costUSD": 0.1394684,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 650,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1394684,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

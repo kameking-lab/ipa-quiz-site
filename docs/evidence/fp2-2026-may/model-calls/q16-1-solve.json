@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問16\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n任意加入の自動車保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 対物賠償保険では、被保険自動車を運転中に誤って自宅の車庫に衝突して損壊させて損害を被った場合、補償の対象となる。\nイ. 一般条件の車両保険では、被保険自動車が地震を原因とする津波により水没して損害を被った場合、補償の対象となる。\nウ. 対物賠償保険では、被保険自動車を運転中に誤って通行人が連れていたペットに衝突して死なせ、法律上の損害賠償責任を負った場合、補償の対象とならない。\nエ. 対人賠償保険では、被保険自動車を運転中に対人事故を起こした被保険者が法律上の損害賠償責任を負った場合、自動車損害賠償責任保険等によって補償される部分を除いた額が補償の対象となる。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5331,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0205918,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1591,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 380,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1591,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 380,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1591,
+      "webSearchRequests": 0,
+      "costUSD": 0.0205918,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"対物賠償保険は他人の財物に対する法律上の損害賠償責任を補償するもの。記名被保険者やその家族が所有する自宅の車庫の損壊は、他人の財物ではないので補償の対象外となる。\"}, \"イ\": {\"statementIsAppropriate\": false, \"reason\": \"一般条件の車両保険でも、地震・噴火・これらによる津波で生じた損害は免責となる。補償を受けるには地震・噴火・津波危険補償特約が必要。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"ペットは法律上「物」として扱われるため、他人のペットを死なせて負った損害賠償責任は対物賠償保険の補償対象となる。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"対人賠償保険は自賠責保険の上乗せ保険であり、自賠責保険等で支払われる額を超える部分が補償される。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5805,
+  "type": "result",
+  "duration_ms": 5914,
+  "uuid": "cbd23429-97d4-4931-b70c-5330c49c7835",
+  "ttft_stream_ms": 2367,
+  "time_to_request_ms": 583,
+  "first_content_frame_ms": 2367,
+  "time_to_request_from_spawn_ms": 560558,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329943587.6782,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

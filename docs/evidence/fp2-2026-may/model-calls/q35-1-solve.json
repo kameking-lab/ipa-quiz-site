@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問35\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における住宅借入金等特別控除（以下、「住宅ローン控除」という）に関する次の記述のうち、最も不適切なものはどれか。なお、各選択肢において、ほかに必要な要件等はすべて満たしているものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 住宅ローン控除の適用を受けている者が、住宅ローンの一部繰上げ返済を行い、借入金の返済期間が最初に返済した月から10年未満となった場合であっても、残りの控除期間について住宅ローン控除の適用を受けることができる。\nイ. 住宅ローン控除の適用を受けていた者が、転勤に伴う転居等のやむを得ない事由により、住宅を居住の用に供しなくなった場合に、翌年以降に再び当該住宅を居住の用に供したときは、原則として、再入居した年以後の控除期間内について住宅ローン控除の適用を受けることができる。\nウ. 年末調整の対象となる給与所得者であっても、住宅ローン控除の適用を受ける最初の年分は、一定の書類を添付した確定申告書を納税地の所轄税務署長に提出しなければならない。\nエ. 住宅ローン控除の控除額が所得税額から控除しきれない場合、その残額が、一定額を限度として翌年度分の住民税額から控除される。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 6217,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.022751800000000003,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1711,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 440,
+    "output_tokens_details": {
+      "thinking_tokens": 47
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1711,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 440,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1711,
+      "webSearchRequests": 0,
+      "costUSD": 0.022751800000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 47,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"住宅ローン控除の対象は返済期間10年以上の借入金である。一部繰上げ返済で、最初の返済月からの返済期間が10年未満になった場合は、その年分以後は控除を受けられない。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"転勤などやむを得ない事由で転居し、その後再入居した場合は、一定の要件を満たせば再入居した年以後の残りの控除期間について再適用を受けられる。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"給与所得者でも、最初の年分は必要書類を添付して確定申告をしなければならない。2年目以降は年末調整で適用を受けられる。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"所得税から控除しきれない額は、一定の限度額（原則は所得税の課税総所得金額等の5%、最高9.75万円）の範囲内で翌年度分の住民税から控除される。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 2478,
+  "type": "result",
+  "duration_ms": 6337,
+  "uuid": "f7524349-515e-47f2-9a51-4ea595f17226",
+  "ttft_stream_ms": 1849,
+  "time_to_request_ms": 111,
+  "first_content_frame_ms": 1849,
+  "time_to_request_from_spawn_ms": 740443,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330125402.6035,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

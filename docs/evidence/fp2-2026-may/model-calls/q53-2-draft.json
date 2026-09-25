@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問53\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n法定後見制度に関する次の記述の空欄（ア）～（ウ）にあてはまる語句の組合せとして、最も適切なものはどれか。法定後見制度は、本人の判断能力が（ ア ）に、（ イ ）が選任した成年後見人等が本人を法律的に支援する制度である。法定後見制度には、精神上の障害による本人の判断能力の程度によって、（ ウ ）の３つの類型がある。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. （ア）不十分になる前  （イ）本人    （ウ）後見・保佐・補助\nイ. （ア）不十分になった後 （イ）家庭裁判所 （ウ）後見・保佐・補助\nウ. （ア）不十分になった後 （イ）本人    （ウ）後見・介護・支援\nエ. （ア）不十分になる前  （イ）家庭裁判所 （ウ）後見・介護・支援\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 36200,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.20187739999999998,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4533,
+    "cache_read_input_tokens": 5967,
+    "output_tokens": 1690,
+    "output_tokens_details": {
+      "thinking_tokens": 139
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4533,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21215,
+      "outputTokens": 3478,
+      "cacheReadInputTokens": 5967,
+      "cacheCreationInputTokens": 4533,
+      "webSearchRequests": 1,
+      "costUSD": 0.20187739999999998,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 163,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "公式正答「イ」と合う解説です。制度の中身は、法務省・厚生労働省・裁判所の公式ページで確かめました。\n\n```json\n{\"explanation\": \"法定後見制度は、本人の判断能力が精神上の障害によってすでに不十分になった後に、本人・配偶者・4親等内の親族などが申し立て、家庭裁判所が成年後見人等（成年後見人・保佐人・補助人）を選ぶ制度です。判断能力の程度に応じて、「後見」（判断能力を欠くのが通常の状態）、「保佐」（判断能力が著しく不十分）、「補助」（判断能力が不十分）の3つの類型があります。判断能力があるうちに、将来に備えて本人が契約で後見人となる人をあらかじめ選んでおくのは「任意後見制度」です。本人が選ぶか家庭裁判所が選ぶか、判断能力が衰える前か後かという点で、2つの制度を区別できるようにしておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。判断能力が不十分になる前に本人が後見人となる人を選んでおくのは任意後見制度の説明です。法定後見制度は、判断能力が不十分になった後に家庭裁判所が成年後見人等を選ぶ制度です。\",\n  \"イ\": \"適切な記述で、本問の正解です。法定後見制度は、本人の判断能力が不十分になった後に家庭裁判所が成年後見人等を選ぶ制度で、判断能力の程度に応じて後見・保佐・補助の3つの類型があります。\",\n  \"ウ\": \"誤りです。法定後見制度で成年後見人等を選ぶのは本人ではなく家庭裁判所です。また、3つの類型は「後見・保佐・補助」で、「介護」「支援」という類型はありません。\",\n  \"エ\": \"誤りです。法定後見制度は、判断能力が不十分になる前ではなく、不十分になった後に利用する制度です。また、3つの類型は「後見・保佐・補助」で、「介護」「支援」という類型はありません。\"\n },\n \"topicTags\": [\"法定後見制度\", \"後見・保佐・補助\", \"任意後見制度との違い\"],\n \"isCalculation\": false, \"difficulty\": 1,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.moj.go.jp/MINJI/a02.html\",\n  \"https://guardianship.mhlw.go.jp/personal/type/legal_guardianship/\",\n  \"https://www.courts.go.jp/saiban/koukenp00/koukenp1/index.html\"\n ],\n \"concerns\": [\n  \"令和6年4月から、法制審議会民法（成年後見等関係）部会で成年後見制度の見直しが話し合われています。後見と保佐の類型をなくして補助に一本化する案も出ています（厚生労働省資料、令和8年1月）。今回の調べでは、改正法が成立・施行されたかどうかは確認できませんでした。基準日（2025-04-01）時点では現行の3類型なので正答には影響しませんが、公開後に改正が成立した場合は、lawDateNoteに書き足す必要があります。\",\n  \"difficultyは基本知識の問題と考えて1にしました。サイトの難易度基準が指定の2なら、2に直してください。\"\n ]}\n```\n\nSources:\n- [法務省 成年後見制度・成年後見登記制度 Q&A（法定後見制度について）](https://www.moj.go.jp/MINJI/a02.html)\n- [厚生労働省 成年後見はやわかり（法定後見制度とは）](https://guardianship.mhlw.go.jp/personal/type/legal_guardianship/)\n- [裁判所 成年後見制度（後見・保佐・補助）の概要](https://www.courts.go.jp/saiban/koukenp00/koukenp1/index.html)\n- [厚生労働省 成年後見制度の見直し等について（R8.1.19資料）](https://www.mhlw.go.jp/content/12201000/001634485.pdf)",
+  "ttft_ms": 2109,
+  "type": "result",
+  "duration_ms": 36302,
+  "uuid": "42066981-a1d8-4c3a-b5ca-b78280eacf2e",
+  "ttft_stream_ms": 1809,
+  "time_to_request_ms": 88,
+  "first_content_frame_ms": 1809,
+  "time_to_request_from_spawn_ms": 1000577,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330385589.6672,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

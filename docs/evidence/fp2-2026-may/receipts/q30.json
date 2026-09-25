@@ -1,0 +1,194 @@
+{
+  "question": 30,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 19,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "00d9167cf4d21ac4aa8bdbe743ca5d1747561fa9b91efe6785be8ad1fc34e3f5",
+    "choicesSha256": "5af7749158ab1222575ba091dbdf5fba0de067fba664e2441093fc9f5a265cf9",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "法律名の変更と条番号の移動があるため、条番号は解説に書いていません。法律名は、令和2年改正で「金融サービスの提供に関する法律」に、令和5年法律第79号で現在の名称に変わりました。現在の名称になった施行日は、検索結果では確認しきれていません。",
+      "e-Gov法令検索の現行条文ページ（https://laws.e-gov.go.jp/law/412AC0000000101）は検索結果に直接出てこなかったため、URL欄には入れていません。",
+      "検索結果では、令和6年法律第52号による改正（2026年12月13日施行予定）の存在が確認できました。基準日時点の内容には影響しませんが、勧誘方針・説明義務の規定に変更があるかどうかは確認していません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/412AC0000000101",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "金融サービスの提供及び利用環境の整備等に関する法律",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.fsa.go.jp/common/diet/201/index.html",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "第201回国会における金融庁関連法律案：金融庁"
+    },
+    {
+      "url": "https://www.fsa.go.jp/common/law/guide/kinsa/index.html",
+      "host": "www.fsa.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "金融サービス仲介業者向けの総合的な監督指針：金融庁"
+    }
+  ],
+  "referenceUrlsDropped": [],
+  "finalReviewWebSources": [
+    "https://laws.e-gov.go.jp/law/412AC0000000101",
+    "https://laws.e-gov.go.jp/law/506M60000002102",
+    "https://www.fsa.go.jp/news/r6/sonota/20241120/20241120.html",
+    "https://www.fsa.go.jp/common/law/guide/kinsa/index.html"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q30-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 538,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1667,
+          "webSearchRequests": 0,
+          "costUSD": 0.0243598,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 173,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0243598,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q30-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21995,
+          "outputTokens": 5124,
+          "cacheReadInputTokens": 6068,
+          "cacheCreationInputTokens": 7014,
+          "webSearchRequests": 2,
+          "costUSD": 0.26778559999999996,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 910,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.26778559999999996,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q30-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 69738,
+          "outputTokens": 8068,
+          "cacheReadInputTokens": 19809,
+          "cacheCreationInputTokens": 13277,
+          "webSearchRequests": 5,
+          "costUSD": 0.6004898,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 2032,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.6004898,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q30-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 35402,
+          "outputTokens": 5657,
+          "cacheReadInputTokens": 6849,
+          "cacheCreationInputTokens": 9439,
+          "webSearchRequests": 3,
+          "costUSD": 0.3616298,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 1232,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.3616298,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

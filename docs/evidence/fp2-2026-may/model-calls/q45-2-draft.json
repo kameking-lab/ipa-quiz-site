@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ウ」です（原典の正解 3) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問45\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n都市計画法に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 市街化区域は、既に市街地を形成している区域およびおおむね10年以内に優先的かつ計画的に市街化を図るべき区域とされている。\nイ. 市街化区域内で行う開発行為で、その規模が1,000㎡未満（三大都市圏の一定の区域内では500㎡未満）であるものは、原則として、都道府県知事等の開発許可を受ける必要はない。\nウ. 土地の分筆は、その行為が建築物の建築または特定工作物の建設を目的としていなくても、開発行為に該当する。\nエ. 開発許可を受けた開発区域内の土地においては、開発行為に関する工事完了の公告があるまでの間は、原則として、建築物を建築することができない。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 65000,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.4035218,
+  "usage": {
+    "input_tokens": 6,
+    "cache_creation_input_tokens": 8367,
+    "cache_read_input_tokens": 14189,
+    "output_tokens": 1789,
+    "output_tokens_details": {
+      "thinking_tokens": 76
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 8367,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 45852,
+      "outputTokens": 6017,
+      "cacheReadInputTokens": 14189,
+      "cacheCreationInputTokens": 8367,
+      "webSearchRequests": 3,
+      "costUSD": 0.4035218,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 283,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "解説を作成しました。正答「ウ」とは矛盾しません。単なる分筆（土地の登記上の分割）だけでは区画形質の変更にあたらないため、ウは不適切な記述です。\n\n```json\n{\"explanation\": \"開発行為とは、主として建築物の建築または特定工作物の建設の用に供する目的で行う土地の区画形質の変更をいいます（都市計画法4条12項）。建築等の目的がない土地の区画形質の変更は開発行為に該当しません。また、国土交通省の開発許可制度運用指針では、単なる分合筆は規制の対象とならないとされています。そのため、建築等を目的としない土地の分筆も開発行為に該当するとする記述が最も不適切です。開発行為の定義に加えて、市街化区域の定義、開発許可が不要となる規模、工事完了公告前の建築制限もあわせて押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。市街化区域は、すでに市街地を形成している区域と、おおむね10年以内に優先的かつ計画的に市街化を図るべき区域です（都市計画法7条2項）。\",\n  \"イ\": \"適切な記述です。市街化区域内の開発行為は、規模が原則1,000㎡未満（三大都市圏の一定の区域では500㎡未満）であれば、開発許可は不要です。なお、この面積は都道府県等の条例で300㎡まで引き下げられることがあります。\",\n  \"ウ\": \"不適切な記述で、本問の正解です。開発行為は、主として建築物の建築または特定工作物の建設を目的とする土地の区画形質の変更をいいます。建築等を目的としない単なる分筆は、開発行為に該当しません。\",\n  \"エ\": \"適切な記述です。開発許可を受けた開発区域内の土地では、工事完了の公告があるまで、原則として建築物の建築や特定工作物の建設はできません（都市計画法37条）。例外として、工事用の仮設建築物や都道府県知事等が支障がないと認めたものなどは建築できます。\"\n },\n \"topicTags\": [\"開発行為の定義\", \"開発許可の要否\", \"市街化区域\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html\", \"https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html\"],\n \"concerns\": [\"e-Gov法令検索の都市計画法本体のURL（https://laws.e-gov.go.jp/law/343AC0000000100 と推定）は、検索結果で実在を確認できなかったため掲載していません。\", \"市街化区域の開発許可が不要となる規模を条例で300㎡まで引き下げられる点は、確立した制度知識として書いています。今回の検索では条文を直接確認していません。\"]}\n```\n\n確認できたこと：\n- 開発行為の定義と「単なる分合筆は規制の対象とならない」という運用指針の内容は、国土交通省のページで確認しました。\n- officialReferenceUrls には、検索で実在を確認した国土交通省の2ページだけを入れています。\n- 都市計画法本体のe-Govページは検索で見つからなかったため、URLを入れていません（上記 concerns に記載）。\n\nSources:\n- [都市計画：開発許可制度の概要 - 国土交通省](https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_fr_000046.html)\n- [都市計画：開発許可制度 - 国土交通省](https://www.mlit.go.jp/toshi/city_plan/toshi_city_plan_tk_000011.html)\n- [開発許可制度運用指針（国土交通省）](https://www.mlit.go.jp/toshi/city_plan/content/001877574.pdf)",
+  "ttft_ms": 2107,
+  "type": "result",
+  "duration_ms": 50710,
+  "uuid": "0c548586-a5a7-46c5-aaee-5177378e3771",
+  "ttft_stream_ms": 1747,
+  "time_to_request_ms": 96,
+  "first_content_frame_ms": 1747,
+  "time_to_request_from_spawn_ms": 885131,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330270128.47,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

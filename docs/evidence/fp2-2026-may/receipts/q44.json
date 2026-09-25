@@ -1,0 +1,196 @@
+{
+  "question": 44,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
+  "source": {
+    "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
+    "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
+    "pdfPage": 26,
+    "reuseTerms": {
+      "url": "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
+      "sha256": "db604850c3f14cab982bedf622beae6f33d0624dd79f8dc8f9baaa979e00df45"
+    }
+  },
+  "transcription": {
+    "stemSha256": "7309ad936ac5e2bc17c445e1695b33f621984cc679bd315e13efa215c7eb6dfc",
+    "choicesSha256": "aba75be8d0ffad7e05d2d341e32455cc2a18e8ab7af3d7c4126dc07f6659196d",
+    "extractorChecks": {
+      "stemAgrees": true,
+      "stemPrefixAgrees": true,
+      "choicesAgree": true,
+      "answerAgrees": true,
+      "fourChoices": true
+    },
+    "choiceCount": 4
+  },
+  "officialAnswer": {
+    "pdfNotation": "正解 2)",
+    "key": "イ"
+  },
+  "figure": {
+    "pageVectorDrawings": 0,
+    "pageRasterImages": 0,
+    "required": false,
+    "imageUrls": [],
+    "transcribedFromRender": false,
+    "audit": null
+  },
+  "lawReferenceDate": {
+    "value": "2025-04-01",
+    "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
+    "reviewerLawDateClear": true
+  },
+  "judgment": {
+    "blindSolveAnswer": "イ",
+    "blindSolveAgrees": true,
+    "reviewVerdicts": [
+      "FIX",
+      "PASS"
+    ],
+    "finalReviewIssues": [],
+    "draftConcerns": [
+      "条番号（38条3項・4項・6項）は、デジタル社会形成整備法（令和3年法律第37号、2022年5月18日施行）で項が増えた後の番号です。古い教材では38条2項・4項などと書かれていることがあります。基準日（2025-04-01）時点の条文番号として正しいことは、e-Govの原文ではまだ確認していません。",
+      "e-Govの最新版は令和8年5月21日施行の改正（令和4年法律第48号）を反映していますが、定期借家の本問の論点に関わる変更はないと考えています。ただし、この点は条文で確認していません。"
+    ],
+    "draftLawDateNote(unpublished)": ""
+  },
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/403AC0000000090",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "借地借家法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    },
+    {
+      "url": "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000060.html",
+      "host": "www.mlit.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "住宅：定期建物賃貸借 Ｑ＆Ａ - 国土交通省"
+    },
+    {
+      "url": "https://www.moj.go.jp/content/001372507.pdf",
+      "host": "www.moj.go.jp",
+      "ok": false,
+      "status": 403,
+      "contentType": "text/html",
+      "title": "ERROR: The request could not be satisfied",
+      "reason": "HTTP status, empty title or not-found page"
+    }
+  ],
+  "referenceUrlsDropped": [
+    "https://www.moj.go.jp/content/001372507.pdf"
+  ],
+  "finalReviewWebSources": [
+    "https://laws.e-gov.go.jp/law/403AC0000000090",
+    "https://www.mlit.go.jp/jutakukentiku/house/jutakukentiku_house_tk3_000060.html",
+    "https://www.moj.go.jp/content/001372507.pdf",
+    "https://www.jpm.jp/topics/32279"
+  ],
+  "modelCalls": [
+    {
+      "file": "model-calls/q44-1-solve.json",
+      "stage": "1-solve",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 2,
+          "outputTokens": 605,
+          "cacheReadInputTokens": 1279,
+          "cacheCreationInputTokens": 1603,
+          "webSearchRequests": 0,
+          "costUSD": 0.0251878,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 126,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.0251878,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q44-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 21838,
+          "outputTokens": 4349,
+          "cacheReadInputTokens": 6002,
+          "cacheCreationInputTokens": 6463,
+          "webSearchRequests": 2,
+          "costUSD": 0.24723640000000002,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 474,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.24723640000000002,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q44-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 22647,
+          "outputTokens": 4927,
+          "cacheReadInputTokens": 6781,
+          "cacheCreationInputTokens": 7479,
+          "webSearchRequests": 2,
+          "costUSD": 0.2703162,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 953,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2703162,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q44-3-review-r2.json",
+      "stage": "3-review-r2",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 23079,
+          "outputTokens": 3950,
+          "cacheReadInputTokens": 6855,
+          "cacheCreationInputTokens": 7172,
+          "webSearchRequests": 2,
+          "costUSD": 0.25006300000000004,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 755,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.25006300000000004,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    }
+  ]
+}

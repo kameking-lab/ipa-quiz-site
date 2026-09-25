@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問18\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n損害保険の税金に関する次の記述のうち、最も適切なものはどれか。なお、いずれも契約者（＝保険料負担者）および被保険者は個人であるものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 契約者と被保険者が同一人である普通傷害保険において、ケガの治療のために入院した被保険者が受け取った入院保険金は、一時所得として所得税の課税対象となる。\nイ. 保険期間10年の積立傷害保険において、契約者が受け取った満期返戻金は、一時所得として所得税の課税対象となる。\nウ. 被保険自動車を運転中に誤って電柱に衝突し、契約者が受け取った自動車保険の車両保険の保険金は、当該車両の修理をしない場合、一時所得として所得税の課税対象となる。\nエ. 自宅建物が火災で焼失したことにより、契約者が受け取った火災保険の保険金は、保険金の額が当該建物の時価額よりも多い場合、一時所得として所得税の課税対象となる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 53369,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.3023854,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6669,
+    "cache_read_input_tokens": 6007,
+    "output_tokens": 1723,
+    "output_tokens_details": {
+      "thinking_tokens": 226
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6669,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 32528,
+      "outputTokens": 4886,
+      "cacheReadInputTokens": 6007,
+      "cacheCreationInputTokens": 6669,
+      "webSearchRequests": 2,
+      "costUSD": 0.3023854,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 314,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"損害保険の満期返戻金を保険料負担者（契約者）本人が受け取ると、一時所得として所得税の課税対象になります（所得税基本通達34-1）。一時所得の金額は「満期返戻金等 − 払込保険料の総額 − 特別控除額（最高50万円）」で計算し、その2分の1をほかの所得と合算して課税します。保険期間が5年以内などの要件を満たす一時払の損害保険（金融類似商品）の差益は20.315％の源泉分離課税になりますが、本問は保険期間10年なので当てはまりません。一方、身体の傷害を原因として受け取る保険金や、突発的な事故による資産の損害を補う保険金は、所得税法施行令30条により非課税です。\", \"choiceExplanations\": {\"ア\": \"誤りです。ケガの治療のための入院で被保険者本人が受け取る傷害保険の入院保険金は、身体の傷害に基因して支払われる保険金なので、所得税は非課税です。一時所得にはなりません。\", \"イ\": \"適切な記述で、本問の正解です。積立傷害保険の満期返戻金を契約者（保険料負担者）が受け取ると一時所得になり、「満期返戻金 − 払込保険料 − 特別控除（最高50万円）」の2分の1が総合課税の対象です。保険期間10年の契約は、金融類似商品として源泉分離課税になる保険期間5年以内などの要件に当たりません。\", \"ウ\": \"誤りです。自損事故で受け取る車両保険の保険金は、突発的な事故で資産に生じた損害を補うものなので、所得税は非課税です。車両を修理するかどうかで扱いは変わりません。\", \"エ\": \"誤りです。火災で自宅建物が損害を受けて受け取る火災保険の保険金は、資産の損害を補うものなので、所得税は非課税です。保険金の額が建物の時価額を上回っても、一時所得として課税されることはありません。\"},\n \"topicTags\": [\"損害保険の満期返戻金と一時所得\", \"非課税となる損害保険金\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm\", \"https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm\", \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1700.htm\"],\n \"concerns\": [\"エの「時価額を超える保険金も非課税」は一般的な試験上の扱い（所得税法施行令30条2号）に基づいています。これを直接述べた国税庁ページは、今回の検索では確認できていません。\", \"1700.htmは主に損害賠償金を扱うページで、資産の損害に対する保険金が非課税になる根拠としては間接的な参照です。\"]}\n```\n\nSources:\n- [No.1490 一時所得｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1490.htm)\n- [法第34条《一時所得》関係｜国税庁](https://www.nta.go.jp/law/tsutatsu/kihon/shotoku/04/08.htm)\n- [No.1700 加害者から治療費、慰謝料及び損害賠償金などを受け取ったとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1700.htm)",
+  "ttft_ms": 3331,
+  "type": "result",
+  "duration_ms": 36390,
+  "uuid": "a4e582ca-4a91-40b3-8054-2af036cc5701",
+  "ttft_stream_ms": 1886,
+  "time_to_request_ms": 113,
+  "first_content_frame_ms": 1887,
+  "time_to_request_from_spawn_ms": 565683,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329950645.9956,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

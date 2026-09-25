@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問34\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n所得税における医療費控除に関する次の記述のうち、最も不適切なものはどれか。なお、「特定一般用医薬品等購入費を支払った場合の医療費控除の特例」は考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. その年中に実際に支払った医療費が医療費控除の対象となり、未払いとなっている医療費は実際に支払われるまで医療費控除の対象とならない。\nイ. 給与所得者は、年末調整により医療費控除の適用を受けることができる。\nウ. 医師等による診療等を受けるために電車、バス等の公共交通機関を利用した場合に支払った通院費で通常必要なものは、医療費控除の対象となる。\nエ. 医療費控除の控除額の計算上、医療費の補填として受け取った保険金は、その補填の対象となった医療費の金額を限度として、医療費の金額から差し引く必要がある。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 42668,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2800644,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 5899,
+    "cache_read_input_tokens": 5962,
+    "output_tokens": 1546,
+    "output_tokens_details": {
+      "thinking_tokens": 95
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 5899,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 32755,
+      "outputTokens": 4033,
+      "cacheReadInputTokens": 5962,
+      "cacheCreationInputTokens": 5899,
+      "webSearchRequests": 2,
+      "costUSD": 0.2800644,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 230,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"医療費控除は、年末調整では適用を受けられない所得控除です。給与所得者でも、確定申告書に「医療費控除の明細書」を添付して申告する必要があります（所得税法120条等）。そのため、年末調整で適用できるとする記述が不適切で、本問の正解です。あわせて、控除の対象になるのはその年に実際に支払った医療費であること、保険金などで補填された金額は差し引くこと、控除額は「支払った医療費－保険金等で補填される金額－10万円（総所得金額等が200万円未満の人は総所得金額等の5%）」で上限200万円であることを押さえておきましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。医療費控除の対象は、その年の1月1日から12月31日までに実際に支払った医療費です。未払いの医療費は、実際に支払った年の控除対象になります。\",\n  \"イ\": \"不適切な記述で、本問の正解です。医療費控除は年末調整では適用を受けられません。給与所得者でも、確定申告書に医療費控除の明細書を添付して申告する必要があります。\",\n  \"ウ\": \"適切な記述です。医師等の診療等を受けるために電車・バスなどの公共交通機関を使ったときの通院費で、通常必要なものは医療費控除の対象になります。一方、自家用車のガソリン代や駐車場代は対象外です。タクシー代も、公共交通機関を利用できない場合を除いて対象外です。\",\n  \"エ\": \"適切な記述です。生命保険の入院給付金や健康保険の高額療養費など、医療費を補填する保険金等を受け取った場合は、その金額を医療費から差し引きます。差し引くのは補填の対象となった医療費の金額までで、引ききれない分をほかの医療費から差し引く必要はありません。\"\n },\n \"topicTags\": [\"医療費控除\", \"年末調整と確定申告\", \"保険金等による補填\"],\n \"isCalculation\": false,\n \"difficulty\": 1,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1126.htm\"\n ],\n \"concerns\": [\"参照した国税庁タックスアンサーは現在、令和8年4月1日現在法令等の版として掲載されています。本問で扱う論点（年末調整では適用できないこと、支払時期、通院費、補填金の扱い）について基準日（2025-04-01）以降に改正があるとは認識していませんが、基準日時点の版そのものは確認していません。\"]}\n```\n\nSources:\n- [No.1120 医療費を支払ったとき（医療費控除）｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1120.htm)\n- [No.1122 医療費控除の対象となる医療費｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1122.htm)\n- [No.1126 医療費控除の対象となる入院費用の具体例｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1126.htm)",
+  "ttft_ms": 3885,
+  "type": "result",
+  "duration_ms": 31547,
+  "uuid": "e9a73996-7bbf-4430-9e84-0540a01924d0",
+  "ttft_stream_ms": 1818,
+  "time_to_request_ms": 109,
+  "first_content_frame_ms": 1819,
+  "time_to_request_from_spawn_ms": 734138,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330119104.2007,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

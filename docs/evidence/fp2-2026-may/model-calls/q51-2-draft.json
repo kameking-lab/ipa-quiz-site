@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ウ」です（原典の正解 3) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問51\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n贈与税の課税財産に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 死因贈与により取得した財産は、贈与税の課税対象とならない。\nイ. 離婚による財産分与により取得した財産は、その価額が婚姻中の夫婦の協力によって得た財産の額等の事情を考慮して、社会通念上相当な範囲内である場合、原則として、贈与税の課税対象とならない。\nウ. 個人が法人からの贈与により取得した財産は、業務に関して受けるものや継続的に受けるものを除き、贈与税の課税対象となる。\nエ. 子が母から著しく低い価額の対価で土地を譲り受けた場合、原則として、当該土地の通常の取引価額に相当する金額と支払った対価の額との差額に相当する金額が、子が母から贈与により取得したものとみなされ、贈与税の課税対象となる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 54660,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.39586319999999997,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7844,
+    "cache_read_input_tokens": 5976,
+    "output_tokens": 1839,
+    "output_tokens_details": {
+      "thinking_tokens": 147
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7844,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 49629,
+      "outputTokens": 5170,
+      "cacheReadInputTokens": 5976,
+      "cacheCreationInputTokens": 7844,
+      "webSearchRequests": 3,
+      "costUSD": 0.39586319999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 277,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 4,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"贈与税は、個人から贈与で財産を取得したときにかかる税金です（相続税法1条の4、21条の2）。法人から贈与で取得した財産には贈与税はかからず、所得税の対象になります。原則は一時所得で、勤務先から受けるものは給与所得、業務に関して受けるものは事業所得などになります。したがって、法人からの贈与を「贈与税の課税対象となる」とする記述が不適切です。ほかに押さえる論点は3つあります。死因贈与は相続税の対象になること。社会通念上相当な財産分与には原則として贈与税がかからないこと。個人間の著しい低額譲受けは差額が贈与とみなされること（相続税法7条）です。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。死因贈与（贈与者の死亡によって効力が生じる贈与）で取得した財産は、遺贈と同じく相続税の課税対象になります。そのため、贈与税の課税対象にはなりません。\",\n  \"イ\": \"適切な記述です。離婚による財産分与は、夫婦の財産関係の清算や離婚後の生活保障のためのもので、贈与ではないと考えられています。そのため、原則として贈与税はかかりません。ただし、分与額が多過ぎる場合はその多過ぎる部分に贈与税がかかります。また、税を免れるための離婚と認められる場合は、分与された財産の全部に贈与税がかかります。\",\n  \"ウ\": \"不適切な記述で、本問の正解です。贈与税は個人から財産を取得した場合にかかる税金です。個人が法人から贈与で取得した財産は贈与税の対象にならず、所得税（原則として一時所得、勤務先からのものは給与所得など）の対象になります。\",\n  \"エ\": \"適切な記述です。個人から著しく低い価額の対価で財産を譲り受けた場合、財産の時価と支払った対価との差額が、譲渡した人から贈与で取得したものとみなされます（相続税法7条）。土地・家屋などの時価は、相続税評価額ではなく通常の取引価額で判定します。\"\n },\n \"topicTags\": [\"贈与税の課税財産\", \"法人からの贈与と所得税\", \"みなし贈与財産\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4414.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4423.htm\"\n ],\n \"concerns\": [\"エの選択肢は「母から」の譲受けです。例外として、資力を失い債務の弁済が困難な人が、弁済に充てるために扶養義務者から譲り受けた場合は、弁済困難な部分が贈与とみなされません（相続税法7条ただし書）。本問は「原則として」と書かれているため、この例外は結論に影響しないと判断しました。\"]}\n```\n\nSources:\n- [No.4405 贈与税がかからない場合｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4405.htm)\n- [No.4414 離婚して財産をもらったとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4414.htm)\n- [No.4423 個人から著しく低い価額で財産を譲り受けたとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4423.htm)",
+  "ttft_ms": 4405,
+  "type": "result",
+  "duration_ms": 31537,
+  "uuid": "ef79defa-5d2c-4c6d-b234-e22a7ca5fc96",
+  "ttft_stream_ms": 1999,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1999,
+  "time_to_request_from_spawn_ms": 981462,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330366464.7075,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

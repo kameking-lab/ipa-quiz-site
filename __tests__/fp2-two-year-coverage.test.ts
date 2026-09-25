@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import academic from "@/docs/evidence/fp2-two-year/gakka-extraction.json";
 import academicPublished from "@/data/questions/fp2/academic-2024-2025.json";
 import academicFigures from "@/data/questions/fp2/academic-figures-2024-2025.json";
-import { FP2_QUESTIONS } from "@/data/questions/fp2";
+import { FP2_2026_MAY_COVERAGE, FP2_QUESTIONS } from "@/data/questions/fp2";
 import practical from "@/data/questions/fp2/practical-2024-2025.json";
 import practicalExplanations from "@/data/questions/fp2/practical-explanations-2024-2025.json";
 import figures from "@/data/questions/fp2/practical-figures-2024-2025.json";
@@ -29,7 +29,7 @@ describe("FP2 official 2024–2025 corpus", () => {
 
   it("publishes each 2024–2025 academic question with the official answer and four choice reasons", () => {
     expect(academicPublished).toHaveLength(240);
-    expect(FP2_QUESTIONS).toHaveLength(250); // Includes the separate 2026 Q1–10 pilot.
+    expect(FP2_QUESTIONS).toHaveLength(240 + FP2_2026_MAY_COVERAGE.count); // Plus the separate 2026年5月公表 set.
     expect(academicPublished.filter((q) => q.needsReview)).toHaveLength(0);
     for (const edition of editions) {
       const original = academic[edition].questions;

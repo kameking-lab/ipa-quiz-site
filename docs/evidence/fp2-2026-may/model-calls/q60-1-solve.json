@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問60\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n会社法に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 株式会社を設立するためには、最低資本金額として1,000万円が必要である。\nイ. 株式会社が特定の株主から自己株式を有償で取得する場合、原則として、株主総会の特別決議が必要となる。\nウ. 定時株主総会は、毎事業年度終了後一定の時期に招集しなければならないが、臨時株主総会は、必要がある場合にいつでも招集することができる。\nエ. 取締役は、いつでも、株主総会の決議によって解任することができる。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 5157,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0197158,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1464,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 387,
+    "output_tokens_details": {
+      "thinking_tokens": 0
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1464,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 387,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1464,
+      "webSearchRequests": 0,
+      "costUSD": 0.0197158,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 0,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"ア\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"2006年施行の会社法で最低資本金制度は撤廃されており、資本金1円からでも株式会社を設立できる。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"特定の株主から自己株式を有償で取得する場合、その取得に関する事項の決定には原則として株主総会の特別決議が必要となる（会社法156条・160条・309条2項2号）。\"}, \"ウ\": {\"statementIsAppropriate\": true, \"reason\": \"定時株主総会は毎事業年度終了後一定の時期に招集しなければならない（会社法296条1項）。臨時株主総会は必要がある場合にいつでも招集できる（同条2項）。\"}, \"エ\": {\"statementIsAppropriate\": true, \"reason\": \"役員（取締役）は、いつでも株主総会の決議によって解任することができる（会社法339条1項）。決議は原則として普通決議（累積投票で選任された取締役等は特別決議）で行う。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 5165,
+  "type": "result",
+  "duration_ms": 5277,
+  "uuid": "a0b14a59-3d70-4ddc-93a4-05531231d50a",
+  "ttft_stream_ms": 1770,
+  "time_to_request_ms": 117,
+  "first_content_frame_ms": 1770,
+  "time_to_request_from_spawn_ms": 1065017,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330450019.5088,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

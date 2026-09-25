@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問16\n【分野】リスク管理\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n任意加入の自動車保険の一般的な商品性に関する次の記述のうち、最も適切なものはどれか。なお、特約については考慮しないものとする。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 対物賠償保険では、被保険自動車を運転中に誤って自宅の車庫に衝突して損壊させて損害を被った場合、補償の対象となる。\nイ. 一般条件の車両保険では、被保険自動車が地震を原因とする津波により水没して損害を被った場合、補償の対象となる。\nウ. 対物賠償保険では、被保険自動車を運転中に誤って通行人が連れていたペットに衝突して死なせ、法律上の損害賠償責任を負った場合、補償の対象とならない。\nエ. 対人賠償保険では、被保険自動車を運転中に対人事故を起こした被保険者が法律上の損害賠償責任を負った場合、自動車損害賠償責任保険等によって補償される部分を除いた額が補償の対象となる。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 33992,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1967106,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4794,
+    "cache_read_input_tokens": 5993,
+    "output_tokens": 1187,
+    "output_tokens_details": {
+      "thinking_tokens": 60
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4794,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 21080,
+      "outputTokens": 3142,
+      "cacheReadInputTokens": 5993,
+      "cacheCreationInputTokens": 4794,
+      "webSearchRequests": 1,
+      "costUSD": 0.1967106,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 89,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"任意保険の対人賠償保険は、自賠責保険（強制保険）の上乗せです。対人事故で被保険者が法律上の損害賠償責任を負ったとき、自賠責保険等で支払われる部分を超えた額が補償されます（自賠責の限度額は死亡3,000万円、傷害120万円など）。対物賠償保険は他人の財物への賠償責任を補償するもので、自分や家族の財物は対象外です。一方、ペットは法律上『物』なので、他人のペットへの賠償は対象になります。一般条件の車両保険でも、地震・噴火・津波による損害は補償されません。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。対物賠償保険は他人の財物を壊して法律上の損害賠償責任を負った場合に補償するものです。自宅の車庫のように記名被保険者などが所有する財物の損害は補償の対象外です。\",\n  \"イ\": \"誤りです。車両保険は一般条件であっても、地震・噴火・これらによる津波で生じた損害は免責です。補償を受けるには地震・噴火・津波危険車両損害特約などの特約が必要です。\",\n  \"ウ\": \"誤りです。ペットは法律上『物』（財物）として扱われます。そのため、通行人が連れていたペットを死なせて法律上の損害賠償責任を負った場合は、対物賠償保険の補償対象になります。\",\n  \"エ\": \"適切な記述で、本問の正解です。対人賠償保険は自賠責保険等の上乗せ補償です。被保険者が法律上の損害賠償責任を負った場合、自賠責保険等で支払われる部分を超えた額が補償の対象となります。\"\n },\n \"topicTags\": [\"対人賠償保険と自賠責保険\", \"対物賠償保険の補償範囲\", \"車両保険の免責事由\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.mlit.go.jp/jidosha/jibaiseki/faq/index.html\",\n  \"https://www.mlit.go.jp/jidosha/jibaiseki/about/payment/index.html\"\n ],\n \"concerns\": [\"対物賠償保険で自分や家族の財物が対象外になることや、車両保険が地震・津波で免責になることは、各社の約款に共通する一般的な内容に基づいています。政府の公式ページでは直接確認できていません。\"]\n}\n```\n\nSources:\n- [よくあるご質問｜国土交通省](https://www.mlit.go.jp/jidosha/jibaiseki/faq/index.html)\n- [自賠責保険・共済の限度額と補償内容｜国土交通省](https://www.mlit.go.jp/jidosha/jibaiseki/about/payment/index.html)",
+  "ttft_ms": 3934,
+  "type": "result",
+  "duration_ms": 34194,
+  "uuid": "ca64f650-b572-4f3b-9a41-c16017b72253",
+  "ttft_stream_ms": 2123,
+  "time_to_request_ms": 196,
+  "first_content_frame_ms": 2123,
+  "time_to_request_from_spawn_ms": 566766,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790329951497.4192,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

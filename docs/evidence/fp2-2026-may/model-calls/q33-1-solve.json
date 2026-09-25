@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "",
+    "prompt": "あなたはFP技能検定2級の専門家です。次の四答択一問題を、公式正答を見ずに自力で解いてください。\n各選択肢の記述が前提の基準日時点で適切か不適切かを判断し、問われている条件（最も適切／最も不適切／計算結果など）に合う選択肢を1つ選びます。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問33\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\nＡさんの各種所得の金額が下記のとおりであった場合の所得税における総所得金額として、最も適切なものはどれか。なお、▲が付された所得の金額は、その所得に損失が発生していることを意味するものとする。〈Ａさんの各種所得の金額〉・不動産所得の金額：60万円・事業所得の金額 ：▲100万円（飲食店の経営により生じた損失の金額）・一時所得の金額 ：100万円（養老保険の満期保険金を受け取ったことによる所得の金額）\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 10万円\nイ. 30万円\nウ. 60万円\nエ. 85万円\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"answer\": \"ア|イ|ウ|エ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": true, \"reason\": \"...\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"confidence\": \"high|medium|low\"}\n計算問題では statementIsAppropriate を「その選択肢の数値が正しい計算結果か」として扱ってください。"
+  },
+  "duration_api_ms": 6465,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0213638,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 1480,
+    "cache_read_input_tokens": 1279,
+    "output_tokens": 463,
+    "output_tokens_details": {
+      "thinking_tokens": 68
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 1480,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 463,
+      "cacheReadInputTokens": 1279,
+      "cacheCreationInputTokens": 1480,
+      "webSearchRequests": 0,
+      "costUSD": 0.0213638,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 68,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"answer\": \"イ\", \"perChoice\": {\"ア\": {\"statementIsAppropriate\": false, \"reason\": \"一時所得100万円を損益通算前に2分の1（50万円）にし、60万円−100万円+50万円＝10万円とした誤りです。損益通算は1/2する前の一時所得の金額で行います。\"}, \"イ\": {\"statementIsAppropriate\": true, \"reason\": \"事業所得の損失▲100万円は、まず経常所得の不動産所得60万円と通算して▲40万円になります。残りを一時所得100万円と通算すると60万円です。総所得金額に算入する一時所得はその2分の1なので、60万円×1/2＝30万円となります。\"}, \"ウ\": {\"statementIsAppropriate\": false, \"reason\": \"60万円は一時所得を2分の1にする前の金額です。総所得金額には2分の1の30万円を算入します。\"}, \"エ\": {\"statementIsAppropriate\": false, \"reason\": \"損益通算の順序または2分の1の計算を誤った数値です（例：60万円＋50万円−25万円）。正しくは30万円です。\"}}, \"confidence\": \"high\"}\n```",
+  "ttft_ms": 2874,
+  "type": "result",
+  "duration_ms": 6565,
+  "uuid": "37f976a5-0760-418e-9ee6-8edd959c4bc8",
+  "ttft_stream_ms": 1703,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 1704,
+  "time_to_request_from_spawn_ms": 724009,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330108986.7366,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

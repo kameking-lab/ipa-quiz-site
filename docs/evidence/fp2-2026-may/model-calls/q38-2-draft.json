@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「ウ」です（原典の正解 3) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問38\n【分野】タックスプランニング\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n会社と役員間の取引に係る所得税・法人税に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 会社が役員に無利息で金銭の貸付を行った場合、原則として、通常収受すべき利息に相当する金額が、その会社の所得金額の計算上、益金の額に算入される。\nイ. 会社が役員からの借入金について債務免除を受けた場合、その債務免除を受けた金額が、その会社の所得金額の計算上、益金の額に算入される。\nウ. 会社が役員から土地を無償で譲渡された場合、その土地の適正な時価の２分の１相当額が、その会社の所得金額の計算上、益金の額に算入される。\nエ. 役員が会社から土地を適正な時価よりも低い価額で譲渡された場合、その適正な時価と譲受価額との差額が、その役員の給与所得の収入金額に算入される。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 34689,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1889264,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4535,
+    "cache_read_input_tokens": 5972,
+    "output_tokens": 1452,
+    "output_tokens_details": {
+      "thinking_tokens": 272
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4535,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 19553,
+      "outputTokens": 3162,
+      "cacheReadInputTokens": 5972,
+      "cacheCreationInputTokens": 4535,
+      "webSearchRequests": 1,
+      "costUSD": 0.1889264,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 335,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"法人税では、無償で資産を譲り受けた場合や債務免除を受けた場合も収益として扱います（法人税法22条2項）。そのため、会社が役員から土地を無償で譲り受けたときは、2分の1相当額ではなく土地の時価の全額が受贈益として益金の額に算入されます。したがって不適切な記述はウです。「時価の2分の1」は、個人が法人に時価の2分の1未満の価額で資産を譲渡した場合に、個人側で時価による譲渡があったものとみなす所得税法59条の基準です。法人側の益金の額とは別の話なので、混同しないようにしましょう。\",\n \"choiceExplanations\": {\n  \"ア\": \"適切な記述です。会社が役員に無利息で金銭を貸し付けた場合、原則として、通常受け取るべき利息に相当する金額が会社の益金の額に算入されます。同じ金額は役員への経済的利益（役員給与）として扱われます。\",\n  \"イ\": \"適切な記述です。会社が役員から借入金の債務免除を受けると、免除された金額が債務免除益として会社の益金の額に算入されます。\",\n  \"ウ\": \"不適切な記述で、本問の正解です。会社が役員から土地を無償で譲り受けた場合、益金の額に算入されるのは時価の2分の1相当額ではなく、土地の適正な時価の全額（受贈益）です。なお、譲渡した役員の側では、法人への贈与として時価で譲渡したものとみなされ、譲渡所得が課税されます。\",\n  \"エ\": \"適切な記述です。役員が会社から土地を時価より低い価額で譲り受けた場合、時価と譲受価額との差額は、役員が受けた経済的利益として給与所得の収入金額に算入されます。\"\n },\n \"topicTags\": [\"会社と役員間の取引\", \"受贈益・債務免除益\", \"役員の経済的利益\"],\n \"isCalculation\": false,\n \"difficulty\": 2,\n \"officialAnswerConsistent\": true,\n \"lawDateSensitive\": false,\n \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5202.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3105.htm\"\n ],\n \"concerns\": [\"無利息貸付による役員の経済的利益には、少額の場合などに課税されない例外があります（所得税基本通達36-28等）。解説では「原則として」という表現にとどめています。\"]\n}\n```\n\nSources:\n- [No.5202 役員等に対する経済的利益｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hojin/5202.htm)\n- [No.3105 譲渡所得の対象となる資産と課税方法｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/joto/3105.htm)",
+  "ttft_ms": 4084,
+  "type": "result",
+  "duration_ms": 34812,
+  "uuid": "ccbefa94-5c8c-4e5b-aceb-520d8d43dba3",
+  "ttft_stream_ms": 2057,
+  "time_to_request_ms": 102,
+  "first_content_frame_ms": 2058,
+  "time_to_request_from_spawn_ms": 806570,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330191531.3171,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

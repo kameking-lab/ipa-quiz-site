@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「イ」です（原典の正解 2) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問50\n【分野】不動産\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n不動産の投資判断の手法等に関する次の記述のうち、最も適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. ＤＣＦ法は、連続する複数の期間に発生する総収入および復帰価格を、その発生時期に応じて現在価値に割り引き、それぞれを合計して対象不動産の収益価格を求める手法である。\nイ. ＮＰＶ法（正味現在価値法）による投資判断においては、対象不動産から得られる収益の現在価値の合計額が投資額の現在価値の合計額を上回っている場合、その投資は投資適格であると判定することができる。\nウ. 借入金併用型投資では、対象不動産の収益率が借入金の金利を下回っている場合、レバレッジ効果により、投下した自己資金に対する収益率の向上を期待することができる。\nエ. ＮＯＩ利回り（純利回り）は、対象不動産から得られる年間の総収入を総投資額で除して算出される利回りであり、不動産の収益性を測る指標である。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 28990,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.1751164,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 4418,
+    "cache_read_input_tokens": 6002,
+    "output_tokens": 1347,
+    "output_tokens_details": {
+      "thinking_tokens": 88
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 4418,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 18523,
+      "outputTokens": 2724,
+      "cacheReadInputTokens": 6002,
+      "cacheCreationInputTokens": 4418,
+      "webSearchRequests": 1,
+      "costUSD": 0.1751164,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 110,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 2,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"NPV法（正味現在価値法）では、対象不動産から得られる収益の現在価値の合計額から投資額の現在価値の合計額を差し引いた額（正味現在価値）がプラスであれば、その投資は投資適格と判断します。DCF法で割り引くのは総収入ではなく「純収益」と復帰価格です。レバレッジ効果が得られるのは、収益率が借入金利を上回る場合です。NOI利回りは総収入ではなく「純収益（NOI）」を総投資額で割って求めます。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。DCF法は、連続する複数の期間に発生する「純収益」と復帰価格を、それぞれの発生時期に応じて現在価値に割り引き、合計して収益価格を求める手法です。割り引く対象は総収入ではありません。\",\n  \"イ\": \"適切な記述で、本問の正解です。NPV法では、収益の現在価値の合計額が投資額の現在価値の合計額を上回っていれば（正味現在価値がプラスなら）、投資適格と判定できます。\",\n  \"ウ\": \"誤りです。借入金を併用した投資で、自己資金に対する収益率がレバレッジ効果によって上がると期待できるのは、対象不動産の収益率が借入金の金利を「上回っている」場合です。収益率が金利を下回ると、逆に自己資金に対する収益率は下がります（逆レバレッジ）。\",\n  \"エ\": \"誤りです。NOI利回り（純利回り）は、年間の総収入から諸経費を差し引いた「純収益（NOI）」を総投資額で割って求める利回りです。年間の総収入を総投資額で割ったものは単純利回り（表面利回り）です。\"\n },\n \"topicTags\": [\"不動産の投資判断手法\", \"DCF法・NPV法\", \"レバレッジ効果\"],\n \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html\", \"https://www.mlit.go.jp/common/001204083.pdf\"],\n \"concerns\": [\"参照先の不動産鑑定評価基準（mlit.go.jpのPDF）は平成26年改正版です。DCF法の定義（純収益と復帰価格を現在価値に割り引く）はこの版の内容に基づいていますが、2025-04-01時点の最新版の本文そのものはWebSearchで確認できていません。国土交通省のページでは、最新版の本文は日本不動産鑑定士協会連合会のサイトに案内されています。\", \"NPV法・レバレッジ効果・NOI利回りの説明は、FP試験で一般的に使われる定義に基づいています。これらを直接定義した政府の公式資料は確認していません。\"]}\n```\n\n出典（WebSearchで確認）:\n- [国土交通省：法令・不動産鑑定評価基準等](https://www.mlit.go.jp/totikensangyo/totikensangyo_tk4_000024.html)\n- [不動産鑑定評価基準（平成26年改正版PDF）](https://www.mlit.go.jp/common/001204083.pdf)",
+  "ttft_ms": 3866,
+  "type": "result",
+  "duration_ms": 29104,
+  "uuid": "6f0f077d-1caf-4ffd-9595-86a6ba7a2013",
+  "ttft_stream_ms": 1828,
+  "time_to_request_ms": 97,
+  "first_content_frame_ms": 1829,
+  "time_to_request_from_spawn_ms": 970386,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330355409.5928,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

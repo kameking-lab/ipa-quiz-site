@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「ア」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問60\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n会社法に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 株式会社を設立するためには、最低資本金額として1,000万円が必要である。\nイ. 株式会社が特定の株主から自己株式を有償で取得する場合、原則として、株主総会の特別決議が必要となる。\nウ. 定時株主総会は、毎事業年度終了後一定の時期に招集しなければならないが、臨時株主総会は、必要がある場合にいつでも招集することができる。\nエ. 取締役は、いつでも、株主総会の決議によって解任することができる。\n\n【解説案】\n{\n \"explanation\": \"会社法（2006年5月施行）で最低資本金制度が廃止されたため、今は資本金1円からでも株式会社を設立できます。「最低資本金額として1,000万円が必要」という記述は不適切で、これが本問の正解です。1,000万円は旧商法時代の株式会社の最低資本金です（有限会社は300万円でした）。あわせて、次の決議要件を押さえておきましょう。特定の株主からの自己株式の有償取得は特別決議、取締役の解任は原則として普通決議です。\",\n \"choiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。会社法の施行で最低資本金制度は廃止され、資本金1円からでも株式会社を設立できます。1,000万円は旧商法時代の株式会社の最低資本金です。\",\n  \"イ\": \"適切な記述です。特定の株主から自己株式を有償で取得するには、その株主以外の株主の売主追加請求権などとの公平を図るため、原則として株主総会の特別決議が必要です（会社法156条・160条・309条2項2号）。\",\n  \"ウ\": \"適切な記述です。定時株主総会は毎事業年度の終了後一定の時期に招集しなければならず、臨時株主総会は必要がある場合にいつでも招集できます（会社法296条1項・2項）。\",\n  \"エ\": \"適切な記述です。役員（取締役）は、いつでも株主総会の決議で解任できます（会社法339条1項）。この決議は原則として普通決議ですが、累積投票で選任された取締役を解任するには特別決議が必要です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://laws.e-gov.go.jp/law/417AC0000000086\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 23444,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.0687156,
+  "usage": {
+    "input_tokens": 2,
+    "cache_creation_input_tokens": 2616,
+    "cache_read_input_tokens": 1898,
+    "output_tokens": 2370,
+    "output_tokens_details": {
+      "thinking_tokens": 960
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 2616,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2370,
+      "cacheReadInputTokens": 1898,
+      "cacheCreationInputTokens": 2616,
+      "webSearchRequests": 0,
+      "costUSD": 0.0687156,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 960,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 1,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "確認結果です。判定は **FIX** です。公式正答「ア」は支持できます。\n\n- **ア**：内容は正しいです。会社法の施行（2006年5月1日）で最低資本金制度はなくなりました。旧商法時代の最低資本金は株式会社1,000万円、有限会社300万円です。\n- **イ**：要件は正しいです（156条1項・160条1項・309条2項2号）。ただし、特別決議が必要な理由の書き方が正確ではありません。特別決議が必要なのは、特定の株主だけが売却の機会を得ることで株主の間に不公平が生じるためです。売主追加請求権（160条2項・3項）は、別に用意された保護の仕組みです。そのため「売主追加請求権との公平を図るため」という書き方は論理的に正しくありません。\n- **ウ**：296条1項・2項の条文どおりで、正しいです。\n- **エ**：339条1項・341条・309条2項7号の内容と合っており、正しいです。\n- **参照URL**：e-Govの会社法（平成17年法律第86号）の正式ページで、適切です。\n\n今回はWebSearchを使わず、会社法の条文についての私の知識だけで確認しました。\n\n```json\n{\"verdict\": \"FIX\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": false, \"issue\": \"結論（原則として特別決議、156条・160条・309条2項2号）は正しい。ただし理由の「その株主以外の株主の売主追加請求権などとの公平を図るため」は論理が不正確。特別決議が必要なのは、特定の株主だけが売却の機会を得ることで株主の間に不公平が生じるため。売主追加請求権（160条2項・3項）は、他の株主を保護するために別に設けられた仕組みである。\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [\"選択肢イの解説で、特別決議が必要な理由の説明が不正確（売主追加請求権との関係の書き方が誤っている）\"],\n \"correctedExplanation\": \"会社法（2006年5月施行）で最低資本金制度が廃止されたため、今は資本金1円からでも株式会社を設立できます。「最低資本金額として1,000万円が必要」という記述は不適切で、これが本問の正解です。1,000万円は旧商法時代の株式会社の最低資本金です（有限会社は300万円でした）。あわせて、次の決議要件を押さえておきましょう。特定の株主からの自己株式の有償取得は特別決議、取締役の解任は原則として普通決議です。\",\n \"correctedChoiceExplanations\": {\n  \"ア\": \"不適切な記述で、本問の正解です。会社法の施行で最低資本金制度は廃止され、資本金1円からでも株式会社を設立できます。1,000万円は旧商法時代の株式会社の最低資本金です。\",\n  \"イ\": \"適切な記述です。特定の株主だけから自己株式を有償で取得すると株主の間で不公平が生じるため、原則として株主総会の特別決議が必要です（会社法156条・160条1項・309条2項2号）。また、他の株主には、原則として自分も売主に加えるよう請求できる権利（売主追加請求権）が認められています（同法160条2項・3項）。\",\n  \"ウ\": \"適切な記述です。定時株主総会は毎事業年度の終了後一定の時期に招集しなければならず、臨時株主総会は必要がある場合にいつでも招集できます（会社法296条1項・2項）。\",\n  \"エ\": \"適切な記述です。役員（取締役）は、いつでも株主総会の決議で解任できます（会社法339条1項）。この決議は原則として普通決議ですが、累積投票で選任された取締役を解任するには特別決議が必要です。\"\n },\n \"correctedOfficialReferenceUrls\": null}\n```",
+  "ttft_ms": 12061,
+  "type": "result",
+  "duration_ms": 23536,
+  "uuid": "cc739b98-bef6-4a8a-919c-b90b9ca7ff03",
+  "ttft_stream_ms": 1744,
+  "time_to_request_ms": 101,
+  "first_content_frame_ms": 1744,
+  "time_to_request_from_spawn_ms": 1098258,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330483250.9045,
+  "queued_turn_count": 0,
+  "result_index": 0
+}
