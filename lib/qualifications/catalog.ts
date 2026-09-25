@@ -154,7 +154,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.retio.or.jp/exam/past_ques_ans/other/",
     officialReuseTermsUrl: "https://www.retio.or.jp/copyright/",
     status: "live",
-    reuseSummary: "2025年度の公式問題・正解番号表を掲載し、解説に法令基準日を表示。",
+    reuseSummary: "2024・2025年度の公式問題・正解番号表を掲載し、各年度の解説に法令基準日を表示。",
     remainingWork: [],
   },
   {

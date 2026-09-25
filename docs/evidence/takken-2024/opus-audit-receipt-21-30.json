@@ -1,0 +1,24 @@
+{
+  "model": "claude-opus-5-5",
+  "resolvedModel": "claude-opus-5-5",
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 11606,
+      "cacheReadInputTokens": 1862,
+      "cacheCreationInputTokens": 21349,
+      "webSearchRequests": 0,
+      "costUSD": 0.4032924,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 10208,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "inputSha256": "5f0ddf13f0613d040d2e463334c0392a79532b6a5f6d230bc957ad97bd680cca",
+  "rawStreamSha256": "59ccacc962a175a653a07614c4a28797d716eb3a6bc192f9c191494c0498c2ed",
+  "result": "{\"items\": [{\"qNumber\": 21, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 22, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 23, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 24, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 25, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 26, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 27, \"verdict\": \"PASS\", \"issues\": [\"軽微（法律効果に影響なし）：事業開始後に新設した事務所分の営業保証金を主たる事務所の最寄りの供託所に供託する根拠は、法26条2項で準用する25条1項である。「法26条1項、25条1項」の併記だけでは準用関係が読み取りにくい。\"], \"correctedExplanation\": \"事業開始後に新たに事務所を設置したときは、その事務所分の営業保証金（従たる事務所1か所につき500万円）を供託しなければならない（法26条1項、施行令2条の4）。供託先は、法26条2項で準用する25条1項により、主たる事務所の最寄りの供託所である。肢4が正しい。\", \"correctedChoiceExplanations\": {\"エ\": \"正しい（正答）。従たる事務所が主たる事務所と別の県にあっても、供託先は主たる事務所の最寄りの供託所である（法26条1項、同条2項で準用する25条1項）。\"}}, {\"qNumber\": 28, \"verdict\": \"PASS\", \"issues\": [\"軽微：イの解説に誤字がある（「いずれか高い方によれる」→「いずれか高い方による」）。計算・結論に誤りはない。\"], \"correctedExplanation\": \"報酬額の上限は昭和45年建設省告示第1552号（宅地建物取引業者が宅地又は建物の売買等に関して受けることができる報酬の額）による。消費税課税事業者は本体額の1.1倍、免税事業者は1.04倍が上限となる。以下のとおりアのみ違反し、イ・ウは違反しないので、正答は選択肢2（イ、ウ）。\\nア：違反する。居住用建物の貸借の媒介で依頼者の一方から受ける報酬は、承諾がなければ借賃0.5か月分が上限である。免税事業者Ｂの上限は6万円×1.04＝6.24万円で、6.5万円はこれを超える。\\nイ：違反しない。事業用建物の貸借では、借賃基準（双方合計で1か月分10万円×1.04＝10.4万円）と、権利金を売買代金とみなす基準（90万円×5％×1.04＝4.68万円／一方）のいずれか高い方による。借賃基準の範囲内であり、事業用なので一方0.5か月分の制限もない。Ｂの受領額は合計10万円で上限内。\\nウ：違反しない。建物代金は税込1,100万円で税抜1,000万円、土地2,400万円は非課税であり、本体価格は3,400万円。上限は一方につき（3,400万円×3％＋6万円）×1.1＝118.8万円で、110万円は範囲内。依頼者の特別の依頼による遠隔地の現地調査の実費は、事前承諾があれば報酬とは別に受領できる。\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 29, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}, {\"qNumber\": 30, \"verdict\": \"PASS\", \"issues\": [], \"correctedExplanation\": \"\", \"correctedChoiceExplanations\": {}}]}",
+  "is_error": false
+}

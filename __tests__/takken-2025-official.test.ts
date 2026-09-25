@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { TAKKEN_QUESTIONS } from "@/data/questions/takken";
+import { TAKKEN_2025_QUESTIONS } from "@/data/questions/takken/2025";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
@@ -17,19 +17,19 @@ const officialAnswers = [
 describe("RETIO 2025 takken paper", () => {
   it("publishes one complete official 50-question paper with every answer mapped correctly", () => {
     expect(QUALIFICATION_CATALOG.find((entry) => entry.examCode === "takken")?.status).toBe("live");
-    expect(TAKKEN_QUESTIONS).toHaveLength(50);
-    expect(getQuestionsByExamStrict("takken")).toHaveLength(50);
-    expect(TAKKEN_QUESTIONS.map((question) => question.qNumber)).toEqual(
+    expect(TAKKEN_2025_QUESTIONS).toHaveLength(50);
+    expect(getQuestionsByExamStrict("takken")).toHaveLength(100);
+    expect(TAKKEN_2025_QUESTIONS.map((question) => question.qNumber)).toEqual(
       Array.from({ length: 50 }, (_, index) => index + 1),
     );
-    expect(TAKKEN_QUESTIONS.map((question) => Number(question.officialAnswerNumber))).toEqual(officialAnswers);
-    expect(TAKKEN_QUESTIONS.map((question) => question.answer)).toEqual(
+    expect(TAKKEN_2025_QUESTIONS.map((question) => Number(question.officialAnswerNumber))).toEqual(officialAnswers);
+    expect(TAKKEN_2025_QUESTIONS.map((question) => question.answer)).toEqual(
       officialAnswers.map((number) => "アイウエ"[number - 1]),
     );
   });
 
   it("provides each original four-option problem, individual reasons and primary sources", () => {
-    for (const question of TAKKEN_QUESTIONS) {
+    for (const question of TAKKEN_2025_QUESTIONS) {
       expect(question.year).toBe(2025);
       expect(question.season).toBe("october");
       expect(question.lawReferenceDate).toBe("2025-04-01");
@@ -46,7 +46,7 @@ describe("RETIO 2025 takken paper", () => {
   });
 
   it("keeps the 2024 calendar-year housing statistics distinct from fiscal-year data", () => {
-    const question = TAKKEN_QUESTIONS[47];
+    const question = TAKKEN_2025_QUESTIONS[47];
     expect(question?.qNumber).toBe(48);
     expect(question?.answer).toBe("イ");
     expect(question?.choiceExplanations?.イ).toContain("218,175戸");
