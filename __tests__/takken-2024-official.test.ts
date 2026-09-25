@@ -3,6 +3,8 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { TAKKEN_2024_QUESTIONS } from "@/data/questions/takken/2024";
 import { TAKKEN_QUESTIONS } from "@/data/questions/takken";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { examMetaDescription } from "@/lib/seo/exam-meta";
 
 type ExtractedQuestion = {
   qNumber: number;
@@ -19,6 +21,14 @@ const source = JSON.parse(readFileSync(
 };
 
 describe("RETIO 2024 takken paper", () => {
+  it("describes both available years without assigning one law date to both", () => {
+    expect(EXAM_CONFIGS.takken.yearRange).toEqual({ start: 2024, end: 2025 });
+    const description = examMetaDescription("takken", TAKKEN_QUESTIONS.length);
+    expect(description).toContain("2024・2025年度");
+    expect(description).toContain("年度ごとの法令基準日");
+    expect(description).not.toContain("2025年4月1日時点の法令基準日");
+  });
+
   it("keeps all 50 official answers distinct from the 2025 paper", () => {
     expect(source.sourceSha256).toBe("82a95815f991567ebc4982b05a15a71f6ec942bd6794c3bafe3bcf9c2e985bae");
     expect(source.lawReferenceDate).toBe("2024-04-01");
