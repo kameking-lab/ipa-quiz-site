@@ -27,5 +27,5 @@
 - `pnpm validate:questions`: PASS（全体の既存警告あり、エラー0）
 - 全体 Vitest: 393/393ファイル、3967/3967テスト PASS（2ワーカー）。
 - 旧分野URL互換・年度一覧の5区分ジャンプ・IPA記事の誤推薦を修正後、関連4ファイル11テスト PASS、typecheck PASS。
-- PR [#525](https://github.com/kameking-lab/ipa-quiz-site/pull/525) の初回CIはtypecheck・問題検証・E2E・Vercel deploymentすべてPASS。上記UX修正後に再実行し、Astra実画面審査を受けてからマージする。
-- C:の空き容量制約でローカルbuildを中断。E:の隔離worktreeで画面審査経路を用意中。本番公開は未了。
+- PR [#525](https://github.com/kameking-lab/ipa-quiz-site/pull/525) の最終head `456a34dd` はtypecheck・問題検証・E2E・Vercel deploymentがすべてPASS。Astraは390px/1440pxの実画面で問62の誤答採点、未解答絞込、旧分野URLを確認して受入。2026-09-25 16:59 UTCにmainへ統合（merge `9837131f`）。
+- 2026-09-26 JSTの匿名本番ブラウザ確認: [年度一覧](https://www.kakomon-ai.jp/civil2/2026-early) は66問リンクと5区分ジャンプを表示。[問62](https://www.kakomon-ai.jp/q/civil2/2026-early/gakka/q62) は公式図を表示し、誤答アの選択後に「不正解です。正解は ウ」を表示。施工管理ページへのIPA専用一般記事の混入は0件。本番公開完了。
