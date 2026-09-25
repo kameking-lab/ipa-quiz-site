@@ -15,10 +15,11 @@ export type ExamCode =
   | "fp2"
   | "fp3"
   | "denken3"
-  | "denko2";
+  | "denko2"
+  | "takken";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken">;
 
 export type Session =
   | "am"
@@ -35,7 +36,7 @@ export type Session =
   | "kikai"
   | "houki";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "may" | "september" | "january";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "may" | "september" | "january" | "october";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
@@ -83,7 +84,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "ECEE-educational-reuse";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

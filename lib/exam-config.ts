@@ -336,11 +336,26 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["first", "second"],
     yearRange: { start: 2024, end: 2025 },
   },
+  takken: {
+    code: "takken",
+    nameFull: "宅地建物取引士資格試験",
+    urlSlug: "takken",
+    level: "advanced",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 50,
+      label: "本試験",
+      categories: ["権利関係", "法令上の制限", "税・価格評定", "宅建業法", "免除科目"],
+    }],
+    seasons: ["october"],
+    yearRange: { start: 2025, end: 2025 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken",
 );
 
 /** Every exam playable in the application, including external qualifications. */
