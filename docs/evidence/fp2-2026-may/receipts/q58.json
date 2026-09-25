@@ -2,10 +2,7 @@
   "question": 58,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -54,7 +51,32 @@
     "draftConcerns": [],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.4614 貸家建付地の評価｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4613.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.4613 貸宅地の評価｜国税庁"
+    },
+    {
+      "url": "https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/731101/01.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "使用貸借に係る土地についての相続税及び贈与税の取扱いについて｜国税庁"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
   "modelCalls": [
@@ -79,6 +101,31 @@
         }
       },
       "total_cost_usd": 0.0208278,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q58-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 33697,
+          "outputTokens": 4468,
+          "cacheReadInputTokens": 5983,
+          "cacheCreationInputTokens": 6544,
+          "webSearchRequests": 2,
+          "costUSD": 0.2976966,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 178,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2976966,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

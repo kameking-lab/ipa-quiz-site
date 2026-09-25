@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の解説を公開前に検収する厳格な査読者です。次の問題と解説案を検証してください。\n公式正答は「イ」です。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問55\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n下記の\n〈親族関係図〉\n・被相続人Ａさん＝妻Ｂさん\n・Ａさん夫婦の子：実子Ｃさん（相続放棄）、養子Ｄさん\n・実子Ｃさん＝配偶者、その子：孫Ｅさん、孫Ｆさん\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 4,200万円\nイ. 4,800万円\nウ. 5,400万円\nエ. 6,000万円\n\n【解説案】\n{\n \"explanation\": \"相続税の遺産に係る基礎控除額は「3,000万円＋600万円×法定相続人の数」で計算します。ここでいう法定相続人の数は、相続放棄がなかったものとした場合の人数なので、放棄した実子Ｃさんも数に入ります。一方、相続放棄は代襲相続の原因にならないため、孫Ｅさん・孫Ｆさんは相続人になりません。養子Ｄさんは、実子がいるので1人まで数えられる範囲に収まります。法定相続人は妻Ｂさん・実子Ｃさん・養子Ｄさんの3人となり、基礎控除額は3,000万円＋600万円×3人＝4,800万円です。\",\n \"choiceExplanations\": {\n  \"ア\": \"誤りです。4,200万円は相続放棄したＣさんを除いて法定相続人を2人（3,000万円＋600万円×2人）とした金額です。基礎控除の計算では放棄がなかったものとして数えるため、Ｃさんを含めた3人で計算します。\",\n  \"イ\": \"正しい計算結果で、本問の正解です。法定相続人は妻Ｂさん・実子Ｃさん（放棄がなかったものとして数える）・養子Ｄさんの3人なので、3,000万円＋600万円×3人＝4,800万円となります。\",\n  \"ウ\": \"誤りです。5,400万円は法定相続人を4人（3,000万円＋600万円×4人）とした金額で、たとえばＣさんの代わりに孫Ｅさん・孫Ｆさんを数えた場合の金額です。相続放棄は代襲相続の原因にならないので孫は相続人にならず、正しい人数は3人（4,800万円）です。\",\n  \"エ\": \"誤りです。6,000万円は法定相続人を5人（3,000万円＋600万円×5人）とした金額で、Ｃさんに加えて孫Ｅさん・孫Ｆさんまで数えています。孫2人は相続人ではないため、正しい人数は3人（4,800万円）です。\"\n },\n \"officialReferenceUrls\": [\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm\",\n  \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4170.htm\",\n  \"https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm\"\n ]\n}\n\n検証項目:\n1. 各選択肢解説が2025-04-01現在施行の法令等に照らして事実として正しいか。金額・期間・割合・要件の誤りや、根拠のない断定がないか。必要ならWebSearchで確認する。\n2. 公式正答と整合しているか。正答肢/誤答肢の正誤表示が問われ方（最も適切・最も不適切・計算）に合っているか。\n3. 基準日2025-04-01で答えが一意に定まるか（lawDateClear）。基準日後の改正の説明が誤っていないか。\n4. 参照URLが解説の論点に対応する政府の公式ページか。\n\n判定:\n- PASS: そのまま公開可。\n- FIX: 修正すれば公開可。修正後の全文を correctedExplanation / correctedChoiceExplanations（4肢すべて）に入れる。\n- HOLD: 公式正答が基準日の法令で支持できない、問題が一意に解けない、または根拠を確認できない。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"verdict\": \"PASS|FIX|HOLD\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\"ア\": {\"ok\": true, \"issue\": \"\"}, \"イ\": ..., \"ウ\": ..., \"エ\": ...}, \"explanationOk\": true,\n \"referenceUrlsOk\": true, \"issues\": [], \"correctedExplanation\": null, \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\nFIXでは、公開される全文（explanation と4肢すべて）を修正後の形で返すこと。参照URLを差し替える場合は、WebSearchで実在を確認した政府の公式ページだけを correctedOfficialReferenceUrls に入れること。\n軽微な言い回しの好みだけでFIXにしない。事実誤り・不正確な要件・根拠のない断定・誤ったURLがなければPASSとする。"
+  },
+  "duration_api_ms": 49901,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2562514,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 7062,
+    "cache_read_input_tokens": 6617,
+    "output_tokens": 1785,
+    "output_tokens_details": {
+      "thinking_tokens": 780
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 7062,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 24108,
+      "outputTokens": 4100,
+      "cacheReadInputTokens": 6617,
+      "cacheCreationInputTokens": 7062,
+      "webSearchRequests": 2,
+      "costUSD": 0.2562514,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 879,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"verdict\": \"PASS\", \"officialAnswerSupported\": true, \"lawDateClear\": true,\n \"perChoice\": {\n  \"ア\": {\"ok\": true, \"issue\": \"\"},\n  \"イ\": {\"ok\": true, \"issue\": \"\"},\n  \"ウ\": {\"ok\": true, \"issue\": \"\"},\n  \"エ\": {\"ok\": true, \"issue\": \"\"}\n },\n \"explanationOk\": true,\n \"referenceUrlsOk\": true,\n \"issues\": [\n  \"参考（解説修正は不要）：掲載された問題文は親族関係図の途中で切れており、『遺産に係る基礎控除額として、最も適切なものはどれか』に当たる設問文が抜けている。選択肢と公式正答から基礎控除額を問う計算問題だと判断して検証した。公開前に問題文の転記漏れがないか確認すること。\",\n  \"検証結果：基礎控除額は3,000万円＋600万円×法定相続人の数（相続税法15条1項）。法定相続人の数は、放棄がなかったものとした人数で数える（同条2項）。被相続人に実子がいるので、養子は1人まで数える。相続放棄は代襲相続の原因にならない（民法887条2項）。以上から、法定相続人は妻Ｂ・実子Ｃ・養子Ｄの3人で、基礎控除額は4,800万円となり、公式正答『イ』と一致する。ア・ウ・エの誤答の人数設定（2人・4人・5人）も、金額との対応に誤りはない。\",\n  \"参照URLは3つとも国税庁の公式ページで、実在を確認した。4152（相続税の計算。放棄者を数える点と養子の数の制限を含む）、4170（相続人の範囲と法定相続分。代襲相続の論点）、相続税法基本通達 第15条関係は、いずれも解説の論点に対応している。\"\n ],\n \"correctedExplanation\": null,\n \"correctedChoiceExplanations\": null,\n \"correctedOfficialReferenceUrls\": null}\n```\n\nSources:\n- [No.4152 相続税の計算｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm)\n- [第15条《遺産に係る基礎控除》関係｜国税庁](https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm)",
+  "ttft_ms": 9269,
+  "type": "result",
+  "duration_ms": 37550,
+  "uuid": "69d88c5c-d032-45c1-8cc7-8a05ebe54b36",
+  "ttft_stream_ms": 1681,
+  "time_to_request_ms": 89,
+  "first_content_frame_ms": 1681,
+  "time_to_request_from_spawn_ms": 1067213,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330452208.5647,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

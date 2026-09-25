@@ -1,10 +1,8 @@
 {
   "question": 55,
-  "status": "HOLD",
-  "holdReasons": [
-    "review missing"
-  ],
-  "released": false,
+  "status": "VERIFIED",
+  "holdReasons": [],
+  "released": true,
   "source": {
     "pdfUrl": "https://www.jafp.or.jp/exam/mohan/files/g2_202605_qa.pdf",
     "sha256": "525d190bb489b4187d39d6782eac999fc4b14bfdd1f489842b96685465b804ef",
@@ -43,13 +41,19 @@
   "lawReferenceDate": {
     "value": "2025-04-01",
     "basis": "cover page 注意事項2: 問題文に特に断りのない限り、2025年4月1日現在施行の法令等",
-    "reviewerLawDateClear": null
+    "reviewerLawDateClear": true
   },
   "judgment": {
     "blindSolveAnswer": "イ",
     "blindSolveAgrees": true,
-    "reviewVerdicts": [],
-    "finalReviewIssues": [],
+    "reviewVerdicts": [
+      "PASS"
+    ],
+    "finalReviewIssues": [
+      "参考（解説修正は不要）：掲載された問題文は親族関係図の途中で切れており、『遺産に係る基礎控除額として、最も適切なものはどれか』に当たる設問文が抜けている。選択肢と公式正答から基礎控除額を問う計算問題だと判断して検証した。公開前に問題文の転記漏れがないか確認すること。",
+      "検証結果：基礎控除額は3,000万円＋600万円×法定相続人の数（相続税法15条1項）。法定相続人の数は、放棄がなかったものとした人数で数える（同条2項）。被相続人に実子がいるので、養子は1人まで数える。相続放棄は代襲相続の原因にならない（民法887条2項）。以上から、法定相続人は妻Ｂ・実子Ｃ・養子Ｄの3人で、基礎控除額は4,800万円となり、公式正答『イ』と一致する。ア・ウ・エの誤答の人数設定（2人・4人・5人）も、金額との対応に誤りはない。",
+      "参照URLは3つとも国税庁の公式ページで、実在を確認した。4152（相続税の計算。放棄者を数える点と養子の数の制限を含む）、4170（相続人の範囲と法定相続分。代襲相続の論点）、相続税法基本通達 第15条関係は、いずれも解説の論点に対応している。"
+    ],
     "draftConcerns": [
       "問題文が途中で切れているため、問いの内容を「相続税の計算における遺産に係る基礎控除額として、最も適切なもの」と推定して解説しました。選択肢が600万円刻みで並んでいること、法定相続人3人で計算すると正答の4,800万円になることから、この推定は妥当と考えます。",
       "養子Ｄさんが特別養子や配偶者の連れ子など「実子とみなされる養子」かどうかは不明です。ただ、今回は養子が1人だけなので、どちらでも人数（3人）と金額は変わりません。"
@@ -83,7 +87,10 @@
     }
   ],
   "referenceUrlsDropped": [],
-  "finalReviewWebSources": [],
+  "finalReviewWebSources": [
+    "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4152.htm",
+    "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/02/04.htm"
+  ],
   "modelCalls": [
     {
       "file": "model-calls/q55-1-solve.json",
@@ -131,6 +138,31 @@
         }
       },
       "total_cost_usd": 0.19216599999999998,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q55-3-review-r1.json",
+      "stage": "3-review-r1",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 24108,
+          "outputTokens": 4100,
+          "cacheReadInputTokens": 6617,
+          "cacheCreationInputTokens": 7062,
+          "webSearchRequests": 2,
+          "costUSD": 0.2562514,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 879,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.2562514,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

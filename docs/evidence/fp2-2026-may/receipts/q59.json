@@ -2,10 +2,7 @@
   "question": 59,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -56,7 +53,16 @@
     "draftConcerns": [],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm",
+      "host": "www.nta.go.jp",
+      "ok": true,
+      "status": 200,
+      "contentType": "text/html",
+      "title": "No.4124 相続した事業の用や居住の用の宅地等の価額の特例（小規模宅地等の特例）｜国税庁"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
   "modelCalls": [
@@ -81,6 +87,31 @@
         }
       },
       "total_cost_usd": 0.0216078,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q59-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 15847,
+          "outputTokens": 2809,
+          "cacheReadInputTokens": 5989,
+          "cacheCreationInputTokens": 4424,
+          "webSearchRequests": 1,
+          "costUSD": 0.1661578,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 112,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1661578,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true

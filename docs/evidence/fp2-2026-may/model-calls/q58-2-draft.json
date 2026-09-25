@@ -1,0 +1,93 @@
+{
+  "request": {
+    "model": "claude-opus-5-5",
+    "tools": "WebSearch",
+    "prompt": "あなたはFP技能検定2級の学習サイトの解説執筆者です。次の問題の公式正答は「エ」です（原典の正解 4) をア〜エに置換）。\n学習者向けに、公式正答と矛盾しない、根拠のある解説を書いてください。\n\n【出典】日本FP協会 2級ファイナンシャル・プランニング技能検定 学科試験（2026年5月公表分）問58\n【分野】相続・事業承継\n【前提】問題文に特に断りのない限り、2025-04-01現在施行の法令等に基づいて解答する。東日本大震災の被災者等に対する各種特例等は考慮しない。\n【問題】\n相続により取得した宅地の相続税評価に関する次の記述のうち、最も不適切なものはどれか。\n【選択肢】（原典の1)〜4)をア〜エに置換）\nア. 貸家建付地の価額は、「自用地価額×（１－借地権割合×借家権割合×賃貸割合）」の算式により計算した金額によって評価する。\nイ. 被相続人が、所有する宅地の上に店舗用建物を建築し、当該建物を賃貸借契約により第三者に賃貸していた場合、その宅地は貸家建付地として評価する。\nウ. 被相続人が、所有する宅地に建物の所有を目的とする賃借権を設定し、借地人がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\nエ. 被相続人が、所有する宅地を使用貸借により子に貸し付け、その子がその宅地の上に自宅を建築して居住していた場合、その宅地は貸宅地として評価する。\n\n執筆ルール:\n- 事実・金額・期間・割合は2025-04-01現在施行の法令等に基づくこと。基準日後に改正された制度は、基準日時点の内容で説明し、改正があれば lawDateNote に「どの改正で何が変わるか」を記す。\n- choiceExplanations は各選択肢を単独で読んでも分かる1〜3文。冒頭で正誤を明示する：\n  「最も適切」を問う問題 → 正答肢「適切な記述で、本問の正解です。」、他肢「誤りです。」または「不適切です。」\n  「最も不適切」を問う問題 → 正答肢「不適切な記述で、本問の正解です。」、他肢「適切な記述です。」\n  計算・組合せ問題 → 正答肢「正しい計算結果で、本問の正解です。」等、他肢は何が違うかを数値で示す。\n- 他の選択肢を「ア」「イ」等の記号で参照しない（出題文自体の空欄（ア）（イ）を指す場合を除く）。\n- explanation は正答の根拠と押さえるべき論点を2〜4文で。計算問題は式を示す。\n- 推測で断定しない。確信できない点は concerns に書く。\n- officialReferenceUrls には、WebSearchで実在を確認した政府の公式ページ（*.go.jp、e-Gov法令検索 laws.e-gov.go.jp を含む）のURLだけを0〜3件。民間サイト・協会サイトは入れない。純粋な計算問題は0件でよい。\n\n出力は次のJSONだけを ```json フェンスで1つ返してください。\n{\"explanation\": \"...\", \"choiceExplanations\": {\"ア\": \"...\", \"イ\": \"...\", \"ウ\": \"...\", \"エ\": \"...\"},\n \"topicTags\": [\"2〜3個の短い論点名\"], \"isCalculation\": false, \"difficulty\": 2,\n \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\",\n \"officialReferenceUrls\": [\"https://...\"], \"concerns\": []}"
+  },
+  "duration_api_ms": 44748,
+  "stop_reason": "end_turn",
+  "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+  "total_cost_usd": 0.2976966,
+  "usage": {
+    "input_tokens": 4,
+    "cache_creation_input_tokens": 6544,
+    "cache_read_input_tokens": 5983,
+    "output_tokens": 1607,
+    "output_tokens_details": {
+      "thinking_tokens": 136
+    },
+    "server_tool_use": {
+      "web_search_requests": 0,
+      "web_fetch_requests": 0
+    },
+    "service_tier": "standard",
+    "cache_creation": {
+      "ephemeral_1h_input_tokens": 6544,
+      "ephemeral_5m_input_tokens": 0
+    },
+    "inference_geo": "not_available",
+    "iterations": [],
+    "speed": "standard"
+  },
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 33697,
+      "outputTokens": 4468,
+      "cacheReadInputTokens": 5983,
+      "cacheCreationInputTokens": 6544,
+      "webSearchRequests": 2,
+      "costUSD": 0.2976966,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 178,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "permission_denials": [],
+  "terminal_reason": "completed",
+  "fast_mode_state": "off",
+  "fast_mode_disabled_reason": "sdk_opt_in_required",
+  "subagent_stats": {
+    "spawned": 0,
+    "requested": {
+      "background": 0,
+      "foreground": 0,
+      "unset": 0
+    },
+    "started_in_background": 0,
+    "max_depth": 0,
+    "spawned_by_subagents": 0,
+    "completed": 0,
+    "failed": 0,
+    "killed": {
+      "parent": 0,
+      "user": 0,
+      "system": 0
+    },
+    "refused": {
+      "depth_limit": 0,
+      "concurrency_limit": 0,
+      "budget": 0
+    },
+    "by_type": {}
+  },
+  "is_error": false,
+  "num_turns": 3,
+  "subtype": "success",
+  "api_error_status": null,
+  "result": "```json\n{\"explanation\": \"使用貸借による使用借権は対価を伴わず、貸主と借主の人的なつながりだけに基づく弱い権利です。このため価額はゼロとして扱われ、使用貸借で貸している宅地は自用地としての価額で評価します（昭和48年11月1日付直資2-189「使用貸借に係る土地についての相続税及び贈与税の取扱いについて」）。したがって、子に使用貸借で貸した宅地を貸宅地として評価するという記述は不適切です。宅地の評価区分は、利用状況によって自用地、貸宅地（借地権の目的となっている宅地）、貸家建付地（貸家の敷地）に分かれます。この区分と、貸家建付地の算式「自用地価額×（1－借地権割合×借家権割合×賃貸割合）」を押さえておきましょう。\", \"choiceExplanations\": {\"ア\": \"適切な記述です。貸家建付地の価額は、財産評価基本通達26により「自用地としての価額－自用地としての価額×借地権割合×借家権割合×賃貸割合」で求めます。この式は「自用地価額×（1－借地権割合×借家権割合×賃貸割合）」と同じ意味です。\", \"イ\": \"適切な記述です。被相続人が自分の宅地に建物を建てて第三者に賃貸している場合、その宅地は貸家の敷地にあたり、貸家建付地として評価します。建物が住宅ではなく店舗であっても、賃貸借で貸していれば借家権の目的となるため、扱いは変わりません。\", \"ウ\": \"適切な記述です。建物の所有を目的とする賃借権（借地権）を設定し、借地人が建物を建てている宅地は、借地権の目的となっている宅地です。この宅地は貸宅地として評価し、自用地価額から借地権の価額を差し引いて求めます。\", \"エ\": \"不適切な記述で、本問の正解です。使用貸借による使用借権の価額はゼロとして扱われるため、子に使用貸借で貸し、子が自宅を建てている宅地であっても自用地として評価します。貸宅地として評価するわけではありません。\"}, \"topicTags\": [\"宅地の評価区分\", \"貸家建付地\", \"使用貸借\"], \"isCalculation\": false, \"difficulty\": 2, \"officialAnswerConsistent\": true, \"lawDateSensitive\": false, \"lawDateNote\": \"\", \"officialReferenceUrls\": [\"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm\", \"https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4613.htm\", \"https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/731101/01.htm\"], \"concerns\": []}\n```\n\nSources:\n- [No.4614 貸家建付地の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm)\n- [No.4613 貸宅地の評価｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4613.htm)\n- [使用貸借に係る土地についての相続税及び贈与税の取扱いについて｜国税庁](https://www.nta.go.jp/law/tsutatsu/kobetsu/sozoku/731101/01.htm)\n- [No.4552 親の土地に子供が家を建てたとき｜国税庁](https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4552.htm)",
+  "ttft_ms": 4099,
+  "type": "result",
+  "duration_ms": 32099,
+  "uuid": "94de0fc5-aa0e-40fa-84ee-81fdad135f73",
+  "ttft_stream_ms": 1814,
+  "time_to_request_ms": 92,
+  "first_content_frame_ms": 1814,
+  "time_to_request_from_spawn_ms": 1052594,
+  "warm_spare_claimed": false,
+  "time_origin_ms": 1790330437581.2378,
+  "queued_turn_count": 0,
+  "result_index": 0
+}

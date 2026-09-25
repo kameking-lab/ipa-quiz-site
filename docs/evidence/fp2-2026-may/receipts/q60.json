@@ -2,10 +2,7 @@
   "question": 60,
   "status": "HOLD",
   "holdReasons": [
-    "draft missing",
-    "review missing",
-    "choice explanations incomplete",
-    "general explanation missing"
+    "review missing"
   ],
   "released": false,
   "source": {
@@ -51,10 +48,22 @@
     "blindSolveAgrees": true,
     "reviewVerdicts": [],
     "finalReviewIssues": [],
-    "draftConcerns": [],
+    "draftConcerns": [
+      "取締役解任の決議要件（普通決議。ただし定款で要件を加重することは可能）や、特定の株主からの自己株式取得の条文番号は、会社法の条文に基づいて書いています。e-Govの本文そのものは、今回の検索では表示を確認できていません。",
+      "e-Govには2026年6月24日施行の会社法改正版がありますが、本問の論点（2025-04-01時点の制度）への影響は確認していません。"
+    ],
     "draftLawDateNote(unpublished)": ""
   },
-  "referenceUrlChecks": [],
+  "referenceUrlChecks": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/417AC0000000086",
+      "host": "laws.e-gov.go.jp",
+      "ok": true,
+      "status": 200,
+      "title": "会社法",
+      "verifiedBy": "e-Gov API v2 law_data"
+    }
+  ],
   "referenceUrlsDropped": [],
   "finalReviewWebSources": [],
   "modelCalls": [
@@ -79,6 +88,31 @@
         }
       },
       "total_cost_usd": 0.0197158,
+      "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
+      "is_error": false,
+      "opusOnly": true
+    },
+    {
+      "file": "model-calls/q60-2-draft.json",
+      "stage": "2-draft",
+      "requestedModel": "claude-opus-5-5",
+      "modelUsage": {
+        "claude-opus-5-5": {
+          "inputTokens": 11359,
+          "outputTokens": 2059,
+          "cacheReadInputTokens": 5863,
+          "cacheCreationInputTokens": 3975,
+          "webSearchRequests": 1,
+          "costUSD": 0.1295886,
+          "contextWindow": 1000000,
+          "maxOutputTokens": 128000,
+          "thinkingTokens": 256,
+          "canonicalModel": "claude-opus-5-5",
+          "provider": "firstParty",
+          "costBasis": "list"
+        }
+      },
+      "total_cost_usd": 0.1295886,
       "session_id": "a4e57747-ec9d-552e-a958-cae478aa0932",
       "is_error": false,
       "opusOnly": true
