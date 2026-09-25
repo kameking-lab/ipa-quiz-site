@@ -86,8 +86,8 @@ describe("live external qualification two-year publication gate", () => {
     }
   });
 
-  it("covers all four FP2 practical papers with reviewed solutions and every numeric choice reason", () => {
-    expect(Object.keys(fp2Practical).sort()).toEqual(["202405", "202409", "202501", "202505"]);
+  it("covers all five FP2 practical papers with reviewed solutions and every numeric choice reason", () => {
+    expect(Object.keys(fp2Practical).sort()).toEqual(["202405", "202409", "202501", "202505", "202605"]);
     for (const [edition, paper] of Object.entries(fp2Practical)) {
       expect(paper.questions).toHaveLength(40);
       expect(paper.questions.map((question) => question.number)).toEqual(Array.from({ length: 40 }, (_, index) => index + 1));
