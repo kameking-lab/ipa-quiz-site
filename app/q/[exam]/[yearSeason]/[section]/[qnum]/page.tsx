@@ -221,7 +221,7 @@ export default async function QuestionPage({
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
-    .filter((post) => (q.exam !== "civil2" && q.exam !== "kankoji2") || post.exam === q.exam);
+    .filter((post) => !["civil2", "kankoji2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
@@ -448,7 +448,7 @@ export default async function QuestionPage({
                       <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
                         <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
                         <dd>
-                          <p className="font-medium text-foreground">{choice}</p>
+                          <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
                           <p className="mt-1 text-muted-foreground">
                             {q.choiceExplanations?.[key as ChoiceKey]}
                           </p>

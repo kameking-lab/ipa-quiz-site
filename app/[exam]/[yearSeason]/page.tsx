@@ -173,15 +173,19 @@ export default async function ExamYearSeasonPage({
       items: allItems.filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
     }));
   }
-  // 介護福祉士は公式問題冊子の科目順に区切って一覧する（問題番号は通し番号）。
-  const subjectSections = code === "kaigo";
+  // 福祉系国家試験は公式問題冊子の科目順に区切って一覧する。精神保健福祉士は
+  // 専門科目と共通科目で問題番号がそれぞれ1から始まるため、区分ごとに区切る。
+  const subjectSections = code === "kaigo" || code === "shakai" || code === "seishin";
   if (subjectSections) {
-    const allItems = sessionGroups.flatMap((group) => group.items).sort((a, b) => a.qNumber - b.qNumber);
     const sections: SessionGroup[] = [];
-    for (const item of allItems) {
-      const current = sections.at(-1);
-      if (current && current.items.at(-1)?.category === item.category) current.items.push(item);
-      else sections.push({ session: item.category, id: `kaigo-q${item.qNumber}`, items: [item] });
+    for (const group of sessionGroups) {
+      const sessionName = code === "kaigo" ? "" : `${practiceSessionLabel(group.session as typeof pool[number]["session"])}・`;
+      const items = [...group.items].sort((a, b) => a.qNumber - b.qNumber);
+      for (const item of items) {
+        const current = sections.at(-1);
+        if (current && current.id?.startsWith(`${code}-${group.session}-`) && current.items.at(-1)?.category === item.category) current.items.push(item);
+        else sections.push({ session: `${sessionName}${item.category}`, id: `${code}-${group.session}-q${item.qNumber}`, items: [item] });
+      }
     }
     sessionGroups = sections.map((section) => ({
       ...section,
@@ -268,6 +272,16 @@ export default async function ExamYearSeasonPage({
           <p className="mt-3 text-sm text-muted-foreground">
             過去問一覧 — AI 解説付きで効率的に学習を進められます。
           </p>
+          {code === "shakai" && (
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              第38回（試験日 令和8年2月1日）の全129問です。共通科目は問題1〜84、専門科目は問題85〜129。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+            </p>
+          )}
+          {code === "seishin" && (
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              第28回（試験日 令和8年1月31日・2月1日）の専門科目48問と共通科目84問です。共通科目は社会福祉士第38回と同じ問題です。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+            </p>
+          )}
           {code === "kaigo" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               第38回（試験日 令和8年1月25日）の全125問です。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。

@@ -37,6 +37,28 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
+    ] : exam === "shakai" ? [
+      {
+        label: "社会福祉振興・試験センター 過去の試験問題",
+        href: "https://www.sssc.or.jp/shakai/past_exam/index.html",
+        description: "第38回の共通科目・専門科目の問題PDF掲載ページ。",
+      },
+      {
+        label: "第38回 合格基準・正答一覧",
+        href: "https://www.sssc.or.jp/shakai/past_exam/pdf/no38/s_kijun_seitou.pdf",
+        description: "全129問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
+      },
+    ] : exam === "seishin" ? [
+      {
+        label: "社会福祉振興・試験センター 過去の試験問題",
+        href: "https://www.sssc.or.jp/seishin/past_exam/index.html",
+        description: "第28回の専門科目・共通科目の問題PDF掲載ページ。",
+      },
+      {
+        label: "第28回 合格基準・正答一覧",
+        href: "https://www.sssc.or.jp/seishin/past_exam/pdf/no28/se_kijun_seitou.pdf",
+        description: "専門科目48問・共通科目84問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
+      },
     ] : exam === "kaigo" ? [
       {
         label: "社会福祉振興・試験センター 過去の試験問題",

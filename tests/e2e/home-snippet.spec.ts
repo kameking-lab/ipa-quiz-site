@@ -55,7 +55,7 @@ test.describe("home SERP snippet", () => {
     }));
     const list = nodes.find(node => node["@type"] === "ItemList");
     expect(list?.numberOfItems).toBe(list?.itemListElement.length);
-    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(22);
+    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(24);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko2"))).toBe(true);
@@ -64,6 +64,8 @@ test.describe("home SERP snippet", () => {
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil2"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kankoji2"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kaigo"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/shakai"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/seishin"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/tohan"))).toBe(true);
   });
 });
