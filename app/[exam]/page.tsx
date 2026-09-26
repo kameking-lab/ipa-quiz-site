@@ -143,9 +143,11 @@ export default async function ExamTopPage({
       // The card's badge owns the total question count. Keep this line for the
       // covered range only so assistive technology and visual readers do not
       // encounter a duplicated value such as "67問 67問".
-      coverage: coverageLabels.length === 1
-        ? `${coverageLabels[0]}のみ`
-        : coverageLabels.join("・"),
+      coverage: code === "zoen2" || code === "tsushin2"
+        ? "第一次検定の収録済み設問"
+        : coverageLabels.length === 1
+          ? `${coverageLabels[0]}のみ`
+          : coverageLabels.join("・"),
       missingSpecialist: sessions.includes("am1") && !sessions.includes("am2"),
     };
   });
