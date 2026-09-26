@@ -10,7 +10,18 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   if (!links && !qualification) return null;
 
   if (qualification) {
-    const items = exam === "civil1" ? [
+    const items = exam === "fp1" ? [
+      {
+        label: "金融財政事情研究会 2026年5月学科・基礎編の公式問題",
+        href: "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+        description: "同回の基礎編50問を掲載。サイト内では照合済みの5問を収録しています。",
+      },
+      {
+        label: "金融財政事情研究会 2026年5月学科の模範解答",
+        href: "https://www.kinzai.or.jp/fp/news-fp/50274.html",
+        description: "基礎編の公式正答表が掲載されています。",
+      },
+    ] : exam === "civil1" ? [
       {
         label: "全国建設研修センター 公式問題A",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaia.pdf",

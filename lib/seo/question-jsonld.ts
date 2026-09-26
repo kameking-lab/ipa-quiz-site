@@ -72,7 +72,13 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const questionAuthor = (q.exam === "fp2" || q.exam === "fp3")
+  const questionAuthor = q.exam === "fp1"
+    ? {
+        "@type": "Organization",
+        name: "一般社団法人金融財政事情研究会",
+        url: "https://www.kinzai.or.jp/",
+      }
+    : (q.exam === "fp2" || q.exam === "fp3")
     ? {
         "@type": "Organization",
         name: "日本ファイナンシャル・プランナーズ協会",
@@ -113,7 +119,9 @@ export function buildQuestionJsonLd({
           name: "情報処理推進機構 (IPA)",
           url: "https://www.ipa.go.jp/",
         };
-  const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
+  const licenseUrl = q.exam === "fp1"
+    ? "https://www.kinzai.or.jp/ginou/license_terms.html"
+    : (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "zoen2" || q.exam === "zoen1" || q.exam === "tsushin2" || q.exam === "tsushin1" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denken1" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan"
       ? undefined

@@ -18,6 +18,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   sm: async () => (await import("@/data/questions/sm")).SM_QUESTIONS,
   au: async () => (await import("@/data/questions/au")).AU_QUESTIONS,
   fp2: async () => (await import("@/data/questions/fp2")).FP2_QUESTIONS,
+  fp1: async () => (await import("@/data/questions/fp1")).FP1_QUESTIONS,
   fp3: async () => (await import("@/data/questions/fp3")).FP3_QUESTIONS,
   denken3: async () => (await import("@/data/questions/denken3")).DENKEN3_QUESTIONS,
   denken2: async () => isExamPublished("denken2") ? (await import("@/data/questions/denken2")).DENKEN2_QUESTIONS : [],

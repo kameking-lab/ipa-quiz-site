@@ -13,6 +13,7 @@ import { ES_QUESTIONS } from "./es";
 import { SM_QUESTIONS } from "./sm";
 import { AU_QUESTIONS } from "./au";
 import { FP2_QUESTIONS } from "./fp2";
+import { FP1_QUESTIONS } from "./fp1";
 import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { DENKO1_QUESTIONS } from "./denko1";
@@ -57,6 +58,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   sm: SM_QUESTIONS,
   au: AU_QUESTIONS,
   fp2: FP2_QUESTIONS,
+  fp1: FP1_QUESTIONS,
   fp3: FP3_QUESTIONS,
   denken3: DENKEN3_QUESTIONS,
   ...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),

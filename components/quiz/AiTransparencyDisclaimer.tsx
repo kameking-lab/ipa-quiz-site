@@ -56,7 +56,7 @@ export function AiTransparencyDisclaimer({
             rel="noopener noreferrer"
             className="inline-flex w-fit items-center gap-1 font-medium text-foreground underline decoration-border underline-offset-4 transition hover:decoration-primary"
           >
-            {sourceAttribution ? "公式問題 PDF" : `出典: ${ipaSourceLabel(sourcePdfUrl, "question")}`}
+            {sourceAttribution ? ipaSourceLabel(sourcePdfUrl, "question") : `出典: ${ipaSourceLabel(sourcePdfUrl, "question")}`}
             <ExternalLink className="h-3 w-3" aria-hidden="true" />
           </a>
           <a
