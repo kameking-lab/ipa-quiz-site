@@ -5,7 +5,7 @@ import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKey
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
-import { choiceDisplayLabel } from "@/lib/questions/display";
+import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { QuestionCard } from "./QuestionCard";
 import { ChoiceButton } from "./ChoiceButton";
@@ -367,7 +367,7 @@ export function QuizPlayer({
     );
   }
 
-  const answerKey = question.exam === "denken3" || question.exam === "denken2"
+  const answerKey = usesNumberedChoices(question.exam)
     ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
@@ -465,6 +465,7 @@ export function QuizPlayer({
                     displayLabel={choiceDisplayLabel(question.exam, key)}
                     text={question.choices![key]!}
                     imageUrl={question.choiceImageUrls?.[key]}
+                    imageAlt={choiceImageAlt(question.exam, key)}
                     revealed={revealed}
                     selected={multiSelect ? picked.includes(key) : selected === key}
                     correct={isAcceptedAnswer(question.answer, key)}

@@ -96,6 +96,34 @@ export function parseQuestionBlocks(text: string): Block[] {
 
 // Deliberately treat angle brackets as literal exam text (BNF, HTML examples),
 // while supporting the inline notation used in reviewed transcriptions.
+/**
+ * 公式問題のふりがな。社会福祉振興・試験センターの読み上げ用テキストと同じ
+ * 「親文字｛よみ｝」表記で保持し、直前の漢字列を親文字としてルビ表示する。
+ * 親文字の範囲は公式PDFのルビ位置と全件照合済み（scripts/sssc-welfare-extract.py）。
+ */
+export const RUBY_RE = /([㐀-鿿々〆豈-﫿]+)｛([^｝]+)｝/g;
+
+function RubyText({ text }: { text: string }) {
+  const nodes: (string | ReactElement)[] = [];
+  let last = 0;
+  for (const match of text.matchAll(RUBY_RE)) {
+    const index = match.index ?? 0;
+    if (index > last) nodes.push(text.slice(last, index));
+    nodes.push(
+      <ruby key={index}>
+        {match[1]}
+        <rp>｛</rp>
+        <rt className="text-[0.6em]">{match[2]}</rt>
+        <rp>｝</rp>
+      </ruby>,
+    );
+    last = index + match[0].length;
+  }
+  if (last === 0) return text;
+  if (last < text.length) nodes.push(text.slice(last));
+  return <>{nodes}</>;
+}
+
 function InlineText({ text }: { text: string }) {
   return text.split(/(`[^`]+`|\*\*[^*]+\*\*)/g).map((part, i) => {
     if (part.startsWith("`") && part.endsWith("`")) {
@@ -104,7 +132,7 @@ function InlineText({ text }: { text: string }) {
     if (part.startsWith("**") && part.endsWith("**")) {
       return <strong key={i}>{part.slice(2, -2)}</strong>;
     }
-    return part;
+    return part.includes("｛") ? <RubyText key={i} text={part} /> : part;
   });
 }
 

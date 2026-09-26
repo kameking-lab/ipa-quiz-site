@@ -16,7 +16,7 @@ import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import type { ChoiceKey, ExamCode, QuestionPart, Season, Session } from "@/lib/questions/types";
-import { choiceDisplayLabel } from "@/lib/questions/display";
+import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 
 
 interface Props {
@@ -157,7 +157,7 @@ export function QuestionAnswerCard({
 
   const answered = multiSelect ? picked.length === requiredSelections : selected !== undefined;
   const isCorrect = multiSelect ? isCompleteSelectionCorrect(answerKey, picked) : isAcceptedAnswer(answerKey, selected);
-  const answerLabel = exam === "denken3" || exam === "denken2"
+  const answerLabel = usesNumberedChoices(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
     : formatAcceptedAnswers(answerKey);
 
@@ -181,6 +181,7 @@ export function QuestionAnswerCard({
             displayLabel={choiceDisplayLabel(exam, key)}
             text={choices[key]!}
             imageUrl={choiceImageUrls?.[key]}
+            imageAlt={choiceImageAlt(exam, key)}
             revealed={revealed}
             selected={multiSelect ? picked.includes(key) : selected === key}
             correct={isAcceptedAnswer(answerKey, key)}
@@ -227,7 +228,7 @@ export function QuestionAnswerCard({
             ) : isCorrect ? (
               <>
                 <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
-                {(exam === "denken3" || exam === "denken2") && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
+                {usesNumberedChoices(exam) && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
               </>
             ) : (
               <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>

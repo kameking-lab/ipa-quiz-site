@@ -11,6 +11,8 @@ interface Props {
   displayLabel?: string;
   text: string;
   imageUrl?: string;
+  /** 選択肢が図そのものの場合の代替テキスト。未指定時は回路図として扱う。 */
+  imageAlt?: string;
   revealed: boolean;
   selected: boolean;
   correct: boolean;
@@ -34,6 +36,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     displayLabel,
     text,
     imageUrl,
+    imageAlt,
     revealed,
     selected,
     correct,
@@ -122,7 +125,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
         {imageUrl && (
           // Exact circuit diagrams are cropped from the published paper.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={imageUrl} alt={`${text}の回路図`} className="mt-3 h-auto max-h-44 max-w-full rounded border border-border bg-white p-2" loading="lazy" />
+          <img src={imageUrl} alt={imageAlt ?? `${text}の回路図`} className="mt-3 h-auto max-h-44 max-w-full rounded border border-border bg-white p-2" loading="lazy" />
         )}
       </div>
       {state === "revealed-correct" && (

@@ -10,14 +10,14 @@ for (const width of [390, 1280]) {
     // 分野ジャンプ（ヒーロー内）はファーストビューに収まる。
     const domains = page.getByRole("navigation", { name: "分野から選ぶ" });
     const domainLinks = domains.getByRole("link");
-    await expect(domainLinks).toHaveCount(5);
-    for (const name of [/^IT・情報処理/, /^安全衛生/, /^電気/, /^建設・施工管理/, /^お金・不動産/]) {
+    await expect(domainLinks).toHaveCount(6);
+    for (const name of [/^IT・情報処理/, /^安全衛生/, /^電気/, /^建設・施工管理/, /^お金・不動産/, /^福祉・介護/]) {
       await expect(domains.getByRole("link", { name })).toBeInViewport();
     }
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
-    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denko2", "/civil2", "/kankoji2",
+    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denko2", "/civil2", "/kankoji2", "/kaigo",
       "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications",
       "/challenge", "/mock-exam", "/operator"]) {
       await expect(main.locator(`a[href="${href}"]`).first(), href).toBeAttached();
@@ -53,6 +53,7 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
     await expect(page.locator('a[href="/civil2"]')).toBeVisible();
     await expect(page.locator('a[href="/kankoji2"]')).toBeVisible();
+    await expect(page.locator('a[href="/kaigo"]')).toBeVisible();
     await page.goBack();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });

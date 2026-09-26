@@ -1,11 +1,12 @@
 "use client";
-import { isAcceptedAnswer, formatAcceptedAnswers, getChoiceKeys, CHOICE_SHORTCUTS } from "@/lib/questions/answers";
+import { isAcceptedAnswer, getChoiceKeys, CHOICE_SHORTCUTS } from "@/lib/questions/answers";
 
 import * as React from "react";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Trophy, RefreshCw, CheckCircle2, XCircle } from "lucide-react";
 import type { Question, ChoiceKey } from "@/lib/questions/types";
 import { ChoiceButton } from "@/components/quiz/ChoiceButton";
+import { choiceDisplayLabel } from "@/lib/questions/display";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { Button } from "@/components/ui/button";
 import {
@@ -234,7 +235,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
   if (!current) return null;
 
   const choices = current.choices ?? {};
-  const answerKey = formatAcceptedAnswers(current.answer);
+  const answerKey = (Array.isArray(current.answer) ? current.answer : [current.answer]).map((key) => choiceDisplayLabel(current.exam, key as ChoiceKey)).join("・");
 
   return (
     <div className="space-y-4">
@@ -279,6 +280,7 @@ export function DailyChallengeClient({ questions, date }: Props) {
             <ChoiceButton
               key={k}
               choiceKey={k}
+              displayLabel={choiceDisplayLabel(current.exam, k)}
               text={text}
               revealed={revealed}
               selected={selected === k}
