@@ -20,6 +20,15 @@ const props = { question, selected: "イ", isCorrect: true, starred: false,
   onToggleStar: vi.fn(), onNext: vi.fn(), onAskAI: vi.fn() };
 
 describe("ExplanationCard learning continuity", () => {
+  it.each([
+    ["tohan", "ウ", "結論: 正解は(3)です。"],
+    ["denken3", "ウ", "結論: 正解は(3)です。"],
+    ["kaigo", "ウ", "結論: 正解は3です。"],
+    ["st", "イ", "結論: 正解はイです。"],
+  ] as const)("shows the complete conclusion for %s", (exam, answer, conclusion) => {
+    render(<ExplanationCard {...props} question={{ ...question, exam, answer }} />);
+    expect(screen.getByText(conclusion, { exact: true })).toBeInTheDocument();
+  });
   it("shows a substantive explanation even when it starts with the correct answer", () => {
     render(<ExplanationCard {...props} />);
     expect(screen.getByText(question.explanation)).toBeInTheDocument();
