@@ -23,6 +23,8 @@ interface Props {
   tabIndex?: number;
   /** Arrow-key roving handler from useQuizChoiceRoving. */
   onKeyDown?: React.KeyboardEventHandler<HTMLButtonElement>;
+  /** 「二つとも答えなさい」形式。押すたびに選択を切り替えるチェックボックスとして振る舞う。 */
+  multiSelect?: boolean;
 }
 
 const CHOICE_INDEX: Partial<Record<string, number>> = { ア: 1, イ: 2, ウ: 3, エ: 4, オ: 5, カ: 6, キ: 7, ク: 8, ケ: 9, コ: 0 };
@@ -42,6 +44,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     shortcutIndex,
     tabIndex,
     onKeyDown,
+    multiSelect = false,
   },
   ref,
 ) {
@@ -56,7 +59,9 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
   const numberKey = shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
   const baseLabel = `選択肢 ${displayLabel ?? choiceKey}: ${text}`;
   const stateLabel = !revealed
-    ? `数字キー${numberKey}でも選択できます`
+    ? multiSelect
+      ? `数字キー${numberKey}でも選択・解除できます`
+      : `数字キー${numberKey}でも選択できます`
     : state === "revealed-correct"
       ? "（正解）"
       : state === "wrong"
@@ -68,7 +73,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     <button
       ref={ref}
       type="button"
-      role="radio"
+      role={multiSelect ? "checkbox" : "radio"}
       onClick={onClick}
       onKeyDown={onKeyDown}
       tabIndex={tabIndex}

@@ -55,13 +55,14 @@ test.describe("home SERP snippet", () => {
     }));
     const list = nodes.find(node => node["@type"] === "ItemList");
     expect(list?.numberOfItems).toBe(list?.itemListElement.length);
-    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(20);
+    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(21);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko2"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken3"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/takken"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kankoji2"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kaigo"))).toBe(true);
   });
 });
