@@ -12,7 +12,7 @@ export function buildOpenApiSpec(baseUrl: string) {
         url: baseUrl,
       },
       license: {
-        name: "問題本文は IPA 著作（許諾不要・使用料不要）。レスポンス構造は MIT。",
+        name: "問題本文の著作権は各試験実施団体に帰属します。レスポンス構造は MIT。",
       },
     },
     servers: [
