@@ -122,7 +122,9 @@ const REQUIRED_MORNING_FIELDS: (keyof Question)[] = [
   "license",
 ];
 
-const VALID_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "コ"];
+const VALID_CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"];
+/** 電験二種一次試験は公式解答群(イ)〜(ヨ)の15肢を ア〜ソ で保持する。 */
+const DENKEN2_CHOICE_KEYS: ChoiceKey[] = [...VALID_CHOICE_KEYS, "サ", "シ", "ス", "セ", "ソ"];
 
 function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
   // 既に needsReview=true で出題プール／URL から除外済の問題は
@@ -155,12 +157,13 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
       if (filled.length < 2) {
         add(q, "morning", downgrade("critical"), "choices-too-few", `有効な選択肢が ${filled.length} 個しかない`);
       }
-      if (filled.length > 9) {
+      const maxChoices = q.exam === "denken2" ? 15 : 9;
+      if (filled.length > maxChoices) {
         add(q, "morning", "warning", "choices-too-many", `選択肢が ${filled.length} 個（想定外）`);
       }
       // 想定外キー
       for (const k of keys) {
-        if (!VALID_CHOICE_KEYS.includes(k)) {
+        if (!(q.exam === "denken2" ? DENKEN2_CHOICE_KEYS : VALID_CHOICE_KEYS).includes(k)) {
           add(q, "morning", "warning", "invalid-choice-key", `不正な選択肢キー: ${k}`);
         }
       }
