@@ -1,0 +1,82 @@
+{
+  "inputHashes": {
+    "draftSha256": "156011236ca3750bd99e485438c7d14a68380b3c7af26e750c04d46399e79cb0",
+    "candidateSha256": {
+      "11": "8d92f1270e832263a9d7ac00c6022fa78d6eb74ee8182760f9283938074ac3b9",
+      "12": "3e7b0cecf2da9d93f28f5eb243b88a3a0220ecee37cb1bf9c271680ebbe2043e",
+      "13": "36df58eca7e79ee3548e1134086dd8206b95b1a89212f7ade60598861fe0b3e5",
+      "14": "690a18c10c27818b5e601ca7b0b234f0d89fa05615d6339898c59f9062cf9352",
+      "15": "eb7d3862a0510f402792dddb3b03e9c2c1e8f4a947ea616208c90e385ff9a1f3"
+    },
+    "rowSha256": {
+      "11": "7c6506190145ebbebe95f887ce509639dfa1987e448a6fa3c7b4e6b6ef35699e",
+      "12": "427fa1d0d6ce0e384ca2773b7e22dff0c10e4134830e83c9f768978264ae55fd",
+      "13": "bf22f65e1600d7d9cdd2cfbcf65f90ee9ad5f5a1b502cee1b3078bb09d99db5d",
+      "14": "2908324bca00b4f797a2e08bddf3eae1ad6c790367fb29340620280b6bb6ffa8",
+      "15": "98dbf9a1a757b764fd52c7a5245ecafd0435818eb1b4f1e414dc2f32732710d7"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q11-i.png": "b70e7d4be1fe68a9c34d948aa88996629d617038c3f1a1d2bfd6dc17428377bd",
+      "public/images/denko1/2026-first/q11-ro.png": "7dccd59e97c1f3cc0dfdb456a84cf876bc9d14fc6451f04bd7dbaab474e1f05f",
+      "public/images/denko1/2026-first/q11-ha.png": "c5539349c69686291a80bee28c58a558544102e3b1024c9506d3ec46e3e043cd",
+      "public/images/denko1/2026-first/q11-ni.png": "62863c57a0404ed9184cad5cc2359812b733079902c4d9d14092ae419f04886e",
+      "public/images/denko1/2026-first/q14.png": "c14c3d70f278f820a10bc5a5b6e334429f84a859202162ffc80af2d77d03c3c7",
+      "public/images/denko1/2026-first/q15.png": "150df0e33b6d367957c727c32a199adbb5cf9178f6d8b4350c06b7fe8e5abdc8"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "1179a1df-ad37-41d4-8211-b6c6730a160c",
+  "assessment": [
+    {
+      "number": 11,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロで「鉄損と銅損の性質が逆になっている」としているが、ロのaとbを入れ替えても正解にならない。入れ替えると銅損は原点から比例して増える直線になるが、正しくは出力の2乗に比例する放物線状の曲線である。ロの誤りは2点ある。鉄損aを一定の水平線にせず比例直線にしていること、銅損bを2乗曲線にせず一定にしていること。この2点を分けて書く必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 12,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 13,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 14,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionは「両端に金属製の丸い接続箱と取付け金具があり」としているが、写真と一致しない。丸い接続箱は左端の吊り管の上に1個あるだけで、右端は角形の取付け金具(ブラケット)と支持管である。「左端上部に丸い金属製の接続箱、右端上部に角形の取付け金具があり」などに直す必要がある。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 15,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

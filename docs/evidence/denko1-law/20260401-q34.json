@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "question": "20260401-q34",
+  "status": "official-source-verified",
+  "checkedAtUtc": "2026-09-26T10:35:43.429914+00:00",
+  "sources": {
+    "解釈": {
+      "title": "電気設備の技術基準の解釈",
+      "url": "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+      "sha256": "7e0c8969263999fdfccf843d987ca8429ea2823aee1004e70471e6d4d812f7fd",
+      "fetchedVia": "direct-download",
+      "revision": "改正 20251104保局第2号 令和7年11月20日付け"
+    }
+  },
+  "checks": {
+    "電線の許容電流": {
+      "source": "解釈",
+      "clauses": [
+        "【低圧分岐回路等の施設】（省令第56条第1項、第57条第1項、第59条第1項、第63条第1項）第149条低圧分岐回路には、",
+        "2低圧分岐回路は、次の各号により施設すること。",
+        "二電動機又はこれに類する起動電流が大きい電気機械器具（以下この条において「電動機等」という。）のみに至る低圧分岐回路は、次によること。",
+        "ロ電線の許容電流は、間欠使用その他の特殊な使用方法による場合を除き、その部分を通じて供給される電動機等の定格電流の合計を1.25倍（当該電動機等の定格電流の合計が50Aを超える場合は、1.1倍）した値以上であること。"
+      ],
+      "applies": "ロ・ハ。"
+    }
+  },
+  "unresolved": []
+}

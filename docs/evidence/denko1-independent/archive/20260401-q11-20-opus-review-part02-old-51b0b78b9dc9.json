@@ -1,0 +1,75 @@
+{
+  "inputHashes": {
+    "draftSha256": "9364e564beaeca5f2cc9b358f5c4ab0fadfb8ffc8c97f3622c2462eab2801841",
+    "candidateSha256": {
+      "16": "0c1d8837bce3965d7f56711fc8af401110676e07ac2860b6450e7fd557eb7e4b",
+      "17": "3b9b1ce9456753bf9d9519044b7c775e841b766ed86dbfa96ff9005c63fa89dc",
+      "18": "c376502c9a5cbd4229aa5e7c9ed216b759fdd07989f44d07d91ea079fbbeff18",
+      "19": "2f840c7981289c01611feaa659e149527dcc3f5aa5a324db207098a41e1b440d",
+      "20": "b65af807d17d1e9792dd6b87b5d6bcad6e1bff1538e93dce6b1fe1b59cef283d"
+    },
+    "rowSha256": {
+      "16": "f3437f3b5bcf3a17dc19e24a61026cf932eaf29972f585ca6ea183d0b392a252",
+      "17": "78d1eeb7983a0128e1cfd66dd3b361f4396e65d85058393815325d7016e33441",
+      "18": "c7ea648e28b862125a9d49ab582e7c6ba56eabd99a0e5ee4c78517ffc2c18ebe",
+      "19": "7e58fc4dd3f184fc5cc5f1f6da8d4382299249e24bb164c510b3842160680517",
+      "20": "c9b13f9f19b5fe2035153aefd9aa8f5a47107c0428a499ce15d701c63deb6fd0"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q16.png": "fde0d2e5e20a87e8d21326d561a51214354503db238e8f342e56611f49926136"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "e9be706c-3230-4b13-834c-9db551a5f04e",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "explanationの「風車の羽根の形状として不適切」と、choiceExplanations.ハの「風力発電の風車の羽根の形状ではない」は言い過ぎである。クロスフロー形(円筒状に多数の羽根を並べた抗力形の垂直軸風車)は小形風車として実在し、垂直軸風車の分類にも挙げられる。公式正答ハの根拠は「クロスフロー形は主に小水力発電の水車(クロスフロー水車)の形式として知られ、本問の風力発電用ブレード形状としては不適切とされる」程度の表現にとどめ、「風車には存在しない」と読める断定は避けるべき。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

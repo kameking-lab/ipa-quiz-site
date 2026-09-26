@@ -86,7 +86,7 @@ export function buildQuestionJsonLd({
           name: "一般財団法人全国建設研修センター",
           url: "https://www.jctc.jp/",
         }
-    : q.exam === "denken3" || q.exam === "denko2"
+    : q.exam === "denken3" || q.exam === "denko2" || q.exam === "denko1"
       ? {
           "@type": "Organization",
           name: "一般財団法人 電気技術者試験センター",
@@ -99,7 +99,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2"
+    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "denko1"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"

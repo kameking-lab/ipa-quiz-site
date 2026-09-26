@@ -16,12 +16,13 @@ export type ExamCode =
   | "fp3"
   | "denken3"
   | "denko2"
+  | "denko1"
   | "takken"
   | "civil2"
   | "kankoji2";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "denko1" | "takken" | "civil2" | "kankoji2">;
 
 export type Session =
   | "am"
