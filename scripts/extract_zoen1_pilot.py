@@ -15,7 +15,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EVIDENCE = ROOT / "docs/evidence/zoen1-2026"
 OUTPUT = ROOT / "reports/zoen1-20260927/transcription-draft.json"
-SELECTED = {"mondai-a": [1, 2, 3, 4, 5], "mondai-b": [3, 24, 25, 26]}
+SELECTED = {
+    "mondai-a": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 17, 18, 19, 22, 30, 34],
+    "mondai-b": [3, 24, 25, 26],
+}
 
 
 def normalize(text: str) -> str:
