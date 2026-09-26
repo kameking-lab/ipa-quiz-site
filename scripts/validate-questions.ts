@@ -55,10 +55,10 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denko2", "takken", "civil2", "kankoji2", "kaigo", "shakai", "seishin"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denko2", "takken", "civil2", "kankoji2", "kaigo", "shakai", "seishin", "tohan"]),
   session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "kyotsu", "senmon"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "kansai"]),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b"]).optional(),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),
@@ -95,7 +95,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse"]),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse"]),
   isCalculation: z.boolean().optional(),
 });
 

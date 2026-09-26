@@ -6,6 +6,7 @@ export type QualificationDomain =
   | "electrical"
   | "construction"
   | "real-estate"
+  | "pharmacy"
   | "legal"
   | "safety"
   | "accounting"
@@ -49,7 +50,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jafp.or.jp/exam/mohan/",
     officialReuseTermsUrl: "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
     status: "live",
-    reuseSummary: "出典を明記し、加工時は加工した旨を明記すれば申請不要。",
+    reuseSummary: "公式に公表された学科・実技の問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（公表年月）",
     remainingWork: ["2026年公表問題の追加", "法改正影響を受ける問題の失効管理"],
   },
@@ -63,7 +64,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jafp.or.jp/exam/mohan/",
     officialReuseTermsUrl: "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf",
     status: "live",
-    reuseSummary: "FP3級と同じ利用条件。共通学科問題は日本FP協会と金財が著作権を共有。",
+    reuseSummary: "日本FP協会・金融財政事情研究会が公表した学科・実技の問題を収録。",
     attributionTemplate: "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定（公表年月）",
       remainingWork: ["2026年5月公表の問11〜60の追加", "法改正影響の継続確認"],
   },
@@ -77,7 +78,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.shiken.or.jp/chief/third/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
     status: "live",
-    reuseSummary: "教育目的での過去問題利用は許諾・使用料不要。出典明記が必要。",
+    reuseSummary: "公式に公表された過去問題と正答を、年度・科目ごとに収録。",
     attributionTemplate: "出典：令和○年度○期第三種電気主任技術者試験 ○○科目",
     remainingWork: ["一般解説のみの2問について全肢解説を独立確認", "数式・図のアクセシビリティを継続改善"],
   },
@@ -91,7 +92,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.shiken.or.jp/construction/second/qa/",
     officialReuseTermsUrl: "https://www.shiken.or.jp/shiken/faq/faq08/000082.html",
     status: "live",
-    reuseSummary: "教育目的での過去問題利用は許諾・使用料不要。出典明記が必要。",
+    reuseSummary: "公式に公表された過去問題と正答を、年度ごとに収録。",
     attributionTemplate: "出典：令和○年度○期第二種電気工事士学科試験",
     remainingWork: ["令和8年度上期学科の問11〜50の追加"],
   },
@@ -119,7 +120,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jctc.jp/mondai/",
     officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
     status: "live",
-    reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全52問、各選択肢の解説付きで収録。掲載条件は2級土木施工管理と同じ公式ページ・同じ扱い。",
+    reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全52問、各選択肢の解説付きで収録。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級管工事施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加", "公共建築工事標準仕様書の改定に伴う解説更新"],
   },
@@ -213,6 +214,20 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "2024・2025年度の公式問題・正解番号表を掲載し、各年度の解説に法令基準日を表示。",
     remainingWork: [],
+  },
+  {
+    slug: "tohan-kansai",
+    examCode: "tohan",
+    shortName: "登録販売者（関西）",
+    fullName: "登録販売者試験（関西広域連合：滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）",
+    domain: "pharmacy",
+    administrator: "関西広域連合",
+    officialQuestionsUrl: "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/touroku/7607.html",
+    officialReuseTermsUrl: "https://www.kouiki-kansai.jp/site/221.html",
+    status: "live",
+    reuseSummary: "令和7年度（2025年8月23日実施）の全120問と各選択肢の解説を収録。",
+    attributionTemplate: "出典：関西広域連合 令和○年度 登録販売者試験（前半／後半）問○",
+    remainingWork: ["令和8年度は公式の「正答(例)」のみで確定正答の公表待ち", "他の年度（令和元〜6年度）の追加", "東京都・神奈川県など他ブロックは個別に確認"],
   },
   {
     slug: "gyoseishoshi",

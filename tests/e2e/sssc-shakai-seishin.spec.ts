@@ -13,7 +13,7 @@ test.describe("社会福祉士 第38回・精神保健福祉士 第28回", () =>
 
   test("a choose-two question grades only after both official answers are selected", async ({ page }) => {
     await page.goto("/q/shakai/2025-annual/kyotsu/q10");
-    const choices = page.getByRole("radio");
+    const choices = page.getByRole("checkbox");
     await expect(choices).toHaveCount(5);
     await expect(choices.first()).toHaveAccessibleName(/^選択肢 1:/);
     await expect(page.getByText(/正解は2つあります/).first()).toBeVisible();

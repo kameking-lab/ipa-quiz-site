@@ -12,7 +12,7 @@ export function buildOpenApiSpec(baseUrl: string) {
         url: baseUrl,
       },
       license: {
-        name: "問題本文は IPA 著作（許諾不要・使用料不要）。レスポンス構造は MIT。",
+        name: "問題本文の著作権は各試験実施団体に帰属します。レスポンス構造は MIT。",
       },
     },
     servers: [
@@ -63,7 +63,7 @@ export function buildOpenApiSpec(baseUrl: string) {
             exam: { type: "string", example: "ap" },
             session: { type: "string", example: "am" },
             year: { type: "integer", example: 2024 },
-            season: { type: "string", enum: ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual"], example: "autumn" },
+            season: { type: "string", enum: ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "kansai"], example: "autumn" },
             qNumber: { type: "integer", example: 1 },
             type: {
               type: "string",
@@ -157,7 +157,7 @@ export function buildOpenApiSpec(baseUrl: string) {
               },
             },
             { name: "year", in: "query", schema: { type: "integer" } },
-            { name: "season", in: "query", schema: { type: "string", enum: ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual"] } },
+            { name: "season", in: "query", schema: { type: "string", enum: ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "kansai"] } },
             { name: "session", in: "query", schema: { type: "string" } },
             { name: "category", in: "query", schema: { type: "string" } },
             {

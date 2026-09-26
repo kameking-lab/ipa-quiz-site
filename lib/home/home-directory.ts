@@ -128,6 +128,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
+  { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
@@ -264,8 +265,8 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "福祉・介護",
-        lead: "社会福祉振興・試験センターの福祉系国家試験。",
+        title: "福祉・介護・医薬品",
+        lead: "介護福祉士国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },

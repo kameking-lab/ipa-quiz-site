@@ -70,16 +70,22 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf",
         description: "全125問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
+    ] : exam === "tohan" ? [
+      {
+        label: "関西広域連合 過去問題及び解答",
+        href: qualification.officialQuestionsUrl,
+        description: "令和元年度以降の試験問題（前半・後半）と解答のPDF。",
+      },
+      {
+        label: "厚生労働省 試験問題の作成に関する手引き（令和7年4月）",
+        href: "https://www.mhlw.go.jp/content/001478036.pdf",
+        description: "令和7年度試験の出題範囲。本サイトの解説の根拠資料。",
+      },
     ] : [
       {
         label: `${qualification.administrator} 公式問題・正答`,
         href: qualification.officialQuestionsUrl,
         description: "問題と公式正答の一次情報。公開範囲や基準日も確認できます。",
-      },
-      {
-        label: "過去問題の利用条件",
-        href: qualification.officialReuseTermsUrl,
-        description: qualification.reuseSummary,
       },
     ];
     return (
@@ -90,7 +96,7 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
           </span>
           <div className="leading-tight">
             <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
-            <p className="text-[11px] text-muted-foreground">問題・正答・利用条件の一次情報</p>
+            <p className="text-[11px] text-muted-foreground">問題・正答の一次情報</p>
           </div>
         </div>
         <ul className="grid gap-2 sm:grid-cols-2">

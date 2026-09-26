@@ -49,6 +49,15 @@ const KANKOJI2_EXAM_SECTIONS = [
   { id: "kankoji2-required-ability", label: "施工管理法（基礎的な能力）・必須・各2肢選択 49〜52", first: 49, last: 52 },
 ] as const;
 
+/** 関西広域連合の試験は前半（問1〜60）・後半（問61〜120）で、手引きの5項目ごとに問番号がまとまっている。 */
+const TOHAN_KANSAI_SECTIONS = [
+  { id: "tohan-chapter1", label: "前半 医薬品に共通する特性と基本的な知識 1〜20", first: 1, last: 20 },
+  { id: "tohan-chapter3", label: "前半 主な医薬品とその作用 21〜60", first: 21, last: 60 },
+  { id: "tohan-chapter2", label: "後半 人体の働きと医薬品 61〜80", first: 61, last: 80 },
+  { id: "tohan-chapter4", label: "後半 薬事に関する法規と制度 81〜100", first: 81, last: 100 },
+  { id: "tohan-chapter5", label: "後半 医薬品の適正使用と安全対策 101〜120", first: 101, last: 120 },
+] as const;
+
 export async function generateStaticParams(): Promise<RouteParams[]> {
   const out: RouteParams[] = [];
   for (const exam of getAvailableExams()) {
@@ -61,7 +70,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|kansai)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -149,10 +158,12 @@ export default async function ExamYearSeasonPage({
       })),
     }),
   );
-  const civil2Sections = code === "civil2" && parsed.year === 2026 && parsed.season === "early"
+  const civil2Sections: ReadonlyArray<{ id: string; label: string; first: number; last: number }> | null = code === "civil2" && parsed.year === 2026 && parsed.season === "early"
     ? CIVIL2_EXAM_SECTIONS
     : code === "kankoji2"
       ? KANKOJI2_EXAM_SECTIONS
+    : code === "tohan" && parsed.season === "kansai"
+      ? TOHAN_KANSAI_SECTIONS
       : null;
   if (civil2Sections) {
     const allItems = sessionGroups.flatMap((group) => group.items);
@@ -284,6 +295,11 @@ export default async function ExamYearSeasonPage({
           {code === "kankoji2" && (
             <p className="mt-2 text-sm text-muted-foreground">
               公式問題・正答・図表を照合した全52問を収録。No.49〜52は本試験どおり「適当でないもの」を二つとも選ぶと正解です。
+            </p>
+          )}
+          {code === "tohan" && parsed.season === "kansai" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の令和7年度試験 全{pool.length}問です。選択肢は原本と同じ番号(1)〜(5)で表示しています。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
