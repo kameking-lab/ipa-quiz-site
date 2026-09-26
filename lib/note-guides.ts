@@ -166,6 +166,39 @@ export const EXAM_NOTE_SUPPLEMENTS: Partial<Record<ExamCode, NoteGuideLink>> = {
     description:
       "500円（購入は任意です）。最初の演習は記事内で無料の試し読みができます。6問の演習と2つのワークシートで、無料ガイドの型を実際の答案に書き起こせます。",
   },
+  // 2026-09-27 に匿名画面・公開APIで価格と有料境界を確認。無料ガイドは主リンクのまま残す。
+  ip: {
+    kind: "paid",
+    href: "https://note.com/ipa_quiz_ai/n/n4d660d858d53",
+    label: "2進数・論理演算・表計算の計算12問",
+    source: "exam_ip_paid",
+    account: "ipa_quiz_ai",
+    description: "980円。無料部分で試し問題を確認できます。購入は任意です。計算12問と各選択肢の解説を収録しています。",
+  },
+  sg: {
+    kind: "paid",
+    href: "https://note.com/ipa_quiz_ai/n/nf7aa45d40bf6",
+    label: "法規・ガイドラインの判別ドリル12問",
+    source: "exam_sg_paid",
+    account: "ipa_quiz_ai",
+    description: "980円。無料部分で例題を確認できます。購入は任意です。科目Aの法規とガイドラインを判別する12問を収録しています。",
+  },
+  fe: {
+    kind: "paid",
+    href: "https://note.com/ipa_quiz_ai/n/nd762ac17cd95",
+    label: "確率・待ち行列・期待値の計算10問",
+    source: "exam_fe_paid",
+    account: "ipa_quiz_ai",
+    description: "980円。無料部分で例題を確認できます。購入は任意です。科目Aの計算10問を途中式付きで解説しています。",
+  },
+  ap: {
+    kind: "paid",
+    href: "https://note.com/ipa_quiz_ai/n/n8ad47350244f",
+    label: "経営戦略・企業活動・法務の16問",
+    source: "exam_ap_paid",
+    account: "ipa_quiz_ai",
+    description: "980円。無料部分で例題を確認できます。購入は任意です。科目Aのストラテジ系16問と各選択肢の解説を収録しています。",
+  },
 };
 
 export function getNoteGuideSupplement(exam: ExamCode): NoteGuideLink | undefined {
