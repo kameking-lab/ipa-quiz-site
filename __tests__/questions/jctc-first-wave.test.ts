@@ -6,6 +6,7 @@ import { describe, expect, it } from "vitest";
 import { ZOEN2_QUESTIONS } from "@/data/questions/zoen2";
 import { TSUSHIN2_QUESTIONS } from "@/data/questions/tsushin2";
 import garden from "@/data/questions/zoen2/2026-early.json";
+import garden2025 from "@/data/questions/zoen2/2025-late.json";
 import telecom from "@/data/questions/tsushin2/2026-early.json";
 import answers from "@/reports/zoen2-tsushin2-20260927/official-answers.json";
 
@@ -13,7 +14,7 @@ const keys = ["ア", "イ", "ウ", "エ"] as const;
 
 describe("JCTC 2026 first-stage publication", () => {
   it.each([
-    ["zoen2", garden, ZOEN2_QUESTIONS, 40, 10],
+    ["zoen2", garden, ZOEN2_QUESTIONS.filter((question) => question.year === 2026), 40, 10],
     ["tsushin2", telecom, TSUSHIN2_QUESTIONS, 65, 5],
   ] as const)("%s publishes only reviewed items with official PDF and answer provenance", (exam, source, questions, officialCount, publishedCount) => {
     expect(source.officialQuestionCount).toBe(officialCount);
@@ -39,5 +40,28 @@ describe("JCTC 2026 first-stage publication", () => {
   it("keeps telecom questions with missing diagrams out of the published pool", () => {
     expect(TSUSHIN2_QUESTIONS.map((question) => question.qNumber)).toEqual([4, 7, 8, 9, 10]);
     expect(telecom.deferred.map((item) => item.number)).toEqual([1, 2, 3, 5, 6]);
+  });
+
+  it("publishes five distinct 2025 late gardening questions against the official PDFs", () => {
+    const selected = ZOEN2_QUESTIONS.filter((question) => question.year === 2025);
+    expect(garden2025.officialQuestionCount).toBe(40);
+    expect(garden2025.publishedCount).toBe(5);
+    expect(selected.map((question) => question.qNumber)).toEqual([1, 2, 3, 4, 5]);
+    expect(selected.map((question) => question.season)).toEqual(["late", "late", "late", "late", "late"]);
+    expect(selected.map((question) => question.officialAnswerNumber)).toEqual(["3", "2", "3", "4", "1"]);
+    expect(selected.map((question) => question.answer)).toEqual(["ウ", "イ", "ウ", "エ", "ア"]);
+    expect(new Set(ZOEN2_QUESTIONS.map((question) => question.id)).size).toBe(ZOEN2_QUESTIONS.length);
+    for (const kind of ["question", "answer"] as const) {
+      const suffix = kind === "question" ? "q" : "a";
+      const pdf = readFileSync(join(process.cwd(), "docs/evidence/zoen2-2025/input", `zoen2-2025-${suffix}.pdf`));
+      expect(createHash("sha256").update(pdf).digest("hex")).toBe(garden2025[`${kind}Sha256`]);
+    }
+    for (const question of selected) {
+      expect(Object.values(question.choices ?? {})).toHaveLength(4);
+      expect(Object.values(question.choiceExplanations ?? {}).filter(Boolean)).toHaveLength(4);
+      expect(question.sourcePdfUrl).toBe(garden2025.questionUrl);
+      expect(question.sourceAnswerUrl).toBe(garden2025.answerUrl);
+      expect(question.hasImage).toBe(false);
+    }
   });
 });

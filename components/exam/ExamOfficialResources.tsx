@@ -112,19 +112,36 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
-    ] : exam === "zoen2" || exam === "tsushin2" ? [
+    ] : exam === "zoen2" ? [
       {
         label: "全国建設研修センター 公式問題（令和8年度前期）",
-        href: exam === "zoen2"
-          ? "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_mondaia.pdf"
-          : "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_mondaia.pdf",
         description: `${qualification.fullName} 第一次検定（前期）の問題PDF。`,
       },
       {
         label: "全国建設研修センター 公式正答肢（令和8年度前期）",
-        href: exam === "zoen2"
-          ? "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_seitou.pdf"
-          : "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608z_seitou.pdf",
+        description: "同じ試験回の正答肢PDF。",
+      },
+      {
+        label: "全国建設研修センター 公式問題（令和7年度後期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_mondaia.pdf",
+        description: "令和7年度後期の全40問のうち、当サイトでは照合済み5問を収録。",
+      },
+      {
+        label: "全国建設研修センター 公式正答肢（令和7年度後期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117z_seitou.pdf",
+        description: "同じ試験回の正答肢PDF。",
+      },
+    ] : exam === "tsushin2" ? [
+      {
+        label: "全国建設研修センター 公式問題（令和8年度前期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+        description: `${qualification.fullName} 第一次検定（前期）の問題PDF。`,
+      },
+      {
+        label: "全国建設研修センター 公式正答肢（令和8年度前期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
     ] : exam === "denken1" ? [

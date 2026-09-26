@@ -12,13 +12,14 @@ type SourceItem = {
   choices: string[];
   explanation: string;
   choiceExplanations: string[];
+  officialReferenceUrls?: string[];
   imageUrl?: string;
 };
 
 export type JctcFirstSource = {
   exam: "zoen2" | "tsushin2";
-  year: 2026;
-  season: "early";
+  year: 2025 | 2026;
+  season: "early" | "late";
   session: "gakka";
   officialQuestionCount: number;
   publishedCount: number;
@@ -34,6 +35,12 @@ const names = {
 
 export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
   if (source.publishedCount !== source.questions.length) throw new Error(`${source.exam} published count mismatch`);
+  if (source.year === 2025 && (source.exam !== "zoen2" || source.season !== "late")) {
+    throw new Error("Only 2025 late zoen2 is supported");
+  }
+  if (source.year === 2026 && source.season !== "early") {
+    throw new Error("Only 2026 early is supported");
+  }
   return source.questions.map((item) => {
     const answerKeys = item.officialAnswerNumbers.map((number) => keys[number - 1]);
     if (
@@ -41,15 +48,15 @@ export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
       answerKeys.length === 0 || answerKeys.some((key) => !key) ||
       new Set(item.officialAnswerNumbers).size !== answerKeys.length
     ) {
-      throw new Error(`Invalid ${source.exam} 2026 early No.${item.number}`);
+      throw new Error(`Invalid ${source.exam} ${source.year} ${source.season} No.${item.number}`);
     }
     const answer = answerKeys.length === 1 ? answerKeys[0]! : answerKeys as ChoiceKey[];
     return {
-      id: `${source.exam}-2026-early-gakka-q${item.number}`,
+      id: `${source.exam}-${source.year}-${source.season}-gakka-q${item.number}`,
       exam: source.exam as ExamCode,
       session: "gakka",
-      year: 2026,
-      season: "early",
+      year: source.year,
+      season: source.season,
       qNumber: item.number,
       type: "multiple-choice",
       category: item.category,
@@ -67,8 +74,8 @@ export function toJctcFirstQuestions(source: JctcFirstSource): Question[] {
       imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
       sourcePdfUrl: source.questionUrl,
       sourceAnswerUrl: source.answerUrl,
-      sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度${names[source.exam]} 第一次検定（前期） No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
-      officialReferenceUrls: [],
+      sourceAttribution: `出典：一般財団法人全国建設研修センター 令和${source.year - 2018}年度${names[source.exam]} 第一次検定（${source.season === "early" ? "前期" : "後期"}） No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
+      officialReferenceUrls: item.officialReferenceUrls ?? [],
       license: "JCTC-authorized-reuse",
       lastUpdated: "2026-09-27",
     };
