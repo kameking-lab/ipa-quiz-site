@@ -182,10 +182,10 @@ export default async function ExamYearSeasonPage({
       items: (sessionGroups.find((group) => group.session === section.session)?.items ?? [])
         .filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
     })).filter((group) => group.items.length > 0);
-  } else if (code === "zoen1") {
+  } else if (code === "zoen1" || code === "tsushin1") {
     sessionGroups = sessionGroups.map((group) => ({
       ...group,
-      id: `zoen1-${group.session}`,
+      id: `${code}-${group.session}`,
       session: practiceSessionLabel(group.session as typeof pool[number]["session"]),
     }));
   } else if (civil2Sections) {
@@ -335,6 +335,11 @@ export default async function ExamYearSeasonPage({
               公式の全65問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では設問群ごとの条件に従い40問を解答します。
             </p>
           )}
+          {code === "tsushin1" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式の問題A55問・問題B35問から、確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では問題AのNo.1〜19から14問、No.20〜47から14問、No.48〜55から5問を選びます。問題BのNo.1〜2とNo.31〜35は必須、No.3〜16から8問、No.17〜30から12問を選びます。この演習は本試験の問題数を再現していません。
+            </p>
+          )}
           {code === "tohan" && parsed.season === "kansai" && (
             <p className="mt-2 text-sm text-muted-foreground">
               関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の令和7年度試験 全{pool.length}問です。選択肢は原本と同じ番号(1)〜(5)で表示しています。
@@ -360,7 +365,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1"} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
       </div>
     </main>
   );

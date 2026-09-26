@@ -31,6 +31,7 @@ export const EXAM_LABELS: Record<string, string> = {
   zoen2: "2級造園施工管理技士",
   zoen1: "1級造園施工管理技士",
   tsushin2: "2級電気通信工事施工管理技士",
+  tsushin1: "1級電気通信工事施工管理技士",
   kaigo: "介護福祉士",
   civil1: "1級土木施工管理技士",
   shakai: "社会福祉士",

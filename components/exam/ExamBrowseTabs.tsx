@@ -42,7 +42,7 @@ const MOCK_PRESETS = [
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
   const [tab, setTab] = React.useState<string>("year");
-  const partialFirstStage = exam === "zoen2" || exam === "zoen1" || exam === "tsushin2";
+  const partialFirstStage = exam === "zoen2" || exam === "zoen1" || exam === "tsushin2" || exam === "tsushin1";
 
   React.useEffect(() => {
     const apply = () => {

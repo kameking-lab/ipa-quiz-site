@@ -143,7 +143,7 @@ export default async function ExamTopPage({
       // The card's badge owns the total question count. Keep this line for the
       // covered range only so assistive technology and visual readers do not
       // encounter a duplicated value such as "67問 67問".
-      coverage: code === "zoen2" || code === "zoen1" || code === "tsushin2"
+      coverage: code === "zoen2" || code === "zoen1" || code === "tsushin2" || code === "tsushin1"
         ? "第一次検定の収録済み設問"
         : coverageLabels.length === 1
           ? `${coverageLabels[0]}のみ`
@@ -319,6 +319,7 @@ export default async function ExamTopPage({
           {code === "zoen2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験の40問は全て必須で、No.37〜40は複数の正答を全て選びます。現在の収録数は上記のバッジをご確認ください。</p>}
           {code === "zoen1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は問題Aの36問と問題Bの29問が全て必須です。問題BのNo.24〜29は正解番号を全て選びます。ここでは収録済み設問のみを演習できます。</p>}
           {code === "tsushin2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期の第一次検定から、公式問題・正答と照合した設問を順次収録しています。実試験は全65問のうち、設問群ごとの選択・必須条件に従って40問を解答します。現在の収録数は上記のバッジをご確認ください。</p>}
+          {code === "tsushin1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度の第一次検定から、公式問題・正答と照合した12問を収録しています。実試験では問題Aの55問から33問、問題Bの35問から27問を設問群ごとの条件に従って解答します。ここでは収録済み設問のみを演習できます。</p>}
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}
         </header>
 
