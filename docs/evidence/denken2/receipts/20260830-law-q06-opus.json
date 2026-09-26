@@ -1,0 +1,97 @@
+{
+ "reviewedFile": "data/questions/denken2/reviewed/20260830-law-q06.json",
+ "resolvedModel": "claude-opus-5-5",
+ "modelUsage": {
+  "claude-opus-5-5": {
+   "inputTokens": 2,
+   "outputTokens": 4602,
+   "cacheReadInputTokens": 1915,
+   "cacheCreationInputTokens": 18900,
+   "webSearchRequests": 0,
+   "costUSD": 0.243631,
+   "contextWindow": 1000000,
+   "maxOutputTokens": 128000,
+   "thinkingTokens": 4197,
+   "canonicalModel": "claude-opus-5-5",
+   "provider": "firstParty",
+   "costBasis": "list"
+  }
+ },
+ "effort": "high",
+ "rawResponse": "docs/evidence/denken2/raw/20260830-law-q06-opus-raw-2.jsonl",
+ "rawResponseSha256": "ce1a317326a4026267784b174ac088de75747dcbf8536ea7374316cfdfb54dd2",
+ "inputHashes": {
+  "candidateSha256": {
+   "q06-1": "52e5d0b79190229fac7da86f495b748c93fcf7d10a3f7e15b37b986dd775fa33",
+   "q06-2": "06513d7b7e8741de0d54fcb718c9d6ef26b752cfc587c9b2eb53d65d1fc8736f",
+   "q06-3": "586da7a1551b9149db9bda729b527c27bdfa0fecc9a1dd1e714467217a354c4b",
+   "q06-4": "ea026d5216d7b0c6ef7cec2e16bd54c5be0980778a865cff49673ad44d841765",
+   "q06-5": "872b671b68baf52db9c80a8b21e155cf15f7b4cda39f732b41fd2494faa50acf"
+  },
+  "questionPdfSha256": "5a5d7a2182bff66de440ef83ee8c954d384faca757dd1c123774df188bfb5e25",
+  "answerPdfSha256": "96a106b2e30ba64f7ca6718356a24b530769f644ff277830ff6b82a93a91d687",
+  "renderedPageSha256": {
+   "20260830_ch_second_q04/p13.png": "a4fac6c8a7f9728f834991f2c802c8e2265088151cffe1eeacb9ab6d8dc2f937",
+   "20260830_ch_second_a01/p01.png": "43c16dc7033d842bc022cb866e33c2e1681ff02bd5a53e5a36ebe8349c6bb937"
+  },
+  "officialBlanks": [
+   "ト",
+   "ヨ",
+   "イ",
+   "チ",
+   "ハ"
+  ]
+ },
+ "assessment": [
+  {
+   "unitKey": "q06-1",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q06-2",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q06-3",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q06-4",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  },
+  {
+   "unitKey": "q06-5",
+   "status": "PASS",
+   "textIssues": [],
+   "choiceIssues": [],
+   "answerIssues": [],
+   "explanationIssues": [],
+   "figureIssues": [],
+   "sourceIssues": []
+  }
+ ]
+}

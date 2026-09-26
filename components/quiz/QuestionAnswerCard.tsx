@@ -15,7 +15,7 @@ import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
-import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel } from "@/lib/questions/display";
 
 
@@ -30,7 +30,7 @@ interface Props {
   season: Season;
   session: Session;
   qNumber: number;
-  part?: "a" | "b";
+  part?: QuestionPart;
   /** /q path of the next question in the same session, if any. */
   nextHref?: string;
 }
@@ -141,7 +141,7 @@ export function QuestionAnswerCard({
   }, [revealed, keys, onSelect]);
 
   const isCorrect = isAcceptedAnswer(answerKey, selected);
-  const answerLabel = exam === "denken3"
+  const answerLabel = exam === "denken3" || exam === "denken2"
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
     : formatAcceptedAnswers(answerKey);
 
@@ -165,7 +165,7 @@ export function QuestionAnswerCard({
             correct={isAcceptedAnswer(answerKey, key)}
             disabled={revealed}
             onClick={() => onSelect(key)}
-            shortcutIndex={(idx + 1) % 10}
+            shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
             {...roving.getRadioProps(idx)}
           />
         ))}
@@ -205,7 +205,7 @@ export function QuestionAnswerCard({
             ) : isCorrect ? (
               <>
                 <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
-                {exam === "denken3" && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
+                {(exam === "denken3" || exam === "denken2") && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
               </>
             ) : (
               <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>

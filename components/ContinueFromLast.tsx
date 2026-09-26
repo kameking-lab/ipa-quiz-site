@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PlayCircle, ArrowRight } from "lucide-react";
 import { readLastQuestion, type LastQuestionState } from "@/lib/storage/last-question";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { questionPagePath } from "@/lib/seo/question-url";
 
 const SESSION_LABEL: Record<string, string> = {
   am: "午前",
@@ -46,7 +47,7 @@ export function ContinueFromLast() {
   // 前回の問題ページに戻し、そこから内蔵の前後ナビで継続してもらう。
   // セッション最終問題で qNumber+1 すると存在しない問題リンクになり 404 になるため、
   // ここでは last.qNumber 自体を起点にする（page 内の prev/next で連続性は維持される）。
-  const resumeHref = `/q/${last.exam}/${last.year}-${last.season}/${last.session}/q${last.qNumber}${last.part ?? ""}`;
+  const resumeHref = questionPagePath(last);
   const yearQuizHref = `/quiz?mode=year&exam=${last.exam}&year=${last.year}&season=${last.season}&session=${last.session}`;
 
   return (

@@ -1,4 +1,4 @@
-import type { Question, Season, Session, ExamCode } from "@/lib/questions/types";
+import type { Question, QuestionPart, Season, Session, ExamCode } from "@/lib/questions/types";
 
 export interface QuestionRouteParams {
   exam: string;
@@ -7,8 +7,29 @@ export interface QuestionRouteParams {
   qnum: string;
 }
 
+/** URLの問番号部分。枝問は `q15a`、電験二種の空欄は `q1-3`（問1の空欄(3)）。 */
+export function questionNumberSegment(qNumber: number, part?: QuestionPart): string {
+  if (!part) return `q${qNumber}`;
+  return /^\d$/.test(part) ? `q${qNumber}-${part}` : `q${qNumber}${part}`;
+}
+
+/** 枝問(a)/(b)は電験三種、空欄番号(1)〜(5)は電験二種だけが使う。 */
+const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
+  letter: ["denken3"],
+  blank: ["denken2"],
+};
+
+export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {
+  const match = /^q(\d+)(?:([ab])|-([1-5]))?$/.exec(qnum);
+  if (!match) return null;
+  const qNumber = Number(match[1]);
+  if (match[2]) return PART_EXAMS.letter.includes(exam) ? { qNumber, part: match[2] as QuestionPart } : null;
+  if (match[3]) return PART_EXAMS.blank.includes(exam) ? { qNumber, part: match[3] as QuestionPart } : null;
+  return { qNumber };
+}
+
 export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber"> & Partial<Pick<Question, "part">>): string {
-  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/q${q.qNumber}${q.part ?? ""}`;
+  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/${questionNumberSegment(q.qNumber, q.part)}`;
 }
 
 export function parseQuestionRoute(params: QuestionRouteParams): {
@@ -17,18 +38,16 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   season: Season;
   session: Session;
   qNumber: number;
-  part?: "a" | "b";
+  part?: QuestionPart;
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|primary)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;
 
-  const qMatch = /^q(\d+)([ab])?$/.exec(params.qnum);
-  if (!qMatch) return null;
-  const qNumber = Number(qMatch[1]);
-  const part = qMatch[2] as "a" | "b" | undefined;
-  if (part && params.exam !== "denken3") return null;
+  const segment = parseQuestionNumberSegment(params.exam, params.qnum);
+  if (!segment) return null;
+  const { qNumber, part } = segment;
 
   return {
     exam: params.exam as ExamCode,
@@ -46,9 +65,9 @@ function routeKey(
   season: string,
   session: string,
   qNumber: number,
-  part?: "a" | "b",
+  part?: QuestionPart,
 ): string {
-  return `${exam}/${year}-${season}/${session}/q${qNumber}${part ?? ""}`;
+  return `${exam}/${year}-${season}/${session}/${questionNumberSegment(qNumber, part)}`;
 }
 
 // O(1) route lookup. The /q/* page resolves the question twice per request

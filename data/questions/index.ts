@@ -17,6 +17,7 @@ import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { DENKEN3_QUESTIONS } from "./denken3";
+import { DENKEN2_QUESTIONS } from "./denken2";
 import { TAKKEN_QUESTIONS } from "./takken";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
@@ -46,6 +47,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   fp2: FP2_QUESTIONS,
   fp3: FP3_QUESTIONS,
   denken3: DENKEN3_QUESTIONS,
+  ...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),
   takken: TAKKEN_QUESTIONS,
   // The official FAQ asks users to notify the examination center. Keep the
   // reviewed pilot out of all public counts/routes until that receipt exists.

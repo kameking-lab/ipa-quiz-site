@@ -15,12 +15,13 @@ export type ExamCode =
   | "fp2"
   | "fp3"
   | "denken3"
+  | "denken2"
   | "denko2"
   | "takken"
   | "civil2";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denken2" | "denko2" | "takken" | "civil2">;
 
 export type Session =
   | "am"
@@ -37,13 +38,20 @@ export type Session =
   | "kikai"
   | "houki";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "primary";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
 export type QuestionType = "multiple-choice" | "descriptive" | "essay";
 
-export type ChoiceKey = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | "ク" | "ケ" | "コ";
+/**
+ * 内部の選択肢キー。IPA等は先頭4〜5個だけを使う。電験二種一次試験は公式の
+ * 解答群(イ)〜(ヨ)の15肢を、順番どおり ア〜ソ に割り当てて保持する。
+ */
+export type ChoiceKey = "ア" | "イ" | "ウ" | "エ" | "オ" | "カ" | "キ" | "ク" | "ケ" | "コ" | "サ" | "シ" | "ス" | "セ" | "ソ";
+
+/** 枝問(a)/(b)、または電験二種の空欄番号(1)〜(5)。 */
+export type QuestionPart = "a" | "b" | "1" | "2" | "3" | "4" | "5";
 
 export interface Question {
   id: string;
@@ -52,8 +60,8 @@ export interface Question {
   year: number;
   season: Season;
   qNumber: number;
-  /** 枝問。問番号と併せて一意のURL・復帰位置を構成する。 */
-  part?: "a" | "b";
+  /** 枝問または空欄番号。問番号と併せて一意のURL・復帰位置を構成する。 */
+  part?: QuestionPart;
   /** 電験三種の公式公表単位。画面の年度・期と検証台帳を照合する。 */
   fiscalYear?: number;
   term?: "upper" | "lower";

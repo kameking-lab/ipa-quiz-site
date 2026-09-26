@@ -321,6 +321,18 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["first", "second"],
     yearRange: { start: 2024, end: 2025 },
   },
+  denken2: {
+    code: "denken2",
+    nameFull: "第二種電気主任技術者試験 一次試験",
+    urlSlug: "denken2",
+    level: "advanced",
+    sessions: [
+      { session: "denryoku", urlSlug: "denryoku", expectedQuestions: 35, label: "電力", categories: ["電力"] },
+      { session: "houki", urlSlug: "houki", expectedQuestions: 35, label: "法規", categories: ["法規"] },
+    ],
+    seasons: ["primary"],
+    yearRange: { start: 2026, end: 2026 },
+  },
   denko2: {
     code: "denko2",
     nameFull: "第二種電気工事士学科試験",
@@ -370,7 +382,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denken2" | "denko2" | "takken" | "civil2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denken2" && code !== "denko2" && code !== "takken" && code !== "civil2",
 );
 
 /** Every exam playable in the application, including external qualifications. */

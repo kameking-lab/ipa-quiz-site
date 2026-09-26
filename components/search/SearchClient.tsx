@@ -39,7 +39,7 @@ type SearchSort = "relevance" | "year_desc" | "category" | "random";
 const EXAM_OPTIONS: ExamCode[] = [
   "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "takken",
 ];
-const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october"];
+const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "primary"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];
 const SORT_OPTIONS: { value: SearchSort; label: string }[] = [
   { value: "relevance", label: "関連度順" },

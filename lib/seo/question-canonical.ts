@@ -1,7 +1,7 @@
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { Question } from "@/lib/questions/types";
 
-const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"] as const;
+const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"] as const;
 
 /**
  * The advanced exams reuse one common morning-I paper across several exam
