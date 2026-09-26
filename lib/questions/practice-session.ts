@@ -8,7 +8,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (SPECIALIST_EXAMS.includes(exam)) return "am2";
   if ((exam === "fe" || exam === "sg") && (!year || year >= 2023)) return "kamoku-a";
   if (exam === "civil1") return "mondai-a";
-  if (exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "kaigo" || exam === "tohan") return "gakka";
+  if (exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "zoen2" || exam === "tsushin2" || exam === "kaigo" || exam === "tohan") return "gakka";
   if (exam === "denken3") return "riron";
   if (exam === "denken2") return "denryoku";
   if (exam === "shakai") return "kyotsu";
