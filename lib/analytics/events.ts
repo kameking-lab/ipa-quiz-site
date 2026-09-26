@@ -41,6 +41,7 @@ export type AnalyticsEvent =
         | "exam_ap"
         | "exam_fe"
         | "exam_ip"
+        | "exam_civil2"
         | "exam_library";
       account: "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";
     }

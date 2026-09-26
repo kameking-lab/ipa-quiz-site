@@ -27,6 +27,7 @@ export type NoteLinkSource =
   | "exam_ap"
   | "exam_fe"
   | "exam_ip"
+  | "exam_civil2"
   // 公表問題ライブラリ (data/exam-library/official-catalog.json の noteLinks) 用。
   // ExamCode 単位の source ではなく、免許試験/作業環境測定士/労働安全衛生コンサルタントの
   // 全 group (lckohyo/emkohyo/cskohyo) に共通する1値。個別 group ごとの source は
