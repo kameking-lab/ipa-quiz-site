@@ -10,6 +10,8 @@ import type { NoteAccount } from "@/lib/note-accounts";
 
 export type NoteLinkSource =
   | "footer"
+  // トップページの「学習ガイド（note）」欄。
+  | "home"
   | "operator"
   | "exam_sa"
   | "exam_st"

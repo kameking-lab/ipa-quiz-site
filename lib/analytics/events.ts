@@ -25,6 +25,7 @@ export type AnalyticsEvent =
       name: "note_outbound_click";
       source:
         | "footer"
+        | "home"
         | "operator"
         | "exam_sa"
         | "exam_st"
