@@ -484,6 +484,10 @@ export default async function QuestionPage({
               </ul>
             </nav>
           )}
+          {q.license === "SSSC-reuse" && q.sourceAttribution && (
+            // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
+            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
+          )}
           <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
