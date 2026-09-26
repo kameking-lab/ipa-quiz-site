@@ -93,7 +93,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "KANSAI-UNION-CC-BY-compatible"]),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "KANSAI-UNION-reuse"]),
   isCalculation: z.boolean().optional(),
 });
 

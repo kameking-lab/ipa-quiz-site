@@ -32,7 +32,6 @@ type TohanSource = {
   examDate: string;
   administrator: string;
   sourcePageUrl: string;
-  termsUrl: string;
   questionUrls: Record<"前半" | "後半", string>;
   answerUrl: string;
   guideline: { title: string; url: string };
@@ -75,9 +74,9 @@ function toQuestions(source: TohanSource): Question[] {
       hasImage: false,
       sourcePdfUrl: source.questionUrls[item.pdfPart],
       sourceAnswerUrl: source.answerUrl,
-      sourceAttribution: `出典：関西広域連合「令和${reiwa}年度 登録販売者試験問題（${item.pdfPart}）」問${item.number}・「令和${reiwa}年度 登録販売者試験 解答」（${source.sourcePageUrl}）を加工して作成。ルビ・改行・表組みを整理し、選択肢は原本の番号(1)〜(5)で表示。解説は本サイト（過去問AI）が作成したもので、関西広域連合が作成・監修したものではない。`,
-      officialReferenceUrls: [source.guideline.url, source.termsUrl],
-      license: "KANSAI-UNION-CC-BY-compatible",
+      sourceAttribution: `出典：関西広域連合 令和${reiwa}年度 登録販売者試験（${item.pdfPart}）問${item.number}。ルビ・改行・表組みを整理。解説は本サイト作成。`,
+      officialReferenceUrls: [source.guideline.url],
+      license: "KANSAI-UNION-reuse",
       lastUpdated: "2026-09-26",
     };
   });

@@ -68,7 +68,7 @@ describe("登録販売者試験（関西広域連合）令和7年度 全120問",
     });
   });
 
-  it("5肢すべてに解説があり、出典・加工の明示・非公式である旨を持つ", () => {
+  it("5肢すべてに解説と出典表記があり、表示データに利用条件の文言を含まない", () => {
     for (const q of TOHAN_QUESTIONS) {
       expect(Object.keys(q.choices ?? {}), q.id).toEqual(["ア", "イ", "ウ", "エ", "オ"]);
       for (const key of ["ア", "イ", "ウ", "エ", "オ"] as const) {
@@ -83,10 +83,13 @@ describe("登録販売者試験（関西広域連合）令和7年度 全120問",
       for (const line of prose) expect(line, q.id).not.toMatch(/[ぁ-ん一-龥] [ぁ-ん一-龥]/);
       expect(q.sourcePdfUrl, q.id).toBe(q.qNumber <= 60 ? ZENHAN : KOUHAN);
       expect(q.sourceAnswerUrl, q.id).toBe(ANSWER);
-      expect(q.sourceAttribution, q.id).toContain("関西広域連合");
-      expect(q.sourceAttribution, q.id).toContain("を加工して作成");
-      expect(q.sourceAttribution, q.id).toContain("関西広域連合が作成・監修したものではない");
-      expect(q.license, q.id).toBe("KANSAI-UNION-CC-BY-compatible");
+      expect(q.sourceAttribution, q.id).toBe(
+        `出典：関西広域連合 令和7年度 登録販売者試験（${q.qNumber <= 60 ? "前半" : "後半"}）問${q.qNumber}。ルビ・改行・表組みを整理。解説は本サイト作成。`,
+      );
+      // 出典表記・参考リンクに利用条件・許諾に関する文言を載せない（オーナー方針）。
+      const shown = [q.sourceAttribution ?? "", ...(q.officialReferenceUrls ?? [])].join("\n");
+      expect(shown, q.id).not.toMatch(/利用ルール|利用条件|CC BY|転載|許諾|加工して|site\/221/);
+      expect(q.license, q.id).toBe("KANSAI-UNION-reuse");
       expect(q.hasImage, q.id).toBe(false);
     }
   });

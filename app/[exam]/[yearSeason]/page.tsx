@@ -248,7 +248,7 @@ export default async function ExamYearSeasonPage({
           )}
           {code === "tohan" && parsed.season === "kansai" && (
             <p className="mt-2 text-sm text-muted-foreground">
-              関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の試験問題・解答PDFを加工して作成した全{pool.length}問です。選択肢は原本の番号(1)〜(5)で表示し、解説は本サイトが作成しています（関西広域連合の作成・監修ではありません）。
+              関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の令和7年度試験 全{pool.length}問です。選択肢は原本と同じ番号(1)〜(5)で表示しています。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

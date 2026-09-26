@@ -307,7 +307,7 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
-          {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）が令和7年8月23日に実施した試験の全120問を、公式の問題・解答PDFを加工して収録しています。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って本サイトが作成したもので、関西広域連合の作成・監修ではありません。</p>}
+          {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）が令和7年8月23日に実施した試験の全120問を収録しています。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って作成しています。</p>}
           {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
         </header>
 
