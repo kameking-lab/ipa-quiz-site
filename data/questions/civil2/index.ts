@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
+import source2025Required from "./2025-october-batch-01-05.json";
 import source2025 from "./2025-october-batch-06-10.json";
 import source2025b from "./2025-october-batch-11-16.json";
 import source2025c from "./2025-october-batch-17-20.json";
@@ -81,9 +82,10 @@ function toQuestions(source: Civil2Source): Question[] {
   });
 }
 
-/** 令和8年度前期は全66問、令和7年度10月実施は照合済みNo.6〜66を公開。 */
+/** 令和8年度前期・令和7年度10月実施とも全66問を公開。 */
 export const CIVIL2_2026_QUESTIONS = toQuestions(source2026 as Civil2Source);
 export const CIVIL2_2025_QUESTIONS = [
+  ...toQuestions(source2025Required as Civil2Source),
   ...toQuestions(source2025 as Civil2Source),
   ...toQuestions(source2025b as Civil2Source),
   ...toQuestions(source2025c as Civil2Source),

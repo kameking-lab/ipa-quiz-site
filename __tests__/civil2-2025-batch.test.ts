@@ -28,6 +28,75 @@ const receipt = JSON.parse(readFileSync(path.join(evidenceDir, "q06-10-release-r
   figuresRequired: number;
 };
 
+describe("2025年10月2級土木施工管理・照合済みNo.1〜5（必須・図表）", () => {
+  const batch = JSON.parse(readFileSync(path.join(process.cwd(), "data/questions/civil2/2025-october-batch-01-05.json"), "utf8")) as Omit<typeof candidate, "questions"> & {
+    questionUrl: string;
+    answerUrl: string;
+    questions: (typeof candidate.questions[number] & { choices: string[]; choiceExplanations: string[]; imageUrl?: string })[];
+  };
+  const review = JSON.parse(readFileSync(path.join(evidenceDir, "q01-05-opus-review-final-raw.json"), "utf8")) as typeof finalReview;
+  const verification = JSON.parse(readFileSync(path.join(evidenceDir, "q01-05-fable-verify-final-raw.json"), "utf8")) as typeof finalReview;
+  const batchReceipt = JSON.parse(readFileSync(path.join(evidenceDir, "q01-05-release-receipt.json"), "utf8")) as typeof receipt & {
+    remaining2025Questions: number;
+    preliminaryVisualRead: { requestedModel: string; resolvedModelReportedByCli: string | null; status: string; blindToCandidate: boolean };
+    figures: { number: number; publicPath: string; sha256: string; sourcePdfPage: number; clipRectPdfPoints: number[] }[];
+  };
+
+  it("maps five required official questions, keys, 20 choice reasons and five byte-pinned figures", () => {
+    expect(batch.questions.map((question) => question.number)).toEqual([1, 2, 3, 4, 5]);
+    expect(batch.questions.map((question) => question.officialAnswerNumber)).toEqual([2, 3, 4, 4, 2]);
+    expect(batch.questions.map((question) => question.pdfPage)).toEqual([2, 3, 4, 5, 5]);
+    expect(batch.questions.map((question) => question.number)).toEqual(batchReceipt.questionNumbers);
+    expect(batch.questions.map((question) => question.officialAnswerNumber)).toEqual(batchReceipt.officialAnswerNumbers);
+    expect(batchReceipt.figuresRequired).toBe(5);
+    expect(batchReceipt.remaining2025Questions).toBe(0);
+    expect(batch.questionUrl).toBe(sourceMap.questionUrl);
+    expect(batch.answerUrl).toBe(sourceMap.answerUrl);
+    for (const [index, record] of batch.questions.entries()) {
+      const question = CIVIL2_2025_QUESTIONS[index]!;
+      expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
+      expect(question.qNumber).toBe(record.number);
+      expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
+      expect(Object.values(question.choices ?? {})).toEqual(record.choices);
+      expect(Object.values(question.choiceExplanations ?? {})).toEqual(record.choiceExplanations);
+      expect(record.choiceExplanations.every((reason) => reason.trim().length > 15)).toBe(true);
+      const figure = batchReceipt.figures[index]!;
+      expect(figure.number).toBe(record.number);
+      expect(figure.sourcePdfPage).toBe(record.pdfPage);
+      expect(figure.clipRectPdfPoints).toHaveLength(4);
+      expect(question.hasImage).toBe(true);
+      expect(question.imageUrls).toEqual([figure.publicPath]);
+      expect(createHash("sha256").update(readFileSync(path.join(process.cwd(), "public", figure.publicPath.slice(1)))).digest("hex")).toBe(figure.sha256);
+      const [, , exam, yearSeason, section, qnum] = questionPagePath(question).split("/");
+      expect(findQuestionByRoute(CIVIL2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(question.id);
+    }
+  });
+
+  it("pins source bytes, candidate hash, actual first-party Opus 5.5 PASS and Fable 5.1 verification", () => {
+    expect(batch.questionSha256).toBe("594b2771831021cf84a0d06039d66889f7870cf9b57abf39314b5c264253e28b");
+    expect(batch.answerSha256).toBe("62008080111808123eeddacb15747be7da35e2392983cbd63ae8a9bbdf69ce5e");
+    expect(createHash("sha256").update(JSON.stringify(batch.questions)).digest("hex")).toBe(batchReceipt.canonicalQuestionsSha256);
+    expect(batchReceipt.preliminaryVisualRead).toMatchObject({ requestedModel: "gemini-3.1-pro-high", resolvedModelReportedByCli: null, status: "SUCCESS", blindToCandidate: true });
+    expect(Object.keys(review.modelUsage)).toEqual(["claude-opus-5-5"]);
+    expect(review.modelUsage["claude-opus-5-5"]).toMatchObject({ canonicalModel: "claude-opus-5-5", provider: "firstParty" });
+    const result = JSON.parse(review.result) as { overallVerdict: string; reviews: { number: number; verdict: string; issues: string[] }[] };
+    expect(result.overallVerdict).toBe("PASS");
+    expect(result.reviews.map((item) => item.number)).toEqual([1, 2, 3, 4, 5]);
+    expect(result.reviews.every((item) => item.verdict === "PASS" && item.issues.length === 0)).toBe(true);
+    expect(Object.keys(verification.modelUsage)).toEqual(["claude-fable-5-1"]);
+    expect(verification.modelUsage["claude-fable-5-1"]).toMatchObject({ canonicalModel: "claude-fable-5-1", provider: "firstParty" });
+    const verified = JSON.parse(verification.result) as {
+      overallVerdict: string;
+      questions: { number: number; officialAnswerFromKey: number; independentAnswer: number; choiceRationale: string[]; verdict: string; issues: string[] }[];
+    };
+    expect(verified.overallVerdict).toBe("PASS");
+    expect(verified.questions.map((item) => item.officialAnswerFromKey)).toEqual([2, 3, 4, 4, 2]);
+    expect(verified.questions.map((item) => item.independentAnswer)).toEqual([2, 3, 4, 4, 2]);
+    expect(verified.questions.every((item) => item.verdict === "PASS" && item.issues.length === 0)).toBe(true);
+    expect(verified.questions.every((item) => item.choiceRationale.length === 4 && item.choiceRationale.every((reason) => reason.startsWith("correct")))).toBe(true);
+  });
+});
+
 describe("2025年10月2級土木施工管理・照合済みNo.59〜66", () => {
   const batch = JSON.parse(readFileSync(path.join(process.cwd(), "data/questions/civil2/2025-october-batch-59-66.json"), "utf8")) as Omit<typeof candidate, "questions"> & {
     questionUrl: string;
@@ -49,7 +118,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.59〜66", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 53]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 58]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -100,7 +169,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.52〜58", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 46]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 51]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -150,7 +219,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.50〜51", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 44]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 49]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -203,7 +272,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.48〜49", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 42]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 47]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -254,7 +323,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.44〜47", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 38]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 43]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -302,7 +371,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.40〜43", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 34]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 39]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -334,8 +403,8 @@ describe("2025年10月2級土木施工管理・照合済みNo.40〜43", () => {
 describe("2025年10月2級土木施工管理・照合済みNo.6〜10", () => {
   it("publishes a distinct five-question edition with exact official keys", () => {
     expect(CIVIL2_2026_QUESTIONS).toHaveLength(66);
-    expect(CIVIL2_2025_QUESTIONS).toHaveLength(61);
-    expect(CIVIL2_QUESTIONS).toHaveLength(127);
+    expect(CIVIL2_2025_QUESTIONS).toHaveLength(66);
+    expect(CIVIL2_QUESTIONS).toHaveLength(132);
     expect(EXAM_CONFIGS.civil2.yearRange).toEqual({ start: 2025, end: 2026 });
     expect(EXAM_CONFIGS.civil2.seasons).toContain("october");
     expect(candidate.questions.map((question) => question.number)).toEqual([6, 7, 8, 9, 10]);
@@ -343,7 +412,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.6〜10", () => {
     expect(receipt.questionNumbers).toEqual(candidate.questions.map((question) => question.number));
     expect(receipt.officialAnswerNumbers).toEqual(candidate.questions.map((question) => question.officialAnswerNumber));
     expect(receipt.figuresRequired).toBe(0);
-    for (const [index, question] of CIVIL2_2025_QUESTIONS.slice(0, 5).entries()) {
+    for (const [index, question] of CIVIL2_2025_QUESTIONS.slice(5, 10).entries()) {
       const record = candidate.questions[index]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
@@ -396,7 +465,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.37〜39", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 31]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 36]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -427,8 +496,8 @@ describe("2025年10月2級土木施工管理・照合済みNo.37〜39", () => {
 
 describe("2025年10月2級土木施工管理・照合済みNo.33〜36", () => {
   const batches = ([
-    { label: "33-35", numbers: [33, 34, 35], answers: [4, 1, 3], pages: [13, 13, 13], offset: 27, figures: 0 },
-    { label: "36", numbers: [36], answers: [4], pages: [14], offset: 30, figures: 1 },
+    { label: "33-35", numbers: [33, 34, 35], answers: [4, 1, 3], pages: [13, 13, 13], offset: 32, figures: 0 },
+    { label: "36", numbers: [36], answers: [4], pages: [14], offset: 35, figures: 1 },
   ] as const).map((config) => ({
     ...config,
     data: JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/civil2/2025-october-batch-${config.label}.json`), "utf8")) as {
@@ -483,7 +552,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.33〜36", () => {
     expect(figure.publicPath).toBe("/questions/civil2/2025-october/q36-official-figure.png");
     expect(figure.clipRectPdfPoints).toEqual([60, 210, 550, 310]);
     expect(createHash("sha256").update(readFileSync(path.join(process.cwd(), "public", figure.publicPath.slice(1)))).digest("hex")).toBe(figure.sha256);
-    expect(CIVIL2_2025_QUESTIONS[30]?.imageUrls).toEqual([figure.publicPath]);
+    expect(CIVIL2_2025_QUESTIONS[35]?.imageUrls).toEqual([figure.publicPath]);
   });
 });
 
@@ -508,7 +577,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.29〜32", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 23]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 28]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -557,7 +626,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.25〜28", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 19]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 24]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -605,7 +674,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.21〜24", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 15]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 20]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -653,7 +722,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.17〜20", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 11]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 16]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));
@@ -701,7 +770,7 @@ describe("2025年10月2級土木施工管理・照合済みNo.11〜16", () => {
     expect(batch.questionUrl).toBe(sourceMap.questionUrl);
     expect(batch.answerUrl).toBe(sourceMap.answerUrl);
     for (const [index, record] of batch.questions.entries()) {
-      const question = CIVIL2_2025_QUESTIONS[index + 5]!;
+      const question = CIVIL2_2025_QUESTIONS[index + 10]!;
       expect(record).toMatchObject(sourceMap.questions[record.number - 1]!);
       expect(question.qNumber).toBe(record.number);
       expect(question.officialAnswerNumber).toBe(String(record.officialAnswerNumber));

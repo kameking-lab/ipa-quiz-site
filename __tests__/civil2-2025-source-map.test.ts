@@ -21,6 +21,7 @@ const firstDraft = JSON.parse(readFileSync(path.join(evidenceDir, "q01-draft.jso
   officialAnswerNumber: number;
   figureRequired: boolean;
   explanationReview: string;
+  supersededBy: string;
 };
 
 describe("2025 October civil2 official source map", () => {
@@ -39,14 +40,18 @@ describe("2025 October civil2 official source map", () => {
     expect(source.questions[65]).toEqual({ number: 66, pdfPage: 25, officialAnswerNumber: 3 });
   });
 
-  it("keeps the first verified transcription out of the published question loader", () => {
-    expect(firstDraft.status).toBe("source-transcribed-not-published");
+  it("keeps the first No.1 transcription consistent with its published replacement", () => {
+    expect(firstDraft.status).toBe("superseded-by-published-batch");
+    const published = JSON.parse(readFileSync(path.join(process.cwd(), firstDraft.supersededBy), "utf8")) as { questions: { number: number; officialAnswerNumber: number; choices: string[] }[] };
+    expect(published.questions[0]?.number).toBe(firstDraft.number);
+    expect(published.questions[0]?.officialAnswerNumber).toBe(firstDraft.officialAnswerNumber);
+    expect(published.questions[0]?.choices.map((choice) => choice.replace(/[＝=／/ ]/g, ""))).toEqual(firstDraft.choices.map((choice) => choice.replace(/[＝=／/ ]/g, "")));
     expect(firstDraft.number).toBe(source.questions[0]?.number);
     expect(firstDraft.pdfPage).toBe(source.questions[0]?.pdfPage);
     expect(firstDraft.officialAnswerNumber).toBe(source.questions[0]?.officialAnswerNumber);
     expect(firstDraft.choices).toHaveLength(4);
     expect(firstDraft.figureRequired).toBe(true);
-    expect(firstDraft.explanationReview).toBe("pending");
+    expect(firstDraft.explanationReview).toContain("q01-05-release-receipt.json");
     expect(statSync(path.join(evidenceDir, "q01-figure.png")).size).toBeGreaterThan(1000);
   });
 });

@@ -232,7 +232,7 @@ export default async function ExamYearSeasonPage({
           </p>
           {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
             <p className="mt-2 text-sm text-muted-foreground">
-              令和7年度10月実施分は、公式問題・正答を照合したNo.6〜66の61問を公開中です。全66問の収録ではありません。
+              令和7年度10月実施分は、公式問題・正答・図表を照合した全66問を収録しています。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

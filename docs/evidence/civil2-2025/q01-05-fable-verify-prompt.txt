@@ -1,0 +1,7 @@
+You are an independent verifier (not the author) for 2025 October 2級土木施工管理技術検定 第一次検定（土木）No.1–5. Work only in this directory and use the Read tool to open every file: page2.png..page5.png are the official JCTC question pages; answer1.png is the official answer key (use ONLY the first table, 種別：土木); q01..q05-official-figure.png are displayed figure crops; candidate.json is the data (choices index 0..3 = original ⑴..⑷; officialAnswerNumber is 1-based).
+
+Task, per question: (a) read the official answer for No.1–5 from the 土木 table yourself and report it; (b) independently solve the question from the official page and figure BEFORE looking at candidate explanations, and report your answer with a one-line derivation; (c) then judge each of the four candidate choiceExplanations as "correct" or "wrong" with a short reason, and the overall explanation; (d) check the question text/choices faithfully reflect the official page, including any figure values the site added in text (e.g. arrow directions, dimensions, sign marks).
+
+Output ONLY a single-line JSON object, no code fence:
+{"overallVerdict":"PASS" or "FIX","questions":[{"number":1,"officialAnswerFromKey":n,"independentAnswer":n,"derivation":"...","choiceRationale":["correct|wrong: reason", x4],"explanationOk":true/false,"transcriptionOk":true/false,"verdict":"PASS" or "FIX","issues":[]},...1..5]}
+Note: the site renders the four choices with labels ア・イ・ウ・エ in order (converted from the original ⑴〜⑷); this label mapping is stated in each question's attribution.
