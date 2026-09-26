@@ -42,6 +42,22 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907z_seitou.pdf",
         description: "問題A・問題Bの正答肢PDF。",
       },
+    ] : exam === "tsushin1" ? [
+      {
+        label: "全国建設研修センター 公式問題A",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_mondaia.pdf",
+        description: "令和8年度 1級電気通信工事施工管理技術検定 第一次検定の試験問題A（全55問）。",
+      },
+      {
+        label: "全国建設研修センター 公式問題B",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_mondaib.pdf",
+        description: "同じ試験回の試験問題B（全35問）。",
+      },
+      {
+        label: "全国建設研修センター 公式正答肢",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/09/20260907e_seitou.pdf",
+        description: "問題A・問題Bの正答肢PDF。",
+      },
     ] : exam === "kankoji2" ? [
       {
         label: "全国建設研修センター 公式問題・正答肢（令和8年度前期）",
