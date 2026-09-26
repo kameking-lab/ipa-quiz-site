@@ -22,6 +22,7 @@ export type ExamCode =
   | "civil2"
   | "kankoji2"
   | "zoen2"
+  | "zoen1"
   | "tsushin2"
   | "kaigo"
   | "civil1"
@@ -30,7 +31,7 @@ export type ExamCode =
   | "tohan";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denken2" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "tsushin2" | "kaigo" | "shakai" | "seishin" | "tohan">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denken2" | "denko2" | "denko1" | "takken" | "civil2" | "civil1" | "kankoji2" | "zoen2" | "zoen1" | "tsushin2" | "kaigo" | "shakai" | "seishin" | "tohan">;
 
 export type Session =
   | "am"

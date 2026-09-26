@@ -182,6 +182,12 @@ export default async function ExamYearSeasonPage({
       items: (sessionGroups.find((group) => group.session === section.session)?.items ?? [])
         .filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
     })).filter((group) => group.items.length > 0);
+  } else if (code === "zoen1") {
+    sessionGroups = sessionGroups.map((group) => ({
+      ...group,
+      id: `zoen1-${group.session}`,
+      session: practiceSessionLabel(group.session as typeof pool[number]["session"]),
+    }));
   } else if (civil2Sections) {
     const allItems = sessionGroups.flatMap((group) => group.items);
     sessionGroups = civil2Sections.map((section) => ({
@@ -319,6 +325,11 @@ export default async function ExamYearSeasonPage({
               公式の全40問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では40問が全て必須です。
             </p>
           )}
+          {code === "zoen1" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式の問題A36問・問題B29問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験ではA・Bとも全問必須で、問題B No.24〜29は正解番号を全て選びます。
+            </p>
+          )}
           {code === "tsushin2" && (
             <p className="mt-2 text-sm text-muted-foreground">
               公式の全65問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では設問群ごとの条件に従い40問を解答します。
@@ -349,7 +360,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1"} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1"} />
       </div>
     </main>
   );
