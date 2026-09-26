@@ -25,6 +25,7 @@ export type AnalyticsEvent =
       name: "note_outbound_click";
       source:
         | "footer"
+        | "home"
         | "operator"
         | "exam_sa"
         | "exam_st"
@@ -40,6 +41,7 @@ export type AnalyticsEvent =
         | "exam_ap"
         | "exam_fe"
         | "exam_ip"
+        | "exam_civil2"
         | "exam_library";
       account: "ipa_quiz_ai" | "sikaku_rakutoru" | "anzen_ai_jp";
     }
