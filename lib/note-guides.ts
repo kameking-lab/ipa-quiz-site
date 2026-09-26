@@ -132,6 +132,16 @@ export const EXAM_NOTE_GUIDES: Partial<Record<ExamCode, NoteGuideLink>> = {
     source: "exam_ip",
     account: "ipa_quiz_ai",
   },
+  // 出典: note.com/api/v3/notes/n109be9d7ce85 (published, price=0, 匿名で全文閲覧可。
+  // 2026-09-26 18:48 JST 公開、同日 v3 API で確認)。非IPA区分だが EXAM_NOTE_GUIDES は
+  // ExamCode 全体をキーに持てるので、/civil2 の ExamNoteGuide に同じ形で出る。
+  civil2: {
+    kind: "free",
+    href: "https://note.com/sikaku_rakutoru/n/n109be9d7ce85",
+    label: "前年66問を必須と選択に分けて4週間で27点を狙う",
+    source: "exam_civil2",
+    account: "sikaku_rakutoru",
+  },
 };
 
 export function getNoteGuide(exam: ExamCode): NoteGuideLink | undefined {
