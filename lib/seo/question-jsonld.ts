@@ -105,10 +105,8 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2"
+    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kaigo"
       ? undefined
-    : q.exam === "kaigo"
-      ? "https://www.sssc.or.jp/pastissues/index.html"
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
       : "https://www.ipa.go.jp/shiken/faq.html";

@@ -32,11 +32,6 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf",
         description: "全125問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
       },
-      {
-        label: "過去問題利用にあたっての留意事項等",
-        href: "https://www.sssc.or.jp/pastissues/index.html",
-        description: "問題文は変更せずに掲載し、独自解説はセンターと無関係である旨を明示しています。",
-      },
     ] : [
       {
         label: `${qualification.administrator} 公式問題・正答`,

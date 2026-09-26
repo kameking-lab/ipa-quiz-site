@@ -31,7 +31,7 @@ type KaigoSource = {
 
 const data = source as KaigoSource;
 
-/** 利用条件「解説等が当センターと関係がないことがわかるように」を各問題に表示する。 */
+/** 独自解説であることを各問題の出典欄に表示する。 */
 export const KAIGO_INDEPENDENCE_NOTICE = "解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。";
 
 const LAW_NOTICE = "※出題時点（令和8年1月）の制度に基づく解説です。その後の法改正等で結論が変わる場合があります。";
@@ -44,7 +44,7 @@ function toQuestion(item: KaigoSourceItem): Question {
   const pdf = data.questionPdfs[item.pdfFile];
   if (!pdf) throw new Error(`Missing official PDF for kaigo 問題${item.number}`);
   const figureNote = item.figureSource
-    ? `選択肢の図は公式問題PDF（${item.figureSource.printedPage}ページ）から転載し、選択肢の文は同センターの音声読み上げ用試験問題の説明文を使用。`
+    ? `選択肢の図は公式問題PDF（${item.figureSource.printedPage}ページ）、選択肢の文は同センターの音声読み上げ用試験問題の説明文。`
     : "";
   return {
     id: `kaigo-${data.fiscalYear}-annual-gakka-q${item.number}`,
@@ -72,7 +72,7 @@ function toQuestion(item: KaigoSourceItem): Question {
       : undefined,
     sourcePdfUrl: pdf.url,
     sourceAnswerUrl: data.answerUrl,
-    sourceAttribution: `出典：公益財団法人社会福祉振興・試験センター ${data.title} 問題${item.number}（問題文・選択肢は原文のまま）。${figureNote}${KAIGO_INDEPENDENCE_NOTICE}`,
+    sourceAttribution: `出典：公益財団法人社会福祉振興・試験センター ${data.title} 問題${item.number}。${figureNote}${KAIGO_INDEPENDENCE_NOTICE}`,
     license: "SSSC-reuse",
     lastUpdated: "2026-09-26",
   };

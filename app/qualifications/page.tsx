@@ -58,7 +58,7 @@ export default function QualificationsPage() {
               <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
                 公式問題・正答<ExternalLink className="h-3 w-3" />
               </a>
-              {item.slug !== "sekou-doboku2" && <a href={item.officialReuseTermsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
+              {item.slug !== "sekou-doboku2" && item.slug !== "kaigo" && <a href={item.officialReuseTermsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
                 利用条件<ExternalLink className="h-3 w-3" />
               </a>}
             </div>

@@ -22,7 +22,7 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
 /** 図だけで示された選択肢の代替テキスト。既存の回路図問題は呼び出し側の既定文言を使う。 */
 export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefined {
   if (!PLAIN_NUMBER_CHOICE_EXAMS.includes(exam)) return undefined;
-  return `選択肢${choiceDisplayLabel(exam, key)}の図（公式問題PDFから転載）`;
+  return `選択肢${choiceDisplayLabel(exam, key)}の図（公式問題PDFより）`;
 }
 
 /** 選択肢を原本どおり番号で表示する試験（ア〜エ表記ではない）。 */

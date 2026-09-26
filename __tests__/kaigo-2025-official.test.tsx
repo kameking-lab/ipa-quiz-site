@@ -110,7 +110,8 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
       expect(q.explanation.trim().length, q.id).toBeGreaterThan(40);
       expect(q.explanationCoverage).toBe("full");
       expect(q.sourceAttribution, q.id).toContain("公益財団法人社会福祉振興・試験センター");
-      expect(q.sourceAttribution, q.id).toContain("原文のまま");
+      expect(q.sourceAttribution, q.id).toContain(`第38回（令和7年度）介護福祉士国家試験 問題${q.qNumber}。`);
+      expect(q.sourceAttribution, q.id).not.toMatch(/転載|許諾|許可|利用条件|使用料|原文のまま/);
       expect(q.sourceAttribution, q.id).toContain(KAIGO_INDEPENDENCE_NOTICE);
       expect(q.license).toBe("SSSC-reuse");
       expect(q.sourcePdfUrl.startsWith("https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/"), q.id).toBe(true);
@@ -151,7 +152,7 @@ describe("第38回介護福祉士国家試験・全125問の公式照合", () =>
       expect(createHash("sha256").update(readFileSync(file)).digest("hex")).toBe(image.sha256);
       expect(q49.choiceImageUrls?.[keysOf[index]!]).toBe(image.publicPath);
     }
-    expect(q49.sourceAttribution).toContain("公式問題PDF（27ページ）から転載");
+    expect(q49.sourceAttribution).toContain("選択肢の図は公式問題PDF（27ページ）");
     expect(q49.question.startsWith("腹部の清拭の方法を図に示す。")).toBe(true);
   });
 });

@@ -28,7 +28,7 @@ test.describe("介護福祉士 第38回", () => {
   test("figure-only choices of question 49 render the cropped official figures", async ({ page }) => {
     await page.setViewportSize({ width: 390, height: 900 });
     await page.goto("/q/kaigo/2025-annual/gakka/q49");
-    const figures = page.getByRole("img", { name: /選択肢[1-5]の図（公式問題PDFから転載）/ });
+    const figures = page.getByRole("img", { name: /選択肢[1-5]の図（公式問題PDFより）/ });
     await expect(figures).toHaveCount(5);
     await expect(figures.first()).toBeVisible();
     expect(await figures.first().evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(100);
