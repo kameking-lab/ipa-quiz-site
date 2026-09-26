@@ -7,7 +7,7 @@ import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
 
 // 各資格ページの ExamNoteGuide と同じ登録済みの無料記事だけを使う（URLは lib/note-guides.ts が唯一の情報源）。
-const HOME_GUIDE_EXAMS: readonly ExamCode[] = ["ip", "sg", "fe", "ap"];
+const HOME_GUIDE_EXAMS: readonly ExamCode[] = ["ip", "sg", "fe", "ap", "civil2"];
 
 export function HomeNoteGuides() {
   const guides = HOME_GUIDE_EXAMS.flatMap((exam) => {
