@@ -17,7 +17,7 @@ for (const width of [390, 1280]) {
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
-    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denken2", "/denko2", "/denko1", "/civil1", "/civil2", "/kankoji2", "/kaigo", "/shakai", "/seishin", "/tohan",
+    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denken2", "/denko2", "/denko1", "/civil1", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/shakai", "/seishin", "/tohan",
       "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications",
       "/challenge", "/mock-exam", "/operator"]) {
       await expect(main.locator(`a[href="${href}"]`).first(), href).toBeAttached();
@@ -53,6 +53,8 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
     await expect(page.locator('a[href="/civil2"]')).toBeVisible();
     await expect(page.locator('a[href="/kankoji2"]')).toBeVisible();
+    await expect(page.locator('a[href="/zoen2"]')).toBeVisible();
+    await expect(page.locator('a[href="/tsushin2"]')).toBeVisible();
     await expect(page.locator('a[href="/kaigo"]')).toBeVisible();
     await expect(page.locator('a[href="/civil1"]')).toBeVisible();
     await expect(page.locator('a[href="/denko1"]')).toBeVisible();

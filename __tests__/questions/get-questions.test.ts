@@ -57,11 +57,13 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("shakai");
     expect(codes).toContain("seishin");
     expect(codes).toContain("kankoji2");
+    expect(codes).toContain("zoen2");
+    expect(codes).toContain("tsushin2");
     expect(codes).toContain("civil1");
     expect(codes).toContain("denko1");
     expect(codes).toContain("tohan");
     expect(codes).toContain("denken2");
-    expect(codes.length).toBe(27);
+    expect(codes.length).toBe(29);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });
