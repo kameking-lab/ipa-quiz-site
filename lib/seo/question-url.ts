@@ -7,16 +7,16 @@ export interface QuestionRouteParams {
   qnum: string;
 }
 
-/** URLの問番号部分。枝問は `q15a`、電験二種の空欄は `q1-3`（問1の空欄(3)）。 */
+/** URLの問番号部分。枝問は `q15a`、電験一種・二種の空欄は `q1-3`（問1の空欄(3)）。 */
 export function questionNumberSegment(qNumber: number, part?: QuestionPart): string {
   if (!part) return `q${qNumber}`;
   return /^\d$/.test(part) ? `q${qNumber}-${part}` : `q${qNumber}${part}`;
 }
 
-/** 枝問(a)/(b)は電験三種、空欄番号(1)〜(5)は電験二種だけが使う。 */
+/** 枝問(a)/(b)は電験三種、空欄番号(1)〜(5)は電験一種・二種が使う。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
   letter: ["denken3"],
-  blank: ["denken2"],
+  blank: ["denken2", "denken1"],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {

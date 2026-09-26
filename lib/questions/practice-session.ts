@@ -10,7 +10,7 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
   if (exam === "civil1" || exam === "zoen1" || exam === "tsushin1") return "mondai-a";
   if (exam === "fp2" || exam === "fp3" || exam === "denko2" || exam === "denko1" || exam === "takken" || exam === "civil2" || exam === "kankoji2" || exam === "zoen2" || exam === "tsushin2" || exam === "kaigo" || exam === "tohan") return "gakka";
   if (exam === "denken3") return "riron";
-  if (exam === "denken2") return "denryoku";
+  if (exam === "denken2" || exam === "denken1") return "denryoku";
   if (exam === "shakai") return "kyotsu";
   if (exam === "seishin") return "senmon";
   return "am";
