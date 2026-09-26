@@ -18,6 +18,8 @@ import { DENKO2_QUESTIONS } from "./denko2";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { KAIGO_QUESTIONS } from "./kaigo";
+import { SHAKAI_QUESTIONS } from "./shakai";
+import { SEISHIN_QUESTIONS } from "./seishin";
 import { DENKEN3_QUESTIONS } from "./denken3";
 import { TAKKEN_QUESTIONS } from "./takken";
 import { isExamPublished } from "@/lib/qualifications/catalog";
@@ -55,6 +57,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
   ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
   ...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
+  ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
+  ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

@@ -40,6 +40,8 @@ for (const width of [390, 1280]) {
     await expect(page.locator('a[href="/civil2"]')).toBeVisible();
     await expect(page.locator('a[href="/kankoji2"]')).toBeVisible();
     await expect(page.locator('a[href="/kaigo"]')).toBeVisible();
+    await expect(page.locator('a[href="/shakai"]')).toBeVisible();
+    await expect(page.locator('a[href="/seishin"]')).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

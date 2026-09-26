@@ -27,6 +27,8 @@ export const EXAM_LABELS: Record<string, string> = {
   civil2: "2級土木施工管理技士",
   kankoji2: "2級管工事施工管理技士",
   kaigo: "介護福祉士",
+  shakai: "社会福祉士",
+  seishin: "精神保健福祉士",
 };
 
 export function examLabel(exam: string): string {

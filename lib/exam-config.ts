@@ -33,6 +33,13 @@ export interface ExamConfig {
 
 // ------- Shared category lists -------
 
+/** 社会福祉士・精神保健福祉士の共通科目（第38回／第28回は同一の問題冊子）。 */
+const SSSC_COMMON_SUBJECTS = [
+  "医学概論", "心理学と心理的支援", "社会学と社会システム", "社会福祉の原理と政策", "社会保障",
+  "権利擁護を支える法制度", "地域福祉と包括的支援体制", "障害者福祉", "刑事司法と福祉",
+  "ソーシャルワークの基盤と専門職", "ソーシャルワークの理論と方法", "社会福祉調査の基礎",
+];
+
 const BASIC_CATEGORIES = [
   "基礎理論",
   "アルゴリズムとプログラミング",
@@ -400,11 +407,65 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
   },
+  shakai: {
+    code: "shakai",
+    nameFull: "社会福祉士国家試験",
+    urlSlug: "shakai",
+    level: "basic",
+    sessions: [
+      {
+        session: "kyotsu",
+        urlSlug: "kyotsu",
+        expectedQuestions: 84,
+        label: "共通科目",
+        categories: SSSC_COMMON_SUBJECTS,
+      },
+      {
+        session: "senmon",
+        urlSlug: "senmon",
+        expectedQuestions: 45,
+        label: "専門科目",
+        categories: [
+          "高齢者福祉", "児童・家庭福祉", "貧困に対する支援", "保健医療と福祉",
+          "ソーシャルワークの基盤と専門職（専門）", "ソーシャルワークの理論と方法（専門）", "福祉サービスの組織と経営",
+        ],
+      },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+  },
+  seishin: {
+    code: "seishin",
+    nameFull: "精神保健福祉士国家試験",
+    urlSlug: "seishin",
+    level: "basic",
+    sessions: [
+      {
+        session: "senmon",
+        urlSlug: "senmon",
+        expectedQuestions: 48,
+        label: "専門科目",
+        categories: [
+          "精神医学と精神医療", "現代の精神保健の課題と支援", "精神保健福祉の原理",
+          "ソーシャルワークの理論と方法（専門）", "精神障害リハビリテーション論", "精神保健福祉制度論",
+        ],
+      },
+      {
+        session: "kyotsu",
+        urlSlug: "kyotsu",
+        expectedQuestions: 84,
+        label: "共通科目",
+        categories: SSSC_COMMON_SUBJECTS,
+      },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo" | "shakai" | "seishin"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo" && code !== "shakai" && code !== "seishin",
 );
 
 /** Every exam playable in the application, including external qualifications. */
