@@ -1,7 +1,7 @@
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { Question } from "@/lib/questions/types";
 
-const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"] as const;
+const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"] as const;
 
 /**
  * The advanced exams reuse one common morning-I paper across several exam
@@ -34,6 +34,11 @@ function compareRepresentativeCandidates(a: Question, b: Question): number {
   const scPreference = Number(b.exam === "sc") - Number(a.exam === "sc");
   if (scPreference !== 0) return scPreference;
 
+  // The welfare common subjects are the 社会福祉士 morning paper; the
+  // 精神保健福祉士 exam page links to the same PDFs.
+  const shakaiPreference = Number(b.exam === "shakai") - Number(a.exam === "shakai");
+  if (shakaiPreference !== 0) return shakaiPreference;
+
   // Do not let import/module order decide the representative.
   return a.id.localeCompare(b.id, "en");
 }
@@ -45,7 +50,8 @@ function buildCanonicalIndex(pool: readonly Question[]): Map<string, Question> {
   const groups = new Map<string, Question[]>();
 
   for (const q of pool) {
-    if (q.session !== "am1") {
+    // 午前I（IPA高度試験）と、社会福祉士・精神保健福祉士の共通科目は同一問題冊子。
+    if (q.session !== "am1" && q.session !== "kyotsu") {
       canonicalById.set(q.id, q);
       continue;
     }

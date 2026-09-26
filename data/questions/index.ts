@@ -15,11 +15,16 @@ import { AU_QUESTIONS } from "./au";
 import { FP2_QUESTIONS } from "./fp2";
 import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
+import { DENKO1_QUESTIONS } from "./denko1";
 import { CIVIL2_QUESTIONS } from "./civil2";
 import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { KAIGO_QUESTIONS } from "./kaigo";
 import { CIVIL1_QUESTIONS } from "./civil1";
+import { SHAKAI_QUESTIONS } from "./shakai";
+import { SEISHIN_QUESTIONS } from "./seishin";
+import { TOHAN_QUESTIONS } from "./tohan";
 import { DENKEN3_QUESTIONS } from "./denken3";
+import { DENKEN2_QUESTIONS } from "./denken2";
 import { TAKKEN_QUESTIONS } from "./takken";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
@@ -49,14 +54,19 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   fp2: FP2_QUESTIONS,
   fp3: FP3_QUESTIONS,
   denken3: DENKEN3_QUESTIONS,
+  ...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),
   takken: TAKKEN_QUESTIONS,
   // The official FAQ asks users to notify the examination center. Keep the
   // reviewed pilot out of all public counts/routes until that receipt exists.
   ...(isExamPublished("denko2") ? { denko2: DENKO2_QUESTIONS } : {}),
+  ...(isExamPublished("denko1") ? { denko1: DENKO1_QUESTIONS } : {}),
   ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
   ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
   ...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
   ...(isExamPublished("civil1") ? { civil1: CIVIL1_QUESTIONS } : {}),
+  ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
+  ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
+  ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

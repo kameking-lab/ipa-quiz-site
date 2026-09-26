@@ -20,12 +20,17 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   fp2: async () => (await import("@/data/questions/fp2")).FP2_QUESTIONS,
   fp3: async () => (await import("@/data/questions/fp3")).FP3_QUESTIONS,
   denken3: async () => (await import("@/data/questions/denken3")).DENKEN3_QUESTIONS,
+  denken2: async () => isExamPublished("denken2") ? (await import("@/data/questions/denken2")).DENKEN2_QUESTIONS : [],
   takken: async () => (await import("@/data/questions/takken")).TAKKEN_QUESTIONS,
   denko2: async () => isExamPublished("denko2") ? (await import("@/data/questions/denko2")).DENKO2_QUESTIONS : [],
+  denko1: async () => isExamPublished("denko1") ? (await import("@/data/questions/denko1")).DENKO1_QUESTIONS : [],
   civil2: async () => isExamPublished("civil2") ? (await import("@/data/questions/civil2")).CIVIL2_QUESTIONS : [],
   kankoji2: async () => isExamPublished("kankoji2") ? (await import("@/data/questions/kankoji2")).KANKOJI2_QUESTIONS : [],
   kaigo: async () => isExamPublished("kaigo") ? (await import("@/data/questions/kaigo")).KAIGO_QUESTIONS : [],
   civil1: async () => isExamPublished("civil1") ? (await import("@/data/questions/civil1")).CIVIL1_QUESTIONS : [],
+  shakai: async () => isExamPublished("shakai") ? (await import("@/data/questions/shakai")).SHAKAI_QUESTIONS : [],
+  seishin: async () => isExamPublished("seishin") ? (await import("@/data/questions/seishin")).SEISHIN_QUESTIONS : [],
+  tohan: async () => isExamPublished("tohan") ? (await import("@/data/questions/tohan")).TOHAN_QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

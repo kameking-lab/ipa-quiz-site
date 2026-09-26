@@ -79,11 +79,11 @@ interface RouteParams {
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  // denken3 has a dedicated launch page at app/denken3/page.tsx. Including it
+  // denken3/denken2 have dedicated launch pages under app/. Including them
   // in this catch-all route's static params makes Next emit a conflicting
   // fallback entry, which turns unknown one-segment URLs into soft 404s (200).
   return getAvailableExams()
-    .filter((exam) => exam !== "denken3")
+    .filter((exam) => exam !== "denken3" && exam !== "denken2")
     .map((exam) => ({ exam }));
 }
 
@@ -307,7 +307,11 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
+          {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度上期の学科試験はCBT方式で、試験センターが公表した出題例（一般問題40問・配線図問題10問）の全50問を収録しています。</p>}
+          {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）社会福祉士国家試験の全129問（共通科目84問・専門科目45問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第28回（令和7年度）精神保健福祉士国家試験の専門科目48問と、社会福祉士と同じ共通科目84問を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）介護福祉士国家試験の全125問（総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）が令和7年8月23日に実施した試験の全120問を収録しています。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って作成しています。</p>}
           {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
           {code === "kankoji2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全52問収録。実試験ではNo.1〜6・No.24〜28・No.49〜52が必須、No.7〜23から9問、No.29〜38から8問、No.39〜48から8問を選びます。No.49〜52は正解が二つあり、両方を選ぶと正解です。演習では全問を自由に解けます。</p>}
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}

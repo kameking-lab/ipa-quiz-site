@@ -18,7 +18,8 @@ interface Props {
   correct: boolean;
   disabled: boolean;
   onClick: () => void;
-  shortcutIndex?: number;
+  /** null は数字キーの割り当てがない肢（11肢目以降）。 */
+  shortcutIndex?: number | null;
   /** Roving-tabindex value from useQuizChoiceRoving (single Tab stop). */
   tabIndex?: number;
   /** Arrow-key roving handler from useQuizChoiceRoving. */
@@ -56,10 +57,10 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
     state = "selected";
   }
 
-  const numberKey = shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
+  const numberKey = shortcutIndex === null ? null : shortcutIndex ?? CHOICE_INDEX[choiceKey] ?? 0;
   const baseLabel = `選択肢 ${displayLabel ?? choiceKey}: ${text}`;
   const stateLabel = !revealed
-    ? multiSelect
+    ? numberKey === null ? "" : multiSelect
       ? `数字キー${numberKey}でも選択・解除できます`
       : `数字キー${numberKey}でも選択できます`
     : state === "revealed-correct"
@@ -81,7 +82,7 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       aria-label={ariaLabel}
       aria-checked={selected}
       aria-disabled={disabled}
-      aria-keyshortcuts={!revealed ? String(numberKey) : undefined}
+      aria-keyshortcuts={!revealed && numberKey !== null ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
         "group relative w-full rounded-2xl border-2 px-4 py-4 text-left transition-colors",

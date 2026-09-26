@@ -34,6 +34,8 @@ import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   findQuestionByRoute,
+  parseQuestionNumberSegment,
+  questionNumberSegment,
   questionPagePath,
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
@@ -74,7 +76,7 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
     exam: q.exam,
     yearSeason: `${q.year}-${q.season}`,
     section: q.session,
-    qnum: `q${q.qNumber}${q.part ?? ""}`,
+    qnum: questionNumberSegment(q.qNumber, q.part),
   }));
 }
 
@@ -122,12 +124,11 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
-  const qMatch = /^q(\d+)([ab])?$/.exec(p.qnum);
-  if (!qMatch) return undefined;
-  const qNumber = Number(qMatch[1]);
+  const segment = parseQuestionNumberSegment(p.exam, p.qnum);
+  if (!segment) return undefined;
 
   return ALL_QUESTIONS.find(
     (q) =>
@@ -135,8 +136,8 @@ function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
       q.year === year &&
       q.season === yearSeasonMatch[2] &&
       q.session === p.section &&
-      q.qNumber === qNumber &&
-      q.part === qMatch[2],
+      q.qNumber === segment.qNumber &&
+      q.part === segment.part,
   );
 }
 
@@ -221,7 +222,7 @@ export default async function QuestionPage({
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
-    .filter((post) => (q.exam !== "civil2" && q.exam !== "kankoji2" && q.exam !== "civil1") || post.exam === q.exam);
+    .filter((post) => !["civil2", "civil1", "kankoji2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
@@ -448,7 +449,7 @@ export default async function QuestionPage({
                       <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
                         <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
                         <dd>
-                          <p className="font-medium text-foreground">{choice}</p>
+                          <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
                           <p className="mt-1 text-muted-foreground">
                             {q.choiceExplanations?.[key as ChoiceKey]}
                           </p>

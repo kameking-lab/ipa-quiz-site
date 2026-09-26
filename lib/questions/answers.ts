@@ -1,6 +1,6 @@
 import type { ChoiceKey, Question } from "./types";
 
-export const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"];
+export const CHOICE_KEYS: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 export const CHOICE_SHORTCUTS = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 
 export function getChoiceKeys(choices: Question["choices"]): ChoiceKey[] {

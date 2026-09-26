@@ -32,6 +32,8 @@ export function sessionLabel(session: string): string {
     houki: "法規",
     "mondai-a": "問題A",
     "mondai-b": "問題B",
+    kyotsu: "共通科目",
+    senmon: "専門科目",
   };
   return map[session] ?? session.toUpperCase();
 }
@@ -88,13 +90,19 @@ export function buildQuestionJsonLd({
           name: "一般財団法人全国建設研修センター",
           url: "https://www.jctc.jp/",
         }
-    : q.exam === "kaigo"
+    : q.exam === "kaigo" || q.exam === "shakai" || q.exam === "seishin"
       ? {
           "@type": "Organization",
           name: "公益財団法人社会福祉振興・試験センター",
           url: "https://www.sssc.or.jp/",
         }
-    : q.exam === "denken3" || q.exam === "denko2"
+    : q.exam === "tohan"
+      ? {
+          "@type": "GovernmentOrganization",
+          name: "関西広域連合",
+          url: "https://www.kouiki-kansai.jp/",
+        }
+    : q.exam === "denken3" || q.exam === "denken2" || q.exam === "denko2" || q.exam === "denko1"
       ? {
           "@type": "Organization",
           name: "一般財団法人 電気技術者試験センター",
@@ -107,7 +115,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo" || q.exam === "civil1"
+    : q.exam === "takken" || q.exam === "civil1" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
@@ -176,7 +184,7 @@ export function buildQuestionJsonLd({
       name: SITE_NAME,
       url: SITE_BASE_URL,
     },
-    // Neither RETIO nor JCTC supplies a public reusable-content license URL.
+    // RETIO, JCTC and 関西広域連合 entries carry no license URL here.
     ...(licenseUrl ? { license: licenseUrl } : {}),
     creator: questionAuthor,
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and

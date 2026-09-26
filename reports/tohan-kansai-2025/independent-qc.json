@@ -1,0 +1,203 @@
+{
+  "checkedAt": "2026-09-26",
+  "reviewer": "Sonnet サブエージェント（作成者と独立。作成者の説明は採用せず、原本PDFのページ画像・正答表PDF・手引き令和7年4月版のみで判定）",
+  "sampling": "全120問から試験項目ごとの層別無作為抽出（seed 20260926）: 1〜20から5問、21〜60から10問、61〜80・81〜100・101〜120から各5問",
+  "sample": [
+    1,
+    2,
+    3,
+    6,
+    8,
+    23,
+    24,
+    28,
+    29,
+    35,
+    36,
+    44,
+    47,
+    52,
+    58,
+    66,
+    67,
+    70,
+    75,
+    78,
+    84,
+    87,
+    91,
+    92,
+    97,
+    101,
+    108,
+    109,
+    111,
+    114
+  ],
+  "sampleRate": "30/120 = 25%",
+  "criteria": [
+    "転記: 問題文・記述・成分表・選択肢(1)〜(5)が原本ページ画像と一致",
+    "正答: officialAnswerNumber が R7touhan_kaitou.pdf と一致",
+    "解説: 各記述の正誤・空欄語・肢ごとの説明が手引きと矛盾しない"
+  ],
+  "result": {
+    "1": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "2": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "3": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "6": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "8": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "23": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "24": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "28": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "29": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "35": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "36": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "44": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "47": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "52": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "58": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "66": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "67": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "70": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "75": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "78": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "84": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "87": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "91": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "92": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "97": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "101": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "108": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "109": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "111": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    },
+    "114": {
+      "transcription": "OK",
+      "answer": "OK",
+      "explanation": "OK"
+    }
+  },
+  "ng": 0,
+  "verdict": "PASS",
+  "suggestions": [
+    "問28 柴胡加竜骨牡蛎湯の随伴症状の内訳（動悸、不安、不眠）の補足",
+    "問52 クロトリマゾールの副作用列挙に「腫れ」",
+    "問35 表記ゆれ（食べ過ぎ/食べすぎ、適す/適する）"
+  ],
+  "note": "成分表のパイプ表化（問23・29）は成分名・分量を原本画像と1行ずつ照合して一致。"
+}

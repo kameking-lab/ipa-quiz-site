@@ -22,13 +22,13 @@ const ExamCodeSchema = z.enum([
   "sc",
   "sm",
   "au",
-  "fp2", "fp3", "takken",
+  "fp2", "fp3", "takken", "tohan",
 ]);
 
 const QuerySchema = z.object({
   exam: ExamCodeSchema,
   year: z.coerce.number().int().min(1990).max(2100).optional(),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july"]).optional(),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"]).optional(),
   session: z.string().min(1).max(20).optional(),
   category: z.string().min(1).max(60).optional(),
   limit: z.coerce.number().int().min(1).max(100).default(20),

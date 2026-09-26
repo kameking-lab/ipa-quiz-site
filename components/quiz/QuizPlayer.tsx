@@ -471,7 +471,7 @@ export function QuizPlayer({
                     correct={isAcceptedAnswer(question.answer, key)}
                     disabled={revealed}
                     onClick={() => onSelect(key)}
-                    shortcutIndex={(idx + 1) % 10}
+                    shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
                     multiSelect={multiSelect}
                     {...choiceRoving.getRadioProps(idx)}
                   />
@@ -510,7 +510,7 @@ export function QuizPlayer({
             <div className="mt-4 hidden rounded-xl bg-zinc-100 p-3 text-xs text-zinc-500 [@media(hover:hover)_and_(pointer:fine)]:block dark:bg-zinc-900 dark:text-zinc-400">
               {revealed
                 ? "Enter / → で次の問題へ / R でスター / ? でヘルプ"
-                : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : "1〜9・0"} で選択 / R でスター / ? でヘルプ`}
+                : `キーボード: ${choiceCount <= 9 ? `1〜${choiceCount}` : choiceCount === 10 ? "1〜9・0" : "1〜9・0（先頭10肢）"} で選択 / R でスター / ? でヘルプ`}
             </div>
             {!revealed && showSwipeHint && (
               <div className="mt-4 rounded-xl bg-sky-50 p-3 text-xs text-sky-700 [@media(hover:hover)_and_(pointer:fine)]:hidden dark:bg-sky-950/30 dark:text-sky-300">

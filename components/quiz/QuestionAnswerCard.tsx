@@ -15,7 +15,7 @@ import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
-import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
+import type { ChoiceKey, ExamCode, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 
 
@@ -30,7 +30,7 @@ interface Props {
   season: Season;
   session: Session;
   qNumber: number;
-  part?: "a" | "b";
+  part?: QuestionPart;
   /** /q path of the next question in the same session, if any. */
   nextHref?: string;
   /** 1問で選ぶ肢の数。2以上なら answerKey の全肢をそろえて選ぶと正解。 */
@@ -187,7 +187,7 @@ export function QuestionAnswerCard({
             correct={isAcceptedAnswer(answerKey, key)}
             disabled={revealed}
             onClick={() => onSelect(key)}
-            shortcutIndex={(idx + 1) % 10}
+            shortcutIndex={idx < 10 ? (idx + 1) % 10 : null}
             multiSelect={multiSelect}
             {...roving.getRadioProps(idx)}
           />

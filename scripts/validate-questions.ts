@@ -13,7 +13,9 @@ import { writeFileSync, mkdirSync } from "node:fs";
 import { join } from "node:path";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { DENKEN2_QUESTIONS } from "@/data/questions/denken2";
 import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
+import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
 import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
 import { KANKOJI2_QUESTIONS } from "@/data/questions/kankoji2";
 import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
@@ -25,7 +27,7 @@ import { z } from "zod";
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKO2_QUESTIONS, ...CIVIL2_QUESTIONS, ...KANKOJI2_QUESTIONS, ...CIVIL1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
@@ -56,12 +58,12 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denko2", "takken", "civil2", "kankoji2", "kaigo", "civil1"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denken2", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "kaigo", "shakai", "seishin", "tohan"]),
+  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"]),
   qNumber: z.number().int().min(1),
-  part: z.enum(["a", "b"]).optional(),
+  part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
@@ -79,6 +81,11 @@ const QuestionSchema = z.object({
       ク: z.string().optional(),
       ケ: z.string().optional(),
       コ: z.string().optional(),
+      サ: z.string().optional(),
+      シ: z.string().optional(),
+      ス: z.string().optional(),
+      セ: z.string().optional(),
+      ソ: z.string().optional(),
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
@@ -96,7 +103,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse"]),
+  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -224,7 +231,7 @@ function validate(questions: Question[]): ValidationResult {
     const groupKey = `${q.exam}-${q.year}-${q.season}-${q.session}`;
     if (!seenQNumbers.has(groupKey)) seenQNumbers.set(groupKey, new Set());
     const numSet = seenQNumbers.get(groupKey)!;
-    const answerUnit = `${q.qNumber}${q.part ?? ""}`;
+    const answerUnit = `${q.qNumber}${q.part ? `-${q.part}` : ""}`;
     if (numSet.has(answerUnit)) {
       fail++;
       byExam[examKey].fail++;
@@ -244,7 +251,7 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
       if (ans !== undefined || answers.length === 0) {
         fail++;
         byExam[examKey].fail++;
