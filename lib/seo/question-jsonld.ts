@@ -86,6 +86,12 @@ export function buildQuestionJsonLd({
           name: "一般財団法人全国建設研修センター",
           url: "https://www.jctc.jp/",
         }
+    : q.exam === "kaigo"
+      ? {
+          "@type": "Organization",
+          name: "公益財団法人社会福祉振興・試験センター",
+          url: "https://www.sssc.or.jp/",
+        }
     : q.exam === "denken3" || q.exam === "denko2"
       ? {
           "@type": "Organization",
@@ -101,6 +107,8 @@ export function buildQuestionJsonLd({
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "takken" || q.exam === "civil2"
       ? undefined
+    : q.exam === "kaigo"
+      ? "https://www.sssc.or.jp/pastissues/index.html"
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
       : "https://www.ipa.go.jp/shiken/faq.html";
