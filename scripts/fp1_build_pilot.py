@@ -1,6 +1,7 @@
 """Build the reviewed FP1 pilot JSON from fp1_extract_pilot.py output."""
 
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -53,6 +54,14 @@ def main() -> None:
         explanation, per_choice, refs = EXPLANATIONS[number]
         question = normalize(source["question"])
         if number == 1:
+            extracted_coefficients = re.findall(r"\d+\.\d+", source["question"])
+            expected_coefficients = [
+                "1.1593", "0.8626", "5.3091", "0.1884", "4.5797", "0.2184",
+                "1.5580", "0.6419", "18.5989", "0.0538", "11.9379", "0.0838",
+                "1.8061", "0.5537", "26.8704", "0.0372", "14.8775", "0.0672",
+            ]
+            if extracted_coefficients != expected_coefficients:
+                raise ValueError("Q1 coefficient table differs from the official extraction")
             question = question.split("〈年３％の各種係数〉")[0] + (
                 "\n〈年３％の各種係数〉\n"
                 "|年数|終価係数|現価係数|年金終価係数|減債基金係数|年金現価係数|資本回収係数|\n"
