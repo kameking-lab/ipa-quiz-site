@@ -43,6 +43,9 @@ export function ExplanationCard({
   const selectedChoiceExplanation = selected
     ? question.choiceExplanations?.[selected as ChoiceKey]
     : undefined;
+  const answerLabel = Array.isArray(question.answer)
+    ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
+    : choiceDisplayLabel(question.exam, question.answer as ChoiceKey);
 
   return (
     <div
@@ -130,18 +133,11 @@ export function ExplanationCard({
         </div>
       ) : (
         <div className="selectable-content mb-4 text-sm leading-relaxed text-zinc-800 dark:text-zinc-100">
-          <p className="mb-2 font-semibold text-zinc-900 dark:text-zinc-50">
-            結論: 正解は
-            <span
-              className={
-                isCorrect
-                  ? "mx-0.5 text-emerald-700 dark:text-emerald-300"
-                  : "mx-0.5 text-red-700 dark:text-red-300"
-              }
-            >
-              {Array.isArray(question.answer) ? question.answer.map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・") : choiceDisplayLabel(question.exam, question.answer as ChoiceKey)}
-            </span>
-            です。
+          <p className={cn(
+            "mb-2 font-semibold",
+            isCorrect ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300",
+          )}>
+            {`結論: 正解は${answerLabel}です。`}
           </p>
           <QuestionBody text={question.explanation} />
         </div>
