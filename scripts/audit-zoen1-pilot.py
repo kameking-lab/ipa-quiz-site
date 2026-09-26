@@ -37,7 +37,7 @@ def main() -> None:
             assert len(item["choiceExplanations"]) == len(item["choices"]) == 4
             assert item["explanation"].strip()
             checked += 1
-    assert checked == 9
+    assert checked == 24
     print(f"PASS: {checked} published questions, choices and answers match official source PDFs")
 
 
