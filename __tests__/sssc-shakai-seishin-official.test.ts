@@ -69,12 +69,18 @@ describe("第38回社会福祉士・第28回精神保健福祉士の公式照合
   it("問題文・選択肢は公式PDFテキストと一字一句同じ", () => {
     for (const [name, sha] of Object.entries(shakaiT.sourceFiles)) expect(sources.shakai.files[name]?.sha256, name).toBe(sha);
     for (const [name, sha] of Object.entries(seishinT.sourceFiles)) expect(sources.seishin.files[name]?.sha256, name).toBe(sha);
-    const allowed = new Set(["insert", "replace", "stem-continuation-in-dd", "pdf-paragraph-added"]);
+    const allowed = new Set(["insert", "replace", "stem-continuation-in-dd", "pdf-paragraph-added", "case-note"]);
     expect(shakaiT.normalizations.every((n) => allowed.has(n.op))).toBe(true);
     expect(seishinT.normalizations.every((n) => allowed.has(n.op))).toBe(true);
     expectVerbatim(SHAKAI_QUESTIONS, shakaiT, range(1, 129));
     expectVerbatim(SEISHIN_QUESTIONS.filter((q) => q.session === "senmon"), seishinT, range(1, 48));
     expectVerbatim(SEISHIN_QUESTIONS.filter((q) => q.session === "kyotsu"), shakaiT, range(1, 84));
+    // 事例の直後に印字された（注）は事例文の一部（独立QCで検出した取り違えの再発防止）。
+    const seishinSenmon = SEISHIN_QUESTIONS.filter((q) => q.session === "senmon");
+    for (const n of [25, 26, 27]) {
+      expect(seishinSenmon[n - 1]!.question).toContain("（問題27）\n（注）　「障害者総合支援法」とは");
+    }
+    expect(seishinSenmon[23]!.question).not.toContain("（注）");
   });
 
   it("正答は公式「合格基準・正答一覧」と全問一致し、「2つ選びなさい」は2肢そろえて正解", () => {
