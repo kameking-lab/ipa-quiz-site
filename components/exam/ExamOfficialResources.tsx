@@ -65,11 +65,6 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: qualification.officialQuestionsUrl,
         description: "問題と公式正答の一次情報。公開範囲や基準日も確認できます。",
       },
-      {
-        label: "過去問題の利用条件",
-        href: qualification.officialReuseTermsUrl,
-        description: qualification.reuseSummary,
-      },
     ];
     return (
       <section aria-label="公式リソース" className="mb-8 rounded-2xl border border-border bg-card p-5 shadow-sm">
@@ -79,7 +74,7 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
           </span>
           <div className="leading-tight">
             <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
-            <p className="text-[11px] text-muted-foreground">問題・正答・利用条件の一次情報</p>
+            <p className="text-[11px] text-muted-foreground">問題・正答の一次情報</p>
           </div>
         </div>
         <ul className="grid gap-2 sm:grid-cols-2">
