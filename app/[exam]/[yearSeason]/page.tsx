@@ -230,6 +230,11 @@ export default async function ExamYearSeasonPage({
           <p className="mt-3 text-sm text-muted-foreground">
             過去問一覧 — AI 解説付きで効率的に学習を進められます。
           </p>
+          {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              令和7年度10月実施分は、公式問題・正答・図表を照合した全66問を収録しています。
+            </p>
+          )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{pool.length} 問</Badge>
             {[...sessionMap.entries()].map(([session, items]) => <Badge key={session} variant="outline">{practiceSessionLabel(session as typeof pool[number]["session"])} {items.length}問</Badge>)}

@@ -363,8 +363,8 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       label: "第一次検定（前期・土木）",
       categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）", "施工管理（必須）"],
     }],
-    seasons: ["early"],
-    yearRange: { start: 2026, end: 2026 },
+    seasons: ["early", "october"],
+    yearRange: { start: 2025, end: 2026 },
   },
 };
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
+import { CIVIL2_2026_QUESTIONS as CIVIL2_QUESTIONS } from "@/data/questions/civil2";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { formatYearSeason } from "@/lib/utils";

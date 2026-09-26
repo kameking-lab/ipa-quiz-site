@@ -2,7 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 
-import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
+import { CIVIL2_2026_QUESTIONS as CIVIL2_QUESTIONS } from "@/data/questions/civil2";
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 
 const official = JSON.parse(readFileSync(resolve(process.cwd(), "reports/civil2-2026-completion-20260926/official-extract.json"), "utf8")) as {
