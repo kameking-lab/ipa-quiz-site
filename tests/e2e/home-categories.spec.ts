@@ -10,8 +10,8 @@ for (const width of [390, 1280]) {
     // 分野ジャンプ（ヒーロー内）はファーストビューに収まる。
     const domains = page.getByRole("navigation", { name: "分野から選ぶ" });
     const domainLinks = domains.getByRole("link");
-    await expect(domainLinks).toHaveCount(5);
-    for (const name of [/^IT・情報処理/, /^安全衛生/, /^電気/, /^建設・施工管理/, /^お金・不動産/]) {
+    await expect(domainLinks).toHaveCount(6);
+    for (const name of [/^IT・情報処理/, /^安全衛生/, /^電気/, /^建設・施工管理/, /^お金・不動産/, /^福祉・介護/]) {
       await expect(domains.getByRole("link", { name })).toBeInViewport();
     }
 
