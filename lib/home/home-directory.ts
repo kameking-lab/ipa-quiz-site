@@ -121,12 +121,16 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denken2", name: "電験二種", sub: "一次試験（電力・法規）", domain: "electrical" },
   { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
   { code: "kankoji2", name: "2級管工事施工管理", sub: "第一次検定", domain: "construction" },
   { code: "fp3", name: "FP3級", sub: "FP技能検定3級（学科・実技）", domain: "money" },
   { code: "fp2", name: "FP2級", sub: "FP技能検定2級（学科・実技）", domain: "money" },
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
+  { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
+  { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
+  { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
@@ -263,8 +267,8 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "福祉・介護",
-        lead: "社会福祉振興・試験センターの福祉系国家試験。",
+        title: "福祉・介護・医薬品",
+        lead: "介護福祉士国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },

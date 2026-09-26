@@ -1,0 +1,81 @@
+{
+  "inputHashes": {
+    "draftSha256": "f8fa2d0f9b31b468c898ef8ecc7ab4925d993c5bb068b93cce909e72d33d09cf",
+    "candidateSha256": {
+      "1": "036e7ac1bd47ec2601570c657a9b97ce7324be6682c38e022d2b63582d4335c7",
+      "2": "2e1d07c0035e84a708d07b1a6f944689e8003e728a8965a88067fb3891caa272",
+      "3": "333bb749bb51bc2885136dbc9b0b1ecf59456d6b6771519534c6428741b764af",
+      "4": "c9a6546ba2f063aa9bc9245a1fdf3e26a5f72ba9865281c8dc80f281ba488a48",
+      "5": "c59f8dd9da16764c81554db4614f8191a5eaecd9de1732eec1ec36ca4dcf9eef"
+    },
+    "rowSha256": {
+      "1": "075dc7fcb006c33e37caae7649d50c158e2e9382747a3318815d4776a2a93e56",
+      "2": "a7a7e9d4406da88f3eecaff493502d4a7281d49699ab12694eb5798dae3afe03",
+      "3": "af4f3dda493b9447184d903bfbe3b7ba920e2376dd0cabf62d4a89a563fcd66c",
+      "4": "ef767ea920c47e19bfd457dd1b6626fe9809c1ccbb300f1664f53c69a56c8152",
+      "5": "a7e591711a86f396aee3c1079c1eb2aa1cd8794f7c42f009fd16f9a57981e3fb"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q1.png": "54d0af65431cebd9c1db99181af16800cea9d1e0d4e477c710e05666ca2447b8",
+      "public/images/denko1/2026-first/q2.png": "79373c3439fb683aeabbfb037e04afb6ce7312de1739de26ef23509d0855ddcb",
+      "public/images/denko1/2026-first/q3.png": "9f53a8f40b96ef56f37bdda6521061aeed2fc16096c13dd2eb9c6b116f57216e",
+      "public/images/denko1/2026-first/q4.png": "860882738da1898530163c6b4f5dcea2ff82d4f23c5cbd78c45f7e029eec9b5b",
+      "public/images/denko1/2026-first/q5.png": "ae2b29866bf273c9c2f0a16ac94da9a526f9d5221932658843dbbd0734087ab8"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "a6196b79-f9fe-4cba-870f-5166272a49c9",
+  "assessment": [
+    {
+      "number": 1,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 2,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionに2つの104V電池の極性が書かれていない。解説は104−0.2×I1=102と(104−102)/0.1=20Aで計算しているので、どちらの電池も正極が上側の母線(長い線が上)にあることが前提になる。この前提が図の説明から読み取れないと、文章だけでは計算を再現できない。『いずれの電池も正極(長線)が上側』のように極性を明記すること。"
+      ],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 3,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 4,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 5,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ハの誤答の由来に計算矛盾がある。『80Vは8Ω×10Aの値で、相電流を10Aとしている。相電圧は200Vではなく200/√3Vなので…』と書いているが、相電圧を200Vとした場合の相電流は200/10=20Aで、VRは8×20=160Vになる。10Aにも80Vにもならない。10Aは『相電圧を200Vとした』という誤りからは出てこない。相電圧の取り違えを理由にする記述を削除し、『相電流を10Aとした値で、正しくは(200/√3)/10≈11.55A』のように、由来を断定しない書き方に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

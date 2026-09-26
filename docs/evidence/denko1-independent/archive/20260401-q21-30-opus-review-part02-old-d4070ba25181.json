@@ -1,0 +1,82 @@
+{
+  "inputHashes": {
+    "draftSha256": "4392870b3e715a239c3000087ed549b3d471075ab12cd28140c91022e935b782",
+    "candidateSha256": {
+      "26": "46d2a2723c23e4d5abc17365f00e7471d77eb107b172b74736464493302b373c",
+      "27": "b8fa59d7b671cab68a22ea207df97d30f054cc172e58b73296bd990e4823d55f",
+      "28": "59c4b5a4448919ec628d7b4c1e7a557a78d309b2b07480e02c26c5770602a5cb",
+      "29": "aa8dd3cc380d480e3c68d891c72d6b3147405899a1bf6457b3f24d91bebda271",
+      "30": "79393839df1e5489cef9ac7c7c58fdeef266e1193ee80e0a61841d51c511be9c"
+    },
+    "rowSha256": {
+      "26": "ac3fcce996143a94c68466dca69b48221a92233326a2122e79b444b5f9a17c06",
+      "27": "6c741c459114843bab939583e4ac52397122d2e66b920ca6fb8c57a55a397dcf",
+      "28": "c94bce534ec8b3b10471162cf8ebaf584eb6524904879fdf0323c41c40db8cac",
+      "29": "0723ff70f4035f0e1d94d4e98c99ac90bf292bd377503567de26f6f8d13063f8",
+      "30": "72cf628e7dcbfdc49d39a5d4f84a4196a014ad7e853cfb41230c1c38c5bae868"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q26.png": "9653965b9f18a949ede9d185c20aaf23f070b1652debbfa916789776c949bb49",
+      "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q27.json": "bd511870fd667e0a7804820c3bb5f096447c26bd0c96d253c5ac90e636d81909",
+      "docs/evidence/denko1-law/20260401-q28.json": "388a81a938c7f1762ef96890902419fc77109987162058931b5bcc9c7dae4957",
+      "docs/evidence/denko1-law/20260401-q29.json": "8a5ad53a457502cb576646eb36b998f000bea50b8914119d0aac71b4ac0e4e1a"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "9b4f0d98-faa8-4d19-94a4-7e734b06d973",
+  "assessment": [
+    {
+      "number": 26,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 27,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 28,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 29,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ロの「第161条第2項第一号により、電気用品安全法の適用を受ける金属製線ぴ及びボックスその他の附属品を使用する。」は、第一号を唯一の義務のように書いている。receiptで照合した第2項の原文は「次の各号のいずれかに適合するものであること」で、第一号は選択肢の一つにすぎない。本文(explanation)は「電気用品安全法の適用を受けるもの等」と書いており、これとも食い違う。「第2項は各号のいずれかへの適合を求めており、第一号の電気用品安全法の適用を受けるものはこれに適合する」の趣旨に直すこと。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 30,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [
+        "diagramDescriptionの「④の部分で立ち上がって上側を右へ延び」は図の読み誤り。下部の図は「平面図」なので、④(バスダクト表記)の区間は紙面の上方向に曲がる水平方向の経路で、垂直に立ち上がる部分ではない。「壁を貫通して右へ延び(途中省略)、④の区間で平面上を図の上方向へ曲がり、さらに右へ延びる(途中省略)」のように直すこと。"
+      ],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

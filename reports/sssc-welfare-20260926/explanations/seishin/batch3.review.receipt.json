@@ -1,0 +1,77 @@
+{
+  "startedAt": "2026-09-26T10:34:01.536Z",
+  "finishedAt": "2026-09-26T10:34:37.942Z",
+  "mode": "review",
+  "batch": "batch3.json",
+  "requestedModel": "claude-opus-5-5",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 2296,
+      "cacheReadInputTokens": 129998,
+      "cacheCreationInputTokens": 19747,
+      "webSearchRequests": 0,
+      "costUSD": 0.22990359999999999,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1974,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "stderr": "",
+  "questionCount": 12,
+  "statuses": [
+    [
+      37,
+      "PASS"
+    ],
+    [
+      38,
+      "PASS"
+    ],
+    [
+      39,
+      "PASS"
+    ],
+    [
+      40,
+      "PASS"
+    ],
+    [
+      41,
+      "PASS"
+    ],
+    [
+      42,
+      "PASS"
+    ],
+    [
+      43,
+      "PASS"
+    ],
+    [
+      44,
+      "PASS"
+    ],
+    [
+      45,
+      "PASS"
+    ],
+    [
+      46,
+      "PASS"
+    ],
+    [
+      47,
+      "PASS"
+    ],
+    [
+      48,
+      "PASS"
+    ]
+  ]
+}

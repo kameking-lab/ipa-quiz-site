@@ -387,7 +387,14 @@ def build(exam: str, cfg: dict):
                 current["choices"].append(render(fi, m.end()))
                 continue
             if tag == "li":
-                current["notes"].append(render(fi))
+                # A note printed right after a case block (before its first question)
+                # belongs to the case text, not to the previous question.
+                previous = next(frags[k]["tag"] for k in range(fi - 1, -1, -1) if frags[k]["tag"] != "li")
+                if previous == "p" and pending_case:
+                    pending_case = (pending_case[0] + "\n" + render(fi), pending_case[1])
+                    log["normalizations"].append({"op": "case-note", "fragment": fi})
+                else:
+                    current["notes"].append(render(fi))
                 continue
         # attach PDF page provenance per question (first mapped char)
         for q in out_questions:

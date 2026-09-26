@@ -1,6 +1,6 @@
 """Assemble the published SSSC welfare question data from reviewed artifacts.
 
-Usage: py -3.12 scripts/sssc-welfare-build.py kaigo
+Usage: py -3.12 scripts/sssc-welfare-build.py kaigo|shakai|seishin
 Inputs (all committed under reports/sssc-welfare-20260926/):
   <exam>-source-transcription.json  verbatim text (PDF text layer x official HTML)
   answer-keys.json                  official answer keys
@@ -27,7 +27,24 @@ EXAMS = {
         "parts": [("A", 1, 60), ("B", 61, 105), ("C", 106, 125)],
         "visual": {49: {"file": "k_am_06_38.pdf", "page": 6, "printedPage": 27}},
     },
+    "shakai": {
+        "title": "第38回（令和7年度）社会福祉士国家試験",
+        "out": ROOT / "data/questions/shakai/2025-annual.json",
+        # 共通科目（午前）1〜84、専門科目（午後）85〜129。
+        "sessions": [("kyotsu", 1, 84), ("senmon", 85, 129)],
+        "visual": {},
+    },
+    "seishin": {
+        "title": "第28回（令和7年度）精神保健福祉士国家試験",
+        "out": ROOT / "data/questions/seishin/2025-annual.json",
+        # 専門科目のみ（問題1〜48）。共通科目は社会福祉士第38回と同一の問題冊子・正答で、
+        # ローダーが data/questions/shakai/2025-annual.json の問題1〜84を共有する。
+        "sessions": [("senmon", 1, 48)],
+        "visual": {},
+    },
 }
+
+SELECT_COUNT = {"1": 1, "2": 2, "１": 1, "２": 2}
 
 
 def compose(q: dict) -> str:
@@ -59,10 +76,14 @@ def main(exam: str) -> None:
         expl = final[str(n)]
         answer = keys[str(n)]
         assert len(q["choices"]) == 5 and len(expl["choiceExplanations"]) == 5, n
-        part = next(p for p, lo, hi in cfg["parts"] if lo <= n <= hi)
-        record = {
-            "number": n,
-            "part": part,
+        choose = re.findall(r"([12１２])つ選びなさい", q["stem"])
+        assert choose and SELECT_COUNT[choose[-1]] == len(answer), (n, choose, answer)
+        record = {"number": n}
+        if "parts" in cfg:
+            record["part"] = next(p for p, lo, hi in cfg["parts"] if lo <= n <= hi)
+        if "sessions" in cfg:
+            record["session"] = next(p for p, lo, hi in cfg["sessions"] if lo <= n <= hi)
+        record.update({
             "subject": q["subject"],
             "pdfFile": q["pdfFile"],
             "pdfPage": q["pdfPage"],
@@ -72,7 +93,7 @@ def main(exam: str) -> None:
             "summary": expl["summary"],
             "choiceExplanations": expl["choiceExplanations"],
             "lawSensitive": expl["lawSensitive"],
-        }
+        })
         if visual:
             images = [f"/questions/{exam}/2025-annual/q{n}-choice{i}.png" for i in range(1, 6)]
             record["choiceImages"] = [
