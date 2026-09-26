@@ -61,7 +61,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -162,6 +162,21 @@ export default async function ExamYearSeasonPage({
       items: allItems.filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
     }));
   }
+  // 介護福祉士は公式問題冊子の科目順に区切って一覧する（問題番号は通し番号）。
+  const subjectSections = code === "kaigo";
+  if (subjectSections) {
+    const allItems = sessionGroups.flatMap((group) => group.items).sort((a, b) => a.qNumber - b.qNumber);
+    const sections: SessionGroup[] = [];
+    for (const item of allItems) {
+      const current = sections.at(-1);
+      if (current && current.items.at(-1)?.category === item.category) current.items.push(item);
+      else sections.push({ session: item.category, id: `kaigo-q${item.qNumber}`, items: [item] });
+    }
+    sessionGroups = sections.map((section) => ({
+      ...section,
+      session: `${section.session} 問題${section.items[0]!.qNumber}〜${section.items.at(-1)!.qNumber}`,
+    }));
+  }
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -242,6 +257,11 @@ export default async function ExamYearSeasonPage({
           <p className="mt-3 text-sm text-muted-foreground">
             過去問一覧 — AI 解説付きで効率的に学習を進められます。
           </p>
+          {code === "kaigo" && (
+            <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+              第38回（試験日 令和8年1月25日）の全125問です。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、公益財団法人社会福祉振興・試験センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+            </p>
+          )}
           {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
             <p className="mt-2 text-sm text-muted-foreground">
               令和7年度10月実施分は、公式問題・正答・図表を照合した全66問を収録しています。
@@ -272,7 +292,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || subjectSections} />
       </div>
     </main>
   );

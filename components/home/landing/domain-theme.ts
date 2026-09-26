@@ -1,4 +1,4 @@
-import { Building2, HardHat, Landmark, Monitor, Zap, type LucideIcon } from "lucide-react";
+import { Building2, HandHeart, HardHat, Landmark, Monitor, Zap, type LucideIcon } from "lucide-react";
 import type { HomeDomainId } from "@/lib/home/home-directory";
 
 export interface DomainTheme {
@@ -63,5 +63,14 @@ export const DOMAIN_THEME: Record<HomeDomainId, DomainTheme> = {
     abbr: "bg-rose-100 text-rose-800 dark:bg-rose-900/60 dark:text-rose-200",
     chip: "border-rose-200 bg-rose-50/70 hover:border-rose-400 dark:border-rose-900 dark:bg-rose-950/30 dark:hover:border-rose-600",
     heroChip: "border-rose-200 bg-white/80 hover:border-rose-500 dark:border-rose-800 dark:bg-rose-950/40",
+  },
+  welfare: {
+    icon: HandHeart,
+    tile: "bg-teal-600 text-white dark:bg-teal-500",
+    accent: "text-teal-800 dark:text-teal-300",
+    card: "border-teal-200 hover:border-teal-400 dark:border-teal-900 dark:hover:border-teal-600",
+    abbr: "bg-teal-100 text-teal-800 dark:bg-teal-900/60 dark:text-teal-200",
+    chip: "border-teal-200 bg-teal-50/70 hover:border-teal-400 dark:border-teal-900 dark:bg-teal-950/30 dark:hover:border-teal-600",
+    heroChip: "border-teal-200 bg-white/80 hover:border-teal-500 dark:border-teal-800 dark:bg-teal-950/40",
   },
 };
