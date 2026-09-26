@@ -42,7 +42,7 @@ describe("getQuestionsForExam", () => {
 });
 
 describe("getRegisteredExamCodes", () => {
-  it("公開済み試験コードだけを列挙する（IPA 13区分＋外部資格8区分）", () => {
+  it("公開済み試験コードだけを列挙する（IPA 13区分＋外部資格9区分）", () => {
     const codes = getRegisteredExamCodes();
     expect(codes).toContain("ap");
     expect(codes).toContain("ip");
@@ -54,7 +54,8 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("civil2");
     expect(codes).toContain("kaigo");
     expect(codes).toContain("kankoji2");
-    expect(codes.length).toBe(21);
+    expect(codes).toContain("tohan");
+    expect(codes.length).toBe(22);
     // 重複なし
     expect(new Set(codes).size).toBe(codes.length);
   });

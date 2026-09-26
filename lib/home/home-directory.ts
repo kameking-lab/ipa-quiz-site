@@ -126,6 +126,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "fp2", name: "FP2級", sub: "FP技能検定2級（学科・実技）", domain: "money" },
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
+  { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
 ];
 
 function otherItem(def: OtherCardDef): HomeDirectoryItem {
@@ -262,8 +263,8 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "福祉・介護",
-        lead: "社会福祉振興・試験センターの福祉系国家試験。",
+        title: "福祉・介護・医薬品",
+        lead: "介護福祉士国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },

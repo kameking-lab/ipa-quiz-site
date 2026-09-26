@@ -92,6 +92,12 @@ export function buildQuestionJsonLd({
           name: "公益財団法人社会福祉振興・試験センター",
           url: "https://www.sssc.or.jp/",
         }
+    : q.exam === "tohan"
+      ? {
+          "@type": "GovernmentOrganization",
+          name: "関西広域連合",
+          url: "https://www.kouiki-kansai.jp/",
+        }
     : q.exam === "denken3" || q.exam === "denko2"
       ? {
           "@type": "Organization",
@@ -105,7 +111,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo"
+    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo" || q.exam === "tohan"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
@@ -174,7 +180,7 @@ export function buildQuestionJsonLd({
       name: SITE_NAME,
       url: SITE_BASE_URL,
     },
-    // Neither RETIO nor JCTC supplies a public reusable-content license URL.
+    // RETIO, JCTC and 関西広域連合 entries carry no license URL here.
     ...(licenseUrl ? { license: licenseUrl } : {}),
     creator: questionAuthor,
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and

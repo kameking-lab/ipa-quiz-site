@@ -27,6 +27,7 @@ export const EXAM_LABELS: Record<string, string> = {
   civil2: "2級土木施工管理技士",
   kankoji2: "2級管工事施工管理技士",
   kaigo: "介護福祉士",
+  tohan: "登録販売者",
 };
 
 export function examLabel(exam: string): string {
@@ -47,6 +48,7 @@ export function seasonLabel(season: string): string {
   if (season === "october") return "10月試験";
   if (season === "late") return "後期";
   if (season === "annual") return "";
+  if (season === "kansai") return "関西広域連合";
   return season;
 }
 

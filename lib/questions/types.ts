@@ -19,10 +19,11 @@ export type ExamCode =
   | "takken"
   | "civil2"
   | "kankoji2"
-  | "kaigo";
+  | "kaigo"
+  | "tohan";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo" | "tohan">;
 
 export type Session =
   | "am"
@@ -39,7 +40,7 @@ export type Session =
   | "kikai"
   | "houki";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "annual";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "annual" | "kansai";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
@@ -93,7 +94,7 @@ export interface Question {
   sourceAttribution?: string;
   /** 問題・正答以外の公式根拠（法令・制度概要等）。 */
   officialReferenceUrls?: string[];
-  license: "IPA-public" | "JAFP-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse";
+  license: "IPA-public" | "JAFP-reuse-with-attribution" | "ECEE-educational-reuse" | "RETIO-reuse" | "JCTC-authorized-reuse" | "SSSC-reuse" | "KANSAI-UNION-reuse";
   isCalculation?: boolean;
   /** 解説品質が低い・要確認の問題。出題プールから除外される。 */
   needsReview?: boolean;

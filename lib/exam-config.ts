@@ -400,11 +400,32 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
   },
+  tohan: {
+    code: "tohan",
+    nameFull: "登録販売者試験（関西広域連合）",
+    urlSlug: "tohan",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 120,
+      label: "試験問題（前半・後半）",
+      categories: [
+        "医薬品に共通する特性と基本的な知識",
+        "人体の働きと医薬品",
+        "主な医薬品とその作用",
+        "薬事に関する法規と制度",
+        "医薬品の適正使用と安全対策",
+      ],
+    }],
+    seasons: ["kansai"],
+    yearRange: { start: 2025, end: 2025 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo" | "tohan"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo" && code !== "tohan",
 );
 
 /** Every exam playable in the application, including external qualifications. */
