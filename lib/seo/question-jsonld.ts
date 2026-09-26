@@ -86,6 +86,14 @@ export function buildQuestionJsonLd({
           name: "一般財団法人全国建設研修センター",
           url: "https://www.jctc.jp/",
         }
+    // 関西広域連合の利用ルールは、加工した情報を同連合が作成したかのように示すことを禁じる。
+    // 表示する問題文はルビ・表組みを整理した加工物なので、作成者は本サイトとし、原本は isBasedOn で示す。
+    : q.exam === "tohan"
+      ? {
+          "@type": "Organization",
+          name: SITE_NAME,
+          url: SITE_BASE_URL,
+        }
     : q.exam === "denken3" || q.exam === "denko2"
       ? {
           "@type": "Organization",
@@ -101,6 +109,8 @@ export function buildQuestionJsonLd({
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
     : q.exam === "takken" || q.exam === "civil2"
       ? undefined
+    : q.exam === "tohan"
+      ? "https://www.kouiki-kansai.jp/site/221.html"
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"
       : "https://www.ipa.go.jp/shiken/faq.html";
@@ -171,6 +181,20 @@ export function buildQuestionJsonLd({
     // Neither RETIO nor JCTC supplies a public reusable-content license URL.
     ...(licenseUrl ? { license: licenseUrl } : {}),
     creator: questionAuthor,
+    ...(q.exam === "tohan"
+      ? {
+          isBasedOn: {
+            "@type": "CreativeWork",
+            name: `${questionSourceEdition(q)} 登録販売者試験問題 問${q.qNumber}`,
+            url: q.sourcePdfUrl,
+            creator: {
+              "@type": "GovernmentOrganization",
+              name: "関西広域連合",
+              url: "https://www.kouiki-kansai.jp/",
+            },
+          },
+        }
+      : {}),
     // Self-resolving @id reference: like the QAPage's `isPartOf` WebSite (and
     // unlike a bare stub), the publisher carries name/url inline so Google
     // resolves it within this page. The /q surface does not embed the full

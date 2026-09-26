@@ -38,6 +38,7 @@ for (const width of [390, 1280]) {
     await expect(page.locator('a[href="/fp3"]')).toBeVisible();
     await expect(page.locator('a[href="/fp2"]')).toBeVisible();
     await expect(page.locator('a[href="/civil2"]')).toBeVisible();
+    await expect(page.locator('a[href="/tohan"]')).toBeVisible();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }

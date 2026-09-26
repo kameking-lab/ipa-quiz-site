@@ -6,6 +6,7 @@ export type QualificationDomain =
   | "electrical"
   | "construction"
   | "real-estate"
+  | "pharmacy"
   | "legal"
   | "safety"
   | "accounting";
@@ -156,6 +157,20 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live",
     reuseSummary: "2024・2025年度の公式問題・正解番号表を掲載し、各年度の解説に法令基準日を表示。",
     remainingWork: [],
+  },
+  {
+    slug: "tohan-kansai",
+    examCode: "tohan",
+    shortName: "登録販売者（関西）",
+    fullName: "登録販売者試験（関西広域連合：滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）",
+    domain: "pharmacy",
+    administrator: "関西広域連合",
+    officialQuestionsUrl: "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/touroku/7607.html",
+    officialReuseTermsUrl: "https://www.kouiki-kansai.jp/site/221.html",
+    status: "live",
+    reuseSummary: "政府標準利用規約（第2.0版）準拠・CC BY 4.0互換の利用ルール。出典を記載し、加工した旨を明記すれば商用利用も可。加工物を同連合が作成したかのように示すことは禁止。",
+    attributionTemplate: "出典：関西広域連合「令和○年度 登録販売者試験問題（前半／後半）」・「解答」を加工して作成",
+    remainingWork: ["令和8年度は公式の「正答(例)」のみで確定正答の公表待ち", "他の年度（令和元〜6年度）の追加", "東京都・神奈川県など他ブロックは利用条件が異なるため個別判定"],
   },
   {
     slug: "gyoseishoshi",

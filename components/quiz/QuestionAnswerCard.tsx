@@ -16,7 +16,7 @@ import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import type { ChoiceKey, ExamCode, Season, Session } from "@/lib/questions/types";
-import { choiceDisplayLabel } from "@/lib/questions/display";
+import { choiceDisplayLabel, usesNumericChoiceLabels } from "@/lib/questions/display";
 
 
 interface Props {
@@ -141,7 +141,7 @@ export function QuestionAnswerCard({
   }, [revealed, keys, onSelect]);
 
   const isCorrect = isAcceptedAnswer(answerKey, selected);
-  const answerLabel = exam === "denken3"
+  const answerLabel = usesNumericChoiceLabels(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
     : formatAcceptedAnswers(answerKey);
 
@@ -205,7 +205,7 @@ export function QuestionAnswerCard({
             ) : isCorrect ? (
               <>
                 <span className="text-emerald-800 dark:text-emerald-200">正解！</span>
-                {exam === "denken3" && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
+                {usesNumericChoiceLabels(exam) && <span className="ml-2 text-emerald-800 dark:text-emerald-200">正答は {answerLabel}</span>}
               </>
             ) : (
               <span className="text-red-800 dark:text-red-200">不正解 — 正解は {answerLabel}</span>

@@ -32,6 +32,11 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: qualification.officialReuseTermsUrl,
         description: qualification.reuseSummary,
       },
+      ...(exam === "tohan" ? [{
+        label: "厚生労働省 試験問題の作成に関する手引き（令和7年4月）",
+        href: "https://www.mhlw.go.jp/content/001478036.pdf",
+        description: "令和7年度試験の出題範囲。本サイトの解説の根拠資料。",
+      }] : []),
     ];
     return (
       <section aria-label="公式リソース" className="mb-8 rounded-2xl border border-border bg-card p-5 shadow-sm">
