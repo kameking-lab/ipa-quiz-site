@@ -204,3 +204,41 @@ export const EXAM_NOTE_SUPPLEMENTS: Partial<Record<ExamCode, NoteGuideLink>> = {
 export function getNoteGuideSupplement(exam: ExamCode): NoteGuideLink | undefined {
   return EXAM_NOTE_SUPPLEMENTS[exam];
 }
+
+// 同じ試験区分に、用途の異なる検証済み教材がある場合の追加候補。
+// 主リンクと既存の補助リンクは維持し、無料部分で内容を確認できる教材だけを並べる。
+export const EXAM_NOTE_EXTRA_SUPPLEMENTS: Partial<Record<ExamCode, readonly NoteGuideLink[]>> = {
+  ip: [
+    {
+      kind: "paid",
+      href: "https://note.com/ipa_quiz_ai/n/n2cf8042d489d",
+      label: "マルウェア・認証・リスク対応を判別する12問",
+      source: "exam_ip_paid_security",
+      account: "ipa_quiz_ai",
+      description: "980円。無料部分で用語の違いと試し問題を確認できます。購入は任意です。12問の全選択肢を解説しています。",
+    },
+  ],
+  ap: [
+    {
+      kind: "paid",
+      href: "https://note.com/ipa_quiz_ai/n/n8d6aed684597",
+      label: "科目Bの経営戦略を計算するオリジナル3問",
+      source: "exam_ap_paid_strategy_b",
+      account: "ipa_quiz_ai",
+      description: "1,280円。無料部分で期待値の例を確認できます。購入は任意です。期待値・投資回収・目標利益の判断を練習します。",
+    },
+    {
+      kind: "paid",
+      href: "https://note.com/ipa_quiz_ai/n/n47fb9d6b6fa2",
+      label: "科目Bの進捗・品質を判断するオリジナル3問",
+      source: "exam_ap_paid_project",
+      account: "ipa_quiz_ai",
+      description: "1,280円。無料部分で短縮策の例を確認できます。購入は任意です。進捗の数値、テスト範囲、対応策を練習します。",
+    },
+  ],
+};
+
+export function getNoteGuideSupplements(exam: ExamCode): readonly NoteGuideLink[] {
+  const primary = getNoteGuideSupplement(exam);
+  return primary ? [primary, ...(EXAM_NOTE_EXTRA_SUPPLEMENTS[exam] ?? [])] : EXAM_NOTE_EXTRA_SUPPLEMENTS[exam] ?? [];
+}
