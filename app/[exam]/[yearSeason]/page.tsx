@@ -319,6 +319,11 @@ export default async function ExamYearSeasonPage({
               公式の全40問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では40問が全て必須です。
             </p>
           )}
+          {code === "zoen1" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式の問題A36問・問題B29問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験ではA・Bとも全問必須で、問題B No.24〜29は正解番号を全て選びます。
+            </p>
+          )}
           {code === "tsushin2" && (
             <p className="mt-2 text-sm text-muted-foreground">
               公式の全65問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では設問群ごとの条件に従い40問を解答します。

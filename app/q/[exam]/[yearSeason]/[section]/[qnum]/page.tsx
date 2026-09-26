@@ -222,7 +222,7 @@ export default async function QuestionPage({
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
-    .filter((post) => !["civil2", "civil1", "kankoji2", "zoen2", "tsushin2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
+    .filter((post) => !["civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
