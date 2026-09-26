@@ -102,6 +102,28 @@ describe("ExamNoteGuide", () => {
     });
   });
 
+  it("shows each verified IP and AP supplement without hiding the free guide", () => {
+    const { unmount } = render(<ExamNoteGuide exam="ip" />);
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href", "https://note.com/ipa_quiz_ai/n/nbabb9742557b",
+    );
+    expect(screen.getAllByRole("link", { name: /有料記事を読む/ }).map((link) => link.getAttribute("href"))).toEqual([
+      "https://note.com/ipa_quiz_ai/n/n4d660d858d53",
+      "https://note.com/ipa_quiz_ai/n/n2cf8042d489d",
+    ]);
+    unmount();
+
+    render(<ExamNoteGuide exam="ap" />);
+    expect(screen.getByRole("link", { name: /無料ガイドを読む/ })).toHaveAttribute(
+      "href", "https://note.com/ipa_quiz_ai/n/n550db5ff2054",
+    );
+    expect(screen.getAllByRole("link", { name: /有料記事を読む/ }).map((link) => link.getAttribute("href"))).toEqual([
+      "https://note.com/ipa_quiz_ai/n/n8ad47350244f",
+      "https://note.com/ipa_quiz_ai/n/n8d6aed684597",
+      "https://note.com/ipa_quiz_ai/n/n47fb9d6b6fa2",
+    ]);
+  });
+
   it("renders no supplement block for exams without an approved paid pairing", () => {
     render(<ExamNoteGuide exam="sa" />);
     expect(screen.queryByText("noteの有料記事")).not.toBeInTheDocument();
@@ -127,6 +149,8 @@ describe("ExamNoteGuide", () => {
             : actual.getNoteGuide(exam as never),
         getNoteGuideSupplement: (exam: string) =>
           exam === "ip" ? undefined : actual.getNoteGuideSupplement(exam as never),
+        getNoteGuideSupplements: (exam: string) =>
+          exam === "ip" ? [] : actual.getNoteGuideSupplements(exam as never),
       };
     });
     const { ExamNoteGuide: ExamNoteGuideWithPaidMock } = await import(
