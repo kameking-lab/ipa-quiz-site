@@ -41,6 +41,20 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "fp1",
+    examCode: "fp1",
+    shortName: "FP1級",
+    fullName: "1級ファイナンシャル・プランニング技能検定",
+    domain: "finance",
+    administrator: "一般社団法人金融財政事情研究会",
+    officialQuestionsUrl: "https://www.kinzai.or.jp/fp/news-fp/50260.html",
+    officialReuseTermsUrl: "https://www.kinzai.or.jp/ginou/license_terms.html",
+    status: "live",
+    reuseSummary: "2026年5月の学科・基礎編50問中、公式問題・模範解答と照合した5問を収録。",
+    attributionTemplate: "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月）",
+    remainingWork: ["2026年5月・学科基礎編の未収録45問の照合", "応用編の段階的収録", "法改正影響の継続確認"],
+  },
+  {
     slug: "fp3",
     examCode: "fp3",
     shortName: "FP3級",

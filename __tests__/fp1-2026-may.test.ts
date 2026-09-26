@@ -1,0 +1,51 @@
+import { describe, expect, it } from "vitest";
+
+import { FP1_QUESTIONS } from "@/data/questions/fp1";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { defaultPracticeSession } from "@/lib/questions/practice-session";
+import { getChoiceKeys } from "@/lib/questions/answers";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { parseQuestionBlocks } from "@/components/quiz/QuestionBody";
+
+describe("FP1 2026 May academic pilot", () => {
+  it("exposes exactly the reviewed part of the official basic paper", () => {
+    expect(FP1_QUESTIONS.map((q) => q.qNumber)).toEqual([1, 16, 20, 22, 48]);
+    expect(FP1_QUESTIONS.map((q) => q.officialAnswerNumber)).toEqual(["2", "1", "3", "2", "2"]);
+    expect(FP1_QUESTIONS.map((q) => q.answer)).toEqual(["イ", "ア", "ウ", "イ", "イ"]);
+    expect(QUESTIONS_BY_EXAM.fp1).toHaveLength(5);
+    expect(getQuestionsByExamStrict("fp1")).toHaveLength(5);
+    expect(defaultPracticeSession("fp1")).toBe("gakka");
+    expect(EXAM_CONFIGS.fp1.sessions[0]?.expectedQuestions).toBe(50);
+  });
+
+  it("preserves four options, per-option explanations, official provenance and the law date", () => {
+    for (const q of FP1_QUESTIONS) {
+      expect(getChoiceKeys(q.choices)).toEqual(["ア", "イ", "ウ", "エ"]);
+      expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ", "ウ", "エ"]);
+      expect(q.choices?.[q.answer as "ア" | "イ" | "ウ" | "エ"]).toBeTruthy();
+      expect(q.exam).toBe("fp1");
+      expect(q.session).toBe("gakka");
+      expect(q.season).toBe("may");
+      expect(q.lawReferenceDate).toBe("2025-10-01");
+      expect(q.sourceAttribution).toContain("学科試験 基礎編（2026年5月）");
+      expect(q.sourcePdfUrl).toBe("https://www.kinzai.or.jp/fp/news-fp/50260.html");
+      expect(q.sourceAnswerUrl).toBe("https://www.kinzai.or.jp/fp/news-fp/50274.html");
+    }
+    expect(getQualificationByExamCode("fp1")?.status).toBe("live");
+    expect(getQualificationByExamCode("fp1")?.reuseSummary).toContain("50問中");
+  });
+
+  it("renders the supplied coefficient table as a real table", () => {
+    const blocks = parseQuestionBlocks(FP1_QUESTIONS[0]!.question);
+    const table = blocks.find((block) => block.kind === "table");
+    expect(table).toBeDefined();
+    if (table?.kind === "table") {
+      expect(table.header).toHaveLength(7);
+      expect(table.rows).toHaveLength(3);
+      expect(table.rows[2]?.[5]).toBe("14.8775");
+    }
+    expect(FP1_QUESTIONS[0]!.explanation).toContain("1,906.37578万円");
+  });
+});

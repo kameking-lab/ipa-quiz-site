@@ -58,9 +58,7 @@ export function QuestionCard({
                 rel="noopener noreferrer"
                 className="underline hover:text-amber-900 dark:hover:text-amber-100"
               >
-                {question.sourceAttribution
-                  ? "公式問題PDF"
-                  : ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
+                {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
               </a>
               をご確認ください。
             </span>

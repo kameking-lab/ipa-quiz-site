@@ -250,7 +250,7 @@ export function ExplanationCard({
             className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
-            {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl), "answer")}
+            {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl), "answer")}
           </a>
           {question.officialReferenceUrls?.map((url) => (
             <a

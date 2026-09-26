@@ -299,6 +299,21 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
   },
+  fp1: {
+    code: "fp1",
+    nameFull: "1級ファイナンシャル・プランニング技能検定",
+    urlSlug: "fp1",
+    level: "advanced",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 50,
+      label: "学科・基礎編",
+      categories: ["ライフプランニングと資金計画", "リスク管理", "金融資産運用", "タックスプランニング", "不動産", "相続・事業承継"],
+    }],
+    seasons: ["may"],
+    yearRange: { start: 2026, end: 2026 },
+  },
   fp3: {
     code: "fp3",
     nameFull: "3級ファイナンシャル・プランニング技能検定",
@@ -604,7 +619,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */
@@ -642,7 +657,10 @@ export function isPdfDocumentUrl(url: string | undefined): boolean {
 
 /** Honest user-facing label for an IPA source link after fallback handling. */
 export function ipaSourceLabel(url: string | undefined, kind: "question" | "answer"): string {
-  if (!isPdfDocumentUrl(url)) return "IPA公式の過去問一覧";
+  if (!isPdfDocumentUrl(url)) {
+    if (url?.startsWith("https://www.kinzai.or.jp/")) return kind === "question" ? "主催団体の公式問題" : "主催団体の模範解答";
+    return "IPA公式の過去問一覧";
+  }
   return kind === "question" ? "問題PDF" : "公式解答PDF";
 }
 
