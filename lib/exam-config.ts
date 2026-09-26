@@ -381,11 +381,51 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
   },
+  kaigo: {
+    code: "kaigo",
+    nameFull: "介護福祉士国家試験",
+    urlSlug: "kaigo",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 125,
+      label: "筆記試験",
+      categories: [
+        "人間の尊厳と自立", "介護の基本", "社会の理解", "人間関係とコミュニケーション", "コミュニケーション技術",
+        "生活支援技術", "こころとからだのしくみ", "発達と老化の理解", "認知症の理解", "障害の理解",
+        "医療的ケア", "介護過程", "総合問題",
+      ],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+  },
+  tohan: {
+    code: "tohan",
+    nameFull: "登録販売者試験（関西広域連合）",
+    urlSlug: "tohan",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 120,
+      label: "試験問題（前半・後半）",
+      categories: [
+        "医薬品に共通する特性と基本的な知識",
+        "人体の働きと医薬品",
+        "主な医薬品とその作用",
+        "薬事に関する法規と制度",
+        "医薬品の適正使用と安全対策",
+      ],
+    }],
+    seasons: ["kansai"],
+    yearRange: { start: 2025, end: 2025 },
+  },
 };
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo" | "tohan"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo" && code !== "tohan",
 );
 
 /** Every exam playable in the application, including external qualifications. */

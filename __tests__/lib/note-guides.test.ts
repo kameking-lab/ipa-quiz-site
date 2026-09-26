@@ -24,11 +24,20 @@ describe("note-guides", () => {
   // 2026-09-13 に13区分すべてへ無料ガイドを結線したので、その役目は終わった。
   // チェックを消すのではなく「13区分すべてに、正しい垢の無料ガイドがある」という
   // より強い不変条件に置き換える。
+  it("registers the civil2 free guide on the sikaku_rakutoru account", () => {
+    const guide = getNoteGuide("civil2");
+    expect(guide?.kind).toBe("free");
+    expect(guide?.account).toBe("sikaku_rakutoru");
+    expect(guide?.source).toBe("exam_civil2");
+    expect(guide?.href).toBe("https://note.com/sikaku_rakutoru/n/n109be9d7ce85");
+  });
+
   it("registers a verified free guide for all 13 IPA exam codes", () => {
     const allExamCodes: ExamCode[] = [
       "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
     ];
-    expect(Object.keys(EXAM_NOTE_GUIDES).sort()).toEqual([...allExamCodes].sort());
+    // 13区分が全部埋まっていることが不変条件。civil2 等の非IPA区分の追加は許す。
+    for (const exam of allExamCodes) expect(Object.keys(EXAM_NOTE_GUIDES), exam).toContain(exam);
     for (const exam of allExamCodes) {
       const guide = getNoteGuide(exam);
       expect(guide, exam).toBeDefined();

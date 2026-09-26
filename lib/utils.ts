@@ -26,6 +26,8 @@ export const EXAM_LABELS: Record<string, string> = {
   takken: "宅地建物取引士",
   civil2: "2級土木施工管理技士",
   kankoji2: "2級管工事施工管理技士",
+  kaigo: "介護福祉士",
+  tohan: "登録販売者",
 };
 
 export function examLabel(exam: string): string {
@@ -45,6 +47,8 @@ export function seasonLabel(season: string): string {
   if (season === "january") return "1月試験";
   if (season === "october") return "10月試験";
   if (season === "late") return "後期";
+  if (season === "annual") return "";
+  if (season === "kansai") return "関西広域連合";
   return season;
 }
 
@@ -53,5 +57,7 @@ export function formatYearSeason(year: number, season: string): string {
   if (season === "published") return `${year}年5月公表問題`;
   const reiwa = year - 2018;
   const era = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
+  // 年1回の国家試験（介護福祉士等）は年度だけで回を特定する。
+  if (season === "annual") return era;
   return `${era} ${seasonLabel(season)}`;
 }

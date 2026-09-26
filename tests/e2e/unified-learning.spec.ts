@@ -63,7 +63,7 @@ test("IPA three-question practice ends on results instead of the home chooser", 
     await next.click();
   }
   await expect(page.getByRole("heading", { name: "クイズ完了！", exact: true })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "IPAか安全を選ぶ" })).toHaveCount(0);
+  await expect(page.getByRole("navigation", { name: "分野から選ぶ" })).toHaveCount(0);
 });
 
 

@@ -19,7 +19,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   qNumber: number;
   part?: "a" | "b";
 } | null {
-  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late)$/.exec(params.yearSeason);
+  const match = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|kansai)$/.exec(params.yearSeason);
   if (!match) return null;
   const year = Number(match[1]);
   const season = match[2] as Season;
