@@ -63,5 +63,6 @@ test.describe("home SERP snippet", () => {
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/takken"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil2"))).toBe(true);
     expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kankoji2"))).toBe(true);
+    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil1"))).toBe(true);
   });
 });
