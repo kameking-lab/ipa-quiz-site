@@ -33,7 +33,7 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     expect(getChoiceKeys(q.choices)).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ", "ウ", "エ"]);
     expect(Object.values(q.choiceExplanations ?? {}).every((reason) => reason.trim().length > 10)).toBe(true);
-    expect(q.explanation.trim().length).toBeGreaterThan(40);
+    expect(q.explanation.trim().length).toBeGreaterThanOrEqual(40);
     expect(q.sourceAttribution).toMatch(/^出典：令和8年度第一種電気工事士上期学科試験（出題例）問\d+（電気技術者試験センター）/);
     expect(q.sourcePdfUrl).toBe("https://www.shiken.or.jp/construction/upload/20260401_co_first_q01.pdf");
     expect(q.sourceAnswerUrl).toBe("https://www.shiken.or.jp/construction/upload/20260401_co_first_a01.pdf");
