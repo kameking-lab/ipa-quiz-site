@@ -1,4 +1,4 @@
-import type { ExamCode, Season, Session } from "@/lib/questions/types";
+import type { ExamCode, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { LS_KEYS } from "./keys";
 
 export interface LastQuestionState {
@@ -7,9 +7,11 @@ export interface LastQuestionState {
   season: Season;
   session: Session;
   qNumber: number;
-  part?: "a" | "b";
+  part?: QuestionPart;
   answeredAt: number;
 }
+
+const QUESTION_PARTS: readonly QuestionPart[] = ["a", "b", "1", "2", "3", "4", "5"];
 
 export function readLastQuestion(): LastQuestionState | null {
   if (typeof window === "undefined") return null;
@@ -23,7 +25,7 @@ export function readLastQuestion(): LastQuestionState | null {
       typeof parsed.season !== "string" ||
       typeof parsed.session !== "string" ||
       typeof parsed.qNumber !== "number" ||
-      (parsed.part !== undefined && parsed.part !== "a" && parsed.part !== "b") ||
+      (parsed.part !== undefined && !QUESTION_PARTS.includes(parsed.part)) ||
       typeof parsed.answeredAt !== "number"
     ) {
       return null;

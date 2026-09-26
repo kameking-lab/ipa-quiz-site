@@ -119,6 +119,7 @@ interface OtherCardDef {
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
+  { code: "denken2", name: "電験二種", sub: "一次試験（電力・法規）", domain: "electrical" },
   { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },

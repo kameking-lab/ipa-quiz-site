@@ -22,6 +22,7 @@ export const EXAM_LABELS: Record<string, string> = {
   fp2: "2級FP技能検定",
   fp3: "3級FP技能検定",
   denken3: "第三種電気主任技術者",
+  denken2: "第二種電気主任技術者",
   denko2: "第二種電気工事士",
   denko1: "第一種電気工事士",
   takken: "宅地建物取引士",
@@ -51,6 +52,7 @@ export function seasonLabel(season: string): string {
   if (season === "october") return "10月試験";
   if (season === "late") return "後期";
   if (season === "annual") return "";
+  if (season === "primary") return "一次試験";
   if (season === "kansai") return "関西広域連合";
   return season;
 }

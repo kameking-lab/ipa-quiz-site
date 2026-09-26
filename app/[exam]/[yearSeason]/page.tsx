@@ -70,7 +70,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|kansai)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|primary|kansai)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }

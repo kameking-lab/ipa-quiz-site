@@ -34,6 +34,8 @@ import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   findQuestionByRoute,
+  parseQuestionNumberSegment,
+  questionNumberSegment,
   questionPagePath,
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
@@ -74,7 +76,7 @@ export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
     exam: q.exam,
     yearSeason: `${q.year}-${q.season}`,
     section: q.session,
-    qnum: `q${q.qNumber}${q.part ?? ""}`,
+    qnum: questionNumberSegment(q.qNumber, q.part),
   }));
 }
 
@@ -122,12 +124,11 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|kansai)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|primary|kansai)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
-  const qMatch = /^q(\d+)([ab])?$/.exec(p.qnum);
-  if (!qMatch) return undefined;
-  const qNumber = Number(qMatch[1]);
+  const segment = parseQuestionNumberSegment(p.exam, p.qnum);
+  if (!segment) return undefined;
 
   return ALL_QUESTIONS.find(
     (q) =>
@@ -135,8 +136,8 @@ function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
       q.year === year &&
       q.season === yearSeasonMatch[2] &&
       q.session === p.section &&
-      q.qNumber === qNumber &&
-      q.part === qMatch[2],
+      q.qNumber === segment.qNumber &&
+      q.part === segment.part,
   );
 }
 

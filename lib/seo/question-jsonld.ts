@@ -100,7 +100,7 @@ export function buildQuestionJsonLd({
           name: "関西広域連合",
           url: "https://www.kouiki-kansai.jp/",
         }
-    : q.exam === "denken3" || q.exam === "denko2" || q.exam === "denko1"
+    : q.exam === "denken3" || q.exam === "denken2" || q.exam === "denko2" || q.exam === "denko1"
       ? {
           "@type": "Organization",
           name: "一般財団法人 電気技術者試験センター",
@@ -113,7 +113,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan"
+    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "kaigo" || q.exam === "denken2" || q.exam === "denko1" || q.exam === "shakai" || q.exam === "seishin" || q.exam === "tohan"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"

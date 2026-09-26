@@ -53,6 +53,12 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
+    ] : exam === "denken2" ? [
+      {
+        label: `${qualification.administrator} 公式問題・正答`,
+        href: qualification.officialQuestionsUrl,
+        description: "第二種電気主任技術者試験の問題と公式解答の一次情報。",
+      },
     ] : exam === "shakai" ? [
       {
         label: "社会福祉振興・試験センター 過去の試験問題",
