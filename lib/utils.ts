@@ -23,6 +23,7 @@ export const EXAM_LABELS: Record<string, string> = {
   fp3: "3級FP技能検定",
   denken3: "第三種電気主任技術者",
   denko2: "第二種電気工事士",
+  denko1: "第一種電気工事士",
   takken: "宅地建物取引士",
   civil2: "2級土木施工管理技士",
   kankoji2: "2級管工事施工管理技士",

@@ -1,0 +1,76 @@
+{
+  "inputHashes": {
+    "draftSha256": "2ccdcf4c7ac1999b7db8b91c08c21714d80c136fde310e7d24fc03afb7861ac8",
+    "candidateSha256": {
+      "16": "9c6d1ee2d384b20426d693a3c3fb47cb3c1bf901d21c058510001aa5e8221adf",
+      "17": "4ded70b6a9da40aeffbfeaec0954cd0263a06331a56e282461213daf1a984294",
+      "18": "c376502c9a5cbd4229aa5e7c9ed216b759fdd07989f44d07d91ea079fbbeff18",
+      "19": "2f840c7981289c01611feaa659e149527dcc3f5aa5a324db207098a41e1b440d",
+      "20": "b65af807d17d1e9792dd6b87b5d6bcad6e1bff1538e93dce6b1fe1b59cef283d"
+    },
+    "rowSha256": {
+      "16": "f3437f3b5bcf3a17dc19e24a61026cf932eaf29972f585ca6ea183d0b392a252",
+      "17": "78d1eeb7983a0128e1cfd66dd3b361f4396e65d85058393815325d7016e33441",
+      "18": "c7ea648e28b862125a9d49ab582e7c6ba56eabd99a0e5ee4c78517ffc2c18ebe",
+      "19": "7e58fc4dd3f184fc5cc5f1f6da8d4382299249e24bb164c510b3842160680517",
+      "20": "c9b13f9f19b5fe2035153aefd9aa8f5a47107c0428a499ce15d701c63deb6fd0"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q16.png": "fde0d2e5e20a87e8d21326d561a51214354503db238e8f342e56611f49926136"
+    },
+    "legalReceiptSha256": {}
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "d5d9e96b-6de0-416e-afce-87c8a9df1956",
+  "assessment": [
+    {
+      "number": 16,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 17,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "解説とchoiceExplanations.ハは、クロスフロー形が不適切である根拠を『主に水車の形式として代表的だから』としている。しかし垂直軸風車の一般的な分類(サボニウス形・パドル形などと並ぶ抗力形)には、小形のクロスフロー形風車も挙がる。このままだと『クロスフロー形の風車は存在しない』と読めてしまう。根拠の書き方を直す必要がある。例:『クロスフロー形は小形の垂直軸風車に見られる程度で、発電用風車の羽根の形状としては一般的ではない。水車形式(クロスフロー水車)として代表的なものであり、本問では不適切とされる』。",
+        "解説は風力発電の代表形式としてプロペラ形・ダリウス形・ジャイロミル形の3つだけを挙げ、クロスフロー形と対比している。代表的な垂直軸風車であるサボニウス形に触れていないため、『この3形式以外は風車ではない』と誤解させる構成になっている。『代表的な形式の例』であることを明記すること。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 18,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 19,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 20,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

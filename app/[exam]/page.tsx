@@ -307,6 +307,7 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
+          {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度上期の学科試験はCBT方式で、試験センターが公表した出題例（一般問題40問・配線図問題10問）の全50問を収録しています。</p>}
           {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）社会福祉士国家試験の全129問（共通科目84問・専門科目45問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第28回（令和7年度）精神保健福祉士国家試験の専門科目48問と、社会福祉士と同じ共通科目84問を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）介護福祉士国家試験の全125問（総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}

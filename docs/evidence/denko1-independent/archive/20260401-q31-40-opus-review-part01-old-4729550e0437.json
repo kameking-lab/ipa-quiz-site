@@ -1,0 +1,83 @@
+{
+  "inputHashes": {
+    "draftSha256": "7dc8ff2f05477ebfe6b281a71e523a3d2e5ce040f91a896e9386f767757f6de7",
+    "candidateSha256": {
+      "31": "9de1d2df2b272981fffe5a7ff7fdd67f804f1f1a52814497382c41c81eb26407",
+      "32": "048e059129acf60c482243334b08253f36898be7193b7c4efbe1ba82f8046d51",
+      "33": "ce85f372df549366996cb4b2fab831c01e82ad7a21fd710aec10f886f0c3af26",
+      "34": "b6069898bc146dbf5fe2f10228194576a192200a94a1be945b7e666d3594d56a",
+      "35": "ebe223228d200b1bd8ed769cf755dab4e0957ad9f338d76bd3a8e9232a00f40b"
+    },
+    "rowSha256": {
+      "31": "2269dab487b75e8fd31aba305064e4328273e6426dcbe5d49b46a6306277cca7",
+      "32": "f68991a83c96c794b08a555c3f28bb80a808b0c42ecab6c81f26975f01b2fdbe",
+      "33": "fc9c89c464ff34e69d34e371265b4880afdaad3503069d1cc93c61af64b2b065",
+      "34": "76435bf6144f79f8f211357b7fae3cc7d1e0941ac8eed475f3f6fd7b0ff7e495",
+      "35": "e8c8de66d63c2e1fea2f68d2038cf3df22a76589b60a6541bc606f0330f91bb2"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/facility-plan.png": "8e17a9515926bc82c7afb6f6df4cb65eb076f74a7d9327dedf7a74c30cee55a5"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q31.json": "5a0feab62306212df9d097cd601554644943d72f2c8b4f9014b72707efc7f2ae",
+      "docs/evidence/denko1-law/20260401-q32.json": "65021855975ff5c653c4840ff9a2d7be38a54577d8e456b6ce3454b006fcce7f",
+      "docs/evidence/denko1-law/20260401-q33.json": "b6e848b35b93500cecdf5c16ebacdda841ec067076ac8db37d73b75c359041fc",
+      "docs/evidence/denko1-law/20260401-q34.json": "f2a278ce349feb243ed99686aa2a93e69521c03b28fcda6efeaf780e51b5fb77",
+      "docs/evidence/denko1-law/20260401-q35.json": "18c284dd5b2dab8c374e33ccd4180e2f505b2294a6376f8851d0568859d8c5b8"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "e0c5e168-0975-4ffe-8663-6911a11df21e",
+  "assessment": [
+    {
+      "number": 31,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 32,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.イの「解釈第37条で避雷器の施設が義務付けられるのは受電電力500kW以上の需要場所の引込口だが」は範囲が広すぎる。第37条第1項は第三号以外の箇所(第一号・第二号・第四号など)にも施設を求めている。このため「第37条の義務箇所は500kW以上の引込口だけ」と読める。receiptで照合済みの範囲に合わせて「高圧架空電線路から受電する需要場所については、解釈第37条第1項第三号により受電電力500kW以上の引込口に避雷器の施設が義務付けられるが」のように、需要場所と号に限定して書く必要がある。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": [
+        "choiceExplanations.イの「第37条で義務付けられるのは500kW以上の需要場所の引込口だけ」という限定は、receipt未照合。receiptが照合したのは第37条第1項の柱書・第三号と第3項だけで、他の号の内容と、高圧受電の需要場所で第三号以外に該当する号が無いことは照合していない。"
+      ]
+    },
+    {
+      "number": 33,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 34,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 35,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}

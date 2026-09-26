@@ -120,6 +120,7 @@ interface OtherCardDef {
 const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denken3", name: "電験三種", sub: "第三種電気主任技術者", domain: "electrical" },
   { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
   { code: "kankoji2", name: "2級管工事施工管理", sub: "第一次検定", domain: "construction" },
   { code: "fp3", name: "FP3級", sub: "FP技能検定3級（学科・実技）", domain: "money" },

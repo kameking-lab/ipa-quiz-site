@@ -26,6 +26,22 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/mondai/",
         description: "各試験回の問題・正答肢PDFの一覧。",
       },
+    ] : exam === "denko1" ? [
+      {
+        label: "電気技術者試験センター 公式問題（令和8年度上期学科・出題例）",
+        href: "https://www.shiken.or.jp/construction/upload/20260401_co_first_q01.pdf",
+        description: "第一種電気工事士 上期学科試験(CBT)の出題例の問題PDF。一般問題40問・配線図問題10問。",
+      },
+      {
+        label: "電気技術者試験センター 公式解答",
+        href: "https://www.shiken.or.jp/construction/upload/20260401_co_first_a01.pdf",
+        description: "同じ出題例の解答PDF。",
+      },
+      {
+        label: "第一種電気工事士試験の問題と解答",
+        href: "https://www.shiken.or.jp/construction/first/qa/",
+        description: "学科・技能の各試験回の問題と解答の一覧。",
+      },
     ] : exam === "civil2" ? [
       {
         label: "全国建設研修センター 公式問題",

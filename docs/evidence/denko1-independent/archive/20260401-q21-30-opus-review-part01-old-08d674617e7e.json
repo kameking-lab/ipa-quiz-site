@@ -1,0 +1,79 @@
+{
+  "inputHashes": {
+    "draftSha256": "ed137b43a3f2307593a1dfd0162edba54109acb1d62640f46d05b3bcb6ffbb12",
+    "candidateSha256": {
+      "21": "87229ae1a74d8ca714caf1ee51610525ee87c111baeadfe340a508c3c70a5853",
+      "22": "ca20cb46bdc0395f875aa277a6d070dd80b200034c97b18ad6c89baa1c31d656",
+      "23": "134db4af146882b8d4d3c4c06875aa7ba48e78f87e32bb3c154ac2be6461c048",
+      "24": "cf89e9b456088d15973f679ae727e80b4925834b210346ca39b9abe975603cd2",
+      "25": "f65e132eee47185edbf6d30a1360218fe2c1a0843ba3e548e5159e07026ca216"
+    },
+    "rowSha256": {
+      "21": "ed08212b35a74911744e3f58895ca9d88b5fec9ed42fb8530516a5e65b6d6c67",
+      "22": "9a5d24f51e4f8f445f8d7e04bf098e68544384632870adee740198aaacdea578",
+      "23": "25b7b6901e41decc3b2081c86dad4c7cbc40c44b4dbddc5796319aa22c196134",
+      "24": "cbf0e2f404993732b0bd065a1d19a54fe38aaf5801639c35c296a3d5a19264f1",
+      "25": "40b8d9b7b82c191f3623af68fb6c9392c4a5770f1516e1810efde3c62de7af84"
+    },
+    "figureSha256": {
+      "public/images/denko1/2026-first/q22.png": "4ee4290437c1b320bec8ab001a1626b865b29e3a14c608a92ad2d14c705eb5b5",
+      "public/images/denko1/2026-first/q23.png": "897432bde33cf76b9adb99670e0a2f8560444235b4e12d57f192fb9d1593f4f5",
+      "public/images/denko1/2026-first/q25.png": "3d53236da0c57252ee92cb3b6609f6296b04bb80ddd6a8028dd0ae4dd62c689b"
+    },
+    "legalReceiptSha256": {
+      "docs/evidence/denko1-law/20260401-q21.json": "a2c41b90afc0a08939774076f4b9ea984eaf62b587cefd3d159329d3936f9117"
+    }
+  },
+  "reviewModel": "claude-opus-5-5",
+  "cliInitModel": "claude-opus-5-5",
+  "sessionId": "b4027395-bd51-4c03-b35b-47cc4d1c2821",
+  "assessment": [
+    {
+      "number": 21,
+      "status": "FIX",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [
+        "choiceExplanations.ニは「屋外キュービクルの周囲の保有距離は扉幅(1m未満なら1m)+保安上有効な距離以上とされ」と、出典を示さずに一般的な規定として書いている。receiptで照合できたのは横浜市の電気設備工事施工マニュアルの条文だけで、全国共通の基準かどうかは確認されていない。explanationでは「公的な施工基準の例として横浜市の…」と出典を示しているので、ニにも同じく横浜市のマニュアルの例であることを書き添える必要がある(例:「横浜市の施工マニュアルの例では…とされ」)。"
+      ],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 22,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 23,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 24,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    },
+    {
+      "number": 25,
+      "status": "PASS",
+      "textIssues": [],
+      "choiceIssues": [],
+      "explanationIssues": [],
+      "figureIssues": [],
+      "lawNeedsExternalCheck": []
+    }
+  ]
+}
