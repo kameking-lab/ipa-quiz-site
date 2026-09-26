@@ -10,12 +10,11 @@ async function coordinateClick(page: Page, locator: Locator) {
   await page.mouse.click(box!.x + box!.width / 2, box!.y + box!.height / 2);
 }
 for (const width of [360, 1280]) {
-  test(`category -> qualification -> start works with real clicks at ${width}px`, async ({ page }) => {
+  test(`home qualification card -> start works with real clicks at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
-    await coordinateClick(page, page.getByRole("navigation", { name: "IPAか安全を選ぶ" }).getByRole("link", { name: /^IPA/ }));
-    await expect(page).toHaveURL(/\/ipa$/);
-    const qualification = page.locator('main a[href="/ip"]');
+    // トップの IT・情報処理カードから資格ページへ直接進める。
+    const qualification = page.locator('#domain-it a[href="/ip"]');
     await qualification.click({ trial: true });
     await coordinateClick(page, qualification);
     await expect(page).toHaveURL(/\/ip$/);
