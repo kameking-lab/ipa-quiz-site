@@ -79,11 +79,11 @@ interface RouteParams {
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  // denken3/denken2 have dedicated launch pages under app/. Including them
+  // Denken exams have dedicated launch pages under app/. Including them
   // in this catch-all route's static params makes Next emit a conflicting
   // fallback entry, which turns unknown one-segment URLs into soft 404s (200).
   return getAvailableExams()
-    .filter((exam) => exam !== "denken3" && exam !== "denken2")
+    .filter((exam) => exam !== "denken3" && exam !== "denken2" && exam !== "denken1")
     .map((exam) => ({ exam }));
 }
 

@@ -100,6 +100,12 @@ export default async function QuizPage({
     sp.season !== "primary" ||
     !["denryoku", "houki"].includes(sp.session ?? "")
   )) redirect("/denken2");
+  if (exam === "denken1" && (
+    mode !== "year" ||
+    sp.year !== "2026" ||
+    sp.season !== "primary" ||
+    !["denryoku", "kikai", "houki"].includes(sp.session ?? "")
+  )) redirect("/denken1");
   const isSearchPool = sp.source === "search";
   const session = isSearchPool
     ? undefined
@@ -145,7 +151,7 @@ export default async function QuizPage({
           ? "検索結果から選んだ過去問演習"
           : `${EXAM_CONFIGS[exam].nameFull} ${MODE_LABELS[mode]}過去問演習`}
       </h1>
-      {!isSearchPool && exam !== "denken3" && exam !== "denken2" && <QuizModeTabs active={mode} exam={exam} />}
+      {!isSearchPool && exam !== "denken3" && exam !== "denken2" && exam !== "denken1" && <QuizModeTabs active={mode} exam={exam} />}
       {!isSearchPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
       <QuizClient
         poolIds={poolIds}

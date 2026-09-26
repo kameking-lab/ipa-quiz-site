@@ -1,7 +1,7 @@
 import type { ChoiceKey, ExamCode, Question } from "./types";
 
 const DENKEN_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
-/** 電験二種一次試験の解答群は公式どおり(イ)〜(ヨ)の15肢。内部キー ア〜ソ と順番で対応させる。 */
+/** 電験一種・二種一次試験の解答群は公式どおり(イ)〜(ヨ)の15肢。内部キー ア〜ソ と順番で対応させる。 */
 const IROHA_CHOICE_KEYS: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"];
 const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "リ", "ヌ", "ル", "ヲ", "ワ", "カ", "ヨ"] as const;
 
@@ -13,7 +13,7 @@ export function questionNumberLabel(q: Pick<Question, "qNumber" | "part">): stri
 const PLAIN_NUMBER_CHOICE_EXAMS: readonly ExamCode[] = ["kaigo", "shakai", "seishin"];
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
-  if (exam === "denken2") {
+  if (exam === "denken2" || exam === "denken1") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? `(${IROHA_LABELS[index]})` : key;
   }
@@ -32,7 +32,7 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
   return `選択肢${choiceDisplayLabel(exam, key)}の図（公式問題PDFより）`;
 }
 
-/** 選択肢を原本どおり番号（電験二種は(イ)〜(ヨ)）で表示する試験（ア〜エ表記ではない）。 */
+/** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "denken3" || exam === "denken2" || exam === "tohan" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam);
+  return exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam);
 }

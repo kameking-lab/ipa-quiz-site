@@ -116,6 +116,12 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
           : "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
+    ] : exam === "denken1" ? [
+      {
+        label: `${qualification.administrator} 公式問題・正答`,
+        href: qualification.officialQuestionsUrl,
+        description: "第一種電気主任技術者試験の問題と公式解答の一次情報。",
+      },
     ] : exam === "denken2" ? [
       {
         label: `${qualification.administrator} 公式問題・正答`,

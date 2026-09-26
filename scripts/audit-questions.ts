@@ -157,13 +157,13 @@ function auditMorningQuestion(q: Question, seenIds: Set<string>): void {
       if (filled.length < 2) {
         add(q, "morning", downgrade("critical"), "choices-too-few", `有効な選択肢が ${filled.length} 個しかない`);
       }
-      const maxChoices = q.exam === "denken2" ? 15 : 9;
+      const maxChoices = (q.exam === "denken2" || q.exam === "denken1") ? 15 : 9;
       if (filled.length > maxChoices) {
         add(q, "morning", "warning", "choices-too-many", `選択肢が ${filled.length} 個（想定外）`);
       }
       // 想定外キー
       for (const k of keys) {
-        if (!(q.exam === "denken2" ? DENKEN2_CHOICE_KEYS : VALID_CHOICE_KEYS).includes(k)) {
+        if (!((q.exam === "denken2" || q.exam === "denken1") ? DENKEN2_CHOICE_KEYS : VALID_CHOICE_KEYS).includes(k)) {
           add(q, "morning", "warning", "invalid-choice-key", `不正な選択肢キー: ${k}`);
         }
       }
