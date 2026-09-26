@@ -26,6 +26,7 @@ export const EXAM_LABELS: Record<string, string> = {
   denko2: "第二種電気工事士",
   takken: "宅地建物取引士",
   civil2: "2級土木施工管理技士",
+  kankoji2: "2級管工事施工管理技士",
 };
 
 export function examLabel(exam: string): string {
@@ -44,6 +45,7 @@ export function seasonLabel(season: string): string {
   if (season === "september") return "9月試験";
   if (season === "january") return "1月試験";
   if (season === "october") return "10月試験";
+  if (season === "late") return "後期";
   if (season === "primary") return "一次試験";
   return season;
 }

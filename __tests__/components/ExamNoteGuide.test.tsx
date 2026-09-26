@@ -38,7 +38,8 @@ describe("ExamNoteGuide", () => {
     const allExamCodes = [
       "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au",
     ] as const;
-    expect(Object.keys(EXAM_NOTE_GUIDES).sort()).toEqual([...allExamCodes].sort());
+    // 13区分が全部埋まっていることが不変条件。civil2 等の非IPA区分の追加は許す。
+    for (const exam of allExamCodes) expect(Object.keys(EXAM_NOTE_GUIDES), exam).toContain(exam);
     for (const exam of allExamCodes) {
       const guide = getNoteGuide(exam);
       expect(guide, exam).toBeDefined();

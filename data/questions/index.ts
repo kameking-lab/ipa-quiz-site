@@ -16,6 +16,7 @@ import { FP2_QUESTIONS } from "./fp2";
 import { FP3_QUESTIONS } from "./fp3";
 import { DENKO2_QUESTIONS } from "./denko2";
 import { CIVIL2_QUESTIONS } from "./civil2";
+import { KANKOJI2_QUESTIONS } from "./kankoji2";
 import { DENKEN3_QUESTIONS } from "./denken3";
 import { DENKEN2_QUESTIONS } from "./denken2";
 import { TAKKEN_QUESTIONS } from "./takken";
@@ -53,6 +54,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   // reviewed pilot out of all public counts/routes until that receipt exists.
   ...(isExamPublished("denko2") ? { denko2: DENKO2_QUESTIONS } : {}),
   ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
+  ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

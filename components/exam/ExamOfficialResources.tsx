@@ -10,7 +10,23 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   if (!links && !qualification) return null;
 
   if (qualification) {
-    const items = exam === "civil2" ? [
+    const items = exam === "kankoji2" ? [
+      {
+        label: "全国建設研修センター 公式問題・正答肢（令和8年度前期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608k_mondai.pdf",
+        description: "2級管工事施工管理技術検定 第一次検定（前期）の問題PDF。正答肢は同じページの「正答肢」PDF。",
+      },
+      {
+        label: "全国建設研修センター 公式問題（令和7年度後期）",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117k_mondaia.pdf",
+        description: "第一次検定（後期）の問題PDF。No.16の正答訂正を含む正答肢PDFは試験問題/正答肢ページから確認できます。",
+      },
+      {
+        label: "全国建設研修センター 試験問題/正答肢",
+        href: "https://www.jctc.jp/mondai/",
+        description: "各試験回の問題・正答肢PDFの一覧。",
+      },
+    ] : exam === "civil2" ? [
       {
         label: "全国建設研修センター 公式問題",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_mondai.pdf",

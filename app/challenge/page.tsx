@@ -16,6 +16,8 @@ export const metadata: Metadata = {
 function isQualified(q: Question): boolean {
   if (q.type !== "multiple-choice") return false;
   if (q.hasImage) return false;
+  // デイリーチャレンジは1肢選択のUIのみ。「二つとも答えなさい」形式は出題しない。
+  if ((q.requiredSelections ?? 1) > 1) return false;
   if (!isPracticeReadyQuestion(q)) return false;
   if (!q.choices?.ア || !q.choices?.イ || !q.choices?.ウ || !q.choices?.エ) return false;
   if (/次の表|以下の表|下の表|次の図|以下の図|下の図/.test(q.question)) return false;

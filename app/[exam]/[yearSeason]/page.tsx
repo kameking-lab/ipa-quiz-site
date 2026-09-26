@@ -39,6 +39,16 @@ const CIVIL2_EXAM_SECTIONS = [
   { id: "civil2-required-management", label: "施工管理・必須 48〜66", first: 48, last: 66 },
 ] as const;
 
+/** 2級管工事 第一次検定の公式区分（前期・後期とも同じ番号構成）。 */
+const KANKOJI2_EXAM_SECTIONS = [
+  { id: "kankoji2-required-basic", label: "一般基礎・必須 1〜6", first: 1, last: 6 },
+  { id: "kankoji2-select-equipment", label: "空調・衛生設備・9問選択 7〜23", first: 7, last: 23 },
+  { id: "kankoji2-required-materials", label: "設備機器・材料・必須 24〜28", first: 24, last: 28 },
+  { id: "kankoji2-select-management", label: "施工管理法・8問選択 29〜38", first: 29, last: 38 },
+  { id: "kankoji2-select-law", label: "法規・8問選択 39〜48", first: 39, last: 48 },
+  { id: "kankoji2-required-ability", label: "施工管理法（基礎的な能力）・必須・各2肢選択 49〜52", first: 49, last: 52 },
+] as const;
+
 export async function generateStaticParams(): Promise<RouteParams[]> {
   const out: RouteParams[] = [];
   for (const exam of getAvailableExams()) {
@@ -51,7 +61,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|primary)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|primary)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -141,7 +151,9 @@ export default async function ExamYearSeasonPage({
   );
   const civil2Sections = code === "civil2" && parsed.year === 2026 && parsed.season === "early"
     ? CIVIL2_EXAM_SECTIONS
-    : null;
+    : code === "kankoji2"
+      ? KANKOJI2_EXAM_SECTIONS
+      : null;
   if (civil2Sections) {
     const allItems = sessionGroups.flatMap((group) => group.items);
     sessionGroups = civil2Sections.map((section) => ({
@@ -233,6 +245,11 @@ export default async function ExamYearSeasonPage({
           {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
             <p className="mt-2 text-sm text-muted-foreground">
               令和7年度10月実施分は、公式問題・正答・図表を照合した全66問を収録しています。
+            </p>
+          )}
+          {code === "kankoji2" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式問題・正答・図表を照合した全52問を収録。No.49〜52は本試験どおり「適当でないもの」を二つとも選ぶと正解です。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
