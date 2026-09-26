@@ -11,7 +11,7 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 
 const title = "IPA・安全衛生・FPの過去問を無料で学習 — 過去問AI";
-const description = "IPA情報処理技術者試験、安全衛生、FP・電験三種・第二種電気工事士・宅建・2級土木施工管理の公式公開過去問を無料で学習。公式正答とAIによる各選択肢の学習用解説を確認できます。";
+const description = "IPA情報処理技術者試験、安全衛生、FP・電験三種・第二種電気工事士・宅建・2級土木/管工事施工管理の公式公開過去問を無料で学習。公式正答とAIによる各選択肢の学習用解説を確認できます。";
 export const metadata: Metadata = {
   title, description,
   alternates: { canonical: "/", types: { "application/rss+xml": "/feed.xml" } },

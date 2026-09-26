@@ -17,7 +17,7 @@ for (const width of [390, 1280]) {
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
-    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denko2", "/civil2",
+    for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denko2", "/civil2", "/kankoji2",
       "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications",
       "/challenge", "/mock-exam", "/operator"]) {
       await expect(main.locator(`a[href="${href}"]`).first(), href).toBeAttached();
@@ -52,6 +52,7 @@ for (const width of [390, 1280]) {
     await expect(page).toHaveURL(/\/qualifications$/);
     await expect(page.getByRole("heading", { name: "FP3級" })).toBeVisible();
     await expect(page.locator('a[href="/civil2"]')).toBeVisible();
+    await expect(page.locator('a[href="/kankoji2"]')).toBeVisible();
     await page.goBack();
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
