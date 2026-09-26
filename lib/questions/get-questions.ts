@@ -26,6 +26,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   denko1: async () => isExamPublished("denko1") ? (await import("@/data/questions/denko1")).DENKO1_QUESTIONS : [],
   civil2: async () => isExamPublished("civil2") ? (await import("@/data/questions/civil2")).CIVIL2_QUESTIONS : [],
   kankoji2: async () => isExamPublished("kankoji2") ? (await import("@/data/questions/kankoji2")).KANKOJI2_QUESTIONS : [],
+  zoen2: async () => isExamPublished("zoen2") ? (await import("@/data/questions/zoen2")).ZOEN2_QUESTIONS : [],
+  tsushin2: async () => isExamPublished("tsushin2") ? (await import("@/data/questions/tsushin2")).TSUSHIN2_QUESTIONS : [],
   kaigo: async () => isExamPublished("kaigo") ? (await import("@/data/questions/kaigo")).KAIGO_QUESTIONS : [],
   civil1: async () => isExamPublished("civil1") ? (await import("@/data/questions/civil1")).CIVIL1_QUESTIONS : [],
   shakai: async () => isExamPublished("shakai") ? (await import("@/data/questions/shakai")).SHAKAI_QUESTIONS : [],

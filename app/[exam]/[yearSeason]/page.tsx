@@ -314,6 +314,16 @@ export default async function ExamYearSeasonPage({
               公式問題・正答・図表を照合した全52問を収録。No.49〜52は本試験どおり「適当でないもの」を二つとも選ぶと正解です。
             </p>
           )}
+          {code === "zoen2" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式の全40問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では40問が全て必須です。
+            </p>
+          )}
+          {code === "tsushin2" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式の全65問から、問題文・正答・解説を確認できた{pool.length}問を掲載しています。未収録の問題は一覧に表示しません。実試験では設問群ごとの条件に従い40問を解答します。
+            </p>
+          )}
           {code === "tohan" && parsed.season === "kansai" && (
             <p className="mt-2 text-sm text-muted-foreground">
               関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の令和7年度試験 全{pool.length}問です。選択肢は原本と同じ番号(1)〜(5)で表示しています。

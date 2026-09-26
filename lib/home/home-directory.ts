@@ -125,6 +125,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
   { code: "kankoji2", name: "2級管工事施工管理", sub: "第一次検定", domain: "construction" },
+  { code: "zoen2", name: "2級造園施工管理", sub: "第一次検定（前期）", domain: "construction" },
+  { code: "tsushin2", name: "2級電気通信工事施工管理", sub: "第一次検定（前期）", domain: "construction" },
   { code: "fp3", name: "FP3級", sub: "FP技能検定3級（学科・実技）", domain: "money" },
   { code: "fp2", name: "FP2級", sub: "FP技能検定2級（学科・実技）", domain: "money" },
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },

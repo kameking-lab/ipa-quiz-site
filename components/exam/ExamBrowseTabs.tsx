@@ -42,6 +42,7 @@ const MOCK_PRESETS = [
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
   const [tab, setTab] = React.useState<string>("year");
+  const partialFirstStage = exam === "zoen2" || exam === "tsushin2";
 
   React.useEffect(() => {
     const apply = () => {
@@ -66,7 +67,7 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
         </TabsTrigger>
         <TabsTrigger value="mock" className="flex-1">
           <Trophy className="mr-1 h-3.5 w-3.5 inline" />
-          模試
+          {partialFirstStage ? "演習" : "模試"}
         </TabsTrigger>
       </TabsList>
 
@@ -129,7 +130,7 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
 
       <TabsContent value="mock">
         <ul className="grid gap-2 sm:grid-cols-2">
-          {MOCK_PRESETS.map((m) => (
+          {(partialFirstStage ? MOCK_PRESETS.slice(1) : MOCK_PRESETS).map((m) => (
             <li key={m.label}>
               <Link
                 href={m.href(exam)}
@@ -137,7 +138,7 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
               >
                 <span>
                   <span className="block font-medium text-foreground">{m.label}</span>
-                  <span className="block text-xs text-muted-foreground">{m.desc}</span>
+                  <span className="block text-xs text-muted-foreground">{partialFirstStage && m.label === "ランダム短時間演習" ? "収録済みの問題をランダムに解く" : m.desc}</span>
                 </span>
                 <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
               </Link>
