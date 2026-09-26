@@ -1,7 +1,7 @@
 import { ArrowUpRight, BookOpenText } from "lucide-react";
 import type { ExamCode } from "@/lib/questions/types";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
-import { getNoteGuide, getNoteGuideSupplement, type NoteGuideKind, type NoteGuideLink } from "@/lib/note-guides";
+import { getNoteGuide, getNoteGuideSupplements, type NoteGuideKind, type NoteGuideLink } from "@/lib/note-guides";
 
 // kind ごとに文言セットを完全に分離する。paid が free の文言(「無料」表記)を
 // 継承すること、またはその逆が起きないようにするための唯一の分岐点。
@@ -67,7 +67,7 @@ export function ExamNoteGuide({ exam }: { exam: ExamCode }) {
   // 主リンク(無料記事)を隠さず、有料教材があれば同じカード内に「補助リンク」として
   // 追記する。無料側が先・有料側が後で、どちらも kind ごとの文言(KIND_COPY)しか使わない
   // ため「無料」「有料」の取り違えは起きない。
-  const supplement = getNoteGuideSupplement(exam);
+  const supplements = getNoteGuideSupplements(exam);
 
   return (
     <aside
@@ -80,14 +80,14 @@ export function ExamNoteGuide({ exam }: { exam: ExamCode }) {
         </span>
         <GuideBody guide={guide} />
       </div>
-      {supplement ? (
-        <div className="mt-4 flex items-start gap-3 border-t border-sky-200/70 pt-4 dark:border-sky-900/50">
+      {supplements.map((supplement) => (
+        <div key={supplement.href} className="mt-4 flex items-start gap-3 border-t border-sky-200/70 pt-4 dark:border-sky-900/50">
           <span className="mt-0.5 rounded-lg bg-amber-100 p-2 text-amber-700 dark:bg-amber-950 dark:text-amber-300">
             <BookOpenText className="h-4 w-4" aria-hidden="true" />
           </span>
           <GuideBody guide={supplement} />
         </div>
-      ) : null}
+      ))}
     </aside>
   );
 }
