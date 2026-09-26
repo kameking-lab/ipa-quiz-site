@@ -6,3 +6,4 @@ Output ONLY a single-line JSON object, no code fence, exactly of this shape:
 {"overallVerdict":"PASS" or "FIX","reviews":[{"number":1,"verdict":"PASS" or "FIX","issues":["..."]},...for 1..5]}
 Use PASS with an empty issues array only when there is nothing that must be changed. Put every required change in issues.
 Note: the site renders the four choices with labels ア・イ・ウ・エ in order (converted from the original ⑴〜⑷); this label mapping is stated in each question's attribution.
+Note: on the site, each question's figure image is rendered directly below the question text and above the four choices.

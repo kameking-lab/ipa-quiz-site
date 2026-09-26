@@ -5,3 +5,4 @@ Task, per question: (a) read the official answer for No.1–5 from the 土木 ta
 Output ONLY a single-line JSON object, no code fence:
 {"overallVerdict":"PASS" or "FIX","questions":[{"number":1,"officialAnswerFromKey":n,"independentAnswer":n,"derivation":"...","choiceRationale":["correct|wrong: reason", x4],"explanationOk":true/false,"transcriptionOk":true/false,"verdict":"PASS" or "FIX","issues":[]},...1..5]}
 Note: the site renders the four choices with labels ア・イ・ウ・エ in order (converted from the original ⑴〜⑷); this label mapping is stated in each question's attribution.
+Note: on the site, each question's figure image is rendered directly below the question text and above the four choices.

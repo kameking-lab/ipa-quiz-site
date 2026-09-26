@@ -24,8 +24,8 @@
     2
   ],
   "figuresRequired": 5,
-  "canonicalQuestionsSha256": "0d48a615b330f60003659f62686a70f06d93acdd39fa94e0bc02fcc51ab8db81",
-  "candidateFileSha256": "81d5a0e49d68ef9dd0945cc521becc4c66e9811a2eb6e4089e57986179e1013c",
+  "canonicalQuestionsSha256": "6ce1a38ba2429c94652dded04652c758de9cd06c6682514aa02b0786819fac8f",
+  "candidateFileSha256": "8f6d2b682d2d2dd41672877a1ce815c752bef804d08d52629352c114fdb1d426",
   "preliminaryVisualRead": {
     "tool": "Antigravity CLI agy.exe (C:/Users/kanet/AppData/Local/agy/bin) --output-format json --mode plan",
     "requestedModel": "gemini-3.1-pro-high",
@@ -106,9 +106,9 @@
         }
       },
       {
-        "round": "final",
+        "round": 4,
         "candidateFileSha256": "81d5a0e49d68ef9dd0945cc521becc4c66e9811a2eb6e4089e57986179e1013c",
-        "rawFile": "q01-05-opus-review-final-raw.json",
+        "rawFile": "q01-05-opus-review-round4-raw.json",
         "rawSha256": "2a1baeb538206e78d7fef3de14923b15ab7047936ced60a30f2b52f85fdd4b5f",
         "resolvedModel": "claude-opus-5-5",
         "canonicalModel": "claude-opus-5-5",
@@ -116,12 +116,24 @@
         "listCostUsd": 0.36931099999999994,
         "overallVerdict": "PASS",
         "issues": {}
+      },
+      {
+        "round": "final",
+        "candidateFileSha256": "8f6d2b682d2d2dd41672877a1ce815c752bef804d08d52629352c114fdb1d426",
+        "rawFile": "q01-05-opus-review-final-raw.json",
+        "rawSha256": "937c79d3492ecc4c055ba2381ae02ace8c27066fd7d181036d51d0d39aaa146e",
+        "resolvedModel": "claude-opus-5-5",
+        "canonicalModel": "claude-opus-5-5",
+        "provider": "firstParty",
+        "listCostUsd": 0.3882428,
+        "overallVerdict": "PASS",
+        "issues": {}
       }
     ],
     "finalVerdict": "PASS 5/5",
     "resolvedModel": "claude-opus-5-5",
     "provider": "firstParty",
-    "totalListCostUsd": 1.51304
+    "totalListCostUsd": 1.9012828
   },
   "independentVerification": {
     "rounds": [
@@ -166,14 +178,26 @@
         "issues": {}
       },
       {
-        "round": "final",
+        "round": 4,
         "candidateFileSha256": "81d5a0e49d68ef9dd0945cc521becc4c66e9811a2eb6e4089e57986179e1013c",
-        "rawFile": "q01-05-fable-verify-final-raw.json",
+        "rawFile": "q01-05-fable-verify-round4-raw.json",
         "rawSha256": "c143f84cc9bc9390e4f6000febd01278b5544471472abff0dbdfdf2cb4656411",
         "resolvedModel": "claude-fable-5-1",
         "canonicalModel": "claude-fable-5-1",
         "provider": "firstParty",
         "listCostUsd": 0.8313692500000001,
+        "overallVerdict": "PASS",
+        "issues": {}
+      },
+      {
+        "round": "final",
+        "candidateFileSha256": "8f6d2b682d2d2dd41672877a1ce815c752bef804d08d52629352c114fdb1d426",
+        "rawFile": "q01-05-fable-verify-final-raw.json",
+        "rawSha256": "1842467f56ee9c5db014d65d5522b6634df3d8c2f57bb9f0a12f8847435e7b06",
+        "resolvedModel": "claude-fable-5-1",
+        "canonicalModel": "claude-fable-5-1",
+        "provider": "firstParty",
+        "listCostUsd": 1.089114,
         "overallVerdict": "PASS",
         "issues": {}
       }
@@ -182,7 +206,7 @@
     "resolvedModel": "claude-fable-5-1",
     "provider": "firstParty",
     "scope": "Read 土木 answer key independently, solved each question before reading candidate reasons, judged all 20 choice reasons",
-    "totalListCostUsd": 4.2454272500000005
+    "totalListCostUsd": 5.33454125
   },
   "officialReferences": {
     "2": {
@@ -268,5 +292,16 @@
       "provenance": "Pre-existing untracked crop; exact rect recovered by pixel match and byte-identical PyMuPDF 1.27.2 clip re-render confirmed",
       "visualCheck": "Pipe expanding from 20 cm (v1) to 50 cm (v2) diameter; no choices"
     }
-  ]
+  ],
+  "finalPrReview": {
+    "reviewedHead": "b6773c29cea17111798c9ddc1504bb4e97b9408b",
+    "rawFile": "q01-05-fable-pr-review-raw.json",
+    "rawSha256": "62bf7ae19438a9f21cd212ff9ae19f835c575cdcbedb3723a0693ca3ece8ef90",
+    "resolvedModel": "claude-fable-5-1",
+    "provider": "firstParty",
+    "listCostUsd": 2.4983707499999994,
+    "verdict": "MERGE",
+    "blockingIssues": [],
+    "followUp": "Acted on non-blocking note: No.3 '上の画像' changed to '問題文の下に掲載した原図' because the figure renders below the question text; Opus round 5 (final) and Fable round 5 (final) re-reviewed the exact new bytes: PASS 5/5 each. Commit message of b6773c29 says 'three fix rounds'; precisely, Opus r1 PASS then r2/r3 FIX, and Fable r1 FIX."
+  }
 }
