@@ -434,6 +434,30 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
   },
+  civil1: {
+    code: "civil1",
+    nameFull: "1級土木施工管理技術検定",
+    urlSlug: "civil1",
+    level: "advanced",
+    sessions: [
+      {
+        session: "mondai-a",
+        urlSlug: "mondai-a",
+        expectedQuestions: 66,
+        label: "第一次検定 問題A",
+        categories: ["土木一般（必須）", "土木一般（選択）", "専門土木（選択）", "法規（選択）"],
+      },
+      {
+        session: "mondai-b",
+        urlSlug: "mondai-b",
+        expectedQuestions: 35,
+        label: "第一次検定 問題B",
+        categories: ["共通工学・施工管理法（必須）", "施工管理法・応用能力（必須）"],
+      },
+    ],
+    seasons: ["july"],
+    yearRange: { start: 2026, end: 2026 },
+  },
   shakai: {
     code: "shakai",
     nameFull: "社会福祉士国家試験",
@@ -513,7 +537,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is IpaExamCode => !(["fp2", "fp3", "denken3", "denken2", "denko2", "denko1", "takken", "civil2", "kankoji2", "kaigo", "shakai", "seishin", "tohan"] as string[]).includes(code),
+  (code): code is IpaExamCode => !(["fp2", "fp3", "denken3", "denken2", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "kaigo", "shakai", "seishin", "tohan"] as string[]).includes(code),
 );
 
 /** Every exam playable in the application, including external qualifications. */

@@ -18,6 +18,7 @@ import { DENKO2_QUESTIONS } from "@/data/questions/denko2";
 import { DENKO1_QUESTIONS } from "@/data/questions/denko1";
 import { CIVIL2_QUESTIONS } from "@/data/questions/civil2";
 import { KANKOJI2_QUESTIONS } from "@/data/questions/kankoji2";
+import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
@@ -26,7 +27,7 @@ import { z } from "zod";
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...KANKOJI2_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
@@ -57,10 +58,10 @@ function parseCliOptions(): CliOptions {
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denken2", "denko2", "denko1", "takken", "civil2", "kankoji2", "kaigo", "shakai", "seishin", "tohan"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "kyotsu", "senmon"]),
+  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp2", "fp3", "denken3", "denken2", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "kaigo", "shakai", "seishin", "tohan"]),
+  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "kyotsu", "senmon"]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "primary", "kansai"]),
+  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai"]),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
   type: z.enum(["multiple-choice", "descriptive", "essay"]),

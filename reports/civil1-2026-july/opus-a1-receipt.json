@@ -1,0 +1,87 @@
+{
+  "group": "a1",
+  "startedAt": "2026-09-26T10:13:32.560Z",
+  "finishedAt": "2026-09-26T10:14:44.657Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 6452,
+      "cacheReadInputTokens": 138670,
+      "cacheCreationInputTokens": 11008,
+      "webSearchRequests": 0,
+      "costUSD": 0.24484600000000004,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 1668,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "totalCostUsd": 0.24484600000000004,
+  "correctModel": true,
+  "stderr": "",
+  "questionKeys": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9",
+    "A10"
+  ],
+  "statuses": [
+    [
+      "A1",
+      "PASS"
+    ],
+    [
+      "A2",
+      "PASS"
+    ],
+    [
+      "A3",
+      "PASS"
+    ],
+    [
+      "A4",
+      "PASS"
+    ],
+    [
+      "A5",
+      "PASS"
+    ],
+    [
+      "A6",
+      "PASS"
+    ],
+    [
+      "A7",
+      "PASS"
+    ],
+    [
+      "A8",
+      "PASS"
+    ],
+    [
+      "A9",
+      "PASS"
+    ],
+    [
+      "A10",
+      "PASS"
+    ]
+  ],
+  "globalIssues": [
+    "問題A No.4の中空三角形（エ）の断面積は、図の三角形形状（二等辺か直角かなど）によって多少変わるが、いずれでも約6000mm²前後で（イ）の7600mm²より小さく、順序は変わらないことを確認した。",
+    "問題A No.7の正しい使い方の記述は、薄層での締固めと法肩付近を避けることを要点とした。具体的な使用位置の基準文言は、確信を持てる範囲に限って記載した。"
+  ],
+  "parseError": null
+}

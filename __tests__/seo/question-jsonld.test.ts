@@ -113,6 +113,8 @@ describe("sessionLabel", () => {
           denryoku: true,
           kikai: true,
           houki: true,
+      "mondai-a": true,
+      "mondai-b": true,
           kyotsu: true,
           senmon: true,
     };

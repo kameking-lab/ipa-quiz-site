@@ -1,0 +1,94 @@
+{
+  "group": "b1",
+  "startedAt": "2026-09-26T10:23:16.237Z",
+  "finishedAt": "2026-09-26T10:24:48.710Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 9243,
+      "cacheReadInputTokens": 140300,
+      "cacheCreationInputTokens": 10577,
+      "webSearchRequests": 0,
+      "costUSD": 0.29754400000000003,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 4225,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "totalCostUsd": 0.29754400000000003,
+  "correctModel": true,
+  "stderr": "",
+  "questionKeys": [
+    "B1",
+    "B2",
+    "B3",
+    "B4",
+    "B5",
+    "B6",
+    "B7",
+    "B8",
+    "B9",
+    "B10",
+    "B11",
+    "B12"
+  ],
+  "statuses": [
+    [
+      "B1",
+      "PASS"
+    ],
+    [
+      "B2",
+      "PASS"
+    ],
+    [
+      "B3",
+      "PASS"
+    ],
+    [
+      "B4",
+      "PASS"
+    ],
+    [
+      "B5",
+      "PASS"
+    ],
+    [
+      "B6",
+      "PASS"
+    ],
+    [
+      "B7",
+      "HOLD"
+    ],
+    [
+      "B8",
+      "PASS"
+    ],
+    [
+      "B9",
+      "PASS"
+    ],
+    [
+      "B10",
+      "PASS"
+    ],
+    [
+      "B11",
+      "PASS"
+    ],
+    [
+      "B12",
+      "PASS"
+    ]
+  ],
+  "globalIssues": [],
+  "parseError": null
+}

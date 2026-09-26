@@ -12,7 +12,7 @@ import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 
 export const metadata: Metadata = {
   title: "FP・電気・施工管理・福祉・登録販売者の公式公開過去問",
-  description: "FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・2級土木施工管理・2級管工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、公式問題・正答と学習用解説で学べます。",
+  description: "FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・1級・2級土木施工管理・2級管工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、公式問題・正答と学習用解説で学べます。",
   alternates: { canonical: "/qualifications" },
 };
 
@@ -37,7 +37,7 @@ export default function QualificationsPage() {
         <Badge variant="soft" className="mb-3">公式公開資料から収録</Badge>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
         <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・2級土木施工管理・2級管工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、年度と科目から選べます。
+          FP2級・FP3級・電験三種・電験二種・第一種電気工事士・第二種電気工事士・1級・2級土木施工管理・2級管工事施工管理・介護福祉士・社会福祉士・精神保健福祉士・登録販売者（関西広域連合）の公式公開過去問を、年度と科目から選べます。
         </p>
       </header>
 

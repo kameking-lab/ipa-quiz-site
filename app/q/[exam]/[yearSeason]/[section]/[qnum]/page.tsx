@@ -124,7 +124,7 @@ export async function generateMetadata({
 }
 
 function findFallbackQuestion(p: QuestionRouteParams): Question | undefined {
-  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|primary|kansai)$/.exec(p.yearSeason);
+  const yearSeasonMatch = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|annual|july|primary|kansai)$/.exec(p.yearSeason);
   if (!yearSeasonMatch) return undefined;
   const year = Number(yearSeasonMatch[1]);
   const segment = parseQuestionNumberSegment(p.exam, p.qnum);
@@ -222,7 +222,7 @@ export default async function QuestionPage({
     getCrossExamRelatedQuestions(q, ALL_QUESTIONS, 5);
 
   const relatedBlogPosts = getRelatedBlogPosts(q.exam, 4, [q.category, ...q.topicTags])
-    .filter((post) => !["civil2", "kankoji2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
+    .filter((post) => !["civil2", "civil1", "kankoji2", "kaigo", "shakai", "seishin"].includes(q.exam) || post.exam === q.exam);
 
   // Structured-data identities follow rel=canonical. The visible page, links,
   // breadcrumbs and quiz return target continue to use q, preserving the exam
