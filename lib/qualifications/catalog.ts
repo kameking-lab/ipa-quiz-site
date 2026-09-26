@@ -9,7 +9,8 @@ export type QualificationDomain =
   | "pharmacy"
   | "legal"
   | "safety"
-  | "accounting";
+  | "accounting"
+  | "welfare";
 
 export type PublicationStatus =
   | "live"
@@ -122,6 +123,20 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8年度前期と令和7年度後期の第一次検定を各全52問、各選択肢の解説付きで収録。掲載条件は2級土木施工管理と同じ公式ページ・同じ扱い。",
     attributionTemplate: "出典：全国建設研修センター ○年度2級管工事施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加", "公共建築工事標準仕様書の改定に伴う解説更新"],
+  },
+  {
+    slug: "kaigo",
+    examCode: "kaigo",
+    shortName: "介護福祉士",
+    fullName: "介護福祉士国家試験",
+    domain: "welfare",
+    administrator: "社会福祉振興・試験センター",
+    officialQuestionsUrl: "https://www.sssc.or.jp/kaigo/past_exam/index.html",
+    officialReuseTermsUrl: "https://www.sssc.or.jp/pastissues/index.html",
+    status: "live",
+    reuseSummary: "第38回（令和7年度）の全125問（総合問題・図の問題を含む）と全選択肢の解説を収録。",
+    attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回介護福祉士国家試験 問題○",
+    remainingWork: ["第37回・第36回の追加", "法改正で成立しなくなった問題の失効管理"],
   },
   {
     slug: "sekou-kenchiku1",
