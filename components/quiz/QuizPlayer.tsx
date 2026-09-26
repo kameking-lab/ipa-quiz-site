@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
@@ -82,6 +82,8 @@ export function QuizPlayer({
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
+  // 「二つとも答えなさい」形式で選択中の肢。規定数そろった時点で採点する。
+  const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [revealed, setRevealed] = React.useState(false);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -128,6 +130,7 @@ export function QuizPlayer({
     if (!question) return;
      
     setSelected(undefined);
+    setPicked([]);
     setRevealed(false);
     setCopilotQuery(null);
     setStarred(history.isStarred(question.id));
@@ -158,12 +161,10 @@ export function QuizPlayer({
     });
   }, [index, total, onNext]);
 
-  const onSelect = React.useCallback(
-    (key: ChoiceKey) => {
-      if (!question || revealed) return;
-      setSelected(key);
+  const commitAnswer = React.useCallback(
+    (selection: string, correct: boolean) => {
+      if (!question) return;
       setRevealed(true);
-      const correct = isAcceptedAnswer(question.answer, key);
       posthogCapture("question_answered", {
         questionId: question.id,
         exam: question.exam,
@@ -171,7 +172,7 @@ export function QuizPlayer({
       });
       const now = Date.now();
       if (readSettings().recordHistory) {
-        history.record({ id: question.id, selected: key, correct, at: now });
+        history.record({ id: question.id, selected: selection, correct, at: now });
       }
       writeLastQuestion({
         exam: question.exam,
@@ -229,7 +230,23 @@ export function QuizPlayer({
         }
       }
     },
-    [question, revealed, history, combo, pendingAchievement],
+    [question, history, combo, pendingAchievement],
+  );
+
+  const onSelect = React.useCallback(
+    (key: ChoiceKey) => {
+      if (!question || revealed) return;
+      const required = requiredSelectionCount(question);
+      if (required > 1) {
+        const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
+        setPicked(next);
+        if (next.length === required) commitAnswer(formatSelection(next), isCompleteSelectionCorrect(question.answer, next));
+        return;
+      }
+      setSelected(key);
+      commitAnswer(key, isAcceptedAnswer(question.answer, key));
+    },
+    [question, revealed, picked, commitAnswer],
   );
 
   const toggleStar = React.useCallback(() => {
@@ -353,7 +370,12 @@ export function QuizPlayer({
   const answerKey = usesNumericChoiceLabels(question.exam)
     ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(question.answer);
-  const isCorrect = isAcceptedAnswer(question.answer, selected);
+  const requiredSelections = requiredSelectionCount(question);
+  const multiSelect = requiredSelections > 1;
+  const isCorrect = multiSelect
+    ? isCompleteSelectionCorrect(question.answer, picked)
+    : isAcceptedAnswer(question.answer, selected);
+  const selectionLabel = multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
@@ -425,9 +447,14 @@ export function QuizPlayer({
               progress={{ current: index, total }}
             />
 
+            {multiSelect && !revealed && (
+              <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
+                正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
+              </p>
+            )}
             <div
-              role="radiogroup"
-              aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
+              role={multiSelect ? "group" : "radiogroup"}
+              aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
               className="space-y-2"
             >
               {question.choices &&
@@ -439,11 +466,12 @@ export function QuizPlayer({
                     text={question.choices![key]!}
                     imageUrl={question.choiceImageUrls?.[key]}
                     revealed={revealed}
-                    selected={selected === key}
+                    selected={multiSelect ? picked.includes(key) : selected === key}
                     correct={isAcceptedAnswer(question.answer, key)}
                     disabled={revealed}
                     onClick={() => onSelect(key)}
                     shortcutIndex={(idx + 1) % 10}
+                    multiSelect={multiSelect}
                     {...choiceRoving.getRadioProps(idx)}
                   />
                 ))}
@@ -461,7 +489,7 @@ export function QuizPlayer({
               <>
                 <ExplanationCard
                   question={question}
-                  selected={selected}
+                  selected={selectionLabel}
                   isCorrect={isCorrect}
                   starred={starred}
                   onToggleStar={toggleStar}
@@ -499,7 +527,7 @@ export function QuizPlayer({
 
       <CopilotDesktopFloating
         question={question}
-        selectedChoice={selected}
+        selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}
@@ -515,7 +543,7 @@ export function QuizPlayer({
 
       <CopilotMobileSheet
         question={question}
-        selectedChoice={selected}
+        selectedChoice={selectionLabel}
         isCorrect={revealed ? isCorrect : undefined}
         onRateLimitHit={() => setUpsellOpen(true)}
         defaultOpen={copilotQuery !== null}

@@ -39,6 +39,16 @@ const CIVIL2_EXAM_SECTIONS = [
   { id: "civil2-required-management", label: "施工管理・必須 48〜66", first: 48, last: 66 },
 ] as const;
 
+/** 2級管工事 第一次検定の公式区分（前期・後期とも同じ番号構成）。 */
+const KANKOJI2_EXAM_SECTIONS = [
+  { id: "kankoji2-required-basic", label: "一般基礎・必須 1〜6", first: 1, last: 6 },
+  { id: "kankoji2-select-equipment", label: "空調・衛生設備・9問選択 7〜23", first: 7, last: 23 },
+  { id: "kankoji2-required-materials", label: "設備機器・材料・必須 24〜28", first: 24, last: 28 },
+  { id: "kankoji2-select-management", label: "施工管理法・8問選択 29〜38", first: 29, last: 38 },
+  { id: "kankoji2-select-law", label: "法規・8問選択 39〜48", first: 39, last: 48 },
+  { id: "kankoji2-required-ability", label: "施工管理法（基礎的な能力）・必須・各2肢選択 49〜52", first: 49, last: 52 },
+] as const;
+
 /** 関西広域連合の試験は前半（問1〜60）・後半（問61〜120）で、手引きの5項目ごとに問番号がまとまっている。 */
 const TOHAN_KANSAI_SECTIONS = [
   { id: "tohan-chapter1", label: "前半 医薬品に共通する特性と基本的な知識 1〜20", first: 1, last: 20 },
@@ -60,7 +70,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|kansai)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|kansai)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -150,6 +160,8 @@ export default async function ExamYearSeasonPage({
   );
   const civil2Sections: ReadonlyArray<{ id: string; label: string; first: number; last: number }> | null = code === "civil2" && parsed.year === 2026 && parsed.season === "early"
     ? CIVIL2_EXAM_SECTIONS
+    : code === "kankoji2"
+      ? KANKOJI2_EXAM_SECTIONS
     : code === "tohan" && parsed.season === "kansai"
       ? TOHAN_KANSAI_SECTIONS
       : null;
@@ -244,6 +256,11 @@ export default async function ExamYearSeasonPage({
           {code === "civil2" && parsed.year === 2025 && parsed.season === "october" && (
             <p className="mt-2 text-sm text-muted-foreground">
               令和7年度10月実施分は、公式問題・正答・図表を照合した全66問を収録しています。
+            </p>
+          )}
+          {code === "kankoji2" && (
+            <p className="mt-2 text-sm text-muted-foreground">
+              公式問題・正答・図表を照合した全52問を収録。No.49〜52は本試験どおり「適当でないもの」を二つとも選ぶと正解です。
             </p>
           )}
           {code === "tohan" && parsed.season === "kansai" && (

@@ -3,7 +3,7 @@
 import { QuestionBody } from "./QuestionBody";
 
 import * as React from "react";
-import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys } from "@/lib/questions/answers";
+import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection } from "@/lib/questions/answers";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck, Eye } from "lucide-react";
 
@@ -33,6 +33,8 @@ interface Props {
   part?: "a" | "b";
   /** /q path of the next question in the same session, if any. */
   nextHref?: string;
+  /** 1問で選ぶ肢の数。2以上なら answerKey の全肢をそろえて選ぶと正解。 */
+  requiredSelections?: number;
 }
 
 /**
@@ -67,8 +69,12 @@ export function QuestionAnswerCard({
   qNumber,
   part,
   nextHref,
+  requiredSelections = 1,
 }: Props) {
+  const multiSelect = requiredSelections > 1;
   const [selected, setSelected] = React.useState<ChoiceKey | undefined>(undefined);
+  // 「二つとも答えなさい」形式で選択中の肢（採点前は何度でも選び直せる）。
+  const [picked, setPicked] = React.useState<ChoiceKey[]>([]);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
 
@@ -80,13 +86,12 @@ export function QuestionAnswerCard({
   const roving = useQuizChoiceRoving(keys.length, selectedIndex, revealed, questionId);
 
   const recordOutcome = React.useCallback(
-    (key: ChoiceKey) => {
-      const correct = isAcceptedAnswer(answerKey, key);
+    (selection: string, correct: boolean) => {
       const now = Date.now();
       // localStorage may be disabled/full; the answer UX must still work.
       try {
         if (readSettings().recordHistory) {
-          createHistoryStore().record({ id: questionId, selected: key, correct, at: now });
+          createHistoryStore().record({ id: questionId, selected: selection, correct, at: now });
         }
         writeLastQuestion({ exam, year, season, session, qNumber, part, answeredAt: now });
         recordStudyOnDate();
@@ -95,23 +100,33 @@ export function QuestionAnswerCard({
         /* ignore storage errors */
       }
     },
-    [answerKey, questionId, exam, year, season, session, qNumber, part],
+    [questionId, exam, year, season, session, qNumber, part],
   );
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (revealed) return;
+      if (multiSelect) {
+        const next = picked.includes(key) ? picked.filter((k) => k !== key) : [...picked, key];
+        setPicked(next);
+        if (next.length === requiredSelections) {
+          setRevealed(true);
+          recordOutcome(formatSelection(next), isCompleteSelectionCorrect(answerKey, next));
+        }
+        return;
+      }
       setSelected(key);
       setRevealed(true);
-      recordOutcome(key);
+      recordOutcome(key, isAcceptedAnswer(answerKey, key));
     },
-    [revealed, recordOutcome],
+    [revealed, recordOutcome, multiSelect, picked, requiredSelections, answerKey],
   );
 
   // Pure-reader path: reveal the answer without committing/recording.
   const revealOnly = React.useCallback(() => {
     if (revealed) return;
     setSelected(undefined);
+    setPicked([]);
     setRevealed(true);
   }, [revealed]);
 
@@ -140,17 +155,23 @@ export function QuestionAnswerCard({
     };
   }, [revealed, keys, onSelect]);
 
-  const isCorrect = isAcceptedAnswer(answerKey, selected);
+  const answered = multiSelect ? picked.length === requiredSelections : selected !== undefined;
+  const isCorrect = multiSelect ? isCompleteSelectionCorrect(answerKey, picked) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = usesNumericChoiceLabels(exam)
     ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key)).join("・")
     : formatAcceptedAnswers(answerKey);
 
   return (
     <div className="space-y-4">
+      {multiSelect && !revealed && (
+        <p className="rounded-xl border border-amber-300/60 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 dark:border-amber-700/50 dark:bg-amber-950/40 dark:text-amber-100" data-testid="multi-select-hint">
+          正解は{requiredSelections}つあります。{requiredSelections}つ選ぶと採点します（選択中 {picked.length}/{requiredSelections}）
+        </p>
+      )}
       <div
-        role="radiogroup"
+        role={multiSelect ? "group" : "radiogroup"}
         data-shortcuts-ready={shortcutsReady}
-        aria-label="選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"
+        aria-label={multiSelect ? `選択肢（${requiredSelections}つ選ぶ。数字キー1〜9・0・Enter/スペースで選択・解除）` : "選択肢（矢印キーで移動、数字キー1〜9・0・Enter/スペースで選択）"}
         className="flex flex-col gap-2.5"
       >
         {keys.map((key, idx) => (
@@ -161,11 +182,12 @@ export function QuestionAnswerCard({
             text={choices[key]!}
             imageUrl={choiceImageUrls?.[key]}
             revealed={revealed}
-            selected={selected === key}
+            selected={multiSelect ? picked.includes(key) : selected === key}
             correct={isAcceptedAnswer(answerKey, key)}
             disabled={revealed}
             onClick={() => onSelect(key)}
             shortcutIndex={(idx + 1) % 10}
+            multiSelect={multiSelect}
             {...roving.getRadioProps(idx)}
           />
         ))}
@@ -174,7 +196,7 @@ export function QuestionAnswerCard({
       {/* Screen-reader announcement of the outcome. */}
       <div role="status" aria-live="polite" aria-atomic="true" className="sr-only">
         {revealed
-          ? selected === undefined
+          ? !answered
             ? `正解は ${answerLabel} です。下に解説があります。`
             : isCorrect
               ? "正解です。下に解説があります。"
@@ -194,13 +216,13 @@ export function QuestionAnswerCard({
       ) : (
         <div
           className={
-            selected === undefined || isCorrect
+            !answered || isCorrect
               ? "rounded-2xl border border-emerald-300/60 bg-emerald-50 p-4 dark:border-emerald-700/50 dark:bg-emerald-950/40"
               : "rounded-2xl border border-red-300/60 bg-red-50 p-4 dark:border-red-700/50 dark:bg-red-950/40"
           }
         >
           <div className="text-sm font-bold">
-            {selected === undefined ? (
+            {!answered ? (
               <span className="text-emerald-800 dark:text-emerald-200">正解は {answerLabel}</span>
             ) : isCorrect ? (
               <>

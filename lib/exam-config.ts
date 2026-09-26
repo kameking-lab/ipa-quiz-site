@@ -366,6 +366,21 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["early", "october"],
     yearRange: { start: 2025, end: 2026 },
   },
+  kankoji2: {
+    code: "kankoji2",
+    nameFull: "2級管工事施工管理技術検定",
+    urlSlug: "kankoji2",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 52,
+      label: "第一次検定",
+      categories: ["一般基礎（必須）", "空調・衛生設備（選択）", "設備機器・材料（必須）", "施工管理法（選択）", "法規（選択）", "施工管理法・基礎的な能力（必須）"],
+    }],
+    seasons: ["early", "late"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   tohan: {
     code: "tohan",
     nameFull: "登録販売者試験（関西広域連合）",
@@ -391,7 +406,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "tohan"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "tohan",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "tohan"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "tohan",
 );
 
 /** Every exam playable in the application, including external qualifications. */
