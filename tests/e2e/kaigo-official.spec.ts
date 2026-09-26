@@ -5,7 +5,7 @@ test.describe("介護福祉士 第38回", () => {
     await page.goto("/kaigo");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("介護福祉士");
     await expect(page.getByText("収録 125 問")).toBeVisible();
-    await expect(page.getByText("同センターとは関係ありません").first()).toBeVisible();
+    await expect(page.getByText(/同センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
     await page.goto("/kaigo/2025-annual");
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
     await expect(page.getByText(/総合問題 問題114〜125/).first()).toBeVisible();
@@ -22,7 +22,7 @@ test.describe("介護福祉士 第38回", () => {
     await choices.nth(4).click();
     await expect(page.getByText("正解！").first()).toBeVisible();
     await expect(page.getByText(/正答は 5/).first()).toBeVisible();
-    await expect(page.getByText(/社会福祉振興・試験センターとは関係ありません/).first()).toBeVisible();
+    await expect(page.getByText(/社会福祉振興・試験センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
   });
 
   test("figure-only choices of question 49 render the cropped official figures", async ({ page }) => {
