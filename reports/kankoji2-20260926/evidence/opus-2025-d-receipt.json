@@ -1,0 +1,80 @@
+{
+  "startedAt": "2026-09-26T09:58:13.001Z",
+  "finishedAt": "2026-09-26T09:59:18.128Z",
+  "requestedModel": "claude-opus-5-5",
+  "provider": "firstParty",
+  "exitCode": 0,
+  "isError": false,
+  "modelUsage": {
+    "claude-opus-5-5": {
+      "inputTokens": 2,
+      "outputTokens": 5839,
+      "cacheReadInputTokens": 129989,
+      "cacheCreationInputTokens": 7869,
+      "webSearchRequests": 0,
+      "costUSD": 0.20573779999999997,
+      "contextWindow": 1000000,
+      "maxOutputTokens": 128000,
+      "thinkingTokens": 2284,
+      "canonicalModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "costBasis": "list"
+    }
+  },
+  "totalCostUsd": 0.20573779999999997,
+  "correctModel": true,
+  "stderr": "",
+  "questionNumbers": [
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36
+  ],
+  "statuses": [
+    [
+      28,
+      "PASS"
+    ],
+    [
+      29,
+      "PASS"
+    ],
+    [
+      30,
+      "PASS"
+    ],
+    [
+      31,
+      "PASS"
+    ],
+    [
+      32,
+      "PASS"
+    ],
+    [
+      33,
+      "PASS"
+    ],
+    [
+      34,
+      "PASS"
+    ],
+    [
+      35,
+      "PASS"
+    ],
+    [
+      36,
+      "HOLD"
+    ]
+  ],
+  "globalIssues": [
+    "このセッションはプランモードの指定下で実行されたが、ユーザー指示（ツール・ファイル書込み不使用、JSONのみ出力）に従い、回答本文としてJSONを出力した。",
+    "claude.ai の Microsoft 365・Slack・Vercel コネクタは未認証のため利用できない（本タスクには影響なし）。"
+  ]
+}
