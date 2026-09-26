@@ -154,6 +154,16 @@ export default function AboutPage() {
         </p>
         <p>
           本サイトはフッターおよび各問の解説内に「出典: IPA 情報処理技術者試験」を明示しています。
+          試験制度については
+          <a
+            className="underline"
+            href="https://www.ipa.go.jp/shiken/faq.html"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            IPA 公式サイトのよくある質問
+          </a>
+          もご確認ください。
         </p>
         <p>
           解説本文・AI による応答・本サイト独自の UI・タグ付けデータなどは、IPA の著作権とは独立した
