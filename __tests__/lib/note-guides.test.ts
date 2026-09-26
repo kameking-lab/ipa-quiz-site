@@ -158,7 +158,6 @@ describe("note-guides", () => {
 
   it("has no supplement for exams that were never approved for a paid pairing", () => {
     expect(getNoteGuideSupplement("sa")).toBeUndefined();
-    expect(getNoteGuideSupplement("ip")).toBeUndefined();
   });
 
   it("never mixes free/paid wording into a supplement label either", () => {

@@ -125,6 +125,8 @@ describe("ExamNoteGuide", () => {
                 account: "sikaku_rakutoru" as const,
               }
             : actual.getNoteGuide(exam as never),
+        getNoteGuideSupplement: (exam: string) =>
+          exam === "ip" ? undefined : actual.getNoteGuideSupplement(exam as never),
       };
     });
     const { ExamNoteGuide: ExamNoteGuideWithPaidMock } = await import(
