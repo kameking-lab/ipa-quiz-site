@@ -307,6 +307,7 @@ export default async function ExamTopPage({
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
+          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第38回（令和7年度）介護福祉士国家試験の全125問（総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
           {code === "kankoji2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度後期の第一次検定を各全52問収録。実試験ではNo.1〜6・No.24〜28・No.49〜52が必須、No.7〜23から9問、No.29〜38から8問、No.39〜48から8問を選びます。No.49〜52は正解が二つあり、両方を選ぶと正解です。演習では全問を自由に解けます。</p>}
           {code === "civil1" && <p className="mt-3 text-sm text-muted-foreground">令和8年度（7月5日実施）の第一次検定を収録。試験問題AはNo.1〜5が必須、No.6〜20から12問、No.21〜54から10問、No.55〜66から8問を選び、試験問題BはNo.1〜35の全問が必須です。演習では全問を自由に解けます。問題BのNo.7は解説の確認中のため未収録です。</p>}

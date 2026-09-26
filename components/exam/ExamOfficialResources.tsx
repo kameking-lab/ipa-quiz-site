@@ -53,6 +53,17 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608d_seitou.pdf",
         description: "同じ試験回の正答肢PDF。",
       },
+    ] : exam === "kaigo" ? [
+      {
+        label: "社会福祉振興・試験センター 過去の試験問題",
+        href: "https://www.sssc.or.jp/kaigo/past_exam/index.html",
+        description: "第38回の科目別問題PDF・音声読み上げ用問題の掲載ページ。",
+      },
+      {
+        label: "第38回 合格基準・正答一覧",
+        href: "https://www.sssc.or.jp/kaigo/past_exam/pdf/no38/k_kijun_seitou.pdf",
+        description: "全125問の公式正答。本サイトの正答はこのPDFと全問照合済み。",
+      },
     ] : [
       {
         label: `${qualification.administrator} 公式問題・正答`,

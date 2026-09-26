@@ -381,6 +381,25 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["early", "late"],
     yearRange: { start: 2025, end: 2026 },
   },
+  kaigo: {
+    code: "kaigo",
+    nameFull: "介護福祉士国家試験",
+    urlSlug: "kaigo",
+    level: "basic",
+    sessions: [{
+      session: "gakka",
+      urlSlug: "gakka",
+      expectedQuestions: 125,
+      label: "筆記試験",
+      categories: [
+        "人間の尊厳と自立", "介護の基本", "社会の理解", "人間関係とコミュニケーション", "コミュニケーション技術",
+        "生活支援技術", "こころとからだのしくみ", "発達と老化の理解", "認知症の理解", "障害の理解",
+        "医療的ケア", "介護過程", "総合問題",
+      ],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+  },
   civil1: {
     code: "civil1",
     nameFull: "1級土木施工管理技術検定",
@@ -409,7 +428,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 
 /** IPA-only list retained for fetch/import tooling and legacy IPA invariants. */
 export const ALL_EXAM_CODES = Object.keys(EXAM_CONFIGS).filter(
-  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "civil1"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "civil1",
+  (code): code is Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "kaigo" | "civil1"> => code !== "fp2" && code !== "fp3" && code !== "denken3" && code !== "denko2" && code !== "takken" && code !== "civil2" && code !== "kankoji2" && code !== "kaigo" && code !== "civil1",
 );
 
 /** Every exam playable in the application, including external qualifications. */
