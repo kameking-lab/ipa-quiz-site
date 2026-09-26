@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowUpRight, BookOpenText, FileCheck, ShieldCheck, UserRound } from "lucide-react";
+import { ArrowUpRight, BookOpenText, ShieldCheck, UserRound } from "lucide-react";
 import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
 import { NOTE_PROFILE_URL } from "@/lib/external-links";
 import { getNoteGuide } from "@/lib/note-guides";
@@ -65,7 +65,6 @@ export function HomeNoteGuides() {
 
 const TRUST_LINKS = [
   { href: "/operator", label: "運営者情報", icon: UserRound },
-  { href: "/license", label: "コンテンツ利用方針", icon: FileCheck },
   { href: "/transparency", label: "運営の透明性レポート", icon: ShieldCheck },
 ] as const;
 
@@ -74,7 +73,7 @@ export function HomeTrust() {
     <section aria-labelledby="home-trust-title" className="mt-10">
       <h2 id="home-trust-title" className="mb-2 text-lg font-bold sm:text-xl">過去問AIについて</h2>
       <p className="text-sm leading-7 text-muted-foreground">
-        問題は、試験実施機関が公式に公開した過去問を出典と利用条件を確認して掲載しています。解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。各問題から公式問題と公式正答を確認できます。
+        問題は、試験実施機関が公式に公開した過去問です。解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。各問題から公式問題と公式正答を確認できます。
       </p>
       <ul className="mt-3 flex flex-wrap gap-2">
         {TRUST_LINKS.map(({ href, label, icon: Icon }) => (

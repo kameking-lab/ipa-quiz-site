@@ -68,7 +68,7 @@ export function HomeExamCountdown({ events }: { events: readonly HomeExamEventVi
                   href={event.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-9 items-center gap-1 px-1 text-[11px] text-muted-foreground underline hover:text-foreground"
+                  className="inline-flex min-h-11 items-center gap-1 px-1 text-[11px] text-muted-foreground underline hover:text-foreground"
                 >
                   公式日程（{event.sourceLabel}）
                   <ExternalLink className="h-3 w-3" aria-hidden="true" />
