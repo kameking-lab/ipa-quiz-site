@@ -17,10 +17,11 @@ export type ExamCode =
   | "denken3"
   | "denko2"
   | "takken"
-  | "civil2";
+  | "civil2"
+  | "kankoji2";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2">;
 
 export type Session =
   | "am"
@@ -37,7 +38,7 @@ export type Session =
   | "kikai"
   | "houki";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 
@@ -67,6 +68,12 @@ export interface Question {
   question: string;
   choices?: Partial<Record<ChoiceKey, string>>;
   answer: ChoiceKey | ChoiceKey[] | string;
+  /**
+   * 1問で選ぶ肢の数。2以上なら answer の全肢をそろえて選んだ場合だけ正解
+   * （2級施工管理の「二つとも答えなさい」形式）。省略時は1で、answer の配列は
+   * 訂正等で個別に正解と認められた肢の一覧として扱う。
+   */
+  requiredSelections?: number;
   explanation: string;
   /** 正解・不正解を各選択肢ごとに説明する。公開パイロットでは必須。 */
   choiceExplanations?: Partial<Record<ChoiceKey, string>>;

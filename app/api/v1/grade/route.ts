@@ -65,7 +65,7 @@ export async function POST(req: Request) {
   }
 
   const correctAnswer = q.answer;
-  const correct = compareAnswer(parsed.answer, correctAnswer);
+  const correct = compareAnswer(parsed.answer, correctAnswer, q.requiredSelections ?? 1);
 
   return NextResponse.json(
     {
@@ -78,7 +78,12 @@ export async function POST(req: Request) {
   );
 }
 
-function compareAnswer(submitted: string | string[], correct: string | string[]): boolean {
+function compareAnswer(submitted: string | string[], correct: string | string[], requiredSelections: number): boolean {
+  // 1肢選択で正答が複数ある問題（実施機関の訂正で複数肢を正解扱い）は、そのどれか1肢で正解。
+  if (requiredSelections <= 1 && Array.isArray(correct) && !Array.isArray(submitted)) {
+    return correct.some((key) => key.trim() === submitted.trim());
+  }
+  // 「二つとも答えなさい」形式は、正答の全肢を過不足なく送った場合だけ正解。
   const sub = Array.isArray(submitted)
     ? [...submitted].map((s) => s.trim()).sort()
     : [submitted.trim()];

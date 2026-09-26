@@ -44,7 +44,10 @@ export default async function StreamQuizPage({
     session,
     topicTag: sp.topic,
     category: sp.category,
-  }).slice(0, STREAM_POOL_SIZE);
+  })
+    // ストリーム演習は1肢選択のUIのみ。「二つとも答えなさい」形式は /quiz と /q で解く。
+    .filter((q) => (q.requiredSelections ?? 1) === 1)
+    .slice(0, STREAM_POOL_SIZE);
 
   return (
     <>
