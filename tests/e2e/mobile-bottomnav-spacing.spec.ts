@@ -7,8 +7,8 @@ const bottomNav = "nav[aria-label='モバイル底タブ']";
 const surfaces = [
   {
     path: "/",
-    // The category cards are the final primary CTA on the chooser page.
-    selector: "main nav[aria-label='IPAか安全を選ぶ'] a",
+    // The trust links (運営者情報など) are the final CTA on the home page.
+    selector: "main section[aria-labelledby='home-trust-title'] a",
   },
   {
     path: "/ipa",
