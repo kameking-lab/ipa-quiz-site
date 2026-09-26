@@ -18,10 +18,11 @@ export type ExamCode =
   | "denko2"
   | "takken"
   | "civil2"
-  | "kankoji2";
+  | "kankoji2"
+  | "civil1";
 
 /** IPA の情報処理技術者試験区分。外部資格を扱う設定から分離する。 */
-export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2">;
+export type IpaExamCode = Exclude<ExamCode, "fp2" | "fp3" | "denken3" | "denko2" | "takken" | "civil2" | "kankoji2" | "civil1">;
 
 export type Session =
   | "am"
@@ -36,9 +37,11 @@ export type Session =
   | "riron"
   | "denryoku"
   | "kikai"
-  | "houki";
+  | "houki"
+  | "mondai-a"
+  | "mondai-b";
 
-export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late";
+export type Season = "spring" | "autumn" | "cbt" | "published" | "first" | "second" | "early" | "may" | "september" | "january" | "october" | "late" | "july";
 
 export type Difficulty = 1 | 2 | 3 | 4 | 5;
 

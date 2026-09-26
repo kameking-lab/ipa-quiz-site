@@ -40,6 +40,16 @@ const CIVIL2_EXAM_SECTIONS = [
 ] as const;
 
 /** 2級管工事 第一次検定の公式区分（前期・後期とも同じ番号構成）。 */
+/** 1級土木 第一次検定の公式区分。問題Aと問題Bは同じ番号を使うため session で区別する。 */
+const CIVIL1_EXAM_SECTIONS = [
+  { id: "civil1-a-required", label: "問題A・必須 1〜5", session: "mondai-a", first: 1, last: 5 },
+  { id: "civil1-a-select-basic", label: "問題A・土木一般・12問選択 6〜20", session: "mondai-a", first: 6, last: 20 },
+  { id: "civil1-a-select-specialized", label: "問題A・専門土木・10問選択 21〜54", session: "mondai-a", first: 21, last: 54 },
+  { id: "civil1-a-select-law", label: "問題A・法規・8問選択 55〜66", session: "mondai-a", first: 55, last: 66 },
+  { id: "civil1-b-required", label: "問題B・必須 1〜20", session: "mondai-b", first: 1, last: 20 },
+  { id: "civil1-b-required-applied", label: "問題B・施工管理法（応用能力）・必須 21〜35", session: "mondai-b", first: 21, last: 35 },
+] as const;
+
 const KANKOJI2_EXAM_SECTIONS = [
   { id: "kankoji2-required-basic", label: "一般基礎・必須 1〜6", first: 1, last: 6 },
   { id: "kankoji2-select-equipment", label: "空調・衛生設備・9問選択 7〜23", first: 7, last: 23 },
@@ -61,7 +71,7 @@ export async function generateStaticParams(): Promise<RouteParams[]> {
 }
 
 function parseYearSeason(slug: string): { year: number; season: Season } | null {
-  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late)$/.exec(slug);
+  const m = /^(\d{4})-(spring|autumn|cbt|published|first|second|early|may|september|january|october|late|july)$/.exec(slug);
   if (!m) return null;
   return { year: Number(m[1]), season: m[2] as Season };
 }
@@ -154,7 +164,14 @@ export default async function ExamYearSeasonPage({
     : code === "kankoji2"
       ? KANKOJI2_EXAM_SECTIONS
       : null;
-  if (civil2Sections) {
+  if (code === "civil1") {
+    sessionGroups = CIVIL1_EXAM_SECTIONS.map((section) => ({
+      session: section.label,
+      id: section.id,
+      items: (sessionGroups.find((group) => group.session === section.session)?.items ?? [])
+        .filter((item) => item.qNumber >= section.first && item.qNumber <= section.last),
+    })).filter((group) => group.items.length > 0);
+  } else if (civil2Sections) {
     const allItems = sessionGroups.flatMap((group) => group.items);
     sessionGroups = civil2Sections.map((section) => ({
       session: section.label,
@@ -272,7 +289,7 @@ export default async function ExamYearSeasonPage({
           </div>
         </section>
 
-        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections} />
+        <QuestionListWithFilter groups={sessionGroups} showSectionNavigation={!!civil2Sections || code === "civil1"} />
       </div>
     </main>
   );

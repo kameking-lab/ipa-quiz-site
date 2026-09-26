@@ -30,6 +30,8 @@ export function sessionLabel(session: string): string {
     denryoku: "電力",
     kikai: "機械",
     houki: "法規",
+    "mondai-a": "問題A",
+    "mondai-b": "問題B",
   };
   return map[session] ?? session.toUpperCase();
 }
@@ -80,7 +82,7 @@ export function buildQuestionJsonLd({
           name: "一般財団法人 不動産適正取引推進機構",
           url: "https://www.retio.or.jp/",
         }
-    : q.exam === "civil2" || q.exam === "kankoji2"
+    : q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "civil1"
       ? {
           "@type": "Organization",
           name: "一般財団法人全国建設研修センター",
@@ -99,7 +101,7 @@ export function buildQuestionJsonLd({
         };
   const licenseUrl = (q.exam === "fp2" || q.exam === "fp3")
     ? "https://www.jafp.or.jp/exam/mohan/files/exam_riyou.pdf"
-    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2"
+    : q.exam === "takken" || q.exam === "civil2" || q.exam === "kankoji2" || q.exam === "civil1"
       ? undefined
     : q.exam === "denken3" || q.exam === "denko2"
       ? "https://www.shiken.or.jp/shiken/faq/faq08/000082.html"

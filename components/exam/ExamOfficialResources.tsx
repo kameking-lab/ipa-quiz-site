@@ -10,7 +10,23 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
   if (!links && !qualification) return null;
 
   if (qualification) {
-    const items = exam === "kankoji2" ? [
+    const items = exam === "civil1" ? [
+      {
+        label: "全国建設研修センター 公式問題A",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaia.pdf",
+        description: "令和8年度 1級土木施工管理技術検定 第一次検定の試験問題A（No.1〜66）。",
+      },
+      {
+        label: "全国建設研修センター 公式問題B",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaib.pdf",
+        description: "同じ試験回の試験問題B（No.1〜35）。",
+      },
+      {
+        label: "全国建設研修センター 公式正答肢",
+        href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_seitou.pdf",
+        description: "問題A・問題Bの正答肢PDF。",
+      },
+    ] : exam === "kankoji2" ? [
       {
         label: "全国建設研修センター 公式問題・正答肢（令和8年度前期）",
         href: "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608k_mondai.pdf",
@@ -57,7 +73,7 @@ export function ExamOfficialResources({ exam }: { exam: ExamCode }) {
           </span>
           <div className="leading-tight">
             <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">公式リソース</h2>
-            <p className="text-[11px] text-muted-foreground">問題・正答・利用条件の一次情報</p>
+            <p className="text-[11px] text-muted-foreground">{exam === "civil1" || exam === "civil2" || exam === "kankoji2" ? "問題・正答の一次情報" : "問題・正答・利用条件の一次情報"}</p>
           </div>
         </div>
         <ul className="grid gap-2 sm:grid-cols-2">
