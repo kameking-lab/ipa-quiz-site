@@ -1197,7 +1197,7 @@ export function CopilotPanel({
       {/* AI disclaimer */}
       {messages.some((m) => m.role === "assistant") && (
         <p className="px-3 pb-1 text-[10px] leading-snug text-zinc-400 dark:text-zinc-600">
-          ※ AI の回答は誤りを含む可能性があります。重要な判断はIPA公式資料でご確認ください。
+          ※ AI の回答は誤りを含む可能性があります。重要な判断は受験する資格の公式資料でご確認ください。
         </p>
       )}
 
