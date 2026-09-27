@@ -42,14 +42,15 @@ describe("JCTC 2026 first-stage publication", () => {
     expect(telecom.deferred.map((item) => item.number)).toEqual([1, 2, 3, 5, 6]);
   });
 
-  it("publishes five distinct 2025 late gardening questions against the official PDFs", () => {
+  it("publishes ten distinct 2025 late gardening questions against the official PDFs", () => {
     const selected = ZOEN2_QUESTIONS.filter((question) => question.year === 2025);
     expect(garden2025.officialQuestionCount).toBe(40);
-    expect(garden2025.publishedCount).toBe(5);
-    expect(selected.map((question) => question.qNumber)).toEqual([1, 2, 3, 4, 5]);
-    expect(selected.map((question) => question.season)).toEqual(["late", "late", "late", "late", "late"]);
-    expect(selected.map((question) => question.officialAnswerNumber)).toEqual(["3", "2", "3", "4", "1"]);
-    expect(selected.map((question) => question.answer)).toEqual(["ウ", "イ", "ウ", "エ", "ア"]);
+    expect(garden2025.publishedCount).toBe(10);
+    expect(selected.map((question) => question.qNumber)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 10, 11]);
+    expect(selected.every((question) => question.season === "late")).toBe(true);
+    expect(selected.map((question) => question.officialAnswerNumber)).toEqual(["3", "2", "3", "4", "1", "1", "1", "3", "1", "1"]);
+    expect(selected.map((question) => question.answer)).toEqual(["ウ", "イ", "ウ", "エ", "ア", "ア", "ア", "ウ", "ア", "ア"]);
+    expect(garden2025.deferred).toEqual([{ number: 9, reason: expect.stringContaining("図") }]);
     expect(new Set(ZOEN2_QUESTIONS.map((question) => question.id)).size).toBe(ZOEN2_QUESTIONS.length);
     for (const kind of ["question", "answer"] as const) {
       const suffix = kind === "question" ? "q" : "a";
