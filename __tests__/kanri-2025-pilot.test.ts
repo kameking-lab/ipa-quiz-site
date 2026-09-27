@@ -8,6 +8,7 @@ import { defaultPracticeSession } from "@/lib/questions/practice-session";
 
 const officialAnswers = new Map([[1, "4"], [2, "2"], [3, "3"], [4, "2"], [5, "4"], [6, "4"], [7, "1"], [8, "3"], [9, "1"], [10, "3"], [11, "2"], [12, "4"], [13, "3"], [14, "2"], [15, "4"], [16, "2"], [17, "2"], [18, "1"], [19, "3"], [20, "4"], [21, "2"], [22, "2"], [23, "1"], [24, "2"], [25, "4"], [26, "2"], [27, "1"], [28, "3"], [29, "2"], [30, "3"], [31, "1"], [32, "4"], [33, "4"], [34, "1"], [35, "2"], [36, "3"], [37, "3"], [38, "1"], [39, "1"], [40, "2"], [41, "2"], [42, "3"], [43, "2"], [44, "2"], [45, "4"], [46, "3"], [47, "2"], [48, "1"], [49, "1"], [50, "2"]]);
 const labels = ["ア", "イ", "ウ", "エ"] as const;
+const questions2025 = KANRI_QUESTIONS.filter((question) => question.year === 2025);
 
 describe("2025 管理業務主任者 pilot", () => {
   it("publishes all 50 independently checked questions from the official exam", () => {
@@ -16,11 +17,11 @@ describe("2025 管理業務主任者 pilot", () => {
       .toBe("https://www.kanrikyo.or.jp/kanri/pdf/kakomonshiyou.pdf");
     expect(EXAM_CONFIGS.kanri.sessions[0]?.expectedQuestions).toBe(50);
     expect(defaultPracticeSession("kanri")).toBe("gakka");
-    expect(KANRI_QUESTIONS.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
+    expect(questions2025.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, index) => index + 1));
   });
 
   it("keeps official answers, four numbered choices, full explanations, and sources aligned", () => {
-    for (const q of KANRI_QUESTIONS) {
+    for (const q of questions2025) {
       const official = officialAnswers.get(q.qNumber);
       expect(official, q.id).toBeDefined();
       expect(q.officialAnswerNumber, q.id).toBe(official);
