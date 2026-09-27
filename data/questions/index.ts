@@ -44,6 +44,8 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // 5. Uncomment the matching loader in lib/questions/get-questions.ts
 // ────────────────────────────────────────────────────────────────────────────
 
+import { EISEI1_QUESTIONS } from "./eisei1";
+
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ap: AP_QUESTIONS,
   ip: IP_QUESTIONS,
@@ -81,6 +83,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
   ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
   ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
+  ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
 };
 
 export const ALL_QUESTIONS: Question[] = (

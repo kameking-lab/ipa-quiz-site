@@ -31,6 +31,7 @@ describe("home directory", () => {
     const safety = domains.find((d) => d.id === "safety");
     const hrefs = new Set(safety?.featured.map((i) => i.href));
     for (const hub of QUALIFICATION_HUBS) expect(hrefs).toContain(qualificationHubPath(hub.slug));
+    expect(hrefs).toContain("/eisei1");
     for (const chip of safety?.compact ?? []) {
       expect(chip.href).toMatch(/^\/e-learning\/exams\?group=lckohyo&subject=/);
       expect(chip.periodLabel).toMatch(/^[1-9]\d*回分$/);
@@ -39,7 +40,7 @@ describe("home directory", () => {
 
   it("shows only live external qualifications", () => {
     const external = domains.filter((d) => !["it", "safety"].includes(d.id)).flatMap((d) => d.featured);
-    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.examCode).map((q) => `/${q.examCode}`);
+    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.examCode && q.domain !== "safety").map((q) => `/${q.examCode}`);
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 
