@@ -132,7 +132,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "tsushin1", name: "1級電気通信工事施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
   { code: "fp3", name: "FP3級", sub: "FP技能検定3級（学科・実技）", domain: "money" },
   { code: "fp2", name: "FP2級", sub: "FP技能検定2級（学科・実技）", domain: "money" },
-  { code: "fp1", name: "FP1級", sub: "2026年5月・学科基礎編の収録済み10問", domain: "money" },
+  { code: "fp1", name: "FP1級", sub: "2026年5月・学科基礎編の収録済み15問", domain: "money" },
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
