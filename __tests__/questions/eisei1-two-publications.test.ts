@@ -3,11 +3,23 @@ import { describe, expect, it } from "vitest";
 import { EISEI1_QUESTIONS } from "@/data/questions/eisei1";
 import source2025 from "@/data/exam-library/papers/lckohyo-LC20252114.json";
 import presentation2025 from "@/data/exam-library/presentation/lckohyo-LC20252114.json";
+import { questionTitle } from "@/lib/seo/question-meta";
+import { groupByYearSeason } from "@/lib/seo/exam-meta";
 
 const KEYS = ["ア", "イ", "ウ", "エ", "オ"] as const;
 const sourcePdfUrl = "https://www.exam.or.jp/wp-content/uploads/2025/10/LC20252114.pdf";
 
 describe("first-class health supervisor published papers", () => {
+  it("labels question metadata and year listings with each official publication month", () => {
+    const first2025 = EISEI1_QUESTIONS.find((q) => q.year === 2025 && q.qNumber === 1);
+    const first2026 = EISEI1_QUESTIONS.find((q) => q.year === 2026 && q.qNumber === 1);
+    expect(first2025 && questionTitle(first2025)).toContain("2025年10月公表問題");
+    expect(first2026 && questionTitle(first2026)).toContain("2026年4月公表問題");
+    expect(groupByYearSeason(EISEI1_QUESTIONS).map((g) => g.label)).toEqual([
+      "2026年4月公表問題",
+      "2025年10月公表問題",
+    ]);
+  });
   it("offers all 44 questions from both the 2025 October and 2026 April publications", () => {
     for (const year of [2025, 2026]) {
       const paper = EISEI1_QUESTIONS.filter((q) => q.year === year && q.season === "published");
